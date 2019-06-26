@@ -9,19 +9,19 @@ keywords:
 - 非 PnP 驱动程序 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 103fd39ae6400c661a3277acbd9da5ab0466965c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc0bcb4b4edf61ff7a2a160d96339ce1afb6ecd3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371139"
 ---
 # <a name="installing-a-non-pnp-driver"></a>安装非 PnP 驱动程序
 
 
-如果您的驱动程序不支持插即用 (PnP) 设备，驱动程序包必须包含一个 INF 文件，包含 INF <em>DDInstall</em>**。共同安装程序**部分和 INF <em>DDInstall</em>**。WDF**部分中所述[使用 KMDF 共同安装程序](installing-the-framework-s-co-installer.md)。
+如果您的驱动程序不支持插即用 (PnP) 设备，驱动程序包必须包含一个 INF 文件，包含 INF <em>DDInstall</em> **。共同安装程序**部分和 INF <em>DDInstall</em> **。WDF**部分中所述[使用 KMDF 共同安装程序](installing-the-framework-s-co-installer.md)。
 
-此外，必须提供加载您的驱动程序和框架的共同安装程序的安装程序。 辅助安装程序提供了[ **WdfPreDeviceInstall**](https://msdn.microsoft.com/library/windows/hardware/ff548835)， [ **WdfPreDeviceInstallEx**](https://msdn.microsoft.com/library/windows/hardware/ff548839)， [ **WdfPostDeviceInstall**](https://msdn.microsoft.com/library/windows/hardware/ff548829)， [ **WdfPreDeviceRemove**](https://msdn.microsoft.com/library/windows/hardware/ff548840)，以及[ **WdfPostDeviceRemove** ](https://msdn.microsoft.com/library/windows/hardware/ff548833)驱动程序的安装程序必须调用的函数。
+此外，必须提供加载您的驱动程序和框架的共同安装程序的安装程序。 辅助安装程序提供了[ **WdfPreDeviceInstall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinstaller/nf-wdfinstaller-wdfpredeviceinstall)， [ **WdfPreDeviceInstallEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinstaller/nf-wdfinstaller-wdfpredeviceinstallex)， [ **WdfPostDeviceInstall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinstaller/nf-wdfinstaller-wdfpostdeviceinstall)， [ **WdfPreDeviceRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinstaller/nf-wdfinstaller-wdfpredeviceremove)，以及[ **WdfPostDeviceRemove** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinstaller/nf-wdfinstaller-wdfpostdeviceremove)驱动程序的安装程序必须调用的函数。
 
 有关如何为非 PnP 驱动程序编写安装程序的示例，请参阅安装程序附带[NONPNP](sample-kmdf-drivers.md)示例。
 

@@ -13,12 +13,12 @@ keywords:
 - 关闭电源管理 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 757bc30cb3c9f4e0cae3ef2468e339a851ac9e7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8831d9c30c160b29283445174709ba90125e8869
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374194"
 ---
 # <a name="power-manager"></a>电源管理器
 
@@ -28,7 +28,7 @@ ms.locfileid: "63369140"
 
 电源管理器负责管理系统的电源使用情况。 它管理整个系统电源策略，并跟踪通过系统电源 Irp 的路径。
 
-电源管理器请求通过发送电源操作[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784)对驱动程序的请求。 请求可以指定新的电源状态，或者可以查询电源状态更改不可行。
+电源管理器请求通过发送电源操作[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)对驱动程序的请求。 请求可以指定新的电源状态，或者可以查询电源状态更改不可行。
 
 电源管理器需要睡眠、 休眠或关机时，通过将发送请求相应的电源操作**IRP\_MJ\_POWER**到设备树中每个叶节点的请求。 在确定是否在系统会无限地休眠，以下进入休眠状态，或关闭的情况下，会考虑电源管理器：
 

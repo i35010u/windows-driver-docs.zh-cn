@@ -4,12 +4,12 @@ ms.assetid: 0A439686-0BAE-4E4D-AA23-06A6EF72C4B3
 description: 预期的视频转换行为对输入的数据范围的影响
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6022ff07872ee15099e8d4f96674eed88ec540b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53895cd9c67883985ae59ad15f4ba019fe95c816
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371473"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372005"
 ---
 # <a name="span-iddisplayyuv-rgbdatarangeconversionsspanyuv-rgb-data-range-conversions"></a><span id="display.yuv-rgb_data_range_conversions"></span>YUV RGB 数据范围转换
 
@@ -43,14 +43,14 @@ ms.locfileid: "63371473"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">数据</td>
+<td align="left">data</td>
 <td align="left">format</td>
 <td align="left">RGB</td>
 <td align="left">名义</td>
 <td align="left">RGB</td>
 <td align="left">名义</td>
 <td align="left">format</td>
-<td align="left">数据</td>
+<td align="left">data</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -157,7 +157,7 @@ ms.locfileid: "63371473"
 
  
 
-在这种情况下的"名义范围"是中的常量值[ **DXVAHDDDI\_名义\_范围**](https://msdn.microsoft.com/library/windows/hardware/dn265432)枚举。
+在这种情况下的"名义范围"是中的常量值[ **DXVAHDDDI\_名义\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-_dxvahdddi_nominal_range)枚举。
 
 请参阅[YUV 格式范围在 Windows 8.1 中](yuv-format-ranges.md)定义 YUV 格式显示范围。
 

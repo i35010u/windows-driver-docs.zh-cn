@@ -4,12 +4,12 @@ description: SerCx2 基于串行控制器驱动程序是 KMDF 驱动程序的使
 ms.assetid: 4A9B80F1-4DE1-4D35-ADDF-90058A4F8388
 ms.date: 05/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eddbd45eba4f19ab34aec94bf65603fa070a291
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 6759434255ae8cf496d670bbcda6fff99d38d6d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836352"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377926"
 ---
 # <a name="features-of-sercx2-based-serial-controller-drivers"></a>基于 SerCx2 的串行控制器驱动程序的功能
 
@@ -37,6 +37,6 @@ SerCx2 管理代表控制器驱动程序的以下任务：
 - 低功耗设备状态转换
 - 取消 I/O 请求 （I/O 的自定义事务期间除外）
 
-若要管理读取和写入操作，SerCx2 转换[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff546883)并[ **IRP\_MJ\_编写** ](https://msdn.microsoft.com/library/windows/hardware/ff546904)串行控制器驱动程序来处理来自为相对简单的 I/O 事务的客户端请求。 有关详细信息，请参阅[SerCx2 I/O 事务](sercx2-i-o-transactions.md)。
+若要管理读取和写入操作，SerCx2 转换[ **IRP\_MJ\_读取**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))并[ **IRP\_MJ\_编写** ](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))串行控制器驱动程序来处理来自为相对简单的 I/O 事务的客户端请求。 有关详细信息，请参阅[SerCx2 I/O 事务](sercx2-i-o-transactions.md)。
 
 SerCx2 作为名为 Sercx2.sys 组件包含在 Windows 中。 串行控制器驱动程序以静态方式链接到 SerCx2 库，Sercxstubs.lib （2.0 版），并且，在运行时，与其通信 Sercx2.sys。 在 2.0 版中定义 SerCx2 DDI\\Sercx.h 标头文件。 Windows 驱动程序工具包的 Windows 8.1 中提供了 Sercxstubs.lib 和 Sercx.h。

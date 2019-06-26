@@ -11,12 +11,12 @@ keywords:
 - VMR WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bc6b2687d08c9b0a38c244d6a08834979bfce22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79f11a15d9a5b6a2f41b04c4222e4e42e6ff617c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343015"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370687"
 ---
 # <a name="combining-deinterlacing-and-video-substream-compositing"></a>合并反交错和视频子流合成内容
 
@@ -26,7 +26,7 @@ ms.locfileid: "63343015"
 
 本部分仅适用于 Microsoft Windows Server 2003 Service Pack 1 (SP1) 和更高版本和 Windows XP Service Pack 2 (SP2) 和更高版本。
 
-若要提高硬件有限的内存带宽上的视频质量，驱动程序编写人员可以实现[ **DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563927)其显示器驱动程序中的函数。 **DeinterlaceBltEx**函数组合后，YUV 颜色空间内，操作的复合视频 substreams 之上使用取消隔行扫描的操作和/或帧速率视频流将转换每个视频帧。 驱动程序编写器均支持我们鼓励**DeinterlaceBltEx**所有其取消隔行扫描模式及其驱动程序中的函数。
+若要提高硬件有限的内存带宽上的视频质量，驱动程序编写人员可以实现[ **DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)其显示器驱动程序中的函数。 **DeinterlaceBltEx**函数组合后，YUV 颜色空间内，操作的复合视频 substreams 之上使用取消隔行扫描的操作和/或帧速率视频流将转换每个视频帧。 驱动程序编写器均支持我们鼓励**DeinterlaceBltEx**所有其取消隔行扫描模式及其驱动程序中的函数。
 
 以下主题介绍如何支持**DeinterlaceBltEx**:
 

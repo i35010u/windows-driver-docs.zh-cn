@@ -7,12 +7,12 @@ keywords:
 - RequestorMode
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 968c781c98198f7be9328578b6c98adbbb1b77fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7c0c749fb110d605c3a69b0b4ed4d0cc7e5fb01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378821"
 ---
 # <a name="previousmode"></a>PreviousMode
 
@@ -27,11 +27,11 @@ ms.locfileid: "63369132"
 
 如果内核模式驱动程序调用可能会出错**Nt * Xxx*** 例程并**PreviousMode**当前线程对象中的值不准确地指示参数值是否从用户模式或内核模式源。
 
-例如，假定在内核模式驱动程序运行中的任意线程，并且在上下文**PreviousMode**值此线程设置为**UserMode**。 如果该驱动程序通过内核模式文件句柄[ **NtClose** ](https://msdn.microsoft.com/library/windows/hardware/ff566417)例行，此例程将检查**PreviousMode**值，并决定句柄必须是用户模式句柄。 当**NtClose**找不到句柄在用户模式下句柄表中，它将返回状态\_无效\_句柄错误代码。 同时，该驱动程序泄漏永远不会关闭内核模式句柄。
+例如，假定在内核模式驱动程序运行中的任意线程，并且在上下文**PreviousMode**值此线程设置为**UserMode**。 如果该驱动程序通过内核模式文件句柄[ **NtClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)例行，此例程将检查**PreviousMode**值，并决定句柄必须是用户模式句柄。 当**NtClose**找不到句柄在用户模式下句柄表中，它将返回状态\_无效\_句柄错误代码。 同时，该驱动程序泄漏永远不会关闭内核模式句柄。
 
-另举一例，如果的参数**Nt * Xxx*** 例程包含的输入或输出缓冲区，并且如果**PreviousMode** = **UserMode**，例程调用[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)或[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)例程，以验证缓冲区。 如果在用户模式内存中，而不是系统内存中分配缓冲区**ProbeFor * Xxx*** 例程会引发异常，并**Nt * Xxx*** 例程将返回状态\_访问\_冲突错误代码。
+另举一例，如果的参数**Nt * Xxx*** 例程包含的输入或输出缓冲区，并且如果**PreviousMode** = **UserMode**，例程调用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)或[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)例程，以验证缓冲区。 如果在用户模式内存中，而不是系统内存中分配缓冲区**ProbeFor * Xxx*** 例程会引发异常，并**Nt * Xxx*** 例程将返回状态\_访问\_冲突错误代码。
 
-如果有必要，驱动程序可以调用[ **ExGetPreviousMode** ](https://msdn.microsoft.com/library/windows/hardware/ff545288)例程，以获取**PreviousMode**从当前线程对象的值。 或者，驱动程序可以读取**RequestorMode**字段从[ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)结构，描述所请求的 I/O 操作。 **RequestorMode**字段包含一份**PreviousMode**请求操作的线程的值。
+如果有必要，驱动程序可以调用[ **ExGetPreviousMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetpreviousmode)例程，以获取**PreviousMode**从当前线程对象的值。 或者，驱动程序可以读取**RequestorMode**字段从[ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)结构，描述所请求的 I/O 操作。 **RequestorMode**字段包含一份**PreviousMode**请求操作的线程的值。
 
  
 

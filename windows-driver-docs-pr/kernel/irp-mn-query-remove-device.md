@@ -6,12 +6,12 @@ ms.assetid: 95ec9ed8-014f-4d01-bed7-3aeb29cd9e73
 keywords:
 - IRP_MN_QUERY_REMOVE_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5534a502f0f465fc2f94c9dbe7853100ec199732
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d4e6c8e515785d6629a8281cde1d406aa676305
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370860"
 ---
 # <a name="irpmnqueryremovedevice"></a>IRP\_MN\_查询\_删除\_设备
 
@@ -50,7 +50,7 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 在响应此 IRP，驱动程序指示是否可以无需中断在计算机中删除该设备。
 
-有关处理此 IRP 的详细信息，请参阅[处理 IRP\_MN\_查询\_删除\_设备请求](https://msdn.microsoft.com/library/windows/hardware/ff546674)。 支持设备删除的常规信息，请参阅[删除设备](https://msdn.microsoft.com/library/windows/hardware/ff561046)。
+有关处理此 IRP 的详细信息，请参阅[处理 IRP\_MN\_查询\_删除\_设备请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-remove-device-request)。 支持设备删除的常规信息，请参阅[删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
 
 **发送此 IRP**
 

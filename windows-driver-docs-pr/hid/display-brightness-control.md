@@ -4,19 +4,19 @@ description: 允许键盘 （外部或嵌入在便携式计算机上），来控
 ms.assetid: B22BA244-C5C6-4A50-AFE6-4E773194F18C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f4277b52857efe36a1c17c484521cc95be19d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 302846780e17ec4963bb19281fab5b2aae5fd4fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388956"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375739"
 ---
 # <a name="display-brightness-control"></a>显示器亮度控制
 
 
 从 Windows 8 开始，已对标准化的解决方案已添加为允许键盘 （外部或嵌入在便携式计算机上），来控制通过 HID 的便携式计算机或平板电脑的屏幕亮度。
 
-此解决方案中描述的 hid 标准委员会最近批准[HID 评审请求 41](http://www.usb.org/developers/hidpage#approved-usage-table-review-requests)。
+此解决方案中描述的 hid 标准委员会最近批准[HID 评审请求 41](https://www.usb.org/developers/hidpage#approved-usage-table-review-requests)。
 
 ## <a name="architecture-and-overview"></a>体系结构和概述
 

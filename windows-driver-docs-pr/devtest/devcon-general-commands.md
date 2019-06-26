@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6faefcb9433e56c0e752a413ede69719525dc1a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 092d6fd7be797f6529902525626d0f63f1c1ebd3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371534"
 ---
 # <a name="device-console-devconexe-commands"></a>设备控制台 (DevCon.exe) 命令
 
@@ -39,7 +39,7 @@ DevCon 命令中的参数必须出现在语法中所示的顺序。 如果参数
 
 有关命令语法的帮助，可以在命令提示符窗口中使用以下命令：**DevCon 帮助**或**DevCon 帮助***命令*。
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\**<em>计算机</em>指定远程计算机上运行该命令。 需要反斜杠。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **m:\\\\** <em>计算机</em>指定远程计算机上运行该命令。 需要反斜杠。
 **请注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许 Plug and Play 服务在远程计算机上运行。 运行 Windows Vista 和更高版本的 Windows 的计算机上，组策略默认情况下禁用远程访问服务。 运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能将不可用。
 
  
@@ -110,11 +110,11 @@ DevCon 命令中的参数必须出现在语法中所示的顺序。 如果参数
 
 <span id="__________or_help"></span><span id="__________OR_HELP"></span> **/?** 或**帮助**显示帮助。 如果指定一个操作，DevCon 显示有关该操作的详细的帮助。
 
-参数必须出现在指定的顺序。 例如，若要显示的帮助[ **DevCon 状态**](devcon-status.md)操作中，键入**devcon /？ 状态**(或**devcon 帮助状态**)，而非**devcon 状态 /？**.
+参数必须出现在指定的顺序。 例如，若要显示的帮助[ **DevCon 状态**](devcon-status.md)操作中，键入**devcon /？ 状态**(或**devcon 帮助状态**)，而非**devcon 状态 /？** .
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 
-许多 DevCon 操作需要的设备硬件 ID。 若要在后续 DevCon 操作中使用计算机上创建的所有设备 Id 的硬件的列表，以开头[ **DevCon HwIDs** ](devcon-hwids.md)命令。 有关详细信息，请参阅[硬件 Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)并[设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)。
+许多 DevCon 操作需要的设备硬件 ID。 若要在后续 DevCon 操作中使用计算机上创建的所有设备 Id 的硬件的列表，以开头[ **DevCon HwIDs** ](devcon-hwids.md)命令。 有关详细信息，请参阅[硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)并[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
 
 ### <a name="span-idddkdevconsearchlogictoolsspanspan-idddkdevconsearchlogictoolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon 搜索设备的方式
 
@@ -122,11 +122,11 @@ DevCon 标识其计算机名称、 硬件 ID、 兼容 ID、 设备实例 ID 和
 
 如果命令包含多个 ID 或 ID 模式 (包含通配符字符的 ID (\*))，DevCon 返回其 Id 与匹配的设备 Id 或 ID 模式。 也就是说，它假定"所得的 ID 参数。
 
-例如， **devcon hwids \*pnp\* \*mou\\*** 返回包含"pnp"或"mou"的设备在其硬件 ID 或兼容 id。
+例如， **devcon hwids \*pnp\* \*mou\\** * 返回包含"pnp"或"mou"的设备在其硬件 ID 或兼容 id。
 
 如果命令包含设备安装程序类，DevCon 首次将搜索限定为安装程序类，然后返回与任何 ID 模式匹配的类中的设备，即，假定"和"类和 Id 和"每个 ID 自变量之间。
 
-例如， **devcon hwids = 媒体\*pnp\* \*microsoft\\*** 返回其硬件 ID 中的设备中包括的媒体设备安装程序类"pnp"或"microsoft"或兼容 id。
+例如， **devcon hwids = 媒体\*pnp\* \*microsoft\\** * 返回其硬件 ID 中的设备中包括的媒体设备安装程序类"pnp"或"microsoft"或兼容 id。
 
 **请注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许 Plug and Play 服务在远程计算机上运行。 运行 Windows Vista 和更高版本的 Windows 的计算机上，组策略默认情况下禁用远程访问服务。 运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能将不可用。
 

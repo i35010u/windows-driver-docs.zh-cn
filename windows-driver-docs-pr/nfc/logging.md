@@ -10,12 +10,12 @@ keywords:
 description: NFC 的函数/方法、 NCI 数据包/协议和其他详细日志记录的日志记录。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cc343c78296d44035df1cf7ac024d747d306fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cf627fd102ebf04e36d01296e70efd718ecbeed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370757"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375111"
 ---
 # <a name="logging"></a>日志记录
 
@@ -32,12 +32,12 @@ tracelog -enableex MyNfcSession -guid #D976D933-B88B-4227-95F8-00513C0986DE -mat
 tracelog -stop MyNfcSession
 ```
 
-这将生成一个名为 c： 驱动器中的 MySession.etl 的 ETL 文件\\数据文件夹。 你可以然后对其进行解码使用[Tracepdb](https://msdn.microsoft.com/library/windows/hardware/ff553034) (Tracepdb.exe) 和[Tracefmt](https://msdn.microsoft.com/library/windows/hardware/ff552974) (Tracefmt.exe)，Windows 驱动程序工具包中包括哪些。
+这将生成一个名为 c： 驱动器中的 MySession.etl 的 ETL 文件\\数据文件夹。 你可以然后对其进行解码使用[Tracepdb](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb) (Tracepdb.exe) 和[Tracefmt](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracefmt) (Tracefmt.exe)，Windows 驱动程序工具包中包括哪些。
 
 NFC CX 不包括任何调试扩展。
 
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC 类扩展 (CX) 引用](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
-[Windows （Windows 驱动程序） 的事件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff552961)  
-[用于软件跟踪的工具](https://msdn.microsoft.com/library/windows/hardware/ff556204)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 类扩展 (CX) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[Windows （Windows 驱动程序） 的事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-software-tracing)  
+[用于软件跟踪的工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)  

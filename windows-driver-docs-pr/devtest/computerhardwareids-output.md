@@ -4,12 +4,12 @@ description: ComputerHardwareIds 输出
 ms.assetid: 38a08dda-92db-4389-9c2c-91fe17a88051
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cadc25f122b2e3da31b3a1b30ce5c4553305011
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80c339dfd98c7c55580cca82b2cc00a7796dba74
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371602"
 ---
 # <a name="computerhardwareids-output"></a>ComputerHardwareIds 输出
 
@@ -39,7 +39,7 @@ Hardware IDs
 {d7be59e5-29b5-589a-b49d-de7265ef6a7b}    <- Manufacturer + Family + ProductName
 ```
 
-在此示例中，供应商 (Contoso Inc.) 将通常用于第二个硬件 ID (d7be59e5-29b5-589a-b49d-de7265ef6a7b) 的值[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)中的元素[PackageInfo XML 文档](https://msdn.microsoft.com/library/windows/hardware/ff549602)的供应商的设备元数据包。
+在此示例中，供应商 (Contoso Inc.) 将通常用于第二个硬件 ID (d7be59e5-29b5-589a-b49d-de7265ef6a7b) 的值[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))中的元素[PackageInfo XML 文档](https://docs.microsoft.com/windows-hardware/drivers/install/packageinfo-xml-document)的供应商的设备元数据包。
 
  
 

@@ -20,22 +20,22 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 68d0c0727156b80ffac718897cd1e3e9d1b8a6e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2030cf2f5c78346e7239fe623c15f552cb178c8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375853"
 ---
 # <a name="dxvaconfigqueryorreplyflag-and-dxvaconfigqueryorreplyfunc-variables"></a>DXVA\_ConfigQueryOrReplyFlag 和 DXVA\_ConfigQueryorReplyFunc 变量
 
 *DXVA\_ConfigQueryOrReplyFlag*变量指示查询的类型或使用探测和锁定时的响应的命令。 最重要的 24 字节**dwFunction**以下结构的成员包含*DXVA\_ConfigQueryOrReplyFlag*变量。
 
-[**DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)用于压缩的图片解码。
+[**DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)用于压缩的图片解码。
 
-[**DXVA\_ConfigAlphaLoad** ](https://msdn.microsoft.com/library/windows/hardware/ff563129)的 alpha 值混合处理数据。
+[**DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)的 alpha 值混合处理数据。
 
-[**DXVA\_ConfigAlphaCombine** ](https://msdn.microsoft.com/library/windows/hardware/ff563126) alpha 值混合处理组合。
+[**DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine) alpha 值混合处理组合。
 
 最明显的 20 位*DXVA\_ConfigQueryOrReplyFlag*变量指定以下查询和响应。
 
@@ -129,25 +129,25 @@ ms.locfileid: "63370817"
 
 当*bDXVA\_Func*用于指定与配置结构传递使用探测或 lock 命令时，关联的函数*bDXVA\_Func*置于 8最高有效位*DXVA\_ConfigQueryorReplyFunc*变量中**dwFunction**之一的以下配置结构的成员：
 
-[**DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)用于压缩的图片解码。
+[**DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)用于压缩的图片解码。
 
-[**DXVA\_ConfigAlphaLoad** ](https://msdn.microsoft.com/library/windows/hardware/ff563129)的 alpha 值混合处理数据。
+[**DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)的 alpha 值混合处理数据。
 
-[**DXVA\_ConfigAlphaCombine** ](https://msdn.microsoft.com/library/windows/hardware/ff563126) alpha 值混合处理组合。
+[**DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine) alpha 值混合处理组合。
 
 ### <a name="span-iddxvaencryptprotocolfuncspanspan-iddxvaencryptprotocolfuncspanspan-iddxvaencryptprotocolfuncspandxvaencryptprotocolfunc"></a><span id="DXVA_EncryptProtocolFunc"></span><span id="dxva_encryptprotocolfunc"></span><span id="DXVA_ENCRYPTPROTOCOLFUNC"></span>DXVA\_EncryptProtocolFunc
 
 最重要的 24 字节*DXVA\_EncryptProtocolFunc* DWORD 变量设置，如下所示：
 
--   0xFFFF00 时发送的中的主机软件解码器**dwFunction**的成员[ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)中调用的结构[*DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)。
+-   0xFFFF00 时发送的中的主机软件解码器**dwFunction**的成员[ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)中调用的结构[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)。
 
--   通过中的视频加速服务发送时 0xFFFF08 **dwFunction**的成员[ **DXVA\_EncryptProtocolHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff563965)结构。
+-   通过中的视频加速服务发送时 0xFFFF08 **dwFunction**的成员[ **DXVA\_EncryptProtocolHeader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_encryptprotocolheader)结构。
 
 最明显的 8 位*DXVA\_EncryptProtocolFunc* DWORD 变量包含的值*bDXVA\_Func*加密协议与相关联。 为此，请使用支持的唯一值*bDXVA\_Func* = 1 （压缩的图片解码）。
 
 ### <a name="span-idspecifyinganoperationtobeperformedbyddmocomprenderspanspan-idspecifyinganoperationtobeperformedbyddmocomprenderspanspan-idspecifyinganoperationtobeperformedbyddmocomprenderspanspecifying-an-operation-to-be-performed-by-ddmocomprender"></a><span id="Specifying_an_Operation_to_be_Performed_by_DdMoCompRender"></span><span id="specifying_an_operation_to_be_performed_by_ddmocomprender"></span><span id="SPECIFYING_AN_OPERATION_TO_BE_PERFORMED_BY_DDMOCOMPRENDER"></span>指定要由 DdMoCompRender 执行操作
 
-当*bDXVA\_Func*用于发出信号要执行的实际操作 （压缩图片解码、 alpha 混合数据加载、 alpha 混合组合或图片来重新采样） *bDXVA\_Func*由包含在一系列中传达给快捷键*bDXVA\_Func*中的字节值**dwFunction**的成员[ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)对的调用中的结构[ *DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)。 第一个*bDXVA\_Func*中最高有效字节指定操作，则下一步操作中指定的下一步最高有效字节，依此类推。 任何剩余字节数**dwFunction**设置为零。
+当*bDXVA\_Func*用于发出信号要执行的实际操作 （压缩图片解码、 alpha 混合数据加载、 alpha 混合组合或图片来重新采样） *bDXVA\_Func*由包含在一系列中传达给快捷键*bDXVA\_Func*中的字节值**dwFunction**的成员[ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)对的调用中的结构[ *DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)。 第一个*bDXVA\_Func*中最高有效字节指定操作，则下一步操作中指定的下一步最高有效字节，依此类推。 任何剩余字节数**dwFunction**设置为零。
 
  
 

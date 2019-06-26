@@ -4,12 +4,12 @@ description: 本部分介绍使用通用路由封装 (NVGRE) 任务卸载的网�
 ms.assetid: D1BE5659-4491-411B-9D32-9CB7A141A240
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ff1dc27865727c148b2450d29d31f288135aff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d0fb599d7766d119fa8ba2c998f0eb8645f8817
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371220"
 ---
 # <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>使用通用路由封装 (NVGRE) 任务卸载实现网络虚拟化
 
@@ -40,8 +40,8 @@ NDIS 6.30 （适用于 Windows Server 2012 和更高版本） 引入了 NVGRE �
 
 NVGRE 为基础上通用路由封装 (GRE)。 GRE 有关详细信息，请参阅以下资源：
 
--   [RFC 2784:通用路由封装 (GRE)](http://tools.ietf.org/html/rfc2784)
--   [RFC 2890:键和序列号 GRE 扩展](http://tools.ietf.org/html/rfc2890)
+-   [RFC 2784:通用路由封装 (GRE)](https://tools.ietf.org/html/rfc2784)
+-   [RFC 2890:键和序列号 GRE 扩展](https://tools.ietf.org/html/rfc2890)
 
 本部分包括：
 

@@ -8,12 +8,12 @@ keywords:
 - IO_ERR_XXX 值
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 699f24b92ecd495cad4eab79d780d4436b8d9849
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a5ac52eed79aaa0dc3da86b68bbcc2aa776374d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377103"
 ---
 # <a name="defining-new-ntstatus-values"></a>定义新的 NTSTATUS 值
 
@@ -21,7 +21,7 @@ ms.locfileid: "63388256"
 
 
 
-驱动程序可以定义自定义 IO\_ERR\_*XXX*常量用作**ErrorCode**值时日志记录错误。 对一起编写的驱动程序还可以定义自定义状态\_*XXX*值为[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)请求。
+驱动程序可以定义自定义 IO\_ERR\_*XXX*常量用作**ErrorCode**值时日志记录错误。 对一起编写的驱动程序还可以定义自定义状态\_*XXX*值为[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)请求。
 
 下图显示在 32 位 NTSTATUS 值中的位域。
 
@@ -49,11 +49,11 @@ ms.locfileid: "63388256"
 
 驱动程序可以定义新 IO\_ERR\_*XXX*用于标识系统事件日志中的自定义错误消息的值。 有关如何定义 NTSTATUS 值和它们标识的错误消息的说明，请参阅[定义自定义错误类型](defining-custom-error-types.md)。
 
-对驱动程序可以定义特定于驱动程序状态\_*XXX*私下通信有关的信息的值定义[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)来自较低的对中的更高版本的驱动程序的请求。
+对驱动程序可以定义特定于驱动程序状态\_*XXX*私下通信有关的信息的值定义[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)来自较低的对中的更高版本的驱动程序的请求。
 
-在类驱动程序必须映射任何私有状态\_*XXX*值为系统定义的 NTSTATUS 值在其完成后 IRP，如果现有更高级别的驱动[ *IoCompletion*](https://msdn.microsoft.com/library/windows/hardware/ff548354)可能会为该 IRP 调用例程。
+在类驱动程序必须映射任何私有状态\_*XXX*值为系统定义的 NTSTATUS 值在其完成后 IRP，如果现有更高级别的驱动[ *IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)可能会为该 IRP 调用例程。
 
-对于成对的显示和视频的微型端口驱动程序，视频端口驱动程序将执行公共状态之间的映射\_*XXX*值和返回的微型端口驱动程序的 Win32 定义常量。 有关详细信息，请参阅[视频微型端口驱动程序在 Windows 2000 显示器驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff570509)。
+对于成对的显示和视频的微型端口驱动程序，视频端口驱动程序将执行公共状态之间的映射\_*XXX*值和返回的微型端口驱动程序的 Win32 定义常量。 有关详细信息，请参阅[视频微型端口驱动程序在 Windows 2000 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/video-miniport-drivers-in-the-windows-2000-display-driver-model)。
 
 因为只有的系统定义的值，可以转化为 Win32 错误代码的驱动程序不能使用可以在用户模式下，接收 Irp NTSTATUS 的自定义值。
 

@@ -6,12 +6,12 @@ keywords:
 - Power 计量和预算 WDK 概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaeef30d377b47a548a5bb159c00173e995bc017
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70d19064bedbb5f9ce035fa120f3648c95947091
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331843"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371767"
 ---
 # <a name="overview-of-the-power-metering-and-budgeting-infrastructure"></a>功率计量和预算基础结构概述
 
@@ -48,7 +48,7 @@ UMPS 是通过使用 WMI 类的一组用户模式服务公开系统的能源计�
 有关 UMPS 详细信息，请参阅[用户模式下 Power 服务](user-mode-power-service.md)。
 
 <span id="Power_Meter_Interface__PMI__"></span><span id="power_meter_interface__pmi__"></span><span id="POWER_METER_INTERFACE__PMI__"></span>电源指示器接口 (PMI)   
-PMI 是驱动程序提供一个 WDM 接口。 通过使用此接口，该驱动程序 PMI I/O 请求数据包 (Irp) 服务从[电源管理器](https://msdn.microsoft.com/library/windows/hardware/ff559829)和 UMPS 电源 WMI 提供程序组件。 这些 Irp 用于查询和设置的当前能源计量和预算方面的信息从电源表。
+PMI 是驱动程序提供一个 WDM 接口。 通过使用此接口，该驱动程序 PMI I/O 请求数据包 (Irp) 服务从[电源管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/power-manager)和 UMPS 电源 WMI 提供程序组件。 这些 Irp 用于查询和设置的当前能源计量和预算方面的信息从电源表。
 
 从 Windows 7 和 Windows Server 2008 R2 开始，操作系统提供了驱动程序 (*ACPIPMI。SYS*) 实现支持 ACPI 4.0 能源计量对象的系统的 PMI。 此驱动程序，原始设备制造商 (Oem) 可以构建可参与 PMB 基础结构中，而无需安装第三方驱动程序的系统。
 

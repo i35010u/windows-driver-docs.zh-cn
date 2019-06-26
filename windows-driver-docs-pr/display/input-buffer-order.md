@@ -8,12 +8,12 @@ keywords:
 - 缓冲 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a361df5f4bbdd33ed246bd146598a79d95202a3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5f35699f8c5c4ceebcabf9273fb7c5329bc957a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365483"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379913"
 ---
 # <a name="input-buffer-order"></a>输入缓冲区顺序
 
@@ -23,9 +23,9 @@ ms.locfileid: "63365483"
 
 **本部分仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。**
 
-对于每个组合去隔行和子流组合的情况下操作，启动到的驱动程序提供的调用时 VMR [ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)回调函数。 在中*DdMoCompRender*调用，请**lpBufferInfo**的成员[ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)结构指向缓冲区的数组，描述目标面和每个输入视频源示例的图面。 *DdMoCompRender*函数反过来调用驱动程序的[ **DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563927)函数。 有关详细信息，请参阅[从用户模式组件调用取消隔行扫描 DDI](calling-the-deinterlace-ddi-from-a-user-mode-component.md)。
+对于每个组合去隔行和子流组合的情况下操作，启动到的驱动程序提供的调用时 VMR [ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调函数。 在中*DdMoCompRender*调用，请**lpBufferInfo**的成员[ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构指向缓冲区的数组，描述目标面和每个输入视频源示例的图面。 *DdMoCompRender*函数反过来调用驱动程序的[ **DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)函数。 有关详细信息，请参阅[从用户模式组件调用取消隔行扫描 DDI](calling-the-deinterlace-ddi-from-a-user-mode-component.md)。
 
-数组中元素的顺序[ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)中结构**源**隶属[ **DXVA\_DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563915)结构匹配**lpBufferInfo**数组与目标表面不存在的异常。
+数组中元素的顺序[ **DXVA\_VideoSample2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videosample2)中结构**源**隶属[ **DXVA\_DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacebltex)结构匹配**lpBufferInfo**数组与目标表面不存在的异常。
 
 下面的主题介绍用于排列图面中的规则**lpBufferInfo**数组并提供一些示例来解释的图面序列顺序：
 

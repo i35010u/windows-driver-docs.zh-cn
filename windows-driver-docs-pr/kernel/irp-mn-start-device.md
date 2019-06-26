@@ -6,12 +6,12 @@ ms.assetid: 0aac1346-b5c7-4dcc-ab86-03e8fd151505
 keywords:
 - IRP_MN_START_DEVICE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: ff9e11350d5677f252c1a84ac90eaaf71039733b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d182f36599bff8df3a14b308903684a30161184
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381401"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371847"
 ---
 # <a name="irpmnstartdevice"></a>IRP\_MN\_START\_DEVICE
 
@@ -26,16 +26,16 @@ ms.locfileid: "63381401"
 
 PnP 管理器将发送此 IRP，如果有，向设备分配硬件资源。 设备可能已被最近枚举和启动第一次，或可能的资源重新平衡正在停止后重新启动设备。
 
-PnP 管理器发送有时**IRP\_MN\_启动\_设备**到已启动设备，提供一组不同的资源与当前所用设备。 驱动程序将启动此操作通过调用[ **IoInvalidateDeviceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549361)和响应的后续[ **IRP\_MN\_查询\_PNP\_设备\_状态**](irp-mn-query-pnp-device-state.md) PNP 请求\_资源\_要求\_CHANGED 标志设置。 总线驱动程序可能会使用此机制，例如，若要打开 PCI PCI 网桥上的新 aperture。
+PnP 管理器发送有时**IRP\_MN\_启动\_设备**到已启动设备，提供一组不同的资源与当前所用设备。 驱动程序将启动此操作通过调用[ **IoInvalidateDeviceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)和响应的后续[ **IRP\_MN\_查询\_PNP\_设备\_状态**](irp-mn-query-pnp-device-state.md) PNP 请求\_资源\_要求\_CHANGED 标志设置。 总线驱动程序可能会使用此机制，例如，若要打开 PCI PCI 网桥上的新 aperture。
 
 PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文中。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.StartDevice.AllocatedResources**的成员[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构指向[ **CM\_资源\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff541994)描述的即插即用的管理器分配给设备的硬件资源。 此列表包含原始窗体中的资源。 使用原始资源的设备。
+**Parameters.StartDevice.AllocatedResources**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构指向[ **CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)描述的即插即用的管理器分配给设备的硬件资源。 此列表包含原始窗体中的资源。 使用原始资源的设备。
 
-**Parameters.StartDevice.AllocatedResourcesTranslated**指向[ **CM\_资源\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff541994)描述的硬件资源的即插即用管理器分配给设备。 此列表包含已翻译的窗体中的资源。 使用转换的资源连接中断矢量、 映射 I/O 空间中，并映射内存。
+**Parameters.StartDevice.AllocatedResourcesTranslated**指向[ **CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)描述的硬件资源的即插即用管理器分配给设备。 此列表包含已翻译的窗体中的资源。 使用转换的资源连接中断矢量、 映射 I/O 空间中，并映射内存。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -60,7 +60,7 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 在 Windows Vista 和更高版本操作系统上，我们建议，驱动程序始终挂起**IRP\_MN\_启动\_设备**IRP 并完成其处理更高版本。 此顺序可让系统以进行异步处理设备重启。 (在 Windows Vista 之前的操作系统、 驱动程序可以返回状态\_PENDING 其调度例程，而即插即用管理器中的不重叠设备重新启动与任何其他操作。)
 
-有关处理开始 IRP 的详细信息，请参阅[启动设备](https://msdn.microsoft.com/library/windows/hardware/ff563849)。
+有关处理开始 IRP 的详细信息，请参阅[启动设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device)。
 
 **发送此 IRP**
 

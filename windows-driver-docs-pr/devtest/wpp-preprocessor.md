@@ -12,12 +12,12 @@ keywords:
 - WPP 软件跟踪 WDK，生成过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b399b4e2490cbec2ec4fd6a3c3d02f9d832d91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af48c8a8001b7f1a0a0bdd904abdd65785b0f8ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379110"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372677"
 ---
 # <a name="wpp-preprocessor"></a>WPP 预处理器
 
@@ -123,7 +123,7 @@ ms.locfileid: "63379110"
 <tr class="odd">
 <td align="left"><p>指定控件 GUID</p></td>
 <td align="left"><p><strong>-ctl:</strong><em>GUID</em></p></td>
-<td align="left">定义<a href="https://msdn.microsoft.com/library/windows/hardware/ff556186" data-raw-source="[WPP_CONTROL_GUIDS](https://msdn.microsoft.com/library/windows/hardware/ff556186)">WPP_CONTROL_GUIDS</a>具有指定的宏<a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">控制 GUID</a>和 WPP_DEFINE_BIT 项名为错误、 发生异常和噪音。
+<td align="left">定义<a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85)" data-raw-source="[WPP_CONTROL_GUIDS](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))">WPP_CONTROL_GUIDS</a>具有指定的宏<a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">控制 GUID</a>和 WPP_DEFINE_BIT 项名为错误、 发生异常和噪音。
 <p>这是将宏添加到源代码文件的替代方法。</p>
 <p><em>GUID</em>表示控件的 GUID。</p></td>
 </tr>
@@ -163,7 +163,7 @@ ms.locfileid: "63379110"
 <tr class="odd">
 <td align="left"><p>函数以生成跟踪消息</p></td>
 <td align="left"><p><strong>-f u n c:</strong><em>FunctionDescription</em></p></td>
-<td align="left"><p>指定的替代方法<a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>宏。 然后可以使用这些函数以生成跟踪消息。</p>
+<td align="left"><p>指定的替代方法<a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>宏。 然后可以使用这些函数以生成跟踪消息。</p>
 <p>例如，可以定义一个函数，如指定标志和跟踪消息的级别：</p>
 <pre space="preserve"><code>-func (DoMyTraceMessage(LEVEL,FLAGS,MSG,...)</code></pre>
 <p>可以使用的多个实例<strong>-func</strong>选项。</p>

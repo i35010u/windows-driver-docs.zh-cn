@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f2daa093204fe1b916c06dc6a29d871cab8589da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e77d64da9d540cdefbe767f92af8041705e45c32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380657"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373212"
 ---
 # <a name="dsmsetloadbalancepolicy-function"></a>DsmSetLoadBalancePolicy 函数
 
@@ -40,7 +40,7 @@ void DsmSetLoadBalancePolicy(
 ----------
 
 *LoadBalancePolicy*   
-一个[ **DsmSetLoadBalancePolicy\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff552680)结构。
+一个[ **DsmSetLoadBalancePolicy\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicy_out)结构。
 
 *状态*   
 操作的状态。

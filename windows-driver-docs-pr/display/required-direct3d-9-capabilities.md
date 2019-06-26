@@ -4,17 +4,17 @@ ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
 description: 为用户模式驱动程序以访问 Direct3D 9 功能所需的功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74dabea61ced318c1f29ddc90c9851ae954a5439
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3eef9102eef5761f7f71fa2bccb8c5385002dccc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376613"
 ---
 # <a name="required-direct3d-9-capabilities"></a>必需的 Direct3D 9 功能
 
 
-应用程序完全访问 Microsoft Direct3D 版本 9 的功能\_1，9\_2 和 9\_3，用户模式驱动程序必须公开某些硬件功能。 这些功能都表示方面[ **D3DCAPS9** ](https://msdn.microsoft.com/library/windows/desktop/bb172513)返回的用户模式驱动程序的结构[ *GetCaps* ](https://msdn.microsoft.com/library/windows/hardware/ff566762)函数。 若要指示支持的功能，该驱动程序必须设置的这些成员**D3DCAPS9**到按位 OR，所有相应的标志值：
+应用程序完全访问 Microsoft Direct3D 版本 9 的功能\_1，9\_2 和 9\_3，用户模式驱动程序必须公开某些硬件功能。 这些功能都表示方面[ **D3DCAPS9** ](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)返回的用户模式驱动程序的结构[ *GetCaps* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数。 若要指示支持的功能，该驱动程序必须设置的这些成员**D3DCAPS9**到按位 OR，所有相应的标志值：
 
 ## <a name="span-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanminimum-capabilities-for-direct3d-level-91"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>最小为 Direct3D 功能级别 9\_1
 
@@ -26,7 +26,7 @@ ms.locfileid: "63383225"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb172513" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/bb172513)"><strong>D3DCAPS9</strong> </a>成员</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>成员</th>
 <th align="left">标记值</th>
 </tr>
 </thead>
@@ -174,7 +174,7 @@ ms.locfileid: "63383225"
 
 **请注意**这些要求也适用：
 -   该驱动程序还必须设置**TextureCaps**成员添加到值为 D3DPTEXTURECAPS\_NONPOW2CONDITIONAL 和 D3DPTEXTURECAPS\_POW2，或对两者都不。
--   当驱动程序对应的事件，其中[ **D3DDDIARG\_CREATEQUERY**](https://msdn.microsoft.com/library/windows/hardware/ff542958)。**QueryType**是 D3DDDIQUERYTYPE\_事件，它必须始终设置事件的**BOOL**值设为**TRUE**响应时。 请参阅[ *CreateQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540673)并**D3DDDIARG\_CREATEQUERY**。
+-   当驱动程序对应的事件，其中[ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType**是 D3DDDIQUERYTYPE\_事件，它必须始终设置事件的**BOOL**值设为**TRUE**响应时。 请参阅[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)并**D3DDDIARG\_CREATEQUERY**。
 
  
 
@@ -190,7 +190,7 @@ ms.locfileid: "63383225"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb172513" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/bb172513)"><strong>D3DCAPS9</strong> </a>成员</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>成员</th>
 <th align="left">标记值</th>
 </tr>
 </thead>
@@ -249,7 +249,7 @@ ms.locfileid: "63383225"
  
 
 **请注意**此要求同样适用：
--   当驱动程序响应*z*-测试查询，其中[ **D3DDDIARG\_CREATEQUERY**](https://msdn.microsoft.com/library/windows/hardware/ff542958)。**QueryType**是 D3DDDIQUERYTYPE\_封闭，它必须始终设置查询的**UINT**为非零值在响应时的值。 请参阅[ *CreateQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540673)并**D3DDDIARG\_CREATEQUERY**。
+-   当驱动程序响应*z*-测试查询，其中[ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType**是 D3DDDIQUERYTYPE\_封闭，它必须始终设置查询的**UINT**为非零值在响应时的值。 请参阅[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)并**D3DDDIARG\_CREATEQUERY**。
 
  
 
@@ -265,7 +265,7 @@ ms.locfileid: "63383225"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb172513" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/bb172513)"><strong>D3DCAPS9</strong> </a>成员</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>成员</th>
 <th align="left">标记值</th>
 </tr>
 </thead>

@@ -4,12 +4,12 @@ description: 若要运行 MITT 测试，必须在新的 MITT 板上安装 MITT �
 ms.assetid: 4467B82F-7B06-430B-A0CB-A6825045E5F4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0f35e136ca13e608bbb3c25ae2975cfbe5a309
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe48e730bb5c8a7bae4c7eaa9126b3019cd4eaae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373789"
 ---
 # <a name="get-started-with-mitt"></a>MITT 入门
 
@@ -27,8 +27,8 @@ ms.locfileid: "63348139"
 ## <a name="before-you-begin"></a>开始之前...
 
 
--   [下载 MITT 软件包](https://msdn.microsoft.com/library/windows/hardware/dn919810)。
--   [购买硬件使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919811)
+-   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。
+-   [购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)
 -   了解如何使用提升的特权运行 Windows 命令行界面。 测试工具的安装需要提升的命令窗口。 为该窗口中，您可以打开命令提示符窗口使用**以管理员身份运行**选项。
 
 ## <a name="computer-setup-for-running-mitt-tests"></a>运行 MITT 测试的计算机设置
@@ -38,7 +38,7 @@ ms.locfileid: "63348139"
 
 -   计算机必须运行 Windows 8.1 版本的操作系统。
 -   计算机必须安装了 MITT 软件程序包。
--   计算机必须作为单独的计算机上运行的内核调试程序的目标连接。 有关如何获取 Windbg 的详细信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063.aspx)。
+-   计算机必须作为单独的计算机上运行的内核调试程序的目标连接。 有关如何获取 Windbg 的详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
     **请注意**  Windbg 可作为独立工具集进行安装。
 
      
@@ -52,13 +52,13 @@ ms.locfileid: "63348139"
 ## <a name="install-wdtf-runtime-library"></a>安装 WDTF 运行时库
 
 
-若要运行 MITT 测试，需要 Windows 驱动程序测试框架 (WDTF)。 在安装 Windows Driver Kit (WDK) 时，运行时自动安装。 完整的安装说明，请按照中所述的步骤[WDTF 运行时库](https://msdn.microsoft.com/library/windows/hardware/hh831856)。
+若要运行 MITT 测试，需要 Windows 驱动程序测试框架 (WDTF)。 在安装 Windows Driver Kit (WDK) 时，运行时自动安装。 完整的安装说明，请按照中所述的步骤[WDTF 运行时库](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 **下载位置**:[WDK 和 WinDbg 下载](https://go.microsoft.com/fwlink/p/?LinkId=733614)
 
 运行时已安装此处 %programfiles （x86） %\\Windows 工具包\\8.1\\测试\\运行时\\TAEF
 
-待测试系统必须连接到内核调试程序。 调试工具已安装 WDK。 有关详细信息，请参阅[调试工具的 Windows （WinDbg、 KD、 CDB、 NTSD）](https://msdn.microsoft.com/library/windows/hardware/ff551063)并[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff558823)。
+待测试系统必须连接到内核调试程序。 调试工具已安装 WDK。 有关详细信息，请参阅[调试工具的 Windows （WinDbg、 KD、 CDB、 NTSD）](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)并[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbols)。
 
 ## <a name="install-mitt-firmware"></a>安装 MITT 固件
 
@@ -69,15 +69,15 @@ ms.locfileid: "63348139"
 
     ![设备节点的 mitt](images/install-mitt.png)
 
-4.  右键单击节点并选择**更新驱动程序软件...**.
+4.  右键单击节点并选择**更新驱动程序软件...** .
 5.  选择**浏览计算机以查找驱动程序软件**中**更新驱动程序软件**对话框。
 6.  选择**让我在我的计算机上从设备驱动程序的列表中选取**。
 7.  选择**显示所有设备**然后单击**下一步**中**从以下列表中选择你的设备类型**页。
 8.  单击**从磁盘安装...** 上**选择你想要安装这个硬件的设备驱动程序**页。
-9.  浏览到 MITT 安装目录 (Program Files\\MITT\\*&lt;体系结构&gt;* 或 Program Files (x86)\\MITT\\ *&lt;体系结构&gt;*) 中**从磁盘安装对话框**然后单击**Ok**。
+9.  浏览到 MITT 安装目录 (Program Files\\MITT\\ *&lt;体系结构&gt;* 或 Program Files (x86)\\MITT\\ *&lt;体系结构&gt;* ) 中**从磁盘安装对话框**然后单击**Ok**。
 10. 下**制造商**选择**Microsoft**。 下**模型**选择**USB MUTT 默认**从列表中单击**下一步**。
 11. 单击**是**安装的驱动程序。 忽略该驱动程序有关的警告可能与硬件兼容。 关闭的最后一页。
-12. 在命令提示符中从 Program Files\\MITT\\*&lt;体系结构&gt;*，运行以下命令：
+12. 在命令提示符中从 Program Files\\MITT\\ *&lt;体系结构&gt;* ，运行以下命令：
 
     **MuttUtil.exe -List**
 
@@ -85,7 +85,7 @@ ms.locfileid: "63348139"
 
     上面的输出显示 WinUSB 加载作为看板的设备驱动程序。
 
-13. 有两个单独的芯片需要 MITT 板上的固件。 对于此任务中，使用[MuttUtil](https://msdn.microsoft.com/library/windows/hardware/dn376874)。 运行此命令：
+13. 有两个单独的芯片需要 MITT 板上的固件。 对于此任务中，使用[MuttUtil](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。 运行此命令：
 
     **MuttUtil.exe – UpdateFirmware**
 
@@ -116,7 +116,7 @@ ms.locfileid: "63348139"
 -   不建议 MITT 直接连接到主计算机上的 xHCI 根集线器。 使用安装程序，测试可能会挂起随机。 作为一种解决方法，将添加一个电源的 USB 2.0 集线器 xHCI 端口和 MITT 板之间。
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

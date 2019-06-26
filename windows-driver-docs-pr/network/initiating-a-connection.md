@@ -11,17 +11,17 @@ keywords:
 - SAN 套接字 WDK，启动连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff266f71080f3b8cee150d6344405dffde130562
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 605efc2affc32ddc1cc0881bdafdfed8b714ab36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324926"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381263"
 ---
 # <a name="initiating-a-connection"></a>发起连接
 
 
-Windows 套接字后交换机接收**WSPConnect**由应用程序，此开关启动的调用进行比较的连接请求的目标地址的 IP 子网的交换机的表中的地址与该 SAN 服务提供程序提供服务。 如果任一这些子网中包括此目标地址，调用该交换机[ **WSPSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566319)并[ **WSPBind** ](https://msdn.microsoft.com/library/windows/hardware/ff566268)的函数相应的 SAN 服务提供商联系以创建和绑定套接字时，如中所述[创建和绑定 SAN 套接字](creating-and-binding-san-sockets.md)。 应用程序的连接的交换机进程请求使用 SAN 套接字。 如果连接请求的目标地址不是 SAN 子网或 SAN 服务提供程序无法创建和绑定套接字，该开关使用 TCP/IP 提供程序建立连接。
+Windows 套接字后交换机接收**WSPConnect**由应用程序，此开关启动的调用进行比较的连接请求的目标地址的 IP 子网的交换机的表中的地址与该 SAN 服务提供程序提供服务。 如果任一这些子网中包括此目标地址，调用该交换机[ **WSPSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566319(v=vs.85))并[ **WSPBind** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566268(v=vs.85))的函数相应的 SAN 服务提供商联系以创建和绑定套接字时，如中所述[创建和绑定 SAN 套接字](creating-and-binding-san-sockets.md)。 应用程序的连接的交换机进程请求使用 SAN 套接字。 如果连接请求的目标地址不是 SAN 子网或 SAN 服务提供程序无法创建和绑定套接字，该开关使用 TCP/IP 提供程序建立连接。
 
 下图显示的 Windows 套接字如何切换请求概述与远程对等方的连接。 序列和后续部分描述了更多详细信息中的连接请求。
 
@@ -31,15 +31,15 @@ Windows 套接字后交换机接收**WSPConnect**由应用程序，此开关启�
 
 **若要执行连接请求**
 
-1.  此开关调用 SAN 服务提供商[ **WSPEventSelect** ](https://msdn.microsoft.com/library/windows/hardware/ff566287)函数。 在此调用，此开关传递 FD\_CONNECT 代码和要与该代码相关联的事件对象。 在调用**WSPEventSelect**请求连接事件的通知，并通知 SAN 服务提供商的任何后续[ **WSPConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff566275)调用中执行阻止模式。
+1.  此开关调用 SAN 服务提供商[ **WSPEventSelect** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566287(v=vs.85))函数。 在此调用，此开关传递 FD\_CONNECT 代码和要与该代码相关联的事件对象。 在调用**WSPEventSelect**请求连接事件的通知，并通知 SAN 服务提供商的任何后续[ **WSPConnect** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566275(v=vs.85))调用中执行阻止模式。
 
-2.  之后**WSPEventSelect**函数返回时，此开关调用 SAN 服务提供商**WSPConnect**函数。 在此调用中，此开关将目标地址传递之一的格式[WSK 地址系列](https://msdn.microsoft.com/library/windows/hardware/ff571151)。 SAN 服务提供商的代理驱动程序将此目标地址映射到本机通讯，并尝试建立连接。
+2.  之后**WSPEventSelect**函数返回时，此开关调用 SAN 服务提供商**WSPConnect**函数。 在此调用中，此开关将目标地址传递之一的格式[WSK 地址系列](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。 SAN 服务提供商的代理驱动程序将此目标地址映射到本机通讯，并尝试建立连接。
 
 3.  如果 SAN 服务提供商**WSPConnect**函数可以完成或立即失败连接操作，则返回相应的成功或失败代码。 如果 SAN 服务提供商**WSPConnect**函数不能立即完成连接请求，将继续在另一个线程中以异步方式执行 SAN 服务提供商的连接操作。 SAN 服务提供程序的**WSPConnect**函数将返回错误消息 WSAEWOULDBLOCK 指示的套接字标记为非阻止性和连接操作不能立即完成的。
 
 4.  SAN 服务提供商连接操作完成后，调用 Win32 **SetEvent**函数中以前注册的事件对象发出信号**WSPEventSelect**调用。
 
-5.  事件对象发出信号后，此开关调用 SAN 服务提供商[ **WSPEnumNetworkEvents** ](https://msdn.microsoft.com/library/windows/hardware/ff566284)函数来获取连接操作的结果。
+5.  事件对象发出信号后，此开关调用 SAN 服务提供商[ **WSPEnumNetworkEvents** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566284(v=vs.85))函数来获取连接操作的结果。
 
 **请注意**  开关建立通过 SAN 服务提供商的连接后，切换不再可以为该连接使用 TCP/IP 提供程序。 SAN 服务提供商必须完全实现服务建立的连接所需的所有功能。
 
@@ -47,7 +47,7 @@ Windows 套接字后交换机接收**WSPConnect**由应用程序，此开关启�
 
 ### <a name="destroying-the-san-socket"></a>销毁 SAN 套接字
 
-如果 SAN 服务提供商**WSPConnect**函数失败，SAN 服务提供商的交换机调用[ **WSPCloseSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566273)函数来销毁 SAN 套接字。 开关然后调用 TCP/IP 服务提供商**WSPConnect**函数将转发到 TCP/IP 服务提供商连接操作，除非 SAN 服务提供程序返回以下错误代码之一的结果作为其连接操作：
+如果 SAN 服务提供商**WSPConnect**函数失败，SAN 服务提供商的交换机调用[ **WSPCloseSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566273(v=vs.85))函数来销毁 SAN 套接字。 开关然后调用 TCP/IP 服务提供商**WSPConnect**函数将转发到 TCP/IP 服务提供商连接操作，除非 SAN 服务提供程序返回以下错误代码之一的结果作为其连接操作：
 
 <a href="" id="wsaeconnreset"></a>**WSAECONNRESET**  
 指示没有任何应用程序正在侦听指定端口的目标地址
@@ -62,7 +62,7 @@ Windows 套接字后交换机接收**WSPConnect**由应用程序，此开关启�
 
 ### <a name="session-negotiation"></a>会话协商
 
-切换开关建立通过 SAN 服务提供商的连接后，调用 SAN 服务提供商[ **WSPRegisterMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff566311)扩展函数以预先注册的缓冲区的内存要接收传入消息的数组。 开关接下来，调用 SAN 服务提供商[ **WSPRecv** ](https://msdn.microsoft.com/library/windows/hardware/ff566309)函数发布一个或多个缓冲区，以接收来自远程对等方的传入消息的数据。 开关然后通过交换包含初始流控制信息的消息的一对协商与其远程对等方的会话。 此开关的协商会话后，它完成**WSPConnect**调用的应用程序启动。 然后，应用程序可以开始在连接上的发送和接收数据。 有关详细信息，请参阅[接受连接请求](accepting-connection-requests.md)。
+切换开关建立通过 SAN 服务提供商的连接后，调用 SAN 服务提供商[ **WSPRegisterMemory** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566311(v=vs.85))扩展函数以预先注册的缓冲区的内存要接收传入消息的数组。 开关接下来，调用 SAN 服务提供商[ **WSPRecv** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566309(v=vs.85))函数发布一个或多个缓冲区，以接收来自远程对等方的传入消息的数据。 开关然后通过交换包含初始流控制信息的消息的一对协商与其远程对等方的会话。 此开关的协商会话后，它完成**WSPConnect**调用的应用程序启动。 然后，应用程序可以开始在连接上的发送和接收数据。 有关详细信息，请参阅[接受连接请求](accepting-connection-requests.md)。
 
 通过 SAN 套接字建立连接后，此开关不会调用 SAN 服务提供商**WSPConnect**函数。 开关在内部处理的应用程序向交换机的发起呼叫**WSPConnect**函数来轮询连接请求。
 

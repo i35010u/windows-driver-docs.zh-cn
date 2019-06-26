@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28173
-ms.openlocfilehash: 07d445a07d935364dc6b172a946ca38b21dbfc25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a25831462041752a09ea48d40ae9f1146d65f9dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361310"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371481"
 ---
 # <a name="c28173"></a>C28173
 
@@ -37,7 +37,7 @@ ms.locfileid: "63361310"
 
 不会不适应代码获取比它要求更少寄存器，则会出现此警告消息。 当一个函数将调用**IoGetDmaAdapter**，代码分析工具模拟**IoGetDmaAdapter**函数返回不是请求的较小的寄存器的数量。 调用的函数必须处理这种情况，并返回成功。
 
-请注意的是其他驱动程序可能会失败，具有 4 GB 以上的系统的方式。 应检查这些可能的故障模式的代码。 有关 4GB 内存问题和映射寄存器的详细信息，请参阅[ **NdisMAllocateMapRegisters**](https://msdn.microsoft.com/library/windows/hardware/ff552300)。
+请注意的是其他驱动程序可能会失败，具有 4 GB 以上的系统的方式。 应检查这些可能的故障模式的代码。 有关 4GB 内存问题和映射寄存器的详细信息，请参阅[ **NdisMAllocateMapRegisters**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552300(v=vs.85))。
 
  
 

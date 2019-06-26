@@ -7,12 +7,12 @@ keywords:
 - 微型端口驱动程序 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48e0ccbd2ee301100b75b3fc4428067c7e47e8ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e39ca269b03754af4270ab9f1ef2eb2f2c159c1a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373600"
 ---
 # <a name="scsi-verification"></a>SCSI 验证
 
@@ -46,11 +46,11 @@ SCSI 验证选项可检测到 SCSI 例程的几个的误用。 还有可能单�
 
 -   总线重置保存期结束，但微型端口驱动程序仍有未完成的请求。
 
-请参阅[ **Bug 检查 0xF1** ](https://msdn.microsoft.com/library/windows/hardware/ff560365) (SCSI\_VERIFIER\_检测到\_冲突) 的 bug 的完整列表检查参数。
+请参阅[ **Bug 检查 0xF1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xf1--scsi-verifier-detected-violation) (SCSI\_VERIFIER\_检测到\_冲突) 的 bug 的完整列表检查参数。
 
 除了这些冲突 SCSI 验证还可监视使用不当的微型端口驱动程序的内存的访问。 所做的微型端口驱动程序的两个常见内存冲突后请求完成后，访问 SRB 扩展和访问 SRB **DataBuffer**微型端口驱动程序时未指定**MapBuffers**.
 
-这种内存冲突通常会导致[ **Bug 检查 0xD1** ](https://msdn.microsoft.com/library/windows/hardware/ff560244) (驱动程序\_IRQL\_不\_较少\_或\_等于)其颁发。
+这种内存冲突通常会导致[ **Bug 检查 0xD1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xd1--driver-irql-not-less-or-equal) (驱动程序\_IRQL\_不\_较少\_或\_等于)其颁发。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
@@ -79,7 +79,7 @@ SCSI 验证选项可检测到 SCSI 例程的几个的误用。 还有可能单�
 <thead>
 <tr class="header">
 <th align="left">位</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">效果</th>
 </tr>
 </thead>

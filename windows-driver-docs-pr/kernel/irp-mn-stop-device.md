@@ -6,12 +6,12 @@ ms.assetid: a5c81db0-e753-4d91-97e4-c58ea05f5ce8
 keywords:
 - IRP_MN_STOP_DEVICE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: d51e1856e9bb4b97d93a56cb59cba07c3fe58577
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5539899abb88753e7a39e2230cacf0875e8c04c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381402"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371845"
 ---
 # <a name="irpmnstopdevice"></a>IRP\_MN\_STOP\_DEVICE
 
@@ -54,13 +54,13 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 为此 IRP、 Windows 2000 和更高版本的驱动程序的响应中停用设备并释放正在使用的设备，例如 I/O 端口并中断任何硬件资源。
 
-在 Windows 2000 及更高版本，停止 IRP 只用来释放设备的硬件资源，以便可以重新配置。 一旦重新配置资源，是重启设备。 停止 IRP 不是删除 IRP 的前提。 请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)有关中的 PnP Irp 的订单详细信息发送到设备。
+在 Windows 2000 及更高版本，停止 IRP 只用来释放设备的硬件资源，以便可以重新配置。 一旦重新配置资源，是重启设备。 停止 IRP 不是删除 IRP 的前提。 请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)有关中的 PnP Irp 的订单详细信息发送到设备。
 
 在 Windows 98 上 / 我停止 IRP 也使用失败的启动后，设备将被禁用。 在这些操作系统运行的 WDM 驱动程序应停用设备、 故障任何传入的 I/O，并禁用和取消注册任何用户模式接口。
 
 驱动程序不得失败此 IRP。 如果驱动程序无法释放设备的硬件资源，则必须失败前面的查询停止 IRP。
 
-请参阅[停止设备](https://msdn.microsoft.com/library/windows/hardware/ff563868)有关处理的详细信息停止 Irp。
+请参阅[停止设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/stopping-a-device)有关处理的详细信息停止 Irp。
 
 **发送此 IRP**
 
@@ -89,9 +89,9 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 [**IRP\_MN\_START\_DEVICE**](irp-mn-start-device.md)
 
-[**IoSetDeviceInterfaceState**](https://msdn.microsoft.com/library/windows/hardware/ff549700)
+[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)
 
-[**IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)
+[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)
 
  
 

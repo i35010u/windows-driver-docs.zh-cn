@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4a33043e34bcd5cc4cd6a25b47378a59fe60daf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c638972c78b43b8b2331ccc32a0e0961299a0187
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324465"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370979"
 ---
 # <a name="mrxqueryquotainfo-routine"></a>MRxQueryQuotaInfo routine
 
 
-*MRxQueryQuotaInfo*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向查询文件系统对象的配额信息。
+*MRxQueryQuotaInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询文件系统对象的配额信息。
 
 <a name="syntax"></a>语法
 ------
@@ -149,7 +149,7 @@ RDBSS 发出调用*MRxQueryQuotaInfo*接收响应[ **IRP\_MJ\_查询\_配额**](
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

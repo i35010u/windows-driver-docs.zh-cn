@@ -6,12 +6,12 @@ ms.assetid: 5ae4c6c5-d8f2-4dc5-8cfd-ecb751fc88be
 keywords:
 - IRP_MJ_READ Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: fee47dc083df75a8e15a89a55e9563c2274c4f9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0be7c5512778f006f6399b747b14558095a66cfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368449"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370897"
 ---
 # <a name="irpmjread"></a>IRP\_MJ\_READ
 
@@ -32,7 +32,7 @@ ms.locfileid: "63368449"
 
 某些驱动程序使用处的值**Parameters.Read.Key**排序传入的读取的请求到设备队列中或驱动程序管理的 Irp 的内部队列中以驱动程序确定的顺序。
 
-某些类型的驱动程序还使用处的值**Parameters.Read.ByteOffset**，指示在传输操作的起始偏移量。 有关示例，请参阅[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff549327)可安装文件系统 (IFS) 文档中的主题。
+某些类型的驱动程序还使用处的值**Parameters.Read.ByteOffset**，指示在传输操作的起始偏移量。 有关示例，请参阅[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)可安装文件系统 (IFS) 文档中的主题。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -46,7 +46,7 @@ ms.locfileid: "63368449"
 <a name="operation"></a>操作
 ---------
 
-接收的读取请求时，更高级别的驱动程序设置中的下一步较低的驱动程序，IRP 的 I/O 堆栈位置或它会创建并设置其他 Irp 的一个或多个较低的驱动程序。 可以设置其[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程，这是可选的输入 IRP，但所需的驱动程序创建 Irp，通过调用[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679). 然后，该驱动程序将传递到下一步低驱动程序和请求[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+接收的读取请求时，更高级别的驱动程序设置中的下一步较低的驱动程序，IRP 的 I/O 堆栈位置或它会创建并设置其他 Irp 的一个或多个较低的驱动程序。 可以设置其[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程，这是可选的输入 IRP，但所需的驱动程序创建 Irp，通过调用[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine). 然后，该驱动程序将传递到下一步低驱动程序和请求[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
 
 接收到的读取请求，将设备驱动程序将数据从传输其设备到系统内存。 设备驱动程序集**信息**时完成 IRP，传输的 I/O 状态块的字节数的字段。
 
@@ -73,9 +73,9 @@ ms.locfileid: "63368449"
 
 [*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-[**IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
 
-[**IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)
+[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)
 
  
 

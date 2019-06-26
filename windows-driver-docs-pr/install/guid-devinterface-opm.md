@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 554943cb78fa3690d74e5dae11538f048dc42210
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29f8088e3aca5a3129395af8dfe523f3f342b289
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375253"
 ---
 # <a name="guiddevinterfaceopm"></a>GUID_DEVINTERFACE_OPM
 
 
-GUID_DEVINTERFACE_OPM[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)显示适配器驱动程序的上下文中运行，为定义[Windows Vista 显示器驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff570593)和支持输出保护监视子设备管理 (OPM)。
+GUID_DEVINTERFACE_OPM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)显示适配器驱动程序的上下文中运行，为定义[Windows Vista 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)和支持输出保护监视子设备管理 (OPM)。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_OPM[设备接口类](https://msdn.microsoft.com/library/window
 
 驱动程序注册通知的操作系统和应用程序的 OPM 设备接口存在此设备接口类的实例。
 
-如果显示微型端口驱动程序支持直接调用 OPM 接口的这[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)，内核模式组件可以通过调用微型端口驱动程序检索直接调用接口[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)函数并提供 GUID_DEVINTERFACE_OPM 指定接口类型。
+如果显示微型端口驱动程序支持直接调用 OPM 接口的这[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)，内核模式组件可以通过调用微型端口驱动程序检索直接调用接口[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数并提供 GUID_DEVINTERFACE_OPM 指定接口类型。
 
-OPM 有关的信息，请参阅[支持输出保护管理器](https://msdn.microsoft.com/library/windows/hardware/ff569879)。
+OPM 有关的信息，请参阅[支持输出保护管理器](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)。
 
 <a name="requirements"></a>要求
 ------------

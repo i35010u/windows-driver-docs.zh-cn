@@ -5,12 +5,12 @@ ms.assetid: 65553a3f-57af-49ef-a3b7-ed35df0a319d
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SMS_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c60af8cff49121851565aa71b41cd1eb8dcb20e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bbed29918c313239e12a8678c9335cfdb75ce7ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372536"
 ---
 # <a name="ndisstatuswwansmsstatus"></a>NDIS\_状态\_WWAN\_SMS\_状态
 
@@ -23,7 +23,7 @@ ms.locfileid: "63372215"
 
 微型端口驱动程序还可以发送未经请求的事件与该通知。
 
-使用此通知[ **NDIS\_WWAN\_SMS\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567945)结构。
+使用此通知[ **NDIS\_WWAN\_SMS\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -55,7 +55,7 @@ ms.locfileid: "63372215"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_SMS\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/ff567945)
+[**NDIS\_WWAN\_SMS\_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status)
 
 [**NDIS\_STATUS\_WWAN\_SMS\_RECEIVE**](ndis-status-wwan-sms-receive.md)
 

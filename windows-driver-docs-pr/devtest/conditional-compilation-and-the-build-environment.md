@@ -9,12 +9,12 @@ keywords:
 - 条件编译 WDK 调试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a628fedf983e1a4f9fbb094cc99b28e9cf0a2d
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: f6550d4411052d1a90e7dd87871f245f46976ad4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371586"
 ---
 # <a name="conditional-compilation-and-the-build-environment"></a>条件编译和生成环境
 
@@ -30,7 +30,7 @@ ms.locfileid: "66815102"
 
 -   如果使用发行版 （免费） 的生成配置，创建您的驱动程序**DBG**将等于 0 （或如果包括 wdm.h 中既不 ntddk.h 则是未定义）。
 
-调试例程[ **ASSERT**](https://msdn.microsoft.com/library/windows/hardware/ff542107)， [ **ASSERTMSG**](https://msdn.microsoft.com/library/windows/hardware/ff542113)， [ **KdBreakPoint**](https://msdn.microsoft.com/library/windows/hardware/ff548063)， [ **KdBreakPointWithStatus**](https://msdn.microsoft.com/library/windows/hardware/ff548065)， [ **KdPrint**](https://msdn.microsoft.com/library/windows/hardware/ff548092)，并[ **KdPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548100)是实际有条件地根据的值定义的宏**DBG**。 如果该值为 0，这些宏不会进行任何操作。 因此，这些宏处于活动状态只在一个驱动程序 （已选中） 的调试版本中。
+调试例程[ **ASSERT**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))， [ **ASSERTMSG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-assertmsg)， [ **KdBreakPoint**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff548063(v=vs.85))， [ **KdBreakPointWithStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdbreakpointwithstatus)， [ **KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)，并[ **KdPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)是实际有条件地根据的值定义的宏**DBG**。 如果该值为 0，这些宏不会进行任何操作。 因此，这些宏处于活动状态只在一个驱动程序 （已选中） 的调试版本中。
 
 **请注意**   "Kd"的字母开头的所有调试例程不起作用的驱动程序，免费版本中除**KdRefreshDebuggerNotPresent**。
 

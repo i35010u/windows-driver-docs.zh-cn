@@ -4,12 +4,12 @@ description: （并发硬件和操作系统） 的混沌测试运行各种即插
 ms.assetid: FA0D73DC-B0B8-4CA7-8DDC-A2C3EC106C3F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ba7b831802cf9ffe7b76bc5b29526a0c10cbf23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ca1b44cfc5d0303dbceceb873ab86129beb0525
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343981"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371617"
 ---
 # <a name="chaos-tests-device-fundamentals"></a>混沌测试（设备基础功能）
 
@@ -34,7 +34,7 @@ ms.locfileid: "63343981"
 <td align="left"><p><span id="Disable_Enhanced_Device_Testing__EDT__Support_"></span><span id="disable_enhanced_device_testing__edt__support_"></span><span id="DISABLE_ENHANCED_DEVICE_TESTING__EDT__SUPPORT_"></span>禁用增强的设备测试 (EDT) 支持</p></td>
 <td align="left"><p>此测试卸载测试筛选器驱动程序 (msdmfilt.sys) 作为使用 DQ 参数指定的设备上的上限筛选器。 此测试筛选器获取作为此测试类别运行测试的一部分安装</p>
 <p>即插即用驱动程序测试使用 EDT 筛选器驱动程序将 IRP_MN_CANCEL_REMOVE_DEVICE 发送到目标设备堆栈。</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
@@ -44,7 +44,7 @@ ms.locfileid: "63343981"
 <p><strong>测试二进制文件：</strong>Devfund_ChaosTest.dll</p>
 <p><strong>测试方法：</strong>RunCHAOSTest</p>
 <p><strong>参数：</strong></p>
-<p><em>DQ</em> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><em>DQ</em> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>TestPeriod</em> -指定多长时间运行的测试 （以分钟为单位）。</p></td>
 </tr>
 </tbody>
@@ -55,13 +55,13 @@ ms.locfileid: "63343981"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[如何在运行时使用 Visual Studio 测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
-[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)
 
 [设备基础功能测试](device-fundamentals-tests.md)
 
-[设备基础功能测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[设备基础功能测试参数](https://docs.microsoft.com/windows-hardware/drivers)
 
 [PwrTest](pwrtest.md)
 

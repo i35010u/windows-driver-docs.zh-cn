@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 643aad2d1371acb45e71dc5310543a78a488ca55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9975dab538daa1f2b07d01d69efdeda8091d3519
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351829"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377913"
 ---
 # <a name="kspropertycameracontrolextendedroiconfigcaps"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_投资回报率\_CONFIGCAPS
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_投资回报率\_CONFIGCAPS**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn917962)枚举用于查询的投资回报率功能。
+**KSPROPERTY\_CAMERACONTROL\_扩展\_投资回报率\_CONFIGCAPS**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举用于查询的投资回报率功能。
 
 ## <a name="usage-summary-table"></a>使用率摘要表
 

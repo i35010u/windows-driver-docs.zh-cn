@@ -8,19 +8,19 @@ keywords:
 - 启动过程中日志 WDK 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3586e9ac23a2c38be1067a0a8520b2ac91b88bfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b127896711801de958df5ca0df758fec8bfe99b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372689"
 ---
 # <a name="how-to-log-to-the-global-logger-session"></a>如何记录到全局记录器会话
 
 
 使用以下过程配置的驱动程序将记录到全局记录器跟踪会话：
 
-1. 将以下定义添加到驱动程序代码。 插入之间定义[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏定义和 include 语句[跟踪消息标头文件](trace-message-header-file.md)。
+1. 将以下定义添加到驱动程序代码。 插入之间定义[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏定义和 include 语句[跟踪消息标头文件](trace-message-header-file.md)。
    ```
    #define WPP_GLOBALLOGGER
    ```

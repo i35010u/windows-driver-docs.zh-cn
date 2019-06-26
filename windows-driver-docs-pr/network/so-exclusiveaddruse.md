@@ -5,12 +5,12 @@ ms.assetid: d281086f-4d8b-4e1e-b2bd-7b0a20338222
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_EXCLUSIVEADDRUSE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f2d6739de37f83f374896125e95913593eb6aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 487a9c2557341cfb7eba1b6fddc414ccf3b0677c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376411"
 ---
 # <a name="soexclusiveaddruse"></a>因此\_EXCLUSIVEADDRUSE
 
@@ -19,7 +19,7 @@ SO 的状态\_EXCLUSIVEADDRUSE 套接字选项用于确定是否将向其绑定�
 
 如果 WSK 应用程序将此套接字选项，则它必须实现之前接字绑定到本地传输地址。
 
-若要设置此套接字选项的状态，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要设置此套接字选项的状态，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ SO 的状态\_EXCLUSIVEADDRUSE 套接字选项用于确定是否将向其绑定�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -127,7 +127,7 @@ WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数
 
 此套接字选项的默认状态是禁用了独占使用的本地传输地址。
 
-详细了解使用 SO\_EXCLUSIVEADDRUSE 套接字选项和其影响上共享本地传输地址之间套接字，请参阅[共享传输地址](https://msdn.microsoft.com/library/windows/hardware/ff570806)。
+详细了解使用 SO\_EXCLUSIVEADDRUSE 套接字选项和其影响上共享本地传输地址之间套接字，请参阅[共享传输地址](https://docs.microsoft.com/windows-hardware/drivers/network/sharing-transport-addresses)。
 
 <a name="requirements"></a>要求
 ------------

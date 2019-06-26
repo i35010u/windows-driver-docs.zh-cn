@@ -8,12 +8,12 @@ keywords:
 - 同步 WDK Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c10c34d0b75e6f649c0d4737b7f2a247f3d4f516
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34bd7a6dd81b0343e3ca6a0dd45f772206791cea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377239"
 ---
 # <a name="cancel-safe-irp-queues"></a>可安全取消的 IRP 队列
 
@@ -27,7 +27,7 @@ ms.locfileid: "63338576"
 
 2. 只要该驱动程序必须实际插入或从队列中删除 IRP，它使用系统提供**IoCsq * Xxx*** 例程。 这些例程处理所有同步和 IRP 取消逻辑的驱动程序。
 
-使用取消安全 IRP 队列的驱动程序不实现[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程以支持 IRP 取消。
+使用取消安全 IRP 队列的驱动程序不实现[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程以支持 IRP 取消。
 
 框架将确保驱动程序插入和从其队列中以原子方式移除 Irp。 它还确保 IRP 取消已正确实现。 不使用 framework 的驱动程序必须手动锁定和解锁之前执行任何插入和删除队列。 它们还必须避免在实现时可能会导致的争用条件*取消*例程。 (有关可能会出现争用条件的说明，请参阅[同步 IRP 取消](synchronizing-irp-cancellation.md)。)
 
@@ -41,35 +41,35 @@ ms.locfileid: "63338576"
 
 若要实现取消安全 IRP 队列，驱动程序必须提供以下例程：
 
--   下面的例程将 Irp 插入队列之一：[*CsqInsertIrp* ](https://msdn.microsoft.com/library/windows/hardware/ff542947)或[ *CsqInsertIrpEx*](https://msdn.microsoft.com/library/windows/hardware/ff542956)。 *CsqInsertIrpEx*是扩展的版本*CsqInsertIrp*; 队列使用一个或另一个实现。
+-   下面的例程将 Irp 插入队列之一：[*CsqInsertIrp* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_insert_irp)或[ *CsqInsertIrpEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_insert_irp_ex)。 *CsqInsertIrpEx*是扩展的版本*CsqInsertIrp*; 队列使用一个或另一个实现。
 
--   一个[ *CsqRemoveIrp* ](https://msdn.microsoft.com/library/windows/hardware/ff542968)从队列中移除指定的 IRP 的例程。
+-   一个[ *CsqRemoveIrp* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_remove_irp)从队列中移除指定的 IRP 的例程。
 
--   一个[ *CsqPeekNextIrp* ](https://msdn.microsoft.com/library/windows/hardware/ff542959)将指针返回到下一步 IRP 遵循在队列中指定的 IRP 的例程。 这是系统会将传递*PeekContext*值，它接收来自[ **IoCsqRemoveNextIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549072)。 该驱动程序可以将该值以任何方式解释。
+-   一个[ *CsqPeekNextIrp* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_peek_next_irp)将指针返回到下一步 IRP 遵循在队列中指定的 IRP 的例程。 这是系统会将传递*PeekContext*值，它接收来自[ **IoCsqRemoveNextIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremovenextirp)。 该驱动程序可以将该值以任何方式解释。
 
--   这两个以下的例程，以允许系统锁定和解锁 IRP 队列：[*CsqAcquireLock* ](https://msdn.microsoft.com/library/windows/hardware/ff542934)并[ *CsqReleaseLock*](https://msdn.microsoft.com/library/windows/hardware/ff542965)。
+-   这两个以下的例程，以允许系统锁定和解锁 IRP 队列：[*CsqAcquireLock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_acquire_lock)并[ *CsqReleaseLock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_release_lock)。
 
--   一个[ *CsqCompleteCanceledIrp* ](https://msdn.microsoft.com/library/windows/hardware/ff542940)完成取消的 IRP 的例程。
+-   一个[ *CsqCompleteCanceledIrp* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_complete_canceled_irp)完成取消的 IRP 的例程。
 
-驱动程序的例程的指针存储在[ **IO\_CSQ** ](https://msdn.microsoft.com/library/windows/hardware/ff550560)结构，描述该队列。 该驱动程序分配的存储**IO\_CSQ**结构。 **IO\_CSQ**的结构保证一定保持固定的大小，因此驱动程序可以安全地将嵌入在其设备扩展的结构。
+驱动程序的例程的指针存储在[ **IO\_CSQ** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构，描述该队列。 该驱动程序分配的存储**IO\_CSQ**结构。 **IO\_CSQ**的结构保证一定保持固定的大小，因此驱动程序可以安全地将嵌入在其设备扩展的结构。
 
-驱动程序使用任一[ **IoCsqInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff549054)或[ **IoCsqInitializeEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549060)初始化结构。 使用**IoCsqInitialize**如果实现了队列[ *CsqInsertIrp*](https://msdn.microsoft.com/library/windows/hardware/ff542947)，或者**IoCsqInitializeEx**如果队列实现*CsqInsertIrpEx*。
+驱动程序使用任一[ **IoCsqInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitialize)或[ **IoCsqInitializeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinitializeex)初始化结构。 使用**IoCsqInitialize**如果实现了队列[ *CsqInsertIrp*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_insert_irp)，或者**IoCsqInitializeEx**如果队列实现*CsqInsertIrpEx*。
 
 驱动程序只需要提供每个回调例程中的基本功能。 例如，只有*CsqAcquireLock*并*CsqReleaseLock*例程实现锁处理。 系统会自动调用这些例程锁定和解锁根据队列。
 
 只要提供适当的调度例程，您可以在您的驱动程序，实现任何类型的 IRP 排队机制。 例如，驱动程序无法为链接列表，或作为优先级队列实现队列。
 
-[*CsqInsertIrpEx* ](https://msdn.microsoft.com/library/windows/hardware/ff542956)提供了到队列不超过一个更灵活界面[ *CsqInsertIrp*](https://msdn.microsoft.com/library/windows/hardware/ff542947)。 该驱动程序可以使用它的返回值以指示该操作; 结果如果它返回一个错误代码，导致插入失败。 一个*CsqInsertIrp*例程不返回一个值，因此没有简单的方法，以指示失败，完成插入操作。 此外， *CsqInsertIrpEx*采用一个附加的驱动程序定义*InsertContext*参数可用于指定使用队列实现的其他特定于驱动程序的信息。
+[*CsqInsertIrpEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_insert_irp_ex)提供了到队列不超过一个更灵活界面[ *CsqInsertIrp*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_insert_irp)。 该驱动程序可以使用它的返回值以指示该操作; 结果如果它返回一个错误代码，导致插入失败。 一个*CsqInsertIrp*例程不返回一个值，因此没有简单的方法，以指示失败，完成插入操作。 此外， *CsqInsertIrpEx*采用一个附加的驱动程序定义*InsertContext*参数可用于指定使用队列实现的其他特定于驱动程序的信息。
 
 驱动程序可以使用*CsqInsertIrpEx*来实现更复杂的 IRP 处理。 例如，如果不有任何挂起的 Irp *CsqInsertIrpEx*例程可以返回一个错误代码和驱动程序可以立即处理 IRP。 同样，如果不能再将排队 Irp， *CsqInsertIrpEx*可能会返回错误代码指示这一事实。
 
-该驱动程序就会与所有 IRP 取消处理。 系统提供[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程 Irp 的队列中。 此例程调用[ *CsqRemoveIrp* ](https://msdn.microsoft.com/library/windows/hardware/ff542968)若要从队列中删除 IRP 和[ *CsqCompleteCanceledIrp* ](https://msdn.microsoft.com/library/windows/hardware/ff542940)完成 IRP取消操作。
+该驱动程序就会与所有 IRP 取消处理。 系统提供[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程 Irp 的队列中。 此例程调用[ *CsqRemoveIrp* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_remove_irp)若要从队列中删除 IRP 和[ *CsqCompleteCanceledIrp* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_complete_canceled_irp)完成 IRP取消操作。
 
 下图说明了 IRP 取消控制流。
 
 ![说明的 irp 取消控制流关系图](images/5cancelingirp.png)
 
-基本实现[ *CsqCompleteCanceledIrp* ](https://msdn.microsoft.com/library/windows/hardware/ff542940)如下所示。
+基本实现[ *CsqCompleteCanceledIrp* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_complete_canceled_irp)如下所示。
 
 ```cpp
 VOID CsqCompleteCanceledIrp(PIO_CSQ Csq, PIRP Irp) {
@@ -80,7 +80,7 @@ VOID CsqCompleteCanceledIrp(PIO_CSQ Csq, PIRP Irp) {
 }
 ```
 
-驱动程序可以使用任何操作系统的同步基元来实现其[ *CsqAcquireLock* ](https://msdn.microsoft.com/library/windows/hardware/ff542934)并[ *CsqReleaseLock* ](https://msdn.microsoft.com/library/windows/hardware/ff542965)例程。 包括可用的同步基元[旋转锁](spin-locks.md)并[互斥体对象](mutex-objects.md)。
+驱动程序可以使用任何操作系统的同步基元来实现其[ *CsqAcquireLock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_acquire_lock)并[ *CsqReleaseLock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_csq_release_lock)例程。 包括可用的同步基元[旋转锁](spin-locks.md)并[互斥体对象](mutex-objects.md)。
 
 下面是举例说明如何将驱动程序可以实现锁定使用自旋锁。
 
@@ -109,31 +109,31 @@ VOID CsqReleaseLock(PIO_CSQ IoCsq, KIRQL Irql)
 
 驱动程序时排队和取消排队 Irp，请使用以下系统例程：
 
--   以下方法之一将 IRP 插入队列：[**IoCsqInsertIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549066)或[ **IoCsqInsertIrpEx**](https://msdn.microsoft.com/library/windows/hardware/ff549067)。
+-   以下方法之一将 IRP 插入队列：[**IoCsqInsertIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirp)或[ **IoCsqInsertIrpEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirpex)。
 
--   [**IoCsqRemoveNextIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549072)若要删除队列中的下一步 IRP。 该驱动程序可以选择指定的密钥值。
+-   [**IoCsqRemoveNextIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremovenextirp)若要删除队列中的下一步 IRP。 该驱动程序可以选择指定的密钥值。
 
-下图说明了的控制流[ **IoCsqRemoveNextIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549072)。
+下图说明了的控制流[ **IoCsqRemoveNextIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremovenextirp)。
 
 ![说明 iocsqremovenextirp 的控制流关系图](images/4iocsqremovenextirp.png)
 
--   [**IoCsqRemoveIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549070)若要从队列中删除指定的 IRP。
+-   [**IoCsqRemoveIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremoveirp)若要从队列中删除指定的 IRP。
 
-下图说明了的控制流[ **IoCsqRemoveIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549070)。
+下图说明了的控制流[ **IoCsqRemoveIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremoveirp)。
 
 ![说明 iocsqremoveirp 的控制流关系图](images/3iocsqremoveirp.png)
 
 这些例程，反过来，调度到驱动程序所提供的例程。
 
-[ **IoCsqInsertIrpEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549067)例程提供扩展功能的访问权限*CsqInsertIrpEx*例程。 它将返回所返回的状态值*CsqInsertIrpEx*。 调用方可以使用此值以确定是否或不在 IRP 已成功排队。 **IoCsqInsertIrpEx**还允许调用方指定的 InsertContext 参数的值*CsqInsertIrpEx*。
+[ **IoCsqInsertIrpEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirpex)例程提供扩展功能的访问权限*CsqInsertIrpEx*例程。 它将返回所返回的状态值*CsqInsertIrpEx*。 调用方可以使用此值以确定是否或不在 IRP 已成功排队。 **IoCsqInsertIrpEx**还允许调用方指定的 InsertContext 参数的值*CsqInsertIrpEx*。
 
 请注意，这两**IoCsqInsertIrp**并**IoCsqInsertIrpEx**队列是否可以取消安全的任何队列，调用*CsqInsertIrp*例程或*CsqInsertIrpEx*例程。 **IoCsqInsertIrp**行为在任一情况下相同。 如果**IoCsqInsertIrpEx**传递队列具有*CsqInsertIrp*例程，它的行为完全相同**IoCsqInsertIrp**。
 
-下图说明了的控制流[ **IoCsqInsertIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549066)。
+下图说明了的控制流[ **IoCsqInsertIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirp)。
 
 ![说明 iocsqinsertirp 的控制流关系图](images/iocsqinsertirp.png)
 
-下图说明了的控制流[ **IoCsqInsertIrpEx**](https://msdn.microsoft.com/library/windows/hardware/ff549067)。
+下图说明了的控制流[ **IoCsqInsertIrpEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqinsertirpex)。
 
 ![说明 iocsqinsertirpex 的控制流关系图](images/2iocsqinitializeex.png)
 
@@ -149,7 +149,7 @@ VOID CsqReleaseLock(PIO_CSQ IoCsq, KIRQL Irql)
     IoCsqRemoveNextIrp(IoCsq, NULL);
 ```
 
-或者，驱动程序无法排队和取消排队特定 Irp。 例程使用不透明[ **IO\_CSQ\_IRP\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff550567)结构，用于标识特定 Irp 队列中的。 该驱动程序队列 IRP，如下所示：
+或者，驱动程序无法排队和取消排队特定 Irp。 例程使用不透明[ **IO\_CSQ\_IRP\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构，用于标识特定 Irp 队列中的。 该驱动程序队列 IRP，如下所示：
 
 ```cpp
     IO_CSQ_IRP_CONTEXT ParticularIrpInQueue;
@@ -162,7 +162,7 @@ VOID CsqReleaseLock(PIO_CSQ IoCsq, KIRQL Irql)
     IoCsqRemoveIrp(IoCsq, Irp, &ParticularIrpInQueue);
 ```
 
-该驱动程序可能还需要从基于特定条件的队列中删除 Irp。 例如，驱动程序可能会将关联优先级与每个 IRP，以便更高的优先级 Irp 获取第一次取消排队。 该驱动程序可能会传递*PeekContext*值设置为[ **IoCsqRemoveNextIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549072)，它请求在队列中下一步的 IRP 时，系统将传递回该驱动程序。
+该驱动程序可能还需要从基于特定条件的队列中删除 Irp。 例如，驱动程序可能会将关联优先级与每个 IRP，以便更高的优先级 Irp 获取第一次取消排队。 该驱动程序可能会传递*PeekContext*值设置为[ **IoCsqRemoveNextIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocsqremovenextirp)，它请求在队列中下一步的 IRP 时，系统将传递回该驱动程序。
 
  
 

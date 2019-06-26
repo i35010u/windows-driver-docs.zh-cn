@@ -4,12 +4,12 @@ description: 本部分概述的 HYPER-V 可扩展交换机
 ms.assetid: 78181C72-FBFD-4860-A664-C297997D780F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 580a23ec1d8cb1622c0e6c47bad2a9723a29e059
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 4dc38a28d6f723fdb894a783f19ee32c93137921
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378677"
 ---
 # <a name="overview-of-the-hyper-v-extensible-switch"></a>Hyper-V 可扩展交换机概述
 
@@ -26,9 +26,9 @@ Windows Server 2012 引入的 HYPER-V 可扩展交换机 （也称为 HYPER-V �
 
 有关此技术和其基础的高级技术概述，请参阅以下 TechNet 文档：
 
--   [Hyper-V 虚拟交换机概述](https://technet.microsoft.com/library/hh831823.aspx)
--   [Hyper-V 网络虚拟化概述](https://technet.microsoft.com/library/jj134230.aspx)
--   [HYPER-V 概述](https://technet.microsoft.com/library/hh831531.aspx)
+-   [Hyper-V 虚拟交换机概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831823(v=ws.11))
+-   [Hyper-V 网络虚拟化概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134230(v=ws.11))
+-   [HYPER-V 概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))
 
 ## <a name="types-of-hyper-v-extensible-switches-and-network-adapters"></a>类型的 HYPER-V 可扩展交换机和网络适配器
 

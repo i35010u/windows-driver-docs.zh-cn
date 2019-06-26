@@ -6,12 +6,12 @@ keywords:
 - 设备元数据打包有关 WDK，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f3e9eb2dcf56fbb8bbce45941c82674e8b6b15
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: c257eb5f37e7a73fa5c12fe7db5099f61801e9b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379441"
 ---
 # <a name="overview-of-device-metadata-packages"></a>设备元数据包概述
 
@@ -34,12 +34,12 @@ ms.locfileid: "65456418"
 <a href="" id="packageinfo-xml-document"></a>[PackageInfo XML 文档](packageinfo-xml-document.md)  
 本文档包含指定的设备元数据包内容的数据。 操作系统使用此数据来安装包并引用其内容。
 
-此数据的格式根据[PackageInfo XML 架构](https://msdn.microsoft.com/library/windows/hardware/ff549614)。
+此数据的格式根据[PackageInfo XML 架构](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549614(v=vs.85))。
 
 <a href="" id="deviceinfo-xml-document"></a>[DeviceInfo XML 文档](deviceinfo-xml-document.md)  
 本文档包含指定设备的属性，例如设备类别和型号名称的数据。 设备和打印机用户界面使用此数据以显示有关设备的详细的信息。
 
-此数据的格式根据[DeviceInfo XML 架构](https://msdn.microsoft.com/library/windows/hardware/ff541135)。
+此数据的格式根据[DeviceInfo XML 架构](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541135(v=vs.85))。
 
 <a href="" id="device-icon-file"></a>[设备图标文件](device-icon-file.md)  
 此文件包含真实感图像，表示设备和打印机用户界面中的设备。
@@ -47,7 +47,7 @@ ms.locfileid: "65456418"
 <a href="" id="windowsinfo-xml-document"></a>[WindowsInfo XML 文档](windowsinfo-xml-document.md)  
 本文档包含指定的设备和打印机用户界面执行设备元数据包中的指定设备的显示操作的数据。
 
-此数据的格式根据[WindowsInfo XML 架构](https://msdn.microsoft.com/library/windows/hardware/ff553992)。
+此数据的格式根据[WindowsInfo XML 架构](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff553992(v=vs.85))。
 
 每个设备元数据包已使用 Cabarc 压缩到一个文件及其组件 (*Cabarc.exe*) 工具。 有关此工具的详细信息，请参阅[Cabarc 概述](https://go.microsoft.com/fwlink/p/?linkid=145395)网站。
 

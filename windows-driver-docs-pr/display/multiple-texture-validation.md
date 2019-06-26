@@ -7,12 +7,12 @@ keywords:
 - 纹理管理 WDK Direct3D，验证
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 629c742b29620f8670bc4974ad47107f8cb38bb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b3aad9defcd7bdde4ee29df6c799f8db3bfb4bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345567"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372828"
 ---
 # <a name="multiple-texture-validation"></a>多纹理验证
 
@@ -20,7 +20,7 @@ ms.locfileid: "63345567"
 ## <span id="ddk_multiple_texture_validation_gg"></span><span id="DDK_MULTIPLE_TEXTURE_VALIDATION_GG"></span>
 
 
-当前硬件不一定实现 Direct3D 可以表示的所有内容。 应用程序确定是否可以由第一个设置所需的混合模式，并调用执行特定的混合操作**IDirect3DDevice7::ValidateDevice**方法。 该驱动程序必须在初始化时和支持准确地报告其功能[ **D3dValidateTextureStageState** ](https://msdn.microsoft.com/library/windows/hardware/ff549064)以允许要验证其功能。 验证还介绍了在 TBLEND 级别指定的操作。 璝惠**IDirect3DDevice7::ValidateDevice**，请参阅 Direct3D SDK 文档。
+当前硬件不一定实现 Direct3D 可以表示的所有内容。 应用程序确定是否可以由第一个设置所需的混合模式，并调用执行特定的混合操作**IDirect3DDevice7::ValidateDevice**方法。 该驱动程序必须在初始化时和支持准确地报告其功能[ **D3dValidateTextureStageState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_validatetexturestagestatecb)以允许要验证其功能。 验证还介绍了在 TBLEND 级别指定的操作。 璝惠**IDirect3DDevice7::ValidateDevice**，请参阅 Direct3D SDK 文档。
 
 下表列出的返回代码**IDirect3DDevice7::ValidateDevice**。
 

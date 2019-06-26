@@ -6,12 +6,12 @@ keywords:
 - 发送操作 WDK 本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b2840ade07e8e9f7531afdc4fe3bf329c1aadae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6c51974297a278f64d039ddbe29eedd60df2553
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365761"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373861"
 ---
 # <a name="send-operations"></a>发送操作
 
@@ -20,9 +20,9 @@ ms.locfileid: "63365761"
 
  
 
-执行后关联操作时，通过调用发起[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)，IHV 扩展 DLL 可以发送通过无线 LAN (WLAN) 适配器的数据包。 有关后关联操作的详细信息，请参阅[后期关联操作](post-association-operations.md)。
+执行后关联操作时，通过调用发起[ *Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)，IHV 扩展 DLL 可以发送通过无线 LAN (WLAN) 适配器的数据包。 有关后关联操作的详细信息，请参阅[后期关联操作](post-association-operations.md)。
 
-通常情况下，该 DLL 安全将数据包发送给数据端口身份验证的访问点 (AP) 使用的算法通过启用[ **Dot11ExtSetAuthAlgorithm**](https://msdn.microsoft.com/library/windows/hardware/ff547571)。 IHV 扩展 DLL 调用**Dot11ExtSetAuthAlgorithm**预关联操作过程中。 有关此操作的详细信息，请参阅[预关联操作](pre-association-operations.md)。
+通常情况下，该 DLL 安全将数据包发送给数据端口身份验证的访问点 (AP) 使用的算法通过启用[ **Dot11ExtSetAuthAlgorithm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_auth_algorithm)。 IHV 扩展 DLL 调用**Dot11ExtSetAuthAlgorithm**预关联操作过程中。 有关此操作的详细信息，请参阅[预关联操作](pre-association-operations.md)。
 
 **请注意**  For Windows Vista 中，只有在基础结构的基本服务设置 (BSS) 网络 IHV 扩展 DLL 支持。
 
@@ -157,16 +157,16 @@ ms.locfileid: "63365761"
 
      
 
--   IHV 扩展 DLL 调用[ **Dot11ExtSendPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff547563)函数来发送通过无线 LAN (WLAN) 适配器的数据包。 DLL 将传递一个唯一的句柄值，该值标识对该函数的数据包*hSendCompletion*参数。 DLL 通常情况下，将包含到数据包的已分配缓冲区的地址传递*hSendCompletion*参数。
-    **请注意**  可以通过调用发送仅单播数据包[ **Dot11ExtSendPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff547563)函数。
+-   IHV 扩展 DLL 调用[ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)函数来发送通过无线 LAN (WLAN) 适配器的数据包。 DLL 将传递一个唯一的句柄值，该值标识对该函数的数据包*hSendCompletion*参数。 DLL 通常情况下，将包含到数据包的已分配缓冲区的地址传递*hSendCompletion*参数。
+    **请注意**  可以通过调用发送仅单播数据包[ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)函数。
 
      
 
--   当将 WLAN 适配器已发送数据包时，操作系统将调用[ *Dot11ExtIhvSendPacketCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff547516)函数。 操作系统数据包的句柄将值传递给*hSendCompletion*函数的参数。 此句柄值将为 IHV 扩展 DLL 对其调用中使用的相同值[ **Dot11ExtSendPacket**](https://msdn.microsoft.com/library/windows/hardware/ff547563)。
+-   当将 WLAN 适配器已发送数据包时，操作系统将调用[ *Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)函数。 操作系统数据包的句柄将值传递给*hSendCompletion*函数的参数。 此句柄值将为 IHV 扩展 DLL 对其调用中使用的相同值[ **Dot11ExtSendPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)。
 
-    当[ *Dot11ExtIhvSendPacketCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff547516)是调用，IHV 扩展 DLL 必须释放它分配了数据包的内存。
+    当[ *Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)是调用，IHV 扩展 DLL 必须释放它分配了数据包的内存。
 
-    **请注意**  IHV 扩展 DLL 必须释放为通过发送的数据包分配的资源[ **Dot11ExtSendPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff547563)直到相应地调用[*Dot11ExtIhvSendPacketCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff547516)进行。
+    **请注意**  IHV 扩展 DLL 必须释放为通过发送的数据包分配的资源[ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)直到相应地调用[*Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)进行。
 
      
 

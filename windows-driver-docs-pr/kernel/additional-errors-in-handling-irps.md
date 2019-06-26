@@ -7,16 +7,16 @@ keywords:
 - 双完成 Irp WDK 内核
 - 丢失的 Irp WDK 内核
 - 可靠性 WDK 内核丢失 Irp
-- 聚合公共 IOCTL 和专用 IOCTL 路径
+- 聚合 IOCTL 公共和专用 IOCTL 路径
 - 可靠性 WDK 内核聚合公钥和私钥 IOCTL 路径
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d092141c9b9099c41eea092b493dc1b46b73255c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7a5ab2ebffd9c0dd4b3a9d64f73fbf60e5cf47f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369993"
 ---
 # <a name="additional-errors-in-handling-irps"></a>处理 IRP 时出现其他错误
 
@@ -28,7 +28,7 @@ ms.locfileid: "63365836"
 
 ### <a name="lost-or-double-completed-irps"></a>丢失或双完成 Irp
 
-这些问题以及缺少对 I/O 管理器例程的调用，如[ **IoStartNextPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550358)，通常出现在错误处理路径中。 驱动程序路径的快速评审可以找到此类问题。
+这些问题以及缺少对 I/O 管理器例程的调用，如[ **IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)，通常出现在错误处理路径中。 驱动程序路径的快速评审可以找到此类问题。
 
 ### <a name="converging-public-ioctl-and-private-ioctl-paths"></a>聚合 IOCTL 公共和专用 IOCTL 路径
 

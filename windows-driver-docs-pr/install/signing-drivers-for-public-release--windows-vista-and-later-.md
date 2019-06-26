@@ -14,19 +14,19 @@ keywords:
 - 发布签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef269a55dd9be31ec269a4218c3f1153531cf228
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60596af7ee0ad6c35c80fe7bf09c81fce599c499
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373487"
 ---
 # <a name="signing-drivers-for-public-release"></a>为驱动程序签名以便公开发布
 
 
 版本签名标识的内核模式二进制文件的发布服务器 (例如，驱动程序或 *.dll*)，将加载到 Windows Vista 和更高版本的 Windows。 内核模式二进制文件是通过已发布签名：
 
--   一个[WHQL 版本签名](whql-release-signature.md)通过获得[Windows 徽标计划](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)。
+-   一个[WHQL 版本签名](whql-release-signature.md)通过获得[Windows 徽标计划](https://docs.microsoft.com/windows-hardware/drivers)。
 
 -   通过创建版本签名[软件发布者证书 (SPC)](software-publisher-certificate.md)。
 

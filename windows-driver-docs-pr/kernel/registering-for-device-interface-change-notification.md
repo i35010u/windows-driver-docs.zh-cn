@@ -10,12 +10,12 @@ keywords:
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ba4c9d31d21e381bc006f9d6c5f0bb8e7d35f0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f1633ee6fae1e21fe51460221ba1c2bc1ab1df5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338440"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373460"
 ---
 # <a name="registering-for-device-interface-change-notification"></a>注册设备接口更改通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "63338440"
 
 
 
-驱动程序通过调用注册的设备接口到达和删除事件通知[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)。
+驱动程序通过调用注册的设备接口到达和删除事件通知[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。
 
 以下信息适用于设备接口更改通知才能调用该例程：
 
@@ -37,13 +37,13 @@ ms.locfileid: "63338440"
 
     此标志指示要注册的即插即用管理器*CallbackRoutine*的未来设备接口到达和离开的指定类并调用*CallbackRoutine*立即为任何已处于活动状态的相关设备接口。
 
-    驱动程序可以调用[ **IoGetDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff549186)若要获取特定类的现有接口的列表，然后注册其回调例程，而无需此标志，但使用标志是既简单又可避免潜在的计时问题。
+    驱动程序可以调用[ **IoGetDeviceInterfaces** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces)若要获取特定类的现有接口的列表，然后注册其回调例程，而无需此标志，但使用标志是既简单又可避免潜在的计时问题。
 
 -   指定驱动程序定义*上下文*，如果合适，即插即用管理器将传递给回调例程。
 
 在对设备接口到达通知响应中打开的句柄设备的驱动程序应注册**EventCategoryTargetDeviceChange**在设备上的事件。 (请参阅[使用即插即用的目标设备更改通知](using-pnp-target-device-change-notification.md)。)
 
-驱动程序通过调用取消通知注册[ **IoUnregisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff550398)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。
+驱动程序通过调用取消通知注册[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。
 
  
 

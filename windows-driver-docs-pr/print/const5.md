@@ -6,12 +6,12 @@ keywords:
 - Const 构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a1c26fa8413e64461e7c61bf4ae068521a482e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 608c8b54be0dde51b37b1117366428f7c328d4b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384502"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374675"
 ---
 # <a name="const-wsd"></a>Const (WSD)
 
@@ -31,12 +31,12 @@ Web Services for Devices (WSD) Const 构造定义数据类型和值，必须返�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>名称</strong></p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p>中的数据类型<strong>值</strong>属性中的值<a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>枚举。</p></td>
+<td><p>中的数据类型<strong>值</strong>属性中的值<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>枚举。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>

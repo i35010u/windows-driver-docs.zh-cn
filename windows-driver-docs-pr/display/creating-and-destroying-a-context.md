@@ -10,12 +10,12 @@ keywords:
 - 销毁上下文 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1e824842c66c6dd67493c887760733651c4c5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c054cfb77603e54fd25747a864b075afe8fd91da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346909"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370219"
 ---
 # <a name="creating-and-destroying-a-context"></a>创建和销毁上下文
 
@@ -29,11 +29,11 @@ ms.locfileid: "63346909"
 
 -   分配的设备特定的上下文和零初始化。
 
--   请参阅[ **D3dContextCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff542178)需要在该回调完成的额外步骤。 **D3dContextCreate**应用程序创建 Direct3D HAL 设备时调用回调。 该驱动程序必须实现此回调。
+-   请参阅[ **D3dContextCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextcreatecb)需要在该回调完成的额外步骤。 **D3dContextCreate**应用程序创建 Direct3D HAL 设备时调用回调。 该驱动程序必须实现此回调。
 
-该驱动程序必须能够引用由创建的所有纹理句柄[ **D3dCreateSurfaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff542840)创建上下文中。 这使驱动程序以进行相关的纹理时调用此上下文中创建的所有特定于驱动程序的数据清除[ **D3dContextDestroy** ](https://msdn.microsoft.com/library/windows/hardware/ff542180)进行函数。
+该驱动程序必须能够引用由创建的所有纹理句柄[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)创建上下文中。 这使驱动程序以进行相关的纹理时调用此上下文中创建的所有特定于驱动程序的数据清除[ **D3dContextDestroy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextdestroycb)进行函数。
 
-Direct3D 调用[ **D3dContextDestroy** ](https://msdn.microsoft.com/library/windows/hardware/ff542180)应用程序请求 Direct3D HAL 设备被销毁。 该驱动程序应释放它分配到指定的上下文的所有资源。 这些资源包括，例如，纹理资源、 顶点和像素[着色器](direct3d-shaders.md)，[声明和顶点着色器代码](separating-declarations-and-code-for-vertex-shaders.md)，并为资源[异步查询](supporting-asynchronous-query-operations.md).
+Direct3D 调用[ **D3dContextDestroy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextdestroycb)应用程序请求 Direct3D HAL 设备被销毁。 该驱动程序应释放它分配到指定的上下文的所有资源。 这些资源包括，例如，纹理资源、 顶点和像素[着色器](direct3d-shaders.md)，[声明和顶点着色器代码](separating-declarations-and-code-for-vertex-shaders.md)，并为资源[异步查询](supporting-asynchronous-query-operations.md).
 
  
 

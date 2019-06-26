@@ -7,12 +7,12 @@ keywords:
 - I/O 验证功能 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2edd9c7ed87e3e9a029c44ae335b02e116d90c80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e5d51d63aa9f7b719b59710bd5c723711787625
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344852"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371375"
 ---
 # <a name="enhanced-io-verification"></a>增强的 I/O 验证
 
@@ -29,11 +29,11 @@ ms.locfileid: "63344852"
 
 激活增强的 I/O 验证时，驱动程序验证程序将添加以下检查。
 
--   监视以确保该驱动程序返回状态的所有 Irp\_PENDING 当且仅当它被称为[ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)。
+-   监视以确保该驱动程序返回状态的所有 Irp\_PENDING 当且仅当它被称为[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)。
 
--   监视使用[ **IoDeleteDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549083)若要验证的驱动程序不会删除同一设备的更多一次，并检测不适当的分离和删除的设备对象。
+-   监视使用[ **IoDeleteDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)若要验证的驱动程序不会删除同一设备的更多一次，并检测不适当的分离和删除的设备对象。
 
--   验证该驱动程序正确展开所有[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)调用。
+-   验证该驱动程序正确展开所有[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)调用。
 
 新的压力和测试包括：
 
@@ -53,11 +53,11 @@ ms.locfileid: "63344852"
 
 在蓝色屏幕上，这些错误进行说明的消息**IO 系统验证错误**和字符串**WDM 驱动程序错误** *XXX*，其中*XXX*是 I/O 错误代码。
 
-在崩溃转储文件中，这些错误进行说明的消息**检测错误 0xC9 (驱动程序\_VERIFIER\_IOMANAGER\_冲突)**，以及 I/O 错误代码。 在这种情况下，I/O 错误代码显示为 bug 检查 0xC9 的第一个参数。
+在崩溃转储文件中，这些错误进行说明的消息**检测错误 0xC9 (驱动程序\_VERIFIER\_IOMANAGER\_冲突)** ，以及 I/O 错误代码。 在这种情况下，I/O 错误代码显示为 bug 检查 0xC9 的第一个参数。
 
 在内核调试器 （KD 或 WinDbg） 中，这些错误记录的消息**WDM 驱动程序错误**和说明性文本字符串。 当内核调试程序处于活动状态时，则可以忽略第 2 级错误并继续执行系统操作。 （这是不可能与任何其他 bug 检查。）
 
-蓝色的屏幕、 故障转储文件和内核调试程序每个显示其他信息。 所有 I/O 验证级别 2 的错误消息的完整说明，请参阅[ **Bug 检查 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)。
+蓝色的屏幕、 故障转储文件和内核调试程序每个显示其他信息。 所有 I/O 验证级别 2 的错误消息的完整说明，请参阅[ **Bug 检查 0xC9**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation)。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
@@ -69,7 +69,7 @@ ms.locfileid: "63344852"
 
 -   **在命令行**
 
-    在命令行中，由表示增强的 I/O 验证选项**位 6 (0x40)**。 若要激活增强的 I/O 验证，使用 0x40 标志值，或将 0x40 添加到标志值。 例如：
+    在命令行中，由表示增强的 I/O 验证选项**位 6 (0x40)** 。 若要激活增强的 I/O 验证，使用 0x40 标志值，或将 0x40 添加到标志值。 例如：
 
     ```
     verifier /flags 0x40 /driver MyDriver.sys

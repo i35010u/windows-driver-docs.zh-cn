@@ -9,12 +9,12 @@ keywords:
 - 352 范围示例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70453151dcb33539955ccb5bdf2050cf6f568001
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 688383d8cebb22d77c9a02d077d7fba2a15892b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360377"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380244"
 ---
 # <a name="dvd-352-wide-example"></a>DVD 352 像素宽度示例
 
@@ -22,7 +22,7 @@ ms.locfileid: "63360377"
 ## <span id="ddk_dvd_352_wide_example_gg"></span><span id="DDK_DVD_352_WIDE_EXAMPLE_GG"></span>
 
 
-DVD 可以使用 352 范围图片，可以通过使用被拉伸到的宽度为 704 **PictureSourceRect16thPel**的成员[ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)（在六分之一亮度示例间距分辨率的） 的结构。
+DVD 可以使用 352 范围图片，可以通过使用被拉伸到的宽度为 704 **PictureSourceRect16thPel**的成员[ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)（在六分之一亮度示例间距分辨率的） 的结构。
 
 **PictureSourceRect16thPel**成员定义一个具有以下值的源矩形：
 
@@ -30,7 +30,7 @@ DVD 可以使用 352 范围图片，可以通过使用被拉伸到的宽度为 7
 
 -   **右**= 16 X (**左** + *水平\_大小*) = 5632
 
-**PictureDestinationRect**的成员[ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)结构定义使用的两个备用目标矩形以下值：
+**PictureDestinationRect**的成员[ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)结构定义使用的两个备用目标矩形以下值：
 
 1.  一个具有以下值的目标矩形：
     -   **left** = 8

@@ -17,12 +17,12 @@ keywords:
 - WDK RDBSS 的连接信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab55ede13f1e6ae15954af87adc9ae36156c61d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bd23be595f067a95b7389e90d132ca9bc028bdf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344900"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371295"
 ---
 # <a name="the-fobx-structure"></a>FOBX 结构
 
@@ -30,7 +30,7 @@ ms.locfileid: "63344900"
 ## <span id="ddk_the_fobx_structure_if"></span><span id="DDK_THE_FOBX_STRUCTURE_IF"></span>
 
 
-文件对象扩展 (FOBX) 结构是对 RDBSS 扩展[**文件\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff545834)结构。 指向 FOBX 结构**FileObjectExtension**字段中的文件对象。 FOBX 结构包含以下元素：
+文件对象扩展 (FOBX) 结构是对 RDBSS 扩展[**文件\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_object)结构。 指向 FOBX 结构**FileObjectExtension**字段中的文件对象。 FOBX 结构包含以下元素：
 
 -   签名和引用计数
 

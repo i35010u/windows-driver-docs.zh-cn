@@ -8,12 +8,12 @@ keywords:
 - INF 文件 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5743944ddb702ae87daf4a57eb22b7a391ae6dbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 001676714fb497acfd6a3785eb621a0ea3da5acf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358237"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356043"
 ---
 # <a name="printer-inf-files"></a>打印机 INF 文件
 
@@ -21,7 +21,7 @@ ms.locfileid: "63358237"
 
 
 
-中提供了广泛的 INF 文件讨论[INF 文件的一般准则](https://msdn.microsoft.com/library/windows/hardware/ff544975)。
+中提供了广泛的 INF 文件讨论[INF 文件的一般准则](https://docs.microsoft.com/windows-hardware/drivers/install/general-guidelines-for-inf-files)。
 
 以下主题提供有关打印机 INF 文件的特定信息：
 

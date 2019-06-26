@@ -4,12 +4,12 @@ description: MSFC\_HBAPortStatistics WMI 类
 ms.assetid: 275e4a50-6500-4a23-a0ae-ddd232da42f0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d2d31243a8e03ebd9a28daaa9b45e11c949a5633
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 798a658f62d50eb35316095ab86f527752adbfb0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341270"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376730"
 ---
 # <a name="msfchbaportstatistics-wmi-class"></a>MSFC\_HBAPortStatistics WMI 类
 
@@ -59,7 +59,7 @@ class MSFC_HBAPortStatistics
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_HBAPortStatistics**](https://msdn.microsoft.com/library/windows/hardware/ff562512)
+[**MSFC\_HBAPortStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportstatistics)
 
 没有与此 WMI 类相关联的方法。
 

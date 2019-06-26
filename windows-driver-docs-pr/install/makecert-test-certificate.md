@@ -7,17 +7,17 @@ keywords:
 - 数字证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c8ca0484a7325b95cbfe5b5f0a77a0f64d4475
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3afd2840c513ca2c904a4e03bb84c051ba442026
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356935"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377665"
 ---
 # <a name="makecert-test-certificate"></a>MakeCert 测试证书
 
 
-MakeCert 测试证书是否[X.509 数字证书](digital-certificates.md)通过使用创建[ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)工具。 MakeCert 测试证书是自签名的根证书，可用于测试签名[驱动程序包](driver-packages.md)[编录文件](catalog-files.md)或测试签名的驱动程序文件中嵌入签名的驱动程序文件。
+MakeCert 测试证书是否[X.509 数字证书](digital-certificates.md)通过使用创建[ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)工具。 MakeCert 测试证书是自签名的根证书，可用于测试签名[驱动程序包](driver-packages.md)[编录文件](catalog-files.md)或测试签名的驱动程序文件中嵌入签名的驱动程序文件。
 
 若要了解有关创建 MakeCert 测试证书的详细信息，请参阅[**创建测试证书**](creating-test-certificates.md)。
 

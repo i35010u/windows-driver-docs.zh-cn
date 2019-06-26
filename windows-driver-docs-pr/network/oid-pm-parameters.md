@@ -5,19 +5,19 @@ ms.assetid: c3431724-1b5f-4634-8b1e-27fed9031f01
 ms.date: 08/08/2017
 keywords: -OID_PM_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 883738803bbaa39c9facddb0016022ce87902953
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75fd60dbe2927ae0f0feb9518cfe7ffbb30df160
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383594"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373897"
 ---
 # <a name="oidpmparameters"></a>OID\_PM\_参数
 
 
-为查询，协议驱动程序可以使用 OID\_PM\_参数 OID，若要查询的电源管理硬件功能的网络适配器的当前已启用。 从 OID 查询请求，成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_PM\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566759)结构。
+为查询，协议驱动程序可以使用 OID\_PM\_参数 OID，若要查询的电源管理硬件功能的网络适配器的当前已启用。 从 OID 查询请求，成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构。
 
-作为一组协议驱动程序可以使用 OID\_PM\_参数 OID，若要启用或禁用网络适配器的当前硬件功能。 协议驱动程序提供一个指针指向[ **NDIS\_PM\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566759)结构**InformationBuffer** 的成员[**NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构。
+作为一组协议驱动程序可以使用 OID\_PM\_参数 OID，若要启用或禁用网络适配器的当前硬件功能。 协议驱动程序提供一个指针指向[ **NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构**InformationBuffer** 的成员[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -28,7 +28,7 @@ ms.locfileid: "63383594"
 
 当前已启用的功能可以是硬件支持的功能子集。 有关硬件支持的功能的详细信息，请参阅[OID\_PM\_硬件\_功能](oid-pm-hardware-capabilities.md)。
 
-**请注意**  如果 NDIS 设置 NDIS\_PM\_选择性\_挂起\_中的已启用标志**WakeUpFlags**隶属[ **NDIS\_PM\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566759)结构，它会发出 OID 集请求的 OID\_PM\_直接向微型端口驱动程序的参数。 这允许 NDIS 以网络驱动程序堆栈中的筛选器驱动程序的跳过处理。
+**请注意**  如果 NDIS 设置 NDIS\_PM\_选择性\_挂起\_中的已启用标志**WakeUpFlags**隶属[ **NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构，它会发出 OID 集请求的 OID\_PM\_直接向微型端口驱动程序的参数。 这允许 NDIS 以网络驱动程序堆栈中的筛选器驱动程序的跳过处理。
 
  
 
@@ -72,9 +72,9 @@ NDIS 或微型端口驱动程序返回请求的以下状态代码之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff566759)
+[**NDIS\_PM\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)
 
 [OID\_PM\_硬件\_功能](oid-pm-hardware-capabilities.md)
 

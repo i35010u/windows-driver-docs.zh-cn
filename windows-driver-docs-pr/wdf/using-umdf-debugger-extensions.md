@@ -1,5 +1,5 @@
 ---
-title: Wudfext.dll 中的调试器扩展的摘要
+title: Wudfext.dll 中的调试程序扩展摘要
 description: 本主题介绍 WudfExt.dll，可用于调试某些用户模式驱动程序框架 (UMDF) 驱动程序中的调试器扩展命令。
 ms.assetid: af84ed3a-33a1-4736-9080-c43e87052064
 keywords:
@@ -8,23 +8,23 @@ keywords:
 - 扩展 WDK 调试器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8939a7bb7094ad113803804972496c0ffef7c807
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 99bf2a50ccc369298d5427a73c0b51e3d859ff08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526996"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372169"
 ---
-# <a name="summary-of-debugger-extensions-in-wudfextdll"></a>Wudfext.dll 中的调试器扩展的摘要
+# <a name="summary-of-debugger-extensions-in-wudfextdll"></a>Wudfext.dll 中的调试程序扩展摘要
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
 Windows Driver Kit (WDK) 包括调试器扩展库，名为*WudfExt.dll*，位于 %DDKROOT%\\bin 子目录。 本主题介绍中的调试器扩展命令*WudfExt.dll*，可以用于调试用户模式驱动程序框架 (UMDF) 版本 1。*x*驱动程序。
 
-若要调试 UMDF 驱动程序从 UMDF 2.0 版开始，您必须改用*Wdfkd.dll*调试器扩展库。 有关详细信息，请参阅[ **Windows 驱动程序框架扩展 (Wdfkd.dll)**](https://msdn.microsoft.com/library/windows/hardware/ff551876)。
+若要调试 UMDF 驱动程序从 UMDF 2.0 版开始，您必须改用*Wdfkd.dll*调试器扩展库。 有关详细信息，请参阅[ **Windows 驱动程序框架扩展 (Wdfkd.dll)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
 
-有关在每个命令的完整说明*WudfExt.dll*，请参阅[用户模式驱动程序框架扩展 (Wudfext.dll)](https://msdn.microsoft.com/library/windows/hardware/ff560030)。 有关所有可用的调试器扩展库的详细信息，请参阅随提供的文档[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)包。
+有关在每个命令的完整说明*WudfExt.dll*，请参阅[用户模式驱动程序框架扩展 (Wudfext.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-extensions--wudfext-dll-)。 有关所有可用的调试器扩展库的详细信息，请参阅随提供的文档[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)包。
 
 若要加载*WudfExt.dll*调试器扩展库中，输入在调试器的命令提示符下执行以下命令：
 

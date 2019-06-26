@@ -4,12 +4,12 @@ description: Windows 安全模型是主要基于每个对象的权限，只有�
 ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e1d01bdc20dc36d5f01c9c9135f74296cea7ccc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf94f3917fe21917a4136cd5f4f7ffd40c18f820
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371412"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371995"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>驱动程序开发人员的 Windows 安全模型
 
@@ -46,14 +46,14 @@ Sid 由如 operating system 或域服务器的颁发机构颁发。 一些 Sid �
 
 默认情况下，系统使用的主访问令牌的进程时进程的线程与安全对象进行交互。 但是，线程可以模拟客户端帐户。 当一个线程模拟时，它具有除其自身的主令牌的模拟令牌。 模拟令牌都描述在线程正在模拟的用户帐户的安全上下文。 模拟是远程过程调用 (RPC) 处理中尤为常见。
 
-介绍了线程或进程的受限制的安全上下文的访问令牌调用受限制的令牌。 中的 Sid*受限的令牌*可以设置只为拒绝访问，不允许访问，对安全对象。 此外，该标记可以描述一组有限的系统范围的权限。 用户的 SID 和标识将保持不变，但用户的访问权限是有限的而进程正在使用受限的令牌。 [CreateRestrictedToken](https://msdn.microsoft.com/library/windows/desktop/aa446583.aspx)函数创建受限的令牌。
+介绍了线程或进程的受限制的安全上下文的访问令牌调用受限制的令牌。 中的 Sid*受限的令牌*可以设置只为拒绝访问，不允许访问，对安全对象。 此外，该标记可以描述一组有限的系统范围的权限。 用户的 SID 和标识将保持不变，但用户的访问权限是有限的而进程正在使用受限的令牌。 [CreateRestrictedToken](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)函数创建受限的令牌。
 
 
 ### <a name="security-descriptors"></a>安全描述符
 
 每个命名的 Windows 对象具有的安全描述符;某些未命名的对象也可以这样做。 安全描述符描述的所有者和组 Sid 以及其 Acl 对象。
 
-通常由创建该对象的函数创建对象的安全描述符。 当驱动程序调用[IoCreateDevice](https://msdn.microsoft.com/library/windows/hardware/ff548397.aspx)或[IoCreateDeviceSecure](https://msdn.microsoft.com/library/windows/hardware/ff548407.aspx)例程来创建设备对象，系统安全描述符应用到创建的设备对象并设置该对象的 Acl。 适用于大多数设备，设备信息 (INF) 文件中指定 Acl。
+通常由创建该对象的函数创建对象的安全描述符。 当驱动程序调用[IoCreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)或[IoCreateDeviceSecure](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)例程来创建设备对象，系统安全描述符应用到创建的设备对象并设置该对象的 Acl。 适用于大多数设备，设备信息 (INF) 文件中指定 Acl。
 
 有关详细信息[安全描述符](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-descriptors)内核驱动程序文档中。
 

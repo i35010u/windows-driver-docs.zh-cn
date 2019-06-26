@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WAN_CO_FRAGMENT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d625f22f6cd7e617606140be6778dedb0596088e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ae329c9cf2a2737949585cd6617e3f6d3124de4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380915"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372573"
 ---
 # <a name="ndisstatuswancofragment"></a>NDIS\_状态\_WAN\_共同\_片段
 
@@ -21,9 +21,9 @@ NDIS\_状态\_WAN\_共同\_片段状态指示的 CoNDIS WAN 的微型端口驱�
 <a name="remarks"></a>备注
 -------
 
-**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构包含一个指向[ **NDIS\_WAN\_共同\_片段**](https://msdn.microsoft.com/library/windows/hardware/ff559030)结构。 NDIS\_WAN\_共同\_片段结构介绍了已接收到的部分数据包的原因。
+**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含一个指向[ **NDIS\_WAN\_共同\_片段**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559030(v=vs.85))结构。 NDIS\_WAN\_共同\_片段结构介绍了已接收到的部分数据包的原因。
 
-详细了解 NDIS\_状态\_WAN\_共同\_片段，请参阅[，该值指示的 CoNDIS WAN 微型端口驱动程序状态](https://msdn.microsoft.com/library/windows/hardware/ff554825)。 有关的 CoNDIS WAN 接口的详细信息，请参阅[实现的 CoNDIS WAN 微型端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff553805)。
+详细了解 NDIS\_状态\_WAN\_共同\_片段，请参阅[，该值指示的 CoNDIS WAN 微型端口驱动程序状态](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-condis-wan-miniport-driver-status)。 有关的 CoNDIS WAN 接口的详细信息，请参阅[实现的 CoNDIS WAN 微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/implementing-condis-wan-miniport-drivers)。
 
 <a name="requirements"></a>要求
 ------------
@@ -48,9 +48,9 @@ NDIS\_状态\_WAN\_共同\_片段状态指示的 CoNDIS WAN 的微型端口驱�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_WAN\_CO\_FRAGMENT**](https://msdn.microsoft.com/library/windows/hardware/ff559030)
+[**NDIS\_WAN\_CO\_FRAGMENT**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559030(v=vs.85))
 
  
 

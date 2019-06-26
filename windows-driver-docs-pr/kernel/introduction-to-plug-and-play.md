@@ -7,12 +7,12 @@ keywords:
 - 有关即插即插 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e2c52f52d119bafd897400df1c65b4e3afe7768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50b7c9ebc4370f3c2f207443451e15cff88abe01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369917"
 ---
 # <a name="introduction-to-plug-and-play"></a>即插即用简介
 
@@ -42,7 +42,7 @@ ms.locfileid: "63341437"
 
 -   与即插即用系统进行交互的驱动程序适用的编程接口
 
-    该接口包含[I/O 管理器例程](https://msdn.microsoft.com/library/windows/hardware/ff551797)，[即插即用次要 Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)、 所需[标准驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)，并在注册表中的信息。
+    该接口包含[I/O 管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))，[即插即用次要 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)、 所需[标准驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)，并在注册表中的信息。
 
 -   机制来驱动程序和应用程序以了解硬件环境中的更改并采取相应的措施
 

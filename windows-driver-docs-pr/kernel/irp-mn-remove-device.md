@@ -6,12 +6,12 @@ ms.assetid: 0d733cbd-2da8-48a5-afc6-e1e6b8f507a1
 keywords:
 - IRP_MN_REMOVE_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 54a269203a867f81b2c65eb2e57b330d3a47732a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 049fb764edefda2a0161975622bada14012067b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381409"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371254"
 ---
 # <a name="irpmnremovedevice"></a>IRP\_MN\_REMOVE\_DEVICE
 
@@ -54,13 +54,13 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 在响应此 IRP，驱动程序执行关闭设备、 删除设备的软件表示形式 （用于保存设备对象等），并释放任何资源的设备等任务。
 
-有关处理此 IRP 的详细信息，请参阅[处理 IRP\_MN\_删除\_设备请求](https://msdn.microsoft.com/library/windows/hardware/ff546687)。 支持设备删除的常规信息，请参阅[删除设备](https://msdn.microsoft.com/library/windows/hardware/ff561046)。
+有关处理此 IRP 的详细信息，请参阅[处理 IRP\_MN\_删除\_设备请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-remove-device-request)。 支持设备删除的常规信息，请参阅[删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
 
 **发送此 IRP**
 
 保留供系统使用。 驱动程序必须发送此 IRP。
 
-如果总线驱动程序检测到的一个 （或多个） 及其子设备 (子 PDOs) 具有已以物理方式从计算机中删除，总线驱动程序会调用[ **IoInvalidateDeviceRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff549353)报告到的更改PnP 管理器。 PnP 管理器然后发送删除 Irp 消失了任何设备中。
+如果总线驱动程序检测到的一个 （或多个） 及其子设备 (子 PDOs) 具有已以物理方式从计算机中删除，总线驱动程序会调用[ **IoInvalidateDeviceRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)报告到的更改PnP 管理器。 PnP 管理器然后发送删除 Irp 消失了任何设备中。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,9 +81,9 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 ## <a name="see-also"></a>请参阅
 
 
-[**IoInvalidateDeviceRelations**](https://msdn.microsoft.com/library/windows/hardware/ff549353)
+[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)
 
-[**IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)
+[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)
 
 [**IRP\_MN\_CANCEL\_REMOVE\_DEVICE**](irp-mn-cancel-remove-device.md)
 

@@ -7,12 +7,12 @@ keywords:
 - 并行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4a93a0019b61b5f9df628a94a59f8f19eeeb4a21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38634b4c51f2009d3ca6ab7833a44296fa146248
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376959"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>针对并行端口的 I/O 请求的特定于设备的操作
 本主题介绍的并行端口 I/O 请求的以下特定于设备的操作：
@@ -22,10 +22,10 @@ ms.locfileid: "63373526"
 
 
 ##  <a name="irpmjcreate"></a>IRP_MJ_CREATE 
-[IRP_MJ_CREATE](https://msdn.microsoft.com/library/windows/hardware/ff550729)请求打开并行端口。
+[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)请求打开并行端口。
 
 ### <a name="when-sent"></a>发送时间
-客户端必须使用[IRP_MJ_CREATE](https://msdn.microsoft.com/library/windows/hardware/ff550729)请求之前它可以访问的端口或设备打开并行端口连接到端口。
+客户端必须使用[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)请求之前它可以访问的端口或设备打开并行端口连接到端口。
 
 ### <a name="input-parameters"></a>输入参数
 无。
@@ -52,7 +52,7 @@ STATUS_DELETE_PENDING
 
 
 ##   <a name="irpmjinternaldevicecontrol"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
-[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550766)请求并行端口上设置内部操作模式。
+[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)请求并行端口上设置内部操作模式。
 
 ### <a name="when-sent"></a>发送时间
 客户端发送内部设备控制请求以执行以下类型的操作：
@@ -61,7 +61,7 @@ STATUS_DELETE_PENDING
 * 分配端口，或选择的端口上的设备
 * 将通信模式设置
 
-请参阅[内部设备控制请求的并行端口](https://msdn.microsoft.com/library/windows/hardware/ff543963)。
+请参阅[内部设备控制请求的并行端口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 ### <a name="input-parameters"></a>输入参数
 输入是特定于请求的。
@@ -100,7 +100,7 @@ STATUS_PENDING
 
 ## <a name="related-topics"></a>相关主题
 
-[内部设备控制请求的并行端口](https://msdn.microsoft.com/library/windows/hardware/ff543963)
+[内部设备控制请求的并行端口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[运行并行设备附加到并行端口](https://msdn.microsoft.com/windows/hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
+[运行并行设备附加到并行端口](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
 

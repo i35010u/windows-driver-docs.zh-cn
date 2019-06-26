@@ -4,12 +4,12 @@ description: 报告设备联机状态
 ms.assetid: 59ce747a-bb5e-4e8c-ab4a-d3f4432f17e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 214f4fc6fdf73cb1eddb8c9fda3c6c3c1b217c5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd8931aea575af9ac08dad011195e34d816798c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367035"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374284"
 ---
 # <a name="reporting-device-online-status"></a>报告设备联机状态
 
@@ -17,7 +17,7 @@ ms.locfileid: "63367035"
 
 
 
-WIA 服务检查 WIA 设备的联机状态，通过调用[ **IStiUSD::GetStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff543823)方法。 WIA 微型驱动程序应检查硬件的当前联机状态，并报告结果。
+WIA 服务检查 WIA 设备的联机状态，通过调用[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法。 WIA 微型驱动程序应检查硬件的当前联机状态，并报告结果。
 
 WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
 
@@ -25,7 +25,7 @@ WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
 
 -   轮询设备事件，例如已下压按钮的事件。
 
-确定操作请求可以通过检查**StatusMask**的成员[ **STI\_设备\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff548369)结构。 **StatusMask**成员可以是以下请求。
+确定操作请求可以通过检查**StatusMask**的成员[ **STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)结构。 **StatusMask**成员可以是以下请求。
 
 <a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_ONLINE\_状态  
 检查设备是否处于联机状态。
@@ -41,7 +41,7 @@ WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
 
 此操作请求应执行通过设置**dwEventHandlingState** STI 成员\_设备\_状态结构。 应使用的值是 STI\_EVENTHANDLING\_PENDING。 （该设备具有挂起的事件并且正在等待其报告给 WIA 服务）
 
-当 STI\_EVENTHANDLING\_设置 PENDING、 WIA 服务发出信号事件发生 WIA 驱动程序中。 WIA 服务调用[ **IStiUSD::GetNotificationData** ](https://msdn.microsoft.com/library/windows/hardware/ff543821)方法以获取有关事件的详细信息。
+当 STI\_EVENTHANDLING\_设置 PENDING、 WIA 服务发出信号事件发生 WIA 驱动程序中。 WIA 服务调用[ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)方法以获取有关事件的详细信息。
 
 **IStiUSD::GetNotificationData**轮询的事件和中断事件的调用方法。 它是在此方法中，您应填写相应的事件信息以返回到 WIA 服务。
 

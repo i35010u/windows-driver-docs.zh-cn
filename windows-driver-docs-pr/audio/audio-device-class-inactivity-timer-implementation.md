@@ -14,12 +14,12 @@ keywords:
 - 性能电源模式 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26ba356afcf9e9f9c6f2d5cb5e92985c2a1c150a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7dd7497b1bdf764f7eb0ada802b6b00d02a499c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331557"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355740"
 ---
 # <a name="audio-device-class-inactivity-timer-implementation"></a>音频设备类不活动计时器实现
 
@@ -41,7 +41,7 @@ PortCls 包含硬编码默认值为空闲超时和空闲处理能力状态。 �
     \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy\PowerSettings\ConservationIdleTime
     ```
 
-    请注意， *xxxx*表示媒体类 GUID (请参阅[System-Supplied 设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff553419)) 和*yyyy*表示下媒体类的驱动程序的子项的名称GUID。 键的值指定的超时间隔 （秒）。
+    请注意， *xxxx*表示媒体类 GUID (请参阅[System-Supplied 设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))) 和*yyyy*表示下媒体类的驱动程序的子项的名称GUID。 键的值指定的超时间隔 （秒）。
 
 -   *PerformanceIdleTime*
 
@@ -65,11 +65,11 @@ PortCls 包含硬编码默认值为空闲超时和空闲处理能力状态。 �
 
 三个电源空闲注册表项存在仅当设备安装 INF 文件将创建它们。 配置 power 空闲计时器之前, PortCls 尝试从注册表检索特定于驱动程序的电源空闲参数。 PortCls 使用代替它不会在注册表中未找到任何 power 空闲的参数的默认值。 正如上文 power 空闲的默认参数值将禁用空闲计时器。
 
-有关指定详细信息*ConservationIdleTime*， *PerformanceIdleTime*，并*IdlePowerState*参数，请参阅的最后三个定义调用中的参数[ **PoRegisterDeviceForIdleDetection**](https://msdn.microsoft.com/library/windows/hardware/ff559721)。
+有关指定详细信息*ConservationIdleTime*， *PerformanceIdleTime*，并*IdlePowerState*参数，请参阅的最后三个定义调用中的参数[ **PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)。
 
 ### <a name="span-idexamplespanspan-idexamplespan-example"></a><span id="example"></span><span id="EXAMPLE"></span> 示例
 
-例如，硬件供应商可能想要指定用于将音频设备的以下 power 空闲参数：*ConservationIdleTime* = 0x0000001e （30 秒）， *PerformanceIdleTime* = 0x0000012c （300 秒） 和*IdlePowerState* = 0x00000003 （设备电源状态 D3）。 若要启用这些设置，设备安装文件可以包含[ **INF AddReg 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546320)包含以下指令：
+例如，硬件供应商可能想要指定用于将音频设备的以下 power 空闲参数：*ConservationIdleTime* = 0x0000001e （30 秒）， *PerformanceIdleTime* = 0x0000012c （300 秒） 和*IdlePowerState* = 0x00000003 （设备电源状态 D3）。 若要启用这些设置，设备安装文件可以包含[ **INF AddReg 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)包含以下指令：
 
 ```inf
 [MyAudioDevice.AddReg]

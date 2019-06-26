@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a5850f59eebf1d7f3492c2f3ff74a9d44e9673c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 202548d462b4a72dfedc52f7e2ee7fe25cbc2468
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370963"
 ---
 # <a name="guiddevicesysbutton"></a>GUID_DEVICE_SYS_BUTTON
 
 
-GUID_DEVICE_SYS_BUTTON[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)的高级配置和电源接口 (ACPI) 系统电源按钮设备定义。
+GUID_DEVICE_SYS_BUTTON[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)的高级配置和电源接口 (ACPI) 系统电源按钮设备定义。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVICE_SYS_BUTTON[设备接口类](https://msdn.microsoft.com/library/windo
 <a name="remarks"></a>备注
 -------
 
-系统提供[ACPI 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540493)注册此设备接口类，以通知操作系统和应用程序的系统电源按钮设备是否存在的实例。 I8042prt，PS/2 式键盘和鼠标设备的系统提供的驱动程序还会注册支持的系统电源按钮的键盘此类的实例。
+系统提供[ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)注册此设备接口类，以通知操作系统和应用程序的系统电源按钮设备是否存在的实例。 I8042prt，PS/2 式键盘和鼠标设备的系统提供的驱动程序还会注册支持的系统电源按钮的键盘此类的实例。
 
-了解如何提供 WDM[函数的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff546516)ACPI 的设备，请参阅[支持 ACPI 设备](https://msdn.microsoft.com/library/windows/hardware/ff536161)。
+了解如何提供 WDM[函数的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)ACPI 的设备，请参阅[支持 ACPI 设备](https://docs.microsoft.com/windows-hardware/drivers/acpi/supporting-acpi-devices)。
 
 PS/2 式键盘和鼠标设备的信息，请参阅[非 HIDClass 键盘和鼠标设备](../hid/keyboard-and-mouse-class-drivers.md)。
 

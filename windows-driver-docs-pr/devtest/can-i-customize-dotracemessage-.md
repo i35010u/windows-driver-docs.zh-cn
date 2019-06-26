@@ -4,17 +4,17 @@ description: 可以自定义 DoTraceMessage
 ms.assetid: 4c5c4990-6095-4ab8-a20b-7597b3169f52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 180431f45c8dd048dcd7f062b055bb5a9f319019
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63dbeae90a2de439ad3f26d58ef95bc0e6dfe139
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344927"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371625"
 ---
 # <a name="can-i-customize-dotracemessage"></a>是否可以自定义 DoTraceMessage？
 
 
-是的您可以编写自己的版本[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)宏。 DoTraceMessage 生成的跟踪消息。
+是的您可以编写自己的版本[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏。 DoTraceMessage 生成的跟踪消息。
 
 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)示例驱动程序提供了本主题中所述的方法的示例。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
 

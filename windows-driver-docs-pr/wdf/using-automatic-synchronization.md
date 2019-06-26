@@ -20,21 +20,21 @@ keywords:
 - WdfSynchronizationScopeInheritFromParent
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e74574b2b899ce051eb80aa22a6c62809f1b514e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bdf93ac0b94e52cece3fde386e4e1694c195b90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365524"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372285"
 ---
 # <a name="using-automatic-synchronization"></a>使用自动同步
 
 
 几乎所有基于 framework 的驱动程序中的代码位于事件回调函数。 该框架会自动同步大多数驱动程序的回调函数，如下所示：
 
--   框架始终同步[常规设备对象](https://msdn.microsoft.com/library/windows/hardware/dn265631#device-callbacks)，[功能的设备对象 (FDO)](https://msdn.microsoft.com/library/windows/hardware/dn265631#fdo-callbacks)，并[物理设备对象 (PDO)](https://msdn.microsoft.com/library/windows/hardware/dn265631#pdo-callbacks)与每个事件的回调函数其他因此只需一个回调函数 (除[ *EvtDeviceSurpriseRemoval*](https://msdn.microsoft.com/library/windows/hardware/ff540913)， [ *EvtDeviceQueryRemove* ](https://msdn.microsoft.com/library/windows/hardware/ff540883)，并[ *EvtDeviceQueryStop*](https://msdn.microsoft.com/library/windows/hardware/ff540885)) 可以在每个设备的时间调用。 这些回调函数支持插即用 (PnP) 和电源管理事件和调用在 IRQL = 被动\_级别。
+-   框架始终同步[常规设备对象](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#device-callbacks)，[功能的设备对象 (FDO)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#fdo-callbacks)，并[物理设备对象 (PDO)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/#pdo-callbacks)与每个事件的回调函数其他因此只需一个回调函数 (除[ *EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)， [ *EvtDeviceQueryRemove* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_remove)，并[ *EvtDeviceQueryStop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop)) 可以在每个设备的时间调用。 这些回调函数支持插即用 (PnP) 和电源管理事件和调用在 IRQL = 被动\_级别。
 
--   （可选） 该框架可以同步处理驱动程序的 I/O 请求的回调函数的执行，以便这些回调函数运行一次一个。 具体而言，框架可以同步的回调函数[队列](https://msdn.microsoft.com/library/windows/hardware/dn265647)，[中断](https://msdn.microsoft.com/library/windows/hardware/dn265640)，[延迟过程调用 (DPC)](https://msdn.microsoft.com/library/windows/hardware/dn265635)，[计时器](https://msdn.microsoft.com/library/windows/hardware/dn265670)，[工作项](https://msdn.microsoft.com/library/windows/hardware/dn265673)，并[文件](https://msdn.microsoft.com/library/windows/hardware/dn265638)对象，以及请求对象[ *EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)回调函数。 大多数框架将调用这些回调函数在 IRQL = 调度\_级别，但您可以强制队列和文件对象回调函数来运行在 IRQL = 被动\_级别。 (工作项回调函数始终运行在被动\_级别。)
+-   （可选） 该框架可以同步处理驱动程序的 I/O 请求的回调函数的执行，以便这些回调函数运行一次一个。 具体而言，框架可以同步的回调函数[队列](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/)，[中断](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/)，[延迟过程调用 (DPC)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/)，[计时器](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/)，[工作项](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/)，并[文件](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/)对象，以及请求对象[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数。 大多数框架将调用这些回调函数在 IRQL = 调度\_级别，但您可以强制队列和文件对象回调函数来运行在 IRQL = 被动\_级别。 (工作项回调函数始终运行在被动\_级别。)
 
 框架使用一组内部同步锁来实现此自动同步。 框架将确保两个或多个线程不能相同的回调函数调用在同一时间，因为每个线程必须等待，直到它可以调用的回调函数之前获取同步锁。 （（可选） 驱动程序还可以获取在必要时这些同步锁。 有关详细信息，请参阅[使用 Framework 锁定](using-framework-locks.md)。)
 
@@ -58,22 +58,22 @@ ms.locfileid: "63365524"
 <tbody>
 <tr class="odd">
 <td align="left"><p>队列对象</p></td>
-<td align="left"><p><a href="request-handlers.md" data-raw-source="[Request handlers](request-handlers.md)">请求处理程序</a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff541771" data-raw-source="[&lt;em&gt;EvtIoQueueState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541771)"> <em>EvtIoQueueState</em></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff541779" data-raw-source="[&lt;em&gt;EvtIoResume&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541779)"> <em>EvtIoResume</em></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff541788" data-raw-source="[&lt;em&gt;EvtIoStop&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541788)"> <em>EvtIoStop</em></a></p></td>
+<td align="left"><p><a href="request-handlers.md" data-raw-source="[Request handlers](request-handlers.md)">请求处理程序</a>， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_state" data-raw-source="[&lt;em&gt;EvtIoQueueState&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_state)"> <em>EvtIoQueueState</em></a>， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume" data-raw-source="[&lt;em&gt;EvtIoResume&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)"> <em>EvtIoResume</em></a>， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop" data-raw-source="[&lt;em&gt;EvtIoStop&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)"> <em>EvtIoStop</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>文件对象</p></td>
-<td align="left"><p>所有<a href="https://msdn.microsoft.com/library/windows/hardware/dn265638" data-raw-source="[callback functions](https://msdn.microsoft.com/library/windows/hardware/dn265638)">回调函数</a></p></td>
+<td align="left"><p>所有<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/" data-raw-source="[callback functions](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/)">回调函数</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>请求对象</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff541817" data-raw-source="[&lt;em&gt;EvtRequestCancel&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541817)"><em>EvtRequestCancel</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel" data-raw-source="[&lt;em&gt;EvtRequestCancel&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)"><em>EvtRequestCancel</em></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-（可选） 该框架还可以同步这些与任何中断、 DPC，工作项，回调函数和计时器对象回叫函数，您的驱动程序提供设备的 (不包括中断对象[ *EvtInterruptIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff541735)回调函数)。 若要启用此附加的同步，该驱动程序必须设置**AutomaticSerialization**这些对象的配置结构的成员**TRUE**。
+（可选） 该框架还可以同步这些与任何中断、 DPC，工作项，回调函数和计时器对象回叫函数，您的驱动程序提供设备的 (不包括中断对象[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数)。 若要启用此附加的同步，该驱动程序必须设置**AutomaticSerialization**这些对象的配置结构的成员**TRUE**。
 
 总之，框架的自动同步功能提供了以下功能：
 
@@ -85,7 +85,7 @@ ms.locfileid: "63365524"
 
 -   驱动程序必须同步服务中断的代码和访问中断数据通过使用中所述的技术[同步中断代码](synchronizing-interrupt-code.md)。
 
--   框架不会同步驱动程序的其他回调函数，如驱动程序的[ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)回调函数或 I/O 目标对象定义的回调函数。 相反，该框架提供了其他[锁](using-framework-locks.md)驱动程序可用于同步这些回调函数。
+-   框架不会同步驱动程序的其他回调函数，如驱动程序的[ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)回调函数或 I/O 目标对象定义的回调函数。 相反，该框架提供了其他[锁](using-framework-locks.md)驱动程序可用于同步这些回调函数。
 
 ### <a name="choosing-a-synchronization-scope"></a>选择同步的作用域
 
@@ -103,7 +103,7 @@ ms.locfileid: "63365524"
 
     框架不会同步执行的上一个表包含和不会调用回调函数之前获取同步锁的回调函数。 如果需要同步，该驱动程序必须提供它。
 
-若要指定是否希望该框架可以提供设备级别同步、 队列级别同步或您的驱动程序不同步，可以指定*同步作用域*驱动程序对象，设备对象或队列对象。 **SynchronizationScope**的对象的成员[ **WDF\_对象\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构标识的对象同步作用域。 可以指定您的驱动程序的同步作用域值包括：
+若要指定是否希望该框架可以提供设备级别同步、 队列级别同步或您的驱动程序不同步，可以指定*同步作用域*驱动程序对象，设备对象或队列对象。 **SynchronizationScope**的对象的成员[ **WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构标识的对象同步作用域。 可以指定您的驱动程序的同步作用域值包括：
 
 <a href="" id="wdfsynchronizationscopedevice"></a>**WdfSynchronizationScopeDevice**  
 该框架将通过获取设备对象的同步锁进行同步。
@@ -119,13 +119,13 @@ ms.locfileid: "63365524"
 
 一般情况下，我们不建议使用设备级别同步。
 
-有关同步作用域值的详细信息，请参阅[ **WDF\_同步\_范围**](https://msdn.microsoft.com/library/windows/hardware/ff552518)。
+有关同步作用域值的详细信息，请参阅[ **WDF\_同步\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ne-wdfobject-_wdf_synchronization_scope)。
 
 驱动程序对象的默认同步作用域**WdfSynchronizationScopeNone**。 设备和队列对象的默认同步作用域**WdfSynchronizationScopeInheritFromParent**。
 
 如果您想让框架提供的所有设备的设备级别同步，可以使用以下步骤：
 
-1.  设置**SynchronizationScope**到**WdfSynchronizationScopeDevice**中[ **WDF\_对象\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)驱动程序的结构*驱动程序*对象。
+1.  设置**SynchronizationScope**到**WdfSynchronizationScopeDevice**中[ **WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)驱动程序的结构*驱动程序*对象。
 
 2.  使用默认**WdfSynchronizationScopeInheritFromParent**值为每个*设备*对象。
 
@@ -133,21 +133,21 @@ ms.locfileid: "63365524"
 
 1.  使用默认**WdfSynchronizationScopeNone**值*驱动程序*对象。
 
-2.  设置**SynchronizationScope**到**WdfSynchronizationScopeDevice**中[ **WDF\_对象\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构的各个*设备*对象。
+2.  设置**SynchronizationScope**到**WdfSynchronizationScopeDevice**中[ **WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构的各个*设备*对象。
 
 如果您想让框架提供队列级别同步设备，提供了以下技术：
 
--   对于 1.9 及更高版本的 framework 版本，应通过设置启用单个队列的队列级别同步**WdfSynchronizationScopeQueue**中[ **WDF\_对象\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)队列对象的结构。 这是首选的技术。
+-   对于 1.9 及更高版本的 framework 版本，应通过设置启用单个队列的队列级别同步**WdfSynchronizationScopeQueue**中[ **WDF\_对象\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)队列对象的结构。 这是首选的技术。
 
 -   或者，您可以在所有框架版本中使用以下步骤：
-    1.  设置**SynchronizationScope**到**WdfSynchronizationScopeQueue**中[ **WDF\_对象\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)的结构*设备*对象。
+    1.  设置**SynchronizationScope**到**WdfSynchronizationScopeQueue**中[ **WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)的结构*设备*对象。
     2.  使用默认**WdfSynchronizationScopeInheritFromParent**值为每个设备*队列*对象。
 
 如果不希望同步处理您的驱动程序的 I/O 请求的回调函数的框架，使用默认**SynchronizationScope**驱动程序的驱动程序、 设备和队列对象的值。 在这种情况下，该框架不会自动同步，驱动程序的 I/O 请求相关的回调函数，并可以在 IRQL 调用回调函数&lt;= 调度\_级别。
 
 请注意，设置**SynchronizationScope**值同步上一个表包含的回调函数。 如果想让框架还将同步的驱动程序中断、 DPC，工作项，并且必须设置计时器对象回调函数，该驱动程序**AutomaticSerialization** 这些对象的配置结构的成员**TRUE**。
 
-但是，可以设置**AutomaticSerialization**到**TRUE**仅当你想要同步的回调函数的所有运行在相同的 IRQL。 选择*执行级别*，接下来，对此进行描述可能会导致不兼容的 IRQL 级别。 在这种情况下，该驱动程序必须使用[framework 锁](using-framework-locks.md)而不是设置**AutomaticSerialization**。 详细了解中断、 DPC，配置结构工作项和计时器对象和限制适用于设置的详细信息**AutomaticSerialization**在这些结构中，请参阅[**WDF\_中断\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff552347)， [ **WDF\_DPC\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff551296)， [ **WDF\_工作项\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff553086)，和[ **WDF\_计时器\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552519).
+但是，可以设置**AutomaticSerialization**到**TRUE**仅当你想要同步的回调函数的所有运行在相同的 IRQL。 选择*执行级别*，接下来，对此进行描述可能会导致不兼容的 IRQL 级别。 在这种情况下，该驱动程序必须使用[framework 锁](using-framework-locks.md)而不是设置**AutomaticSerialization**。 详细了解中断、 DPC，配置结构工作项和计时器对象和限制适用于设置的详细信息**AutomaticSerialization**在这些结构中，请参阅[**WDF\_中断\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)， [ **WDF\_DPC\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/ns-wdfdpc-_wdf_dpc_config)， [ **WDF\_工作项\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/ns-wdfworkitem-_wdf_workitem_config)，和[ **WDF\_计时器\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/ns-wdftimer-_wdf_timer_config).
 
 如果您设置**AutomaticSerialization**到**TRUE**，应选择队列级别同步。
 
@@ -163,7 +163,7 @@ ms.locfileid: "63365524"
 
 请注意，如果您的驱动程序提供文件对象的回调函数，您将很可能需要框架在调用这些回调函数调用在 IRQL = 被动\_级别因为某些文件数据，例如文件名称，是可分页。
 
-若要提供的执行级别，您的驱动程序必须指定的值**ExecutionLevel**的对象的成员[ **WDF\_对象\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构。 可以指定您的驱动程序的执行级别值包括：
+若要提供的执行级别，您的驱动程序必须指定的值**ExecutionLevel**的对象的成员[ **WDF\_对象\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。 可以指定您的驱动程序的执行级别值包括：
 
 <a href="" id="wdfexecutionlevelpassive"></a>**WdfExecutionLevelPassive**  
 框架将调用该对象的回调功能在 IRQL = 被动\_级别。
@@ -176,7 +176,7 @@ ms.locfileid: "63365524"
 
 驱动程序对象的默认执行级别**WdfExecutionLevelDispatch**。 所有其他对象的默认执行级别**WdfExecutionLevelInheritFromParent**。
 
-有关执行级别值的详细信息，请参阅[ **WDF\_执行\_级别**](https://msdn.microsoft.com/library/windows/hardware/ff551310)。
+有关执行级别值的详细信息，请参阅[ **WDF\_执行\_级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ne-wdfobject-_wdf_execution_level)。
 
 下表显示的 framework 可以为队列对象和文件对象调用驱动程序的回调函数的 IRQL 级别。
 

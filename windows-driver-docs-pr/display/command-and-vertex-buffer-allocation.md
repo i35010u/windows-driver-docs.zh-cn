@@ -13,12 +13,12 @@ keywords:
 - DDSCAPS2_COMMANDBUFFER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea323e33290e6a6a4181500c71f98bf73457e77f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55e87aceba35e03e1d90a71a0089ad5314157b21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370688"
 ---
 # <a name="command-and-vertex-buffer-allocation"></a>命令和顶点缓冲区分配
 
@@ -40,25 +40,25 @@ ms.locfileid: "63343044"
 
 命令缓冲区 Direct3D 使用批处理命令。 它们可以是 multibuffered 并且用于除 TLVERTEX 或未剪辑执行缓冲区 API 调用之外的所有 Api。 此类型的缓冲区标记由标志 DDSCAPS2\_COMMANDBUFFER。 它们始终是只写的但没有显式标记设置，它们永远不会包含无效的指令。
 
-默认情况下，Direct3D 运行时分配所有这类缓冲区。 通过与它们相关联的图面来访问隐式顶点缓冲区和命令缓冲区。 传递给驱动程序的所有缓冲区[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)回调。
+默认情况下，Direct3D 运行时分配所有这类缓冲区。 通过与它们相关联的图面来访问隐式顶点缓冲区和命令缓冲区。 传递给驱动程序的所有缓冲区[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)回调。
 
 ### <a name="span-iddriver-allocatedvertexandcommandbuffersspanspan-iddriver-allocatedvertexandcommandbuffersspanspan-iddriver-allocatedvertexandcommandbuffersspandriver-allocated-vertex-and-command-buffers"></a><span id="Driver-Allocated_Vertex_and_Command_Buffers"></span><span id="driver-allocated_vertex_and_command_buffers"></span><span id="DRIVER-ALLOCATED_VERTEX_AND_COMMAND_BUFFERS"></span>驱动程序分配的顶点和命令缓冲区
 
-Direct3D 驱动程序 （可选） 通过提供回调函数来执行顶点和命令缓冲区的分配。 若要提供这些回调函数，Direct3D 驱动程序填写[ **DD\_D3DBUFCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff550557)结构和点**lpD3DBufCallbacks**的成员[ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627)到它的结构。 DD\_返回 HALINFO [ **DrvGetDirectDrawInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556229)响应 DirectDraw 组件的驱动程序的初始化。 DD 中报告回调\_D3DBUFCALLBACKS 结构是：
+Direct3D 驱动程序 （可选） 通过提供回调函数来执行顶点和命令缓冲区的分配。 若要提供这些回调函数，Direct3D 驱动程序填写[ **DD\_D3DBUFCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_d3dbufcallbacks)结构和点**lpD3DBufCallbacks**的成员[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)到它的结构。 DD\_返回 HALINFO [ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)响应 DirectDraw 组件的驱动程序的初始化。 DD 中报告回调\_D3DBUFCALLBACKS 结构是：
 
--   [*CanCreateD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff539361)
+-   [*CanCreateD3DBuffer*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_cancreatesurface)
 
--   [*CreateD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff540616)
+-   [*CreateD3DBuffer*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurface)
 
--   [*DestroyD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff552754)
+-   [*DestroyD3DBuffer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552754(v=vs.85))
 
--   [*LockD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff568216)
+-   [*LockD3DBuffer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568216(v=vs.85))
 
--   [*UnlockD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff570106)
+-   [*UnlockD3DBuffer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570106(v=vs.85))
 
-这些函数调用的方式相同*DdXxxSurface*回调 (例如[ *DdCanCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549213)) 和仅当 DDSCAPS\_EXECUTEBUFFER设置标志。 缓冲区创建标志是 DDSCAPS\_WRITEONLY、 DDSCAPS2\_VERTEXBUFFER 和 DDSCAPS2\_COMMANDBUFFER。
+这些函数调用的方式相同*DdXxxSurface*回调 (例如[ *DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))) 和仅当 DDSCAPS\_EXECUTEBUFFER设置标志。 缓冲区创建标志是 DDSCAPS\_WRITEONLY、 DDSCAPS2\_VERTEXBUFFER 和 DDSCAPS2\_COMMANDBUFFER。
 
-驱动程序确定的类型通过检查所请求的缓冲区**ddsCaps**的成员[ **DD\_图面\_本地**](https://msdn.microsoft.com/library/windows/hardware/ff551733)结构传递给**CanCreateExecuteBuffer**并**CreateExecuteBuffer**回调的以下标志：
+驱动程序确定的类型通过检查所请求的缓冲区**ddsCaps**的成员[ **DD\_图面\_本地**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)结构传递给**CanCreateExecuteBuffer**并**CreateExecuteBuffer**回调的以下标志：
 
 -   DDSCAPS\_VERTEXBUFFER 指示驱动程序应分配显式顶点缓冲区。
 
@@ -68,7 +68,7 @@ Direct3D 驱动程序 （可选） 通过提供回调函数来执行顶点和命
 
 该驱动程序在内部分配顶点和命令缓冲区并循环显示这些缓冲区。 Direct3D 填充给定的对同时从其他排队缓冲区以异步方式呈现硬件。 这是使用直接内存访问 (DMA) 非常有用。
 
-缓冲区 multibuffering 集中可能在不同的内存类型中，也就是说，在系统或视频内存中。 当调用该驱动程序时创建第一个缓冲区时，它立即会创建一组和到 Direct3D，返回集合中第一个缓冲区。 该驱动程序使用标志来指定使用它来集中每个缓冲区分配的内存的类型。 该驱动程序应在每次调用的系统内存中返回一个新的缓冲区[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)如果 D3DHALDP2\_SWAPVERTEXBUFFER 或 D3DHALDP2\_SWAPCOMMANDBUFFER 标志设置。 如果返回的缓冲区是在视频内存中，相应 D3DHALDP2\_VIDMEMVERTEXBUF 或 D3DHALDP2\_VIDMEMCOMMANDBUF 标志应设置。
+缓冲区 multibuffering 集中可能在不同的内存类型中，也就是说，在系统或视频内存中。 当调用该驱动程序时创建第一个缓冲区时，它立即会创建一组和到 Direct3D，返回集合中第一个缓冲区。 该驱动程序使用标志来指定使用它来集中每个缓冲区分配的内存的类型。 该驱动程序应在每次调用的系统内存中返回一个新的缓冲区[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)如果 D3DHALDP2\_SWAPVERTEXBUFFER 或 D3DHALDP2\_SWAPCOMMANDBUFFER 标志设置。 如果返回的缓冲区是在视频内存中，相应 D3DHALDP2\_VIDMEMVERTEXBUF 或 D3DHALDP2\_VIDMEMCOMMANDBUF 标志应设置。
 
 有时，Direct3D 请求下一个缓冲区的最小大小。 如果大小太大，驱动程序应分配在系统内存 （后备面） 中的缓冲区。 如果大小太小，该驱动程序允许提供更大的缓冲区。 该驱动程序应跟踪的多少缓冲，哪些内存而清理退出上的所有内容的类型。
 

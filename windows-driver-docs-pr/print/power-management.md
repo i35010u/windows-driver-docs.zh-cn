@@ -10,12 +10,12 @@ keywords:
 - 休眠测试 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc29214273eb14b21fd07c044a445cecccf427f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c6543333369ee51fa4a6452035ee08c4b2b3c68
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389551"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373807"
 ---
 # <a name="power-management"></a>电源管理
 
@@ -32,11 +32,11 @@ ms.locfileid: "63389551"
 
 4.  紧急关机请求将重写任何尝试都能阻止电源状态的更改。
 
-有关详细信息，请参阅[系统的电源状态](https://msdn.microsoft.com/library/windows/hardware/ff564571)WDK 文档中并[系统电源状态](https://go.microsoft.com/fwlink/p/?linkid=51899)Microsoft Windows SDK 文档中。
+有关详细信息，请参阅[系统的电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)WDK 文档中并[系统电源状态](https://go.microsoft.com/fwlink/p/?linkid=51899)Microsoft Windows SDK 文档中。
 
 ### <a name="testing-port-connected-devices-across-various-power-states"></a>跨不同的电源状态，测试端口连接的设备
 
-若要开始测试设备之前和之后各种电源状态，请首先验证设备的基线[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)(PnP) 功能。 接下来，验证你的测试环境，可以输入并从所有的电源状态唤醒。
+若要开始测试设备之前和之后各种电源状态，请首先验证设备的基线[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)(PnP) 功能。 接下来，验证你的测试环境，可以输入并从所有的电源状态唤醒。
 
 使用一个在设备连接并已正确安装，测试，其行为之前和之后到 S5 每个电源状态 S0，如下所示：
 

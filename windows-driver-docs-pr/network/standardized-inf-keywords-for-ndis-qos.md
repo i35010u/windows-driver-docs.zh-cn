@@ -4,12 +4,12 @@ description: NDIS QoS 的标准化 INF 关键字
 ms.assetid: 7967D633-850F-4707-9577-9262AEB1A597
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8136b851c06ef8a01dd6099f042bafbcf9a39abd
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 8904028d13a6c5a26b134543294998f923ac1e3b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161502"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370575"
 ---
 # <a name="standardized-inf-keywords-for-ndis-qos"></a>NDIS QoS 的标准化 INF 关键字
 
@@ -73,7 +73,7 @@ ms.locfileid: "67161502"
 
  
 
-当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，该驱动程序必须执行以下操作：
+当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，该驱动程序必须执行以下操作：
 
 -   微型端口驱动程序必须注册的网络适配器支持的 NDIS QoS 硬件功能。
 
@@ -89,7 +89,7 @@ ms.locfileid: "67161502"
 
     有关如何注册 QoS 硬件和当前功能的详细信息，请参阅[注册的 NDIS QoS 功能](registering-ndis-qos-capabilities.md)。
 
-    **请注意**  微型端口驱动程序必须始终发出[ **NDIS\_状态\_QOS\_操作\_参数\_更改**](https://msdn.microsoft.com/library/windows/hardware/hh439810)并[ **NDIS\_状态\_QOS\_远程\_参数\_更改**](https://msdn.microsoft.com/library/windows/hardware/hh439812)状态如果其 NDIS QoS 硬件功能当前已启用的指示。 分别从 Windows Server 2012 上的当前操作和远程 QoS 参数设置，这些状态指示报表。 这些指示允许系统管理员查看 NDIS QoS 和 DCB 设置而不考虑是否安装了 Microsoft DCB 服务器功能。 有关详细信息，请参阅[，该值指示 NDIS QoS 参数状态](indicating-ndis-qos-parameter-status.md)。
+    **请注意**  微型端口驱动程序必须始终发出[ **NDIS\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)并[ **NDIS\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状态如果其 NDIS QoS 硬件功能当前已启用的指示。 分别从 Windows Server 2012 上的当前操作和远程 QoS 参数设置，这些状态指示报表。 这些指示允许系统管理员查看 NDIS QoS 和 DCB 设置而不考虑是否安装了 Microsoft DCB 服务器功能。 有关详细信息，请参阅[，该值指示 NDIS QoS 参数状态](indicating-ndis-qos-parameter-status.md)。
 
      
 

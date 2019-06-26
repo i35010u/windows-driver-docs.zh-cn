@@ -4,12 +4,12 @@ description: HBA\_绑定\_类型
 ms.assetid: a5388574-f48a-4bdc-9ffe-408fa6de1eeb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 682959a9a7c1832667884ede58694b3611528741
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1eb2dff89c406cb22130c2cfc330335bc321fdbc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372316"
 ---
 # <a name="hbabindtype"></a>HBA\_绑定\_类型
 
@@ -55,7 +55,7 @@ HBA\_绑定\_类型 WMI 类限定符表示 HBA 的功能和其微型端口驱动
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_CAN_BIND_TARGETS</p></td>
-<td align="left"><p>指示 HBA 的功能和其微型端口驱动程序来生成逻辑单元的光纤通道协议 (FCP) 标识符用于标识逻辑单元，如的总线和目标操作系统的信息之间的永久绑定中存储的数字<a href="https://msdn.microsoft.com/library/windows/hardware/ff556042" data-raw-source="[&lt;strong&gt;HBAScsiID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556042)"> <strong>HBAScsiID</strong></a>。</p></td>
+<td align="left"><p>指示 HBA 的功能和其微型端口驱动程序来生成逻辑单元的光纤通道协议 (FCP) 标识符用于标识逻辑单元，如的总线和目标操作系统的信息之间的永久绑定中存储的数字<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid" data-raw-source="[&lt;strong&gt;HBAScsiID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid)"> <strong>HBAScsiID</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_CAN_BIND_AUTOMAP</p></td>

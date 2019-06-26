@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d7f73472f66c4a8a389a9ebb94a28c02124438
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51240b38fb8af60facab91e2fb0c6d2586f5056e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375672"
 ---
 # <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo routine
 
 
-*MRxQueryFileInfo*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向查询文件系统对象的文件信息。
+*MRxQueryFileInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询文件系统对象的文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -146,7 +146,7 @@ RDBSS 不支持请求的 SL\_索引\_的指定位**IrpSp-&gt;标志**设置。 �
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

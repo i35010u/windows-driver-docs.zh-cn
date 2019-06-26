@@ -11,12 +11,12 @@ keywords:
 - Ioctl WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c969488f1429b4a9103fa8da58a60c05309e8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78164b0adb8e21f166845a785b84bfab444cd94a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371301"
 ---
 # <a name="tampering-with-data"></a>篡改数据
 
@@ -38,7 +38,7 @@ ms.locfileid: "63344355"
 
 开发人员还应了解使用该 IOCTL **FastIoDeviceControl**调度传入原始用户缓冲区的数据。 因此为 Ioctl 实现快速 I/O 版本的驱动程序应采取适当措施来防止出现问题。
 
-请注意，验证数据本身是不够的。 例如，成功调用[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)可能表示一个缓冲区就是有效的但应用程序地址空间中的后续更改可能会导致该状态发生更改。 应用程序无法终止，例如，在实际直接使用缓冲区的驱动程序之前。 因此，该驱动程序必须防止应用程序的地址空间内的任何更改。 通常这是使用结构化异常处理使用 **\_\_尝试**并 **\_\_除**围绕访问用户缓冲区的任何代码直接地址。
+请注意，验证数据本身是不够的。 例如，成功调用[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)可能表示一个缓冲区就是有效的但应用程序地址空间中的后续更改可能会导致该状态发生更改。 应用程序无法终止，例如，在实际直接使用缓冲区的驱动程序之前。 因此，该驱动程序必须防止应用程序的地址空间内的任何更改。 通常这是使用结构化异常处理使用 **\_\_尝试**并 **\_\_除**围绕访问用户缓冲区的任何代码直接地址。
 
  
 

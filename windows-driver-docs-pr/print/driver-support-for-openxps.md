@@ -4,12 +4,12 @@ description: OpenXPS 是文档的 Open XML 纸张规范格式和基于 Ecma 国�
 ms.assetid: 9BC9787E-A54D-4A11-B256-57BE5D206404
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b3d16238e3ad8da131a4748e0487acc07006df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eacd891d04639d229463d97c4efda6990faa64ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379161"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356066"
 ---
 # <a name="driver-support-for-openxps"></a>OpenXPS 的驱动程序支持
 
@@ -18,7 +18,7 @@ OpenXPS 是文档的 Open XML 纸张规范格式和基于 Ecma 国际标准规�
 
 有关此规范的日期信息的最，请参阅[Open XML 纸张规范](http://www.ecma-international.org/publications/standards/Ecma-388.htm)。
 
-Windows 8 提供完全支持 OpenXPS，继续支持现有的 Microsoft XPS 格式与并行。 本主题着重于 OpenXPS 支持通过 v4 驱动程序模型。 与 Windows 应用程序开发人员相关的 OpenXPS 支持，请参阅[OpenXPS 打印应用程序支持](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)。
+Windows 8 提供完全支持 OpenXPS，继续支持现有的 Microsoft XPS 格式与并行。 本主题着重于 OpenXPS 支持通过 v4 驱动程序模型。 与 Windows 应用程序开发人员相关的 OpenXPS 支持，请参阅[OpenXPS 打印应用程序支持](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)。
 
 ## <a name="supported-openxps-scenarios"></a>支持的 OpenXPS 方案
 
@@ -52,7 +52,7 @@ Windows 打印路径已开发以确保提交的 XPS 格式匹配的目标的打�
 ## <a name="impact-on-app-developers"></a>对应用程序开发人员的影响
 
 
-OpenXPS 的 Windows 8 支持的应用程序开发人员影响信息，请参阅[OpenXPS 打印应用程序支持](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)。
+OpenXPS 的 Windows 8 支持的应用程序开发人员影响信息，请参阅[OpenXPS 打印应用程序支持](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)。
 
 ## <a name="impact-on-driver-developers"></a>对驱动程序开发人员的影响
 

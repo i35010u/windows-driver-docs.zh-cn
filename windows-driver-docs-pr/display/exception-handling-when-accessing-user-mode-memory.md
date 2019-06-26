@@ -7,12 +7,12 @@ keywords:
 - 用户模式内存 WDK Windows 2000 显示异常处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a55b57c829e91642c3abcdb3b93ff5369d2a935
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06b56ac933771930d21db621ba9239612f7e26c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370995"
 ---
 # <a name="exception-handling-when-accessing-user-mode-memory"></a>访问用户模式内存时处理异常
 
@@ -20,7 +20,7 @@ ms.locfileid: "63391249"
 ## <span id="ddk_exception_handling_when_accessing_user_mode_memory_gg"></span><span id="DDK_EXCEPTION_HANDLING_WHEN_ACCESSING_USER_MODE_MEMORY_GG"></span>
 
 
-显示或微型端口驱动程序必须使用异常处理的访问的数据结构在用户模式下分配代码周围。 然后再将它们传递给驱动程序，Microsoft Direct3D 运行时保护此类数据结构的所有权。 安全所属权的用户模式内存中，运行时调用[ **MmSecureVirtualMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff556374)函数。 当运行时保护的用户模式内存所有权时，它会阻止其他任何线程修改对内存的访问类型。 例如，如果运行时保护用户模式线程已分配与读取和写入访问的数据结构的所有权，其他线程不能将数据结构的访问类型限制为只读的。 此外，保护的用户模式内存所有权不保证内存保持有效。
+显示或微型端口驱动程序必须使用异常处理的访问的数据结构在用户模式下分配代码周围。 然后再将它们传递给驱动程序，Microsoft Direct3D 运行时保护此类数据结构的所有权。 安全所属权的用户模式内存中，运行时调用[ **MmSecureVirtualMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmsecurevirtualmemory)函数。 当运行时保护的用户模式内存所有权时，它会阻止其他任何线程修改对内存的访问类型。 例如，如果运行时保护用户模式线程已分配与读取和写入访问的数据结构的所有权，其他线程不能将数据结构的访问类型限制为只读的。 此外，保护的用户模式内存所有权不保证内存保持有效。
 
 因此，访问此类内存的代码周围实现异常处理，除非操作系统崩溃如果驱动程序将尝试访问无效的用户模式下的内存。 对于无效的内核内存访问，唯一可用的选项的操作系统是崩溃。 但是，对于无效的用户内存访问，该驱动程序可以终止失效内存的应用程序并处于稳定状态保留操作系统和驱动程序的设备。
 
@@ -32,11 +32,11 @@ ms.locfileid: "63391249"
 
 在以下情况下，运行时保护将内存传递给驱动程序之前在用户模式下分配的内存的所有权。
 
--   该驱动程序处理指定的指向用户模式内存的指针的顶点数据。 驱动程序收到此内存指针在调用其[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)函数。 在此*D3dDrawPrimitives2*调用，D3DHALDP2\_USERMEMVERTICES 标记**dwFlags**隶属[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff545957)结构设置。
+-   该驱动程序处理指定的指向用户模式内存的指针的顶点数据。 驱动程序收到此内存指针在调用其[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数。 在此*D3dDrawPrimitives2*调用，D3DHALDP2\_USERMEMVERTICES 标记**dwFlags**隶属[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)结构设置。
 
 -   该驱动程序更新到的呈现状态数组**lpdwRStates** D3DHAL 成员\_DRAWPRIMITIVES2DATA 点。 驱动程序将更新此数组在调用其*D3dDrawPrimitives2*函数。
 
--   驱动程序将更新其状态**lpdwStates**的成员[ **DD\_GETDRIVERSTATEDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551551)结构调用其[ **D3dGetDriverState** ](https://msdn.microsoft.com/library/windows/hardware/ff544708)函数。
+-   驱动程序将更新其状态**lpdwStates**的成员[ **DD\_GETDRIVERSTATEDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverstatedata)结构调用其[ **D3dGetDriverState** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverstate)函数。
 
 -   驱动程序位块传输或访问已分配的用户内存系统纹理。
 

@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_ARGUMENT_LENGTH 宏 ACPI 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5081f9204e5cf13ea97fa9916484d633654a641e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd8628b88e6acdbb6f4a9ddad4f1957a832c6dca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328935"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355882"
 ---
 # <a name="acpimethodargumentlength-macro"></a>ACPI\_方法\_自变量\_长度宏
 
 
-ACPI\_方法\_自变量\_长度宏计算大小 （字节） 长度可变[ **ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)结构，其中包含指定的大小，以字节为单位的数据。
+ACPI\_方法\_自变量\_长度宏计算大小 （字节） 长度可变[ **ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)结构，其中包含指定的大小，以字节为单位的数据。
 
 <a name="syntax"></a>语法
 ------
@@ -66,7 +66,7 @@ void ACPI_METHOD_ARGUMENT_LENGTH(
 ## <a name="see-also"></a>请参阅
 
 
-[**ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)
+[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
 
  
 

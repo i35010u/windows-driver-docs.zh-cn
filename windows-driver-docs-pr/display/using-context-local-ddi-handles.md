@@ -11,12 +11,12 @@ keywords:
 - 上下文本地 DDI 处理 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eba46348708bb01572e3f9aa2a0b153052d622d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2374a507b896ddd8ea3eea8ea68f70b3da4eb37e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389739"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373578"
 ---
 # <a name="using-context-local-ddi-handles"></a>使用 Context-Local DDI 句柄
 
@@ -41,15 +41,15 @@ ms.locfileid: "63389739"
 
 对本地推迟的上下文的句柄，Direct3D 运行时使用以下 Direct3D 11 DDI:
 
--   [ **CheckDeferredContextHandleSizes** ](https://msdn.microsoft.com/library/windows/hardware/ff539388)函数验证保存推迟的上下文句柄的句柄数据的驱动程序专用内存空间的大小。
+-   [ **CheckDeferredContextHandleSizes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_checkdeferredcontexthandlesizes)函数验证保存推迟的上下文句柄的句柄数据的驱动程序专用内存空间的大小。
 
--   [ **CalcDeferredContextHandleSize** ](https://msdn.microsoft.com/library/windows/hardware/ff538272)函数确定的推迟的上下文的内存区域的大小。
+-   [ **CalcDeferredContextHandleSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)函数确定的推迟的上下文的内存区域的大小。
 
-对于以检索所需的驱动程序的延迟的上下文句柄大小 Direct3D 运行时，必须使用前面的 DDI 函数。 一个对象，用于即时上下文创建后立即, 运行时调用[ **CalcDeferredContextHandleSize** ](https://msdn.microsoft.com/library/windows/hardware/ff538272)来查询该驱动程序要求的存储空间量的驱动程序满足此对象的延迟的上下文句柄。 但是，Direct3D API 必须通过确定多少唯一的句柄大小来调整其符合 CLS 的内存分配器并访问它们的值;运行时调用的驱动程序[ **CheckDeferredContextHandleSizes** ](https://msdn.microsoft.com/library/windows/hardware/ff539388)函数来获取此信息。 因此，在设备实例化期间 API 申请推迟的上下文句柄大小的数组的双精度轮询。 第一次轮询是请求返回多少大小，而第二个轮询传入要检索的每种大小的值的数组。 该驱动程序必须指示多少内存它为满足需要以及哪些句柄类型的句柄。 该驱动程序可以返回与特定的句柄类型相关联的多个大小。 但是，它是驱动程序来曾经返回的值未定义**CalcDeferredContextHandleSize**未也相应地返回在**CheckDeferredContextHandleSizes**数组。
+对于以检索所需的驱动程序的延迟的上下文句柄大小 Direct3D 运行时，必须使用前面的 DDI 函数。 一个对象，用于即时上下文创建后立即, 运行时调用[ **CalcDeferredContextHandleSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)来查询该驱动程序要求的存储空间量的驱动程序满足此对象的延迟的上下文句柄。 但是，Direct3D API 必须通过确定多少唯一的句柄大小来调整其符合 CLS 的内存分配器并访问它们的值;运行时调用的驱动程序[ **CheckDeferredContextHandleSizes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_checkdeferredcontexthandlesizes)函数来获取此信息。 因此，在设备实例化期间 API 申请推迟的上下文句柄大小的数组的双精度轮询。 第一次轮询是请求返回多少大小，而第二个轮询传入要检索的每种大小的值的数组。 该驱动程序必须指示多少内存它为满足需要以及哪些句柄类型的句柄。 该驱动程序可以返回与特定的句柄类型相关联的多个大小。 但是，它是驱动程序来曾经返回的值未定义**CalcDeferredContextHandleSize**未也相应地返回在**CheckDeferredContextHandleSizes**数组。
 
-与创建 DDI 句柄，使用推迟的上下文上的创建方法。 例如，检查[ **CreateBlendState (D3D10\_1)** ](https://msdn.microsoft.com/library/windows/hardware/ff540597)并[ **DestroyBlendState** ](https://msdn.microsoft.com/library/windows/hardware/ff552745)函数。 HDEVICE 自然地指向相应推迟的上下文 （而不是即时的上下文）;其他 CONST 结构指针**NULL** （假定该对象没有任何依赖项）; 和 D3D10DDI\_HRT\*句柄是 D3D10DDI\_H\*到相应的句柄即时上下文对象。
+与创建 DDI 句柄，使用推迟的上下文上的创建方法。 例如，检查[ **CreateBlendState (D3D10\_1)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_1ddi_createblendstate)并[ **DestroyBlendState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyblendstate)函数。 HDEVICE 自然地指向相应推迟的上下文 （而不是即时的上下文）;其他 CONST 结构指针**NULL** （假定该对象没有任何依赖项）; 和 D3D10DDI\_HRT\*句柄是 D3D10DDI\_H\*到相应的句柄即时上下文对象。
 
-具有依赖项的对象 （例如，视图有依赖关系及其相应的资源），提供了依赖项句柄的结构指针不是**NULL**。 但是，结构中的唯一有效的成员是依赖项句柄;而其他成员都将用零填充。 例如， [ **D3D11DDIARG\_CREATESHADERRESOURCEVIEW** ](https://msdn.microsoft.com/library/windows/hardware/ff542073)驱动程序的调用中的指针[ **CreateShaderResourceView(D3D11)**](https://msdn.microsoft.com/library/windows/hardware/ff540708)函数不会**NULL**当运行时调用此函数上推迟的上下文。 在此 CreateShaderResourceView(D3D11) 调用中，运行时将分配到资源的相应本地上下文句柄**hDrvResource** D3D11DDIARG 成员\_CREATESHADERRESOURCEVIEW。 其余的 D3D11DDIARG 成员\_CREATESHADERRESOURCEVIEW，不过，补零。
+具有依赖项的对象 （例如，视图有依赖关系及其相应的资源），提供了依赖项句柄的结构指针不是**NULL**。 但是，结构中的唯一有效的成员是依赖项句柄;而其他成员都将用零填充。 例如， [ **D3D11DDIARG\_CREATESHADERRESOURCEVIEW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createshaderresourceview)驱动程序的调用中的指针[ **CreateShaderResourceView(D3D11)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createshaderresourceview)函数不会**NULL**当运行时调用此函数上推迟的上下文。 在此 CreateShaderResourceView(D3D11) 调用中，运行时将分配到资源的相应本地上下文句柄**hDrvResource** D3D11DDIARG 成员\_CREATESHADERRESOURCEVIEW。 其余的 D3D11DDIARG 成员\_CREATESHADERRESOURCEVIEW，不过，补零。
 
 下面的示例代码演示如何 Direct3D 运行时将转换应用程序的创建请求和首次使用推迟到对用户模式显示驱动程序调用，以创建即时与延迟上下文的上下文。 应用程序的调用**ID3D11Device::CreateTexture2D**启动以下"创建资源"部分中的运行时代码。 应用程序的调用**ID3D11Device::CopyResource**启动下面的"延迟的上下文资源使用情况"部分中的运行时代码。
 
@@ -72,9 +72,9 @@ pDCRHandle = malloc( s2 );
 
 ### <a name="span-idissueswithpfnseterrorcbspanspan-idissueswithpfnseterrorcbspanissues-with-pfnseterrorcb"></a><span id="issues_with_pfnseterrorcb"></span><span id="ISSUES_WITH_PFNSETERRORCB"></span>PfnSetErrorCb 的问题
 
-返回错误代码，可能适合使用 Direct3D 11 版线程模型的任何创建函数。 创建函数的所有使用[ **pfnSetErrorCb** ](https://msdn.microsoft.com/library/windows/hardware/ff568929)检索错误代码将从驱动程序。 若要最大化与 Direct3D 版本 10 驱动程序模型的兼容性，新 DDI 创建返回错误代码被引入的函数。 相反，该驱动程序必须继续使用统一设备/即时上下文 D3D10DDI\_HRTCORELAYER 使用来处理**pfnSetErrorCb**期间创建函数。 该驱动程序支持命令列表，驱动程序应使用适当**pfnSetErrorCb**与对应的上下文相关联。 也就是说，推迟的上下文错误应转到特定推迟的上下文调用**pfnSetErrorCb**为相应的句柄，依此类推。
+返回错误代码，可能适合使用 Direct3D 11 版线程模型的任何创建函数。 创建函数的所有使用[ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)检索错误代码将从驱动程序。 若要最大化与 Direct3D 版本 10 驱动程序模型的兼容性，新 DDI 创建返回错误代码被引入的函数。 相反，该驱动程序必须继续使用统一设备/即时上下文 D3D10DDI\_HRTCORELAYER 使用来处理**pfnSetErrorCb**期间创建函数。 该驱动程序支持命令列表，驱动程序应使用适当**pfnSetErrorCb**与对应的上下文相关联。 也就是说，推迟的上下文错误应转到特定推迟的上下文调用**pfnSetErrorCb**为相应的句柄，依此类推。
 
-延迟的上下文可以返回电子\_通过调用 OUTOFMEMORY [ **pfnSetErrorCb** ](https://msdn.microsoft.com/library/windows/hardware/ff568929)从以前仅允许 D3DDDIERR DDI 函数\_（如DEVICEREMOVED[**绘制**](https://msdn.microsoft.com/library/windows/hardware/ff556120)， [ **SetBlendState**](https://msdn.microsoft.com/library/windows/hardware/ff569527)，依此类推)，因为推迟的上下文内存需求永久增长 DDI 函数每次调用。 Direct3D API 将触发本地上下文删除，以帮助驱动程序和此类失败的情况，这有效地丢弃部分生成的命令列表。 应用程序以确定它正在记录的命令列表; 继续但是，当应用程序最终调用**FinishCommandList**函数， **FinishCommandList**返回 E 的失败代码\_发生内存不足。
+延迟的上下文可以返回电子\_通过调用 OUTOFMEMORY [ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)从以前仅允许 D3DDDIERR DDI 函数\_（如DEVICEREMOVED[**绘制**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_draw)， [ **SetBlendState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setblendstate)，依此类推)，因为推迟的上下文内存需求永久增长 DDI 函数每次调用。 Direct3D API 将触发本地上下文删除，以帮助驱动程序和此类失败的情况，这有效地丢弃部分生成的命令列表。 应用程序以确定它正在记录的命令列表; 继续但是，当应用程序最终调用**FinishCommandList**函数， **FinishCommandList**返回 E 的失败代码\_发生内存不足。
 
  
 

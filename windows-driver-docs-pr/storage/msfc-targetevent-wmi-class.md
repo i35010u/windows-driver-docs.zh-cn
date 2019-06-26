@@ -4,12 +4,12 @@ description: MSFC\_TargetEvent WMI 类
 ms.assetid: 251f7526-98e6-495d-a987-83257e968bb8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 673f2cfd42f8c1ffca254a4022b0ab008e2728c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c2a9352ac2e59ae65a7d5cd60b1a4b9fb839b0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386543"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376725"
 ---
 # <a name="msfctargetevent-wmi-class"></a>MSFC\_TargetEvent WMI 类
 
@@ -37,7 +37,7 @@ class MSFC_TargetEvent : WmiEvent {
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_TargetEvent**](https://msdn.microsoft.com/library/windows/hardware/ff562518)
+[**MSFC\_TargetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_targetevent)
 
  
 

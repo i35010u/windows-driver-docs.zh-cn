@@ -12,12 +12,12 @@ keywords:
 - geninf.exe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d580775db413c77472243ec7684a9d7e1538742
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 673e56e9911f39df38ccb27556f18eb07ec82fe2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387242"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370185"
 ---
 # <a name="creating-graphics-inf-files"></a>创建图形 INF 文件
 
@@ -65,7 +65,7 @@ ms.locfileid: "63387242"
 
 这些示例 INF 文件同时传送使用 Windows Driver Kit (WDK)。
 
-请参阅[创建一个 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff549520)并[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)更新示例 INF 文件时的详细信息。
+请参阅[创建一个 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)并[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)更新示例 INF 文件时的详细信息。
 
  
 

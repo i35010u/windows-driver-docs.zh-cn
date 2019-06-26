@@ -7,12 +7,12 @@ keywords:
 - 设备对象 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e12270b8ba39446bf7e4342c01077158d81a0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48e4230247c14a44c11683c70800785d5ce79b1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376390"
 ---
 # <a name="storage-drivers-and-device-objects"></a>存储驱动程序和设备对象
 
@@ -28,7 +28,7 @@ ms.locfileid: "63348441"
 
 存储端口驱动程序创建的文件类型的物理设备对象 (PDOs)\_设备\_大容量\_存储。 磁盘类、 CD-ROM 类、 磁带类和转换器类驱动程序创建的类型文件 FDOs\_设备\_磁盘、 文件\_设备\_CD\_ROM、 文件\_设备\_磁带，和文件\_设备\_换带机分别。
 
-有关设计即插即用驱动程序的信息，请参阅[即插即用驱动程序设计指南](https://msdn.microsoft.com/library/windows/hardware/ff559623)。 有关 PnP 相关信息 **Io * * * Xxx*例程，请参阅[插例程](https://msdn.microsoft.com/library/windows/hardware/ff558809)。
+有关设计即插即用驱动程序的信息，请参阅[即插即用驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/kernel/pnp-driver-design-guidelines)。 有关 PnP 相关信息 **Io * * * Xxx*例程，请参阅[插例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

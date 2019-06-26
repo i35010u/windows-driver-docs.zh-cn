@@ -13,17 +13,17 @@ keywords:
 - INF 文件 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 264d49d80852a5635ed6fd8bac37e55034f28e32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92dce6b1497d25c5416d5628bd0e5f06e461171d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391829"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372187"
 ---
 # <a name="using-the-umdf-co-installer"></a>使用 UMDF 辅助安装程序
 
 
-辅助安装程序更新存储在计算机上的 framework 版本，并处理特定于框架的 INF 文件部分。 本主题介绍两种 UMDF 共同安装程序以及何时需要包括一个具有您[驱动程序安装包](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)或引用 INF 文件中的共同安装程序。
+辅助安装程序更新存储在计算机上的 framework 版本，并处理特定于框架的 INF 文件部分。 本主题介绍两种 UMDF 共同安装程序以及何时需要包括一个具有您[驱动程序安装包](https://docs.microsoft.com/windows-hardware/drivers)或引用 INF 文件中的共同安装程序。
 
 ## <a name="getting-the-co-installer-package"></a>获取辅助安装程序包
 
@@ -45,7 +45,7 @@ ms.locfileid: "63391829"
 
 如果你正在编写使用您的驱动程序的计算机上安装了 Windows 8.1 之前的目标操作系统，必须确保该版本 1.11 framework UMDF 1.11 驱动程序。 以下是三种方法可以执行此操作：
 
--   引用在 INF 文件中，更新共同安装程序并包括更新共同安装程序中的您[驱动程序安装包](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)。 在操作系统安装您的驱动程序，它将运行辅助安装程序。 如果将通过 Windows Update 分发驱动程序，必须选择此选项。
+-   引用在 INF 文件中，更新共同安装程序并包括更新共同安装程序中的您[驱动程序安装包](https://docs.microsoft.com/windows-hardware/drivers)。 在操作系统安装您的驱动程序，它将运行辅助安装程序。 如果将通过 Windows Update 分发驱动程序，必须选择此选项。
 
 -   重新分发的相关 MSU 包 (例如 umdf-1.11-Win-6.0.msu) 以及调用它的安装程序应用程序。 您可以找到这样的应用程序的示例中的 src\\常规\\WDK 安装 wdkinstall 子目录。 如果你正在编写附带了设备，并且必须运行才可使用设备的安装程序，可以选择此选项。 如果选择此选项，您的 INF 文件必须引用配置共同安装程序。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63391829"
 ## <a name="inf-file-sections-for-the-co-installer"></a>辅助安装程序的 INF 文件部分
 
 
-驱动程序的 INF 文件必须包括[ **INF DDInstall.CoInstallers 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547321)。 如果你重新分发更新共同安装程序中，你**DDInstall.CoInstallers**部分必须同时包含[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)和[ **INF CopyFiles 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346)，如下面的示例所示。
+驱动程序的 INF 文件必须包括[ **INF DDInstall.CoInstallers 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)。 如果你重新分发更新共同安装程序中，你**DDInstall.CoInstallers**部分必须同时包含[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)和[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)，如下面的示例所示。
 
 ```cpp
 [MyDriver_Install.CoInstallers]
@@ -89,7 +89,7 @@ HKR,,CoInstallers32,0x00010000,WudfCoinstaller.dll
 
 驱动程序的 INF 文件必须始终包含**DDInstall.Wdf**部分共同安装程序，读取后已安装。 为您的驱动程序可以在中指定的指令的信息**DDInstall.Wdf**，请参阅[INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
 
-您可以避免使用 INX 文件创建多个版本的 framework 的多个 INF 文件和[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)工具。 有关 INX 文件的详细信息，请参阅[使用 INX 文件转换为创建 INF 文件](using-inx-files-to-create-inf-files.md)。
+您可以避免使用 INX 文件创建多个版本的 framework 的多个 INF 文件和[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)工具。 有关 INX 文件的详细信息，请参阅[使用 INX 文件转换为创建 INF 文件](using-inx-files-to-create-inf-files.md)。
 
  
 

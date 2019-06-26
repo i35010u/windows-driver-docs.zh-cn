@@ -12,12 +12,12 @@ keywords:
 - 正在初始化状态 WDK ne
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f5e566d2e491fba9d2d7018687465b5bbf526c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3a755301c317c6f47f44d2d40d75b3f52731776
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379811"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373957"
 ---
 # <a name="miniport-adapter-states-and-operations"></a>微型端口适配器状态和操作
 
@@ -28,7 +28,7 @@ ms.locfileid: "63379811"
 对于它所管理的每个适配器，NDIS 6.0 或更高版本的微型端口驱动程序必须支持以下一组操作状态：
 
 <a href="" id="halted"></a>暂停  
-暂停状态是所有适配器的初始状态。 NDIS 当适配器处于暂停状态时，可以调用的驱动程序[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数以初始化适配器。
+暂停状态是所有适配器的初始状态。 NDIS 当适配器处于暂停状态时，可以调用的驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数以初始化适配器。
 
 <a href="" id="shutdown"></a>关闭  
 在关闭状态下，系统关闭和重新启动之前必须进行系统可以再次使用适配器。
@@ -75,7 +75,7 @@ Initializing 状态时，微型端口驱动程序完成初始化适配器所需�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559389" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559389)"><em>MiniportInitializeEx</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)"><em>MiniportInitializeEx</em></a></p></td>
 <td align="left"><p>初始化</p></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -95,7 +95,7 @@ Initializing 状态时，微型端口驱动程序完成初始化适配器所需�
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559449" data-raw-source="[&lt;em&gt;MiniportShutdownEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559449)"><em>MiniportShutdownEx</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown" data-raw-source="[&lt;em&gt;MiniportShutdownEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)"><em>MiniportShutdownEx</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -105,7 +105,7 @@ Initializing 状态时，微型端口驱动程序完成初始化适配器所需�
 <td align="left"><p>关机</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559388" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559388)"><em>MiniportHaltEx</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -115,7 +115,7 @@ Initializing 状态时，微型端口驱动程序完成初始化适配器所需�
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559435" data-raw-source="[&lt;em&gt;MiniportRestart&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559435)"><em>MiniportRestart</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart" data-raw-source="[&lt;em&gt;MiniportRestart&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)"><em>MiniportRestart</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -135,7 +135,7 @@ Initializing 状态时，微型端口驱动程序完成初始化适配器所需�
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559418" data-raw-source="[&lt;em&gt;MiniportPause&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559418)"><em>MiniportPause</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause" data-raw-source="[&lt;em&gt;MiniportPause&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)"><em>MiniportPause</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -210,25 +210,25 @@ Initializing 状态时，微型端口驱动程序完成初始化适配器所需�
 主要的微型端口驱动程序事件定义，如下所示：
 
 <a href="" id="miniportinitializeex"></a>MiniportInitializeEx  
-NDIS 称为驱动程序的[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数以初始化适配器。 有关适配器初始化的详细信息，请参阅[初始化微型端口适配器](initializing-a-miniport-adapter.md)。
+NDIS 称为驱动程序的[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数以初始化适配器。 有关适配器初始化的详细信息，请参阅[初始化微型端口适配器](initializing-a-miniport-adapter.md)。
 
 <a href="" id="initialize-is-complete"></a>初始化已完成  
-之后[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)成功，返回初始化操作已完成，并且适配器处于已暂停状态。
+之后[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)成功，返回初始化操作已完成，并且适配器处于已暂停状态。
 
 <a href="" id="miniportshutdownex"></a>MiniportShutdownEx  
-NDIS 称为驱动程序的[ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)函数关闭适配器。 有关详细信息，请参阅[微型端口适配器关闭](miniport-adapter-shutdown.md)。
+NDIS 称为驱动程序的[ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)函数关闭适配器。 有关详细信息，请参阅[微型端口适配器关闭](miniport-adapter-shutdown.md)。
 
 <a href="" id="miniporthaltex"></a>MiniportHaltEx  
-NDIS 称为驱动程序的[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)函数停止适配器。 有关详细信息，请参阅[停止微型端口适配器](halting-a-miniport-adapter.md)。
+NDIS 称为驱动程序的[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数停止适配器。 有关详细信息，请参阅[停止微型端口适配器](halting-a-miniport-adapter.md)。
 
 <a href="" id="miniportrestart"></a>MiniportRestart  
-NDIS 称为驱动程序的[ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)函数以重新启动暂停的适配器。 因为适配器不处于已暂停状态初始化后，此事件也需要适配器初始化完成后启动该适配器。 有关详细信息，请参阅[启动适配器](starting-an-adapter.md)。
+NDIS 称为驱动程序的[ **MiniportRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)函数以重新启动暂停的适配器。 因为适配器不处于已暂停状态初始化后，此事件也需要适配器初始化完成后启动该适配器。 有关详细信息，请参阅[启动适配器](starting-an-adapter.md)。
 
 <a href="" id="restart-is-complete"></a>重启已完成  
 驱动程序准备就绪后用于处理发送和接收操作，在重新启动操作已完成，适配器处于运行状态。
 
 <a href="" id="miniportpause"></a>MiniportPause  
-NDIS 称为驱动程序的[ *MiniportPause* ](https://msdn.microsoft.com/library/windows/hardware/ff559418)函数来暂停适配器。 有关详细信息，请参阅[暂停适配器](pausing-an-adapter.md)。
+NDIS 称为驱动程序的[ *MiniportPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)函数来暂停适配器。 有关详细信息，请参阅[暂停适配器](pausing-an-adapter.md)。
 
 <a href="" id="pause-is-complete"></a>暂停已完成  
 该驱动程序所需的所有操作都完成后停止发送和接收操作、 暂停操作已完成和适配器处于已暂停状态。
@@ -238,10 +238,10 @@ NDIS 称为驱动程序的[ *MiniportPause* ](https://msdn.microsoft.com/library
  
 
 <a href="" id="initialize-failed"></a>初始化失败  
-如果 NDIS 调用驾[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数和初始化尝试失败，适配器返回到暂停状态。
+如果 NDIS 调用驾[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数和初始化尝试失败，适配器返回到暂停状态。
 
 <a href="" id="restart-failed"></a>重新启动失败  
-如果 NDIS 调用驾[ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)函数，并重新启动尝试失败，该适配器将保持在已暂停状态。
+如果 NDIS 调用驾[ **MiniportRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)函数，并重新启动尝试失败，该适配器将保持在已暂停状态。
 
 <a href="" id="send-and-receive-operations"></a>发送和接收操作  
 驱动程序必须处理发送和接收操作在运行和暂停状态。 有关详细信息大约发送和接收操作，请参阅[微型端口驱动程序发送和接收操作](miniport-driver-send-and-receive-operations.md)。

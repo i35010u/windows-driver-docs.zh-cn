@@ -9,12 +9,12 @@ keywords:
 - AVStream 硬件编解码器支持 WDK，支持动态格式更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 030d22c07134ede6ea81131f30d783c3bbc452e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feab607e1e5d2b67d32040e646099843df0170f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377759"
 ---
 # <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>在 AVStream 编解码器中支持动态格式更改
 
@@ -23,19 +23,19 @@ ms.locfileid: "63371839"
 
 当动态格式更改是从媒体源时，会发生以下事件序列：
 
-1.  驱动程序收到[ **KSPROPERTY\_连接\_PROPOSEDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff565107)请求以确定输入 KS pin 是否支持新的媒体类型。 驱动程序必须支持此属性。
+1.  驱动程序收到[ **KSPROPERTY\_连接\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)请求以确定输入 KS pin 是否支持新的媒体类型。 驱动程序必须支持此属性。
 
 2.  输入插针是否支持新的媒体类型，KSPROPERTY\_连接\_PROPOSEDATAFORMAT 处理程序应返回状态\_成功。 然后，该驱动程序确定它是否可以使用当前所选的输出的媒体类型以及建议的输入来恢复流。 如果是，流将恢复。
 
 3.  如果输入插针不支持的新建议的媒体类型，KSPROPERTY\_连接\_PROPOSEDATAFORMAT 处理程序应返回一个错误。 HW MFT 然后重新连接组件使用的媒体类型进行协商。
 
-4.  如果输入插针支持新的媒体输入的类型，但 KS 筛选器需要不同的输出媒体类型，则驱动程序应生成[ **KSEVENT\_动态\_格式\_更改**](https://msdn.microsoft.com/library/windows/hardware/ff561849)事件，如本主题，以通知有关媒体类型更改 HW MFT 更高版本中所述。
+4.  如果输入插针支持新的媒体输入的类型，但 KS 筛选器需要不同的输出媒体类型，则驱动程序应生成[ **KSEVENT\_动态\_格式\_更改**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-dynamic-format-change)事件，如本主题，以通知有关媒体类型更改 HW MFT 更高版本中所述。
 
 5.  如果硬件 MFT 接收 KSEVENT 通知时，它将转换的输出插针**KSSTATE\_运行**到 KSSTATE\_停止。
 
-6.  HW MFT 然后查询驱动程序对于可用的媒体类型，这会转换为对驱动程序的调用[ *AVStrMiniIntersectHandlerEx* ](https://msdn.microsoft.com/library/windows/hardware/ff556326)交集处理程序。 该驱动程序应报告按偏好顺序列出的首选的输出媒体类型。
+6.  HW MFT 然后查询驱动程序对于可用的媒体类型，这会转换为对驱动程序的调用[ *AVStrMiniIntersectHandlerEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksintersecthandlerex)交集处理程序。 该驱动程序应报告按偏好顺序列出的首选的输出媒体类型。
 
-7.  用户模式下客户端选择媒体类型，并将新的媒体类型设置的 HW MFT 输出插针上。 这会导致驱动程序的调用[ *AVStrMiniPinSetDataFormat* ](https://msdn.microsoft.com/library/windows/hardware/ff556355)调度例程。 如果该驱动程序接受格式通过返回状态\_成功时，流式处理与新的媒体类型的恢复。 如果调用失败，则格式更改中涉及的组件必须重新协商媒体类型。
+7.  用户模式下客户端选择媒体类型，并将新的媒体类型设置的 HW MFT 输出插针上。 这会导致驱动程序的调用[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)调度例程。 如果该驱动程序接受格式通过返回状态\_成功时，流式处理与新的媒体类型的恢复。 如果调用失败，则格式更改中涉及的组件必须重新协商媒体类型。
 
 8.  HW MFT 检查是否已连接的介质中的任何更改。 如果没有任何更改，它在针上设置的所选的媒体类型，并将其放入 KSSTATE\_运行。 如果在已连接的介质中的更改，HW MFT 销毁 pin，并将其与新选择的媒体类型和介质重新创建。 MFT 然后将 pin 放入 KSSTATE\_运行。
 
@@ -84,9 +84,9 @@ KSEVENT_SET PinEventTable[] =
 
 每个 pin 应公开此事件在其 pin 描述符。 事件属于类型 KSEVENTF\_事件\_处理。
 
-驱动程序将生成此事件之前，它应设置基于当前所选的输入的媒体类型 KS 刻度格的首选的媒体类型。 您可以执行此操作通过使用[  **\_KsEdit** ](https://msdn.microsoft.com/library/windows/hardware/ff568796)插针的描述符上的函数。
+驱动程序将生成此事件之前，它应设置基于当前所选的输入的媒体类型 KS 刻度格的首选的媒体类型。 您可以执行此操作通过使用[  **\_KsEdit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-_ksedit)插针的描述符上的函数。
 
-若要生成该事件，驱动程序应调用[ **KsGenerateEvents**](https://msdn.microsoft.com/library/windows/hardware/ff562597)。
+若要生成该事件，驱动程序应调用[ **KsGenerateEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgenerateevents)。
 
  
 

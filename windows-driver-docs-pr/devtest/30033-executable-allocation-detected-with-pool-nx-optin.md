@@ -6,23 +6,23 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30033
-ms.openlocfilehash: a13b4cfc8476655fa240e415e4c2d20d2e27c0f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f0732574c5ee1adff1e651883695b83f437b93d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360789"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371461"
 ---
 # <a name="c30033"></a>C30033
 
 
-警告 C30033:使用编译的驱动程序中，检测到可执行文件的分配[池\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)。 此驱动程序已确定要在加载运行时由另一个驱动程序。 请验证是否加载驱动程序调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 其 DriverEntry 中。
+警告 C30033:使用编译的驱动程序中，检测到可执行文件的分配[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)。 此驱动程序已确定要在加载运行时由另一个驱动程序。 请验证是否加载驱动程序调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 其 DriverEntry 中。
 
 已禁止\_内存优化\_分配\_也许\_UNSAFE\_驱动程序\_LOADED
 
 已确定这是由另一个驱动程序，加载并没有这种情况下完成初始化函数的 DLL。 验证加载驱动程序：
 
--   使用编译[池\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)= 1
+-   使用编译[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)= 1
 -   Calls **ExInitializeDriverRuntime(*DrvRtPoolNxOptIn*)** in its initialization function
 
 如果加载驱动程序正确指定这些，可以忽略此警告。

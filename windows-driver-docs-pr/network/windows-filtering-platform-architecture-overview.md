@@ -9,12 +9,12 @@ keywords:
 - 标注驱动程序 WDK Windows 筛选平台，平台体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32a7a3021c4137b763a524df7c5601ec69aa5ced
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e203b72114861da712eafcbd45ca66520221a6e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378732"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370579"
 ---
 # <a name="windows-filtering-platform-architecture-overview"></a>Windows 筛选平台体系结构概述
 
@@ -29,7 +29,7 @@ ms.locfileid: "63378732"
 
 [标注驱动程序](callout-driver.md)通过注册一个或多个提供附加的筛选功能[标注](callout.md)与筛选器引擎。 [筛选器](filter.md)引擎可以在筛选器中指定的筛选器操作的标注。 在这种情况下，筛选器引擎将网络数据传递给其他处理的指定标注。
 
-Windows 筛选平台中包含多个内置的标注。 请参阅[内置标注标识符](https://msdn.microsoft.com/library/windows/hardware/ff543857)有关的两个标注的说明。
+Windows 筛选平台中包含多个内置的标注。 请参阅[内置标注标识符](https://docs.microsoft.com/windows-hardware/drivers/network/built-in-callout-identifiers)有关的两个标注的说明。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 409e7b7075f43e116e7cb399ddf94c6b43f4c275
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31577a3347939a500bc061a5273e63c1501ab3e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341101"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375812"
 ---
 # <a name="dxvaprocampcontroldeviceclassprocampcontrolblt-method"></a>DXVA\_ProcAmpControlDeviceClass::ProcAmpControlBlt 方法
 
@@ -44,7 +44,7 @@ HRESULT ProcAmpControlBlt(
 
 *lpDDSSrcSurface* \[中\]提供一个指向源图面。
 
-*ccBlt* \[中\]提供一个指向[ **DXVA\_ProcAmpControlBlt** ](https://msdn.microsoft.com/library/windows/hardware/ff564015)结构，它指定 ProcAmp 调整数据输出到目标面。
+*ccBlt* \[中\]提供一个指向[ **DXVA\_ProcAmpControlBlt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolblt)结构，它指定 ProcAmp 调整数据输出到目标面。
 
 <a name="return-value"></a>返回值
 ------------
@@ -54,11 +54,11 @@ HRESULT ProcAmpControlBlt(
 <a name="remarks"></a>备注
 -------
 
-源和目标矩形所需的 subrectangle ProcAmp 调整或拉伸。 支持拉伸是可选的由报告**VideoProcessingCaps**的成员[ **DXVA\_ProcAmpControlCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff564019)结构。 对 subrectangles 的支持也是可选的。
+源和目标矩形所需的 subrectangle ProcAmp 调整或拉伸。 支持拉伸是可选的由报告**VideoProcessingCaps**的成员[ **DXVA\_ProcAmpControlCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolcaps)结构。 对 subrectangles 的支持也是可选的。
 
 目标面可以在屏幕外平面，D3D 呈现目标、 D3D 纹理或也是呈现器目标的 D3D 纹理。 始终将在本地的视频内存分配目标图面。 目标表面的像素格式将 DXVA 中指定\_ProcAmpControlCaps 结构，除非正在 ProcAmp 调整过程执行 YUV 到 RGB 颜色空间转换。 在这种情况下，目标图面上格式将为至少 8 位的精度为每个颜色组件的 RGB 格式。
 
-该示例*ProcAmpControlBlt*函数将映射到调用直接**RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)结构。 **RenderMoComp**驱动程序提供指向成员*DdMoCompRender*回调引用[ **DD\_RENDERMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff551693)结构。 DD\_RENDERMOCOMPDATA 结构填充，如下所示。
+该示例*ProcAmpControlBlt*函数将映射到调用直接**RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构。 **RenderMoComp**驱动程序提供指向成员*DdMoCompRender*回调引用[ **DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构。 DD\_RENDERMOCOMPDATA 结构填充，如下所示。
 
 <table>
 <colgroup>
@@ -86,7 +86,7 @@ HRESULT ProcAmpControlBlt(
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpInputData</strong></p></td>
-<td align="left"><p>指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff564015" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlBlt&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564015)"> <strong>DXVA_ProcAmpControlBlt</strong> </a>结构。</p></td>
+<td align="left"><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolblt" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlBlt&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolblt)"> <strong>DXVA_ProcAmpControlBlt</strong> </a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>lpOutputData</strong></p></td>
@@ -102,15 +102,15 @@ HRESULT ProcAmpControlBlt(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DXVA\_VideoDesc**](https://msdn.microsoft.com/library/windows/hardware/ff564070)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
 
-[**DXVA\_ProcAmpControlCaps**](https://msdn.microsoft.com/library/windows/hardware/ff564019)
+[**DXVA\_ProcAmpControlCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolcaps)
 
-[**DXVA\_ProcAmpControlBlt**](https://msdn.microsoft.com/library/windows/hardware/ff564015)
+[**DXVA\_ProcAmpControlBlt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolblt)
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)
+[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD\_CREATEMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff550529)
+[**DD\_CREATEMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
 
  
 

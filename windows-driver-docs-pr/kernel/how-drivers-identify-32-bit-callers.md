@@ -14,12 +14,12 @@ keywords:
 - 调用方标识 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c0e5aa033197d94d201c2afbaf5c67d2114a54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c53fbb940efc707b09c9734f4e700892120a2b2a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371867"
 ---
 # <a name="how-drivers-identify-32-bit-callers"></a>驱动程序如何识别 32 位调用方
 
@@ -31,7 +31,7 @@ ms.locfileid: "63364279"
 
 第一种方法涉及到定义 IOCTL 或 FSCTL 控制代码中的"64 位"字段。 此字段包含的 64 位的调用方设置的单个位。 因此 64 位的调用方标识自身使用一组单独的 64 位控制代码将设置此位。 32 位的调用方使用一组类似的控制代码将不设置此位。
 
-第二种方法允许 32 位和 64 位应用程序以继续使用相同的 IOCTL 或 FSCTL 代码。 相反，该驱动程序确定用户模式进程是否通过调用为 32 位或 64 位[ **IoIs32bitProcess**](https://msdn.microsoft.com/library/windows/hardware/ff549372)。
+第二种方法允许 32 位和 64 位应用程序以继续使用相同的 IOCTL 或 FSCTL 代码。 相反，该驱动程序确定用户模式进程是否通过调用为 32 位或 64 位[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)。
 
 第一种方法是更高效，因为该驱动程序检查而不是调用内核模式例程的位标志。 但是，第二种方法需要对用户模式代码的任何更改。 应使用何种技术取决于您的驱动程序将 I/O 请求发送到它的应用程序的要求。
 

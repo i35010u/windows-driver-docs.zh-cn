@@ -4,12 +4,12 @@ description: 获取函数实例对象
 ms.assetid: 2c750281-031b-4b9f-9012-3b341ebe1cd9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68243e112354ce8faeaf63dd41ddd1b814bb5eff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f6c879103e51038e9baf389d6ff1fa7e61598b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376589"
 ---
 # <a name="obtaining-a-function-instance-object"></a>获取函数实例对象
 
@@ -25,7 +25,7 @@ ms.locfileid: "63379653"
 #include <FunctionDiscovery.h>
 ```
 
-在初始化期间，为可能发生这种情况中[ **IStiUSD::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff543824)方法，微型驱动程序应查询函数查询，以获取相应的函数实例对象，表示硬件设备。 若要完成此查询，请使用以下过程 （和关联的代码示例）：
+在初始化期间，为可能发生这种情况中[ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)方法，微型驱动程序应查询函数查询，以获取相应的函数实例对象，表示硬件设备。 若要完成此查询，请使用以下过程 （和关联的代码示例）：
 
 ### <a name="step-1-create-the-function-discovery-object"></a>第 1 步：创建函数发现对象
 

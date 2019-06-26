@@ -7,12 +7,12 @@ keywords:
 - 启动 BDA 微型驱动程序 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a63e9266792f5248da35d7009b0f9970a8fd56e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33e09e5381a25b1a3e8ffadb6a680aa46052f604
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333976"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377845"
 ---
 # <a name="starting-a-bda-minidriver"></a>启动 BDA 微型驱动程序
 
@@ -20,11 +20,11 @@ ms.locfileid: "63333976"
 
 
 
-BDA 设备启动时运行，插即用 (PnP) 管理器将调度[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)。 AVStream 类反过来调用 BDA 微型驱动程序与 BDA 设备相关联的启动例程。 此启动例程从注册表检索有关设备的信息，将有关设备的信息，然后调用[ **BdaCreateFilterFactory** ](https://msdn.microsoft.com/library/windows/hardware/ff556438)支持到函数：
+BDA 设备启动时运行，插即用 (PnP) 管理器将调度[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)。 AVStream 类反过来调用 BDA 微型驱动程序与 BDA 设备相关联的启动例程。 此启动例程从注册表检索有关设备的信息，将有关设备的信息，然后调用[ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)支持到函数：
 
--   从初始的筛选器描述符创建设备筛选器工厂 ([**KSFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff562553)) 设备。 初始的筛选器描述符引用筛选器和输入插针调度和自动化的表。 请参阅[创建调度表](creating-dispatch-tables.md)并[定义自动化表](defining-automation-tables.md)有关详细信息。
+-   从初始的筛选器描述符创建设备筛选器工厂 ([**KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)) 设备。 初始的筛选器描述符引用筛选器和输入插针调度和自动化的表。 请参阅[创建调度表](creating-dispatch-tables.md)并[定义自动化表](defining-automation-tables.md)有关详细信息。
 
--   将与筛选器工厂相关联[ **BDA\_筛选器\_模板**](https://msdn.microsoft.com/library/windows/hardware/ff556523)结构。 此结构引用模板筛选器描述符，设备并对可能的输入和输出插针的列表。 此描述符和列表又引用：
+-   将与筛选器工厂相关联[ **BDA\_筛选器\_模板**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template)结构。 此结构引用模板筛选器描述符，设备并对可能的输入和输出插针的列表。 此描述符和列表又引用：
     -   网络提供商可用于确定 BDA 筛选器的拓扑的静态模板结构。
     -   节点和 BDA 筛选器以及可能的方法连接筛选器的 pin。
     -   网络提供商可用于创建和关闭筛选器实例的例程。

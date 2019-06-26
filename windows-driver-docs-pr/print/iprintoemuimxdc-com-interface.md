@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUIMXDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0feaa624f825f5d1bcd8b3e829121db1685a9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6eb9ec92512289fa3bd2c05446ce5cb5ac95555d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329622"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371749"
 ---
 # <a name="iprintoemuimxdc-com-interface"></a>IPrintOemUIMXDC COM 接口
 
@@ -33,15 +33,15 @@ ms.locfileid: "63329622"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554151" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageableArea&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554151)"><strong>IPrintOEMUIMXDC::AdjustImageableArea</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimageablearea" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageableArea&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimageablearea)"><strong>IPrintOEMUIMXDC::AdjustImageableArea</strong></a></p></td>
 <td><p>使 XPS 筛选器管道的驱动程序使用 UnidrvUI.dll 或 PS5UI.dll 来支持配置的可打印区域，包括方向和方向的旋转。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554153" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageCompression&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554153)"><strong>IPrintOEMUIMXDC::AdjustImageCompression</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimagecompression" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustImageCompression&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustimagecompression)"><strong>IPrintOEMUIMXDC::AdjustImageCompression</strong></a></p></td>
 <td><p>使 XPS 筛选器管道的驱动程序使用 UnidrvUI.dll 或 PS5UI.dll 来支持 JPEG 图像的压缩级别的配置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554147" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustDPI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554147)"><strong>IPrintOEMUIMXDC::AdjustDPI</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustdpi" data-raw-source="[&lt;strong&gt;IPrintOEMUIMXDC::AdjustDPI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuimxdc-adjustdpi)"><strong>IPrintOEMUIMXDC::AdjustDPI</strong></a></p></td>
 <td><p>使 XPS 筛选器管道的驱动程序使用 UnidrvUI.dll 或 PS5UI.dll 来支持配置的图像分辨率。</p></td>
 </tr>
 </tbody>

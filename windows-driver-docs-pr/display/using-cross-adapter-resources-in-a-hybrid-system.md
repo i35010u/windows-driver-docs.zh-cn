@@ -4,19 +4,19 @@ description: Windows 显示器驱动程序模型 (WDDM) 驱动程序可以支持
 ms.assetid: ECBB0AA7-50C2-41C8-9DC6-6EEFC5CEEB15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b08b9d2b3c7fbaecb9d10b7784b10bd81f8291
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea3970fae802be698797d295a53192fae0c02b3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389087"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373572"
 ---
 # <a name="span-iddisplayusingcross-adapterresourcesinahybridsystemspanusing-cross-adapter-resources-in-a-hybrid-system"></a><span id="display.using_cross-adapter_resources_in_a_hybrid_system"></span>在混合系统中使用跨适配器资源
 
 
 从 Windows 8.1 中，可以支持 Windows 显示驱动程序模型 (WDDM) 驱动程序*混合系统*，其中*跨适配器资源*集成的 GPU 和是分立的 GPU，之间共享和应用程序可以运行任一 GPU，具体取决于应用程序的需求上。 操作系统和驱动程序一起确定应用程序的运行在 GPU。
 
-显示微型端口驱动程序应通过设置表达对跨适配器资源的支持**CrossAdapterResource**的成员[ **DXGK\_VIDMMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff562072)结构。
+显示微型端口驱动程序应通过设置表达对跨适配器资源的支持**CrossAdapterResource**的成员[ **DXGK\_VIDMMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)结构。
 
 驱动程序根据分配的类型以不同方式获取的信息。 如果分配是传统的全屏幕主数据库，用户模式显示驱动程序获取创建主数据库，如主标志、 视频存在网络 (VidPN) 源 ID、 刷新频率和旋转时通常提供的信息信息。 但是，如果分配是直接翻转主，跨适配器分配无法用作为主要副本，但用户模式显示驱动程序不会获得创建主数据库时提供的常用信息。 此外，在这种情况下离散的用户模式显示驱动程序接收主数据库的相关信息，但不是应验证它。 集成的驱动程序不会接收指示它是主键的信息。
 

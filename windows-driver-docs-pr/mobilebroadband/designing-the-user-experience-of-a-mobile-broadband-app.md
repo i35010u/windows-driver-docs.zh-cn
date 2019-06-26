@@ -4,12 +4,12 @@ description: 设计移动宽带应用的用户体验
 ms.assetid: c84e2814-69ba-4cd0-ba11-1b035ccdfbde
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c66929c7f9dda7dd000bbf2f5347a7004ba85ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30e2494c1684b42ef518e366ce29c388cc6fdf14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378388"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381529"
 ---
 # <a name="designing-the-user-experience-of-a-mobile-broadband-app"></a>设计移动宽带应用的用户体验
 
@@ -87,7 +87,7 @@ ms.locfileid: "63378388"
 ## <a name="span-idresourcesspanspan-idresourcesspanadditional-resources"></a><span id="resources"></span><span id="RESOURCES"></span>其他资源
 
 
--   [适用于 UWP 应用的索引的用户体验指南](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [适用于 UWP 应用的索引的用户体验指南](https://developer.microsoft.com/windows/apps/design)
 
 -   [移动宽带概述](overview-of-mobile-broadband.md)
 

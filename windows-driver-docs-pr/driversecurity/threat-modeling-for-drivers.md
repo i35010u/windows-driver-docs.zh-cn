@@ -4,12 +4,12 @@ description: 驱动程序编写者和架构师在任何驱动程序的设计过�
 ms.assetid: 77FB242E-A07C-4298-80ED-866F8D80118C
 ms.date: 06/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b4a5479671ebb9a7cd00bada0b60450895891de5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f73ebe4951c171b0558cf75f143dea3b301912a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371991"
 ---
 # <a name="threat-modeling-for-drivers"></a>驱动程序的威胁建模
 
@@ -278,7 +278,7 @@ DREAD 是描述了用于评估的软件的威胁的五个条件的首字母缩�
 
 Microsoft SDL 过程提供了大量的推荐的软件开发过程，可以进行修改以适应任意大小的组织包括独立的开发人员。 请考虑将 SDL 建议的组件添加到软件开发过程。
 
-有关详细信息，请参阅[Microsoft 安全开发生命周期 (SDL) – 过程指南](https://msdn.microsoft.com/library/84aed186-1d75-4366-8e61-8d258746bopq.aspx)。
+有关详细信息，请参阅[Microsoft 安全开发生命周期 (SDL) – 过程指南](https://docs.microsoft.com/previous-versions/windows/desktop/cc307891(v=msdn.10))。
 
 **培训和组织功能**-实施软件开发安全培训，以展开识别和修正软件漏洞的能力。
 
@@ -338,17 +338,17 @@ Microsoft 对其四个核心 SDL 培训课程可供下载。 [Microsoft 安全�
 
 [常见驱动程序的可靠性问题](https://download.microsoft.com/download/5/7/7/577a5684-8a83-43ae-9272-ff260a9c20e2/drvqa.doc)白皮书
 
-[取消 Windows 驱动程序中的逻辑](https://msdn.microsoft.com/library/windows/hardware/dn653289)白皮书
+[取消 Windows 驱动程序中的逻辑](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653289(v=vs.85))白皮书
 
 [Windows 安全模型： 需要知道的每个驱动程序编写器](windows-security-model.md)
 
 **Microsoft Windows 驱动程序开发工具包 (DDK)**
 
-请参阅[驱动程序的编程技术](https://msdn.microsoft.com/library/windows/hardware/ff544177)中[内核模式驱动程序体系结构](https://msdn.microsoft.com/library/windows/hardware/ff557560)
+请参阅[驱动程序的编程技术](https://docs.microsoft.com/windows-hardware/drivers/kernel/driver-programming-techniques)中[内核模式驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/)
 
 **测试工具**
 
-请参阅[Windows 硬件实验室套件](https://msdn.microsoft.com/library/windows/hardware/dn930814)中[性能和兼容性测试](https://msdn.microsoft.com/windows/hardware/commercialize/test/index)
+请参阅[Windows 硬件实验室套件](https://docs.microsoft.com/windows-hardware/drivers/)中[性能和兼容性测试](https://docs.microsoft.com/windows-hardware/test/index)
 
 **已知的威胁和软件漏洞的公共数据库**
 

@@ -9,12 +9,12 @@ keywords:
 - 软件 WDK，ETW 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d4aa30ba0d5de6f656fbf656381936be4e15b19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d256e7f7af602b70d003053ebc4fc48c97c38b94
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344806"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371371"
 ---
 # <a name="event-tracing-for-windows-etw"></a>Windows 事件跟踪 (ETW)
 
@@ -27,7 +27,7 @@ ms.locfileid: "63344806"
 
 [添加事件跟踪到内核模式驱动程序](adding-event-tracing-to-kernel-mode-drivers.md)
 
-[ETW 内核模式引用](https://msdn.microsoft.com/library/windows/hardware/ff545650)
+[ETW 内核模式引用](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff545650(v=vs.85))
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 线程锁定 WDK Driver Verifier
 ms.date: 07/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adaf103c38fe11afca2ce8cba65d7c98bc0bde92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d71f2f32444a0d363bb818efc1ed46cc5a9ffc31
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371440"
 ---
 # <a name="deadlock-detection"></a>死锁检测
 
@@ -109,7 +109,7 @@ ms.locfileid: "63344925"
 -   从 Windows 7 开始，Driver Verifier 可预测可能的死锁。 例如，尝试使用相同 KSPIN\_锁数据结构作为常规旋转锁和堆栈排队自旋锁。
 
 
-请参阅[ **Bug 检查 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (驱动程序\_VERIFIER\_检测到\_冲突) 的 bug 列表检查参数。
+请参阅[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突) 的 bug 列表检查参数。
 
 ### <a name="span-idmonitoringdeadlockdetectionspanspan-idmonitoringdeadlockdetectionspanmonitoring-deadlock-detection"></a><span id="monitoring_deadlock_detection"></span><span id="MONITORING_DEADLOCK_DETECTION"></span>监视死锁检测
 
@@ -117,7 +117,7 @@ ms.locfileid: "63344925"
 
 为获得最佳结果，有问题的驱动程序应在上运行已检验版本的 Windows，因为允许内核以获取更完整的运行时堆栈跟踪。
 
-没有的详细的示例[ **！ 死锁**](https://msdn.microsoft.com/library/windows/hardware/ff562326)扩展，以及有关调试器扩展，文档中的 Windows 调试工具软件包的常规信息。 请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)有关详细信息。
+没有的详细的示例[ **！ 死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)扩展，以及有关调试器扩展，文档中的 Windows 调试工具软件包的常规信息。 请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)有关详细信息。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
@@ -125,7 +125,7 @@ ms.locfileid: "63344925"
 
 -   **在命令行**
 
-    在命令行中，由表示死锁检测选项**位 5 (0x20)**。 若要激活死锁检测，使用 0x20 标志值，或将 0x20 添加到标志值。 例如：
+    在命令行中，由表示死锁检测选项**位 5 (0x20)** 。 若要激活死锁检测，使用 0x20 标志值，或将 0x20 添加到标志值。 例如：
 
     ```
     verifier /flags 0x20 /driver MyDriver.sys

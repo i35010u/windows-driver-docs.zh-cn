@@ -10,12 +10,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c21b363a5e646e21b429f55a9eaf07ed828b4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8390c9690a2a1a8c314f47a257f1c21128640370
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365537"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372425"
 ---
 # <a name="customized-data-stream-compression"></a>自定义的数据流压缩
 
@@ -25,7 +25,7 @@ ms.locfileid: "63365537"
 
 Unidrv 可以执行数据压缩操作使用自定义的代码。 若要执行自定义的压缩操作，请执行以下步骤：
 
-1.  提供用于实现的插件呈现[ **IPrintOemUni::Compression** ](https://msdn.microsoft.com/library/windows/hardware/ff554224)方法。
+1.  提供用于实现的插件呈现[ **IPrintOemUni::Compression** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-compression)方法。
 
 2.  在打印机中包含 CmdEnableOEMComp 命令输入*GPD*文件。
 

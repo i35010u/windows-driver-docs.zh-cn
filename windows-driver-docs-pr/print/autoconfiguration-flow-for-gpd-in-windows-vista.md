@@ -7,12 +7,12 @@ keywords:
 - 框中自动配置支持 WDK 打印机的步骤顺序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04830129bf16f80c99f2ce5e2247f7252d5ee1dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc54fd9a9b856405abd1775f54c50f00f8aa355e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350745"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370473"
 ---
 # <a name="autoconfiguration-flow-for-gpd-in-windows-vista"></a>Windows Vista 中 GPD 的自动配置流
 
@@ -21,7 +21,7 @@ ms.locfileid: "63350745"
 
 1.  端口监视器将包含以前已不在缓存或更改任何值的通知发送到后台处理程序。
 
-2.  后台处理程序响应的通知从端口监视器通过调用[ **DrvPrinterEvent**](https://msdn.microsoft.com/library/windows/hardware/ff548564)。
+2.  后台处理程序响应的通知从端口监视器通过调用[ **DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)。
 
 3.  打印机\_事件\_配置传递给驱动程序包含所有新值。 属性的值已更改，并且也会更新注册表，则会通知驱动程序。
 

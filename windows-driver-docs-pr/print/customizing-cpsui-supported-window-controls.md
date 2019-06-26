@@ -10,12 +10,12 @@ keywords:
 - 自定义 CPSUI 支持窗口控件 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c21e159da744343971dec67a4d3fcc104bd50c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 564ddc41782ac66f34385ddc54e7efdae262852a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355681"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372389"
 ---
 # <a name="customizing-cpsui-supported-window-controls"></a>自定义 CPSUI 支持的窗口控件
 
@@ -25,9 +25,9 @@ ms.locfileid: "63355681"
 
 如果使用的[CPSUI 支持窗口控件](cpsui-supported-window-controls.md)结合[CPSUI 提供页和模板](cpsui-supplied-pages-and-templates.md)，CPSUI 提供介绍允许的方式的控件的窗口中控制资源它们组合在一起。 因此，不需要为控件提供资源。
 
-但是，如果要创建不使用 CPSUI 提供页面或模板的属性表页，您必须自定义使用 CPSUI 支持窗口控件。 若要执行此操作，需要提供的窗口中控制资源[CPSUI 选项类型](https://msdn.microsoft.com/library/windows/hardware/ff547142)。 必须指定使用这些资源的标识符**BegCtrlID**成员的每个选项[ **OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)结构。
+但是，如果要创建不使用 CPSUI 提供页面或模板的属性表页，您必须自定义使用 CPSUI 支持窗口控件。 若要执行此操作，需要提供的窗口中控制资源[CPSUI 选项类型](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types)。 必须指定使用这些资源的标识符**BegCtrlID**成员的每个选项[ **OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)结构。
 
-如果要自定义 CPSUI 支持窗口控件，请记住 CPSUI 不会显示一个选项，如果 OPTIF\_中设置隐藏标志[ **OPTITEM** ](https://msdn.microsoft.com/library/windows/hardware/ff559656)结构。 CPSUI 移动剩余的控件来填充通常由隐藏选项占用的空间。 因此，如果要创建一个包含多个同时显示选项的页面，则应遵守以下规则：
+如果要自定义 CPSUI 支持窗口控件，请记住 CPSUI 不会显示一个选项，如果 OPTIF\_中设置隐藏标志[ **OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)结构。 CPSUI 移动剩余的控件来填充通常由隐藏选项占用的空间。 因此，如果要创建一个包含多个同时显示选项的页面，则应遵守以下规则：
 
 -   每个选项应占用属性表页的整个水平空间。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63355681"
 
 -   有关从左到右排列的单选按钮所表示的选项，应在 x 轴上对齐按钮和图标。 如果按钮从上到下排列，应在 y 轴上对齐按钮和图标。
 
--   如果多个项共享一组框中，必须属于组框中的第一个[ **OPTITEM**](https://msdn.microsoft.com/library/windows/hardware/ff559656)，这是在组中最顶层的项。 分组框必须足够大以包含与之关联的所有项。
+-   如果多个项共享一组框中，必须属于组框中的第一个[ **OPTITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)，这是在组中最顶层的项。 分组框必须足够大以包含与之关联的所有项。
 
 另请注意，如果从上到下和某些控制处于隐藏状态排列的单选按钮和图标，CPSUI 不会删除生成的空白区域在 y 方向。
 

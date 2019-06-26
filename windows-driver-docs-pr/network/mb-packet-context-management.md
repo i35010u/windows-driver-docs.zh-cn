@@ -4,12 +4,12 @@ description: MB 数据包上下文管理
 ms.assetid: 52d72def-8aee-4e04-ad42-1a4537cda899
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 333b153d408c4cea8016b2006346ec06b6e53778
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1daf9fe67923c3f607af4bde1839ec84d97ff75a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374064"
 ---
 # <a name="mb-packet-context-management"></a>MB 数据包上下文管理
 
@@ -26,11 +26,11 @@ MB 驱动程序模型基于这两个有关活动的包上下文的数目限制�
 
 2.  可以在任何给定时间激活仅单个数据包上下文。
 
-它是必需的 MB 驱动程序模型是否符合任何微型端口驱动程序设置**MaxActivatedContexts**的成员[ **WWAN\_设备\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff571204)为 1，在响应时的结构[OID\_WWAN\_设备\_CAPS](https://msdn.microsoft.com/library/windows/hardware/ff569824)查询请求。 即使微型端口驱动程序设置此值是大于 1，则可确保 MB 服务，最多只有一个数据包激活上下文在任何给定时间。
+它是必需的 MB 驱动程序模型是否符合任何微型端口驱动程序设置**MaxActivatedContexts**的成员[ **WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps)为 1，在响应时的结构[OID\_WWAN\_设备\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)查询请求。 即使微型端口驱动程序设置此值是大于 1，则可确保 MB 服务，最多只有一个数据包激活上下文在任何给定时间。
 
 每个数据包上下文可以激活不超过一次，因为静态数据包上下文标识符可以用于标识正在激活后的虚拟线路。 使用此静态标识符是仍然有效，前提是第一个约束仍然成立。
 
-有关数据包上下文管理的详细信息，请参阅[OID\_WWAN\_已预配\_上下文](https://msdn.microsoft.com/library/windows/hardware/ff569831)并[OID\_WWAN\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/ff569823).
+有关数据包上下文管理的详细信息，请参阅[OID\_WWAN\_已预配\_上下文](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)并[OID\_WWAN\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-connect).
 
  
 

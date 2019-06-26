@@ -4,12 +4,12 @@ description: 创建适用于 Windows XP 和 Windows Vista 的单个驱动程序�
 ms.assetid: 5e350152-edd7-4afb-bcba-dd0217d0d17a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef93623ad1ebafd020388dff2034c9a64381ad2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9509c95833777b04d7ca09be994f307169c81ce7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372430"
 ---
 # <a name="creating-a-single-driver-package-for-windows-xp-and-windows-vista"></a>创建适用于 Windows XP 和 Windows Vista 的单个驱动程序包
 
@@ -50,9 +50,9 @@ ms.locfileid: "63365547"
 
 2.  驱动程序包的子目录中包括整个 Windows Vista 核心驱动程序包。
 
-3.  使用[ **INF CopyINF 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547317)预更新的核心驱动程序加载到驱动程序存储区。
+3.  使用[ **INF CopyINF 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyinf-directive)预更新的核心驱动程序加载到驱动程序存储区。
 
-4.  使用 INF **InboxVersionRequired**=*&lt;更新的核心驱动程序版本&gt;* 指令以确保只有较新版本的核心驱动程序包使用。
+4.  使用 INF **InboxVersionRequired**= *&lt;更新的核心驱动程序版本&gt;* 指令以确保只有较新版本的核心驱动程序包使用。
 
 5.  使用 INF **CoreDriverDependencies**并**CoreDriverSections**指令指示您的 Windows Vista 驱动程序需要更新的核心驱动程序。
 

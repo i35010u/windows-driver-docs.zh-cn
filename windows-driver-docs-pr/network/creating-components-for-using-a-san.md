@@ -10,12 +10,12 @@ keywords:
 - 将数据 WDK San 传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46f6589723efba3e4100dd1e6904894a97b2595c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 816d8bd8a2d5969efcd0302169f03f332c1a81bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357364"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374901"
 ---
 # <a name="creating-components-for-using-a-san"></a>创建组件以使用 SAN
 
@@ -31,7 +31,7 @@ Windows 套接字应用程序可以受益于使用系统区域网络 (SAN)。 �
 
 需要 NDIS 微型端口驱动程序将必须通过以太网、 ATM 或另一个 SAN 等特定 SAN 以外的网络流的数据传输。 TCP/IP 使用 NDIS 微型端口驱动程序将数据发送到 SAN NIC 和此类网络上。
 
-有关实施微型端口和传输驱动程序的信息，请参阅*微型端口驱动程序*并[TDI 传输和及其客户端](https://msdn.microsoft.com/library/windows/hardware/ff565587)。
+有关实施微型端口和传输驱动程序的信息，请参阅*微型端口驱动程序*并[TDI 传输和及其客户端](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565587(v=vs.85))。
 
  
 

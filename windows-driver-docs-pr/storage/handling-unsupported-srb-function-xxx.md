@@ -9,12 +9,12 @@ keywords:
 - 不受支持的 SRB_FUNCTION_XXX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 116843f42de7234ae8c4d1cd23fe0b5a8c3b8ed9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53764b5a0dea1f3800db006f6a58d29dbbe44dfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383112"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371155"
 ---
 # <a name="handling-unsupported-srbfunctionxxx"></a>处理不受支持的 SRB\_函数\_XXX
 
@@ -26,7 +26,7 @@ ms.locfileid: "63383112"
 
 1.  设置输入 SRB 的**SrbStatus**到 SRB\_状态\_无效\_请求。
 
-2.  调用[ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)与*NotificationType * * * RequestComplete** 和 SRB 中的输入。
+2.  调用[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)与*NotificationType * * * RequestComplete** 和 SRB 中的输入。
 
 3.  调用**ScsiPortNotification**再次使用 * NotificationType ***NextRequest**，或与**NextLuRequest**如果 HBA 支持有标记的队列或多个请求每个逻辑单元。
 

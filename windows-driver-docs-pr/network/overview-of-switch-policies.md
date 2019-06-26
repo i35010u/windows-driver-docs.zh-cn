@@ -4,12 +4,12 @@ description: 交换机策略概述
 ms.assetid: DB9368CE-96D4-48C9-AE18-601EE4A09001
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de8a6e03b8b3b9607ec440675ac56e009267d4ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f4a61c9cc5ca4e3673fbecd283804de6d63c55d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356094"
 ---
 # <a name="overview-of-switch-policies"></a>交换机策略概述
 
@@ -28,7 +28,7 @@ ISV 定义自定义开关属性的格式。 自定义开关属性的格式是专
 
 自定义开关属性定义通过托管的对象格式 (MOF) 的类定义。 MOF 文件注册到 WMI 管理层后，使用自定义开关策略预配的基础扩展。
 
-通过指定自定义开关属性[ **NDIS\_切换\_属性\_类型**](https://msdn.microsoft.com/library/windows/hardware/hh598257)枚举值的**NdisSwitchPropertyTypeCustom**。 每个自定义开关属性唯一地定义通过 GUID 值。 扩展可用于管理这些自定义开关属性为其配置了该属性的 GUID 值。
+通过指定自定义开关属性[ **NDIS\_切换\_属性\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_switch_property_type)枚举值的**NdisSwitchPropertyTypeCustom**。 每个自定义开关属性唯一地定义通过 GUID 值。 扩展可用于管理这些自定义开关属性为其配置了该属性的 GUID 值。
 
 **请注意**  与属性的 GUID 值配置该扩展的方法是为 ISV 专有。
 
@@ -36,13 +36,13 @@ ISV 定义自定义开关属性的格式。 自定义开关属性的格式是专
 
 自定义开关策略是通过以下 OID 请求预配：
 
--   协议边缘发出的 OID 集请求[OID\_切换\_属性\_添加](https://msdn.microsoft.com/library/windows/hardware/hh598280)通知添加自定义开关属性的基础扩展。
+-   协议边缘发出的 OID 集请求[OID\_切换\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)通知添加自定义开关属性的基础扩展。
 
--   协议边缘发出的 OID 集请求[OID\_切换\_属性\_更新](https://msdn.microsoft.com/library/windows/hardware/hh598283)通知的自定义开关属性的更新的基础扩展。
+-   协议边缘发出的 OID 集请求[OID\_切换\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)通知的自定义开关属性的更新的基础扩展。
 
--   协议边缘发出的 OID 集请求[OID\_切换\_属性\_删除](https://msdn.microsoft.com/library/windows/hardware/hh598281)通知的自定义开关属性删除基础扩展。
+-   协议边缘发出的 OID 集请求[OID\_切换\_属性\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)通知的自定义开关属性删除基础扩展。
 
-转发扩展可以阻止通过禁止 OID 请求设置新的或更新的交换机策略。 通过完成状态为 OID 请求的扩展插件实现这\_数据\_不\_已接受。 如果扩展不能阻止 OID 请求，它必须调用[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)下可扩展交换机控制路径 OID 请求转发。
+转发扩展可以阻止通过禁止 OID 请求设置新的或更新的交换机策略。 通过完成状态为 OID 请求的扩展插件实现这\_数据\_不\_已接受。 如果扩展不能阻止 OID 请求，它必须调用[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)下可扩展交换机控制路径 OID 请求转发。
 
 **请注意**  如果扩展不能阻止 OID 请求，它监视的状态，当请求完成。 扩展插件这样做是为了确定 OID 请求已被否决的可扩展交换机控制路径中的基础扩展或可扩展交换机接口。
 

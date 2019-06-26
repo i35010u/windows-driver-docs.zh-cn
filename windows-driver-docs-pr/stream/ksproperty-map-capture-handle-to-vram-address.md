@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f352142c99d7e3623de5b401e914f24fcc18651b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39ac1ac75ff97bc37866f488b8b86e0994322768
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376915"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371146"
 ---
 # <a name="kspropertymapcapturehandletovramaddress"></a>KSPROPERTY\_地图\_捕获\_处理\_TO\_VRAM 能够\_地址
 
@@ -52,7 +52,7 @@ KSPROPERTY\_地图\_捕获\_处理\_TO\_vram 能够\_地址属性返回的 vram 
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568785" data-raw-source="[&lt;strong&gt;VRAM_SURFACE_INFO_PROPERTY_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568785)"><strong>VRAM_SURFACE_INFO_PROPERTY_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-vram_surface_info_property_s" data-raw-source="[&lt;strong&gt;VRAM_SURFACE_INFO_PROPERTY_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-vram_surface_info_property_s)"><strong>VRAM_SURFACE_INFO_PROPERTY_S</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>

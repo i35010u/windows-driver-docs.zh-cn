@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7e00471456da9fc292479ffa18eeb4859fb671cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c24e1a67d6523642224bdf2854c9b03b7614996
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327472"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376805"
 ---
 # <a name="devpkeynumaproximitydomain"></a>DEVPKEY_Numa_Proximity_Domain
 
@@ -62,7 +62,7 @@ DEVPKEY_Numa_Proximity_Domain 的值是数字值，该值表示域 id。
 
 可以通过调用检索的值 DEVPKEY_Numa_Proximity_Domain **IoSetDevicePropertyData**或**IoGetDevicePropertyData**设备驱动程序中。
 
-您还可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Numa_Proximity_Domain 值。
+您还可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Numa_Proximity_Domain 值。
 
 此属性的值应由驱动程序和应用程序以只读方式处理和拥有的 Windows。
 
