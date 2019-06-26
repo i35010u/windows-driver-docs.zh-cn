@@ -6,12 +6,12 @@ ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 89af40e81bf59ba0f68b4e28e40071aed167daeb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1af03d99a06f5f5777f52593091f9258d347cea2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323431"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384836"
 ---
 # <a name="hardware-notifications-design-guide"></a>硬件通知设计指南
 
@@ -51,7 +51,7 @@ ms.locfileid: "63323431"
  
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[硬件通知参考](https://msdn.microsoft.com/library/windows/hardware/dn789336)
+[硬件通知参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 
 

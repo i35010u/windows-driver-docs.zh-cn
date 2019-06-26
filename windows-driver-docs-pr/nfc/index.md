@@ -12,12 +12,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 14e7dc78177d9171608ed6a91032b44b60e7b74e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 683ae52d151ad6769dbae1eb780fd76cb4123358
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348181"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386204"
 ---
 # <a name="near-field-communications-nfc-design-guide"></a>近场通信 (NFC) 设计指南
 
@@ -33,8 +33,8 @@ Windows 公开了使用 NFC 技术（包括以下平台）的一组丰富体验�
 请使用用户模式驱动程序框架 (UMDF) 2.0 来为 Windows 10 桌面版（家庭版、专业版、企业版和教育版）和 Windows 10 移动版编写 NFC 驱动程序。
 
 ## <a name="related-topics"></a>相关主题
- [UMDF 入门](https://msdn.microsoft.com/library/windows/hardware/dn384105)  
- [NFC 设备驱动程序接口 (DDI) 参考](https://msdn.microsoft.com/library/windows/hardware/mt715815)    
+ [UMDF 入门](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)  
+ [NFC 设备驱动程序接口 (DDI) 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)    
 
 
 ----------

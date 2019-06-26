@@ -5,19 +5,19 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 093fd0c73cb5589acbf918a7f7db3badc686bf29
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 2909ebe474011590da8323b811d37f3709c297ba
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161475"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393265"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
 
 通用串行总线 (USB) 提供了一个可扩展且可热插拔的即插即用串行接口，可确保为键盘、鼠标、游戏杆、打印机、扫描仪、存储设备、调制解调器和视频会议摄像机之类的外设提供标准的低成本连接。 对于所有使用旧端口（例如 PS/2 端口、串行端口和并行端口）的外围设备，建议迁移到 USB。
 
-USB-IF 是一个特别兴趣组 (SIG)，负责维护[官方 USB 规范](http://www.usb.org/developers/docs/)、测试规范和工具。
+USB-IF 是一个特别兴趣组 (SIG)，负责维护[官方 USB 规范](https://www.usb.org/documents)、测试规范和工具。
 
 Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规范的设备和系统提供本机支持。 Windows 还提供编程接口，用于开发可与 USB 设备通信的[设备驱动程序](usb-driver-development-guide.md)和[应用程序](developing-windows-applications-that-communicate-with-a-usb-device.md)。
 
@@ -97,9 +97,9 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p>获取相关工具的信息，这些工具可以用来测试 USB 硬件或软件、捕获操作和其他系统事件的跟踪，以及观察 USB 驱动程序堆栈如何响应客户端驱动程序或应用程序发送的请求。</p>
 <p>阅读硬件认证工具包中提供的测试的概述。硬件供应商和设备制造商可以通过这些测试准备其 USB 设备和主控制器，以便提交 Windows 硬件认证。</p>
 <p><strong>USB 的其他资源</strong></p>
-<a href="http://www.usb.org/developers/docs/" data-raw-source="[Official USB Specification](http://www.usb.org/developers/docs/)">官方 USB 规范</a>
+<a href="https://www.usb.org/documents" data-raw-source="[Official USB Specification](https://www.usb.org/documents)">官方 USB 规范</a>
 <p>针对 USB 协议提供完整的技术详细信息。</p>
-<a href="https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/" data-raw-source="[Microsoft Windows USB Core Team Blog](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/)">Microsoft Windows USB 核心团队博客</a>
+<a href="https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog" data-raw-source="[Microsoft Windows USB Core Team Blog](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog)">Microsoft Windows USB 核心团队博客</a>
 <p>查看 Microsoft USB 团队撰写的博文。 此博客重点介绍 Windows USB 驱动程序堆栈，该堆栈适用于 Windows 电脑中的各种 USB 主控制器和 USB 集线器。 适用于 USB 客户端驱动程序开发人员和 USB 硬件设计人员的资源，方便他们了解驱动程序堆栈实现、解决常见问题以及如何使用工具来收集跟踪和日志文件。</p>
 <a href="https://community.osr.com/categories/ntdev" data-raw-source="[OSR Online Lists - ntdev](https://community.osr.com/categories/ntdev)">OSR Online 列表 - ntdev</a>
 <p>由 <a href="http://www.osronline.com/index.cfm" data-raw-source="[OSR Online](http://www.osronline.com/index.cfm)">OSR Online</a> 管理的讨论列表，适用于内核模式驱动程序开发人员。</p>
@@ -107,10 +107,10 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p>各种基于常见问题的资源，这些问题由不熟悉 Windows 操作系统的 USB 设备和驱动程序开发的开发人员提出。</p>
 <p></p>
 <p><strong>USB 相关视频</strong></p>
-<a href="http://channel9.msdn.com/Events/Build/2013/3-924a" data-raw-source="[UWP apps for USB devices](http://channel9.msdn.com/Events/Build/2013/3-924a)">用于 USB 设备的 UWP 应用</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T" data-raw-source="[Understanding USB 3.0 in Windows 8](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T)">了解 Windows 8 中的 USB 3.0</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T" data-raw-source="[Building great USB 3.0 devices](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T)">构建卓越的 USB 3.0 设备</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, & III)](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 中的 USB 调试创新（第 1、第 2 和第 3 部分）</a>
+<a href="https://channel9.msdn.com/Events/Build/2013/3-924a" data-raw-source="[UWP apps for USB devices](https://channel9.msdn.com/Events/Build/2013/3-924a)">用于 USB 设备的 UWP 应用</a>
+<a href="https://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T" data-raw-source="[Understanding USB 3.0 in Windows 8](https://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T)">了解 Windows 8 中的 USB 3.0</a>
+<a href="https://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T" data-raw-source="[Building great USB 3.0 devices](https://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T)">构建卓越的 USB 3.0 设备</a>
+<a href="https://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, & III)](https://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 中的 USB 调试创新（第 1、第 2 和第 3 部分）</a>
 <p><strong>适合学习的 USB 硬件</strong></p>
 <a href="microsoft-usb-test-tool--mutt--devices.md" data-raw-source="[MUTT devices](microsoft-usb-test-tool--mutt--devices.md)">MUTT 设备</a>
 <p>MUTT 和 SuperMUTT 设备以及伴随的软件包已集成到包含 USB 测试的 HCK 套件中。 它们提供的自动化测试可以在 USB 控制器、设备和系统的开发周期中使用，尤其是在进行压力测试时使用。</p>

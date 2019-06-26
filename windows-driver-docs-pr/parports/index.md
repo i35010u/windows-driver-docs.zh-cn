@@ -8,12 +8,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 4f856c98fde24c150b52c22e628e652ca40120d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78c92d76d9db1417e77ec223cf35fb1aa5b6ab71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373565"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358534"
 ---
 # <a name="parallel-device-driver-design-guide"></a>并行设备驱动程序设计指南
 
@@ -29,7 +29,7 @@ ms.locfileid: "63373565"
 
 [供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
-[并行设备参考](https://msdn.microsoft.com/library/windows/hardware/ff544269)
+[并行设备参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

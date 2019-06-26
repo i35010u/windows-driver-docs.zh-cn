@@ -17,12 +17,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 180cb4ad234242d536f7124b6f84f6dcbe21c89a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1f9558b563fcadcb3ade7461de2b88daf2f0882
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391634"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393378"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI 驱动程序编程指南
 
@@ -30,7 +30,7 @@ ms.locfileid: "63391634"
 ## <a name="supported-pcie-features-in-windows"></a>Windows 中支持的 PCIe 功能
 
 
-下表汇总了不同版本的 Windows 支持的 PCIe 功能。 有关详细信息，请参阅[官方 PCIe 规范](http://www.pcisig.com/specifications/pciexpress/review_zone/)中的指定部分。
+下表汇总了不同版本的 Windows 支持的 PCIe 功能。 有关详细信息，请参阅[官方 PCIe 规范](http://pcisig.com/specifications/review-zone)中的指定部分。
 
 <table>
 <colgroup>
@@ -97,7 +97,7 @@ ms.locfileid: "63391634"
 </tr>
 <tr class="even">
 <td><p>单根 I/O 虚拟化 (SR-IOV)</p>
-<p>请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh440235" data-raw-source="[Single Root I/O Virtualization (SR-IOV)](https://msdn.microsoft.com/library/windows/hardware/hh440235)">单根 I/O 虚拟化 (SR-IOV)</a>。</p></td>
+<p>请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-" data-raw-source="[Single Root I/O Virtualization (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)">单根 I/O 虚拟化 (SR-IOV)</a>。</p></td>
 <td><p>Windows 8</p>
 <p>Windows Server 2012</p></td>
 </tr>
@@ -111,16 +111,16 @@ ms.locfileid: "63391634"
 ## <a name="in-this-section"></a>本部分内容
 
 
--   [PCI 电源管理和设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/dn607302)
--   [访问 PCI 设备配置空间](https://msdn.microsoft.com/library/windows/hardware/ff536890)
--   [减少 I/O 资源使用](https://msdn.microsoft.com/library/windows/hardware/ff537424)
--   [启动设备 IRP 中的资源顺序](https://msdn.microsoft.com/library/windows/hardware/ff537445)
--   [有关图形的 PCI Express 常见问题解答](https://msdn.microsoft.com/library/windows/hardware/dn653979)
--   [PCI 示例](https://msdn.microsoft.com/library/windows/hardware/hh450892)
+-   [PCI 电源管理和设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
+-   [访问 PCI 设备配置空间](https://docs.microsoft.com/windows-hardware/drivers/pci/accessing-pci-device-configuration-space)
+-   [减少 I/O 资源使用](https://docs.microsoft.com/windows-hardware/drivers/pci/i-o-resource-usage-reduction)
+-   [启动设备 IRP 中的资源顺序](https://docs.microsoft.com/windows-hardware/drivers/pci/order-of-resources-in-start-device-irp)
+-   [有关图形的 PCI Express 常见问题解答](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-express-faq-for-graphics)
+-   [PCI 示例](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-sample)
 
 
 ## <a name="see-also"></a>另请参阅
--   [官方 PCIe 规范](http://www.pcisig.com/specifications/pciexpress/review_zone/)
+-   [官方 PCIe 规范](http://pcisig.com/specifications/review-zone)
 
  
 

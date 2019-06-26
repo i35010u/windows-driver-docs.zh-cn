@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 2d3dc6a72993a7df74bae3de857cefd7709b52b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31fef22eec9de042d353910d4250deef892f58fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386461"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380567"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
 
@@ -78,7 +78,7 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 
 * SleepStudy 工具提供了有关 KMDF 驱动程序的信息
 
-    SleepStudy 软件工具报告 KMDF 驱动程序具有的妨碍系统进入睡眠的电源参考数。  有关详细信息，请参阅 [Modern standby SleepStudy](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/modern-standby-sleepstudy)（新式待机 SleepStudy）。
+    SleepStudy 软件工具报告 KMDF 驱动程序具有的妨碍系统进入睡眠的电源参考数。  有关详细信息，请参阅 [Modern standby SleepStudy](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby-sleepstudy)（新式待机 SleepStudy）。
 
 此页其余部分介绍 Windows 10 版本 1507 中增加的功能。
 
@@ -99,7 +99,7 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 ## <a name="universal-driver-compliance"></a>通用驱动程序符合性
 
 
-所有 WDF 驱动程序示例和 Visual Studio 驱动程序模板都兼容[通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)。
+所有 WDF 驱动程序示例和 Visual Studio 驱动程序模板都兼容[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
 所有 KMDF 和 UMDF 2 功能都兼容通用 Windows 驱动程序。
 
@@ -110,7 +110,7 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 
 -   所有 KMDF 和 UMDF 2 驱动程序都可以使用一个始终打开且始终提供的即时跟踪记录器 (IFR)。 当驱动程序提供自定义跟踪时，驱动程序 IFR 日志将包含跟踪消息。 请注意，新的驱动程序 IFR 日志独立于 WDF 为每个驱动程序创建的框架 IFR 日志。
 
-    很容易就可以打开 IFR。 请参阅 [Inflight Trace Recorder (IFR) for logging traces](https://msdn.microsoft.com/library/windows/hardware/dn914610)（用于记录跟踪的即时跟踪记录器 (IFR)）和[在 KMDF 和 UMDF 驱动程序中使用即时跟踪记录器](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。
+    很容易就可以打开 IFR。 请参阅 [Inflight Trace Recorder (IFR) for logging traces](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-wpp-recorder)（用于记录跟踪的即时跟踪记录器 (IFR)）和[在 KMDF 和 UMDF 驱动程序中使用即时跟踪记录器](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。
 
 -   IFR 在不可分页的内存中保留一个循环缓冲区，其中有 WPP 跟踪。 如果驱动程序出现故障，则会在故障转储文件中频繁保存日志。
 
@@ -118,21 +118,21 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 
     -   IFR 日志包含在小型转储文件中，除非相应的驱动程序未确定或者该崩溃是主机超时。
 
-    -   如果连接了调试程序，则可通过发出 [**!wdfkd.wdflogdump**](https://msdn.microsoft.com/library/windows/hardware/ff565805) 来访问驱动程序和框架 IFR 日志。
+    -   如果连接了调试程序，则可通过发出 [ **!wdfkd.wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump) 来访问驱动程序和框架 IFR 日志。
 
     -   即使未连接调试程序，也可以访问这两种日志。  若要了解具体方法，请观看[视频：在没有调试程序的情况下访问驱动程序 IFR 日志](video--accessing-driver-ifr-logs-without-a-debugger.md)。
 
-    -   调试 UMDF 驱动程序时，可以将框架日志与驱动程序日志合并在一起，方法是发出以下命令：**!wdfkd.wdflogdump** *&lt;drivername.dll&gt;* **-m**
+    -   调试 UMDF 驱动程序时，可以将框架日志与驱动程序日志合并在一起，方法是发出以下命令： **!wdfkd.wdflogdump** *&lt;drivername.dll&gt;* **-m**
 
 -   UMDF 日志 (WudfTrace.etl) 和转储现在位于 %ProgramData%\\Microsoft\\WDF 中而不是 %systemDrive%\\LogFiles\\Wudf 中。
 
--   可以通过新的调试程序命令 [**!wdfkd.wdfumtriage**](https://msdn.microsoft.com/library/windows/hardware/dn961126) 以内核为中心查看系统中的所有 UMDF 设备。
+-   可以通过新的调试程序命令 [ **!wdfkd.wdfumtriage**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumtriage) 以内核为中心查看系统中的所有 UMDF 设备。
 
--   可以运行 [**!analyze**](https://msdn.microsoft.com/library/windows/hardware/ff562112) 来调查 UMDF 验证程序故障或 UMDF 未处理异常。 这适用于实时内核调试，以及对 *%ProgramData%*\\Microsoft\\WDF 中的用户故障转储文件进行的调试。
+-   可以运行 [ **!analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) 来调查 UMDF 验证程序故障或 UMDF 未处理异常。 这适用于实时内核调试，以及对 *%ProgramData%* \\Microsoft\\WDF 中的用户故障转储文件进行的调试。
 
 -   在 KMDF 和 UMDF 2 中，可以在调试程序中监视电源参考使用情况。 有关信息，请参阅[在 WDF 中调试电源参考漏孔](debugging-power-reference-leaks-in-wdf.md)。
 
--   可以使用 [**!wdfkd.wdfcrashdump**](https://msdn.microsoft.com/library/windows/hardware/ff565682) 显示有关 UMDF 2 驱动程序的错误信息。 有关详细信息，请参阅 **!wdfkd.wdfcrashdump**。
+-   可以使用 [ **!wdfkd.wdfcrashdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump) 显示有关 UMDF 2 驱动程序的错误信息。 有关详细信息，请参阅 **!wdfkd.wdfcrashdump**。
 
 ## <a name="performance-tracing-tool-for-wdf-drivers"></a>用于 WDF 驱动程序的性能跟踪工具
 

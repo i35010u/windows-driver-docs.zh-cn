@@ -10,12 +10,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: d154e14dc64ed47f1b54a453fa4695f1208ad91f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45dbd991bc269fcfa1b96a48817ed2f619b33a7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385773"
 ---
 # <a name="ieee-1394-bus-driver-design-guide"></a>IEEE 1394 总线驱动程序设计指南
 
@@ -25,21 +25,21 @@ ms.locfileid: "63376647"
 
 本部分包括：
 
-[IEEE 1394 驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/ff538867)
+[IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)
 
-[安装 IEEE 1394 设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537224)
+[安装 IEEE 1394 设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/installing-ieee-1394-device-drivers)
 
-[IEEE 1394 设备的异步 I/O](https://msdn.microsoft.com/library/windows/hardware/ff536915)
+[IEEE 1394 设备的异步 I/O](https://docs.microsoft.com/windows-hardware/drivers/ieee/asynchronous-i-o-for-ieee-1394-devices)
 
-[IEEE 1394 设备的常时等量 I/O](https://msdn.microsoft.com/library/windows/hardware/ff537375)
+[IEEE 1394 设备的常时等量 I/O](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-i-o-for-ieee-1394-devices)
 
-[修改 1394 配置 ROM](https://msdn.microsoft.com/library/windows/hardware/ff537433)
+[修改 1394 配置 ROM](https://docs.microsoft.com/windows-hardware/drivers/ieee/modifying-the-1394-configuration-rom)
 
-[IEEE 1394 硬件仿真驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537214)
+[IEEE 1394 硬件仿真驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/ieee-1394-hardware-emulation-drivers)
 
-[1394 示例和诊断工具](https://msdn.microsoft.com/library/windows/hardware/ff536887)
+[1394 示例和诊断工具](https://docs.microsoft.com/windows-hardware/drivers/ieee/1394-samples-and-diagnostic-tools)
 
-[IEC-61883 客户端驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537188)
+[IEC-61883 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 9d891f71c09c066030be98387068a706ddb49c19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65386ecb58d51a43a28ef24fc9cd9317e7009a61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364527"
 ---
 # <a name="bring-up-guide"></a>“引入”指南
 
@@ -45,7 +45,7 @@ ms.locfileid: "63337530"
 </tr>
 <tr>
 <td><p><a href="windows-acpi-design-guide-for-soc-platforms.md" data-raw-source="[Windows ACPI design guide for SoC platforms](windows-acpi-design-guide-for-soc-platforms.md)">SoC 平台的 Windows ACPI 设计指南</a></p></td>
-<td><p>高级配置和电源接口规格 5.0 修正版（<a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 规格</a>）定义了一组新的功能，这些功能可以支持低功耗的移动设备，而这些移动设备则基于系统单芯片 (SoC) 集成电路并实现了连接待机电源模型。 从 Windows 8 和 Windows 8.1 以及 Windows Server 2012 和 2012 R2 开始，Windows 支持新的 ACPI 5.0 功能，这些功能适用于基于 SoC 的平台。</p></td>
+<td><p>高级配置和电源接口规格 5.0 修正版（<a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 规格</a>）定义了一组新的功能，这些功能可以支持低功耗的移动设备，而这些移动设备则基于系统单芯片 (SoC) 集成电路并实现了连接待机电源模型。 从 Windows 8 和 Windows 8.1 以及 Windows Server 2012 和 2012 R2 开始，Windows 支持新的 ACPI 5.0 功能，这些功能适用于基于 SoC 的平台。</p></td>
 </tr>
 <tr>
 <td><p><a href="security-overview.md" data-raw-source="[Security](security-overview.md)">安全性</a></p></td>

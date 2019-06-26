@@ -6,17 +6,17 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 018a4787252d6c76dd96e3883b467c9c808c5470
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80820f7c46f3f46e52645285d552cdbef411018b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375684"
 ---
 # <a name="installable-file-systems-driver-design-guide"></a>可安装的文件系统驱动程序设计指南
 
 
-Windows 中的文件系统作为在存储系统上运行的文件系统驱动程序来实现。 Windows 中的每个文件系统旨在提供可靠的数据存储和不同的功能，目的是满足用户的要求。 [File System Functionality Comparison](https://msdn.microsoft.com/library/windows/desktop/ee681827)（文件系统功能比较）中比较了 Windows 中每个标准的文件系统的功能。 Windows Server 2012 的新增功能为 ReFS。 ReFS 是一个提供可缩放大型卷支持的文件系统，可以检测并修正磁盘上的数据损坏情况。
+Windows 中的文件系统作为在存储系统上运行的文件系统驱动程序来实现。 Windows 中的每个文件系统旨在提供可靠的数据存储和不同的功能，目的是满足用户的要求。 [File System Functionality Comparison](https://docs.microsoft.com/windows/desktop/FileIO/filesystem-functionality-comparison)（文件系统功能比较）中比较了 Windows 中每个标准的文件系统的功能。 Windows Server 2012 的新增功能为 ReFS。 ReFS 是一个提供可缩放大型卷支持的文件系统，可以检测并修正磁盘上的数据损坏情况。
 
 除了那些在 Windows 中提供的文件系统驱动程序，可能不需要创建新的文件系统驱动程序。 文件系统和文件系统筛选器驱动程序可以提供修改现有文件系统的操作所需的任何自定义行为。
 
@@ -30,7 +30,7 @@ Windows 中的文件系统作为在存储系统上运行的文件系统驱动程
 ## <a name="span-idfilesystemfilterdrivercertificationspanspan-idfilesystemfilterdrivercertificationspanspan-idfilesystemfilterdrivercertificationspanfile-system-filter-driver-certification"></a><span id="File_System_Filter_Driver_Certification"></span><span id="file_system_filter_driver_certification"></span><span id="FILE_SYSTEM_FILTER_DRIVER_CERTIFICATION"></span>文件系统筛选器驱动程序认证
 
 
-有关文件系统和文件系统筛选器驱动程序的认证信息，请参阅 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)。 有关文件系统和文件系统筛选器驱动程序的测试，请参阅 HCK 的 [Filter.Driver](https://msdn.microsoft.com/library/windows/hardware/jj124779) 类别。
+有关文件系统和文件系统筛选器驱动程序的认证信息，请参阅 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)。 有关文件系统和文件系统筛选器驱动程序的测试，请参阅 HCK 的 [Filter.Driver](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124779(v=vs.85)) 类别。
 
 ## <a name="span-idfilesystemfilterdriverdeveloperresourcesspanspan-idfilesystemfilterdriverdeveloperresourcesspanspan-idfilesystemfilterdriverdeveloperresourcesspanfile-system-filter-driver-developer-resources"></a><span id="File_System_Filter_Driver_Developer_Resources"></span><span id="file_system_filter_driver_developer_resources"></span><span id="FILE_SYSTEM_FILTER_DRIVER_DEVELOPER_RESOURCES"></span>文件系统筛选器驱动程序开发人员资源
 

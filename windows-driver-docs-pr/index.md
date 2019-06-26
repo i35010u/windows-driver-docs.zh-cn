@@ -8,12 +8,12 @@ ms.date: 04/20/2017
 ms.topic: landing-page
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 18925bb8f93296690f3d8a05ccdb0b52058e3b42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88b863a983e13fcfb08849bd70105b974d9835ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375771"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385023"
 ---
 # <a name="windows-driver-kit-documentation"></a>Windows 驱动程序工具包文档
 
@@ -90,7 +90,7 @@ Windows 驱动程序工具包 (WDK) 10 集成了 Microsoft Visual Studio 2017 �
                             <a href="https://go.microsoft.com/fwlink/p/?LinkId=698539">Visual Studio 2017</a>
                         </p>
                         <p>
-                            <a href="https://developer.microsoft.com/windows/hardware/windows-driver-kit">Windows 驱动程序工具包 (WDK)</a>
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk">Windows 驱动程序工具包 (WDK)</a>
                         </p>                        
                     </div>
                 </div>
@@ -250,7 +250,7 @@ Windows 驱动程序工具包 (WDK) 10 集成了 Microsoft Visual Studio 2017 �
 
 <p><b>WDK 10 的运行时要求</b></p>
 
-WDK 需要 Visual Studio。 有关详细信息，请参阅 [Visual Studio 2017 系统要求](https://www.visualstudio.com/productinfo/vs2017-system-requirements-vs)。
+WDK 需要 Visual Studio。 有关详细信息，请参阅 [Visual Studio 2017 系统要求](https://docs.microsoft.com/visualstudio/productinfo/vs2017-system-requirements-vs)。
 
 EWDK 还另外需要 .NET 4.6.1。 有关 .NET 要求的信息，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。 
 

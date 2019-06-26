@@ -12,12 +12,12 @@ ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 07e076c9e410d035cf564d2a64ba4c253041a17a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35eb1449cc09ac664bbfba5eab0801e294d1b765
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372982"
 ---
 # <a name="driver-development-tools"></a>驱动程序开发工具
 
@@ -46,16 +46,16 @@ ms.locfileid: "63360787"
 <p><a href="tools-for-software-tracing.md" data-raw-source="[Tools for Software Tracing](tools-for-software-tracing.md)">用于软件跟踪的工具</a></p>
 <p><a href="additional-driver-tools.md" data-raw-source="[Additional Driver Tools](additional-driver-tools.md)">其他驱动程序工具</a></p>
 <td align="left"><p><strong>资源</strong></p>
-<p><a href="https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers" data-raw-source="[Getting Started with Universal Windows Drivers](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)">通用 Windows 驱动程序入门</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Getting Started with Universal Windows Drivers](https://docs.microsoft.com/windows-hardware/drivers)">通用 Windows 驱动程序入门</a></p>
 <p>通用 Windows 驱动程序使开发人员能够创建可在多种不同设备类型（从嵌入式系统到平板电脑和台式电脑）上运行的单个驱动程序。 硬件开发人员可以在不同的外形规格中使用其现有的组件和设备驱动程序。</p>
-<p><a href="https://msdn.microsoft.com/windows-drivers/develop/converting_wdk_8_1_projects_to_wdk_10" data-raw-source="[Converting WDK 8.1 Projects to WDK 10](https://msdn.microsoft.com/windows-drivers/develop/converting_wdk_8_1_projects_to_wdk_10)">将 WDK 8.1 项目转换为 WDK 10</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Converting WDK 8.1 Projects to WDK 10](https://docs.microsoft.com/windows-hardware/drivers)">将 WDK 8.1 项目转换为 WDK 10</a></p>
 <p>可以将使用 WDK 8 或 Windows 驱动程序工具包 (WDK) 8.1 创建的项目和解决方案转换为与 Windows 驱动程序工具包 (WDK) 10 和 Visual Studio 2015 结合使用。 在打开项目或解决方案之前，请运行 ProjectUpgradeTool。 ProjectUpgradeTool 可以转换项目和解决方案，以便使用 Windows 10 版 WDK 进行生成。</p>
 <p></p>
-<p><a href="https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers" data-raw-source="[Validating Universal Windows drivers](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)">验证通用 Windows 驱动程序</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Validating Universal Windows drivers](https://docs.microsoft.com/windows-hardware/drivers)">验证通用 Windows 驱动程序</a></p>
 <p>可以使用 ApiValidator.exe 工具验证驱动程序调用的 API 是否对通用 Windows 驱动程序有效。 如果驱动程序调用的 API 不是有效的通用 Windows 驱动程序 API，该工具将返回错误。 此工具是 Windows 10 版 WDK 的一部分。</p>
 <a href="wdk-and-visual-studio-build-environment.md" data-raw-source="[WDK and Visual Studio build environment](wdk-and-visual-studio-build-environment.md)">WDK 和 Visual Studio 生成环境</a>
 <p>有关如何使用 WDK 和 Visual Studio 生成环境的详细信息和提示（针对驱动程序开发人员）。</p>
-<a href="https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment" data-raw-source="[Developing, Testing, and Deploying Drivers](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)">开发、测试以及部署驱动程序</a>
+<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Developing, Testing, and Deploying Drivers](https://docs.microsoft.com/windows-hardware/drivers)">开发、测试以及部署驱动程序</a>
 <p>有关如何在 Visual Studio 开发环境中生成驱动程序并使用验证工具和测试的具体信息。</p></td>
 </tr>
 </tbody>

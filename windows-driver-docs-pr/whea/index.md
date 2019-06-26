@@ -14,12 +14,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 4e40115732291ff40d95066ad500a3f0f5e5448d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75849ee70ab54e5ca094274af8d8d110be78601b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340804"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386469"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows 硬件错误体系结构 (WHEA) 设计指南
 
@@ -34,7 +34,7 @@ ms.locfileid: "63340804"
 
 若要更详细地了解 WHEA 以及如何在硬件平台上实现 WHEA，请参阅“WHEA 平台设计指南”。 平台供应商可以通过向 <wheafb@microsoft.com> 发送电子邮件获取此设计指南。
 
-**注意**   Windows Vista、Windows Server 2008 以及更高版本的 Windows 操作系统支持 WHEA。 有关硬件错误报告（在 Windows Vista 之前的 Microsoft Windows 版本上支持），请参阅[计算机检查体系结构 (MCA)](https://msdn.microsoft.com/library/windows/hardware/ff540685)。
+**注意**   Windows Vista、Windows Server 2008 以及更高版本的 Windows 操作系统支持 WHEA。 有关硬件错误报告（在 Windows Vista 之前的 Microsoft Windows 版本上支持），请参阅[计算机检查体系结构 (MCA)](https://docs.microsoft.com/previous-versions/windows/hardware/mca/ff540685(v=vs.85))。
 
  
 
@@ -58,9 +58,9 @@ ms.locfileid: "63340804"
 [Windows 硬件错误体系结构调试程序扩展](windows-hardware-error-architecture-debugger-extensions.md)
 
 ## <a name="related-topics"></a>相关主题
-[Windows 硬件错误体系结构 ACPI 表规范](https://msdn.microsoft.com/windows/hardware/gg463511)  
-[Hardware Management and Security](https://msdn.microsoft.com/library/windows/hardware/dn614601)（硬件管理和安全性）  
-[**Bug 检查 0x124：WHEA\_UNCORRECTABLE\_ERROR（Windows 调试程序）**](https://msdn.microsoft.com/library/windows/hardware/ff557321)  
+[Windows 硬件错误体系结构 ACPI 表规范](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/WHEA_ACPI-tables.docx)  
+[Hardware Management and Security](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614601(v=vs.85))（硬件管理和安全性）  
+[**Bug 检查 0x124：WHEA\_UNCORRECTABLE\_ERROR（Windows 调试程序）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x124---whea-uncorrectable-error)  
 
 
 

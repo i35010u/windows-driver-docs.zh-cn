@@ -11,12 +11,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: b89f67ab77281bd37d424dbb2bca5cfb7f8b2c03
-ms.sourcegitcommit: 276a3aef2d4463bbe653d30ed55d7bab20000aa6
+ms.openlocfilehash: 4b721253df53581f92797717d7cb2474da6e8e15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65814905"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370728"
 ---
 # <a name="developing-testing-and-deploying-drivers"></a>开发、测试以及部署驱动程序
 
@@ -24,7 +24,7 @@ Windows 驱动程序开发环境和 Windows 调试器已集成到 Microsoft Visu
 
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/9673727b-89ef-4a54-8228-dad41dbd8201]
 
-若要设置集成开发环境，请先安装 Visual Studio，然后再安装 WDK。 可以在[此处](https://go.microsoft.com/fwlink/p/?linkid=239721)找到有关如何获取 Visual Studio 和 WDK 的信息。 安装 WDK 时，需要包括 [Windows 调试工具](https://msdn.microsoft.com/Library/Windows/Hardware/Ff551063)。
+若要设置集成开发环境，请先安装 Visual Studio，然后再安装 WDK。 可以在[此处](https://go.microsoft.com/fwlink/p/?linkid=239721)找到有关如何获取 Visual Studio 和 WDK 的信息。 安装 WDK 时，需要包括 [Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 WDK 使用 MSBuild.exe，Visual Studio 用户界面中提供有此程序，并且它也可以作为命令行工具提供。 在 Visual Studio 环境中创建的驱动程序使用项目和解决方案文件来描述项目或项目组。 Visual Studio 环境提供有用于将旧源和目录文件转换成项目和解决方案文件的工具。
 

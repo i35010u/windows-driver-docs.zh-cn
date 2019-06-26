@@ -9,12 +9,12 @@ ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 52ace0933e55268e11cb82acccd1e4b06bcc20f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8964add8d2685ba516590f1a87e84b3d10457a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341077"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369803"
 ---
 # <a name="kernel-mode-driver-architecture-design-guide"></a>内核模式驱动程序体系结构设计指南
 
@@ -32,7 +32,7 @@ ms.locfileid: "63341077"
 
 -   [驱动程序编程技术](driver-programming-techniques.md)介绍了可用于为 Windows 内核模式设备驱动程序进行编程的技术。
 
-    **注意**  有关你的驱动程序可以实现或调用的编程接口的详细信息，请参阅[内核模式驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff553217)。
+    **注意**  有关你的驱动程序可以实现或调用的编程接口的详细信息，请参阅[内核模式驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
      
 

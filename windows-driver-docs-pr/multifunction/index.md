@@ -16,12 +16,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e621c90ee1e8929f6333d60064d73ec2240b77f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe8a87c9a313c930c8b7204a0368fe7717b1b6b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386382"
 ---
 # <a name="multifunction-device-driver-design-guide"></a>多功能设备驱动程序设计指南
 
@@ -29,7 +29,7 @@ ms.locfileid: "63361845"
 
 
 
-一个多功能设备占用其父总线上的一个位置，但包含多个功能。 组合打印机/扫描仪/传真设备和调制解调器/网卡是常见的多功能设备。
+一个多功能设备  占用其父总线上的一个位置，但包含多个功能。 组合打印机/扫描仪/传真设备和调制解调器/网卡是常见的多功能设备。
 
 在多功能设备中，各个功能是独立的。 这意味着这些功能必须具有以下特点：
 
@@ -59,7 +59,7 @@ ms.locfileid: "63361845"
 
 如果设备不遵循其总线的标准，则除了适用于设备功能的功能驱动程序和 INF 文件，可能还需要提供在功能上等效于 mf.sys 的驱动程序。
 
-若要安装多功能设备，通常需提供一个适用于设备的基础 INF 文件，另外再提供一个适用于设备的每个功能的 INF 文件。 基础 INF 文件通常复制适用于设备的各个功能的 INF 文件。 若要了解如何完成此任务，请参阅[复制 INF](https://msdn.microsoft.com/library/windows/hardware/ff540117)。
+若要安装多功能设备，通常需提供一个适用于设备的基础 INF 文件，另外再提供一个适用于设备的每个功能的 INF 文件。 基础 INF 文件通常复制适用于设备的各个功能的 INF 文件。 若要了解如何完成此任务，请参阅[复制 INF](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)。
 
 以下部分介绍各类多功能设备的驱动程序和安装要求：
 
@@ -73,11 +73,11 @@ ms.locfileid: "63361845"
 
 [为多功能设备创建资源映射](creating-resource-maps-for-a-multifunction-device.md)
 
-有关 INF 文件语法的信息，请参阅 [INF File Sections and Directives](https://msdn.microsoft.com/library/windows/hardware/ff547433)（INF 文件节和指令）。
+有关 INF 文件语法的信息，请参阅 [INF File Sections and Directives](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)（INF 文件节和指令）。
 
 此部分的其余内容介绍如何在仅限 Windows 2000 及更高版本的基于 NT 的平台上为多功能设备提供支持。
 
-Windows 驱动程序工具包 (WDK) 包括一个单独的部分，介绍如何支持[多功能音频设备](https://msdn.microsoft.com/library/windows/hardware/ff537574)。
+Windows 驱动程序工具包 (WDK) 包括一个单独的部分，介绍如何支持[多功能音频设备](https://docs.microsoft.com/windows-hardware/drivers/audio/multifunction-audio-devices)。
 
  
 

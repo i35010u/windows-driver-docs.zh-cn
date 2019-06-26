@@ -11,30 +11,30 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: f13493efc0b787f87da7a6742fee306bc0aa9007
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feee59de8c33a4a6a0c17359eb6b307ebf7090a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326010"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384507"
 ---
 # <a name="sd-bus-driver-design-guide"></a>SD 总线驱动程序设计指南
 
 
 ## <a name="in-this-section"></a>本部分内容
-[SD Card Driver Stack](https://msdn.microsoft.com/library/windows/hardware/ff537964)（SD 卡驱动程序堆栈）
+[SD Card Driver Stack](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-driver-stack)（SD 卡驱动程序堆栈）
 
-[Opening, Initializing and Closing an SD Card Bus Interface](https://msdn.microsoft.com/library/windows/hardware/ff537442)（打开、初始化和关闭 SD 卡总线接口）
+[Opening, Initializing and Closing an SD Card Bus Interface](https://docs.microsoft.com/windows-hardware/drivers/sd/opening--initializing-and-closing-an-sd-card-bus-interface)（打开、初始化和关闭 SD 卡总线接口）
 
-[Handling SD Card Interrupts](https://msdn.microsoft.com/library/windows/hardware/ff537177)（处理 SD 卡中断）
+[Handling SD Card Interrupts](https://docs.microsoft.com/windows-hardware/drivers/sd/handling-sd-card-interrupts)（处理 SD 卡中断）
 
-[SD Card Requests](https://msdn.microsoft.com/library/windows/hardware/ff537983)（SD 卡请求）
+[SD Card Requests](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-requests)（SD 卡请求）
  
 
 ## <a name="sd-card-hardware-identifiers"></a>SD 卡硬件标识符
 
 
-有关安全数字 (SD) 设备标识字符串的信息，请参阅 [Identifiers for Secure Digital (SD) Devices](https://msdn.microsoft.com/library/windows/hardware/ff546279)（安全数字 (SD) 设备的标识符）。
+有关安全数字 (SD) 设备标识字符串的信息，请参阅 [Identifiers for Secure Digital (SD) Devices](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-secure-digital--sd--devices)（安全数字 (SD) 设备的标识符）。
 
 ## <a name="restrictions-on-sd-card-drivers"></a>SD 卡驱动程序的限制
 
@@ -47,7 +47,7 @@ ms.locfileid: "63326010"
 
 -   SD I/O 命令，这些命令指定另一设备堆栈的函数编号。
 
-SD 设备驱动程序可以管理主控制器的常用寄存器集和设备的状态，只需使用类型为 SDRF\_GET\_PROPERTY 和 SDRF\_SET\_PROPERTY 的函数请求调用 [**SdBusSubmitRequest**](https://msdn.microsoft.com/library/windows/hardware/ff537909) 即可。 如需这些函数请求类型的说明，请参阅 [**SD\_REQUEST\_FUNCTION**](https://msdn.microsoft.com/library/windows/hardware/ff538012)。
+SD 设备驱动程序可以管理主控制器的常用寄存器集和设备的状态，只需使用类型为 SDRF\_GET\_PROPERTY 和 SDRF\_SET\_PROPERTY 的函数请求调用 [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/nf-ntddsd-sdbussubmitrequest) 即可。 如需这些函数请求类型的说明，请参阅 [**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/ne-ntddsd-sd_request_function)。
 
 ## <a name="sd-bus-sample"></a>SD 总线示例
 
