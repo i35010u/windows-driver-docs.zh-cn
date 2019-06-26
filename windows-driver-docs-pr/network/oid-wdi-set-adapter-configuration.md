@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADAPTER_CONFIGURATION 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e7fe2a1cb746e720cffdafbd51c09c5f766ec5d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1112df89631a285995f18809b58c6db70202911f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335342"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387262"
 ---
 # <a name="oidwdisetadapterconfiguration"></a>OID\_WDI\_SET\_ADAPTER\_CONFIGURATION
 
@@ -45,43 +45,43 @@ OID\_WDI\_设置\_适配器\_配置配置的适配器。 它是一个可选属�
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926257" data-raw-source="[&lt;strong&gt;WDI_TLV_CONFIGURED_MAC_ADDRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926257)"><strong>WDI_TLV_CONFIGURED_MAC_ADDRESS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-configured-mac-address" data-raw-source="[&lt;strong&gt;WDI_TLV_CONFIGURED_MAC_ADDRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-configured-mac-address)"><strong>WDI_TLV_CONFIGURED_MAC_ADDRESS</strong></a></td>
 <td></td>
 <td>X</td>
 <td>MAC 地址。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898075" data-raw-source="[&lt;strong&gt;WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898075)"><strong>WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unreachable-detection-threshold" data-raw-source="[&lt;strong&gt;WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unreachable-detection-threshold)"><strong>WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD</strong></a></td>
 <td></td>
 <td>X</td>
 <td>无法访问检测阈值。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897879" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897879)"><strong>WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-internal-reset-policy" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-internal-reset-policy)"><strong>WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY</strong></a></td>
 <td></td>
 <td>X</td>
 <td>固件用于运行后 Wi-Fi Direct 转重置通道选择策略是停止/重新启动。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926145" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_ID_LIST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926145)"><strong>WDI_TLV_BAND_ID_LIST</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-id-list" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_ID_LIST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-id-list)"><strong>WDI_TLV_BAND_ID_LIST</strong></a></td>
 <td></td>
 <td>X</td>
 <td>带区 Id 的列表。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897841" data-raw-source="[&lt;strong&gt;WDI_TLV_LINK_QUALITY_BAR_MAP&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897841)"><strong>WDI_TLV_LINK_QUALITY_BAR_MAP</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-quality-bar-map" data-raw-source="[&lt;strong&gt;WDI_TLV_LINK_QUALITY_BAR_MAP&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-quality-bar-map)"><strong>WDI_TLV_LINK_QUALITY_BAR_MAP</strong></a></td>
 <td></td>
 <td></td>
 <td>为 Wi-fi 信号强度图条的信号质量的映射。 此字段应忽略由适配器和它应使用中指定的行为<a href="ndis-status-wdi-indication-link-state-change.md" data-raw-source="[NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE](ndis-status-wdi-indication-link-state-change.md)">NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE</a>进行链接质量通知。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/mt269108" data-raw-source="[&lt;strong&gt;WDI_TLV_ADAPTER_NLO_SCAN_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt269108)"><strong>WDI_TLV_ADAPTER_NLO_SCAN_MODE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-adapter-nlo-scan-mode" data-raw-source="[&lt;strong&gt;WDI_TLV_ADAPTER_NLO_SCAN_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-adapter-nlo-scan-mode)"><strong>WDI_TLV_ADAPTER_NLO_SCAN_MODE</strong></a></td>
 <td></td>
 <td>X</td>
 <td>指示是否应在主动或被动模式下执行 NLO 扫描。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/mt593243" data-raw-source="[&lt;strong&gt;WDI_TLV_PLDR_SUPPORT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt593243)"><strong>WDI_TLV_PLDR_SUPPORT</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pldr-support" data-raw-source="[&lt;strong&gt;WDI_TLV_PLDR_SUPPORT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pldr-support)"><strong>WDI_TLV_PLDR_SUPPORT</strong></a></td>
 <td></td>
 <td></td>
 <td>在 Windows 10 版本 1511，WDI 版本 1.0.10 中添加。

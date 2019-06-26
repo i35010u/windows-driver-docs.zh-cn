@@ -9,12 +9,12 @@ keywords:
 - 服务安装部分 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f055ce9426c61d3baf30752039dec44fe95a58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8e58f4b8ecea3796ec3899fdcb0e88dadcaddb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369434"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385888"
 ---
 # <a name="specifying-driver-load-order"></a>指定驱动程序加载顺序
 
@@ -38,7 +38,7 @@ INF 文件中的设置可以影响驱动程序加载顺序。 本主题介绍相
 
 -   非*引导启动驱动程序*，用于检测设备不是可 PnP 枚举
 
-    对于不是可 PnP 枚举设备，驱动程序报告设备的即插即用的管理器为通过调用[ **IoReportDetectedDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549597)。 这样的驱动程序应具有的启动类型 SERVICE_SYSTEM_START (0x01)，因此 Windows 将在系统初始化期间加载的驱动程序。
+    对于不是可 PnP 枚举设备，驱动程序报告设备的即插即用的管理器为通过调用[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)。 这样的驱动程序应具有的启动类型 SERVICE_SYSTEM_START (0x01)，因此 Windows 将在系统初始化期间加载的驱动程序。
 
     驱动程序该报告非 PnP 硬件应设置此启动类型。 如果驱动程序服务 （即插即用和非 PnP 设备），它应设置此启动类型。
 

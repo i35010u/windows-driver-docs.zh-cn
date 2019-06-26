@@ -4,12 +4,12 @@ description: MSFC\_FibrePortHBAAttributes WMI 类
 ms.assetid: 028afadf-1a2d-4792-8b6c-d53359af64c1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3f7bccc0deca37b434610b4b82fa847a60c58dd7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e809515b3af709268ddb805bb089e50c62768298
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362276"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382554"
 ---
 # <a name="msfcfibreporthbaattributes-wmi-class"></a>MSFC\_FibrePortHBAAttributes WMI 类
 
@@ -43,7 +43,7 @@ class MSFC_FibrePortHBAAttributes {
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_FibrePortHBAAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff562499)
+[**MSFC\_FibrePortHBAAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fibreporthbaattributes)
 
 没有与此 WMI 类相关联的方法。
 

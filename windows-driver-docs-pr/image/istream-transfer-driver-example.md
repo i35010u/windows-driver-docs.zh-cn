@@ -4,12 +4,12 @@ description: IStream 传输驱动程序示例
 ms.assetid: fb830522-f95e-4dd7-8c1b-de092a6c5a51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf5d0bc9d4e670158d57f680e5c40ef5d6b2dcf5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0697602df3a66d0c1e538686705684d0306656b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381873"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378899"
 ---
 # <a name="istream-transfer-driver-example"></a>IStream 传输驱动程序示例
 
@@ -72,7 +72,7 @@ LONG                      *plDevErrVal)
 ```
 
 ## <a name="related-topics"></a>相关主题
-[**IWiaMiniDrvTransferCallback**](https://msdn.microsoft.com/library/windows/hardware/jj151550)  
+[**IWiaMiniDrvTransferCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvtransfercallback)  
 
 
 

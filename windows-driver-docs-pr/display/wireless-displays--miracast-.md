@@ -11,12 +11,12 @@ keywords:
 - 无线显示 Miracast 用户模式驱动程序实现的函数
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2f85fb73276b65a3302a432949e077bc9f52d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: df9384f0b556cdbf83b1c48f554e6b2f00e335e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386230"
 ---
 # <a name="wireless-displays-miracast"></a>无线显示 (Miracast)
 
@@ -97,11 +97,11 @@ ms.locfileid: "56564584"
 
 这些其他的用户模式下结构和枚举支持 Miracast 的显示器，并将新的或更新的 Windows 8.1:
 
--   [**: DISPLAYCONFIG\_目标\_BASE\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn362043) （新）
--   [**: DISPLAYCONFIG\_视频\_信号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff554007) (**AdditionalSignalInfo**添加的子结构)
--   [**: DISPLAYCONFIG\_设备\_信息\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff553924) (**DISPLAYCONFIG\_设备\_信息\_获取\_目标\_基\_类型**常量添加)
--   [**D3DKMDT\_视频\_信号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff546625) (**AdditionalSignalInfo**添加的子结构)
--   [**: DISPLAYCONFIG\_设备\_信息\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff553924) (**DISPLAYCONFIG\_设备\_信息\_获取\_目标\_基\_类型**常量添加)
+-   [ **: DISPLAYCONFIG\_目标\_BASE\_类型**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_target_base_type) （新）
+-   [ **: DISPLAYCONFIG\_视频\_信号\_信息**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info) (**AdditionalSignalInfo**添加的子结构)
+-   [ **: DISPLAYCONFIG\_设备\_信息\_类型**](https://docs.microsoft.com/windows/desktop/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG\_设备\_信息\_获取\_目标\_基\_类型**常量添加)
+-   [**D3DKMDT\_视频\_信号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) (**AdditionalSignalInfo**添加的子结构)
+-   [ **: DISPLAYCONFIG\_设备\_信息\_类型**](https://docs.microsoft.com/windows/desktop/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG\_设备\_信息\_获取\_目标\_基\_类型**常量添加)
 
 ### <a name="kernel-mode-ddis"></a>内核模式 DDIs
 
@@ -136,12 +136,12 @@ Miracast 显示回调接口包含由 Microsoft DirectX 图形内核子系统以�
 
 这些额外内核模式结构和枚举支持 Miracast 的显示器，并将新的或更新的 Windows 8.1:
 
--   [**DXGK\_MIRACAST\_CAPS**](https://msdn.microsoft.com/library/windows/hardware/dn322054)
--   [**D3DKMDT\_视频\_输出\_技术**](https://msdn.microsoft.com/library/windows/hardware/ff546605) (**D3DKMDT\_VOT\_MIRACAST**常量添加)
--   [**D3DKMDT\_视频\_信号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff546625) (**AdditionalSignalInfo**添加的子结构)
--   [**DXGK\_子\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff561010) (**Miracast**添加的子结构)
--   [**DXGK\_子\_状态\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff561015) (**StatusMiracast**常量添加)
--   [**DXGKARGCB\_通知\_中断\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff557538) (**MiracastEncodeChunkCompleted**添加的子结构)
+-   [**DXGK\_MIRACAST\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_miracast_caps)
+-   [**D3DKMDT\_视频\_输出\_技术**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology) (**D3DKMDT\_VOT\_MIRACAST**常量添加)
+-   [**D3DKMDT\_视频\_信号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) (**AdditionalSignalInfo**添加的子结构)
+-   [**DXGK\_子\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_child_status) (**Miracast**添加的子结构)
+-   [**DXGK\_子\_状态\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ne-dispmprt-_dxgk_child_status_type) (**StatusMiracast**常量添加)
+-   [**DXGKARGCB\_通知\_中断\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkargcb_notify_interrupt_data) (**MiracastEncodeChunkCompleted**添加的子结构)
 
  
 

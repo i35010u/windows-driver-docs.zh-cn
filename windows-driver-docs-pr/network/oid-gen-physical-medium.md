@@ -5,12 +5,12 @@ ms.assetid: 84d7231b-8af2-4bdb-8df5-37088767f708
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PHYSICAL_MEDIUM 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5627c37f1bef00ea906d4fa5f46f932898a6604b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c16590256702ad74a32609d2ab3a38ee09241057
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371065"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385746"
 ---
 # <a name="oidgenphysicalmedium"></a>OID\_GEN\_PHYSICAL\_MEDIUM
 
@@ -32,7 +32,7 @@ NDIS 处理此 OID 的微型端口驱动程序。 微型端口驱动程序在初
 
 **NdisPhysicalMediumUnspecified**物理介质为 none 前面的媒介。 例如，单向附属源是未指定的物理介质。
 
-**NdisPhysicalMediumWirelessLan**数据包通过符合的微型端口驱动程序通过无线 LAN 网络传输到 802.11 接口。 有关此接口的详细信息，请参阅。 [802.11 无线 LAN 微端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff543933)
+**NdisPhysicalMediumWirelessLan**数据包通过符合的微型端口驱动程序通过无线 LAN 网络传输到 802.11 接口。 有关此接口的详细信息，请参阅。 [802.11 无线 LAN 微端口驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))
 
 **NdisPhysicalMediumCableModem**基于 DOCSIS 电缆网络上传输数据包。
 
@@ -48,7 +48,7 @@ NDIS 处理此 OID 的微型端口驱动程序。 微型端口驱动程序在初
 
 **NdisPhysicalMediumWirelessWan**通过无线 WAN 链接传输数据包。 例如，包括，CDPD、 CDMA 和 GPRS。
 
-<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**数据包通过符合的微型端口驱动程序通过无线 LAN 网络传输到本机 802.11 接口。 有关此接口的详细信息，请参阅[本机 802.11 无线 LAN 微端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff560648)。
+<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**数据包通过符合的微型端口驱动程序通过无线 LAN 网络传输到本机 802.11 接口。 有关此接口的详细信息，请参阅[本机 802.11 无线 LAN 微端口驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))。
 
 **请注意**  NDIS 6.0 和更高版本和更高版本及更高版本中支持的本机 802.11 接口。
 

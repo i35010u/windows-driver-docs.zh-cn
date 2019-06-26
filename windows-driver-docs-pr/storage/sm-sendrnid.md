@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 11c6959fcfc6155ebb85dda55c1e8003917ca34d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82914753dfbcaee06b7ba11414e6252af0af9083
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323237"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384284"
 ---
 # <a name="smsendrnid-function"></a>SM\_SendRNID 函数
 
@@ -108,9 +108,9 @@ RNID 命令的结果。 微型端口驱动程序返回此信息在 SM ResponseBu
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SendRNID\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566308)
+[**SM\_SendRNID\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_in)
 
-[**SM\_SendRNID\_出**](https://msdn.microsoft.com/library/windows/hardware/ff566310)
+[**SM\_SendRNID\_出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_out)
 
  
 

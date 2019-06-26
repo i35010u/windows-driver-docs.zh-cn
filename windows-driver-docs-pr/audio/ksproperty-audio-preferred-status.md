@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2bcbcf8f0facc1830f7d3309fcc2c482237086a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 334ad5a7deb914f6f3cd31892da7e1426088bc35
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332948"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391467"
 ---
 # <a name="kspropertyaudiopreferredstatus"></a>KSPROPERTY\_音频\_首选\_状态
 
@@ -53,8 +53,8 @@ KSPROPERTY\_音频\_首选\_状态属性会通知设备它是系统的首选音�
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537093" data-raw-source="[&lt;strong&gt;KSAUDIO_PREFERRED_STATUS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537093)"><strong>KSAUDIO_PREFERRED_STATUS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_preferred_status" data-raw-source="[&lt;strong&gt;KSAUDIO_PREFERRED_STATUS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_preferred_status)"><strong>KSAUDIO_PREFERRED_STATUS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_音频\_PREFERRED\_状态属性请求返回状态\_成功以指示�
 <a name="remarks"></a>备注
 -------
 
-[SysAudio 系统驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver)使用此属性以通知批播放波形记录、 MIDI 或 mixer 设备选择为新的首选设备时或当之前选择首选设备处于取消选中状态。
+[SysAudio 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#sysaudio-system-driver)使用此属性以通知批播放波形记录、 MIDI 或 mixer 设备选择为新的首选设备时或当之前选择首选设备处于取消选中状态。
 
 有关首选的设备的信息，请参阅[ **SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)。
 
@@ -93,9 +93,9 @@ KSPROPERTY\_音频\_PREFERRED\_状态属性请求返回状态\_成功以指示�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAUDIO\_PREFERRED\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/ff537093)
+[**KSAUDIO\_PREFERRED\_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_preferred_status)
 
 [**SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)
 

@@ -14,12 +14,12 @@ keywords:
 - 免费例程 WDK 内存
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0582df0a1cf5966ffdf2a620d0a613a527c68c56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4801465fae3a975a5171c82f913af3dce9fc1e89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381615"
 ---
 # <a name="using-lookaside-lists"></a>使用后备列表
 
@@ -38,39 +38,39 @@ ms.locfileid: "63364931"
 ## <a name="lookaside-list-interfaces"></a>后备链列表接口
 
 
-从 Windows Vista 开始[**后备链\_列表\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff554329)结构描述后备链列表可以包含分页或非分页缓冲区。 如果驱动程序提供自定义*分配*并*免费*例程后备链列表中，对于这些例程收到作为输入参数的专用上下文。 驱动程序可以使用此上下文的后备链列表的私有数据收集。 例如，可能会使用上下文进行计数的动态分配和释放列表的列表项。 有关演示如何在这种方式中使用上下文的代码示例，请参阅[ **ExInitializeLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff545298)。
+从 Windows Vista 开始[**后备链\_列表\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构描述后备链列表可以包含分页或非分页缓冲区。 如果驱动程序提供自定义*分配*并*免费*例程后备链列表中，对于这些例程收到作为输入参数的专用上下文。 驱动程序可以使用此上下文的后备链列表的私有数据收集。 例如，可能会使用上下文进行计数的动态分配和释放列表的列表项。 有关演示如何在这种方式中使用上下文的代码示例，请参阅[ **ExInitializeLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializelookasidelistex)。
 
 系统提供的以下例程支持后备链列表由描述**后备链\_列表\_EX**结构：
 
-[**ExAllocateFromLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544381)
+[**ExAllocateFromLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromlookasidelistex)
 
-[**ExDeleteLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544563)
+[**ExDeleteLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletelookasidelistex)
 
-[**ExFlushLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544587)
+[**ExFlushLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exflushlookasidelistex)
 
-[**ExFreeToLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff544597)
+[**ExFreeToLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetolookasidelistex)
 
-[**ExInitializeLookasideListEx**](https://msdn.microsoft.com/library/windows/hardware/ff545298)
+[**ExInitializeLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializelookasidelistex)
 
-从 Windows 2000 [ **PAGED\_后备链\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff558775)结构描述包含分页的缓冲区的后备链列表。 如果驱动程序提供自定义*分配*并*免费*例程有关此后备链列表，这些例程不会收到作为输入参数的专用上下文。 出于此原因，如果您的驱动程序旨在仅在 Windows Vista 和更高版本的 Windows 上运行，请考虑使用**后备链\_列表\_EX**结构，而不是**PAGED\_后备链\_列表**后备链列表的结构。 系统提供的以下例程支持后备链列表由描述**PAGED\_后备链\_列表**结构：
+从 Windows 2000 [ **PAGED\_后备链\_列表**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构描述包含分页的缓冲区的后备链列表。 如果驱动程序提供自定义*分配*并*免费*例程有关此后备链列表，这些例程不会收到作为输入参数的专用上下文。 出于此原因，如果您的驱动程序旨在仅在 Windows Vista 和更高版本的 Windows 上运行，请考虑使用**后备链\_列表\_EX**结构，而不是**PAGED\_后备链\_列表**后备链列表的结构。 系统提供的以下例程支持后备链列表由描述**PAGED\_后备链\_列表**结构：
 
-[**ExAllocateFromPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544393)
+[**ExAllocateFromPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefrompagedlookasidelist)
 
-[**ExDeletePagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544570)
+[**ExDeletePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletepagedlookasidelist)
 
-[**ExFreeToPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544605)
+[**ExFreeToPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetopagedlookasidelist)
 
-[**ExInitializePagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545309)
+[**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)
 
-从 Windows 2000 [ **NPAGED\_后备链\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff556431)结构描述的旁路列表包含非分页的缓冲区。 如果驱动程序提供自定义*分配*并*免费*例程有关此后备链列表，这些例程不会收到作为输入参数的专用上下文。 同样，如果您的驱动程序旨在仅在 Windows Vista 和更高版本的 Windows 上运行，请考虑使用**后备链\_列表\_EX**结构，而不是**NPAGED\_后备链\_列表**后备链列表的结构。 系统提供的以下例程支持后备链列表由描述**NPAGED\_后备链\_列表**结构：
+从 Windows 2000 [ **NPAGED\_后备链\_列表**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构描述的旁路列表包含非分页的缓冲区。 如果驱动程序提供自定义*分配*并*免费*例程有关此后备链列表，这些例程不会收到作为输入参数的专用上下文。 同样，如果您的驱动程序旨在仅在 Windows Vista 和更高版本的 Windows 上运行，请考虑使用**后备链\_列表\_EX**结构，而不是**NPAGED\_后备链\_列表**后备链列表的结构。 系统提供的以下例程支持后备链列表由描述**NPAGED\_后备链\_列表**结构：
 
-[**ExAllocateFromNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544388)
+[**ExAllocateFromNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatefromnpagedlookasidelist)
 
-[**ExDeleteNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544566)
+[**ExDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletenpagedlookasidelist)
 
-[**ExFreeToNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff544601)
+[**ExFreeToNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exfreetonpagedlookasidelist)
 
-[**ExInitializeNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545301)
+[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)
 
 ## <a name="implementation-guidelines"></a>实现准则
 
@@ -83,11 +83,11 @@ ms.locfileid: "63364931"
 
 -   为了提高性能，传递**NULL**指针*分配*并*免费*参数**ExInitializeLookasideListEx**除非分配和解除分配例程必须执行多个只是分配并释放后备链列表项的内存。 例如，这些例程可记录驱动程序的使用情况信息的动态分配的缓冲区。
 
--   驱动程序提供*分配*例程可以传递输入的参数 (*PoolType*，*标记*，以及*大小*) 直接向接收[ **ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)或[ **ExAllocatePoolWithQuotaTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544513)例程来分配新缓冲区。
+-   驱动程序提供*分配*例程可以传递输入的参数 (*PoolType*，*标记*，以及*大小*) 直接向接收[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)或[ **ExAllocatePoolWithQuotaTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)例程来分配新缓冲区。
 
 -   每次调用**ExAllocateFromLookasideListEx**，相互调用**ExFreeToLookasideListEx**越早越好每当先前分配的条目不再使用。
 
-提供*分配*并*免费*不执行任何操作多个调用的例程[ **ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)和[ **ExFreePool**](https://msdn.microsoft.com/library/windows/hardware/ff544590)分别，浪费处理器时钟周期数。 **ExAllocateFromLookasideListEx**可以根据需要调用**ExAllocatePoolWithTag**并**ExFreePool**自动时驱动程序传递**NULL***分配*并*免费*指向**ExInitializeLookasideListEx**。
+提供*分配*并*免费*不执行任何操作多个调用的例程[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)和[ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)分别，浪费处理器时钟周期数。 **ExAllocateFromLookasideListEx**可以根据需要调用**ExAllocatePoolWithTag**并**ExFreePool**自动时驱动程序传递**NULL***分配*并*免费*指向**ExInitializeLookasideListEx**。
 
 任何驱动程序提供*分配*例程必须分配内存的条目从页面缓冲池以将其保留在非分页后备链列表中，反之亦然。 它必须分配固定大小的条目，原因是，任何后续的驱动程序调用到**ExAllocateFromLookasideListEx**返回当前持有后备链列表中，除非该列表为空的第一个条目。 也就是说，调用**ExAllocateFromLookasideListEx**引起的驱动程序提供调用*分配*例程仅当给定的后备链列表是当前为空。 因此，在每次调用**ExAllocateFromLookasideListEx**，返回的条目将是正是该驱动程序必须仅当后备链列表中的所有条目的固定大小的大小。 驱动程序提供*分配*例程还应未更改*标记*值，该驱动程序最初传递给**ExInitializeLookasideListEx**，这是因为中的更改池标记值会使调试和跟踪驱动程序的内存使用情况更加困难。
 

@@ -13,17 +13,17 @@ keywords:
 - 运行状态 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a1068fdabfc1dc1747065eb09693d4ab6a0db3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af5cfb8fd93caf8d757d57cb527dfad278d4ee02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390864"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377775"
 ---
 # <a name="streaming-states"></a>流式处理状态
 
 
-每个流提供的微型驱动程序存在问题的四种状态之一：KSSTATE\_停止、 KSSTATE\_采集、 KSSTATE\_暂停或 KSSTATE\_运行。 在初始化时该流位于，默认情况下**KSSTATE\_停止**状态。 Stream 类接口发送时，将转换为其他状态所做[ **SRB\_设置\_流\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff568210)微型驱动程序的请求。 下表标识并描述了四个流状态。
+每个流提供的微型驱动程序存在问题的四种状态之一：KSSTATE\_停止、 KSSTATE\_采集、 KSSTATE\_暂停或 KSSTATE\_运行。 在初始化时该流位于，默认情况下**KSSTATE\_停止**状态。 Stream 类接口发送时，将转换为其他状态所做[ **SRB\_设置\_流\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-stream-state)微型驱动程序的请求。 下表标识并描述了四个流状态。
 
 <table>
 <colgroup>

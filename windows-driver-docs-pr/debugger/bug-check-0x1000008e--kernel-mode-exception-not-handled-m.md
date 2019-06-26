@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cdbd1fd7471c4c726fa0d23f15dc6611f6d3c99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe7a8e5d4df6f95dddb42c299a6a89771ce28f5a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347823"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367955"
 ---
 # <a name="bug-check-0x1000008e-kernelmodeexceptionnothandledm"></a>Bug 检查 0x1000008E：内核\_模式下\_异常\_不\_HANDLED\_M
 
@@ -28,7 +28,7 @@ ms.locfileid: "63347823"
 Bug 检查 0x1000008E 具有相同的含义和作为参数[ **bug 检查 0x8e 越权**](bug-check-0x8e--kernel-mode-exception-not-handled.md) (内核\_模式\_异常\_不\_HANDLED)。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
  

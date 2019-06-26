@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eee13b9cb218b938f96e2f3f9ac384fc16ef9b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9991a8477c3f9befd73e97af77e59ea1993d35a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370403"
 ---
 # <a name="ksmethodbdacommitchanges"></a>KSMETHOD\_BDA\_提交\_更改
 
@@ -61,9 +61,9 @@ ms.locfileid: "63376912"
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaCommitChanges**](https://msdn.microsoft.com/library/windows/hardware/ff556435)
+[**BdaCommitChanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacommitchanges)
 
-[**KSMETHOD**](https://msdn.microsoft.com/library/windows/hardware/ff563398)
+[**KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))
 
  
 

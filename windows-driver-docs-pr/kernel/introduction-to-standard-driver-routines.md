@@ -11,12 +11,12 @@ keywords:
 - 可选的标准例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d6aa9f5c98ea0cce6ddb7c302569f63a2e957eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1e14a41845861e74c0872cc2dea08290bcf1297
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386590"
 ---
 # <a name="introduction-to-standard-driver-routines"></a>标准驱动程序例程简介
 
@@ -54,7 +54,7 @@ ms.locfileid: "63341427"
 <td><p><a href="writing-a-driverentry-routine.md" data-raw-source="[Writing a DriverEntry Routine](writing-a-driverentry-routine.md)">编写 DriverEntry 例程</a></p></td>
 </tr>
 <tr class="even">
-<td><p><em><a href="https://msdn.microsoft.com/library/windows/hardware/ff540521">AddDevice</a></em></p></td>
+<td><p><em><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device">AddDevice</a></em></p></td>
 <td><p>初始化设备并创建设备对象。</p></td>
 <td><p><a href="writing-an-adddevice-routine.md" data-raw-source="[Writing an AddDevice Routine](writing-an-adddevice-routine.md)">编写 AddDevice 例程</a></p></td>
 </tr>

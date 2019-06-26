@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d2ae21477c76037579ad6dbccd61e62101db92c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bad1b911e3a2210cf964163b307fb766e94382a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358513"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368121"
 ---
 # <a name="kspropertybdapintypes"></a>KSPROPERTY\_BDA\_PIN\_TYPES
 
@@ -85,9 +85,9 @@ ms.locfileid: "63358513"
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaPropertyPinTypes**](https://msdn.microsoft.com/library/windows/hardware/ff556499)
+[**BdaPropertyPinTypes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertypintypes)
 
-[**KSPIN\_描述符\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)
+[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

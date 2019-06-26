@@ -6,12 +6,12 @@ keywords:
 - CM_PROB_DUPLICATE_DEVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cc72f297d125b5f55d64f6d02833a432cf7c32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d66f1ec6fec173426c2867d00374bb70f16c2f59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342387"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385625"
 ---
 # <a name="cmprobduplicatedevice"></a>CM_PROB_DUPLICATE_DEVICE
 
@@ -37,4 +37,4 @@ ms.locfileid: "63342387"
 
 - 总线驱动程序错误地在总线上创建两个具有相同名称的子级。 这被引起总线上报告相同的序列号的多个设备。 这也可能引起错误地报告相同的硬件标识符的两个或多个设备的总线驱动程序。
 
-    在这种情况下，应联系[Microsoft 支持部门](http://support.microsoft.com/)获得更多帮助解决这个问题。
+    在这种情况下，应联系[Microsoft 支持部门](https://support.microsoft.com/en-us)获得更多帮助解决这个问题。

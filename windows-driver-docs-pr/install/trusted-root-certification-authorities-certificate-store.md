@@ -8,12 +8,12 @@ keywords:
 - 受信任的根证书颁发机构证书存储区 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdc4e2019f175e1e7c95748a3b5ab339651bbcd6
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 34103f959c1eb1f1e85583721af3719935702f00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148520"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385525"
 ---
 # <a name="trusted-root-certification-authorities-certificate-store"></a>受信任的根证书颁发机构证书存储
 
@@ -32,7 +32,7 @@ ms.locfileid: "67148520"
 
 具有有效的数字签名的真实性和完整性可确保[驱动程序包](driver-packages.md)。 但是，它并不意味着最终用户或系统管理员隐式信任软件发行者。 用户或管理员必须决定是安装还是基于他们的知识的软件发布服务器和应用程序的情况的基础上运行应用程序。 默认情况下，发布者是受信任其证书在安装时才[受信任的发行者证书存储区](trusted-publishers-certificate-store.md)。
 
-受信任的根证书颁发机构证书存储区的名称是*根。* 您可以手动安装专用的 CA 的根证书到受信任的根证书颁发机构证书存储区的计算机上使用[ **CertMgr** ](https://msdn.microsoft.com/library/windows/hardware/ff543411)工具。
+受信任的根证书颁发机构证书存储区的名称是*根。* 您可以手动安装专用的 CA 的根证书到受信任的根证书颁发机构证书存储区的计算机上使用[ **CertMgr** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)工具。
 
 **请注意**  驱动程序签名 PnP 管理器使用的验证策略需要是否以前已专用 CA 的根证书安装在本地计算机版本的根证书颁发机构证书存储区。 有关详细信息，请参阅[本地计算机和当前用户证书存储](local-machine-and-current-user-certificate-stores.md)。
 

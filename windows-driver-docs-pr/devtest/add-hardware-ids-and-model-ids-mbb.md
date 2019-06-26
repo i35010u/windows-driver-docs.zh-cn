@@ -6,12 +6,12 @@ keywords:
 - 在移动宽带元数据创作向导中添加硬件 ID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3d89980809aedc4d280e73e1321f266a1e26f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3f3b258d6a39f50b4f8ac7ab56c9e1a8ee233ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371691"
 ---
 # <a name="add-hardware-ids-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中添加硬件 ID
 
@@ -25,13 +25,13 @@ ms.locfileid: "63332066"
 
 1. 单击**关联**选项卡。
 
-2. 下一步**硬件 ID**，单击**加号 （+）**。
+2. 下一步**硬件 ID**，单击**加号 （+）** 。
 
 3. 从列表中下一步**服务类型**，选择以下选项之一：
 
     - 如果在具有 MobileBroadbandMetadataSubmission.xml 文件， **HardwareID**组中，单击**导入**，然后选择 MobileBroadbandMetadataSubmission.xml 文件。 该工具生成基于 MobileBroadbandMetadataSubmission.xml 文件，则硬件 ID 和硬件 Id 将显示在**HardwareID**组。
 
-      如果你想要在 SIM 中，选择上使用 IMSI 值匹配您的软件包**GSM 提供程序 (IMSI)**。
+      如果你想要在 SIM 中，选择上使用 IMSI 值匹配您的软件包**GSM 提供程序 (IMSI)** 。
 
       GSM 网络运营商应指定他们想要应用于的设备元数据包的 IMSI 范围。
 
@@ -49,7 +49,7 @@ ms.locfileid: "63332066"
 
         可以通过单击添加更多范围**加号 （+）** 按钮下**硬件 ID**上**关联**选项卡。您可以添加 IMSI 范围，以及中相同的包提交的 ICCID 范围。
 
-    - 若要指定 ICCID 范围，请选择**GSM 提供程序 (ICCID)**。
+    - 若要指定 ICCID 范围，请选择**GSM 提供程序 (ICCID)** 。
 
       GSM 网络运营商可以使用 ICCID 范围来匹配其服务元数据包。
 
@@ -87,6 +87,6 @@ ms.locfileid: "63332066"
 
 4. 单击**确定**回到**关联**选项卡。
 
-有关每个服务样式硬件 ID 的详细信息，请参阅[服务的元数据包架构引用适用于 Windows 8 的](https://msdn.microsoft.com/library/windows/hardware/dn973175)。
+有关每个服务样式硬件 ID 的详细信息，请参阅[服务的元数据包架构引用适用于 Windows 8 的](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/service-metadata-package-schema-reference)。
 
-有关匹配的详细信息，请参阅[交付体验来 Mvno](https://msdn.microsoft.com/library/windows/hardware/dn973075)。
+有关匹配的详细信息，请参阅[交付体验来 Mvno](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/delivering-experiences-for-mvnos)。

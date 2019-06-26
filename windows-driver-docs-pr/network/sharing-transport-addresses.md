@@ -9,17 +9,17 @@ keywords:
 - 传输地址 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd4d6fd1cc3f110e6694616c7196bc4a123f5c6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3df12778b20a884aacc5ed0f1b293f5beb75a83
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362012"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380825"
 ---
 # <a name="sharing-transport-addresses"></a>共享传输地址
 
 
-在大多数情况下，Winsock Kernel (WSK) 应用程序不能将套接字绑定到已在另一套接字使用的本地传输地址。 WSK 应用程序可以使用[因此\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/hardware/ff570830)并[因此\_REUSEADDR](https://msdn.microsoft.com/library/windows/hardware/ff570833)套接字绑定到套接字选项来控制共享本地传输地址。 默认情况下，这两个套接字选项都设置为套接字。 设置套接字选项的详细信息，请参阅[套接字上执行管理操作](performing-control-operations-on-a-socket.md)。
+在大多数情况下，Winsock Kernel (WSK) 应用程序不能将套接字绑定到已在另一套接字使用的本地传输地址。 WSK 应用程序可以使用[因此\_EXCLUSIVEADDRUSE](https://docs.microsoft.com/windows-hardware/drivers/network/so-exclusiveaddruse)并[因此\_REUSEADDR](https://docs.microsoft.com/windows-hardware/drivers/network/so-reuseaddr)套接字绑定到套接字选项来控制共享本地传输地址。 默认情况下，这两个套接字选项都设置为套接字。 设置套接字选项的详细信息，请参阅[套接字上执行管理操作](performing-control-operations-on-a-socket.md)。
 
 下表显示了第二个套接字绑定到已在另一套接字使用的本地传输地址的结果。 *通配符*并*特定*情况下指定套接字绑定到通配符本地传输地址或特定的本地传输地址。
 
@@ -259,9 +259,9 @@ ms.locfileid: "63362012"
 
 在其中执行访问检查上一个表中定义的情况下，将针对第一个套接字的安全描述符检查第二个套接字的安全上下文。
 
--   套接字的安全上下文由*OwningProcess*并*OwningThread*传递的参数为[WskSocket](https://msdn.microsoft.com/library/windows/hardware/ff571149)函数或[WskSocketConnect](https://msdn.microsoft.com/library/windows/hardware/ff571150)函数时创建套接字。 如果没有特定的进程或线程指定创建套接字时，，使用创建套接字的进程的安全上下文。
+-   套接字的安全上下文由*OwningProcess*并*OwningThread*传递的参数为[WskSocket](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)函数或[WskSocketConnect](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)函数时创建套接字。 如果没有特定的进程或线程指定创建套接字时，，使用创建套接字的进程的安全上下文。
 
--   指定套接字的安全描述符*SecurityDescriptor*创建套接字时传递给 WskSocket 函数或 WskSocketConnect 函数的参数。 如果未不指定任何特定的安全描述符，WSK 子系统将使用不允许使用共享的传输地址的默认安全描述符。 安全描述符可以还可应用于一个套接字后通过使用而创建的套接字[因此\_WSK\_安全](https://msdn.microsoft.com/library/windows/hardware/ff570835)套接字选项。
+-   指定套接字的安全描述符*SecurityDescriptor*创建套接字时传递给 WskSocket 函数或 WskSocketConnect 函数的参数。 如果未不指定任何特定的安全描述符，WSK 子系统将使用不允许使用共享的传输地址的默认安全描述符。 安全描述符可以还可应用于一个套接字后通过使用而创建的套接字[因此\_WSK\_安全](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-security)套接字选项。
 
 如果两个套接字绑定到两个不同的特定本地传输地址，不会发生共享的传输地址。 在此情况下的第二个绑定操作将始终成功完成。
 

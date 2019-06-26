@@ -4,12 +4,12 @@ description: COSA 概述
 ms.assetid: 45D69B8D-69C1-488B-AC52-D8DEB337F878
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e852750541d155843bbd6651a53974301f70f191
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8346c745125527bf4b005dd8ff8f22fbd2ca6434
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383784"
 ---
 # <a name="cosa-overview"></a>COSA 概述
 
@@ -52,7 +52,7 @@ COSA，或国家/地区和运算符设置资产是移动操作员 (MOs) 使用�
 
 COSA 的 Windows 10 预配包 (.ppkg) 格式。 它是 Windows\Provisioning\COSA\Microsoft 文件夹中。 可以使用第三方工具，如 7-zip 文件管理器 ([www.7-Zip.org](https://go.microsoft.com/fwlink/p/?linkid=844795))，以直观地检查其内容。
 
-请注意，OEM 扩展到 COSA，如果在设备图像中，指定 COSA\OEM 文件夹中。 有关详细信息，请参阅[自定义的国家/地区和运算符设置资产](https://msdn.microsoft.com/windows/hardware/commercialize/customize/desktop/customize-cosa)。
+请注意，OEM 扩展到 COSA，如果在设备图像中，指定 COSA\OEM 文件夹中。 有关详细信息，请参阅[自定义的国家/地区和运算符设置资产](https://docs.microsoft.com/windows-hardware/customize/desktop/customize-cosa)。
 
 ### <a href="" id="update"></a> 当设备从 Windows 10，版本 1607年或更早版本到 Windows 10，版本 1703年或更高版本更新时，会发生什么情况？ 自定义或手动创建 APNs 迁移？ 他们是否仍有优先级通过从数据库的默认值？
 

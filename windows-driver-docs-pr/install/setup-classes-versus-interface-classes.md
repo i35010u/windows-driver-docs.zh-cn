@@ -9,12 +9,12 @@ keywords:
 - 安装程序类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32abd3b58e55b8316e650fdb11bd175264025148
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b198fa199fb150ac663df24da7ab01a074a0e02d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348668"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386396"
 ---
 # <a name="windows-classes-vs-interface-classes"></a>Windows 类 vs。接口类
 
@@ -22,7 +22,7 @@ ms.locfileid: "63348668"
 
 
 
-务必要区分两种类型的设备类： [*设备接口类*](device-interface-classes.md)并[*设备安装程序类*](device-setup-classes.md)。 这两个可以容易混淆因为在用户模式代码中，同一套[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)和一组相同的数据结构 ([设备信息设置](device-information-sets.md)) 与这两个类一起使用。 此外，设备通常属于安装程序类和接口的多个类都在同一时间。 不过，两种类型的类满足不同目的，请使用的不同方面在注册表中，并依赖于一组不同的定义类 Guid 的标头文件。
+务必要区分两种类型的设备类： [*设备接口类*](device-interface-classes.md)并[*设备安装程序类*](device-setup-classes.md)。 这两个可以容易混淆因为在用户模式代码中，同一套[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))和一组相同的数据结构 ([设备信息设置](device-information-sets.md)) 与这两个类一起使用。 此外，设备通常属于安装程序类和接口的多个类都在同一时间。 不过，两种类型的类满足不同目的，请使用的不同方面在注册表中，并依赖于一组不同的定义类 Guid 的标头文件。
 
 [设备安装程序类](device-setup-classes.md)提供用于对设备的安装和配置相同的方式进行分组的机制。 安装程序类标识类安装程序和安装属于此类设备所涉及的类共同安装程序。 例如，所有的 CD-ROM 驱动器属于 CDROM 安装程序类，将使用相同的共同安装程序时安装。
 
@@ -36,7 +36,7 @@ ms.locfileid: "63348668"
 
 定义新的安装程序类或接口类时*不使用单一 GUID 来标识安装程序类和接口类。*
 
-有关 Guid 的详细信息，请参阅[驱动程序中使用 Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)。
+有关 Guid 的详细信息，请参阅[驱动程序中使用 Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)。
 
  
 

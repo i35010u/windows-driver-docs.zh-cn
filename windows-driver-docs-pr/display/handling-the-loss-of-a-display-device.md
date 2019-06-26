@@ -6,17 +6,17 @@ keywords:
 - OPM WDK 显示、 设备丢失
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70740e4ce89c1aaebe5b9230019826dbd51941c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f2122928103ca266e6f1df63dfcf770824f87b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366021"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369837"
 ---
 # <a name="handling-the-loss-of-a-display-device"></a>处理显示设备的丢失
 
 
-以下方案启动显示微型端口驱动程序调用[ **DxgkDdiOPMDestroyProtectedOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff559708)工作连接器可能会输出图形适配器上的内容保护已启用：
+以下方案启动显示微型端口驱动程序调用[ **DxgkDdiOPMDestroyProtectedOutput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_opm_destroy_protected_output)工作连接器可能会输出图形适配器上的内容保护已启用：
 
 -   更改显示模式
 

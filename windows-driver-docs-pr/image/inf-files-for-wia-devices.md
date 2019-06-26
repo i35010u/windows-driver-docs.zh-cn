@@ -4,17 +4,17 @@ description: WIA 设备的 INF 文件
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ef278843da0b6e35b5954b238a2f44f201f5a51c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 072cde1e6e71a124032d2e7ec074d7622e91ecfb
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352119"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391417"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA 设备的 INF 文件
 
 
-静止图像设备的默认类安装程序*sti\_ci.dll*，可以识别一组特殊的 INF 文件条目。 在 INF 文件中，这些项必须放置在设备的[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)。 下表所述的条目。
+静止图像设备的默认类安装程序*sti\_ci.dll*，可以识别一组特殊的 INF 文件条目。 在 INF 文件中，这些项必须放置在设备的[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。 下表所述的条目。
 
 <table>
 <colgroup>
@@ -93,15 +93,15 @@ ms.locfileid: "63352119"
 <p>要显示 Message1 会导致系统提供消息和设置的值<strong>CreateFileName</strong>条目值为自动。</p>
 <p>适用于扫描仪和照相机需要手动安装。</p></td>
 <td><p>可选</p>
-<p>请注意，对于插设备<strong>PortSelect</strong>将被忽略，但设备仍必须具有<strong>CreateFileName</strong>项值设置为自动，才能 WIA 加载设备。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff546320" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546320)"> <strong>INF AddReg 指令</strong></a>添加到此条目<a href="https://msdn.microsoft.com/library/windows/hardware/ff547344" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547344)"> <strong>INF DDInstall 部分</strong></a>的设备的 INF 文件。</p></td>
+<p>请注意，对于插设备<strong>PortSelect</strong>将被忽略，但设备仍必须具有<strong>CreateFileName</strong>项值设置为自动，才能 WIA 加载设备。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)"> <strong>INF AddReg 指令</strong></a>添加到此条目<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)"> <strong>INF DDInstall 部分</strong></a>的设备的 INF 文件。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  用户模式下客户端 （微型驱动程序） 必须以与设备通信，要求设备的文件的名称和一个字符串，指定要创建或打开的对象名称的 WIA 服务。 （文件名没有为磁盘文件的名称。）对此类查询的响应，WIA 服务获取来自设备的文件名**CreateFileName**注册表项。 ( *Usbscan.sys*并*scsiscan.sys*内核模式驱动程序创建此条目中，类安装程序也一样。)微型驱动程序通过调用接收此文件的名称[ **IStiDeviceControl::GetMyDevicePortName** ](https://msdn.microsoft.com/library/windows/hardware/ff542944)方法。 调用时，微型驱动程序然后可以使用此文件的名称[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)函数 （Microsoft Windows SDK 文档中所述） 来打开设备的句柄。
-如果手动安装该设备，类安装程序将创建**CreateFileName**项，将其值设置为一个依赖的端口选择页面上的用户的选项：COM*X*，LPT*X*，或 AUTO。 手动安装某些设备 （例如网络扫描仪） 不需要一个端口。 在这种情况下，生成的端口选择对话框可使用户感到困惑。 可以防止此对话框通过添加以下条目中的出现[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)的设备的 INF 文件：
+**请注意**  用户模式下客户端 （微型驱动程序） 必须以与设备通信，要求设备的文件的名称和一个字符串，指定要创建或打开的对象名称的 WIA 服务。 （文件名没有为磁盘文件的名称。）对此类查询的响应，WIA 服务获取来自设备的文件名**CreateFileName**注册表项。 ( *Usbscan.sys*并*scsiscan.sys*内核模式驱动程序创建此条目中，类安装程序也一样。)微型驱动程序通过调用接收此文件的名称[ **IStiDeviceControl::GetMyDevicePortName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)方法。 调用时，微型驱动程序然后可以使用此文件的名称[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数 （Microsoft Windows SDK 文档中所述） 来打开设备的句柄。
+如果手动安装该设备，类安装程序将创建**CreateFileName**项，将其值设置为一个依赖的端口选择页面上的用户的选项：COM*X*，LPT*X*，或 AUTO。 手动安装某些设备 （例如网络扫描仪） 不需要一个端口。 在这种情况下，生成的端口选择对话框可使用户感到困惑。 可以防止此对话框通过添加以下条目中的出现[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的设备的 INF 文件：
 
  
 
@@ -119,7 +119,7 @@ ms.locfileid: "63352119"
 
 ### <a name="additional-inf-file-entries"></a>其他的 INF 文件条目
 
-下表中的条目必须指向通过设备的节中放置[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320):
+下表中的条目必须指向通过设备的节中放置[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive):
 
 <table>
 <colgroup>
@@ -162,11 +162,11 @@ ms.locfileid: "63352119"
 
  
 
-静止图像设备的默认类安装程序支持标准[ **INF CopyFiles 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346)。
+静止图像设备的默认类安装程序支持标准[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)。
 
 静止图像设备，默认 INF 文件*sti.inf*，定义每个设备类型，两个安装部分，如下所示：
 
--   [ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)，其中必须引用内*DDInstall*供应商提供 INF 文件中的以下表所示的部分。
+-   [ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)，其中必须引用内*DDInstall*供应商提供 INF 文件中的以下表所示的部分。
 
     <table>
     <colgroup>
@@ -209,7 +209,7 @@ ms.locfileid: "63352119"
 
 <!-- -->
 
--   INF DDInstall 服务部分中，必须在引用[ **INF DDInstall.Services 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547349)的供应商提供的 INF 文件下, 表中所示。
+-   INF DDInstall 服务部分中，必须在引用[ **INF DDInstall.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)的供应商提供的 INF 文件下, 表中所示。
 
     <table>
     <colgroup>
@@ -304,7 +304,7 @@ ms.locfileid: "63352119"
 
 **注释**
 
-当开发用于扫描程序的 INF 文件后时，可以使用[Microsoft OS 描述符](https://msdn.microsoft.com/library/windows/hardware/gg463179.aspx)启用兼容性 ID 功能。 当执行此操作时，允许一个扫描程序驱动程序与多个扫描程序模型兼容。
+当开发用于扫描程序的 INF 文件后时，可以使用[Microsoft OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))启用兼容性 ID 功能。 当执行此操作时，允许一个扫描程序驱动程序与多个扫描程序模型兼容。
 
  
 

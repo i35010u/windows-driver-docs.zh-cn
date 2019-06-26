@@ -11,12 +11,12 @@ keywords:
 - 传感器状态更改事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e49f2feb782430b31fcdc110d4a231ffa4f5408
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a98f8cd73ff35b5e2cb58f5207fb82e757e5e289
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368956"
 ---
 # <a name="raising-sensor-events"></a>引发传感器事件
 
@@ -60,9 +60,9 @@ static const DWORD g_dwDefaultInterval = 1000; // one second
 
 ### <a name="lifetime-management"></a>生存期管理
 
-回调类，名为 CSensorDdi，实现[ISensorDriver](https://msdn.microsoft.com/library/windows/hardware/ff545566)，第一个客户端订阅的事件时创建 CSampleEvents 事件类的实例。 客户端无法再订阅事件时，回调类将销毁 CSampleEvents 实例。
+回调类，名为 CSensorDdi，实现[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nn-sensorsclassextension-isensordriver)，第一个客户端订阅的事件时创建 CSampleEvents 事件类的实例。 客户端无法再订阅事件时，回调类将销毁 CSampleEvents 实例。
 
-CSampleEvents 回拨到 CSensorDdi 要检索的最新的数据使用的相同方法，此类扩展使用，如[ **ISensorDriver::OnGetDataFields**](https://msdn.microsoft.com/library/windows/hardware/ff545607)。
+CSampleEvents 回拨到 CSensorDdi 要检索的最新的数据使用的相同方法，此类扩展使用，如[ **ISensorDriver::OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)。
 
 下面的代码示例包含 CSampleEvents 事件类的方法实现。
 

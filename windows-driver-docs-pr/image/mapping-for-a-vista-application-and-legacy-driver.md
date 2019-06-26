@@ -4,12 +4,12 @@ description: 适用于 Vista 应用程序和旧版驱动程序的映射
 ms.assetid: 176157b0-cc30-467b-95ec-2d25a40c43ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96a305c388f371e151bd27b84b26e6fb36487b1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 399fc92bd60e01d0f0897ea285ec86ed3e017e4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379687"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378843"
 ---
 # <a name="mapping-for-a-vista-application-and-legacy-driver"></a>适用于 Vista 应用程序和旧版驱动程序的映射
 
@@ -110,7 +110,7 @@ ms.locfileid: "63379687"
 
  
 
-旧传输消息的详细信息，请参阅[IWiaMiniDrvCallBack 接口](https://msdn.microsoft.com/library/windows/hardware/ff543943)。
+旧传输消息的详细信息，请参阅[IWiaMiniDrvCallBack 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)。
 
 TYMED 常量的详细信息，请参阅[了解 TYMED](understanding-tymed.md)。
 

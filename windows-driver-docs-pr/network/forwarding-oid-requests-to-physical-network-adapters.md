@@ -4,12 +4,12 @@ description: 将 OID 请求转发到物理网络适配器
 ms.assetid: 2A6AA842-FFC2-4CEF-BA56-2FDB277E37C9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b00e1b6ad41a5a10185ad0879468d4284164399
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcdbee4fc2cf273f10056b4648edaf0001623de5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382778"
 ---
 # <a name="forwarding-oid-requests-to-physical-network-adapters"></a>将 OID 请求转发到物理网络适配器
 
@@ -32,7 +32,7 @@ ms.locfileid: "63356928"
 
  
 
-若要将请求转发到基础物理网络适配器都必须封装 OID 请求。 OID 请求首先封装在内[ **NDIS\_交换机\_NIC\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)结构。 然后，OID 由 OID 集请求的请求通过可扩展交换机控制路径转发[OID\_切换\_NIC\_请求](https://msdn.microsoft.com/library/windows/hardware/hh598266)。
+若要将请求转发到基础物理网络适配器都必须封装 OID 请求。 OID 请求首先封装在内[ **NDIS\_交换机\_NIC\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构。 然后，OID 由 OID 集请求的请求通过可扩展交换机控制路径转发[OID\_切换\_NIC\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)。
 
 对基础物理适配器的 OID 请求颁发通过以下方法：
 
@@ -56,9 +56,9 @@ OID 请求，如将卸载对硬件的请求，颁发的过量协议或筛选器�
 <a href="" id="a-forwarding-extension-"></a>转发扩展。  
 转发扩展可以源自封装的 OID 请求并将其转发到基础物理网络适配器。 转发扩展可以封装标准 NDIS OID 请求。 转发扩展还可以封装由物理网络适配器的独立硬件供应商 (IHV) 定义的私有 OID 请求。 这允许由 IHV 可以启用或禁用在团队中的各个物理适配器的专有特性还开发一个转发扩展。
 
-此外，转发扩展可以源自封装的硬件卸载 OID 请求为指定的 HYPER-V 子分区分配的资源。 例如，转发扩展可以源自的封装的 OID 请求[OID\_接收\_筛选器\_分配\_队列](https://msdn.microsoft.com/library/windows/hardware/ff569784)为指定子分配 VMQ分区。 在这种情况下，该扩展封装为来自与分区相关联的可扩展交换机端口和网络适配器连接请求。
+此外，转发扩展可以源自封装的硬件卸载 OID 请求为指定的 HYPER-V 子分区分配的资源。 例如，转发扩展可以源自的封装的 OID 请求[OID\_接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)为指定子分配 VMQ分区。 在这种情况下，该扩展封装为来自与分区相关联的可扩展交换机端口和网络适配器连接请求。
 
-**请注意**  转发扩展仅可以由自己封装的硬件卸载 OID 请求如果它正在筛选同一个 OID 请求已颁发的过量驱动程序。 在这种情况下，该扩展不能转发原始 OID 请求。 相反，扩展必须调用[ **NdisFOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff561833)若要完成此请求时 NDIS 调用其[ *FilterOidRequestComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff549956)若要完成起源于的 OID 请求。
+**请注意**  转发扩展仅可以由自己封装的硬件卸载 OID 请求如果它正在筛选同一个 OID 请求已颁发的过量驱动程序。 在这种情况下，该扩展不能转发原始 OID 请求。 相反，扩展必须调用[ **NdisFOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequestcomplete)若要完成此请求时 NDIS 调用其[ *FilterOidRequestComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request_complete)若要完成起源于的 OID 请求。
 
  
 
@@ -71,11 +71,11 @@ OID 请求，如将卸载对硬件的请求，颁发的过量协议或筛选器�
 
 转发扩展转发，将重定向，或源自基础物理适配器的封装的 OID 请求时必须执行以下步骤：
 
-1.  如果转发扩展原始的 OID 请求，它必须初始化扩展分配[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)与相关的信息的结构该请求。
+1.  如果转发扩展原始的 OID 请求，它必须初始化扩展分配[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)与相关的信息的结构该请求。
 
-    如果扩展转发 OID 请求，则必须更改现有[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构引用的*OidRequest*的参数[ *FilterOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff549954)函数。 相反，扩展必须调用[ **NdisAllocateCloneOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff560706)若要为新分配内存**NDIS\_OID\_请求**结构和从现有复制所有信息**NDIS\_OID\_请求**结构。
+    如果扩展转发 OID 请求，则必须更改现有[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构引用的*OidRequest*的参数[ *FilterOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request)函数。 相反，扩展必须调用[ **NdisAllocateCloneOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatecloneoidrequest)若要为新分配内存**NDIS\_OID\_请求**结构和从现有复制所有信息**NDIS\_OID\_请求**结构。
 
-2.  扩展设置的扩展插件分配成员[ **NDIS\_交换机\_NIC\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)结构为以下值：
+2.  扩展设置的扩展插件分配成员[ **NDIS\_交换机\_NIC\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构为以下值：
 
     -   **DestinationPortId**成员必须设置为外部网络适配器连接到可扩展的交换机端口的标识符。
 
@@ -89,45 +89,45 @@ OID 请求，如将卸载对硬件的请求，颁发的过量协议或筛选器�
 
         如果转发扩展转发或重定向的硬件卸载 OID 请求，它必须保留的值**SourcePortId**并**SourceNicIndex**通过可扩展设置的成员交换机接口。
 
-    -   **OidRequest**成员必须设置为指向一个已初始化的指针[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)封装 OID 请求的结构. 转发扩展分配和初始化此结构，或者使用该结构的克隆的副本。
+    -   **OidRequest**成员必须设置为指向一个已初始化的指针[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)封装 OID 请求的结构. 转发扩展分配和初始化此结构，或者使用该结构的克隆的副本。
 
-3.  扩展设置的扩展插件分配成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构为以下值：
+3.  扩展设置的扩展插件分配成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构为以下值：
 
-    -   **Oid**成员必须设置为[OID\_交换机\_NIC\_请求](https://msdn.microsoft.com/library/windows/hardware/hh598266)。
+    -   **Oid**成员必须设置为[OID\_交换机\_NIC\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)。
 
     -   **InformationBuffer**成员必须包含指向包含的生成或已筛选的 OID 请求数据的缓冲区的指针。
 
     -   **InformationBufferLength**成员必须包含包含生成或已筛选 OID 请求数据的缓冲区的长度，以字节为单位。
 
-    扩展设置为有效的值的其他成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构。
+    扩展设置为有效的值的其他成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构。
 
-4.  扩展调用[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)递增引用计数器，用于目标物理网络适配器的索引。 这可以保证可扩展交换机接口不会删除物理网络适配器连接时它的引用计数器为非零值。
+4.  扩展调用[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)递增引用计数器，用于目标物理网络适配器的索引。 这可以保证可扩展交换机接口不会删除物理网络适配器连接时它的引用计数器为非零值。
 
-    当扩展调用[ *ReferenceSwitchNic*](https://msdn.microsoft.com/library/windows/hardware/hh598294)，它会设置*SwitchPortId*参数指定的值**DestinationPortId**成员。 扩展还设置*SwitchNicIndex*为指定的值的参数**DestinationNicIndex**成员。
+    当扩展调用[ *ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)，它会设置*SwitchPortId*参数指定的值**DestinationPortId**成员。 扩展还设置*SwitchNicIndex*为指定的值的参数**DestinationNicIndex**成员。
 
-    **请注意**  如果[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)不会返回 NDIS\_状态\_成功后，OID 请求不能转发到目标物理网络适配器。
-
-     
-
-5.  如果转发扩展原始的 HYPER-V 子分区的硬件卸载 OID 请求，则还会调用[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)递增引用计数器，用于源的索引与分区相关联的网络适配器连接。 这可以保证可扩展交换机接口不会删除物理网络适配器连接时它的引用计数器为非零值。
-
-    当扩展调用[ *ReferenceSwitchNic*](https://msdn.microsoft.com/library/windows/hardware/hh598294)，它会设置*SwitchPortId*参数指定的值**SourcePortId**成员。 扩展还设置*SwitchNicIndex*为指定的值的参数**SourceNicIndex**成员。
-
-    **请注意**  如果[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)不会返回 NDIS\_状态\_成功后，OID 请求不能转发到目标物理网络适配器。
+    **请注意**  如果[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)不会返回 NDIS\_状态\_成功后，OID 请求不能转发到目标物理网络适配器。
 
      
 
-6.  扩展调用[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)封装的 OID 请求转发到指定的目标可扩展交换机端口和网络适配器。
+5.  如果转发扩展原始的 HYPER-V 子分区的硬件卸载 OID 请求，则还会调用[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)递增引用计数器，用于源的索引与分区相关联的网络适配器连接。 这可以保证可扩展交换机接口不会删除物理网络适配器连接时它的引用计数器为非零值。
 
-    **请注意**  如果扩展转发经过筛选的 OID 请求，它必须调用[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)的调用上下文中其[ *FilterOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff549954)函数。 如果扩展已生成的 OID 请求转发，则会调用[ **NdisFIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff561824)在时*运行*，*正在重新启动*，*已暂停*，和*暂停*状态。 有关这些状态的详细信息，请参阅[筛选器模块状态和操作](filter-module-states-and-operations.md)。
+    当扩展调用[ *ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)，它会设置*SwitchPortId*参数指定的值**SourcePortId**成员。 扩展还设置*SwitchNicIndex*为指定的值的参数**SourceNicIndex**成员。
+
+    **请注意**  如果[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)不会返回 NDIS\_状态\_成功后，OID 请求不能转发到目标物理网络适配器。
 
      
 
-7.  当调用 NDIS [ *FilterOidRequestComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff549956)函数，扩展将调用[ *DereferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598141)清除目标物理网络适配器的索引的引用计数器。
+6.  扩展调用[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)封装的 OID 请求转发到指定的目标可扩展交换机端口和网络适配器。
 
-    如果转发扩展源于硬件卸载 OID 征求 HYPER-V 子分区，则还会调用[ *DereferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598141)若要清除的源索引的引用计数器该适配器的网络适配器连接。
+    **请注意**  如果扩展转发经过筛选的 OID 请求，它必须调用[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)的调用上下文中其[ *FilterOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request)函数。 如果扩展已生成的 OID 请求转发，则会调用[ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)在时*运行*，*正在重新启动*，*已暂停*，和*暂停*状态。 有关这些状态的详细信息，请参阅[筛选器模块状态和操作](filter-module-states-and-operations.md)。
 
-    在这两种情况下，扩展设置*SwitchPortId*并*SwitchNicIndex*相同的参数值对的调用中使用它[ *ReferenceSwitchNic*](https://msdn.microsoft.com/library/windows/hardware/hh598294).
+     
+
+7.  当调用 NDIS [ *FilterOidRequestComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request_complete)函数，扩展将调用[ *DereferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)清除目标物理网络适配器的索引的引用计数器。
+
+    如果转发扩展源于硬件卸载 OID 征求 HYPER-V 子分区，则还会调用[ *DereferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)若要清除的源索引的引用计数器该适配器的网络适配器连接。
+
+    在这两种情况下，扩展设置*SwitchPortId*并*SwitchNicIndex*相同的参数值对的调用中使用它[ *ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic).
 
 有关如何扩展发出 OID 请求的详细信息，请参阅[NDIS 筛选器驱动程序从生成 OID 请求](generating-oid-requests-from-an-ndis-filter-driver.md)。
 

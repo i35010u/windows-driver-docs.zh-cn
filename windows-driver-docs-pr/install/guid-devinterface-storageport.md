@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9754d9d9b8fb44fe31ff04119b4d7b91566c2b23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 030a8a2227b4487d42cb0b84f2da8b303df710c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386422"
 ---
 # <a name="guiddevinterfacestorageport"></a>GUID_DEVINTERFACE_STORAGEPORT
 
 
-GUID_DEVINTERFACE_STORAGEPORT[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[存储端口设备](https://msdn.microsoft.com/library/windows/hardware/ff566994)。
+GUID_DEVINTERFACE_STORAGEPORT[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[存储端口设备](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-port-drivers)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_STORAGEPORT[设备接口类](https://msdn.microsoft.com/librar
 
 系统提供的驱动程序存储端口设备注册 GUID_DEVINTERFACE_STORAGEPORT 通知操作系统和应用程序的存储设备适配器存在的实例。
 
-有关存储驱动程序的详细信息，请参阅[存储设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566976)。
+有关存储驱动程序的详细信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
 [**StoragePortClassGuid** ](storageportclassguid.md) GUID_DEVINTERFACE_STORAGEPORT 设备接口类的已过时标识符。 对于此类的新实例，请改为使用 GUID_DEVINTERFACE_STORAGEPORT。
 

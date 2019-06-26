@@ -11,23 +11,23 @@ keywords:
 - 测试签名驱动程序包 WDK，目录文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e7622aa7d62cb9292ab0bd316a4b9c2e4d58cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e4f812449e8075f371aeaa27a67dc267a4d0d32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339316"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380430"
 ---
 # <a name="verifying-the-signature-of-a-test-signed-catalog-file"></a>验证已进行测试签名的目录文件的签名
 
 
-若要确认[驱动程序包](driver-packages.md) [编录文件](catalog-files.md)由有效签名[测试证书](test-certificates.md)，使用以下[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令：
+若要确认[驱动程序包](driver-packages.md) [编录文件](catalog-files.md)由有效签名[测试证书](test-certificates.md)，使用以下[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令：
 
 ```cpp
 SignTool verify /v /pa CatalogFileName.cat
 ```
 
-若要验证文件中列出[驱动程序包](driver-packages.md)目录文件，是由测试证书签名，使用以下[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令：
+若要验证文件中列出[驱动程序包](driver-packages.md)目录文件，是由测试证书签名，使用以下[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令：
 
 ```cpp
 SignTool verify /v /pa /c CatalogFileName.cat DriverFileName

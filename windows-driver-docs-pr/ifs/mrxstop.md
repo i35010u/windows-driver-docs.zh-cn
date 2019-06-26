@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6823f929ad1c0951ae30e15fb0087209dbba542a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c333347a3a9354e184efcffb0e7b512c8ef3d53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379470"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384803"
 ---
 # <a name="mrxstop-routine"></a>MRxStop 例程
 
 
-*MRxStop*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)停止网络微型重定向。
+*MRxStop*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)停止网络微型重定向。
 
 <a name="syntax"></a>语法
 ------
@@ -94,7 +94,7 @@ NTSTATUS MRxStop(
 
 **StartStopContext.pStopContext** RDBSS 成员\_设备\_指向对象结构*RxDeviceObject*设置为*RxContext*参数。
 
-*MRxStop* RDBSS 从调用[ **RxStopMinirdr** ](https://msdn.microsoft.com/library/windows/hardware/ff554743)例程。
+*MRxStop* RDBSS 从调用[ **RxStopMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)例程。
 
 如果*MRxStop*将返回状态\_成功，则例程是否成功。 任何其他返回值指示错误发生在停止网络微型重定向。
 
@@ -127,9 +127,9 @@ NTSTATUS MRxStop(
 
 [**MRxDevFcbXXXControlFile**](mrxdevfcbxxxcontrolfile.md)
 
-[**MrxStart**](https://msdn.microsoft.com/library/windows/hardware/ff550829)
+[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)
 
-[**RxStopMinirdr**](https://msdn.microsoft.com/library/windows/hardware/ff554743)
+[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)
 
  
 

@@ -3,12 +3,12 @@ Description: 选择用于开发的 USB 客户端驱动程序，充当设备的�
 title: 选择用于开发的 USB 驱动程序的驱动程序模型
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a548bff389696d1bb369e7d62c7851db6e1b23d3
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e893eaff0aa1f77998badb9f8874415cdc50bdb8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385680"
 ---
 # <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>选择用于开发 USB 客户端驱动程序的驱动程序模型
 
@@ -49,7 +49,7 @@ USB 设备制造商通常必须提供应用程序访问设备的功能的方法�
 
     正在加载 WinUSB 作为函数驱动程序提供了更简单的方法来实现自定义的 USB 驱动程序。 例如，WinUSB 是只能由与设备一起打包的应用程序访问电子气象站的首选的方法。 还有用于诊断与设备通信和闪烁的固件。
 
-    若要使应用程序轻松地将请求发送到 Winusb.sys，我们提供的用户模式 DLL，Winusb.dll，公开[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)。 应用程序可以调用这些函数来访问设备、 其进行配置，并将数据传输到设备的终结点。
+    若要使应用程序轻松地将请求发送到 Winusb.sys，我们提供的用户模式 DLL，Winusb.dll，公开[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)。 应用程序可以调用这些函数来访问设备、 其进行配置，并将数据传输到设备的终结点。
 
     如果 WinUSB 不是选项：
 

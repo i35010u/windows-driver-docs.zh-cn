@@ -4,19 +4,19 @@ description: 当 Windows 驱动程序框架 (WDF) 驱动程序调用 WdfDeviceSt
 ms.assetid: 25F4EEBB-4733-498C-8704-8E015F81FE06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 585be1886c274efcfbbb23ddc16568f4d5d91468
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d66337d9180fb9d3233a49b684409dc64e14c50e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362737"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377494"
 ---
 # <a name="debugging-power-reference-leaks-in-wdf"></a>在 WDF 中调试电源参考漏孔
 
 
-当 Windows 驱动程序框架 (WDF) 驱动程序调用[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)，framework 递增设备的 power 引用计数。 每次成功调用**WdfDeviceStopIdle**必须通过调用匹配[ **WdfDeviceResumeIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546838)以减少 power 引用计数。
+当 Windows 驱动程序框架 (WDF) 驱动程序调用[ **WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)，framework 递增设备的 power 引用计数。 每次成功调用**WdfDeviceStopIdle**必须通过调用匹配[ **WdfDeviceResumeIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)以减少 power 引用计数。
 
-从内核模式驱动程序框架 (KMDF) 1.15 和用户模式驱动程序框架 (UMDF) 2.15，您可以通过监视电源引用使用情况[ **！ wdfkd.wdfdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff565703)和[ **！ wdfkd.wdftagtracker** ](https://msdn.microsoft.com/library/windows/hardware/ff566126)调试器扩展。 因此您需要与 WdfVerifier 应用程序或通过手动编辑驱动程序的服务密钥，则会将其打开，出于性能原因，默认情况下禁用此功能。
+从内核模式驱动程序框架 (KMDF) 1.15 和用户模式驱动程序框架 (UMDF) 2.15，您可以通过监视电源引用使用情况[ **！ wdfkd.wdfdevice** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevice)和[ **！ wdfkd.wdftagtracker** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdftagtracker)调试器扩展。 因此您需要与 WdfVerifier 应用程序或通过手动编辑驱动程序的服务密钥，则会将其打开，出于性能原因，默认情况下禁用此功能。
 
 ## <a name="wdfverifier"></a>WdfVerifier
 
@@ -52,7 +52,7 @@ UMDF 驱动程序：
 ## <a name="driver-code"></a>驱动程序代码
 
 
-驱动程序调用[ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)并[ **WdfDeviceResumeIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546838)来管理设备的工作电源状态，如下所示：
+驱动程序调用[ **WdfDeviceStopIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)并[ **WdfDeviceResumeIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)来管理设备的工作电源状态，如下所示：
 
 ```cpp
 //
@@ -70,14 +70,14 @@ if (NT_SUCCESS(status)) {
 ## <a name="debugging-with-wdfkd"></a>使用 WdfKd 进行调试
 
 
-若要显示执行该设备，以及一个显示引用历史记录的标记跟踪器的 power 引用，请使用[ **！ wdfkd.wdfdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff565703)与 verbose 标志：
+若要显示执行该设备，以及一个显示引用历史记录的标记跟踪器的 power 引用，请使用[ **！ wdfkd.wdfdevice** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevice)与 verbose 标志：
 
 ```cpp
 kd> !wdfkd.wdfdevice 0x6d939790 ff
 Power references: 0 !wdftagtracker 0x9ea030a8
 ```
 
-调用[ **！ wdfkd.wdftagtracker** ](https://msdn.microsoft.com/library/windows/hardware/ff566126)显示设备的 power 引用历史记录：
+调用[ **！ wdfkd.wdftagtracker** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdftagtracker)显示设备的 power 引用历史记录：
 
 ```cpp
 kd> !wdftagtracker 0x9ea030a8
@@ -98,7 +98,7 @@ Reference and Release History:
 ## <a name="specifying-a-tag"></a>指定一个标记
 
 
-（可选） 指定标记名称，便于识别特定电源的引用。 若要执行此操作，请使用[ **WdfDeviceStopIdleWithTag** ](https://msdn.microsoft.com/library/windows/hardware/dn932460)并[ **WdfDeviceResumeIdleWithTag**](https://msdn.microsoft.com/library/windows/hardware/dn932459):
+（可选） 指定标记名称，便于识别特定电源的引用。 若要执行此操作，请使用[ **WdfDeviceStopIdleWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevicestopidlewithtag)并[ **WdfDeviceResumeIdleWithTag**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdeviceresumeidlewithtag):
 
 ```cpp
 status = WdfDeviceStopIdleWithTag(device, FALSE, (PVOID)'oyeH');
@@ -107,7 +107,7 @@ if (NT_SUCCESS(status)) {
 }
 ```
 
-对应[ **！ wdftagtracker** ](https://msdn.microsoft.com/library/windows/hardware/ff566126)示例输出：
+对应[ **！ wdftagtracker** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdftagtracker)示例输出：
 
 ```cpp
 (--) 0 ref: Tag 'Heyo' at Time 0x24e40 ticks

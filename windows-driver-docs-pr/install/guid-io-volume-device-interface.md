@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6553a6468821025cfeb9669323441333631fe46c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed24e5dc8272ef54bb8a6a2ea41962755eafc27c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369987"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384789"
 ---
 # <a name="guidiovolumedeviceinterface"></a>GUID_IO_VOLUME_DEVICE_INTERFACE
 
 
-GUID_IO_VOLUME_DEVICE_INTERFACE[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为卷设备定义。
+GUID_IO_VOLUME_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为卷设备定义。
 
 <table>
 <colgroup>

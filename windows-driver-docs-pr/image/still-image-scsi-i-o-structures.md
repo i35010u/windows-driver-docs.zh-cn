@@ -4,12 +4,12 @@ description: 静态图像 SCSI I/O 结构
 ms.assetid: 2cf17295-e3af-4109-bfdd-118aecf80bbe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b29e25a911176defefcfde0d864fd332d91cfac8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdc0c612f0a9af57053b25faa205cdc26ca8b1fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371917"
 ---
 # <a name="still-image-scsi-io-structures"></a>静态图像 SCSI I/O 结构
 
@@ -32,12 +32,12 @@ ms.locfileid: "63322217"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547972" data-raw-source="[&lt;strong&gt;SCSISCAN_CMD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547972)"><strong>SCSISCAN_CMD</strong></a></p></td>
-<td><p>使用作为参数<a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl</strong></a>，当指定的 I/O 控制代码时， <a href="https://msdn.microsoft.com/library/windows/hardware/ff542877" data-raw-source="[&lt;strong&gt;IOCTL_SCSISCAN_CMD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff542877)"> <strong>IOCTL_SCSISCAN_CMD</strong></a>。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ns-scsiscan-_scsiscan_cmd" data-raw-source="[&lt;strong&gt;SCSISCAN_CMD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ns-scsiscan-_scsiscan_cmd)"><strong>SCSISCAN_CMD</strong></a></p></td>
+<td><p>使用作为参数<a href="https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"> <strong>DeviceIoControl</strong></a>，当指定的 I/O 控制代码时， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ni-scsiscan-ioctl_scsiscan_cmd" data-raw-source="[&lt;strong&gt;IOCTL_SCSISCAN_CMD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ni-scsiscan-ioctl_scsiscan_cmd)"> <strong>IOCTL_SCSISCAN_CMD</strong></a>。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547981" data-raw-source="[&lt;strong&gt;SCSISCAN_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547981)"><strong>SCSISCAN_INFO</strong></a></p></td>
-<td><p>使用作为参数<a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl</strong></a>，当指定的 I/O 控制代码时， <a href="https://msdn.microsoft.com/library/windows/hardware/ff542879" data-raw-source="[&lt;strong&gt;IOCTL_SCSISCAN_GET_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff542879)"> <strong>IOCTL_SCSISCAN_GET_INFO</strong></a>。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ns-scsiscan-_scsiscan_info" data-raw-source="[&lt;strong&gt;SCSISCAN_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ns-scsiscan-_scsiscan_info)"><strong>SCSISCAN_INFO</strong></a></p></td>
+<td><p>使用作为参数<a href="https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"> <strong>DeviceIoControl</strong></a>，当指定的 I/O 控制代码时， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ni-scsiscan-ioctl_scsiscan_get_info" data-raw-source="[&lt;strong&gt;IOCTL_SCSISCAN_GET_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiscan/ni-scsiscan-ioctl_scsiscan_get_info)"> <strong>IOCTL_SCSISCAN_GET_INFO</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>

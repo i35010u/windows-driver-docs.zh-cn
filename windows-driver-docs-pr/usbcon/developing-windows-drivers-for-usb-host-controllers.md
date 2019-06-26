@@ -3,12 +3,12 @@ Description: 为 USB 主控制器开发 Windows 驱动程序
 title: 为 USB 主控制器开发 Windows 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cee2cfac0dd75e730bf43ce1307ea73279dcaf3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8cbad6ab61187126394408a596dcfb1116c6c226
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394033"
 ---
 # <a name="developing-windows-drivers-for-usb-host-controllers"></a>为 USB 主控制器开发 Windows 驱动程序
 
@@ -28,7 +28,7 @@ ms.locfileid: "63377405"
 <p>UCX 是之一<a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">USB 宿主端驱动程序在 Windows 中的</a>。 作为主机控制器设备堆栈中 FDO 加载它。</p>
 <p><strong>USB 主控制器驱动程序</strong></p>
 <p>UCX 是可扩展的旨在支持各种主机控制器驱动程序。 Windows 提供 xHCI 驱动程序 (Usbxhci.sys) 该目标 USB xHCI 主控制器。</p>
-<p>主机控制器驱动程序是一个客户端的 UCX，写作<a href="https://msdn.microsoft.com/library/windows/hardware/ff551869" data-raw-source="[Kernel-Mode Driver Framework](https://msdn.microsoft.com/library/windows/hardware/ff551869)">内核模式驱动程序框架</a>(KMDF) 驱动程序。</p>
+<p>主机控制器驱动程序是一个客户端的 UCX，写作<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-debugging" data-raw-source="[Kernel-Mode Driver Framework](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-debugging)">内核模式驱动程序框架</a>(KMDF) 驱动程序。</p>
 <p><strong>Microsoft 提供的二进制文件</strong></p>
 <p>若要编写宿主控制器驱动程序，需要 UCX (Ucx01000.sys) 和存根 （stub） 库 (Ucx01000.lib)。 存根 （stub） 库是 Windows Driver Kit (WDK) 中。 库执行两个主要功能。</p>
 <ul>
@@ -47,24 +47,24 @@ ms.locfileid: "63377405"
 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">在 Windows 中的 USB 宿主端驱动程序</a>
 <a href="get-started-with-host-controller-driver-development.md" data-raw-source="[Architecture: USB host controller extension (UCX)](get-started-with-host-controller-driver-development.md)">体系结构：USB 主机控制器扩展 (UCX)</a>
 <p><strong>熟悉 UCX 对象和句柄</strong></p>
-<p>UCX 扩展了 WDF 对象功能来定义其自己特定于 USB 的 UCX 对象。 WDF 对象的更多详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework 对象简介</a>。</p>
+<p>UCX 扩展了 WDF 对象功能来定义其自己特定于 USB 的 UCX 对象。 WDF 对象的更多详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)">Framework 对象简介</a>。</p>
 <p>对于任何基础主机控制器驱动程序的队列请求，UCX 使用这些对象。 有关详细信息，请参阅<a href="ucx-objects-and-handles-used-by-host-controller-driver.md" data-raw-source="[UCX objects and handles used by a host controller driver](ucx-objects-and-handles-used-by-host-controller-driver.md)">UCX 对象和处理主机控制器驱动程序使用的</a>。</p>
 <p></p>
 <dl>
 <dt>主机控制器对象 (UCXCONTROLLER)</dt>
-<dd><p>表示创建的主机控制器驱动程序的主机控制器。 该驱动程序必须创建每个主机控制器实例只有一个主机控制器对象。 通常在中创建<a href="https://msdn.microsoft.com/library/windows/hardware/ff541693" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://msdn.microsoft.com/library/windows/hardware/ff541693)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong></a>通过调用回调<a href="https://msdn.microsoft.com/library/windows/hardware/mt188033" data-raw-source="[&lt;strong&gt;UcxControllerCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188033)"> <strong>UcxControllerCreate</strong> </a>方法。</p>
+<dd><p>表示创建的主机控制器驱动程序的主机控制器。 该驱动程序必须创建每个主机控制器实例只有一个主机控制器对象。 通常在中创建<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong></a>通过调用回调<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188033(v=vs.85)" data-raw-source="[&lt;strong&gt;UcxControllerCreate&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188033(v=vs.85))"> <strong>UcxControllerCreate</strong> </a>方法。</p>
 </dd>
 <dt>根中心对象 (UCXROOTHUB)</dt>
-<dd><p>获取并控制主控制器的根端口的状态。 通常在创建的主机控制器驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff541693" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://msdn.microsoft.com/library/windows/hardware/ff541693)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong> </a>通过调用回调<a href="https://msdn.microsoft.com/library/windows/hardware/mt188048" data-raw-source="[&lt;strong&gt;UcxRootHubCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188048)"> <strong>UcxRootHubCreate</strong> </a>方法。</p>
+<dd><p>获取并控制主控制器的根端口的状态。 通常在创建的主机控制器驱动程序<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong> </a>通过调用回调<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188048(v=vs.85)" data-raw-source="[&lt;strong&gt;UcxRootHubCreate&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188048(v=vs.85))"> <strong>UcxRootHubCreate</strong> </a>方法。</p>
 </dd>
 <dt>USB 设备对象 (UCXUSBDEVICE)</dt>
-<dd><p>表示物理 USB 设备连接到总线。 通常在创建的主机控制器驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/mt187823" data-raw-source="[&lt;em&gt;EVT_UCX_CONTROLLER_USBDEVICE_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187823)"> <em>EVT_UCX_CONTROLLER_USBDEVICE_ADD</em> </a>通过调用回调<a href="https://msdn.microsoft.com/library/windows/hardware/mt188052" data-raw-source="[&lt;strong&gt;UcxUsbDeviceCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188052)"> <strong>UcxUsbDeviceCreate</strong></a>方法。</p>
+<dd><p>表示物理 USB 设备连接到总线。 通常在创建的主机控制器驱动程序<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_usbdevice_add" data-raw-source="[&lt;em&gt;EVT_UCX_CONTROLLER_USBDEVICE_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_usbdevice_add)"> <em>EVT_UCX_CONTROLLER_USBDEVICE_ADD</em> </a>通过调用回调<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nf-ucxusbdevice-ucxusbdevicecreate" data-raw-source="[&lt;strong&gt;UcxUsbDeviceCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nf-ucxusbdevice-ucxusbdevicecreate)"> <strong>UcxUsbDeviceCreate</strong></a>方法。</p>
 </dd>
 <dt>终结点对象 (UCXENDPOINT)</dt>
-<dd><p>表示一个 USB 设备对象上的终结点。 通常在创建的主机控制器驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/mt187839" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187839)"> <em>EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD</em> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/mt187843" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_ENDPOINT_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187843)"> <em>EVT_UCX_USBDEVICE_ENDPOINT_ADD</em></a>通过调用回调<a href="https://msdn.microsoft.com/library/windows/hardware/mt188039" data-raw-source="[&lt;strong&gt;UcxEndpointCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188039)"> <strong>UcxEndpointCreate</strong> </a>方法。</p>
+<dd><p>表示一个 USB 设备对象上的终结点。 通常在创建的主机控制器驱动程序<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_default_endpoint_add" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_default_endpoint_add)"> <em>EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD</em> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_endpoint_add" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_ENDPOINT_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_endpoint_add)"> <em>EVT_UCX_USBDEVICE_ENDPOINT_ADD</em></a>通过调用回调<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nf-ucxendpoint-ucxendpointcreate" data-raw-source="[&lt;strong&gt;UcxEndpointCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nf-ucxendpoint-ucxendpointcreate)"> <strong>UcxEndpointCreate</strong> </a>方法。</p>
 </dd>
 <dt>Stream 对象 (UCXSTREAMS)</dt>
-<dd><p>表示单个批量终结点设备的管道数。 通常在创建的主机控制器驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/mt187830" data-raw-source="[&lt;em&gt;EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187830)"> <em>EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD</em> </a>通过调用回调<a href="https://msdn.microsoft.com/library/windows/hardware/mt188050" data-raw-source="[&lt;strong&gt;UcxStaticStreamsCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188050)"> <strong>UcxStaticStreamsCreate</strong></a>方法。</p>
+<dd><p>表示单个批量终结点设备的管道数。 通常在创建的主机控制器驱动程序<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_static_streams_add" data-raw-source="[&lt;em&gt;EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_static_streams_add)"> <em>EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD</em> </a>通过调用回调<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxsstreams/nf-ucxsstreams-ucxstaticstreamscreate" data-raw-source="[&lt;strong&gt;UcxStaticStreamsCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxsstreams/nf-ucxsstreams-ucxstaticstreamscreate)"> <strong>UcxStaticStreamsCreate</strong></a>方法。</p>
 </dd>
 </dl>
 <p><strong>文档部分</strong></p>
@@ -86,7 +86,7 @@ ms.locfileid: "63377405"
  
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 45426b6e8174a382807e04c71d10097f37bb0e3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3afd89398b3be938b26b65a2f6a6ed7fc2eceefd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349329"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385064"
 ---
 # <a name="wditlvphycapabilities"></a>WDI\_TLV\_PHY\_功能
 
@@ -33,7 +33,7 @@ WDI\_TLV\_PHY\_功能是包含物理功能 TLV。
 
 | 在任务栏的搜索框中键入                                        | 描述                                        |
 |---------------------------------------------|----------------------------------------------------|
-| [**WDI\_PHY\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/dn926105) | 指定物理类型。                           |
+| [**WDI\_PHY\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_phy_type) | 指定物理类型。                           |
 | UINT8                                       | 指定物理支持 CF 轮询。 |
 | UINT32                                      | 指定 MPDU 最大长度。                 |
 | UINT32                                      | 指定操作的温度类。         |

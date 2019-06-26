@@ -4,12 +4,12 @@ description: 本主题演示如何生成 ADXL345 加速感应器的示例传感�
 ms.assetid: F9D8D124-DAD6-4779-9F03-B1743BADC31A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cc90e628a90382bf1cf4e1bde1be3101ce92c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97efc50cef8b4beda312b448dd2d904210053a76
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368880"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393346"
 ---
 # <a name="build-the-sensor-driver"></a>生成传感器驱动程序
 
@@ -19,7 +19,7 @@ ms.locfileid: "63368880"
 ## <a name="download-the-driver-files"></a>下载驱动程序文件
 
 
-导航到[Microsoft / Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)在 GitHub 上的站点，请执行以下任务来下载和生成示例传感器驱动程序。 本主题中的练习假定你已在开发计算机上安装 Microsoft Visual Studio 2015。 如果没有，请访问[此下载站点](https://www.visualstudio.com/downloads/visual-studio-2015-downloads-vs.aspx)有关如何下载 Microsoft Visual Studio 的副本的信息。
+导航到[Microsoft / Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)在 GitHub 上的站点，请执行以下任务来下载和生成示例传感器驱动程序。 本主题中的练习假定你已在开发计算机上安装 Microsoft Visual Studio 2015。 如果没有，请访问[此下载站点](https://visualstudio.microsoft.com/downloads/)有关如何下载 Microsoft Visual Studio 的副本的信息。
 
 1. 将下载的示例传感器驱动程序文件在开发计算机上创建一个文件夹。
 

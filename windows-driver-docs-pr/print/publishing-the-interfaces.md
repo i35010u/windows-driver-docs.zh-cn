@@ -10,17 +10,17 @@ keywords:
 - 发布 WDK 打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8f912fe965419dee97f696558dafa0cb296dbd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9b86038d561b7dd22288af6249ec69baed5038b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384692"
 ---
 # <a name="publishing-the-interfaces"></a>发布接口
 
 
-插件通常接收的一种称为发布机制的核心驱动程序中实现行为的对象的实例。 [IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)， [IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)，并[IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)帮助程序接口均通过该同一模型中，有几个不同之处。
+插件通常接收的一种称为发布机制的核心驱动程序中实现行为的对象的实例。 [IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)， [IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)，并[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)帮助程序接口均通过该同一模型中，有几个不同之处。
 
 以下列表总结了在用户界面 (UI) 中发布和呈现的模块，用来 Unidrv 和 Pscript5 对象的顺序。 对于每个四个模块，在列表中的数字表示在其中发布对象，和名为的 COM 接口指示该对象实现的接口的顺序。
 

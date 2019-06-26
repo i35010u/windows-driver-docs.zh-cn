@@ -5,12 +5,12 @@ ms.assetid: 3e6f6cb7-14fc-4eee-b5d6-d5e0cad46ea2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_READY_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b34a8b706684b9b3871f6ae1f71d3ed20b4132a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5485b1c2352c82f4155e56075f15c4bfe2e6654
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368516"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383188"
 ---
 # <a name="oidwwanreadyinfo"></a>OID\_WWAN\_准备\_信息
 
@@ -19,12 +19,12 @@ OID\_WWAN\_准备\_信息返回设备就绪状态，其中包括其用户识别�
 
 不支持组的请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_准备\_信息**](ndis-status-wwan-ready-info.md)状态通知包含[ **NDIS\_WWAN\_准备就绪\_INFO** ](https://msdn.microsoft.com/library/windows/hardware/ff567916)结构，指示 MB 设备的就绪状态时完成查询请求。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_准备\_信息**](ndis-status-wwan-ready-info.md)状态通知包含[ **NDIS\_WWAN\_准备就绪\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)结构，指示 MB 设备的就绪状态时完成查询请求。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[MB 设备准备情况](https://msdn.microsoft.com/library/windows/hardware/ff557164)。
+有关使用此 OID 的详细信息，请参阅[MB 设备准备情况](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)。
 
 微型端口驱动程序可以访问设备的内存或 SIM 卡处理时查询操作，但不是应访问提供程序网络。
 
@@ -67,11 +67,11 @@ OID\_WWAN\_准备\_信息返回设备就绪状态，其中包括其用户识别�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_READY\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff567916)
+[**NDIS\_WWAN\_READY\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
 
 [**NDIS\_状态\_WWAN\_准备\_信息**](ndis-status-wwan-ready-info.md)
 
-[MB 设备准备情况](https://msdn.microsoft.com/library/windows/hardware/ff557164)
+[MB 设备准备情况](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/18/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fbd4bfca2a0026f133e1b7b445f56a42c147e3b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34986af9bf87c1d25c012ac00da75b446f2c537d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372705"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386366"
 ---
 # <a name="device-and-adapter-initialization"></a>设备和适配器初始化
 
@@ -22,7 +22,7 @@ ms.locfileid: "63372705"
 
 ## <a name="evtwdfdriverdeviceadd"></a>EVT_WDF_DRIVER_DEVICE_ADD
 
-NetAdapterCx 客户端驱动程序注册其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)时，它调用的回调函数[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)从其[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff540807)例程。
+NetAdapterCx 客户端驱动程序注册其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)时，它调用的回调函数[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)从其[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程。
 
 在中[ *EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)，NetAdapterCx 客户端驱动程序应执行以下操作顺序：
 
@@ -36,7 +36,7 @@ NetAdapterCx 客户端驱动程序注册其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https
     }
     ```
 
-2. 调用[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)。 
+2. 调用[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)。 
 
     > [!TIP]
     > 如果设备支持多个 NETADAPTER，我们建议在设备上下文中存储指向每个适配器。

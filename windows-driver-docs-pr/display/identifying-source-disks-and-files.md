@@ -9,12 +9,12 @@ keywords:
 - 确定显示源磁盘或文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 344cb2f80d2402a6bb881605ecfafc36b0463726
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6815050947045be29ca067fc90f20949bd047e7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354733"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380177"
 ---
 # <a name="identifying-source-disks-and-files"></a>识别源磁盘和文件
 
@@ -31,7 +31,7 @@ UserModeDriverName1.dll  = 3426
 UserModeDriverName2.dll  = 3426
 ```
 
-有关详细信息**SourceDisksNames**并**SourceDisksFiles**部分中，请参阅[ **INF SourceDisksNames 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547478)和[ **INF SourceDisksFiles 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547472)。
+有关详细信息**SourceDisksNames**并**SourceDisksFiles**部分中，请参阅[ **INF SourceDisksNames 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)和[ **INF SourceDisksFiles 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)。
 
  
 

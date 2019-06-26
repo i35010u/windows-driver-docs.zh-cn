@@ -9,12 +9,12 @@ keywords:
 - 注册 SAN 服务提供商
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62a857e152a43f844dcf79ef7310d3f7ad69b220
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce3cd2703ea3499a666caa6665b9a88f33237f54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324900"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382206"
 ---
 # <a name="installing-a-san-service-provider"></a>安装 SAN 服务提供程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "63324900"
 
 SAN 服务提供商通常会安装与 Windows 套接字交换机的接口的基本 Windows 套接字服务提供程序。 尽管 SAN 服务提供商可供直接使用由安装应用程序相反，Windows 套接字直接技术不支持以这种方式使用 SAN 服务提供程序。 安装应用程序直接使用的 SAN 服务提供商将导出其本机地址系列和协议特征，而不是那些 TCP/IP 协议。
 
-间接公开给应用程序通过 Windows 套接字交换机 SAN 服务提供商必须设置 PFL\_中的隐藏标志**dwProviderFlags** SAN 服务提供商的成员[ **WSAPROTOCOL\_INFOW** ](https://msdn.microsoft.com/library/windows/hardware/ff565963)结构。 若要在操作系统上安装 SAN 服务提供商，SAN 服务提供商的安装机制将传递此结构在调用**WSCInstallProvider**函数。 有关详细信息**WSCInstallProvider**，请参阅 Microsoft Windows SDK 文档。 SAN 服务提供商的安装机制可能会为例，安装程序或函数导出由 SAN 服务提供程序和由 INF file 指令调用。
+间接公开给应用程序通过 Windows 套接字交换机 SAN 服务提供商必须设置 PFL\_中的隐藏标志**dwProviderFlags** SAN 服务提供商的成员[ **WSAPROTOCOL\_INFOW** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565963(v=vs.85))结构。 若要在操作系统上安装 SAN 服务提供商，SAN 服务提供商的安装机制将传递此结构在调用**WSCInstallProvider**函数。 有关详细信息**WSCInstallProvider**，请参阅 Microsoft Windows SDK 文档。 SAN 服务提供商的安装机制可能会为例，安装程序或函数导出由 SAN 服务提供程序和由 INF file 指令调用。
 
 SAN 服务提供商的安装机制必须添加值为类型 REG\_二进制到以下注册表项的前 SAN 服务提供商可以检测到的 Windows 套接字切换作为基本的 Windows 套接字服务提供程序：
 

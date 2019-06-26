@@ -6,12 +6,12 @@ keywords:
 - DeviceState
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 994521158ddec6fa1af9942cfa7b81e08fb5b98c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 312b01c052f5e67328dccd6a16cf05a2087b7cc0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342703"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385004"
 ---
 # <a name="devicestate"></a>DeviceState
 
@@ -19,7 +19,7 @@ ms.locfileid: "63342703"
 
 
 
-**DeviceState**的成员[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)是一个数组[**设备\_POWER\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff543160)情况下创建索引的值[**系统\_POWER\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff564565)值范围从**PowerSystemWorking**到**PowerSystemShutdown**。 数组的每个元素包含设备可以支持的索引，表示的系统电源状态的最大 (highest-powered) 设备电源状态或**PowerDeviceUnspecified**如果不支持系统电源状态。
+**DeviceState**的成员[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)是一个数组[**设备\_POWER\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_device_power_state)情况下创建索引的值[**系统\_POWER\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_system_power_state)值范围从**PowerSystemWorking**到**PowerSystemShutdown**。 数组的每个元素包含设备可以支持的索引，表示的系统电源状态的最大 (highest-powered) 设备电源状态或**PowerDeviceUnspecified**如果不支持系统电源状态。
 
 例如，在一个系统，支持 S0、 S4 和 S5[系统的电源状态](system-power-states.md)，则**DeviceState**数组支持仅 D0 和 D3 状态的设备包含下表中显示的值。
 
@@ -74,7 +74,7 @@ ms.locfileid: "63342703"
 <thead>
 <tr class="header">
 <th>DeviceState 元素</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

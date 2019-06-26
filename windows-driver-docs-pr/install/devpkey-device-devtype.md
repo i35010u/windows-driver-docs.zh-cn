@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9cfe18d5b50b5028e9917369ab7cc0b62673df4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b9180eb1d9b687523267d12e68d9d35ccbb41f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382924"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387078"
 ---
 # <a name="devpkeydevicedevtype"></a>DEVPKEY_Device_DevType
 
@@ -60,13 +60,13 @@ DEVPKEY_Device_DevType 设备属性表示设备实例的设备的类型。
 <a name="remarks"></a>备注
 -------
 
-Windows 的设备类型成员的值设置的值 DEVPKEY_Device_DevType [ **DEVICE_OBJECT** ](https://msdn.microsoft.com/library/windows/hardware/ff543147)设备实例结构。 DEVPKEY_Device_DevType 的值是中列出的系统定义的设备类型值之一[指定设备类型](https://msdn.microsoft.com/library/windows/hardware/ff563821)。
+Windows 的设备类型成员的值设置的值 DEVPKEY_Device_DevType [ **DEVICE_OBJECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)设备实例结构。 DEVPKEY_Device_DevType 的值是中列出的系统定义的设备类型值之一[指定设备类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)。
 
-可以使用设置的值 DEVPKEY_Device_DevType [ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)包含在[ **INF *DDInstall*。硬件部分**](https://msdn.microsoft.com/library/windows/hardware/ff547330)安装设备的 INF 文件中。
+可以使用设置的值 DEVPKEY_Device_DevType [ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)包含在[ **INF *DDInstall*。硬件部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)安装设备的 INF 文件中。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_DevType 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_DevType 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DevType 属性键。 相反，相应的 SPDRP_DEVTYPE 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DevType 属性键。 相反，相应的 SPDRP_DEVTYPE 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,11 +91,11 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**DEVICE_OBJECT**](https://msdn.microsoft.com/library/windows/hardware/ff543147)
+[**DEVICE_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)
 
-[**INF *DDInstall*。硬件部分**](https://msdn.microsoft.com/library/windows/hardware/ff547330)
+[**INF *DDInstall*。硬件部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

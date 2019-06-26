@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 628275034736daae073c035ac957d3a2ba7506ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ecce29e5964073506566321c33879bff74e2966
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378146"
 ---
 # <a name="devpkeydevicepowerdata"></a>DEVPKEY_Device_PowerData
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_PowerData 设备属性表示电源设备实例有关的信息。
 <a name="remarks"></a>备注
 -------
 
-Windows 设置 DEVPKEY_Device_PowerData 的值。 DEVPKEY_Device_PowerData 的值将包含[ **CM_POWER_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff541989)结构。
+Windows 设置 DEVPKEY_Device_PowerData 的值。 DEVPKEY_Device_PowerData 的值将包含[ **CM_POWER_DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-cm_power_data_s)结构。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_PowerData 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_PowerData 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_PowerData 属性键。 相反，相应的 SPDRP_DEVICE_POWER_DATA 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_PowerData 属性键。 相反，相应的 SPDRP_DEVICE_POWER_DATA 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,22 +76,22 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**CM_POWER_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff541989)
+[**CM_POWER_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-cm_power_data_s)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

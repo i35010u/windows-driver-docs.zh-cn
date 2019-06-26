@@ -6,12 +6,12 @@ keywords:
 - 硬件编解码器支持 WDK AVStream 使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e21751d64eac49db8337e789474709134f08782
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c00e7000ce4b8be7166306a6620dee5bbe0e754
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384045"
 ---
 # <a name="getting-started-with-hardware-codec-support-in-avstream"></a>AVStream 中的硬件编解码器支持入门
 
@@ -45,19 +45,19 @@ Windows 7 仍然支持基于软件的转码。 但是，由于系统而不是 CP
 
 -   注册其媒体处理 KS 下一个以下 KS 类别，在 Windows 7 和更高版本的 Windows 中可用的筛选器：
 
-    -   [**KSMFT\_CATEGORY\_VIDEO\_DECODER**](https://msdn.microsoft.com/library/windows/hardware/ff548602)
-    -   [**KSMFT\_CATEGORY\_VIDEO\_ENCODER**](https://msdn.microsoft.com/library/windows/hardware/ff548611)
-    -   [**KSMFT\_CATEGORY\_VIDEO\_PROCESSOR**](https://msdn.microsoft.com/library/windows/hardware/ff548613)
-    -   [**KSMFT\_CATEGORY\_AUDIO\_DECODER**](https://msdn.microsoft.com/library/windows/hardware/ff548572)
-    -   [**KSMFT\_CATEGORY\_AUDIO\_ENCODER**](https://msdn.microsoft.com/library/windows/hardware/ff548584)
+    -   [**KSMFT\_CATEGORY\_VIDEO\_DECODER**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-decoder)
+    -   [**KSMFT\_CATEGORY\_VIDEO\_ENCODER**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-encoder)
+    -   [**KSMFT\_CATEGORY\_VIDEO\_PROCESSOR**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-processor)
+    -   [**KSMFT\_CATEGORY\_AUDIO\_DECODER**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-decoder)
+    -   [**KSMFT\_CATEGORY\_AUDIO\_ENCODER**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-encoder)
 
     此外，还用于其他代码转换方案中定义以下类别：
 
-    -   [**KSMFT\_CATEGORY\_VIDEO\_EFFECT**](https://msdn.microsoft.com/library/windows/hardware/ff548607)
-    -   [**KSMFT\_类别\_复用器**](https://msdn.microsoft.com/library/windows/hardware/ff548596)
-    -   [**KSMFT\_类别\_信号分离器**](https://msdn.microsoft.com/library/windows/hardware/ff548594)
-    -   [**KSMFT\_CATEGORY\_AUDIO\_EFFECT**](https://msdn.microsoft.com/library/windows/hardware/ff548578)
-    -   [**KSMFT\_类别 \_ /伙伴**](https://msdn.microsoft.com/library/windows/hardware/ff548601)
+    -   [**KSMFT\_CATEGORY\_VIDEO\_EFFECT**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-effect)
+    -   [**KSMFT\_类别\_复用器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-multiplexer)
+    -   [**KSMFT\_类别\_信号分离器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-demultiplexer)
+    -   [**KSMFT\_CATEGORY\_AUDIO\_EFFECT**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-effect)
+    -   [**KSMFT\_类别 \_ /伙伴**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-other)
 -   然后，Media foundation 应用程序可以使用[MFTEnumEx](https://go.microsoft.com/fwlink/p/?linkid=155058)函数合用来枚举作为 Mft 情况下通过使用前面提到的类别已注册的设备。
 
  

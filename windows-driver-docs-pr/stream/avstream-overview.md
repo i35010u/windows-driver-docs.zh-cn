@@ -6,12 +6,12 @@ keywords:
 - AVStream WDK，有关 AVStream 微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd544857b853011b524d23d4bd1eff40d2f06cba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb71dadba059f7a01b5a84743ea7ee3edbd96088
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386698"
 ---
 # <a name="avstream-overview"></a>AVStream 概述
 
@@ -21,9 +21,9 @@ ms.locfileid: "63379750"
 
 AVStream 是由 Microsoft 提供多媒体类驱动程序，支持仅视频流式处理和集成音频/视频流式处理。 Microsoft 中导出驱动程序的操作系统的一部分提供 AVStream *Ks.sys*。 硬件供应商编写下运行的微型驱动程序*Ks.sys*。
 
-音频驱动程序的首选的类驱动程序是由 Microsoft 提供音频[port 类](https://msdn.microsoft.com/library/windows/hardware/ff536829)驱动程序。 音频的供应商应该记下运行的微型驱动程序*Portcls.sys*。
+音频驱动程序的首选的类驱动程序是由 Microsoft 提供音频[port 类](https://docs.microsoft.com/windows-hardware/drivers/audio/introduction-to-port-class)驱动程序。 音频的供应商应该记下运行的微型驱动程序*Portcls.sys*。
 
-Microsoft 支持[流式传输类](https://msdn.microsoft.com/library/windows/hardware/ff568275)仅对现有微型驱动程序的驱动程序。
+Microsoft 支持[流式传输类](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)仅对现有微型驱动程序的驱动程序。
 
 AVStream 驱动程序生成 Microsoft Windows XP、 Microsoft Windows Server 2003、 或任何平台 Windows 98 金级或更高版本的 DirectX 8.0 或更高版本安装的版本。
 

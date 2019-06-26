@@ -4,12 +4,12 @@ description: 图像处理筛选器简介
 ms.assetid: 59fc1bc1-c783-43df-9778-ea4306f6dd50
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cc0c7372512dbf7339029b162a070a6e4a486f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fe55552aa36c225056547ee83495c117e3d0a66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358885"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378921"
 ---
 # <a name="introduction-to-image-processing-filters"></a>图像处理筛选器简介
 
@@ -23,7 +23,7 @@ ms.locfileid: "63358885"
 
 -   若要启用精确的实时预览。 图像处理筛选器用于从一个新的 Windows Vista WIA 预览组件 （Microsoft Windows SDK 文档中所述），提供准确的实时预览。 在此上下文中，"实时"意味着应用程序无需更改一些属性设置，对此进行讨论在本部分中的更高版本后重新获取扫描程序中的映像。 预览是准确的因为实际的预览图像上的供应商组件而不是只在完全独立的映像是随机筛选器的实际执行筛选。
 
-为了提供准确的预览，筛选器应实现[**亮度**](https://msdn.microsoft.com/library/windows/hardware/ff552567)并[**对比度**](https://msdn.microsoft.com/library/windows/hardware/ff552573)最少的属性。 这是因此常见 UI 向用户提供亮度和对比度控件，可以显示准确的预览。
+为了提供准确的预览，筛选器应实现[**亮度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-brightness)并[**对比度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-contrast)最少的属性。 这是因此常见 UI 向用户提供亮度和对比度控件，可以显示准确的预览。
 
 扫描图像时，始终执行图像处理筛选器。 因此没有应用程序获取扫描程序从映像，而无需图像处理第一次应用筛选器方法。 不需要应用程序不需要注意的筛选器。
 

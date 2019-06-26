@@ -4,12 +4,12 @@ description: Windows 如何安装设备
 ms.assetid: 8d8af8bc-1368-4532-913f-11d3d65e1b20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 668ead85e5e64a6c6dbcd615aabbabf355785871
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a9753e55f4fa2e8f82c00a68fb88d4d6970cbce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341992"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387034"
 ---
 # <a name="how-windows-installs-devices"></a>Windows 如何安装设备
 
@@ -18,7 +18,7 @@ ms.locfileid: "63341992"
 
  
 
-本部分提供了设备安装过程的高级概述。 由 Windows 执行该过程并将其[设备安装组件](https://msdn.microsoft.com/library/windows/hardware/ff541277)时新设备连接到计算机，并包括以下步骤：
+本部分提供了设备安装过程的高级概述。 由 Windows 执行该过程并将其[设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))时新设备连接到计算机，并包括以下步骤：
 
 [步骤 1：新设备标识](step-1--the-new-device-is-identified.md)
 

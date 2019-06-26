@@ -4,12 +4,12 @@ description: 使用这些规则来验证您的驱动程序所需的 IRQL 在进�
 ms.assetid: EEFEF8E3-8AB8-46AD-A3BD-DA676F8FA786
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4befa47c1344c34329372af6135fe338d563f161
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5aa575d5f9998665bcdac9ea800dd43110306b9f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391737"
 ---
 # <a name="irql-rule-set-ndis"></a>IRQL 规则集 (NDIS)
 
@@ -36,7 +36,7 @@ ms.locfileid: "63340464"
 <tr class="odd">
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"><strong>Flags_Irql</strong></a></p></td>
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"> <strong>Flags_Irql</strong> </a>规则指定<strong>KeGetCurrentIrql</strong>不必须具有一个调度级别标志参数，指示的回调函数内调用当前 IRQL。</p>
-<p>正确使用调度级别标志可以帮助您避免不必要的尝试设置 IRQL。 有关如何使用此标志的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff546448" data-raw-source="[Dispatch IRQL Tracking](https://msdn.microsoft.com/library/windows/hardware/ff546448)">调度 IRQL 跟踪</a>。</p></td>
+<p>正确使用调度级别标志可以帮助您避免不必要的尝试设置 IRQL。 有关如何使用此标志的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/network/dispatch-irql-tracking" data-raw-source="[Dispatch IRQL Tracking](https://docs.microsoft.com/windows-hardware/drivers/network/dispatch-irql-tracking)">调度 IRQL 跟踪</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-irql-callmanager-function.md" data-raw-source="[&lt;strong&gt;Irql_CallManager_Function&lt;/strong&gt;](ndis-irql-callmanager-function.md)"><strong>Irql_CallManager_Function</strong></a></p></td>
@@ -121,7 +121,7 @@ ms.locfileid: "63340464"
 
 **若要选择的 Irql 规则设置**
 
-1.  Microsoft Visual Studio 中选择您的驱动程序项目 (.vcxProj)。 从**驱动程序**菜单上，单击**启动 Static Driver Verifier...**.
+1.  Microsoft Visual Studio 中选择您的驱动程序项目 (.vcxProj)。 从**驱动程序**菜单上，单击**启动 Static Driver Verifier...** .
 
 2.  单击**规则**选项卡。下**规则集**，选择**Irql**。
 
@@ -131,7 +131,7 @@ ms.locfileid: "63340464"
     msbuild /t:sdv /p:Inputs="/check:Irql.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    有关详细信息，请参阅[以找到缺陷驱动程序中使用 Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/hh454281)并[Static Driver Verifier 命令 (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)。
+    有关详细信息，请参阅[以找到缺陷驱动程序中使用 Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)并[Static Driver Verifier 命令 (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)。
 
  
 

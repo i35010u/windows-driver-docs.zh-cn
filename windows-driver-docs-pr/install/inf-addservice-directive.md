@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db323bce9bb2f6ab32fd34b607363eb3077719b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be29020ed3df4a8661278bf9cbf4c23c2a5587ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385920"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService 指令
 
@@ -103,7 +103,7 @@ AddService = ,2.
 <a name="remarks"></a>备注
 -------
 
-系统定义的和不区分大小写扩展可以插入到<em>DDInstall</em>**。服务**节，其中包含**AddService**指令跨操作系统系统和/或跨平台 INF 文件中指定特定于平台的或特定于操作系统的安装。
+系统定义的和不区分大小写扩展可以插入到<em>DDInstall</em> **。服务**节，其中包含**AddService**指令跨操作系统系统和/或跨平台 INF 文件中指定特定于平台的或特定于操作系统的安装。
 
 每个 INF 编写器创建的部分名称的 INF 文件中必须是唯一和必须遵从常规规则，用于定义的节名称。 有关这些规则的详细信息，请参阅[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
 
@@ -163,7 +163,7 @@ ServiceBinary=path-to-service
 
 通过执行在初始化过程中的设备检测操作，但不是需要加载系统的即插即用驱动程序应使用此值。
 
-例如，还可以检测旧设备的即插即用驱动程序应指定此值在其 INF 因此，其[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程称为查找旧的设备，即使该设备不能为枚举即插即用管理器。
+例如，还可以检测旧设备的即插即用驱动程序应指定此值在其 INF 因此，其[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程称为查找旧的设备，即使该设备不能为枚举即插即用管理器。
 
 <a href="" id="0x2--service-auto-start-"></a>**0x2** (SERVICE_AUTO_START)  
 指示在系统启动期间由服务控制管理器启动的驱动程序。
@@ -207,17 +207,17 @@ ServiceBinary=path-to-service
 <a href="" id="startname-driver-object-name"></a>**StartName**=*driver-object-name*  
 此可选项指定该驱动程序对象，表示此设备/驱动程序的名称。 如果*类型代码*指定**1** (SERVICE_KERNEL_DRIVER) 或**2** (SERVICE_FILE_SYSTEM_DRIVER)，此名称是 I/O 管理器使用加载的驱动程序对象名称驱动程序。
 
-<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*添加注册表部分*\[**，**<em>添加注册表部分</em>\]...  
+<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*添加注册表部分*\[ **，** <em>添加注册表部分</em>\]...  
 引用了一个或多 INF 编写器的定义*添加注册表部分*中的任何新安装的服务相关的注册表信息设置。 **HKR**在此类规范*添加注册表部分*指定**HKLM\\系统\\CurrentControlSet\\服务\\ServiceName**注册表项。 有关详细信息，请参阅[ **INF AddReg 指令**](inf-addreg-directive.md)。
 
 此指令很少使用服务安装部分中。
 
-<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg**=*del 注册表部分*\[**，**<em>del 注册表部分</em>\]...  
+<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg**=*del 注册表部分*\[ **，** <em>del 注册表部分</em>\]...  
 引用了一个或多 INF 编写器的定义*del 注册表部分*哪些相关的注册表中删除已安装的服务的信息。 **HKR**在此类规范*del 注册表部分*指定**HKLM\\系统\\CurrentControlSet\\服务\\ServiceName**注册表项。 有关详细信息，请参阅[ **INF DelReg 指令**](inf-delreg-directive.md)。
 
 在几乎不会使用此指令*服务安装部分*，但它可能会在"更新"以前已安装的相同的设备/驱动程序服务注册表 INF 中使用。
 
-<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg**=*位注册表部分*\[**，**<em>位注册表部分</em>\]...  
+<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg**=*位注册表部分*\[ **，** <em>位注册表部分</em>\]...  
 在中的有效*服务安装部分*但几乎从未使用过。 **HKR**在此类规范*位注册表部分*还会指定**HKLM\\系统\\CurrentControlSet\\服务\\ServiceName**注册表项。
 
 <a href="" id="loadordergroup-load-order-group-name"></a>**LoadOrderGroup**=*load-order-group-name*  
@@ -227,7 +227,7 @@ ServiceBinary=path-to-service
 
 有关详细信息**LoadOrderGroup**，请参阅[指定驱动程序加载顺序](specifying-driver-load-order.md)。
 
-<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依赖项**=*依赖-上的项的名称*\[**，**<em>依赖-上的项的名称</em>\]...  
+<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依赖项**=*依赖-上的项的名称*\[ **，** <em>依赖-上的项的名称</em>\]...  
 每个*依赖的上项的名称-* 依赖项列表中的项指定的设备/驱动程序所依赖的服务或加载顺序组名称。
 
 如果*依赖的上项的名称-* 指定的服务，必须在启动此驱动程序之前运行的服务。 例如，对系统提供 Win32 TCP/IP 打印服务 INF 取决于基础 （内核模式） TCP/IP 传输堆栈的支持。 因此，对 TCP/IP 打印服务 INF 指定此项作为**依赖项 = TCPIP**。
@@ -235,9 +235,9 @@ ServiceBinary=path-to-service
 一个*依赖的上项的名称-* 可以指定此设备/驱动程序所依赖的加载顺序组。 仅当至少一个指定组的成员启动，启动这样的驱动程序。 组名称前面加上加号 （+）。 例如，系统 RAS 服务 INF 可能如下所示的条目**依赖项 = + NetBIOSGroup，RpcSS**加载顺序组和服务，它列出。
 
 <a href="" id="security--security-descriptor-string-"></a>**Security**="*security-descriptor-string*"  
-指定要应用于服务的安全描述符。 此安全说明符指定执行诸如启动、 停止和配置服务所需的权限。 *安全描述符字符串*值是标记，则指示 DACL 的字符串 (**d:**) 安全组件。
+指定要应用于服务的安全描述符。 此安全说明符指定执行诸如启动、 停止和配置服务所需的权限。 *安全描述符字符串*值是标记，则指示 DACL 的字符串 (**d:** ) 安全组件。
 
-有关安全描述符字符串的信息，请参阅[安全描述符定义语言 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)。 有关的安全描述符字符串格式的信息，请参阅安全描述符定义语言 (Windows)。
+有关安全描述符字符串的信息，请参阅[安全描述符定义语言 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关的安全描述符字符串格式的信息，请参阅安全描述符定义语言 (Windows)。
 
 有关如何指定安全描述符的详细信息，请参阅[创建安全的设备安装](creating-secure-device-installations.md)。
 
@@ -295,7 +295,7 @@ AddReg=add-registry-section[, add-registry-section]...
  ...
 ```
 
-对于典型设备/的驱动程序 INF 文件，*事件日志-安装部分*仅使用**AddReg**指令设置驱动程序的事件日志记录消息文件。 **HKR**中的规范*添加注册表部分*指定**HKLM\\系统\\CurrentControlSet\\服务\\EventLog\\**<em>EventLogType</em>**\\**<em>EventName</em>注册表项。 此事件日志记录*添加注册表部分*具有以下常规形式：
+对于典型设备/的驱动程序 INF 文件，*事件日志-安装部分*仅使用**AddReg**指令设置驱动程序的事件日志记录消息文件。 **HKR**中的规范*添加注册表部分*指定**HKLM\\系统\\CurrentControlSet\\服务\\EventLog\\** <em>EventLogType</em> **\\** <em>EventName</em>注册表项。 此事件日志记录*添加注册表部分*具有以下常规形式：
 
 ```ini
 [drivername_EventLog_AddReg]

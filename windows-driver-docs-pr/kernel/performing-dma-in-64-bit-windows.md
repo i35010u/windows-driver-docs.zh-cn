@@ -15,12 +15,12 @@ keywords:
 - 指针算术 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce93b2f995c56f39514948f59845234c9aee7f97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8cfd18a1efdfbc9c7d5853d515eff78ae4a98d51
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369271"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384740"
 ---
 # <a name="performing-dma-in-64-bit-windows"></a>在 64 位 Windows 中执行 DMA
 
@@ -36,13 +36,13 @@ ms.locfileid: "63369271"
 
 1.  使用**物理\_地址**物理地址计算的结构。
 
-2.  将整个的 64 位地址视为有效的物理地址。 例如，驱动程序不应调用[ **MmGetPhysicalAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff554547)锁定缓冲区，放弃高 32 位，并将被截断的地址传递给 32 位组件适配器。 这会导致损坏的内存、 I/O 丢失和系统故障。
+2.  将整个的 64 位地址视为有效的物理地址。 例如，驱动程序不应调用[ **MmGetPhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmgetphysicaladdress)锁定缓冲区，放弃高 32 位，并将被截断的地址传递给 32 位组件适配器。 这会导致损坏的内存、 I/O 丢失和系统故障。
 
-3.  使用高性能散播-聚集例程 ([**GetScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff546531)并[ **PutScatterGatherList**](https://msdn.microsoft.com/library/windows/hardware/ff559967)) 中添加Windows 2000。
+3.  使用高性能散播-聚集例程 ([**GetScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pget_scatter_gather_list)并[ **PutScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_scatter_gather_list)) 中添加Windows 2000。
 
 4.  检查的值[ **Mm64BitPhysicalAddress** ](mm64bitphysicaladdress.md)全局系统变量。 如果它是 **，则返回 TRUE**，系统支持 64 位物理寻址。
 
-5.  设置**Dma64BitAddresses**的成员[**设备\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff543107)结构**TRUE**以指示你驱动程序支持 64 位 DMA 地址。
+5.  设置**Dma64BitAddresses**的成员[**设备\_说明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_description)结构**TRUE**以指示你驱动程序支持 64 位 DMA 地址。
 
 32 位 Windows 中的 DMA 例程是 64 位就绪。 如果您的设备驱动程序正确使用这些例程，DMA 代码应无需修改即可在 64 位 Windows。
 

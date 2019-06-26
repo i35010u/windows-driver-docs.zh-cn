@@ -4,12 +4,12 @@ description: 内存缓冲区生命周期
 ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b33b3589b85adda19af69ec000e63499c7de84a6
-ms.sourcegitcommit: e753fdd987a1bdbc4383704e18c2d81235fe9e05
+ms.openlocfilehash: 8716361e6b1de4c5896941b876dcc1d01cca63f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65171947"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371725"
 ---
 # <a name="memory-buffer-life-cycle"></a>内存缓冲区生命周期
 
@@ -36,7 +36,7 @@ ms.locfileid: "65171947"
 
 ## <a name="scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it"></a>方案 1：驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它。
 
-在最简单的方案中，KMDF 调度对驱动程序，它执行 I/O，并完成请求的请求。 在这种情况下，基础缓冲区可能已创建的用户模式应用程序，另一个驱动程序或操作系统本身。 有关如何对访问缓冲区的信息，请参阅[基于 Framework 的驱动程序中访问数据缓冲区](https://msdn.microsoft.com/library/windows/hardware/ff540701)。
+在最简单的方案中，KMDF 调度对驱动程序，它执行 I/O，并完成请求的请求。 在这种情况下，基础缓冲区可能已创建的用户模式应用程序，另一个驱动程序或操作系统本身。 有关如何对访问缓冲区的信息，请参阅[基于 Framework 的驱动程序中访问数据缓冲区](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)。
 
 当驱动程序[完成请求](completing-i-o-requests.md)，框架将删除内存对象。 缓冲区指针然后是无效的。
 
@@ -112,7 +112,7 @@ RequestCompletionRoutine(
 }
 ```
 
-当驱动程序调用[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)从其完成回调，该框架将删除内存对象。 该驱动程序检索到的内存对象句柄现在是无效的。
+当驱动程序调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)从其完成回调，该框架将删除内存对象。 该驱动程序检索到的内存对象句柄现在是无效的。
 
 ## <a name="scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object"></a>方案 3：驱动程序将发出使用一个现有的内存对象的 I/O 请求。
 
@@ -124,10 +124,10 @@ RequestCompletionRoutine(
 当框架格式的请求将发送到 I/O 目标时，这除去了代表 I/O 目标对象回收的内存对象的引用。 I/O 目标对象将保留此引用，直到发生以下操作之一：
 
 -   请求已完成。
--   该驱动程序会重新设置格式的请求对象再次通过调用之一*WdfIoTargetFormatRequestXxx*或*WdfIoTargetSendXxxSynchronously*方法。 有关这些方法的详细信息，请参阅[Framework I/O 目标对象方法](https://msdn.microsoft.com/library/windows/hardware/dn265644)。
--   驱动程序调用[ **WdfRequestReuse**](https://msdn.microsoft.com/library/windows/hardware/ff550026)。
+-   该驱动程序会重新设置格式的请求对象再次通过调用之一*WdfIoTargetFormatRequestXxx*或*WdfIoTargetSendXxxSynchronously*方法。 有关这些方法的详细信息，请参阅[Framework I/O 目标对象方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/)。
+-   驱动程序调用[ **WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)。
 
-新的 I/O 请求完成后，框架将调用该驱动程序设置此请求的 I/O 完成回调。 此时，I/O 目标对象仍保留的引用，对内存对象。 因此，在 I/O 完成回调中，该驱动程序必须调用[ **WdfRequestReuse** ](https://msdn.microsoft.com/library/windows/hardware/ff550026)驱动程序创建请求对象，它完成从其检索到内存的原始请求之前对象。 如果该驱动程序不会调用**WdfRequestReuse**，错误是由于的额外引用导致的 bug 检查。
+新的 I/O 请求完成后，框架将调用该驱动程序设置此请求的 I/O 完成回调。 此时，I/O 目标对象仍保留的引用，对内存对象。 因此，在 I/O 完成回调中，该驱动程序必须调用[ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)驱动程序创建请求对象，它完成从其检索到内存的原始请求之前对象。 如果该驱动程序不会调用**WdfRequestReuse**，错误是由于的额外引用导致的 bug 检查。
 
 ## <a name="scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object"></a>方案 4:驱动程序将发出 I/O 请求使用新的内存对象。
 
@@ -136,12 +136,12 @@ RequestCompletionRoutine(
 
 由框架或从驱动程序创建，如果分配缓冲区[后备](using-memory-buffers.md#using-lookaside-lists)，内存对象拥有缓冲区，因此，只要该内存对象存在缓冲区指针保持有效。 发出异步 I/O 请求的驱动程序应始终使用所拥有的内存对象，以便该框架可以确保缓冲区持续，直到返回到颁发的驱动程序已完成的 I/O 请求的缓冲区。
 
-如果该驱动程序将以前分配的缓冲区分配给新的内存对象，通过调用[ **WdfMemoryCreatePreallocated**](https://msdn.microsoft.com/library/windows/hardware/ff548712)，内存对象不拥有缓冲区。 在这种情况下，内存对象的生存期和基础缓冲区的生存期无关。 驱动程序必须管理的缓冲区的生存期，一定不要尝试使用无效的缓冲区指针。
+如果该驱动程序将以前分配的缓冲区分配给新的内存对象，通过调用[ **WdfMemoryCreatePreallocated**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreatepreallocated)，内存对象不拥有缓冲区。 在这种情况下，内存对象的生存期和基础缓冲区的生存期无关。 驱动程序必须管理的缓冲区的生存期，一定不要尝试使用无效的缓冲区指针。
 
 ## <a name="scenario-5-driver-reuses-a-request-object-that-it-created"></a>方案 5:驱动程序将重新使用它创建一个请求对象。
 
 
-驱动程序可以重复使用它创建的请求对象，但它必须通过调用重新初始化每个此类对象[ **WdfRequestReuse** ](https://msdn.microsoft.com/library/windows/hardware/ff550026)之前每个重复使用。 有关详细信息，请参阅[重用 Framework 请求对象](reusing-framework-request-objects.md)。
+驱动程序可以重复使用它创建的请求对象，但它必须通过调用重新初始化每个此类对象[ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)之前每个重复使用。 有关详细信息，请参阅[重用 Framework 请求对象](reusing-framework-request-objects.md)。
 
 有关重新初始化请求对象的示例代码，请参阅[Toaster](https://go.microsoft.com/fwlink/p/?linkid=256195)并[NdisEdge](https://go.microsoft.com/fwlink/p/?linkid=256154) KMDF 与提供的示例版本。
 

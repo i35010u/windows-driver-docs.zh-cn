@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c6498cfbe425af1020415d90f2421b8f516db4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6819a15b544b3583a7340af8de70ca5efcd9d567
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336012"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365777"
 ---
 # <a name="ndiskdaf"></a>!ndiskd.af
 
@@ -41,9 +41,9 @@ Ndiskd.dll
 <a name="remarks"></a>备注
 -------
 
-有关的 CoNDIS 详细信息，请参阅[Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)。
+有关的 CoNDIS 详细信息，请参阅[Connection-Oriented NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)。
 
-有关的 CoNDIS 地址系列的详细信息，请参阅[地址系列](https://msdn.microsoft.com/windows/hardware/drivers/network/address-families)。
+有关的 CoNDIS 地址系列的详细信息，请参阅[地址系列](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)。
 
 <a name="examples"></a>示例
 --------
@@ -117,19 +117,19 @@ CLIENT HANDLERS
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[面向连接的 NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)
+[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
 
-[地址系列](https://msdn.microsoft.com/windows/hardware/drivers/network/address-families)
+[地址系列](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)
 
  
 

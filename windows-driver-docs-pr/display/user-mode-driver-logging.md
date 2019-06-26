@@ -4,12 +4,12 @@ description: 若要获取更具操作性的视频内存细分，Windows 显示�
 ms.assetid: E850E148-821D-4544-A778-00B1B9D13964
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 291bc3072a934958d816240d2e563e0f90e14792
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa4ebe2158b0299a4d5a29937e0347bb0a9809ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373590"
 ---
 # <a name="span-iddisplayuser-modedriverloggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>用户模式驱动程序日志记录
 
@@ -38,12 +38,12 @@ ms.locfileid: "63359130"
 
 使用这些函数、 枚举和结构 Umdprovider.h 标头中的用户模式显示驱动程序中记录事件：
 
--   [**UMDEtwLogMapAllocation**](https://msdn.microsoft.com/library/windows/hardware/jj542437) function
--   [**UMDEtwLogUnmapAllocation**](https://msdn.microsoft.com/library/windows/hardware/jj542438) function
--   [**UMDEtwRegister** ](https://msdn.microsoft.com/library/windows/hardware/jj542439)函数
--   [**UMDEtwUnregister** ](https://msdn.microsoft.com/library/windows/hardware/jj542440)函数
--   [**UMDETW\_分配\_SEMANTIC** ](https://msdn.microsoft.com/library/windows/hardware/jj542441)枚举
--   [**UMDETW\_分配\_用法**](https://msdn.microsoft.com/library/windows/hardware/jj542442)结构
+-   [**UMDEtwLogMapAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwlogmapallocation) function
+-   [**UMDEtwLogUnmapAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwlogunmapallocation) function
+-   [**UMDEtwRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwregister)函数
+-   [**UMDEtwUnregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwunregister)函数
+-   [**UMDETW\_分配\_SEMANTIC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/ne-umdprovider-_umdetw_allocation_semantic)枚举
+-   [**UMDETW\_分配\_用法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/ns-umdprovider-_umdetw_allocation_usage)结构
 
 另请参阅 Umdetw.h 标头。
 

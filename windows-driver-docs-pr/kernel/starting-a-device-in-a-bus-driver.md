@@ -6,12 +6,12 @@ keywords:
 - 总线驱动程序 WDK 即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18671be874293d10e008fc6870850bb360058103
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bd9c5f558bff02c2197ababdb3464bbe9c5befa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382998"
 ---
 # <a name="starting-a-device-in-a-bus-driver"></a>在总线驱动程序中启动设备
 
@@ -29,7 +29,7 @@ ms.locfileid: "63331955"
 
 2.  完成 IRP。
 
-    如果总线驱动程序的启动操作已成功，驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功和调用[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)指定的 IO 优先级提升\_否\_增量。 总线驱动程序将返回状态\_成功从其*DispatchPnP*例程。
+    如果总线驱动程序的启动操作已成功，驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功和调用[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)指定的 IO 优先级提升\_否\_增量。 总线驱动程序将返回状态\_成功从其*DispatchPnP*例程。
 
     如果总线驱动程序在其开始操作过程中遇到错误，驱动程序将 IRP，调用中设置错误状态**IoCompleteRequest**与 IO\_否\_递增，并返回错误从其*DispatchPnP*例程。
 

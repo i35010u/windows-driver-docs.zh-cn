@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_ACTION_FRAME_RESPONSE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ff8624775cbd9e950a0967bbe68897dcdcad20f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15f3020b936482caee1460f05779d8c6d2e4abc4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385712"
 ---
 # <a name="wditlvp2pactionframeresponseparameters"></a>WDI\_TLV\_P2P\_ACTION\_FRAME\_RESPONSE\_PARAMETERS
 
@@ -33,8 +33,8 @@ WDI\_TLV\_P2P\_操作\_帧\_响应\_参数是包含 Wi-Fi Direct 操作帧响应
 
 | 在任务栏的搜索框中键入                                                                    | 描述                                                                                                                          |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_P2P\_ACTION\_FRAME\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/dn926086) | 要发送的响应框架的类型。                                                                                               |
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071)                       | 目标对等方 Wi-Fi Direct 设备的设备地址。                                                                           |
+| [**WDI\_P2P\_ACTION\_FRAME\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_action_frame_type) | 要发送的响应框架的类型。                                                                                               |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)                       | 目标对等方 Wi-Fi Direct 设备的设备地址。                                                                           |
 | UINT8                                                                   | Wi-Fi Direct 对话框标记，表示此事务。                                                                                  |
 | UINT32                                                                  | 发送超时。 指定的最长时间，以毫秒为单位，将发送此操作帧。                                            |
 | UINT32                                                                  | 开机自检 ACK 停留时间。 指定传入数据包被确认后保留在侦听通道，以毫秒为单位的时间。 |

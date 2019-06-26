@@ -11,12 +11,12 @@ keywords:
 - WDK HID 的数组
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 417ee3c07732623ff66c5d3ef3fa4dc58dde7434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5072f4ce271352902cfd2695ae8e7a4706804204
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346226"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371967"
 ---
 # <a name="link-collections"></a>链接集合
 
@@ -26,11 +26,11 @@ ms.locfileid: "63346226"
 
 一个*集合链接*作为嵌套子集合内[顶级集合](top-level-collections.md)。 顶级集合可以有零个或多个链接集合。
 
-[**HidP\_GetLinkCollectionNodes** ](https://msdn.microsoft.com/library/windows/hardware/ff539725)返回的顶级集合[链接集合数组](#ddk-link-collection-array-kg)包含有关顶级集合的链接集合的信息。
+[**HidP\_GetLinkCollectionNodes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getlinkcollectionnodes)返回的顶级集合[链接集合数组](#ddk-link-collection-array-kg)包含有关顶级集合的链接集合的信息。
 
 ### <a href="" id="ddk-link-collection-array-kg"></a>链接集合数组
 
-一个*链接集合数组*介绍顶级集合内包含的所有链接集合。 每个链接集合表示由[ **HIDP\_链接\_集合\_节点**](https://msdn.microsoft.com/library/windows/hardware/ff539764)结构。 数组的链接节点标识顶级集合中的其顺序和分层顺序的方式链接。 链接集合数组的第一个元素表示顶级集合和其余成员表示顶级集合的链接集合。
+一个*链接集合数组*介绍顶级集合内包含的所有链接集合。 每个链接集合表示由[ **HIDP\_链接\_集合\_节点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_link_collection_node)结构。 数组的链接节点标识顶级集合中的其顺序和分层顺序的方式链接。 链接集合数组的第一个元素表示顶级集合和其余成员表示顶级集合的链接集合。
 
 通过跟踪通过链接连接数组中的节点中，用户模式应用程序或内核模式驱动程序可以确定组织和使用情况的顶级集合中的所有链接集合。 此外，应用程序或驱动程序可以控件通过组织他们链接集合。 这可能是因为顶级集合的[按钮功能数组](button-capability-arrays.md)并[值功能数组](value-capability-arrays.md)标识链接集合，其中包含每个[HID 用法](hid-usages.md)通过功能数组所述。
 

@@ -10,12 +10,12 @@ keywords:
 - 源信息 WDK WHEA 新
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c4aa9a92bdf0eb746b84916d5f5e9d4861ac6e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab4920ac3ad03f16e9485d620c00083a0d541107
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386459"
 ---
 # <a name="new-information-for-windows-hardware-error-architecture"></a>Windows 硬件错误体系结构的新信息
 
@@ -33,9 +33,9 @@ ms.locfileid: "63340750"
 
 从 Windows 8 开始，以下进行了更改到 Windows 硬件错误体系结构 (WHEA)
 
--   新的 WMI 提供程序类[ **WHEAPolicyManagementMethods**](https://msdn.microsoft.com/library/windows/hardware/hh451252)。
--   WHEA 策略可以是托管类型但[ **WHEAPolicyManagementMethods** ](https://msdn.microsoft.com/library/windows/hardware/hh451252)或通过 WHEA Powershell 模块。 如果通过任一这些模式进行了更新策略，策略值将立即生效。
--   WHEA WMI 方法[ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559531)已弃用。
+-   新的 WMI 提供程序类[ **WHEAPolicyManagementMethods**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)。
+-   WHEA 策略可以是托管类型但[ **WHEAPolicyManagementMethods** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)或通过 WHEA Powershell 模块。 如果通过任一这些模式进行了更新策略，策略值将立即生效。
+-   WHEA WMI 方法[ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)已弃用。
 
  
 

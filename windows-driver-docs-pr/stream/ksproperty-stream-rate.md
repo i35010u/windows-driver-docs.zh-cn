@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 364579feb88b0e98ce28825cba30b74a775145be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4e42b606817d8f509635e70a940c9b499d249ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376358"
 ---
 # <a name="kspropertystreamrate"></a>KSPROPERTY\_STREAM\_RATE
 
@@ -54,7 +54,7 @@ KSPROPERTY\_流\_速率属性的工作原理与结合[ **KSPROPERTY\_流\_RATECA
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566752" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566752)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_流\_应实现率，如果 pin 允许速率更改或拓扑结构上�
 
 读取该属性返回的当前速率和段。 设置新段的速率将替换任何当前速率的设置。 以这种方式，停止快进请求可以通过请求速率设置为 1.0，它始终应接受。 如果指定的速率不可以，pin 可以拒绝该请求而不是尝试最佳的设置。
 
-率设置和查询都使用[ **KSRATE** ](https://msdn.microsoft.com/library/windows/hardware/ff566752)结构，它指定演示文稿开始时间、 持续时间和速率。 速率更改只能在中执行暂停或运行状态，并将更改为任何其他状态后停止。 按百分比或 pin 是调整和相同的格式返回的当前设置的名义 1.0 速率过指定的速率变化。
+率设置和查询都使用[ **KSRATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)结构，它指定演示文稿开始时间、 持续时间和速率。 速率更改只能在中执行暂停或运行状态，并将更改为任何其他状态后停止。 按百分比或 pin 是调整和相同的格式返回的当前设置的名义 1.0 速率过指定的速率变化。
 
 此属性也应该用于将接口和时间单位在以前的属性中指定，应实现上更改 pin，之间的接口的筛选器中，即使不支持的更改速率。 例如，筛选器支持 KSINTERFACE\_标准\_在一个位置固定，并将转换到 KSINTERFACE\_标准\_流式处理的另一个插针相关的拓扑可能不支持的更改速率。 筛选器应能够接受 pin 和任一接口上的更改请求，并将更改为其自己的接口和单位，尽管速率将保持不变。
 
@@ -97,7 +97,7 @@ KSPROPERTY\_流\_应实现率，如果 pin 允许速率更改或拓扑结构上�
 
 [**KSPROPERTY\_STREAM\_RATECAPABILITY**](ksproperty-stream-ratecapability.md)
 
-[**KSRATE**](https://msdn.microsoft.com/library/windows/hardware/ff566752)
+[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)
 
  
 

@@ -4,12 +4,12 @@ description: 本部分介绍用户模式驱动程序框架 (UMDF)，并详细介
 ms.assetid: 2C4DAFA4-783C-4739-8D27-A417AC63B447
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f65853badd7a6967387206e00d5f173ec9a812
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1d4e7ad9728f83c6758f09b8107de3c57e49682
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378081"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384440"
 ---
 # <a name="getting-started-with-umdf"></a>UMDF 入门
 
@@ -24,7 +24,7 @@ Windows 驱动程序框架 (WDF) 包含 UMDF，一个框架，用于创建用户
 
 与此相反，您可以从 UMDF 版本 2 开始，在调用的许多方法可用于 KMDF 驱动程序的 C 编程语言中编写 UMDF 驱动程序。 所有版本 2 UMDF 和 KMDF 之间共享的接口具有相同的名称、 参数和结构定义。 如果您的驱动程序仅使用共享的功能，或使用仅支持在一个框架中的调用周围的条件性宏，您可以编写单个驱动程序可以使用 KMDF 或 UMDF 编译。 有关详细信息，请参阅[如何从 KMDF 驱动程序生成 UMDF 驱动程序](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)。
 
-虽然 UMDF 2 和 KMDF 之间的重大通用性，就仍有少量的仅在一个框架或其他中可用的功能。 有关详细信息，请参阅[比较 UMDF 2 功能提供给 KMDF](comparing-umdf-2-0-functionality-to-kmdf.md)。 有关所有 UMDF 2 和 KMDF 回调和方法的列表和它们适用于，哪个框架请参见[WDF 回调摘要和方法](https://msdn.microsoft.com/library/windows/hardware/dn265591)。 在少数情况下，结构成员或方法的参数仅适用于一个框架或其他。 文档上相应的参考页介绍这些差异。
+虽然 UMDF 2 和 KMDF 之间的重大通用性，就仍有少量的仅在一个框架或其他中可用的功能。 有关详细信息，请参阅[比较 UMDF 2 功能提供给 KMDF](comparing-umdf-2-0-functionality-to-kmdf.md)。 有关所有 UMDF 2 和 KMDF 回调和方法的列表和它们适用于，哪个框架请参见[WDF 回调摘要和方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/)。 在少数情况下，结构成员或方法的参数仅适用于一个框架或其他。 文档上相应的参考页介绍这些差异。
 
 必须选择一个或另一种;无法写入 UMDF 驱动程序从这两种 UMDF 版本 1 和 2 中调用方法。
 

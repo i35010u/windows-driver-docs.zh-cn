@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf86f3ea29db3027c62041b8e33fc261a57ae05c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02bbd05358a2ec1f1b9b00448d2d002cb18970f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385320"
 ---
 # <a name="mrxsetfileinfo-routine"></a>MRxSetFileInfo routine
 
 
-*MRxSetFileInfo*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向设置文件系统对象上的文件信息。
+*MRxSetFileInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向设置文件系统对象上的文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -139,7 +139,7 @@ RDBSS 发出调用*MRxSetFileInfo*接收响应[ **IRP\_MJ\_设置\_信息**](irp
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

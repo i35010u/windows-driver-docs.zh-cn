@@ -4,19 +4,19 @@ description: 本主题介绍要求在用户模式显示驱动程序上的 Micros
 ms.assetid: 1CB419B9-DD5E-492F-AAAC-CFFFDE247F7F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6574b60f5870c902fdc37adf7d4fd0de9188731e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62aed2dd826310e43360d65109e42ae260450640
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383221"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385666"
 ---
 # <a name="required-dxgi-formats"></a>必需的 DXGI 格式
 
 
 本主题介绍要求在用户模式显示驱动程序上的 Microsoft Direct3D 功能级别发生。
 
-第一个表的第一个和第二个列显示了该驱动程序必须支持所有 Direct3D 格式类型。 第三列显示所有关联的常量值的 Direct3D [**D3D10\_格式\_支持**](https://msdn.microsoft.com/library/windows/desktop/bb205063)和/或[ **D3D11\_格式\_支持**](https://msdn.microsoft.com/library/windows/desktop/ff476134)驱动程序必须支持的枚举。 第四列显示的驱动程序必须支持每种格式的最小 Direct3D 功能级别。
+第一个表的第一个和第二个列显示了该驱动程序必须支持所有 Direct3D 格式类型。 第三列显示所有关联的常量值的 Direct3D [**D3D10\_格式\_支持**](https://docs.microsoft.com/windows/desktop/api/d3d10/ne-d3d10-d3d10_format_support)和/或[ **D3D11\_格式\_支持**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)驱动程序必须支持的枚举。 第四列显示的驱动程序必须支持每种格式的最小 Direct3D 功能级别。
 
 第二个表显示了每个枚举值的 Direct3D 10Level 9 支持算法。
 

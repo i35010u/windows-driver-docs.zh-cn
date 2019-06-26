@@ -8,12 +8,12 @@ keywords:
 - 扫描扩展支持 WDK Windows 7 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e07fae5c97429bb192cf2842f08e3fe72dce3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17e2bb0b87036ca5023220559f7c23bc6f43cfb9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338690"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384628"
 ---
 # <a name="bgra-scan-out-support"></a>BGRA 扫描输出支持
 
@@ -24,11 +24,11 @@ ms.locfileid: "63338690"
 
 -   这些格式中的处理请求的主图面。
 
--   处理对调用其[ **SetDisplayMode** ](https://msdn.microsoft.com/library/windows/hardware/ff569535)函数使用这些格式创建的资源。
+-   处理对调用其[ **SetDisplayMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setdisplaymode)函数使用这些格式创建的资源。
 
--   处理对调用其[ **PresentDXGI** ](https://msdn.microsoft.com/library/windows/hardware/ff569179)函数来提供这两种位块传输 (bitblt) 通过这些格式和翻转操作。
+-   处理对调用其[ **PresentDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数来提供这两种位块传输 (bitblt) 通过这些格式和翻转操作。
 
--   处理对调用其[ **BltDXGI** ](https://msdn.microsoft.com/library/windows/hardware/ff538252)函数以复制通过 stretch，旋转，这些格式，并解决 （事实上是预期的 RGBA 变体的所有 bitblt 操作）。
+-   处理对调用其[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数以复制通过 stretch，旋转，这些格式，并解决 （事实上是预期的 RGBA 变体的所有 bitblt 操作）。
 
  
 

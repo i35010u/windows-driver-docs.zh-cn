@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e8a12ed7cadcd80d0a588d96f14bc087a2d1bd85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b355b97c6d467b7d55a518f1cb92bfc0ec52f99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339065"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384304"
 ---
 # <a name="smremovelink-function"></a>SM\_RemoveLink 函数
 
@@ -76,7 +76,7 @@ void SM_RemoveLink(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_RemoveLink\_出**](https://msdn.microsoft.com/library/windows/hardware/ff566265)
+[**SM\_RemoveLink\_出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removelink_out)
 
  
 

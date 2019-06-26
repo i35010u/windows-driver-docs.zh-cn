@@ -11,12 +11,12 @@ keywords:
 - 最低级别的驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f4f1f02caf1eb226f58accdaefbe14b25949d81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60bd4fc29d5bba51b7dea9966a06cb92d7c116b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359372"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382940"
 ---
 # <a name="types-of-windows-drivers"></a>Windows 驱动程序的类型
 
@@ -28,7 +28,7 @@ ms.locfileid: "63359372"
 
 -   *用户模式驱动程序*在用户模式下执行，它们通常会提前 Win32 应用程序和内核模式驱动程序或其他操作系统组件之间的接口。
 
-    例如，在 Windows Vista 中，所有打印机驱动程序在用户模式下都执行。 有关打印机驱动程序组件的详细信息，请参阅[简介打印](https://msdn.microsoft.com/library/windows/hardware/ff551767)。
+    例如，在 Windows Vista 中，所有打印机驱动程序在用户模式下都执行。 有关打印机驱动程序组件的详细信息，请参阅[简介打印](https://docs.microsoft.com/windows-hardware/drivers/print/introduction-to-printing)。
 
 -   *内核模式驱动程序*在内核模式下执行的管理人员，其中包括管理 I/O，插内存、 进程和线程安全性，和其他操作的内核模式操作系统组件的一部分。 内核模式驱动程序通常分为几级。 通常情况下，更高级别的驱动程序通常从应用程序接收数据、 筛选数据，并将其传递到支持设备功能的较低级驱动程序。
 

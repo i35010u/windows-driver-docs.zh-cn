@@ -4,12 +4,12 @@ description: Windows 显示器驱动程序模型 (WDDM) 1.3 和更高版本的�
 ms.assetid: 8B2F5497-554D-4D4A-B44E-985A9F89143D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23daa66180396b6b4a65458a13a122e977777db5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be2a343b1e869aae780dc705d7ca7dc63a8e6bf1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345615"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372834"
 ---
 # <a name="multiplane-overlay-support"></a>多平面覆盖支持
 
@@ -122,7 +122,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可
 
 此用户模式枚举常量值支持 multiplane 覆盖，是 Windows 8.1 的新增功能：
 
--   [**D3DDDICAPS\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff544132) (**D3DDDICAPS\_获取\_MULTIPLANE\_覆盖\_组\_CAPS**常量值)
+-   [**D3DDDICAPS\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-_d3dddicaps_type) (**D3DDDICAPS\_获取\_MULTIPLANE\_覆盖\_组\_CAPS**常量值)
 
  
 

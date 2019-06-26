@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e810770a0e9ffa085e1d823ddfa9b2f4e2685c24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25ab203480df4579596c88f97b5203da381d9497
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324237"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375683"
 ---
 # <a name="irpmjsetsecurity"></a>IRP\_MJ\_SET\_SECURITY
 
@@ -40,13 +40,13 @@ IRP\_MJ\_设置\_安全请求将发送的 I/O 管理器。 可以将发送此请
 ## <a name="parameters"></a>Parameters
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理组安全信息请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理组安全信息请求的 IRP 堆栈位置中设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-一个指向[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)接收最终完成状态以及有关请求的操作信息的结构。
+一个指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 指向与关联的文件对象的指针*DeviceObject*。
@@ -57,7 +57,7 @@ IRP\_MJ\_设置\_安全请求将发送的 I/O 管理器。 可以将发送此请
 指定 IRP\_MJ\_设置\_安全。
 
 <a href="" id="irpsp--parameters-setsecurity-securitydescriptor"></a>*IrpSp-&gt;Parameters.SetSecurity.SecurityDescriptor*  
-一个指向[**安全\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff556610)结构，其中包含要分配给该对象的安全信息的值。
+一个指向[**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))结构，其中包含要分配给该对象的安全信息的值。
 
 <a href="" id="irpsp--parameters-setsecurity-securityinformation"></a>*IrpSp-&gt;Parameters.SetSecurity.SecurityInformation*  
 类型的值[**安全\_信息**](security-information.md) ，它指定安全信息是在安全描述符中设置。 此值可以是以下值之一。
@@ -98,17 +98,17 @@ IRP\_MJ\_设置\_安全请求将发送的 I/O 管理器。 可以将发送此请
 ## <a name="see-also"></a>请参阅
 
 
-[**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_QUERY\_SECURITY**](irp-mj-query-security.md)
 
-[**安全\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff556610)
+[**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
 [**安全\_信息**](security-information.md)
 

@@ -15,12 +15,12 @@ keywords:
 - 启动 power management WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed9ae34ef761b29f8a2794031be125f28765b1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47030c7259405113ce53cfca4d11eae43107d268
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374169"
 ---
 # <a name="powering-up-a-device"></a>打开设备的电源
 
@@ -28,7 +28,7 @@ ms.locfileid: "63369135"
 
 
 
-当总线驱动程序处理 PnP [ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求一个其子设备，它会启动设备并调用[**PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)向电源管理器中报告设备电源状态。 打开设备是设备启动一个隐式部分。 设备电源策略所有者不会发送[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)为请求**PowerDeviceD0**，因此驱动程序应该不会收到这些 Irp 在启动时。
+当总线驱动程序处理 PnP [ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求一个其子设备，它会启动设备并调用[**PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)向电源管理器中报告设备电源状态。 打开设备是设备启动一个隐式部分。 设备电源策略所有者不会发送[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)为请求**PowerDeviceD0**，因此驱动程序应该不会收到这些 Irp 在启动时。
 
 当设备电源以节省电能时，其驱动程序应接通电源的 I/O 请求到达时。 在这种情况下，必须将发送设备电源策略所有者**IRP\_MN\_设置\_POWER**若要将设备恢复为工作状态。 IRP 完成后，设备的驱动程序停止队列 I/O 并开始处理队列的请求。
 

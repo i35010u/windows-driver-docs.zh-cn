@@ -8,12 +8,12 @@ keywords:
 - 子单元支持 WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cc329213f0ce766e2feb1ea6d394ee1debe16a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 582b892285a76714f8228a38d944f1f302374ba4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373039"
 ---
 # <a name="using-avcsys"></a>使用 Avc.sys
 
@@ -27,11 +27,11 @@ ms.locfileid: "63323355"
 
 子单元驱动程序分配并初始化由处理 Irp *Avc.sys*。 子单元驱动程序设置 IRP **Parameters.DeviceIoControl.IoControlCode** IOCTL 与所需的 AV/C 操作相对应的成员。
 
-*Avc.sys*注册两个之一[设备接口](https://msdn.microsoft.com/library/windows/hardware/ff543137)根据已加载到的子单元驱动程序堆栈支持 (对等或虚拟)。 这些接口定义的功能， *Avc.sys*导出子单元驱动程序、 其他驱动程序和应用程序使用。 *Avc.sys*然后接口的状态更改为启用或禁用即插即用驱动程序的状态根据。
+*Avc.sys*注册两个之一[设备接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)根据已加载到的子单元驱动程序堆栈支持 (对等或虚拟)。 这些接口定义的功能， *Avc.sys*导出子单元驱动程序、 其他驱动程序和应用程序使用。 *Avc.sys*然后接口的状态更改为启用或禁用即插即用驱动程序的状态根据。
 
 *Avc.sys*注册一个新实例的 GUID\_AVC\_类如果它已加载为外部 AV/C 子单元 （对等方堆栈） 提供支持。 此接口仅支持以下 I/O 控制 (IOCTL) 代码：
 
--   [**IOCTL\_AVC\_CLASS**](https://msdn.microsoft.com/library/windows/hardware/ff560789)
+-   [**IOCTL\_AVC\_CLASS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)
 
 IOCTL\_AVC\_类又支持多个函数代码。 子驱动程序的实例*Avc.sys*以支持对等子单元连接保证能够访问其父设备对象通过此接口。
 
@@ -39,29 +39,29 @@ GUID\_AVC\_类接口支持所有 IOCTL\_AVC\_类函数代码，尽管一些具�
 
 *Avc.sys*注册一个新实例的 GUID\_虚拟\_AVC\_类，如果已加载，以便为虚拟 AV/C 子单元连接 （虚拟堆栈） 提供支持。 此接口支持四个 I/O 控制 (IOCTL) 代码：
 
--   [**IOCTL\_AVC\_CLASS**](https://msdn.microsoft.com/library/windows/hardware/ff560789)
+-   [**IOCTL\_AVC\_CLASS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)
 
--   [**IOCTL\_AVC\_更新\_虚拟\_子单元\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff560798)
+-   [**IOCTL\_AVC\_更新\_虚拟\_子单元\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)
 
--   [**IOCTL\_AVC\_删除\_虚拟\_子单元\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff560793)
+-   [**IOCTL\_AVC\_删除\_虚拟\_子单元\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)
 
--   [**IOCTL\_AVC\_BUS\_RESET**](https://msdn.microsoft.com/library/windows/hardware/ff560783)
+-   [**IOCTL\_AVC\_BUS\_RESET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_bus_reset)
 
 GUID\_虚拟\_AVC\_类接口不支持每个 IOCTL\_AVC\_类函数代码。 每个单个函数代码的参考页用于指定是否支持它的 GUID\_虚拟\_AVC\_的类实例*Avc.sys*。
 
-IOCTL\_AVC\_Irp 类仅支持在内核模式下 （通常用于驱动程序的通信） 通过[ **IRP\_MJ\_内部\_设备\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff550766)。 因此，应用程序不能直接访问 IOCTL 所提供的函数\_AVC\_类 IOCTL 代码。
+IOCTL\_AVC\_Irp 类仅支持在内核模式下 （通常用于驱动程序的通信） 通过[ **IRP\_MJ\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)。 因此，应用程序不能直接访问 IOCTL 所提供的函数\_AVC\_类 IOCTL 代码。
 
-内核模式和通过用户模式中支持的最后三个 IOCTL 代码[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)。 这意味着，应用程序可以发送这些 Ioctl 直接*Avc.sys*。
+内核模式和通过用户模式中支持的最后三个 IOCTL 代码[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)。 这意味着，应用程序可以发送这些 Ioctl 直接*Avc.sys*。
 
 IOCTL\_AVC\_类 IOCTL 代码必须始终附带由 I/O 请求块 (IRB) 进一步描述要执行的 AV/C 操作。 IRB 标头包含一个函数编号，用于确定 IRB 其余部分的结构。 IRB 结构和大小而异的函数。 *Avc.sys*使用两个自定义 IRBs:
 
--   [**AVC\_命令\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554140)
+-   [**AVC\_命令\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)
 
--   [**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)
+-   [**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)
 
-选择 IRB 子单元驱动程序必须使用取决于所需的函数。 详细了解 IOCTL\_AVC\_类支持的函数代码*Avc.sys，* 请参阅[AV/C 协议驱动程序函数代码](https://msdn.microsoft.com/library/windows/hardware/ff556389)。
+选择 IRB 子单元驱动程序必须使用取决于所需的函数。 详细了解 IOCTL\_AVC\_类支持的函数代码*Avc.sys，* 请参阅[AV/C 协议驱动程序函数代码](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-protocol-driver-function-codes)。
 
-子单元驱动程序使用的主要 AV/C 功能是[ **AVC\_函数\_命令**](https://msdn.microsoft.com/library/windows/hardware/ff554150)，它使用 AVC\_命令\_IRB 结构。 **AVC\_函数\_命令**发送 AV/C 请求并接收相应的 AV/C 响应。 用于构建 AV/C 命令的详细信息将由*Avc.sys*，但子单元驱动程序必须提供 AV/C 操作码和操作数的每个命令。
+子单元驱动程序使用的主要 AV/C 功能是[ **AVC\_函数\_命令**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-command)，它使用 AVC\_命令\_IRB 结构。 **AVC\_函数\_命令**发送 AV/C 请求并接收相应的 AV/C 响应。 用于构建 AV/C 命令的详细信息将由*Avc.sys*，但子单元驱动程序必须提供 AV/C 操作码和操作数的每个命令。
 
  
 

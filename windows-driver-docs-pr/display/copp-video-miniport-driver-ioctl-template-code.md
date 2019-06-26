@@ -6,12 +6,12 @@ keywords:
 - Ioctl WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fbf14e5ffb345417be42fd1d0d375267f35718
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0333c04d549e7e29607c78e915f6555036134cdb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370259"
 ---
 # <a name="copp-video-miniport-driver-ioctl-template-code"></a>COPP 视频微型端口驱动程序 IOCTL 模板代码
 
@@ -21,7 +21,7 @@ ms.locfileid: "63331338"
 
 本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。
 
-微型端口驱动程序必须实现[ *HwVidStartIO* ](https://msdn.microsoft.com/library/windows/hardware/ff567367)函数来处理中显示器驱动程序发出的 I/O 请求。 下面的代码示例显示了仅处理方式的微型端口驱动程序 COPP Ioctl:
+微型端口驱动程序必须实现[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)函数来处理中显示器驱动程序发出的 I/O 请求。 下面的代码示例显示了仅处理方式的微型端口驱动程序 COPP Ioctl:
 
 ```cpp
 BOOLEAN

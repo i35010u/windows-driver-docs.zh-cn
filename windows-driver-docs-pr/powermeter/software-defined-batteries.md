@@ -6,12 +6,12 @@ keywords:
 - SDB
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 527c7f1488a855300c65a14951b9a120a27a760a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69d0abf944253f55920126b5a48483fe24ee9196
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331861"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376964"
 ---
 # <a name="software-defined-battery"></a>软件定义的电池
 
@@ -129,7 +129,7 @@ Windows 计算电池可用性，并生成"保留非热的可交换电池"提示�
 
 SDB 接口执行操作会影响或影响依赖于 ACPI/CmBatt 机制或开发其专有的微型端口 OEM 的愿望。
 
-注意：Windows 将转发所有[IOCTL_BATTERY_SET_INFORMATION](https://msdn.microsoft.com/library/windows/desktop/aa372701.aspx)枚举在系统上的所有电池设备的命令。
+注意：Windows 将转发所有[IOCTL_BATTERY_SET_INFORMATION](https://docs.microsoft.com/windows/desktop/Power/ioctl-battery-set-information)枚举在系统上的所有电池设备的命令。
 
 ### <a name="hpmi"></a>HPMI
 
@@ -203,7 +203,7 @@ HPMI 应该可以向服务多个同时 IOCTL 调用。
 
 ### <a name="feature-discovery"></a>功能发现
 
-[IOCTL_HPMI_QUERY_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/mt828475.aspx)用于发现支持 HPMI 的功能。 IOCTL_HPMI_QUERY_CAPABILITIES 是所需的 IOCTL。
+[IOCTL_HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_query_capabilities)用于发现支持 HPMI 的功能。 IOCTL_HPMI_QUERY_CAPABILITIES 是所需的 IOCTL。
 
 Windows 将发出此 IOCL HPMI 到一次后发现新 HPMI 驱动程序实例。 
 
@@ -277,7 +277,7 @@ typedef struct _HPMI_QUERY_CAPABILITIES_RESPONSE {
 
 ### <a name="command-format"></a>命令格式
 
-Windows 会发出具有此 IOCTL [HPMI_QUERY_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/mt828472.aspx)。
+Windows 会发出具有此 IOCTL [HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_query_capabilities)。
 
 版本设置为 HPMI_QUERY_CAPABILITIES_VERSION_1。
 
@@ -286,16 +286,16 @@ Windows 会发出具有此 IOCTL [HPMI_QUERY_CAPABILITIES](https://msdn.microsof
 
 HPMI 必须返回 STATUS_SUCCESS 代码。
 
-HPMI 响应中设置以下值[HPMI_QUERY_CAPABILITIES_RESPONSE](https://msdn.microsoft.com/library/windows/hardware/mt828473.aspx)结构：
+HPMI 响应中设置以下值[HPMI_QUERY_CAPABILITIES_RESPONSE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_query_capabilities_response)结构：
 
 - 版本设置为 HPMI_QUERY_CAPABILITIES_RESPONSE_VERSION_1
-- RequestService 设置为 HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS 确保 HPMI 驱动程序收到[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://msdn.microsoft.com/library/windows/hardware/mt828474.aspx)。
+- RequestService 设置为 HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS 确保 HPMI 驱动程序收到[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)。
 - SdbCapabilities 设置为 HPMI_CAPABILITY_SDB_OEM_SIMPLE_AGE_BALANCING 以指示电池年龄均衡支持。
 
 
 #### <a name="battery-utilization"></a>电池利用率
 
-Windows 问题[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://msdn.microsoft.com/library/windows/hardware/mt828474.aspx)到 HPMI 以提供最更新的电池利用率的提示。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT 是所需的 IOCTL。
+Windows 问题[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)到 HPMI 以提供最更新的电池利用率的提示。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT 是所需的 IOCTL。
 
 HPMI 可能利用 PreserveNonHotSwappableBatteries 提示中所述[调整 SDB 算法，用于具有热插拔电池](#ADAPTING-SDB)以节省内部电池。
 
@@ -378,7 +378,7 @@ typedef struct _HPMI_BATTERY_UTILIZATION_HINT {
 
 Windows 会发出与 HPMI_BATTERY_UTILIZATION_HINT 此 IOCTL。 版本设置为*HPMI_BATTERY_UTILIZATION_HINT_VERSION_1*。
 
-[HPMI_BATTERY_UTILIZATION_HINT](https://msdn.microsoft.com/library/windows/hardware/mt828469.aspx)
+[HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/ns-hpmi-_hpmi_battery_utilization_hint)
 
 PreserveNonHotSwappableBatteries 设置为以下值之一：
 
@@ -395,7 +395,7 @@ HPMI 必须返回 STATUS_SUCCESS 代码。
 
 ## <a name="sample-interface-contract"></a>示例接口协定
 
-请参阅[HMPI.h](https://msdn.microsoft.com/library/windows/hardware/mt828470.aspx)完整 （示例） API 协定的接口定义，此处所述。
+请参阅[HMPI.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hpmi/index)完整 （示例） API 协定的接口定义，此处所述。
 
 
 

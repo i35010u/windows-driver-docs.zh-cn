@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_REMOVE_WOL_PATTERN 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b05d94f6e5ca673a0bbae0ec817a256d3a254406
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ef9b5e0483e081553508bb388f1d664ee8a6eb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386536"
 ---
 # <a name="oidwdisetremovewolpattern"></a>OID\_WDI\_SET\_REMOVE\_WOL\_PATTERN
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_删除\_WOL\_模式从固件中删除对 LAN 唤醒 (WOL) 模�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -30,7 +30,7 @@ OID\_WDI\_设置\_删除\_WOL\_模式从固件中删除对 LAN 唤醒 (WOL) 模�
 
 | TLV                                                                                        | 允许多个 TLV 实例 | 可选 | 描述     |
 |--------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------|
-| [**WDI\_TLV\_WAKE\_PACKET\_PATTERN\_REMOVE**](https://msdn.microsoft.com/library/windows/hardware/dn898186) |                                |          | WOL 模式 id。 |
+| [**WDI\_TLV\_WAKE\_PACKET\_PATTERN\_REMOVE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wake-packet-pattern-remove) |                                |          | WOL 模式 id。 |
 
  
 

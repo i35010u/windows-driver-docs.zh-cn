@@ -12,12 +12,12 @@ keywords:
 - 内核模式驱动程序 WDK，导出驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dabe8d5d1cd4aaba5ace84bc66acb2f2830699e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11de78c3df6d16cc5f485a120e12215ce561115c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388296"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377167"
 ---
 # <a name="creating-export-drivers"></a>创建导出驱动程序
 
@@ -29,7 +29,7 @@ Microsoft Windows 驱动程序通常定义为一对组件，如端口/微型端�
 
 内核模式导出驱动程序尤其适合于实现的一部分是独立于基础堆栈和硬件特征，因为导出驱动程序是一个内核模式 DLL，它可以通过多种其他加载的驱动程序对特定于硬件的或特定于设备的堆栈的组件。 Microsoft 提供多个的驱动程序与 Windows 操作系统一起属于此类别。 例如，SCSI 端口驱动程序、 磁带类驱动程序，IDE 控制器驱动程序是由其他驱动程序加载的所有系统提供的导出驱动程序。
 
-导出驱动程序缺少很多完整的内核模式驱动程序的特征。 导出驱动程序不具有调度表，它不具有驱动程序堆栈中的一个位置和它在其定义为系统服务的服务控制管理器的数据库中没有条目。 导出驱动程序不必[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程，但其**DriverEntry**永远不会调用例程。 （该例程是仅以满足需求的生成脚本的存根。）
+导出驱动程序缺少很多完整的内核模式驱动程序的特征。 导出驱动程序不具有调度表，它不具有驱动程序堆栈中的一个位置和它在其定义为系统服务的服务控制管理器的数据库中没有条目。 导出驱动程序不必[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程，但其**DriverEntry**永远不会调用例程。 （该例程是仅以满足需求的生成脚本的存根。）
 
 请注意，虽然导出驱动程序不具有调度表，则它可以提供给标准驱动程序的调度例程。 标准驱动程序在自己的调度表中插入的调度例程。
 

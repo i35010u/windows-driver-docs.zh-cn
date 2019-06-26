@@ -4,12 +4,12 @@ description: MSiSCSI\_TCPIPConfig WMI 类
 ms.assetid: 57451576-a900-4eaa-b229-bda79a81d014
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6578c9591cef84f1de7a9be37eb224fc247c1ab8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49bed145c38b6cb358ee1427183883adcf499e3d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389446"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384664"
 ---
 # <a name="msiscsitcpipconfig-wmi-class"></a>MSiSCSI\_TCPIPConfig WMI 类
 
@@ -64,7 +64,7 @@ class MSiSCSI_TCPIPConfig {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_TCPIPConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff563149)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_TCPIPConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_tcpipconfig)数据结构。
 
  
 

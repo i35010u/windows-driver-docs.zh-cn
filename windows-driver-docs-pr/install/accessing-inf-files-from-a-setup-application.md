@@ -6,12 +6,12 @@ keywords:
 - INF 文件 WDK 设备安装，设备安装应用程序操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61eb38511d9c1f71da3c44563eed2e5280eda4c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a42d099c0db92bad8cc41b4afb0bb87113d2aedc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370018"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386053"
 ---
 # <a name="accessing-inf-files-from-a-device-installation-application"></a>从设备安装应用程序访问 INF 文件
 
@@ -19,7 +19,7 @@ ms.locfileid: "63370018"
 
 
 
-大多数 INF 文件由系统类安装程序和其他*设备安装应用程序*。 本部分介绍供应商提供的设备安装应用程序可以通过使用 INF 文件执行的常见操作[常规安装函数](https://msdn.microsoft.com/library/windows/hardware/ff544985)。 有关如何使用这些函数的完整信息，请参阅 Windows SDK 文档。
+大多数 INF 文件由系统类安装程序和其他*设备安装应用程序*。 本部分介绍供应商提供的设备安装应用程序可以通过使用 INF 文件执行的常见操作[常规安装函数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))。 有关如何使用这些函数的完整信息，请参阅 Windows SDK 文档。
 
 本部分包含以下主题：
 

@@ -4,12 +4,12 @@ description: 在 Windows 8.1 和更高版本的 Windows 提供的作业队列的
 ms.assetid: D1236DD2-D4AD-4615-9036-7EC75D6CADCE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6002e168002c41a4d67ff98b6ba96d3272ead709
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17df3c678b8051b4eebbc3aafbf607f93522896c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377525"
 ---
 # <a name="job-management"></a>作业管理
 
@@ -23,24 +23,24 @@ ms.locfileid: "63326027"
 
 在 Windows 8.1，若要实现作业管理功能中引入了以下接口。
 
-[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)
 
-[**IPrinterQueueView**](https://msdn.microsoft.com/library/windows/hardware/dn265392)
+[**IPrinterQueueView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueview)
 
-[**IPrinterQueueViewEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265393)
+[**IPrinterQueueViewEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueviewevent)
 
-[**IPrintJob**](https://msdn.microsoft.com/library/windows/hardware/dn265396)
+[**IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjob)
 
-[**IPrintJobCollection**](https://msdn.microsoft.com/library/windows/hardware/dn265397)
+[**IPrintJobCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjobcollection)
 
 ## <a name="initiating-a-job-management-session"></a>启动作业管理会话
 
 
-若要启动作业管理会话，必须先指定并请求你想要管理的作业的范围。 作业的此范围称为"视图"，则使用[ **IPrinterQueue2::GetPrinterQueueView** ](https://msdn.microsoft.com/library/windows/hardware/dn265390)方法，以指定它。
+若要启动作业管理会话，必须先指定并请求你想要管理的作业的范围。 作业的此范围称为"视图"，则使用[ **IPrinterQueue2::GetPrinterQueueView** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue2-getprinterqueueview)方法，以指定它。
 
-如果你想要更改视图来监视一组不同的作业，则可以使用[ **IPrinterQueueView::SetViewRange** ](https://msdn.microsoft.com/library/windows/hardware/dn265395)方法来执行该操作。
+如果你想要更改视图来监视一组不同的作业，则可以使用[ **IPrinterQueueView::SetViewRange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueueview-setviewrange)方法来执行该操作。
 
-请注意，打印队列的动态队列。 每次打印队列更改的状态，因此激发的事件和[ **IPrinterQueueViewEvent::OnChanged** ](https://msdn.microsoft.com/library/windows/hardware/dn265394)方法提供的视图的已请求更新的快照。
+请注意，打印队列的动态队列。 每次打印队列更改的状态，因此激发的事件和[ **IPrinterQueueViewEvent::OnChanged** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueueviewevent-onchanged)方法提供的视图的已请求更新的快照。
 
 以下C#代码片段演示如何使用新的接口用于启动作业管理会话。
 
@@ -94,11 +94,11 @@ void queueView_OnChanged(
 和另请注意，作业枚举启动时第一个事件处理程序添加和删除最后一个事件处理程序时停止。
 
 ## <a name="related-topics"></a>相关主题
-[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)  
-[**IPrinterQueueView**](https://msdn.microsoft.com/library/windows/hardware/dn265392)  
-[**IPrinterQueueViewEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265393)  
-[**IPrintJob**](https://msdn.microsoft.com/library/windows/hardware/dn265396)  
-[**IPrintJobCollection**](https://msdn.microsoft.com/library/windows/hardware/dn265397)  
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)  
+[**IPrinterQueueView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueview)  
+[**IPrinterQueueViewEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueviewevent)  
+[**IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjob)  
+[**IPrintJobCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjobcollection)  
 
 
 

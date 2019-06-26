@@ -9,12 +9,12 @@ keywords:
 - pin 调度表 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bab3da16f49a1cae0dcb8002623dd039305d93df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0edc893b23c9fd71097d2b845f34f7e526bdb2a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374168"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378383"
 ---
 # <a name="creating-dispatch-tables"></a>创建调度表
 
@@ -22,7 +22,7 @@ ms.locfileid: "63374168"
 
 
 
-必须创建筛选器描述符的筛选器调度表 ([**KSFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff562553)) 的 BDA 微型驱动程序，以便网络提供程序筛选器可以打开并初始化的实例筛选和更高版本的筛选器实例。 您还必须创建每个 pin 描述符的 pin 调度表 ([**KSPIN\_描述符\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)) 中的筛选器的模板拓扑中可用的 pin 类型数组. 网络提供程序筛选器使用 pin 调度表来打开并初始化 pin 和更高版本的 pin。 下面的代码段显示了筛选器和 pin 调度表的示例：
+必须创建筛选器描述符的筛选器调度表 ([**KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)) 的 BDA 微型驱动程序，以便网络提供程序筛选器可以打开并初始化的实例筛选和更高版本的筛选器实例。 您还必须创建每个 pin 描述符的 pin 调度表 ([**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)) 中的筛选器的模板拓扑中可用的 pin 类型数组. 网络提供程序筛选器使用 pin 调度表来打开并初始化 pin 和更高版本的 pin。 下面的代码段显示了筛选器和 pin 调度表的示例：
 
 ```cpp
 //

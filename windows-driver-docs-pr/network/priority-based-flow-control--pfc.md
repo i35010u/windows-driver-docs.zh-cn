@@ -4,12 +4,12 @@ description: 基于优先级的流控制 (PFC)
 ms.assetid: 9DD8A66F-273F-4E5A-99EF-33C2EDF3240C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6eca784b20a3ab4eb370449e8156a6ffca3022
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b319526c9c8c7fd1ca29d7169ad557c98330575a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385478"
 ---
 # <a name="priority-based-flow-control-pfc"></a>基于优先级的流控制 (PFC)
 
@@ -28,7 +28,7 @@ PFC 使用 802.3 暂停帧，并将其扩展具有以下 PFC 字段：
 
 当接收方发送 PFC 数据 802.3 暂停帧时，交换机会阻止具有到在其连接接收方的端口的指定的优先级级别的帧传输。 计时器值过期时，此开关恢复暂停帧的端口上的传输。
 
-通过指定 NDIS 服务质量 (QoS) 参数[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构。 **PfcEnable**成员包含的位图，每一位指定是否为的 802.1p 优先级级别启用 PFC。
+通过指定 NDIS 服务质量 (QoS) 参数[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构。 **PfcEnable**成员包含的位图，每一位指定是否为的 802.1p 优先级级别启用 PFC。
 
 有关优先级级别的详细信息，请参阅[IEEE 802.1p 优先级](ieee-802-1p-priority-levels.md)。
 

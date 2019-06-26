@@ -4,12 +4,12 @@ description: 即插即用次要 IRP
 ms.date: 08/12/2017
 ms.assetid: eeb7dafd-fb44-4fb7-b5f0-314059ee0093
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f596962a85f29ddcb1986da40e37d011316bd78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 559e226036022cc7c04b91a0422798c1d490d585
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380943"
 ---
 # <a name="plug-and-play-minor-irps"></a>即插即用次要 IRP
 
@@ -19,7 +19,7 @@ ms.locfileid: "63369251"
 
 本部分介绍了发送到驱动程序 PnP Irp。 所有 PnP Irp 具有主要函数代码[ **IRP\_MJ\_PNP** ](irp-mj-pnp.md)和一个次要函数代码，指示特定的即插即用请求。
 
-本部分提供有关各个 Irp 的参考信息。 请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)Irp 发送的顺序，讨论了如何处理 Irp 中的说明[DispatchPnP 例程](https://msdn.microsoft.com/library/windows/hardware/ff543348)，和常规讨论的即插即用的概念和术语。
+本部分提供有关各个 Irp 的参考信息。 请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)Irp 发送的顺序，讨论了如何处理 Irp 中的说明[DispatchPnP 例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines)，和常规讨论的即插即用的概念和术语。
 
 对于每个 IRP 和每种类型的驱动程序，驱动程序是处理 IRP，所需的任何一个可以根据需要处理 IRP，或必须处理 IRP。 请参考下表以确定哪些 Irp 您的驱动程序将处理并请查阅有关单个 Irp 信息的参考页。 中的表和 IRP 参考页中按字母顺序的功能顺序列出了 Irp。
 

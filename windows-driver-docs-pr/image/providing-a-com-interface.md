@@ -4,12 +4,12 @@ description: 提供 COM 接口
 ms.assetid: c3e1578e-26f1-4fe3-b56d-a2baacb8e4c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e4b4615b26e424bda25c196a5b424d3bea75d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8483cca790314125087e10be0941a71c45dad1ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379637"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374314"
 ---
 # <a name="providing-a-com-interface"></a>提供 COM 接口
 
@@ -19,9 +19,9 @@ ms.locfileid: "63379637"
 
 WIA 微型驱动程序必须支持**IWiaMiniDrv**， **IStiUSD**，并**IUnknown**接口会被识别和 WIA 服务加载。 以下接口标识符应添加到 WIA 驱动**QueryInterface**方法：
 
--   **IID\_IWiaMiniDrv** -的接口标识符[IWiaMiniDrv 接口](https://msdn.microsoft.com/library/windows/hardware/ff545027)，标准 WIA 接口用来访问特定于 WIA 的功能。
+-   **IID\_IWiaMiniDrv** -的接口标识符[IWiaMiniDrv 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)，标准 WIA 接口用来访问特定于 WIA 的功能。
 
--   **IID\_IStiUSD** -的接口标识符[IStiUSD 接口](https://msdn.microsoft.com/library/windows/hardware/ff543827)，标准 STI 接口用来访问 WIA 驱动程序的 STI 功能
+-   **IID\_IStiUSD** -的接口标识符[IStiUSD 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)，标准 STI 接口用来访问 WIA 驱动程序的 STI 功能
 
 -   **IID\_IUnknown** -的接口标识符**IUnknown**接口，Microsoft Windows SDK 文档中定义的标准 COM 接口。
 

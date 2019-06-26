@@ -6,12 +6,12 @@ keywords:
 - 宏块 WDK DirectX va，因此地址
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e609bb2729ffb292677697735cd821b790681efc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba9a8e64e082a2fe572c6194bed412af19951ea2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385608"
 ---
 # <a name="macroblock-addresses"></a>宏块地址
 
@@ -19,7 +19,7 @@ ms.locfileid: "63375376"
 ## <span id="ddk_macroblock_addresses_gg"></span><span id="DDK_MACROBLOCK_ADDRESSES_GG"></span>
 
 
-宏块地址是在图片中的光栅扫描顺序宏块的位置。 水平和垂直位置宏块的图中确定使用指定的宽度和高度图中，由定义的宏块地址**wPicWidthInMBminus1**和**wPicHeightInMBminus1**的成员[ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)结构。 以下是一些示例宏块地址。
+宏块地址是在图片中的光栅扫描顺序宏块的位置。 水平和垂直位置宏块的图中确定使用指定的宽度和高度图中，由定义的宏块地址**wPicWidthInMBminus1**和**wPicHeightInMBminus1**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构。 以下是一些示例宏块地址。
 
 <table>
 <colgroup>

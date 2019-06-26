@@ -4,12 +4,12 @@ description: PCMCIA_INTERFACE_STANDARD 接口的功能
 ms.assetid: 301b4165-4753-4d55-9760-17628174c043
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 410e644ce5f8d4f145a539af07c9a2b4c1c86b15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5075c1648b8b7c78132227b50acf58abd56e1e4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386197"
 ---
 # <a name="functionality-of-the-pcmciainterfacestandard-interface"></a>功能 PCMCIA\_接口\_标准接口
 
@@ -25,7 +25,7 @@ ms.locfileid: "63378211"
 
 -   确定是否受写保护卡内存
 
-详细了解 PCMCIA 所提供的例程\_接口\_标准接口，请参阅[PCMCIA\_接口\_标准接口内存卡例程](https://msdn.microsoft.com/library/windows/hardware/ff537607)。
+详细了解 PCMCIA 所提供的例程\_接口\_标准接口，请参阅[PCMCIA\_接口\_标准接口内存卡例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

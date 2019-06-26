@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a37d2f859bda580631e761570a1082c293c3c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f65512e3100ffcfc2410379639d8a77a07d87ca4
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332600"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391593"
 ---
 # <a name="kspropertytelephonycallhold"></a>KSPROPERTY\_电话\_CALLHOLD
 
@@ -50,7 +50,7 @@ ms.locfileid: "63332600"
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -67,7 +67,7 @@ ms.locfileid: "63332600"
 <a name="remarks"></a>备注
 -------
 
-如果您设置**KSPROPERTY\_电话\_CALLHOLD**属性值为**TRUE**，电话呼叫将置于保持状态。 预期的行为是将静音传输和接收。 将发送或接收在此情况下没有数据。 音频驱动程序将更新调用状态 ([**电话\_CALLSTATE**](https://msdn.microsoft.com/library/windows/hardware/mt169896)) 到**电话\_CALLSTATE\_保存**。 如果您设置**KSPROPERTY\_电话\_CALLHOLD**属性值为**FALSE**，电话呼叫将被从保持状态，并且调用状态将更新为**电话\_CALLSTATE\_已启用**。
+如果您设置**KSPROPERTY\_电话\_CALLHOLD**属性值为**TRUE**，电话呼叫将置于保持状态。 预期的行为是将静音传输和接收。 将发送或接收在此情况下没有数据。 音频驱动程序将更新调用状态 ([**电话\_CALLSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-telephony_callstate)) 到**电话\_CALLSTATE\_保存**。 如果您设置**KSPROPERTY\_电话\_CALLHOLD**属性值为**FALSE**，电话呼叫将被从保持状态，并且调用状态将更新为**电话\_CALLSTATE\_已启用**。
 
 <a name="requirements"></a>要求
 ------------

@@ -6,12 +6,12 @@ keywords:
 - 启动 WDK 即插即用失败
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 392b9b11e3e59f046a6095c106e76c6a619198ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98ee16067c6cd08e8e0f4c764c7fd643e4b8731d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382984"
 ---
 # <a name="stopping-a-device-after-a-failed-start-windows-98me"></a>启动失败后停止设备 (Windows 98/Me)
 
@@ -19,7 +19,7 @@ ms.locfileid: "63331937"
 
 
 
-在 Windows 98 上 / 我，即插即用管理器将发出[ **IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)没有前面的查询时的设备驱动程序失败请求[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求。 （Windows 2000 及更高版本，即插即用的管理器发送 Irp 中删除这种情况。 请参阅[了解何时删除 Irp 颁发](understanding-when-remove-irps-are-issued.md)。)
+在 Windows 98 上 / 我，即插即用管理器将发出[ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)没有前面的查询时的设备驱动程序失败请求[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 （Windows 2000 及更高版本，即插即用的管理器发送 Irp 中删除这种情况。 请参阅[了解何时删除 Irp 颁发](understanding-when-remove-irps-are-issued.md)。)
 
 在响应停止 IRP，驱动程序版本设备的硬件资源 （例如其 I/O 端口）、 禁用和取消注册任何用户模式接口，和失败要求设备的访问权限的任何传入的 I/O 请求。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_DATA_RATE_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b22840cac4183b268d79bbba4de7a84e72b2a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ffb7fda3a5251da4926cbfad72a6c26a186fab39
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373856"
 ---
 # <a name="wditlvphydataratelist"></a>WDI\_TLV\_PHY\_数据\_速率\_列表
 
@@ -45,7 +45,7 @@ WDI\_数据\_速率\_列表包含下列元素。
 
 | 在任务栏的搜索框中键入   | 描述                                                                                   |
 |--------|-----------------------------------------------------------------------------------------------|
-| UINT8  | 数据速率标志中定义[ **WDI\_数据\_速率\_标志**](https://msdn.microsoft.com/library/windows/hardware/dn897811)。 |
+| UINT8  | 数据速率标志中定义[ **WDI\_数据\_速率\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_data_rate_flags)。 |
 | UINT16 | 数据速率值。                                                                          |
 
  

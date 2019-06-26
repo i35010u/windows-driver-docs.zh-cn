@@ -4,12 +4,12 @@ description: 因为中断输入可能是屏蔽和解除屏蔽除了启用和禁�
 ms.assetid: FD6537DA-2AAA-4646-896D-D5BC834526B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f715aba1a58805825a9b23fb3d559b6cc41cfc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da6e0e04a2a6dc3741bf168f267f4fce59175af8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326151"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383418"
 ---
 # <a name="gpio-interrupt-masks"></a>GPIO 中断掩码
 
@@ -20,7 +20,7 @@ ms.locfileid: "63326151"
 
 屏蔽中断不会清除或禁用中断。 如果启用了 GPIO 中断，处于活动状态，并屏蔽，unmasking 此中断导致 GPIO 控制器设备，以指示对处理器的中断请求。
 
-GPIO 中断掩码位禁用 GPIO 中断时，没有任何影响。 [*客户端\_EnableInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/hh439377)回调函数设置为零的中断的位掩码; 即，中断为最初未屏蔽后启用它。
+GPIO 中断掩码位禁用 GPIO 中断时，没有任何影响。 [*客户端\_EnableInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)回调函数设置为零的中断的位掩码; 即，中断为最初未屏蔽后启用它。
 
 屏蔽和禁用 GPIO 中断 pin 之间的重要区别是屏蔽保留 pin 的中断配置设置，而禁用 pin 却没有。 虽然 GPIO 中断 pin 被屏蔽，它将保留其以前通过编程方式设置的中断模式下 （edge 触发或级别触发），极性 （主动高、 活动性低，或同时处于活动状态），并 debounce 设置。 这些设置才会生效再次立即中断已取消屏蔽。 但是，当禁用中断时，所有插针的中断配置设置都会丢失。 启用 pin 后，它必须进行编程，再次使用所需的中断的配置设置。
 

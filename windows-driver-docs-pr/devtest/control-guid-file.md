@@ -8,12 +8,12 @@ keywords:
 - ctl 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a3288402a4bb5d59047fa389c521fae3acb6bcd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db5c212feb92780f3a19423fc0c53067965d8c58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343081"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371589"
 ---
 # <a name="control-guid-file"></a>控制 GUID 文件
 
@@ -27,7 +27,7 @@ ControlGUID GUIDFriendlyName
 
 跟踪提供程序的开发人员通常提供此文件。 但是，如果必须跟踪提供程序的源代码，可以查找 GUID 和 GUID 友好名称，并创建控制 GUID 文件。
 
-在源代码中，找到的定义[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏。 中所示的 GUID 值和 GUID 的友好名称下面的示例中以粗体显示。
+在源代码中，找到的定义[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏。 中所示的 GUID 值和 GUID 的友好名称下面的示例中以粗体显示。
 
 ```C
 #define WPP_CONTROL_GUIDS \

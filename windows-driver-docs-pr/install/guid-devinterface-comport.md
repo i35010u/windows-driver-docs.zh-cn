@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6b2c01ad414ffea9756b38bce9eca80a6d8821d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b92f88c737d337ff710341cfe3c4a7ea19ff336
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372740"
 ---
 # <a name="guiddevinterfacecomport"></a>GUID_DEVINTERFACE_COMPORT
 
 
-GUID_DEVINTERFACE_COMPORT[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[COM 端口](https://msdn.microsoft.com/library/windows/hardware/ff546485)。
+GUID_DEVINTERFACE_COMPORT[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[COM 端口](https://docs.microsoft.com/previous-versions/ff546485(v=vs.85))。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_COMPORT[设备接口类](https://msdn.microsoft.com/library/wi
 
 串行端口的驱动程序注册通知的操作系统和应用程序的 COM 端口存在此设备接口类的实例。
 
-串行端口的系统提供的函数驱动程序注册此设备接口类的实例[串行端口](https://msdn.microsoft.com/library/windows/hardware/ff547451)。
+串行端口的系统提供的函数驱动程序注册此设备接口类的实例[串行端口](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))。
 
 下面的示例 （Github 上） 注册为串行端口的此类的实例：
 

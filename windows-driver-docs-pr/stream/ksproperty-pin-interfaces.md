@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 556bc56e96c55b652b84b591e2ca65c89704c8da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61547c279e12b08076ff58f2cc22fd2081642268
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393330"
 ---
 # <a name="kspropertypininterfaces"></a>KSPROPERTY\_PIN\_接口
 
@@ -53,8 +53,8 @@ ms.locfileid: "63380815"
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td><p>一个<a href="https://msdn.microsoft.com/library/windows/hardware/ff563441" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441)"> <strong>KSMULTIPLE_ITEM</strong> </a>结构后, 跟一系列<a href="https://msdn.microsoft.com/library/windows/hardware/ff563537" data-raw-source="[&lt;strong&gt;KSPIN_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563537)"> <strong>KSPIN_INTERFACE</strong> </a>结构。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p>一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"> <strong>KSMULTIPLE_ITEM</strong> </a>结构后, 跟一系列<a href="https://docs.microsoft.com/previous-versions/ff563537(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPIN_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))"> <strong>KSPIN_INTERFACE</strong> </a>结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -89,11 +89,11 @@ Stream 微型驱动程序不需要直接; 处理此属性stream 类驱动程序�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_PIN**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSMULTIPLE\_项**](https://msdn.microsoft.com/library/windows/hardware/ff563441)
+[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
-[**KSPIN\_INTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff563537)
+[**KSPIN\_INTERFACE**](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))
 
  
 

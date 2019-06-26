@@ -10,12 +10,12 @@ keywords:
 - 转发 I/O 请求 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6859211afb123d3bc10039a67a203fe4490892
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28bec753047dd8d863d6ade33aca33ba3b7f3a00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377507"
 ---
 # <a name="canceling-io-requests"></a>取消 I/O 请求
 
@@ -29,43 +29,43 @@ ms.locfileid: "63362801"
 
 -   未交付的 I/O 请求，该框架已放置在驱动程序的默认 I/O 队列。
 
--   未发送的 I/O 请求的框架已转发给另一个队列，因为该驱动程序调用[ **WdfDeviceConfigureRequestDispatching**](https://msdn.microsoft.com/library/windows/hardware/ff545920)。
+-   未发送的 I/O 请求的框架已转发给另一个队列，因为该驱动程序调用[ **WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)。
 
 框架将取消这些请求，因为它不会向驱动程序中提供它们。
 
-该框架已传递到驱动程序，该驱动程序的 I/O 请求后[拥有](request-ownership.md)请求和 framework 无法取消。 在此情况下，只有驱动程序可以取消 I/O 请求，但框架必须通知该驱动程序应取消请求。 驱动程序收到此通知，从而[ *EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)回调函数。
+该框架已传递到驱动程序，该驱动程序的 I/O 请求后[拥有](request-ownership.md)请求和 framework 无法取消。 在此情况下，只有驱动程序可以取消 I/O 请求，但框架必须通知该驱动程序应取消请求。 驱动程序收到此通知，从而[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数。
 
 有时一个驱动程序从 I/O 队列接收的 I/O 请求，但，而不是处理请求，该驱动程序请求对相同或另一个请求供以后处理的 I/O 队列。 这种情况的示例包括：
 
--   框架将 I/O 请求传递到的驱动程序之一[请求处理程序](request-handlers.md)，，并且该驱动程序随后调用任一[ **WdfRequestForwardToIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff549958) （或[**WdfRequestForwardToParentDeviceIoQueue**](https://msdn.microsoft.com/library/windows/hardware/ff549959)) 将请求放在其他队列或[ **WdfRequestRequeue** ](https://msdn.microsoft.com/library/windows/hardware/ff550012)放置请求返回到同一个队列。
+-   框架将 I/O 请求传递到的驱动程序之一[请求处理程序](request-handlers.md)，，并且该驱动程序随后调用任一[ **WdfRequestForwardToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue) （或[**WdfRequestForwardToParentDeviceIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestforwardtoparentdeviceioqueue)) 将请求放在其他队列或[ **WdfRequestRequeue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestrequeue)放置请求返回到同一个队列。
 
--   该框架将 I/O 请求传递到驱动程序的[ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)回调函数、 驱动程序调用[ **WdfDeviceEnqueueRequest**](https://msdn.microsoft.com/library/windows/hardware/ff545945)传递请求重新至框架，和框架随后将请求放入驱动程序的 I/O 队列之一。
+-   该框架将 I/O 请求传递到驱动程序的[ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)回调函数、 驱动程序调用[ **WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)传递请求重新至框架，和框架随后将请求放入驱动程序的 I/O 队列之一。
 
-在这些情况下，框架可以取消 I/O 请求，因为请求 I/O 队列中。 但是，如果该驱动程序已注册[ *EvtIoCanceledOnQueue* ](https://msdn.microsoft.com/library/windows/hardware/ff541756)请求所在的 I/O 队列的回调函数，框架将调用的回调函数，而不是取消正在取消关联的 I/O 操作时请求。 如果框架将调用的驱动程序*EvtIoCanceledOnQueue*回调函数，该驱动程序必须[完整](completing-i-o-requests.md)请求。
+在这些情况下，框架可以取消 I/O 请求，因为请求 I/O 队列中。 但是，如果该驱动程序已注册[ *EvtIoCanceledOnQueue* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)请求所在的 I/O 队列的回调函数，框架将调用的回调函数，而不是取消正在取消关联的 I/O 操作时请求。 如果框架将调用的驱动程序*EvtIoCanceledOnQueue*回调函数，该驱动程序必须[完整](completing-i-o-requests.md)请求。
 
-总之，取消 I/O 操作时，框架始终会取消所有关联的 I/O 请求永远不会传递到驱动程序。 如果该驱动程序收到的请求，然后请求该框架将取消请求 （如果请求在队列中） 除非驱动程序提供了[ *EvtIoCanceledOnQueue* ](https://msdn.microsoft.com/library/windows/hardware/ff541756)回调函数I/O 队列中。
+总之，取消 I/O 操作时，框架始终会取消所有关联的 I/O 请求永远不会传递到驱动程序。 如果该驱动程序收到的请求，然后请求该框架将取消请求 （如果请求在队列中） 除非驱动程序提供了[ *EvtIoCanceledOnQueue* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)回调函数I/O 队列中。
 
 ### <a name="calling-wdfrequestmarkcancelable-or-wdfrequestmarkcancelableex"></a>调用 WdfRequestMarkCancelable 或 WdfRequestMarkCancelableEx
 
-驱动程序可以调用[ **WdfRequestMarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff549983)或[ **WdfRequestMarkCancelableEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549984)注册[ *EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)回调函数。 如果该驱动程序已调用**WdfRequestMarkCancelable**或**WdfRequestMarkCancelableEx**，和如果与请求关联的 I/O 操作已取消，框架将调用在驱动程序*EvtRequestCancel*回调函数，该驱动程序可以取消 I/O 请求。
+驱动程序可以调用[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[ **WdfRequestMarkCancelableEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)注册[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数。 如果该驱动程序已调用**WdfRequestMarkCancelable**或**WdfRequestMarkCancelableEx**，和如果与请求关联的 I/O 操作已取消，框架将调用在驱动程序*EvtRequestCancel*回调函数，该驱动程序可以取消 I/O 请求。
 
-驱动程序应调用[ **WdfRequestMarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff549983)或[ **WdfRequestMarkCancelableEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549984)如果它将拥有的请求相对长时间。 例如，驱动程序可能需要等待设备响应，或者它可能会等待较低的驱动程序来完成的请求的驱动程序创建一组收到一个请求。
+驱动程序应调用[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[ **WdfRequestMarkCancelableEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)如果它将拥有的请求相对长时间。 例如，驱动程序可能需要等待设备响应，或者它可能会等待较低的驱动程序来完成的请求的驱动程序创建一组收到一个请求。
 
-如果驱动程序不会调用[ **WdfRequestMarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff549983)或[ **WdfRequestMarkCancelableEx**](https://msdn.microsoft.com/library/windows/hardware/ff549984)，或如果驱动程序调用[ **WdfRequestUnmarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff550035)后调用**WdfRequestMarkCancelable**或者**WdfRequestMarkCancelableEx**，驱动程序不能识别的取消操作并因此将和往常一样处理该请求。
+如果驱动程序不会调用[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[ **WdfRequestMarkCancelableEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)，或如果驱动程序调用[ **WdfRequestUnmarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)后调用**WdfRequestMarkCancelable**或者**WdfRequestMarkCancelableEx**，驱动程序不能识别的取消操作并因此将和往常一样处理该请求。
 
 ### <a name="calling-wdfrequestiscanceled"></a>调用 WdfRequestIsCanceled
 
-如果驱动程序已不调用[ **WdfRequestMarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff549983)或[ **WdfRequestMarkCancelableEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549984)注册[*EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)回调函数，它可以调用[ **WdfRequestIsCanceled** ](https://msdn.microsoft.com/library/windows/hardware/ff549976)以确定是否已尝试在 I/O 管理器取消 I/O 请求。 如果**WdfRequestIsCanceled**返回**TRUE**和驱动程序拥有该请求，该驱动程序应取消请求。 如果该驱动程序不拥有该请求，则不应调用**WdfRequestIsCanceled**。
+如果驱动程序已不调用[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[ **WdfRequestMarkCancelableEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)注册[*EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数，它可以调用[ **WdfRequestIsCanceled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)以确定是否已尝试在 I/O 管理器取消 I/O 请求。 如果**WdfRequestIsCanceled**返回**TRUE**和驱动程序拥有该请求，该驱动程序应取消请求。 如果该驱动程序不拥有该请求，则不应调用**WdfRequestIsCanceled**。
 
-但调用的驱动程序[ **WdfRequestMarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff549983)或[ **WdfRequestMarkCancelableEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549984)可能调用[**WdfRequestIsCanceled** ](https://msdn.microsoft.com/library/windows/hardware/ff549976)在以下情况下：
+但调用的驱动程序[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[ **WdfRequestMarkCancelableEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)可能调用[**WdfRequestIsCanceled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)在以下情况下：
 
--   等待设备中断可能会调用一个驱动程序[ **WdfRequestIsCanceled** ](https://msdn.microsoft.com/library/windows/hardware/ff549976)从其[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)回调函数。
+-   等待设备中断可能会调用一个驱动程序[ **WdfRequestIsCanceled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)从其[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数。
 
--   轮询其设备的驱动程序可能会调用[ **WdfRequestIsCanceled** ](https://msdn.microsoft.com/library/windows/hardware/ff549976)从它的轮询线程。
+-   轮询其设备的驱动程序可能会调用[ **WdfRequestIsCanceled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)从它的轮询线程。
 
--   驱动程序，可断开[DMA 事务](dma-transactions-and-dma-transfers.md)多个较小的传送到可能会调用[ **WdfRequestIsCanceled** ](https://msdn.microsoft.com/library/windows/hardware/ff549976)每次传输完成之后。
+-   驱动程序，可断开[DMA 事务](dma-transactions-and-dma-transfers.md)多个较小的传送到可能会调用[ **WdfRequestIsCanceled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)每次传输完成之后。
 
--   接收一个较大的驱动程序读取或写入它分解成多个较小的请求的请求可能会调用[ **WdfRequestIsCanceled** ](https://msdn.microsoft.com/library/windows/hardware/ff549976)驱动程序的 I/O 目标完成每个较小的请求后如果该驱动程序已不调用[ **WdfRequestMarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff549983)或[ **WdfRequestMarkCancelableEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549984)的接收请求。
+-   接收一个较大的驱动程序读取或写入它分解成多个较小的请求的请求可能会调用[ **WdfRequestIsCanceled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestiscanceled)驱动程序的 I/O 目标完成每个较小的请求后如果该驱动程序已不调用[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[ **WdfRequestMarkCancelableEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)的接收请求。
 
 ### <a name="canceling-the-request"></a>正在取消请求
 
@@ -75,9 +75,9 @@ ms.locfileid: "63362801"
 
 -   不将请求转发到 I/O 目标。
 
--   调用[ **WdfRequestCancelSentRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff549941)尝试取消该驱动程序之前必须提交到 I/O 目标的请求。
+-   调用[ **WdfRequestCancelSentRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcancelsentrequest)尝试取消该驱动程序之前必须提交到 I/O 目标的请求。
 
-如果驱动程序正在取消从框架驱动程序收到一个请求对象的 I/O 请求，该驱动程序始终必须通过调用完成请求[ **WdfRequestComplete**](https://msdn.microsoft.com/library/windows/hardware/ff549945)， [**WdfRequestCompleteWithInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549948)，或[ **WdfRequestCompleteWithPriorityBoost**](https://msdn.microsoft.com/library/windows/hardware/ff549949)，与*状态*参数的状态\_已取消。 (如果该驱动程序调用[ **WdfRequestCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff549951)若要创建一个请求对象，驱动程序调用[ **WdfObjectDelete** ](https://msdn.microsoft.com/library/windows/hardware/ff548734)而不是完成请求。）
+如果驱动程序正在取消从框架驱动程序收到一个请求对象的 I/O 请求，该驱动程序始终必须通过调用完成请求[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)， [**WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)，或[ **WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，与*状态*参数的状态\_已取消。 (如果该驱动程序调用[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)若要创建一个请求对象，驱动程序调用[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)而不是完成请求。）
 
 ### <a name="synchronizing-cancellation"></a>正在取消同步
 

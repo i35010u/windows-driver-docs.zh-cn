@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c339780650097e711d9969ae9033113d0968f50b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c726f41ff11389ee6ef7669809f16a52c9783929
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332673"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391647"
 ---
 # <a name="kspropertyrtaudiopacketcount"></a>KSPROPERTY\_RTAUDIO\_PACKETCOUNT
 
@@ -50,7 +50,7 @@ KSPROPERTY\_RTAUDIO\_PACKETCOUNT 返回完全从 WaveRT 缓冲区传输到硬件
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ulong" data-raw-source="[&lt;strong&gt;ULONG&lt;/strong&gt;](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ulong)"><strong>ULONG</strong></a></p></td>
 </tr>
 </tbody>
@@ -58,7 +58,7 @@ KSPROPERTY\_RTAUDIO\_PACKETCOUNT 返回完全从 WaveRT 缓冲区传输到硬件
 
  
 
-属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构。 发送请求之前, 在客户端加载的 （从 1 开始） 数量完全从 WaveRT 缓冲区传输到硬件的数据包的结构。
+属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 发送请求之前, 在客户端加载的 （从 1 开始） 数量完全从 WaveRT 缓冲区传输到硬件的数据包的结构。
 
 属性值为类型为 ULONG 的变量。
 

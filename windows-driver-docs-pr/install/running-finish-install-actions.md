@@ -4,12 +4,12 @@ description: 运行 Finish-Install 操作
 ms.assetid: 9a5f8e7c-ba11-4a2a-82dd-32cd91c3cc39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58a9d0632844ab29a684701175fce5845e3ac57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c152108f561f4779b1a3d53ab9ca53931ca49175
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383663"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382275"
 ---
 # <a name="running-finish-install-actions"></a>运行 Finish-Install 操作
 
@@ -29,11 +29,11 @@ Windows 8 之前，如果初始尝试完成的完成安装操作成功，完成�
 
 -   尽管该设备仍然会安装下, 一次以管理员身份登录。
 
--   如果管理员单击扫描硬件更改**操作**菜单上的设备管理器或安装程序将调用[ **CM_Reenumerate_DevNode** ](https://msdn.microsoft.com/library/windows/hardware/ff539763)上下文中管理员。
+-   如果管理员单击扫描硬件更改**操作**菜单上的设备管理器或安装程序将调用[ **CM_Reenumerate_DevNode** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_reenumerate_devnode)上下文中管理员。
 
-如果该设备添加了标志，以执行完成安装操作，完成安装处理调用[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)发送[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)到设备的安装程序的请求。
+如果该设备添加了标志，以执行完成安装操作，完成安装处理调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)发送[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)到设备的安装程序的请求。
 
-如果安装程序完成安装操作，安装程序执行完成安装操作，并返回相应的错误代码[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)请求。 安装程序将返回一个错误代码如下表中。
+如果安装程序完成安装操作，安装程序执行完成安装操作，并返回相应的错误代码[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)请求。 安装程序将返回一个错误代码如下表中。
 
 <table>
 <colgroup>

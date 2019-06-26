@@ -12,12 +12,12 @@ keywords:
 - TAPI WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40eac07481ea4ba12824b8974c425556080508f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c852721e0d1c0742b37f31d233f1bd8a21339d61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390730"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379853"
 ---
 # <a name="condis-wan-operations-that-support-telephonic-services"></a>支持电话服务的 CoNDIS WAN 操作
 
@@ -45,7 +45,7 @@ ms.locfileid: "63390730"
 
 [非 WAN 特定扩展，以支持通过面向连接的 NDIS 台电话服务](non-wan-specific-extensions-to-support-telephonic-services-over-connec.md)
 
-这些说明将简要介绍 TAPI 中, 体现的概念，但，读者应当阅读 Windows SDK TAPI 有关的详细信息。 详细了解如何为 TAPI 模型的线路设备及如何所有 WAN 微型端口驱动程序应保留其连接的状态，请参阅[线路设备、 地址和调用 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff549181)和[维护状态信息 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff549232)。
+这些说明将简要介绍 TAPI 中, 体现的概念，但，读者应当阅读 Windows SDK TAPI 有关的详细信息。 详细了解如何为 TAPI 模型的线路设备及如何所有 WAN 微型端口驱动程序应保留其连接的状态，请参阅[线路设备、 地址和调用 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549181(v=vs.85))和[维护状态信息 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549232(v=vs.85))。
 
  
 

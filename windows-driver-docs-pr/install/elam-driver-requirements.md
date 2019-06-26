@@ -4,12 +4,12 @@ description: 驱动程序安装必须使用现有工具进行联机和脱机安�
 ms.assetid: B00B4361-B531-4D28-A521-0F8B3B48CEA4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a10d80eb6fb9d51672bd7ddeb25475b270ec701
-ms.sourcegitcommit: 2a05cdf17819196ff3e99cb7d8d8b3bea4fd3faa
+ms.openlocfilehash: 1fd5d50315480e2e87b2817238c39b38a7c61e83
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268550"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375026"
 ---
 # <a name="elam-driver-requirements"></a>ELAM 驱动程序要求
 
@@ -73,19 +73,19 @@ ELAM 驱动程序使用回调来提供即插即用其描述为每个引导启动
 
 这些回调有效 ELAM 驱动程序的生存期，卸载该驱动程序时将取消注册。 有关详细信息，请参阅：
 
-* [**CmRegisterCallbackEx**](https://msdn.microsoft.com/library/windows/hardware/ff541921)
-* [**CmRegisterCallback**](https://msdn.microsoft.com/library/windows/hardware/ff541918)
-* [**CmUnRegisterCallback**](https://msdn.microsoft.com/library/windows/hardware/ff541928)
+* [**CmRegisterCallbackEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallbackex)
+* [**CmRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallback)
+* [**CmUnRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmunregistercallback)
 
 ### <a name="boot-driver-callbacks"></a>启动驱动程序回调
 
-使用[ **IoRegisterBootDriverCallback** ](https://msdn.microsoft.com/library/windows/hardware/hh439379)并[ **IoUnRegisterBootDriverCallback** ](https://msdn.microsoft.com/library/windows/hardware/hh439394)注册和注销[ *BOOT_DRIVER_CALLBACK_FUNCTION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-boot_driver_callback_function)。
+使用[ **IoRegisterBootDriverCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioregisterbootdrivercallback)并[ **IoUnRegisterBootDriverCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iounregisterbootdrivercallback)注册和注销[ *BOOT_DRIVER_CALLBACK_FUNCTION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-boot_driver_callback_function)。
 
 此回调提供了从 Windows 到 ELAM 驱动程序，包括所有引导启动驱动程序都已都初始化，回调功能将无法再正常运行时的状态更新。
 
 ### <a name="callback-type"></a>回调类型
 
-[ **BDCB_CALLBACK_TYPE 枚举**](https://msdn.microsoft.com/library/windows/hardware/hh406352)介绍两种类型的回调：
+[ **BDCB_CALLBACK_TYPE 枚举**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_bdcb_callback_type)介绍两种类型的回调：
 
 -   为提供的 ELAM 驱动程序 (BdCbStatusUpdate) 的状态更新的回调
 -   回调 AM 驱动程序用来对引导启动驱动程序和依赖 Dll 初始化其映像 (BdCbInitializeImage) 之前进行分类
@@ -120,7 +120,7 @@ ELAM hive 后卸载其使用通过早期启动反恶意软件的性能。 如果
 
 **验证恶意软件签名**
 
-每个 AM ISV 最保留用于验证的恶意软件签名数据的完整性的方法。 [CNG 加密基元函数](https://msdn.microsoft.com/library/windows/desktop/aa833130)可协助验证数字签名和证书上的恶意软件签名数据。
+每个 AM ISV 最保留用于验证的恶意软件签名数据的完整性的方法。 [CNG 加密基元函数](https://docs.microsoft.com/windows/desktop/SecCNG/cng-cryptographic-primitive-functions)可协助验证数字签名和证书上的恶意软件签名数据。
 
 **恶意软件签名失败**
 

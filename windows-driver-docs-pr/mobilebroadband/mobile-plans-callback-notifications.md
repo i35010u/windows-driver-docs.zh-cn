@@ -6,12 +6,12 @@ keywords:
 - Windows Mobile 计划回调通知，移动计划实现的移动运营商
 ms.date: 05/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d93561092bac4024e8c537b7af5f6e22cfe7f9c
-ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
+ms.openlocfilehash: 1aa695f92c24639a44557b4b0dbeee4afc5a7d01
+ms.sourcegitcommit: 19575e9a2aed6bebe7c465e561c10c86baf8d24b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455228"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67395430"
 ---
 # <a name="mobile-plans-callback-notifications"></a>移动计划回调通知
 
@@ -206,7 +206,7 @@ var purchaseMetaData = MobilePlans.createPurchaseMetaData();
 
 ## <a name="cancel-esim-profile-download"></a>取消 esim 卡配置文件下载
 
-到目前为止，这适用于[延迟 esim 卡配置文件下载](#deferred-eSIM-profile-download-and-activation)方案中，但它无法用于将来的用户的情况。
+目前，这适用于延迟 esim 卡配置文件下载方案中，但它无法用于将来的用户的情况。
 
 下图显示了如何移动计划程序而无需离开 MODirect 门户控件支持取消的 esim 卡配置文件下载的高级别流。
 
@@ -374,10 +374,10 @@ function finishPurchaseWithCancellation() {
 | --- | --- | --- | --- |
 | userAccount | 字符串 | 可能值： <ul><li>新建：指示用户已创建了新的用户帐户。</li><li>现有:指示用户记录的现有用户帐户。</li><li>他：指示用户已在此步骤中的采购流程结束。</li><li>None:指示用户未到达此步骤。</li></ul> | "userAccount":"New" |
 | purchaseInstrument | 字符串 | 可能值： <ul><li>新建：指示用户已创建了新的用户帐户。</li><li>现有:指示用户记录的现有用户帐户。</li><li>他：指示用户已在此步骤中的采购流程结束。</li><li>None:指示用户未到达此步骤。</li></ul> | "purchaseInstrument":"New" |
-| 行 | 字符串 | 可能值： <ul><li>新建：指示 SIM 卡已添加的用户帐户。</li><li>现有:指示用户传输到设备的某一现有行。</li><li>他：指示用户已在此步骤中的采购流程结束。</li><li>None:指示用户未到达此步骤。</li></ul> | "line":New" |
+| line | 字符串 | 可能值： <ul><li>新建：指示 SIM 卡已添加的用户帐户。</li><li>现有:指示用户传输到设备的某一现有行。</li><li>他：指示用户已在此步骤中的采购流程结束。</li><li>None:指示用户未到达此步骤。</li></ul> | "line":New" |
 | moDirectStatus | 字符串 | 可能值： <ul><li>完成：指示用户已成功完成购买。</li><li>服务错误：表示用户无法完成购买由于月服务错误。</li><li>InvalidSIM:表示传递给在门户 ICCID 时不正确。</li><li>LogOnFailed： 表示用户无法登录到 MO 门户。</li><li>PurchaseFailed:指示在购买由于计费错误而失败。</li><li>ClientError:指示无效的参数已传递到门户。</li>BillingError:指示已具有用户计费的错误。</li></ul> | "moDirectStatus":"Complete" |
 | planName | 字符串 | 对于成功的事务，此字段不能为空，并且必须提供一个描述性的计划名称。 对于失败的事务，此字段必须是空字符串。 | "planName":"每月 2 GB"|
 
-## <a name="legacy-callback-notifications"></a>旧的回调通知
+## <a name="legacy-callback-notifications"></a>传统回调通知
 
 请参阅其中记录所有旧的回调的特定页[此处](mobile-plans-legacy-callback-notifications.md)

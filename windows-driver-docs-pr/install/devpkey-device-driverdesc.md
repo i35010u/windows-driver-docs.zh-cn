@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ddbea6ef598e3d7a1e40eaa071c88ade7956f385
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 006765d237a8e539db56c9885c3e56746ab7dadd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387062"
 ---
 # <a name="devpkeydevicedriverdesc"></a>DEVPKEY_Device_DriverDesc
 
@@ -61,13 +61,13 @@ DEVPKEY_Device_DriverDesc 设备属性表示为设备实例安装的驱动程序
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverDesc 的值将由*设备描述*由提供的项值[ **INF*模型*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)的安装设备的 INF 文件。
+DEVPKEY_Device_DriverDesc 的值将由*设备描述*由提供的项值[ **INF*模型*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)的安装设备的 INF 文件。
 
 DEVPKEY_Device_DriverDesc 的值不是显示在最终用户对话框中，或出于任何原因由操作系统。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_DriverDesc 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_DriverDesc 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_LocationPaths 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**DriverDesc**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff537732)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_LocationPaths 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**DriverDesc**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -92,7 +92,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

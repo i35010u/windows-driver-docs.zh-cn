@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 180e322a24959e17b677e7da7c5c63bc1a56fea9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f12c623a1fef4f2732d5344e533c038f1f8838a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362039"
 ---
 # <a name="bug-check-0x19d-clustersvhdxlivedump"></a>Bug 检查 0x19D：CLUSTER\_SVHDX\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "63325099"
 群集\_SVHDX\_LIVEDUMP bug 检查的值为 0x0000019D。 这指示 SVHDX 启动此 livedump 来帮助调试不一致的状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="clustersvhdxlivedump-parameters"></a>群集\_SVHDX\_LIVEDUMP 参数

@@ -6,12 +6,12 @@ ms.assetid: 22f58964-23a0-4307-a748-9c1620e30871
 keywords:
 - IRP_MN_QUERY_STOP_DEVICE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 81dc0f034b028e240b637525b3e5026a5b78b938
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14c43846bb6b27b1b09a8a5e79bcb1f9d36a1f93
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381419"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370849"
 ---
 # <a name="irpmnquerystopdevice"></a>IRP\_MN\_查询\_停止\_设备
 
@@ -54,9 +54,9 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 在响应此 IRP，Windows 2000 和更高版本的驱动程序指示它是否可以安全地停用的资源重新平衡设备。
 
-在 Windows 98 上 / 我来说，此 IRP 不仅在期间发送资源重新平衡，但还时设备将被禁用。 驱动程序不能区分这两种情况，因为它应继续像该设备已被禁用。 如果有任何打开的句柄到设备，该驱动程序失败，此 IRP。 如果任何句柄不处于打开状态，如中所述，驱动程序应继续[处理 IRP\_MN\_查询\_停止\_设备请求 (Windows 98 / 我)](https://msdn.microsoft.com/library/windows/hardware/ff546684)。
+在 Windows 98 上 / 我来说，此 IRP 不仅在期间发送资源重新平衡，但还时设备将被禁用。 驱动程序不能区分这两种情况，因为它应继续像该设备已被禁用。 如果有任何打开的句柄到设备，该驱动程序失败，此 IRP。 如果任何句柄不处于打开状态，如中所述，驱动程序应继续[处理 IRP\_MN\_查询\_停止\_设备请求 (Windows 98 / 我)](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-stop-device-request--windows-98-me-)。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用和播放次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用和播放次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 

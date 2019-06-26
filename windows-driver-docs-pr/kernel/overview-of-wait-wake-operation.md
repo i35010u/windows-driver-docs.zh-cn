@@ -12,12 +12,12 @@ keywords:
 - 等待/唤醒 Irp WDK 电源管理，有关等待/唤醒 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c57b4c8047d9747a476e0fd8d34bdfb2757b42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1acc028863d6c9652d73490da8c73b1f61385b7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383830"
 ---
 # <a name="overview-of-waitwake-operation"></a>等待/唤醒操作概述
 
@@ -29,7 +29,7 @@ ms.locfileid: "63360217"
 
 ![说明的 irp 概述关系图\-mn\-等待\-唤醒处理](images/send-waitwake.png)
 
-1.  虽然系统和设备是处于工作状态，设备的电源策略所有者确定，其设备，应启用 （"有"） 用于唤醒。 电源策略所有者请求 power IRP ([**PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)细微的代码与[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766)) 发送到其 PDO 以通知其设备堆栈中的所有驱动程序。 在请求中，策略所有者指定的回调例程 (不完全相同[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程)。
+1.  虽然系统和设备是处于工作状态，设备的电源策略所有者确定，其设备，应启用 （"有"） 用于唤醒。 电源策略所有者请求 power IRP ([**PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)细微的代码与[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)) 发送到其 PDO 以通知其设备堆栈中的所有驱动程序。 在请求中，策略所有者指定的回调例程 (不完全相同[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程)。
 
 2.  电源管理器，通过 I/O 管理器中，将 IRP 发送到设备堆栈的顶部。
 

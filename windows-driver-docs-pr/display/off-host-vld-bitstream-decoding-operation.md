@@ -16,12 +16,12 @@ keywords:
 - 解码视频 WDK DirectX VA，非主机 VLD 位流处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41ff18f2480c2d3f2750973edc4c8b9ae077f567
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0a5819e50452ce4aff38a99754086ea77982093
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372786"
 ---
 # <a name="off-host-vld-bitstream-decoding-operation"></a>主机外 VLD 位流解码操作
 
@@ -62,11 +62,11 @@ ms.locfileid: "63383997"
 
 ### <a name="span-idinverse-quantizationmatrixbuffersspanspan-idinverse-quantizationmatrixbuffersspanspan-idinverse-quantizationmatrixbuffersspaninverse-quantization-matrix-buffers"></a><span id="Inverse-Quantization_Matrix_Buffers"></span><span id="inverse-quantization_matrix_buffers"></span><span id="INVERSE-QUANTIZATION_MATRIX_BUFFERS"></span>反转量化矩阵缓冲区
 
-反转量化矩阵缓冲区发送以初始化用于关闭主机位流解码逆量化矩阵。 反转量化矩阵缓冲区提供有关如何提供新的逆量化矩阵缓冲区之前解码位流中的所有当前和后续视频的信息。 （因此，反转量化矩阵是永久性的。）不能超过一个逆量化矩阵缓冲区可以从主机到快捷键发送一次。 [ **DXVA\_QmatrixData** ](https://msdn.microsoft.com/library/windows/hardware/ff564034)结构将用于压缩视频图片解码量化矩阵数据加载。
+反转量化矩阵缓冲区发送以初始化用于关闭主机位流解码逆量化矩阵。 反转量化矩阵缓冲区提供有关如何提供新的逆量化矩阵缓冲区之前解码位流中的所有当前和后续视频的信息。 （因此，反转量化矩阵是永久性的。）不能超过一个逆量化矩阵缓冲区可以从主机到快捷键发送一次。 [ **DXVA\_QmatrixData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_qmatrixdata)结构将用于压缩视频图片解码量化矩阵数据加载。
 
 ### <a name="span-idslice-controlbuffersspanspan-idslice-controlbuffersspanspan-idslice-controlbuffersspanslice-control-buffers"></a><span id="Slice-Control_Buffers"></span><span id="slice-control_buffers"></span><span id="SLICE-CONTROL_BUFFERS"></span>切片控制缓冲区
 
-切片控制缓冲区指导非主机 VLD 位流处理的操作。 主机软件解码器确定位流中的切片级别重新同步点的位置。 切片定义为位流数据中包括的重新同步点 multimacroblock 层。 在 H.261 轨道 H.261 组的基块 (GOB) 被视为一个切片。 中 H.263 轨道，一系列一个或多个 H.263 大笔开头 GOB 启动代码，并包含任何其他 GOB 开始代码被视为一个切片。 切片控制缓冲区中包含的数组[ **DXVA\_SliceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff564049)切片控制结构，将应用于相应的位流数据缓冲区的内容。
+切片控制缓冲区指导非主机 VLD 位流处理的操作。 主机软件解码器确定位流中的切片级别重新同步点的位置。 切片定义为位流数据中包括的重新同步点 multimacroblock 层。 在 H.261 轨道 H.261 组的基块 (GOB) 被视为一个切片。 中 H.263 轨道，一系列一个或多个 H.263 大笔开头 GOB 启动代码，并包含任何其他 GOB 开始代码被视为一个切片。 切片控制缓冲区中包含的数组[ **DXVA\_SliceInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_sliceinfo)切片控制结构，将应用于相应的位流数据缓冲区的内容。
 
 ### <a name="span-idbitstreambuffersspanspan-idbitstreambuffersspanspan-idbitstreambuffersspanbitstream-buffers"></a><span id="Bitstream_Buffers"></span><span id="bitstream_buffers"></span><span id="BITSTREAM_BUFFERS"></span>位流缓冲区
 

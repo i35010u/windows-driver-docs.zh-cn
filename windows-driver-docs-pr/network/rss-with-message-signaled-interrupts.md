@@ -10,12 +10,12 @@ keywords:
 - MSI X WDK 网络 RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4b52008ecac2d926e367b7322f09b6e87863bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16470ce0747917f85ae9b63f491966e334d22dd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382128"
 ---
 # <a name="rss-with-message-signaled-interrupts"></a>使用消息信号中断的 RSS
 
@@ -44,13 +44,13 @@ ms.locfileid: "63359769"
 
 2.  NIC 可以填充其他接收缓冲区并在任何时间将它们添加到队列，但不会中断该 CPU 再次直到微型端口驱动程序启用该 cpu 中断。
 
-3.  NDIS 调用微型端口驱动程序的 ISR ( [ *MiniportInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559395)) 上当前的 CPU。
+3.  NDIS 调用微型端口驱动程序的 ISR ( [ *MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)) 上当前的 CPU。
 
 4.  ISR 禁用当前的 CPU 上的中断和队列上当前 CPU DPC。
 
     DPC 运行在当前的 CPU 上时，其他 Cpu 上仍会发生中断。
 
-5.  NDIS 调用[ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)函数每个排队 DPC。 每个 DPC:
+5.  NDIS 调用[ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)函数每个排队 DPC。 每个 DPC:
     1.  生成其队列中接收所有的接收缓冲区描述符，并指示驱动程序堆栈上的数据。 有关详细信息，请参阅[接收数据，该值指示 RSS](indicating-rss-receive-data.md)。
     2.  当前 cpu 启用中断。 此中断已完成，此过程再次启动。 请注意，没有以原子操作需要跟踪其他 Dpc 的进度。
 

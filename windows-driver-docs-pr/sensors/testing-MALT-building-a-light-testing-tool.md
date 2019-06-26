@@ -5,12 +5,12 @@ description: 本主题提供有关如何使用 MALT （Microsoft 环境光工具
 ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 489b5a3a7496a6c211d4673c98a285818c88d61b
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: b4a443d60da8a6f9da38439a97c15ab85bbb3d59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385707"
 ---
 # <a name="building-a-light-testing-tool-malt"></a>构建测试工具 (MALT) 的光
 
@@ -28,7 +28,7 @@ ms.locfileid: "65405259"
 
 您将需要以下组件。
 
-* [Microcontroller](https://www.arduino.cc/en/Main/arduinoBoardMega)
+* [Microcontroller](https://store.arduino.cc/mega-2560-r3)
 * [足够多的已校准的光源 / 范围](https://www.superbrightleds.com/moreinfo/led-panel-light/square-12v-led-panel-light-fixture-1ft-x-1ft-35w/2184/)
 * [光源的电源](https://www.superbrightleds.com/moreinfo/led-panel-light/square-12v-led-panel-light-fixture-1ft-x-1ft-35w/2184/#tab/PowerSupplies/subtab/powersupply)
 * [数字模拟转换器 (DAC) 到](https://www.microchip.com/wwwproducts/en/MCP4821)

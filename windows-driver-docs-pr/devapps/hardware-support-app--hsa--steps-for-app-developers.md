@@ -9,16 +9,16 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9f45b8c1005a42b8905086d9f1d3038c8ec1130
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f362f1de55cd44db984bd28926f2bd42c4add3d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369386"
 ---
 # <a name="hardware-support-app-hsa-steps-for-app-developers"></a>硬件支持应用 (HSA)：适用于应用开发人员的步骤
 
-本主题介绍如何将驱动程序相关联的特定于设备的应用程序或[RPC （远程过程调用）](https://msdn.microsoft.com/library/windows/desktop/aa378651)终结点。  如果搭配使用以这种方式，应用程序即为作为硬件支持应用程序 (HSA)。  分发和更新硬件支持应用程序，通过 Microsoft Store。
+本主题介绍如何将驱动程序相关联的特定于设备的应用程序或[RPC （远程过程调用）](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)终结点。  如果搭配使用以这种方式，应用程序即为作为硬件支持应用程序 (HSA)。  分发和更新硬件支持应用程序，通过 Microsoft Store。
 
 开头[通用 Windows 平台 (UWP) 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)或桌面 (Win32) 应用。  如果你想要使用桌面应用程序，使用[桌面桥](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)创建 Windows 应用程序包可以上传到存储区。
 
@@ -78,7 +78,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 ## <a name="add-a-custom-capability-to-the-app-package-manifest"></a>将自定义功能添加到应用程序的包清单
 
-接下来，修改您[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/BR211474)源文件 (`Package.appxmanifest`)，包含功能属性。
+接下来，修改您[应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)源文件 (`Package.appxmanifest`)，包含功能属性。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

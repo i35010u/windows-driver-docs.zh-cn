@@ -4,12 +4,12 @@ description: 本部分提供了建议的驱动程序/固件更改以实现扩展
 ms.assetid: 9C59C8A2-335F-4BA4-8682-6DFFB82E1CAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d652f12f862992d6d02c5de2f269a3cc4bfb069
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6aea45a28acbb098ba0204b849c2dcbf5e62b27f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384340"
 ---
 # <a name="wdi-extended-channel-switch-announcement-ecsa"></a>WDI 扩展通道切换通告 (ECSA)
 
@@ -24,7 +24,7 @@ ms.locfileid: "63330519"
     -   如果远程对等方支持 ECSA，吸引 ECSA 可以移动对等方，以生成单通道的通道配置。
 -   当设备是客户端，并且处于多渠道模式：
     -   如果 ECSA 请求来自远程对等方，然后支持它。
--   将通道更改通知发送到带有的操作系统[NDIS\_状态\_WDI\_指示\_P2P\_组\_操作系统\_通道](https://msdn.microsoft.com/library/windows/hardware/dn925643).
+-   将通道更改通知发送到带有的操作系统[NDIS\_状态\_WDI\_指示\_P2P\_组\_操作系统\_通道](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-p2p-group-operating-channel).
 
  
 

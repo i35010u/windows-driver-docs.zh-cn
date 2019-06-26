@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_NEXT_DIALOG_TOKEN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc10eec5f6d557734ee2fa999b7ab410dcde957
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00eeab719c061efbeac7278d0c985d7bbd6c7427
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385255"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385718"
 ---
 # <a name="wditlvnextdialogtoken"></a>WDI\_TLV\_NEXT\_DIALOG\_TOKEN
 
@@ -64,7 +64,7 @@ WDI\_TLV\_下一步\_对话框\_令牌是包含对话框标记以在下一步操
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WDI\_GET\_NEXT\_ACTION\_FRAME\_DIALOG\_TOKEN](https://msdn.microsoft.com/library/windows/hardware/dn925844)
+[OID\_WDI\_GET\_NEXT\_ACTION\_FRAME\_DIALOG\_TOKEN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-next-action-frame-dialog-token)
 
  
 

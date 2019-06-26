@@ -8,12 +8,12 @@ keywords:
 - 设备属性表 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaccb3051dfdef003fcfc46a1ffe403a48a876a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8be259a3af64e5c3df1e2af8527d82cf53cbe350
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383795"
 ---
 # <a name="wmi-property-sheets"></a>WMI 属性表
 
@@ -21,7 +21,7 @@ ms.locfileid: "63391047"
 
 
 
-用户友好的驱动程序使用户能够控制通过其设置其**设备管理器**属性表。 请参阅[使用设备管理器](https://msdn.microsoft.com/library/windows/hardware/ff553570)有关设备管理器的说明。
+用户友好的驱动程序使用户能够控制通过其设置其**设备管理器**属性表。 请参阅[使用设备管理器](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager)有关设备管理器的说明。
 
 驱动程序可以自动公开它们在属性页实现通过使用任何 WMI 类[WMI 通用的属性页提供程序](wmi-generic-property-page-provider.md)。
 

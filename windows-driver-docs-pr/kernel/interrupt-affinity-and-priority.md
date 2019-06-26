@@ -10,12 +10,12 @@ keywords:
 - 处理器关联 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db9bf41015d10da67a46ae7c2e7c3f81bf731011
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0993e0338afb3d191a755f6b642c4f8cb4762d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341069"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369771"
 ---
 # <a name="interrupt-affinity"></a>中断相关性
 
@@ -26,12 +26,12 @@ ms.locfileid: "63341069"
 
 管理员可以设置下的以下条目 **\\中断管理\\关联策略**注册表项：
 
--   **DevicePolicy**是 REG\_DWORD 值，该值指定的关联策略。 每个可能的设置对应于[ **IRQ\_设备\_策略**](https://msdn.microsoft.com/library/windows/hardware/ff551783)值。
+-   **DevicePolicy**是 REG\_DWORD 值，该值指定的关联策略。 每个可能的设置对应于[ **IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)值。
 
 
 -   **AssignmentSetOverride**是 REG\_二进制值，该值指定[ **KAFFINITY** ](#about-kaffinity)掩码。 如果**DevicePolicy**是 0x04 (**IrqPolicySpecifiedProcessors**)，则此掩码指定一组处理器，若要将分配到设备的中断。
 
-下表列出[ **IRQ\_设备\_策略**](https://msdn.microsoft.com/library/windows/hardware/ff551783)值和相应的注册表设置为**DevicePolicy**。 每个值的含义的详细信息，请参阅[ **IRQ\_设备\_策略**](https://msdn.microsoft.com/library/windows/hardware/ff551783)。
+下表列出[ **IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)值和相应的注册表设置为**DevicePolicy**。 每个值的含义的详细信息，请参阅[ **IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)。
 
 <table>
 <colgroup>
@@ -74,7 +74,7 @@ ms.locfileid: "63341069"
 
  
 
-驱动程序的 INF 文件可以提供的注册表值的默认设置。 下面是如何设置的示例**DevicePolicy**值设置为**IrqPolicyOneCloseProcessor** INF 文件中。 有关详细信息，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+驱动程序的 INF 文件可以提供的注册表值的默认设置。 下面是如何设置的示例**DevicePolicy**值设置为**IrqPolicyOneCloseProcessor** INF 文件中。 有关详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 ```cpp
 [install-section-name.HW]
@@ -84,7 +84,7 @@ AddReg=add-registry-section
 HKR, "Interrupt Management\Affinity Policy", DevicePolicy, 0x00010001, 2
 ```
 
-系统提供的注册表设置到设备的驱动程序会在发送时[ **IRP\_MN\_筛选器\_资源\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff550874)IRP 到驱动程序。 操作系统提供[ **IO\_资源\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff550598)结构与每个中断**类型**成员设置为**CmResourceTypeInterrupt**。 消息信号中断，CM\_资源\_中断\_消息位**标志**成员设置; 否则，很明显。 **U.Interrupt**成员描述中断的设置。
+系统提供的注册表设置到设备的驱动程序会在发送时[ **IRP\_MN\_筛选器\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)IRP 到驱动程序。 操作系统提供[ **IO\_资源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_descriptor)结构与每个中断**类型**成员设置为**CmResourceTypeInterrupt**。 消息信号中断，CM\_资源\_中断\_消息位**标志**成员设置; 否则，很明显。 **U.Interrupt**成员描述中断的设置。
 
 下表提供了注册表设置和成员之间的对应关系**u.Interrupt**。
 

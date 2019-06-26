@@ -8,12 +8,12 @@ keywords:
 - 释放 HID 资源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cd26f4b348619b7d200bf9b47eec7b12787d8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fff45294ae04a7bd055e55e9924aacb7b6d4a15e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378799"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381781"
 ---
 # <a name="freeing-resources"></a>释放资源
 
@@ -23,7 +23,7 @@ ms.locfileid: "63378799"
 
 
 
-例如，在用户模式应用程序必须调用[ **SetupDiDestroyDeviceInfoList** ](https://msdn.microsoft.com/library/windows/hardware/ff550996)句柄从它获取设备列表[ **SetupDiGetClassDevs**](https://msdn.microsoft.com/library/windows/hardware/ff551069) HIDClass 设备及其初始化和连接操作完成后。 调用失败**SetupDiDestroyDeviceInfoList**会导致内存泄漏。
+例如，在用户模式应用程序必须调用[ **SetupDiDestroyDeviceInfoList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdidestroydeviceinfolist)句柄从它获取设备列表[ **SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) HIDClass 设备及其初始化和连接操作完成后。 调用失败**SetupDiDestroyDeviceInfoList**会导致内存泄漏。
 
  
 

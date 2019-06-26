@@ -10,12 +10,12 @@ keywords:
 - 指针 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b75f0597dc3d4259fc22310f43cbe18f7430a3b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4ca82f92c031c53f170d1e4b1f25df1a8a8c087
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386525"
 ---
 # <a name="retrieving-network-configuration-interface-pointers"></a>检索网络配置接口指针
 
@@ -23,7 +23,7 @@ ms.locfileid: "63377536"
 
 
 
-当网络配置子系统初始化通知对象的实例中所述[创建并初始化通知的对象的实例](creating-and-initializing-an-instance-of-a-notify-object.md)，该对象接收[ **INetCfgComponent** ](https://msdn.microsoft.com/library/windows/hardware/ff547715)并[ **INetCfg** ](https://msdn.microsoft.com/library/windows/hardware/ff547694)接口指针。 **INetCfgComponent**指向该对象可用于访问和控制该组件的通知对象的组件接口。 **INetCfg**指向通知对象可用于访问网络配置的所有方面的根网络配置接口。 下面的代码使用这些**INetCfgComponent**并**INetCfg**接口指针来检索通知对象可能需要其他网络配置接口。
+当网络配置子系统初始化通知对象的实例中所述[创建并初始化通知的对象的实例](creating-and-initializing-an-instance-of-a-notify-object.md)，该对象接收[ **INetCfgComponent** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547715(v=vs.85))并[ **INetCfg** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547694(v=vs.85))接口指针。 **INetCfgComponent**指向该对象可用于访问和控制该组件的通知对象的组件接口。 **INetCfg**指向通知对象可用于访问网络配置的所有方面的根网络配置接口。 下面的代码使用这些**INetCfgComponent**并**INetCfg**接口指针来检索通知对象可能需要其他网络配置接口。
 
 ```C++
 // Using the notify object's component interface that the notify 

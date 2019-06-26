@@ -4,12 +4,12 @@ description: 从 Windows XP，run-down protection，可用于内核模式驱动�
 ms.assetid: AF451636-DBA0-4905-9723-73EE7AA9483E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d43014655454b20629cdda877bcc7e0cb6f792f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 120e24c276b75c119691dcc93434dc2081ddd73b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377326"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373378"
 ---
 # <a name="run-down-protection"></a>停止运行保护
 
@@ -23,13 +23,13 @@ ms.locfileid: "63377326"
 ## <a name="primary-run-down-protection-routines"></a>主 run-down 保护例程
 
 
-若要开始共享对象，该对象所属的驱动程序调用[ **ExInitializeRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569373)例程，以初始化对象上的 run-down 保护。 此调用后，访问该对象的其他驱动程序可以获取和释放的对象上的 run-down 保护。
+若要开始共享对象，该对象所属的驱动程序调用[ **ExInitializeRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializerundownprotection)例程，以初始化对象上的 run-down 保护。 此调用后，访问该对象的其他驱动程序可以获取和释放的对象上的 run-down 保护。
 
-访问共享的对象调用的驱动程序[ **ExAcquireRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569371)例程到对象上请求 run-down 保护。 完成访问后，此驱动程序会调用[ **ExReleaseRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569375)例程来释放该对象上的 run-down 保护。
+访问共享的对象调用的驱动程序[ **ExAcquireRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirerundownprotection)例程到对象上请求 run-down 保护。 完成访问后，此驱动程序会调用[ **ExReleaseRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaserundownprotection)例程来释放该对象上的 run-down 保护。
 
 如果所属的驱动程序确定必须删除该共享的对象，该驱动程序等待对象的未完成的所有访问都完成后删除该对象。
 
-若要删除的共享的对象的准备，在所属的驱动程序将调用[ **ExWaitForRundownProtectionRelease** ](https://msdn.microsoft.com/library/windows/hardware/jj569378)例程，以等待对象向下运行。 在此调用期间**ExWaitForRundownProtectionRelease**等待所有以前授予的 run-down 保护的对象被释放，但可防止针对 run-down 保护的对象上的新请求授予。 最后一个受保护的访问完成并且 run-down 保护的所有实例会被都释放后, **ExWaitForRundownProtectionRelease**退货和所属的驱动程序可以安全地删除对象。
+若要删除的共享的对象的准备，在所属的驱动程序将调用[ **ExWaitForRundownProtectionRelease** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exwaitforrundownprotectionrelease)例程，以等待对象向下运行。 在此调用期间**ExWaitForRundownProtectionRelease**等待所有以前授予的 run-down 保护的对象被释放，但可防止针对 run-down 保护的对象上的新请求授予。 最后一个受保护的访问完成并且 run-down 保护的所有实例会被都释放后, **ExWaitForRundownProtectionRelease**退货和所属的驱动程序可以安全地删除对象。
 
 **ExWaitForRundownProtectionRelease**阻止调用驱动程序线程的执行，直到保存 run-down 保护了共享对象的所有驱动程序发布这种保护。 若要防止**ExWaitForRundownProtectionRelease**阻止过长时间的执行访问共享的对象的驱动程序线程应避免被挂起时它们在对象上具有 run-down 保护。 出于此原因，访问驱动程序应调用**ExAcquireRundownProtection**并**ExReleaseRundownProtection**临界区或受保护的区域内或同时运行在 IRQL = APC\_级别。
 
@@ -45,7 +45,7 @@ Run-down 保护不会序列化到共享对象的访问。 如果两个或多个�
 ## <a name="the-exrundownref-structure"></a>EX\_断开\_REF 结构
 
 
-[ **EX\_断开\_REF** ](https://msdn.microsoft.com/library/windows/hardware/jj569379)结构上的共享对象跟踪的 run-down 保护的状态。 此结构是不透明的驱动程序。 系统提供 run-down 保护例程使用此结构的 run-down 保护生效目前对对象的实例数进行计数。 这些例程使用此结构来跟踪该对象向下运行还是在过程中向下运行。
+[ **EX\_断开\_REF** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构上的共享对象跟踪的 run-down 保护的状态。 此结构是不透明的驱动程序。 系统提供 run-down 保护例程使用此结构的 run-down 保护生效目前对对象的实例数进行计数。 这些例程使用此结构来跟踪该对象向下运行还是在过程中向下运行。
 
 若要开始共享对象，该对象所属的驱动程序调用**ExInitializeRundownProtection**来初始化**EX\_断开\_REF**与关联的结构对象。 初始化之后，拥有驱动程序可以提供此结构其他驱动程序的需要对对象的访问。 访问驱动程序将此结构作为参数传递**ExAcquireRundownProtection**并**ExReleaseRundownProtection**调用的获取和释放的对象上的 run-down 保护。 所属的驱动程序将此结构作为参数传递**ExWaitForRundownProtectionRelease**等待要向下运行，以便可以安全删除的对象的调用。
 
@@ -61,11 +61,11 @@ Run-down 保护是其中一种以保证对共享对象的安全访问。 另一�
 
 其他几个 run-down 保护例程都可用，除了前面所述。 某些驱动程序可能会使用这些其他例程。
 
-[ **ExReInitializeRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569374)例程使以前用[ **EX\_断开\_REF** ](https://msdn.microsoft.com/library/windows/hardware/jj569379)结构要与新对象相关联，并初始化此对象上的 run-down 保护。
+[ **ExReInitializeRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializerundownprotection)例程使以前用[ **EX\_断开\_REF** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构要与新对象相关联，并初始化此对象上的 run-down 保护。
 
-[ **ExRundownCompleted** ](https://msdn.microsoft.com/library/windows/hardware/jj569377)例行更新**EX\_断开\_REF**结构，指示关联的对象的向下运行已完成。
+[ **ExRundownCompleted** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exrundowncompleted)例行更新**EX\_断开\_REF**结构，指示关联的对象的向下运行已完成。
 
-[ **ExAcquireRundownProtectionEx** ](https://msdn.microsoft.com/library/windows/hardware/jj569372)并[ **ExReleaseRundownProtectionEx** ](https://msdn.microsoft.com/library/windows/hardware/jj569376)例程是类似于[ **ExAcquireRundownProtection** ](https://msdn.microsoft.com/library/windows/hardware/jj569371)并[ **ExReleaseRundownProtection**](https://msdn.microsoft.com/library/windows/hardware/jj569375)。 以下四种例程中递增或递减的 run-down 保护实例实际上对共享对象的计数。 而**ExAcquireRundownProtection**并**ExReleaseRundownProtection**递增和递减 1，此计数**ExAcquireRundownProtectionEx**并**ExReleaseRundownProtectionEx**递增和递减的任意量的计数。
+[ **ExAcquireRundownProtectionEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirerundownprotectionex)并[ **ExReleaseRundownProtectionEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaserundownprotectionex)例程是类似于[ **ExAcquireRundownProtection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirerundownprotection)并[ **ExReleaseRundownProtection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaserundownprotection)。 以下四种例程中递增或递减的 run-down 保护实例实际上对共享对象的计数。 而**ExAcquireRundownProtection**并**ExReleaseRundownProtection**递增和递减 1，此计数**ExAcquireRundownProtectionEx**并**ExReleaseRundownProtectionEx**递增和递减的任意量的计数。
 
  
 

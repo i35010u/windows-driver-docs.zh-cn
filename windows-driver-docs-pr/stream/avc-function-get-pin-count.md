@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b6c54f19f2226488ce33d48e43b994b27df4230
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d71361da9d9c7675e0804f02f25e0ad8f2b35bad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331689"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386742"
 ---
 # <a name="avcfunctiongetpincount"></a>AVC\_函数\_获取\_PIN\_计数
 
@@ -96,7 +96,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="see-also"></a>请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)， [ **AVC\_PIN\_计数**](https://msdn.microsoft.com/library/windows/hardware/ff554183)， [ **AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)， [ **AVC\_PIN\_计数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_count)， [ **AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
 
  
 

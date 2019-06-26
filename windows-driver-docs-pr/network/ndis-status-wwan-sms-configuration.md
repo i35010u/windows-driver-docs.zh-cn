@@ -5,12 +5,12 @@ ms.assetid: 86dfe2dc-070b-43d9-b6fa-54dee985c65d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SMS_CONFIGURATION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6edeb040b97225603118c9313d61b490536387f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb3f97a1dcad87fb73eadfcb4a88c1dfa6b9d48f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379303"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386858"
 ---
 # <a name="ndisstatuswwansmsconfiguration"></a>NDIS\_状态\_WWAN\_SMS\_配置
 
@@ -19,7 +19,7 @@ ms.locfileid: "63379303"
 
 微型端口驱动程序还可以发送未经请求的事件与该通知。
 
-使用此通知[ **NDIS\_WWAN\_SMS\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff567935)结构。
+使用此通知[ **NDIS\_WWAN\_SMS\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -51,7 +51,7 @@ SMS 操作准备就绪 MB 设备的短信子系统时，微型端口驱动程序
 
 [OID\_WWAN\_SMS\_CONFIGURATION](oid-wwan-sms-configuration.md)
 
-[**NDIS\_WWAN\_SMS\_CONFIGURATION**](https://msdn.microsoft.com/library/windows/hardware/ff567935)
+[**NDIS\_WWAN\_SMS\_CONFIGURATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)
 
  
 

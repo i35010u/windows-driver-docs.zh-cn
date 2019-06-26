@@ -7,12 +7,12 @@ keywords:
 - 回调例程 WDK WMI Srb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5498f1a765e6cfff252c7a3afa2e36d2ffdb3ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 478d86a7bad8855bbe18e1a7be31ae08e0a8368f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392744"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368309"
 ---
 # <a name="designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-with-data-fields"></a>设计可以通过数据字段处理 WMI 类的微型端口驱动程序回调例程
 
@@ -59,7 +59,7 @@ typedef struct _HBAFCPBindingEntry
 
 管理输入和输出数据时，可以强制转换为输入和输出缓冲区的 SRB 此结构声明。
 
-返回前，应调用回调例程[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)。 此 SCSI 端口 WMI 库例程的信息，例如请求的状态和返回数据的大小更新请求上下文。 请求上下文中存储的数据有关的详细信息，请参阅[ **SCSIWMI\_请求\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff564946)。
+返回前，应调用回调例程[ **ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)。 此 SCSI 端口 WMI 库例程的信息，例如请求的状态和返回数据的大小更新请求上下文。 请求上下文中存储的数据有关的详细信息，请参阅[ **SCSIWMI\_请求\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmi_request_context)。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 259d7a3e59f4d73d36ba8893dabe1b2510b07380
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 031dc2d519d8fc620d94f011d73c8acaeb7ab511
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378237"
 ---
 # <a name="devpkeydevicehardwareids"></a>DEVPKEY_Device_HardwareIds
 
@@ -64,11 +64,11 @@ DEVPKEY_DEVICE_HardwareIds 设备属性表示设备实例的硬件标识符的�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DEVICE_HardwareIds 的值将由*hw id*条目的值由提供的设备[ **INF*模型*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)的安装设备的 INF 文件。
+DEVPKEY_DEVICE_HardwareIds 的值将由*hw id*条目的值由提供的设备[ **INF*模型*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)的安装设备的 INF 文件。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_DEVICE_HardwareIds 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_DEVICE_HardwareIds 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DEVICE_HardwareIds 属性键。 相反，相应的 SPDRP_HARDWAREID 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DEVICE_HardwareIds 属性键。 相反，相应的 SPDRP_HARDWAREID 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -93,9 +93,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF*模型*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)
+[**INF*模型*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

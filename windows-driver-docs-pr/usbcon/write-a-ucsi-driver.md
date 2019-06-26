@@ -3,12 +3,12 @@ Description: 描述的行为在传输过程中实现 UCSI 规范 UCSI 类扩展�
 title: 编写 UCSI 客户端驱动程序
 ms.date: 09/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 625212799bed9e6bec50495c7556736d8a6f20ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8dafc98f16cb5b0cfab0e931fcb52198efaf97f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389142"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385344"
 ---
 # <a name="write-a-ucsi-client-driver"></a>编写 UCSI 客户端驱动程序
 
@@ -38,7 +38,7 @@ USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序可用作具有嵌�
 -   KMDF 版本 1.27 版
 
 
-**重要的 Api**
+**重要的 API**
 
 [UcmUcsiCx 类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
 
@@ -98,7 +98,7 @@ UcmUcsiCx 抽象化为 PPM 固件从 OPM 发送 UCSI 命令和 PPM 固件从接�
 
 -   安装 Windows 10 桌面版 （主页、 专业版、 企业版和教育版）。
 
--   [安装](https://developer.microsoft.com/windows/hardware/windows-driver-kit)最新 Windows 驱动程序工具包 (WDK) 在开发计算机上。 该工具包具有必需的标头文件和库，用于编写客户端驱动程序，具体而言，你将需要：
+-   [安装](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)最新 Windows 驱动程序工具包 (WDK) 在开发计算机上。 该工具包具有必需的标头文件和库，用于编写客户端驱动程序，具体而言，你将需要：
 
     -   存根 （stub） 库中，(UcmUcsiCxStub.lib)。 库将转换所做的客户端驱动程序的调用，并将其传递到此类扩展。
     -   标头文件，Ucmucsicx.h。

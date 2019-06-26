@@ -4,19 +4,19 @@ description: 使用 SetupAPI 和 Configuration Manager 访问设备属性
 ms.assetid: ec00d9c0-1355-478b-af48-0b589628e2d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0893fed50015044d7b8d3b08f1ce4ec2ee7d27d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7149a0e3f00511d64fc9a1caf7bf0684de3e90d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339410"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384756"
 ---
 # <a name="using-setupapi-and-configuration-manager-to-access-device-properties"></a>使用 SetupAPI 和 Configuration Manager 访问设备属性
 
 
 Windows Server 2003、 Windows XP 和 Windows 2000 支持设备属性的表示形式，对应到支持的系统定义的设备属性中的大部分[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)的 Windows Vista 和更高版本的 Windows。
 
-在这些早期版本的 Windows， [SetupAPI 函数](setupapi.md)，[配置管理器函数](https://msdn.microsoft.com/library/windows/hardware/ff549713)，和 Windows 注册表函数可用来访问设备的属性，如以下所述主题：
+在这些早期版本的 Windows， [SetupAPI 函数](setupapi.md)，[配置管理器函数](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))，和 Windows 注册表函数可用来访问设备的属性，如以下所述主题：
 
 [访问设备实例 SPDRP_Xxx 属性](accessing-device-instance-spdrp-xxx-properties.md)
 

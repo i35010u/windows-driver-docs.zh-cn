@@ -9,12 +9,12 @@ keywords:
 - 事件的 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 276342417ba8ab8697c83eec3a4304c0c5035bb7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51595a2596dd53cb34821e23439a6f1e1bfa64f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387164"
 ---
 # <a name="dvd-decoder-related-ks-events"></a>与 DVD 解码器相关的 KS 事件
 
@@ -24,7 +24,7 @@ ms.locfileid: "63363914"
 
 下表描述了流式处理事件集和其相应的事件与 DVD 解码器硬件相关的内核：
 
-[KSEVENTSETID\_VPNotify](https://msdn.microsoft.com/library/windows/hardware/ff561780)组流式处理与调谐器事件相关的事件的所有内核事件都设置。
+[KSEVENTSETID\_VPNotify](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify)组流式处理与调谐器事件相关的事件的所有内核事件都设置。
 
 <table>
 <colgroup>
@@ -39,7 +39,7 @@ ms.locfileid: "63363914"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561933" data-raw-source="[&lt;strong&gt;KSEVENT_VPNOTIFY_FORMATCHANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561933)"><strong>KSEVENT_VPNOTIFY_FORMATCHANGE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vpnotify-formatchange" data-raw-source="[&lt;strong&gt;KSEVENT_VPNOTIFY_FORMATCHANGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vpnotify-formatchange)"><strong>KSEVENT_VPNOTIFY_FORMATCHANGE</strong></a></p></td>
 <td><p>通知 DirectShow 中的视频端口配置，如从 640 x 480 到 720 x 480 解析中的更改的更改。</p></td>
 </tr>
 </tbody>

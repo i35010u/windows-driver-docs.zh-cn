@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77dbfcd29ae981c4efafcb89c466b7139241c32b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b93602eb092efeb07a96c978e19ab316e3a83378
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368851"
 ---
 # <a name="kspropertystreamratecapability"></a>KSPROPERTY\_STREAM\_RATECAPABILITY
 
@@ -53,8 +53,8 @@ KSPROPERTY\_流\_RATECAPABILITY 属性允许图形管理器查询的特定流的
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566752" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566752)"><strong>KSRATE</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566754" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566754)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -86,18 +86,18 @@ Pin 必须能够接受接口标识符使用的任何 pin 类似的拓扑。 它�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**KSRATE**](https://msdn.microsoft.com/library/windows/hardware/ff566752)
+[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)
 
-[**KSRATE\_CAPABILITY**](https://msdn.microsoft.com/library/windows/hardware/ff566754)
+[**KSRATE\_CAPABILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability)
 
  
 

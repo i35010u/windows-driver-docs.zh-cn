@@ -6,12 +6,12 @@ keywords:
 - 元数据字段 L2 标识符网络驱动程序
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fe05ff69fde74e2abf02e7efa41193ffe2fbbfd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36239d3d8397a74cf6aad9a1081e3428e7b42fa2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373982"
 ---
 # <a name="metadata-field-l2-identifiers"></a>元数据字段 L2 标识符
 
@@ -34,5 +34,5 @@ Windows 8 和 Windows Server 2012 引入了元数据字段 L2 标识符。
 
 [在每个筛选层的元数据字段](metadata-fields-at-each-filtering-layer.md)
 
-[FWPS_INCOMING_METADATA_VALUES0](https://msdn.microsoft.com/library/windows/hardware/ff552397)
+[FWPS_INCOMING_METADATA_VALUES0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_incoming_metadata_values0_)
 

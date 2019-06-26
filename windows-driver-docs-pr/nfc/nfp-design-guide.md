@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ed01d9592cf0cb358c60da604dd79af89a6d72c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 333199d7540ca307d8fa8d7e70ebb66824a7f67d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373837"
 ---
 # <a name="near-field-proximity-design-guide"></a>附近的现场邻近设计指南
 
@@ -57,6 +57,6 @@ ms.locfileid: "63378639"
 
  
 ## <a name="related-topics"></a>相关主题
- [NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+ [NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

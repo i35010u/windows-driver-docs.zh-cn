@@ -3,12 +3,12 @@ Description: 本部分提供有关 USB 带宽慎重地管理的指南。
 title: USB 带宽分配
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f96f0b7d9390f4627a9fd156fc63bb7f7ba4d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e431ce8e26de70c6f7f338c9a7ad93d0c7cf5ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331690"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369531"
 ---
 # <a name="usb-bandwidth-allocation"></a>USB 带宽分配
 
@@ -80,7 +80,7 @@ USB 2.0 规范要求有零带宽终结点的默认接口设置同步设备。 �
 
 > **注意**  
 >
-> Windows XP、 Windows Server 2003 和更高版本中**最大传输大小**的成员[ **USBD\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff539114)结构已过时。 USB 驱动程序堆栈将忽略中的值**最大传输大小**适用于组合键和非组合键的设备。
+> Windows XP、 Windows Server 2003 和更高版本中**最大传输大小**的成员[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)结构已过时。 USB 驱动程序堆栈将忽略中的值**最大传输大小**适用于组合键和非组合键的设备。
 >
 > 在 Windows 2000 中，初始化 USB 驱动程序堆栈**最大传输大小**到 USBD\_默认\_最大\_传输\_大小。 配置设备时，客户端驱动程序可以设置较小的值。 对于复合设备，只能更改每个函数的客户端驱动程序**最大传输大小**对于管道中的非默认接口设置。
 
@@ -139,7 +139,7 @@ USB 传输大小受到以下限制：
 </tr>
 <tr class="even">
 <td>等时</td>
-<td><p>1024<em><strong>wBytesPerInterval</strong> (请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh406269" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406269)"> <strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>) 为 SuperSpeed (xHCI)</p>
+<td><p>1024<em><strong>wBytesPerInterval</strong> (请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor)"> <strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>) 为 SuperSpeed (xHCI)</p>
 <p>1024</em> <strong>MaximumPacketSize</strong>高速度 (xHCI，EHCI)</p>
 <p>256 * <strong>MaximumPacketSize</strong>完整速度 (xHCI，EHCI)</p>
 <p>64 K 全速 （UHCI，OHCI）</p></td>
@@ -156,17 +156,17 @@ USB 传输大小受到以下限制：
 
  
 
-限制使用的传输大小**最大传输大小**不直接影响设备多少带宽消耗。 客户端驱动程序必须将接口设置更改或限制中设置的最大数据包大小**MaximumPacketSize**的成员[ **USBD\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff539114).
+限制使用的传输大小**最大传输大小**不直接影响设备多少带宽消耗。 客户端驱动程序必须将接口设置更改或限制中设置的最大数据包大小**MaximumPacketSize**的成员[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information).
 
 ### <a name="maximum-packet-size"></a>最大数据包大小
 
 
 *最大数据包大小*由定义**wMaxPacketSize**终结点描述符字段。 客户端驱动程序可以控制到设备的选择接口请求中的 USB 数据包大小。 更改此值不会更改**wMaxPacketSize**在设备上。
 
-在中[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)请求是[ **USBD\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff539114)管道的结构。 在该结构中，
+在中[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)请求是[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)管道的结构。 在该结构中，
 
--   修改**MaximumPacketSize**的成员[ **USBD\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff539114)结构。 将其设置为一个值小于或等于的值**wMaxPacketSize**当前接口设置的设备固件中定义。
--   设置 USBD\_PF\_更改\_最大\_中的数据包标志**PipeFlags**成员[ **USBD\_管道\_信息** ](https://msdn.microsoft.com/library/windows/hardware/ff539114)结构。
+-   修改**MaximumPacketSize**的成员[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)结构。 将其设置为一个值小于或等于的值**wMaxPacketSize**当前接口设置的设备固件中定义。
+-   设置 USBD\_PF\_更改\_最大\_中的数据包标志**PipeFlags**成员[ **USBD\_管道\_信息** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)结构。
 
 有关选择界面设置的信息，请参阅[如何选择一种配置 USB 设备](how-to-select-a-configuration-for-a-usb-device.md)。
 
@@ -177,7 +177,7 @@ USB 传输大小受到以下限制：
 
 **注意**  
 
-较旧的控制器上的客户端驱动程序可以重写行为。 在中**TransferFlags**成员的数据传输[ **URB**](https://msdn.microsoft.com/library/windows/hardware/ff538923)，客户端驱动程序必须设置 USBD\_短\_传输\_确定标志。 该标志允许设备发送的数据包小于**wMaxPacketSize**。
+较旧的控制器上的客户端驱动程序可以重写行为。 在中**TransferFlags**成员的数据传输[ **URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)，客户端驱动程序必须设置 USBD\_短\_传输\_确定标志。 该标志允许设备发送的数据包小于**wMaxPacketSize**。
 
 在 xHCI 主控制器，USBD\_短\_传输\_忽略为大容量和中断终结点的确定。 EHCI 控制器上的简短的数据包传输不会导致错误条件。
 

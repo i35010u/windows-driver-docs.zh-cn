@@ -4,12 +4,12 @@ description: 可以使用 Microsoft Visual Studio 设置和执行通过调制解
 ms.assetid: 9E50AA5F-92A2-4360-BB21-A9D4F3E9CA83
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 368ebc2681fce48dc5ef26a11538515be7fda63f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26b071406763cc5cd65374fc3a1af26da9889d39
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366377"
 ---
 # <a name="span-iddebuggersettingupanull-modemcableconnectioninvisualstudiospansetting-up-kernel-mode-debugging-over-a-serial-cable-in-visual-studio"></a><span id="debugger.setting_up_a_null-modem_cable_connection_in_visual_studio"></span>设置通过在 Visual Studio 中的串行电缆内核模式调试
 
@@ -28,7 +28,7 @@ ms.locfileid: "63381932"
 ## <a name="span-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>配置主机和目标计算机
 
 
-1.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
+1.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 2.  主机计算机上，在 Visual Studio 中，当您转至计算机配置对话框中，选择**预配计算机，并选择调试器设置**。
 3.  有关**连接类型**，选择**串行**。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63381932"
 
 1.  在主计算机上，在 Visual Studio 的**驱动程序**菜单中，选择**测试 &gt; 配置计算机**。
 2.  选择测试计算机的名称，然后单击**下一步**。
-3.  选择**预配计算机，并选择调试器设置**。 单击“下一步” 。
+3.  选择**预配计算机，并选择调试器设置**。 单击“下一步”  。
 4.  如果您的主计算机上使用 COM1**端口**，输入 com1。 如果您的在目标计算机上使用 COM2**目标端口**，输入 com2。
 5.  如果您要用于 115200，波特率**波特率**，输入 115200。
 
@@ -97,7 +97,7 @@ ms.locfileid: "63381932"
 
 ### <a name="span-idsignalabbreviationsspanspan-idsignalabbreviationsspanspan-idsignalabbreviationsspansignal-abbreviations"></a><span id="Signal_Abbreviations"></span><span id="signal_abbreviations"></span><span id="SIGNAL_ABBREVIATIONS"></span>信号缩写
 
-| 缩写 | 信号              |
+| 缩写 | Signal              |
 |--------------|---------------------|
 | Tx           | 将数据传输       |
 | Rx           | 接收数据        |

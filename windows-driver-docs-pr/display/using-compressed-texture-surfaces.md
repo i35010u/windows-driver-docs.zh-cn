@@ -12,12 +12,12 @@ keywords:
 - 光栅器 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88457f90904660b129113cfa9cba967d83db152c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe7b8cbde8c87ef60cf4f369ff49daad3726bc87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373569"
 ---
 # <a name="using-compressed-texture-surfaces"></a>使用压缩纹理图面
 
@@ -25,7 +25,7 @@ ms.locfileid: "63389754"
 ## <span id="ddk_using_compressed_texture_surfaces_gg"></span><span id="DDK_USING_COMPRESSED_TEXTURE_SURFACES_GG"></span>
 
 
-DirectDraw 仅调用驱动程序要执行的操作相同的 DXT 类型的两个图面之间 blt DDCAPS2\_中设置 COPYFOURCC 标志**dwCaps2**的成员[ **DDCORECAPS**](https://msdn.microsoft.com/library/windows/hardware/ff549248)结构。 如果未设置此标志，DirectDraw HEL 执行 blt。 这是备份图面显示复制 blts 重要，因为这是从备份 （系统内存） 图面以显示内存来下载纹理的机制。 因此，有效地公开 DXT 纹理图面需要您的驱动程序以支持 DDCAPS2\_COPYFOURCC 标志。
+DirectDraw 仅调用驱动程序要执行的操作相同的 DXT 类型的两个图面之间 blt DDCAPS2\_中设置 COPYFOURCC 标志**dwCaps2**的成员[ **DDCORECAPS**](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)结构。 如果未设置此标志，DirectDraw HEL 执行 blt。 这是备份图面显示复制 blts 重要，因为这是从备份 （系统内存） 图面以显示内存来下载纹理的机制。 因此，有效地公开 DXT 纹理图面需要您的驱动程序以支持 DDCAPS2\_COPYFOURCC 标志。
 
 DDCAPS2\_COPYFOURCC 标志会影响某些其他。 您的驱动程序必须能够执行 blt FOURCC 格式具有至少包含这些属性之间：
 
@@ -51,7 +51,7 @@ DDCAPS2\_COPYFOURCC 标志会影响某些其他。 您的驱动程序必须能�
 
 DirectDraw DDCAPS 语义\_CANBLTSYSMEM 功能位表示为所有 blts 调用显示器驱动程序，从系统内存，无法显示内存。 因此，该驱动程序不能调用的此类 blts 从 DXT 图面到非 DXT 表面。 在这种情况下的唯一要求是驱动程序返回 DDHAL\_驱动程序\_NOTHANDLED 不能执行解压缩。 这将导致 DirectDraw 传播 DDERR\_到应用程序不受支持的错误代码。 可接受实现解压缩的 blts 从系统内存，无法显示内存中您的驱动程序，但这不是必需的 DirectX 6.0 及更高版本。
 
-DirectDraw 显示内存分配例程不处理像素格式的注意事项。 [**HeapVidMemAllocAligned**](https://msdn.microsoft.com/library/windows/hardware/ff567267)，例如，需要作为其输入参数的字节计数。 同样，DDHAL\_PLEASEALLOC\_BLOCKSIZE (请参阅**fpVidMem**的成员[ **DD\_面\_全局**](https://msdn.microsoft.com/library/windows/hardware/ff551726)结构) 表示**dwBlockSizeX**并**dwBlockSizeY** DD 的成员\_图面\_全局结构不的字节数和行的计数分别。 因此，如果您的驱动程序使用这些机制之一来分配通过 DirectDraw 分配器的显示内存，您的驱动程序必须能够计算的内存消耗，以字节为单位，单独的 DXT 表面。 下面的示例显示了执行此计算的一种方法：
+DirectDraw 显示内存分配例程不处理像素格式的注意事项。 [**HeapVidMemAllocAligned**](https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)，例如，需要作为其输入参数的字节计数。 同样，DDHAL\_PLEASEALLOC\_BLOCKSIZE (请参阅**fpVidMem**的成员[ **DD\_面\_全局**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)结构) 表示**dwBlockSizeX**并**dwBlockSizeY** DD 的成员\_图面\_全局结构不的字节数和行的计数分别。 因此，如果您的驱动程序使用这些机制之一来分配通过 DirectDraw 分配器的显示内存，您的驱动程序必须能够计算的内存消耗，以字节为单位，单独的 DXT 表面。 下面的示例显示了执行此计算的一种方法：
 
 ```cpp
 DWORD dx, dy;
@@ -87,7 +87,7 @@ dy = (nHeight + 3) >> 2;
 surfsize = dx * dy * blksize;
 ```
 
-当应用程序调用**IDirect3DVertexBuffer7::Lock**或**IDirectDrawSurface7::GetSurfaceDesc**方法 （在 Direct3D 和 DirectDraw SDK 文档集，分别介绍）该驱动程序必须在压缩的面上，设置 DDSD\_LINEARSIZE 标志**dwFlags**的成员[ **DDSURFACEDESC2** ](https://msdn.microsoft.com/library/windows/hardware/ff550340)结构。 此外，驱动程序必须设置分配包含中的图面上压缩的数据的字节数**dwLinearSize**相同的结构的成员。 ( **DwLinearSize**驻留在具有联合的成员**lPitch**成员，因此这些成员是互相排斥，因为是 DDSD\_LINEARSIZE 和 DDSD\_音调标记。)
+当应用程序调用**IDirect3DVertexBuffer7::Lock**或**IDirectDrawSurface7::GetSurfaceDesc**方法 （在 Direct3D 和 DirectDraw SDK 文档集，分别介绍）该驱动程序必须在压缩的面上，设置 DDSD\_LINEARSIZE 标志**dwFlags**的成员[ **DDSURFACEDESC2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))结构。 此外，驱动程序必须设置分配包含中的图面上压缩的数据的字节数**dwLinearSize**相同的结构的成员。 ( **DwLinearSize**驻留在具有联合的成员**lPitch**成员，因此这些成员是互相排斥，因为是 DDSD\_LINEARSIZE 和 DDSD\_音调标记。)
 
 你的硬件或驱动程序可以转换，并将压缩的纹理存储选择 （通常重新排序到硬件效率布局） 的任何格式。 但是，你的硬件或驱动程序必须能够将压缩的纹理转换回其原始 DXT 代码格式，只要 DirectDraw 需要它，也就是说，每当应用程序调用**IDirect3DVertexBuffer7::Lock**方法.
 
@@ -101,7 +101,7 @@ wHeight         = dy;
 dwRGBBitCount   = 8;
 ```
 
-该驱动程序在遇到时系统内存 DXT 图面，例如在[ **D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840)，它必须返回之前进行的字段映射使用它们。 返回映射是：
+该驱动程序在遇到时系统内存 DXT 图面，例如在[ **D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)，它必须返回之前进行的字段映射使用它们。 返回映射是：
 
 ```cpp
 realWidth        = (wWidth  << 2) / blksize;

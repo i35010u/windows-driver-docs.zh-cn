@@ -7,12 +7,12 @@ keywords:
 - 错误 WDK Storport
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0313a9e2c2982f752cc1dc5b576bd7af2757843d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 865a3e4e6c96ead2631fc55fe0218fe84466e62b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389428"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384662"
 ---
 # <a name="multi-tier-reset-in-storport"></a>Storport 中的多层重置
 
@@ -26,7 +26,7 @@ Storport 驱动程序实现更高级的重置方案比 SCSI 端口驱动程序�
 
 若要解决高性能的总线的更复杂要求，Storport 实现允许重置选项的更多的多层重置操作。 有两种类型的重置 Srb 可以请求，而不是一个通过发送：
 
-最后，总线重置操作会受影响的同步回调例程，通过[ **HwStorResetBus**](https://msdn.microsoft.com/library/windows/hardware/ff557415)。
+最后，总线重置操作会受影响的同步回调例程，通过[ **HwStorResetBus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus)。
 
  
 

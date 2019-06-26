@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a01404a4936b11b24b3cb40e0b4c28de9aea1ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 444b8137b566127d8f5171cbd2fb9a0796401a7e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369532"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377319"
 ---
 # <a name="wiaipafullitemname"></a>WIA\_IPA\_FULL\_ITEM\_NAME
 
@@ -38,7 +38,7 @@ WIA\_IPA\_完整\_项\_NAME 属性包含项目的完整名称 （具有路径信
 <a name="remarks"></a>备注
 -------
 
-*完整项名称*等同于*bstrFullItemName*参数[ **wiasCreateDrvItem** ](https://msdn.microsoft.com/library/windows/hardware/ff549160)服务实用工具函数。 应用程序读取 WIA\_IPA\_完整\_项\_当前正在使用名称属性来确定哪个项以及该项 WIA 项树中的位置。 每个项应具有唯一的名称。 应用程序通常使用完整的项名称来搜索 WIA 项树中的项。 WIA 服务创建和维护 WIA\_IPA\_完整\_项\_名称。
+*完整项名称*等同于*bstrFullItemName*参数[ **wiasCreateDrvItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)服务实用工具函数。 应用程序读取 WIA\_IPA\_完整\_项\_当前正在使用名称属性来确定哪个项以及该项 WIA 项树中的位置。 每个项应具有唯一的名称。 应用程序通常使用完整的项名称来搜索 WIA 项树中的项。 WIA 服务创建和维护 WIA\_IPA\_完整\_项\_名称。
 
 应用程序读取 WIA\_IPA\_完整\_项\_名称来确定它将要接收的图像的格式。 应用程序写入此属性设置的格式。 WIA\_IPA\_完整\_项\_名称取决于[ **WIA\_IPA\_TYMED** ](wia-ipa-tymed.md)属性。 WIA 微型驱动程序创建和维护 WIA\_IPA\_完整\_项\_名称。
 
@@ -61,11 +61,11 @@ WIA\_IPA\_完整\_项\_NAME 属性包含项目的完整名称 （具有路径信
 ## <a name="see-also"></a>请参阅
 
 
-[**IWiaMiniDrvTransferCallback::GetNextStream**](https://msdn.microsoft.com/library/windows/hardware/jj151551)
+[**IWiaMiniDrvTransferCallback::GetNextStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)
 
 [**WIA\_IPA\_TYMED**](wia-ipa-tymed.md)
 
-[**wiasCreateDrvItem**](https://msdn.microsoft.com/library/windows/hardware/ff549160)
+[**wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)
 
  
 

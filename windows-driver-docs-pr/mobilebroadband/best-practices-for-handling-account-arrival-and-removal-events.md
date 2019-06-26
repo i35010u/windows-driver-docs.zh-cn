@@ -4,12 +4,12 @@ description: 处理帐户到达和删除事件的最佳做法
 ms.assetid: e299a920-a27e-4832-b81d-1562f86f37e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fbe660d79a3e47cca3c290e2974ac3a9801d3e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d88a456053fba42d2a62e18327b3b52878664d75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392989"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364993"
 ---
 # <a name="best-practices-for-handling-account-arrival-and-removal-events"></a>处理帐户到达和删除事件的最佳做法
 
@@ -20,9 +20,9 @@ ms.locfileid: "63392989"
 
 -   不要假定用户已删除硬件。 睡眠/恢复运行的计算机，具体取决于驱动程序或在总线的行为时，硬件可能暂时不可用。
 
--   不会释放任何已启动的帐户观察程序对象而无需调用其[**停止**](https://msdn.microsoft.com/library/windows/apps/hh770606)方法第一个。 帐户观察程序，类似于所有 Windows 运行时 (WinRT) 对象，将进行引用计数。 调用[**启动**](https://msdn.microsoft.com/library/windows/apps/hh770604)递增其引用计数 (**停止**递减它)。 如果发布已启动的帐户观察程序，它将保持触发事件，但不能调用**停止**近期发布了对句柄。
+-   不会释放任何已启动的帐户观察程序对象而无需调用其[**停止**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_Stop)方法第一个。 帐户观察程序，类似于所有 Windows 运行时 (WinRT) 对象，将进行引用计数。 调用[**启动**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_Start)递增其引用计数 (**停止**递减它)。 如果发布已启动的帐户观察程序，它将保持触发事件，但不能调用**停止**近期发布了对句柄。
 
--   请记住帐户观察程序对象自动时应用程序获取挂起的 Windows，停止并重新启动该应用程序恢复运行时。 这是相同的结果，就像您的应用程序已调用[**停止**](https://msdn.microsoft.com/library/windows/apps/hh770606)并[**启动**](https://msdn.microsoft.com/library/windows/apps/hh770604)，并生成相同的事件。 使用这些事件将保持最新状态与有重大已暂停的时间段内发生的应用。
+-   请记住帐户观察程序对象自动时应用程序获取挂起的 Windows，停止并重新启动该应用程序恢复运行时。 这是相同的结果，就像您的应用程序已调用[**停止**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_Stop)并[**启动**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher#Windows_Networking_NetworkOperators_MobileBroadbandAccountWatcher_Start)，并生成相同的事件。 使用这些事件将保持最新状态与有重大已暂停的时间段内发生的应用。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

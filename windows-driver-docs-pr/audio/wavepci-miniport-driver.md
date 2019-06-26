@@ -8,12 +8,12 @@ keywords:
 - WavePci 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c3f964af84e1da63b41271cd89c905e1626eaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c029b906e58a8cb612e81161152f00ed1644a9d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364787"
 ---
 # <a name="wavepci-miniport-driver"></a>WavePci 微型端口驱动程序
 
@@ -33,51 +33,51 @@ WavePci 微型端口驱动程序应实现两个接口：
 
 -   **流接口**管理批流，并会公开大部分的微型端口驱动程序的功能。
 
-微型端口接口[IMiniportWavePci](https://msdn.microsoft.com/library/windows/hardware/ff536724)，继承中的方法[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)接口。 IMiniportWavePci 提供了以下其他方法：
+微型端口接口[IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepci)，继承中的方法[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)接口。 IMiniportWavePci 提供了以下其他方法：
 
-[**IMiniportWavePci::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536734)
+[**IMiniportWavePci::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-init)
 
 初始化微型端口对象。
 
-[**IMiniportWavePci::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536735)
+[**IMiniportWavePci::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)
 
 创建新的流对象。
 
-[**IMiniportWavePci::Service**](https://msdn.microsoft.com/library/windows/hardware/ff536736)
+[**IMiniportWavePci::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-service)
 
 通知服务的请求的微型端口驱动程序。
 
-流接口[IMiniportWavePciStream](https://msdn.microsoft.com/library/windows/hardware/ff536725)，继承从方法[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)接口。 IMiniportWavePciStream 提供了以下其他方法：
+流接口[IMiniportWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepcistream)，继承从方法[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 IMiniportWavePciStream 提供了以下其他方法：
 
-[**IMiniportWavePciStream::GetAllocatorFraming**](https://msdn.microsoft.com/library/windows/hardware/ff536726)
+[**IMiniportWavePciStream::GetAllocatorFraming**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getallocatorframing)
 
 获取批流微型端口驱动程序的首选分配器组帧参数。
 
-[**IMiniportWavePciStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536727)
+[**IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)
 
 获取批流中的设备的当前位置。
 
-[**IMiniportWavePciStream::MappingAvailable**](https://msdn.microsoft.com/library/windows/hardware/ff536728)
+[**IMiniportWavePciStream::MappingAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-mappingavailable)
 
 指示新的映射是可从端口驱动程序。
 
-[**IMiniportWavePciStream::NormalizePhysicalPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536729)
+[**IMiniportWavePciStream::NormalizePhysicalPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-normalizephysicalposition)
 
 将基于时间的值转换为物理缓冲区位置值。
 
-[**IMiniportWavePciStream::RevokeMappings**](https://msdn.microsoft.com/library/windows/hardware/ff536730)
+[**IMiniportWavePciStream::RevokeMappings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-revokemappings)
 
 撤消以前颁发的映射。
 
-[**IMiniportWavePciStream::Service**](https://msdn.microsoft.com/library/windows/hardware/ff536731)
+[**IMiniportWavePciStream::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-service)
 
 通知服务的请求的流对象。
 
-[**IMiniportWavePciStream::SetFormat**](https://msdn.microsoft.com/library/windows/hardware/ff536732)
+[**IMiniportWavePciStream::SetFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setformat)
 
 设置批流的数据格式。
 
-[**IMiniportWavePciStream::SetState**](https://msdn.microsoft.com/library/windows/hardware/ff536733)
+[**IMiniportWavePciStream::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setstate)
 
 设置批流的状态。
  

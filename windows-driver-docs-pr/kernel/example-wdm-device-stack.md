@@ -15,12 +15,12 @@ keywords:
 - PCI 总线设备堆栈 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1d435c36f56ef93ccb9bbb09b705d26c601e314
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65a6322774673e9dea5a34c892054b96a25d0ab2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386630"
 ---
 # <a name="example-wdm-device-stack"></a>示例 WDM 设备堆栈
 
@@ -40,13 +40,13 @@ ms.locfileid: "63360046"
 
     根总线驱动程序枚举的内部系统总线 （根总线），并创建为它找到的每个设备 PDO。 这些 PDOs 之一是为 PCI 总线。 （PDO 和根总线 FDO 不显示在图中。）
 
-    PnP 管理器标识 PCI 驱动程序，如 PCI 总线功能驱动程序加载驱动程序 （如果尚未加载），并将 PDO 传递给 PCI 驱动程序。 在其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程，PCI 驱动程序创建 PCI 总线 FDO ([**IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397))，并将 FDO 附加到设备堆栈 ([**IoAttachDeviceToDeviceStack**](https://msdn.microsoft.com/library/windows/hardware/ff548300)) 为 PCI 总线。 PCI 驱动程序创建，并将此 FDO 作为其职责的一部分作为 PCI 总线函数驱动程序。
+    PnP 管理器标识 PCI 驱动程序，如 PCI 总线功能驱动程序加载驱动程序 （如果尚未加载），并将 PDO 传递给 PCI 驱动程序。 在其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程，PCI 驱动程序创建 PCI 总线 FDO ([**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice))，并将 FDO 附加到设备堆栈 ([**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)) 为 PCI 总线。 PCI 驱动程序创建，并将此 FDO 作为其职责的一部分作为 PCI 总线函数驱动程序。
 
     没有针对 PCI 总线在此示例中的筛选器驱动程序。
 
 2.  PDO 和 USB 主控制器 FDO。
 
-    即插即用经理指示要启动其设备的 PCI 驱动程序 ([**IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749))，然后为子查询 PCI 驱动程序 ([ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)关系类型为**BusRelations**)。 在响应中，PCI 驱动程序枚举其总线上的设备。 在此示例中，PCI 驱动程序查找 USB 主控制器，并创建该设备 PDO。 在图中的宽箭头表示 USB 主控制器 PCI 总线的"子级"。 PCI 驱动程序创建其子 PDOs 其职责的作为总线驱动程序的一部分为 PCI 总线的设备。
+    即插即用经理指示要启动其设备的 PCI 驱动程序 ([**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device))，然后为子查询 PCI 驱动程序 ([ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)关系类型为**BusRelations**)。 在响应中，PCI 驱动程序枚举其总线上的设备。 在此示例中，PCI 驱动程序查找 USB 主控制器，并创建该设备 PDO。 在图中的宽箭头表示 USB 主控制器 PCI 总线的"子级"。 PCI 驱动程序创建其子 PDOs 其职责的作为总线驱动程序的一部分为 PCI 总线的设备。
 
     PnP 管理器将 USB 主机控制器 miniclass/类驱动程序对标识为 USB 主控制器的功能驱动程序，并加载驱动程序对。 PnP 管理器在适当的时间来创建和附加 USB 主控制器 FDO 调用驱动程序对。
 

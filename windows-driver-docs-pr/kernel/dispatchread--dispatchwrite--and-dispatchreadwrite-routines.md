@@ -16,12 +16,12 @@ keywords:
 - 传输数据 WDK 内核，读/写调度例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c29c3d97b5b080923c38f399823f5e9693701f45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12500961b4e637857e934b225c3ac850e420303c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387196"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384979"
 ---
 # <a name="dispatchread-dispatchwrite-and-dispatchreadwrite-routines"></a>DispatchRead、DispatchWrite 和 DispatchReadWrite 例程
 
@@ -29,7 +29,7 @@ ms.locfileid: "63387196"
 
 
 
-驱动程序的[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)并[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程使用的 I/O 函数代码来处理 Irp [ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)并[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)分别。 或者，组合[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程可以处理 Irp 为这两个这些 I/O 函数代码。
+驱动程序的[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)并[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程使用的 I/O 函数代码来处理 Irp [ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)分别。 或者，组合[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程可以处理 Irp 为这两个这些 I/O 函数代码。
 
 设备将从其数据可以传输到系统的每个驱动程序必须具有*DispatchRead*例程。 设备向其可以从系统传输数据的每个驱动程序必须具有*DispatchWrite*例程。 将两个方向中的数据传输任何驱动程序可以有组合*DispatchReadWrite*例程。
 

@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e63a19110ec5ff2a22def2f13025d115f7cc207
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0573820d3fe73985b237c711ce7cf06adb4d4ec6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386822"
 ---
 # <a name="subscribing-for-presence-events"></a>订阅存在事件
 
@@ -58,6 +58,6 @@ ms.locfileid: "63373585"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

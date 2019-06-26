@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87869a9f37bb50b1ff3688ae0b92f946c7b0fb67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec2f70c600199b6c0ae0872c705c3b41d6a5f07e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369504"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391433"
 ---
 # <a name="wiaipaitemcategory"></a>WIA\_IPA\_项\_类别
 
@@ -82,9 +82,9 @@ Imprinting 类别的可编程数据源项，它代表 imprinting 和认可，并
 设备的的根项。
 
 <span id="WIA_CATEGORY_AUTO"></span><span id="wia_category_auto"></span>WIA\_CATEGORY\_AUTO  
-在 Windows 7 和更高版本，[自动项](https://msdn.microsoft.com/library/windows/hardware/ff539395)具有支持所需的 WIA 属性[自动配置扫描](https://msdn.microsoft.com/library/windows/hardware/ff539393)。
+在 Windows 7 和更高版本，[自动项](https://docs.microsoft.com/windows-hardware/drivers/image/auto-item)具有支持所需的 WIA 属性[自动配置扫描](https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning)。
 
-上述类别定义应如何处理或使用 WIA 项。 例如，如果项表示已完成的文件，可以假定数据是静态的且在设备上找到。 如果项表示送纸器，则可能会包含所需的文档送纸器属性以及文档送纸器一样运行。 有关这些类别的详细信息，请参阅[WIA 项类别](https://msdn.microsoft.com/library/windows/hardware/ff552678)。
+上述类别定义应如何处理或使用 WIA 项。 例如，如果项表示已完成的文件，可以假定数据是静态的且在设备上找到。 如果项表示送纸器，则可能会包含所需的文档送纸器属性以及文档送纸器一样运行。 有关这些类别的详细信息，请参阅[WIA 项类别](https://docs.microsoft.com/windows-hardware/drivers/image/wia-item-categories)。
 
 下表显示了 WIA 分组类别以及其项的标志。 此表不包括所有定义 WIA 的 WIA 项标志的完整列表。 有关这些标志的完整列表，请参阅[ **WIA\_IPA\_项\_标志**](wia-ipa-item-flags.md)。
 
@@ -296,7 +296,7 @@ Imprinting 类别的可编程数据源项，它代表 imprinting 和认可，并
 </tr>
 <tr class="odd">
 <td><p>WIA_CATEGORY_AUTO</p></td>
-<td><p>属性包括用于自动配置扫描。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff552744" data-raw-source="[WIA Properties Supported by an Auto Item](https://msdn.microsoft.com/library/windows/hardware/ff552744)">WIA 属性支持的自动项</a>。</p></td>
+<td><p>属性包括用于自动配置扫描。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties-supported-by-an-auto-item" data-raw-source="[WIA Properties Supported by an Auto Item](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties-supported-by-an-auto-item)">WIA 属性支持的自动项</a>。</p></td>
 <td><p>表示的扫描程序扫描设置自动配置 WIA 自动项。</p></td>
 </tr>
 </tbody>

@@ -4,17 +4,17 @@ description: Windows Driver Kit (WDK) 提供 Mofcomp 任务，以便在生成使
 ms.assetid: 94B70223-393F-49C9-B2C9-34FF64D26454
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b2bb65b55b3f843e92d1c344af62b8faaf28ebc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bda7c120efa3c9850d5edc880461605c6066185
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363819"
 ---
 # <a name="mofcomp-task"></a>Mofcomp 任务
 
 
-Windows Driver Kit (WDK) 提供 Mofcomp 任务，以便在生成使用 MSBuld 驱动程序时，可以运行 Mofcomp.exe 工具。 有关工具的信息，请参阅[ **mofcomp**](https://msdn.microsoft.com/library/aa392389)。
+Windows Driver Kit (WDK) 提供 Mofcomp 任务，以便在生成使用 MSBuld 驱动程序时，可以运行 Mofcomp.exe 工具。 有关工具的信息，请参阅[ **mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)。
 
 MSBuild 使用 Mofcomp 项发送到 Mofcomp.exe Mofcomp 任务的参数。 在项目文件中使用 Mofcomp 项访问 Mofcomp 的项元数据。
 
@@ -188,7 +188,7 @@ mofcomp.exe -WMI b.mof
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**mofcomp**](https://msdn.microsoft.com/library/aa392389)
+[**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)
 
  
 

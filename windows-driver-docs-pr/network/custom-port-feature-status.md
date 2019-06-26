@@ -4,12 +4,12 @@ description: 自定义端口功能状态
 ms.assetid: 87E88302-6FEA-4D71-A80D-E7AD6D42C0BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34ba24ba8744b3b2814f6a58fd8c2291044207d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b6b3f0c646bf3080e0bdc11b7af398513eba72c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326031"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374874"
 ---
 # <a name="custom-port-feature-status"></a>自定义端口功能状态
 
@@ -60,7 +60,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_CustomPortData.mof
 net start vmms
 ```
 
-有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://msdn.microsoft.com/library/windows/hardware/ff542012)。
+有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)。
 
 下面的示例演示如何使用自定义端口功能状态定义来获取端口的数据。 在此示例中，Fabrikam\_CustomPortData MOF 类用于从 HYPER-V 分区名为"TestVm"获取端口状态。 Fabrikam，Inc.扩展 vSwitch"TestSwitch"上已启用且正在返回 123 的状态。
 

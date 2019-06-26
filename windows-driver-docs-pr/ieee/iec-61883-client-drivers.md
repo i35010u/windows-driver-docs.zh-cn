@@ -10,12 +10,12 @@ keywords:
 - 协议 WDK 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6396d63a2992d6c90449ca8253303ce0dddadec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d29e9bbde632b70f9a3ba140c30747d0dc63f0cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376678"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385784"
 ---
 # <a name="iec-61883-client-drivers"></a>IEC-61883 客户端驱动程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "63376678"
 
 
 
-IEC 61883 是 IEEE 1394 音频和视频设备所使用的标准通信和控制接口。 在 Windows 98 SE、 Windows 2000 和更早的操作系统，61883 功能作为 Microsoft 数字视频 (MSDV) 摄像机驱动程序的一部分实现*msdv.sys*。 在 Windows Me，、 Windows XP 和更高版本的操作系统，61883 功能已移到单独的驱动程序，专用于 61883 支持。 供应商提供 IEC 61883 客户端驱动程序将请求发送到系统提供[IEC 61883 协议驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537191)(*是 61883.sys*) 与他们的设备进行通信。
+IEC 61883 是 IEEE 1394 音频和视频设备所使用的标准通信和控制接口。 在 Windows 98 SE、 Windows 2000 和更早的操作系统，61883 功能作为 Microsoft 数字视频 (MSDV) 摄像机驱动程序的一部分实现*msdv.sys*。 在 Windows Me，、 Windows XP 和更高版本的操作系统，61883 功能已移到单独的驱动程序，专用于 61883 支持。 供应商提供 IEC 61883 客户端驱动程序将请求发送到系统提供[IEC 61883 协议驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-protocol-driver)(*是 61883.sys*) 与他们的设备进行通信。
 
 IEC 61883 规范定义的许多使用者电子音频和视频设备可以相互连接起来的协议。 这些规范包括常规数据格式、 数据流和视听信息的连接方案的定义。 IEC 61883 协议驱动程序支持符合以下认可 IEC 61883 规范的设备：
 
@@ -41,8 +41,8 @@ IEC 61883 规范定义的许多使用者电子音频和视频设备可以相互�
 
 本部分包括：
 
-[IEC 61883 协议驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537191)
-[IEC 61883 协议在客户端驱动程序堆栈中的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537193)
+[IEC 61883 协议驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-protocol-driver)
+[IEC 61883 协议在客户端驱动程序堆栈中的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-protocol-driver-in-a-client-driver-stack)
  
 
  

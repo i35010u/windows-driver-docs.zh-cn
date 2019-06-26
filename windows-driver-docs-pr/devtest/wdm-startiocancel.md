@@ -12,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9104f7a70dfc40e779cec24eabef8e7f0451016c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e411d62f87a6b3aefb958095c36b7213148cea54
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380443"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394059"
 ---
 # <a name="startiocancel-rule-wdm"></a>StartIoCancel 规则 (wdm)
 
 
-**StartIoCancel**规则指定驱动程序必须调用[ **IoSetStartIoAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff550330)与*无法*参数设置为**FALSE**之前，调用[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)与非**NULL** [ **取消**](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程。
+**StartIoCancel**规则指定驱动程序必须调用[ **IoSetStartIoAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iosetstartioattributes)与*无法*参数设置为**FALSE**之前，调用[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)与非**NULL** [ **取消**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程。
 
-设置*无法*参数**FALSE**在注册之前[**取消**](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程可能会导致取消争用条件。
+设置*无法*参数**FALSE**在注册之前[**取消**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程可能会导致取消争用条件。
 
-因为驱动程序的[**取消**](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程必须包括对[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550) (若要释放数值调节钮锁定的 I/O管理器之前，先将获取**取消**例程)，验证两个驱动程序，请考虑**StartIoCancel**规则并[ **CancelSpinLock** ](wdm-cancelspinlock.md)规则。
+因为驱动程序的[**取消**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程必须包括对[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) (若要释放数值调节钮锁定的 I/O管理器之前，先将获取**取消**例程)，验证两个驱动程序，请考虑**StartIoCancel**规则并[ **CancelSpinLock** ](wdm-cancelspinlock.md)规则。
 
 |              |     |
 |--------------|-----|
@@ -46,14 +46,14 @@ ms.locfileid: "63380443"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>运行<a href="https://msdn.microsoft.com/library/windows/hardware/ff552808" data-raw-source="[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)">Static Driver Verifier</a>并指定<strong>StartIoCancel</strong>规则。</p>
+<td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>并指定<strong>StartIoCancel</strong>规则。</p>
 使用以下步骤来分析你的代码：
 <ol>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://msdn.microsoft.com/library/windows/hardware/hh454281#preparing-your-source-code)">准备你的代码 （使用角色类型声明）。</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier)">运行的 Static Driver Verifier。</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results)">查看和分析结果。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码 （使用角色类型声明）。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行的 Static Driver Verifier。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">查看和分析结果。</a></li>
 </ol>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">以找到缺陷驱动程序中使用 Static Driver Verifier</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">以找到缺陷驱动程序中使用 Static Driver Verifier</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,8 +61,8 @@ ms.locfileid: "63380443"
 <a name="applies-to"></a>适用对象
 ----------
 
-[**IoSetCancelRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549674)
-[**IoSetStartIoAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff550330)另请参阅
+[**IoSetCancelRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)
+[**IoSetStartIoAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iosetstartioattributes)另请参阅
 --------
 
 [**CancelSpinLock**](wdm-cancelspinlock.md)

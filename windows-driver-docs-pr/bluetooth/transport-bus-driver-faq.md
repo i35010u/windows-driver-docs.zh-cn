@@ -4,12 +4,12 @@ description: 以下是常见的问题、 方案和问题的驱动程序开发人
 ms.assetid: 7189EB3B-E071-4145-8308-EFA6D4E89D4B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 172d5d753747d46a60c1b563542d588c1eb31021
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1bcf3c8a5fb1b07c9f6f01a9e0b826c2d1eb563
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328183"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391553"
 ---
 # <a name="transport-bus-driver-faq"></a>传输总线驱动程序常见问题解答
 
@@ -19,7 +19,7 @@ ms.locfileid: "63328183"
 ## <a name="span-idmyserialbusdriverencounteredsomeerrorwhatdoesitmeanspanspan-idmyserialbusdriverencounteredsomeerrorwhatdoesitmeanspanmy-serial-bus-driver-encountered-some-error-what-does-it-mean"></a><span id="my_serial_bus_driver_encountered_some_error._what_does_it_mean_"></span><span id="MY_SERIAL_BUS_DRIVER_ENCOUNTERED_SOME_ERROR._WHAT_DOES_IT_MEAN_"></span>我的串行总线驱动程序时遇到一些错误。 它是什么意思？
 
 
-代码 10 49:[设备管理器生成的错误代码的说明](http://support.microsoft.com/kb/310123)。
+代码 10 49:[设备管理器生成的错误代码的说明](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)。
 
 代码 51:当串行总线驱动程序依赖于控制器驱动程序 （如 ACPI 表中所定义） 时，系统将在加载串行总线驱动程序，但它将不开始直到所有其依赖的驱动程序已成功启动。 当控制器驱动程序不存在或未加载成功，代码 51 错误触发。
 
@@ -27,7 +27,7 @@ ms.locfileid: "63328183"
 
 这些主题中的更详细地介绍驱动程序签名：
 
--   [驱动程序签名](https://msdn.microsoft.com/library/windows/hardware/ff544865)
+-   [驱动程序签名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)
 -   [Windows 驱动程序签名要求](https://msdn.microsoft.com/windows/hardware/gg487317)
 
 ## <a name="span-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanwhy-is-my-serial-bus-driver-not-getting-any-ioctls-from-the-bluetooth-core-stack"></a><span id="Why_is_my_serial_bus_driver_not_getting_any_IOCTLs_from_the_Bluetooth_core_stack_"></span><span id="why_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_"></span><span id="WHY_IS_MY_SERIAL_BUS_DRIVER_NOT_GETTING_ANY_IOCTLS_FROM_THE_BLUETOOTH_CORE_STACK_"></span>为什么我串行总线驱动程序未获得任何 Ioctl 从蓝牙核心堆栈？

@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_CCMP_KEY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ae078e2089abc9c274fd4e39df036b5de07f7740
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38f85d2706ff35b030a83863e9e7afd8ddfded22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387191"
 ---
 # <a name="wditlvcipherkeyccmpkey"></a>WDI\_TLV\_CIPHER\_KEY\_CCMP\_KEY
 
 
-WDI\_TLV\_密码\_密钥\_CCMP\_键是包含 CCMP 密码算法密钥数据的 TLV [OID\_WDI\_设置\_添加\_密码\_密钥](https://msdn.microsoft.com/library/windows/hardware/dn925855)。
+WDI\_TLV\_密码\_密钥\_CCMP\_键是包含 CCMP 密码算法密钥数据的 TLV [OID\_WDI\_设置\_添加\_密码\_密钥](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

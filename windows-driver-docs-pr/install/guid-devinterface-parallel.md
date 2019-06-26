@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: be309712967d427624c2e4ab59a4aaf0df719c1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8c4f86938f72d321bc4538d483ba48ce0f5e57e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363728"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386429"
 ---
 # <a name="guiddevinterfaceparallel"></a>GUID_DEVINTERFACE_PARALLEL
 
 
-GUID_DEVINTERFACE_PARALLEL[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[并行端口](https://msdn.microsoft.com/library/windows/hardware/ff544263)支持 IEEE 1284 兼容的硬件接口。
+GUID_DEVINTERFACE_PARALLEL[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[并行端口](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))支持 IEEE 1284 兼容的硬件接口。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_PARALLEL[设备接口类](https://msdn.microsoft.com/library/w
 
 并行端口的系统提供的函数驱动程序注册的并行端口此设备类的实例。
 
-有关并行的设备和驱动程序的信息，请参阅[简介并行端口和设备](https://msdn.microsoft.com/library/windows/hardware/ff543964)。
+有关并行的设备和驱动程序的信息，请参阅[简介并行端口和设备](https://docs.microsoft.com/previous-versions/ff543964(v=vs.85))。
 
 有关附加到并行端口设备的设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md)。
 

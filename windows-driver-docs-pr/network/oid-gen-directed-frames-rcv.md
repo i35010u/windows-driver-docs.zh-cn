@@ -5,12 +5,12 @@ ms.assetid: 6f8b84d3-19d6-4a2a-a2eb-8961614fbba4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_DIRECTED_FRAMES_RCV 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d7f6b8ac960ba7698eda9d206c1c04c951c97f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1dba0791497fda2d0d5da27aa49fc47b84c98936
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369128"
 ---
 # <a name="oidgendirectedframesrcv"></a>OID\_GEN\_DIRECTED\_FRAMES\_RCV
 
@@ -37,7 +37,7 @@ ms.locfileid: "63368928"
 <a name="remarks"></a>备注
 -------
 
-有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)。
+有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
 
 <a name="requirements"></a>要求
 ------------

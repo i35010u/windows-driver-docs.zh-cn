@@ -4,12 +4,12 @@ description: 可以使用 Microsoft Visual Studio 设置和执行通过 USB 2.0 
 ms.assetid: 3BEE43E2-32E5-4E7A-BA71-9ADB224578B1
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a2ced2f82a8893a000ca0e328e72f019eaf34125
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30c1b5a2f6edf0973127742eb4f9d419a7a425ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377378"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366365"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-20-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 USB 2.0 线缆进行的内核模式调试
 
@@ -67,7 +67,7 @@ ms.locfileid: "63377378"
 ## <a name="span-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>配置主机和目标计算机
 
 
-1.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
+1.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 2.  主机计算机上，在 Visual Studio 中，当您转至计算机配置对话框中，选择**预配计算机，并选择调试器设置**。
 3.  有关**连接类型**，选择**USB**。
 
@@ -108,7 +108,7 @@ busparams               0.29.7
 
 如果您看不到值为输入**总线参数**，输入以下命令：
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 其中*b*， *d*，并*f*是总线、 设备和已选择要用于调试的目标计算机上的 EHCI 控制器的函数数量。
 

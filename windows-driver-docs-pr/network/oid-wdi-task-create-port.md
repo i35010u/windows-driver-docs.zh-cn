@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CREATE_PORT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c218861294d13130d5529d9c60c55e122102ab84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 487bd64619ee9b771ddc76999d35473e1bb6a2ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387241"
 ---
 # <a name="oidwditaskcreateport"></a>OID\_WDI\_TASK\_CREATE\_PORT
 
@@ -49,13 +49,13 @@ OID\_WDI\_任务\_创建\_端口请求，IHV 组件，创建新的 802.11 实体
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926273" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926273)"><strong>WDI_TLV_CREATE_PORT_PARAMETERS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-parameters)"><strong>WDI_TLV_CREATE_PORT_PARAMETERS</strong></a></td>
 <td></td>
 <td></td>
 <td>用于端口创建的参数。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926270" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_MAC_ADDRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926270)"><strong>WDI_TLV_CREATE_PORT_MAC_ADDRESS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-mac-address" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_MAC_ADDRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-mac-address)"><strong>WDI_TLV_CREATE_PORT_MAC_ADDRESS</strong></a></td>
 <td></td>
 <td>X</td>
 <td><p>此 TLV UE 从休眠状态恢复运行时将重新创建非主端口时使用。 如果存在此 TLV，则固件必须使用此 MAC 地址创建端口。 要为之前休眠状态，端口类型创建固件的 MAC 地址，保证此 MAC 地址。</p>

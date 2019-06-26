@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82eb4adefbfb7ea4001863cac229eaa072d2ec7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b717151b74579fad943a3d7cf84965663a4f9cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373823"
 ---
 # <a name="nfp-provider-model"></a>NFP 提供程序模型
 
@@ -34,6 +34,6 @@ NFP 提供商预暂存使用发布/订阅模型的基础 NFP 技术准确性无�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

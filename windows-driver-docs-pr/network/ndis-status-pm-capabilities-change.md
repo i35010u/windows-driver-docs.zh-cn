@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PM_CAPABILITIES_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd5f1e2dadeb9ff4a8b2c9fbfb62fc7fc18f6d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32757fb530afbef0e591a7d43a5a6d64294ca83c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368535"
 ---
 # <a name="ndisstatuspmcapabilitieschange"></a>NDIS\_状态\_PM\_功能\_更改
 
@@ -23,7 +23,7 @@ NDIS\_状态\_PM\_功能\_更改状态指示为过量驱动程序的电源管理
 
 NDIS 生成 NDIS\_状态\_PM\_功能\_更改状态指示时对先前报告的电源管理功能的更新是必需的。
 
-**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构包含一个指向[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)结构的更新的电源管理功能。
+**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含一个指向[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的更新的电源管理功能。
 
 <a name="requirements"></a>要求
 ------------
@@ -48,9 +48,9 @@ NDIS 生成 NDIS\_状态\_PM\_功能\_更改状态指示时对先前报告的电
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)
+[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
  
 

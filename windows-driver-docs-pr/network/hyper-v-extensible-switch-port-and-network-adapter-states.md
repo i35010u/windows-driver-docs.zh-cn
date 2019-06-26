@@ -4,12 +4,12 @@ description: Hyper-V 可扩展交换机端口和网络适配器状态
 ms.assetid: 1E2075E3-D7CC-4364-ABB2-D5969DB361B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bd220ab2293647821d2615c9831db60bf953363
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d719df8b8d2735b3cc2cf92319d1472a9ac4891e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349524"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386548"
 ---
 # <a name="hyper-v-extensible-switch-port-and-network-adapter-states"></a>Hyper-V 可扩展交换机端口和网络适配器状态
 
@@ -50,7 +50,7 @@ HYPER-V 可扩展交换机接口管理以下组件的生存期：
 在此状态下，可扩展交换机上不存在可扩展交换机端口。 OID 请求后进入此状态的端口不能颁发先前创建的端口的目标。
 
 <a href="" id="port-created"></a>*创建端口*  
-可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_端口\_创建](https://msdn.microsoft.com/library/windows/hardware/hh598272)，可扩展交换机上创建端口。 在此状态下，可扩展交换机接口和扩展可以发出 OID 请求的目标端口。
+可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_端口\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)，可扩展交换机上创建端口。 在此状态下，可扩展交换机接口和扩展可以发出 OID 请求的目标端口。
 
 有关通过可扩展交换机驱动程序堆栈的 OID 流量的详细信息，请参阅[HYPER-V 可扩展交换机控制路径](hyper-v-extensible-switch-control-path.md)。
 
@@ -59,7 +59,7 @@ HYPER-V 可扩展交换机接口管理以下组件的生存期：
  
 
 <a href="" id="network-adapter-connection-created"></a>*创建的网络适配器连接*  
-可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_NIC\_创建](https://msdn.microsoft.com/library/windows/hardware/hh598263)，可扩展交换机上创建网络适配器连接到端口。 在此状态下，可扩展交换机接口可以执行以下步骤：
+可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_NIC\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)，可扩展交换机上创建网络适配器连接到端口。 在此状态下，可扩展交换机接口可以执行以下步骤：
 
 -   发出 OID 请求面向连接的网络适配器。
 
@@ -82,7 +82,7 @@ HYPER-V 可扩展交换机接口管理以下组件的生存期：
  
 
 <a href="" id="network-adapter-connected"></a>*连接的网络适配器*  
-可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_NIC\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/hh598262)，网络适配器完全连接到可扩展交换机端口。 在此状态下，该扩展现在可以执行以下：
+可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_NIC\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-connect)，网络适配器完全连接到可扩展交换机端口。 在此状态下，该扩展现在可以执行以下：
 
 -   发出 OID 请求面向连接的网络适配器。
 
@@ -95,7 +95,7 @@ HYPER-V 可扩展交换机接口管理以下组件的生存期：
      
 
 <a href="" id="network-adapter-disconnected"></a>*断开连接的网络适配器*  
-可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_NIC\_断开连接](https://msdn.microsoft.com/library/windows/hardware/hh598265)，可扩展交换机端口从正在断开连接的网络适配器。 例如，子分区，公开的 VM 网络适配器，已停止或外部网络适配器处于禁用状态时发出此 OID 请求。
+可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_NIC\_断开连接](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)，可扩展交换机端口从正在断开连接的网络适配器。 例如，子分区，公开的 VM 网络适配器，已停止或外部网络适配器处于禁用状态时发出此 OID 请求。
 
 在此状态下，可扩展交换机扩展可以不再源自数据包或 OID 请求连接该目标。 此外，转发扩展可不再重定向的数据包到连接。
 
@@ -104,12 +104,12 @@ HYPER-V 可扩展交换机接口管理以下组件的生存期：
  
 
 <a href="" id="network-adapter-connection-deleted"></a>*已删除的网络适配器连接*  
-完成所有数据包流量和目标网络适配器连接的 OID 请求后，可扩展交换机接口颁发的 OID 集请求[OID\_切换\_NIC\_删除](https://msdn.microsoft.com/library/windows/hardware/hh598264)若要从可扩展的交换机中删除连接。
+完成所有数据包流量和目标网络适配器连接的 OID 请求后，可扩展交换机接口颁发的 OID 集请求[OID\_切换\_NIC\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)若要从可扩展的交换机中删除连接。
 
 在此状态下，可扩展交换机接口将不再发出数据包或 OID 请求连接该目标。
 
 <a href="" id="port-tearing-down"></a>*关闭端口*  
-可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_端口\_拆卸](https://msdn.microsoft.com/library/windows/hardware/hh598279)，正在删除准备过程正在拆解可扩展交换机端口。
+可扩展交换机接口时颁发的 OID 集请求[OID\_切换\_端口\_拆卸](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-teardown)，正在删除准备过程正在拆解可扩展交换机端口。
 
 在此状态下，可扩展交换机扩展可以不再源自 OID 请求该目标端口。
 
@@ -117,13 +117,13 @@ HYPER-V 可扩展交换机接口管理以下组件的生存期：
 
  
 
-所有挂起的 OID 目标端口的请求完成后，可扩展交换机接口颁发的 OID 集请求[OID\_切换\_端口\_删除](https://msdn.microsoft.com/library/windows/hardware/hh598273)。 这将导致转换到端口*不创建端口*状态。
+所有挂起的 OID 目标端口的请求完成后，可扩展交换机接口颁发的 OID 集请求[OID\_切换\_端口\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-delete)。 这将导致转换到端口*不创建端口*状态。
 
 该扩展可以调用要递增或递减引用计数器对端口或网络适配器连接组件的可扩展交换机处理程序函数。 组件的引用计数器为非零值，而可扩展交换机接口不能删除该组件。
 
-该扩展可以调用[ *ReferenceSwitchPort* ](https://msdn.microsoft.com/library/windows/hardware/hh598295)或[ *DereferenceSwitchPort* ](https://msdn.microsoft.com/library/windows/hardware/hh598142)要递增或递减引用计数器，用于可扩展交换机端口。 达到该端口后，这些调用可以进行*创建的端口*状态。 达到该端口后，这些调用必须建立*端口拆除*或*端口不会创建*状态。
+该扩展可以调用[ *ReferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)或[ *DereferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port)要递增或递减引用计数器，用于可扩展交换机端口。 达到该端口后，这些调用可以进行*创建的端口*状态。 达到该端口后，这些调用必须建立*端口拆除*或*端口不会创建*状态。
 
-该扩展可以调用[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)或[ *DereferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598141)要递增或递减引用计数器，用于可扩展交换机的网络适配器连接。 已达到连接之后，可以进行这些调用*连接的网络适配器*状态。 达到该连接后，这些调用必须建立*网络适配器已断开*或*删除的网络适配器*状态。
+该扩展可以调用[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)或[ *DereferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)要递增或递减引用计数器，用于可扩展交换机的网络适配器连接。 已达到连接之后，可以进行这些调用*连接的网络适配器*状态。 达到该连接后，这些调用必须建立*网络适配器已断开*或*删除的网络适配器*状态。
 
 下表描述了基于可扩展交换机端口或网络适配器连接组件的状态允许的操作。
 
@@ -136,8 +136,8 @@ HYPER-V 可扩展交换机接口管理以下组件的生存期：
 <thead>
 <tr class="header">
 <th align="left">组件状态</th>
-<th align="left">调用<a href="https://msdn.microsoft.com/library/windows/hardware/hh598295" data-raw-source="[&lt;em&gt;ReferenceSwitchPort&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598295)"> <em>ReferenceSwitchPort</em> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/hh598142" data-raw-source="[&lt;em&gt;DereferenceSwitchPort&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598142)"> <em>DereferenceSwitchPort</em> </a>允许？</th>
-<th align="left">调用<a href="https://msdn.microsoft.com/library/windows/hardware/hh598294" data-raw-source="[&lt;em&gt;ReferenceSwitchNic&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598294)"> <em>ReferenceSwitchNic</em> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/hh598141" data-raw-source="[&lt;em&gt;DereferenceSwitchNic&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598141)"> <em>DereferenceSwitchNic</em> </a>允许？</th>
+<th align="left">调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port" data-raw-source="[&lt;em&gt;ReferenceSwitchPort&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)"> <em>ReferenceSwitchPort</em> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port" data-raw-source="[&lt;em&gt;DereferenceSwitchPort&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port)"> <em>DereferenceSwitchPort</em> </a>允许？</th>
+<th align="left">调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic" data-raw-source="[&lt;em&gt;ReferenceSwitchNic&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)"> <em>ReferenceSwitchNic</em> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic" data-raw-source="[&lt;em&gt;DereferenceSwitchNic&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)"> <em>DereferenceSwitchNic</em> </a>允许？</th>
 </tr>
 </thead>
 <tbody>

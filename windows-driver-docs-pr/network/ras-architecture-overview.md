@@ -8,12 +8,12 @@ keywords:
 - 体系结构 WDK WAN RAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9901d484f64a3a1eb56dff45c2758f3b49500400
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bac8fbb5a5b5347790d7900003ed7e37a6c5c8d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377036"
 ---
 # <a name="ras-architecture-overview"></a>RAS 体系结构概述
 
@@ -63,17 +63,17 @@ TAPI 服务 (Tapisrv.exe) 程序会显示电话服务提供程序接口 (TSPI) �
 
 KMDDSP (Kmddsp.tsp) 是服务提供程序的 TAPI 服务进程的上下文中运行的 DLL。 KMDDSP 提供程序的 TAPI 服务提供给 TSPI 界面[TAPI 感知应用程序](#ddk-tapi-aware-applications-ng)以便[NDISTAPI](#ddk-ndistapi-ng)可以与用户模式应用程序进行通信。
 
-KMDDSP 配合 NDISTAPI 若要将用户模式下请求转换为相应的 TAPI Oid (OID\_TAPI\_*Xxx*)。 有关 TAPI Oid 的详细信息，请参阅[TAPI 对象](https://msdn.microsoft.com/library/windows/hardware/ff564235)。
+KMDDSP 配合 NDISTAPI 若要将用户模式下请求转换为相应的 TAPI Oid (OID\_TAPI\_*Xxx*)。 有关 TAPI Oid 的详细信息，请参阅[TAPI 对象](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564235(v=vs.85))。
 
 ### <a href="" id="ddk-ndptsp-ng"></a>NDPTSP
 
 NDPTSP (Ndptsp.tsp) 是服务提供程序的 TAPI 服务进程的上下文中运行的 DLL。 NDPTSP 提供了向 TAPI 感知应用程序的 TAPI 服务提供一个 TSPI 界面，以便[NDPROXY](#ddk-ndproxy-ng)可以与用户模式应用程序进行通信。
 
-NDPTSP 配合 NDPROXY 若要将用户模式下请求转换为 TAPI 面向连接的 Oid (OID\_CO\_TAPI\_*Xxx*)。 详细了解 TAPI 面向连接的 Oid，请参阅[Connection-Oriented ndis TAPI 扩展](https://msdn.microsoft.com/library/windows/hardware/ff570924)。
+NDPTSP 配合 NDPROXY 若要将用户模式下请求转换为 TAPI 面向连接的 Oid (OID\_CO\_TAPI\_*Xxx*)。 详细了解 TAPI 面向连接的 Oid，请参阅[Connection-Oriented ndis TAPI 扩展](https://docs.microsoft.com/windows-hardware/drivers/network/tapi-extension-oids-for-connection-oriented-ndis)。
 
 ### <a href="" id="ddk-ndistapi-ng"></a>NDISTAPI
 
-NDISTAPI (Ndistapi.sys) 接收来自的 TAPI 请求[KMDDSP](#ddk-kmddsp-ng) ，然后调用[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)将相应的 TAPI Oid 路由到 NDIS WAN 微型端口驱动程序。 有关 NDISTAPI 详细信息，请参阅[NDISTAPI 概述](ndistapi-overview.md)。
+NDISTAPI (Ndistapi.sys) 接收来自的 TAPI 请求[KMDDSP](#ddk-kmddsp-ng) ，然后调用[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)将相应的 TAPI Oid 路由到 NDIS WAN 微型端口驱动程序。 有关 NDISTAPI 详细信息，请参阅[NDISTAPI 概述](ndistapi-overview.md)。
 
 ### <a href="" id="ddk-ndproxy-ng"></a>NDPROXY
 

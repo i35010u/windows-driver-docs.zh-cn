@@ -4,12 +4,12 @@ description: MITT 软件程序包中包含的 I²C 测试模块可用于测试 I
 ms.assetid: E40B9ABB-B119-4EC1-A383-EB96CC350A25
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c75ff728d0ec8fa36aac492c746e039fde3c61db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d3df2e310649d5e488e738d860799368c9be4b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360240"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376944"
 ---
 # <a name="i2c-controller-tests-in-mitt"></a>MITT 中的 I2C 控制器测试
 
@@ -27,9 +27,9 @@ MITT 软件程序包中包含的 I²C 测试模块可用于测试 I²C 控制器
 ## <a name="before-you-begin"></a>开始之前...
 
 
--   获取 MITT 板和 I²C 适配器板。 请参阅[购买硬件使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919811)。
--   [下载 MITT 软件包](https://msdn.microsoft.com/library/windows/hardware/dn919810)。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919779)。
+-   获取 MITT 板和 I²C 适配器板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
+-   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
+-   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
 
 ## <a name="hardware-setup"></a>硬件安装
 
@@ -73,7 +73,7 @@ MITT 软件程序包中包含的 I²C 测试模块可用于测试 I²C 控制器
 
 
 
-2.  修改系统 ACPI，包括此 ASL 表。 可以使用[Microsoft ASL compiler](https://msdn.microsoft.com/library/windows/hardware/dn551195)。
+2.  修改系统 ACPI，包括此 ASL 表。 可以使用[Microsoft ASL compiler](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)。
 
     **请注意**更改"\\\\\_SB\_。I2C2"为 ACPI I²C 控制器，若要测试项名称。
 
@@ -170,7 +170,7 @@ Device(TP5) {
 
 现在您就可以运行 I²C 测试。 可以运行单个测试，所有测试，或手动运行测试。
 
-- 使用运行单个测试 **/name: *&lt;测试名称&gt;*** 选项。 此命令将运行 BasicIORead 测试：
+- 使用运行单个测试 **/name: *&lt;测试名称&gt;** * 选项。 此命令将运行 BasicIORead 测试：
 
   ![mitt i2c 命令](images/mitt-i2c-cmds1.png)
 
@@ -186,7 +186,7 @@ Device(TP5) {
 ![i2c 示意图](images/i2c-schematic.png)
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

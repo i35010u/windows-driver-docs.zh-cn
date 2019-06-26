@@ -9,12 +9,12 @@ keywords:
 - WDK 设备安装文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87958f2aa78b5161a5d710a5e81286c5bfeea46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0be3c6d259c8e37c586e651039cf977b9e9ac212
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357860"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387132"
 ---
 # <a name="device-installation-files"></a>设备安装文件
 
@@ -32,7 +32,7 @@ INF 文件包含用于安装设备的支持系统的 Windows 组件的信息。 
 <a href="" id="one-or-more-drivers-for-the-device"></a>一个或多个设备驱动程序  
 答:。*sys*文件是驱动程序的图像文件。 Windows 将对此文件复制 *%systemroot%\\system32\\驱动程序*时安装该驱动程序的目录。 驱动程序所需的大多数设备。
 
-有关详细信息，请参阅[选择驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff554652)。
+有关详细信息，请参阅[选择驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)。
 
 <a href="" id="digital-signatures-for-the-driver-package--a-driver-catalog-file-"></a>数字签名的[驱动程序包](driver-packages.md)（驱动程序目录文件）  
 驱动程序目录文件包含数字签名。 应签名的所有驱动程序包。

@@ -8,12 +8,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42a7aaadd3f2dbeaf196e000e08d88538a9f9409
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 957821ee5d85e1ad0f191daac26066b8b87beea1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379861"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370635"
 ---
 # <a name="operation-code-handling"></a>操作代码处理
 
@@ -21,13 +21,13 @@ ms.locfileid: "63379861"
 ## <span id="ddk_opcode_handling_gg"></span><span id="DDK_OPCODE_HANDLING_GG"></span>
 
 
-显示驱动程序处理请求来呈现图形基元和流程中的状态更改其[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)函数。 该驱动程序将接收为这些请求[ **D3DHAL\_DP2OPERATION** ](https://msdn.microsoft.com/library/windows/hardware/ff545678)操作代码。 下面的主题介绍如何驱动程序处理操作代码以及如何在此类处理过程改进其性能：
+显示驱动程序处理请求来呈现图形基元和流程中的状态更改其[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数。 该驱动程序将接收为这些请求[ **D3DHAL\_DP2OPERATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码。 下面的主题介绍如何驱动程序处理操作代码以及如何在此类处理过程改进其性能：
 
 [命令 Stream](command-stream.md)
 
 [提高了操作处理的性能](improving-performance-of-operation-handling.md)
 
-若要支持的 Microsoft DirectX 7.0 和更高版本的 Direct3D 驱动程序模型，驱动程序编写人员需要使响应在其实现中的新操作代码的许多其驱动程序[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704). 这些操作代码的一些替换回调函数和其他人提供了新功能。 下表中，将为回调的总结了最重要的新操作代码。
+若要支持的 Microsoft DirectX 7.0 和更高版本的 Direct3D 驱动程序模型，驱动程序编写人员需要使响应在其实现中的新操作代码的许多其驱动程序[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb). 这些操作代码的一些替换回调函数和其他人提供了新功能。 下表中，将为回调的总结了最重要的新操作代码。
 
 <table>
 <colgroup>

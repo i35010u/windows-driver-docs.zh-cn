@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2c744d5160f981939c2650b0cfb88dc89d6ae69c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae9b8b778e45d8343faeafc1811f769322ae1ed0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365850"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387037"
 ---
 # <a name="difremove"></a>DIF_REMOVE
 
@@ -58,18 +58,18 @@ DIF_REMOVE 请求通知安装程序，Windows 将要删除设备，并使安装�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://msdn.microsoft.com/library/windows/hardware/ff541247)，其中包含要删除的设备。
+提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含要删除的设备。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)设备中设备的信息集的结构。
+提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)设备中设备的信息集的结构。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) 与关联*DeviceInfoData*。
+设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*。
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-[ **SP_REMOVEDEVICE_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553323)结构可能与关联*DeviceInfoData*。
+[ **SP_REMOVEDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_removedevice_params)结构可能与关联*DeviceInfoData*。
 
-不没有请求任何类安装参数如果 DI_CLASSINSTALLPARAMS 标志明确[ **SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)。 在这种情况下，指定硬件配置文件，并且设备将从整个系统中删除。
+不没有请求任何类安装参数如果 DI_CLASSINSTALLPARAMS 标志明确[ **SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)。 在这种情况下，指定硬件配置文件，并且设备将从整个系统中删除。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -79,7 +79,7 @@ DIF_REMOVE 请求通知安装程序，Windows 将要删除设备，并使安装�
 
 辅助安装程序可以返回 NO_ERROR、 ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-如果类安装程序已成功处理此请求并[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)应随后调用默认处理程序类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序已成功处理此请求并[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)应随后调用默认处理程序类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 类安装程序类安装程序将成功处理此请求，包括直接调用默认处理程序，如果应返回 NO_ERROR 并**SetupDiCallClassInstaller**随后不会调用默认处理程序电子邮件了。
 
@@ -87,13 +87,13 @@ DIF_REMOVE 请求通知安装程序，Windows 将要删除设备，并使安装�
 
  
 
-调用默认处理程序的详细信息，请参阅[调用默认 DIF 代码处理程序](https://msdn.microsoft.com/library/windows/hardware/ff537868)。
+调用默认处理程序的详细信息，请参阅[调用默认 DIF 代码处理程序](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)。
 
 安装程序类安装程序遇到错误，如果应返回相应的 Win32 错误代码和**SetupDiCallClassInstaller**随后不会调用默认处理程序。
 
 ### <a name="default-dif-code-handler"></a>默认 DIF 代码处理程序
 
-[**SetupDiRemoveDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552097)
+[**SetupDiRemoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice)
 
 ### <a name="installer-operation"></a>安装程序操作
 
@@ -109,7 +109,7 @@ DIF_REMOVE 请求通知安装程序，Windows 将要删除设备，并使安装�
 
 Windows 之前启动即插即用的查询删除会将发送此 DIF 请求，并删除处理。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://msdn.microsoft.com/library/windows/hardware/ff546094)。
+有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
 
 <a name="requirements"></a>要求
 ------------
@@ -134,13 +134,13 @@ Windows 之前启动即插即用的查询删除会将发送此 DIF 请求，并�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiRemoveDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552097)
+[**SetupDiRemoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_REMOVEDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553323)
+[**SP_REMOVEDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_removedevice_params)
 
  
 

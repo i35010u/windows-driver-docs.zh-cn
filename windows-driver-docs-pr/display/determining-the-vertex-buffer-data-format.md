@@ -10,12 +10,12 @@ keywords:
 - Direct3D WDK Windows 2000 显示，灵活顶点格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c47237926cb89856faa121f573acb58e34cb3ca8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1613ecce384e1385f43906d5363fdcf9a7c870a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384884"
 ---
 # <a name="determining-the-vertex-buffer-data-format"></a>确定顶点缓冲区数据格式
 
@@ -53,7 +53,7 @@ ms.locfileid: "63342453"
 
 ### <a name="span-idddkfvfvertexdatacomponentsggspanspan-idddkfvfvertexdatacomponentsggspanfvf-vertex-data-components"></a><span id="ddk_fvf_vertex_data_components_gg"></span><span id="DDK_FVF_VERTEX_DATA_COMPONENTS_GG"></span>FVF 顶点数据组件
 
-该驱动程序确定哪些组件都存在通过分析中指定的标志**dwVertexType**的成员[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff545957)结构。 下表指示可以在中设置的位字段**dwVertexType**和它们标识的组件：
+该驱动程序确定哪些组件都存在通过分析中指定的标志**dwVertexType**的成员[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)结构。 下表指示可以在中设置的位字段**dwVertexType**和它们标识的组件：
 
 <table>
 <colgroup>

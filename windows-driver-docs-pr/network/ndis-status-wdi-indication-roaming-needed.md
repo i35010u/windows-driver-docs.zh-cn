@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a70f2320aa2bb62f0db75d3b35eca9060925fc4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bcc1603c3832a0c9d1cd95e91b830bf49ec712b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361033"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375219"
 ---
 # <a name="ndisstatuswdiindicationroamingneeded"></a>NDIS\_状态\_WDI\_指示\_漫游\_需执行
 
@@ -20,7 +20,7 @@ ms.locfileid: "63361033"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63361033"
 
 | 在任务栏的搜索框中键入                                                                                    | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                         |
 |-----------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_ROAMING\_NEEDED\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn898049) |                                |          | 漫游触发器的原因。 当[OID\_WDI\_任务\_漫游](oid-wdi-task-roam.md)是触发，因此转发给它。 |
+| [**WDI\_TLV\_ROAMING\_NEEDED\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-roaming-needed-parameters) |                                |          | 漫游触发器的原因。 当[OID\_WDI\_任务\_漫游](oid-wdi-task-roam.md)是触发，因此转发给它。 |
 
  
 

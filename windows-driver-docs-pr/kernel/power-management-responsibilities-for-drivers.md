@@ -13,12 +13,12 @@ keywords:
 - 设备电源状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64c14ee52d52d3b1997243ac4906eb5c1eb1178d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c97fe28aec37109a93bf68e5d98c79cefd44074
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374198"
 ---
 # <a name="power-management-responsibilities-for-drivers"></a>驱动程序的电源管理责任
 
@@ -44,7 +44,7 @@ ms.locfileid: "63369145"
 
 每个设备堆栈中的不是每个驱动程序执行所有这些任务。 通常情况下，总线驱动程序报告功能、 设置标志，和操作的物理设备和设备电源策略管理器 （通常是功能驱动程序） 发出请求以将设备进入睡眠状态并启用唤醒。
 
-几个例外情况之外，驱动程序电源上和他们的设备，打开和关闭电源，然后它们启用设备进行电源 Irp，即，使用的主要代码 Irp 响应唤醒[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784). Power Irp 可以由驱动程序通过电源管理器，然后在某些情况下，发送。
+几个例外情况之外，驱动程序电源上和他们的设备，打开和关闭电源，然后它们启用设备进行电源 Irp，即，使用的主要代码 Irp 响应唤醒[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power). Power Irp 可以由驱动程序通过电源管理器，然后在某些情况下，发送。
 
  
 

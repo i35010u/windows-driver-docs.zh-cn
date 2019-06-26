@@ -12,12 +12,12 @@ keywords:
 - IPrintAsyncNotifyChannel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b7ee7af0e2306b9e27cd1964ee98a02b7e63799
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d6094c2414aa5648d8dd585274e057a5abcfcce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385969"
 ---
 # <a name="notification-channel"></a>通知通道
 
@@ -109,7 +109,7 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyChannel, IUnknown)
     -   在调用之前**发行**对于双向通道，您必须始终调用**CloseChannel**和接收成功结果。 您不能调用**发行**如果在调用**CloseChannel**将失败，因为通道可能已发布你的名义。
     -   您必须调用**发行**输入时**ChannelClosed**事件。 若要避免这种情况下，检查调用**CloseChannel**的失败，出现错误通道\_ALREADY\_已关闭。 无需调用**版本**在这种情况下，因为你的名义已释放通道。
     -   您必须调用**CloseChannel**，**发行**，或任何其他成员函数在通道上，如果你**ChannelClosed**回调函数完成运行。 在这种情况下，通道已被释放，因此任何进一步的调用可能会导致未定义的行为。 此限制可能会要求您的前台线程和回调对象之间的协调。
-    -   您必须确保您的前台线程和回调对象协调对调用**CloseChannel**并**发行**。 前台线程和回调对象不能以调用**CloseChannel**如果另一个是要调用或完成后调用**发行**。 您可以通过使用实现这一限制[ **3&gt;interlockedcompareexchange&lt;3}** ](https://msdn.microsoft.com/library/windows/hardware/ff547853)例程。 如果不使用**3&gt;interlockedcompareexchange&lt;3}**，可能会导致未定义的行为。
+    -   您必须确保您的前台线程和回调对象协调对调用**CloseChannel**并**发行**。 前台线程和回调对象不能以调用**CloseChannel**如果另一个是要调用或完成后调用**发行**。 您可以通过使用实现这一限制[ **3&gt;interlockedcompareexchange&lt;3}** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedcompareexchange)例程。 如果不使用**3&gt;interlockedcompareexchange&lt;3}** ，可能会导致未定义的行为。
 -   如果您注册为在通道上的侦听器，则可以调用**CloseChannel** ，然后调用**发行**在你[IPrintAsyncNotifyCallback::OnEventNotify](https://go.microsoft.com/fwlink/p/?linkid=124757)回调若要结束的双向通信的函数。 但是，您必须调用**CloseChannel**或**发行**在你**ChannelClosed**回调。
 
 如果满足以下条件之一，则必须调用**版本**。 如果您不能满足这些条件之一，您必须调用**版本**。

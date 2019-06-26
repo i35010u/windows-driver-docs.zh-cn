@@ -7,12 +7,12 @@ keywords:
 - 双向通信架构 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13411cf556ba8ec1e96aeda0a7270aa07e3379b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c80df6ad72475dd04ba62c9a68ba729bde778309
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383159"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374663"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>构造双向通信架构查询
 
@@ -27,7 +27,7 @@ ms.locfileid: "63383159"
 
 ### <a href="" id="example-request-and-response"></a> 示例请求和响应
 
-下面的示例所需的 XML 查询和响应格式[bidi 通信接口](https://msdn.microsoft.com/library/windows/hardware/ff545163)，并专门通过 IBidiSpl2 COM 接口。 第一个示例是包含两个架构的请求。 第一个架构确定是否安装了双面打印单元。 第二个架构确定其硬盘相关联的值。
+下面的示例所需的 XML 查询和响应格式[bidi 通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)，并专门通过 IBidiSpl2 COM 接口。 第一个示例是包含两个架构的请求。 第一个架构确定是否安装了双面打印单元。 第二个架构确定其硬盘相关联的值。
 
 ```cpp
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">

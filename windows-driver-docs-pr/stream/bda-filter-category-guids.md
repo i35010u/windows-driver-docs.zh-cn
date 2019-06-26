@@ -4,12 +4,12 @@ description: BDA 筛选器类别 GUID
 ms.assetid: fbd4bf91-8309-423a-97ea-7e4f90cd3b68
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8feeb6b1474182003404b8d411fc2cc7673f1d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7f9d1e033ac03dc8b6e124a5568efbe18ed20a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392723"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386690"
 ---
 # <a name="bda-filter-category-guids"></a>BDA 筛选器类别 GUID
 
@@ -17,7 +17,7 @@ ms.locfileid: "63392723"
 ## <span id="ddk_bda_filter_category_guids_ks"></span><span id="DDK_BDA_FILTER_CATEGORY_GUIDS_KS"></span>
 
 
-BDA 微型驱动程序使用 BDA 筛选器类别的 Guid 来指定 BDA 筛选器来创建的类型。 BDA 微型驱动程序这些 Guid 按指派到的数组**类别**的成员[ **KSFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff562553)结构点。 *Bdamedia.h*标头文件定义了这些 Guid。
+BDA 微型驱动程序使用 BDA 筛选器类别的 Guid 来指定 BDA 筛选器来创建的类型。 BDA 微型驱动程序这些 Guid 按指派到的数组**类别**的成员[ **KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)结构点。 *Bdamedia.h*标头文件定义了这些 Guid。
 
 下面的筛选器类别 BDA 中提供了 Guid:
 

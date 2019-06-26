@@ -3,26 +3,26 @@ Description: 在 Windows 8.1，可以编写与 USB 设备进行交互的 UWP 应
 title: 如何连接到 USB 设备（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5eca6881309b15cda4619af2df05e708a826aa7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e759a22421afad6b8e19f12305d44165506765f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364822"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378331"
 ---
 # <a name="how-to-connect-to-a-usb-device-uwp-app"></a>如何连接到 USB 设备（UWP 应用）
 
 
 **摘要**
 
--   如何使用[ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)对象以检测设备
+-   如何使用[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)对象以检测设备
 -   如何打开用于通信的设备
 -   如何使用它完成后关闭设备
 
-**重要的 Api**
+**重要的 API**
 
--   [**UsbDevice**](https://msdn.microsoft.com/library/windows/apps/dn263883)
--   [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)
+-   [**UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)
+-   [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)
 
 在编写与 USB 设备进行交互的 UWP 应用时，应用可以发送控制命令，获取设备信息和读取和写入数据传入/传出大容量和中断终结点。 您可以执行所有这些之前，必须找到设备，并建立连接。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63364822"
 -   这是一系列的第一个主题。 在开始本教程之前，您必须创建一个基本的 Visual Studio 项目，您可以充分利用本教程中。 读取[UWP 应用入门](https://go.microsoft.com/fwlink/p/?linkid=617681)的详细信息。
 -   代码示例基于 CustomUsbDeviceAccess 示例。 您可以从该页的代码库下载完整的示例。
 -   在教程中使用的 USB 设备是 SuperMUTT 设备。
--   若要使用[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)命名空间编写与 USB 设备，设备进行交互的 Windows 应用程序必须具有作为其功能驱动程序加载 Winusb.sys 驱动程序。 Winusb.sys 由 Microsoft 提供且包含在 Windows  **\\Windows\\System32\\驱动程序**文件夹。
+-   若要使用[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)命名空间编写与 USB 设备，设备进行交互的 Windows 应用程序必须具有作为其功能驱动程序加载 Winusb.sys 驱动程序。 Winusb.sys 由 Microsoft 提供且包含在 Windows  **\\Windows\\System32\\驱动程序**文件夹。
 
 ## <a name="flowchart-finding-the-device"></a>流程图：查找设备
 
@@ -113,9 +113,9 @@ UWP 应用可以找到匹配一组特定的类、 子类和协议代码的所有
 
 生成包含你想要检测的设备的标识信息的高级的查询字符串 (AQS)。 通过指定的供应商/产品 Id，设备接口的 GUID，或设备类，可以生成字符串。
 
--   如果你想要提供的供应商 ID/产品 ID 或设备接口的 GUID，则调用的任何重载[ **GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn264022)。
+-   如果你想要提供的供应商 ID/产品 ID 或设备接口的 GUID，则调用的任何重载[ **GetDeviceSelector**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_GetDeviceSelector_System_UInt32_System_UInt32_System_Guid_)。
 
-    在示例中的 SuperMUTT 设备[ **GetDeviceSelector** ](https://msdn.microsoft.com/library/windows/apps/dn264022)检索与此字符串类似 AQS 字符串：
+    在示例中的 SuperMUTT 设备[ **GetDeviceSelector** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_GetDeviceSelector_System_UInt32_System_UInt32_System_Guid_)检索与此字符串类似 AQS 字符串：
 
     `"System.Devices.InterfaceClassGuid:="{DEE824EF-729B-4A0E-9C14-B7117D33A817}" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True AND System.DeviceInterface.WinUsb.UsbVendorId:=1118 AND System.DeviceInterface.WinUsb.UsbProductId:=61441"`
 
@@ -123,20 +123,20 @@ UWP 应用可以找到匹配一组特定的类、 子类和协议代码的所有
 
      
 
--   如果您知道的设备或其类、 子类和协议代码的设备类，调用[ **GetDeviceClassSelector** ](https://msdn.microsoft.com/library/windows/apps/dn264013)生成 AQS 字符串。
+-   如果您知道的设备或其类、 子类和协议代码的设备类，调用[ **GetDeviceClassSelector** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_GetDeviceClassSelector_Windows_Devices_Usb_UsbDeviceClass_)生成 AQS 字符串。
 
-    创建[ **UsbDeviceClass** ](https://msdn.microsoft.com/library/windows/apps/dn263894)对象指定[ **ClassCode**](https://msdn.microsoft.com/library/windows/apps/dn263948)， [ **SubclassCode**](https://msdn.microsoft.com/library/windows/apps/dn263956)，并[ **ProtocolCode** ](https://msdn.microsoft.com/library/windows/apps/dn263951)属性值。 或者，如果您知道该设备的设备类，则可以调用构造函数通过指定特定[ **UsbDeviceClasses** ](https://msdn.microsoft.com/library/windows/apps/dn263904)属性。
+    创建[ **UsbDeviceClass** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDeviceClass)对象指定[ **ClassCode**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDeviceClass#Windows_Devices_Usb_UsbDeviceClass_ClassCode)， [ **SubclassCode**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDeviceClass#Windows_Devices_Usb_UsbDeviceClass_SubclassCode)，并[ **ProtocolCode** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDeviceClass#Windows_Devices_Usb_UsbDeviceClass_ProtocolCode)属性值。 或者，如果您知道该设备的设备类，则可以调用构造函数通过指定特定[ **UsbDeviceClasses** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDeviceClasses)属性。
 
 ## <a name="finding-the-devicethe-basic-way"></a>查找设备 — 的基本方法
 
 
-这是查找 USB 设备的最简单方法。 有关详细信息，请参阅[快速入门： 枚举通常使用设备](https://msdn.microsoft.com/library/windows/apps/xaml/hh872189)。
+这是查找 USB 设备的最简单方法。 有关详细信息，请参阅[快速入门： 枚举通常使用设备](https://docs.microsoft.com/previous-versions/windows/apps/hh872189(v=win.10))。
 
-1.  检索到 AQS 将字符串传递给[ **FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)。 该调用会检索[ **DeviceInformationCollection** ](https://msdn.microsoft.com/library/windows/apps/br225395)对象。
-2.  循环访问集合。 每次迭代获取[ **DeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/br225393)对象。
-3.  获取[ **DeviceInformation.Id** ](https://msdn.microsoft.com/library/windows/apps/br225437)属性值。 字符串值是设备实例路径。 例如，"\\\\\\\\？\\\\USB\#VID\_045E & PID\_078F\#6 1b8ff026 0 & 5\#{dee824ef-729b-4a0e-9c14-b7117d33a817}"。
-4.  调用[ **FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/dn264010)通过设备实例字符串和 get [ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)对象。 然后，可以使用**UsbDevice**对象来执行其他操作，例如发送控制传输。 当应用程序使用完**UsbDevice**对象，该应用程序必须将其释放通过调用[**关闭**](https://msdn.microsoft.com/library/windows/apps/dn263990)。
-    **请注意**  时 UWP 应用程序挂起，设备会自动关闭。 若要避免使用过时的句柄用于将来的操作，该应用程序必须释放[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)引用。
+1.  检索到 AQS 将字符串传递给[ **FindAllAsync**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_FindAllAsync_System_String_)。 该调用会检索[ **DeviceInformationCollection** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationCollection)对象。
+2.  循环访问集合。 每次迭代获取[ **DeviceInformation** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)对象。
+3.  获取[ **DeviceInformation.Id** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id)属性值。 字符串值是设备实例路径。 例如，"\\\\\\\\？\\\\USB\#VID\_045E & PID\_078F\#6 1b8ff026 0 & 5\#{dee824ef-729b-4a0e-9c14-b7117d33a817}"。
+4.  调用[ **FromIdAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_)通过设备实例字符串和 get [ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)对象。 然后，可以使用**UsbDevice**对象来执行其他操作，例如发送控制传输。 当应用程序使用完**UsbDevice**对象，该应用程序必须将其释放通过调用[**关闭**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close)。
+    **请注意**  时 UWP 应用程序挂起，设备会自动关闭。 若要避免使用过时的句柄用于将来的操作，该应用程序必须释放[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)引用。
 
      
 
@@ -169,15 +169,15 @@ UWP 应用可以找到匹配一组特定的类、 子类和协议代码的所有
 ## <a name="find-the-deviceusing-devicewatcher"></a>查找设备 — 使用 DeviceWatcher
 
 
-或者，可以动态地枚举设备。 然后，您的应用程序可以接收通知，如果添加或删除，设备或设备属性更改。 有关详细信息，请参阅[如何获取通知，如果设备被添加、 移除或更改](https://msdn.microsoft.com/library/windows/apps/xaml/hh967756)。
+或者，可以动态地枚举设备。 然后，您的应用程序可以接收通知，如果添加或删除，设备或设备属性更改。 有关详细信息，请参阅[如何获取通知，如果设备被添加、 移除或更改](https://docs.microsoft.com/previous-versions/windows/apps/hh967756(v=win.10))。
 
-一个[ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)对象，应用程序以添加用户以及他们获取从系统中删除动态检测设备。
+一个[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)对象，应用程序以添加用户以及他们获取从系统中删除动态检测设备。
 
-1.  创建[ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)对象无法检测何时添加或从系统中删除设备。 您必须创建该对象通过调用[ **CreateWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225427)并指定 AQS 字符串。
-2.  实现和注册的处理程序[ **Added** ](https://msdn.microsoft.com/library/windows/apps/br225450)并[**已删除**](https://msdn.microsoft.com/library/windows/apps/br225453)上的事件[ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)对象。 添加或从系统中删除 （具有相同的标识信息） 的设备时，将调用这些事件处理程序。
-3.  启动和停止[ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)对象。
+1.  创建[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)对象无法检测何时添加或从系统中删除设备。 您必须创建该对象通过调用[ **CreateWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher)并指定 AQS 字符串。
+2.  实现和注册的处理程序[ **Added** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Added)并[**已删除**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Removed)上的事件[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)对象。 添加或从系统中删除 （具有相同的标识信息） 的设备时，将调用这些事件处理程序。
+3.  启动和停止[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)对象。
 
-    应用必须启动[ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)对象通过调用[**启动**](https://msdn.microsoft.com/library/windows/apps/br225454) ，以便它可以开始检测设备，因为当他们添加或从系统中删除。 相反，必须停止该应用程序**DeviceWatcher**通过调用[**停止**](https://msdn.microsoft.com/library/windows/apps/br225456)，当不再需要以检测设备时。 此示例具有两个按钮，使用户可以启动和停止**DeviceWatcher**。
+    应用必须启动[ **DeviceWatcher** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)对象通过调用[**启动**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Start) ，以便它可以开始检测设备，因为当他们添加或从系统中删除。 相反，必须停止该应用程序**DeviceWatcher**通过调用[**停止**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Stop)，当不再需要以检测设备时。 此示例具有两个按钮，使用户可以启动和停止**DeviceWatcher**。
 
 此代码示例演示如何创建和启动设备观察程序要查找的 SuperMUTT 设备实例。
 
@@ -204,13 +204,13 @@ void CreateSuperMuttDeviceWatcher(void)
 ## <a name="open-the-device"></a>打开设备
 
 
-若要打开设备，应用必须启动异步操作通过调用静态方法[ **FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/dn264010)并传递设备实例路径 (从获取[ **DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/br225437))。 获取该操作的结果是[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)对象，用于将来的通信设备，如执行数据传输。
+若要打开设备，应用必须启动异步操作通过调用静态方法[ **FromIdAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_)并传递设备实例路径 (从获取[ **DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id))。 获取该操作的结果是[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)对象，用于将来的通信设备，如执行数据传输。
 
-在完成后使用[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)对象，必须将其释放。 通过释放对象，则将取消所有挂起的数据传输。 仍以已取消的错误或操作已完成，调用这些操作的完成回调例程。
+在完成后使用[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)对象，必须将其释放。 通过释放对象，则将取消所有挂起的数据传输。 仍以已取消的错误或操作已完成，调用这些操作的完成回调例程。
 
-C++应用必须通过使用发布的引用**删除**关键字。 C#/VB 应用必须调用[ **UsbDevice.Dispose** ](https://msdn.microsoft.com/library/windows/apps/dn264007)方法。 JavaScript 应用程序必须调用[ **UsbDevice.Close**](https://msdn.microsoft.com/library/windows/apps/dn263990)。
+C++应用必须通过使用发布的引用**删除**关键字。 C#/VB 应用必须调用[ **UsbDevice.Dispose** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Dispose)方法。 JavaScript 应用程序必须调用[ **UsbDevice.Close**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close)。
 
-[ **FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/dn264010)失败，如果设备处于使用或找不到。
+[ **FromIdAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_)失败，如果设备处于使用或找不到。
 
  
 

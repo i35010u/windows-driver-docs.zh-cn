@@ -8,19 +8,19 @@ keywords:
 - 移动宽带 (MB) WDK、 NDIS 6.20 进行连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d2751b0406ebb7eac538bba9b61f7902ba9900
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d32345e58a98c3fddfca3002076cb51c524b3b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374815"
 ---
 # <a name="mb--ndis-620-interfacing-overview"></a>MB/NDIS 6.20 接口概述
 
 
 本主题提供有关提供足够的背景*NDIS 6.20 规范*将放入透视 MB 驱动程序模型。 它不是 NDIS 6.20 的引用。 在此内容之间的差异的情况下， *NDIS 6.20 规范*，请参阅[NDIS 6.20](introduction-to-ndis-6-20.md)文档的完整信息。
 
-在 NDIS 6.20 MB 服务调用[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)问题 OID 请求到微型端口驱动程序。 然后，微型端口驱动程序调用[ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)若要将数据返回到 MB 服务。
+在 NDIS 6.20 MB 服务调用[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)问题 OID 请求到微型端口驱动程序。 然后，微型端口驱动程序调用[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)若要将数据返回到 MB 服务。
 
 NDIS 6.20 支持以下类型的 OID 操作：
 
@@ -34,25 +34,25 @@ NDIS 6.20 支持以下类型的 OID 操作：
 
 ### <a name="receiving-set-and-query-requests"></a>接收*设置*并*查询*请求
 
-MB 微型端口驱动程序实现[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416) NDIS 处理程序以响应同时*设置*并*查询*请求。
+MB 微型端口驱动程序实现[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request) NDIS 处理程序以响应同时*设置*并*查询*请求。
 
 ### <a name="sending-status-indications"></a>发送状态指示
 
-微型端口驱动程序通过调用向 MB 服务提供状态指示[ **NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)。 请参阅[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)状态指示有关的更多详细信息的结构。
+微型端口驱动程序通过调用向 MB 服务提供状态指示[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)。 请参阅[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)状态指示有关的更多详细信息的结构。
 
 ### <a name="connection-state-indications"></a>连接状态指示
 
-NDIS 6.20 微型端口驱动程序必须使用[ **NDIS\_状态\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567391)状态指示通知 NDIS 和已有的基础驱动程序更改传输媒体的物理特征。
+NDIS 6.20 微型端口驱动程序必须使用[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状态指示通知 NDIS 和已有的基础驱动程序更改传输媒体的物理特征。
 
-**StatusBuffer**成员的 NDIS\_状态\_指示结构[ **NDIS\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/hh205390)结构，它指定传输媒体的物理状态。
+**StatusBuffer**成员的 NDIS\_状态\_指示结构[ **NDIS\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)结构，它指定传输媒体的物理状态。
 
 MB 微型端口驱动程序应避免发送 NDIS\_状态\_链接\_状态状态指示，指示是否不已在该介质的物理状态中的任何更改。 但是，微型端口驱动程序都不一定需要避免发送此状态指示。
 
 MB 微型端口驱动程序必须报告当前连接的数据类的最大数据速率。 数据类在连接中的更改必须导致报告相应数据传输率连接状态指示。 以下是此规则的建议的实现：
 
-1.  必须使用 MB 微型端口驱动程序符合此规范[ **NDIS\_状态\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567391)以指示连接状态更改而不是 NDIS\_状态\_媒体\_CONNECT、 NDIS\_状态\_媒体\_断开连接或 NDIS\_状态\_链接\_速度\_连接状态指示，更改 （如在 NDIS 5.1)。
+1.  必须使用 MB 微型端口驱动程序符合此规范[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)以指示连接状态更改而不是 NDIS\_状态\_媒体\_CONNECT、 NDIS\_状态\_媒体\_断开连接或 NDIS\_状态\_链接\_速度\_连接状态指示，更改 （如在 NDIS 5.1)。
 
-2.  **XmitLinkSpeed**并**RcvLinkSpeed**的成员[ **NDIS\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/hh205390)结构必须不报告 NDIS\_链接\_速度\_未知。 微型端口驱动程序必须通过使用下表中的信息来报告速度。
+2.  **XmitLinkSpeed**并**RcvLinkSpeed**的成员[ **NDIS\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)结构必须不报告 NDIS\_链接\_速度\_未知。 微型端口驱动程序必须通过使用下表中的信息来报告速度。
 
 **为基于 GSM 的 MB 设备的链接速度**
 
@@ -93,7 +93,7 @@ MB 微型端口驱动程序必须报告当前连接的数据类的最大数据�
 <tr class="odd">
 <td align="left"><p>HSUPA</p></td>
 <td align="left"><p>1.4 到 5.76 mbps</p></td>
-<td align="left"><p>7.2 mbps 以 64 kbps</p></td>
+<td align="left"><p>7\.2 mbps 以 64 kbps</p></td>
 </tr>
 </tbody>
 </table>

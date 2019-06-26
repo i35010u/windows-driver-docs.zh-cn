@@ -4,12 +4,12 @@ description: 在设备安装和驱动程序更新期间避免系统重启
 ms.assetid: b30c9e5f-85af-4e7f-81aa-67fe2df8a178
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 004d3f794cea8e65df1fa7abe9c3ee403914f847
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41bda6a033b69bd16b4cfad289b32fb1354ef9c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380347"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385302"
 ---
 # <a name="avoiding-system-restarts-during-device-installations-and-driver-updates"></a>在设备安装和驱动程序更新期间避免系统重启
 
@@ -56,25 +56,25 @@ ms.locfileid: "63380347"
     如果使用此标志，Windows 将尝试替换为磁盘上的驱动程序文件。 有关详细信息，请参阅[INF CopyFiles 指令](inf-copyfiles-directive.md)。
 
 2.  如果 INF 适用的即插即用驱动程序，请在设备安装 Windows 尝试卸载正在运行的驱动程序并重新启动才能选取新版本的驱动程序使用它的设备。 如果失败，设备安装指示应重新启动系统。
-3.  如果 INF 即插即用驱动程序并不使用一种方法，如[ **InstallHInfSection** ](https://msdn.microsoft.com/library/windows/desktop/aa376957)处理 INF，则手动停止并重新启动该驱动程序：
+3.  如果 INF 即插即用驱动程序并不使用一种方法，如[ **InstallHInfSection** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona)处理 INF，则手动停止并重新启动该驱动程序：
     -   关闭所有打开的句柄驱动程序，然后停止驱动程序使用以下项之一：
 
         -   **sc.exe stop** *&lt;mydriver&gt;*
         -   **ControlService(SERVICE_CONTROL_STOP)**
 
-        有关详细信息，请参阅[ **control 服务函数**](https://msdn.microsoft.com/library/windows/desktop/ms682108)。
+        有关详细信息，请参阅[ **control 服务函数**](https://docs.microsoft.com/windows/desktop/api/winsvc/nf-winsvc-controlservice)。
 
 如果不使用 INF 文件，使用以下步骤：
 
 1.  停止该驱动程序，如上文所述。 替换为新旧驱动程序二进制文件。
-2.  如果您不能停止该驱动程序，重命名现有文件，将新文件复制到的位置，并设置现有文件以在将来删除 (例如，使用[ **MoveFileEx** ](https://msdn.microsoft.com/library/windows/desktop/aa365240)与**MOVEFILE_DELAY_UNTIL_REBOOT**标志)。 为了开始使用新版本的驱动程序，系统将需要重新启动。
+2.  如果您不能停止该驱动程序，重命名现有文件，将新文件复制到的位置，并设置现有文件以在将来删除 (例如，使用[ **MoveFileEx** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-movefileexa)与**MOVEFILE_DELAY_UNTIL_REBOOT**标志)。 为了开始使用新版本的驱动程序，系统将需要重新启动。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[文件备份和支持页的文件部分](https://msdn.microsoft.com/library/windows/hardware/ff545754)
+[文件备份和支持页的文件部分](https://docs.microsoft.com/windows-hardware/drivers/kernel/file-backed-and-page-file-backed-sections)
 
-[加载驱动程序时由什么决定](https://msdn.microsoft.com/library/windows/hardware/ff557272)
+[加载驱动程序时由什么决定](https://docs.microsoft.com/windows-hardware/drivers/ifs/what-determines-when-a-driver-is-loaded)
 
  
 

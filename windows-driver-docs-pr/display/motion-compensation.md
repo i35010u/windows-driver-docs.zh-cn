@@ -12,12 +12,12 @@ keywords:
 - 数字视频解码 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 746476b34371e33ce1e161ed338560b44eac3e48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a22949f5aec4c8fb7cb4a0d8b78f6c4f53a73f58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519731"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372881"
 ---
 # <a name="motion-compensation"></a>运动补偿
 
@@ -31,9 +31,9 @@ ms.locfileid: "56519731"
 
 若要启用运动补偿功能，该驱动程序必须执行以下步骤：
 
--   实现[ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)函数，并设置**GetDriverInfo**隶属[ **DD\_HALINFO**](https://msdn.microsoft.com/library/windows/hardware/ff551627)结构，以指向此函数时[ **DrvGetDirectDrawInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556229)调用。 在驱动程序*DdGetDriverInfo*函数必须分析 GUID\_MotionCompCallbacks GUID。
+-   实现[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)函数，并设置**GetDriverInfo**隶属[ **DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构，以指向此函数时[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)调用。 在驱动程序*DdGetDriverInfo*函数必须分析 GUID\_MotionCompCallbacks GUID。
 
--   填写[ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)用相应的驱动程序回调指针和回调类型标志时设置的结构*DdGetDriverInfo*函数调用使用 GUID\_MotionCompCallbacks GUID。 该驱动程序必须随后将此初始化的结构复制到 Microsoft DirectDraw 分配缓冲区所属**lpvData**的成员[ **DD\_GETDRIVERINFODATA**](https://msdn.microsoft.com/library/windows/hardware/ff551550)结构点，并返回到缓冲区中写入的字节数**dwActualSize**。
+-   填写[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)用相应的驱动程序回调指针和回调类型标志时设置的结构*DdGetDriverInfo*函数调用使用 GUID\_MotionCompCallbacks GUID。 该驱动程序必须随后将此初始化的结构复制到 Microsoft DirectDraw 分配缓冲区所属**lpvData**的成员[ **DD\_GETDRIVERINFODATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)结构点，并返回到缓冲区中写入的字节数**dwActualSize**。
 
  
 

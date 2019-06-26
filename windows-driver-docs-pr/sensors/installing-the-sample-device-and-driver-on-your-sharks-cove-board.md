@@ -4,12 +4,12 @@ description: 请按照下列步骤安装示例驱动程序并将 ADXL345 加速�
 ms.assetid: A67EBD9C-9C5A-49D3-9205-37FC4396DF56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4933140d66f1aa5a7d8f9b0ce89d384aa87e808c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be6def79b02e6ae72d48ef8908dbfdfb537d25b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345245"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377940"
 ---
 # <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>Shark Cove 板上安装的示例设备和驱动程序
 
@@ -19,7 +19,7 @@ ms.locfileid: "63345245"
 ## <a name="install-windows-on-the-sharks-cove-board"></a>在 Sharks Cove 板上安装 Windows
 
 
-有关如何获取 Shark Cove 看板以及如何在看板上安装 Windows 的信息，请参阅[Shark Cove 硬件开发板](https://msdn.microsoft.com/library/windows/hardware/dn745910)并[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)。
+有关如何获取 Shark Cove 看板以及如何在看板上安装 Windows 的信息，请参阅[Shark Cove 硬件开发板](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)并[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)。
 
 ## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>修改用于 Shark Cove ADXL345
 
@@ -42,9 +42,9 @@ ms.locfileid: "63345245"
 ## <a name="install-kits-and-tools"></a>安装工具包和工具
 
 
-一个驱动程序开发环境具有两台计算机：*主计算机*和*目标计算机*。 目标计算机也称为“测试计算机”。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
+一个驱动程序开发环境具有两台计算机：*主计算机*和*目标计算机*。 目标计算机也称为“测试计算机”  。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
 
-在主计算机上安装工具包和工具中所述[Shark Cove 硬件开发板](https://msdn.microsoft.com/library/windows/hardware/dn745910)。
+在主计算机上安装工具包和工具中所述[Shark Cove 硬件开发板](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)。
 
 ## <a name="download-and-extract-the-spbaccelerometer-sample"></a>下载并提取 SpbAccelerometer 示例
 
@@ -59,7 +59,7 @@ ms.locfileid: "63345245"
 ## <a name="set-the-configuration-and-platform-in-visual-studio"></a>在 Visual Studio 中设置的配置和平台
 
 
-在 Visual Studio 中，在解决方案资源管理器，右键单击**解决方案 SpbAccelerometer （2 个项目）**，然后选择**Configuration Manager**。 设置配置和平台。 请确保配置**Win8.1 调试**，并将平台设置为**Win32**。 为驱动程序项目和包项目执行此操作。 不会检查**部署**框。
+在 Visual Studio 中，在解决方案资源管理器，右键单击**解决方案 SpbAccelerometer （2 个项目）** ，然后选择**Configuration Manager**。 设置配置和平台。 请确保配置**Win8.1 调试**，并将平台设置为**Win32**。 为驱动程序项目和包项目执行此操作。 不会检查**部署**框。
 
 ## <a name="build-the-sample-using-visual-studio"></a>使用 Visual Studio 生成示例
 
@@ -231,7 +231,7 @@ testsigning             Yes
 
     **bcdedit /set TESTSIGNING ON**
 
-2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到“设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”设置为“禁用”。
+2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到  “设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”  设置为“禁用”  。
 3.  保存更改并继续启动到 Windows。
 
 
@@ -245,7 +245,7 @@ testsigning             Yes
 
 
 1.  在主计算机上 Visual Studio 中打开 SpbAccelerometer 解决方案。
-2.  在解决方案资源管理器，双击**包**（小写），然后选择**属性**。 转到**驱动程序安装 &gt; 部署**。 检查**启用部署**。 选中**部署前删除以前的驱动程序版本**。 有关**目标计算机名称**，输入以前预配你 Shark Cove 看板的名称。 选择**安装并验证**。 单击 **“确定”**。
+2.  在解决方案资源管理器，双击**包**（小写），然后选择**属性**。 转到**驱动程序安装 &gt; 部署**。 检查**启用部署**。 选中**部署前删除以前的驱动程序版本**。 有关**目标计算机名称**，输入以前预配你 Shark Cove 看板的名称。 选择**安装并验证**。 单击 **“确定”** 。
 3.  上**调试**菜单中，选择**开始调试**。 驱动程序包会自动复制到 Shark Cove 板。 您的驱动程序将自动安装和加载。 Windows 用户模式下调试程序 （在 Visual Studio 中的主机计算机上运行） 会自动将附加到承载您的驱动程序的 Wudfhost.exe （Shark Cove 板上运行） 的实例。
 
 

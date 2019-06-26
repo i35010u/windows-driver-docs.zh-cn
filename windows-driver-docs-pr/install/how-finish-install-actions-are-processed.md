@@ -11,12 +11,12 @@ keywords:
 - DI_FLAGSEX_FINISHINSTALL_ACTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e8368607b1af9f00f2a2044cfca3a6dd622ffc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bef923a0bc63beee143a72971e7fdb35674384f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325820"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386404"
 ---
 # <a name="how-finish-install-actions-are-processed"></a>如何处理 Finish-Install 操作
 
@@ -33,11 +33,11 @@ Windows 处理完成安装操作后所有其他安装操作已完成，并且设
 
 Windows 完成以下步骤来处理的安装程序完成安装操作：
 
-1.  在核心设备安装结束时，Windows 将调用[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)发送[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)到设备的安装程序的请求。
+1.  在核心设备安装结束时，Windows 将调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)发送[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)到设备的安装程序的请求。
 
     DIF_NEWDEVICEWIZARD_FINISHINSTALL 是这两个上下文中的核心设备安装和客户端上下文中发送的唯一差异代码。 因此，安装程序类、 类共同安装程序或设备共同安装程序必须指示它具有完成安装操作 DIF_NEWDEVICEWIZARD_FINISHINSTALL 在处理期间，而不是在 DIF_INSTALLDEVICE 处理过程。
 
-2.  如果安装程序提供了完成安装操作，则将 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志设置以响应[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)请求。 如果 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志设置的所有安装程序处理完 DIF_NEWDEVICEWIZARD_FINISHINSTALL 请求后，设备将标记执行完成安装操作。
+2.  如果安装程序提供了完成安装操作，则将 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志设置以响应[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)请求。 如果 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志设置的所有安装程序处理完 DIF_NEWDEVICEWIZARD_FINISHINSTALL 请求后，设备将标记执行完成安装操作。
 
     有关此操作的详细信息，请参阅[将标记为具有执行完成安装操作设备](setting-the-configflag-finishinstall-action-device-configuration-flag.md)。
 
@@ -53,7 +53,7 @@ Windows 完成以下步骤来处理的安装程序完成安装操作：
 
     如果用户没有管理权限登录，Windows 将提示用户同意的情况下以及凭据才能在管理员上下文中运行的完成安装操作输入。
 
-4.  当完成安装操作的运行，在完成安装过程开始和完成设备，任何完成安装向导页，然后调用[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)发送[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)中所述对该设备，为所有安装程序的请求[运行完成安装操作](running-finish-install-actions.md)。
+4.  当完成安装操作的运行，在完成安装过程开始和完成设备，任何完成安装向导页，然后调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)发送[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)中所述对该设备，为所有安装程序的请求[运行完成安装操作](running-finish-install-actions.md)。
 
 5.  安装程序完成其完成安装操作后，Windows 运行默认的完成安装操作，如中所述[运行默认完成安装操作](running-the-default-finish-install-action.md)。
 

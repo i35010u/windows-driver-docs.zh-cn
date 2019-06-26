@@ -14,12 +14,12 @@ keywords:
 - 供应商提供的启动驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 492fb91aaa4ef4f2ef9958bfea720cfbffc29cd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0484bb6ad133b80ff8438323b85b839e70e86f41
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357506"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370004"
 ---
 # <a name="installing-a-boot-start-driver"></a>安装引导启动驱动程序
 
@@ -74,7 +74,7 @@ ms.locfileid: "63357506"
 
 ### <a href="" id="boot-start-driver-distribution-disk"></a> 引导启动驱动程序分发磁盘
 
-一个*引导启动驱动程序分发磁盘*是一个媒介，如软盘或 USB 闪存驱动器，其中包含*TxtSetup.oem*文件和相关的驱动程序文件。 *TxtSetup.oem*文件是包含的文件将复制到系统中，在分布磁盘上的列表和注册表项和值将创建一系列的硬件组件列表的文本文件。 一个示例*TxtSetup.oem*文件下提供了使用 Windows Driver Kit (WDK) 中， \\WDK 的 src 目录。 有关详细信息的内容*TxtSetup.oem*文件，请参阅[TxtSetup.oem 文件格式](https://msdn.microsoft.com/library/windows/hardware/ff553509)。
+一个*引导启动驱动程序分发磁盘*是一个媒介，如软盘或 USB 闪存驱动器，其中包含*TxtSetup.oem*文件和相关的驱动程序文件。 *TxtSetup.oem*文件是包含的文件将复制到系统中，在分布磁盘上的列表和注册表项和值将创建一系列的硬件组件列表的文本文件。 一个示例*TxtSetup.oem*文件下提供了使用 Windows Driver Kit (WDK) 中， \\WDK 的 src 目录。 有关详细信息的内容*TxtSetup.oem*文件，请参阅[TxtSetup.oem 文件格式](https://docs.microsoft.com/previous-versions/ff553509(v=vs.85))。
 
 以下要求和建议适用于特定于平台和跨平台分发版磁盘：
 

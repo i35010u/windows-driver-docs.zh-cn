@@ -9,12 +9,12 @@ keywords:
 - 调试流类微型驱动程序 WDK Windows 2000 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2afff5ab5c84684411417be7acaf3d8aa2e0dd47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 060ddb9dc4cd370fed1bfa2361c9ee909679a5ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377815"
 ---
 # <a name="stream-class-debugging"></a>流类调试
 
@@ -30,7 +30,7 @@ ms.locfileid: "63391376"
 
 -   若要调整调试器的输出级，加载*stream.sys*符号 (*stream.sym* Windows 我和*stream.sys*适用于 Windows 2000) 和修改*StreamDebug*变量与"e StreamDebug *xx*"。 默认值为 00，这将输出仅为严重错误。 将其设置为 FF 要打印的所有消息。
 
--   微型驱动程序可以打印自己的消息，使用*stream.sys*设施前面所述，通过调用[ **StreamClassDebugPrint**](https://msdn.microsoft.com/library/windows/hardware/ff568235)。 请注意，如前面所述的输出级别必须设置为大于或等于所选的调用中的输出级别。
+-   微型驱动程序可以打印自己的消息，使用*stream.sys*设施前面所述，通过调用[ **StreamClassDebugPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassdebugprint)。 请注意，如前面所述的输出级别必须设置为大于或等于所选的调用中的输出级别。
 
  
 

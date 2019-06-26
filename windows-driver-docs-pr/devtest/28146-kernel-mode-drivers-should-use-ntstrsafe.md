@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28146
-ms.openlocfilehash: 4821f4657117e0ed28071d24a72b80fabf02bbfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e04b61871faa1a6735deb763297791311611e869
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364125"
 ---
 # <a name="c28146"></a>C28146
 
@@ -36,7 +36,7 @@ ms.locfileid: "63361371"
 
  
 
-内核模式驱动程序包括 Strsafe.h，而不是 Ntstrsafe.h。 有关 Ntstrsafe.h 和 Strsafe.h 信息，请参阅[使用安全字符串函数](https://msdn.microsoft.com/library/windows/hardware/ff565508)。
+内核模式驱动程序包括 Strsafe.h，而不是 Ntstrsafe.h。 有关 Ntstrsafe.h 和 Strsafe.h 信息，请参阅[使用安全字符串函数](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-safe-string-functions)。
 
  
 

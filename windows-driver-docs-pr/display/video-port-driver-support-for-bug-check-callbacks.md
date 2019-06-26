@@ -7,12 +7,12 @@ keywords:
 - bug 检查回调 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de71773780a510b68e0cd448c221d2be7fc522e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e3e90d207eb07c221161ee17a8ba4555e453c9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389609"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372625"
 ---
 # <a name="video-port-driver-support-for-bug-check-callbacks"></a>Bug 检查回调的视频端口驱动程序支持
 
@@ -20,13 +20,13 @@ ms.locfileid: "63389609"
 ## <span id="ddk_video_port_driver_support_for_bug_check_callbacks_gg"></span><span id="DDK_VIDEO_PORT_DRIVER_SUPPORT_FOR_BUG_CHECK_CALLBACKS_GG"></span>
 
 
-微型端口驱动程序在 Windows XP SP1 和更高版本，可实现和注册[ **HwVidBugcheckCallback**](https://msdn.microsoft.com/library/windows/hardware/ff567324)，系统调用时的函数[ **Bug 检查 0xEA （线程\_STUCK\_IN\_设备\_驱动程序)** ](https://msdn.microsoft.com/library/windows/hardware/ff560350)时发生。 *HwVidBugcheckCallback*可以将其自己的数据附加到的转储文件，驱动程序开发人员可用于诊断其驱动程序中的问题。
+微型端口驱动程序在 Windows XP SP1 和更高版本，可实现和注册[ **HwVidBugcheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_bugcheck_callback)，系统调用时的函数[ **Bug 检查 0xEA （线程\_STUCK\_IN\_设备\_驱动程序)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xea--thread-stuck-in-device-driver)时发生。 *HwVidBugcheckCallback*可以将其自己的数据附加到的转储文件，驱动程序开发人员可用于诊断其驱动程序中的问题。
 
 有关注册信息*HwVidBugcheckCallback*，请参阅以下主题：
 
-[单独注册视频微型端口驱动程序函数](https://msdn.microsoft.com/library/windows/hardware/ff567672)
+[单独注册视频微型端口驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[**VideoPortRegisterBugcheckCallback**](https://msdn.microsoft.com/library/windows/hardware/ff570353)
+[**VideoPortRegisterBugcheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportregisterbugcheckcallback)
 
  
 

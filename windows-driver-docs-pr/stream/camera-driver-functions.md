@@ -4,31 +4,31 @@ description: 以下的照相机的驱动程序函数是适用于 Windows 10 新�
 ms.assetid: 42116C2B-BEB8-4A8C-99AC-0D0B2E7B124C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 614fb9cb702231564c92660116bb18c1344fc46d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a67c1de8473cbdd67b9004131c70b6e32b07893
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370244"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386670"
 ---
 # <a name="new-camera-driver-functions-for-windows-10"></a>适用于 Windows 10 的全新相机驱动程序函数
 
 
 以下的照相机的驱动程序函数是适用于 Windows 10 新功能。
 
-[**KsAcquireCachedMdl**](https://msdn.microsoft.com/library/windows/hardware/mt186387)
+[**KsAcquireCachedMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksacquirecachedmdl)
 
-[**KsDeviceRegisterThermalDispatch**](https://msdn.microsoft.com/library/windows/hardware/mt186388)
+[**KsDeviceRegisterThermalDispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksdeviceregisterthermaldispatch)
 
-[**KsGenerateThermalEvent**](https://msdn.microsoft.com/library/windows/hardware/mt186391)
+[**KsGenerateThermalEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgeneratethermalevent)
 
-[**KsInitializeDeviceProfile**](https://msdn.microsoft.com/library/windows/hardware/dn917797)
+[**KsInitializeDeviceProfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedeviceprofile)
 
-[**KsPersistDeviceProfile**](https://msdn.microsoft.com/library/windows/hardware/dn917889)
+[**KsPersistDeviceProfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspersistdeviceprofile)
 
-[**KsPublishDeviceProfile**](https://msdn.microsoft.com/library/windows/hardware/dn936920)
+[**KsPublishDeviceProfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspublishdeviceprofile)
 
-[**KsReleaseCachedMdl**](https://msdn.microsoft.com/library/windows/hardware/mt186396)
+[**KsReleaseCachedMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksreleasecachedmdl)
 
  
 

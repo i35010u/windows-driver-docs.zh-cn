@@ -3,12 +3,12 @@ title: 对照相机方向的驱动程序支持
 description: 提供有关如何显式指定的设备上的照相机方向信息。
 ms.date: 08/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b271e8b8552c17b077f536f9d5491bff7a181f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63a4a75c684aa7bba39853636ce171edc432ac63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370296"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386691"
 ---
 # <a name="driver-support-for-camera-orientation"></a>对照相机方向的驱动程序支持
 
@@ -63,7 +63,7 @@ typedef struct _ACPI_PLD_V2_BUFFER {
 
 因此，应用程序需要一种机制，以说明两个外围设备之间的空间关系，以便捕获的帧可以转置到正确的方向呈现图面上。
 
-若要解决此问题的一种方法是使用 ACPI\_以前结构，其中已有的概念*图面*并*旋转的度数*定义。 请参阅[ACPI 规范](https://www.uefi.org/specifications)并[ACPI 支持文档](https://www.uefi.org/acpi)的完整规范。 例如，\_以前结构已*面板*字段指定外围设备所在的图面：
+若要解决此问题的一种方法是使用 ACPI\_以前结构，其中已有的概念*图面*并*旋转的度数*定义。 请参阅[ACPI 规范](https://uefi.org/specifications)并[ACPI 支持文档](https://uefi.org/acpi)的完整规范。 例如，\_以前结构已*面板*字段指定外围设备所在的图面：
 
 ![ACPI 以前面板字段](images/acpi-pld-panel-field.png)
 

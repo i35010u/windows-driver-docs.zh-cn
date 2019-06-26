@@ -8,21 +8,21 @@ keywords:
 - PSHED 插件 WDK WHEA，注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a3fa067f6a6a6b381aaa4a5e4fa06f474d5bc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb2de564e37fef3ceba5b6b130a61a3e04b0c6a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340661"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387150"
 ---
 # <a name="registering-a-pshed-plug-in"></a>注册 PSHED 插件
 
 
-PSHED 插件向注册自身 PSHED 通过调用[ **PshedRegisterPlugin** ](https://msdn.microsoft.com/library/windows/hardware/ff559466)函数，将指针传递到一个初始化[ **WHEA\_PSHED\_插件\_注册\_数据包**](https://msdn.microsoft.com/library/windows/hardware/ff560617)结构。 PSHED 插件通常会调用**PshedRegisterPlugin**一个内部函数从其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数或其[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)函数。
+PSHED 插件向注册自身 PSHED 通过调用[ **PshedRegisterPlugin** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pshedregisterplugin)函数，将指针传递到一个初始化[ **WHEA\_PSHED\_插件\_注册\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_pshed_plugin_registration_packet)结构。 PSHED 插件通常会调用**PshedRegisterPlugin**一个内部函数从其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数或其[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)函数。
 
-可以调用插件 PSHED [ **PshedIsSystemWheaEnabled** ](https://msdn.microsoft.com/library/windows/hardware/ff559465)来检查系统是否是 WHEA 启用它之前调用**PshedRegisterPlugin**。
+可以调用插件 PSHED [ **PshedIsSystemWheaEnabled** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pshedissystemwheaenabled)来检查系统是否是 WHEA 启用它之前调用**PshedRegisterPlugin**。
 
-PSHED 插件已成功将自己注册与 PSHED 后，它不能取消注册的操作系统会话持续时间。 因此，插件已注册的 PSHED 不能从系统中卸载，否则可能会产生的 bug 检查。 因此，也不实现 PSHED 插件[ **Unload** ](https://msdn.microsoft.com/library/windows/hardware/ff564886)函数。
+PSHED 插件已成功将自己注册与 PSHED 后，它不能取消注册的操作系统会话持续时间。 因此，插件已注册的 PSHED 不能从系统中卸载，否则可能会产生的 bug 检查。 因此，也不实现 PSHED 插件[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数。
 
 下面的代码示例说明如何注册插件参与 PSHED 中错误的信息检索和错误记录持久性。
 

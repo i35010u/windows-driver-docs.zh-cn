@@ -4,12 +4,12 @@ description: MSFC\_TM WMI 类
 ms.assetid: c81b9b2a-6381-4ff9-a579-bee53ac8678d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 10f520f15b3e776ef6b40073a971359c5d22b391
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b87ceb4a9fb9a7e4a6e032d2e12bbec3935d3d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386544"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376707"
 ---
 # <a name="msfctm-wmi-class"></a>MSFC\_TM WMI 类
 
@@ -37,7 +37,7 @@ class MSFC_TM {
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_TM**](https://msdn.microsoft.com/library/windows/hardware/ff562520)
+[**MSFC\_TM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_tm)
 
  
 

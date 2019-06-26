@@ -7,12 +7,12 @@ keywords:
 - I/O WDK 内核设备编程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d00f776d44156e398b227077a9968b0a5e18550
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62d4a425124dcdca06df6766ef70c17448edd0e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378787"
 ---
 # <a name="programming-a-device-for-an-io-operation"></a>为 I/O 操作设备编程
 
@@ -20,7 +20,7 @@ ms.locfileid: "63381361"
 
 
 
-遵循以下通用原则用于设计、 编写，并调用[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)程序设备的 I/O 操作的例程：
+遵循以下通用原则用于设计、 编写，并调用[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)程序设备的 I/O 操作的例程：
 
 -   一个*SynchCritSection*程序适用于 I/O 操作的设备的例程必须尽可能快地返回控制。
 

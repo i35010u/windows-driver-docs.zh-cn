@@ -6,12 +6,12 @@ keywords:
 - MS-DOS 设备名称 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af3eab546708499c904671148af90609e2ac36e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a61531b6f4004a79e3125b36a578d2ea1eaaf209
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341458"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369923"
 ---
 # <a name="introduction-to-ms-dos-device-names"></a>MS-DOS 设备名称简介
 
@@ -23,11 +23,11 @@ ms.locfileid: "63341458"
 
 MS-DOS 设备名称与设备的一个示例是串行端口，COM1。 它具有 MS-DOS 设备名称 **\\DosDevices\\COM1**。 同样，C 驱动器的名称 **\\DosDevices\\c:** 。
 
-WDM 驱动程序通常不提供其设备的 MS-DOS 设备名称。 相反，使用 WDM 驱动程序[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)例程，以注册设备接口。 设备接口指定设备由各自的功能，而不是特定的命名约定。 有关详细信息，请参阅[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)。
+WDM 驱动程序通常不提供其设备的 MS-DOS 设备名称。 相反，使用 WDM 驱动程序[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)例程，以注册设备接口。 设备接口指定设备由各自的功能，而不是特定的命名约定。 有关详细信息，请参阅[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)。
 
 驱动程序需要提供 MS-DOS 设备名称，仅当设备需要具有特定的已知 MS-DOS 设备名称以使用用户模式程序。
 
-驱动程序通过使用提供设备对象的 MS-DOS 设备名称[ **IoCreateSymbolicLink** ](https://msdn.microsoft.com/library/windows/hardware/ff549043)例程，以创建到设备的符号链接。 例如，下面的代码示例创建从符号链接 **\\DosDevices\\** <em>DosDeviceName</em>到 **\\设备\\**  <em>DeviceName</em>。
+驱动程序通过使用提供设备对象的 MS-DOS 设备名称[ **IoCreateSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesymboliclink)例程，以创建到设备的符号链接。 例如，下面的代码示例创建从符号链接 **\\DosDevices\\** <em>DosDeviceName</em>到 **\\设备\\**  <em>DeviceName</em>。
 
 ```cpp
 UNICODE_STRING DeviceName;

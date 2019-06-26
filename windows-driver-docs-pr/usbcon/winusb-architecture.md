@@ -3,12 +3,12 @@ Description: WinUSB 包含两个主要组件-Winusb.sys、 内核模式驱动程
 title: WinUSB 体系结构和模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8af8e1ac30fd4585ee25864ed38080d3a4cc6fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcf343743493aa12fe9d8c843b2ed322b9e8091c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389184"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385692"
 ---
 # <a name="winusb-architecture-and-modules"></a>WinUSB 体系结构和模块
 
@@ -16,9 +16,9 @@ ms.locfileid: "63389184"
 [WinUSB](winusb.md)两个主要组件组成：
 
 -   Winusb.sys 是可以作为筛选器或函数的驱动程序，上述的 USB 设备的内核模式设备堆栈中的协议驱动程序安装一个内核模式驱动程序。
--   Winusb.dll 是公开的用户模式 DLL [WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)。 应用程序可以使用这些函数以将其作为设备的功能驱动程序安装时与 Winusb.sys 进行通信。
+-   Winusb.dll 是公开的用户模式 DLL [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)。 应用程序可以使用这些函数以将其作为设备的功能驱动程序安装时与 Winusb.sys 进行通信。
 
-对于不需要自定义功能驱动程序的设备，Winusb.sys 可以安装在设备的内核模式堆栈为功能驱动程序。 用户模式进程然后可以通过使用一系列设备 I/O 控制请求或调用与 Winusb.sys 通信[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)。
+对于不需要自定义功能驱动程序的设备，Winusb.sys 可以安装在设备的内核模式堆栈为功能驱动程序。 用户模式进程然后可以通过使用一系列设备 I/O 控制请求或调用与 Winusb.sys 通信[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)。
 
 下图显示了包含多个实例的 Winusb.sys 的 USB 驱动程序堆栈。
 
@@ -39,7 +39,7 @@ ms.locfileid: "63389184"
 [如何通过使用 WinUSB 函数访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [针对管道策略修改 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
 [WinUSB 电源管理](winusb-power-management.md)  
-[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
+[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
 
 

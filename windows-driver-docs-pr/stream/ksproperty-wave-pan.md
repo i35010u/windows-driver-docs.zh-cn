@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f9eac01b65e835bd045a24f6e82a610cb12c49e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c4b393bd563bda7e873551f52550a6d44f999a2
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394115"
 ---
 # <a name="kspropertywavepan"></a>KSPROPERTY\_批\_平移
 
@@ -54,7 +54,7 @@ KSPROPERTY\_批\_平移属性指定批设备的平移设置。
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567249" data-raw-source="[&lt;strong&gt;KSWAVE_PAN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567249)"><strong>KSWAVE_PAN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/ff567249(v=vs.85)" data-raw-source="[&lt;strong&gt;KSWAVE_PAN&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff567249(v=vs.85))"><strong>KSWAVE_PAN</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -84,7 +84,7 @@ KSPROPERTY\_批\_平移属性指定批设备的平移设置。
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSWAVE\_PAN**](https://msdn.microsoft.com/library/windows/hardware/ff567249)
+[**KSWAVE\_PAN**](https://docs.microsoft.com/previous-versions/ff567249(v=vs.85))
 
  
 

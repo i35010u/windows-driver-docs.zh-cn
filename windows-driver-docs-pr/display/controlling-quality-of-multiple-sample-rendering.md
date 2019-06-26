@@ -7,12 +7,12 @@ keywords:
 - 呈现 multisamples WDK DirectX 9.0，控制质量
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb0c5b0b32ed37d3747df78ed9ad16a61f491531
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b4b71247737f24c1e33a4bb1da921d907d3796e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370297"
 ---
 # <a name="controlling-quality-of-multiple-sample-rendering"></a>控制多重采样渲染的质量
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323249"
 
 验证显示设备是否支持多级取样的技术，除了**IDirect3D9::CheckDeviceMultiSampleType**也会返回与方法关联的质量级别数。
 
-当应用程序请求创建图面时，它使用图面格式、 多重采样类型和数个质量级别，之前验证其支持的组合。 这可确保在图面已成功创建。 运行时调用的驱动程序[ *DdCanCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549213)， [ *DdCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549263)，或[ **D3dCreateSurfaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff542840)函数来创建在图面。 在此调用中，运行时将编码为多个采样图面到五位的样本数 (DDSCAPS3\_MULTISAMPLE\_掩码掩码) 和三位到多个样本质量级别数 (DDSCAPS3\_MULTISAMPLE\_质量\_掩码掩码) 的**dwCaps3**的成员[ **DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292)面的的结构。
+当应用程序请求创建图面时，它使用图面格式、 多重采样类型和数个质量级别，之前验证其支持的组合。 这可确保在图面已成功创建。 运行时调用的驱动程序[ *DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))， [ *DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))，或[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)函数来创建在图面。 在此调用中，运行时将编码为多个采样图面到五位的样本数 (DDSCAPS3\_MULTISAMPLE\_掩码掩码) 和三位到多个样本质量级别数 (DDSCAPS3\_MULTISAMPLE\_质量\_掩码掩码) 的**dwCaps3**的成员[ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))面的的结构。
 
 有关详细信息**IDirect3D9::CheckDeviceMultiSampleType**，请参阅最新的 DirectX SDK 文档。
 

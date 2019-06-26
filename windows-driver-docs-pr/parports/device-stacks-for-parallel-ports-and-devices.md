@@ -8,12 +8,12 @@ keywords:
 - 并行设备 WDK，设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eb17f8c9a513d6c365d23b6859ce66fc2adfb0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ec93a7c51fef316270e256b381e2ec20916ee4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376965"
 ---
 # <a name="device-stacks-for-parallel-ports-and-devices"></a>并行端口和设备的设备堆栈
 
@@ -39,7 +39,7 @@ ms.locfileid: "63373591"
 
 [运行并行设备附加到并行端口](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[系统提供并行的驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

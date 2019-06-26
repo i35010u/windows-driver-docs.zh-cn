@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fba1c1651c31e6d8153122052343d96754b3499
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6951db8df1958443088ddf45f35a54e41d845847
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332602"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391604"
 ---
 # <a name="kspropertysysaudiodeviceinterfacename"></a>KSPROPERTY\_SYSAUDIO\_DEVICE\_INTERFACE\_NAME
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_设备\_接口\_名称属性检索包含指定的虚拟音
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
 <td align="left"><p>LPWSTR</p></td>
 </tr>
 </tbody>
@@ -88,7 +88,7 @@ KSPROPERTY\_SYSAUDIO\_设备\_界面\_名称属性请求将返回状态\_成功�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
 [**KSPROPERTY\_SYSAUDIO\_DEVICE\_COUNT**](ksproperty-sysaudio-device-count.md)
 

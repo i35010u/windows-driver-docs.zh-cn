@@ -9,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2224e35dd11d04be01dd7a62edb5a6df49812f29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 838014830cc16dffc340327da3dc516bcd3f8504
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568549"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372373"
 ---
 # <a name="dynamically-generated-printer-commands"></a>动态生成的打印机命令
 
@@ -36,7 +36,7 @@ Unidrv 微型驱动程序，用于指定打印机命令文件每次可以使用�
 
 若要提供动态生成的命令字符串的代码，必须执行以下操作：
 
--   提供用于实现的插件呈现[ **IPrintOemUni::CommandCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff554216)方法。
+-   提供用于实现的插件呈现[ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)方法。
 
 -   包括\*CallbackID 命令属性和 （可选） \*Params 属性，该命令中的\*命令 GPD 文件中的条目。
 

@@ -4,17 +4,17 @@ description: 设备实例 ID 是唯一标识系统中的设备的系统提供的
 ms.assetid: 578973f4-463f-4707-8dc3-dff27b3d3052
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4f37a4f3fecfb35c3e6ae952af9492fc737601
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9857ee9a7e697cf14153f7b39e6ca74228edd81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357913"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387130"
 ---
 # <a name="device-instance-id"></a>设备实例 ID
 
 
-设备实例 ID 是唯一标识系统中的设备的系统提供的设备标识字符串。 插即用 (PnP) 管理器将设备实例 ID 分配给设备的每个节点 (*devnode*) 中的系统[设备树](https://msdn.microsoft.com/library/windows/hardware/ff543194)。
+设备实例 ID 是唯一标识系统中的设备的系统提供的设备标识字符串。 插即用 (PnP) 管理器将设备实例 ID 分配给设备的每个节点 (*devnode*) 中的系统[设备树](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)。
 
 
 

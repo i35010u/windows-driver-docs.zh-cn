@@ -4,12 +4,12 @@ description: 协议驱动程序发送和接收操作
 ms.assetid: c621d673-167e-41e1-a121-68e0d0bc6f8a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb76d8424590c461c50e2c26551f89344b9c3609
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 543cd0e1e96f693d3bcf9b3b16a5da28bf5fcc78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385460"
 ---
 # <a name="protocol-driver-send-and-receive-operations"></a>协议驱动程序发送和接收操作
 
@@ -17,7 +17,7 @@ ms.locfileid: "63347411"
 
 
 
-协议驱动程序发起的发送请求和处理的基础驱动程序的接收指示。 在单个函数调用中，可以发送多个协议的 NDIS 驱动程序[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构具有多个[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)每个网络上的结构\_缓冲区\_列表结构。 在接收路径中，协议驱动程序可以接收一系列 NET\_缓冲区\_列表结构。
+协议驱动程序发起的发送请求和处理的基础驱动程序的接收指示。 在单个函数调用中，可以发送多个协议的 NDIS 驱动程序[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构具有多个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)每个网络上的结构\_缓冲区\_列表结构。 在接收路径中，协议驱动程序可以接收一系列 NET\_缓冲区\_列表结构。
 
 协议驱动程序必须管理发送缓冲池。 适当管理这种池需要预先分配的缓冲区空间不足，为了优化系统性能。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64388ae3a95bb6aa67b225545637290bbf023457
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2e434a0297d380e27116d604efd58f79d1b5ad3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335580"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367793"
 ---
 # <a name="bug-check-0x14b-socsubsystemfailure"></a>Bug 检查 0x14B：SOC\_子系统\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "63335580"
 SOC\_子系统\_故障错误检查的值为 0x0000014B。 这表示芯片 (SoC) 子系统上的系统中遇到不可恢复的错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>Bug 检查 0x14B SOC\_子系统\_失败参数
@@ -46,7 +46,7 @@ SOC\_子系统\_故障错误检查的值为 0x0000014B。 这表示芯片 (SoC) 
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>地址<strong><a href="https://msdn.microsoft.com/library/windows/hardware/dn376404" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://msdn.microsoft.com/library/windows/hardware/dn376404)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构。</p></td>
+<td align="left"><p>地址<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

@@ -11,12 +11,12 @@ keywords:
 - 排队自旋锁 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a8d9c1b1a861209ee36b5d80865fc93d81107e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ad9eee4f77a68f0d5e8e466b149a7805113bbe2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341083"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369786"
 ---
 # <a name="initializing-spin-locks"></a>初始化自旋锁
 
@@ -24,19 +24,19 @@ ms.locfileid: "63341083"
 
 
 
-在调用之前需要对调用方提供 executive 旋转锁访问权限的任何支持例程，驱动程序必须调用[ **KeInitializeSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff552160)初始化相应的 executive 自旋锁。 需要初始化 executive 自旋锁的支持例程包括：
+在调用之前需要对调用方提供 executive 旋转锁访问权限的任何支持例程，驱动程序必须调用[ **KeInitializeSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)初始化相应的 executive 自旋锁。 需要初始化 executive 自旋锁的支持例程包括：
 
-- [**KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)以及随后[ **KeReleaseSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553145)
+- [**KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)以及随后[ **KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)
 
-- [**KeAcquireSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551921)以及随后[ **KeReleaseSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553150)
+- [**KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)以及随后[ **KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel)
 
-- [**KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)以及随后[ **KeReleaseInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553130)
+- [**KeAcquireInStackQueuedSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))以及随后[ **KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)
 
-- [**KeAcquireInStackQueuedSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551908)以及随后[ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553137)
+- [**KeAcquireInStackQueuedSpinLockAtDpcLevel** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85))以及随后[ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)
 
 - **ExInterlocked * Xxx*** 例程
 
-然后再调用[ **IoConnectInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff548371)并[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)，最低级别驱动程序必须调用[**KeInitializeSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff552160)初始化为其提供了存储的中断自旋锁。
+然后再调用[ **IoConnectInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)并[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)，最低级别驱动程序必须调用[**KeInitializeSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)初始化为其提供了存储的中断自旋锁。
 
  
 

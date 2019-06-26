@@ -13,12 +13,12 @@ keywords:
 - 事务对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24fb74d9d301986c333c543f46322acad0db13ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60d8c02e326586d098c4e85c2b1b89091c6dc850
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391349"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368680"
 ---
 # <a name="framework-dma-objects"></a>框架 DMA 对象
 
@@ -41,9 +41,9 @@ ms.locfileid: "63391349"
 
 有关这些对象将导出的接口的信息，请参阅：
 
-[Framework DMA 对象引用](https://msdn.microsoft.com/library/windows/hardware/dn265634)
+[Framework DMA 对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/)
 
-[Framework 常见缓冲区对象引用](https://msdn.microsoft.com/library/windows/hardware/dn265627)
+[Framework 常见缓冲区对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcommonbuffer/)
 
  
 

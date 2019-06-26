@@ -11,12 +11,12 @@ keywords:
 - 照相机 WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38295f636423026536ce2a3df749dd7339b217c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e050ac3c67db708feff3c1ba0983026644d9449a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378890"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373057"
 ---
 # <a name="usbcamd2-camera-configurations"></a>USBCAMD2 相机配置
 
@@ -31,7 +31,7 @@ ms.locfileid: "63378890"
 
 USBCAMD2 的主要目的是支持流式处理视频摄像机，如网络摄像机。 但是，USBCAMD2 还提供了支持使用 USB 大容量，中断传输管道，以捕获仍从照相机发送的图像。 此功能支持 USB 摄像机快照功能，仍可捕获帧。
 
-如果您的照相机主要流式处理视频中，并选择性地提供快照功能，然后您只需编写 USBCAMD2 微型驱动程序。 混合相机 （照相机的主要拍照仍，但是，还可以流式传输视频） 的供应商编写 USBCAMD2 微型驱动程序以支持流式传输功能，并单独 Windows 图像采集 (WIA) 仍照相机的驱动程序以支持仍映像存储和管理。 有关 WIA 和支持捕获静止图像的数字照相机的详细信息，请参阅[Windows 图像采集驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff553346)。
+如果您的照相机主要流式处理视频中，并选择性地提供快照功能，然后您只需编写 USBCAMD2 微型驱动程序。 混合相机 （照相机的主要拍照仍，但是，还可以流式传输视频） 的供应商编写 USBCAMD2 微型驱动程序以支持流式传输功能，并单独 Windows 图像采集 (WIA) 仍照相机的驱动程序以支持仍映像存储和管理。 有关 WIA 和支持捕获静止图像的数字照相机的详细信息，请参阅[Windows 图像采集驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)。
 
 USBCAMD2 库支持使用等时 pipe(s)、 大容量 I/O pipe(s) 和/或中断管道的组合来传输数据流和控制设置的照相机。 USBCAMD2 支持实现以下 USB 管道配置的照相机：
 
@@ -45,7 +45,7 @@ USBCAMD2 库支持使用等时 pipe(s)、 大容量 I/O pipe(s) 和/或中断管
 
 -   两个大容量 I/O 管道和一个可选中断管道。 一个大容量管道流视频和其他大容量管道仍将传输映像。 可选中断管道发出信号通知的注册的应用程序的外部触发器事件。
 
-**请注意**   USBCAMD2 支持使用具有多个备用设置的单个 USB 接口的照相机。 备用的所有设置必须都具有相同类型和数量的管道。 在类型的数组中指定此信息[ **USBCAMD\_管道\_Config\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff568623)传递给[ *CamConfigureEx* ](https://msdn.microsoft.com/library/windows/hardware/ff557605)时初始化和配置照相机。
+**请注意**   USBCAMD2 支持使用具有多个备用设置的单个 USB 接口的照相机。 备用的所有设置必须都具有相同类型和数量的管道。 在类型的数组中指定此信息[ **USBCAMD\_管道\_Config\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)传递给[ *CamConfigureEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)时初始化和配置照相机。
 
  
 

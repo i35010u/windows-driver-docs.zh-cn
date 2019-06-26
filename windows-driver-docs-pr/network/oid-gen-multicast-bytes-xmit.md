@@ -5,12 +5,12 @@ ms.assetid: 4e9b5fe7-4ca6-4099-9b99-8d90a591e8ec
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MULTICAST_BYTES_XMIT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9545ad0b84fce88c8a0cda7b90f2da520d2f5a6d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53dcd3061bc1ff94e1bf8a46c8e345940361705a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379401"
 ---
 # <a name="oidgenmulticastbytesxmit"></a>OID\_GEN\_多播\_字节\_XMIT
 
@@ -37,7 +37,7 @@ ms.locfileid: "63354631"
 <a name="remarks"></a>备注
 -------
 
-有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)。
+有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
 
 <a name="requirements"></a>要求
 ------------

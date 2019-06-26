@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e0864fb84b9f86c3be3db8d6c2658134276871
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96e6f0d2a57868707467aa795ddb6395622c7e59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344961"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384280"
 ---
 # <a name="kspropertybdatemplateconnections"></a>KSPROPERTY\_BDA\_模板\_连接
 
@@ -87,11 +87,11 @@ Pin 和模板拓扑中的节点之间的连接列表是一个数组 BDA\_模板\
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaPropertyTemplateConnections**](https://msdn.microsoft.com/library/windows/hardware/ff556501)
+[**BdaPropertyTemplateConnections**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertytemplateconnections)
 
-[**BDA\_模板\_连接**](https://msdn.microsoft.com/library/windows/hardware/ff556558)
+[**BDA\_模板\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_template_connection)
 
-[**KSPIN\_描述符\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)
+[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

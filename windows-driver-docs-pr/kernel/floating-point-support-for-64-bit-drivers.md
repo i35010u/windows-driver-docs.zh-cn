@@ -6,12 +6,12 @@ keywords:
 - 浮动点 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1f893e4917e3bb82e091ae372b017f7cf11f14f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49d05c6e9771fec01515870cc78c711c21a81582
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386598"
 ---
 # <a name="using-extended-processor-features-in-windows-drivers"></a>使用 Windows 驱动程序中扩展的处理器功能
 
@@ -20,7 +20,7 @@ ms.locfileid: "63359950"
 
 -   2016 年 7 月
 
-使用扩展的处理器功能的 x86 和 x64 系统的 Windows 驱动程序必须包装浮点计算调用之间[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)和[ **KeRestoreExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553182)以避免在并发应用程序可能使用寄存器中的错误。
+使用扩展的处理器功能的 x86 和 x64 系统的 Windows 驱动程序必须包装浮点计算调用之间[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)和[ **KeRestoreExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)以避免在并发应用程序可能使用寄存器中的错误。
 
 ## <a name="legacy-mmxx87-registers"></a>旧的 MMX x87 寄存器
 
@@ -30,7 +30,7 @@ ms.locfileid: "63359950"
 ## <a name="sse-registers"></a>SSE 寄存器
 
 
-这些寄存器对应于 XSTATE\_掩码\_旧版\_SSE 标志并由 x64 编译器的浮点运算。 驱动程序针对 x86 使用这些寄存器的系统必须将它们保存在使用之前通过传递 XSTATE\_掩码\_旧式或 XSTATE\_掩码\_旧版\_中的 SSE 标志[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)调用，并在完成后，将其与还原[ **KeRestoreExtendedProcessorState**](https://msdn.microsoft.com/library/windows/hardware/ff553182)。 这是在 x64 上不必要的系统，但没有坏处。 有关详细信息，有关这些注册，请参阅[WDM 驱动程序中使用浮点](using-floating-point-or-mmx-in-a-wdm-driver.md)。
+这些寄存器对应于 XSTATE\_掩码\_旧版\_SSE 标志并由 x64 编译器的浮点运算。 驱动程序针对 x86 使用这些寄存器的系统必须将它们保存在使用之前通过传递 XSTATE\_掩码\_旧式或 XSTATE\_掩码\_旧版\_中的 SSE 标志[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)调用，并在完成后，将其与还原[ **KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)。 这是在 x64 上不必要的系统，但没有坏处。 有关详细信息，有关这些注册，请参阅[WDM 驱动程序中使用浮点](using-floating-point-or-mmx-in-a-wdm-driver.md)。
 
 ## <a name="avx-registers"></a>AVX 寄存器
 
@@ -131,8 +131,8 @@ exit:
 ```
 
 ## <a name="related-topics"></a>相关主题
-[**KeSaveExtendedProcessorState**](https://msdn.microsoft.com/library/windows/hardware/ff553238)  
-[**KeRestoreExtendedProcessorState**](https://msdn.microsoft.com/library/windows/hardware/ff553182)  
+[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)  
+[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)  
 [使用浮点 WDM 驱动程序中](using-floating-point-or-mmx-in-a-wdm-driver.md)  
 
 

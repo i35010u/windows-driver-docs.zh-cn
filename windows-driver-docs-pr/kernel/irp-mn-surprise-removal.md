@@ -6,12 +6,12 @@ ms.assetid: 19d6847c-6b64-4552-b8b8-fef1d9b13fc7
 keywords:
 - IRP_MN_SURPRISE_REMOVAL 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: fb0889a768a4593e713ac9489471c4b6794590fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8d329cbedfa11ccc0f0c9aecd362ad4e633cd75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381399"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376455"
 ---
 # <a name="irpmnsurpriseremoval"></a>IRP\_MN\_SURPRISE\_REMOVAL
 
@@ -54,7 +54,7 @@ PnP 管理器将此 IRP 发送在 IRQL = 被动\_级别在系统线程的上下�
 
 此 IRP 是首先处理设备堆栈顶部驱动程序，然后向下传递到堆栈中每个较低的驱动程序。
 
-有关此 IRP 的详细信息，请参阅[处理 IRP\_MN\_惊讶\_删除请求](https://msdn.microsoft.com/library/windows/hardware/ff546699)。 支持设备删除的其他信息，请参阅[删除设备](https://msdn.microsoft.com/library/windows/hardware/ff561046)。
+有关此 IRP 的详细信息，请参阅[处理 IRP\_MN\_惊讶\_删除请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-surprise-removal-request)。 支持设备删除的其他信息，请参阅[删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
 
 **发送此 IRP**
 

@@ -5,19 +5,19 @@ ms.assetid: d451208d-c850-4f2f-9ee0-d34139454ed4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb3f9f96087e2cf76f0df1ff01fc8db178f0d81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c36e03403cd41e8dbf71cf02d7a72da4d07510e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384908"
 ---
 # <a name="sioaddresslistchange"></a>SIO\_地址\_列表\_更改
 
 
 SIO\_地址\_列表\_更改套接字 I/O 控制操作通知 WSK 应用程序时对套接字地址族的本地传输地址的列表的更改。 此套接字的 I/O 控制操作适用于所有套接字类型。
 
-已对套接字地址族的本地传输地址的列表的更改时收到通知，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+已对套接字地址族的本地传输地址的列表的更改时收到通知，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>

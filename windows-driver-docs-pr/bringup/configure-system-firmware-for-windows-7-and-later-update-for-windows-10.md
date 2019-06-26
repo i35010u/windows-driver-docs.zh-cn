@@ -3,12 +3,12 @@ title: 适用于 Windows 7 配置系统固件并启用适用于 Windows 10
 description: 适用于 Windows 7 配置系统固件并启用适用于 Windows 10
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b9db4b912514d09a91e1ed415e1ad1c8ebf626
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c604c75507c44c83ccf10afa43e27296affc6fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364586"
 ---
 # <a name="configure-system-firmware-for-windows-7-and-enable-for-windows-10"></a>适用于 Windows 7 配置系统固件并启用适用于 Windows 10
 
@@ -19,7 +19,7 @@ ms.locfileid: "63328079"
 
 - 安全引导组件，应为 Windows 10 安装 （证书等）请参阅[安全引导](secure-boot.md)有关详细信息。
 
-- 用于 Windows 7 中的 TPM 支持 TPM 2.0。 请参阅[KB2920188](https://support.microsoft.com/kb/2920188)有关详细信息。
+- 用于 Windows 7 中的 TPM 支持 TPM 2.0。 请参阅[KB2920188](https://support.microsoft.com/help/2920188/update-to-add-support-for-tpm-2-0-in-windows-7-and-windows-server-2008)有关详细信息。
 
 - 系统和设备，可以更新固件，EFI 系统资源 Table(ESRT) 应填充了特定的模型的唯一 ID。
 

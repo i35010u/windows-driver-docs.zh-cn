@@ -10,24 +10,24 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd3d487df406c2f15d3755abf8ab370b5b9f356
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38c4d2f1538c0564ea64fc373dcca6ec572ddd3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370537"
 ---
 # <a name="disabling-nfp"></a>禁用 NFP
 
 
 订阅、 发布和状态，可以暂时禁用客户端。
 
-暂时禁用针对订阅、 发布和状态显示通过发送[ **IOCTL\_NFP\_禁用**](https://msdn.microsoft.com/library/windows/hardware/jj853315)句柄。 当客户端想要禁用的邻近性功能，但保留分配快速重新启用它们时所需的资源时，这很有用。
+暂时禁用针对订阅、 发布和状态显示通过发送[ **IOCTL\_NFP\_禁用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_disable)句柄。 当客户端想要禁用的邻近性功能，但保留分配快速重新启用它们时所需的资源时，这很有用。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

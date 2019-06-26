@@ -4,19 +4,19 @@ description: 分配列表中消失，使用的视频内存管理器不再具有�
 ms.assetid: F913C9A3-535F-4DA0-8895-7A05CBF4D4AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5a6e169b040825ac1d2ab84e086ef16c02054c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f708880fb88a16065872dd82f38a55f48bbab34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354644"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384644"
 ---
 # <a name="allocation-usage-tracking"></a>分配用法跟踪
 
 
 分配列表中消失，使用的视频内存管理器不再具有到所引用的特定命令缓冲区中分配的可见性。 因此，视频内存管理器将不再在位置来跟踪分配使用情况并处理相关的同步。 此职责现在将回退到用户模式驱动程序验证。 具体而言，用户模式驱动程序将需要处理同步相对于直接 CPU 访问权限分配以及重命名。
 
-分配销毁的视频内存管理器将以异步方式将遵循这些将同时非阻止调用线程和性能非常高的安全方式。 这种情况下用户模式驱动程序无需担心有延迟分配析构。 视频内存管理器收到分配析构请求后，假定默认情况下，该命令排队的之前析构请求可能会潜在地访问正在销毁的分配和延迟直到已排队析构操作命令完成。 如果用户模式驱动程序知道挂起命令不访问正在销毁的分配，它可以通过设置指示视频内存管理器处理的请求而不等待**AssumeNotInUse**标记时调用[ *Deallocate2* ](https://msdn.microsoft.com/library/windows/hardware/dn906353)或[ **DestroyAllocation2**](https://msdn.microsoft.com/library/windows/hardware/dn906772)。
+分配销毁的视频内存管理器将以异步方式将遵循这些将同时非阻止调用线程和性能非常高的安全方式。 这种情况下用户模式驱动程序无需担心有延迟分配析构。 视频内存管理器收到分配析构请求后，假定默认情况下，该命令排队的之前析构请求可能会潜在地访问正在销毁的分配和延迟直到已排队析构操作命令完成。 如果用户模式驱动程序知道挂起命令不访问正在销毁的分配，它可以通过设置指示视频内存管理器处理的请求而不等待**AssumeNotInUse**标记时调用[ *Deallocate2* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocate2cb)或[ **DestroyAllocation2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtdestroyallocation2)。
 
 ## <a name="span-idlock2spanspan-idlock2spanspan-idlock2spanlock2"></a><span id="Lock2"></span><span id="lock2"></span><span id="LOCK2"></span>Lock2
 
@@ -29,11 +29,11 @@ ms.locfileid: "63354644"
     -   返回**WasStillDrawing**如果尝试访问分配，这是当前正忙，且调用方具有请求的**锁**操作不会阻止调用线程 (**D3D11\_地图\_标志\_做\_不\_等待**)。
     -   或者，如果**D3D11\_地图\_标志\_不要\_不\_等待**未设置标志，等待，直到分配变为可供 CPU 访问。 用户模式驱动程序将需要实现非轮询等待。 用户模式驱动程序将使用的监视机制的新上下文。
 
-现在，用户模式驱动程序将继续需要调用[ *LockCb*](https://msdn.microsoft.com/library/windows/hardware/ff568914)/[*UnlockCb* ](https://msdn.microsoft.com/library/windows/hardware/ff569011)提出的视频内存若要设置的 CPU 访问分配的管理器。 在大多数情况下，用户模式驱动程序将无法保持其整个生存期内映射的分配。 但是，在将来， *LockCb*并*UnlockCb*将新的弃用[ *Lock2Cb* ](https://msdn.microsoft.com/library/windows/hardware/dn914483)和[ *Unlock2Cb* ](https://msdn.microsoft.com/library/windows/hardware/dn914484)调用。 这些新的回调的目标是提供一组全新干净的自变量和标志的新实现。
+现在，用户模式驱动程序将继续需要调用[ *LockCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)/[*UnlockCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockcb)提出的视频内存若要设置的 CPU 访问分配的管理器。 在大多数情况下，用户模式驱动程序将无法保持其整个生存期内映射的分配。 但是，在将来， *LockCb*并*UnlockCb*将新的弃用[ *Lock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)和[ *Unlock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock2cb)调用。 这些新的回调的目标是提供一组全新干净的自变量和标志的新实现。
 
-Swizzling 范围已从 Windows 显示器驱动程序模型 (WDDM) v2 和从调用中删除对 swizzling 范围的依赖关系，驱动程序开发人员负责[ *LockCb* ](https://msdn.microsoft.com/library/windows/hardware/ff568914)作为它们进一步推动实现基于[ *Lock2Cb*](https://msdn.microsoft.com/library/windows/hardware/dn914483)。
+Swizzling 范围已从 Windows 显示器驱动程序模型 (WDDM) v2 和从调用中删除对 swizzling 范围的依赖关系，驱动程序开发人员负责[ *LockCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)作为它们进一步推动实现基于[ *Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)。
 
-[*Lock2Cb* ](https://msdn.microsoft.com/library/windows/hardware/dn914483)公开为获取分配的虚拟地址的简单方法。 有几个限制的分配，以及它是当前驻留在中的当前段的类型。
+[*Lock2Cb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)公开为获取分配的虚拟地址的简单方法。 有几个限制的分配，以及它是当前驻留在中的当前段的类型。
 
 以下适用于*CPUVisible*分配：
 
@@ -53,7 +53,7 @@ Swizzling 范围已从 Windows 显示器驱动程序模型 (WDDM) v2 和从调�
 ## <a name="span-idcpuhostaperturespanspan-idcpuhostaperturespanspan-idcpuhostaperturespancpuhostaperture"></a><span id="CPUHostAperture"></span><span id="cpuhostaperture"></span><span id="CPUHOSTAPERTURE"></span>CPUHostAperture
 
 
-若要更好地支持使用锁定 ！*CPUVisible*调整栏的大小失败时的内存段*CPUHostAperture* PCI aperture 中提供。 *CPUHostAperture*表现为基于页的管理器，然后可以直接访问通过视频内存的区域映射[ *DxgkDdiMapCpuHostAperture*](https://msdn.microsoft.com/library/windows/hardware/dn906340)设备驱动程序接口 (DDI) 函数。 这使我们能够然后将虚拟地址空间的范围映射到非连续范围的直接*CPUHostAperture*，并且具有*CPUHostAperture*然后将映射到不需要的视频内存swizzling 范围。
+若要更好地支持使用锁定 ！*CPUVisible*调整栏的大小失败时的内存段*CPUHostAperture* PCI aperture 中提供。 *CPUHostAperture*表现为基于页的管理器，然后可以直接访问通过视频内存的区域映射[ *DxgkDdiMapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)设备驱动程序接口 (DDI) 函数。 这使我们能够然后将虚拟地址空间的范围映射到非连续范围的直接*CPUHostAperture*，并且具有*CPUHostAperture*然后将映射到不需要的视频内存swizzling 范围。
 
 最大 CPU 中，可以引用的可锁定内存量 ！*CPUVisible*内存段仅限于的大小*CPUHostAperture*。 公开的详细信息*CPUHostAperture*到 Microsoft DirectX 图形可以中找到内核[CPU 主机 aperture](cpu-host-aperature.md)主题。
 

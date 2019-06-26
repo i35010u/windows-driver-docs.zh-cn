@@ -4,12 +4,12 @@ description: 打印机驱动程序隔离打印机驱动程序在独立于打印�
 ms.assetid: b0f11b3f-92f7-41f6-8edb-63b5651f5499
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d60aeadbefa59113df234c245fb03116f98744c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4cbff1bd4a672e0055ac1aa0b4579b4b3de08d1b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380649"
 ---
 # <a name="printer-driver-isolation"></a>打印机驱动程序隔离
 
@@ -36,7 +36,7 @@ Windows 7、 Windows Server 2008 R2 和更高版本操作系统中实现的打�
 
 借助 Windows 7 和 Windows Server 2008 R2，管理员可以作为一个选项，配置在独立的进程-是独立于后台处理程序进程的进程中运行的打印机驱动程序。 通过隔离该驱动程序，管理员可阻止驱动程序组件中的错误导致停止打印服务。
 
-有关后台处理程序函数的详细信息，请参阅[后台处理程序组件函数和结构](https://msdn.microsoft.com/library/windows/hardware/ff562686)。
+有关后台处理程序函数的详细信息，请参阅[后台处理程序组件函数和结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)。
 
 ### <a href="" id="driver-isolation-support-in-inf-files"></a> INF 文件中的驱动程序隔离支持
 

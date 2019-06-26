@@ -4,23 +4,23 @@ description: VM 交换机验证选项可监视筛选器驱动程序 （可扩展
 ms.assetid: 629C0C70-D6C6-4977-A36B-6BD6EEC14FE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b546a57395c9d861b1244b292024e1532ac38f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc4e109ef2cc85619259c4ff02f0c7073a45e4c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380474"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381786"
 ---
 # <a name="vm-switch-verification"></a>VM 交换机验证
 
 
-VM 交换机验证选项可监视筛选器驱动程序 (*可扩展交换机扩展*) 内运行[HYPER-V 可扩展交换机](https://msdn.microsoft.com/library/windows/hardware/hh598161)。 使用此选项以捕获错误发生在发送或接收可扩展交换机中的操作。
+VM 交换机验证选项可监视筛选器驱动程序 (*可扩展交换机扩展*) 内运行[HYPER-V 可扩展交换机](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)。 使用此选项以捕获错误发生在发送或接收可扩展交换机中的操作。
 
 **请注意**  此选项是从 Windows 8.1 开始提供。
 
  
 
-驱动程序验证程序时此选项处于活动状态，将发出[ **Bug 检查 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (驱动程序\_VERIFIER\_检测到\_冲突) 如果可扩展交换机扩展无法正确调用处理程序函数的 HYPER-V 可扩展交换机。
+驱动程序验证程序时此选项处于活动状态，将发出[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突) 如果可扩展交换机扩展无法正确调用处理程序函数的 HYPER-V 可扩展交换机。
 
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 

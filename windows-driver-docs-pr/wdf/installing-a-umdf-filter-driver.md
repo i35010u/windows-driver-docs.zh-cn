@@ -4,12 +4,12 @@ description: 筛选器驱动程序可以支持特定设备或所有设备安装�
 ms.assetid: AE6D4E36-B758-451A-983E-6F0D7ADFD7A7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 009e718c2a1b1f2b0f58358960f0f4f926eb0c95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27c172a681a2cc9b8427487a8b6ba3bb19f96588
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371136"
 ---
 # <a name="installing-a-umdf-filter-driver"></a>安装 UMDF 筛选器驱动程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "63378067"
 
 **如何安装和配置您的驱动程序**
 
-1.  UMDF 1 筛选器驱动程序应调用[ **IWDFDeviceInitialize::SetFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff556985)从其[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)回调函数。 从 UMDF 版本 2 开始，您的驱动程序改为调用[ **WdfFdoInitSetFilter**](https://msdn.microsoft.com/library/windows/hardware/ff547273)。
+1.  UMDF 1 筛选器驱动程序应调用[ **IWDFDeviceInitialize::SetFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)从其[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)回调函数。 从 UMDF 版本 2 开始，您的驱动程序改为调用[ **WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetfilter)。
 
 2.  除了您的驱动程序可以指定任何特定于 UMDF 的指令，还必须指定**UmdfService**并**UmdfServiceOrder**指令。 在本主题中，我们将指定的上限的筛选器驱动程序：
 

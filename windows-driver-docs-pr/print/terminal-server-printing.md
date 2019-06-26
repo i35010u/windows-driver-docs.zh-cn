@@ -7,12 +7,12 @@ keywords:
 - 打印 WDK 的终端服务器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 533e945e07f8fcdc22eb6d8a5dbed996b69d61a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74cb02a357bacca18ee00d08559d9a1b339db193
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388059"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372359"
 ---
 # <a name="terminal-server-printing"></a>终端服务器打印
 
@@ -39,10 +39,10 @@ Microsoft Windows 2000 和更高版本支持终端服务技术，它允许多个
 -   如果你的设备必须支持的自定义驱动程序，您的驱动程序必须遵循与 Microsoft 的完全[打印机驱动程序体系结构](printer-driver-architecture.md)。 特别是：
     1.  必须创建[打印机接口 DLL](printer-interface-dll.md)。
     2.  必须创建[打印机图形 DLL](printer-graphics-dll.md)。 此 DLL 可以在用户模式或内核模式下执行，但用户模式是首选。
-    3.  如果创建内核模式代码时，必须测试的代码使用[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。
+    3.  如果创建内核模式代码时，必须测试的代码使用[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
     4.  你必须提供安装程序 INF 文件的基础的安装过程中所述[安装和配置打印机驱动程序](installing-and-configuring-printer-drivers.md)。
 
-所有自定义驱动程序代码必须是可重入。 用户模式代码应使用关键节对象 （Windows SDK 文档中所述）。 内核模式代码应使用信号量 (请参阅[ **EngCreateSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff564760)和相关函数)。
+所有自定义驱动程序代码必须是可重入。 用户模式代码应使用关键节对象 （Windows SDK 文档中所述）。 内核模式代码应使用信号量 (请参阅[ **EngCreateSemaphore** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatesemaphore)和相关函数)。
 
 打印机驱动程序和自定义后台处理程序组件必须访问注册表仅通过接口提供专用于这些驱动程序和后台处理程序组件，WDK 的相应部分中所述。
 
@@ -59,7 +59,7 @@ Microsoft Windows 2000 和更高版本支持终端服务技术，它允许多个
     2.  如果必须替换的文件时，安装程序代码应采取措施来卸载旧版本，然后加载新版本 （例如，通过停止该驱动程序服务，并替换文件，然后重新启动服务）。
     3.  要求用户先注销，然后重新记录，要优于需重启系统。
 
-有关共同安装程序和类安装程序的详细信息，请参阅[编写类安装程序和共同安装程序](https://msdn.microsoft.com/library/windows/hardware/ff819060)。
+有关共同安装程序和类安装程序的详细信息，请参阅[编写类安装程序和共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-class-installers-and-co-installers)。
 
 **请注意**  之前编写自定义安装程序代码时，务必要读取终端服务编程的 Windows SDK 文档中提供的指导原则。
 
@@ -71,9 +71,9 @@ Microsoft Windows 2000 和更高版本支持终端服务技术，它允许多个
 
 几乎所有打印机驱动程序代码在后台处理程序的执行上下文中运行，因此不能显示用户界面。 可以显示用户界面，仅可被打印机接口的 Dll，并且只能从以下函数：
 
--   [ **DrvDevicePropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff548542)并[ **DrvDocumentPropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff548548)函数，创建属性页。
+-   [ **DrvDevicePropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicepropertysheets)并[ **DrvDocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets)函数，创建属性页。
 
--   [ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)函数，用于接收标识打印机事件的事件代码。 请注意，该函数可以仅为打印机显示用户界面\_事件\_添加\_连接和打印机\_事件\_删除\_连接事件代码。
+-   [ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)函数，用于接收标识打印机事件的事件代码。 请注意，该函数可以仅为打印机显示用户界面\_事件\_添加\_连接和打印机\_事件\_删除\_连接事件代码。
 
 在后台处理程序的上下文中执行所有其他打印机驱动程序代码。 此上下文中调用**MessageBox**或**MessageBoxEx**允许，但您必须设置 MB\_服务\_通知。 这些函数是 Windows SDK 文档中所述。
 

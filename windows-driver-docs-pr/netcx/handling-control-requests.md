@@ -6,12 +6,12 @@ keywords:
 - NetAdapterCx 处理控制请求，处理控件的 NetCx 请求
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a69a536cee452975b9c0853d4911dcc0232c78b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 264696701099bb555b5bda09dc29a22e10bfc630
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372767"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386369"
 ---
 # <a name="handling-control-requests"></a>处理控制请求
 
@@ -42,7 +42,7 @@ NETREQUESTQUEUE 对象是它所管理的每个 NETREQUEST 的父级。 由于队
 
 在相同的驱动程序，可以使用这两种方法使用 switch 语句的其余部分使用默认处理程序时提供的某些 Oid 的自定义处理程序。
 
-客户端驱动程序注册 OID 处理程序在其[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)例程。
+客户端驱动程序注册 OID 处理程序在其[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)例程。
 
 下面是该控件可以提供客户端的请求处理程序：
 
@@ -105,7 +105,7 @@ if(!NT_SUCCESS(status))
 }
 ```
 
-NetAdapterCx 可以调用客户端驱动程序的控制请求处理程序就立即[ *EVT_WDF_DEVICE_PREPARE_HARDWARE* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)返回至其调用的时间[ *EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://msdn.microsoft.com/library/windows/hardware/ff540890)。
+NetAdapterCx 可以调用客户端驱动程序的控制请求处理程序就立即[ *EVT_WDF_DEVICE_PREPARE_HARDWARE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)返回至其调用的时间[ *EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)。
 
 ## <a name="completing-requests"></a>完成请求
 

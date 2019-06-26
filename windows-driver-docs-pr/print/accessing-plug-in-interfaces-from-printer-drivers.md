@@ -7,12 +7,12 @@ keywords:
 - 插件 WDK 打印，访问接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdf595693082d49ad6be56c2d3ca80562b295b9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c04218eb15f8fd938cbeba4a393c07772b4b34c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369006"
 ---
 # <a name="accessing-plug-in-interfaces-from-printer-drivers"></a>从打印机驱动程序访问插件接口
 
@@ -32,7 +32,7 @@ ms.locfileid: "63388726"
 
 5.  该驱动程序调用插件接口`PublishDriverInterface`方法以使驱动程序的 IPrintOemDriverUI、 IPrintCoreUI2、 IPrintOemDriverUni、 IPrintOemDriverPS 或 IPrintCorePS2 接口可用于该插件。
 
-6.  如果该插件已实现[IPrintOemUni](iprintoemuni-com-interface.md)接口，驱动程序调用[ **IPrintOemUni::GetImplementedMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff554253)来确定的接口方法具有尚未实现。 同样，如果该插件已实现[IPrintOemUni2](iprintoemuni2-com-interface.md)接口，驱动程序调用**IPrintOemUni2::GetImplementedMethod**实现相同目的。
+6.  如果该插件已实现[IPrintOemUni](iprintoemuni-com-interface.md)接口，驱动程序调用[ **IPrintOemUni::GetImplementedMethod** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-getimplementedmethod)来确定的接口方法具有尚未实现。 同样，如果该插件已实现[IPrintOemUni2](iprintoemuni2-com-interface.md)接口，驱动程序调用**IPrintOemUni2::GetImplementedMethod**实现相同目的。
 
  
 

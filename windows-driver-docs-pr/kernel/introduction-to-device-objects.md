@@ -9,12 +9,12 @@ keywords:
 - 设备扩展 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fcde47110d5d072391ecfa09294903e546c2319
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e052ae2b6f23cef6817de9c97d17438ea130bf0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341054"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369761"
 ---
 # <a name="introduction-to-device-objects"></a>设备对象简介
 
@@ -36,9 +36,9 @@ ms.locfileid: "63341054"
 
 有关您的驱动程序如何创建设备对象的详细信息，请参阅[创建一个设备对象](creating-a-device-object.md)。
 
-设备由多个设备对象，一个用于处理 I/O 请求的设备驱动程序堆栈中每个驱动程序通常表示。 设备的设备对象分为*设备堆栈*。 在设备上执行操作时，系统将传递[ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)数据结构中设备堆栈的顶部的设备对象的驱动程序。 每个驱动程序处理 IRP，或将其传递给设备堆栈中的下一步下一个设备对象与关联的驱动程序。 有关设备堆栈的详细信息，请参阅[WDM 设备对象和设备堆栈](wdm-device-objects-and-device-stacks.md)。 有关 Irp 的详细信息，请参阅[处理 Irp](handling-irps.md)。
+设备由多个设备对象，一个用于处理 I/O 请求的设备驱动程序堆栈中每个驱动程序通常表示。 设备的设备对象分为*设备堆栈*。 在设备上执行操作时，系统将传递[ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)数据结构中设备堆栈的顶部的设备对象的驱动程序。 每个驱动程序处理 IRP，或将其传递给设备堆栈中的下一步下一个设备对象与关联的驱动程序。 有关设备堆栈的详细信息，请参阅[WDM 设备对象和设备堆栈](wdm-device-objects-and-device-stacks.md)。 有关 Irp 的详细信息，请参阅[处理 Irp](handling-irps.md)。
 
-设备对象表示由[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构，由对象管理器管理。 对象管理器提供的其他系统对象的设备对象相同的功能。 具体而言，可以命名的设备对象，并指定的设备对象可以在其上打开的句柄。 有关指定的设备对象的详细信息，请参阅[名为设备对象](named-device-objects.md)。
+设备对象表示由[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构，由对象管理器管理。 对象管理器提供的其他系统对象的设备对象相同的功能。 具体而言，可以命名的设备对象，并指定的设备对象可以在其上打开的句柄。 有关指定的设备对象的详细信息，请参阅[名为设备对象](named-device-objects.md)。
 
 系统提供的每个设备对象，调用该驱动程序可用于特定于设备的存储的设备扩展的专用的存储。 创建并由系统和设备对象释放设备扩展。 有关详细信息，请参阅[设备扩展](device-extensions.md)。
 

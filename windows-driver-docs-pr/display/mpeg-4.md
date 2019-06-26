@@ -6,12 +6,12 @@ keywords:
 - MPEG-4 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f42c5e9c70bf3aefa754df3e43e31ee34421c9ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcb042333ff29d830a0d3b5c96c05a11cb3f21f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345662"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372859"
 ---
 # <a name="mpeg-4"></a>MPEG-4
 
@@ -21,7 +21,7 @@ ms.locfileid: "63345662"
 
 MPEG 4 基于很大程度 H.263 用于渐进式扫描编码，并基于 mpeg-2 隔行扫描和 4 之外的颜色采样格式的支持： 2:0。 支持 mpeg-4 可用来支持 H.263 和 MPEG 2 的功能。
 
-MPEG 4 可以支持多个 8 位示例准确性。 DirectX VA 包括一种机制来支持每个像素使用多个 8 位**bBPPminus1**的成员[ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)结构。
+MPEG 4 可以支持多个 8 位示例准确性。 DirectX VA 包括一种机制来支持每个像素使用多个 8 位**bBPPminus1**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构。
 
 **请注意**   DirectX 弗吉尼亚中不支持到 MPEG-4，如形状编码、 面向对象、 人脸建模、 网格对象和子画面最特定的功能
 

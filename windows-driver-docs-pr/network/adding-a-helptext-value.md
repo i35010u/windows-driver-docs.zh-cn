@@ -7,12 +7,12 @@ keywords:
 - HelpText 值 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0573a425ae6b2f68cff26c78b40c2f5fbaa18be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a38aafb025f3c270ccb918b6efa0148b09ced89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367852"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379269"
 ---
 # <a name="adding-a-helptext-value"></a>添加 HelpText 值
 
@@ -39,7 +39,7 @@ INF 文件**NetTrans**， **NetClient**，或**NetService**用户界面中是可
 HKR, Ndi, HelpText, 0, %MyTransport_Help%
 ```
 
-**HelpText**值是 % *strkey*中定义的 %令牌**字符串**INF 文件部分。 有关详细信息**字符串**部分中，请参阅[ **INF 字符串部分**](https://msdn.microsoft.com/library/windows/hardware/ff547485)。
+**HelpText**值是 % *strkey*中定义的 %令牌**字符串**INF 文件部分。 有关详细信息**字符串**部分中，请参阅[ **INF 字符串部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)。
 
 **请注意**  多语言用户界面 (MUI) 支持**HelpText**值可以是间接字符串形式`@filename,resource`。 例如:"@%SystemRoot %\\System32\\驱动程序\\mydriver.sys，-1000年"。 目标字符串位于指定的文件中。 资源值标识文件中的特定字符串。 如果资源值为零或更高版本的二进制文件中的字符串的索引使用数。 如果资源值为负，则将它用作资源文件中的资源标识符。
 

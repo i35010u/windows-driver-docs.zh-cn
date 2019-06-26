@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 517b16e9688f60fc8950b907410243dc6a09e879
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e3f12cdd81e3b6348db16a6d10c282bfeec4dd6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354843"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385907"
 ---
 # <a name="inf-ddinstalllogconfigoverride-section"></a>INF DDInstall.LogConfigOverride 节
 
@@ -26,7 +26,7 @@ ms.locfileid: "63354843"
 
  
 
-<em>DDInstall</em>**。LogConfigOverride**部分用于创建[替代配置](https://msdn.microsoft.com/library/windows/hardware/ff547012#logical-configuration-types-for-resource-requirements-lists)，这会重写插设备的总线驱动程序报告的硬件资源要求。
+<em>DDInstall</em> **。LogConfigOverride**部分用于创建[替代配置](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#logical-configuration-types-for-resource-requirements-lists)，这会重写插设备的总线驱动程序报告的硬件资源要求。
 
 ```ini
 [install-section-name.LogConfigOverride] |
@@ -43,7 +43,7 @@ LogConfig=log-config-section[,log-config-section]...]
 ## <a name="entries"></a>条目
 
 
-节条目和与一起使用的值<em>DDInstall</em>**。LogConfigOverride**部分中指定*日志配置部分*所引用的[ **INF LogConfig 指令**](inf-logconfig-directive.md)。
+节条目和与一起使用的值<em>DDInstall</em> **。LogConfigOverride**部分中指定*日志配置部分*所引用的[ **INF LogConfig 指令**](inf-logconfig-directive.md)。
 
 <a name="remarks"></a>备注
 -------
@@ -53,7 +53,7 @@ LogConfig=log-config-section[,log-config-section]...]
 <a name="examples"></a>示例
 --------
 
-下面的示例演示<em>DDInstall</em>**。LogConfigOverride**部分，并相应*日志配置部分*PCMCIA 设备。
+下面的示例演示<em>DDInstall</em> **。LogConfigOverride**部分，并相应*日志配置部分*PCMCIA 设备。
 
 ```ini
 [XYZDevice.LogConfigOverride]

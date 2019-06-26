@@ -3,12 +3,12 @@ title: MB 预配上下文操作
 description: MB 预配上下文操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b472c9c19d2299ecb08f7df3999b9570e8328cec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 825eec779751cb37fa0d672ca9d8a05a075b9346
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374047"
 ---
 # <a name="mb-provisioned-context-operations"></a>MB 预配上下文操作
 
@@ -19,7 +19,7 @@ ms.locfileid: "63353766"
 
 理想情况下，调制解调器应仅将存储操作系统无需知道的 APN 配置。 但是，IHV 和 OEM 合作伙伴传统上提供的 Internet 和采购 APNs，已知的 OS 中的调制解调器的配置。 在 Windows 10，版本 1703 的发行版之前 Windows 只能读取的 Internet 和采购 APN 配置从调制解调器建立 Internet 连接。 从 Windows 10，版本 1703，开始可能有其他情况下，在该调制解调器的 APN 配置必须由 Windows，尤其是当想要更改移动电话网络配置等用户设置的操作系统或 OMA DM 中的客户端。 这进而还可能会影响调制解调器的 APN 配置。 例如，可能有 IMS 堆栈中正在使用 IMS APN 适用于 SMS IMS 通过调制解调器。 通常情况下，对操作系统，但 IMS APN 配置可能需要更改某些情况下，不公开这些连接。 此更改无法通过 OS。 为了支持此功能，从 Windows 10，版本 1703 OS 可以配置不同类型的 APNs 插入调制解调器。
 
-USB 论坛 MBIM 1.0 和 Microsoft NDIS 各有一个现有的 CID 和 OID 分别以允许操作系统来设置和查询中的调制解调器的 APN 配置。 MBIM 1.0 做到这一点通过 MBIM_CID_PROVISIONED_CONTEXT 时 ndis 做到这一点通过[OID_WWAN_PROVISIONED_CONTEXTS](https://msdn.microsoft.com/library/windows/hardware/ff569831)。 但是，现有的 CID 和 OID 的设计并未明确指导如何调制解调器的是预期行为在各种情况下，如电源周期或 SIM 交换。 需要的设备支持的 OS 配置和更新的调制解调器预配的上下文，今后将需要在 Windows 10，版本 1703年中实现的 CID 和 OID 的较新版本。 若要确保向后兼容性，为要在早于 1703年的 OS 版本上支持新硬件/Ihv Oem，他们将需要继续支持现有 MBIM_CID_PROVISIONED_CONTEXT 和 OID_WWAN_PROVISIONED_CONTEXTS。  从 Windows 10 开始，版本 1703，如果设备支持的 CID 和 OID 然后 OS 的新版本将仅使用较新版本的命令来查询和设置 APN 上下文配置调制解调器。 
+USB 论坛 MBIM 1.0 和 Microsoft NDIS 各有一个现有的 CID 和 OID 分别以允许操作系统来设置和查询中的调制解调器的 APN 配置。 MBIM 1.0 做到这一点通过 MBIM_CID_PROVISIONED_CONTEXT 时 ndis 做到这一点通过[OID_WWAN_PROVISIONED_CONTEXTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)。 但是，现有的 CID 和 OID 的设计并未明确指导如何调制解调器的是预期行为在各种情况下，如电源周期或 SIM 交换。 需要的设备支持的 OS 配置和更新的调制解调器预配的上下文，今后将需要在 Windows 10，版本 1703年中实现的 CID 和 OID 的较新版本。 若要确保向后兼容性，为要在早于 1703年的 OS 版本上支持新硬件/Ihv Oem，他们将需要继续支持现有 MBIM_CID_PROVISIONED_CONTEXT 和 OID_WWAN_PROVISIONED_CONTEXTS。  从 Windows 10 开始，版本 1703，如果设备支持的 CID 和 OID 然后 OS 的新版本将仅使用较新版本的命令来查询和设置 APN 上下文配置调制解调器。 
 
 ## <a name="mb-interface-update-for-provisioned-context-operations"></a>预配的上下文操作 MB 界面更新
 
@@ -161,7 +161,7 @@ MBIM_MS_CONTEXT_OPERATIONS 指定操作系统的操作可以执行在调制解�
 
 MBIM 1.0 从原始 MBIM_CONTEXT_TYPES 仍然有效。 随着更多类型的上下文引入的自定义 MBIM 1.0 以来，Microsoft 将添加附加的上下文类型。 下表定义正在引入的新类型。 Ihv 和 Oem 可以定义其他唯一的 UUID 值不会由操作系统识别为其自身的用途与其他专有上下文类型。
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 在任务栏的搜索框中键入 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMMsContextTypeAdmin | 5f7e4c2e-e80b-40a9-a239-f0abcfd11f4b | 上下文用于管理目的，例如设备管理。 |
 | MBIMMSContextTypeApp | 74d88a3d-dfbd-4799-9a8c-7310a37bb2ee | 上下文用于通过移动运营商的特定应用程序加入允许列表。 |

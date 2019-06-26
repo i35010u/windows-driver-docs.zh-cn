@@ -9,12 +9,12 @@ keywords:
 - Avc.sys 功能驱动程序 WDK，标识符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d10ce9df44cef5b42d05f81ef48cc3667eeee9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4fa02d60e30f19679d94c2e90c9085a2be90585
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386765"
 ---
 # <a name="avc-device-identifiers"></a>AV/C 设备标识符
 
@@ -46,7 +46,7 @@ ms.locfileid: "63384807"
 
 *Avc.sys*无法区分多个子单元连接的相同***SubunitType***，因此添加和删除这些子单元连接加载和卸载相应的子单元驱动程序最高***SubunitID***.
 
-每个次级单位的设备对象具有一个或两个硬件标识符和多个兼容的标识符。 供应商必须提供一个或多个这些硬件或兼容的标识符，其子单元驱动程序的 INF 文件中，如下所述。 Windows 使用这些设备标识符来找到合适的驱动程序加载每个设备连接到计算机的子单元第一次。 你可以检查 Microsoft 提供*61883.inf*， *Msdv.inf*并*Mstape.inf*硬件和 AV/C 的设备的兼容的设备标识符的示例文件。 有关实现 INF 文件的详细信息，请参阅[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。
+每个次级单位的设备对象具有一个或两个硬件标识符和多个兼容的标识符。 供应商必须提供一个或多个这些硬件或兼容的标识符，其子单元驱动程序的 INF 文件中，如下所述。 Windows 使用这些设备标识符来找到合适的驱动程序加载每个设备连接到计算机的子单元第一次。 你可以检查 Microsoft 提供*61883.inf*， *Msdv.inf*并*Mstape.inf*硬件和 AV/C 的设备的兼容的设备标识符的示例文件。 有关实现 INF 文件的详细信息，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
 设备标识符字符串的各个元素如下所示：
 
@@ -83,7 +83,7 @@ ms.locfileid: "63384807"
 
 例如：**AVC\\VEN\_50F2&MOD\_0&TYP\_4&*SubunitID***
 
-子单元的列表类型， *Avc.sys*支持和其对应的数字值，请参阅[ **AvcSubunitType**](https://msdn.microsoft.com/library/windows/hardware/ff554137)。
+子单元的列表类型， *Avc.sys*支持和其对应的数字值，请参阅[ **AvcSubunitType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavcsubunittype)。
 
 <a href="" id="subunitid"></a>***SubunitID***  
 如果***SubunitType***字段将可用， ***SubunitID***字段也是可用。 当*Avc.sys*查询 AV/C 设备中的子单元信息，设备响应的每种类型的子单元连接数量。 此从零开始计数用于创建每个次级单位的设备标识符。 子单元地址规范还允许***SubunitID***字段被扩展，但这一方面隐藏来自子单元驱动程序 （和从您的 INF 文件的作者）。 在所有情况下使用的从零开始的实例编号。 例如，如果***SubunitID***字段已扩展为支持 270 子单元连接，270th 子单元具有 10 个 D (269 十进制) 的子单元标识符。 例如：

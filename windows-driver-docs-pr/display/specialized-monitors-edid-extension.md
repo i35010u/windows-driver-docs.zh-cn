@@ -14,12 +14,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: b3d0009724a22ad2aceb221c4dc99d89c21e8bc4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca05c3f72063d88d9ceacee2f279674412703b35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385321"
 ---
 # <a name="edid-extension-vsdb-for-hmds-and-specialized-displays"></a>EDID HMDs 和专用的显示扩展插件 (VSDB)
 
@@ -43,7 +43,7 @@ ms.locfileid: "63382335"
 
 ## <a name="vendor-specific-data-block-vsdb"></a>供应商特定的数据块 (VSDB)
 
-负责编写包含 EDID 的固件代码的参与方必须包含 CTA 扩展块放在该块中 Microsoft 定义供应商特定数据块 (VSDB)。 "VESA 增强扩展显示标识数据 Standard"中描述的 EDIDs 结构 ([E EDID](https://www.vesa.org/vesa-standards/standards-summaries/))，请参阅版本 1.4，发布一个修订版 2 使用部分 2.2 描述扩展基块。  CTA 扩展块 CTA 861 系列文档"数字电视配置文件的未压缩高速数字接口"中定义。  中 （在撰写本文时） 的最新的部分 7.5.4 已发布版本中所述 VSDBs [CTA 861 G](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf)包括 VSDB 相对于其他数据块的顺序。 
+负责编写包含 EDID 的固件代码的参与方必须包含 CTA 扩展块放在该块中 Microsoft 定义供应商特定数据块 (VSDB)。 "VESA 增强扩展显示标识数据 Standard"中描述的 EDIDs 结构 ([E EDID](https://vesa.org/vesa-standards/standards-summaries/))，请参阅版本 1.4，发布一个修订版 2 使用部分 2.2 描述扩展基块。  CTA 扩展块 CTA 861 系列文档"数字电视配置文件的未压缩高速数字接口"中定义。  中 （在撰写本文时） 的最新的部分 7.5.4 已发布版本中所述 VSDBs [CTA 861 G](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf)包括 VSDB 相对于其他数据块的顺序。 
 
 VSDB 结构必须具有的格式和下表中所述的值。
 

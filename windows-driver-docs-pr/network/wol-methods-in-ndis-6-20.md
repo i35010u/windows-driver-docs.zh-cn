@@ -4,12 +4,12 @@ description: NDIS 6.20 中的 WOL 方法
 ms.assetid: A46C213D-B356-44A3-8863-D7B183B73C77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8cd7dc9eb916b4ba5aaa10e816e7fd7616954f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c0566541438f701d7da58fb0ef642293e5ccf10
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379783"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385994"
 ---
 # <a name="wol-methods-in-ndis-620"></a>NDIS 6.20 中的 WOL 方法
 
@@ -25,7 +25,7 @@ NDIS 6.20 和更高版本的 NDIS 中支持的电源管理功能包括以下 LAN
 
 -   在媒体上的唤醒设备连接
 
-有关在以前版本的 Windows 电源管理功能的详细信息，请参阅[（NDIS 6.0 和更高版本） 的电源管理](https://msdn.microsoft.com/library/windows/hardware/hh205401)。
+有关在以前版本的 Windows 电源管理功能的详细信息，请参阅[（NDIS 6.0 和更高版本） 的电源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-20-)。
 
 *上的幻数据包唤醒*方法中唤醒计算机时的网络适配器接收*幻数据包*。 一个*幻数据包*包含 16 个连续副本的接收网络适配器的以太网地址。
 

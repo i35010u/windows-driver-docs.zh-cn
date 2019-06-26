@@ -9,19 +9,19 @@ keywords:
 - 上下文 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c65bbf49f48528bbf31fa3cf254a92fbcc2f4745
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d068cb31d80a16df8c9049b6b632b3ad0752ff2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375978"
 ---
 # <a name="managing-contexts"></a>管理上下文
 
 
 筛选器管理器使微筛选器驱动程序，以将上下文与要在 I/O 操作之间保留状态的对象相关联。 可以具有上下文的对象包括卷、 实例、 流和流句柄。
 
-必须使用第三方文件系统[ **FSRTL\_高级\_FCB\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff547334)结构 (而不是[ **FSRTL\_常见\_FCB\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff547343)结构) 若要正常使用流和流处理上下文。
+必须使用第三方文件系统[ **FSRTL\_高级\_FCB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)结构 (而不是[ **FSRTL\_常见\_FCB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsrtl_common_fcb_header)结构) 若要正常使用流和流处理上下文。
 
 可以通过除卷上下文，必须从非分页缓冲池分配的分页或非分页池分配上下文。
 
@@ -45,57 +45,57 @@ ms.locfileid: "63357547"
 
 筛选器管理器用于创建、 注册，并设置上下文提供以下支持例程：
 
-[**FltAllocateContext**](https://msdn.microsoft.com/library/windows/hardware/ff541710)
+[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)
 
-[**FltRegisterFilter**](https://msdn.microsoft.com/library/windows/hardware/ff544305)
+[**FltRegisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)
 
-[**FltSetInstanceContext**](https://msdn.microsoft.com/library/windows/hardware/ff544521)
+[**FltSetInstanceContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetinstancecontext)
 
-[**FltSetStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff544543)
+[**FltSetStreamContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetstreamcontext)
 
-[**FltSetStreamHandleContext**](https://msdn.microsoft.com/library/windows/hardware/ff544552)
+[**FltSetStreamHandleContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetstreamhandlecontext)
 
-[**FltSetVolumeContext**](https://msdn.microsoft.com/library/windows/hardware/ff544557)
+[**FltSetVolumeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetvolumecontext)
 
 下面的例程提供用于查询上下文支持：
 
-[**FltSupportsStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff544581)
+[**FltSupportsStreamContexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsupportsstreamcontexts)
 
-[**FltSupportsStreamHandleContexts**](https://msdn.microsoft.com/library/windows/hardware/ff544586)
+[**FltSupportsStreamHandleContexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsupportsstreamhandlecontexts)
 
 下面的例程提供用于获取和引用上下文：
 
-[**FltGetContexts**](https://msdn.microsoft.com/library/windows/hardware/ff542997)
+[**FltGetContexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetcontexts)
 
-[**FltGetInstanceContext**](https://msdn.microsoft.com/library/windows/hardware/ff543058)
+[**FltGetInstanceContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetinstancecontext)
 
-[**FltGetStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff543144)
+[**FltGetStreamContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetstreamcontext)
 
-[**FltGetStreamHandleContext**](https://msdn.microsoft.com/library/windows/hardware/ff543155)
+[**FltGetStreamHandleContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetstreamhandlecontext)
 
-[**FltGetVolumeContext**](https://msdn.microsoft.com/library/windows/hardware/ff543189)
+[**FltGetVolumeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetvolumecontext)
 
-[**FltReferenceContext**](https://msdn.microsoft.com/library/windows/hardware/ff544291)
+[**FltReferenceContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreferencecontext)
 
 下面的例程提供用于发布和删除上下文：
 
-[**FltDeleteContext**](https://msdn.microsoft.com/library/windows/hardware/ff541960)
+[**FltDeleteContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeletecontext)
 
-[**FltDeleteInstanceContext**](https://msdn.microsoft.com/library/windows/hardware/ff541982)
+[**FltDeleteInstanceContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeleteinstancecontext)
 
-[**FltDeleteStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff541997)
+[**FltDeleteStreamContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeletestreamcontext)
 
-[**FltDeleteStreamHandleContext**](https://msdn.microsoft.com/library/windows/hardware/ff542016)
+[**FltDeleteStreamHandleContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeletestreamhandlecontext)
 
-[**FltDeleteVolumeContext**](https://msdn.microsoft.com/library/windows/hardware/ff542030)
+[**FltDeleteVolumeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeletevolumecontext)
 
-[**FltReleaseContext**](https://msdn.microsoft.com/library/windows/hardware/ff544314)
+[**FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)
 
-[**FltReleaseContexts**](https://msdn.microsoft.com/library/windows/hardware/ff544317)
+[**FltReleaseContexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontexts)
 
 ### <a name="span-idminifilterdrivercallbackroutinesforcontextmanagementspanspan-idminifilterdrivercallbackroutinesforcontextmanagementspanspan-idminifilterdrivercallbackroutinesforcontextmanagementspanminifilter-driver-callback-routines-for-context-management"></a><span id="Minifilter_Driver_Callback_Routines_for_Context_Management"></span><span id="minifilter_driver_callback_routines_for_context_management"></span><span id="MINIFILTER_DRIVER_CALLBACK_ROUTINES_FOR_CONTEXT_MANAGEMENT"></span>用于上下文管理的微筛选器驱动程序回调例程
 
-下面的回调例程都存储在[ **FLT\_注册**](https://msdn.microsoft.com/library/windows/hardware/ff544811)作为参数传递的结构[ **FltRegisterFilter**](https://msdn.microsoft.com/library/windows/hardware/ff544305)微筛选器驱动程序的管理上下文：
+下面的回调例程都存储在[ **FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)作为参数传递的结构[ **FltRegisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)微筛选器驱动程序的管理上下文：
 
 <table>
 <colgroup>
@@ -111,15 +111,15 @@ ms.locfileid: "63357547"
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>ContextAllocateCallback</em></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551075" data-raw-source="[&lt;strong&gt;PFLT_CONTEXT_ALLOCATE_CALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551075)"><strong>PFLT_CONTEXT_ALLOCATE_CALLBACK</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_allocate_callback" data-raw-source="[&lt;strong&gt;PFLT_CONTEXT_ALLOCATE_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_allocate_callback)"><strong>PFLT_CONTEXT_ALLOCATE_CALLBACK</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>ContextCleanupCallback</em></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551078" data-raw-source="[&lt;strong&gt;PFLT_CONTEXT_CLEANUP_CALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551078)"><strong>PFLT_CONTEXT_CLEANUP_CALLBACK</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_cleanup_callback" data-raw-source="[&lt;strong&gt;PFLT_CONTEXT_CLEANUP_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)"><strong>PFLT_CONTEXT_CLEANUP_CALLBACK</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>ContextFreeCallback</em></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551082" data-raw-source="[&lt;strong&gt;PFLT_CONTEXT_FREE_CALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551082)"><strong>PFLT_CONTEXT_FREE_CALLBACK</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_free_callback" data-raw-source="[&lt;strong&gt;PFLT_CONTEXT_FREE_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_free_callback)"><strong>PFLT_CONTEXT_FREE_CALLBACK</strong></a></p></td>
 </tr>
 </tbody>
 </table>

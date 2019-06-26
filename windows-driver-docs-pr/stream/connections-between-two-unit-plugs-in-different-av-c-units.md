@@ -9,19 +9,19 @@ keywords:
 - AVCPRECONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d1fe5bc36ab8aa7281fadfae1cd2275784935f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b346261620bd6fbe0345fcf02dc3fd0a5f0fe949
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384496"
 ---
 # <a name="connections-between-two-unit-plugs-in-different-avc-units"></a>在不同 AV/C 单元中的两个单元插头之间的连接
 
 
 方案 7 和 8 表示为在不同单元中，目标不支持一个 AV/C 单元内的单元连接到的子单元子单元的一个单元中子单元之间的连接。 这些类型的连接需要**信号源**并**输入选择**CCM 命令。
 
-方案 7 和 8 描述具有的子单元源或目标插头**KSPIN\_标志\_AVC\_PCRONLY**中设置标志**标志**其的成员[**AVCPRECONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554103)结构转换*Avc.sys*到 0xFF 及其子单元的地址。
+方案 7 和 8 描述具有的子单元源或目标插头**KSPIN\_标志\_AVC\_PCRONLY**中设置标志**标志**其的成员[**AVCPRECONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcpreconnectinfo)结构转换*Avc.sys*到 0xFF 及其子单元的地址。
 
 ### <a name="scenario-7"></a>**方案 7**
 
@@ -33,7 +33,7 @@ ms.locfileid: "63374215"
 
 方案 7 描述了其中本地固定的连接的**数据流**成员是 KSPIN\_数据流\_in。
 
-下表中的每一列对应的成员[ **AVCCONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554101)结构和源子单元即插即用这些成员中指定的值。
+下表中的每一列对应的成员[ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)结构和源子单元即插即用这些成员中指定的值。
 
 <table>
 <colgroup>

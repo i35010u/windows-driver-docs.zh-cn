@@ -4,12 +4,12 @@ description: 使用代理连接跟踪
 ms.assetid: 20A737D7-043D-4D05-A15D-85595E48521B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb23ce474690030042163b09c570e203d6630ea6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44e8ffbd0db09d54b0de82578b20f84718c14291
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379181"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371773"
 ---
 # <a name="using-proxied-connections-tracking"></a>使用代理连接跟踪
 
@@ -32,7 +32,7 @@ Windows 8 和更高版本的 Windows 中支持跟踪通过代理连接。
 
 ### <a name="redirecting-connections"></a>将连接重定向
 
-标注驱动程序调用[ **FwpsRedirectHandleCreate0** ](https://msdn.microsoft.com/library/windows/hardware/hh439681)函数来创建可用于 TCP 连接重定向的句柄。
+标注驱动程序调用[ **FwpsRedirectHandleCreate0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)函数来创建可用于 TCP 连接重定向的句柄。
 
 本部分包括以下主题：
 
@@ -42,7 +42,7 @@ Windows 8 和更高版本的 Windows 中支持跟踪通过代理连接。
 
 ### <a name="using-a-redirection-handle"></a>使用重定向句柄
 
-ALE 连接之前重定向标注可以连接重定向到本地进程时，必须获得与 FwpsRedirectHandleCreate0 函数的重定向句柄并置于句柄[ **FWPS\_CONNECT\_REQUEST0** ](https://msdn.microsoft.com/library/windows/hardware/ff551231)结构。 标注修改 classifyFn 中的结构，ALE 连接重定向图层。
+ALE 连接之前重定向标注可以连接重定向到本地进程时，必须获得与 FwpsRedirectHandleCreate0 函数的重定向句柄并置于句柄[ **FWPS\_CONNECT\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)结构。 标注修改 classifyFn 中的结构，ALE 连接重定向图层。
 
 FWPS\_CONNECT\_REQUEST0 结构包含重定向的以下成员：
 
@@ -60,11 +60,11 @@ FWPS\_CONNECT\_REQUEST0 结构包含重定向的以下成员：
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectHandle</strong></p></td>
-<td align="left"><p>通过调用创建标注驱动程序的重定向句柄<a href="https://msdn.microsoft.com/library/windows/hardware/hh439681" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439681)"> <strong>FwpsRedirectHandleCreate0</strong> </a>函数。</p></td>
+<td align="left"><p>通过调用创建标注驱动程序的重定向句柄<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)"> <strong>FwpsRedirectHandleCreate0</strong> </a>函数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>localRedirectContext</strong></p></td>
-<td align="left"><p>标注驱动程序通过调用分配一个标注驱动程序上下文区域<a href="https://msdn.microsoft.com/library/windows/hardware/ff544520" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544520)"> <strong>ExAllocatePoolWithTag</strong> </a>函数。</p></td>
+<td align="left"><p>标注驱动程序通过调用分配一个标注驱动程序上下文区域<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)"> <strong>ExAllocatePoolWithTag</strong> </a>函数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectContextSize</strong></p></td>
@@ -75,11 +75,11 @@ FWPS\_CONNECT\_REQUEST0 结构包含重定向的以下成员：
 
  
 
-标注驱动程序已完成使用重定向句柄后，它必须调用[ **FwpsRedirectHandleDestroy0** ](https://msdn.microsoft.com/library/windows/hardware/hh439684)函数来销毁句柄。
+标注驱动程序已完成使用重定向句柄后，它必须调用[ **FwpsRedirectHandleDestroy0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandledestroy0)函数来销毁句柄。
 
 ### <a name="querying-the-redirect-state"></a>查询重定向状态
 
-标注驱动程序调用[ **FwpsQueryConnectionRedirectState0** ](https://msdn.microsoft.com/library/windows/hardware/hh439677)函数以获取连接的重定向状态。 [ **FWPS\_连接\_重定向\_状态**](https://msdn.microsoft.com/library/windows/hardware/hh439704)枚举是对的调用的返回类型**FwpsQueryConnectionRedirectState0**函数。
+标注驱动程序调用[ **FwpsQueryConnectionRedirectState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0)函数以获取连接的重定向状态。 [ **FWPS\_连接\_重定向\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_connection_redirect_state_)枚举是对的调用的返回类型**FwpsQueryConnectionRedirectState0**函数。
 
 如果重定向状态为 FWPS\_连接\_不\_重定向，ALE\_CONNECT\_重定向标注可以继续执行代理连接。
 

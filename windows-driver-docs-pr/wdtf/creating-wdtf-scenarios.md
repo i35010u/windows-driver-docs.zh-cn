@@ -12,21 +12,21 @@ keywords:
 - 热插拔设备 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da6f6331d52f5f49e220739ab9c53bfcea569bb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b1dc0dc8a9659b9678b94e5a1c364217d9710bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338978"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386252"
 ---
 # <a name="creating-wdtf-scenarios"></a>创建 WDTF 方案
 
 
-可以通过创建的实例启动基于 WDTF 的方案[ **IWDTF2** ](https://msdn.microsoft.com/library/windows/hardware/ff539628)聚合接口，其中包含[ **DeviceDepot** ](https://msdn.microsoft.com/library/windows/hardware/hh406304)并[ **SystemDepot** ](https://msdn.microsoft.com/library/windows/hardware/hh406309)属性。
+可以通过创建的实例启动基于 WDTF 的方案[ **IWDTF2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)聚合接口，其中包含[ **DeviceDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_devicedepot)并[ **SystemDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_systemdepot)属性。
 
-若要收集一个或多个目标对象，请使用[ **IWDTFDeviceDepot2** ](https://msdn.microsoft.com/library/windows/hardware/hh406391)接口，并使用**查询**方法使用[简单数据评估语言](simple-data-evaluation-language-overview.md) (SDEL)。
+若要收集一个或多个目标对象，请使用[ **IWDTFDeviceDepot2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtfdevicedepot2)接口，并使用**查询**方法使用[简单数据评估语言](simple-data-evaluation-language-overview.md) (SDEL)。
 
-脚本还可能会通过检查特定目标[ **IWDTFTarget2::Eval** ](https://msdn.microsoft.com/library/windows/hardware/hh439396)方法。 选择目标后，它们通过使用来控制[一个或多个操作接口](controlling-targets.md)。
+脚本还可能会通过检查特定目标[ **IWDTFTarget2::Eval** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-eval)方法。 选择目标后，它们通过使用来控制[一个或多个操作接口](controlling-targets.md)。
 
 在开始开发 WDTF 方案之前，必须安装 WDTF。 请参阅[WDTF 快速启动](wdtf-quick-start-.md)有关详细信息。
 
@@ -52,13 +52,13 @@ Next
 
 ### <a name="storing-target-information-by-using-context"></a>将目标信息存储使用的上下文
 
-某些编程语言，如 VBScript、 不方便地管理对象的引用。 为了简化这种管理 WDTF 中的，每个目标提供了[**上下文**](https://msdn.microsoft.com/library/windows/hardware/hh439393)属性，您可以使用存储任意键/值对，其中包括对活动对象的引用。 此属性是用于存储操作接口，以便以后使用它们特别有用。 以下 VBScript 代码示例存储[ **IWDTFSimpleIOStressAction2** ](https://msdn.microsoft.com/library/windows/hardware/hh451157)中的已命名操作**上下文**项。
+某些编程语言，如 VBScript、 不方便地管理对象的引用。 为了简化这种管理 WDTF 中的，每个目标提供了[**上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-put_context)属性，您可以使用存储任意键/值对，其中包括对活动对象的引用。 此属性是用于存储操作接口，以便以后使用它们特别有用。 以下 VBScript 代码示例存储[ **IWDTFSimpleIOStressAction2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)中的已命名操作**上下文**项。
 
 ```cpp
 deviceObj.Context("IWDTFSimpleIOStressAction2") = SimpleIOObj
 ```
 
-你的方案更高版本，可以停止、 暂停或重新启动[ **IWDTFSimpleIOStressAction2** ](https://msdn.microsoft.com/library/windows/hardware/hh451157)通过访问通过接口[**上下文**](https://msdn.microsoft.com/library/windows/hardware/hh439393)同样，为以下代码示例所示。
+你的方案更高版本，可以停止、 暂停或重新启动[ **IWDTFSimpleIOStressAction2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)通过访问通过接口[**上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-put_context)同样，为以下代码示例所示。
 
 ```cpp
 Device.Context("IWDTFSimpleIOStressAction2").Stop
@@ -74,7 +74,7 @@ Device.Context("IWDTFSimpleIOStressAction2").Stop
 Set NonPhantomDevices = WDTF.DeviceDepot.Query ("IsAttached")
 ```
 
-有关更多属性关键字，请参阅[SDEL 令牌](https://msdn.microsoft.com/library/windows/hardware/ff539571)。
+有关更多属性关键字，请参阅[SDEL 令牌](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

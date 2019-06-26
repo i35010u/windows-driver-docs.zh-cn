@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 51a2d8d6c8b91ec7b60d047dd43d4ba8b8879cb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01e72ab8a7ed3350e71fb28bd891450a01ffa9b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382207"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378275"
 ---
 # <a name="devpkeydevicedriverproppageprovider"></a>DEVPKEY_Device_DriverPropPageProvider
 
@@ -61,11 +61,11 @@ DEVPKEY_Device_DriverPropPageProvider 设备属性表示一个 DLL 和中注册�
 <a name="remarks"></a>备注
 -------
 
-可以使用设置的值 DEVPKEY_Device_DriverPropPageProvider [ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)附带[ **INF *DDInstall*一节**](https://msdn.microsoft.com/library/windows/hardware/ff547344)安装设备的 INF 文件。
+可以使用设置的值 DEVPKEY_Device_DriverPropPageProvider [ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)附带[ **INF *DDInstall*一节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)安装设备的 INF 文件。
 
-可以通过调用检索的值 DEVPKEY_Device_DriverPropPageProvider [ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)。
+可以通过调用检索的值 DEVPKEY_Device_DriverPropPageProvider [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverPropPageProvider 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**EnumPropPages32**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff537732)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverPropPageProvider 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**EnumPropPages32**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,11 +90,11 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF *DDInstall*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

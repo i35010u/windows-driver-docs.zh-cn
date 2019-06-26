@@ -4,12 +4,12 @@ description: INF InboxVersionRequired 指令
 ms.assetid: 75a07ca7-d279-4815-b644-10b58753f885
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c50b4f6ec572e4129e5525cb71d12822ca68939
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc6c21a886d3d7f4c7a1e0c037bde1278ed7c9b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377880"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372378"
 ---
 # <a name="inf-inboxversionrequired-directive"></a>INF InboxVersionRequired 指令
 
@@ -27,7 +27,7 @@ InboxVersionRequired=UseDriverVer
 
 如果**UseDriverVer**的值使用关键字**InboxVersionRequired**， **UseDriverVer**告知类安装程序以使用**DriverVer**从正在分析的任何核心驱动程序可接受的最低版本为 INF 指令版本字符串。 服务使用的驱动程序时必须小心**UseDriverVer**关键字。 INF 引用的所有核心驱动程序必须都为相同或更高版本才能都成功安装。
 
-您还可以指定特定版本字符串的值作为**InboxVersionRequired**。 这些版本字符串遵循相同的格式**DriverVer**中指定的字符串[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)。 有关详细信息**DriverVer**的字符串格式，请参阅[ **INF DriverVer 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547394)。
+您还可以指定特定版本字符串的值作为**InboxVersionRequired**。 这些版本字符串遵循相同的格式**DriverVer**中指定的字符串[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)。 有关详细信息**DriverVer**的字符串格式，请参阅[ **INF DriverVer 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)。
 
 下面的示例演示如何设置**InboxVersionRequired**到特定的版本字符串：
 

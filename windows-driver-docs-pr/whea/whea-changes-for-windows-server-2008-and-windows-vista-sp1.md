@@ -13,12 +13,12 @@ keywords:
 - Windows Vista SP1 WDK WHEA，WHEA 更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6486b0cf15fc125364549f162e9f60216a05138e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6481d9c693a7c51b0100bf1ce3d010247865689
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387139"
 ---
 # <a name="whea-changes-for-windows-server-2008-and-windows-vista-sp1"></a>Windows Server 2008 和 Windows Vista SP1 的 WHEA 更改
 
@@ -35,7 +35,7 @@ ms.locfileid: "63340642"
 
 -   WHEA 引发一个事件跟踪 Windows (ETW) 事件，每当硬件错误发生时。 从 Windows Server 2008 开始，WHEA 硬件错误事件和数据模板用于描述这些硬件错误事件的有不同的事件和 Windows Vista 支持的模板。
 
-    WHEA 中 ETW 支持的详细信息，请参阅[硬件错误事件](https://msdn.microsoft.com/library/windows/hardware/ff559387)。
+    WHEA 中 ETW 支持的详细信息，请参阅[硬件错误事件](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)。
 
 -   [WHEA 硬件错误事件处理应用程序](whea-hardware-error-event-processing-applications.md)可以通过查询 WHEA 未记录任何事件从系统事件日志检索硬件错误事件。 但是，从 Windows Server 2008 开始，记录 WHEA 硬件错误事件提供程序的名称已更改。 这些应用程序必须通过新的提供程序访问的错误事件。 有关详细信息，请参阅[查询硬件错误事件的系统事件日志](querying-the-system-event-log-for-hardware-error-events.md)。
 

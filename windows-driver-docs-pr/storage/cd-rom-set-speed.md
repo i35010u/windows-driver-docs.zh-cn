@@ -14,12 +14,12 @@ keywords:
 - 设置流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c2fcd248faa5737cdeab70295bfb0df63570a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 527cbf2b02a93ad47a3f32ca76ec4d1dcf1ad615
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368342"
 ---
 # <a name="cd-rom-set-speed"></a>CD-ROM 设置速度
 
@@ -28,11 +28,11 @@ ms.locfileid: "63338327"
 
 某些计算机不需要 CD-ROM 驱动器以高的速度运行。 例如，在 media center 计算机 CD-ROM 驱动器主要执行不需要速度高于 1 X 的操作，例如音频播放。 在该数值调节钮的 CD-ROM 驱动器，例如，在播放，16 X 时仅 1 倍的速度是必需的可以生成会导致不良用户体验的大噪音。
 
-版本 2 *scsi-3 多媒体命令*(MMC) 规范定义了用于设置 CD-ROM 速度的两个命令：设置 CD 速度和设置流式处理。 在 Windows Vista 中，应用程序可以通过发送指示 CD-ROM 类驱动程序问题，这两个命令之一[ **IOCTL\_CDROM\_设置\_速度**](https://msdn.microsoft.com/library/windows/hardware/ff559381)对类驱动程序的请求。
+版本 2 *scsi-3 多媒体命令*(MMC) 规范定义了用于设置 CD-ROM 速度的两个命令：设置 CD 速度和设置流式处理。 在 Windows Vista 中，应用程序可以通过发送指示 CD-ROM 类驱动程序问题，这两个命令之一[ **IOCTL\_CDROM\_设置\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)对类驱动程序的请求。
 
-若要发送到 CD-ROM 设备设置 CD 速度命令，调用方指定的请求类型**CdromSetSpeed**中**RequestType**的成员[ **CDROM\_设置\_速度**](https://msdn.microsoft.com/library/windows/hardware/ff551368)，在输入到 IOCTL\_CDROM\_设置\_速度。
+若要发送到 CD-ROM 设备设置 CD 速度命令，调用方指定的请求类型**CdromSetSpeed**中**RequestType**的成员[ **CDROM\_设置\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_set_speed)，在输入到 IOCTL\_CDROM\_设置\_速度。
 
-若要将设置流式处理命令发送到设备，调用方指定的请求类型**CdromSetStreaming**中**RequestType**的成员[ **CDROM\_设置\_流式处理**](https://msdn.microsoft.com/library/windows/hardware/ff551369)，在输入到 IOCTL\_CDROM\_设置\_速度。
+若要将设置流式处理命令发送到设备，调用方指定的请求类型**CdromSetStreaming**中**RequestType**的成员[ **CDROM\_设置\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_set_streaming)，在输入到 IOCTL\_CDROM\_设置\_速度。
 
 如果应用程序更改主轴转速使用设置 CD 速度命令，设备会自动返回到其默认速度更改媒体时。 如果应用程序更改主轴转速使用设置流式处理命令，媒体的更改不会影响速度，除非调用方指定的值，否则**FALSE**中**的永久**CDROM 的成员\_设置\_流式处理结构。
 

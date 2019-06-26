@@ -4,12 +4,12 @@ description: ENCAPIPARAM\_PEAK\_BITRATE
 ms.assetid: 444a20e0-f3af-4dbc-9272-44e992e059e8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6565d8e8f3d5297e9fc1468c4a6436adae8b999
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23d9cc133b18d3ea490580d6a6bed85bc334ec76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363559"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384139"
 ---
 # <a name="encapiparampeakbitrate"></a>ENCAPIPARAM\_PEAK\_BITRATE
 
@@ -49,7 +49,7 @@ ENCAPIPARAM\_比特率属性用于描述设备的受支持的峰值位速率 （
 
  
 
-属性值 （操作数据） 是 VT\_UI4 单步执行范围高峰期的比特率的中指定的设备**PropertyItem.Values**的成员[ **KSPROPERTY\_集**](https://msdn.microsoft.com/library/windows/hardware/ff565617)结构。
+属性值 （操作数据） 是 VT\_UI4 单步执行范围高峰期的比特率的中指定的设备**PropertyItem.Values**的成员[ **KSPROPERTY\_集**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_set)结构。
 
 ### <a name="comments"></a>备注
 
@@ -61,7 +61,7 @@ ENCAPIPARAM\_比特率属性用于描述设备的受支持的峰值位速率 （
 
 ### <a name="see-also"></a>请参阅
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)， [ **VIDEOENCODER\_比特率\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff568695)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)， [ **VIDEOENCODER\_比特率\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)
 
  
 

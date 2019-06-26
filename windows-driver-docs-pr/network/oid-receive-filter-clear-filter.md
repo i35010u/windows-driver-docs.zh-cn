@@ -5,36 +5,36 @@ ms.assetid: 5e92a11a-468e-431d-b4e5-7b0da3847e8a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_CLEAR_FILTER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 00135aa3af9c79964fcdfa14622421b3a256598e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcc670800aeca6d7cb687e842778b29edbce96ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374807"
 ---
 # <a name="oidreceivefilterclearfilter"></a>OID\_RECEIVE\_FILTER\_CLEAR\_FILTER
 
 
 过量驱动程序问题 OID 设置请求的 OID\_接收\_筛选器\_清除\_要清除的网络适配器的接收筛选器筛选器。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_接收\_筛选器\_清除\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567166)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_接收\_筛选器\_清除\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
 NDIS 接收筛选器在以下的 NDIS 接口中使用：
 
--   [NDIS 数据包合并](https://msdn.microsoft.com/library/windows/hardware/hh451601)。 详细了解如何使用此接口中接收的筛选器，请参阅[管理数据包合并接收筛选器](https://msdn.microsoft.com/library/windows/hardware/hh464026)。
+-   [NDIS 数据包合并](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)。 详细了解如何使用此接口中接收的筛选器，请参阅[管理数据包合并接收筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)。
 
--   [单根 I/O 虚拟化 (SR-IOV)](https://msdn.microsoft.com/library/windows/hardware/hh440235)。 详细了解如何使用此接口中接收的筛选器，请参阅[上虚拟端口设置接收的筛选器](https://msdn.microsoft.com/library/windows/hardware/hh440224)。
+-   [单根 I/O 虚拟化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)。 详细了解如何使用此接口中接收的筛选器，请参阅[上虚拟端口设置接收的筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port)。
 
--   [虚拟机队列 (VMQ)](https://msdn.microsoft.com/library/windows/hardware/ff571035)。 详细了解如何使用此接口中接收的筛选器，请参阅[设置和清除 VMQ 筛选器](https://msdn.microsoft.com/library/windows/hardware/ff570780)。
+-   [虚拟机队列 (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)。 详细了解如何使用此接口中接收的筛选器，请参阅[设置和清除 VMQ 筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters)。
 
 OID 设置请求的 OID\_接收\_筛选器\_清除\_筛选器是必需的支持 NDIS 数据包合并、 SR-IOV 或 VMQ 接口的微型端口驱动程序。
 
 基础驱动程序，如 NDIS 协议或筛选器驱动程序，使用 OID\_接收\_筛选器\_清除\_设置请求要清除以前设置的筛选器筛选器。 设置接收筛选器的驱动程序可将其清除。
 
-基础驱动程序通过设置清除接收筛选器**FilterId**的成员[ **NDIS\_接收\_筛选器\_清除\_参数** ](https://msdn.microsoft.com/library/windows/hardware/ff567166)结构与筛选器的标识符。 该驱动程序从较早的 OID 方法请求获取筛选器标识符[OID\_接收\_筛选器\_设置\_筛选器](oid-receive-filter-set-filter.md)。
+基础驱动程序通过设置清除接收筛选器**FilterId**的成员[ **NDIS\_接收\_筛选器\_清除\_参数** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)结构与筛选器的标识符。 该驱动程序从较早的 OID 方法请求获取筛选器标识符[OID\_接收\_筛选器\_设置\_筛选器](oid-receive-filter-set-filter.md)。
 
 ### <a name="additional-instructions-for-ndis-packet-coalescing"></a>其他说明 ndis 数据包合并
 
@@ -68,7 +68,7 @@ OID 设置请求的 OID\_接收\_筛选器\_清除\_筛选器是必需的支持 
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-微型端口驱动程序[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数将返回以下值之一用于此请求：
+微型端口驱动程序[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数将返回以下值之一用于此请求：
 
 <table>
 <colgroup>
@@ -88,7 +88,7 @@ OID 设置请求的 OID\_接收\_筛选器\_清除\_筛选器是必需的支持 
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff563622" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563622)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递<strong>NDIS_STATUS_SUCCESS</strong>对于<em>状态</em>参数。</p></td>
+<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递<strong>NDIS_STATUS_SUCCESS</strong>对于<em>状态</em>参数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
@@ -111,7 +111,7 @@ NDIS 返回此请求的以下状态代码之一：
 筛选器标识符无效。
 
 <a href="" id="ndis-status-invalid-length"></a>**NDIS\_状态\_无效\_长度**  
-信息缓冲区因过小。 NDIS 集**数据。设置\_信息。BytesNeeded**中的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)是必需的最小缓冲区大小的结构。
+信息缓冲区因过小。 NDIS 集**数据。设置\_信息。BytesNeeded**中的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)是必需的最小缓冲区大小的结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -136,9 +136,9 @@ NDIS 返回此请求的以下状态代码之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_RECEIVE\_FILTER\_CLEAR\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff567166)
+[**NDIS\_RECEIVE\_FILTER\_CLEAR\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)
 
 [OID\_NIC\_交换机\_删除\_VPORT](oid-nic-switch-delete-vport.md)
 

@@ -11,12 +11,12 @@ keywords:
 - 安全字符串函数 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e11c0e1275bb629dba89a6ddc32622f53ee0b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3aeddeea0d159ece37d624c28af2966ca1c4fb0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369799"
 ---
 # <a name="importing-kernel-mode-safe-string-functions"></a>导入内核模式安全字符串函数
 
@@ -54,7 +54,7 @@ ms.locfileid: "63384259"
 
 可以定义任一 NTSTRSAFE\_否\_CB\_函数或 NTSTRSAFE\_否\_CCH\_函数，但不可同时使用两者。
 
-可以使[ **UNICODE\_字符串**](https://msdn.microsoft.com/library/windows/hardware/ff564879)结构函数不可用。
+可以使[ **UNICODE\_字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)结构函数不可用。
 
 ### <a href="" id="to-make-unicode-string-structure-functions-unavailable"></a>若要使 UNICODE\_字符串结构函数不可用
 

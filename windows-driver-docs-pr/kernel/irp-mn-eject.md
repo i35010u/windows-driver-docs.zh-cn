@@ -6,12 +6,12 @@ ms.assetid: 2807eeca-c614-469a-baeb-3d2d65416c57
 keywords:
 - IRP_MN_EJECT Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 5efa871e04633f18ed23358146458d3fc4228089
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fc9f3343ef77b93ee63aff6a29d69ee099ef1ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391975"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383728"
 ---
 # <a name="irpmneject"></a>IRP\_MN\_EJECT
 
@@ -54,13 +54,13 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 
 成功返回，对于此 IRP 任何驱动程序必须等待，直到完成 IRP 之前弹出该设备。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 
 保留供系统使用。 驱动程序必须发送此 IRP。
 
-相反，请参阅的参考页[ **IoRequestDeviceEject** ](https://msdn.microsoft.com/library/windows/hardware/ff549647)例程。
+相反，请参阅的参考页[ **IoRequestDeviceEject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdeviceeject)例程。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,7 +81,7 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 ## <a name="see-also"></a>请参阅
 
 
-[**IoRequestDeviceEject**](https://msdn.microsoft.com/library/windows/hardware/ff549647)
+[**IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdeviceeject)
 
  
 

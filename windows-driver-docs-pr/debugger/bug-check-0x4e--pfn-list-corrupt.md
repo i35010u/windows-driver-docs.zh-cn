@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 44ebf74d7c9f495ebe035da08e01476c4c833f8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7740546338320770e748e887da0e36d9df91fff2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367423"
 ---
 # <a name="bug-check-0x4e-pfnlistcorrupt"></a>Bug 检查 0x4E：PFN\_列表\_损坏
 
@@ -26,7 +26,7 @@ ms.locfileid: "63363462"
 PFN\_列表\_损坏错误检查的值为 0x0000004E。 这表示页的帧数 (PFN) 列表已损坏。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="pfnlistcorrupt-parameters"></a>PFN\_列表\_损坏参数

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8bc8814afb2ae27dbb68405a842ead23dd0560
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3250b9b3e2fa6de53ce4fe6b80d6e1f57e192a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342863"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373152"
 ---
 # <a name="kspropertyclockcorrelatedphysicaltime"></a>KSPROPERTY\_时钟\_CORRELATEDPHYSICALTIME
 
@@ -54,7 +54,7 @@ ms.locfileid: "63342863"
 <td><p>否</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561033" data-raw-source="[&lt;strong&gt;KSCORRELATED_TIME&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561033)"><strong>KSCORRELATED_TIME</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscorrelated_time" data-raw-source="[&lt;strong&gt;KSCORRELATED_TIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscorrelated_time)"><strong>KSCORRELATED_TIME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ ms.locfileid: "63342863"
 
 KSCORRELATED\_时间结构包含在当前的时钟时间**时间**成员和相关物理时间**SystemTime**成员。
 
-另请参阅[KS 时钟](https://msdn.microsoft.com/library/windows/hardware/ff567307)。
+另请参阅[KS 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,7 +89,7 @@ KSCORRELATED\_时间结构包含在当前的时钟时间**时间**成员和相�
 
 [**KSPROPERTY\_CLOCK\_PHYSICALTIME**](ksproperty-clock-physicaltime.md)
 
-[**KeQueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/hardware/ff553053)
+[**KeQueryPerformanceCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kequeryperformancecounter)
 
  
 

@@ -3,12 +3,12 @@ Description: 在本主题中，将了解如何在 Windows 8 中识别 WinUSB 设
 title: WinUSB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0ae35ab57fdbea90f6b7c4a143b3c36b161cfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47a0211426210626f492b5fb268fe2357969b567
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392727"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384486"
 ---
 # <a name="winusb-device"></a>WinUSB 设备
 
@@ -23,7 +23,7 @@ ms.locfileid: "63392727"
     - [有关使用 USBDevice 类：](#about-using-the-usbdevice-class)
   - [如何更改 WinUSB 设备的设备说明](#how-to-change-the-device-description-for-a-winusb-device)
   - [如何将 WinUSB 设备配置](#how-to-configure-a-winusb-device)
-  - [相关的主题](#related-topics)
+  - [相关主题](#related-topics)
 
 ## <a name="what-is-a-winusb-device"></a>什么是 WinUSB 设备
 
@@ -149,7 +149,7 @@ Microsoft 提供了 Winusb.inf 包含安装 Winusb.sys 为 USB 设备的设备�
 
  
 
-在设备枚举期间 USB 驱动程序堆栈然后检索**DeviceInterfaceGUID**的扩展的属性操作系统功能描述符中的值并注册设备中设备的硬件密钥。 应用程序可以使用检索该值**SetupDiXxx** Api (请参阅[ **SetupDiOpenDevRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552079))。 有关详细信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+在设备枚举期间 USB 驱动程序堆栈然后检索**DeviceInterfaceGUID**的扩展的属性操作系统功能描述符中的值并注册设备中设备的硬件密钥。 应用程序可以使用检索该值**SetupDiXxx** Api (请参阅[ **SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey))。 有关详细信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 **启用或禁用 WinUSB 电源管理功能**
 

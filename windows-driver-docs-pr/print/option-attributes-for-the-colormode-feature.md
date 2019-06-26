@@ -6,12 +6,12 @@ keywords:
 - ColorMode 功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f635661505a0a8249b061feebf124e41fc0e8e58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3080bdf44a9e1bc5eb9c603f27753c988e666c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385959"
 ---
 # <a name="option-attributes-for-the-colormode-feature"></a>色彩模式功能的选项属性
 
@@ -60,13 +60,13 @@ ms.locfileid: "63339872"
 </tr>
 <tr class="odd">
 <td><p></em><strong>DrvBPP</strong></p></td>
-<td><p>数字值，该值指示每个像素 Unidrv 应为其位图呈现缓冲区使用的比特数。 位图格式是 Windows <a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-device-independent-bitmap--dib-" data-raw-source="&lt;em&gt;device-independent bitmap (DIB)&lt;/em&gt;"><em>与设备无关位图 (DIB)</em></a>，和有效的值为 1、 4、 8、 16、 24、 或 32。</p></td>
+<td><p>数字值，该值指示每个像素 Unidrv 应为其位图呈现缓冲区使用的比特数。 位图格式是 Windows <a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-device-independent-bitmap--dib-" data-raw-source="&lt;em&gt;device-independent bitmap (DIB)&lt;/em&gt;"><em>与设备无关位图 (DIB)</em></a>，和有效的值为 1、 4、 8、 16、 24、 或 32。</p></td>
 <td><p>可选。 如果未指定，默认值为 1。 （有关彩色打印机的值为 1 被称为"平面模式"。）</p>
 <p>Windows Dib 始终使用一个颜色平面。</p></td>
 </tr>
 <tr class="even">
 <td><p><em><strong>IPCallbackID</strong></p></td>
-<td><p>传递给呈现插件的正数值的值<a href="https://msdn.microsoft.com/library/windows/hardware/ff554261" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554261)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>方法作为其<strong>IPCallbackID</strong>参数。</p></td>
+<td><p>传递给呈现插件的正数值的值<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>方法作为其<strong>IPCallbackID</strong>参数。</p></td>
 <td><p>需要<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">呈现插件</a>提供，其中包含<strong>IPrintOemUni::ImageProcessing</strong>方法。</p></td>
 </tr>
 <tr class="odd">

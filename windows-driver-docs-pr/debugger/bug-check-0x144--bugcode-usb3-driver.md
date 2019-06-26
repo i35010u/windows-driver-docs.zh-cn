@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d0584931acec5a0ad9bcaa52f3a7d80197bbe821
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: acc241672d79941a4bad6a461d6b832225e8a9dc
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391983"
 ---
 # <a name="bug-check-0x144-bugcodeusb3driver"></a>Bug 检查 0x144：BUGCODE\_USB3\_DRIVER
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360445"
 **BUGCODE\_USB3\_驱动程序**bug 检查的值为 0x00000144。 这是所使用的所有 USB 3 bug 检查代码。 参数 1 指定 USB 3 检查错误，类型和其他参数的含义都依赖于参数 1。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="bugcodeusb3driver-parameters"></a>BUGCODE\_USB3\_驱动程序参数
@@ -102,13 +102,13 @@ ms.locfileid: "63360445"
 <tr class="even">
 <td align="left"><p>0x804</p></td>
 <td align="left"><p>泄漏的句柄上下文中。 运行<strong>！ usbanalyze v</strong>以获取有关已泄漏的句柄和 URBs 的信息。 为客户端驱动程序，必须启用驱动程序验证程序。</p></td>
-<td align="left"><p>设备对象传递给 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[USBD_CreateHandle](https://msdn.microsoft.com/library/windows/hardware/hh406241)">USBD_CreateHandle</a></strong>。</p></td>
+<td align="left"><p>设备对象传递给 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong>。</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>客户端驱动程序忘记关闭之前使用它创建的句柄<strong><a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[USBD_CreateHandle](https://msdn.microsoft.com/library/windows/hardware/hh406241)">USBD_CreateHandle</a></strong>或忘记释放它分配 URB。</p></td>
+<td align="left"><p>客户端驱动程序忘记关闭之前使用它创建的句柄<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong>或忘记释放它分配 URB。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x805</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff542962" data-raw-source="[WDFREQUEST](https://msdn.microsoft.com/library/windows/hardware/ff542962)">WDFREQUEST</a>句柄关闭静态流 URB</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects" data-raw-source="[WDFREQUEST](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects)">WDFREQUEST</a>句柄关闭静态流 URB</p></td>
 <td align="left"><p>指向关闭静态流 URB</p></td>
 <td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序 （例如，在处理之后 D0 退出） 关闭的静态流 URB 发送处于无效状态。</p></td>
@@ -118,14 +118,14 @@ ms.locfileid: "63360445"
 <td align="left"><p>指向 IRP</p></td>
 <td align="left"><p>指向 URB</p></td>
 <td align="left"><p>客户端驱动程序的设备对象指针</p></td>
-<td align="left"><p>客户端驱动程序试图发送连锁<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>查询链接在一起的之前<strong>MDL</strong>功能。 客户端驱动程序无法发送其链式<strong>MDL</strong>直到之后它已成功查询的连锁<strong>MDL</strong>功能。 有关详细信息，请参阅备注。</p></td>
+<td align="left"><p>客户端驱动程序试图发送连锁<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong>查询链接在一起的之前<strong>MDL</strong>功能。 客户端驱动程序无法发送其链式<strong>MDL</strong>直到之后它已成功查询的连锁<strong>MDL</strong>功能。 有关详细信息，请参阅备注。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x807</p></td>
-<td align="left"><p>指向连锁 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong></p></td>
+<td align="left"><p>指向连锁 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong></p></td>
 <td align="left"><p>指向 URB</p></td>
 <td align="left"><p>如果可用的客户端驱动程序的设备对象指针</p></td>
-<td align="left"><p>客户端驱动程序发送 URB core 堆栈使用传输到缓冲区长度超过字节数 (由 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554530" data-raw-source="[MmGetMdlByteCount](https://msdn.microsoft.com/library/windows/hardware/ff554530)">MmGetMdlByteCount</a></strong>) 的 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>中传递。 有关详细信息，请参阅备注。</p></td>
+<td align="left"><p>客户端驱动程序发送 URB core 堆栈使用传输到缓冲区长度超过字节数 (由 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount" data-raw-source="[MmGetMdlByteCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount)">MmGetMdlByteCount</a></strong>) 的 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong>中传递。 有关详细信息，请参阅备注。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1001</p></td>
@@ -401,14 +401,14 @@ ms.locfileid: "63360445"
 <a name="remarks"></a>备注
 -------
 
-若要查询 USB 功能，客户端驱动程序必须调用[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh439434)或[ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)
+若要查询 USB 功能，客户端驱动程序必须调用[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)或[ **USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))
 
-若要发送链接[ **MDL**](https://msdn.microsoft.com/library/windows/hardware/ff554414)，客户端驱动程序必须调用[ **USBD\_QueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh406230) ，并使用**URB\_函数\_大容量\_OR\_中断\_传输\_USING\_CHAINED\_MDL**或**URB\_函数\_ISOCH\_传输\_USING\_CHAINED\_MDL**。
+若要发送链接[ **MDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)，客户端驱动程序必须调用[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)) ，并使用**URB\_函数\_大容量\_OR\_中断\_传输\_USING\_CHAINED\_MDL**或**URB\_函数\_ISOCH\_传输\_USING\_CHAINED\_MDL**。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)
+[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)
 
  
 

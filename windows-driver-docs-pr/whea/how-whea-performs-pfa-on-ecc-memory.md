@@ -11,12 +11,12 @@ keywords:
 - LLHEH WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd43fbbff691133978503716618368cbabed8a7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08386323a75e6991fc0e81a20d442cd8b18f9bdb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340810"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386472"
 ---
 # <a name="how-whea-performs-pfa-on-ecc-memory"></a>WHEA 如何在 ECC 内存上执行 PFA
 
@@ -27,7 +27,7 @@ WHEA 执行 PFA ECC 内存页上，仅当满足以下条件：
 
 -   注册表值**MemPfaDisable**不设置为 1。
 
--   一个[特定于平台的硬件错误驱动程序 (PSHED) 插件](platform-specific-hardware-error-driver-plug-ins2.md)以前未设置**PlatformPfaControl**位[ **WHEA\_错误\_数据包\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff560472)的成员[WHEA\_错误\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff560465)结构为 1。 该插件前提它执行 PFA 设置此位。 有关如何 PFA 执行此插件的详细信息，请参阅[PFA 由 PSHED 插件](pfa-performed-by-a-pshed-plug-in.md)。
+-   一个[特定于平台的硬件错误驱动程序 (PSHED) 插件](platform-specific-hardware-error-driver-plug-ins2.md)以前未设置**PlatformPfaControl**位[ **WHEA\_错误\_数据包\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_flags)的成员[WHEA\_错误\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构为 1。 该插件前提它执行 PFA 设置此位。 有关如何 PFA 执行此插件的详细信息，请参阅[PFA 由 PSHED 插件](pfa-performed-by-a-pshed-plug-in.md)。
 
 ECC 内存出错时的内存页面上，WHEA PFA 页上执行 ECC 内存通过执行以下步骤：
 

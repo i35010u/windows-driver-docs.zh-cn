@@ -7,12 +7,12 @@ keywords:
 - 错误 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7c76a18706ffebe56c74d189e4c9a3297c1c42
-ms.sourcegitcommit: 179f9119b6c7888ea18281f6d5d11d62ac45b58d
+ms.openlocfilehash: 0d29282a78aa8705d4f6e3ff7763d00c294d47e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66035121"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371514"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>Driver Verifier 选项和规则类
 
@@ -110,7 +110,7 @@ ms.locfileid: "66035121"
 
 [强制挂起 I/O 请求](force-pending-i-o-requests.md)
 
-(Windows Vista 及更高版本)驱动程序验证程序时此选项处于活动状态，测试驱动程序的响应状态\_PENDING 返回值通过返回状态\_随机调用 PENDING [ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336).
+(Windows Vista 及更高版本)驱动程序验证程序时此选项处于活动状态，测试驱动程序的响应状态\_PENDING 返回值通过返回状态\_随机调用 PENDING [ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
 
 [IRP 日志记录](irp-logging.md)
 
@@ -130,7 +130,7 @@ ms.locfileid: "66035121"
 
 [电源框架延迟模糊](concurrency-stress-test.md)
 
-（从 Windows 8 开始）驱动程序验证程序时此选项处于活动状态，随机排列线程计划，以帮助刷新中使用的驱动程序的并发错误[电源管理框架 (PoFx)](https://msdn.microsoft.com/library/windows/hardware/hh406637)。 此选项不建议用于不直接利用电源管理框架 (PoFx) 的驱动程序...
+（从 Windows 8 开始）驱动程序验证程序时此选项处于活动状态，随机排列线程计划，以帮助刷新中使用的驱动程序的并发错误[电源管理框架 (PoFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)。 此选项不建议用于不直接利用电源管理框架 (PoFx) 的驱动程序...
 
 [DDI 符合性检查](ddi-compliance-checking.md)
 
@@ -162,7 +162,7 @@ ms.locfileid: "66035121"
 
 [VM 交换机验证](vm-switch-verification.md)
 
-（从 Windows 8.1 开始）此选项可监视筛选器驱动程序 (*可扩展交换机扩展*) 内运行[HYPER-V 可扩展交换机](https://msdn.microsoft.com/library/windows/hardware/hh598161)。
+（从 Windows 8.1 开始）此选项可监视筛选器驱动程序 (*可扩展交换机扩展*) 内运行[HYPER-V 可扩展交换机](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)。
 
 [检查端口/微型端口接口](port-miniport-interface-checking.md)
 

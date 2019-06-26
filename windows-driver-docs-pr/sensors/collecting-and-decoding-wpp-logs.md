@@ -4,12 +4,12 @@ description: 本主题提供有关收集和解码为传感器类扩展 (CX) 跟�
 ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac909cb176bd644fdaa76895d56ad1c62e3dd014
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af99074c09de6263a92aa4743d053e74e90ceeac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341321"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364907"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>收集和解码 WPP 日志
 
@@ -22,12 +22,12 @@ WPP 提供方法来跟踪称为跟踪提供程序的软件组件的操作。 以
 
 -   SensorsUtilsV2.pdb
 
-跟踪日志工具用于收集 WPP 日志。 有关详细信息，请参阅[Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)。 有关跟踪概念，如跟踪 Guid，跟踪标志、 跟踪级别或 PDB 文件的详细信息，请参阅[跟踪工具概念](https://msdn.microsoft.com/library/windows/hardware/ff553975.aspx)。
+跟踪日志工具用于收集 WPP 日志。 有关详细信息，请参阅[Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)。 有关跟踪概念，如跟踪 Guid，跟踪标志、 跟踪级别或 PDB 文件的详细信息，请参阅[跟踪工具概念](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracing-tool-concepts)。
 
 ## <a name="tracing-guid"></a>跟踪的 GUID
 
 
-下面的 GUID 标识传感器 V2 堆栈中的 CX 驱动程序的跟踪提供程序。 使用此 GUID 的跟踪日志的详细信息，请参阅[Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)。
+下面的 GUID 标识传感器 V2 堆栈中的 CX 驱动程序的跟踪提供程序。 使用此 GUID 的跟踪日志的详细信息，请参阅[Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)。
 
 ``` syntax
 c88b592b-6090-480f-a839-ca2434de5844

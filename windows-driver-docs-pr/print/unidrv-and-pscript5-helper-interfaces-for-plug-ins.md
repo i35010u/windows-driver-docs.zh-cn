@@ -9,17 +9,17 @@ keywords:
 - 帮助器接口 WDK 打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 760de4d909082c4050ae870662fea039a8e23816
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68ebf1d245e9d043e14293091c517e9b4843c941
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378591"
 ---
 # <a name="unidrv-and-pscript5-helper-interfaces-for-plug-ins"></a>插件的 Unidrv 和 Pscript5 帮助程序接口
 
 
-因为[IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)并[IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)接口继承[IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)接口，所有三个接口共享一组公共的方法。 下表列出了中的帮助程序接口和说明中所有三个接口的方法有并且只有一个接口中的方法有的方法。
+因为[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)并[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)接口继承[IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)接口，所有三个接口共享一组公共的方法。 下表列出了中的帮助程序接口和说明中所有三个接口的方法有并且只有一个接口中的方法有的方法。
 
 <table>
 <colgroup>

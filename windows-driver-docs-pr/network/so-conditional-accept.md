@@ -5,12 +5,12 @@ ms.assetid: 8aaaa08b-b239-4648-8c4f-8db2efbda551
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_CONDITIONAL_ACCEPT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce45eb619d33c7feae23cf24c6f6b337bbd52bba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e57bbfe05657c5d18b076a727c4977e90ca17b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373771"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379113"
 ---
 # <a name="soconditionalaccept"></a>因此\_条件\_接受
 
@@ -19,7 +19,7 @@ SO 的状态\_条件\_接受套接字选项用于确定是否在侦听套接字�
 
 如果 WSK 应用程序将此套接字选项，则它必须实现之前侦听套接字绑定到本地传输地址。
 
-若要设置此套接字选项的状态，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要设置此套接字选项的状态，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ SO 的状态\_条件\_接受套接字选项用于确定是否在侦听套接字�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -130,7 +130,7 @@ WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数
 
 某些传输协议不支持条件可能会接受侦听套接字上的模式。
 
-有关有条件地接受传入连接的详细信息，请参阅[用于侦听和接受传入连接](https://msdn.microsoft.com/library/windows/hardware/ff557059)。
+有关有条件地接受传入连接的详细信息，请参阅[用于侦听和接受传入连接](https://docs.microsoft.com/windows-hardware/drivers/network/listening-for-and-accepting-incoming-connections)。
 
 <a name="requirements"></a>要求
 ------------

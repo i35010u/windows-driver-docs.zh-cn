@@ -6,12 +6,12 @@ ms.assetid: fc4c5364-2160-4525-889a-96785a3c7a07
 keywords:
 - IRP_MN_QUERY_POWER Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9df260fdf923b619a5c3298724044b0b8ed6dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d598d294aac98cba066ee904cab1484ff8ae37ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370861"
 ---
 # <a name="irpmnquerypower"></a>IRP\_MN\_查询\_电源
 
@@ -24,7 +24,7 @@ ms.locfileid: "63381426"
 [**IRP\_MJ\_电源**](irp-mj-power.md)时发送
 ---------
 
-电源管理器或设备电源策略所有者发送此 IRP，以确定是否可以更改系统或设备电源状态，通常要进入睡眠状态。 驱动程序必须调用[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)来分配和发送此 IRP。
+电源管理器或设备电源策略所有者发送此 IRP，以确定是否可以更改系统或设备电源状态，通常要进入睡眠状态。 驱动程序必须调用[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)来分配和发送此 IRP。
 
 电源管理器将此 IRP 发送在 IRQL = 被动\_级别设置执行操作的设备堆栈\_电源\_PAGABLE 在 PDO 中标记。
 
@@ -37,9 +37,9 @@ ms.locfileid: "63381426"
 
 **Parameters.Power.State**指定的电源状态本身，按如下所示：
 
--   如果**Parameters.Power.Type**是**SystemPowerState**，则这是一个枚举器的[**系统\_POWER\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff564565)类型。
+-   如果**Parameters.Power.Type**是**SystemPowerState**，则这是一个枚举器的[**系统\_POWER\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_system_power_state)类型。
 
--   如果**Parameters.Power.Type**是**DevicePowerState**，则这是一个枚举器的[**设备\_POWER\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff543160)类型。
+-   如果**Parameters.Power.Type**是**DevicePowerState**，则这是一个枚举器的[**设备\_POWER\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_device_power_state)类型。
 
 **Parameters.Power.ShutdownType**指定请求转换的其他信息。 可能的值为枚举器的**电源\_操作**类型。
 
@@ -60,7 +60,7 @@ ms.locfileid: "63381426"
 
 驱动程序不得更改以响应其设备的电源状态**IRP\_MN\_查询\_POWER**请求。
 
-驱动程序收到后**IRP\_MN\_查询\_POWER**驱动程序在 Windows Server 2003 上的请求、 Windows XP 和 Windows 2000，必须调用[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)，如中所述[调用**PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff540724)。 使用 Windows Vista 开始，调用**PoStartNextPowerIrp**不是必需的和此类调用会执行任何电源管理操作。
+驱动程序收到后**IRP\_MN\_查询\_POWER**驱动程序在 Windows Server 2003 上的请求、 Windows XP 和 Windows 2000，必须调用[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)，如中所述[调用**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/kernel/calling-postartnextpowerirp)。 使用 Windows Vista 开始，调用**PoStartNextPowerIrp**不是必需的和此类调用会执行任何电源管理操作。
 
 **IRP\_MN\_查询\_的电源可用于系统电源状态**
 
@@ -68,11 +68,11 @@ ms.locfileid: "63381426"
 
 只要有可能，在发送前查询电源管理器**IRP\_MN\_设置\_POWER**请求系统睡眠状态或正常的系统关闭。 但是，在某些关键的情况下 (例如用户按下**关闭电源**按钮或电池过期)，电源管理器可能会发送**IRP\_MN\_设置\_POWER**而无需第一个发送查询 power 请求的请求。 电源管理器查询仅为睡眠状态; 的它将永远不会查询返回到工作状态之前。
 
-当驱动程序收到系统电源查询 IRP 时，这应该会失败 IRP，如果它不能支持的任何有效查询的系统状态的设备状态。 有关详细信息，请参阅[ **DeviceState**](https://msdn.microsoft.com/library/windows/hardware/ff543087)。 否则，该驱动程序应将 IRP 传递给下一个较低的驱动程序。 总线驱动程序完成 IRP。
+当驱动程序收到系统电源查询 IRP 时，这应该会失败 IRP，如果它不能支持的任何有效查询的系统状态的设备状态。 有关详细信息，请参阅[ **DeviceState**](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate)。 否则，该驱动程序应将 IRP 传递给下一个较低的驱动程序。 总线驱动程序完成 IRP。
 
 从 Windows Vista 开始，过渡到系统睡眠状态被视为关键操作。 尽管驱动程序可能会失败，系统查询能耗 IRP，电源管理器可能仍将更改系统电源状态为睡眠状态。 驱动程序收到查询能耗 IRP，驱动程序应始终在系统后准备的系统电源状态的后续更改。
 
-当设备电源策略所有者收到系统电源查询 IRP 时，它应设置[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程中之前将其向下传递。 在中*IoCompletion*例程，它应发送**IRP\_MN\_查询\_POWER**有效查询的系统状态的设备状态。 有关详细信息，请参阅[处理设备电源策略所有者中系统查询能耗 IRP](https://msdn.microsoft.com/library/windows/hardware/ff546725)。
+当设备电源策略所有者收到系统电源查询 IRP 时，它应设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程中之前将其向下传递。 在中*IoCompletion*例程，它应发送**IRP\_MN\_查询\_POWER**有效查询的系统状态的设备状态。 有关详细信息，请参阅[处理设备电源策略所有者中系统查询能耗 IRP](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-a-system-query-power-irp-in-a-device-power-policy-owner)。
 
 当指定了 IRP **PowerSystemShutdown** (S5) 处的值**Parameters.Power.ShutdownType**提供关机的原因。 **ShutdownType**指示驱动程序是否正在重置系统 (**PowerActionShutdownReset**) 或功耗关闭无限期地以稍后重新启动 (**PowerActionShutdownOff**). 对于大多数设备的驱动程序，不同之处并不重要。 但是，对于某些设备，如视频流执行 DMA，设备驱动程序可能会选择关闭其设备的电源系统重置时，因此停止任何正在运行的 I/O。
 
@@ -113,9 +113,9 @@ Microsoft Windows 2000 和更高版本的系统，处的值上**ShutdownType**�
 
 [**IRP\_MN\_SET\_POWER**](irp-mn-set-power.md)
 
-[**PoRequestPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559734)
+[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)
 
-[**PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)
+[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)
 
  
 

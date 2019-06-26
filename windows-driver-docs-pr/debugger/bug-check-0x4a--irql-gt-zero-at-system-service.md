@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e109b560d11298a6ef86797f4596346cf3091e36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d69a5b67246dcd6276dafd30dbbe039c64e9fbb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363958"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367437"
 ---
 # <a name="bug-check-0x4a-irqlgtzeroatsystemservice"></a>Bug 检查 0x4A：IRQL\_GT\_ZERO\_AT\_SYSTEM\_SERVICE
 
@@ -26,7 +26,7 @@ ms.locfileid: "63363958"
 IRQL\_GT\_零\_处\_系统\_服务错误检查的值为 0x0000004A。 这表示的线程将返回给用户模式下从系统调用时其 IRQL 仍高于被动\_级别。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="irqlgtzeroatsystemservice-parameters"></a>IRQL\_GT\_零\_处\_系统\_服务参数

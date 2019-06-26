@@ -12,17 +12,17 @@ keywords:
 - 错误源发现 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55743724efa39befa3e190ff105f74ddb7915dee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee5bad768e29f04c4822d51506d324a68bfbb26f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340765"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387160"
 ---
 # <a name="participating-in-error-source-discovery"></a>参与错误源发现
 
 
-若要参与错误源发现，PSHED 插件必须实现[ *GetAllErrorSources* ](https://msdn.microsoft.com/library/windows/hardware/ff559366)回调函数。 参与错误源发现 PSHED 插件还可以实现的可选[ *GetErrorSourceInfo* ](https://msdn.microsoft.com/library/windows/hardware/ff559368)回调函数。
+若要参与错误源发现，PSHED 插件必须实现[ *GetAllErrorSources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_all_error_sources)回调函数。 参与错误源发现 PSHED 插件还可以实现的可选[ *GetErrorSourceInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_error_source_info)回调函数。
 
 下面的代码示例演示如何实现这些回调函数。
 

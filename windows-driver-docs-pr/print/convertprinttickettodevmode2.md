@@ -4,17 +4,17 @@ description: 打印子系统将 PrintTicket 对象转换为 DEVMODEW 结构调�
 ms.assetid: 7ef8990d-66dd-421d-8bee-5abee52b8338
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a49e038688ff5f33345a153badcc0b37d37683c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 330c997cc98ed8d167cf2289b01b4f1a9610205e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365609"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372463"
 ---
 # <a name="convertprinttickettodevmode-print-ticket-support"></a>ConvertPrintTicketToDevMode 打印票证支持
 
 
-[ **IPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://msdn.microsoft.com/library/windows/hardware/ff554363)打印子系统将转换为 PrintTicket 对象调用方法[ **DEVMODEW**](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构。
+[ **IPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554363(v=vs.85))打印子系统将转换为 PrintTicket 对象调用方法[ **DEVMODEW**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构。
 
  
 

@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7285dcf05973b87c886ce0a9db0a90d65f0d421
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f15c3b8de2a6485ee98a35ccbcb7203abb756ac9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385922"
 ---
 # <a name="inf-addpowersetting-directive"></a>INF AddPowerSetting 指令
 
 
-**AddPowerSetting**指令引用用于修改或创建电源设置信息的一个或多个部分。 每个*添加电源设置部分*定义的电源设置的允许的值为电源设置、 电源设置的友好名称并将电源设置的说明。 *添加电源设置部分*还指定了每个电源方案个性的默认值。 有关电源设置和电源方案个性的详细信息，请参阅[管理设备性能状态](https://msdn.microsoft.com/library/windows/hardware/ff554353)。
+**AddPowerSetting**指令引用用于修改或创建电源设置信息的一个或多个部分。 每个*添加电源设置部分*定义的电源设置的允许的值为电源设置、 电源设置的友好名称并将电源设置的说明。 *添加电源设置部分*还指定了每个电源方案个性的默认值。 有关电源设置和电源方案个性的详细信息，请参阅[管理设备性能状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-device-performance-states)。
 
 ```ini
 [DDInstall] | 
@@ -99,7 +99,7 @@ AddPowerSetting=add-power-setting-section[,add-power-setting-section]
 若要定义新的子组，包括**子组**指令，并提供所需的以下条目：*子组 guid*，*子组名称*， *子组说明*，和*子组图标。* 必须是唯一的新的子组的 GUID 和其他项应为尽可能具有描述性。
 
 <a href="" id="subgroup-guid"></a>*subgroup-guid*  
-所需的条目提供标识子组的 GUID。 此条目的格式是 **{**<em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em>**}**，其中"X"是一个十六进制数字。
+所需的条目提供标识子组的 GUID。 此条目的格式是 **{** <em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em> **}** ，其中"X"是一个十六进制数字。
 
 例如，系统定义的常量 GUID_VIDEO_SUBGROUP 的值是 {7516B95F-F776-4464-8C53-06167F40CC99}。 此 GUID 表示包含电源方案个性的视频的电源设置的子组。
 
@@ -120,7 +120,7 @@ AddPowerSetting=add-power-setting-section[,add-power-setting-section]
 以下是与之关联的条目**设置**指令。
 
 <a href="" id="setting-guid"></a>*setting-guid*  
-指定表示将电源设置 GUID 的必需的项。 此条目的格式是 **{**<em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em>**}**，其中每个"X"是一个十六进制数字。
+指定表示将电源设置 GUID 的必需的项。 此条目的格式是 **{** <em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em> **}** ，其中每个"X"是一个十六进制数字。
 
 例如，以下是自定义的 GUID 值: {BFC0D9E9-549C-483D-AD2A-3D90C98A8B03}。
 

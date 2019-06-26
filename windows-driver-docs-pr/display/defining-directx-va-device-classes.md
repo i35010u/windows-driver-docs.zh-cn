@@ -7,12 +7,12 @@ keywords:
 - 设备类 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a95ad517c67d0ec418cfafc4d99749eca8e0ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6073f426af2c4158293210ed6c275cd10851dc12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384909"
 ---
 # <a name="defining-directx-va-device-classes"></a>定义 DirectX VA 设备类
 
@@ -20,7 +20,7 @@ ms.locfileid: "63327131"
 ## <span id="ddk_defining_directx_va_device_classes_gg"></span><span id="DDK_DEFINING_DIRECTX_VA_DEVICE_CLASSES_GG"></span>
 
 
-使用本节中的示例代码来定义用于取消隔行扫描容器设备、 ProcAmp 控制设备、 取消隔行扫描模式设备的设备类 (例如， [bob](bob-deinterlacing.md))，和 COPP 设备。 这些设备类包含声明的成员函数，构成[ProcAmp 控件 DDI](https://msdn.microsoft.com/library/windows/hardware/ff569186)并[取消隔行扫描 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552701)。 可以在驱动程序所提供的标头文件中声明这些设备类定义。
+使用本节中的示例代码来定义用于取消隔行扫描容器设备、 ProcAmp 控制设备、 取消隔行扫描模式设备的设备类 (例如， [bob](bob-deinterlacing.md))，和 COPP 设备。 这些设备类包含声明的成员函数，构成[ProcAmp 控件 DDI](https://docs.microsoft.com/windows-hardware/drivers/display/procamp-control-ddi)并[取消隔行扫描 DDI](https://docs.microsoft.com/windows-hardware/drivers/display/deinterlace-ddi)。 可以在驱动程序所提供的标头文件中声明这些设备类定义。
 
 下面的示例代码用于定义每种设备类型和适用于每种设备类型的基类：
 

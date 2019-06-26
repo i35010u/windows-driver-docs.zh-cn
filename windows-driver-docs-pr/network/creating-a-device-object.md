@@ -11,12 +11,12 @@ keywords:
 - WDF 基于标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdeb8eb4b248d1976be8c70c9b7aa87c67627789
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b5c662a1d1f5cd670fcd5b5ad6dd5dc6536124c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357391"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374935"
 ---
 # <a name="creating-a-device-object"></a>创建设备对象
 
@@ -25,7 +25,7 @@ ms.locfileid: "63357391"
 
 ### <a name="wdm-based-callout-drivers"></a>WDM 基于标注驱动程序
 
-如果标注驱动程序基于 WDM，它创建一个设备对象通过调用[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)函数。 例如：
+如果标注驱动程序基于 WDM，它创建一个设备对象通过调用[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)函数。 例如：
 
 ```C++
 PDEVICE_OBJECT deviceObject;
@@ -60,7 +60,7 @@ NTSTATUS
 
 ### <a name="wdf-based-callout-drivers"></a>WDF 基于标注驱动程序
 
-如果标注驱动程序基于 WDF，它通过调用创建 framework 设备对象[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)函数。 若要使用筛选器引擎注册其标注，WDF 基于标注驱动程序必须获取指向与 framework 设备对象相关联的 WDM 设备对象的指针。 WDF 基于标注驱动程序通过调用获取指向此 WDM 设备对象的指针[ **WdfDeviceWdmGetDeviceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff546942)函数。 例如：
+如果标注驱动程序基于 WDF，它通过调用创建 framework 设备对象[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)函数。 若要使用筛选器引擎注册其标注，WDF 基于标注驱动程序必须获取指向与 framework 设备对象相关联的 WDM 设备对象的指针。 WDF 基于标注驱动程序通过调用获取指向此 WDM 设备对象的指针[ **WdfDeviceWdmGetDeviceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmgetdeviceobject)函数。 例如：
 
 ```C++
 WDFDEVICE wdfDevice;

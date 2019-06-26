@@ -10,12 +10,12 @@ keywords:
 - 加载顺序组 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4ff7a0852955c73cb1df4018a744f853b7fa700
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10c02f618e08d7bb3fb83aa6c53ec4fbffd6b319
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375665"
 ---
 # <a name="load-order-groups-for-file-system-filter-drivers"></a>文件系统筛选器驱动程序的加载顺序组
 
@@ -35,7 +35,7 @@ Microsoft Windows XP 和更高版本操作系统提供一组专用的加载顺�
 
 -   如果文件系统筛选器驱动程序未指定加载顺序组，加载后的所有相同的其他驱动程序启动并指定加载顺序组的类型。
 
-下表列出了文件系统筛选器驱动程序的系统定义的加载顺序组。 对于每个加载顺序组，加载顺序组列包含应为该组中指定的值**LoadOrderGroup**中的条目[**版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)筛选器的 INF 文件。
+下表列出了文件系统筛选器驱动程序的系统定义的加载顺序组。 对于每个加载顺序组，加载顺序组列包含应为该组中指定的值**LoadOrderGroup**中的条目[**版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)筛选器的 INF 文件。
 
 请注意，加载顺序组会列出与它们在堆栈中，这是在其中进行加载的顺序相反。
 

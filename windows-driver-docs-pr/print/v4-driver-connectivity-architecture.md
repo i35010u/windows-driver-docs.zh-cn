@@ -4,12 +4,12 @@ description: V4 打印驱动程序模型提供了大量的支持以通过双向�
 ms.assetid: ED7C4A2D-449E-4271-9348-86EAC03B6E64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f024cff5407861a744ccc4ce98e990836fa01c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14323756135ef542c0f306f8ce7f4bd83674a69a
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358571"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393157"
 ---
 # <a name="v4-driver-connectivity-architecture"></a>V4 驱动程序连接体系结构
 
@@ -57,7 +57,7 @@ V4 打印驱动程序模型支持到 v3 打印驱动程序模型进行比较的�
 </tr>
 <tr class="even">
 <td>WSD</td>
-<td>中的标准属性<a href="https://msdn.microsoft.com/library/windows/hardware/gg463146.aspx" data-raw-source="[WS-Print Specification](https://msdn.microsoft.com/library/windows/hardware/gg463146.aspx)">WS 打印规范</a>或 Ws-print v1.1 规范为 Bidi 架构填充的端口监视器。</td>
+<td>中的标准属性<a href="https://docs.microsoft.com/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing" data-raw-source="[WS-Print Specification](https://docs.microsoft.com/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing)">WS 打印规范</a>或 Ws-print v1.1 规范为 Bidi 架构填充的端口监视器。</td>
 <td><p>必须提供以下文件：</p>
 XML Bidi 扩展文件</td>
 <td>打印设备必须支持 Ws-print v1.1 协议。</td>
@@ -83,11 +83,11 @@ XML Bidi 扩展文件</td>
 
  
 
-有关详细信息，请参阅[双向通信架构](https://msdn.microsoft.com/library/windows/hardware/ff545169.aspx)并[WSDMon 端口监视器](wsdmon-port-monitor.md)。 若要阅读有关自定义端口监视器，以扩展 Bidi 架构信息，请参阅[自定义打印机端口监视器](https://msdn.microsoft.com/library/windows/hardware/ff547327.aspx)。
+有关详细信息，请参阅[双向通信架构](https://docs.microsoft.com/windows-hardware/drivers/print/bidirectional-communication-schema)并[WSDMon 端口监视器](wsdmon-port-monitor.md)。 若要阅读有关自定义端口监视器，以扩展 Bidi 架构信息，请参阅[自定义打印机端口监视器](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-the-printer-port-monitors)。
 
 ## <a name="related-topics"></a>相关主题
-[双向通信架构](https://msdn.microsoft.com/library/windows/hardware/ff545169.aspx)  
-[自定义的打印机端口监视器](https://msdn.microsoft.com/library/windows/hardware/ff547327.aspx)  
+[双向通信架构](https://docs.microsoft.com/windows-hardware/drivers/print/bidirectional-communication-schema)  
+[自定义的打印机端口监视器](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-the-printer-port-monitors)  
 [V4 打印机驱动程序连接](v4-printer-driver-connectivity.md)  
 [WSDMon 端口监视器](wsdmon-port-monitor.md)  
 

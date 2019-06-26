@@ -7,12 +7,12 @@ keywords:
 - 向后兼容性 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9c56a0c1522da4a934aef8160c95ec9802e09f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9b5c9a8f0fc758149df88b0b345c5f1f924cb87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383614"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387278"
 ---
 # <a name="ndis-620-backward-compatibility"></a>NDIS 6.20 后向兼容性
 
@@ -42,7 +42,7 @@ IrDA 微型端口驱动程序将不支持在 Microsoft Windows 版本后 Windows
 
 筛选器中间驱动程序将不支持在 Microsoft Windows 版本后 Windows 7。 应使用 NDIS 6.0 筛选器驱动程序接口。 有关筛选器驱动程序的详细信息，请参阅[NDIS 筛选器驱动程序](ndis-filter-drivers.md)。
 
-802.11 模拟 802.3 的驱动程序将不支持在 Microsoft Windows 版本后 Windows 7。 NDIS 802.11 驱动程序必须支持本机 802.11 接口。 有关本机 802.11 的详细信息，请参阅[本机 802.11 无线 LAN](https://msdn.microsoft.com/library/windows/hardware/ff560689)。
+802.11 模拟 802.3 的驱动程序将不支持在 Microsoft Windows 版本后 Windows 7。 NDIS 802.11 驱动程序必须支持本机 802.11 接口。 有关本机 802.11 的详细信息，请参阅[本机 802.11 无线 LAN](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560689(v=vs.85))。
 
 NDIS WAN 驱动程序将不支持在 Microsoft Windows 版本后 Windows 7。 NDIS WAN 驱动程序必须移植到 NDIS 6.0 的 CoNDIS WAN 的驱动程序模型。 有关的 CoNDIS WAN 的详细信息，请参阅 WAN 微型端口驱动程序。
 

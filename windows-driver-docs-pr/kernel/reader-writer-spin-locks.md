@@ -4,12 +4,12 @@ description: 从 Windows Vista Service Pack 1 (SP1) 的一组相关的例程使�
 ms.assetid: E2853F35-590E-4EF5-8647-1261BC4B8D15
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9da891fc77c5a1f3a4bd17b36936cf2c9eab7035
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45f63fa0f73ae12122abe06c717943eb7088aa58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378761"
 ---
 # <a name="readerwriter-spin-locks"></a>读取器/写入器自旋锁
 
@@ -26,15 +26,15 @@ ms.locfileid: "63353307"
 
 | 例程名称                                                                                | 描述                                                                                                           |
 |---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| [**ExAcquireSpinLockExclusive**](https://msdn.microsoft.com/library/windows/hardware/hh451007)                         | 将获取调用方的独占访问权限的自旋锁并引发到调度 IRQL\_级别。                      |
-| [**ExAcquireSpinLockExclusiveAtDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451009)    | 将获取在 IRQL 已运行的调用方的独占访问权限的自旋锁&gt;= 调度\_级别。          |
-| [**ExAcquireSpinLockShared**](https://msdn.microsoft.com/library/windows/hardware/hh451053)                               | 获取共享访问由调用方，数值调节钮锁并引发到调度 IRQL\_级别。                         |
-| [**ExAcquireSpinLockSharedAtDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451055)           | 获取由调用方已在 IRQL 上运行的共享访问的自旋锁&gt;= 调度\_级别。             |
+| [**ExAcquireSpinLockExclusive**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451007(v=vs.85))                         | 将获取调用方的独占访问权限的自旋锁并引发到调度 IRQL\_级别。                      |
+| [**ExAcquireSpinLockExclusiveAtDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451009(v=vs.85))    | 将获取在 IRQL 已运行的调用方的独占访问权限的自旋锁&gt;= 调度\_级别。          |
+| [**ExAcquireSpinLockShared**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451053(v=vs.85))                               | 获取共享访问由调用方，数值调节钮锁并引发到调度 IRQL\_级别。                         |
+| [**ExAcquireSpinLockSharedAtDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451055(v=vs.85))           | 获取由调用方已在 IRQL 上运行的共享访问的自旋锁&gt;= 调度\_级别。             |
 | [**ExReleaseSpinLockExclusive**](https://msdn.microsoft.com/library/windows/hardware/hh451061)                        | 释放调用方获取独占访问权限，而还原原始的 IRQL 自旋锁。                   |
-| [**ExReleaseSpinLockExclusiveFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451058) | 释放调用方获取独占访问权限，而不小于 IRQL 自旋锁。                      |
+| [**ExReleaseSpinLockExclusiveFromDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451058(v=vs.85)) | 释放调用方获取独占访问权限，而不小于 IRQL 自旋锁。                      |
 | [**ExReleaseSpinLockShared**](https://msdn.microsoft.com/library/windows/hardware/hh451067)                              | 释放调用方为获取共享访问，旋转锁，并还原原始的 IRQL。                      |
-| [**ExReleaseSpinLockSharedFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451064)      | 释放调用方为获取共享访问，旋转锁并不小于 IRQL。                         |
-| [**ExTryConvertSharedSpinLockExclusive**](https://msdn.microsoft.com/library/windows/hardware/hh451070)      | 尝试将转换的旋转锁的调用方已持有的共享访问对独占访问权限的访问状态。 |
+| [**ExReleaseSpinLockSharedFromDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451064(v=vs.85))      | 释放调用方为获取共享访问，旋转锁并不小于 IRQL。                         |
+| [**ExTryConvertSharedSpinLockExclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-extryconvertsharedspinlockexclusive)      | 尝试将转换的旋转锁的调用方已持有的共享访问对独占访问权限的访问状态。 |
 
  
 

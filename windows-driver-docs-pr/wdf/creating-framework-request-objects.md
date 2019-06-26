@@ -7,12 +7,12 @@ keywords:
 - 请求对象 WDK KMDF 读取操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04371c4af8287355560a00f666fb525f2330c356
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3be2838e848994b8d4c5e9c949458c3913bf34bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358689"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377502"
 ---
 # <a name="creating-framework-request-objects"></a>创建框架请求对象
 
@@ -36,21 +36,21 @@ ms.locfileid: "63358689"
 
 2.  **ReadFile**函数调用 I/O 管理器，它在内核模式下运行。
 
-3.  I/O 管理器分配的 IRP 结构，并将存储[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)函数在结构中的代码。
+3.  I/O 管理器分配的 IRP 结构，并将存储[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)函数在结构中的代码。
 
 4.  I/O 管理器调用[ **DispatchRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)驱动程序的标准驱动程序例程*x*，指针传递给 IRP 结构。 因为驱动程序*x*是基于 framework 的驱动程序，该框架提供的驱动程序*DispatchRead*例程。
 
 5.  框架将创建一个表示 IRP 结构的请求对象。 该框架将请求对象添加到驱动程序的队列对象之一。
 
-6.  框架将调用的驱动程序[ *EvtIoRead* ](https://msdn.microsoft.com/library/windows/hardware/ff541776)请求处理程序，并传递队列对象句柄和请求对象句柄。
+6.  框架将调用的驱动程序[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)请求处理程序，并传递队列对象句柄和请求对象句柄。
 
 ### <a name="request-objects-created-by-a-driver"></a>创建一个驱动程序的请求对象
 
 基于框架的驱动程序还可以创建请求对象。 例如，驱动程序可能会创建请求对象，如果它收到读取或写入请求大于在驱动程序的数据量[I/O 目标](using-i-o-targets.md)可以处理一次。 在这种情况下，该驱动程序可以将数据划分为多个较小请求，并使用额外的请求对象将这些较小的请求发送到一个或多个 I/O 目标。
 
-若要创建一个请求对象，您的驱动程序应调用[ **WdfRequestCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff549951) framework 对象方法，如初始化请求后, 跟[ **WdfUsbTargetPipeFormatRequestForRead**](https://msdn.microsoft.com/library/windows/hardware/ff551136)。
+若要创建一个请求对象，您的驱动程序应调用[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate) framework 对象方法，如初始化请求后, 跟[ **WdfUsbTargetPipeFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)。
 
-如果驱动程序 WDM 的调度例程中接收 WDM Irp，然后服务或将其转发使用框架，该驱动程序可以调用[ **WdfRequestCreateFromIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549953)。
+如果驱动程序 WDM 的调度例程中接收 WDM Irp，然后服务或将其转发使用框架，该驱动程序可以调用[ **WdfRequestCreateFromIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)。
 
  
 

@@ -4,16 +4,16 @@ description: 指定计算机的硬件 ID
 ms.assetid: af0dbfc4-747c-4e16-a3ed-678df0e07757
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d72d987afa5f0358d16a766f13ffe77ab2791149
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0ecab61470b423193f5196bbac10e263bd4d661
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385881"
 ---
 #  <a name="specifying-hardware-ids-for-a-computer"></a>指定计算机的硬件 ID
 
-设备和打印机会将计算机作为识别[设备容器](container-ids.md)。 因此，计算机可以被标识设备元数据包中使用[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)指定一个唯一的 XML 元素[硬件 ID](hardware-ids.md)值。  此硬件 ID 值的 （有时称为计算机硬件 ID 或 CHID） 的计算机可以指定系统管理 BIOS (SMBIOS) 字段中数据的组合。
+设备和打印机会将计算机作为识别[设备容器](container-ids.md)。 因此，计算机可以被标识设备元数据包中使用[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))指定一个唯一的 XML 元素[硬件 ID](hardware-ids.md)值。  此硬件 ID 值的 （有时称为计算机硬件 ID 或 CHID） 的计算机可以指定系统管理 BIOS (SMBIOS) 字段中数据的组合。
 
 与不同[硬件 Id](hardware-ids.md)对于其他设备的容器，在计算机的硬件 ID 生成通过 Windows 每次系统启动时。 可以通过运行 ComputerHardwareIds 工具 (ComputerHardwareIDs.exe)，它所包含的 Windows 7、 Windows 8 和 Windows 8.1 的 Windows Driver Kit (WDK) 中生成的计算机的硬件 Id。 从 Windows 10 开始，ComputerHardwareIds 工具包含在软件开发工具包 (SDK)。
 
@@ -94,7 +94,7 @@ ComputerHardwareIds 工具运行时，它从 SMBIOS 信息创建唯一硬件 Id�
 
 ### <a name="using-computer-hardwareids-with-pc-device-metadata-packages"></a>计算机 HardwareIDs 使用 PC 设备元数据包
 
-对于 Windows 7 系统，我们强烈建议选择时，供应商，执行以下[硬件 ID](hardware-ids.md)要用作值[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114) XML 元素值计算机。
+对于 Windows 7 系统，我们强烈建议选择时，供应商，执行以下[硬件 ID](hardware-ids.md)要用作值[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85)) XML 元素值计算机。
 
 -   使用**HardwareID 3**或**HardwareID 4**为设备元数据包匹配具有特定品牌、 系列和型号的计算机中的第一个选项。 这允许元数据包，以匹配指定的计算机的计算机提供最精确的元数据。
 
@@ -116,13 +116,13 @@ ComputerHardwareIds 工具运行时，它从 SMBIOS 信息创建唯一硬件 Id�
 
 -   添加前缀 ComputerMetadata\\硬件 ID 字符串的前面。
 
-以下是一种[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)的计算机的 XML 元素：
+以下是一种[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))的计算机的 XML 元素：
 
 ```cpp
 DOID:ComputerMetadata\{c20d5449-511e-4cb5-902a-a541239322aa}
 ```
 
-有关格式的要求的详细信息**HardwareID** XML 元素，请参阅[ **HardwareID**](https://msdn.microsoft.com/library/windows/hardware/ff546114)。
+有关格式的要求的详细信息**HardwareID** XML 元素，请参阅[ **HardwareID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))。
 
 ## <a name="related-topics"></a>相关主题
 

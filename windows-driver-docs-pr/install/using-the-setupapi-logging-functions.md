@@ -8,21 +8,21 @@ keywords:
 - 文本日志 WDK SetupAPI，函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a6d6fe0e7ab9212b359739931bf9be61f45e5bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a114b1790abe06c0a57947c678e962329bb6026
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384746"
 ---
 # <a name="using-the-setupapi-logging-functions"></a>使用 SetupAPI 日志记录函数
 
 
 安装程序 Api 还支持安装应用程序、 类的安装程序，以及共同安装程序可用于在 SetupAPI 文本日志中，按如下所示编写日志条目的函数：
 
--   若要写入日志条目[SetupAPI 文本日志](setupapi-text-logs.md)，安装应用程序调用[ **SetupWriteTextLog**](https://msdn.microsoft.com/library/windows/hardware/ff552218)， [ **SetupWriteTextLogError**](https://msdn.microsoft.com/library/windows/hardware/ff552232)，或[ **SetupWriteTextLogInfLine**](https://msdn.microsoft.com/library/windows/hardware/ff552236)。 有关如何编写文本日志条目的详细信息，请参阅[文本日志中写入日志条目](writing-log-entries-in-a-text-log.md)。
+-   若要写入日志条目[SetupAPI 文本日志](setupapi-text-logs.md)，安装应用程序调用[ **SetupWriteTextLog**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)， [ **SetupWriteTextLogError**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)，或[ **SetupWriteTextLogInfLine**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextloginfline)。 有关如何编写文本日志条目的详细信息，请参阅[文本日志中写入日志条目](writing-log-entries-in-a-text-log.md)。
 
--   安装程序 Api 支持一种机制来建立日志上下文线程。 通过设置线程的日志标记的线程被建立日志上下文。 若要设置的线程的日志标记，安装应用程序调用[ **SetupSetThreadLogToken**](https://msdn.microsoft.com/library/windows/hardware/ff552216)。 若要检索的线程的日志标记，安装应用程序调用[ **SetupGetThreadLogToken**](https://msdn.microsoft.com/library/windows/hardware/ff552211)。
+-   安装程序 Api 支持一种机制来建立日志上下文线程。 通过设置线程的日志标记的线程被建立日志上下文。 若要设置的线程的日志标记，安装应用程序调用[ **SetupSetThreadLogToken**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken)。 若要检索的线程的日志标记，安装应用程序调用[ **SetupGetThreadLogToken**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)。
 
     有关日志令牌的详细信息，请参阅[日志令牌](log-tokens.md)。
 

@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 634a7241ce4a3a6095c03df7c9d29fc0a4ec2f63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00a729317a484965cdc19926b2e61aa62a49b841
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369339"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385880"
 ---
 # <a name="subdirectory-xml-element"></a>subDirectory XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **子目录**XML 元素指定 DPInst 工作目录下的一个或所有的子目录。
 

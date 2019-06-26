@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48cbb6d2d0d813bc5c85b0a0a6c18401e5bb1e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae1db6f6fa35bf3bcde1da11534e27102e305f52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377853"
 ---
 # <a name="srbsetstreamstate"></a>SRB\_SET\_STREAM\_STATE
 
@@ -42,7 +42,7 @@ ms.locfileid: "63392108"
 
 ### <a name="comments"></a>备注
 
-在类驱动程序指定新的流状态中*pSrb*-&gt;**CommandData**。**StreamState**。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。 请参阅[ **KSPROPERTY\_连接\_状态**](ksproperty-connection-state.md)流状态的说明。
+在类驱动程序指定新的流状态中*pSrb*-&gt;**CommandData**。**StreamState**。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。 请参阅[ **KSPROPERTY\_连接\_状态**](ksproperty-connection-state.md)流状态的说明。
 
 微型驱动程序应将该流设置为指定的状态并返回状态\_如果成功，则成功。 如果操作失败，则应返回相应的错误代码。
 

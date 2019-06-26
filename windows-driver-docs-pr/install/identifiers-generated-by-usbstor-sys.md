@@ -10,12 +10,12 @@ keywords:
 - 硬件 Id WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bed89d8b75bd90087c5a4a129570bed30ea29f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa90109ecf052907b32d616b05982c4dd4064213
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383750"
 ---
 # <a name="identifiers-generated-by-usbstorsys"></a>USBSTOR.SYS 生成的标识符
 
@@ -59,7 +59,7 @@ USB\\CLASS_08&SUBCLASS_06&PROT_50
 
 如果从设备的设备描述符检索的数据与任何这些兼容 Id 匹配，将加载操作系统*Usbstor.sys*。
 
-只要将加载它，USB 存储端口驱动程序会为每个设备的逻辑单元创建一个新的 PDO。 有关详细信息，请参阅创建的示例设备堆栈*Usbstor.sys*中所示[USB 大容量存储设备的设备对象示例](https://msdn.microsoft.com/windows/hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device)。
+只要将加载它，USB 存储端口驱动程序会为每个设备的逻辑单元创建一个新的 PDO。 有关详细信息，请参阅创建的示例设备堆栈*Usbstor.sys*中所示[USB 大容量存储设备的设备对象示例](https://docs.microsoft.com/windows-hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device)。
 
 当新创建的 PDOs 的设备标识字符串的即插即用管理器查询，USB 存储端口驱动程序创建一组新的设备时，硬件和兼容 Id 将派生自设备的 SCSI 查询数据。 设备 ID 格式如下所示：
 

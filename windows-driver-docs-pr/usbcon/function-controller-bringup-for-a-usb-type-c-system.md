@@ -3,12 +3,12 @@ Description: 函数控制器的驱动程序通知有关充电级别操作系统�
 title: 在 USB 类型 C Windows 系统上启动功能控制器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 488ea8a90b8d46564e7351c001267271f719f854
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5965d5bbd91cc2d9d73fd9afe11f69c742670273
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391558"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378355"
 ---
 # <a name="bring-up-the-function-controller-on-a-usb-type-c-windows-system"></a>在 USB 类型 C Windows 系统上启动功能控制器
 
@@ -25,10 +25,10 @@ ms.locfileid: "63391558"
 
 -   2015 年 11 月
 
-**重要的 Api**
+**重要的 API**
 
--   [USB 函数控制器客户端驱动程序编程参考](https://msdn.microsoft.com/library/windows/hardware/mt188010)
--   [支持专有充电器 USB 筛选器驱动程序](https://msdn.microsoft.com/library/windows/hardware/mt188012)
+-   [USB 函数控制器客户端驱动程序编程参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))
+-   [支持专有充电器 USB 筛选器驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))
 
 函数控制器的驱动程序通知有关充电级别操作系统，其 USB C 型连接器支持，并在它可以开始收费和设备可以绘制当前的最长时通知电池子系统。
 
@@ -43,10 +43,10 @@ ms.locfileid: "63391558"
 
 -   如果您的系统使用 ChipIdea 和 Synopsys 控制器。
     1.  加载 Microsoft ChipIdea 和 Synopsys 控制器提供的框中客户端驱动程序。
-    2.  编写较低的筛选器驱动程序，获取附加/分离充电器连接时的事件。 该驱动程序确定的充电器和配置属性的类型。 它还可以检测 USB 充电 BC1.2 规范定义的端口。 收费信息传递给此类扩展，以便它可以将其报告给充电仲裁驱动程序 (CAD.sys)。 有关详细信息，请参阅[USB 筛选器驱动程序支持专有充电器](https://msdn.microsoft.com/library/windows/hardware/mt188012)。
+    2.  编写较低的筛选器驱动程序，获取附加/分离充电器连接时的事件。 该驱动程序确定的充电器和配置属性的类型。 它还可以检测 USB 充电 BC1.2 规范定义的端口。 收费信息传递给此类扩展，以便它可以将其报告给充电仲裁驱动程序 (CAD.sys)。 有关详细信息，请参阅[USB 筛选器驱动程序支持专有充电器](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))。
 -   如果您的系统使用自定义控制器，编写客户端驱动程序。 BC1.2 检测逻辑在客户端驱动程序中实现。 有关详细信息，请参阅：
 
-    [USB 函数控制器客户端驱动程序编程参考](https://msdn.microsoft.com/library/windows/hardware/mt188010)
+    [USB 函数控制器客户端驱动程序编程参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))
 
     [开发，USB 函数控制器的 Windows 驱动程序](developing-windows-drivers-for-usb-function-controllers.md)
 

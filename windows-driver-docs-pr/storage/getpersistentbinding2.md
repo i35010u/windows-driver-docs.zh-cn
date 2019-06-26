@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bc0e194e94ab886f8aae1632dc990bca8f412cc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4165e861d2342d163bb301279b77270e3db9cf52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354043"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378520"
 ---
 # <a name="getpersistentbinding2-function"></a>GetPersistentBinding2 函数
 
@@ -43,14 +43,14 @@ void GetPersistentBinding2(
 <a name="parameters"></a>Parameters
 ----------
 
-*PortWWN\[8\]*   
+*PortWWN\[8\]*    
 指示将检索其永久绑定的端口的全球通用名称。
 
 *InEntryCount*   
 指示 WMI 提供程序可以报告中的绑定项数*条目*参数。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFcpPersistentBinding\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff554936)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFcpPersistentBinding\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)结构。
 
 *TotalEntryCount*   
 指示与 HBA 相关联的持久绑定的总数。
@@ -58,8 +58,8 @@ void GetPersistentBinding2(
 *OutEntryCount*   
 指示永久性来检索的绑定的总数**GetPersistentBinding2**方法... 此值将为小于或等于*TotalEntryCount*。
 
-*绑定\[\]*   
-类型的结构数组[ **HBAFCPBindingEntry2** ](https://msdn.microsoft.com/library/windows/hardware/ff556035) ，描述操作系统与光纤通道协议 (FCP) 标识符之间的 HBA 的绑定。
+*绑定\[\]*    
+类型的结构数组[ **HBAFCPBindingEntry2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2) ，描述操作系统与光纤通道协议 (FCP) 标识符之间的 HBA 的绑定。
 
 <a name="return-value"></a>返回值
 ------------
@@ -94,11 +94,11 @@ void GetPersistentBinding2(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetFcpPersistentBinding\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff554933)
+[**GetFcpPersistentBinding\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_in)
 
-[**GetFcpPersistentBinding\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff554936)
+[**GetFcpPersistentBinding\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)
 
-[**HBAFCPBindingEntry2**](https://msdn.microsoft.com/library/windows/hardware/ff556035)
+[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)
 
  
 

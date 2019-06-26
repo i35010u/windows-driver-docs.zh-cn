@@ -11,12 +11,12 @@ keywords:
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d4945295c04ddfa9caac6ce95990b92c3fc81e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a446101908e233f67e336d0ad4b235ff53791557
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390284"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385464"
 ---
 # <a name="protocol-binding-states-and-operations"></a>协议绑定状态和操作
 
@@ -27,7 +27,7 @@ ms.locfileid: "63390284"
 NDIS 协议驱动程序必须为每个驱动程序管理的绑定支持以下操作状态：
 
 <a href="" id="unbound"></a>未绑定  
-未绑定状态是绑定的初始状态。 在此状态下，协议驱动程序等待调用的 NDIS [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)函数。
+未绑定状态是绑定的初始状态。 在此状态下，协议驱动程序等待调用的 NDIS [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)函数。
 
 <a href="" id="opening"></a>打开  
 处于打开状态，协议驱动程序绑定分配资源，并尝试打开该适配器。
@@ -205,7 +205,7 @@ NDIS 协议驱动程序必须为每个驱动程序管理的绑定支持以下操
 主绑定事件定义，如下所示：
 
 <a href="" id="protocolbindadapterex"></a>*ProtocolBindAdapterEx*  
-NDIS 调用驱动程序的后[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)函数，该绑定将进入打开状态。 有关详细信息，请参阅[绑定到适配器](binding-to-an-adapter.md)。
+NDIS 调用驱动程序的后[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)函数，该绑定将进入打开状态。 有关详细信息，请参阅[绑定到适配器](binding-to-an-adapter.md)。
 
 <a href="" id="bind-failed"></a>绑定失败  
 如果协议驱动程序无法将绑定到适配器，绑定将返回到未绑定状态。
@@ -214,7 +214,7 @@ NDIS 调用驱动程序的后[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.
 如果该驱动程序已成功打开该适配器，绑定将进入暂停状态。 该驱动程序完成绑定操作。
 
 <a href="" id="protocolunbindadapterex"></a>*ProtocolUnbindAdapterEx*  
-NDIS 调用驱动程序的后[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)处理程序，该绑定将进入*关闭*状态。 有关详细信息，请参阅[取消绑定从适配器](unbinding-from-an-adapter.md)。
+NDIS 调用驱动程序的后[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)处理程序，该绑定将进入*关闭*状态。 有关详细信息，请参阅[取消绑定从适配器](unbinding-from-an-adapter.md)。
 
 <a href="" id="unbind-is-complete"></a>取消绑定已完成  
 该驱动程序完成取消绑定操作后，该绑定将进入未绑定状态。

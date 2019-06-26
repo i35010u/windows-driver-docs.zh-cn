@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7336945ef936002bc5337316af88626355b591f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b955c6fa76a549a95e6f935ff04f3646ac229e91
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332975"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391465"
 ---
 # <a name="kspropertyaudioposition"></a>KSPROPERTY\_音频\_位置
 
@@ -53,8 +53,8 @@ KSPROPERTY\_音频\_位置属性指定 pin 的音频流的声音缓冲区中的�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537091" data-raw-source="[&lt;strong&gt;KSAUDIO_POSITION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537091)"><strong>KSAUDIO_POSITION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position" data-raw-source="[&lt;strong&gt;KSAUDIO_POSITION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position)"><strong>KSAUDIO_POSITION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -72,9 +72,9 @@ KSPROPERTY\_音频\_位置属性请求将返回状态\_成功以指示已成功�
 
 DirectSound 使用 KSPROPERTY\_音频\_POSITION 属性来实现**IDirectSoundBuffer::GetCurrentPosition**和**IDirectSoundBuffer::SetCurrentPosition**方法。 Windows 多媒体函数**waveInGetPosition**并**waveOutGetPosition**还使用此属性。 有关 DirectSound 和 Windows 多媒体函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-WaveCyclic 和 WavePci 微型端口驱动程序不需要实现属性处理程序 KSPROPERTY\_音频\_定位因为 WaveCyclic 和 WavePci 端口驱动程序处理此属性代表微型端口驱动程序。 若要获取呈现流中的 play 位置或记录捕获流中的位置，端口驱动程序中的属性处理程序调用微型端口驱动程序[ **IMiniportWaveCyclicStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536716)或[ **IMiniportWavePciStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536727)方法。
+WaveCyclic 和 WavePci 微型端口驱动程序不需要实现属性处理程序 KSPROPERTY\_音频\_定位因为 WaveCyclic 和 WavePci 端口驱动程序处理此属性代表微型端口驱动程序。 若要获取呈现流中的 play 位置或记录捕获流中的位置，端口驱动程序中的属性处理程序调用微型端口驱动程序[ **IMiniportWaveCyclicStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-getposition)或[ **IMiniportWavePciStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)方法。
 
-有关详细信息，请参阅[音频 Position 属性](https://msdn.microsoft.com/library/windows/hardware/ff536211)。
+有关详细信息，请参阅[音频 Position 属性](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,13 +95,13 @@ WaveCyclic 和 WavePci 微型端口驱动程序不需要实现属性处理程序
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAUDIO\_POSITION**](https://msdn.microsoft.com/library/windows/hardware/ff537091)
+[**KSAUDIO\_POSITION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position)
 
-[**IMiniportWaveCyclicStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536716)
+[**IMiniportWaveCyclicStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-getposition)
 
-[**IMiniportWavePciStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536727)
+[**IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)
 
  
 

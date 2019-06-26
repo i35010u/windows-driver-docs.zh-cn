@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_IHV_REQUEST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f43c8346914f3d22437ef37412f32ce862ac9eec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c1a559c619cfe80261ae9677829bbb8f6ab089b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331233"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387263"
 ---
 # <a name="oidwdiihvrequest"></a>OID\_WDI\_IHV\_请求
 
@@ -20,7 +20,7 @@ OID\_WDI\_IHV\_请求用于转发 IHV 扩展性模块已发送到微型端口的
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 否                       | 1                               |
+| Port  | 否                       | 1                               |
 
  
 
@@ -31,7 +31,7 @@ OID\_WDI\_IHV\_请求用于转发 IHV 扩展性模块已发送到微型端口的
 
 | TLV                                                  | 允许多个 TLV 实例 | 可选 | 描述                                        |
 |------------------------------------------------------|--------------------------------|----------|----------------------------------------------------|
-| [**WDI\_TLV\_IHV\_DATA**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | X        | IHV 扩展性模块中的信息。 |
+| [**WDI\_TLV\_IHV\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-data) |                                | X        | IHV 扩展性模块中的信息。 |
 
  
 
@@ -40,7 +40,7 @@ OID\_WDI\_IHV\_请求用于转发 IHV 扩展性模块已发送到微型端口的
 
 | TLV                                                  | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                 |
 |------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_DATA**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | X        | 要发送到 IHV 扩展性模块的响应。 数据值将作为转发-为 IHV 扩展性模块。 |
+| [**WDI\_TLV\_IHV\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-data) |                                | X        | 要发送到 IHV 扩展性模块的响应。 数据值将作为转发-为 IHV 扩展性模块。 |
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - D3DCAPS8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1368535cadc96b5c9b00561c1449426c2a501189
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe8603dc06fde4babcd6f6e40f0c0ce46c9fc82f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385598"
 ---
 # <a name="minimum-capability-requirements-for-directx-80-drivers"></a>DirectX 8.0 驱动程序的最低功能要求
 
@@ -30,9 +30,9 @@ DirectX 8.0 驱动程序必须显式：
 
 -   修改它的支持的纹理格式，以支持新样式像素格式规范的列表。
 
--   处理新[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) (DP2) 绘制标记。
+-   处理新[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) (DP2) 绘制标记。
 
--   处理[ **D3dCreateSurfaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff542840)顶点和索引缓冲区即使您的驱动程序不支持的视频内存顶点缓冲区创建的。 对系统内存顶点和索引缓冲区句柄传递给驱动程序。
+-   处理[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)顶点和索引缓冲区即使您的驱动程序不支持的视频内存顶点缓冲区创建的。 对系统内存顶点和索引缓冲区句柄传递给驱动程序。
 
 -   设置新 posttransformed 的剪辑标志 D3DPMISCCAPS\_CLIPTLVERT 如果硬件支持的剪辑 posttransformed 顶点数据。
 

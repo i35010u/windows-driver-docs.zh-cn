@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e6a0a1ea43d27627336a8d0f2d378a2c7938c40a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75e97f886dda6cd11308761d7353834926b82640
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392477"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387334"
 ---
 # <a name="guid61883class"></a>GUID_61883_CLASS
 
 
-GUID_61883_CLASS[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为设备定义中 61883[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+GUID_61883_CLASS[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为设备定义中 61883[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_61883_CLASS[设备接口类](https://msdn.microsoft.com/library/windows/har
 <a name="remarks"></a>备注
 -------
 
-61883 设备安装程序类中的设备的驱动程序注册通知的操作系统和应用程序的 61883 设备存在此设备接口类的实例。 61883 设备接口类包括支持 IEC 61883 协议的 IEEE 1394 设备。 61883 设备和驱动程序有关的信息，请参阅[IEC 61883 客户端驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537188)。
+61883 设备安装程序类中的设备的驱动程序注册通知的操作系统和应用程序的 61883 设备存在此设备接口类的实例。 61883 设备接口类包括支持 IEC 61883 协议的 IEEE 1394 设备。 61883 设备和驱动程序有关的信息，请参阅[IEC 61883 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)。
 
 1394 总线设备的设备安装程序类的信息，请参阅[ **BUS1394_CLASS_GUID**](bus1394-class-guid.md)。
 

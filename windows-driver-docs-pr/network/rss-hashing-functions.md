@@ -8,12 +8,12 @@ keywords:
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3559780bdce1a6a0896cd6e599afac6c4a22d121
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 737c559674cecfbf629aad04f62ddc76f239369a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359100"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382161"
 ---
 # <a name="rss-hashing-functions"></a>RSS 哈希函数
 
@@ -34,7 +34,7 @@ ms.locfileid: "63359100"
 >[!NOTE]
 > 目前， **NdisHashFunctionToeplitz**是唯一的哈希函数提供给微型端口驱动程序。 其他哈希函数仅供 NDIS。 
 
-微型端口驱动程序应识别的哈希函数和值，它在每个使用该值[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构之前，驱动程序指示接收到的数据。 有关详细信息，请参阅[接收数据，该值指示 RSS](indicating-rss-receive-data.md)。
+微型端口驱动程序应识别的哈希函数和值，它在每个使用该值[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构之前，驱动程序指示接收到的数据。 有关详细信息，请参阅[接收数据，该值指示 RSS](indicating-rss-receive-data.md)。
 
 ## <a name="examples"></a>示例
 

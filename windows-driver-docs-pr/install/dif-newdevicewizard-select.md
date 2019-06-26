@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0192df62d3d4840b46116800ae07a47b00eb9d24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75a86ccad7321ae0400279aac63bd5f916eb1103
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378372"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387040"
 ---
 # <a name="difnewdevicewizardselect"></a>DIF_NEWDEVICEWIZARD_SELECT
 
@@ -58,16 +58,16 @@ DIF_NEWDEVICEWIZARD_SELECT 请求可让安装程序提供替换标准的选择�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://msdn.microsoft.com/library/windows/hardware/ff541247)，其中包含该设备。
+提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含该设备。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)标识设备中设备的信息集的结构。
+提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)标识设备中设备的信息集的结构。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) 与关联*DeviceInfoData*。
+设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*。
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-[ **SP_NEWDEVICEWIZARD_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff553305)与关联结构*DeviceInfoData*。
+[ **SP_NEWDEVICEWIZARD_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)与关联结构*DeviceInfoData*。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -75,7 +75,7 @@ DIF_NEWDEVICEWIZARD_SELECT 请求可让安装程序提供替换标准的选择�
 安装程序可以修改中设备安装参数的标志。 Windows 不会检查此 DIF 请求完成后的标志。 但是，它会检查它们在安装过程中更高版本。
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-安装程序可以修改[ **SP_NEWDEVICEWIZARD_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff553305)提供自定义页面。
+安装程序可以修改[ **SP_NEWDEVICEWIZARD_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)提供自定义页面。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -95,11 +95,11 @@ DIF_NEWDEVICEWIZARD_SELECT 请求可让安装程序提供替换标准的选择�
 
 辅助安装程序应将添加自定义页面中其后续处理阶段且仅当类安装程序未将添加自定义页面。 如果类安装程序添加页面，辅助安装程序不应。 否则，可能会要求用户两次选择一个驱动程序。
 
-如果安装程序提供自定义选择页上，安装程序必须设置所选驱动程序。 安装程序的代码中的向导页上，支持用户单击后**下一步**，安装程序必须调用[ **SetupDiSetSelectedDriver**](https://msdn.microsoft.com/library/windows/hardware/ff552183)。
+如果安装程序提供自定义选择页上，安装程序必须设置所选驱动程序。 安装程序的代码中的向导页上，支持用户单击后**下一步**，安装程序必须调用[ **SetupDiSetSelectedDriver**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)。
 
 安装程序应提供 Wizard 97 标头标题和自定义向导页的 PROPSHEETPAGE 结构中的标头副标题。 安装程序不应取代系统提供向导标题。 请参阅 Microsoft Windows SDK for PROPSHEETPAGE 结构的文档和有关属性页的详细信息。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://msdn.microsoft.com/library/windows/hardware/ff546094)。
+有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
 
 <a name="requirements"></a>要求
 ------------
@@ -132,15 +132,15 @@ DIF_NEWDEVICEWIZARD_SELECT 请求可让安装程序提供替换标准的选择�
 
 [**DIF_SELECTDEVICE**](dif-selectdevice.md)
 
-[**SetupDiSetSelectedDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552176)
+[**SetupDiSetSelectedDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice)
 
-[**SetupDiSetSelectedDriver**](https://msdn.microsoft.com/library/windows/hardware/ff552183)
+[**SetupDiSetSelectedDriver**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_NEWDEVICEWIZARD_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff553305)
+[**SP_NEWDEVICEWIZARD_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
  
 

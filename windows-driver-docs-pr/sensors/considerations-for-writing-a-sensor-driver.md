@@ -4,12 +4,12 @@ description: 有关编写传感器驱动程序的注意事项
 ms.assetid: fec3cfe8-43ad-481a-833a-6f38d04bfdef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a7773e4c548578637842ed47aa8bb72bb078d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30e4955a24aeecf96b96d8993fbbf2326f73d71f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357771"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364903"
 ---
 # <a name="considerations-for-writing-a-sensor-driver"></a>有关编写传感器驱动程序的注意事项
 
@@ -23,7 +23,7 @@ ms.locfileid: "63357771"
 -   确定类别、 传感器类型和您的驱动程序的数据类型。 您可以决定使用一个平台定义的布局中，或自行定义。 该平台将传感器信息的组织的概述，请参阅[有关传感器常量](about-sensor-constants.md)
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://msdn.microsoft.com/library/windows/hardware/hh768273)  
+[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)  
 
 
 

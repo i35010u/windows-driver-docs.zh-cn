@@ -17,12 +17,12 @@ keywords:
 - WDK 即插即用的关系
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d599233d34f62fd03486ce65e964f06f7682921
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58a2fd8e0044f23057831c2a5eda0d958cb2c9d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388147"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385008"
 ---
 # <a name="device-tree"></a>设备树
 
@@ -38,7 +38,7 @@ PnP 管理器维护跟踪系统中的设备的设备树。 下图显示了示例
 
 设备树的每个节点都称为一个设备节点中，或*devnode*。 Devnode 组成*设备对象*设备的驱动程序，以及由系统维护的内部信息。 因此，没有为每个 devnode*设备堆栈*。
 
-已要求总线驱动程序 PnP 管理器提供有关其子级的列表使用的设备[ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)请求。 总线驱动程序确定其根据其总线协议的子级的列表。 例如， [Windows ACPI 驱动程序](acpi-driver.md)、 Acpi.sys，看起来在 ACPI 名称空间，PCI 驱动程序查询 PCI 配置空间，和 USB 集线器驱动程序遵循 USB 总线协议。
+已要求总线驱动程序 PnP 管理器提供有关其子级的列表使用的设备[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)请求。 总线驱动程序确定其根据其总线协议的子级的列表。 例如， [Windows ACPI 驱动程序](acpi-driver.md)、 Acpi.sys，看起来在 ACPI 名称空间，PCI 驱动程序查询 PCI 配置空间，和 USB 集线器驱动程序遵循 USB 总线协议。
 
 设备树是分层的与表示为"子级"总线适配器、 控制器或其他的总线上的设备*总线设备*。 （总线设备为其他物理、 逻辑，或虚拟设备可以附加到任何设备。）您可以看到在设备树中使用设备管理器并选择视图选项，您可以通过连接来查看设备的设备的层次结构。
 
@@ -46,7 +46,7 @@ PnP 管理器维护跟踪系统中的设备的设备树。 下图显示了示例
 
 设备树是动态的。 添加和从计算机中删除设备时，（以及驱动程序） 的即插即用管理器维护系统上的设备当前的图片。
 
-除了设备树中表示的层次结构关系在计算机上的设备之间有其他关系。 其中包括*删除关系*并*弹出关系*。 请参阅的参考页[ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)有关详细信息。
+除了设备树中表示的层次结构关系在计算机上的设备之间有其他关系。 其中包括*删除关系*并*弹出关系*。 请参阅的参考页[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)有关详细信息。
 
 只不过总线设备配置的任何其子设备之前，不能进行任何假设生成设备树顺序。 例如，不应假定一个总线上的另一台设备之前配置的总线上的设备。
 

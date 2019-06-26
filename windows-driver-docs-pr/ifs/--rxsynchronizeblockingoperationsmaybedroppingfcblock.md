@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 991df402d7c32af7a2715ec98306653f72b9370b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ea8d4efae6fe18b0134eb7c8d6879bf49db4ea6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351446"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381028"
 ---
 # <a name="rxsynchronizeblockingoperationsmaybedroppingfcblock-function"></a>\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock function
 
@@ -86,7 +86,7 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 
 可以使用网络微型重定向 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**来同步对单独的队列是由网络微型重定向维护操作。
 
-如果*RxContext*标记的异步操作 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将添加*RxContext*队列并返回状态为\_PENDING。 如果*RxContext*标记为同步操作 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将阻止和*RxContext*到进行调用时恢复[ **RxResumeBlockedOperations\_串行**](https://msdn.microsoft.com/library/windows/hardware/ff554701)。
+如果*RxContext*标记的异步操作 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将添加*RxContext*队列并返回状态为\_PENDING。 如果*RxContext*标记为同步操作 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将阻止和*RxContext*到进行调用时恢复[ **RxResumeBlockedOperations\_串行**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)。
 
 如果已取消阻塞 I/O 请求，  **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**返回状态\_以指示出错时已取消。
 
@@ -125,21 +125,21 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 ## <a name="see-also"></a>请参阅
 
 
-[**RxCompleteRequest\_Real**](https://msdn.microsoft.com/library/windows/hardware/ff554348)
+[**RxCompleteRequest\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxcompleterequest_real)
 
-[**RxCreateRxContext**](https://msdn.microsoft.com/library/windows/hardware/ff554367)
+[**RxCreateRxContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxcreaterxcontext)
 
-[**RxDereference**](https://msdn.microsoft.com/library/windows/hardware/ff554388)
+[**RxDereference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdereference)
 
-[**RxDereferenceAndDeleteRxContext\_Real**](https://msdn.microsoft.com/library/windows/hardware/ff554393)
+[**RxDereferenceAndDeleteRxContext\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real)
 
-[**RxInitializeContext**](https://msdn.microsoft.com/library/windows/hardware/ff554502)
+[**RxInitializeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxinitializecontext)
 
-[**RxPrepareContextForReuse**](https://msdn.microsoft.com/library/windows/hardware/ff554643)
+[**RxPrepareContextForReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxpreparecontextforreuse)
 
-[**RxResumeBlockedOperations\_Serially**](https://msdn.microsoft.com/library/windows/hardware/ff554701)
+[**RxResumeBlockedOperations\_Serially**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)
 
-**[\_\_RxSynchronizeBlockingOperations](https://msdn.microsoft.com/library/windows/hardware/ff557377)**
+**[\_\_RxSynchronizeBlockingOperations](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)**
 
  
 

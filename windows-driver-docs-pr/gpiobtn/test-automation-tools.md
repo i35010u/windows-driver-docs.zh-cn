@@ -4,19 +4,19 @@ description: GPIO 测试自动化使用 MITT 平台。
 ms.assetid: F6C4FCC2-210B-4B6E-9D1A-77842E470025
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5da03b189f7e632fa1816c48a0f11d77e6a4e14c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1feb2891fd4820e0396b61b013253f0855bc4bb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390423"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373557"
 ---
 # <a name="test-automation-tools"></a>测试自动化工具
 
 
 GPIO 测试自动化使用 MITT 平台。
 
-若要开始，请参阅[GPIO 测试中 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919780)。 下载安装程序，解压缩其内容，并阅读**自述文件**有关该工具的一般概述的文件。
+若要开始，请参阅[GPIO 测试中 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/gpio-tests-in-mitt)。 下载安装程序，解压缩其内容，并阅读**自述文件**有关该工具的一般概述的文件。
 
 若要连接到待测试系统的工具，GPIO 按钮和指示符引脚是必需的。 看板设置和安装其相关的程序包后，可以使用它在以下两种方式：
 

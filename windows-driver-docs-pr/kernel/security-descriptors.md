@@ -12,17 +12,17 @@ keywords:
 - ACL WDK 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d2e9fc52a04ba5c3d3363750fb3e0964249e74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfe6669c7d315c4a105d449a9bcb670e9733ff08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377291"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373366"
 ---
 # <a name="security-descriptors"></a>安全描述符
 
 
-每个对象具有*安全描述符*，其中包含一个对象的安全设置。 在内核模式下不透明[**安全\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563689)数据类型表示的安全描述符。
+每个对象具有*安全描述符*，其中包含一个对象的安全设置。 在内核模式下不透明[**安全\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_security_descriptor)数据类型表示的安全描述符。
 
 安全描述符中的信息存储在*访问控制列表*(Acl)。 访问控制列表组成的一系列*访问控制项*(Ace)。
 

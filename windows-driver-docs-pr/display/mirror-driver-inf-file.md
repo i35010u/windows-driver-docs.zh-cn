@@ -8,12 +8,12 @@ keywords:
 - INF 文件 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf6452d7c973296727d4ea8958037ee620d77e2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 076e93defdb14f4aed9092f7a8e96b49b7103d0c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371641"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382314"
 ---
 # <a name="mirror-driver-inf-file"></a>镜像驱动程序 INF 文件
 
@@ -23,7 +23,7 @@ ms.locfileid: "63371641"
 
 使用*Mirror.inf*示例镜像驱动程序 INF 文件作为模板构造镜像驱动程序 INF 文件。
 
-有关详细信息，请参阅[安装启动驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff547570)并[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。
+有关详细信息，请参阅[安装启动驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/installing-a-boot-start-driver)并[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
 **请注意**  从 Windows 8 开始，镜像驱动程序不会安装在系统上。 有关详细信息，请参阅[镜像驱动程序](mirror-drivers.md)。
 

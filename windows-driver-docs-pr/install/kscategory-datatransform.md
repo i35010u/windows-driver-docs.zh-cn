@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1102c962f517c6f47ebbd2290c708eef7e4b6a67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 667ff7084f384b4c886eab494df38c4cf57109c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385901"
 ---
 # <a name="kscategorydatatransform"></a>KSCATEGORY_DATATRANSFORM
 
 
-KSCATEGORY_DATATRANSFORM[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 转换的音频数据流量的功能类别。
+KSCATEGORY_DATATRANSFORM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 转换的音频数据流量的功能类别。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS 设备的驱动程序注册 KSCATEGORY_DATATRANSFORM 向操作系统指示设
 
 有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Ddksynth.inf*软件合成器示例中包含的 INF 文件*src\\音频\\ddksynth* WDK 的目录。
 
-有关此功能的类别的详细信息，请参阅[音频适配器安装设备接口](https://msdn.microsoft.com/library/windows/hardware/ff536813)， [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)，以及[GFX 要求筛选器工厂](https://msdn.microsoft.com/library/windows/hardware/ff537839)。
+有关此功能的类别的详细信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)， [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)，以及[GFX 要求筛选器工厂](https://docs.microsoft.com/windows-hardware/drivers/audio/requirements-for-a-gfx-filter-factory)。
 
 <a name="requirements"></a>要求
 ------------

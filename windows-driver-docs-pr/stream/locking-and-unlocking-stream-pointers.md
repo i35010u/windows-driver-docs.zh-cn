@@ -8,12 +8,12 @@ keywords:
 - 解锁的流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a978ee693c0b381155fae20bedbb61303dd9dc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c2fe8296f806855e986e6312b41e80e11bef1c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386642"
 ---
 # <a name="locking-and-unlocking-stream-pointers"></a>锁定和解锁流指针
 
@@ -27,11 +27,11 @@ ms.locfileid: "63325219"
 
 不保证解锁的流指针引用队列中的数据帧。 通过解锁的流指针，微型驱动程序可以保留数据指针，但仍允许要取消的框架。
 
-就可以访问由未锁定的流指针指向的数据。 如果*CancelCallback*中提供日常[ **KsStreamPointerClone** ](https://msdn.microsoft.com/library/windows/hardware/ff567129)调用[ **KsStreamPointerDelete**](https://msdn.microsoft.com/library/windows/hardware/ff567130)，您应该同步*CancelCallback*和它执行任何数据访问。 微型驱动程序必须确保它使用另一个线程时，取消回调例程并不删除流指针。
+就可以访问由未锁定的流指针指向的数据。 如果*CancelCallback*中提供日常[ **KsStreamPointerClone** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)调用[ **KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)，您应该同步*CancelCallback*和它执行任何数据访问。 微型驱动程序必须确保它使用另一个线程时，取消回调例程并不删除流指针。
 
 如果未调用取消回调例程**KsStreamPointerDelete**，可能不需要同步。
 
-若要锁定流指针，调用[ **KsStreamPointerLock**](https://msdn.microsoft.com/library/windows/hardware/ff567134)。 若要解锁流指针，调用[ **KsStreamPointerUnlock**](https://msdn.microsoft.com/library/windows/hardware/ff567137)。
+若要锁定流指针，调用[ **KsStreamPointerLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock)。 若要解锁流指针，调用[ **KsStreamPointerUnlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)。
 
 当取消 IRP 时，AVStream 的所有未锁定的流指针指向 IRP 中帧的调用取消回调。
 

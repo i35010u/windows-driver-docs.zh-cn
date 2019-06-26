@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5238eac4d5df1a3d18de9a0adf1b4d68369cebd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 407d073947ae2221e05d4036611da645674c3cf2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351619"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380589"
 ---
 # <a name="kspropertyvpconfigsurfaceparams"></a>KSPROPERTY\_VPCONFIG\_SURFACEPARAMS
 
@@ -54,7 +54,7 @@ KSPROPERTY\_VPCONFIG\_SURFACEPARAMS 属性指定的视频端口图面上设置..
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567237" data-raw-source="[&lt;strong&gt;KSVPSURFACEPARAMS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567237)"><strong>KSVPSURFACEPARAMS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpsurfaceparams" data-raw-source="[&lt;strong&gt;KSVPSURFACEPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpsurfaceparams)"><strong>KSVPSURFACEPARAMS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -84,7 +84,7 @@ KSPROPERTY\_VPCONFIG\_SURFACEPARAMS 属性指定的视频端口图面上设置..
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSVPSURFACEPARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff567237)
+[**KSVPSURFACEPARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpsurfaceparams)
 
  
 

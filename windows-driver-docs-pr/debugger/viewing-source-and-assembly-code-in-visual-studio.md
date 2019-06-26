@@ -4,12 +4,12 @@ description: 该过程介绍了 Visual Studio 中的源代码调试。
 ms.assetid: C2E5BAA8-913A-4B0E-8ADF-E2758CCFEC84
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 637aaa7dcc91cdc3ed7bbf0a0d83c97170767913
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e85abe6cefa91d4e2b2fb2bc01cebcd3f426f6b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369459"
 ---
 # <a name="source-code-debugging-in-visual-studio"></a>在 Visual Studio 中调试源代码
 
@@ -17,7 +17,7 @@ ms.locfileid: "63325929"
 > 此功能不在 Windows 10，版本 1507年和更高版本的 WDK 中可用。
 >
 
-本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://msdn.microsoft.com/library/windows/hardware/ff557573)。
+本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://docs.microsoft.com/windows-hardware/drivers/)。
 
 若要使用源代码调试，必须具有编译器或链接器创建符号文件 （.pdb 文件） 时生成二进制文件。 这些符号文件显示在调试器的二进制说明如何与源行相对应。 此外，调试器必须能够访问的实际源文件。 有关详细信息，请参阅[源路径](source-path.md)。
 

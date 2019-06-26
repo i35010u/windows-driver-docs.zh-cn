@@ -9,12 +9,12 @@ keywords:
 - 时钟 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbb93acc1ad0b462850aa4e66fa3497447313905
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 509b0a1b4879e0edb8474a971d8b2f0bdf20f801
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365197"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377741"
 ---
 # <a name="time-stamps"></a>时间戳
 
@@ -23,7 +23,7 @@ ms.locfileid: "63365197"
 
 传输的每个数据包对应于单个帧或视频或辅助数据字段。 涉及到帧精确视频捕获的视频捕获驱动程序编写人员可以选择提供所有其他筛选器可用作参考的时钟。 数字视频的微型驱动程序是应提供时钟，以使用筛选器关系图中的微型驱动程序的一个示例。 或者，运行以异步方式向其他多媒体流，如 USB 和 IEEE 1394 会议摄像机的视频捕获微型驱动程序应时间的戳与时钟其数据数据包提供的另一个组件，例如音频数字化器。
 
-如果 Stream 类微型驱动程序提供了主时钟，还应指定以下值中的[ **HW\_流\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff559697)结构：
+如果 Stream 类微型驱动程序提供了主时钟，还应指定以下值中的[ **HW\_流\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)结构：
 
 ```cpp
 PHW_STREAM_OBJECT *pStreamObject;

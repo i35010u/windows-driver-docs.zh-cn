@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6c9563b19f9e2c53287bf424a2bea52f551930
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e57e8e2e4b78563a0e9a38b1e17f56187774f3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363131"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**！ Ndiskd.nbllog**扩展插件都会显示所有 NBL 日志 ([**NET\_缓冲区\_列表**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)) 系统中的活动。
+**！ Ndiskd.nbllog**扩展插件都会显示所有 NBL 日志 ([**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) 系统中的活动。
 
 ```console
 !ndiskd.nbllog [-stacks] 
@@ -63,7 +63,7 @@ Ndiskd.dll
 
  
 
-NBL 日志显示在系统上的网络流量。 [**！ ndiskd.netreport** ](-ndiskd-netreport.md)分析 NBL 跟踪日志，以直观地显示此网络流量。 因此，如果跟踪的 NBL 不启用， **！ ndiskd.netreport**将无法再显示此信息。
+NBL 日志显示在系统上的网络流量。 [ **！ ndiskd.netreport** ](-ndiskd-netreport.md)分析 NBL 跟踪日志，以直观地显示此网络流量。 因此，如果跟踪的 NBL 不启用， **！ ndiskd.netreport**将无法再显示此信息。
 
 <a name="examples"></a>示例
 --------
@@ -107,17 +107,17 @@ NBL 日志显示在系统上的网络流量。 [**！ ndiskd.netreport** ](-ndis
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_BUFFER\_LIST**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)
+[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
 [!ndiskd.nbl -log](https://go.microsoft.com/fwlink/p/?linkid=846176)
 

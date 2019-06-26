@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 与 Windows Vista 一起启动的网络驱动程序的 NdisQueryMdlOffset 宏
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4ab915d2d096f3262904bb98d8256542aedfe6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bff93c7d99b080bb37e9a9240b0e8481d232eb2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375179"
 ---
 # <a name="ndisquerymdloffset-macro"></a>NdisQueryMdlOffset macro
 
@@ -49,7 +49,7 @@ VOID NdisQueryMdlOffset(
 <a name="remarks"></a>备注
 -------
 
-**NdisQueryMdlOffset**宏提供的基于 MDL 版本[ **NdisQueryBufferOffset** ](https://msdn.microsoft.com/library/windows/hardware/ff554411)函数。
+**NdisQueryMdlOffset**宏提供的基于 MDL 版本[ **NdisQueryBufferOffset** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff554411(v=vs.85))函数。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ VOID NdisQueryMdlOffset(
 </tr>
 <tr class="odd">
 <td><p>DDI 符合性规则</p></td>
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff547985" data-raw-source="[&lt;strong&gt;Irql_NetBuffer_Function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547985)"><strong>Irql_NetBuffer_Function</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-irql-netbuffer-function" data-raw-source="[&lt;strong&gt;Irql_NetBuffer_Function&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-irql-netbuffer-function)"><strong>Irql_NetBuffer_Function</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -86,7 +86,7 @@ VOID NdisQueryMdlOffset(
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisQueryBufferOffset**](https://msdn.microsoft.com/library/windows/hardware/ff554411)
+[**NdisQueryBufferOffset**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff554411(v=vs.85))
 
  
 

@@ -4,12 +4,12 @@ description: 以下各节介绍实现接收段合并 (RSC) 时需考虑的问题
 ms.assetid: 03FDD557-3918-408A-BD79-64CD52BDD43A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b914f68a10322564c788ef0596a3011f1d1f6e9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf825aaa588d314792ec620486d50f12c2d73d0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390287"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385466"
 ---
 # <a name="programming-considerations-for-rsc-drivers"></a>RSC 驱动程序的编程注意事项
 
@@ -24,7 +24,7 @@ ms.locfileid: "63390287"
 ## <a name="responding-to-queries-for-rsc-statistics"></a>RSC 统计信息的响应的查询
 
 
-NDIS、 基础驱动程序和用户模式应用程序使用[OID\_TCP\_RSC\_统计信息](https://msdn.microsoft.com/library/windows/hardware/hh451929)要获取的微型端口适配器 RSC 统计信息的 OID。 Rsc 功能的微型端口驱动程序必须支持此 OID。
+NDIS、 基础驱动程序和用户模式应用程序使用[OID\_TCP\_RSC\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-rsc-statistics)要获取的微型端口适配器 RSC 统计信息的 OID。 Rsc 功能的微型端口驱动程序必须支持此 OID。
 
 ## <a name="forwarded-tcp-packets"></a>转发的 TCP 数据包
 
@@ -47,11 +47,11 @@ MUX 中间驱动程序可能会禁用 RSC 上一个接口，即使接口的 NDIS
 
 WFP 标注驱动程序通过将自定义标注函数添加到筛选器引擎在一个或多个内核模式筛选层提供附加的筛选功能。 标注支持深度检测和数据包，以及流修改。
 
-WFP 标注驱动程序可能支持的支持处理接收大于链接 MTU 的数据包。 (有关数据包大小限制的详细信息，请参阅[跟踪和，该值指示合并段](https://msdn.microsoft.com/library/windows/hardware/jj853326)。)此类 WFP 标注驱动程序应执行以下操作：
+WFP 标注驱动程序可能支持的支持处理接收大于链接 MTU 的数据包。 (有关数据包大小限制的详细信息，请参阅[跟踪和，该值指示合并段](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-coalesced-segments)。)此类 WFP 标注驱动程序应执行以下操作：
 
 -   选择以处理大型数据包在注册过程。
 
--   按指定的参考页中设置的标注驱动程序标志[ **FWPS\_CALLOUT2** ](https://msdn.microsoft.com/library/windows/hardware/hh439700)结构。
+-   按指定的参考页中设置的标注驱动程序标志[ **FWPS\_CALLOUT2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_callout2_)结构。
 
 每当注册未选择加入以处理大的数据包的标注驱动程序，WFP 会通知登记的上下文中的 TCP/IP。 作为处理此通知的一部分，TCP/IP 将禁用 RSC 接口上。
 

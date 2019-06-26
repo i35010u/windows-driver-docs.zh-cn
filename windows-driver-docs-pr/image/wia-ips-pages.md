@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c95113c74472f33a676de8d57185690a296ba3a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d47cd0a6b495a0971f73117dfd6ac200736bc0b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383688"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385303"
 ---
 # <a name="wiaipspages"></a>WIA\_IPS\_PAGES
 
@@ -63,7 +63,7 @@ WIA\_IP\_页属性包含要获取自动文档送纸器中的页的数目。
 **请注意**  如果启用了双工模式 (即，如果 WIA\_IP\_文档\_处理\_选择设置为送纸器 |双工），WIA\_IP\_页是否仍等于要扫描的页数。
 一张纸将自动包含两个页面如果启用双工，则即使该页的后端为空。
 
-如果设置 WIA\_IP\_页为 1，扫描程序将处理页面的方面之一。 我们建议，如果无法扫描的页中双工模式仅一侧扫描程序，您应更改 WIA\_IPS\_页值**Inc**的成员[ **WIA\_属性\_INFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552751)为 2 的结构。 利用此值，该应用程序必须请求中的两个序列图的页面。 值为零意味着*所有*当前加载到文档送纸器的页面都要进行扫描。
+如果设置 WIA\_IP\_页为 1，扫描程序将处理页面的方面之一。 我们建议，如果无法扫描的页中双工模式仅一侧扫描程序，您应更改 WIA\_IPS\_页值**Inc**的成员[ **WIA\_属性\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)为 2 的结构。 利用此值，该应用程序必须请求中的两个序列图的页面。 值为零意味着*所有*当前加载到文档送纸器的页面都要进行扫描。
 
  
 
@@ -92,7 +92,7 @@ WIA\_IP\_页属性包含要获取自动文档送纸器中的页的数目。
 
 [**WIA\_DPS\_PAGES**](wia-dps-pages.md)
 
-[**WIA\_属性\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff552751)
+[**WIA\_属性\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
 
  
 

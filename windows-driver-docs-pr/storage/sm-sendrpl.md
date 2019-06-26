@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a19413d55e92d1316ad0a72e12a60cbd5f8809b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1404c97b77ca73edfef9e9303c646ad7eae8bfd1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384282"
 ---
 # <a name="smsendrpl-function"></a>SM\_SendRPL 函数
 
@@ -108,9 +108,9 @@ void SM_SendRPL(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SendRPL\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566314)
+[**SM\_SendRPL\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrpl_in)
 
-[**SM\_SendRPL\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566315)
+[**SM\_SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrpl_out)
 
  
 

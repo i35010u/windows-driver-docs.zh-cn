@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b9c79ca9206106f3992ddc83ed7b61bbb41120b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99617df4a7971c3a3a4b728ee272586d0c795ba4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364015"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368834"
 ---
 # <a name="kspropertystreamallocatorfunctiontable"></a>KSPROPERTY\_STREAMALLOCATOR\_FUNCTIONTABLE
 
@@ -54,7 +54,7 @@ KSPROPERTY\_STREAMALLOCATOR\_FUNCTIONTABLE 属性检索给定的分配器函数�
 <td><p>否</p></td>
 <td><p>分配器</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566862" data-raw-source="[&lt;strong&gt;KSSTREAMALLOCATOR_FUNCTIONTABLE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566862)"><strong>KSSTREAMALLOCATOR_FUNCTIONTABLE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstreamallocator_functiontable" data-raw-source="[&lt;strong&gt;KSSTREAMALLOCATOR_FUNCTIONTABLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstreamallocator_functiontable)"><strong>KSSTREAMALLOCATOR_FUNCTIONTABLE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ KSPROPERTY\_STREAMALLOCATOR\_FUNCTIONTABLE 仅由分配器支持在调度\_LEVEL
 ## <a name="see-also"></a>请参阅
 
 
-[**KSSTREAMALLOCATOR\_FUNCTIONTABLE**](https://msdn.microsoft.com/library/windows/hardware/ff566862)
+[**KSSTREAMALLOCATOR\_FUNCTIONTABLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstreamallocator_functiontable)
 
  
 

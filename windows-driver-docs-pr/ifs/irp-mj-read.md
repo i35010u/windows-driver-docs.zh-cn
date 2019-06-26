@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7a790767107a310c53e531f18477aedd587a2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f5fd5ca30842163fd685b1305e977d2e754ad98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384812"
 ---
 # <a name="irpmjread"></a>IRP\_MJ\_READ
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324492"
 ## <a name="when-sent"></a>发送时间
 
 
-IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以将发送此请求，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**ReadFile**，或当调用内核模式组件[ **ZwReadFile** ](https://msdn.microsoft.com/library/windows/hardware/ff567072).
+IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以将发送此请求，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**ReadFile**，或当调用内核模式组件[ **ZwReadFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile).
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
@@ -60,7 +60,7 @@ IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以�
 ## <a name="parameters"></a>Parameters
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置在处理读取的请求中包含的信息：
+文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置在处理读取的请求中包含的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 
@@ -72,7 +72,7 @@ IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以�
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
 
-指向[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)接收最终完成状态以及有关请求的操作信息的结构。 有关详细信息，请参阅的说明*IoStatusBlock*参数[ **ZwReadFile**](https://msdn.microsoft.com/library/windows/hardware/ff567072)。
+指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。 有关详细信息，请参阅的说明*IoStatusBlock*参数[ **ZwReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
 
@@ -122,7 +122,7 @@ IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以�
 
 <a href="" id="irpsp--parameters-read-length"></a>*IrpSp-&gt;Parameters.Read.Length*
 
-要读取的数据长度以字节为单位。 如果读取的操作成功，在返回读取的字节数**信息**的成员[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)指向结构*Irp-&gt;IoStatus*。
+要读取的数据长度以字节为单位。 如果读取的操作成功，在返回读取的字节数**信息**的成员[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)指向结构*Irp-&gt;IoStatus*。
 
 <a name="remarks"></a>备注
 -------
@@ -132,23 +132,23 @@ IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以�
 ## <a name="see-also"></a>请参阅
 
 
-[**CcMdlRead**](https://msdn.microsoft.com/library/windows/hardware/ff539159)
+[**CcMdlRead**](https://docs.microsoft.com/previous-versions/ff539159(v=vs.85))
 
 [**CcMdlReadComplete**](https://msdn.microsoft.com/library/windows/hardware/ff539163)
 
-[**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_读取 （WDK 内核参考）**](https://msdn.microsoft.com/library/windows/hardware/ff550794)
+[**IRP\_MJ\_读取 （WDK 内核参考）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)
 
 [**IRP\_MJ\_WRITE**](irp-mj-write.md)
 
-[**ZwReadFile**](https://msdn.microsoft.com/library/windows/hardware/ff567072)
+[**ZwReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)
 
  
 

@@ -9,17 +9,17 @@ keywords:
 - 模具值 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03944cdf380d8fa0c8111a4eaf5bf3e9f1ce8171
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fef10356a68cd2894deeeecf89def6796f57c359
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338668"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370253"
 ---
 # <a name="copying-depth-stencil-values"></a>复制深度模具值
 
 
-Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **Blt** ](https://msdn.microsoft.com/library/windows/hardware/ff538251)函数来复制深度模具值从视频内存复制到系统内存，反之亦然。 驱动程序和硬件必须执行格式转换，或对所有驱动程序支持的不透明的深度模具格式 (即，所定义的所有格式[ **D3DDDIFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff544312)以外的枚举类型D3DDDIFMT\_D\*\_LOCKABLE)，或从任一以下格式：
+Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **Blt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)函数来复制深度模具值从视频内存复制到系统内存，反之亦然。 驱动程序和硬件必须执行格式转换，或对所有驱动程序支持的不透明的深度模具格式 (即，所定义的所有格式[ **D3DDDIFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ne-d3dukmdt-_d3dddiformat)以外的枚举类型D3DDDIFMT\_D\*\_LOCKABLE)，或从任一以下格式：
 
 -   D3DDDIFMT\_D16\_LOCKABLE
 

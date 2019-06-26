@@ -18,12 +18,12 @@ keywords:
 - 列出 WDK 的设备信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 909ac5e2f1ae49d83f7c2a0ef59fa44d5a9dae1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1298d1f2c410bcbeb23989ba44c121d07b129552
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341705"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371511"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
 
@@ -83,11 +83,11 @@ DevCon 是一个命令行工具，会在本地计算机和远程计算机上执�
 Devcon 功能包括：
 
 -   **显示驱动程序和设备信息**DevCon 可以显示本地计算机和远程计算机上的驱动程序和设备的下列属性 (运行 Windows XP 及更早版本):
-    -   硬件 Id、 兼容 Id 和设备实例 Id。 中详细描述了这些标识符[设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)。
-    -   [设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)
+    -   硬件 Id、 兼容 Id 和设备实例 Id。 中详细描述了这些标识符[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
+    -   [设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
     -   设备安装程序类中的设备
     -   INF 文件和设备驱动程序文件
-    -   详细信息[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff539954)
+    -   详细信息[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)
     -   硬件资源
     -   设备状态
     -   预期的驱动程序堆栈
@@ -109,7 +109,7 @@ Devcon 功能包括：
 ## <a name="span-iddevconsourcecodespanspan-iddevconsourcecodespanspan-iddevconsourcecodespandevcon-source-code"></a><span id="DevCon_source_code"></span><span id="devcon_source_code"></span><span id="DEVCON_SOURCE_CODE"></span>DevCon 源代码
 
 
-DevCon 源代码也是可用的以便你可以检查 DevCon 用于检索和更改设置和配置数据的方法。 DevCon 演示如何使用[常规设置函数](https://msdn.microsoft.com/library/windows/hardware/ff544985)，[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)，并[即插即用 Configuration Manager 功能](https://msdn.microsoft.com/library/windows/hardware/ff549713)。 源代码[设备控制台 (DevCon) 工具](https://go.microsoft.com/fwlink/p/?LinkId=617966)现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+DevCon 源代码也是可用的以便你可以检查 DevCon 用于检索和更改设置和配置数据的方法。 DevCon 演示如何使用[常规设置函数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))，[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))，并[即插即用 Configuration Manager 功能](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))。 源代码[设备控制台 (DevCon) 工具](https://go.microsoft.com/fwlink/p/?LinkId=617966)现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

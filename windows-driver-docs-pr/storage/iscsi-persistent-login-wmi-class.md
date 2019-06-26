@@ -4,12 +4,12 @@ description: ISCSI\_持久\_登录 WMI 类
 ms.assetid: ad00e6ed-adfa-4888-9386-51f937a278d8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96badd06cbd1ec2fb4f135ae9828f6978ffd828c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69affbc9b69b4192b0c05baa8be72ba8a1b545b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359669"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378437"
 ---
 # <a name="iscsipersistentlogin-wmi-class"></a>ISCSI\_持久\_登录 WMI 类
 
@@ -21,7 +21,7 @@ ISCSI\_的永久\_登录 WMI 类定义一个持久的登录名。 自动管理 i
 
 ISCSI\_的永久\_Login 类中定义，则不发布*Operations.mof*。
 
-当 WMI 工具套件编译此类定义时，它会生成[ **ISCSI\_的永久\_登录名**](https://msdn.microsoft.com/library/windows/hardware/ff561553)数据结构。
+当 WMI 工具套件编译此类定义时，它会生成[ **ISCSI\_的永久\_登录名**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_iscsi_persistent_login)数据结构。
 
  
 

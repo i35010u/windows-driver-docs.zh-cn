@@ -10,23 +10,23 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ad5b29f3064cb5cc84f6e9844c514fc2bb1d9f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6955f0d4a63a68633c0f321a7af371e47a7a0133
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373720"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386518"
 ---
 # <a name="publishing-nfp-messages"></a>发布 NFP 消息
 
 
-发布表示为驱动程序中的唯一打开句柄。 一个类型和数据缓冲区，必须具有活动发布。 通过在"Pubs"命名空间中打开的文件名称集的类型。 通过发送设置的数据缓冲区[ **IOCTL\_NFP\_设置\_负载**](https://msdn.microsoft.com/library/windows/hardware/jj853321)。
+发布表示为驱动程序中的唯一打开句柄。 一个类型和数据缓冲区，必须具有活动发布。 通过在"Pubs"命名空间中打开的文件名称集的类型。 通过发送设置的数据缓冲区[ **IOCTL\_NFP\_设置\_负载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_set_payload)。
 
-在尝试传输回调提供通过已完成[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853320).
+在尝试传输回调提供通过已完成[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message).
 
-可以通过暂时禁用发布[ **IOCTL\_NFP\_禁用**](https://msdn.microsoft.com/library/windows/hardware/jj853315)。
+可以通过暂时禁用发布[ **IOCTL\_NFP\_禁用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_disable)。
 
-发布可以通过重新启动[ **IOCTL\_NFP\_启用**](https://msdn.microsoft.com/library/windows/hardware/jj853316)。
+发布可以通过重新启动[ **IOCTL\_NFP\_启用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_enable)。
 
 ##  <a name="handles"></a>句柄
 
@@ -42,7 +42,7 @@ ms.locfileid: "63373720"
           DeviceID          NearFieldProximity Interface Class     *  Protocol   SubType
 ```
 
-打开句柄之后, 客户端应然后设置要在中发布的消息有效负载[ **IOCTL\_NFP\_设置\_负载**](https://msdn.microsoft.com/library/windows/hardware/jj853321)。
+打开句柄之后, 客户端应然后设置要在中发布的消息有效负载[ **IOCTL\_NFP\_设置\_负载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_set_payload)。
 
 没有任何工具可以读回指定的文件名 （发布类型）。
 
@@ -102,21 +102,21 @@ ms.locfileid: "63373720"
 ### <a name="required-actions"></a>所需的操作
 
 
-该驱动程序必须删除所有消息 （和回收这些资源） 从"Received"队列，如果客户端未发送更换[ **IOCTL\_NFP\_获取\_下一步\_已订阅\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853319)以前 IOCTL 完成后 10 到 20 秒内。
+该驱动程序必须删除所有消息 （和回收这些资源） 从"Received"队列，如果客户端未发送更换[ **IOCTL\_NFP\_获取\_下一步\_已订阅\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)以前 IOCTL 完成后 10 到 20 秒内。
 
 ## <a name="unresponsive-or-misbehaving-clients"></a>无响应或行为不正确的客户端
 
 
-如果客户端无法发送所需[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853320) 10 个段的请求到二十秒钟的时间\[10-20 秒\]，则驱动程序应假定客户端将消失。 正常情况下，客户端应刷新其请求一秒内还\[1s\]。 如果发生这种情况，驱动程序必须将"CompleteEventImmediately"计数器设置为零，必须递增计数器，直到客户端唤醒，并将所需的 IRP 发送。
+如果客户端无法发送所需[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message) 10 个段的请求到二十秒钟的时间\[10-20 秒\]，则驱动程序应假定客户端将消失。 正常情况下，客户端应刷新其请求一秒内还\[1s\]。 如果发生这种情况，驱动程序必须将"CompleteEventImmediately"计数器设置为零，必须递增计数器，直到客户端唤醒，并将所需的 IRP 发送。
 
 ### <a name="required-actions"></a>所需的操作
 
-该驱动程序必须设置"CompleteEventImmediately"计数器为零，必须递增计数器，如果客户端未发送更换[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853320)以前 IOCTL 完成后 10 到 20 秒内。
+该驱动程序必须设置"CompleteEventImmediately"计数器为零，必须递增计数器，如果客户端未发送更换[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)以前 IOCTL 完成后 10 到 20 秒内。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

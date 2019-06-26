@@ -5,21 +5,21 @@ ms.assetid: 6267D480-5055-4A7A-B2A0-F4DF9154DCD7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SLOT_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e0ebe37bbed5dee1d598060a7f5b029216b739
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38912dadac22a6f2e98363aea00e8904e14c70db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392400"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383202"
 ---
 # <a name="oidwwanslotinfo"></a>OID\_WWAN\_槽\_信息
 
 
 OID\_WWAN\_槽\_信息检索指定的 UICC 槽中，在其中的卡的高级聚合的状态 （如果有）。 它还可能用于一个槽的状态发生更改时提供的未经请求的通知。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_槽\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782398)状态通知包含[ **NDIS\_WWAN\_槽\_INFO** ](https://msdn.microsoft.com/library/windows/hardware/mt782408)结构，其中又包含[ **WWAN\_槽\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt799892)结构，以提供有关的信息总体调制解调器系统功能。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-slot-info-status)状态通知包含[ **NDIS\_WWAN\_槽\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)结构，其中又包含[ **WWAN\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_slot_info)结构，以提供有关的信息总体调制解调器系统功能。
 
-指定查询请求[ **NDIS\_WWAN\_获取\_槽\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782404)结构作为输入。 微型端口驱动程序应返回插槽的状态根据中指定 ID 的槽**SlotIndex**的成员[ **WWAN\_获取\_槽\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt799891)结构。
+指定查询请求[ **NDIS\_WWAN\_获取\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_get_slot_info)结构作为输入。 微型端口驱动程序应返回插槽的状态根据中指定 ID 的槽**SlotIndex**的成员[ **WWAN\_获取\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_get_slot_info)结构。
 
 下图说明了查询请求。
 
@@ -27,7 +27,7 @@ OID\_WWAN\_槽\_信息检索指定的 UICC 槽中，在其中的卡的高级聚�
 
 不适用集发出的请求。
 
-[ **NDIS\_状态\_WWAN\_槽\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782398)通知[ **NDIS\_WWAN\_槽\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782408)结构发送到主机的槽/卡状态发生更改时。
+[ **NDIS\_状态\_WWAN\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-slot-info-status)通知[ **NDIS\_WWAN\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)结构发送到主机的槽/卡状态发生更改时。
 
 <a name="remarks"></a>备注
 -------
@@ -61,17 +61,17 @@ OID\_WWAN\_槽\_信息检索指定的 UICC 槽中，在其中的卡的高级聚�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_STATUS\_WWAN\_SLOT\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt782398)
+[**NDIS\_STATUS\_WWAN\_SLOT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-slot-info-status)
 
-[**NDIS\_WWAN\_SLOT\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt782408)
+[**NDIS\_WWAN\_SLOT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)
 
-[**WWAN\_SLOT\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt799892)
+[**WWAN\_SLOT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_slot_info)
 
-[**NDIS\_WWAN\_GET\_SLOT\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt782404)
+[**NDIS\_WWAN\_GET\_SLOT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_get_slot_info)
 
-[**WWAN\_GET\_SLOT\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt799891)
+[**WWAN\_GET\_SLOT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_get_slot_info)
 
-[**WWAN\_UICCSLOT\_STATE**](https://msdn.microsoft.com/library/windows/hardware/mt799894)
+[**WWAN\_UICCSLOT\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ne-wwan-_wwan_uiccslot_state)
 
 [OID\_WWAN\_READY\_INFO](oid-wwan-ready-info.md)
 

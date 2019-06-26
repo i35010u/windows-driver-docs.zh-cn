@@ -11,17 +11,17 @@ keywords:
 - 正在加载发送程序 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bec546532b0d656dc3a493e30ff1a7d7dd34c2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e4f2a93478ce1191b8d2d58e21a1f4765eea367
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379049"
 ---
 # <a name="specifying-the-reflector-in-an-inf-file"></a>INF 文件中指定该发送程序
 
 
-若要将该发送程序 (WUDFRd.sys) 添加到内核模式设备堆栈，UMDF 驱动程序的 INF 文件必须包括[ **AddService 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546326)中[ **INF DDInstall.Services部分**](https://msdn.microsoft.com/library/windows/hardware/ff547349)。 该发送程序可以是上部的筛选器、 较低的筛选器或该设备，具体取决于用户模式堆栈配置的服务。
+若要将该发送程序 (WUDFRd.sys) 添加到内核模式设备堆栈，UMDF 驱动程序的 INF 文件必须包括[ **AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)中[ **INF DDInstall.Services部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)。 该发送程序可以是上部的筛选器、 较低的筛选器或该设备，具体取决于用户模式堆栈配置的服务。
 
 下面的代码示例说明了如何 UMDF 功能驱动程序的 INF 文件可能会添加该发送程序。
 
@@ -32,7 +32,7 @@ AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
 
 在此示例中，该驱动程序指定 0x2 (SPSVCINST\_ASSOCSERVICE) 标志 (或运算到*标志*上述参数) 以将该发送程序指定为内核模式设备堆栈中的函数驱动程序。
 
-**AddService**指令还会设置 0x000001f8 标志，以防止覆盖任何预先存在的服务配置。 有关这些标志的详细信息，请参阅*标志*的参数[ **AddService 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546326)。
+**AddService**指令还会设置 0x000001f8 标志，以防止覆盖任何预先存在的服务配置。 有关这些标志的详细信息，请参阅*标志*的参数[ **AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)。
 
 下面的代码示例摘自 WUDFVhidmini 示例，演示**AddService** UMDF 筛选器驱动程序的指令。
 

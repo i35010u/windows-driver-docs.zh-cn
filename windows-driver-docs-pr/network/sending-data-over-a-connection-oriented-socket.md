@@ -7,17 +7,17 @@ keywords:
 - WskSend
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e2c7616fae4e99526cd035c56366eed52f9cd6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c63ec7780ff4c31489c50b20e229750eafaaa410
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346804"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378645"
 ---
 # <a name="sending-data-over-a-connection-oriented-socket"></a>通过面向连接的套接字发送数据
 
 
-Winsock Kernel (WSK) 应用程序具有连接到远程传输地址的面向连接的套接字后它可以通过套接字发送数据。 WSK 应用程序还可以通过面向连接的套接字，它接受在侦听套接字上发送数据。 WSK 应用程序将数据通过面向连接的套接字发送通过调用[ **WskSend** ](https://msdn.microsoft.com/library/windows/hardware/ff571146)函数。
+Winsock Kernel (WSK) 应用程序具有连接到远程传输地址的面向连接的套接字后它可以通过套接字发送数据。 WSK 应用程序还可以通过面向连接的套接字，它接受在侦听套接字上发送数据。 WSK 应用程序将数据通过面向连接的套接字发送通过调用[ **WskSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send)函数。
 
 下面的代码示例显示如何 WSK 应用程序可以通过面向连接的套接字发送数据。
 

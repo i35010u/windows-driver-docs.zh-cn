@@ -17,12 +17,12 @@ keywords:
 - 锁定 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 900b3d0c4690d8f778ed42725fbc4a6e0b03365d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3241353282dac50fefebbc983cc932d2244c3384
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381037"
 ---
 # <a name="sending-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>在 IEEE 1394 总线上发送异步 I/O 请求数据包
 
@@ -34,7 +34,7 @@ ms.locfileid: "63390331"
 
 ### <a name="types-of-addressing"></a>寻址的类型
 
-发出异步 I/O 请求的驱动程序必须指定类型的目标地址[ **IO\_地址**](https://msdn.microsoft.com/library/windows/hardware/ff537346)中**DestinationAddress** IRB 的成员。 目标地址由两个值组成： 节点地址和地址偏移量。 总线驱动程序为这两个值的解释取决于使用驱动程序的启动请求的寻址模式。
+发出异步 I/O 请求的驱动程序必须指定类型的目标地址[ **IO\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_io_address)中**DestinationAddress** IRB 的成员。 目标地址由两个值组成： 节点地址和地址偏移量。 总线驱动程序为这两个值的解释取决于使用驱动程序的启动请求的寻址模式。
 
 三种寻址模式是可用于发送异步 1394年数据包：*正常*，*原始*，并*虚拟*。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42d2599dd3437b17f6d09acdbf7e6c14b3f6f305
-ms.sourcegitcommit: e542212bb5e7aba06b9e005e9b63c438404d5643
+ms.openlocfilehash: 3281b1e1b93119a92c41c7a7d36bc58eaaf47d28
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719959"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393758"
 ---
 # <a name="devcon-restart"></a>DevCon Restart
 
@@ -65,7 +65,7 @@ ms.locfileid: "66719959"
 <tr class="odd">
 <td align="left"><p><strong>'</strong></p>
 <p>（单引号）</p></td>
-<td align="left"><p>按原义的字符串匹配 （严格按其显示）。 使用单引号以指示星号是 ID 名称的一部分，不是通配符，例如，字符串前加上<strong>' * PNP0600</strong>，其中 * PNP0600 （包括星号） 是硬件 id。</p></td>
+<td align="left"><p>按原义的字符串匹配 （严格按其显示）。 使用单引号以指示星号是 ID 名称的一部分，不是通配符，例如，字符串前加上 <strong>'*PNP0600</strong>，其中 *PNP0600 （包括星号） 是硬件 id。</p></td>
 </tr>
 </tbody>
 </table>

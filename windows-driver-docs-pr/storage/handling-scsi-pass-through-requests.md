@@ -9,12 +9,12 @@ keywords:
 - 传递请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2648bccc670e52f0617303a1b617e8c4b2f3fcfd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c232392803ca359610f199dd644eb5022b3f0f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384171"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378468"
 ---
 # <a name="handling-scsi-pass-through-requests"></a>处理 SCSI 传递请求
 
@@ -22,7 +22,7 @@ ms.locfileid: "63384171"
 ## <span id="ddk_handling_scsi_pass_through_requests_kg"></span><span id="DDK_HANDLING_SCSI_PASS_THROUGH_REQUESTS_KG"></span>
 
 
-生成的类驱动程序[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://msdn.microsoft.com/library/windows/hardware/ff560519)请求或[ **IOCTL\_SCSI\_传递\_THROUGH\_直接**](https://msdn.microsoft.com/library/windows/hardware/ff560521)请求负责以下：
+生成的类驱动程序[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)请求或[ **IOCTL\_SCSI\_传递\_THROUGH\_直接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)请求负责以下：
 
 -   设置在用户缓冲区的长度**Parameters.DeviceIoControl.InputBufferLength**到至少**sizeof**(SCSI\_传递\_THROUGH) 或**sizeof**(SCSI\_传递\_THROUGH\_直接)
 

@@ -4,12 +4,12 @@ description: 用于开发 PSHED 插件的路线图
 ms.assetid: 3e1eb744-e480-4478-9705-94da8029c382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b59a3972ad9a9e09a08da880ace307e68d096f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e523d2f0d445a13218e36550cfbac95ae266f0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340680"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387146"
 ---
 # <a name="roadmap-for-developing-pshed-plug-ins"></a>用于开发 PSHED 插件的路线图
 
@@ -30,7 +30,7 @@ PSHED 插件还可与平台固件使用由平台供应商定义的专用接口�
 
     您必须首先了解驱动程序在 Windows 操作系统中的工作原理的基础知识。 了解基础知识将帮助你做出适当的设计决策，还可以简化开发过程。
 
-    有关驱动程序的基本原理的详细信息，请参阅[了解驱动程序和操作系统的基础知识](https://msdn.microsoft.com/library/windows/hardware/ff554731)。
+    有关驱动程序的基本原理的详细信息，请参阅[了解驱动程序和操作系统的基础知识](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)。
 
 -   步骤 2：了解基础知识的 Windows 硬件错误体系结构 (WHEA)。
 
@@ -44,9 +44,9 @@ PSHED 插件还可与平台固件使用由平台供应商定义的专用接口�
 
     构建一个驱动程序不是与构建在用户模式应用程序相同。
 
-    有关 Windows 驱动程序生成、 调试和测试过程，驱动程序签名，和 Windows 徽标测试的信息，请参阅[构建、 调试和测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)。
+    有关 Windows 驱动程序生成、 调试和测试过程，驱动程序签名，和 Windows 徽标测试的信息，请参阅[构建、 调试和测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
-    了解有关生成，测试、 验证和调试工具，请参阅[驱动程序开发工具](https://msdn.microsoft.com/library/windows/hardware/ff545440)。
+    了解有关生成，测试、 验证和调试工具，请参阅[驱动程序开发工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)。
 
 -   步骤 4：请设计决策有关你 PSHED 插件。
 
@@ -67,12 +67,12 @@ PSHED 插件还可与平台固件使用由平台供应商定义的专用接口�
     -   有关开发 PSHED 插件的指南，请参阅[PSHED 插件准则](pshed-plug-in-guidelines.md)。
     -   有关如何生成 PSHED 插件的信息，请参阅[构建 PSHED 插件](building-a-pshed-plug-in.md)。
     -   有关可用于调试 PSHED 插件的 WHEA 调试器扩展的信息，请参阅[Windows 硬件错误体系结构调试器扩展](windows-hardware-error-architecture-debugger-extensions.md)。
-    -   有关迭代构建、 测试和调试的信息，请参阅[概述的构建、 调试和测试过程](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)。
+    -   有关迭代构建、 测试和调试的信息，请参阅[概述的构建、 调试和测试过程](https://docs.microsoft.com/windows-hardware/drivers)。
 -   步骤 6：驱动程序包为创建你 PSHED 插件。
 
-    PSHED 插件是一个 WDM 驱动程序。 与其他 WDM 驱动程序，PSHED 插件安装后通过使用[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)。
+    PSHED 插件是一个 WDM 驱动程序。 与其他 WDM 驱动程序，PSHED 插件安装后通过使用[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)。
 
-    有关驱动程序包的详细信息，请参阅[提供一个驱动程序包](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)。
+    有关驱动程序包的详细信息，请参阅[提供一个驱动程序包](https://docs.microsoft.com/windows-hardware/drivers)。
 
     有关如何为 PSHED 插件安装驱动程序包的详细信息，请参阅[PSHED 插件安装](pshed-plug-in-installation.md)。
 

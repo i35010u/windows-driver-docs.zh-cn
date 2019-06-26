@@ -12,12 +12,12 @@ keywords:
 - 照相机 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 052c22163d86ebb35a975a3bbbcca58ec65c31f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b17b5a84e77abc3f92ce0bb3dcc1cdcd332a2dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382525"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377725"
 ---
 # <a name="usb-based-camera-with-a-capture-button"></a>带捕获按钮的基于 USB 的摄像机
 
@@ -34,7 +34,7 @@ Microsoft 还提供了[USBCAMD 微型驱动程序库](usbcamd-minidriver-library
 
 在图中，仍处于 pin 将流式传输单个映像时用户将推送到相机按钮。 或者，可以通过编程控制触发仍 pin。
 
-生成上仍映像体系结构 (STI) 的 Windows 图像采集 (WIA) 技术是补充 USBCAMD 提供的功能。 请参阅[Windows 图像采集驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff553346)并[仍映像驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff548278)有关详细信息。
+生成上仍映像体系结构 (STI) 的 Windows 图像采集 (WIA) 技术是补充 USBCAMD 提供的功能。 请参阅[Windows 图像采集驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)并[仍映像驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/still-image-drivers)有关详细信息。
 
 WIA 视频快照筛选器是随 Microsoft Windows XP 和更高版本操作系统的 WIA 的补充。 WIA 视频快照筛选器仍使视频流中要捕获的帧。
 

@@ -8,12 +8,12 @@ keywords:
 - SRB_FUNCTION_XXX 供将来使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecd4fbbcf8eb0b72057ca48c53f1550450723d23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e49772ea85345a30585d8d76f895d547cbd5d2d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384653"
 ---
 # <a name="other-srbfunctionxxx-requests"></a>其他 SRB\_函数\_XXX 请求
 
@@ -49,7 +49,7 @@ ms.locfileid: "63389425"
 
 微型端口驱动程序设计器可以假定其微型端口驱动程序将*永远不会*发送与立即上述任一 SRB**函数**值。 基于 NT 的操作系统端口驱动程序将处理这些请求存储类和筛选器驱动程序，以防止更高级别的驱动程序无需访问任何特定于 HBA 的 （或微型端口驱动程序特定） 的状态信息以查找其设备，或取消排队的请求。 这可确保基于 NT 的操作系统存储类和筛选器驱动程序 HBA 任何特定模型没有任何依赖关系。
 
-请参阅[ **SCSI\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff565393)结构的详细信息。
+请参阅[ **SCSI\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)结构的详细信息。
 
  
 

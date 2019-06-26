@@ -4,12 +4,12 @@ description: 固定 MDL 检查堆栈选项监视驱动程序如何跨驱动程�
 ms.assetid: AB27803A-6B3A-40FA-B962-79B0DA2F5FA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f54c83c39bc3935033de21060aea1c3319877ea8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 173c8e9266184942287b4d588479275bd56566e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373710"
 ---
 # <a name="invariant-mdl-checking-for-stack"></a>面向堆栈的固定 MDL 检查
 
@@ -22,11 +22,11 @@ ms.locfileid: "63350519"
 
 固定 MDL 检查的堆栈选项可确保驱动程序遵循的规则，用于固定 MDL 缓冲区只能在点请求将脱离驱动程序堆栈。
 
-第一次使用固定 MDL 示 IRP [ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)例程，唯一的签名是从固定 MDL 缓冲区的内容计算和存储在内部数据库中。 期间完成中 IRP [ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)缓冲区未更改的例程，如果 IRP 仍包含我们记录其签名，固定 MDL 驱动程序验证程序验证。
+第一次使用固定 MDL 示 IRP [ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)例程，唯一的签名是从固定 MDL 缓冲区的内容计算和存储在内部数据库中。 期间完成中 IRP [ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)缓冲区未更改的例程，如果 IRP 仍包含我们记录其签名，固定 MDL 驱动程序验证程序验证。
 
-固定缓冲区，用于写入请求，不能修改整个 IRP 的整个生存期。 对于读取请求，固定缓冲区无法修改其调度路径，以便在上次调用完成的缓冲区签名进行比较[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+固定缓冲区，用于写入请求，不能修改整个 IRP 的整个生存期。 对于读取请求，固定缓冲区无法修改其调度路径，以便在上次调用完成的缓冲区签名进行比较[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
 
-固定 MDL 检查堆栈选项验证 MDL 缓冲区不变性跨整个驱动程序堆栈，而不考虑将在堆栈中的单个驱动程序通过传递，该缓冲区会发生什么情况。 此选项是全局的并且不能有选择地强制实施在每个驱动程序的基础上。 固定 MDL 检查堆栈选项仅可以捕获该冲突，而不需要能够准确找出违反缓冲区不变性的驱动程序。 若要帮助找出错误的驱动程序，请使用[驱动程序检查固定 MDL](invariant-mdl-checking-for-driver.md)选项，将在每次调用上执行验证的不变性缓冲区的内容[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)并[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) DDIs。
+固定 MDL 检查堆栈选项验证 MDL 缓冲区不变性跨整个驱动程序堆栈，而不考虑将在堆栈中的单个驱动程序通过传递，该缓冲区会发生什么情况。 此选项是全局的并且不能有选择地强制实施在每个驱动程序的基础上。 固定 MDL 检查堆栈选项仅可以捕获该冲突，而不需要能够准确找出违反缓冲区不变性的驱动程序。 若要帮助找出错误的驱动程序，请使用[驱动程序检查固定 MDL](invariant-mdl-checking-for-driver.md)选项，将在每次调用上执行验证的不变性缓冲区的内容[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)并[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) DDIs。
 
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 

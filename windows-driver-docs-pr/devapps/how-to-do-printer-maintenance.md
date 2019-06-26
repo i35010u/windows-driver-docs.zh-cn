@@ -4,12 +4,12 @@ description: 在 Windows 8.1 UWP 设备应用程序可以执行打印机维护�
 ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20471a126d170cfbc779250a4d2dc6af3bf1d765
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1288d4566c91c52f74a8e31cab779be386144df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387923"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369356"
 ---
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>如何执行 UWP 设备应用中的打印机维护
 
@@ -25,7 +25,7 @@ C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlin
 ## <a name="span-idprintermaintenancespanspan-idprintermaintenancespanspan-idprintermaintenancespanprinter-maintenance"></a><span id="Printer_maintenance"></span><span id="printer_maintenance"></span><span id="PRINTER_MAINTENANCE"></span>打印机的维护
 
 
-Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备维护 v4 打印机驱动程序中：[**IPrinterBidiSetRequestCallback**](https://msdn.microsoft.com/library/windows/hardware/dn265385)， [ **IPrinterExtensionAsyncOperation** ](https://msdn.microsoft.com/library/windows/hardware/dn265387) ，以及[ **IPrinterQueue2** ](https://msdn.microsoft.com/library/windows/hardware/dn265389). 这些接口使能够以异步方式将 Bidi 请求发送到端口监视器，以便他们可以转换为设备和特定于协议的命令，然后发送到打印机。 有关详细信息，请参阅[设备维护 （v4 打印机驱动程序）](https://msdn.microsoft.com/library/windows/hardware/dn265274)。
+Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备维护 v4 打印机驱动程序中：[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)， [ **IPrinterExtensionAsyncOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation) ，以及[ **IPrinterQueue2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2). 这些接口使能够以异步方式将 Bidi 请求发送到端口监视器，以便他们可以转换为设备和特定于协议的命令，然后发送到打印机。 有关详细信息，请参阅[设备维护 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)。
 
 **提示**   C#和 JavaScript 应用程序不能直接使用 COM Api。 如果您要编写C#或 JavaScript UWP 设备应用，使用打印机扩展库来访问这些接口 （如本主题中所示）。
 
@@ -211,7 +211,7 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 以下步骤生成您的应用程序并安装设备元数据。
 
 1.  启用测试签名。
-    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
+    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
     2.  从**工具**菜单中，选择**启用测试签名**。
 
 2.  重新启动计算机
@@ -223,7 +223,7 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 
      
 
-    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
+    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
     2.  单击**编辑设备元数据**。 这样就可以编辑现有的设备元数据包。
     3.  在中**打开**对话框框中，找到与 UWP 设备应用程序相关联的设备元数据包。 (它具有**devicemetadata ms**文件扩展名。)
     4.  上**指定 UWP 设备应用信息**页上，输入中的 Microsoft Store 应用信息**UWP 设备应用**框。 单击**导入 UWP 应用程序清单文件**自动输入**包名称**，**发布服务器的名称**，以及**UWP 应用程序 ID**。
@@ -237,7 +237,7 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[设备维护 （v4 打印机驱动程序）](https://msdn.microsoft.com/library/windows/hardware/dn265274)
+[设备维护 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 

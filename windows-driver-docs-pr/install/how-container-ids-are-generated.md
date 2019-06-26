@@ -4,12 +4,12 @@ description: 如何生成容器 ID
 ms.assetid: baa3c045-05ee-4012-97a3-c6e575c897be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59224a00be8a9686389c0b859e6b2da65ae1a811
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f58a9839611130670b1b6c9bf0236530ba8e3b51
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325819"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386408"
 ---
 # <a name="how-container-ids-are-generated"></a>如何生成容器 ID
 
@@ -18,7 +18,7 @@ ms.locfileid: "63325819"
 
 -   总线驱动程序提供容器 id。
 
-    将容器 ID 分配给 devnode，即插即用管理器首先检查是否 devnode 的总线驱动程序可以提供一个容器 id。 总线驱动程序提供容器 ID 通过[ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)请求**Parameters.QueryId.IdType**字段设置为**BusQueryContainerID**.
+    将容器 ID 分配给 devnode，即插即用管理器首先检查是否 devnode 的总线驱动程序可以提供一个容器 id。 总线驱动程序提供容器 ID 通过[ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)请求**Parameters.QueryId.IdType**字段设置为**BusQueryContainerID**.
 
     总线驱动程序可以获取物理设备硬件中嵌入的正版容器 ID 或使用来自设备硬件的特定于总线的唯一 ID 生成的容器 id。 特定于总线的唯一 Id 的一些示例包括设备的序列号或设备的固件中的媒体访问控制 (MAC) 地址。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63325819"
 
 -   PnP 管理器生成通过可移动设备功能的容器 ID。
 
-    如果总线驱动程序不能为它枚举 devnode 提供容器的 ID，即插即用 manager 将使用可移动设备功能来生成所有 devnodes 枚举设备的容器 ID。 总线驱动程序报告此设备功能，以响应[ **IRP_MN_QUERY_CAPABILITIES** ](https://msdn.microsoft.com/library/windows/hardware/ff551664)请求。
+    如果总线驱动程序不能为它枚举 devnode 提供容器的 ID，即插即用 manager 将使用可移动设备功能来生成所有 devnodes 枚举设备的容器 ID。 总线驱动程序报告此设备功能，以响应[ **IRP_MN_QUERY_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)请求。
 
     有关详细信息，请参阅[从可移动设备功能生成的容器 Id](container-ids-generated-from-the-removable-device-capability.md)。
 

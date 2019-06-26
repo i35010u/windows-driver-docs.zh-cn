@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e41994d78d57e5049dc0efd1d7bb43aab1a64637
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6079d205c06c04cf15940a15bb4660a733a9e6f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373701"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386514"
 ---
 # <a name="publishing-messages"></a>发布消息
 
@@ -39,6 +39,6 @@ NFP 模型旨在支持短 （并因此快速传输） 的消息，通常不超�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

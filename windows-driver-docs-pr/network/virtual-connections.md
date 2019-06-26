@@ -9,12 +9,12 @@ keywords:
 - 有关虚拟连接的虚拟连接 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6820b06a00bcfb7211dd1de311f6427d0fe79967
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4112c0eb5f54c3ff2bce50b2ff4cc6babdf4f265
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373219"
 ---
 # <a name="virtual-connections"></a>虚拟连接
 
@@ -32,7 +32,7 @@ ms.locfileid: "63377889"
 
 -   SVC 创建所需的特定调用。 例如，面向连接的客户端启动的传出调用，它会使 VC 的创建。 同样，呼叫管理器或 MCM 驱动程序启动它会指示面向连接的客户端的传入呼叫的 VC 的创建。 呼叫管理器或 MCM 驱动程序必须进行通信，并有时协商与远程方 VC 参数。
 
--   永久 VC 手动创建，并最终删除通过使用配置实用程序，它不提供在 NDIS 运算符。 可以使用客户端，用于监视此类手动创建和删除的 Pvc [OID\_共同\_添加\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569087)并[OID\_共同\_删除\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569090) Oid 请求呼叫管理器或 MCM 驱动程序添加或删除 PVC 到或从其已配置 Pvc 的列表。 有关 PVC QoS 由操作员配置，并通过网络不协商。
+-   永久 VC 手动创建，并最终删除通过使用配置实用程序，它不提供在 NDIS 运算符。 可以使用客户端，用于监视此类手动创建和删除的 Pvc [OID\_共同\_添加\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-add-pvc)并[OID\_共同\_删除\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-delete-pvc) Oid 请求呼叫管理器或 MCM 驱动程序添加或删除 PVC 到或从其已配置 Pvc 的列表。 有关 PVC QoS 由操作员配置，并通过网络不协商。
 
 在 NDIS，VC 包括由维护有关 VC 网络上的状态信息的微型端口驱动程序分配的资源。 这些资源可能包括但不限于内存缓冲区、 事件和数据结构。 微型端口驱动程序请求的传入呼叫管理器为 VC 面向连接的客户端的传出调用或调用创建此类上下文。 有关创建 VCs 的详细信息，请参阅[创建 VC](creating-a-vc.md)。
 

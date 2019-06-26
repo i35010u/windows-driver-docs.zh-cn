@@ -4,12 +4,12 @@ description: 过程介绍如何在 Visual Studio 中查看调用堆栈
 ms.assetid: 060A2441-C1A7-4485-82E5-2C024E6A3FBE
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 96e9de51ed45073a29f8ba2dd4f09b2ccb687d40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a094c36fca13ac50a6f251713af3e4150758d4ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369466"
 ---
 # <a name="viewing-the-call-stack-in-visual-studio"></a>在 Visual Studio 中查看调用堆栈
 
@@ -17,7 +17,7 @@ ms.locfileid: "63325903"
 > 此功能不在 Windows 10，版本 1507年和更高版本的 WDK 中可用。
 >
 
-本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://msdn.microsoft.com/library/windows/hardware/ff557573)。
+本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://docs.microsoft.com/windows-hardware/drivers/)。
 
 ## <a name="span-idusingthecallstackwindowspanspan-idusingthecallstackwindowspanspan-idusingthecallstackwindowspanusing-the-call-stack-window"></a><span id="Using_the_Call_Stack_Window"></span><span id="using_the_call_stack_window"></span><span id="USING_THE_CALL_STACK_WINDOW"></span>使用调用堆栈窗口
 

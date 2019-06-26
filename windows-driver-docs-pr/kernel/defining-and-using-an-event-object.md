@@ -9,12 +9,12 @@ keywords:
 - 通知事件 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40431afc5dd1a2b8117c519cfbb916338c20bf46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d4726b782b71c784f60f1e5b682647c4671cb31
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377120"
 ---
 # <a name="defining-and-using-an-event-object"></a>定义和使用事件对象
 
@@ -22,7 +22,7 @@ ms.locfileid: "63388252"
 
 
 
-使用一个事件对象的任何驱动程序必须调用[ **KeInitializeEvent**](https://msdn.microsoft.com/library/windows/hardware/ff552137)， [ **IoCreateNotificationEvent**](https://msdn.microsoft.com/library/windows/hardware/ff549039)，或[**IoCreateSynchronizationEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff549045)等待之前，请设置、 清除，或重置该事件。 下图说明了如何与线程的驱动程序可以使用一个事件对象进行同步。
+使用一个事件对象的任何驱动程序必须调用[ **KeInitializeEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeevent)， [ **IoCreateNotificationEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatenotificationevent)，或[**IoCreateSynchronizationEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesynchronizationevent)等待之前，请设置、 清除，或重置该事件。 下图说明了如何与线程的驱动程序可以使用一个事件对象进行同步。
 
 ![说明等待一个事件对象的关系图](images/3evntobj.png)
 
@@ -38,23 +38,23 @@ ms.locfileid: "63388252"
 
 -   **NotificationEvent**
 
-    当*通知事件*设置为用信号通知状态，在等待着要重置为未用信号通知的事件的所有线程有资格成为执行和事件到显式重置前保持用信号通知状态不发出信号发生： 即，没有调用[ **KeClearEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff551980)或[ **KeResetEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff553176)与给定*事件*指针。
+    当*通知事件*设置为用信号通知状态，在等待着要重置为未用信号通知的事件的所有线程有资格成为执行和事件到显式重置前保持用信号通知状态不发出信号发生： 即，没有调用[ **KeClearEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keclearevent)或[ **KeResetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keresetevent)与给定*事件*指针。
 
 几个设备或中间驱动程序有一个驱动程序专用线程，让我们单独一组可能会等待进行保护的共享的资源的事件同步其操作的线程。
 
-使用事件对象以等待 I/O 操作的完成设置输入的大多数驱动程序*类型*到**notificationevent 将**当它们调用**KeInitializeEvent**。 事件对象设置为一个驱动程序将创建具有的 Irp [ **IoBuildSynchronousFsdRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548330)或[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)几乎总是初始化为**notificationevent 将**因为调用方将等待一个或多个较低级别驱动程序，满足其请求的通知的事件。
+使用事件对象以等待 I/O 操作的完成设置输入的大多数驱动程序*类型*到**notificationevent 将**当它们调用**KeInitializeEvent**。 事件对象设置为一个驱动程序将创建具有的 Irp [ **IoBuildSynchronousFsdRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)或[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)几乎总是初始化为**notificationevent 将**因为调用方将等待一个或多个较低级别驱动程序，满足其请求的通知的事件。
 
 后驱动程序已初始化自身，其驱动程序专用的线程，如果有，和其他例程可以同步其事件的操作。 例如，与管理系统软盘控制器驱动程序，如队列 Irp，线程的驱动程序可能同步 IRP 处理事件，如在上图中所示：
 
-1.  线程已取消排队的设备上处理 IRP，调用[ **KeWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)用一个指针指向已初始化的事件对象的驱动程序提供存储。
+1.  线程已取消排队的设备上处理 IRP，调用[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)用一个指针指向已初始化的事件对象的驱动程序提供存储。
 
-2.  其他驱动程序例程执行设备满足 IRP，和这些操作都完成后，驱动程序的所需的 I/O 操作数[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)例程调用[ **KeSetEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff553253)用一个指针指向事件对象，驱动程序确定优先级提升线程 (*增量*，如在上图中所示)，和一个布尔值*等待*设置为**FALSE**。 调用**KeSetEvent**将事件对象设置为用信号通知状态，从而更改正在等待线程的状态变为就绪。
+2.  其他驱动程序例程执行设备满足 IRP，和这些操作都完成后，驱动程序的所需的 I/O 操作数[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程调用[ **KeSetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesetevent)用一个指针指向事件对象，驱动程序确定优先级提升线程 (*增量*，如在上图中所示)，和一个布尔值*等待*设置为**FALSE**。 调用**KeSetEvent**将事件对象设置为用信号通知状态，从而更改正在等待线程的状态变为就绪。
 
 3.  内核为处理器可调度线程中的执行： 即，具有较高优先级没有其他线程当前处于就绪状态和有要在更高版本的 IRQL 运行没有内核模式例程。
 
     该线程现在可以完成 IRP 如果*DpcForIsr*但调用**IoCompleteRequest**与 IRP，和可以取消排队的另一个 IRP，若要在设备上进行处理。
 
-调用**KeSetEvent**与*等待*参数设置为**TRUE**指示调用方的意图立即调用[ **KeWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)或[ **KeWaitForMultipleObjects** ](https://msdn.microsoft.com/library/windows/hardware/ff553324)支持例程返回时从**KeSetEvent**。
+调用**KeSetEvent**与*等待*参数设置为**TRUE**指示调用方的意图立即调用[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)或[ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)支持例程返回时从**KeSetEvent**。
 
 **请考虑下面的设置的指导***等待***参数 toKeSetEvent:**
 

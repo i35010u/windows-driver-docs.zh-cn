@@ -9,12 +9,12 @@ keywords:
 - 注册表 WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 880b5c596cd16d4b3ebdb8585a47e370570a9b2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0f71193b94d7c91e83ebf8d5529959f18b11695
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391380"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377811"
 ---
 # <a name="stream-class-registry-values"></a>流类注册表值
 
@@ -22,7 +22,7 @@ ms.locfileid: "63391380"
 
 
 
-若要安装下的微型驱动程序*Stream.sys*，供应商必须提供符合的特定于设备的 INF 文件[泛型 INF 文件要求](https://msdn.microsoft.com/library/windows/hardware/ff547433)。 在此文件中，流类下运行的微型驱动程序可以设置中特定于设备的特殊的注册表值[ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)部分。 这些注册表项提供作为二进制指示符： 将其设置为十六进制值 01 以启用功能。
+若要安装下的微型驱动程序*Stream.sys*，供应商必须提供符合的特定于设备的 INF 文件[泛型 INF 文件要求](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。 在此文件中，流类下运行的微型驱动程序可以设置中特定于设备的特殊的注册表值[ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)部分。 这些注册表项提供作为二进制指示符： 将其设置为十六进制值 01 以启用功能。
 
 Stream 类微型驱动程序可以使用以下注册表值：
 
@@ -38,7 +38,7 @@ Stream 类微型驱动程序可以使用以下注册表值：
 在 Windows 9 上支持以下标志 x，但在基于 NT 的操作系统中已过时：
 
 <a href="" id="dontsuspendifstreamsarerunning"></a>**DontSuspendIfStreamsAreRunning**  
-此注册表变量是在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。 （截至此版本中，DirectShow 侦听 power 查询，并且当它收到低功耗查询中的所有流都加入暂停。）应用程序仍可以通知正在使用它通过调用系统**SetThreadExecutionState**。 此例程是 Microsoft Windows SDK 文档中所述。 或者，可以使用驱动程序[ **PoSetSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559768)。
+此注册表变量是在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。 （截至此版本中，DirectShow 侦听 power 查询，并且当它收到低功耗查询中的所有流都加入暂停。）应用程序仍可以通知正在使用它通过调用系统**SetThreadExecutionState**。 此例程是 Microsoft Windows SDK 文档中所述。 或者，可以使用驱动程序[ **PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)。
 
 <a href="" id="oktohibernate"></a>**OkToHibernate**  
 此注册表字符串值仅对于驱动程序运行于 Windows 98 上有效。 在基于 NT 的操作系统中不使用它。

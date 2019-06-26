@@ -5,12 +5,12 @@ ms.assetid: 3ed26e62-a285-4b78-91c6-7c3cc0963570
 ms.date: 08/08/2017
 keywords: -OID_GEN_MEDIA_CONNECT_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 72575278de3943b532989997a37fd8f3e8afcfa3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 991e796be503fc0acff52df400c9819dcfbcd805
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358745"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369037"
 ---
 # <a name="oidgenmediaconnectstatus"></a>OID\_GEN\_媒体\_CONNECT\_状态
 
@@ -45,7 +45,7 @@ OID\_GEN\_媒体\_CONNECT\_状态 OID 请求在网络上的 NIC 的连接状态�
 
 **NdisMediaStateDisconnected**
 
-当微型端口驱动程序检测到的网络连接已丢失时，它还必须调用[ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)或[ **NdisMCoIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563562)函数使用 NDIS\_状态\_媒体\_（适用于 NDIS 5.1) 断开连接或 NDIS\_状态\_链接\_具有状态**MediaConnectStateDisconnected** MediaConnectState 属性中 (ndis 6.x)。 当恢复连接时，然后必须调用**NdisM (Co) IndicateStatus**使用 NDIS\_状态\_媒体\_（适用于 NDIS 5.1) 连接或 NDIS\_状态\_链接\_具有状态**MediaConnectStateConnected** MediaConnectState 属性中 (ndis 6.x)。
+当微型端口驱动程序检测到的网络连接已丢失时，它还必须调用[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)或[ **NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)函数使用 NDIS\_状态\_媒体\_（适用于 NDIS 5.1) 断开连接或 NDIS\_状态\_链接\_具有状态**MediaConnectStateDisconnected** MediaConnectState 属性中 (ndis 6.x)。 当恢复连接时，然后必须调用**NdisM (Co) IndicateStatus**使用 NDIS\_状态\_媒体\_（适用于 NDIS 5.1) 连接或 NDIS\_状态\_链接\_具有状态**MediaConnectStateConnected** MediaConnectState 属性中 (ndis 6.x)。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,9 +66,9 @@ OID\_GEN\_媒体\_CONNECT\_状态 OID 请求在网络上的 NIC 的连接状态�
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisMCoIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563562)
+[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)
 
-[**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

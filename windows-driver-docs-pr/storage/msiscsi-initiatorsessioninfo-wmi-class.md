@@ -4,12 +4,12 @@ description: MSiSCSI\_InitiatorSessionInfo WMI 类
 ms.assetid: 73053af8-80b0-4cab-8e27-c651be8f0e8c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 490df49cdd7a4b91efc18ebc0e2a56d2ccfad2f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44a2e52a194b57d50885f2ba20f15f54af2e7ce5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370429"
 ---
 # <a name="msiscsiinitiatorsessioninfo-wmi-class"></a>MSiSCSI\_InitiatorSessionInfo WMI 类
 
@@ -47,7 +47,7 @@ class MSiSCSI_InitiatorSessionInfo {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_InitiatorSessionInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff563054)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_InitiatorSessionInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_initiatorsessioninfo)数据结构。
 
  
 

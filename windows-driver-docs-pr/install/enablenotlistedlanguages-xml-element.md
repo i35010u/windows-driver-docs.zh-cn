@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9aeed2c3718fc679de8b72f52ce705a1dc914779
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0882c2449bf3fe070642464c548187653148ab14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375009"
 ---
 # <a name="enablenotlistedlanguages-xml-element"></a>enableNotListedLanguages XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **EnableNotListedLanguages** XML 元素为空元素，用于设置**enableNotListedLanguages**标志为 ON，将配置 DPInst 若要启用的所有不受支持语言通过显式启用[**语言**](language-xml-element.md)中的 XML 元素*DPInst.xml*文件。
 

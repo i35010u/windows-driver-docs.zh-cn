@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 65d63e3469b6e18f58eebcbbe245f81364156828
-ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
+ms.openlocfilehash: 6efbf791848c434cd3c55113496f411adb6338fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366902"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 
 
-**Dx**命令将显示C++使用 NatVis 扩展模型表达式。 NatVis 有关详细信息，请参阅[创建本机对象的自定义视图](https://msdn.microsoft.com/library/jj620914.aspx)。
+**Dx**命令将显示C++使用 NatVis 扩展模型表达式。 NatVis 有关详细信息，请参阅[创建本机对象的自定义视图](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]

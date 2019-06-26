@@ -7,12 +7,12 @@ keywords:
 - 枚举关键字 WDK NDIS 微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f9af3bddfb3d8786db8da8b0b953f5dc84b9ce
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 7db8feca170edc2f17035b7b46bd9cfee2d19aa9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384564"
 ---
 # <a name="enumeration-keywords"></a>枚举关键字
 
@@ -55,7 +55,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
 **请注意**  以太网设备现在支持流控制和 LAN 的 Windows 8 内置驱动程序具有默认情况下启用的流控制。 当内核调试程序附加到这些 LAN 适配器之一时，NIC 将开始将流控制暂停帧推送到网络。 大多数网络交换机将通过暂时关闭的所有其他计算机连接到相同的中心的网络响应。 这是常见开发方案中，并且最终用户体验是不必要和难以进行诊断。
 
-出于此原因，在 Windows 8 和更高版本，NDIS 将禁用流控制，自动在计算机上启用调试时 (例如，通过键入**bcdedit /set 上进行调试**在命令行)。 当启用内核调试和微型端口调用[ **NdisReadConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff564511) ，并将传递"\*FlowControl"对于*关键字*参数，NDIS 将重写的配置的值并返回零。
+出于此原因，在 Windows 8 和更高版本，NDIS 将禁用流控制，自动在计算机上启用调试时 (例如，通过键入**bcdedit /set 上进行调试**在命令行)。 当启用内核调试和微型端口调用[ **NdisReadConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration) ，并将传递"\*FlowControl"对于*关键字*参数，NDIS 将重写的配置的值并返回零。
 
 如果您需要调试时启用流控制，提供了 NDIS **AllowFlowControlUnderDebugger**注册表值以允许您执行该操作。 **AllowFlowControlUnderDebugger**注册表值阻止 NDIS 禁用流控制，并允许 Nic 来保持其已配置的行为。 它可以找到以下注册表项下：
 
@@ -71,7 +71,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 一个值，指示设备是否已启用或禁用插入 802.1Q 标记数据包优先级和虚拟 Lan (Vlan)。 此关键字不指示设备是启用还是禁用数据包优先级或 VLAN 标记。 相反，它介绍了以下任务：
 
 -   设备是否插入 802.1Q 标记发送操作期间
--   是否 802.1Q 标记信息现已推出[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)带外 (OOB) 的信息
+-   是否 802.1Q 标记信息现已推出[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)带外 (OOB) 的信息
 -   设备副本 802.1Q 标记到 OOB 期间是否接收操作
 
 微型端口驱动程序应删除 802.1Q 中所有标头接收数据包而不考虑 **\*PriorityVLANTag**设置。 如果 802.1Q 标头会保留在一个数据包、 其他驱动程序可能无法正确分析数据包。
@@ -83,12 +83,12 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 如果传输路径上启用了 Tx 标志，微型端口驱动程序应执行以下操作：
 
 -   插入 802.1Q 标头到每个传出数据包，并填充 OOB 中的数据 （如果 OOB 中存在任何非零值数据）。
--   播发适当**MacOptions**中[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923) (**NDIS\_MAC\_选项\_8021 P\_优先级**并**NDIS\_MAC\_选项\_8021Q\_VLAN**)。
+-   播发适当**MacOptions**中[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) (**NDIS\_MAC\_选项\_8021 P\_优先级**并**NDIS\_MAC\_选项\_8021Q\_VLAN**)。
 
 否则为如果禁用 Tx 标志，然后：
 
 -   微型端口筛选器不应接受 802.1Q OOB 中的信息 （并因此不插入任何标记）。
--   微型端口筛选器不应将播发适当**MacOptions**中[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923).
+-   微型端口筛选器不应将播发适当**MacOptions**中[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes).
 
 **请注意**  如果微型端口驱动程序支持 NDIS 服务质量 (QoS)，它还必须读取 **\*QOS**关键字值。 基于 **\*QOS**关键字值 **\*PriorityVLANTag**关键字值将以不同的方式解释。 有关详细信息，请参阅[NDIS QoS 的标准化 INF 关键字](standardized-inf-keywords-for-ndis-qos.md)。
 
@@ -175,7 +175,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>

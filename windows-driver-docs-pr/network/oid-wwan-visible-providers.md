@@ -5,12 +5,12 @@ ms.assetid: 4dfd4477-6332-4163-8b3e-a1604b11d175
 ms.date: 08/08/2017
 keywords: -OID_WWAN_VISIBLE_PROVIDERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c89393ed05e71b34bc042167077da386607d814d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 280603e53f8f1505f342d91b568a9fea2867e98d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385486"
 ---
 # <a name="oidwwanvisibleproviders"></a>OID\_WWAN\_VISIBLE\_提供程序
 
@@ -19,7 +19,7 @@ OID\_WWAN\_VISIBLE\_提供程序返回一系列网络提供商的 MB 设备的�
 
 不支持组的请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_VISIBLE\_提供程序**](ndis-status-wwan-visible-providers.md)状态通知包含[ **NDIS\_WWAN\_可见\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567948)结构，以完成查询请求时提供可见的网络提供程序的信息。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_VISIBLE\_提供程序**](ndis-status-wwan-visible-providers.md)状态通知包含[ **NDIS\_WWAN\_可见\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)结构，以完成查询请求时提供可见的网络提供程序的信息。
 
 *查询*请求指定 NDIS\_WWAN\_获取\_VISIBLE\_作为输入提供程序结构。 当**操作**WWAN 中的成员\_获取\_VISIBLE\_提供程序设置为 WWAN\_获取\_VISIBLE\_提供程序\_所有微型端口应返回所有可见的提供程序。 当**操作**WWAN 中的成员\_获取\_VISIBLE\_提供程序设置为 WWAN\_获取\_VISIBLE\_提供程序\_多运营商微型端口应仅返回可以为家庭的提供程序设置的可见多运营商提供程序。
 
@@ -30,7 +30,7 @@ OID\_WWAN\_VISIBLE\_提供程序返回一系列网络提供商的 MB 设备的�
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)。
+有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)。
 
 微型端口驱动程序可以访问用户识别模块 （SIM 卡） 当处理查询操作，但不是应访问提供程序网络。
 
@@ -65,11 +65,11 @@ OID\_WWAN\_VISIBLE\_提供程序返回一系列网络提供商的 MB 设备的�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_VISIBLE\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567948)
+[**NDIS\_WWAN\_VISIBLE\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)
 
 [**NDIS\_状态\_WWAN\_VISIBLE\_提供程序**](ndis-status-wwan-visible-providers.md)
 
-[WWAN 提供程序操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)
+[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 
  
 

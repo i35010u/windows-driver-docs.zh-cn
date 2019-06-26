@@ -11,12 +11,12 @@ keywords:
 - SAN 服务提供商 WDK，代理驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfabd7a3321436740cab7fe58a95e2bd7323e71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54a6c6ec198c82a1232caf38b2ec81949eb3061e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374924"
 ---
 # <a name="creating-a-proxy-driver-for-a-san-service-provider"></a>为 SAN 服务提供程序创建代理驱动程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "63357361"
 
 
 
-SAN 服务提供程序的代理驱动程序是一个内核模式驱动程序执行任务所需的 Windows 套接字开关和 SAN 服务提供商。 此类任务包括管理内存和确定代理驱动程序的控制下的网络接口控制器 (Nic) 的 IP 地址。 代理驱动程序不需要是 Windows 驱动程序模型 (WDM) 驱动程序。 也就是说，不需要支持插或电源管理。 有关开发的内核模式驱动程序的详细信息，请参阅[内核模式驱动程序组件](https://msdn.microsoft.com/library/windows/hardware/ff553213)。
+SAN 服务提供程序的代理驱动程序是一个内核模式驱动程序执行任务所需的 Windows 套接字开关和 SAN 服务提供商。 此类任务包括管理内存和确定代理驱动程序的控制下的网络接口控制器 (Nic) 的 IP 地址。 代理驱动程序不需要是 Windows 驱动程序模型 (WDM) 驱动程序。 也就是说，不需要支持插或电源管理。 有关开发的内核模式驱动程序的详细信息，请参阅[内核模式驱动程序组件](https://docs.microsoft.com/windows-hardware/drivers/kernel/kernel-mode-driver-components)。
 
 不同供应商可能使用不同的基础技术来实现其 SAN 网络接口控制器 (Nic)，因此 Windows 套接字直接未指定代理服务器之间或 SAN 服务提供程序和其代理驱动程序之间的接口驱动程序和 SAN 传输。
 

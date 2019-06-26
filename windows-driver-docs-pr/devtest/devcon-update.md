@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2922b2e9a0cd45183bf56d1b4145437133f1d956
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6a6eb4e267c054a8c9ae92008b2a67ac439f2db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371526"
 ---
 # <a name="devcon-update"></a>DevCon Update
 
@@ -38,11 +38,11 @@ ms.locfileid: "63346998"
 指定此更新中使用的 INF （信息） 文件的完整路径和文件名。 如果省略路径，DevCon 假定该文件位于当前目录。
 
 <span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span> *HardwareID*   
-使用指定的硬件 id。 更新设备驱动的程序 此命令中指定的硬件 ID 必须完全符合设备的硬件 ID。 模式不是有效的。 请不要键入一个单引号字符 () 以指示文本值。
+使用指定的硬件 id。 更新设备驱动的程序 此命令中指定的硬件 ID 必须完全符合设备的硬件 ID。 模式不是有效的。 请不要键入一个单引号字符 (  ) 以指示文本值。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 
-**DevCon 更新**操作强制更新到最合适的驱动程序中指定的 INF 文件，即使这些驱动程序是较旧或比当前驱动程序或不同的 INF 文件中的驱动程序不太合适。 有关详细信息，请参阅[安装程序如何选择驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff546228)。
+**DevCon 更新**操作强制更新到最合适的驱动程序中指定的 INF 文件，即使这些驱动程序是较旧或比当前驱动程序或不同的 INF 文件中的驱动程序不太合适。 有关详细信息，请参阅[安装程序如何选择驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-selects-drivers)。
 
 不能使用**DevCon 更新**命令以更新虚幻设备的驱动程序。
 

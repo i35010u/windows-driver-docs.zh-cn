@@ -7,12 +7,12 @@ keywords:
 - 串行设备 WDK、 COM 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77f94f917f6b9e3606675a560edae0318ceb1ad1
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 3e8674845e1aa7fcd310e63808e1d7a85bb69284
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836337"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380632"
 ---
 # <a name="configuration-of-com-ports"></a>COM 端口的配置
 
@@ -24,6 +24,6 @@ ms.locfileid: "65836337"
 
 - 若要确保兼容的大多数应用程序访问 COM 端口，应分配使用标准命名约定的符号链接名称"COM<em>&lt;n&gt;</em>"，其中 *&lt;n&gt;* 是 COM 端口号 (例如 COM1)。 如果你使用 COM<em>&lt;n&gt;</em> 名称，你必须获取 COM 端口号 *&lt;n&gt;* 从[COM 端口数据库](com-port-database.md). COM 端口号应仅用于 COM<em>&lt;n&gt;</em> 名称。
 
-默认情况下，类安装程序的端口的组合操作[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)和串行函数驱动程序将设备配置为 COM 端口。
+默认情况下，类安装程序的端口的组合操作[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)和串行函数驱动程序将设备配置为 COM 端口。
 
 端口类安装程序和序列如何创建一个 COM 端口的 COM 端口设备接口的信息，请参阅[外部命名的 COM 端口](external-naming-of-com-ports.md)。

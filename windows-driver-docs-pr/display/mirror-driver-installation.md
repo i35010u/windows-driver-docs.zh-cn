@@ -7,12 +7,12 @@ keywords:
 - 镜像驱动程序 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 100fd28f735c1d3e712e3fedcd1e2f29e2c9b0df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed4b2b1df3a82f7bf2f5bab0061159ca5d32f0a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358408"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385594"
 ---
 # <a name="mirror-driver-installation"></a>镜像驱动程序安装
 
@@ -22,13 +22,13 @@ ms.locfileid: "63358408"
 
 系统将镜像驱动程序安装以响应 Win32 **ChangeDisplaySettings**或**ChangeDisplaySettingsEx**调用。 应实现用户模式服务以使这些调用安装镜像驱动程序和维护其设置之一。 使用此应用程序：
 
--   请确保在启动时正确加载镜像驱动程序。 应用程序应指定在 CDS\_UPDATEREGISTRY 标志，用于将设置保存到注册表，以便自动将上具有相同的后续启动时加载驱动程序[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)如下所述的信息。
+-   请确保在启动时正确加载镜像驱动程序。 应用程序应指定在 CDS\_UPDATEREGISTRY 标志，用于将设置保存到注册表，以便自动将上具有相同的后续启动时加载驱动程序[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)如下所述的信息。
 
 -   适当地为响应通过获取显示的桌面更改更改通知通过 WM\_DISPLAYCHANGE 消息。
 
 该示例*Mirror.exe*、 发售的 Windows Driver Kit (WDK) 使用了哪些可以生成的源代码文件，操作用户模式服务的子集加载镜像驱动程序而应提供实现。
 
-用户模式应用程序安装镜像驱动程序之前，应填写[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构，它指定显示以下属性：
+用户模式应用程序安装镜像驱动程序之前，应填写[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构，它指定显示以下属性：
 
 -   位置 (**dmPosition**)
 

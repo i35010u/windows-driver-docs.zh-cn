@@ -4,12 +4,12 @@ description: UMDF 驱动程序的初级指南
 ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed6d6c7dac34cbcd9a74420ad6ab2d47a7d0805
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3da3014f3ae3c8ea6e8c7cb59fec3b9db80c31af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325133"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376179"
 ---
 # <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF 驱动程序的初级指南
 
@@ -25,12 +25,12 @@ ms.locfileid: "63325133"
 
     UMDF 驱动程序可能会调用 Windows 函数来执行以下任务：
 
-    -   驱动程序可能会在调用 **SetupDi * * * Xxx*函数来检索插设备属性。 例如， [UMDF 示例驱动程序用于 OSR USB Fx2 学习工具包](https://go.microsoft.com/fwlink/p/?linkid=256202)调用[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551967)检索设备的总线类型的 GUID。
+    -   驱动程序可能会在调用 **SetupDi * * * Xxx*函数来检索插设备属性。 例如， [UMDF 示例驱动程序用于 OSR USB Fx2 学习工具包](https://go.microsoft.com/fwlink/p/?linkid=256202)调用[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)检索设备的总线类型的 GUID。
         **请注意**  UMDF 驱动程序不能安全地调用许多 **SetupDi * * * Xxx*函数，但它是安全地调用检索设备节点属性的函数。
 
          
 
-    -   从手动队列中检索输入/输出请求的驱动程序可能会创建定期计时器轮询队列。 例如， [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)示例将通过调用注册计时器回调例程[ **CreateThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms682466)，然后通过调用设置定期计时器[ **SetThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms686271)。
+    -   从手动队列中检索输入/输出请求的驱动程序可能会创建定期计时器轮询队列。 例如， [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)示例将通过调用注册计时器回调例程[ **CreateThreadpoolTimer**](https://docs.microsoft.com/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)，然后通过调用设置定期计时器[ **SetThreadpoolTimer**](https://docs.microsoft.com/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)。
         **请注意**  1.11 版中，从开始，UMDF 工作项中提供支持。 有关详细信息，请参阅[使用工作项](using-workitems.md)。
 
          

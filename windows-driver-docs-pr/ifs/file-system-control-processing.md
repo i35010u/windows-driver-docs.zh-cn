@@ -10,12 +10,12 @@ keywords:
 - 控制处理 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0035ec5d7ec3110d1f261d97f88eea0c1beed0d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2418d48befb37aa9c5c754823a48708b0d971ba9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383833"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385550"
 ---
 # <a name="file-system-control-processing"></a>文件系统控制处理
 
@@ -23,7 +23,7 @@ ms.locfileid: "63383833"
 ## <span id="ddk_file_system_control_processing_if"></span><span id="DDK_FILE_SYSTEM_CONTROL_PROCESSING_IF"></span>
 
 
-处理[ **IRP\_MJ\_文件\_系统\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff548670)操作是不同于所需的其他操作的数据缓冲区处理在文件系统中。 这是因为每个操作建立其特定的数据传输机制 I/O 管理器作为其控制代码的一部分通过 CTL\_代码宏。 此外，控制代码指定由调用方所需的文件访问权限。 文件系统特别留意此问题时应定义控制代码，因为由 I/O 管理器强制执行此访问权限。 某些 I/O 控制代码 (FSCTL\_移动\_文件，如) 指定文件\_特殊\_访问权限，这是一种机制允许文件系统，以指示将由文件检查操作的安全直接系统。 文件\_特殊\_访问权限是按数字顺序等效于文件\_ANY\_访问，因此在 I/O 管理器不提供任何特定的安全检查，而推迟到文件系统。 文件\_特殊\_访问主要提供额外的检查将由文件系统的文档。
+处理[ **IRP\_MJ\_文件\_系统\_控制**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)操作是不同于所需的其他操作的数据缓冲区处理在文件系统中。 这是因为每个操作建立其特定的数据传输机制 I/O 管理器作为其控制代码的一部分通过 CTL\_代码宏。 此外，控制代码指定由调用方所需的文件访问权限。 文件系统特别留意此问题时应定义控制代码，因为由 I/O 管理器强制执行此访问权限。 某些 I/O 控制代码 (FSCTL\_移动\_文件，如) 指定文件\_特殊\_访问权限，这是一种机制允许文件系统，以指示将由文件检查操作的安全直接系统。 文件\_特殊\_访问权限是按数字顺序等效于文件\_ANY\_访问，因此在 I/O 管理器不提供任何特定的安全检查，而推迟到文件系统。 文件\_特殊\_访问主要提供额外的检查将由文件系统的文档。
 
 多个文件系统操作指定文件\_特殊\_访问。 FSCTL\_移动\_文件操作用作文件系统碎片整理程序界面的一部分，并指定文件\_特殊\_访问。 由于您希望能够进行碎片整理正在积极的打开的文件读取和写入，句柄用于具有只有文件\_读取\_属性授予访问权限，以避免共享访问冲突。 但是，此操作必须是一项特权的操作，因为正在低级别上修改磁盘。 解决方法是验证该句柄用于发出 FSCTL\_移动\_文件是一个直接访问存储设备 (DASD) 用户卷打开，这是特权句柄。 正在 FASTFAT 文件系统代码，以确保此操作对打开的用户卷处于**FatMoveFile**函数 （请参阅 fsctrl.c 源文件从 WDK 包含 fastfat 示例）：
 
@@ -52,7 +52,7 @@ typedef struct {
 } MOVE_FILE_DATA, *PMOVE_FILE_DATA;
 ```
 
-正如前面提到，用于发出 FSCTL 的句柄\_移动\_文件是整个卷时，"打开"操作，而该操作实际应用到移动中指定的文件句柄\_文件\_数据输入缓冲区。 这使得此操作的安全检查有些复杂。 例如，此接口必须将文件句柄转换为表示要移动的文件的文件对象。 这需要仔细考虑任何驱动程序的部分。 FASTFAT 是使用[ **ObReferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff558678)以在受保护的方式**FatMoveFile** WDK 包含 fastfat 示例中的 fsctrl.c 源代码文件中的函数：
+正如前面提到，用于发出 FSCTL 的句柄\_移动\_文件是整个卷时，"打开"操作，而该操作实际应用到移动中指定的文件句柄\_文件\_数据输入缓冲区。 这使得此操作的安全检查有些复杂。 例如，此接口必须将文件句柄转换为表示要移动的文件的文件对象。 这需要仔细考虑任何驱动程序的部分。 FASTFAT 是使用[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)以在受保护的方式**FatMoveFile** WDK 包含 fastfat 示例中的 fsctrl.c 源代码文件中的函数：
 
 ```cpp
     //

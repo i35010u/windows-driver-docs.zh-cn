@@ -5,12 +5,12 @@ ms.assetid: e7b8d2b1-4e84-416f-aeb3-75591ed44b22
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_SUPPORTED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b121850c66dc8990be0701c6e5d5dd05d33ea0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd8fed2a238ed0ab0dea1e545f50df1283801656
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348189"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369025"
 ---
 # <a name="oidgenmediasupported"></a>OID\_GEN\_媒体\_支持
 
@@ -38,13 +38,13 @@ NDIS 6.20 和更高版本的驱动程序添加以下媒体类型：
 -   **NdisMediumIP**
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。 请参阅[OID\_代\_媒体\_支持 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff560254)。
+必需。 请参阅[OID\_代\_媒体\_支持 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560254(v=vs.85))。
 
 <a href="" id="windows-xp"></a>Windows XP  
 支持。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。 请参阅[OID\_代\_媒体\_支持 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff560254)。
+必需。 请参阅[OID\_代\_媒体\_支持 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560254(v=vs.85))。
 
 <a name="remarks"></a>备注
 -------
@@ -56,7 +56,7 @@ NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。
 <a href="" id="ndismedium802-3"></a>**NdisMedium802\_3**  
 以太网 (802.3)。
 
-**请注意**  NDIS 5。*x*符合 802.11 接口的微型端口驱动程序必须使用此媒体类型。 802.11 接口的详细信息，请参阅[802.11 无线 LAN 微端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff543933)。
+**请注意**  NDIS 5。*x*符合 802.11 接口的微型端口驱动程序必须使用此媒体类型。 802.11 接口的详细信息，请参阅[802.11 无线 LAN 微端口驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))。
 
  
 
@@ -89,7 +89,7 @@ ARCNET (878.2)。 在 Windows Vista 和更高版本的 Windows 上不支持此�
 ATM。 NDIS 6.0 和更高版本的驱动程序不支持此媒体类型。
 
 <a href="" id="ndismediumnative802-11"></a>**NdisMediumNative802\_11**  
-本机 802.11。 本机 802.11 接口符合的微型端口驱动程序使用此媒体类型。 有关此接口的详细信息，请参阅[本机 802.11 无线 LAN 微端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff560648)。
+本机 802.11。 本机 802.11 接口符合的微型端口驱动程序使用此媒体类型。 有关此接口的详细信息，请参阅[本机 802.11 无线 LAN 微端口驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))。
 
 <a href="" id="ndismediumwirelesswan"></a>**NdisMediumWirelessWan**  
 各种类型的 **NdisWireless * * * Xxx*媒体。 此媒体类型不是适用于使用开头的 Windows Vista 和更高版本的 Windows。
@@ -120,13 +120,13 @@ NDIS 环回网络。
 
 NDIS 5。 *x*支持无线 LAN (WLAN) 或无线广域网 (WWAN) 数据包的微型端口驱动程序出现对操作系统和 NDIS 作为以太网数据包。 这些 NDIS 驱动程序必须为以太网网络的 WWAN 或 WLAN 的网络提供支持。 此类驱动程序声明为其中等**NdisMedium802\_3**和模拟以太网更高级别的的 NDIS 驱动程序。 此类驱动程序还必须在声明[OID\_代\_物理\_中等](oid-gen-physical-medium.md)它们支持的相应物理介质...
 
-详细了解 NDIS 5.X WLAN 微型端口驱动程序，请参阅[802.11 无线 LAN 微端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff543933)。
+详细了解 NDIS 5.X WLAN 微型端口驱动程序，请参阅[802.11 无线 LAN 微端口驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))。
 
 NDIS 6.0 和更高版本支持 WLAN 媒体的微型端口驱动程序传输到操作系统和 NDIS 以 IEEE 802.11 数据包的形式显示的数据包。 作为本机 802.11 微型端口驱动程序，这些 NDIS 驱动程序必须为 WLAN 网络提供支持。 此类驱动程序声明为其中等**NdisMediumNative802\_11**。
 
-有关本机 802.11 微型端口驱动程序的详细信息，请参阅[本机 802.11 无线 LAN 微端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff560648)。
+有关本机 802.11 微型端口驱动程序的详细信息，请参阅[本机 802.11 无线 LAN 微端口驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))。
 
-如果基础微型端口驱动程序将返回**NULL**对于此查询，或如果使用实验性的媒体类型，该驱动程序必须指示接收操作使用[ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)函数。 绑定到此类基础微型端口驱动程序的任何协议接收所有此类指示，即筛选协议驱动程序不能接收操作与[OID\_代\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)。
+如果基础微型端口驱动程序将返回**NULL**对于此查询，或如果使用实验性的媒体类型，该驱动程序必须指示接收操作使用[ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)函数。 绑定到此类基础微型端口驱动程序的任何协议接收所有此类指示，即筛选协议驱动程序不能接收操作与[OID\_代\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -147,7 +147,7 @@ NDIS 6.0 和更高版本支持 WLAN 媒体的微型端口驱动程序传输到�
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisMIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563598)
+[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
 
 [OID\_GEN\_CURRENT\_PACKET\_FILTER](oid-gen-current-packet-filter.md)
 

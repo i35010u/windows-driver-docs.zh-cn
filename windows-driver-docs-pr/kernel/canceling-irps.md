@@ -11,12 +11,12 @@ keywords:
 - 未处理的 IRP 取消 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e2888c0913c923a2d46c52ee80ffd45967ac6b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3091e174735710be3129c363a8df019ad193259f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343791"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383364"
 ---
 # <a name="canceling-irps"></a>取消 IRP
 
@@ -24,15 +24,15 @@ ms.locfileid: "63343791"
 
 
 
-无限期的时间间隔 （因此，用户可以取消以前提交的 I/O 请求） 必须具有一个或多个驱动程序 Irp 可能会保持排入队列[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程来完成用户已取消 I/O请求数。 例如，键盘、 鼠标、 并行、 串行、 和声音设备驱动程序 （或它们的上层的驱动程序） 和文件系统驱动程序应具有*取消*例程。
+无限期的时间间隔 （因此，用户可以取消以前提交的 I/O 请求） 必须具有一个或多个驱动程序 Irp 可能会保持排入队列[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程来完成用户已取消 I/O请求数。 例如，键盘、 鼠标、 并行、 串行、 和声音设备驱动程序 （或它们的上层的驱动程序） 和文件系统驱动程序应具有*取消*例程。
 
 Microsoft Windows XP 和更高版本操作系统的驱动程序可以使用[取消安全 IRP 队列](cancel-safe-irp-queues.md)而不是实现其自己*取消*例程。
 
 "取消 IRP"意味着尽可能快地完成 IRP，同时仍保持系统的完整性。 IRP 完成的一般讨论，请参阅[完成 Irp](completing-irps.md)。
 
-取消过程开始时系统或驱动程序调用[ **IoCancelIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548338)。 此例程称为为每个 IRP 与未完全完成的线程相关联。 如果发起 I/O 请求的线程退出，系统将取消未处理的 Irp。 驱动程序可以取消他们所创建的 Irp (请参阅[较低级别驱动程序创建 Irp](creating-irps-for-lower-level-drivers.md)。)
+取消过程开始时系统或驱动程序调用[ **IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)。 此例程称为为每个 IRP 与未完全完成的线程相关联。 如果发起 I/O 请求的线程退出，系统将取消未处理的 Irp。 驱动程序可以取消他们所创建的 Irp (请参阅[较低级别驱动程序创建 Irp](creating-irps-for-lower-level-drivers.md)。)
 
-如果未在 5 分钟内完成 IRP，I/O 管理器会考虑 IRP 操作已超时。此类 Irp 断开线程，并针对当前拥有 IRP 设备记录一个错误。 您应确保可能需要很长时间才能完成驱动程序中的所有请求可取消。 若要确保可取消可能很长的请求，可以使用[取消安全 IRP 队列](cancel-safe-irp-queues.md)或[内核模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/dn265580)，其中提取了驱动程序开发人员面临的取消。
+如果未在 5 分钟内完成 IRP，I/O 管理器会考虑 IRP 操作已超时。此类 Irp 断开线程，并针对当前拥有 IRP 设备记录一个错误。 您应确保可能需要很长时间才能完成驱动程序中的所有请求可取消。 若要确保可取消可能很长的请求，可以使用[取消安全 IRP 队列](cancel-safe-irp-queues.md)或[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/design-guide)，其中提取了驱动程序开发人员面临的取消。
 
 本部分提供了以下主题：
 

@@ -5,12 +5,12 @@ ms.assetid: 6a8ee5b1-ac68-424f-b749-45b085ca1d75
 ms.date: 08/08/2017
 keywords: -OID_GEN_LINK_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fac22d61a6ce300cb234cc680e93117e1d1bcc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d4ddf0d0f5a3132cf6365dc1edd8a17e142a92f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375687"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369101"
 ---
 # <a name="oidgenlinkparameters"></a>OID\_GEN\_链接\_参数
 
@@ -44,7 +44,7 @@ NDIS\_链接\_参数结构定义，如下所示：
 此结构包含以下成员：
 
 <a href="" id="header"></a>**标头**  
-[ **NDIS\_对象\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff566588) ndis 结构\_链接\_参数结构。 设置**类型**结构中的成员的**标头**指定到 NDIS\_对象\_类型\_默认情况下，**修订**成员添加到 NDIS\_链接\_参数\_修订\_1，并且**大小**成员添加到 NDIS\_SIZEOF\_链接\_参数\_修订\_1。
+[ **NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header) ndis 结构\_链接\_参数结构。 设置**类型**结构中的成员的**标头**指定到 NDIS\_对象\_类型\_默认情况下，**修订**成员添加到 NDIS\_链接\_参数\_修订\_1，并且**大小**成员添加到 NDIS\_SIZEOF\_链接\_参数\_修订\_1。
 
 <a href="" id="mediaduplexstate"></a>**MediaDuplexState**  
 介质双工状态。 此值是通过返回的值相同[OID\_代\_媒体\_双工\_状态](oid-gen-media-duplex-state.md)OID。
@@ -92,7 +92,7 @@ NDIS\_链接\_参数结构定义，如下所示：
 
 
 
-如果微型端口适配器的链接状态发生更改，因为 OID\_GEN\_链接\_参数设置请求、 微型端口驱动程序应生成[ **NDIS\_状态\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567391)状态指示通知 NDIS 和基础驱动程序的新的链接状态。
+如果微型端口适配器的链接状态发生更改，因为 OID\_GEN\_链接\_参数设置请求、 微型端口驱动程序应生成[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状态指示通知 NDIS 和基础驱动程序的新的链接状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -113,9 +113,9 @@ NDIS\_链接\_参数结构定义，如下所示：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_对象\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff566588)
+[**NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
 
-[**NDIS\_STATUS\_LINK\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567391)
+[**NDIS\_STATUS\_LINK\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)
 
 [OID\_GEN\_MEDIA\_DUPLEX\_STATE](oid-gen-media-duplex-state.md)
 

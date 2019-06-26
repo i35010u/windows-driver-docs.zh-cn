@@ -8,12 +8,12 @@ keywords:
 - 驱动程序通知 WDK 动态硬件分区内存通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55f0bd81829a2bf2d5fdc2f3f131a50aa7015fad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84f08d66871385bf73969b27f7eafbf8dbaedea3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369756"
 ---
 # <a name="introduction-to-driver-notification"></a>驱动程序通知简介
 
@@ -105,9 +105,9 @@ ms.locfileid: "63341027"
 
 ## <a name="resource-rebalance"></a>资源重新平衡
 
-从 Windows Server 2008 中，将新处理器添加到硬件分区时，操作系统将启动系统范围资源重新平衡。 设备将参与此类资源重新平衡的设置确定[ **DEVPKEY\_设备\_DHP\_重新平衡\_策略**](https://msdn.microsoft.com/library/windows/hardware/ff542423)设备的设备属性。 网络适配器中的设备的默认行为 (类 = Net)[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)它们将不参与重新平衡时，新处理器是动态的资源添加到系统。 所有其他设备安装程序类中的设备的默认行为是，它们将参与资源重新平衡新处理器动态添加到系统时。
+从 Windows Server 2008 中，将新处理器添加到硬件分区时，操作系统将启动系统范围资源重新平衡。 设备将参与此类资源重新平衡的设置确定[ **DEVPKEY\_设备\_DHP\_重新平衡\_策略**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-dhp-rebalance-policy)设备的设备属性。 网络适配器中的设备的默认行为 (类 = Net)[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)它们将不参与重新平衡时，新处理器是动态的资源添加到系统。 所有其他设备安装程序类中的设备的默认行为是，它们将参与资源重新平衡新处理器动态添加到系统时。
 
-如果设备是插即用 (PnP) 设备和它参与了此类资源重新平衡，操作系统会发送[ **IRP\_MN\_查询\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551725)， [ **IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)，并[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749) PnP Irp 到资源重新平衡操作在设备的驱动程序。 这些即插即用请求通知硬件分区中发生了硬件更改的驱动程序。 设备驱动程序应支持通过正确地处理重新平衡资源**IRP\_MN\_查询\_停止\_设备**并**IRP\_MN\_停止\_设备**PnP 请求。 设备驱动程序应永远不会拒绝**IRP\_MN\_查询\_停止\_设备**即插即用的请求。
+如果设备是插即用 (PnP) 设备和它参与了此类资源重新平衡，操作系统会发送[ **IRP\_MN\_查询\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)， [ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)，并[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) PnP Irp 到资源重新平衡操作在设备的驱动程序。 这些即插即用请求通知硬件分区中发生了硬件更改的驱动程序。 设备驱动程序应支持通过正确地处理重新平衡资源**IRP\_MN\_查询\_停止\_设备**并**IRP\_MN\_停止\_设备**PnP 请求。 设备驱动程序应永远不会拒绝**IRP\_MN\_查询\_停止\_设备**即插即用的请求。
 
 这些即插即用请求启用设备驱动程序以完全硬件分区中使用一组新的活动处理器后添加新的处理器。 具体而言，支持资源重新平衡的设备驱动程序使用它将接收资源重新平衡，断开其中断服务例程 (Isr)，并将它们与更新后的处理器关联值重新连接期间的即插即用请求。 这样，硬件分区，包括任何新的处理器，用于处理中断请求中使用当前处于活动状态的所有处理器的设备驱动程序。
 

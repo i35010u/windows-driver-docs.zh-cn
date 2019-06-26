@@ -4,12 +4,12 @@ description: 使用 JavaScript API 结合使用 Bidi XML 文件通过 USB 连接
 ms.assetid: 604DF74E-AEF1-43DC-81B2-566A94B1CE8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80f04f419ca1fbf2c6e8f1938264b6c5a6fa4cd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23a7fd4ed3049d0ef6f001925586eff95079b22d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377531"
 ---
 # <a name="javascript-api-reference"></a>JavaScript API 参考
 
@@ -36,10 +36,10 @@ Parameters
 
 *scriptContext*
 
-\[在中\] [ **IPrinterScriptContext** ](https://msdn.microsoft.com/library/windows/hardware/hh768279)提供对相关的属性包的访问的对象。
+\[在中\] [ **IPrinterScriptContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)提供对相关的属性包的访问的对象。
 *printerStream*
 
-\[在中\] [IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697)对象，它允许读取和写入访问权限的 USB 总线。
+\[在中\] [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)对象，它允许读取和写入访问权限的 USB 总线。
 *schemaRequests*
 
 \[在\]数组对象，其中包含的所有请求 Bidi 查询字符串。
@@ -66,13 +66,13 @@ Parameters
 
 *scriptContext*
 
-\[在中\] [ **IPrinterScriptContext** ](https://msdn.microsoft.com/library/windows/hardware/hh768279)提供对相关的属性包的访问的对象。
+\[在中\] [ **IPrinterScriptContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)提供对相关的属性包的访问的对象。
 *printerStream*
 
-\[在中\] [IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697)对象，它允许读取和写入访问权限的 USB 总线。
+\[在中\] [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)对象，它允许读取和写入访问权限的 USB 总线。
 *printerBidiSchemaElement*
 
-\[在中\] [IPrinterBidiSchemaElement](https://msdn.microsoft.com/library/windows/hardware/hh406590)对象，其中包含与要设置的 Bidi 架构值相关联的所有数据。
+\[在中\] [IPrinterBidiSchemaElement](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaelement-interface)对象，其中包含与要设置的 Bidi 架构值相关联的所有数据。
 返回值
 
 | 返回值 | 描述                                                                                                                                                                          |
@@ -96,7 +96,7 @@ Parameters
 \[在中\] **IPrinterScriptContext**提供对相关的属性包的访问的对象。
 *printerStream*
 
-\[在中\] [IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697)对象，它允许对 USB 总线读取访问权限。
+\[在中\] [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)对象，它允许对 USB 总线读取访问权限。
 *printerBidiSchemaResponses*
 
 \[out\]对象脚本用来存储对查询密钥的所有响应。
@@ -128,13 +128,13 @@ Parameters
 
 *jobScriptContext*
 
-\[在中\] [ **IPrinterScriptUsbJobContext** ](https://msdn.microsoft.com/library/windows/hardware/dn425143) ，制造商的 JavaScript 代码访问作业属性包和持久性数据流的对象。
+\[在中\] [ **IPrinterScriptUsbJobContext** ](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterscriptusbjobcontext) ，制造商的 JavaScript 代码访问作业属性包和持久性数据流的对象。
 *printerStream*
 
 \[在中\] **IPrinterScriptableSequentialStream**对象，制造商的 JavaScript 代码可用于读取和写入到打印设备的数据。
 *printerBidiSchemaResponses*
 
-\[out\] [ **IPrinterBidiSchemaResponses** ](https://msdn.microsoft.com/library/windows/hardware/hh920397)对象制造商的 JavaScript 代码可以使用返回值的更改/更新的任何 Bidi 架构。
+\[out\] [ **IPrinterBidiSchemaResponses** ](https://docs.microsoft.com/windows-hardware/drivers/print/iprinterbidischemaresponses)对象制造商的 JavaScript 代码可以使用返回值的更改/更新的任何 Bidi 架构。
 
 | 返回值 | 描述                                                                             |
 |--------------|-----------------------------------------------------------------------------------------|
@@ -284,8 +284,8 @@ Parameters
 
 
 ## <a name="related-topics"></a>相关主题
-[**IPrinterScriptContext**](https://msdn.microsoft.com/library/windows/hardware/hh768279)  
-[IPrinterScriptableSequentialStream](https://msdn.microsoft.com/library/windows/hardware/hh439697)  
+[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)  
+[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)  
 [USB Bidi 扩展程序](usb-bidi-extender.md)  
 
 

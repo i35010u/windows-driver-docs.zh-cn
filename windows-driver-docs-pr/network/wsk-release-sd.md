@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_RELEASE_SD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e6b760af3a66ce7cf6b4f02c0fb43aa9edc91c43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43396190f4f9d1e890437251ebfb5a922f1f1b4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356779"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386309"
 ---
 # <a name="wskreleasesd"></a>WSK\_RELEASE\_SD
 
 
 WSK 应用程序使用 WSK\_释放\_SD 客户端控制操作以释放任何一个通过使用先前获得的安全描述符的缓存的副本[ **WSK\_缓存\_SD** ](wsk-cache-sd.md)客户端管理操作或使用检索[**因此\_WSK\_安全**](so-wsk-security.md)套接字选项。
 
-若要释放的安全描述符的缓存的副本，WSK 应用程序调用[ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)使用以下参数的函数。
+若要释放的安全描述符的缓存的副本，WSK 应用程序调用[ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -28,7 +28,7 @@ WSK 应用程序使用 WSK\_释放\_SD 客户端控制操作以释放任何一�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

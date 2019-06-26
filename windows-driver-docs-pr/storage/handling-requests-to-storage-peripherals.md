@@ -11,12 +11,12 @@ keywords:
 - 有关存储外围设备存储外围设备 WDK，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b52d7c5a34f4d9d02434ed301d83a436896111df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: deb243e6885b877bd7f77a2b3f217c16760e78a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325730"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378470"
 ---
 # <a name="handling-requests-to-storage-peripherals"></a>处理对存储外设的请求
 
@@ -28,7 +28,7 @@ ms.locfileid: "63325730"
 
 存储类驱动程序还通过上 IRP\_MJ\_SCSI 请求到基础存储端口驱动程序。 此类请求可源于[存储筛选器驱动程序](storage-filter-drivers.md)。
 
-有关[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://msdn.microsoft.com/library/windows/hardware/ff560519)中所述的请求[处理 SCSI 传递请求](handling-scsi-pass-through-requests.md)，类驱动程序负责设置**MinorFunction** IRP 的代码\_MJ\_设备\_控件在端口驱动程序的 I/O 堆栈位置，然后再将传递 IRPIRP\_MJ\_设备\_到端口驱动程序和控件请求[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+有关[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)中所述的请求[处理 SCSI 传递请求](handling-scsi-pass-through-requests.md)，类驱动程序负责设置**MinorFunction** IRP 的代码\_MJ\_设备\_控件在端口驱动程序的 I/O 堆栈位置，然后再将传递 IRPIRP\_MJ\_设备\_到端口驱动程序和控件请求[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
 
 每个存储类驱动程序负责拆分传输请求 (IRP\_MJ\_读取和/或 IRP\_MJ\_编写)，超出基础 HBA 的功能。 因此，大多数类驱动程序还调用内部*SplitTransferRequest*例程中所述[存储类驱动程序 SplitTransferRequest 例程](storage-class-driver-s-splittransferrequest-routine.md)，或实现中的相同功能为其调度例程读取和写入请求。
 

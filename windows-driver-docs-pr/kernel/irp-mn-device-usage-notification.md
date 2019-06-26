@@ -6,12 +6,12 @@ ms.assetid: d8287ba2-ac0a-4407-b587-a5aa5b3617a2
 keywords:
 - IRP_MN_DEVICE_USAGE_NOTIFICATION 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce83261421bbddb47b3653a6ddff1e0707256c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4cbcb83125b357cbce42742aeb78d66343d1f0df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369910"
 ---
 # <a name="irpmndeviceusagenotification"></a>IRP\_MN\_DEVICE\_USAGE\_NOTIFICATION
 
@@ -33,7 +33,7 @@ ms.locfileid: "63368393"
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.UsageNotification.InPath**的成员[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构是一个布尔值。 当此参数是 **，则返回 TRUE**、 系统创建分页，故障转储或设备上的休眠文件。 当**InPath**是**FALSE**，已从设备中删除此类文件。
+**Parameters.UsageNotification.InPath**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构是一个布尔值。 当此参数是 **，则返回 TRUE**、 系统创建分页，故障转储或设备上的休眠文件。 当**InPath**是**FALSE**，已从设备中删除此类文件。
 
 **Parameters.UsageNotification.Type**是一个枚举，该值指示的文件的类型。 此参数具有以下值之一：**DeviceUsageTypePaging**， **DeviceUsageTypeDumpFile**，或**DeviceUsageTypeHibernation**。
 
@@ -70,7 +70,7 @@ ms.locfileid: "63368393"
 
         驱动程序通常递增或递减一个计数器。 例如，如果**Parameters.UsageNotification.Type**是**DeviceUsageTypePaging**并**Parameters.UsageNotification.InPath**是**TRUE**，递增的设备上的分页文件数的计数。 某些驱动程序调度例程必须检查计数器。
 
-        不应禁用包含的特殊文件的设备。 驱动程序可以调用[ **IoInvalidateDeviceState**](https://msdn.microsoft.com/library/windows/hardware/ff549361)，请求的即插即用的管理器进行重新查询设备的即插即用设备状态信息。 为生成的响应[ **IRP\_MN\_查询\_PNP\_设备\_状态**](irp-mn-query-pnp-device-state.md) IRP，驱动程序应设置 PNP\_设备\_不\_DISABLEABLE 标志。
+        不应禁用包含的特殊文件的设备。 驱动程序可以调用[ **IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)，请求的即插即用的管理器进行重新查询设备的即插即用设备状态信息。 为生成的响应[ **IRP\_MN\_查询\_PNP\_设备\_状态**](irp-mn-query-pnp-device-state.md) IRP，驱动程序应设置 PNP\_设备\_不\_DISABLEABLE 标志。
 
         如果**InPath**是**FALSE**，驱动程序设置执行\_POWER\_PAGABLE 位在其设备的设备对象。
 
@@ -82,11 +82,11 @@ ms.locfileid: "63368393"
 
         例如，当 ftdisk 运行 5 个磁盘条带集时，它可传播寻呼通知发送到每个五个磁盘，由于每个这些设备可以需要处理分页文件操作。
 
-    3.  在函数或筛选器驱动程序，将[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程。
+    3.  在函数或筛选器驱动程序，将[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
 
-    4.  在函数或筛选器驱动程序，将**Irp-&gt;IoStatus.Status**于状态\_成功后，设置下一步堆栈的位置，并将 IRP 传递到下一个较低的驱动程序与[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。 无法完成 IRP。
+    4.  在函数或筛选器驱动程序，将**Irp-&gt;IoStatus.Status**于状态\_成功后，设置下一步堆栈的位置，并将 IRP 传递到下一个较低的驱动程序与[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。 无法完成 IRP。
 
-        针对子级 PDO 处理 IRP 到总线驱动程序： 设置**Irp-&gt;IoStatus.Status**并完成 IRP ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343))。
+        针对子级 PDO 处理 IRP 到总线驱动程序： 设置**Irp-&gt;IoStatus.Status**并完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest))。
 
     5.  期间 IRP 完成处理：
 
@@ -94,7 +94,7 @@ ms.locfileid: "63368393"
 
         如果状态是状态\_成功并**InPath**是**TRUE**，清除执行\_POWER\_PAGABLE 位。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **支持分页、 故障转储，以及在设备上的休眠文件**
 
@@ -114,7 +114,7 @@ ms.locfileid: "63368393"
 
 -   不会在设备从 D0 状态。
 
-    未注册为空闲检测设备 ([**PoRegisterDeviceForIdleDetection**](https://msdn.microsoft.com/library/windows/hardware/ff559721))。 如果已注册设备时，取消注册。 如果驱动程序执行其自身空闲检测设备时，挂起此类检测。
+    未注册为空闲检测设备 ([**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection))。 如果已注册设备时，取消注册。 如果驱动程序执行其自身空闲检测设备时，挂起此类检测。
 
 -   清除 DO\_电源\_PAGABLE 位在其设备的设备对象中 （在设备堆栈中向上 IRP 的方式）。
 
@@ -126,15 +126,15 @@ ms.locfileid: "63368393"
 
 -   请确保设备在驱动程序收到 S4 系统电源 IRP，该值指示系统即将进入休眠状态时处于 D0 状态。
 
--   执行不关闭响应 D3 集功率设备 IRP，属于 S4 休眠状态操作。 请参阅[系统电源操作](https://msdn.microsoft.com/library/windows/hardware/ff564553)有关详细信息。
+-   执行不关闭响应 D3 集功率设备 IRP，属于 S4 休眠状态操作。 请参阅[系统电源操作](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-actions)有关详细信息。
 
-    收到此类 D3 集 power IRP，执行将设备放在关闭设备电源和通知电源管理器除外 D3 状态所需的所有任务 ([**PoSetPowerState**](https://msdn.microsoft.com/library/windows/hardware/ff559765))。 已写入休眠文件之前，设备必须保留电源。
+    收到此类 D3 集 power IRP，执行将设备放在关闭设备电源和通知电源管理器除外 D3 状态所需的所有任务 ([**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate))。 已写入休眠文件之前，设备必须保留电源。
 
 -   清除 DO\_电源\_PAGABLE 位在其设备的设备对象中 （在设备堆栈中向上 IRP 的方式）。
 
 -   失败[ **IRP\_MN\_查询\_停止\_设备**](irp-mn-query-stop-device.md)并[ **IRP\_MN\_查询\_删除\_设备**](irp-mn-query-remove-device.md)设备的请求。
 
-请参阅[电源管理](https://msdn.microsoft.com/library/windows/hardware/ff547131)有关设备的电源状态的详细信息，支持 Irp，并在驱动程序中支持电源管理。
+请参阅[电源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)有关设备的电源状态的详细信息，支持 Irp，并在驱动程序中支持电源管理。
 
 **发送此 IRP**
 
@@ -167,13 +167,13 @@ ms.locfileid: "63368393"
 
 [*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-[**IoAdjustPagingPathCount**](https://msdn.microsoft.com/library/windows/hardware/ff548209)
+[**IoAdjustPagingPathCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioadjustpagingpathcount)
 
-[**IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
 
-[**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)
+[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)
 
-[**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
 [**IRP\_MJ\_PNP**](irp-mj-pnp.md)
 
@@ -185,9 +185,9 @@ ms.locfileid: "63368393"
 
 [**IRP\_MN\_查询\_停止\_设备**](irp-mn-query-stop-device.md)
 
-[**PoRegisterDeviceForIdleDetection**](https://msdn.microsoft.com/library/windows/hardware/ff559721)
+[**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)
 
-[**PoSetPowerState**](https://msdn.microsoft.com/library/windows/hardware/ff559765)
+[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)
 
  
 

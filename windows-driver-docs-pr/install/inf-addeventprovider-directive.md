@@ -13,16 +13,16 @@ api_type:
 - NA
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 797705e2c6ade14f4a9c6b641f5b6ccc164deb53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fd3bbc859f70910e3908e329e61d3d7d81dd538
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356995"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385926"
 ---
 # <a name="inf-addeventprovider-directive"></a>INF AddEventProvider 指令
 
-**AddEventProvider**中使用指令[ **INF *DDInstall*。事件部分**](inf-ddinstall-services-section.md)。 指定的特征[Windows 的事件跟踪](https://msdn.microsoft.com/library/windows/desktop/aa363668)(ETW) 提供程序与驱动程序相关联。 适用于 Windows 10 1809年和更高版本支持此指令。
+**AddEventProvider**中使用指令[ **INF *DDInstall*。事件部分**](inf-ddinstall-services-section.md)。 指定的特征[Windows 的事件跟踪](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)(ETW) 提供程序与驱动程序相关联。 适用于 Windows 10 1809年和更高版本支持此指令。
 
 ```ini
 [DDInstall.Events] 
@@ -43,7 +43,7 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 <a name="remarks"></a>备注
 -------
 
-系统定义的和不区分大小写扩展可以插入到<em>DDInstall</em>**。事件**节，其中包含**AddEventProvider**指令跨操作系统系统和/或跨平台 INF 文件中指定特定于平台的或特定于操作系统的安装。
+系统定义的和不区分大小写扩展可以插入到<em>DDInstall</em> **。事件**节，其中包含**AddEventProvider**指令跨操作系统系统和/或跨平台 INF 文件中指定特定于平台的或特定于操作系统的安装。
 
 每个 INF 编写器创建的部分名称的 INF 文件中必须是唯一和必须遵从常规规则，用于定义的节名称。 有关这些规则的详细信息，请参阅[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
 
@@ -61,12 +61,12 @@ ResourceFile=path-to-file
 ...
 ```
 
-每个*事件提供程序安装部分*必须提供**ProviderName**并**ResourceFile**。 （可选） 提供程序使用的任意组合指定的信道列表**ImportChannel(s)** 并**AddChannel(s)**，每个单独的行上。 有关 INF 文件中的通道列表的详细信息，请参阅[**指定通道列表**](#specifying-a-channel-list)下面。 有关详细信息[Windows 事件日志](https://msdn.microsoft.com/library/windows/desktop/aa385780)通道，请参阅[定义通道](https://msdn.microsoft.com/library/windows/desktop/dd996911)。
+每个*事件提供程序安装部分*必须提供**ProviderName**并**ResourceFile**。 （可选） 提供程序使用的任意组合指定的信道列表**ImportChannel(s)** 并**AddChannel(s)** ，每个单独的行上。 有关 INF 文件中的通道列表的详细信息，请参阅[**指定通道列表**](#specifying-a-channel-list)下面。 有关详细信息[Windows 事件日志](https://docs.microsoft.com/windows/desktop/WES/windows-event-log)通道，请参阅[定义通道](https://docs.microsoft.com/windows/desktop/WES/defining-channels)。
 
 ### <a name="event-provider-install-section-entries-and-values"></a>事件提供程序安装节条目和值
 
 <a href="" id="providername-name"></a>**ProviderName**=*name*  
-指定的提供程序名称。 名称长度不能超过 255 个字符，并且不能包含字符: >，<，&、"，|、\'，:，' '，'？ '，*，或与 ASCII 字符的值小于 31。 此外，该名称必须遵循文件和注册表项名称的常规约束。 这些约束，请参阅[为文件命名](https://msdn.microsoft.com/library/windows/desktop/aa365247)并[注册表元素大小限制](https://msdn.microsoft.com/library/windows/desktop/ms724872)。
+指定的提供程序名称。 名称长度不能超过 255 个字符，并且不能包含字符: >，<，&、"，|、\'，:，' '，'？ '，*，或与 ASCII 字符的值小于 31。 此外，该名称必须遵循文件和注册表项名称的常规约束。 这些约束，请参阅[为文件命名](https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file)并[注册表元素大小限制](https://docs.microsoft.com/windows/desktop/SysInfo/registry-element-size-limits)。
 
 <a href="" id="resourcefile-path-to-file"></a>**ResourceFile**=*path-to-file*  
 指定的 exe 或 dll，其中包含表示为 %dirid%\filename 的提供程序的元数据资源的路径。
@@ -87,7 +87,7 @@ ResourceFile=path-to-file
 
 ### <a name="specifying-a-channel-list"></a>指定通道列表
 
-可以在提供程序指定的信道列表及其*事件提供程序安装部分*。 可以导入一个通道，也可以将通道添加到列表并保留这些通道的顺序。 有关详细信息，请参阅[定义通道](https://msdn.microsoft.com/library/windows/desktop/dd996911)。
+可以在提供程序指定的信道列表及其*事件提供程序安装部分*。 可以导入一个通道，也可以将通道添加到列表并保留这些通道的顺序。 有关详细信息，请参阅[定义通道](https://docs.microsoft.com/windows/desktop/WES/defining-channels)。
 
 *通道名称*的提供程序使用的通道列表中必须唯一。 *通道名称*必须是少于 255 个字符，不能包含以下字符: >，<，&、"，|、\'，:，' '，'？ '，*，或与 ASCII 字符的值小于 31。
 
@@ -119,7 +119,7 @@ Analytic 类型通道支持发布量非常大的事件。 它们描述程序操�
 [LoggingAutoBackup=0|1]
 ```
 
-有关通道属性的详细信息，请参阅[ChannelType](https://msdn.microsoft.com/library/windows/desktop/aa382741)中定义[EventManifest 架构](https://msdn.microsoft.com/library/windows/desktop/aa384043)。
+有关通道属性的详细信息，请参阅[ChannelType](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-channeltype-complextype)中定义[EventManifest 架构](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-schema)。
 
 ### <a name="channel-install-section-entries-and-values"></a>通道安装节条目和值
 
@@ -133,7 +133,7 @@ Analytic 类型通道支持发布量非常大的事件。 它们描述程序操�
 <a href="" id="0x3--Custom-"></a>**0x3** （自定义）  
 
 <a href="" id="access-access-string"></a>**Access**=*access-string*  
-（可选） 指定[安全描述符定义语言](https://msdn.microsoft.com/library/windows/desktop/aa379567)(SDDL) 访问说明符控制访问到日志文件支持通道。
+（可选） 指定[安全描述符定义语言](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)(SDDL) 访问说明符控制访问到日志文件支持通道。
 
 如果此字符串用于控制读取访问权限 （忽略的写入权限） 的文件**隔离**设置为**0x1** （应用程序） 或**0x2** （系统），同时可以控制通道和读取访问权限的文件，如果隔离属性设置为写入访问权限**0x3** （自定义）。
 

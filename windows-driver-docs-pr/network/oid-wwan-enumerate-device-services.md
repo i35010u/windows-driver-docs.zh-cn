@@ -5,12 +5,12 @@ ms.assetid: 12AB2235-DDF8-44CB-BD3D-61D0FFCB4080
 ms.date: 08/08/2017
 keywords: -OID_WWAN_ENUMERATE_DEVICE_SERVICES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ebec1b11f3bc654868108acd9e30f0872ccb2f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3033d3b57040e3ead19da911ded8dbda809b0ec4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343333"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375173"
 ---
 # <a name="oidwwanenumeratedeviceservices"></a>OID\_WWAN\_ENUMERATE\_DEVICE\_SERVICES
 
@@ -19,7 +19,7 @@ OID\_WWAN\_ENUMERATE\_设备\_服务返回的微型端口驱动程序支持的�
 
 不支持组的请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令**](https://msdn.microsoft.com/library/windows/hardware/hh846210)状态通知包含[ **NDIS\_WWAN\_支持\_设备\_SERVICES** ](https://msdn.microsoft.com/library/windows/hardware/hh831867)结构，它提供服务 Guid 的受支持的设备的列表。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)状态通知包含[ **NDIS\_WWAN\_支持\_设备\_SERVICES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_supported_device_services)结构，它提供服务 Guid 的受支持的设备的列表。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,9 +44,9 @@ OID\_WWAN\_ENUMERATE\_设备\_服务返回的微型端口驱动程序支持的�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令**](https://msdn.microsoft.com/library/windows/hardware/hh846210)
+[**NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)
 
-[**NDIS\_WWAN\_SUPPORTED\_DEVICE\_SERVICES**](https://msdn.microsoft.com/library/windows/hardware/hh831867)
+[**NDIS\_WWAN\_SUPPORTED\_DEVICE\_SERVICES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_supported_device_services)
 
  
 

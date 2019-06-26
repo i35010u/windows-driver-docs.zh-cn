@@ -4,12 +4,12 @@ description: 激活上下文
 ms.assetid: 76584379-2AEF-47e0-B14E-C7698903658F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3388671e65c10e205114934ddb1c2fbb26ce0505
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e971058f70649e42c7ec4cffc01d57416e4005ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380501"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373035"
 ---
 # <a name="activation-context"></a>激活上下文
 
@@ -33,7 +33,7 @@ TAEF 提供一种机制来指定激活上下文下运行测试。
 </assembly>
 ```
 
-清单文件**Comctlv6.manifest**的上面所示指定该版本 6 的 comctl32.dll 是要在测试执行期间使用。 若要了解有关清单文件的详细信息，请参阅[清单文件引用](https://msdn.microsoft.com/library/aa375632(VS.85).aspx)
+清单文件**Comctlv6.manifest**的上面所示指定该版本 6 的 comctl32.dll 是要在测试执行期间使用。 若要了解有关清单文件的详细信息，请参阅[清单文件引用](https://docs.microsoft.com/windows/desktop/SbsCs/manifest-files-reference)
 
 ## <a name="span-idspecifyingactivationcontextmanifestatthecommandpromptspanspan-idspecifyingactivationcontextmanifestatthecommandpromptspanspan-idspecifyingactivationcontextmanifestatthecommandpromptspanspecifying-activationcontext-manifest-at-the-command-prompt"></a><span id="Specifying_ActivationContext_manifest_at_the_Command_Prompt"></span><span id="specifying_activationcontext_manifest_at_the_command_prompt"></span><span id="SPECIFYING_ACTIVATIONCONTEXT_MANIFEST_AT_THE_COMMAND_PROMPT"></span>在命令提示符下指定 ActivationContext 清单
 

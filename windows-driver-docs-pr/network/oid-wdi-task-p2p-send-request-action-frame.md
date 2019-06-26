@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 26828a0f514f393cd8f315672fc1ea55fa46f88a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27a8953f5308cec9a9187c27a9f1fce21c3896ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387234"
 ---
 # <a name="oidwditaskp2psendrequestactionframe"></a>OID\_WDI\_TASK\_P2P\_SEND\_REQUEST\_ACTION\_FRAME
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_P2P\_发送\_请求\_操作\_帧颁发给设备的 Wi-Fi Direc
 
 | Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
+| Port   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
 
  
 
@@ -63,38 +63,38 @@ WDI 接口本身保持不变，并且继续使用毫秒单位，就像以前那�
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898001" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SEND_ACTION_ REQUEST_FRAME_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898001)"><strong>WDI_TLV_P2P_SEND_ACTION_ REQUEST_FRAME_PARAMETERS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-send-action-request-frame-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SEND_ACTION_ REQUEST_FRAME_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-send-action-request-frame-parameters)"><strong>WDI_TLV_P2P_SEND_ACTION_ REQUEST_FRAME_PARAMETERS</strong></a></td>
 <td></td>
 <td></td>
 <td>参数，如操作帧类型，目标对等方适配器和对话框令牌的设备地址。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897937" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_ NEGOTIATION_REQUEST_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897937)"><strong>WDI_TLV_P2P_GO_ NEGOTIATION_REQUEST_INFO</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-negotiation-request-info" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_ NEGOTIATION_REQUEST_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-negotiation-request-info)"><strong>WDI_TLV_P2P_GO_ NEGOTIATION_REQUEST_INFO</strong></a></td>
 <td></td>
 <td>X</td>
 <td>请转协商请求参数。 如果 wfdRequestFrameType 转协商请求，该端口仅应检查此结构。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897963" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INVITATION_REQUEST_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897963)"><strong>WDI_TLV_P2P_INVITATION_REQUEST_INFO</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-invitation-request-info" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INVITATION_REQUEST_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-invitation-request-info)"><strong>WDI_TLV_P2P_INVITATION_REQUEST_INFO</strong></a></td>
 <td></td>
 <td>X</td>
 <td>邀请请求参数。 如果 wfdRequestFrameType 是邀请请求，该端口仅应检查此结构。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897980" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_PROVISION_ DISCOVERY_REQUEST_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897980)"><strong>WDI_TLV_P2P_PROVISION_ DISCOVERY_REQUEST_INFO</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-provision-discovery-request-info" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_PROVISION_ DISCOVERY_REQUEST_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-provision-discovery-request-info)"><strong>WDI_TLV_P2P_PROVISION_ DISCOVERY_REQUEST_INFO</strong></a></td>
 <td></td>
 <td>X</td>
 <td>预配发现请求参数。 如果 wfdRequestFrameType 是预配发现请求，该端口仅应检查此结构。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926162" data-raw-source="[&lt;strong&gt;WDI_TLV_BSS_ENTRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926162)"><strong>WDI_TLV_BSS_ENTRY</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry" data-raw-source="[&lt;strong&gt;WDI_TLV_BSS_ENTRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry)"><strong>WDI_TLV_BSS_ENTRY</strong></a></td>
 <td></td>
 <td></td>
 <td><p>设备发现条目从端口由 Wi-Fi Direct 发现任务返回。</p>
 <p>提供，因此不需要记住其发现的数据库以将 Wi-Fi Direct 操作框架请求发送到远程 Wi-Fi Direct 设备，而无需为在发现端口。</p></td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898076" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898076)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
 <td></td>
 <td>X</td>
 <td>必须包含在由端口发送帧的一个或多个 Ie。</td>

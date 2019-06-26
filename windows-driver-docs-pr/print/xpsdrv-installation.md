@@ -7,21 +7,21 @@ keywords:
 - INF 文件 WDK 打印，XPSDrv 的打印机驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e6591271f42e4ff777b0daf4d6df9ccfc75d01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f07e5d2bb94f4c66f4990c87dcbc50dc72e0c7a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382555"
 ---
 # <a name="xpsdrv-installation"></a>XPSDrv 安装
 
 
 若要安装正确的后台处理程序，XPSDrv 驱动程序必须包括以下：
 
--   [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)指令所属的驱动程序 INF 文件必须引用[筛选器管道配置文件](filter-pipeline-configuration-file.md)。
+-   [ **CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)指令所属的驱动程序 INF 文件必须引用[筛选器管道配置文件](filter-pipeline-configuration-file.md)。
 
--   需求指令必须引用 Xpsdrv.oem。 有关需求指令的详细信息，请参阅[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)并[Inf 的源媒体](https://msdn.microsoft.com/library/windows/hardware/ff552302)。
+-   需求指令必须引用 Xpsdrv.oem。 有关需求指令的详细信息，请参阅[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)并[Inf 的源媒体](https://docs.microsoft.com/windows-hardware/drivers/install/source-media-for-inf-files)。
 
 -   如果配置模块基于 Unidrv，需求指令必须引用 Unidrv.oem 和 Xpsgpd.oem。 同样，如果 XPSDrv 驱动程序配置模块基于 PScript5，需求指令必须引用 Pscript.oem 和 Xpsppd.oem。
 

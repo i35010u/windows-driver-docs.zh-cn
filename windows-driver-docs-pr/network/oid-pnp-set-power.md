@@ -5,12 +5,12 @@ ms.assetid: 21232db2-7484-4878-a2f9-5131c18ecf57
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_SET_POWER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 902d2fd60d315c3430194c7e19f835178b11f330
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e687ccde70836eb28837730b26c7064ddfee7c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382894"
 ---
 # <a name="oidpnpsetpower"></a>OID\_PNP\_SET\_POWER
 
@@ -18,7 +18,7 @@ ms.locfileid: "63342973"
 
 
 
-OID\_PNP\_设置\_POWER OID 通知其基础的网络适配器将转入中指定的设备电源状态的微型端口驱动程序*InformationBuffer*。 设备电源状态指定为以下值之一[ **NDIS\_设备\_POWER\_状态**](https://msdn.microsoft.com/library/windows/hardware/gg602135)值：
+OID\_PNP\_设置\_POWER OID 通知其基础的网络适配器将转入中指定的设备电源状态的微型端口驱动程序*InformationBuffer*。 设备电源状态指定为以下值之一[ **NDIS\_设备\_POWER\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)值：
 
 -   **NdisDeviceStateD0**
 -   **NdisDeviceStateD1**
@@ -29,7 +29,7 @@ OID\_PNP\_设置\_电源请求可能会在加[OID\_PNP\_查询\_POWER](oid-pnp-q
 
 从 NDIS 6.30 开始，NDIS 将不暂停和重新启动的 NDIS 驱动程序在驱动程序堆栈电源状态转换期间如果满足以下条件：
 
--   基础的微型端口驱动程序集**NDIS\_微型端口\_特性\_否\_暂停\_ON\_挂起**标志中[ **NDIS\_微型端口\_适配器\_注册\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)结构。 该驱动程序将指针传递到此结构中对其调用[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)函数。
+-   基础的微型端口驱动程序集**NDIS\_微型端口\_特性\_否\_暂停\_ON\_挂起**标志中[ **NDIS\_微型端口\_适配器\_注册\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。 该驱动程序将指针传递到此结构中对其调用[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
 -   所有基础筛选器驱动程序附加到微型端口驱动程序支持 NDIS 6.30 或更高版本的 NDIS。
 
@@ -41,19 +41,19 @@ OID\_PNP\_设置\_电源请求可能会在加[OID\_PNP\_查询\_POWER](oid-pnp-q
 
 -   为所指示的网络设备电源状态完全做好准备的网络适配器。 要实现此目的的微型端口驱动程序执行的任务是依赖于设备的。
 
--   等待调用[ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)函数返回。
+-   等待调用[ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)函数返回。
 
--   等待发送请求的网络适配器处理才能完成。 微型端口驱动程序完成后，必须调用[ **NdisMSendNetBufferListsComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563668)函数。 该驱动程序应设置**状态**中每个成员[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构到合适的 NDIS\_状态\_ *Xxx*值。
+-   等待发送请求的网络适配器处理才能完成。 微型端口驱动程序完成后，必须调用[ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)函数。 该驱动程序应设置**状态**中每个成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构到合适的 NDIS\_状态\_ *Xxx*值。
 
--   通过调用完成所有挂起的发送请求[ **NdisMSendNetBufferListsComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563668)函数。 该驱动程序必须设置**状态**中每个成员[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构**NDIS\_状态\_低\_电源\_状态**。
+-   通过调用完成所有挂起的发送请求[ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)函数。 该驱动程序必须设置**状态**中每个成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构**NDIS\_状态\_低\_电源\_状态**。
 
--   拒绝对所做的所有新发送请求其[ *MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)立即通过调用函数[ **NdisMSendNetBufferListsComplete**](https://msdn.microsoft.com/library/windows/hardware/ff563668)函数。 该驱动程序必须设置**状态**中每个成员[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构**NDIS\_状态\_低\_电源\_状态**。
+-   拒绝对所做的所有新发送请求其[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)立即通过调用函数[ **NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)函数。 该驱动程序必须设置**状态**中每个成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构**NDIS\_状态\_低\_电源\_状态**。
 
 支持 NDIS 6.30 和更高版本的 NDIS 微型端口驱动程序还必须执行以下操作：
 
--   等待挂起完成接收指示通过调用其[ *MiniportReturnNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559437)函数。 此外，微型端口驱动程序不得更改[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构或数据的任何正在等待完成的包。
+-   等待挂起完成接收指示通过调用其[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)函数。 此外，微型端口驱动程序不得更改[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构或数据的任何正在等待完成的包。
 
--   处理 OID\_PNP\_设置\_POWER 请求到低功耗状态从已暂停或正在运行的适配器状态。 有关这些状态的详细信息，请参阅[微型端口适配器状态和操作](https://msdn.microsoft.com/library/windows/hardware/ff560490)。
+-   处理 OID\_PNP\_设置\_POWER 请求到低功耗状态从已暂停或正在运行的适配器状态。 有关这些状态的详细信息，请参阅[微型端口适配器状态和操作](https://docs.microsoft.com/windows-hardware/drivers/network/miniport-adapter-states-and-operations)。
 
 网络适配器将转换为 D3 状态之前，微型端口驱动程序必须先关闭微型端口驱动程序的控制下的所有内容，通过执行以下任务：
 
@@ -77,7 +77,7 @@ OID\_PNP\_设置\_电源请求可能会在加[OID\_PNP\_查询\_POWER](oid-pnp-q
 
  
 
-NDIS 调用微型端口驱动程序[ *MiniportRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff559435)后转换到全功率仅状态 NDIS 是否称为驱动程序的正常[ *MiniportPause*](https://msdn.microsoft.com/library/windows/hardware/ff559418)之前向低功耗状态的转换函数。
+NDIS 调用微型端口驱动程序[ *MiniportRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)后转换到全功率仅状态 NDIS 是否称为驱动程序的正常[ *MiniportPause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)之前向低功耗状态的转换函数。
 
 **请注意**  中间驱动程序必须始终返回**NDIS\_状态\_成功**OID 的查询\_PNP\_设置\_电源。 中间的驱动程序应永远不会传播 OID\_PNP\_设置\_POWER 请求为基础的微型端口驱动程序。
 
@@ -86,7 +86,7 @@ NDIS 调用微型端口驱动程序[ *MiniportRestart* ](https://msdn.microsoft.
 ## <a name="return-status-codes"></a>返回状态代码
 
 
-微型端口驱动程序[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数将返回以下值之一用于此请求：
+微型端口驱动程序[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数将返回以下值之一用于此请求：
 
 <table>
 <colgroup>
@@ -106,7 +106,7 @@ NDIS 调用微型端口驱动程序[ *MiniportRestart* ](https://msdn.microsoft.
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff563622" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563622)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递 NDIS_STATUS_SUCCESS<em>状态</em>参数。</p></td>
+<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递 NDIS_STATUS_SUCCESS<em>状态</em>参数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
@@ -141,23 +141,23 @@ NDIS 调用微型端口驱动程序[ *MiniportRestart* ](https://msdn.microsoft.
 
 
 ****
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
-[*MiniportPause*](https://msdn.microsoft.com/library/windows/hardware/ff559418)
+[*MiniportPause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)
 
-[*MiniportRestart*](https://msdn.microsoft.com/library/windows/hardware/ff559435)
+[*MiniportRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)
 
-[*MiniportReturnNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/ff559437)
+[*MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)
 
-[*MiniportSendNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/ff559440)
+[*MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)
 
-[**NDIS\_DEVICE\_POWER\_STATE**](https://msdn.microsoft.com/library/windows/hardware/gg602135)
+[**NDIS\_DEVICE\_POWER\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_device_power_state)
 
-[**NdisMIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563598)
+[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
 
-[**NdisMSendNetBufferListsComplete**](https://msdn.microsoft.com/library/windows/hardware/ff563668)
+[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)
 
-[**NET\_BUFFER\_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff568388)
+[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)
 
  
 

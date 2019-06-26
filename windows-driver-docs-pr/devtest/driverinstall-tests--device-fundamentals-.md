@@ -4,12 +4,12 @@ description: 测试类别包括测试，卸载并重新安装驱动程序若干�
 ms.assetid: 3FC00D4B-6520-45F1-805C-A5F8B6AACAC8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eedcb75a749a1e843b34c806be59cf0a49414112
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 916b782a71f89a96d32d2662b630b508830d9510
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344847"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371393"
 ---
 # <a name="driver-install-tests-device-fundamentals"></a>驱动程序安装测试（设备基础功能）
 
@@ -36,7 +36,7 @@ ms.locfileid: "63344847"
 <td align="left"><p>此测试卸载和重新安装所选设备的驱动程序并运行测试的设备上的 I/O。</p>
 <p><strong>测试二进制文件：</strong>Devfund_Reinstall_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>测试方法：</strong>Reinstall_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -51,15 +51,15 @@ ms.locfileid: "63344847"
 此测试将执行以下操作：
 
 1.  验证测试设备及其子代未报告任何设备问题代码。
-2.  在测试设备和使用 WDTF 简单 I/O 插件及其后代上测试 I/O。 请参阅[提供 WDTF 简单 I/O 插件](https://msdn.microsoft.com/library/windows/hardware/hh781398)有关详细信息。
-3.  将原始的驱动程序测试设备上重新安装[ **IWDTFDriverSetupAction2::UpdateDriver** ](https://msdn.microsoft.com/library/windows/hardware/hh450945)方法。
+2.  在测试设备和使用 WDTF 简单 I/O 插件及其后代上测试 I/O。 请参阅[提供 WDTF 简单 I/O 插件](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)有关详细信息。
+3.  将原始的驱动程序测试设备上重新安装[ **IWDTFDriverSetupAction2::UpdateDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver)方法。
 4.  验证测试设备及其子代未报告任何设备问题代码。
-5.  在测试设备和使用 WDTF 简单 I/O 插件及其后代上测试 I/O。 请参阅[提供 WDTF 简单 I/O 插件](https://msdn.microsoft.com/library/windows/hardware/hh781398)有关详细信息。
+5.  在测试设备和使用 WDTF 简单 I/O 插件及其后代上测试 I/O。 请参阅[提供 WDTF 简单 I/O 插件](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)有关详细信息。
 6.  如果重新启动系统步骤\#3 需要重新启动。
-7.  测试设备上安装为 NULL 的驱动程序[ **IWDTFDriverSetupAction2::UnInstallDriverPermanently** ](https://msdn.microsoft.com/library/windows/hardware/hh450941)方法重新启动系统，如果需要重新启动。
-8.  在测试使用的设备上重新安装原始驱动程序[ **IWDTFDriverSetupAction2::UpdateDriver** ](https://msdn.microsoft.com/library/windows/hardware/hh450945)方法。
+7.  测试设备上安装为 NULL 的驱动程序[ **IWDTFDriverSetupAction2::UnInstallDriverPermanently** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-uninstalldriverpermanently)方法重新启动系统，如果需要重新启动。
+8.  在测试使用的设备上重新安装原始驱动程序[ **IWDTFDriverSetupAction2::UpdateDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver)方法。
 9.  验证测试设备及其子代未报告任何设备问题代码。
-10. 在测试设备和使用 WDTF 简单 I/O 插件及其后代上测试 I/O。 请参阅[提供 WDTF 简单 I/O 插件](https://msdn.microsoft.com/library/windows/hardware/hh781398)有关详细信息。
+10. 在测试设备和使用 WDTF 简单 I/O 插件及其后代上测试 I/O。 请参阅[提供 WDTF 简单 I/O 插件](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)有关详细信息。
 11. 重复步骤 1-10 几次。
 
 ### <a name="span-iddebuginstallationfailuresusingthesetupapilogsspanspan-iddebuginstallationfailuresusingthesetupapilogsspanspan-iddebuginstallationfailuresusingthesetupapilogsspandebug-installation-failures-using-the-setup-api-logs"></a><span id="Debug_installation_failures_using_the_Setup_API_logs"></span><span id="debug_installation_failures_using_the_setup_api_logs"></span><span id="DEBUG_INSTALLATION_FAILURES_USING_THE_SETUP_API_LOGS"></span>调试使用安装程序 API 日志的安装失败
@@ -75,17 +75,17 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[如何在运行时使用 Visual Studio 测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
-[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)
 
 [设备基础功能测试](device-fundamentals-tests.md)
 
-[设备基础功能测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[设备基础功能测试参数](https://docs.microsoft.com/windows-hardware/drivers)
 
-[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)（提供的 WDTF 简单 I/O 插件）
+[Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)（提供的 WDTF 简单 I/O 插件）
 
-[如何在运行时通过命令提示符测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[如何在运行时通过命令提示符测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

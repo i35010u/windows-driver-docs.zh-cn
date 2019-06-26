@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd7ecd75473633dbfd13fbae040fcd76e4c8288
-ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
+ms.openlocfilehash: 4c4e03922410f8569a8b1060ca9cd54ba6638880
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65701995"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365069"
 ---
 # <a name="fsctldeletereparsepoint-control-code"></a>FSCTL\_删除\_重新分析\_点控制代码
 
@@ -28,7 +28,7 @@ FSCTL\_删除\_重新分析\_点控制代码从指定的文件或目录中删除
 
 若要执行此操作，调用[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
-微筛选器应使用[ **FltUntagFile** ](https://msdn.microsoft.com/library/windows/hardware/ff544608)而不是 FSCTL\_删除\_重新分析\_点删除重新分析点。
+微筛选器应使用[ **FltUntagFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile)而不是 FSCTL\_删除\_重新分析\_点删除重新分析点。
 
 有关重新分析点和 FSCTL\_删除\_重新分析\_点控制代码，请参阅 Microsoft Windows SDK 文档。
 
@@ -41,7 +41,7 @@ FSCTL\_删除\_重新分析\_点控制代码从指定的文件或目录中删除
 操作的控制代码。 使用 FSCTL\_删除\_重新分析\_点对于此操作。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-指向[**重新分析\_GUID\_数据\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552014)或[**重新分析\_数据\_缓冲区** ](https://msdn.microsoft.com/library/windows/hardware/ff552012)结构。 中指定的标签**ReparseTag**此结构的成员必须与要删除的重新分析点的标记匹配并**ReparseDataLength**成员必须为零。 此外，如果重新分析点是第三方 (非 Microsoft) 重新分析点，GUID 中指定**ReparseGuid**成员的重分析\_GUID\_数据\_缓冲区结构必须匹配GUID 的重新分析点删除。
+指向[**重新分析\_GUID\_数据\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)或[**重新分析\_数据\_缓冲区** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)结构。 中指定的标签**ReparseTag**此结构的成员必须与要删除的重新分析点的标记匹配并**ReparseDataLength**成员必须为零。 此外，如果重新分析点是第三方 (非 Microsoft) 重新分析点，GUID 中指定**ReparseGuid**成员的重分析\_GUID\_数据\_缓冲区结构必须匹配GUID 的重新分析点删除。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 大小 （字节），指向的缓冲区**InputBuffer**参数。 进行重新分析\_GUID\_数据\_缓冲区结构，此值必须是完全重新分析\_GUID\_数据\_缓冲区\_标头\_大小。 进行重新分析\_数据\_缓冲区结构，此值必须是完全重新分析\_数据\_缓冲区\_标头\_大小。
@@ -90,9 +90,9 @@ FSCTL\_删除\_重新分析\_点控制代码从指定的文件或目录中删除
 
 [**FLT\_IRP 的参数\_MJ\_文件\_系统\_控件**](flt-parameters-for-irp-mj-file-system-control.md)
 
-[**FltTagFile**](https://msdn.microsoft.com/library/windows/hardware/ff544589)
+[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-flttagfile)
 
-[**FltUntagFile**](https://msdn.microsoft.com/library/windows/hardware/ff544608)
+[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile)
 
 [**FSCTL\_GET\_REPARSE\_POINT**](fsctl-get-reparse-point.md)
 
@@ -100,13 +100,13 @@ FSCTL\_删除\_重新分析\_点控制代码从指定的文件或目录中删除
 
 [**IRP\_MJ\_文件\_系统\_控件**](irp-mj-file-system-control.md)
 
-[**IsReparseTagMicrosoft**](https://msdn.microsoft.com/library/windows/hardware/ff549452)
+[**IsReparseTagMicrosoft**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagmicrosoft)
 
-[**IsReparseTagNameSurrogate**](https://msdn.microsoft.com/library/windows/hardware/ff549462)
+[**IsReparseTagNameSurrogate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagnamesurrogate)
 
-[**重新分析\_数据\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552012)
+[**重新分析\_数据\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)
 
-[**REPARSE\_GUID\_DATA\_BUFFER**](https://msdn.microsoft.com/library/windows/hardware/ff552014)
+[**REPARSE\_GUID\_DATA\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

@@ -6,19 +6,19 @@ keywords:
 - EngExtCpp 扩展，分析参数
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbb5f3c32c17eb7bb84485c9c44943ac6a02966f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5413c3ddcce566300e6f96f4ca0f0892dfbda85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338728"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366451"
 ---
 # <a name="parsing-extension-arguments"></a>分析扩展参数
 
 
-EngExtCpp 扩展框架提供方法以帮助分析传递到扩展的命令行参数。 若要充分利用这些方法，该扩展必须首先声明中的命令行参数的格式[ **EXT\_命令**](https://msdn.microsoft.com/library/windows/hardware/ff544514)宏。
+EngExtCpp 扩展框架提供方法以帮助分析传递到扩展的命令行参数。 若要充分利用这些方法，该扩展必须首先声明中的命令行参数的格式[ **EXT\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/engextcpp/nf-engextcpp-ext_command)宏。
 
-绕过命令行参数分析由框架完成，并允许扩展本身将这些参数分析、 将命令行描述设置为`"{{custom}}"`，并使用方法[ **GetRawArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff548226)若要获取用于分析的命令行参数。
+绕过命令行参数分析由框架完成，并允许扩展本身将这些参数分析、 将命令行描述设置为`"{{custom}}"`，并使用方法[ **GetRawArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff548226(v=vs.85))若要获取用于分析的命令行参数。
 
 打印，以适合显示的列宽度时，将自动包装命令行说明字符串。 但是，在说明字符串-使用中嵌入换行字符`\n`-若要开始新行。
 
@@ -79,10 +79,10 @@ EngExtCpp 扩展框架提供方法以帮助分析传递到扩展的命令行参�
 自变量的类型。 这会影响如何分析参数并检索方式。 *类型*参数可以具有下列值之一：
 
 <span id="b"></span><span id="B"></span>b  
-布尔值类型。 该参数是存在或不存在。 可以使用检索命名的布尔参数[ **HasArg**](https://msdn.microsoft.com/library/windows/hardware/ff549721)。
+布尔类型。 该参数是存在或不存在。 可以使用检索命名的布尔参数[ **HasArg**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff549721(v=vs.85))。
 
 <span id="e_d__s__bits_"></span><span id="E_D__S__BITS_"></span>e\[d\]\[s\]\[bits\]  
-表达式类型。 自变量具有数字值。 可以使用检索命名的表达式参数[ **GetArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff545596) ，可以使用检索未命名的表达式自变量[ **GetUnnamedArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff549465).
+表达式类型。 自变量具有数字值。 可以使用检索命名的表达式参数[ **GetArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff545596(v=vs.85)) ，可以使用检索未命名的表达式自变量[ **GetUnnamedArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff549465(v=vs.85)).
 
 <span id="d"></span><span id="D"></span>d  
 该表达式仅限于参数字符串中下一步的空格字符。 如果不存在，表达式计算器将使用命令行中的字符，直到它会确定它已达到表达式的末尾。
@@ -94,7 +94,7 @@ EngExtCpp 扩展框架提供方法以帮助分析传递到扩展的命令行参�
 自变量的值中的位数。 最大值*bits*为 64。
 
 <span id="s"></span><span id="S"></span>s  
-字符串类型。 字符串被限制为下一步的空格字符。 可以使用检索命名的字符串自变量[ **GetArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff545586) ，可以使用检索未命名的字符串自变量[ **GetUnnamedArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff549464).
+字符串类型。 字符串被限制为下一步的空格字符。 可以使用检索命名的字符串自变量[ **GetArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff545586(v=vs.85)) ，可以使用检索未命名的字符串自变量[ **GetUnnamedArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff549464(v=vs.85)).
 
 <span id="x"></span><span id="X"></span>x  
 字符串类型。 该参数是命令行的其余部分。 使用检索参数**GetArgStr**或**GetUnnamedArgStr**，如同处理 s 字符串类型。
@@ -118,7 +118,7 @@ EngExtCpp 扩展框架提供方法以帮助分析传递到扩展的命令行参�
 自变量的显示名称。 这是自动使用的名称 **！ 帮助**扩展插件命令并通过自动 **/？** 或 **-？** 命令行参数。 打印命令行选项的摘要时使用。
 
 <span id="argdesc"></span><span id="ARGDESC"></span>*argdesc*  
-参数的说明。 这是由自动打印的描述 **！ 帮助**扩展和由自动"**/？**" or "**-?**" 命令行参数。
+参数的说明。 这是由自动打印的描述 **！ 帮助**扩展和由自动" **/？** " or " **-?** " 命令行参数。
 
 下面是一些示例的参数说明。 下面的表达式定义采用一个可选表达式参数的命令。 自变量必须容纳在 32 位。 如果参数不是命令行上存在，将使用 0x100 的默认值。
 
@@ -126,7 +126,7 @@ EngExtCpp 扩展框架提供方法以帮助分析传递到扩展的命令行参�
 {;e32,o,d=0x100;flags;Flags to control command}
 ```
 
-下面的表达式定义了一个命令使用可选的布尔值"**/v**"参数和必需的未命名的字符串自变量。
+下面的表达式定义了一个命令使用可选的布尔值" **/v**"参数和必需的未命名的字符串自变量。
 
 ```dbgcmd
 {v;b;;Verbose mode}{;s;name;Name of object}
@@ -154,9 +154,9 @@ EngExtCpp 扩展框架提供方法以帮助分析传递到扩展的命令行参�
 
 参数分析器使用的几种方法用于设置参数。
 
-该方法[ **SetUnnamedArg** ](https://msdn.microsoft.com/library/windows/hardware/ff556876)将未命名参数的值更改。 并为方便起见，方法[ **SetUnnamedArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff556878)并[ **SetUnnamedArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff556879)将设置未命名的字符串和表达式参数分别。
+该方法[ **SetUnnamedArg** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556876(v=vs.85))将未命名参数的值更改。 并为方便起见，方法[ **SetUnnamedArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556878(v=vs.85))并[ **SetUnnamedArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556879(v=vs.85))将设置未命名的字符串和表达式参数分别。
 
-命名参数的存在类似的方法。 [**SetArg** ](https://msdn.microsoft.com/library/windows/hardware/ff556614)用于更改任何命名自变量的值和[ **SetArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff556618)并[ **SetArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff556622)命名的字符串和表达式参数分别用于。
+命名参数的存在类似的方法。 [**SetArg** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556614(v=vs.85))用于更改任何命名自变量的值和[ **SetArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556618(v=vs.85))并[ **SetArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556622(v=vs.85))命名的字符串和表达式参数分别用于。
 
  
 

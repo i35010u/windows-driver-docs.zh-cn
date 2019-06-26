@@ -7,23 +7,23 @@ keywords:
 - WDK DPC 队列
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8895aecb8cb3ac08235b911f34bd26d978967c80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a029b2f141c35f69949dd833b326ae57d626c751
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352019"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384920"
 ---
 # <a name="organization-of-dpc-queues"></a>DPC 队列的组织
 
 
 系统为每个处理器提供了一个 DPC 队列。 驱动程序可以的控制其排队系统将分配到的位置在队列中 DPC DPC 和处理队列的时间。
 
-分配给特定处理器的队列的 Dpc 的处理器上运行。 默认情况下，当驱动程序调用[ **KeInsertQueueDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff552185)或[ **IoRequestDpc**](https://msdn.microsoft.com/library/windows/hardware/ff549657)，DPC 排队当前处于活动状态的处理器上。 驱动程序可以通过调用指定处理器队列[ **KeSetTargetProcessorDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff553278)之前调用**KeInsertQueueDpc**或**IoRequestDpc**.
+分配给特定处理器的队列的 Dpc 的处理器上运行。 默认情况下，当驱动程序调用[ **KeInsertQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)或[ **IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)，DPC 排队当前处于活动状态的处理器上。 驱动程序可以通过调用指定处理器队列[ **KeSetTargetProcessorDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kesettargetprocessordpc)之前调用**KeInsertQueueDpc**或**IoRequestDpc**.
 
 在 Windows Vista 和更高版本的 Windows 上，系统还具有一个线程的 DPC 队列的每个处理器。 驱动程序可以使用**KeSetTargetProcessorDpc**指定线程 Dpc 的处理器队列。
 
-[ **KeSetImportanceDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff553259)例程 DPC 队列中的放置位置的控件。 通常情况下，将 DPC 放在队列; 末尾但是，如果该驱动程序首先调用**KeSetImportanceDpc**与*重要性*参数等于**HighImportance**，DPC 位于队列开始处。
+[ **KeSetImportanceDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kesetimportancedpc)例程 DPC 队列中的放置位置的控件。 通常情况下，将 DPC 放在队列; 末尾但是，如果该驱动程序首先调用**KeSetImportanceDpc**与*重要性*参数等于**HighImportance**，DPC 位于队列开始处。
 
 对于普通 （非线程） Dpc **KeSetImportanceDpc**还确定是否**KeInsertQueueDpc**或**IoRequestDpc**会立即开始处理 DPC队列。 以下列表描述用于处理队列的规则：
 

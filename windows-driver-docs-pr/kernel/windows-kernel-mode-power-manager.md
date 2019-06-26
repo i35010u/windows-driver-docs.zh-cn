@@ -4,12 +4,12 @@ description: Windows 内核模式电源管理器
 ms.assetid: 2d39e43a-63a6-4474-a1ed-c24b4526a3f5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 87760d4c79399b7807639c2a605cc90cf18a17a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ed9d501b4c486d8bb482bb8faf704524157d86d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357515"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374173"
 ---
 # <a name="windows-kernel-mode-power-manager"></a>Windows 内核模式电源管理器
 
@@ -38,9 +38,9 @@ Windows 内核模式电源管理器管理的支持电源状态更改的所有设
 
 电源管理器被视为 I/O 管理器的子组件。 有关详细信息，请参阅[Windows I/O 管理器](windows-kernel-mode-i-o-manager.md)。
 
-为电源管理器提供直接的界面的例程通常带有前缀"**Po**"; 例如， **PoSetPowerState**。 电源管理器例程的列表，请参阅[电源管理器例程](https://msdn.microsoft.com/library/windows/hardware/ff559835)。
+为电源管理器提供直接的界面的例程通常带有前缀"**Po**"; 例如， **PoSetPowerState**。 电源管理器例程的列表，请参阅[电源管理器例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
-Windows 驱动程序框架 (WDF) 提供了一组库进行电源管理更容易。 WDF 的详细信息，请参阅[内核模式驱动程序框架概述](https://msdn.microsoft.com/library/windows/hardware/ff544296)。
+Windows 驱动程序框架 (WDF) 提供了一组库进行电源管理更容易。 WDF 的详细信息，请参阅[内核模式驱动程序框架概述](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)。
 
  
 

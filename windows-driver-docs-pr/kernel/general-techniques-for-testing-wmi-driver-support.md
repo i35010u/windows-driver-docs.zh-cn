@@ -12,12 +12,12 @@ keywords:
 - WMI WDK 内核错误
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f6c326a43b9c5dbef7029d6cbb1d382d2590bc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9735c59323a45ddd39855aff8593b97c19688452
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386592"
 ---
 # <a name="general-techniques-for-testing-wmi-driver-support"></a>用于测试 WMI 驱动程序支持的常规方法
 
@@ -56,13 +56,13 @@ WMI 客户端应用程序将执行以下任务来测试驱动程序：
 
 严格地出现在内核模式下的 WMI 错误记录到系统事件日志。 可以使用事件查看器来检查系统事件日志。 (请参阅[日志记录错误](logging-errors.md)有关详细信息。)
 
-此类错误的两个主要源是对 WMI 请求的格式不正确答复和事件通知的参数不正确。 例如，如果驱动程序返回格式不正确[ **WMIREGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff565832)响应中的数据结构[ **IRP\_MN\_REGINFO**](https://msdn.microsoft.com/library/windows/hardware/ff551731)或[ **IRP\_MN\_REGINFO\_例如**](https://msdn.microsoft.com/library/windows/hardware/ff551734)请求时，系统将记录到系统事件日志。 系统还会记录到的无效调用[ **IoWMIWriteEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff550520)并[ **WmiFireEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff565807)发出 WMI 事件通知。
+此类错误的两个主要源是对 WMI 请求的格式不正确答复和事件通知的参数不正确。 例如，如果驱动程序返回格式不正确[ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)响应中的数据结构[ **IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)或[ **IRP\_MN\_REGINFO\_例如**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)请求时，系统将记录到系统事件日志。 系统还会记录到的无效调用[ **IoWMIWriteEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)并[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)发出 WMI 事件通知。
 
 ### <a href="" id="ddk-wmi-wdm-provider-log-kg"></a>WMI WDM 提供程序日志
 
 WMI WDM 提供程序 Wmiprov.log 下，WMI WDM 提供程序 (Wmiprov.dll) 被处理时出现 WMI 错误将记录到日志文件。 这是文本文件位于 %windir%\\system32\\wbem\\日志\\wmiprov.log。 错误，例如错误或缺少 MOF 资源的驱动程序，会在此处记录。 对于错误的 MOF 资源的文件 %windir%\\system32\\mofcomp.log 可能包含与错误相关的其他信息。
 
-在版本的 Windows 早于 Windows Vista，您可以使用 Wmimgmt.msc 应用程序来更改所有 WMI 提供程序的日志记录设置。 (在 Windows 98 / 我，改为使用 Wbemcntl。)您可以禁用或重新启用日志记录，其中 WMI 日志文件会保留，以及设置此类文件的最大大小将目录更改。 有关详细信息，请参阅[WMI 日志文件](https://msdn.microsoft.com/library/aa394564)。
+在版本的 Windows 早于 Windows Vista，您可以使用 Wmimgmt.msc 应用程序来更改所有 WMI 提供程序的日志记录设置。 (在 Windows 98 / 我，改为使用 Wbemcntl。)您可以禁用或重新启用日志记录，其中 WMI 日志文件会保留，以及设置此类文件的最大大小将目录更改。 有关详细信息，请参阅[WMI 日志文件](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-log-files)。
 
  
 

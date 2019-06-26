@@ -8,12 +8,12 @@ keywords:
 - 既不缓冲，也不直接 I/O WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac8292956b71f46aec32185eab82eb8afa2a0af1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 775518a5a4e41faeab385d281fee24a099d04f0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386895"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381611"
 ---
 # <a name="using-neither-buffered-nor-direct-io"></a>既不使用缓冲 I/O，也不使用直接 I/O
 
@@ -27,13 +27,13 @@ ms.locfileid: "63386895"
 
 I/O 管理器确定 I/O 操作使用既不缓冲，也不直接 I/O，如下所示：
 
--   有关[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)并[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)请求，都不执行操作\_缓冲\_IO 也不执行\_直接\_中设置 IO**标志**隶属[**设备\_对象** ](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
+-   有关[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求，都不执行操作\_缓冲\_IO 也不执行\_直接\_中设置 IO**标志**隶属[**设备\_对象** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
 
--   有关[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)并[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)请求时，IOCTL 代码的值包含方法\_都不一样*留空，则*IOCTL 值中的值。 有关详细信息，请参阅[定义的 I/O 控制代码](defining-i-o-control-codes.md)。
+-   有关[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)并[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)请求时，IOCTL 代码的值包含方法\_都不一样*留空，则*IOCTL 值中的值。 有关详细信息，请参阅[定义的 I/O 控制代码](defining-i-o-control-codes.md)。
 
 当驱动程序接收 IRP，指定使用既不缓冲，也不直接 I/O 的 I/O 操作时，它必须执行以下操作：
 
-1.  检查用户缓冲区的地址范围的有效性，并检查是否适当读取或写入访问允许，则允许使用[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)并[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)支持例程。 该驱动程序必须将缓冲区的地址范围内的驱动程序提供的异常处理程序中，对其访问，以便用户线程不能更改缓冲区的访问权限，而该驱动程序正在访问的内存。 如果探测会引发异常，该驱动程序应返回错误。 该驱动程序必须调用这些例程发出 I/O 请求; 的线程的上下文中因此，更高级别的驱动程序可以执行此任务。
+1.  检查用户缓冲区的地址范围的有效性，并检查是否适当读取或写入访问允许，则允许使用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)并[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)支持例程。 该驱动程序必须将缓冲区的地址范围内的驱动程序提供的异常处理程序中，对其访问，以便用户线程不能更改缓冲区的访问权限，而该驱动程序正在访问的内存。 如果探测会引发异常，该驱动程序应返回错误。 该驱动程序必须调用这些例程发出 I/O 请求; 的线程的上下文中因此，更高级别的驱动程序可以执行此任务。
 
 2.  通过以下方式之一管理缓冲区和内存操作：
     -   与 I/O 管理器为使用缓冲的 I/O 驱动程序执行其自身双缓冲的操作。 有关详细信息，请参阅[使用缓冲 I/O](using-buffered-i-o.md)。

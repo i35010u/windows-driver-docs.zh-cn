@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ccf94056b2905e3daab3a435ecccf1552c7c80d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1126d8cb14d51cb95fe9b7ad79b38525aca163e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365755"
 ---
 # <a name="ndiskdifprovider"></a>!ndiskd.ifprovider
 
 
-**！ Ndiskd.ifprovider**扩展显示有关的信息[NDIS 接口提供程序](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider)(IfProvider)。 如果不带任何参数运行此扩展 ！ ndiskd 将显示所有已注册的 NDIS 接口提供程序的列表。
+**！ Ndiskd.ifprovider**扩展显示有关的信息[NDIS 接口提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)(IfProvider)。 如果不带任何参数运行此扩展 ！ ndiskd 将显示所有已注册的 NDIS 接口提供程序的列表。
 
 ```console
 !ndiskd.ifprovider [-handle <x>] 
@@ -54,7 +54,7 @@ Ndiskd.dll
 
 您可以看到从上一示例的调试对象计算机具有注册的四个接口提供程序。 其中两个 NDIS 接口提供程序。
 
-**请注意**  接口提供程序是一个通用的概念，并且不要求具有微型端口驱动程序。 虽然微型端口驱动程序可能会选择将注册为接口提供程序，如果需要，大多数微型端口驱动程序不这样做因为 NDIS 具有内置的接口提供程序。 NDIS 内置接口提供程序会自动提供用于每个微型端口驱动程序、 轻型筛选器 (LWF) 的每个模块和环回接口的接口。 有关详细信息，请参阅[NDIS 接口提供程序](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider)。
+**请注意**  接口提供程序是一个通用的概念，并且不要求具有微型端口驱动程序。 虽然微型端口驱动程序可能会选择将注册为接口提供程序，如果需要，大多数微型端口驱动程序不这样做因为 NDIS 具有内置的接口提供程序。 NDIS 内置接口提供程序会自动提供用于每个微型端口驱动程序、 轻型筛选器 (LWF) 的每个模块和环回接口的接口。 有关详细信息，请参阅[NDIS 接口提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)。
 
  
 
@@ -86,17 +86,17 @@ HANDLERS
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[注册为接口提供程序](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider)
+[注册为接口提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)
 
  
 

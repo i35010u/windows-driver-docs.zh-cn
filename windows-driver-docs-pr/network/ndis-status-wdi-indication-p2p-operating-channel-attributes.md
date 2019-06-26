@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_OPERATING_CHANNEL_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bc85dc2b7ad550306b13d1d656d5e08300b8fe03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09fc60e895634527feb2efea01a56f8292fb948b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360201"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375228"
 ---
 # <a name="ndisstatuswdiindicationp2poperatingchannelattributes"></a>NDIS\_状态\_WDI\_指示\_P2P\_OPERATING\_通道\_属性
 
@@ -20,7 +20,7 @@ ms.locfileid: "63360201"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -33,9 +33,9 @@ ms.locfileid: "63360201"
 
 | 在任务栏的搜索框中键入                                                                                       | 允许多个 TLV 实例 | 可选 | 描述                                              |
 |--------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](https://msdn.microsoft.com/library/windows/hardware/dn897869)                  |                                |          | Wi-Fi Direct 操作通道属性。            |
-| [**WDI\_TLV\_P2P\_CHANNEL\_LIST\_ATTRIBUTE**](https://msdn.microsoft.com/library/windows/hardware/dn897868) |                                |          | 一组完整的本地适配器支持的通道。 |
-| [**WDI\_TLV\_P2P\_LISTEN\_CHANNEL**](https://msdn.microsoft.com/library/windows/hardware/mt269138)                  |                                |          | Wi-Fi Direct 侦听通道属性。               |
+| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number)                  |                                |          | Wi-Fi Direct 操作通道属性。            |
+| [**WDI\_TLV\_P2P\_CHANNEL\_LIST\_ATTRIBUTE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-list-attribute) |                                |          | 一组完整的本地适配器支持的通道。 |
+| [**WDI\_TLV\_P2P\_LISTEN\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-listen-channel)                  |                                |          | Wi-Fi Direct 侦听通道属性。               |
 
  
 

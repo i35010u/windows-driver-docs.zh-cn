@@ -6,19 +6,19 @@ keywords:
 - WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6576bcf7e3c04dce211fdacc6cfc15b9c664ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 986ba27c2313630cd28b078c8b1b96b54671f777
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390855"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372115"
 ---
 # <a name="wdfobjectattributessetcontexttype-macro"></a>WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏将对象的驱动程序定义的上下文信息插入到该对象的[ **WDF_OBJECT_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏将对象的驱动程序定义的上下文信息插入到该对象的[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。
 
 <a name="syntax"></a>语法
 ------
@@ -34,7 +34,7 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 ----------
 
 *_attributes*   
-指向对象的指针[ **WDF_OBJECT_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构。
+指向对象的指针[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。
 
 *_contexttype*   
 描述对象的上下文空间的内容的驱动程序定义的结构结构类型名称。
@@ -47,9 +47,9 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 <a name="remarks"></a>备注
 -------
 
-调用后，应使用 WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏[ **WDF_OBJECT_ATTRIBUTES_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552402)。
+调用后，应使用 WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏[ **WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)。
 
-有关使用 WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏的详细信息，请参阅[框架对象上下文空间](https://msdn.microsoft.com/library/windows/hardware/ff542873)。
+有关使用 WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE 宏的详细信息，请参阅[框架对象上下文空间](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)。
 
 使用此宏的代码示例，请参阅[ **WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)。
 
@@ -86,9 +86,9 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 
 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)
 
-[**WDF_OBJECT_ATTRIBUTES**](https://msdn.microsoft.com/library/windows/hardware/ff552400)
+[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)
 
-[**WDF_OBJECT_ATTRIBUTES_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552402)
+[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)
 
 [**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**](wdf-object-attributes-init-context-type.md)
 

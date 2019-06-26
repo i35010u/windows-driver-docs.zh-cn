@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bc18ba456481541387fad7d89252866eae24cd5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a42e48d82c2eea5043a1cd71a4a2d0990c0595c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367372"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367305"
 ---
 # <a name="bug-check-0x7c-bugcodendisdriver"></a>Bug 检查 0x7C：BUGCODE\_NDIS\_驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367372"
 BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表示操作系统检测到的网络驱动程序错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_驱动程序参数
@@ -56,7 +56,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="odd">
 <td align="left"><p>0x01</p></td>
 <td align="left"><p>NDIS_BUGCHECK_ALLOCATE_SHARED_MEM_HIGH_IRQL</p>
-<p>驱动程序调用<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562782" data-raw-source="[NdisMAllocateSharedMemory](https://msdn.microsoft.com/library/windows/hardware/ff562782)">NdisMAllocateSharedMemory</a></strong>在引发 irql 下完成。</p></td>
+<p>驱动程序调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory" data-raw-source="[NdisMAllocateSharedMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory)">NdisMAllocateSharedMemory</a></strong>在引发 irql 下完成。</p></td>
 <td align="left"><p>特定的微型端口适配器块的地址。 运行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd.netadapter</a></strong>与此地址用于的详细信息。</p></td>
 <td align="left"><p>请求的共享内存的长度</p></td>
 <td align="left"><p>当前 IRQL</p></td>
@@ -64,7 +64,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="even">
 <td align="left"><p>0x02</p></td>
 <td align="left"><p>NDIS_BUGCHECK_SHARED_MEM_CORRUPTION</p>
-<p>在调用期间 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562782" data-raw-source="[NdisMAllocateSharedMemory](https://msdn.microsoft.com/library/windows/hardware/ff562782)">NdisMAllocateSharedMemory</a></strong>，NDIS 检测到以前分配共享的内存页已损坏。</p></td>
+<p>在调用期间 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory" data-raw-source="[NdisMAllocateSharedMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory)">NdisMAllocateSharedMemory</a></strong>，NDIS 检测到以前分配共享的内存页已损坏。</p></td>
 <td align="left"><p>特定的微型端口适配器块的地址。 运行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd.netadapter</a></strong>与此地址用于的详细信息。</p></td>
 <td align="left"><p>共享的内存页已损坏</p></td>
 <td align="left"><p>跟踪驱动程序的共享的内存分配 NDIS_WRAPPER_CONTEXTE 的地址</p></td>
@@ -72,7 +72,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="odd">
 <td align="left"><p>0x03</p></td>
 <td align="left"><p>NDIS_BUGCHECK_FREE_INVALID_SHARED_MEM</p>
-<p>微型端口驱动程序调用<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff563589" data-raw-source="[NdisMFreeSharedMemory](https://msdn.microsoft.com/library/windows/hardware/ff563589)">NdisMFreeSharedMemory</a></strong> (<strong>异步</strong>) 使用的共享的内存地址的已释放。</p></td>
+<p>微型端口驱动程序调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreesharedmemory" data-raw-source="[NdisMFreeSharedMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreesharedmemory)">NdisMFreeSharedMemory</a></strong> (<strong>异步</strong>) 使用的共享的内存地址的已释放。</p></td>
 <td align="left"><p>特定的微型端口适配器块的地址。 运行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd.netadapter</a></strong>与此地址用于的详细信息。</p></td>
 <td align="left"><p>从其分配此共享的内存的页</p></td>
 <td align="left"><p>共享内存的虚拟地址</p></td>
@@ -80,7 +80,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="even">
 <td align="left"><p>0x04</p></td>
 <td align="left"><p>NDIS_BUGCHECK_UNLOAD_DRIVER_INVALID_PARAMETER</p>
-<p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff540521" data-raw-source="[AddDevice](https://msdn.microsoft.com/library/windows/hardware/ff540521)">AddDevice</a></strong> 调用所使用的驱动程序，不在向注册的 NDIS 驱动程序的列表。</p>
+<p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device" data-raw-source="[AddDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)">AddDevice</a></strong> 调用所使用的驱动程序，不在向注册的 NDIS 驱动程序的列表。</p>
 <p>启用仅在特殊检测 NDIS 上。</p></td>
 <td align="left"><p>NDIS_M_DRIVER_BLOCK 的地址</p></td>
 <td align="left"><p>DRIVER_OBJECT 的地址</p></td>
@@ -173,7 +173,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="odd">
 <td align="left"><p>0x0F</p></td>
 <td align="left"><p>NDIS_BUGCHECK_RESET_COMPLETE_UNEXPECTED</p>
-<p>微型端口驱动程序调用<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff563663" data-raw-source="[NdisMResetComplete](https://msdn.microsoft.com/library/windows/hardware/ff563663)">NdisMResetComplete</a></strong>没有任何挂起的重置请求。</p></td>
+<p>微型端口驱动程序调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete" data-raw-source="[NdisMResetComplete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete)">NdisMResetComplete</a></strong>没有任何挂起的重置请求。</p></td>
 <td align="left"><p>特定的微型端口适配器块的地址。 运行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd.netadapter</a></strong>与此地址用于的详细信息。</p></td>
 <td align="left"><p>重置状态</p></td>
 <td align="left"><p>AddressingReset (BOOLEAN)</p></td>
@@ -215,7 +215,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="even">
 <td align="left"><p>0x14</p></td>
 <td align="left"><p>NDIS_BUGCHECK_WAIT_EVENT_HIGH_IRQL</p>
-<p>名为的 NDIS 驱动程序<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff564651" data-raw-source="[NdisWaitEvent](https://msdn.microsoft.com/library/windows/hardware/ff564651)">NdisWaitEvent</a></strong>非法的 IRQL 在</p></td>
+<p>名为的 NDIS 驱动程序<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswaitevent" data-raw-source="[NdisWaitEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswaitevent)">NdisWaitEvent</a></strong>非法的 IRQL 在</p></td>
 <td align="left"><p>实际 IRQL</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
@@ -240,7 +240,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="odd">
 <td align="left"><p>0x17</p></td>
 <td align="left"><p>NDIS_BUGCHECK_IFPROVIDER_DEREGISTER_UNEXPECTED</p>
-<p>接口提供程序调用<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562703" data-raw-source="[NdisIfDeregisterProvider](https://msdn.microsoft.com/library/windows/hardware/ff562703)">NdisIfDeregisterProvider</a></strong>而不必首先删除其所有接口。</p></td>
+<p>接口提供程序调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifderegisterprovider" data-raw-source="[NdisIfDeregisterProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifderegisterprovider)">NdisIfDeregisterProvider</a></strong>而不必首先删除其所有接口。</p></td>
 <td align="left"><p>接口提供程序句柄的地址。 运行<strong><a href="-ndiskd-ifprovider.md" data-raw-source="[!ndiskd.ifprovider](-ndiskd-ifprovider.md)">！ ndiskd.ifprovider</a></strong>与此地址用于的详细信息。</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
@@ -248,7 +248,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="even">
 <td align="left"><p>0x1B</p></td>
 <td align="left"><p>NDIS_BUGCHECK_IF_STACK_TABLE_LOOP</p>
-<p>驱动程序试图将接口添加到 ifStackTable，但这样做会导致一个循环。 IfStackTable 不能周期。 运行<strong><a href="-ndiskd-ifstacktable.md" data-raw-source="[!ndiskd.ifstacktable](-ndiskd-ifstacktable.md)">！ ndiskd.ifstacktable</a></strong>若要查看当前的表 (在此调用之前 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562693" data-raw-source="[NdisIfAddIfStackEntry](https://msdn.microsoft.com/library/windows/hardware/ff562693)">NdisIfAddIfStackEntry</a></strong>)。</p></td>
+<p>驱动程序试图将接口添加到 ifStackTable，但这样做会导致一个循环。 IfStackTable 不能周期。 运行<strong><a href="-ndiskd-ifstacktable.md" data-raw-source="[!ndiskd.ifstacktable](-ndiskd-ifstacktable.md)">！ ndiskd.ifstacktable</a></strong>若要查看当前的表 (在此调用之前 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifaddifstackentry" data-raw-source="[NdisIfAddIfStackEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifaddifstackentry)">NdisIfAddIfStackEntry</a></strong>)。</p></td>
 <td align="left"><p>添加到表 HigherLayerIfIndex</p></td>
 <td align="left"><p>添加到表 LowerLayerIfIndex</p></td>
 <td align="left"><p>0</p></td>
@@ -266,7 +266,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <td align="left"><p>NDIS_BUGCHECK_OID_REQUEST_INVALID_BUFFER</p>
 <p>微型端口驱动程序或筛选器驱动程序已非法完成 OID 请求。 检查 BytesWritten 不大于缓冲区的整个长度。</p></td>
 <td align="left"><p>特定的微型端口适配器或筛选器模块块的地址。 运行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd.netadapter</a></strong>或<strong><a href="-ndiskd-filter.md" data-raw-source="[!ndiskd.filter](-ndiskd-filter.md)">！ ndiskd.filter</a></strong>与此地址用于的详细信息。</p></td>
-<td align="left"><p>指向的地址<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)">NDIS_OID_REQUEST</a></strong>非法已完成。 检查其与 <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">！ ndiskd.oid</a></strong>。</p></td>
+<td align="left"><p>指向的地址<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)">NDIS_OID_REQUEST</a></strong>非法已完成。 检查其与 <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">！ ndiskd.oid</a></strong>。</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="odd">
@@ -294,7 +294,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="odd">
 <td align="left"><p>0x20</p></td>
 <td align="left"><p>NDIS_BUGCHECK_STATUS_INDICATION_INVALID_BUFFER</p>
-<p>微型端口驱动程序或筛选器驱动程序指示非法 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567373" data-raw-source="[NDIS_STATUS_INDICATION](https://msdn.microsoft.com/library/windows/hardware/ff567373)">NDIS_STATUS_INDICATION</a></strong>。</p></td>
+<p>微型端口驱动程序或筛选器驱动程序指示非法 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication" data-raw-source="[NDIS_STATUS_INDICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)">NDIS_STATUS_INDICATION</a></strong>。</p></td>
 <td align="left"><p>状态指示的类型。 运行<strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">！ ndiskd.help</a></strong> ，此代码的详细信息。</p></td>
 <td align="left"><p>指示此非法状态指示的驱动程序实例的句柄。 运行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">！ ndiskd.netadapter</a></strong>或<strong><a href="-ndiskd-filter.md" data-raw-source="[!ndiskd.filter](-ndiskd-filter.md)">！ ndiskd.filter</a></strong>与此有关的详细信息的句柄。</p></td>
 <td align="left"><p>状态指示负载的地址。 其解释取决于状态指示的类型。</p></td>
@@ -302,7 +302,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="even">
 <td align="left"><p>0x21</p></td>
 <td align="left"><p>NDIS_BUGCHECK_INVALID_OBJECT_HEADER</p>
-<p>驱动程序创建一个无效 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff566588" data-raw-source="[NDIS_OBJECT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff566588)">NDIS_OBJECT_HEADER</a></strong>。</p></td>
+<p>驱动程序创建一个无效 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header" data-raw-source="[NDIS_OBJECT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)">NDIS_OBJECT_HEADER</a></strong>。</p></td>
 <td align="left"><p>所指示的非法状态指示驱动程序的句柄。 运行<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">！ ndiskd.minidriver</a></strong>或<strong><a href="-ndiskd-filterdriver.md" data-raw-source="[!ndiskd.filterdriver](-ndiskd-filterdriver.md)">！ ndiskd.filterdriver</a></strong>与此有关的详细信息的句柄。</p></td>
 <td align="left"><p>具有格式不正确的标头的对象。 其解释取决于要调用的 API。 例如，如果该驱动程序调用<strong>NdisAllocateCloneOidRequest</strong>，然后将对象转换为 ndis ！NDIS_OID_REQUEST。</p></td>
 <td align="left"><p>0</p></td>
@@ -310,7 +310,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="odd">
 <td align="left"><p>0x22</p></td>
 <td align="left"><p>NDIS_BUGCHECK_ILLEGAL_NET_PNP_EVENT</p>
-<p>微型端口驱动程序或筛选器驱动程序指示非法 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568752" data-raw-source="[NET_PNP_EVENT_NOTIFICATION](https://msdn.microsoft.com/library/windows/hardware/ff568752)">NET_PNP_EVENT_NOTIFICATION</a></strong>。</p></td>
+<p>微型端口驱动程序或筛选器驱动程序指示非法 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification" data-raw-source="[NET_PNP_EVENT_NOTIFICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)">NET_PNP_EVENT_NOTIFICATION</a></strong>。</p></td>
 <td align="left"><p>所指示的非法状态指示驱动程序的句柄。 运行<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">！ ndiskd.minidriver</a></strong>或<strong><a href="-ndiskd-filterdriver.md" data-raw-source="[!ndiskd.filterdriver](-ndiskd-filterdriver.md)">！ ndiskd.filterdriver</a></strong>与此有关的详细信息的句柄。</p></td>
 <td align="left"><p>强制转换为 NET_PNP_EVENT_NOTIFICATION</p></td>
 <td align="left"><p>0</p></td>
@@ -415,7 +415,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <td align="left"><p>参数 4 的值取决于参数 2 的值。 此列表中的每个数字对应于参数 2 中的十六进制值相同。</p>
 <ul>
 <li>0x01:0</li>
-<li>0x02:卡滞事件 NET_PNP_EVENT_CODE。 有关这些代码的详细信息，请参阅 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568751" data-raw-source="[NET_PNP_EVENT](https://msdn.microsoft.com/library/windows/hardware/ff568751)">NET_PNP_EVENT</a></strong>...</li>
+<li>0x02:卡滞事件 NET_PNP_EVENT_CODE。 有关这些代码的详细信息，请参阅 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>...</li>
 <li>0x03:卡滞指示 NDIS_STATUS 代码。 使用<strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">！ ndiskd.help</a></strong>若要对其进行解码。</li>
 <li>0x04:0</li>
 <li>0x11:0</li>
@@ -441,7 +441,7 @@ BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表�
 <tr class="even">
 <td align="left"><p>0x27</p></td>
 <td align="left"><p>NDIS_BUGCHECK_LEAKED_NBL</p>
-<p>驱动程序已泄露<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568388" data-raw-source="[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)">NET_BUFFER_LIST</a></strong>结构。 请咨询<strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">！ ndiskd.pendingnbls</a></strong>若要查看任何功能的 Nbl 仍然挂起该是 on 此驱动程序。</p></td>
+<p>驱动程序已泄露<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list" data-raw-source="[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)">NET_BUFFER_LIST</a></strong>结构。 请咨询<strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">！ ndiskd.pendingnbls</a></strong>若要查看任何功能的 Nbl 仍然挂起该是 on 此驱动程序。</p></td>
 <td align="left"><p>在其中检测到泄漏。 可能值：</p>
 <ul>
 <li><p>0x01:泄漏检测到的 NBL 跟踪器。 当前正在取消注册或取消绑定的驱动程序是最可能的原因。 看一下 bugchecking 线程的调用堆栈。 不能取消绑定或取消注册时它们仍然适用活动功能的 Nbl 驱动程序。</p></li>

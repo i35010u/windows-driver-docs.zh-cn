@@ -4,12 +4,12 @@ description: ALE 终结点生存期管理
 ms.assetid: cbf54062-4ced-4cf6-babf-e9e4e1ddf302
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 976ac66dc1e0bc436cfc464d5ad940d54b9afc79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9043dedd176f2b702572762683fc8936d54c9742
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367744"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386361"
 ---
 # <a name="ale-endpoint-lifetime-management"></a>ALE 终结点生存期管理
 
@@ -30,7 +30,7 @@ ms.locfileid: "63367744"
 
 具体取决于终结点的类型以不同的方式调用 ALE 终结点闭包层。 对于 TCP 连接，ALE 终结点闭包所指示，对于每个 ALE 授权连接层 (例如 FWPS\_层\_ALE\_身份验证\_CONNECT\_V4) 或 ALE 授权接收接受 （适用于的层示例 FWPS\_层\_ALE\_身份验证\_收到\_接受\_V4) 指示。 与 ALE 资源发布迹象，引擎将分配唯一的句柄，每个终结点，并将其传递在 FWPS\_元数据\_字段\_传输\_终结点\_句柄的元数据字段。 对于非 TCP 终结点，无论包含几个唯一远程对等节点与套接字进行通信的每个终结点调用 ALE 终结点闭包层。 为每个 TCP 侦听套接字，ALE 终结点闭包层也会调用。
 
-标注为 ALE 终结点闭包层注册可以挂起分类。 此标注以 reinject 任何数据包排队等待异步处理之前终结点关闭的情况下启用。 挂起分类到标注驱动程序必须调用[ **FwpsPendClassify0** ](https://msdn.microsoft.com/library/windows/hardware/ff551197)对的调用后跟[ **FwpsCompleteClassify0** ](https://msdn.microsoft.com/library/windows/hardware/ff551150)时处理已完成。
+标注为 ALE 终结点闭包层注册可以挂起分类。 此标注以 reinject 任何数据包排队等待异步处理之前终结点关闭的情况下启用。 挂起分类到标注驱动程序必须调用[ **FwpsPendClassify0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendclassify0)对的调用后跟[ **FwpsCompleteClassify0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscompleteclassify0)时处理已完成。
 
 如果适用，则引擎将指示 FWPS 中的父终结点的唯一句柄\_元数据\_字段\_父\_终结点\_句柄的元数据字段。 如果需要，这使要跟踪的父/子关系的标注驱动程序。
 

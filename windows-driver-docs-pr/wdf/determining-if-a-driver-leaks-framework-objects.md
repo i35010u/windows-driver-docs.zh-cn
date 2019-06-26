@@ -8,12 +8,12 @@ keywords:
 - UMDF WDK，确定驱动程序是否泄漏 framework 对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a302cc2cee7500b39622a2fb58a791eee969b0cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a53ff81154cabcd787cd939eb5d135f8e4ce26c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384583"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377445"
 ---
 # <a name="determining-if-a-driver-leaks-framework-objects"></a>确定驱动程序是否泄漏框架对象
 
@@ -27,7 +27,7 @@ ms.locfileid: "63384583"
 
 若要测试是否 UMDF 驱动程序版本 1 泄漏 framework 对象，使用以下步骤：
 
-1.  使用[WDF 验证程序控件应用程序](https://msdn.microsoft.com/library/windows/hardware/ff556129)设置所需的验证程序选项。 正则在测试期间，开始通过设置**TrackObjects**而不**TrackRefCounts**。
+1.  使用[WDF 验证程序控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)设置所需的验证程序选项。 正则在测试期间，开始通过设置**TrackObjects**而不**TrackRefCounts**。
 
     如果未删除 framework 对象，并且它会提示你使用框架的代码验证程序卸载该驱动程序时，进入调试器[ **！ wudfdumpobjects** ](using-umdf-debugger-extensions.md)调试器扩展。 此调试器扩展显示的撤消删除的对象的列表。
 
@@ -42,7 +42,7 @@ ms.locfileid: "63384583"
 ## <a name="umdf-2"></a>UMDF 2
 
 
-未释放的引用 UMDF 版本 2，在很少见，但使用时可以因调用不匹配而可能发生[ **WdfObjectReference** ](https://msdn.microsoft.com/library/windows/hardware/ff548758)并[ **WdfObjectDereference**](https://msdn.microsoft.com/library/windows/hardware/ff548739).
+未释放的引用 UMDF 版本 2，在很少见，但使用时可以因调用不匹配而可能发生[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)并[ **WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference).
 
 若要测试是否 UMDF 版本 2 驱动程序泄漏 framework 对象，使用以下过程：
 
@@ -53,12 +53,12 @@ ms.locfileid: "63384583"
 
     若要跟踪的句柄，设置的值**TrackHandles**到一个或多个对象类型的名称或指定一个星号 (\*) 用于跟踪所有对象类型。
 
-    您还可以通过使用修改 UMDF 验证器设置[WdfVerifier.exe](https://msdn.microsoft.com/library/windows/hardware/ff556129)应用程序。
+    您还可以通过使用修改 UMDF 验证器设置[WdfVerifier.exe](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)应用程序。
 
 3.  重新启动，建立连接调试器，并使用以下调试器命令：
 
-    -   [**！ wdfkd.wdfdriverinfo 0x10** ](https://msdn.microsoft.com/library/windows/hardware/ff565724)显示句柄层次结构
-    -   [**！ wdfkd.wdftagtracker** ](https://msdn.microsoft.com/library/windows/hardware/ff566126)以显示标记信息
+    -   [ **！ wdfkd.wdfdriverinfo 0x10** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)显示句柄层次结构
+    -   [ **！ wdfkd.wdftagtracker** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdftagtracker)以显示标记信息
 
 如果 UMDF 验证程序上，内存泄漏检测到在驱动程序卸载，就像 KMDF 中一样。
 

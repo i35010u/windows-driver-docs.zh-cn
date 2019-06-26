@@ -4,12 +4,12 @@ description: 当用户在 Windows 桌面上运行现有应用程序时，打印�
 ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac419a9f97ecb648733dd3244c41e632ff722b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4ed731846692f7a79cb69c256a396918be138f0
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393081"
 ---
 # <a name="printer-extensions"></a>打印机扩展
 
@@ -121,7 +121,7 @@ IT 管理员有几个选项用于管理打印机扩展的分发。 如果应用�
 
 打印机扩展可以在用户启动的上下文和事件启动的上下文中运行，因为它可用于将无法确定您的打印机扩展操作的上下文。 这可以使应用程序，例如，如果已启动的通知，枚举上的所有队列的状态或打印首选项。 Microsoft 建议从驱动程序 （例如带有的 MSI 或 setup.exe） 单独安装的打印机扩展应使用命令行开关上开始菜单快捷方式，或在注册表中填充的 AppPath 项中注册。 由于与驱动程序一起安装的打印机扩展安装到 DriverStore 时，这些将不会启动打印首选项或打印机通知事件的外部。 因此指定命令行开关不支持这种情况下。
 
-当打印机扩展注册当前 PrinterDriverID 时，它必须包括 PrinterDriverID AppPath 中。 例如，对于包含名称的打印机扩展应用*printerextension.exe*，并将 PrinterDriverID 值 *{GUID}*，则\[PrinterExtensionAppPath\]将如下所示以下内容：
+当打印机扩展注册当前 PrinterDriverID 时，它必须包括 PrinterDriverID AppPath 中。 例如，对于包含名称的打印机扩展应用*printerextension.exe*，并将 PrinterDriverID 值 *{GUID}* ，则\[PrinterExtensionAppPath\]将如下所示以下内容：
 
 ```console
 "C:\program files\fabrikam\printerextension.exe {GUID}"
@@ -143,13 +143,13 @@ mgr.EnableEvents(new Guid(PrinterDriverID1));
 
 - 尽可能多的应用程序初始化尽可能延迟截止时间之后调用 EnableEvents。 在此之后，通过使用异步方法并不在初始化期间会阻止 UI 线程优先级 UI 响应能力。
 
-- 使用 ngen 安装期间生成的本机映像。 有关详细信息，请参阅[本机映像生成器](https://msdn.microsoft.com/library/6t9t5wcf.aspx)。
+- 使用 ngen 安装期间生成的本机映像。 有关详细信息，请参阅[本机映像生成器](https://docs.microsoft.com/dotnet/framework/tools/ngen-exe-native-image-generator)。
 
-- 使用性能度量工具上加载的查找性能问题。 有关详细信息，请参阅[Windows 性能分析工具](https://msdn.microsoft.com/performance/cc825801.aspx)。
+- 使用性能度量工具上加载的查找性能问题。 有关详细信息，请参阅[Windows 性能分析工具](https://msdn.microsoft.com/)。
 
 ### <a name="driverevent-handler"></a>DriverEvent 处理程序
 
-注册一个 OnDriverEvent 处理程序并启用了事件，如果启动打印机扩展以处理打印首选项或打印机通知后，将调用该处理程序。 在前面的代码片段中，一个名为 OnDriverEvent 方法注册为事件处理程序。 在以下代码片段中， *PrinterExtensionEventArgs*参数是可以实现打印首选项和打印机通知方案，来构造的对象。 *PrinterExtensionEventArgs*是包装[ **IPrinterExtensionEventArgs**](https://msdn.microsoft.com/library/windows/hardware/hh973207)。
+注册一个 OnDriverEvent 处理程序并启用了事件，如果启动打印机扩展以处理打印首选项或打印机通知后，将调用该处理程序。 在前面的代码片段中，一个名为 OnDriverEvent 方法注册为事件处理程序。 在以下代码片段中， *PrinterExtensionEventArgs*参数是可以实现打印首选项和打印机通知方案，来构造的对象。 *PrinterExtensionEventArgs*是包装[ **IPrinterExtensionEventArgs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)。
 
 ```csharp
 static void OnDriverEvent(object sender, PrinterExtensionEventArgs eventArgs)
@@ -205,19 +205,19 @@ static void OnDriverEvent(object sender, PrinterExtensionEventArgs eventArgs)
 
 打印首选项取决于 PrintSchemaEventArgs.Ticket 对象。 此对象将封装 PrintTicket 和 PrintCapabilities 文档描述的功能和设备的选项。 此外提供基础的 XML 时，对象模型轻松使用这些格式。
 
-在每个[ **IPrintSchemaTicket** ](https://msdn.microsoft.com/library/windows/hardware/hh451398)或[ **IPrintSchemaCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/hh451256)对象功能 ([ **IPrintSchemaFeature**](https://msdn.microsoft.com/library/windows/hardware/hh451284)) 和选项 ([**IPrintSchemaOption**](https://msdn.microsoft.com/library/windows/hardware/hh451335))。 虽然用于功能和选项的接口是相同的无论来源如何的行为发生作为基础的 XML 结果略有变化。 例如，PrintCapabilities 文档指定多个选项，每个功能，而 PrintTicket 文档指定仅所选 （或默认值） 选项。 同样，PrintCapabilities 文档指定本地化的显示字符串，而 PrintTicket 文档不这样做。
+在每个[ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)或[ **IPrintSchemaCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)对象功能 ([ **IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)) 和选项 ([**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption))。 虽然用于功能和选项的接口是相同的无论来源如何的行为发生作为基础的 XML 结果略有变化。 例如，PrintCapabilities 文档指定多个选项，每个功能，而 PrintTicket 文档指定仅所选 （或默认值） 选项。 同样，PrintCapabilities 文档指定本地化的显示字符串，而 PrintTicket 文档不这样做。
 
-[PrinterExtensionSample](https://go.microsoft.com/fwlink/p/?LinkId=617945)使用数据绑定来创建打印机首选项的组合框控件。 Microsoft 建议使用数据绑定，因为它使代码更易于维护，从而不赞成这样做。 在 WPF 中的数据绑定的详细信息，请参阅[数据绑定概述](https://msdn.microsoft.com/library/ms752347.aspx)。
+[PrinterExtensionSample](https://go.microsoft.com/fwlink/p/?LinkId=617945)使用数据绑定来创建打印机首选项的组合框控件。 Microsoft 建议使用数据绑定，因为它使代码更易于维护，从而不赞成这样做。 在 WPF 中的数据绑定的详细信息，请参阅[数据绑定概述](https://docs.microsoft.com/dotnet/framework/wpf/data/data-binding-overview)。
 
 为了获得最佳性能，Microsoft 建议对 GetPrintCapabilities 调用仅需要更新 PrintCapabilities 文档时完成。
 
 因为用户可选择使用数据绑定组合框控件，所以 PrintTicket 对象自动更新。 当用户最后单击**确定**，开始异步验证和完成的链。 此异步模式是为了防止长时间运行的任务，从在 UI 线程上发生，导致挂起了打印首选项用户界面或正在打印的应用程序中广泛使用。 下面是用于处理 PrintTicket 更改用户单击鼠标后的步骤的列表**确定**。
 
-1. 验证 PrintSchemaTicket 使用 asynchrously [ **IPrintSchemaTicket::ValidateAsync** ](https://msdn.microsoft.com/library/windows/hardware/hh451448)方法。
+1. 验证 PrintSchemaTicket 使用 asynchrously [ **IPrintSchemaTicket::ValidateAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprintschematicket-validateasync)方法。
 
 1. 完成异步验证后，公共语言运行时 (CLR) 调用 PrintTicketValidateCompleted 方法。
 
-    1. 如果验证成功，它将调用 CommitPrintTicketAsync 方法，并且调用 CommitPrintTicketAsync [ **IPrintSchemaTicket::CommitAsync** ](https://msdn.microsoft.com/library/windows/hardware/hh451382)方法。 和更新 PrintTicket 成功完成，这将调用 PrintTicketCommitCompleted 方法，后者调用调用 PrinterExtensionEventArgs.Request.Complete 方法，以指示打印首选项已完成的便捷方法，然后它将关闭该应用程序。
+    1. 如果验证成功，它将调用 CommitPrintTicketAsync 方法，并且调用 CommitPrintTicketAsync [ **IPrintSchemaTicket::CommitAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprintschematicket-commitasync)方法。 和更新 PrintTicket 成功完成，这将调用 PrintTicketCommitCompleted 方法，后者调用调用 PrinterExtensionEventArgs.Request.Complete 方法，以指示打印首选项已完成的便捷方法，然后它将关闭该应用程序。
 
     1. 否则，它显示给用户以处理约束情况显示 UI。
 
@@ -233,7 +233,7 @@ EventHandler<PrinterQueueEventArgs>(OnBidiResponseReceived);
 PrinterQueue.SendBidiQuery("\\Printer.consumables");
 ```
 
-当收到 Bidi 响应时，将调用以下事件处理程序。 请注意，此事件处理程序也模拟的墨迹状态实现中，当设备不可用的可能是对开发非常有用。 PrinterQueueEventArgs 对象包括 HRESULT 和 Bidi XML 响应。 Bidi XML 响应的详细信息，请参阅[Bidi 请求和响应架构](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)。
+当收到 Bidi 响应时，将调用以下事件处理程序。 请注意，此事件处理程序也模拟的墨迹状态实现中，当设备不可用的可能是对开发非常有用。 PrinterQueueEventArgs 对象包括 HRESULT 和 Bidi XML 响应。 Bidi XML 响应的详细信息，请参阅[Bidi 请求和响应架构](https://docs.microsoft.com/previous-versions/dd183368(v=vs.85))。
 
 ```csharp
 private void OnBidiResponseReceived(object sender, PrinterQueueEventArgs e)
@@ -267,7 +267,7 @@ private void OnBidiResponseReceived(object sender, PrinterQueueEventArgs e)
 
 - PrinterExtensionEventArgs.DetailedReasonId – 此文件包含 eventID 驱动程序事件 xml 文件中的 GUID。
 
-通知的 IPrinterExtensionEventArgs 对象中的最重要属性是 BidiNotification 属性。 这将把 Bidi XML 导致要触发的事件。 Bidi XML 响应的详细信息，请参阅[Bidi 请求和响应架构](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)。
+通知的 IPrinterExtensionEventArgs 对象中的最重要属性是 BidiNotification 属性。 这将把 Bidi XML 导致要触发的事件。 Bidi XML 响应的详细信息，请参阅[Bidi 请求和响应架构](https://docs.microsoft.com/previous-versions/dd183368(v=vs.85))。
 
 ### <a name="managing-printers"></a>管理打印机
 
@@ -301,41 +301,41 @@ OpenPrinter
 ClosePrinter
 ```
 
-有关如何将这些旧 Api 封送到.NET 的详细信息，请参阅[如何将原始数据发送到打印机，通过使用 Visual C# .NET](http://support.microsoft.com/?kbid=322091)或[如何使用 Visual Basic.NET 将原始数据发送到打印机](http://support.microsoft.com/?kbid=322090)。
+有关如何将这些旧 Api 封送到.NET 的详细信息，请参阅[如何将原始数据发送到打印机，通过使用 Visual C# .NET](https://support.microsoft.com/help/322091)或[如何使用 Visual Basic.NET 将原始数据发送到打印机](https://support.microsoft.com/help/322090)。
 
 ## <a name="printer-extension-performance-best-practices"></a>打印机扩展的性能最佳实践
 
-为了确保获得最佳用户体验，打印机扩展应旨在尽可能快加载。 打印机扩展插件示例的项目是.NET 应用程序，这意味着它获取内置到适合的格式用于本机处理器体系结构必须在运行时中编译中间语言 (IL)。 在安装期间，Microsoft 建议根据最佳实践，以确保应用程序已被编译为本机系统体系结构将安装打印机扩展。 有关代码的编译和安装的最佳做法的详细信息，请参阅[提高您的桌面应用程序的启动性能](http://blogs.msdn.com/b/dotnet/archive/2012/03/20/improving-launch-performance-for-your-desktop-applications.aspx)。
+为了确保获得最佳用户体验，打印机扩展应旨在尽可能快加载。 打印机扩展插件示例的项目是.NET 应用程序，这意味着它获取内置到适合的格式用于本机处理器体系结构必须在运行时中编译中间语言 (IL)。 在安装期间，Microsoft 建议根据最佳实践，以确保应用程序已被编译为本机系统体系结构将安装打印机扩展。 有关代码的编译和安装的最佳做法的详细信息，请参阅[提高您的桌面应用程序的启动性能](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)。
 
 Microsoft 还建议打印机扩展推迟初始化任务，例如在调用方法 EnableEvents 后加载之前的资源。 这将减少在 5 秒超时之前调用 EnableEvents，打印机扩展应用程序的可能性。
 
 在 OnDriverEvent 调用后，打印机扩展应初始化它们的 UI，并在可能的情况以确保响应能力作为可能的这会让使用异步方法快速绘制。 打印机扩展应不依赖于网络调用，或若要创建的初始窗口状态 Bidi 打印首选项或打印机通知。
 
-用户进行选项使用影响 PrintTicket，打印机扩展插件的 UI 应使在屏幕使用的 IPrintSchemaTicket::ValidateAsync 方法以便尽可能验证尽早更改。 最后，应使用的打印机扩展[ **IPrintSchemaTicket::CommitAsync** ](https://msdn.microsoft.com/library/windows/hardware/hh451382)方法，以提交 PrintTicket 更改。
+用户进行选项使用影响 PrintTicket，打印机扩展插件的 UI 应使在屏幕使用的 IPrintSchemaTicket::ValidateAsync 方法以便尽可能验证尽早更改。 最后，应使用的打印机扩展[ **IPrintSchemaTicket::CommitAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprintschematicket-commitasync)方法，以提交 PrintTicket 更改。
 
 打印机扩展始终执行的过程中的过程调用它们。 因此您必须记住窗口行为时你正在开发的打印机扩展：
 
-- **WindowParent**属性从[ **IPrinterExtensionEventArgs** ](https://msdn.microsoft.com/library/windows/hardware/hh973207)指定调用应用程序窗口的句柄。
-- **WindowModal**属性从[ **IPrinterExtensionEventArgs** ](https://msdn.microsoft.com/library/windows/hardware/hh973207)指定打印机扩展 （在打印首选项模式下） 是否应以模式方式运行。
+- **WindowParent**属性从[ **IPrinterExtensionEventArgs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)指定调用应用程序窗口的句柄。
+- **WindowModal**属性从[ **IPrinterExtensionEventArgs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)指定打印机扩展 （在打印首选项模式下） 是否应以模式方式运行。
 
 打印机扩展插件示例演示如何创建一个 UI，通常为最顶层窗口启动。 但在某些情况下，将不会在 UI 显示在前台，如时引起 UI 要调用的进程正在运行时的不同完整性级别，或对于不同的处理器体系结构编译过程时。 在这种情况下，打印机扩展应调用 FlashWindowEx 请求用户权限以通过在任务栏中闪烁图标转到前台。
 
 ## <a name="related-topics"></a>相关主题
 
-[Bidi 请求和响应架构](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)
+[Bidi 请求和响应架构](https://docs.microsoft.com/previous-versions/dd183368(v=vs.85))
 
-[数据绑定概述](https://msdn.microsoft.com/library/ms752347.aspx)
+[数据绑定概述](https://docs.microsoft.com/dotnet/framework/wpf/data/data-binding-overview)
 
-[如何使用 Visual Basic.NET 将原始数据发送到打印机](http://support.microsoft.com/?kbid=322090)
+[如何使用 Visual Basic.NET 将原始数据发送到打印机](https://support.microsoft.com/help/322090)
 
-[如何将原始数据发送到打印机，由使用视觉对象C#.NET](http://support.microsoft.com/?kbid=322091)
+[如何将原始数据发送到打印机，由使用视觉对象C#.NET](https://support.microsoft.com/help/322091)
 
-[提高桌面应用程序的启动性能](http://blogs.msdn.com/b/dotnet/archive/2012/03/20/improving-launch-performance-for-your-desktop-applications.aspx)
+[提高桌面应用程序的启动性能](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)
 
-[本机映像生成器](https://msdn.microsoft.com/library/6t9t5wcf.aspx)
+[本机映像生成器](https://docs.microsoft.com/dotnet/framework/tools/ngen-exe-native-image-generator)
 
-[打印架构接口](https://msdn.microsoft.com/library/windows/hardware/hh464019)
+[打印架构接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)
 
 [打印机扩展插件示例](https://go.microsoft.com/fwlink/p/?LinkId=617945)
 
-[Windows 性能分析工具](https://msdn.microsoft.com/performance/cc825801.aspx)
+[Windows 性能分析工具](https://msdn.microsoft.com/)

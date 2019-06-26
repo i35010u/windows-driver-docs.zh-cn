@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SCAN 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d7bf84cda2adbec918206cee5dfb3511cac1d75a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcdf2b047d29fce5c1858987cb574fb27a793aa3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340021"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387228"
 ---
 # <a name="oidwditaskscan"></a>OID\_WDI\_TASK\_SCAN
 
@@ -36,7 +36,7 @@ OID\_WDI\_任务\_扫描请求的 BSS 网络调查。 该端口执行扫描根�
 </thead>
 <tbody>
 <tr class="odd">
-<td>端口</td>
+<td>Port</td>
 <td>是。 端口必须保持干净状态后中止。</td>
 <td><p>6 （背景扫描）</p>
 <p>5 （用户启动的扫描）</p></td>
@@ -47,7 +47,7 @@ OID\_WDI\_任务\_扫描请求的 BSS 网络调查。 该端口执行扫描根�
 
  
 
-消息包含启动任务[ **WDI\_TLV\_状态**](https://msdn.microsoft.com/library/windows/hardware/dn898068)指示端口启动扫描，并已准备好接收其他命令之后。
+消息包含启动任务[ **WDI\_TLV\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-status)指示端口启动扫描，并已准备好接收其他命令之后。
 
 端口扫描启动后通过 LiveUpdatesNeeded 启用时，必须提供增量更新 (使用未经请求的迹象[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)) 有关发现的 BSS 条目。 端口不应报告 BSS 项以前已发现但找不到由端口当前扫描中。 出于能力和性能原因，端口应限制迹象，并将更新发送到主机，仅当它所发现 3 或更多，或它已发现不超过 3 个条目，但尚未报告它们所在的主机超过 500 毫秒。 扫描完成后，如果适配器不会管理 BSS 条目后，它不需要记住它所发现的 BSS 条目。 扫描操作完成后，端口必须将任务完成通知发送到操作系统，并停止向该主机进行报告 BSS 条目。 扫描命令用于查找旧版 （Wi-Fi Direct 网络） 和端口不应包含 Wi-Fi Direct 导致浏览器的探测请求中。
 
@@ -68,12 +68,12 @@ OID\_WDI\_任务\_扫描请求的 BSS 网络调查。 该端口执行扫描根�
 
 | TLV                                                                       | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                                                                                   |
 |---------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSSID**](https://msdn.microsoft.com/library/windows/hardware/dn926153)                             |                                |          | 要扫描的网络的 BSSID。 如果这是广播的 MAC 地址，工作站将扫描的所有 BSSIDs。                                                                                                                                                                                     |
-| [**WDI\_TLV\_SSID**](https://msdn.microsoft.com/library/windows/hardware/dn898064)                               | X                              |          | 端口应扫描的 SSID 列表的列表。 此列表中可以有多个 Ssid 和其中一个可以是通配符。 执行操作时的通道上的 active 扫描，端口必须为列表中每个 SSID 发送探测请求。 如果此列表为空，该端口必须扫描的所有 Ssid。 |
-| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076) |                                | X        | 必须包括在由端口发送的探测请求的一个或多个 Ie。 这些导致浏览器不用于被动扫描。                                                                                                                                                                        |
-| [**WDI\_TLV\_SCAN\_MODE**](https://msdn.microsoft.com/library/windows/hardware/dn898052)                    |                                |          | 扫描模式参数。                                                                                                                                                                                                                                                                         |
-| [**WDI\_TLV\_SCAN\_DWELL\_TIME**](https://msdn.microsoft.com/library/windows/hardware/dn898051)       |                                |          | 会仔细斟酌时间参数。                                                                                                                                                                                                                                                                        |
-| [**WDI\_TLV\_BAND\_CHANNEL**](https://msdn.microsoft.com/library/windows/hardware/dn926144)              | X                              | X        | 建议的通道进行扫描的列表。 适配器可以对子集或超集通道列表执行扫描，只要它满足最长扫描时间要求。 如果此列表为空，该端口必须扫描所有受支持的通道上。                                               |
+| [**WDI\_TLV\_BSSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)                             |                                |          | 要扫描的网络的 BSSID。 如果这是广播的 MAC 地址，工作站将扫描的所有 BSSIDs。                                                                                                                                                                                     |
+| [**WDI\_TLV\_SSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid)                               | X                              |          | 端口应扫描的 SSID 列表的列表。 此列表中可以有多个 Ssid 和其中一个可以是通配符。 执行操作时的通道上的 active 扫描，端口必须为列表中每个 SSID 发送探测请求。 如果此列表为空，该端口必须扫描的所有 Ssid。 |
+| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie) |                                | X        | 必须包括在由端口发送的探测请求的一个或多个 Ie。 这些导致浏览器不用于被动扫描。                                                                                                                                                                        |
+| [**WDI\_TLV\_SCAN\_MODE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-scan-mode)                    |                                |          | 扫描模式参数。                                                                                                                                                                                                                                                                         |
+| [**WDI\_TLV\_SCAN\_DWELL\_TIME**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-scan-dwell-time)       |                                |          | 会仔细斟酌时间参数。                                                                                                                                                                                                                                                                        |
+| [**WDI\_TLV\_BAND\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-channel)              | X                              | X        | 建议的通道进行扫描的列表。 适配器可以对子集或超集通道列表执行扫描，只要它满足最长扫描时间要求。 如果此列表为空，该端口必须扫描所有受支持的通道上。                                               |
 
  
 

@@ -4,12 +4,12 @@ description: MSFC\_EventBuffer WMI 类
 ms.assetid: ce16e42c-5d0b-47e9-9baa-53dcec482940
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3665c95af6708bd9f0df839dbe42398d85c65adb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2e5d5d82aefc63473bdeda72ae1041f7a43f6cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325951"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371162"
 ---
 # <a name="msfceventbuffer-wmi-class"></a>MSFC\_EventBuffer WMI 类
 
@@ -30,7 +30,7 @@ class MSFC_EventBuffer {
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_EventBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff562480)
+[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)
 
 没有与此 WMI 类相关联的方法。
 

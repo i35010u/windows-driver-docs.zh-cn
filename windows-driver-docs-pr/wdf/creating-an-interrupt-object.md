@@ -9,23 +9,23 @@ keywords:
 - Msi WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5466e4b38f4c6ca08318e572eb2b7cb856a33143
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46edf5d3d61392fbabe5cf5ae139658ab3766f4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358479"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382397"
 ---
 # <a name="creating-an-interrupt-object"></a>创建中断对象
 
 
 处理设备的硬件中断的 Windows 驱动程序框架 (WDF) 驱动程序必须创建每个设备可以支持每个中断 framework 中断对象。 内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序可以在 framework 版本 1.11 更高版本上并正在运行 Windows 8 或更高版本的操作系统中，创建需要的中断对象[被动级别处理](supporting-passive-level-interrupts.md). 除非芯片 (SoC) 平台上，要为系统编写驱动程序，但是，您的驱动程序应使用 DIRQL 中断对象。
 
-驱动程序通常创建框架中的中断对象及其[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调函数。 驱动程序还可以创建中断对象从其[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调函数。
+驱动程序通常创建框架中的中断对象及其[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。 驱动程序还可以创建中断对象从其[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数。
 
-框架将调用的驱动程序[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调函数之前插即用 (PnP) 管理器已分配给设备的系统资源，例如中断向量。 PnP 管理器中向资源分配后，框架将中断资源存储在设备的中断对象。 (驱动程序的[不支持即插](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)不能使用中断对象。)
+框架将调用的驱动程序[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数之前插即用 (PnP) 管理器已分配给设备的系统资源，例如中断向量。 PnP 管理器中向资源分配后，框架将中断资源存储在设备的中断对象。 (驱动程序的[不支持即插](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)不能使用中断对象。)
 
-若要创建 framework 中断对象，您的驱动程序必须初始化[ **WDF\_中断\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)结构并将其传递给[ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)方法。
+若要创建 framework 中断对象，您的驱动程序必须初始化[ **WDF\_中断\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)结构并将其传递给[ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)方法。
 
 UMDF 支持以下类型的中断：
 
@@ -41,35 +41,35 @@ UMDF 支持以下类型的中断：
 
 从开始 KMDF 版本 1.15，KMDF 还支持中断对于此类设备，没有解决方法中所述[处理 Active-Both 中断](handling-active-both-interrupts.md)。
 
-另外，请在[ **WDF\_中断\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff552347)，您的驱动程序提供以下驱动程序所提供事件回调函数的指针：
+另外，请在[ **WDF\_中断\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)，您的驱动程序提供以下驱动程序所提供事件回调函数的指针：
 
-<a href="" id="---------evtinterruptenable--------"></a>[*EvtInterruptEnable*](https://msdn.microsoft.com/library/windows/hardware/ff541730)  
+<a href="" id="---------evtinterruptenable--------"></a>[*EvtInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_enable)  
 启用的硬件中断。
 
-<a href="" id="---------evtinterruptdisable--------"></a>[*EvtInterruptDisable*](https://msdn.microsoft.com/library/windows/hardware/ff541714)  
+<a href="" id="---------evtinterruptdisable--------"></a>[*EvtInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable)  
 禁用的硬件中断。
 
-<a href="" id="---------evtinterruptisr--------"></a>[*EvtInterruptIsr*](https://msdn.microsoft.com/library/windows/hardware/ff541735)  
+<a href="" id="---------evtinterruptisr--------"></a>[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)  
 中断中断服务的例程 (ISR)。
 
-<a href="" id="---------evtinterruptdpc--------"></a>[*EvtInterruptDpc*](https://msdn.microsoft.com/library/windows/hardware/ff541721)  
+<a href="" id="---------evtinterruptdpc--------"></a>[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)  
 延迟过程调用 (DPC) 的中断。
 
-<a href="" id="evtinterruptworkitem"></a>[*EvtInterruptWorkItem*](https://msdn.microsoft.com/library/windows/hardware/hh406422)  
+<a href="" id="evtinterruptworkitem"></a>[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)  
 有关工作项[被动级别中断](supporting-passive-level-interrupts.md)。
 
-有关使用框架版本 1.11 或更高版本在 Windows 8 或更高版本的操作系统的驱动程序，该驱动程序可以 framework 中断对象 （DIRQL 或被动） 的父对象显式设置为 framework 设备对象或 framework 队列对象。 如果该驱动程序指定一个父级，该驱动程序必须设置**AutomaticSerialization**中断对象的成员[ **WDF\_中断\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552347)为 TRUE 的结构。 (回想一下，如果**AutomaticSerialization**为 TRUE，框架将同步执行的中断对象[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)或[ *EvtInterruptWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh406422)从中断的父对象下的其他对象的回调函数的回调函数。)
+有关使用框架版本 1.11 或更高版本在 Windows 8 或更高版本的操作系统的驱动程序，该驱动程序可以 framework 中断对象 （DIRQL 或被动） 的父对象显式设置为 framework 设备对象或 framework 队列对象。 如果该驱动程序指定一个父级，该驱动程序必须设置**AutomaticSerialization**中断对象的成员[ **WDF\_中断\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)为 TRUE 的结构。 (回想一下，如果**AutomaticSerialization**为 TRUE，框架将同步执行的中断对象[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)从中断的父对象下的其他对象的回调函数的回调函数。)
 
-例如，驱动程序可能作为父级的中断，若要将队列的回调与中断的同步指定队列[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)或[ *EvtInterruptWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh406422)回调。 在此配置中，框架将删除的设备对象时删除队列对象。
+例如，驱动程序可能作为父级的中断，若要将队列的回调与中断的同步指定队列[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[ *EvtInterruptWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调。 在此配置中，框架将删除的设备对象时删除队列对象。
 
-在调用[ **WdfInterruptCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547345)，该驱动程序可以选择调用[ **WdfInterruptSetPolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff547387)或[ **WdfInterruptSetExtendedPolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff547381)若要指定其他中断参数。 通常，驱动程序会调用这些方法从其[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调函数。
+在调用[ **WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)，该驱动程序可以选择调用[ **WdfInterruptSetPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsetpolicy)或[ **WdfInterruptSetExtendedPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptsetextendedpolicy)若要指定其他中断参数。 通常，驱动程序会调用这些方法从其[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
 
-框架将自动删除之前删除中断的父级的中断。 （可选） 一个驱动程序可以调用[ **WdfObjectDelete** ](https://msdn.microsoft.com/library/windows/hardware/ff548734)若要删除在较早的时间的中断。
+框架将自动删除之前删除中断的父级的中断。 （可选） 一个驱动程序可以调用[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)若要删除在较早的时间的中断。
 
 ## <a name="supporting-message-signaled-interrupts"></a>支持消息信号中断
 
 
-从 Windows Vista 开始支持消息信号中断 (Msi)。 若要启用操作系统可以支持你的设备中的 Msi，驱动程序的 INF 文件必须在注册表中设置一些值。 有关如何设置这些值的信息，请参阅[Enabling Message-Signaled 中断在注册表中](https://msdn.microsoft.com/library/windows/hardware/ff544246)。
+从 Windows Vista 开始支持消息信号中断 (Msi)。 若要启用操作系统可以支持你的设备中的 Msi，驱动程序的 INF 文件必须在注册表中设置一些值。 有关如何设置这些值的信息，请参阅[Enabling Message-Signaled 中断在注册表中](https://docs.microsoft.com/windows-hardware/drivers/kernel/enabling-message-signaled-interrupts-in-the-registry)。
 
 您的驱动程序应创建为每个中断矢量或 MSI 消息，设备可以支持的框架中断对象。 如果 PnP 管理器不会授予设备的所有设备可以支持中断资源，不会使用额外的中断对象并不会调用它们的回调函数。
 

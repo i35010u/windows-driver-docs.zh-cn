@@ -4,17 +4,17 @@ description: 本部分介绍 NDKPI 侦听器、 连接器和终结点和引用�
 ms.assetid: 956D3550-11C8-48D0-BCF4-9027515C7C0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 192f287d210db880df875b6a8e8a6daeb737bf19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1077bc6630531ca3000e56f0b1be3c62212141f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364044"
 ---
 # <a name="ndkpi-listeners-connectors-and-endpoints"></a>NDKPI 侦听器、连接器和终结点
 
 
-NDK 使用者通过调用连接 NDK 连接器*NdkConnect* ([*NDK\_FN\_CONNECT*](https://msdn.microsoft.com/library/windows/hardware/hh439865)) 或*NdkConnectWithSharedEndpoint* ([*NDK\_FN\_CONNECT\_WITH\_共享\_终结点*](https://msdn.microsoft.com/library/windows/hardware/hh439868)) 函数。
+NDK 使用者通过调用连接 NDK 连接器*NdkConnect* ([*NDK\_FN\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect)) 或*NdkConnectWithSharedEndpoint* ([*NDK\_FN\_CONNECT\_WITH\_共享\_终结点*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)) 函数。
 
 处于连接状态的每个连接器还具有基础终结点，表示已建立的 NDK 连接的本地端：
 
@@ -26,7 +26,7 @@ NDK 提供程序必须保持某种形式的每个隐式或显式终结点，引�
 
 ### <a name="reference-counting-for-non-shared-endpoints"></a>引用计数 （非共享） 终结点
 
-当使用者调用*NdkListen* ([*NDK\_FN\_侦听*](https://msdn.microsoft.com/library/windows/hardware/hh439902)) 函数，该提供程序创建的隐式终结点。 对于此隐式的终结点，该提供程序必须维护的引用计数，如下所示：
+当使用者调用*NdkListen* ([*NDK\_FN\_侦听*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_listen)) 函数，该提供程序创建的隐式终结点。 对于此隐式的终结点，该提供程序必须维护的引用计数，如下所示：
 
 -   添加侦听器本身终结点的引用计数的引用。
 -   添加为该侦听器通过接受每个连接器的引用。

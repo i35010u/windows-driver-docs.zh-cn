@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df990b5334833c4911dcc8c3a459ff565d4a892
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5842cacb818aa72bdc0a06a410e48b4f330a373
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358353"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362301"
 ---
 # <a name="bug-check-0x122-wheainternalerror"></a>Bug 检查 0x122：WHEA\_INTERNAL\_ERROR
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358353"
 WHEA\_内部\_错误 bug 检查的值为 0x00000122。 此 bug 检查指示已发生内部错误在 Windows 硬件错误体系结构 (WHEA)。 由供应商、 错误记录的固件实现或错误注入的固件实现提供特定于平台的硬件错误驱动程序 (PSHED) 插件实现中的 bug 可能会导致错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="wheainternalerror-parameters"></a>WHEA\_内部\_错误参数

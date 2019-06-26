@@ -7,12 +7,12 @@ keywords:
 - 调色板纹理 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 087b804e25d8336a01ea9a14558fa457d9fe548e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 654754328601f3a8e0f8ec05299dab4d2330cd00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352391"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377360"
 ---
 # <a name="paletted-textures"></a>调色板式纹理
 
@@ -20,7 +20,7 @@ ms.locfileid: "63352391"
 ## <span id="ddk_paletted_textures_gg"></span><span id="DDK_PALETTED_TEXTURES_GG"></span>
 
 
-Direct3D 允许与纹理一起使用的调色板。 调色板可以附加到纹理，就像它可以对任何其他 DirectDrawSurface 对象。 若要支持调色板纹理，驱动程序必须响应 D3DDP2OP\_SETPALETTE 和 D3DDP2OP\_UPDATEPALETTE 操作代码中的其实现[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704). 这些操作代码后跟[ **D3DHAL\_DP2SETPALETTE** ](https://msdn.microsoft.com/library/windows/hardware/ff545744)并[ **D3DHAL\_DP2UPDATEPALETTE** ](https://msdn.microsoft.com/library/windows/hardware/ff545923)结构，分别，命令流中。 D3DDP2OP\_SETPALETTE 之间创建关联调色板的句柄和图面上的句柄 (已创建的[ **D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840))。 更高版本，D3DDP2OP\_UPDATEPALETTE 可以发送多次设置此纹理的调色板条目的值。
+Direct3D 允许与纹理一起使用的调色板。 调色板可以附加到纹理，就像它可以对任何其他 DirectDrawSurface 对象。 若要支持调色板纹理，驱动程序必须响应 D3DDP2OP\_SETPALETTE 和 D3DDP2OP\_UPDATEPALETTE 操作代码中的其实现[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb). 这些操作代码后跟[ **D3DHAL\_DP2SETPALETTE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2setpalette)并[ **D3DHAL\_DP2UPDATEPALETTE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2updatepalette)结构，分别，命令流中。 D3DDP2OP\_SETPALETTE 之间创建关联调色板的句柄和图面上的句柄 (已创建的[ **D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex))。 更高版本，D3DDP2OP\_UPDATEPALETTE 可以发送多次设置此纹理的调色板条目的值。
 
  
 

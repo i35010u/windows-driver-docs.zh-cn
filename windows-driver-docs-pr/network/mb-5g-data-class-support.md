@@ -7,12 +7,12 @@ keywords:
 ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ba3d6259dd36ac31e7b2d930c11fe2581063966b
-ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
+ms.openlocfilehash: a77f816a6eaebb1a11c9558509f95b61fe9279b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374805"
 ---
 # <a name="mb-5g-data-class-support"></a>MB 5G 数据类支持
 
@@ -34,7 +34,7 @@ ms.locfileid: "65501568"
 
 ## <a name="overview"></a>概述
 
-Windows 10，版本 1903年是为 IHV 合作伙伴支持 5g 移动宽带驱动程序的第一个 Windows 版本。 名称*5g*是友好名称，为新单选 (NR)，在引入[3GPP 版本 15 规范](http://www.3gpp.org/release-15)。 NR 是提供一组全面的标准，设想提供 true 长期发展到现有的第四代 LTE 介绍的技术，可能会从窄带到超宽带和到名义上的所有移动电话通信需求关键的延迟要求。 作为一种技术，5g 应开发一段长达十年时间。 
+Windows 10，版本 1903年是为 IHV 合作伙伴支持 5g 移动宽带驱动程序的第一个 Windows 版本。 名称*5g*是友好名称，为新单选 (NR)，在引入[3GPP 版本 15 规范](https://www.3gpp.org/release-15)。 NR 是提供一组全面的标准，设想提供 true 长期发展到现有的第四代 LTE 介绍的技术，可能会从窄带到超宽带和到名义上的所有移动电话通信需求关键的延迟要求。 作为一种技术，5g 应开发一段长达十年时间。 
 
 本主题介绍 MBIM 扩展首次发布于 Windows 10 版本 1903，哪个启用硬件合作伙伴开发数据类的 MBB 驱动程序支持的增强移动宽带 (eMBB) 超过 5g"非独立版"EPC 基于 NR 网络。 数据平面支持和 5 G 吞吐量和商业化要求启用不属于此 Windows 版本并不在本主题中所述。 
 
@@ -142,8 +142,8 @@ MBB 驱动程序支持 MBIM Microsoft 扩展 2.0 或更高，MBIM_CID_VERSION �
 
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 2 | bcdMBIMVersion | UINT16 | 带有隐含小数点位 7 和 8 之间 BCD 时，在发送方 MBIM 发行版号。 例如，`0x0100 == 1.00 == 1.0`。 这是一个小字节序常量，因此字节是 0x00，然后 0x01。 |
-| 2 | 2 | bcdMBIMExtendedVersion | UINT16 | MBIM 扩展发布带有隐含小数点位 7 和 8 之间 BCD 时，在发送方的数目。 例如，`0x0100 == 1.00 == 1.0`。 这是一个小字节序常量，因此字节是 0x00，然后 0x01。 |
+| 0 | 2 | bcdMBIMVersion | UINT16 | 带有隐含小数点位 7 和 8 之间 BCD 时，在发送方 MBIM 发行版号。 例如， `0x0100 == 1.00 == 1.0` 。 这是一个小字节序常量，因此字节是 0x00，然后 0x01。 |
+| 2 | 2 | bcdMBIMExtendedVersion | UINT16 | MBIM 扩展发布带有隐含小数点位 7 和 8 之间 BCD 时，在发送方的数目。 例如， `0x0100 == 1.00 == 1.0` 。 这是一个小字节序常量，因此字节是 0x00，然后 0x01。 |
 
 ### <a name="set"></a>设置
 

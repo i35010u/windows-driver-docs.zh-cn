@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe7f4ccc7d27a0e4ece5ce4fc16ef9855613733e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ebe437c10ca3edec64db575bb13cf739cecd33cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373593"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386820"
 ---
 # <a name="tap-and-do-scenarios"></a>点击和执行方案
 
@@ -44,6 +44,6 @@ Windows 不提供用户通过其设备与其他用户或物理环境交互的常
 
  
 ## <a name="related-topics"></a>相关主题
- [NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+ [NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

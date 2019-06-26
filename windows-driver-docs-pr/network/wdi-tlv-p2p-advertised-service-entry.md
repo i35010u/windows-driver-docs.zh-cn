@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f317c9659282abaad0ac7833cf6b388dcdc8c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d12da79de0c8c091a28698906661acfd0b028702
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347267"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385709"
 ---
 # <a name="wditlvp2padvertisedserviceentry"></a>WDI\_TLV\_P2P\_播发\_服务\_条目
 
@@ -38,7 +38,7 @@ WDI\_TLV\_P2P\_播发\_服务\_项是包含一个播发的服务条目 TLV。
 | [**WDI\_TLV\_P2P\_服务\_信息**](wdi-tlv-p2p-service-information.md) |                                | X        | 此服务的服务信息。                                                                                                                                    |
 | [**WDI\_TLV\_P2P\_SERVICE\_STATUS**](wdi-tlv-p2p-service-status.md)           |                                |          | 此服务的服务状态。                                                                                                                                          |
 | [**WDI\_TLV\_P2P\_ADVERTISEMENT\_ID**](wdi-tlv-p2p-advertisement-id.md)       |                                |          | 唯一地标识服务实例的 ID。                                                                                                                     |
-| [**WDI\_TLV\_P2P\_CONFIG\_方法**](wdi-tlv-p2p-config-methods.md)           |                                |          | 配置方法中定义[ **WDI\_WPS\_配置\_方法**](https://msdn.microsoft.com/library/windows/hardware/dn898198)。 仅 PIN 显示、 PIN 键盘和 WFDS 均适用。 |
+| [**WDI\_TLV\_P2P\_CONFIG\_方法**](wdi-tlv-p2p-config-methods.md)           |                                |          | 配置方法中定义[ **WDI\_WPS\_配置\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_wps_configuration_method)。 仅 PIN 显示、 PIN 键盘和 WFDS 均适用。 |
 
  
 

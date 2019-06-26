@@ -4,12 +4,12 @@ description: 处理 SR-IOV、VMQ 和 RSS 标准化 INF 关键字
 ms.assetid: EF556563-4097-4388-A563-29FC891AC626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1537e1823822d994e3d50e5eda27b9378299f8ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 091d8b2fda2829dc24af30d0c6330e4ffb8b1d61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325743"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381358"
 ---
 # <a name="handling-sr-iov-vmq-and-rss-standardized-inf-keywords"></a>处理 SR-IOV、VMQ 和 RSS 标准化 INF 关键字
 
@@ -30,7 +30,7 @@ ms.locfileid: "63325743"
 
 从 TCP/IP 堆栈和 HYPER-V 可扩展交换机驱动程序堆栈未绑定的网络适配器时，微型端口驱动程序是已暂停，然后重新初始化。 因此，不能为此类网络适配器，以自动切换 RSS、 VMQ 和 SR-IOV。
 
-当调用 NDIS [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，它报告其当前已启用的 SR-IOV、 VMQ 或 RSS 功能到 NDIS 之前微型端口驱动程序按照以下步骤：
+当调用 NDIS [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，它报告其当前已启用的 SR-IOV、 VMQ 或 RSS 功能到 NDIS 之前微型端口驱动程序按照以下步骤：
 
 1.  微型端口驱动程序读取 **\*SriovPreferred**关键字之前到 NDIS 报告其当前已启用的功能。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63325743"
 
     有关 SR-IOV 关键字的详细信息，请参阅[SR-IOV 的标准化 INF 关键字](standardized-inf-keywords-for-sr-iov.md)。
 
-    **请注意**  如果微型端口驱动程序配置为 SR-IOV 首选项，它必须读取任意 RSS 标准化关键字。 但是，该驱动程序必须读取 VMQ  **\*VMQVlanFiltering**标准化的关键字。 此关键字指定是否启用微型端口驱动程序通过媒体访问控制 (MAC) 标头中的虚拟 VLAN (VLAN) 标识符筛选网络数据包。 微型端口驱动程序报告此功能通过设置 NDIS\_接收\_筛选器\_MAC\_标头\_VLAN\_ID\_中的支持标志**SupportedMacHeaderFields**的成员[ **NDIS\_接收\_筛选器\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)结构。 有关详细信息 **\*VMQVlanFiltering**标准化的关键字，请参阅[VMQ 的标准化 INF 关键字](standardized-inf-keywords-for-vmq.md)。
+    **请注意**  如果微型端口驱动程序配置为 SR-IOV 首选项，它必须读取任意 RSS 标准化关键字。 但是，该驱动程序必须读取 VMQ  **\*VMQVlanFiltering**标准化的关键字。 此关键字指定是否启用微型端口驱动程序通过媒体访问控制 (MAC) 标头中的虚拟 VLAN (VLAN) 标识符筛选网络数据包。 微型端口驱动程序报告此功能通过设置 NDIS\_接收\_筛选器\_MAC\_标头\_VLAN\_ID\_中的支持标志**SupportedMacHeaderFields**的成员[ **NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。 有关详细信息 **\*VMQVlanFiltering**标准化的关键字，请参阅[VMQ 的标准化 INF 关键字](standardized-inf-keywords-for-vmq.md)。
 
      
 

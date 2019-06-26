@@ -10,12 +10,12 @@ keywords:
 - 被拦截的设备的消息 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4623a07cb6a70873934bcfcab66b99e95ca28590
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d132c3c25f07419b71be182b9754b9aa9041f276
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328549"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364814"
 ---
 # <a name="system-intercepted-device-messages"></a>系统截获的设备消息
 
@@ -25,17 +25,17 @@ ms.locfileid: "63328549"
 
 以下 Windows 多媒体函数提供一种方法的调用方将消息传递到旧的音频设备：
 
--   [**waveInMessage**](https://msdn.microsoft.com/library/windows/desktop/dd743846)
+-   [**waveInMessage**](https://docs.microsoft.com/previous-versions/dd743846(v=vs.85))
 
--   [**waveOutMessage**](https://msdn.microsoft.com/library/windows/desktop/dd743865)
+-   [**waveOutMessage**](https://docs.microsoft.com/previous-versions/dd743865(v=vs.85))
 
--   [**midiInMessage**](https://msdn.microsoft.com/library/windows/desktop/dd798457)
+-   [**midiInMessage**](https://docs.microsoft.com/previous-versions/dd798457(v=vs.85))
 
--   [**midiOutMessage**](https://msdn.microsoft.com/library/windows/desktop/dd798475)
+-   [**midiOutMessage**](https://docs.microsoft.com/previous-versions/dd798475(v=vs.85))
 
--   [**mixerMessage**](https://msdn.microsoft.com/library/windows/desktop/dd757307)
+-   [**mixerMessage**](https://docs.microsoft.com/previous-versions/dd757307(v=vs.85))
 
--   [**auxOutMessage**](https://msdn.microsoft.com/library/windows/desktop/dd756716)
+-   [**auxOutMessage**](https://docs.microsoft.com/previous-versions/dd756716(v=vs.85))
 
 直接由设备驱动程序，这些设备的消息的一些处理，一些由系统处理代表设备。
 
@@ -43,11 +43,11 @@ ms.locfileid: "63328549"
 
 -   **设备接口名称**
 
-    有关设备接口名称的信息，请参阅[简介设备接口](https://msdn.microsoft.com/library/windows/hardware/ff549460)。
+    有关设备接口名称的信息，请参阅[简介设备接口](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)。
 
 -   **设备的即插 devnode 号**
 
-    Devnodes 有关的信息，请参阅[设备树](https://msdn.microsoft.com/library/windows/hardware/ff543194)。
+    Devnodes 有关的信息，请参阅[设备树](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)。
 
 -   **设备是否可以使用映射器**
 
@@ -66,9 +66,9 @@ DWORD XxxMessage(
     );
 ```
 
-第一个参数是设备 id。 [ **AuxOutMessage** ](https://msdn.microsoft.com/library/windows/desktop/dd756716)函数定义指定此参数的类型 UINT，按预期方式。 但是中的情况下[ **waveInMessage**](https://msdn.microsoft.com/library/windows/desktop/dd743846)， [ **waveOutMessage**](https://msdn.microsoft.com/library/windows/desktop/dd743865)， [ **midiInMessage**](https://msdn.microsoft.com/library/windows/desktop/dd798457)， [ **midiOutMessage**](https://msdn.microsoft.com/library/windows/desktop/dd798475)，或[ **mixerMessage**](https://msdn.microsoft.com/library/windows/desktop/dd757307)，调用方必须强制转换来处理类型的设备 IDHWAVEIN、 HWAVEOUT、 HMIDIIN、 HMIDIOUT 或 HMIXER，分别。 请注意，如果调用方提供有效的句柄，而不是此参数的设备 ID，该函数失败，将返回错误代码 MMSYSERR\_NOSUPPORT。
+第一个参数是设备 id。 [ **AuxOutMessage** ](https://docs.microsoft.com/previous-versions/dd756716(v=vs.85))函数定义指定此参数的类型 UINT，按预期方式。 但是中的情况下[ **waveInMessage**](https://docs.microsoft.com/previous-versions/dd743846(v=vs.85))， [ **waveOutMessage**](https://docs.microsoft.com/previous-versions/dd743865(v=vs.85))， [ **midiInMessage**](https://docs.microsoft.com/previous-versions/dd798457(v=vs.85))， [ **midiOutMessage**](https://docs.microsoft.com/previous-versions/dd798475(v=vs.85))，或[ **mixerMessage**](https://docs.microsoft.com/previous-versions/dd757307(v=vs.85))，调用方必须强制转换来处理类型的设备 IDHWAVEIN、 HWAVEOUT、 HMIDIIN、 HMIDIOUT 或 HMIXER，分别。 请注意，如果调用方提供有效的句柄，而不是此参数的设备 ID，该函数失败，将返回错误代码 MMSYSERR\_NOSUPPORT。
 
-*UMsg*参数指定的消息值 (例如， [ **DRV\_QUERYDEVICEINTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff536363))。 有关特定于驱动程序的消息的列表，请参阅标头文件 Mmddk.h。
+*UMsg*参数指定的消息值 (例如， [ **DRV\_QUERYDEVICEINTERFACE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536363(v=vs.85)))。 有关特定于驱动程序的消息的列表，请参阅标头文件 Mmddk.h。
 
 参数的含义*dwParam1*并*dwParam2*取决于消息。 例如，特定的消息可能会要求*dwParam1* ULONG 值; 调用方必须强制转换该值，以类型 DWORD\_PTR 以满足函数定义。
 
@@ -78,27 +78,27 @@ DWORD XxxMessage(
 
 标头文件 Mmddk.h 定义以下系统截获设备的消息：
 
-[**DRV\_QUERYDEVICEINTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff536363)
+[**DRV\_QUERYDEVICEINTERFACE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536363(v=vs.85))
 
 有关详细信息，请参阅[获取设备接口名称](obtaining-a-device-interface-name.md)。
 
-[**DRV\_QUERYDEVICEINTERFACESIZE**](https://msdn.microsoft.com/library/windows/hardware/ff536364)
+[**DRV\_QUERYDEVICEINTERFACESIZE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536364(v=vs.85))
 
 有关详细信息，请参阅**获取设备接口名称**。
 
-[**DRV\_QUERYDEVNODE**](https://msdn.microsoft.com/library/windows/hardware/ff536365)
+[**DRV\_QUERYDEVNODE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536365(v=vs.85))
 
 查询的设备的 devnode 号。
 
-[**DRV\_QUERYMAPPABLE**](https://msdn.microsoft.com/library/windows/hardware/ff536366)
+[**DRV\_QUERYMAPPABLE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536366(v=vs.85))
 
 查询设备是否可以使用映射器。
 
-[**DRVM\_MAPPER\_CONSOLEVOICECOM\_GET**](https://msdn.microsoft.com/library/windows/hardware/ff536361)
+[**DRVM\_MAPPER\_CONSOLEVOICECOM\_GET**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536361(v=vs.85))
 
 有关详细信息，请参阅[首选语音通信设备 ID](preferred-voice-communications-device-id.md)。
 
-[**DRVM\_MAPPER\_PREFERRED\_GET**](https://msdn.microsoft.com/library/windows/hardware/ff536362)
+[**DRVM\_MAPPER\_PREFERRED\_GET**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536362(v=vs.85))
 
 有关详细信息，请参阅[访问首选设备 ID](accessing-the-preferred-device-id.md)。
 

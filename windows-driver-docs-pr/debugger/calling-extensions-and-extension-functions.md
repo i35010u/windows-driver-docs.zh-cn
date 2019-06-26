@@ -6,19 +6,19 @@ keywords:
 - 调试器引擎 API，调用扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d13410c18b4fcb259c811f05611a1e370485fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e46d3c5b1e9a244558d6c9a97d176d48c0aec63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374450"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367041"
 ---
 # <a name="calling-extensions-and-extension-functions"></a>调用扩展和扩展函数
 
 
-若要加载扩展库 （或获取已加载的扩展库的句柄），使用[ **AddExtension**](https://msdn.microsoft.com/library/windows/hardware/ff537892)。 可以通过卸载扩展库[ **RemoveExtension**](https://msdn.microsoft.com/library/windows/hardware/ff554497)。
+若要加载扩展库 （或获取已加载的扩展库的句柄），使用[ **AddExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-addextension)。 可以通过卸载扩展库[ **RemoveExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-removeextension)。
 
-可以使用调用扩展命令[ **CallExtension**](https://msdn.microsoft.com/library/windows/hardware/ff539023)。
+可以使用调用扩展命令[ **CallExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-callextension)。
 
 ### <a name="span-idextensionfunctionsspanspan-idextensionfunctionsspanextension-functions"></a><span id="extension_functions"></span><span id="EXTENSION_FUNCTIONS"></span>扩展函数
 
@@ -28,7 +28,7 @@ ms.locfileid: "63374450"
 
 扩展函数进行标识的扩展库中"\_EFN\_"附加到其名称。
 
-若要获取扩展函数的指针，请使用[ **GetExtensionFunction**](https://msdn.microsoft.com/library/windows/hardware/ff546733)。 此函数指针的类型应与匹配的扩展函数的原型。 现在可以就像在 C 中的任何其他函数指针一样调用扩展函数
+若要获取扩展函数的指针，请使用[ **GetExtensionFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getextensionfunction)。 此函数指针的类型应与匹配的扩展函数的原型。 现在可以就像在 C 中的任何其他函数指针一样调用扩展函数
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 

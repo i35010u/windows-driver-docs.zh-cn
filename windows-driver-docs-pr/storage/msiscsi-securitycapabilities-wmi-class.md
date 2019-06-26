@@ -4,12 +4,12 @@ description: MSiSCSI\_SecurityCapabilities WMI 类
 ms.assetid: 50f7aa98-0743-4775-808b-c5a90dc1d0fe
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c0d6fa61a54594bd1c57b37fefdd0c3affc5c1cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e6f7a3932ada476e569ca7736cffeef408462f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384668"
 ---
 # <a name="msiscsisecuritycapabilities-wmi-class"></a>MSiSCSI\_SecurityCapabilities WMI 类
 
@@ -53,7 +53,7 @@ class MSiSCSI_SecurityCapabilities {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_SecurityCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff563130)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_SecurityCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_securitycapabilities)数据结构。
 
  
 

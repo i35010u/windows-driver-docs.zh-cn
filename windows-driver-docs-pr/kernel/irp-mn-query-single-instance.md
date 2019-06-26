@@ -6,19 +6,19 @@ ms.assetid: 104b6b3e-aa5d-437f-8236-02e4abb1ba46
 keywords:
 - IRP_MN_QUERY_SINGLE_INSTANCE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: dfaea0793f295343a527b2f9f00f2fe7976eadaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18c8d4b5ba79292961eeb716218f258378457c18
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370851"
 ---
 # <a name="irpmnquerysingleinstance"></a>IRP\_MN\_查询\_单个\_实例
 
 
-支持 WMI 的所有驱动程序必须处理此 IRP。 驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://msdn.microsoft.com/library/windows/hardware/ff546968)。
+支持 WMI 的所有驱动程序必须处理此 IRP。 驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
 
-如果驱动程序调用[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)处理**IRP\_MN\_查询\_单一\_实例**请求 WMI 又会调用该驱动程序[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)例程。
+如果驱动程序调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)处理**IRP\_MN\_查询\_单一\_实例**请求 WMI 又会调用该驱动程序[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)例程。
 
 <a name="major-code"></a>主代码
 ----------
@@ -39,12 +39,12 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 
 **Parameters.WMI.DataPath**指向标识查询的数据块的 GUID。
 
-**Parameters.WMI.BufferSize**指示在非分页缓冲区的最大大小**Parameters.WMI.Buffer**，它指向[ **WNODE\_单一\_实例**](https://msdn.microsoft.com/library/windows/hardware/ff566377)结构，它标识查询的实例。
+**Parameters.WMI.BufferSize**指示在非分页缓冲区的最大大小**Parameters.WMI.Buffer**，它指向[ **WNODE\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)结构，它标识查询的实例。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-如果该驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)，WMI 会填写[ **WNODE\_单一\_实例**](https://msdn.microsoft.com/library/windows/hardware/ff566377)具有提供的驱动程序的数据结构[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)例程。
+如果该驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，WMI 会填写[ **WNODE\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)具有提供的驱动程序的数据结构[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)例程。
 
 否则，该驱动程序会填写**WNODE\_单个\_实例**结构，在**Parameters.WMI.Buffer** ，如下所示：
 
@@ -54,12 +54,12 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 
 -   将实例数据写入**Parameters.WMI.Buffer**开始**DataBlockOffset**。 该驱动程序不得更改的输入的值**DataBlockOffset**。
 
-如果在缓冲区**Parameters.WMI.Buffer**太小，无法接收的所有数据中的所需的大小，以驱动程序填充[ **WNODE\_过\_小**](https://msdn.microsoft.com/library/windows/hardware/ff566379)结构，在**Parameters.WMI.Buffer**。 如果缓冲区小于**sizeof**(**WNODE\_过\_小**)，该驱动程序将 IRP 失败并返回状态\_缓冲区\_过\_小。
+如果在缓冲区**Parameters.WMI.Buffer**太小，无法接收的所有数据中的所需的大小，以驱动程序填充[ **WNODE\_过\_小**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_too_small)结构，在**Parameters.WMI.Buffer**。 如果缓冲区小于**sizeof**(**WNODE\_过\_小**)，该驱动程序将 IRP 失败并返回状态\_缓冲区\_过\_小。
 
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-如果该驱动程序通过调用来处理 IRP [ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)，WMI 集**Irp-&gt;IoStatus.Status**并**Irp-&gt;IoStatus.Information** I/O 状态块中。
+如果该驱动程序通过调用来处理 IRP [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，WMI 集**Irp-&gt;IoStatus.Status**并**Irp-&gt;IoStatus.Information** I/O 状态块中。
 
 否则，该驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态，如下所示：
 
@@ -74,23 +74,23 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 <a name="operation"></a>操作
 ---------
 
-驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://msdn.microsoft.com/library/windows/hardware/ff546968)。
+驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
 
-如果驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)， **WmiSystemControl**调用的驱动程序[ *DpWmiQueryDataBlock* ](https://msdn.microsoft.com/library/windows/hardware/ff544096)例程。
+如果驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)， **WmiSystemControl**调用的驱动程序[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)例程。
 
-如果驱动程序处理**IRP\_MN\_查询\_单个\_实例**请求本身，才应该这样做**Parameters.WMI.ProviderId**指向与该驱动程序对其调用中传递的指针相同的设备对象[ **IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)。 否则，该驱动程序必须将请求转发到设备堆栈中的下一个较低驱动程序。
+如果驱动程序处理**IRP\_MN\_查询\_单个\_实例**请求本身，才应该这样做**Parameters.WMI.ProviderId**指向与该驱动程序对其调用中传递的指针相同的设备对象[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)。 否则，该驱动程序必须将请求转发到设备堆栈中的下一个较低驱动程序。
 
 之前处理请求，该驱动程序必须确定是否**Parameters.WMI.DataPath**指向该驱动程序支持的 GUID。 如果不是，该驱动程序必须失败 IRP，并返回状态\_WMI\_GUID\_不\_找到。
 
 该驱动程序负责验证所有输入的值。 具体而言，如果处理 IRP 请求本身，则该驱动程序，就必须执行以下操作：
 
--   对于静态名称，请验证**InstanceIndex**的成员[ **WNODE\_单一\_实例**](https://msdn.microsoft.com/library/windows/hardware/ff566377)结构位于范围内支持的数据块的驱动程序的实例索引。
+-   对于静态名称，请验证**InstanceIndex**的成员[ **WNODE\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)结构位于范围内支持的数据块的驱动程序的实例索引。
 
 -   有关动态名称，验证实例名称字符串标识驱动程序支持的数据块实例。
 
 -   确认**Parameters.WMI.BufferSize**指定足够大，以接收该驱动程序将返回的所有数据的缓冲区。
 
-如果该驱动程序支持的数据块，它会检查输入[ **WNODE\_单个\_实例**](https://msdn.microsoft.com/library/windows/hardware/ff566377)在**Parameters.WMI.Buffer**实例名称，按如下所示：
+如果该驱动程序支持的数据块，它会检查输入[ **WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)在**Parameters.WMI.Buffer**实例名称，按如下所示：
 
 -   如果 WNODE\_标志\_静态\_实例\_中设置的名称**WnodeHeader.Flags**，则驱动程序使用**InstanceIndex**作为中的索引为该块的静态实例名称的驱动程序的列表。 WMI 从注册块时，驱动程序提供的注册数据中获取索引。
 
@@ -121,15 +121,15 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 ## <a name="see-also"></a>请参阅
 
 
-[*DpWmiQueryDataBlock*](https://msdn.microsoft.com/library/windows/hardware/ff544096)
+[*DpWmiQueryDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)
 
-[**IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**WMILIB\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff565813)
+[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)
+[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
 
-[**WNODE\_单个\_实例**](https://msdn.microsoft.com/library/windows/hardware/ff566377)
+[**WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)
 
  
 

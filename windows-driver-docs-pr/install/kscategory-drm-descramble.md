@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2cea6c348f4c37d6d3e1d7d5bb935236b7a0cc34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f019caa5dae00c4ca4a4f9b1fe8e589bad91492
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374258"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387029"
 ---
 # <a name="kscategorydrmdescramble"></a>KSCATEGORY_DRM_DESCRAMBLE
 
 
-KSCATEGORY_DRM_DESCRAMBLE[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 对受 DRM 保护的批流进行译码的功能类别。
+KSCATEGORY_DRM_DESCRAMBLE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 对受 DRM 保护的批流进行译码的功能类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_DRM_DESCRAMBLE[设备接口类](https://msdn.microsoft.com/library/wi
 
 KS 设备的驱动程序注册 KSCATEGORY_DRM_DESCRAMBLE 向操作系统指示设备支持 KSCATEGORY_DRM_DESCRAMBLE 功能分类的实例。
 
-有关此功能的类别的详细信息，请参阅[音频适配器安装设备接口](https://msdn.microsoft.com/library/windows/hardware/ff536813)。
+有关此功能的类别的详细信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
 
 <a name="requirements"></a>要求
 ------------

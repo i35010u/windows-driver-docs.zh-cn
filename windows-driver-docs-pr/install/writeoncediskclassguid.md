@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cd9461fd2f7b62f3a83b46f4eb27a072d2da82f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40f72b2e7dc461f6a80afc0c6f6b41033f60a485
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339234"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370924"
 ---
 # <a name="writeoncediskclassguid"></a>WriteOnceDiskClassGuid
 
 
-WriteOnceDiskClassGuid 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)以进行写入-一次磁盘设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_WRITEONCEDISK** ](guid-devinterface-writeoncedisk.md)此类的新实例的类标识符。
+WriteOnceDiskClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)以进行写入-一次磁盘设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_WRITEONCEDISK** ](guid-devinterface-writeoncedisk.md)此类的新实例的类标识符。
 
 <a name="requirements"></a>要求
 ------------

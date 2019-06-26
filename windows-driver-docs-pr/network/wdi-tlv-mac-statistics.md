@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_MAC_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0513d4da6a4f8f1735b1768ab32d1124bf47d535
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 481a205b151feb4d9993db3f56fb419b2bc1c4f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385264"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377003"
 ---
 # <a name="wditlvmacstatistics"></a>WDI\_TLV\_MAC\_STATISTICS
 
 
-WDI\_TLV\_MAC\_统计信息是包含每个对等的 MAC 统计信息 TLV [OID\_WDI\_获取\_统计信息](https://msdn.microsoft.com/library/windows/hardware/dn925850)。
+WDI\_TLV\_MAC\_统计信息是包含每个对等的 MAC 统计信息 TLV [OID\_WDI\_获取\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-statistics)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -44,7 +44,7 @@ WDI\_TLV\_MAC\_统计信息是包含每个对等的 MAC 统计信息 TLV [OID\_W
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926071" data-raw-source="[&lt;strong&gt;WDI_MAC_ADDRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926071)"><strong>WDI_MAC_ADDRESS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address" data-raw-source="[&lt;strong&gt;WDI_MAC_ADDRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)"><strong>WDI_MAC_ADDRESS</strong></a></td>
 <td>为设置这些计数的对等方的 MAC 地址。 对于多播和广播数据包，此值设置为 FF-FF-FF-FF-FF-FF-FF。</td>
 </tr>
 <tr class="even">
@@ -58,7 +58,7 @@ WDI\_TLV\_MAC\_统计信息是包含每个对等的 MAC 统计信息 TLV [OID\_W
 <tr class="even">
 <td>UINT64</td>
 <td>未加密 MAC 层，当启用 IEEE 802.11 dot11ExcludeUnencrypted 管理信息基础 (MIB) 对象时放弃的收到 MPDU 帧数。
-<p>有关此 MIB 对象的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff569365" data-raw-source="[OID_DOT11_EXCLUDE_UNENCRYPTED](https://msdn.microsoft.com/library/windows/hardware/ff569365)">OID_DOT11_EXCLUDE_UNENCRYPTED</a>。 MPDU 帧被视为未加密的 IEEE 802.11 MAC 报头中的帧控制字段受保护的框架子字段设置为零。</p></td>
+<p>有关此 MIB 对象的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-exclude-unencrypted" data-raw-source="[OID_DOT11_EXCLUDE_UNENCRYPTED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-exclude-unencrypted)">OID_DOT11_EXCLUDE_UNENCRYPTED</a>。 MPDU 帧被视为未加密的 IEEE 802.11 MAC 报头中的帧控制字段受保护的框架子字段设置为零。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT64</td>

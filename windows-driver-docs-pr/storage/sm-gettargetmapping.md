@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d105b8218755279ceb7f442ff63f96c57c7127de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89942fca4f619985bb2795a8f441576c2272594f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351662"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384312"
 ---
 # <a name="smgettargetmapping-function"></a>SM\_GetTargetMapping 函数
 
@@ -100,9 +100,9 @@ SM 检索的映射的总数量\_GetTargetMapping 方法。 此值将为小于或
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_GetTargetMapping\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566256)
+[**SM\_GetTargetMapping\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_gettargetmapping_in)
 
-[**SM\_GetTargetMapping\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566258)
+[**SM\_GetTargetMapping\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_gettargetmapping_out)
 
  
 

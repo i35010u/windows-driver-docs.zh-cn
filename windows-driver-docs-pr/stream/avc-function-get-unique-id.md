@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e803243b434410b8711c2a357c2ad498e8c9df28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c691d3d7cbfc9972e3c7c565f1c2ebcd952a8d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358991"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386727"
 ---
 # <a name="avcfunctiongetuniqueid"></a>AVC\_FUNCTION\_GET\_UNIQUE\_ID
 
@@ -109,7 +109,7 @@ typedef struct _AVC_UNIQUE_ID {
 
 ### <a name="see-also"></a>请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)， [ **AVC\_UNIQUE\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff554200)， [ **AVCPRECONNECTINFO**](https://msdn.microsoft.com/library/windows/hardware/ff554103)， [ **AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)， [ **AVC\_UNIQUE\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_unique_id)， [ **AVCPRECONNECTINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcpreconnectinfo)， [ **AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
 
  
 

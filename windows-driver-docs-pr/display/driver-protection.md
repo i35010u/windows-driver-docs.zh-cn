@@ -4,12 +4,12 @@ description: 视频内存管理器以及每个虚拟地址，允许独立硬件�
 ms.assetid: 3D636BD1-683D-49B4-A7E5-176853EA11EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16293ebf7c7e687d2f6e16ed00365553f865a154
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fb9be08be6b35803739c11528c517982c512780
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380375"
 ---
 # <a name="driver-protection"></a>驱动程序保护
 
@@ -20,7 +20,7 @@ ms.locfileid: "63380102"
 
  
 
-映射或保留 GPU 虚拟地址范围时，驱动程序可能指定的 64 位驱动程序保护值。 初始化与该特定的虚拟地址对应的页表项时，将视频内存管理器使用指定的驱动程序保护。 具体而言，驱动程序保护会送回给该驱动程序的任何[ *BuildPagingBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff559587)**DXGK\_操作\_更新\_页\_表**对应于指定的虚拟地址。
+映射或保留 GPU 虚拟地址范围时，驱动程序可能指定的 64 位驱动程序保护值。 初始化与该特定的虚拟地址对应的页表项时，将视频内存管理器使用指定的驱动程序保护。 具体而言，驱动程序保护会送回给该驱动程序的任何[ *BuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)**DXGK\_操作\_更新\_页\_表**对应于指定的虚拟地址。
 
 多个虚拟地址可以映射到单个分配使用不同的驱动程序保护功能。 将使用相应的驱动程序保护更新的每个这些虚拟地址的页表条目。
 
@@ -56,12 +56,12 @@ ms.locfileid: "63380102"
 3. 复制分配范围\[A2、 A4\]与驱动程序保护 0
 4. 复制分配范围\[A4、 A5\]与驱动程序保护 P4
 5. 复制分配范围\[A5、 大小\]使用驱动程序保护 0 就可能的分页进程页表项时，将设置一个驱动程序保护值逐出分配并将其设置为不同的值时将会进行分配已提交。 假定更新的虚拟地址映射后，该驱动程序应刷新分配数据。
-例如，考虑一种情况时将组映射的当前分配是 M1 和用户模式驱动程序调用[ *UpdateGpuVirtualAddress* ](https://msdn.microsoft.com/library/windows/hardware/dn906365)映射设置 M2。 映射集应用 M2 之前, 的视频内存管理器可以被逐出分配。 M2 应用的映射集和分配会提交回。 现在的本地内存段中的分配内容可能不同于原始。
+例如，考虑一种情况时将组映射的当前分配是 M1 和用户模式驱动程序调用[ *UpdateGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)映射设置 M2。 映射集应用 M2 之前, 的视频内存管理器可以被逐出分配。 M2 应用的映射集和分配会提交回。 现在的本地内存段中的分配内容可能不同于原始。
 
 ## <a name="span-idtiledresourcesspanspan-idtiledresourcesspanspan-idtiledresourcesspantiled-resources"></a><span id="Tiled_Resources"></span><span id="tiled_resources"></span><span id="TILED_RESOURCES"></span>平铺的资源
 
 
-平铺资源时保留虚拟地址范围指定驱动程序保护。 用户模式驱动程序调用[ *UpdateGpuVirtualAddress* ](https://msdn.microsoft.com/library/windows/hardware/dn906365)将继承虚拟地址的最新驱动程序保护。
+平铺资源时保留虚拟地址范围指定驱动程序保护。 用户模式驱动程序调用[ *UpdateGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)将继承虚拟地址的最新驱动程序保护。
 
  
 

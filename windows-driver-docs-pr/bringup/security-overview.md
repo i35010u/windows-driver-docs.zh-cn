@@ -4,12 +4,12 @@ description: 使用在本部分中主题来了解有关 Windows 10 移动版中�
 ms.assetid: 15783e59-f37b-4373-8604-d35c57eedfcc
 ms.date: 08/31/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a35de780c5165bdd4b336dc1e3e4d879394529
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4802f4cbc33ca5119d1910c8a583f1ea7d2bbb9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337520"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364506"
 ---
 # <a name="security"></a>安全性
 
@@ -50,8 +50,8 @@ Microsoft 安全开发生命周期 (SDL) 是一套最佳做法和 Oem 可以使�
 
 |Tool|信息|建议的区域|
 |----|----|----|
-|[Microsoft SDL 威胁建模工具](https://www.microsoft.com/download/details.aspx?id=49168)|SDL 威胁建模工具使架构师和开发人员来创建其系统的威胁模型，然后对其系统的设计中的潜在安全问题的威胁模型分析。 威胁建模是设计期间，最有效的在最终设计。 有关详细信息，请参阅[SDL 做法 #7： 使用威胁建模](https://www.microsoft.com/sdl/process/design.aspx)。|驱动程序|
-|[FxCop](https://www.microsoft.com/SDL/adopt/tools.aspx)|FxCop 是一种静态分析器。 它将分析托管代码程序集并报告有关程序集，例如可能的设计、 本地化、 性能和安全性改进的信息。|合作伙伴应用|
+|[Microsoft SDL 威胁建模工具](https://www.microsoft.com/download/details.aspx?id=49168)|SDL 威胁建模工具使架构师和开发人员来创建其系统的威胁模型，然后对其系统的设计中的潜在安全问题的威胁模型分析。 威胁建模是设计期间，最有效的在最终设计。 有关详细信息，请参阅[SDL 做法 #7： 使用威胁建模](https://www.microsoft.com/sdl)。|驱动程序|
+|[FxCop](https://www.microsoft.com/sdl)|FxCop 是一种静态分析器。 它将分析托管代码程序集并报告有关程序集，例如可能的设计、 本地化、 性能和安全性改进的信息。|合作伙伴应用|
 |[从 FxCop 代码分析迁移到.NET 编译器平台分析器](https://docs.microsoft.com/visualstudio/code-quality/fxcop-analyzers)|Visual Studio 2017 包括一组内置分析 C# 或 Visual Basic 代码，当您键入的.NET Compiler Platform 分析器。 你可以安装其他分析器以 Visual Studio 扩展，或在每个项目上作为 NuGet 包。 分析器查看代码样式、 代码质量和可维护性、 代码设计和其他问题。|在托管代码中的合作伙伴应用|
-|[BinSkim](https://www.microsoft.com/SDL/adopt/tools.aspx)|BinSkim 是一个二进制的静态分析工具，便可扫描 Windows 可移植可执行文件 (PE) 文件的安全性和正确性。  由 BinSkim 执行验证的 PE 文件已选择加入到所有 Windows 平台所提供的二进制缓解的验证。 ([用户指南](https://github.com/Microsoft/binskim/blob/develop/docs/BinSkimUserGuide.docx))|驱动程序和合作伙伴应用|
+|[BinSkim](https://www.microsoft.com/sdl)|BinSkim 是一个二进制的静态分析工具，便可扫描 Windows 可移植可执行文件 (PE) 文件的安全性和正确性。  由 BinSkim 执行验证的 PE 文件已选择加入到所有 Windows 平台所提供的二进制缓解的验证。 ([用户指南](https://github.com/Microsoft/binskim/blob/develop/docs/BinSkimUserGuide.docx))|驱动程序和合作伙伴应用|
 |[为 C 代码分析 /C++](https://docs.microsoft.com/visualstudio/code-quality/code-analysis-for-c-cpp-overview)|为 C 代码分析 /C++是一种静态分析器，提供与安装的 Visual Studio Team System Development Edition 或 Visual Studio Team Suite 和可帮助检测和更正代码缺陷。 它一次 plows 通过源代码一个函数，并查找 C /C++的编码模式和不正确的代码可能指示编程错误的使用情况。|驱动程序和合作伙伴应用|

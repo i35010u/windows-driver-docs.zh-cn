@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e28352e9ec00e646771f26f6bf7df10e6b467f24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f208b5ac166110626a663f884f4a256f8df3a40c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376351"
 ---
 # <a name="kspropertystreammasterclock"></a>KSPROPERTY\_STREAM\_MASTERCLOCK
 
@@ -72,7 +72,7 @@ KSPROPERTY\_流\_MASTERCLOCK 属性是可选属性，如果 pin 使用或生成�
 
 筛选器不支持属性时它既不会生成主时钟也不需要引用一个，如转换器筛选器放置而无需将与其他流同步图的中间。 该属性还可为只读时筛选器生成主时钟，但不会同步到外部的主时钟。
 
-另请参阅[KS 时钟](https://msdn.microsoft.com/library/windows/hardware/ff567307)并[AVStream 时钟](https://msdn.microsoft.com/library/windows/hardware/ff554208)。
+另请参阅[KS 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)并[AVStream 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)。
 
 <a name="requirements"></a>要求
 ------------

@@ -6,12 +6,12 @@ keywords:
 - NDIS_STATUS_WWAN_PCO_STATUS、 PCO 状态通知、 移动宽带 PCO 状态通知、 MB PCO 状态通知
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c73750e765e8d2837b60de05edd4aa760a073e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9dd9700bb4d0f03ea842e161b6e18b720af77989
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374809"
 ---
 # <a name="ndisstatuswwanpcostatus"></a>NDIS_STATUS_WWAN_PCO_STATUS
 
@@ -27,9 +27,9 @@ ms.locfileid: "63341418"
 
 此通知将用于通知宿主， **OID_WWAN_PCO**查询请求完成后，使用在通知中包含的 PCO 值。 主机需要调制解调器上的端口号与对应 PDN 传递 PCO 值的完整结构。
 
-如果调制解调器支持 PCO 功能，但当主机发送时，从网络接收的任何 PCO 值**OID_WWAN_PCO**查询请求应返回调制解调器**NDIS_STATUS_WWAN_PCO_STATUS**通知包含一个空[WWAN_PCO_VALUE](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E)有效负载。 
+如果调制解调器支持 PCO 功能，但当主机发送时，从网络接收的任何 PCO 值**OID_WWAN_PCO**查询请求应返回调制解调器**NDIS_STATUS_WWAN_PCO_STATUS**通知包含一个空[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value)有效负载。 
 
-使用此通知[NDIS_WWAN_PCO_STATUS](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)结构。
+使用此通知[NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)结构。
 
 > [!NOTE]
 > 目前，在 Windows 10 版本 1709年及更高版本，某些调制解调器才能够提供特定 PCO 元素的运算符。 如果调制解调器接收 PCO 数据结构，但不存在适用的运算符特定 PCO 元素，以避免不必要的设备唤醒调制解调器应不播发到 OS 的 PCO 通知。 
@@ -45,8 +45,8 @@ ms.locfileid: "63341418"
 
 [OID_WWAN_PCO](oid-wwan-pco.md)
 
-[NDIS_WWAN_PCO_STATUS](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)
+[NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
 
-[WWAN_PCO_VALUE](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E)
+[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value)
 
 [MB 协议配置选项 (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)

@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_ENCAPSULATION_OFFLOAD_V6_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e1bf94ba89aa9471bd6c396de2ffb21664f09f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61c2ec1434b7fb825cbd1e2cb6bb570829533365
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330429"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362811"
 ---
 # <a name="wditlvsetencapsulationoffloadv6parameters"></a>WDI\_TLV\_SET\_ENCAPSULATION\_OFFLOAD\_V6\_PARAMETERS
 
 
-WDI\_TLV\_设置\_封装\_卸载\_V6\_参数是由 TLV [OID\_WDI\_设置\_封装\_卸载](https://msdn.microsoft.com/library/windows/hardware/dn925930)以指示是否应启动 IPv6 卸载。
+WDI\_TLV\_设置\_封装\_卸载\_V6\_参数是由 TLV [OID\_WDI\_设置\_封装\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-encapsulation-offload)以指示是否应启动 IPv6 卸载。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -64,7 +64,7 @@ WDI\_TLV\_设置\_封装\_卸载\_V6\_参数是由 TLV [OID\_WDI\_设置\_封装
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_卸载\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566706)
+[**NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
  
 

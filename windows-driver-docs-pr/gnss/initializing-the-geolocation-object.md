@@ -4,12 +4,12 @@ description: Geolocation.cpp 包含初始化的可设置属性键和模拟地理
 ms.assetid: 3803BD3B-9853-4AA4-A278-22F8D835B1ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d43e676a93ec298a0daf71b18820a6f70b72c18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1605141c4d162485720251574368c276ef184fd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371040"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363657"
 ---
 # <a name="initializing-the-geolocation-object"></a>初始化地理位置对象
 
@@ -29,7 +29,7 @@ const PROPERTYKEY g_SettableGeolocationProperties[] =
 };
 ```
 
-有关更改敏感度和报表时间间隔内的详细信息，请参阅[筛选数据](https://msdn.microsoft.com/library/windows/hardware/hh706201)主题。
+有关更改敏感度和报表时间间隔内的详细信息，请参阅[筛选数据](https://docs.microsoft.com/windows-hardware/drivers/sensors/filtering-data)主题。
 
 数据字段该键**PROPERTYKEY**驱动程序用来标识它支持每个唯一的数据字段。 在伪地理位置传感器的情况下有八个受支持的数据字段包含数据，例如读取、 当前纬度 （以度为单位），（以度为单位），当前经度和等等的时间戳。 在文件 geolocation.cpp 中也定义了这些密钥。
 
@@ -53,7 +53,7 @@ const PROPERTYKEY g_SupportedGeolocationDataFields[] =
 
 ## <a name="related-topics"></a>相关主题
 [定义地理位置对象](defining-the-geolocation-object.md)  
-[筛选数据](https://msdn.microsoft.com/library/windows/hardware/hh706201)  
+[筛选数据](https://docs.microsoft.com/windows-hardware/drivers/sensors/filtering-data)  
 
 
 

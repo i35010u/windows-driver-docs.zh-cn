@@ -11,18 +11,18 @@ keywords:
 - I/O WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ffa2ce45d64fbc8d50b6cbb4930f0b6b2f8401b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e99299a05a757a873d3b08b2dcfacb50292336d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370277"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386679"
 ---
 # <a name="building-and-sending-an-avc-command"></a>生成和发送 AV/C 命令
 
 以下过程概述了此过程来生成并发送 AV/C 命令：
 
-1. 子单元驱动程序必须分配并初始化 IRP 适合自身的下方的驱动程序的数量 (下一步的较低司机的设备中指定的那样\_对象的&gt;**StackSize**成员)。 由驱动程序编写器实现的 IRP 管理的样式会影响如何获取 IRP 用于*Avc.sys*。 通常，微型驱动程序会调用[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)为 AV/C 命令分配新 IRP。 不要调用[ **IoInitializeIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549315)上分配到子单元的驱动程序通过 IRP **IoAllocateIrp**。 而不是尝试以重新初始化并重复使用旧 IRP，调用[ **IoFreeIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549113)上的现有 IRP，然后调用**IoAllocateIrp**来分配新 IRP。
+1. 子单元驱动程序必须分配并初始化 IRP 适合自身的下方的驱动程序的数量 (下一步的较低司机的设备中指定的那样\_对象的&gt;**StackSize**成员)。 由驱动程序编写器实现的 IRP 管理的样式会影响如何获取 IRP 用于*Avc.sys*。 通常，微型驱动程序会调用[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)为 AV/C 命令分配新 IRP。 不要调用[ **IoInitializeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeirp)上分配到子单元的驱动程序通过 IRP **IoAllocateIrp**。 而不是尝试以重新初始化并重复使用旧 IRP，调用[ **IoFreeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)上的现有 IRP，然后调用**IoAllocateIrp**来分配新 IRP。
 
     > [!NOTE]
     > 为了提高可读性，下面的代码示例不演示错误处理。
@@ -34,7 +34,7 @@ ms.locfileid: "63370277"
 
 2. 子单元驱动程序然后分配 AVC\_命令\_IRB 或 AVC\_MULTIFUNC\_IRB 结构，它是适用于类型的所需的 AV/C 函数并填充具有所需的 AV/C 请求的块参数。 每个 IOCTL 的参考页\_AVC\_类函数描述函数需要哪些 IRB。 IRB 是描述 AV/C 操作码和要执行的操作的数据块。 支持的每个函数*Avc.sys*与特定 IRB 结构相关联。 必须从非分页缓冲池分配 IRB 的内存。 当已分配的内存 IRB 填写根据其关联的结构定义函数的参数。
 
-    有关可用的函数及其关联的结构定义的列表，请参阅[AV/C 协议驱动程序函数代码](https://msdn.microsoft.com/library/windows/hardware/ff556389)， [AV/C 结构](https://msdn.microsoft.com/library/windows/hardware/ff556422)，并[AV/C 枚举](https://msdn.microsoft.com/library/windows/hardware/ff556375).
+    有关可用的函数及其关联的结构定义的列表，请参阅[AV/C 协议驱动程序函数代码](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-protocol-driver-function-codes)， [AV/C 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)，并[AV/C 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index).
 
     以下是一个代码示例，演示如何 AVC\_命令\_IRB 结构可能会分配并初始化包含单个操作数字节 AV/C 控制命令：
 
@@ -68,7 +68,7 @@ ms.locfileid: "63370277"
     AvcIrb->Operand[0] = Operand;
     ```
 
-3. 子单元驱动程序必须指定 IRP **MajorFunction**并**Parameters.DeviceIoControl.IoControlCode**成员，以及指向在步骤 2 中已分配 IRB 的指针。 分配 IRP 从操作系统，则为相应 IRB，分配非分页的内存，然后设置的参数，为 IRB 后，必须将 IRB 与 IRP 相关联。 具体取决于 IRB 的函数代码中，必须以 IRP 指定正确的调度例程。 AV/C 函数代码对应于 IOCTL\_AVC\_类 (即**Parameters.DeviceIoControl.IoControlCode**成员设置为 IOCTL\_AVC\_类)，IRP\_MN\_内部\_设备\_控件必须指定为已分配 IRP **MajorFunction**值。 支持的所有其他 AV/C 函数代码*Avc.sys*，如[ **IOCTL\_AVC\_更新\_虚拟\_子单元\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff560798)， [ **IOCTL\_AVC\_删除\_虚拟\_子单元\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff560793)，和[**IOCTL\_AVC\_总线\_重置**](https://msdn.microsoft.com/library/windows/hardware/ff560783)，必须指定 IRP\_MJ\_设备\_控件作为分配 IRP 的**MajorFunction**值。
+3. 子单元驱动程序必须指定 IRP **MajorFunction**并**Parameters.DeviceIoControl.IoControlCode**成员，以及指向在步骤 2 中已分配 IRB 的指针。 分配 IRP 从操作系统，则为相应 IRB，分配非分页的内存，然后设置的参数，为 IRB 后，必须将 IRB 与 IRP 相关联。 具体取决于 IRB 的函数代码中，必须以 IRP 指定正确的调度例程。 AV/C 函数代码对应于 IOCTL\_AVC\_类 (即**Parameters.DeviceIoControl.IoControlCode**成员设置为 IOCTL\_AVC\_类)，IRP\_MN\_内部\_设备\_控件必须指定为已分配 IRP **MajorFunction**值。 支持的所有其他 AV/C 函数代码*Avc.sys*，如[ **IOCTL\_AVC\_更新\_虚拟\_子单元\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)， [ **IOCTL\_AVC\_删除\_虚拟\_子单元\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)，和[**IOCTL\_AVC\_总线\_重置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_bus_reset)，必须指定 IRP\_MJ\_设备\_控件作为分配 IRP 的**MajorFunction**值。
 
     下面的代码示例演示如何设置 IRP *Avc.sys*到进程：
 
@@ -93,11 +93,11 @@ ms.locfileid: "63370277"
 
     需要的 I/O 完成例程，因为子单元驱动程序必须分配与进行通信的 Irp *Avc.sys*。 完成例程会继续处理子单元驱动程序的已分配的 IRP 到较低的驱动程序的子单元的调用完成后阻止 I/O 管理器。 I/O 完成例程必须始终返回状态\_更多\_处理\_必需。 超出这一要求，子单元驱动程序可能会实现其控制流和资源管理机制。
 
-    当子单元驱动程序设置 I/O 完成例程时，它可以包括 PVOID 上下文参数。 此参数可以是指向任何内容，只要完成例程专门编写是为了解决这个问题。 如果子单元的驱动程序确保 AV/C 请求永远不会涉及*临时处理*，则 I/O 完成例程可以是非常简单： 使用它来触发[ **KSEVENT** ](https://msdn.microsoft.com/library/windows/hardware/ff561744)（作为 PVOID 上下文传递）。 调用的主代码路径[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336) （在步骤 5 中所述） 的事件，提供存储，并使用[ **KeWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)与完成例程进行同步。 IRP 和 IRB 会释放由主代码路径。
+    当子单元驱动程序设置 I/O 完成例程时，它可以包括 PVOID 上下文参数。 此参数可以是指向任何内容，只要完成例程专门编写是为了解决这个问题。 如果子单元的驱动程序确保 AV/C 请求永远不会涉及*临时处理*，则 I/O 完成例程可以是非常简单： 使用它来触发[ **KSEVENT** ](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))（作为 PVOID 上下文传递）。 调用的主代码路径[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) （在步骤 5 中所述） 的事件，提供存储，并使用[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)与完成例程进行同步。 IRP 和 IRB 会释放由主代码路径。
 
     如果，但是，子单元驱动程序发送的请求，可能会涉及到临时处理，完成例程负责处理响应和释放的 IRP 和 IRB 资源。 主代码路径放弃所有 IRP 处理职责交给完成例程。
 
-5. 然后调用子单元驱动程序[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336) ，并将传递的下一个较低的驱动程序 (通过调用返回[ **IoAttachDeviceToDeviceStack** ](https://msdn.microsoft.com/library/windows/hardware/ff548300)中的子单元驱动程序**AddDevice**例程) 和 IRP 到处理*Avc.sys*。
+5. 然后调用子单元驱动程序[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) ，并将传递的下一个较低的驱动程序 (通过调用返回[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)中的子单元驱动程序**AddDevice**例程) 和 IRP 到处理*Avc.sys*。
 
     ```cpp
     status = IoCallDriver( DeviceExtension->NextLowerDriver, Irp );
@@ -114,14 +114,14 @@ ms.locfileid: "63370277"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>STATUS_SUCCESS</p></td>
-<td><p>发出请求，并最终响应收到的 AV/C 规范的超时和重试参数的边界内。 子单元的响应代码 ( <strong>ResponseCode</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff554140" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554140)"> <strong>AVC_COMMAND_IRB</strong> </a>结构) 仍必须检查以确定操作的结果，则返回 true。 STATUS_SUCCESS 指的是双向的请求和响应周期已完成中小于 100 毫秒 （假定默认超时值已改变的 100 毫秒）。</p></td>
+<td><p>发出请求，并最终响应收到的 AV/C 规范的超时和重试参数的边界内。 子单元的响应代码 ( <strong>ResponseCode</strong>的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)"> <strong>AVC_COMMAND_IRB</strong> </a>结构) 仍必须检查以确定操作的结果，则返回 true。 STATUS_SUCCESS 指的是双向的请求和响应周期已完成中小于 100 毫秒 （假定默认超时值已改变的 100 毫秒）。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_TIMEOUT</p></td>
@@ -151,7 +151,7 @@ ms.locfileid: "63370277"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -179,4 +179,4 @@ ms.locfileid: "63370277"
 
 某些*控制*和全部*通知*请求确认，但可能不一定完成，在 100 毫秒内的请求。 确认是通过在本文档中引用的临时响应*临时处理*。 临时响应的结果是， **IoCallDriver**将返回状态\_PENDING。 如果出现这种结果，则在第 4 步中指定的 I/O 完成例程的通知点 AV/C 子单元由最后完成请求时。
 
-有关 Irp 和 Ioctl 的详细信息，请参阅[处理 Irp](https://msdn.microsoft.com/library/windows/hardware/ff546847)。
+有关 Irp 和 Ioctl 的详细信息，请参阅[处理 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)。

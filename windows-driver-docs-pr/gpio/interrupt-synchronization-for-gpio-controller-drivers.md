@@ -4,21 +4,21 @@ description: GPIO 控制器驱动程序可以调用 GPIO_CLX_AcquireInterruptLoc
 ms.assetid: D9698A50-7CC2-463C-9E46-7FE428F3193E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf1021e090f88db9470790e9c9ef67f50690ce8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37124c974c93ceb2c5120ad56ea8aef5e4bcec0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363578"
 ---
 # <a name="interrupt-synchronization-for-gpio-controller-drivers"></a>GPIO 控制器驱动程序的中断同步
 
 
-GPIO 控制器驱动程序可以调用[ **GPIO\_CLX\_AcquireInterruptLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439482)并[ **GPIO\_CLX\_ReleaseInterruptLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439494)方法来获取和释放中断由 GPIO 框架扩展 (GpioClx) 在内部实现的锁。 驱动程序代码运行在 IRQL = 被动\_级别可以调用这些方法来同步到 GpioClx 中断服务例程 (ISR)。 GpioClx 到引脚 GPIO 控制器中的每个插槽将专用的单独的中断锁。
+GPIO 控制器驱动程序可以调用[ **GPIO\_CLX\_AcquireInterruptLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nf-gpioclx-gpio_clx_acquireinterruptlock)并[ **GPIO\_CLX\_ReleaseInterruptLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nf-gpioclx-gpio_clx_releaseinterruptlock)方法来获取和释放中断由 GPIO 框架扩展 (GpioClx) 在内部实现的锁。 驱动程序代码运行在 IRQL = 被动\_级别可以调用这些方法来同步到 GpioClx 中断服务例程 (ISR)。 GpioClx 到引脚 GPIO 控制器中的每个插槽将专用的单独的中断锁。
 
 如果 GPIO 控制器的硬件寄存器内存映射，在 GpioClx ISR 调用某些驱动程序实现事件回调函数在 DIRQL;GpioClx 调用回调函数的其余部分的被动\_级别。 访问为寄存器的插槽的被动级别回调函数可能需要中断锁用于同步对回调函数，在 DIRQL 运行并访问同一个寄存器。
 
-例如，被动级别[*客户端\_EnableInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/hh439377)并[*客户端\_DisableInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/hh439371)回调函数修改硬件设置会影响在 DIRQL 运行其他中断相关的回调例程的操作。 *客户端\_EnableInterrupt*并*客户端\_DisableInterrupt*函数通常使用银行中断锁来同步其注册访问。
+例如，被动级别[*客户端\_EnableInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)并[*客户端\_DisableInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disable_interrupt)回调函数修改硬件设置会影响在 DIRQL 运行其他中断相关的回调例程的操作。 *客户端\_EnableInterrupt*并*客户端\_DisableInterrupt*函数通常使用银行中断锁来同步其注册访问。
 
 GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx DIRQL，在调用回调函数之前获取目标库的中断锁定，并在函数返回之后释放的锁。 则在 DIRQL 以尝试重新获取通过调用银行中断锁时调用的回调函数返回错误**GPIO\_CLX\_AcquireInterruptLock**。
 
@@ -30,9 +30,9 @@ GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx
 
 内存映射的控制器的另一个选项是控制器驱动程序实现等待锁的一组。 这些等待锁可能会使执行更细粒度锁定和解锁的共享资源，不是可由 GpioClx 实现等待锁的回调例程。
 
-在调用[*客户端\_QueryControllerBasicInformation* ](https://msdn.microsoft.com/library/windows/hardware/hh439399)回调例程 GPIO 控制器驱动程序报告给 GpioClx 控制器寄存器是否是内存映射。 有关详细信息，请参阅的说明**MemoryMappedController**中的标志[**客户端\_控制器\_BASIC\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh439358).
+在调用[*客户端\_QueryControllerBasicInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)回调例程 GPIO 控制器驱动程序报告给 GpioClx 控制器寄存器是否是内存映射。 有关详细信息，请参阅的说明**MemoryMappedController**中的标志[**客户端\_控制器\_BASIC\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information).
 
-有关中断锁和等待锁的详细信息，请参阅[使用 Framework 锁](https://msdn.microsoft.com/library/windows/hardware/ff545446)。
+有关中断锁和等待锁的详细信息，请参阅[使用 Framework 锁](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-framework-locks)。
 
 下表提供了更多详细的信息有关的回调函数调用在 DIRQL 而不是在被动\_级别如果内存映射的寄存器。 请按照表的说明介绍被动级别回调函数应在何时使用中断锁。
 
@@ -62,27 +62,27 @@ GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439377" data-raw-source="[&lt;em&gt;CLIENT_EnableInterrupt&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439377)"><em>CLIENT_EnableInterrupt</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439371" data-raw-source="[&lt;em&gt;CLIENT_DisableInterrupt&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439371)"><em>CLIENT_DisableInterrupt</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_enable_interrupt" data-raw-source="[&lt;em&gt;CLIENT_EnableInterrupt&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)"><em>CLIENT_EnableInterrupt</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disable_interrupt" data-raw-source="[&lt;em&gt;CLIENT_DisableInterrupt&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disable_interrupt)"><em>CLIENT_DisableInterrupt</em></a></p></td>
 <td><p>PASSIVE_LEVEL</p>
 <p>（参见备注 1）。</p></td>
 <td><p>PASSIVE_LEVEL</p>
 <p>（请参阅备注 2）。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439341" data-raw-source="[&lt;em&gt;CLIENT_ClearActiveInterrupts&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439341)"><em>CLIENT_ClearActiveInterrupts</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439380" data-raw-source="[&lt;em&gt;CLIENT_MaskInterrupts&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439380)"><em>CLIENT_MaskInterrupts</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439395" data-raw-source="[&lt;em&gt;CLIENT_QueryActiveInterrupts&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439395)"><em>CLIENT_QueryActiveInterrupts</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/dn265184" data-raw-source="[&lt;em&gt;CLIENT_QueryEnabledInterrupts&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn265184)"><em>CLIENT_QueryEnabledInterrupts</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh698243" data-raw-source="[&lt;em&gt;CLIENT_ReconfigureInterrupt&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh698243)"><em>CLIENT_ReconfigureInterrupt</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439435" data-raw-source="[&lt;em&gt;CLIENT_UnmaskInterrupt&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439435)"><em>CLIENT_UnmaskInterrupt</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_clear_active_interrupts" data-raw-source="[&lt;em&gt;CLIENT_ClearActiveInterrupts&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_clear_active_interrupts)"><em>CLIENT_ClearActiveInterrupts</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_mask_interrupts" data-raw-source="[&lt;em&gt;CLIENT_MaskInterrupts&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_mask_interrupts)"><em>CLIENT_MaskInterrupts</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_active_interrupts" data-raw-source="[&lt;em&gt;CLIENT_QueryActiveInterrupts&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_active_interrupts)"><em>CLIENT_QueryActiveInterrupts</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts" data-raw-source="[&lt;em&gt;CLIENT_QueryEnabledInterrupts&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts)"><em>CLIENT_QueryEnabledInterrupts</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt" data-raw-source="[&lt;em&gt;CLIENT_ReconfigureInterrupt&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)"><em>CLIENT_ReconfigureInterrupt</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_unmask_interrupt" data-raw-source="[&lt;em&gt;CLIENT_UnmaskInterrupt&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_unmask_interrupt)"><em>CLIENT_UnmaskInterrupt</em></a></p></td>
 <td><p>DIRQL</p>
 <p>（请参阅备注 3）。</p></td>
 <td><p>PASSIVE_LEVEL</p>
 <p>（请参阅备注 4）。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439392" data-raw-source="[&lt;em&gt;CLIENT_PreProcessControllerInterrupt&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439392)"><em>CLIENT_PreProcessControllerInterrupt</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_pre_process_controller_interrupt" data-raw-source="[&lt;em&gt;CLIENT_PreProcessControllerInterrupt&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_pre_process_controller_interrupt)"><em>CLIENT_PreProcessControllerInterrupt</em></a></p></td>
 <td><p>DIRQL</p>
 <p>（请参阅备注 5）。</p></td>
 <td><p>DIRQL</p>
@@ -127,18 +127,18 @@ GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439347" data-raw-source="[&lt;em&gt;CLIENT_ConnectIoPins&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439347)"><em>CLIENT_ConnectIoPins</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439374" data-raw-source="[&lt;em&gt;CLIENT_DisconnectIoPins&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439374)"><em>CLIENT_DisconnectIoPins</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_connect_io_pins" data-raw-source="[&lt;em&gt;CLIENT_ConnectIoPins&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_connect_io_pins)"><em>CLIENT_ConnectIoPins</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disconnect_io_pins" data-raw-source="[&lt;em&gt;CLIENT_DisconnectIoPins&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disconnect_io_pins)"><em>CLIENT_DisconnectIoPins</em></a></p></td>
 <td><p>PASSIVE_LEVEL</p>
 <p>（参见备注 1）。</p></td>
 <td><p>PASSIVE_LEVEL</p>
 <p>（请参阅备注 2）。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439404" data-raw-source="[&lt;em&gt;CLIENT_ReadGpioPins&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439404)"><em>CLIENT_ReadGpioPins</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439406" data-raw-source="[&lt;em&gt;CLIENT_ReadGpioPinsUsingMask&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439406)"><em>CLIENT_ReadGpioPinsUsingMask</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439439" data-raw-source="[&lt;em&gt;CLIENT_WriteGpioPins&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439439)"><em>CLIENT_WriteGpioPins</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439445" data-raw-source="[&lt;em&gt;CLIENT_WriteGpioPinsUsingMask&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439445)"><em>CLIENT_WriteGpioPinsUsingMask</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins" data-raw-source="[&lt;em&gt;CLIENT_ReadGpioPins&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins)"><em>CLIENT_ReadGpioPins</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins_mask" data-raw-source="[&lt;em&gt;CLIENT_ReadGpioPinsUsingMask&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins_mask)"><em>CLIENT_ReadGpioPinsUsingMask</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins" data-raw-source="[&lt;em&gt;CLIENT_WriteGpioPins&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins)"><em>CLIENT_WriteGpioPins</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins_mask" data-raw-source="[&lt;em&gt;CLIENT_WriteGpioPinsUsingMask&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins_mask)"><em>CLIENT_WriteGpioPinsUsingMask</em></a></p></td>
 <td><p>DIRQL</p>
 <p>（请参阅备注 3）。</p></td>
 <td><p>PASSIVE_LEVEL</p>
@@ -179,12 +179,12 @@ GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439389" data-raw-source="[&lt;em&gt;CLIENT_PrepareController&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439389)"><em>CLIENT_PrepareController</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439411" data-raw-source="[&lt;em&gt;CLIENT_ReleaseController&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439411)"><em>CLIENT_ReleaseController</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439424" data-raw-source="[&lt;em&gt;CLIENT_StartController&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439424)"><em>CLIENT_StartController</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439430" data-raw-source="[&lt;em&gt;CLIENT_StopController&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439430)"><em>CLIENT_StopController</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439399" data-raw-source="[&lt;em&gt;CLIENT_QueryControllerBasicInformation&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439399)"><em>CLIENT_QueryControllerBasicInformation</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh698241" data-raw-source="[&lt;em&gt;CLIENT_QuerySetControllerInformation&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh698241)"><em>CLIENT_QuerySetControllerInformation</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_prepare_controller" data-raw-source="[&lt;em&gt;CLIENT_PrepareController&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_prepare_controller)"><em>CLIENT_PrepareController</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_release_controller" data-raw-source="[&lt;em&gt;CLIENT_ReleaseController&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_release_controller)"><em>CLIENT_ReleaseController</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_start_controller" data-raw-source="[&lt;em&gt;CLIENT_StartController&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_start_controller)"><em>CLIENT_StartController</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_stop_controller" data-raw-source="[&lt;em&gt;CLIENT_StopController&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_stop_controller)"><em>CLIENT_StopController</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information" data-raw-source="[&lt;em&gt;CLIENT_QueryControllerBasicInformation&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)"><em>CLIENT_QueryControllerBasicInformation</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_set_controller_information" data-raw-source="[&lt;em&gt;CLIENT_QuerySetControllerInformation&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_set_controller_information)"><em>CLIENT_QuerySetControllerInformation</em></a></p></td>
 <td><p>PASSIVE_LEVEL</p>
 <p>（参见备注 1）。</p></td>
 <td><p>PASSIVE_LEVEL</p>
@@ -221,8 +221,8 @@ GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439414" data-raw-source="[&lt;em&gt;CLIENT_RestoreBankHardwareContext&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439414)"><em>CLIENT_RestoreBankHardwareContext</em></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh439419" data-raw-source="[&lt;em&gt;CLIENT_SaveBankHardwareContext&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439419)"><em>CLIENT_SaveBankHardwareContext</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_restore_bank_hardware_context" data-raw-source="[&lt;em&gt;CLIENT_RestoreBankHardwareContext&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_restore_bank_hardware_context)"><em>CLIENT_RestoreBankHardwareContext</em></a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_save_bank_hardware_context" data-raw-source="[&lt;em&gt;CLIENT_SaveBankHardwareContext&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_save_bank_hardware_context)"><em>CLIENT_SaveBankHardwareContext</em></a></p></td>
 <td><p>DIRQL 或 HIGH_LEVEL</p>
 <p>（请参阅注释。）</p></td>
 <td><p>不支持。</p></td>
@@ -240,12 +240,12 @@ GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx
 
 -   对于关键 F 状态转换：保存/还原回调调用 power 引擎插件 (PEP) 来保存和还原的 GPIO 状态时调用。 保存/还原回调函数以高调用\_级别中的最后一个处理器处于空闲状态，较晚的平台深度空闲转换序列出现这种情况的上下文。 因此，既不回调函数应尝试获取银行中断锁。
 
-有关 F 状态的详细信息，请参阅[组件级别电源管理](https://msdn.microsoft.com/library/windows/hardware/hh450935)。 有关 PEP 的详细信息，请参阅[ **PoFxPowerControl**](https://msdn.microsoft.com/library/windows/hardware/hh439518)。
+有关 F 状态的详细信息，请参阅[组件级别电源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/component-level-power-management)。 有关 PEP 的详细信息，请参阅[ **PoFxPowerControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxpowercontrol)。
 
 ## <a name="other-callback-functions"></a>其他回调函数
 
 
-若要启用 GPIO 控制器来支持特定于控制器的操作，GPIO 控制器驱动程序实现[*客户端\_ControllerSpecificFunction* ](https://msdn.microsoft.com/library/windows/hardware/hh698237)事件回调函数。 下表中，在中间栏中指示 IRQL 内存映射 GPIO 控制器的硬件寄存器是否调用该函数。 最右侧的列指示 IRQL 如果寄存器不内存映射，并且必须通过串行总线访问调用该函数。
+若要启用 GPIO 控制器来支持特定于控制器的操作，GPIO 控制器驱动程序实现[*客户端\_ControllerSpecificFunction* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_controller_specific_function)事件回调函数。 下表中，在中间栏中指示 IRQL 内存映射 GPIO 控制器的硬件寄存器是否调用该函数。 最右侧的列指示 IRQL 如果寄存器不内存映射，并且必须通过串行总线访问调用该函数。
 
 <table>
 <colgroup>
@@ -262,7 +262,7 @@ GpioClx 自动序列化在 DIRQL 发生的中断与和 O 相关回调。 GpioClx
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh698237" data-raw-source="[&lt;em&gt;CLIENT_ControllerSpecificFunction&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh698237)"><em>CLIENT_ControllerSpecificFunction</em></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_controller_specific_function" data-raw-source="[&lt;em&gt;CLIENT_ControllerSpecificFunction&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_controller_specific_function)"><em>CLIENT_ControllerSpecificFunction</em></a></p></td>
 <td><p>PASSIVE_LEVEL</p>
 <p>（参见备注 1）。</p></td>
 <td><p>PASSIVE_LEVEL</p>

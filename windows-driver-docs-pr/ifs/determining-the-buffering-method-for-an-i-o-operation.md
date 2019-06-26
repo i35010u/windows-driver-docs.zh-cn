@@ -13,12 +13,12 @@ keywords:
 - I/O WDK 的文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f21cc89dd5d464b6d993178b70342571b1f2707f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 184f6713ecc6e0acda8e01146e187ff4030d72a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386103"
 ---
 # <a name="determining-the-buffering-method-for-an-io-operation"></a>确定 I/O 操作的缓冲方法
 
@@ -38,13 +38,13 @@ ms.locfileid: "63327030"
 
 所有标准 Microsoft 文件系统使用既不缓冲，也不直接 I/O，对于大多数 I/O 处理。
 
-缓冲方法的详细信息，请参阅[方法的访问数据缓冲区](https://msdn.microsoft.com/library/windows/hardware/ff554436)。
+缓冲方法的详细信息，请参阅[方法的访问数据缓冲区](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)。
 
 对于基于 IRP 的 I/O 操作，使用的缓冲方法是特定于操作的并由以下因素决定：
 
 -   正在执行的 I/O 操作的类型
 
--   值**标志**的成员[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)文件系统卷的结构
+-   值**标志**的成员[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)文件系统卷的结构
 
 -   I/O 控制 (IOCTL) 和文件系统控制 (FSCTL) 操作的值*留空，则*参数传递给 CTL\_代码时 IOCTL 或 FSCTL 已定义的宏
 

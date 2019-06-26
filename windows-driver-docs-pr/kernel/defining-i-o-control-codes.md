@@ -14,12 +14,12 @@ keywords:
 - 布局 WDK Ioctl
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d7a39ed0d7b80cef7896f75d27f7b206cad137c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a1eeda9cd5696ca2660c0a87949ee64d2dc1bc0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377113"
 ---
 # <a name="defining-io-control-codes"></a>定义 I/O 控制代码
 
@@ -29,8 +29,8 @@ ms.locfileid: "63388281"
 
 定义新 Ioctl，时，请务必记住以下规则：
 
--   如果新 IOCTL 将可供用户模式下的软件组件，必须与使用 IOCTL [ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)请求。 用户模式组件发送**IRP\_MJ\_设备\_控制**请求通过调用[ **DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)，这是Win32 函数。
--   如果新 IOCTL 将仅适用于内核模式驱动程序组件，必须与使用 IOCTL [ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)请求。 内核模式组件创建**IRP\_MJ\_内部\_设备\_控制**通过调用请求**IoBuildDeviceIoControlRequest**。 有关详细信息，请参阅[驱动程序中创建 IOCTL 请求](creating-ioctl-requests-in-drivers.md)。
+-   如果新 IOCTL 将可供用户模式下的软件组件，必须与使用 IOCTL [ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)请求。 用户模式组件发送**IRP\_MJ\_设备\_控制**请求通过调用[ **DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)，这是Win32 函数。
+-   如果新 IOCTL 将仅适用于内核模式驱动程序组件，必须与使用 IOCTL [ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)请求。 内核模式组件创建**IRP\_MJ\_内部\_设备\_控制**通过调用请求**IoBuildDeviceIoControlRequest**。 有关详细信息，请参阅[驱动程序中创建 IOCTL 请求](creating-ioctl-requests-in-drivers.md)。
 
 I/O 控制代码是一个 32 位值的多个字段组成。 下图说明了 I/O 控制代码的布局。
 
@@ -47,13 +47,13 @@ I/O 控制代码是一个 32 位值的多个字段组成。 下图说明了 I/O 
 将以下参数传递给**CTL\_代码**宏：
 
 <a href="" id="devicetype"></a>*DeviceType*  
-标识设备类型。 此值必须匹配在中设置的值**DeviceType**驱动程序的成员[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构。 (请参阅[指定设备类型](specifying-device-types.md))。 值小于 0x8000 仅供 Microsoft。 可以由供应商使用 0x8000 和更高版本的值。 请注意，设置供应商分配值**常见**位。
+标识设备类型。 此值必须匹配在中设置的值**DeviceType**驱动程序的成员[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。 (请参阅[指定设备类型](specifying-device-types.md))。 值小于 0x8000 仅供 Microsoft。 可以由供应商使用 0x8000 和更高版本的值。 请注意，设置供应商分配值**常见**位。
 
 <a href="" id="functioncode"></a>*FunctionCode*  
 标识要由驱动程序执行的函数。 值小于 0x800 仅供 Microsoft。 可以由供应商使用 0x800 和更高版本的值。 请注意，设置供应商分配值**自定义**位。
 
 <a href="" id="transfertype"></a>*TransferType*  
-指示系统之间的调用方传递数据时如何[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) (或[ **IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)) 和处理 IRP 驱动程序。
+指示系统之间的调用方传递数据时如何[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) (或[ **IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)) 和处理 IRP 驱动程序。
 
 使用系统定义的以下常量之一：
 
@@ -67,27 +67,27 @@ I/O 控制代码是一个 32 位值的多个字段组成。 下图说明了 I/O 
 <a href="" id="method-in-direct-or-method-out-direct"></a>方法\_IN\_直接访问或通过方法\_出\_直接  
 指定[直接 I/O](methods-for-accessing-data-buffers.md)方法，它通常用于读取或写入大量数据，使用 DMA 或 PIO，必须快速传输。
 
-指定方法\_IN\_直接 if 的调用方[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)或者**IoBuildDeviceIoControlRequest**会将数据传递到驱动程序。
+指定方法\_IN\_直接 if 的调用方[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)或者**IoBuildDeviceIoControlRequest**会将数据传递到驱动程序。
 
-指定方法\_出\_直接如果的调用方[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)或者**IoBuildDeviceIoControlRequest**将接收中的数据驱动程序。
+指定方法\_出\_直接如果的调用方[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)或者**IoBuildDeviceIoControlRequest**将接收中的数据驱动程序。
 
 有关如何在系统的方法指定数据缓冲区\_IN\_DIRECT 和方法\_OUT\_直接 I/O 控制代码，请参阅[的 I/O 控制代码缓冲区说明](buffer-descriptions-for-i-o-control-codes.md).
 
 有关直接 I/O 的详细信息，请参阅[使用直接 I/O](using-direct-i-o.md)。
 
 <a href="" id="method-neither"></a>方法\_NEITHER  
-指定[既不缓冲，也不直接 I/O](using-neither-buffered-nor-direct-i-o.md)。 I/O 管理器不提供任何系统缓冲区或 MDLs。 IRP 提供到指定的输入和输出缓冲区的用户模式虚拟地址[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)或**IoBuildDeviceIoControlRequest**，而无需验证或将其映射。
+指定[既不缓冲，也不直接 I/O](using-neither-buffered-nor-direct-i-o.md)。 I/O 管理器不提供任何系统缓冲区或 MDLs。 IRP 提供到指定的输入和输出缓冲区的用户模式虚拟地址[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)或**IoBuildDeviceIoControlRequest**，而无需验证或将其映射。
 
 有关如何在系统的方法指定数据缓冲区\_既不 I/O 控制代码，请参阅[I/O 控制代码的缓冲区说明](buffer-descriptions-for-i-o-control-codes.md)。
 
 可以使用此方法，仅当该驱动程序可以保证以发起 I/O 控制请求的线程的上下文中运行。 仅最高级别的内核模式驱动程序保证满足此条件，因此方法\_既不很少使用的传递给低级别的设备驱动程序的 I/O 控制代码。
 
-使用此方法，最高级别的驱动程序必须确定是否设置缓冲或直接访问用户数据在收到请求时，可能必须锁定用户缓冲区，并必须在结构化的异常处理程序中包装对用户缓冲区的访问权限 (请参阅<c1/1>处理的异常](handling-exceptions.md))。 否则，原始用户模式下调用方可能会更改缓冲的数据之前，驱动程序可以使用它，或调用方无法换出，就像该驱动程序正在访问的用户缓冲区。
+使用此方法，最高级别的驱动程序必须确定是否设置缓冲或直接访问用户数据在收到请求时，可能必须锁定用户缓冲区，并必须在结构化的异常处理程序中包装对用户缓冲区的访问权限 (请参阅[处理的异常](handling-exceptions.md))。 否则，原始用户模式下调用方可能会更改缓冲的数据之前，驱动程序可以使用它，或调用方无法换出，就像该驱动程序正在访问的用户缓冲区。
 
 有关详细信息，请参阅[使用既不缓冲 Nor 直接 I/O](using-neither-buffered-nor-direct-i-o.md)。
 
 <a href="" id="requiredaccess"></a>*RequiredAccess*  
-指示调用方必须请求的访问类型打开文件对象，表示设备时 (请参阅[ **IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff550729))。 I/O 管理器将创建 Irp，并调用驱动程序和特定的 I/O 控制代码，仅当调用方已请求指定的访问权限。 *RequiredAccess*指定通过使用系统定义的以下常量：
+指示调用方必须请求的访问类型打开文件对象，表示设备时 (请参阅[ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create))。 I/O 管理器将创建 Irp，并调用驱动程序和特定的 I/O 控制代码，仅当调用方已请求指定的访问权限。 *RequiredAccess*指定通过使用系统定义的以下常量：
 
 <a href="" id="file-any-access"></a>文件\_ANY\_访问  
 I/O 管理器将 IRP 发送的任何调用方具有的句柄表示的目标设备对象的文件对象。
@@ -114,7 +114,7 @@ I/O 管理器将 IRP 发送仅对调用方的写访问权限，允许基础设�
 
  
 
-驱动程序可以使用[ **IoValidateDeviceIoControlAccess** ](https://msdn.microsoft.com/library/windows/hardware/ff550418)执行更严格的访问检查所提供的 IOCTL 相比*RequiredAccess*位。
+驱动程序可以使用[ **IoValidateDeviceIoControlAccess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)执行更严格的访问检查所提供的 IOCTL 相比*RequiredAccess*位。
 
 ## <a name="other-useful-macros"></a>其他有用的宏
 

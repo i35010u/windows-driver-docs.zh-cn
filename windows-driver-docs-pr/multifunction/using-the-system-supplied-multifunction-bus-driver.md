@@ -12,12 +12,12 @@ keywords:
 - PDOs WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f9cbdb5f0fd1e6eed1785b5149344b804f0793
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9db8e0a0eee790008b2c93af08f404b8879cec4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379595"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386374"
 ---
 # <a name="using-the-system-supplied-multifunction-bus-driver"></a>使用系统提供的多功能总线驱动程序
 
@@ -33,9 +33,9 @@ Mf.sys 总线驱动程序句柄 PnP 设备功能的枚举，并且仲裁函数�
 
 -   设备的基础 bus 必须具有一个多功能标准。
 
--   [**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)的子函数必须相同，而且必须与父设备的相匹配。 查询的子函数的设备功能时 ([**IRP\_MN\_查询\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551664))，mf.sys 驱动程序报告的设备功能父设备中。
+-   [**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)的子函数必须相同，而且必须与父设备的相匹配。 查询的子函数的设备功能时 ([**IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities))，mf.sys 驱动程序报告的设备功能父设备中。
 
--   为多功能设备所在，例如 pcmcia.sys，总线驱动程序必须处理任何[ **IRP\_MN\_读取\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)和[**IRP\_MN\_编写\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551769)请求。 Mf.sys 驱动程序只需将这些 Irp 传递给父总线驱动程序。
+-   为多功能设备所在，例如 pcmcia.sys，总线驱动程序必须处理任何[ **IRP\_MN\_读取\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)和[**IRP\_MN\_编写\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)请求。 Mf.sys 驱动程序只需将这些 Irp 传递给父总线驱动程序。
 
 -   必须是独立的函数： 它们不能具有启动顺序的依赖项，不能以另一个函数 （例如，function1 使用 I/O 端口 X 和 function2 使用 portX + 200）; 的资源表示一个函数的资源要求和每个函数必须能够充当一个单独的设备，即使它由与另一个函数相同的驱动程序提供服务。
 

@@ -4,12 +4,12 @@ description: WIA 体系结构概述
 ms.assetid: 47f44042-f22b-4ee0-88c5-fc977bf13791
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 02162adc8a745ba70c147c0ab442699688f6d129
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86b0d7f282e233c07bc1b7944f114e59eeabdacf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375363"
 ---
 # <a name="wia-architecture-overview"></a>WIA 体系结构概述
 
@@ -55,7 +55,7 @@ WIA 驱动程序服务库是为 WIA 微型驱动程序提供帮助器函数的�
 
 WIA 微型驱动程序将供应商提供，将 WIA 属性更改和命令指向图像处理设备的用户模式组件。 微型驱动程序实现 WIA DDI 称为 WIA 服务与微型驱动程序进行通信。
 
-WIA 微型驱动程序实现的标准 WIA 微型驱动程序接口。 微型驱动程序与标准的 Microsoft Windows 内核模式驱动程序，如 USB 驱动程序通过成像设备进行通信。 微型驱动程序与内核模式驱动程序通过调用[ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)， **ReadFile**， **WriteFile**，和**DeviceIoControl** Win32 函数 （Microsoft Windows SDK 文档中所述）。
+WIA 微型驱动程序实现的标准 WIA 微型驱动程序接口。 微型驱动程序与标准的 Microsoft Windows 内核模式驱动程序，如 USB 驱动程序通过成像设备进行通信。 微型驱动程序与内核模式驱动程序通过调用[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)， **ReadFile**， **WriteFile**，和**DeviceIoControl** Win32 函数 （Microsoft Windows SDK 文档中所述）。
 
 图像处理应用程序不能进行直接调用到 WIA 微型驱动程序。 只有 WIA 服务允许直接调用该驱动程序。
 

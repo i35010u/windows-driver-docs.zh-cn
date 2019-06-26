@@ -13,12 +13,12 @@ keywords:
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 588966e1a0767a9201345d00cf6205d833bd9e51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8829955a94cde61040eca5d3e026dd3c2cc4ccb9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386028"
 ---
 # <a name="guidelines-for-writing-dispatchinternaldevicecontrol-routines"></a>有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
 
@@ -28,7 +28,7 @@ ms.locfileid: "63359879"
 
 编写时记住以下几点[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)或[ *DispatchInternalDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程：
 
-更高级别的驱动程序必须在最低限度上，复制的参数[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)或[ **IRP\_MJ\_内部\_设备\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff550766)从其自己的 I/O 堆栈位置中 IRP 到下一步低级驱动程序的 I/O 堆栈位置请求。 然后，它必须调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)用一个指针指向下一步低驱动程序的设备对象和 IRP。
+更高级别的驱动程序必须在最低限度上，复制的参数[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)或[ **IRP\_MJ\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)从其自己的 I/O 堆栈位置中 IRP 到下一步低级驱动程序的 I/O 堆栈位置请求。 然后，它必须调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)用一个指针指向下一步低驱动程序的设备对象和 IRP。
 
 更高级别的驱动程序应传播由返回的状态值**IoCallDriver**或返回控件的低级驱动程序以同步方式处理的请求时返回的 IRP I/O 状态块中设置。
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 150ebdebb8f71d13c37bbe9a6613e81ee4e9324d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d2b957dd4d5d8ed64f455ab614190aea3b84f37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375724"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385548"
 ---
 # <a name="kscategoryvirtual"></a>KSCATEGORY_VIRTUAL
 
 
-KSCATEGORY_VIRTUAL[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)表示[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)保留供独占使用的系统提供的 (KS) 类别[WDM 音频组件](https://msdn.microsoft.com/library/windows/hardware/ff537039).
+KSCATEGORY_VIRTUAL[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)表示[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)保留供独占使用的系统提供的 (KS) 类别[WDM 音频组件](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components).
 
 <table>
 <colgroup>

@@ -5,12 +5,12 @@ keywords:
 - NatVis 中本机调试器对象"
 ms.date: 08/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22087a2b36d254b9b287d85ca37103f119647af0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 652481c6f8c329c3ff45eea74cbe2f662046def5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353101"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366457"
 ---
 # <a name="native-debugger-objects-in-natvis"></a>NatVis 中的本机调试器对象
 
@@ -38,17 +38,17 @@ ms.locfileid: "63353101"
 
 请参阅以下资源使用 NatVis 有关常规信息。
 
-[创建本机对象的自定义视图](https://msdn.microsoft.com/library/jj620914.aspx)
+[创建本机对象的自定义视图](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)
 
 [编写调试器类型可视化工具的C++使用.natvis 文件](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)
 
-[**.nvload**](-nvload--natvis-load-.md)
+[ **.nvload**](-nvload--natvis-load-.md)
 
-[**.nvlist**](-nvlist--natvis-list-.md)
+[ **.nvlist**](-nvlist--natvis-list-.md)
 
-[**.nvunload**](-nvunload--natvis-unload-.md)
+[ **.nvunload**](-nvunload--natvis-unload-.md)
 
-[**.nvunloadall**](-nvunloadall--natvis-unload-all-.md)
+[ **.nvunloadall**](-nvunloadall--natvis-unload-all-.md)
 
 
 ## <a name="span-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespancustom-natvis-object-example"></a><span id="Custom_NatVis_object_example"></span><span id="custom_natvis_object_example"></span><span id="CUSTOM_NATVIS_OBJECT_EXAMPLE"></span>自定义 NatVis 对象示例
@@ -88,7 +88,7 @@ int main()
 
 C:\\程序文件\\(x64) Windows 调试工具\\可视化工具
 
-运行程序，并在主函数处中断。 迈出一步，以便该变量`MyDog`就会初始化。 显示`MyDog`使用[ **??**](----evaluate-c---expression-.md) 和使用再次**dx**。
+运行程序，并在主函数处中断。 迈出一步，以便该变量`MyDog`就会初始化。 显示`MyDog`使用[ **??** ](----evaluate-c---expression-.md) 和使用再次**dx**。
 
 ```dbgcmd
 0:000> ??MyDog

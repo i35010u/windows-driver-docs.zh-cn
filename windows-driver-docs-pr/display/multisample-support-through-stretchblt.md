@@ -9,12 +9,12 @@ keywords:
 - 拉伸位块操作 WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b43d65a06e4bf45f3830e13b3bdd789fef8f41a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d80d7c367eca695ff362422ae755409d7818a89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372820"
 ---
 # <a name="multisample-support-through-stretchblt"></a>通过 StretchBlt 提供多重采样支持
 
@@ -30,7 +30,7 @@ ms.locfileid: "63345561"
 
 -   是无响应的请求从应用程序可以修改多重采样呈现目标中的示例。 也就是说，它不响应 D3DRS 位掩码设置\_MULTISAMPLEMASK 设备呈现状态 (D3DRENDERSTATETYPE)。
 
-务必要注意，如果驱动程序将使用为拉伸 blt 执行页面翻转在全屏模式下，该驱动程序应指定受支持的示例中的计数**wFlipMSTypes**的成员[ **DDPIXELFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff550274)的**MultiSampleCaps**结构，而不**wBltMSTypes**正在执行翻转作为成员。
+务必要注意，如果驱动程序将使用为拉伸 blt 执行页面翻转在全屏模式下，该驱动程序应指定受支持的示例中的计数**wFlipMSTypes**的成员[ **DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)的**MultiSampleCaps**结构，而不**wBltMSTypes**正在执行翻转作为成员。
 
  
 

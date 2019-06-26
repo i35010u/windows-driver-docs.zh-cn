@@ -13,12 +13,12 @@ keywords:
 - Windows 2000 显示器驱动程序模型 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 992732431b885822997f7ac21afa063c1d036a08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fad3dd856538861d1a1fcb07b90f7c2147029186
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357951"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384859"
 ---
 # <a name="direct3d-ddi"></a>Direct3D DDI
 
@@ -35,7 +35,7 @@ Microsoft Direct3D 设备驱动程序接口 (DDI) 是一个图形界面，使供
 对于要创建 Microsoft Direct3D 驱动程序适用于 Microsoft Windows 2000 及更高版本的驱动程序编写人员应使用以下标头文件：
 
 <span id="D3DNTHAL.H"></span>*d3dnthal.h*  
-包含用于驱动程序级别结构由驱动程序实现的回调的原型和定义。 [ **D3DHAL\_DP2OPERATION** ](https://msdn.microsoft.com/library/windows/hardware/ff545678)此文件中定义枚举的类型。 中包括此标头*winddi.h*，其中必须包括在所有 Windows 2000 和更高版本显示驱动程序。
+包含用于驱动程序级别结构由驱动程序实现的回调的原型和定义。 [ **D3DHAL\_DP2OPERATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation)此文件中定义枚举的类型。 中包括此标头*winddi.h*，其中必须包括在所有 Windows 2000 和更高版本显示驱动程序。
 
 <span id="D3DTYPES.H"></span>*d3dtypes.h*  
 包含应用程序和驱动程序使用的 Direct3D 类型定义。 除了 D3DHAL\_DP2OPERATION、 枚举的类型定义此标头中的所有其他 Direct3D。
@@ -55,7 +55,7 @@ Microsoft Direct3D 设备驱动程序接口 (DDI) 是一个图形界面，使供
 
  
 
-引用页的 Direct3D DDI 函数、 结构和枚举可在[Direct3D 驱动程序函数](https://msdn.microsoft.com/library/windows/hardware/ff552853)， [Direct3D 驱动程序结构](https://msdn.microsoft.com/library/windows/hardware/ff552858)，和[Direct3D 驱动程序枚举](https://msdn.microsoft.com/library/windows/hardware/ff552850).
+引用页的 Direct3D DDI 函数、 结构和枚举可在[Direct3D 驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)， [Direct3D 驱动程序结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)，和[Direct3D 驱动程序枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index).
 
 与 SDK 相关的 Direct3D 接口方面主要参考是 Microsoft Windows SDK 文档。 *计算机图形中：原则和实践*Foley、 van 坝、 Feiner 和 Hughes，由 Addison-wesley 发布，是有用的常规图形引用。
 

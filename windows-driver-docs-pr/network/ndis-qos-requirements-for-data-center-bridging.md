@@ -4,12 +4,12 @@ description: 数据中心桥接的 NDIS QoS 要求
 ms.assetid: 09BEFF6C-6887-42BA-A44B-5BFE65DBD69E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e047c07af150224b55d168418001b1da0ed915
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: beceb7a133f96ae12a28458418786706ea0ed242
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378264"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369176"
 ---
 # <a name="ndis-qos-requirements-for-data-center-bridging"></a>数据中心桥接的 NDIS QoS 要求
 
@@ -32,9 +32,9 @@ ms.locfileid: "63378264"
 
 -   微型端口驱动程序必须支持 NDIS 6.30 或更高版本的 NDIS。
 
--   微型端口驱动程序必须支持的对象标识符 (OID) 的方法请求[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)设置 NDIS QoS 参数。 有关详细信息，请参阅[设置本地 NDIS QoS 参数](setting-local-ndis-qos-parameters.md)。
+-   微型端口驱动程序必须支持的对象标识符 (OID) 的方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)设置 NDIS QoS 参数。 有关详细信息，请参阅[设置本地 NDIS QoS 参数](setting-local-ndis-qos-parameters.md)。
 
-    **请注意**  NDIS 处理大部分除微型端口驱动程序的 NDIS QoS OID 请求[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)。
+    **请注意**  NDIS 处理大部分除微型端口驱动程序的 NDIS QoS OID 请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)。
 
      
 

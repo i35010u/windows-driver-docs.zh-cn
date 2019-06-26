@@ -9,12 +9,12 @@ keywords:
 - 转移请求拆分 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bfe1b3a3c36c55b8119b0e0a841454c8f96496c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78a30aac1b4615b80a01c9f4b99a21b2f4328d17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368883"
 ---
 # <a name="storage-class-drivers-splittransferrequest-routine"></a>存储类驱动程序的 SplitTransferRequest 例程
 
@@ -72,7 +72,7 @@ if (currentIrpStack->Parameters.Read.Length > maximumTransferLength ||
 
 -   集**DataBuffer**中为此传输的一段 MDL 字节中的偏移量 SRB
 
--   设置其*IoCompletion*例程之前发送到端口驱动程序和 IRP [ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)
+-   设置其*IoCompletion*例程之前发送到端口驱动程序和 IRP [ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
 
 若要跟踪的传输，每个部分*SplitTransferRequest*注册*IoCompletion*向较低的下一步驱动程序发送的每个驱动程序分配的 IRP 例程。 *IoCompletion*例程维护原始 IRP 中的已完成的部分传输请求的计数使用**InterlockedIncrement**并**InterlockedDecrement**到请确保计数准确。
 
