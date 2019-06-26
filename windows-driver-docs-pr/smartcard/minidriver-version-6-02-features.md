@@ -4,12 +4,12 @@ description: 微型驱动程序版本 6.02 功能
 ms.assetid: 8BF4B63B-B723-4899-BCAF-7826FAFF2155
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4c7c80de36691644eae17970dcf7481d8489dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6caa401b657e2b226b973b31652283b4c32ba189
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329609"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356686"
 ---
 # <a name="minidriver-version-602-features"></a>微型驱动程序版本 6.02 功能
 
@@ -35,10 +35,10 @@ ms.locfileid: "63329609"
 
 此版本中添加了新的 Api 包括：
 
--   [**CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)
--   [**CardGetChallengeEx**](https://msdn.microsoft.com/library/windows/hardware/dn468724)
--   [**CardDeauthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468713)
--   [**CardChangeAuthenticatorEx**](https://msdn.microsoft.com/library/windows/hardware/dn468706)
+-   [**CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))
+-   [**CardGetChallengeEx**](https://docs.microsoft.com/previous-versions/dn468724(v=vs.85))
+-   [**CardDeauthenticateEx**](https://docs.microsoft.com/previous-versions/dn468713(v=vs.85))
+-   [**CardChangeAuthenticatorEx**](https://docs.microsoft.com/previous-versions/dn468706(v=vs.85))
 
 **重要**  不是所有预配系统支持多个 Pin; 因此，必须将应用上可以预配系统卡字段中更新的密钥的插针时格外小心。
 
@@ -55,7 +55,7 @@ ms.locfileid: "63329609"
 
 安全 PIN 通道的详细信息，请参阅中的"会话 Pin"一节[开发人员准则](developer-guidelines.md)。
 
-与此功能相关的新 API 包括[ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)。
+与此功能相关的新 API 包括[ **CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))。
 
 ## <a name="span-idexternalpinsupportspanspan-idexternalpinsupportspanspan-idexternalpinsupportspan-external-pin-support"></a><span id="_External_PIN_Support"></span><span id="_external_pin_support"></span><span id="_EXTERNAL_PIN_SUPPORT"></span> 外部 PIN 支持
 
@@ -67,9 +67,9 @@ ms.locfileid: "63329609"
 
 在外部 PIN 模式下，每当对智能卡进行 PIN 身份验证是必需的 Windows 不会提示用户输入 PIN，但而不是调用立即而无需任何通知该用户的微型驱动程序的身份验证 API。 应不操作系统参与发生了实际的身份验证和 PIN 收集。
 
-（可选），并根据特定限制，微型驱动程序允许显示其自身用户界面 (UI) 以指示用户执行与 PIN 收集的关系中的特定操作。 不应这样的用户界面用于实际从用户收集 PIN 而不是 Windows 正在等待外部收集使用 PIN 将用户定向。 不允许微型驱动程序时要显示用户界面上下文是静默模式下，应使用特定的窗口句柄创建 UI 元素。 中可以找到更多信息[ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)，并[ **CardSetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468740)。
+（可选），并根据特定限制，微型驱动程序允许显示其自身用户界面 (UI) 以指示用户执行与 PIN 收集的关系中的特定操作。 不应这样的用户界面用于实际从用户收集 PIN 而不是 Windows 正在等待外部收集使用 PIN 将用户定向。 不允许微型驱动程序时要显示用户界面上下文是静默模式下，应使用特定的窗口句柄创建 UI 元素。 中可以找到更多信息[ **CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))，并[ **CardSetProperty**](https://docs.microsoft.com/previous-versions/dn468740(v=vs.85))。
 
-可以返回临时会话 PIN 的卡可能会返回此类固定到 Windows 以进行后续缓存。 在这种情况下，Windows 提供了会话 PIN 进行任何进一步卡身份验证，直到卡使会话 PIN 无效。 有关详细信息，请参阅[ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)。
+可以返回临时会话 PIN 的卡可能会返回此类固定到 Windows 以进行后续缓存。 在这种情况下，Windows 提供了会话 PIN 进行任何进一步卡身份验证，直到卡使会话 PIN 无效。 有关详细信息，请参阅[ **CardAuthenticateEx**](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))。
 
  
 

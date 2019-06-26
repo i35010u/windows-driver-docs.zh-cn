@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 008bd282a92f17262aefff3400068796acb708fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a12ec050c1cc056fa54f911ca876ba00db82f902
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361964"
 ---
 # <a name="bug-check-0x1dc-dmacommonbuffervectorerror"></a>Bug 检查 0x1DC：DMA\_常见\_缓冲区\_向量\_错误
 
 DMA\_常见\_缓冲区\_向量\_错误 bug 检查的值为 0x000001DC。 它指示驱动程序已被误用 DMA 向量常见缓冲区 Api。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
  
 

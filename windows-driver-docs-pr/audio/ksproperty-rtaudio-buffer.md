@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aff71afda39ff3646c3277d6f29f23d970e96b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ce24658adf6bb1f772f18b24a222ec51f2fc09f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332687"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358756"
 ---
 # <a name="kspropertyrtaudiobuffer"></a>KSPROPERTY\_RTAUDIO\_缓冲区
 
@@ -53,14 +53,14 @@ KSPROPERTY\_RTAUDIO\_缓冲区属性指定驱动程序分配的音频数据的�
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="ksrtaudio-buffer-property.md" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY&lt;/strong&gt;](ksrtaudio-buffer-property.md)"><strong>KSRTAUDIO_BUFFER_PROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537493" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537493)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性描述符 （实例数据） 包含 KSRTAUDIO\_缓冲区\_属性结构，其中包含[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构以及其他成员。 客户端将写入到结构其请求的缓冲区大小。 如果客户端不需要使用特定基址，它必须指定为基址**NULL**。
+属性描述符 （实例数据） 包含 KSRTAUDIO\_缓冲区\_属性结构，其中包含[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构以及其他成员。 客户端将写入到结构其请求的缓冲区大小。 如果客户端不需要使用特定基址，它必须指定为基址**NULL**。
 
 属性值 （操作数据） 是一种结构的类型 KSRTAUDIO\_缓冲区。 该驱动程序填充此结构与实际的缓冲区大小、 基址和它已经分配了循环缓冲区的内存屏障标志。
 
@@ -135,7 +135,7 @@ KSPROPERTY\_RTAUDIO\_缓冲区属性请求将返回状态\_成功以指示已成
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSRTAUDIO\_BUFFER**](https://msdn.microsoft.com/library/windows/hardware/ff537493)
+[**KSRTAUDIO\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)
 
 [**KSRTAUDIO\_缓冲区\_属性**](ksrtaudio-buffer-property.md)
 

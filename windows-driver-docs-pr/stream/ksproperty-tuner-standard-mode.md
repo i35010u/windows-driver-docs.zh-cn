@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e7026b3925f727a914552abafbaf1412ee02c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7441092ad15848aa48f16cfc30e805f2552a88a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355968"
 ---
 # <a name="kspropertytunerstandardmode"></a>KSPROPERTY\_调谐器\_标准\_模式
 
@@ -50,7 +50,7 @@ KSPROPERTY\_调谐器\_标准\_模式属性检索指示驱动程序是否可以�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565913" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_MODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565913)"><strong>KSPROPERTY_TUNER_STANDARD_MODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_MODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s)"><strong>KSPROPERTY_TUNER_STANDARD_MODE_S</strong></a></p></td>
 <td><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -63,7 +63,7 @@ KSPROPERTY\_调谐器\_标准\_模式属性检索指示驱动程序是否可以�
 <a name="remarks"></a>备注
 -------
 
-详细了解如何为 KSPROPERTY\_调谐器\_标准\_使用模式属性，请参阅[检测调谐器标准](https://msdn.microsoft.com/library/windows/hardware/ff558691)。
+详细了解如何为 KSPROPERTY\_调谐器\_标准\_使用模式属性，请参阅[检测调谐器标准](https://docs.microsoft.com/windows-hardware/drivers/stream/detecting-tuner-standards)。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,7 +90,7 @@ KSPROPERTY\_调谐器\_标准\_模式属性检索指示驱动程序是否可以�
 
 [**KSPROPERTY\_调谐器\_标准**](ksproperty-tuner-standard.md)
 
-[**KSPROPERTY\_调谐器\_标准\_模式\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565913)
+[**KSPROPERTY\_调谐器\_标准\_模式\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s)
 
  
 

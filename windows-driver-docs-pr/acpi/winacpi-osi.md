@@ -3,12 +3,12 @@ title: 如何使用 _OSI 识别 ACPI 中的 Windows 版本
 description: 提供了用来识别主机操作系统的 ACPI 源语言 (ASL) 操作系统接口级别 (\_OSI) 方法的信息。
 ms.date: 11/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bed2365560ab1fd5e75303901746c2fa66975f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c25144a88437574a1aae4b762e7a459b09637c88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330861"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355797"
 ---
 # <a name="how-to-identify-the-windows-version-in-acpi-by-using-osi"></a>如何使用 _OSI 识别 ACPI 中的 Windows 版本
 
@@ -36,7 +36,7 @@ ms.locfileid: "63330861"
 
 ## <a name="the-osi-method"></a>\_OSI 方法
 
-所有最新版本的 Windows 操作系统支持的组件[高级配置和电源接口 (ACPI) 规范](https://www.uefi.org/specifications)。 ACPI 规范定义了一种解释型的语言，ACPI 源语言 (ASL)，以便操作系统执行电源管理和配置提供固件控制方法。 若要提高 ASL 编写器来确定主机操作系统版本的功能，ASL 提供操作系统接口级别 (\_OSI)。
+所有最新版本的 Windows 操作系统支持的组件[高级配置和电源接口 (ACPI) 规范](https://uefi.org/specifications)。 ACPI 规范定义了一种解释型的语言，ACPI 源语言 (ASL)，以便操作系统执行电源管理和配置提供固件控制方法。 若要提高 ASL 编写器来确定主机操作系统版本的功能，ASL 提供操作系统接口级别 (\_OSI)。
 
 通过使用\_OSI 方法 ASL 编写器能够轻松确定的 ACPI 接口的主机操作系统支持的版本。 此版本控制方法提供一种解决方案用于创建可支持将来的操作系统，启用操作系统更改行为基于请求的接口级别的固件。
 
@@ -101,4 +101,4 @@ ACPI 规范的最新版本已扩展的用例\_OSI 超出主机操作系统版本
 将标识中的操作系统的例程\_INI 方法下的\\ \_SB 作用域，以便\_OSI 可以尽早地运行。 此位置很重要，因为此操作系统会提供的功能基础的字符串参数\_OSI 方法。
 
 ## <a name="additional-resources"></a>其他资源
-[高级的配置和电源接口规范](https://www.uefi.org/specifications)
+[高级的配置和电源接口规范](https://uefi.org/specifications)

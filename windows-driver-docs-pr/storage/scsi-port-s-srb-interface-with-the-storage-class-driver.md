@@ -1,23 +1,23 @@
 ---
-title: SCSI 端口 SRB 接口与存储类驱动程序
-description: SCSI 端口 SRB 接口与存储类驱动程序
+title: SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
+description: SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
 ms.assetid: ca30bf9b-6d76-4160-8a4e-54c681dfc843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a16420793d6ae2216f7cba796338b633b6d6fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a46fb4501c966f6cc00ae1e0c68c2b669019fda9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519071"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363365"
 ---
-# <a name="scsi-ports-srb-interface-with-the-storage-class-driver"></a>SCSI 端口 SRB 接口与存储类驱动程序
+# <a name="scsi-ports-srb-interface-with-the-storage-class-driver"></a>SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
 
 
 ## <span id="ddk_scsi_ports_srb_interface_with_the_storage_class_driver_kg"></span><span id="DDK_SCSI_PORTS_SRB_INTERFACE_WITH_THE_STORAGE_CLASS_DRIVER_KG"></span>
 
 
-存储类驱动程序和其他更高级别的组件与通信 SCSI 端口驱动程序通过构建 SCSI 请求块 (Srb)。 有关 Srb 详细信息，请参阅[ **SCSI\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff565393)。 存储类驱动程序将它们创建 Srb 传递给 SCSI 端口中使用 IRP **MajorFunction**成员设置为 IRP\_MJ\_SCSI。 有关存储类驱动程序必须采取的步骤的说明生成 SRB 然后再将它传递到端口驱动程序，请参阅[存储类驱动程序 BuildRequest 例程](storage-class-driver-s-buildrequest-routine.md)。
+存储类驱动程序和其他更高级别的组件与通信 SCSI 端口驱动程序通过构建 SCSI 请求块 (Srb)。 有关 Srb 详细信息，请参阅[ **SCSI\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)。 存储类驱动程序将它们创建 Srb 传递给 SCSI 端口中使用 IRP **MajorFunction**成员设置为 IRP\_MJ\_SCSI。 有关存储类驱动程序必须采取的步骤的说明生成 SRB 然后再将它传递到端口驱动程序，请参阅[存储类驱动程序 BuildRequest 例程](storage-class-driver-s-buildrequest-routine.md)。
 
 转发堆栈的下层 SRB 之前, SCSI 端口 SRB，例如端口号、 路径、 目标数和目标设备的逻辑单元号中设置某些值。
 

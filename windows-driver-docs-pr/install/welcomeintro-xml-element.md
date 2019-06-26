@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e93f6cbe0071a1a68fbd3791fb88ca71e2ad5011
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 097cc2ec5d8c38a3fb243965c99467fa51f4fec9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339310"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362925"
 ---
 # <a name="welcomeintro-xml-element"></a>welcomeIntro XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **WelcomeIntro** XML 元素自定义的 DPInst 欢迎页上的主文本。
 

@@ -3,12 +3,12 @@ title: SerCx2 对象句柄
 description: 本主题介绍专门为版本 2 的串行框架扩展 (SerCx2) 定义的对象句柄类型。
 ms.localizationpriority: medium
 ms.date: 12/27/2018
-ms.openlocfilehash: b82a1e22366c31791cd86214ea098711e71edba1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae9a734f41f3c15b36fde8f2daf456b77525f4d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356777"
 ---
 # <a name="sercx2-object-handles"></a>SerCx2 对象句柄
 
@@ -35,7 +35,7 @@ ms.locfileid: "63387988"
 **SerCx2CustomReceiveCreate**方法创建 custom-receive 对象。 SerCx2 使用此对象来管理自定义的数据传输机制用于从串行控制器中读取数据的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
 **SerCx2CustomReceiveCreate**提供，作为输出参数，为新创建的 SERCX2CUSTOMRECEIVE 句柄自定义接收对象。 SerCx2 和串行控制器驱动程序使用此句柄来指代 SerCx2 方法和事件的回调函数的后续调用中的对象。
 
-之后**SerCx2CustomReceiveCreate**创建 custom-receive 对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 custom-receive 对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 custom-receive 对象[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)。
+之后**SerCx2CustomReceiveCreate**创建 custom-receive 对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 custom-receive 对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 custom-receive 对象[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
 串行控制器驱动程序可以作为一个选项，创建一个 custom-receive 对象，但可以创建多个此类对象。 该驱动程序可以创建此对象仅在以下情况下：
 
@@ -48,10 +48,10 @@ ms.locfileid: "63387988"
 ##  <a name="sercx2customreceivetransaction-object-handle"></a>SERCX2CUSTOMRECEIVETRANSACTION 对象句柄
 一个**SERCX2CUSTOMRECEIVETRANSACTION**对象句柄是串行框架扩展 (SerCx2) 版本 2 中的自定义接收事务对象的不透明引用。
 
-[SerCx2CustomReceiveTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265251)方法创建自定义接收事务对象。 SerCx2 使用此对象来管理自定义的数据传输机制用于读取由串行控制器接收的数据的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
-[SerCx2CustomReceiveTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265251)作为输出参数，提供新创建的自定义接收事务对象的 SERCX2CUSTOMRECEIVETRANSACTION 句柄。 SerCx2 和这处理来指代中后续的对象的串行控制器驱动程序使用自定义接收事务。 有关详细信息，请参阅[SerCx2 自定义接收事务](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-custom-receive-transactions)。
+[SerCx2CustomReceiveTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customreceivetransactioncreate)方法创建自定义接收事务对象。 SerCx2 使用此对象来管理自定义的数据传输机制用于读取由串行控制器接收的数据的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
+[SerCx2CustomReceiveTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customreceivetransactioncreate)作为输出参数，提供新创建的自定义接收事务对象的 SERCX2CUSTOMRECEIVETRANSACTION 句柄。 SerCx2 和这处理来指代中后续的对象的串行控制器驱动程序使用自定义接收事务。 有关详细信息，请参阅[SerCx2 自定义接收事务](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-custom-receive-transactions)。
 
-之后[SerCx2CustomReceiveTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265251)创建自定义-接收-事务对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除的自定义接收事务对象。 串行控制器驱动程序必须_不_尝试删除的自定义接收事务对象通过调用一个方法，如[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)。
+之后[SerCx2CustomReceiveTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customreceivetransactioncreate)创建自定义-接收-事务对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除的自定义接收事务对象。 串行控制器驱动程序必须_不_尝试删除的自定义接收事务对象通过调用一个方法，如[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
 串行控制器驱动程序可以作为一个选项，创建自定义接收事务对象，但可以创建多个此类对象。 该驱动程序可以创建仅在以下情况下的此对象： < / wdcml:p >
 
@@ -65,10 +65,10 @@ ms.locfileid: "63387988"
 ##  <a name="sercx2customtransmit-object-handle"></a>SERCX2CUSTOMTRANSMIT 对象句柄
 SERCX2CUSTOMTRANSMIT 对象句柄是串行框架扩展 (SerCx2) 版本 2 中的 custom-transmit 对象的不透明引用。
 
-[SerCx2CustomTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265256)方法创建自定义传输 object.h SerCx2 使用此对象管理将数据写入到串行控制器的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
-[SerCx2CustomTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265256)提供，作为输出参数，为新创建的 SERCX2CUSTOMTRANSMIT 句柄自定义的传输对象。 SerCx2 和串行控制器驱动程序使用此句柄来指代 SerCx2 方法和事件的回调函数的后续调用中的对象。
+[SerCx2CustomTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmitcreate)方法创建自定义传输 object.h SerCx2 使用此对象管理将数据写入到串行控制器的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
+[SerCx2CustomTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmitcreate)提供，作为输出参数，为新创建的 SERCX2CUSTOMTRANSMIT 句柄自定义的传输对象。 SerCx2 和串行控制器驱动程序使用此句柄来指代 SerCx2 方法和事件的回调函数的后续调用中的对象。
 
-之后[SerCx2CustomTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265256)创建 custom-transmit 对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 custom-transmit 对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 custom-transmit 对象[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)。
+之后[SerCx2CustomTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmitcreate)创建 custom-transmit 对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 custom-transmit 对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 custom-transmit 对象[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
 串行控制器驱动程序可以作为一个选项，创建一个 custom-transmit 对象，但可以创建多个此类对象。 该驱动程序可以创建此对象仅在以下情况下：
 
@@ -80,10 +80,10 @@ SERCX2CUSTOMTRANSMIT 对象句柄是串行框架扩展 (SerCx2) 版本 2 中的 
 ##  <a name="sercx2customtransmittransaction-object-handle"></a>SERCX2CUSTOMTRANSMITTRANSACTION 对象句柄
 SERCX2CUSTOMTRANSMITTRANSACTION 对象句柄是串行框架扩展 (SerCx2) 版本 2 中的自定义传输的事务对象的不透明引用。
 
-[SerCx2CustomTransmitTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265259)方法创建自定义传输的事务对象。 SerCx2 使用此对象来管理使用自定义的数据传输机制将数据写入串行控制器的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
-[SerCx2CustomTransmitTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265259)作为输出参数，提供新创建的自定义传输的事务对象的 SERCX2CUSTOMTRANSMITTRANSACTION 句柄。 SerCx2 和这处理来指代中后续的对象的串行控制器驱动程序使用自定义的传输的事务。 有关详细信息，请参阅[SerCx2 自定义传输的事务](https://msdn.microsoft.com/library/windows/hardware/dn265320)。
+[SerCx2CustomTransmitTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmittransactioncreate)方法创建自定义传输的事务对象。 SerCx2 使用此对象来管理使用自定义的数据传输机制将数据写入串行控制器的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
+[SerCx2CustomTransmitTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmittransactioncreate)作为输出参数，提供新创建的自定义传输的事务对象的 SERCX2CUSTOMTRANSMITTRANSACTION 句柄。 SerCx2 和这处理来指代中后续的对象的串行控制器驱动程序使用自定义的传输的事务。 有关详细信息，请参阅[SerCx2 自定义传输的事务](https://docs.microsoft.com/previous-versions/dn265320(v=vs.85))。
 
-之后[SerCx2CustomTransmitTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265259)创建自定义传输的事务对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除的自定义传输的事务对象。 串行控制器驱动程序必须_不_尝试删除的自定义传输的事务对象通过调用一个方法，如[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)。
+之后[SerCx2CustomTransmitTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmittransactioncreate)创建自定义传输的事务对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除的自定义传输的事务对象。 串行控制器驱动程序必须_不_尝试删除的自定义传输的事务对象通过调用一个方法，如[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
 串行控制器驱动程序可以作为一个选项，创建一个 custom-transmit 对象，但可以创建多个此类对象。 该驱动程序可以创建此对象仅在以下情况下：
 
@@ -97,31 +97,31 @@ SERCX2CUSTOMTRANSMITTRANSACTION 对象句柄是串行框架扩展 (SerCx2) 版�
 ##  <a name="sercx2pioreceive-object-handle"></a>SERCX2PIORECEIVE 对象句柄
 SERCX2PIORECEIVE 对象句柄是串行框架扩展 (SerCx2) 版本 2 中的 PIO 接收对象的不透明引用。
 
-[SerCx2PioReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265264)方法创建 PIO 接收对象。 SerCx2 使用对象来管理通过编程方式设置从串行控制器中读取数据的 I/O (PIO) 事务。 此对象是不透明的串行控制器驱动程序。 作为输出参数，提供新创建的 PIO 接收对象的 SERCX2PIORECEIVE 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续 PIO 接收事务中的对象。 
+[SerCx2PioReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecreate)方法创建 PIO 接收对象。 SerCx2 使用对象来管理通过编程方式设置从串行控制器中读取数据的 I/O (PIO) 事务。 此对象是不透明的串行控制器驱动程序。 作为输出参数，提供新创建的 PIO 接收对象的 SERCX2PIORECEIVE 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续 PIO 接收事务中的对象。 
 
-有关详细信息，请参阅[SerCx2 PIO 接收事务](https://msdn.microsoft.com/library/windows/hardware/dn265332)。
-之后[SerCx2PioReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265264)创建 PIO 接收对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 PIO 接收对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 PIO 接收对象[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)。
+有关详细信息，请参阅[SerCx2 PIO 接收事务](https://docs.microsoft.com/previous-versions/dn265332(v=vs.85))。
+之后[SerCx2PioReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecreate)创建 PIO 接收对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 PIO 接收对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 PIO 接收对象[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
 串行控制器驱动程序必须创建一个且只有一个 PIO 接收的对象。 该驱动程序必须在创建系统 DMA 接收对象或 custom-receive 对象之前创建此对象。 有关系统 DMA 接收对象的详细信息，请参阅[SERCX2SYSTEMDMARECEIVE 对象处理](#sercx2systemdmareceive-object-handle)。 有关详细信息自定义接收对象，请参阅[SERCX2CUSTOMRECEIVE 对象处理](#sercx2customreceive-object-handle)。
 
 ##  <a name="sercx2piotransmit-object-handle"></a>SERCX2PIOTRANSMIT 对象句柄
 SERCX2PIOTRANSMIT 对象句柄是串行框架扩展 (SerCx2) 版本 2 中 PIO 传输的对象的不透明引用。
 
-[SerCx2PioTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265269)方法创建 PIO 传输对象。 SerCx2 使用此对象来管理使用编程 I/O (PIO) 将数据写入串行控制器的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
-[SerCx2PioTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265269)作为输出参数，提供新创建的 PIO 传输对象的 SERCX2PIOTRANSMIT 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续 PIO 传输的事务中的对象。 有关详细信息，请参阅[SerCx2 PIO 传输事务](https://msdn.microsoft.com/library/windows/hardware/dn265336)。
+[SerCx2PioTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2piotransmitcreate)方法创建 PIO 传输对象。 SerCx2 使用此对象来管理使用编程 I/O (PIO) 将数据写入串行控制器的 I/O 事务。 此对象是不透明的串行控制器驱动程序。 
+[SerCx2PioTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2piotransmitcreate)作为输出参数，提供新创建的 PIO 传输对象的 SERCX2PIOTRANSMIT 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续 PIO 传输的事务中的对象。 有关详细信息，请参阅[SerCx2 PIO 传输事务](https://docs.microsoft.com/previous-versions/dn265336(v=vs.85))。
 
 
-之后[SerCx2PioTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265269)创建 PIO 传输对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 PIO 传输对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 PIO 传输对象[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)。
+之后[SerCx2PioTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2piotransmitcreate)创建 PIO 传输对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除 PIO 传输对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除 PIO 传输对象[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
 串行控制器驱动程序必须创建一个且只有一个 PIO 传输对象。 该驱动程序必须创建系统 DMA 传输对象或 custom-transmit 对象之前创建此对象。 有关系统 DMA 传输对象的详细信息，请参阅[SERCX2SYSTEMDMATRANSMIT 对象处理](#sercx2systemdmatransmit-object-handle)。 有关详细信息自定义传输的对象，请参阅[SERCX2CUSTOMTRANSMIT 对象处理](#sercx2customtransmit-object-handle)。
 
 ##  <a name="sercx2systemdmareceive-object-handle"></a>SERCX2SYSTEMDMARECEIVE 对象句柄
 SERCX2SYSTEMDMARECEIVE 对象句柄是串行框架扩展 (SerCx2) 版本 2 中的系统 DMA 接收对象的不透明引用。
 
-[SerCx2SystemDmaReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265279)方法创建系统 DMA 接收对象。 SerCx2 使用此对象来管理从串行控制器中读取数据的系统 DMA 事务。 此对象是不透明的串行控制器驱动程序。 
-[SerCx2SystemDmaReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265279)作为输出参数，提供新创建的系统 DMA 接收对象的 SERCX2SYSTEMDMARECEIVE 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续系统 DMA 接收事务中的对象。 有关详细信息，请参阅[SerCx2 系统 DMA 接收事务](https://msdn.microsoft.com/library/windows/hardware/dn265343)。
+[SerCx2SystemDmaReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmareceivecreate)方法创建系统 DMA 接收对象。 SerCx2 使用此对象来管理从串行控制器中读取数据的系统 DMA 事务。 此对象是不透明的串行控制器驱动程序。 
+[SerCx2SystemDmaReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmareceivecreate)作为输出参数，提供新创建的系统 DMA 接收对象的 SERCX2SYSTEMDMARECEIVE 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续系统 DMA 接收事务中的对象。 有关详细信息，请参阅[SerCx2 系统 DMA 接收事务](https://docs.microsoft.com/previous-versions/dn265343(v=vs.85))。
 
-之后[SerCx2SystemDmaReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265279)创建系统-DMA-接收对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除系统 DMA 接收对象。 串行控制器驱动程序可以作为一个选项，创建一个系统 DMA 接收对象，但可以创建多个此类对象。 该驱动程序可以创建此对象仅在以下情况下：
+之后[SerCx2SystemDmaReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmareceivecreate)创建系统-DMA-接收对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除系统 DMA 接收对象。 串行控制器驱动程序可以作为一个选项，创建一个系统 DMA 接收对象，但可以创建多个此类对象。 该驱动程序可以创建此对象仅在以下情况下：
 
 * 该驱动程序之前创建 PIO 接收对象。
 * 该驱动程序有_不_创建了一个 custom-receive 对象。
@@ -131,10 +131,10 @@ SERCX2SYSTEMDMARECEIVE 对象句柄是串行框架扩展 (SerCx2) 版本 2 中�
 ##  <a name="sercx2systemdmatransmit-object-handle"></a>SERCX2SYSTEMDMATRANSMIT 对象句柄
 SERCX2SYSTEMDMATRANSMIT 对象句柄是串行框架扩展 (SerCx2) 版本 2 中的系统 DMA 传输对象的不透明引用。
 
-[SerCx2SystemDmaTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265288)方法创建系统 DMA 传输对象。 SerCx2 使用此对象来管理数据写入串行控制器的系统 DMA 事务。 此对象是不透明的串行控制器驱动程序。 
-[SerCx2SystemDmaTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265288)作为输出参数，提供新创建的系统 DMA 传输对象的 SERCX2SYSTEMDMATRANSMIT 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续系统 DMA 传输的事务中的对象。 有关详细信息，请参阅[SerCx2 系统 DMA 传输事务](https://msdn.microsoft.com/library/windows/hardware/dn265338)。
+[SerCx2SystemDmaTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmatransmitcreate)方法创建系统 DMA 传输对象。 SerCx2 使用此对象来管理数据写入串行控制器的系统 DMA 事务。 此对象是不透明的串行控制器驱动程序。 
+[SerCx2SystemDmaTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmatransmitcreate)作为输出参数，提供新创建的系统 DMA 传输对象的 SERCX2SYSTEMDMATRANSMIT 句柄。 SerCx2 和串行控制器驱动程序使用此句柄来引用后续系统 DMA 传输的事务中的对象。 有关详细信息，请参阅[SerCx2 系统 DMA 传输事务](https://docs.microsoft.com/previous-versions/dn265338(v=vs.85))。
 
-之后[SerCx2SystemDmaTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265288)创建系统-DMA 的传输对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除系统 DMA 传输对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除系统 DMA 传输对象[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)。
+之后[SerCx2SystemDmaTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmatransmitcreate)创建系统-DMA 的传输对象，表示串行控制器设备的 framework 设备对象的生存期内存在此对象。 删除设备对象时，会自动删除系统 DMA 传输对象。 串行控制器驱动程序必须_不_尝试通过调用一个方法，如删除系统 DMA 传输对象[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
 串行控制器驱动程序可以作为一个选项，创建系统 DMA 传输的对象，但可以创建多个此类对象。 该驱动程序可以创建仅在以下情况下的此对象： < / wdcml:p >
 
@@ -147,35 +147,35 @@ SERCX2SYSTEMDMATRANSMIT 对象句柄是串行框架扩展 (SerCx2) 版本 2 中�
 
 [SerCx2 自定义接收事务](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-custom-receive-transactions)
 
-[SerCx2 自定义传输的事务](https://msdn.microsoft.com/library/windows/hardware/dn265320)
+[SerCx2 自定义传输的事务](https://docs.microsoft.com/previous-versions/dn265320(v=vs.85))
 
-[SerCx2 PIO 接收事务](https://msdn.microsoft.com/library/windows/hardware/dn265332)
+[SerCx2 PIO 接收事务](https://docs.microsoft.com/previous-versions/dn265332(v=vs.85))
 
-[SerCx2 PIO 传输的事务](https://msdn.microsoft.com/library/windows/hardware/dn265336)
+[SerCx2 PIO 传输的事务](https://docs.microsoft.com/previous-versions/dn265336(v=vs.85))
 
-[SerCx2 系统 DMA 接收事务](https://msdn.microsoft.com/library/windows/hardware/dn265343)
+[SerCx2 系统 DMA 接收事务](https://docs.microsoft.com/previous-versions/dn265343(v=vs.85))
 
-[SerCx2 系统 DMA 传输的事务](https://msdn.microsoft.com/library/windows/hardware/dn265338)
+[SerCx2 系统 DMA 传输的事务](https://docs.microsoft.com/previous-versions/dn265338(v=vs.85))
 
-[SerCx2CustomReceiveTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265251)
+[SerCx2CustomReceiveTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customreceivetransactioncreate)
 
-[SerCx2CustomTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265256)
+[SerCx2CustomTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmitcreate)
 
-[SerCx2CustomTransmitTransactionCreate](https://msdn.microsoft.com/library/windows/hardware/dn265259)
+[SerCx2CustomTransmitTransactionCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2customtransmittransactioncreate)
 
-[SerCx2PioReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265264)
+[SerCx2PioReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecreate)
 
-[SerCx2PioReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265264)
+[SerCx2PioReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecreate)
 
-[SerCx2PioTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265269)
+[SerCx2PioTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2piotransmitcreate)
 
-[SerCx2SystemDmaReceiveCreate](https://msdn.microsoft.com/library/windows/hardware/dn265279)
+[SerCx2SystemDmaReceiveCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmareceivecreate)
 
-[SerCx2SystemDmaTransmitCreate](https://msdn.microsoft.com/library/windows/hardware/dn265288)
+[SerCx2SystemDmaTransmitCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2systemdmatransmitcreate)
 
 [Framework 对象的摘要](https://docs.microsoft.com/windows-hardware/drivers/wdf/summary-of-framework-objects)
 
-[WdfObjectDelete](https://msdn.microsoft.com/library/windows/hardware/ff548734)
+[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)
 
 
 

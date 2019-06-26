@@ -15,12 +15,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b1e03b9936675fb38758ddc4a1d26fe622c762
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53ac61939065cfdc70709eed6d885f8d5cb6696f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336402"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362493"
 ---
 # <a name="irp"></a>!irp
 
@@ -61,7 +61,7 @@ ms.locfileid: "63336402"
 
 请参阅[插调试](plug-and-play-debugging.md)并[调试中断风暴](debugging-an-interrupt-storm.md)对于此扩展命令的应用程序。 有关 Irp 的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 主要和次要函数代码的详细信息，请参阅 Windows Driver Kit (WDK) 文档。 （这些资源可能不可用在某些语言和国家/地区中。）
 
-本主题介绍 IRP 结构[ **IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)。
+本主题介绍 IRP 结构[ **IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)。
 
 解码 IRP 结构包括返回的参数的详细信息，请参阅以下资源。
 
@@ -513,7 +513,7 @@ SCSI 次要函数代码如下所示：
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [ **!irpfind**](-irpfind.md)
 

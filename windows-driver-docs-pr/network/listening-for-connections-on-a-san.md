@@ -12,12 +12,12 @@ keywords:
 - SAN 套接字 WDK，侦听连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b895c4922ed64900ee7eeeaf1181c41377a1ea49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a719b7b288e3f2b820a3d973950d37b656819b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383191"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356216"
 ---
 # <a name="listening-for-connections-on-a-san"></a>侦听 SAN 上的连接
 
@@ -33,11 +33,11 @@ Windows 套接字时切换接收**WSPListen**由应用程序中，始终开关�
 
 ### <a name="listening-for-incoming-connection-requests"></a>侦听传入连接请求
 
-请求一个 SAN 服务提供程序来创建和绑定 SAN 套接字后，将调用该交换机[ **WSPListen** ](https://msdn.microsoft.com/library/windows/hardware/ff566297) SAN 服务提供程序会导致 SAN 套接字来侦听传入连接的函数和入站连接的数量指定的限制 SAN 服务提供商的请求可以排入队列。
+请求一个 SAN 服务提供程序来创建和绑定 SAN 套接字后，将调用该交换机[ **WSPListen** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566297(v=vs.85)) SAN 服务提供程序会导致 SAN 套接字来侦听传入连接的函数和入站连接的数量指定的限制 SAN 服务提供商的请求可以排入队列。
 
 ### <a name="setting-up-to-accept-incoming-connections"></a>设置为接受传入连接
 
-开关接受传入连接仅在非阻止性模式下。 此开关调用 SAN 服务提供商[ **WSPEventSelect** ](https://msdn.microsoft.com/library/windows/hardware/ff566287)函数将套接字置于阻止模式下，并请求的传入连接事件的通知。 在此调用，此开关传递 FD\_接受代码和要与该代码相关联的事件对象。 SAN 服务提供商的 SAN 服务提供程序收到侦听以前建立了其套接字上的连接请求后，调用 Win32 **SetEvent**函数发出信号的关联的事件对象。 开关的专用线程中的传入连接事件侦听和接受或拒绝连接事件对象信号后。 有关详细信息，请参阅[接受连接请求](accepting-connection-requests.md)。
+开关接受传入连接仅在非阻止性模式下。 此开关调用 SAN 服务提供商[ **WSPEventSelect** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566287(v=vs.85))函数将套接字置于阻止模式下，并请求的传入连接事件的通知。 在此调用，此开关传递 FD\_接受代码和要与该代码相关联的事件对象。 SAN 服务提供商的 SAN 服务提供程序收到侦听以前建立了其套接字上的连接请求后，调用 Win32 **SetEvent**函数发出信号的关联的事件对象。 开关的专用线程中的传入连接事件侦听和接受或拒绝连接事件对象信号后。 有关详细信息，请参阅[接受连接请求](accepting-connection-requests.md)。
 
 ### <a name="indicating-refusal-of-a-connection-request-to-a-remote-peer"></a>指示拒绝连接请求发送到远程对等方的消息
 

@@ -12,12 +12,12 @@ keywords:
 - KsProxy 插件示例 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f77a448fe853cff2a5ad91638378da915b5afa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fafacf2c00c2e0fda66e4aecd17d31978df30a84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389205"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355922"
 ---
 # <a name="sample-user-mode-code-for-methods-and-events"></a>方法和事件的示例用户模式代码
 
@@ -26,7 +26,7 @@ ms.locfileid: "63389205"
 
 若要了解如何在你的内核模式微型驱动程序中支持属性、 方法和事件，请参阅[定义自动化表](defining-automation-tables.md)。
 
-提供了支持给定的方法的微型驱动程序后，可以调用该方法通过调用[ **IKsControl::KsMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff559785)从用户模式插件，如下面的代码示例中所示。
+提供了支持给定的方法的微型驱动程序后，可以调用该方法通过调用[ **IKsControl::KsMethod** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksmethod)从用户模式插件，如下面的代码示例中所示。
 
 ```cpp
 PVOID MethodBuffer; // Your method arguments buffer
@@ -48,7 +48,7 @@ pIKsControl -> KsMethod (
     &BytesReturned);
 ```
 
-在自动化表提供在内核模式下，你可以使用**标志**的成员[ **KSMETHOD\_项**](https://msdn.microsoft.com/library/windows/hardware/ff563420)指定缓冲区是否是读/写和是否应映射或复制。
+在自动化表提供在内核模式下，你可以使用**标志**的成员[ **KSMETHOD\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmethod_item)指定缓冲区是否是读/写和是否应映射或复制。
 
 若要注册你微型驱动程序中支持的事件，请使用下面的用户模式代码示例。
 
@@ -78,7 +78,7 @@ pIKsControl -> KsEvent (
     &BytesReturned);
 ```
 
-在上述示例中，通知继续，直到微型驱动程序禁用该事件。 若要禁用该事件。 调用[ **IKsControl::KsEvent**](https://msdn.microsoft.com/library/windows/hardware/ff559772)。 如果你想要通知只在首次发生此事件，设置 KSEVENT\_类型\_中的 ONESHOT **Event.Flags**。
+在上述示例中，通知继续，直到微型驱动程序禁用该事件。 若要禁用该事件。 调用[ **IKsControl::KsEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksevent)。 如果你想要通知只在首次发生此事件，设置 KSEVENT\_类型\_中的 ONESHOT **Event.Flags**。
 
 如果支持 USB 视频类扩展单位的事件，请参阅[扩展单位支持自动更新事件](supporting-autoupdate-events-with-extension-units.md)。
 

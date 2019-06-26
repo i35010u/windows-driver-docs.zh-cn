@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fed3a43c22ade7994ff92ebd3df1bbf8a32b470
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fa9315c0da45e0fd15e150745fb3e0bb01c7ca5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362447"
 ---
 # <a name="ocommand-expect-commands-from-target"></a>.ocommand（需要目标提供命令）
 
@@ -67,18 +67,18 @@ ms.locfileid: "63334438"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关详细信息[ **OutputDebugString** ](https://msdn.microsoft.com/library/windows/desktop/aa363362)和通信使用调试器，其他用户模式下函数，请参阅 Microsoft Windows SDK 文档。
+有关详细信息[ **OutputDebugString** ](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)和通信使用调试器，其他用户模式下函数，请参阅 Microsoft Windows SDK 文档。
 
 <a name="remarks"></a>备注
 -------
 
 如果您使用 **.ocommand**命令不带参数，则调试器会显示当前的命令前缀字符串。 若要清除现有的字符串，请使用 **.ocommand-d**。
 
-设置命令的前缀字符串后，任何目标输出 (如的内容[ **OutputDebugString** ](https://msdn.microsoft.com/library/windows/desktop/aa363362)命令) 进行扫描。 如果此输出开头的命令前缀字符串，前缀字符串之后的输出的文本被视为调试器命令字符串，并运行。 执行此文本时，不显示命令字符串。
+设置命令的前缀字符串后，任何目标输出 (如的内容[ **OutputDebugString** ](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)命令) 进行扫描。 如果此输出开头的命令前缀字符串，前缀字符串之后的输出的文本被视为调试器命令字符串，并运行。 执行此文本时，不显示命令字符串。
 
 目标可以包括[ **.echo （Echo 注释）** ](-echo--echo-comment-.md)命令输出字符串中，如果所需的其他消息。 不以开头的前缀字符串的目标输出所示的典型方式。
 
-后该命令中的命令字符串已执行，除非最后一个命令是中断到调试器，该目标将保持[ **g （转向）**](g--go-.md)。
+后该命令中的命令字符串已执行，除非最后一个命令是中断到调试器，该目标将保持[ **g （转向）** ](g--go-.md)。
 
 命令的前缀字符串与目标输出之间的比较不区分大小写。 (但是，后续使用的 **.ocommand**显示您输入与保留的事例的字符串)。
 

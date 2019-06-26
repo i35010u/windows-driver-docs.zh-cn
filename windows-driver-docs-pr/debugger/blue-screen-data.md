@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a7886c3cbb5b66cc18c67511eb4b601ab195c850
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a8eaf0995130df2b3030bf4c3aad540ea07f75a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362395"
 ---
 # <a name="blue-screen-data"></a>蓝屏数据
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347865"
 
  
 
-**请注意**  如果你是 IT 专业人员或支持代理，请参阅本文的其他信息，了解[或进行故障排除"蓝屏"停止错误问题之前联系 Microsoft 支持部门](https://support.microsoft.com/help/3106831/troubleshoot-blue-screen-or-stop-error-problems-before-you-contact-microsoft-support)。
+**请注意**  如果你是 IT 专业人员或支持代理，请参阅本文的其他信息，了解[或进行故障排除"蓝屏"停止错误问题之前联系 Microsoft 支持部门](https://support.microsoft.com/help/3106831/)。
 
  
 
@@ -63,7 +63,7 @@ ms.locfileid: "63347865"
 
 有多种方法来收集的四个停止代码参数。
 
--   检查 Windows 系统日志，事件查看器中。 检测的错误的事件属性将列出的四个停止代码参数。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。
+-   检查 Windows 系统日志，事件查看器中。 检测的错误的事件属性将列出的四个停止代码参数。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
 
 -   加载生成的转储文件，并使用[ **！ 分析**](-analyze.md)附有调试器命令。 有关详细信息，请参阅[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
 
@@ -112,7 +112,7 @@ ms.locfileid: "63347865"
 
 ### <a name="span-idusingdriververifiertogatherinformationspanspan-idusingdriververifiertogatherinformationspanspan-idusingdriververifiertogatherinformationspanusing-driver-verifier-to-gather-information"></a><span id="Using_Driver_Verifier_to_Gather_Information"></span><span id="using_driver_verifier_to_gather_information"></span><span id="USING_DRIVER_VERIFIER_TO_GATHER_INFORMATION"></span>使用驱动程序验证程序来收集信息
 
-估计的蓝屏大约三个季度内由错误的驱动程序导致。 驱动程序验证程序是一种工具，运行实时检查驱动程序的行为。 例如，驱动程序验证工具将检查内存资源，如内存池的使用。 如果它看到错误的驱动程序代码执行过程中，它会主动创建例外以允许驱动程序代码以进行进一步仔细检查该部分。 驱动程序验证程序管理器内置于 Windows，可在所有 Windows Pc 上。 若要启动驱动程序验证程序管理器，请键入*Verifier*在命令提示符。 可以配置你想要验证的驱动程序。 验证驱动程序的代码将添加开销在运行，因此请尝试并验证尽可能最少数量的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。
+估计的蓝屏大约三个季度内由错误的驱动程序导致。 驱动程序验证程序是一种工具，运行实时检查驱动程序的行为。 例如，驱动程序验证工具将检查内存资源，如内存池的使用。 如果它看到错误的驱动程序代码执行过程中，它会主动创建例外以允许驱动程序代码以进行进一步仔细检查该部分。 驱动程序验证程序管理器内置于 Windows，可在所有 Windows Pc 上。 若要启动驱动程序验证程序管理器，请键入*Verifier*在命令提示符。 可以配置你想要验证的驱动程序。 验证驱动程序的代码将添加开销在运行，因此请尝试并验证尽可能最少数量的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 ## <a name="span-idtipsforsoftwareengineersspanspan-idtipsforsoftwareengineersspanspan-idtipsforsoftwareengineersspantips-for-software-engineers"></a><span id="Tips_for_Software_Engineers"></span><span id="tips_for_software_engineers"></span><span id="TIPS_FOR_SOFTWARE_ENGINEERS"></span>软件工程师的提示
 
@@ -131,7 +131,7 @@ ms.locfileid: "63347865"
 
 -   查找范围**设备管理器**若要查看的任何设备都带有感叹号 （！）。 查看任何错误的驱动程序的驱动程序属性中显示的事件日志。 请尝试更新相关的驱动程序。
 
--   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+-   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 -   您可以尝试运行硬件诊断程序提供的系统制造商。
 
@@ -148,7 +148,7 @@ ms.locfileid: "63347865"
     SFC /scannow
     ```
 
-    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/kb/929833)。
+    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
 
 -   确认在硬盘上没有足够的可用空间。 操作系统和某些应用程序需要足够的可用空间来创建交换文件和其他功能。 根据系统配置，具体要求各不相同，但它通常是最好有可用的 10%到 15%可用空间。
 

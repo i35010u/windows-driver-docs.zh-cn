@@ -7,12 +7,12 @@ keywords:
 - 网络接口 WDK，管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 173a4fd8912f5bd27b8230b44b1dc800cd6202e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 410a7003ce97ffb2f9f8cf15ff61c51f8d8d80ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343622"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356149"
 ---
 # <a name="managing-ndis-network-interfaces"></a>管理 NDIS 网络接口
 
@@ -20,7 +20,7 @@ ms.locfileid: "63343622"
 
 
 
-NDIS 网络接口提供程序注册 NDIS 网络接口。 在注册之前接口，接口提供程序获取[ **NET\_LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff568747)该接口的值。 NDIS 为指定接口的索引 ( *IfIndex*在 RFC 2863) 到已注册的接口。
+NDIS 网络接口提供程序注册 NDIS 网络接口。 在注册之前接口，接口提供程序获取[ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)该接口的值。 NDIS 为指定接口的索引 ( *IfIndex*在 RFC 2863) 到已注册的接口。
 
 NDIS 还提供了驱动程序可用于管理界面堆栈表中的条目的服务 (*ifStackTable*在 RFC 2863)。
 

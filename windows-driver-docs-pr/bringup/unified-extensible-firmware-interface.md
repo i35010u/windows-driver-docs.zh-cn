@@ -3,12 +3,12 @@ title: 统一可扩展固件接口 (UEFI)
 description: 统一可扩展固件接口 (UEFI)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5736e2f9b0e135a62483059be3c9cbab5aded93c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 226f6a1802a0625d2044f33710ae73853a35f3f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337375"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364487"
 ---
 # <a name="unified-extensible-firmware-interface-uefi"></a>统一可扩展固件接口 (UEFI) 
 
@@ -31,7 +31,7 @@ Windows 10，版本 1703，截至到 UEFI 规范与安全启动模式有关最�
 
 ## <a name="related-resources"></a>相关资源
 
-[UEFI 规范文档](https://www.uefi.org/specifications)
+[UEFI 规范文档](https://uefi.org/specifications)
 
 
 

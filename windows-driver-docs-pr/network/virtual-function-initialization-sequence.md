@@ -4,12 +4,12 @@ description: 虚拟功能初始化序列
 ms.assetid: 352E12EC-FAF0-4566-8632-B6DA97ACCAD9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11a86525cd4d55bba3f227d154dff8d3c02540f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45a3186272e63033213e7cc267ffd99e4054dd9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354495"
 ---
 # <a name="virtual-function-initialization-sequence"></a>虚拟功能初始化序列
 
@@ -24,7 +24,7 @@ ms.locfileid: "63345973"
 
     有关此硬件组件的详细信息，请参阅[SR-IOV 虚拟功能 (VFs)](sr-iov-virtual-functions--vfs-.md)。
 
-PF 微型端口驱动程序，可以在管理操作系统的 HYPER-V 父分区中运行，初始化并为 VF SR-IOV 网络适配器上分配资源。 NDIS 调用 PF 微型端口驱动程序的后[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数、 NDIS 和虚拟化堆栈可以对象标识符 (OID) 向发出请求 PF 微型端口驱动程序来执行以下操作：
+PF 微型端口驱动程序，可以在管理操作系统的 HYPER-V 父分区中运行，初始化并为 VF SR-IOV 网络适配器上分配资源。 NDIS 调用 PF 微型端口驱动程序的后[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数、 NDIS 和虚拟化堆栈可以对象标识符 (OID) 向发出请求 PF 微型端口驱动程序来执行以下操作：
 
 -   网络适配器上创建一个 NIC 开关。 NIC 切换 VFs、 pf，PF 和物理网络端口之间的桥网络流量。
 
@@ -48,7 +48,7 @@ PF 微型端口驱动程序，可以在管理操作系统的 HYPER-V 父分区�
 
 NDIS、 虚拟化堆栈和 PF 微型端口驱动程序 VF 初始化序列期间执行以下步骤：
 
-1.  NDIS 从注册表读取默认交换机配置，并发出的 OID 方法请求[OID\_NIC\_切换\_创建\_切换](https://msdn.microsoft.com/library/windows/hardware/hh451815)来预配网络中的交换机适配器。 在此 OID 请求中传递的参数包括有关如何配置 VFs 和 VPorts 等重要硬件资源的信息。 它还包括有关如何分发附加到 PF.在非默认 VPorts 和默认 VPort 之间的资源
+1.  NDIS 从注册表读取默认交换机配置，并发出的 OID 方法请求[OID\_NIC\_切换\_创建\_切换](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)来预配网络中的交换机适配器。 在此 OID 请求中传递的参数包括有关如何配置 VFs 和 VPorts 等重要硬件资源的信息。 它还包括有关如何分发附加到 PF.在非默认 VPorts 和默认 VPort 之间的资源
 
     OID 已成功完成 PF 微型端口驱动程序后，已准备好用于创建 VPorts 并对其分配 VFs NIC 开关。
 
@@ -56,15 +56,15 @@ NDIS、 虚拟化堆栈和 PF 微型端口驱动程序 VF 初始化序列期间�
 
 2.  VF 视为一种用于虚拟机 (VM) 网络适配器的卸载机制。 此适配器的 HYPER-V 子分区中运行来宾操作系统中公开。 默认情况下，来宾操作系统中的网络组件通过发送和接收数据包的基于软件的综合数据路径。 但是，如果启用子分区以进行 VF 卸载虚拟化堆栈 OID 对发出请求的资源分配和初始化 VF 的 PF 微型端口驱动程序。 取景器附加到子分区和 VPort NIC 交换机上的后，网络组件通过发送和接收数据包 VF 数据路径。 有关这些数据路径的详细信息，请参阅[SR-IOV 数据路径](sr-iov-data-paths.md)。
 
-    如果为 VF 卸载、 虚拟化堆栈问题 OID 方法请求的已启用 HYPER-V 子分区[OID\_NIC\_交换机\_分配\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)到 PF 微型端口驱动程序。 在此 OID 请求中传递的参数包括 NIC 的标识符上分配 VF 切换。 其他参数包括 VF 会附加到的子分区的标识符。
+    如果为 VF 卸载、 虚拟化堆栈问题 OID 方法请求的已启用 HYPER-V 子分区[OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)到 PF 微型端口驱动程序。 在此 OID 请求中传递的参数包括 NIC 的标识符上分配 VF 切换。 其他参数包括 VF 会附加到的子分区的标识符。
 
-    PF 微型端口驱动程序为 VF 分配所需的硬件和软件资源。 PF 微型端口驱动程序 PCIe 请求程序标识符 (RID) 还决定 VF 的上，通过调用[ **NdisMGetVirtualFunctionLocation**](https://msdn.microsoft.com/library/windows/hardware/hh451487)。 RID 用于 DMA 和中断重新映射 DMA 请求时，中断生成的取景器。
+    PF 微型端口驱动程序为 VF 分配所需的硬件和软件资源。 PF 微型端口驱动程序 PCIe 请求程序标识符 (RID) 还决定 VF 的上，通过调用[ **NdisMGetVirtualFunctionLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismgetvirtualfunctionlocation)。 RID 用于 DMA 和中断重新映射 DMA 请求时，中断生成的取景器。
 
-    已成功完成时由 PF 微型端口驱动程序返回 VF 标识符以及 RID [OID\_NIC\_交换机\_分配\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)请求。
+    已成功完成时由 PF 微型端口驱动程序返回 VF 标识符以及 RID [OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)请求。
 
     有关 VF 的资源分配的详细信息，请参阅[虚函数的分配资源](allocating-resources-for-a-virtual-function.md)。
 
-3.  通过发出 OID 方法请求的 NIC 交换机上的虚拟化堆栈创建 VPort [OID\_NIC\_切换\_创建\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)到 PF 微型端口驱动程序。 在此 OID 请求中传递的参数包括 NIC 交换机的标识符在其上 VPort 创建。 其他参数包括的 VF VPort 将附加到的标识符。
+3.  通过发出 OID 方法请求的 NIC 交换机上的虚拟化堆栈创建 VPort [OID\_NIC\_切换\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)到 PF 微型端口驱动程序。 在此 OID 请求中传递的参数包括 NIC 交换机的标识符在其上 VPort 创建。 其他参数包括的 VF VPort 将附加到的标识符。
 
     **请注意**VPort NIC 交换机上的始终存在，以及附加到 PF.的默认值 仅单个非默认可以创建并附加到 VF VPort。
 
@@ -76,9 +76,9 @@ NDIS、 虚拟化堆栈和 PF 微型端口驱动程序 VF 初始化序列期间�
 
 4.  不久后 VF 和 VPort 分配，可能会启动 HYPER-V 子分区。 在此期间，来宾操作系统中的网络组件通过发送和接收数据包的综合数据路径。 这包括数据包流量通过附加到 PF.VPort 的默认值 桥接子分区的流量，虚拟化堆栈将默认 VPort 配置与媒体访问控制 (MAC) 和子分区的 VM 网络适配器的虚拟 LAN (VLAN) 筛选器。
 
-    后资源分配的 VF 和 VPort，虚拟化堆栈颁发的 OID 方法请求[OID\_接收\_筛选器\_移动\_筛选器](https://msdn.microsoft.com/library/windows/hardware/hh451845)到 PF 微型端口驱动程序. 此 OID 请求将从默认 VPort VM 网络适配器的 MAC 和 VLAN 的筛选器移到附加到 VF VPort。 这将导致与这些筛选器，以将它们转发到 VF VPort 通过 VF 数据路径匹配的数据包。
+    后资源分配的 VF 和 VPort，虚拟化堆栈颁发的 OID 方法请求[OID\_接收\_筛选器\_移动\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)到 PF 微型端口驱动程序. 此 OID 请求将从默认 VPort VM 网络适配器的 MAC 和 VLAN 的筛选器移到附加到 VF VPort。 这将导致与这些筛选器，以将它们转发到 VF VPort 通过 VF 数据路径匹配的数据包。
 
-    **请注意**现有接收筛选器可能会从默认 VPort 到 VF VPort 使用移[OID\_接收\_筛选器\_移动\_筛选器](https://msdn.microsoft.com/library/windows/hardware/hh451845)。 此外，新的筛选器可能会使用上设置 VF VPort [OID\_接收\_筛选器\_设置\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569795)。
+    **请注意**现有接收筛选器可能会从默认 VPort 到 VF VPort 使用移[OID\_接收\_筛选器\_移动\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)。 此外，新的筛选器可能会使用上设置 VF VPort [OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)。
 
 已成功创建 VF 和 VPort 和 VPort 上已经设置了 MAC 筛选器后，虚拟化堆栈会通知虚拟 PCI (VPCI) 虚拟服务提供商 (VSP)。 在管理操作系统的 HYPER-V 父分区中运行此 VSP。 此通知告诉 VPCI VSP，VF 成功分配并附加到子分区。 VPCI VSP 将通过虚拟机总线 (VMBus) 消息发送到在子分区的来宾操作系统中运行的 VPCI 虚拟服务客户端 (VSC)。 VPCI VSC 是公开 VF 网络适配器的 PCI 设备的总线驱动程序。
 

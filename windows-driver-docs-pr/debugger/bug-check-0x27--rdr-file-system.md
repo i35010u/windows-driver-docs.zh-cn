@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: faed326e57c284b4c1bad5dc070386bb4510465a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7686752753127db0ea27cab2b2f7ca5dfd0424f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361573"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361941"
 ---
 # <a name="bug-check-0x27-rdrfilesystem"></a>Bug 检查 0x27：RDR\_FILE\_SYSTEM
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361573"
 RDR\_文件\_检查系统错误的值为 0x00000027。 这表示 SMB 重定向程序文件系统中出现问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="rdrfilesystem-parameters"></a>RDR\_文件\_系统参数
@@ -78,7 +78,7 @@ RDR\_文件\_检查系统错误的值为 0x00000027。 这表示 SMB 重定向�
 <a name="resolution"></a>分辨率
 ----------
 
-**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
+**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
 
 **若要解决非分页缓冲的池内存耗尽问题：** 向计算机添加新的物理内存。 这会增加可用的内核的非分页缓冲的池内存的数量。
 

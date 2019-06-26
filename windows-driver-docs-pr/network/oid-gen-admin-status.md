@@ -5,12 +5,12 @@ ms.assetid: e8f45521-7419-4c11-b84b-36d4d3306fc2
 ms.date: 08/08/2017
 keywords: -OID_GEN_ADMIN_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5323c785ee3688a7803c69c2d6c40dace8babdfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 548b87f7b79538e3f77952fe16596b9a086d4153
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356146"
 ---
 # <a name="oidgenadminstatus"></a>OID\_GEN\_管理员\_状态
 
@@ -30,9 +30,9 @@ ms.locfileid: "63380699"
 
 管理状态是系统管理员请求的状态。
 
-仅[NDIS 网络接口](https://msdn.microsoft.com/library/windows/hardware/ff566527)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+仅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
 
-如果查询成功，接口提供程序返回 NDIS\_状态\_成功和查询的结果可以是中的值之一[ **NET\_如果\_管理员\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff568740)枚举。
+如果查询成功，接口提供程序返回 NDIS\_状态\_成功和查询的结果可以是中的值之一[ **NET\_如果\_管理员\_状态**](https://docs.microsoft.com/windows/desktop/api/ifdef/ne-ifdef-_net_if_admin_status)枚举。
 
 <a name="requirements"></a>要求
 ------------
@@ -53,9 +53,9 @@ ms.locfileid: "63380699"
 ## <a name="see-also"></a>请参阅
 
 
-[**NET\_IF\_ADMIN\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/ff568740)
+[**NET\_IF\_ADMIN\_STATUS**](https://docs.microsoft.com/windows/desktop/api/ifdef/ne-ifdef-_net_if_admin_status)
 
-[NDIS 网络接口 Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

@@ -3,12 +3,12 @@ title: SMBIOS
 description: SMBIOS 规范定义数据结构和会提供与系统相关的数据结构的信息。
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 81046d457daa15e0cd9a7c694d42ecd19d621ad9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cdf68f229626c8339282209a23cf4362b9b5a0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364501"
 ---
 # <a name="smbios"></a>SMBIOS
 
@@ -25,7 +25,7 @@ SMBIOS 规范定义数据结构和会提供与系统相关的数据结构的信�
         <tr>
             <td>字段名称</b></td>
             <td><b>结构名称和类型</b></td>
-            <td><b>值</b></td>
+            <td><b>ReplTest1</b></td>
             <td><b>Offset</b></td>
             <td><b>长度</b></td>
             <td><b>示例方案</b></td>
@@ -86,7 +86,7 @@ SMBIOS 规范定义数据结构和会提供与系统相关的数据结构的信�
             <td>变化不定</td>
             <td>08h</td>
             <td>16</td>
-            <td>通用的唯一 ID 号<br>请参阅部分 7.2.1。 在中<a href="http://www.dmtf.org/standards/smbios">DMTF SMBIOS 规范 3.1</a>或更高版本。</td>
+            <td>通用的唯一 ID 号<br>请参阅部分 7.2.1。 在中<a href="https://www.dmtf.org/standards/smbios">DMTF SMBIOS 规范 3.1</a>或更高版本。</td>
         </tr>
         <tr>
             <td>机箱类型</td>
@@ -287,7 +287,7 @@ SMBIOS 规范定义数据结构和会提供与系统相关的数据结构的信�
 
 [发布工作流的 Windows 10 驱动程序](http://download.microsoft.com/download/B/A/8/BA89DCE0-DB25-4425-9EFF-1037E0BA06F9/windows10_driver_publishing_workflow.docx) 
 
-[SMBIOS DMTF 规定](http://www.dmtf.org/standards/smbios)                                                 
+[SMBIOS DMTF 规定](https://www.dmtf.org/standards/smbios)                                                 
 
 
 

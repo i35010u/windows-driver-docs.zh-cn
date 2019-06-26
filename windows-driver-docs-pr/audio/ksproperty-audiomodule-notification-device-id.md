@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1409f8a7e6f64a4c239b87aca0c0a0b6dadabacf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e73e5d6fc275536e674a51013582ccdf1f6e0e82
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332796"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358823"
 ---
 # <a name="kspropertyaudiomodulenotificationdeviceid"></a>KSPROPERTY\_AUDIOMODULE\_通知\_设备\_ID
 
@@ -71,7 +71,7 @@ ms.locfileid: "63332796"
 
 使用此 KSPROPERTY 的示例请参阅 SYSVAD 音频驱动程序示例。
 
-有关音频模块的详细信息，请参阅[实现音频模块发现](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)。
+有关音频模块的详细信息，请参阅[实现音频模块发现](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)。
 
 <a name="requirements"></a>要求
 ------------
@@ -102,7 +102,7 @@ ms.locfileid: "63332796"
 
 [KSPROPSETID\_AudioModule](kspropsetid-audiomodule.md)
 
-[**KSAUDIOMODULE\_通知**](https://msdn.microsoft.com/library/windows/hardware/mt808138)
+[**KSAUDIOMODULE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_notification)
 
  
 

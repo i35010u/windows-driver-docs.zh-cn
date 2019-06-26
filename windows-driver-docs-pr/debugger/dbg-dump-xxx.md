@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4f0809aa12ca9bcca330b1d529f52a6c79300d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bbcf11ad55aa35858ef903d7aea2c77693acb86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361447"
 ---
 # <a name="dbgdumpxxx"></a>DBG\_DUMP\_XXX
 
@@ -27,7 +27,7 @@ ms.locfileid: "63374933"
 ## <span id="ddk_dbg_dump_xxx_dbx"></span><span id="DDK_DBG_DUMP_XXX_DBX"></span>
 
 
-DBG\_转储\_*XXX*位标志由**选项**符号成员\_转储\_PARAM 结构，以控制行为[**IG\_转储\_符号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff550906)[**Ioctl** ](https://msdn.microsoft.com/library/windows/hardware/ff551084)操作。
+DBG\_转储\_*XXX*位标志由**选项**符号成员\_转储\_PARAM 结构，以控制行为[**IG\_转储\_符号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)[**Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作。
 
 以下标志可以出现。
 
@@ -129,9 +129,9 @@ DBG\_转储\_*XXX*位标志由**选项**符号成员\_转储\_PARAM 结构，以
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**IG\_转储\_符号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff550906)
+[**IG\_转储\_符号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)
 
-[**Ioctl**](https://msdn.microsoft.com/library/windows/hardware/ff551084)
+[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)
 
  
 

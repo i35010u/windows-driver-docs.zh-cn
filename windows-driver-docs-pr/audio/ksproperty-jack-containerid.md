@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70f69ce0942f55f617ec6ee7b83f752e418fc86a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b741cc917ea2c737c27aa1f9163b012a2a067175
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332707"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358771"
 ---
 # <a name="kspropertyjackcontainerid"></a>KSPROPERTY\_JACK\_CONTAINERID
 
@@ -52,7 +52,7 @@ KSPROPERTY\_JACK\_CONTAINERID 属性实现为一个 pin-wise 属性，可通过�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>（通过筛选器句柄） 的 pin 工厂</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td align="left"><p><strong>GUID</strong></p></td>
 </tr>
 </tbody>
@@ -104,9 +104,9 @@ KSPROPERTY\_JACK\_CONTAINERID 属性只需从音频适配器质塑料制成的�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**BTHHFP\_描述符**](https://msdn.microsoft.com/library/windows/hardware/dn302030)
+[**BTHHFP\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor)
 
-[**IOCTL\_BTHHFP\_设备\_获取\_CONTAINERID**](https://msdn.microsoft.com/library/windows/hardware/dn265107)
+[**IOCTL\_BTHHFP\_设备\_获取\_CONTAINERID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_containerid)
 
  
 

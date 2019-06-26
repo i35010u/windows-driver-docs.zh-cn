@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc1f71e2284382bef8ff2475c7515798a84b32b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 94b8ab727bf813ea9f281b6416cff78505df9d5f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354424"
 ---
 # <a name="kspropertyaecmode"></a>KSPROPERTY\_AEC\_MODE
 
@@ -53,7 +53,7 @@ KSPROPERTY\_AEC\_MODE 属性用于控制 AEC 节点的操作模式。 此为可�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -77,7 +77,7 @@ KSPROPERTY\_AEC\_MODE 属性用于控制 AEC 节点的操作模式。 此为可�
 
 默认值为直通模式。 当创建筛选器包含 AEC 节点或节点重置时，节点最初配置为在直通模式下操作。
 
-在 Windows XP，AEC 算法的初始版本中的[AEC 系统筛选器](https://msdn.microsoft.com/library/windows/hardware/ff536174)使用不支持半双工模式。
+在 Windows XP，AEC 算法的初始版本中的[AEC 系统筛选器](https://docs.microsoft.com/windows-hardware/drivers/audio/aec-system-filter)使用不支持半双工模式。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -102,7 +102,7 @@ KSPROPERTY\_AEC\_模式属性请求将返回状态\_成功以指示已成功完�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_ACOUSTIC\_ECHO\_CANCEL**](ksnodetype-acoustic-echo-cancel.md)
 

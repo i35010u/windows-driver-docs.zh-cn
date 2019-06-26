@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5074994724afa4d8b1cb81e8f09e3c8a83db77d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86c16e3ba9ca6ae0708edbe20a3e3c67a22c3980
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361549"
 ---
 # <a name="bug-check-0xd9-lockedpagestrackercorruption"></a>Bug 检查 0xD9：锁定\_PAGES\_跟踪器\_损坏
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371735"
 LOCKED\_PAGES\_跟踪器\_损坏错误检查的值为 0x000000D9。 这表示已损坏的内部锁定页跟踪结构。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="lockedpagestrackercorruption-parameters"></a>锁定\_PAGES\_跟踪器\_损坏参数

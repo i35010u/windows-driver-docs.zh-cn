@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TCP_RSC_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d8035df078aaab139e4cafb5fe4108507e45f905
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 846685e243184bacd5875080ece94f4062d3bb3f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362881"
 ---
 # <a name="oidwditcprscstatistics"></a>OID\_WDI\_TCP\_RSC\_STATISTICS
 
@@ -20,7 +20,7 @@ OID\_WDI\_TCP\_RSC\_统计信息是一个 get 命令，查询硬件的 RSC 统�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 否                       | 1                               |
+| Port  | 否                       | 1                               |
 
  
 
@@ -33,7 +33,7 @@ OID\_WDI\_TCP\_RSC\_统计信息是一个 get 命令，查询硬件的 RSC 统�
 
 | TLV                                                                                              | 允许多个 TLV 实例 | 可选 | 描述                         |
 |--------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------|
-| [**WDI\_TLV\_TCP\_RSC\_STATISTICS\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn898070) |                                |          | TCP RSC 的硬件的统计信息。 |
+| [**WDI\_TLV\_TCP\_RSC\_STATISTICS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-rsc-statistics-parameters) |                                |          | TCP RSC 的硬件的统计信息。 |
 
  
 

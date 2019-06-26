@@ -4,12 +4,12 @@ description: 发现过程
 ms.assetid: 6B94CAF1-D998-4EAF-8ABB-80A21193B50F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8906f30a46eff14f77d13550247ab845328a007
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a5463a6821ac631993ebfcc61f370e48033f365
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379995"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356728"
 ---
 # <a name="discovery-process"></a>发现过程
 
@@ -98,12 +98,12 @@ Plug and Play 安装智能卡微型驱动程序不兼容的收件箱微型驱动
 若要执行这些任务之一，插必须能够派生智能卡的唯一 ID。 从 Windows 7 开始，下面介绍的智能卡发现过程插即用来派生卡片的唯一 ID:
 
 1.  插从 ATR 获取历史的字节数。 此发现过程中更高版本使用这两个字节。
-2.  插发出 SELECT 命令来查找 SC 即插即用辅助设备。Plug and Play 获取数据命令，以找到 Windows 专有标记 0x7F68 （按 ASN.1 der 方式编码的） 问题。 有关详细信息，请参阅"Windows 智能卡框架卡标识符"下一节。 如果此命令成功，则返回的唯一标识符的列表。 插智能卡的设备 ID 作为使用列表中的第一个标识符并使用该值的卡的唯一 id。 有关详细信息，请参阅[设备 Id](https://msdn.microsoft.com/library/windows/hardware/ff541237)。
+2.  插发出 SELECT 命令来查找 SC 即插即用辅助设备。Plug and Play 获取数据命令，以找到 Windows 专有标记 0x7F68 （按 ASN.1 der 方式编码的） 问题。 有关详细信息，请参阅"Windows 智能卡框架卡标识符"下一节。 如果此命令成功，则返回的唯一标识符的列表。 插智能卡的设备 ID 作为使用列表中的第一个标识符并使用该值的卡的唯一 id。 有关详细信息，请参阅[设备 Id](https://docs.microsoft.com/windows-hardware/drivers/install/device-ids)。
 3.  如果插派生而来的智能卡的唯一 ID，它将继续到步骤 12。
 4.  如果 Windows 无法获取设备 ID 在前面步骤中的，它将发出 MF 和 EF 的选择。如果 Windows 成功获取它可以使用 WU 作为设备 ID 的唯一标识符后跟的二进制读取命令的 ATR 转到步骤 12。
 5.  如果插无法获取在前面步骤中的唯一标识符，它为 PIV 辅助设备发出 SELECT 命令。 如果插成功，将其视为智能卡 PIV 兼容设备。 插使用智能卡的唯一 ID 作为以下：
 
-    1.  PIV 兼容设备 ID 作为设备的兼容 id。 有关详细信息，请参阅[兼容 Id](https://msdn.microsoft.com/library/windows/hardware/ff539950)。
+    1.  PIV 兼容设备 ID 作为设备的兼容 id。 有关详细信息，请参阅[兼容 Id](https://docs.microsoft.com/windows-hardware/drivers/install/compatible-ids)。
     2.  卡片的 ATR 历史个字节作为设备 id。 如果不有任何历史 ATR 字节，Windows 将使用 PIV 兼容设备 id 作为设备 id。
 
 6.  如果插派生而来的智能卡的唯一 ID，它将继续到步骤 12。
@@ -123,7 +123,7 @@ Plug and Play 安装智能卡微型驱动程序不兼容的收件箱微型驱动
 ## <a name="span-idwinscarddiscoveryprocessspanspan-idwinscarddiscoveryprocessspanspan-idwinscarddiscoveryprocessspanwinscard-discovery-process"></a><span id="Winscard_Discovery_Process"></span><span id="winscard_discovery_process"></span><span id="WINSCARD_DISCOVERY_PROCESS"></span>Winscard 发现过程
 
 
-Winscard (Winscard.dll) 发现过程用于将卡与已安装的微型驱动程序关联在系统中。 启动进程时[ **SCardListCards** ](https://msdn.microsoft.com/library/windows/desktop/aa379789)或[ **SCardLocateCards** ](https://msdn.microsoft.com/library/windows/desktop/aa379794)调用。
+Winscard (Winscard.dll) 发现过程用于将卡与已安装的微型驱动程序关联在系统中。 启动进程时[ **SCardListCards** ](https://docs.microsoft.com/windows/desktop/api/winscard/nf-winscard-scardlistcardsa)或[ **SCardLocateCards** ](https://docs.microsoft.com/windows/desktop/api/winscard/nf-winscard-scardlocatecardsa)调用。
 
 从 Windows 7 开始，下面介绍的 Winscard 发现过程：
 
@@ -175,7 +175,7 @@ Winscard (Winscard.dll) 发现过程用于将卡与已安装的微型驱动程�
 ## <a name="span-idwindowssmartcardclassminidriverdiscoveryprocessspanspan-idwindowssmartcardclassminidriverdiscoveryprocessspanspan-idwindowssmartcardclassminidriverdiscoveryprocessspan-windows-smart-card-class-minidriver-discovery-process"></a><span id="_Windows_Smart_Card_Class_Minidriver_Discovery_Process"></span><span id="_windows_smart_card_class_minidriver_discovery_process"></span><span id="_WINDOWS_SMART_CARD_CLASS_MINIDRIVER_DISCOVERY_PROCESS"></span> Windows 智能卡类微型驱动程序发现过程
 
 
-Windows 智能卡类微型驱动程序执行以下发现处理何时[ **CardAcquireContext** ](https://msdn.microsoft.com/library/windows/hardware/dn468701)调用。 微型驱动程序执行此发现过程以将相关联的卡标记为 PIV 或 Microsoft GID 兼容：
+Windows 智能卡类微型驱动程序执行以下发现处理何时[ **CardAcquireContext** ](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))调用。 微型驱动程序执行此发现过程以将相关联的卡标记为 PIV 或 Microsoft GID 兼容：
 
 1.  微型驱动程序的 PIV 辅助设备发出 SELECT 命令。 如果命令成功，将卡标记为 PIV 兼容和发现过程停止。
 2.  否则，微型驱动程序为 MS GID 辅助设备发出 SELECT 命令。 如果命令成功或失败来查找辅助设备，微型驱动程序会将卡标记为 MS GID。
@@ -186,7 +186,7 @@ Windows 智能卡类微型驱动程序执行以下发现处理何时[ **CardAcqu
 
     供应商提供的 INF 文件创建条目下 Calais\\智能卡包含以下信息的注册表子项。
 
-    | 项名称                      | 在任务栏的搜索框中键入   | 值                                     |
+    | 项名称                      | 在任务栏的搜索框中键入   | ReplTest1                                     |
     |---------------------------------|--------|-------------------------------------------|
     | 80000001                        | 字符串 | Msclmd.dll                                |
     | ATR                             | Binary | 卡片的 ATR                                |
