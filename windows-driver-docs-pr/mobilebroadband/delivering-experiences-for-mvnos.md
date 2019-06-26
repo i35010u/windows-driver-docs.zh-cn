@@ -4,12 +4,12 @@ description: 适用于 MVNO 的传送体验
 ms.assetid: fcb2a3d4-bc19-4fa5-b81d-b0df287404a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32710e477237a1bbd9f18c4d2c68023b56e42f5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e449dad173c6471002fa1a241b8a21f188d95045
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380968"
 ---
 # <a name="delivering-experiences-for-mvnos"></a>适用于 MVNO 的传送体验
 
@@ -236,7 +236,7 @@ ICCID、 IMSI 和主页提供程序名称都可以从该设备，如果 ICCID �
 
 -   应用程序内容本身 （即，应用程序内的所有内容可更改为某一特定运算符）。 这是对其应用程序具有完全控制代码。 可能想要更改帮助内容、 导航选项、 页面布局、 颜色和品牌内部应用程序中，基于 m n O/MVNO。
 
--   可以动态更新应用程序磁贴以显示特定映像和特定于该运算符的布局。 有关如何动态更新磁贴内容的信息，请参阅[快速入门：发送磁贴更新](https://msdn.microsoft.com/library/windows/apps/hh465439)。
+-   可以动态更新应用程序磁贴以显示特定映像和特定于该运算符的布局。 有关如何动态更新磁贴内容的信息，请参阅[快速入门：发送磁贴更新](https://docs.microsoft.com/previous-versions/windows/apps/hh465439(v=win.10))。
 
 不能重塑品牌的应用中的以下项：
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f43248246c284a851a8fcaf596e06dfe7b7faa2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 304ea164df0bb4dfda8053939c47d1bd029f8dea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378263"
 ---
 # <a name="devpkeydevicedriverprovider"></a>DEVPKEY_Device_DriverProvider
 
 
-DEVPKEY_Device_DriverProvider 设备属性表示的提供程序的名称[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)设备实例。
+DEVPKEY_Device_DriverProvider 设备属性表示的提供程序的名称[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)设备实例。
 
 <table>
 <colgroup>
@@ -61,11 +61,11 @@ DEVPKEY_Device_DriverProvider 设备属性表示的提供程序的名称[驱动�
 <a name="remarks"></a>备注
 -------
 
-由提供的值 DEVPKEY_Device_DriverProvider**提供程序**中包含的指令[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547394)设备 INF 文件。
+由提供的值 DEVPKEY_Device_DriverProvider**提供程序**中包含的指令[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)设备 INF 文件。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_DriverProvider 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_DriverProvider 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverProvider 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**ProviderName**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff537732)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverProvider 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**ProviderName**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,9 +90,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547394)
+[**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

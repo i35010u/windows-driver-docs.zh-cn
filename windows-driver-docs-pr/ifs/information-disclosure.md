@@ -11,12 +11,12 @@ keywords:
 - 泄露 WDK 的文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0d0885ff139ee76fc800b28e1dfbbc95bf9ac2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48bc4f32857404df5762707fb097da443d42edc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380957"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381735"
 ---
 # <a name="information-disclosure"></a>信息泄露
 
@@ -30,9 +30,9 @@ ms.locfileid: "63380957"
 
 对于文件系统或文件系统筛选器驱动程序，没有添加了泄漏不应允许访问数据的用户的文件信息的风险。 这可以以多种不同方式完成：
 
--   使用筛选器驱动程序[ **ZwCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)以打开该文件，然后提供对其中间的句柄通过数据的访问。 **Zwcreatefile 转换**函数将默认情况下，打开文件，并绕过安全检查，因为请求来自内核模式。 因此，使用此句柄的访问可能会透露将通常不可用的应用程序的信息。
+-   使用筛选器驱动程序[ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)以打开该文件，然后提供对其中间的句柄通过数据的访问。 **Zwcreatefile 转换**函数将默认情况下，打开文件，并绕过安全检查，因为请求来自内核模式。 因此，使用此句柄的访问可能会透露将通常不可用的应用程序的信息。
 
-    如果筛选器驱动程序想要强制执行访问检查，以确保它不公开数据，不应公开，则筛选器驱动程序应指定 OBJ\_FORCE\_访问权限\_签入*ObjectAttributes*的参数[ **ZwCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)函数。
+    如果筛选器驱动程序想要强制执行访问检查，以确保它不公开数据，不应公开，则筛选器驱动程序应指定 OBJ\_FORCE\_访问权限\_签入*ObjectAttributes*的参数[ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)函数。
 
 -   筛选器驱动程序的打开句柄在内核模式下 （跳过访问检查），但未指定 OBJ\_内核\_处理。 因此创建的句柄被放置在当前进程的句柄表中。 此句柄，具有完全访问权限的数据，然后会显示在用户模式。 恶意应用程序可以监视此类的句柄并尝试使用它们来访问数据。
 

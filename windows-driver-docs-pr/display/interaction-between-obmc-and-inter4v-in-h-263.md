@@ -6,12 +6,12 @@ keywords:
 - 宏块 WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40cf3a96a51a07948e032c63f4c00448f6232acc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f32d6a331607ab68f79d5987feaa273e1c4233a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379901"
 ---
 # <a name="interaction-between-obmc-and-inter4v-in-h263"></a>H.263 中 OBMC 与 INTER4V 之间的交互
 
@@ -49,7 +49,7 @@ ms.locfileid: "63381872"
 
 位 (11-*我*) 的**wPatternCode** （其中位零是最低有效位） 指示块是否发送残留的差异数据*我*，其中*我*是为 mpeg-2 视频图中指定宏块中的块的索引，6-10、 6-11 和 6 到 12 (光栅扫描顺序为 Y 后, 跟 4:2:0 块的光栅扫描顺序 Cb 跟 4:2:0 块的 Cr，跟 4: Cb，2:2 块跟 4:2:2 块的 Cr，跟 4:4:4 块 Cb，跟 4:4:4 块的 Cr)。 编码的块的数据 (具有位 11-这些块*我*等于 1) 编码缓冲区相同的索引顺序中的剩余中找到 (增加*我*)。 4:2:0 mpeg-2 数据、 的值**wPatternCode**对应于转移 CBP （编码块模式） 的已解码的值向左旋转 6 位位置 (这些较低的位位置用于 4:2:2 和 4:4:4 色度格式)。
 
-如果**bConfigSpatialResidInterleaved**的成员[ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)为 1，以发送基于主机的残留差异匹配的使用的 YUV 像素格式色度交错窗体。 在这种情况下，每个 Cb 并且在空间上相对应的块的 Cr 对将被视为单个残留差异结构单元的影响。 这不会更改值或的含义**wPatternCode**，但这意味着，Cb 和 Cr 数据块发送的每个对这两个成员时这些数据块的任何一个具有相应的位 （位 7 或位 6） 中设置**wPatternCode**。 如果中的位**wPatternCode**对应的残留的差异数据值的特定数据块为零，必须作为零配对 Cb 和 Cr 块要求发送残留的差异数据块时发送带的块**wPatternCode**位等于零。
+如果**bConfigSpatialResidInterleaved**的成员[ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)为 1，以发送基于主机的残留差异匹配的使用的 YUV 像素格式色度交错窗体。 在这种情况下，每个 Cb 并且在空间上相对应的块的 Cr 对将被视为单个残留差异结构单元的影响。 这不会更改值或的含义**wPatternCode**，但这意味着，Cb 和 Cr 数据块发送的每个对这两个成员时这些数据块的任何一个具有相应的位 （位 7 或位 6） 中设置**wPatternCode**。 如果中的位**wPatternCode**对应的残留的差异数据值的特定数据块为零，必须作为零配对 Cb 和 Cr 块要求发送残留的差异数据块时发送带的块**wPatternCode**位等于零。
 
  
 

@@ -4,19 +4,19 @@ description: Windows 7 包括 1394ohci.sys，新 IEEE 1394 总线驱动程序，
 ms.assetid: AC327938-A813-4665-8E2E-43BEE11D4AA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 469a4ebd97b0f47897e15d16a8dd8a6bf75be3e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae3ba4fa1c68e168954f0b3b2d6bd4754aacbfc4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390315"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381035"
 ---
 # <a name="retrieving-the-contents-of-a-ieee-1394-nodes-configuration-rom"></a>检索 IEEE 1394 节点的配置 ROM 的内容
 
 
-Windows 7 包括 1394ohci.sys，新 IEEE 1394 总线驱动程序，通过使用内核模式驱动程序框架 (KMDF) 实现的。 1394ohci.sys 总线驱动程序将替换中端口/微型端口配置-1394bus.sys 和 ochi1394.sys 的旧 IEEE 总线驱动程序。 它是与旧的 1394年总线驱动程序向后兼容。 有关一些新的和旧的 1394年总线驱动程序之间已知的行为差异的信息，请参阅[IEEE 1394 总线驱动程序在 Windows 7 中](https://msdn.microsoft.com/library/windows/hardware/gg266402)。
+Windows 7 包括 1394ohci.sys，新 IEEE 1394 总线驱动程序，通过使用内核模式驱动程序框架 (KMDF) 实现的。 1394ohci.sys 总线驱动程序将替换中端口/微型端口配置-1394bus.sys 和 ochi1394.sys 的旧 IEEE 总线驱动程序。 它是与旧的 1394年总线驱动程序向后兼容。 有关一些新的和旧的 1394年总线驱动程序之间已知的行为差异的信息，请参阅[IEEE 1394 总线驱动程序在 Windows 7 中](https://docs.microsoft.com/windows-hardware/drivers/ieee/IEEE-1394-Bus-Driver-in-Windows-7)。
 
-本主题提供有关如何 1394ohci.sys 总线驱动程序检索节点的配置 ROM，更高版本用于设备枚举中的内容的详细信息。 适用于 Windows 7 未更改处理的节点配置 ROM 设备发现的内容。 有关如何处理节点的配置 ROM 的内容的详细信息，请参阅[修改 1394年配置 ROM](https://msdn.microsoft.com/library/windows/hardware/ff537433)。
+本主题提供有关如何 1394ohci.sys 总线驱动程序检索节点的配置 ROM，更高版本用于设备枚举中的内容的详细信息。 适用于 Windows 7 未更改处理的节点配置 ROM 设备发现的内容。 有关如何处理节点的配置 ROM 的内容的详细信息，请参阅[修改 1394年配置 ROM](https://docs.microsoft.com/windows-hardware/drivers/ieee/modifying-the-1394-configuration-rom)。
 
 1394ohci.sys 总线驱动程序检索节点的配置 ROM 中的内容之后的 1394年总线重置通过发送异步读取到的节点的事务。 它将尝试减少发送到的节点来检索节点的配置 rom。 内容的异步读取事务数
 
@@ -25,12 +25,12 @@ Windows 7 包括 1394ohci.sys，新 IEEE 1394 总线驱动程序，通过使用�
 -   [检索配置 ROM 标头](#retrieving-the-configuration-rom-header)
 -   [新配置 ROM](#new-configuration-rom)
 -   [以前检索到配置 ROM](#previously-retrieved-configuration-rom)
--   [相关的主题](#related-topics)
+-   [相关主题](#related-topics)
 
 ## <a name="retrieving-the-configuration-rom-header"></a>检索配置 ROM 标头
 
 
-若要检索的节点的配置 ROM 内容，客户端驱动程序发送[**请求\_获取\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)请求到通过指定的 IEEE 1394 驱动程序堆栈**u.GetLocalHostInformation.nLevel**与 GET\_主机\_配置\_rom。 在完成请求，请总线驱动程序检索节点的配置 ROM 中的标头[**获取\_本地\_主机\_INFO5** ](https://msdn.microsoft.com/library/windows/hardware/ff537152)结构。 配置 ROM 标头是配置的在前五个 quadlets 的节点 rom。 此标头包括总线信息块，内容在 IEEE 1394a 规范中定义。
+若要检索的节点的配置 ROM 内容，客户端驱动程序发送[**请求\_获取\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)请求到通过指定的 IEEE 1394 驱动程序堆栈**u.GetLocalHostInformation.nLevel**与 GET\_主机\_配置\_rom。 在完成请求，请总线驱动程序检索节点的配置 ROM 中的标头[**获取\_本地\_主机\_INFO5** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_get_local_host_info5)结构。 配置 ROM 标头是配置的在前五个 quadlets 的节点 rom。 此标头包括总线信息块，内容在 IEEE 1394a 规范中定义。
 
 1394ohci.sys 总线驱动程序尝试检索配置 ROM 标头中读取事务是一个异步块。 但是，某些 1394年设备可能不响应为此事务正确。 在此情况下，新的 1394年总线驱动程序使用五个读取事务的异步 quadlet 检索配置 ROM 标头。
 
@@ -58,8 +58,8 @@ Windows 7 包括 1394ohci.sys，新 IEEE 1394 总线驱动程序，通过使用�
 中的 IEEE 1394 规范中的上一步骤中，找到的配置说明 ROM 值。 如果 1394ohci.sys 总线驱动程序未能找到匹配的缓存配置 ROM 标头，或因为，它必须重新读取的内容节点的配置 ROM**生成**值发生更改，将遵循到前面的步骤检索内容的新配置 rom。
 
 ## <a name="related-topics"></a>相关主题
-[IEEE 1394 驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/ff538867)  
-[修改 1394 配置 ROM](https://msdn.microsoft.com/library/windows/hardware/ff537433)  
+[IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)  
+[修改 1394 配置 ROM](https://docs.microsoft.com/windows-hardware/drivers/ieee/modifying-the-1394-configuration-rom)  
 [**REQUEST\_GET\_CONFIG\_ROM**](https://msdn.microsoft.com/library/windows/hardware/gg266404)  
 
 

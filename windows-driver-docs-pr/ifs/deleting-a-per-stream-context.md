@@ -10,12 +10,12 @@ keywords:
 - 删除每个流上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e559ba5dd4caecdcf5545eb970fb62184686f9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87cc07573c7c3d28011af77bf28a0ae66f39d7d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381009"
 ---
 # <a name="deleting-a-per-stream-context"></a>删除按流上下文
 
@@ -39,7 +39,7 @@ ms.locfileid: "63359331"
 
 ### <a name="span-idwhentheper-streamcontextsfreecallbackiscalledspanspan-idwhentheper-streamcontextsfreecallbackiscalledspanspan-idwhentheper-streamcontextsfreecallbackiscalledspanwhen-the-per-stream-contexts-freecallback-is-called"></a><span id="When_the_Per-Stream_Context_s_FreeCallback_Is_Called"></span><span id="when_the_per-stream_context_s_freecallback_is_called"></span><span id="WHEN_THE_PER-STREAM_CONTEXT_S_FREECALLBACK_IS_CALLED"></span>当调用每个 Stream 上下文 FreeCallback
 
-当正在文件流文件系统关闭或删除，释放其自己的文件流的流上下文。 在此期间，文件系统还会调用[ **FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)，从而又会调用[ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程注册的所有全局列表的文件流的上下文中包含的每个流上下文。 (A **FreeCallback**例程在筛选器驱动程序调用时才注册[ **FsRtlInitPerStreamContext** ](https://msdn.microsoft.com/library/windows/hardware/ff546178)初始化每个流上下文结构。 有关详细信息，请参阅**FSRTL\_每\_流\_上下文**。)
+当正在文件流文件系统关闭或删除，释放其自己的文件流的流上下文。 在此期间，文件系统还会调用[ **FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)，从而又会调用[ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程注册的所有全局列表的文件流的上下文中包含的每个流上下文。 (A **FreeCallback**例程在筛选器驱动程序调用时才注册[ **FsRtlInitPerStreamContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlinitperstreamcontext)初始化每个流上下文结构。 有关详细信息，请参阅**FSRTL\_每\_流\_上下文**。)
 
 **请注意**  后筛选器驱动程序已调用[ **FsRtlInsertPerStreamContext** ](https://msdn.microsoft.com/library/windows/hardware/ff546194)要与文件流关联的每个流上下文结构，文件系统是负责确保[ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程的筛选器的每个流上下文调用时不再有任何打开的流的引用。
 

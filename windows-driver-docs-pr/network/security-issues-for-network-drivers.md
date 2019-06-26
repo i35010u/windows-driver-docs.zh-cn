@@ -7,24 +7,24 @@ keywords:
 - 安全 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae0dc4ac862d4fadfae7b610923667dacfe90fc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 414046a7bd47f40a35ad726bc05dbd13ef2373c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374557"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382118"
 ---
 # <a name="security-issues-for-network-drivers"></a>网络驱动程序的安全问题
 
-有关编写安全的驱动程序的常规讨论，请参阅[创建可靠的内核模式驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff542904)。
+有关编写安全的驱动程序的常规讨论，请参阅[创建可靠的内核模式驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)。
 
 以下安全的编码实践和常规设备驱动程序指南，超出网络驱动程序应执行以下操作来增强安全性：
 
-- 所有网络驱动程序应都验证从注册表中读取的值。 具体而言的调用方[ **NdisReadConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)或[ **NdisReadNetworkAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff564512)必须不进行任何假设有关值从注册表中读取和必须验证它会读取每个注册表值。 如果调用方**NdisReadConfiguration**确定超出界限是一个值，它应改为使用默认值。 如果调用方**NdisReadNetworkAddress**确定一个值是超出界限，则应改为使用永久介质访问控制 (MAC) 地址或默认地址。
+- 所有网络驱动程序应都验证从注册表中读取的值。 具体而言的调用方[ **NdisReadConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)或[ **NdisReadNetworkAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)必须不进行任何假设有关值从注册表中读取和必须验证它会读取每个注册表值。 如果调用方**NdisReadConfiguration**确定超出界限是一个值，它应改为使用默认值。 如果调用方**NdisReadNetworkAddress**确定一个值是超出界限，则应改为使用永久介质访问控制 (MAC) 地址或默认地址。
 
 ## <a name="oid-specific-issues"></a>特定于 OID 的问题
 
-- 微型端口驱动程序，请在其[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)或[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)函数，应验证任何对象标识符请求的驱动程序的 (OID) 值设置。 如果该驱动程序确定要设置的值超出界限，则应失败集请求。 有关对象标识符的详细信息，请参阅[获取和设置微型端口驱动程序的信息和 NDIS 支持 WMI](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+- 微型端口驱动程序，请在其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)或[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数，应验证任何对象标识符请求的驱动程序的 (OID) 值设置。 如果该驱动程序确定要设置的值超出界限，则应失败集请求。 有关对象标识符的详细信息，请参阅[获取和设置微型端口驱动程序的信息和 NDIS 支持 WMI](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
 
 - 如果中间驱动程序的*MiniportOidRequest*函数不会将设置操作中传递给基础的微型端口驱动程序，该函数应验证 OID 值。 有关详细信息，请参阅[中间驱动程序查询和设置操作](intermediate-driver-query-and-set-operations.md)。
 
@@ -86,7 +86,7 @@ ms.locfileid: "63374557"
     }
     ```
 
-2. 只要验证与嵌入的偏移量 OID，则必须验证嵌入的缓冲区是在 OID 负载。 这需要多个检查。 例如， [OID_PM_ADD_WOL_PATTERN](https://msdn.microsoft.com/library/windows/hardware/ff569764)交付的嵌入的模式，需要检查。 纠正验证需要检查：
+2. 只要验证与嵌入的偏移量 OID，则必须验证嵌入的缓冲区是在 OID 负载。 这需要多个检查。 例如， [OID_PM_ADD_WOL_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)交付的嵌入的模式，需要检查。 纠正验证需要检查：
 
     1. InformationBufferSize > = sizeof(NDIS_PM_PACKET_PATTERN)
 
@@ -152,7 +152,7 @@ ms.locfileid: "63374557"
 
 ## <a name="other-network-driver-security-issues"></a>其他网络驱动程序安全问题
 
-- 许多 NDIS 微型端口驱动程序通过使用 NdisRegisterDeviceEx 公开控制设备。 执行此操作的那些必须审核它们 IOCTL 的处理程序，使用作为 WDM 驱动程序的所有相同的安全规则。 有关详细信息，请参阅[I/O 控制代码的安全问题](https://msdn.microsoft.com/library/windows/hardware/ff563700(v=vs.85).aspx)。
+- 许多 NDIS 微型端口驱动程序通过使用 NdisRegisterDeviceEx 公开控制设备。 执行此操作的那些必须审核它们 IOCTL 的处理程序，使用作为 WDM 驱动程序的所有相同的安全规则。 有关详细信息，请参阅[I/O 控制代码的安全问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)。
 
 - 设计良好的 NDIS 微型端口驱动程序不应依赖于在特定进程上下文中，调用和紧密的合作与用户模式 （与 Ioctl 和 Oid 正在异常） 进行交互。 它将是一个红色标志，以查看微型端口已打开 usermode 句柄、 执行 usermode 等待或分配内存中的 usermode 配额。 该代码应进行调查。
 

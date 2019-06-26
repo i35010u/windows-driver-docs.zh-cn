@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b420920bf57c4a27de06a54abe86adc2410ddad3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b98234d86b502aeda0f5958c623a7f6aaf61e0c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378545"
 ---
 # <a name="getfc4statistics-function"></a>GetFC4Statistics 函数
 
@@ -43,16 +43,16 @@ void GetFC4Statistics(
 ----------
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFC4Statistics\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553960)结构。
+在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFC4Statistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)结构。
 
 *PortWWN*   
-类型 Nx 的本地端口的全球通用名称\_端口的流量统计信息是报告。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **GetFC4Statistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553958)结构。
+类型 Nx 的本地端口的全球通用名称\_端口的流量统计信息是报告。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)结构。
 
 *FC4Type*   
-一个值，指示类型 FC 4 协议。 FC4 类型的说明，请参阅 T11 委员会*光纤通道通用服务-4*规范。 此信息传递到中的微型端口驱动程序**FC4Type**的成员[ **GetFC4Statistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553958)结构。
+一个值，指示类型 FC 4 协议。 FC4 类型的说明，请参阅 T11 委员会*光纤通道通用服务-4*规范。 此信息传递到中的微型端口驱动程序**FC4Type**的成员[ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)结构。
 
 *FC4Statistics*   
-在返回时包含类型的结构[ **MSFC\_FC4STATISTICS** ](https://msdn.microsoft.com/library/windows/hardware/ff562492)保存指定的 FC 4 协议的统计信息。 微型端口驱动程序将返回此信息**FC4Statistics**的成员[ **GetFC4Statistics\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553960)结构。
+在返回时包含类型的结构[ **MSFC\_FC4STATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)保存指定的 FC 4 协议的统计信息。 微型端口驱动程序将返回此信息**FC4Statistics**的成员[ **GetFC4Statistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -91,13 +91,13 @@ void GetFC4Statistics(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetFC4Statistics\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff553958)
+[**GetFC4Statistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)
 
-[**GetFC4Statistics\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff553960)
+[**GetFC4Statistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)
 
 [HBA\_状态](hba-status.md)
 
-[**MSFC\_FC4STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/ff562492)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
  
 

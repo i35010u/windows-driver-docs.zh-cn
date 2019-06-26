@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 881419fbf354b7ff25379fceaa51ce01476ef8e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a2601a993f37a320da3e5d2bf3dc8741b7bb158
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327316"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378139"
 ---
 # <a name="devpkeydeviceremovalpolicy"></a>DEVPKEY_Device_RemovalPolicy
 
@@ -62,9 +62,9 @@ DEVPKEY_Device_RemovalPolicy 设备属性表示设备实例的当前删除策略
 
 Windows 将 DEVPKEY_Device_RemovalPolicy 的值设置为一 CM_REMOVAL_POLICY_*Xxx* Cfgmgr32.h 中定义的值。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_RemovalPolicy 属性的值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_RemovalPolicy 属性的值。
 
-Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Device_RemovalPolicy 属性键。 相反，相应的 SPDRP_REMOVAL_POLICY 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Device_RemovalPolicy 属性键。 相反，相应的 SPDRP_REMOVAL_POLICY 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,7 +89,7 @@ Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Dev
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

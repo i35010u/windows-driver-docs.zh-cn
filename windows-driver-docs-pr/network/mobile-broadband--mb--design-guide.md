@@ -4,12 +4,12 @@ description: 移动宽带 (MB) 设计指南
 ms.assetid: d5db6b69-c5a9-41d5-88c9-7c4d1e7c9c03
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b44d8743cab7957f652e0421e1f18fa8f7ccfc3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40f3ccab856da710cae1b7480bf97fbdeb41c83e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375710"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380879"
 ---
 # <a name="mobile-broadband-mb-design-guide"></a>移动宽带 (MB) 设计指南
 
@@ -87,7 +87,7 @@ ms.locfileid: "63375710"
 ## <a name="related-topics"></a>相关主题
 
 
-[移动宽带的引用](https://msdn.microsoft.com/library/windows/hardware/ff560545)
+[移动宽带的引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

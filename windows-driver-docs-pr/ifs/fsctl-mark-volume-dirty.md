@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d90cde19dc53dfc9ebefcd8f876d5643a161afd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ec703816f5154a7cae2ff48a5d794b779aa5462
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391783"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380114"
 ---
 # <a name="fsctlmarkvolumedirty-control-code"></a>FSCTL\_标记\_卷\_脏控制代码
 
 
 **FSCTL\_标记\_卷\_繁琐**控制代码将标记指定的卷为已更新，这会触发 Autochk.exe 在下次系统重新启动过程中在卷上运行。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 **Parameters**
 
 <a href="" id="instance"></a>*实例*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 指向正在启动 FSCTL 请求微筛选器驱动程序实例的不透明实例指针。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 指向正在启动 FSCTL 请求微筛选器驱动程序实例的不透明实例指针。
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 文件指针对象指定要将标记为已更新的卷。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 文件指针对象指定要将标记为已更新的卷。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 若要将标记为已更新的卷句柄。 此参数是必需的不能**NULL**。
@@ -57,7 +57,7 @@ ms.locfileid: "63391783"
 <a name="status-block"></a>状态块
 ------------
 
-[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)例程将返回状态\_成功或相应 NTSTATUS值。
+[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)例程将返回状态\_成功或相应 NTSTATUS值。
 
 <table>
 <colgroup>
@@ -120,7 +120,7 @@ ms.locfileid: "63391783"
 ## <a name="see-also"></a>请参阅
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**FSCTL\_IS\_卷\_繁琐**](fsctl-is-volume-dirty.md)
 

@@ -14,12 +14,12 @@ keywords:
 - REQUEST_SET_DEVICE_XMIT_PROPERTIES
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ddcd8bcf65daec9dcd058ec871f899d69ab8f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd135b602fe40d25fff9a9268454543de52439c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381013"
 ---
 # <a name="supporting-requests-in-ieee-1394-virtual-device-drivers"></a>支持 IEEE 1394 虚拟设备驱动程序中的请求
 
@@ -31,7 +31,7 @@ ms.locfileid: "63390308"
 
 -   [**请求\_异步\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff537634)， [**请求\_异步\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff537636)，和[ **请求\_异步\_锁**](https://msdn.microsoft.com/library/windows/hardware/ff537633)
 
-    通常情况下，当应用程序或驱动程序地址的目标设备的异步 I/O 请求，1394年总线驱动程序从设备的物理设备对象 (PDO) 设备扩展提取设备的节点 ID。 当枚举设备时，将设备的 PDO 扩展中记录此信息。 虚拟设备，但是，不是枚举以通常的方式，因此生成请求的驱动程序*必须*提供的一个节点 ID，将请求发送到虚拟设备时就像它像执行异步 I/O 在 raw 模式中的一样。 Raw 模式寻址的讨论，请参阅[发送异步 I/O 请求数据包上的 IEEE 1394 总线](https://msdn.microsoft.com/library/windows/hardware/ff538087)。
+    通常情况下，当应用程序或驱动程序地址的目标设备的异步 I/O 请求，1394年总线驱动程序从设备的物理设备对象 (PDO) 设备扩展提取设备的节点 ID。 当枚举设备时，将设备的 PDO 扩展中记录此信息。 虚拟设备，但是，不是枚举以通常的方式，因此生成请求的驱动程序*必须*提供的一个节点 ID，将请求发送到虚拟设备时就像它像执行异步 I/O 在 raw 模式中的一样。 Raw 模式寻址的讨论，请参阅[发送异步 I/O 请求数据包上的 IEEE 1394 总线](https://docs.microsoft.com/windows-hardware/drivers/ieee/sending-asynchronous-i-o-request-packets-on-the-ieee-1394-bus)。
 
     当总线驱动程序收到请求时对虚拟设备的 PDO 时，它使用提供的发起请求的驱动程序，而不是尝试的节点 ID 从设备扩展中提取的节点 ID。 严格地说，虚拟设备不具有节点的 Id，因此，将请求发送到虚拟设备的驱动程序必须提供一个备用节点 id。 按照约定，虚拟设备使用 PC 的主控制器的节点 ID。
 

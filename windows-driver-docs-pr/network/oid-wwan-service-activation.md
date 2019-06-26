@@ -5,12 +5,12 @@ ms.assetid: a70c087d-0650-4aab-b78e-0d5a7aa49eb6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SERVICE_ACTIVATION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 15574dd8a63a321b7c0e07e3dfbeba068eab3a1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a7e5f7a8d8dee6dce48be439e127c385a2042b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383180"
 ---
 # <a name="oidwwanserviceactivation"></a>OID\_WWAN\_SERVICE\_ACTIVATION
 
@@ -19,12 +19,12 @@ OID\_WWAN\_服务\_激活指示微型端口驱动程序启动服务激活，以�
 
 不支持查询请求。
 
-微型端口驱动程序必须处理集请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_服务\_激活**](ndis-status-wwan-service-activation.md)状态通知包含[ **NDIS\_WWAN\_服务\_激活**](https://msdn.microsoft.com/library/windows/hardware/ff567918)结构启动服务激活，以访问提供程序的网络时他们已完成事务。
+微型端口驱动程序必须处理集请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_服务\_激活**](ndis-status-wwan-service-activation.md)状态通知包含[ **NDIS\_WWAN\_服务\_激活**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)结构启动服务激活，以访问提供程序的网络时他们已完成事务。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[MB 服务检测和激活](https://msdn.microsoft.com/library/windows/hardware/ff559122)。
+有关使用此 OID 的详细信息，请参阅[MB 服务检测和激活](https://docs.microsoft.com/windows-hardware/drivers/network/mb-service-detection-and-activation)。
 
 微型端口驱动程序可以访问用户识别模块 （SIM 卡） 或提供程序网络时处理查询或设置请求。
 
@@ -59,11 +59,11 @@ MB 服务使用 OID\_WWAN\_服务\_在其中的服务激活过程中需要微型
 
 [OID\_WWAN\_READY\_INFO](oid-wwan-ready-info.md)
 
-[**NDIS\_WWAN\_SERVICE\_ACTIVATION**](https://msdn.microsoft.com/library/windows/hardware/ff567918)
+[**NDIS\_WWAN\_SERVICE\_ACTIVATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation)
 
 [**NDIS\_状态\_WWAN\_服务\_激活**](ndis-status-wwan-service-activation.md)
 
-[MB 服务检测和激活](https://msdn.microsoft.com/library/windows/hardware/ff559122)
+[MB 服务检测和激活](https://docs.microsoft.com/windows-hardware/drivers/network/mb-service-detection-and-activation)
 
  
 

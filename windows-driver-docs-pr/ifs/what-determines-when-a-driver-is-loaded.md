@@ -19,12 +19,12 @@ keywords:
 - 引导启动驱动程序 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48beeb607b42424f5c7337512532b499a23585ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65617157d8ff04db9dc73a6fd06b0121cf1b0bc2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379384"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380266"
 ---
 # <a name="what-determines-when-a-driver-is-loaded"></a>什么决定何时加载驱动程序
 
@@ -57,7 +57,7 @@ ms.locfileid: "63379384"
 
 驱动程序编写器可以指定在安装时，在以下两种方式中的驱动程序的启动类型：
 
--   通过指定的所需的启动类型**StartType**中的条目*服务安装部分*引用[ **AddService** ](https://msdn.microsoft.com/library/windows/hardware/ff546326)驱动程序的 INF 文件中的指令。 ServiceInstall 部分中介绍了这些方法。
+-   通过指定的所需的启动类型**StartType**中的条目*服务安装部分*引用[ **AddService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)驱动程序的 INF 文件中的指令。 ServiceInstall 部分中介绍了这些方法。
 
 -   通过传递所需启动类型为*dwStartType*参数调用时**CreateService**或**执行 ChangeServiceConfig**从用户模式下安装程序。 此方法所述的引用项**CreateService**并**执行 ChangeServiceConfig** Microsoft Windows SDK 文档中。
 
@@ -87,7 +87,7 @@ ms.locfileid: "63379384"
 
 -   通过传递所需启动类型为*lpLoadOrderGroup*参数调用时**CreateService**或**执行 ChangeServiceConfig**从用户模式下安装程序。 此方法所述的引用项**CreateService**并**执行 ChangeServiceConfig** Microsoft Windows SDK 文档中。
 
-有关驱动程序的更多常规信息加载顺序并加载顺序组，请参阅[指定驱动程序加载顺序](https://msdn.microsoft.com/library/windows/hardware/ff552319)。
+有关驱动程序的更多常规信息加载顺序并加载顺序组，请参阅[指定驱动程序加载顺序](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)。
 
  
 

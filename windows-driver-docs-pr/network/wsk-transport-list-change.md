@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TRANSPORT_LIST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5a9e6657e6d1d4d58956ad99695e0da5370bb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae2f9444a60c81913cb6bba15e7ecf5aa9d3935b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379709"
 ---
 # <a name="wsktransportlistchange"></a>WSK\_传输\_列表\_更改
 
 
 WSK 应用程序使用 WSK\_传输\_列表\_更改客户端管理操作，以接收通知，如果可用的网络的列表会传输更改。
 
-若要接收通知的可用网络的列表时传输更改，WSK 应用程序调用[ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)使用以下参数的函数。
+若要接收通知的可用网络的列表时传输更改，WSK 应用程序调用[ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -28,7 +28,7 @@ WSK 应用程序使用 WSK\_传输\_列表\_更改客户端管理操作，以接
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +65,7 @@ WSK 应用程序使用 WSK\_传输\_列表\_更改客户端管理操作，以接
 
 IRP 是此客户端控制操作所必需的。
 
-如果 WSK 应用程序调用 WSK 子系统将取消任何挂起的 Irp [ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128)从 WSK 子系统中分离本身。
+如果 WSK 应用程序调用 WSK 子系统将取消任何挂起的 Irp [ **WskDeregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister)从 WSK 子系统中分离本身。
 
 <a name="requirements"></a>要求
 ------------

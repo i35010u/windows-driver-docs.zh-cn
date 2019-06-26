@@ -8,12 +8,12 @@ keywords:
 - 双向通信 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcd94d84a537e4b9113c1d4520a0c19f244b9f1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f7c9e74f958032e052a242bcd7e0c63ca1f8c6b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382584"
 ---
 # <a name="bidirectional-communication"></a>双向通信
 
@@ -38,11 +38,11 @@ ms.locfileid: "63379039"
 ## <a name="related-sections"></a>相关章节
 
 
-[双向通信接口](https://msdn.microsoft.com/library/windows/hardware/ff545163)
+[双向通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)
 
-[双向通信架构参考](https://msdn.microsoft.com/library/windows/hardware/ff545175)
+[双向通信架构参考](https://docs.microsoft.com/windows-hardware/drivers/print/bidi-communications-schema-reference)
 
-[双向通信错误代码](https://msdn.microsoft.com/library/windows/hardware/dd183367)
+[双向通信错误代码](https://docs.microsoft.com/windows-hardware/drivers/print/bidi-error-codes)
 
  
 

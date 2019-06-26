@@ -14,21 +14,21 @@ keywords:
 - 测试签名驱动程序包 WDK，有关测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d8214197c221c1f426ecea21e5fae9d0119fab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3774b4f68596745731e02b857f04f6fec270a059
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339554"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380971"
 ---
 # <a name="test-signing-driver-packages"></a>对驱动程序包进行测试签名
 
 
 在本部分中，在 Windows Vista 和更高版本的 Windows 发行测试签名的驱动程序的计算机被称为*签名计算机*。 签名的计算机必须运行 Windows XP SP2 或更高版本的 Windows。 例如，适用于 Windows 7 上的发布的驱动程序可以运行 Windows Vista 的计算机上进行签名。
 
-若要使用[驱动程序签名工具](https://msdn.microsoft.com/library/windows/hardware/ff552958)、 签名的计算机必须具有 Windows Vista 和更高版本的 WDK 安装。
+若要使用[驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)、 签名的计算机必须具有 Windows Vista 和更高版本的 WDK 安装。
 
-**请注意**  必须使用的新版[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778) Windows Vista 和更高版本的 Windows Driver Kit (WDK) 中提供的工具。 SignTool 的早期版本不支持内核模式代码签名策略适用于 Windows Vista 和更高版本的 Windows。
+**请注意**  必须使用的新版[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) Windows Vista 和更高版本的 Windows Driver Kit (WDK) 中提供的工具。 SignTool 的早期版本不支持内核模式代码签名策略适用于 Windows Vista 和更高版本的 Windows。
 
  
 
@@ -88,7 +88,7 @@ ms.locfileid: "63339554"
 
 即插即用设备安装签名要求不适用于非 PnP 驱动程序。
 
-**请注意**  使用嵌入式的签名是通常更为简单且更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)。
+**请注意**  使用嵌入式的签名是通常更为简单且更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
  
 

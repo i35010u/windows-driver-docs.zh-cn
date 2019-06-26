@@ -17,12 +17,12 @@ keywords:
 - 文件 WDK 网络组件安装
 ms.date: 01/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b3c4163ad8b7bb88193f737b08bd499225b1a37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8afc447883bb2953874275c57d7db0a1c31089ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344239"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379263"
 ---
 # <a name="components-and-files-used-for-network-component-installation"></a>用于网络组件安装的组件和文件
 
@@ -46,13 +46,13 @@ ms.locfileid: "63344239"
 
 ## <a name="inf-files"></a>INF 文件
 
-每个网络组件必须具有网络类安装程序用于安装该组件的信息 (INF) 文件。 网络 INF 文件基于通用 INF 文件格式。 有关 INF 文件格式的详细信息，请参阅[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。
+每个网络组件必须具有网络类安装程序用于安装该组件的信息 (INF) 文件。 网络 INF 文件基于通用 INF 文件格式。 有关 INF 文件格式的详细信息，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
 有关创建网络组件的 INF 文件的详细信息，请参阅[创建网络 INF 文件](creating-network-inf-files.md)。
 
 ## <a name="inetcfg"></a>INetCfg
 
-目前，通过调入安装 NDIS 协议和筛选器驱动程序`INetCfg`系列[网络配置接口](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v%3dvs.85))。 例如，若要安装或删除网络组件，驱动程序编写器调用到[INetCfgClassSetup](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547709%28v%3dvs.85%29)接口。 
+目前，通过调入安装 NDIS 协议和筛选器驱动程序`INetCfg`系列[网络配置接口](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v=vs.85))。 例如，若要安装或删除网络组件，驱动程序编写器调用到[INetCfgClassSetup](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547709(v=vs.85))接口。 
 
 驱动程序编写人员可以通过调用到此接口以编程方式或者他们可以使用[netcfg.exe](https://docs.microsoft.com/windows-server/administration/windows-commands/netcfg)，它调用`INetCfg`代表这些设备。
 
@@ -64,7 +64,7 @@ ms.locfileid: "63344239"
 
 软件组件，如网络协议、 客户端或服务，可以具有*通知对象*。 通知对象可以显示用户界面，通知绑定事件，以便该组件可以执行绑定进程的某些控制和有条件地安装或删除软件组件的组件。 有关详细信息通知对象，请参阅[通知网络组件的对象](notify-objects-for-network-components.md)。
 
-网络适配器不能具有通知对象。 它可以具有共同安装程序。 有关共同安装程序的详细信息，请参阅[编写共同安装程序](https://msdn.microsoft.com/library/windows/hardware/ff554011)。
+网络适配器不能具有通知对象。 它可以具有共同安装程序。 有关共同安装程序的详细信息，请参阅[编写共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer)。
 
 ## <a name="vendor-supplied-files"></a>供应商提供的文件
 

@@ -14,12 +14,12 @@ keywords:
 - PSN_APPLY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7648e76a22ea1e88b9eb28caa73b0173d5e692c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19dc601511c5af93687c1cb7d8d7cb08532c5b97
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383828"
 ---
 # <a name="handling-windows-messages-for-property-pages"></a>处理属性页的 Windows 消息
 
@@ -31,7 +31,7 @@ ms.locfileid: "63357039"
 
 WM_INITDIALOG 消息响应，对话框过程初始化的属性页中的信息。 此类信息可能包括表示设备、 设备和其即插即用设备描述的友好名称的图标。
 
-[**SetupDiLoadClassIcon** ](https://msdn.microsoft.com/library/windows/hardware/ff552053)加载指定的设备类的图标，并返回的句柄可以对后续调用中使用的加载大图标**SendDlgItemMessage**。 例如：
+[**SetupDiLoadClassIcon** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiloadclassicon)加载指定的设备类的图标，并返回的句柄可以对后续调用中使用的加载大图标**SendDlgItemMessage**。 例如：
 
 ```cpp
 if (SetupDiLoadClassIcon(
@@ -47,9 +47,9 @@ if (SetupDiLoadClassIcon(
 }
 ```
 
-ClassIcon 中返回的句柄可以转换为 SendDlgItemMessage 函数所需的 WPARAM 中。 在示例中，IDC_TEST_ICON 标识接收 STM_SETICON 消息的对话框中的控件。 必须提供程序中定义的 IDC_TEST_ICON 值。 有关操作图标和位图的其他函数，请参阅[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)。 有关详细信息**SendDlgItemMessage**， **DestroyIcon**，并在对话框中使用的图标，请参阅 Windows SDK 文档。
+ClassIcon 中返回的句柄可以转换为 SendDlgItemMessage 函数所需的 WPARAM 中。 在示例中，IDC_TEST_ICON 标识接收 STM_SETICON 消息的对话框中的控件。 必须提供程序中定义的 IDC_TEST_ICON 值。 有关操作图标和位图的其他函数，请参阅[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))。 有关详细信息**SendDlgItemMessage**， **DestroyIcon**，并在对话框中使用的图标，请参阅 Windows SDK 文档。
 
-表示设备的图标，除了典型的设备属性页包括说明或"友好名称"的设备，并且显示了设备属性的当前设置。 插即用 (PnP) 管理器存储在注册表中的每个设备的即插即用属性。 属性页提供程序可以调用[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551967)若要获取此类属性的值。 如果特定于设备或类配置信息已也存储在注册表中作为安装过程的一部分，属性页提供程序可以使用其他**SetupDiXxx**函数来提取显示该信息。 有关详细信息，请参阅[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)。
+表示设备的图标，除了典型的设备属性页包括说明或"友好名称"的设备，并且显示了设备属性的当前设置。 插即用 (PnP) 管理器存储在注册表中的每个设备的即插即用属性。 属性页提供程序可以调用[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)若要获取此类属性的值。 如果特定于设备或类配置信息已也存储在注册表中作为安装过程的一部分，属性页提供程序可以使用其他**SetupDiXxx**函数来提取显示该信息。 有关详细信息，请参阅[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))。
 
 属性表页上发生某些类型的更改，当发送[WM_NOTIFY](https://go.microsoft.com/fwlink/p/?linkid=181554)对话框过程的消息。 对话框过程应准备好从消息参数中提取通知代码并做出相应的响应。
 
@@ -61,7 +61,7 @@ ClassIcon 中返回的句柄可以转换为 SendDlgItemMessage 函数所需的 W
 
 当它收到 PSN_APPLY 通知时，该提供程序必须执行以下步骤：
 
-1.  如果它具有这样做，获得到的设备安装参数的指针 ([**SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)结构) 的设备。 此结构是可通过调用[ **SetupDiGetDeviceInstallParams**](https://msdn.microsoft.com/library/windows/hardware/ff551104)，并传递保存*DeviceInfoSet*和*DeviceInfoData*引用的区域中传递**lParam** PROPSHEETPAGE 结构中的成员。
+1.  如果它具有这样做，获得到的设备安装参数的指针 ([**SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构) 的设备。 此结构是可通过调用[ **SetupDiGetDeviceInstallParams**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)，并传递保存*DeviceInfoSet*和*DeviceInfoData*引用的区域中传递**lParam** PROPSHEETPAGE 结构中的成员。
 
 2.  确保用户的更改有效。
 
@@ -69,7 +69,7 @@ ClassIcon 中返回的句柄可以转换为 SendDlgItemMessage 函数所需的 W
 
     但是，如果提供程序可以确保所做的更改不需要的设备驱动程序已停止并重新启动，它不会不需要设置此标志。
 
-4.  调用[ **SetupDiSetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff552141)使用已更改[ **SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)结构，以设置新的参数。
+4.  调用[ **SetupDiSetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)使用已更改[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构，以设置新的参数。
 
 ### <a href="" id="psn-reset-notifications"></a>PSN_RESET 通知
 

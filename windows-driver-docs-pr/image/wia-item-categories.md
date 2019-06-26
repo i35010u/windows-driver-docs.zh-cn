@@ -4,12 +4,12 @@ description: WIA 项类别
 ms.assetid: b201e365-60d8-4c3b-a9cf-4bbaa318337f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a42aa3a5ddbe5ba30916fc12190a7d9bc18c7862
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3259bac51e56228b1f27bbe02e89ae14ea0ec70e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363049"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383078"
 ---
 # <a name="wia-item-categories"></a>WIA 项类别
 
@@ -19,7 +19,7 @@ ms.locfileid: "63363049"
 
 本主题适用于 Windows Vista 和更高版本。
 
-必须支持 WIA 项树中的所有项[ **WIA\_IPA\_项\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff551581)属性。 此属性标识项所属的功能类别。 类别设置确定 WIA 项标志和 WIA 的与项关联的属性的集。
+必须支持 WIA 项树中的所有项[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性。 此属性标识项所属的功能类别。 类别设置确定 WIA 项标志和 WIA 的与项关联的属性的集。
 
 WIA 定义以下项类别：
 
@@ -52,7 +52,7 @@ WIA 定义以下项类别：
 <a href="" id="wia-category-auto"></a>WIA\_类别\_自动  
 在 Windows 7 和更高版本，[自动项](auto-item.md)表示支持的 WIA 扫描程序设备的自动配置设置[自动配置扫描](auto-configured-scanning.md)。 此类设备可以配置自己的扫描设置而不是要求通过在桌面计算机上运行的 WIA 应用程序配置的设置。 例如，如果该设备，用户可以启动从设备扫描操作 (而不是从应用程序的用户界面) 和从设备中选择操作的输入的源，该应用程序可用于自动项卸载、 为设备，配置所选的输入的源的任务。 自动项是根项的子级。 一个包含自动项的 WIA 树还必须包含一个或多个以下： 平板项、 送纸器项或电影项。 应用程序可以通过实现和自动项上的根项目 WIA 属性访问设备自动配置扫描的功能。 有关详细信息，请参阅[WIA 属性支持的自动项](wia-properties-supported-by-an-auto-item.md)。
 
-每个 WIA 项类别都有一组必需的 WIA 项标志和 WIA 属性类别中的项必须支持，以及另外，项可以作为支持的标志和属性的一组选项。 标志和与各种项类别关联的属性的摘要，请参阅[ **WIA\_IPA\_项\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff551581)。 WIA 项标志的完整列表，请参阅[ **WIA\_IPA\_项\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff551585)。
+每个 WIA 项类别都有一组必需的 WIA 项标志和 WIA 属性类别中的项必须支持，以及另外，项可以作为支持的标志和属性的一组选项。 标志和与各种项类别关联的属性的摘要，请参阅[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)。 WIA 项标志的完整列表，请参阅[ **WIA\_IPA\_项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)。
 
  
 

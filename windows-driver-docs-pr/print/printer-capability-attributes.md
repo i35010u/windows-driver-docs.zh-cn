@@ -8,12 +8,12 @@ keywords:
 - 功能属性 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eefb56f0fc8d4f93c6b7d370972197e986141c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d839e3c3a2d46dd797c5798e6d2f415632ff4d8a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380679"
 ---
 # <a name="printer-capability-attributes"></a>打印机功能属性
 
@@ -46,7 +46,7 @@ ms.locfileid: "63380533"
 </tr>
 <tr class="even">
 <td><p></em><strong>OEMCustomData</strong></p></td>
-<td><p>带引号的文本字符串要提供给<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">呈现插件</a>当调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff553128" data-raw-source="[&lt;strong&gt;IPrintOemDriverUni::DrvGetGPDData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553128)"> <strong>IPrintOemDriverUni::DrvGetGPDData</strong></a>。</p></td>
+<td><p>带引号的文本字符串要提供给<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">呈现插件</a>当调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetgpddata" data-raw-source="[&lt;strong&gt;IPrintOemDriverUni::DrvGetGPDData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetgpddata)"> <strong>IPrintOemDriverUni::DrvGetGPDData</strong></a>。</p></td>
 <td><p>如果呈现插件调用所需<strong>IPrintOemDriverUni::DrvGetGPDData</strong>。</p>
 <p>文本字符串内容的解释取决于插件的呈现。</p>
 <p>此属性是可重定位的全局属性;可能会将它放置在根级别 (请参阅<a href="root-level-only-attributes.md" data-raw-source="[Root-Level-Only Attributes](root-level-only-attributes.md)">Root-Level-Only 特性</a>) 以表示它不依赖于对打印机配置，或可能会与一起<em>选项或 * 用例构造是否存在一些依赖关系。</p></td>
@@ -149,7 +149,7 @@ AFTER_FF-CmdFF 的命令。</td>
 
 呈现插件的 OEM 可以支持自动进行双面打印，而无需使用\* **ReverseBandOrderForEvenPages？** 属性。 该插件可以这样做只需缓存的所有数据的整个页面，并将其发送到打印机，从底部扫描行开始。 扫描行中，以及所有其他该页面上，必须按相反的顺序发送。
 
-**请注意**  呈现插件的 OEM 负责反转的位与每个扫描行的顺序和每个带区扫描行的顺序，如将数据发送到打印机。 若要确定必须完成这的时，PageNumber 标准变量的值可以通过调用获取[ **IPrintOemDriverUni::DrvGetStandardVariable**](https://msdn.microsoft.com/library/windows/hardware/ff553129)，使用索引 SVI\_PAGENUMBER。 如果页数字为奇数，则需要不反转。 如果数字为偶数，并选择双面打印时，需要进行反转。
+**请注意**  呈现插件的 OEM 负责反转的位与每个扫描行的顺序和每个带区扫描行的顺序，如将数据发送到打印机。 若要确定必须完成这的时，PageNumber 标准变量的值可以通过调用获取[ **IPrintOemDriverUni::DrvGetStandardVariable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriveruni-drvgetstandardvariable)，使用索引 SVI\_PAGENUMBER。 如果页数字为奇数，则需要不反转。 如果数字为偶数，并选择双面打印时，需要进行反转。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 内核模式驱动程序 WDK Guid
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a1d8436168de8e8de29c676a43a5bd6e6b9f9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0e1fd0ee1470f8d5711473a3e8af6bcace5433c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387398"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381639"
 ---
 # <a name="using-guids-in-drivers"></a>在驱动程序中使用 GUID
 
@@ -23,7 +23,7 @@ ms.locfileid: "63387398"
 
 
 
-驱动程序和使用其他系统组件*全局唯一标识符*(Guid) 标识的各种项。 系统组件的项定义 Guid 等[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)、 PnP WMI 事件的事件和静止图像的事件。 驱动程序编写人员可以创建 Guid 项如[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)，自定义 PnP 事件和自定义 WMI 事件。 驱动程序和应用程序包括标头文件，用于定义他们使用的 Guid。
+驱动程序和使用其他系统组件*全局唯一标识符*(Guid) 标识的各种项。 系统组件的项定义 Guid 等[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)、 PnP WMI 事件的事件和静止图像的事件。 驱动程序编写人员可以创建 Guid 项如[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)，自定义 PnP 事件和自定义 WMI 事件。 驱动程序和应用程序包括标头文件，用于定义他们使用的 Guid。
 
 本部分包括以下主题：
 

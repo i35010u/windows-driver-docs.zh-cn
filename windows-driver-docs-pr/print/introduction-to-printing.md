@@ -10,12 +10,12 @@ keywords:
 - WDK 打印体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f4a853dc7dbe9c28913fd6070a37c4d7c5d284
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 800cf423ac8629cd774555c02cb274deb6ac019a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385396"
 ---
 # <a name="introduction-to-printing"></a>打印简介
 
@@ -27,7 +27,7 @@ Microsoft Windows 打印体系结构由打印后台处理程序和打印机驱�
 
 XPS 打印路径，在打印机驱动程序基于 XML 纸张规范 (XPS) 上。 当一个应用程序，Microsoft Win32 XPS 打印时，应用程序中的 XPS 打印 API 调用 XPS 函数。 当将它打印到的队列[XPSDrv 的打印机驱动程序](xpsdrv-printer-drivers.md)，后台处理程序将 XPS 假脱机文件传递给呈现和输出设备直接。 到 GDI 设备打印 XPS 文件时，它被转换为通过 GDI 转换模块到 XPS EMF 文件。 它然后通过 GDI 打印路径的方式类似于 Win32 GDI 应用程序中发送。
 
-Windows Presentation Foundation (WPF) 应用程序在 XPS 后台打印文件格式中调用到后台处理到后台处理程序的 XPS 文档的 WPF 打印支持函数。 如时从 Win32 XPS 的应用程序，打印后台处理程序将打印到打印队列与 XPSDrv 打印机驱动程序时，后台处理程序会将其原始格式的假脱机的文件传递给呈现和输出到打印机的 XPSDrv 打印机驱动程序。 当具有基于 GDI 的打印机打印后台处理程序时，版本 3 的打印机驱动程序，后台处理程序将数据发送 XPS 后台打印文件格式转换为的 EMF 文件的 GDI 转换模块。 然后将数据发送到打印基于 GDI 的打印机驱动程序。 有关这些数据路径的详细信息，请参阅[Windows 打印路径概述](windows-print-path-overview.md)。 有关 XPS 的详细信息，请参阅[XML 纸张规范概述](https://msdn.microsoft.com/library/windows/hardware/dn641615)。
+Windows Presentation Foundation (WPF) 应用程序在 XPS 后台打印文件格式中调用到后台处理到后台处理程序的 XPS 文档的 WPF 打印支持函数。 如时从 Win32 XPS 的应用程序，打印后台处理程序将打印到打印队列与 XPSDrv 打印机驱动程序时，后台处理程序会将其原始格式的假脱机的文件传递给呈现和输出到打印机的 XPSDrv 打印机驱动程序。 当具有基于 GDI 的打印机打印后台处理程序时，版本 3 的打印机驱动程序，后台处理程序将数据发送 XPS 后台打印文件格式转换为的 EMF 文件的 GDI 转换模块。 然后将数据发送到打印基于 GDI 的打印机驱动程序。 有关这些数据路径的详细信息，请参阅[Windows 打印路径概述](windows-print-path-overview.md)。 有关 XPS 的详细信息，请参阅[XML 纸张规范概述](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn641615(v=vs.85))。
 
 后台处理程序和驱动程序组件是可替换，因此硬件供应商可以轻松地添加对新硬件的支持。 有关打印后台处理程序和驱动程序组件的详细信息，请参阅以下各节：
 

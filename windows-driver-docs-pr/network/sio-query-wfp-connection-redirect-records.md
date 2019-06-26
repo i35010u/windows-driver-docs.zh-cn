@@ -5,12 +5,12 @@ ms.assetid: D04C63B8-DD08-4943-9F83-B5D05F4F2CCF
 ms.date: 08/08/2017
 keywords: -SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS 控制代码与 Windows Vista 一起启动的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 087c3fa63652333ffd9057aea7fa14bb2ecad99c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4df4ef4a9896907851bce1a1bdf0c22958a5b814
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370548"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379164"
 ---
 # <a name="sioquerywfpconnectionredirectrecords-control-code"></a>SIO\_查询\_WFP\_连接\_重定向\_记录控制代码
 
@@ -23,9 +23,9 @@ WFP 重定向记录是不透明 WFP 必须对出站代理服务器的连接设�
 
  
 
-有关重定向的详细信息，请参阅[使用绑定或连接重定向](https://msdn.microsoft.com/library/windows/hardware/ff571005)。
+有关重定向的详细信息，请参阅[使用绑定或连接重定向](https://docs.microsoft.com/windows-hardware/drivers/network/using-bind-or-connect-redirection)。
 
-若要查询重定向的连接的重定向记录，Winsock 客户端调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要查询重定向的连接的重定向记录，Winsock 客户端调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -82,14 +82,14 @@ WFP 重定向记录是不透明 WFP 必须对出站代理服务器的连接设�
 
 调用方可以通过以下方式之一执行此查询：
 
--   可以设置*OutputBuffer*到大型缓冲区的大小大约为 1 KB。 如果输出缓冲区大小不足够，大[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)将返回**状态\_缓冲区\_过\_小**并*OutputSizeReturned*将包含所需的缓冲区大小。 然后可以分配较大的缓冲区并**WskControlSocket**再次调用**SIO\_查询\_WFP\_连接\_重定向\_记录**请求和*OutputBuffer*设置为更大的缓冲区。
--   也可以设置*OutputSize*为 0 的参数和*OutputBuffer*为 NULL，且然后调用[ **WskControlSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571127)。 完成后， **WskControlSocket**函数中检索输出缓冲区大小，以字节为单位， *OutputSizeReturned*参数。 然后可以分配相应大小的缓冲区并**WskControlSocket**再次调用**SIO\_查询\_WFP\_连接\_重定向\_记录**请求并*OutputBuffer*设置到缓冲区。
+-   可以设置*OutputBuffer*到大型缓冲区的大小大约为 1 KB。 如果输出缓冲区大小不足够，大[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)将返回**状态\_缓冲区\_过\_小**并*OutputSizeReturned*将包含所需的缓冲区大小。 然后可以分配较大的缓冲区并**WskControlSocket**再次调用**SIO\_查询\_WFP\_连接\_重定向\_记录**请求和*OutputBuffer*设置为更大的缓冲区。
+-   也可以设置*OutputSize*为 0 的参数和*OutputBuffer*为 NULL，且然后调用[ **WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)。 完成后， **WskControlSocket**函数中检索输出缓冲区大小，以字节为单位， *OutputSizeReturned*参数。 然后可以分配相应大小的缓冲区并**WskControlSocket**再次调用**SIO\_查询\_WFP\_连接\_重定向\_记录**请求并*OutputBuffer*设置到缓冲区。
 
-**请注意**  还有可能通过使用用户模式应用程序中执行此查询[ **SIO\_查询\_WFP\_连接\_重定向\_记录 (SDK)**](https://msdn.microsoft.com/library/windows/desktop/hh859713)。
+**请注意**  还有可能通过使用用户模式应用程序中执行此查询[ **SIO\_查询\_WFP\_连接\_重定向\_记录 (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859713(v=vs.85))。
 
  
 
-对于此类型的请求，Winsock 客户端必须指定指向 IRP 的指针和指向其完成例程的指针。 更高版本的驱动程序，可以将 IRP 传递给客户端或客户端可以选择分配 IRP。 若要指定完成例程，客户端必须调用[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)。 有关更多详细信息，请参阅[Winsock 内核函数使用 Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)。
+对于此类型的请求，Winsock 客户端必须指定指向 IRP 的指针和指向其完成例程的指针。 更高版本的驱动程序，可以将 IRP 传递给客户端或客户端可以选择分配 IRP。 若要指定完成例程，客户端必须调用[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)。 有关更多详细信息，请参阅[Winsock 内核函数使用 Irp](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)。
 
 Winsock 客户端必须释放分配的缓冲区，直到 IRP 完成 WSK 子系统。 WSK 子系统完成 IRP，它将通知客户端通过调用完成例程。 中的 WSK 子系统对该缓冲区的引用传递给客户端*上下文*完成例程的参数。 缓冲区的大小存储在*Irp-&gt;IoStatus.Information*。
 
@@ -126,13 +126,13 @@ Winsock 客户端必须释放分配的缓冲区，直到 IRP 完成 WSK 子系�
 ## <a name="see-also"></a>请参阅
 
 
-[使用绑定或连接重定向](https://msdn.microsoft.com/library/windows/hardware/ff571005)
+[使用绑定或连接重定向](https://docs.microsoft.com/windows-hardware/drivers/network/using-bind-or-connect-redirection)
 
-[Irp 使用 Winsock 内核函数](https://msdn.microsoft.com/library/windows/hardware/ff571006)
+[Irp 使用 Winsock 内核函数](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)
 
 [**SIO\_查询\_WFP\_连接\_重定向\_上下文**](sio-query-wfp-connection-redirect-context.md)
 
-[**SIO\_查询\_WFP\_连接\_重定向\_记录 (SDK)**](https://msdn.microsoft.com/library/windows/desktop/hh859713)
+[**SIO\_查询\_WFP\_连接\_重定向\_记录 (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859713(v=vs.85))
 
 [**SIO\_设置\_WFP\_连接\_重定向\_记录**](sio-set-wfp-connection-redirect-records.md)
 

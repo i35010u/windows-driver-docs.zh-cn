@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c54bbbfdb782e80955ff61c518bf530cec63e1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e09683e7fa5350d1546128a24f41942899783ba7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354201"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380077"
 ---
 # <a name="fsctlqueryretrievalpointers-control-code"></a>FSCTL\_查询\_检索\_指针控制的代码
 
@@ -28,12 +28,12 @@ ms.locfileid: "63354201"
 
 **FSCTL\_查询\_检索\_指针**类似于[ **FSCTL\_获取\_检索\_指针**](fsctl-get-retrieval-pointers.md). 但是， **FSCTL\_查询\_检索\_指针**仅适用于本地的页面文件或系统配置单元在内核模式下。 分页文件保证能够从 VCN 的一对一映射更直接地对基础物理存储，请参阅 LCN 到卷中。 您必须使用**FSCTL\_查询\_检索\_指针**与页面文件以外的文件，因为它们可能位于如镜像卷的卷上具有的一个多映射到 LCNs VCNs。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 对象的指针的页面文件或休眠文件。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 对象的指针的页面文件或休眠文件。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 分页文件或休眠文件的文件句柄。 此参数是必需的不能**NULL**。
@@ -65,7 +65,7 @@ struct {
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)都返回状态\_成功或适当的 NTSTATUS 错误值。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)都返回状态\_成功或适当的 NTSTATUS 错误值。
 
 <a name="remarks"></a>备注
 -------
@@ -91,7 +91,7 @@ struct {
 ## <a name="see-also"></a>请参阅
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**FSCTL\_GET\_RETRIEVAL\_POINTERS**](fsctl-get-retrieval-pointers.md)
 

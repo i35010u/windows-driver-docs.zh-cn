@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f22e34f84a446b3e922a3568e18de85cfcba25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99d8954cbb20859431bbcdfa7abc8770a43449b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380506"
 ---
 # <a name="fltparameters-for-irpmjquerysecurity-union"></a>FLT\_IRP 的参数\_MJ\_查询\_安全联合
 
 
-联合组件时使用**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff544638)结构操作已[ **IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)。
+联合组件时使用**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构操作已[ **IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)。
 
 <a name="syntax"></a>语法
 ------
@@ -90,7 +90,7 @@ typedef union _FLT_PARAMETERS {
 缓冲区的长度，以字节为单位，该**SecurityBuffer**指向。
 
 **SecurityBuffer**  
-指向接收副本的指定对象的安全描述符的调用方提供输出缓冲区的指针。 调用进程必须有权查看对象的安全状态的指定的方面。 [**安全\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff556610)自相关格式返回结构。
+指向接收副本的指定对象的安全描述符的调用方提供输出缓冲区的指针。 调用进程必须有权查看对象的安全状态的指定的方面。 [**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))自相关格式返回结构。
 
 **MdlAddress**  
 描述缓冲区的内存描述符列表 (MDL) 的地址， **SecurityBuffer**指向。 此成员是可选的可以是**NULL**。
@@ -98,9 +98,9 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-[ **FLT\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff544673)结构[ **IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)操作包含表示的回调数据基于 IRP 的安全信息的查询操作的参数 ([**FLT\_回调\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff544620))结构。 包含在[ **FLT\_IO\_参数\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff544638)结构。
+[ **FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构[ **IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)操作包含表示的回调数据基于 IRP 的安全信息的查询操作的参数 ([**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data))结构。 包含在[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
 
-Windows XP 及更高版本，该对象的**TargetFileObject** FLT 成员\_IO\_参数\_块结构指向可以表示命名的数据流。 有关命名的数据流的详细信息，请参阅[**文件\_流\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540364)。
+Windows XP 及更高版本，该对象的**TargetFileObject** FLT 成员\_IO\_参数\_块结构指向可以表示命名的数据流。 有关命名的数据流的详细信息，请参阅[**文件\_流\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)。
 
 IRP\_MJ\_查询\_安全是一个基于 IRP 的操作。
 
@@ -123,17 +123,17 @@ IRP\_MJ\_查询\_安全是一个基于 IRP 的操作。
 ## <a name="see-also"></a>请参阅
 
 
-[**文件\_流\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540364)
+[**文件\_流\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)
 
-[**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
 [**IRP\_MJ\_QUERY\_SECURITY**](irp-mj-query-security.md)
 
-[**安全\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff556610)
+[**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
 [**安全\_信息**](security-information.md)
 

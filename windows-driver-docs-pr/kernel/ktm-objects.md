@@ -8,12 +8,12 @@ keywords:
 - WDK KTM 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 153a1e71943b3ef96f0be3e4636554d003dec5b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 423dd7e3d79fc646751a433e663ef3a324b9c665
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384230"
 ---
 # <a name="ktm-objects"></a>KTM 对象
 
@@ -36,11 +36,11 @@ ms.locfileid: "63381379"
 
 -   若要获取的对象有关的信息，请 TP 组件可以调用*查询*例程。
 
--   若要关闭对象句柄，TP 组件调用[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)。
+-   若要关闭对象句柄，TP 组件调用[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)。
 
 KTM 将标识符 GUID 分配给每个对象。 对于事务对象，此标识符 GUID 是也称为*单元的工作 (UOW) 标识符*，可以指定客户端。 TP 组件可以使用标识符 Guid 跟踪对象。 TP 组件用于创建对象可以将对象的标识符的 GUID 传递给另一个组件，以便后一种组件可以打开对象的句柄。
 
-可以调用任何 TP 组件，它使用 KTM [ **ZwEnumerateTransactionObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566450)枚举 KTM 对象，但大多数组件无需调用该例程。
+可以调用任何 TP 组件，它使用 KTM [ **ZwEnumerateTransactionObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntenumeratetransactionobject)枚举 KTM 对象，但大多数组件无需调用该例程。
 
 本部分包含以下主题：
 

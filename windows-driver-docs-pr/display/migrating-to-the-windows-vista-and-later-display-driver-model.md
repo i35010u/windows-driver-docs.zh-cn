@@ -8,12 +8,12 @@ keywords:
 - 迁移显示器驱动程序模型 WDK Windows Vista
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e17f6a2b21b788cb515780879d5c1622c29930
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8c3ddc55b14c0dd69257c4c34014228e02f1960
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390826"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379859"
 ---
 # <a name="migrating-to-the-windows-display-driver-model-wddm"></a>迁移到 Windows 显示驱动程序模型 (WDDM)
 
@@ -27,25 +27,25 @@ WDDM 支持显示和编写根据 XDDM 的微型端口驱动程序。 但是，�
 
 尽管驱动程序编写人员可以重复使用其 WDDM 驱动程序中的低级别依赖于硬件的代码，但它们应重新编写新的设备驱动程序接口 (DDI) 的相关代码。 在编写 WDDMdrivers 时，请考虑以下几点：
 
--   显示微型端口驱动程序必须实现一修改后的入口点函数与操作系统和 DirectX 图形内核子系统进行交互。 有关详细信息，请参阅[ **DriverEntry 的显示微型端口驱动程序**](https://msdn.microsoft.com/library/windows/hardware/ff556157)。 显示微型端口驱动程序可以调用任何有案可稽的内核函数。
+-   显示微型端口驱动程序必须实现一修改后的入口点函数与操作系统和 DirectX 图形内核子系统进行交互。 有关详细信息，请参阅[ **DriverEntry 的显示微型端口驱动程序**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-display-miniport-driver)。 显示微型端口驱动程序可以调用任何有案可稽的内核函数。
 
 -   显示微型端口驱动程序动态加载适当的 DirectX 图形内核子系统。 显示微型端口驱动程序和 DirectX 图形内核子系统相互通过接口调用。
 
 -   显示微型端口驱动程序不再需要处理最多有视频 I/O 控制代码 (IOCTL)。 在 XDDM，内核模式显示驱动程序使用这些代码与微型端口驱动程序进行通信。 WDDM，在用户模式显示驱动程序进行通信与 Direct3D 运行时;WDDM 图形内核子系统，反过来，与显示微型端口驱动程序进行通信。
-    **请注意**   WDDM，仍用于以下 Ioctl 和显示微型端口驱动程序必须处理它们：[**IOCTL\_视频\_查询\_颜色\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff567817)
-    [**IOCTL\_视频\_句柄\_VIDEOPARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff567805)
+    **请注意**   WDDM，仍用于以下 Ioctl 和显示微型端口驱动程序必须处理它们：[**IOCTL\_视频\_查询\_颜色\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_query_color_capabilities)
+    [**IOCTL\_视频\_句柄\_VIDEOPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)
 
      
 
 <!-- -->
 
--   用户模式显示驱动程序必须实现和导出[ **OpenAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff568601)函数，这将打开图形适配器的实例。 用户模式显示驱动程序还必须实现[ **CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540634)函数，创建处理的呈现状态集合的显示设备的表示形式。
+-   用户模式显示驱动程序必须实现和导出[ **OpenAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)函数，这将打开图形适配器的实例。 用户模式显示驱动程序还必须实现[ **CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)函数，创建处理的呈现状态集合的显示设备的表示形式。
 
--   用户模式显示驱动程序[ **CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688)函数，以及显示微型端口驱动程序[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)函数中，替换[ *DdCanCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549213)， [ *DdCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549263)，和[ **D3dCreateSurfaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff542840) XDDM 中的函数。
+-   用户模式显示驱动程序[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)函数，以及显示微型端口驱动程序[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数中，替换[ *DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))， [ *DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))，和[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) XDDM 中的函数。
 
 -   大多数剩余用户模式显示驱动程序函数实现的相同的 XDDM 的内核模式显示驱动程序实现以下功能：
-    -   [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)函数和[ **DP2** ](https://msdn.microsoft.com/library/windows/hardware/ff545678)操作代码
-    -   [动作补偿回调函数](https://msdn.microsoft.com/library/windows/hardware/ff568441)和[DirectX 视频加速结构](https://msdn.microsoft.com/library/windows/hardware/ff553882)
+    -   [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数和[ **DP2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码
+    -   [动作补偿回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)和[DirectX 视频加速结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

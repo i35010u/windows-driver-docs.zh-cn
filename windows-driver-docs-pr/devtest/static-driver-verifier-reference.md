@@ -8,12 +8,12 @@ keywords:
 - SDV WDK 引用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2811cf8a4af7c183cc6af57834142fbacfd92b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fe37c572af728ae8e488eaf173ed4fe7516aa11
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365157"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379599"
 ---
 # <a name="static-driver-verifier-reference"></a>静态驱动程序验证程序参考
 
@@ -33,7 +33,7 @@ ms.locfileid: "63365157"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[DDI 符合性规则](https://msdn.microsoft.com/library/windows/hardware/ff552840)
+[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

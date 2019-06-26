@@ -6,21 +6,21 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TDI_DEVICENAME_MAPPING 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 626198cc16d0a30a644485fcf8e486cc31e48c36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57851b9e6e76a0d889724b84e959c8fe03bbf8b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379711"
 ---
 # <a name="wsktdidevicenamemapping"></a>WSK\_TDI\_DEVICENAME\_MAPPING
 
 
-WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端管理操作要映射的地址族的组合，套接字类型，并与设备名称的协议[TDI](https://msdn.microsoft.com/library/windows/hardware/ff565094)传输。 WSK 应用程序使用此客户端管理操作，仅当它需要支持 TDI 传输。 时 WSK 应用程序创建的套接字，仅当地址族、 套接字类型和指定 WSK 应用程序协议的组合不本机支持的映射列表请参阅 WSK 子系统。
+WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端管理操作要映射的地址族的组合，套接字类型，并与设备名称的协议[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))传输。 WSK 应用程序使用此客户端管理操作，仅当它需要支持 TDI 传输。 时 WSK 应用程序创建的套接字，仅当地址族、 套接字类型和指定 WSK 应用程序协议的组合不本机支持的映射列表请参阅 WSK 子系统。
 
 如果 WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端管理操作要映射的地址族、 套接字类型和协议组合到 TDI 传输的设备名称，它必须执行此操作之前它会创建任何套接字。
 
-若要映射的地址族、 套接字类型和协议组合到 TDI 传输的设备名称，WSK 应用程序调用[ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)使用以下参数的函数。
+若要映射的地址族、 套接字类型和协议组合到 TDI 传输的设备名称，WSK 应用程序调用[ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -30,7 +30,7 @@ WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端管理操作要映�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -44,7 +44,7 @@ WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端管理操作要映�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff571192" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571192)"> <strong>WSK_TDI_MAP_INFO</strong> </a>结构，其中包含的映射的地址族的组合列表套接字类型，并为协议<a href="https://msdn.microsoft.com/library/windows/hardware/ff565091" data-raw-source="[TDI](https://msdn.microsoft.com/library/windows/hardware/ff565091)">TDI</a>设备名称。</p></td>
+<td><p>一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_tdi_map_info" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_tdi_map_info)"> <strong>WSK_TDI_MAP_INFO</strong> </a>结构，其中包含的映射的地址族的组合列表套接字类型，并为协议<a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85)" data-raw-source="[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85))">TDI</a>设备名称。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -65,11 +65,11 @@ WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端管理操作要映�
 </tbody>
 </table>
 
-有关使用 TDI 传输的详细信息，请参阅[使用 TDI 传输](https://msdn.microsoft.com/library/windows/hardware/ff571015)。
+有关使用 TDI 传输的详细信息，请参阅[使用 TDI 传输](https://docs.microsoft.com/windows-hardware/drivers/network/using-tdi-transports)。
 
 *Irp*参数必须是**NULL**此客户端控制操作。
 
-**请注意**  TDI 将不支持在 Microsoft Windows 版本在 Windows Vista 后。 使用[Windows 筛选平台](https://msdn.microsoft.com/library/windows/hardware/ff571068)或[Winsock 内核](https://msdn.microsoft.com/library/windows/hardware/ff571083)相反。
+**请注意**  TDI 将不支持在 Microsoft Windows 版本在 Windows Vista 后。 使用[Windows 筛选平台](https://docs.microsoft.com/windows-hardware/drivers/network/windows-filtering-platform-callout-drivers2)或[Winsock 内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)相反。
 
  
 

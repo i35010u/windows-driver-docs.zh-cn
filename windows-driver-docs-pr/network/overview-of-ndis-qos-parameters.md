@@ -4,12 +4,12 @@ description: NDIS QoS 参数概述
 ms.assetid: E9321805-2930-410A-81BC-F7978517E89E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bba212964084b2108dcf457ff4504d4529f32519
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70335c6f3e8dbbb465baafab667412ea2a8676a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360974"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384382"
 ---
 # <a name="overview-of-ndis-qos-parameters"></a>NDIS QoS 参数概述
 
@@ -35,11 +35,11 @@ NDIS QoS 用于定义以下类型的参数：
 <a href="" id="local-ndis-qos-parameters"></a>本地的 NDIS QoS 参数  
 本地的 NDIS QoS 参数指定的微型端口驱动程序和其网络适配器的核心 QoS 设置。 这些参数保留在系统注册表中和本地管理到微型端口驱动程序如下所示：
 
--   通过的 NDIS 对象标识符 (OID) 方法请求[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)DCB 组件颁发。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构，它指定本地的 NDIS QoS 参数。
+-   通过的 NDIS 对象标识符 (OID) 方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)DCB 组件颁发。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，它指定本地的 NDIS QoS 参数。
 
     有关 DCB 组件的详细信息，请参阅[NDIS QoS 体系结构的数据中心桥接](ndis-qos-architecture-for-data-center-bridging.md)。
 
--   通过网络适配器的专有注册表设置。 微型端口驱动程序将读取这些设置时其[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) NDIS 调用函数。
+-   通过网络适配器的专有注册表设置。 微型端口驱动程序将读取这些设置时其[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) NDIS 调用函数。
 
 -   通过颁发给通过管理应用程序由独立硬件供应商 (IHV) 开发的微型端口驱动程序的设置。
 

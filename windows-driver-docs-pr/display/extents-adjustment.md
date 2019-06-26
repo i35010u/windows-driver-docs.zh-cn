@@ -7,12 +7,12 @@ keywords:
 - 扩展盘区调整 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aa4b75f3c6d50e75a3383e4793c9a8749d59882
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e34dbdf74c36c25f58883e7b92bc454f1329202
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360733"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381849"
 ---
 # <a name="extents-adjustment"></a>范围调整
 
@@ -22,7 +22,7 @@ ms.locfileid: "63360733"
 
 某些硬件使用影响像素的屏幕空间顶点定义的扩展盘区矩形之外的抗锯齿内核。 使用扩展盘区矩形 D3DCLIPSTATUS 结构中的应用程序 (在中定义*d3dtypes.h*) 的已更新矩形处理可能会呈现项目，因为该扩展盘区矩形不涉及像素修改的硬件。
 
-Direct3D 硬件驱动程序以请求扩展盘区矩形进行向外调整为指定的中的像素数，从而解决了此问题**dvExtentsAdjust**的成员[ **D3DHAL\_D3DEXTENDEDCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff544753)结构。 此成员填充以响应 GUID\_D3DExtendedCaps GUID [ **DdGetDriverInfo**](https://msdn.microsoft.com/library/windows/hardware/ff549404)。 扩展盘区矩形剪辑到的盘区的设备将呈现器目标图面中。 默认值为 0。
+Direct3D 硬件驱动程序以请求扩展盘区矩形进行向外调整为指定的中的像素数，从而解决了此问题**dvExtentsAdjust**的成员[ **D3DHAL\_D3DEXTENDEDCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)结构。 此成员填充以响应 GUID\_D3DExtendedCaps GUID [ **DdGetDriverInfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)。 扩展盘区矩形剪辑到的盘区的设备将呈现器目标图面中。 默认值为 0。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8712185a6da5fe9621a7f11a23ac9ea115509bc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10c57c80a62639eb1f468135789ab3b039de4c02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351089"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378203"
 ---
 # <a name="devpkeydevicelocationpaths"></a>DEVPKEY_Device_LocationPaths
 
@@ -62,9 +62,9 @@ DEVPKEY_Device_LocationPaths 设备属性表示设备树中的设备实例的位
 
 Windows 设置 DEVPKEY_Device_LocationPaths 的值。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_LocationPaths 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_LocationPaths 值。
 
-Windows Server 2003 支持此属性，但不支持 DEVPKEY_Device_LocationPaths 属性键。 相反，相应的 SPDRP_LOCATION_PATHS 标识符可用于访问 Windows Server 2003 上属性的值。 有关如何访问 Windows Server 2003 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003 支持此属性，但不支持 DEVPKEY_Device_LocationPaths 属性键。 相反，相应的 SPDRP_LOCATION_PATHS 标识符可用于访问 Windows Server 2003 上属性的值。 有关如何访问 Windows Server 2003 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,7 +89,7 @@ Windows Server 2003 支持此属性，但不支持 DEVPKEY_Device_LocationPaths 
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

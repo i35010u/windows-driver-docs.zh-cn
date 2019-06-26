@@ -7,12 +7,12 @@ keywords:
 - 捆绑包成员资格 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86d05b309142d200f4cee8f9ba7fcfcb259e6512
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdaa1f7b4bfb2617e9d7f0c9d239bfd405b5354f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383644"
 ---
 # <a name="specifying-bundle-membership"></a>指定捆绑成员身份
 
@@ -23,7 +23,7 @@ ms.locfileid: "63342579"
 > 在 Windows Vista 及更高版本已弃用捆绑包成员身份。 
 
 
-安装一个 INF 文件**Net**组件 （物理或虚拟网络适配器） 可以指定这些网络适配器属于适配器在同一个包。 请注意，NDIS 中间层驱动程序筛选器驱动程序，它将导出的虚拟网络适配器，包括 Net 类中。 NDIS 驱动程序可以使用它安装为平衡其工作负荷，方法是将工作负荷分布在适配器的绑定的适配器。 有关负载平衡的详细信息，请参阅[负载平衡和故障转移](https://msdn.microsoft.com/library/windows/hardware/ff549197)。
+安装一个 INF 文件**Net**组件 （物理或虚拟网络适配器） 可以指定这些网络适配器属于适配器在同一个包。 请注意，NDIS 中间层驱动程序筛选器驱动程序，它将导出的虚拟网络适配器，包括 Net 类中。 NDIS 驱动程序可以使用它安装为平衡其工作负荷，方法是将工作负荷分布在适配器的绑定的适配器。 有关负载平衡的详细信息，请参阅[负载平衡和故障转移](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549197(v=vs.85))。
 
 若要指定适配器属于一组特定的适配器，适配器将安装该驱动程序的 INF 文件必须包含**BundleId**关键字和不区分大小写的字符串值 (REG\_SZ)。 此字符串值标识适配器的驱动程序的捆绑的包。 注册表使用捆绑包标识符信息进行配置。
 

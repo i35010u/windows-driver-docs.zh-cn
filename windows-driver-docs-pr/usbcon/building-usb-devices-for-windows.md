@@ -3,12 +3,12 @@ Description: 此部分提供的 USB 外围设备制造商的链接。
 title: 为 Windows 构建 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb488088da80399a6d7d1e3d82fa1a978a70f5c2
-ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
+ms.openlocfilehash: 90da4770af8bfd5b97524870ee50b8b636d8b82d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051643"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384482"
 ---
 # <a name="building-usb-devices-for-windows"></a>为 Windows 构建 USB 设备
 
@@ -43,7 +43,7 @@ IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符该报表的�
 
 ## <a name="setting-a-container-id"></a>设置容器 ID
 
-[USB 设备的容器 Id](https://msdn.microsoft.com/library/windows/hardware/ff540084)  
+[USB 设备的容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids-for-usb-devices)  
 介绍如何生成通用串行总线 (USB) 设备的容器 Id。
 
 [在 Windows 中的 USB ContainerIDs](usb-containerids-in-windows.md)  
@@ -65,15 +65,15 @@ IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符该报表的�
 [USB Windows 事件跟踪](usb-event-tracing-for-windows.md)  
 Windows 事件跟踪 (ETW) 是一种高速通用的跟踪工具，由操作系统提供。 它包括有关如何安装工具、 创建跟踪文件和分析 USB 跟踪文件中的事件的信息。
 
-[WPP 软件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556204)  
+[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)  
 如何使用默认操作的 Windows 软件跟踪预处理器 (WPP) 来跟踪软件组件 （跟踪提供程序） 的操作。
 
-[USB 3.0 扩展](https://msdn.microsoft.com/library/windows/hardware/hh869258)(usb3kd.dll)  
+[USB 3.0 扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/usb-3-extensions)(usb3kd.dll)  
 这些命令将显示由三个 USB 3.0 堆栈中的驱动程序维护的数据结构中的信息： USB 3.0 集线器驱动程序、 USB 主控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序。
 
-[USB 2.0 扩展](https://msdn.microsoft.com/library/windows/hardware/dn367056)(usb2kd.dll)  
+[USB 2.0 扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/usb-2-0-extensions)(usb2kd.dll)  
 这些命令将显示由 USB 2.0 堆栈中的驱动程序维护的数据结构中的信息： USB 2.0 中心驱动程序和 USB 2.0 主机控制器驱动程序。
 
 ## <a name="related-topics"></a>相关主题
 
-[通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

@@ -13,12 +13,12 @@ keywords:
 - 即插即用组件 WDK 用户模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b735f72b2ef964273e737486b67fd652e33e211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a366b3d7da6c4eedb2ecc0aa32ed3f5dc3a4d5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369242"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380931"
 ---
 # <a name="pnp-components"></a>PnP 组件
 
@@ -36,7 +36,7 @@ PnP 管理器有两个部分： 内核模式即插即用管理器和用户模式
 
 所有驱动程序应支持即插即用和电源管理。 如果单个驱动程序不支持即插即用和电源管理，它作为一个整体约束系统的 PnP 和电源管理支持。
 
-请参阅[设备安装概述](https://msdn.microsoft.com/library/windows/hardware/ff549455)有关设备和驱动程序安装程序的信息，包括 (INF) 文件、 CAT 文件和注册表。
+请参阅[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)有关设备和驱动程序安装程序的信息，包括 (INF) 文件、 CAT 文件和注册表。
 
  
 

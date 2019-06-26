@@ -8,12 +8,12 @@ keywords:
 - 安全 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ccf41dca6a72fb46dfafd2cc0b0144cdf4c87a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7db8f493fbf0adf49442bb6d013a5436940aebfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379077"
 ---
 # <a name="preventing-bda-minidriver-threats"></a>阻止 BDA 微型驱动程序威胁
 
@@ -31,10 +31,10 @@ BDA 微型驱动程序不应将信号有效负载的内容，因为此类内容�
 如果 BDA 微型驱动程序解释有效负载，它们应仔细验证这些内容，分析此类内容从有效负载时。
 
 <a href="" id="threats-from-special-purpose-ioctls"></a>特殊用途 Ioctl 的潜在威胁  
-BDA 微型驱动程序不应公开的接口连接到允许的总线、 内存或任何其他硬件的直接控制这些应用程序的应用程序。 因此，应从 BDA 微型驱动程序中删除所有特殊用途 Ioctl 的处理。 例如，此类 Ioctl 包括供应商创建调试 Ioctl。 若要处理此类 Ioctl，BDA 微型驱动程序会实现[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)调度例程。
+BDA 微型驱动程序不应公开的接口连接到允许的总线、 内存或任何其他硬件的直接控制这些应用程序的应用程序。 因此，应从 BDA 微型驱动程序中删除所有特殊用途 Ioctl 的处理。 例如，此类 Ioctl 包括供应商创建调试 Ioctl。 若要处理此类 Ioctl，BDA 微型驱动程序会实现[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)调度例程。
 
 <a href="" id="threats-from-direct-wdm-dispatch-routines"></a>从直接 WDM 威胁调度例程  
-BDA 微型驱动程序不应提供 WDM 调度例程，跳过的内核流式处理 (KS) 类模型。 BDA 微型驱动程序应使用 KS 驱动程序的 AVStream 模块提供[调度](creating-dispatch-tables.md)并[自动化](defining-automation-tables.md)例程因为它还提供了安全检查。 若要提供直接 WDM 调度例程，BDA 微型驱动程序将实现的任何[IRP 主要函数代码](https://msdn.microsoft.com/library/windows/hardware/ff550710)。
+BDA 微型驱动程序不应提供 WDM 调度例程，跳过的内核流式处理 (KS) 类模型。 BDA 微型驱动程序应使用 KS 驱动程序的 AVStream 模块提供[调度](creating-dispatch-tables.md)并[自动化](defining-automation-tables.md)例程因为它还提供了安全检查。 若要提供直接 WDM 调度例程，BDA 微型驱动程序将实现的任何[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)。
 
  
 

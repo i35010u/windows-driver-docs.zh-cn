@@ -4,12 +4,12 @@ description: 安全检查
 ms.assetid: fca92bad-7bb8-4a30-b303-48fd54c20c42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fb12bfe53650e83e04e9eb5e4d8adf25921dad7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8b741fdb923958895f5ed46e5264b6feb6cf718
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378290"
 ---
 # <a name="security-checks"></a>安全检查
 
@@ -30,9 +30,9 @@ ms.locfileid: "63340137"
 如果启用任何 Driver Verifier 选项从其开始使用 Windows 7，驱动程序验证程序检查存在以下驱动程序行为：
 
 **对象引用计数器从 0 更改为 1。**
-当 Windows 内核对象管理器创建一个对象，如文件对象或线程对象，该新对象的引用计数器设置为 1。 调用系统函数如[ **ObReferenceObjectByPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff558686)或[ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679)递增引用计数器。 每次调用[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)为相同的对象的引用计数器递减。
+当 Windows 内核对象管理器创建一个对象，如文件对象或线程对象，该新对象的引用计数器设置为 1。 调用系统函数如[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)或[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)递增引用计数器。 每次调用[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)为相同的对象的引用计数器递减。
 
-引用计数器值达到 0 的值后，该对象将成为以便释放。 对象管理器可能会立即释放它或更高版本可能会释放。 驱动程序验证工具以便后续调用将检查[ **ObReferenceObjectByPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff558686)并[ **ObReferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff558678)为同一对象。 这些调用将引用计数器从 0 更改为 1，这意味着该驱动程序时已释放对象的引用计数器递增。 这是始终不正确，因为它可能会破坏其他内存分配。
+引用计数器值达到 0 的值后，该对象将成为以便释放。 对象管理器可能会立即释放它或更高版本可能会释放。 驱动程序验证工具以便后续调用将检查[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)并[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)为同一对象。 这些调用将引用计数器从 0 更改为 1，这意味着该驱动程序时已释放对象的引用计数器递增。 这是始终不正确，因为它可能会破坏其他内存分配。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 

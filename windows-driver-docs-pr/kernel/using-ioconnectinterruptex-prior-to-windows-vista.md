@@ -12,17 +12,17 @@ keywords:
 - CONNECT_FULLY_SPECIFIED
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b54195eb15989893d764b1168297de390032c099
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21f8ef9078271bf00db99b62aabc2f8ca61586f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381618"
 ---
 # <a name="using-ioconnectinterruptex-prior-to-windows-vista"></a>使用 Windows Vista 以前的 IoConnectInterruptEx
 
 
-用于 Windows 2000、 Windows XP 或 Windows Server 2003 的驱动程序可以链接到要使用的 Iointex.lib 库[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)在这些版本的操作系统上。
+用于 Windows 2000、 Windows XP 或 Windows Server 2003 的驱动程序可以链接到要使用的 Iointex.lib 库[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)在这些版本的操作系统上。
 
 若要使用**IoConnectInterruptEx**中此类驱动程序，包括 Iointex.h 为您的驱动程序，紧跟 wdm.h 中或 Ntddk.h 源代码中。 Iointex.h 标头声明该例程的原型。 生成您的驱动程序时，请确保它以静态方式链接到 Iointex.lib。
 

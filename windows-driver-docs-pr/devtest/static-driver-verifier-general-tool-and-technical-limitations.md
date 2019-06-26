@@ -8,12 +8,12 @@ keywords:
 - SDV WDK 限制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7e5ae2e2ac118888b298e2a9703e91847e08b99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3b979bf5bb8b9aa7bd2aa737db1b993ad38cbae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353477"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379604"
 ---
 # <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静态驱动程序验证程序常规工具和技术限制
 
@@ -64,7 +64,7 @@ SDV[验证引擎](verification-engine.md)有技术限制，防止它正确地解
 
     如果函数角色类型未检测到的 SDV，SDV 将不会验证来自该功能的跟踪。
 
-    例如，如果定义了一个驱动程序 （或实现） [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)文件 mydriver.c 中的函数。 此编译单元 （或任何.h 文件包括该 mydriver.c） 必须包含的函数角色类型声明*EvtDriverDeviceAdd*函数。
+    例如，如果定义了一个驱动程序 （或实现） [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)文件 mydriver.c 中的函数。 此编译单元 （或任何.h 文件包括该 mydriver.c） 必须包含的函数角色类型声明*EvtDriverDeviceAdd*函数。
 
 -   不会解释结构化的异常处理。 有关**试用 / 除外**语句，SDV 分析受保护的节，如同不会引发异常。 不会分析的表达式或异常处理程序代码。
 

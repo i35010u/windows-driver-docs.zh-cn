@@ -9,12 +9,12 @@ keywords:
 - 设备接口的类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60546d349fdad13ba3b59a6bead085cb1fd2e086
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8b9ea04c2ec854900378d29c72767aab108fc29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379445"
 ---
 # <a name="overview-of-device-interface-classes"></a>设备接口类概述
 
@@ -36,7 +36,7 @@ ms.locfileid: "63330248"
 
 当驱动程序注册的设备接口类实例时，I/O 管理器将设备和设备接口类 GUID 关联的符号链接名称。 链接名称存储在注册表中，并会在系统启动中保留。 使用该接口的应用程序可以查询的接口的实例和接收表示支持的接口的设备的符号链接名称。 应用程序然后可以使用符号链接名称用作目标的 I/O 请求。
 
-不要混淆设备驱动程序可以在响应中导出的接口与接口[ **IRP_MN_QUERY_INTERFACE** ](https://msdn.microsoft.com/library/windows/hardware/ff551687)请求。 该 IRP 用于内核模式驱动程序之间传递的例程的入口点。
+不要混淆设备驱动程序可以在响应中导出的接口与接口[ **IRP_MN_QUERY_INTERFACE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求。 该 IRP 用于内核模式驱动程序之间传递的例程的入口点。
 
  
 

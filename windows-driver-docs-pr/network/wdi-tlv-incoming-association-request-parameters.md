@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INCOMING_ASSOCIATION_REQUEST_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ee261a46dc34faa5b06b3858f371991b73a671f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67f160ee7f6e3f8c09db65f27d97c26479eb110a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342277"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380791"
 ---
 # <a name="wditlvincomingassociationrequestparameters"></a>WDI\_TLV\_传入\_关联\_请求\_参数
 
@@ -33,7 +33,7 @@ WDI\_TLV\_传入\_关联\_请求\_参数是包含关联请求参数 TLV。
 
 | 在任务栏的搜索框中键入                                              | 描述                                                                                                                   |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 发件人的 MAC 地址。                                                                                                |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 发件人的 MAC 地址。                                                                                                |
 | UINT8                                             | 指示它重新关联请求的位。 如果值为 1 指示这是一个重新关联请求。 |
 
  

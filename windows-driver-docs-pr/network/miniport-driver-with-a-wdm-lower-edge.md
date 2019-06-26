@@ -11,12 +11,12 @@ keywords:
 - WDM 低边缘 WDK 网络，有关 WDM 下边缘
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e869d20fc9e72c5f870112e7c79312a7124ed68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f7b8a16287d9333b8fed8428072cd6a207482cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357270"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380907"
 ---
 # <a name="miniport-driver-with-a-wdm-lower-edge"></a>包含 WDM 下边缘的微型端口驱动程序
 
@@ -45,10 +45,10 @@ ms.locfileid: "63357270"
 其他供应商提供 USB 客户端驱动程序。
 
 <a href="" id="usb-class-interface"></a>USB 类接口  
-[USB 例程](https://msdn.microsoft.com/library/windows/hardware/ff540046)并[I/O 请求](https://msdn.microsoft.com/library/windows/hardware/ff537421)，可以使用 USB 客户端驱动程序以便与 USB 驱动程序堆栈。
+[USB 例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85))并[I/O 请求](https://docs.microsoft.com/previous-versions/ff537421(v=vs.85))，可以使用 USB 客户端驱动程序以便与 USB 驱动程序堆栈。
 
 <a href="" id="usb-driver-stack"></a>USB 驱动程序堆栈  
-USB 设备的驱动程序堆栈。 有关详细信息，请参阅[USB 驱动程序堆栈体系结构](https://msdn.microsoft.com/library/windows/hardware/hh406256)。
+USB 设备的驱动程序堆栈。 有关详细信息，请参阅[USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 
