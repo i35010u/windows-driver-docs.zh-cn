@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cc192d0be64f2e9f4dcff799acd9f500b78d38c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f05257da5bda2ea345898376b93c4f97d37fb275
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340008"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387223"
 ---
 # <a name="oidwditasksendresponseactionframe"></a>OID\_WDI\_TASK\_SEND\_RESPONSE\_ACTION\_FRAME
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_发送\_响应\_操作\_帧请求 IHV 组件发送的响应操
 
 | Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
+| Port   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
 
  
 
@@ -38,8 +38,8 @@ OID\_WDI\_任务\_发送\_响应\_操作\_帧请求 IHV 组件发送的响应操
 
 | TLV                                                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                      |
 |-------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------|
-| [**WDI\_TLV\_SEND\_ACTION\_FRAME\_RESPONSE\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn898054) |                                |          | 发送操作帧响应参数。 |
-| [**WDI\_TLV\_操作\_帧\_正文**](https://msdn.microsoft.com/library/windows/hardware/dn926118)                                           |                                |          | 操作帧正文中。                           |
+| [**WDI\_TLV\_SEND\_ACTION\_FRAME\_RESPONSE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-send-action-frame-response-parameters) |                                |          | 发送操作帧响应参数。 |
+| [**WDI\_TLV\_操作\_帧\_正文**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-action-frame-body)                                           |                                |          | 操作帧正文中。                           |
 
  
 

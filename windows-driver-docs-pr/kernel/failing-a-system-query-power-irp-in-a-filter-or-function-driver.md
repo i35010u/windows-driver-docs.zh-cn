@@ -9,12 +9,12 @@ keywords:
 - 失败查询能耗 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c453890a3f68b23cbf02d0ef7fd16fb9dd59684f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 074fc85255cb37a6547986981611a9807f2f20be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359991"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386614"
 ---
 # <a name="failing-a-system-query-power-irp-in-a-filter-or-function-driver"></a>使筛选器或函数驱动程序中的系统 Query-Power IRP 失败
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359991"
 
 
 
-筛选器或函数的驱动程序 （这不是设备的电源策略所有者） 可能会失败[ **IRP\_MN\_查询\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)请求以下组件之一是否true:
+筛选器或函数的驱动程序 （这不是设备的电源策略所有者） 可能会失败[ **IRP\_MN\_查询\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)请求以下组件之一是否true:
 
 -   该设备已启用的唤醒和请求的系统电源状态小于提供支持的值比[ **SystemWake**](systemwake.md)，它指定设备可以将系统唤醒从其提供最低支持的状态。 例如，可以从 s2 切换但不能从 S3 将系统唤醒的设备将适用于 S3 失败查询，但对 S2 成功查询。
 
@@ -30,11 +30,11 @@ ms.locfileid: "63359991"
 
 失败**IRP\_MN\_查询\_POWER**系统电源状态，驱动程序的请求应执行以下步骤：
 
-1.  调用[ **PoStartNextPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559776)以指示驱动程序已准备好处理 IRP 的下一个幂。 （Windows Server 2003、 Windows XP 和 Windows 2000 仅）
+1.  调用[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)以指示驱动程序已准备好处理 IRP 的下一个幂。 （Windows Server 2003、 Windows XP 和 Windows 2000 仅）
 
-2.  设置**Irp-&gt;IoStatus.Status**为失败状态，并调用[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)，指定 IO\_否\_增量。 不要传递 IRP 进一步向下设备堆栈。
+2.  设置**Irp-&gt;IoStatus.Status**为失败状态，并调用[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)，指定 IO\_否\_增量。 不要传递 IRP 进一步向下设备堆栈。
 
-3.  调用[ **IoReleaseRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549560)释放以前获取的锁。
+3.  调用[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)释放以前获取的锁。
 
 4.  返回从故障状态及其[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
 

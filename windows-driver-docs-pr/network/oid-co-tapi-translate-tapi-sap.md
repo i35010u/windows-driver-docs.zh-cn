@@ -6,16 +6,16 @@ keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_SAP
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b15fd2a12a55088c3667d1dbbc6edca93e6748e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0302579e16016b3888e93830325792b502140949
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380700"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385503"
 ---
 # <a name="oidcotapitranslatetapisap"></a>OID_CO_TAPI_TRANSLATE_TAPI_SAP
 
-OID_CO_TAPI_TRANSLATE_TAPI_SAP OID 请求要准备从 TAPI 调用参数的一个或多个 SAPs 的呼叫管理器或 MCM 的集成驱动程序。 查询此 OID 的客户端使用 NDIS SAP 返回的呼叫管理器或作为输入的 MCM 驱动程序 (格式为[CO_SAP](https://msdn.microsoft.com/library/windows/hardware/ff545392)结构) 到[NdisClRegisterSap](https://msdn.microsoft.com/library/windows/hardware/ff561648)，该客户端调用上注册 SAP要接收传入的呼叫。
+OID_CO_TAPI_TRANSLATE_TAPI_SAP OID 请求要准备从 TAPI 调用参数的一个或多个 SAPs 的呼叫管理器或 MCM 的集成驱动程序。 查询此 OID 的客户端使用 NDIS SAP 返回的呼叫管理器或作为输入的 MCM 驱动程序 (格式为[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构) 到[NdisClRegisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclregistersap)，该客户端调用上注册 SAP要接收传入的呼叫。
 
 此请求使用 CO_TAPI_TRANSLATE_SAP 结构，其定义，如下所示：
 
@@ -89,10 +89,10 @@ typedef struct _CO_TAPI_TRANSLATE_SAP {
 这会保留。 客户端必须将此字段设置为 0。
 
 **NumberOfSaps**  
-指定的数量[NDIS_VAR_DATA_DESC](https://msdn.microsoft.com/library/windows/hardware/ff559020)缓冲区中包含结构**NdisSapParams**。
+指定的数量[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))缓冲区中包含结构**NdisSapParams**。
 
 **NdisSapParams**  
-指定包含一个或多个 NDIS_VAR_DATA_DESC 结构的变长数组。 每个 NDIS_VAR_DATA_DESC 结构包含的偏移量，以及的长度[CO_SAP](https://msdn.microsoft.com/library/windows/hardware/ff545392)结构。 每个 CO_SAP 结构指定的面向连接的客户端可以接收传入调用的服务访问点 (SAP)。
+指定包含一个或多个 NDIS_VAR_DATA_DESC 结构的变长数组。 每个 NDIS_VAR_DATA_DESC 结构包含的偏移量，以及的长度[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构。 每个 CO_SAP 结构指定的面向连接的客户端可以接收传入调用的服务访问点 (SAP)。
 
 ## <a name="requirements"></a>要求
 

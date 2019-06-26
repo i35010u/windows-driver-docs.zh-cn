@@ -5,17 +5,17 @@ ms.assetid: 1005cebb-8ead-4d16-b3ea-5a74da0b054f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_ADD_WOL_PATTERN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d6e7bf7c4d7078e49b7022a69f9ac2422a3a831
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c1883914b91b8c4316433adbb880b9e91eb5879
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383245"
 ---
 # <a name="oidpmaddwolpattern"></a>OID\_PM\_添加\_WOL\_模式
 
 
-作为一组协议的 NDIS 驱动程序使用 OID\_PM\_添加\_WOL\_模式 OID 将电源管理唤醒 LAN 模式添加到网络适配器。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)结构。
+作为一组协议的 NDIS 驱动程序使用 OID\_PM\_添加\_WOL\_模式 OID 将电源管理唤醒 LAN 模式添加到网络适配器。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -26,13 +26,13 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID\_PM\_添加\_WOL\_模�
 
 若要避免 NDIS 和 NDIS 启动将网络适配器设置为低功耗状态后绑定到相同的微型端口适配器，其他协议驱动程序中的争用条件，操作将失败尝试向该网络适配器上添加新模式唤醒。 例如，如果 NDIS 协议驱动程序尝试处理的上下文中添加新的 WOL 模式**NetEventSetPower**为该网络适配器，NDIS 事件通知将会使请求失败。
 
-NDIS 发送到基础的 NDIS 驱动程序此 OID 请求或对基础驱动程序的请求完成之前，它会设置 ULONG **PatternId**的成员[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)为唯一值的结构。 协议驱动程序和 NDIS 使用与此模式标识符[OID\_PM\_删除\_WOL\_模式](oid-pm-remove-wol-pattern.md)OID 请求将从基础的网络适配器中删除的 WOL 模式。
+NDIS 发送到基础的 NDIS 驱动程序此 OID 请求或对基础驱动程序的请求完成之前，它会设置 ULONG **PatternId**的成员[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)为唯一值的结构。 协议驱动程序和 NDIS 使用与此模式标识符[OID\_PM\_删除\_WOL\_模式](oid-pm-remove-wol-pattern.md)OID 请求将从基础的网络适配器中删除的 WOL 模式。
 
 **请注意**  模式标识符是为每个网络适配器设置的模式的唯一值。 但是，模式标识符不是全局唯一跨所有微型端口适配器。
 
  
 
-如果 NDIS 或基础的网络适配器中删除的 WOL 模式，它将生成[ **NDIS\_状态\_PM\_WOL\_模式\_已拒绝**](https://msdn.microsoft.com/library/windows/hardware/ff567414)状态指示。 **StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构包含已拒绝的 ULONG WOL 模式标识符WOL 模式。
+如果 NDIS 或基础的网络适配器中删除的 WOL 模式，它将生成[ **NDIS\_状态\_PM\_WOL\_模式\_已拒绝**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected)状态指示。 **StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含已拒绝的 ULONG WOL 模式标识符WOL 模式。
 
 微型端口驱动程序返回请求的以下状态代码之一：
 
@@ -83,13 +83,13 @@ NDIS 或基础网络适配器无法添加新的模式因缺少资源。
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_WOL\_PATTERN**](https://msdn.microsoft.com/library/windows/hardware/ff566768)
+[**NDIS\_PM\_WOL\_PATTERN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_状态\_PM\_WOL\_模式\_已拒绝**](https://msdn.microsoft.com/library/windows/hardware/ff567414)
+[**NDIS\_状态\_PM\_WOL\_模式\_已拒绝**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected)
 
 [OID\_PM\_REMOVE\_WOL\_PATTERN](oid-pm-remove-wol-pattern.md)
 

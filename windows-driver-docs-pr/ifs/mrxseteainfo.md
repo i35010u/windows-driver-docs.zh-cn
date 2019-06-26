@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbadee5acb93cf4e00be28b4ef2ddcc1626bf3c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5b68cf37fc4c1bf23a8e0dda7c7912540ff25fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382315"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385652"
 ---
 # <a name="mrxseteainfo-routine"></a>MRxSetEaInfo routine
 
 
-*MRxSetEaInfo*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向程序集扩展文件系统对象的属性信息。
+*MRxSetEaInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向程序集扩展文件系统对象的属性信息。
 
 <a name="syntax"></a>语法
 ------
@@ -149,7 +149,7 @@ RDBSS 发出调用*MRxSetEaInfo*接收响应[ **IRP\_MJ\_设置\_EA** ](irp-mj-s
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

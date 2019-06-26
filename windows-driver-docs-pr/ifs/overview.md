@@ -4,12 +4,12 @@ description: 概述
 ms.assetid: 3b2895a2-9a2e-46eb-b8fb-47d6db4a1de0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee729166924cf60c7af642c2891c6e6e7745135d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ba1960e7c3053527cc17a4d1238a575b8f9ce88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352783"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386066"
 ---
 # <a name="overview"></a>概述
 
@@ -45,11 +45,11 @@ ms.locfileid: "63352783"
 
 在内核中实现 oplock 包的核心功能 (主要通过*FsRtlXxx*例程)。 文件系统调用此包在其文件系统中实现的机会锁功能。 本文档介绍内核 oplock 包时，NTFS 文件系统的互操作。 其他文件系统函数类似的方式，但可能有细微的差异。
 
-在流句柄上授予 Oplock 时。 这意味着 oplock 获得打开一个给定的流。 从 Windows 7 开始，流句柄可以与之关联*oplock 密钥*，也就是说，用于标识属于多个句柄的 GUID 值相同的客户端缓存查看 （请参阅本主题后面的说明）。 可以显式提供 oplock 密钥 (到[ **IoCreateFileEx**](https://msdn.microsoft.com/library/windows/hardware/ff548283)) 时创建了句柄。 如果 oplock 密钥未显式指定当创建了句柄时，系统会将该句柄为具有与其关联的唯一机会锁密钥，以便其密钥将不同于其他任何句柄的任何其他密钥。 如果对已授予 oplock，以外的句柄上收到的文件操作和与 oplock 句柄关联的 oplock 密钥不同于与操作的句柄关联的密钥和该操作是与不兼容当前授予 oplock，然后该 oplock 已断开。 即使是相同的进程或线程执行不兼容的操作会中断 oplock。 例如，如果进程打开的流为其授予独占 oplock，并且在同一进程然后再次打开相同流，使用不同 （或无） oplock 密钥，排他 oplock 被窃立即。
+在流句柄上授予 Oplock 时。 这意味着 oplock 获得打开一个给定的流。 从 Windows 7 开始，流句柄可以与之关联*oplock 密钥*，也就是说，用于标识属于多个句柄的 GUID 值相同的客户端缓存查看 （请参阅本主题后面的说明）。 可以显式提供 oplock 密钥 (到[ **IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)) 时创建了句柄。 如果 oplock 密钥未显式指定当创建了句柄时，系统会将该句柄为具有与其关联的唯一机会锁密钥，以便其密钥将不同于其他任何句柄的任何其他密钥。 如果对已授予 oplock，以外的句柄上收到的文件操作和与 oplock 句柄关联的 oplock 密钥不同于与操作的句柄关联的密钥和该操作是与不兼容当前授予 oplock，然后该 oplock 已断开。 即使是相同的进程或线程执行不兼容的操作会中断 oplock。 例如，如果进程打开的流为其授予独占 oplock，并且在同一进程然后再次打开相同流，使用不同 （或无） oplock 密钥，排他 oplock 被窃立即。
 
 请记住，oplock 注册表项存在对句柄，而它们"置于"句柄时创建了句柄。 即使在不授予任何 oplock，可以使用 oplock 密钥将句柄相关联。
 
-**请注意**  更准确地说 oplock 密钥是与相关联[**文件\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff545834)指的是流句柄的结构。 这一区别很重要时复制句柄，例如与[DuplicateHandle](https://go.microsoft.com/fwlink/p/?linkid=124237)。 每个重复的句柄引用相同的基础**文件\_对象**结构。
+**请注意**  更准确地说 oplock 密钥是与相关联[**文件\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_object)指的是流句柄的结构。 这一区别很重要时复制句柄，例如与[DuplicateHandle](https://go.microsoft.com/fwlink/p/?linkid=124237)。 每个重复的句柄引用相同的基础**文件\_对象**结构。
 
  
 

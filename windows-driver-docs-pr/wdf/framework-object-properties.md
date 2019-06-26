@@ -9,12 +9,12 @@ keywords:
 - set 方法 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf8e9879929a8f08325ce6dbaa688c3c9920fd5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0903785c1f69c7e1bcfd97369c2802538bff96c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384448"
 ---
 # <a name="framework-object-properties"></a>框架对象属性
 
@@ -28,7 +28,7 @@ ms.locfileid: "63370908"
 
 对于每个可写属性，该框架定义驱动程序可以调用来修改属性的值的"set"方法。 驱动程序提供"set"方法的输入参数作为属性的新值。
 
-例如，framework 设备对象定义了两个方法： [ **WdfDeviceGetDeviceState** ](https://msdn.microsoft.com/library/windows/hardware/ff545994)并[ **WdfDeviceSetDeviceState**](https://msdn.microsoft.com/library/windows/hardware/ff546884)，驱动程序可以调用要获取或设置设备的插 (PnP) 状态。
+例如，framework 设备对象定义了两个方法： [ **WdfDeviceGetDeviceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestate)并[ **WdfDeviceSetDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)，驱动程序可以调用要获取或设置设备的插 (PnP) 状态。
 
  
 

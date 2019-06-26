@@ -4,12 +4,12 @@ description: MITT 软件程序包包括用于验证数据传输到 UART 控制�
 ms.assetid: 239F131C-5416-4E86-B0EE-E3156CDA11CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee233cd76caccb9d34192b8ed56404ba6767f4b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d10f5806800bae881ad640cc97b5d7a06335a6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383518"
 ---
 # <a name="uart-tests-in-mitt"></a>MITT 中的 UART 测试
 
@@ -27,9 +27,9 @@ MITT 软件程序包包括用于验证数据传输到 UART 控制器和其驱动
 ## <a name="before-you-begin"></a>开始之前...
 
 
--   获取 MITT 板和 UART 适配器板。 请参阅[购买硬件使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919811)。
--   [下载 MITT 软件包](https://msdn.microsoft.com/library/windows/hardware/dn919810)。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919779)。
+-   获取 MITT 板和 UART 适配器板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
+-   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
+-   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
 
 ## <a name="hardware-setup"></a>硬件安装
 
@@ -58,7 +58,7 @@ MITT 软件程序包包括用于验证数据传输到 UART 控制器和其驱动
 若要修改的 ACPI 表，请安装 Windows 硬件认证工具包 (HCK) 8.1。 具有 UART 控制器的测试的系统上执行以下步骤：
 
 1.  执行 Device.BusController.UART.HCKTestability 要求下描述的系统更改。
-2.  更新 UART 测试驱动程序基于下提供的模板的 ACPI 表\\ \\ &lt;hckcontrollername&gt;\\测试\\&lt;体系结构&gt;\\UART\\示例 UART.asl 或使用此示例。 可以使用[Microsoft ASL compiler](https://msdn.microsoft.com/library/windows/hardware/dn551195)。
+2.  更新 UART 测试驱动程序基于下提供的模板的 ACPI 表\\ \\ &lt;hckcontrollername&gt;\\测试\\&lt;体系结构&gt;\\UART\\示例 UART.asl 或使用此示例。 可以使用[Microsoft ASL compiler](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)。
 
     ``` syntax
     Device(UART) {

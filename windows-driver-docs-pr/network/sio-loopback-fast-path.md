@@ -5,12 +5,12 @@ ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
 keywords: -SIO_LOOPBACK_FAST_PATH 控制代码与 Windows Vista 一起启动的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 202a5925817abb81d7ce4b3df8f1b399222a9c16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 172c07a24ceaa78e3d45fe9013a6bf0f8bc76e96
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379161"
 ---
 # <a name="sioloopbackfastpath-control-code"></a>SIO\_环回\_快速\_路径控制代码
 
@@ -21,7 +21,7 @@ ms.locfileid: "63370545"
 
 **SIO\_环回\_快速\_路径**套接字 I/O 控制代码允许 WSK 的应用程序配置 TCP 套接字的环回接口上更快的操作。
 
-若要使用此 IOCTL，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要使用此 IOCTL，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -97,16 +97,16 @@ TCP/IP 套接字选项的一个子集是支持何时**SIO\_环回\_快速\_路�
 -   IPV6\_UNICAST\_HOPS
 -   IPV6\_UNICAST\_IF
 -   IPV6\_V6ONLY
--   [**SO\_CONDITIONAL\_ACCEPT**](https://msdn.microsoft.com/library/windows/desktop/dd264794)
--   [SO\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/desktop/cc150667)
--   [**因此\_端口\_可伸缩性**](https://msdn.microsoft.com/library/windows/desktop/cc150670)
+-   [**SO\_CONDITIONAL\_ACCEPT**](https://docs.microsoft.com/windows/desktop/WinSock/so-conditional-accept)
+-   [SO\_EXCLUSIVEADDRUSE](https://docs.microsoft.com/windows/desktop/WinSock/so-exclusiveaddruse)
+-   [**因此\_端口\_可伸缩性**](https://docs.microsoft.com/windows/desktop/WinSock/so-port-scalability)
 -   SO\_RCVBUF
 -   因此\_REUSEADDR
 -   TCP\_BSDURGENT
 
-WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)对于此类型的请求的函数。 应用程序必须释放缓冲区，直到完成 IRP WSK 子系统。 完成后 IRP，子系统调用完成例程。 在完成例程中，应用程序必须检查 IRP 状态并释放它以前已分配给请求的所有资源。
+WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)对于此类型的请求的函数。 应用程序必须释放缓冲区，直到完成 IRP WSK 子系统。 完成后 IRP，子系统调用完成例程。 在完成例程中，应用程序必须检查 IRP 状态并释放它以前已分配给请求的所有资源。
 
-有关 WSK IRP 处理的详细信息，请参阅[Winsock 内核函数使用 Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)。
+有关 WSK IRP 处理的详细信息，请参阅[Winsock 内核函数使用 Irp](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)。
 
 完成后 IRP，将设置子系统*Irp-&gt;IoStatus.Status*到**状态\_成功**如果请求成功。 否则为*Irp-&gt;IoStatus.Status*将设置为**状态\_无效\_缓冲区\_大小**或**状态\_未\_支持**如果调用不成功。
 
@@ -144,9 +144,9 @@ WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskCont
 ## <a name="see-also"></a>请参阅
 
 
-[**SIO\_LOOPBACK\_FAST\_PATH (SDK)**](https://msdn.microsoft.com/library/windows/desktop/jj841212)
+[**SIO\_LOOPBACK\_FAST\_PATH (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj841212(v=vs.85))
 
-[Irp 使用 Winsock 内核函数](https://msdn.microsoft.com/library/windows/hardware/ff571006)
+[Irp 使用 Winsock 内核函数](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)
 
  
 

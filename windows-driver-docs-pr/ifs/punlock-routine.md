@@ -14,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed4463eae98b835194329754512cab784cb81601
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6b2a17e00b62e20983b31336667888de6bd25cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352739"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385146"
 ---
 # <a name="punlockroutine-function-pointer"></a>PUNLOCK\_例程函数指针
 
@@ -40,7 +40,7 @@ typedef VOID ( *UnlockRoutine)(
 ----------
 
 *上下文*\[中\]  
-上下文指针传递给[ **FltProcessFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff543427)或[ **FsRtlProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547166)。
+上下文指针传递给[ **FltProcessFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltprocessfilelock)或[ **FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)。
 
 *FileLockInfo* \[in\]  
 对文件的不透明指针\_锁\_字节范围锁的信息结构。
@@ -57,9 +57,9 @@ typedef VOID ( *UnlockRoutine)(
 
 如果指定了筛选器*UnlockRoutine*日常文件\_锁结构，此例程称为时从文件中的锁定的字节范围中删除该锁。
 
-微筛选器指定此例程的指针传递给为例程*UnlockRoutine*参数[ **FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)。
+微筛选器指定此例程的指针传递给为例程*UnlockRoutine*参数[ **FltAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)。
 
-旧的筛选器指定此例程的指针传递给为例程*UnlockRoutine*参数[ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640)或[ **FsRtlInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546122)。
+旧的筛选器指定此例程的指针传递给为例程*UnlockRoutine*参数[ **FsRtlAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)或[ **FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,39 +88,39 @@ typedef VOID ( *UnlockRoutine)(
 ## <a name="see-also"></a>请参阅
 
 
-[**FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)
+[**FltAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)
 
-[**FltCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541834)
+[**FltCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforreadaccess)
 
-[**FltCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541837)
+[**FltCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforwriteaccess)
 
-[**FltFreeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff542969)
+[**FltFreeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreefilelock)
 
-[**FltInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff543273)
+[**FltInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinitializefilelock)
 
-[**FltProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff543427)
+[**FltProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltprocessfilelock)
 
-[**FltUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff544595)
+[**FltUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuninitializefilelock)
 
-[**FsRtlAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff545640)
+[**FsRtlAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)
 
-[**FsRtlCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545758)
+[**FsRtlCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforreadaccess)
 
-[**FsRtlCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545760)
+[**FsRtlCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforwriteaccess)
 
-[**FsRtlFreeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546011)
+[**FsRtlFreeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfreefilelock)
 
-[**FsRtlInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546122)
+[**FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)
 
-[**FsRtlProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547166)
+[**FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)
 
-[**FsRtlUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547313)
+[**FsRtlUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtluninitializefilelock)
 
 [**IRP\_MJ\_锁\_控件**](irp-mj-lock-control.md)
 
 [**PCOMPLETE\_锁\_IRP\_例程**](pcomplete-lock-irp-routine.md)
 
-[**PFLT\_COMPLETE\_LOCK\_CALLBACK\_DATA\_ROUTINE**](https://msdn.microsoft.com/library/windows/hardware/ff551073)
+[**PFLT\_COMPLETE\_LOCK\_CALLBACK\_DATA\_ROUTINE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_complete_lock_callback_data_routine)
 
  
 

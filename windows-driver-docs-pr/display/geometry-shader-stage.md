@@ -4,12 +4,12 @@ description: 几何着色器阶段
 ms.assetid: 390eb917-3289-4b6e-be23-8db24cdd2bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 610ca6d40780e6e3ace34877efd6d99ecc5cdc50
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 066a47fbea947df7700cbd1990f714f30d032d7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379487"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379981"
 ---
 # <a name="geometry-shader-stage"></a>几何着色器阶段
 
@@ -46,23 +46,23 @@ ms.locfileid: "63379487"
 
 Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并销毁几何着色器：
 
-[**CalcPrivateGeometryShaderWithStreamOutput**](https://msdn.microsoft.com/library/windows/hardware/ff538291)
+[**CalcPrivateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivategeometryshaderwithstreamoutput)
 
-[**CalcPrivateShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538315)
+[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
 
-[**CreateGeometryShader**](https://msdn.microsoft.com/library/windows/hardware/ff540648)
+[**CreateGeometryShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshader)
 
-[**CreateGeometryShaderWithStreamOutput**](https://msdn.microsoft.com/library/windows/hardware/ff540650)
+[**CreateGeometryShaderWithStreamOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_creategeometryshaderwithstreamoutput)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**GsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff566848)
+[**GsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**GsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff566853)
+[**GsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**GsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff566855)
+[**GsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**GsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff566860)
+[**GsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
  
 

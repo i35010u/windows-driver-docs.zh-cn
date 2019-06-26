@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 071f88c4fed60aaebd6a9001b402551023a5f640
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14f150a1affa917061dfb303d937828a134b24b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386434"
 ---
 # <a name="guiddevinterfacemediumchanger"></a>GUID_DEVINTERFACE_MEDIUMCHANGER
 
 
-GUID_DEVINTERFACE_MEDIUMCHANGER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为介质转换器的设备定义。
+GUID_DEVINTERFACE_MEDIUMCHANGER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为介质转换器的设备定义。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_MEDIUMCHANGER[设备接口类](https://msdn.microsoft.com/libr
 <a name="remarks"></a>备注
 -------
 
-系统提供中型[更换器驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff551455)注册 GUID_DEVINTERFACE_MEDIUMCHANGER 通知操作系统和应用程序的媒体更换器设备是否存在的实例。
+系统提供中型[更换器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/changer-drivers)注册 GUID_DEVINTERFACE_MEDIUMCHANGER 通知操作系统和应用程序的媒体更换器设备是否存在的实例。
 
-有关存储驱动程序的详细信息，请参阅[存储设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566976)。
+有关存储驱动程序的详细信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
 <a name="requirements"></a>要求
 ------------

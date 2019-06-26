@@ -11,12 +11,12 @@ keywords:
 - IEEE 1284 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d98a154681c101233543d06cc2dd1194f1fa88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a3069fb56abe1b79b2817f593c7fcd56f154dc6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373544"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382078"
 ---
 # <a name="features-of-system-supplied-parallel-drivers"></a>系统提供的并行驱动程序的功能
 
@@ -34,13 +34,13 @@ Windows 2000 包括以下驱动程序：
 
 -   *Parport*是并行端口功能驱动程序。 是可执行映像的 Parport *parport.sys*。
 
-通过紧密连接模拟 Parclass 和 Parport[内部设备控制请求的并行端口](https://msdn.microsoft.com/library/windows/hardware/ff543963)和[并行端口回调例程](https://msdn.microsoft.com/library/windows/hardware/ff544307)。
+通过紧密连接模拟 Parclass 和 Parport[内部设备控制请求的并行端口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)和[并行端口回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 在 Windows XP 及更高版本，Parclass 被删除，并且 Parport 提供并行端口功能驱动程序和并行端口总线驱动程序的函数。 是可执行映像的 Windows XP 中 Parport *parport.sys*。
 
 并行端口的系统提供的函数驱动程序创建一个表示系统中的每个并行端口的功能的设备对象 (FDO)。 并行端口的系统提供的总线驱动程序创建一个表示端口的总线驱动程序枚举每个并行设备的物理设备对象 (PDO)。 客户端，例如[供应商提供并行的驱动程序](vendor-supplied-parallel-drivers.md)，运行并行设备通过并行设备的 PDO 和设备的父端口的 FDO 提供的接口。
 
-除了介绍在并行的文档中，次要操作区别之外[系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)与 Windows XP 及更高版本的 Windows 2000 中相同。
+除了介绍在并行的文档中，次要操作区别之外[系统提供并行的驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)与 Windows XP 及更高版本的 Windows 2000 中相同。
 
 系统提供的并行驱动程序支持：
 
@@ -90,7 +90,7 @@ Windows 2000 包括以下驱动程序：
 
 [供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
-[系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[系统提供并行的驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 有关并行端口和标准设备信息，请参阅以下规范：
 

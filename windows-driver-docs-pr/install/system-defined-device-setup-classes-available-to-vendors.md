@@ -4,12 +4,12 @@ description: 为供应商提供的系统定义的设备安装程序类
 ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 913deb31788028721c29f7d1ccf0551adcba74d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1cb2d9ede7ab41b0b01175a68600ef9c4915574
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339626"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385862"
 ---
 # <a name="system-defined-device-setup-classes-available-to-vendors"></a>为供应商提供的系统定义的设备安装程序类  
   
@@ -74,7 +74,7 @@ ClassGuid = {4d36e96a-e325-11ce-bfc1-08002be10318}
 **人机接口设备 (HID)**  
 类 = HIDClass  
 ClassGuid = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}  
-此类包含交互式输入的设备，由系统提供运营[HID 类驱动程序](https://msdn.microsoft.com/library/windows/hardware/jj126193)。 这包括 USB 设备是否符合[USB HID 标准](../hid/hid-over-usb.md)和使用 HID 微型驱动程序的非 USB 设备。 有关详细信息，请参阅[HIDClass 设备安装程序类](../hid/minidriver-operations.md)。 （请参阅此列表中更高版本的键盘或鼠标类。）  
+此类包含交互式输入的设备，由系统提供运营[HID 类驱动程序](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))。 这包括 USB 设备是否符合[USB HID 标准](../hid/hid-over-usb.md)和使用 HID 微型驱动程序的非 USB 设备。 有关详细信息，请参阅[HIDClass 设备安装程序类](../hid/minidriver-operations.md)。 （请参阅此列表中更高版本的键盘或鼠标类。）  
   
 **IEEE 1284.4 设备**  
 类 = Dot4  
@@ -136,7 +136,7 @@ ClassGuid = {4d36e970-e325-11ce-bfc1-08002be10318}
 <a href="" id="modem-"></a>**调制解调器**  
 类 = 调制解调器  
 ClassGuid = {4d36e96d-e325-11ce-bfc1-08002be10318}  
-此类包括调制解调器设备或*软件调制解调器*。 这些设备拆分调制解调器设备和设备驱动程序之间的功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动程序模型 (WDM) 调制解调器设备的详细信息，请参阅[调制解调器 INF 文件的概述](https://msdn.microsoft.com/library/windows/hardware/ff542559)并[添加 WDM 调制解调器支持](https://msdn.microsoft.com/library/windows/hardware/ff541218)。  
+此类包括调制解调器设备或*软件调制解调器*。 这些设备拆分调制解调器设备和设备驱动程序之间的功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动程序模型 (WDM) 调制解调器设备的详细信息，请参阅[调制解调器 INF 文件的概述](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542559(v=vs.85))并[添加 WDM 调制解调器支持](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff541218(v=vs.85))。  
   
 <a href="" id="monitor-"></a>**监视器**  
 类 = 监视器  

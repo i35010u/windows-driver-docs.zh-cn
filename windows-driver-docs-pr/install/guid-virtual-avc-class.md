@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6b757be14631fcd2da5b1b78b90457e59165b57f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 138f560c505ef6bdb640d39cd7dd172b72e431ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383860"
 ---
 # <a name="guidvirtualavcclass"></a>GUID_VIRTUAL_AVC_CLASS
 
 
-GUID_VIRTUAL_AVC_CLASS[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)定义为受支持的虚拟音频视频控件 (AV/C) 设备[AVStream](https://msdn.microsoft.com/library/windows/hardware/ff554240)体系结构。
+GUID_VIRTUAL_AVC_CLASS[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义为受支持的虚拟音频视频控件 (AV/C) 设备[AVStream](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)体系结构。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_VIRTUAL_AVC_CLASS[设备接口类](https://msdn.microsoft.com/library/windo
 <a name="remarks"></a>备注
 -------
 
-系统提供[AV/C 客户端驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff556367) [Avc.sys](https://msdn.microsoft.com/library/windows/hardware/ff568667)注册 GUID_VIRTUAL_AVC_CLASS 来表示虚拟 AV/C 设备的实例。
+系统提供[AV/C 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-client-drivers2) [Avc.sys](https://docs.microsoft.com/windows-hardware/drivers/stream/using-avc-sys)注册 GUID_VIRTUAL_AVC_CLASS 来表示虚拟 AV/C 设备的实例。
 
 了解设备接口类的 AV/C 单位的 1394年总线上，请参阅[ **GUID_AVC_CLASS**](guid-avc-class.md)。
 

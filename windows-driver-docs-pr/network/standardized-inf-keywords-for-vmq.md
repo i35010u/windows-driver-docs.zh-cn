@@ -4,32 +4,32 @@ description: VMQ 的标准化 INF 关键字
 ms.assetid: 5DA92019-D2E0-41D9-9C31-94E464B824BA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6f017ffae2aa165dc383e15467d8aae8bafae36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f99f65e8e8cced968a0cbf3062541f60d12dad54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390655"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378609"
 ---
 # <a name="standardized-inf-keywords-for-vmq"></a>VMQ 的标准化 INF 关键字
 
 
 以下的标准化的 INF 关键字定义来启用或禁用对虚拟机队列 (VMQ) 功能的网络适配器的支持。
 
-<a href="" id="-vmq"></a>**\*VMQ**  
+<a href="" id="-vmq"></a> **\*VMQ**  
 一个值，描述该设备是否已启用或禁用 VMQ 功能。
 
-<a href="" id="-vmqlookaheadsplit"></a>**\*VMQLookaheadSplit**  
-一个值，描述该设备已启用还是禁用的功能拆分接收到预测先行缓冲区和 post 预测先行缓冲区。 微型端口驱动程序报告此功能与的 NDIS\_接收\_筛选器\_预测先行\_拆分\_中的受支持标志**SupportedQueueProperties**成员[ **NDIS\_接收\_筛选器\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)结构。 有关此功能的详细信息，请参阅[接收缓冲区中的 Shared Memory](shared-memory-in-receive-buffers.md)。
+<a href="" id="-vmqlookaheadsplit"></a> **\*VMQLookaheadSplit**  
+一个值，描述该设备已启用还是禁用的功能拆分接收到预测先行缓冲区和 post 预测先行缓冲区。 微型端口驱动程序报告此功能与的 NDIS\_接收\_筛选器\_预测先行\_拆分\_中的受支持标志**SupportedQueueProperties**成员[ **NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。 有关此功能的详细信息，请参阅[接收缓冲区中的 Shared Memory](shared-memory-in-receive-buffers.md)。
 
 **请注意**从 NDIS 6.30 开始，将数据包数据拆分为单独的预测先行缓冲区不再受支持。 从 Windows Server 2012 开始，此 INF 关键字已过时。
 
 
 
-<a href="" id="-vmqvlanfiltering"></a>**\*VMQVlanFiltering**  
-一个值，描述设备是否已启用或禁用筛选网络数据包的功能使用 VLAN 标识符中的媒体访问控制 (MAC) 标头。 微型端口驱动程序报告此功能与的 NDIS\_接收\_筛选器\_MAC\_标头\_VLAN\_ID\_中的支持标志**SupportedMacHeaderFields**的成员[ **NDIS\_接收\_筛选器\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)结构。
+<a href="" id="-vmqvlanfiltering"></a> **\*VMQVlanFiltering**  
+一个值，描述设备是否已启用或禁用筛选网络数据包的功能使用 VLAN 标识符中的媒体访问控制 (MAC) 标头。 微型端口驱动程序报告此功能与的 NDIS\_接收\_筛选器\_MAC\_标头\_VLAN\_ID\_中的支持标志**SupportedMacHeaderFields**的成员[ **NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。
 
-<a href="" id="-rssorvmqpreference"></a>**\*RssOrVmqPreference**  
+<a href="" id="-rssorvmqpreference"></a> **\*RssOrVmqPreference**  
 一个值，用于定义是否应启用 VMQ 功能状态而不是接收方缩放 (RSS) 功能。
 
 这是一个隐藏的关键字值不得指定 INF 文件中并不会显示在**高级**网络适配器的属性页。 有关详细信息，请参阅[处理 VMQ 和 RSS INF 关键字](#vmq-rss)。
@@ -47,7 +47,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -153,7 +153,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 
 因为网络适配器不是已禁用，然后重新启用 TCP/IP 堆栈之间的绑定和绑定到 HYPER-V 驱动程序堆栈 （或反之） 时，不能为此类自动切换 VMQ 和 RSS 的网络适配器。
 
-当调用 NDIS [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，它的当前已启用 VMQ 或 RSS 功能报告到 NDIS 微型端口驱动程序按照以下步骤：
+当调用 NDIS [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，它的当前已启用 VMQ 或 RSS 功能报告到 NDIS 微型端口驱动程序按照以下步骤：
 
 1.  微型端口驱动程序读取 **\*RssOrVmqPreference**关键字才到 NDIS 报告其当前已启用的功能。
 
@@ -242,7 +242,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>

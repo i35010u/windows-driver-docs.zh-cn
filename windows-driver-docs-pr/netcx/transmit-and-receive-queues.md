@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d8a103df6facbd9d0144902462c744e209d96d43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14bc9211d3ccfc8f0cf39a601a1183a906a351ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369917"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382815"
 ---
 # <a name="transmit-and-receive-queues"></a>传输和接收队列
 
@@ -22,7 +22,7 @@ ms.locfileid: "63369917"
 
 *数据包队列*，或*数据路径队列*NetAdapterCx 以启用客户端驱动程序进行建模其硬件功能，例如硬件中引入的对象传输和更为明确地接收队列中的软件驱动程序. 本主题说明如何使用传输和接收队列中 NetAdapterCx。 
 
-当客户端驱动程序调用[ **NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)，通常是从其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)事件回调函数，它提供了两个队列创建回调：[*EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)并[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)。 客户端创建传输，并分别接收这些回调中的队列。
+当客户端驱动程序调用[ **NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)，通常是从其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)事件回调函数，它提供了两个队列创建回调：[*EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)并[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)。 客户端创建传输，并分别接收这些回调中的队列。
 
 Framework 转换到低功耗状态之前清空队列，并将其删除然后再删除该适配器。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59be4664d676cc425e7cc64a2efad79ddcf3c3ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f184227b92360ce1175270ad0b1f2bd2370dfe84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555290"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386486"
 ---
 # <a name="kspropertybdatablesection"></a>KSPROPERTY\_BDA\_TABLE\_SECTION
 
@@ -78,18 +78,18 @@ BDA\_表\_部分结构描述表部分。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia.h （包括 Bdamedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**BDA\_表\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff556553)
+[**BDA\_表\_部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_table_section)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - OID_CO_DELETE_PVC
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd49afd8bca4bae0f4c37858374fa2e4e7f13120
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a97b7e8faa3781c48b36281b8bfe7e327fdd13e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384386"
 ---
 # <a name="oidcodeletepvc"></a>OID_CO_DELETE_PVC
 
@@ -27,10 +27,10 @@ typedef struct _CO_PVC {
 此结构的成员包含下列信息：
 
 **NdisAfHandle**  
-指定返回的 NDIS 提供句柄[NdisClOpenAddressFamilyEx](https://msdn.microsoft.com/library/windows/hardware/ff561639)。
+指定返回的 NDIS 提供句柄[NdisClOpenAddressFamilyEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex)。
 
 **PvcParameters**  
-一个格式化[CO_SPECIFIC_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff561639)结构。 此结构包含描述 PVC 的特定于协议的参数。
+一个格式化[CO_SPECIFIC_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex)结构。 此结构包含描述 PVC 的特定于协议的参数。
 
 管理员手动删除 PVC。 监视此类活动的客户端通知已删除通过呼叫管理器向发送此 OID PVC 呼叫管理器。
 

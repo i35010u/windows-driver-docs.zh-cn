@@ -12,12 +12,12 @@ keywords:
 - 错误源控制 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 604f5a7d23f1e8310db1717cfb0919563b74310a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18f73c9824a9ace3ae1e395cfb87a80615f64010
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386481"
 ---
 # <a name="error-source-control"></a>错误源控件
 
@@ -36,7 +36,7 @@ Windows 内核调用 PSHED WHEA 管理应用程序配置错误源控件请求的
 
 有关如何实现插件参与 PSHED 错误源控件中的详细信息，请参阅[参与错误源控制](participating-in-error-source-control.md)。
 
-用户模式下管理应用程序控制错误源通过调用[WHEA 管理 API](https://msdn.microsoft.com/library/windows/hardware/ff560556)。 有关如何实现 WHEA 管理应用程序的详细信息，请参阅[WHEA 管理应用程序](whea-management-applications.md)。
+用户模式下管理应用程序控制错误源通过调用[WHEA 管理 API](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)。 有关如何实现 WHEA 管理应用程序的详细信息，请参阅[WHEA 管理应用程序](whea-management-applications.md)。
 
  
 

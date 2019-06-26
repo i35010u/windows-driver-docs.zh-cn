@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_RECEIVE_COALESCING_MATCH_COUNT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b9580ed42fa1117eff1ca8d5928f1f869d7eea59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7b76b1122662f2fd035154703328a5b51bc9fcd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387269"
 ---
 # <a name="oidwdigetreceivecoalescingmatchcount"></a>OID\_WDI\_GET\_RECEIVE\_COALESCING\_MATCH\_COUNT
 
@@ -20,7 +20,7 @@ OID\_WDI\_获取\_接收\_COALESCING\_匹配\_计数请求接收的网络端口�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -33,7 +33,7 @@ OID\_WDI\_获取\_接收\_COALESCING\_匹配\_计数请求接收的网络端口�
 
 | TLV                                                                                              | 允许多个 TLV 实例 | 可选 | 描述                                                                  |
 |--------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------|
-| [**WDI\_TLV\_COALESCING\_FILTER\_MATCH\_COUNT**](https://msdn.microsoft.com/library/windows/hardware/dn926252) |                                |          | 接收的网络端口的筛选器的具有匹配的数据包数。 |
+| [**WDI\_TLV\_COALESCING\_FILTER\_MATCH\_COUNT**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-coalescing-filter-match-count) |                                |          | 接收的网络端口的筛选器的具有匹配的数据包数。 |
 
  
 

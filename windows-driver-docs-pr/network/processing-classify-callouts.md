@@ -10,17 +10,17 @@ keywords:
 - 分类标注 WDK Windows 筛选平台，大约分类标注
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5c7d973e7099df39b372a64286a043fd191338d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dda31876f745df486aee716a996b5ecf2c4b46d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385481"
 ---
 # <a name="processing-classify-callouts"></a>处理分类标注
 
 
-筛选器引擎将调用一个标注[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数时没有要处理的标注的网络数据。 满足指定筛选器的操作的标注的筛选器的所有筛选条件时，将发生这种情况。 如果这样的筛选器不具有任何筛选条件，筛选器引擎始终调用的标注*classifyFn*标注函数。
+筛选器引擎将调用一个标注[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数时没有要处理的标注的网络数据。 满足指定筛选器的操作的标注的筛选器的所有筛选条件时，将发生这种情况。 如果这样的筛选器不具有任何筛选条件，筛选器引擎始终调用的标注*classifyFn*标注函数。
 
 筛选器引擎将多个不同的数据项传递到一个标注*classifyFn*标注函数。 这些数据项包含固定的数据值、 元数据值、 网络原始数据、 筛选器信息和任何流上下文。 筛选器引擎将传递到标注的特定数据项目依赖于特定的筛选层，并在其下的条件*classifyFn*调用。 一个*classifyFn*函数可以使用这些数据项目的任意组合来决定其筛选。
 

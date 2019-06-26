@@ -4,12 +4,12 @@ description: 使用自定义硬件 ID 和兼容 ID
 ms.assetid: 4f0ae082-b601-4322-add8-63941c2bdad3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5e18696706d9e787f395829baa553a437b3e4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d85f3fdb8b529732d7f41dcf93c8f93cc2f049a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339457"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384770"
 ---
 # <a name="using-custom-hardware-ids-and-compatible-ids"></a>使用自定义硬件 ID 和兼容 ID
 
@@ -34,11 +34,11 @@ bus-type-guid\vendor-specific-id
 
 其中：
 
--   *总线类型 guid*是唯一的 GUID，用于标识在总线并应为相同的 GUID 用于标识在总线。 如中所述[安装总线驱动程序](installing-a-new-bus-driver.md)，总线驱动程序的标识响应中的设备的总线类型[ **IRP_MN_QUERY_BUS_INFORMATION** ](https://msdn.microsoft.com/library/windows/hardware/ff551654)对设备的请求。
+-   *总线类型 guid*是唯一的 GUID，用于标识在总线并应为相同的 GUID 用于标识在总线。 如中所述[安装总线驱动程序](installing-a-new-bus-driver.md)，总线驱动程序的标识响应中的设备的总线类型[ **IRP_MN_QUERY_BUS_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-bus-information)对设备的请求。
 
 -   *供应商特定 id*是供应商定义的格式通常标识供应商、 设备、 子系统、 修订号和可能是选择其他设备信息。 例如，格式可能需要的窗体*供应商*&*设备*&*子系统*&*修订版本，* 其中 & 号字符 ("&") 分隔子文件夹和每个子字段的格式是特定于供应商。 实际的设备标识字符串的示例，请参阅[设备标识字符串](device-identification-strings.md)。
 
-PnP 管理器将发送[ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)到总线驱动程序的请求以获取设备的设备标识字符串。 设备标识字符串包括设备 ID、 设备实例 ID、 硬件 Id 的列表和兼容 Id 列表。 以下虚构示例包括设备 ID、 硬件 Id 的列表和兼容 Id 列表。 在这些示例中，指定枚举器*总线类型 guid*子字段，即"{17ed6609-9bc8-44ca-8548-abb79b13781b}"的 GUID。 格式*供应商特定 id*字段是*供应商*&*设备*&*子系统*&*修订*，其中*供应商*子字段是"ven_1"*设备*子字段是"dev_2"*子系统*子字段是"subsys_3"，并*修订*子字段是"rev_4"。
+PnP 管理器将发送[ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)到总线驱动程序的请求以获取设备的设备标识字符串。 设备标识字符串包括设备 ID、 设备实例 ID、 硬件 Id 的列表和兼容 Id 列表。 以下虚构示例包括设备 ID、 硬件 Id 的列表和兼容 Id 列表。 在这些示例中，指定枚举器*总线类型 guid*子字段，即"{17ed6609-9bc8-44ca-8548-abb79b13781b}"的 GUID。 格式*供应商特定 id*字段是*供应商*&*设备*&*子系统*&*修订*，其中*供应商*子字段是"ven_1"*设备*子字段是"dev_2"*子系统*子字段是"subsys_3"，并*修订*子字段是"rev_4"。
 
 设备 ID 是设备的最具体的说明的硬件 ID。 在以下示例中，设备 ID 指定供应商、 设备、 子系统和修订号。
 

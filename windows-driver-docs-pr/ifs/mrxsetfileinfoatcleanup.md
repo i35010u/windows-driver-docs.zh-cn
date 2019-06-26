@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4fdd8d5637ad3796f6f27357ee934ceec746694
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 812fb9b8a5d074a15aea1052aa19b0c15295934a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385314"
 ---
 # <a name="mrxsetfileinfoatcleanup-routine"></a>MRxSetFileInfoAtCleanup routine
 
 
-*MRxSetFileInfoAtCleanup*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向，在清理的文件系统对象上设置文件的信息。
+*MRxSetFileInfoAtCleanup*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向，在清理的文件系统对象上设置文件的信息。
 
 <a name="syntax"></a>语法
 ------
@@ -100,7 +100,7 @@ RDBSS 忽略的返回值*MRxSetFileInfoAtCleanup*。
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

@@ -7,12 +7,12 @@ keywords:
 - 标头数据拆分提供程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3c4360f78c06d16486a52c7e8768ba31cd323d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b694ff32cebc0d0220bd092fc0c17e4bf801717f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351022"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386351"
 ---
 # <a name="header-data-split-architecture"></a>标头数据拆分体系结构
 
@@ -30,9 +30,9 @@ ms.locfileid: "63351022"
 
 NIC 的标头数据拆分操作能够接收以太网帧并拆分标头和数据到单独的接收缓冲区。
 
-微型端口驱动程序使用正常的 NDIS 接收函数，以指示到 NDIS 接收到的数据。 此外，驱动程序必须分配一个[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构时，该值指示接收到的数据。 有关详细信息，请参阅[，该值指示接收到的以太网帧](indicating-received-ethernet-frames.md)。
+微型端口驱动程序使用正常的 NDIS 接收函数，以指示到 NDIS 接收到的数据。 此外，驱动程序必须分配一个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构时，该值指示接收到的数据。 有关详细信息，请参阅[，该值指示接收到的以太网帧](indicating-received-ethernet-frames.md)。
 
-为标头数据拆分[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)中接收指示结构使用单独的内存描述符标头列表 (MDLs) 拆分接收的以太网帧和数据。 此外， [ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构包含标头数据拆分中 NET 信息\_缓冲区\_列表信息。
+为标头数据拆分[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)中接收指示结构使用单独的内存描述符标头列表 (MDLs) 拆分接收的以太网帧和数据。 此外， [ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构包含标头数据拆分中 NET 信息\_缓冲区\_列表信息。
 
 下图显示了接收的帧、 拆分缓冲区和标头缓冲区的内存布局。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TDI_BEHAVIOR 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6321bd798bdec847caaefa8a4dddc517cf5e645a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9084b49cabc81300acf2bf805a64758e421897e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375289"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379713"
 ---
 # <a name="wsktdibehavior"></a>WSK\_TDI\_BEHAVIOR
 
@@ -20,11 +20,11 @@ ms.locfileid: "63375289"
 
  
 
-WSK 应用程序使用 WSK\_TDI\_行为客户端控制来控制操作是否 WSK 子系统将转移到的网络 I/O [TDI](https://msdn.microsoft.com/library/windows/hardware/ff565094)传输。 WSK 应用程序使用此客户端管理操作，仅当其需要重写 WSK 子系统的默认行为。
+WSK 应用程序使用 WSK\_TDI\_行为客户端控制来控制操作是否 WSK 子系统将转移到的网络 I/O [TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))传输。 WSK 应用程序使用此客户端管理操作，仅当其需要重写 WSK 子系统的默认行为。
 
 如果 WSK 应用程序使用 WSK\_TDI\_行为客户端管理操作，它必须执行此操作之前创建任何套接字。
 
-若要控制是否 WSK 子系统将转移到 TDI 传输的网络 I/O，WSK 应用程序调用[ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)使用以下参数的函数。
+若要控制是否 WSK 子系统将转移到 TDI 传输的网络 I/O，WSK 应用程序调用[ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -34,7 +34,7 @@ WSK 应用程序使用 WSK\_TDI\_行为客户端控制来控制操作是否 WSK 
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

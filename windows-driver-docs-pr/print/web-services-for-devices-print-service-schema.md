@@ -4,12 +4,12 @@ description: 设备打印服务架构的 Web 服务
 ms.assetid: 6a629b69-73a9-4d78-ace1-4cb2c807db14
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd5bf908be13a75ac5f4e385f5a973a20e872456
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70a5f99463d064b42545880c26cddbd29c5af4be
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360945"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393147"
 ---
 # <a name="web-services-for-devices-print-service-schema"></a>设备打印服务架构的 Web 服务
 
@@ -20,7 +20,7 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 在设备
 
 四个 Web 服务规范存在用于打印和扫描，以帮助充分利用连接、 安装和使用 Windows 设备时的改进的客户体验的设备制造商。
 
-有关为四个 Web 服务规范的详细信息，请参阅[实施的 Web 服务在设备上针对打印和扫描](https://msdn.microsoft.com/library/windows/hardware/gg463146.aspx)。
+有关为四个 Web 服务规范的详细信息，请参阅[实施的 Web 服务在设备上针对打印和扫描](https://docs.microsoft.com/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing)。
 
 WSD 打印服务架构符合打印机工作组 (PWG) 语义模型，它提供了为打印机、 作业和文档的 elemental 描述的 WSD 子集。
 

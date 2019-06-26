@@ -14,12 +14,12 @@ keywords:
 - 软件 WDK SD 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4a041bbfe09be7f489c8a1e938fd1e2c800466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de4452bf7f8a8a6a6f0291557f1f22485d2bb2be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325962"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384510"
 ---
 # <a name="sd-card-driver-stack"></a>SD 卡驱动程序堆栈
 
@@ -30,7 +30,7 @@ ms.locfileid: "63325962"
 
 ![说明一个早期 sd 存储设备的设备堆栈的关系图](images/sdio-usb.png)
 
-Windows 会为连接到 USB 总线的内存卡创建设备堆栈的更完整说明，请参阅[USB 大容量存储设备的设备对象示例](https://msdn.microsoft.com/library/windows/hardware/ff552547)。
+Windows 会为连接到 USB 总线的内存卡创建设备堆栈的更完整说明，请参阅[USB 大容量存储设备的设备对象示例](https://docs.microsoft.com/windows-hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device)。
 
 操作系统支持直接连接到 PCI 总线的 SD 主机控制器。 时系统枚举 SD 主控制器时，它会加载本机 SD 总线驱动程序 (*sdbus.sys*)。 如果用户插入 SD 内存卡，Windows 将加载本机 SD 存储类驱动程序 (*sffdisk.sys*) 和存储微型端口驱动程序 (*sffp\_sd.sys*) 在总线驱动程序之上。 如果用户插入具有其他类型功能的 SD 卡（例如 GPS 或无线 LAN），则 Windows 会加载供应商为该设备提供的驱动程序。
 
@@ -40,9 +40,9 @@ SD 堆栈中的所有设备驱动程序是否本机或供应商提供，必须�
 
 SD 设备驱动程序不能直接访问主控制器注册组，也可以在主控制器传递命令中嵌入 I/O 请求数据包 (Irp)。 SD 设备驱动程序通过调用 SD 总线库例程，向主控制器发出命令，然后在库生成主控制器的适当 SD 命令。
 
-SD 设备驱动程序必须处理标准的即插即用和电源 Irp，但不是执行操作请求或管理硬件资源，例如端口、 内存、 或中断向量。 因此，SD 设备驱动程序不需要映射的任何硬件资源时处理[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求。 但是，当 SD 设备驱动程序收到[ **IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)请求，它必须停止所有 I/O 操作。 此外，驱动程序必须关闭到 SD 总线驱动程序以响应其界面[ **IRP\_MN\_查询\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551705)请求。
+SD 设备驱动程序必须处理标准的即插即用和电源 Irp，但不是执行操作请求或管理硬件资源，例如端口、 内存、 或中断向量。 因此，SD 设备驱动程序不需要映射的任何硬件资源时处理[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 但是，当 SD 设备驱动程序收到[ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)请求，它必须停止所有 I/O 操作。 此外，驱动程序必须关闭到 SD 总线驱动程序以响应其界面[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求。
 
-硬件中断发生时，SD 总线库截获中断、 遮盖进一步中断，并通过的硬件中断发生的回调例程通知 SD 设备驱动程序。 回调例程总线驱动程序用于通知的硬件中断的 SD 设备驱动程序的说明，请参阅[ **PSDBUS\_回调\_例程**](https://msdn.microsoft.com/library/windows/hardware/ff537617)。 SD 驱动程序堆栈和库如何管理硬件中断的常规说明，请参阅[处理 Secure Digital (SD) 硬件中断](https://msdn.microsoft.com/library/windows/hardware/ff537177)。
+硬件中断发生时，SD 总线库截获中断、 遮盖进一步中断，并通过的硬件中断发生的回调例程通知 SD 设备驱动程序。 回调例程总线驱动程序用于通知的硬件中断的 SD 设备驱动程序的说明，请参阅[ **PSDBUS\_回调\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/nc-ntddsd-sdbus_callback_routine)。 SD 驱动程序堆栈和库如何管理硬件中断的常规说明，请参阅[处理 Secure Digital (SD) 硬件中断](https://docs.microsoft.com/windows-hardware/drivers/sd/handling-sd-card-interrupts)。
 
 *Ntddsd.h*头文件，它提供 Windows Driver Kit (WDK) 中，声明由 SD 总线库公开的例程的原型。
 

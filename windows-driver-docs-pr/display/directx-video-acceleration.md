@@ -12,12 +12,12 @@ keywords:
 - Windows 2000 显示器驱动程序模型 WDK，DirectX 视频加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bfd057e9da495f3b0a67b0d9cd18e226052a8ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52645fba6a3eb7aec1f26bd689a7966b759ddb9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386996"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380004"
 ---
 # <a name="directx-video-acceleration"></a>DirectX 视频加速
 
@@ -27,9 +27,9 @@ ms.locfileid: "63386996"
 
 本部分包含有关 Microsoft DirectX 视频加速 (DirectX VA) 的信息。 这是一个应用程序编程接口 (API) 和相应[动作补偿](motion-compensation.md)设备驱动程序接口 (DDI) 加速数字视频解码。 此外提供以下其他 DDIs DirectX VA 的一部分：
 
--   一个[去隔行 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552701)去隔行和帧速率转换视频内容。
+-   一个[去隔行 DDI](https://docs.microsoft.com/windows-hardware/drivers/display/deinterlace-ddi)去隔行和帧速率转换视频内容。
 
--   一个[ProcAmp DDI](https://msdn.microsoft.com/library/windows/hardware/ff569186)以支持 ProcAmp 控件和后续处理的视频内容。
+-   一个[ProcAmp DDI](https://docs.microsoft.com/windows-hardware/drivers/display/procamp-control-ddi)以支持 ProcAmp 控件和后续处理的视频内容。
 
 -   一个[COPP DDI](sample-functions-for-copp.md)保护视频内容。
 

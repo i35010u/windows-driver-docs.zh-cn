@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe0bd9f33aab2e45be2b17230cc9da9e03ebe1a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce893bab9aadeff04d3d35776dae37e4d71d0816
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324603"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380143"
 ---
 # <a name="fsctlispathnamevalid-control-code"></a>FSCTL\_IS\_PATHNAME\_有效控制代码
 
@@ -28,15 +28,15 @@ ms.locfileid: "63324603"
 
 快速 FAT 文件系统不支持此控制代码，它不在 NTFS 或 UDF 中有意义的操作。 NTFS 和 UDF 支持这种广泛的代码集的任何字符串可能是有效的路径名。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 不使用。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 不使用。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 不使用。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 不使用。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 操作的控制代码。 使用 FSCTL\_IS\_PATHNAME\_对此操作的有效。
@@ -56,7 +56,7 @@ ms.locfileid: "63324603"
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功如果路径名称的格式是否正确。 否则，使用例程将返回相应的 NTSTATUS 错误代码。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功如果路径名称的格式是否正确。 否则，使用例程将返回相应的 NTSTATUS 错误代码。
 
 <a name="requirements"></a>要求
 ------------

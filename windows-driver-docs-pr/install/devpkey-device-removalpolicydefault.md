@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7de23a746a7849c07bfd69386628f5cd4e8a6d87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 070fbefdc66a84df6257db7f466c96b6843e5bef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327146"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378143"
 ---
 # <a name="devpkeydeviceremovalpolicydefault"></a>DEVPKEY_Device_RemovalPolicyDefault
 
@@ -62,9 +62,9 @@ DEVPKEY_Device_RemovalPolicyDefault 设备属性表示设备实例的默认删�
 
 Windows 将 DEVPKEY_Device_RemovalPolicyDefault 的值设置为一 CM_REMOVAL_POLICY_*Xxx* Cfgmgr32.h 中定义的值。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_RemovalPolicyDefault 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_RemovalPolicyDefault 值。
 
-Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Device_RemovalPolicyDefault 属性键。 相反，相应的 SPDRP_REMOVAL_POLICY_HW_DEFAULT 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Device_RemovalPolicyDefault 属性键。 相反，相应的 SPDRP_REMOVAL_POLICY_HW_DEFAULT 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,7 +89,7 @@ Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Dev
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

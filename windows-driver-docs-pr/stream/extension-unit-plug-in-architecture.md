@@ -12,21 +12,21 @@ keywords:
 - 扩展单元
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c95caee3af5c5ca50ed22794edb6e8b1188adca5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c7985c2bf5c698dc6715242b219d7e8ba8ffc4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384100"
 ---
 # <a name="extension-unit-plug-in-architecture"></a>扩展单元插件体系结构
 
 
 USB 视频类驱动程序公开为 USB 视频 KS 代理筛选器中的节点扩展单元。 扩展单元控件的属性的类型 KSNODETYPE 在节点上设置作为进一步公开在用户模式下\_开发人员\_特定。 属性集的 GUID 匹配的扩展单元描述符的 GUID。
 
-单个扩展单元控件应为连续编号从 1 到某个最大值*n*。 这些控件将直接映射到属性标识符 (Id) 上的扩展单元属性集，并且可以使用标准 KSPROPERTY 请求通过访问[IKsControl](https://msdn.microsoft.com/library/windows/hardware/ff559766)。
+单个扩展单元控件应为连续编号从 1 到某个最大值*n*。 这些控件将直接映射到属性标识符 (Id) 上的扩展单元属性集，并且可以使用标准 KSPROPERTY 请求通过访问[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)。
 
-在应用程序属性的请求响应，UVC 驱动程序将返回具有的属性值**MembersFlags**的成员[ **KSPROPERTY\_MEMBERSHEADER**](https://msdn.microsoft.com/library/windows/hardware/ff565189)结构设置以独占方式为 KSPROPERTY\_成员\_范围。 UVC 执行不支持单步执行范围或任意长度的扩展单位默认值。
+在应用程序属性的请求响应，UVC 驱动程序将返回具有的属性值**MembersFlags**的成员[ **KSPROPERTY\_MEMBERSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_membersheader)结构设置以独占方式为 KSPROPERTY\_成员\_范围。 UVC 执行不支持单步执行范围或任意长度的扩展单位默认值。
 
 若要公开的应用程序的扩展单元属性，您可以编写用户模式下插件 DLL 并公开 COM API。 您可以通过使用设置的 KS 属性向发出请求来实现此 API **IKsControl**接口。 *Vidcap.ax*节点接口插件基于某些注册表条目将自动加载。 应用程序可以通过使用访问接口**IKsTopologyInfo::CreateNodeInstance**调用后跟**QueryInterface**上获取所需的 COM API 的节点对象。
 
@@ -34,7 +34,7 @@ USB 视频类驱动程序公开为 USB 视频 KS 代理筛选器中的节点扩�
 
 - 实现扩展单元 API 和接口的标头和 cpp 文件命名为 IKsNodeControl。 Vidcap.ax 使用 IKsNodeControl 接口通知插件的扩展节点标识符并将其提供与 IKsControl 的实例。 有关这些文件可在示例代码[示例扩展单元插件 DLL](sample-extension-unit-plug-in-dll.md)。
 
-- *.Rgs*注册的节点接口和类 Id (Clsid) 下的文件**HKLM\\系统\\CCS\\控制\\NodeInterfaces\\**<em>属性\_设置\_GUID</em>注册表子项。 此注册表子项中的条目包含的接口 ID (IID) 和 CLSID 的二进制值。 有关详细信息，请参阅[UVC 扩展单位的示例注册表项](sample-registry-entry-for-uvc-extension-units.md)。
+- *.Rgs*注册的节点接口和类 Id (Clsid) 下的文件**HKLM\\系统\\CCS\\控制\\NodeInterfaces\\** <em>属性\_设置\_GUID</em>注册表子项。 此注册表子项中的条目包含的接口 ID (IID) 和 CLSID 的二进制值。 有关详细信息，请参阅[UVC 扩展单位的示例注册表项](sample-registry-entry-for-uvc-extension-units.md)。
 
 - 应用程序调用此接口。 应用程序首次创建节点实例使用正确的节点 ID 使用 IKsTopologyInfo::CreateNodeInstance。 然后，应用程序调用**QueryInterface**节点实例以获取所需的扩展单元接口上。 有关详细信息，请参阅[UVC 扩展单位的示例应用程序](sample-application-for-uvc-extension-units.md)和[扩展单位支持自动更新事件](supporting-autoupdate-events-with-extension-units.md)
 
@@ -62,7 +62,7 @@ USB 视频类驱动程序公开为 USB 视频 KS 代理筛选器中的节点扩�
 
 USB 视频类支持自动更新事件，其中设备通知中的任何其控件的更改主机驱动程序。 Microsoft USB 视频类驱动程序通过让注册自动更新事件的应用程序支持这一概念。 获取更新的过程涉及三个步骤：
 
-1.  使用注册更新事件[KSEVENTSETID\_VIDCAPNotify](https://msdn.microsoft.com/library/windows/hardware/ff561773)::[**KSEVENT\_VIDCAP\_自动\_更新**](https://msdn.microsoft.com/library/windows/hardware/ff561916)
+1.  使用注册更新事件[KSEVENTSETID\_VIDCAPNotify](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vidcapnotify)::[**KSEVENT\_VIDCAP\_自动\_更新**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-auto-update)
 
 2.  侦听通知的事件句柄上的事件
 

@@ -15,12 +15,12 @@ keywords:
 - 设备电源状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 220f0df30c4791cebc058fff094be0b1cb3f740e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b5a40b4e989d41036002b67f3c02131eec8decb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390078"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379619"
 ---
 # <a name="power-management-for-io-queues"></a>I/O 队列的电源管理
 
@@ -40,7 +40,7 @@ ms.locfileid: "63390078"
 
 除非你正在编写筛选器驱动程序，或不与硬件通信堆栈的驱动程序，很可能您的驱动程序将收到不这样做要求设备在其工作状态，以及一些的某些请求。
 
-若要支持这两种请求类型，该框架提供两种类型的 I/O 队列： 的那些*电源管理*和那些不是。 当您的驱动程序创建每个其 I/O 队列时，它会设置**PowerManaged**在队列中的成员[ **WDF\_IO\_队列\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552359)为结构**WdfTrue**或**WdfFalse**以指示以下值之一：
+若要支持这两种请求类型，该框架提供两种类型的 I/O 队列： 的那些*电源管理*和那些不是。 当您的驱动程序创建每个其 I/O 队列时，它会设置**PowerManaged**在队列中的成员[ **WDF\_IO\_队列\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_config)为结构**WdfTrue**或**WdfFalse**以指示以下值之一：
 
 -   如果您的驱动程序设置**PowerManaged**到**WdfTrue**，队列是电源管理。
 

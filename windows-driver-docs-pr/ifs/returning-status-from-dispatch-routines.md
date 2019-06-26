@@ -9,12 +9,12 @@ keywords:
 - 返回状态 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c08527fb47b9a81d22804867a6d2157563392e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea021e58d61e949c1a44645084d8f1c5a07e1ee9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344542"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385937"
 ---
 # <a name="returning-status-from-dispatch-routines"></a>从调度例程返回状态
 
@@ -22,7 +22,7 @@ ms.locfileid: "63344542"
 ## <span id="ddk_returning_status_from_dispatch_routines_if"></span><span id="DDK_RETURNING_STATUS_FROM_DISPATCH_ROUTINES_IF"></span>
 
 
-但不会设置完成例程的调度例程完成后 IRP，应始终返回返回的 NTSTATUS 值[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。 除非此值为状态\_挂起状态，它必须匹配的值**Irp-&gt;IoStatus.Status**完成 IRP 驱动程序设置。
+但不会设置完成例程的调度例程完成后 IRP，应始终返回返回的 NTSTATUS 值[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。 除非此值为状态\_挂起状态，它必须匹配的值**Irp-&gt;IoStatus.Status**完成 IRP 驱动程序设置。
 
 设置可能会发布到工作队列 IRP 完成例程的调度例程应执行以下操作：
 

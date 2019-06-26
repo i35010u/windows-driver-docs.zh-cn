@@ -8,12 +8,12 @@ keywords:
 - WDK 的证书存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e1d715f3222a5468c134e5230b183d8d6374973
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8a4ee3f2a9307abea213a19c47e9e0e16d64d69
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385529"
 ---
 # <a name="trusted-publishers-certificate-store"></a>受信任的发布者证书存储
 
@@ -34,7 +34,7 @@ ms.locfileid: "63339526"
 
 -   Windows Server 2003.
 
-你可以验证码证书到受信任的发行者证书存储区的计算机上通过使用手动安装[ **CertMgr** ](https://msdn.microsoft.com/library/windows/hardware/ff543411)工具。
+你可以验证码证书到受信任的发行者证书存储区的计算机上通过使用手动安装[ **CertMgr** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)工具。
 
 **请注意**  驱动程序签名验证策略由插需要 CA 的验证码证书具有以前安装在本地计算机受信任的发行者证书存储区的版本。 有关详细信息，请参阅[本地计算机和当前用户证书存储](local-machine-and-current-user-certificate-stores.md)。
 

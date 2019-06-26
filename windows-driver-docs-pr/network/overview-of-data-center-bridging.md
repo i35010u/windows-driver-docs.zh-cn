@@ -4,12 +4,12 @@ description: 数据中心桥接概述
 ms.assetid: FEB3FDBB-8A3C-4907-A6D0-CB5E94BCFEFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d945df6ce4df8239e7174ab70116953e2611b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27359c78c088412397a212e696d2e2af73406530
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380580"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385724"
 ---
 # <a name="overview-of-data-center-bridging"></a>数据中心桥接概述
 
@@ -45,7 +45,7 @@ DCBX 包含结转链接层发现协议 (LLDP) 数据包的 DCB 类型-长度-值
 
  
 
-每个流量类 ETS 和 PFC 配置设置是与 IEEE 802.1p 优先级级别相关联。 优先级别指定为 3 位值的数据包内 802.1Q 标记。 对于 NDIS 的数据包，由指定的 802.1p 优先级级别**UserPriority**的成员[ **NDIS\_NET\_缓冲区\_列表\_8021Q\_INFO** ](https://msdn.microsoft.com/library/windows/hardware/ff566565)结构，它是与数据包的相关联[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。
+每个流量类 ETS 和 PFC 配置设置是与 IEEE 802.1p 优先级级别相关联。 优先级别指定为 3 位值的数据包内 802.1Q 标记。 对于 NDIS 的数据包，由指定的 802.1p 优先级级别**UserPriority**的成员[ **NDIS\_NET\_缓冲区\_列表\_8021Q\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)结构，它是与数据包的相关联[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
 
 有关优先级级别的详细信息，请参阅[IEEE 802.1p 优先级](ieee-802-1p-priority-levels.md)。
 

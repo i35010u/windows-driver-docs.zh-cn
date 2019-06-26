@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 625c7b6c65180e7811ec3a1009ce383b6618009d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b1a147444a2f06a7c4ed8399531949784af264f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345927"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382538"
 ---
 # <a name="ksamratesimpleratechange"></a>KS\_AM\_RATE\_SimpleRateChange
 
@@ -54,7 +54,7 @@ KS\_AM\_速率\_SimpleDataRate 属性筛选器上设置的时间戳速率。
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567291" data-raw-source="[&lt;strong&gt;KS_AM_SimpleRateChange&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567291)"><strong>KS_AM_SimpleRateChange</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ks_am_simpleratechange" data-raw-source="[&lt;strong&gt;KS_AM_SimpleRateChange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ks_am_simpleratechange)"><strong>KS_AM_SimpleRateChange</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ KS\_AM\_速率\_SimpleDataRate 属性筛选器上设置的时间戳速率。
 ## <a name="see-also"></a>请参阅
 
 
-[**KS\_AM\_SimpleRateChange**](https://msdn.microsoft.com/library/windows/hardware/ff567291)
+[**KS\_AM\_SimpleRateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ks_am_simpleratechange)
 
  
 

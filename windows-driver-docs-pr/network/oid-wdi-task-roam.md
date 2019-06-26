@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_ROAM 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9fd8df71f13c7a02327bb54339b74b8af466553c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e72a78d92e4bece93c9ad26a7287667c4c13d27a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387230"
 ---
 # <a name="oidwditaskroam"></a>OID\_WDI\_TASK\_ROAM
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_漫游适配器尝试从当前连接的 AP 漫游到一个新�
 
 | Object | 中止支持                                                               | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|-----------------------------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 如果中止在解除关联后，它必须后接 dot11 重置。 | 4                                     | 10                              |
+| Port   | 是。 如果中止在解除关联后，它必须后接 dot11 重置。 | 4                                     | 10                              |
 
  
 
@@ -38,8 +38,8 @@ Microsoft 组件提供适配器应考虑为漫游的首选 BSS 项的列表。
 
 | TLV  | 允许多个 TLV 实例 | 可选 | 描述 |
 | --- | --- | --- | --- |
-| [**WDI\_TLV\_CONNECT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926266) |   |   | 连接参数。 |  
-| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | X  |   | 首选的候选项列表连接 BSS 条目。 端口应尝试连接到这些 BSS 条目，直到耗尽列表或已成功完成的连接。 如果需要该端口可以重新调整条目。 如果适配器设置连接 BSS 选择重写位，它可以选择不在此列表中，只要它遵循的允许/不允许列表要求 BSS。 | 
+| [**WDI\_TLV\_CONNECT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-parameters) |   |   | 连接参数。 |  
+| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-bss-entry)  | X  |   | 首选的候选项列表连接 BSS 条目。 端口应尝试连接到这些 BSS 条目，直到耗尽列表或已成功完成的连接。 如果需要该端口可以重新调整条目。 如果适配器设置连接 BSS 选择重写位，它可以选择不在此列表中，只要它遵循的允许/不允许列表要求 BSS。 | 
 
 ## <a name="task-completion-indication"></a>指示任务完成
 

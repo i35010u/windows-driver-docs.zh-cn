@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 357f99d56274da7ffcc1b61c5c911f73a29d42ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30d7fc354725bde72905d99432b4a107142d161c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379948"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377906"
 ---
 # <a name="srbinitializedevice"></a>SRB\_INITIALIZE\_DEVICE
 
@@ -42,7 +42,7 @@ ms.locfileid: "63379948"
 
 ### <a name="comments"></a>备注
 
-在类驱动程序将指针传递到的端口\_配置\_中的信息结构*pSrb*-&gt;**CommandData.ConfigInfo**。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。 找出大多数字段填充的类驱动程序*pSrb*-&gt;**CommandData.ConfigInfo**从操作系统的设备的有关它所获取的信息。 在大多数情况下，微型驱动程序只需填写**StreamDescriptorSize**的成员**ConfigInfo**大小为其[ **HW\_流\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff559686)结构。
+在类驱动程序将指针传递到的端口\_配置\_中的信息结构*pSrb*-&gt;**CommandData.ConfigInfo**。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。 找出大多数字段填充的类驱动程序*pSrb*-&gt;**CommandData.ConfigInfo**从操作系统的设备的有关它所获取的信息。 在大多数情况下，微型驱动程序只需填写**StreamDescriptorSize**的成员**ConfigInfo**大小为其[ **HW\_流\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor)结构。
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_ASSOCIATION_PARAMETERS_REQUEST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f67524869a9ebd3660f7b6d3deb049dd1516c67b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59c88edddb64bb4e6002b4bfe91205f57fc46b07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382187"
 ---
 # <a name="ndisstatuswdiindicationassociationparametersrequest"></a>NDIS\_状态\_WDI\_指示\_关联\_参数\_请求
 
@@ -20,7 +20,7 @@ ms.locfileid: "63366418"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -31,8 +31,8 @@ ms.locfileid: "63366418"
 
 | 在任务栏的搜索框中键入                                                                                                             | 允许多个 TLV 实例 | 可选 | 描述                                   |
 |------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------|
-| [**WDI\_TLV\_关联\_参数\_请求\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn926131) |                                |          | 请求的关联参数的列表。 |
-| [**WDI\_TLV\_BSS\_ENTRY**](https://msdn.microsoft.com/library/windows/hardware/dn926162)                                                           | X                              | X        | BSSIDs 的列表。                           |
+| [**WDI\_TLV\_关联\_参数\_请求\_类型**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-parameters-requested-type) |                                |          | 请求的关联参数的列表。 |
+| [**WDI\_TLV\_BSS\_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry)                                                           | X                              | X        | BSSIDs 的列表。                           |
 
  
 

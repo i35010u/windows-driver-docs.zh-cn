@@ -8,12 +8,12 @@ keywords:
 - AVStream 硬件编解码器支持 WDK，处理数据类型协商
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd97a63202e9d56b6d62228536be2a99a3e80da2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5edacb66f45537baf480a3ac2c86f40e9227fc8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384054"
 ---
 # <a name="handling-data-type-negotiation-in-avstream-codecs"></a>在 AVStream 编解码器中处理数据类型协商
 
@@ -31,11 +31,11 @@ ms.locfileid: "63363533"
 
 4.  MF 拓扑生成器 （MF 相当于 DirectShow 图生成器） 构造流式处理拓扑。
 
-5.  MF 拓扑生成器完成 Devproxy 输入/输出插针的数据类型后，它设置的数据类型在针上通过调用微型驱动程序的[ *AVStrMiniPinSetDataFormat* ](https://msdn.microsoft.com/library/windows/hardware/ff556355)回调函数。 如果 KS pin 不存在，调用 Devproxy [ **KsCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff561652)。
+5.  MF 拓扑生成器完成 Devproxy 输入/输出插针的数据类型后，它设置的数据类型在针上通过调用微型驱动程序的[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)回调函数。 如果 KS pin 不存在，调用 Devproxy [ **KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)。
 
 若要启用成功的数据类型协商，微型驱动程序必须执行以下步骤：
 
-1.  提供一系列中的受支持的数据范围**DataRanges**的成员[ **KSPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563533)硬件编解码器筛选器中包含每个公开 pin。 例如：
+1.  提供一系列中的受支持的数据范围**DataRanges**的成员[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)硬件编解码器筛选器中包含每个公开 pin。 例如：
 
     ```cpp
     const PKSDATARANGE VideoDecoderInputPinDataRanges[8] = {
@@ -50,7 +50,7 @@ ms.locfileid: "63363533"
     };
     ```
 
-    在这种情况下，指定的范围都是包装器类型如[ **KS\_DATARANGE\_MPEG2\_视频**](https://msdn.microsoft.com/library/windows/hardware/ff567362)， [ **KS\_DATARANGE\_视频**](https://msdn.microsoft.com/library/windows/hardware/ff567628)，并[ **KS\_DATARANGE\_视频 2**](https://msdn.microsoft.com/library/windows/hardware/ff567629)。 在前面列出的代码示例中，每个范围进行类型转换到[ **KSDATARANGE**](https://msdn.microsoft.com/library/windows/hardware/ff561658)。
+    在这种情况下，指定的范围都是包装器类型如[ **KS\_DATARANGE\_MPEG2\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)， [ **KS\_DATARANGE\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)，并[ **KS\_DATARANGE\_视频 2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2)。 在前面列出的代码示例中，每个范围进行类型转换到[ **KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))。
 
     包装结构的最后一个成员称为格式块结构，例如，KS\_DATARANGE\_MPEG2\_视频。**VideoInfoHeader**。
 
@@ -60,9 +60,9 @@ ms.locfileid: "63363533"
 
 2.  驱动程序应允许在 pin 中 KSSTATE 上设置的媒体类型\_停止/KSSTATE\_运行。 不需要执行操作此处以外来确保该驱动程序不会不禁止这。
 
-3.  该驱动程序应提供 intersect 处理程序中的[ **KSPIN\_描述符\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)。**IntersectHandler**对于每个插针。
+3.  该驱动程序应提供 intersect 处理程序中的[ **KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)。**IntersectHandler**对于每个插针。
 
-4.  微型驱动程序应提供一个处理程序[ **KSPROPERTY\_连接\_PROPOSEDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff565107)属性。
+4.  微型驱动程序应提供一个处理程序[ **KSPROPERTY\_连接\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)属性。
 
 5.  如果设置的输出媒体类型，编码器应报告 （通过使用 pin 描述符） 可能输入的类型根据指定的输出媒体类型。 如果未设置输出媒体类型，则编码器应报告任何输入的媒体类型。
 

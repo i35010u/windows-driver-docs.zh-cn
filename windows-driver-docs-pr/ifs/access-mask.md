@@ -11,12 +11,12 @@ keywords:
 - WDK 的特定权利文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf59be7320a7296b13c365b03a4fbc225b0d0bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6acad041414c4e0cda056aa9e8a7c852790ea080
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323180"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381751"
 ---
 # <a name="access-mask"></a>访问掩码
 
@@ -24,7 +24,7 @@ ms.locfileid: "63323180"
 ## <span id="ddk_sec_access_mask_if"></span><span id="DDK_SEC_ACCESS_MASK_IF"></span>
 
 
-访问掩码的函数是为了说明以压缩形式的访问权限。 若要简化访问管理，访问掩码包含一组四位*泛型权利*，这将通过使用函数转换成一组更详细的权限[ **RtlMapGenericMask**](https://msdn.microsoft.com/library/windows/hardware/ff562027).
+访问掩码的函数是为了说明以压缩形式的访问权限。 若要简化访问管理，访问掩码包含一组四位*泛型权利*，这将通过使用函数转换成一组更详细的权限[ **RtlMapGenericMask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlmapgenericmask).
 
 下图说明了访问掩码。
 
@@ -92,7 +92,7 @@ ms.locfileid: "63323180"
 
 -   **文件\_编写\_属性**-修改目录的属性信息的权限。
 
-泛型权利文件对象的标准和特定权限的实际映射由 I/O 管理器定义。 可以通过文件系统使用来检索此映射[ **IoGetFileObjectGenericMapping**](https://msdn.microsoft.com/library/windows/hardware/ff549231)。 通常情况下，此映射完成期间 IRP\_MJ\_创建按之前调用文件系统 I/O 管理器进行处理。 但这可能会通过检查特定操作的安全性的文件系统 （例如专用 FSCTL 操作）。
+泛型权利文件对象的标准和特定权限的实际映射由 I/O 管理器定义。 可以通过文件系统使用来检索此映射[ **IoGetFileObjectGenericMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iogetfileobjectgenericmapping)。 通常情况下，此映射完成期间 IRP\_MJ\_创建按之前调用文件系统 I/O 管理器进行处理。 但这可能会通过检查特定操作的安全性的文件系统 （例如专用 FSCTL 操作）。
 
  
 

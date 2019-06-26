@@ -9,12 +9,12 @@ keywords:
 - 示例代码 WDK USB 视频类，UVC INF 文件
 ms.date: 09/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 50ff6912c15ae7686a297bed448f8db329176fcd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71390fdf0e8d8247d8367547e5dccb022f5635c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385688"
 ---
 # <a name="providing-a-uvc-inf-file"></a>提供 UVC INF 文件
 
@@ -115,7 +115,7 @@ HKR,,RTCFlags,0x00010001,0x00000010
 <tbody>
 <tr class="odd">
 <td><p><strong>位掩码名称</strong></p></td>
-<td><p><strong>值</strong></p></td>
+<td><p><strong>ReplTest1</strong></p></td>
 <td><p><strong>说明</strong></p></td>
 </tr>
 <tr class="even">
@@ -158,7 +158,7 @@ HKR,,UvcFlags,0x00010001,0x00000010
 
 在较低的帧速率情况下，EOF 位可能会比以下框架的 FID 位更快地报告完成。 EOF 位可用来减少延迟的 mpeg-2 帧传递。
 
-AddReg 指令的位置的语法的详细信息，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+AddReg 指令的位置的语法的详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 ```INF
 [MyDevice.NT.Services]

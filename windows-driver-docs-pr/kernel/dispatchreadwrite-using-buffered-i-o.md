@@ -14,12 +14,12 @@ keywords:
 - I/O WDK 内核缓冲
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4d031a1d9a4b8dcaa405de4fde95a3e933ed550
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18d501237309b86db5779d690dd82bbbe0f96c6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384974"
 ---
 # <a name="dispatchreadwrite-using-buffered-io"></a>使用缓冲 I/O 执行 DispatchReadWrite
 
@@ -31,7 +31,7 @@ ms.locfileid: "63387194"
 
 因此， *DispatchReadWrite*这样的设备驱动程序例程通常执行以下操作在收到的传输请求：
 
-1.  调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)并确定该传输请求的方向。
+1.  调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)并确定该传输请求的方向。
 
 2.  检查请求的参数的有效性。
 
@@ -45,7 +45,7 @@ ms.locfileid: "63387194"
 
 通常使用缓冲的 I/O 驱动程序必须满足的读取或写入大小的数据的传输请求指定的请求的发起最低级别的设备。 此类驱动程序很可能定义的数据结构来自或发送到其设备以及有可能在内部，缓冲结构化的数据，如系统键盘类驱动程序执行。
 
-在内部缓冲的数据的驱动程序应支持[ **IRP\_MJ\_刷新\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff550760)请求，并且还可以支持[ **IRP\_MJ\_关闭**](https://msdn.microsoft.com/library/windows/hardware/ff550807)请求。
+在内部缓冲的数据的驱动程序应支持[ **IRP\_MJ\_刷新\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)请求，并且还可以支持[ **IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)请求。
 
 在一个链中的最高级别的驱动程序是通常负责在将传递到较低的驱动程序的读/写请求之前检查输入的 IRP 的参数。 因此，许多较低级驱动程序可以假定在读/写 IRP 及其 I/O 堆栈位置具有有效的参数。 如果链中的最低级别驱动程序已注意到的数据传输的特定于设备的约束，该驱动程序需要检查其 I/O 堆栈位置中的参数的有效性。
 

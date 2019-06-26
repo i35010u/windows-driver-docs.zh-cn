@@ -4,12 +4,12 @@ description: 本主题提供有关在 Windows 中实现对多个无线接入技�
 ms.assetid: 17BB2478-F98D-4AE6-A62D-F65E2E1DCDFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a53128bdde33dc24ccefd68f9fa611fc891680b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca47c1e4342b47541140f5c908f8226ee33097f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349517"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386542"
 ---
 # <a name="ihv-guidance-for-implementing-multimode-and-multicarrier-capable-mb-devices"></a>有关实施多模多载波 MB 设备的 IHV 指导
 
@@ -183,7 +183,7 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <tr class="header">
 <th align="left">MBIM_MC_FLAGS_NONE</th>
 <th align="left">0h</th>
-<th align="left">设置任何标志</th>
+<th align="left">未设置标志</th>
 </tr>
 </thead>
 <tbody>
@@ -240,7 +240,7 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 
 未经请求的事件 =**不受支持**
 
-Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Windows 上。 有关详细信息，请参阅[表的地理位置 (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd374073)。
+Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Windows 上。 有关详细信息，请参阅[表的地理位置 (Windows)](https://docs.microsoft.com/windows/desktop/Intl/table-of-geographical-locations)。
 
 <table>
 <colgroup>

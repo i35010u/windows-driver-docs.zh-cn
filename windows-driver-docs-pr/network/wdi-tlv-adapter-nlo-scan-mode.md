@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ADAPTER_NLO_SCAN_MODE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 95dadeb161840e0e4d975d40c701159b3fa5147d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1053924c720ee8f2cef3acec977e5660aa7f72c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381125"
 ---
 # <a name="wditlvadapternloscanmode"></a>WDI\_TLV\_适配器\_NLO\_扫描\_模式
 
@@ -33,7 +33,7 @@ UINT32 大小 （以字节为单位）。
 
 | 在任务栏的搜索框中键入   | 描述                                                                                                                     |
 |--------|---------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | [**WDI\_扫描\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn926115)值，该值指示是否应在主动或被动模式下执行扫描。 |
+| UINT32 | [**WDI\_扫描\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_type)值，该值指示是否应在主动或被动模式下执行扫描。 |
 
  
 

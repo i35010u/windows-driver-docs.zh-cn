@@ -6,12 +6,12 @@ keywords:
 - 数据包修改 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7b794aed9ae196e9b8f3c8b4c77ca351722fc6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4facd3a3181c19b34287f5a3af26fde72727a24a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376296"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382631"
 ---
 # <a name="packet-modification-examples"></a>数据包修改示例
 
@@ -775,7 +775,7 @@ Exit:
 ## <a name="related-topics"></a>相关主题
 
 
-[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)
+[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [类型的标注](types-of-callouts.md)
 

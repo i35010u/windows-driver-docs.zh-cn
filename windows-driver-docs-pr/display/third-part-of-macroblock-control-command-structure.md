@@ -6,12 +6,12 @@ keywords:
 - 宏块 WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eeea56bd2286af9295c33655a3d4bb54ed1cb82b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d55c8f7824de90007579792eb04254b78fe3a5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384582"
 ---
 # <a name="third-part-of-macroblock-control-command-structure"></a>宏块控制命令结构的第三部分
 
@@ -19,7 +19,7 @@ ms.locfileid: "63389889"
 ## <span id="ddk_third_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_THIRD_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
 
 
-如果**bPicIntra**的成员[ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)为 1，宏块控制命令结构以结尾中所述的数据[第二个宏块控制命令结构的一部分](second-part-of-macroblock-control-command-structure.md)。 如果**bPicIntra**为零，宏块控制命令来控制运动补偿过程中包含元素的以下附加数据。 之后的数据是一个数组[ **DXVA\_MVvalue** ](https://msdn.microsoft.com/library/windows/hardware/ff564004)结构中包含**MVector**宏块控制命令结构的成员。 中的元素数**MVector**图片的 DXVA 成员由指定的类型决定\_PictureParameters 下表中的。
+如果**bPicIntra**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)为 1，宏块控制命令结构以结尾中所述的数据[第二个宏块控制命令结构的一部分](second-part-of-macroblock-control-command-structure.md)。 如果**bPicIntra**为零，宏块控制命令来控制运动补偿过程中包含元素的以下附加数据。 之后的数据是一个数组[ **DXVA\_MVvalue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mvvalue)结构中包含**MVector**宏块控制命令结构的成员。 中的元素数**MVector**图片的 DXVA 成员由指定的类型决定\_PictureParameters 下表中的。
 
 <table>
 <colgroup>

@@ -6,17 +6,17 @@ keywords:
 - 设备属性 WDK 设备安装，表示形式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d874d6075034c3b18bc0fa0c5edf521488d5aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7099e50f751f2d618a829cf599d1fe2254cb3825
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387120"
 ---
 # <a name="device-property-representations-windows-server-2003-windows-xp-and-windows-2000"></a>设备属性表示形式（Windows Server 2003、Windows XP 和 Windows 2000）
 
 
-不支持 Windows Server 2003、 Windows XP 和 Windows 2000[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)该 Windows Vista 和更高版本的 Windows 支持。 但是，大部分[系统定义的设备属性](https://msdn.microsoft.com/library/windows/hardware/ff553413)所包含统一的设备属性模型中具有相应的表示形式，这些早期版本的 Windows 支持。 在这些早期版本的 Windows 中，表示设备属性的方式，，种机制，用于访问属性，依赖于的组件类型和属性类型。 这些表示形式和机制包括：
+不支持 Windows Server 2003、 Windows XP 和 Windows 2000[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)该 Windows Vista 和更高版本的 Windows 支持。 但是，大部分[系统定义的设备属性](https://docs.microsoft.com/previous-versions/ff553413(v=vs.85))所包含统一的设备属性模型中具有相应的表示形式，这些早期版本的 Windows 支持。 在这些早期版本的 Windows 中，表示设备属性的方式，，种机制，用于访问属性，依赖于的组件类型和属性类型。 这些表示形式和机制包括：
 
 -   设备属性由系统定义的输入参数中提供的标识符[SetupAPI 函数](setupapi.md)访问的设备属性。
 

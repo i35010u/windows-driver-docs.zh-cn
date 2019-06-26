@@ -4,12 +4,12 @@ description: 移动运营商硬件概述
 ms.assetid: b2322972-16be-443f-b46a-7834b4d7ead0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d289b6c88db6b2b3d276978c763dc891b7fc62b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4214393f781662e11d8ace8fdb07567be94fd9e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386260"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393423"
 ---
 # <a name="mobile-operator-hardware-overview"></a>移动运营商硬件概述
 
@@ -74,9 +74,9 @@ ms.locfileid: "63386260"
 
 ### <a name="span-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanspan-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanspan-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanwindows8-windows81-or-windows10-certified-mobile-broadband-devices"></a><span id="Windows_8__Windows_8.1__or_Windows_10_certified_mobile_broadband_devices"></span><span id="windows_8__windows_8.1__or_windows_10_certified_mobile_broadband_devices"></span><span id="WINDOWS_8__WINDOWS_8.1__OR_WINDOWS_10_CERTIFIED_MOBILE_BROADBAND_DEVICES"></span>Windows 8、 Windows 8.1 或 Windows 10 认证移动宽带设备
 
-若要充分利用 Windows 移动宽带平台，你的移动宽带设备必须满足 Windows 8、 Windows 8.1 或 Windows 10 硬件认证要求。 有关硬件认证要求的全面描述，请参阅[Windows 硬件认证要求](https://msdn.microsoft.com/library/windows/hardware/hh748188)。
+若要充分利用 Windows 移动宽带平台，你的移动宽带设备必须满足 Windows 8、 Windows 8.1 或 Windows 10 硬件认证要求。 有关硬件认证要求的全面描述，请参阅[Windows 硬件认证要求](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/)。
 
-为最终用户的最简单的连接体验传递与基于 USB 的移动宽带设备。 硬件认证要求的一部分，任何表现为 USB 设备的移动宽带设备必须符合[移动宽带接口模型 (MBIM) 规范](https://msdn.microsoft.com/library/windows/hardware/dn265427)和 MBIM v1.0 勘误表。 这包括外部 USB 连接器和嵌入的模块，提供 USB 接口。 对于此类设备，Windows 8、 Windows 8.1 或 Windows 10 包括移动宽带类驱动程序，它不需要其他驱动程序 ihv 和简化了用户的连接体验。 不是 USB 和驱动程序模型的其他硬件可以接收 Windows 8、 Windows 8.1 和 Windows 10 证书并将提供在 Microsoft Store 的移动宽带应用体验，但这些不受移动宽带类驱动程序。
+为最终用户的最简单的连接体验传递与基于 USB 的移动宽带设备。 硬件认证要求的一部分，任何表现为 USB 设备的移动宽带设备必须符合[移动宽带接口模型 (MBIM) 规范](https://docs.microsoft.com/windows-hardware/drivers/network/mb-interface-model)和 MBIM v1.0 勘误表。 这包括外部 USB 连接器和嵌入的模块，提供 USB 接口。 对于此类设备，Windows 8、 Windows 8.1 或 Windows 10 包括移动宽带类驱动程序，它不需要其他驱动程序 ihv 和简化了用户的连接体验。 不是 USB 和驱动程序模型的其他硬件可以接收 Windows 8、 Windows 8.1 和 Windows 10 证书并将提供在 Microsoft Store 的移动宽带应用体验，但这些不受移动宽带类驱动程序。
 
 ### <a name="span-idmobilebroadbandclassdriverspanspan-idmobilebroadbandclassdriverspanspan-idmobilebroadbandclassdriverspanmobile-broadband-class-driver"></a><span id="Mobile_broadband_class_driver"></span><span id="mobile_broadband_class_driver"></span><span id="MOBILE_BROADBAND_CLASS_DRIVER"></span>移动宽带类驱动程序
 
@@ -88,13 +88,13 @@ ms.locfileid: "63386260"
 
 可以使用自定义设备服务扩展，将直接向通过 WinRT 设备服务 API 的移动宽带应用公开实现其他设备功能。
 
-移动宽带类驱动程序的详细信息，请参阅[移动宽带 (MB) 引用](https://msdn.microsoft.com/library/windows/hardware/ff560545)。
+移动宽带类驱动程序的详细信息，请参阅[移动宽带 (MB) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
 ### <a name="span-iddeviceserviceextensionapispanspan-iddeviceserviceextensionapispanspan-iddeviceserviceextensionapispandevice-service-extension-api"></a><span id="Device_service_extension_API"></span><span id="device_service_extension_api"></span><span id="DEVICE_SERVICE_EXTENSION_API"></span>设备服务扩展 API
 
 使用 Windows 平台的明显的优势之一是能够提供支持运算符区分的新硬件情况。 Windows 移动宽带平台需要实现更高版本的客户忠诚度和品牌权益可以命令的运算符的优势。 平台提供了一组可以合并到你独特的体验的扩展点。
 
-Windows 认证的移动宽带设备声明为"设备服务"每个受支持的扩展点。 此类服务的示例包括通讯簿、 SIM 工具包或 GPS 功能。 可以通过使用设备服务扩展 API 访问不由 Windows 移动宽带平台本机实现的任何设备服务。 您和 IHV 定义应实现的设备服务。 IHV 的固件和移动宽带应用程序必须能够同时启用所需的设备的服务。 USB 实现论坛建立一个可供在 Ihv 的设备服务注册表[MBIMRegistry](http://www.usb.org)，我们建议您和您正在使用 Ihv 使用此注册表进行协调以确保一致性和常见的设备服务扩展插件。
+Windows 认证的移动宽带设备声明为"设备服务"每个受支持的扩展点。 此类服务的示例包括通讯簿、 SIM 工具包或 GPS 功能。 可以通过使用设备服务扩展 API 访问不由 Windows 移动宽带平台本机实现的任何设备服务。 您和 IHV 定义应实现的设备服务。 IHV 的固件和移动宽带应用程序必须能够同时启用所需的设备的服务。 USB 实现论坛建立一个可供在 Ihv 的设备服务注册表[MBIMRegistry](https://www.usb.org/)，我们建议您和您正在使用 Ihv 使用此注册表进行协调以确保一致性和常见的设备服务扩展插件。
 
 设备服务扩展 API 提供移动宽带应用程序访问其移动宽带设备上的功能的直接方法。 这提供了通过 WWAN 服务和设备的移动宽带类驱动程序的管道，如以下关系图中所示：
 
@@ -118,7 +118,7 @@ Windows 无线平台支持的 Api 适用于应用的以下功能：
 
 -   注册，以便从特定设备的未经请求的设备事件
 
-有关详细信息，请参阅[ **IMbnDeviceService 接口**](https://msdn.microsoft.com/library/windows/desktop/hh780509)。
+有关详细信息，请参阅[ **IMbnDeviceService 接口**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbndeviceservice)。
 
 ### <a name="span-idlegacysupportandidentitymorphingspanspan-idlegacysupportandidentitymorphingspanspan-idlegacysupportandidentitymorphingspanlegacy-support-and-identity-morphing"></a><span id="Legacy_support_and_identity_morphing"></span><span id="legacy_support_and_identity_morphing"></span><span id="LEGACY_SUPPORT_AND_IDENTITY_MORPHING"></span>旧版支持和标识变形
 
@@ -148,11 +148,11 @@ Windows 8、 Windows 8.1 和 Windows 10 支持为 Windows 7 设计的移动宽�
 
 在本机 Windows 8、 Windows 8.1 和 Windows 10 类驱动程序不需要公开自身最初为大容量存储设备，因为没有安装驱动程序是必需的外部 USB 设备。 Windows 8、 Windows 8.1 和 Windows 10 包括触发设备的标识变形和允许的设备将立即显示为移动宽带设备的功能。
 
-若要了解如何开发变形解决方案的标识，请参阅[ **IMbnDeviceService 接口**](https://msdn.microsoft.com/library/windows/desktop/hh780509)。\]
+若要了解如何开发变形解决方案的标识，请参阅[ **IMbnDeviceService 接口**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbndeviceservice)。\]
 
 ### <a name="span-idfirmwareupdatesupportspanspan-idfirmwareupdatesupportspanspan-idfirmwareupdatesupportspanfirmware-update-support"></a><span id="Firmware_update_support"></span><span id="firmware_update_support"></span><span id="FIRMWARE_UPDATE_SUPPORT"></span>固件更新支持
 
-应使用 Windows Update 更新移动宽带设备固件。 有关如何执行此操作的信息，请参见[移动宽带设备固件更新，在 Windows 8 上](https://msdn.microsoft.com/library/windows/hardware/dn423926)。 可以通过使用移动宽带应用预配你的体验针对特定的配置。
+应使用 Windows Update 更新移动宽带设备固件。 有关如何执行此操作的信息，请参见[移动宽带设备固件更新，在 Windows 8 上](https://docs.microsoft.com/windows-hardware/drivers/network/mobile-broadband-device-firmware-update)。 可以通过使用移动宽带应用预配你的体验针对特定的配置。
 
 ### <a name="span-idoma-dmclientsupportspanspan-idoma-dmclientsupportspanspan-idoma-dmclientsupportspanoma-dm-client-support"></a><span id="OMA-DM_client_support"></span><span id="oma-dm_client_support"></span><span id="OMA-DM_CLIENT_SUPPORT"></span>OMA DM 客户端支持
 
@@ -168,7 +168,7 @@ Windows 将从企业 BYOD 的支持的移动网络运算符配置 OMA DM 支持�
 
     -   移动宽带设备制造商可能能够提供第三方 OMA DM 客户端解决方案集成在其网络适配器固件中，如果本机支持的解决方案不存在。
 
-    -   移动宽带应用程序应继续使用[预配的元数据](https://msdn.microsoft.com/library/windows/apps/windows.networking.networkoperators.provisioningagent)配置操作系统特定的参数时。
+    -   移动宽带应用程序应继续使用[预配的元数据](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)配置操作系统特定的参数时。
 
 -   OMA DM 客户端的移动宽带应用中：
 
@@ -176,7 +176,7 @@ Windows 将从企业 BYOD 的支持的移动网络运算符配置 OMA DM 支持�
 
     -   此解决方案配置设备特定参数的移动宽带应用程序需要特定于运算符的或设备制造商特定于自定义设备服务支持。
 
-    -   包括的 OMA DM 客户端的移动宽带应用应使用[**预配的元数据**](https://msdn.microsoft.com/library/windows/apps/br207397)配置操作系统特定的参数时。
+    -   包括的 OMA DM 客户端的移动宽带应用应使用[**预配的元数据**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)配置操作系统特定的参数时。
 
 ### <a name="span-idapnmanagementspanspan-idapnmanagementspanspan-idapnmanagementspanapn-management"></a><span id="APN_Management"></span><span id="apn_management"></span><span id="APN_MANAGEMENT"></span>APN 管理
 
@@ -198,7 +198,7 @@ APN 数据库有关的详细信息，请参阅[APN 数据库概述](apn-database
 
 某些运算符需要移动宽带启用系统被锁定到其网络或已解锁锁定的设备以允许服务可移植性的要求。 若要启用此方案中，我们要求的 OEM 和设备供应商使用 MBIM\_PIN\_Subsidy 锁类型 MBIM 规范中的指南。
 
-设备必须报告[ **WWAN\_准备\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff571226)::[**ReadyState**](https://msdn.microsoft.com/library/windows/hardware/ff571227)=**WwanReadyStateInitialized**在此锁定状态，不应报告**WwanReadyStateDeviceLocked**。
+设备必须报告[ **WWAN\_准备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_ready_info)::[**ReadyState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ne-wwan-_wwan_ready_state)=**WwanReadyStateInitialized**在此锁定状态，不应报告**WwanReadyStateDeviceLocked**。
 
 **请注意**  没有 HCK 测试用例，以验证在设备上实现此功能，或者系统适用于 Windows。 我们向 OEM 和运算符使用 MBOT 中的特定筛选器以确保最终产品可以进行测试。
 

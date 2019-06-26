@@ -10,12 +10,12 @@ keywords:
 - 调度 IRQL 跟踪 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d86f23825ef547a60fb480a81d41529c1efa0c6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61daa1c24766a6d7907016b9e640d1a6256792a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379564"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386566"
 ---
 # <a name="dispatch-irql-tracking"></a>调度 IRQL 跟踪
 
@@ -23,7 +23,7 @@ ms.locfileid: "63379564"
 
 
 
-若要提高系统性能，某些 NDIS 函数 (例如， [ *MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)函数) 包括一个调度级别标志，指示当前 IRQL。 正确使用调度级别标志有助于避免不必要设置 IRQL 的尝试。
+若要提高系统性能，某些 NDIS 函数 (例如， [ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)函数) 包括一个调度级别标志，指示当前 IRQL。 正确使用调度级别标志有助于避免不必要设置 IRQL 的尝试。
 
 用于控制其他属性的其他标志，但调度级别标志的名称是：
 

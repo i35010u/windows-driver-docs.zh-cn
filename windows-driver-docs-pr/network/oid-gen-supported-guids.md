@@ -5,12 +5,12 @@ ms.assetid: 6985727e-50f8-4dbf-b8cd-ce31d49e8294
 ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_GUIDS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5019d616ab3821d511e391d8d2e5e510d8419084
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b64730adc113af58773878669f0c36e1189bbff9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387884"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386994"
 ---
 # <a name="oidgensupportedguids"></a>OID\_GEN\_支持\_GUID
 
@@ -37,7 +37,7 @@ ms.locfileid: "63387884"
 <a name="remarks"></a>备注
 -------
 
-数组中的每个结构指定的映射的自定义 GUID （全局唯一标识符） 是一个自定义的 OID 或 NDIS\_微型端口驱动程序将通过发送的状态[ **NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)函数。
+数组中的每个结构指定的映射的自定义 GUID （全局唯一标识符） 是一个自定义的 OID 或 NDIS\_微型端口驱动程序将通过发送的状态[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)函数。
 
 NDIS\_GUID 结构定义，如下所示：
 
@@ -110,7 +110,7 @@ NDIS_GUID    NdisGuid = {{0x44795701, 0xa61b, 0x11d0, 0x8d, 0xd4,
 
 GUID 是通过 Windows Management Instrumentation (WMI) 用于获取或设置信息的标识符。 NDIS 截获由 WMI 发送到 NDIS 驱动程序的 GUID，它将 GUID 映射到 OID，并向驱动程序发送 OID。 驱动程序返回的数据项目到 NDIS，然后将数据返回到 WMI。
 
-NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 微型端口驱动程序中使用 NIC 状态的更改进行报告时[ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)函数，NDIS 转换 NDIS\_到 GUID 的 NDIS 所表示的微型端口驱动程序状态将发送到 WMI。
+NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 微型端口驱动程序中使用 NIC 状态的更改进行报告时[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)函数，NDIS 转换 NDIS\_到 GUID 的 NDIS 所表示的微型端口驱动程序状态将发送到 WMI。
 
 如果微型端口驱动程序支持海关 Guid，它必须支持 OID\_GEN\_支持\_GUID。 此 OID 返回到 NDIS 的自定义 Guid 到自定义 Oid 或 NDIS 映射\_状态字符串。 查询使用 OID 的微型端口驱动程序后\_GEN\_支持\_GUID，NDIS 向 WMI 注册微型端口驱动程序的自定义 Guid。
 
@@ -133,7 +133,7 @@ NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 微型端口�
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

@@ -4,12 +4,12 @@ description: 开发短信应用
 ms.assetid: 052eb3cc-4a39-4667-8678-b18650f3b5c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a557fd4fd86601539752af582208ead05fe5ae2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd269574dfc7fdf6e8f19d0fd0b3a033c9fcb3b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380272"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381473"
 ---
 # <a name="developing-sms-apps"></a>开发短信应用
 
@@ -114,7 +114,7 @@ Mno 预配 Windows 平台中指定管理的短信通知的自定义筛选的规�
 ## <a name="span-iddevelopsmsappspanspan-iddevelopsmsappspanspan-iddevelopsmsappspandeveloping-your-sms-app"></a><span id="DevelopSMSApp"></span><span id="developsmsapp"></span><span id="DEVELOPSMSAPP"></span>开发 SMS 应用
 
 
-您可以编写 JavaScript 中， C#，或C++使用的应用[ **Windows.Devices.Sms** ](https://msdn.microsoft.com/library/windows/apps/br206567) API 来发送、 读取和删除消息。
+您可以编写 JavaScript 中， C#，或C++使用的应用[ **Windows.Devices.Sms** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms) API 来发送、 读取和删除消息。
 
 **请注意**   Windows 7 移动宽带短信 API 提供只有低级别的调制解调器接口对于短信。 Windows 8、 Windows 8.1 和 Windows 10 提供适用于常规应用开发的备用文本模式接口。
 

@@ -5,21 +5,21 @@ ms.assetid: B13E0FAC-A179-4785-9B39-CB498064947B
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PD_OPEN_PROVIDER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aeb4fb1808bde918932b081e456df3254aa4718f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e53d716e2eab2b62de7d6c7babe9b82a429d1fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383240"
 ---
 # <a name="oidpdopenprovider"></a>OID\_PD\_打开\_提供程序
 
 
 NDIS 协议或筛选器驱动程序将发送对象标识符 (OID) 方法请求的 OID\_PD\_打开\_支持 PD 的微型端口驱动程序的提供程序来访问微型端口驱动程序的 PDPI 提供程序对象中的 PD 功能. 所有支持 PD 的微型端口驱动程序必须处理此 OID 请求。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向缓冲区的指针。 此缓冲区包含以下数据：
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向缓冲区的指针。 此缓冲区包含以下数据：
 
--   [ **NDIS\_PD\_打开\_提供程序\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn931842)结构
+-   [ **NDIS\_PD\_打开\_提供程序\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_pd_open_provider_parameters)结构
 
 <a name="remarks"></a>备注
 -------
@@ -51,11 +51,11 @@ NDIS 协议或筛选器驱动程序将发送对象标识符 (OID) 方法请求�
 ## <a name="see-also"></a>请参阅
 
 
-[*MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)
+[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
 
-[**NDIS\_PD\_OPEN\_PROVIDER\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn931842)
+[**NDIS\_PD\_OPEN\_PROVIDER\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_pd_open_provider_parameters)
 
-[NDIS\_状态\_PD\_当前\_配置](https://msdn.microsoft.com/library/windows/hardware/dn931850)
+[NDIS\_状态\_PD\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pd-current-config)
 
 [OID\_PD\_关闭\_提供程序](oid-pd-close-provider.md)
 

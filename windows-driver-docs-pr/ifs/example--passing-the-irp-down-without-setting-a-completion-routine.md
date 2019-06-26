@@ -7,12 +7,12 @@ keywords:
 - 将 Irp 传递下设备堆栈 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 050059ea570a22973e415e8d4bfcfc6b398d47ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9481232d077b660dda31d845885bcad57ad53a7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383850"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386092"
 ---
 # <a name="example-passing-the-irp-down-without-setting-a-completion-routine"></a>例如：向下传递 IRP，不需设置完成例程
 
@@ -22,9 +22,9 @@ ms.locfileid: "63383850"
 
 若要传递到较低级别的驱动程序 IRP 而无需设置完成例程，调度例程必须执行以下操作：
 
--   调用[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)若要删除当前 IRP 堆栈的位置，以便在完成例程执行完成处理 IRP 上时将不查找 I/O 管理器。
+-   调用[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)若要删除当前 IRP 堆栈的位置，以便在完成例程执行完成处理 IRP 上时将不查找 I/O 管理器。
 
--   调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)要传递到下一步的较低级驱动程序 IRP。
+-   调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)要传递到下一步的较低级驱动程序 IRP。
 
 下面的代码示例说明了这种方法：
 
@@ -42,17 +42,17 @@ status = IoCallDriver ( NextLowerDriverDeviceObject, Irp );
 return status; 
 ```
 
-在这些示例中，对的调用中的第一个参数[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)指向下一个较低级别筛选器驱动程序的设备对象的指针。 第二个参数是指向 IRP。
+在这些示例中，对的调用中的第一个参数[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)指向下一个较低级别筛选器驱动程序的设备对象的指针。 第二个参数是指向 IRP。
 
 ### <a name="span-idadvantagesofthisapproachspanspan-idadvantagesofthisapproachspanspan-idadvantagesofthisapproachspanadvantages-of-this-approach"></a><span id="Advantages_of_This_Approach"></span><span id="advantages_of_this_approach"></span><span id="ADVANTAGES_OF_THIS_APPROACH"></span>此方法的优点
 
-如上所示的方法 (调用[ **IoSkipCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff550355)) 简单且有效，因此应在所有情况下，其中该驱动程序将驱动程序堆栈的下层 IRP 传递而无需注册完成例程。
+如上所示的方法 (调用[ **IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)) 简单且有效，因此应在所有情况下，其中该驱动程序将驱动程序堆栈的下层 IRP 传递而无需注册完成例程。
 
 ### <a name="span-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspandisadvantages-of-this-approach"></a><span id="Disadvantages_of_This_Approach"></span><span id="disadvantages_of_this_approach"></span><span id="DISADVANTAGES_OF_THIS_APPROACH"></span>这种方法的缺点
 
-之后[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)调用时，传递给 IRP 指针**IoCallDriver**不再有效，不能安全地取消引用。 如果该驱动程序需要对其执行进一步处理或清理 IRP 处理的较低级驱动程序后，它必须发送驱动程序堆栈的下层 IRP 之前设置完成例程。 有关编写和设置完成例程的详细信息，请参阅[使用完成例程](using-irp-completion-routines.md)。
+之后[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)调用时，传递给 IRP 指针**IoCallDriver**不再有效，不能安全地取消引用。 如果该驱动程序需要对其执行进一步处理或清理 IRP 处理的较低级驱动程序后，它必须发送驱动程序堆栈的下层 IRP 之前设置完成例程。 有关编写和设置完成例程的详细信息，请参阅[使用完成例程](using-irp-completion-routines.md)。
 
-如果您调用[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)的 IRP，您不能完成例程为其设置。
+如果您调用[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)的 IRP，您不能完成例程为其设置。
 
  
 

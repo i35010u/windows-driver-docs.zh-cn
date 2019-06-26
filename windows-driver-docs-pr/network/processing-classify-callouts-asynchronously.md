@@ -9,24 +9,24 @@ keywords:
 - 分类标注 WDK Windows 筛选平台，异步处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17932ca1577d5817bc23c46c5f7359424751429b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98e6514bf71d95ab505cb073261c70d036c39647
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327707"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385484"
 ---
 # <a name="processing-classify-callouts-asynchronously"></a>以异步方式处理分类标注
 
 
-WFP 标注驱动程序可以授权或拒绝网络操作，或者承认或放弃网络数据包时，通过返回的操作类型**FWP\_操作\_允许**， **FWP\_操作\_继续**，或**FWP\_操作\_阻止**从[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数。 经常标注驱动程序不能返回检查决策及其*classifyFn*函数指示的信息，如与可分类字段、 元数据或数据包，直至可以转发到另一个处理例如，用户模式应用程序的组件。 在这些情况下可能需要在稍后的某个时间以异步方式进行决策。
+WFP 标注驱动程序可以授权或拒绝网络操作，或者承认或放弃网络数据包时，通过返回的操作类型**FWP\_操作\_允许**， **FWP\_操作\_继续**，或**FWP\_操作\_阻止**从[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数。 经常标注驱动程序不能返回检查决策及其*classifyFn*函数指示的信息，如与可分类字段、 元数据或数据包，直至可以转发到另一个处理例如，用户模式应用程序的组件。 在这些情况下可能需要在稍后的某个时间以异步方式进行决策。
 
 ### <a name="general-rules-for-asynchronous-processing"></a>异步处理的一般规则
 
 WFP 支持异步处理*classifyFn*标注函数。 但是，执行此操作的机制不同根据不同的层。
 
 <a href="" id="asynchronous-ale-classify-------"></a>**异步 ALE 分类**   
-标注驱动程序必须调用[ **FwpsPendOperation0** ](https://msdn.microsoft.com/library/windows/hardware/ff551199)函数从*classifyFn*。 必须通过调用完成异步操作[ **FwpsCompleteOperation0** ](https://msdn.microsoft.com/library/windows/hardware/ff551152)函数。
+标注驱动程序必须调用[ **FwpsPendOperation0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendoperation0)函数从*classifyFn*。 必须通过调用完成异步操作[ **FwpsCompleteOperation0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscompleteoperation0)函数。
 
 <a href="" id="asynchronous-packet-classify-------"></a>**异步数据包进行分类**   
 标注驱动程序应返回**FWP\_操作\_阻止**从*classifyFn*函数，与**FWPS\_分类\_OUT\_标志\_消除**标志设置。 网络数据包必须引用或克隆。 异步操作完成 reinjecting 克隆或已修改数据包或以无提示方式丢弃该数据包。
@@ -55,7 +55,7 @@ WFP 支持异步处理*classifyFn*标注函数。 但是，执行此操作的机
 标注驱动程序必须执行异步处理需要 ALE 分类处理传入的数据包 （入站） 传输层 (**FWPS\_层\_入站\_传输\_V4**或**FWPS\_层\_入站\_传输\_V6**)。 执行此操作可能会影响创建流。 当调用 WFP *classifyFn*标注函数在传入的传输层，它会设置**FWPS\_元数据\_字段\_ALE\_分类\_所需**标记为需要 ALE 这些数据包对处理进行分类。 标注驱动程序应允许此类数据包从入站\_传输层和应延迟处理直到其达到 ALE\_收到\_接受层。
 
 <a href="" id="stream-layers-------"></a>**流层**   
-在流层 (**FWPS\_层\_流\_V4**或**FWPS\_层\_流\_V6**)，TCP 数据段表示而不是一个 IP 或 TCP 标头。 流层也是其中的网络缓冲区列表链可以指示调用一次*classifyFn*标注函数。 WFP 使可用的专用的克隆和注入函数[ **FwpsCloneStreamData0** ](https://msdn.microsoft.com/library/windows/hardware/ff551149)并[ **FwpsStreamInjectAsync0**](https://msdn.microsoft.com/library/windows/hardware/ff551213)，为流式传输层标注使用。
+在流层 (**FWPS\_层\_流\_V4**或**FWPS\_层\_流\_V6**)，TCP 数据段表示而不是一个 IP 或 TCP 标头。 流层也是其中的网络缓冲区列表链可以指示调用一次*classifyFn*标注函数。 WFP 使可用的专用的克隆和注入函数[ **FwpsCloneStreamData0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsclonestreamdata0)并[ **FwpsStreamInjectAsync0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)，为流式传输层标注使用。
 
 由于流层数据的按序的送达的性质，标注驱动程序必须继续进行克隆并应对数据所导致的任何长时间的流数据仍是挂起。 混合使用给定的流流的异步和同步操作可能会导致未定义的行为。
 

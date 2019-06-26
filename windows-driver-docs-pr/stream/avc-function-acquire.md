@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 71738f42390217697bf3d72f189ce56a3b78b833
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9edc1b2a8c1a7bd970a369b4068c27b71b083b0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338383"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386751"
 ---
 # <a name="avcfunctionacquire"></a>AVC\_函数\_ACQUIRE
 
@@ -97,8 +97,8 @@ Pin 将变为活动状态时，子单元驱动程序必须使用此函数。
 
 ## <a name="see-also"></a>请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)
 
-[**AVC\_PIN\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff554187)
+[**AVC\_PIN\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_id)
 
-[**AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
+[**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)

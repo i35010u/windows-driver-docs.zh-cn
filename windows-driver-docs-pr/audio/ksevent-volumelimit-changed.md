@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb5b21b1a7b8d8c341092def2c9b35e6fd248b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96ac4f7cf4078420efd7464a519699ad0be3d000
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391519"
 ---
 # <a name="kseventvolumelimitchanged"></a>KSEVENT\_VOLUMELIMIT\_已更改
 
@@ -42,8 +42,8 @@ KSEVENT\_VOLUMELIMIT\_CHANGED 事件指示音频堆栈为音频设备的音频�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561744" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561744)"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561750" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561750)"><strong>KSEVENTDATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -62,11 +62,11 @@ KSEVENT\_VOLUMELIMIT\_CHANGED 事件指示音频堆栈为音频设备的音频�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)
+[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
 [**KSEVENT\_PINCAPS\_格式**](ksevent-pincaps-formatchange.md)
 
-[**KSEVENTDATA**](https://msdn.microsoft.com/library/windows/hardware/ff561750)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
 
  
 

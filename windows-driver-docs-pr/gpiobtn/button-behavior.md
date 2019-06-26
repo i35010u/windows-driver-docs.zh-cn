@@ -4,12 +4,12 @@ description: 本主题介绍的硬件按钮的预期的行为。
 ms.assetid: 057A4F21-3514-4CCA-BCE2-279E8228B5A9
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: db3152b8a63d774b5220ab35b66265586f84f1a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e230e9d2f673fee3c6645d7a06898124b321b215
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326112"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393485"
 ---
 # <a name="button-behavior"></a>按钮行为
 
@@ -34,7 +34,7 @@ ms.locfileid: "63326112"
 <td align="left">操作系统/设备</td>
 <td align="left">电源</td>
 <td align="left">音量增大 / 减小音量</td>
-<td align="left">开始时间</td>
+<td align="left">Start</td>
 <td align="left">返回/搜索</td>
 <td align="left">相机</td>
 <td align="left">旋转锁定</td>
@@ -75,8 +75,8 @@ ms.locfileid: "63326112"
 
 有关按钮要求的详细信息：
 
--   Windows 10 移动版，请参阅中的部分 2.6[最低硬件要求](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx)。
--   对于桌面版本的 Windows 10，请参阅中的部分 3.6[最低硬件要求](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx)。
+-   Windows 10 移动版，请参阅中的部分 2.6[最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)。
+-   对于桌面版本的 Windows 10，请参阅中的部分 3.6[最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)。
 
 ## <a name="span-idbuttonbehaviorinwindows10spanspan-idbuttonbehaviorinwindows10spanspan-idbuttonbehaviorinwindows10spanbutton-behavior-in-windows10"></a><span id="Button_behavior_in_Windows_10"></span><span id="button_behavior_in_windows_10"></span><span id="BUTTON_BEHAVIOR_IN_WINDOWS_10"></span>Windows 10 中的按钮行为
 
@@ -88,7 +88,7 @@ ms.locfileid: "63326112"
 
 ### <a name="span-idbuttoncombinationbehaviorinwindows10spanspan-idbuttoncombinationbehaviorinwindows10spanspan-idbuttoncombinationbehaviorinwindows10spanbutton-combination-behavior-in-windows10"></a><span id="Button_combination_behavior_in_Windows_10"></span><span id="button_combination_behavior_in_windows_10"></span><span id="BUTTON_COMBINATION_BEHAVIOR_IN_WINDOWS_10"></span>Windows 10 中的按钮组合行为
 
-如前所述，在 Windows 10 中某些按钮组合应用于[Windows 10 按钮体系结构](https://msdn.microsoft.com/library/windows/hardware/dn957423%28v=vs.85%29.aspx)或 Windows 8.1 按钮体系结构。 Windows 10 中的所有其他按钮组合应用于任一按钮体系结构。 建议来描述使用 Windows 10 体系结构的硬件按钮。
+如前所述，在 Windows 10 中某些按钮组合应用于[Windows 10 按钮体系结构](https://docs.microsoft.com/windows-hardware/drivers/hid/buttons)或 Windows 8.1 按钮体系结构。 Windows 10 中的所有其他按钮组合应用于任一按钮体系结构。 建议来描述使用 Windows 10 体系结构的硬件按钮。
 
 <table>
 <colgroup>
@@ -155,8 +155,8 @@ Windows 8.1 的 Windows 8.1 Phone Power 按按钮操作和发布切换开/关切
  
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[Windows 10 按钮体系结构](https://msdn.microsoft.com/library/windows/hardware/dn957423%28v=vs.85%29.aspx)  
-[最低硬件要求](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx)  
+[Windows 10 按钮体系结构](https://docs.microsoft.com/windows-hardware/drivers/hid/buttons)  
+[最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)  
 
 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e9a4760eb3d4ccdc3c8ed4a651616804370f0142
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3e8a496c5fe47909ce8e225d34522433e3ea069
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387082"
 ---
 # <a name="devpkeydevicedevicedesc"></a>DEVPKEY_Device_DeviceDesc
 
@@ -60,13 +60,13 @@ DEVPKEY_Device_DeviceDesc 设备属性表示设备实例的说明。
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DeviceDesc 的值将由*设备描述*由提供的项值[ **INF 模型部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)的安装的 INF 文件设备。
+DEVPKEY_Device_DeviceDesc 的值将由*设备描述*由提供的项值[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)的安装的 INF 文件设备。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_DEVICE_DeviceDesc 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_DEVICE_DeviceDesc 值。
 
 可以检索的值[ **DEVPKEY_NAME** ](devpkey-name--device-instance-.md)要检索的设备的名称应显示在用户界面项中的设备实例属性。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DeviceDesc 属性键。 相反，这些早期版本的 Windows 使用的相应 SPDRP_DEVICEDESC 标识符访问属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DeviceDesc 属性键。 相反，这些早期版本的 Windows 使用的相应 SPDRP_DEVICEDESC 标识符访问属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,11 +91,11 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**DEVPKEY_NAME （设备实例）**](devpkey-name--device-instance-.md)
+[**DEVPKEY_NAME （设备实例）** ](devpkey-name--device-instance-.md)
 
-[**INF 模型部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)
+[**INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

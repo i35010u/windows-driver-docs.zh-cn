@@ -6,12 +6,12 @@ keywords:
 - NDIS_STATUS_WWAN_UICC_RESET_INFO，UICC 重置状态通知、 移动宽带 UICC 重置状态通知、 MB UICC 重置状态通知
 ms.date: 08/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6deb8a53742bb47118eb823eefd43633a93e2b09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e378f155cd928e09462f2c498599ee6ccc9a6ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384391"
 ---
 # <a name="ndisstatuswwanuiccresetinfo"></a>NDIS_STATUS_WWAN_UICC_RESET_INFO
 
@@ -20,7 +20,7 @@ ms.locfileid: "63324893"
 1. 之后[OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)查询请求。
 2. 完成 UICC 重置后遵循 OID_WWAN_UICC_RESET 设置请求，以通知 MB 主机 UICC 卡后重置的传递状态。
 
-使用此通知[NDIS_WWAN_UICC_RESET_INFO](https://msdn.microsoft.com/library/windows/hardware/9CBAFC44-187A-41ED-9405-1208167AC75D)结构。
+使用此通知[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)结构。
 
 ## <a name="requirements"></a>要求
 
@@ -33,7 +33,7 @@ ms.locfileid: "63324893"
 
 [OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)
 
-[NDIS_WWAN_UICC_RESET_INFO](https://msdn.microsoft.com/library/windows/hardware/9CBAFC44-187A-41ED-9405-1208167AC75D)
+[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)
 
 [MB 低级别 UICC 访问](mb-low-level-uicc-access.md)
 

@@ -8,12 +8,12 @@ keywords:
 - CAB 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c2ad124295c0e42081b0ae38e359e825fa3be5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6debdcddf4b10a61c76d80d2f322ab0a1b15d37b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385290"
 ---
 # <a name="cabinet-file-function"></a>Cabinet 文件函数
 
@@ -38,7 +38,7 @@ Cabinet (CAB) 文件是单个文件，通常使用。*cab*扩展，为文件库�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377404" data-raw-source="[&lt;strong&gt;SetupIterateCabinet&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377404)"><strong>SetupIterateCabinet</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupiteratecabineta" data-raw-source="[&lt;strong&gt;SetupIterateCabinet&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupiteratecabineta)"><strong>SetupIterateCabinet</strong></a></p></td>
 <td align="left"><p>将通知发送到 CAB 文件中存储每个文件的回调函数。</p></td>
 </tr>
 </tbody>

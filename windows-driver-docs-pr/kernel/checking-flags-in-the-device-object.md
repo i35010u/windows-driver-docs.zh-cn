@@ -9,12 +9,12 @@ keywords:
 - 验证设备对象标志
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a18fbb363181d3199418d64f441f62103aedc7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ea3cea627c87b24ef8c4bffb6d5b24a85deedcc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343724"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383366"
 ---
 # <a name="checking-flags-in-the-device-object"></a>检查设备对象中的标志
 
@@ -24,7 +24,7 @@ ms.locfileid: "63343724"
 
 对于每个请求的 I/O 操作向/从可移动介质的 IRP，可移动介质设备驱动程序必须确定是否执行\_验证\_卷已设置其**DeviceObject-&gt;标志**。 如果设置此值，该驱动程序必须执行以下操作：
 
--   有关[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)， [ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)，和[**IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)请求，检查是否 SL\_重写\_验证\_中设置卷**标志**驱动程序的成员[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构。 如果是，继续请求的操作。
+-   有关[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)， [ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)，和[**IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)请求，检查是否 SL\_重写\_验证\_中设置卷**标志**驱动程序的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构。 如果是，继续请求的操作。
 
     返回有关基础媒体的逻辑结构的信息的设备控制请求具有 SL\_重写\_验证\_卷在 I/O 堆栈位置设置**标志**成员时IFS 装载或逐可移动介质卷。
 

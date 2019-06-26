@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_IP_ADDRESS_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6986232ecebdc566ad5fc76afc9f61910f0e42e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b246b73cc066af436961799c972cdcc05a5a4eec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377285"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377632"
 ---
 # <a name="ndisstatuswwanipaddressstate"></a>NDIS\_状态\_WWAN\_IP\_地址\_状态
 
 
 微型端口驱动程序使用 NDIS\_状态\_WWAN\_IP\_地址\_状态通知来告知附加 PDP 上下文的 IP 配置的更改 MB 服务。
 
-使用此通知[ **NDIS\_WWAN\_IP\_地址\_状态**](https://msdn.microsoft.com/library/windows/hardware/dn449746)结构。
+使用此通知[ **NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -50,7 +50,7 @@ ms.locfileid: "63377285"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_IP\_地址\_状态**](https://msdn.microsoft.com/library/windows/hardware/dn449746)
+[**NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)
 
  
 

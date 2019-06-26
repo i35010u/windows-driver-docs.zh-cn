@@ -18,12 +18,12 @@ keywords:
 - 外部即插即用连接 WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c414a77ea2d7d330e62f9cbf383e8ce4adca0914
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 503fac06f40129fee3101c993859b7d5c01ea1db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386768"
 ---
 # <a name="avc-connection-scenarios"></a>AV/C 连接方案
 
@@ -31,7 +31,7 @@ ms.locfileid: "63384809"
 
 
 
-在 Windows Vista 之前的连接和兼容性管理 (CCM) 协议中*Avc.sys*支持单个连接方案中，计算机充当外部 AV/C 设备启动流式处理数据的控制器从设备中。 例如，若要开始流式处理中的连接管理*Avc.sys*之间建立了连接在设备上的子单元和将设备单位等时输出插件通过使用连接和断开连接单元命令 ([**AVC\_函数\_ACQUIRE** ](https://msdn.microsoft.com/library/windows/hardware/ff554148)并[ **AVC\_函数\_发布**](https://msdn.microsoft.com/library/windows/hardware/ff554169)，分别）。 有关 AV/C 规范和 CCM 协议的详细信息，请参阅[1394年贸易协会](https://go.microsoft.com/fwlink/p/?linkid=518448)网站。
+在 Windows Vista 之前的连接和兼容性管理 (CCM) 协议中*Avc.sys*支持单个连接方案中，计算机充当外部 AV/C 设备启动流式处理数据的控制器从设备中。 例如，若要开始流式处理中的连接管理*Avc.sys*之间建立了连接在设备上的子单元和将设备单位等时输出插件通过使用连接和断开连接单元命令 ([**AVC\_函数\_ACQUIRE** ](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-acquire)并[ **AVC\_函数\_发布**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-release)，分别）。 有关 AV/C 规范和 CCM 协议的详细信息，请参阅[1394年贸易协会](https://go.microsoft.com/fwlink/p/?linkid=518448)网站。
 
 在 Windows Vista 中，连接管理进行了改进以支持七个更多连接方案，以便*Avc.sys*支持八个单元/子单元连接方案。 连接管理改进可添加子单元插入到其他子单元插入; 支持的连接将子单元连接可以是同一 AV/C 单位中或在不同的 AV/C 单位。 *Avc.sys*使用信号源，然后输入选择 CCM 协议单元命令之间建立连接。 (*Avc.sys*支持其他 CCM 协议单元命令，如输出预设，仅对 AV/C 规范要求的级别。)
 
@@ -43,7 +43,7 @@ ms.locfileid: "63384809"
 
 为 Windows Vista 中实现的改进的连接管理*Avc.sys*适用于连接，在其中了设备可以响应 AV/C 命令以生成内部连接到的第一个类型。 中的改进的连接管理*Avc.sys*可以端到端之间建立连接两个磁带子单元连接中不同的 AV/C 设备 （同一 IEEE 1394 总线上），如果设备支持 AV/C CCM 协议。
 
-**请注意**  *Avc.sys*不支持连接 （内存缓冲区） 的第二个类型。 但是，连接的内存缓冲区类型遵循[IEC 61883](https://msdn.microsoft.com/library/windows/hardware/ff537188)协议，支持由基础*是 61883.sys* （其中的计算机涉及到内存缓冲区中的同一堆栈中的驱动程序连接）。
+**请注意**  *Avc.sys*不支持连接 （内存缓冲区） 的第二个类型。 但是，连接的内存缓冲区类型遵循[IEC 61883](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)协议，支持由基础*是 61883.sys* （其中的计算机涉及到内存缓冲区中的同一堆栈中的驱动程序连接）。
 
  
 
@@ -51,7 +51,7 @@ ms.locfileid: "63384809"
 
 四种方案 (1 到 4) 表示*内部*-设备连接。 这些连接都在一个 AV/C 完全包含在。 四个其他方案 (5 至 8) 表示*间*-设备连接。 这些连接是两个不同的 AV/C 单位之间。
 
-以下主题讨论的成员的八个不同 AV/C 连接管理方案和相应的值[ **AVCCONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554101)结构：
+以下主题讨论的成员的八个不同 AV/C 连接管理方案和相应的值[ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)结构：
 
 [子单元插入和一个 AV/C 单位内的单元插入之间的连接](connections-between-subunit-plugs-and-unit-plugs-within-one-av-c-unit.md)
 

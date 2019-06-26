@@ -10,12 +10,12 @@ keywords:
 - 存储磁带驱动程序 WDK，有关磁带驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b559bb3fa2a7804b1baf392d49ff3ac4aa9f23d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 675b243123df0199db857a1291f9a3d975befe84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383557"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386808"
 ---
 # <a name="tape-drivers"></a>磁带驱动程序
 
@@ -39,7 +39,7 @@ ms.locfileid: "63383557"
 
 必须修改现有磁带 miniclass 驱动程序，以支持一个新入口点，TapeMiniGetMediaTypes，才能生成和运行 Windows 2000 和更高版本操作系统下。 不不需要任何其他修改。 在系统提供磁带类驱动程序，以及系统提供的存储端口驱动程序、 句柄插和代表磁带 miniclass 驱动程序的电源管理请求。
 
-本部分介绍特定于操作系统的磁带类驱动程序提供的支持，并为编写新的磁带 miniclass 驱动程序提供了指导原则。 请参阅[磁带类驱动程序例程](https://msdn.microsoft.com/library/windows/hardware/ff567959)并[磁带 Miniclass 驱动程序例程](https://msdn.microsoft.com/library/windows/hardware/ff567970)磁带中的例程的详细信息类和磁带 miniclass 驱动程序。 请参阅[设备的配置和层的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff543100)有关存储设备驱动程序层的说明。
+本部分介绍特定于操作系统的磁带类驱动程序提供的支持，并为编写新的磁带 miniclass 驱动程序提供了指导原则。 请参阅[磁带类驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)并[磁带 Miniclass 驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)磁带中的例程的详细信息类和磁带 miniclass 驱动程序。 请参阅[设备的配置和层的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-configurations-and-layered-drivers)有关存储设备驱动程序层的说明。
 
  
 

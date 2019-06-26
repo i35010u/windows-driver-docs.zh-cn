@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ae3d375364af04c44885430f53ea11c30213b9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77d7b4c575ed8d69940dddeb77f24fe2eb615539
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363897"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386425"
 ---
 # <a name="guiddevinterfacepartition"></a>GUID_DEVINTERFACE_PARTITION
 
 
-GUID_DEVINTERFACE_PARTITION[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为分区的设备定义。
+GUID_DEVINTERFACE_PARTITION[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为分区的设备定义。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_DEVINTERFACE_PARTITION[设备接口类](https://msdn.microsoft.com/library/
 <a name="remarks"></a>备注
 -------
 
-系统提供[存储设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566976)注册的是子设备分区实例 GUID_DEVINTERFACE_PARTITION[存储设备](https://msdn.microsoft.com/library/windows/hardware/ff566969)。
+系统提供[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)注册的是子设备分区实例 GUID_DEVINTERFACE_PARTITION[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。
 
 [**PartitionClassGuid** ](partitionclassguid.md) GUID_DEVINTERFACE_PARTITION 设备接口类的已过时标识符。 对于此类的新实例，请改为使用 GUID_DEVINTERFACE_PARTITION。
 

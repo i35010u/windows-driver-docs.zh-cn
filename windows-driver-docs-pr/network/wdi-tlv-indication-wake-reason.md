@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INDICATION_WAKE_REASON 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 883f368ed0da138f079f9657697f22ebc094f254
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 154a4eac601e9f9f76413f040664ed61afb3526f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380779"
 ---
 # <a name="wditlvindicationwakereason"></a>WDI\_TLV\_指示\_唤醒\_原因
 
 
-WDI\_TLV\_指示\_唤醒\_原因是包含唤醒原因 TLV [NDIS\_状态\_WDI\_指示\_唤醒\_原因](https://msdn.microsoft.com/library/windows/hardware/dn925669)。
+WDI\_TLV\_指示\_唤醒\_原因是包含唤醒原因 TLV [NDIS\_状态\_WDI\_指示\_唤醒\_原因](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-wake-reason)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

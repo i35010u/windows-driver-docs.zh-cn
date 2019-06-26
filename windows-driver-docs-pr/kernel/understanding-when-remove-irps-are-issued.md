@@ -8,12 +8,12 @@ keywords:
 - I/O 请求数据包 WDK 即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d658f24a3a803057f393bcc410621083a79bd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac338558a121e5d9fb176bb395ba96a20a31fc92
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382935"
 ---
 # <a name="understanding-when-remove-irps-are-issued"></a>了解删除 IRP 的命令是何时发出的
 
@@ -29,7 +29,7 @@ ms.locfileid: "63355308"
 
 1.  删除查询
 
-    即插即用 manager 问题[ **IRP\_MN\_查询\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551705)询问是否可以无需中断在计算机中移除某个设备。 它还会发送此 IRP，当用户请求时更新设备管理器禁用的设备驱动程序的设备和 （在 Windows 2000 和更高版本）。 (在 Windows 98 上 / PnP 管理器发送我，在此情况下停止 Irp; 请参阅[停止设备](stopping-a-device.md)有关详细信息。)
+    即插即用 manager 问题[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)询问是否可以无需中断在计算机中移除某个设备。 它还会发送此 IRP，当用户请求时更新设备管理器禁用的设备驱动程序的设备和 （在 Windows 2000 和更高版本）。 (在 Windows 98 上 / PnP 管理器发送我，在此情况下停止 Irp; 请参阅[停止设备](stopping-a-device.md)有关详细信息。)
 
     如果设备堆栈中的所有驱动程序返回状态\_成功后，驱动程序已将设备置于挂起删除状态。 在此状态下，驱动程序必须启动删除阻止设备的任何操作。
 
@@ -39,25 +39,25 @@ ms.locfileid: "63355308"
 
 2.  成功查询后删除
 
-    即插即用 manager 问题[ **IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738)删除设备驱动程序。
+    即插即用 manager 问题[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)删除设备驱动程序。
 
     驱动程序必须成功完成此请求。 设备的驱动程序执行任何必要的清理、 从设备堆栈中分离和删除 FDO 和任何筛选 DOs。 父总线驱动程序将保留 PDO，直到用户从计算机中物理移除设备。
 
-    请注意驱动程序可能会收到[ **IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)在删除之前 IRP，但它不是必需。 在 Windows 2000 及更高版本， **IRP\_MN\_停止\_设备**只能与使用暂停设备的资源重新平衡; 它不是步删除。 如果用户删除设备硬件设备停止时，即插即用管理器将在某个时候删除 IRP 发送后停止 IRP，但停止不是删除的先决条件。
+    请注意驱动程序可能会收到[ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)在删除之前 IRP，但它不是必需。 在 Windows 2000 及更高版本， **IRP\_MN\_停止\_设备**只能与使用暂停设备的资源重新平衡; 它不是步删除。 如果用户删除设备硬件设备停止时，即插即用管理器将在某个时候删除 IRP 发送后停止 IRP，但停止不是删除的先决条件。
 
 3.  Reenumerate 设备
 
-    如果设备重新枚举驱动程序已删除其设备对象后，即插即用管理器会调用驱动程序的[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程和问题[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)可恢复已暂停设备。 (另请参阅[视角即插即用设备状态](state-transitions-for-pnp-devices.md#ddk-state-transitions-for-pnp-devices-kg)图。)
+    如果设备重新枚举驱动程序已删除其设备对象后，即插即用管理器会调用驱动程序的[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程和问题[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)可恢复已暂停设备。 (另请参阅[视角即插即用设备状态](state-transitions-for-pnp-devices.md#ddk-state-transitions-for-pnp-devices-kg)图。)
 
 4.  取消查询删除
 
-    即插即用 manager 问题[ **IRP\_MN\_取消\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff550823)来取消的查询删除请求。
+    即插即用 manager 问题[ **IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)来取消的查询删除请求。
 
     以响应**IRP\_MN\_取消\_删除\_设备**，驱动程序将设备恢复为其已启动状态。
 
 5.  意外删除 （Windows 2000 和更高版本的 Windows）
 
-    在 Windows 2000 和更高版本的系统，如果用户断开而无需使用拔出或弹出硬件程序从计算机的设备的即插即用的管理器将发送[ **IRP\_MN\_惊讶\_删除**](https://msdn.microsoft.com/library/windows/hardware/ff551760) IRP。
+    在 Windows 2000 和更高版本的系统，如果用户断开而无需使用拔出或弹出硬件程序从计算机的设备的即插即用的管理器将发送[ **IRP\_MN\_惊讶\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal) IRP。
 
     这种情况下被称为"意外"删除，因为驱动程序不出现任何提前警告。
 
@@ -69,11 +69,11 @@ ms.locfileid: "63355308"
 
 6.  删除后意外删除 （Windows 2000 和更高版本的 Windows）
 
-    PnP 管理器时都将关闭所有打开的句柄到设备，将发送[ **IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738)到设备的驱动程序的请求。 每个驱动程序从设备堆栈中分离，并删除其设备对象。
+    PnP 管理器时都将关闭所有打开的句柄到设备，将发送[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)到设备的驱动程序的请求。 每个驱动程序从设备堆栈中分离，并删除其设备对象。
 
 7.  意外删除 (Windows 98 / 我)
 
-    在 Windows 98 上 / 我来说，不会收到一个驱动程序[ **IRP\_MN\_惊讶\_删除**](https://msdn.microsoft.com/library/windows/hardware/ff551760)何时设备删除而不发出警告。 PnP 管理器仅发送**IRP\_MN\_删除\_设备**。 WDM 驱动程序必须具有代码处理两者**IRP\_MN\_惊讶\_删除**跟**IRP\_MN\_删除\_设备** （Windows 2000 和更高版本的行为感到惊讶删除） 和一个**IRP\_MN\_删除\_设备**事先惊讶-删除 IRP (Windows 98 / 我行为）。
+    在 Windows 98 上 / 我来说，不会收到一个驱动程序[ **IRP\_MN\_惊讶\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)何时设备删除而不发出警告。 PnP 管理器仅发送**IRP\_MN\_删除\_设备**。 WDM 驱动程序必须具有代码处理两者**IRP\_MN\_惊讶\_删除**跟**IRP\_MN\_删除\_设备** （Windows 2000 和更高版本的行为感到惊讶删除） 和一个**IRP\_MN\_删除\_设备**事先惊讶-删除 IRP (Windows 98 / 我行为）。
 
 8.  删除后失败的启动 (Windows 2000 及更高版本)
 

@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADD_WOL_PATTERN 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4def5ce6b4796889502ae2ab3bf5551026063578
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a195f4555e5b1be337b586a84521ebba5f5d2535
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387252"
 ---
 # <a name="oidwdisetaddwolpattern"></a>OID\_WDI\_SET\_ADD\_WOL\_PATTERN
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_添加\_WOL\_模式将 LAN 唤醒 (WOL) 模式添加到固件�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -32,11 +32,11 @@ OID\_WDI\_设置\_添加\_WOL\_模式将 LAN 唤醒 (WOL) 模式添加到固件�
 
 | TLV                                                                                                              | 允许多个 TLV 实例 | 可选 | 描述                                   |
 |------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------|
-| [**WDI\_TLV\_WAKE\_PACKET\_BITMAP\_PATTERN**](https://msdn.microsoft.com/library/windows/hardware/dn898084)                       | X                              | X        | WOL 模式信息。                      |
-| [**WDI\_TLV\_WAKE\_PACKET\_MAGIC\_PACKET**](https://msdn.microsoft.com/library/windows/hardware/dn898185)                           |                                | X        | 模式的幻数据包的 ID。               |
-| [**WDI\_TLV\_WAKE\_PACKET\_IPv4\_TCP\_SYNC**](https://msdn.microsoft.com/library/windows/hardware/dn898089)                        | X                              | X        | WOL IPv4 TCP 同步数据包信息。         |
-| [**WDI\_TLV\_WAKE\_PACKET\_IPv6\_TCP\_SYNC**](https://msdn.microsoft.com/library/windows/hardware/dn898091)                        | X                              | X        | WOL IPv4 TCP 同步数据包信息。         |
-| [**WDI\_TLV\_WAKE\_PACKET\_EAPOL\_REQUEST\_ID\_MESSAGE**](https://msdn.microsoft.com/library/windows/hardware/dn898087) |                                | X        | WOL EAPOL 请求 ID 消息模式 ID。 |
+| [**WDI\_TLV\_WAKE\_PACKET\_BITMAP\_PATTERN**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wake-packet-bitmap-pattern)                       | X                              | X        | WOL 模式信息。                      |
+| [**WDI\_TLV\_WAKE\_PACKET\_MAGIC\_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wake-packet-magic-packet)                           |                                | X        | 模式的幻数据包的 ID。               |
+| [**WDI\_TLV\_WAKE\_PACKET\_IPv4\_TCP\_SYNC**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wake-packet-ipv4-tcp-sync)                        | X                              | X        | WOL IPv4 TCP 同步数据包信息。         |
+| [**WDI\_TLV\_WAKE\_PACKET\_IPv6\_TCP\_SYNC**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wake-packet-ipv6-tcp-sync)                        | X                              | X        | WOL IPv4 TCP 同步数据包信息。         |
+| [**WDI\_TLV\_WAKE\_PACKET\_EAPOL\_REQUEST\_ID\_MESSAGE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wake-packet-eapol-request-id-message) |                                | X        | WOL EAPOL 请求 ID 消息模式 ID。 |
 
  
 

@@ -4,19 +4,19 @@ description: 启用 Hyper-V 可扩展交换机扩展
 ms.assetid: 13FD68CB-8F50-4BE3-8822-03464D8C118C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d1a3a90dcff5d00d692ca2d4598d2b3568e05ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 971de17905c9f848856088c0e85b21fea2c77cd4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379434"
 ---
 # <a name="enabling-hyper-v-extensible-switch-extensions"></a>启用 Hyper-V 可扩展交换机扩展
 
 
 当安装 HYPER-V 可扩展交换机扩展时，将它们绑定到可扩展交换机的每个实例。 但是，扩展默认情况下禁用，必须显式启用每个可扩展交换机实例上。
 
-[Enable-vmswitchextension](https://technet.microsoft.com/library/hh848541.aspx) PowerShell cmdlet 可启用可扩展交换机的特定实例中的扩展。 此 cmdlet 使用以下语法：
+[Enable-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/enable-vmswitchextension) PowerShell cmdlet 可启用可扩展交换机的特定实例中的扩展。 此 cmdlet 使用以下语法：
 
 ``` syntax
 Enable-VMSwitchExtension [-Name] <string[]> [-ComputerName <string[]>] [<CommonParameters>]
@@ -50,11 +50,11 @@ Enabled       : True
 ## <a name="related-topics"></a>相关主题
 
 
-[Enable-VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)
+[Enable-VMSwitchExtension](https://docs.microsoft.com/powershell/module/hyper-v/enable-vmswitchextension)
 
-[Get-VMSwitchExtension](https://technet.microsoft.com/library/hh848603.aspx)
+[Get-VMSwitchExtension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension)
 
-[**Msvm\_EthernetSwitchExtension**](https://msdn.microsoft.com/library/hh850139)
+[**Msvm\_EthernetSwitchExtension**](https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-ethernetswitchextension)
 
  
 

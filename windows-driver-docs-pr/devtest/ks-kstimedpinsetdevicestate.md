@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4365bb1777a0b3fa5df8bb5b6fbb1d6c43e7c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 387094265ac5224db0b66ddc77954714f35d0fe1
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360383"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392721"
 ---
 # <a name="kstimedpinsetdevicestate-rule-"></a>KsTimedPinSetDeviceState 规则 （)
 
 
-KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序，可使用 AVStream 微型驱动程序的状态转换[ *AVStrMiniPinSetDeviceState* ](https://msdn.microsoft.com/library/windows/hardware/ff556359)例程中所需的时间。
+KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序，可使用 AVStream 微型驱动程序的状态转换[ *AVStrMiniPinSetDeviceState* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)例程中所需的时间。
 
 |              |     |
 |--------------|-----|
@@ -30,7 +30,7 @@ KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序，�
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00082001) |
+| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00082001) |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -49,7 +49,7 @@ KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序，�
 <td align="left"><p>若要验证此规则，请打开命令提示符窗口。 输入驱动程序验证程序命令，并指定<strong>/domain ks</strong>。</p>
 <p>例如：</p>
 <p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +59,7 @@ KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序，�
 <a name="see-also"></a>请参阅
 --------
 
-[*AVStrMiniPinSetDeviceState*](https://msdn.microsoft.com/library/windows/hardware/ff556359)
+[*AVStrMiniPinSetDeviceState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)
  
 
  

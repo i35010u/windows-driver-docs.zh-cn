@@ -9,12 +9,12 @@ keywords:
 - 失败的驱动程序 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89084e7b74639d56629afc521a6ed1a4c8b2a0eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37a7ea0e4fcb927bdb8d1e77f1bcd5bdc638f9eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325934"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382836"
 ---
 # <a name="how-umdf-handles-driver-failures"></a>UMDF 如何处理驱动程序故障
 
@@ -29,7 +29,7 @@ ms.locfileid: "63325934"
     -   反射器完成未完成 i/o 操作的状态\_驱动程序\_进程\_已终止错误代码。
     -   Microsoft Win32 应用程序收到错误消息\_驱动程序\_进程\_已终止未完成 i/o 操作的错误代码。
 
-    **请注意**  在 Microsoft Windows XP 运行该发送程序完成状态为未完成 I/O\_驱动程序\_内部\_错误，Win32 应用程序，反过来，收到错误\_IO\_针对未完成 I/O 设备错误代码。 因此，在 Windows XP 运行的应用程序不应使用错误\_IO\_设备检测驱动程序失败，因为它们不能确定从一个典型的 I/O 请求 （例如，状态返回的状态的任何差异返回通过调用 Win32 [ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)函数)。
+    **请注意**  在 Microsoft Windows XP 运行该发送程序完成状态为未完成 I/O\_驱动程序\_内部\_错误，Win32 应用程序，反过来，收到错误\_IO\_针对未完成 I/O 设备错误代码。 因此，在 Windows XP 运行的应用程序不应使用错误\_IO\_设备检测驱动程序失败，因为它们不能确定从一个典型的 I/O 请求 （例如，状态返回的状态的任何差异返回通过调用 Win32 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数)。
 
      
 

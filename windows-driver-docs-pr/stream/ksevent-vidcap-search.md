@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a9dab39084f124240b94bfa0b5761550e19be4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddb32ad312405eddbcb4a65e3f9e8871200ef608
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360457"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393388"
 ---
 # <a name="kseventvidcapsearch"></a>KSEVENT\_VIDCAP\_SEARCH
 
@@ -51,8 +51,8 @@ KSEVENT\_VIDCAP\_自动\_搜索完成后触发更新事件。
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561744" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561744)"><strong>KSEVENT</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561750" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561750)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ KSEVENT\_VIDCAP\_自动\_搜索完成后触发更新事件。
 
 客户端可能会注册为搜索特定跟踪，例如，若要搜索完成后收到通知时此事件。
 
-有关 DirectShow 筛选器和 KsProxy 详细信息请参阅[内核流式处理代理](https://msdn.microsoft.com/library/windows/hardware/ff560877)。
+有关 DirectShow 筛选器和 KsProxy 详细信息请参阅[内核流式处理代理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)。
 
  
 

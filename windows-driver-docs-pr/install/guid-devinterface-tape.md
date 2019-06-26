@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2abd46d4145958c2a1aed807e71359413c069499
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd9fd6a1352624fb56b3dd2fafd0d5d5b2755b37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377049"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386420"
 ---
 # <a name="guiddevinterfacetape"></a>GUID_DEVINTERFACE_TAPE
 
 
-GUID_DEVINTERFACE_TAPE[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为磁带定义[存储设备](https://msdn.microsoft.com/library/windows/hardware/ff566969)。
+GUID_DEVINTERFACE_TAPE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为磁带定义[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_TAPE[设备接口类](https://msdn.microsoft.com/library/windo
 <a name="remarks"></a>备注
 -------
 
-系统提供[磁带类驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff567961)注册 GUID_DEVINTERFACE_TAPE 通知操作系统和应用程序的磁带存储设备状态的实例。
+系统提供[磁带类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/tape-drivers)注册 GUID_DEVINTERFACE_TAPE 通知操作系统和应用程序的磁带存储设备状态的实例。
 
-有关存储驱动程序的详细信息，请参阅[存储设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566976)。
+有关存储驱动程序的详细信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
 <a name="requirements"></a>要求
 ------------

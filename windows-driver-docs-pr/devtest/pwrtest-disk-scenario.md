@@ -4,12 +4,12 @@ description: PwrTest 磁盘的情况下监视磁盘空闲的统计信息和向�
 ms.assetid: E54AA721-27C6-4E42-B42A-77AC70711A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 671cee3e73d0a0a64a8efbf4a4c2cea17cd1d265
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da12a7c265694dd3d4bfd73525088ba8f2d2af2e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345791"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393501"
 ---
 # <a name="pwrtest-disk-scenario"></a>PwrTest 磁盘方案
 
@@ -18,7 +18,7 @@ PwrTest 磁盘的情况下监视磁盘空闲的统计信息和向下数值调节
 
 此方案主要用于 Windows 7 硬盘电源活动，后续版本的 Windows 跟踪磁盘空闲的 Pwrtest 目前不支持使用不同的机制。 对于 Windows 7 比更高版本的 Windows 版本，使用[Windows 性能工具包 (WPT)](https://go.microsoft.com/fwlink/p/?linkid=294280)。 WPT 包括 Windows 性能记录器 (WPR) 可用于跟踪的内核模式电源提供程序和 Windows Performance Analyzer (WPA)，可以显示电源框架 (PoFx) 设备统计信息，之后可以以图形转换。
 
-**请注意**  由于并非所有存储驱动程序都注册为空闲检测，这种情况下不适合所有类型的磁盘或控制器。 请参阅[存储类驱动程序中处理即插即用启动](https://msdn.microsoft.com/library/windows/hardware/ff554995)有关详细信息。
+**请注意**  由于并非所有存储驱动程序都注册为空闲检测，这种情况下不适合所有类型的磁盘或控制器。 请参阅[存储类驱动程序中处理即插即用启动](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-pnp-start-in-a-storage-class-driver)有关详细信息。
 
  
 
@@ -29,7 +29,7 @@ PwrTest 磁盘的情况下监视磁盘空闲的统计信息和向下数值调节
 pwrtest /disk  [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**/t:**<em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span> **/t:** <em>n</em>  
 为方案运行指定的总时间 （以分钟为单位） (默认值*n*为 30 分钟)。
 
 **示例**
@@ -140,11 +140,11 @@ pwrtest /disk
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;BusyCount&gt;</strong></td>
-<td align="left"><p>设备驱动程序调用的次数<a href="https://msdn.microsoft.com/library/windows/hardware/ff559755" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559755)"> <strong>PoSetDeviceBusy</strong> </a>期间。</p></td>
+<td align="left"><p>设备驱动程序调用的次数<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong> </a>期间。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AccruedBusyCount&gt;</strong></td>
-<td align="left"><p>数乘以设备驱动程序调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff559755" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559755)"> <strong>PoSetDeviceBusy</strong> </a>总数。</p></td>
+<td align="left"><p>数乘以设备驱动程序调用<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong> </a>总数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;IdlePowerState&gt;</strong></td>

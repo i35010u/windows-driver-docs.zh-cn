@@ -4,12 +4,12 @@ description: 设计移动宽带应用中的计费页面
 ms.assetid: 44c5a273-1dd4-4ff5-90aa-9d1f4f855439
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2abd40354ef9dd74f550d750593324007ca59070
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9dd3cd0f252241bd895de3e3f5eec335941d4d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383792"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379440"
 ---
 # <a name="design-billing-pages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的计费页面
 
@@ -48,17 +48,17 @@ ms.locfileid: "63383792"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>其他资源
 
 
--   有关视图和布局的详细信息： 请参阅[选择一种布局](https://msdn.microsoft.com/library/windows/apps/hh465327)。
+-   有关视图和布局的详细信息： 请参阅[选择一种布局](https://docs.microsoft.com/previous-versions/windows/apps/hh465327(v=win.10))。
 
--   有关 Listview 的详细信息，请参阅[快速入门：添加 ListView](https://msdn.microsoft.com/library/windows/apps/hh465496)。
+-   有关 Listview 的详细信息，请参阅[快速入门：添加 ListView](https://docs.microsoft.com/previous-versions/windows/apps/hh465496(v=win.10))。
 
--   错误处理的设计指南，请参阅[布置 UI](https://msdn.microsoft.com/library/windows/apps/hh465304)。
+-   错误处理的设计指南，请参阅[布置 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))。
 
--   有关可访问性的指南，请参阅[中使用的 UWP 应用的辅助功能C++， C#，或 Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)。
+-   有关可访问性的指南，请参阅[中使用的 UWP 应用的辅助功能C++， C#，或 Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh452680(v=win.10))。
 
--   有关如何使用内置控件的详细信息，请参阅[添加控件和内容](https://msdn.microsoft.com/library/windows/apps/hh465393)。
+-   有关如何使用内置控件的详细信息，请参阅[添加控件和内容](https://docs.microsoft.com/previous-versions/windows/apps/hh465393(v=win.10))。
 
--   触摸输入准则，请参阅[快速入门：触摸输入](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)。
+-   触摸输入准则，请参阅[快速入门：触摸输入](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

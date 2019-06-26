@@ -12,12 +12,12 @@ keywords:
 - 基于数据包的 DMA WDK 微型端口概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40297b11d5225031b27f20f20ea64e3d56532154
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 949e75163c24cab7cc5147499bb018f82c85f34b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341593"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384614"
 ---
 # <a name="bus-master-dma-in-video-miniport-drivers"></a>视频微型端口驱动程序中的总线主控 DMA
 
@@ -39,7 +39,7 @@ ms.locfileid: "63341593"
 
 根据主机总线适配器的性质，某些微型端口驱动程序以独占方式使用基于数据包的 DMA、 其他人以独占方式，使用常见缓冲区 DMA 和一些同时使用。
 
-无论使用哪种类型的 DMA，微型端口驱动程序应调用[ **VideoPortGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff570312)若要获取指向的指针[**副总裁\_DMA\_适配器**](https://msdn.microsoft.com/library/windows/hardware/ff570570)结构，并将其用于后续 DMA 函数调用。 微型端口驱动程序时不再需要 DMA 可以继续工作，应调用[ **VideoPortPutDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff570335)放弃该适配器对象。
+无论使用哪种类型的 DMA，微型端口驱动程序应调用[ **VideoPortGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetdmaadapter)若要获取指向的指针[**副总裁\_DMA\_适配器**](https://docs.microsoft.com/previous-versions/ff570570(v=vs.85))结构，并将其用于后续 DMA 函数调用。 微型端口驱动程序时不再需要 DMA 可以继续工作，应调用[ **VideoPortPutDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportputdmaadapter)放弃该适配器对象。
 
 以下各小节介绍如何使用提供的视频端口驱动程序的基于数据包的和常见缓冲区 DMA 支持。
 

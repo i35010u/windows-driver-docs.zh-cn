@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_ACTION_FRAME_RECEIVED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 042bf4c394103a7b89c65ec3b3940bd06f348ed4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93a2e16bb88167afb0444ba76060fcc80ba35451
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380877"
 ---
 # <a name="ndisstatuswdiindicationp2pactionframereceived"></a>NDIS\_状态\_WDI\_指示\_P2P\_操作\_帧\_接收时间
 
@@ -20,7 +20,7 @@ ms.locfileid: "63390672"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -37,7 +37,7 @@ ms.locfileid: "63390672"
 
 | 在任务栏的搜索框中键入                                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_传入\_帧\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn897957) |                                |          | 传入的 Wi-Fi Direct 操作帧信息。 此信息转发回该端口，当主机发出[OID\_WDI\_任务\_P2P\_发送\_响应\_操作\_帧](oid-wdi-task-p2p-send-response-action-frame.md). |
+| [**WDI\_TLV\_P2P\_传入\_帧\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-incoming-frame-information) |                                |          | 传入的 Wi-Fi Direct 操作帧信息。 此信息转发回该端口，当主机发出[OID\_WDI\_任务\_P2P\_发送\_响应\_操作\_帧](oid-wdi-task-p2p-send-response-action-frame.md). |
 
  
 

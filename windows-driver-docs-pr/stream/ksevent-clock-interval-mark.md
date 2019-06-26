@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d68113c0a816febb25949c9c4ad91fe10e424122
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1593765b0264780eadb5e18d76ec2ba506e6a6fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382434"
 ---
 # <a name="kseventclockintervalmark"></a>KSEVENT\_时钟\_间隔\_标记
 
@@ -29,12 +29,12 @@ ms.locfileid: "56546248"
 
 ### <a name="span-ideventdataspanspan-ideventdataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>事件数据
 
-使用类型的结构[ **KSEVENT\_时间\_间隔**](https://msdn.microsoft.com/library/windows/hardware/ff561887)作为*OutBuffer*参数调用时[ **KsSynchronousDeviceControl** ](https://msdn.microsoft.com/library/windows/hardware/ff567142)注册此事件。
+使用类型的结构[ **KSEVENT\_时间\_间隔**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksevent_time_interval)作为*OutBuffer*参数调用时[ **KsSynchronousDeviceControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)注册此事件。
 
 <a name="remarks"></a>备注
 -------
 
-有关如何注册事件的信息，请参阅[KS 事件](https://msdn.microsoft.com/library/windows/hardware/ff567643)。
+有关如何注册事件的信息，请参阅[KS 事件](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-events)。
 
  
 

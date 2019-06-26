@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_DOT11_RESET 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c051f1df5631ebbca54ba0e63705c38d94de7723
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f1f542cdb1c496fac86081a07ac9e558aa5cf4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383589"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386213"
 ---
 # <a name="oidwditaskdot11reset"></a>OID\_WDI\_TASK\_DOT11\_RESET
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_DOT11\_IHV 组件重置指定端口上的 MAC 和物理状态�
 
 | Object | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------|---------------------------------------|---------------------------------|
-| 端口   | 否            | 1                                     | 1                               |
+| Port   | 否            | 1                                     | 1                               |
 
  
 
@@ -43,8 +43,8 @@ Dot11 重置组合 802.11 MLME 和 PLME 重置基元的语义。 当 IHV 组件�
 
 | TLV                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                       |
 |-----------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------|
-| [**WDI\_TLV\_DOT11\_RESET\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926302) |                                |          | Dot11 重置的参数。                   |
-| [**WDI\_TLV\_已配置\_MAC\_地址**](https://msdn.microsoft.com/library/windows/hardware/dn926257) |                                | X        | 应使用的端口 MAC 地址。 |
+| [**WDI\_TLV\_DOT11\_RESET\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-dot11-reset-parameters) |                                |          | Dot11 重置的参数。                   |
+| [**WDI\_TLV\_已配置\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-configured-mac-address) |                                | X        | 应使用的端口 MAC 地址。 |
 
  
 

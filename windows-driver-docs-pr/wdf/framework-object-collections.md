@@ -9,12 +9,12 @@ keywords:
 - 对象集合 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcd405f43bfe91a7154eadf1decf198a09ec88d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9021fce6e571bc110c4965eeb885d6d99ba480ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384461"
 ---
 # <a name="framework-object-collections"></a>框架对象集合
 
@@ -34,37 +34,37 @@ ms.locfileid: "63353218"
 
 -   创建集合对象。
 
-    若要创建新的集合，驱动程序可以调用[ **WdfCollectionCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545747)。
+    若要创建新的集合，驱动程序可以调用[ **WdfCollectionCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectioncreate)。
 
 -   将对象添加到集合。
 
-    若要将对象添加到集合中，驱动程序可以调用[ **WdfCollectionAdd**](https://msdn.microsoft.com/library/windows/hardware/ff545732)、 一个或多个时间。 每次调用**WdfCollectionAdd**将对象追加到集合的末尾并追加的对象的引用计数会递增。
+    若要将对象添加到集合中，驱动程序可以调用[ **WdfCollectionAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectionadd)、 一个或多个时间。 每次调用**WdfCollectionAdd**将对象追加到集合的末尾并追加的对象的引用计数会递增。
 
 -   从集合中移除一个对象。
 
-    若要从集合中移除一个对象，并减少其引用计数，驱动程序可以调用[ **WdfCollectionRemove** ](https://msdn.microsoft.com/library/windows/hardware/ff545784)或[ **WdfCollectionRemoveItem**](https://msdn.microsoft.com/library/windows/hardware/ff545792). 删除对象后之后删除, 的所有对象都具有其索引自动减少。
+    若要从集合中移除一个对象，并减少其引用计数，驱动程序可以调用[ **WdfCollectionRemove** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectionremove)或[ **WdfCollectionRemoveItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectionremoveitem). 删除对象后之后删除, 的所有对象都具有其索引自动减少。
 
 -   获取集合中的对象数。
 
-    若要确定集合中包含的对象数，驱动程序可以调用[ **WdfCollectionGetCount**](https://msdn.microsoft.com/library/windows/hardware/ff545759)。
+    若要确定集合中包含的对象数，驱动程序可以调用[ **WdfCollectionGetCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetcount)。
 
 -   获取集合中对象的句柄。
 
-    如果驱动程序调用[ **WdfCollectionGetItem**](https://msdn.microsoft.com/library/windows/hardware/ff545770)，提供的索引值作为输入参数，驱动程序收到的句柄的索引值与相关联的对象。 （的索引值为零表示集合中的第一个对象的索引值为 1 表示第二个对象，依次类推-如链接列表。 当驱动程序移除项*我*集合中项*我*+ 1 将成为项*我*。)
+    如果驱动程序调用[ **WdfCollectionGetItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetitem)，提供的索引值作为输入参数，驱动程序收到的句柄的索引值与相关联的对象。 （的索引值为零表示集合中的第一个对象的索引值为 1 表示第二个对象，依次类推-如链接列表。 当驱动程序移除项*我*集合中项*我*+ 1 将成为项*我*。)
 
-    驱动程序还可以调用[ **WdfCollectionGetFirstItem** ](https://msdn.microsoft.com/library/windows/hardware/ff545763)或[ **WdfCollectionGetLastItem** ](https://msdn.microsoft.com/library/windows/hardware/ff545775)若要获取的句柄的第一个或最后一个项已添加到集合。
+    驱动程序还可以调用[ **WdfCollectionGetFirstItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetfirstitem)或[ **WdfCollectionGetLastItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcollection/nf-wdfcollection-wdfcollectiongetlastitem)若要获取的句柄的第一个或最后一个项已添加到集合。
 
 -   锁定集合。
 
-    驱动程序可以调用[ **WdfWaitLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff551168)同步访问集合中的 IRQL = 被动\_级别，也可以调用[ **WdfSpinLockAcquire**](https://msdn.microsoft.com/library/windows/hardware/ff550040)同步访问在 IRQL = 调度\_级别。 驱动程序将获取的锁后，还会调用该驱动程序中的其他代码不能访问集合**WdfWaitLockAcquire**或**WdfSpinLockAcquire**。 完成后对集合的操作，该驱动程序必须调用[ **WdfWaitLockRelease**](https://msdn.microsoft.com/library/windows/hardware/ff551173)。
+    驱动程序可以调用[ **WdfWaitLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff551168)同步访问集合中的 IRQL = 被动\_级别，也可以调用[ **WdfSpinLockAcquire**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))同步访问在 IRQL = 调度\_级别。 驱动程序将获取的锁后，还会调用该驱动程序中的其他代码不能访问集合**WdfWaitLockAcquire**或**WdfSpinLockAcquire**。 完成后对集合的操作，该驱动程序必须调用[ **WdfWaitLockRelease**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfsync/nf-wdfsync-wdfwaitlockrelease)。
 
-    调用[ **WdfWaitLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff551168)或[ **WdfSpinLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff550040)同时不会阻止从驱动程序中的其他代码访问集合中，如果其他代码不会还调用**WdfWaitLockAcquire**或**WdfSpinLockAcquire**。
+    调用[ **WdfWaitLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff551168)或[ **WdfSpinLockAcquire** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))同时不会阻止从驱动程序中的其他代码访问集合中，如果其他代码不会还调用**WdfWaitLockAcquire**或**WdfSpinLockAcquire**。
 
 -   删除集合。
 
-    若要删除的集合对象，驱动程序可以调用[ **WdfObjectDelete**](https://msdn.microsoft.com/library/windows/hardware/ff548734)。 更常见的做法，但是，驱动程序指定父对象时在创建集合，并删除父对象时，框架将删除的集合对象。
+    若要删除的集合对象，驱动程序可以调用[ **WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。 更常见的做法，但是，驱动程序指定父对象时在创建集合，并删除父对象时，框架将删除的集合对象。
 
-    例如，如果驱动程序创建一组请求对象，以便它可以将大型 I/O 请求分为较小的请求，它可以发出大型 I/O 请求的请求对象的集合对象的父对象。 驱动程序的 I/O 目标将调用最终[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)来完成较小的请求。 此时，驱动程序可以调用**WdfRequestComplete**大型 I/O 请求，从而导致删除请求对象，它的子对象的框架： 集合对象。
+    例如，如果驱动程序创建一组请求对象，以便它可以将大型 I/O 请求分为较小的请求，它可以发出大型 I/O 请求的请求对象的集合对象的父对象。 驱动程序的 I/O 目标将调用最终[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)来完成较小的请求。 此时，驱动程序可以调用**WdfRequestComplete**大型 I/O 请求，从而导致删除请求对象，它的子对象的框架： 集合对象。
 
     当集合对象，包含对象尚未删除 framework 删除操作的情况下，框架将删除从对象的集合和递减及其引用计数，但会删除仅的集合对象。
 

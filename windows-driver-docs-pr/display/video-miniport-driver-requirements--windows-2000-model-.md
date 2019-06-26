@@ -6,12 +6,12 @@ keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84554f990cb71f834ef8f390b844e149af581e31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1005c8addc4edde299a411126ed294b957ccb0b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386111"
 ---
 # <a name="video-miniport-driver-requirements-windows-2000-model"></a>视频微型端口驱动程序要求（Windows 2000 模型）
 
@@ -27,7 +27,7 @@ ms.locfileid: "63389649"
 
 -   **微型端口驱动程序仅可导出的通话** ***videoprt.sys*。**
 
-    微型端口驱动程序可以调用仅由系统提供的视频端口驱动程序导出这些函数。 (导出的视频端口函数列出引用页的后续[视频端口驱动程序函数](https://msdn.microsoft.com/library/windows/hardware/ff570533)。)驱动程序编写人员还可以使用以下确定微型端口驱动程序调用的函数：
+    微型端口驱动程序可以调用仅由系统提供的视频端口驱动程序导出这些函数。 (导出的视频端口函数列出引用页的后续[视频端口驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。)驱动程序编写人员还可以使用以下确定微型端口驱动程序调用的函数：
 
     ```cpp
     link -dump -imports my_driver.sys

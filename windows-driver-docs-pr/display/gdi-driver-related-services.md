@@ -8,12 +8,12 @@ keywords:
 - 绘制 WDK GDI，与驱动程序相关的服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df50d246e0ca1113de98078dd87d264874363671
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d637ca39ef9e84ac3d2f7ece579aa5d01ee8b71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379506"
 ---
 # <a name="gdi-driver-related-services"></a>GDI 驱动程序相关服务
 
@@ -36,23 +36,23 @@ ms.locfileid: "63389093"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564207" data-raw-source="[&lt;strong&gt;EngCreateDriverObj&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564207)"><strong>EngCreateDriverObj</strong></a></p></td>
-<td align="left"><p>创建<a href="https://msdn.microsoft.com/library/windows/hardware/ff556162" data-raw-source="[&lt;strong&gt;DRIVEROBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556162)"> <strong>DRIVEROBJ</strong> </a>结构。 此结构用于跟踪设备管理的资源分配进程是否终止，而又没有第一个清理它必须释放的资源。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj" data-raw-source="[&lt;strong&gt;EngCreateDriverObj&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)"><strong>EngCreateDriverObj</strong></a></p></td>
+<td align="left"><p>创建<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_driverobj" data-raw-source="[&lt;strong&gt;DRIVEROBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_driverobj)"> <strong>DRIVEROBJ</strong> </a>结构。 此结构用于跟踪设备管理的资源分配进程是否终止，而又没有第一个清理它必须释放的资源。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564792" data-raw-source="[&lt;strong&gt;EngDeleteDriverObj&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564792)"><strong>EngDeleteDriverObj</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeletedriverobj" data-raw-source="[&lt;strong&gt;EngDeleteDriverObj&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeletedriverobj)"><strong>EngDeleteDriverObj</strong></a></p></td>
 <td align="left"><p>释放句柄用于跟踪设备管理的资源。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564927" data-raw-source="[&lt;strong&gt;EngGetDriverName&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564927)"><strong>EngGetDriverName</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-enggetdrivername" data-raw-source="[&lt;strong&gt;EngGetDriverName&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-enggetdrivername)"><strong>EngGetDriverName</strong></a></p></td>
 <td align="left"><p>返回驱动程序的 DLL 的名称。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564967" data-raw-source="[&lt;strong&gt;EngLockDriverObj&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564967)"><strong>EngLockDriverObj</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-englockdriverobj" data-raw-source="[&lt;strong&gt;EngLockDriverObj&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-englockdriverobj)"><strong>EngLockDriverObj</strong></a></p></td>
 <td align="left"><p>在调用线程的驱动程序对象上创建的排他锁。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565044" data-raw-source="[&lt;strong&gt;EngUnlockDriverObj&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565044)"><strong>EngUnlockDriverObj</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engunlockdriverobj" data-raw-source="[&lt;strong&gt;EngUnlockDriverObj&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engunlockdriverobj)"><strong>EngUnlockDriverObj</strong></a></p></td>
 <td align="left"><p>解除锁定的驱动程序对象。</p></td>
 </tr>
 </tbody>

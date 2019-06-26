@@ -9,12 +9,12 @@ keywords:
 - 显示驱动程序 WDK Windows 2000 中，有关显示器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aee86541ef21033780ec0a0dfb483ec0ba48ba50
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22034feca55983d2f758d4ded33fa7aebb770a5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379365"
 ---
 # <a name="display-drivers-windows-2000-model"></a>显示驱动程序（Windows 2000 模型）
 
@@ -36,7 +36,7 @@ ms.locfileid: "63329929"
 
 -   Direct3D DDI-允许供应商提供的 Direct3D 硬件加速的 3D 图形界面。 请参阅[Direct3D DDI](direct3d.md)有关详细信息。
 
-有关图形 DDI 入口点和结构，以及服务的 GDI 函数和对象，请参阅的完整说明[GDI 函数](https://msdn.microsoft.com/library/windows/hardware/ff566543)。
+有关图形 DDI 入口点和结构，以及服务的 GDI 函数和对象，请参阅的完整说明[GDI 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

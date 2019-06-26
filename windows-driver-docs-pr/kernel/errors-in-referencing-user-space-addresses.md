@@ -9,12 +9,12 @@ keywords:
 - 嵌入式的指针 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e21689350241f805401a639a3047b7e9d48e2937
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bdf3ea2d23319a461de5a30ce7a9608946a2912
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385130"
 ---
 # <a name="errors-in-referencing-user-space-addresses"></a>引用用户空间地址时出错
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361868"
 
 ### <a href="" id="failure-to-validate-addresses-passed-in-method-neither-ioctls-and-fsctls"></a>无法验证地址在方法中传递\_NEITHER Ioctl 和 FSCTLs
 
-I/O 管理器会执行任何验证技术方法\_既不 Ioctl 和 FSCTLs。 若要确保用户空间地址都有效，则驱动程序必须使用[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)并[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)例程，中的所有缓冲区引用都封闭**试用 / 除外**块。
+I/O 管理器会执行任何验证技术方法\_既不 Ioctl 和 FSCTLs。 若要确保用户空间地址都有效，则驱动程序必须使用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)并[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)例程，中的所有缓冲区引用都封闭**试用 / 除外**块。
 
 在以下示例中，驱动程序假定中传递的值**Type3InputBuffer**表示有效的地址。
 

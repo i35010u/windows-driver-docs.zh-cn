@@ -7,12 +7,12 @@ keywords:
 - Windows 2000 显示器驱动程序模型 WDK、 DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a20c1dfd1acbf0e4c24de8079477a340ee385c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d464dd6b7d206a4f117df1c75b91b297af136bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386235"
 ---
 # <a name="windows-2000-driver-initialization"></a>Windows 2000 驱动程序初始化
 
@@ -26,18 +26,18 @@ ms.locfileid: "63391131"
 
 驱动程序初始化序列被通过调用以下函数：
 
--   [**DrvGetDirectDrawInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556229)来检索有关的硬件功能的信息。 GDI 两次调用此函数：
+-   [**DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)来检索有关的硬件功能的信息。 GDI 两次调用此函数：
 
     -   第一次调用确定显示内存堆和驱动程序支持的 Fourcc 数的大小。 将传递 GDI **NULL**两个*pvmList*并*pdwFourCC*参数。 该驱动程序应初始化并返回*pdwNumHeaps*并*pdwNumFourCC*仅参数。
     -   第二个调用了 GDI 分配显示内存和 FOURCC 内存中首次调用返回的值后*pdwNumHeaps*并*pdwNumFourCC*参数。 该驱动程序应在第二个调用中，初始化并返回*pdwNumHeaps*， *pvmList*， *pdwNumFourCC*，以及*pdwFourCC*参数。
 
-    GDI 分配并初始化为零[ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627)向其结构*pHalInfo*点。 *DrvGetDirectDrawInfo*函数应填写相关的 DD 成员\_HALINFO 结构的特定于驱动程序的信息：
+    GDI 分配并初始化为零[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)向其结构*pHalInfo*点。 *DrvGetDirectDrawInfo*函数应填写相关的 DD 成员\_HALINFO 结构的特定于驱动程序的信息：
 
-    -   该驱动程序应初始化的适当成员[ **VIDEOMEMORYINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff570172)结构来描述的显示器的内存的一般格式。 请参阅[显示内存](display-memory.md)。
-    -   该驱动程序应初始化的适当成员[ **DDCORECAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549248)结构来描述 DirectDraw 到驱动程序的核心功能。
-    -   如果该驱动程序支持的任何查询发送到驱动程序的 GUID 的 DirectX 功能[ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)回调，该驱动程序必须初始化**GetDriverInfo**要指向的驱动程序的成员*DdGetDriverInfo*回调和集 DDHALINFO\_GETDRIVERINFOSET 位**dwFlags**。
-    -   该驱动程序必须设置**dwSize**到的大小，以字节为单位的[ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627)结构。
--   [**DrvEnableDirectDraw** ](https://msdn.microsoft.com/library/windows/hardware/ff556208)由运行时启用 DirectDraw 硬件，并确定某些驱动程序的回调的支持。 GDI 分配并初始化为零[ **DD\_回调**](https://msdn.microsoft.com/library/windows/hardware/ff550485)， [ **DD\_SURFACECALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551721)，和[ **DD\_PALETTECALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551681)参数结构。 该驱动程序应执行以下操作为每个实现这些回调：
+    -   该驱动程序应初始化的适当成员[ **VIDEOMEMORYINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemoryinfo)结构来描述的显示器的内存的一般格式。 请参阅[显示内存](display-memory.md)。
+    -   该驱动程序应初始化的适当成员[ **DDCORECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)结构来描述 DirectDraw 到驱动程序的核心功能。
+    -   如果该驱动程序支持的任何查询发送到驱动程序的 GUID 的 DirectX 功能[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)回调，该驱动程序必须初始化**GetDriverInfo**要指向的驱动程序的成员*DdGetDriverInfo*回调和集 DDHALINFO\_GETDRIVERINFOSET 位**dwFlags**。
+    -   该驱动程序必须设置**dwSize**到的大小，以字节为单位的[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构。
+-   [**DrvEnableDirectDraw** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenabledirectdraw)由运行时启用 DirectDraw 硬件，并确定某些驱动程序的回调的支持。 GDI 分配并初始化为零[ **DD\_回调**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_callbacks)， [ **DD\_SURFACECALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_surfacecallbacks)，和[ **DD\_PALETTECALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_palettecallbacks)参数结构。 该驱动程序应执行以下操作为每个实现这些回调：
 
     -   设置要指向回调适当结构的相应成员。
     -   设置相应 DDHAL\_*XXX*\_*XXX*位**dwFlags**适当结构的成员。
@@ -46,9 +46,9 @@ ms.locfileid: "63391131"
 
     驱动程序的*DrvEnableDirectDraw*实现还可以将专用硬件资源，如以仅供 DirectDraw 显示内存。
 
--   [**DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)来检索其他回调函数和驱动程序支持的功能。
+-   [**DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)来检索其他回调函数和驱动程序支持的功能。
 
-    如果不是**NULL**，则**GetDriverInfo**回调中返回[ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627)由驱动程序的结构[ **DrvGetDirectDrawInfo**](https://msdn.microsoft.com/library/windows/hardware/ff556229)。 GDI 分配并初始化[ **DD\_GETDRIVERINFODATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551550)结构和调用*DdGetDriverInfo*为每个中所述的Guid**DD\_GETDRIVERINFODATA**引用部分。 在中定义所有 Guid *ddrawint.h*。
+    如果不是**NULL**，则**GetDriverInfo**回调中返回[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)由驱动程序的结构[ **DrvGetDirectDrawInfo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)。 GDI 分配并初始化[ **DD\_GETDRIVERINFODATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)结构和调用*DdGetDriverInfo*为每个中所述的Guid**DD\_GETDRIVERINFODATA**引用部分。 在中定义所有 Guid *ddrawint.h*。
 
     该驱动程序可以实现其*DdGetDriverInfo*函数来指示它支持中所指定的回调函数[DirectDraw 和 Direct3D 回调支持使用 DdGetDriverInfo](directdraw-and-direct3d-callback-support-using-ddgetdriverinfo.md)。
 

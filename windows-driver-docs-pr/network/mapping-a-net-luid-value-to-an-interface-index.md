@@ -12,12 +12,12 @@ keywords:
 - 本地唯一标识符 WDK 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b312b9f90eb9c01815d9f91db7be5fc365202b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f644d6b79b92dfa120579efcec9eec14d1e37f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343471"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386332"
 ---
 # <a name="mapping-a-netluid-value-to-an-interface-index"></a>映射网络\_LUID 值到接口索引
 
@@ -25,13 +25,13 @@ ms.locfileid: "63343471"
 
 
 
-NDIS 提供服务获取的接口索引的给定[ **NET\_LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff568747)值，反之亦然。 请注意，NET\_LUID 值是一个接口，并对应于特定网络的接口索引的持久性标识\_LUID 值可以更改，即使计算机不重新启动 （例如，当筛选器模块是附加和分离，因为关联的微型端口适配器已禁用和重新启用）。
+NDIS 提供服务获取的接口索引的给定[ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)值，反之亦然。 请注意，NET\_LUID 值是一个接口，并对应于特定网络的接口索引的持久性标识\_LUID 值可以更改，即使计算机不重新启动 （例如，当筛选器模块是附加和分离，因为关联的微型端口适配器已禁用和重新启用）。
 
 NDIS 提供了以下函数映射：
 
--   [**NdisIfGetInterfaceIndexFromNetLuid**](https://msdn.microsoft.com/library/windows/hardware/ff562707)
+-   [**NdisIfGetInterfaceIndexFromNetLuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifgetinterfaceindexfromnetluid)
 
--   [**NdisIfGetNetLuidFromInterfaceIndex**](https://msdn.microsoft.com/library/windows/hardware/ff562711)
+-   [**NdisIfGetNetLuidFromInterfaceIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifgetnetluidfrominterfaceindex)
 
 这些函数将返回 NDIS\_状态\_界面\_不\_如果找到给定的 NET\_LUID 或接口索引中不存在的已注册的接口的列表。
 

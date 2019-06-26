@@ -11,12 +11,12 @@ keywords:
 - 设备属性表 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eab65252dafb71934012a8abc7a7ac397c234249
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd7de792ebbbae30f6327763944a09655d2e0698
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386997"
 ---
 # <a name="wmi-generic-property-page-provider"></a>WMI 通用属性页提供程序
 
@@ -68,7 +68,7 @@ HKLM, System\CurrentControlSet\Control\CoDeviceInstallers, ClassGUID,
     0x00010000, "WmiProp.dll, WmiPropCoInstaller"
 ```
 
-*ClassGUID*是 WMI 类的 GUID。 请参阅[注册类共同安装程序](https://msdn.microsoft.com/library/windows/hardware/ff549801)有关详细信息。
+*ClassGUID*是 WMI 类的 GUID。 请参阅[注册类共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-class-co-installer)有关详细信息。
 
 您还必须指定要通过泛型属性提供程序公开的特定 WMI 类。 若要执行此操作，设置**WmiConfigClasses**中的值的项都必须是一列以逗号分隔的 WMI 类*添加注册表部分*的设备类或设备硬件实例。
 
@@ -82,7 +82,7 @@ HKR,,"WmiConfigClasses",0x00000000,"class1,class2"
 HKR,,"WmiConfigClasses",0x00000000,"class3"
 ```
 
-请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)有关的说明*添加注册表部分*INF 文件中。
+请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)有关的说明*添加注册表部分*INF 文件中。
 
 Wmiprop.dll 假定每个类的一个实例。 由属性表上的选项卡表示每个类。 使用**DisplayName**要设置的选项卡的标题文本的属性限定符。如果当前类的实例，才会显示一个类的属性页。 因此，如果设备已删除或未启动，不显示这些页。
 

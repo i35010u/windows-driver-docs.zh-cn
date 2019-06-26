@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2260f30e0b6d1bf026cbed3298bdaea1a2b95bcf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87aaf3b24965a375613190dc426bed37f9f9bd85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370006"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384796"
 ---
 # <a name="guiddevinterfacewpd"></a>GUID_DEVINTERFACE_WPD
 
 
-GUID_DEVINTERFACE_WPD[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[Windows 便携设备](https://go.microsoft.com/fwlink/p/?linkid=106527)(WPD)。
+GUID_DEVINTERFACE_WPD[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[Windows 便携设备](https://go.microsoft.com/fwlink/p/?linkid=106527)(WPD)。
 
 <table>
 <colgroup>

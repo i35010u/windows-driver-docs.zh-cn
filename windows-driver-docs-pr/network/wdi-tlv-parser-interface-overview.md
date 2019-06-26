@@ -4,12 +4,12 @@ description: 本部分介绍 WDI TLV 分析器界面的概述
 ms.assetid: FD204F24-0336-4A54-992C-ACF46565D8D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dbc589320da8a58a13eea02299398db9e8b2f28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 296a68189d454f66f7097d14200cc676f7f44be8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385066"
 ---
 # <a name="wdi-tlv-parser-interface-overview"></a>WDI TLV 分析器接口概述
 
@@ -17,7 +17,7 @@ ms.locfileid: "63377878"
 ## <a name="callee-allocation-model"></a>被调用方分配模型
 
 
-在驱动程序中的入口点接收消息或包含 TLVs 的指示。 在代码中提取的消息 ID 和确定它是否想要处理的 ID，它调用的泛型的分析例程，并通过 TLV blob 后 (后过去的提前[ **WDI\_消息\_标头**](https://msdn.microsoft.com/library/windows/hardware/dn926074)) 将解析为 C 结构 TLVs。
+在驱动程序中的入口点接收消息或包含 TLVs 的指示。 在代码中提取的消息 ID 和确定它是否想要处理的 ID，它调用的泛型的分析例程，并通过 TLV blob 后 (后过去的提前[ **WDI\_消息\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)) 将解析为 C 结构 TLVs。
 
 ```c
 ndisStatus = Parse(
@@ -64,7 +64,7 @@ CleanupParsedWdiGetAdapterCapabilities(&adapterCapabilitiesParsed);
 
 在调用之后 CleanupParse API，该结构中的所有数据都是无效的。
 
-某些消息不具有任何关联的数据。 为了保持完整性的 api，提供适当命名的分析方法。 这些方法验证字节流为空。 Typedef 提供的参数类型，但调用方还可以传递 NULL 输出参数为如果它们使用调用方分配模型。 在所有情况下，分析器可以通过返回一个常量空分析结构避免任何分配。 调用方应永远不会写入此返回的空结构 (因此名为唯一字段**\_保留**)。 这些消息被记录为"没有其他数据。 标头中的数据就足够了"。
+某些消息不具有任何关联的数据。 为了保持完整性的 api，提供适当命名的分析方法。 这些方法验证字节流为空。 Typedef 提供的参数类型，但调用方还可以传递 NULL 输出参数为如果它们使用调用方分配模型。 在所有情况下，分析器可以通过返回一个常量空分析结构避免任何分配。 调用方应永远不会写入此返回的空结构 (因此名为唯一字段 **\_保留**)。 这些消息被记录为"没有其他数据。 标头中的数据就足够了"。
 
 ## <a name="message-direction"></a>消息传送方向
 

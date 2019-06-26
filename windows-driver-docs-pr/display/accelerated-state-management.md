@@ -7,12 +7,12 @@ keywords:
 - 指出 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bbd56a4f0ba43041f95a4e0dc1508ba3ab2756
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e30ac6546432d91c9327442b468bcedea0ec161
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384434"
 ---
 # <a name="accelerated-state-management"></a>加速状态管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323802"
 
 大多数应用程序呈现中只有少量的状态，因此具有细粒度的状态转换很少很重要。 更重要的用于定义块可以互换的状态为常见的呈现方案之间的驱动程序开关。 这是整个点加速的状态管理。
 
-状态集令牌用于驱动程序中记录了状态。 一个句柄是指状态的集合。 [ **D3DHAL\_DP2STATESET** ](https://msdn.microsoft.com/library/windows/hardware/ff545844)结构通知有关要执行何种状态集操作的驱动程序。
+状态集令牌用于驱动程序中记录了状态。 一个句柄是指状态的集合。 [ **D3DHAL\_DP2STATESET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2stateset)结构通知有关要执行何种状态集操作的驱动程序。
 
 如果**dwOperation** D3DHAL 成员\_DP2STATESET 结构设置为 D3DHAL\_STATESETBEGIN，驱动程序将开始录制中包含的句柄的状态**dwParam**成员。 当驱动程序收到**dwOperation** D3DHAL 的\_STATESETEND，它将停止录制状态。
 

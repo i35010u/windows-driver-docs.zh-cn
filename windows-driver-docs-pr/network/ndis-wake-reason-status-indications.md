@@ -4,17 +4,17 @@ description: NDIS 唤醒原因状态指示
 ms.assetid: 0229A4F3-8CC1-4A81-9AF4-33BAEBDAE954
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bd5322b1dd532d20f4cc1dca6fa8120c157b2a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cc620edd24dcd9a7b9ec3311293eb5d8204d473
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368971"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386228"
 ---
 # <a name="ndis-wake-reason-status-indications"></a>NDIS 唤醒原因状态指示
 
 
-从开始 NDIS 6.30，微型端口驱动程序发出 NDIS 唤醒原因状态指示 ([**NDIS\_状态\_PM\_唤醒\_原因**](https://msdn.microsoft.com/library/windows/hardware/hh439808)) 到通知 NDIS 和系统唤醒事件的原因有关的基础驱动程序。 如果网络适配器生成唤醒事件时，微型端口驱动程序会立即发出此 NDIS 状态指示系统恢复到全功率状态时。
+从开始 NDIS 6.30，微型端口驱动程序发出 NDIS 唤醒原因状态指示 ([**NDIS\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)) 到通知 NDIS 和系统唤醒事件的原因有关的基础驱动程序。 如果网络适配器生成唤醒事件时，微型端口驱动程序会立即发出此 NDIS 状态指示系统恢复到全功率状态时。
 
 **请注意**  支持 NDIS 唤醒原因状态指示是可选的移动宽带 (MB) 微型端口驱动程序。
 

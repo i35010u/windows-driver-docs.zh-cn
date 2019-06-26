@@ -8,12 +8,12 @@ keywords:
 - Winnt32 阶段 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0298b9c63779032a3d3fb80fd2fbef8c3d850aea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 583135f196a4e8adb3179a3e7660e423f5ae0322
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384700"
 ---
 # <a name="winnt32-phase-of-the-network-upgrade-process"></a>网络升级过程的 Winnt32 阶段
 
@@ -53,9 +53,9 @@ NetSetup 生成应答文件，如下所示：
 
 2.  对于不具有内置的升级支持每个网络组件，NetSetup 读取组件的 netmap.inf 文件。 Netmap.inf 文件将升级前的设备、 硬件或网络组件的兼容 ID 映射到已升级的操作系统中相应的 ID。 如果从使用升级前 ID 在注册表中读取的网络组件的升级前的 ID 相匹配 NetSetup **OemNetAdapters**， **OemNetProtocols**， **OemNetServices**，或**OemAsyncAdapters** netmap.inf 文件 NetSetup 的部分将供应商提供的组件的信息写入到应答文件。
 
-3.  使用组件的操作系统设备、 硬件或兼容 ID，NetSetup 读数**OemUpgradeSupport** netmap.inf 文件以确定哪些网络迁移 DLL 加载的部分。 NetSetup 然后加载网络迁移 DLL，并调用的 DLL [ **PreUpgradeInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff562439)函数。 **PreUpgradeInitialize**函数提供的 DLL 使用初始化其自身的信息。
+3.  使用组件的操作系统设备、 硬件或兼容 ID，NetSetup 读数**OemUpgradeSupport** netmap.inf 文件以确定哪些网络迁移 DLL 加载的部分。 NetSetup 然后加载网络迁移 DLL，并调用的 DLL [ **PreUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562439(v=vs.85))函数。 **PreUpgradeInitialize**函数提供的 DLL 使用初始化其自身的信息。
 
-4.  NetSetup 调用的 DLL [ **DoPreUpgradeProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff545634)一次每个网络组件支持的网络迁移 DLL 函数。 **DoPreUpgradeProcessing**读取网络组件的升级前的参数值从注册表和调用[ **NetUpgradeAddSection** ](https://msdn.microsoft.com/library/windows/hardware/ff559063)并[ **NetUpgradeAddLineToSection** ](https://msdn.microsoft.com/library/windows/hardware/ff559059)函数将这些参数，以及其他特定于组件的信息，写入到应答文件。 **DoPreUpgradeProcessing**还可以将迁移应答文件中进行相应的条目与 preupgraded 组件关联的二进制数据。
+4.  NetSetup 调用的 DLL [ **DoPreUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545634(v=vs.85))一次每个网络组件支持的网络迁移 DLL 函数。 **DoPreUpgradeProcessing**读取网络组件的升级前的参数值从注册表和调用[ **NetUpgradeAddSection** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559063(v=vs.85))并[ **NetUpgradeAddLineToSection** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559059(v=vs.85))函数将这些参数，以及其他特定于组件的信息，写入到应答文件。 **DoPreUpgradeProcessing**还可以将迁移应答文件中进行相应的条目与 preupgraded 组件关联的二进制数据。
 
 5.  完全生成应答文件后，NetSetup 将供应商提供的升级文件复制到相应的目录，然后启动升级过程的文本模式阶段进入。
 

@@ -6,16 +6,16 @@ keywords:
 - WSK 数据类型，WDK WSK 数据类型的网络驱动程序
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 619ab97fc7a8d19ab28d5041ef7dfe39c1d9fb4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95e12b3d52a0cb20ec649a4c1aa3280e79431c3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356792"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386318"
 ---
 # <a name="wsk-data-types"></a>WSK 数据类型
 
-除了上列出的结构[WSK 结构](https://msdn.microsoft.com/library/windows/hardware/ff571187)，WSK 应用程序还可以使用以下数据类型：
+除了上列出的结构[WSK 结构](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571187(v=vs.85))，WSK 应用程序还可以使用以下数据类型：
 
 [WSK_CLIENT](wsk-client.md)
 

@@ -8,12 +8,12 @@ keywords:
 - 安装设备 WDK，有关设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e5da2f5be09b5193c07a6f01a5b89689a165be8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e26f6c7dff3d9577cc15c13f2c35c65cec549ba1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369454"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379450"
 ---
 # <a name="overview-of-device-and-driver-installation"></a>设备和驱动程序安装概述
 
@@ -23,7 +23,7 @@ ms.locfileid: "63369454"
 
 Windows 提供了要安装的设备和驱动程序组件。 [系统提供的设备安装组件](system-provided-device-installation-components.md)适用于[供应商提供组件](vendor-provided-device-installation-components.md)安装设备。
 
-Windows 安装设备时在系统重新启动和系统重新启动后的任何时候用户插入插 (PnP) 设备 （或手动安装非 PnP 设备） 时。 支持的即插即用，Windows 将继续基于在系统中，而不是用于结构化围绕驱动程序安装的设备的设备安装。 例如，而不是加载驱动程序的一组，并使这些驱动程序检测到它们支持的设备，Windows 确定系统和负载中存在的设备，并调用每个设备驱动程序。 驱动程序，如 ACPI 驱动程序和其他 PnP[总线驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540704)帮助 Windows 确定哪些设备是否存在。
+Windows 安装设备时在系统重新启动和系统重新启动后的任何时候用户插入插 (PnP) 设备 （或手动安装非 PnP 设备） 时。 支持的即插即用，Windows 将继续基于在系统中，而不是用于结构化围绕驱动程序安装的设备的设备安装。 例如，而不是加载驱动程序的一组，并使这些驱动程序检测到它们支持的设备，Windows 确定系统和负载中存在的设备，并调用每个设备驱动程序。 驱动程序，如 ACPI 驱动程序和其他 PnP[总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)帮助 Windows 确定哪些设备是否存在。
 
 ## <a name="in-this-section"></a>本节内容
 

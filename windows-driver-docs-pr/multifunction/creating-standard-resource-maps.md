@@ -6,12 +6,12 @@ keywords:
 - 标准版资源映射 WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0610e483cd324a8a16b76442e4213599489cc656
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d17c69a1fe374023d1d9ab2a2107e37d04c1b20f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386384"
 ---
 # <a name="creating-standard-resource-maps"></a>创建标准资源映射
 
@@ -19,7 +19,7 @@ ms.locfileid: "63323535"
 
 
 
-如果包含的多功能设备 INF [ **INF DDInstall.LogConfigOverride 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547339)，父资源是通过隐式编号的 00 *nn*出现在 INF*日志配置节*部分 (请参阅[ **INF LogConfig 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547448))。 例如，考虑使用以下 INF 多功能 PC 卡*DDInstall*。**LogConfigOverride**部分：
+如果包含的多功能设备 INF [ **INF DDInstall.LogConfigOverride 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)，父资源是通过隐式编号的 00 *nn*出现在 INF*日志配置节*部分 (请参阅[ **INF LogConfig 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive))。 例如，考虑使用以下 INF 多功能 PC 卡*DDInstall*。**LogConfigOverride**部分：
 
 ```cpp
 [DDInstall.LogConfigOverride]

@@ -12,12 +12,12 @@ keywords:
 - 传输数据 WDK 内核，数据缓冲区的访问
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a6a23ca1b45d98da0b0433006d18f17d0c4e4b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66dda1a1cb83d17d3d325f2a52cfbc2de0402137
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380367"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386014"
 ---
 # <a name="methods-for-accessing-data-buffers"></a>访问数据缓冲区的方法
 
@@ -39,9 +39,9 @@ ms.locfileid: "63380367"
 
 有关详细信息，请参阅[使用既不缓冲 Nor 直接 I/O](using-neither-buffered-nor-direct-i-o.md)。
 
-有关[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)并[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)请求，驱动程序通过在每个使用标志来指定的 I/O 方法[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
+有关[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求，驱动程序通过在每个使用标志来指定的 I/O 方法[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
 
-有关[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)并[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766) I/O 方法由请求*留空，则*IOCTL 的每个值中包含的值。 有关详细信息，请参阅[定义的 I/O 控制代码](defining-i-o-control-codes.md)。
+有关[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)并[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control) I/O 方法由请求*留空，则*IOCTL 的每个值中包含的值。 有关详细信息，请参阅[定义的 I/O 控制代码](defining-i-o-control-codes.md)。
 
 驱动程序堆栈中的所有驱动程序必须使用相同缓冲区访问的方法为每个请求，除可能是最高级别的驱动程序 （这可以使用"不"方法，而不考虑使用较低的驱动程序的方法）。
 

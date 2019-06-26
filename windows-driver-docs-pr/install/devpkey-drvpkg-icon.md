@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 03174c0f7843337bfd333921d34d130e73681972
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c6508d21385a5ea8f5d2a60c0e45e6fb1b5adff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342364"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377296"
 ---
 # <a name="devpkeydrvpkgicon"></a>DEVPKEY_DrvPkg_Icon
 
@@ -82,7 +82,7 @@ DEVPKEY_DrvPkg_Icon 设备属性表示 Windows 用来直观地表示设备实例
 
 -   如果提供的标识符为正，例如，值*n*，Windows 在其标识符是 n + 1 中的最低值的可执行文件的可执行文件中使用的资源。 例如，如果的值*n*为 1，Windows 使用其标识符中的可执行文件具有第二低的值的资源。
 
-可以设置的值由 DEVPKEY_DrvPkg_Icon [ **INF AddProperty 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546318)包含在[ **INF *DDInstall*部分** ](https://msdn.microsoft.com/library/windows/hardware/ff547344)的安装设备的 INF 文件。 可以通过调用检索的值 DEVPKEY_DrvPkg_Icon [ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)。
+可以设置的值由 DEVPKEY_DrvPkg_Icon [ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)包含在[ **INF *DDInstall*部分** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的安装设备的 INF 文件。 可以通过调用检索的值 DEVPKEY_DrvPkg_Icon [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
 
 下面是举例说明如何使用 INF **AddProperty**指令 INF 安装的设备设置 DEVPKEY_DrvPkg_Icon *DDInstall*部分"SampleDDInstallSection":
 
@@ -120,11 +120,11 @@ DeviceIcon,,,,"SomeResource.dll,-2","SomeIcon.icon"
 ## <a name="see-also"></a>请参阅
 
 
-[**INF AddProperty Directive**](https://msdn.microsoft.com/library/windows/hardware/ff546318)
+[**INF AddProperty Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
-[**INF *DDInstall*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

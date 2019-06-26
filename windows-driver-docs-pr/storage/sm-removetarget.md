@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a334e101af21fe94a3a2d5adc58fd5d1791c9cd3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21ff7bacbebb76a7f10a361a05be93ea36b6de1e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339054"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384306"
 ---
 # <a name="smremovetarget-function"></a>SM\_RemoveTarget 函数
 
@@ -88,9 +88,9 @@ void SM_RemoveTarget(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_RemoveTarget\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566280)
+[**SM\_RemoveTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removetarget_in)
 
-[**SM\_RemoveTarget\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566283)
+[**SM\_RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removetarget_out)
 
  
 

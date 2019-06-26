@@ -12,12 +12,12 @@ keywords:
 - Irp WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ff91cc55e650034135110bf976f808f6cffae1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6088b666e17302512cc3ef6b639f67111dc0e517
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367154"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385647"
 ---
 # <a name="writing-irp-dispatch-routines"></a>编写 IRP 调度例程
 
@@ -42,9 +42,9 @@ NTSTATUS
     ); 
 ```
 
-文件系统筛选器驱动程序调度例程通常在 IRQL 被动调用\_级别，请在发起 I/O 请求，这通常是用户模式应用程序线程的线程上下文中。 但是，有一些例外情况，此规则。 例如，页面错误导致读取和写入 IRQL APC 时要调用的调度例程\_级别。 中的表中总结了这些异常[调度例程 IRQL 和线程上下文](dispatch-routine-irql-and-thread-context.md)。 遗憾的是，它不是当前无法阻止筛选器链中的驱动程序调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)在 IRQL&gt;被动\_级别 （例如，通过故障到释放自旋锁或快速互斥体）。 不过，强烈建议例程始终调用该筛选器调度**IoCallDriver**在相同的 IRQL 在其中调用它们。
+文件系统筛选器驱动程序调度例程通常在 IRQL 被动调用\_级别，请在发起 I/O 请求，这通常是用户模式应用程序线程的线程上下文中。 但是，有一些例外情况，此规则。 例如，页面错误导致读取和写入 IRQL APC 时要调用的调度例程\_级别。 中的表中总结了这些异常[调度例程 IRQL 和线程上下文](dispatch-routine-irql-and-thread-context.md)。 遗憾的是，它不是当前无法阻止筛选器链中的驱动程序调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)在 IRQL&gt;被动\_级别 （例如，通过故障到释放自旋锁或快速互斥体）。 不过，强烈建议例程始终调用该筛选器调度**IoCallDriver**在相同的 IRQL 在其中调用它们。
 
-调度例程可为可分页，假设它们符合中所述的标准[使驱动程序可分页](https://msdn.microsoft.com/library/windows/hardware/ff554346)内核模式驱动程序体系结构设计指南的部分。
+调度例程可为可分页，假设它们符合中所述的标准[使驱动程序可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)内核模式驱动程序体系结构设计指南的部分。
 
 如果文件系统筛选器驱动程序将控制设备对象 (CDO)，其调度例程必须能够检测和处理 IRP 的目标设备对象的 CDO 而不是已装入的卷的卷设备对象 (VDO) 情况。 有关 CDO 详细信息，请参阅[筛选器驱动程序的控制设备对象](the-filter-driver-s-control-device-object.md)。
 

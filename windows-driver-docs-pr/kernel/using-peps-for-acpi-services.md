@@ -4,12 +4,12 @@ description: 本主题提供有关使用 ACPI 服务平台扩展插件 (Pep) 的
 ms.assetid: 80ED3B80-A1FF-4A41-BA88-EC1C832C4639
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dabdecc43254606cebbf6f8cdec6da962c0fb164
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 907c720c1541ae9a256ec9da2051fad972c91ae3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381584"
 ---
 # <a name="using-peps-for-acpi-services"></a>对 ACPI 服务使用 PEP
 
@@ -28,22 +28,22 @@ Pep 旨在用于关闭 SoC 电源管理方法。 因为它们是可安装二进�
 
 以使其服务的设备驱动程序可用，很早加载 Pep。 此外，通过 Windows 的抽象层旨在对设备驱动程序是透明的。 该驱动程序应能够像 PEP 未在使用与它的 ACPI 方法进行交互。
 
-使用 PEP 设备电源管理 (DPM) 和 ACPI 服务，它时，建议使用单独 PEP 句柄，但这只是一个首选项。 当共享 DPM 和 ACPI 状态的句柄可以跟踪轻松设备因为句柄都是相同。 但是，句柄生存期管理是稍微复杂一些。 PEP 将需要提供引用计数的句柄，以确保它仅删除后 DPM 和 ACPI 服务具有已销毁该句柄 (即，两者[ **PEP\_DPM\_注销\_设备**](https://msdn.microsoft.com/library/windows/hardware/mt186742)并[ **PEP\_通知\_ACPI\_注销\_设备**](https://msdn.microsoft.com/library/windows/hardware/mt186758)已收到该句柄上）。 当使用不同的句柄时，将单独跟踪 DPM 和 ACPI 状态但句柄生存期管理更为简单。 在这种情况下，该句柄可被销毁时相应取消注册发送通知。
+使用 PEP 设备电源管理 (DPM) 和 ACPI 服务，它时，建议使用单独 PEP 句柄，但这只是一个首选项。 当共享 DPM 和 ACPI 状态的句柄可以跟踪轻松设备因为句柄都是相同。 但是，句柄生存期管理是稍微复杂一些。 PEP 将需要提供引用计数的句柄，以确保它仅删除后 DPM 和 ACPI 服务具有已销毁该句柄 (即，两者[ **PEP\_DPM\_注销\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)并[ **PEP\_通知\_ACPI\_注销\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)已收到该句柄上）。 当使用不同的句柄时，将单独跟踪 DPM 和 ACPI 状态但句柄生存期管理更为简单。 在这种情况下，该句柄可被销毁时相应取消注册发送通知。
 
 为了简化使用 ACPI 资源的过程，电源管理框架 (PoFx)，提供了 PEP\_请求\_常见\_ACPI\_转换\_TO\_BIOS\_资源的帮助器例程，以将 ACPI 资源转换为 BIOS 资源。
 
-Pep 负责计划不能以响应来自 PoFx 的 ACPI 通知以同步方式执行工作，但使用的方法由 PEP 开发人员。 通常情况下，PEP 将队列上某些内部队列的工作，并根据需要启动工作线程。 此外，还可以工作，需要等待某些外部事件 （例如设备中断），会处理该事件的上下文中。 PEP 完成工作后，可以通过调用查询的工作请求 PoFx [ **PEP\_内核\_信息\_结构\_V3** ](https://msdn.microsoft.com/library/windows/hardware/mt186747) - &gt; [ *RequestWorker*](https://msdn.microsoft.com/library/windows/hardware/mt186884)（)。 在响应中，将发送 PoFx [ **PEP\_DPM\_工作通知**](https://msdn.microsoft.com/library/windows/hardware/mt186743)对于实现 DPM 通知处理程序的 Pep ([ *AcceptDeviceNotification*](https://msdn.microsoft.com/library/windows/hardware/mt186626)) 或[ **PEP\_通知\_ACPI\_工作通知**](https://msdn.microsoft.com/library/windows/hardware/mt188089)为 PEPs实现仅限 ACPI 的通知处理程序 ([*AcceptAcpiNotification*](https://msdn.microsoft.com/library/windows/hardware/mt186625))。
+Pep 负责计划不能以响应来自 PoFx 的 ACPI 通知以同步方式执行工作，但使用的方法由 PEP 开发人员。 通常情况下，PEP 将队列上某些内部队列的工作，并根据需要启动工作线程。 此外，还可以工作，需要等待某些外部事件 （例如设备中断），会处理该事件的上下文中。 PEP 完成工作后，可以通过调用查询的工作请求 PoFx [ **PEP\_内核\_信息\_结构\_V3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/ns-pepfx-_pep_kernel_information_struct_v3) - &gt; [ *RequestWorker*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pofxcallbackrequestworker)（)。 在响应中，将发送 PoFx [ **PEP\_DPM\_工作通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)对于实现 DPM 通知处理程序的 Pep ([ *AcceptDeviceNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifydpm)) 或[ **PEP\_通知\_ACPI\_工作通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)为 PEPs实现仅限 ACPI 的通知处理程序 ([*AcceptAcpiNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyacpi))。
 
 ## <a name="related-topics"></a>相关主题
-[ACPI 系统说明表](https://msdn.microsoft.com/library/Dn495660.aspx)  
-[**PEP\_DPM\_UNREGISTER\_DEVICE**](https://msdn.microsoft.com/library/windows/hardware/mt186742)  
-[**PEP\_NOTIFY\_ACPI\_UNREGISTER\_DEVICE**](https://msdn.microsoft.com/library/windows/hardware/mt186758)  
-[**PEP\_内核\_信息\_结构\_V3**](https://msdn.microsoft.com/library/windows/hardware/mt186747)  
-[**PEP\_DPM\_工作**](https://msdn.microsoft.com/library/windows/hardware/mt186743)  
-[**PEP\_NOTIFY\_ACPI\_WORK**](https://msdn.microsoft.com/library/windows/hardware/mt188089)  
-[*RequestWorker*](https://msdn.microsoft.com/library/windows/hardware/mt186884)  
-[*AcceptDeviceNotification*](https://msdn.microsoft.com/library/windows/hardware/mt186626)  
-[ACPI 通知](https://msdn.microsoft.com/library/windows/hardware/mt186628)  
+[ACPI 系统说明表](https://docs.microsoft.com/windows-hardware/drivers/bringup/acpi-system-description-tables)  
+[**PEP\_DPM\_UNREGISTER\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[**PEP\_NOTIFY\_ACPI\_UNREGISTER\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[**PEP\_内核\_信息\_结构\_V3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/ns-pepfx-_pep_kernel_information_struct_v3)  
+[**PEP\_DPM\_工作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[**PEP\_NOTIFY\_ACPI\_WORK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[*RequestWorker*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pofxcallbackrequestworker)  
+[*AcceptDeviceNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifydpm)  
+[ACPI 通知](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 
 
 

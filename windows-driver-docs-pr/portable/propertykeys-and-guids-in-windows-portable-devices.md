@@ -3,12 +3,12 @@ Description: Windows 便携设备中的 PROPERTYKEY 和 GUID
 title: Windows 便携设备中的 PROPERTYKEY 和 GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba408fa498b0e543d8de61c16571e77d86ee9c69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78552a703e83665dfb29b7b54a81a7b773ac04d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387182"
 ---
 # <a name="propertykeys-and-guids-in-windows-portable-devices"></a>Windows 便携设备中的 PROPERTYKEY 和 GUID
 
@@ -20,17 +20,17 @@ ms.locfileid: "63376231"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**WPD\_内容\_类型\_功能\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff597845)
+[**WPD\_内容\_类型\_功能\_对象**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597845(v=vs.85))
 
 [**对于对象的要求**](requirements-for-objects.md)
 
-[**对象格式 Guid**](https://msdn.microsoft.com/library/windows/hardware/ff597651)
+[**对象格式 Guid**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597651(v=vs.85))
 
-[**对资源的要求**](https://msdn.microsoft.com/library/windows/hardware/ff597663)
+[**对资源的要求**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597663(v=vs.85))
 
-[**命令**](https://msdn.microsoft.com/library/windows/hardware/ff597554)
+[**命令**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597554(v=vs.85))
 
-[**属性和特性**](https://msdn.microsoft.com/library/windows/hardware/ff597900)
+[**属性和特性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597900(v=vs.85))
 
 [**WPD 驱动程序概述**](wpd-drivers-overview.md)
 

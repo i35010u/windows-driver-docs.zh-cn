@@ -5,12 +5,12 @@ ms.assetid: CD289868-1925-4222-8A4D-359118124325
 ms.date: 08/08/2017
 keywords: -OID_TCP_RSC_STATISTICS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fe48b97ade31b80a5e424b90d6358f3f1290f628
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a65cdf87a6c6d9ecccb5ebbc3fe493106bbb82b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386958"
 ---
 # <a name="oidtcprscstatistics"></a>OID\_TCP\_RSC\_统计信息
 
@@ -22,9 +22,9 @@ NDIS 6.30 和更高版本的微型端口驱动程序提供 RSC 服务必须支�
 <a name="remarks"></a>备注
 -------
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含[ **NDIS\_RSC\_统计信息\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh451657)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含[ **NDIS\_RSC\_统计信息\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构。
 
-微型端口驱动程序必须维护中的成员的统计信息[ **NDIS\_RSC\_统计信息\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh451657)结构，如下所示：
+微型端口驱动程序必须维护中的成员的统计信息[ **NDIS\_RSC\_统计信息\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构，如下所示：
 
 -   该驱动程序必须递增中的合并的数据包数**CoalescedPkts**由一个每次数据包添加到单个合并单元 (SCU) 的成员。
 -   该驱动程序必须递增中的合并后的八位字节计数**CoalescedOctets**成员的每次数据包添加到 SCU 数据包的 TCP 有效负载大小。
@@ -54,9 +54,9 @@ NDIS 6.30 和更高版本的微型端口驱动程序提供 RSC 服务必须支�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_RSC\_STATISTICS\_INFO**](https://msdn.microsoft.com/library/windows/hardware/hh451657)
+[**NDIS\_RSC\_STATISTICS\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)
 
  
 

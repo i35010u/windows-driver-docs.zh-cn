@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5c941ae159c3850c4a27c8fad717e73ecf05fd8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01e2080f56d99b5914242e8fd342d9e94dc8982d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392470"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387325"
 ---
 # <a name="guidbthportdeviceinterface"></a>GUID_BTHPORT_DEVICE_INTERFACE
 
 
-GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[Bluetooth 无线电收发器](https://msdn.microsoft.com/library/windows/hardware/ff536596)。
+GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[Bluetooth 无线电收发器](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](https://msdn.microsoft.com/librar
 <a name="remarks"></a>备注
 -------
 
-驱动程序[Bluetooth 无线电收发器](https://msdn.microsoft.com/library/windows/hardware/ff536596)注册通知的操作系统和应用程序的蓝牙无线收发器是否存在此设备接口类的实例。
+驱动程序[Bluetooth 无线电收发器](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))注册通知的操作系统和应用程序的蓝牙无线收发器是否存在此设备接口类的实例。
 
 <a name="requirements"></a>要求
 ------------

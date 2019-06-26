@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 25b0276fee830c90e681222fa078712aea7fdbfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f93a07a8e4efc80a30fc2d5139e9bfd0b07aaf99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378939"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384290"
 ---
 # <a name="smsendctpassthru-function"></a>SM\_SendCTPassThru 函数
 
@@ -104,9 +104,9 @@ void SM_SendCTPassThru(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SendCTPassThru\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566293)
+[**SM\_SendCTPassThru\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_in)
 
-[**SM\_SendCTPassThru\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566294)
+[**SM\_SendCTPassThru\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_out)
 
  
 

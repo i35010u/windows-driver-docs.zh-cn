@@ -4,12 +4,12 @@ description: 本主题介绍如何启用红外 (IR) 照相机的人脸身份验�
 ms.assetid: 5CE619F4-E136-4F8F-8F90-F7F96DE4642E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0842652ef965ac39a694619d4640ec1648b88cc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5c36f71847f5565d0312721c72f053d8f126260
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387969"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385358"
 ---
 # <a name="camera-driver-bring-up-guide"></a>相机驱动程序启动指南
 
@@ -35,7 +35,7 @@ ms.locfileid: "63387969"
 
     -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_模式\_背景\_减法**
 
-    有关此控件以及如何使用位标志设置的人脸身份验证模式的详细信息，请参阅[ **KSPROPERTY\_CAMERACONTROL\_扩展\_FACEAUTH\_模式** ](https://msdn.microsoft.com/library/windows/hardware/mt742028)主题。
+    有关此控件以及如何使用位标志设置的人脸身份验证模式的详细信息，请参阅[ **KSPROPERTY\_CAMERACONTROL\_扩展\_FACEAUTH\_模式** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)主题。
 
 -   **MF\_捕获\_元数据\_帧\_照明**
 
@@ -153,6 +153,6 @@ HKR,,SkipCameraEnumeration,0x00010001,0x00000001
 
 ## <a name="related-topics"></a>相关主题
 
-[捕获照片和视频 MediaCapture](https://msdn.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-mediacapture)  
+[捕获照片和视频 MediaCapture](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-mediacapture)  
 
-[Windows.Media.Capture namespace](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.aspx)  
+[Windows.Media.Capture namespace](https://docs.microsoft.com/uwp/api/Windows.Media.Capture)  

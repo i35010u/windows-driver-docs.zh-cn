@@ -9,12 +9,12 @@ keywords:
 - 重写可分页或 nonpageable 特性 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 077c8971e68ad710c47438f5b4ad9338c8e4f433
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30de997a680a554ed1d3b920bfd76c5b00d30c3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378051"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383811"
 ---
 # <a name="paging-an-entire-driver"></a>将整个驱动程序分页
 
@@ -26,7 +26,7 @@ ms.locfileid: "63378051"
 
 设备驱动程序连接中断它所管理的设备后，驱动程序的中断处理路径必须驻留在系统空间中。 在发生中断时的情况下，中断处理代码必须是不能换出，驱动程序部分的一部分。
 
-两个额外的内存管理器例程[ **MmPageEntireDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554650)并[ **MmResetDriverPaging**](https://msdn.microsoft.com/library/windows/hardware/ff554680)，可用于重写可分页或 nonpageable 属性组成的驱动程序映像的所有部分。 这些例程启用分页出整个时它所管理的设备未被使用，无法生成中断的驱动程序。
+两个额外的内存管理器例程[ **MmPageEntireDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmpageentiredriver)并[ **MmResetDriverPaging**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmresetdriverpaging)，可用于重写可分页或 nonpageable 属性组成的驱动程序映像的所有部分。 这些例程启用分页出整个时它所管理的设备未被使用，无法生成中断的驱动程序。
 
 完全可分页的系统驱动程序的示例包括 win32k.sys 驱动程序、 串行驱动程序、 邮件槽驱动程序、 提示音驱动程序和 null 的驱动程序。
 
@@ -34,7 +34,7 @@ ms.locfileid: "63378051"
 
 可以完全调出的驱动程序应调用**MmPageEntireDriver**驱动程序初始化之前中断连接过程。
 
-当调出驱动程序管理的设备收到了打开请求时，该驱动程序中分页。 然后，该驱动程序必须调用[ **MmResetDriverPaging** ](https://msdn.microsoft.com/library/windows/hardware/ff554680)它连接到中断之前。 调用**MmResetDriverPaging**导致内存管理器将驱动程序的部分根据在编译和链接过程中获取的属性。 为非分页，如文本部分中，任何部分将分页到非分页的系统内存;被引用，将在分页可分页的部分。
+当调出驱动程序管理的设备收到了打开请求时，该驱动程序中分页。 然后，该驱动程序必须调用[ **MmResetDriverPaging** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmresetdriverpaging)它连接到中断之前。 调用**MmResetDriverPaging**导致内存管理器将驱动程序的部分根据在编译和链接过程中获取的属性。 为非分页，如文本部分中，任何部分将分页到非分页的系统内存;被引用，将在分页可分页的部分。
 
 此类驱动程序必须向其设备保持打开的句柄的引用计数。 该驱动程序增加在任何设备和减少每次打开请求的计数在每个关闭的请求计数。 该驱动程序时计数达到零时，应断开连接中断，然后调用**MmPageEntireDriver**。 如果驱动程序管理多台设备，计数必须先为零的所有此类设备驱动程序可以调用**MmPageEntireDriver**。
 

@@ -4,12 +4,12 @@ description: 本部分介绍在 WDI LE 挂起检测
 ms.assetid: 9C0BB4B8-184A-4C1A-8B47-C30C8318AEEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 966b6d52548c937c3479bab0af8736e855ad6950
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20f1394815cd92f83a924e15bdd808b1f9c7474c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385481"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387216"
 ---
 # <a name="le-hang-detection"></a>LE 挂起检测
 
@@ -21,14 +21,14 @@ ms.locfileid: "63385481"
 LE 或固件监视计时器检测到固件停止时，从 UE 期望很，如下所示。
 
 1.  如果在 D0，
-    1.  指示 LE [NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://msdn.microsoft.com/library/windows/hardware/dn925634)。
+    1.  指示 LE [NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)。
     2.  在从指示返回时，LE 返回 （如果有） 已停止的 WDI 命令。
     3.  UE 启动重置恢复 (RR) 过程。
 
 2.  如果在 Dx，才会发生此与检测到的固件停滞。
     1.  固件引发唤醒中断。
     2.  在接收到 D0 命令，指示唤醒原因的固件停止的原因。
-    3.  返回 D0 WDI OID 后, LE 指示[NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://msdn.microsoft.com/library/windows/hardware/dn925634)。
+    3.  返回 D0 WDI OID 后, LE 指示[NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)。
     4.  完成 D0 中的过程：1a、 1b 和 1c。
 
 ![wdi le 挂起检测](images/wdi-le-hang-detection-flow.png)
@@ -59,9 +59,9 @@ Dx NIC 时，由于总线可能是在关闭状态被阻塞到该主机通信。 
 ## <a name="related-topics"></a>相关主题
 
 
-[NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://msdn.microsoft.com/library/windows/hardware/dn925634)
+[NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)
 
-[**WDI\_TLV\_INDICATION\_WAKE\_REASON**](https://msdn.microsoft.com/library/windows/hardware/dn897834)
+[**WDI\_TLV\_INDICATION\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-indication-wake-reason)
 
  
 

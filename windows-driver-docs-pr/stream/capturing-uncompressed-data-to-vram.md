@@ -9,21 +9,21 @@ keywords:
 - pin vram 能够处理 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59ef846fe259895bc3a0c5ce0dff4a4ffe017fc3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2591c90b824ef820933c212b71c88761b4a86c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357028"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386664"
 ---
 # <a name="capturing-uncompressed-data-to-vram"></a>将未压缩的数据捕获到 VRAM
 
 
 AVStream vram 能够启用了的微型驱动程序可以通过提供以下支持捕获 pin 描述符中的捕获未压缩的数据。
 
--   在相应[ **KSPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563533)结构，请列出捕获 pin 支持中的格式**DataRanges**成员、 数组[**KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)结构。 提供的指针到 KS\_DATARANGE\_视频结构，强制转换为指向 KSDATARANGE 的指针。
+-   在相应[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)结构，请列出捕获 pin 支持中的格式**DataRanges**成员、 数组[**KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构。 提供的指针到 KS\_DATARANGE\_视频结构，强制转换为指向 KSDATARANGE 的指针。
 
--   在中**VideoInfoHeader**的每个成员[ **KS\_DATARANGE\_视频**](https://msdn.microsoft.com/library/windows/hardware/ff567628)结构，请提供[ **KS\_VIDEOINFOHEADER** ](https://msdn.microsoft.com/library/windows/hardware/ff567700)结构。 每个 KS\_VIDEOINFOHEADER 包含[ **KS\_BITMAPINFOHEADER**](https://msdn.microsoft.com/library/windows/hardware/ff567305)。
+-   在中**VideoInfoHeader**的每个成员[ **KS\_DATARANGE\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)结构，请提供[ **KS\_VIDEOINFOHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_videoinfoheader)结构。 每个 KS\_VIDEOINFOHEADER 包含[ **KS\_BITMAPINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)。
 
 -   若要公开了 MPEG2 捕获的二进制格式，设置**biCompression**等于 D3DDDIFMT\_BINARYBUFFER， **biHeight**等于一，和**biWidth**等于二进制缓冲区的大小。
 

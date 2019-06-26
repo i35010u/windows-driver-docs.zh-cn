@@ -6,12 +6,12 @@ keywords:
 - FilterUnloadCallback
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e26f9b8ad3b08012defb2d12c27ffa95af7d744f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4f51a4030d43efaaa88bf76e3ba4c57e861666e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385653"
 ---
 # <a name="writing-a-filterunloadcallback-routine"></a>编写 FilterUnloadCallback 例程
 
@@ -28,13 +28,13 @@ typedef NTSTATUS
     );
 ```
 
-*FilterUnloadCallback*例程具有一个输入的参数*标志*，可以是**NULL**或 FLTFL\_筛选器\_卸载\_必需。 筛选器管理器将此参数设置为 FLTFL\_筛选器\_卸载\_强制性来指示卸载操作是必需。 有关此参数的详细信息，请参阅[ **PFLT\_筛选器\_卸载\_回调**](https://msdn.microsoft.com/library/windows/hardware/ff551085)。
+*FilterUnloadCallback*例程具有一个输入的参数*标志*，可以是**NULL**或 FLTFL\_筛选器\_卸载\_必需。 筛选器管理器将此参数设置为 FLTFL\_筛选器\_卸载\_强制性来指示卸载操作是必需。 有关此参数的详细信息，请参阅[ **PFLT\_筛选器\_卸载\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)。
 
 微筛选器驱动程序*FilterUnloadCallback*例程必须执行以下步骤：
 
 -   关闭任何打开的内核模式下通信服务器端口句柄。
 
--   调用[ **FltUnregisterFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff544606)注销微筛选器驱动程序。
+-   调用[ **FltUnregisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltunregisterfilter)注销微筛选器驱动程序。
 
 -   执行任何所需的全局清除。
 

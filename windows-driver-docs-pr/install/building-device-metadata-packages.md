@@ -6,12 +6,12 @@ keywords:
 - 设备元数据包 WDK 构建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb342da01dca7cfe5a1fcb6e2a5eb2e5da73ee8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1b31847458599f3bfc7a617f3c5400bfb49ce790
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554813"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385292"
 ---
 # <a name="building-device-metadata-packages"></a>构建设备元数据包
 
@@ -42,9 +42,9 @@ ms.locfileid: "56554813"
 
 -   对于每个元数据包文件的名称 GUID 必须是唯一的。 创建新的或修改元数据包时，必须创建新的 GUID，即使所做的更改是很微小的。
 
--   元数据的每个包可以支持只有一个区域设置。 如果你的设备支持多个区域设置，则必须创建单独元数据包的每个区域设置，每个元数据文件，包具有其自己的 GUID。 有关详细信息，请参阅[**区域设置 XML 元素**](https://msdn.microsoft.com/library/windows/hardware/ff548647)。
+-   元数据的每个包可以支持只有一个区域设置。 如果你的设备支持多个区域设置，则必须创建单独元数据包的每个区域设置，每个元数据文件，包具有其自己的 GUID。 有关详细信息，请参阅[**区域设置 XML 元素**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548647(v=vs.85))。
 
-    **请注意**  如果为你的设备需要多个特定于区域设置的设备元数据的包文件，则可以通过创建一个非特定语言标识符分组的所有文件。 此标识符是 GUID，并可以在中指定相同的 GUID [ **LanguageNeutralIdentifier** ](https://msdn.microsoft.com/library/windows/hardware/ff548617)对于同一设备的所有元数据包内的 XML 元素。
+    **请注意**  如果为你的设备需要多个特定于区域设置的设备元数据的包文件，则可以通过创建一个非特定语言标识符分组的所有文件。 此标识符是 GUID，并可以在中指定相同的 GUID [ **LanguageNeutralIdentifier** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548617(v=vs.85))对于同一设备的所有元数据包内的 XML 元素。
 
      
 

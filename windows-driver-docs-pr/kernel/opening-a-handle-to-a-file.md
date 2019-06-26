@@ -11,12 +11,12 @@ keywords:
 - 打开文件句柄
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a802bf10a78f6935d9cdb6196a2655ab2ccbaa2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0abdad84a26cafe000c120249d92f865a146295d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384929"
 ---
 # <a name="opening-a-handle-to-a-file"></a>打开文件的句柄
 
@@ -26,9 +26,9 @@ ms.locfileid: "63382904"
 
 若要打开文件的句柄，请执行以下步骤：
 
-1.  创建[**对象\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff557749)结构，并调用[ **InitializeObjectAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff547804)宏来初始化结构。 指定文件的对象同名*ObjectName*参数**InitializeObjectAttributes**。
+1.  创建[**对象\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_object_attributes)结构，并调用[ **InitializeObjectAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)宏来初始化结构。 指定文件的对象同名*ObjectName*参数**InitializeObjectAttributes**。
 
-2.  表示通过打开文件的句柄**对象\_特性**结构[ **IoCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff548418)， [ **zwcreatefile 转换** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)，或[ **ZwOpenFile**](https://msdn.microsoft.com/library/windows/hardware/ff567011)。
+2.  表示通过打开文件的句柄**对象\_特性**结构[ **IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile)， [ **zwcreatefile 转换** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)，或[ **ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile)。
 
     如果该文件不存在， **IoCreateFile**并**ZwCreateFile**将创建它，而**ZwOpenFile**将返回状态\_对象\_名称\_不\_找到。
 
@@ -75,7 +75,7 @@ ms.locfileid: "63382904"
 
  
 
-详细了解可用的值*DesiredAccess*，请参阅[ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)。
+详细了解可用的值*DesiredAccess*，请参阅[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)。
 
  
 

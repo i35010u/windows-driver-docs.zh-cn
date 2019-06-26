@@ -4,12 +4,12 @@ description: 使用内核调试程序 (KD) 调试设备安装
 ms.assetid: 0967d375-2602-44d2-b4ac-8d1e112afc3f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a236e3391cae97bd201fe6f6d8790b2a4a4923
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd8fd588a8da3409fc6b6412c26c5d3f984f80aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352085"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386622"
 ---
 # <a name="debugging-device-installations-with-the-kernel-debugger-kd"></a>使用内核调试程序 (KD) 调试设备安装
 
@@ -24,7 +24,7 @@ Windows vista 中，从开始，当插即用 (PnP) 管理器检测到系统中�
 
 -   监视的其他用户模式进程，而无需管理多个调试器使用 KD 扩展 ！ 进程或.process/p。
 
-有关 KD 和其他调试工具的详细信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+有关 KD 和其他调试工具的详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 **DebugInstall**注册表值指定的调试支持系统上启用的设备安装的类型。 有关此注册表值的详细信息，请参阅[启用支持调试设备安装](enabling-support-for-debugging-device-installations.md)。
 
@@ -74,7 +74,7 @@ kd> .reload
 kd> bp[0x10] /p @$proc kernel32!LoadLibraryExW "gu;$$><Z:\\bpcoinst.txt;g"
 ```
 
-而不是在每次 LoadLibraryEx 调用进程内执行程序 (bp\[0x10\])，开发人员可以将其限制为仅当类安装程序，并共同安装程序 Dll 已加载到进程执行。 因为[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)类安装程序将调用的例程和注册的设备的共同安装程序，这些 Dll 将在该调用期间加载到进程。
+而不是在每次 LoadLibraryEx 调用进程内执行程序 (bp\[0x10\])，开发人员可以将其限制为仅当类安装程序，并共同安装程序 Dll 已加载到进程执行。 因为[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)类安装程序将调用的例程和注册的设备的共同安装程序，这些 Dll 将在该调用期间加载到进程。
 
 因为这些 Dll 将从卸载程序时，应有关所不做的任何假设*DrvInst.exe*主机进程中，您必须确保断点可以处理对所做的任何调用的过程找到DLL入口点**SetupDiCallClassInstaller**从*DrvInst.exe*主机进程。
 
@@ -84,9 +84,9 @@ kd> bp[0x11] /p @$proc setupapi!SetupDiCallClassInstaller "be[0x10];bp[0x12] /p 
 kd> g
 ```
 
-若要执行调试器命令程序的断点 (bp\[0x10\]) 最初处于禁用状态。 已启用每当[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)调用 (bp\[0x11\])，并继续执行。 调试器命令程序 (bp\[0x10\]) 时再次禁用**SetupDiCallClassInstaller**返回由该例程本身返回地址上设置断点 (bp\[0x12\]).
+若要执行调试器命令程序的断点 (bp\[0x10\]) 最初处于禁用状态。 已启用每当[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用 (bp\[0x11\])，并继续执行。 调试器命令程序 (bp\[0x10\]) 时再次禁用**SetupDiCallClassInstaller**返回由该例程本身返回地址上设置断点 (bp\[0x12\]).
 
-请注意，禁用调试器命令程序断点也清除了自身，将继续执行，直至[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)试或安装之前，调用程序完成并清除所有断点 (bp\[0x13\])。
+请注意，禁用调试器命令程序断点也清除了自身，将继续执行，直至[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)试或安装之前，调用程序完成并清除所有断点 (bp\[0x13\])。
 
 执行开始时设置上述断点后，该过程将中断 mycoinst 每次调用 ！CoInstallerProc。 这样，您可以调试类安装程序或辅助安装程序 DLL 核心设备安装过程的执行。
 

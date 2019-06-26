@@ -3,12 +3,12 @@ Description: 用于处理由 UCX 发送的 I/O 请求的主机控制器驱动程
 title: 处理 USB 主控制器驱动程序中的 I/O 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e2837d698a81d8fa27820b7b5c62d168901217
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2035fc6a2ce8d3f1d1fba754603e3601377da03d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386262"
 ---
 # <a name="handle-io-requests-in-a-usb-host-controller-driver"></a>处理 USB 主控制器驱动程序中的 I/O 请求
 
@@ -19,11 +19,11 @@ ms.locfileid: "63357030"
 
 若要确保与现有的 USB 驱动程序的兼容性，主控制器必须符合以下要求时完成 URB 请求：
 
--  [**WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)必须在调度调用\_级别。
--   如果 URB 已传送到其 framework 队列和驱动程序已开始处理它以同步方式调用驱动程序的线程或 DPC，该请求应还完成同步。 请求必须在单独的 DPC，可通过调用安排上完成[ **WdfDpcEnqueue**](https://msdn.microsoft.com/library/windows/hardware/ff547148)。
--   类似于上述要求，在接收时[ **EVT_WDF_IO_QUEUE_IO_CANCELED_ON_QUEUE** ](https://msdn.microsoft.com/library/windows/hardware/ff541756)或[ **EVT_WDF_REQUEST_CANCEL** ](https://msdn.microsoft.com/library/windows/hardware/ff541817)，必须完成 URB 请求从调用线程不同 DPC 或 DPC，主机控制器驱动程序。 默认情况下，WDF 以同步方式完成队列已取消的请求。 该行为可能会导致问题的 URB 请求。 出于此原因，该驱动程序必须提供*EvtIoCanceledOnQueue*其 URB 队列的回调。
+-  [**WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)必须在调度调用\_级别。
+-   如果 URB 已传送到其 framework 队列和驱动程序已开始处理它以同步方式调用驱动程序的线程或 DPC，该请求应还完成同步。 请求必须在单独的 DPC，可通过调用安排上完成[ **WdfDpcEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nf-wdfdpc-wdfdpcenqueue)。
+-   类似于上述要求，在接收时[ **EVT_WDF_IO_QUEUE_IO_CANCELED_ON_QUEUE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)或[ **EVT_WDF_REQUEST_CANCEL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)，必须完成 URB 请求从调用线程不同 DPC 或 DPC，主机控制器驱动程序。 默认情况下，WDF 以同步方式完成队列已取消的请求。 该行为可能会导致问题的 URB 请求。 出于此原因，该驱动程序必须提供*EvtIoCanceledOnQueue*其 URB 队列的回调。
 
-框架请求对象[ **IOCTL\_内部\_USB\_提交\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)包含位于 URB **Parameters.Others.Arg1**的请求。 URB 状态时请求完成时，必须设置为任一 USBD\_状态\_成功，或指示失败性质的故障状态。 Usb.h 标头文件中定义的失败状态的值。
+框架请求对象[ **IOCTL\_内部\_USB\_提交\_URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)包含位于 URB **Parameters.Others.Arg1**的请求。 URB 状态时请求完成时，必须设置为任一 USBD\_状态\_成功，或指示失败性质的故障状态。 Usb.h 标头文件中定义的失败状态的值。
 
 ## <a name="related-topics"></a>相关主题
 [为 USB 主控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)  

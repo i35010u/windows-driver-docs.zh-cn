@@ -4,21 +4,21 @@ description: 使用 SetupAPI 卸载设备和驱动程序包
 ms.assetid: e170961b-5d12-43d5-b502-3b37e6421f6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e155d3ce7fe2be80c8487ec8b6e9c1c58f5a7b
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 15823a1aaa69390ca7f58b0f2e975f15e091a6de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65455124"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384760"
 ---
 # <a name="using-setupapi-to-uninstall-devices-and-driver-packages"></a>使用 SetupAPI 卸载设备和驱动程序包
 
 
 [SetupAPI](setupapi.md)是提供两组函数的系统组件：
 
--   [常规设置函数](https://msdn.microsoft.com/library/windows/hardware/ff544985)
+-   [常规设置函数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))
 
--   [设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)
+-   [设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))
 
 *设备安装应用程序*，*共同安装程序*，和*类安装程序*可以使用这些函数执行的设备安装的自定义操作。 安装程序 Api 还支持卸载设备和[驱动程序包](driver-packages.md)的安装。
 
@@ -30,15 +30,15 @@ ms.locfileid: "65455124"
 
 安装程序 Api) 从系统使用以下方法：
 
--   设备安装应用程序可以请求设备通过调用卸载[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)函数。 当应用程序调用此函数可卸载设备时，它必须设置*InstallFunction*参数[ **DIF_REMOVE** ](https://msdn.microsoft.com/library/windows/hardware/ff543717)代码。  有关所有 DIF 代码的列表，请参阅[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541307)。
+-   设备安装应用程序可以请求设备通过调用卸载[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)函数。 当应用程序调用此函数可卸载设备时，它必须设置*InstallFunction*参数[ **DIF_REMOVE** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove)代码。  有关所有 DIF 代码的列表，请参阅[设备安装函数](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))。
 
-    如果[ **SetupDiRemoveDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552097)调用期间 DIF_REMOVE 请求的处理，该函数会设备的 devnode 从系统中。 它还会删除设备的硬件和软件的注册表项，以及任何特定于硬件的配置文件的注册表项 （特定于配置的注册表项）。
+    如果[ **SetupDiRemoveDevice** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice)调用期间 DIF_REMOVE 请求的处理，该函数会设备的 devnode 从系统中。 它还会删除设备的硬件和软件的注册表项，以及任何特定于硬件的配置文件的注册表项 （特定于配置的注册表项）。
 
     **请注意**  **SetupDiRemoveDevice**只能由类安装程序而不是设备安装应用程序调用。
 
     有关差异代码的详细信息，请参阅[处理 DIF 代码](handling-dif-codes.md)。
 
--   从 Windows 7 开始，设备安装应用程序可以卸载设备通过调用[ **DiUninstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544754)函数。 此函数是类似于调用[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)与*InstallFunction*参数设置为[ **DIF_REMOVE**](https://msdn.microsoft.com/library/windows/hardware/ff543717). 但是，除了删除指定的设备的 devnode，此函数尝试删除的设备是在调用时在系统上存在的所有子 devnodes。
+-   从 Windows 7 开始，设备安装应用程序可以卸载设备通过调用[ **DiUninstallDevice** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diuninstalldevice)函数。 此函数是类似于调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)与*InstallFunction*参数设置为[ **DIF_REMOVE**](https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove). 但是，除了删除指定的设备的 devnode，此函数尝试删除的设备是在调用时在系统上存在的所有子 devnodes。
 
 ### <a href="" id="deleting-a-driver-package-from-the-driver-store"></a> 从驱动程序存储区中删除驱动程序包
 

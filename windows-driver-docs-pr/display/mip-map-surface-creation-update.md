@@ -7,12 +7,12 @@ keywords:
 - D3DRENDERSTATE_MIPMAPLODBIAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd7bf824c217ba44d18926f327f941b0c9b8a432
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f218561192944990233f59d9a6c7a6143adc2f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379877"
 ---
 # <a name="mip-map-surface-creation-update"></a>MIP 贴图图面创建更新
 
@@ -22,7 +22,7 @@ ms.locfileid: "63358417"
 
 在 DirectX 7.0 之前的附件 MIP 映射链通常包括仅 MIP 映射的子级别。 使用三次方环境映射的问世，这不再是这种情况。 三次方环境的每张人脸本身可能就是 MIP 映射，并且在这种情况下，形成一个三次方环境映射的人脸的表面的附件链可以组成多维数据集映射的其他人脸的链接，以及指向 MIP 映射的子级别。
 
-MIP 映射图面上的附件链现在可包含指向不只是较低级别 MIP 映射图面，如少量新功能已引入 DDSCAPS2\_MIPMAPSUBLEVEL (请参阅[ **DDSCAPS2**](https://msdn.microsoft.com/library/windows/hardware/ff550292)此对话框和以下标志的结构)。 对于所有 MIP 映射链的顶级面都设置此位。 因此，给定 MIP 映射链可以找到通过遍历寻找 DDSCAPS2 的曲面图面的顶级附件列表来表示 MIP 映射链的下一最低级别的图面在顶级面\_MIPMAPSUBLEVEL功能位集。
+MIP 映射图面上的附件链现在可包含指向不只是较低级别 MIP 映射图面，如少量新功能已引入 DDSCAPS2\_MIPMAPSUBLEVEL (请参阅[ **DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))此对话框和以下标志的结构)。 对于所有 MIP 映射链的顶级面都设置此位。 因此，给定 MIP 映射链可以找到通过遍历寻找 DDSCAPS2 的曲面图面的顶级附件列表来表示 MIP 映射链的下一最低级别的图面在顶级面\_MIPMAPSUBLEVEL功能位集。
 
 若要确定图面是否显示三次方环境映射，在图面中查找的人脸功能位 DDSCAPS2\_立方体贴图。 如果 DDSCAPS\_MIPMAP 功能位未设置，此图面的附件列表包括的其他人脸的多维数据集映射正在创建的 (检查功能位 DDSCAPS2\_立方体贴图\_POSITIVEX、 DDSCAPS2\_立方体贴图\_NEGATIVEX、 DDSCAPS2\_立方体贴图\_POSITIVEY、 DDSCAPS2\_立方体贴图\_NEGATIVEY、 DDSCAPS2\_立方体贴图\_POSITIVEZ，DDSCAPS2\_立方体贴图\_NEGATIVEZ)。
 

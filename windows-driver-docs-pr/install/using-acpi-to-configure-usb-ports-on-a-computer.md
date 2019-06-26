@@ -4,19 +4,19 @@ description: 使用 ACPI 配置计算机上的 USB 端口
 ms.assetid: 999f9fef-512c-415a-abc6-d64560c5c2f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1eaaee115eb76b3652dd335ecff7d56145bdbeb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbd345a5df2f81808f2b547bd785207c48fb2639
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384774"
 ---
 # <a name="using-acpi-to-configure-usb-ports-on-a-computer"></a>使用 ACPI 配置计算机上的 USB 端口
 
 
 如果系统需要 ACPI BIOS 更改，以准确地反映 USB 端口配置，则应考虑用户的功能配置端口时，将设备连接到的端口。
 
-如果您使用 ACPI 指定 USB 端口的配置，则必须定义的 USB 端口功能 (**_UPC**) 和物理位置说明 (**_PLD**) 对象。 尽管 ACPI 6.0 规范不明确禁止使用唯一 **_UPC**对象，这两个对象更多使用精确地指示用户能够将设备连接到端口。 仅使用 **_UPC**对象可能未设置正确，或按预期方式分组的设备容器。
+如果您使用 ACPI 指定 USB 端口的配置，则必须定义的 USB 端口功能 ( **_UPC**) 和物理位置说明 ( **_PLD**) 对象。 尽管 ACPI 6.0 规范不明确禁止使用唯一 **_UPC**对象，这两个对象更多使用精确地指示用户能够将设备连接到端口。 仅使用 **_UPC**对象可能未设置正确，或按预期方式分组的设备容器。
 
 连接到端口的设备是从中心可移动如果**DeviceRemovable**位设置。 下表显示了给定的端口的 ACPI 对象的值如何影响 USB 集线器描述符的值**DeviceRemovable** Windows 报告的设备的位。
 
@@ -102,7 +102,7 @@ ms.locfileid: "63339460"
         0x31, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
     ```
     
-USB 类型 C 连接器必须正确中所述 ACPI 才能通过[USB 类型 C ACPI 验证](https://msdn.microsoft.com/library/windows/hardware/mt770585(v=vs.85).aspx)硬件实验室工具包测试。
+USB 类型 C 连接器必须正确中所述 ACPI 才能通过[USB 类型 C ACPI 验证](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b3c41a3f-b844-4c2d-b115-dad51a37f123)硬件实验室工具包测试。
 
 示例 _UPC USB 类型 C 连接器：
 ```cpp

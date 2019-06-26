@@ -1,6 +1,6 @@
 ---
-title: 监视器 INF 文件部分
-description: 监视器 INF 文件部分
+title: 监视 INF 文件节
+description: 监视 INF 文件节
 ms.assetid: f5208b6a-00b0-446e-82f7-eb26082ed9a5
 keywords:
 - 监视 INF 文件部分 WDK Windows 2000 显示
@@ -11,14 +11,14 @@ keywords:
 - SourceDisksFiles 部分 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be80268e6a106f6e9118d3d1274137288d6c8c10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: cf7d9179dbfccab44e2d94d6ae639688c3abd303
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542658"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379855"
 ---
-# <a name="monitor-inf-file-sections"></a>监视器 INF 文件部分
+# <a name="monitor-inf-file-sections"></a>监视 INF 文件节
 
 
 ## <span id="ddk_monitor_inf_file_sections_gg"></span><span id="DDK_MONITOR_INF_FILE_SECTIONS_GG"></span>
@@ -26,7 +26,7 @@ ms.locfileid: "56542658"
 
 监视器必须安装在基于 NT 的操作系统使用 INF 文件。 Windows Driver Kit (WDK) 提供了示例监视器 INF 文件*monsamp.inf*，是应使用作为模板来为你的监视器生成的 INF 文件。 不能使用*geninf.exe*工具中所述[创建图形 INF 文件](creating-graphics-inf-files.md)生成监视器 INF。
 
-本主题的其余部分上的某些部分中的注释*monsamp.inf*的监视器 INF 编写器特别感兴趣的是。 INF 文件有关的更多常规信息，请参阅[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。
+本主题的其余部分上的某些部分中的注释*monsamp.inf*的监视器 INF 编写器特别感兴趣的是。 INF 文件有关的更多常规信息，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
 INF 文件还可用于替代监视器扩展显示标识数据 (EDID)。 请参阅[重写使用 INF 监视器 EDIDs](overriding-monitor-edids.md)。
 
@@ -39,7 +39,7 @@ INF 文件还可用于替代监视器扩展显示标识数据 (EDID)。 请参�
 profile1.icm=1
 ```
 
-有关更多常规信息，请参阅[ **INF SourceDisksFiles 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547472)。 请参阅[监视配置文件](monitor-profiles.md)有关颜色管理和配置文件的详细信息。
+有关更多常规信息，请参阅[ **INF SourceDisksFiles 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)。 请参阅[监视配置文件](monitor-profiles.md)有关颜色管理和配置文件的详细信息。
 
 ### <a name="span-idmodelssectionspanspan-idmodelssectionspanspan-idmodelssectionspanmodels-section"></a><span id="Models_Section"></span><span id="models_section"></span><span id="MODELS_SECTION"></span>模型部分
 
@@ -59,7 +59,7 @@ profile1.icm=1
 
 -   硬件标识-例如，表达式**监视器\\MON12AB**出现在设备的组合的设备类 （监视器） 和设备标识 (MON12AB) *EDID*.
 
-有关更多常规信息，请参阅[ **INF 模型部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)。
+有关更多常规信息，请参阅[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)。
 
 ### <a name="span-idddinstallsectionspanspan-idddinstallsectionspanspan-idddinstallsectionspanddinstall-section"></a><span id="DDInstall_Section"></span><span id="ddinstall_section"></span><span id="DDINSTALL_SECTION"></span>DDInstall 部分
 
@@ -72,13 +72,13 @@ AddReg=ACME-1234.AddReg, 1280, DPMS
 CopyFiles=ACME-1234.CopyFiles
 ```
 
--   [**DelReg** ](https://msdn.microsoft.com/library/windows/hardware/ff547374)指令-提供了指向**DEL\_当前\_REG**部分中，它详细说明了要删除的注册表项。
+-   [**DelReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)指令-提供了指向**DEL\_当前\_REG**部分中，它详细说明了要删除的注册表项。
 
--   [**AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)指令-提供了三个部分的链接的注册表中详细介绍要添加的键。 这些章节**ACME 1234。AddReg**， **1280年**，和**DPMS**。
+-   [**AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)指令-提供了三个部分的链接的注册表中详细介绍要添加的键。 这些章节**ACME 1234。AddReg**， **1280年**，和**DPMS**。
 
--   [**CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)指令-提供了指向**ACME 1234。CopyFiles**部分中，它指定要从分发磁盘或磁盘复制的文件。
+-   [**CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)指令-提供了指向**ACME 1234。CopyFiles**部分中，它指定要从分发磁盘或磁盘复制的文件。
 
-有关更多常规信息，请参阅[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)。
+有关更多常规信息，请参阅[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。
 
 ### <a name="span-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspaninf-writer-defined-sections"></a><span id="INF_Writer-Defined_Sections"></span><span id="inf_writer-defined_sections"></span><span id="INF_WRITER-DEFINED_SECTIONS"></span>INF 编写器定义部分
 

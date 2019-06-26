@@ -10,12 +10,12 @@ keywords:
 - 纹理管理 WDK Direct3D，阶段
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f7c475b3ff9f177eaee02c262903b500a53b21f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1b6309f904eaee91365970b993a67de5053c985
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383907"
 ---
 # <a name="processing-texture-stages"></a>处理纹理阶段
 
@@ -23,11 +23,11 @@ ms.locfileid: "63370360"
 ## <span id="ddk_processing_texture_stages_gg"></span><span id="DDK_PROCESSING_TEXTURE_STAGES_GG"></span>
 
 
-驱动程序使用 D3DDP2OP\_TEXTURESTAGESTATE 操作代码并[ **D3DHAL\_DP2TEXTURESTAGESTATE** ](https://msdn.microsoft.com/library/windows/hardware/ff545878)按照中的命令流处理更改的结构对纹理阶段状态。 该驱动程序如何处理操作代码的信息，请参阅[命令 Stream](command-stream.md)。
+驱动程序使用 D3DDP2OP\_TEXTURESTAGESTATE 操作代码并[ **D3DHAL\_DP2TEXTURESTAGESTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2texturestagestate)按照中的命令流处理更改的结构对纹理阶段状态。 该驱动程序如何处理操作代码的信息，请参阅[命令 Stream](command-stream.md)。
 
-例如，当在操作代码是 D3DDP2OP\_TEXTURESTAGESTATE，和的值**wStateCount**的成员[ **D3DHAL\_DP2COMMAND** ](https://msdn.microsoft.com/library/windows/hardware/ff545454)结构为 7，则七个 D3DHAL\_DP2TEXTURESTAGESTATE 结构按照，最后再下一步 D3DHAL\_达到 DP2COMMAND 指令。 每个 D3DHAL\_DP2TEXTURESTAGESTATE 结构包含**dwStage**指定纹理值混合处理管道的哪个阶段需要有纹理状态更改的成员。 **TSState**相同的结构的成员指定 D3DTEXTURESTAGESTATETYPE 枚举类型，若要设置，其状态并**dwValue** D3DHAL 成员\_DP2TEXTURESTAGESTATE结构包含指定的状态应设置为的值。
+例如，当在操作代码是 D3DDP2OP\_TEXTURESTAGESTATE，和的值**wStateCount**的成员[ **D3DHAL\_DP2COMMAND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2command)结构为 7，则七个 D3DHAL\_DP2TEXTURESTAGESTATE 结构按照，最后再下一步 D3DHAL\_达到 DP2COMMAND 指令。 每个 D3DHAL\_DP2TEXTURESTAGESTATE 结构包含**dwStage**指定纹理值混合处理管道的哪个阶段需要有纹理状态更改的成员。 **TSState**相同的结构的成员指定 D3DTEXTURESTAGESTATETYPE 枚举类型，若要设置，其状态并**dwValue** D3DHAL 成员\_DP2TEXTURESTAGESTATE结构包含指定的状态应设置为的值。
 
-该过程是指令的相同的所有呈现器状态或任何其他类型。 如果**bCommand**的成员[ **D3DHAL\_DP2COMMAND** ](https://msdn.microsoft.com/library/windows/hardware/ff545454)结构是 D3DDP2OP\_RENDERSTATE，则结构遵循是[**D3DHAL\_DP2RENDERSTATE** ](https://msdn.microsoft.com/library/windows/hardware/ff545705)结构和在该结构中的信息用于相应地设置的呈现状态。
+该过程是指令的相同的所有呈现器状态或任何其他类型。 如果**bCommand**的成员[ **D3DHAL\_DP2COMMAND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2command)结构是 D3DDP2OP\_RENDERSTATE，则结构遵循是[**D3DHAL\_DP2RENDERSTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2renderstate)结构和在该结构中的信息用于相应地设置的呈现状态。
 
 而不是使用不同的布尔值呈现状态来控制坐标，每个呈现的状态值是一组标志组成与 D3DWRAP\_您和 D3DWRAP\_V 标志 (中定义*d3dtypes.h*)。 此更改是与更高维纹理的兼容性。
 

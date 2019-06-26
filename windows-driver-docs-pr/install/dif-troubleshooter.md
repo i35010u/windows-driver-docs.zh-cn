@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a8e26cffb01fc59273548eaf3f455b4b0e8fd368
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a09e656cce89d71e73bc929afb1379a74554fb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365856"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380983"
 ---
 # <a name="diftroubleshooter"></a>DIF_TROUBLESHOOTER
 
@@ -62,21 +62,21 @@ DIF_TROUBLESHOOTER 请求可让安装程序以启动设备故障排除工具，�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://msdn.microsoft.com/library/windows/hardware/ff541247)，其中包含该设备。
+提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含该设备。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)标识设备中设备的信息集的结构。
+提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)标识设备中设备的信息集的结构。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) 与关联*DeviceInfoData*。
+设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*。
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-[ **SP_TROUBLESHOOTER_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553341)与关联结构*DeviceInfoData*。
+[ **SP_TROUBLESHOOTER_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)与关联结构*DeviceInfoData*。
 
 ### <a name="installer-output"></a>安装程序输出
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-安装程序可能会修改[ **SP_TROUBLESHOOTER_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553341)，设置 CHM 或 HTML 文件。
+安装程序可能会修改[ **SP_TROUBLESHOOTER_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)，设置 CHM 或 HTML 文件。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -98,13 +98,13 @@ DIF_TROUBLESHOOTER，没有默认处理程序，但操作系统提供了默认�
 
 ### <a name="installer-operation"></a>安装程序操作
 
-安装程序将调用[ **CM_Get_DevNode_Status** ](https://msdn.microsoft.com/library/windows/hardware/ff538514)若要获取设备状态和 CM 问题的代码。 具体取决于问题，安装程序可能会提供疑难解答人员、 帮助文件，或执行任何操作。 疑难解答人员可能可以解决与设备的问题。 如果疑难解答人员可以解决此问题，则应调用**SetupDiCallClassInstaller**发送类型 DICS_PROPCHANGE DIF_PROPERTYCHANGE 请求。 如果安装程序不提供设备故障排除工具，它可能提供的解决问题的帮助文件的用户的建议。
+安装程序将调用[ **CM_Get_DevNode_Status** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)若要获取设备状态和 CM 问题的代码。 具体取决于问题，安装程序可能会提供疑难解答人员、 帮助文件，或执行任何操作。 疑难解答人员可能可以解决与设备的问题。 如果疑难解答人员可以解决此问题，则应调用**SetupDiCallClassInstaller**发送类型 DICS_PROPCHANGE DIF_PROPERTYCHANGE 请求。 如果安装程序不提供设备故障排除工具，它可能提供的解决问题的帮助文件的用户的建议。
 
 如果没有安装程序在运行其自己的故障排除程序，Windows 将运行以向用户显示信息的 HTML 帮助。 如果安装程序提供的 CHM 文件中类安装参数，Windows 将显示该文件。 否则，Windows 将显示系统提供的疑难解答信息。
 
 类安装参数最多包含**ChmFile**并**HtmlTroubleShooter**对。 如果多个安装程序指定这些值，Windows 将使用的最后一个安装程序处理 DIF 请求设置的值。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://msdn.microsoft.com/library/windows/hardware/ff546094)。
+有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
 
 <a name="requirements"></a>要求
 ------------
@@ -129,13 +129,13 @@ DIF_TROUBLESHOOTER，没有默认处理程序，但操作系统提供了默认�
 ## <a name="see-also"></a>请参阅
 
 
-[**CM_Get_DevNode_Status**](https://msdn.microsoft.com/library/windows/hardware/ff538514)
+[**CM_Get_DevNode_Status**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_TROUBLESHOOTER_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553341)
+[**SP_TROUBLESHOOTER_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)
 
  
 

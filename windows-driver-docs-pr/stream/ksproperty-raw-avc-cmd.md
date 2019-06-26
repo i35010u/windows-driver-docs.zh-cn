@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7c6226bb8d79c7a7aa2a861fb2b2a7d01d26d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbf6af0a1b089a5c0432fd1c096fbb320980beb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382439"
 ---
 # <a name="kspropertyrawavccmd"></a>KSPROPERTY\_RAW\_AVC\_CMD
 
@@ -49,7 +49,7 @@ KSPROPERTY\_RAW\_AVC\_CMD 属性发出原始 AV/C 命令。 原始 AV/C 命令�
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>设备</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565167" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565167)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p>嵌入<strong>RawAVC</strong>结构</p></td>
 </tr>
 </tbody>
@@ -59,11 +59,11 @@ KSPROPERTY\_RAW\_AVC\_CMD 属性发出原始 AV/C 命令。 原始 AV/C 命令�
 
 ## <a name="remarks"></a>备注
 
-此属性仅可以使用与设备可支持 AV/C 命令以及在何处[ **KSPROPERTY\_EXTDEVICE\_端口**](ksproperty-extdevice-port.md)返回适用于开发人员\_端口\_中的 1394年**DevPort**的成员[ **KSPROPERTY\_EXTDEVICE\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565156)结构。
+此属性仅可以使用与设备可支持 AV/C 命令以及在何处[ **KSPROPERTY\_EXTDEVICE\_端口**](ksproperty-extdevice-port.md)返回适用于开发人员\_端口\_中的 1394年**DevPort**的成员[ **KSPROPERTY\_EXTDEVICE\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)结构。
 
 IEEE 1394 设备驱动程序开发人员还可以选择支持此属性在其驱动程序以扩展设备不支持的标准接口的传输控件 (如用户模式**IAMExtTransport** COM接口方法**放\_模式**并**获取\_模式**)。
 
-不需要 USB 设备上实现支持此属性，因为[USB 视频类驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568649)提供此功能。 应用程序可以使用通常**IKsControl** COM 接口来控制 IEEE 1394 设备。 但是， **IKsControl** COM 接口不提供一种标准方法，以支持磁带查找跨 USB 和 IEEE 1394 总线可移植的。 因此，若要执行磁带查找调用方必须使用**DeviceIoControl**函数而不是**IKsControl** COM 接口。 调用方执行磁带查找 1394年上使用带有绝对原始的 AV/C 命令的 AV/C 设备跟踪数 (ATN) 或代码，以查找到的时间。 这是为什么此属性不适用于 USB 设备的主要原因。
+不需要 USB 设备上实现支持此属性，因为[USB 视频类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)提供此功能。 应用程序可以使用通常**IKsControl** COM 接口来控制 IEEE 1394 设备。 但是， **IKsControl** COM 接口不提供一种标准方法，以支持磁带查找跨 USB 和 IEEE 1394 总线可移植的。 因此，若要执行磁带查找调用方必须使用**DeviceIoControl**函数而不是**IKsControl** COM 接口。 调用方执行磁带查找 1394年上使用带有绝对原始的 AV/C 命令的 AV/C 设备跟踪数 (ATN) 或代码，以查找到的时间。 这是为什么此属性不适用于 USB 设备的主要原因。
 
 请参阅[数字视频应用程序兼容性](https://go.microsoft.com/fwlink/?linkid=2085071)USB 上的磁带位置搜索和 1394年设备之间的差异的详细信息的白皮书。
 
@@ -86,4 +86,4 @@ IEEE 1394 设备驱动程序开发人员还可以选择支持此属性在其驱�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTXPORT\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565167)
+[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)

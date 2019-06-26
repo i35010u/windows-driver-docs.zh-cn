@@ -5,12 +5,12 @@ ms.assetid: a0bebd8d-c202-41f5-84be-a3056a2eeef9
 ms.date: 08/08/2017
 keywords: -OID_GEN_UNKNOWN_PROTOS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a2734cf101fdd279e0b8d327c56a43fd40889320
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3554cbcac043d374c4f945f3907eea5f255f1c16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387894"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385742"
 ---
 # <a name="oidgenunknownprotos"></a>OID\_GEN\_未知\_PROTOS
 
@@ -28,7 +28,7 @@ ms.locfileid: "63387894"
 <a name="remarks"></a>备注
 -------
 
-仅[NDIS 网络接口](https://msdn.microsoft.com/library/windows/hardware/ff566527)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+仅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
 
 未知协议的统计信息计数器指定通过接口接收的由于关联的协议是未知或不受支持而被丢弃的数据包数。
 
@@ -53,7 +53,7 @@ ms.locfileid: "63387894"
 ## <a name="see-also"></a>请参阅
 
 
-[NDIS 网络接口 Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

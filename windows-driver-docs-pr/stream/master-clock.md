@@ -12,12 +12,12 @@ keywords:
 - 时间 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d23dc4318f5cbebb44d6009b17581009cbb368
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d46beaa0a86bab16a8cce854408dc1ea6af18fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375593"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386637"
 ---
 # <a name="master-clock"></a>主时钟
 
@@ -29,7 +29,7 @@ DVD 解码器微型驱动程序可能指示给定的流是能够提供主时钟�
 
 *HwClockFunction*成员设置为指向处理的时钟信息调用 DVD 解码器微型驱动程序例程的指针。 例程会设置 SRB\_打开\_接收主时钟流的流调用。 这表示流能够作为主系统时钟。
 
-*ClockSupportFlags*的成员[ **HW\_时钟\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff559671)结构设置为以下值之一：
+*ClockSupportFlags*的成员[ **HW\_时钟\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_clock_object)结构设置为以下值之一：
 
 <a href="" id="clock-support-can-set-onboard-clock"></a>时钟\_支持\_可以\_设置\_载入\_时钟  
 指示设备可以为任意值来更改要登记的时钟时间。

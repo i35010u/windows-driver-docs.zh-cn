@@ -5,12 +5,12 @@ ms.assetid: 57e79d45-536a-4ab9-8cc0-0408d722b6f7
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_VISIBLE_PROVIDERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6742298857e8b9e94995443fd1fe476d641e2dc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5117503621e9d52943ed887c385e0b145330a233
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369028"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384388"
 ---
 # <a name="ndisstatuswwanvisibleproviders"></a>NDIS\_状态\_WWAN\_VISIBLE\_提供程序
 
@@ -19,7 +19,7 @@ ms.locfileid: "63369028"
 
 微型端口驱动程序不能使用此通知将发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_VISIBLE\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567948)结构。
+使用此通知[ **NDIS\_WWAN\_VISIBLE\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -49,7 +49,7 @@ ms.locfileid: "63369028"
 
 [OID\_WWAN\_VISIBLE\_提供程序](oid-wwan-visible-providers.md)
 
-[**NDIS\_WWAN\_VISIBLE\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567948)
+[**NDIS\_WWAN\_VISIBLE\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)
 
  
 

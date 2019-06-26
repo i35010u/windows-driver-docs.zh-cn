@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5511f971d1d2d7074b4c1879750adfcea96e0997
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08ec77366e9ca507cede911b500594b8e9a628dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390671"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382658"
 ---
 # <a name="ndisstatuswdiindicationp2pgroupoperatingchannel"></a>NDIS\_状态\_WDI\_指示\_P2P\_组\_操作系统\_通道
 
@@ -27,8 +27,8 @@ ms.locfileid: "63390671"
 
 | 在任务栏的搜索框中键入                                                                                         | 允许多个 TLV 实例 | 可选 | 描述                                                        |
 |----------------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](https://msdn.microsoft.com/library/windows/hardware/dn897869)                    |                                |          | 操作通道给定 Wi-Fi Direct 端口上运行。 |
-| [**WDI\_TLV\_P2P\_CHANNEL\_INDICATE\_REASON**](https://msdn.microsoft.com/library/windows/hardware/dn897867) |                                |          | 发送所指示的原因。                             |
+| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number)                    |                                |          | 操作通道给定 Wi-Fi Direct 端口上运行。 |
+| [**WDI\_TLV\_P2P\_CHANNEL\_INDICATE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-indicate-reason) |                                |          | 发送所指示的原因。                             |
 
  
 

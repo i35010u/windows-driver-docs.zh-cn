@@ -19,12 +19,12 @@ keywords:
 - 无序的访问资源视图 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 788c3c5ee9f1ad42fc9855044ca71bb4fb497c60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2597e2e73e3330a2109e731fabc9bb6b2877107
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366310"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385574"
 ---
 # <a name="pipelines-for-direct3d-version-11"></a>Direct3D 版本 11 的管道
 
@@ -51,29 +51,29 @@ ms.locfileid: "63366310"
 
 Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并销毁外壳着色器：
 
-[**CalcPrivateShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538315)
+[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
 
-[**CalcPrivateTessellationShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538318)
+[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
 
-[*CreateHullShader*](https://msdn.microsoft.com/library/windows/hardware/ff540655)
+[*CreateHullShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createhullshader)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**HsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff567300)
+[**HsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**HsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff567294)
+[**HsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**HsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff567290)
+[**HsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**HsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff567286)
+[**HsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**HsSetShaderWithIfaces**](https://msdn.microsoft.com/library/windows/hardware/ff567306)
+[**HsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
 ### <a name="span-idtessellatorspanspan-idtessellatorspantessellator"></a><span id="tessellator"></span><span id="TESSELLATOR"></span>细化器
 
 细化器是由外壳着色器中的声明定义其操作的固定功能单元。 细化器操作后，每个修补程序是由外壳着色器输出。 外壳着色器生成 tess 因素，是多少通知细化器以对数字 （生成几何和连接） 的修补程序的域上。
 
-Direct3D 运行时调用的驱动程序[ **CalcPrivateTessellationShaderSize** ](https://msdn.microsoft.com/library/windows/hardware/ff538318)函数来计算的外壳或域着色器的内存区域的大小。
+Direct3D 运行时调用的驱动程序[ **CalcPrivateTessellationShaderSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)函数来计算的外壳或域着色器的内存区域的大小。
 
 ### <a name="span-iddomainshaderspanspan-iddomainshaderspandomain-shader"></a><span id="domain_shader"></span><span id="DOMAIN_SHADER"></span>域着色器
 
@@ -81,21 +81,21 @@ Direct3D 运行时调用的驱动程序[ **CalcPrivateTessellationShaderSize** ]
 
 Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并销毁域着色器：
 
-[**CalcPrivateTessellationShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538318)
+[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
 
-[*CreateDomainShader*](https://msdn.microsoft.com/library/windows/hardware/ff540637)
+[*CreateDomainShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdomainshader)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**DsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff557306)
+[**DsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**DsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff557305)
+[**DsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**DsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff557298)
+[**DsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**DsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff557289)
+[**DsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**DsSetShaderWithIfaces**](https://msdn.microsoft.com/library/windows/hardware/ff557316)
+[**DsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
 ### <a name="span-idcomputeshaderspanspan-idcomputeshaderspancompute-shader"></a><span id="compute_shader"></span><span id="COMPUTE_SHADER"></span>计算着色器
 
@@ -103,25 +103,25 @@ Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并�
 
 Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并销毁计算着色器：
 
-[*CreateComputeShader*](https://msdn.microsoft.com/library/windows/hardware/ff540606)
+[*CreateComputeShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcomputeshader)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**CsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff540802)
+[**CsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**CsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff540799)
+[**CsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**CsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff540795)
+[**CsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**CsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff540794)
+[**CsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**CsSetShaderWithIfaces**](https://msdn.microsoft.com/library/windows/hardware/ff540805)
+[**CsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
-[**CsSetUnorderedAccessViews**](https://msdn.microsoft.com/library/windows/hardware/ff540808)
+[**CsSetUnorderedAccessViews**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setunorderedaccessviews)
 
-[**调度**](https://msdn.microsoft.com/library/windows/hardware/ff553896)
+[**Dispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatch)
 
-[**DispatchIndirect**](https://msdn.microsoft.com/library/windows/hardware/ff553899)
+[**DispatchIndirect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatchindirect)
 
 ### <a name="span-idunorderedaccessresourceviewsspanspan-idunorderedaccessresourceviewsspanunordered-access-resource-views"></a><span id="unordered_access_resource_views"></span><span id="UNORDERED_ACCESS_RESOURCE_VIEWS"></span>无序的访问资源视图
 
@@ -129,19 +129,19 @@ Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并�
 
 Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并销毁无序的访问资源视图：
 
-[**CalcPrivateUnorderedAccessViewSize**](https://msdn.microsoft.com/library/windows/hardware/ff538320)
+[**CalcPrivateUnorderedAccessViewSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivateunorderedaccessviewsize)
 
-[**CreateUnorderedAccessView**](https://msdn.microsoft.com/library/windows/hardware/ff540711)
+[**CreateUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createunorderedaccessview)
 
-[**DestroyUnorderedAccessView**](https://msdn.microsoft.com/library/windows/hardware/ff552812)
+[**DestroyUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroyunorderedaccessview)
 
-[**ClearUnorderedAccessViewFLOAT**](https://msdn.microsoft.com/library/windows/hardware/ff539412)
+[**ClearUnorderedAccessViewFLOAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewfloat)
 
-[**ClearUnorderedAccessViewUINT**](https://msdn.microsoft.com/library/windows/hardware/ff539414)
+[**ClearUnorderedAccessViewUINT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewuint)
 
-[**CopyStructureCount**](https://msdn.microsoft.com/library/windows/hardware/ff540544)
+[**CopyStructureCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_copystructurecount)
 
-[**SetRenderTargets(D3D11)**](https://msdn.microsoft.com/library/windows/hardware/ff569554)
+[**SetRenderTargets(D3D11)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setrendertargets)
 
  
 

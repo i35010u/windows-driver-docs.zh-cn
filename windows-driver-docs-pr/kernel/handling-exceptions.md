@@ -13,12 +13,12 @@ keywords:
 - 页读取错误 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a3fc196616a9d610349f7f3660d2f70576ad135
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 466ea89782b7b795fb0a81e3d995f43ac72fe9f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359469"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386881"
 ---
 # <a name="handling-exceptions"></a>处理异常
 
@@ -53,7 +53,7 @@ ms.locfileid: "63359469"
 
 -   若要访问但专用于系统组件使用的是当前驻留的页。 例如，用户模式代码是不允许访问内核正在使用的页。
 
-如果某项操作可能会导致异常，该驱动程序应将中的操作**试用 / 除外**块。 在用户模式下的位置的访问是典型引发异常的原因。 例如， [ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)例程检查驱动程序可以实际写入到用户模式缓冲区。 如果不能则例程将引发状态\_访问\_冲突异常。 在下面的代码示例，该驱动程序将调用**ProbeForWrite**中**试用 / 除外**，以便它可以处理所产生的异常，如果其中一个应发生。
+如果某项操作可能会导致异常，该驱动程序应将中的操作**试用 / 除外**块。 在用户模式下的位置的访问是典型引发异常的原因。 例如， [ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)例程检查驱动程序可以实际写入到用户模式缓冲区。 如果不能则例程将引发状态\_访问\_冲突异常。 在下面的代码示例，该驱动程序将调用**ProbeForWrite**中**试用 / 除外**，以便它可以处理所产生的异常，如果其中一个应发生。
 
 ```cpp
 try {
@@ -72,17 +72,17 @@ try {
 
 驱动程序必须处理任何引发的异常。 未处理的异常导致了系统的 bug 检查。 要引发的异常将导致该驱动程序必须处理它： 较低级驱动程序不能依赖于更高级别的驱动程序处理异常。
 
-驱动程序可以直接通过引发异常， [ **ExRaiseAccessViolation**](https://msdn.microsoft.com/library/windows/hardware/ff545509)， [ **ExRaiseDatatypeMisalignment**](https://msdn.microsoft.com/library/windows/hardware/ff545524)，或[**ExRaiseStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff545529)例程。 该驱动程序必须处理这些例程引发任何异常。
+驱动程序可以直接通过引发异常， [ **ExRaiseAccessViolation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exraiseaccessviolation)， [ **ExRaiseDatatypeMisalignment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exraisedatatypemisalignment)，或[**ExRaiseStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exraisestatus)例程。 该驱动程序必须处理这些例程引发任何异常。
 
 下面是例程，至少在某些情况下，将引发异常的部分列表：
 
--   [**MmMapLockedPages**](https://msdn.microsoft.com/library/windows/hardware/ff554622)
+-   [**MmMapLockedPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpages)
 
--   [**MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)
+-   [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)
 
--   [**ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)
+-   [**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)
 
--   [**ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)
+-   [**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)
 
 对用户模式缓冲区的内存访问也会导致访问冲突。 有关详细信息，请参阅[中引用用户空间地址错误](errors-in-referencing-user-space-addresses.md)。
 

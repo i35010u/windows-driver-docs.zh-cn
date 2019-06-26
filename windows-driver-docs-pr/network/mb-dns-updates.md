@@ -4,19 +4,19 @@ description: MB DNS 更新
 ms.assetid: be93f0b4-a075-455e-b03c-6d23a2be7b1d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15936af901990a4214ecd9faf50de553a197f65a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c578e0d4678d7608da10add204ab1c4b8558c67c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378001"
 ---
 # <a name="mb-dns-updates"></a>MB DNS 更新
 
 
 本主题描述以通知有关 DNS 地址更新 MB 服务的操作。
 
-微型端口驱动程序应设置**名称服务器**注册表项以更新 Windows 有关 DNS 地址更改。 下表描述了相应的注册表项、 预期值和字符串为 IPv4 和 IPv6 网络的示例。 如果微型端口驱动程序仅支持 IPv4 网络，它应设置仅 IPv4 注册表项。 微型端口驱动程序应设置相应的注册表项，它们通知有关媒体的 Windows 通过发送连接事件之前[ **NDIS\_状态\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567391)通知。
+微型端口驱动程序应设置**名称服务器**注册表项以更新 Windows 有关 DNS 地址更改。 下表描述了相应的注册表项、 预期值和字符串为 IPv4 和 IPv6 网络的示例。 如果微型端口驱动程序仅支持 IPv4 网络，它应设置仅 IPv4 注册表项。 微型端口驱动程序应设置相应的注册表项，它们通知有关媒体的 Windows 通过发送连接事件之前[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)通知。
 
 <table>
 <colgroup>

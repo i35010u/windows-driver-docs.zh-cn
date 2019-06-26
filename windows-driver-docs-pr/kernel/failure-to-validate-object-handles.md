@@ -8,12 +8,12 @@ keywords:
 - 对象句柄 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 198ace4aca05664a91f8244398fe2e3bc80c6ef5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 352e771725815de8e4fb81d2ab88466315e56814
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359995"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386605"
 ---
 # <a name="failure-to-validate-object-handles"></a>无法验证对象句柄
 
@@ -23,7 +23,7 @@ ms.locfileid: "63359995"
 
 某些驱动程序必须处理由调用方传递给它们的对象，或必须同时处理两个文件对象。 例如，调制解调器驱动程序可能会收到一个事件对象的句柄或网络驱动程序可能会收到两个不同的文件对象的句柄。 驱动程序必须验证这些句柄。 因为它们的传递由调用方，而不是通过 I/O 管理器，I/O 管理器不能执行任何验证检查。
 
-例如，以下代码段中，驱动程序已传递的句柄**AscInfo-&gt;AddressHandle**，但还没有验证它，然后再调[ **ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679):
+例如，以下代码段中，驱动程序已传递的句柄**AscInfo-&gt;AddressHandle**，但还没有验证它，然后再调[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle):
 
 ```cpp
    //

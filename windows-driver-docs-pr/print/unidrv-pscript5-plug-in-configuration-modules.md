@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd0e8b9a940b463fc0a33c30b741232618209ae0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba06c8719462c3e5c5972c8473c5d65c82efcdca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385957"
 ---
 # <a name="unidrvpscript5-plug-in-configuration-modules"></a>Unidrv/PScript5 插件配置模块
 
@@ -25,7 +25,7 @@ ms.locfileid: "63346555"
 
 -   PrintTicket 和 PrintCapabilities 功能
 
--   [IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)接口用于操作 Unidrv 和 PScript5 设置
+-   [IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)接口用于操作 Unidrv 和 PScript5 设置
 
 -   XPSDrv 文档事件
 
@@ -33,9 +33,9 @@ ms.locfileid: "63346555"
 
 ### <a name="printticket-and-printcapabilities-interface-support"></a>PrintTicket 和 PrintCapabilities 接口支持
 
-Unidrv 和 PScript5 打印驱动程序插件实现[IPrintOemPrintTicketProvider](https://msdn.microsoft.com/library/windows/hardware/ff553174)接口可自定义的 PrintTicket 和 PrintCapabilities 数据。 此接口中的方法允许插件以自定义 PrintTicket 和 PrintCapabilities 处理此插件提供的自定义功能。
+Unidrv 和 PScript5 打印驱动程序插件实现[IPrintOemPrintTicketProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintoemprintticketprovider)接口可自定义的 PrintTicket 和 PrintCapabilities 数据。 此接口中的方法允许插件以自定义 PrintTicket 和 PrintCapabilities 处理此插件提供的自定义功能。
 
-Unidrv 和 PScript5 打印驱动程序实现[IPrintTicketProvider](https://msdn.microsoft.com/library/windows/hardware/ff554375)接口，并生成基于 GPD 或 PPD 文件的 PrintTicket 和 PrintCapabilities 数据的初始版本。 之后的初始处理 Unidrv 或 PScript5 打印驱动程序然后调用即插即用接**IPrintOemPrintTicketProvider**接口，以便插件可以修改此数据，然后打印驱动程序将其返回给调用应用程序。
+Unidrv 和 PScript5 打印驱动程序实现[IPrintTicketProvider](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))接口，并生成基于 GPD 或 PPD 文件的 PrintTicket 和 PrintCapabilities 数据的初始版本。 之后的初始处理 Unidrv 或 PScript5 打印驱动程序然后调用即插即用接**IPrintOemPrintTicketProvider**接口，以便插件可以修改此数据，然后打印驱动程序将其返回给调用应用程序。
 
 ### <a name="iprintcorehelper-interface"></a>IPrintCoreHelper 接口
 
@@ -62,7 +62,7 @@ DECLARE_INTERFACE_(IPrintCoreHelper, IUnknown) {
 };
 ```
 
-以下两个其他接口， [IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)并[IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)，派生自**IPrintCoreHelper**接口。 这些接口是特定于 Unidrv 和 PScript5 分别打印驱动程序，并包括是唯一的每个驱动程序的其他方法。
+以下两个其他接口， [IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)并[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)，派生自**IPrintCoreHelper**接口。 这些接口是特定于 Unidrv 和 PScript5 分别打印驱动程序，并包括是唯一的每个驱动程序的其他方法。
 
 ```cpp
 DECLARE_INTERFACE_(IPrintCoreHelperUni, IUnknown) {

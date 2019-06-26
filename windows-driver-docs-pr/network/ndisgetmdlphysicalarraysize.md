@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 与 Windows Vista 一起启动的网络驱动程序的 NdisGetMdlPhysicalArraySize 宏
 ms.localizationpriority: medium
-ms.openlocfilehash: bc8cd67880d36826e04479559492b713ab7fa6bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c6e427eeb78bf24664ddd1669bc4f0308697b8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361015"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383682"
 ---
 # <a name="ndisgetmdlphysicalarraysize-macro"></a>NdisGetMdlPhysicalArraySize 宏
 
@@ -45,7 +45,7 @@ VOID NdisGetMdlPhysicalArraySize(
 <a name="remarks"></a>备注
 -------
 
-**NdisGetMdlPhysicalArraySize**宏提供的基于 MDL 版本[ **NdisGetBufferPhysicalArraySize** ](https://msdn.microsoft.com/library/windows/hardware/ff552033)函数。
+**NdisGetMdlPhysicalArraySize**宏提供的基于 MDL 版本[ **NdisGetBufferPhysicalArraySize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552033(v=vs.85))函数。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +74,7 @@ VOID NdisGetMdlPhysicalArraySize(
 </tr>
 <tr class="odd">
 <td><p>DDI 符合性规则</p></td>
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff547985" data-raw-source="[&lt;strong&gt;Irql_NetBuffer_Function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547985)"><strong>Irql_NetBuffer_Function</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-irql-netbuffer-function" data-raw-source="[&lt;strong&gt;Irql_NetBuffer_Function&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-irql-netbuffer-function)"><strong>Irql_NetBuffer_Function</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ VOID NdisGetMdlPhysicalArraySize(
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisGetBufferPhysicalArraySize**](https://msdn.microsoft.com/library/windows/hardware/ff552033)
+[**NdisGetBufferPhysicalArraySize**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552033(v=vs.85))
 
  
 

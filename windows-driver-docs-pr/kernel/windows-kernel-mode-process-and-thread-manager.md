@@ -4,12 +4,12 @@ description: Windows 内核模式进程和线程管理器
 ms.assetid: 4053c73e-190d-4ffe-8db2-f531d120ba81
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7eb171169fa476b5c0c74a53f3e9ff7c6d2695f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64647f57032067673862efca79ca2c594c0617b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357470"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386874"
 ---
 # <a name="windows-kernel-mode-process-and-thread-manager"></a>Windows 内核模式进程和线程管理器
 
@@ -42,7 +42,7 @@ Windows 内核模式进程和线程管理器处理的过程中的所有线程的
 -    使用[系统工作线程数](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-worker-threads)尤其是工作涉及将工作排队到： 
         -    API 或 API 的调用到其他进程降低速度。
         -    任何阻塞行为，这可能中断核心服务中的线程。 
--    周密的内核模式堆栈使用情况的最佳做法。 有关示例，请参阅[如何使我的驱动程序的内核模式堆栈不足？](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613940(v=vs.85))并[重要驱动程序的概念和提示](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614604(v%3dvs.85))。
+-    周密的内核模式堆栈使用情况的最佳做法。 有关示例，请参阅[如何使我的驱动程序的内核模式堆栈不足？](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613940(v=vs.85))并[重要驱动程序的概念和提示](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614604(v=vs.85))。
 
 
 ## <a name="subsystem-processes"></a>子系统进程
@@ -52,11 +52,11 @@ Windows 内核模式进程和线程管理器处理的过程中的所有线程的
 
 一个组件是*子系统过程*承载未修改的用户模式 Linux 二进制文件，例如/bin/bash。 子系统进程不包含与 Win32 进程，如进程环境块 (PEB) 和线程环境块 (TEB) 相关联的数据结构。 对于的子系统进程，系统调用和用户模式异常将被分派给配对的驱动程序。
 
-以下是对的更改[进程和线程管理器例程](https://msdn.microsoft.com/library/windows/hardware/ff559917)为了支持子系统进程：
+以下是对的更改[进程和线程管理器例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)为了支持子系统进程：
 
--   WSL 类型为由**SubsystemInformationTypeWSL**中的值[**子系统\_信息\_类型**](https://msdn.microsoft.com/library/windows/hardware/mt805892)枚举。 驱动程序可以调用[ **NtQueryInformationProcess** ](https://msdn.microsoft.com/library/windows/desktop/ms684280)并[ **NtQueryInformationThread** ](https://msdn.microsoft.com/library/windows/desktop/ms684283)以确定基本子系统。 这些调用将返回**SubsystemInformationTypeWSL** WSL 的。
--   其他内核模式驱动程序可以获取有关的通知子系统进程创建/删除通过注册通过其回调例程[ **PsSetCreateProcessNotifyRoutineEx2** ](https://msdn.microsoft.com/library/windows/hardware/mt805891)调用。 若要获取有关线程创建/删除的通知，驱动程序可以调用[ **PsSetCreateThreadNotifyRoutineEx**](https://msdn.microsoft.com/library/windows/hardware/dn957857)，并指定**PsCreateThreadNotifySubsystems**作为通知的类型。
--   [ **PS\_创建\_通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff559960)结构已扩展为包括**IsSubsystemProcess**成员，指示非 Win32 子系统。 其他成员，如**的文件对象**，**映像文件名**， **CommandLine**指示子系统过程有关的其他信息。 有关这些成员的行为的信息，请参阅[**子系统\_信息\_类型**](https://msdn.microsoft.com/library/windows/hardware/mt805892)。
+-   WSL 类型为由**SubsystemInformationTypeWSL**中的值[**子系统\_信息\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_subsystem_information_type)枚举。 驱动程序可以调用[ **NtQueryInformationProcess** ](https://docs.microsoft.com/windows/desktop/api/winternl/nf-winternl-ntqueryinformationprocess)并[ **NtQueryInformationThread** ](https://docs.microsoft.com/windows/desktop/api/winternl/nf-winternl-ntqueryinformationthread)以确定基本子系统。 这些调用将返回**SubsystemInformationTypeWSL** WSL 的。
+-   其他内核模式驱动程序可以获取有关的通知子系统进程创建/删除通过注册通过其回调例程[ **PsSetCreateProcessNotifyRoutineEx2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreateprocessnotifyroutineex2)调用。 若要获取有关线程创建/删除的通知，驱动程序可以调用[ **PsSetCreateThreadNotifyRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreatethreadnotifyroutineex)，并指定**PsCreateThreadNotifySubsystems**作为通知的类型。
+-   [ **PS\_创建\_通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_ps_create_notify_info)结构已扩展为包括**IsSubsystemProcess**成员，指示非 Win32 子系统。 其他成员，如**的文件对象**，**映像文件名**， **CommandLine**指示子系统过程有关的其他信息。 有关这些成员的行为的信息，请参阅[**子系统\_信息\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_subsystem_information_type)。
 
  
 

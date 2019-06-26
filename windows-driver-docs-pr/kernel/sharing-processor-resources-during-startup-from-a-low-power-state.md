@@ -4,12 +4,12 @@ description: 在从低功耗状态启动期间共享处理器资源
 ms.assetid: 2b2e6a1b-7c2d-4f38-9407-a417b75daa6a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c6faa61189f36e60c0692bc99cf643a5b8fa4427
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f6823ec88b22d38a04b8820580ded20d35ddcb6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383020"
 ---
 # <a name="sharing-processor-resources-during-startup-from-a-low-power-state"></a>在从低功耗状态启动期间共享处理器资源
 
@@ -24,7 +24,7 @@ DPC 例程时，会阻止较低优先级的其他线程在同一个处理器上�
 
 -   单个 DPC 例程不应执行的多个 100 微秒为单位。
 
--   DPC 调用的例程[ **KeStallExecutionProcessor** ](https://msdn.microsoft.com/library/windows/hardware/ff553295)来延迟执行的例程不能指定多个 100 微秒为单位的延迟。
+-   DPC 调用的例程[ **KeStallExecutionProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)来延迟执行的例程不能指定多个 100 微秒为单位的延迟。
 
 -   如果任务需要超过 100 微秒为单位，并且执行在调度\_级别 DPC 例程应在 100 微秒后结束和计划在以后完成此任务的一个或多个 DPC 计时器例程。
 

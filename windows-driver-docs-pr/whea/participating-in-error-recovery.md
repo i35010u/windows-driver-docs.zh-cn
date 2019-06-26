@@ -12,17 +12,17 @@ keywords:
 - 错误恢复 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29aca46f4d488523e46fc0d387371c183c3b8389
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: def79e808f5256e4e2d2a10dd91dd5b44ef94c25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340767"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386454"
 ---
 # <a name="participating-in-error-recovery"></a>参与错误恢复
 
 
-若要参与错误恢复，PSHED 插件必须实现[ *AttemptRecovery* ](https://msdn.microsoft.com/library/windows/hardware/ff559257)回调函数。
+若要参与错误恢复，PSHED 插件必须实现[ *AttemptRecovery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_attempt_error_recovery)回调函数。
 
 下面的代码示例演示如何实现此回调函数。
 

@@ -4,12 +4,12 @@ description: ISCSI\_DiscoveredTargetPortalGroup2 WMI 类
 ms.assetid: 9285c74c-ad20-4d34-abdb-d5c5db1f9e90
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 25fc6f491bf4b708048eaee74347ab728a39ce31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fec9fdee3bc1b9af74d78403b87e254e58f5eb7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378435"
 ---
 # <a name="iscsidiscoveredtargetportalgroup2-wmi-class"></a>ISCSI\_DiscoveredTargetPortalGroup2 WMI 类
 
@@ -20,7 +20,7 @@ ISCSI\_DiscoveredTargetPortalGroup2 WMI 类包含有关所有门户组中的门�
 
 ISCSI\_DiscoveredTargetPortalGroup2 类中定义，则不发布*Discover.mof*。
 
-当 WMI 工具套件编译此类定义时，它会生成[ **ISCSI\_DiscoveredTargetPortalGroup2** ](https://msdn.microsoft.com/library/windows/hardware/ff561517)数据结构。
+当 WMI 工具套件编译此类定义时，它会生成[ **ISCSI\_DiscoveredTargetPortalGroup2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsifnd/ns-iscsifnd-_iscsi_discoveredtargetportalgroup2)数据结构。
 
  
 

@@ -8,23 +8,23 @@ keywords:
 - 正在卸载驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0af4f957b5e8bc92b513c13e3b7e164814fa6c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 419babaf2c99b35bfb2f645317818cd4ef5fb618
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346633"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386002"
 ---
 # <a name="unloading-a-callout-driver"></a>卸载标注驱动程序
 
 
 若要卸载标注驱动程序，操作系统将调用标注驱动程序的卸载函数。 有关如何指定标注驱动程序的卸载函数的详细信息，请参阅[指定卸载函数](specifying-an-unload-function.md)。
 
-标注驱动程序的卸载函数确保标注驱动程序的标注从筛选器引擎中注销之前标注驱动程序是从系统内存中卸载。 标注驱动程序拨打[ **FwpsCalloutUnregisterById0** ](https://msdn.microsoft.com/library/windows/hardware/ff551144)函数或[ **FwpsCalloutUnregisterByKey0** ](https://msdn.microsoft.com/library/windows/hardware/ff551145)函数取消注册从筛选器引擎标注。 标注驱动程序必须从其卸载函数之前返回之后它已成功注销所有筛选器引擎从其标注。
+标注驱动程序的卸载函数确保标注驱动程序的标注从筛选器引擎中注销之前标注驱动程序是从系统内存中卸载。 标注驱动程序拨打[ **FwpsCalloutUnregisterById0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutunregisterbyid0)函数或[ **FwpsCalloutUnregisterByKey0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutunregisterbykey0)函数取消注册从筛选器引擎标注。 标注驱动程序必须从其卸载函数之前返回之后它已成功注销所有筛选器引擎从其标注。
 
-标注驱动程序已注销所有筛选器引擎从其标注后，它必须删除该设备对象，它创建之前它最初注册其标注。 基于 Windows 驱动程序模型 (WDM) 调用的标注驱动程序[ **IoDeleteDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549083)函数删除的设备对象。 基于 Windows 驱动程序框架 (WDF) 调用的标注驱动程序[ **WdfObjectDelete** ](https://msdn.microsoft.com/library/windows/hardware/ff548734)函数删除 framework 设备对象。
+标注驱动程序已注销所有筛选器引擎从其标注后，它必须删除该设备对象，它创建之前它最初注册其标注。 基于 Windows 驱动程序模型 (WDM) 调用的标注驱动程序[ **IoDeleteDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)函数删除的设备对象。 基于 Windows 驱动程序框架 (WDF) 调用的标注驱动程序[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)函数删除 framework 设备对象。
 
-标注驱动程序还必须销毁它以前通过调用创建任何数据包注入句柄[ **FwpsInjectionHandleDestroy0** ](https://msdn.microsoft.com/library/windows/hardware/ff551181)函数从其卸载函数在返回之前。
+标注驱动程序还必须销毁它以前通过调用创建任何数据包注入句柄[ **FwpsInjectionHandleDestroy0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectionhandledestroy0)函数从其卸载函数在返回之前。
 
 例如：
 

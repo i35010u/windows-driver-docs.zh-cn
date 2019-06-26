@@ -11,12 +11,12 @@ keywords:
 - 调用 WDK 的 CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53f818ca63d49dc1c1d9227d933adc6f7d0598c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32e80d8a27e3860d054c959d18cec9bfaac4f716
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383628"
 ---
 # <a name="specifying-parameters-for-an-incoming-call"></a>指定来电的参数
 
@@ -24,7 +24,7 @@ ms.locfileid: "63388111"
 
 
 
-时，该值指示的传入呼叫**Ndis (M) CmDispatchIncomingCall**，呼叫管理器或支持语音的流式处理的 MCM 必须指定以下值中的[**共同\_调用\_管理器\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff545381)结构：
+时，该值指示的传入呼叫**Ndis (M) CmDispatchIncomingCall**，呼叫管理器或支持语音的流式处理的 MCM 必须指定以下值中的[**共同\_调用\_管理器\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))结构：
 
 -   最大传输 SDU 大小 (CallMgrParameters-&gt;Transmit.MaxSduSize)
 
@@ -60,7 +60,7 @@ ms.locfileid: "63388111"
 
 -   **ulCalledIDAddressType**
 
-呼叫管理器或支持共同以外的地址族的 MCM\_地址\_系列\_TAPI\_代理指定的前面行\_调用\_信息成员时响应[OID\_共同\_TAPI\_TRANSLATE\_NDIS\_CALLPARAMS](https://msdn.microsoft.com/library/windows/hardware/ff569099)查询。
+呼叫管理器或支持共同以外的地址族的 MCM\_地址\_系列\_TAPI\_代理指定的前面行\_调用\_信息成员时响应[OID\_共同\_TAPI\_TRANSLATE\_NDIS\_CALLPARAMS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-translate-ndis-callparams)查询。
 
 呼叫管理器或支持产生的 CO MCM\_地址\_系列\_TAPI\_代理系列指定的上述行\_调用\_信息中的特定于媒体的一部分的成员CO\_调用\_MANAGER\_参数结构，它提供给**Ndis (M) CmDispatchIncomingCall**。
 

@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0ab0641646d788e02e1e65459e002842b4491a10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9c26850c3949f9cc69d7cf55ab2b51b2f6bf990c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522882"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386401"
 ---
 # <a name="quietinstall-xml-element"></a>quietInstall XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **QuietInstall** XML 元素为空元素，用于设置**quietInstall**标志为 ON，将配置 DPInst 禁止显示的向导页和大多数其他用户消息。
 
@@ -79,7 +79,7 @@ ms.locfileid: "56522882"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

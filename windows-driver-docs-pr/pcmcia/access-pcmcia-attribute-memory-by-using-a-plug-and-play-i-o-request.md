@@ -8,12 +8,12 @@ keywords:
 - 即插即用 WDK PCMCIA 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be854b7d1eaa69ea3e086dcb93ea6d8e1ce8970
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a59e862d6b311de6174417a7a930fcf5d82b82ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382604"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-plug-and-play-io-request"></a>使用即插即用 I/O 请求访问 PCMCIA 属性内存
 
@@ -31,7 +31,7 @@ ms.locfileid: "56564999"
 
 -   创建并初始化新的 IRP\_MJ\_即插即用的请求。
 
-    该驱动程序指定任一配置文件[ **IRP\_MN\_读取\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)或[ **IRP\_MN\_编写\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551769)较小函数。
+    该驱动程序指定任一配置文件[ **IRP\_MN\_读取\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)或[ **IRP\_MN\_编写\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)较小函数。
 
 -   获取下一步的堆栈位置。
 

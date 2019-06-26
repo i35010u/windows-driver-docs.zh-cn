@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 15132e04dd58c0c7de3a2329b04dc31240f8ee7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f02be039bb15e3eb46de568a6b0a0b166fc9178f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382180"
 ---
 # <a name="ndisstatuswdiindicationapassociationrequestreceived"></a>NDIS\_STATUS\_WDI\_INDICATION\_AP\_ASSOCIATION\_REQUEST\_RECEIVED
 
@@ -20,7 +20,7 @@ ms.locfileid: "63366531"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63366531"
 
 | 在任务栏的搜索框中键入                                                                                                     | 允许多个 TLV 实例 | 可选 | 描述                                   |
 |----------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------|
-| [**WDI\_TLV\_传入\_关联\_请求\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn926315) |                                |          | 传入的请求关联信息。 |
+| [**WDI\_TLV\_传入\_关联\_请求\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-incoming-association-request-info) |                                |          | 传入的请求关联信息。 |
 
  
 

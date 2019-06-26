@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 37188d6581a3cd62249f55d2f9473577c42c09df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b98c362419475bc1f3b886e2da75f8bf88f0546
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387020"
 ---
 # <a name="kscategorymicrophonearrayprocessor"></a>KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
 
 
-KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 功能类别，用于处理从麦克风阵列输入。
+KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能类别，用于处理从麦克风阵列输入。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR[设备接口类](https://msdn.microsoft.co
 
 KS 设备的驱动程序注册 KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 向操作系统指示设备支持 KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 功能分类的实例。
 
-有关音频设备的功能类别的详细信息，请参阅[音频适配器安装设备接口](https://msdn.microsoft.com/library/windows/hardware/ff536813)并[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799).
+有关音频设备的功能类别的详细信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)并[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories).
 
 有关如何处理 Windows Vista 上的麦克风阵列的详细信息，请参阅[Windows Vista 中的麦克风阵列支持](https://go.microsoft.com/fwlink/p/?linkid=120592)并[如何与生成和使用麦克风阵列适用于 Windows Vista 的](https://go.microsoft.com/fwlink/p/?linkid=120593)白皮书。
 
@@ -83,7 +83,7 @@ KS 设备的驱动程序注册 KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 向操作�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

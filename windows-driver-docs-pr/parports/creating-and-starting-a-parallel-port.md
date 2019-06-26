@@ -7,12 +7,12 @@ keywords:
 - 并行端口 WDK，启动
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe62cb2720451afd46645a0d463a9722071638af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fe045b0297f967ee4d0bbd42133a770282fc9f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373543"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377543"
 ---
 # <a name="creating-and-starting-a-parallel-port"></a>创建和启动并行端口
 
@@ -28,7 +28,7 @@ ms.locfileid: "63373543"
 
     并行端口设备名称的格式是"\\设备\\ParallelPortx"，其中 x 是端口号的整数值。 并行端口功能驱动程序使用的端口名条目值 (REG\_SZ) 要确定端口号的并行端口插注册表项下。 请注意是否 PortName 具有格式"LPTn"，其中 n 为的端口号，在"ParallePortx"x 设置为 (n-1) 的值。 例如，"ParallelPort0"是"LPT1"与相关联。 如果端口名不具有正确的格式，不创建设备对象。
 
-    请注意，"ParallelPortx"设备名称不能保证。 Microsoft 建议使用[ **IoRegisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff549526) GUID 抵达的通知\_并行\_设备设备接口。
+    请注意，"ParallelPortx"设备名称不能保证。 Microsoft 建议使用[ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification) GUID 抵达的通知\_并行\_设备设备接口。
 
 -   注册并启用一个 GUID\_并行\_的并行端口设备接口
 
