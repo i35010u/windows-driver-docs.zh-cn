@@ -15,12 +15,12 @@ keywords:
 - SAN 套接字 WDK 绑定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a536797eb2f860c395d5a2997f344eda8f5de4f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1834cc99cbdd3443304d8e60387ed3c9918434e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374921"
 ---
 # <a name="creating-and-binding-san-sockets"></a>创建和绑定 SAN 套接字
 
@@ -71,7 +71,7 @@ ms.locfileid: "63357368"
 
 2.  如果交换机确定它不能使用相应的数据传输 SAN 服务提供程序，此开关将路由通过 TCP/IP 服务提供商的数据传输。
 
-3.  如果开关选择 SAN 服务提供商，以服务应用程序的套接字，此开关调用 SAN 服务提供商的[ **WSPSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566319)函数来创建随附套接字。
+3.  如果开关选择 SAN 服务提供商，以服务应用程序的套接字，此开关调用 SAN 服务提供商的[ **WSPSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566319(v=vs.85))函数来创建随附套接字。
 
 ### <a name="initiating-creation-of-a-companion-socket"></a>启动创建随附套接字
 
@@ -91,7 +91,7 @@ ms.locfileid: "63357368"
 
 ### <a name="binding-a-companion-socket"></a>绑定随附套接字
 
-1.  如果 SAN 服务提供商**WSPSocket**函数成功完成，此开关立即调用 SAN 服务提供商[ **WSPBind** ](https://msdn.microsoft.com/library/windows/hardware/ff566268)函数将分配本地 IP 地址和 TCP 端口套接字。
+1.  如果 SAN 服务提供商**WSPSocket**函数成功完成，此开关立即调用 SAN 服务提供商[ **WSPBind** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566268(v=vs.85))函数将分配本地 IP 地址和 TCP 端口套接字。
 
 2.  开关会将相同的 IP 地址和 TCP 端口分配给 SAN 套接字已分配给已通过 TCP/IP 提供程序的套接字。 SAN 服务提供程序必须将此 TCP/IP 地址转换为其本机格式。
 
@@ -99,15 +99,15 @@ ms.locfileid: "63357368"
 
 ### <a name="setting-options-for-a-companion-socket"></a>设置助理套接字选项
 
--   如果应用程序指定的任何套接字选项，此开关将存储这些选项。 创建后 SAN 套接字，此开关调用 SAN 服务提供商[ **WSPSetSockOpt** ](https://msdn.microsoft.com/library/windows/hardware/ff566318)由应用程序可以立即设置这些选项指定的每个受支持选项的函数SAN 套接字。
+-   如果应用程序指定的任何套接字选项，此开关将存储这些选项。 创建后 SAN 套接字，此开关调用 SAN 服务提供商[ **WSPSetSockOpt** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566318(v=vs.85))由应用程序可以立即设置这些选项指定的每个受支持选项的函数SAN 套接字。
 
 ### <a name="failing-a-companion-socket-call"></a>失败的配套套接字调用
 
--   如果 SAN 服务提供程序没有通过任何对前面的调用其**WSPSocket**， **WSPBind**，或**WSPSetSockOpt**函数，此开关调用 SAN 服务提供商[**WSPCloseSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566273)函数来销毁 SAN 套接字。 此开关使用 TCP/IP 提供程序可以继续响应应用程序套接字。 请注意，交换机建立使用 SAN 服务提供程序的连接后，此开关不能用于 TCP/IP 提供程序服务应用程序的套接字。 在这种情况下，切换到应用程序返回相应的错误。
+-   如果 SAN 服务提供程序没有通过任何对前面的调用其**WSPSocket**， **WSPBind**，或**WSPSetSockOpt**函数，此开关调用 SAN 服务提供商[**WSPCloseSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566273(v=vs.85))函数来销毁 SAN 套接字。 此开关使用 TCP/IP 提供程序可以继续响应应用程序套接字。 请注意，交换机建立使用 SAN 服务提供程序的连接后，此开关不能用于 TCP/IP 提供程序服务应用程序的套接字。 在这种情况下，切换到应用程序返回相应的错误。
 
 ### <a name="connecting-the-companion-socket"></a>连接的配套套接字
 
--   切换开关设置助理套接字后，调用任一**WSPListen**或**WSPConnect**函数 SAN 服务提供商来执行该操作导致的 SAN 服务提供程序最初设置套接字。 例如，如果应用程序最初请求来侦听传入连接，该交换机调用 SAN 服务提供商[ **WSPListen** ](https://msdn.microsoft.com/library/windows/hardware/ff566297)函数。
+-   切换开关设置助理套接字后，调用任一**WSPListen**或**WSPConnect**函数 SAN 服务提供商来执行该操作导致的 SAN 服务提供程序最初设置套接字。 例如，如果应用程序最初请求来侦听传入连接，该交换机调用 SAN 服务提供商[ **WSPListen** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566297(v=vs.85))函数。
 
  
 

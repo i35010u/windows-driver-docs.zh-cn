@@ -4,12 +4,12 @@ description: 在任何重要的软件中的 bug 是不可避免的。
 ms.assetid: 551CA7DD-EB1A-41FB-A3D7-472DA7020B51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f211168ac1d9db1b3b3f236b6174e4a2cfc81e0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d29048e376f6c0faa5e8d5497125c327eb71c1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385443"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374713"
 ---
 # <a name="wdi-information-collection-for-bugs"></a>WDI 信息收集的 bug
 
@@ -29,7 +29,7 @@ ms.locfileid: "63385443"
 ## <a name="os-crash-with-kernel-debugger-attached"></a>使用内核调试程序附加的 OS 崩溃
 
 
-开发人员或 QA 应具有内核调试程序附加在可能的情况。 内核调试程序可以快速区分到底出在哪儿和方向进行进一步调查。 Kd 命令[**！ 分析**](https://msdn.microsoft.com/library/windows/hardware/ff562112) – v 作为第一个命令运行后的 bug 检查非常有用。 此命令将指向崩溃发生的模块，在发生崩溃的原因 （错误检查代码） 中的位置。
+开发人员或 QA 应具有内核调试程序附加在可能的情况。 内核调试程序可以快速区分到底出在哪儿和方向进行进一步调查。 Kd 命令[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) – v 作为第一个命令运行后的 bug 检查非常有用。 此命令将指向崩溃发生的模块，在发生崩溃的原因 （错误检查代码） 中的位置。
 
 ## <a name="when-reset-recovery-is-invoked"></a>调用重置恢复时
 

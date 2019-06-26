@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_INCOMING_FRAME_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 40bbfbf0b9f60090e1ba6cf1aa7256ec81388990
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91654e9bff7e8af54f6da445ad2a2e272c4b1f2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347275"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374679"
 ---
 # <a name="wditlvp2pincomingframeparameters"></a>WDI\_TLV\_P2P\_INCOMING\_FRAME\_PARAMETERS
 
@@ -33,8 +33,8 @@ WDI\_TLV\_P2P\_传入\_帧\_参数是包含传入 Wi-Fi Direct 操作帧参数 T
 
 | 在任务栏的搜索框中键入                                                                    | 描述                                        |
 |-------------------------------------------------------------------------|----------------------------------------------------|
-| [**WDI\_P2P\_ACTION\_FRAME\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/dn926086) | 传入操作框架的类型。             |
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071)                       | 远程对等方的 MAC 地址。                |
+| [**WDI\_P2P\_ACTION\_FRAME\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_action_frame_type) | 传入操作框架的类型。             |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)                       | 远程对等方的 MAC 地址。                |
 | UINT8                                                                   | Wi-Fi Direct 对话框中的标记的事务。 |
 
  
