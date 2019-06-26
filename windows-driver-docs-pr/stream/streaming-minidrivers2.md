@@ -14,12 +14,12 @@ keywords:
 - 微型驱动程序 WDK Windows 2000 内核流式处理，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c51b3d69e2ac63f4eb9fe0d60d1f8041d8149c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9250487bec1d1aa79d28c02a401a56e585d0cee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324767"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377788"
 ---
 # <a name="streaming-minidrivers"></a>流微型驱动程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "63324767"
 
 
 
-**请注意**  本部分详细介绍过时*Stream.sys*类驱动程序。 随着 Microsoft Windows XP 的发布，Microsoft 支持*Stream.sys*仅为现有的驱动程序。 截至此版本中，Microsoft 建议，请考虑供应商开发新视频或音频/视频多媒体的驱动程序使用 AVStream 类驱动程序模型。 请参阅中的详细信息[AVStream 概述](avstream-overview.md)。 如果开发的仅限音频的驱动程序，您应编写下 Microsoft 提供的音频的微型端口驱动程序*Portcls.sys*类驱动程序。 有关详细信息，请参阅[音频微型端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff536206)。
+**请注意**  本部分详细介绍过时*Stream.sys*类驱动程序。 随着 Microsoft Windows XP 的发布，Microsoft 支持*Stream.sys*仅为现有的驱动程序。 截至此版本中，Microsoft 建议，请考虑供应商开发新视频或音频/视频多媒体的驱动程序使用 AVStream 类驱动程序模型。 请参阅中的详细信息[AVStream 概述](avstream-overview.md)。 如果开发的仅限音频的驱动程序，您应编写下 Microsoft 提供的音频的微型端口驱动程序*Portcls.sys*类驱动程序。 有关详细信息，请参阅[音频微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)。
 
  
 
@@ -48,7 +48,7 @@ Stream 类驱动程序旨在使编写的处理很多方面与操作系统交互�
 -   在类驱动程序处理与 PnP 管理器的所有交互。 例如：
     -   在类驱动程序微型驱动程序的名义创建功能的设备对象。
     -   在类驱动程序管理资源配置 （如将端口地址转换、 转换和映射内存范围和连接中断）。
-    -   在类驱动程序处理 PnP Irp，如[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)，或[ **IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)。
+    -   在类驱动程序处理 PnP Irp，如[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)，或[ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)。
 -   由类驱动程序处理所有低级别的缓冲区管理：
     -   如有必要，请分配 DMA 适配器对象。
     -   映射缓冲区和构建散播-聚集列出了 DMA。

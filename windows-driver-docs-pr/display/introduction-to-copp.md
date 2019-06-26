@@ -9,12 +9,12 @@ keywords:
 - 有关 COPP 的受保护视频 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9200ff0ee6287779cc6b53daa634cb4e09338095
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc211133b3b750103df74f29b38fdb3565f4b7d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379884"
 ---
 # <a name="introduction-to-copp"></a>COPP 简介
 
@@ -24,7 +24,7 @@ ms.locfileid: "63362144"
 
 **本部分仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。**
 
-COPP 提供视频的图形适配器由输出应用复制保护的一种机制。 COPP 将各种链接保护要求发送到图形适配器以更好的保护方式相比，通过提供一种常见协议[ **IOCTL\_视频\_处理\_VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff567805) I/O 控制 (IOCTL) 代码。
+COPP 提供视频的图形适配器由输出应用复制保护的一种机制。 COPP 将各种链接保护要求发送到图形适配器以更好的保护方式相比，通过提供一种常见协议[ **IOCTL\_视频\_处理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) I/O 控制 (IOCTL) 代码。
 
 下面的主题介绍 COPP:
 

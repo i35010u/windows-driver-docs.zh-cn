@@ -4,12 +4,12 @@ description: 访问 Windows Vista 之前的设备接口属性
 ms.assetid: 48b47d01-ec07-49ca-a03c-c4c387dcfb19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dcc5dead79529f0fe8dacc4e40fdc7a4e56516c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee2ed74c00b0d86af78cff574b00edad00a5ee80
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383037"
 ---
 # <a name="accessing-device-interface-properties-before-windows-vista"></a>访问 Windows Vista 之前的设备接口属性
 
@@ -24,7 +24,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持大部分设备接口�
 
 为了保持与这些早期版本的 Windows、 Windows Vista 和更高版本的兼容性也支持这两种方式来访问设备接口的信息。 但是，应使用属性键来访问这些属性在 Windows Vista 和更高版本。
 
-系统定义的设备接口的类属性的列表，请参阅[设备接口属性](https://msdn.microsoft.com/library/windows/hardware/ff541409)。 通过用于访问在 Windows Vista 和更高版本中的属性及其对应的属性项列出设备接口的类属性。 与属性键一起提供的信息包括相应的注册表条目值，如果有，可用于访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的属性。
+系统定义的设备接口的类属性的列表，请参阅[设备接口属性](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))。 通过用于访问在 Windows Vista 和更高版本中的属性及其对应的属性项列出设备接口的类属性。 与属性键一起提供的信息包括相应的注册表条目值，如果有，可用于访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的属性。
 
 有关如何使用属性键来访问在 Windows Vista 和更高版本的设备安装程序类属性的信息，请参阅[访问设备接口属性 （Windows Vista 和更高版本）](accessing-device-interface-properties--windows-vista-and-later-.md)。
 
@@ -32,17 +32,17 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持大部分设备接口�
 
 ### <a href="" id="accessing-device-interface-properties-that-have-corresponding-registry"></a> 访问有对应的注册表条目值的设备接口属性
 
-通过在 Windows Server 2003、 Windows XP 和 Windows 2000 中，首次调用使用注册表条目值的访问设备接口属性[ **SetupDiOpenDeviceInterfaceRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552075)并提供以下参数：
+通过在 Windows Server 2003、 Windows XP 和 Windows 2000 中，首次调用使用注册表条目值的访问设备接口属性[ **SetupDiOpenDeviceInterfaceRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)并提供以下参数：
 
 -   设置*DeviceInfoSet*为指向包含设备接口的设备信息集。
 
--   设置*DeviceInterfaceData*指向的[ **SP_DEVICE_INTERFACE_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552342)标识设备接口的结构。
+-   设置*DeviceInterfaceData*指向的[ **SP_DEVICE_INTERFACE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)标识设备接口的结构。
 
 -   设置*保留*为零。
 
 -   设置*samDesired*到 REGSAM 类型化值，该值指定所需的访问权限。
 
-如果此调用[ **SetupDiOpenDeviceInterfaceRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552075)成功， **SetupDiOpenDeviceInterfaceRegKey**返回请求的句柄。 如果函数调用失败， **SetupDiOpenDeviceInterfaceRegKey**将返回 INVALID_HANDLE_VALUE 和调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回的记录的错误代码。
+如果此调用[ **SetupDiOpenDeviceInterfaceRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)成功， **SetupDiOpenDeviceInterfaceRegKey**返回请求的句柄。 如果函数调用失败， **SetupDiOpenDeviceInterfaceRegKey**将返回 INVALID_HANDLE_VALUE 和调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回的记录的错误代码。
 
 检索设备接口注册表项的句柄后，提供对的调用中的句柄[RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398)或[RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399)要检索或设置对应的注册表项值设备接口属性。
 
@@ -50,7 +50,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持大部分设备接口�
 
 ### <a href="" id="using-setupdienumdeviceinterfaces-to-retrieve-information-about-a-devi"></a> 使用 SetupDiEnumDeviceInterfaces 检索设备接口的信息
 
-另一种方法来检索有关设备接口在 Windows Server 2003、 Windows XP 和 Windows 2000 上的信息是通过调用[ **SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)检索[ **SP_DEVICE_INTERFACE_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552342)结构接口。 SP_DEVICE_INTERFACE_DATA 结构包含以下信息：
+另一种方法来检索有关设备接口在 Windows Server 2003、 Windows XP 和 Windows 2000 上的信息是通过调用[ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)检索[ **SP_DEVICE_INTERFACE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)结构接口。 SP_DEVICE_INTERFACE_DATA 结构包含以下信息：
 
 -   **标志**成员指示设备接口处于活动状态还是将其删除，以及设备是否为接口类的默认接口。
 

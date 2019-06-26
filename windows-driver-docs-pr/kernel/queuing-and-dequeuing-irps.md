@@ -15,12 +15,12 @@ keywords:
 - 取消安全 IRP 队列 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a3fbcb27ad541987796406a40d3df7d586f0b87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 04ff9062fc46d403ecd8bbcc4db244431b459e52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567404"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378755"
 ---
 # <a name="queuing-and-dequeuing-irps"></a>排队和取消排队 IRP
 
@@ -32,19 +32,19 @@ ms.locfileid: "56567404"
 
 因此，最低级别驱动程序需要以下项之一：
 
--   一个[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程，该驱动程序的启动 I/O 操作的 Irp 调用 I/O 管理器已排队到系统提供 IRP 队列 (请参阅[ **IoStartPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550370)).
+-   一个[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程，该驱动程序的启动 I/O 操作的 Irp 调用 I/O 管理器已排队到系统提供 IRP 队列 (请参阅[ **IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)).
 
 -   一个内部 IRP 队列和驱动程序用于管理比它更快地进入的 Irp 的取消排队机制可以满足它们。 驱动程序可以使用设备队列、 互锁的队列或取消安全队列。 有关详细信息，请参阅[Driver-Managed IRP 队列](driver-managed-irp-queues.md)。
 
 仅可满足并完成其调度例程中的每个可能 IRP 的最低级别的设备驱动程序需要否*StartIo*例程和 Irp 的任何驱动程序管理队列。
 
-更高级别的驱动程序几乎不用*StartIo*例程。 大多数中间驱动程序有都*StartIo*例程，也不内部队列; 中间驱动程序通常可以将 Irp 使用有效的参数传递，从其调度例程并执行任何后续处理所需在任何 IRP其[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程。
+更高级别的驱动程序几乎不用*StartIo*例程。 大多数中间驱动程序有都*StartIo*例程，也不内部队列; 中间驱动程序通常可以将 Irp 使用有效的参数传递，从其调度例程并执行任何后续处理所需在任何 IRP其[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
 
 下面介绍，一般情况下，一些用于确定是否实现的设计注意事项*StartIo*例程使用或不为 Irp 的内部、 驱动程序管理队列。
 
 ### <a name="startio-routines-in-drivers"></a>驱动程序中的 StartIo 例程
 
-对于计算机能够处理一次只有一个设备 I/O 操作的外围设备，设备驱动程序可以实现*StartIo*例程。 对于这些驱动程序，I/O 管理器提供了[ **IoStartPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550370)并[ **IoStartNextPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550358)例程来排队和取消排队到 Irp 和从系统提供 IRP 队列。
+对于计算机能够处理一次只有一个设备 I/O 操作的外围设备，设备驱动程序可以实现*StartIo*例程。 对于这些驱动程序，I/O 管理器提供了[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)并[ **IoStartNextPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)例程来排队和取消排队到 Irp 和从系统提供 IRP 队列。
 
 有关详细信息*StartIo*例程，请参阅[编写 StartIo 例程](writing-a-startio-routine.md)。
 
@@ -64,7 +64,7 @@ ms.locfileid: "56567404"
 
 驱动程序还可以实现所有 IRP 队列同步并显式取消逻辑。 例如，驱动程序可以使用互锁的队列。 驱动程序的调度例程中插入 Irp 互锁的队列和驱动程序创建线程或驱动程序的工作线程回调将其删除通过调用**ExInterlocked*Xxx*列表**支持例程。
 
-例如，系统软盘控制器驱动程序使用互锁的队列。 其设备专用的线程处理通过在其他设备驱动程序的相同处理的 Irp *StartIo*例程以及一些可通过其他设备驱动程序的相同处理的 Irp [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)例程。
+例如，系统软盘控制器驱动程序使用互锁的队列。 其设备专用的线程处理通过在其他设备驱动程序的相同处理的 Irp *StartIo*例程以及一些可通过其他设备驱动程序的相同处理的 Irp [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程。
 
 ### <a name="internal-queues-with-startio-routines-in-drivers"></a>内部队列中的驱动程序的 StartIo 例程
 

@@ -15,12 +15,12 @@ keywords:
 - 数据库 WDK COM 端口数据库
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a8a6f7962b6204a1f26a427b68ae7323b14d44d
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 69bbfc1e8ea8cd33a22c2b8450538b38eb04ee3d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836340"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380647"
 ---
 # <a name="com-port-database"></a>COM 端口数据库
 
@@ -46,21 +46,21 @@ ms.locfileid: "65836340"
 
 [SerialDisplayAdvancedSettings](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-serialdisplayadvancedsettings)，这是系统提供的例程，用于安装的 COM 端口的高级的属性页
 
-[PPORT_ADVANCED_DIALOG](https://msdn.microsoft.com/library/windows/hardware/ff546956(v=vs.85).aspx)-键入例程，它提供一个可选的供应商提供的对话框框，其中由调用**SerialDisplayAdvancedSettings**
+[PPORT_ADVANCED_DIALOG](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546956(v=vs.85))-键入例程，它提供一个可选的供应商提供的对话框框，其中由调用**SerialDisplayAdvancedSettings**
 
 若要在安装程序中调用这些例程，链接到安装程序*msports.lib*，提供与 Windows Driver Kit (WDK)。
 
 ## <a name="structure-of-the-com-port-database"></a>COM 端口数据库的结构
 
-COM 端口数据库包含一个元素的数组，其中每个指示是否正在使用 COM 端口号。 第一个数组元素对应于 COM1，第二个对应于 COM2，依此类推。 但是，数据库不包含设备分配给定的端口号的任何信息。 数据库的大小等于数据库当前进行仲裁的端口号的数目。 最小数目的数据库进行仲裁的端口号是 COMDB\_最小\_端口\_仲裁和它进行仲裁的最大数目是 COMDB\_MAX\_端口\_仲裁。 可以使用增加数据库的大小[ **ComDBResizeDatabase** ](https://msdn.microsoft.com/library/windows/hardware/ff546480)例程。
+COM 端口数据库包含一个元素的数组，其中每个指示是否正在使用 COM 端口号。 第一个数组元素对应于 COM1，第二个对应于 COM2，依此类推。 但是，数据库不包含设备分配给定的端口号的任何信息。 数据库的大小等于数据库当前进行仲裁的端口号的数目。 最小数目的数据库进行仲裁的端口号是 COMDB\_最小\_端口\_仲裁和它进行仲裁的最大数目是 COMDB\_MAX\_端口\_仲裁。 可以使用增加数据库的大小[ **ComDBResizeDatabase** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbresizedatabase)例程。
 
 ## <a name="opening-and-closing-the-com-port-database"></a>打开和关闭的 COM 端口数据库
 
-使用 COM 端口数据库之前，客户端必须打开数据库通过调用[ **ComDBOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff546476)例程，以获取到数据库句柄。 通过在任何连续数据库访问权限的互相排斥保护数据库。 但是，数据库无法打开供独占使用，并且其状态可能对数据库的非重复访问之间会动态变化。
+使用 COM 端口数据库之前，客户端必须打开数据库通过调用[ **ComDBOpen** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbopen)例程，以获取到数据库句柄。 通过在任何连续数据库访问权限的互相排斥保护数据库。 但是，数据库无法打开供独占使用，并且其状态可能对数据库的非重复访问之间会动态变化。
 
 ## <a name="determining-the-current-usage-of-com-port-numbers"></a>确定当前的使用情况的 COM 端口号
 
-在打开 COM 端口数据库之后，客户端可以确定哪些 COM 端口号已在使用通过调用[ **ComDBGetCurrentPortUsage** ](https://msdn.microsoft.com/library/windows/hardware/ff546474)例程。
+在打开 COM 端口数据库之后，客户端可以确定哪些 COM 端口号已在使用通过调用[ **ComDBGetCurrentPortUsage** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbgetcurrentportusage)例程。
 
 将客户端通常执行以下任务：
 
@@ -74,14 +74,14 @@ COM 端口数据库包含一个元素的数组，其中每个指示是否正在�
 
 客户端可以通过调用以下例程之一获取 COM 端口号：
 
-- [**ComDBClaimNextFreePort**](https://msdn.microsoft.com/library/windows/hardware/ff546469)，哪些声明最低可用的端口号。
+- [**ComDBClaimNextFreePort**](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimnextfreeport)，哪些声明最低可用的端口号。
 
-- [**ComDBClaimPort**](https://msdn.microsoft.com/library/windows/hardware/ff546472)，它会尝试声明特定的端口号。
+- [**ComDBClaimPort**](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimport)，它会尝试声明特定的端口号。
 
 *声明*COM 端口号 COM 端口数据库中的记录为"使用中"的端口号。
 
-客户端通过调用来释放端口号[ **ComDBReleasePort** ](https://msdn.microsoft.com/library/windows/hardware/ff546477)例程。
+客户端通过调用来释放端口号[ **ComDBReleasePort** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbreleaseport)例程。
 
 ## <a name="resizing-the-com-port-database"></a>调整大小的 COM 端口数据库
 
-客户端可以重设大小的 COM 端口数据库通过调用[ **ComDBResizeDatabase** ](https://msdn.microsoft.com/library/windows/hardware/ff546480)例程。 客户端只能增加由整数数据库的大小为 1024年的倍数。 数据库的最大大小是 COMDB\_最大\_端口\_仲裁。
+客户端可以重设大小的 COM 端口数据库通过调用[ **ComDBResizeDatabase** ](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbresizedatabase)例程。 客户端只能增加由整数数据库的大小为 1024年的倍数。 数据库的最大大小是 COMDB\_最大\_端口\_仲裁。

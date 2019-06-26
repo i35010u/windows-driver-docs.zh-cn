@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_GO_NEGOTIATION_REQUEST_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 43f215cd6191ee1825615c6f111ae229c73d4621
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b20a790f7dc733425a41cf035f10b10856a4aa3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363643"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374681"
 ---
 # <a name="wditlvp2pgonegotiationrequestparameters"></a>WDI\_TLV\_P2P\_GO\_NEGOTIATION\_REQUEST\_PARAMETERS
 
@@ -37,7 +37,7 @@ WDI\_TLV\_P2P\_转\_协商\_请求\_参数是包含 Wi-Fi Direct 组所有者协
 | UINT8                                             | 指定转意向的补救措施字段。                                                                                                                                   |
 | UINT16                                            | 指定转配置超时以毫秒为单位。                                                                                                                         |
 | UINT16                                            | 指定客户端配置超时以毫秒为单位。                                                                                                                     |
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 预期的接口地址。 指定供将来 Wi-Fi Direct 连接的本地 MAC 地址。                                                                                |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 预期的接口地址。 指定供将来 Wi-Fi Direct 连接的本地 MAC 地址。                                                                                |
 | UINT8                                             | 指定 Wi-Fi Direct 组功能位掩码。 位掩码相匹配的 Wi-fi P2P 技术规范的表 13 组功能位图定义中定义。 |
 | UINT8                                             | 指定上述组功能位图中的操作系统设置的位。                                                                                            |
 

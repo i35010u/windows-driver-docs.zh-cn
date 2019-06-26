@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f81e4930f1c24138e635295ea67563b9c0273012
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 119889c3e048c5a0087cb3aefa710f767eaef3d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378138"
 ---
 # <a name="devpkeydevicereported"></a>DEVPKEY_Device_Reported
 
 
-DEVPKEY_Device_Reported 设备属性表示一个布尔值，指示设备实例是否为根枚举设备的设备的驱动程序报告给插即用 (PnP) 管理器通过调用[ **IoReportDetectedDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549597)。
+DEVPKEY_Device_Reported 设备属性表示一个布尔值，指示设备实例是否为根枚举设备的设备的驱动程序报告给插即用 (PnP) 管理器通过调用[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ DEVPKEY_Device_Reported 设备属性表示一个布尔值，指示设备实例�
 
 即插即用 manager DEVPKEY_Device_Reported 将值设置为 DEVPROP_TRUE 如果设备是根枚举设备的设备的驱动程序报告给通过调用 IoReportDetectedDevice 的即插即用管理器。 否则，即插即用管理器将属性的值设置为 DEVPROP_FALSE。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_Reported 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Reported 值。
 
 Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 
@@ -85,9 +85,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 ## <a name="see-also"></a>请参阅
 
 
-[**IoReportDetectedDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549597)
+[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

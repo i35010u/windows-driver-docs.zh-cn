@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d642fd18306f76c8613ec552c71d00edc6d310ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22725a0477362d1770c01003da983d3f5badefbc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351086"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378205"
 ---
 # <a name="devpkeydevicelocationinfo"></a>DEVPKEY_Device_LocationInfo
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_LocationInfo 设备属性表示设备实例的特定于总线的�
 <a name="remarks"></a>备注
 -------
 
-Windows 的 DEVPKEY_Device_LocationInfo 将值设置为总线驱动程序返回的响应中的设备实例的值[ **IRP_MN_QUERY_DEVICE_TEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff551674) IRP。
+Windows 的 DEVPKEY_Device_LocationInfo 将值设置为总线驱动程序返回的响应中的设备实例的值[ **IRP_MN_QUERY_DEVICE_TEXT** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text) IRP。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)并**SetupDiGetDeviceProperty**用于检索和设置 DEVPKEY_Device_LocationInfo 的值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)并**SetupDiGetDeviceProperty**用于检索和设置 DEVPKEY_Device_LocationInfo 的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_LocationInfo 属性键。 相反，相应的 SPDRP_LOCATION_INFORMATION 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_LocationInfo 属性键。 相反，相应的 SPDRP_LOCATION_INFORMATION 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**IRP_MN_QUERY_DEVICE_TEXT**](https://msdn.microsoft.com/library/windows/hardware/ff551674)
+[**IRP_MN_QUERY_DEVICE_TEXT**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

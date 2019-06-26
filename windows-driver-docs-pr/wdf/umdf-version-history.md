@@ -10,12 +10,12 @@ keywords:
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 59443b939b3fcb1d12aa4f3c2bc78e1ea389f409
-ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
+ms.openlocfilehash: 17972b1697ef1991aac95b549c55261525352b28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372296"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -62,12 +62,12 @@ ms.locfileid: "65875096"
 
 ## <a name="umdf-version-223"></a>UMDF 版本 2.23
 
-* 仅供内部使用已添加的配套功能。  有关新 DDIs，请参阅[WDF 回调摘要和方法](https://msdn.microsoft.com/library/windows/hardware/dn265591)。
+* 仅供内部使用已添加的配套功能。  有关新 DDIs，请参阅[WDF 回调摘要和方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/)。
 
 ## <a name="umdf-version-221"></a>UMDF 版本 2.21
 
-* [**WdfObjectDereferenceActual**](https://msdn.microsoft.com/library/windows/hardware/ff548743):类型*文件*参数从 PCHAR 更改为 PCCH。
-* [**WdfObjectReferenceActual**](https://msdn.microsoft.com/library/windows/hardware/ff548760):类型*文件*参数从 PCHAR 更改为 PCCH。
+* [**WdfObjectDereferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdereferenceactual):类型*文件*参数从 PCHAR 更改为 PCCH。
+* [**WdfObjectReferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectreferenceactual):类型*文件*参数从 PCHAR 更改为 PCCH。
 
 ## <a name="umdf-version-219"></a>UMDF 版本 2.19
 
@@ -77,10 +77,10 @@ ms.locfileid: "65875096"
 
 此版本添加了对以下现有接口的 UMDF 支持：
 
--   [**WdfDeviceConfigureWdmIrpDispatchCallback**](https://msdn.microsoft.com/library/windows/hardware/hh451093)
--   [*EvtDeviceWdmIrpDispatch*](https://msdn.microsoft.com/library/windows/hardware/hh406404)
--   [**WdfDeviceWdmDispatchIrp**](https://msdn.microsoft.com/library/windows/hardware/hh451100)
--   [**WdfDeviceWdmDispatchIrpToIoQueue**](https://msdn.microsoft.com/library/windows/hardware/hh451105)
+-   [**WdfDeviceConfigureWdmIrpDispatchCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurewdmirpdispatchcallback)
+-   [*EvtDeviceWdmIrpDispatch*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)
+-   [**WdfDeviceWdmDispatchIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirp)
+-   [**WdfDeviceWdmDispatchIrpToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)
 
 有关详细信息，请参阅[调度到的 I/O 队列的 Irp](dispatching-irps-to-i-o-queues.md)。
 
@@ -88,11 +88,11 @@ ms.locfileid: "65875096"
 
 下面是更新 DDIs 2.15 版本的列表：
 
--   新[ **WdfDeviceOpenDevicemapKey** ](https://msdn.microsoft.com/library/windows/hardware/dn932458)方法允许驱动程序添加到访问子项和值下**HKEY\_本地\_机\\硬件\\DEVICEMAP**。
+-   新[ **WdfDeviceOpenDevicemapKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)方法允许驱动程序添加到访问子项和值下**HKEY\_本地\_机\\硬件\\DEVICEMAP**。
 
--   UMDF 驱动程序可以调用[ **WdfIoTargetWdmGetTargetFileHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff548683)若要获取其堆栈中的下一步低内核模式驱动程序的文件句柄。 该驱动程序可以将数据写入该句柄，从而绕过将 I/O 发送到本地的 I/O 目标框架的抽象。
+-   UMDF 驱动程序可以调用[ **WdfIoTargetWdmGetTargetFileHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetwdmgettargetfilehandle)若要获取其堆栈中的下一步低内核模式驱动程序的文件句柄。 该驱动程序可以将数据写入该句柄，从而绕过将 I/O 发送到本地的 I/O 目标框架的抽象。
 
--   UMDF 驱动程序可以请求基础总线驱动程序重新枚举它。 请参阅[ **WdfDeviceSetFailed**](https://msdn.microsoft.com/library/windows/hardware/ff546890)。
+-   UMDF 驱动程序可以请求基础总线驱动程序重新枚举它。 请参阅[ **WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)。
 
 -   设置**UmdfDirectHardwareAccess**指令不再始终是必需的设备的已连接资源。 请参阅[在 INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
 
@@ -102,92 +102,92 @@ ms.locfileid: "65875096"
 除了共享功能中所述[入门 UMDF](getting-started-with-umdf-version-2.md)，UMDF 版本 2.0 添加：
 
 -   如果在过期时系统处于低功耗状态无法唤醒系统计时器的支持。 有关详细信息，请参阅[使用计时器](using-timers.md)。
--   添加**CanWakeDevice**成员添加到[ **WDF\_中断\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552347)结构，以支持可用于将从设备的中断恢复到其完全处于 D0 状态低功耗 Dx 状态。 有关详细信息，请参阅[中断用于唤醒设备](using-an-interrupt-to-wake-a-device.md)。
--   单组件、 单状态 (F0) 的电源管理 UMDF 驱动程序。 有关详细信息，请参阅[ **WdfDeviceAssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545903)。
+-   添加**CanWakeDevice**成员添加到[ **WDF\_中断\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)结构，以支持可用于将从设备的中断恢复到其完全处于 D0 状态低功耗 Dx 状态。 有关详细信息，请参阅[中断用于唤醒设备](using-an-interrupt-to-wake-a-device.md)。
+-   单组件、 单状态 (F0) 的电源管理 UMDF 驱动程序。 有关详细信息，请参阅[ **WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)。
 
 -   多个调试器扩展命令中 Wdfkd.dll 现在用于 UMDF 2.0 驱动程序。 扩展插件库还包含专门用于调试 UMDF 2.0 驱动程序的以下新扩展命令：
 
-    -   [**!wdfkd.wdfumdevstack**](https://msdn.microsoft.com/library/windows/hardware/dn265379)
-    -   [**!wdfkd.wdfumdevstacks**](https://msdn.microsoft.com/library/windows/hardware/dn265380)
-    -   [**!wdfkd.wdfumdownirp**](https://msdn.microsoft.com/library/windows/hardware/dn265381)
-    -   [**!wdfkd.wdfumfile**](https://msdn.microsoft.com/library/windows/hardware/dn265382)
-    -   [**!wdfkd.wdfumirp**](https://msdn.microsoft.com/library/windows/hardware/dn265383)
-    -   [**!wdfkd.wdfumirps**](https://msdn.microsoft.com/library/windows/hardware/dn265384)
-    -   [**!wdfkd.wdfdeviceinterrupts**](https://msdn.microsoft.com/library/windows/hardware/dn265378)
+    -   [ **!wdfkd.wdfumdevstack**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack)
+    -   [ **!wdfkd.wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)
+    -   [ **!wdfkd.wdfumdownirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdownirp)
+    -   [ **!wdfkd.wdfumfile**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumfile)
+    -   [ **!wdfkd.wdfumirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp)
+    -   [ **!wdfkd.wdfumirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)
+    -   [ **!wdfkd.wdfdeviceinterrupts**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdeviceinterrupts)
 
     扩展命令和 framework 适用性的列表，请参阅[调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
 
 -   [框架的事件记录器](using-the-framework-s-event-logger.md)，或*正在进行录制器*(IFR) 已更新为适用于 UMDF 2.0 驱动程序。
 -   已更新其他 WDF 调试器扩展以使用 UMDF 2.0 驱动程序。 有关扩展命令，其中包括有关哪些的将应用于哪个框架，请参阅的信息的完整列表[WDF 驱动程序的调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
--   添加**WdfIoTargetOpenLocalTargetByFile**到[ **WDF\_IO\_目标\_打开\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff552386)允许 UMDF若要发送驱动程序创建请求，以降低需要关联的文件对象的目标的驱动程序。 有关详细信息，请参阅的备注**WDF\_IO\_目标\_打开\_类型**。
+-   添加**WdfIoTargetOpenLocalTargetByFile**到[ **WDF\_IO\_目标\_打开\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type)允许 UMDF若要发送驱动程序创建请求，以降低需要关联的文件对象的目标的驱动程序。 有关详细信息，请参阅的备注**WDF\_IO\_目标\_打开\_类型**。
 -   下面的仅限 UMDF 的例程：
 
-    -   [*EvtRequestImpersonate*](https://msdn.microsoft.com/library/windows/hardware/dn265581)
-    -   [**WDF\_IO\_TARGET\_OPEN\_PARAMS\_INIT\_OPEN\_BY\_FILE**](https://msdn.microsoft.com/library/windows/hardware/dn265641)
-    -   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265598)
-    -   [**WdfDeviceAssignInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265600)
-    -   [**WdfDeviceGetDeviceStackIoType**](https://msdn.microsoft.com/library/windows/hardware/dn265602)
-    -   [**WdfDeviceGetHardwareRegisterMappedAddress**](https://msdn.microsoft.com/library/windows/hardware/dn265603)
-    -   [**WdfDeviceMapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/dn265605)
-    -   [**WdfDevicePostEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265606)
-    -   [**WdfDeviceQueryInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265607)
-    -   [**WdfDeviceUnmapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/dn265610)
-    -   [**WdfFileObjectGetInitiatorProcessId** ](https://msdn.microsoft.com/library/windows/hardware/dn265614) （添加到 KMDF 1.21）
-    -   [**WdfFileObjectGetRelatedFileObject**](https://msdn.microsoft.com/library/windows/hardware/dn265615)
-    -   [**WdfRequestGetEffectiveIoType**](https://msdn.microsoft.com/library/windows/hardware/dn265616)
-    -   [**WdfRequestGetRequestorProcessId** ](https://msdn.microsoft.com/library/windows/hardware/dn265617) （添加到 KMDF 1.21）
-    -   [**WdfRequestGetUserModeInitiatedIo**](https://msdn.microsoft.com/library/windows/hardware/dn265618)
-    -   [**WdfRequestImpersonate**](https://msdn.microsoft.com/library/windows/hardware/dn265619)
-    -   [**WdfRequestIsFromUserModeDriver**](https://msdn.microsoft.com/library/windows/hardware/dn265620)
-    -   [**WdfRequestRetrieveActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265621)
-    -   [**WdfRequestSetActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265622)
-    -   [**WdfRequestSetUserModeDriverInitiatedIo**](https://msdn.microsoft.com/library/windows/hardware/dn265623)
+    -   [*EvtRequestImpersonate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_impersonate)
+    -   [**WDF\_IO\_TARGET\_OPEN\_PARAMS\_INIT\_OPEN\_BY\_FILE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)
+    -   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryinterfaceproperty)
+    -   [**WdfDeviceAssignInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)
+    -   [**WdfDeviceGetDeviceStackIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestackiotype)
+    -   [**WdfDeviceGetHardwareRegisterMappedAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegethardwareregistermappedaddress)
+    -   [**WdfDeviceMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicemapiospace)
+    -   [**WdfDevicePostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicepostevent)
+    -   [**WdfDeviceQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicequeryinterfaceproperty)
+    -   [**WdfDeviceUnmapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceunmapiospace)
+    -   [**WdfFileObjectGetInitiatorProcessId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetinitiatorprocessid) （添加到 KMDF 1.21）
+    -   [**WdfFileObjectGetRelatedFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffileobject/nf-wdffileobject-wdffileobjectgetrelatedfileobject)
+    -   [**WdfRequestGetEffectiveIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgeteffectiveiotype)
+    -   [**WdfRequestGetRequestorProcessId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetrequestorprocessid) （添加到 KMDF 1.21）
+    -   [**WdfRequestGetUserModeInitiatedIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetusermodedriverinitiatedio)
+    -   [**WdfRequestImpersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestimpersonate)
+    -   [**WdfRequestIsFromUserModeDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisfromusermodedriver)
+    -   [**WdfRequestRetrieveActivityId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveactivityid)
+    -   [**WdfRequestSetActivityId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetactivityid)
+    -   [**WdfRequestSetUserModeDriverInitiatedIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetusermodedriverinitiatedio)
 -   以下 KMDF/UMDF 方法中所述[访问统一的设备属性模型](accessing-the-unified-device-property-model.md):
 
-    -   [**WdfDeviceAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265599)
-    -   [**WdfDeviceAssignProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265601)
-    -   [**WdfDeviceInitSetIoTypeEx**](https://msdn.microsoft.com/library/windows/hardware/dn265604)
-    -   [**WdfDeviceQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265608)
-    -   [**WdfFdoInitAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265612)
-    -   [**WdfFdoInitQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265613)
+    -   [**WdfDeviceAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandquerypropertyex)
+    -   [**WdfDeviceAssignProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignproperty)
+    -   [**WdfDeviceInitSetIoTypeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex)
+    -   [**WdfDeviceQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicequerypropertyex)
+    -   [**WdfFdoInitAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)
+    -   [**WdfFdoInitQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitquerypropertyex)
 
     有关详细信息，请参阅[访问统一的设备属性模型](accessing-the-unified-device-property-model.md)。
 
--   中的以下 USB 配置类型的支持[ **WdfUsbTargetDeviceSelectConfigType**](https://msdn.microsoft.com/library/windows/hardware/ff550102):
+-   中的以下 USB 配置类型的支持[ **WdfUsbTargetDeviceSelectConfigType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ne-wdfusb-_wdfusbtargetdeviceselectconfigtype):
     -   **WdfUsbTargetDeviceSelectConfigTypeSingleInterface**
     -   **WdfUsbTargetDeviceSelectConfigTypeMultiInterface**
     -   **WdfUsbTargetDeviceSelectConfigTypeInterfacesPairs**
--   查询中的以下功能类型的支持[ **WdfUsbTargetDeviceQueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh439434):
+-   查询中的以下功能类型的支持[ **WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability):
     -   **GUID\_USB\_功能\_设备\_连接\_高\_速度\_兼容**
     -   **GUID\_USB\_功能\_设备\_连接\_超级\_速度\_兼容**
--   添加[WDF 注册/端口访问函数](https://msdn.microsoft.com/library/windows/hardware/dn265662)
+-   添加[WDF 注册/端口访问函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfhwaccess/)
 
 ## <a name="umdf-version-111"></a>UMDF 版本 1.11
 
 
-1.11 版新增了以下驱动程序提供的回调接口和事件的回调函数：
+1\.11 版新增了以下驱动程序提供的回调接口和事件的回调函数：
 
--   [**IPnpCallbackHardware2**](https://msdn.microsoft.com/library/windows/hardware/hh439727)
+-   [**IPnpCallbackHardware2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware2)
 
--   [**IPnpCallbackHardwareInterrupt**](https://msdn.microsoft.com/library/windows/hardware/hh439744)
+-   [**IPnpCallbackHardwareInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardwareinterrupt)
 
 版本 1.11 添加框架提供了以下接口：
 
--   [**IWDFCmResourceList**](https://msdn.microsoft.com/library/windows/hardware/hh439762)
+-   [**IWDFCmResourceList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfcmresourcelist)
 
--   [**IWDFDevice3**](https://msdn.microsoft.com/library/windows/hardware/hh451197)
+-   [**IWDFDevice3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice3)
 
--   [**IWDFFile3**](https://msdn.microsoft.com/library/windows/hardware/hh451275)
+-   [**IWDFFile3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile3)
 
--   [**IWDFInterrupt**](https://msdn.microsoft.com/library/windows/hardware/hh451283)
+-   [**IWDFInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfinterrupt)
 
--   [**IWDFIoRequest3**](https://msdn.microsoft.com/library/windows/hardware/hh451337)
+-   [**IWDFIoRequest3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest3)
 
--   [**IWDFUnifiedPropertyStore**](https://msdn.microsoft.com/library/windows/hardware/hh451399)
+-   [**IWDFUnifiedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfunifiedpropertystore)
 
--   [**IWDFUnifiedPropertyStoreFactory**](https://msdn.microsoft.com/library/windows/hardware/hh451403)
+-   [**IWDFUnifiedPropertyStoreFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfunifiedpropertystorefactory)
 
--   [**IWDFWorkItem**](https://msdn.microsoft.com/library/windows/hardware/hh406734)
+-   [**IWDFWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfworkitem)
 
 版本 1.11 基于 UMDF 驱动程序添加了以下功能：
 
@@ -199,9 +199,9 @@ ms.locfileid: "65875096"
 
 -   [UMDF 驱动程序的已知安全标识符 (SID)](controlling-device-access.md)
 
--   统一中所描述的属性存储区支持[使用的注册表中基于 UMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff561381)
+-   统一中所描述的属性存储区支持[使用的注册表中基于 UMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-registry-in-umdf-1-x-drivers)
 
--   [**IoGetDeviceObjectPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff549198)集成来使用 UMDF。 在以前版本中，此例程将使设备的句柄的引用后关闭设备对象的句柄。 此行为是所有 i/o 操作完成后，设备对象上的清除请求不会发生之前的 UMDF 的假定条件下不兼容。
+-   [**IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)集成来使用 UMDF。 在以前版本中，此例程将使设备的句柄的引用后关闭设备对象的句柄。 此行为是所有 i/o 操作完成后，设备对象上的清除请求不会发生之前的 UMDF 的假定条件下不兼容。
 
 -   [创建基于 UMDF 的 HID 微型驱动程序](creating-umdf-hid-minidrivers.md)
 
@@ -212,43 +212,43 @@ ms.locfileid: "65875096"
 ## <a name="umdf-version-19"></a>UMDF 1.9 版
 
 
-1.9 版中添加以下驱动程序提供的回调接口：
+1\.9 版中添加以下驱动程序提供的回调接口：
 
--   [IPnpCallbackRemoteInterfaceNotification](https://msdn.microsoft.com/library/windows/hardware/ff556772)
+-   [IPnpCallbackRemoteInterfaceNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackremoteinterfacenotification)
 
--   [IPowerPolicyCallbackWakeFromS0](https://msdn.microsoft.com/library/windows/hardware/ff556815)
+-   [IPowerPolicyCallbackWakeFromS0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefroms0)
 
--   [IPowerPolicyCallbackWakeFromSx](https://msdn.microsoft.com/library/windows/hardware/ff556825)
+-   [IPowerPolicyCallbackWakeFromSx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefromsx)
 
--   [IQueueCallbackIoCanceledOnQueue](https://msdn.microsoft.com/library/windows/hardware/ff556857)
+-   [IQueueCallbackIoCanceledOnQueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackiocanceledonqueue)
 
--   [IRemoteInterfaceCallbackEvent](https://msdn.microsoft.com/library/windows/hardware/ff556887)
+-   [IRemoteInterfaceCallbackEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremoteinterfacecallbackevent)
 
--   [IRemoteInterfaceCallbackRemoval](https://msdn.microsoft.com/library/windows/hardware/ff556891)
+-   [IRemoteInterfaceCallbackRemoval](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremoteinterfacecallbackremoval)
 
--   [IRemoteTargetCallbackRemoval](https://msdn.microsoft.com/library/windows/hardware/ff556894)
+-   [IRemoteTargetCallbackRemoval](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iremotetargetcallbackremoval)
 
--   [IWDFRemoteInterfaceInitialize](https://msdn.microsoft.com/library/windows/hardware/ff560232)
+-   [IWDFRemoteInterfaceInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfremoteinterfaceinitialize)
 
 版本 1.9 添加框架提供了以下接口：
 
--   [IWDFDevice2](https://msdn.microsoft.com/library/windows/hardware/ff556918)
+-   [IWDFDevice2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice2)
 
--   [IWDFDeviceInitialize2](https://msdn.microsoft.com/library/windows/hardware/ff556967)
+-   [IWDFDeviceInitialize2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize2)
 
--   [IWDFFile2](https://msdn.microsoft.com/library/windows/hardware/ff558915)
+-   [IWDFFile2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile2)
 
--   [IWDFIoRequest2](https://msdn.microsoft.com/library/windows/hardware/ff558988)
+-   [IWDFIoRequest2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest2)
 
--   [IWDFIoTarget2](https://msdn.microsoft.com/library/windows/hardware/ff559175)
+-   [IWDFIoTarget2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotarget2)
 
--   [IWDFNamedPropertyStore2](https://msdn.microsoft.com/library/windows/hardware/ff560168)
+-   [IWDFNamedPropertyStore2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)
 
--   [IWDFPropertyStoreFactory](https://msdn.microsoft.com/library/windows/hardware/ff560223)
+-   [IWDFPropertyStoreFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfpropertystorefactory)
 
--   [IWDFRemoteTarget](https://msdn.microsoft.com/library/windows/hardware/ff560247)
+-   [IWDFRemoteTarget](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfremotetarget)
 
--   [IWDFUsbTargetPipe2](https://msdn.microsoft.com/library/windows/hardware/ff560394)
+-   [IWDFUsbTargetPipe2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe2)
 
 这些接口将添加到基于 UMDF 驱动程序的以下功能：
 
@@ -256,15 +256,15 @@ ms.locfileid: "65875096"
 
 -   [电源策略所有权](power-policy-ownership-in-umdf.md)
 
--   [直接 I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413)缓冲访问方法
+-   [直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-umdf-1-x-drivers)缓冲访问方法
 
--   [持续读取器](https://msdn.microsoft.com/library/windows/hardware/ff561479)的 USB 设备
+-   [持续读取器](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-pipes-in-umdf-1-x-drivers)的 USB 设备
 
 -   增强了对支持[设备接口](using-device-interfaces-in-umdf-drivers.md)
 
 -   增强的能力[取消 I/O 请求](canceling-i-o-requests.md)
 
--   增强对访问[注册表](https://msdn.microsoft.com/library/windows/hardware/ff561381)
+-   增强对访问[注册表](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-registry-in-umdf-1-x-drivers)
 
  
 

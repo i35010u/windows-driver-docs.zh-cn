@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: 969FD292-5D92-4257-8E15-F2129B832E22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d0431ca0b13cbd247d35a55eeae2c6f70519fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2556a921a2be332e50be8ddc0bb55651fdf90f9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344934"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372135"
 ---
 # <a name="videos-debugging-umdf-drivers"></a>视频：调试 UMDF 驱动程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "63344934"
 
 有关调试 UMDF 的详细信息，请参阅中列出的主题[调试 WDF 驱动程序](debugging-a-wdf-driver.md)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 
 若要充分利用此内容应具有 UMDF 和调试工具的 Windows 的应用知识。 由于每个会话建立在上一基础之上，我们建议按所列顺序查看这些演示。
@@ -47,12 +47,12 @@ ms.locfileid: "63344934"
 
 在此部分中，将学习如何启动调试 UMDF 驱动程序。 该视频介绍如何设置 OSR USB FX2 驱动程序示例和应用程序示例，以便应用程序的三个实例将读取、 写入和设备 I/O 控制请求发送到该驱动程序。 你将看到如何请求流第一次该发送程序，然后到用户模式驱动程序主机进程。 此视频介绍 FX2 驱动程序示例，WDF 对象层次结构，并讨论如何使用以下 UMDF 调试器扩展来遍历 UMDF 对象层次结构：
 
--   [**!wudfext.umdevstacks**](https://msdn.microsoft.com/library/windows/hardware/ff566191)
--   [**!wudfext.wudfdriverinfo**](https://msdn.microsoft.com/library/windows/hardware/ff566207)
--   [**!wudfext.wudfdevice**](https://msdn.microsoft.com/library/windows/hardware/ff566199)
--   [**!wudfext.wudfdevicequeues**](https://msdn.microsoft.com/library/windows/hardware/ff566203)
+-   [ **!wudfext.umdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umdevstacks)
+-   [ **!wudfext.wudfdriverinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdriverinfo)
+-   [ **!wudfext.wudfdevice**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdevice)
+-   [ **!wudfext.wudfdevicequeues**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdevicequeues)
 
-对于 UMDF 2，请参阅[摘要的调试器扩展中 Wdfkd.dll](debugger-extensions-for-kmdf-drivers.md)，例如[ **！ wdfkd.wdfumdevstacks**](https://msdn.microsoft.com/library/windows/hardware/dn265380)。
+对于 UMDF 2，请参阅[摘要的调试器扩展中 Wdfkd.dll](debugger-extensions-for-kmdf-drivers.md)，例如[ **！ wdfkd.wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)。
 
 ## <a name="accessing-framework-usb-objects"></a>访问 framework USB 对象
 

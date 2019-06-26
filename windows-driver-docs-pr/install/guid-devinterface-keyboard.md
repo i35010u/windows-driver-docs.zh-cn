@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4c3e53bda132aef5c66b348f69eb4a03415642c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d5c2db5b637df53b94ca267207e29019069dd7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363723"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372701"
 ---
 # <a name="guiddevinterfacekeyboard"></a>GUID_DEVINTERFACE_KEYBOARD
 
 
-GUID_DEVINTERFACE_KEYBOARD[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)定义的键盘设备。
+GUID_DEVINTERFACE_KEYBOARD[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义的键盘设备。
 
 <table>
 <colgroup>
@@ -58,9 +58,9 @@ GUID_DEVINTERFACE_KEYBOARD[设备接口类](https://msdn.microsoft.com/library/w
 
 系统提供[键盘类驱动程序](../hid/keyboard-and-mouse-class-drivers.md)注册键盘设备将此设备接口类的实例。 通过使用键盘类驱动程序支持的 I/O 接口中访问此设备接口类的实例。
 
-有关支持键盘的设备的常规信息，请参阅[HID 体系结构](https://msdn.microsoft.com/library/windows/hardware/jj126193)并[Kbdclass 和 Mouclass 驱动程序的功能](../hid/keyboard-and-mouse-class-drivers.md)。
+有关支持键盘的设备的常规信息，请参阅[HID 体系结构](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))并[Kbdclass 和 Mouclass 驱动程序的功能](../hid/keyboard-and-mouse-class-drivers.md)。
 
-WDK 包含系统提供键盘类驱动程序的示例代码。 在键盘类驱动程序使用已过时的标识符[ **GUID_CLASS_KEYBOARD** ](guid-class-keyboard.md)若要注册此实例[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+WDK 包含系统提供键盘类驱动程序的示例代码。 在键盘类驱动程序使用已过时的标识符[ **GUID_CLASS_KEYBOARD** ](guid-class-keyboard.md)若要注册此实例[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 鼠标设备的设备接口类有关的信息，请参阅[ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)。
 

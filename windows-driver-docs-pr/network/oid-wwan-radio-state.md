@@ -5,30 +5,30 @@ ms.assetid: e6d09ae8-65c8-4544-9581-8937f61f0747
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_RADIO_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0125e02889c4f9980b1008ec74ef3f698cd9c593
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a3188587e7d1abfe7ceea6caf76fdab4e107c27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354527"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383191"
 ---
 # <a name="oidwwanradiostate"></a>OID\_WWAN\_RADIO\_STATE
 
 
 OID\_WWAN\_单选\_状态设置或返回 MB 设备的无线电电源状态有关的信息。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_单选\_状态**](ndis-status-wwan-radio-state.md)状态通知包含[ **NDIS\_WWAN\_单选\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567915)结构，指示当前单选 MB 设备的电源状态而不考虑完成集或查询请求。
+微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_单选\_状态**](ndis-status-wwan-radio-state.md)状态通知包含[ **NDIS\_WWAN\_单选\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_radio_state)结构，指示当前单选 MB 设备的电源状态而不考虑完成集或查询请求。
 
-调用方请求设置 MB 设备的无线电电源状态提供[ **NDIS\_WWAN\_设置\_单选\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567925)结构微型端口驱动程序的相应信息。
+调用方请求设置 MB 设备的无线电电源状态提供[ **NDIS\_WWAN\_设置\_单选\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_radio_state)结构微型端口驱动程序的相应信息。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 无线电电源状态操作](https://msdn.microsoft.com/library/windows/hardware/ff559107)。
+有关使用此 OID 的详细信息，请参阅[WWAN 无线电电源状态操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-radio-power-state-operations)。
 
 微型端口驱动程序不能访问提供程序网络或用户识别模块 （SIM 卡），当处理查询或设置操作。
 
-微型端口驱动程序必须跨系统重新启动或设备删除和重新插入时保留软件无线电电源状态。 微型端口驱动程序应存储设备的软件无线电收发器信息并将其用于设置设备软件无线电电源状态立即在每次重新启动或重新插入时的设备。 设备的有效单选电源状态决定基于根据表中的软件和硬件单选电源状态的组合[ **WWAN\_单选\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff571225)。
+微型端口驱动程序必须跨系统重新启动或设备删除和重新插入时保留软件无线电电源状态。 微型端口驱动程序应存储设备的软件无线电收发器信息并将其用于设置设备软件无线电电源状态立即在每次重新启动或重新插入时的设备。 设备的有效单选电源状态决定基于根据表中的软件和硬件单选电源状态的组合[ **WWAN\_单选\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_radio_state)。
 
 如果值为*WwanRadioOn*，微型端口驱动程序必须打开单选电源，并将**RadioState.SwRadioState** WWAN 成员\_单选\_状态结构*WwanRadioOn*。 如果**RadioState.HwRadioState**成员已*WwanRadioOff*，微型端口驱动程序应缓存此电源状态信息并确保以物理方式启用单选电源状态时**RadioState.HwRadioState**更改为*WwanRadioOn*。
 
@@ -108,15 +108,15 @@ OID\_WWAN\_单选\_状态设置或返回 MB 设备的无线电电源状态有关
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_RADIO\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567915)
+[**NDIS\_WWAN\_RADIO\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_radio_state)
 
-[**NDIS\_WWAN\_SET\_RADIO\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567925)
+[**NDIS\_WWAN\_SET\_RADIO\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_radio_state)
 
 [**NDIS\_STATUS\_WWAN\_RADIO\_STATE**](ndis-status-wwan-radio-state.md)
 
-[WWAN 无线电电源状态操作](https://msdn.microsoft.com/library/windows/hardware/ff559107)
+[WWAN 无线电电源状态操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-radio-power-state-operations)
 
-[**WWAN\_RADIO\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff571225)
+[**WWAN\_RADIO\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_radio_state)
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - Dll WDK 网络迁移
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dab9f0c118ba47e843fbb3f03deac5abe543f1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d42efa3a8713534c008ac27c81ec0b69449476f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379785"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378612"
 ---
 # <a name="writing-a-network-migration-dll"></a>编写网络迁移 DLL
 
@@ -36,9 +36,9 @@ ms.locfileid: "63379785"
 
     DLL 不能调用任何函数特定于 Windows 2000 或更高版本，或使用特定于 Windows 2000 或更高版本的任何功能。 如果在 postupgrade （GUI 模式） 阶段中运行该 DLL，必须还将其加载在 Windows 2000 和更高版本操作系统中。
 
--   **导出** [ **PreUpgradeInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff562439)**并**[**DoPreUpgradeProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff545634)**函数**
+-   **导出** [ **PreUpgradeInitialize**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562439(v=vs.85))**并**[**DoPreUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545634(v=vs.85))**函数**
 
-    如果在 GUI 模式阶段中运行该 DLL，必须将导出[ **PostUpgradeInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff562410)并[ **DoPostUpgradeProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff545629)函数，为嗯。
+    如果在 GUI 模式阶段中运行该 DLL，必须将导出[ **PostUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562410(v=vs.85))并[ **DoPostUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545629(v=vs.85))函数，为嗯。
 
 -   **Winnt32 阶段做出任何不可逆更改**
 

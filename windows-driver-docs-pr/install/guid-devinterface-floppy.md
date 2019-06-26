@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2816980d0a469f18048dda8769254b3be7a4c049
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bfc07403d03e979fcd243a70bed3fee16085c85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342315"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372717"
 ---
 # <a name="guiddevinterfacefloppy"></a>GUID_DEVINTERFACE_FLOPPY
 
 
-GUID_DEVINTERFACE_FLOPPY[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)定义为软盘[存储设备](https://msdn.microsoft.com/library/windows/hardware/ff566969)。
+GUID_DEVINTERFACE_FLOPPY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义为软盘[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_FLOPPY[设备接口类](https://msdn.microsoft.com/library/win
 
 存储[示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK 中包括[软盘驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256192)此示例使用已过时的标识符[ **FloppyClassGuid** ](floppyclassguid.md)到注册 GUID_DEVINTERFACE_FLOPPY 设备接口类的实例。
 
-存储驱动程序有关的信息，请参阅[存储设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566976)。
+存储驱动程序有关的信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
 <a name="requirements"></a>要求
 ------------

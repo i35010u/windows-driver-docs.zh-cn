@@ -23,12 +23,12 @@ keywords:
 - SDV WDK、 Static Driver Verifier 报表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc0afed9f938254957b4cd9d8c08a83e6102158
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f43dfd3b366ab27c1caa6a0a733164dc7f5188e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327273"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382832"
 ---
 # <a name="using-the-static-driver-verifier-report"></a>使用静态驱动程序验证程序报告
 
@@ -53,17 +53,17 @@ SDV 报表是以交互方式显示的验证结果。 本部分介绍如何使用
 
 尝试查找之前在代码中，规则冲突熟悉该驱动程序违反的规则。
 
-[驱动程序验证程序的静态规则](https://msdn.microsoft.com/library/windows/hardware/ff551714)部分包括本主题介绍每个规则，例如， [CancelSpinLock](https://msdn.microsoft.com/library/windows/hardware/ff542478)。
+[驱动程序验证程序的静态规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)部分包括本主题介绍每个规则，例如， [CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)。
 
 若要查看在该规则的代码**源代码**窗格中的静态驱动程序验证器报表，单击与规则中的代码，例如 CancelSpinLock.slic 选项卡。
 
-例如， **CancelSpinLock**如果驱动程序调用违反规则[ **IoAcquireCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff548196)或者[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550)不按顺序，或如果该驱动程序释放自旋锁前退出例程。
+例如， **CancelSpinLock**如果驱动程序调用违反规则[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))或者[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))不按顺序，或如果该驱动程序释放自旋锁前退出例程。
 
 ### <a name="span-idtracethedefectpathspanspan-idtracethedefectpathspantrace-the-defect-path"></a><span id="trace_the_defect_path"></span><span id="TRACE_THE_DEFECT_PATH"></span>跟踪缺陷路径
 
 当**脱离查看器**窗口将打开中的元素**跟踪树**表示缺陷路径中的第一个必需的驱动程序调用的窗格中选择。 在中**源代码**窗格中，关联的源代码行突出显示为蓝色。
 
-以下屏幕截图显示打开的视图**静态驱动程序验证程序缺陷查看器**窗口中的冲突[CancelSpinLock](https://msdn.microsoft.com/library/windows/hardware/ff542478)由失败的规则\_Driver1 示例驱动程序。 在此示例中，第一个驱动程序调用路径中发生 CancelSpinLock 规则的冲突是调用[ **IoAcquireCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff548196)中的驱动程序**DispatchSystemControl**例程。
+以下屏幕截图显示打开的视图**静态驱动程序验证程序缺陷查看器**窗口中的冲突[CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)由失败的规则\_Driver1 示例驱动程序。 在此示例中，第一个驱动程序调用路径中发生 CancelSpinLock 规则的冲突是调用[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))中的驱动程序**DispatchSystemControl**例程。
 
 ![打开的 static driver verifier 的视图的屏幕截图脱离 cancelspinlock 规则的冲突查看器窗口](images/sdv-tracetree.png)
 

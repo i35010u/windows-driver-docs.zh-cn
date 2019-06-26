@@ -4,14 +4,14 @@ description: 若要更新以支持 NDIS 6.30 NDIS 6.x 微型端口驱动程序�
 ms.assetid: 1EA926FE-367E-4A63-A197-60137D679AE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dab26f0c713c142310c006e288ebc64699e075c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7c022e0e9cefd2e635a7f8e0a531afaf38ad28e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377985"
 ---
-# <a name="summary-of-changes-required-to-port-a-miniport-driver-to-ndis-630"></a>若要移植到 NDIS 6.30 的微型端口驱动程序所需的更改的摘要
+# <a name="summary-of-changes-required-to-port-a-miniport-driver-to-ndis-630"></a>将微型端口驱动程序移植到 NDIS 6.30 所要做出的更改摘要
 
 
 若要更新以支持 NDIS 6.30 NDIS 6.x 微型端口驱动程序，您必须修改以下各节中所述。
@@ -32,7 +32,7 @@ ms.locfileid: "56542581"
 
      
 
--   在 NDIS 6.30 NDIS 可以调用[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)如果有两个适配器的两次在并行插入到系统中，在同一时间或在系统启动。 请确保测试在此"启动并行"情况下的微型端口驱动程序。
+-   在 NDIS 6.30 NDIS 可以调用[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)如果有两个适配器的两次在并行插入到系统中，在同一时间或在系统启动。 请确保测试在此"启动并行"情况下的微型端口驱动程序。
 
 ## <a name="general-porting-requirements"></a>移植的一般要求
 
@@ -41,14 +41,14 @@ ms.locfileid: "56542581"
 -   对于已更新的 NDIS 6.30 的所有结构，微型端口驱动程序需要更新**标头**使用正确的结构的成员**修订**并**大小**值。 有关详细信息，请参阅[使用 NDIS 6.30 数据结构](using-ndis-6-30-data-structures.md)。
 -   所有微型端口驱动程序应实现否-暂停-上的挂起功能。 有关详细信息，请参阅：
     -   [在 NDIS 6.30 电源管理增强功能](power-management-enhancements-in-ndis-6-30.md)
-    -   [**NDIS\_微型端口\_适配器\_注册\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)
-    -   [**NET\_PNP\_EVENT**](https://msdn.microsoft.com/library/windows/hardware/ff568751)
-    -   [OID\_PNP\_SET\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)
+    -   [**NDIS\_微型端口\_适配器\_注册\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)
+    -   [**NET\_PNP\_EVENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)
+    -   [OID\_PNP\_SET\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
 ## <a name="wi-fi-direct-miniport-drivers"></a>Wi-Fi Direct 微型端口驱动程序
 
 
-期间[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)，Wi-Fi Direct 支持的微型端口驱动程序必须初始化默认 802.11 MAC 实体。 此外必须将错误报告使用其 Wi-Fi Direct 和虚拟的 Wi-fi 功能[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)函数。
+期间[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)，Wi-Fi Direct 支持的微型端口驱动程序必须初始化默认 802.11 MAC 实体。 此外必须将错误报告使用其 Wi-Fi Direct 和虚拟的 Wi-fi 功能[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
 **请注意**  注册 NDIS 默认 MAC 实体相对应的 NDIS 端口不需要该驱动程序。
 

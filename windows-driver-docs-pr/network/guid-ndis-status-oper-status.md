@@ -6,12 +6,12 @@ keywords:
 - GUID_NDIS_STATUS_OPER_STATUS，WDK GUID_NDIS_STATUS_OPER_STATUS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63232d47b9f373c1588f748effb87e236071b68c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbaaea0834a5bb2a0e04cf2860f16dc7e2c41aa1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369663"
 ---
 # <a name="guidndisstatusoperstatus"></a>GUID_NDIS_STATUS_OPER_STATUS
 
@@ -21,5 +21,5 @@ GUID_NDIS_STATUS_OPER_STATUS 事件 GUID 表示的 NDIS 网络接口的当前操
 
 当 NDIS 指示的 NDIS 网络接口的当前操作状态的更改时，NDIS 也将转换为 WMI GUID_NDIS_STATUS_OPER_STATUS 事件的 WMI 客户端的状态指示。
 
-包含的数据缓冲区的 NDIS 提供具有 GUID [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)结构，后跟[NDIS_OPER_STATE](https://msdn.microsoft.com/library/windows/hardware/ff566737)结构。 有关可能的值的列表，请参阅[NDIS_STATUS_OPER_STATUS](ndis-status-oper-status.md)。
+包含的数据缓冲区的 NDIS 提供具有 GUID [NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_event_header)结构，后跟[NDIS_OPER_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_oper_state)结构。 有关可能的值的列表，请参阅[NDIS_STATUS_OPER_STATUS](ndis-status-oper-status.md)。
 

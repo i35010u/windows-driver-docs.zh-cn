@@ -5,28 +5,28 @@ ms.assetid: fdaa2646-6f41-4f51-9c27-6194270f26ed
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_REMOVE_WOL_PATTERN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b0bea9946e514bb9d7fea65017ff5b953f7e1e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa6aca8c2373babac2d05319485d525a497563d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359162"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373337"
 ---
 # <a name="oidpmremovewolpattern"></a>OID\_PM\_删除\_WOL\_模式
 
 
-作为一组 NDIS 和协议驱动程序使用 OID\_PM\_删除\_WOL\_模式 OID，若要删除的网络适配器从电源管理唤醒 LAN (WOL) 模式。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向 ULONG 模式标识符。
+作为一组 NDIS 和协议驱动程序使用 OID\_PM\_删除\_WOL\_模式 OID，若要删除的网络适配器从电源管理唤醒 LAN (WOL) 模式。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向 ULONG 模式标识符。
 
 <a name="remarks"></a>备注
 -------
 
 NDIS 和协议驱动程序使用 OID\_PM\_删除\_WOL\_从基础的网络适配器中删除唤醒 LAN (WOL) 模式的模式。
 
-**数据。设置\_INFORMATION.InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构必须指向以前添加的 WOL 模式标识符的 ULONG 值。 NDIS 中设置此模式标识符**PatternId**的成员[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)结构时 NDIS发送在先前[OID\_PM\_添加\_WOL\_模式](oid-pm-add-wol-pattern.md)OID 为基础的网络适配器的请求。
+**数据。设置\_INFORMATION.InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构必须指向以前添加的 WOL 模式标识符的 ULONG 值。 NDIS 中设置此模式标识符**PatternId**的成员[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构时 NDIS发送在先前[OID\_PM\_添加\_WOL\_模式](oid-pm-add-wol-pattern.md)OID 为基础的网络适配器的请求。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-微型端口驱动程序[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数将返回以下值之一用于此请求：
+微型端口驱动程序[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数将返回以下值之一用于此请求：
 
 <table>
 <colgroup>
@@ -46,7 +46,7 @@ NDIS 和协议驱动程序使用 OID\_PM\_删除\_WOL\_从基础的网络适配�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff563622" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563622)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递<strong>NDIS_STATUS_SUCCESS</strong>对于<em>状态</em>参数。</p></td>
+<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递<strong>NDIS_STATUS_SUCCESS</strong>对于<em>状态</em>参数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
@@ -54,7 +54,7 @@ NDIS 和协议驱动程序使用 OID\_PM\_删除\_WOL\_从基础的网络适配�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_REQUEST_ABORTED</strong></p></td>
-<td><p>微型端口驱动程序已停止处理请求。 例如，名为 NDIS <a href="https://msdn.microsoft.com/library/windows/hardware/ff559432" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559432)"> <em>MiniportResetEx</em> </a>函数。</p></td>
+<td><p>微型端口驱动程序已停止处理请求。 例如，名为 NDIS <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)"> <em>MiniportResetEx</em> </a>函数。</p></td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ NDIS 返回此请求的以下状态代码之一：
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>信息缓冲区因过小。 NDIS 集<strong>数据。SET_INFORMATION。BytesNeeded</strong>中的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区因过小。 NDIS 集<strong>数据。SET_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -119,13 +119,13 @@ NDIS 返回此请求的以下状态代码之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_WOL\_PATTERN**](https://msdn.microsoft.com/library/windows/hardware/ff566768)
+[**NDIS\_PM\_WOL\_PATTERN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
 [OID\_PM\_ADD\_WOL\_PATTERN](oid-pm-add-wol-pattern.md)
 
-[**NDIS\_状态\_PM\_WOL\_模式\_已拒绝**](https://msdn.microsoft.com/library/windows/hardware/ff567414)
+[**NDIS\_状态\_PM\_WOL\_模式\_已拒绝**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wol-pattern-rejected)
 
  
 

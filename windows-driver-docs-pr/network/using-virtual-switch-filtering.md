@@ -4,12 +4,12 @@ description: 使用虚拟交换机筛选
 ms.assetid: 09325037-F9A4-45C8-97E0-8FCA7D42A120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48c44856961ddf2b5cc7ee8abddda0289b13344
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bc223e89112b4e749c60510891a6f3d43fa0ecb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384368"
 ---
 # <a name="using-virtual-switch-filtering"></a>使用虚拟交换机筛选
 
@@ -19,29 +19,29 @@ Windows 8 和更高版本的 Windows 中支持虚拟交换机筛选。
 
 此 WFP 功能允许 MAC 报头、 IP 标头和上部协议端口的字段，以及虚拟交换机虚拟端口 (VPort) 和虚拟机标识符 (VM ID) 等的特定字段进行筛选。 这些层上的所有数据包通过虚拟交换机的每个数据包基础调用。 从虚拟交换机扩展筛选器访问这些层 — NDIS 轻型筛选器 (LWF) 驱动程序的类型。
 
-标注驱动程序调用[ **FwpsvSwitchEventsSubscribe0** ](https://msdn.microsoft.com/library/windows/hardware/hh439687)函数以注册回调入口点的虚拟交换机层事件。
+标注驱动程序调用[ **FwpsvSwitchEventsSubscribe0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsvswitcheventssubscribe0)函数以注册回调入口点的虚拟交换机层事件。
 
-中指定的回调通知函数的入口点[ **FWPS\_VSWITCH\_事件\_调度\_TABLE0** ](https://msdn.microsoft.com/library/windows/hardware/hh451263)结构. 提供的回调函数包括：
+中指定的回调通知函数的入口点[ **FWPS\_VSWITCH\_事件\_调度\_TABLE0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_vswitch_event_dispatch_table0_)结构. 提供的回调函数包括：
 
-* [*FWPS\_VSWITCH\_FILTER\_ENGINE\_REORDER\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451267)
-* [*FWPS\_VSWITCH\_INTERFACE\_EVENT\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451269)
-* [*FWPS\_VSWITCH\_LIFETIME\_EVENT\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451271)
-* [*FWPS\_VSWITCH\_POLICY\_EVENT\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451272)
-* [*FWPS\_VSWITCH\_PORT\_EVENT\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451276)
-* [*FWPS\_VSWITCH\_RUNTIME\_STATE\_RESTORE\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451281)
-* [*FWPS\_VSWITCH\_RUNTIME\_STATE\_SAVE\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451286)
+* [*FWPS\_VSWITCH\_FILTER\_ENGINE\_REORDER\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_filter_engine_reorder_callback0)
+* [*FWPS\_VSWITCH\_INTERFACE\_EVENT\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_interface_event_callback0)
+* [*FWPS\_VSWITCH\_LIFETIME\_EVENT\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_lifetime_event_callback0)
+* [*FWPS\_VSWITCH\_POLICY\_EVENT\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_policy_event_callback0)
+* [*FWPS\_VSWITCH\_PORT\_EVENT\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_port_event_callback0)
+* [*FWPS\_VSWITCH\_RUNTIME\_STATE\_RESTORE\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_restore_callback0)
+* [*FWPS\_VSWITCH\_RUNTIME\_STATE\_SAVE\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_save_callback0)
 
-[ **FWPS\_VSWITCH\_事件\_类型**](https://msdn.microsoft.com/library/windows/hardware/hh451265)枚举定义的值*eventType*虚拟参数切换通知函数。
+[ **FWPS\_VSWITCH\_事件\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_vswitch_event_type_)枚举定义的值*eventType*虚拟参数切换通知函数。
 
-标注驱动程序必须最终调用[ **FwpsvSwitchEventsUnsubscribe0** ](https://msdn.microsoft.com/library/windows/hardware/hh439691)释放系统资源。
+标注驱动程序必须最终调用[ **FwpsvSwitchEventsUnsubscribe0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsvswitcheventsunsubscribe0)释放系统资源。
 
-如果标注驱动程序将返回状态\_WFP 通知函数从 PENDING，WFP 将返回状态\_PENDING 到 OID 请求处理程序。 标注驱动程序必须调用[ **FwpsvSwitchNotifyComplete0** ](https://msdn.microsoft.com/library/windows/hardware/hh439695)函数来完成挂起操作。 之后**FwpsvSwitchNotifyComplete0**调用，WFP 调用[ **NdisFOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff561833)函数来完成虚拟交换机的 OID。
+如果标注驱动程序将返回状态\_WFP 通知函数从 PENDING，WFP 将返回状态\_PENDING 到 OID 请求处理程序。 标注驱动程序必须调用[ **FwpsvSwitchNotifyComplete0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsvswitchnotifycomplete0)函数来完成挂起操作。 之后**FwpsvSwitchNotifyComplete0**调用，WFP 调用[ **NdisFOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequestcomplete)函数来完成虚拟交换机的 OID。
 
 回调不应添加或删除通知函数的上下文中同步的 WFP 筛选器。 此外，如果该通知功能允许回调返回状态\_PENDING，并标注返回状态\_挂起、 标注不应添加或删除之前完成通知的 WFP 筛选器。
 
 ## <a name="wfp-virtual-switch-filter-layer-and-fields"></a>WFP 虚拟交换机筛选层和字段
 
-[运行时筛选层标识符](https://msdn.microsoft.com/library/windows/hardware/ff570731)虚拟交换机筛选包括：
+[运行时筛选层标识符](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)虚拟交换机筛选包括：
 
 * FWPS\_LAYER\_INGRESS\_VSWITCH\_ETHERNET
 * FWPS\_LAYER\_EGRESS\_VSWITCH\_ETHERNET
@@ -50,14 +50,14 @@ Windows 8 和更高版本的 Windows 中支持虚拟交换机筛选。
 * FWPS\_层\_出口\_VSWITCH\_传输\_V4
 * FWPS\_层\_出口\_VSWITCH\_传输\_V6
 
-[数据字段标识符](https://msdn.microsoft.com/library/windows/hardware/ff546312)虚拟交换机筛选包括：
+[数据字段标识符](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)虚拟交换机筛选包括：
 
-* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_ETHERNET**](https://msdn.microsoft.com/library/windows/hardware/hh439709)
-* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_TRANSPORT\_V4**](https://msdn.microsoft.com/library/windows/hardware/hh439715)
-* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_TRANSPORT\_V6**](https://msdn.microsoft.com/library/windows/hardware/hh439721)
-* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_ETHERNET**](https://msdn.microsoft.com/library/windows/hardware/hh439733)
-* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_TRANSPORT\_V4**](https://msdn.microsoft.com/library/windows/hardware/hh439738)
-* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_TRANSPORT\_V6**](https://msdn.microsoft.com/library/windows/hardware/hh439745)
+* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_ETHERNET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_ethernet_)
+* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_TRANSPORT\_V4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_transport_v4_)
+* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_TRANSPORT\_V6**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_transport_v6_)
+* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_ETHERNET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_ethernet_)
+* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_TRANSPORT\_V4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_transport_v4_)
+* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_TRANSPORT\_V6**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_transport_v6_)
 
 ## <a name="guidance-for-wfp-virtual-switch-callout-writers"></a>WFP 虚拟交换机标注编写器的指南
 

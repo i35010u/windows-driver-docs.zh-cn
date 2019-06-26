@@ -8,17 +8,17 @@ keywords:
 - 安全检查 WDK 的文件系统，IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 674a569fe1278f295066309eeef42cc3711edecc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 274bd9078fc8cc514ba1231c72b5d1e32401148f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379707"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380028"
 ---
 # <a name="irpmjcreate-dispatch-routine"></a>IRP\_MJ\_创建调度例程
 
 
-Windows 安全检查的主要部分发生在内[ **IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff548630)调度例程。 这是因为 Windows 安全模型中的大容量相关访问验证。 访问验证结果将存储为完成此操作后创建的句柄的一部分。 后续操作将验证此时计算的权限。
+Windows 安全检查的主要部分发生在内[ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)调度例程。 这是因为 Windows 安全模型中的大容量相关访问验证。 访问验证结果将存储为完成此操作后创建的句柄的一部分。 后续操作将验证此时计算的权限。
 
 如果的访问权限的文件更改上打开的文件或目录后，原始的访问权限在 IRP 过程中提供\_MJ\_创建操作仍然有效。 这些访问权限与句柄关联，以便授予访问权限，只要该句柄仍然存在，它控制后续操作。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fba7e96babf4a284dd23169dcf5a093688ffd0ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e05e4e922e08ee31a90b535a7f80923a7b18459
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332963"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358911"
 ---
 # <a name="kspropertyaudiomixleveltable"></a>KSPROPERTY\_AUDIO\_MIX\_LEVEL\_TABLE
 
@@ -53,8 +53,8 @@ KSPROPERTY\_音频\_混合\_级别\_表属性指定 supermixer 节点的混合�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>数组<a href="https://msdn.microsoft.com/library/windows/hardware/ff537089" data-raw-source="[&lt;strong&gt;KSAUDIO_MIXLEVEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537089)"> <strong>KSAUDIO_MIXLEVEL</strong> </a>结构</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>数组<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixlevel" data-raw-source="[&lt;strong&gt;KSAUDIO_MIXLEVEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixlevel)"> <strong>KSAUDIO_MIXLEVEL</strong> </a>结构</p></td>
 </tr>
 </tbody>
 </table>
@@ -120,7 +120,7 @@ KSPROPERTY\_音频\_混合\_级别\_表属性指定 supermixer 节点的混合�
 
 如果没有路径连接输入的通道*我*向输出通道*j*，应设置的筛选器**静音**成员的数组元素 MixLevel\[*我* \*N +*j* \]到**TRUE**。
 
-大小 KSAUDIO\_MIXLEVEL 数组计算从[ **KSAUDIO\_MIXCAP\_表**](https://msdn.microsoft.com/library/windows/hardware/ff537088)结构，它从检索[ **KSPROPERTY\_音频\_混合\_级别\_CAPS**](ksproperty-audio-mix-level-caps.md)。 如果该结构的**InputChannels**和**OutputChannels**成员包含值*m*并*n*，数组大小
+大小 KSAUDIO\_MIXLEVEL 数组计算从[ **KSAUDIO\_MIXCAP\_表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixcap_table)结构，它从检索[ **KSPROPERTY\_音频\_混合\_级别\_CAPS**](ksproperty-audio-mix-level-caps.md)。 如果该结构的**InputChannels**和**OutputChannels**成员包含值*m*并*n*，数组大小
 
 *m* \* *n* \* **sizeof**(KSAUDIO\_MIXLEVEL)
 
@@ -152,13 +152,13 @@ KSPROPERTY\_音频\_混合\_级别\_表属性请求将返回状态\_成功以指
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSAUDIO\_MIXCAP\_TABLE**](https://msdn.microsoft.com/library/windows/hardware/ff537088)
+[**KSAUDIO\_MIXCAP\_TABLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixcap_table)
 
 [**KSPROPERTY\_AUDIO\_MIX\_LEVEL\_CAPS**](ksproperty-audio-mix-level-caps.md)
 
-[**KSAUDIO\_MIXLEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537089)
+[**KSAUDIO\_MIXLEVEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mixlevel)
 
 [**KSNODETYPE\_SUPERMIX**](ksnodetype-supermix.md)
 

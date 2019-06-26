@@ -4,12 +4,12 @@ description: WDI 中两个 Tx 模式端口队列和 PeerTID 队列之一进行�
 ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30d215fbc9906b339d82d4d734636fb0472eed49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b52bf11bdff4cb9d1c6e0ed3d24dcbf8afe0a778
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357105"
 ---
 # <a name="wdi-transmit-operations-and-offloads"></a>WDI 传输操作和卸载
 
@@ -46,7 +46,7 @@ WDI 在两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <td align="left"><p>校验和，LSO。</p></td>
 <td align="left"><p>校验和是启动时可配置卸载。 每个框架都有标志以指定适用的校验和操作。</p>
 <p>如果适用，WDI 处理 LSO 分段以透明方式从谈论/目标。</p></td>
-<td align="left"><p>校验和：目标将传递到 WDI 其校验和卸载功能的设备 caps 设一部分 bringup 期间。 有关功能的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>。</p>
+<td align="left"><p>校验和：目标将传递到 WDI 其校验和卸载功能的设备 caps 设一部分 bringup 期间。 有关功能的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>。</p>
 <p>如果适用，WDI 处理 LSO 分段以透明方式从谈论/目标。</p></td>
 </tr>
 <tr class="even">
@@ -124,7 +124,7 @@ WDI 在两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 ## <a name="operation-in-host-implemented-fips-mode"></a>在 Host-Implemented FIPS 模式下的操作
 
 
-如果主机为给定的连接提供了 FIPS (主机 FIPS 模式设置为 true [ **WDI\_TLV\_连接\_设置**](https://msdn.microsoft.com/library/windows/hardware/dn926261))，主机对数据包进行加密之前提交到目标。 目标传输无需进行其他更改影响数据完整性的数据包的数据包。 例如，目标必须执行传输 MSDU 聚合在此模式下。
+如果主机为给定的连接提供了 FIPS (主机 FIPS 模式设置为 true [ **WDI\_TLV\_连接\_设置**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connection-settings))，主机对数据包进行加密之前提交到目标。 目标传输无需进行其他更改影响数据完整性的数据包的数据包。 例如，目标必须执行传输 MSDU 聚合在此模式下。
 
 中的更常见情况下主机 FIPS 模式未启用 （目标实现加密模式），标头 802.11 标头后面是未加密的有效负载数据。 如果包需要在传输之前加密，目标对数据包进行加密。 它还执行 QoS 优先顺序的数据包，并可能会执行 TCP 层卸载操作 （如校验和或大量发送）。 为此发送处理，目标可能需要将其他标头添加到数据包 (例如，QoS，HT 标头或 IV)。
 
@@ -162,13 +162,13 @@ WDI 在两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 ## <a name="related-topics"></a>相关主题
 
 
-[**NDIS\_TCP\_IP\_校验和\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff567878)
+[**NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)
 
 [WDI 数据传输](wdi-data-transfer.md)
 
-[**WDI\_TLV\_CONNECTION\_SETTINGS**](https://msdn.microsoft.com/library/windows/hardware/dn926261)
+[**WDI\_TLV\_CONNECTION\_SETTINGS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connection-settings)
 
-[**WDI\_TXRX\_CAPABILITIES**](https://msdn.microsoft.com/library/windows/hardware/dn898187)
+[**WDI\_TXRX\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_txrx_target_capabilities)
 
  
 

@@ -4,12 +4,12 @@ description: 若要使用的与存储连接的外围设备的某些硬件功能�
 ms.assetid: F8CD670F-C817-40BF-AF4B-5F3839E46EFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d71bd1573a871c2e5f9effc969e7b4d000a9ce0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ae9bd621f34e3a96f48de5f81ee7aed82cbcbb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369589"
 ---
 # <a name="atomic-bus-operations"></a>原子总线操作
 
@@ -21,7 +21,7 @@ ms.locfileid: "63348084"
 ## <a name="spb-controller-locks"></a>存储控制器锁
 
 
-执行原子传输序列的不太常见方法是使用的存储控制器锁。 客户端发送[ **IOCTL\_存储\_锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)请求获取锁，并且[ **IOCTL\_存储\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)释放锁的请求。 控制器锁、 简单的读取和写入的任何序列，当保留客户端 ([**IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)并[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)) 客户端向设备发送的请求执行作为一个原子操作总线上。
+执行原子传输序列的不太常见方法是使用的存储控制器锁。 客户端发送[ **IOCTL\_存储\_锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)请求获取锁，并且[ **IOCTL\_存储\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)释放锁的请求。 控制器锁、 简单的读取和写入的任何序列，当保留客户端 ([**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)) 客户端向设备发送的请求执行作为一个原子操作总线上。
 
 大多数存储连接的外围设备不需要控制器锁，并且大多数存储控制器驱动程序不实现对这些锁的支持。 但是，一些客户端可能需要使用控制器锁来访问具有特殊功能的设备。
 
@@ -36,7 +36,7 @@ ms.locfileid: "63348084"
 
 但是，一些连接存储的设备具有需要控制器锁的功能。 对于大多数设备都需要原子总线操作， [ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求已足够。
 
-不要混淆与存储连接锁的存储控制器锁。 在这两个客户端共享相同的存储连接的外围设备的访问权限的非典型情况下，客户端可以使用连接锁暂时获取独占访问设备。 有关详细信息，请参阅[存储连接锁定](https://msdn.microsoft.com/library/windows/hardware/jj819326)。
+不要混淆与存储连接锁的存储控制器锁。 在这两个客户端共享相同的存储连接的外围设备的访问权限的非典型情况下，客户端可以使用连接锁暂时获取独占访问设备。 有关详细信息，请参阅[存储连接锁定](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-connection-locks)。
 
 ## <a name="hardware-bus-signals"></a>硬件总线信号
 
@@ -59,7 +59,7 @@ ms.locfileid: "63348084"
 
 在此示例中 I²C 外围设备将解释写入后启动位，为函数地址，将加载到函数地址注册到设备的第一个字节。 任何额外的字节传输到或从设备传输之前序列结束 （如下所述的停止位） 被视为由设备将数据传输通过数据寄存器。
 
-若要执行写操作，客户端发送执行写入操作 ([**IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)) 在其中写入缓冲区中的第一个字节是函数地址，剩余的请求缓冲区中的字节将数据写入到的函数地址。
+若要执行写操作，客户端发送执行写入操作 ([**IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)) 在其中写入缓冲区中的第一个字节是函数地址，剩余的请求缓冲区中的字节将数据写入到的函数地址。
 
 从设备读取得更复杂。 假设在此示例支持一种"快速读取"功能，会自动重置函数地址注册到其默认值为 0，当一个停止位 I²C 设备检测到总线上。 使用此功能，客户端可以从函数地址 0 读取数据，而不必首先写入函数地址注册。 此功能可以提高读取操作，尤其是当大多数读取来自函数地址 0 和都相对较短的设备的速度。
 
@@ -72,7 +72,7 @@ ms.locfileid: "63348084"
 
 可能会改为使用的请求的其他模式，才能执行此读取-修改-写入操作。 例如， **IRP\_MJ\_编写**可以替换为在步骤 2 中的请求**IOCTL\_存储\_EXECUTE\_序列**请求它指定两个数据传输，这两个写操作。 序列中的首次传输将一个字节加载到函数地址注册。 第二个传输将数据字节写入到所选的函数地址。 此请求，但不同于**IRP\_MJ\_编写**请求在步骤 2 中，不需要客户端以便合并的函数地址字节和相同的写入缓冲区中的数据字节。
 
-若要在此设备中的函数地址 0 上执行读取-修改-写入**IOCTL\_存储\_EXECUTE\_序列**简单的读取可替换为前面的列表的步骤 1 中的请求 ([ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)) 请求。
+若要在此设备中的函数地址 0 上执行读取-修改-写入**IOCTL\_存储\_EXECUTE\_序列**简单的读取可替换为前面的列表的步骤 1 中的请求 ([ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)) 请求。
 
  
 

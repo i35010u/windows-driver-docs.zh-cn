@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f23a17bc8a404ee9fb93809db24ccdc33966272c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65db7727a7a4ae1b2be815e15c5f7f47e2afb310
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390861"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377907"
 ---
 # <a name="srbindicatemasterclock"></a>SRB\_指示\_MASTER\_时钟
 
@@ -42,9 +42,9 @@ ms.locfileid: "63390861"
 
 ### <a name="comments"></a>备注
 
-类驱动程序集**CommandData**。**MasterClockHandle**指向成员*pSrb*到表示主时钟的时钟对象的句柄。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。
+类驱动程序集**CommandData**。**MasterClockHandle**指向成员*pSrb*到表示主时钟的时钟对象的句柄。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。
 
-流可能会查询主时钟的时间值表示通过主时钟句柄[ **StreamClassQueryMasterClock** ](https://msdn.microsoft.com/library/windows/hardware/ff568249)或[ **StreamClassQueryMasterClockSync**](https://msdn.microsoft.com/library/windows/hardware/ff568251).
+流可能会查询主时钟的时间值表示通过主时钟句柄[ **StreamClassQueryMasterClock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassquerymasterclock)或[ **StreamClassQueryMasterClockSync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassquerymasterclocksync).
 
 直到微型驱动程序收到 SRB\_指示\_MASTER\_时钟对于特定的流，它会假定该流没有运行。 如果传入此 SRB 从属固定为相同句柄的句柄传递给微型的驱动程序中[ **SRB\_打开\_MASTER\_时钟**](srb-open-master-clock.md)，微型驱动程序可以直接从主时钟读取时间，因为它可以控制在主机和从属。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e20b83612e9aeb556ff383e48f8614e6036265d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d8a6326dbbebf13f017fff02b10ba4df109d72d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391779"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380102"
 ---
 # <a name="fsctloplockbreakacknowledge-control-code"></a>FSCTL\_OPLOCK\_中断\_确认控制代码
 
@@ -28,7 +28,7 @@ ms.locfileid: "63391779"
 
 客户端应用程序将发送此控制代码，以指示它确认破坏 oplock，并且，如果 oplock 已断开为级别 2 级别 1 oplock，尽管它要求级别 2 oplock。
 
-若要处理此控制代码，微筛选器调用[ **FltOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff543398)使用以下参数。 文件系统或旧筛选器驱动程序调用[ **FsRtlOplockFsctrl**](https://msdn.microsoft.com/library/windows/hardware/ff547112)。
+若要处理此控制代码，微筛选器调用[ **FltOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl)使用以下参数。 文件系统或旧筛选器驱动程序调用[ **FsRtlOplockFsctrl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)。
 
 有关详细信息，有关伺机锁定和大约**FSCTL\_OPLOCK\_中断\_确认**控制代码，请参阅 Microsoft Windows SDK 文档。
 
@@ -38,10 +38,10 @@ ms.locfileid: "63391779"
 该文件的不透明 oplock 对象指针。
 
 <a href="" id="callbackdata"></a>*CallbackData*  
-[**FltOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff543398)仅。 回调数据 ([**FLT\_回调\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 的 IRP 结构\_MJ\_文件\_系统\_控件 FSCTL请求。 *FsControlCode*操作的参数必须为 FSCTL\_OPLOCK\_中断\_确认。
+[**FltOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl)仅。 回调数据 ([**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 的 IRP 结构\_MJ\_文件\_系统\_控件 FSCTL请求。 *FsControlCode*操作的参数必须为 FSCTL\_OPLOCK\_中断\_确认。
 
 <a href="" id="irp"></a>*Irp*  
-[**FsRtlOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff547112)仅。 IRP 的 IRP\_MJ\_文件\_系统\_控件 FSCTL 请求。 *FsControlCode*操作的参数必须为 FSCTL\_OPLOCK\_中断\_确认。
+[**FsRtlOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)仅。 IRP 的 IRP\_MJ\_文件\_系统\_控件 FSCTL 请求。 *FsControlCode*操作的参数必须为 FSCTL\_OPLOCK\_中断\_确认。
 
 <a href="" id="opencount"></a>*OpenCount*  
 不用于此操作;设置为零。
@@ -49,9 +49,9 @@ ms.locfileid: "63391779"
 <a name="status-block"></a>状态块
 ------------
 
-[**FltOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff543398)返回 FLT\_PREOP\_PENDING 级别 1 oplock 已中断为级别 2 和级别 2 oplock 已被授予时此操作。 否则，它将返回 FLT\_PREOP\_完成。
+[**FltOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl)返回 FLT\_PREOP\_PENDING 级别 1 oplock 已中断为级别 2 和级别 2 oplock 已被授予时此操作。 否则，它将返回 FLT\_PREOP\_完成。
 
-[**FsRtlOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff547112)返回值对于此操作的以下 NTSTATUS 之一：
+[**FsRtlOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)返回值对于此操作的以下 NTSTATUS 之一：
 
 <table>
 <colgroup>
@@ -101,13 +101,13 @@ ms.locfileid: "63391779"
 ## <a name="see-also"></a>请参阅
 
 
-[**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
 [**FLT\_IRP 的参数\_MJ\_文件\_系统\_控件**](flt-parameters-for-irp-mj-file-system-control.md)
 
-[**FltOplockFsctrl**](https://msdn.microsoft.com/library/windows/hardware/ff543398)
+[**FltOplockFsctrl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl)
 
 [**FSCTL\_OPBATCH\_ACK\_CLOSE\_PENDING**](fsctl-opbatch-ack-close-pending.md)
 
@@ -123,7 +123,7 @@ ms.locfileid: "63391779"
 
 [**FSCTL\_REQUEST\_OPLOCK\_LEVEL\_2**](fsctl-request-oplock-level-2.md)
 
-[**FsRtlOplockFsctrl**](https://msdn.microsoft.com/library/windows/hardware/ff547112)
+[**FsRtlOplockFsctrl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)
 
 [**IRP\_MJ\_文件\_系统\_控件**](irp-mj-file-system-control.md)
 

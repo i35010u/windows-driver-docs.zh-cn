@@ -9,19 +9,19 @@ keywords:
 - AVStream 硬件编解码器支持 WDK、 处理流的末尾
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eeff1d7677e08e40fb00f431ea9df7b9a061d36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f071e544d1e623798d63402a4e6395b0b048e7bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363529"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384038"
 ---
 # <a name="handling-end-of-stream-in-avstream-codecs"></a>处理 AVStream 编解码器中的流结尾
 
 
-当 HW MFT 接收端流 (EOS) 标志设置的示例时，它会设置 KSSTREAM\_标头\_OPTIONSF\_中的 ENDOFSTREAM **OptionsFlag**隶属[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构，它对应于该示例。
+当 HW MFT 接收端流 (EOS) 标志设置的示例时，它会设置 KSSTREAM\_标头\_OPTIONSF\_中的 ENDOFSTREAM **OptionsFlag**隶属[ **KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)结构，它对应于该示例。
 
-微型驱动程序收到后[ **KSSTREAM\_指针**](https://msdn.microsoft.com/library/windows/hardware/ff567139)与 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 标志中设置**StreamHeader.OptionsFlag**，输入插针将不会收到任何新输入的流指针，直到微型驱动程序设置 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 上输出流指针。
+微型驱动程序收到后[ **KSSTREAM\_指针**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksstream_pointer)与 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 标志中设置**StreamHeader.OptionsFlag**，输入插针将不会收到任何新输入的流指针，直到微型驱动程序设置 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 上输出流指针。
 
 微型驱动程序设置 KSSTREAM 之前\_标头\_OPTIONSF\_ENDOFSTREAM 上输出流指针，它应生成尽可能使用当前可用的输入输出的帧数。
 

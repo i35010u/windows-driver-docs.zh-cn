@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c469e72b9b44da2a0f9f6506cd9251670d21c15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ed8ef3a03c1d30a43543183b8cd65647ceff2c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331271"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372741"
 ---
 # <a name="devproptypemodarray"></a>DEVPROP_TYPEMOD_ARRAY
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPEMOD_ARRAY 标识符表示可与结合使用的属性数据类型修饰符[**基本数据类型标识符**](https://msdn.microsoft.com/library/windows/hardware/ff537793)创建表示基本数据类型值的数组的属性数据类型标识符。
+在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPEMOD_ARRAY 标识符表示可与结合使用的属性数据类型修饰符[**基本数据类型标识符**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))创建表示基本数据类型值的数组的属性数据类型标识符。
 
 <a name="remarks"></a>备注
 -------
 
-可以仅与固定长度数据的基本类型标识符结合使用 DEVPROP_TYPEMOD_ARRAY 标识符 ([**DEVPROPTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff543546)值) 与数据相关联的。 不能与组合 DEVPROP_TYPEMOD_ARRAY 标识符[ **DEVPROP_TYPE_EMPTY**](devprop-type-empty.md)， [ **DEVPROP_TYPE_NULL**](devprop-type-null.md)，或任何长度可变的基本数据类型标识符。
+可以仅与固定长度数据的基本类型标识符结合使用 DEVPROP_TYPEMOD_ARRAY 标识符 ([**DEVPROPTYPE** ](https://docs.microsoft.com/previous-versions/ff543546(v=vs.85))值) 与数据相关联的。 不能与组合 DEVPROP_TYPEMOD_ARRAY 标识符[ **DEVPROP_TYPE_EMPTY**](devprop-type-empty.md)， [ **DEVPROP_TYPE_NULL**](devprop-type-null.md)，或任何长度可变的基本数据类型标识符。
 
 若要创建表示基本数据类型值的数组的属性数据类型标识符，请执行位或运算 DEVPROP_TYPEMOD_ARRAY 和相应 DEVPROP_TYPE_ 之间*Xxx*标识符。 例如，若要指定无符号字节数组，请执行位或以下：(DEVPROP_TYPEMOD_ARRAY |[ **DEVPROP_TYPE_BYTE**](devprop-type-byte.md))。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63331271"
 ## <a name="see-also"></a>请参阅
 
 
-[**DEVPROPTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff543546)
+[**DEVPROPTYPE**](https://docs.microsoft.com/previous-versions/ff543546(v=vs.85))
 
 [**DEVPROP_TYPEMOD_LIST**](devprop-typemod-list.md)
 

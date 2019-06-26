@@ -10,12 +10,12 @@ keywords:
 - 已知标识符 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95918109cb6c931fdfdd257262246ec703a2a48f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2255ce63be01547495603b78260b5ad64c6e30fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344499"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371347"
 ---
 # <a name="security-identifier"></a>安全标识符
 
@@ -47,11 +47,11 @@ ms.locfileid: "63344499"
 
 此外，任何内核驱动程序可能会使用以下标准运行时库例程来创建一个 SID:
 
--   [**RtlInitializeSid**](https://msdn.microsoft.com/library/windows/hardware/ff552998)— 缓冲区初始化为一个新的 SID。
+-   [**RtlInitializeSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlinitializesid)— 缓冲区初始化为一个新的 SID。
 
--   [**RtlLengthSid**](https://msdn.microsoft.com/library/windows/hardware/ff553085)— 确定给定缓冲区中存储的 SID 的大小。
+-   [**RtlLengthSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtllengthsid)— 确定给定缓冲区中存储的 SID 的大小。
 
--   [**RtlValidSid**](https://msdn.microsoft.com/library/windows/hardware/ff553314)— 确定给定的 SID 缓冲区是否是有效的格式化的缓冲区。
+-   [**RtlValidSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlvalidsid)— 确定给定的 SID 缓冲区是否是有效的格式化的缓冲区。
 
 请注意， **RtlLengthSid**并**RtlValidSid**假定一个 SID 的 8 字节固定的标题已存在。 因此驱动程序应检查此最小长度为 SID 标头调用这些函数之前。
 

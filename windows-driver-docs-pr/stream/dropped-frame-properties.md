@@ -7,17 +7,17 @@ keywords:
 - PROPSETID_VIDCAP_DROPPEDFRAMES
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fafebd5138a344be037ce1637b2f6e2b45f0f56f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce96ad7d0646f5dd6bb3d5bf16d3936c0a4c0558
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384743"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358442"
 ---
 # <a name="dropped-frame-properties"></a>已删除帧属性
 
 
-[PROPSETID\_VIDCAP\_DROPPEDFRAMES](https://msdn.microsoft.com/library/windows/hardware/ff567806)属性集包含与在捕获操作期间删除的视频帧相关的属性。 下表介绍的属性属于 PROPSETID\_VIDCAP\_DROPPEDFRAMES 属性集。
+[PROPSETID\_VIDCAP\_DROPPEDFRAMES](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-droppedframes)属性集包含与在捕获操作期间删除的视频帧相关的属性。 下表介绍的属性属于 PROPSETID\_VIDCAP\_DROPPEDFRAMES 属性集。
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ ms.locfileid: "63384743"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565135" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565135)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-droppedframes-current" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-droppedframes-current)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT</strong></a></p></td>
 <td><p>返回一个捕获操作，包括当前图片数和平均视频帧大小的已删除的帧信息。</p></td>
 </tr>
 </tbody>

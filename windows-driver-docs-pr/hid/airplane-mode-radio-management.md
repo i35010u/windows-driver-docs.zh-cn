@@ -4,12 +4,12 @@ description: 从 Windows 8 开始，Windows 操作系统提供了通过 HID，�
 ms.assetid: 5B0662B0-CBD3-4F31-B98F-6BC8184574DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c55bdac9dd253b236aa95afe77b07d5cfbc08b18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58649c1a53e28f1ce3cbf7a7d4dd0140500502c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375781"
 ---
 # <a name="airplane-mode-radio-management"></a>飞行模式无线管理
 
@@ -154,7 +154,7 @@ END_COLLECTION                                 C0
 
 提示\#2:飞行模式无线管理 HID 用法仅在移动系统 （由电池供电） 上运行，需要 Windows 8 或更高版本的 Windows。
 
-提示\#3:有关飞行模式无线管理按钮的详细信息，请参阅[到 Windows 8 的键盘增强功能](https://msdn.microsoft.com/library/windows/hardware/dn613956.aspx)白皮书。
+提示\#3:有关飞行模式无线管理按钮的详细信息，请参阅[到 Windows 8 的键盘增强功能](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613956(v=vs.85))白皮书。
 
 提示\#4:有关详细信息按钮，并以确保实现正确的硬件，请查看 Windows 8 系统徽标要求。
 

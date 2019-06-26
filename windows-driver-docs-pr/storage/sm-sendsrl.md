@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 46a35a2bfec9c970c5c8f44454f0925c3e2362ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f338f33877252beb2508b0733bf043b7e17b39d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380827"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380591"
 ---
 # <a name="smsendsrl-function"></a>SM\_SendSRL 函数
 
@@ -104,7 +104,7 @@ RPS 命令的结果。 微型端口驱动程序返回此信息在 SM RespBuffer 
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SendSRL\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566326)
+[**SM\_SendSRL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendsrl_out)
 
  
 

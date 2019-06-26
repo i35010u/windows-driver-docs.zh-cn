@@ -9,12 +9,12 @@ keywords:
 - 导出 Guid
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5a2e76726008bdee18a36bf5a7496e3fbbe5e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c43743ee92cc015deb36be6761ad8bdfad797f54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388216"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377117"
 ---
 # <a name="defining-and-exporting-new-guids"></a>定义和导出新 GUID
 
@@ -82,7 +82,7 @@ ms.locfileid: "63388216"
 
     将防止多个包含的语句外部的 GUID 定义不会导致多个实例的 guid 驱动程序由于**定义\_GUID**将 GUID 定义为外部\_C 变量。 允许对外部变量的多个声明，只要的类型匹配。
 
-4.  当创建新的 GUID[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)或[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)，适用以下规则：
+4.  当创建新的 GUID[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)或[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)，适用以下规则：
     -   不要使用单个 GUID 来标识设备安装程序类和设备接口类。
 
     -   在创建时与 GUID 关联的符号名称，使用以下约定：

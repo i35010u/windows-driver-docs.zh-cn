@@ -4,12 +4,12 @@ description: 所有版本的 Windows 都提供的串行控制器设备驱动程�
 ms.assetid: 1EA0221E-0F68-429B-9DA5-4AE2D3394A09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ceabf631a4ba34a8558df96eca10161cb851cb39
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 8a0577d62df4ec9e8d4e309f5110f129abc781e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836320"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356757"
 ---
 # <a name="serial-controller-drivers-overview"></a>串行控制器驱动程序概述
 
@@ -23,9 +23,9 @@ GitHub 上的 Windows 驱动程序示例存储库包含的源代码[串行](http
 
 ## <a name="sercx-and-sercx2"></a>SerCx 和 SerCx2
 
-从 Windows 8 开始，SerCx 是支持串行通信之间集成线路上印刷电路板的系统提供的组件。 SerCx 是扩展到内核模式驱动程序框架 (KMDF)。 此扩展简化了为串行控制器的自定义驱动程序的开发。 SerCx 协助扩展基于串行控制器驱动程序处理多项所共有的串行控制器的处理任务。 此驱动程序与通过 SerCx [SerCx 设备驱动程序接口](https://msdn.microsoft.com/library/windows/hardware/dn265348)。
+从 Windows 8 开始，SerCx 是支持串行通信之间集成线路上印刷电路板的系统提供的组件。 SerCx 是扩展到内核模式驱动程序框架 (KMDF)。 此扩展简化了为串行控制器的自定义驱动程序的开发。 SerCx 协助扩展基于串行控制器驱动程序处理多项所共有的串行控制器的处理任务。 此驱动程序与通过 SerCx [SerCx 设备驱动程序接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
-从 Windows 8.1 开始，将被 SerCx2 取代 SerCx。 SerCx2 SerCx 减少的大小和复杂性的串行控制器驱动程序都有很多改进。 具体而言，SerCx2 使所需管理超时值，以及协调访问串行控制器会争夺 I/O 事务的处理工作的串行控制器驱动程序。 因此，串行控制器驱动程序是更小且更简单。 串行控制器的硬件供应商提供的扩展插件基于串行控制器驱动程序管理的特定于硬件的函数中的串行控制器，并且依赖于 SerCx2 执行常规序列控制器任务。 此驱动程序与通过 SerCx2 [SerCx2 设备驱动程序接口](https://msdn.microsoft.com/library/windows/hardware/dn265349)。
+从 Windows 8.1 开始，将被 SerCx2 取代 SerCx。 SerCx2 SerCx 减少的大小和复杂性的串行控制器驱动程序都有很多改进。 具体而言，SerCx2 使所需管理超时值，以及协调访问串行控制器会争夺 I/O 事务的处理工作的串行控制器驱动程序。 因此，串行控制器驱动程序是更小且更简单。 串行控制器的硬件供应商提供的扩展插件基于串行控制器驱动程序管理的特定于硬件的函数中的串行控制器，并且依赖于 SerCx2 执行常规序列控制器任务。 此驱动程序与通过 SerCx2 [SerCx2 设备驱动程序接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 有关 SerCx2 详细信息，请参阅[串行框架扩展 (SerCx2) 的使用版本 2](using-version-2-of-the-serial-framework-extension.md)。
 

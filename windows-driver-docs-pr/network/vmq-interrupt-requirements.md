@@ -4,27 +4,27 @@ description: VMQ 中断要求
 ms.assetid: 7ECC9031-D41B-4664-963D-F1C20B297B7C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7230021daa6b10cbc4599c22fe86d9d165ff449
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b74301b77abf9a07db2a31d6c62925f96ac1a49f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327589"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376404"
 ---
 # <a name="vmq-interrupt-requirements"></a>VMQ 中断要求
 
 
 支持虚拟机队列 (VMQ) 功能的微型端口驱动程序还必须支持以下中断分配要求：
 
--   微型端口驱动程序必须支持 MSI X。 该驱动程序必须设置**NDIS\_接收\_筛选器\_MSI\_X\_支持**标志中**SupportedQueueProperties**成员[ **NDIS\_接收\_筛选器\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)结构。
+-   微型端口驱动程序必须支持 MSI X。 该驱动程序必须设置**NDIS\_接收\_筛选器\_MSI\_X\_支持**标志中**SupportedQueueProperties**成员[ **NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。
 
-    驱动程序将返回在此结构[ **NDIS\_微型端口\_适配器\_硬件\_协助\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)结构对其调用中使用该驱动程序[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)函数。
+    驱动程序将返回在此结构[ **NDIS\_微型端口\_适配器\_硬件\_协助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构对其调用中使用该驱动程序[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
--   微型端口驱动程序必须调用[ **NdisGetRssProcessorInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff562669)函数可获得分配中断向量的处理器信息。 它必须不依赖于注册表项或从中断分配其他源获取的信息。
+-   微型端口驱动程序必须调用[ **NdisGetRssProcessorInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetrssprocessorinformation)函数可获得分配中断向量的处理器信息。 它必须不依赖于注册表项或从中断分配其他源获取的信息。
 
-    [**NdisGetRssProcessorInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff562669)返回信息的微型端口驱动程序可以使用适用于 RSS 和 VMQ 处理器的集。 此信息包含在[ **NDIS\_RSS\_处理器\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567274)结构。
+    [**NdisGetRssProcessorInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetrssprocessorinformation)返回信息的微型端口驱动程序可以使用适用于 RSS 和 VMQ 处理器的集。 此信息包含在[ **NDIS\_RSS\_处理器\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)结构。
 
--   微型端口驱动程序应为每个处理器中指定的分配仅一个中断向量[ **NDIS\_RSS\_处理器\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567274)结构。
+-   微型端口驱动程序应为每个处理器中指定的分配仅一个中断向量[ **NDIS\_RSS\_处理器\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)结构。
 
     微型端口驱动程序应为不发送或接收数据包的操作相关的其他事件分配不能超过两个中断向量。 例如，驱动程序分配 IDT 链接状态事件。
 

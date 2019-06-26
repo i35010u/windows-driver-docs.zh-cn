@@ -7,12 +7,12 @@ keywords:
 - 关闭 SAN 套接字
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13b2c15d4efaa08a2347686c7390edd36acf1c17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6dbda47fae7a0ce31f929b92eb3d6d8c06be7c0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384219"
 ---
 # <a name="closing-a-san-socket"></a>关闭 SAN 套接字
 
@@ -20,13 +20,13 @@ ms.locfileid: "63338438"
 
 
 
-连接的任何一侧切换 Windows 套接字后调用 SAN 服务提供商[ **WSPCloseSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566273)函数，SAN 服务提供程序执行以下步骤来关闭 SAN 套接字:
+连接的任何一侧切换 Windows 套接字后调用 SAN 服务提供商[ **WSPCloseSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566273(v=vs.85))函数，SAN 服务提供程序执行以下步骤来关闭 SAN 套接字:
 
-1.  连接的任何一侧上每个 SAN 服务提供程序关闭连接并完成接收请求- [ **WSPRecv** ](https://msdn.microsoft.com/library/windows/hardware/ff566309)通过返回相应的错误代码在函数调用-*lpErrno*参数。 例如，SAN 服务提供程序返回 WSAECONNRESET 以指示远程对等方重置该连接。
+1.  连接的任何一侧上每个 SAN 服务提供程序关闭连接并完成接收请求- [ **WSPRecv** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566309(v=vs.85))通过返回相应的错误代码在函数调用-*lpErrno*参数。 例如，SAN 服务提供程序返回 WSAECONNRESET 以指示远程对等方重置该连接。
 
-    每个 SAN 服务提供商还向发出信号挂起的 SAN 套接字要关闭的重叠操作的完成。 SAN 服务提供程序调用**WPUCompleteOverlappedRequest**重叠操作的完成信号函数。 在此调用中，SAN 服务提供商将传递一个指向[ **WSAOVERLAPPED** ](https://msdn.microsoft.com/library/windows/hardware/ff565952)与重叠的操作相关联的结构。 SAN 服务提供程序还将传递 WSA\_操作\_已中止错误代码，以指定重叠的操作已取消，因为 SAN 套接字已关闭。 信号重叠操作完成之前, SAN 服务提供商应释放操作所需的任何内存。
+    每个 SAN 服务提供商还向发出信号挂起的 SAN 套接字要关闭的重叠操作的完成。 SAN 服务提供程序调用**WPUCompleteOverlappedRequest**重叠操作的完成信号函数。 在此调用中，SAN 服务提供商将传递一个指向[ **WSAOVERLAPPED** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565952(v=vs.85))与重叠的操作相关联的结构。 SAN 服务提供程序还将传递 WSA\_操作\_已中止错误代码，以指定重叠的操作已取消，因为 SAN 套接字已关闭。 信号重叠操作完成之前, SAN 服务提供商应释放操作所需的任何内存。
 
-2.  SAN 服务提供商进行最多的调用-在完成后调用的函数时，都带有前缀**WPU**-到使用句柄通过获得的 SAN 套接字交换机**WPUCreateSocketHandle**最多调用，SAN 服务提供商必须使最后的向上调用到交换机通过调用**WPUCloseSocketHandle**函数以关闭套接字句柄。 SAN 服务提供商，然后清理到 SAN 套接字相关的所有内容。 最多调用是将开关的最多调用调度表中的函数调用。 该交换机提供指向此向上调用调度表时调用 SAN 服务提供商[ **WSPStartupEx** ](https://msdn.microsoft.com/library/windows/hardware/ff566321)函数以开始使用该提供程序。 有关这些向上调用函数的详细信息，请参阅 Microsoft Windows SDK 文档。
+2.  SAN 服务提供商进行最多的调用-在完成后调用的函数时，都带有前缀**WPU**-到使用句柄通过获得的 SAN 套接字交换机**WPUCreateSocketHandle**最多调用，SAN 服务提供商必须使最后的向上调用到交换机通过调用**WPUCloseSocketHandle**函数以关闭套接字句柄。 SAN 服务提供商，然后清理到 SAN 套接字相关的所有内容。 最多调用是将开关的最多调用调度表中的函数调用。 该交换机提供指向此向上调用调度表时调用 SAN 服务提供商[ **WSPStartupEx** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566321(v=vs.85))函数以开始使用该提供程序。 有关这些向上调用函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 只要 SAN 服务提供程序执行前面的过程，以关闭 SAN 套接字，交换机将负责其他所有内容。
 

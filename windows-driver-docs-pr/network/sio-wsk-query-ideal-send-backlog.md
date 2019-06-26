@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_QUERY_IDEAL_SEND_BACKLOG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a47bf3db1321bf8efdab1367165ff2d03121d64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c10aabe83f0f2abf9ec71847d72a1b222fd62d0c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379165"
 ---
 # <a name="siowskqueryidealsendbacklog"></a>SIO\_WSK\_查询\_理想\_发送\_积压工作
 
@@ -22,7 +22,7 @@ SIO\_WSK\_查询\_理想\_发送\_积压工作套接字 I/O 控制操作允许�
 
 如果 WSK 应用程序使用此套接字 I/O 控制操作查询的理想发送积压工作大小，它必须实现后的面向连接的套接字已连接到远程传输地址。
 
-若要查询的面向连接的套接字的理想之选的发送积压工作大小，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要查询的面向连接的套接字的理想之选的发送积压工作大小，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ SIO\_WSK\_查询\_理想\_发送\_积压工作套接字 I/O 控制操作允许�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -73,7 +73,7 @@ SIO\_WSK\_查询\_理想\_发送\_积压工作套接字 I/O 控制操作允许�
 
 WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数查询面向连接的套接字的理想之选的发送积压工作大小。
 
-面向连接的套接字可以通过启用通知的理想发送积压工作大小更改其[ *WskSendBacklogEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571147)事件回调函数。
+面向连接的套接字可以通过启用通知的理想发送积压工作大小更改其[ *WskSendBacklogEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_backlog_event)事件回调函数。
 
 <a name="requirements"></a>要求
 ------------

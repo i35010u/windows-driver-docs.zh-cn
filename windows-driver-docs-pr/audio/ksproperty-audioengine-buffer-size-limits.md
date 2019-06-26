@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c44a0b88eff0918068bbb961d729eadf37ed0cf5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 622430152078bfd316c54fa07b66ca101d8bc36d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332887"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358857"
 ---
 # <a name="kspropertyaudioenginebuffersizerange"></a>KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围
 
@@ -51,7 +51,7 @@ ms.locfileid: "63332887"
 <td align="left"><p>否</p></td>
 <td align="left"><p>通过筛选器节点</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh450864" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_BUFFER_SIZE_RANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450864)"><strong>KSAUDIOENGINE_BUFFER_SIZE_RANGE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_BUFFER_SIZE_RANGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)"><strong>KSAUDIOENGINE_BUFFER_SIZE_RANGE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +65,7 @@ ms.locfileid: "63332887"
 <a name="remarks"></a>备注
 -------
 
-务必请注意，然后在调用方调用**KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围**属性，调用方的字段中填充[**KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095)结构。 因此，在**KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围**调用时，音频驱动程序将收到 KSP\_节点和填充的**KSDATAFORMAT\_WAVEFORMATEX**从调用方的结构。 驱动程序使用此结构中的数据格式信息来确定最小值和最大缓冲区大小，以适应指定的数据格式。 在成功调用此属性，然后流式处理 (KS) 筛选器内核填写**MinBufferBytes**并**MaxBufferBytes**的字段[ **KSAUDIOENGINE\_缓冲区\_大小\_范围**](https://msdn.microsoft.com/library/windows/hardware/hh450864)结构。
+务必请注意，然后在调用方调用**KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围**属性，调用方的字段中填充[**KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)结构。 因此，在**KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围**调用时，音频驱动程序将收到 KSP\_节点和填充的**KSDATAFORMAT\_WAVEFORMATEX**从调用方的结构。 驱动程序使用此结构中的数据格式信息来确定最小值和最大缓冲区大小，以适应指定的数据格式。 在成功调用此属性，然后流式处理 (KS) 筛选器内核填写**MinBufferBytes**并**MaxBufferBytes**的字段[ **KSAUDIOENGINE\_缓冲区\_大小\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,9 +90,9 @@ ms.locfileid: "63332887"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSAUDIOENGINE\_缓冲区\_大小\_范围**](https://msdn.microsoft.com/library/windows/hardware/hh450864)
+[**KSAUDIOENGINE\_缓冲区\_大小\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagksaudioengine_buffer_size_range)
 
-[**KSDATAFORMAT\_WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff537095)
+[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
 
 [**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
 

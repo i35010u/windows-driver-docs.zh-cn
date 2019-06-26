@@ -7,12 +7,12 @@ keywords:
 - WdbgExts 扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e895a8a9305905ec60e3b790bc62539e05e75b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 487a3d45a31dff6fed0ae6546763e0e0ba90927e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369390"
 ---
 # <a name="writing-wdbgexts-extension-code"></a>编写 WdbgExts 扩展代码
 
@@ -44,7 +44,7 @@ WdbgExts 扩展不能使用C++DbgEng.h 标头文件中出现的接口。 如果�
 
 [WdbgExts 目标信息](wdbgexts-target-information.md)
 
-有关这些函数的完整列表，请参阅[WdbgExts 函数](https://msdn.microsoft.com/library/windows/hardware/ff561258)。
+有关这些函数的完整列表，请参阅[WdbgExts 函数](https://docs.microsoft.com/windows-hardware/drivers/debugger/wdbgexts-functions)。
 
  
 

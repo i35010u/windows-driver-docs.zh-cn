@@ -4,12 +4,12 @@ description: 页面大小和方向代码示例
 ms.assetid: 28425df2-131b-4fbc-ae44-043be2fb4813
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b1f49c74815c249ef98eed60fa5f2acc325a17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd916efbcf8fac9db507c783012a79869abc4c67
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392623"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376525"
 ---
 # <a name="page-size-and-orientation-code-examples"></a>页面大小和方向代码示例
 
@@ -19,9 +19,9 @@ ms.locfileid: "63392623"
 
 2.  应用程序设置 WIA\_IPS\_页面\_大小属性设置为 WIA\_页\_字母。
 
-3.  应用程序设置[ **WIA\_IPS\_方向**](https://msdn.microsoft.com/library/windows/hardware/ff552625) LANSCAPE 属性。
+3.  应用程序设置[ **WIA\_IPS\_方向**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation) LANSCAPE 属性。
 
-4.  应用程序更改[ **WIA\_IPS\_大 XEXTENT** ](https://msdn.microsoft.com/library/windows/hardware/ff552661)属性设置为较小的值。
+4.  应用程序更改[ **WIA\_IPS\_大 XEXTENT** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)属性设置为较小的值。
 
 ### <a name="example-1-the-minidriver-reports-the-settings"></a>示例 1：微型驱动程序报告的设置
 
@@ -43,6 +43,6 @@ WIA_IPS_PAGE_SIZE = WIA_PAGE_LETTER WIA_IPS_PAGE_HEIGHT = 11000 WIA_IPS_PAGE_WID
 
 ### <a name="example-4-an-application-changes-the-wiaipsxextent-property-to-a-smaller-value"></a>示例 4：应用程序更改 WIA\_IP\_大 XEXTENT 属性设置为较小的值
 
-在下面的代码示例中，应用程序更改[ **WIA\_IPS\_大 XEXTENT** ](https://msdn.microsoft.com/library/windows/hardware/ff552661)属性设置为 1000年。 微型驱动程序应假定，新值，该值包含在 WIA\_IPS\_大 XEXTENT 不再有效的 WIA\_IPS\_页\_SIZE 属性，从而应更改 WIA\_IP\_页上\_WIA 的大小\_页面\_自定义。 微型驱动程序还必须调整[ **WIA\_IPS\_页\_宽度**](https://msdn.microsoft.com/library/windows/hardware/ff552636)。
+在下面的代码示例中，应用程序更改[ **WIA\_IPS\_大 XEXTENT** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)属性设置为 1000年。 微型驱动程序应假定，新值，该值包含在 WIA\_IPS\_大 XEXTENT 不再有效的 WIA\_IPS\_页\_SIZE 属性，从而应更改 WIA\_IP\_页上\_WIA 的大小\_页面\_自定义。 微型驱动程序还必须调整[ **WIA\_IPS\_页\_宽度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-width)。
 
 WIA_IPS_PAGE_SIZE = WIA_PAGE_CUSTOM WIA_IPS_PAGE_HEIGHT = 10000 WIA_IPS_PAGE_WIDTH = 8500 WIA_IPS_ORIENTATION = LANSCAPE WIA_IPS_XPOS = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1000 WIA_IPS_YEXTENT = 850 WIA_IPS_XRES = 100 WIA_IPS_YRES = 100

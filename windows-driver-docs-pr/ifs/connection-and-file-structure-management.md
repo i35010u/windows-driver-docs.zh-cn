@@ -12,12 +12,12 @@ keywords:
 - WDK RDBSS 的连接信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e1683aee9da29d2514b8c193983bdf92fa0d94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7447c9a39c07f7a22b80e1c68c163614f270dfa2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378971"
 ---
 # <a name="connection-and-file-structure-management"></a>连接和文件结构管理
 
@@ -39,7 +39,7 @@ ms.locfileid: "63351420"
 
 -   SRV\_打开-服务器端打开上下文。 此结构封装在服务器上的打开句柄。
 
--   FOBX-文件对象扩展名。 此结构是对 RDBSS 扩展[**文件\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff545834)结构。
+-   FOBX-文件对象扩展名。 此结构是对 RDBSS 扩展[**文件\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_object)结构。
 
 以下层次结构中组织这些数据结构：
 
@@ -96,7 +96,7 @@ ms.locfileid: "63351420"
 
  
 
-在每种情况下，动态值是指已引用结构，而无需取消引用它的调用方的数目。 由这些例程本身进行维护的引用计数的静态部分。 例如， [ **RxCreateNetRoot** ](https://msdn.microsoft.com/library/windows/hardware/ff554366)递增关联 SRV 的引用计数\_调用结构。
+在每种情况下，动态值是指已引用结构，而无需取消引用它的调用方的数目。 由这些例程本身进行维护的引用计数的静态部分。 例如， [ **RxCreateNetRoot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fcb/nf-fcb-rxcreatenetroot)递增关联 SRV 的引用计数\_调用结构。
 
 引用调用和查找成功递增引用计数中;取消调用递减引用计数。 创建的例程调用分配一个结构，并将引用计数设置为 1。
 
