@@ -4,17 +4,17 @@ description: 初始化标注驱动程序
 ms.assetid: c9fbc3d9-fcb9-4087-a3d9-d97c64711305
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d11b2f02ff7702e9d77b5ce201b11ee87e1d68e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1838df6b009087791ad9811ecdd702793b422412
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371849"
 ---
 # <a name="initializing-a-callout-driver"></a>初始化标注驱动程序
 
 
-标注驱动程序初始化单独存在于其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数。 主要的初始化任务如下所示：
+标注驱动程序初始化单独存在于其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 主要的初始化任务如下所示：
 
 -   [指定卸载函数](specifying-an-unload-function.md)
 

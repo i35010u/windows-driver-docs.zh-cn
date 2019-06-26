@@ -8,12 +8,12 @@ keywords:
 - 视频内存管理器 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f342510d634ef43fd8872888bb64fcfe1a6470e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7982c5b9fb4ce6c61bc66b1239d6384f7d7c3387
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389010"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381083"
 ---
 # <a name="using-memory-segments-to-describe-the-gpu-address-space"></a>使用内存段描述 GPU 地址空间
 
@@ -23,7 +23,7 @@ ms.locfileid: "63389010"
 
 视频内存管理器可以管理 GPU 的地址空间之前，显示微型端口驱动程序必须通过使用内存段描述的视频内存管理器对 GPU 的地址空间。 显示微型端口驱动程序创建内存段通用化和虚拟化视频内存资源。 该驱动程序可以配置根据内存段类型的内存硬件支持 （例如，帧缓冲区内存或系统内存分段）。
 
-驱动程序在初始化期间，驱动程序必须返回描述视频内存管理器可以如何管理内存资源的段类型的列表。 该驱动程序指定它支持，并通过响应对的调用来描述每个段类型类型段的数目及其[ **DxgkDdiQueryAdapterInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff559746)函数。 该驱动程序描述每个段使用[ **DXGK\_SEGMENTDESCRIPTOR** ](https://msdn.microsoft.com/library/windows/hardware/ff562035)结构。 有关详细信息，请参阅[初始化内存段使用](initializing-use-of-memory-segments.md)。
+驱动程序在初始化期间，驱动程序必须返回描述视频内存管理器可以如何管理内存资源的段类型的列表。 该驱动程序指定它支持，并通过响应对的调用来描述每个段类型类型段的数目及其[ **DxgkDdiQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)函数。 该驱动程序描述每个段使用[ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)结构。 有关详细信息，请参阅[初始化内存段使用](initializing-use-of-memory-segments.md)。
 
 此后的数量和类型的段保持不变。 视频内存管理器可确保每个进程在任何特定的段中收到的资源的公平份额。 视频内存管理器管理的所有段独立，并不重叠段。 因此，视频内存管理器会分配大量视频内存资源的一个段中而不考虑应用程序在从另一个段当前持有的资源量的应用程序。
 

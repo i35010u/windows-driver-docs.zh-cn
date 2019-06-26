@@ -13,12 +13,12 @@ keywords:
 - 减少使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f1f6860c82c47bea272da920dc803d4d35e8cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 188bc3d019608b365cdd84391df91347c3021910
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367747"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382924"
 ---
 # <a name="advance-operations"></a>前进操作
 
@@ -26,15 +26,15 @@ ms.locfileid: "63367747"
 
 
 
-高级操作减少中使用的数据空间的大小[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构或在所有 NET\_缓冲区中结构[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。
+高级操作减少中使用的数据空间的大小[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构或在所有 NET\_缓冲区中结构[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
 
 驱动程序使用以下高级功能：
 
-[**NdisAdvanceNetBufferDataStart**](https://msdn.microsoft.com/library/windows/hardware/ff560703)
+[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisadvancenetbufferdatastart)
 
-[**NdisAdvanceNetBufferListDataStart**](https://msdn.microsoft.com/library/windows/hardware/ff560704)
+[**NdisAdvanceNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisadvancenetbufferlistdatastart)
 
-高级操作有时可以释放与网络相关联的 MDLs\_缓冲区结构。 若要提供用于释放 MDLs 的机制，驱动程序可以提供的可选入口点[ **NetFreeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff568348)函数。 如果入口点是**NULL**，NDIS 使用默认方法来分配 MDLs。 必须仅在释放 MDLs *NetFreeMdl*使用的机制，用于分配在 MDL 该倒数[ **NetAllocateMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff568326)函数。
+高级操作有时可以释放与网络相关联的 MDLs\_缓冲区结构。 若要提供用于释放 MDLs 的机制，驱动程序可以提供的可选入口点[ **NetFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_free_mdl_handler)函数。 如果入口点是**NULL**，NDIS 使用默认方法来分配 MDLs。 必须仅在释放 MDLs *NetFreeMdl*使用的机制，用于分配在 MDL 该倒数[ **NetAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_allocate_mdl_handler)函数。
 
 若要获取的新**DataLength**，NDIS 中减去的驱动程序指定*DataOffsetDelta*从当前**DataLength** 。 如果以前的参加操作分配新的数据空间，则高级操作可以释放此类之前分配的内存。 如果提前操作不会释放内存，只需添加 NDIS *DataOffsetDelta*与当前**DataOffset**以获取新**DataOffset** 。 如果提前操作已释放的内存，调整 NDIS **DataOffset**相应地。
 

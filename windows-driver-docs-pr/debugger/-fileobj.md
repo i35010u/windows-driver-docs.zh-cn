@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 501553384979186db955d6278edad6c32234dce5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0d9870a802e1382572e5dbcbd8dbea12130826f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336734"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364321"
 ---
 # <a name="fileobj"></a>!fileobj
 
@@ -33,7 +33,7 @@ ms.locfileid: "63336734"
 
 
 <span id="_______FileObject______"></span><span id="_______fileobject______"></span><span id="_______FILEOBJECT______"></span> *FileObject*   
-指定的地址[FILE_OBJECT](https://msdn.microsoft.com/library/windows/hardware/ff545834)结构。
+指定的地址[FILE_OBJECT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_object)结构。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 

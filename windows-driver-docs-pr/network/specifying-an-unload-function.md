@@ -11,12 +11,12 @@ keywords:
 - 卸载函数 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d08fd24b5d51e99c8f9de5dd67eac06058062949
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 95526a041a191e881ce82b40685550e687e3b111
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562299"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374712"
 ---
 # <a name="specifying-an-unload-function"></a>指定卸载函数
 
@@ -27,7 +27,7 @@ ms.locfileid: "56562299"
 
 ### <a name="wdm-based-callout-drivers"></a>WDM 基于标注驱动程序
 
-如果标注驱动程序基于 WDM，它指定[ **Unload** ](https://msdn.microsoft.com/library/windows/hardware/ff564886)函数，在其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数。 例如：
+如果标注驱动程序基于 WDM，它指定[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数，在其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 例如：
 
 ```C++
 VOID
@@ -52,7 +52,7 @@ NTSTATUS
 
 ### <a name="wdf-based-callout-drivers"></a>WDF 基于标注驱动程序
 
-如果为基础 WDF 标注驱动程序，它指定[ *EvtDriverUnload* ](https://msdn.microsoft.com/library/windows/hardware/ff541694)函数，在其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数。 例如：
+如果为基础 WDF 标注驱动程序，它指定[ *EvtDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)函数，在其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 例如：
 
 ```C++
 VOID

@@ -9,19 +9,19 @@ keywords:
 - 策略设置 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbafed57b2ffb0e88de467d680cab4006e7b6c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0787cb6dfe69d07b9a9f5d36a7079a3ce318de7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377382"
 ---
 # <a name="whea-policy-settings"></a>WHEA 策略设置
 
 
 预测故障分析 (PFA) 执行的 Windows 硬件错误体系结构 (WHEA)，是通过使用注册表设置配置。 WHEA 计算机系统启动时读取这些注册表设置。 对这些设置进行任何更改需要重新启动系统，以使其生效。
 
-从 Windows 8 开始，WHEA 策略可以是托管类型但[ **WHEAPolicyManagementMethods** ](https://msdn.microsoft.com/library/windows/hardware/hh451252)或通过 WHEA Powershell 模块。 如果通过任一这些模式进行了更新策略，策略值将立即生效。
+从 Windows 8 开始，WHEA 策略可以是托管类型但[ **WHEAPolicyManagementMethods** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)或通过 WHEA Powershell 模块。 如果通过任一这些模式进行了更新策略，策略值将立即生效。
 
 **请注意**  本主题中所述的注册表设置适用于使用 WHEA 通过仅。 如果[特定于平台的硬件错误驱动程序 (PSHED) 插件](platform-specific-hardware-error-driver-plug-ins2.md)执行 PFA，并使用注册表来存储其配置设置，它必须使用不同于本主题中描述的注册表值。
 

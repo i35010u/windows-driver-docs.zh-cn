@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 99423671db7424201da693f6c671a439c76a2a04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da09f764efcbae8e64916046cbaf47a50005fa09
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351825"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366501"
 ---
 # <a name="kspropertycameracontrolextendedscenemode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_SCENEMODE
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_SCENEMODE**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn917962)枚举提供 Oem 微调的功能以及任何其他 ISP 控件参数的场景模式根据需要。
+**KSPROPERTY\_CAMERACONTROL\_扩展\_SCENEMODE**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举提供 Oem 微调的功能以及任何其他 ISP 控件参数的场景模式根据需要。
 
 ## <a name="usage-summary-table"></a>使用率摘要表
 

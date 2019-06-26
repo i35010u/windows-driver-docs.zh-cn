@@ -4,12 +4,12 @@ description: WDM 模型与操作系统密切相关。
 ms.assetid: 4D35F0AB-44CE-49CA-8AB7-3922871567B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1448822e25ac18af5b120e9de28bd72fd8626d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0f1e3cd36aa053cc68ba7f0ed1df13d7d360a4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337785"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377413"
 ---
 # <a name="differences-between-wdm-and-wdf"></a>WDM 和 WDF 之间的差异
 
@@ -18,7 +18,7 @@ WDM 模型与操作系统密切相关。 驱动程序通过调用系统服务例
 
 相比较而言，Windows 驱动程序框架 (WDF) 模型侧重于驱动程序的要求和框架库可处理大多数与系统之间的交互。
 
-框架将截获 I/O 请求、 执行默认操作，在适当的情况并调用所需的驱动程序的回调。 WDF 模型是基于的对象和事件驱动的。 对象表示常见驱动程序构造，例如设备、 锁定或队列。 内核模式驱动程序框架 (KMDF) 或用户模式驱动程序框架 (UMDF) 驱动程序包含入口点 ([**DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff540807))，所需的服务的事件相关的回调函数设备和支持 I/O 并实现所依赖的任何其他内部实用工具函数。
+框架将截获 I/O 请求、 执行默认操作，在适当的情况并调用所需的驱动程序的回调。 WDF 模型是基于的对象和事件驱动的。 对象表示常见驱动程序构造，例如设备、 锁定或队列。 内核模式驱动程序框架 (KMDF) 或用户模式驱动程序框架 (UMDF) 驱动程序包含入口点 ([**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers))，所需的服务的事件相关的回调函数设备和支持 I/O 并实现所依赖的任何其他内部实用工具函数。
 
 本部分介绍 WDM 和 WDF 之间的以下区域中的重要区别：
 
@@ -35,7 +35,7 @@ WDM 模型与操作系统密切相关。 驱动程序通过调用系统服务例
 ## <a name="driver-structure"></a>驱动程序结构
 
 
-WDM 和 WDF 驱动程序包含[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)例程、 数例程的调用以处理特定的 I/O 请求，以及各种支持例程。
+WDM 和 WDF 驱动程序包含[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程、 数例程的调用以处理特定的 I/O 请求，以及各种支持例程。
 
 在 WDM 驱动程序，I/O 调度例程映射到特定的主要 IRP 代码。 调度例程 I/O 管理器从接收 Irp，分析它们，并相应地做出响应。
 
@@ -43,8 +43,8 @@ WDM 和 WDF 驱动程序包含[ **DriverEntry** ](https://msdn.microsoft.com/lib
 
 Plug and Play 设备的典型 WDF 驱动程序包含：
 
--   一个[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)例程。
--   [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)例程中，这是类似于 WDM AddDevice 例程。
+-   一个[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程。
+-   [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)例程中，这是类似于 WDM AddDevice 例程。
 -   一个或多个 I/O 队列。
 -   一个或多个 I/O 事件回调函数，它们是在功能上类似于 WDM 驱动程序的 I/O *DispatchXxx*例程。
 -   若要处理插和驱动程序支持的电源事件的回调。
@@ -88,11 +88,11 @@ WDF 驱动程序遵循常规模式来创建所有类型的对象：
 2.  （可选） 初始化该对象的属性结构。
 3.  调用以创建对象的创建方法。
 
-配置结构和属性结构提供有关对象和驱动程序如何使用它的基本信息。 所有对象类型使用[ **WDF\_对象\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)为属性结构，但每种类型的对象的配置结构是不同，某些对象不能有一个。 例如，没有[ **WDF\_驱动程序\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551300)结构，但不是**WDF\_设备\_配置**结构。
+配置结构和属性结构提供有关对象和驱动程序如何使用它的基本信息。 所有对象类型使用[ **WDF\_对象\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)为属性结构，但每种类型的对象的配置结构是不同，某些对象不能有一个。 例如，没有[ **WDF\_驱动程序\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ns-wdfdriver-_wdf_driver_config)结构，但不是**WDF\_设备\_配置**结构。
 
-配置结构存储指向特定于对象的信息，如驱动程序的事件回调函数的对象。 驱动程序填充此结构中，然后调用对象创建方法时将其传递到框架。 例如，调用[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)包括一个指向[ **WDF\_驱动程序\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff551300)结构，其中包含指向在驱动程序的指针[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调函数。
+配置结构存储指向特定于对象的信息，如驱动程序的事件回调函数的对象。 驱动程序填充此结构中，然后调用对象创建方法时将其传递到框架。 例如，调用[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)包括一个指向[ **WDF\_驱动程序\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/ns-wdfdriver-_wdf_driver_config)结构，其中包含指向在驱动程序的指针[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
 
-该框架定义函数被命名为 WDF\_*对象*\_CONFIG\_INIT 来初始化配置结构，其中*对象*表示对象类型的名称。 [ **WDF\_对象\_特性\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552402)函数初始化的驱动程序[ **WDF\_对象\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构。
+该框架定义函数被命名为 WDF\_*对象*\_CONFIG\_INIT 来初始化配置结构，其中*对象*表示对象类型的名称。 [ **WDF\_对象\_特性\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数初始化的驱动程序[ **WDF\_对象\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。
 
 ## <a name="object-context-area"></a>对象上下文区域
 
@@ -111,7 +111,7 @@ WDF 支持 Windows Irp 的子集。 主要的 WDM IRP 类型和相应的 WDF 事
 
 I/O 请求排队，几乎所有驱动程序。 WDM 驱动程序通常使用以下方法之一：
 
--   实现[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)函数，并调用[ **IoStartPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550370)并[ **IoStartNextPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550358)的 I/O 请求中使用系统的设备的队列。
+-   实现[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)函数，并调用[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)并[ **IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)的 I/O 请求中使用系统的设备的队列。
 -   使用**IoCsqXxx**或其他列表管理功能来实现其自身内部的 I/O 队列。
 -   使用**KeXxxDeviceQueue**函数来初始化和管理保护的旋转锁的队列。
 

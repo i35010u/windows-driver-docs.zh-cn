@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4cc770e4647f0d62c51f1e6d82aa4dcaf995c8d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5952e676bf68fb821d9b9ef745ec82c4d1dd02eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384252"
 ---
 # <a name="kscategoryclock"></a>KSCATEGORY_CLOCK
 
 
-KSCATEGORY_CLOCK[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)时钟设备 (KS) 功能类别。
+KSCATEGORY_CLOCK[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)时钟设备 (KS) 功能类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_CLOCK[设备接口类](https://msdn.microsoft.com/library/windows/har
 
 KS 设备的驱动程序注册 KSCATEGORY_CLOCK 向操作系统指示设备支持 KSCATEGORY_CLOCK 功能分类的实例。
 
-有关流式处理时钟的内核的详细信息，请参阅[KS 微型驱动程序体系结构](https://msdn.microsoft.com/library/windows/hardware/ff567656)， [KS 时钟](https://msdn.microsoft.com/library/windows/hardware/ff567307)，并[AVStream 时钟](https://msdn.microsoft.com/library/windows/hardware/ff554208)。
+有关流式处理时钟的内核的详细信息，请参阅[KS 微型驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-minidriver-architecture)， [KS 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)，并[AVStream 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)。
 
 <a name="requirements"></a>要求
 ------------

@@ -18,12 +18,12 @@ keywords:
 - 基于框架的驱动程序 WDK KMDF，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a008ce9d6caaa072269775fbdbe638d75091abf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b907b9d17f971b79800f33cda68c4706c69748d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371104"
 ---
 # <a name="wdf-architecture"></a>WDF 体系结构
 
@@ -34,13 +34,13 @@ ms.locfileid: "63376379"
 WDF 驱动程序提供基于对象的接口。 框架定义的对象，接口包括：
 
 <a href="" id="object-methods"></a>*对象方法*  
-方法是将驱动程序可以调用以执行对象的操作或要获取或设置对象属性的函数。 方法名为 **Wdf * * * ObjectAction*，其中*对象*描述的对象并*操作*指示函数的行为。 例如， [ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)创建设备对象。
+方法是将驱动程序可以调用以执行对象的操作或要获取或设置对象属性的函数。 方法名为 **Wdf * * * ObjectAction*，其中*对象*描述的对象并*操作*指示函数的行为。 例如， [ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)创建设备对象。
 
 <a href="" id="object-event-callback-functions"></a>*对象事件的回调函数*  
-事件回调函数是驱动程序提供的函数。 每个事件的回调函数都可以在对象中发生的特定事件相关联。 关联的事件发生时，框架将调用事件回调函数。 按照约定，事件回调函数的占位符称为 Evt*ObjectEvent*，尽管可以在您的驱动程序中选择任意命名这些回调。 例如，驱动程序注册[ *EvtDeviceD0Entry* ](https://msdn.microsoft.com/library/windows/hardware/ff540848)事件回调以在其设备将进入工作状态时得到通知。
+事件回调函数是驱动程序提供的函数。 每个事件的回调函数都可以在对象中发生的特定事件相关联。 关联的事件发生时，框架将调用事件回调函数。 按照约定，事件回调函数的占位符称为 Evt*ObjectEvent*，尽管可以在您的驱动程序中选择任意命名这些回调。 例如，驱动程序注册[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)事件回调以在其设备将进入工作状态时得到通知。
 
 <a href="" id="object-properties"></a>*对象属性*  
-属性是的值存储在对象和一个驱动程序可以*获取*（即，获取） 和*设置*（即，更改）。 在许多情况下，属性直接映射到相应的 WDM 对象中的字段。 不能故障的属性名为 **Wdf***对象***获取 * * * 值*和 **Wdf***对象***设置 * * * 值*，并可能会失败的属性将名为 **Wdf***对象***检索 * * * 值*和 **Wdf***对象***分配 * * * 值*。 *对象*描述了对象，并*值*标识该函数设置或返回的数据。 例如， [ **WdfDeviceGetDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff545998)返回的句柄的设备对象与关联的驱动程序对象。
+属性是的值存储在对象和一个驱动程序可以*获取*（即，获取） 和*设置*（即，更改）。 在许多情况下，属性直接映射到相应的 WDM 对象中的字段。 不能故障的属性名为 **Wdf***对象***获取 * * * 值*和 **Wdf***对象***设置 * * * 值*，并可能会失败的属性将名为 **Wdf***对象***检索 * * * 值*和 **Wdf***对象***分配 * * * 值*。 *对象*描述了对象，并*值*标识该函数设置或返回的数据。 例如， [ **WdfDeviceGetDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetdriver)返回的句柄的设备对象与关联的驱动程序对象。
 
 <a href="" id="object-handles"></a>*对象句柄*  
 基于框架的驱动程序绝不会直接访问 framework 对象。 相反，驱动程序收到对象句柄，它可以传递给对象的方法。

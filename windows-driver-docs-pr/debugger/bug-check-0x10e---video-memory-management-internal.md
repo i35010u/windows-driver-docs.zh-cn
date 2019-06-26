@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 97a048d99b5a4a6ceb5d33184773f6b432237865
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b33e3956b0ad5198fb9c8d0a6a88466384bd8d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362341"
 ---
 # <a name="bug-check-0x10e-videomemorymanagementinternal"></a>Bug 检查 0x10E：视频\_内存\_管理\_内部
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358203"
 视频\_内存\_管理\_内部 bug 检查的值为 0x0000010E。 这指示视频内存管理器遇到它不能从恢复的条件。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="videomemorymanagementinternal-parameters"></a>视频\_内存\_管理\_内部参数

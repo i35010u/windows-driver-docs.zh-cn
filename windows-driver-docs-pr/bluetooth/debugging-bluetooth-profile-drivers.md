@@ -9,21 +9,21 @@ keywords:
 - 配置文件驱动程序 WDK 蓝牙，调试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecaf8b97b1ce29faf84cecef41e4e5d7f339d44e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e28755c13871a4982affb5ebb396c893d7e41323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328221"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364639"
 ---
 # <a name="debugging-bluetooth-profile-drivers"></a>调试蓝牙配置文件驱动程序
 
 
-虽然开发蓝牙配置文件驱动程序，你可以使用[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)以帮助其调试。
+虽然开发蓝牙配置文件驱动程序，你可以使用[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)以帮助其调试。
 
-若要启用你必须验证检查[Bthusb.sys 为启用驱动程序验证程序](https://msdn.microsoft.com/library/windows/hardware/ff551729)。 如果不这样做，将禁用验证检查。
+若要启用你必须验证检查[Bthusb.sys 为启用驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-drivers-to-be-verified)。 如果不这样做，将禁用验证检查。
 
-若要利用验证检查完全，请确保使用蓝牙请求块 (BRB) 分配例程，例如， [ **BthAllocateBrb** ](https://msdn.microsoft.com/library/windows/hardware/ff536634)并[ **BthInitializeBrb**](https://msdn.microsoft.com/library/windows/hardware/ff536639)，提供的蓝牙驱动程序堆栈[生成并发送 BRBs](building-and-sending-a-brb.md)。 这些例程包括附加功能，可帮助调试配置文件驱动程序。
+若要利用验证检查完全，请确保使用蓝牙请求块 (BRB) 分配例程，例如， [ **BthAllocateBrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_allocate_brb)并[ **BthInitializeBrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_initialize_brb)，提供的蓝牙驱动程序堆栈[生成并发送 BRBs](building-and-sending-a-brb.md)。 这些例程包括附加功能，可帮助调试配置文件驱动程序。
 
 可帮助验证检查，以捕获以下类型的错误：
 

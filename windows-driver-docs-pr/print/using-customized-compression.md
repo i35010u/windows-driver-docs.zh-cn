@@ -8,12 +8,12 @@ keywords:
 - 自定义的光栅数据压缩 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d998ab373dbc83f62e44edfb3cc73311e073fbcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4483c88b9d4958e3040d1e82fce33ef01686c898
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565473"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362739"
 ---
 # <a name="using-customized-compression"></a>使用自定义压缩
 
@@ -21,7 +21,7 @@ ms.locfileid: "56565473"
 
 
 
-如果你想要提供自定义的压缩算法，则包含 CmdEnableOEMComp 命令输入指定命令，使您的算法。 如果您的打印机可以禁用压缩功能，可以选择包括一个 CmdDisableCompression 条目来指定命令禁用压缩。 你还必须提供[呈现插件](rendering-plug-ins.md)实现[ **IPrintOemUni::Compression** ](https://msdn.microsoft.com/library/windows/hardware/ff554224)方法。
+如果你想要提供自定义的压缩算法，则包含 CmdEnableOEMComp 命令输入指定命令，使您的算法。 如果您的打印机可以禁用压缩功能，可以选择包括一个 CmdDisableCompression 条目来指定命令禁用压缩。 你还必须提供[呈现插件](rendering-plug-ins.md)实现[ **IPrintOemUni::Compression** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-compression)方法。
 
 如果提供的自定义的压缩算法，您还可以启用使用 Unidrv 支持的算法。 对于每个扫描行，Unidrv 会尝试每个压缩算法，并选择会生成最压缩的结果的算法。 (有关 Unidrv 支持算法的信息，请参阅[Using Unidrv-Supported 压缩](using-unidrv-supported-compression.md)。)当 Unidrv 找到最佳算法时，它将扫描行数据压缩。 然后它将发送到打印机指定相应的命令条目后, 跟压缩数据的命令。
 

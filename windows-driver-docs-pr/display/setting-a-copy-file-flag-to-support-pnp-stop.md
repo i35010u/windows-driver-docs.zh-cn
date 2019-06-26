@@ -9,12 +9,12 @@ keywords:
 - 插停止 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd7d9995e934a29dfe3a7078bdac289963a91d74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bdba6e15938daceae1c1af6b0e87faf86b2e23f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390469"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365580"
 ---
 # <a name="setting-a-copy-file-flag-to-support-pnp-stop"></a>设置 Copy-File 标志以支持 PnP 停止
 
@@ -40,7 +40,7 @@ r200umd.dll,,,0x00004000  ; COPYFLG_IN_USE_TRY_RENAME
 r200umd2.dll,,,0x00004000 ; COPYFLG_IN_USE_TRY_RENAME
 ```
 
-有关详细信息**CopyFiles**与关联的指令和文件部分**CopyFiles**，请参阅[ **INF CopyFiles 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346).
+有关详细信息**CopyFiles**与关联的指令和文件部分**CopyFiles**，请参阅[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive).
 
  
 

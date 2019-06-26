@@ -4,12 +4,12 @@ description: 基于堆栈的故障注入选项注入资源故障。 内核模式
 ms.assetid: B5C06413-81FB-46DA-B053-80ED347DA3EB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e51b2e851d153436f72a766b4e6bfe866507a24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d275e9327ee6ae827645baabb595ce1180c4d040
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379038"
 ---
 # <a name="stack-based-failure-injection"></a>基于堆栈的错误注入
 
@@ -27,7 +27,7 @@ ms.locfileid: "63387918"
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
 
-后，可以激活一个或多个驱动程序的基于堆栈的故障注入功能[部署到测试计算机的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)。 在配置时，可以选择基于堆栈的故障注入选项[驱动程序包项目的驱动程序验证器属性](https://msdn.microsoft.com/windows-drivers/develop/driver_verifier_properties_for__driver_projects)。 必须重新启动计算机以激活或停用基于堆栈的故障注入选项。 此外可以运行测试实用程序以启用驱动程序验证程序和测试计算机上的此功能。
+后，可以激活一个或多个驱动程序的基于堆栈的故障注入功能[部署到测试计算机的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 在配置时，可以选择基于堆栈的故障注入选项[驱动程序包项目的驱动程序验证器属性](https://docs.microsoft.com/windows-hardware/drivers)。 必须重新启动计算机以激活或停用基于堆栈的故障注入选项。 此外可以运行测试实用程序以启用驱动程序验证程序和测试计算机上的此功能。
 
 **重要**  激活时基于堆栈的故障注入测试计算机上，请确保不要还选择[低资源模拟](low-resources-simulation.md)。
 
@@ -39,11 +39,11 @@ ms.locfileid: "63387918"
     2.  在为驱动程序包属性页中，单击**配置属性**，单击**驱动程序安装**，然后单击**Driver Verifier**。
     3.  选择**启用驱动程序验证程序**。 在测试计算机上启用驱动程序验证程序时，您可以选择启用驱动程序验证程序的计算机上，为驱动程序项目的所有驱动程序，或指定的驱动程序的列表。
     4.  下**堆栈基于故障注入器**，选择 （检查） 基于堆栈的故障注入。
-    5.  单击 **“应用”** 或 **“确定”**。
-    6.  请参阅[部署到测试计算机的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)有关详细信息。 若要激活此选项，必须重新启动测试计算机。
+    5.  单击 **“应用”** 或 **“确定”** 。
+    6.  请参阅[部署到测试计算机的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)有关详细信息。 若要激活此选项，必须重新启动测试计算机。
 -   **使用启用和禁用驱动程序验证测试**
 
-    1.  此外可以通过运行实用程序测试驱动程序验证程序。 按照中所述的说明[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)。 下**的所有测试\\Driver Verifier**测试类别中，选择**启用驱动程序验证程序 （需要可能重启）** 和**禁用驱动程序验证程序 （可能需要重启必需的）** 测试。
+    1.  此外可以通过运行实用程序测试驱动程序验证程序。 按照中所述的说明[如何测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 下**的所有测试\\Driver Verifier**测试类别中，选择**启用驱动程序验证程序 （需要可能重启）** 和**禁用驱动程序验证程序 （可能需要重启必需的）** 测试。
     2.  通过单击名称选择 Driver Verifier 选项**启用驱动程序验证程序 （需要可能重启）** 中的测试**驱动程序测试组**窗口。
     3.  选择 （检查） 堆栈基于故障注入。
     4.  向测试组添加这些测试后可以保存的测试组。 若要启用堆栈基于故障注入，运行**启用驱动程序验证程序 （需要可能重启）** 在已配置用于测试的计算机上进行测试。
@@ -62,11 +62,11 @@ ms.locfileid: "63387918"
 ## <a name="span-idusingthestackbasedfailureinjectionsbfidebuggerextensionspanspan-idusingthestackbasedfailureinjectionsbfidebuggerextensionspanspan-idusingthestackbasedfailureinjectionsbfidebuggerextensionspanusing-the-stack-based-failure-injection-sbfi-debugger-extension"></a><span id="Using_the_Stack_Based_Failure_Injection__SBFI__debugger_extension"></span><span id="using_the_stack_based_failure_injection__sbfi__debugger_extension"></span><span id="USING_THE_STACK_BASED_FAILURE_INJECTION__SBFI__DEBUGGER_EXTENSION"></span>使用堆栈基于故障注入 (SBFI) 调试器扩展
 
 
-检查大部分与基于堆栈的故障注入结果在 bug 中发现的问题。 若要帮助确定这些代码的问题的原因，WDK 提供基于堆栈的故障注入调试器扩展和必需的符号。 安装过程将在调试器系统上同时安装。 默认位置是 c:\\Program Files (x86)\\Windows 工具包\\8.0\\调试器\\*&lt;arch&gt;*。
+检查大部分与基于堆栈的故障注入结果在 bug 中发现的问题。 若要帮助确定这些代码的问题的原因，WDK 提供基于堆栈的故障注入调试器扩展和必需的符号。 安装过程将在调试器系统上同时安装。 默认位置是 c:\\Program Files (x86)\\Windows 工具包\\8.0\\调试器\\ *&lt;arch&gt;* 。
 
 **若要运行的调试程序扩展**
 
-- 在调试器命令提示符下键入以下命令： **！**<em>&lt;路径&gt;\\</em>**kmautofaildbg.dll.autofail**。 例如，假设调试器扩展安装在 c:\\dbgext 和该 kmautofail.pdb 处于符号路径时，应输入以下命令：
+- 在调试器命令提示符下键入以下命令： **！** <em>&lt;路径&gt;\\</em>**kmautofaildbg.dll.autofail**。 例如，假设调试器扩展安装在 c:\\dbgext 和该 kmautofail.pdb 处于符号路径时，应输入以下命令：
 
   ```
   !c:\dbgext\kmautofaildbg.dll.autofail
@@ -95,9 +95,9 @@ Sequence: 2, Test Number: 0, Process ID: 0, Thread ID: 0
 
 在输出的顶部，序列数计数的错误注入的数。 此示例演示了此测试运行期间注入的第二个错误。 进程 ID 为 0，因此这是系统进程。 IRQL 是 2，因此这称为调度级别。
 
-从堆栈，KmAutoFail 是基于堆栈的故障注入驱动程序。 函数名称指示哪个函数将调用从 Mydriver.sys KmAutoFail 被截获和错误注入。 在这里，失败的函数已[ **ExAllocatePoolWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff544520)。 中的所有函数 KmAutoFail 拦截 Ntoskrnl.sys 或 Ndis.sys 对使用此命名约定。 接下来，我们看到调用堆栈与驱动程序正在进行测试 (Mydriver.sys)。 这是用于确定堆栈的唯一性的调用堆栈的一部分。 因此每个条目由调试器扩展转储是在调用堆栈的这一部分唯一的。 调用堆栈的其余部分指示人员称为驱动程序。 主要的重要性是从用户模式 （通过 IOCTL) 或内核模式驱动程序是否调用该驱动程序。
+从堆栈，KmAutoFail 是基于堆栈的故障注入驱动程序。 函数名称指示哪个函数将调用从 Mydriver.sys KmAutoFail 被截获和错误注入。 在这里，失败的函数已[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)。 中的所有函数 KmAutoFail 拦截 Ntoskrnl.sys 或 Ndis.sys 对使用此命名约定。 接下来，我们看到调用堆栈与驱动程序正在进行测试 (Mydriver.sys)。 这是用于确定堆栈的唯一性的调用堆栈的一部分。 因此每个条目由调试器扩展转储是在调用堆栈的这一部分唯一的。 调用堆栈的其余部分指示人员称为驱动程序。 主要的重要性是从用户模式 （通过 IOCTL) 或内核模式驱动程序是否调用该驱动程序。
 
-请注意，如果驱动程序已返回故障从其[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程，重新加载尝试将通常发生在不同的内存位置。 在这种情况下，从早期的位置的调用堆栈可能将包含"垃圾"，而不是从驱动程序的堆栈信息。 但这不是一个问题：它会告诉您该驱动程序正确地处理该注入的错误。
+请注意，如果驱动程序已返回故障从其[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程，重新加载尝试将通常发生在不同的内存位置。 在这种情况下，从早期的位置的调用堆栈可能将包含"垃圾"，而不是从驱动程序的堆栈信息。 但这不是一个问题：它会告诉您该驱动程序正确地处理该注入的错误。
 
 下面的条目演示如何通过从用户模式 IOCTL 的驱动程序调用。 请注意进程 ID 和 IRQ 级别。 由于 Mydriver.sys NDIS 筛选器驱动程序，IOCTL 是通过 Ndis.sys。 请注意该 nt ！NtDeviceIoControlFile 位于堆栈上。 在您使用 Ioctl 的驱动程序运行任何测试会通过此函数。
 

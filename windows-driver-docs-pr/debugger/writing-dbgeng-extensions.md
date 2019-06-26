@@ -5,12 +5,12 @@ ms.assetid: 5549b684-8417-415b-ba53-54f90f42e316
 keywords: DbgEng 扩展，调试器扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e739949f53eb3587145a98a6d3e20a8a8744aea7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a42d51c5feacc36e32ef5a19a08514a547645432
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383734"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369391"
 ---
 # <a name="writing-dbgeng-extensions"></a>编写 DbgEng 扩展
 
@@ -22,7 +22,7 @@ ms.locfileid: "63383734"
 
 [DbgEng 扩展设计指南](dbgeng-extension-design-guide.md)
 
-[DbgEng 扩展引用](https://msdn.microsoft.com/library/windows/hardware/ff540395)
+[DbgEng 扩展引用](https://docs.microsoft.com/previous-versions/ff540395(v=vs.85))
 
  
 

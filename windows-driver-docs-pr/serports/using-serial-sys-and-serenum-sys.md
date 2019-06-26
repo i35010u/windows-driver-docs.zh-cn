@@ -16,12 +16,12 @@ keywords:
 - 筛选器驱动程序 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da40df971ff1b17511de0867af86b6a848debde
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 52da4849e530cf99f3d463ebfcae6cc739f0900d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836266"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378574"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>使用 Serial.sys 和 Serenum.sys
 
@@ -41,21 +41,21 @@ ms.locfileid: "65836266"
     - [Serenum 和序列的操作](operation-of-serenum-and-serial.md)
     - [用于 Serial 注册表设置](registry-settings-for-serial.md)
     - [Serenum 的注册表设置](registry-settings-for-serenum.md)
-    - [串行驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff547476)
-    - [Serenum 驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff547040)
+    - [串行驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+    - [Serenum 驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
     - WDK 中 Ntddser.h 标头文件中的数据定义。
 
 <!-- -->
 
-- 端口[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)
+- 端口[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
 
     端口类包括*串行端口*并*COM 端口*。 串行端口处于 16550 UART 或兼容的设备上的串行通信硬件接口。 一台计算机上的 RS-232 端口通常是 DB 9 或通过电气连接到串行端口上 UART DB 25 连接器。 COM 端口是符合其他特定于 Windows 的要求的串行端口。 有关详细信息，请参阅[配置的 COM 端口](configuration-of-com-ports.md)。
 
-- COM 端口[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)
+- COM 端口[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)
 
-    必须使用 COM 端口设备接口来访问 COM 端口。 (有关 COM 端口设备接口类的 GUID 是[ **GUID\_DEVINTERFACE\_COMPORT**](https://msdn.microsoft.com/library/windows/hardware/ff545821)。)
+    必须使用 COM 端口设备接口来访问 COM 端口。 (有关 COM 端口设备接口类的 GUID 是[ **GUID\_DEVINTERFACE\_COMPORT**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport)。)
 
-- [COM 端口数据库](com-port-database.md)和[COM 端口数据库支持例程](https://msdn.microsoft.com/library/windows/hardware/ff546483)
+- [COM 端口数据库](com-port-database.md)和[COM 端口数据库支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
     COM 端口数据库对话 COM 端口号的 COM 端口的使用。
 

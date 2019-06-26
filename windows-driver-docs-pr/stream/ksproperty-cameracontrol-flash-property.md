@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bff8fd2ef04e69a895b93cc3238c420a5886656
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8065ca34e75da3dd975d44c7916a83b754067841
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341831"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356636"
 ---
 # <a name="kspropertycameracontrolflashproperty"></a>KSPROPERTY\_CAMERACONTROL\_闪存\_属性
 
@@ -54,7 +54,7 @@ ms.locfileid: "63341831"
 <td><p>是</p></td>
 <td><p>Filter</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/jj151590" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/jj151590)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ ID 的属性**KSPROPERTY\_CAMERACONTROL\_FLASH\_属性\_ID**。
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CAMERACONTROL\_闪存\_S**](https://msdn.microsoft.com/library/windows/hardware/jj151590)
+[**KSPROPERTY\_CAMERACONTROL\_闪存\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)
 
  
 

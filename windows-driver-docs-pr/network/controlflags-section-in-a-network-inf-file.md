@@ -8,12 +8,12 @@ keywords:
 - ControlFlags 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e64a7cdec2c73ebac5b9cd2ce539f31e091ebc5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65cdae07b06b1b4edfa8d2eacf85c25fa280024f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374943"
 ---
 # <a name="controlflags-section-in-a-network-inf-file"></a>网络 INF 文件中的 ControlFlags 节
 
@@ -21,7 +21,7 @@ ms.locfileid: "63357393"
 
 
 
-一个**ControlFlags**网络 INF 文件中的部分基于泛型[ **INF ControlFlags 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546342)。
+一个**ControlFlags**网络 INF 文件中的部分基于泛型[ **INF ControlFlags 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)。
 
 **ControlFlags**网络 INF 文件中的部分通常具有一个或多个**ExcludeFromSelect**条目。 每个**ExcludeFromSelect**条目指定将不会显示给最终用户手动安装过程中选择的网络组件。
 

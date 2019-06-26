@@ -10,12 +10,12 @@ keywords:
 - MSI X WDK 连接网络、 取消的中断
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 648b059770ad572720b9f95a40e573d0eb4d1a06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02627f2084f59631c1e1cbf7e443a0a61ab7ef84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366665"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374785"
 ---
 # <a name="registering-and-deregistering-an-msi-interrupt"></a>注册和取消注册 MSI 中断
 
@@ -23,31 +23,31 @@ ms.locfileid: "63366665"
 
 
 
-若要注册 MSI 的支持，微型端口驱动程序调用[ **NdisMRegisterInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563649)函数以注册 MSI 中断。 该驱动程序分配并初始化[ **NDIS\_微型端口\_中断\_特征**](https://msdn.microsoft.com/library/windows/hardware/ff566465)结构，以指定中断特征和函数入口点。 该驱动程序必须设置**MsiSupported**成员的 NDIS\_微型端口\_中断\_特征结构**TRUE**。 该驱动程序然后将传递的结构**NdisMRegisterInterruptEx**。
+若要注册 MSI 的支持，微型端口驱动程序调用[ **NdisMRegisterInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterinterruptex)函数以注册 MSI 中断。 该驱动程序分配并初始化[ **NDIS\_微型端口\_中断\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_interrupt_characteristics)结构，以指定中断特征和函数入口点。 该驱动程序必须设置**MsiSupported**成员的 NDIS\_微型端口\_中断\_特征结构**TRUE**。 该驱动程序然后将传递的结构**NdisMRegisterInterruptEx**。
 
 必须定义以下函数以支持 MSI 中断：
 
--   [*MiniportMessageInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559407)
+-   [*MiniportMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt)
 
--   [*MiniportMessageInterruptDpc*](https://msdn.microsoft.com/library/windows/hardware/ff559411)
+-   [*MiniportMessageInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt_dpc)
 
--   [*MiniportDisableMessageInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559376)
+-   [*MiniportDisableMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_disable_message_interrupt)
 
--   [*MiniportEnableMessageInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559383)
+-   [*MiniportEnableMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_enable_message_interrupt)
 
 微型端口驱动程序应为基于行的中断函数 （它们以下列表中所示），提供入口点，即使该驱动程序支持 MSI 入口点。 如果 NDIS 不会授予 MSI 中断，它可以作为回退条件授予正常中断。
 
 行中断函数包括：
 
--   [*MiniportInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559395)
+-   [*MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)
 
--   [*MiniportInterruptDPC*](https://msdn.microsoft.com/library/windows/hardware/ff559398)
+-   [*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)
 
--   [*MiniportDisableInterruptEx*](https://msdn.microsoft.com/library/windows/hardware/ff559375)
+-   [*MiniportDisableInterruptEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_disable_interrupt)
 
--   [*MiniportEnableInterruptEx*](https://msdn.microsoft.com/library/windows/hardware/ff559380)
+-   [*MiniportEnableInterruptEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_enable_interrupt)
 
-驱动程序应调用[ **NdisMDeregisterInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563575)函数，以释放以前分配的资源**NdisMRegisterInterruptEx**。
+驱动程序应调用[ **NdisMDeregisterInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex)函数，以释放以前分配的资源**NdisMRegisterInterruptEx**。
 
  
 

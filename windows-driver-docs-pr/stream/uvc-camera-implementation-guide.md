@@ -3,12 +3,12 @@ title: Windows 10 UVC 相机实施指南
 description: 概述了如何公开 USB 视频类符合照相机传送到收件箱驱动程序通过应用程序某些功能。
 ms.date: 11/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e550bd9332abb197b4857b29e1ddd399ec4985d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8cc222509880498f2c4a78bfa9492a563c00b34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376957"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363267"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC 相机实施指南
 
@@ -336,7 +336,7 @@ HKR,,EnablePlatformDmft,0x00010001,0x00000001
 
 ## <a name="bos-and-ms-os-20-descriptor"></a>BOS 和 MS OS 2.0 描述符
 
-UVC 符合照相机可以指定在其固件中的平台功能 BOS 描述符中的 Windows 特定的设备配置值。 有关，请参阅文档[MS OS 2.0 描述符](https://msdn.microsoft.com/library/windows/hardware/dn385747)若要了解如何指定一个有效的 BOS 描述符，它传达了对操作系统的设备配置。 当在固件中指定有效的 MS OS 2.0 描述符时，USB 堆栈将配置值复制到设备硬件注册表键下面显示：
+UVC 符合照相机可以指定在其固件中的平台功能 BOS 描述符中的 Windows 特定的设备配置值。 有关，请参阅文档[MS OS 2.0 描述符](https://docs.microsoft.com/previous-versions/dn385747(v=msdn.10))若要了解如何指定一个有效的 BOS 描述符，它传达了对操作系统的设备配置。 当在固件中指定有效的 MS OS 2.0 描述符时，USB 堆栈将配置值复制到设备硬件注册表键下面显示：
 
 ```Registry
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\<Device ID>\<Instance ID>\Device Parameters

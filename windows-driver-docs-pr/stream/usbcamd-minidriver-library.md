@@ -11,12 +11,12 @@ keywords:
 - 照相机 WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b8227040f4b0b4655ae6de25b5331f61ebaaa02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b49a397adcd4ba4a22567b7979b408443cedda3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391887"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383126"
 ---
 # <a name="usbcamd-minidriver-library"></a>USBCAMD 微型驱动程序库
 
@@ -31,11 +31,11 @@ Microsoft 发布了原始 USBCAMD 微型驱动程序库与 Microsoft Windows 98 
 
 照相机微型驱动程序负责：
 
--   实现支持流属性，例如内核[PROPSETID\_VIDCAP\_VIDEOPROCAMP](https://msdn.microsoft.com/library/windows/hardware/ff568122)并[PROPSETID\_VIDCAP\_CAMERACONTROL](https://msdn.microsoft.com/library/windows/hardware/ff567802).
+-   实现支持流属性，例如内核[PROPSETID\_VIDCAP\_VIDEOPROCAMP](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)并[PROPSETID\_VIDCAP\_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol).
 
--   确定数据流是否有效且当前或下一个视频帧的照相机微型驱动程序的一部分[ *CamProcessUSBPacketEx* ](https://msdn.microsoft.com/library/windows/hardware/ff557631)回调函数。
+-   确定数据流是否有效且当前或下一个视频帧的照相机微型驱动程序的一部分[ *CamProcessUSBPacketEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_process_packet_routine_ex)回调函数。
 
--   从流中提取视频帧和视频的帧执行处理，它们返回到调用应用程序在照相机微型驱动程序的前[ *CamProcessRawVideoFrameEx* ](https://msdn.microsoft.com/library/windows/hardware/ff557625)回调函数。
+-   从流中提取视频帧和视频的帧执行处理，它们返回到调用应用程序在照相机微型驱动程序的前[ *CamProcessRawVideoFrameEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)回调函数。
 
 在 Windows 98 上为支持原始 USBCAMD 微型驱动程序库*usbcamd.sys*，但在 Windows 2000 上不受支持。 在 Windows 2000 和更高版本和 Windows Millennium Edition 及更高版本为这两者支持 USBCAMD2 *usbcamd.sysand usbcamd2.sys*。 原始 USBCAMD 微型驱动程序库和 USBCAMD2 都不支持在 64 位平台上。
 
@@ -45,7 +45,7 @@ Microsoft 发布了原始 USBCAMD 微型驱动程序库与 Microsoft Windows 98 
 
 **其他资源**
 
-开发人员应熟悉中的材料[流式处理内核](kernel-streaming.md)，[流式处理微型驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568275)，并[视频捕获设备](video-capture-devices.md)。
+开发人员应熟悉中的材料[流式处理内核](kernel-streaming.md)，[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)，并[视频捕获设备](video-capture-devices.md)。
 
 有关其他开发人员信息，包括 USB 规范，请参阅[USB-如果开发人员区域](https://go.microsoft.com/fwlink/p/?linkid=8781)。
 

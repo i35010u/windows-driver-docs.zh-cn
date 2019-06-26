@@ -7,12 +7,12 @@ keywords:
 - 跟踪树窗格 WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bad7e81607d18d05e2ee4c487062a3b8a5430eff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c98788e5e772bfc8aa32038a80f832cf77cd3cf9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377771"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363797"
 ---
 # <a name="understanding-the-trace-tree-pane"></a>了解跟踪树窗格
 
@@ -33,7 +33,7 @@ ms.locfileid: "63377771"
 IoReleaseCancelSpinLock(KeGetCurrentIrql());
 ```
 
-在此情况下，**跟踪树**窗格将包括的一个关键因素[ **KeGetCurrentIrql** ](https://msdn.microsoft.com/library/windows/hardware/ff552054)函数调用，几个调用的 SDV 操作系统模型随机生成 irql，因此，然后调用[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550)返回 IRQL 与。
+在此情况下，**跟踪树**窗格将包括的一个关键因素[ **KeGetCurrentIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kegetcurrentirql)函数调用，几个调用的 SDV 操作系统模型随机生成 irql，因此，然后调用[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))返回 IRQL 与。
 
  
 

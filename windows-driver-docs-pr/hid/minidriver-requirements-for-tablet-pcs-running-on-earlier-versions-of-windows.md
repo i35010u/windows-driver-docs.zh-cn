@@ -4,12 +4,12 @@ description: 描述供应商提供 HID 微型驱动程序笔和按钮的设备�
 ms.assetid: 89BE7E13-4D46-4265-9522-D5A51999F633
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d506012ba8554a2bd9bd019ac69ad84cabc77f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d301b456f368a98579f8012770c596a63902323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346205"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371943"
 ---
 # <a name="minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows"></a>微型驱动程序要求 tablet Pc 更早版本的 Windows 上运行
 
@@ -37,7 +37,7 @@ Tablet PC 笔设备必须：
 
 -   仅限报表原始数据。 该驱动程序必须不补偿线性、 笔倾斜、 显示旋转或缩放。 这些转换由 Tablet PC API 处理。 但是，该驱动程序必须确保笔坐标系统使用相同的源和方向，与使用 api。 例如，原点位于横向显示的 x 坐标增加从左到右，左上角和 y 坐标增加从上到下，必须确保该驱动程序。
 
--   如果设备是 USB 设备、 Tablet PC 笔设备必须支持[USB 选择性挂起功能](https://msdn.microsoft.com/library/windows/hardware/ff540144)。
+-   如果设备是 USB 设备、 Tablet PC 笔设备必须支持[USB 选择性挂起功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 ### <a href="" id="ddk-requirements-on-hid-minidrivers-for-tablet-pc-button-devices-kg"></a>PC 按钮设备的要求
 

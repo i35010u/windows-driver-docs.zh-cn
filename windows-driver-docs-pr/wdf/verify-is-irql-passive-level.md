@@ -6,12 +6,12 @@ keywords:
 - VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd95af57956eef7cef81fe1a112aaaaf1af2543
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c8e51cd166ee5c3156c52cdede3d6cac60bcb33
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391824"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372143"
 ---
 # <a name="verifyisirqlpassivelevel-macro"></a>VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
 
@@ -48,9 +48,9 @@ VOID VERIFY_IS_IRQL_PASSIVE_LEVEL(void);
 -   **VerifierOn**设置为非零值和**DbgBreakOnError**未设置。
 -   启用驱动程序验证程序，该驱动程序生成框架版本 1.9 或更高版本，以及两者都**VerifierOn**也不**DbgBreakOnError**设置。
 
-有关可用于调试您的驱动程序的注册表项的详细信息，请参阅[Debugging Framework-Based 驱动程序的注册表项](https://msdn.microsoft.com/library/windows/hardware/ff544573)。
+有关可用于调试您的驱动程序的注册表项的详细信息，请参阅[Debugging Framework-Based 驱动程序的注册表项](https://docs.microsoft.com/windows-hardware/drivers/wdf/registry-values-for-debugging-kmdf-drivers)。
 
-有关调试您的驱动程序的详细信息，请参阅[调试 KMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540790)。
+有关调试您的驱动程序的详细信息，请参阅[调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
 
 <a name="examples"></a>示例
 --------

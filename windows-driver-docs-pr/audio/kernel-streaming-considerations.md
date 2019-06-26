@@ -4,12 +4,12 @@ description: 内核流式处理注意事项主题阐明了要求和其他蓝牙�
 ms.assetid: CFC4ACA0-050D-48E1-AA6A-7649040EBF7A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f867918bbfad43a430fc2b1eca2e6409d0d4899
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a990816d8d471e4edd2bf844993540b52658a5f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333394"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359832"
 ---
 # <a name="kernel-streaming-considerations"></a>内核流式处理注意事项
 
@@ -35,7 +35,7 @@ ms.locfileid: "63333394"
 
 DAC 和 ADC 节点表示的模拟/数字转换，但不是支持任何 KS 属性。
 
-卷节点支持[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)并[ **KSEVENT\_控件\_更改** ](https://msdn.microsoft.com/library/windows/hardware/ff537128)通过将 SETVOLUME 和 GETVOLUMESTATUSUPDATE Ioctl 发送到 HFP 驱动程序。
+卷节点支持[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)并[ **KSEVENT\_控件\_更改** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-control-change)通过将 SETVOLUME 和 GETVOLUMESTATUSUPDATE Ioctl 发送到 HFP 驱动程序。
 
 卷节点应实现，如下所示：
 
@@ -45,7 +45,7 @@ DAC 和 ADC 节点表示的模拟/数字转换，但不是支持任何 KS 属性
 
 -   蓝牙耳机和音频设备没有硬件音量控件，如果没有卷节点应会显示，Windows 将插入软件卷控制节点。
 
-静音节点是可选的。 音频驱动程序应实现静音节点，当且仅当 DSP 或音频编解码器提供了将调节到静音绕过 PCM 信号，然后再将它传递到蓝牙控制器的功能。 静音节点支持[ **KSPROPERTY\_音频\_设为静音**](https://msdn.microsoft.com/library/windows/hardware/ff537293)。
+静音节点是可选的。 音频驱动程序应实现静音节点，当且仅当 DSP 或音频编解码器提供了将调节到静音绕过 PCM 信号，然后再将它传递到蓝牙控制器的功能。 静音节点支持[ **KSPROPERTY\_音频\_设为静音**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mute)。
 
 ## <a name="span-idpropertyrequestsspanspan-idpropertyrequestsspanspan-idpropertyrequestsspanproperty-requests"></a><span id="Property_requests"></span><span id="property_requests"></span><span id="PROPERTY_REQUESTS"></span>属性请求
 
@@ -54,16 +54,16 @@ DAC 和 ADC 节点表示的模拟/数字转换，但不是支持任何 KS 属性
 
 **KSPROPERTY\_JACK\_说明**
 
-此属性返回[ **KSJACK\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff537136)结构。 音频驱动程序应设置[ **KSPROPERTY\_JACK\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)字段，如下所示。
+此属性返回[ **KSJACK\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)结构。 音频驱动程序应设置[ **KSPROPERTY\_JACK\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)字段，如下所示。
 ChannelMapping = KSAUDIO\_演讲者\_MONO 颜色 = 0 ConnectionType = eConnTypeOtherDigital 地理位置 = eGeoLocNotApplicable GenLocation = eGenLocOther PortConnection = ePortConnUnknown IsConnected = &lt; *对于当前连接状态为 BOOL* &gt; **KSPROPERTY\_JACK\_DESCRIPTION2**
 
-此属性返回[ **KSJACK\_DESCRIPTION2** ](https://msdn.microsoft.com/library/windows/hardware/ff537138)结构。 音频驱动程序应设置[ **KSPROPERTY\_JACK\_DESCRIPTION2** ](https://msdn.microsoft.com/library/windows/hardware/ff537365)字段，如下所示。
+此属性返回[ **KSJACK\_DESCRIPTION2** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)结构。 音频驱动程序应设置[ **KSPROPERTY\_JACK\_DESCRIPTION2** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description2)字段，如下所示。
 DeviceStateInfo = 0 JackCapabilities = JACKDESC2\_是否存在\_检测\_功能**KSPROPERTY\_ONESHOT\_重新连接**
 
-支持音频驱动程序的筛选器应[ **KSPROPERTY\_ONESHOT\_重新连接**](https://msdn.microsoft.com/library/windows/hardware/ff537369)。 若要创建和初始化此结构，音频驱动程序发送[ **IOCTL\_BTHHFP\_设备\_请求\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/dn265114) HFP 驱动程序。 HFP 驱动程序完成此请求，然后尝试以异步方式连接到 Bluetooth 音频设备。
+支持音频驱动程序的筛选器应[ **KSPROPERTY\_ONESHOT\_重新连接**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-reconnect)。 若要创建和初始化此结构，音频驱动程序发送[ **IOCTL\_BTHHFP\_设备\_请求\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_request_connect) HFP 驱动程序。 HFP 驱动程序完成此请求，然后尝试以异步方式连接到 Bluetooth 音频设备。
 **KSPROPERTY\_ONESHOT\_断开连接**
 
-支持音频驱动程序的筛选器应[ **KSPROPERTY\_ONESHOT\_断开连接**](https://msdn.microsoft.com/library/windows/hardware/hh706181)。 若要创建和初始化此结构，音频驱动程序发送[ **IOCTL\_BTHHFP\_设备\_请求\_断开连接**](https://msdn.microsoft.com/library/windows/hardware/dn265115) HFP 驱动程序。 HFP 驱动程序完成此请求，然后尝试以异步方式从蓝牙音频设备断开连接。
+支持音频驱动程序的筛选器应[ **KSPROPERTY\_ONESHOT\_断开连接**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-disconnect)。 若要创建和初始化此结构，音频驱动程序发送[ **IOCTL\_BTHHFP\_设备\_请求\_断开连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_request_disconnect) HFP 驱动程序。 HFP 驱动程序完成此请求，然后尝试以异步方式从蓝牙音频设备断开连接。
 当音频驱动程序支持以下属性时，在控制面板中的声音对话框公开 HFP 终结点的连接和断开连接命令。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题

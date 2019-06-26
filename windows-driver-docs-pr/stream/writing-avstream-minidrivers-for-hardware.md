@@ -1,6 +1,6 @@
 ---
-title: 编写 AVStream 微型驱动程序硬件
-description: 编写 AVStream 微型驱动程序硬件
+title: 为硬件编写 AVStream 微型驱动程序
+description: 为硬件编写 AVStream 微型驱动程序
 ms.assetid: d7dc42d7-efd0-41ff-abab-d97c508a41e6
 keywords:
 - AVStream WDK 硬件
@@ -13,26 +13,26 @@ keywords:
 - 解码 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c9b539cd100ecdc94ec320bff8f103d74638ef0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 044fca22ba229a14cc2dc7dba29167206ba2d62c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543577"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373025"
 ---
-# <a name="writing-avstream-minidrivers-for-hardware"></a>编写 AVStream 微型驱动程序硬件
+# <a name="writing-avstream-minidrivers-for-hardware"></a>为硬件编写 AVStream 微型驱动程序
 
 
 
 
 
-中的供应商提供[ *AVStrMiniDeviceStart*](https://msdn.microsoft.com/library/windows/hardware/ff556297)，支持的硬件的 AVStream 微型驱动程序应首先分析资源列表，然后调用[ **IoConnectInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff548371)注册中断服务例程 (ISR)。
+中的供应商提供[ *AVStrMiniDeviceStart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdevicepnpstart)，支持的硬件的 AVStream 微型驱动程序应首先分析资源列表，然后调用[ **IoConnectInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)注册中断服务例程 (ISR)。
 
 如果您的驱动程序支持直接内存访问 (DMA)，则需要其他步骤。 如果您的驱动程序实现 DMA，请参阅[AVStream DMA 服务](avstream-dma-services.md)。
 
 如果同时使用你的设备筛选器图形可能生成多个应用程序，您必须采取措施以防止之间的关系图的干扰。 具体而言，如果构造的图表中使用设备的应用程序，您必须不会干扰正在不间断状态在使用该设备的应用程序。
 
-可以通过图形转换到 KSSTATE 后加载微代码，避免干扰\_ACQUIRE。 这将保护当前正在运行的关系图，因为新的关系图将不会转换成**KSSTATE\_ACQUIRE**当前正在运行另一个关系图时。 若要接收的 pin 状态更改通知，请提供[ *AVStrMiniPinSetDeviceState* ](https://msdn.microsoft.com/library/windows/hardware/ff556359)中的回调例程[ **KSPIN\_调度**](https://msdn.microsoft.com/library/windows/hardware/ff563535)结构。
+可以通过图形转换到 KSSTATE 后加载微代码，避免干扰\_ACQUIRE。 这将保护当前正在运行的关系图，因为新的关系图将不会转换成**KSSTATE\_ACQUIRE**当前正在运行另一个关系图时。 若要接收的 pin 状态更改通知，请提供[ *AVStrMiniPinSetDeviceState* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)中的回调例程[ **KSPIN\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)结构。
 
 为了尽量减少图形启动时间，但是，你可能想要在关系图到达 KSSTATE 之前加载了微代码\_ACQUIRE。 在这种情况下，请考虑在启动过程中加载微代码，在低优先级后台线程中。 此解决方案不会影响其他应用程序，可减少图形开始时间，并应不延长启动时间，如果以异步方式执行此操作。
 

@@ -3,12 +3,12 @@ Description: 本主题提供有关 USB 批量传输的简要概述。
 title: 如何将发送 USB 大容量传输请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d0a1be3bc36a3ed265f5f2fda0513f696a12d9b
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 173e34fbb1885aac2824d350341f7cbfe82a9dda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368752"
 ---
 # <a name="how-to-send-usb-bulk-transfer-requests"></a>如何将发送 USB 大容量传输请求
 
@@ -86,7 +86,7 @@ USB 大容量终结点可传输大量数据。 大容量传输量都是可靠的
 
 让我们看到客户端驱动程序将对于应用程序或另一个驱动程序的请求的结果的大容量传输请求的提交。 或者，驱动程序可以启动其自身上的传输。 而不考虑方法时，驱动程序必须具有的传输缓冲区和请求，以便初始化大容量复制。
 
-对于 KMDF 驱动程序，请求一个框架请求对象中描述 (请参阅[WDF 请求对象引用](https://msdn.microsoft.com/library/windows/hardware/dn265664))。 客户端驱动程序通过指定要将请求发送到 USB 驱动程序堆栈的 WDFREQUEST 句柄调用请求对象的方法。 如果客户端驱动程序从应用程序或另一个驱动程序的请求响应中发送大容量传输，框架将创建一个请求对象和使用 framework 队列对象将请求传递到客户端驱动程序。 在这种情况下，客户端驱动程序可以将该请求用于发送大容量传输的目的。 如果客户端驱动程序启动的请求，该驱动程序可以选择要分配其自己的请求对象。
+对于 KMDF 驱动程序，请求一个框架请求对象中描述 (请参阅[WDF 请求对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/))。 客户端驱动程序通过指定要将请求发送到 USB 驱动程序堆栈的 WDFREQUEST 句柄调用请求对象的方法。 如果客户端驱动程序从应用程序或另一个驱动程序的请求响应中发送大容量传输，框架将创建一个请求对象和使用 framework 队列对象将请求传递到客户端驱动程序。 在这种情况下，客户端驱动程序可以将该请求用于发送大容量传输的目的。 如果客户端驱动程序启动的请求，该驱动程序可以选择要分配其自己的请求对象。
 
 如果应用程序或另一个驱动程序发送或请求数据，则将传输缓冲区传递到驱动程序框架。 或者，客户端驱动程序可以分配传输缓冲区，并创建请求对象，如果驱动程序将启动其自身上的传输。
 
@@ -103,11 +103,11 @@ USB 大容量终结点可传输大量数据。 大容量传输量都是可靠的
 ## <a name="bulk-transfer-request-example"></a>大容量传输请求示例
 
 
-请考虑的示例方案，应用程序要读取或写入数据到你的设备。 应用程序调用 Windows Api 来发送此类请求。 在此示例中，应用程序打开的句柄设备通过设备接口发布在内核模式驱动程序的 GUID。 然后，应用程序调用[ **ReadFile** ](https://msdn.microsoft.com/library/windows/desktop/aa365467)或[ **WriteFile** ](https://msdn.microsoft.com/library/windows/desktop/aa365747)启动读取或写入请求。 在该调用中，应用程序还可以指定包含要读取或写入的数据的缓冲区，该缓冲区的长度。
+请考虑的示例方案，应用程序要读取或写入数据到你的设备。 应用程序调用 Windows Api 来发送此类请求。 在此示例中，应用程序打开的句柄设备通过设备接口发布在内核模式驱动程序的 GUID。 然后，应用程序调用[ **ReadFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)或[ **WriteFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)启动读取或写入请求。 在该调用中，应用程序还可以指定包含要读取或写入的数据的缓冲区，该缓冲区的长度。
 
 I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发到客户端驱动程序。
 
-框架截获的请求，创建一个框架请求对象，并将其添加到框架队列对象。 然后，框架会通知新的请求待处理的客户端驱动程序。 通知通过调用的驱动程序的队列回调例程[ *EvtIoRead* ](https://msdn.microsoft.com/library/windows/hardware/ff541776)或[ *EvtIoWrite*](https://msdn.microsoft.com/library/windows/hardware/ff541813)。
+框架截获的请求，创建一个框架请求对象，并将其添加到框架队列对象。 然后，框架会通知新的请求待处理的客户端驱动程序。 通知通过调用的驱动程序的队列回调例程[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)或[ *EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)。
 
 当框架提供给客户端驱动程序的请求时，它将接收这些参数：
 
@@ -115,7 +115,7 @@ I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发�
 -   WDFREQUEST 句柄的框架请求对象，包含有关此请求的详细信息。
 -   传输长度，即，要读取或写入的字节数。
 
-在客户端驱动程序的实现中的[ *EvtIoRead* ](https://msdn.microsoft.com/library/windows/hardware/ff541776)或[ *EvtIoWrite*](https://msdn.microsoft.com/library/windows/hardware/ff541813)，驱动程序会检查请求参数和可以根据需要执行验证检查。
+在客户端驱动程序的实现中的[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)或[ *EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)，驱动程序会检查请求参数和可以根据需要执行验证检查。
 
 如果使用 SuperSpeed 大容量终结点的流，你将 URB 中发送请求，因为 KMDF 本质上不支持流。 有关提交传输到流的大容量终结点的请求的信息，请参阅[如何打开和关闭 USB 大容量终结点中的静态流](how-to-open-streams-in-a-usb-endpoint.md)。
 
@@ -125,7 +125,7 @@ I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发�
 
 在开始之前，请确保您知道此信息：
 
--   客户端驱动程序必须创建 framework USB 目标设备对象并通过调用获取 WDFUSBDEVICE 句柄[ **WdfUsbTargetDeviceCreateWithParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh439428)方法。
+-   客户端驱动程序必须创建 framework USB 目标设备对象并通过调用获取 WDFUSBDEVICE 句柄[ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法。
 
     如果使用 Microsoft Visual Studio Professional 2012 使用提供的 USB 模板，模板代码执行这些任务。 模板代码获取目标设备对象的句柄，并将存储在设备上下文中。 详细信息，请参阅"设备源代码"中[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md)。
 
@@ -137,10 +137,10 @@ I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发�
 
 ### <a href="" id="step-1--get-the-transfer-buffer--"></a>步骤 1:获取传输缓冲区。
 
-传输缓冲区或传输缓冲区 MDL 包含要发送或接收的数据。 本主题假定你在发送或接收的传输缓冲区中的数据。 传输缓冲区 WDF 内存对象中所述 (请参阅[WDF 内存对象引用](https://msdn.microsoft.com/library/windows/hardware/dn265645))。 若要获取与传输缓冲区关联的内存对象，调用这些方法之一：
+传输缓冲区或传输缓冲区 MDL 包含要发送或接收的数据。 本主题假定你在发送或接收的传输缓冲区中的数据。 传输缓冲区 WDF 内存对象中所述 (请参阅[WDF 内存对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/))。 若要获取与传输缓冲区关联的内存对象，调用这些方法之一：
 
--   对于大容量传输请求中，调用[ **WdfRequestRetrieveOutputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff550019)方法。
--   对于大容量传输请求，调用[ **WdfRequestRetrieveInputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff550015)方法。
+-   对于大容量传输请求中，调用[ **WdfRequestRetrieveOutputMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)方法。
+-   对于大容量传输请求，调用[ **WdfRequestRetrieveInputMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)方法。
 
 客户端驱动程序不需要来释放此内存。 与父请求对象相关联和发布父时释放内存。
 
@@ -150,15 +150,15 @@ I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发�
 
 以下是异步方法：
 
--   [**WdfUsbTargetPipeFormatRequestForRead**](https://msdn.microsoft.com/library/windows/hardware/ff551136)
--   [**WdfUsbTargetPipeFormatRequestForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff551141)
+-   [**WdfUsbTargetPipeFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)
+-   [**WdfUsbTargetPipeFormatRequestForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforwrite)
 
-此列表中的方法设置请求的格式。 如果异步发送请求，请将指针设置为驱动程序实现完成例程通过调用[ **WdfRequestSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff550030)方法 （下一步中所述）。 若要发送请求，调用[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)方法。
+此列表中的方法设置请求的格式。 如果异步发送请求，请将指针设置为驱动程序实现完成例程通过调用[ **WdfRequestSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)方法 （下一步中所述）。 若要发送请求，调用[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)方法。
 
 如果以同步方式发送请求，调用这些方法：
 
--   [**WdfUsbTargetPipeReadSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff551155)
--   [**WdfUsbTargetPipeWriteSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff551163)
+-   [**WdfUsbTargetPipeReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipereadsynchronously)
+-   [**WdfUsbTargetPipeWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipewritesynchronously)
 
 有关代码示例，请参阅这些方法的参考主题的示例部分。
 ### <a href="" id="step-3--implement-a-completion-routine-for-the-request-"></a>步骤 3:实现请求的完成例程。
@@ -167,8 +167,8 @@ I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发�
 
 -   请求对象的句柄 WDFREQUEST。
 -   请求的 I/O 目标对象的句柄 WDFIOTARGET。
--   一个指向[ **WDF\_请求\_完成\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552454)结构，其中包含完成信息。 特定于 USB 的信息包含在**CompletionParams-&gt;Parameters.Usb**成员。
--   该驱动程序对其调用中指定的上下文的 WDFCONTEXT 句柄[ **WdfRequestSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff550030)。
+-   一个指向[ **WDF\_请求\_完成\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)结构，其中包含完成信息。 特定于 USB 的信息包含在**CompletionParams-&gt;Parameters.Usb**成员。
+-   该驱动程序对其调用中指定的上下文的 WDFCONTEXT 句柄[ **WdfRequestSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)。
 
 在完成例程中，执行以下任务：
 
@@ -181,7 +181,7 @@ I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发�
 
     在简单传输 USB 驱动程序堆栈在一个包中发送所有请求的字节数的位置，可以检查比较**长度**值与请求的字节数。 如果 USB 驱动程序堆栈传输多个数据包中的请求，您必须跟踪的传输的字节数和剩余的字节数。
 
--   如果已传输的总字节数，完成请求。 如果出现错误条件，完成请求，返回的错误代码。 完成请求，通过调用[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)方法。 如果你想要设置信息，例如传输的字节数，请调用[ **WdfRequestCompleteWithInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549945withinformation)。
+-   如果已传输的总字节数，完成请求。 如果出现错误条件，完成请求，返回的错误代码。 完成请求，通过调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)方法。 如果你想要设置信息，例如传输的字节数，请调用[ **WdfRequestCompleteWithInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549945withinformation)。
 -   请确保完成请求的信息后，字节数必须为等于或小于请求的字节数。 框架验证这些值。 如果长度中设置已完成的请求是大于原始请求长度，可能会出现 bugcheck。
 
 此示例代码演示如何客户端驱动程序可以提交的大容量传输请求。 驱动程序设置完成例程。 下一步的代码块中演示了该例程。

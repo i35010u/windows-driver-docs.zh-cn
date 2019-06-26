@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ffea1e52291cf7484157ab29d003a25801549d99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1414498acbb60ce9494db4d007211e00c6c678f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363457"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367412"
 ---
 # <a name="bug-check-0x5-invalidprocessattachattempt"></a>Bug 检查 0x5：无效\_进程\_附加\_尝试
 
@@ -28,7 +28,7 @@ ms.locfileid: "63363457"
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="invalidprocessattachattempt-parameters"></a>无效\_进程\_附加\_尝试参数

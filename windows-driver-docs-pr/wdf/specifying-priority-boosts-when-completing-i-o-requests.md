@@ -7,19 +7,19 @@ keywords:
 - 优先级提升 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c04f7acf369affb090a23d011a9c27611e88ae12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2a30d15f8209943c94f0fb4ac89b2cbe3887491
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325125"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382362"
 ---
 # <a name="specifying-priority-boosts-when-completing-io-requests"></a>完成 I/O 请求时指定优先级提升
 
 
-驱动程序完成的 I/O 请求，它可以调用[ **WdfRequestCompleteWithPriorityBoost** ](https://msdn.microsoft.com/library/windows/hardware/ff549949)指定一个值，则系统使用来提升请求 I/O 的线程运行时优先级操作。
+驱动程序完成的 I/O 请求，它可以调用[ **WdfRequestCompleteWithPriorityBoost** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)指定一个值，则系统使用来提升请求 I/O 的线程运行时优先级操作。
 
-如果该驱动程序调用[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)或[ **WdfRequestCompleteWithInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff549948)而不是[ **WdfRequestCompleteWithPriorityBoost**](https://msdn.microsoft.com/library/windows/hardware/ff549949)，框架使用基于设备类型的默认优先级提升值。 下表列出了框架使用的默认优先级提升值。 在中定义的设备类型和优先级提升常量*wdm.h 中*。
+如果该驱动程序调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)或[ **WdfRequestCompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)而不是[ **WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，框架使用基于设备类型的默认优先级提升值。 下表列出了框架使用的默认优先级提升值。 在中定义的设备类型和优先级提升常量*wdm.h 中*。
 
 <table>
 <colgroup>

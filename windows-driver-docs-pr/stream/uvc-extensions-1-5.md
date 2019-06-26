@@ -4,12 +4,12 @@ description: 介绍新控件，以及执行标准的格式定义完善的框架�
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.custom: rs5, 19H1
-ms.openlocfilehash: 8a88e66f7f7d8fe90bd55bfdbc783b17c659a693
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7258dce4218dba9f25517a1e2cc2c897d7629d5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338475"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368147"
 ---
 # <a name="microsoft-extensions-to-usb-video-class-15-specification"></a>USB 视频类 1.5 规范的 Microsoft 扩展
 
@@ -453,11 +453,11 @@ typedef struct tagKSCAMERA_METADATA_CAPTURESTATS {
 
 ###### <a name="22342-metadataidcameraextrinsics"></a>2.2.3.4.2 MetadataId_CameraExtrinsics
 
-此标识符的元数据格式包括标准 KSCAMERA_METADATA_ITEMHEADER 跟一个字节数组的有效负载。 应按有效负载[MFCameraExtrinsics](https://msdn.microsoft.com/library/windows/desktop/mt740392)结构后跟零个或多[MFCameraExtrinsic_CalibratedTransform](https://msdn.microsoft.com/library/windows/desktop/mt740393)结构。 有效负载必须是 8 字节对齐，所有未使用的字节数应会出现在有效负载的末尾，并设置为 0。
+此标识符的元数据格式包括标准 KSCAMERA_METADATA_ITEMHEADER 跟一个字节数组的有效负载。 应按有效负载[MFCameraExtrinsics](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-_mfcameraextrinsics)结构后跟零个或多[MFCameraExtrinsic_CalibratedTransform](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-_mfcameraextrinsic_calibratedtransform)结构。 有效负载必须是 8 字节对齐，所有未使用的字节数应会出现在有效负载的末尾，并设置为 0。
 
 ###### <a name="22343-metadataidcameraintrinsics"></a>2.2.3.4.3 MetadataId_CameraIntrinsics
 
-此标识符的元数据格式包括标准 KSCAMERA_METADATA_ITEMHEADER 跟一个字节数组的有效负载。 应按有效负载[MFPinholeCameraIntrinsics](https://msdn.microsoft.com/library/windows/desktop/mt740396)结构。 有效负载必须是 8 字节对齐，所有未使用的字节数应会出现在有效负载的末尾，并设置为 0。
+此标识符的元数据格式包括标准 KSCAMERA_METADATA_ITEMHEADER 跟一个字节数组的有效负载。 应按有效负载[MFPinholeCameraIntrinsics](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-_mfpinholecameraintrinsics)结构。 有效负载必须是 8 字节对齐，所有未使用的字节数应会出现在有效负载的末尾，并设置为 0。
 
 ###### <a name="22344-metadataidframeillumination"></a>2.2.3.4.4 MetadataId_FrameIllumination
 

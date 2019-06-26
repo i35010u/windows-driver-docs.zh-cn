@@ -8,12 +8,12 @@ keywords:
 - 相较于以太网 visual studio 调试
 ms.date: 05/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 45860732ff14a4b2186d3282b9c4efe2c4bb6872
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8420a344c8072411521aca2dd2f0c2476ab455aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381936"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366383"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-network-cable-in-visual-studio"></a>在 Visual Studio 中设置通过网线进行的内核模式调试
 
@@ -43,7 +43,7 @@ ms.locfileid: "63381936"
 
 
 1.  将目标计算机的网络适配器连接到网络集线器或切换使用和相应的网络电缆。 将主机计算机的网络适配器连接到网络集线器或切换使用标准电缆或无线连接。
-2.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
+2.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 3.  主机计算机上，在 Visual Studio 中，当您转至计算机配置对话框中，选择**预配计算机，并选择调试器设置**。
 4.  有关**连接类型**，选择**网络**。
 
@@ -97,7 +97,7 @@ busparams               0.29.7
 
 如果您看不到值为输入**总线参数**，输入以下命令：
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 其中*b*， *d*，并*f*是总线、 设备和已选择要用于调试的目标计算机上的网络适配器的函数数量。
 
@@ -142,15 +142,15 @@ busparams               0.29.7
 
 1.  在主计算机上，在 Visual Studio 的**驱动程序**菜单中，选择**测试 &gt; 配置计算机**。
 2.  选择测试计算机的名称，然后单击**下一步**。
-3.  选择**预配计算机，并选择调试器设置**。 单击“下一步” 。
-4.  有关**端口号**，输入一个数字，是由网络管理员允许的范围中。 单击“下一步” 。
+3.  选择**预配计算机，并选择调试器设置**。 单击“下一步”  。
+4.  有关**端口号**，输入一个数字，是由网络管理员允许的范围中。 单击“下一步”  。
 5.  重新配置过程需要几分钟，并会自动重启目标计算机。 该过程完成后，单击**下一步**并**完成**。
 
 ### <a name="span-idspecifybusparamsiftargetcomputerhasmultiplenetworkadaptersspanspan-idspecifybusparamsiftargetcomputerhasmultiplenetworkadaptersspanspan-idspecifybusparamsiftargetcomputerhasmultiplenetworkadaptersspanspecify-busparams-if-target-computer-has-multiple-network-adapters"></a><span id="Specify_busparams_if_target_computer_has_multiple_network_adapters"></span><span id="specify_busparams_if_target_computer_has_multiple_network_adapters"></span><span id="SPECIFY_BUSPARAMS_IF_TARGET_COMPUTER_HAS_MULTIPLE_NETWORK_ADAPTERS"></span>如果目标计算机具有多个网络适配器，指定 busparams
 
 如果目标计算机具有多个网络适配器，必须指定总线、 设备和你想要用于调试的网络适配器的函数数量。 若要指定总线参数，请打开设备管理器，并找到你想要用于调试的网络适配器。 打开的网络适配器，属性页，并记下总线编号、 设备数量和函数编号。 在提升的命令提示符窗口，输入以下命令，其中*b*， *d*，并*f*是十进制格式的总线、 设备和函数编号：
 
-**bcdedit -set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit -set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 重新启动目标计算机。
 

@@ -9,12 +9,12 @@ keywords:
 - 停止 Irp WDK 即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adc901da47a50624808cac1faa16ef663a9e844b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8b77eb3f3efd71dad0bea08d7fa1125c4eb599b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331951"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382978"
 ---
 # <a name="stopping-a-device"></a>停止设备
 
@@ -28,7 +28,7 @@ PnP 管理器会提示停止在以下情况下的设备的驱动程序：
 
 -   若要禁用的设备管理器请求的响应中的设备 (Windows 98 / 只是我)。 Windows 2000 和更高版本的 Windows 发送这种情况下; 删除 Irp请参阅[了解当删除 Irp 将发出](understanding-when-remove-irps-are-issued.md)。
 
--   失败后[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求 (Windows 98 / 只是我)
+-   失败后[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求 (Windows 98 / 只是我)
 
 本部分介绍以下主题：
 

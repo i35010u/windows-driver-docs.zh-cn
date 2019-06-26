@@ -5,12 +5,12 @@ ms.assetid: bd96d1ec-2fd0-491f-acb4-c1594ce6a084
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LAST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 40330e5150a2ef45be4c3057ec319fd971adbd66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b9385b9c8164c33a4a0b7232854ec6fe207fe1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369093"
 ---
 # <a name="oidgenlastchange"></a>OID\_GEN\_最后一个\_更改
 
@@ -28,9 +28,9 @@ ms.locfileid: "63375697"
 <a name="remarks"></a>备注
 -------
 
-仅[NDIS 网络接口](https://msdn.microsoft.com/library/windows/hardware/ff566527)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+仅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
 
-此 OID 返回时，该接口进入其当前操作状态时，从上次计算机重新启动，开始。 有关操作状态的详细信息，请参阅[ **NDIS\_状态\_工序\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567406)并[OID\_常规\_OPERATIONAL\_状态](oid-gen-operational-status.md)。 若要获取当前时间，接口提供程序可以调用[ **NdisGetSystemUpTimeEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562675)函数。
+此 OID 返回时，该接口进入其当前操作状态时，从上次计算机重新启动，开始。 有关操作状态的详细信息，请参阅[ **NDIS\_状态\_工序\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-oper-status)并[OID\_常规\_OPERATIONAL\_状态](oid-gen-operational-status.md)。 若要获取当前时间，接口提供程序可以调用[ **NdisGetSystemUpTimeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetsystemuptimeex)函数。
 
 如果在接口的最后一个重新初始化之前输入的当前操作状态，此值应为零。 . 如果接口提供程序不会跟踪操作状态更改时，值应为零。
 
@@ -57,11 +57,11 @@ ms.locfileid: "63375697"
 
 [OID\_GEN\_OPERATIONAL\_状态](oid-gen-operational-status.md)
 
-[**NDIS\_状态\_工序\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567406)
+[**NDIS\_状态\_工序\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-oper-status)
 
-[**NdisGetSystemUpTimeEx**](https://msdn.microsoft.com/library/windows/hardware/ff562675)
+[**NdisGetSystemUpTimeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetsystemuptimeex)
 
-[NDIS 网络接口 Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

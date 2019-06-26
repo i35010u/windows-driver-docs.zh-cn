@@ -6,19 +6,19 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28725
-ms.openlocfilehash: 467b727e7ffa20ea53e468898b5a302ecd5cd50d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33f105222db65259d2bcf62b82011f8bd54f8996
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323832"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371718"
 ---
 # <a name="c28725"></a>C28725
 
 
 警告 C28725:而不是此 SetUnhandledExceptionFilter 使用 Watson
 
-当应用程序使用，将报告此警告[ **SetUnhandledExceptionFilter 函数**](https://msdn.microsoft.com/library/windows/desktop/ms680634)。 该函数可用于取代进程的每个线程的顶级异常处理程序。 默认情况下，系统将传递到未经处理的异常[Windows 错误报告](https://msdn.microsoft.com/library/windows/desktop/bb513641)(WER)。 安全和方便起见，请参阅[使用 WER](https://msdn.microsoft.com/library/windows/desktop/bb513616)。
+当应用程序使用，将报告此警告[ **SetUnhandledExceptionFilter 函数**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setunhandledexceptionfilter)。 该函数可用于取代进程的每个线程的顶级异常处理程序。 默认情况下，系统将传递到未经处理的异常[Windows 错误报告](https://docs.microsoft.com/windows/desktop/wer/windows-error-reporting)(WER)。 安全和方便起见，请参阅[使用 WER](https://docs.microsoft.com/windows/desktop/wer/using-wer)。
 
  
 

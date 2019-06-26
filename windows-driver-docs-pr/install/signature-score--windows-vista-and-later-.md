@@ -6,12 +6,12 @@ keywords:
 - 签名分数 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e322655aab6d6b4b84cbe8dd3653a80a1932902
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 453ff67c4c31cd8c31083dca369d0c256e7e02b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373493"
 ---
 # <a name="signature-score"></a>签名分数
 
@@ -29,7 +29,7 @@ ms.locfileid: "63348801"
     -   第三方签名使用验证码技术。  有效的第三方签名类型包括：
         -   使用代码签名证书从企业证书颁发机构 (CA) 签名的驱动程序。
         -   使用代码签名类 3 CA 颁发的证书签名的驱动程序。
-        -   使用代码签名证书创建的驱动程序签名[ **MakeCert 工具**](https://msdn.microsoft.com/library/windows/hardware/ff548309)。
+        -   使用代码签名证书创建的驱动程序签名[ **MakeCert 工具**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)。
 -   Windows 将分配到的第二个最佳签名分数[驱动程序包](driver-packages.md)不具有有效的签名，但情况下安装该驱动程序[ **INF *DDInstall*部分**](inf-ddinstall-section.md) ，其 **.nt**平台扩展。
 
     有关详细信息 **.nt**扩展，请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。

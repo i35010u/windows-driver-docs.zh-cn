@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4ba0806bd159e35cb6e7f9af3bc25eafd339a0a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00435311f4ee55af17d7a5d7c6f342d9c72796b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372733"
 ---
 # <a name="devpropkey-structure"></a>DEVPROPKEY 结构
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROPKEY 结构表示中的设备属性的设备属性键[统一的设备属性模型](https://msdn.microsoft.com/library/windows/hardware/ff553515)。
+在 Windows Vista 和更高版本的 Windows，DEVPROPKEY 结构表示中的设备属性的设备属性键[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)。
 
 <a name="syntax"></a>语法
 ------
@@ -60,11 +60,11 @@ typedef ULONG DEVPROPID, *PDEVPROPID;
 <a name="remarks"></a>备注
 -------
 
-DEVPROPKEY 结构属于[统一的设备属性模型](https://msdn.microsoft.com/library/windows/hardware/ff553515)。
+DEVPROPKEY 结构属于[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)。
 
 中定义一组基本的系统提供的设备属性键*Devpkey.h*。
 
-[**定义\_DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff541072)宏创建 DEVPROPKEY 结构，它表示设备属性键的实例。
+[**定义\_DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)宏创建 DEVPROPKEY 结构，它表示设备属性键的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,7 +85,7 @@ DEVPROPKEY 结构属于[统一的设备属性模型](https://msdn.microsoft.com/
 ## <a name="see-also"></a>请参阅
 
 
-[**DEFINE\_DEVPROPKEY**](https://msdn.microsoft.com/library/windows/hardware/ff541072)
+[**DEFINE\_DEVPROPKEY**](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 显示模式 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20ffe555a994a8b2dd479190f5475db89751da78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 742c1411cde24ee8a39c993b4a3a3824491db0dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389985"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365638"
 ---
 # <a name="returning-display-modes-drvgetmodes"></a>返回显示模式：DrvGetModes
 
@@ -23,9 +23,9 @@ ms.locfileid: "63389985"
 ## <span id="ddk_returning_display_modes_drvgetmodes_gg"></span><span id="DDK_RETURNING_DISPLAY_MODES_DRVGETMODES_GG"></span>
 
 
-显示驱动程序还必须支持[ **DrvGetModes**](https://msdn.microsoft.com/library/windows/hardware/ff556233)。 此函数为数组提供 GDI 指针[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构。 结构定义支持，其中包括维度 （以像素为单位和毫米为单位）、 平面数、 每个平面，颜色信息和等等的位的各种模式的显示的属性。
+显示驱动程序还必须支持[ **DrvGetModes**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)。 此函数为数组提供 GDI 指针[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构。 结构定义支持，其中包括维度 （以像素为单位和毫米为单位）、 平面数、 每个平面，颜色信息和等等的位的各种模式的显示的属性。
 
-该驱动程序会写入内存的可用显示模式的顺序时[ **DrvGetModes** ](https://msdn.microsoft.com/library/windows/hardware/ff556233)调用函数可能会影响 Windows 选择的最后一个显示模式。 一般情况下，如果应用程序未指定默认模式，系统将提供的驱动程序列表中选择的第一个匹配模式。
+该驱动程序会写入内存的可用显示模式的顺序时[ **DrvGetModes** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)调用函数可能会影响 Windows 选择的最后一个显示模式。 一般情况下，如果应用程序未指定默认模式，系统将提供的驱动程序列表中选择的第一个匹配模式。
 
 例如，假设当前显示模式下是
 
@@ -43,7 +43,7 @@ ms.locfileid: "63389985"
 
 **案例 1**
 
-如果应用程序尝试将监视器设置为600x800x32bpp@60Hz，但 DM\_DISPLAYORIENTATION 和 DM\_DISPLAYFIXEDOUTPUT 标志未设置**dmFields**隶属[ **DEVMODEW**](https://msdn.microsoft.com/library/windows/hardware/ff552837)，系统必须选择方向和固定输出模式。 在这种情况下系统将选择显示模式 C，因为它与当前 DMDFO 相匹配的第一个列出的模式\_CENTER 设置。
+如果应用程序尝试将监视器设置为600x800x32bpp@60Hz，但 DM\_DISPLAYORIENTATION 和 DM\_DISPLAYFIXEDOUTPUT 标志未设置**dmFields**隶属[ **DEVMODEW**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)，系统必须选择方向和固定输出模式。 在这种情况下系统将选择显示模式 C，因为它与当前 DMDFO 相匹配的第一个列出的模式\_CENTER 设置。
 
 **情况 2**
 

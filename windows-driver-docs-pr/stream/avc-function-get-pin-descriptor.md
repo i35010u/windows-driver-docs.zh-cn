@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f72b8c9b1a6cbfdbd8da0ca5fdbb52e77463ea0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43cb459217c39a6fd4197b3c27fef287d3303e75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359001"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386740"
 ---
 # <a name="avcfunctiongetpindescriptor"></a>AVC\_函数\_获取\_PIN\_描述符
 
@@ -103,7 +103,7 @@ AV/C 子单元设备上指定的 pin 的描述。
 
 ### <a name="see-also"></a>请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)， [ **AVC\_PIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff554185)， [ **AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)， [ **KSPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563533)， [ **AV/C 相交处理程序**](https://msdn.microsoft.com/library/windows/hardware/ff556379)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)， [ **AVC\_PIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_descriptor)， [ **AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)， [ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)， [ **AV/C 相交处理程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/nc-avc-pfnavcintersecthandler)
 
  
 

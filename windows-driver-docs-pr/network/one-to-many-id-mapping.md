@@ -9,12 +9,12 @@ keywords:
 - 升级前 Id WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f00afe01ebf2b07208652a2eda65b56505901805
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef0e5dfd30cabad4a530aea809596a96597f1be8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366572"
 ---
 # <a name="one-to-many-id-mapping"></a>一对多 ID 映射
 
@@ -40,7 +40,7 @@ ms.locfileid: "63384230"
 
 通过指定 netmap.inf 文件节*节名称*包含以下各项：
 
-**ValueName = "**<em>Name</em>**"**
+**ValueName = "** <em>Name</em> **"**
 
 指定 NetSetup 读取包含网络适配器实例的参数值的注册表项下的值。 *名称*标识特定网络适配器。
 
@@ -89,7 +89,7 @@ NetSetup 执行一个多 ID 映射，如下所示：
 
 处理这种情况的最有效方法是按如下所示：
 
-1.  网络迁移 DLL [ **PreUpgradeInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff562439)函数修改注册表，以便注册表包含网络适配器的每个实例的唯一值。 这些唯一值应指示适配器类型。
+1.  网络迁移 DLL [ **PreUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562439(v=vs.85))函数修改注册表，以便注册表包含网络适配器的每个实例的唯一值。 这些唯一值应指示适配器类型。
 
 2.  **PreUpgradeInitialize**函数设置 NUA\_请求\_中止\_升级标志，这会导致 NetSetup 显示一条消息，提示用户重新启动 winnt32.exe 并中止升级。
 

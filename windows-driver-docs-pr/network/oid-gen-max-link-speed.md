@@ -5,12 +5,12 @@ ms.assetid: 4009c5c6-57ec-47f5-80d6-d69df797857f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MAX_LINK_SPEED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bbfdbdb9d0dd747be6e650d2298e4aafa4f4d67b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c23d18623989c565594fdefb44f25d452ab46b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358771"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369061"
 ---
 # <a name="oidgenmaxlinkspeed"></a>OID\_GEN\_MAX\_LINK\_SPEED
 
@@ -30,7 +30,7 @@ ms.locfileid: "63358771"
 
 微型端口驱动程序在初始化期间提供的最大链接速度。
 
-若要指定最大链接速度，设置**MaxXmitLinkSpeed**并**MaxRcvLinkSpeed**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)微型端口驱动程序将传递给结构[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)函数。 如果微型端口驱动程序不支持此 OID，则驱动程序应返回 NDIS\_状态\_不\_受支持。 如果微型端口驱动程序支持此 OID，它将返回中的最大链路速度[ **NDIS\_链接\_速度**](https://msdn.microsoft.com/library/windows/hardware/ff565864)结构。
+若要指定最大链接速度，设置**MaxXmitLinkSpeed**并**MaxRcvLinkSpeed**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)微型端口驱动程序将传递给结构[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。 如果微型端口驱动程序不支持此 OID，则驱动程序应返回 NDIS\_状态\_不\_受支持。 如果微型端口驱动程序支持此 OID，它将返回中的最大链路速度[ **NDIS\_链接\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_speed)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,11 +51,11 @@ ms.locfileid: "63358771"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_LINK\_SPEED**](https://msdn.microsoft.com/library/windows/hardware/ff565864)
+[**NDIS\_LINK\_SPEED**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_speed)
 
-[**NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
+[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
 
  
 

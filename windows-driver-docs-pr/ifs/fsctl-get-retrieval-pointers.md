@@ -14,26 +14,26 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf4e8f8a9444818e00007be4b6b511dc9a59ad6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b500a5ba4094de7de16dd26f8b90a5df9e764122
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365023"
 ---
 # <a name="fsctlgetretrievalpointers-control-code"></a>FSCTL\_获取\_检索\_指针控制的代码
 
 
 **FSCTL\_获取\_检索\_指针**控制代码会检索特定文件的磁盘描述的分配和位置的大小不定的数据结构。 结构描述虚拟群集 (VCN，文件/流空间内的偏移量) 和逻辑群集号码 (LCN，卷空间内的偏移量) 之间的映射。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 有关重新分析点和 FSCTL\_获取\_检索\_指针控制的代码，请参阅 Microsoft Windows SDK 文档。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 对象的指针的备用流、 文件或目录的 FSCTL\_获取\_检索\_指针检索映射。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 对象的指针的备用流、 文件或目录的 FSCTL\_获取\_检索\_指针检索映射。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 备用流、 文件或目录的 FSCTL 的文件句柄\_获取\_检索\_指针检索映射。 如果中的值*FileHandle*是整个卷，VCNs 和不正确的群集文件的扩展盘区的地图，例程返回的句柄。 此参数是必需的不能**NULL**。
@@ -53,7 +53,7 @@ typedef struct {
 **成员**
 
 <a href="" id="startingvcn"></a>**StartingVcn**  
-在哪些 FSCTL VCN\_获取\_检索\_指针开始枚举扩展盘区和关联的虚拟和逻辑群集数字。 在首次调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)文件系统的控制代码，为 FSCTL\_获取\_检索\_指针**StartingVcn**应设置为零。
+在哪些 FSCTL VCN\_获取\_检索\_指针开始枚举扩展盘区和关联的虚拟和逻辑群集数字。 在首次调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)文件系统的控制代码，为 FSCTL\_获取\_检索\_指针**StartingVcn**应设置为零。
 
 如果*OutputBuffer*是不足够大以保存 VCNs 和扩展盘区的文件的整个代码图，调用方必须详细地图数据使用请求中返回的值**NextVcn** 中检索的成员\_指针\_作为起始 VCN 缓冲区结构。
 
@@ -97,9 +97,9 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)都返回状态\_成功或适当的 NTSTATUS 错误值。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)都返回状态\_成功或适当的 NTSTATUS 错误值。
 
-如果 VCN / 扩展盘区映射不符合要求*OutputBuffer*，这两个例程将返回状态的值\_缓冲区\_溢出和调用方必须请求使用中返回的值的多个地图数据**NextVcn**检索的成员\_指针\_缓冲区结构作为起始 VCN (**StartingVcn**) 中的后续调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)。
+如果 VCN / 扩展盘区映射不符合要求*OutputBuffer*，这两个例程将返回状态的值\_缓冲区\_溢出和调用方必须请求使用中返回的值的多个地图数据**NextVcn**检索的成员\_指针\_缓冲区结构作为起始 VCN (**StartingVcn**) 中的后续调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)。
 
 如果在指定的值**StartingVcn**超出文件状态的结尾\_最终\_OF\_返回文件。
 
@@ -127,7 +127,7 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 ## <a name="see-also"></a>请参阅
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

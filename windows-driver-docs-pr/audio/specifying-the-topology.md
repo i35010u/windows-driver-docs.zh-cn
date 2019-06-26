@@ -25,12 +25,12 @@ keywords:
 - 混合使用音频 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0645a9a1bebbcb6c520ea8e0fe69d1287eccd75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a50bb863d0cbee614d40fd6f5cc14ac745d33fe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354308"
 ---
 # <a name="specifying-the-topology"></a>指定拓扑
 
@@ -39,7 +39,7 @@ ms.locfileid: "63328624"
 
 PortCls 提供了六个端口驱动程序：WavePci、 WaveCyclic、 WaveRT、 MIDI、 Dmu 和拓扑。 （WaveRT 自 Windows Vista 和是建议的方法。）拓扑端口驱动程序控制混合在一起使用从批和 MIDI 设备呈现流的音频适配器电路的部分。 它还可以控制从输入插孔捕获流的所选内容。 尽管它有点令人误解的名称，拓扑端口驱动程序不包含所有音频适配器的拓扑，尽管通常它包含它有很大一部分。 其他端口驱动程序提供适配器的拓扑的其余的部分。
 
-每个端口驱动程序与相应的微型端口驱动程序，向窗体配对[KS 筛选器](https://msdn.microsoft.com/library/windows/hardware/ff567644)，表示音频的适配器上的特定设备 （批、 MIDI 或 mixer） 下, 表中所示。
+每个端口驱动程序与相应的微型端口驱动程序，向窗体配对[KS 筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-filters)，表示音频的适配器上的特定设备 （批、 MIDI 或 mixer） 下, 表中所示。
 
 <table>
 <colgroup>
@@ -72,7 +72,7 @@ PortCls 提供了六个端口驱动程序：WavePci、 WaveCyclic、 WaveRT、 M
 
 微型端口驱动程序实现筛选器的特定于设备的功能，包括设备包含适配器拓扑的一部分的定义。 端口驱动程序负责的普通筛选器操作，包括与操作系统，每种类型的筛选器的通信。
 
-每个筛选器具有一个或多个[KS pin](https://msdn.microsoft.com/library/windows/hardware/ff567669)作为要进入和离开该筛选器的音频数据的数据流的路径。 通常情况下，拓扑筛选器上的针上批，MIDI，绑定到球瓶和 Dmu 的筛选器通过适配器电路中的硬编码连接。 这些筛选器和及其互连组合在一起形成包含适配器的拓扑的 KS 筛选器关系图。
+每个筛选器具有一个或多个[KS pin](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-pins)作为要进入和离开该筛选器的音频数据的数据流的路径。 通常情况下，拓扑筛选器上的针上批，MIDI，绑定到球瓶和 Dmu 的筛选器通过适配器电路中的硬编码连接。 这些筛选器和及其互连组合在一起形成包含适配器的拓扑的 KS 筛选器关系图。
 
 下图显示了示例音频适配器的拓扑。
 
@@ -97,37 +97,37 @@ PortCls 提供了六个端口驱动程序：WavePci、 WaveCyclic、 WaveRT、 M
 <tr class="odd">
 <td align="left"><p>合成器</p></td>
 <td align="left"><p>合成器节点</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537203" data-raw-source="[&lt;strong&gt;KSNODETYPE_SYNTHESIZER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537203)"><strong>KSNODETYPE_SYNTHESIZER</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer" data-raw-source="[&lt;strong&gt;KSNODETYPE_SYNTHESIZER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)"><strong>KSNODETYPE_SYNTHESIZER</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DAC</p></td>
 <td align="left"><p>数字音频转换器节点</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537158" data-raw-source="[&lt;strong&gt;KSNODETYPE_DAC&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537158)"><strong>KSNODETYPE_DAC</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac" data-raw-source="[&lt;strong&gt;KSNODETYPE_DAC&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac)"><strong>KSNODETYPE_DAC</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ADC</p></td>
 <td align="left"><p>模拟到数字转换器节点</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537153" data-raw-source="[&lt;strong&gt;KSNODETYPE_ADC&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537153)"><strong>KSNODETYPE_ADC</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-adc" data-raw-source="[&lt;strong&gt;KSNODETYPE_ADC&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-adc)"><strong>KSNODETYPE_ADC</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Volume</p></td>
 <td align="left"><p>卷级别控制节点</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537208" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537208)"><strong>KSNODETYPE_VOLUME</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)"><strong>KSNODETYPE_VOLUME</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Mute</p></td>
 <td align="left"><p>静音控制节点</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537178" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537178)"><strong>KSNODETYPE_MUTE</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute)"><strong>KSNODETYPE_MUTE</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Sum</p></td>
 <td align="left"><p>总和节点</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537196" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537196)"><strong>KSNODETYPE_SUM</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum)"><strong>KSNODETYPE_SUM</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MUX</p></td>
 <td align="left"><p>多路复用器节点</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537180" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537180)"><strong>KSNODETYPE_MUX</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux)"><strong>KSNODETYPE_MUX</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -140,7 +140,7 @@ PortCls 提供了六个端口驱动程序：WavePci、 WaveCyclic、 WaveRT、 M
 
 音频适配器右侧桥插针表示系统机箱上的音频插孔。 这些引脚嘿 *桥接 pin* 因为它们桥接 KS 筛选器关系图并与外部环境之间的边界。
 
-筛选器、 pin 和节点通常有的客户端 （内核模式组件或用户模式应用程序） 的音频驱动程序可以访问的属性。 客户端可以发送[KS 属性请求](https://msdn.microsoft.com/library/windows/hardware/ff567671)到筛选器、 pin 或节点属性的当前值的查询，或若要更改属性值。 例如，卷级别控制节点具有[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)属性，客户端可以更改通过 KS 属性请求。 总和节点是通常具有任何属性的节点类型的示例。
+筛选器、 pin 和节点通常有的客户端 （内核模式组件或用户模式应用程序） 的音频驱动程序可以访问的属性。 客户端可以发送[KS 属性请求](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)到筛选器、 pin 或节点属性的当前值的查询，或若要更改属性值。 例如，卷级别控制节点具有[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)属性，客户端可以更改通过 KS 属性请求。 总和节点是通常具有任何属性的节点类型的示例。
 
 为简单起见，Wave*Xxx*在上图中的筛选器提供单个插针用于接受来自系统总线的 PCM wave 输出流。 与此相反，某些波形设备 PCM wave 输出为提供多个插针，并且包含在内部混合的流的输入插针的硬件。 这些设备提供硬件加速的应用程序通过接受从应用程序的声音缓冲区播放 PCM 流使用 DirectSound。 若要使用这些引脚的 DirectSound，他们必须提供的其他节点的二维 (2-d) 和三维 (3-D) 处理，如中所述[DirectSound WDM 音频中的硬件加速](directsound-hardware-acceleration-in-wdm-audio.md)。
 
@@ -150,7 +150,7 @@ PortCls 提供了六个端口驱动程序：WavePci、 WaveCyclic、 WaveRT、 M
 
 在上图中的左下角的"非 PCM 批 Out"pin 接受 S/PDIF 传递格式，如 AC-3-over-S/PDIF 或 WMA Pro-反复-S/PDIF 的非 PCM 输出流。 使用以下格式之一，设备只需将压缩的数据传输通过 S/PDIF 链接而无需解码数据。 出于此原因，到在上图中右下角的"S/PDIF Out"插针的数据路径包含没有音量或静音节点。 有关非 PCM 音频格式和 S/PDIF 传递传输的详细信息，请参阅[支持非 PCM 波形格式](supporting-non-pcm-wave-formats.md)。 在标题为的白皮书提供了其他信息*WMA Pro-反复-S/PDIF 格式的音频驱动程序支持*处[音频技术](https://go.microsoft.com/fwlink/p/?linkid=8751)网站。
 
-微型端口驱动程序提供的窗体中的端口驱动程序对其拓扑[ **PCFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537694)结构。 此结构描述的所有筛选器的插针和节点，并指定的 pin 和节点如何连接到对方。
+微型端口驱动程序提供的窗体中的端口驱动程序对其拓扑[ **PCFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)结构。 此结构描述的所有筛选器的插针和节点，并指定的 pin 和节点如何连接到对方。
 
 而不是设计整体化拓扑筛选器，在上图所示的混音器电路中音频的适配器可以将分区到多个拓扑筛选器。 例如，在上图中，驱动器演讲者的数据路径可能会实现为一个拓扑筛选器，并捕获音频数据从输入设备的数据路径可以作为单独的拓扑筛选器实现。 当特定的拓扑筛选器中使用的数据路径将未在使用中时，可以但不能禁用整个适配器关闭电源适配器的该部分。 有关详细信息，请参阅[动态音频子设备](dynamic-audio-subdevices.md)。
 

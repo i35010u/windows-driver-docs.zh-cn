@@ -13,12 +13,12 @@ keywords:
 - ExSetTimerResolution
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 068b52e5f39eb1701ad3a7e945ac91869a2c43a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 186a6899369a48d218f27854ebe2d4284bf717bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386255"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371885"
 ---
 # <a name="high-resolution-timers"></a>高解析度计时器
 
@@ -27,9 +27,9 @@ ms.locfileid: "63386255"
 
 但是，高分辨率计时器需要到系统时钟中断-至少，暂时 — 出现在较高的速率，往往会增加功率消耗。 因此，驱动程序应使用高分辨率计时器，仅当计时器准确性至关重要，并且在所有其他情况下使用默认解析计时器。
 
-若要创建高分辨率计时器，WDM 驱动程序调用[ **ExAllocateTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265179)例程和集 EX\_计时器\_高\_中的解析标志*属性*参数。 当驱动程序调用[ **ExSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265188)例程设置高分辨率计时器，操作系统会增加必要时，系统时钟的分辨率，以便在该时间计时器过期的详细信息准确地对应中指定的名义上已过期时间*DueTime*并*段*参数。
+若要创建高分辨率计时器，WDM 驱动程序调用[ **ExAllocateTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)例程和集 EX\_计时器\_高\_中的解析标志*属性*参数。 当驱动程序调用[ **ExSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)例程设置高分辨率计时器，操作系统会增加必要时，系统时钟的分辨率，以便在该时间计时器过期的详细信息准确地对应中指定的名义上已过期时间*DueTime*并*段*参数。
 
-内核模式驱动程序框架 (KMDF) 驱动程序可以调用[ **WdfTimerCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff550050)方法来创建高分辨率计时器。 在此调用中，驱动程序将传递一个指向[ **WDF\_计时器\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552519)结构作为参数。 若要创建高分辨率计时器，驱动程序集**UseHighResolutionTimer**到此结构的成员**TRUE**。 此成员是从 Windows 8.1 和 KMDF 版本 1.13 开始结构的一部分。
+内核模式驱动程序框架 (KMDF) 驱动程序可以调用[ **WdfTimerCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nf-wdftimer-wdftimercreate)方法来创建高分辨率计时器。 在此调用中，驱动程序将传递一个指向[ **WDF\_计时器\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/ns-wdftimer-_wdf_timer_config)结构作为参数。 若要创建高分辨率计时器，驱动程序集**UseHighResolutionTimer**到此结构的成员**TRUE**。 此成员是从 Windows 8.1 和 KMDF 版本 1.13 开始结构的一部分。
 
 ## <a name="controlling-timer-accuracy"></a>控制计时器准确性
 
@@ -44,7 +44,7 @@ ms.locfileid: "63386255"
 
 若要防止过量的功率消耗，驱动程序应避免将长时间运行的高分辨率计时器的周期设置为小于系统时钟计时周期之间的默认间隔值。 否则，操作系统被迫持续运行的系统时钟在其最大速率。
 
-从 Windows 8 开始，驱动程序可以调用[ **ExQueryTimerResolution** ](https://msdn.microsoft.com/library/windows/hardware/dn275969)例程，以获取支持的系统时钟的计时器分辨率的范围。
+从 Windows 8 开始，驱动程序可以调用[ **ExQueryTimerResolution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exquerytimerresolution)例程，以获取支持的系统时钟的计时器分辨率的范围。
 
 ## <a name="comparison-to-exsettimerresolution"></a>与 ExSetTimerResolution 之间的比较
 
@@ -57,7 +57,7 @@ ms.locfileid: "63386255"
 
 第三，如果同时使用多个驱动程序**ExSetTimerResolution**若要提高计时器准确性，系统时钟可能会在运行其最大速率很长一段。 与此相反，操作系统全局协调的操作的多个高分辨率计时器，以便以最大速率仅在需要以满足这些计时器的计时要求时运行的系统时钟。
 
-最后，使用**ExSetTimerResolution**是本质上是比使用高分辨率计时器不太准确。 驱动程序调用后**ExSetTimerResolution**若要增加到其最大速率，这通常是有关 / 毫秒为单位的时钟计时周期，系统时钟驱动程序可能调用一个例程如[ **KeSetTimerEx**](https://msdn.microsoft.com/library/windows/hardware/ff553292)设置计时器。 如果在此调用中，该驱动程序指定了相对过期时间，可以最多过期计时器有关早于或晚于指定的过期时间以毫秒为单位。 但是，如果为高分辨率计时器指定相对过期时间，则计时器过期最多一毫秒以下有关晚于指定的过期时间，但它永远不会提前过期。
+最后，使用**ExSetTimerResolution**是本质上是比使用高分辨率计时器不太准确。 驱动程序调用后**ExSetTimerResolution**若要增加到其最大速率，这通常是有关 / 毫秒为单位的时钟计时周期，系统时钟驱动程序可能调用一个例程如[ **KeSetTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)设置计时器。 如果在此调用中，该驱动程序指定了相对过期时间，可以最多过期计时器有关早于或晚于指定的过期时间以毫秒为单位。 但是，如果为高分辨率计时器指定相对过期时间，则计时器过期最多一毫秒以下有关晚于指定的过期时间，但它永远不会提前过期。
 
  
 

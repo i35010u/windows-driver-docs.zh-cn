@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_SEND_AP_ASSOCIATION_RESPONSE_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 461b34d968899f5a354edadc68e60afad9b9d014
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c910d0286cb18afaf7cea1773ce8c438f3e80684
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361032"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375213"
 ---
 # <a name="ndisstatuswdiindicationsendapassociationresponsecomplete"></a>NDIS\_状态\_WDI\_指示\_发送\_AP\_关联\_响应\_完成
 
@@ -20,7 +20,7 @@ ms.locfileid: "63361032"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,10 +29,10 @@ ms.locfileid: "63361032"
 
 | 在任务栏的搜索框中键入 | 允许多个 TLV 实例 | 可选 | 描述 |
 | --- | --- | --- | --- |
-| [**WDI\_TLV\_关联\_响应\_结果\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn926138) |   |   | 关联响应参数。 |
-| [**WDI\_TLV\_关联\_响应\_帧**](https://msdn.microsoft.com/library/windows/hardware/dn926135) |   |   | 接收到的关联的响应。 这不包括 802.11 MAC 报头。 |
-| [**WDI\_TLV\_BEACON\_IES**](https://msdn.microsoft.com/library/windows/hardware/dn926148) |   |   | 从关联信号导致浏览器。 |
-| [**WDI\_TLV\_PHY\_TYPE\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn898029) |   |   | PHY 类型的列表。 |
+| [**WDI\_TLV\_关联\_响应\_结果\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-response-result-parameters) |   |   | 关联响应参数。 |
+| [**WDI\_TLV\_关联\_响应\_帧**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-response-frame) |   |   | 接收到的关联的响应。 这不包括 802.11 MAC 报头。 |
+| [**WDI\_TLV\_BEACON\_IES**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-beacon-ies) |   |   | 从关联信号导致浏览器。 |
+| [**WDI\_TLV\_PHY\_TYPE\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-type-list) |   |   | PHY 类型的列表。 |
  
 
 <a name="requirements"></a>要求

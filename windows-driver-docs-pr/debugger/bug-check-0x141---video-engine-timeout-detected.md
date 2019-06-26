@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9696710c1c4274e89895ddc7a8b08023e3c9b32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff521b394cba97ec24344394ee14ad2a62ff3a7c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367807"
 ---
 # <a name="bug-check-0x141-videoenginetimeoutdetected"></a>Bug 检查 0x141：视频\_引擎\_超时\_检测到
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360106"
 视频\_引擎\_超时\_检测到错误检查的值为 0x00000141。 这表示引擎未能及时响应的显示其中一个。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="videoenginetimeoutdetected-parameters"></a>视频\_引擎\_超时\_检测到参数

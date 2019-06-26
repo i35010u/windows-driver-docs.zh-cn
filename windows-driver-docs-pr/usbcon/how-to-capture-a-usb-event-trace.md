@@ -3,12 +3,12 @@ Description: 本主题介绍有关使用 Logman 工具捕获 USB ETW 事件跟�
 title: 如何使用 Logman 捕获 USB 事件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cb23adec030ad43785acdc47776ef3d0eb6e182
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25423709e7baf468dd4a410dd4ace31cdeb60ef8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381037"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386260"
 ---
 # <a name="how-to-capture-a-usb-event-trace-with-logman"></a>如何使用 Logman 捕获 USB 事件跟踪
 
@@ -115,7 +115,7 @@ ms.locfileid: "63381037"
 </tr>
 <tr class="even">
 <td><p><strong>FullDataBusTrace</strong></p></td>
-<td><p>显示所有 USB 传输事件，并将保存最多 4 KB 的总线的数据大容量，中断，以及控制传输。 请注意，记录仅链接 MDL 的第一个缓冲区。 永远不会记录同步总线数据 (尽管<a href="https://msdn.microsoft.com/library/windows/hardware/ff540414" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540414)"> <strong>URB_ISOCH_TRANSFER</strong> </a>保存请求结构)。 有关详细信息，请参阅<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">如何发送链接 MDLs</a>并<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">如何将数据传输到 USB 等时终结点</a>。</p></td>
+<td><p>显示所有 USB 传输事件，并将保存最多 4 KB 的总线的数据大容量，中断，以及控制传输。 请注意，记录仅链接 MDL 的第一个缓冲区。 永远不会记录同步总线数据 (尽管<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)"> <strong>URB_ISOCH_TRANSFER</strong> </a>保存请求结构)。 有关详细信息，请参阅<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">如何发送链接 MDLs</a>并<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">如何将数据传输到 USB 等时终结点</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>HWVerifyHost</strong></p></td>
@@ -169,7 +169,7 @@ OR Description == "USBPort_MicrosoftWindowsUSBUSBPORT:Host Controller Async Sche
 ## <a name="related-topics"></a>相关主题
 [使用 USB ETW](using-usb-etw.md)  
 [USB Windows 事件跟踪](usb-event-tracing-for-windows.md)  
-[定义用于事件的类型进行分类的关键字](https://msdn.microsoft.com/library/windows/desktop/dd996915)  
+[定义用于事件的类型进行分类的关键字](https://docs.microsoft.com/windows/desktop/WES/defining-keywords-used-to-classify-types-of-events)  
 
 
 

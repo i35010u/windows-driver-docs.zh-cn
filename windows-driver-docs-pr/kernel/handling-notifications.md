@@ -16,17 +16,17 @@ keywords:
 - 监视注册表调用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da63264258cfe94ef3841ae94a24a0dc51cde95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e98ef23feda0dfffa68483d511bcbca3569c7de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385621"
 ---
 # <a name="handling-notifications"></a>处理通知
 
 
-[ *RegistryCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff560903)例程接收指向**REG\_*XXX*\_键\_信息**结构，其中包含有关正在进行的注册表操作的信息。
+[ *RegistryCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)例程接收指向**REG\_*XXX*\_键\_信息**结构，其中包含有关正在进行的注册表操作的信息。
 
 *RegistryCallback*例程可以监视、 阻止或修改注册表操作。
 
@@ -54,7 +54,7 @@ ms.locfileid: "63392464"
 
     在 Windows Vista 及更高版本，支持修改输出参数。
 
--   修改注册表操作的返回值，通过提供有关状态值**ReturnStatus**的成员[ **REG\_POST\_操作\_信息** ](https://msdn.microsoft.com/library/windows/hardware/ff560971)结构并返回状态\_回调\_绕过。 配置管理器将返回指定值返回给调用线程。
+-   修改注册表操作的返回值，通过提供有关状态值**ReturnStatus**的成员[ **REG\_POST\_操作\_信息** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_post_operation_information)结构并返回状态\_回调\_绕过。 配置管理器将返回指定值返回给调用线程。
 
     **请注意**如果驱动程序故障，从成功更改状态代码，它可能需要解除分配的配置管理器分配的对象。 或者，如果该驱动程序为成功从失败更改状态代码，它可能需要提供相应的输出参数。
 

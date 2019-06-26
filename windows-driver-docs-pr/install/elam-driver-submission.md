@@ -4,12 +4,12 @@ description: 可以使用列出的步骤来确保验证并且对有案可稽的�
 ms.assetid: ''
 ms.date: 04/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c19c473123fab03d9077931a47a7a4c03b66594
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da82e271d636a8d6128390bdb0054e820bca8da8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346147"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375014"
 ---
 # <a name="elam-driver-submission-process"></a>ELAM 驱动程序提交过程
 
@@ -17,7 +17,7 @@ ms.locfileid: "63346147"
 
 1. 请确保您的驱动程序符合 ELAM 驱动程序有案可稽的要求。  请参阅[ELAM 驱动程序要求](elam-driver-requirements.md)并[INF SignatureAttributes 部分](inf-signatureattributes-section.md)有关详细信息。
 
-2. 验证您使用的硬件徽标工具包 (HLK) 和硬件认证工具包 (HCK) 的驱动程序。 如果您的驱动程序将使用在 Windows 8 和 Windows 10 中，您需要运行两个版本的工具包。 包括与您的提交结果。 请参阅[HLK 工具技术参考](https://msdn.microsoft.com/library/windows/hardware/dn939924)有关详细信息。 有关必需 HCK 测试的信息，请参阅下面。
+2. 验证您使用的硬件徽标工具包 (HLK) 和硬件认证工具包 (HCK) 的驱动程序。 如果您的驱动程序将使用在 Windows 8 和 Windows 10 中，您需要运行两个版本的工具包。 包括与您的提交结果。 请参阅[HLK 工具技术参考](https://docs.microsoft.com/windows-hardware/test/hlk/user/hlk-tools-technical-reference)有关详细信息。 有关必需 HCK 测试的信息，请参阅下面。
 
 3. 请按照内核模式驱动程序签名策略，如中所述[驱动程序签名策略](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)主题。
 

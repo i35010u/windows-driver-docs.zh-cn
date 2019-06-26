@@ -8,12 +8,12 @@ keywords:
 - 错误 WDK 检查生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b389a3ed5f0be1ebce5710c213d5e9464b873d98
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: b47d593a8fef0bc10c0e6298dbb6ad58e62e6ec8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371623"
 ---
 # <a name="checked-build-asserts"></a>已检验版本 ASSERT
 
@@ -21,7 +21,7 @@ ms.locfileid: "67161493"
 ## <span id="ddk_checked_build_asserts_tools"></span><span id="DDK_CHECKED_BUILD_ASSERTS_TOOLS"></span>
 
 
-本主题包含一系列常见[ **ASSERT**](https://msdn.microsoft.com/library/windows/hardware/ff542107)s 遇到的驱动程序编写人员。
+本主题包含一系列常见[ **ASSERT**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))s 遇到的驱动程序编写人员。
 
 有关如何对这些断言的句柄 （以及其他未列出），一些提示，请参阅[已检验的版本如何指示问题](how-the-checked-build-indicates-a-problem.md)。
 
@@ -42,27 +42,27 @@ ms.locfileid: "67161493"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548263" data-raw-source="[&lt;strong&gt;IoAllocateMdl&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548263)"><strong>IoAllocateMdl</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl" data-raw-source="[&lt;strong&gt;IoAllocateMdl&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)"><strong>IoAllocateMdl</strong></a></p></td>
 <td align="left"><p>ASSERT(Length)</p></td>
 <td align="left"><p>用户缓冲区所描述的长度为零。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548300" data-raw-source="[&lt;strong&gt;IoAttachDeviceToDeviceStack&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548300)"><strong>IoAttachDeviceToDeviceStack</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack" data-raw-source="[&lt;strong&gt;IoAttachDeviceToDeviceStack&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)"><strong>IoAttachDeviceToDeviceStack</strong></a></p></td>
 <td align="left"><p>ASSERT( sourceExtension-&gt;AttachedTo == <strong>NULL</strong> )</p></td>
 <td align="left"><p>设备对象，该对象被附加 （源设备） 已附加到另一个设备对象。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548336" data-raw-source="[&lt;strong&gt;IoCallDriver&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548336)"><strong>IoCallDriver</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver" data-raw-source="[&lt;strong&gt;IoCallDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)"><strong>IoCallDriver</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP 参数不指向 IRP。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548338" data-raw-source="[&lt;strong&gt;IoCancelIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548338)"><strong>IoCancelIrp</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp" data-raw-source="[&lt;strong&gt;IoCancelIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)"><strong>IoCancelIrp</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP 参数不指向 IRP。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548343" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548343)"><strong>IoCompleteRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)"><strong>IoCompleteRequest</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP 参数不指向 IRP。</p></td>
 </tr>
@@ -87,12 +87,12 @@ ms.locfileid: "67161493"
 <td align="left"><p>IRP 已经完成 STATUS_REPARSE，IO_REPARSE_TAG_MOUNT_POINT，使用，并且辅助缓冲区<strong>NULL</strong>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"><strong>IoCreateDevice</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)"><strong>IoCreateDevice</strong></a></p></td>
 <td align="left"><p>ASSERT((DriverObject-&gt;Flags & DRVO_UNLOAD_INVOKED) == 0)</p></td>
 <td align="left"><p>已创建一个设备对象，但创建它的驱动程序标记为要卸载。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549113" data-raw-source="[&lt;strong&gt;IoFreeIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549113)"><strong>IoFreeIrp</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp" data-raw-source="[&lt;strong&gt;IoFreeIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)"><strong>IoFreeIrp</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP 不指向 IRP。</p></td>
 </tr>
@@ -107,7 +107,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>IRP 被释放，但 I/O 完成尚未完成处理此 IRP 的所有驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549661" data-raw-source="[&lt;strong&gt;IoReuseIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549661)"><strong>IoReuseIrp</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreuseirp" data-raw-source="[&lt;strong&gt;IoReuseIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreuseirp)"><strong>IoReuseIrp</strong></a></p></td>
 <td align="left"><p>ASSERT(Irp-&gt;CancelRoutine == <strong>NULL</strong>)</p></td>
 <td align="left"><p>没有剩余的 IRP，会为请求重复使用的取消例程。</p></td>
 </tr>
@@ -117,7 +117,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>重新使用 IRP 仍位于线程的 IRP 列表，并因此仍在使用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549707" data-raw-source="[&lt;strong&gt;IoSetHardErrorOrVerifyDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549707)"><strong>IoSetHardErrorOrVerifyDevice</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetharderrororverifydevice" data-raw-source="[&lt;strong&gt;IoSetHardErrorOrVerifyDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetharderrororverifydevice)"><strong>IoSetHardErrorOrVerifyDevice</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Tail.Overlay.Thread != <strong>NULL</strong> )</p></td>
 <td align="left"><p>IRP 不在任何线程的 IRP 列表中。</p></td>
 </tr>
@@ -152,7 +152,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>IRP 标记为挂起，但调度例程以同步方式返回状态 ！ = STATUS_PENDING。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554664" data-raw-source="[&lt;strong&gt;MmProbeAndLockPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554664)"><strong>MmProbeAndLockPages</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages" data-raw-source="[&lt;strong&gt;MmProbeAndLockPages&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)"><strong>MmProbeAndLockPages</strong></a></p></td>
 <td align="left"><p>断言 (MemoryDescriptorList-&gt;ByteCount ！ = 0)</p></td>
 <td align="left"><p>传入的 MDL 中的字节数为零。</p></td>
 </tr>
@@ -182,7 +182,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>描述 MDL 缓冲区中的页面已被锁定到内存的次数过多。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556381" data-raw-source="[&lt;strong&gt;MmUnlockPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556381)"><strong>MmUnlockPages</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages" data-raw-source="[&lt;strong&gt;MmUnlockPages&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)"><strong>MmUnlockPages</strong></a></p></td>
 <td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & MDL_PAGES_LOCKED) != 0)</p></td>
 <td align="left"><p>包含描述此 MDL 缓冲区的页未被锁定。</p></td>
 </tr>
@@ -217,7 +217,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>MDL 中的页帧指针不是有效的。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554498" data-raw-source="[&lt;strong&gt;MmBuildMdlForNonPagedPool&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554498)"><strong>MmBuildMdlForNonPagedPool</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool" data-raw-source="[&lt;strong&gt;MmBuildMdlForNonPagedPool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)"><strong>MmBuildMdlForNonPagedPool</strong></a></p></td>
 <td align="left"><p>断言 (MemoryDescriptorList-&gt;ByteCount ！ = 0)</p></td>
 <td align="left"><p>描述 MDL 缓冲区是零个字节长。</p></td>
 </tr>
@@ -232,7 +232,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>MDL 描述具有零个页的缓冲区。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554629" data-raw-source="[&lt;strong&gt;MmMapLockedPagesSpecifyCache&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554629)"><strong>MmMapLockedPagesSpecifyCache</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache" data-raw-source="[&lt;strong&gt;MmMapLockedPagesSpecifyCache&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)"><strong>MmMapLockedPagesSpecifyCache</strong></a></p></td>
 <td align="left"><p>断言 (MemoryDescriptorList-&gt;ByteCount ！ = 0)</p></td>
 <td align="left"><p>MDL 长度为零。</p></td>
 </tr>
@@ -262,7 +262,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>描述 MDL 缓冲区包含不在内存中锁定的页。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556391" data-raw-source="[&lt;strong&gt;MmUnmapLockedPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556391)"><strong>MmUnmapLockedPages</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmaplockedpages" data-raw-source="[&lt;strong&gt;MmUnmapLockedPages&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmaplockedpages)"><strong>MmUnmapLockedPages</strong></a></p></td>
 <td align="left"><p>断言 (MemoryDescriptorList-&gt;ByteCount ！ = 0)</p></td>
 <td align="left"><p>MDL 描述由零个字节长的缓冲区。</p></td>
 </tr>
@@ -287,7 +287,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>描述 MDL 缓冲区包含不在内存中锁定的页。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554618" data-raw-source="[&lt;strong&gt;MmMapIoSpace&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554618)"><strong>MmMapIoSpace</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace" data-raw-source="[&lt;strong&gt;MmMapIoSpace&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)"><strong>MmMapIoSpace</strong></a></p></td>
 <td align="left"><p>ASSERT (PhysicalAddress.HighPart == 0)</p></td>
 <td align="left"><p>这在不超过 4 gb 的物理内存的基于 x86 的系统上运行，但传递给此函数可指定 I/O 空间地址的高 32 位的参数为非零值。</p></td>
 </tr>
@@ -302,12 +302,12 @@ ms.locfileid: "67161493"
 <td align="left"><p>地址范围内的页面不在 I/O 空间中。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556387" data-raw-source="[&lt;strong&gt;MmUnmapIoSpace&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556387)"><strong>MmUnmapIoSpace</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace" data-raw-source="[&lt;strong&gt;MmUnmapIoSpace&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace)"><strong>MmUnmapIoSpace</strong></a></p></td>
 <td align="left"><p>ASSERT (NumberOfBytes != 0)</p></td>
 <td align="left"><p>传递给此函数可指定要取消映射的字节数的参数为零。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554460" data-raw-source="[&lt;strong&gt;MmAllocateContiguousMemory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554460)"><strong>MmAllocateContiguousMemory</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory" data-raw-source="[&lt;strong&gt;MmAllocateContiguousMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)"><strong>MmAllocateContiguousMemory</strong></a></p></td>
 <td align="left"><p>ASSERT (NumberOfBytes != 0)</p></td>
 <td align="left"><p>传递给此函数可指定要分配的字节数的参数为零。</p></td>
 </tr>
@@ -317,7 +317,7 @@ ms.locfileid: "67161493"
 <td align="left"><p>传递给此函数可指定要分配的字节数的参数为零。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554479" data-raw-source="[&lt;strong&gt;MmAllocateNonCachedMemory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554479)"><strong>MmAllocateNonCachedMemory</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory" data-raw-source="[&lt;strong&gt;MmAllocateNonCachedMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)"><strong>MmAllocateNonCachedMemory</strong></a></p></td>
 <td align="left"><p>ASSERT (NumberOfBytes != 0)</p></td>
 <td align="left"><p>传递给此函数可指定要分配的字节数的参数为零。</p></td>
 </tr>

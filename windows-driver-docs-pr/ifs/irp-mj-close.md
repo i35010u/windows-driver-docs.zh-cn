@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0397bed8fe7dfb85c62369e3be18259255574c68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98b2ef82f7db4856c01700764c432f861cda84f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379708"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376103"
 ---
 # <a name="irpmjclose"></a>IRP\_MJ\_CLOSE
 
@@ -25,7 +25,7 @@ ms.locfileid: "63379708"
 ## <a name="when-sent"></a>发送时间
 
 
-接收 IRP\_MJ\_关闭请求指示文件对象的引用计数已达到零，通常是因为文件系统驱动程序或其他内核模式组件调用[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)上的文件对象。 此请求通常遵循清除请求。 但是，这并不意味着，将清除请求后立即收到关闭请求。
+接收 IRP\_MJ\_关闭请求指示文件对象的引用计数已达到零，通常是因为文件系统驱动程序或其他内核模式组件调用[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)上的文件对象。 此请求通常遵循清除请求。 但是，这并不意味着，将清除请求后立即收到关闭请求。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
@@ -41,14 +41,14 @@ ms.locfileid: "63379708"
 
 否则，筛选器驱动程序应将传递到下一步低驱动程序 IRP 堆栈上执行任何所需的处理，如删除的每个文件和每个文件是由筛选器驱动程序维护对象上下文信息后。
 
-文件系统筛选器驱动程序编写人员应注意[ **IoCreateStreamFileObject** ](https://msdn.microsoft.com/library/windows/hardware/ff548296)导致[ **IRP\_MJ\_清理**](irp-mj-cleanup.md)请求发送到文件系统驱动程序堆栈，供该卷。 因为文件系统通常创建流文件对象的操作的副作用以外[ **IRP\_MJ\_创建**](irp-mj-create.md)，很难可靠地检测到的筛选器驱动程序创建流文件对象。 因此筛选器驱动程序应该会收到**IRP\_MJ\_清理**并[ **IRP\_MJ\_关闭**](https://msdn.microsoft.com/library/windows/hardware/ff550720)之前未的文件对象的请求。
+文件系统筛选器驱动程序编写人员应注意[ **IoCreateStreamFileObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobject)导致[ **IRP\_MJ\_清理**](irp-mj-cleanup.md)请求发送到文件系统驱动程序堆栈，供该卷。 因为文件系统通常创建流文件对象的操作的副作用以外[ **IRP\_MJ\_创建**](irp-mj-create.md)，很难可靠地检测到的筛选器驱动程序创建流文件对象。 因此筛选器驱动程序应该会收到**IRP\_MJ\_清理**并[ **IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)之前未的文件对象的请求。
 
-筛选器驱动程序编写人员应注意，还与不同[ **IoCreateStreamFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff548296)， [ **IoCreateStreamFileObjectLite** ](https://msdn.microsoft.com/library/windows/hardware/ff548306)不会导致[ **IRP\_MJ\_清理**](irp-mj-cleanup.md)请求发送到文件系统驱动程序堆栈。 出于此原因，并因为文件系统通常创建流文件对象的操作的副作用以外[ **IRP\_MJ\_创建**](irp-mj-create.md)，很难筛选器驱动程序若要可靠地检测到流文件对象创建。 因此筛选器驱动程序应该会收到**IRP\_MJ\_关闭**请求对于以前不可见的文件对象。
+筛选器驱动程序编写人员应注意，还与不同[ **IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobject)， [ **IoCreateStreamFileObjectLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobjectlite)不会导致[ **IRP\_MJ\_清理**](irp-mj-cleanup.md)请求发送到文件系统驱动程序堆栈。 出于此原因，并因为文件系统通常创建流文件对象的操作的副作用以外[ **IRP\_MJ\_创建**](irp-mj-create.md)，很难筛选器驱动程序若要可靠地检测到流文件对象创建。 因此筛选器驱动程序应该会收到**IRP\_MJ\_关闭**请求对于以前不可见的文件对象。
 
 ## <a name="parameters"></a>Parameters
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置在处理关闭请求中设置的信息：
+文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置在处理关闭请求中设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象指针。
@@ -60,7 +60,7 @@ IRP\_关闭\_操作
 
 IRP\_同步\_API
 
-<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*指针，指向[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)有关接收最终的完成状态和信息的结构请求的操作。
+<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*指针，指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)有关接收最终的完成状态和信息的结构请求的操作。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;的文件对象*与关联的文件对象的指针*DeviceObject*。
 
@@ -71,25 +71,25 @@ IRP\_同步\_API
 ## <a name="see-also"></a>请参阅
 
 
-[**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoCreateStreamFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff548296)
+[**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobject)
 
-[**IoCreateStreamFileObjectLite**](https://msdn.microsoft.com/library/windows/hardware/ff548306)
+[**IoCreateStreamFileObjectLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocreatestreamfileobjectlite)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_关闭 （WDK 内核参考）**](https://msdn.microsoft.com/library/windows/hardware/ff550720)
+[**IRP\_MJ\_关闭 （WDK 内核参考）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)
 
 [**IRP\_MJ\_CLEANUP**](irp-mj-cleanup.md)
 
 [**IRP\_MJ\_CREATE**](irp-mj-create.md)
 
-[**ObDereferenceObject**](https://msdn.microsoft.com/library/windows/hardware/ff557724)
+[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)
 
  
 

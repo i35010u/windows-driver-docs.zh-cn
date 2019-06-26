@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d249d03c58bc2b9b037fc873f426bbbd1ff14cc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7eba569afac47cdf260d9f1471afbbfeff78f131
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362293"
 ---
 # <a name="bug-check-0x120-bitlockerfatalerror"></a>Bug 检查 0x120：BITLOCKER\_致命错误\_错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358145"
 BITLOCKER\_致命错误\_错误 bug 检查的值为 0x00000120。 这表示 BitLocker 驱动器加密时遇到问题并且无法恢复。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="bitlockerfatalerror-parameters"></a>BITLOCKER\_致命错误\_错误参数

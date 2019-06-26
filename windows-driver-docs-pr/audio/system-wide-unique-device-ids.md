@@ -17,12 +17,12 @@ keywords:
 - 设备 ID 字符串 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 457fefef9c81a3b7a1bc7fa79f8b0b193f5f73ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64ab1e96519e270aa5223fa6fc8f4b4c5b85df43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354208"
 ---
 # <a name="system-wide-unique-device-ids"></a>系统范围内唯一的设备 ID
 
@@ -30,9 +30,9 @@ ms.locfileid: "63335436"
 ## <span id="system_wide_unique_device_ids"></span><span id="SYSTEM_WIDE_UNIQUE_DEVICE_IDS"></span>
 
 
-典型的音频适配器的驱动程序轻松应该能够在系统中支持多个实例相同的音频的适配器卡。 存储设备扩展缓冲区中，几乎所有的驱动程序维护的数据结构 (请参阅的说明[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构的**DeviceExtension**字段)。 如果驱动程序的多个实例共享的任何全局数据，但是，这些实例应同步其访问此数据。
+典型的音频适配器的驱动程序轻松应该能够在系统中支持多个实例相同的音频的适配器卡。 存储设备扩展缓冲区中，几乎所有的驱动程序维护的数据结构 (请参阅的说明[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构的**DeviceExtension**字段)。 如果驱动程序的多个实例共享的任何全局数据，但是，这些实例应同步其访问此数据。
 
-一个额外的要求是应具有的适配器的特定实例上每个子[设备 ID 字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)用于唯一标识子相同的适配器卡的所有实例在系统中。
+一个额外的要求是应具有的适配器的特定实例上每个子[设备 ID 字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)用于唯一标识子相同的适配器卡的所有实例在系统中。
 
 最简单的方法来实现此目的是将每个适配器卡上的子公开为插管理器的逻辑独立设备。 中显示为选项 (1) 这[多功能音频设备](multifunction-audio-devices.md)。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63335436"
 
 如果提供的适配器卡总线驱动程序，应确保总线驱动程序分配的设备 Id 在系统中是唯一。
 
-总线驱动程序提供了它的一个子级响应设备 ID [ **IRP\_MN\_查询\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)插管理器中的查询。 可以在其发送给响应中指示总线驱动程序的两种方式之一中指定的 ID [ **IRP\_MN\_查询\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)通过设置查询[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构的**UniqueID**字段**TRUE**或**FALSE**:
+总线驱动程序提供了它的一个子级响应设备 ID [ **IRP\_MN\_查询\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)插管理器中的查询。 可以在其发送给响应中指示总线驱动程序的两种方式之一中指定的 ID [ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)通过设置查询[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构的**UniqueID**字段**TRUE**或**FALSE**:
 
 -   **UniqueID** = **TRUE**
 

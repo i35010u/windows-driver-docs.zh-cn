@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 880f7590436f8d9ea448ee5488cf2e324b00c0bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcd9adc72a8a19d5d29d4a4a8efed931a302b062
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384840"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368274"
 ---
 # <a name="driverentry-of-changer-miniclass-drivers-routine"></a>换带机 Miniclass 驱动的 DriverEntry 例程
 
@@ -48,14 +48,14 @@ NTSTATUS DriverEntry(
 <a name="return-value"></a>返回值
 ------------
 
-Miniclass 驱动**DriverEntry**例程必须返回返回的值[ **ChangerClassInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff551413)例程。
+Miniclass 驱动**DriverEntry**例程必须返回返回的值[ **ChangerClassInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize)例程。
 
 <a name="remarks"></a>备注
 -------
 
 参数**Argument1**并**Argument2**指向特定于操作系统的信息。 Miniclass 驱动程序应*不*尝试解释这些参数。 相反，它应传递到这些参数**ChangerClassInitialize**例程。
 
-**ChangerClassInitialize**执行大部分 miniclass 驱动程序所需的初始化。 微型驱动程序中的主要任务及其**DriverEntry**例程是加载到其命令处理例程的入口点[ **MCD\_INIT\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff562210)结构，将传递到此结构的地址**ChangerClassInitialize**例程。
+**ChangerClassInitialize**执行大部分 miniclass 驱动程序所需的初始化。 微型驱动程序中的主要任务及其**DriverEntry**例程是加载到其命令处理例程的入口点[ **MCD\_INIT\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/ns-mcd-_mcd_init_data)结构，将传递到此结构的地址**ChangerClassInitialize**例程。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,9 +88,9 @@ Miniclass 驱动**DriverEntry**例程必须返回返回的值[ **ChangerClassIni
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**ChangerClassInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff551413)
+[**ChangerClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize)
 
-[**MCD\_INIT\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff562210)
+[**MCD\_INIT\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/ns-mcd-_mcd_init_data)
 
  
 

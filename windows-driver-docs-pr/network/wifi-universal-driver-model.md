@@ -4,12 +4,12 @@ description: WDI （WLAN 设备驱动程序接口） 是适用于 Windows 10 的
 ms.assetid: 6EF92E34-7BC9-465E-B05D-2BCB29165A18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2c8b90af05caab82984ea70c062f5d3e682ab3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 156c4761e5b8d9b4db92640e176759bfef3c6e41
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370560"
 ---
 # <a name="wlan-universal-windows-driver-model"></a>WLAN 通用 Windows 驱动程序模型
 
@@ -23,17 +23,17 @@ WDI 标头文件，wditypes.hpp 和 dot11wdi.h，包含在 WDK 中。
 ## <a name="how-to-write-a-universal-wlan-driver"></a>如何编写通用 WLAN 驱动程序
 
 
-若要编写通用 WLAN 驱动程序，请参阅[通用 Windows 驱动程序入门](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)，并按照一节中的步骤*构建通用 Windows 驱动程序*通用驱动程序使用进行生成内核模式驱动程序 (KMDF) 模板中。
+若要编写通用 WLAN 驱动程序，请参阅[通用 Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers)，并按照一节中的步骤*构建通用 Windows 驱动程序*通用驱动程序使用进行生成内核模式驱动程序 (KMDF) 模板中。
 
 然后，请参阅实现指南 WDI 设计和引用部分。
 
 -   [WDI 微型端口驱动程序设计指南](wdi-miniport-driver-design-guide.md)
--   [WDI 微型端口驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/dn926075)
+-   [WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 ## <a name="related-topics"></a>相关主题
 
 
-[通用 Windows 驱动程序入门](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)
+[通用 Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

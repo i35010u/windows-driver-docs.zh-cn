@@ -6,12 +6,12 @@ keywords:
 - Windows 筛选平台常量网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be3a90276b772aa9130e2ec567d41e76d6cd6399
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbe3445d3d73c6bbc753d968b6db3576abd14309
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378713"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370563"
 ---
 # <a name="windows-filtering-platform-constants"></a>Windows 筛选平台常量
 
@@ -35,5 +35,5 @@ ms.locfileid: "63378713"
 
 ## <a name="related-topics"></a>相关主题
 
-[Windows 筛选平台标注驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff571067)
+[Windows 筛选平台标注驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 

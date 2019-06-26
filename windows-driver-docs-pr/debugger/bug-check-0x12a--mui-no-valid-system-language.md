@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36511007d2df892e2430a8fea5d809e0022eae3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cad2bc34206b3656a1326c6efa2ecd823bb1b81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354806"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362277"
 ---
 # <a name="bug-check-0x12a-muinovalidsystemlanguage"></a>Bug 检查 0x12A：MUI\_否\_有效\_系统\_语言
 
@@ -26,7 +26,7 @@ ms.locfileid: "63354806"
 MUI\_否\_有效\_系统\_语言错误检查的值为 0x0000012A。 这表示 Windows 未找到任何已安装的、 经过许可的语言包为系统默认 UI 语言。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="muinovalidsystemlanguage-parameters"></a>MUI\_否\_有效\_系统\_语言参数

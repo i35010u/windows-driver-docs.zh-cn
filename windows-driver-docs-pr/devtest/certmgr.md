@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fad959a411067d190c0fa04ec2919b2b1b00aa00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e68db909d8b8f99f148e179dd9bcda1417230247
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371615"
 ---
 # <a name="certmgr"></a>CertMgr
 
 
 CertMgr (Certmgr.exe) 是一个命令行[CryptoAPI](https://go.microsoft.com/fwlink/p/?linkid=136391)管理证书、 证书信任列表 (Ctl) 和证书吊销列表 (Crl) 的工具。
 
-CertMgr 支持大量的开关，但本部分介绍了仅与管理相关的那些[测试证书](https://msdn.microsoft.com/library/windows/hardware/ff553457)证书存储中。
+CertMgr 支持大量的开关，但本部分介绍了仅与管理相关的那些[测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/test-certificates)证书存储中。
 
 ```
     CertMgr [/add|/del|/put] [Switches] [/s [/r RegistryLocation ] ] SourceName [/s [/r RegistryLocation] ] [DestinationName]
@@ -48,19 +48,19 @@ CertMgr 中的证书存储区或文件指定如果未不指定任何命令，显
 
 ### <a name="span-idswitchesandargumentsspanspan-idswitchesandargumentsspanswitches-and-arguments"></a><span id="switches_and_arguments"></span><span id="SWITCHES_AND_ARGUMENTS"></span>开关和参数
 
-<span id="_c"></span><span id="_C"></span>**/c**  
+<span id="_c"></span><span id="_C"></span> **/c**  
 配置仅处理从指定的文件的证书的 CertMgr *SourceName*。
 
-<span id="_CTL"></span><span id="_ctl"></span>**/CTL**  
+<span id="_CTL"></span><span id="_ctl"></span> **/CTL**  
 配置 CertMgr 仅处理从指定的文件的 Ctl *SourceName*。
 
-<span id="_CRL"></span><span id="_crl"></span>**/CRL**  
+<span id="_CRL"></span><span id="_crl"></span> **/CRL**  
 配置 CertMgr 仅处理从指定的文件的 Crl *SourceName*。
 
-<span id="_s"></span><span id="_S"></span>**/s**  
+<span id="_s"></span><span id="_S"></span> **/s**  
 配置访问指定的证书存储的 CertMgr *SourceName*或*DestinationName*作为系统存储。
 
-<span id="_r_registryLocation"></span><span id="_r_registrylocation"></span><span id="_R_REGISTRYLOCATION"></span>**/r** *registryLocation*  
+<span id="_r_registryLocation"></span><span id="_r_registrylocation"></span><span id="_R_REGISTRYLOCATION"></span> **/r** *registryLocation*  
 指定系统证书存储的注册表位置。 **/R**交换机才与一起使用时有效 **/s**切换。 *RegistryLocation*参数必须是：
 
 <span id="currentUser"></span><span id="currentuser"></span><span id="CURRENTUSER"></span>*currentUser*  
@@ -71,9 +71,9 @@ CertMgr 中的证书存储区或文件指定如果未不指定任何命令，显
 
 如果 **/r**交换机未指定连同 **/s**切换，请*currentUser*是默认值。
 
-有关这些证书存储区的详细信息，请参阅[证书存储区](https://msdn.microsoft.com/library/windows/hardware/ff537890)。
+有关这些证书存储区的详细信息，请参阅[证书存储区](https://docs.microsoft.com/windows-hardware/drivers/install/certificate-stores)。
 
-<span id="_v"></span><span id="_V"></span>**/v**  
+<span id="_v"></span><span id="_V"></span> **/v**  
 配置 CertMgr 以显示有关证书、 Ctl 和 Crl 的详细的信息。 如果未指定此开关，CertMgr 仅显示的信息摘要。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释

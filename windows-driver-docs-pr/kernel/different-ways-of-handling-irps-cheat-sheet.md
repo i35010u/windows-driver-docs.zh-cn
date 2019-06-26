@@ -6,12 +6,12 @@ keywords:
 - Irp WDK 内核，处理 Irp
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 555dc8d8fb051791959fe6492633481888f1fc87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bccfd7b4ba8f0a8514520220105b6b6f50031eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342695"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384992"
 ---
 # <a name="different-ways-of-handling-irps---cheat-sheet"></a>不同的 IRP 处理方法 - 速查表 
 
@@ -73,7 +73,7 @@ DispatchRoutine_1(
 
 ### <a name="scenario-2-forward-and-wait"></a>方案 2：正向和等待
 
-如果驱动程序想要将转发到较低的驱动程序 IRP 并等待其返回，以便它可以处理 IRP，请使用下面的代码。 这么做通常是处理 PNP Irp 时。 例如，接收[执行了 IRP_MN_START_DEVICE](irp-mn-start-device.md) IRP，您必须转发到总线驱动程序 IRP 并等待它完成，才可以开始你的设备。 您可以调用[ **IoForwardIrpSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff549100)要轻松地执行此操作。
+如果驱动程序想要将转发到较低的驱动程序 IRP 并等待其返回，以便它可以处理 IRP，请使用下面的代码。 这么做通常是处理 PNP Irp 时。 例如，接收[执行了 IRP_MN_START_DEVICE](irp-mn-start-device.md) IRP，您必须转发到总线驱动程序 IRP 并等待它完成，才可以开始你的设备。 您可以调用[ **IoForwardIrpSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioforwardirpsynchronously)要轻松地执行此操作。
 
 ```cpp
 NTSTATUS
@@ -357,7 +357,7 @@ DispatchRoutine_5(
 
 ### <a name="scenario-6-send-a-synchronous-device-control-request-irpmjinternaldevicecontrolirpmjdevicecontrol-by-using-iobuilddeviceiocontrolrequest"></a>方案 6:使用 IoBuildDeviceIoControlRequest 发送同步的设备控制请求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL)
 
-下面的代码演示如何调用[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)请求以进行同步的 IOCTL 请求。  有关详细信息，请参阅[IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)并[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)。
+下面的代码演示如何调用[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)请求以进行同步的 IOCTL 请求。  有关详细信息，请参阅[IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)并[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)。
 
 ```cpp
 NTSTATUS
@@ -628,7 +628,7 @@ MakeSynchronousIoctlWithTimeOutCompletion(
 ```
 
 ### <a name="scenario-8-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statuscontinuecompletion"></a>方案 8:使用 IoBuildSynchronousFsdRequest 发送同步的非 IOCTL 请求-完成例程返回 STATUS_CONTINUE_COMPLETION
-下面的代码演示如何通过调用来同步的非 IOCTL 请求[ **IoBuildSynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548330)。 方案 6 类似如下所示的方法。
+下面的代码演示如何通过调用来同步的非 IOCTL 请求[ **IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)。 方案 6 类似如下所示的方法。
 
 ```cpp
 NTSTATUS
@@ -833,7 +833,7 @@ NTSTATUS MakeSynchronousNonIoctlRequestCompletion2(
 ```
 
 ### <a name="scenario-10-send-an-asynchronous-request-by-using-iobuildasynchronousfsdrequest"></a>方案 10:使用 IoBuildAsynchronousFsdRequest 发送的异步请求 
-此方案显示了如何通过调用发出异步请求[ **IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)。 
+此方案显示了如何通过调用发出异步请求[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)。 
 
 在异步请求中，发出请求的线程不必等待 IRP 才能完成。 可以在任意线程上下文中创建 IRP，因为 IRP 不是与线程关联。 必须提供完成例程，并完成例程释放缓冲区和 IRP，如果你不想要重复使用 IRP。 这是因为 I/O 管理器不能执行后完成清理的驱动程序创建异步 Irp (使用创建**IoBuildAsynchronousFsdRequest**并**IoAllocateIrp**)。 
 
@@ -965,7 +965,7 @@ MakeAsynchronousRequestCompletion(
 
 ### <a name="scenario-11-send-an-asynchronous-request-by-using-ioallocateirp"></a>方案 11:使用 IoAllocateIrp 发送的异步请求
 
-此方案中是类似于前面的方案中不同之处在于而不是调用[ **IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)，这种情况下使用[ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)函数来创建 IRP。
+此方案中是类似于前面的方案中不同之处在于而不是调用[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)，这种情况下使用[ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)函数来创建 IRP。
 
 ```cpp
 NTSTATUS

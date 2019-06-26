@@ -4,12 +4,12 @@ description: 标准测试元数据
 ms.assetid: A95FC176-B3A1-4bbf-833E-411CDE73C571
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b871461fc606870f35813b86e56c734c5a634603
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e951d50c37e5dbe21fc741bc5ca7937cea40d15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374037"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372991"
 ---
 # <a name="standard-test-metadata"></a>标准测试元数据
 
@@ -65,7 +65,7 @@ te Wex.Common.Tests.dll /select:@Owner='*Someone*'
 对测试任务的简短描述。
 
 <span id="_DpiAware_"></span><span id="_dpiaware_"></span><span id="_DPIAWARE_"></span>"DpiAware"  
-当设置为"true"，TAEF 将标记为 DPI 感知的进程中运行测试时，请参阅[高 DPI](https://msdn.microsoft.com/library/windows/desktop/dd464646)。
+当设置为"true"，TAEF 将标记为 DPI 感知的进程中运行测试时，请参阅[高 DPI](https://docs.microsoft.com/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)。
 
 <span id="_ExecutionGroup_"></span><span id="_executiongroup_"></span><span id="_EXECUTIONGROUP_"></span>"ExecutionGroup"  
 一组连续测试的类中需要按顺序运行，如果在执行组中以前的测试则将阻止未运行，否则将失败。 请参阅[执行组](execution-groups.md)有关详细信息。
@@ -149,7 +149,7 @@ te Wex.Common.Tests.dll /select:@Owner='*Someone*'
 <span id="_ResourceSelection_"></span><span id="_resourceselection_"></span><span id="_RESOURCESELECTION_"></span>"ResourceSelection"  
 指定要匹配 TestResources BuildResourceList(...) 所收集的测试有问题的相关的查询。 请参阅[对设备的支持](device-support.md)有关详细信息。
 
-## <a name="span-idyoucanmetadataspanspan-idyoucanmetadataspanspan-idyoucanmetadataspanyou-can-metadata"></a><span id="_You_can...__Metadata"></span><span id="_you_can...__metadata"></span><span id="_YOU_CAN...__METADATA"></span>"您可以。..."元数据
+## <a name="span-idyoucanmetadataspanspan-idyoucanmetadataspanspan-idyoucanmetadataspanyou-can-metadata"></a><span id="_You_can...__Metadata"></span><span id="_you_can...__metadata"></span><span id="_YOU_CAN...__METADATA"></span>"您可以..."元数据
 
 
 可以使用这些元数据属性，但不是保证其解释;如果他们想要团队可以使用它们。

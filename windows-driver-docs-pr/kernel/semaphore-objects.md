@@ -14,12 +14,12 @@ keywords:
 - 等待状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d512786419ff1104986e9a8d2fe080a11f6dff6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40e3f1ef03e76f03af3427e1a94ba5a9255b1e59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364104"
 ---
 # <a name="semaphore-objects"></a>信号灯对象
 
@@ -31,13 +31,13 @@ ms.locfileid: "63342718"
 
 请求的 I/O 操作的线程的上下文中运行的最高级别的驱动程序的调度例程可能会使用一个信号量来保护的调度例程之间共享的资源。 同步 I/O 操作的较低级驱动程序调度例程也可能使用信号量来保护或与驱动程序创建线程的调度例程的子集之间共享的资源。
 
-使用信号量对象的任何驱动程序必须调用[ **KeInitializeSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff552150)它等待或释放信号量之前。 下图说明了如何使用线程的驱动程序可以使用信号量对象。
+使用信号量对象的任何驱动程序必须调用[ **KeInitializeSemaphore** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializesemaphore)它等待或释放信号量之前。 下图说明了如何使用线程的驱动程序可以使用信号量对象。
 
 ![说明等待信号量对象的关系图](images/3semobj.png)
 
 上图所示，这样的驱动程序必须为信号量对象，它应该是常驻提供存储。 可以使用该驱动程序[设备扩展](device-extensions.md)的驱动程序创建的设备对象，如果它使用的控制器扩展[控制器对象](using-controller-objects.md)，或由驱动程序分配的非分页缓冲的池。
 
-当驱动程序的[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程调用**KeInitializeSemaphore**，它必须将一个指针传递给驱动程序的信号量对象的常驻存储。 此外，调用方必须指定*计数*信号量对象，如在上图所示，它确定其初始状态 （用信号通知为非零）。
+当驱动程序的[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程调用**KeInitializeSemaphore**，它必须将一个指针传递给驱动程序的信号量对象的常驻存储。 此外，调用方必须指定*计数*信号量对象，如在上图所示，它确定其初始状态 （用信号通知为非零）。
 
 调用方还必须指定*限制*的信号量，可以是以下之一：
 
@@ -57,17 +57,17 @@ ms.locfileid: "63342718"
 
 加载的驱动程序有初始化的信号量后，它可以同步对保护共享的资源的信号量的操作。 例如，驱动程序与设备专用线程，用于管理系统软盘控制器驱动程序，如队列 Irp，可能会同步 IRP 队列上一个信号量，在上图中所示：
 
-1.  该线程在调用[ **KeWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)用一个指针指向要将自身置于等待状态的已初始化的信号量对象的驱动程序提供存储。
+1.  该线程在调用[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)用一个指针指向要将自身置于等待状态的已初始化的信号量对象的驱动程序提供存储。
 
-2.  Irp 开始进入需要设备 I/O 操作。 驱动程序的调度例程下数值调节钮锁定控件，并调用互锁队列中插入每个此类 IRP [ **KeReleaseSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff553143)用一个指针指向驱动程序确定的信号量对象线程优先级提升 (*增量*，如在上图中所示)、 一个*调整*1 添加到的信号量计数为排队每个 IRP 和一个布尔值的*等待*设置为**FALSE**。 非零值的信号量计数设置为用信号通知状态，从而更改正在等待线程的状态变为就绪信号量对象。
+2.  Irp 开始进入需要设备 I/O 操作。 驱动程序的调度例程下数值调节钮锁定控件，并调用互锁队列中插入每个此类 IRP [ **KeReleaseSemaphore** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)用一个指针指向驱动程序确定的信号量对象线程优先级提升 (*增量*，如在上图中所示)、 一个*调整*1 添加到的信号量计数为排队每个 IRP 和一个布尔值的*等待*设置为**FALSE**。 非零值的信号量计数设置为用信号通知状态，从而更改正在等待线程的状态变为就绪信号量对象。
 
 3.  内核为处理器可调度线程中的执行： 即，具有较高优先级没有其他线程当前处于就绪状态和有要在更高版本的 IRQL 运行没有内核模式例程。
 
-    该线程从互锁下旋转锁控制队列中移除 IRP，将其传递到其他驱动程序例程进行进一步处理，并调用[ **KeWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)试。 如果信号量仍设置为用信号通知状态 （即，其计数保持为非零值，指示多个 Irp 处于互锁队列中的驱动程序），为就绪情况下内核再次从等待更改线程的状态。
+    该线程从互锁下旋转锁控制队列中移除 IRP，将其传递到其他驱动程序例程进行进一步处理，并调用[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)试。 如果信号量仍设置为用信号通知状态 （即，其计数保持为非零值，指示多个 Irp 处于互锁队列中的驱动程序），为就绪情况下内核再次从等待更改线程的状态。
 
     通过以这种方式使用计数信号量，此类驱动程序线程"知道"没有 IRP 要每当运行该线程从互锁的队列中删除。
 
-调用[ **KeReleaseSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff553143)与*等待*参数设置为**TRUE**指示调用方的意图立即调用**KeWait*Xxx*对象**(s) 支持例程返回时从**KeReleaseSemaphore**。
+调用[ **KeReleaseSemaphore** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)与*等待*参数设置为**TRUE**指示调用方的意图立即调用**KeWait*Xxx*对象**(s) 支持例程返回时从**KeReleaseSemaphore**。
 
 请考虑下面的设置的指导*等待*KeReleaseSemaphore 参数：
 

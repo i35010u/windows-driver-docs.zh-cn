@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b70f6e657bd4d648476688b98c6c3e3830d2324
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff3d9481fb6ac9875cd5a9fc6d2009101a4db259
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367879"
 ---
 # <a name="bug-check-0x123-cryptoselftestfailure"></a>Bug 检查 0x123：CRYPTO\_SELF\_测试\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358137"
 CRYPTO\_SELF\_测试\_故障错误检查的值为 0x00000123。 这表示加密子系统失败自我测试启动过程的强制性算法。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="cryptoselftestfailure-parameters"></a>CRYPTO\_SELF\_测试\_失败参数

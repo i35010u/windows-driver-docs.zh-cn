@@ -12,12 +12,12 @@ keywords:
 - 缓冲区 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3648eda3b91911adb525c74ae0bb720866bd00b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12ac524be304111e23ac2964158d3662ed58e498
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385761"
 ---
 # <a name="isochronous-talk-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量交谈选项
 
@@ -29,7 +29,7 @@ ms.locfileid: "63371152"
 
 ### <a name="packets-with-no-headers"></a>没有标头的数据包
 
-默认情况下，主控制器发出的附加缓冲区中的数据由**Mdl**的成员[ **ISOCH\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537401)结构，在缓冲区已附加的顺序。 默认情况下，主控制器自动拆分缓冲区大小的数据包不应超过中指定的**nMaxBytesPerFrame**成员的缓冲区的 ISOCH\_描述符结构。
+默认情况下，主控制器发出的附加缓冲区中的数据由**Mdl**的成员[ **ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)结构，在缓冲区已附加的顺序。 默认情况下，主控制器自动拆分缓冲区大小的数据包不应超过中指定的**nMaxBytesPerFrame**成员的缓冲区的 ISOCH\_描述符结构。
 
 例如，将要在 512 字节的数据包中接收其数据的设备的驱动程序将缓冲区的 ISOCH 其声明中包括以下\_描述符：
 
@@ -97,15 +97,15 @@ IsochDescriptor->nMaxBytesPerFrame = MAX_HEADER_DATA_SIZE+FIELD_OFFSET(HeaderEle
 
 应注意的方面的定义微妙的地方**nMaxBytesPerFrame**每当您的驱动程序正在传输"对话模式"中的大小可变的数据包。 有两种情况下，驱动程序必须在其中定义**nMaxBytesPerFrame**，并在这两种情况下主机控制器驱动程序截获的值分配给**nMaxBytesPerFrame**作为*最小值*帧大小，而不是最大值，如果该驱动程序传输大小是可变的帧。
 
--   在请求\_ISOCH\_分配\_资源请求，该驱动程序必须指示中的帧大小**u.IsochAllocateResources.nMaxBytesPerFrame**隶属[ **IRB**](https://msdn.microsoft.com/library/windows/hardware/ff537350)。
+-   在请求\_ISOCH\_分配\_资源请求，该驱动程序必须指示中的帧大小**u.IsochAllocateResources.nMaxBytesPerFrame**隶属[ **IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_irb)。
 
--   在请求\_ISOCH\_附加\_缓冲区请求驱动程序必须指示中的帧大小**nMaxBytesPerFrame**隶属[ **ISOCH\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537401)。
+-   在请求\_ISOCH\_附加\_缓冲区请求驱动程序必须指示中的帧大小**nMaxBytesPerFrame**隶属[ **ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)。
 
 越小框架，多个帧主机控制器驱动程序可以根据传输缓冲区。 每个帧都需要系统资源，例如时间戳和状态信息，因为较小的帧更快地消耗系统资源。 主机控制器驱动程序计算将缓冲区中容纳不下的帧数和这些帧，根据中的值所需的资源数**nMaxBytesPerFrame**。 如果小于帧大小所示**nMaxBytesPerFrame**需要资源的帧数将大于由主机控制器驱动程序计算的值，这可能会导致错误。
 
 这些注意事项不适用于驱动程序接收数据时，仅当该驱动程序正在传输中的大小可变的帧时"通信模式"。 驱动程序指定的数据传输与某一特定通道时获取与通道的资源句柄相关联的类型[**请求\_ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)请求。 该驱动程序设置的资源\_变量\_ISOCH\_中的有效负载标志**u.IsochAllocateResources.fulFlags**期间此请求，以指示它会将传输大小可变的帧。 该驱动程序设置的资源\_用\_IN\_中的活动的谈话标志**u.IsochAllocateResources.fulFlags**以指示它将使用该通道来传输，而不是接收数据。 仅当驱动程序设置这两个这些标志在资源分配请求时将主机控制器驱动程序解释**nMaxBytesPerFrame**作为最小值而不是最大值。
 
-请注意， **u.IsochAllocateResources.nMaxBufferSize**的成员[ **IRB** ](https://msdn.microsoft.com/library/windows/hardware/ff537350)始终是最大值。
+请注意， **u.IsochAllocateResources.nMaxBufferSize**的成员[ **IRB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_irb)始终是最大值。
 
 驱动程序现在可以通过只需设置传输纯标头的数据包**DataLength**为零的标头元素的成员：
 

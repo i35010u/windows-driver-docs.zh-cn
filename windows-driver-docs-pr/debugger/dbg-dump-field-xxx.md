@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 801f794c62a429485a550f72dd53ec9c9f86caa1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf0da05af0992a9bf3e71a20d095b8c161f948fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376117"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366995"
 ---
 # <a name="dbgdumpfieldxxx"></a>DBG\_DUMP\_FIELD\_XXX
 
@@ -27,7 +27,7 @@ ms.locfileid: "63376117"
 ## <span id="ddk_dbg_dump_xxx_dbx"></span><span id="DDK_DBG_DUMP_XXX_DBX"></span>
 
 
-DBG\_转储\_字段\_*XXX*位标志由**fOptions**隶属[**字段\_信息** ](https://msdn.microsoft.com/library/windows/hardware/ff545316)结构，以控制的行为[ **IG\_转储\_符号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff550906) [ **Ioctl** ](https://msdn.microsoft.com/library/windows/hardware/ff551084)操作。
+DBG\_转储\_字段\_*XXX*位标志由**fOptions**隶属[**字段\_信息** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_field_info)结构，以控制的行为[ **IG\_转储\_符号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param) [ **Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作。
 
 以下标志可以出现。
 
@@ -110,11 +110,11 @@ DBG\_转储\_字段\_*XXX*位标志由**fOptions**隶属[**字段\_信息** ](ht
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**IG\_转储\_符号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff550906)
+[**IG\_转储\_符号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)
 
-[**Ioctl**](https://msdn.microsoft.com/library/windows/hardware/ff551084)
+[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)
 
-[**FIELD\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff545316)
+[**FIELD\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_field_info)
 
  
 

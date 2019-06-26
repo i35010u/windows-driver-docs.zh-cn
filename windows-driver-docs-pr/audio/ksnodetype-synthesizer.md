@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3de630d5da533fa661c0b927b3c00535cf8424bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6901d4a57865c3f073805affe790bb0a40ea769a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333175"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359010"
 ---
 # <a name="ksnodetypesynthesizer"></a>KSNODETYPE\_合成器
 
@@ -37,39 +37,39 @@ DMusUART 音频示例驱动程序中 Microsoft Windows Driver Kit (WDK) 是一�
 
 合成器节点应支持以下必需的属性：
 
-[**KSPROPERTY\_合成器\_CAP**](https://msdn.microsoft.com/library/windows/hardware/ff537389)
+[**KSPROPERTY\_合成器\_CAP**](https://docs.microsoft.com/previous-versions/ff537389(v=vs.85))
 
-[**KSPROPERTY\_合成器\_PORTPARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff537405)
+[**KSPROPERTY\_合成器\_PORTPARAMETERS**](https://docs.microsoft.com/previous-versions/ff537405(v=vs.85))
 
 支持多个通道组的合成节点还应支持以下属性：
 
-[**KSPROPERTY\_合成器\_CHANNELGROUPS**](https://msdn.microsoft.com/library/windows/hardware/ff537390)
+[**KSPROPERTY\_合成器\_CHANNELGROUPS**](https://docs.microsoft.com/previous-versions/ff537390(v=vs.85))
 
 如果节点不支持此属性，通道组数默认为 1。
 
 合成器节点还可以支持以下可选[KSPROPSETID\_合成](kspropsetid-synth.md)并[KSPROPSETID\_合成器\_Dls](kspropsetid-synth-dls.md)属性：
 
-[**KSPROPERTY\_合成器\_LATENCYCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff537402)
+[**KSPROPERTY\_合成器\_LATENCYCLOCK**](https://docs.microsoft.com/previous-versions/ff537402(v=vs.85))
 
-[**KSPROPERTY\_SYNTH\_MASTERCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff537403)
+[**KSPROPERTY\_SYNTH\_MASTERCLOCK**](https://docs.microsoft.com/previous-versions/ff537403(v=vs.85))
 
-[**KSPROPERTY\_合成器\_RUNNINGSTATS**](https://msdn.microsoft.com/library/windows/hardware/ff537406)
+[**KSPROPERTY\_合成器\_RUNNINGSTATS**](https://docs.microsoft.com/previous-versions/ff537406(v=vs.85))
 
-[**KSPROPERTY\_合成器\_VOICEPRIORITY**](https://msdn.microsoft.com/library/windows/hardware/ff537407)
+[**KSPROPERTY\_合成器\_VOICEPRIORITY**](https://docs.microsoft.com/previous-versions/ff537407(v=vs.85))
 
-[**KSPROPERTY\_合成器\_卷**](https://msdn.microsoft.com/library/windows/hardware/ff537409)
+[**KSPROPERTY\_合成器\_卷**](https://docs.microsoft.com/previous-versions/ff537409(v=vs.85))
 
-[**KSPROPERTY\_合成器\_VOLUMEBOOST**](https://msdn.microsoft.com/library/windows/hardware/ff537410)
+[**KSPROPERTY\_合成器\_VOLUMEBOOST**](https://docs.microsoft.com/previous-versions/ff537410(v=vs.85))
 
-[**KSPROPERTY\_合成\_DLS\_追加**](https://msdn.microsoft.com/library/windows/hardware/ff537392)
+[**KSPROPERTY\_合成\_DLS\_追加**](https://docs.microsoft.com/previous-versions/ff537392(v=vs.85))
 
-[**KSPROPERTY\_合成\_DLS\_COMPACT**](https://msdn.microsoft.com/library/windows/hardware/ff537394)
+[**KSPROPERTY\_合成\_DLS\_COMPACT**](https://docs.microsoft.com/previous-versions/ff537394(v=vs.85))
 
-[**KSPROPERTY\_合成\_DLS\_下载**](https://msdn.microsoft.com/library/windows/hardware/ff537396)
+[**KSPROPERTY\_合成\_DLS\_下载**](https://docs.microsoft.com/previous-versions/ff537396(v=vs.85))
 
-[**KSPROPERTY\_合成\_DLS\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff537398)
+[**KSPROPERTY\_合成\_DLS\_卸载**](https://docs.microsoft.com/previous-versions/ff537398(v=vs.85))
 
-[**KSPROPERTY\_合成\_DLS\_WAVEFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff537400)
+[**KSPROPERTY\_合成\_DLS\_WAVEFORMAT**](https://docs.microsoft.com/previous-versions/ff537400(v=vs.85))
 
  
 

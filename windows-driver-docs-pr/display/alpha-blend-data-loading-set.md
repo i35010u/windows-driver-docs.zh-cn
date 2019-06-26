@@ -6,12 +6,12 @@ keywords:
 - alpha 混合数据加载组 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f933f52a662f1c5b375f3e45d9e5c920a007f4da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71e96537aa5558ee3d1633aec86dba5c04cbf33e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344623"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384635"
 ---
 # <a name="alpha-blend-data-loading-set"></a>Alpha 混合数据加载集
 
@@ -19,7 +19,7 @@ ms.locfileid: "63344623"
 ## <span id="ddk_alpha_blend_data_loading_set_gg"></span><span id="DDK_ALPHA_BLEND_DATA_LOADING_SET_GG"></span>
 
 
-设置 alpha 混合数据加载包括的所有定义的值的最小互操作性配置**bConfigDataType**的成员[ **DXVA\_ConfigAlphaLoad**](https://msdn.microsoft.com/library/windows/hardware/ff563129)结构。
+设置 alpha 混合数据加载包括的所有定义的值的最小互操作性配置**bConfigDataType**的成员[ **DXVA\_ConfigAlphaLoad**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)结构。
 
  
 

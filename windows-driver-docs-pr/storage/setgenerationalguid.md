@@ -4,12 +4,12 @@ description: SetGenerationalGuid
 ms.assetid: cf8e57e5-afdf-4bc2-9849-5df3fbbdd6c5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c48f906971a5afb2844a32505052fd0aba42235b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c4f6288b8742f2e19357ef830bdb412b1ecdf5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384660"
 ---
 # <a name="setgenerationalguid"></a>SetGenerationalGuid
 
@@ -32,7 +32,7 @@ ms.locfileid: "63331095"
 
 [SetTunnelModeOuterAddress](settunnelmodeouteraddress.md)
 
-**SetGenerationalGuid**方法属于未发布[MSiSCSI\_SecurityConfigOperations WMI 类](msiscsi-securityconfigoperations-wmi-class.md)。 有关参数的说明**SetGenerationalGuid**方法，请参阅成员的说明[ **SetGenerationalGuid\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565681)和[**SetGenerationalGuid\_出**](https://msdn.microsoft.com/library/windows/hardware/ff565687)结构。 微型端口驱动程序实现 MSiSCSI\_SecurityConfigOperations WMI 类必须支持此方法，如果 HBA 缓存信息。
+**SetGenerationalGuid**方法属于未发布[MSiSCSI\_SecurityConfigOperations WMI 类](msiscsi-securityconfigoperations-wmi-class.md)。 有关参数的说明**SetGenerationalGuid**方法，请参阅成员的说明[ **SetGenerationalGuid\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setgenerationalguid_in)和[**SetGenerationalGuid\_出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setgenerationalguid_out)结构。 微型端口驱动程序实现 MSiSCSI\_SecurityConfigOperations WMI 类必须支持此方法，如果 HBA 缓存信息。
 
  
 

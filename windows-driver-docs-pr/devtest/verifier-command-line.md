@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 463b13e77e3ed54609b1c733f9b18593c28d93c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11b9b8b31f3e77cf5abd47298c6e627fc7f7b1c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379871"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363755"
 ---
 # <a name="driver-verifier-command-syntax"></a>驱动程序验证程序命令语法
 
@@ -202,7 +202,7 @@ verifier /?
 
 
 
-<span id="_faultssystematic"></span><span id="_FAULTSSYSTEMATIC"></span>**/faultssystematic**  
+<span id="_faultssystematic"></span><span id="_FAULTSSYSTEMATIC"></span> **/faultssystematic**  
 指定的选项[系统资源不足模拟](systematic-low-resource-simulation.md)。 使用**而 0x40000 可**标志，用于选择系统化低资源模拟选项。
 
 <table>
@@ -507,7 +507,7 @@ verifier /?
 
 如果未启用的 I/O 验证 (通过使用 **/flags 0x10**)， **/iolevel**将被忽略。
 
-<span id="________log________LogFileName_______interval_Seconds_______"></span><span id="________log________logfilename_______interval_seconds_______"></span><span id="________LOG________LOGFILENAME_______INTERVAL_SECONDS_______"></span> **/log** *LogFileName* \[**/interval**|*Seconds*\]   
+<span id="________log________LogFileName_______interval_Seconds_______"></span><span id="________log________logfilename_______interval_seconds_______"></span><span id="________LOG________LOGFILENAME_______INTERVAL_SECONDS_______"></span> **/log** *LogFileName* \[ **/interval**|*Seconds*\]   
 具有名称创建一个日志文件*LogFileName*。 驱动程序验证程序会定期将写入到此文件的统计信息。 有关详细信息，请参阅[创建日志文件](creating-log-files.md)。
 
 如果**verifier /log**在命令行处键入命令，命令提示符不会返回。 若要关闭日志文件，并返回一条提示，请使用 CTRL + C 键。 在重新启动后，若要创建一个日志，你必须提交**verifier /log**试命令。
@@ -533,7 +533,7 @@ verifier /?
 
 
 
-<span id="_rules_Option"></span><span id="_rules_option"></span><span id="_RULES_OPTION"></span>**/rules** *选项*  
+<span id="_rules_Option"></span><span id="_rules_option"></span><span id="_RULES_OPTION"></span> **/rules** *选项*  
 可以禁用 （高级） 的规则的选项。
 
 <table>
@@ -558,11 +558,11 @@ verifier /?
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>默认值</strong> <em>ID</em></p></td>
-<td align="left"><p>设置规则<em>ID</em>为其默认状态。 有关受支持的规则，规则<em>ID</em>是<a href="https://msdn.microsoft.com/library/windows/hardware/ff560187" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560187)"> <strong>Bug 检查 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数 1 值。</p></td>
+<td align="left"><p>设置规则<em>ID</em>为其默认状态。 有关受支持的规则，规则<em>ID</em>是<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)"> <strong>Bug 检查 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数 1 值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>disable</strong> <em>ID</em></p></td>
-<td align="left"><p>禁用指定规则<em>ID</em>。 有关受支持的规则，规则<em>ID</em>是<a href="https://msdn.microsoft.com/library/windows/hardware/ff560187" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560187)"> <strong>Bug 检查 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数 1 值。</p></td>
+<td align="left"><p>禁用指定规则<em>ID</em>。 有关受支持的规则，规则<em>ID</em>是<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)"> <strong>Bug 检查 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数 1 值。</p></td>
 </tr>
 </tbody>
 </table>
@@ -687,7 +687,7 @@ verifier /?
 <span id="________livedump_______"></span><span id="________LIVEDUMP_______"></span> **/livedump**   
 启用实时违反的规则检测到的所选的验证程序扩展的内存转储收集。
 
-<span id="_______________"></span> **/?**   
+<span id="_______________"></span> **/?**    
 显示命令行帮助。
 
 有关使用这些命令的详细信息，请参阅[控制 Driver Verifier](controlling-driver-verifier.md)并[监视 Driver Verifier](monitoring-driver-verifier.md)。

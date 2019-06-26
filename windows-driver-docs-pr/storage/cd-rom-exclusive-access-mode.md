@@ -10,12 +10,12 @@ keywords:
 - CDROM_EXCLUSIVE_LOCK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35a3afa58868488480354ec6dbf066bea51a14c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d0bb6dea4075890839ed5fb7da243e52f8eb3ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368340"
 ---
 # <a name="cd-rom-exclusive-access-mode"></a>CD-ROM 独占访问模式
 
@@ -30,7 +30,7 @@ ms.locfileid: "63338322"
 
 而无需的独占访问机制，供应商为提供以下两种类型的应用程序独占访问权限的唯一方法是安装失败从其他应用程序和组件，I/O 请求的自定义筛选器驱动程序和此方法会导致系统不是稳定。 不应使用筛选器驱动程序来获得对 CD-ROM 设备的独占访问权限。
 
-若要使用的独占访问机制，应用程序必须发送[ **IOCTL\_CDROM\_独占\_访问**](https://msdn.microsoft.com/library/windows/hardware/ff559327)在被动的 CD-ROM 类驱动程序的请求\_级别 IRQL。 当调用方发出此请求时，调用方必须提供中的标识字符串**CallerName**的成员[ **CDROM\_独占\_锁**](https://msdn.microsoft.com/library/windows/hardware/ff551363). 在类驱动程序使用此字符串来识别具有独占访问权限的应用程序。
+若要使用的独占访问机制，应用程序必须发送[ **IOCTL\_CDROM\_独占\_访问**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)在被动的 CD-ROM 类驱动程序的请求\_级别 IRQL。 当调用方发出此请求时，调用方必须提供中的标识字符串**CallerName**的成员[ **CDROM\_独占\_锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_lock). 在类驱动程序使用此字符串来识别具有独占访问权限的应用程序。
 
 应用程序应尝试将其锁定之前查询设备的当前状态。 如果设备已被锁定，在类驱动程序返回的当前所有者的设备的标识字符串。 在之前锁定设备，调用方必须打开它以读/写访问模式。 因此，调用方必须具有管理员权限或权限才能在写访问权限模式下打开 CD-ROM 设备。
 
@@ -50,13 +50,13 @@ ms.locfileid: "63338322"
 
 -   系统未打开设备锁定时的请求。
 
--   发送的其他应用程序[ **IOCTL\_存储\_查询\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff560590)到 CD-ROM 类驱动程序的请求将收到来自缓存的信息设备锁定时。 具体而言，如果[**存储\_查询\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff566998)是**PropertyExistsQuery**，IOCTL 方式与其在设备时的行为相同未锁定。 此外，如果**存储\_查询\_类型**是**PropertyStandardQuery**并[**存储\_属性\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff566996)是**StorageDeviceProperty**或**StorageAdapterProperty**，IOCTL 返回 CD-ROM 类驱动程序中缓存的信息。 与其他的组合**存储\_查询\_类型**并**存储\_属性\_ID**，IOCTL 失败，出现状态值状态\_访问\_被拒绝。
+-   发送的其他应用程序[ **IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)到 CD-ROM 类驱动程序的请求将收到来自缓存的信息设备锁定时。 具体而言，如果[**存储\_查询\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ne-ntddstor-_storage_query_type)是**PropertyExistsQuery**，IOCTL 方式与其在设备时的行为相同未锁定。 此外，如果**存储\_查询\_类型**是**PropertyStandardQuery**并[**存储\_属性\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ne-ntddstor-storage_property_id)是**StorageDeviceProperty**或**StorageAdapterProperty**，IOCTL 返回 CD-ROM 类驱动程序中缓存的信息。 与其他的组合**存储\_查询\_类型**并**存储\_属性\_ID**，IOCTL 失败，出现状态值状态\_访问\_被拒绝。
 
--   发送的其他应用程序[ **IOCTL\_CDROM\_获取\_查询\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff559345) CD-ROM 类驱动程序的请求会收到缓存的信息从设备时它已锁定，且还时将其解锁。
+-   发送的其他应用程序[ **IOCTL\_CDROM\_获取\_查询\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_inquiry_data) CD-ROM 类驱动程序的请求会收到缓存的信息从设备时它已锁定，且还时将其解锁。
 
 当发生以下任一情况时，系统将删除到 CD-ROM 设备的独占访问权限：
 
--   独占访问锁的所有者发送[ **IOCTL\_CDROM\_独占\_访问**](https://msdn.microsoft.com/library/windows/hardware/ff559327) CD-ROM 类驱动程序通过对请求**RequestType**的成员[ **CDROM\_独占\_访问**](https://msdn.microsoft.com/library/windows/hardware/ff551362)设置为**ExclusiveAccessUnlockDevice**。
+-   独占访问锁的所有者发送[ **IOCTL\_CDROM\_独占\_访问**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access) CD-ROM 类驱动程序通过对请求**RequestType**的成员[ **CDROM\_独占\_访问**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_access)设置为**ExclusiveAccessUnlockDevice**。
 
 -   独占访问锁的所有者关闭设备句柄。
 

@@ -13,12 +13,12 @@ keywords:
 - 流式处理的微型驱动程序 WDK 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69095716a217e18fb93825f1c2fff581d2865cd6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fff36b0ca25a7f99d48d12f18cbb4e679f82c4a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376475"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382542"
 ---
 # <a name="kernel-streaming"></a>内核流式处理
 
@@ -44,13 +44,13 @@ Microsoft 提供了三个多媒体类驱动程序模型： 类、 流类和 AVSt
 
 [KS 分配器](ks-allocators.md)
 
-有关详细信息*portcls.sys*，请参阅[音频驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff536191)。
+有关详细信息*portcls.sys*，请参阅[音频驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/index)。
 
-若要了解如何*stream.sys*驱动程序，请参阅[流式处理微型驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568275)。
+若要了解如何*stream.sys*驱动程序，请参阅[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)。
 
 若要阅读有关 AVStream 信息，请参阅[AVStream 概述](avstream-overview.md)。
 
-[DVD 解码器微型驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff558742)的客户端*stream.sys*。
+[DVD 解码器微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)的客户端*stream.sys*。
 
 [视频捕获微型驱动程序](video-capture-devices.md)可以是任何一个客户端*stream.sys*或*ks.sys*。
 

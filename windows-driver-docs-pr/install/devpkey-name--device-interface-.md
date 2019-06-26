@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96d917d97f39fefc1117d19228251d0f792e4314
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a64b029bdae02a5e9c0437c9a6156fa6c6c44c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353819"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377258"
 ---
 # <a name="devpkeyname-device-interface"></a>DEVPKEY_NAME（设备接口）
 
@@ -60,9 +60,9 @@ DEVPKEY_NAME 的值应该用于标识用户界面项目中的最终用户的接�
 
 DEVPKEY_NAME 的值是相同的值[ **DEVPKEY_DeviceInterface_FriendlyName** ](devpkey-deviceinterface-friendlyname.md)设备属性，如果 DEVPKEY_DeviceInterface_FriendlyName 设置。 否则，DEVPKEY_NAME 不存在。
 
-可以通过调用检索的值 DEVPKEY_NAME [ **SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)。
+可以通过调用检索的值 DEVPKEY_NAME [ **SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)。
 
-有关设备接口的信息，请参阅[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)并[ **INF AddInterface 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546310)。
+有关设备接口的信息，请参阅[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)并[ **INF AddInterface 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)。
 
 Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name 属性。 但是，这些早期版本的 Windows 支持到 DEVPKEY_DeviceInterface_FriendlyName 相对应的属性。
 
@@ -91,9 +91,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name
 
 [**DEVPKEY_DeviceInterface_FriendlyName**](devpkey-deviceinterface-friendlyname.md)
 
-[**INF AddInterface Directive**](https://msdn.microsoft.com/library/windows/hardware/ff546310)
+[**INF AddInterface Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)
 
-[**SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)
+[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
  
 

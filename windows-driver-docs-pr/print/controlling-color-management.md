@@ -6,12 +6,12 @@ keywords:
 - 颜色管理 WDK 打印控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 765943a92ff35b77d246b574114c0999c78d139e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6efc0ab1515a569ab7839db5836dac80e069d53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358657"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374665"
 ---
 # <a name="controlling-color-management"></a>控制颜色管理
 
@@ -19,7 +19,7 @@ ms.locfileid: "63358657"
 
 
 
-可通过应用程序、 系统 (GDI)、 驱动程序或设备硬件控制打印机的颜色管理。 该驱动程序确定哪个组件通过检查标志中的管理颜色校正[ **BRUSHOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff538261)并[ **XLATEOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff570634)传递给其实现图形 DDI 绘图函数的结构。 定义以下标志：
+可通过应用程序、 系统 (GDI)、 驱动程序或设备硬件控制打印机的颜色管理。 该驱动程序确定哪个组件通过检查标志中的管理颜色校正[ **BRUSHOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_brushobj)并[ **XLATEOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj)传递给其实现图形 DDI 绘图函数的结构。 定义以下标志：
 
 <table>
 <colgroup>

@@ -20,12 +20,12 @@ keywords:
 - UmdfDispatcher INF 指令 WDK UMDF，语法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 265a68ae5e2139051e497fbd32321215bac2a70c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1aaa3ded78c399ea9d5291fd1c337b023a6660e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325127"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384437"
 ---
 # <a name="specifying-wdf-directives-in-inf-files"></a>在 INF 文件中指定 WDF 指令
 
@@ -34,7 +34,7 @@ ms.locfileid: "63325127"
 
 安装了 UMDF 驱动程序的 INF 文件必须包含 Microsoft Windows 驱动程序框架 (WDF) 的特定*DDInstall*部分。 INF 文件可以包含多个 WDF 特有*DDInstall*部分如果 INF 文件将安装多个 WDF 驱动程序。 每个 WDF 特有*DDInstall*部分：
 
--   对应于[ **DDInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547344)并[ **DDInstall.Services** ](https://msdn.microsoft.com/library/windows/hardware/ff547349)与特定的 WDF 驱动程序相关联的部分。
+-   对应于[ **DDInstall** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)并[ **DDInstall.Services** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)与特定的 WDF 驱动程序相关联的部分。
 
 -   由所有加载 WDF 共同安装程序，运行按任意顺序进行处理。
 
@@ -65,20 +65,20 @@ UMDF 版本 1.11 及更高版本支持**UmdfHostProcessSharing**指令。
 
 如果**UmdfDirectHardwareAccess**设置为**AllowDirectHardwareAccess**，该框架允许使用 UMDF 接口执行直接访问硬件的驱动程序。
 
-必须指定**AllowDirectHardwareAccess**如果 UMDF 驱动程序访问硬件资源，例如寄存器或端口、 中断[通用 I/O](https://msdn.microsoft.com/library/windows/hardware/hh439512) (GPIO) 的 pin 或此类串行总线连接I2C、 SPI，和串行端口。 您的驱动程序收到的所有这些资源通过*ResourcesRaw*并*ResourcesTranslated*的参数及其[ *EvtDevicePrepareHardware*](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调函数。
+必须指定**AllowDirectHardwareAccess**如果 UMDF 驱动程序访问硬件资源，例如寄存器或端口、 中断[通用 I/O](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-driver-support-overview) (GPIO) 的 pin 或此类串行总线连接I2C、 SPI，和串行端口。 您的驱动程序收到的所有这些资源通过*ResourcesRaw*并*ResourcesTranslated*的参数及其[ *EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数。
 
-**请注意**  从 UMDF 2.15 版本开始，UMDF 驱动程序不需要指定**AllowDirectHardwareAccess**为了接收硬件资源列出了在其[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调例程。 如果未指定它，驱动程序没有要有一个例外使用这些资源的访问权限：
+**请注意**  从 UMDF 2.15 版本开始，UMDF 驱动程序不需要指定**AllowDirectHardwareAccess**为了接收硬件资源列出了在其[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调例程。 如果未指定它，驱动程序没有要有一个例外使用这些资源的访问权限：
 
-如果该设备分配一个或多个连接资源 (**CmResourceTypeConnection**) 和一个或多个中断资源 (**CmResourceTypeInterrupt**)，该驱动程序可以调用[ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)从其[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调例程 (但不能从[ *EvtDriverDeviceAdd*](https://msdn.microsoft.com/library/windows/hardware/ff541693))。
+如果该设备分配一个或多个连接资源 (**CmResourceTypeConnection**) 和一个或多个中断资源 (**CmResourceTypeInterrupt**)，该驱动程序可以调用[ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)从其[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调例程 (但不能从[ *EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add))。
 
  
 
 有关将 UMDF 驱动程序连接到特定类型的资源的信息，请参阅：
 
--   [连接到 GPIO I/O 插针的 UMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/hh698244)
--   [用户模式下存储外围设备驱动程序的硬件资源](https://msdn.microsoft.com/library/windows/hardware/hh450837)
--   [连接存储的外围设备的连接 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)
--   [连接到串行端口的外设的 UMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/hh406559)
+-   [连接到 GPIO I/O 插针的 UMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gpio/connecting-a-umdf-driver-to-gpio-i-o-pins)
+-   [用户模式下存储外围设备驱动程序的硬件资源](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers)
+-   [连接存储的外围设备的连接 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)
+-   [连接到串行端口的外设的 UMDF 驱动程序](https://docs.microsoft.com/previous-versions/hh406559(v=vs.85))
 
 如果**UmdfDirectHardwareAccess**设置为**RejectDirectHardwareAccess**，框架不允许驱动程序，以使用任何硬件直接访问功能。 默认值是**RejectDirectHardwareAccess**。
 
@@ -104,7 +104,7 @@ UMDF 版本 1.11 及更高版本支持**UmdfRegisterAccessMode**指令。
 若要确保 UMDF 共同安装程序安装设备，只有一个**UmdfServiceOrder**指令必须存在于任何给定的 WDF 特定*DDInstall*部分。 即**UmdfServiceOrder**指令不能通过使用导入**Include**并**需要**指令。
 
 <a href="" id="umdfimpersonationlevel----level-"></a>**UmdfImpersonationLevel** = &lt;*level*&gt;  
-有关 UMDF 驱动程序可以具有的最大模拟级别通知框架。 一个**UmdfImpersonationLevel**指令是可选的; 如果未指定模拟级别，则默认值是**标识**。 当应用程序打开文件句柄时，该应用程序可以授予给驱动程序更高的模拟级别。 但是，该驱动程序不能调用[ **IWDFIoRequest::Impersonate** ](https://msdn.microsoft.com/library/windows/hardware/ff559136)方法来请求模拟级别大于级别的**UmdfImpersonationLevel**指定。 此指令的可能值是：
+有关 UMDF 驱动程序可以具有的最大模拟级别通知框架。 一个**UmdfImpersonationLevel**指令是可选的; 如果未指定模拟级别，则默认值是**标识**。 当应用程序打开文件句柄时，该应用程序可以授予给驱动程序更高的模拟级别。 但是，该驱动程序不能调用[ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)方法来请求模拟级别大于级别的**UmdfImpersonationLevel**指定。 此指令的可能值是：
 
 -   **匿名**
 
@@ -114,12 +114,12 @@ UMDF 版本 1.11 及更高版本支持**UmdfRegisterAccessMode**指令。
 
 -   **委派**
 
-这些值对应于中指定的值[**安全\_模拟\_级别**](https://msdn.microsoft.com/library/windows/hardware/ff560499)枚举。
+这些值对应于中指定的值[**安全\_模拟\_级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/ne-wudfddi-_security_impersonation_level)枚举。
 
 <a href="" id="umdfmethodneitheraction------------copy---reject-"></a>**UmdfMethodNeitherAction** = &lt;**Copy** | **Reject**&gt;  
-指示是否将接受该框架 (**副本**) 或拒绝 (**拒绝**) 设备的 I/O 请求时，如果请求对象包含指定的 I/O 控制代码[方法\_NEITHER](https://msdn.microsoft.com/library/windows/hardware/ff540663)缓冲访问方法。 一个**UmdfMethodNeitherAction**指令是可选的。 如果不指定指令，默认值是**拒绝**。
+指示是否将接受该框架 (**副本**) 或拒绝 (**拒绝**) 设备的 I/O 请求时，如果请求对象包含指定的 I/O 控制代码[方法\_NEITHER](https://docs.microsoft.com/windows-hardware/drivers/kernel/buffer-descriptions-for-i-o-control-codes)缓冲访问方法。 一个**UmdfMethodNeitherAction**指令是可选的。 如果不指定指令，默认值是**拒绝**。
 
-有关支持该方法的详细信息\_请参阅基于 UMDF 驱动程序中的访问方法都不缓冲区[使用既不缓冲 I/O，也不在 UMDF 驱动程序的直接 I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
+有关支持该方法的详细信息\_请参阅基于 UMDF 驱动程序中的访问方法都不缓冲区[使用既不缓冲 I/O，也不在 UMDF 驱动程序的直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-umdf-1-x-drivers#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
 
 <a href="" id="umdfdispatcher----filehandle---winusb---nativeusb-"></a>**UmdfDispatcher** = &lt;**FileHandle** | **WinUsb** | **NativeUSB**&gt;  
 通知框架将 I/O 发送 I/O 经历设备堆栈的用户模式部分后的位置。 默认情况下，I/O 发送到该发送程序 (WUDFRd.sys)。 通过设置**UmdfDispatcher**到**WinUsb**，驱动程序将指示 UMDF 将 I/O 发送到 WinUsb 体系结构。 启动在 UMDF 2.15、 指定**NativeUSB**会导致该发送程序来处理 USB I/O。
@@ -142,12 +142,12 @@ UmdfDispatcher=NativeUSB
 
 如果**UmdfKernelModeClientPolicy**设置为**AllowKernelModeClients**，框架允许要高于用户模式驱动程序，加载的内核模式驱动程序，它提供从内核模式驱动程序的 I/O 请求对用户模式驱动程序。
 
-如果**UmdfKernelModeClientPolicy**设置为**RejectKernelModeClients**，框架不允许使用内核模式驱动程序以加载用户模式驱动程序，且它不会从任何提供 I/O 请求对用户模式驱动程序的内核模式驱动程序。 如果驱动程序的 INF 文件不包含此指令，则默认值是**RejectKernelModeClients**。 有关详细信息，请参阅[支持内核模式下客户端](https://msdn.microsoft.com/library/windows/hardware/ff561214)。
+如果**UmdfKernelModeClientPolicy**设置为**RejectKernelModeClients**，框架不允许使用内核模式驱动程序以加载用户模式驱动程序，且它不会从任何提供 I/O 请求对用户模式驱动程序的内核模式驱动程序。 如果驱动程序的 INF 文件不包含此指令，则默认值是**RejectKernelModeClients**。 有关详细信息，请参阅[支持内核模式下客户端](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers)。
 
-UMDF 版本 1.9 及更高版本支持**UmdfKernelModeClientPolicy**指令。 若要允许要高于早期 UMDF 版本中的用户模式驱动程序加载的内核模式驱动程序，请参阅[内核模式下客户端支持在早期版本中 UMDF](https://msdn.microsoft.com/library/windows/hardware/ff561214#kernel-mode-client-support-in-earlier-umdf-versions)。
+UMDF 版本 1.9 及更高版本支持**UmdfKernelModeClientPolicy**指令。 若要允许要高于早期 UMDF 版本中的用户模式驱动程序加载的内核模式驱动程序，请参阅[内核模式下客户端支持在早期版本中 UMDF](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers#kernel-mode-client-support-in-earlier-umdf-versions)。
 
 <a href="" id="umdffileobjectpolicy----rejectnullandunknownfileobjects---allownullandunknownfileobjects--"></a>**UmdfFileObjectPolicy** = &lt;**RejectNullAndUnknownFileObjects** | **AllowNullAndUnknownFileObjects**&gt;   
-指示框架是否应允许处理的 I/O 请求 ([IWDFIoRequest](https://msdn.microsoft.com/library/windows/hardware/ff558985))，或者不与关联的文件对象 ([IWDFFile](https://msdn.microsoft.com/library/windows/hardware/ff558912)) 或与 (a 未知的文件对象相关联文件对象中为其驱动程序具有以前未见过创建请求）。
+指示框架是否应允许处理的 I/O 请求 ([IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest))，或者不与关联的文件对象 ([IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)) 或与 (a 未知的文件对象相关联文件对象中为其驱动程序具有以前未见过创建请求）。
 
 如果**UmdfFileObjectPolicy**设置为**RejectNullAndUnknownFileObjects**，框架不允许与 NULL 或未知文件对象相关联的请求的处理。
 
@@ -197,13 +197,13 @@ DriverCLSID={d4112073-d09b-458f-a5aa-35ef21eef5de}
 <a href="" id="driverclsid-----clsid--"></a>**DriverCLSID** = &lt;{*CLSID*}&gt;  
 **请注意**  UMDF 版本 1.11 中及更早版本，此指令很。
 
-UMDF 告知 UMDF 驱动程序的类标识符 (CLSID)。 UMDF 主机时 UMDF 加载 UMDF 驱动程序，使用 UMDF 驱动程序的 CLSID 来创建实例的 UMDF 驱动程序的[IDriverEntry](https://msdn.microsoft.com/library/windows/hardware/ff554885)接口。
+UMDF 告知 UMDF 驱动程序的类标识符 (CLSID)。 UMDF 主机时 UMDF 加载 UMDF 驱动程序，使用 UMDF 驱动程序的 CLSID 来创建实例的 UMDF 驱动程序的[IDriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)接口。
 
 <a href="" id=" umdfextensions-----cxservicename--"></a>**UmdfExtensions** = &lt;cxServiceName&gt;用于通信的驱动程序与 Microsoft 提供的类扩展驱动程序。  CxServiceName 参数对应于二进制的类扩展驱动程序与关联的服务。
 
 类扩展驱动程序的服务名称找不到作为下以下注册表项的子项：**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services**
 
-在 Windows 8.1 及更早版本，若要避免需要重新启动更新 UMDF 驱动程序时，指定**COPYFLG\_IN\_使用\_重命名**标志中[ **CopyFiles指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346)在驱动程序的 INF 文件中，在此示例中所示：
+在 Windows 8.1 及更早版本，若要避免需要重新启动更新 UMDF 驱动程序时，指定**COPYFLG\_IN\_使用\_重命名**标志中[ **CopyFiles指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)在驱动程序的 INF 文件中，在此示例中所示：
 
 ```cpp
 [VirtualSerial_Install.NT]

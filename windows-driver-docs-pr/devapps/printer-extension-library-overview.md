@@ -4,12 +4,12 @@ description: 本主题介绍了打印机扩展库，则可帮助设备制造商�
 ms.assetid: A47B17CE-BF5A-4C02-807C-890F315A13E0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de9fbe871c89b268ce541dd03816077cb55c8f3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d070674bac7259c6314aa1dd3df2d96bb3f6e7a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323389"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369363"
 ---
 # <a name="printer-extension-library-overview-for-uwp-device-apps"></a>适用于 UWP 设备应用打印机扩展库概述
 
@@ -61,9 +61,9 @@ ms.locfileid: "63323389"
 
 [打印机扩展插件接口 （v4 打印驱动程序）](https://go.microsoft.com/fwlink/p/?LinkID=299887)
 
-[作业管理 （v4 打印机驱动程序）](https://msdn.microsoft.com/library/windows/hardware/dn265419)
+[作业管理 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)
 
-[设备维护 （v4 打印机驱动程序）](https://msdn.microsoft.com/library/windows/hardware/dn265274)
+[设备维护 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
 
 [双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
 

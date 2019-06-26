@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INDICATION_WAKE_PACKET_PATTERN_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 35d662515dd2449077a176e92919b00104386a49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e855f9b62f86c11f6c2e3d923891950313b98c4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354569"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380773"
 ---
 # <a name="wditlvindicationwakepacketpatternid"></a>WDI\_TLV\_指示\_唤醒\_数据包\_模式\_ID
 
@@ -33,7 +33,7 @@ UINT32 大小 （以字节为单位）。
 
 | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                    |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | 唤醒数据包匹配的模式的 ID。 与添加模式时定义的 ID [OID\_WDI\_设置\_添加\_WOL\_模式](https://msdn.microsoft.com/library/windows/hardware/dn925858)。 |
+| UINT32 | 唤醒数据包匹配的模式的 ID。 与添加模式时定义的 ID [OID\_WDI\_设置\_添加\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-wol-pattern)。 |
 
  
 

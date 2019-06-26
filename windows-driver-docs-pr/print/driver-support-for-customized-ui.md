@@ -4,12 +4,12 @@ description: V4 打印驱动程序模型开发用于打印的打印机扩展或 
 ms.assetid: 91B0E824-1EE3-40B0-A24E-5A66C158972E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba91546c62a01b14cb74bbeabfda01343f0bc02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbd073c0eb01bbe5141d4452521795eec169525b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391958"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356080"
 ---
 # <a name="driver-support-for-customized-ui"></a>自定义 UI 的驱动程序支持
 
@@ -24,7 +24,7 @@ V4 打印驱动程序模型开发用于打印的打印机扩展或 UWP 的设备
 
 打印机扩展或 UWP 的设备应用程序中的某些约束验证可能会在提供的高度信息丰富的交互式体验方面非常有用，但它不应取代驱动程序的验证，被视为具有权威。
 
-打印机扩展和 UWP 的设备应用程序应使用[ **IPrinterQueue::SendBidiQuery** ](https://msdn.microsoft.com/library/windows/hardware/hh846197)方法，而不使任何直接的网络调用到网络资源。 如果必须访问网络资源，它应完成另一个线程上或以异步方式以防止 UI 挂起。 检索以更快地使将来的调用后，应缓存数据。
+打印机扩展和 UWP 的设备应用程序应使用[ **IPrinterQueue::SendBidiQuery** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)方法，而不使任何直接的网络调用到网络资源。 如果必须访问网络资源，它应完成另一个线程上或以异步方式以防止 UI 挂起。 检索以更快地使将来的调用后，应缓存数据。
 
 **打印机通知**
 
@@ -34,11 +34,11 @@ V4 打印驱动程序模型开发用于打印的打印机扩展或 UWP 的设备
 
 ![打印机通知行为流程图](images/notificationbhvr.png)
 
-**请注意**  务必要注意的这一事实，如果您尝试使用自定义 UI 以在 Windows 8 环境中显示一条通知，通过调用[GetForegroundWindow](https://msdn.microsoft.com/library/windows/desktop/ms633505.aspx)，通知窗口不会显示。 这是因为操作系统尝试向创建使用 GetForegroundWindow，前台窗口的线程分配较高的优先级，这不允许对话框在 Windows 8 环境。 如果你想要使用自定义 UI 可在 Windows 8 环境中显示的通知，必须执行此操作通过调用[GetDesktopWindow。](https://msdn.microsoft.com/library/windows/desktop/ms633504.aspx)
+**请注意**  务必要注意的这一事实，如果您尝试使用自定义 UI 以在 Windows 8 环境中显示一条通知，通过调用[GetForegroundWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getforegroundwindow)，通知窗口不会显示。 这是因为操作系统尝试向创建使用 GetForegroundWindow，前台窗口的线程分配较高的优先级，这不允许对话框在 Windows 8 环境。 如果你想要使用自定义 UI 可在 Windows 8 环境中显示的通知，必须执行此操作通过调用[GetDesktopWindow。](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-getdesktopwindow)
 
  
 
-**创建驱动程序事件**。 V4 打印驱动程序使用 DriverEvent XML 文件来描述 Bidi 查询和触发器的会导致驱动程序事件被引发。 而且，务必要注意的事件驱动程序仅支持标准字符串。 有关标准字符串的详细信息，请参阅[AsyncUI 默认资源文件字符串资源](https://msdn.microsoft.com/library/cc746159.aspx)。 在当前实现中，这将导致[AsyncUIBalloon](https://msdn.microsoft.com/library/cc238009(PROT.10).aspx)消息以进行创建和使用发布[MS 平移协议](https://msdn.microsoft.com/library/cc237960(PROT.13).aspx)。 此实现可能会在将来更改，以提高性能，因此它，请务必开发在 v4 打印驱动程序，以便它不会依赖项的基础协议。
+**创建驱动程序事件**。 V4 打印驱动程序使用 DriverEvent XML 文件来描述 Bidi 查询和触发器的会导致驱动程序事件被引发。 而且，务必要注意的事件驱动程序仅支持标准字符串。 有关标准字符串的详细信息，请参阅[AsyncUI 默认资源文件字符串资源](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)。 在当前实现中，这将导致[AsyncUIBalloon](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/9ec494fd-eea8-4545-8e38-5992fa7f6a4a)消息以进行创建和使用发布[MS 平移协议](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)。 此实现可能会在将来更改，以提高性能，因此它，请务必开发在 v4 打印驱动程序，以便它不会依赖项的基础协议。
 
 下图显示了协议利用率。
 
@@ -66,10 +66,10 @@ V4 打印驱动程序模型开发用于打印的打印机扩展或 UWP 的设备
 **驱动程序事件 XML 验证**。 只要您描述在驱动程序清单中正确 DriverEvent XML，XML 文件进行自动验证 INFGate 工具。
 
 ## <a name="related-topics"></a>相关主题
-[AsyncUIBalloon](https://msdn.microsoft.com/library/cc238009(PROT.10).aspx)  
-[AsyncUI 默认资源文件字符串资源](https://msdn.microsoft.com/library/cc746159.aspx)  
-[**IPrinterQueue::SendBidiQuery**](https://msdn.microsoft.com/library/windows/hardware/hh846197)  
-[MS 平移协议](https://msdn.microsoft.com/library/cc237960(PROT.13).aspx)  
+[AsyncUIBalloon](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/9ec494fd-eea8-4545-8e38-5992fa7f6a4a)  
+[AsyncUI 默认资源文件字符串资源](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/cbd34ab3-5a2a-4292-b7ce-e584020d14d7)  
+[**IPrinterQueue::SendBidiQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue-sendbidiquery)  
+[MS 平移协议](https://docs.microsoft.com/openspecs/windows_protocols/ms-pan/e44d984c-07d3-414c-8ffc-f8c8ad8512a8)  
 
 
 

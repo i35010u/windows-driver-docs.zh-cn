@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1390dd794d25609148a176df6e978fbbfc6f5a8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 562b1e7da0f7a067756b4e2335ea96889069a97e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343161"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370401"
 ---
 # <a name="ksmethodbdacreatepinfactory"></a>KSMETHOD\_BDA\_创建\_PIN\_工厂
 
@@ -56,9 +56,9 @@ ULONG，表示 pin 工厂的标识符。
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaMethodCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff556467)
+[**BdaMethodCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatepin)
 
-[**KSM\_PIN**](https://msdn.microsoft.com/library/windows/hardware/ff563453)
+[**KSM\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_ksm_pin)
 
  
 

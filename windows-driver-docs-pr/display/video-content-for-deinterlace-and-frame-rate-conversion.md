@@ -10,12 +10,12 @@ keywords:
 - 视频内容的帧速率转换 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bd9bbf34e0176d2f8fc38e42b1f32fd7b7b3ba6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b78289f0d4a0b821b9436aa9005703df3939699
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365023"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365079"
 ---
 # <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>要进行反交错和帧速率转换的视频内容
 
@@ -23,13 +23,13 @@ ms.locfileid: "63365023"
 ## <span id="ddk_video_content_for_deinterlace_and_frame_rate_conversion_gg"></span><span id="DDK_VIDEO_CONTENT_FOR_DEINTERLACE_AND_FRAME_RATE_CONVERSION_GG"></span>
 
 
-驱动程序收到视频内容的说明，以便它可以确定如何它应取消隔行扫描或帧速率转换此类内容。 驱动程序收到此视频的内容作为一个指向[ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)以下函数调用中的结构：
+驱动程序收到视频内容的说明，以便它可以确定如何它应取消隔行扫描或帧速率转换此类内容。 驱动程序收到此视频的内容作为一个指向[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)以下函数调用中的结构：
 
--   [**DeinterlaceQueryAvailableModes**](https://msdn.microsoft.com/library/windows/hardware/ff563943)
+-   [**DeinterlaceQueryAvailableModes**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes)
 
--   [**DeinterlaceQueryModeCaps**](https://msdn.microsoft.com/library/windows/hardware/ff563946)
+-   [**DeinterlaceQueryModeCaps**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps)
 
--   [**DeinterlaceOpenStream**](https://msdn.microsoft.com/library/windows/hardware/ff563935)
+-   [**DeinterlaceOpenStream**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceopenstream)
 
 下面的示例指示驱动程序上接收到的视频内容执行取消隔行和帧速率转换的方式。
 
@@ -45,7 +45,7 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>
@@ -59,7 +59,7 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p><strong>DXVA_SampleFieldInterleavedOddFirst</strong>中的枚举器<a href="https://msdn.microsoft.com/library/windows/hardware/ff564045" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564045)"> <strong>DXVA_SampleFormat</strong></a></p></td>
+<td align="left"><p><strong>DXVA_SampleFieldInterleavedOddFirst</strong>中的枚举器<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>
@@ -98,7 +98,7 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -127,7 +127,7 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -170,7 +170,7 @@ DXVA\_VideoDesc 结构填充如下所示，若要指示驱动程序可执行帧�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p><strong>DXVA_SampleProgressiveFrame</strong>中的枚举器<a href="https://msdn.microsoft.com/library/windows/hardware/ff564045" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564045)"> <strong>DXVA_SampleFormat</strong> </a>枚举</p></td>
+<td align="left"><p><strong>DXVA_SampleProgressiveFrame</strong>中的枚举器<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong> </a>枚举</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>

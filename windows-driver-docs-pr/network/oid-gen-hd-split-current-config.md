@@ -5,12 +5,12 @@ ms.assetid: fc363227-1040-45bc-8c76-2ac61606d777
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_HD_SPLIT_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7661e83c5b901833562007b6777d79a67330e1db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bffe555573f5809d975e41816bef8e0828d7a3ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369123"
 ---
 # <a name="oidgenhdsplitcurrentconfig"></a>OID\_GEN\_HD\_拆分\_当前\_配置
 
@@ -20,9 +20,9 @@ ms.locfileid: "63381331"
 <a name="remarks"></a>备注
 -------
 
-NDIS 代表微型端口驱动程序处理此 OID。 NDIS 维护当前的标头数据拆分基于微型端口驱动程序初始化属性的配置信息并[ **NDIS\_状态\_HD\_拆分\_当前\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff567370)状态指示。
+NDIS 代表微型端口驱动程序处理此 OID。 NDIS 维护当前的标头数据拆分基于微型端口驱动程序初始化属性的配置信息并[ **NDIS\_状态\_HD\_拆分\_当前\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-hd-split-current-config)状态指示。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含[ **NDIS\_HD\_拆分\_当前\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff565696)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含[ **NDIS\_HD\_拆分\_当前\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -47,11 +47,11 @@ NDIS 代表微型端口驱动程序处理此 OID。 NDIS 维护当前的标头�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_HD\_拆分\_当前\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff565696)
+[**NDIS\_HD\_拆分\_当前\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_current_config)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_状态\_HD\_拆分\_当前\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff567370)
+[**NDIS\_状态\_HD\_拆分\_当前\_配置**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-hd-split-current-config)
 
  
 

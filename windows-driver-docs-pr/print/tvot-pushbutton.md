@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ec2aa2eef0f29371e670ef7f06c7a40dd49478
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 424a61bfc744cd5270e1850c0caff425bc84b100
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390250"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362751"
 ---
 # <a name="tvotpushbutton"></a>TVOT\_PUSHBUTTON
 
@@ -29,7 +29,7 @@ ms.locfileid: "63390250"
 
 TVOT\_按键选项类型包含分组框内的推送按钮。
 
-<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://msdn.microsoft.com/library/windows/hardware/ff559656)结构  
+<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)结构  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
 取决于**样式**OPTPARAM 的成员结构，按如下所示。
@@ -67,7 +67,7 @@ TVOT\_按键选项类型包含分组框内的推送按钮。
 
  
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM** ](https://msdn.microsoft.com/library/windows/hardware/ff559660)结构数组 (**pOptParam**的成员[ **OPTTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff559670))  
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)结构数组 (**pOptParam**的成员[ **OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype))  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
 取决于**样式**成员，如下所示。
@@ -86,7 +86,7 @@ TVOT\_按键选项类型包含分组框内的推送按钮。
 <tbody>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>-类型化函数。</p></td>
+<td><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback)"> <strong>_CPSUICALLBACK</strong></a>-类型化函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_DLGPROC</p></td>
@@ -98,7 +98,7 @@ TVOT\_按键选项类型包含分组框内的推送按钮。
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_HTSETUP</p></td>
-<td><p>指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff552832" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552832)"> <strong>DEVHTADJDATA</strong> </a>结构。</p></td>
+<td><p>指向<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_devhtadjdata" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_devhtadjdata)"> <strong>DEVHTADJDATA</strong> </a>结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -162,12 +162,12 @@ TVOT\_按键选项类型包含分组框内的推送按钮。
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_CALLBACK"></span><span id="pushbutton_type_callback"></span>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>CPSUI 调用应用程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>的类型化回调函数来处理与按钮事件<a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>结构的<strong>原因</strong>成员设置为 CPSUICB_REASON_PUSHBUTTON。 （CPSUI 忽略回调函数的返回值。）</p></td>
+<td><p>CPSUI 调用应用程序的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback)"> <strong>_CPSUICALLBACK</strong></a>的类型化回调函数来处理与按钮事件<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam)"> <strong>CPSUICBPARAM</strong> </a>结构的<strong>原因</strong>成员设置为 CPSUICB_REASON_PUSHBUTTON。 （CPSUI 忽略回调函数的返回值。）</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="PUSHBUTTON_TYPE_DLGPROC"></span><span id="pushbutton_type_dlgproc"></span>PUSHBUTTON_TYPE_DLGPROC</p></td>
-<td><p>应用程序的对话框过程处理按钮的事件。 (有关详细信息，请参阅<strong>备注</strong>部分，了解<a href="https://msdn.microsoft.com/library/windows/hardware/ff547607" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547607)"> <strong>DLGPAGE</strong></a>。)</p>
-<p>当函数收到 WM_INITDIALOG 消息，其<em>lParam</em>自变量指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>结构<strong>原因</strong>成员设置为 CPSUICB_REASON_DLGPROC。</p></td>
+<td><p>应用程序的对话框过程处理按钮的事件。 (有关详细信息，请参阅<strong>备注</strong>部分，了解<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage)"> <strong>DLGPAGE</strong></a>。)</p>
+<p>当函数收到 WM_INITDIALOG 消息，其<em>lParam</em>自变量指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam)"> <strong>CPSUICBPARAM</strong> </a>结构<strong>原因</strong>成员设置为 CPSUICB_REASON_DLGPROC。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_HTCLRADJ"></span><span id="pushbutton_type_htclradj"></span>PUSHBUTTON_TYPE_HTCLRADJ</p></td>
@@ -182,7 +182,7 @@ TVOT\_按键选项类型包含分组框内的推送按钮。
 
  
 
-<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)结构  
+<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)结构  
 
 <span id="___________Type__________"></span><span id="___________type__________"></span><span id="___________TYPE__________"></span> Type   
 TVOT\_PUSHBUTTON
@@ -194,11 +194,11 @@ TVOT\_PUSHBUTTON
 可以指定以下可选的位标志。
 
 <span id="OTS_PUSH_ENABLE_ALWAYS"></span><span id="ots_push_enable_always"></span>OTS\_推送\_启用\_始终为  
-如果设置，推送按钮始终会启用，即使用户不能修改属性表页 (即，即使 CPSUIF\_更新\_未设置权限[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211)结构)。
+如果设置，推送按钮始终会启用，即使用户不能修改属性表页 (即，即使 CPSUIF\_更新\_未设置权限[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)结构)。
 
 推送按钮的回调函数必须显示其对话框中，但它不能允许用户修改。
 
-注意：您还必须在设置此标志**标志**的成员[ **OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)结构。
+注意：您还必须在设置此标志**标志**的成员[ **OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)结构。
 
 <span id="OTS_PUSH_INCL_SETUP_TITLE"></span><span id="ots_push_incl_setup_title"></span>OTS\_推送\_包括\_安装程序\_标题  
 如果设置，CPSUI 包含单词"设置"按钮的名称字符串后面 (**pName** OPTITEM 中)。
@@ -207,7 +207,7 @@ TVOT\_PUSHBUTTON
 如果设置，CPSUI 包括三个点 （...） 按钮的名称字符串后面 (**pName** OPTITEM 中)。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-如果**pDlgPage**中[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211)标识 CPSUI 提供的页，或者如果**DlgTemplateID**中[ **DLGPAGE** ](https://msdn.microsoft.com/library/windows/hardware/ff547607)标识 CPSUI 提供模板**BegCtrlID**不使用。
+如果**pDlgPage**中[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)标识 CPSUI 提供的页，或者如果**DlgTemplateID**中[ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage)标识 CPSUI 提供模板**BegCtrlID**不使用。
 
 否则为**BegCtrlID**必须包含一组按顺序编号的控件标识符的第一个控件标识符。 控件标识符必须标识以下 Windows 控件：
 
@@ -252,7 +252,7 @@ TVOT\_PUSHBUTTON
 
  
 
-有关其他信息，请参阅[Customizing CPSUI-Supported 窗口控件](https://msdn.microsoft.com/library/windows/hardware/ff547296)。
+有关其他信息，请参阅[Customizing CPSUI-Supported 窗口控件](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)。
 
 <a name="requirements"></a>要求
 ------------

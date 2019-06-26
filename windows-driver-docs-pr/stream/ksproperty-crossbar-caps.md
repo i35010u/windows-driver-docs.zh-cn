@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a78ddd12b15bb56efb6207bee26e218144027ab3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0618a49d946f58712bc732da801532a3924a1874
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387448"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373091"
 ---
 # <a name="kspropertycrossbarcaps"></a>KSPROPERTY\_CROSSBAR\_CAPS
 
@@ -53,7 +53,7 @@ KSPROPERTY\_纵横制\_CAPS 属性检索的设备 （输入和输出插针上纵
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565120" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_CAPS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565120)"><strong>KSPROPERTY_CROSSBAR_CAPS_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_crossbar_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_CAPS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_crossbar_caps_s)"><strong>KSPROPERTY_CROSSBAR_CAPS_S</strong></a></p></td>
 <td><p>对的 ULONGs</p></td>
 </tr>
 </tbody>
@@ -84,7 +84,7 @@ KSPROPERTY\_纵横制\_CAPS 属性检索的设备 （输入和输出插针上纵
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CROSSBAR\_CAPS\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565120)
+[**KSPROPERTY\_CROSSBAR\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_crossbar_caps_s)
 
  
 

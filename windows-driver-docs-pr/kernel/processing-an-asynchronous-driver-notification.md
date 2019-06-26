@@ -8,17 +8,17 @@ keywords:
 - 注册驱动程序通知 WDK 动态硬件分区，异步
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e69b632b3356a4f9a0eea762c77d4a7e0594682
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15a926e447e2ce368943e3ce6342b20f1a28f145
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378816"
 ---
 # <a name="processing-an-asynchronous-driver-notification"></a>处理异步驱动程序通知
 
 
-当操作系统将调用注册的回调函数时，会传递一个指向[**设备\_界面\_更改\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff543134)结构*NotificationStructure*参数。
+当操作系统将调用注册的回调函数时，会传递一个指向[**设备\_界面\_更改\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_interface_change_notification)结构*NotificationStructure*参数。
 
 下面的代码示例显示了处理异步驱动程序通知处理器的回调函数的实现：
 

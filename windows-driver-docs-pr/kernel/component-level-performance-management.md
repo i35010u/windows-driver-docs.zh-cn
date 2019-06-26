@@ -4,12 +4,12 @@ description: 电源管理框架 (PoFx) 从 Windows 10 开始，使驱动程序�
 ms.assetid: D5341D6D-7C71-43CB-9C70-7E939B32C33F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e10d95d11c5d8620ab9f84a5f7dfe90f6090f6b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9df895638ec56c6c814fe2586e7a55df24bc5a56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377219"
 ---
 # <a name="component-level-performance-state-management"></a>组件级性能状态管理
 
@@ -42,18 +42,18 @@ PoFx 启用定义以下类型的每个组件的性能状态的设备：
 
 1.  该驱动程序将注册要由 PoFx 管理的设备组件。 有关详细信息，请参阅[组件级别电源管理](component-level-power-management.md)。
 
-2.  该驱动程序通过调用注册为支持性能状态[ **PoFxRegisterComponentPerfStates**](https://msdn.microsoft.com/library/windows/hardware/dn939778)。 作为注册调用的一部分，驱动程序可以自行定义给定的组件的性能状态或推迟到平台扩展插件 (PEP) 改为定义它们。
+2.  该驱动程序通过调用注册为支持性能状态[ **PoFxRegisterComponentPerfStates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)。 作为注册调用的一部分，驱动程序可以自行定义给定的组件的性能状态或推迟到平台扩展插件 (PEP) 改为定义它们。
 
     设备驱动程序或 PEP 必须保存性能状态，包括每个组件的性能状态 （离散或基于范围的） 的类型和值的详细信息和计数的实际性能的性能状态集的数量的知识状态。 如果 PEP 不支持性能状态，驱动程序可能仍注册，以便与 PoFx 性能状态支持和通知的日志记录和分析 Windows Performance Analyzer (WPA) 中的性能状态更改的操作系统。
 
-    在任一情况下，成功完成后[ **PoFxRegisterComponentPerfStates**](https://msdn.microsoft.com/library/windows/hardware/dn939778)，该驱动程序有[ **PO\_FX\_组件\_PERF\_INFO** ](https://msdn.microsoft.com/library/windows/hardware/dn939832)结构，其中包含已注册的性能状态集。
+    在任一情况下，成功完成后[ **PoFxRegisterComponentPerfStates**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)，该驱动程序有[ **PO\_FX\_组件\_PERF\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_info)结构，其中包含已注册的性能状态集。
 
-3.  当驱动程序决定一个组件，应更改性能状态时，它将调用[ **PoFxIssueComponentPerfStateChange** ](https://msdn.microsoft.com/library/windows/hardware/dn939769)或[ **PoFxIssueComponentPerfStateChangeMultiple**](https://msdn.microsoft.com/library/windows/hardware/dn939772)。 PoFx 调用驱动程序提供[ **ComponentPerfStateCallback** ](https://msdn.microsoft.com/library/windows/hardware/dn939353)例程性能状态更改完成后。
+3.  当驱动程序决定一个组件，应更改性能状态时，它将调用[ **PoFxIssueComponentPerfStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechange)或[ **PoFxIssueComponentPerfStateChangeMultiple**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)。 PoFx 调用驱动程序提供[ **ComponentPerfStateCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_perf_state_callback)例程性能状态更改完成后。
 
-4.  该驱动程序将得到通知，通过[ **ComponentPerfStateCallback** ](https://msdn.microsoft.com/library/windows/hardware/dn939353)例程是否 PEP 成功或拒绝的性能状态更改。 如果 PEP 成功更改，该驱动程序然后执行它需要从其角度来看有关更改的性能状态的任何工作。 如果 PEP 拒绝更改，该驱动程序可以选择不执行任何操作，或重试该请求再次与相同或一个备用的性能状态。
+4.  该驱动程序将得到通知，通过[ **ComponentPerfStateCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_perf_state_callback)例程是否 PEP 成功或拒绝的性能状态更改。 如果 PEP 成功更改，该驱动程序然后执行它需要从其角度来看有关更改的性能状态的任何工作。 如果 PEP 拒绝更改，该驱动程序可以选择不执行任何操作，或重试该请求再次与相同或一个备用的性能状态。
 
 ## <a name="related-topics"></a>相关主题
-[设备电源管理的参考](https://msdn.microsoft.com/library/windows/hardware/hh450958)  
+[设备电源管理的参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 
 
 

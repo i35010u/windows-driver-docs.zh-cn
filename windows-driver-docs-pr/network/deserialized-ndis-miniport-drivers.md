@@ -8,12 +8,12 @@ keywords:
 - 反序列化的 NDIS 微型端口驱动程序 WDK 网络
 ms.date: 01/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f482562c043fac91c9d9d18172f586b57ebe8ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9c3cf06239430cbb30659b38ffcf3202913a673
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347407"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381433"
 ---
 # <a name="deserialized-ndis-miniport-drivers"></a>反序列化的 NDIS 微型端口驱动程序
 
@@ -45,7 +45,7 @@ ms.locfileid: "63347407"
 
 反序列化的微型端口驱动程序必须满足以下驱动程序内部的要求：
 
--   反序列化的微型端口驱动程序必须保护其网络缓冲区队列[旋转锁](https://msdn.microsoft.com/library/windows/hardware/ff548114)。 反序列化的微型端口驱动程序还必须保护其共享的状态同时访问由其自身*MiniportXxx*函数。
+-   反序列化的微型端口驱动程序必须保护其网络缓冲区队列[旋转锁](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-spin-locks)。 反序列化的微型端口驱动程序还必须保护其共享的状态同时访问由其自身*MiniportXxx*函数。
 
 -   反序列化的微型端口驱动程序*MiniportXxx*函数可以运行在 IRQL &lt;= 调度\_级别。 因此，驱动程序编写器不能假定*MiniportXxx*将处理请求的顺序调用函数。 一个*MiniportXxx*函数可以抢占另*MiniportXxx*在较低的 IRQL 运行的函数。
 

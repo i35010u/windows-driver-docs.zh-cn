@@ -3,12 +3,12 @@ Description: 设备测试的目标是要测试针对各种中心方案的设备�
 title: 测试与 MUTT 设备的 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40160a68101b12e60d5398c333c5c4e587201868
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e7eeeae233407fefb0ed6c4831379754e1bfc0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368817"
 ---
 # <a name="usb-device-testing-with-mutt-devices"></a>测试与 MUTT 设备的 USB 设备
 
@@ -26,7 +26,7 @@ ms.locfileid: "63379914"
 ## <a name="suggested-device-tests"></a>建议的设备测试
 
 
--   USB IF 电气测试。 所有我们的测试都是协议和已设定焦点的状态。 请参阅[USB-如果符合性计划](http://www.usb.org/developers/compliance/)的电气测试的详细信息。
+-   USB IF 电气测试。 所有我们的测试都是协议和已设定焦点的状态。 请参阅[USB-如果符合性计划](https://www.usb.org/compliance)的电气测试的详细信息。
 -   设备基本测试。 有关详细信息，请参阅[如何为 MUTT 设备运行 Visual Studio 中的说明测试](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)。
 -   控制器 Windows 硬件认证工具包测试。 有关详细信息，请参阅[USB-如果证书验证测试 （控制器）](https://go.microsoft.com/fwlink/p/?linkid=316509)。
 -   对于主机控制器，在部分中的 Windows 测试指南文档中找到的手动测试用例。
@@ -45,7 +45,7 @@ ms.locfileid: "63379914"
     ![设备是下游 mutt 包中](images/fig14-topology-downstream-muttpack.png)
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
 
 

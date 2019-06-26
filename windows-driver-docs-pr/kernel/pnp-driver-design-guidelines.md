@@ -7,12 +7,12 @@ keywords:
 - 插 WDK 内核，设计指南
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 368f95f7c62af38a3bcd99033c160b66cffb1382
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbd66ec8c5055c10df64245ef73315e0d7deb7ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369235"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383280"
 ---
 # <a name="pnp-driver-design-guidelines"></a>PnP 驱动程序设计指导原则
 
@@ -36,15 +36,15 @@ ms.locfileid: "63369235"
 
 -   它必须包含[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines#feedback)例程。
 
-    必须处理此调度例程[ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)请求和关联的次要函数代码。 有关详细信息，请参阅[DispatchPnP 例程](dispatchpnp-routines.md)。
+    必须处理此调度例程[ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)请求和关联的次要函数代码。 有关详细信息，请参阅[DispatchPnP 例程](dispatchpnp-routines.md)。
 
 -   它必须搜索硬件。
 
-    PnP 管理器负责确定硬件设备存在。 当 PnP 管理器检测到设备时，它将通知该驱动程序通过调用其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。 启动系统，或任何时候用户添加的设备，或从正在运行的系统中删除时，可以检测到硬件。
+    PnP 管理器负责确定硬件设备存在。 当 PnP 管理器检测到设备时，它将通知该驱动程序通过调用其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 启动系统，或任何时候用户添加的设备，或从正在运行的系统中删除时，可以检测到硬件。
 
 -   它必须分配硬件资源。
 
-    即插即用驱动程序必须提供的设备有可能使用的资源的列表的即插即用管理器。 PnP 管理器负责将资源分配给每个设备，以及时它将发送通知的每个设备分配驱动程序[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求。 因此，驱动程序必须能够使用硬件资源的各种配置。
+    即插即用驱动程序必须提供的设备有可能使用的资源的列表的即插即用管理器。 PnP 管理器负责将资源分配给每个设备，以及时它将发送通知的每个设备分配驱动程序[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 因此，驱动程序必须能够使用硬件资源的各种配置。
 
 某些驱动程序可独立的即插即用的详细信息和系统提供的端口或类驱动程序的电源管理。 例如，SCSI 端口驱动程序隔离的 SCSI 微型端口驱动程序由许多的强大功能和即插即用系统的详细信息，因此不需要直接处理能力和 PnP Irp SCSI 微型端口驱动程序。 此类驱动程序，请参阅所需的即插即用支持的详细信息的特定于驱动程序的文档。
 

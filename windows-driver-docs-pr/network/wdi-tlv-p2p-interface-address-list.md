@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_INTERFACE_ADDRESS_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c5bfbd8b5f56b3b329aeaaae9540cb1c6bcc47ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d09ca2f457750358144b6fea1c10046331975b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353612"
 ---
 # <a name="wditlvp2pinterfaceaddresslist"></a>WDI\_TLV\_P2P\_INTERFACE\_ADDRESS\_LIST
 
@@ -26,14 +26,14 @@ WDI\_TLV\_P2P\_界面\_地址\_列表是包含 Wi-Fi Direct 接口的地址列�
 ## <a name="length"></a>长度
 
 
-数组的大小 （以字节为单位） [ **WDI\_MAC\_地址**](https://msdn.microsoft.com/library/windows/hardware/dn926071)结构。 该数组必须包含一个或多个结构。
+数组的大小 （以字节为单位） [ **WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构。 该数组必须包含一个或多个结构。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                  | 描述                      |
 |-------------------------------------------------------|----------------------------------|
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071)\[\] | Wi-fi MAC 地址的数组。 |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | Wi-fi MAC 地址的数组。 |
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - INF 文件 WDK 打印、 自定义驱动程序组件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c23c770664e571cf2a75e5e2b274e4e070cf54a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0e2c9c35a053b92a8e941e843a955f91334bc6b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366832"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385971"
 ---
 # <a name="installing-customized-driver-components"></a>安装自定义的驱动程序组件
 
@@ -51,7 +51,7 @@ OEMDriverFile2=XYZDRV2.DLL
 
 在.ini 文件可以包含 ANSI 或 Unicode 文本，但建议使用 Unicode 文本。 在.ini 文件中，行开头的井号 (\#) 条评论。
 
-有关详细信息，请参阅[INF 文件的一般准则](https://msdn.microsoft.com/library/windows/hardware/ff544975)并[安装 Unidrv 微型驱动程序](installing-a-unidrv-minidriver.md)。
+有关详细信息，请参阅[INF 文件的一般准则](https://docs.microsoft.com/windows-hardware/drivers/install/general-guidelines-for-inf-files)并[安装 Unidrv 微型驱动程序](installing-a-unidrv-minidriver.md)。
 
 如果你提供打印机 INF 文件，方便地安装和注册自定义的组件是使组件*依赖文件*的打印机驱动程序。 此外，可以作为依赖文件安装关联的.inf 文件。 有关对打印机驱动程序的依赖文件的详细信息，请参阅[打印机 INF 文件条目](printer-inf-file-entries.md)。
 

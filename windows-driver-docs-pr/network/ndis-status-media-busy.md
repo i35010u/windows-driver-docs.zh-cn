@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_MEDIA_BUSY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c0f8b53a90add4e68cff18ea900b7b6ea8ec38
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8496c09270a20f5c132ba12e06f70eeb5e7f00d5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380210"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368571"
 ---
 # <a name="ndisstatusmediabusy"></a>NDIS\_状态\_媒体\_忙
 
@@ -21,7 +21,7 @@ NDIS\_状态\_媒体\_忙碌状态指示 IRDA 媒体正忙。
 <a name="remarks"></a>备注
 -------
 
-详细了解 NDIS\_状态\_媒体\_繁忙状态，请参阅[OID\_IRDA\_媒体\_忙](https://msdn.microsoft.com/library/windows/hardware/ff560284)。
+详细了解 NDIS\_状态\_媒体\_繁忙状态，请参阅[OID\_IRDA\_媒体\_忙](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560284(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------
@@ -46,7 +46,7 @@ NDIS\_状态\_媒体\_忙碌状态指示 IRDA 媒体正忙。
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_IRDA\_MEDIA\_BUSY](https://msdn.microsoft.com/library/windows/hardware/ff560284)
+[OID\_IRDA\_MEDIA\_BUSY](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560284(v=vs.85))
 
  
 

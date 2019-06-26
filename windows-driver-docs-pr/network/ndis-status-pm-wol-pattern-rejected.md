@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PM_WOL_PATTERN_REJECTED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1448707fc13435ea58e8e7c0fbeef8a645def9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f8b18c4093f7b697834cbdabd517cdaa937a3a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363073"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381197"
 ---
 # <a name="ndisstatuspmwolpatternrejected"></a>NDIS\_状态\_PM\_WOL\_模式\_已拒绝
 
@@ -21,13 +21,13 @@ NDIS\_状态\_PM\_WOL\_模式\_已拒绝状态指示为过量电源管理唤醒 
 <a name="remarks"></a>备注
 -------
 
-NDIS 或微型端口驱动程序可以生成 NDIS\_状态\_PM\_WOL\_模式\_已拒绝状态指示当其中任一个删除 WOL 模式时。 **StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构包含的 WOL 模式标识符的 ULONG拒绝 WOL 模式。 NDIS 提供中的 WOL 模式标识符**PatternId**的成员[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)结构。
+NDIS 或微型端口驱动程序可以生成 NDIS\_状态\_PM\_WOL\_模式\_已拒绝状态指示当其中任一个删除 WOL 模式时。 **StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含的 WOL 模式标识符的 ULONG拒绝 WOL 模式。 NDIS 提供中的 WOL 模式标识符**PatternId**的成员[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构。
 
 NDIS 生成 NDIS\_状态\_PM\_WOL\_模式\_已拒绝状态指示它必须从网络适配器中删除以前添加的 WOL 模式。 例如，NDIS 可能会删除以释放资源的更高的优先级 WOL 模式的 WOL 模式。 添加已删除的模式的绑定将只发送通知事件。
 
 对于使用基础结构元素来卸载模式以及在基础结构间漫游的无线网络适配器，就可以新基础结构元素可能不支持与前一个相同的功能。 在这种情况下，微型端口驱动程序可以向 NDIS，发出的状态指示，NDIS 将会发布 NDIS\_状态\_PM\_WOL\_模式\_拒绝特定错误代码。
 
-WiFi 驱动程序可能会缓存本地唤醒模式。 当驱动程序用于添加或删除唤醒模式处理 OID 时，该驱动程序可以选择仅更新其本地缓存。 该驱动程序可以延迟的基础结构更新，直到收到[OID\_PM\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569768)OID。
+WiFi 驱动程序可能会缓存本地唤醒模式。 当驱动程序用于添加或删除唤醒模式处理 OID 时，该驱动程序可以选择仅更新其本地缓存。 该驱动程序可以延迟的基础结构更新，直到收到[OID\_PM\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)OID。
 
 基础结构可能没有足够的资源来满足所有唤醒模式。 在这种情况下，基础结构可以接受唤醒模式的部分列表。 微型端口驱动程序完成 OID\_PM\_参数设置请求，该驱动程序必须进行 NDIS\_状态\_PM\_WOL\_模式\_已拒绝状态为每个访问点 (AP) 拒绝的 WOL 模式的迹象。
 
@@ -54,11 +54,11 @@ WiFi 驱动程序可能会缓存本地唤醒模式。 当驱动程序用于添�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_PM\_WOL\_PATTERN**](https://msdn.microsoft.com/library/windows/hardware/ff566768)
+[**NDIS\_PM\_WOL\_PATTERN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_PM\_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff569768)
+[OID\_PM\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)
 
  
 

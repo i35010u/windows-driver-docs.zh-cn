@@ -4,12 +4,12 @@ description: MB 原始 IP 数据包处理支持
 ms.assetid: 1c3327fa-1858-4247-9a18-b49d26e9a095
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54d702bc34e0e6269258d9394ae39914cba4fcda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0bbe7a81c027247557cd66b9d749e4ccae03413
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374021"
 ---
 # <a name="mb-raw-ip-packet-processing-support"></a>MB 原始 IP 数据包处理支持
 
@@ -20,7 +20,7 @@ ms.locfileid: "63348256"
 
 -   为 IPv4 数据包：
 
-    **NblFlags**的成员[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构必须设置为 NDIS\_NBL\_标志\_IS\_IPV4。
+    **NblFlags**的成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构必须设置为 NDIS\_NBL\_标志\_IS\_IPV4。
 
     **NetBufferListFrameType** NET 成员\_缓冲区\_列表结构必须设置为以网络字节顺序 0x0800 (Ethertype IPv4)。
 
@@ -30,13 +30,13 @@ ms.locfileid: "63348256"
 
     **NetBufferListFrameType** NET 成员\_缓冲区\_列表结构必须设置为以网络字节顺序 0x86dd (Ethertype IPv6)。
 
-微型端口驱动程序可以使用[ **NdisSetNblFlag** ](https://msdn.microsoft.com/library/windows/hardware/ff564542)宏在 net 缓冲区列表中设置标志。 下面一行演示了如何在 net 缓冲区列表中设置 IPv4 数据包标志：
+微型端口驱动程序可以使用[ **NdisSetNblFlag** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndissetnblflag)宏在 net 缓冲区列表中设置标志。 下面一行演示了如何在 net 缓冲区列表中设置 IPv4 数据包标志：
 
 ```C++
 NdisSetNblFlag(pNbl, NDIS_NBL_FLAGS_IS_IPV4);
 ```
 
-微型端口驱动程序可以使用[ **NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff568401)获取和设置 net 缓冲区列表中的信息。 下面一行演示了如何修改**NetBufferListFrameType** OOB IPV4 数据包的网络缓冲区列表中：
+微型端口驱动程序可以使用[ **NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)获取和设置 net 缓冲区列表中的信息。 下面一行演示了如何修改**NetBufferListFrameType** OOB IPV4 数据包的网络缓冲区列表中：
 
 ```C++
 Value = ConvertToNetworkByteOrder(0x0800);

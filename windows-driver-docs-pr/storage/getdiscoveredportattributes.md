@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fde95e3872e481915bdfd6ee6cc7c61e9e051b86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f1ab1075a2443b10cd16d7876df93586e221cc8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383141"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378557"
 ---
 # <a name="getdiscoveredportattributes-function"></a>GetDiscoveredPortAttributes 函数
 
@@ -43,16 +43,16 @@ void GetDiscoveredPortAttributes(
 ----------
 
 *PortIndex*   
-索引类型 Nx 的本地端口\_用来查询已发现的远程端口的端口。 此信息传递到中的微型端口驱动程序**PortIndex**的成员[ **GetDiscoveredPortAttributes\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553927)结构。
+索引类型 Nx 的本地端口\_用来查询已发现的远程端口的端口。 此信息传递到中的微型端口驱动程序**PortIndex**的成员[ **GetDiscoveredPortAttributes\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_in)结构。
 
 *DiscoveredPortIndex*   
-要查询的远程端口的索引。 此信息传递到中的微型端口驱动程序**DiscoveredPortIndex**的成员[ **GetDiscoveredPortAttributes\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553927)结构。
+要查询的远程端口的索引。 此信息传递到中的微型端口驱动程序**DiscoveredPortIndex**的成员[ **GetDiscoveredPortAttributes\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_in)结构。
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetDiscoveredPortAttributes\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553930)结构。
+在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetDiscoveredPortAttributes\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)结构。
 
 *PortAttributes*   
-类型的结构[ **MSFC\_HBAPortAttributesResults** ](https://msdn.microsoft.com/library/windows/hardware/ff562510)中的哪些属性发现 FC\_端口可能会返回。 微型端口驱动程序将返回此信息**PortAttributes**的成员[ **GetDiscoveredPortAttributes\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553930)结构。
+类型的结构[ **MSFC\_HBAPortAttributesResults** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)中的哪些属性发现 FC\_端口可能会返回。 微型端口驱动程序将返回此信息**PortAttributes**的成员[ **GetDiscoveredPortAttributes\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -91,11 +91,11 @@ void GetDiscoveredPortAttributes(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetDiscoveredPortAttributes\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff553927)
+[**GetDiscoveredPortAttributes\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_in)
 
-[**GetDiscoveredPortAttributes\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff553930)
+[**GetDiscoveredPortAttributes\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)
 
-[**MSFC\_HBAPortAttributesResults**](https://msdn.microsoft.com/library/windows/hardware/ff562510)
+[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
 
  
 

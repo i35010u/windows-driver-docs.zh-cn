@@ -9,12 +9,12 @@ keywords:
 - LayoutFile 指令 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e91cfb940c45135048c58fb346701b223b3051de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d635074fd5bcae4a3aba87b6e8db0801f7620225
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379864"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372769"
 ---
 # <a name="omitting-layoutfile-and-catalogfile-information"></a>省略 LayoutFile 和 CatalogFile 信息
 
@@ -30,7 +30,7 @@ Class=Display
 DriverVer=11/22/2004, 6.14.10.7000
 ```
 
-有关详细信息**版本**部分，并与之关联的指令**版本**，请参阅[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)。
+有关详细信息**版本**部分，并与之关联的指令**版本**，请参阅[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)。
 
  
 

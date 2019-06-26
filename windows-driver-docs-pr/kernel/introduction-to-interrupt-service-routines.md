@@ -12,12 +12,12 @@ keywords:
 - InterruptMessageService
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9313c319a2811550fc67331c3381566b96da272a
-ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
+ms.openlocfilehash: d9abcb3032a9003aa774e3b764f77fbce850b713
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369730"
 ---
 # <a name="introduction-to-interrupt-service-routines"></a>中断服务例程简介
 
@@ -30,9 +30,9 @@ ms.locfileid: "67041368"
 
 系统支持两种不同类型的 Isr:
 
--   该驱动程序可以注册[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)例程来处理基于行或消息信号中断。 （这是唯一可用在 Windows Vista 之前的类型）。系统通过驱动程序提供的上下文值。
+-   该驱动程序可以注册[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)例程来处理基于行或消息信号中断。 （这是唯一可用在 Windows Vista 之前的类型）。系统通过驱动程序提供的上下文值。
 
--   该驱动程序可以注册[ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)例程来处理消息信号中断。 系统将驱动程序提供的上下文值和中断消息的消息 ID 传递。
+-   该驱动程序可以注册[ *InterruptMessageService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)例程来处理消息信号中断。 系统将驱动程序提供的上下文值和中断消息的消息 ID 传递。
 
 有关注册设备的中断提供服务的 InterruptService 或 InterruptMessageService 例程的详细信息，请参阅[简介 Message-Signaled 中断](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts)。
  

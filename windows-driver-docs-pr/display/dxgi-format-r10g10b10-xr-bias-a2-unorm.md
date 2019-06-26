@@ -8,12 +8,12 @@ keywords:
 - DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM WDK Windows 7 display
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3014a8650c368c7d2a2b88596bb745c46fb378
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 764d0f469421249e0a5f2849f1e54f480a045045
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338670"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372061"
 ---
 # <a name="dxgiformatr10g10b10xrbiasa2unorm"></a>DXGI\_FORMAT\_R10G10B10\_XR\_BIAS\_A2\_UNORM
 
@@ -26,7 +26,7 @@ DXGI\_格式\_R10G10B10\_XR\_偏差\_A2\_UNORM 格式要求应用程序需要注
 
 DXGI\_格式\_R10G10B10\_XR\_偏差\_A2\_UNORM 格式具有显示扫描扩展、 可锁定，CPU 和"强制转换位布局中的"资源属性。 因此，若要呈现到的资源，应用程序通常会创建呈现目标视图的 DXGI 格式\_格式\_R10G10B10A2\_\*。
 
-获取完整功能，显示微型端口驱动程序必须支持 XR\_偏差为显示格式。 新 D3DDDIFMT\_A2B10G10R10\_XR\_偏置值已添加到[ **D3DDDIFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff544312)枚举为 XR\_偏差的支持。
+获取完整功能，显示微型端口驱动程序必须支持 XR\_偏差为显示格式。 新 D3DDDIFMT\_A2B10G10R10\_XR\_偏置值已添加到[ **D3DDDIFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ne-d3dukmdt-_d3dddiformat)枚举为 XR\_偏差的支持。
 
  
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d5609c42f721688632bb6c70405057993588fa3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e771bf2ef7d7326964b662ed4b920aaec9a4dc55
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371075"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369822"
 ---
 # <a name="inf-copyfiles-directive"></a>INF CopyFiles 指令
 
@@ -97,7 +97,7 @@ INF 编写器的定义*文件列表部分*可以有任意数量的条目，每�
 <a href="" id="0x00000020--copyflg-no-version-dialog--"></a>**0x00000020** (COPYFLG_NO_VERSION_DIALOG)   
 不会覆盖目标目录中使用的源文件的文件如果现有的文件比源文件新。
 
-较新的检查目的是使用文件版本中，从 VS_VERSIONINFO 文件版本资源中提取。 有关详细信息，请参阅 https://docs.microsoft.com/windows/desktop/menurc/version-information。 如果目标文件不是一个可执行文件或资源的映像，或该文件不包含的文件版本信息，则设备安装会假定目标文件是较旧。 
+较新的检查目的是使用文件版本中，从 VS_VERSIONINFO 文件版本资源中提取。 有关详细信息，请参阅 https://docs.microsoft.com/windows/desktop/menurc/version-information 。 如果目标文件不是一个可执行文件或资源的映像，或该文件不包含的文件版本信息，则设备安装会假定目标文件是较旧。 
 
 <a href="" id="0x00000040---copyflg-overwrite-older-only-"></a>**0x00000040** (COPYFLG_OVERWRITE_OLDER_ONLY)  
 将源文件复制到目标目录中，仅当目标上的文件已被较新版本取代。 此标志与数字签名的 INF 文件无关。 版本检查作为 COPYFLG_NO_VERSION_DIALOG 中所述，使用相同的过程。
@@ -122,9 +122,9 @@ INF 编写器的定义*文件列表部分*可以有任意数量的条目，每�
 如果不能复制的源文件，因为正在使用目标文件，重命名目标文件，然后将源文件复制到目标文件，并删除已重命名的目标文件。 如果目标文件不能重命名，完成复制操作期间在下次系统重新启动。 如果不能删除已重命名的目标文件，在下次系统重新启动过程中删除已重命名的目标文件。
 
 <a href="" id="security-descriptor-string"></a>*security-descriptor-string*  
-指定要应用于命名复制的所有文件的安全描述符*文件列表部分*。 *安全描述符字符串*是标记，则指示 DACL 的字符串 (**d:**) 安全组件。
+指定要应用于命名复制的所有文件的安全描述符*文件列表部分*。 *安全描述符字符串*是标记，则指示 DACL 的字符串 (**d:** ) 安全组件。
 
-有关安全描述符字符串的信息，请参阅[安全描述符定义语言 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)。 有关的安全描述符字符串格式的信息，请参阅安全描述符定义语言 (Windows)。
+有关安全描述符字符串的信息，请参阅[安全描述符定义语言 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关的安全描述符字符串格式的信息，请参阅安全描述符定义语言 (Windows)。
 
 如果<em>文件列表部分</em>**安全**部分未指定，则文件继承的文件复制到其中的目录的安全特征。
 
@@ -147,13 +147,13 @@ INF 文件编写器还必须提供通过使用 INF 源媒体中复制的文件�
 复制操作的目标受[ **INF DestinationDirs 部分**](inf-destinationdirs-section.md)。 本部分中控件所有文件复制操作的目标，如下所示：
 
 - 如果引用的指定部分**CopyFiles**指令有一个对应的条目[ **DestinationDirs** ](inf-destinationdirs-section.md)相同 INF，明确指定条目的部分目标目标目录中的命名的节列出的所有文件都复制到其中。 如果在未列出的命名的节**DestinationDirs**部分中，Windows 使用**DefaultDestDir**中的条目**DestinationDirs** INF 文件部分。
-- 如果**CopyFiles**指令使用**@** <em>filename</em>语法，Windows 使用**DefaultDestDir** 中的条目**DestinationDirs** INF 文件部分。
+- 如果**CopyFiles**指令使用 **@** <em>filename</em>语法，Windows 使用**DefaultDestDir** 中的条目**DestinationDirs** INF 文件部分。
 
 以下几点适用于 INF **CopyFiles**指令：
 
 - 每个*文件列表部分*名称必须是唯一的 INF 文件，但它可以被**CopyFiles**， [ **DelFiles**](inf-delfiles-directive.md)，或[**RenFiles** ](inf-renfiles-directive.md)指令相同的 INF 文件中的其他位置。 节名称必须遵循中所述的常规规则[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
-- 文件中指定的名称**@** <em>filename</em>或*文件列表部分*项必须是源媒体上的文件的确切名称。 不能使用 %*strkey*%令牌指定的文件的名称。 详细了解 %*strkey*%令牌，请参阅[ **INF 字符串部分**](inf-strings-section.md)。
-- **CopyFiles**指令不支持修饰*文件列表部分*名称与系统定义的平台扩展 (**.nt**， **.ntx86**， **.ntia64**，或 **.ntamd64**)。
+- 文件中指定的名称 **@** <em>filename</em>或*文件列表部分*项必须是源媒体上的文件的确切名称。 不能使用 %*strkey*%令牌指定的文件的名称。 详细了解 %*strkey*%令牌，请参阅[ **INF 字符串部分**](inf-strings-section.md)。
+- **CopyFiles**指令不支持修饰*文件列表部分*名称与系统定义的平台扩展 ( **.nt**， **.ntx86**， **.ntia64**，或 **.ntamd64**)。
 - 不要使用**CopyFiles**指令以将 INF 文件复制。 有关详细信息，请参阅[复制 INF 文件](copying-inf-files.md)。
 
 从 Windows Vista 开始，以下几点也适用于 INF **CopyFiles**指令：

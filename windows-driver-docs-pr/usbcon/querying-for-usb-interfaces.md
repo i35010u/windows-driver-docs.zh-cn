@@ -3,12 +3,12 @@ Description: 而不是使用的 I/O 请求数据包 (IRP) 机制，USB 客户端
 title: 查询总线驱动程序接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0af9d081017db8cb0c3346f27bf9933d274f70
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 906c726b2f0c2f56faef43a9dbd13bc435df805f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378857"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358362"
 ---
 # <a name="querying-for-bus-driver-interfaces"></a>查询总线驱动程序接口
 
@@ -26,7 +26,7 @@ ms.locfileid: "63378857"
 
 在 Windows Vista USB、 客户端驱动程序可以自身公开接口以便帮助[USB 常见类通用父驱动程序](usb-common-class-generic-parent-driver.md)中定义它管理的设备的接口集合。
 
-若要获取总线驱动程序接口，客户端驱动程序必须发送[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)总线驱动程序的请求。 在客户端驱动程序：
+若要获取总线驱动程序接口，客户端驱动程序必须发送[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)总线驱动程序的请求。 在客户端驱动程序：
 
 1.  创建类型 IRP 的 IRP\_MN\_查询\_接口中的下一步的堆栈位置。
     ```cpp
@@ -35,7 +35,7 @@ ms.locfileid: "63378857"
     irpstack->MinorFunction= IRP_MN_QUERY_INTERFACE;
     ```
 
-2.  接口分配内存并指向新的内存堆栈。 例如，若要分配的内存[ **USB\_总线\_接口\_USBDI\_V0** ](https://msdn.microsoft.com/library/windows/hardware/ff539210)接口：
+2.  接口分配内存并指向新的内存堆栈。 例如，若要分配的内存[ **USB\_总线\_接口\_USBDI\_V0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/ns-usbbusif-_usb_bus_interface_usbdi_v0)接口：
     ```cpp
     irpstack->Parameters.QueryInterface.Interface = (USB_BUS_INTERFACE_USBDI_V0) newly allocated interface buffer;
     ```
@@ -53,7 +53,7 @@ ms.locfileid: "63378857"
     ntStatus = IoCallDriver(PDO that the client passes URBs to, irp);
     ```
 
-5.  调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)传递查询界面 IRP 堆栈。
+5.  调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)传递查询界面 IRP 堆栈。
     ```cpp
     ntStatus = IoCallDriver(PDO that the client passes URBs to, irp);
     ```

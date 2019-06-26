@@ -4,12 +4,12 @@ description: IRP 主要函数代码
 ms.date: 08/12/2017
 ms.assetid: 11c5b1a9-74c0-47fb-8cce-a008ece9efae
 ms.localizationpriority: medium
-ms.openlocfilehash: c42a08cb8dab6ce5102d0a0e485a0a991936ea62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88dc9a68ea446390e433b1be828c9bfc1afc70a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382913"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370919"
 ---
 # <a name="irp-major-function-codes"></a>IRP 主要函数代码
 
@@ -21,7 +21,7 @@ ms.locfileid: "63382913"
 
 特定操作驱动程序将为给定**IRP\_MJ\_* XXX*** 代码依赖在某种程度上基础设备，尤其是对于[ **IRP\_MJ\_设备\_控制**](irp-mj-device-control.md)并[ **IRP\_MJ\_内部\_设备\_控件**](irp-mj-internal-device-control.md)请求。 例如，发送到键盘驱动程序的请求是一定某种程度上不同于发送到磁盘驱动程序。 但是，I/O 管理器定义的参数和 I/O 堆栈位置内容为每个系统定义主要函数代码。
 
-每个更高级别的驱动程序必须设置 I/O 堆栈中适当的位置 Irp 的下一步低级驱动程序并调用[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)，使用每个输入 IRP 或驱动程序创建 IRP (如果更高级别的驱动程序存储指针输入 IRP）。 因此，每个中间驱动程序必须提供基础的设备驱动程序处理每个主要的函数代码的调度例程。 否则为新的中间驱动程序将"中断链"每当应用程序或仍更高级别的驱动程序将尝试发送到基础设备驱动程序的 I/O 请求。
+每个更高级别的驱动程序必须设置 I/O 堆栈中适当的位置 Irp 的下一步低级驱动程序并调用[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)，使用每个输入 IRP 或驱动程序创建 IRP (如果更高级别的驱动程序存储指针输入 IRP）。 因此，每个中间驱动程序必须提供基础的设备驱动程序处理每个主要的函数代码的调度例程。 否则为新的中间驱动程序将"中断链"每当应用程序或仍更高级别的驱动程序将尝试发送到基础设备驱动程序的 I/O 请求。
 
 文件系统驱动程序还处理所需的系统定义子集**IRP\_MJ\_* XXX*** 函数代码，某些与从属**IRP\_MN\_* XXX*** 函数代码。
 
@@ -59,7 +59,7 @@ ms.locfileid: "63382913"
 
 在本部分中所述的输入和输出参数是在 IRP 的特定于函数的参数。
 
-有关 Irp 的详细信息，请参阅[处理 Irp](https://msdn.microsoft.com/library/windows/hardware/ff546847)。
+有关 Irp 的详细信息，请参阅[处理 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)。
 
  
 

@@ -18,12 +18,12 @@ keywords:
 - 批中的应用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acbfc84da63ea183c31742ee8a0a3b108824356
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfb3775a0f32ce6b11da3e16ac504573ea82be2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328511"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364815"
 ---
 # <a name="wave-and-directsound-components"></a>Wave 和 DirectSound 组件
 
@@ -31,7 +31,7 @@ ms.locfileid: "63328511"
 ## <span id="wave_and_directsound_components"></span><span id="WAVE_AND_DIRECTSOUND_COMPONENTS"></span>
 
 
-应用程序的程序依赖于用户模式和内核模式下捕获 （输入） 和呈现 （输出） 批流的组件的组合。 批流是由描述其数据格式的数字音频流[ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)或[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构。
+应用程序的程序依赖于用户模式和内核模式下捕获 （输入） 和呈现 （输出） 批流的组件的组合。 批流是由描述其数据格式的数字音频流[ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)或[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构。
 
 应用程序可以使用以下任一批呈现和捕获的软件接口：
 
@@ -51,9 +51,9 @@ DirectSound 和 Windows 多媒体批函数都的客户端[SysAudio 系统驱动�
 
 呈现组件显示在上图中，左侧和右侧显示捕获组件。 表示批微型端口驱动程序的框会变暗，以指示这些是供应商提供的组件。 在图中的其他组件是系统提供。
 
-在左上角的图、 批呈现 （或"批扩展"） 的应用程序接口到 WDM 音频驱动程序通过 waveOut*Xxx*函数，在用户模式下实现[WinMM 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)，Winmm.dll。 应用程序从一个文件并调用读取块波形音频示例[ **waveOutWrite** ](https://msdn.microsoft.com/library/windows/desktop/dd743876)函数来呈现它们。
+在左上角的图、 批呈现 （或"批扩展"） 的应用程序接口到 WDM 音频驱动程序通过 waveOut*Xxx*函数，在用户模式下实现[WinMM 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)，Winmm.dll。 应用程序从一个文件并调用读取块波形音频示例[ **waveOutWrite** ](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))函数来呈现它们。
 
-WDMAud，其中包含用户模式和内核模式组件 （Wdmaud.drv 和 Wdmaud.sys），缓冲批数据从[ **waveOutWrite** ](https://msdn.microsoft.com/library/windows/desktop/dd743876)调用，并输出到波形流[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)，其显示下方 WDMAud 图中。
+WDMAud，其中包含用户模式和内核模式组件 （Wdmaud.drv 和 Wdmaud.sys），缓冲批数据从[ **waveOutWrite** ](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))调用，并输出到波形流[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)，其显示下方 WDMAud 图中。
 
 KMixer 是接收的批 PCM 流从一个或多个源和混合使用它们一起以形成单个输出流，在 wave PCM 格式中也是一个系统组件。
 
@@ -61,7 +61,7 @@ KMixer 输出批流到 WaveCyclic 或 WavePci 设备时，其端口和微型端�
 
 或者，KMixer 可以到 USB 音频设备，通过控制传递的输出流[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)（未在图中显示），而不是 WaveCyclic 或 WavePci 设备。
 
-适配器驱动程序通过调用创建 WaveCyclic 或 WavePci 端口驱动程序的实例[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715) GUID 值为**CLSID\_PortWaveCyclic**或**CLSID\_PortWavePci**分别。
+适配器驱动程序通过调用创建 WaveCyclic 或 WavePci 端口驱动程序的实例[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport) GUID 值为**CLSID\_PortWaveCyclic**或**CLSID\_PortWavePci**分别。
 
 上图右侧显示了支持捕获到文件的波形数据的应用程序所需的组件。 批捕获 （或"批中"） 应用程序与 WDM 音频驱动程序通过 waveIn*Xxx* WinMM 系统组件中实现的函数。
 
@@ -73,7 +73,7 @@ KMixer 输出批流到 WaveCyclic 或 WavePci 设备时，其端口和微型端�
 
 无论是否通过 USB 设备或 WaveCyclic 或 WavePci 设备捕获批流，KMixer 执行采样率转换流，如果需要而不会与其他流没有混合。 KMixer 输出到 Wdmaud.sys，内核模式下生成的流一半 WDMAud 系统驱动程序。 用户模式 Wdmaud.drv，一半时，输出批流式传输到应用程序通过 waveIn*Xxx*函数，这在 Winmm.dll 中实现。 最后，在图顶部，批捕获应用程序将批数据写入文件。
 
-在批捕获应用程序调用的时间[ **waveInOpen** ](https://msdn.microsoft.com/library/windows/desktop/dd743847)函数打开捕获流，它会传入一个指针，到其回调例程。 批捕获事件发生时，操作系统将使用包含波样本的捕获设备从下一个块的缓冲区调用回调例程。 回调响应，该应用程序的下一批数据块写入文件。
+在批捕获应用程序调用的时间[ **waveInOpen** ](https://docs.microsoft.com/previous-versions/dd743847(v=vs.85))函数打开捕获流，它会传入一个指针，到其回调例程。 批捕获事件发生时，操作系统将使用包含波样本的捕获设备从下一个块的缓冲区调用回调例程。 回调响应，该应用程序的下一批数据块写入文件。
 
 ### <a name="span-iddirectsoundcomponentsspanspan-iddirectsoundcomponentsspanspan-iddirectsoundcomponentsspandirectsound-components"></a><span id="DirectSound_Components"></span><span id="directsound_components"></span><span id="DIRECTSOUND_COMPONENTS"></span>DirectSound 组件
 

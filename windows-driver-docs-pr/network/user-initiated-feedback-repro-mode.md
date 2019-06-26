@@ -4,12 +4,12 @@ description: 本主题介绍 IHV 跟踪 WDI 驱动程序中的日志记录用户
 ms.assetid: C9784C2D-75B1-4229-A219-748C52F430D5
 ms.date: 06/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48331866a493beda962b0d9334ec5c57c544697f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bed127cb83a53ab8f507a9e590a40ba55468196f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362503"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366539"
 ---
 # <a name="user-initiated-feedback---repro-mode"></a>用户发起的反馈 - 再现模式
 
@@ -84,10 +84,10 @@ IHV 可以注册其 ETW 日志记录代码中的 ETW 控制回调。 这使得 I
 
 有两种方法来启用 ETW 回调，具体取决于如何实现 ETW 日志记录。
 
-1. 使用自动生成的代码通过表现 ETWs `MC.exe`。 请参阅[编写检测清单](https://msdn.microsoft.com/library/windows/desktop/dd996930)的更多详细信息。
+1. 使用自动生成的代码通过表现 ETWs `MC.exe`。 请参阅[编写检测清单](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)的更多详细信息。
     1. 以下代码片段 (etwtracingevents.h) 中的标头是已通过创建一个自动生成 ETW 事件标头`MC.exe`。 假定，已经生成的 ETW 事件，因此本主题不会重点此部分。
     1. 必须包括自动生成 ETW 标头之前定义 MCGEN_PRIVATE_ENABLE_CALLBACK_V2。 否则，不会调用回调。
-1. 通过 ETW 回调注册[ **EventRegister** ](https://msdn.microsoft.com/library/windows/desktop/aa363744) API。
+1. 通过 ETW 回调注册[ **EventRegister** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventregister) API。
     1. ETW 回调提供程序必须将传递给**EventRegister**时注册跟踪提供程序的功能。
 
 此代码段显示了 ETW 回调函数的原型。

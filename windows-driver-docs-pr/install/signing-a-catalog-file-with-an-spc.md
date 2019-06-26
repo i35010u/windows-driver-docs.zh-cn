@@ -4,17 +4,17 @@ description: 使用 SPC 对目录文件进行签名
 ms.assetid: 8fe1fc32-73c9-4c09-96bd-93effb35c061
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86bda35fd6e72a83433dfe7e1f817ae5201076cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f291bc2a2f2973c7f250f5cb405e6bb60602b715
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348612"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373485"
 ---
 # <a name="signing-a-catalog-file-with-an-spc"></a>使用 SPC 对目录文件进行签名
 
 
-使用以下[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令以登录[编录文件](catalog-files.md)的内核模式[驱动程序包](driver-packages.md)与[软件发行者证书 (SPC)](software-publisher-certificate.md)。 对于 64 位版本的 Windows Vista 和更高版本的 Windows，而没有内核模式驱动程序包[WHQL 版本签名](whql-release-signature.md)必须使用 SPC 签名签名，以符合同时[内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)并[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
+使用以下[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令以登录[编录文件](catalog-files.md)的内核模式[驱动程序包](driver-packages.md)与[软件发行者证书 (SPC)](software-publisher-certificate.md)。 对于 64 位版本的 Windows Vista 和更高版本的 Windows，而没有内核模式驱动程序包[WHQL 版本签名](whql-release-signature.md)必须使用 SPC 签名签名，以符合同时[内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)并[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
 ```cpp
 SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertificateName /t http://timestamp.verisign.com/scripts/timstamp.dll CatalogFileName.cat
@@ -36,7 +36,7 @@ SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertifica
 
 -   *CatalogFileName.cat*目录文件的名称。
 
-例如，以下命令符号*Tstamd64.cat* SPC 使用目录文件命名为"contoso.com"中的个人，"my"证书存储区和相应的交叉证书*Rsacertsvrcross.cer*. 该签名是由服务加盖时间戳 http://timestamp.verisign.com/scripts/timstamp.dll。 在此示例中，目录文件是在其中运行该命令的相同目录中。
+例如，以下命令符号*Tstamd64.cat* SPC 使用目录文件命名为"contoso.com"中的个人，"my"证书存储区和相应的交叉证书*Rsacertsvrcross.cer*. 该签名是由服务加盖时间戳 http://timestamp.verisign.com/scripts/timstamp.dll 。 在此示例中，目录文件是在其中运行该命令的相同目录中。
 
 ```cpp
 SignTool sign /v /ac c:\lab\rsacertsrvcross.cer /s my /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat 

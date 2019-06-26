@@ -4,12 +4,12 @@ description: 以前的 Windows 版本中的蓝牙版本和配置文件支持
 ms.assetid: 5209DE94-241D-4EFA-BA00-884EC74C8C1B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61688024b9680eaedadce06558b647e1c9065dde
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 9027ed017d7bdc55987fa782b80911982eebf7df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364645"
 ---
 # <a name="bluetooth-version-and-profile-support-in-previous-windows-versions"></a>以前的 Windows 版本中的蓝牙版本和配置文件支持
 
@@ -152,7 +152,7 @@ Windows 支持不同版本的蓝牙规范取决于 Windows 版本中下, 表中�
 Windows 8.1 包括以下增强功能的蓝牙驱动和相关的软件：
 
 -   无线蓝牙版本 4.0 的收件箱单选管理控制。
--   对于 Windows 运行时 API 支持[ **RFCOMM** ](https://msdn.microsoft.com/library/windows/apps/dn263529)并[ **GATT** ](https://msdn.microsoft.com/library/windows/apps/dn297685)协议访问。
+-   对于 Windows 运行时 API 支持[ **RFCOMM** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)并[ **GATT** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)协议访问。
 
 ## <a name="span-idwhatsnewinwindows8spanspan-idwhatsnewinwindows8spanspan-idwhatsnewinwindows8spanwhats-new-in-windows8"></a><span id="What_s_new_in_Windows_8_"></span><span id="what_s_new_in_windows_8_"></span><span id="WHAT_S_NEW_IN_WINDOWS_8_"></span>什么是 Windows 8 中的新增功能？
 
@@ -412,7 +412,7 @@ Windows Phone 8 的配置文件/协议实现符合性语句 (PICS) 报告是可�
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows81spanspan-idwhatprogramminginterfaceswereintroducedinwindows81spanwhat-programming-interfaces-were-introduced-in-windows81"></a><span id="what_programming_interfaces_were_introduced_in_windows_8.1_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_8.1_"></span>Windows 8.1 中引入了哪些编程接口？
 
 
-Windows 8.1 引入了新的 Windows 运行时 Api，用于访问[ **RFCOMM** ](https://msdn.microsoft.com/library/windows/apps/dn263529) （通过标准蓝牙） 和[ **GATT** ](https://msdn.microsoft.com/library/windows/apps/dn297685) （超过蓝牙低功耗）。
+Windows 8.1 引入了新的 Windows 运行时 Api，用于访问[ **RFCOMM** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) （通过标准蓝牙） 和[ **GATT** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) （超过蓝牙低功耗）。
 
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows8spanspan-idwhatprogramminginterfaceswereintroducedinwindows8spanspan-idwhatprogramminginterfaceswereintroducedinwindows8spanwhat-programming-interfaces-were-introduced-in-windows8"></a><span id="What_programming_interfaces_were_introduced_in_Windows_8_"></span><span id="what_programming_interfaces_were_introduced_in_windows_8_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_8_"></span>在 Windows 8 中引入了哪些编程接口？
 
@@ -422,7 +422,7 @@ Windows 8 引入了新的 Api，用于访问智能蓝牙外围设备通过蓝牙
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows7spanspan-idwhatprogramminginterfaceswereintroducedinwindows7spanspan-idwhatprogramminginterfaceswereintroducedinwindows7spanwhat-programming-interfaces-were-introduced-in-windows7"></a><span id="What_programming_interfaces_were_introduced_in_Windows_7_"></span><span id="what_programming_interfaces_were_introduced_in_windows_7_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_7_"></span>Windows 7 中引入了哪些编程接口？
 
 
-Windows 7 引入新 Ex 版本的以前的 Api 来提供增强的功能。 例如，BluetoothAuthenticateDeviceEx 函数，可将传入的设备进行身份验证的函数调用的带外数据。 同样， [ **BluetoothRegisterForAuthenticationEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766820)函数包括固定请求和数值比较的功能。 此外， [ **BluetoothSendAuthenticationResponseEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766821)收到数值比较响应发送的身份验证请求时，调用函数。 有关新的 Ex 版本的这些 Api 的详细信息，请参阅[蓝牙函数](https://msdn.microsoft.com/library/windows/desktop/aa362927)。
+Windows 7 引入新 Ex 版本的以前的 Api 来提供增强的功能。 例如，BluetoothAuthenticateDeviceEx 函数，可将传入的设备进行身份验证的函数调用的带外数据。 同样， [ **BluetoothRegisterForAuthenticationEx** ](https://docs.microsoft.com/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothregisterforauthenticationex)函数包括固定请求和数值比较的功能。 此外， [ **BluetoothSendAuthenticationResponseEx** ](https://docs.microsoft.com/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothsendauthenticationresponseex)收到数值比较响应发送的身份验证请求时，调用函数。 有关新的 Ex 版本的这些 Api 的详细信息，请参阅[蓝牙函数](https://docs.microsoft.com/windows/desktop/Bluetooth/bluetooth-functions)。
 
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanspan-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanspan-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanwhat-programming-interfaces-were-introduced-in-windowsvista"></a><span id="What_programming_interfaces_were_introduced_in_Windows_Vista_"></span><span id="what_programming_interfaces_were_introduced_in_windows_vista_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_VISTA_"></span>Windows Vista 中引入了哪些编程接口？
 

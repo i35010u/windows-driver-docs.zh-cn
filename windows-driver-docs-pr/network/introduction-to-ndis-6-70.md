@@ -4,12 +4,12 @@ description: 本部分介绍 NDIS 6.70，并介绍了从 NDIS 6.60 的更改。 
 ms.assetid: D846EE68-2C84-40E0-91DE-2034F75D576F
 ms.date: 06/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91c955a03143d8f96d7c01dc4d47090ed41cb7ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a8429542744af8d3a9777e41edb36c4953d142e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349459"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386346"
 ---
 # <a name="introduction-to-ndis-670"></a>NDIS 6.70 简介
 
@@ -79,5 +79,5 @@ WDK 适用于 Windows 10 版本 1703年支持标头版本控制。 标头版本�
 
 以下数据结构是 NDIS 6.70 中的新增功能。
 
-- [NDIS_STATUS_WWAN_DEVICE_CAPS_EX](https://msdn.microsoft.com/library/windows/hardware/mt782396)
+- [NDIS_STATUS_WWAN_DEVICE_CAPS_EX](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps-ex)
 

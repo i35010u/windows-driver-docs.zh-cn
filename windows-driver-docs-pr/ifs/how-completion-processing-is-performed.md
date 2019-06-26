@@ -6,12 +6,12 @@ keywords:
 - IRP 完成例程 WDK 文件系统，处理阶段
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6016144ede00ebe471928c0bacd3681d82350d6b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e47fa85f64171274e1f63f98c5ebc90e7a62bfbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365863"
 ---
 # <a name="how-completion-processing-is-performed"></a>如何执行完成处理
 
@@ -37,13 +37,13 @@ ms.locfileid: "63370129"
 
 -   如果事件中提供**Irp-&gt;UserEvent**，它发出信号。 否则，如果没有此 IRP 的文件对象，其事件发出信号。
 
--   如果通过调用创建 IRP [ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)或[ **IoBuildSynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548330)，从取消排队线程的挂起 I/O 请求列表。
+-   如果通过调用创建 IRP [ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)或[ **IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)，从取消排队线程的挂起 I/O 请求列表。
 
 -   如果调用方请求一个，APC 的用户将会排队。
 
 -   IRP，将释放。
 
-**请注意**  由于完成例程返回状态，因此，如果停止完成处理 IRP\_详细\_处理\_必需的它可以恢复通过调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)上相同的 IRP。 在此情况下，第一阶段处理将继续，从上一个紧邻的驱动程序完成例程其完成例程返回状态\_更多\_处理\_必需。
+**请注意**  由于完成例程返回状态，因此，如果停止完成处理 IRP\_详细\_处理\_必需的它可以恢复通过调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)上相同的 IRP。 在此情况下，第一阶段处理将继续，从上一个紧邻的驱动程序完成例程其完成例程返回状态\_更多\_处理\_必需。
 
  
 

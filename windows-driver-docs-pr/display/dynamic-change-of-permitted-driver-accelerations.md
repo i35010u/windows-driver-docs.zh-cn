@@ -9,12 +9,12 @@ keywords:
 - 显示 GDI 加速更改 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dc372788775254e965fa3c38e8a80f5cda4ab37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34eccb53ece05c95a537c9153f2585db1bd90969
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327940"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375803"
 ---
 # <a name="dynamic-change-of-permitted-driver-accelerations"></a>允许的驱动程序加速的动态更改
 
@@ -31,7 +31,7 @@ ms.locfileid: "63327940"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -42,11 +42,11 @@ ms.locfileid: "63327940"
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556289" data-raw-source="[&lt;strong&gt;DrvSetPointerShape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556289)"><strong>DrvSetPointerShape</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff556185" data-raw-source="[&lt;strong&gt;DrvCreateDeviceBitmap&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556185)"> <strong>DrvCreateDeviceBitmap</strong> </a>处于禁用状态。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpointershape" data-raw-source="[&lt;strong&gt;DrvSetPointerShape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpointershape)"><strong>DrvSetPointerShape</strong> </a>并<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap" data-raw-source="[&lt;strong&gt;DrvCreateDeviceBitmap&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)"> <strong>DrvCreateDeviceBitmap</strong> </a>处于禁用状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>除了 1，不允许更复杂的显示驱动程序加速功能，包括<a href="https://msdn.microsoft.com/library/windows/hardware/ff556302" data-raw-source="[&lt;strong&gt;DrvStretchBlt&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556302)"> <strong>DrvStretchBlt</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff556220" data-raw-source="[&lt;strong&gt;DrvFillPath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556220)"> <strong>DrvFillPath</strong> </a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff556236" data-raw-source="[&lt;strong&gt;DrvGradientFill&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556236)"> <strong>DrvGradientFill</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff556245" data-raw-source="[&lt;strong&gt;DrvLineTo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556245)"> <strong>DrvLineTo</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff556176" data-raw-source="[&lt;strong&gt;DrvAlphaBlend&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556176)"> <strong>DrvAlphaBlend</strong></a>，并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557283" data-raw-source="[&lt;strong&gt;DrvTransparentBlt&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557283)"> <strong>DrvTransparentBlt</strong></a>。</p></td>
+<td align="left"><p>除了 1，不允许更复杂的显示驱动程序加速功能，包括<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstretchblt" data-raw-source="[&lt;strong&gt;DrvStretchBlt&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstretchblt)"> <strong>DrvStretchBlt</strong></a>， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfillpath" data-raw-source="[&lt;strong&gt;DrvFillPath&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfillpath)"> <strong>DrvFillPath</strong> </a>， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill" data-raw-source="[&lt;strong&gt;DrvGradientFill&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill)"> <strong>DrvGradientFill</strong></a>， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto" data-raw-source="[&lt;strong&gt;DrvLineTo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto)"> <strong>DrvLineTo</strong></a>， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvalphablend" data-raw-source="[&lt;strong&gt;DrvAlphaBlend&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvalphablend)"> <strong>DrvAlphaBlend</strong></a>，并<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtransparentblt" data-raw-source="[&lt;strong&gt;DrvTransparentBlt&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtransparentblt)"> <strong>DrvTransparentBlt</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
@@ -54,7 +54,7 @@ ms.locfileid: "63327940"
 </tr>
 <tr class="odd">
 <td align="left"><p>4</p></td>
-<td align="left"><p>除了 3，几乎所有的显示驱动程序加速程序不允许使用纯色填充除外<a href="https://msdn.microsoft.com/library/windows/hardware/ff556182" data-raw-source="[&lt;strong&gt;DrvCopyBits&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556182)"> <strong>DrvCopyBits</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff557277" data-raw-source="[&lt;strong&gt;DrvTextOut&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557277)"> <strong>DrvTextOut</strong> </a>，并<a href="https://msdn.microsoft.com/library/windows/hardware/ff556316" data-raw-source="[&lt;strong&gt;DrvStrokePath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556316)"> <strong>DrvStrokePath</strong></a>。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556217" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556217)"><strong>DrvEscape</strong> </a>被禁用。</p></td>
+<td align="left"><p>除了 3，几乎所有的显示驱动程序加速程序不允许使用纯色填充除外<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcopybits" data-raw-source="[&lt;strong&gt;DrvCopyBits&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcopybits)"> <strong>DrvCopyBits</strong></a>， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtextout" data-raw-source="[&lt;strong&gt;DrvTextOut&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtextout)"> <strong>DrvTextOut</strong> </a>，并<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath" data-raw-source="[&lt;strong&gt;DrvStrokePath&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)"> <strong>DrvStrokePath</strong></a>。 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)"><strong>DrvEscape</strong> </a>被禁用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>5</p></td>
@@ -67,9 +67,9 @@ ms.locfileid: "63327940"
 
 显示驱动程序可以确定由当前的加速级别：
 
--   接收更改的通知到加速级别从 GDI 通过实现[ **DrvNotify**](https://msdn.microsoft.com/library/windows/hardware/ff556252)。
+-   接收更改的通知到加速级别从 GDI 通过实现[ **DrvNotify**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvnotify)。
 
--   调用[ **EngQueryDeviceAttribute** ](https://msdn.microsoft.com/library/windows/hardware/ff564986)查询当前的加速级别。
+-   调用[ **EngQueryDeviceAttribute** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerydeviceattribute)查询当前的加速级别。
 
  
 

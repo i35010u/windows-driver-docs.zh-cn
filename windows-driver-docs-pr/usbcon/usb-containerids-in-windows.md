@@ -3,12 +3,12 @@ Description: 本白皮书提供有关 USB ContainerIDs Windows 操作系统的�
 title: Windows 中的 USB ContainerID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8214980cf6f42494b66141d8791922955aee635
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18d512704e7ceb8eab8714def96d50b42c11a2cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331650"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369516"
 ---
 # <a name="usb-containerids-in-windows"></a>Windows 中的 USB ContainerID
 
@@ -19,7 +19,7 @@ ms.locfileid: "63331650"
 
 所有类型的设备连接到通过其他总线类型的计算机可以都支持的设备容器。 但是，并非所有的总线类型使用相同的机制来生成**ContainerID**。 对于 USB 设备，设备供应商可以使用**ContainerID**描述符来描述**ContainerID** 。 对于物理设备。 一个**ContainerID**描述符是可以存储在 USB 设备的固件的 Microsoft 操作系统功能描述符。 USB 设备制造商必须正确实现这些**ContainerID**在其设备，以便充分利用 Windows 7 中提供的新设备功能的描述符。 USB 设备制造商需要实现只有一个**ContainerID**为每个物理设备，而不考虑设备支持多少设备函数。
 
-有关合并的所有功能的单个设备的设备容器到详细信息，请参阅[生成如何容器 Id](https://msdn.microsoft.com/library/windows/hardware/ff546193)。
+有关合并的所有功能的单个设备的设备容器到详细信息，请参阅[生成如何容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)。
 
 有关 Microsoft 操作系统描述符的 USB 设备的详细信息，请参阅[USB 设备的 Microsoft 操作系统描述符](microsoft-defined-usb-descriptors.md)。
 
@@ -172,7 +172,7 @@ Microsoft 操作系统字符串描述符的当前定义包含一个 1 字节填�
 
 ## <a name="related-topics"></a>相关主题
 [针对 Windows 构建的 USB 设备](building-usb-devices-for-windows.md)  
-[USB 设备的容器 Id](https://msdn.microsoft.com/library/windows/hardware/ff540084)  
+[USB 设备的容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids-for-usb-devices)  
 
 
 

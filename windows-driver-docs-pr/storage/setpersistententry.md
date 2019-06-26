@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e12638d8ad8ba5c02646e759f888fbebc517c39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1056e3d3c088b8d3887f6122c896ec8809f39fa7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363961"
 ---
 # <a name="setpersistententry-function"></a>SetPersistentEntry 函数
 
@@ -44,10 +44,10 @@ void SetPersistentEntry(
 指示将更改其永久绑定的端口的全球通用名称。
 
 *绑定*   
-类型的结构[ **HBAFCPBindingEntry2** ](https://msdn.microsoft.com/library/windows/hardware/ff556035) ，该值指示要从绑定的指定的端口的列表中移除的绑定。
+类型的结构[ **HBAFCPBindingEntry2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2) ，该值指示要从绑定的指定的端口的列表中移除的绑定。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SetPersistentEntry\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565795)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SetPersistentEntry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -82,9 +82,9 @@ void SetPersistentEntry(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**SetPersistentEntry\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565790)
+[**SetPersistentEntry\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_in)
 
-[**SetPersistentEntry\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565795)
+[**SetPersistentEntry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)
 
  
 

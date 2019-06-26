@@ -8,12 +8,12 @@ keywords:
 - 检测重复打印机安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ac8f4a73c0c3acf6f6e67b20f9ef697ed3c8e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6752f83a470af87961b2f610026c389c185cceb3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356034"
 ---
 # <a name="printer-installation-and-the-plug-and-play-manager"></a>打印机安装和即插即用管理器
 
@@ -21,7 +21,7 @@ ms.locfileid: "63384607"
 
 
 
-插管理器处理的计算机的所有即插事件，并是通用的所有设备。 插管理器中记录了[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)。 [介绍插入并播放](https://msdn.microsoft.com/library/windows/hardware/ff548102)和各种内核模式和用户模式组件如何交互的插安装概述。
+插管理器处理的计算机的所有即插事件，并是通用的所有设备。 插管理器中记录了[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。 [介绍插入并播放](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-plug-and-play)和各种内核模式和用户模式组件如何交互的插安装概述。
 
 ### <a href="" id="printer-installation-differences-between-windows-98-me-and-windows-200"></a>Windows 98 的打印机安装差异 / Me 和 Windows 2000 及更高版本
 
@@ -29,9 +29,9 @@ Windows 2000 及更高版本的插体系结构不同于在 Windows 95/98/me 上 
 
 -   Windows 2000 和更高版本附带的驱动程序包含在文件中，driver.cab，安装操作系统时安装。 此文件包含所有插现成驱动程序的所有类型的设备，因此用户通常不需要原始安装介质安装驱动程序。
 
--   安装特定驱动程序需要很少或没有用户干预。 如果 Windows 2000 或更高版本由 Microsoft 进行数字签名的驱动程序位于 driver.cab 或已在计算机上安装即插验证驱动程序的签名并安装驱动程序，而无需用户干预。 此类型的安装称为服务器端的安装。 如果该驱动程序不可用的系统上，或未签名，或驱动程序安装要求 （通过用户界面元素） 的用户交互，插将恢复到客户端安装。 有关每种类型的安装详细信息，请参阅中的用户模式即插即用管理器的讨论[设备安装组件](https://msdn.microsoft.com/library/windows/hardware/ff541277)。 在大多数情况下，当有新的即插设备连接到它，启动计算机时设备将已安装并准备好在用户登录时使用。
+-   安装特定驱动程序需要很少或没有用户干预。 如果 Windows 2000 或更高版本由 Microsoft 进行数字签名的驱动程序位于 driver.cab 或已在计算机上安装即插验证驱动程序的签名并安装驱动程序，而无需用户干预。 此类型的安装称为服务器端的安装。 如果该驱动程序不可用的系统上，或未签名，或驱动程序安装要求 （通过用户界面元素） 的用户交互，插将恢复到客户端安装。 有关每种类型的安装详细信息，请参阅中的用户模式即插即用管理器的讨论[设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))。 在大多数情况下，当有新的即插设备连接到它，启动计算机时设备将已安装并准备好在用户登录时使用。
 
-如果用户必须能够选择要安装的驱动程序，则可以使用中的 InteractiveInstall 指令[ **INF ControlFlags 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546342)。 只有在以下两种情况下，可以使用此指令：
+如果用户必须能够选择要安装的驱动程序，则可以使用中的 InteractiveInstall 指令[ **INF ControlFlags 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)。 只有在以下两种情况下，可以使用此指令：
 
 1.  若要安装不正确定义的硬件 Id 的设备。 硬件设备都有一个损坏的硬件 ID，或者硬件供应商将相同的硬件 ID 分配给两个不同的设备，这是硬件设计中的错误时，就可能出现此问题。
 
@@ -49,7 +49,7 @@ Windows 2000 及更高版本的插体系结构不同于在 Windows 95/98/me 上 
 
 许多流行的打印机模型共享相同的硬件 ID （例如的 HP DeskJet 系列）。 在 Windows 95/98/我，如果用户手动安装 DeskJet 模型随后检测到的插即用设备，第二个打印队列已安装如果用户选择适当的驱动程序。 如果用户不会选择驱动程序，然后他或她会提示为此，每次重启计算机。
 
-Windows 2000 及更高版本列表同时使用的所有打印机，因此可避免此行为*硬件 ID*并*兼容 ID*匹配。 找到多个匹配项，当类安装程序检查是否已存在具有相同的硬件 ID 匹配项的打印队列。 如果没有，插管理器将不安装第二个队列。 如果没有，请降级硬件 ID 匹配项的一个兼容 ID 匹配项。 如果这些硬件 Id 也会列在 InteractiveInstall 条目 (请参阅[ **INF ControlFlags 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546342)) 的 INF 文件中，提示用户选择的驱动程序。
+Windows 2000 及更高版本列表同时使用的所有打印机，因此可避免此行为*硬件 ID*并*兼容 ID*匹配。 找到多个匹配项，当类安装程序检查是否已存在具有相同的硬件 ID 匹配项的打印队列。 如果没有，插管理器将不安装第二个队列。 如果没有，请降级硬件 ID 匹配项的一个兼容 ID 匹配项。 如果这些硬件 Id 也会列在 InteractiveInstall 条目 (请参阅[ **INF ControlFlags 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)) 的 INF 文件中，提示用户选择的驱动程序。
 
  
 

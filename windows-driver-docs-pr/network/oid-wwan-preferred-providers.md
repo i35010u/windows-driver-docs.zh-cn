@@ -5,24 +5,24 @@ ms.assetid: fa70f1ac-5b14-44f8-a2c4-d2163fe81c5a
 ms.date: 08/08/2017
 keywords: -OID_WWAN_PREFERRED_PROVIDERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 10678081206be6ec9d1a53bcba787fddc1675109
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa078036ff9709533f800801e0f42e03bf9aef0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354578"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383213"
 ---
 # <a name="oidwwanpreferredproviders"></a>OID\_WWAN\_首选\_提供程序
 
 
 OID\_WWAN\_首选\_提供程序返回的列表信息的首选提供程序的基于 GSM 的设备。 基于 CDMA 的设备的微型端口驱动程序不需要支持此 OID。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_PREFERRED\_提供程序**](ndis-status-wwan-preferred-providers.md)状态通知包含[ **NDIS\_WWAN\_首选\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567913)结构，以便提供而不考虑完成设置首选提供程序列表 (PPL) 有关的信息或查询请求。
+微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_PREFERRED\_提供程序**](ndis-status-wwan-preferred-providers.md)状态通知包含[ **NDIS\_WWAN\_首选\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)结构，以便提供而不考虑完成设置首选提供程序列表 (PPL) 有关的信息或查询请求。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)。
+有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)。
 
 微型端口驱动程序可以访问用户识别模块 （SIM 卡） 当处理查询请求，但不是应访问提供程序网络。
 
@@ -59,11 +59,11 @@ OID\_WWAN\_首选\_提供程序返回的列表信息的首选提供程序的基�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_PREFERRED\_PROVIDERS**](https://msdn.microsoft.com/library/windows/hardware/ff567913)
+[**NDIS\_WWAN\_PREFERRED\_PROVIDERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)
 
 [**NDIS\_STATUS\_WWAN\_PREFERRED\_PROVIDERS**](ndis-status-wwan-preferred-providers.md)
 
-[WWAN 提供程序操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)
+[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 
  
 

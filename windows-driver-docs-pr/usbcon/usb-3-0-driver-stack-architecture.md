@@ -3,12 +3,12 @@ Description: 本主题提供了通用串行总线 (USB) 驱动程序堆栈体系
 title: Windows 中的 USB 宿主端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1389627291b454441dcbd5deeffbe60f6eb0675f
-ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
+ms.openlocfilehash: f08ec897a7632e230616d7b054c470b2fb4d929a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368783"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows 中的 USB 宿主端驱动程序
 
@@ -30,7 +30,7 @@ Windows 将加载到 eHCI、 oHCI 或 uHCI 控制器附加设备的 USB 2.0 驱�
 -   [WinUSB (Winusb.sys)](#winusb-winusbsys)
 -   [USB 客户端驱动程序](#usb-client-driver)
 -   [客户端驱动程序的帮助程序库](#helper-libraries-for-client-drivers)
--   [相关的主题](#related-topics)
+-   [相关主题](#related-topics)
 
 ## <a name="usb-30-driver-stack"></a>USB 3.0 驱动程序堆栈
 
@@ -121,10 +121,10 @@ Microsoft 提供了以下的帮助程序库，以帮助内核模式驱动程序�
 
 -   Winusb.dll
 
-    Winusb.dll 是公开的用户模式 DLL [WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)用于与 Winusb.sys 进行通信，这作为设备的功能在内核模式下的驱动程序中加载。 应用程序使用这些函数来配置设备，检索有关设备的信息和执行 I/O 操作。 有关使用这些函数的信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    Winusb.dll 是公开的用户模式 DLL [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)用于与 Winusb.sys 进行通信，这作为设备的功能在内核模式下的驱动程序中加载。 应用程序使用这些函数来配置设备，检索有关设备的信息和执行 I/O 操作。 有关使用这些函数的信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB) 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB) 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/)  
 [USB 驱动程序开发指南](usb-driver-development-guide.md)  
 
 

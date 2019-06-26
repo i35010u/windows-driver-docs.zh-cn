@@ -6,12 +6,12 @@ keywords:
 - 移动电话 COM API 设计指南网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8da7aa11d0d6e2b5d35a87d593cdd8aa3ba965f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c040c4c4534903a41aac6eea5f183f78ab7db4c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382790"
 ---
 # <a name="cellular-com-api-design-guide"></a>手机网络 COM API 设计指南
 
@@ -25,7 +25,7 @@ ms.locfileid: "63353355"
 - cellularapi_oem.idl
 - rilapitypes.idl
 
-使用 MIDL 编译器生成标头文件。 有关详细信息，请参阅[Microsoft 接口定义语言](https://msdn.microsoft.com/library/windows/desktop/aa367091)Windows 开发人员中心上。
+使用 MIDL 编译器生成标头文件。 有关详细信息，请参阅[Microsoft 接口定义语言](https://docs.microsoft.com/windows/desktop/Midl/midl-start-page)Windows 开发人员中心上。
 
 必须声明相应功能中包含的移动电话应用程序的包。 有关详细信息，请参阅[移动电话的 COM API 功能](cellular-com-api-capabilities.md)。
 
@@ -37,5 +37,5 @@ ms.locfileid: "63353355"
 
 ## <a name="related-topics"></a>相关主题
 
-[移动电话的 COM API 参考](https://msdn.microsoft.com/library/windows/hardware/dn946508)
+[移动电话的 COM API 参考](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946508(v=vs.85))
 

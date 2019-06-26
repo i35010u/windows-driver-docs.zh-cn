@@ -6,12 +6,12 @@ keywords:
 - 缓冲的 I/O WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3608b75196aa9ee62191193edaa8a0d524a0db2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e02664283d22df920f152b950300071b8296e079
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360874"
 ---
 # <a name="irp-based-io-operations-that-always-use-buffered-io"></a>基于 IRP 的 I/O 操作，始终使用缓冲的 I/O
 
@@ -19,9 +19,9 @@ ms.locfileid: "63379721"
 ## <span id="ddk_irp_based_io_operations_that_always_use_buffered_io_if"></span><span id="DDK_IRP_BASED_IO_OPERATIONS_THAT_ALWAYS_USE_BUFFERED_IO_IF"></span>
 
 
-以下基于 IRP 的 I/O 操作始终使用缓冲的 I/O，而不考虑的值**标志**的成员[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构文件系统卷：
+以下基于 IRP 的 I/O 操作始终使用缓冲的 I/O，而不考虑的值**标志**的成员[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构文件系统卷：
 
--   IRP\_MJ\_CREATE ([**EaBuffer parameter**](https://msdn.microsoft.com/library/windows/hardware/ff544687))
+-   IRP\_MJ\_CREATE ([**EaBuffer parameter**](https://docs.microsoft.com/windows-hardware/drivers/ifs/flt-parameters-for-irp-mj-create))
 
 -   IRP\_MJ\_QUERY\_INFORMATION
 

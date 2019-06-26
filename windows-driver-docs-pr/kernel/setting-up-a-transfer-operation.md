@@ -11,12 +11,12 @@ keywords:
 - 将操作 WDK DMA 转移
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbeb0007d2c637a21dd0968f9d4c8c880fb86e96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcc56c467e5d1405b34fdeff71354f07e4c74fcd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385529"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360281"
 ---
 # <a name="setting-up-a-transfer-operation"></a>设置传输操作
 
@@ -24,11 +24,11 @@ ms.locfileid: "63385529"
 
 
 
-当[ **AllocateAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff540573)将控制转移到的驱动程序[ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)例程，它已经分配了一组映射注册。 但是，该驱动程序必须映射系统物理内存的当前 IRP 的传输请求到主机总线适配器的逻辑地址范围，如下所示：
+当[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)将控制转移到的驱动程序[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程，它已经分配了一组映射注册。 但是，该驱动程序必须映射系统物理内存的当前 IRP 的传输请求到主机总线适配器的逻辑地址范围，如下所示：
 
-1.  调用[ **MmGetMdlVirtualAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff554539)与在 MDL **Irp-&gt;MdlAddress**若要获取系统的物理地址传输应在何处开始索引。
+1.  调用[ **MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)与在 MDL **Irp-&gt;MdlAddress**若要获取系统的物理地址传输应在何处开始索引。
 
-    返回值是必需的参数 (*CurrentVa*) 到[ **MapTransfer**](https://msdn.microsoft.com/library/windows/hardware/ff554402)。
+    返回值是必需的参数 (*CurrentVa*) 到[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)。
 
 2.  调用**MapTransfer**以将 IRP 的缓冲区的系统的物理地址范围映射到主机总线适配器的逻辑地址范围。
 
@@ -38,16 +38,16 @@ ms.locfileid: "63385529"
 
 上一图所示，驱动程序的*AdapterControl*例程设置总线 master DMA 操作，如下所示：
 
-1.  *AdapterControl*例程获取开始传输地址。 将满足 IRP，所需的初始传输*AdapterControl*例程调用[ **MmGetMdlVirtualAddress**](https://msdn.microsoft.com/library/windows/hardware/ff554539)，将指针传递到在 MDL **Irp-&gt;MdlAddress**，这对于此 DMA 传输描述缓冲区。
+1.  *AdapterControl*例程获取开始传输地址。 将满足 IRP，所需的初始传输*AdapterControl*例程调用[ **MmGetMdlVirtualAddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)，将指针传递到在 MDL **Irp-&gt;MdlAddress**，这对于此 DMA 传输描述缓冲区。
 
     **MmGetMdlVirtualAddress**返回驱动程序可用作索引的系统的物理地址传输应开始的位置的虚拟地址。
 
     如果 IRP 需要多个传输操作，该驱动程序将计算的已更新的起始地址，如在本部分后面所述。
 
-2.  *AdapterControl*例程将返回的地址保存**MmGetMdlVirtualAddress**或在步骤 1 中计算。 此地址是必需的参数 (*CurrentVa*) 到[ **MapTransfer**](https://msdn.microsoft.com/library/windows/hardware/ff554402)。
+2.  *AdapterControl*例程将返回的地址保存**MmGetMdlVirtualAddress**或在步骤 1 中计算。 此地址是必需的参数 (*CurrentVa*) 到[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)。
 
 3.  *AdapterControl*例程调用**MapTransfer**，这会返回该驱动程序可以从该处编程主机总线适配器若要开始在传输操作的逻辑地址。 在调用**MapTransfer**，驱动程序提供以下参数：
-    -   所返回的适配器对象指针[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)
+    -   所返回的适配器对象指针[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)
 
     -   指向在 MDL **Irp-&gt;MdlAddress**为当前的 IRP
 
@@ -83,9 +83,9 @@ ms.locfileid: "63385529"
 
  
 
-在每个 DMA 操作结束时，该驱动程序必须调用[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)用一个有效的适配器的对象指针和*MapRegisterBase*句柄，以确保所有已传输数据，并释放当前 DMA 操作的物理到逻辑映射。 如果该驱动程序必须设置其他 DMA 操作，以满足当前 IRP，它必须调用**FlushAdapterBuffers**每个传输操作完成后。
+在每个 DMA 操作结束时，该驱动程序必须调用[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)用一个有效的适配器的对象指针和*MapRegisterBase*句柄，以确保所有已传输数据，并释放当前 DMA 操作的物理到逻辑映射。 如果该驱动程序必须设置其他 DMA 操作，以满足当前 IRP，它必须调用**FlushAdapterBuffers**每个传输操作完成后。
 
-当已完成所有请求的传输或驱动程序必须为 IRP 返回了错误状态时，该驱动程序应调用[ **FreeMapRegisters** ](https://msdn.microsoft.com/library/windows/hardware/ff546513)其最后一次调用后立即**FlushAdapterBuffers**为了获得最佳吞吐量主机总线适配器。 对其调用中**FreeMapRegisters**，该驱动程序必须传递它前面的调用中传递的适配器对象指针**AllocateAdapterChannel**。
+当已完成所有请求的传输或驱动程序必须为 IRP 返回了错误状态时，该驱动程序应调用[ **FreeMapRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)其最后一次调用后立即**FlushAdapterBuffers**为了获得最佳吞吐量主机总线适配器。 对其调用中**FreeMapRegisters**，该驱动程序必须传递它前面的调用中传递的适配器对象指针**AllocateAdapterChannel**。
 
  
 

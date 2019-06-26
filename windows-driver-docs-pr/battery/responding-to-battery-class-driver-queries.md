@@ -10,12 +10,12 @@ keywords:
 - 查询 WDK 电池
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd97504e09fbed7ac9b259ad55cb2f8f810777a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b8f9cb79f9edf97952b1dc3947a0f4bbcac281a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364743"
 ---
 # <a name="responding-to-battery-class-driver-queries"></a>响应电池类驱动程序查询
 
@@ -23,15 +23,15 @@ ms.locfileid: "63328441"
 ## <span id="ddk_responding_to_battery_class_driver_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_CLASS_DRIVER_QUERIES_DG"></span>
 
 
-Miniclass 驱动程序必须提供以下三种[BatteryMini*Xxx* ](https://msdn.microsoft.com/library/windows/hardware/ff536286)例程，电池的状态报告：
+Miniclass 驱动程序必须提供以下三种[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)例程，电池的状态报告：
 
-[*BatteryMiniQueryTag*](https://msdn.microsoft.com/library/windows/hardware/ff536275)
+[*BatteryMiniQueryTag*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)
 
-[*BatteryMiniQueryInformation*](https://msdn.microsoft.com/library/windows/hardware/ff536273)
+[*BatteryMiniQueryInformation*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_information_callback)
 
-[*BatteryMiniQueryStatus*](https://msdn.microsoft.com/library/windows/hardware/ff536274)
+[*BatteryMiniQueryStatus*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_status_callback)
 
-[ **BatteryClassIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff536267)例程中的类驱动程序收到 Ioctl 请求有关电池的信息时调用这些 miniclass 驱动程序例程。
+[ **BatteryClassIoctl** ](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassioctl)例程中的类驱动程序收到 Ioctl 请求有关电池的信息时调用这些 miniclass 驱动程序例程。
 
  
 

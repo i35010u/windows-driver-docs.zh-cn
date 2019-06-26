@@ -4,12 +4,12 @@ description: 获取 PCMCIA_INTERFACE_STANDARD 接口
 ms.assetid: 475bf66a-5b6e-4a06-95f7-b7280dd7276d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1aec3560f8a4ec9f13ffc59f1cbe4989013a981
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ebb212e4dfe405ccb4e4d93bc8e7f6facc41d7a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543381"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386196"
 ---
 # <a name="obtaining-a-pcmciainterfacestandard-interface"></a>获取 PCMCIA\_接口\_标准接口
 
@@ -19,9 +19,9 @@ ms.locfileid: "56543381"
 
 本部分介绍如何将驱动程序可以获取 PCMCIA\_接口\_标准接口，用于从 PCMCIA 总线驱动程序内存 PCMCIA 卡。
 
-驱动程序将获取 PCMCIA\_接口\_标准接口，通过创建并发送 IRP\_MJ\_指定的即插即用请求[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)次要函数代码。 该驱动程序将执行以下操作：
+驱动程序将获取 PCMCIA\_接口\_标准接口，通过创建并发送 IRP\_MJ\_指定的即插即用请求[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)次要函数代码。 该驱动程序将执行以下操作：
 
--   分配和零填充[PCMCIA\_界面\_标准接口内存卡例程](https://msdn.microsoft.com/library/windows/hardware/ff537607)结构中的分页的内存池。
+-   分配和零填充[PCMCIA\_界面\_标准接口内存卡例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)结构中的分页的内存池。
 
 -   创建查询接口请求 IRP 并获取新的 IRP 的下一步的堆栈位置。
 

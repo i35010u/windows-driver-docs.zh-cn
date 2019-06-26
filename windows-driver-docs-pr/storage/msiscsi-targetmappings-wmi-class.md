@@ -4,12 +4,12 @@ description: MSiSCSI\_TargetMappings WMI 类
 ms.assetid: 12bfe80a-8431-4607-99f5-ddd6815aecc6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1221885af565d908e6d35f8c57fe432972551e80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 106ace48cc639d24bbbc3d7c7679463e47801a17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384666"
 ---
 # <a name="msiscsitargetmappings-wmi-class"></a>MSiSCSI\_TargetMappings WMI 类
 
@@ -25,7 +25,7 @@ MSiSCSI\_TargetMappings WMI 类包含一组与会话相关联的 iSCSI 逻辑单
 
 MSiSCSI\_TargetMappings 类中定义，则不发布*Operations.mof*。
 
-当 WMI 工具套件编译此类定义时，它会生成[ **MSiSCSI\_TargetMappings** ](https://msdn.microsoft.com/library/windows/hardware/ff563144)数据结构。
+当 WMI 工具套件编译此类定义时，它会生成[ **MSiSCSI\_TargetMappings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_msiscsi_targetmappings)数据结构。
 
 发起程序所需实现 MSiSCSI\_TargetMappings 类。
 

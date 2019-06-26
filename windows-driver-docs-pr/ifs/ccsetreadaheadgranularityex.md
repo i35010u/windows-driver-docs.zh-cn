@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bb32271d65c55f031cb288cbfb2491ae0ec6cde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4592e8296fa9e5382ec7752f8eee75099ff57f85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364352"
 ---
 # <a name="ccsetreadaheadgranularityex-routine"></a>CcSetReadAheadGranularityEx 例程
 
@@ -94,7 +94,7 @@ VOID CcSetReadAheadGranularityEx(
 
 [**CcInitializeCacheMap**](https://msdn.microsoft.com/library/windows/hardware/ff539135)
 
-[**CcReadAhead**](https://msdn.microsoft.com/library/windows/hardware/ff539191)
+[**CcReadAhead**](https://docs.microsoft.com/previous-versions/ff539191(v=vs.85))
 
 [**CcScheduleReadAhead**](https://msdn.microsoft.com/library/windows/hardware/ff539200)
 

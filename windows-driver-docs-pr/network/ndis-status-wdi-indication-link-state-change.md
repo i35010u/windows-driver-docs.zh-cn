@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d97774df236ea57dcf280905378584c6922253f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2151af5c3ec4ff9df9713b111a6bb4896dcd0db1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390677"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384218"
 ---
 # <a name="ndisstatuswdiindicationlinkstatechange"></a>NDIS\_状态\_WDI\_指示\_链接\_状态\_更改
 
@@ -19,11 +19,11 @@ ms.locfileid: "63390677"
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_链接\_状态\_更改以指示任何以下情况：
 
 -   更改链接速度。
--   链接质量更改者超过阈值的值。 阈值为 1，如果连接质量提示设置为 WDI\_连接\_质量\_低\_延迟 (在中定义[ **WDI\_连接\_质量\_提示**](https://msdn.microsoft.com/library/windows/hardware/dn897807))。 否则，阈值是 5。
+-   链接质量更改者超过阈值的值。 阈值为 1，如果连接质量提示设置为 WDI\_连接\_质量\_低\_延迟 (在中定义[ **WDI\_连接\_质量\_提示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_connection_quality_hint))。 否则，阈值是 5。
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -36,7 +36,7 @@ ms.locfileid: "63390677"
 
 | 在任务栏的搜索框中键入                                                                                           | 允许多个 TLV 实例 | 可选 | 描述                       |
 |------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------|
-| [**WDI\_TLV\_链接\_状态\_更改\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn897842) |                                |          | 链接状态更改参数。 |
+| [**WDI\_TLV\_链接\_状态\_更改\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-state-change-parameters) |                                |          | 链接状态更改参数。 |
 
  
 

@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 283100a9053b80de46afa42697bf8fe84f947d9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0e617619f5dd764a2d77f6166b813878241d7ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333336"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359042"
 ---
 # <a name="ksjackdescription2-structure"></a>KSJACK\_DESCRIPTION2 结构
 
@@ -69,7 +69,7 @@ typedef struct _tagKSJACK_DESCRIPTION2 {
 
  
 
-有关动态格式更改的详细信息，请参阅[动态格式更改](https://msdn.microsoft.com/library/windows/hardware/ff536371)。
+有关动态格式更改的详细信息，请参阅[动态格式更改](https://docs.microsoft.com/windows-hardware/drivers/audio/dynamic-format-change)。
 
 <a name="remarks"></a>备注
 -------

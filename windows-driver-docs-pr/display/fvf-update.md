@@ -6,12 +6,12 @@ keywords:
 - FVF WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 842af6b95b24364acd77dc15f8e66fa20ddf60cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66f04e47f76ccd00df6c8c06bbab5f6336092cad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377989"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383440"
 ---
 # <a name="fvf-update"></a>FVF 更新
 
@@ -21,7 +21,7 @@ ms.locfileid: "63377989"
 
 FVF 代码最初定义 DirectX 6.0 现在支持在 DirectX 7.0 中的纹理坐标集的规范。
 
-除了正常 2D 纹理，支持在 DirectX 6.0 中，DirectX 7.0 支持一维、 3 和 4 D 纹理。 此外，还可能投影纹理。 **DwVertexType**的成员[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff545957)可以进行检查，当[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)调用，以确定每个纹理坐标集的维度。
+除了正常 2D 纹理，支持在 DirectX 6.0 中，DirectX 7.0 支持一维、 3 和 4 D 纹理。 此外，还可能投影纹理。 **DwVertexType**的成员[ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)可以进行检查，当[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)调用，以确定每个纹理坐标集的维度。
 
 例如，如果有五个纹理坐标集与顶点，每个这些纹理可以是一维、 二维、 三维，或 4d 和他们可能预计的纹理。 每个纹理阶段是独立的因此维度可以是不同的每组坐标。 中包含 FVF 标志的 16 位**dwVertexType**可以检查来确定的纹理坐标的维度。
 

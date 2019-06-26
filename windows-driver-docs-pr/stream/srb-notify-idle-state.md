@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8532033ea5d2988db5ebb212efc5a31bcd75115f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38cdeac2dc57d690a369c2135d2e6911cd0197cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379947"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377901"
 ---
 # <a name="srbnotifyidlestate"></a>SRB\_通知\_空闲\_状态
 
@@ -33,9 +33,9 @@ ms.locfileid: "63379947"
 
 SRB\_通知\_空闲\_中 Microsoft Windows XP Service Pack 2 (SP2) 和更高版本，但在 Microsoft Windows Server 2003 中不发送状态。
 
-SRB\_通知\_IDLE\_状态修补程序 USB 选择性挂起的流类驱动程序中存在的问题 (*Stream.sys*) 在 Windows XP sp1 中中, 所述[知识文章 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)。 可以使用 SRB\_通知\_IDLE\_状态，以便支持选择性挂起单个实例的微型驱动程序基于中[流式传输类](https://msdn.microsoft.com/library/windows/hardware/ff568277)并[USBCAMD2](https://msdn.microsoft.com/library/windows/hardware/ff568573)。
+SRB\_通知\_IDLE\_状态修补程序 USB 选择性挂起的流类驱动程序中存在的问题 (*Stream.sys*) 在 Windows XP sp1 中中, 所述[知识文章 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)。 可以使用 SRB\_通知\_IDLE\_状态，以便支持选择性挂起单个实例的微型驱动程序基于中[流式传输类](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)并[USBCAMD2](https://docs.microsoft.com/windows-hardware/drivers/stream/usbcamd2-minidriver-operation)。
 
-在 Windows XP 及更早版本，SRB\_通知\_空闲\_状态不存在。 对于 Windows XP 及更早版本，微型驱动程序收到[ **SRB\_获取\_设备\_属性**](srb-get-device-property.md)从空闲状态唤醒。 然后调用微型驱动程序[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)设备状态更改为 D0。
+在 Windows XP 及更早版本，SRB\_通知\_空闲\_状态不存在。 对于 Windows XP 及更早版本，微型驱动程序收到[ **SRB\_获取\_设备\_属性**](srb-get-device-property.md)从空闲状态唤醒。 然后调用微型驱动程序[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)设备状态更改为 D0。
 
 在 Windows XP SP1 和 Windows Server 2003，SRB\_获取\_设备\_属性不在此情况下发送。 如果使用的*Stream.sys*使用这些操作系统，请按照前面提到的知识库文章中的说明。
 
@@ -43,7 +43,7 @@ SRB\_通知\_IDLE\_状态修补程序 USB 选择性挂起的流类驱动程序�
 
 当关闭设备的最后一个实例，在类驱动程序将发送 SRB\_通知\_空闲\_状态之前为该设备将请求发送到转换到状态 D3。
 
-当流类驱动程序发送 SRB\_通知\_IDLE\_状态请求，微型驱动程序将接收到调用[ *StrMiniReceiveDevicePacket*](https://msdn.microsoft.com/library/windows/hardware/ff568463)。
+当流类驱动程序发送 SRB\_通知\_IDLE\_状态请求，微型驱动程序将接收到调用[ *StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)。
 
 ## <a name="see-also"></a>请参阅
 
@@ -52,7 +52,7 @@ SRB\_通知\_IDLE\_状态修补程序 USB 选择性挂起的流类驱动程序�
 
 [**SRB\_开放\_设备\_实例**](srb-open-device-instance.md)
 
-[*StrMiniReceiveDevicePacket*](https://msdn.microsoft.com/library/windows/hardware/ff568463)
+[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
 
  
 

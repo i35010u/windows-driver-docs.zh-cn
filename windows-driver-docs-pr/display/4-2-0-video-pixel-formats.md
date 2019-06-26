@@ -10,12 +10,12 @@ keywords:
 - 4 2 0 视频 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4de7df17be95da7aa3f4efcd5d757ab4b00359
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ff6831ff4fdba483c4d811096068c4be140aa72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384271"
 ---
 # <a name="420-video-pixel-formats"></a>4:2:0 视频像素格式
 
@@ -38,4 +38,4 @@ ms.locfileid: "63391256"
 | IMC3 | 与 IMC1，除了交换 Cb 和 Cr 相同。 | 
 | IMC4 | 与 IMC2，除了交换 Cb 和 Cr 相同。 | 
 
-有关这些格式的详细信息，请参阅[建议的 8 位 YUV 格式的视频呈现](https://msdn.microsoft.com/library/windows/desktop/dd206750)Microsoft Media Foundation 文档中。
+有关这些格式的详细信息，请参阅[建议的 8 位 YUV 格式的视频呈现](https://docs.microsoft.com/windows/desktop/medfound/recommended-8-bit-yuv-formats-for-video-rendering)Microsoft Media Foundation 文档中。

@@ -8,12 +8,12 @@ keywords:
 - 没有缓冲区 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73cbfd8855a3481090d997b436f5d80d36dd1c84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1106fef7d2c48024f28dc2a33136545a853fb0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384568"
 ---
 # <a name="irp-based-ioctl-and-fsctl-operations"></a>基于 IRP 的 IOCTL 和 FSCTL 操作
 
@@ -44,7 +44,7 @@ ms.locfileid: "63379717"
 #define METHOD_NEITHER                  3
 ```
 
-详细了解 CTL\_代码宏，请参阅[定义的 I/O 控制代码](https://msdn.microsoft.com/library/windows/hardware/ff543023)。
+详细了解 CTL\_代码宏，请参阅[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
 
 请注意该 IRP\_MJ\_设备\_控件也可以是一个快速的 I/O 操作。 快速的 I/O 操作时，它始终使用既不缓冲，也不直接 I/O，而不考虑 IOCTL 的传输类型。 有关详细信息，有关何时 IRP\_MJ\_设备\_控件可以是一个快速的 I/O 操作，请参阅[基于可以为 IRP 的操作或快速 I/O](operations-that-can-be-irp-based-or-fast-i-o.md)。
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d8166a80b4e701534cb52e923d0ca1f86689995
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3e99c9633f287d2c01958c7ed750dd386179202
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375255"
 ---
 # <a name="guiddevinterfacemonitor"></a>GUID_DEVINTERFACE_MONITOR
 
 
-GUID_DEVINTERFACE_MONITOR[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[监视设备](https://msdn.microsoft.com/library/windows/hardware/ff568428)。
+GUID_DEVINTERFACE_MONITOR[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[监视设备](https://docs.microsoft.com/windows-hardware/drivers/display/monitor-drivers)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_MONITOR[设备接口类](https://msdn.microsoft.com/library/wi
 
 Windows 操作系统中配置每个监视器中注册设备接口。
 
-有关显示适配器和监视器的信息，请参阅[显示设备设计指南](https://msdn.microsoft.com/library/windows/hardware/ff554044)并[显示器驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568428)。
+有关显示适配器和监视器的信息，请参阅[显示设备设计指南](https://docs.microsoft.com/windows-hardware/drivers/display/index)并[显示器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/display/monitor-drivers)。
 
 <a name="requirements"></a>要求
 ------------

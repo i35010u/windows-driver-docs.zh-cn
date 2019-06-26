@@ -7,12 +7,12 @@ keywords:
 - 流同步 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cbcbe2183865a56b20e51b71950953338ed36df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 770c5eb6fdadff569192a6d88c0d1d28d275a5d5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377781"
 ---
 # <a name="stream-synchronization"></a>流同步
 
@@ -22,7 +22,7 @@ ms.locfileid: "63324781"
 
 可能的两个或多个流组成 DVD 的数据流输入。 Stream 类驱动程序可以处理同步以透明方式代表 DVD 解码器微型驱动程序。 有关详细信息，请参阅[微型驱动程序同步](minidriver-synchronization.md)。 编程人员仍必须注意的几个因素会影响 DVD 流，包括：
 
--   音频流必须提供主时钟，并且必须合成时钟时没有任何数据。 当音频数据停止时，音频流使用基于速率的匹配和时钟频率，所返回的系统时钟[ **KeQueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/hardware/ff553053)。 所有其他流必须作为对音频的从属项。 也就是说，它们同步到音频流其性能。
+-   音频流必须提供主时钟，并且必须合成时钟时没有任何数据。 当音频数据停止时，音频流使用基于速率的匹配和时钟频率，所返回的系统时钟[ **KeQueryPerformanceCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kequeryperformancecounter)。 所有其他流必须作为对音频的从属项。 也就是说，它们同步到音频流其性能。
 
 -   必须在用户模式下支持软件音频解码器。 时钟转发器 DirectShow 筛选器将 DirectShow 时钟转发给微型驱动程序。 这是透明的微型驱动程序。
 

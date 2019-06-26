@@ -5,56 +5,56 @@ ms.assetid: 367081A7-F259-4132-B857-C956C0F2829C
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_DISCONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b60e836b625a6b24a145ce1900fac299874b428d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d9818fa16e5a2c109f719c82b4af9280fa6632b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355913"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357605"
 ---
 # <a name="oidswitchnicdisconnect"></a>OID\_交换机\_NIC\_断开连接
 
 
 HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求的 OID\_切换\_NIC\_断开连接，以通知基础可扩展交换机扩展的之间的连接可扩展的交换机端口和一个网络适配器被被撤销。 可扩展交换机的协议边缘连接完全销毁后，将颁发的 OID 集请求[OID\_切换\_NIC\_删除](oid-switch-nic-delete.md)。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_交换机\_NIC\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598215)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_交换机\_NIC\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
-**索引**的成员[ **NDIS\_开关\_NIC\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598215)结构指定的网络适配器的索引为其断开连接通知进行了。 使用指定的网络适配器**索引**值连接到指定的可扩展交换机端口**PortId**成员。 有关这些索引值的详细信息，请参阅[网络适配器索引值](https://msdn.microsoft.com/library/windows/hardware/hh598258)。
+**索引**的成员[ **NDIS\_开关\_NIC\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构指定的网络适配器的索引为其断开连接通知进行了。 使用指定的网络适配器**索引**值连接到指定的可扩展交换机端口**PortId**成员。 有关这些索引值的详细信息，请参阅[网络适配器索引值](https://docs.microsoft.com/windows-hardware/drivers/network/network-adapter-index-values)。
 
 扩展必须处理的 OID 的 OID 集请求时请遵循以下准则\_交换机\_NIC\_断开连接：
 
--   该扩展不能修改[ **NDIS\_交换机\_NIC\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598215)与 OID 请求关联的结构。
+-   该扩展不能修改[ **NDIS\_交换机\_NIC\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)与 OID 请求关联的结构。
 
 -   OID\_切换\_NIC\_断开连接请求仅通知可扩展交换机连接，则在将调用指定的网络适配器和可扩展的交换机端口之间的扩展。 扩展处理此 OID 请求后，它必须执行以下操作：
 
     -   生成可扩展的交换机端口上为其网络适配器连接到的任何数据包流量 OID\_切换\_NIC\_发出断开连接的 OID 请求。
 
-    -   调用[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)可扩展交换机端口上指定的网络适配器连接的可扩展交换机引用计数器递增。
+    -   调用[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)可扩展交换机端口上指定的网络适配器连接的可扩展交换机引用计数器递增。
 
     -   转发或源于的 OID 请求[OID\_交换机\_NIC\_请求](oid-switch-nic-request.md)到为其基础网络适配器 OID\_开关\_NIC\_发出断开连接 OID 请求。
 
-        **请注意**如果该扩展调用[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)递增前 OID 的可扩展交换机引用计数器\_切换\_NIC\_断开连接颁发、 扩展仍然可以转发或源自 OID 请求。
+        **请注意**如果该扩展调用[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)递增前 OID 的可扩展交换机引用计数器\_切换\_NIC\_断开连接颁发、 扩展仍然可以转发或源自 OID 请求。
 
 
 
-    -   转发或源于的 NDIS 状态迹象[ **NDIS\_状态\_交换机\_NIC\_状态**](https://msdn.microsoft.com/library/windows/hardware/hh598205)从为其基础网络适配器OID\_交换机\_NIC\_发出断开连接的 OID 请求。
+    -   转发或源于的 NDIS 状态迹象[ **NDIS\_状态\_交换机\_NIC\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)从为其基础网络适配器OID\_交换机\_NIC\_发出断开连接的 OID 请求。
 
-        **请注意**如果该扩展调用[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)递增前 OID 的可扩展交换机引用计数器\_切换\_NIC\_断开连接颁发、 扩展仍然可以转发或源自 NDIS 状态指示。
+        **请注意**如果该扩展调用[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)递增前 OID 的可扩展交换机引用计数器\_切换\_NIC\_断开连接颁发、 扩展仍然可以转发或源自 NDIS 状态指示。
 
-        **请注意**如果该扩展以前称为[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)递增可扩展交换机引用计数器，它不需要同步其调用来源或转发OID 请求或管理的 HYPER-V 可扩展其代码与的 NDIS 状态指示切换 OID 请求。 扩展递增引用计数器后，可扩展交换机接口不会颁发的 OID 集请求[OID\_切换\_NIC\_删除](oid-switch-nic-delete.md)。
+        **请注意**如果该扩展以前称为[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)递增可扩展交换机引用计数器，它不需要同步其调用来源或转发OID 请求或管理的 HYPER-V 可扩展其代码与的 NDIS 状态指示切换 OID 请求。 扩展递增引用计数器后，可扩展交换机接口不会颁发的 OID 集请求[OID\_切换\_NIC\_删除](oid-switch-nic-delete.md)。
 
 -   扩展始终将转发对基础扩展的 OID 集请求。 扩展必须完成请求。
 
--   可扩展交换机外部网络适配器可以绑定到一个或多个基础物理适配器。 对于每个绑定到外部网络适配器的物理网络适配器，可扩展交换机的协议边缘会发出一个单独的 OID 集请求的 OID\_切换\_NIC\_断开连接。 每个 OID 集请求指定一个不同的网络适配器连接的索引值。 有关这些索引值的详细信息，请参阅[网络适配器索引值](https://msdn.microsoft.com/library/windows/hardware/hh598258)。
+-   可扩展交换机外部网络适配器可以绑定到一个或多个基础物理适配器。 对于每个绑定到外部网络适配器的物理网络适配器，可扩展交换机的协议边缘会发出一个单独的 OID 集请求的 OID\_切换\_NIC\_断开连接。 每个 OID 集请求指定一个不同的网络适配器连接的索引值。 有关这些索引值的详细信息，请参阅[网络适配器索引值](https://docs.microsoft.com/windows-hardware/drivers/network/network-adapter-index-values)。
 
-    扩展必须维护每个基础物理适配器的连接状态。 有关在其中的物理网络适配器可以绑定到外部网络适配器的不同配置的详细信息，请参阅[的物理网络适配器配置的类型](https://msdn.microsoft.com/library/windows/hardware/hh582274)。
+    扩展必须维护每个基础物理适配器的连接状态。 有关在其中的物理网络适配器可以绑定到外部网络适配器的不同配置的详细信息，请参阅[的物理网络适配器配置的类型](https://docs.microsoft.com/windows-hardware/drivers/network/types-of-physical-network-adapter-configurations)。
 
 **请注意**扩展必须发出其自己的 OID 的 OID 集请求\_交换机\_NIC\_断开连接。
 
-有关可扩展交换机端口和网络适配器连接的状态的详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](https://msdn.microsoft.com/library/windows/hardware/hh598182)。
+有关可扩展交换机端口和网络适配器连接的状态的详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-port-and-network-adapter-states)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -105,12 +105,12 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 
 
 ****
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SWITCH\_NIC\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/hh598215)
+[**NDIS\_SWITCH\_NIC\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
 
 [OID\_交换机\_NIC\_删除](oid-switch-nic-delete.md)
 
 [OID\_交换机\_端口\_数组](oid-switch-port-array.md)
 
-[*ReferenceSwitchPort*](https://msdn.microsoft.com/library/windows/hardware/hh598295)
+[*ReferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)

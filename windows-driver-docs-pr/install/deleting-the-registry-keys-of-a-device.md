@@ -7,19 +7,19 @@ keywords:
 - 正在删除注册表项 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef9e28fc56f907915eb6f88b8bebf6057b7bbb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ca09ccb3a368074a329cc5b425a6f04372d976e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360826"
 ---
 # <a name="deleting-the-registry-keys-of-a-device"></a>删除设备的注册表项
 
 
 不应使用**SetupDiDeleteDevRegKey**或*硬件密钥*出于以下原因设备：
 
--   [**SetupDiDeleteDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550991)删除注册表项中的所有自定义设置。 这包括以下内容：
+-   [**SetupDiDeleteDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdideletedevregkey)删除注册表项中的所有自定义设置。 这包括以下内容：
 
     -   在安装过程中指定的设置。
 
@@ -27,9 +27,9 @@ ms.locfileid: "63367973"
 
     -   已创建或修改的应用程序或其他组件的设置。
 
-    [**SetupDiDeleteDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550991)还会删除重要的设备安装状态。
+    [**SetupDiDeleteDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdideletedevregkey)还会删除重要的设备安装状态。
 
--   使用打开的软件或硬件密钥[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)与 DICS_FLAG_GLOBAL 的作用域包含有关设备安装状态的数据。 软件或硬件与 DICS_FLAG_CONFIGSPECIFIC 的作用域访问的项不包含设备安装状态。
+-   使用打开的软件或硬件密钥[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)与 DICS_FLAG_GLOBAL 的作用域包含有关设备安装状态的数据。 软件或硬件与 DICS_FLAG_CONFIGSPECIFIC 的作用域访问的项不包含设备安装状态。
 
     在任一情况下，删除这些软件或硬件密钥可能会影响其他设备安装组件。
 

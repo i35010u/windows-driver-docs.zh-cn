@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fc97c0ae362890b948f5a39fed41753ef0cd28a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96ab06b9b4047ad0d6529eed42f4bbf26496c8d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329989"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374639"
 ---
 # <a name="setbindingsupport-function"></a>SetBindingSupport 函数
 
@@ -48,7 +48,7 @@ void SetBindingSupport(
 指示 HBA 的功能和其微型端口驱动程序提供一组特定的永久性绑定与相关的功能的位图。 此参数可以具有的值的列表，请参阅的说明[HBA\_绑定\_类型](hba-bind-type.md)WMI 类限定符。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SetBindingSupport\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565575)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SetBindingSupport\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setbindingsupport_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -89,9 +89,9 @@ void SetBindingSupport(
 
 [**SetBindingSupport**](setbindingsupport.md)
 
-[**SetBindingSupport\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565566)
+[**SetBindingSupport\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setbindingsupport_in)
 
-[**SetBindingSupport\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565575)
+[**SetBindingSupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setbindingsupport_out)
 
  
 

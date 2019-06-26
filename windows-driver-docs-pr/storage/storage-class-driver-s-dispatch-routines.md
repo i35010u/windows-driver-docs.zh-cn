@@ -6,12 +6,12 @@ keywords:
 - 调度例程 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f373ea646c63871ead67c04930fd79e659064d5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ba40f2b2ff09c5be8ae7b4961140b16a5c982f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368218"
 ---
 # <a name="storage-class-drivers-dispatch-routines"></a>存储类驱动程序的调度例程
 
@@ -29,7 +29,7 @@ ms.locfileid: "63339053"
 
 存储类驱动程序必须具有[ **DispatchShutdown** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程和可能[ **DispatchFlushBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程如果其设备在内部，缓存数据，如果其设备可能连接到总线由在内部，缓存数据的 HBA 驱动或文件系统上的类驱动程序进行分层。 为了维护数据完整性，应将此类缓存刷新到设备之前在系统关闭的情况下。
 
-另请参阅[写入调度例程](https://msdn.microsoft.com/library/windows/hardware/ff566407)调度例程的常规要求有关的详细信息。
+另请参阅[写入调度例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-dispatch-routines)调度例程的常规要求有关的详细信息。
 
  
 

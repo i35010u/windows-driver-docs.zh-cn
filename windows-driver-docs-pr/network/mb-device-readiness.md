@@ -4,12 +4,12 @@ description: MB 设备就绪状态
 ms.assetid: 67a67ff7-dcff-4aec-bea9-7b1be9593649
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f83da274cae07e6a886ab706d852a48c8c1afd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49820ee9dc04b868f5a6a7f338efdb73486a0bf3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343409"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378013"
 ---
 # <a name="mb-device-readiness"></a>MB 设备就绪状态
 
@@ -38,15 +38,15 @@ MB 服务会假定微型端口驱动程序会自动初始化其 MB 设备的硬�
 
 微型端口驱动程序将发送之前**WwanReadyStateInitialized**就绪状态事件通知，直到确定并更正问题，该服务将无法继续任何深一层与网络相关的活动。 但是，该服务仍可能会向微型端口驱动程序发送 Oid。
 
-微型端口驱动程序不需要等待才能报告之前准备就绪的短信子系统**WwanReadyStateInitialized**就绪状态。 相反，微型端口驱动程序应该发送一个单独[OID\_WWAN\_SMS\_配置](https://msdn.microsoft.com/library/windows/hardware/ff569837)通知时的短信子系统已准备好发送和接收 SMS 消息。
+微型端口驱动程序不需要等待才能报告之前准备就绪的短信子系统**WwanReadyStateInitialized**就绪状态。 相反，微型端口驱动程序应该发送一个单独[OID\_WWAN\_SMS\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-configuration)通知时的短信子系统已准备好发送和接收 SMS 消息。
 
 ### <a name="emergency-mode-support"></a>紧急模式下支持
 
-如果微型端口驱动程序表明它支持紧急调用服务在处理[OID\_WWAN\_准备\_信息](https://msdn.microsoft.com/library/windows/hardware/ff569833)微型端口驱动程序必须设置**EmergencyMode**的成员[ **WWAN\_准备\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff571226)结构**WwanEmergencyModeOn**。 在这种情况下，微型端口驱动程序应继续注册通知发送到 MB 服务，但该服务将不会调用任何自动与配置相关的功能。
+如果微型端口驱动程序表明它支持紧急调用服务在处理[OID\_WWAN\_准备\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)微型端口驱动程序必须设置**EmergencyMode**的成员[ **WWAN\_准备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_ready_info)结构**WwanEmergencyModeOn**。 在这种情况下，微型端口驱动程序应继续注册通知发送到 MB 服务，但该服务将不会调用任何自动与配置相关的功能。
 
 微型端口驱动程序可以指定它们甚至在其中检测到，SIM 不再有效，可能是因为该订阅未付款，或者服务已被停用，因为该设备已报告被盗的情况下支持紧急调用服务。
 
-有关设备的准备情况的详细信息，请参阅[OID\_WWAN\_准备\_信息](https://msdn.microsoft.com/library/windows/hardware/ff569833)。
+有关设备的准备情况的详细信息，请参阅[OID\_WWAN\_准备\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)。
 
  
 

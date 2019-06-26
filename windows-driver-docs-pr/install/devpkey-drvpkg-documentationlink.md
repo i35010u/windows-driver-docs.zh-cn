@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7d655b193face74e631ee1cc88ffe2fbf2539a15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 264a34e2acde3f4716b94c419656155e14f8c954
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348764"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377281"
 ---
 # <a name="devpkeydrvpkgdocumentationlink"></a>DEVPKEY_DrvPkg_DocumentationLink
 
@@ -64,7 +64,7 @@ DEVPKEY_DrvPkg_DocumentationLink 设备属性表示设备实例的文档的 URL�
 http://www.microsoft.com/redirect?prod=DSC530&rev=34&type=docs
 ```
 
-Microsoft 不提供 Web 宿主关系或 DEVPKEY_DrvPkg_DocumentationLink 属性值所指定的网页的重定向。 URL 必须链接到一个网页，通过维护[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)提供程序。
+Microsoft 不提供 Web 宿主关系或 DEVPKEY_DrvPkg_DocumentationLink 属性值所指定的网页的重定向。 URL 必须链接到一个网页，通过维护[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)提供程序。
 
 当用户单击安装程序生成的最终用户对话框中显示的网站链接时，Windows 会将以下信息添加到包括 DEVPKEY_DrvPkg_DocumentationLink 所提供的 URL 的 HTTP 请求：
 
@@ -82,7 +82,7 @@ Microsoft 不提供 Web 宿主关系或 DEVPKEY_DrvPkg_DocumentationLink 属性�
 The following example shows the type of HTTP request that would be sent to a web server: http://www.microsoft.com/redirect?prod=DSC530&rev34&type=docs&pver=6.0&spb=pro&olcid=0x409&pnpid=PCI%5CVEN_8086%26DEV_2533%26SUBSYS_00000000%26REV_04
 ```
 
-可以设置的值由 DEVPKEY_DrvPkg_DocumentationLink [ **INF AddProperty 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546318)包含在[ **INF *DDInstall*一节**](https://msdn.microsoft.com/library/windows/hardware/ff547344)的安装设备的 INF 文件。 可以通过调用检索的值 DEVPKEY_DrvPkg_DocumentationLinkproperty [ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)。
+可以设置的值由 DEVPKEY_DrvPkg_DocumentationLink [ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)包含在[ **INF *DDInstall*一节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的安装设备的 INF 文件。 可以通过调用检索的值 DEVPKEY_DrvPkg_DocumentationLinkproperty [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
 
 下面是举例说明如何使用 INF **AddProperty**指令以将设备 INF 安装 DEVPKEY_DrvPkg_DocumentationLink 的值设置*DDInstall*部分"SampleDDInstallSection":
 
@@ -120,11 +120,11 @@ DeviceDocumentationLink,,,,"http://www.microsoft.com/redirect?prod=DSC530&rev34&
 ## <a name="see-also"></a>请参阅
 
 
-[**INF AddProperty Directive**](https://msdn.microsoft.com/library/windows/hardware/ff546318)
+[**INF AddProperty Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
-[**INF *DDInstall*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

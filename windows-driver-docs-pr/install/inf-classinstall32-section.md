@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 925d0a6d34f0d073bfc04b4dba361fd9f24cfbcf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d27bf8a39f2ffdfae32e04345c5726360934c200
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325286"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365855"
 ---
 # <a name="inf-classinstall32-section"></a>INF ClassInstall32 节
 
@@ -53,21 +53,21 @@ AddReg=add-registry-section[,add-registry-section]...
 ## <a name="entries"></a>条目
 
 
-<a href="" id="addreg-add-registry-section--add-registry-section-----"></a>**AddReg=**<em>add</em>-*registry*-*section*\[**,**<em>add</em>-*registry*-*section*\] ...  
+<a href="" id="addreg-add-registry-section--add-registry-section-----"></a>**AddReg=** <em>add</em>-*registry*-*section*\[ **,** <em>add</em>-*registry*-*section*\] ...  
 引用包含特定于类的值的条目写入到注册表的一个或多个命名的部分。 通常情况下，这用于为新的设备安装程序类提供至少一个友好名称的其他组件可以稍后从注册表中检索并使用打开这个新的设备类别，"安装"任何新的设备类安装程序和/或属性页的已安装的设备对于此设备安装程序类，其含义的提供程序。
 
-**HKR**中任何规范*添加注册表部分*指定 **...类\\{**<em>SetupClassGUID</em>**}** 注册表项。 有关其他信息，请参阅以下**备注**部分。
+**HKR**中任何规范*添加注册表部分*指定 **...类\\{** <em>SetupClassGUID</em> **}** 注册表项。 有关其他信息，请参阅以下**备注**部分。
 
 有关详细信息，请参阅[ **INF AddReg 指令**](inf-addreg-directive.md)。
 
-<a href="" id="addproperty-add-property-section--add-property-section-----"></a>**AddProperty=**<em>add-property-section</em>\[**,**<em>add-property-section</em>\] ...  
+<a href="" id="addproperty-add-property-section--add-property-section-----"></a>**AddProperty=** <em>add-property-section</em>\[ **,** <em>add-property-section</em>\] ...  
 （Windows Vista 和更高版本的 Windows）引用一个或多个修改的 INF 文件部分[设备属性](device-properties.md)为设置[设备安装程序类](device-setup-classes.md)。 应使用[ **INF AddProperty 指令**](inf-addproperty-directive.md)仅可设置到 Windows Vista 或更高版本的 Windows 操作系统的新的设备安装程序类属性。
 
 对于设备类属性，引入了之前在 Windows Server 2003、 Windows XP 或 Windows 2000 且具有对应的注册表条目值，应继续使用[ **INF AddReg 指令**](inf-addreg-directive.md)设置设备安装程序类属性。 这些准则适用于系统定义的属性和自定义属性。
 
 有关如何使用详细信息**AddProperty**指令，请参阅[INF AddProperty 指令和 INF DelProperty 指令](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)。
 
-<a href="" id="copyfiles--filename---file-list-section--file-list-section-----"></a>**Copyfiles = @**<em>文件名</em> | *文件*-*列表*-*部分*\[ **，**<em>文件</em>-*列表*-*部分*\] ...  
+<a href="" id="copyfiles--filename---file-list-section--file-list-section-----"></a>**Copyfiles = @** <em>文件名</em> | *文件*-*列表*-*部分*\[ **，** <em>文件</em>-*列表*-*部分*\] ...  
 指定一个要复制到目标的源媒体中的命名的文件，或者引用一个或多个命名的部分在其中指定要传输到的目标类相关文件的源媒体上。 **DefaultDestDir**中的条目[ **DestinationDirs** ](inf-destinationdirs-section.md) INF 部分指定为任何特定于类的单个文件要复制的目标目录。
 
 有关详细信息，请参阅[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)。
@@ -76,46 +76,46 @@ AddReg=add-registry-section[,add-registry-section]...
 
  
 
-<a href="" id="delreg-del-registry-section--del-registry-section-----"></a>**DelReg=**<em>del</em>-*registry*-*section*\[**,**<em>del</em>-*registry*-*section*\] ...  
+<a href="" id="delreg-del-registry-section--del-registry-section-----"></a>**DelReg=** <em>del</em>-*registry*-*section*\[ **,** <em>del</em>-*registry*-*section*\] ...  
 引用一个或多个命名指定的部分中的值的条目或密钥是在类安装程序的安装过程中从注册表中删除。
 
-但是，如果某个特定 **{**<em>SetupClassGUID</em>**}** 子项在注册表中存在 **...类**分支，系统安装程序代码随后将忽略**ClassInstall32**指定相同的 GUID 值，以任何 INF 部分及其**版本**部分。 因此，INF 不能替换现有类安装程序或修改从其行为**ClassInstall32**部分。 若要修改现有类安装程序的行为，请使用特定于类共同安装程序。
+但是，如果某个特定 **{** <em>SetupClassGUID</em> **}** 子项在注册表中存在 **...类**分支，系统安装程序代码随后将忽略**ClassInstall32**指定相同的 GUID 值，以任何 INF 部分及其**版本**部分。 因此，INF 不能替换现有类安装程序或修改从其行为**ClassInstall32**部分。 若要修改现有类安装程序的行为，请使用特定于类共同安装程序。
 
 有关详细信息，请参阅[ **INF DelReg 指令**](inf-delreg-directive.md)。
 
-<a href="" id="delproperty-del-property-section--del-property-section-----"></a>**DelProperty=**<em>del-property-section</em>\[**,**<em>del-property-section</em>\] ...  
+<a href="" id="delproperty-del-property-section--del-property-section-----"></a>**DelProperty=** <em>del-property-section</em>\[ **,** <em>del-property-section</em>\] ...  
 （Windows Vista 和更高版本的 Windows）引用一个或多个删除的 INF 文件部分[设备属性](device-properties.md)为设置[设备安装程序类](device-setup-classes.md)。 应使用[ **INF DelProperty 指令**](inf-delproperty-directive.md)只是为了删除是 Windows Vista 或更高版本的 Windows 操作系统中新增的设备安装程序类属性。
 
 对于设备类属性，引入了之前在 Windows Server 2003、 Windows XP 或 Windows 2000 且具有对应的注册表条目值，应继续使用[ **INF DelReg 指令**](inf-delreg-directive.md)若要删除的设备安装程序类属性。 这些准则适用于系统定义的属性和自定义属性。
 
 有关如何使用详细信息**DelProperty**指令，请参阅[INF AddProperty 指令和 INF DelProperty 指令](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)。
 
-<a href="" id="delfiles-file-listsection--file-list-section-----"></a>**Delfiles =**<em>文件 listsection</em>\[**，**<em>文件</em>-*列表*-*一节*\] ...  
+<a href="" id="delfiles-file-listsection--file-list-section-----"></a>**Delfiles =** <em>文件 listsection</em>\[ **，** <em>文件</em>-*列表*-*一节*\] ...  
 为要删除指定在其中的一个或多个命名的部分以前安装在目标上的类相关文件的引用。
 
 有关详细信息，请参阅[ **INF DelFiles 指令**](inf-delfiles-directive.md)。
 
-<a href="" id="renfiles-file-list-section--file-list-section-----"></a>**Renfiles =**<em>文件列表部分</em>\[**，**<em>文件</em>-*列表*-*一节*\] ...  
+<a href="" id="renfiles-file-list-section--file-list-section-----"></a>**Renfiles =** <em>文件列表部分</em>\[ **，** <em>文件</em>-*列表*-*一节*\] ...  
 列出一个或多个命名的文件中的部分的相关类要重命名目标上的引用。
 
 有关详细信息，请参阅[ **INF RenFiles 指令**](inf-renfiles-directive.md)。
 
-<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg=**<em>bit-registry-section</em>\[**,**<em>bit-registry-section</em>\]...  
+<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg=** <em>bit-registry-section</em>\[ **,** <em>bit-registry-section</em>\]...  
 在本部分中有效，但几乎从不使用。
 
 有关详细信息，请参阅[ **INF BitReg 指令**](inf-bitreg-directive.md)。
 
-<a href="" id="updateinis-update-ini-section--update-ini-section------"></a>**UpdateInis**=*更新 ini 部分\[中，更新 ini 部分\]*...   
+<a href="" id="updateinis-update-ini-section--update-ini-section------"></a>**UpdateInis**=*更新 ini 部分\[中，更新 ini 部分\]* ...   
 在本部分中有效，但几乎从不使用。
 
 有关详细信息，请参阅[ **INF UpdateInis 指令**](inf-updateinis-directive.md)。
 
-<a href="" id="updateinifields-update-inifields-section--update-inifields-section----"></a>**UpdateIniFields =**<em>更新 inifields 部分</em>\[**，**<em>更新 inifields 部分</em>\]...  
+<a href="" id="updateinifields-update-inifields-section--update-inifields-section----"></a>**UpdateIniFields =** <em>更新 inifields 部分</em>\[ **，** <em>更新 inifields 部分</em>\]...  
 在本部分中有效，但几乎从不使用。
 
 有关详细信息，请参阅[ **INF UpdateIniFields 指令**](inf-updateinifields-directive.md)。
 
-<a href="" id="ini2reg-ini-to-registry-section--ini-to-registry-section----"></a>**Ini2Reg =**<em>注册表部分 ini</em>\[**，**<em>注册表部分 ini</em>\]...  
+<a href="" id="ini2reg-ini-to-registry-section--ini-to-registry-section----"></a>**Ini2Reg =** <em>注册表部分 ini</em>\[ **，** <em>注册表部分 ini</em>\]...  
 在本部分中有效，但几乎从不使用。
 
 有关详细信息，请参阅[ **INF UpdateIniFields 指令**](inf-updateinifields-directive.md)。
@@ -123,7 +123,7 @@ AddReg=add-registry-section[,add-registry-section]...
 <a name="remarks"></a>备注
 -------
 
-应包括**ClassInstall32**设备 INF 文件，只需安装新的自定义设备安装程序类中的部分。 在已安装类中，设备的 INF 文件是否[系统提供的设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff553419)或自定义类，不应包含**ClassInstall32**部分。 由于系统处理**ClassInstall32**部分，如果尚未安装一个类，则不能使用仅**ClassInstall32**部分重新安装或更改已为类设置安装。 具体而言，不能使用**ClassInstall32**部分，以添加类共同安装程序或已安装的类的类筛选器驱动程序。 有关如何安装共同安装程序和筛选器驱动程序的信息，请参阅[编写共同安装程序](writing-a-co-installer.md)并[安装筛选器驱动程序](installing-a-filter-driver.md)。
+应包括**ClassInstall32**设备 INF 文件，只需安装新的自定义设备安装程序类中的部分。 在已安装类中，设备的 INF 文件是否[系统提供的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))或自定义类，不应包含**ClassInstall32**部分。 由于系统处理**ClassInstall32**部分，如果尚未安装一个类，则不能使用仅**ClassInstall32**部分重新安装或更改已为类设置安装。 具体而言，不能使用**ClassInstall32**部分，以添加类共同安装程序或已安装的类的类筛选器驱动程序。 有关如何安装共同安装程序和筛选器驱动程序的信息，请参阅[编写共同安装程序](writing-a-co-installer.md)并[安装筛选器驱动程序](installing-a-filter-driver.md)。
 
 通常情况下， **ClassInstall32**部分包含一个或多个**AddReg**指令将添加在系统提供的条目*SetupClassGUID*子项在注册表中。 这些条目可以包括特定于类的"友好名称，"类安装程序路径、 类图标、 属性页提供程序，等等。
 
@@ -135,7 +135,7 @@ AddReg=add-registry-section[,add-registry-section]...
 
  
 
-从 Windows 2000 开始，每个已安装的设备相关联[设备安装程序类](device-setup-classes.md)注册表中。 如果设备 INF 安装程序不与新的设备类安装程序，或如果其**ClassGUID =** 中的规范**版本**部分与系统定义的安装程序类 GUID，不匹配该设备的注册表子项下创建 **...类\\{**<em>UnknownClassGUID</em>**}**。
+从 Windows 2000 开始，每个已安装的设备相关联[设备安装程序类](device-setup-classes.md)注册表中。 如果设备 INF 安装程序不与新的设备类安装程序，或如果其**ClassGUID =** 中的规范**版本**部分与系统定义的安装程序类 GUID，不匹配该设备的注册表子项下创建 **...类\\{** <em>UnknownClassGUID</em> **}** 。
 
 通常具有任何设备类安装程序的 INF **AddReg**指令及其**ClassInstall32**部分，若要定义至少一个命名的节创建其类型的设备的友好名称。 安装程序代码会自动创建*SetupClassGUID*中从为提供的值的注册表子项**ClassGUID =** INF 中的条目**版本**部分时安装该 （新） 的安装程序类的第一台设备。
 
@@ -222,7 +222,7 @@ HKR,,Icon,,"101"
 
 [**RenFiles**](inf-renfiles-directive.md)
 
-[**SetupDiBuildClassInfoListEx**](https://msdn.microsoft.com/library/windows/hardware/ff550911)
+[**SetupDiBuildClassInfoListEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa)
 
 [**UpdateIniFields**](inf-updateinifields-directive.md)
 

@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c333d40e72be15337bf41e1beaf434403fcf6bc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a9ecf7d820cc494d13b75f9dc2e233c0f11f9e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360333"
 ---
 # <a name="tracefmt"></a>Tracefmt
 
@@ -57,7 +57,7 @@ Tracefmt (Tracefmt.exe) 是一个命令行工具，设置格式并显示从事�
 
 Tracefmt 使用中的格式设置说明[跟踪消息格式 (TMF) 文件](trace-message-format-file.md)将转换为人工可读格式的二进制跟踪消息。 可以提供 TMF 文件或跟踪提供程序提供的图像文件并具有 Tracefmt 创建 TMF 文件。
 
-Tracefmt 可以设置生成的跟踪事件的格式**TraceEvent**函数，并且生成的跟踪消息[ **WmiTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff565836)，则**TraceMessage**函数，或[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)宏。 有关详细信息**TraceEvent**并**TraceMessage**函数，请参阅 Windows SDK 文档。
+Tracefmt 可以设置生成的跟踪事件的格式**TraceEvent**函数，并且生成的跟踪消息[ **WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessage)，则**TraceMessage**函数，或[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏。 有关详细信息**TraceEvent**并**TraceMessage**函数，请参阅 Windows SDK 文档。
 
 本部分包括：
 

@@ -9,17 +9,17 @@ keywords:
 - IPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f267349111f0c5059197d720479957a1afc7ab5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa4b3b4550eed074635933317951a291c23a46bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342261"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382594"
 ---
 # <a name="adding-print-ticket-support-to-monolithic-print-drivers"></a>将打印票证支持添加到一体式打印驱动程序
 
 
-整体化打印驱动程序，以提供打印票证支持，并且支持[打印票证和打印功能技术](print-ticket-and-print-capabilities-technologies.md)，它必须实现[IPrintTicketProvider 接口](https://msdn.microsoft.com/library/windows/hardware/ff554375)以及使用由打印驱动程序的 COM 样式调用方法为提供必要的 IClassFactory 接口支持。 最小值，该驱动程序必须支持在 OpenPrinter 期间调用 IPrintTicketProvider 接口的方法调用顺序如下所示：
+整体化打印驱动程序，以提供打印票证支持，并且支持[打印票证和打印功能技术](print-ticket-and-print-capabilities-technologies.md)，它必须实现[IPrintTicketProvider 接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))以及使用由打印驱动程序的 COM 样式调用方法为提供必要的 IClassFactory 接口支持。 最小值，该驱动程序必须支持在 OpenPrinter 期间调用 IPrintTicketProvider 接口的方法调用顺序如下所示：
 
 1.  [GetSupportedVersions](getsupportedversions.md)
 

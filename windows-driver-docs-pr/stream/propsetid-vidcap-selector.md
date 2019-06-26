@@ -4,12 +4,12 @@ description: PROPSETID\_VIDCAP\_选择器
 ms.assetid: a7328f22-be49-48ac-b923-15f66dc38ccb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 791acde249a4568c3db1711255d6dd04660be45c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3366447bd162cdefe577ccc12c4b31026cac9f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385171"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385700"
 ---
 # <a name="propsetidvidcapselector"></a>PROPSETID\_VIDCAP\_选择器
 
@@ -17,7 +17,7 @@ ms.locfileid: "63385171"
 ## <span id="ddk_propsetid_vidcap_selector_ks"></span><span id="DDK_PROPSETID_VIDCAP_SELECTOR_KS"></span>
 
 
-PROPSETID\_VIDCAP\_选择器属性集是用于新[USB 视频类驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568649)。 设置此属性包含实现所需的属性**ISelector**接口 （请参阅 Microsoft Windows SDK 中的 DirectShow 文档）。
+PROPSETID\_VIDCAP\_选择器属性集是用于新[USB 视频类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)。 设置此属性包含实现所需的属性**ISelector**接口 （请参阅 Microsoft Windows SDK 中的 DirectShow 文档）。
 
 KSPROPERTY\_VIDCAP\_中的选择器枚举*ksmedia.h*指定此集的属性。
 

@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37404a1e47e980836fc981c080ec2b376f4f3bfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfd1ae9a3e53e940aad3297c3f3b6b3f30ff7cf7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365046"
 ---
 # <a name="fsctlenumoverlay-control-code"></a>FSCTL\_枚举\_OVERLAY 控件代码
 
 
 **FSCTL\_枚举\_覆盖**控制代码枚举从指定的卷的备份提供程序的所有数据源。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 **Parameters**
 
 <a href="" id="instance--in-"></a>*实例\[中\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 调用方的不透明实例指针。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 调用方的不透明实例指针。 此参数是必需的不能**NULL**。
 
 <a href="" id="fileobject--in-"></a>*FileObject \[in\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 文件指针对象指定要卸除卷。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 文件指针对象指定要卸除卷。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle--in-"></a>*FileHandle \[in\]*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 要卸除的卷的文件句柄。 此参数是必需的不能**NULL**。
@@ -43,13 +43,13 @@ ms.locfileid: "63327881"
 操作的控制代码。 使用**FSCTL\_删除\_覆盖**对于此操作。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-指向输入缓冲区，必须包含[ **WOF\_外部\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn632452)结构。
+指向输入缓冲区，必须包含[ **WOF\_外部\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)结构。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength \[in\]*  
 设置为**sizeof**(WOF\_外部\_信息)。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[出\]*  
-指向将接收一个或多个输出缓冲区的指针[ **WIM\_提供程序\_覆盖\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn632451)支持该卷的数据源的结构。
+指向将接收一个或多个输出缓冲区的指针[ **WIM\_提供程序\_覆盖\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_update_overlay_input)支持该卷的数据源的结构。
 
 <a href="" id="outputbufferlength--out-"></a>*OutputBufferLength\[出\]*  
 指向缓冲区的大小*OutputBuffer*，以字节为单位。
@@ -60,7 +60,7 @@ ms.locfileid: "63327881"
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功如果操作成功。 否则，相应的函数可能返回以下 NTSTATUS 值之一。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功如果操作成功。 否则，相应的函数可能返回以下 NTSTATUS 值之一。
 
 <table>
 <colgroup>
@@ -98,7 +98,7 @@ ms.locfileid: "63327881"
 <a name="remarks"></a>备注
 -------
 
-输出缓冲区时为 WIM 提供程序枚举数据源，将包含的一组[ **WIM\_提供程序\_覆盖\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn632451)结构。 输出缓冲区的大小必须足够大以包含所有覆盖项或调用将返回状态\_缓冲区\_过\_小。
+输出缓冲区时为 WIM 提供程序枚举数据源，将包含的一组[ **WIM\_提供程序\_覆盖\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_update_overlay_input)结构。 输出缓冲区的大小必须足够大以包含所有覆盖项或调用将返回状态\_缓冲区\_过\_小。
 
 其他支持提供程序将定义他们自己特定的枚举的结构。
 
@@ -125,13 +125,13 @@ ms.locfileid: "63327881"
 ## <a name="see-also"></a>请参阅
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 
 [**FSCTL\_ADD\_OVERLAY**](fsctl-add-overlay.md)
 
-[**WOF\_EXTERNAL\_INFO**](https://msdn.microsoft.com/library/windows/hardware/dn632452)
+[**WOF\_EXTERNAL\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)
 
  
 

@@ -4,12 +4,12 @@ description: 设计移动宽带应用中的消息
 ms.assetid: 314fd479-7dcf-4559-a195-26e4c020446c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3704008076dd6468d5f95adf4194ddca58f1a26e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41beb13deff27298555093d426e3284de420bd71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360276"
 ---
 # <a name="design-messages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的消息
 
@@ -75,9 +75,9 @@ ms.locfileid: "63383769"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>其他资源
 
 
--   使用[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br211837)以显示消息。 有关详细信息，请参阅[添加列表视图、 语义缩放和其他数据控件](https://msdn.microsoft.com/library/windows/apps/hh465409)。
+-   使用[ **ListView** ](https://docs.microsoft.com/previous-versions/windows/apps/br211837(v=win.10))以显示消息。 有关详细信息，请参阅[添加列表视图、 语义缩放和其他数据控件](https://docs.microsoft.com/previous-versions/windows/apps/hh465409(v=win.10))。
 
--   应用栏控件用于查看和删除消息。 有关详细信息，请参阅[指导原则的应用程序栏](https://msdn.microsoft.com/library/windows/apps/hh465302)。
+-   应用栏控件用于查看和删除消息。 有关详细信息，请参阅[指导原则的应用程序栏](https://docs.microsoft.com/windows/uwp/controls-and-patterns/app-bars)。
 
 -   [与其他 Windows 组件集成，移动宽带应用](integrate-a-mobile-broadband-app-with-other-windows-components.md#tileandtoast)
 

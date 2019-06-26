@@ -7,12 +7,12 @@ keywords:
 - PHS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构指针与 Windows Vista 一起启动的网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ad326027b0224e567930c3f409f16c8e219951a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb3c47df78b984ea70990ce97e121944788b2aba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349634"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368611"
 ---
 # <a name="hsplugincellularexceptionhosts-structure"></a>HS\_插件\_移动电话\_异常\_主机结构
 
@@ -69,7 +69,7 @@ typedef struct _HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS {
 
 [**HS\_插件\_查询\_移动电话\_异常\_主机**](hs-plugin-query-cellular-exception-hosts.md)
 
-[Microsoft 接口定义语言](https://msdn.microsoft.com//library/windows/desktop/aa367091)
+[Microsoft 接口定义语言](https://docs.microsoft.com/windows/desktop/Midl/midl-start-page)
 
  
 

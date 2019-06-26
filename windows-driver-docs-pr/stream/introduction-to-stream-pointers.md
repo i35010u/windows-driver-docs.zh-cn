@@ -11,12 +11,12 @@ keywords:
 - 计数 WDK 流指针的引用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e240abc6a03c7fb4ff0d25b00cc47bf44880ca45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 952a4a12d6a33f7790d16d52760338f6ca280801
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360664"
 ---
 # <a name="introduction-to-stream-pointers"></a>流指针简介
 
@@ -30,7 +30,7 @@ ms.locfileid: "63371259"
 
 使用筛选器以中心处理的微型驱动程序不应直接使用流指针。 请参阅[筛选器以中心处理](filter-centric-processing.md)有关详细信息。
 
-默认情况下，每个队列具有前导边缘流指针。 （可选） 它可以具有尾随边缘流指针，如果指定的尾随边标志。 微型驱动程序可以通过调用创建新流指针[ **KsStreamPointerClone**](https://msdn.microsoft.com/library/windows/hardware/ff567129)。
+默认情况下，每个队列具有前导边缘流指针。 （可选） 它可以具有尾随边缘流指针，如果指定的尾随边标志。 微型驱动程序可以通过调用创建新流指针[ **KsStreamPointerClone**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)。
 
 可以只在一个方向移动流指针： 到较新帧。 这称为前移流指针。
 
@@ -38,13 +38,13 @@ ms.locfileid: "63371259"
 
 当前进流指针时，则将其移动到较新帧，或翻阅一定数量的其当前框架内的字节数。 例如，微型驱动程序可以继续学习流指针从第一个帧到达第二个帧到达。
 
-若要前进的流指针，以固定为中心的筛选器可以通过调用[ **KsStreamPointerAdvance** ](https://msdn.microsoft.com/library/windows/hardware/ff567125)或[ **KsStreamPointerUnlock** ](https://msdn.microsoft.com/library/windows/hardware/ff567137)与*Eject*参数设置为**TRUE**。
+若要前进的流指针，以固定为中心的筛选器可以通过调用[ **KsStreamPointerAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointeradvance)或[ **KsStreamPointerUnlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)与*Eject*参数设置为**TRUE**。
 
 ### <a name="frame-reference-counts"></a>框架引用计数
 
 使用流指针指向它们的帧进行引用计数，因为是在窗口之间的前导和尾随边缘中的帧。
 
-完成流指针微型驱动程序时，它可以根据需要调用[ **KsStreamPointerSetStatusCode** ](https://msdn.microsoft.com/library/windows/hardware/ff567136)指定用来完成指定的 I/O 请求数据包 (IRP) 错误代码。 然后，微型驱动程序必须调用[ **KsStreamPointerDelete**](https://msdn.microsoft.com/library/windows/hardware/ff567130)。 AVStream 然后递减引用计数已删除的流指针之前引用的帧。 无法删除前导边缘，尾随边缘流指针。
+完成流指针微型驱动程序时，它可以根据需要调用[ **KsStreamPointerSetStatusCode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointersetstatuscode)指定用来完成指定的 I/O 请求数据包 (IRP) 错误代码。 然后，微型驱动程序必须调用[ **KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)。 AVStream 然后递减引用计数已删除的流指针之前引用的帧。 无法删除前导边缘，尾随边缘流指针。
 
  
 

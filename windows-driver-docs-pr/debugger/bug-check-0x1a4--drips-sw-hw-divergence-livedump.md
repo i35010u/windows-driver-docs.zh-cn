@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d357205ba44673b04c6d79eb2e8f11248e51d63b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e2fc175a21893bb41b306e5199447c81d0fbd6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367621"
 ---
 # <a name="bug-check-bug-check-0x1a4-dripsswhwdivergencelivedump"></a>Bug 检查 Bug 检查 0x1A4:DRIPS\_SW\_HW\_DIVERGENCE\_LIVEDUMP 
 
@@ -28,7 +28,7 @@ DRIPS\_SW\_HW\_分歧\_LIVEDUMP 实时转储具有 0x000001A4 值。
 （此代码可以永远不会用于实际的执行错误检查; 它用于标识实时转储）。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="dripsswhwdivergencelivedump-parameters"></a>DRIPS\_SW\_HW\_分歧\_LIVEDUMP 参数

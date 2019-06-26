@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，修改注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f50e266d0ed560a23fa4521bfe4ef8bc293e4740
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: af2e82c214157888f735c1df6e3c819f82116742
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377657"
 ---
 # <a name="modifying-registry-keys-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表项
 
@@ -38,7 +38,7 @@ ms.locfileid: "65456436"
 
 以下指导原则后应执行以安全地修改注册表项类安装程序或共同安装程序：
 
--   安装程序类和共同安装程序必须首先使用[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)或[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)若要打开的句柄将修改注册表项。 打开句柄后，安装程序类和共同安装程序可以使用标准注册表函数修改注册表项。
+-   安装程序类和共同安装程序必须首先使用[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)或[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)若要打开的句柄将修改注册表项。 打开句柄后，安装程序类和共同安装程序可以使用标准注册表函数修改注册表项。
 
 -   不能使用安装程序类和共同安装程序**SetupDiDeleteDevRegKey**或*硬件密钥*设备。 有关详细信息，请参阅[删除设备的注册表项](deleting-the-registry-keys-of-a-device.md)。
 

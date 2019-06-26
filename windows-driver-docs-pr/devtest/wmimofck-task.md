@@ -4,19 +4,19 @@ description: Windows Driver Kit (WDK) 提供了 Wmimofck 任务，以便在生�
 ms.assetid: 33C5C079-510F-4BD3-AEF1-F152E88E45C2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29295c3d39d4c87b1b0bc5a4cd0345d1bc8bca2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cc9a125d1eaa88cee456c8121168b967f0ebef3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379124"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372627"
 ---
 # <a name="wmimofck-task"></a>Wmimofck 任务
 
 
 Windows Driver Kit (WDK) 提供了 Wmimofck 任务，以便在生成使用 MSBuild 的驱动程序时，可以运行 wmimofck.exe 工具。
 
-有关使用 Wmimofck 工具的信息，请参阅[使用 Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)。
+有关使用 Wmimofck 工具的信息，请参阅[使用 Wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)。
 
 MSBuild 使用 Wmimofck 项发送 Wmimofck 任务的参数。 在项目文件中使用 Wmimofck 项访问 wmimofck 的项元数据。
 
@@ -196,7 +196,7 @@ Wmimofck.exe –h"b.h" b.bmf
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[使用 Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)
+[使用 Wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)
 
  
 

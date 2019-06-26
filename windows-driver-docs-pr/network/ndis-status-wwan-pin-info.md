@@ -5,12 +5,12 @@ ms.assetid: fa3c2467-2240-423b-b91b-f7e19d5be353
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PIN_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a72a9ede200294515e37a35bc790cd89447d96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 449a69ac21e3577b2d37b8211a7d4f4bff87b7ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341399"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377620"
 ---
 # <a name="ndisstatuswwanpininfo"></a>NDIS\_状态\_WWAN\_PIN\_信息
 
@@ -19,7 +19,7 @@ ms.locfileid: "63341399"
 
 微型端口驱动程序不能使用此通知将发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_PIN\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567911)结构。
+使用此通知[ **NDIS\_WWAN\_PIN\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)结构。
 
 <a name="remarks"></a>备注
 -------

@@ -7,12 +7,12 @@ keywords:
 - 总线类型的打印机驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 622a0d68c82afff9ec669355bc6e2015f1f17421
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c46f2f38e1f7cfc558616bb65103793175c45916
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355012"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380673"
 ---
 # <a name="printer-connected-to-a-usb-port"></a>连接到 USB 端口的打印机
 
@@ -39,7 +39,7 @@ USBPRINT\Company_NameModelNam1234
 
 ![usb 打印机插](images/pnpusb01.png)
 
-下面的示例演示中的条目[ **INF 制造商部分**](https://msdn.microsoft.com/library/windows/hardware/ff547454) ，可以用来安装 USB 或其他总线类型的打印机驱动程序。 如果 USB 总线上安装打印机，第一行可保证级别 0 硬件 ID 匹配项。 第二行可保证级别 0 硬件 ID 匹配项，如果另一个总线上安装打印机。 有关详细信息，请参阅[安装自定义插件和播放的打印机驱动程序](installing-a-custom-plug-and-play-printer-driver.md)。
+下面的示例演示中的条目[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section) ，可以用来安装 USB 或其他总线类型的打印机驱动程序。 如果 USB 总线上安装打印机，第一行可保证级别 0 硬件 ID 匹配项。 第二行可保证级别 0 硬件 ID 匹配项，如果另一个总线上安装打印机。 有关详细信息，请参阅[安装自定义插件和播放的打印机驱动程序](installing-a-custom-plug-and-play-printer-driver.md)。
 
 ```cpp
  "Model Name XYZ" = Install_Section_XYZ, USBPRINT\Company_NameModelNam1234, Company_NameModelNam1234 ; plus any other compatible IDs  

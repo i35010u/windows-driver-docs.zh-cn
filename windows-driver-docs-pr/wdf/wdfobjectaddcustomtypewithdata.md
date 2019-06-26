@@ -6,12 +6,12 @@ keywords:
 - WdfObjectAddCustomTypeWithData macro
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f81bf3e366d91547740e035434cac54a9699389b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 020c428597de68918546834a1ae104cae97246cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390827"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372102"
 ---
 # <a name="wdfobjectaddcustomtypewithdata-macro"></a>WdfObjectAddCustomTypeWithData macro
 
@@ -46,10 +46,10 @@ Framework 对象的句柄。
 一个指向驱动程序提供的数据缓冲区，则为 NULL。 该参数为可选参数。
 
 *_cleanup*   
-驱动程序的一个指向[ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)回调函数，则为 NULL。 该参数为可选参数。
+驱动程序的一个指向[ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)回调函数，则为 NULL。 该参数为可选参数。
 
 *_destroy*   
-驱动程序的一个指向[ *EvtDestroyCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540841)回调函数，则为 NULL。 该参数为可选参数。
+驱动程序的一个指向[ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)回调函数，则为 NULL。 该参数为可选参数。
 
 <a name="return-value"></a>返回值
 ------------
@@ -92,9 +92,9 @@ Framework 对象的句柄。
 <a name="remarks"></a>备注
 -------
 
-如果您的驱动程序调用**WdfObjectAddCustomTypeWithData**与指向数据缓冲区的指针，该驱动程序可以提供[ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)或[ *EvtDestroyCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540841)解除分配的内存缓冲区时删除该对象的回调函数。
+如果您的驱动程序调用**WdfObjectAddCustomTypeWithData**与指向数据缓冲区的指针，该驱动程序可以提供[ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)或[ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)解除分配的内存缓冲区时删除该对象的回调函数。
 
-有关对象的自定义类型的详细信息，请参阅[Framework 对象的自定义类型](https://msdn.microsoft.com/library/windows/hardware/hh406457)。
+有关对象的自定义类型的详细信息，请参阅[Framework 对象的自定义类型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)。
 
 有关代码示例，请参阅[ **WdfObjectAddCustomType**](wdfobjectaddcustomtype.md)。
 

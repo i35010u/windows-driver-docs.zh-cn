@@ -11,12 +11,12 @@ keywords:
 - 传播 FILE_DEVICE_SECURE_OPEN 标志
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea027f7b7eef6b90c9e7bb1ed8e16e9704197e73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e409628492ccb90cbefe6e049e531c06b6459eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352749"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385158"
 ---
 # <a name="propagating-the-filedevicesecureopen-flag"></a>传播文件\_设备\_SECURE\_打开标志
 
@@ -24,7 +24,7 @@ ms.locfileid: "63352749"
 ## <span id="ddk_clearing_the_do_device_initializing_flag_if"></span><span id="DDK_CLEARING_THE_DO_DEVICE_INITIALIZING_FLAG_IF"></span>
 
 
-附加后筛选设备对象到文件系统中 （但不是到的卷），务必将文件设置\_设备\_SECURE\_打开标志，使其匹配的下一步越低值到所需的筛选器设备对象设备驱动程序堆栈上的对象。 (有关此标志的详细信息，请参阅[指定设备特征](https://msdn.microsoft.com/library/windows/hardware/ff563818)内核体系结构设计指南中并[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)中内核参考。）此示例如下：
+附加后筛选设备对象到文件系统中 （但不是到的卷），务必将文件设置\_设备\_SECURE\_打开标志，使其匹配的下一步越低值到所需的筛选器设备对象设备驱动程序堆栈上的对象。 (有关此标志的详细信息，请参阅[指定设备特征](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)内核体系结构设计指南中并[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)中内核参考。）此示例如下：
 
 ```cpp
 if (FlagOn( DeviceObject->Characteristics, FILE_DEVICE_SECURE_OPEN )) {

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 161c118f64938238e44864ff191e8410da25369f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 526276b9ce743ec12ed51c069c1a0e65cffba733
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382457"
 ---
 # <a name="kseventbdaprogramflowstatuschanged"></a>KSEVENT\_BDA\_程序\_流\_状态\_已更改
 
@@ -56,9 +56,9 @@ KSEVENTDATA 结构，它描述有关事件通知的方式。
 ## <a name="see-also"></a>请参阅
 
 
-[**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)
+[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://msdn.microsoft.com/library/windows/hardware/ff561750)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
 
 [**KSPROPERTY\_BDA\_CA\_REMOVE\_PROGRAM**](ksproperty-bda-ca-remove-program.md)
 

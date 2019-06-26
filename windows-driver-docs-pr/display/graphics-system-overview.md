@@ -8,12 +8,12 @@ keywords:
 - 有关图形系统绘制 WDK GDI，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b924e74279ec3a8fca7fe44b78245422100caa4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fda1e238ac6212cbd9319552c8c46d8fee36d9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323779"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379941"
 ---
 # <a name="graphics-system-overview"></a>图形系统概述
 
@@ -33,7 +33,7 @@ ms.locfileid: "63323779"
 
     下列各节介绍 Windows NTâˆ 中的视频显示环境基于操作系统和显示，微型端口，用于提供设计和实现详细信息，以及监视驱动程序编写人员。 请注意，不能在 Windows 8 和更高版本的计算机上安装驱动程序遵循与 Windows 2000 显示器驱动程序模型。
 
--   [**打印设备设计指南**](https://msdn.microsoft.com/library/windows/hardware/ff561035)
+-   [**打印设备设计指南**](https://docs.microsoft.com/windows-hardware/drivers/print/index)
 
     本部分介绍驱动程序和打印后台处理程序组成 Windows NTâˆ 中的打印环境的基于操作系统。 Windows 驱动程序工具包 (WDK) 的此部分中的各部分指定如何提供自定义驱动程序和后台处理程序组件，以便可以支持新打印机硬件和网络配置。
 

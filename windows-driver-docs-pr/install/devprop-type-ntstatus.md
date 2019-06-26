@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cf8ded26b336b57c798ec9085c97824a77244f00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f07412691c910f5bffc3790b7f53726eea10462f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357808"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383852"
 ---
 # <a name="devproptypentstatus"></a>DEVPROP_TYPE_NTSTATUS
 
@@ -29,7 +29,7 @@ DEVPROP_TYPE_NTSTATUS 标识符表示在 Ntstatus.h 中定义的 NTSTATUS 状态
 <a name="remarks"></a>备注
 -------
 
-在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](https://msdn.microsoft.com/library/windows/hardware/ff553515)还定义了[ **DEVPROP_TYPE_ERROR** ](devprop-type-error.md) Microsoft 的基本数据类型标识符Win32 错误代码值。
+在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)还定义了[ **DEVPROP_TYPE_ERROR** ](devprop-type-error.md) Microsoft 的基本数据类型标识符Win32 错误代码值。
 
 你可以组合只能使用 DEVPROP_TYPE_NTSTATUS [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)属性数据类型修饰符。
 

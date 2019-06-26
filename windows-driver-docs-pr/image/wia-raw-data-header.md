@@ -1,17 +1,17 @@
 ---
-title: WIA 的原始数据标头
-description: WIA 的原始数据标头
+title: WIA 原始数据标头
+description: WIA 原始数据标头
 ms.assetid: a2cb3835-7879-4f69-9784-9487df40730a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f90e4a9bef3e2d0655498515c25b519d6e4e02f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 458552ca5d8b4362de397e03ce971f5f9a26f05a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555484"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355165"
 ---
-# <a name="wia-raw-data-header"></a>WIA 的原始数据标头
+# <a name="wia-raw-data-header"></a>WIA 原始数据标头
 
 
 原始数据的标头如下所示：
@@ -49,7 +49,7 @@ G4 压缩数据 (WIA\_压缩\_G4) 可能会传输 TIFF 文件中 (WiaImgFmt\_TIF
 
 JPEG 压缩数据 (WIA\_压缩\_JPEG) 无法使用 JFIF 格式传输 (WiaImgFmt\_JPEG)，EEXIF 格式 (WiaImgFmt\_EXIF)，或 TIFF 格式 (WiaImgFmt\_TIFF). 不能传输 JPEG 数据交换格式之一 （JFIF、 EEXIF） 中使用原始格式的传输格式 (WiaImgFmt\_RAW)-而是必须使用其他 JPEG 兼容格式之一。
 
-WIA 压缩常量的详细信息，请参阅[ **WIA\_IPA\_压缩**](https://msdn.microsoft.com/library/windows/hardware/ff551540)属性。
+WIA 压缩常量的详细信息，请参阅[ **WIA\_IPA\_压缩**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-compression)属性。
 
 <a href="" id="dword-photometricinterp"></a>DWORD *PhotometricInterp*  
 介绍传输图像测光解释。 此字段是黑色和白色 (1bpp) 和 （4bpp 或以上） 的灰度图像所必需的。 这些映像需要指示的值为白色和黑色，任一 WIA\_照片\_白色\_1 (其中白色为 1，黑色，则为 0) 或 WIA\_照片\_白色\_0 (其中白色，则为 0，黑色为 1)。 此字段是可选的彩色图像。

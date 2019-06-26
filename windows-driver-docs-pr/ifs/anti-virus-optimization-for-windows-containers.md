@@ -4,12 +4,12 @@ description: 本主题中描述的防病毒产品可以利用 Windows 容器中�
 ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b5552ba5db2b5e4ad041ecf2d07e382238d0af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 608297fa85d03c7e92995a9df7156aab3c847c1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322287"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379351"
 ---
 # <a name="span-idifskanti-virusoptimizationforwindowscontainersspananti-virus-optimization-for-windows-containers"></a><span id="ifsk.anti-virus_optimization_for_windows_containers"></span>用于 Windows 容器的防病毒优化
 
@@ -24,7 +24,7 @@ ms.locfileid: "63322287"
 ## <a name="span-idcontaineroverviewspanspan-idcontaineroverviewspanspan-idcontaineroverviewspancontainer-overview"></a><span id="Container_overview"></span><span id="container_overview"></span><span id="CONTAINER_OVERVIEW"></span>容器概述
 
 
-Windows 容器功能旨在简化分发和部署应用程序。 有关详细信息，请参阅简介[Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)。
+Windows 容器功能旨在简化分发和部署应用程序。 有关详细信息，请参阅简介[Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/about_overview)。
 
 容器是从任意数量的包层构造的。 Windows 基本操作系统程序包窗体的第一层。
 

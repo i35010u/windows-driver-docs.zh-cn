@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e32ac1bc7aae87850af0128e90bc025d8163ac12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cecec29e93dcecf11080ecb1cc40ed74b40354b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360791"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367778"
 ---
 # <a name="bug-check-0x14f-pdcwatchdogtimeout"></a>Bug 检查 0x14F：PDC\_监视器\_超时
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360791"
 PDC\_监视器\_超时错误检查的值为 0x0000014F。 这表示无法阻止退出系统分配的时间内响应的系统组件连接待机。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="pdcwatchdogtimeout-parameters"></a>PDC\_监视器\_超时参数

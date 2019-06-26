@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fd7ffd441ad6460f0ea5992da68c21b6d40696ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07fcfdca02c60e66a2263307c3fcc6bc0c28ace4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380091"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378111"
 ---
 # <a name="devpkeydevicesaferemovalrequired"></a>DEVPKEY_Device_SafeRemovalRequired
 
@@ -68,7 +68,7 @@ Windows 插 (PnP) 确定热即插即用设备实例需要从系统的安全删�
 
 -   设备实例或者启动或可由系统自动弹出。
 
--   未设置为设备实例 CM_DEVCAP_SURPRISEREMOVALOK 设备功能位。 有关设备功能的详细信息，请参阅[ **SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)。
+-   未设置为设备实例 CM_DEVCAP_SURPRISEREMOVALOK 设备功能位。 有关设备功能的详细信息，请参阅[ **SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)。
 
 -   设备实例不具有[ **DEVPKEY_Device_SafeRemovalRequiredOverride** ](devpkey-device-saferemovalrequiredoverride.md)设备属性设置为 DEVPROP_FALSE。
 
@@ -78,7 +78,7 @@ Windows 插 (PnP) 确定热即插即用设备实例需要从系统的安全删�
 
 -   设备实例是从其父设备实例直接可移动或在其设备树中具有可移动的祖先。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_SafeRemovalRequired 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_SafeRemovalRequired 值。
 
 <a name="requirements"></a>要求
 ------------
@@ -105,9 +105,9 @@ Windows 插 (PnP) 确定热即插即用设备实例需要从系统的安全删�
 
 [**DEVPKEY_Device_SafeRemovalRequiredOverride**](devpkey-device-saferemovalrequiredoverride.md)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)
+[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
 
  
 

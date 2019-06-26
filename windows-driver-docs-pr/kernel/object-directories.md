@@ -9,12 +9,12 @@ keywords:
 - 顶级对象目录 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 809fbba9f52f255f77fa42c3f4ec4c3104742561
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28fe256e7ea82465e2d1e3f111483654b1d715c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351069"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365385"
 ---
 # <a name="object-directories"></a>对象目录
 
@@ -46,7 +46,7 @@ ms.locfileid: "63351069"
 
 系统会创建其他顶级目录，但它们是保留供系统使用。
 
-驱动程序可以通过调用创建新对象目录[ **ZwCreateDirectoryObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566421)例程。
+驱动程序可以通过调用创建新对象目录[ **ZwCreateDirectoryObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)例程。
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdd481115f52373b8b839f0bdcab1cab96da6e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a072fcae39045e5183a096630b23185db5bed7b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335964"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363138"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
 
@@ -72,7 +72,7 @@ NETWORK STACK REPORT
 
 从一种主动系统此第二个示例还显示从第一个示例，使用的崩溃转储文件的另一个差异。 第二个示例中的目标调试对象机之前预配内核调试通过网络，以便您可以看到具有数据流在堆栈上的网络适配器是 Microsoft 内核调试网络适配器。 除非已在调试对象上启用内核调试，通常隐藏此适配器。 实际上，内核调试网络适配器已保留的计算机的以太网适配器为调试会话，因此流量流动通过以太网。
 
-可视化网络堆栈并看到流量流动的位置的功能可以用于快速确定的问题可能是。 这可以是虚拟交换机或服务器，具有更复杂的网络图前面的示例相比特别有用。 例如，在使用 NIC 组合的 Windows 服务器，可以看到多个网络堆栈跨其他流量负载平衡，并确定是否存在会影响另一个堆栈的一个堆栈的底部时出现问题。 若要查看有关调试报表来显示此网络的示例，请参阅[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)。 有关 NIC 组合的详细信息，请参阅[网络子系统性能使用 NIC 组合](https://msdn.microsoft.com/library/windows/hardware/dn567652)。
+可视化网络堆栈并看到流量流动的位置的功能可以用于快速确定的问题可能是。 这可以是虚拟交换机或服务器，具有更复杂的网络图前面的示例相比特别有用。 例如，在使用 NIC 组合的 Windows 服务器，可以看到多个网络堆栈跨其他流量负载平衡，并确定是否存在会影响另一个堆栈的一个堆栈的底部时出现问题。 若要查看有关调试报表来显示此网络的示例，请参阅[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)。 有关 NIC 组合的详细信息，请参阅[网络子系统性能使用 NIC 组合](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))。
 
 **！ ndiskd.netreport**还有其他选项卡顶部的页上的系统、 摘要，以及数据流动 （如果适用）。 这些选项卡包含更多的网络堆栈的状态有关的有用信息。 下图显示了网络接口选项卡上，在摘要选项卡下。此选项卡中的表，可以在系统中查看有关的名称和标识符的网络接口的详细信息。
 
@@ -85,19 +85,19 @@ NETWORK STACK REPORT
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**!ndiskd.nbllog**](-ndiskd-nbllog.md)
+[ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
-[使用 NIC 组合的网络子系统性能](https://msdn.microsoft.com/library/windows/hardware/dn567652)
+[使用 NIC 组合的网络子系统性能](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
 
  
 

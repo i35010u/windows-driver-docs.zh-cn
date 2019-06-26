@@ -4,18 +4,18 @@ description: NFC 类扩展驱动程序开发人员可以添加特定于芯片组
 ms.assetid: 8CCCE7BF-595A-4F30-9924-B5BD45D6137F
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 558e002b770362d7c9e2f96e5ca480905e476261
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9f3b2a5c47ed8be8f9066446ec7ff5acf231bbf2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370514"
 ---
 # <a name="nfc-class-extension-extensibility-model"></a>NFC 类扩展可扩展性模型
 
@@ -34,5 +34,5 @@ NFC 类扩展驱动程序的 NFC 客户端驱动程序提供了三个扩展点�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC 类扩展 (CX) 引用](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 类扩展 (CX) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

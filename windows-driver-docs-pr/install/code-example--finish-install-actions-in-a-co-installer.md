@@ -7,21 +7,21 @@ keywords:
 - 共同安装程序 WDK 设备安装，完成安装操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc087da0bed51e9c47ac2d2dc3d168f8f5bf7292
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d794683369b75c008e95195d9b08ebeae7e7aa0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361191"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375318"
 ---
 # <a name="code-example-finish-install-actions-in-a-co-installer"></a>代码示例：辅助安装程序中的 Finish-Install 操作
 
 
 在此示例中，辅助安装程序执行下列操作来支持各种操作，完成安装：
 
--   当辅助安装程序收到[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)请求时，它将调用安装程序提供的函数*FinishInstallActionsNeeded*到确定是否有要执行的完成安装操作。 (有关代码*FinishInstallActionsNeeded*函数未显示在此示例中)。
+-   当辅助安装程序收到[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)请求时，它将调用安装程序提供的函数*FinishInstallActionsNeeded*到确定是否有要执行的完成安装操作。 (有关代码*FinishInstallActionsNeeded*函数未显示在此示例中)。
 
-    如果*FinishInstallActionsNeeded*返回**TRUE**，辅助安装程序调用[ **SetupDiGetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff551104)检索设备安装参数的设备，然后调用[ **SetupDiSetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff552141)若要设置**FlagsEx** 成员[ **SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)设备 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的结构。 设置此标志会导致 Windows 发送[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)到所有类安装程序、 类共同安装程序，并在此安装中涉及的设备共同安装程序的请求设备。 此请求将发送后所有安装操作，完成安装操作，除非已完成。
+    如果*FinishInstallActionsNeeded*返回**TRUE**，辅助安装程序调用[ **SetupDiGetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)检索设备安装参数的设备，然后调用[ **SetupDiSetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)若要设置**FlagsEx** 成员[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)设备 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的结构。 设置此标志会导致 Windows 发送[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)到所有类安装程序、 类共同安装程序，并在此安装中涉及的设备共同安装程序的请求设备。 此请求将发送后所有安装操作，完成安装操作，除非已完成。
 
 -   当辅助安装程序收到 DIF_FINISHINSTALL_ACTION 请求时，辅助安装程序将再次调用*FinishInstallActionsNeeded*以确定是否它具有要执行的完成安装操作，并且，如果是这样，执行完成安装操作。 辅助安装程序会通知用户完成安装操作是在进度和完成安装操作完成，然后从处理 DIF_FINISHINSTALL_ACTION 请求返回的等待。
 

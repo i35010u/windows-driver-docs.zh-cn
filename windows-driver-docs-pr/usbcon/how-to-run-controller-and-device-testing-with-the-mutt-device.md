@@ -3,12 +3,12 @@ Description: 测试控制器的目标是从中心和设备生成一组完整的�
 title: USB 主控制器使用 MUTT 设备进行测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acb66bf48481da17e45a06d979797a61364c6957
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 421a89918c90555b84e5dfb6afe7a3a6f626408e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366049"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363919"
 ---
 # <a name="usb-host-controller-testing-with-mutt-devices"></a>USB 主控制器使用 MUTT 设备进行测试
 
@@ -26,7 +26,7 @@ ms.locfileid: "63366049"
 ## <a name="recommended-usb-host-controller-tests"></a>推荐的 USB 主机控制器测试
 
 
--   USB IF 电气测试。 所有我们的测试都是协议和已设定焦点的状态。 请参阅[USB-如果符合性计划](http://www.usb.org/developers/compliance/)的电气测试的详细信息。
+-   USB IF 电气测试。 所有我们的测试都是协议和已设定焦点的状态。 请参阅[USB-如果符合性计划](https://www.usb.org/compliance)的电气测试的详细信息。
 -   MUTT 压力和传输测试包含在 MUTT 软件包 MUTT 设备连接的 USB 控制器建议的配置中。 **RunTest.bat**运行压力和传输的测试。 请参阅[如何运行压力和传输 MUTT 设备的性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md)。
 -   SuperMUTT 性能测试。 请参阅[如何运行超级 MUTT 性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md#supermutt-perf)。
 -   设备基本测试。 有关详细信息，请参阅[如何为 MUTT 设备运行 Visual Studio 中的说明测试](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)。
@@ -46,7 +46,7 @@ ms.locfileid: "63366049"
     ![xhci 控制器的示例拓扑](images/fig12-xhci-controller-topology.png)
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
 
 

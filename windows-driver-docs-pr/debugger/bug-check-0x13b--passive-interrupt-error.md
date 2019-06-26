@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c48e1ee18d12101a77f9d04d49c792435e12f7ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad8c124b4f0b83e1e2c79ce9a0a3c5b0595b937d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353673"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362239"
 ---
 # <a name="bug-check-0x13b-passiveinterrupterror"></a>Bug 检查 0x13B：被动\_中断\_错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353673"
 被动\_中断\_错误 bug 检查的值为 0x0000013B。 这表示内核已检测到被动级别中断问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="passiveinterrupterror-parameters"></a>被动\_中断\_错误参数

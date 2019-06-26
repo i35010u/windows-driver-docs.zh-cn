@@ -12,12 +12,12 @@ keywords:
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ad18adc1ac01f59c8aaa6ec9f30eed7d503624
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42a9cdf287197f4676f4d0461a685fa80c13645a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338444"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373461"
 ---
 # <a name="registering-for-hardware-profile-change-notification"></a>注册硬件配置文件更改通知
 
@@ -25,7 +25,7 @@ ms.locfileid: "63338444"
 
 
 
-驱动程序通过调用注册的硬件配置文件更改通知[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)。
+驱动程序通过调用注册的硬件配置文件更改通知[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。
 
 以下信息适用于硬件配置文件更改通知才能调用该例程：
 
@@ -35,7 +35,7 @@ ms.locfileid: "63338444"
 
 -   指定驱动程序定义*上下文*，如果合适，即插即用管理器将传递给回调例程。
 
-驱动程序通过调用来消除通知注册[ **IoUnregisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff550398)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。
+驱动程序通过调用来消除通知注册[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。
 
  
 

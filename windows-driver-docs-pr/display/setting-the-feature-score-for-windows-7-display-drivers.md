@@ -4,12 +4,12 @@ description: 设置 Windows 7 显示驱动程序的功能评分
 ms.assetid: 7b2cf25d-a88d-48e1-8d62-8c245c289566
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9148246fd84492b9a12f0ffe2e2d4e47f93ca185
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 055dcf0f7133e3b0021b9ee5035a729c67713a16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365556"
 ---
 # <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>设置 Windows 7 显示驱动程序的功能评分
 
@@ -79,7 +79,7 @@ score</th>
 
  
 
-有关写入到 WDDM 驱动程序，必须将放置图形硬件供应商**FeatureScore**指令下[ **DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)其 INF 文件和使用**FeatureScore**要应用于驱动程序的特征评分。
+有关写入到 WDDM 驱动程序，必须将放置图形硬件供应商**FeatureScore**指令下[ **DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)其 INF 文件和使用**FeatureScore**要应用于驱动程序的特征评分。
 
 有关[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)驱动程序，Microsoft 在现成 Windows 2000 显示器驱动程序模型驱动程序时或在 INF 驱动程序安装的应用通过类安装程序的相应的特征分数。 不能使用供应商**FeatureScore**指令插入到 Windows 2000 显示器驱动程序模型编写的驱动程序的功能分数。
 

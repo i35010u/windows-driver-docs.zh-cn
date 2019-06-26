@@ -11,12 +11,12 @@ keywords:
 - 工作状态 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e4397dae61f352ee8fb678356974d22d9f0dbfd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76fc89283d06eae980b2e7238b80c99246b078c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369128"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378828"
 ---
 # <a name="preventing-system-power-state-changes"></a>阻止系统电源状态更改
 
@@ -24,7 +24,7 @@ ms.locfileid: "63369128"
 
 
 
-虽然驱动程序不能直接设置系统电源策略，但电源管理器提供了三个例程，通过该驱动程序可以阻止从工作状态的系统转换：[**PoSetSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559768)， [ **PoRegisterSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559731)，以及[ **PoUnregisterSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559794)。
+虽然驱动程序不能直接设置系统电源策略，但电源管理器提供了三个例程，通过该驱动程序可以阻止从工作状态的系统转换：[**PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)， [ **PoRegisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregistersystemstate)，以及[ **PoUnregisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pounregistersystemstate)。
 
 通过调用**PoRegisterSystemState**或**PoSetSystemState**，驱动程序可以通知电源管理器，用户是否存在或该驱动程序需要使用的系统或显示。
 

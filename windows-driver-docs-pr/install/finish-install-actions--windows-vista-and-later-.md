@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e36609faad21bb34165f91c64eb58822506c4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f9189fb22c7568f3300951becc4d0edc40a0311
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360299"
 ---
 # <a name="finish-install-actions"></a>Finish-Install 操作
 
@@ -28,9 +28,9 @@ ms.locfileid: "63377095"
 
 安装程序可以指定要执行类安装程序、 类共同安装程序或设备共同安装程序，启动 Windows Vista 和更高版本中的完成安装操作。 完成安装操作的管理员上下文中运行*后*完成所有其他安装操作，包括完成安装向导页。
 
-在 Windows 7 中，默认值完成安装操作提供的系统提供[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)函数。 此函数的管理员，交互式上下文中处理[RunOnce 注册表项](runonce-registry-key.md)的设备设置。 如果设备不具有类安装程序中，或类安装程序在响应中返回 ERROR_DI_DO_DEFAULT [ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)请求时，Windows 调用**SetupDiFinishInstallAction**设备的所有安装程序完成其完成安装操作后。
+在 Windows 7 中，默认值完成安装操作提供的系统提供[ **SetupDiFinishInstallAction** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff551022(v=vs.85))函数。 此函数的管理员，交互式上下文中处理[RunOnce 注册表项](runonce-registry-key.md)的设备设置。 如果设备不具有类安装程序中，或类安装程序在响应中返回 ERROR_DI_DO_DEFAULT [ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)请求时，Windows 调用**SetupDiFinishInstallAction**设备的所有安装程序完成其完成安装操作后。
 
-在 Windows 8 和更高版本中，完成安装操作将不会自动运行设备安装的一部分并[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)函数已移除。 相反，管理员 （或可以提供管理员凭据对 UAC 提示的受限的用户） 必须转到操作中心并解决在完成安装操作要运行的顺序中的"完成安装设备软件"维护项。 在此之前，完成安装操作将不运行。 例如，如果用户插入设备安装的驱动程序，包括完成安装操作，完成安装操作将不会自动在该时间运行。 相反，完成安装操作将在以后某个时刻时运行用户手动启动它。 此后，Windows 运行时完成安装操作，操作都有该单个机会运行。 如果此操作将失败，它必须采取适当措施来允许用户以重试并完成更高版本。 同样，安装应附带驱动程序的支持软件仍可以使用完成安装操作，但它也不会安装自动。
+在 Windows 8 和更高版本中，完成安装操作将不会自动运行设备安装的一部分并[ **SetupDiFinishInstallAction** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff551022(v=vs.85))函数已移除。 相反，管理员 （或可以提供管理员凭据对 UAC 提示的受限的用户） 必须转到操作中心并解决在完成安装操作要运行的顺序中的"完成安装设备软件"维护项。 在此之前，完成安装操作将不运行。 例如，如果用户插入设备安装的驱动程序，包括完成安装操作，完成安装操作将不会自动在该时间运行。 相反，完成安装操作将在以后某个时刻时运行用户手动启动它。 此后，Windows 运行时完成安装操作，操作都有该单个机会运行。 如果此操作将失败，它必须采取适当措施来允许用户以重试并完成更高版本。 同样，安装应附带驱动程序的支持软件仍可以使用完成安装操作，但它也不会安装自动。
 
 或者，具体取决于你的方案，在 Windows 8 和更高版本，你可能能够充分利用新的设备应用程序模型。 有关设备应用程序的详细信息可从[设计出色的硬件体验](https://go.microsoft.com/fwlink/p/?linkid=227833)。
 

@@ -13,12 +13,12 @@ keywords:
 - 调试例程 WDK、 中断
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2eb079e637c2bec5744abd114527c1e7245ac4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fefba27951f5283ece14799bba7d4bfb816b9d84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344915"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371651"
 ---
 # <a name="breaking-into-the-debugger"></a>突入调试器
 
@@ -52,19 +52,19 @@ VOID DebugBreak(VOID);
 
 当内核模式程序中断到调试器时，整个操作系统会冻结，直到内核调试程序允许执行继续。 如果内核调试程序不存在，则将此视为 bug 检查。
 
-[ **DbgBreakPoint** ](https://msdn.microsoft.com/library/windows/hardware/ff543626)例程可在内核模式代码中，但在其他方面类似于**DebugBreak**用户模式下例程。
+[ **DbgBreakPoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpoint)例程可在内核模式代码中，但在其他方面类似于**DebugBreak**用户模式下例程。
 
-[ **DbgBreakPointWithStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff543629)例程，也会导致中断，但它另外将 32 位的状态代码发送到调试器。
+[ **DbgBreakPointWithStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpointwithstatus)例程，也会导致中断，但它另外将 32 位的状态代码发送到调试器。
 
-[ **KdBreakPoint** ](https://msdn.microsoft.com/library/windows/hardware/ff548063)并[ **KdBreakPointWithStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff548065)例程相等**DbgBreakPoint**并**DbgBreakPointWithStatus**分别在已检验的版本环境中编译时。 编译时可用的生成环境中，它们会产生任何影响。
+[ **KdBreakPoint** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff548063(v=vs.85))并[ **KdBreakPointWithStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdbreakpointwithstatus)例程相等**DbgBreakPoint**并**DbgBreakPointWithStatus**分别在已检验的版本环境中编译时。 编译时可用的生成环境中，它们会产生任何影响。
 
 ### <a name="span-idkernelmodeconditionalbreakmacrosspanspan-idkernelmodeconditionalbreakmacrosspankernel-mode-conditional-break-macros"></a><span id="kernel_mode_conditional_break_macros"></span><span id="KERNEL_MODE_CONDITIONAL_BREAK_MACROS"></span>内核模式条件中断宏
 
 两个条件中断宏是适用于内核模式驱动程序：
 
--   [ **ASSERT** ](https://msdn.microsoft.com/library/windows/hardware/ff542107)宏测试的逻辑表达式。 如果表达式为 false，中止程序执行和调试程序将变为活动状态。 在调试器中显示失败的表达式和在程序中的位置。
+-   [ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))宏测试的逻辑表达式。 如果表达式为 false，中止程序执行和调试程序将变为活动状态。 在调试器中显示失败的表达式和在程序中的位置。
 
--   [ **ASSERTMSG** ](https://msdn.microsoft.com/library/windows/hardware/ff542113)宏等同于**ASSERT**相似，只允许发送到调试器的其他消息。
+-   [ **ASSERTMSG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-assertmsg)宏等同于**ASSERT**相似，只允许发送到调试器的其他消息。
 
 **断言**并**ASSERTMSG**是仅在已检验的版本环境中编译时为活动状态。 编译时可用的生成环境中，它们会产生任何影响。
 

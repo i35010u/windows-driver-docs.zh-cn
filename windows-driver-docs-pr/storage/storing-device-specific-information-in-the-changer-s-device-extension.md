@@ -8,12 +8,12 @@ keywords:
 - 特定于设备的数据存储 WDK 换带机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ed70319bd7c22cc20044f0a63296e6538674b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37397a7638768b4791e83fa88c7e6caa7a917d7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383144"
 ---
 # <a name="storing-device-specific-information-in-the-changers-device-extension"></a>将特定于设备的信息存储在更换器的设备扩展中
 
@@ -21,7 +21,7 @@ ms.locfileid: "63389392"
 ## <span id="ddk_storing_device_specific_information_in_the_changers_device_extensi"></span><span id="DDK_STORING_DEVICE_SPECIFIC_INFORMATION_IN_THE_CHANGERS_DEVICE_EXTENSI"></span>
 
 
-换带机 miniclass 驱动程序指定它需要使用特定于设备的数据中的存储其[ **ChangerAdditionalExtensionSize** ](https://msdn.microsoft.com/library/windows/hardware/ff551400)例程。 转换器类驱动程序分配请求的存储代表换带机 miniclass 驱动程序，然后调用 miniclass 驱动程序[ **ChangerInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff551431)例程。
+换带机 miniclass 驱动程序指定它需要使用特定于设备的数据中的存储其[ **ChangerAdditionalExtensionSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changeradditionalextensionsize)例程。 转换器类驱动程序分配请求的存储代表换带机 miniclass 驱动程序，然后调用 miniclass 驱动程序[ **ChangerInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerinitialize)例程。
 
 换带机 miniclass 驱动程序是否将数据存储在设备扩展以及哪些数据，它将存储，由驱动程序设计器。 它通常包括 SCSI 查询数据或转换器设备的非 SCSI 等效项。
 

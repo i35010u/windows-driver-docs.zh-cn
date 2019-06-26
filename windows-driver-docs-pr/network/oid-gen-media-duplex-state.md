@@ -5,12 +5,12 @@ ms.assetid: 63776227-dc48-4506-888f-c4b944837c4c
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_DUPLEX_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cb6a0179d4220660f7670876251511981a5de273
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfcd9b326b95571fa667368358d8db7bb987b08f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369024"
 ---
 # <a name="oidgenmediaduplexstate"></a>OID\_GEN\_MEDIA\_DUPLEX\_STATE
 
@@ -28,13 +28,13 @@ ms.locfileid: "63358960"
 <a name="remarks"></a>备注
 -------
 
-NDIS 使用此 OID 来查询的双工状态[NDIS 网络接口](https://msdn.microsoft.com/library/windows/hardware/ff566527)提供程序。 仅 NDIS 接口提供程序，并因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+NDIS 使用此 OID 来查询的双工状态[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序。 仅 NDIS 接口提供程序，并因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
 
-如果查询成功，接口提供程序返回 NDIS\_状态\_成功和查询的结果可以是中的值之一[ **NET\_如果\_媒体\_双工\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff568745)枚举。
+如果查询成功，接口提供程序返回 NDIS\_状态\_成功和查询的结果可以是中的值之一[ **NET\_如果\_媒体\_双工\_状态**](https://docs.microsoft.com/windows/desktop/api/ifdef/ne-ifdef-_net_if_media_duplex_state)枚举。
 
 微型端口驱动程序在初始化过程中提供的媒体双工状态，并提供更新与状态的指示。
 
-若要指定的双工状态微型端口驱动程序中，设置**MediaDuplexState**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)结构的微型端口驱动程序将传递给[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)函数。
+若要指定的双工状态微型端口驱动程序中，设置**MediaDuplexState**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的微型端口驱动程序将传递给[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
 <a name="requirements"></a>要求
 ------------
@@ -55,13 +55,13 @@ NDIS 使用此 OID 来查询的双工状态[NDIS 网络接口](https://msdn.micr
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
+[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NET\_IF\_MEDIA\_DUPLEX\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff568745)
+[**NET\_IF\_MEDIA\_DUPLEX\_STATE**](https://docs.microsoft.com/windows/desktop/api/ifdef/ne-ifdef-_net_if_media_duplex_state)
 
-[**NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
 
-[NDIS 网络接口 Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

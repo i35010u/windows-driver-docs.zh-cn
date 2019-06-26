@@ -7,12 +7,12 @@ keywords:
 - 自定义半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4439ad68f41c64474c25cc4a683a1f49da921b94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 280fd2a3e7e7440e9e4c86b9aec7ab05a3dd95ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380165"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382048"
 ---
 # <a name="minidriver-supplied-halftoning"></a>微型驱动程序提供的半色调
 
@@ -24,7 +24,7 @@ ms.locfileid: "63380165"
 
 若要提供自定义的半色调功能，必须执行以下操作：
 
--   提供[呈现插件](rendering-plug-ins.md)实现[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)方法。
+-   提供[呈现插件](rendering-plug-ins.md)实现[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法。
 
 -   包括半色调\*GPD 文件中，并为每个功能项自定义半色调方法，包括\*选项条目描述的半色调方法。 (不使用任何[选项的半色调功能特性](option-attributes-for-the-halftone-feature.md)。)
 
@@ -77,7 +77,7 @@ ms.locfileid: "63380165"
 }
 ```
 
-在示例中，ColorFormat1 和 ColorFormat2 ColorMode 选项表示可以处理 Unidrv，颜色格式，如中所述[处理颜色格式](handling-color-formats.md)。 ColorFormat2，对于\* **IPCallbackID**指定属性。 如果打印机用户选择的颜色格式作为 ColorFormat2，Unidrv 调用打印机[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261) COM 方法以处理半色调。 该方法的参数之一是指向表示当前所选的半色调方法的字符串名称。
+在示例中，ColorFormat1 和 ColorFormat2 ColorMode 选项表示可以处理 Unidrv，颜色格式，如中所述[处理颜色格式](handling-color-formats.md)。 ColorFormat2，对于\* **IPCallbackID**指定属性。 如果打印机用户选择的颜色格式作为 ColorFormat2，Unidrv 调用打印机[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing) COM 方法以处理半色调。 该方法的参数之一是指向表示当前所选的半色调方法的字符串名称。
 
 有关半色调的详细信息，请参阅[自定义半色调](customized-halftoning.md)。
 

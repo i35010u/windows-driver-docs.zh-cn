@@ -4,12 +4,12 @@ description: VideoStabilization 注册表项中的 OEM 集 MaxPixelsPerSecond �
 ms.assetid: F0F7A705-0F39-4A62-A110-A2E47DFB7B42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046b6f14712bee5ad278772da5bcca650ac6832d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 853b44f4173b322a899e63437be5dc13b655d30f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345965"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368100"
 ---
 # <a name="video-stabilization-registry-settings"></a>视频防抖动注册表设置
 
@@ -105,4 +105,4 @@ Oem 必须验证以下各项：
 **请注意**零售系统不应具有注册表项来禁用此部分中所述的视频防抖动内部逻辑。 但是，零售系统应有**VideoStabilization**的注册表项**MaxPixelsPerSecond**通过此测试过程中确定的值。
 
 
-**请注意** **VideoStabilization**注册表项**MaxPixelsPerSecond**值函数仅当属性[MF\_低\_延迟](https://msdn.microsoft.com/library/windows/desktop/hh162832)效果设置。 提供的视频防抖动效果添加到 MediaCapture 管道，将自动设置该属性。 但是，如果视频防抖动效果插入到自定义管道或的管道，不会设置**MF\_低\_延迟**属性，注册表项不起作用。
+**请注意** **VideoStabilization**注册表项**MaxPixelsPerSecond**值函数仅当属性[MF\_低\_延迟](https://docs.microsoft.com/windows/desktop/medfound/mf-low-latency)效果设置。 提供的视频防抖动效果添加到 MediaCapture 管道，将自动设置该属性。 但是，如果视频防抖动效果插入到自定义管道或的管道，不会设置**MF\_低\_延迟**属性，注册表项不起作用。

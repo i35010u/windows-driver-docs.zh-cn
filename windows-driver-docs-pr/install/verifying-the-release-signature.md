@@ -4,17 +4,17 @@ description: 验证发布签名
 ms.assetid: 28ed3bb6-dc57-42f9-8bd5-7118619f3bf5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0e13a995606f97c117aacb3a3cebb6a6486a8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a15b873d4be5f32ddbb9ec0441cb8f29f99ad6fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380431"
 ---
 # <a name="verifying-the-release-signature"></a>验证发布签名
 
 
-之后[驱动程序包](driver-packages.md)已发布签名[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)工具可用于验证的签名：
+之后[驱动程序包](driver-packages.md)已发布签名[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)工具可用于验证的签名：
 
 -   驱动程序包中的单个文件。
 

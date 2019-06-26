@@ -6,12 +6,12 @@ keywords:
 - WdfObjectDereferenceWithTag 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7577c9f922d107b56f19f4b6f090d156accb64b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d16fbc4afe3e1101881903c3a22d087192fef7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372089"
 ---
 # <a name="wdfobjectdereferencewithtag-macro"></a>WdfObjectDereferenceWithTag 宏
 
@@ -51,11 +51,11 @@ Framework 对象的句柄。
 
 如果该对象的引用计数变为零，对象可能被删除之前**WdfObjectDereferenceWithTag**返回。
 
-调用[ **WdfObjectDereferenceActual** ](https://msdn.microsoft.com/library/windows/hardware/ff548743)或**WdfObjectDereferenceWithTag**而不是[ **WdfObjectDereference**](wdfobjectdereference.md)向 Microsoft 调试器提供附加信息 （标记字符串、 行号和文件名称）。 **WdfObjectDereferenceActual**允许您的驱动程序指定的行号和文件名称，而**WdfObjectDereferenceWithTag**使用驱动程序的当前行号和文件名称。
+调用[ **WdfObjectDereferenceActual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdereferenceactual)或**WdfObjectDereferenceWithTag**而不是[ **WdfObjectDereference**](wdfobjectdereference.md)向 Microsoft 调试器提供附加信息 （标记字符串、 行号和文件名称）。 **WdfObjectDereferenceActual**允许您的驱动程序指定的行号和文件名称，而**WdfObjectDereferenceWithTag**使用驱动程序的当前行号和文件名称。
 
-可以通过查看标记、 行号和文件名称值 **！ wdftagtracker**调试器扩展。 调试器扩展显示为一个指针，以及一系列字符的标记值。 有关调试器扩展的详细信息，请参阅[调试 KMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540790)。
+可以通过查看标记、 行号和文件名称值 **！ wdftagtracker**调试器扩展。 调试器扩展显示为一个指针，以及一系列字符的标记值。 有关调试器扩展的详细信息，请参阅[调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
 
-有关对象引用计数的详细信息，请参阅[Framework 对象生命周期](https://msdn.microsoft.com/library/windows/hardware/ff542889)。
+有关对象引用计数的详细信息，请参阅[Framework 对象生命周期](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)。
 
 <a name="examples"></a>示例
 --------

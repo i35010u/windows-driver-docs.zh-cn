@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7f0e58d46734ac821f973df1cc3f1943f3604c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ebfc9214beb2d7cda21f93fee89e0dba317ce488
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325245"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364901"
 ---
 # <a name="kspropertybdacamoduleui"></a>KSPROPERTY\_BDA\_CA\_MODULE\_UI
 
@@ -85,11 +85,11 @@ BDA\_CA\_模块\_UI 结构包含用户界面 (UI) 数据。
 ## <a name="see-also"></a>请参阅
 
 
-[**BDA\_CA\_MODULE\_UI**](https://msdn.microsoft.com/library/windows/hardware/ff556516)
+[**BDA\_CA\_MODULE\_UI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_ca_module_ui)
 
 [**KSEVENT\_BDA\_CA\_MODULE\_UI\_REQUESTED**](ksevent-bda-ca-module-ui-requested.md)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

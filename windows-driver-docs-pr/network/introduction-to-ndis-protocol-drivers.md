@@ -4,12 +4,12 @@ description: NDIS 协议驱动程序简介
 ms.assetid: 398a1cf1-9bf8-45a5-9b6d-65467d061e99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c85109f5611e60fd47575ee30e97b46b208a2874
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6440794fa018945471362f2982fa0272eb26ef06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329629"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386340"
 ---
 # <a name="introduction-to-ndis-protocol-drivers"></a>NDIS 协议驱动程序简介
 
@@ -20,9 +20,9 @@ NDIS 协议驱动程序将一组导出*ProtocolXxx*函数在其下边缘。 使�
 
  
 
-协议驱动程序始终使用 NDIS 提供的函数与基础的 NDIS 驱动程序来发送和接收网络数据进行通信。 例如，有一个无连接较低的边缘 （这与无连接媒体，例如以太网基础驱动程序进行通信） 的协议驱动程序必须调用[ **NdisSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff564535)到将网络数据发送到基础的 NDIS 驱动程序。 协议驱动程序可以调用[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)查询或设置 Oid 的基础无连接驱动程序支持。 有面向连接的下边缘 （这与基础驱动程序对于面向连接的媒体，例如 ISDN） 协议驱动程序必须调用[ **NdisCoSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff561728)发送网络数据复制到较低级别的 NDIS 驱动程序。 它还可以调用[ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)查询或设置基础面向连接的驱动程序支持的 Oid。
+协议驱动程序始终使用 NDIS 提供的函数与基础的 NDIS 驱动程序来发送和接收网络数据进行通信。 例如，有一个无连接较低的边缘 （这与无连接媒体，例如以太网基础驱动程序进行通信） 的协议驱动程序必须调用[ **NdisSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissendnetbufferlists)到将网络数据发送到基础的 NDIS 驱动程序。 协议驱动程序可以调用[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)查询或设置 Oid 的基础无连接驱动程序支持。 有面向连接的下边缘 （这与基础驱动程序对于面向连接的媒体，例如 ISDN） 协议驱动程序必须调用[ **NdisCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscosendnetbufferlists)发送网络数据复制到较低级别的 NDIS 驱动程序。 它还可以调用[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)查询或设置基础面向连接的驱动程序支持的 Oid。
 
-NDIS 还提供了一套**Ndis * Xxx*** 隐藏基础操作系统的详细信息的函数。 例如，协议驱动程序可以调用[ **NdisInitializeEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff562732)若要创建用于同步的事件并[ **NdisInitializeListHead**](https://msdn.microsoft.com/library/windows/hardware/ff562734)创建链接的列表。 使用此类函数的 NDIS 版本的协议驱动程序是在 Microsoft 操作系统更易于移植。 但是，协议驱动程序还可以调用内核模式下支持例程，如[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)。 有关详细信息，请参阅[内核模式下支持例程的摘要](https://msdn.microsoft.com/library/windows/hardware/ff563889)。
+NDIS 还提供了一套**Ndis * Xxx*** 隐藏基础操作系统的详细信息的函数。 例如，协议驱动程序可以调用[ **NdisInitializeEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitializeevent)若要创建用于同步的事件并[ **NdisInitializeListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitializelisthead)创建链接的列表。 使用此类函数的 NDIS 版本的协议驱动程序是在 Microsoft 操作系统更易于移植。 但是，协议驱动程序还可以调用内核模式下支持例程，如[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)。 有关详细信息，请参阅[内核模式下支持例程的摘要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 协议驱动程序的开发人员应使用相同[的编程注意事项](network-driver-programming-considerations.md)由应用于其他的 NDIS 驱动程序。
 

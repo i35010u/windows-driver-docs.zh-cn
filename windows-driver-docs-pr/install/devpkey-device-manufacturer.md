@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 89da57b1e3fba8b70037a87f2c84db10b73c85b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a39124687dc6b845a81bcfb8d179f1c4191722fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351087"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378185"
 ---
 # <a name="devpkeydevicemanufacturer"></a>DEVPKEY_Device_Manufacturer
 
@@ -60,11 +60,11 @@ DEVPKEY_DEVICE_Manufacturer 设备属性表示的设备实例制造商的名称�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DEVICE_Manufacturer 的值将由*制造商标识符*提供的设备的条目值[ **INF 制造商部分**](https://msdn.microsoft.com/library/windows/hardware/ff547454)的安装设备的 INF 文件。
+DEVPKEY_DEVICE_Manufacturer 的值将由*制造商标识符*提供的设备的条目值[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)的安装设备的 INF 文件。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_DEVICE_Manufacturer 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_DEVICE_Manufacturer 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_Manufacturer 属性键。 相反，相应的 SPDRP_MFG 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_Manufacturer 属性键。 相反，相应的 SPDRP_MFG 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF 制造商部分**](https://msdn.microsoft.com/library/windows/hardware/ff547454)
+[**INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

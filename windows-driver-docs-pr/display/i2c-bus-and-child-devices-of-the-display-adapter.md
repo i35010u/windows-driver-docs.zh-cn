@@ -10,12 +10,12 @@ keywords:
 - I2CWrite
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b368336d49a07369c27017358fdc6df8f39399a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9086af04553950c41032b30f28867c13319c0ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383722"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380197"
 ---
 # <a name="i2c-bus-and-child-devices-of-the-display-adapter"></a>显示适配器的 I2C 总线和子设备
 
@@ -46,17 +46,17 @@ VideoPortDDCMonitorHelper 实现读取监视器的详细信息扩展显示标识
 
 I²C 规范定义用于启动 I²C 通信、 读取和写入字节过程 I²C 数据行和终止 I²C 通信协议。 系统提供的视频端口驱动程序提供实现该协议的以下函数。
 
-* [**I2CStart**](https://msdn.microsoft.com/library/windows/hardware/ff567375)
-* [**I2CRead**](https://msdn.microsoft.com/library/windows/hardware/ff567372)
-* [**I2CWrite**](https://msdn.microsoft.com/library/windows/hardware/ff567378)
-* [**I2CStop**](https://msdn.microsoft.com/library/windows/hardware/ff567376)
+* [**I2CStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_start)
+* [**I2CRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_read)
+* [**I2CWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_write)
+* [**I2CStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pi2c_stop)
 
 在前面的函数 （实现，但不是导出的视频端口驱动程序） 的每个列表需要协助微型端口驱动程序。 微型端口驱动程序可以调用 I²C 函数之前，它必须以获取函数指针传递到 VideoPortServicesI2C [VideoPortQueryServices](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportqueryservices)函数。
 
 例如， **I2CRead**函数通过 I²C 数据行，读取的字节序列，但读取每个字节需要读取八个的单个位，只有微型端口驱动程序可以执行的任务。 **I2CRead**函数可以从微型端口驱动程序获得的帮助，因为它接收的指针 (在*I2CCallbacks*结构) 到由视频微型端口实现的四个 I²C 函数驱动程序 (*ReadClockLine*， *WriteClockLine*， *ReadDataLine*，以及*WriteDataLine*)。 同样， **I2CStart**， **I2CRead**，并**I2CWrite**每个接收*I2CCallbacks*结构，其中包含指向所有四个指针微型端口驱动程序的 I²C 函数。
 
 
-有关所有微型端口驱动程序功能的概述以及如何注册这些功能，请参阅[视频的微型端口驱动程序函数](https://msdn.microsoft.com/library/windows/hardware/ff570512)。
+有关所有微型端口驱动程序功能的概述以及如何注册这些功能，请参阅[视频的微型端口驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/)。
 
 I²C 总线的详细信息，请参阅发布 Philips 半导体 I²C 总线规格。
 

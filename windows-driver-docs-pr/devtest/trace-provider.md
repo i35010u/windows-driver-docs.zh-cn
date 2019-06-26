@@ -10,12 +10,12 @@ keywords:
 - 跟踪会话 WDK，提供程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecfb692e9858394b05b8691f2d58fab814d5d0b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f49b596c93436c90cede7302749bc09fb0f852c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381906"
 ---
 # <a name="trace-provider"></a>跟踪提供程序
 
@@ -29,6 +29,6 @@ ms.locfileid: "63354639"
 
 若要使用多个跟踪提供程序启动跟踪会话，必须指定[控制 Guid](control-guid.md)的所有所需的提供程序中的 GUID （.guid 扩展名） 或控制文件提交到[跟踪控制器](trace-controller.md). 提供程序生成的跟踪消息混杂事件跟踪日志 (.etl) 文件中。
 
-内核模式驱动程序或用户模式应用程序可以支持多个跟踪提供程序组件，即使在单个源文件中。 此功能可用于跟踪在驱动程序或应用程序中的特定操作。 若要实现多个跟踪提供程序，您必须使用不同[控制 GUID](control-guid.md)中[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏为每个提供程序。
+内核模式驱动程序或用户模式应用程序可以支持多个跟踪提供程序组件，即使在单个源文件中。 此功能可用于跟踪在驱动程序或应用程序中的特定操作。 若要实现多个跟踪提供程序，您必须使用不同[控制 GUID](control-guid.md)中[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏为每个提供程序。
 
 同样，多个驱动程序或应用程序可以是单个跟踪提供程序的一部分并共享其资源。 在跟踪过程相关的应用程序和驱动程序，如端口和微型端口驱动程序，此功能非常有用。 若要实现此功能，指定相同的控件的 GUID 在 WPP\_控制\_每个提供程序 GUID 宏。

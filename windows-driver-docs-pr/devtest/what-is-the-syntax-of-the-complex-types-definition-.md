@@ -4,12 +4,12 @@ description: 复杂类型定义的语法是什么
 ms.assetid: c378839a-3714-4b4e-94a6-d3e1dcf8a610
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68dc7cce9f5340b4f4a7a47c9c7a7cdea228b681
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 926921884a79bfd17de708d1c01f01613697bee6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376829"
 ---
 # <a name="what-is-the-syntax-of-the-complex-types-definition"></a>复杂类型定义的语法是什么？
 
@@ -36,7 +36,7 @@ WPP 使用此字段来标识的复杂类型。 例如， **。\*ls**。
 <span id="HelperMacroName"></span><span id="helpermacroname"></span><span id="HELPERMACRONAME"></span>*HelperMacroName*  
 帮助器宏参数转换为长度/地址对格式中的变长数组。 此格式所需**TraceMessage**其变量自变量列表中的项的每个函数。
 
-若要正确设置参数的格式，必须使用[ **WPP\_LOGPAIR** ](https://msdn.microsoft.com/library/windows/hardware/ff556197)帮助器宏，如下面的示例中所示的定义中的宏：
+若要正确设置参数的格式，必须使用[ **WPP\_LOGPAIR** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556197(v=vs.85))帮助器宏，如下面的示例中所示的定义中的宏：
 
 ```
 #define HelperMacroName(x) WPP_LOGPAIR(length, x)
@@ -47,16 +47,16 @@ WPP 使用此字段来标识的复杂类型。 例如， **。\*ls**。
  
 
 <span id="Argument_Type"></span><span id="argument_type"></span><span id="ARGUMENT_TYPE"></span>*自变量类型*  
-指示该参数的值*TypeName*可以接受类型。 例如， **const xwcs\_t &**。
+指示该参数的值*TypeName*可以接受类型。 例如， **const xwcs\_t &** 。
 
 <span id="WppMofType"></span><span id="wppmoftype"></span><span id="WPPMOFTYPE"></span>*WppMofType*  
 指定的托管对象格式 (MOF) 类型的预处理器 WPP 识别
 
 <span id="WppMofFormat"></span><span id="wppmofformat"></span><span id="WPPMOFFORMAT"></span>*WppMofFormat*  
-指定一个格式说明符，例如 **"s"**，即由 WPP 预处理器识别。
+指定一个格式说明符，例如 **"s"** ，即由 WPP 预处理器识别。
 
 <span id="TypeSignature"></span><span id="typesignature"></span><span id="TYPESIGNATURE"></span>*TypeSignature*  
-一个字符串追加到要将它与复杂类型相关联的函数名称。 必须是单个字符或下划线之间的多个字符。 例如，  **\_xwcs\_t\_**。
+一个字符串追加到要将它与复杂类型相关联的函数名称。 必须是单个字符或下划线之间的多个字符。 例如，  **\_xwcs\_t\_** 。
 
 <span id="Priority"></span><span id="priority"></span><span id="PRIORITY"></span>*优先级*  
 此元素保留，并且必须设置为零。
@@ -70,7 +70,7 @@ WPP 使用此字段来标识的复杂类型。 例如， **。\*ls**。
 
 1.  创建本地配置文件。 此文件应包含定义\_CPLX\_类型宏，用于定义复杂类型。
 
-2.  指定的本地配置文件[WPP 预处理器](wpp-preprocessor.md)。 打开项目属性。 下**WPP 跟踪**，**文件选项**，使用**额外的配置文件**字段来指定配置文件的名称 (**-ini**参数)。 确保通过设置启用 WPP 跟踪**运行 WPP**到**是**。 有关详细信息，请参阅 WPP 预处理器。
+2.  指定的本地配置文件[WPP 预处理器](wpp-preprocessor.md)。 打开项目属性。 下**WPP 跟踪**，**文件选项**，使用**额外的配置文件**字段来指定配置文件的名称 ( **-ini**参数)。 确保通过设置启用 WPP 跟踪**运行 WPP**到**是**。 有关详细信息，请参阅 WPP 预处理器。
 
 例如，可以创建用于定义名为的复杂类型的本地配置文件 (Localwpp.ini) **。\*ls**。 按以下方式定义复杂类型：
 
@@ -119,11 +119,11 @@ struct xwcs_t {
 
 其中**ItemPWString** WPP 识别为计数 Unicode 字符串类型。 长度指定为 2 个字节。
 
-当 ETW 解释 WPP\_LOGXWCS 定义，它将一个 2 字节的字符串放入第一个缓冲区[ **WPP\_LOGPAIR** ](https://msdn.microsoft.com/library/windows/hardware/ff556197)解释宏。 ETW 然后复制字符串的所有字节到缓冲区时 ETW 解释第二个 WPP\_LOGPAIR 宏
+当 ETW 解释 WPP\_LOGXWCS 定义，它将一个 2 字节的字符串放入第一个缓冲区[ **WPP\_LOGPAIR** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556197(v=vs.85))解释宏。 ETW 然后复制字符串的所有字节到缓冲区时 ETW 解释第二个 WPP\_LOGPAIR 宏
 
 因为指定的长度不同于数据，WPP\_LOGXWCS 使用的两个槽[TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)。 因此，数字**2**是第 8 个参数。
 
-调用时[WPP 预处理器](wpp-preprocessor.md)，使用**忽略感叹号**选项 (**-noshrieks**)。 这有助于 WPP 识别复杂类型具有名称未括在感叹号 （！），也称为"shrieks。"
+调用时[WPP 预处理器](wpp-preprocessor.md)，使用**忽略感叹号**选项 ( **-noshrieks**)。 这有助于 WPP 识别复杂类型具有名称未括在感叹号 （！），也称为"shrieks。"
 
 WPP 跟踪选项以及有关如何从项目属性页中设置这些信息的完整列表，请参阅[WPP 预处理器](wpp-preprocessor.md)。
 
