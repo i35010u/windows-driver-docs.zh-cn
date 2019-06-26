@@ -4,19 +4,19 @@ description: 创建自定义属性页
 ms.assetid: 2481450f-ebb2-40e3-8a42-eabaecc1c7e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 897cf3f7d0d0e2575d37de6649b11d45476a571b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b870bcffdf3d65c991dfb791a699fcde0bf39fa1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363128"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356296"
 ---
 # <a name="creating-custom-property-pages"></a>创建自定义属性页
 
 
 当[设备属性页提供程序](types-of-device-property-page-providers.md)请求来创建其设备或设备类的属性页的句柄，该提供程序应执行以下步骤：
 
-1.  调用[ **SetupDiGetClassInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff551083)若要获取当前类安装设备的参数。 例如：
+1.  调用[ **SetupDiGetClassInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa)若要获取当前类安装设备的参数。 例如：
 
     ```cpp
     SP_ADDPROPERTYPAGE_DATA AddPropertyPageData;
@@ -44,7 +44,7 @@ ms.locfileid: "63363128"
 
 3.  分配内存要在其中保存任何特定于设备的数据将需要更高版本中的对话框过程并初始化此内存的数据。 销毁属性页时，提供程序必须释放此内存在其属性页回调。
 
-    提供程序[共同安装程序](writing-a-co-installer.md)，此特定于设备的数据必须包括*DeviceInfoSet*并*DeviceInfoData*已通过但存在[ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://msdn.microsoft.com/library/windows/hardware/ff543656)设备安装函数 (DIF) 代码。
+    提供程序[共同安装程序](writing-a-co-installer.md)，此特定于设备的数据必须包括*DeviceInfoSet*并*DeviceInfoData*已通过但存在[ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-addpropertypage-advanced)设备安装函数 (DIF) 代码。
 
     例如，属性页提供程序可以定义并使用一种结构，如下面的示例中所示：
 
@@ -73,7 +73,7 @@ ms.locfileid: "63363128"
 
 7.  对每个其他自定义属性页重复步骤 2 到 6。
 
-8.  调用[ **SetupDiSetClassInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff552122)若要设置的新类安装参数，包括更新后的属性页结构。
+8.  调用[ **SetupDiSetClassInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa)若要设置的新类安装参数，包括更新后的属性页结构。
 
 9.  返回 NO_ERROR。
 

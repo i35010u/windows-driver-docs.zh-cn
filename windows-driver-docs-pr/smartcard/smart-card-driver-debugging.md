@@ -9,12 +9,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡调试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5703850f2a821293a24e90169b10509c48ca4ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b7b6fe3323aa5e44c57bfc9a0f192935837612d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356671"
 ---
 # <a name="smart-card-driver-debugging"></a>智能卡驱动程序调试
 
@@ -37,7 +37,7 @@ DEBUG_ALL
 
 由名为的值表示已启用调试功能的合集*调试级别*。 可以通过执行对应于你想要启用的功能的常量的按位或计算此值。
 
-有两种方法来设置调试级别。 首先，您可以使用智能卡驱动程序测试程序， *Scdrvtst*，都使用 Windows Driver Kit (WDK)。 第二个是使用[ **SmartcardSetDebugLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff548960)智能卡驱动程序库例程。
+有两种方法来设置调试级别。 首先，您可以使用智能卡驱动程序测试程序， *Scdrvtst*，都使用 Windows Driver Kit (WDK)。 第二个是使用[ **SmartcardSetDebugLevel** ](https://docs.microsoft.com/previous-versions/ff548960(v=vs.85))智能卡驱动程序库例程。
 
 在这两种情况下，必须将所需的调试级别的值传递给程序或例程，用于设置调试级别。 例如，若要使用智能卡库例程从驱动程序设置调试级别，进行以下调用：
 
@@ -68,7 +68,7 @@ SmartcardDebug(
 
 在开发驱动程序，使用智能卡驱动程序库的经检查的版本并将调试级别设置为最大值，通过使用**SmartcardSetDebugLevel**(调试\_所有) 在你*DriverEntry*例程。
 
-有关设置远程调试会话的信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+有关设置远程调试会话的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
  
 

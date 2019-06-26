@@ -9,12 +9,12 @@ keywords:
 - 端口号 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 925ed4de88ae2bf0a0d9420de116b81da09bbadb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddb816426be0a7c31723a55ccb0eeaac52de8fb5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356170"
 ---
 # <a name="managing-an-ndis-port"></a>管理 NDIS 端口
 
@@ -30,13 +30,13 @@ NDIS 通过发出的关联的状态指示和即插即用事件通知的兴趣的
 
 若要帮助管理 NDIS 端口，以下结构包括端口号：
 
-<a href="" id="ndis-oid-request"></a>[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
+<a href="" id="ndis-oid-request"></a>[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
 介绍 OID 请求。
 
-<a href="" id="ndis-status-indication"></a>[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)  
+<a href="" id="ndis-status-indication"></a>[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)  
 介绍 NDIS 状态指示。
 
-<a href="" id="net-pnp-event-notification"></a>[**NET\_PNP\_EVENT\_NOTIFICATION**](https://msdn.microsoft.com/library/windows/hardware/ff568752)  
+<a href="" id="net-pnp-event-notification"></a>[**NET\_PNP\_EVENT\_NOTIFICATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)  
 介绍即插即用事件通知。
 
 本部分包括：

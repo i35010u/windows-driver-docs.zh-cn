@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5b6008b6a9198d405473de9ad2f2704d0a62bda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 125ebba6f7d0e38e36d564c88937d26f2a5632f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355996"
 ---
 # <a name="kseventdynamicformatchange"></a>KSEVENT\_DYNAMIC\_FORMAT\_CHANGE
 
@@ -29,7 +29,7 @@ ms.locfileid: "63323627"
 <a name="remarks"></a>备注
 -------
 
-AVStream 硬件编解码器驱动程序生成 KSEVENT\_动态\_格式\_更改。 有关详细信息，请参阅[AVStream 编解码器支持动态格式更改](https://msdn.microsoft.com/library/windows/hardware/ff568483)。
+AVStream 硬件编解码器驱动程序生成 KSEVENT\_动态\_格式\_更改。 有关详细信息，请参阅[AVStream 编解码器支持动态格式更改](https://docs.microsoft.com/windows-hardware/drivers/stream/supporting-dynamic-format-changes-in-avstream-codecs)。
 
 <a name="requirements"></a>要求
 ------------

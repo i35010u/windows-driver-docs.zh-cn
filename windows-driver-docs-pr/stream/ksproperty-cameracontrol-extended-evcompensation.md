@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e99f765cd327079a5d2fdf2545d71ec1120b96e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1da7cad30dbc37d527957b6893a81a70897002c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348055"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355400"
 ---
 # <a name="kspropertycameracontrolextendedevcompensation"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_EVCOMPENSATION
 
@@ -58,7 +58,7 @@ EV 补偿属性允许调整曝光控制曝光单位的增量或区域系统。
 
  
 
-（操作数据） 的属性值包含[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和一个[ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION** ](https://msdn.microsoft.com/library/windows/hardware/dn567561)结构。
+（操作数据） 的属性值包含[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和一个[ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)结构。
 
 Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION)。 **大小**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)设置为此属性的总数据大小。
 
@@ -126,11 +126,11 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 
  
 
-驱动程序设置单步执行当前 EV 补偿**标志**。 成员[ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION** ](https://msdn.microsoft.com/library/windows/hardware/dn567561)指示当前步骤单元范围和数量的补偿中使用的步骤
+驱动程序设置单步执行当前 EV 补偿**标志**。 成员[ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)指示当前步骤单元范围和数量的补偿中使用的步骤
 
 ### <a name="setting-the-property"></a>将属性设置
 
-设置该属性是，KSPROPERTY\_类型\_集请求**标志**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)将包含使用单步执行的 EV 补偿。 中设置新的步骤用于补偿的单位数**值**的成员[ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://msdn.microsoft.com/library/windows/hardware/dn567561)。
+设置该属性是，KSPROPERTY\_类型\_集请求**标志**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)将包含使用单步执行的 EV 补偿。 中设置新的步骤用于补偿的单位数**值**的成员[ **KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)。
 
 <a name="requirements"></a>要求
 ------------
@@ -157,4 +157,4 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 
 [**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://msdn.microsoft.com/library/windows/hardware/dn567561)
+[**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)

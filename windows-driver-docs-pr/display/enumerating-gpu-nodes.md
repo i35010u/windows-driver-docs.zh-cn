@@ -6,17 +6,17 @@ keywords:
 - GPU 节点，枚举 WDK 显示器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 448e1d347a6252e1197e4304eb6afebafadd22b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcada44e5242441070d15e10810a1922224887de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355551"
 ---
 # <a name="enumerating-gpu-engine-capabilities"></a>枚举 GPU 引擎功能
 
 
-从 Windows 8.1，则显示微型端口驱动程序必须实现[ *DxgkDdiGetNodeMetadata* ](https://msdn.microsoft.com/library/windows/hardware/dn265415)函数，用于查询引擎功能的 GPU 的节点。
+从 Windows 8.1，则显示微型端口驱动程序必须实现[ *DxgkDdiGetNodeMetadata* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)函数，用于查询引擎功能的 GPU 的节点。
 
 此信息可帮助使用如何计划和在节点之间分发工作负荷的评估，并改进了调试的应用程序的功能。
 
@@ -25,11 +25,11 @@ ms.locfileid: "63353907"
 
 此接口提供了指定的 GPU 节点的引擎功能：
 
--   [*DxgkDdiGetNodeMetadata*](https://msdn.microsoft.com/library/windows/hardware/dn265415)
--   [**DXGKARG\_GETNODEMETADATA**](https://msdn.microsoft.com/library/windows/hardware/dn265405)
--   [**DXGK\_ENGINE\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/dn265417)
+-   [*DxgkDdiGetNodeMetadata*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)
+-   [**DXGKARG\_GETNODEMETADATA**](https://docs.microsoft.com/windows-hardware/drivers/display/)
+-   [**DXGK\_ENGINE\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-dxgk_engine_type)
 
-一个指向[ *DxgkDdiGetNodeMetadata* ](https://msdn.microsoft.com/library/windows/hardware/dn265415)函数将由**DxgkDdiGetNodeMetadata**的成员[**驱动程序\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff556169)结构。
+一个指向[ *DxgkDdiGetNodeMetadata* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)函数将由**DxgkDdiGetNodeMetadata**的成员[**驱动程序\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_driver_initialization_data)结构。
 
 ## <a name="span-idgpunodearchitecturespanspan-idgpunodearchitecturespanspan-idgpunodearchitecturespangpu-node-architecture"></a><span id="GPU_node_architecture"></span><span id="gpu_node_architecture"></span><span id="GPU_NODE_ARCHITECTURE"></span>GPU 节点体系结构
 
@@ -40,12 +40,12 @@ ms.locfileid: "63353907"
 
 不同节点表示 GPU 的非对称处理内核，而每个节点中的引擎适配器跨表示对称处理内核。 它是三维节点包含仅相同三维引擎上几个适配器，而绝不会不同的引擎类型。
 
-因为引擎始终组合在一起的节点在引擎类型，可以基于指定的节点上查询引擎类型信息。 中列出了可以指定显示微型端口驱动程序的引擎的类型[ **DXGK\_引擎\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn265417)枚举。
+因为引擎始终组合在一起的节点在引擎类型，可以基于指定的节点上查询引擎类型信息。 中列出了可以指定显示微型端口驱动程序的引擎的类型[ **DXGK\_引擎\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-dxgk_engine_type)枚举。
 
 ## <a name="span-idexampleimplementationofnodemetadatafunctionspanspan-idexampleimplementationofnodemetadatafunctionspanspan-idexampleimplementationofnodemetadatafunctionspanexample-implementation-of-node-metadata-function"></a><span id="Example_implementation_of_node_metadata_function"></span><span id="example_implementation_of_node_metadata_function"></span><span id="EXAMPLE_IMPLEMENTATION_OF_NODE_METADATA_FUNCTION"></span>节点的元数据函数的实现示例
 
 
-此代码演示如何显示微型端口驱动程序可以实现可以返回的引擎类型的某些[ *DxgkDdiGetNodeMetadata* ](https://msdn.microsoft.com/library/windows/hardware/dn265415)函数。
+此代码演示如何显示微型端口驱动程序可以实现可以返回的引擎类型的某些[ *DxgkDdiGetNodeMetadata* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)函数。
 
 ```ManagedCPlusPlus
 NTSTATUS

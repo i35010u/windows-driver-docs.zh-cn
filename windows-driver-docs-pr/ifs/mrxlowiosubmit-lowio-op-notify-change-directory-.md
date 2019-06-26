@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b70fbc346cf6039e070973e4c4c82c3c3e9e5338
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edbc2b8b5992bbb247467f9d8f8c72180034a39b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355534"
 ---
 # <a name="mrxlowiosubmitlowioopnotifychangedirectory-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_DIRECTORY\]例程
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)到向网络微型重定向目录更改通知操作发出请求。
+*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)到向网络微型重定向目录更改通知操作发出请求。
 
 <a name="syntax"></a>语法
 ------
@@ -96,7 +96,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY](
 
 RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 接收响应[ **IRP\_MJ\_目录\_控制**](irp-mj-directory-control.md)请求。
 
-然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]*，RDBSS 修改 RX中的以下成员\_指向上下文结构*RxContext*参数：
+然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* ，RDBSS 修改 RX中的以下成员\_指向上下文结构*RxContext*参数：
 
 **LowIoContext.Operation**成员设置为 LOWIO\_OP\_通知\_更改\_目录。
 
@@ -112,7 +112,7 @@ RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 接收响应[ 
 
 目录更改通知操作通常由实现网络微型重定向作为异步操作因为它可能需要相当长的时间。 该操作通常组成的网络请求发送到远程服务器请求更改通知。 所需的更改会影响服务器上时，获得响应。 这是网络微型重定向可能需要为其注册唯一的上下文值来处理本地启动取消操作的示例。
 
-虽然*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 处理例程， **LowIoContext.ResourceThreadId** RX 成员\_上下文保证以指示启动了 RDBSS 中的操作的进程线程。 **LowIoContext.ResourceThreadId**成员可用于释放 FCB 结构代表另一个线程。 完成异步例程后，可以释放已获取从初始线程的 FCB 结构。 FCB 结构可以释放通过调用[ **RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)。
+虽然*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 处理例程， **LowIoContext.ResourceThreadId** RX 成员\_上下文保证以指示启动了 RDBSS 中的操作的进程线程。 **LowIoContext.ResourceThreadId**成员可用于释放 FCB 结构代表另一个线程。 完成异步例程后，可以释放已获取从初始线程的 FCB 结构。 FCB 结构可以释放通过调用[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)。
 
 <a name="requirements"></a>要求
 ------------
@@ -137,23 +137,23 @@ RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 接收响应[ 
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]**](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]**](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]**](mrxlowiosubmit-lowio-op-ioctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]**](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]**](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]**](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]**](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]**](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

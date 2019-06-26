@@ -4,12 +4,12 @@ description: 安装已发布签名的驱动程序是在安装、 卸载和加载
 ms.assetid: 36624611-1FE6-4B88-B785-44D6A81F61FF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c65fdb85ef48cec5515b9f3029eeb42b1797e588
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77573df2ecf15c599886487fef6ea5d84a1c102e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339582"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356314"
 ---
 # <a name="troubleshooting-driver-signing-installation"></a>排查驱动程序签名安装问题
 
@@ -34,7 +34,7 @@ ms.locfileid: "63339582"
 
 选中复选框将显示此对话框中的计算机中如果再次安装该驱动程序是否出于任何原因删除驱动程序。
 
-**请注意**  系统将验证发布服务器信息是准确基于用于对目录进行签名的 SPC。 如果发布服务器的信任级别未知-Contoso.com—the 系统显示对话框中一样将为 true。 若要继续安装，用户必须单击安装。 有关信任和驱动程序安装的详细信息，请参阅[代码签名最佳做法](https://msdn.microsoft.com/library/windows/hardware/dn653556)。
+**请注意**  系统将验证发布服务器信息是准确基于用于对目录进行签名的 SPC。 如果发布服务器的信任级别未知-Contoso.com—the 系统显示对话框中一样将为 true。 若要继续安装，用户必须单击安装。 有关信任和驱动程序安装的详细信息，请参阅[代码签名最佳做法](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653556(v=vs.85))。
 
  
 

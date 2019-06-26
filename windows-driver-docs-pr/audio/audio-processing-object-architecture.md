@@ -4,12 +4,12 @@ description: 音频处理对象 (Apo) 提供 Windows 音频流的可自定义软
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd53e46e57783d59ae626835ca0c8ce5f80ad0d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2c66e12c6f59e59a06bf486a26bf97a3fe98697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355677"
 ---
 # <a name="audio-processing-object-architecture"></a>音频处理对象体系结构
 
@@ -40,7 +40,7 @@ Windows 允许 Oem 和第三方音频硬件制造商许多增值功能，其音�
 在硬件中 DSP 需要通过代理 APO 播发应用任何效果。 Microsoft 提供的默认代理 APO (MsApoFxProxy.dll)。 若要使用 Microsoft 提供的 APO，此属性和属性必须支持。
 
 -   [KSPROPSETID\_AudioEffectsDiscovery](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
--   [KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST](https://msdn.microsoft.com/library/windows/hardware/dn457706)
+-   [KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
 
 （可选） 可以实现自己的代理 APO。
 
@@ -72,15 +72,15 @@ SYSVAD 音频示例包含一个示例自定义 APO 控件示例。 此屏幕截�
 
 **自定义 APO 测试和要求**
 
-Microsoft HLK 提供了可用于不的测试。 有关音频测试，请参阅详细信息[Device.Audio 测试](https://msdn.microsoft.com/library/windows/hardware/jj123955.aspx)并[Device.Audio 测试](https://msdn.microsoft.com/library/windows/hardware/jj124726.aspx)。
+Microsoft HLK 提供了可用于不的测试。 有关音频测试，请参阅详细信息[Device.Audio 测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123955(v=vs.85))并[Device.Audio 测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124726(v=vs.85))。
 
 不使用时，这两个测试可以是特别有用。
 
-[验证音频 EffectsDiscovery （手动） 的证书](https://msdn.microsoft.com/library/windows/hardware/dn456312.aspx)
+[验证音频 EffectsDiscovery （手动） 的证书](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn456312(v=vs.85))
 
-[SysFX 测试](https://msdn.microsoft.com/library/windows/hardware/jj124017.aspx)
+[SysFX 测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124017(v=vs.85))
 
-有关音频支持不要求的信息，请参阅[Device.Audio 要求](https://msdn.microsoft.com/library/windows/hardware/jj134354.aspx)。
+有关音频支持不要求的信息，请参阅[Device.Audio 要求](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/deviceaudio-requirements)。
 
 **自定义 APO 工具和实用程序**
 
@@ -90,7 +90,7 @@ Microsoft HLK 提供了可用于不的测试。 有关音频测试，请参阅�
 
 **应用程序音频效果意识**
 
-应用程序具有调用 Api，以确定哪些音频效果是在系统上当前处于活动状态的能力。 有关音频效果感知 Api 的详细信息，请参阅[AudioRenderEffectsManager 类](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.audiorendereffectsmanager.aspx)。
+应用程序具有调用 Api，以确定哪些音频效果是在系统上当前处于活动状态的能力。 有关音频效果感知 Api 的详细信息，请参阅[AudioRenderEffectsManager 类](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.AudioRenderEffectsManager)。
 
 ## <a name="span-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanaudio-processing-objects-architecture"></a><span id="Audio_Processing_Objects_Architecture"></span><span id="audio_processing_objects_architecture"></span><span id="AUDIO_PROCESSING_OBJECTS_ARCHITECTURE"></span>音频处理对象体系结构
 

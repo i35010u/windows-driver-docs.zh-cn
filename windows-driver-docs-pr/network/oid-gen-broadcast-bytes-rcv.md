@@ -5,12 +5,12 @@ ms.assetid: 1047f3a9-be4a-4836-ac48-a9029c6f748f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_BROADCAST_BYTES_RCV 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5611e7606af9fbb622a80836ef61f44e361a5e87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 776927ba42054bff933fe6195860a8440d7ba806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349458"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356140"
 ---
 # <a name="oidgenbroadcastbytesrcv"></a>OID\_GEN\_BROADCAST\_BYTES\_RCV
 
@@ -37,7 +37,7 @@ ms.locfileid: "63349458"
 <a name="remarks"></a>备注
 -------
 
-有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)。
+有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
 
 <a name="requirements"></a>要求
 ------------

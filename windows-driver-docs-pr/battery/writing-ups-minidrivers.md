@@ -12,12 +12,12 @@ keywords:
 - 不间断电源 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a19094bacda3114155c76f70eba10bc7b30870
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfa4cc4cd7f1cfef40ac34d4f5a3d5f5e3142679
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328678"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355240"
 ---
 # <a name="writing-ups-minidrivers"></a>编写 UPS 微型驱动程序
 
@@ -47,7 +47,7 @@ UPS 微型驱动程序有关的详细信息，请参阅以下主题：
 
 [安装 UPS 微型驱动程序](installing-ups-minidrivers.md)
 
-**请注意**   Windows Vista 和更高版本的 Windows 不支持连接到 COM 端口的 UPS 单位。 这些 Windows 版本继续支持通过连接的 UPS 单位[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)。
+**请注意**   Windows Vista 和更高版本的 Windows 不支持连接到 COM 端口的 UPS 单位。 这些 Windows 版本继续支持通过连接的 UPS 单位[USB](https://docs.microsoft.com/windows-hardware/drivers/)。
 
  
 

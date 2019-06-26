@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 49f4511ac07cea0f586b49866f4f6adecdf79c88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4665933e136bc24970c7c2e2c1b75e4c0a0d2d8c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355504"
 ---
 # <a name="guidclassusbhub"></a>GUID_CLASS_USBHUB
 
 
-GUID_CLASS_USBHUB 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)有关[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930) hub 设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_USB_HUB** ](guid-devinterface-usb-hub.md)此类的新实例的类标识符。
+GUID_CLASS_USBHUB 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)有关[USB](https://docs.microsoft.com/windows-hardware/drivers/) hub 设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_USB_HUB** ](guid-devinterface-usb-hub.md)此类的新实例的类标识符。
 
 <a name="remarks"></a>备注
 -------

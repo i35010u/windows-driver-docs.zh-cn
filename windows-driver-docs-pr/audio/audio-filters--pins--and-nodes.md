@@ -12,12 +12,12 @@ keywords:
 - 筛选器 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bcfe9e7f7e492e56c7cd9a15803ff86d8c712d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59d24d6a79619703afa2f2d3e0cb13b475f014fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331636"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355690"
 ---
 # <a name="audio-filters-pins-and-nodes"></a>音频筛选器、引脚和节点
 
@@ -55,7 +55,7 @@ Pin 表示通过该数据流进入或退出该筛选器的输入或输出的连�
 
 [拓扑筛选器](topology-filters.md)
 
-内核流式处理筛选器、 pin 和节点，请参阅更多常规讨论[KS 微型驱动程序体系结构](https://msdn.microsoft.com/library/windows/hardware/ff567656)。
+内核流式处理筛选器、 pin 和节点，请参阅更多常规讨论[KS 微型驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-minidriver-architecture)。
 
  
 

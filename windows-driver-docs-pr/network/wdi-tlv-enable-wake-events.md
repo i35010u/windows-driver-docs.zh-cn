@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ENABLE_WAKE_EVENTS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 749d4dd22b9446b23dd8674d9f33f56eb4224492
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 141858980a8e5edcbaaf2ffdeb120eb9c5724405
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380867"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358558"
 ---
 # <a name="wditlvenablewakeevents"></a>WDI\_TLV\_启用\_唤醒\_事件
 
@@ -33,10 +33,10 @@ WDI\_TLV\_启用\_唤醒\_事件是包含启用了的唤醒事件 TLV。
 
 | 在任务栏的搜索框中键入   | 描述                                                                                                                                                          |
 |--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | 指定使用标志，如中所述的已启用的 LAN 唤醒数据包模式[ **NDIS\_PM\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566759)。EnabledWoLPacketPatterns。 |
-| UINT32 | 指定已启用的协议将卸载使用标志，如中所述[ **NDIS\_PM\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566759)。EnabledProtocolOffloads。            |
-| UINT32 | 指定使用标志，如中所述的唤醒标志[ **NDIS\_PM\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566759)。WakeUpFlags。                                    |
-| UINT32 | 指定特定于媒体的事件中所述使用标志唤醒[ **NDIS\_PM\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566759)。MediaSpecificWakeUpEvents。      |
+| UINT32 | 指定使用标志，如中所述的已启用的 LAN 唤醒数据包模式[ **NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)。EnabledWoLPacketPatterns。 |
+| UINT32 | 指定已启用的协议将卸载使用标志，如中所述[ **NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)。EnabledProtocolOffloads。            |
+| UINT32 | 指定使用标志，如中所述的唤醒标志[ **NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)。WakeUpFlags。                                    |
+| UINT32 | 指定特定于媒体的事件中所述使用标志唤醒[ **NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)。MediaSpecificWakeUpEvents。      |
 
  
 

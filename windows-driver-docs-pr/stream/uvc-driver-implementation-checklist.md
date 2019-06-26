@@ -3,12 +3,12 @@ title: USB 视频类 (UVC) 驱动程序实现清单
 description: 提供有关实现你的设备的 USB 视频类 (UVC) 驱动程序分步信息。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae4a63cf21c92ba4dad28a357fdcf35bbea51d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d361e4611d2f0ebdc4a44f757a92e4ba4438efd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356626"
 ---
 # <a name="usb-video-class-uvc-driver-implementation-checklist"></a>USB 视频类 (UVC) 驱动程序实现清单
 
@@ -16,7 +16,7 @@ ms.locfileid: "63367463"
 
 使用下面的链接，了解 UVC:
 
-- 访问[USB 类](http://www.usb.org/developers/docs/devclass_docs/)USB.org 文档 （非 UVC 特定于）
+- 访问[USB 类](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)USB.org 文档 （非 UVC 特定于）
 
 - 下载[USB 视频类 1.5](https://go.microsoft.com/fwlink/p/?linkid=2085170) USB.org 文档
 
@@ -58,8 +58,8 @@ ms.locfileid: "63367463"
 
 ## <a name="step-5-test-your-uvc-implementation-to-ensure-it-passes-hlk-tests-and-meets-required-functionality-and-performance"></a>步骤 5：测试 UVC 实现，以确保它通过 HLK 测试并满足所需的功能和性能
 
-- 运行[Windows HLK 测试](https://msdn.microsoft.com/library/windows/hardware/dn930814)
+- 运行[Windows HLK 测试](https://docs.microsoft.com/windows-hardware/drivers/)
 
-- 运行特定于照相机的[Device.Streaming HLK 测试](https://msdn.microsoft.com/library/windows/hardware/dn941930)
+- 运行特定于照相机的[Device.Streaming HLK 测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-streaming)
 
 - 请确保照相机满足任何要求，并通过照相机也必须符合 （例如，Skype、 Windows Hello，等） 其他产品的 HLK 测试。

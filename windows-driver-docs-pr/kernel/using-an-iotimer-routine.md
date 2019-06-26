@@ -6,12 +6,12 @@ keywords:
 - IoTimer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdce82d30e5b083a47760e1e28aa51aa68da941
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e74de4699e99eba3fabaa91d3f2c4ca11fc32b49
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355226"
 ---
 # <a name="using-an-iotimer-routine"></a>使用 IoTimer 例程
 
@@ -19,7 +19,7 @@ ms.locfileid: "63361099"
 
 
 
-启用关联的设备对象，尽管计时器[ *IoTimer* ](https://msdn.microsoft.com/library/windows/hardware/ff550381)例程称为大约每秒一次。 但是，因为在其中的每个间隔*IoTimer*例程称为取决于系统时钟的分辨率，不要假定*IoTimer*将上一秒中精确调用例程边界。
+启用关联的设备对象，尽管计时器[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)例程称为大约每秒一次。 但是，因为在其中的每个间隔*IoTimer*例程称为取决于系统时钟的分辨率，不要假定*IoTimer*将上一秒中精确调用例程边界。
 
 **请注意**   *IoTimer*例程，如所有 DPC 例程，称为在 IRQL = 调度\_级别。 DPC 例程时，会阻止所有线程在同一个处理器上运行。 驱动程序开发人员应仔细设计其*IoTimer*例程 brief 尽可能时间运行的。
 
@@ -27,13 +27,13 @@ ms.locfileid: "63361099"
 
 可能是最常见用途*IoTimer*例程是 IRP 的超时时间设备 I/O 操作。 请考虑使用的以下情形*IoTimer*例程作为设备驱动程序中正在运行的计时器：
 
-1.  启动设备时，驱动程序初始化为-1，指示没有当前设备 I/O 操作，并调用设备扩展中的计时器计数器[ **IoStartTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff550373)之前它将返回状态\_成功。
+1.  启动设备时，驱动程序初始化为-1，指示没有当前设备 I/O 操作，并调用设备扩展中的计时器计数器[ **IoStartTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostarttimer)之前它将返回状态\_成功。
 
     每次*IoTimer*调用例程，它检查是否计时器计数器为-1，并且，如果是这样，返回控件。
 
-2.  在驱动程序[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程初始化到设定了一个上限，设备扩展中的计时器计数器加上其他用例中的第二个*IoTimer*例程仅具有已运行。 然后，它使用[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)调用*SynchCritSection\_1*例程，程序请求的操作的物理设备当前的 IRP。
+2.  在驱动程序[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程初始化到设定了一个上限，设备扩展中的计时器计数器加上其他用例中的第二个*IoTimer*例程仅具有已运行。 然后，它使用[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)调用*SynchCritSection\_1*例程，程序请求的操作的物理设备当前的 IRP。
 
-3.  驱动程序的 ISR 的驱动程序前，先将重置计时器计数器为-1 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)例程或[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)例程。
+3.  驱动程序的 ISR 的驱动程序前，先将重置计时器计数器为-1 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程或[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)例程。
 
 4.  每次*IoTimer*调用例程，它将检查是否为-1，ISR 重置计时器计数器和，如果是这样，返回控件。 如果没有，则*IoTimer*例程使用**KeSynchronizeExecution**调用*SynchCritSection\_2*例程，它可通过一些调整计时器计数器驱动程序确定的秒数。
 
@@ -41,7 +41,7 @@ ms.locfileid: "63361099"
 
     *SynchCritSection\_2*如果将其重置操作还会超时在设备上，它返回时将再次调用例程**FALSE**。 如果其重置成功， *DpcForIsr*例程确定设备重置预期标志从已重置和重试请求，重复的操作*StartIo*例程所述在步骤 2 中。
 
-6.  如果*SynchCritSection\_2*例程返回**FALSE**，则*IoTimer*例程假定物理设备是处于未知状态，因为尝试重置已失败。 在这些情况下， *IoTimer*例程队列*CustomDpc*例程，并返回。 这*CustomDpc*例程日志设备 I/O 错误，调用[ **IoStartNextPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550358)、 失败当前 IRP，并返回。
+6.  如果*SynchCritSection\_2*例程返回**FALSE**，则*IoTimer*例程假定物理设备是处于未知状态，因为尝试重置已失败。 在这些情况下， *IoTimer*例程队列*CustomDpc*例程，并返回。 这*CustomDpc*例程日志设备 I/O 错误，调用[ **IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)、 失败当前 IRP，并返回。
 
 如果此设备驱动程序 ISR 重置计数器为-1，共享的计时器，如中所述步骤 3 中，驱动程序的*DpcForIsr*例程完成当前的 IRP 中断驱动 I/O 处理。 重置计时器计数器指示，此设备 I/O 操作未超时，因此*IoTimer*例程不需要更改的计时器计数器。
 

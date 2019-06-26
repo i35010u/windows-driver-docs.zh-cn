@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 582372622a1a80939e219a601da84da0cd97c54c
-ms.sourcegitcommit: f3825d59bb69429e892a088061bd014a65e0d161
+ms.openlocfilehash: 36daa743555be8308383603ac7f773a0ec96c624
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452396"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355506"
 ---
 # <a name="guidclassusbdevice"></a>GUID_CLASS_USB_DEVICE
 
 
-GUID_CLASS_USB_DEVICE 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)有关[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)附加到的 USB 集线器的设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_USB_DEVICE** ](guid-devinterface-usb-device.md)此类的新实例的类标识符。
+GUID_CLASS_USB_DEVICE 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)有关[USB](https://docs.microsoft.com/windows-hardware/drivers/)附加到的 USB 集线器的设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_USB_DEVICE** ](guid-devinterface-usb-device.md)此类的新实例的类标识符。
 
 <a name="remarks"></a>备注
 -------

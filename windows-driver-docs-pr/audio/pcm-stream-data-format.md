@@ -6,12 +6,12 @@ keywords:
 - PCM 流数据格式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 165a69f9b0efc90ab86fd70f1e8c59de4505dcb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d7e07a4a8fa01905791091d0312046f9a9f79bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332229"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355308"
 ---
 # <a name="pcm-stream-data-format"></a>PCM 流数据格式
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332229"
 ## <span id="pcm_stream_data_format"></span><span id="PCM_STREAM_DATA_FORMAT"></span>
 
 
-此示例使用[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095)结构来描述 PCM 流的数据格式。
+此示例使用[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)结构来描述 PCM 流的数据格式。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT_WAVEFORMATEX);

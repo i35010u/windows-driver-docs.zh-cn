@@ -4,12 +4,12 @@ description: 将谓词与 HD 音频编解码器通信
 ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f8ec7ff40cd04a6236fef85a75b933365a78b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fe04cc596357f1e42a7ba1353b94db1a563a0f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355586"
 ---
 # <a name="communicating-verbs-with-the-hd-audio-codec"></a>将谓词与 HD 音频编解码器通信
 
@@ -41,7 +41,7 @@ BOOL DeviceIoControl(
 );
 ```
 
-如果在调用[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)是成功，它将返回一个非零值。 如果调用失败或被挂起 （不立即处理）， **DeviceIoControl**返回零值。 在类驱动程序可以调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)的更详细的错误消息。
+如果在调用[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)是成功，它将返回一个非零值。 如果调用失败或被挂起 （不立即处理）， **DeviceIoControl**返回零值。 在类驱动程序可以调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)的更详细的错误消息。
 
 当音频驱动程序必须更改 pin 配置默认值时，它可以使用 IOCTL\_AZALIABUS\_SENDVERBS 发送和接收设置和获取从音频编解码器的谓词。 如果与音频编解码器的通信不是 pin 配置中，音频编解码器将仅响应 Get 谓词。
 
