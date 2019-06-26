@@ -10,12 +10,12 @@ keywords:
 - INF 文件 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12200ae5547499daf0dfc284ccf50df25da619b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eaaf81a58225e3df48ef086ffcefc0cab7abb669
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381249"
 ---
 # <a name="installation-of-callout-drivers"></a>标注驱动程序的安装
 
@@ -28,7 +28,7 @@ ms.locfileid: "63324931"
 net start drivername
 ```
 
-为指定的值根据**StartType**中的条目\[ *drivername*。服务\]INF 文件标注驱动程序的部分可能会自动加载下次重新启动系统。 标注驱动程序通常应指定零 (服务\_启动\_开始) 为此值使是否加载了驱动程序，并且其标注在注册之前筛选器引擎已启动。 请参阅[ **INF AddService 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546326)有关详细信息。
+为指定的值根据**StartType**中的条目\[ *drivername*。服务\]INF 文件标注驱动程序的部分可能会自动加载下次重新启动系统。 标注驱动程序通常应指定零 (服务\_启动\_开始) 为此值使是否加载了驱动程序，并且其标注在注册之前筛选器引擎已启动。 请参阅[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)有关详细信息。
 
 可以卸载当前加载的标注驱动程序 （停止） 通过在命令提示符下键入以下内容：
 

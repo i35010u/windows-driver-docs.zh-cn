@@ -7,12 +7,12 @@ keywords:
 - UDP 负载 WDK 标头数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d7bab3ef1e3245fd42b2516e7e5818d9634be25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 950e148c4279c58af75519c85e06f9d8290f6fe6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383614"
 ---
 # <a name="splitting-frames-at-the-udp-payload"></a>在 UDP 有效负载中拆分帧
 
@@ -26,7 +26,7 @@ NIC 可能不能拆分 UDP 框架，如果生成的标头缓冲区的长度大�
 
 如果 NIC 不能拆分的 UDP 负载在帧，NIC 应拆分上限层协议标头的开始处的帧，或不应拆分帧。 有关拆分上限层协议标头的开始处的帧的详细信息，请参阅[Upper 层协议标头的开始处拆分帧](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)。
 
-如果标头数据拆分提供程序将在所指示的 UDP 负载帧拆分[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构必须具有 NDIS\_NBL\_标志\_IS\_UDP 和 NDIS\_NBL\_标志\_拆分\_在\_上部\_层\_协议\_有效负载标记中的设置**NblFlags**成员。 有关详细信息，有关设置标头数据拆分 NET\_缓冲区\_标志列表，请参阅[设置 NET\_缓冲区\_列表信息](setting-net-buffer-list-information.md)。
+如果标头数据拆分提供程序将在所指示的 UDP 负载帧拆分[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_IS\_UDP 和 NDIS\_NBL\_标志\_拆分\_在\_上部\_层\_协议\_有效负载标记中的设置**NblFlags**成员。 有关详细信息，有关设置标头数据拆分 NET\_缓冲区\_标志列表，请参阅[设置 NET\_缓冲区\_列表信息](setting-net-buffer-list-information.md)。
 
  
 

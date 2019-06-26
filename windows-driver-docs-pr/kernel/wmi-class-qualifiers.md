@@ -12,12 +12,12 @@ keywords:
 - WMI WDK 内核类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ebbe1965c85dee13af57a4e2817ae7930df8845
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9ec82b101a42259efd2e2b5e0bef200c5e68a2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393014"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386388"
 ---
 # <a name="wmi-class-qualifiers"></a>WMI 类限定符
 
@@ -49,7 +49,7 @@ ms.locfileid: "63393014"
 </tr>
 <tr class="even">
 <td><p><strong>Static</strong></p></td>
-<td><p>指示数据提供程序提供了在 MOF 文件中，而不是在运行时提供的数据块的实例的静态数据的实例。 驱动程序不使用 WMI，注册静态数据块，因为静态数据驻留在 WMI 数据库。 类标记为<strong>静态</strong>在 MOF 文件不应注册由驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff551731" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551731)"> <strong>IRP_MN_REGINFO</strong> </a>或者<a href="https://msdn.microsoft.com/library/windows/hardware/ff551734" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551734)"> <strong>IRP_MN_REGINFO_EX</strong> </a>处理程序。</p></td>
+<td><p>指示数据提供程序提供了在 MOF 文件中，而不是在运行时提供的数据块的实例的静态数据的实例。 驱动程序不使用 WMI，注册静态数据块，因为静态数据驻留在 WMI 数据库。 类标记为<strong>静态</strong>在 MOF 文件不应注册由驱动程序的<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)"> <strong>IRP_MN_REGINFO</strong> </a>或者<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)"> <strong>IRP_MN_REGINFO_EX</strong> </a>处理程序。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Provider("WMIProv")</strong></p></td>

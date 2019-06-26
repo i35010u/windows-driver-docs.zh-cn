@@ -4,12 +4,12 @@ description: 通过应用程序读取 WIA 项属性
 ms.assetid: e09f604e-451e-40dc-bc12-a077d4d263ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6957e3b9d9cbd971568d1317a66bc61f17319135
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa01d064efeb26541fef14cfff387a9efb8a8eb9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374297"
 ---
 # <a name="reading-wia-item-properties-by-an-application"></a>通过应用程序读取 WIA 项属性
 
@@ -17,23 +17,23 @@ ms.locfileid: "63379611"
 
 
 
-当应用程序发出请求以读取 WIA 项属性时，WIA 服务调用[ **IWiaMiniDrv::drvReadItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff545005)方法。
+当应用程序发出请求以读取 WIA 项属性时，WIA 服务调用[ **IWiaMiniDrv::drvReadItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)方法。
 
 **IWiaMiniDrv::drvReadItemProperties**方法应执行以下任务：
 
 1.  确定所读取的属性是否需要运行更新。 若要确定哪些 WIA 属性在读取，WIA 微型驱动程序可以使用 PROPSPEC 数组 （在 Microsoft Windows SDK 文档中定义）。 建议 WIA 微型驱动程序处理 PROPSPEC 数组之前确定的项类型。 这减少了需要在遍历该数组每个**IWiaMiniDrv::drvReadItemProperties**调用。 如果必须在此设备的子项目上没有运行时属性，只有根项属性读取将处理请求。
 
-2.  通过调用更新当前值[ **wiasWriteMultiple** ](https://msdn.microsoft.com/library/windows/hardware/ff549475)或 **wiasWriteProp * * * Xxx*服务函数，请使用 WIA 属性 id。 这会更新存储在驱动程序项，WIA 属性集和 WIA 服务返回应用程序的新值。
+2.  通过调用更新当前值[ **wiasWriteMultiple** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritemultiple)或 **wiasWriteProp * * * Xxx*服务函数，请使用 WIA 属性 id。 这会更新存储在驱动程序项，WIA 属性集和 WIA 服务返回应用程序的新值。
 
 如果 WIA 微型驱动程序不会执行此函数中的任何运行时调整到 WIA 属性，WIA 服务自动仅当前 WIA 属性值返回到应用程序。 此函数仅应该用于属性，例如设备的时钟或需要特定于硬件的检查，如文档送纸器状态的 WIA 属性使用。
 
 ### <a href="" id="implementing-iwiaminidrv--drvreaditemproperties-"></a>实现 IWiaMiniDrv::drvReadItemProperties
 
-**IWiaMiniDrv::drvReadItemProperties**时应用程序尝试读取 WIA 项的属性调用方法。 WIA 服务首先通过调用此方法通知驱动程序。 WIA 驱动程序应验证所读取的属性正确。 这是最好访问需要设备状态的属性的硬件 (如[ **WIA\_DPS\_文档\_处理\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff551386)，或[ **WIA\_DPA\_设备\_时间**](https://msdn.microsoft.com/library/windows/hardware/ff550303)如果设备支持时钟)。
+**IWiaMiniDrv::drvReadItemProperties**时应用程序尝试读取 WIA 项的属性调用方法。 WIA 服务首先通过调用此方法通知驱动程序。 WIA 驱动程序应验证所读取的属性正确。 这是最好访问需要设备状态的属性的硬件 (如[ **WIA\_DPS\_文档\_处理\_状态**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-status)，或[ **WIA\_DPA\_设备\_时间**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-device-time)如果设备支持时钟)。
 
 请务必注意 WIA 驱动程序应与硬件通信仅在少数情况下。 与硬件通信过很多此调用中将显示缓慢和较慢的 WIA 驱动程序。
 
-下面的示例演示的实现[ **IWiaMiniDrv::drvReadItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff545005)方法：
+下面的示例演示的实现[ **IWiaMiniDrv::drvReadItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)方法：
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvReadItemProperties(

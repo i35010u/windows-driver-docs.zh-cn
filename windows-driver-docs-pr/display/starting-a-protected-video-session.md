@@ -9,12 +9,12 @@ keywords:
 - 受保护视频 WDK COPP 启动会话
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15ecca5754a3df8e0857d69de15de968fde21e59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6719fd43702613885be96d02bbe9c4221af4f03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376015"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376045"
 ---
 # <a name="starting-a-protected-video-session"></a>启动受保护的视频会话
 
@@ -28,13 +28,13 @@ ms.locfileid: "63376015"
 
 若要启动受保护的视频课程，应该对按以下顺序 COPP 设备函数进行调用：
 
-1.  [ *COPPOpenVideoSession* ](https://msdn.microsoft.com/library/windows/hardware/ff539650)函数以初始化 COPP 设备。 再返回，该驱动程序应将设备状态常量设置为 COPP\_打开。
+1.  [ *COPPOpenVideoSession* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppopenvideosession)函数以初始化 COPP 设备。 再返回，该驱动程序应将设备状态常量设置为 COPP\_打开。
 
-2.  [ *COPPGetCertificateLength* ](https://msdn.microsoft.com/library/windows/hardware/ff539644)函数以检索大小 （字节） 使用图形硬件的证书。 该驱动程序应首先验证设备状态常量当前设置为 COPP\_打开。 如果它不是，则驱动程序应返回 E\_意外的。 再返回，该驱动程序应将设备状态常量设置为 COPP\_CERT\_长度\_返回。
+2.  [ *COPPGetCertificateLength* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppgetcertificatelength)函数以检索大小 （字节） 使用图形硬件的证书。 该驱动程序应首先验证设备状态常量当前设置为 COPP\_打开。 如果它不是，则驱动程序应返回 E\_意外的。 再返回，该驱动程序应将设备状态常量设置为 COPP\_CERT\_长度\_返回。
 
-3.  [ *COPPKeyExchange* ](https://msdn.microsoft.com/library/windows/hardware/ff539646)函数以检索用于图形硬件的数字证书。 该驱动程序应首先验证设备状态常量当前设置为 COPP\_CERT\_长度\_返回。 如果它不是，则驱动程序应返回 E\_意外的。 再返回，该驱动程序应将设备状态常量设置为 COPP\_密钥\_EXCHANGED。
+3.  [ *COPPKeyExchange* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppkeyexchange)函数以检索用于图形硬件的数字证书。 该驱动程序应首先验证设备状态常量当前设置为 COPP\_CERT\_长度\_返回。 如果它不是，则驱动程序应返回 E\_意外的。 再返回，该驱动程序应将设备状态常量设置为 COPP\_密钥\_EXCHANGED。
 
-4.  [ *COPPSequenceStart* ](https://msdn.microsoft.com/library/windows/hardware/ff540421)函数将视频会话设置为受保护模式。 该驱动程序应首先验证设备状态常量当前设置为 COPP\_密钥\_EXCHANGED。 如果它不是，则驱动程序应返回 E\_意外的。 再返回，该驱动程序应将设备状态常量设置为 COPP\_会话\_活动状态以显示视频会话是在受保护模式下。
+4.  [ *COPPSequenceStart* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppsequencestart)函数将视频会话设置为受保护模式。 该驱动程序应首先验证设备状态常量当前设置为 COPP\_密钥\_EXCHANGED。 如果它不是，则驱动程序应返回 E\_意外的。 再返回，该驱动程序应将设备状态常量设置为 COPP\_会话\_活动状态以显示视频会话是在受保护模式下。
 
 视频会话设置为受保护模式后，可以处理的微型端口驱动程序[COPP 命令](copp-commands.md)，并且请求[COPP 状态](copp-status.md)，并将传递[COPP 状态事件](copp-status-events.md)。
 

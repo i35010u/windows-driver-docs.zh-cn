@@ -10,22 +10,22 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e35aa4bc374926694c531f5b1cd7865d355d9557
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d5505c930d0dcd85b4b6d973b1b523b3ac8956f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370533"
 ---
 # <a name="enabling-nfp"></a>启用 NFP
 
 
-客户端可以重新启用以前禁用的订阅、 发布和使用的是否存在[ **IOCTL\_NFP\_启用**](https://msdn.microsoft.com/library/windows/hardware/jj853316)。
+客户端可以重新启用以前禁用的订阅、 发布和使用的是否存在[ **IOCTL\_NFP\_启用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_enable)。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

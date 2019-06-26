@@ -7,12 +7,12 @@ keywords:
 - NDIS 中间层驱动程序 WDK，体系结构
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9097dfcd64af18584b8668d855724b579683821f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce93bb82f8b66ce64a02ebed0fefe33c2520ff80
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378431"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385754"
 ---
 # <a name="intermediate-drivers"></a>中间驱动程序
 
@@ -45,4 +45,4 @@ ms.locfileid: "63378431"
 
 [中间的 NDIS 驱动程序](ndis-intermediate-drivers2.md)
 
-[NDIS 中间驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff565782)
+[NDIS 中间驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)

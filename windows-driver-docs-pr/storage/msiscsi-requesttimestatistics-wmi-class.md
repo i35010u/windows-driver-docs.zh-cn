@@ -4,12 +4,12 @@ description: MSiSCSI\_RequestTimeStatistics WMI 类
 ms.assetid: 3e9f3214-3120-41f6-bb06-7ace4f243c5f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5e5b6ba355102d7a7e45ec6f421370f307cbd486
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22262d757e3d5a0f2d447ed11a75e1fd56849cd5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382741"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384671"
 ---
 # <a name="msiscsirequesttimestatistics-wmi-class"></a>MSiSCSI\_RequestTimeStatistics WMI 类
 
@@ -69,7 +69,7 @@ class MSiSCSI_RequestTimeStatistics : Win32_PerfRawData
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_RequestTimeStatistics** ](https://msdn.microsoft.com/library/windows/hardware/ff563123)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_RequestTimeStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_requesttimestatistics)数据结构。
 
  
 

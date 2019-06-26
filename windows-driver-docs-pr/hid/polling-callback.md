@@ -13,12 +13,12 @@ keywords:
 - WDK 游戏杆的位置
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eac6e5d7bfbb830358c84d970e7f684280db3bd9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e0fcdfa63e74e5a99f11055e9dc826a0ad29924
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385822"
 ---
 # <a name="polling-callback"></a>轮询回调
 
@@ -46,7 +46,7 @@ JOY\_OEMPOLLRC\_如果轮询一次的设备没有响应，或如果 VJoyD 请求
 
 API 和系统驱动程序对应用程序发出的请求执行验证，并将所需的数据复制到完成后的应用程序结构。 微型驱动程序不应复制此功能。 但是，执行任何操作会从另一个时仍处于轮询轮询设备阻止一个进程。 此事件的影响的是不会高于报告两个轴的不同示例。 如有必要，微型驱动程序可以执行其自身进程的同步。
 
-返回值取决于"type"参数和设备它支持。 应始终返回按钮和按钮编号。 因为没有到微型驱动程序指定 POV 轮询是必需的方法，如果任何轴请求应返回此值。 设置 POV\_如果设备不支持未定义。 中的单个轴投票中，返回的值**dwX** JOYPOLLDATA 结构中的成员 ( [ **VJPOLLDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff543573)结构 DirectX 5.0 及更高版本)。 用于多个轴请求中的所请求的轴数为奇数，**做\_其他**的成员[ **JOYOEMPOLLDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff542251)结构指定是否在位置或者以下轴，则返回最后一个轴。 在三个轴投票中，例如，该成员指定所返回的轴是否 X、 Y、 Z 或 X、 Y、。
+返回值取决于"type"参数和设备它支持。 应始终返回按钮和按钮编号。 因为没有到微型驱动程序指定 POV 轮询是必需的方法，如果任何轴请求应返回此值。 设置 POV\_如果设备不支持未定义。 中的单个轴投票中，返回的值**dwX** JOYPOLLDATA 结构中的成员 ( [ **VJPOLLDATA** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543573(v=vs.85))结构 DirectX 5.0 及更高版本)。 用于多个轴请求中的所请求的轴数为奇数，**做\_其他**的成员[ **JOYOEMPOLLDATA** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542251(v=vs.85))结构指定是否在位置或者以下轴，则返回最后一个轴。 在三个轴投票中，例如，该成员指定所返回的轴是否 X、 Y、 Z 或 X、 Y、。
 
 以下是其他可能的返回值，按类型分类的列表 (可以填写额外的数据，但请注意必须解码的轴数为奇数的所有轮询**做\_其他**成员以确定它所返回):
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 778b30c2851a202ff79b538825f07b22f5a50c6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d03d2e56316793ec8758c944a8b9c68133e84bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370959"
 ---
 # <a name="guiddevinterfacecdchanger"></a>GUID_DEVINTERFACE_CDCHANGER
 
 
-GUID_DEVINTERFACE_CDCHANGER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为 CD-ROM 换带机设备定义。
+GUID_DEVINTERFACE_CDCHANGER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为 CD-ROM 换带机设备定义。
 
 <table>
 <colgroup>
@@ -54,11 +54,11 @@ GUID_DEVINTERFACE_CDCHANGER[设备接口类](https://msdn.microsoft.com/library/
 <a name="remarks"></a>备注
 -------
 
-系统提供 CD-ROM[更换器驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff551455)注册 GUID_DEVINTERFACE_CDCHANGER 通知操作系统和应用程序的 CD-ROM 换带机设备是否存在的实例。
+系统提供 CD-ROM[更换器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/changer-drivers)注册 GUID_DEVINTERFACE_CDCHANGER 通知操作系统和应用程序的 CD-ROM 换带机设备是否存在的实例。
 
 有关 CD-ROM 设备的设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)。
 
-有关存储设备的信息，请参阅[存储设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566976)。
+有关存储设备的信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
 [**CdChangerClassGuid** ](cdchangerclassguid.md)对于此类的新实例，而是使用 GUID_DEVINTERFACE_CDCHANGER 是 GUID_DEVINTERFACE_CDCHANGER 设备接口类; 的已过时标识符。
 

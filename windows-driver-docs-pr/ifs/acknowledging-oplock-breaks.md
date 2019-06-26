@@ -4,12 +4,12 @@ description: 确认 Oplock 突破
 ms.assetid: ea5bcd1e-d22c-4f80-89e4-1a61e43959dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2aa2a988f24e33c145ad24d075f71f334751c7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e3603a6bda469762262ef24b6cb0722756f6c45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323229"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379353"
 ---
 # <a name="acknowledging-oplock-breaks"></a>确认 Oplock 突破
 
@@ -30,7 +30,7 @@ ms.locfileid: "63323229"
 
     -   对于批处理或筛选器的机会锁，此 FSCTL 指示 oplock 所有者想要关闭流句柄对授予 oplock。 操作被阻止，正在等待确认破坏 oplock，继续等待，直到关闭的机会锁所有者的句柄。
 -   FSCTL\_REQUEST\_OPLOCK
-    -   通过指定请求\_OPLOCK\_输入\_标志\_中的 ACK**标志**成员的请求\_OPLOCK\_输入\_缓冲区作为结构传递*lpInBuffer*的参数[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)，此 FSCTL 用于确认的 Windows 7 oplock 的分页符。 确认是必需的仅当请求\_OPLOCK\_输出\_标志\_ACK\_中设置了必需标志**标志**成员请求\_OPLOCK\_输出\_缓冲区结构作为传递*lpOutBuffer*参数的[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)。 以类似方式[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)可用于确认从内核模式的 Windows 7 oplock。 有关详细信息，请参阅[ **FSCTL\_请求\_OPLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff545530)。
+    -   通过指定请求\_OPLOCK\_输入\_标志\_中的 ACK**标志**成员的请求\_OPLOCK\_输入\_缓冲区作为结构传递*lpInBuffer*的参数[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)，此 FSCTL 用于确认的 Windows 7 oplock 的分页符。 确认是必需的仅当请求\_OPLOCK\_输出\_标志\_ACK\_中设置了必需标志**标志**成员请求\_OPLOCK\_输出\_缓冲区结构作为传递*lpOutBuffer*参数的[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)。 以类似方式[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)可用于确认从内核模式的 Windows 7 oplock。 有关详细信息，请参阅[ **FSCTL\_请求\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)。
 
 一个相关 FSCTL 代码是 FSCTL\_OPLOCK\_中断\_通知。 当调用方想要在给定的流上破坏 oplock 完成时通知时使用此代码。 此调用可能会阻止。 当 FSCTL\_OPLOCK\_中断\_通知调用将返回状态\_成功时，这表示以下值之一：
 

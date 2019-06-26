@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 65dca129b435e15d8289e31d9c562c8d9b3719d2
-ms.sourcegitcommit: 187418c1a52a67efa533462eec760bab9b7f6957
+ms.openlocfilehash: de3eadd382d6321fcc0737bb41a1abaa8b99b47e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67192699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367638"
 ---
 # <a name="bug-check-0x19c-win32kpowerwatchdogtimeout"></a>Bug 检查 0x19C：WIN32K\_电源\_监视器\_超时
 
@@ -26,7 +26,7 @@ ms.locfileid: "67192699"
 WIN32K\_电源\_监视器\_超时错误检查的值为 0x0000019C。 这表示，Win32k 不能打开监视器及时。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="win32kpowerwatchdogtimeout-parameters"></a>WIN32K\_电源\_监视器\_超时参数

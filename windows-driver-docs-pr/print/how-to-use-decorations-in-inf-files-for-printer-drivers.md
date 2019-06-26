@@ -11,17 +11,17 @@ keywords:
 - 修饰的 INF WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfbc0b46e48adbdb7bb8a64c85fa096c8730cde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bc627d388c65e3e785f2b4dc7bc3a36732eed25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378585"
 ---
 # <a name="how-to-use-decorations-in-inf-files-for-printer-drivers"></a>如何使用打印机驱动程序 INF 文件中的修饰
 
 
-打印机驱动程序运行的 Windows Server 2003 SP1 和更高版本，或在 64 位版本的 Windows XP 及更高版本，且面向 x64 体系结构必须包括修饰[ **INF 模型部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)所示在下面的示例。 但是，可能会作为版本的 Windows Server 2003 SP1 之前的 Windows 上的其他驱动程序安装该驱动程序，因为 INF 文件还必须提供未修饰的 INF 模型部分。 此外建议修饰用于安装基于 Itanium 的驱动程序。
+打印机驱动程序运行的 Windows Server 2003 SP1 和更高版本，或在 64 位版本的 Windows XP 及更高版本，且面向 x64 体系结构必须包括修饰[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)所示在下面的示例。 但是，可能会作为版本的 Windows Server 2003 SP1 之前的 Windows 上的其他驱动程序安装该驱动程序，因为 INF 文件还必须提供未修饰的 INF 模型部分。 此外建议修饰用于安装基于 Itanium 的驱动程序。
 
 以下示例演示如何编写可以用来安装适用于单个处理器体系结构的驱动程序的 INF 文件。
 

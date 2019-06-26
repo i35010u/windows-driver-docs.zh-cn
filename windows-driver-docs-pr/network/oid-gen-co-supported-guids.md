@@ -6,16 +6,16 @@ keywords:
 - OID_GEN_CO_SUPPORTED_GUIDS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bea1973c4261a10a61ceb2c16bd489bd1c894c08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 813dfe7c1cec85160b7b8a4c2284247a2ee62d0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386220"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369139"
 ---
 # <a name="oidgencosupportedguids"></a>OID_GEN_CO_SUPPORTED_GUIDS
 
-OID_GEN_CO_SUPPORTED_GUIDS OID 请求微型端口驱动程序，以返回类型 NDIS_GUID 的结构数组。 数组中的每个结构指定的映射的自定义 GUID （全局唯一标识符） 是一个自定义的 OID 或微型端口驱动程序将通过发送 NDIS_STATUS [NdisMCoIndicateStatusEx](https://msdn.microsoft.com/library/windows/hardware/ff563562)。
+OID_GEN_CO_SUPPORTED_GUIDS OID 请求微型端口驱动程序，以返回类型 NDIS_GUID 的结构数组。 数组中的每个结构指定的映射的自定义 GUID （全局唯一标识符） 是一个自定义的 OID 或微型端口驱动程序将通过发送 NDIS_STATUS [NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)。
 
 NDIS_GUID 结构定义，如下所示：
 
@@ -88,7 +88,7 @@ NDIS_GUID NdisGuid =  {{0x0a214809, 0xe35f, 0x11d0, 0x96, 0x92, 0x00,
 ```
 GUID 是通过 Windows Management Instrumentation (WMI) 用于获取或设置信息的标识符。 NDIS 截获由 WMI 发送到 NDIS 驱动程序的 GUID，将 GUID 映射到 OID，并向驱动程序发送 OID。 驱动程序将返回到 NDIS，然后将数据返回到 WMI 数据项目。
 
-NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 当微型端口驱动程序报告了与 NIC 状态中的更改[NdisMCoIndicateStatusEx](https://msdn.microsoft.com/library/windows/hardware/ff563562)，NDIS 转换为由到 NDIS 将发送到 WMI 的 GUID 的微型端口驱动程序 NDIS_STATUS。
+NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 当微型端口驱动程序报告了与 NIC 状态中的更改[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)，NDIS 转换为由到 NDIS 将发送到 WMI 的 GUID 的微型端口驱动程序 NDIS_STATUS。
 
 如果有面向连接的微型端口驱动程序支持海关 Guid，它必须支持 OID_GEN_CO_SUPPORTED_GUIDS，返回到 NDIS 映射到自定义 Oid 或 NDIS_STATUS 字符串的自定义 Guid。 查询与 OID_GEN_CO_SUPPORTED_GUIDS 微型端口驱动程序后, NDIS 向 WMI 注册微型端口驱动程序的自定义 Guid。
 

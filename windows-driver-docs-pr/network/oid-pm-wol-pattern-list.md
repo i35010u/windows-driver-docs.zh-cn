@@ -5,28 +5,28 @@ ms.assetid: 7e5a65d8-39ec-4624-aede-97df945ef5e5
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_WOL_PATTERN_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e3d635835d2a18d79b702371a91bdcbd3cf2c43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85fc196b3050aaf8dd20f7ce42d35003e418e254
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359161"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373343"
 ---
 # <a name="oidpmwolpatternlist"></a>OID\_PM\_WOL\_模式\_列表
 
 
-为查询，过量驱动程序可以使用 OID\_PM\_WOL\_模式\_列表 OID 枚举基础的网络适配器设置的 LAN 模式唤醒。 从查询中，成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含指针到一系列[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)描述了当前添加了各种 WOL 模式的结构。
+为查询，过量驱动程序可以使用 OID\_PM\_WOL\_模式\_列表 OID 枚举基础的网络适配器设置的 LAN 模式唤醒。 从查询中，成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含指针到一系列[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)描述了当前添加了各种 WOL 模式的结构。
 
 <a name="remarks"></a>备注
 -------
 
 NDIS 处理查询的微型端口驱动程序。 NDIS 驱动程序可以使用 OID\_PM\_WOL\_模式\_列表 OID，若要获取上基础的网络适配器设置的 LAN 模式唤醒的列表。
 
-每个[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)结构在列表中，NDIS 集**NextWoLPatternOffset**成员添加到从 OID 信息缓冲区开头的偏移量 (即，缓冲区开头的**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构指向) 到下一步开头**NDIS\_PM\_WOL\_模式**列表中的结构。 中的偏移量**NextWoLPatternOffset**列表中的最后一个结构的成员为零。
+每个[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构在列表中，NDIS 集**NextWoLPatternOffset**成员添加到从 OID 信息缓冲区开头的偏移量 (即，缓冲区开头的**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构指向) 到下一步开头**NDIS\_PM\_WOL\_模式**列表中的结构。 中的偏移量**NextWoLPatternOffset**列表中的最后一个结构的成员为零。
 
-中的偏移[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)结构，而不**NextWoLPatternOffset** (例如， **NameBufferOffset**)，NDIS 提供相对于每个开始的偏移量**NDIS\_PM\_WOL\_模式**结构。
+中的偏移[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)结构，而不**NextWoLPatternOffset** (例如， **NameBufferOffset**)，NDIS 提供相对于每个开始的偏移量**NDIS\_PM\_WOL\_模式**结构。
 
-如果没有网络适配器设置的 WOL 模式，设置 NDIS**数据。查询\_信息。BytesWritten**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)为零，并返回结构**NDIS\_状态\_成功**请求。 中的数据**数据。查询\_INFORMATION.InformationBuffer** NDIS 不修改成员。
+如果没有网络适配器设置的 WOL 模式，设置 NDIS**数据。查询\_信息。BytesWritten**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)为零，并返回结构**NDIS\_状态\_成功**请求。 中的数据**数据。查询\_INFORMATION.InformationBuffer** NDIS 不修改成员。
 
 NDIS 返回请求的以下状态代码之一：
 
@@ -65,9 +65,9 @@ NDIS 返回请求的以下状态代码之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_WOL\_PATTERN**](https://msdn.microsoft.com/library/windows/hardware/ff566768)
+[**NDIS\_PM\_WOL\_PATTERN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
 [OID\_PM\_ADD\_WOL\_PATTERN](oid-pm-add-wol-pattern.md)
 

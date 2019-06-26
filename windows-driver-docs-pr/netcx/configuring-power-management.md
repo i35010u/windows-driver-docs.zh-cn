@@ -6,12 +6,12 @@ keywords:
 - 配置电源管理，配置电源管理的 NetCx NetAdapterCx
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de18f627adbca92c95da655f01db06c5db76c29c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b26b818dae7c449f354c11fa8bc6228933fa097
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386368"
 ---
 # <a name="configuring-power-management"></a>配置电源管理
 
@@ -54,7 +54,7 @@ NetAdapterSetPowerCapabilities(NetAdapter, &powerCaps);
 
 ## <a name="programming-protocol-offload-and-wake-patterns"></a>编程协议卸载并唤醒模式
 
-在其[ *EvtDeviceArmWakeFromS0* ](https://msdn.microsoft.com/library/windows/hardware/ff540843)并[ *EvtDeviceArmWakeFromSx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)回调函数，该驱动程序将循环访问已启用唤醒模式和协议将卸载和程序到硬件。
+在其[ *EvtDeviceArmWakeFromS0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)并[ *EvtDeviceArmWakeFromSx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)回调函数，该驱动程序将循环访问已启用唤醒模式和协议将卸载和程序到硬件。
 
 首先要检索的句柄的 NETPOWERSETTINGS 对象通过调用与适配器关联的[ **NetAdapterGetPowerSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptergetpowersettings)从[ *EvtDeviceArmWakeFromS0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)或相关的回调函数。  下面的示例演示如何循环访问唤醒模式：
 

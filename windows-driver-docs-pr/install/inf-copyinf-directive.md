@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51a120bab01fffa6957f8a204cf206f5eb48a0a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 548d5335bd99c190b10466e2b336af46c9619cd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378026"
 ---
 # <a name="inf-copyinf-directive"></a>INF CopyINF 指令
 
@@ -45,7 +45,7 @@ CopyINF=filename1.inf[,filename2.inf]...
 
 以下几点适用于**CopyINF**指令：
 
--   在 Windows Vista 之前 Windows 会将指定的 INF 文件复制的默认处理的一部分[ **DIF_INSTALLDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff543692) (请参阅[ **SetupDiInstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552039)) 设备成功安装之后。
+-   在 Windows Vista 之前 Windows 会将指定的 INF 文件复制的默认处理的一部分[ **DIF_INSTALLDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-installdevice) (请参阅[ **SetupDiInstallDevice** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)) 设备成功安装之后。
 
     Windows 将指定的 INF 文件复制到系统目录路径，它将搜索在设备安装过程。
 
@@ -58,7 +58,7 @@ CopyINF=filename1.inf[,filename2.inf]...
 
 -   **CopyINF**设备安装过程而不是驱动程序存储区导入过程中处理指令。 这意味着，调用[SetupCopyOEMInf](https://go.microsoft.com/fwlink/p/?linkid=194252)在 Windows Vista 和更高版本的 Windows 上会导致所有**CopyINF**指定 INF 文件中的指令来处理在该时间。 发生这种情况以递归方式为每个**CopyINF**都包含在指定的 INF 文件中，直到所有被引用的驱动程序包复制到驱动程序存储区的指令。
 
-从 Windows 10，版本 1511，在某些情况下开始 (例如，运行 Windows 更新或对某些调用[ **DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710))，使用复制的 Inf **CopyINF**也将适用的设备上安装。
+从 Windows 10，版本 1511，在某些情况下开始 (例如，运行 Windows 更新或对某些调用[ **DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice))，使用复制的 Inf **CopyINF**也将适用的设备上安装。
 
 有关如何将 INF 文件复制的详细信息，请参阅[复制 Inf](copying-inf-files.md)。
 

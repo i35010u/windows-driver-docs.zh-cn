@@ -6,21 +6,21 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_AUTH_RESPONSE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 40f31d51a25ecbc8f102f4614af3198bbeb37ec3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c349fad7075286e8ab2c144b6e0d9801d3a7131a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376966"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382663"
 ---
 # <a name="ndisstatuswwanauthresponse"></a>NDIS\_状态\_WWAN\_身份验证\_响应
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_身份验证\_响应通知，以通知使用颁发的前一个质询请求接收的质询响应 MB 服务[OID\_WWAN\_身份验证\_质询](https://msdn.microsoft.com/library/windows/hardware/hh440092)查询请求。
+微型端口驱动程序使用 NDIS\_状态\_WWAN\_身份验证\_响应通知，以通知使用颁发的前一个质询请求接收的质询响应 MB 服务[OID\_WWAN\_身份验证\_质询](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-auth-challenge)查询请求。
 
 微型端口驱动程序还可以发送未经请求的事件与该通知。
 
-使用此 NDIS 状态通知[NDIS\_WWAN\_身份验证\_响应](https://msdn.microsoft.com/library/windows/hardware/hh439834)结构。
+使用此 NDIS 状态通知[NDIS\_WWAN\_身份验证\_响应](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_auth_response)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -45,9 +45,9 @@ ms.locfileid: "63376966"
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WWAN\_身份验证\_质询](https://msdn.microsoft.com/library/windows/hardware/hh440092)
+[OID\_WWAN\_身份验证\_质询](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-auth-challenge)
 
-[NDIS\_WWAN\_AUTH\_RESPONSE](https://msdn.microsoft.com/library/windows/hardware/hh439834)
+[NDIS\_WWAN\_AUTH\_RESPONSE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_auth_response)
 
  
 

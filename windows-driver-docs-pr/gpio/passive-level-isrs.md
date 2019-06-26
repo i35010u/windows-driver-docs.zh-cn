@@ -4,12 +4,12 @@ description: 作为一个选项，从 Windows 8、 内核模式驱动程序框�
 ms.assetid: E7556046-D85C-4CD1-8C27-578BF5CAFF2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4530aab95ee8564db0230bcaccca66efbd588aa9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39258d98e11655456236ef66f5edb3125f2ae24c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326123"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383423"
 ---
 # <a name="passive-level-isrs"></a>被动级别 ISR
 
@@ -18,8 +18,8 @@ ms.locfileid: "63326123"
 
 有关被动级别 Isr KMDF 和 UMDF 驱动程序的详细信息，请参阅以下主题：
 
--   [支持被动级别中断](https://msdn.microsoft.com/library/windows/hardware/hh451035)
--   [访问硬件和处理中断](https://msdn.microsoft.com/library/windows/hardware/hh439560)
+-   [支持被动级别中断](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-passive-level-interrupts)
+-   [访问硬件和处理中断](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-hardware-and-handling-interrupts)
 
 如果外围设备使用常规用途的 I/O (GPIO) pin 进行中继到处理器的中断请求，Windows 中断抽象方便地允许忽略特定于硬件的详细信息的 GPIO 控制器到此设备的驱动程序属于此 pin。 内核的陷阱处理程序运行以响应 GPIO 中继中断时从设备请求，此处理程序会自动清除或掩码，为必需的 GPIO 硬件寄存器中的中断。 此外，内核的陷阱处理程序直接调用设备的 ISR 或安排此 ISR 在另一个线程中运行。
 

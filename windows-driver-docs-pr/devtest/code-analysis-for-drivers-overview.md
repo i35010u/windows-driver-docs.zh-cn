@@ -4,12 +4,12 @@ description: Windows 驱动程序工具包提供了 Microsoft Visual Studio Ulti
 ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f97641467932fa3abe3b9648f5f15363e5886ad9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b775f9e6a8d7ae59dfe91045577b4016bee7ae8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343964"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371620"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>驱动程序的代码分析概述
 
@@ -40,7 +40,7 @@ Windows 驱动程序工具包提供的特定于驱动程序的扩展[代码分�
 
 -   **内核模式的编码实践：** 编码实践，可能会导致错误，例如修改不透明内存描述符列表 (MDL) 结构，对故障调用函数，通过检查设置变量的值以及使用 C /C++而不是安全字符串的字符串操作函数Ntstrsafe.h 中定义的函数。
 
--   **特定于驱动程序的编码做法：** 通常是内核模式驱动程序中的错误的源的特定操作。 例如，复制整个的 I/O 请求数据包 (IRP) 而无需修改成员并将一个指针保存到一个字符串或结构的参数，而不是复制中的自变量[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程。
+-   **特定于驱动程序的编码做法：** 通常是内核模式驱动程序中的错误的源的特定操作。 例如，复制整个的 I/O 请求数据包 (IRP) 而无需修改成员并将一个指针保存到一个字符串或结构的参数，而不是复制中的自变量[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。
 
 ## <a name="span-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspancode-analysis-warnings"></a><span id="Code_Analysis_warnings"></span><span id="code_analysis_warnings"></span><span id="CODE_ANALYSIS_WARNINGS"></span>代码分析警告
 

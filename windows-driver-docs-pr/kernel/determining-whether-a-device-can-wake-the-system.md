@@ -11,12 +11,12 @@ keywords:
 - 设备唤醒 ups WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c9d4a32b4715d571f372dbd4188aec767440af6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f73513baa10a47e6bacbbd8ba5bc2e83251f696a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378019"
 ---
 # <a name="determining-whether-a-device-can-wake-the-system"></a>确定设备是否可以唤醒系统
 
@@ -30,7 +30,7 @@ ms.locfileid: "63388174"
 
 同样，大多数设备都不支持所有设备的电源状态 (通过 D3 D0)，也不都支持唤醒从所有设备电源它们都支持的状态。
 
-睡眠状态，设备可以输入，以及从其最多可支持唤醒，描述在枚举总线驱动程序并存储在状态[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构。 下表列出了相关来等待/唤醒支持此结构的成员。
+睡眠状态，设备可以输入，以及从其最多可支持唤醒，描述在枚举总线驱动程序并存储在状态[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构。 下表列出了相关来等待/唤醒支持此结构的成员。
 
 <table>
 <colgroup>

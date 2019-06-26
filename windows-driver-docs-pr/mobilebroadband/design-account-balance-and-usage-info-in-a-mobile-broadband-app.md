@@ -4,12 +4,12 @@ description: 设计移动宽带应用中的帐户余额和使用情况信息
 ms.assetid: aec4e4b3-d207-4319-a134-29b4a773c3a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b637f489d35a4e62032a6150fcffe358fac2cc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2416293e778f76366cc764d04763c942fcf1cde
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383783"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369676"
 ---
 # <a name="design-account-balance-and-usage-info-in-a-mobile-broadband-app"></a>设计移动宽带应用中的帐户余额和使用情况信息
 
@@ -55,7 +55,7 @@ ms.locfileid: "63383783"
 
 -   使用说明，如图表和图形，以实现数据可视化效果
 
-    **提示**  中所述，可以通过使用确定性进度栏控件，实现条形图[添加进度控件](https://msdn.microsoft.com/library/windows/apps/hh465428)。
+    **提示**  中所述，可以通过使用确定性进度栏控件，实现条形图[添加进度控件](https://docs.microsoft.com/previous-versions/windows/apps/hh465428(v=win.10))。
 
      
 

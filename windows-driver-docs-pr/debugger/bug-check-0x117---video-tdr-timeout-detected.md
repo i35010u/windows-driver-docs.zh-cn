@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da4bdadf296005f496d0957899df646e755e489
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: adffccf3bd0bf8ad41da830a8b55402d322c8ac8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358168"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367912"
 ---
 # <a name="bug-check-0x117-videotdrtimeoutdetected"></a>Bug 检查 0x117：VIDEO\_TDR\_TIMEOUT\_DETECTED
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358168"
 视频\_TDR\_超时\_检测到错误检查的值为 0x00000117。 这表示显示驱动程序无法及时响应。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="videotdrtimeoutdetected-parameters"></a>视频\_TDR\_超时\_检测到参数
@@ -70,11 +70,11 @@ ms.locfileid: "63358168"
 
 图形中常见的稳定性问题发生时系统处理的最终用户命令或操作时出现完全冻结或挂起。 通常在 GPU 正忙于处理密集型的图形操作，通常在游戏过程。 无屏幕更新发生，并且用户假定他们的系统已被冻结。 用户通常等待几秒钟，并按电源按钮，然后重新启动系统。 Windows 会尝试检测这些有问题的情况下的挂起和动态恢复响应式桌面。
 
-此检测和恢复的过程称为超时检测和恢复 (TDR)。 默认超时为 2 秒。 在视频卡 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)函数以重新初始化该驱动程序和重置 GPU。
+此检测和恢复的过程称为超时检测和恢复 (TDR)。 默认超时为 2 秒。 在视频卡 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)函数以重新初始化该驱动程序和重置 GPU。
 
 如果恢复过程成功，将显示消息，指示的"显示驱动程序导致响应停止和已恢复。"
 
-有关详细信息，请参阅超时检测和恢复 (TDR) [TDR 注册表项](https://msdn.microsoft.com/library/windows/hardware/ff569918)并[TDR 更改在 Windows 8 中的](https://msdn.microsoft.com/library/windows/hardware/jj676805)都位于[Windows 显示器驱动程序模型 （用于进行调试的提示WDDM)](https://msdn.microsoft.com/library/windows/hardware/ff551790)。
+有关详细信息，请参阅超时检测和恢复 (TDR) [TDR 注册表项](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-registry-keys)并[TDR 更改在 Windows 8 中的](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-changes-in-windows-8)都位于[Windows 显示器驱动程序模型 （用于进行调试的提示WDDM)](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)。
 
 <a name="resolution"></a>分辨率
 ----------

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5e2e2810e2ff1f53a371cf1b90a838b6bf9ff3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b5fe3265cb7a2369b6568a8b0de106e3ca1e49e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382024"
 ---
 # <a name="kspropertyvideocompressionpframesperkeyframe"></a>KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_每\_关键帧
 
@@ -53,7 +53,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_每\_关键帧属性控制预测的帧 �
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566018" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566018)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
 <td><p>长</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_每\_关键帧属性控制预测的帧 �
 
 **值**KSPROPERTY 成员\_VIDEOCOMPRESSION\_S 结构指定每个关键帧的 P 帧数。 如果 set 请求提供了一个否定**值**，微型驱动程序应将 P 帧速率设置为默认值。
 
-微型驱动程序支持此属性应设置 KS\_VideoCompressionCaps\_CanBFrame 标志**功能**的成员[ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565979)检索微型驱动程序的视频的压缩功能的结构。
+微型驱动程序支持此属性应设置 KS\_VideoCompressionCaps\_CanBFrame 标志**功能**的成员[ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)检索微型驱动程序的视频的压缩功能的结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,9 +91,9 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_每\_关键帧属性控制预测的帧 �
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://msdn.microsoft.com/library/windows/hardware/ff566018)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565979)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

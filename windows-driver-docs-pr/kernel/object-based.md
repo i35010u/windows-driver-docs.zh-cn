@@ -8,12 +8,12 @@ keywords:
 - 不透明度 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b33cfa177d3334655ebfd369573ba97412158673
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 623c0cc359821d26878b645e516c2243b46043b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365436"
 ---
 # <a name="object-based"></a>基于对象
 
@@ -49,7 +49,7 @@ I/O 管理器定义的结构和文件的对象、 设备对象和驱动程序对
 
 *对象*标识的对象的类型。
 
-例如，I/O 管理器的[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)例程创建了一个设备对象来表示物理、 逻辑，或虚拟设备为目标的输入/输出请求。
+例如，I/O 管理器的[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)例程创建了一个设备对象来表示物理、 逻辑，或虚拟设备为目标的输入/输出请求。
 
 一个系统组件可以导出调用另一个组件的支持例程的例程。 这可以减少驱动程序必须进行的调用数。 I/O 管理器中，特别是，导出某些例程，使其更易于开发驱动程序。 例如， **IoConnectInterruptEx**，调用内核的支持例程*中断对象*。
 

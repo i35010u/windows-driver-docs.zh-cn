@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b5917d46e84dd6daa2b44be80eb131226c77fab4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b33951e0f97be7fd3f0e380c70b6b573d4d76e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369971"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384782"
 ---
 # <a name="guidserenumbusenumerator"></a>GUID_SERENUM_BUS_ENUMERATOR
 
 
-GUID_SERENUM_BUS_ENUMERATOR 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)插即用 (PnP) 串行端口。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR** ](guid-devinterface-serenum-bus-enumerator.md)此类的新实例的类标识符。
+GUID_SERENUM_BUS_ENUMERATOR 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)插即用 (PnP) 串行端口。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR** ](guid-devinterface-serenum-bus-enumerator.md)此类的新实例的类标识符。
 
 <a name="remarks"></a>备注
 -------
 
-WDK 包含串行枚举器示例 ([*serenum*](https://msdn.microsoft.com/library/windows/hardware/ff546505))。 串行枚举器使用 GUID_SERENUM_BUS_ENUMERATOR 注册此设备接口类的实例。 Serenum 示例包含在*src\\内核*WDK 的目录。
+WDK 包含串行枚举器示例 ([*serenum*](https://docs.microsoft.com/previous-versions/ff546505(v=vs.85)))。 串行枚举器使用 GUID_SERENUM_BUS_ENUMERATOR 注册此设备接口类的实例。 Serenum 示例包含在*src\\内核*WDK 的目录。
 
 <a name="requirements"></a>要求
 ------------

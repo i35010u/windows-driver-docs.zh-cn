@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 07c78de8a238b97a5a706af8369a529079ab913c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22a86c01144dd0df3df5471bfd9809cc490702a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373509"
 ---
 # <a name="guidclasskeyboard"></a>GUID_CLASS_KEYBOARD
 
 
-GUID_CLASS_KEYBOARD 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)键盘设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_KEYBOARD** ](guid-devinterface-keyboard.md)此类的新实例的类标识符。
+GUID_CLASS_KEYBOARD 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)键盘设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_KEYBOARD** ](guid-devinterface-keyboard.md)此类的新实例的类标识符。
 
 <a name="remarks"></a>备注
 -------

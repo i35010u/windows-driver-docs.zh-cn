@@ -10,12 +10,12 @@ keywords:
 - 电源管理 WDK NDIS 微型端口，有关微型端口驱动程序电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e386c5e8f29eb9ef099686979b27964badfb749
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf4cce87afac49cffd4ebaf7856eb857551efb6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342958"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384537"
 ---
 # <a name="power-management-ndis-60-and-ndis-61"></a>电源管理（NDIS 6.0 和 NDIS 6.1）
 
@@ -57,7 +57,7 @@ ms.locfileid: "63342958"
 
 [避免 NDIS 电源管理问题](avoiding-ndis-power-management-problems.md)
 
-**请注意**  从 NDIS 6.20 开始，NDIS 电源管理界面已进行了修订并扩展。 如果你正在开发支持电源管理的 NDIS 6.20 微型端口驱动程序，请查看中的信息[（NDIS 6.20 和更高版本） 的电源管理](https://msdn.microsoft.com/library/windows/hardware/hh205401)。 如果你正在开发支持电源管理的 NDIS 6.30 微型端口驱动程序，请查看中的信息[（NDIS 6.30 和更高版本） 的电源管理](https://msdn.microsoft.com/library/windows/hardware/hh440160)。
+**请注意**  从 NDIS 6.20 开始，NDIS 电源管理界面已进行了修订并扩展。 如果你正在开发支持电源管理的 NDIS 6.20 微型端口驱动程序，请查看中的信息[（NDIS 6.20 和更高版本） 的电源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-20-)。 如果你正在开发支持电源管理的 NDIS 6.30 微型端口驱动程序，请查看中的信息[（NDIS 6.30 和更高版本） 的电源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-30-)。
 
  
 

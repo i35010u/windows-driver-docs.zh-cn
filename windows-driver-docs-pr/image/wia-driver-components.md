@@ -4,12 +4,12 @@ description: WIA 驱动程序组件
 ms.assetid: 2c854945-2eda-4f4c-9cf6-5525e6e237ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d81e8d335eeaef389dd4d0770e6e96ab908097e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab7460db9c4b59e609d807bdb21600cf53134ea0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366979"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383780"
 ---
 # <a name="wia-driver-components"></a>WIA 驱动程序组件
 
@@ -29,7 +29,7 @@ WIA 微型驱动程序可被视为两个逻辑层：
 
 ### <a name="wia-minidriver-interfaces"></a>WIA 微型驱动程序接口
 
-WIA 微型驱动程序为 COM 对象实现**IUnknown** COM 接口和两个特定于 WIA 的 COM 接口：[IStiUSD](istiusd-com-interface.md)并[IWiaMiniDrv](https://msdn.microsoft.com/library/windows/hardware/ff545027)。 WIA 微型驱动程序接口层将实现这些接口，将 WIA 微型驱动程序的入口点。 应用程序不直接; 调用 WIA 微型驱动程序接口仅 WIA 服务调用这些接口。
+WIA 微型驱动程序为 COM 对象实现**IUnknown** COM 接口和两个特定于 WIA 的 COM 接口：[IStiUSD](istiusd-com-interface.md)并[IWiaMiniDrv](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)。 WIA 微型驱动程序接口层将实现这些接口，将 WIA 微型驱动程序的入口点。 应用程序不直接; 调用 WIA 微型驱动程序接口仅 WIA 服务调用这些接口。
 
 ### <a name="device-communication"></a>设备的通信
 

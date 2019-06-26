@@ -4,12 +4,12 @@ description: 捕获扩展
 ms.assetid: A8C2E550-4B1F-4DDB-B97F-1F7B6B74F5E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d260e5edb69b902c3b4c84539ca34408bb24bc3e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a51c59cfd8a7421c9d4bd503dcf319cb21a6913
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351944"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382796"
 ---
 # <a name="capturing-extensions"></a>捕获扩展
 
@@ -32,7 +32,7 @@ ms.locfileid: "63351944"
 
     修改筛选器驱动程序的 INF 要求的详细信息，请参阅[配置修改筛选器驱动程序 INF 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
 
--   捕获扩展可以监视数据包通过入口和出口可扩展交换机数据路径。 但是，此类型的扩展必须始终调用[ **NdisFSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff562616)将数据包转发给可扩展交换机驱动程序堆栈中的基础驱动程序并不完成它们。
+-   捕获扩展可以监视数据包通过入口和出口可扩展交换机数据路径。 但是，此类型的扩展必须始终调用[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)将数据包转发给可扩展交换机驱动程序堆栈中的基础驱动程序并不完成它们。
 
 -   捕获扩展必须不修改这些包中的数据也不会将端口目标添加到该数据包的带外 (OOB) 数据。 扩展必须不免除任何可扩展交换机端口的数据包传送。
 

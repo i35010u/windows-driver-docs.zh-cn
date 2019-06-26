@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: AA8590B4-AAEA-4D41-972F-38149CE328E2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a267b4477edf11779e36af9533e0d1976e83de7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99de55ef20f76c9829d052237359c82070dad6c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376719"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385794"
 ---
 # <a name="whats-new-in-hid"></a>HID 中的新增功能
 
@@ -20,7 +20,7 @@ ms.locfileid: "63376719"
 ## <a name="hid-winrt-api"></a>HID 的 WinRT API
 
 
-[Windows.Devices.HumanInterfaceDevice](https://msdn.microsoft.com/library/windows/apps/xaml/dn263140) API 来支持人机接口设备 (HID) 协议的 UWP 应用访问设备。
+[Windows.Devices.HumanInterfaceDevice](https://docs.microsoft.com/previous-versions/windows/apps/dn263140(v=win.10)) API 来支持人机接口设备 (HID) 协议的 UWP 应用访问设备。
 
 以下简短视频介绍了可供下载 MSDN 示例库上的 HID 端到端示例的解决方案。 （此解决方案包括使用新的 HID WinRT API 创建的示例应用。）
 

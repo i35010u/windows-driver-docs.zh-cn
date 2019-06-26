@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05657209ef6c2cad47d7da062a303900261cacf7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fdd7876517039b0b13dde957e36c4f5aa0c6427
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352110"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375361"
 ---
 # <a name="wiadipdevtype"></a>WIA\_DIP\_开发人员\_类型
 
@@ -51,7 +51,7 @@ WIA\_DIP\_开发人员\_类型属性包含设备类型和设备子类型。 WIA 
 <thead>
 <tr class="header">
 <th>设备类型</th>
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -81,7 +81,7 @@ WIA\_DIP\_开发人员\_类型属性包含设备类型和设备子类型。 WIA 
 
  
 
-有关 INF 文件的详细信息，请参阅[WIA 设备 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff542770)。 **StiDeviceType * * * Xxx*中定义常量*Sti.h*。
+有关 INF 文件的详细信息，请参阅[WIA 设备 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/image/inf-files-for-wia-devices)。 **StiDeviceType * * * Xxx*中定义常量*Sti.h*。
 
 <a name="requirements"></a>要求
 ------------

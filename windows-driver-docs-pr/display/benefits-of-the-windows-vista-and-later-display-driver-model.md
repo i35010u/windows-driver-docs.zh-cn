@@ -7,12 +7,12 @@ keywords:
 - Windows Vista 显示器驱动程序模型 WDK，权益
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eeebf753a7ffe3452e5ce939ccba286abd8da72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76e132ab651e064aed65ebee1083e669086177ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347015"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384630"
 ---
 # <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows 显示驱动程序模型 (WDDM) 的优势
 
@@ -32,11 +32,11 @@ ms.locfileid: "63347015"
 
     图面上的创建操作系统上前面比 Windows Vista 需要以下连续的内核模式下调用：
 
-    1.  [*DdCanCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549213)
-    2.  [*DdCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549263)
-    3.  [**D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840)
+    1.  [*DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))
+    2.  [*DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))
+    3.  [**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
 
-    WDDM 中的图面上创建仅需要[ **CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688)用户模式显示驱动程序调用，后者又调用[ **pfnAllocateCb** ](https://msdn.microsoft.com/library/windows/hardware/ff568893)函数。 内核模式下的调用[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)函数则会发生。
+    WDDM 中的图面上创建仅需要[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)用户模式显示驱动程序调用，后者又调用[ **pfnAllocateCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数。 内核模式下的调用[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数则会发生。
 
 -   调用的创建和销毁图面和的锁定和解锁资源更均匀地配对。
 

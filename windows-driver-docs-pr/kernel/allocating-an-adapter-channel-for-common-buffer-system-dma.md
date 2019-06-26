@@ -11,12 +11,12 @@ keywords:
 - DMA 传输 WDK 内核，常见的缓冲区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5efb04bf7a49f1c2b10e02069f860222b491bd43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54316278eb1187aa4b9dd9b484a94a957a020de8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369973"
 ---
 # <a name="allocating-an-adapter-channel-for-common-buffer-system-dma"></a>为公用缓冲区系统 DMA 分配适配器通道
 
@@ -24,15 +24,15 @@ ms.locfileid: "63386263"
 
 
 
-驱动程序调用[ **AllocateAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff540573)后其[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)或[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程 （或任何其他处理 DMA 传输的调度例程） 已选中 IRP 的参数的有效性，可能是排队到进行进一步处理，另一个驱动程序例程的一个或多个 Irp 并且可能是加载其与数据传输，如果相应的常见缓冲区。
+驱动程序调用[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)后其[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)或[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程 （或任何其他处理 DMA 传输的调度例程） 已选中 IRP 的参数的有效性，可能是排队到进行进一步处理，另一个驱动程序例程的一个或多个 Irp 并且可能是加载其与数据传输，如果相应的常见缓冲区。
 
-调用的驱动程序例程**AllocateAdapterChannel**必须执行在 IRQL = 调度\_级别。 **AllocateAdapterChannel**例程队列的驱动程序[ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)例程，运行后系统 DMA 控制器已分配给此驱动程序和一个设置的[映射寄存器](map-registers.md)已分配驱动程序的 DMA 操作。
+调用的驱动程序例程**AllocateAdapterChannel**必须执行在 IRQL = 调度\_级别。 **AllocateAdapterChannel**例程队列的驱动程序[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程，运行后系统 DMA 控制器已分配给此驱动程序和一个设置的[映射寄存器](map-registers.md)已分配驱动程序的 DMA 操作。
 
-在进入时， *AdapterControl*例程提供给设备对象和上下文调用中传递指针**AllocateAdapterChannel**，同时为分配的映射的句柄注册。 *AdapterControl*例程还提供一个指向**DeviceObject-&gt;CurrentIrp**如果该驱动程序有[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程。 如果该驱动程序管理的 Irp 自己队列，而不让*StartIo*例程，该驱动程序应包括一个指向当前 IRP 传递时，它调用的上下文数据的一部分**AllocateAdapterChannel**.
+在进入时， *AdapterControl*例程提供给设备对象和上下文调用中传递指针**AllocateAdapterChannel**，同时为分配的映射的句柄注册。 *AdapterControl*例程还提供一个指向**DeviceObject-&gt;CurrentIrp**如果该驱动程序有[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程。 如果该驱动程序管理的 Irp 自己队列，而不让*StartIo*例程，该驱动程序应包括一个指向当前 IRP 传递时，它调用的上下文数据的一部分**AllocateAdapterChannel**.
 
 *AdapterControl*例程通常执行以下操作：
 
-1.  将保存或初始化该驱动程序会维护有关 DMA 操作任何上下文。 上下文可能包括输入*MapRegisterBase*句柄驱动程序必须将传递给[ **MapTransfer** ](https://msdn.microsoft.com/library/windows/hardware/ff554402)并[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917) ，并且可能**长度**从其 I/O 请求的传输堆栈中的位置。
+1.  将保存或初始化该驱动程序会维护有关 DMA 操作任何上下文。 上下文可能包括输入*MapRegisterBase*句柄驱动程序必须将传递给[ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)并[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers) ，并且可能**长度**从其 I/O 请求的传输堆栈中的位置。
 
 2.  将从属的设备设置开始在传输操作。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63386263"
 
 2.  返回**KeepObject**。
 
-另一个驱动程序例程 (可能[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)例程) 必须调用[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)和[ **FreeAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff546507) DMA 传输操作何时完成。
+另一个驱动程序例程 (可能[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程) 必须调用[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)和[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel) DMA 传输操作何时完成。
 
  
 

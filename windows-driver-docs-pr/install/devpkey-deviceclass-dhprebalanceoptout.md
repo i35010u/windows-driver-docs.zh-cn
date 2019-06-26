@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96a6572278b9d63ff88dd81fdc43cbf350127962
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f689dd3447396744193eac9c82cb607fd307e69c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392542"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378080"
 ---
 # <a name="devpkeydeviceclassdhprebalanceoptout"></a>DEVPKEY_DeviceClass_DHPRebalanceOptOut
 
 
-DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，指示整个设备类将参与资源后重新平衡[动态硬件分区 (DHP)](https://msdn.microsoft.com/library/windows/hardware/ff544234)处理器热添加发生操作。
+DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，指示整个设备类将参与资源后重新平衡[动态硬件分区 (DHP)](https://docs.microsoft.com/windows-hardware/drivers/kernel/dynamic-hardware-partitioning-techniques)处理器热添加发生操作。
 
 <table>
 <colgroup>
@@ -65,13 +65,13 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，指示整�
 
 如果存在 DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性和属性的值设置为 **，则返回 TRUE**，设备类不参与重新平衡时的新处理器动态添加到的资源系统。
 
-设备的[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)中指定[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)的设备的 INF 文件。
+设备的[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)中指定[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)的设备的 INF 文件。
 
 网络适配器的此属性的默认值 (类 = Net) 是 **，则返回 TRUE**。 此属性对于所有其他设备安装程序类的默认值是**FALSE**。
 
 此设备属性不会影响是否设备类参与出于其他原因启动资源重新平衡。
 
-可以通过调用访问 DEVPKEY_DeviceClass_DHPRebalanceOptOut 属性[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)并[ **SetupDiSetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552128).
+可以通过调用访问 DEVPKEY_DeviceClass_DHPRebalanceOptOut 属性[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)并[ **SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw).
 
 <a name="requirements"></a>要求
 ------------
@@ -96,9 +96,9 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，指示整�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiSetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552128)
+[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
  
 

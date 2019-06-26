@@ -4,12 +4,12 @@ description: 某些总线，SPI，例如启用读取和写入传输总线控制�
 ms.assetid: B200461F-9F9C-43A7-BA78-0864FD58C64E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81667c573880a1c55ceace8dc78e959d3d0bba87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3c535226f6e57ad27718b01537ea4fd438ca0c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356737"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385230"
 ---
 # <a name="handling-ioctlspbfullduplex-requests"></a>处理 IOCTL\_存储\_完整\_双工请求
 
@@ -23,8 +23,8 @@ ms.locfileid: "63356737"
 
 [ **IOCTL\_存储\_完整\_双工**](https://msdn.microsoft.com/library/windows/hardware/hh974774)请求的格式相同[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求，但具有这些限制：
 
--   [**存储\_传输\_列表**](https://msdn.microsoft.com/library/windows/hardware/hh406221)请求中的结构必须包含正好两个条目。 第一项描述了包含要写入到设备的数据的缓冲区。 第二个条目描述用来保存从设备读取的数据缓冲区。
--   每个[**存储\_传输\_列表\_条目**](https://msdn.microsoft.com/library/windows/hardware/hh406223)传输列表中的结构必须指定**DelayInUs**值为零。
+-   [**存储\_传输\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spb/ns-spb-spb_transfer_list)请求中的结构必须包含正好两个条目。 第一项描述了包含要写入到设备的数据的缓冲区。 第二个条目描述用来保存从设备读取的数据缓冲区。
+-   每个[**存储\_传输\_列表\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spb/ns-spb-spb_transfer_list_entry)传输列表中的结构必须指定**DelayInUs**值为零。
 
 全双工传送期间，读取和写入传输启动更多信息。 写入数据的第一个字节通过总线传输读取数据的第一个字节时。
 
@@ -41,9 +41,9 @@ ms.locfileid: "63356737"
 ## <a name="parameter-checking"></a>参数检查
 
 
-尽管[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)并**IOCTL\_存储\_完整\_双工**请求具有类似格式，存储框架扩展 (SpbCx) 的处理方式不同。 有关**IOCTL\_存储\_EXECUTE\_序列**请求，SpbCx 验证参数值在请求中，并捕获请求发起方的进程上下文中请求的缓冲区。 将传递 SpbCx **IOCTL\_存储\_EXECUTE\_序列**通过驱动程序的存储控制器驱动程序对请求[ *EvtSpbControllerIoSequence*](https://msdn.microsoft.com/library/windows/hardware/hh450810)回调函数，专用于这些请求。
+尽管[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)并**IOCTL\_存储\_完整\_双工**请求具有类似格式，存储框架扩展 (SpbCx) 的处理方式不同。 有关**IOCTL\_存储\_EXECUTE\_序列**请求，SpbCx 验证参数值在请求中，并捕获请求发起方的进程上下文中请求的缓冲区。 将传递 SpbCx **IOCTL\_存储\_EXECUTE\_序列**通过驱动程序的存储控制器驱动程序对请求[ *EvtSpbControllerIoSequence*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_sequence)回调函数，专用于这些请求。
 
-与此相反，将视为 SpbCx **IOCTL\_存储\_完整\_双工**作为自定义、 驱动程序定义 IOCTL 请求的请求。 将传递 SpbCx **IOCTL\_存储\_完整\_双工**通过驱动程序的存储控制器驱动程序对请求[ *EvtSpbControllerIoOther*](https://msdn.microsoft.com/library/windows/hardware/hh450805)回调函数，还可以处理的驱动程序支持的任何自定义 IOCTL 请求。 SpbCx 执行这些请求没有参数检查或缓冲区捕获。 该驱动程序负责检查任何参数或缓冲区捕获 IOCTL 可能需要的请求，该驱动程序将收到通过其*EvtSpbControllerIoOther*函数。 若要启用缓冲区捕获，驱动程序必须提供[ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)回调函数时，驱动程序注册其*EvtSpbControllerIoOther*函数。 有关详细信息，请参阅[Using**存储\_传输\_列表**结构的自定义 Ioctl](https://msdn.microsoft.com/library/windows/hardware/hh974776)。
+与此相反，将视为 SpbCx **IOCTL\_存储\_完整\_双工**作为自定义、 驱动程序定义 IOCTL 请求的请求。 将传递 SpbCx **IOCTL\_存储\_完整\_双工**通过驱动程序的存储控制器驱动程序对请求[ *EvtSpbControllerIoOther*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_other)回调函数，还可以处理的驱动程序支持的任何自定义 IOCTL 请求。 SpbCx 执行这些请求没有参数检查或缓冲区捕获。 该驱动程序负责检查任何参数或缓冲区捕获 IOCTL 可能需要的请求，该驱动程序将收到通过其*EvtSpbControllerIoOther*函数。 若要启用缓冲区捕获，驱动程序必须提供[ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)回调函数时，驱动程序注册其*EvtSpbControllerIoOther*函数。 有关详细信息，请参阅[Using**存储\_传输\_列表**结构的自定义 Ioctl](https://docs.microsoft.com/windows-hardware/drivers/spb/using-the-spb-transfer-list-structure)。
 
 
 

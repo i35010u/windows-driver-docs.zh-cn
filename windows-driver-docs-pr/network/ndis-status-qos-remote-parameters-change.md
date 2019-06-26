@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a281ceadb5bad5e45611603befa0fa553874ad1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5246fc3d5d960193b5b12263e1ed263bc074a36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362947"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381195"
 ---
 # <a name="ndisstatusqosremoteparameterschange"></a>NDIS\_状态\_QOS\_远程\_参数\_更改
 
 
 支持 NDIS 服务质量 (QoS) 问题的微型端口驱动程序**NDIS\_状态\_QOS\_远程\_参数\_更改**状态指示时其远程 NDIS QoS 参数既接收来自对等方第一次或更高版本更改。 微型端口驱动程序将从通过 IEEE 802.1Qaz 远程对等方接收这些 QoS 参数的数据中心桥接交换 (DCBX) 协议。
 
-当微型端口驱动程序将此状态指示时，它会设置**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)为指向的结构[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构。 该驱动程序初始化其远程 NDIS QoS 参数与此结构。
+当微型端口驱动程序将此状态指示时，它会设置**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)为指向的结构[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构。 该驱动程序初始化其远程 NDIS QoS 参数与此结构。
 
 **请注意**  此 NDIS 状态指示是仅对支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序有效。
 
@@ -29,7 +29,7 @@ ms.locfileid: "63362947"
 
 微型端口驱动程序使用 DCBX 协议接收的远程对等方的 QoS 参数。 微型端口驱动程序解析其操作的 NDIS QoS 参数基于其本地和远程 QoS 设置。 解决操作参数后，微型端口驱动程序使用 QoS 数据包传输这些参数配置的网络适配器。
 
-有关驱动程序如何解决其操作的 NDIS QoS 参数设置的详细信息，请参阅[解析操作的 NDIS QoS 参数](https://msdn.microsoft.com/library/windows/hardware/hh440220)。
+有关驱动程序如何解决其操作的 NDIS QoS 参数设置的详细信息，请参阅[解析操作的 NDIS QoS 参数](https://docs.microsoft.com/windows-hardware/drivers/network/resolving-operational-ndis-qos-parameters)。
 
 微型端口驱动程序必须遵循这些准则以颁发**NDIS\_状态\_QOS\_远程\_参数\_更改**状态指示：
 
@@ -37,7 +37,7 @@ ms.locfileid: "63362947"
 
 -   微型端口驱动程序必须发出**NDIS\_状态\_QOS\_远程\_参数\_更改**状态指示后它首先接收来自的 QoS 设置远程对等方。
 
-    **请注意**  微型端口驱动程序必须发出此状态指示，如果网络适配器从对等方收到远程 QoS 参数设置之前设置驱动程序的本地 QoS 参数。 有关详细信息，请参阅[设置本地 NDIS QoS 参数](https://msdn.microsoft.com/library/windows/hardware/hh440225)。
+    **请注意**  微型端口驱动程序必须发出此状态指示，如果网络适配器从对等方收到远程 QoS 参数设置之前设置驱动程序的本地 QoS 参数。 有关详细信息，请参阅[设置本地 NDIS QoS 参数](https://docs.microsoft.com/windows-hardware/drivers/network/setting-local-ndis-qos-parameters)。
 
      
 
@@ -47,13 +47,13 @@ ms.locfileid: "63362947"
 
      
 
-**请注意**  过量驱动程序可以使用**NDIS\_状态\_QOS\_远程\_参数\_更改**会向状态指示确定远程 NDIS QoS 参数。 或者，这些驱动程序还可以颁发的 OID 查询请求[OID\_QOS\_远程\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451841)在任何时候获取远程 NDIS QoS 参数。
+**请注意**  过量驱动程序可以使用**NDIS\_状态\_QOS\_远程\_参数\_更改**会向状态指示确定远程 NDIS QoS 参数。 或者，这些驱动程序还可以颁发的 OID 查询请求[OID\_QOS\_远程\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-remote-parameters)在任何时候获取远程 NDIS QoS 参数。
 
  
 
-有关如何微型端口驱动程序问题的详细信息**NDIS\_状态\_QOS\_远程\_参数\_更改**状态指示，请参阅[指示对远程 NDIS QoS 参数更改](https://msdn.microsoft.com/library/windows/hardware/hh406724)。
+有关如何微型端口驱动程序问题的详细信息**NDIS\_状态\_QOS\_远程\_参数\_更改**状态指示，请参阅[指示对远程 NDIS QoS 参数更改](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-changes-to-the-remote-ndis-qos-parameters)。
 
-有关远程 NDIS QoS 参数的详细信息，请参阅[NDIS QoS 参数的概述](https://msdn.microsoft.com/library/windows/hardware/hh440130)。
+有关远程 NDIS QoS 参数的详细信息，请参阅[NDIS QoS 参数的概述](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,11 +79,11 @@ ms.locfileid: "63362947"
 
 
 ****
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_QOS\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/hh451640)
+[**NDIS\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)
 
-[OID\_QOS\_远程\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451841)
+[OID\_QOS\_远程\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-remote-parameters)
 
  
 

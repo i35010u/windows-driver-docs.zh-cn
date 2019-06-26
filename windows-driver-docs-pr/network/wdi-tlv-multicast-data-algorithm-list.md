@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bc97015c4885a5becd1f3d90f5ae8173343682a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df588cf19d381e39a1bf5da5d404efbe59dba84a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376999"
 ---
 # <a name="wditlvmulticastdataalgorithmlist"></a>WDI\_TLV\_多播\_数据\_算法\_列表
 
@@ -45,8 +45,8 @@ WDI\_ALGO\_对以下元素组成。
 
 | 在任务栏的搜索框中键入  | 描述                                                                                     |
 |-------|-------------------------------------------------------------------------------------------------|
-| UINT8 | 如中所定义的身份验证算法[ **WDI\_身份验证\_算法**](https://msdn.microsoft.com/library/windows/hardware/dn897792)。 |
-| UINT8 | 如中所定义的密码算法[ **WDI\_密码\_算法**](https://msdn.microsoft.com/library/windows/hardware/dn897802)。     |
+| UINT8 | 如中所定义的身份验证算法[ **WDI\_身份验证\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm)。 |
+| UINT8 | 如中所定义的密码算法[ **WDI\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)。     |
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 体积纹理 WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2c68658eb0e80da5da356bf2c073642a1f275ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 287348917bb8f931d902824dc0fa51450c8124df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383229"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384261"
 ---
 # <a name="reporting-support-for-volume-textures"></a>报告体积纹理支持
 
@@ -31,7 +31,7 @@ DirectX 8.0 引入了两个新基元纹理功能标志，用于驱动程序设�
 
 驱动程序会通知运行时的卷纹理筛选和寻址模式的硬件支持的设置的纹理**VolumeTextureFilterCaps**并**VolumeTextureAddressCaps**到适当的标志的组合。
 
-最后，该驱动程序会通知运行时关于哪些面格式可用于通过设置 D3DFORMAT 体积纹理\_OP\_中的 VOLUMETEXTURE **dwOperations**字段的图面格式的[**DDPIXELFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff550274)。
+最后，该驱动程序会通知运行时关于哪些面格式可用于通过设置 D3DFORMAT 体积纹理\_OP\_中的 VOLUMETEXTURE **dwOperations**字段的图面格式的[**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - COM API 功能，移动电话网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87107e64fd6fffd5c62e6f6e8cc4dc9bdbed98c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 645b6f6e46e8b34567f197a53629cc680b7c883f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341901"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382794"
 ---
 # <a name="cellular-com-api-capabilities"></a>手机网络 COM API 功能
 
@@ -47,5 +47,5 @@ ms.locfileid: "63341901"
 
 [移动电话的 COM API 设计指南](cellular-com-api-design-guide.md)
 
-[移动电话的 COM API 参考](https://msdn.microsoft.com/library/windows/hardware/dn946508)
+[移动电话的 COM API 参考](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946508(v=vs.85))
 

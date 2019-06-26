@@ -6,12 +6,12 @@ keywords:
 - MB PCO 选项，移动宽带 PCO 选项 MB 协议配置选项、 移动宽带协议配置选项，WDK 网络驱动程序、 MBB 微型端口驱动程序
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c83cb2dd99ed63b21b0f6b99d35506c87eba3814
-ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
+ms.openlocfilehash: 943330f5c9db1e0ea7f6261c188364a1077f5029
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969595"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374071"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB 协议配置选项 (PCO) 操作
 
@@ -55,7 +55,7 @@ ms.locfileid: "65969595"
 
 ## <a name="ndis-interface-to-the-modem"></a>到调制解调器的 NDIS 接口
 
-有关查询的状态和负载的 PCO 值从运营商网络接收的调制解调器，请参阅[OID_WWAN_PCO](oid-wwan-pco.md)。 **OID_WWAN_PCO**使用[ **NDIS_WWAN_PCO_STATUS** ](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)结构，其中又包含[ **WWAN_PCO_VALUE** ](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E) 从网络表示 PCO 信息有效负载的结构。
+有关查询的状态和负载的 PCO 值从运营商网络接收的调制解调器，请参阅[OID_WWAN_PCO](oid-wwan-pco.md)。 **OID_WWAN_PCO**使用[ **NDIS_WWAN_PCO_STATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)结构，其中又包含[ **WWAN_PCO_VALUE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value) 从网络表示 PCO 信息有效负载的结构。
 
 有关调制解调器微型端口驱动程序发送通知的调制解调器中的当前 PCO 状态的操作系统的状态通知，请参阅[NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)。
 

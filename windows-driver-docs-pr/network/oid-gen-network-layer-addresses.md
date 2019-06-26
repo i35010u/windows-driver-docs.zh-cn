@@ -5,12 +5,12 @@ ms.assetid: 4a75c2ca-1a58-462e-876a-a65cfe63441e
 ms.date: 08/08/2017
 keywords: -OID_GEN_NETWORK_LAYER_ADDRESSES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9e9aafe53f18a79e7941cdbc39a17bc7332cd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09263514e2bb79c5a29b8cf58f4285f74091dae0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324341"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383668"
 ---
 # <a name="oidgennetworklayeraddresses"></a>OID\_GEN\_网络\_层\_地址
 
@@ -37,7 +37,7 @@ ms.locfileid: "63324341"
 <a name="remarks"></a>备注
 -------
 
-绑定的实例，则调用传输和通过调用设置的驱动程序之间的绑定[ **NdisOpenAdapterEx**](https://msdn.microsoft.com/library/windows/hardware/ff563715)。 传输通道使用传输\_地址和 TA\_地址结构以通知基础微型端口驱动程序和其他分层驱动程序有关的网络层地址列表。 微型端口驱动程序和其他分层驱动程序使用兼容的网络\_地址\_列表和网络\_定义，如下所示，若要绑定接口上设置的网络层地址列表的地址结构。
+绑定的实例，则调用传输和通过调用设置的驱动程序之间的绑定[ **NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)。 传输通道使用传输\_地址和 TA\_地址结构以通知基础微型端口驱动程序和其他分层驱动程序有关的网络层地址列表。 微型端口驱动程序和其他分层驱动程序使用兼容的网络\_地址\_列表和网络\_定义，如下所示，若要绑定接口上设置的网络层地址列表的地址结构。
 
 ```C++
 typedef struct _NETWORK_ADDRESS_LIST {
@@ -89,7 +89,7 @@ typedef struct _NETWORK_ADDRESS {
 <a href="" id="address"></a>**地址**  
 指定此网络层地址的字节数组。 **AddressLength**成员此数组中指定的字节数。
 
-可以调用传输[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)函数，并可以传递[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构填充的 OID\_GEN\_网络\_层\_地址代码。 此调用通知中与该实例相关联的地址的更改的绑定的实例。 在此调用中，传输还将传递中的绑定的实例*NdisBindingHandle*参数。 绑定设置传输和基础微型端口驱动程序或其他分层驱动程序之间的绑定的实例。 对于此调用，传输应填充**InformationBuffer**成员的 NDIS\_OID\_用一个指针指向传输请求\_地址结构。 传输\_地址对应于网络\_地址\_列表结构，并且应包含的网络层地址列表。
+可以调用传输[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)函数，并可以传递[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构填充的 OID\_GEN\_网络\_层\_地址代码。 此调用通知中与该实例相关联的地址的更改的绑定的实例。 在此调用中，传输还将传递中的绑定的实例*NdisBindingHandle*参数。 绑定设置传输和基础微型端口驱动程序或其他分层驱动程序之间的绑定的实例。 对于此调用，传输应填充**InformationBuffer**成员的 NDIS\_OID\_用一个指针指向传输请求\_地址结构。 传输\_地址对应于网络\_地址\_列表结构，并且应包含的网络层地址列表。
 
 假设传输将传递到基础的微型端口驱动程序的中间驱动程序通过地址。 如果中间驱动程序也需要地址，需要记下这些值之前将它们传递到基础微型端口驱动程序。 基础微型端口驱动程序，尤其是旧驱动程序，可以返回在 status 值为 NDIS\_状态\_不\_SUPPORTED 或 NDIS\_状态\_成功。 基础的微型端口驱动程序将备份操作的状态传播针对传输中。 如果中间驱动程序必须继续接收地址通知，并且如有必要，中间驱动程序应将状态更改为 NDIS\_状态\_成功。否则，传输可能会解释 NDIS\_状态\_不\_支持，因为基础微型端口驱动程序不需要传输发出额外的地址的指示更新。 如果 NDIS\_状态\_成功返回、 传输有义务继续通知基础驱动程序的相关联的地址，包括添加和删除地址中的任何更改。
 
@@ -114,11 +114,11 @@ typedef struct _NETWORK_ADDRESS {
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff563710)
+[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)
 
-[**NdisOpenAdapterEx**](https://msdn.microsoft.com/library/windows/hardware/ff563715)
+[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)
 
  
 

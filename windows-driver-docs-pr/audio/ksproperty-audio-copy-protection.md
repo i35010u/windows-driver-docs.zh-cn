@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd9ad0ea5e8616deaea9a148edeff7009cfe768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 601da5beb0e302729882b6c7e9e0977d2fecae47
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391485"
 ---
 # <a name="kspropertyaudiocopyprotection"></a>KSPROPERTY\_音频\_复制\_保护
 
@@ -53,8 +53,8 @@ KSPROPERTY\_音频\_复制\_保护属性指定的音频流的复制保护状态�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537084" data-raw-source="[&lt;strong&gt;KSAUDIO_COPY_PROTECTION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537084)"><strong>KSAUDIO_COPY_PROTECTION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection" data-raw-source="[&lt;strong&gt;KSAUDIO_COPY_PROTECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection)"><strong>KSAUDIO_COPY_PROTECTION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -80,7 +80,7 @@ SCMS 可以提供三个级别的音频内容的保护：
 
 **级别 2:** 在所有流的任何复制。
 
-KSPROPERTY\_音频\_副本\_保护属性的实现的是独立于和不相关[数字版权管理 (DRM)](https://msdn.microsoft.com/library/windows/hardware/ff536260)和保护音频路径 (SAP) 的 Windows介质。 有关 SAP 的信息，请参阅 Microsoft Windows SDK 文档。
+KSPROPERTY\_音频\_副本\_保护属性的实现的是独立于和不相关[数字版权管理 (DRM)](https://docs.microsoft.com/windows-hardware/drivers/audio/digital-rights-management)和保护音频路径 (SAP) 的 Windows介质。 有关 SAP 的信息，请参阅 Microsoft Windows SDK 文档。
 
 <a name="requirements"></a>要求
 ------------
@@ -101,9 +101,9 @@ KSPROPERTY\_音频\_副本\_保护属性的实现的是独立于和不相关[数
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAUDIO\_COPY\_PROTECTION**](https://msdn.microsoft.com/library/windows/hardware/ff537084)
+[**KSAUDIO\_COPY\_PROTECTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_copy_protection)
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 转储模式 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8054aab82bd62b7a47b8d6b3025effaad30d31b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9f11d76dcb70bd4a43e274a42d0596a4cf1e84a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373208"
 ---
 # <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>对管理启动驱动器的微型端口驱动程序的限制
 
@@ -32,27 +32,27 @@ ms.locfileid: "63346541"
 
 ### <a name="span-idaccessibilityspanspan-idaccessibilityspanaccessibility-of-the-boot-device"></a><span id="accessibility"></span><span id="ACCESSIBILITY"></span>启动设备的可访问性
 
-启动设备之前从初始化例程返回微型端口必须可访问性 ([**HwStorInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff557396) StorPort 的并[ *HwScsiInitialize* ](https://msdn.microsoft.com/library/windows/hardware/ff557302) SCSI 端口)。 初始化例程完成后，操作系统可能会将命令发送到任何位置启动设备。
+启动设备之前从初始化例程返回微型端口必须可访问性 ([**HwStorInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_initialize) StorPort 的并[ *HwScsiInitialize* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85)) SCSI 端口)。 初始化例程完成后，操作系统可能会将命令发送到任何位置启动设备。
 
 ### <a name="span-idbusresetsspanspan-idbusresetsspanbus-resets"></a><span id="bus_resets"></span><span id="BUS_RESETS"></span>总线重置
 
-微型端口驱动程序应忽略请求重置总线 ([**HwStorResetBus** ](https://msdn.microsoft.com/library/windows/hardware/ff557415) StorPort 的并[ *HwScsiResetBus* ](https://msdn.microsoft.com/library/windows/hardware/ff557318)的 SCSI端口）。
+微型端口驱动程序应忽略请求重置总线 ([**HwStorResetBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus) StorPort 的并[ *HwScsiResetBus* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557318(v=vs.85))的 SCSI端口）。
 
 ### <a name="span-iddpcsspanspan-iddpcsspandeferred-procedure-calls-dpcs"></a><span id="dpcs"></span><span id="DPCS"></span>延迟的过程调用 (Dpc)
 
-StorPort 微型端口驱动程序不能尝试初始化 DPC 例程 ([**HwStorDpcRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff557383)) 与[ **StorPortInitializeDpc**](https://msdn.microsoft.com/library/windows/hardware/ff567110)。 任何处理通常排队等待到 DPC 例程期间的中断请求的执行，在这种情况下，必须在该请求的上下文中。
+StorPort 微型端口驱动程序不能尝试初始化 DPC 例程 ([**HwStorDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_dpc_routine)) 与[ **StorPortInitializeDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitializedpc)。 任何处理通常排队等待到 DPC 例程期间的中断请求的执行，在这种情况下，必须在该请求的上下文中。
 
 ### <a name="span-idmultiplerequestsspanspan-idmultiplerequestsspanmultiple-requests-per-logical-unit"></a><span id="multiple_requests"></span><span id="MULTIPLE_REQUESTS"></span>每个逻辑单元的多个请求
 
-磁盘转储端口驱动程序不发送每个逻辑单元的多个请求。 因此，它并不重要的微型端口驱动程序将分配给哪些值**MultipleRequestPerLu**的成员[**端口\_配置\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff563901).
+磁盘转储端口驱动程序不发送每个逻辑单元的多个请求。 因此，它并不重要的微型端口驱动程序将分配给哪些值**MultipleRequestPerLu**的成员[**端口\_配置\_信息**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563901(v=vs.85)).
 
 ### <a name="span-idpollingspanspan-idpollingspanpolling-and-time-checking"></a><span id="polling"></span><span id="POLLING"></span>轮询间隔和时间检查
 
-微型端口驱动程序必须不依赖时检查例程，如[ **ScsiPortQuerySystemTime** ](https://msdn.microsoft.com/library/windows/hardware/ff564708)或[ **StorPortQuerySystemTime** ](https://msdn.microsoft.com/library/windows/hardware/ff567465)同时在转储模式下运行。 使用中排除的微型端口驱动程序的最佳实践[ **KeQuerySystemTime** ](https://msdn.microsoft.com/library/windows/hardware/ff553068)例程，在任何时间，因为微型端口驱动程序应始终使用端口驱动程序库例程来检查的时间。
+微型端口驱动程序必须不依赖时检查例程，如[ **ScsiPortQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportquerysystemtime)或[ **StorPortQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportquerysystemtime)同时在转储模式下运行。 使用中排除的微型端口驱动程序的最佳实践[ **KeQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)例程，在任何时间，因为微型端口驱动程序应始终使用端口驱动程序库例程来检查的时间。
 
 ### <a name="span-idirqlspanspan-idirqlspaninterrupt-request-level"></a><span id="irql"></span><span id="IRQL"></span>中断请求级别
 
-运行时端口驱动程序调用[ **HwStorFindAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff557390)并[ *HwScsiFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff557300)在被动 irql 下完成。 但是，转储驱动程序调用的 IRQL 高于被动所有微型端口例程。 因此，转储路径中的微型端口驱动程序必须避免的操作，例如注册表访问，必须执行在被动 irql 下完成。
+运行时端口驱动程序调用[ **HwStorFindAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)并[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))在被动 irql 下完成。 但是，转储驱动程序调用的 IRQL 高于被动所有微型端口例程。 因此，转储路径中的微型端口驱动程序必须避免的操作，例如注册表访问，必须执行在被动 irql 下完成。
 
 ### <a name="span-idtargetandlunspanspan-idtargetandlunspantarget-ids-and-logical-unit-numbers-luns"></a><span id="target_and_lun"></span><span id="TARGET_AND_LUN"></span>目标 Id 和逻辑单元号 (Lun)
 
@@ -62,7 +62,7 @@ StorPort 微型端口驱动程序不能尝试初始化 DPC 例程 ([**HwStorDpcR
 
 -   操作系统将传递**NULL**微型端口驱动程序的参数*DriverEntry*例程。
 
--   磁盘转储端口驱动程序将传递的字符串"转储 = 1"中*ArgumentString*参数时，它调用[ **HwStorFindAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff557390)或[ *HwScsiFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff557300)例程。
+-   磁盘转储端口驱动程序将传递的字符串"转储 = 1"中*ArgumentString*参数时，它调用[ **HwStorFindAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)或[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))例程。
 
 当您查看转储模式中的存储微型端口驱动程序的映像在调试器中时，驱动程序名称将具有前缀"转储\_"。 如果微型端口驱动程序处于休眠模式下，驱动程序名称将包含前缀为"休眠\_"。
 

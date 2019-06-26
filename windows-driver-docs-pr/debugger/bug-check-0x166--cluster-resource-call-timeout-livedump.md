@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0103223a4cc14431db4a0d6aa3714063c4c49467
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.openlocfilehash: f4c54da079d23acd7e3b242c93c9bd93efa753b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367742"
 ---
 # <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>Bug 检查 0x166：群集\_资源\_调用\_超时\_LIVEDUMP
 
 群集\_资源\_调用\_超时\_LIVEDUMP bug 检查的值为 0x00000166。 这指示群集资源调用所花时间超过配置的超时值。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 
@@ -82,7 +82,7 @@ ms.locfileid: "59238648"
 ## <a name="see-also"></a>请参阅
 ----------
 
-[故障排除挂起使用实时转储 （博客）](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
+[故障排除挂起使用实时转储 （博客）](https://techcommunity.microsoft.com/t5/Failover-Clustering/bg-p/FailoverClustering)
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 

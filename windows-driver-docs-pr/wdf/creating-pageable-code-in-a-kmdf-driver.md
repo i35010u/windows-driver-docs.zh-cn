@@ -7,12 +7,12 @@ keywords:
 - KMDF WDK，可分页的驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0984215e80be19dca7079e6c595cbf25c04bbca9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cc4b4be6d98f53cfd2042b7475aadf1d6843087
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382368"
 ---
 # <a name="creating-pageable-code-in-a-kmdf-driver"></a>在 KMDF 驱动程序中创建可分页的代码
 
@@ -23,11 +23,11 @@ ms.locfileid: "63392697"
 
 1.  识别驱动程序中的可分页部分。
 
-    可分页部分未加载到内存中，直到需要它们。 有关如何在一个驱动程序中创建可分页部分的信息，请参阅[使驱动程序可分页](https://msdn.microsoft.com/library/windows/hardware/ff554346)。
+    可分页部分未加载到内存中，直到需要它们。 有关如何在一个驱动程序中创建可分页部分的信息，请参阅[使驱动程序可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)。
 
 2.  请确保分页驱动程序代码不会影响计算机的功能快速唤醒从低功耗状态。
 
-    驱动程序提供的所有设备对象的回调函数都调用在 IRQL = 被动\_级别，这样就可以提高其代码的可分页 (如中所述[使驱动程序可分页](https://msdn.microsoft.com/library/windows/hardware/ff554346))。
+    驱动程序提供的所有设备对象的回调函数都调用在 IRQL = 被动\_级别，这样就可以提高其代码的可分页 (如中所述[使驱动程序可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable))。
 
     但是，不应造成会回调函数的代码可分页，如果设备离开低功耗状态，并返回到其工作 (D0) 状态时，框架将调用的回调函数。
 
@@ -37,9 +37,9 @@ ms.locfileid: "63392697"
 
 3.  确定您的驱动程序需要的驱动程序，例如文件、 注册表中，外部的可分页数据的访问权限还是 power 进行转换时分页池。
 
-    有关如何启用和禁用的驱动程序能够访问 power 转换期间的可分页数据的信息，请参阅[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)并[ **WdfDeviceInitSetPowerNotPageable**](https://msdn.microsoft.com/library/windows/hardware/ff546147)。
+    有关如何启用和禁用的驱动程序能够访问 power 转换期间的可分页数据的信息，请参阅[ **WdfDeviceInitSetPowerPageable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpageable)并[ **WdfDeviceInitSetPowerNotPageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowernotpageable)。
 
-    有关如何确定您的驱动程序何时在分页状态的信息，请参阅[ **WdfDevStateIsNP**](https://msdn.microsoft.com/library/windows/hardware/ff546958)。
+    有关如何确定您的驱动程序何时在分页状态的信息，请参阅[ **WdfDevStateIsNP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevstateisnp)。
 
  
 

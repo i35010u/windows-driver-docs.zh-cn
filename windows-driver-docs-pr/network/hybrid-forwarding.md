@@ -4,12 +4,12 @@ description: 本部分介绍 HYPER-V 可扩展交换机使用的混合转发
 ms.assetid: 135CA734-1C92-4EEA-81DC-96A6A68ABBE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6739599d1f22dffadb2906c10a3353fc29a37c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4a3b1d2f49e6d3ec2e4717ffe2085e74eb66b68
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322126"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383703"
 ---
 # <a name="hybrid-forwarding"></a>混合转发
 
@@ -31,15 +31,15 @@ ms.locfileid: "63322126"
 ## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>通过交换机的 NVGRE 和非 NVGRE 数据包的流
 
 
-在入口数据路径中，捕获和筛选扩展之后、 之前转发扩展，如果数据包是 NVGRE 数据包，可扩展交换机设置**NativeForwardingRequired**标记中[ **NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh598211)数据包的结构。 此结构包含在**NetBufferListInfo**的数据包的成员[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。
+在入口数据路径中，捕获和筛选扩展之后、 之前转发扩展，如果数据包是 NVGRE 数据包，可扩展交换机设置**NativeForwardingRequired**标记中[ **NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)数据包的结构。 此结构包含在**NetBufferListInfo**的数据包的成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
 
-**请注意**   **NetBufferListInfo**的成员[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)通常称为数据包的"带外 (OOB) 数据。"
+**请注意**   **NetBufferListInfo**的成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)通常称为数据包的"带外 (OOB) 数据。"
 
  
 
 如果**NativeForwardingRequired**数据包的 OOB 数据中设置标志，该数据包是 NVGRE 数据包。 如果未设置，该数据包是非 NVGRE 数据包。
 
-扩展均应使用[ **NET\_缓冲区\_列表\_开关\_转发\_详细**](https://msdn.microsoft.com/library/windows/hardware/hh598259)宏，以检查值**NativeForwardingRequired**标志。
+扩展均应使用[ **NET\_缓冲区\_列表\_开关\_转发\_详细**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏，以检查值**NativeForwardingRequired**标志。
 
 NVGRE 和非 NVGRE 数据包将被视为，如下所示：
 
@@ -54,7 +54,7 @@ NVGRE 和非 NVGRE 数据包将被视为，如下所示：
 ## <a name="support-for-third-party-network-virtualization"></a>第三方网络虚拟化支持
 
 
-一个**VirtualSubnetId**可以作为外部的虚拟子网的虚拟机网络适配器端口上配置。 添加了此功能，以启用转发扩展，以提供第三方网络虚拟化解决方案。 传入时，不会设置的 HYPER-V 可扩展交换机**NativeForwardingRequired**中的标志[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)这些数据包的结构。 然后，转发扩展可能修改数据包标头，根据需要，在转发期间。 要修改的数据包必须克隆和他们**ParentNetBufferList**指针设置为原始**NET\_缓冲区\_列表**。 (请参阅[克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。)
+一个**VirtualSubnetId**可以作为外部的虚拟子网的虚拟机网络适配器端口上配置。 添加了此功能，以启用转发扩展，以提供第三方网络虚拟化解决方案。 传入时，不会设置的 HYPER-V 可扩展交换机**NativeForwardingRequired**中的标志[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)这些数据包的结构。 然后，转发扩展可能修改数据包标头，根据需要，在转发期间。 要修改的数据包必须克隆和他们**ParentNetBufferList**指针设置为原始**NET\_缓冲区\_列表**。 (请参阅[克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。)
 
 ## <a name="related-topics"></a>相关主题
 
@@ -67,9 +67,9 @@ NVGRE 和非 NVGRE 数据包将被视为，如下所示：
 
 [通过可扩展交换机数据路径的数据包流](packet-flow-through-the-extensible-switch-data-path.md)
 
-[**NET\_缓冲区\_列表\_交换机\_转发\_详细信息**](https://msdn.microsoft.com/library/windows/hardware/hh598259)
+[**NET\_缓冲区\_列表\_交换机\_转发\_详细信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)
 
-[**NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh598211)
+[**NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)
 
  
 

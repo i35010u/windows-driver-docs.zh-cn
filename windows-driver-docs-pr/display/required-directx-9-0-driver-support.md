@@ -7,12 +7,12 @@ keywords:
 - DirectX 9.0 驱动程序支持 WDK
 ms.date: 11/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b97afe7f85863a658838384ef0a98071b513597a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: eeb8066d1e179b29f59581fc1670b4e3b721964e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533020"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376591"
 ---
 # <a name="required-directx-90-driver-support"></a>所需的 DirectX 9.0 驱动程序支持
 
@@ -40,8 +40,8 @@ ms.locfileid: "56533020"
 
 -   通过返回请求时的 D3DCAPS9 结构报告其设备的功能。 该驱动程序在响应中返回 D3DCAPS9 结构**GetDriverInfo2**请求使用 D3DGDI2\_类型\_GETD3DCAPS9 值类似于如何返回 D3DCAPS8 结构，如中所述[报告 DirectX 8.0 样式 Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)。 此请求的支持中所述[支持 GetDriverInfo2](supporting-getdriverinfo2.md)。 D3DCAPS9 包含 DirectX 9.0 和 DirectX 8.0 相关功能。<br/><br/>该驱动程序必须继续报告仅 DirectX 8.0 相关中 D3DCAPS8 DirectX 8.0 运行时进行查询时的功能。
 
--   设置 D3DFORMAT\_OP\_BUMPMAP 标志**dwOperations**的成员[ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)对所有图面上格式结构可以在固定函数或可编程像素管道支持凹凸贴图。
+-   设置 D3DFORMAT\_OP\_BUMPMAP 标志**dwOperations**的成员[ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)对所有图面上格式结构可以在固定函数或可编程像素管道支持凹凸贴图。
 
--   Reporting[对异步查询操作的支持](supporting-asynchronous-query-operations.md)，即使该驱动程序只是响应通过指示不支持任何查询类型。 有关详细信息，请参阅[验证查询类型支持](verifying-support-of-query-types.md)。<br/><br/>异步查询实施两个新的要求[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI。 有关详细信息，请参阅[D3dDrawPrimitives2 DDI 的实施要求](imposing-requirements-on-the-d3ddrawprimitives2-ddi.md)。
+-   Reporting[对异步查询操作的支持](supporting-asynchronous-query-operations.md)，即使该驱动程序只是响应通过指示不支持任何查询类型。 有关详细信息，请参阅[验证查询类型支持](verifying-support-of-query-types.md)。<br/><br/>异步查询实施两个新的要求[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) DDI。 有关详细信息，请参阅[D3dDrawPrimitives2 DDI 的实施要求](imposing-requirements-on-the-d3ddrawprimitives2-ddi.md)。
 
 -   让应用程序执行其他[忙存在队列处理](processing-with-busy-present-queues.md)。

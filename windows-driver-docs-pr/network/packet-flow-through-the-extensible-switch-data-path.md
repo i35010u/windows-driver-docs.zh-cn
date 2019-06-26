@@ -4,12 +4,12 @@ description: 通过可扩展交换机数据路径传输的数据包流
 ms.assetid: 9236CE95-F959-445F-849F-14377EE91D19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e74665598e19624152a1cc72075e5c5a6c57dd53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a8de3599da7c63c18841be8d3c1809d26e693ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376445"
 ---
 # <a name="packet-flow-through-the-extensible-switch-data-path"></a>通过可扩展交换机数据路径传输的数据包流
 
@@ -53,7 +53,7 @@ ms.locfileid: "63363817"
 
 2.  如果数据包，NVGRE 数据包从外部网络适配器中 6.40 NDIS (Windows Server 2012 R2) 及更高版本，设置可扩展交换机**NativeForwardingRequired**中数据包的带外 (OOB) 信息的标志。 有关详细信息，请参阅[混合转发](hybrid-forwarding.md)。
 
-3.  如果数据包到达的流量会出现在虚拟子网在端口上，设置可扩展交换机**VirtualSubnetId**的成员[ **NDIS\_NET\_缓冲区\_列表\_虚拟\_子网\_信息**](https://msdn.microsoft.com/library/windows/hardware/jj614359)数据包的结构。
+3.  如果数据包到达的流量会出现在虚拟子网在端口上，设置可扩展交换机**VirtualSubnetId**的成员[ **NDIS\_NET\_缓冲区\_列表\_虚拟\_子网\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_virtual_subnet_info)数据包的结构。
 
     **请注意**虚拟子网可能是 HNV 子网或第三方虚拟子网。
 
@@ -61,7 +61,7 @@ ms.locfileid: "63363817"
 
 ### <a name="ingress-data-path"></a>入口数据路径
 
-1.  扩展将从传入数据路径中获取一个数据包时其[ *FilterSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff549966)调用函数。 该扩展将数据包转发到基础扩展的入口数据路径上通过调用[ **NdisFSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff562616)。 筛选和转发扩展还可以将数据包从删除的入口数据路径通过调用[ **NdisFSendNetBufferListsComplete**](https://msdn.microsoft.com/library/windows/hardware/ff562618)。
+1.  扩展将从传入数据路径中获取一个数据包时其[ *FilterSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists)调用函数。 该扩展将数据包转发到基础扩展的入口数据路径上通过调用[ **NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)。 筛选和转发扩展还可以将数据包从删除的入口数据路径通过调用[ **NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)。
 
 2.  当捕获扩展获得的入口数据路径上的数据包时，它们可以检查数据包数据。 但是，捕获扩展必须完成的入口数据路径上的数据包的发送请求。 这些扩展必须始终将数据包转发到可扩展交换机驱动程序堆栈中的基础扩展。
 
@@ -138,11 +138,11 @@ ms.locfileid: "63363817"
 
 ### <a name="egress-data-path"></a>出口数据路径
 
-1.  扩展将从出口数据路径中获取一个数据包时其[ *FilterReceiveNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff549960)调用函数。 该扩展将数据包转发到通过调用过量的出口数据路径上的扩展[ **NdisFIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff561820)。 筛选和转发扩展还可以将数据包从删除出口数据路径通过调用[ **NdisFReturnNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff562613)。
+1.  扩展将从出口数据路径中获取一个数据包时其[ *FilterReceiveNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_receive_net_buffer_lists)调用函数。 该扩展将数据包转发到通过调用过量的出口数据路径上的扩展[ **NdisFIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatereceivenetbufferlists)。 筛选和转发扩展还可以将数据包从删除出口数据路径通过调用[ **NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreturnnetbufferlists)。
 
 2.  当转发扩展获得出口数据路径上的数据包时，它可以检查 OOB 数据中的数据包的目标端口信息。
 
-    **请注意**扩展插件中获取此信息从 OOB 数据，通过调用[ *GetNetBufferListDestinations*](https://msdn.microsoft.com/library/windows/hardware/hh598157)。
+    **请注意**扩展插件中获取此信息从 OOB 数据，通过调用[ *GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)。
 
 
 
@@ -158,10 +158,10 @@ ms.locfileid: "63363817"
 
     有关详细信息，请参阅[克隆或数据包流量](cloning-or-duplicating-packet-traffic.md)。
 
-5.  当捕获扩展获得出口数据路径上的数据包时，它们可以检查数据包数据。 但是，如果需要发起到远程监视应用程序到报表交通状况的顺序的数据包捕获扩展，它必须发起此数据包流量通过调用[ **NdisFSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff562616)以启动发送操作的入口数据路径上。
+5.  当捕获扩展获得出口数据路径上的数据包时，它们可以检查数据包数据。 但是，如果需要发起到远程监视应用程序到报表交通状况的顺序的数据包捕获扩展，它必须发起此数据包流量通过调用[ **NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)以启动发送操作的入口数据路径上。
 
 6.  当数据包到达边缘基础协议的可扩展交换机时，可扩展交换机接口将转发到指定的目标的所有端口的数据包。
 
-7.  一旦已转发的数据包，接口将完成数据包通过按相反的顺序相同的路径。 首先，接口调用的扩展[ *FilterReturnNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff549964)函数来完成出口数据路径上转发的数据包。 然后，该接口调用的扩展[ *FilterSendNetBufferListsComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff549967)函数来完成入口数据路径上转发的数据包。
+7.  一旦已转发的数据包，接口将完成数据包通过按相反的顺序相同的路径。 首先，接口调用的扩展[ *FilterReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_return_net_buffer_lists)函数来完成出口数据路径上转发的数据包。 然后，该接口调用的扩展[ *FilterSendNetBufferListsComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists_complete)函数来完成入口数据路径上转发的数据包。
 
     出口和入口数据路径上完成数据包时，该扩展不执行任何必要的数据包的清理和后期处理功能，可能需要。

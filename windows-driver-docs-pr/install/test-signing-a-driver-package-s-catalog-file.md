@@ -4,17 +4,17 @@ description: 对驱动程序包的目录文件进行测试签名
 ms.assetid: 8cc54f57-bac3-45a1-b780-48626943b446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b4fee78c3552591c2c88c0c3d7d54ebbafc6f8
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 8ff416c6bdd9a774846d0166876ab723457e8a7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380993"
 ---
 # <a name="test-signing-a-driver-packages-catalog-file"></a>对驱动程序包的目录文件进行测试签名
 
 
-之后[编录文件](catalog-files.md)有关[驱动程序包](driver-packages.md)创建或更新目录文件可以通过签名[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)。 签名之后，目录文件中存储的数字签名会失效，如果驱动程序包的任何组件进行了修改。
+之后[编录文件](catalog-files.md)有关[驱动程序包](driver-packages.md)创建或更新目录文件可以通过签名[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)。 签名之后，目录文件中存储的数字签名会失效，如果驱动程序包的任何组件进行了修改。
 
 当进行数字签名目录文件，SignTool 将保存编录文件中的数字签名。 SignTool 不更改驱动程序包的组件。 但是，由于目录文件包含的驱动程序包的组件的哈希的值，目录文件中的数字签名被维护，只要组件哈希处理为相同的值。
 
@@ -46,14 +46,14 @@ Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://t
 
 -   **/N**选项指定的证书名称 (*Contoso.com(Test))* 安装指定的证书存储区中。
 
--   **/T**选项指定 TSA 的 URL (*http://timestamp.verisign.com/scripts/timstamp.dll*) 这将时间戳的数字签名。
+-   **/T**选项指定 TSA 的 URL ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) 这将时间戳的数字签名。
     **重要**  泄露密钥吊销签名者的代码签名的私钥的情况下包括时间戳提供所需的信息。
 
      
 
 -   *tstamd64.cat*指定将对其进行数字签名的编录文件的名称。
 
-有关 SignTool 及其命令行参数的详细信息，请参阅[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)。
+有关 SignTool 及其命令行参数的详细信息，请参阅[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)。
 
 详细了解测试签名驱动程序包的目录文件，请参阅[测试签名目录文件](test-signing-a-catalog-file.md)。
 

@@ -13,12 +13,12 @@ keywords:
 - 未对齐的固定精度数据类型
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384f999800faef2e74e0252c0fdd3c6100cdd2f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96ede0f9383951c48f9979084767c203f7f6cd8e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326049"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369940"
 ---
 # <a name="avoiding-misalignment-of-fixed-precision-data-types"></a>避免固定精度数据类型不对齐
 
@@ -38,7 +38,7 @@ ms.locfileid: "63326049"
 
 ### <a name="how-to-fix-the-problem"></a>如何解决此问题
 
-在以下示例中，IOCTL 是一种方法\_既不 IOCTL，因此**Irp-&gt;UserBuffer**指针传递到内核模式驱动程序的用户模式应用程序直接从。 Ioctl 和 FSCTLs 中使用的缓冲区上不执行任何验证。 因此调用[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)或[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)是必需的才能安全地取消引用缓冲区指针。
+在以下示例中，IOCTL 是一种方法\_既不 IOCTL，因此**Irp-&gt;UserBuffer**指针传递到内核模式驱动程序的用户模式应用程序直接从。 Ioctl 和 FSCTLs 中使用的缓冲区上不执行任何验证。 因此调用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)或[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)是必需的才能安全地取消引用缓冲区指针。
 
 假设 32 位应用程序已通过有效的值**Irp-&gt;UserBuffer**，大\_指向整数结构**p-&gt;DeviceTime**将在 4 字节边界上对齐。 **ProbeForRead**检查传入的值针对这种调整其*对齐*参数，在这种情况下即**类型\_对齐**(大\_整数)。 在 x86 平台，则此宏表达式返回 4 （字节）。 但是，在基于 Itanium 的计算机，它返回 8，导致**ProbeForRead**引发状态\_数据类型\_不对齐异常。
 
@@ -139,7 +139,7 @@ typedef struct _IOCTL_PARAMETERS3 {
             COUNT_FUNCTION, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-等方法\_既不 IOCTL 和 FSCTL 缓冲区指针前面所述，直接从用户模式应用程序到内核模式驱动程序还传递指针嵌入在缓冲 I/O 请求。 这些指针上不执行任何验证。 因此调用[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)或[ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)中括起来，**试用 / 除外**块中，是嵌入式的指针可以为安全地取消引用之前，需要。
+等方法\_既不 IOCTL 和 FSCTL 缓冲区指针前面所述，直接从用户模式应用程序到内核模式驱动程序还传递指针嵌入在缓冲 I/O 请求。 这些指针上不执行任何验证。 因此调用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)或[ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)中括起来，**试用 / 除外**块中，是嵌入式的指针可以为安全地取消引用之前，需要。
 
 如前面的示例，假设 32 位应用程序已为传递有效的值中所示**pDeviceCount**，大型\_指向整数结构**pDeviceCount**将 4-上对齐字节边界。 **ProbeForRead**并**ProbeForWrite**检查此对齐方式的值*对齐*参数，在这种情况下即类型\_对齐方式 (大\_整数）。 在 x86 平台，则此宏表达式返回 4 （字节）。 但是，在基于 Itanium 的计算机，它返回 8，导致**ProbeForRead**或**ProbeForWrite**引发状态\_数据类型\_不对齐异常。
 

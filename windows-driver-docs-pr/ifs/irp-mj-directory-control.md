@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7c7212c67a0f41bce4080445b77bb672a349d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfeba975abf3b203a0fdcd590c9cf82578a3459e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379703"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384834"
 ---
 # <a name="irpmjdirectorycontrol"></a>IRP\_MJ\_DIRECTORY\_控件
 
@@ -72,13 +72,13 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 ## <a name="parameters"></a>Parameters
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理目录控制请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理目录控制请求的 IRP 堆栈位置中设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象指针。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-指向[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)接收最终完成状态以及有关请求的操作信息的结构。
+指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。
 
 <a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*  
 指向接收内容的目录的请求的有关的调用方提供输出缓冲区的指针。
@@ -157,7 +157,7 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 -   IRP\_MN\_查询\_目录
 
 <a href="" id="irpsp--parameters-notifydirectory-completionfilter"></a>*IrpSp-&gt;Parameters.NotifyDirectory.CompletionFilter*  
-有关详细信息，请参阅的说明*CompletionFilter*参数[ **FsRtlNotifyFullChangeDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff547026)。
+有关详细信息，请参阅的说明*CompletionFilter*参数[ **FsRtlNotifyFullChangeDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)。
 
 <a href="" id="irpsp--parameters-notifydirectory-length"></a>*IrpSp-&gt;Parameters.NotifyDirectory.Length*  
 指向缓冲区的长度以字节为单位*Irp-&gt;UserBuffer*。
@@ -182,31 +182,31 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>FileBothDirectoryInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540235" data-raw-source="[&lt;strong&gt;FILE_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540235)"> <strong>FILE_BOTH_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_both_dir_information" data-raw-source="[&lt;strong&gt;FILE_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_both_dir_information)"> <strong>FILE_BOTH_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileDirectoryInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540248" data-raw-source="[&lt;strong&gt;FILE_DIRECTORY_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540248)"> <strong>FILE_DIRECTORY_INFORMATION</strong> </a>为每个文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_directory_information" data-raw-source="[&lt;strong&gt;FILE_DIRECTORY_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_directory_information)"> <strong>FILE_DIRECTORY_INFORMATION</strong> </a>为每个文件的结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFullDirectoryInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540289" data-raw-source="[&lt;strong&gt;FILE_FULL_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540289)"> <strong>FILE_FULL_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_full_dir_information" data-raw-source="[&lt;strong&gt;FILE_FULL_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_full_dir_information)"> <strong>FILE_FULL_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileIdBothDirectoryInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540303" data-raw-source="[&lt;strong&gt;FILE_ID_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540303)"> <strong>FILE_ID_BOTH_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_both_dir_information" data-raw-source="[&lt;strong&gt;FILE_ID_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_both_dir_information)"> <strong>FILE_ID_BOTH_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileIdFullDirectoryInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540310" data-raw-source="[&lt;strong&gt;FILE_ID_FULL_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540310)"> <strong>FILE_ID_FULL_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_full_dir_information" data-raw-source="[&lt;strong&gt;FILE_ID_FULL_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_full_dir_information)"> <strong>FILE_ID_FULL_DIR_INFORMATION</strong> </a>为每个文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileNamesInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540329" data-raw-source="[&lt;strong&gt;FILE_NAMES_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540329)"> <strong>FILE_NAMES_INFORMATION</strong> </a>为每个文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_names_information" data-raw-source="[&lt;strong&gt;FILE_NAMES_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_names_information)"> <strong>FILE_NAMES_INFORMATION</strong> </a>为每个文件的结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileObjectIdInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540335" data-raw-source="[&lt;strong&gt;FILE_OBJECTID_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540335)"> <strong>FILE_OBJECTID_INFORMATION</strong> </a>为每个文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_objectid_information" data-raw-source="[&lt;strong&gt;FILE_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_objectid_information)"> <strong>FILE_OBJECTID_INFORMATION</strong> </a>为每个文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileQuotaInformation</strong></p></td>
@@ -214,7 +214,7 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileReparsePointInformation</strong></p></td>
-<td align="left"><p>返回单个<a href="https://msdn.microsoft.com/library/windows/hardware/ff540354" data-raw-source="[&lt;strong&gt;FILE_REPARSE_POINT_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540354)"> <strong>FILE_REPARSE_POINT_INFORMATION</strong> </a>目录结构。</p></td>
+<td align="left"><p>返回单个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_reparse_point_information" data-raw-source="[&lt;strong&gt;FILE_REPARSE_POINT_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_reparse_point_information)"> <strong>FILE_REPARSE_POINT_INFORMATION</strong> </a>目录结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -230,31 +230,31 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 ## <a name="see-also"></a>请参阅
 
 
-[**文件\_两者\_DIR\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540235)
+[**文件\_两者\_DIR\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_both_dir_information)
 
-[**文件\_DIRECTORY\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540248)
+[**文件\_DIRECTORY\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_directory_information)
 
-[**文件\_完整\_DIR\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540289)
+[**文件\_完整\_DIR\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_full_dir_information)
 
-[**文件\_ID\_同时\_DIR\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540303)
+[**文件\_ID\_同时\_DIR\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_both_dir_information)
 
-[**文件\_ID\_完整\_DIR\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540310)
+[**文件\_ID\_完整\_DIR\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_full_dir_information)
 
-[**文件\_名称\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540329)
+[**文件\_名称\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_names_information)
 
-[**文件\_OBJECTID\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540335)
+[**文件\_OBJECTID\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_objectid_information)
 
-[**FILE\_REPARSE\_POINT\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff540354)
+[**FILE\_REPARSE\_POINT\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_reparse_point_information)
 
-[**FsRtlNotifyFullChangeDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff547026)
+[**FsRtlNotifyFullChangeDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)
 
-[**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_查询\_配额**](irp-mj-query-quota.md)
 

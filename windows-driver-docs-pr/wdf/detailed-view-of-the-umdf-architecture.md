@@ -9,12 +9,12 @@ keywords:
 - 体系结构 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb66dd12ef53c0176016e36aa09f3a3850a4f16f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fcb3c1b3c1e97bd588b8d99293f7f33972a0bad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384589"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377455"
 ---
 # <a name="architecture-of-umdf"></a>UMDF 的体系结构
 
@@ -27,7 +27,7 @@ ms.locfileid: "63384589"
 
 ![umdf 组件包括向上和向下发送程序中的设备对象](images/umdfarch4.gif)
 
-若要将 I/O 请求发送到 UMDF 驱动程序，应用程序调用 Win32 文件 I/O 函数，如[ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)， **ReadFileEx**， **CancelIoEx**，或[ **DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)。 时该发送程序收到请求时从客户端应用程序，它将请求发送到相应的驱动程序主机进程。 驱动程序宿主进程然后路由到正确的用户模式设备堆栈顶部的请求。
+若要将 I/O 请求发送到 UMDF 驱动程序，应用程序调用 Win32 文件 I/O 函数，如[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)， **ReadFileEx**， **CancelIoEx**，或[ **DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)。 时该发送程序收到请求时从客户端应用程序，它将请求发送到相应的驱动程序主机进程。 驱动程序宿主进程然后路由到正确的用户模式设备堆栈顶部的请求。
 
 该请求由一个用户模式堆栈中的驱动程序已完成，或者转发回该发送程序的驱动因素之一。 当反射器收到请求时从用户模式驱动程序堆栈时，它将向完成的内核模式堆栈下请求发送。
 

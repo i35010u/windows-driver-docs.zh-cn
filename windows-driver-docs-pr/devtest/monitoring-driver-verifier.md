@@ -8,12 +8,12 @@ keywords:
 - 验证程序实用工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bbabe4408bb041b09946662fb98f70f83f745c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba8de149fa0ca20980b3f7f9963ebae153eef901
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391325"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375947"
 ---
 # <a name="monitoring-driver-verifier"></a>监视驱动程序验证程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "63391325"
 
 验证程序实用工具提供几种方式来监视操作和要验证的驱动程序的驱动程序验证程序。
 
-内核调试器扩展 **！ verifier**还可以使用监视和报告上的驱动程序验证程序的活动相关的统计信息数。 验证图形驱动程序时 **！ gdikdx.verifier**应改为使用扩展。 有关调试器扩展的信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+内核调试器扩展 **！ verifier**还可以使用监视和报告上的驱动程序验证程序的活动相关的统计信息数。 验证图形驱动程序时 **！ gdikdx.verifier**应改为使用扩展。 有关调试器扩展的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 本部分包括：
 

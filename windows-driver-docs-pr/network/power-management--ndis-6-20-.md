@@ -8,12 +8,12 @@ keywords:
 - 电源管理 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 109ecd5c2d88808dc944af465e5f2bf168453388
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c3b6132169ff13adadfe1468f673a1f74da90d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342964"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384529"
 ---
 # <a name="power-management-ndis-620"></a>电源管理 (NDIS 6.20)
 
@@ -37,7 +37,7 @@ ms.locfileid: "63342964"
 -   [LAN 唤醒的的低能耗](low-power-for-wake-on-lan.md)
 -   [在媒体断开连接的低能耗](low-power-on-media-disconnect.md)
 
-**请注意**  从 NDIS 6.30 开始，NDIS 电源管理接口已得到扩展。 有关电源管理的 NDIS 6.30 扩展的详细信息，请在查看此信息[（NDIS 6.30 和更高版本） 的电源管理](https://msdn.microsoft.com/library/windows/hardware/hh440160)。
+**请注意**  从 NDIS 6.30 开始，NDIS 电源管理接口已得到扩展。 有关电源管理的 NDIS 6.30 扩展的详细信息，请在查看此信息[（NDIS 6.30 和更高版本） 的电源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-30-)。
 
  
 

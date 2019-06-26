@@ -4,12 +4,12 @@ description: WIA 项标志和类别的示例用法
 ms.assetid: 8c9f7d85-6c84-4df9-9db3-6554d7eddf93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ca6a4825773e4be9998ee3cef7554b6f012207
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dab70a556e0001eb548dea2477a39febfce77a62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373162"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375045"
 ---
 # <a name="example-usage-of-wia-item-flags-and-categories"></a>WIA 项标志和类别的示例用法
 
@@ -45,9 +45,9 @@ ms.locfileid: "63373162"
 
 在上图中，在左侧的树表示扫描程序项树。 在右侧的批注框包含中 WIA 的类别\_IPA\_项\_必须设置此类设备的 CATEGORY 属性。
 
-由 WIA 和有关每个类别的有效 WIA 项标志的信息定义的所有类别的完整列表，请参阅[ **WIA\_IPA\_项\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff551581)。
+由 WIA 和有关每个类别的有效 WIA 项标志的信息定义的所有类别的完整列表，请参阅[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)。
 
-有关所有 WIA 的完整列表项标记请参阅[ **WIA\_IPA\_项\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff551585)。
+有关所有 WIA 的完整列表项标记请参阅[ **WIA\_IPA\_项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)。
 
 下面的代码示例演示了如何应用程序可以使用 WIA 的组合\_IPA\_项\_标志和 WIA\_IPA\_项\_类别进行分类的属性WIA 项树中发现项 WIA。
 

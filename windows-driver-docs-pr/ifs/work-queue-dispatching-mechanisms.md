@@ -17,12 +17,12 @@ keywords:
 - 指出 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 048e3de725fe96da64cc97e96bf208aa49cc6d5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 586517298b3cefcd9845afb62d0e16712a859141
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322183"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382293"
 ---
 # <a name="work-queue-dispatching-mechanisms"></a>工作队列调度机制
 
@@ -36,7 +36,7 @@ RDBSS 提供了几个在 RDBSS 中实现时使用的调度机制的例程。 网
 
 在每个设备对象的基础上的工作项跟踪的 RDBSS。 这允许 RDBSS 来处理与加载和卸载网络微型-重定向程序关联的争用条件。 这还提供了一种机制中 RDBSS 防止单个网络微型重定向不公平地使用的所有资源。
 
-有哪些调度的工作项是不可避免地存在某些方案。 若要避免频繁的内存分配和释放操作在这些情况下，工作\_队列\_项分配作为另一个数据的一部分。 在其中调度是极少数其他情况下，它物有所值以避免内存分配，除非必需。 RDBSS 工作队列实现为这两个方案中调度和发布工作队列请求的形式提供。 在调度使用的情况下[ **RxDispatchToWorkerThread** ](https://msdn.microsoft.com/library/windows/hardware/ff554398)例程，没有内存的工作\_队列\_需要由调用方分配的项。 用于发布使用[ **RxPostToWorkerThread** ](https://msdn.microsoft.com/library/windows/hardware/ff554620)例程的工作内存\_队列\_需要由调用方分配的项。
+有哪些调度的工作项是不可避免地存在某些方案。 若要避免频繁的内存分配和释放操作在这些情况下，工作\_队列\_项分配作为另一个数据的一部分。 在其中调度是极少数其他情况下，它物有所值以避免内存分配，除非必需。 RDBSS 工作队列实现为这两个方案中调度和发布工作队列请求的形式提供。 在调度使用的情况下[ **RxDispatchToWorkerThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxdispatchtoworkerthread)例程，没有内存的工作\_队列\_需要由调用方分配的项。 用于发布使用[ **RxPostToWorkerThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxposttoworkerthread)例程的工作内存\_队列\_需要由调用方分配的项。
 
 有两种常见情况的工作线程的调度操作：
 
@@ -81,15 +81,15 @@ RDBSS 中的调度机制提供的多个级别的每个处理器进行的工作�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554398" data-raw-source="[&lt;strong&gt;RxDispatchToWorkerThread&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554398)"><strong>RxDispatchToWorkerThread</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxdispatchtoworkerthread" data-raw-source="[&lt;strong&gt;RxDispatchToWorkerThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxdispatchtoworkerthread)"><strong>RxDispatchToWorkerThread</strong></a></p></td>
 <td align="left"><p>此例程调用的工作线程的上下文中的例程。 此例程分配了 WORK_QUEUE_ITEM 的内存。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554620" data-raw-source="[&lt;strong&gt;RxPostToWorkerThread&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554620)"><strong>RxPostToWorkerThread</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxposttoworkerthread" data-raw-source="[&lt;strong&gt;RxPostToWorkerThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxposttoworkerthread)"><strong>RxPostToWorkerThread</strong></a></p></td>
 <td align="left"><p>此例程调用的工作线程的上下文中的例程。 必须由调用方分配 WORK_QUEUE_ITEM 内存。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554734" data-raw-source="[&lt;strong&gt;RxSpinDownMRxDispatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554734)"><strong>RxSpinDownMRxDispatcher</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxspindownmrxdispatcher" data-raw-source="[&lt;strong&gt;RxSpinDownMRxDispatcher&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxspindownmrxdispatcher)"><strong>RxSpinDownMRxDispatcher</strong></a></p></td>
 <td align="left"><p>此例程卸除网络微型重定向的调度程序上下文。</p>
 <p>请注意，此例程仅可在 Windows Server 2003 和 Windows XP 上。</p></td>
 </tr>

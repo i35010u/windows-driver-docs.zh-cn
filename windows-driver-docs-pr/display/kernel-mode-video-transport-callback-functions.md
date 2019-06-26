@@ -8,12 +8,12 @@ keywords:
 - 回调函数 WDK 内核模式视频传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f19634e6823db1d54eb6ff39b1d13e934783d68a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e654c2248c786d03963de02111ce2635cd726175
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372899"
 ---
 # <a name="kernel-mode-video-transport-callback-functions"></a>内核模式视频传输回调函数
 
@@ -36,55 +36,55 @@ ms.locfileid: "63363097"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557409" data-raw-source="[&lt;em&gt;DxBobNextField&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557409)"><em>DxBobNextField</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_bobnextfield" data-raw-source="[&lt;em&gt;DxBobNextField&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_bobnextfield)"><em>DxBobNextField</em></a></p></td>
 <td align="left"><p>Bobs 交错数据的下一个字段。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557413" data-raw-source="[&lt;em&gt;DxEnableIRQ&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557413)"><em>DxEnableIRQ</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_enableirq" data-raw-source="[&lt;em&gt;DxEnableIRQ&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_enableirq)"><em>DxEnableIRQ</em></a></p></td>
 <td align="left"><p>指示应启用或禁用的 Irq 的微型端口驱动程序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557417" data-raw-source="[&lt;em&gt;DxFlipOverlay&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557417)"><em>DxFlipOverlay</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_flipoverlay" data-raw-source="[&lt;em&gt;DxFlipOverlay&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_flipoverlay)"><em>DxFlipOverlay</em></a></p></td>
 <td align="left"><p>翻转在覆盖区。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557420" data-raw-source="[&lt;em&gt;DxFlipVideoPort&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557420)"><em>DxFlipVideoPort</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_flipvideoport" data-raw-source="[&lt;em&gt;DxFlipVideoPort&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_flipvideoport)"><em>DxFlipVideoPort</em></a></p></td>
 <td align="left"><p>翻转的视频端口扩展 (VPE) 对象。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557427" data-raw-source="[&lt;em&gt;DxGetCurrentAutoflip&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557427)"><em>DxGetCurrentAutoflip</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getcurrentautoflip" data-raw-source="[&lt;em&gt;DxGetCurrentAutoflip&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getcurrentautoflip)"><em>DxGetCurrentAutoflip</em></a></p></td>
 <td align="left"><p>确定哪些面正在接收的视频数据，以便进行捕获当前字段。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557428" data-raw-source="[&lt;em&gt;DxGetIRQInfo&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557428)"><em>DxGetIRQInfo</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getirqinfo" data-raw-source="[&lt;em&gt;DxGetIRQInfo&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getirqinfo)"><em>DxGetIRQInfo</em></a></p></td>
 <td align="left"><p>指示该驱动程序管理中断请求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557431" data-raw-source="[&lt;em&gt;DxGetPolarity&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557431)"><em>DxGetPolarity</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getpolarity" data-raw-source="[&lt;em&gt;DxGetPolarity&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getpolarity)"><em>DxGetPolarity</em></a></p></td>
 <td align="left"><p>返回当前由 vpe 数据对象写入的字段的极性 （偶数还是奇数）。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557437" data-raw-source="[&lt;em&gt;DxGetPreviousAutoflip&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557437)"><em>DxGetPreviousAutoflip</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getpreviousautoflip" data-raw-source="[&lt;em&gt;DxGetPreviousAutoflip&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_getpreviousautoflip)"><em>DxGetPreviousAutoflip</em></a></p></td>
 <td align="left"><p>确定在哪一个表面收到上一个视频数据，以便进行捕获的字段。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557438" data-raw-source="[&lt;em&gt;DxGetTransferStatus&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557438)"><em>DxGetTransferStatus</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_gettransferstatus" data-raw-source="[&lt;em&gt;DxGetTransferStatus&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_gettransferstatus)"><em>DxGetTransferStatus</em></a></p></td>
 <td align="left"><p>确定哪些硬件总线 master 已完成。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff562880" data-raw-source="[&lt;em&gt;DxLock&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562880)"><em>DxLock</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_lock" data-raw-source="[&lt;em&gt;DxLock&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_lock)"><em>DxLock</em></a></p></td>
 <td align="left"><p>锁定帧缓冲区，以便对其进行访问。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff562882" data-raw-source="[&lt;em&gt;DxSetState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562882)"><em>DxSetState</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_setstate" data-raw-source="[&lt;em&gt;DxSetState&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_setstate)"><em>DxSetState</em></a></p></td>
 <td align="left"><p>从 bob 模式将模式中，切换，反之亦然。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff562885" data-raw-source="[&lt;em&gt;DxSkipNextField&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562885)"><em>DxSkipNextField</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_skipnextfield" data-raw-source="[&lt;em&gt;DxSkipNextField&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_skipnextfield)"><em>DxSkipNextField</em></a></p></td>
 <td align="left"><p>将跳过或重新启用下一个字段。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff562887" data-raw-source="[&lt;em&gt;DxTransfer&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562887)"><em>DxTransfer</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_transfer" data-raw-source="[&lt;em&gt;DxTransfer&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/dxmini/nc-dxmini-pdx_transfer)"><em>DxTransfer</em></a></p></td>
 <td align="left"><p>总线母版将数据从一个面到内存描述符列表 (MDL) 中指定的缓冲区。</p></td>
 </tr>
 </tbody>

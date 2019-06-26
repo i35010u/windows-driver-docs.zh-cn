@@ -8,12 +8,12 @@ keywords:
 - power Irp WDK 内核，而不是 PoCallDriver IoCallDriver
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed224827b53ea3b1eccd92fb42753c02081981ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41e52ccc5b429369008cdf863762b892a4d8fd03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338614"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385267"
 ---
 # <a name="calling-iocalldriver-versus-calling-pocalldriver"></a>与调用 PoCallDriver 调用 IoCallDriver
 
@@ -21,9 +21,9 @@ ms.locfileid: "63338614"
 
 
 
-从 Windows Vista 开始，驱动程序应调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)而不是[ **PoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff559654)、 要传递给 power Irp下一步较低的驱动程序。 在 Windows Server 2003、 Windows XP 和 Windows 2000 中，驱动程序必须调用**PoCallDriver**，而非**IoCallDriver**，以将 power Irp 传递给下一个较低驱动程序。 但请注意，使用相同的代码运行在 Windows Vista 和早期 Windows 版本中中的驱动程序必须调用**PoCallDriver**，而非**IoCallDriver**。
+从 Windows Vista 开始，驱动程序应调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)而不是[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)、 要传递给 power Irp下一步较低的驱动程序。 在 Windows Server 2003、 Windows XP 和 Windows 2000 中，驱动程序必须调用**PoCallDriver**，而非**IoCallDriver**，以将 power Irp 传递给下一个较低驱动程序。 但请注意，使用相同的代码运行在 Windows Vista 和早期 Windows 版本中中的驱动程序必须调用**PoCallDriver**，而非**IoCallDriver**。
 
-从 Windows Vista 开始[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)并**IoCallDriver**确保电源管理器将在整个系统的电源 Irp 正确同步。 在 Windows Server 2003、 Windows XP 和 Windows 2000 **PoRequestPowerIrp**， **PoCallDriver**，并[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)，请确保电源管理器将在整个系统的电源 Irp 正确同步。
+从 Windows Vista 开始[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)并**IoCallDriver**确保电源管理器将在整个系统的电源 Irp 正确同步。 在 Windows Server 2003、 Windows XP 和 Windows 2000 **PoRequestPowerIrp**， **PoCallDriver**，并[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)，请确保电源管理器将在整个系统的电源 Irp 正确同步。
 
 系统活动的电源 Irp 数限制，如下所示：
 

@@ -3,12 +3,12 @@ Description: 本主题介绍适用于不具有其自己的 USB 设备类规范�
 title: Microsoft 定义的 USB 驱动程序框架
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 36da55865d5fd59933918286bd6500e4cf658bb0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 973c270761a28dcff9d6de64b93f24623041aa43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383136"
 ---
 # <a name="microsoft-defined-usb-driver-frameworks"></a>Microsoft 定义的 USB 驱动程序框架
 
@@ -21,7 +21,7 @@ Microsoft 提供的用于某些类型不具有其自己的 USB 设备类规范�
 
 -   USB 生物识别设备
 
-    Microsoft 通过提供 Windows 生物识别框架来支持 USB 生物识别设备 （指纹读取器）。 有关详细信息请参阅[生物识别框架概述](https://msdn.microsoft.com/library/windows/desktop/dd560897.aspx)。
+    Microsoft 通过提供 Windows 生物识别框架来支持 USB 生物识别设备 （指纹读取器）。 有关详细信息请参阅[生物识别框架概述](https://docs.microsoft.com/windows/desktop/SecBioMet/biometric-framework-overview)。
 
 ## <a name="related-topics"></a>相关主题
 [Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)  

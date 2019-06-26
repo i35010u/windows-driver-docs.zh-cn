@@ -11,12 +11,12 @@ keywords:
 - 模板 WDK DirectInput
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4e1204fcafa9c1bc61f0a41ca6ee26c7c26661d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f02d5883325fcda76b9cef2e2e9d803e1d6fbe2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390336"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375759"
 ---
 # <a name="creating-your-property-sheet"></a>创建属性表
 
@@ -40,7 +40,7 @@ ms.locfileid: "63390336"
     > [!NOTE]
     > 您可能想要编写为一个窗口，将启动作为独立的对话框页面属性表的测试容器。 此时，你无法将可能具有任何现有控件面板转换为 DirectInput 控制面板。
 
-3. 填充[ **DIGCPAGEINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff538484)并[ **DIGCSHEETINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff538492)结构并的实现中返回该信息[**IDIGameCntrlPropSheet::GetPageInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff540026)并[ **IDIGameCntrlPropSheet::GetSheetInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff540029)分别。
+3. 填充[ **DIGCPAGEINFO** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff538484(v=vs.85))并[ **DIGCSHEETINFO** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff538492(v=vs.85))结构并的实现中返回该信息[**IDIGameCntrlPropSheet::GetPageInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540026(v=vs.85))并[ **IDIGameCntrlPropSheet::GetSheetInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540029(v=vs.85))分别。
 
 通过属性表页的新一代**属性表**函数。 此函数的所有行为是都所固有的属性表页。 例如，属性表页反映了其接收的最大对话框模板。 如果用户创建一个页面，并且其关联的模板非常小，这反映了直接对生成的对话框中的大小。
 

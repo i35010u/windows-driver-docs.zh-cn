@@ -8,12 +8,12 @@ keywords:
 - AYUV alpha 值混合处理面 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f27309f40e7e9c1a9f178714e0ef257862ca5bf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d40e42bc29a4b3f64cda562e769f3f480ed3fe01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347599"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380380"
 ---
 # <a name="loading-an-ayuv-alpha-blending-surface"></a>加载 AYUV Alpha 混合图面
 
@@ -21,13 +21,13 @@ ms.locfileid: "63347599"
 ## <span id="ddk_loading_an_ayuv_alpha_blending_surface_gg"></span><span id="DDK_LOADING_AN_AYUV_ALPHA_BLENDING_SURFACE_GG"></span>
 
 
-AYUV alpha 值混合处理的图面定义为数组的样本的 32 位中的每个[ **DXVA\_AYUVsample2** ](https://msdn.microsoft.com/library/windows/hardware/ff563116)结构。 用于混合包含解码后的视频图片的图形，可以作为源使用此图面。
+AYUV alpha 值混合处理的图面定义为数组的样本的 32 位中的每个[ **DXVA\_AYUVsample2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_ayuvsample2)结构。 用于混合包含解码后的视频图片的图形，可以作为源使用此图面。
 
 指定的宽度和高度 AYUV alpha 值混合处理图面中关联[缓冲区描述列表](buffer-description-list.md)。
 
 ### <a name="span-idloadinga16-entryyuvpalettespanspan-idloadinga16-entryyuvpalettespanspan-idloadinga16-entryyuvpalettespanloading-a-16-entry-yuv-palette"></a><span id="Loading_a_16-Entry_YUV_Palette"></span><span id="loading_a_16-entry_yuv_palette"></span><span id="LOADING_A_16-ENTRY_YUV_PALETTE"></span>正在加载 16 项 YUV 调色板
 
-16 项 YUV 调色板定义为 16 的数组[ **DXVA\_AYUVsample2** ](https://msdn.microsoft.com/library/windows/hardware/ff563116)结构。 此调色板一起 IA44 或 AI44 alpha 值混合处理的面。 调色板数组发送到在 AYUV alpha 值混合处理示例缓冲区中的加速器 （缓冲区类型 8）。 在这种情况下， **bSampleAlpha8** DXVA 成员\_AYUVsample2 结构的每个示例没有意义，并且必须为零。
+16 项 YUV 调色板定义为 16 的数组[ **DXVA\_AYUVsample2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_ayuvsample2)结构。 此调色板一起 IA44 或 AI44 alpha 值混合处理的面。 调色板数组发送到在 AYUV alpha 值混合处理示例缓冲区中的加速器 （缓冲区类型 8）。 在这种情况下， **bSampleAlpha8** DXVA 成员\_AYUVsample2 结构的每个示例没有意义，并且必须为零。
 
 YUV 调色板可以用于创建混合包含解码后的视频图片的图形的源。 此面板可用于创建以及图形的源
 
@@ -37,7 +37,7 @@ YUV 调色板可以用于创建混合包含解码后的视频图片的图形的�
 
 ### <a name="span-idloadinganayuvsurfacespanspan-idloadinganayuvsurfacespanspan-idloadinganayuvsurfacespanloading-an-ayuv-surface"></a><span id="Loading_an_AYUV_Surface"></span><span id="loading_an_ayuv_surface"></span><span id="LOADING_AN_AYUV_SURFACE"></span>正在加载 AYUV 面
 
-而不被加载只是 16 项调色板，只需直接作为 AYUV 映像指定的图形的内容加载一整个图像的图形。 在这种情况下，AYUV 图发送到在 AYUV alpha 值混合处理示例缓冲区中的加速器 （缓冲区类型 8） 中指定的那样[ **DXVA\_BufferDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff563122)结构。
+而不被加载只是 16 项调色板，只需直接作为 AYUV 映像指定的图形的内容加载一整个图像的图形。 在这种情况下，AYUV 图发送到在 AYUV alpha 值混合处理示例缓冲区中的加速器 （缓冲区类型 8） 中指定的那样[ **DXVA\_BufferDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_bufferdescription)结构。
 
 ### <a name="span-idloadingania44ai44alpha-blendingsurfacespanspan-idloadingania44ai44alpha-blendingsurfacespanspan-idloadingania44ai44alpha-blendingsurfacespanloading-an-ia44ai44-alpha-blending-surface"></a><span id="Loading_an_IA44_AI44_Alpha-Blending_Surface"></span><span id="loading_an_ia44_ai44_alpha-blending_surface"></span><span id="LOADING_AN_IA44_AI44_ALPHA-BLENDING_SURFACE"></span>正在加载 IA44/AI44 Alpha 值混合处理的图面
 

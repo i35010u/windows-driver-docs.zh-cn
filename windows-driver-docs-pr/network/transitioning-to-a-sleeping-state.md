@@ -12,12 +12,12 @@ keywords:
 - 转换电源状态 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d907d88524f9e1296ab817e7f8eae494e3175acd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfae6ebc02ecbceaed8cf145edd3c0e1a41f6173
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358389"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379744"
 ---
 # <a name="transitioning-to-a-sleeping-state"></a>转换到睡眠状态
 
@@ -25,7 +25,7 @@ ms.locfileid: "63358389"
 
 
 
-NDIS 如果微型端口驱动程序支持唤醒事件时，将驱动程序发送[OID\_PNP\_启用\_唤醒\_向上](https://msdn.microsoft.com/library/windows/hardware/ff569775)之前发送的请求[OID\_PNP\_设置\_电源](https://msdn.microsoft.com/library/windows/hardware/ff569780)请求。 有关详细信息，请参阅[启用唤醒事件](enabling-wake-up-events.md)。 微型端口驱动程序不得失败 OID\_PNP\_设置\_POWER 请求。
+NDIS 如果微型端口驱动程序支持唤醒事件时，将驱动程序发送[OID\_PNP\_启用\_唤醒\_向上](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)之前发送的请求[OID\_PNP\_设置\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)请求。 有关详细信息，请参阅[启用唤醒事件](enabling-wake-up-events.md)。 微型端口驱动程序不得失败 OID\_PNP\_设置\_POWER 请求。
 
 然后再返回 NDIS\_状态\_SUCCESS 作为响应为一个 OID\_PNP\_设置\_POWER 请求，微型端口驱动程序必须：
 

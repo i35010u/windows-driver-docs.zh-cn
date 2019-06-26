@@ -8,12 +8,12 @@ keywords:
 - 设置 power Irp WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36e2048aac516b4420188cbbd383317396f67956
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa8055a2c17d064a0875add70055671a956ecb9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350014"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383322"
 ---
 # <a name="handling-irpmnsetpower-for-system-power-states"></a>处理 IRP\_MN\_设置\_的电源可用于系统的电源状态
 
@@ -21,11 +21,11 @@ ms.locfileid: "63350014"
 
 
 
-电源管理器发送 power 指定少量的代码的 IRP [ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)和出于以下原因之一的系统电源状态：
+电源管理器发送 power 指定少量的代码的 IRP [ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)和出于以下原因之一的系统电源状态：
 
 -   若要更改系统电源状态。
 
--   若要在故障后重申的当前电源状态[ **IRP\_MN\_查询\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)请求。
+-   若要在故障后重申的当前电源状态[ **IRP\_MN\_查询\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)请求。
 
 通过 I/O 管理器中，电源管理器将 IRP 发送到设备堆栈在每个 PnP 设备节点中的顶部驱动程序。 IRP 通知正确的系统电源状态的堆栈中的所有驱动程序。
 

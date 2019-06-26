@@ -4,12 +4,12 @@ description: MITT 软件程序包中的电容式触摸测试需要 MCATT （Micr
 ms.assetid: 86E4D489-7DC3-4765-85BE-3706B3CA6C0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e98f80fa90859a2ca62803a0611608c4d0d95c2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c42687c2162a9457088ea80d6261111a2bb0532
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348151"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369595"
 ---
 # <a name="capacitive-touch-tests-in-mitt"></a>MITT 中的电容式触控测试
 
@@ -33,11 +33,11 @@ MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容�
 ## <a name="before-you-begin"></a>开始之前...
 
 
--   获取 MITT 看板。 请参阅[购买硬件使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919811)。
+-   获取 MITT 看板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
 -   获取触摸模拟器板和带外电缆连接到适配器。
 -   获取有 40 pin 适配器以 MITT 板连接到触摸模拟器板 MCATT 扩展板。
--   [下载 MITT 软件包](https://msdn.microsoft.com/library/windows/hardware/dn919810)。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919779)。
+-   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。
+-   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
 
 ## <a name="hardware-setup"></a>硬件安装
 
@@ -114,10 +114,10 @@ MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容�
 'b0000000000000000000000000000000000000000
 ```
 
-在前面的示例中，第一行设置到 0x00028480，模式速率或每行 164,992 微秒为单位。 其余行用于指示已连接到地面板和浮动的面板。 有 40 面板，因此每一行都是 40 位长时间使用位 39 左侧和右侧的行和第 0 位行右侧。 此模式以通过按下上填充 26、 27、 38 和 39，通过设置这些位为"1"，然后将按从看板的左侧移到的看板的创建模式使用示例模式作为起始点的权限。 可以创建并使用编辑 MCATT 模式文件[MCATT 模式编辑器](https://msdn.microsoft.com/library/windows/hardware/dn919809)。
+在前面的示例中，第一行设置到 0x00028480，模式速率或每行 164,992 微秒为单位。 其余行用于指示已连接到地面板和浮动的面板。 有 40 面板，因此每一行都是 40 位长时间使用位 39 左侧和右侧的行和第 0 位行右侧。 此模式以通过按下上填充 26、 27、 38 和 39，通过设置这些位为"1"，然后将按从看板的左侧移到的看板的创建模式使用示例模式作为起始点的权限。 可以创建并使用编辑 MCATT 模式文件[MCATT 模式编辑器](https://docs.microsoft.com/previous-versions/dn919809(v=vs.85))。
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0f271bee889a5d502c1dfd231848248b8d045dba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb6e6fa06c220b001f993fa8b4416e2afa27d77e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384314"
 ---
 # <a name="smgetlunstatistics-function"></a>SM\_GetLUNStatistics 函数
 
@@ -47,7 +47,7 @@ void SM_GetLUNStatistics(
 操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序返回此信息在 SM HBAStatus 成员\_GetLUNStatistics\_结构。
 
 *ProtocolStatistics*   
-类型的结构[ **MS\_SMHBA\_PROTOCOLSTATISTICS** ](https://msdn.microsoft.com/library/windows/hardware/ff563172)用于报表的端口上的协议流量统计信息。
+类型的结构[ **MS\_SMHBA\_PROTOCOLSTATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_protocolstatistics)用于报表的端口上的协议流量统计信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -84,9 +84,9 @@ void SM_GetLUNStatistics(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_GetLUNStatistics\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566238)
+[**SM\_GetLUNStatistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_in)
 
-[**SM\_GetLUNStatistics\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566241)
+[**SM\_GetLUNStatistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_out)
 
  
 

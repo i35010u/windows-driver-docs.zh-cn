@@ -4,12 +4,12 @@ description: 本主题提供 Toaster 示例，其中包含出于学习目的而�
 ms.assetid: 5977AC09-AB53-4CA4-A35A-0E5A1FEE936F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23706c4a4736d6911f3369ba062cbb1ceae8fe92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 709574fd3e7497b33d9132ef61c15c9d2ccf637a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325161"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376214"
 ---
 # <a name="sample-toaster-driver-programming-tour"></a>示例 Toaster 驱动程序编程指南
 
@@ -49,15 +49,15 @@ KMDF 总线驱动程序服务 toaster 总线控制器、 枚举已接通的设�
 
   若要枚举子，总线驱动程序：
 
-  1.  调用[ **WdfPdoInitAllocate** ](https://msdn.microsoft.com/library/windows/hardware/ff548786)若要获取[WDFDEVICE\_INIT](https://msdn.microsoft.com/library/windows/hardware/ff546951)结构。
+  1.  调用[ **WdfPdoInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)若要获取[WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)结构。
 
-  2.  初始化[WDFDEVICE\_INIT](https://msdn.microsoft.com/library/windows/hardware/ff546951)结构。
+  2.  初始化[WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)结构。
 
-  3.  调用[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)创建一个表示 PDO framework 设备对象。
+  3.  调用[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)创建一个表示 PDO framework 设备对象。
 
-  在调用[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)，驱动程序调用[ **WdfFdoAddStaticChild** ](https://msdn.microsoft.com/library/windows/hardware/ff547225)将子设备添加到子列表。
+  在调用[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)，驱动程序调用[ **WdfFdoAddStaticChild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoaddstaticchild)将子设备添加到子列表。
 
-  因为驱动程序应仅使用静态子列出的预先确定的设备配置并永久性的驱动程序不会通常修改静态子列表创建它后。 如果该驱动程序确定子设备变得不可访问，该驱动程序可以调用[ **WdfPdoMarkMissing**](https://msdn.microsoft.com/library/windows/hardware/ff548809)。 (如果子设备可访问，但无响应，该驱动程序应设置**失败**的成员[ **WDF\_设备\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff551284)结构向**WdfTrue** ，然后调用[ **WdfDeviceSetDeviceState**](https://msdn.microsoft.com/library/windows/hardware/ff546884)。)
+  因为驱动程序应仅使用静态子列出的预先确定的设备配置并永久性的驱动程序不会通常修改静态子列表创建它后。 如果该驱动程序确定子设备变得不可访问，该驱动程序可以调用[ **WdfPdoMarkMissing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdomarkmissing)。 (如果子设备可访问，但无响应，该驱动程序应设置**失败**的成员[ **WDF\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_state)结构向**WdfTrue** ，然后调用[ **WdfDeviceSetDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)。)
 
   若要以静态方式枚举子设备每次总线驱动程序启动时，可以设置注册表值，Toaster 总线驱动程序的设备参数项中。
 
@@ -77,7 +77,7 @@ KMDF 总线驱动程序服务 toaster 总线控制器、 枚举已接通的设�
 
   例如的数量和类型的插入到系统的 PCI 总线的设备是依赖于系统的但它们是永久的除非用户关闭电源、 打开这种情况，并添加或删除设备时使用螺丝刀。 但是，用户可以添加或删除 USB 设备插入或拔出电缆系统运行时。
 
-  每次总线驱动程序标识子设备，它必须将子设备的说明添加到子列表。 驱动程序可以通过调用使用框架提供设备的默认子列表[ **WdfFdoGetDefaultChildList**](https://msdn.microsoft.com/library/windows/hardware/ff547235)，或者可以创建其他子列表中，分组子对象，通过调用[**WdfChildListCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545615)。 此示例使用默认子列表。 一个*子描述*由必需*标识说明*和可选*解决说明*。
+  每次总线驱动程序标识子设备，它必须将子设备的说明添加到子列表。 驱动程序可以通过调用使用框架提供设备的默认子列表[ **WdfFdoGetDefaultChildList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdogetdefaultchildlist)，或者可以创建其他子列表中，分组子对象，通过调用[**WdfChildListCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)。 此示例使用默认子列表。 一个*子描述*由必需*标识说明*和可选*解决说明*。
 
   <table>
   <colgroup>
@@ -93,11 +93,11 @@ KMDF 总线驱动程序服务 toaster 总线控制器、 枚举已接通的设�
   <tbody>
   <tr class="odd">
   <td align="left"><p><a href="" id="---------------------identification-description"></a> 标识说明</p></td>
-  <td align="left"><p>标识描述是一种结构，其中包含唯一标识该驱动程序枚举每个设备的信息。 该驱动程序定义了此结构，但其第一个成员必须是<a href="https://msdn.microsoft.com/library/windows/hardware/ff551223" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551223)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>结构。</p></td>
+  <td align="left"><p>标识描述是一种结构，其中包含唯一标识该驱动程序枚举每个设备的信息。 该驱动程序定义了此结构，但其第一个成员必须是<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>结构。</p></td>
   </tr>
   <tr class="even">
   <td align="left"><p><a href="" id="---------------------address-description"></a> 地址说明</p></td>
-  <td align="left"><p>地址描述是一种结构，其中包含驱动程序要求，以便它可以访问其总线上的设备，如果在插入设备时，可以更改信息的信息。 该驱动程序定义了此结构，但其第一个成员必须是<a href="https://msdn.microsoft.com/library/windows/hardware/ff551223" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551223)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>结构。 地址说明是可选的。 此示例不使用地址说明。</p></td>
+  <td align="left"><p>地址描述是一种结构，其中包含驱动程序要求，以便它可以访问其总线上的设备，如果在插入设备时，可以更改信息的信息。 该驱动程序定义了此结构，但其第一个成员必须是<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>结构。 地址说明是可选的。 此示例不使用地址说明。</p></td>
   </tr>
   </tbody>
   </table>
@@ -105,9 +105,9 @@ KMDF 总线驱动程序服务 toaster 总线控制器、 枚举已接通的设�
 
 
 
-若要添加到子列表时，驱动程序调用的子[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://msdn.microsoft.com/library/windows/hardware/ff545591)为每个找到的子设备。 此调用会通知框架驱动程序已发现的子设备连接到父设备。 当您的驱动程序调用**WdfChildListAddOrUpdateChildDescriptionAsPresent**，它会提供一个标识说明和地址描述 （可选）。
+若要添加到子列表时，驱动程序调用的子[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)为每个找到的子设备。 此调用会通知框架驱动程序已发现的子设备连接到父设备。 当您的驱动程序调用**WdfChildListAddOrUpdateChildDescriptionAsPresent**，它会提供一个标识说明和地址描述 （可选）。
 
-驱动程序调用后[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://msdn.microsoft.com/library/windows/hardware/ff545591)若要报告的新设备，该框架将告知存在新的设备的即插即用管理器。 PnP 管理器然后构建设备堆栈和新设备的驱动程序堆栈。 作为此过程的一部分，框架将调用总线驱动程序[ *EvtChildListCreateDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540828)回调函数。 必须调用此回调函数[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)若要创建的新设备 PDO。
+驱动程序调用后[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)若要报告的新设备，该框架将告知存在新的设备的即插即用管理器。 PnP 管理器然后构建设备堆栈和新设备的驱动程序堆栈。 作为此过程的一部分，框架将调用总线驱动程序[ *EvtChildListCreateDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)回调函数。 必须调用此回调函数[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)若要创建的新设备 PDO。
 
 若要报告子设备丢失，此驱动程序调用 WdfChildListUpdateChildDescriptionAsMissing。 动态枚举的更多详细信息，请参阅框架文档。
 
@@ -133,9 +133,9 @@ KMDF 总线驱动程序服务 toaster 总线控制器、 枚举已接通的设�
 ## <a name="kmdf-toastmon"></a>KMDF Toastmon
 
 
-此示例演示如何打开设备并在内核模式下使用远程 I/O 目标接口执行 I/O。 此示例将通过调用注册 toaster 接口类的即插即用通知回调例程[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)。 当在插入 toaster 设备时，即插即用管理器调用的回调。 在回调中，此示例创建一个远程目标，并通过使用提供的回调数据中的符号链接打开设备。
+此示例演示如何打开设备并在内核模式下使用远程 I/O 目标接口执行 I/O。 此示例将通过调用注册 toaster 接口类的即插即用通知回调例程[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。 当在插入 toaster 设备时，即插即用管理器调用的回调。 在回调中，此示例创建一个远程目标，并通过使用提供的回调数据中的符号链接打开设备。
 
-此外，此示例使用被动计时器演示异步读取和写入到目标设备。 它还演示如何通过注册来响应设备更改通知[ *EvtIoTargetQueryRemove*](https://msdn.microsoft.com/library/windows/hardware/ff541793)/[*EvtIoTargetRemoveCanceled* ](https://msdn.microsoft.com/library/windows/hardware/ff541800) / [ *EvtIoTargetRemoveComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff541806) I/O 的目标对象。 如果您的驱动程序与您的驱动程序不能控制的另一台设备，可以使用此技术。 为使用 Wdftoastmon.inf 根枚举设备安装此驱动程序。 用于作为 toaster 总线驱动程序安装使用相同的步骤。
+此外，此示例使用被动计时器演示异步读取和写入到目标设备。 它还演示如何通过注册来响应设备更改通知[ *EvtIoTargetQueryRemove*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove)/[*EvtIoTargetRemoveCanceled* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_canceled) / [ *EvtIoTargetRemoveComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_complete) I/O 的目标对象。 如果您的驱动程序与您的驱动程序不能控制的另一台设备，可以使用此技术。 为使用 Wdftoastmon.inf 根枚举设备安装此驱动程序。 用于作为 toaster 总线驱动程序安装使用相同的步骤。
 
 ## <a name="umdf-function-driver"></a>UMDF 功能驱动程序
 

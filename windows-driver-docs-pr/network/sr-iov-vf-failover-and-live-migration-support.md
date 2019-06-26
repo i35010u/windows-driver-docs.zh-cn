@@ -4,12 +4,12 @@ description: SR-IOV VF 故障转移和实时迁移支持
 ms.assetid: 93D6EFC7-B701-4D10-8114-FA437E80096B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 764a4c1297dda8282014042edcc75abcb9a3b011
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5166be41a6ba05ab1c35f35ddd949ee8685ee28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346018"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377008"
 ---
 # <a name="sr-iov-vf-failover-and-live-migration-support"></a>SR-IOV VF 故障转移和实时迁移支持
 
@@ -38,13 +38,13 @@ VF 和综合数据路径之间的转换的数据包丢失最少会出现，并�
 
     有关 VPorts 详细信息，请参阅[虚拟端口 (VPorts)](virtual-ports--vports-.md)。
 
-2.  虚拟化堆栈中删除通过发出的对象标识符 (OID) 组请求附加到 VF VPort [OID\_NIC\_交换机\_删除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451818)到 PF微型端口驱动程序。 微型端口驱动程序，释放与 VPort 关联任何硬件和软件资源并完成 OID 请求。
+2.  虚拟化堆栈中删除通过发出的对象标识符 (OID) 组请求附加到 VF VPort [OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)到 PF微型端口驱动程序。 微型端口驱动程序，释放与 VPort 关联任何硬件和软件资源并完成 OID 请求。
 
     有关详细信息，请参阅[删除虚拟端口](deleting-a-virtual-port.md)。
 
-3.  虚拟化堆栈请求 PCIe 函数级别重置 (FLR) 的 VF 之前释放其资源。 通过发出的 OID 集请求的堆栈实现这[OID\_SRIOV\_重置\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451889)到 PF 微型端口驱动程序。 FLR VF SR-IOV 网络适配器上引入静止状态，并为 VF 清除任何挂起的中断事件。
+3.  虚拟化堆栈请求 PCIe 函数级别重置 (FLR) 的 VF 之前释放其资源。 通过发出的 OID 集请求的堆栈实现这[OID\_SRIOV\_重置\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)到 PF 微型端口驱动程序。 FLR VF SR-IOV 网络适配器上引入静止状态，并为 VF 清除任何挂起的中断事件。
 
-4.  虚拟化堆栈 VF 已被重置后，通过发出 OID 集请求的请求的 VF 资源释放[OID\_NIC\_交换机\_免费\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451822)到 PF微型端口驱动程序。 这将导致微型端口驱动程序，以释放与 VF 相关联的硬件资源。
+4.  虚拟化堆栈 VF 已被重置后，通过发出 OID 集请求的请求的 VF 资源释放[OID\_NIC\_交换机\_免费\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)到 PF微型端口驱动程序。 这将导致微型端口驱动程序，以释放与 VF 相关联的硬件资源。
 
 有关此过程的详细信息，请参阅[虚拟函数拆卸序列](virtual-function-teardown-sequence.md)。
 

@@ -8,12 +8,12 @@ keywords:
 - NDIS 微型端口驱动程序 WDK，散播-聚集 DMA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a64a234cf49067a47d0bbc224329c29448c616cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6965f102a6ec4834e5f03d6a8313d9452d3d729
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371217"
 ---
 # <a name="new-scattergather-dma-support"></a>新的分散/聚合 DMA 支持
 
@@ -29,7 +29,7 @@ ms.locfileid: "63380591"
 
 -   微型端口驱动程序可以通过将其复制到的预先分配的缓冲区，从而不必映射进行优化的小型或高分段的数据包的传输。 这消除了不必要的处理。
 
--   NDIS 安全地传递多个[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)到一个函数调用中的微型端口驱动程序的结构。 这会导致较少调用微型端口驱动程序，因而提高系统性能。
+-   NDIS 安全地传递多个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)到一个函数调用中的微型端口驱动程序的结构。 这会导致较少调用微型端口驱动程序，因而提高系统性能。
 
 -   由于微型端口驱动程序可以预分配散播-聚集列表的内存，则不需要在运行时为散播-聚集列表分配内存 NDIS。
 

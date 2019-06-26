@@ -4,12 +4,12 @@ description: 安装分段筛选器
 ms.assetid: 39f96c16-2408-460c-8aa3-08b6a6584bef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8422cb60810455087efbcf2be9fce69539d3651
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5d4168a7a93729ed5d605aa09f026b236419f3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378939"
 ---
 # <a name="installing-a-segmentation-filter"></a>安装分段筛选器
 
@@ -42,9 +42,9 @@ Mysegfilter.dll=1
 
 *&lt;UiClassId&gt;* 是值，以驱动程序返回的 WIA\_DIP\_UI\_CLSID 属性。 *&lt;FilterClassId&gt;* 分段的筛选器实现的类 id。 *Mysegfilter.dll*是包含分段筛选器实现的 DLL。
 
-在设备中的第一个条目[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)寄存器分段作为扩展的驱动程序筛选器中，接下来的三项注册为 COM 组件的分段的筛选器。
+在设备中的第一个条目[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)寄存器分段作为扩展的驱动程序筛选器中，接下来的三项注册为 COM 组件的分段的筛选器。
 
-如果驱动程序将使用由 Microsoft、 两个设备提供的 WIA 分段筛选器[ **INF CopyFiles 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346)， [ **INF SourceDisksFiles 部分** ](https://msdn.microsoft.com/library/windows/hardware/ff547472)，也不需要的最后三个注册表项。 唯一要求是微型驱动程序实现 WIA\_IP\_分段属性。
+如果驱动程序将使用由 Microsoft、 两个设备提供的 WIA 分段筛选器[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)， [ **INF SourceDisksFiles 部分** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)，也不需要的最后三个注册表项。 唯一要求是微型驱动程序实现 WIA\_IP\_分段属性。
 
 COM **ThreadingModel**必须是**同时**。
 

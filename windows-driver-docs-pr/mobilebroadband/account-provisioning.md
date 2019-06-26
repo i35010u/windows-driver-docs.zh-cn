@@ -4,12 +4,12 @@ description: 帐户预配
 ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf7dc1f67600a9deccc4773d733330654744c7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a7c0ed1be4ff24c8a0b4f4f24e4a1e2598e53cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374090"
 ---
 # <a name="account-provisioning"></a>帐户预配
 
@@ -19,7 +19,7 @@ ms.locfileid: "63386904"
 
 ![预配的 xml 文件层次结构](images/mb-provisioningmetadata.jpg)
 
-有关预配的架构的详细信息，请参阅[CarrierControlSchema 架构](https://msdn.microsoft.com/library/windows/apps/hh868312)。
+有关预配的架构的详细信息，请参阅[CarrierControlSchema 架构](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/schema-root)。
 
 ## <a name="updating-the-provisioning-metadata"></a>更新预配的元数据
 
@@ -29,7 +29,7 @@ ms.locfileid: "63386904"
 
 在计算机上安装的移动宽带应用后，它可以检索或生成更新的预配文件根据应用程序中实现任何触发器。
 
-移动宽带应用程序可以使用的应用预配文件[ **Windows.Networking.NetworkOperator.ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397) Api。 如果应用程序与网络帐户 ID，它可以使用[ **CreateFromNetworkAccountId** ](https://msdn.microsoft.com/library/windows/apps/br207398)以提供无符号的元数据。 如果应用不与网络帐户 ID 相关联，它必须使用的默认构造函数**ProvisioningAgent**和 XML 签名。
+移动宽带应用程序可以使用的应用预配文件[ **Windows.Networking.NetworkOperator.ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent) Api。 如果应用程序与网络帐户 ID，它可以使用[ **CreateFromNetworkAccountId** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_CreateFromNetworkAccountId_System_String_)以提供无符号的元数据。 如果应用不与网络帐户 ID 相关联，它必须使用的默认构造函数**ProvisioningAgent**和 XML 签名。
 
 移动宽带应用可以使用以下触发器更新的预配的元数据：
 
@@ -47,7 +47,7 @@ ms.locfileid: "63386904"
 
 ### <a name="web-based-provisioning"></a>基于 web 的预配
 
-网站可以使用提供预配数据[ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/hh848316) API。 预配到此 API 提供的文件时，必须使用 X.509 证书和 XML DSig 进行签名。
+网站可以使用提供预配数据[ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) API。 预配到此 API 提供的文件时，必须使用 X.509 证书和 XML DSig 进行签名。
 
 通过使用 APN 数据库、 服务元数据或预配的元数据文件的上一个帐户，可以预先提供到计算机证书。 如果证书已是受信任的则无需用户交互。 如果证书以前不被透露给计算机，它必须是 EV 证书，并接受证书前，提示用户同意的情况下输入。
 
@@ -75,19 +75,19 @@ ms.locfileid: "63386904"
 
 - [允许的组合](#permitted-combinations)
 
-有关这两部分的详细信息，请参阅[CarrierControlSchema 架构](https://msdn.microsoft.com/library/windows/apps/hh868312)。
+有关这两部分的详细信息，请参阅[CarrierControlSchema 架构](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/schema-root)。
 
 ### <a name="global"></a>全局
 
 在预配的每个文件中需要的全局部分。 在本部分中的必需的元素如下所示：
 
-- [**CarrierId** ](https://msdn.microsoft.com/library/windows/apps/hh868288)唯一标识编写该文件的组织的 GUID。 如果要构建移动宽带应用程序，则必须使用中指定的 GUID[服务号码](https://msdn.microsoft.com/library/windows/hardware/dn236413)字段**ServiceInfo.xml**服务元数据包中。 有关服务的元数据包架构的信息，请参阅[服务的元数据数据包架构参考](service-metadata-package-schema-reference.md)。
+- [**CarrierId** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-carrierid)唯一标识编写该文件的组织的 GUID。 如果要构建移动宽带应用程序，则必须使用中指定的 GUID[服务号码](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)字段**ServiceInfo.xml**服务元数据包中。 有关服务的元数据包架构的信息，请参阅[服务的元数据数据包架构参考](service-metadata-package-schema-reference.md)。
 
   > [!NOTE]
   > 这是你在中提供的相同服务号**创建移动宽带体验向导**Windows 开发人员中心仪表板 – 硬件上。
   > 如果不创建移动宽带应用，可以生成你的组织使用的 GUID。 在任一情况下，应始终使用您的组织颁发的所有预配文件相同的 GUID。
 
-- [**SubscriberId** ](https://msdn.microsoft.com/library/windows/apps/hh868305)唯一标识你的组织中的客户的字符串。 如果你是移动运营商，这应该是 GSM 运算符的 IMSI 或 ICCID 范围、 提供程序 ID 或 CDMA 运算符的提供程序名称。 如果您不是移动运营商，可以选择任何足够唯一的字符串。
+- [**SubscriberId** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-subscriberid)唯一标识你的组织中的客户的字符串。 如果你是移动运营商，这应该是 GSM 运算符的 IMSI 或 ICCID 范围、 提供程序 ID 或 CDMA 运算符的提供程序名称。 如果您不是移动运营商，可以选择任何足够唯一的字符串。
 
 ### <a name="activation"></a>激活
 
@@ -103,13 +103,13 @@ ms.locfileid: "63386904"
 
 移动宽带信息包含多个元素：
 
-[**MBNProfiles**](https://msdn.microsoft.com/library/windows/apps/hh868295)
+[**MBNProfiles**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-mbnprofiles)
 
 移动运营商网络上定义订阅服务器的信息。 有两个不同的配置文件，可以使用：
 
-- [**PurchaseProfile**](https://msdn.microsoft.com/library/windows/apps/hh868301):连接到操作员的网络，以购买新的订阅所需的信息。
+- [**PurchaseProfile**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-purchaseprofile):连接到操作员的网络，以购买新的订阅所需的信息。
 
-- [**DefaultProfile** ](https://msdn.microsoft.com/library/windows/apps/hh868290)每个移动宽带订阅可以有一个用于连接到家庭网络运算符的默认配置文件。 Windows 连接管理器使用此配置文件进行自动连接到网络。
+- [**DefaultProfile** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-defaultprofile)每个移动宽带订阅可以有一个用于连接到家庭网络运算符的默认配置文件。 Windows 连接管理器使用此配置文件进行自动连接到网络。
 
     ```xml
     <MBNProfiles>
@@ -128,7 +128,7 @@ ms.locfileid: "63386904"
       </MBNProfiles>
     ```
 
-[**品牌**](https://msdn.microsoft.com/library/windows/apps/hh868446)
+[**品牌**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-branding)
 
 > [!IMPORTANT]
 > 从 Windows 10，版本 1709，开始 ProvisioningAgent API 由预配的品牌字段已替换为品牌 COSA 数据库中的字段。 **徽标**已被取代**品牌图标**中 COSA，和**名称**已由**品牌名称**COSA 中。
@@ -139,9 +139,9 @@ ms.locfileid: "63386904"
 
 品牌可让你指定如何在 Windows 中显示你的移动宽带网络。 此信息将覆盖任何服务的元数据，如果存在。 如果未不提供任何信息，将使用服务元数据包的内容。 标记的元素如下所示：
 
-- [**徽标**](https://msdn.microsoft.com/library/windows/apps/hh868460) Base64 编码。PNG 或。在 XML 中嵌入的 BMP 文件。 此徽标将应用到移动宽带配置文件在网络列表中进行显示。
+- [**徽标**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-logo) Base64 编码。PNG 或。在 XML 中嵌入的 BMP 文件。 此徽标将应用到移动宽带配置文件在网络列表中进行显示。
 
-- [**名称**](https://msdn.microsoft.com/library/windows/apps/hh868463)设置移动宽带的配置文件的运营商的显示名称。
+- [**名称**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-name)设置移动宽带的配置文件的运营商的显示名称。
 
 #### <a name="sms-parsing"></a>SMS 分析
 
@@ -169,7 +169,7 @@ ms.locfileid: "63386904"
 
   - **使用情况，UsagePercentage，UsageOverage，UsageOveragePercentage**:为绝对数字，以占数据限制，为对数据限制，超出的数字或百分比值超过数据限制，则表示当前使用情况。 绝对值可以引用指定度量单位，该值表示在其中一个组。
 
-  - **UsageTimestamp**:日期和时间计算用法字段中。 如果有此信息必须包含**使用情况\\*** 字段是包含。 格式字符串包含来表达应如何解释子字符串的以下标识符：
+  - **UsageTimestamp**:日期和时间计算用法字段中。 如果有此信息必须包含**使用情况\\** * 字段是包含。 格式字符串包含来表达应如何解释子字符串的以下标识符：
 
     <table>
     <colgroup>
@@ -412,7 +412,7 @@ ms.locfileid: "63386904"
 
 通常通过客户的订阅期限，更改频率较低的元素包括：
 
-- [**PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)的客户所具有的与运算符的计费关系的类型：
+- [**PlanType** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-plantype)的客户所具有的与运算符的计费关系的类型：
 
   - **不受限制**使用情况不会产生额外费用。
 
@@ -420,39 +420,39 @@ ms.locfileid: "63386904"
 
   - **变量**用户需根据使用情况付费。
 
-- [**SecurityUpdatesExempt** ](https://msdn.microsoft.com/library/windows/apps/hh868374)布尔值，该值指定是否安全更新计入客户的使用情况。
+- [**SecurityUpdatesExempt** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-securityupdatesexempt)布尔值，该值指定是否安全更新计入客户的使用情况。
 
-- [**DataLimitInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868367)用户的分配使用情况，如果[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)是**固定**。
+- [**DataLimitInMegabytes** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-datalimitinmegabytes)用户的分配使用情况，如果[ **PlanType** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-plantype)是**固定**。
 
-- [**BillingCycle** ](https://msdn.microsoft.com/library/windows/apps/hh868366)定义该计划的起始日期和时间，其持续时间，以及在计费周期结束时会发生什么情况。
+- [**BillingCycle** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-billingcycle)定义该计划的起始日期和时间，其持续时间，以及在计费周期结束时会发生什么情况。
 
-- [**BandwidthInKbps** ](https://msdn.microsoft.com/library/windows/apps/hh868343)作为允许的网络的用户的连接速度; 这可以反映其计划的标准或反映当前所规定的运营商由于拥塞或过多使用 （最大 2 Gbps） 较低的速率。
+- [**BandwidthInKbps** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/dusm/element-bandwidthinkbps)作为允许的网络的用户的连接速度; 这可以反映其计划的标准或反映当前所规定的运营商由于拥塞或过多使用 （最大 2 Gbps） 较低的速率。
 
-- [**MaxTransferSizeInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868371)一个整数，表示与兼容应用程序应允许通过按流量计费的连接，无需显式用户批准使用的连接的单独下载的大小。
+- [**MaxTransferSizeInMegabytes** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-maxtransfersizeinmegabytes)一个整数，表示与兼容应用程序应允许通过按流量计费的连接，无需显式用户批准使用的连接的单独下载的大小。
 
-- [**UserSMSEnabled** ](https://msdn.microsoft.com/library/windows/apps/hh868376)指示计划是否包括用户-短信支持。 如果为 true，Windows 将保留设备附加到连接待机状态中的网络，即使不使用移动宽带接口。 当计算机处于空闲状态时，如果为 false，Windows 可以关闭省电的移动宽带接口，从而不产生的设备中的可通过网络寻址。
+- [**UserSMSEnabled** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-usersmsenabled)指示计划是否包括用户-短信支持。 如果为 true，Windows 将保留设备附加到连接待机状态中的网络，即使不使用移动宽带接口。 当计算机处于空闲状态时，如果为 false，Windows 可以关闭省电的移动宽带接口，从而不产生的设备中的可通过网络寻址。
 
 ### <a name="usage"></a>用法
 
 较高的频率可以更改以下元素：
 
-- [**UsageInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868350)用户的最新数据使用情况。
+- [**UsageInMegabytes** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/dusm/element-usageinmegabytes)用户的最新数据使用情况。
 
-- [**OverDataLimit** ](https://msdn.microsoft.com/library/windows/apps/hh868465)布尔值，该值指示用户是否已通过分配使用情况，如果[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)是**固定**。
+- [**OverDataLimit** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-overdatalimit)布尔值，该值指示用户是否已通过分配使用情况，如果[ **PlanType** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-plantype)是**固定**。
 
-- [**拥塞**](https://msdn.microsoft.com/library/windows/apps/hh868449)布尔值，该值指示是否在较低的连接速度比平常施加由于过多的使用情况。 Congested 标志指示网络目前遇到 （或期望） 沉重负载时，和优先级较低的传输应延迟到另一个时间，在可能的情况。 可以使用此标志，以指示概念，如高峰时间或响应重载热点。
+- [**拥塞**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-congested)布尔值，该值指示是否在较低的连接速度比平常施加由于过多的使用情况。 Congested 标志指示网络目前遇到 （或期望） 沉重负载时，和优先级较低的传输应延迟到另一个时间，在可能的情况。 可以使用此标志，以指示概念，如高峰时间或响应重载热点。
 
 ### <a name="refresh"></a>刷新
 
 由于网络更改或技术支持，可以推送到所需的计算机的更新的设置。 Windows 会定期刷新尝试通过使用由你或预配 API 提供的信息。 可以通过从运算符的短信通知触发刷新。 若要启用刷新，必须提供预配 XML 中的以下信息：
 
-- [**TrustedCertificates** ](https://msdn.microsoft.com/library/windows/apps/hh868307)具有受信任在将来的预配文件签名的证书指纹的列表。
+- [**TrustedCertificates** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-trustedcertificates)具有受信任在将来的预配文件签名的证书指纹的列表。
 
-- [**DelayInDays** ](https://msdn.microsoft.com/library/windows/apps/hh868291) （整数） 数的刷新将不尝试在其之前的天数。
+- [**DelayInDays** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-delayindays) （整数） 数的刷新将不尝试在其之前的天数。
 
-- [**RefreshURL** ](https://msdn.microsoft.com/library/windows/apps/hh868303)的 HTTPS URL，以获取用户的最新副本的预配文件。
+- [**RefreshURL** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-refreshurl)的 HTTPS URL，以获取用户的最新副本的预配文件。
 
-- [**用户名**](https://msdn.microsoft.com/library/windows/apps/hh868308) & [**密码**](https://msdn.microsoft.com/library/windows/apps/hh868297)检索重新预配文件时使用 HTTP 身份验证的呈现的可选凭据。 此信息必须以加密形式存储。
+- [**用户名**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-username) & [**密码**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-password)检索重新预配文件时使用 HTTP 身份验证的呈现的可选凭据。 此信息必须以加密形式存储。
 
 或者，移动宽带应用程序可以提供新的预配文件在任何时候，根据应用程序和操作员的后端之间的通信。
 
@@ -518,7 +518,7 @@ ms.locfileid: "63386904"
 
 ### <a name="permitted-combinations"></a>允许的组合
 
-尽管[ **Global** ](https://msdn.microsoft.com/library/windows/apps/hh868294)是仅第一级节点所需的架构，通常会有其他节点的某些组合。 本部分讨论这些典型的组合：
+尽管[ **Global** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-global)是仅第一级节点所需的架构，通常会有其他节点的某些组合。 本部分讨论这些典型的组合：
 
 - **配置文件 （WLANProfiles，MBNProfiles） + 计划包括说明和使用情况**创建或更新完整设置的配置文件，并应用计划信息，以及每个当前使用情况。 如果一个配置文件引用在同一配置文件中，未指定的计划，如果没有配置文件预配文件中的引用指定的计划，则返回一条警告，则返回错误。
 
@@ -558,9 +558,9 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 
 若要从移动宽带应用预配：
 
-1. 实例化[ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)实例 (通过使用[ **Windows.Networking.NetworkOperators.ProvisioningAgent.CreateFromNetworkAccountId**](https://msdn.microsoft.com/library/windows/apps/br207398)).
+1. 实例化[ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)实例 (通过使用[ **Windows.Networking.NetworkOperators.ProvisioningAgent.CreateFromNetworkAccountId**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_CreateFromNetworkAccountId_System_String_)).
 
-2. 调用[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、 传入无符号的置备 XML 文档。
+2. 调用[ **ProvisionFromXmlDocumentAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)、 传入无符号的置备 XML 文档。
 
 返回异步操作完成和预配操作的结果。
 
@@ -568,9 +568,9 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 
 1. 生成已签名的帐户预配 XML 文档。
 
-2. 实例化[ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397) （通过使用默认构造函数） 的实例。
+2. 实例化[ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent) （通过使用默认构造函数） 的实例。
 
-3. 调用[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、 传入已签名的 XML 文档。
+3. 调用[ **ProvisionFromXmlDocumentAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)、 传入已签名的 XML 文档。
 
 在异步操作完成并返回预配操作的结果。
 
@@ -578,7 +578,7 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 
 1. 生成已签名的帐户预配 XML 文档。
 
-2. 调用[ **window.external.msProvisionNetworks**](https://msdn.microsoft.com/library/hh848316)、 传入已签名的 XML 文档。
+2. 调用[ **window.external.msProvisionNetworks**](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))、 传入已签名的 XML 文档。
 
 在操作完成并返回预配操作的结果。
 
@@ -646,7 +646,7 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 </CarrierProvisioning>
 ```
 
-子元素**MSM**定义如何连接到网络。 这包括任何必需的 EAP 配置。 MSM 元素中的所有子元素[WLAN\_配置文件架构](https://msdn.microsoft.com/library/windows/desktop/ms707341)支持。 请参阅更多详细信息的预配 XML 架构引用。
+子元素**MSM**定义如何连接到网络。 这包括任何必需的 EAP 配置。 MSM 元素中的所有子元素[WLAN\_配置文件架构](https://docs.microsoft.com/windows/desktop/NativeWiFi/wlan-profileschema-schema)支持。 请参阅更多详细信息的预配 XML 架构引用。
 
 ### <a name="provision-the-device-to-connect-automatically-to-a-wispr-enabled-hotspot"></a>预配设备自动连接到启用了 WISPr 的热点
 
@@ -727,7 +727,7 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 
 ### <a name="sending-activation-to-the-mobile-broadband-device"></a>将激活发送到移动宽带设备
 
-任意二进制大型对象 (BLOB) 中包含[ **CarrierSpecificData** ](https://msdn.microsoft.com/library/windows/apps/hh868447)元素可以通过使用 ProvisioningAgent 是 Base64 编码，然后发送到设备。 您可以执行此操作通过使用**激活&lt;ServiceActivatation&gt;** 中置备 XML 指令：
+任意二进制大型对象 (BLOB) 中包含[ **CarrierSpecificData** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-carrierspecificdata)元素可以通过使用 ProvisioningAgent 是 Base64 编码，然后发送到设备。 您可以执行此操作通过使用**激活&lt;ServiceActivatation&gt;** 中置备 XML 指令：
 
 ``` syntax
 <?xml version="1.0"?>
@@ -744,7 +744,7 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 </CarrierProvisioning>
 ```
 
-此方法等效于调用[ **IMbnVendorSpecificOperation::SetVendorSpecific** ](https://msdn.microsoft.com/library/windows/desktop/dd323208)的移动宽带 API，并传递 SAFEARRAY 以及将 BLOB 内容的方法。
+此方法等效于调用[ **IMbnVendorSpecificOperation::SetVendorSpecific** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnvendorspecificoperation-setvendorspecific)的移动宽带 API，并传递 SAFEARRAY 以及将 BLOB 内容的方法。
 
 ### <a name="force-the-mobile-broadband-device-to-reconnect-to-the-network-after-provisioning-completes"></a>强制移动宽带设备预配完成后重新连接到网络
 
@@ -783,7 +783,7 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 
 ### <a name="updating-data-usage-statistics-for-a-connection-profile"></a>更新连接配置文件的数据使用情况统计信息
 
-您只能更新通过使用预配配置文件的使用情况[ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)通过应用新的帐户预配已更新计划信息的文件。 可以提供一个预配文件，包含仅使用情况信息，或仅计划信息。 具体取决于多少你想要更改的系统配置的新的预配文件可以包含以下项目：
+您只能更新通过使用预配配置文件的使用情况[ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)通过应用新的帐户预配已更新计划信息的文件。 可以提供一个预配文件，包含仅使用情况信息，或仅计划信息。 具体取决于多少你想要更改的系统配置的新的预配文件可以包含以下项目：
 
 - 配置文件、 计划说明和使用情况
 
@@ -809,13 +809,13 @@ XSD 架构下有 **%SYSTEMROOT%\\架构\\预配**运行 Windows 8、 Windows 8.1
 
 如果预配失败，将收到一个异常，当您尝试执行预配操作。 可能会导致异常的失败包括：
 
-- 预配 XML 不符合[CarrierControlSchema 架构](https://msdn.microsoft.com/library/windows/apps/hh868312)。
+- 预配 XML 不符合[CarrierControlSchema 架构](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/schema-root)。
 
 - 预配 XML 需要一个签名，但未正确签名。
 
 ### <a name="partial-provisioning-failures"></a>部分预配失败
 
-预配操作的某些部分可能会因各种原因而失败。 例如，您可能对不存在时的预配的 Wi-fi 硬件的引用。 预配代理执行最大努力以尝试预配该文件中的所有内容。 后出现故障，它将以异步方式返回通过使用在预配结果中记下[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)。
+预配操作的某些部分可能会因各种原因而失败。 例如，您可能对不存在时的预配的 Wi-fi 硬件的引用。 预配代理执行最大努力以尝试预配该文件中的所有内容。 后出现故障，它将以异步方式返回通过使用在预配结果中记下[ **ProvisionFromXmlDocumentAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)。
 
 结果以 XML 形式返回，并且可以对其进行分析，以发现失败。 元素提供了结构，以显示失败，并**ErrorCode**特性指示作为标准 HRESULT 失败的原因。
 

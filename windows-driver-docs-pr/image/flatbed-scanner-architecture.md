@@ -4,12 +4,12 @@ description: 平板扫描仪体系结构
 ms.assetid: 04f7df17-d289-44a1-8c2d-7d0fa618cc97
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 002946aa4e4678c1c190969697298dc7ce8053ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ab8f111acdbcd44ef0e7472adf3df40d41ddd47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352210"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380035"
 ---
 # <a name="flatbed-scanner-architecture"></a>平板扫描仪体系结构
 
@@ -17,7 +17,7 @@ ms.locfileid: "63352210"
 
 
 
-如果扫描程序设备支持平板辊扫描，则它应作为第一个子项目，直接从其 WIA 项树; 中的根项目实现平板扫描仪项此外， [ **WIA\_IPA\_项\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff551581)属性必须设置为 WIA\_类别\_平板。 此平板项表示的可编程数据源，并生成了此项从请求数据传输时当前放置在扫描程序的平板辊的文档中的图像。
+如果扫描程序设备支持平板辊扫描，则它应作为第一个子项目，直接从其 WIA 项树; 中的根项目实现平板扫描仪项此外， [ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性必须设置为 WIA\_类别\_平板。 此平板项表示的可编程数据源，并生成了此项从请求数据传输时当前放置在扫描程序的平板辊的文档中的图像。
 
 支持仅扫描平板辊扫描仪具有下图显示了 WIA 项树。
 

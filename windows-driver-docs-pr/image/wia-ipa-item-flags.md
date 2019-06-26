@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56dde9f5e26f242ef54a2cb0d2805d7808661405
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 783b0bbfad8ccd149b23b43b89f17674750a1e66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369507"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377333"
 ---
 # <a name="wiaipaitemflags"></a>WIA\_IPA\_项\_标志
 
@@ -38,7 +38,7 @@ WIA\_IPA\_项\_标志属性包含 WIA 项的描述性标志。
 <a name="remarks"></a>备注
 -------
 
-WIA 项标志是否与中相同*lObjectFlags*的参数[ **wiasCreateDrvItem** ](https://msdn.microsoft.com/library/windows/hardware/ff549160)服务实用工具函数。 WIA 服务创建和维护 WIA\_IPA\_项\_标志属性。
+WIA 项标志是否与中相同*lObjectFlags*的参数[ **wiasCreateDrvItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)服务实用工具函数。 WIA 服务创建和维护 WIA\_IPA\_项\_标志属性。
 
 应用程序读取 WIA\_IPA\_项\_标志以确定 WIA 项的描述性标志值。
 
@@ -223,7 +223,7 @@ WIA 项标志是否与中相同*lObjectFlags*的参数[ **wiasCreateDrvItem** ](
 
 [**WIA\_IPA\_项\_类别**](wia-ipa-item-category.md)
 
-[**wiasCreateDrvItem**](https://msdn.microsoft.com/library/windows/hardware/ff549160)
+[**wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)
 
  
 

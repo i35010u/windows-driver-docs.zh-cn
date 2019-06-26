@@ -5,19 +5,19 @@ ms.assetid: 24b93d4e-461d-44c3-b721-85cf41a1680a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_BROADCAST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: afa77d7a6ef19f0ea47f1f1787216698aff9f137
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f69fec261969b6f62938d778aecc7469c5b018dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379121"
 ---
 # <a name="sobroadcast"></a>SO\_BROADCAST
 
 
 SO 的状态\_广播套接字选项用于确定是否可以通过数据报套接字传输广播的消息。 此套接字选项仅适用于数据报套接字。
 
-若要设置此套接字选项的状态，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要设置此套接字选项的状态，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -27,7 +27,7 @@ SO 的状态\_广播套接字选项用于确定是否可以通过数据报套接
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

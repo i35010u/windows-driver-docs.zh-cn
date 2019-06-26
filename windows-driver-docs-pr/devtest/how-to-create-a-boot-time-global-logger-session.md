@@ -8,12 +8,12 @@ keywords:
 - EnableKernelFlags WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c4923f32b7f38f04c30f28ec8375168f42cbce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c400e1c232f9bbd16367fefb779b31d88a1b1a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329747"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372694"
 ---
 # <a name="how-to-create-a-boot-time-global-logger-session"></a>如何创建启动时的全局记录器会话
 
@@ -28,7 +28,7 @@ ms.locfileid: "63329747"
 
     有关说明和详细信息，请参阅[ **Tracelog 命令语法**](tracelog-command-syntax.md)并[全局记录器跟踪会话](global-logger-trace-session.md)。 有关示例，请参阅[示例 13:创建全局记录器会话](example-13--creating-a-global-logger-session.md)。
 
-2.  添加 REG\_名为二进制条目**EnableKernelFlags**到**HKLM\\系统\\CurrentControlSet\\控件\\WMI\\GlobalLogger**子项。 创建 Tracelog **GlobalLogger**当你使用的注册表子项**tracelog-启动**命令。 可以使用的值**EnableKernelFlags**的值取自**EnableFlags**的成员**事件\_跟踪\_属性**结构。 有关的说明**EnableFlags**值，请参阅[**事件\_跟踪\_属性**](https://msdn.microsoft.com/library/windows/desktop/aa363784)。
+2.  添加 REG\_名为二进制条目**EnableKernelFlags**到**HKLM\\系统\\CurrentControlSet\\控件\\WMI\\GlobalLogger**子项。 创建 Tracelog **GlobalLogger**当你使用的注册表子项**tracelog-启动**命令。 可以使用的值**EnableKernelFlags**的值取自**EnableFlags**的成员**事件\_跟踪\_属性**结构。 有关的说明**EnableFlags**值，请参阅[**事件\_跟踪\_属性**](https://docs.microsoft.com/windows/desktop/ETW/event-trace-properties)。
 
 3.  重新启动系统。
 
@@ -49,7 +49,7 @@ ms.locfileid: "63329747"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**事件\_跟踪\_属性**](https://msdn.microsoft.com/library/windows/desktop/aa363784)
+[**事件\_跟踪\_属性**](https://docs.microsoft.com/windows/desktop/ETW/event-trace-properties)
 
 [示例 13:创建全局记录器会话](example-13--creating-a-global-logger-session.md)
 

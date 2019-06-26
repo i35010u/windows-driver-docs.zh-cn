@@ -7,12 +7,12 @@ keywords:
 - 用户模式下函数 WDK 强制反馈
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2b696c45a8c3026af38850de3d1c7fa66ab3eb53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99c9fdae95b6ca32d716b2af17a32827bb8241b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376729"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385795"
 ---
 # <a name="user-mode-functions"></a>用户模式下函数
 
@@ -30,7 +30,7 @@ DirectInput 释放最后一个效果驱动程序对象后，它将手动执行�
 
 所有量值并获得由 DirectInput 的有效值统一和线性范围内。 物理设备中的任何非线性必须由设备驱动程序处理，以便应用程序将线性设备。
 
-用户模式下强制通过公开的反馈函数[IDirectInputEffectDriver](https://msdn.microsoft.com/library/windows/hardware/ff540050)强制反馈效果驱动程序 DLL 必须实现接口。 有关这些函数的详细信息，请参阅 IDirectInputEffectDriver。
+用户模式下强制通过公开的反馈函数[IDirectInputEffectDriver](https://docs.microsoft.com/windows/desktop/api/dinputd/nn-dinputd-idirectinputeffectdriver)强制反馈效果驱动程序 DLL 必须实现接口。 有关这些函数的详细信息，请参阅 IDirectInputEffectDriver。
 
  
 

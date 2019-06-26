@@ -4,12 +4,12 @@ description: 使用 UMDF 验证程序
 ms.assetid: 95D85894-86AF-4312-B5BD-F1C9E8F8B2E5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1825120f534ba82299792ae6971ee0775bdf2dd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7119e957b86704e1c3eb04aa9490cd4f9816915
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391826"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372172"
 ---
 # <a name="using-umdf-verifier"></a>使用 UMDF 验证程序
 
@@ -53,7 +53,7 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 
  
 
-若要确定是否启用 UMDF 验证工具，设置断点的位置后驱动程序调用[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175) ，并使用[ **！ wdfdriverinfo**](https://msdn.microsoft.com/library/windows/hardware/ff565724)调试器扩展命令：
+若要确定是否启用 UMDF 验证工具，设置断点的位置后驱动程序调用[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate) ，并使用[ **！ wdfdriverinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)调试器扩展命令：
 
 **!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;*  **** **0x1**
 
@@ -62,7 +62,7 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 ## <a name="controlling-the-verifiers-behavior"></a>控制验证程序的行为
 
 
-可以通过修改注册表中的值来控制 UMDF 验证程序的行为。 或者，可以使用[WDF 验证程序控件应用程序](https://msdn.microsoft.com/library/windows/hardware/ff556129)来设置这些值。
+可以通过修改注册表中的值来控制 UMDF 验证程序的行为。 或者，可以使用[WDF 验证程序控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)来设置这些值。
 
 以下注册表值，可以在 UMDF 1。*x*驱动程序，以及 UMDF 2.0 及更高版本的驱动程序。
 

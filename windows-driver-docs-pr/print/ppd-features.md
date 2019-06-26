@@ -8,12 +8,12 @@ keywords:
 - 驱动程序功能 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fddd9d92defca0ae15f3c5e0829206ce7651bba4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ac55da640f6ec044c738095eadaf58f40f0de35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389550"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373793"
 ---
 # <a name="ppd-features"></a>PPD 功能
 
@@ -21,7 +21,7 @@ ms.locfileid: "63389550"
 
 
 
-中的 PPD 文件内定义 PPD 功能 **\*OpenUI**/**\*CloseUI**结构关键字对和中的处理方式类似某些 PPD 关键字Pscript 驱动程序。 尽管**EnumFeatures**列出了 **\*LeadingEdge**并 **\*UseHWMargins**关键字，它们不定义内 PPD  **\*OpenUI**/**\*CloseUI**结构关键字对。 因此， **GetOptions**并**SetOptions**方法会忽略这些关键字，如果它们出现在功能列表。 PPD 功能/选项关键字是区分大小写。
+中的 PPD 文件内定义 PPD 功能 **\*OpenUI**/ **\*CloseUI**结构关键字对和中的处理方式类似某些 PPD 关键字Pscript 驱动程序。 尽管**EnumFeatures**列出了 **\*LeadingEdge**并 **\*UseHWMargins**关键字，它们不定义内 PPD  **\*OpenUI**/ **\*CloseUI**结构关键字对。 因此， **GetOptions**并**SetOptions**方法会忽略这些关键字，如果它们出现在功能列表。 PPD 功能/选项关键字是区分大小写。
 
 **SetOptions**以特殊方式处理某些 PPD 功能：
 
@@ -29,7 +29,7 @@ ms.locfileid: "63389550"
 
 -   如果打印机的 PPD 文件包含 **\*OutputBin**功能关键字和**SetOptions**调用以更改的当前设置的这项功能及更改原因的选项选择 **%pageorder**驱动程序功能以相反的顺序，打印机的页面并 **%metafilespooling**为"False"，则 **%metafilespooling**将重置为"True"。
 
--   启用后台处理程序 EMF 后台处理，并**逐份打印**设置为"True"(此值可以设置中的公共部分直接[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构，或通过调用**SetOptions**上的 PPD **\*逐份打印**功能关键字)，但**逐份打印**功能不是目前不可用，和 **%MetafileSpooling**为"False"，则 **%metafilespooling**将重置为"True"。 这是所有请求中的设置时**SetOptions**应用调用。
+-   启用后台处理程序 EMF 后台处理，并**逐份打印**设置为"True"(此值可以设置中的公共部分直接[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构，或通过调用**SetOptions**上的 PPD **\*逐份打印**功能关键字)，但**逐份打印**功能不是目前不可用，和 **%MetafileSpooling**为"False"，则 **%metafilespooling**将重置为"True"。 这是所有请求中的设置时**SetOptions**应用调用。
 
 -   如果**双工**设置为单工 (这设置可以直接在 DEVMODE 结构的或通过调用的公共部分**SetOptions**上的 PPD **\*双工**功能关键字)，但 **%pagepersheet**设置为"手册"，然后 **%pagepersheet**将更改为"2"。 这是所有请求中的设置时**SetOptions**应用调用。
 

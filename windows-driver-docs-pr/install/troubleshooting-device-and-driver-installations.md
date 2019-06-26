@@ -11,12 +11,12 @@ keywords:
 - 安装设备 WDK，安装程序 Api
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c61b64038e69aced7f5e58b67c575561b8319da8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff801448db37d9ddb27ed0dbc7b6d38f7a684254
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339538"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371279"
 ---
 # <a name="troubleshooting-device-and-driver-installations"></a>排查设备和驱动程序安装问题
 
@@ -36,7 +36,7 @@ ms.locfileid: "63339538"
 
 -   运行测试程序，以实现设备。 这包括提供与 Windows Driver Kit (WDK) 的测试和调试工具。
 
-此外，在 Windows Server 2003、 Windows XP 和 Windows 2000[共同安装程序](writing-a-co-installer.md)可以提供故障排除的工具，可帮助诊断问题与你的设备的用户。 请参阅[ **DIF_TROUBLESHOOTER** ](https://msdn.microsoft.com/library/windows/hardware/ff543726)有关详细信息。
+此外，在 Windows Server 2003、 Windows XP 和 Windows 2000[共同安装程序](writing-a-co-installer.md)可以提供故障排除的工具，可帮助诊断问题与你的设备的用户。 请参阅[ **DIF_TROUBLESHOOTER** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-troubleshooter)有关详细信息。
 
  
 

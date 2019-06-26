@@ -10,12 +10,12 @@ keywords:
 - 状态转换 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06a6af77bfa218d18fc6dab43c4f5c9b1d342d84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4372cc34cb959dc3431b5c2fabc358eced0ee528
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384062"
 ---
 # <a name="filter-control-mutex-in-avstream"></a>AVStream 中的筛选器控件互斥
 
@@ -35,21 +35,21 @@ ms.locfileid: "63376107"
 
 AVStream 代表微型驱动程序保存筛选器控件互斥体时调用以下微型驱动程序提供的例程：
 
--   [*AVStrMiniFilterCreate*](https://msdn.microsoft.com/library/windows/hardware/ff556310)
+-   [*AVStrMiniFilterCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksfilterirp)
 
--   [*AVStrMiniFilterClose*](https://msdn.microsoft.com/library/windows/hardware/ff556307)
+-   [*AVStrMiniFilterClose*](https://docs.microsoft.com/previous-versions/ff556307(v=vs.85))
 
--   [*AVStrMiniPinCreate*](https://msdn.microsoft.com/library/windows/hardware/ff556334)
+-   [*AVStrMiniPinCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinirp)
 
--   [*AVStrMiniPinClose*](https://msdn.microsoft.com/library/windows/hardware/ff556329)
+-   [*AVStrMiniPinClose*](https://docs.microsoft.com/previous-versions/ff556329(v=vs.85))
 
--   [*AVStrMiniPinConnect*](https://msdn.microsoft.com/library/windows/hardware/ff556332)
+-   [*AVStrMiniPinConnect*](https://docs.microsoft.com/previous-versions/ff556332(v=vs.85))
 
--   [*AVStrMiniPinDisconnect*](https://msdn.microsoft.com/library/windows/hardware/ff556337)
+-   [*AVStrMiniPinDisconnect*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinvoid)
 
--   [*AVStrMiniPinSetDataFormat*](https://msdn.microsoft.com/library/windows/hardware/ff556355)
+-   [*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)
 
--   [*AVStrMiniPinSetDeviceState*](https://msdn.microsoft.com/library/windows/hardware/ff556359)
+-   [*AVStrMiniPinSetDeviceState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)
 
 类似于设备互斥体，筛选器控件互斥体必须获得以递归方式。 如果，例如，AVStream 对回调的微型驱动程序*创建*调度线程 A，在上下文和微型驱动程序中更高版本尝试获取互斥体从一个线程内的，线程 A 与其自身的死锁。
 
@@ -61,7 +61,7 @@ AVStream 代表微型驱动程序保存筛选器控件互斥体时调用以下�
 
 若要操作筛选器控件互斥体，使用以下函数：
 
-[**KsAcquireControl**](https://msdn.microsoft.com/library/windows/hardware/ff560908)， [ **KsFilterAcquireControl**](https://msdn.microsoft.com/library/windows/hardware/ff562523)， [ **KsPinAcquireControl**](https://msdn.microsoft.com/library/windows/hardware/ff563485)， [**KsReleaseControl**](https://msdn.microsoft.com/library/windows/hardware/ff566780)， [ **KsFilterReleaseControl**](https://msdn.microsoft.com/library/windows/hardware/ff562551)， [ **KsPinReleaseControl**](https://msdn.microsoft.com/library/windows/hardware/ff563526)
+[**KsAcquireControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksacquirecontrol)， [ **KsFilterAcquireControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilteracquirecontrol)， [ **KsPinAcquireControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinacquirecontrol)， [**KsReleaseControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksreleasecontrol)， [ **KsFilterReleaseControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilterreleasecontrol)， [ **KsPinReleaseControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinreleasecontrol)
 
  
 

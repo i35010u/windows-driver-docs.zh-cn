@@ -10,12 +10,12 @@ keywords:
 - 总线控制 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2baec9c6192ee5e8eed74c926c4d46acb836c28a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a442ce47fac9f6414ada2387a1adcbff86efb37c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381069"
 ---
 # <a name="dxapi-miniport-driver-functions-for-windows-2000-and-later"></a>Windows 2000 和更高版本的 DxApi 微型端口驱动程序函数
 
@@ -31,7 +31,7 @@ DxApi 接口支持可用于以下操作：
 
 -   正在跳过使用 IRQ 支持 MPEG 驱动程序，可以撤消的 MPEG 数据最初从电影采样 3:2 下拉列表的字段。
 
--   总线掌握，使设备可以持续将数据传输而无需致电[ *DdLock*](https://msdn.microsoft.com/library/windows/hardware/ff549599) / [*DdUnlock* ](https://msdn.microsoft.com/library/windows/hardware/ff550365)为每一帧。 这是特别有用，因为这些设备的驱动程序 WDM 驱动程序。
+-   总线掌握，使设备可以持续将数据传输而无需致电[ *DdLock*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock) / [*DdUnlock* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_unlock)为每一帧。 这是特别有用，因为这些设备的驱动程序 WDM 驱动程序。
 
 -   捕获视频并 VBI。 在微型端口驱动程序，它很容易捕获视频的基于硬件的视频端口 IRQ 或图形 IRQ。
 

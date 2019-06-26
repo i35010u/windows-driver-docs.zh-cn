@@ -9,12 +9,12 @@ keywords:
 - 呈现状态 WDK DirectX 8.0，高顺序图面
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df0e494a2d1bfd1071c9632aca13f96027da877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2190b2a4b7c3e7669bc4c6fed81ed0af0507a54f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374595"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380211"
 ---
 # <a name="high-order-surface-render-states"></a>高阶图面渲染状态
 
@@ -34,7 +34,7 @@ ms.locfileid: "63374595"
 
 ### <a name="span-idd3drsdeletertpatchspanspan-idd3drsdeletertpatchspan-d3drsdeletertpatch"></a><span id="d3drs_deletertpatch"></span><span id="D3DRS_DELETERTPATCH"></span> D3DRS\_DELETERTPATCH
 
-此呈现器状态通知修补程序是要删除的驱动程序。 有关详细信息，请参阅[ **D3DRENDERSTATETYPE**](https://msdn.microsoft.com/library/windows/hardware/ff549036)。
+此呈现器状态通知修补程序是要删除的驱动程序。 有关详细信息，请参阅[ **D3DRENDERSTATETYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3drenderstatetype)。
 
  
 

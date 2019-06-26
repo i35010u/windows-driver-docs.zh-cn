@@ -4,12 +4,12 @@ description: MB 发射功率状态操作
 ms.assetid: 9b745ff3-c00b-4a43-9bf3-52f9bf61e062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 917eb72e9d21dffcff502fe69f53f9501d1bf21b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aad2618143ccf6d88ab957f66e82ce46fce813a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367661"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374033"
 ---
 # <a name="mb-radio-power-state-operations"></a>MB 发射功率状态操作
 
@@ -28,7 +28,7 @@ ms.locfileid: "63367661"
 
 -   MB 服务可能会将命令发送到要置于低功耗状态以节省电量或避免与环境无线电干扰无线电的微型端口驱动程序 (如在飞机上)。
 
-有关单选电源状态操作的详细信息，请参阅[OID\_WWAN\_单选\_状态](https://msdn.microsoft.com/library/windows/hardware/ff569832)。
+有关单选电源状态操作的详细信息，请参阅[OID\_WWAN\_单选\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-radio-state)。
 
  
 

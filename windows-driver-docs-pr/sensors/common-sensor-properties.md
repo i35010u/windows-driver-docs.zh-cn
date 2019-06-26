@@ -4,12 +4,12 @@ description: 本主题介绍常见的所有传感器的传感器属性。
 ms.assetid: 3E4DD221-BA8E-446E-BA7A-EF84DFED332F
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aa167e2b04935467d8638ea909372dc4847624a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 356d6348d986997c1f25f2ae3635b66d48ddc2f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330104"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376939"
 ---
 # <a name="common-sensor-properties"></a>通用传感器属性
 
@@ -41,14 +41,14 @@ ms.locfileid: "63330104"
 <td><p>VT_CLSID</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>传感器的类型。 GUID 将包括与 Windows 传感器 (例如，SENSOR_TYPE_ACCELEROMETER_3D) 相同的格式。 有关传感器类型的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">传感器类型 Guid</a>。</p></td>
+<td><p>传感器的类型。 GUID 将包括与 Windows 传感器 (例如，SENSOR_TYPE_ACCELEROMETER_3D) 相同的格式。 有关传感器类型的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)">传感器类型 Guid</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_State</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>传感器的状态。 有关传感器状态的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/dn946703" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn946703)"> <strong>SENSOR_STATE</strong></a>。</p></td>
+<td><p>传感器的状态。 有关传感器状态的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state)"> <strong>SENSOR_STATE</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_MinimumDataInterval_Ms</p></td>
@@ -139,7 +139,7 @@ ms.locfileid: "63330104"
 
 从 Windows 10，版本 1511，开始支持现已可供实现数据批处理使用的 HID 传感器类驱动程序。 有关此信息，请参阅[传感器批处理控件](sensor-batching-for-power-saving-.md)。
 
-请参阅[EvtSensorSetBatchLatency](https://msdn.microsoft.com/library/windows/hardware/mt219125)有关回调函数的信息与数据批处理。
+请参阅[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)有关回调函数的信息与数据批处理。
 
 使用传感器的附加功能来唤醒的 CPU 和操作系统从 SX 状态，主键\_传感器\_WakeCapable 还用作枚举属性，可从要找出传感器是否的即插即用驱动程序存储区查询能够从 SX 系统除了唤醒从连接待机系统唤醒。
 
@@ -155,15 +155,15 @@ ms.locfileid: "63330104"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[EvtSensorSetBatchLatency](https://msdn.microsoft.com/library/windows/hardware/mt219125)
+[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
 
 [传感器属性](sensor-properties2.md)
 
-[**SENSOR\_STATE**](https://msdn.microsoft.com/library/windows/hardware/dn946703)
+[**SENSOR\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state)
 
-[Guid 的传感器类型](https://msdn.microsoft.com/library/windows/hardware/dn946707)
+[Guid 的传感器类型](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)
 
  
 

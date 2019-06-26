@@ -13,12 +13,12 @@ keywords:
 - 贴花纸 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609da6c6156e023b9350bac80dae361dfea11679
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: ac8697b312d09d160084ae8aa38761c5c5ad1907
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161580"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376029"
 ---
 # <a name="stencil-planes"></a>模具平面
 
@@ -32,7 +32,7 @@ ms.locfileid: "67161580"
 
 假定模具平面嵌入在 z 缓冲区数据。
 
-应用程序在 DirectX 5.0 中，找到可用的 z 缓冲区位深度使用 DDBD\_*Xx*设置标志**dwDeviceZBufferBitDepth**隶属[ **D3DDEVICEDESC\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff544689)结构。 若要支持 z 缓冲区模具和 z 缓冲区位深度不能使用现有 DDBD 表示\_*Xx*标志、 DirectX 6.0 和更高版本中有新的 API 入口点， **IDirect3D7::EnumZBufferFormats** （Direct3D SDK 文档中介绍），这会返回 DDPIXELFORMAT 结构描述可能 z 缓冲区/模具像素格式的数组。 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)结构包括以下新 z 缓冲区相关的成员：
+应用程序在 DirectX 5.0 中，找到可用的 z 缓冲区位深度使用 DDBD\_*Xx*设置标志**dwDeviceZBufferBitDepth**隶属[ **D3DDEVICEDESC\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)结构。 若要支持 z 缓冲区模具和 z 缓冲区位深度不能使用现有 DDBD 表示\_*Xx*标志、 DirectX 6.0 和更高版本中有新的 API 入口点， **IDirect3D7::EnumZBufferFormats** （Direct3D SDK 文档中介绍），这会返回 DDPIXELFORMAT 结构描述可能 z 缓冲区/模具像素格式的数组。 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)结构包括以下新 z 缓冲区相关的成员：
 
 <span id="dwStencilBitDepth"></span><span id="dwstencilbitdepth"></span><span id="DWSTENCILBITDEPTH"></span>**dwStencilBitDepth**  
 指定模具比特数 (为整数，而不是作为 DDBD\_*Xx*标志值)。
@@ -45,7 +45,7 @@ ms.locfileid: "67161580"
 
 新的标志，DDPF\_STENCILBUFFER，指示模具位 z 缓冲区中是否存在。 **DwZBufferBitDepth**成员，之前已存在，提供了 z 缓冲区位包括模具位的总数。
 
-DirectX 6.0 和更高版本驱动程序仍应设置相应 DDBD\_*Xx*标记中**dwDeviceZBufferBitDepth**它们支持仅限 z z 缓冲区格式。 如果不支持模具平面和 DDBD\_*Xx*标志可以表示所有可用的 z 缓冲区格式，然后设置这些标志已足够，因为它们将转换为通过 DDPIXELFORMAT **IDirect3D7::EnumZBufferFormats**。 否则，Direct3D 驱动程序必须响应[ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)查询使用 GUID\_ZPixelFormats GUID 通过返回的缓冲区中的第一个 dword 值指示的数目有效的 z 缓冲区 DDPIXELFORMAT 结构，跟 DDPIXELFORMAT 结构自身。
+DirectX 6.0 和更高版本驱动程序仍应设置相应 DDBD\_*Xx*标记中**dwDeviceZBufferBitDepth**它们支持仅限 z z 缓冲区格式。 如果不支持模具平面和 DDBD\_*Xx*标志可以表示所有可用的 z 缓冲区格式，然后设置这些标志已足够，因为它们将转换为通过 DDPIXELFORMAT **IDirect3D7::EnumZBufferFormats**。 否则，Direct3D 驱动程序必须响应[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)查询使用 GUID\_ZPixelFormats GUID 通过返回的缓冲区中的第一个 dword 值指示的数目有效的 z 缓冲区 DDPIXELFORMAT 结构，跟 DDPIXELFORMAT 结构自身。
 
 模具平面与相关联的新呈现状态将显示在下表列出了呈现状态，使用的呈现状态的值和说明关联的类型。 更多详细信息请参阅呈现状态，请参阅 DirectX SDK 文档。
 

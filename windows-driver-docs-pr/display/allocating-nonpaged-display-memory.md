@@ -6,12 +6,12 @@ keywords:
 - 非分页的显示内存 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ec52f08d2c2adb49bc2adb84fe4b9d43c27be3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 987bdd6d6abd870439a94372dc6fa2bff1bcb357
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384648"
 ---
 # <a name="allocating-nonpaged-display-memory"></a>分配非分页显示内存
 
@@ -21,7 +21,7 @@ ms.locfileid: "63380106"
 
 **本主题仅适用于 Microsoft Windows XP 和更高版本。**
 
-DirectX 9.0 版本显示驱动程序可以调用[ **EngAllocMem** ](https://msdn.microsoft.com/library/windows/hardware/ff564176)图形设备接口 (GDI) 函数不仅从系统分配的内存分页池还从非分页缓冲池。 若要分配非分页的内存，该驱动程序必须指定 FL\_未分页\_中的内存标志*标志*参数**EngAllocMem**调用。 如果未指定此标志，从系统的页面缓冲池分配内存。
+DirectX 9.0 版本显示驱动程序可以调用[ **EngAllocMem** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)图形设备接口 (GDI) 函数不仅从系统分配的内存分页池还从非分页缓冲池。 若要分配非分页的内存，该驱动程序必须指定 FL\_未分页\_中的内存标志*标志*参数**EngAllocMem**调用。 如果未指定此标志，从系统的页面缓冲池分配内存。
 
 Windows 2000 和前面仅允许从分配的系统页面缓冲池。
 

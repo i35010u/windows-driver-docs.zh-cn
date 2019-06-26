@@ -7,12 +7,12 @@ keywords:
 - Msi WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d3e9ea6604fd33a11c0d7f76f5ca7315fcb4fe8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9110bf7890c3d370c9e636eb6725e2c9e01dfbe5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390290"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369931"
 ---
 # <a name="introduction-to-message-signaled-interrupts"></a>消息信号中断简介
 
@@ -25,17 +25,17 @@ PCI 2.2 一条消息包含的地址和部分不透明的 16 位值。 每个设�
 
 对于 PCI 3.0 来说，一条消息包含的地址和一个不透明的 32 位值。 每个不同的消息都有其自己唯一的地址。 与不同的 PCI 2.2，设备不会修改值。 PCI 3.0 设备可以支持最多 2048 个不同的消息。 支持 PCI 3.0 MSI-X 的设备功能的中断源设备中的每个包含条目的动态可编程硬件表。 此表中的每个条目可以使用其中一条消息，将分配到一台设备，并且可以独立地屏蔽编程。 驱动程序可以更改表项和条目是否已屏蔽的中断消息的编程。 有关详细信息，请参阅[动态配置 MSI-X](dynamically-configuring-msi-x.md)。
 
-驱动程序可以注册单个[ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)例程处理的所有可能的消息或个人[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)为每个消息的例程。
+驱动程序可以注册单个[ *InterruptMessageService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)例程处理的所有可能的消息或个人[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)为每个消息的例程。
 
 驱动程序可以处理设备发送，如下所示的 Msi:
 
 1.  在驱动程序安装过程中启用 msi，然后在注册表中。 此外可以使用注册表来指定要分配的设备的消息数。 有关详细信息，请参阅[Enabling Message-Signaled 中断在注册表中](enabling-message-signaled-interrupts-in-the-registry.md)。
 
-2.  （可选） 增加的中断消息数并将每条消息的某些设置保存回应[ **IRP\_MN\_筛选器\_资源\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff550874)请求。 有关详细信息，请参阅[使用 Interrupt 资源描述符](using-interrupt-resource-descriptors.md)。
+2.  （可选） 增加的中断消息数并将每条消息的某些设置保存回应[ **IRP\_MN\_筛选器\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)请求。 有关详细信息，请参阅[使用 Interrupt 资源描述符](using-interrupt-resource-descriptors.md)。
 
-3.  中的驱动程序的调度例程[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)，调用[ **IoConnectInterruptEx**](https://msdn.microsoft.com/library/windows/hardware/ff548378)注册*InterruptService*或*InterruptMessageService*例程，以服务设备的中断。 使用 CONNECT\_完全\_的指定版本**IoConnectInterruptEx**注册*InterruptService*例程特定的消息或连接\_消息\_基于版本**IoConnectInterruptEx**注册单个*InterruptMessageService*例程的所有消息。 有关详细信息，请参阅[使用 CONNECT\_消息\_基于版本的 IoConnectInterruptEx](using-the-connect-message-based-version-of-ioconnectinterruptex.md)并[使用 CONNECT\_完全\_指定版本IoConnectInterruptEx](using-the-connect-fully-specified-version-of-ioconnectinterruptex.md)。
+3.  中的驱动程序的调度例程[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)，调用[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册*InterruptService*或*InterruptMessageService*例程，以服务设备的中断。 使用 CONNECT\_完全\_的指定版本**IoConnectInterruptEx**注册*InterruptService*例程特定的消息或连接\_消息\_基于版本**IoConnectInterruptEx**注册单个*InterruptMessageService*例程的所有消息。 有关详细信息，请参阅[使用 CONNECT\_消息\_基于版本的 IoConnectInterruptEx](using-the-connect-message-based-version-of-ioconnectinterruptex.md)并[使用 CONNECT\_完全\_指定版本IoConnectInterruptEx](using-the-connect-fully-specified-version-of-ioconnectinterruptex.md)。
 
-4.  该驱动程序不能再想服务中断从设备后，调用[ **IoDisconnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549093) （之后禁用设备的中断） 中删除任何已注册的中断服务例程。
+4.  该驱动程序不能再想服务中断从设备后，调用[ **IoDisconnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex) （之后禁用设备的中断） 中删除任何已注册的中断服务例程。
 
 旨在使用多个消息的驱动程序应检查，分配给预期的消息数。 如果插即用 (PnP) 管理器无法分配请求的数目的消息，它而是会分配到设备的一个消息。 驱动程序可以检查实际分配通过以下方式之一的消息数：
 

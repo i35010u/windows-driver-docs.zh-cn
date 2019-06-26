@@ -4,12 +4,12 @@ description: 常用属性、相机属性和扫描仪属性
 ms.assetid: 7d988a1b-4c2f-43f7-be09-a250d9ede35c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cdf8dcc7124beb17079222e90f28fad33082f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b0950e8d93d5ad3dbdebdeabdfd06b01aaaa1d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375941"
 ---
 # <a name="common-camera-and-scanner-properties"></a>常用属性、相机属性和扫描仪属性
 
@@ -73,7 +73,7 @@ WIA 属性是设备 （根） 或 （子级） 的项的属性。 设备属性�
 
  
 
-请参阅[WIA 属性](https://msdn.microsoft.com/library/windows/hardware/ff552739)有关 WIA 常见、 特定于照相机的和特定于扫描程序的属性的完整列表。
+请参阅[WIA 属性](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)有关 WIA 常见、 特定于照相机的和特定于扫描程序的属性的完整列表。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 安装 NDIS 中间层驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 025cc8d01e538359ca34ec1c04b8b2a02b2bd2d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 514232160158532356fecd69164da2af2e52d4fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324897"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382208"
 ---
 # <a name="installing-an-intermediate-driver"></a>安装中间驱动程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324897"
 
 协议 INF 文件是主 INF 文件。 安装协议下边缘后，会安装虚拟微型端口上边缘，基于对微型端口驱动程序 INF 文件协议 INF 文件中定义的引用。
 
-在 Windows Vista 中，可以使用通知对象或自定义安装应用程序将微型端口驱动程序 INF 文件复制到系统 INF 目录。 对于 Windows Vista 及更高版本的操作系统版本，应使用[ **INF CopyINF 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547317)协议 INF 文件要复制的微型端口驱动程序 INF 文件中。 通知对象和复制 INF 文件有关的详细信息，请参阅[中间驱动程序通知对象](intermediate-driver-notify-object.md)。
+在 Windows Vista 中，可以使用通知对象或自定义安装应用程序将微型端口驱动程序 INF 文件复制到系统 INF 目录。 对于 Windows Vista 及更高版本的操作系统版本，应使用[ **INF CopyINF 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyinf-directive)协议 INF 文件要复制的微型端口驱动程序 INF 文件中。 通知对象和复制 INF 文件有关的详细信息，请参阅[中间驱动程序通知对象](intermediate-driver-notify-object.md)。
 
 下边缘是的协议的系统提供的设备安装程序类**NetService**筛选器的中间驱动程序和**NetTrans** MUX 中间驱动程序。 虚拟微型端口驱动程序类是始终**Net**。
 

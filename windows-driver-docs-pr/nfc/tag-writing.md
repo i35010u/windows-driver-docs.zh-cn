@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b61266fffa648c57f55c630d2e5cd67c1cf508f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4560f2c8c8d3ee7bad36137f4b70483d59a86b7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380729"
 ---
 # <a name="tag-writing"></a>标记写入
 
@@ -64,12 +64,12 @@ Nfc 的 NFP 提供程序需要的标记写入支持。 必须满足这些要求�
 -   如果一个或多个"\*: WriteTag"在驱动程序检测到具有足够的空间可用于至少一个有效负载的可写标记时间点启用了发布，驱动程序必须写入负载的一个标记。 o 在的多个发布处于活动状态且足够小，无法写入到一个标记，最近创建或启用"\*: WriteTag"发布必须是一个用。
 -   如果"\*: WriteTag"驱动程序发布是创建或启用驱动程序当前正在与具有足够的空间可用于有效负载的可写标记之间的通信时，必须向标记中编写有效负载即使驱动程序以前已写入到标记。
 -   该驱动程序必须写入的方式，会覆盖以前的内容中的标记。
--   如果"\*: WriteTag"有效负载已成功写入到一个标记，该驱动程序必须触发[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853320) （如上所示） 处理针对该发布。
+-   如果"\*: WriteTag"有效负载已成功写入到一个标记，该驱动程序必须触发[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message) （如上所示） 处理针对该发布。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

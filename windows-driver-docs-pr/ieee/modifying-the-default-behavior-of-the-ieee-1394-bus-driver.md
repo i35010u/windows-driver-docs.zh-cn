@@ -4,12 +4,12 @@ description: Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序
 ms.assetid: B636943E-EE52-4D0D-A638-89C05AD41F1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 305c180c8c9930b43a420d72395a4bdc2ffc9bf0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37ba44dc4d49d7f52e8fcf6afac1008118e40ad6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370982"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381049"
 ---
 # <a name="modifying-the-default-behavior-of-the-ieee-1394-bus-driver"></a>修改 IEEE 1394 总线驱动程序的默认行为
 
@@ -109,8 +109,8 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
  
 
 ## <a name="related-topics"></a>相关主题
-[IEEE 1394 驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/ff538867)  
-[在 Windows 7 中的 IEEE 1394 总线驱动程序](https://msdn.microsoft.com/library/windows/hardware/gg266402)  
+[IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)  
+[在 Windows 7 中的 IEEE 1394 总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/IEEE-1394-Bus-Driver-in-Windows-7)  
 
 
 

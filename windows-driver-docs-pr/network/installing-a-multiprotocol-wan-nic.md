@@ -9,12 +9,12 @@ keywords:
 - NIC 多协议 WAN WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4054c796f9a0e268a98a7d735c442eb50139305
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e1bda00517265c5d9fd04c9b27608d59abbfaaf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385850"
 ---
 # <a name="installing-a-multiprotocol-wan-nic"></a>安装多协议 WAN NIC
 
@@ -28,7 +28,7 @@ ms.locfileid: "63324908"
 > ISDN 功能已被弃用，在 Windows 10 及更高版本。 
 
 
-多协议的 WAN NIC 的供应商必须提供的共同安装程序安装向导页。 (有关共同安装程序的详细信息，请参阅[编写共同安装程序](https://msdn.microsoft.com/library/windows/hardware/ff554011))。 此向导页会提示用户选择 WAN 协议：
+多协议的 WAN NIC 的供应商必须提供的共同安装程序安装向导页。 (有关共同安装程序的详细信息，请参阅[编写共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer))。 此向导页会提示用户选择 WAN 协议：
 
 -   如果用户选择 ISDN，将显示 ISDN 向导。 ISDN 向导会提示用户为 ISDN 交换机类型，并根据选择的交换机类型，其他 ISDN 参数值。 有关详细信息，请参阅[指定 ISDN 键和值的 ISDN 适配器](specifying-isdn-keys-and-values-for-an-isdn-adapter.md)。
 

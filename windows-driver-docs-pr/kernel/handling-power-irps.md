@@ -21,12 +21,12 @@ keywords:
 - I/O 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e0525d2ac28ad6e37efde2b9fdbe5a12b1beb46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7896440bed422e3348c252e0f8c4d9e5809b45c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350019"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371905"
 ---
 # <a name="handling-power-irps"></a>处理电源 IRP
 
@@ -34,15 +34,15 @@ ms.locfileid: "63350019"
 
 
 
-驱动程序处理中的电源 Irp [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 所有电源管理都请求具有重大的 IRP 代码[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784)和次要的以下代码之一：
+驱动程序处理中的电源 Irp [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 所有电源管理都请求具有重大的 IRP 代码[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)和次要的以下代码之一：
 
-[**IRP\_MN\_查询\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551699) — 查询以确定是否更改电源状态为可行
+[**IRP\_MN\_查询\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power) — 查询以确定是否更改电源状态为可行
 
-[**IRP\_MN\_设置\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744) — 从一个电源状态到另一个请求更改
+[**IRP\_MN\_设置\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) — 从一个电源状态到另一个请求更改
 
-[**IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766) — 请求启用设备唤醒本身或系统
+[**IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) — 请求启用设备唤醒本身或系统
 
-[**IRP\_MN\_电源\_序列**](https://msdn.microsoft.com/library/windows/hardware/ff551644) — 请求以优化电源还原到特定设备的信息
+[**IRP\_MN\_电源\_序列**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-power-sequence) — 请求以优化电源还原到特定设备的信息
 
 为支持**IRP\_MN\_设置\_POWER**并**IRP\_MN\_查询\_POWER**是必需的。 所有驱动程序必须准备好处理这些 Irp。
 

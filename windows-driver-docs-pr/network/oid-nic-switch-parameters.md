@@ -5,12 +5,12 @@ ms.assetid: 3F2FF2C0-8710-4243-8583-CD80F244FCFB
 ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f41ef06761ea0091456e500a59d42bde2db14e6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bc175478337d37ac0008672b9a1fd67dde191a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350966"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380843"
 ---
 # <a name="oidnicswitchparameters"></a>OID\_NIC\_交换机\_参数
 
@@ -19,17 +19,17 @@ ms.locfileid: "63350966"
 
 过量驱动程序问题 OID 设置请求的 OID\_NIC\_切换\_网络适配器上切换参数来设置指定 NIC 的配置参数。 这些 OID 集请求颁发给微型端口驱动程序的网络适配器的 PCI Express (PCIe) 物理函数 (PF)。 这些 OID 集请求所需的支持的单个根 I/O 虚拟化 (SR-IOV) 接口的 PF 微型端口驱动程序。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_NIC\_交换机\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451587)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_NIC\_交换机\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构。
 
-基础驱动程序指定的 OID 方法的 NIC 交换机或通过设置集请求**SwitchId**的成员[ **NDIS\_NIC\_切换\_参数** ](https://msdn.microsoft.com/library/windows/hardware/hh451587)交换机标识符的结构。 基础驱动程序将获取通过以下方式之一的交换机标识符：
+基础驱动程序指定的 OID 方法的 NIC 交换机或通过设置集请求**SwitchId**的成员[ **NDIS\_NIC\_切换\_参数** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)交换机标识符的结构。 基础驱动程序将获取通过以下方式之一的交换机标识符：
 
 -   从上一个 OID 方法请求的[OID\_NIC\_交换机\_枚举\_开关](oid-nic-switch-enum-switches.md)。
 
--   从**NicSwitchArray**的成员[ **NDIS\_绑定\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff564832)结构。 NDIS 将指针传递到此结构*BindParameters*的参数[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)函数。
+-   从**NicSwitchArray**的成员[ **NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)结构。 NDIS 将指针传递到此结构*BindParameters*的参数[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)函数。
 
--   从**NicSwitchArray**的成员[ **NDIS\_筛选器\_附加\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff565481)结构。 NDIS 将指针传递到此结构*AttachParameters*的参数[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)函数。
+-   从**NicSwitchArray**的成员[ **NDIS\_筛选器\_附加\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)结构。 NDIS 将指针传递到此结构*AttachParameters*的参数[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)函数。
 
-**请注意**  从 Windows Server 2012 开始，Windows 上的网络适配器支持仅默认 NIC 切换。 **SwitchId**的成员[ **NDIS\_NIC\_开关\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451587)结构必须设置为 NDIS\_默认值\_交换机\_id。
+**请注意**  从 Windows Server 2012 开始，Windows 上的网络适配器支持仅默认 NIC 切换。 **SwitchId**的成员[ **NDIS\_NIC\_开关\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构必须设置为 NDIS\_默认值\_交换机\_id。
 
  
 
@@ -38,13 +38,13 @@ ms.locfileid: "63350966"
 
 基础驱动程序将发出 OID\_NIC\_交换机\_参数请求如下所示：
 
--   基础驱动程序将发出 OID 的 OID 方法请求\_NIC\_切换\_参数来获取指定 NIC 开关的当前参数。 有关详细信息，请参阅[查询的 NIC 开关参数](https://msdn.microsoft.com/library/windows/hardware/hh440179)。
+-   基础驱动程序将发出 OID 的 OID 方法请求\_NIC\_切换\_参数来获取指定 NIC 开关的当前参数。 有关详细信息，请参阅[查询的 NIC 开关参数](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-parameters-of-a-nic-switch)。
 
     **请注意**  NDIS 处理 OID 方法请求的 OID\_NIC\_交换机\_PF 微型端口驱动程序的参数。
 
      
 
--   基础驱动程序将发出 OID 的 OID 集请求\_NIC\_切换\_更改指定 NIC 开关的当前参数的参数。 有关详细信息，请参阅[设置的 NIC 开关参数](https://msdn.microsoft.com/library/windows/hardware/hh440227)。
+-   基础驱动程序将发出 OID 的 OID 集请求\_NIC\_切换\_更改指定 NIC 开关的当前参数的参数。 有关详细信息，请参阅[设置的 NIC 开关参数](https://docs.microsoft.com/windows-hardware/drivers/network/setting-the-parameters-of-a-nic-switch)。
 
     **请注意**  PF 微型端口驱动程序处理 OID 集请求的 OID\_NIC\_交换机\_参数。
 
@@ -68,7 +68,7 @@ NDIS 或 PF 微型端口驱动程序返回的集或方法的以下状态代码�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>请求已成功完成。 <strong>InformationBuffer</strong>指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff566583" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566583)"> <strong>NDIS_NIC_SWITCH_CAPABILITIES</strong> </a>结构。</p></td>
+<td><p>请求已成功完成。 <strong>InformationBuffer</strong>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)"> <strong>NDIS_NIC_SWITCH_CAPABILITIES</strong> </a>结构。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
@@ -76,11 +76,11 @@ NDIS 或 PF 微型端口驱动程序返回的集或方法的以下状态代码�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>一个或多个的成员<a href="https://msdn.microsoft.com/library/windows/hardware/hh451587" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451587)"> <strong>NDIS_NIC_SWITCH_PARAMETERS</strong> </a>结构具有无效值。</p></td>
+<td><p>一个或多个的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)"> <strong>NDIS_NIC_SWITCH_PARAMETERS</strong> </a>结构具有无效值。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置<strong>数据。METHOD_INFORMATION。BytesNeeded</strong> （对于 OID 方法请求） 的成员或<strong>数据。SET_INFORMATION。BytesNeeded</strong> （对于 OID 集请求） 中的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置<strong>数据。METHOD_INFORMATION。BytesNeeded</strong> （对于 OID 方法请求） 的成员或<strong>数据。SET_INFORMATION。BytesNeeded</strong> （对于 OID 集请求） 中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_REINIT_REQUIRED</p></td>
@@ -119,21 +119,21 @@ NDIS 或 PF 微型端口驱动程序返回的集或方法的以下状态代码�
 
 
 ****
-[*FilterAttach*](https://msdn.microsoft.com/library/windows/hardware/ff549905)
+[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)
 
-[**NDIS\_BIND\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff564832)
+[**NDIS\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
 
-[**NDIS\_FILTER\_ATTACH\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff565481)
+[**NDIS\_FILTER\_ATTACH\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)
 
-[**NDIS\_NIC\_SWITCH\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/hh451587)
+[**NDIS\_NIC\_SWITCH\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
 [OID\_NIC\_SWITCH\_CREATE\_SWITCH](oid-nic-switch-create-switch.md)
 
 [OID\_NIC\_SWITCH\_ENUM\_SWITCHES](oid-nic-switch-enum-switches.md)
 
-[*ProtocolBindAdapterEx*](https://msdn.microsoft.com/library/windows/hardware/ff570220)
+[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)
 
  
 

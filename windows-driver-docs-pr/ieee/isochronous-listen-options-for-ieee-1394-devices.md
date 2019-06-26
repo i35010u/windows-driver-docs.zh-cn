@@ -13,12 +13,12 @@ keywords:
 - 标头 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f3a23f2d45c6d8b7f24114b059ef599cc3901c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af351cbb16b365379e4de5251f3c86aa0857fe97
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371007"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385769"
 ---
 # <a name="isochronous-listen-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量侦听选项
 
@@ -30,7 +30,7 @@ ms.locfileid: "63371007"
 
 ### <a name="receiving-or-stripping-packet-headers"></a>接收或最小化数据包标头
 
-主机控制器可能会或可能不会自动去除关闭同步数据包标头。 总线驱动程序设置的主机\_INFO\_支持\_RETURNING\_ISO\_HDR 标志**HostCapabilities**隶属[**获取\_本地\_主机\_INFO2** ](https://msdn.microsoft.com/library/windows/hardware/ff537147)结构，如果主机控制器是否执行*不*自动删除关闭同步数据包标头。
+主机控制器可能会或可能不会自动去除关闭同步数据包标头。 总线驱动程序设置的主机\_INFO\_支持\_RETURNING\_ISO\_HDR 标志**HostCapabilities**隶属[**获取\_本地\_主机\_INFO2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_get_local_host_info2)结构，如果主机控制器是否执行*不*自动删除关闭同步数据包标头。
 
 此外，主机控制器可能支持可配置最小化的标头。 总线驱动程序设置的主机\_INFO\_支持\_ISOCH\_STRIPPING 标志的 HostCapabilities 是否可以配置主机控制器去除标头。 若要实际配置主机控制器去除标头，该驱动程序提交[**请求\_ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)与资源的请求\_条带\_其他\_QUADLETS 标志设置。 **NQuadletsToStrip**成员指定 quadlets 剥离开头的每个数据包的数目。 例如， **nQuadletsToStrip** = 1 会剥离同步数据包标头。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63371007"
 
 如果主机控制器支持两种类型的 DMA，总线驱动程序将设置为默认为基于流的 DMA 主控制器。 若要将主机控制器重置为基于数据包的 DMA，驱动程序应设置资源\_使用\_数据包\_基于标志时分配的资源句柄。
 
-驱动程序使用[**请求\_获取\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)总线请求 (使用**u.GetLocalHostInformation.nLevel** IRB 成员 = GET\_主机\_功能) 来确定主控制器的特征。 总线驱动程序将返回[**获取\_本地\_主机\_INFO2** ](https://msdn.microsoft.com/library/windows/hardware/ff537147)结构和中的设置标志**HostCapabilities**若要指示主机控制器支持的成员：
+驱动程序使用[**请求\_获取\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)总线请求 (使用**u.GetLocalHostInformation.nLevel** IRB 成员 = GET\_主机\_功能) 来确定主控制器的特征。 总线驱动程序将返回[**获取\_本地\_主机\_INFO2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_get_local_host_info2)结构和中的设置标志**HostCapabilities**若要指示主机控制器支持的成员：
 
 <table>
 <colgroup>

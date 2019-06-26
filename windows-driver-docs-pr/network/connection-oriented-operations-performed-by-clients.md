@@ -7,12 +7,12 @@ keywords:
 - 客户端操作 WDK 的 CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c96f4bf462c572c5d47feeab75cf9fddf950c09c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51f6d6b0820d31deb0a1ef0594c96634e90428f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357408"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374957"
 ---
 # <a name="connection-oriented-operations-performed-by-clients"></a>客户端执行的面向连接的操作
 
@@ -32,7 +32,7 @@ ms.locfileid: "63357408"
 
 -   **添加和删除 Pvc。**
 
-    操作员手动配置或可永久 VC (PVC) 时，可以监视面向连接的客户端。 在此操作的响应，客户端可以请求将 PVC 添加到配置 Pvc 其列表，或从这类列表中删除 PVC 的呼叫管理器或 MCM 驱动程序 (请参阅[OID\_共同\_添加\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569087)并[OID\_CO\_删除\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569090))。
+    操作员手动配置或可永久 VC (PVC) 时，可以监视面向连接的客户端。 在此操作的响应，客户端可以请求将 PVC 添加到配置 Pvc 其列表，或从这类列表中删除 PVC 的呼叫管理器或 MCM 驱动程序 (请参阅[OID\_共同\_添加\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-add-pvc)并[OID\_CO\_删除\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-delete-pvc))。
 
 -   **使传出调用。**
 

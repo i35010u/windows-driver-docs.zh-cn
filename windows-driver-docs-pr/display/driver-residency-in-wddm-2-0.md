@@ -4,12 +4,12 @@ description: 本部分提供有关驱动程序的详细信息驻留更改为 Win
 ms.assetid: 9BD0138A-E957-4675-8E08-2750825A5C87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f179b00a5a0300b8354ccebaa25bc4013fbe5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3906aad8c629904a7fb35f67304dc0b34fc2174
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358443"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381074"
 ---
 # <a name="driver-residency-in-wddm-20"></a>WDDM 2.0 中的驱动程序驻留
 
@@ -48,13 +48,13 @@ ms.locfileid: "63358443"
 <td align="left"><p>图形处理单元 (GPU) 访问不是常驻分配是非法的并会导致生成错误的应用程序中删除的设备。</p>
 <p>有两个不同的模型的处理取决于是否出错的引擎支持 GPU 虚拟寻址或不访问此类无效：</p>
 <ul>
-<li>对于不支持 GPU 虚拟寻址，并使用的分配和修补程序修补程序内存引用到的位置列表的引擎，无效的访问发生在用户模式驱动程序提交的分配列表引用分配，这不是驻留在设备 (即称为用户模式驱动程序尚未<a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResidentCb</em> </a>在该分配)。 此操作时，图形内核将有故障的上下文/设备放入错误。</li>
+<li>对于不支持 GPU 虚拟寻址，并使用的分配和修补程序修补程序内存引用到的位置列表的引擎，无效的访问发生在用户模式驱动程序提交的分配列表引用分配，这不是驻留在设备 (即称为用户模式驱动程序尚未<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)"> <em>MakeResidentCb</em> </a>在该分配)。 此操作时，图形内核将有故障的上下文/设备放入错误。</li>
 <li>对于执行支持 GPU 虚拟寻址，但访问 GPU 虚拟地址是无效的引擎，或者因为后面的虚拟地址未分配或没有有效分配但尚未进行其常驻，GPU 应引发形式的中断发生了不可恢复的页面错误。 当发生页面故障中断时，内核模式驱动程序需要转发到图形内核通过新的页错误通知错误。 收到此通知时，图形内核启动引擎重置上出错的引擎，并将有故障的上下文/设备放入错误。 如果引擎重置失败，图形内核将升级到完整适配器宽超时检测和恢复 (TDR) 错误。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="process-residency-budgets.md" data-raw-source="[Process residency budgets](process-residency-budgets.md)">进程驻留预算</a></p></td>
-<td align="left"><p>WDDM v2 中的进程将分配的内存量保持常驻的预算。 此预算随着时间推移，可以更改，但通常仅施加时系统处于内存压力下。 在 Microsoft Direct3D 12 中之前, 预算处理的窗体中的用户模式驱动程序通过<em>剪裁</em>通知并<em>MakeResident</em>失败<strong>STATUS_NO_MEMORY</strong>。 <em>TrimToBudget</em>通知<a href="https://msdn.microsoft.com/library/windows/hardware/dn906355" data-raw-source="[&lt;em&gt;Evict&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906355)"><em>逐出</em></a>，和失败<a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResident&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResident</em> </a>所有调用将都返回在最新的预算窗体的一个整数<strong>NumBytesToTrim</strong>值，该值指示多大需要进行剪裁以适应新的预算。</p></td>
+<td align="left"><p>WDDM v2 中的进程将分配的内存量保持常驻的预算。 此预算随着时间推移，可以更改，但通常仅施加时系统处于内存压力下。 在 Microsoft Direct3D 12 中之前, 预算处理的窗体中的用户模式驱动程序通过<em>剪裁</em>通知并<em>MakeResident</em>失败<strong>STATUS_NO_MEMORY</strong>。 <em>TrimToBudget</em>通知<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb" data-raw-source="[&lt;em&gt;Evict&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)"><em>逐出</em></a>，和失败<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb" data-raw-source="[&lt;em&gt;MakeResident&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)"> <em>MakeResident</em> </a>所有调用将都返回在最新的预算窗体的一个整数<strong>NumBytesToTrim</strong>值，该值指示多大需要进行剪裁以适应新的预算。</p></td>
 </tr>
 </tbody>
 </table>

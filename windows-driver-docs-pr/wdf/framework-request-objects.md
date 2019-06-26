@@ -10,12 +10,12 @@ keywords:
 - 请求对象 WDK KMDF 关于请求对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80436e8fb83717536cadfbe3c8fe822d40eb5731
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d933a75c746dc341df1a3663f813d76616cd6cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378122"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384446"
 ---
 # <a name="framework-request-objects"></a>框架请求对象
 
@@ -23,9 +23,9 @@ ms.locfileid: "63378122"
 
 
 
-Framework 请求对象表示 I/O 管理器已发送到驱动程序的 I/O 请求。 基于框架的驱动程序处理每个 I/O 请求通过调用[framework 请求对象方法](https://msdn.microsoft.com/library/windows/hardware/dn265664)。
+Framework 请求对象表示 I/O 管理器已发送到驱动程序的 I/O 请求。 基于框架的驱动程序处理每个 I/O 请求通过调用[framework 请求对象方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/)。
 
-每个 I/O 请求包含 WDM *I/O 请求数据包*([**IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)结构)，但基于框架的驱动程序通常无需访问 IRP 结构。
+每个 I/O 请求包含 WDM *I/O 请求数据包*([**IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)结构)，但基于框架的驱动程序通常无需访问 IRP 结构。
 
 ## <a name="in-this-section"></a>本节内容
 

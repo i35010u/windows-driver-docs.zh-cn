@@ -7,12 +7,12 @@ keywords:
 - 并行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 39f253f9095a330932c22673dc9b2f2528d618c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b4ed3ad500a19b9566aa52426e84984aa83fc12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373573"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376975"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-devices"></a>针对并行设备的 I/O 请求的特定于设备的操作
 本主题介绍并行设备的 I/O 请求的以下特定于设备的操作
@@ -26,10 +26,10 @@ ms.locfileid: "63373573"
 
 
 ##  <a name="irpmjcreate"></a>IRP_MJ_CREATE
-[IRP_MJ_CREATE](https://msdn.microsoft.com/library/windows/hardware/ff550729)请求打开并行设备。
+[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)请求打开并行设备。
 
 ### <a name="when-sent"></a>发送时间
-客户端必须使用[IRP_MJ_CREATE](https://msdn.microsoft.com/library/windows/hardware/ff550729)请求打开并行设备才能访问设备。
+客户端必须使用[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)请求打开并行设备才能访问设备。
 
 ### <a name="input-parameters"></a>输入参数
 无。
@@ -68,13 +68,13 @@ STATUS_NOT_A_DIRECTORY
 设备不是一个目录。
 
 ### <a name="operation"></a>操作
-并行设备是独占的设备。 如果并行设备处于打开状态，并行端口的系统提供的总线驱动程序失败，任何后续[IRP_MJ_CREATE](https://msdn.microsoft.com/library/windows/hardware/ff550729)设备在关闭设备之前的请求。 其他输入/输出请求发送到设备或调用之前，必须打开并行设备客户端[并行设备回调例程](https://msdn.microsoft.com/library/windows/hardware/ff544275)。
+并行设备是独占的设备。 如果并行设备处于打开状态，并行端口的系统提供的总线驱动程序失败，任何后续[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)设备在关闭设备之前的请求。 其他输入/输出请求发送到设备或调用之前，必须打开并行设备客户端[并行设备回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
-有关详细信息，请参阅[打开并使用并行设备](https://msdn.microsoft.com/windows/hardware/drivers/parports/opening-and-using-a-parallel-device)。
+有关详细信息，请参阅[打开并使用并行设备](https://docs.microsoft.com/windows-hardware/drivers/parports/opening-and-using-a-parallel-device)。
 
 
 ##  <a name="irpmjdevicecontrol"></a>IRP_MJ_DEVICE_CONTROL
-[IRP_MJ_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550744)请求运行并行设备。
+[IRP_MJ_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)请求运行并行设备。
 
 ### <a name="when-sent"></a>发送时间
 客户端对以下类型的操作使用设备控制请求：
@@ -82,7 +82,7 @@ STATUS_NOT_A_DIRECTORY
 * 获取有关设备的信息
 * 设置设备的运行模式
 
-请参阅[并行的设备的设备控制请求](https://msdn.microsoft.com/library/windows/hardware/ff543945)。
+请参阅[并行的设备的设备控制请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 ### <a name="input-parameters"></a>输入参数
 特定于请求的。
@@ -129,7 +129,7 @@ STATUS_UNSUCCESSFUL
 
 
 ##  <a name="irpmjinternaldevicecontrol"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
-[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550766)请求设置并行的设备上的内部操作模式。
+[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)请求设置并行的设备上的内部操作模式。
 
 ### <a name="when-sent"></a>发送时间
 客户端对以下类型的操作使用内部设备控制请求：
@@ -138,7 +138,7 @@ STATUS_UNSUCCESSFUL
 * 获取有关并行端口的连接信息
 * 锁定和解锁独占使用的并行端口设备
 
-请参阅内部[并行的设备的设备控制请求](https://msdn.microsoft.com/library/windows/hardware/ff543945)。
+请参阅内部[并行的设备的设备控制请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 ### <a name="input-parameters"></a>输入参数
 特定于请求的。
@@ -186,7 +186,7 @@ STATUS_UNSUCCESSFUL
 
 
 ##  <a name="irpmjqueryinformation"></a>IRP_MJ_QUERY_INFORMATION
-[IRP_MJ_QUERY_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff550788)请求获取有关文件表示并行设备的信息。
+[IRP_MJ_QUERY_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-query-information)请求获取有关文件表示并行设备的信息。
 
 ### <a name="when-sent"></a>发送时间
 客户端发送查询信息请求，以确定文件大小或文件指针的当前字节偏移量。
@@ -197,13 +197,13 @@ STATUS_UNSUCCESSFUL
 
 **FileStandardInformation**请求：
  
-**AssociatedIrp.SystemBuffer**成员将指向[FILE_STANDARD_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545855)为输出的文件信息的客户端分配的结构。
+**AssociatedIrp.SystemBuffer**成员将指向[FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)为输出的文件信息的客户端分配的结构。
 
 **Parameters.QueryFile.Length**的成员设置为的大小，以字节为单位， **FILE_STANDARD_INFORMATION**结构。
 
 **FilePositionInformation**请求： 
 
-**AssociatedIrp.SystemBuffer**指向[FILE_POSITION_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545848)为输出的文件信息的客户端分配的结构。
+**AssociatedIrp.SystemBuffer**指向[FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)为输出的文件信息的客户端分配的结构。
 
 **Parameters.SetFile.Length**的成员设置为的大小，以字节为单位， **FILE_POSITION_INFORMATION**结构。
 
@@ -254,10 +254,10 @@ STATUS_INVALID_PARAMETER
 
 
 ##  <a name="irpmjread"></a>IRP_MJ_READ
-[IRP_MJ_READ](https://msdn.microsoft.com/library/windows/hardware/ff550794)请求从并行设备获取输入的数据。
+[IRP_MJ_READ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)请求从并行设备获取输入的数据。
 
 ### <a name="when-sent"></a>发送时间
-客户端用[IRP_MJ_READ](https://msdn.microsoft.com/library/windows/hardware/ff550794)请求以获取从并行设备的输入。
+客户端用[IRP_MJ_READ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)请求以获取从并行设备的输入。
 
 ### <a name="input-parameters"></a>输入参数
 **Parameters.Read.Length**成员指向要从并行设备读取的字节数。
@@ -296,18 +296,18 @@ STATUS_DEVICE_REMOVED
 已删除设备。
 
 ### <a name="operation"></a>操作
-并行端口的系统提供的总线驱动程序使用读取的协议为并行设备设置。 默认值读取协议是 NIBBLE_MODE。 客户端可以通过使用协商读取的协议[IOCTL_IEEE1284_NEGOTIATE](https://msdn.microsoft.com/library/windows/hardware/ff543978)请求。
+并行端口的系统提供的总线驱动程序使用读取的协议为并行设备设置。 默认值读取协议是 NIBBLE_MODE。 客户端可以通过使用协商读取的协议[IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)请求。
 
 并行端口总线驱动程序设置在取消例程的读取请求、 将标记为挂起，则读取的请求和队列上的工作队列的读取的请求。 读取的请求会保留在工作队列中可以取消，直到完成或取消由客户端读取的请求的状态。
 
-有关详细信息，请参阅[读取和写入并行设备](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)。
+有关详细信息，请参阅[读取和写入并行设备](https://docs.microsoft.com/windows-hardware/drivers/parports/reading-and-writing-a-parallel-device)。
 
 
 ##  <a name="irpmjwrite"></a>IRP_MJ_WRITE
-[IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)请求将输出数据传输到并行的设备。
+[IRP_MJ_WRITE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求将输出数据传输到并行的设备。
 
 ### <a name="when-sent"></a>发送时间
-客户端用[IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)请求时它将输出数据传输到并行的设备。
+客户端用[IRP_MJ_WRITE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求时它将输出数据传输到并行的设备。
 
 ### <a name="input-parameters"></a>输入参数
 **AssociatedIrp.SystemBuffer**指向客户端分配的写入缓冲区写入数据。 缓冲区必须足够大以保存请求的字节写入到并行的设备数。
@@ -347,23 +347,23 @@ STATUS_DEVICE_REMOVED
 已删除设备。
 
 ### <a name="operation"></a>操作
-并行端口的系统提供的总线驱动程序将通过使用并行设备设置写入协议传输数据。 默认写入协议为 CENTRONICS。 客户端可以通过使用协商写协议[IOCTL_IEEE1284_NEGOTIATE](https://msdn.microsoft.com/library/windows/hardware/ff543978)请求。 
+并行端口的系统提供的总线驱动程序将通过使用并行设备设置写入协议传输数据。 默认写入协议为 CENTRONICS。 客户端可以通过使用协商写协议[IOCTL_IEEE1284_NEGOTIATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_ieee1284_negotiate)请求。 
 
 并行端口总线驱动程序设置写入请求的取消例程，将标记为挂起，写入请求和队列工作队列中的写入请求。 写入请求都保存在可以取消，直到完成或取消请求的状态。
 
-有关详细信息，请参阅[读取和写入并行设备](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)。
+有关详细信息，请参阅[读取和写入并行设备](https://docs.microsoft.com/windows-hardware/drivers/parports/reading-and-writing-a-parallel-device)。
 
 ## <a name="related-topics"></a>相关主题
 
-[适用于并行设备的设备控制请求](https://msdn.microsoft.com/library/windows/hardware/ff543945)。
+[适用于并行设备的设备控制请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
-[FILE_POSITION_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545848) [FILE_STANDARD_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff545855)
+[FILE_POSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information) [FILE_STANDARD_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)
 
-[打开并使用并行设备](https://msdn.microsoft.com/windows/hardware/drivers/parports/opening-and-using-a-parallel-device)
+[打开并使用并行设备](https://docs.microsoft.com/windows-hardware/drivers/parports/opening-and-using-a-parallel-device)
 
-[运行并行设备附加到并行端口](https://msdn.microsoft.com/windows/hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
+[运行并行设备附加到并行端口](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[并行设备回调例程](https://msdn.microsoft.com/library/windows/hardware/ff544275)
+[并行设备回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[读取和写入并行设备](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)
+[读取和写入并行设备](https://docs.microsoft.com/windows-hardware/drivers/parports/reading-and-writing-a-parallel-device)
 

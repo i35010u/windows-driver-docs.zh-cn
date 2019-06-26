@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0289268f58ceffcb92c04873d35546fbd3cb4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca82950a5afba115b24f8e802186950a237367b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383772"
 ---
 # <a name="wiadpspages"></a>WIA\_DPS\_PAGES
 
@@ -66,7 +66,7 @@ WIA\_DPS\_页属性包含要获取自动文档送纸器中的页的数目。
 **请注意**  如果启用了双工模式 (即[ **WIA\_DPS\_文档\_处理\_选择**](wia-dps-document-handling-select.md)属性设置为送纸器 |双工），WIA\_DPS\_页是否仍等于要扫描的页数。
 一张纸将自动包含两个页面如果启用双工，则即使该页的后端为空。
 
-如果设置 WIA\_DPS\_页为 1，扫描程序将处理页面的方面之一。 如果扫描程序不能扫描的页中双工模式仅一侧，则应更改 WIA\_DPS\_页值**Inc**的成员[ **WIA\_属性\_INFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552751)为 2 的结构。 此值向发出信号，该应用程序，它必须请求中的两个序列图的页面。 如果 WIA\_DPS\_页为零，则扫描程序将扫描*所有*当前加载到文档送纸器的页。
+如果设置 WIA\_DPS\_页为 1，扫描程序将处理页面的方面之一。 如果扫描程序不能扫描的页中双工模式仅一侧，则应更改 WIA\_DPS\_页值**Inc**的成员[ **WIA\_属性\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)为 2 的结构。 此值向发出信号，该应用程序，它必须请求中的两个序列图的页面。 如果 WIA\_DPS\_页为零，则扫描程序将扫描*所有*当前加载到文档送纸器的页。
 
  
 
@@ -97,7 +97,7 @@ WIA\_DPS\_页属性包含要获取自动文档送纸器中的页的数目。
 
 [**WIA\_IPS\_PAGES**](wia-ips-pages.md)
 
-[**WIA\_属性\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff552751)
+[**WIA\_属性\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
 
  
 

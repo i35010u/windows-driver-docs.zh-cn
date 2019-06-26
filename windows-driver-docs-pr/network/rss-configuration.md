@@ -10,12 +10,12 @@ keywords:
 - ndirection 表示例 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf8b8b30a3b5ffb52e5c274f61f636140091218e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c74ee2fcd4125d99bab95e2f5d26cf76f00970f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382158"
 ---
 # <a name="rss-configuration"></a>RSS 配置
 
@@ -23,19 +23,19 @@ ms.locfileid: "63359115"
 
 
 
-若要获取 RSS 配置信息，基础驱动程序可以发送的 OID 查询[OID\_代\_接收\_规模\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569636)微型端口驱动程序。 NDIS 还提供了到过量协议中的驱动程序的 RSS 配置信息[ **NDIS\_绑定\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff564832)在初始化过程中的结构。
+若要获取 RSS 配置信息，基础驱动程序可以发送的 OID 查询[OID\_代\_接收\_规模\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-capabilities)微型端口驱动程序。 NDIS 还提供了到过量协议中的驱动程序的 RSS 配置信息[ **NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)在初始化过程中的结构。
 
-基础驱动程序将选择哈希函数、 类型和间接表。 若要设置这些配置选项，该驱动程序发送的 OID 集请求[OID\_代\_接收\_规模\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569637)微型端口驱动程序。 过量驱动程序还可以查询此 OID 以获得当前的 RSS 设置。 OID 信息缓冲区\_GEN\_接收\_规模\_参数 OID 包含一个指向[ **NDIS\_接收\_规模\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567228)结构。
+基础驱动程序将选择哈希函数、 类型和间接表。 若要设置这些配置选项，该驱动程序发送的 OID 集请求[OID\_代\_接收\_规模\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)微型端口驱动程序。 过量驱动程序还可以查询此 OID 以获得当前的 RSS 设置。 OID 信息缓冲区\_GEN\_接收\_规模\_参数 OID 包含一个指向[ **NDIS\_接收\_规模\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)结构。
 
 基础驱动程序可以禁用 RSS nic 在这种情况下，驱动程序设置 NDIS\_RSS\_PARAM\_标志\_禁用\_RSS 标志中**标志**成员 NDIS\_接收\_规模\_参数结构。 微型端口驱动程序时设置此标志，应忽略所有其他标志和设置并禁用 RSS nic
 
 NDIS 处理 OID\_GEN\_接收\_规模\_参数，然后再将它传递到微型端口驱动程序和更新的微型端口适配器\*RSS 标准化关键字，如果所需。 有关详细信息 **\*RSS**关键字，请参阅[RSS 的标准化 INF 关键字](standardized-inf-keywords-for-rss.md)。
 
-收到后[OID\_代\_接收\_规模\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569637)集请求与的 NDIS\_RSS\_PARAM\_标志\_禁用\_RSS 标志设置，在初始化之后，微型端口驱动程序应将 NIC RSS 状态设置为 NIC 的初始状态。 因此，如果微型端口驱动程序收到的后续 OID\_GEN\_接收\_规模\_参数设置请求与的 NDIS\_RSS\_PARAM\_标志\_禁用\_RSS 清除标志，所有参数应具有相同的值后微型端口驱动程序收到 OID 设置的\_常规\_接收\_规模\_第一次的微型端口适配器已初始化后，设置请求参数。
+收到后[OID\_代\_接收\_规模\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)集请求与的 NDIS\_RSS\_PARAM\_标志\_禁用\_RSS 标志设置，在初始化之后，微型端口驱动程序应将 NIC RSS 状态设置为 NIC 的初始状态。 因此，如果微型端口驱动程序收到的后续 OID\_GEN\_接收\_规模\_参数设置请求与的 NDIS\_RSS\_PARAM\_标志\_禁用\_RSS 清除标志，所有参数应具有相同的值后微型端口驱动程序收到 OID 设置的\_常规\_接收\_规模\_第一次的微型端口适配器已初始化后，设置请求参数。
 
-基础驱动程序可以使用[OID\_代\_接收\_哈希](https://msdn.microsoft.com/library/windows/hardware/ff569635)OID 来启用和配置上的哈希计算接收帧，而不启用 RSS。 过量驱动程序还可以查询以获得当前接收哈希设置此 OID。
+基础驱动程序可以使用[OID\_代\_接收\_哈希](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-hash)OID 来启用和配置上的哈希计算接收帧，而不启用 RSS。 过量驱动程序还可以查询以获得当前接收哈希设置此 OID。
 
-OID 信息缓冲区\_GEN\_接收\_哈希 OID 包含一个指向[ **NDIS\_接收\_哈希\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567190)结构。 对于组的请求，OID 指定微型端口适配器应使用的哈希参数。 对于查询请求，OID 返回微型端口适配器使用的哈希参数。 此 OID 是可选的支持 RSS 的驱动程序。
+OID 信息缓冲区\_GEN\_接收\_哈希 OID 包含一个指向[ **NDIS\_接收\_哈希\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)结构。 对于组的请求，OID 指定微型端口适配器应使用的哈希参数。 对于查询请求，OID 返回微型端口适配器使用的哈希参数。 此 OID 是可选的支持 RSS 的驱动程序。
 
 **请注意**  如果接收哈希计算已启用、 NDIS 禁用接收哈希计算之前启用了 RSS。 如果启用了 RSS，NDIS 禁用 RSS 之前它使接收哈希计算。
 
@@ -65,7 +65,7 @@ OID 信息缓冲区\_GEN\_接收\_哈希 OID 包含一个指向[ **NDIS\_接收\
 
 当微型端口驱动程序将分发到的 Cpu 和数据包，如果有太多 Cpu 时，花费的时间中分散负载可能令人望而却步。 在这种情况下，过量驱动程序应选择网络数据的处理出现的 Cpu 的子集。
 
-在某些情况下，接收队列执行的可用硬件数可能小于在系统上的 Cpu 数。 微型端口驱动程序必须检查间接表来确定 CPU 编号，以将与硬件队列相关联。 如果多个 NIC 支持的硬件队列数目的间接寻址表中显示的不同 CPU 数量总数，微型端口驱动程序必须选择间接表中的 CPU 数的子集。 硬件队列数数等于子集。 获取该微型端口驱动程序**IndirectionTableSize**中的参数[OID\_常规\_接收\_规模\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569637)。 指定的微型端口驱动程序**NumberOfReceiveQueues**值以响应 OID\_常规\_接收\_规模\_功能。
+在某些情况下，接收队列执行的可用硬件数可能小于在系统上的 Cpu 数。 微型端口驱动程序必须检查间接表来确定 CPU 编号，以将与硬件队列相关联。 如果多个 NIC 支持的硬件队列数目的间接寻址表中显示的不同 CPU 数量总数，微型端口驱动程序必须选择间接表中的 CPU 数的子集。 硬件队列数数等于子集。 获取该微型端口驱动程序**IndirectionTableSize**中的参数[OID\_常规\_接收\_规模\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)。 指定的微型端口驱动程序**NumberOfReceiveQueues**值以响应 OID\_常规\_接收\_规模\_功能。
 
  
 

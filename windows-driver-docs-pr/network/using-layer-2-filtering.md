@@ -4,12 +4,12 @@ description: 使用第 2 层筛选
 ms.assetid: 679E6DE2-4EFB-44F6-936D-2BF611BC9726
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3a1f9f4266ac5db031fcc78704879305ee30d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dee558719fb76a1a1572b1b6ab021bd011e99d1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371813"
 ---
 # <a name="using-layer-2-filtering"></a>使用第 2 层筛选
 
@@ -28,13 +28,13 @@ Windows 8 和更高版本的 Windows 中支持第 2 层筛选。
 
 ## <a name="injecting-mac-frames"></a>注入 MAC 帧
 
-回调驱动程序调用[ **FwpsInjectMacReceiveAsync0** ](https://msdn.microsoft.com/library/windows/hardware/hh439588)函数以返回到第 2 层入站的数据路径，或为已截获 reinject 以前吸收的 MAC 帧 （或帧的克隆）注入的入站的数据路径中的自创新的 MAC 帧。
+回调驱动程序调用[ **FwpsInjectMacReceiveAsync0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectmacreceiveasync0)函数以返回到第 2 层入站的数据路径，或为已截获 reinject 以前吸收的 MAC 帧 （或帧的克隆）注入的入站的数据路径中的自创新的 MAC 帧。
 
-回调驱动程序调用[ **FwpsInjectMacSendAsync0** ](https://msdn.microsoft.com/library/windows/hardware/hh439593)函数以返回到第 2 层出站数据路径，或为已截获 reinject 以前吸收的 MAC 帧 （或帧的克隆）注入自创新的 MAC 帧中的出站数据路径。
+回调驱动程序调用[ **FwpsInjectMacSendAsync0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectmacsendasync0)函数以返回到第 2 层出站数据路径，或为已截获 reinject 以前吸收的 MAC 帧 （或帧的克隆）注入自创新的 MAC 帧中的出站数据路径。
 
 *NetBufferLists*参数可以是[NET\_缓冲区\_列表](net-buffer-list-structure.md)链。 但是完成调用该函数，可以多次每完成一个段 (或单个 NET\_缓冲区\_列表) 的链。
 
-插入的框架无法获取再次分类，如果最初分类的相同筛选器匹配的数据包。 因此，与在 IP 层上的标注，第 2 层标注必须还防止无限数据包检查通过调用[ **FwpsQueryPacketInjectionState0**](https://msdn.microsoft.com/library/windows/hardware/ff551202)。
+插入的框架无法获取再次分类，如果最初分类的相同筛选器匹配的数据包。 因此，与在 IP 层上的标注，第 2 层标注必须还防止无限数据包检查通过调用[ **FwpsQueryPacketInjectionState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)。
 
 此外，在其中注入的层必须有标注。 否则为您注入[NET\_缓冲区\_列表](net-buffer-list-structure.md)不会完成向完成函数中和 NET\_缓冲区\_列表将进一步在堆栈中向上。 在这种情况下，该行为不确定，因为 NDIS 将尝试进行传递注入的 NET\_缓冲区\_到堆栈中的下一个组件的列表。
 
@@ -44,16 +44,16 @@ Windows 8 和更高版本的 Windows 中支持第 2 层筛选。
 
 默认情况下，标注驱动程序可以仅分类网络缓冲区列表分别。 但是，标注驱动程序可以对分类[NET\_缓冲区\_列表](net-buffer-list-structure.md)链接为提高性能，如果是这样以下两个：
 
--   指定**FWP\_标注\_标志\_允许\_L2\_批处理\_分类**标志中**标志**的成员[ **FWPS\_CALLOUT2** ](https://msdn.microsoft.com/library/windows/hardware/hh439700)结构。
--   注册[ *classifyFn2* ](https://msdn.microsoft.com/library/windows/hardware/hh439337)函数可以对分类[NET\_缓冲区\_列表](net-buffer-list-structure.md)链。
+-   指定**FWP\_标注\_标志\_允许\_L2\_批处理\_分类**标志中**标志**的成员[ **FWPS\_CALLOUT2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_callout2_)结构。
+-   注册[ *classifyFn2* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn2)函数可以对分类[NET\_缓冲区\_列表](net-buffer-list-structure.md)链。
 
 > [!WARNING]
 > 但是，如果未设置标注驱动程序**FWP_CALLOUT_FLAG_ALLOW_L2_BATCH_CLASSIFY**标志，它无法使用以下函数来修改 NET_BUFFER_LISTs。
 > 
-> - [FwpsReferenceNetBufferList0](https://msdn.microsoft.com/library/windows/hardware/ff551206)
-> - [FwpsDereferenceNetBufferList0](https://msdn.microsoft.com/library/windows/hardware/ff551159)
-> - [FwpsAllocateCloneNetBufferList0](https://msdn.microsoft.com/library/windows/hardware/ff551134)
-> - [FwpsFreeCloneNetBufferList0](https://msdn.microsoft.com/library/windows/hardware/ff551170)
+> - [FwpsReferenceNetBufferList0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsreferencenetbufferlist0)
+> - [FwpsDereferenceNetBufferList0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsdereferencenetbufferlist0)
+> - [FwpsAllocateCloneNetBufferList0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsallocateclonenetbufferlist0)
+> - [FwpsFreeCloneNetBufferList0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0)
 >
 > 设置此标志， **FwpsAllocateCloneNetBufferList0**将始终返回**INVALID_PARAMETER**错误。 这可能会意外导致第三方标注驱动程序无法进行管理的引用计数的 NET\_缓冲区\_列表，从而导致发送和接收操作停止。
 
@@ -71,13 +71,13 @@ Windows 8 和更高版本的 Windows 中支持第 2 层筛选。
 
 虚拟交换机筛选的数据字段标识符包括：
 
-[**FWPS\_FIELDS\_INBOUND\_MAC\_FRAME\_ETHERNET**](https://msdn.microsoft.com/library/windows/hardware/ff551291)
+[**FWPS\_FIELDS\_INBOUND\_MAC\_FRAME\_ETHERNET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_inbound_mac_frame_ethernet_)
 
-[**FWPS\_FIELDS\_OUTBOUND\_MAC\_FRAME\_ETHERNET**](https://msdn.microsoft.com/library/windows/hardware/ff551334)
+[**FWPS\_FIELDS\_OUTBOUND\_MAC\_FRAME\_ETHERNET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_outbound_mac_frame_ethernet_)
 
-[**FWPS\_FIELDS\_INBOUND\_MAC\_FRAME\_NATIVE**](https://msdn.microsoft.com/library/windows/hardware/hh439728)
+[**FWPS\_FIELDS\_INBOUND\_MAC\_FRAME\_NATIVE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_inbound_mac_frame_native_)
 
-[**FWPS\_FIELDS\_OUTBOUND\_MAC\_FRAME\_NATIVE**](https://msdn.microsoft.com/library/windows/hardware/hh439757)
+[**FWPS\_FIELDS\_OUTBOUND\_MAC\_FRAME\_NATIVE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_outbound_mac_frame_native_)
 
  
 

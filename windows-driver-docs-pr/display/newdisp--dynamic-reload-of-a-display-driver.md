@@ -9,12 +9,12 @@ keywords:
 - 重新启动动态重新加载 WDK Windows 2000 显示通过预防
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 326c4a27c513995c2465fd58eb0717168826021f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 227d1b6e018315d23f339d6810d532410e411648
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345525"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372817"
 ---
 # <a name="newdisp-dynamic-reload-of-a-display-driver"></a>NewDisp：显示驱动程序的动态重新加载
 
@@ -42,7 +42,7 @@ ms.locfileid: "63345525"
 
 -   立即执行另一个**ChangeDisplaySettings**为原始模式，这会导致新的显示驱动程序 DLL 被加载从回调 *\\system32*目录和 16 种颜色VGA 显示器驱动程序无法卸载 DLL。
 
-对驱动程序实例的引用存在驱动程序是否 active Direct3D [ **WNDOBJ**](https://msdn.microsoft.com/library/windows/hardware/ff570599)，或[ **DRIVEROBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff556162)对象。 当*newdisp*运行时对驱动程序实例的引用存在，旧的显示器驱动程序 DLL 将永远不会被卸载，并且相应地将永远不会加载新的显示驱动程序 DLL。
+对驱动程序实例的引用存在驱动程序是否 active Direct3D [ **WNDOBJ**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_wndobj)，或[ **DRIVEROBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_driverobj)对象。 当*newdisp*运行时对驱动程序实例的引用存在，旧的显示器驱动程序 DLL 将永远不会被卸载，并且相应地将永远不会加载新的显示驱动程序 DLL。
 
 *Newdisp*依赖于加载到 Windows 2000 和更高版本时避免重新启动; 重新加载该驱动程序已添加的功能的动态驱动程序因此，它不适用于在 Windows NT 4.0 和早期操作系统版本上。 它也不会不起作用的 VGA 驱动程序无法加载图形在设备上，或如果本机显示驱动程序支持的模式，640 x 480 x 16 颜色而不是让该模式由 VGA 驱动程序处理。
 

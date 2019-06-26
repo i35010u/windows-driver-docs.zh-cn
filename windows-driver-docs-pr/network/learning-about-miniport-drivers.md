@@ -19,12 +19,12 @@ keywords:
 - 网络驱动程序 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1384d03543b91995b46f11e04e7dac9032366573
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7e39dd3c0a960ba85871d2221a09908e9b3655a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369194"
 ---
 # <a name="learning-about-miniport-drivers"></a>了解微型端口驱动程序
 
@@ -70,7 +70,7 @@ ms.locfileid: "63365368"
 <a href="" id="miniport-drivers-that-support-scalable-networking"></a>**支持可缩放的网络的微型端口驱动程序**  
 若要了解有关支持可缩放的网络的微型端口驱动程序的信息，请阅读：
 
--   [可缩放网络](https://msdn.microsoft.com/library/windows/hardware/ff570735)
+-   [可缩放网络](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 <a href="" id="miniport-drivers-that-support-offloading-tcp-ip--------to-hardware-------"></a>**支持卸载到硬件的 TCP/IP 的微型端口驱动程序**   
 若要了解有关将 TCP/IP 卸载到硬件的微型端口驱动程序的信息，请阅读：

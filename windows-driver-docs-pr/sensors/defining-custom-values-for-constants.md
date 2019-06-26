@@ -4,12 +4,12 @@ description: 定义自定义值的传感器常量
 ms.assetid: 0ed635c2-117d-4a49-a565-31e5a0a9861d
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4474861e525c39e8b08bc952ed98eb773660782c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80de189f6c5e9db56f3abec634515dade09abb9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377820"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384184"
 ---
 # <a name="defining-custom-values-for-sensor-constants"></a>定义自定义值的传感器常量
 
@@ -18,7 +18,7 @@ ms.locfileid: "63377820"
 
 ## <a name="guidelines-for-custom-values"></a>自定义值的指导原则
 
-避免定义新常量，如果一系列平台定义的常量将起作用。 研究，并了解类别、 类型、 数据字段、 属性和事件中所述[常量](https://msdn.microsoft.com/library/windows/hardware/ff545409)参考部分，并决定传感器驱动程序是否适合平台框架。
+避免定义新常量，如果一系列平台定义的常量将起作用。 研究，并了解类别、 类型、 数据字段、 属性和事件中所述[常量](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)参考部分，并决定传感器驱动程序是否适合平台框架。
 
 如果您选择定义的自定义值，请遵循以下准则：
 
@@ -78,7 +78,7 @@ DEFINE_PROPERTYKEY(SAMPLE_SENSOR_DATA_TYPE_SECOND,
 使用宏，而不包含 Initguid.h 和无需引用库文件将导致 LNK2001 错误。
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://msdn.microsoft.com/library/windows/hardware/hh768273)
+[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
 
 
 

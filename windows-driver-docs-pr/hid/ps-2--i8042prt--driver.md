@@ -4,12 +4,12 @@ description: 本主题介绍 I8042prt、 Microsoft Windows 2000 和更高版本�
 ms.assetid: BB1046EE-8780-46ED-8CEB-63110643D325
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c6dffc2bc630b40207d25fac8db7e2e545dad8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de2287a99dfb610f85bd8cdf5053e1a0280d8a17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365359"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385812"
 ---
 # <a name="ps2-i8042prt-driver"></a>PS/2 (i8042prt) 驱动程序
 
@@ -28,27 +28,27 @@ I8042prt 的功能包括：
 
 -   旧设备的操作。
 
--   连接[键盘类服务的回调例程](https://msdn.microsoft.com/library/windows/hardware/ff542274)和一个[鼠标类服务的回调例程](https://msdn.microsoft.com/library/windows/hardware/ff542363)。
+-   连接[键盘类服务的回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/nc-kbdmou-pservice_callback_routine)和一个[鼠标类服务的回调例程](https://docs.microsoft.com/previous-versions/ff542363(v=vs.85))。
 
     I8042prt 使用类服务回调来将数据从输入的数据缓冲区的 I8042prt 传输到的数据缓冲区的类驱动程序。
 
--   供应商提供的加法[ **PI8042\_键盘\_初始化\_例程**](https://msdn.microsoft.com/library/windows/hardware/ff543243)键盘设备的回调例程。
+-   供应商提供的加法[ **PI8042\_键盘\_初始化\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)键盘设备的回调例程。
 
     可选的较高级别设备筛选器驱动程序提供的回调例程。
 
--   供应商提供的加法[ **PI8042\_键盘\_ISR** ](https://msdn.microsoft.com/library/windows/hardware/ff543248)回调例程和自定义[ **PI8042\_鼠标\_ISR** ](https://msdn.microsoft.com/library/windows/hardware/ff543252)回调例程。
+-   供应商提供的加法[ **PI8042\_键盘\_ISR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_isr)回调例程和自定义[ **PI8042\_鼠标\_ISR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_mouse_isr)回调例程。
 
     可选的较高级别设备筛选器驱动程序提供这些回调例程。
 
--   [键盘写入缓冲区请求](https://msdn.microsoft.com/library/windows/hardware/ff541263)并[鼠标写入缓冲区请求](https://msdn.microsoft.com/library/windows/hardware/ff541270)。
+-   [键盘写入缓冲区请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_write_buffer)并[鼠标写入缓冲区请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_write_buffer)。
 
     较高级别设备筛选器驱动程序可以使用写入缓冲区请求以将其写入到设备与设备的 ISR 同步和其他读取和写入设备上。
 
--   [键盘启动信息请求](https://msdn.microsoft.com/library/windows/hardware/ff541257)并[鼠标启动信息请求](https://msdn.microsoft.com/library/windows/hardware/ff541265)。
+-   [键盘启动信息请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_start_information)并[鼠标启动信息请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_start_information)。
 
     启动信息请求将指针传递到较高级别筛选器驱动程序的设备的中断对象。 筛选器驱动程序可以使用中断对象以与设备的 ISR 同步其操作。
 
--   [I8042prt 回调例程](https://msdn.microsoft.com/library/windows/hardware/ff539965)。
+-   [I8042prt 回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
     较高级别设备筛选器驱动程序可以使用设备的 ISR 的上下文中的回调例程编写到设备，并从设备队列数据包。
 

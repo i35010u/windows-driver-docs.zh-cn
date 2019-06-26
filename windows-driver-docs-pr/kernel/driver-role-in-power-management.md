@@ -9,12 +9,12 @@ keywords:
 - 驱动程序 power 支持角色 WDk 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44a8f19f06ebaf779ba8015659ebe27e65ec71d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4447df7ce450839d98289ca064bbc539e56a4212
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353002"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384958"
 ---
 # <a name="driver-role-in-power-management"></a>电源管理中的驱动程序角色
 
@@ -28,7 +28,7 @@ ms.locfileid: "63353002"
 
 2.  驱动程序管理功能和性能其每个设备的状态。
 
-每个驱动程序必须具有[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程来处理[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784)请求。 *DispatchPower*例程必须检查每个 power IRP 和是对其进行处理或将其传递到下一步低驱动程序。
+每个驱动程序必须具有[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程来处理[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)请求。 *DispatchPower*例程必须检查每个 power IRP 和是对其进行处理或将其传递到下一步低驱动程序。
 
 对于参与电源管理设备，设备在设备堆栈中的每个驱动程序必须响应或相应地将 power Irp 传递。 单个驱动程序进行正确操作可能导致禁用跨整个系统的电源管理。
 

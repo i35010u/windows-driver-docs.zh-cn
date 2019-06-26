@@ -5,12 +5,12 @@ ms.assetid: 5BA49F42-FE37-4860-B68F-92A7F4007639
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NDK_SET_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d8fe2aad2183e158d6f04865357cee9abe3938a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bc4521807299d4b7573821208341920cdd6b32b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391650"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371808"
 ---
 # <a name="oidndksetstate"></a>OID\_NDK\_SET\_STATE
 
@@ -22,15 +22,15 @@ NDIS 6.30 和更高版本的微型端口驱动程序提供 NDK 服务必须支�
 <a name="remarks"></a>备注
 -------
 
-NDIS 发出具有此 OID **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构指向**布尔**并**InformationBufferLength**成员等于 sizeof (**布尔**)。
+NDIS 发出具有此 OID **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构指向**布尔**并**InformationBufferLength**成员等于 sizeof (**布尔**)。
 
 -   如果**布尔**值是**TRUE**并 **\*NetworkDirect**关键字值不为零，必须启用 NDK 微型端口适配器的功能。
 
     微型端口驱动程序可以读取 **\*NetworkDirect**关键字值，通过执行以下操作：
 
-    1.  调用[ **NdisOpenConfigurationEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563717)与的 NDIS 处理[ **NdisMRegisterMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff563654)函数时返回微型端口驱动程序已初始化。 有关调用详细信息**NdisOpenConfigurationEx**，请参阅[读取的注册表中 NDIS 6.0 微型端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff570429)。
+    1.  调用[ **NdisOpenConfigurationEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenconfigurationex)与的 NDIS 处理[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)函数时返回微型端口驱动程序已初始化。 有关调用详细信息**NdisOpenConfigurationEx**，请参阅[读取的注册表中 NDIS 6.0 微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/reading-the-registry-in-an-ndis-6-0-miniport-driver)。
 
-    2.  调用[ **NdisReadConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff564511)，并传递：
+    2.  调用[ **NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)，并传递：
 
         -   "\*NetworkDirect"有关*关键字*参数
 
@@ -38,13 +38,13 @@ NDIS 发出具有此 OID **InformationBuffer**的成员[ **NDIS\_OID\_请求**](
 
 -   如果**布尔**值是**FALSE**，必须禁用 NDK 微型端口适配器的功能。
 
-若要启用或禁用其 NDK 功能，微型端口驱动程序的[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)回调函数应按照中的步骤[启用和禁用 NDK 功能](https://msdn.microsoft.com/library/windows/hardware/dn163547).
+若要启用或禁用其 NDK 功能，微型端口驱动程序的[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)回调函数应按照中的步骤[启用和禁用 NDK 功能](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-ndk-functionality).
 
-**请注意**  永远不会调用 NDK 支持的微型端口驱动程序必须[ **NdisMNetPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff563616)的上下文从其[ *MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数，因为这样做可能导致死锁。 相反，它应调用**NdisMNetPnPEvent**从一些其他上下文或队列工作项。
+**请注意**  永远不会调用 NDK 支持的微型端口驱动程序必须[ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)的上下文从其[ *MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数，因为这样做可能导致死锁。 相反，它应调用**NdisMNetPnPEvent**从一些其他上下文或队列工作项。
 
  
 
-NDK 支持的微型端口驱动程序的[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数必须返回**状态\_成功**oid\_NDK\_设置\_状态 OID 请求，除非发生故障。 该驱动程序不能返回**NDIS\_状态\_PENDING**。
+NDK 支持的微型端口驱动程序的[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数必须返回**状态\_成功**oid\_NDK\_设置\_状态 OID 请求，除非发生故障。 该驱动程序不能返回**NDIS\_状态\_PENDING**。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,15 +77,15 @@ NDK 支持的微型端口驱动程序的[ *MiniportOidRequest* ](https://msdn.mi
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisMNetPnPEvent**](https://msdn.microsoft.com/library/windows/hardware/ff563616)
+[**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)
 
-[**NdisQueueIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff563775)
+[**NdisQueueIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisqueueioworkitem)
 
-[**NdisReadConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff564511)
+[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)
 
-[**NDK\_ADAPTER**](https://msdn.microsoft.com/library/windows/hardware/hh439848)
+[**NDK\_ADAPTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)
 
 [OID\_NDK\_设置\_状态](oid-ndk-set-state.md)
 

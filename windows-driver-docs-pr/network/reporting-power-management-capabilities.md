@@ -4,12 +4,12 @@ description: 报告电源管理功能
 ms.assetid: cfacd885-e18a-44a5-939d-88e62b573ace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2060b7e8f6bbccb684f77e77719155cc350f92b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 80a8f681cb84843ca7343fb637ab8f1f1c65a521
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523747"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373248"
 ---
 # <a name="reporting-power-management-capabilities"></a>报告电源管理功能
 
@@ -25,9 +25,9 @@ ms.locfileid: "56523747"
 
 可以启用或禁用 INF 文件设置中的微型端口驱动程序报告的硬件功能。 有关电源管理 INF 文件设置的详细信息，请参阅[电源管理的标准化 INF 关键字](standardized-inf-keywords-for-power-management.md)。
 
-微型端口在初始化期间，微型端口驱动程序初始化[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)与电源管理功能的基础结构硬件。 微型端口驱动程序集**PowerManagementCapabilitiesEx**的成员[ **NDIS\_微型端口\_适配器\_常规\_属性** ](https://msdn.microsoft.com/library/windows/hardware/ff565923)结构，以指向**NDIS\_PM\_功能**结构。
+微型端口在初始化期间，微型端口驱动程序初始化[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)与电源管理功能的基础结构硬件。 微型端口驱动程序集**PowerManagementCapabilitiesEx**的成员[ **NDIS\_微型端口\_适配器\_常规\_属性** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，以指向**NDIS\_PM\_功能**结构。
 
-[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)结构包括以下信息：
+[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构包括以下信息：
 
 **标志**  
 对于 NDIS 6.20 此成员是 ndis 保留。
@@ -45,7 +45,7 @@ ms.locfileid: "56523747"
 有关此电源管理功能的详细信息，请参阅[NDIS 选择性挂起](ndis-selective-suspend.md)。
 
 <a href="" id="supportedwolpacketpatterns"></a>**SupportedWoLPacketPatterns**  
-包含指定的网络适配器支持的 LAN 唤醒 (WOL) 数据包模式的标志。 例如，网络适配器可以生成唤醒事件时接收通过 LAN (EAPOL) 请求标识符消息位图、 WOL 的幻数据包或 EAP。 在当前操作系统中支持的模式的完整列表，请参阅[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)参考页。
+包含指定的网络适配器支持的 LAN 唤醒 (WOL) 数据包模式的标志。 例如，网络适配器可以生成唤醒事件时接收通过 LAN (EAPOL) 请求标识符消息位图、 WOL 的幻数据包或 EAP。 在当前操作系统中支持的模式的完整列表，请参阅[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)参考页。
 
 <a href="" id="numtotalwolpatterns"></a>**NumTotalWoLPatterns**  
 一个**ULONG**值，该值包含网络适配器支持的 WOL 模式的总数。 这是"的受支持的 WOL 协议模式数"和"的受支持的 WOL 位图模式的数。"的总和
@@ -56,7 +56,7 @@ ms.locfileid: "56523747"
 
  
 
-WOL 协议模式的详细信息，请参阅[ **NDIS\_PM\_WOL\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff566768)。
+WOL 协议模式的详细信息，请参阅[ **NDIS\_PM\_WOL\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)。
 
 <a href="" id="maxwolpatternsize"></a>**MaxWoLPatternSize**  
 包含的最大可与一种模式进行比较的字节数。
@@ -68,7 +68,7 @@ WOL 协议模式的详细信息，请参阅[ **NDIS\_PM\_WOL\_模式**](https://
 包含的 WOL 协议模式的微型端口驱动程序可以将保存到一个缓冲区，并指定驱动程序堆栈中向上的字节数。
 
 <a href="" id="supportedprotocoloffloads"></a>**SupportedProtocolOffloads**  
-包含指定的电源管理协议卸载网络适配器支持的功能标志。 微型端口驱动程序使用这些标志，以低能耗协议卸载网络适配器的功能的报表。 例如，网络适配器可以支持 IPv4 ARP 卸载、 IPv6 邻居招标 (NS) 或 IEEE 802.11 可靠安全的网络 (RSN) 4 路和 2 路握手。 在当前操作系统中支持协议卸载的完整列表，请参阅[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)参考页。
+包含指定的电源管理协议卸载网络适配器支持的功能标志。 微型端口驱动程序使用这些标志，以低能耗协议卸载网络适配器的功能的报表。 例如，网络适配器可以支持 IPv4 ARP 卸载、 IPv6 邻居招标 (NS) 或 IEEE 802.11 可靠安全的网络 (RSN) 4 路和 2 路握手。 在当前操作系统中支持协议卸载的完整列表，请参阅[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)参考页。
 
 <a href="" id="numarpoffloadipv4addresses"></a>**NumArpOffloadIPv4Addresses**  
 包含 IPv4 地址的 ARP 卸载数。
@@ -97,11 +97,11 @@ WOL 协议模式的详细信息，请参阅[ **NDIS\_PM\_WOL\_模式**](https://
 
 如果要卸载到低功耗状态中的网络适配器的协议的支持，它必须为协议支持相同的低功耗状态的微型端口驱动程序卸载它支持的模式匹配 WOL 事件;也就是说，在指定的值**MinPatternWakeUp**或**MinMagicPacketWakeUp**成员。
 
-初始化 NDIS [ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)基础的网络适配器的当前可用的电源管理功能的结构并将其传递在绑定操作过程过量协议驱动程序协议。 NDIS 集**PowerManagementCapabilitiesEx**的成员[ **NDIS\_绑定\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff564832)结构，以指向 NDIS\_PM\_功能结构。
+初始化 NDIS [ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)基础的网络适配器的当前可用的电源管理功能的结构并将其传递在绑定操作过程过量协议驱动程序协议。 NDIS 集**PowerManagementCapabilitiesEx**的成员[ **NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)结构，以指向 NDIS\_PM\_功能结构。
 
-过量驱动程序可以使用[OID\_PM\_硬件\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569767)OID 查询，以获取网络适配器的硬件电源管理功能。 NDIS 处理此 OID 请求代表微型端口驱动程序。 NDIS 微型端口驱动程序不支持所需 OID\_PM\_硬件\_功能 OID 请求。
+过量驱动程序可以使用[OID\_PM\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-hardware-capabilities)OID 查询，以获取网络适配器的硬件电源管理功能。 NDIS 处理此 OID 请求代表微型端口驱动程序。 NDIS 微型端口驱动程序不支持所需 OID\_PM\_硬件\_功能 OID 请求。
 
-过量驱动程序可以使用[OID\_PM\_当前\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569765)OID 来查询网络适配器的当前可用的电源管理功能。 NDIS 处理此 OID 请求代表微型端口驱动程序。 NDIS 微型端口驱动程序不支持所需 OID\_PM\_当前\_功能 OID 请求。
+过量驱动程序可以使用[OID\_PM\_当前\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-current-capabilities)OID 来查询网络适配器的当前可用的电源管理功能。 NDIS 处理此 OID 请求代表微型端口驱动程序。 NDIS 微型端口驱动程序不支持所需 OID\_PM\_当前\_功能 OID 请求。
 
  
 

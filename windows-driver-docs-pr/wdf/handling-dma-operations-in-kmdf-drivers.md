@@ -12,12 +12,12 @@ keywords:
 - 直接内存访问 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609be5b5f3c7b4f286dd5dc5e8eaf7540a7d0d2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2d6e0e64977d32f4af41eaf9024affdae2c8dac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382852"
 ---
 # <a name="handling-dma-operations-in-kmdf-drivers"></a>在 KMDF 驱动程序中处理 DMA 操作
 
@@ -42,7 +42,7 @@ ms.locfileid: "63366624"
 -   [保留 DMA 资源](reserving-dma-resources.md)
 -   [DMA 测试 KMDF 驱动程序中](testing-dma-in-kmdf-drivers.md)
 
-了解如何在 WDM 驱动程序支持 DMA 操作，请参阅[DMA 编程技术](https://msdn.microsoft.com/library/windows/hardware/ff544074)。
+了解如何在 WDM 驱动程序支持 DMA 操作，请参阅[DMA 编程技术](https://docs.microsoft.com/windows-hardware/drivers/kernel/dma-programming-techniques)。
 
  
 

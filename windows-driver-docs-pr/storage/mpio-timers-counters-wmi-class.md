@@ -4,12 +4,12 @@ description: MPIO\_计时器\_计数器 WMI 类
 ms.assetid: 386110f8-504c-4617-b8ae-557ea504d41d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8a218a2bd275d1000a6729ec2f2023e11f636e42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4590a37632bed94ce62f1ad86c3d8bd5822118d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383045"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386149"
 ---
 # <a name="mpiotimerscounters-wmi-class"></a>MPIO\_计时器\_计数器 WMI 类
 
@@ -77,7 +77,7 @@ class MPIO_TIMERS_COUNTERS
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_计时器\_计数器**](https://msdn.microsoft.com/library/windows/hardware/ff562461)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_计时器\_计数器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_timers_counters)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

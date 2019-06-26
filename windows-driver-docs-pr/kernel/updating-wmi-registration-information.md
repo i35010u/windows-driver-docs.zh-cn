@@ -13,12 +13,12 @@ keywords:
 - 更新 WMI 注册信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ab688a5299ac20a91de68e450c80bf62322dde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e22cc2c783ffaaf961959b5fe5e280dff5d73cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382928"
 ---
 # <a name="updating-wmi-registration-information"></a>更新 WMI 注册信息
 
@@ -26,17 +26,17 @@ ms.locfileid: "63355279"
 
 
 
-其初始注册后使用 WMI，驱动程序更改其注册信息通过调用[ **IoWMIRegistrationControl** ](https://msdn.microsoft.com/library/windows/hardware/ff550480)与以下操作之一：
+其初始注册后使用 WMI，驱动程序更改其注册信息通过调用[ **IoWMIRegistrationControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)与以下操作之一：
 
 -   WMIREG\_操作\_重新注册来替换以前提供的驱动程序和新的信息的所有注册信息。
 
-    在响应中，WMI 将发送任一[ **IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)请求或[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734)与该驱动程序请求**Parameters.WMI.DataPath**设置为 WMIREGISTER。 (在 Windows 98 和 Windows 2000 上，系统会发送**IRP\_MN\_REGINFO**请求。 在 Windows XP 和更高版本，系统会发送**IRP\_MN\_REGINFO\_EX**请求。)
+    在响应中，WMI 将发送任一[ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)请求或[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)与该驱动程序请求**Parameters.WMI.DataPath**设置为 WMIREGISTER。 (在 Windows 98 和 Windows 2000 上，系统会发送**IRP\_MN\_REGINFO**请求。 在 Windows XP 和更高版本，系统会发送**IRP\_MN\_REGINFO\_EX**请求。)
 
     驱动程序提供 WMI 使用新的注册信息的所有会阻止该支持，如中所述[使用 WMI 库对注册块](using-the-wmi-library-to-register-blocks.md)并[处理 IRP\_MN\_REGINFO 和 IRP\_MN\_REGINFO\_EX 注册块](handling-irp-mn-reginfo-and-irp-mn-reginfo-ex-to-register-blocks.md)。
 
 -   WMIREG\_操作\_更新\_GUID 来添加或删除对块的支持，或更改已注册的块的静态实例名称。
 
-    在响应中，WMI 将发送[ **IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)或者[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734)与该驱动程序请求**Parameters.Wmi.DataPath**设置为 WMIUPDATE。
+    在响应中，WMI 将发送[ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)或者[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)与该驱动程序请求**Parameters.Wmi.DataPath**设置为 WMIUPDATE。
 
     驱动程序提供 WMI 使用在其中更新的注册信息：
 
@@ -48,7 +48,7 @@ ms.locfileid: "63355279"
 
 -   WMIREG\_操作\_取消注册，以指示驱动程序将不再提供 WMI 信息的 WMI。
 
-    WMI 不会发送**IRP\_MN\_REGINFO**或**IRP\_MN\_REGINFO\_EX**请求以响应此调用，因为它需要从驱动程序的任何进一步的信息。 驱动程序通常注销响应其块[ **IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738)请求。 请注意，只有在完成后到设备的所有 WMI Irp 会阻止取消注册调用。 如果驱动程序队列 WMI Irp，它必须取消它们，然后再调[ **IoWMIRegistrationControl** ](https://msdn.microsoft.com/library/windows/hardware/ff550480)能够取消注册。
+    WMI 不会发送**IRP\_MN\_REGINFO**或**IRP\_MN\_REGINFO\_EX**请求以响应此调用，因为它需要从驱动程序的任何进一步的信息。 驱动程序通常注销响应其块[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求。 请注意，只有在完成后到设备的所有 WMI Irp 会阻止取消注册调用。 如果驱动程序队列 WMI Irp，它必须取消它们，然后再调[ **IoWMIRegistrationControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)能够取消注册。
 
  
 

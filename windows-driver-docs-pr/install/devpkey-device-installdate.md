@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bc059a9dde25505db27108f2d48d36b348f0906c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e57bd9e3ceaf1c23e96fe12e385d16dc73dd36c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380753"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378221"
 ---
 # <a name="devpkeydeviceinstalldate"></a>DEVPKEY_Device_InstallDate
 
@@ -60,7 +60,7 @@ Windows 设置具有时间戳指示上次系统中安装设备实例 DEVPKEY_Dev
 
 此时间戳值更改为每个连续更新的设备驱动程序。 例如，此时间戳报告的日期和时间上一次通过 Windows Update 更新设备驱动程序。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_FirstInstallDate 属性的值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_FirstInstallDate 属性的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,7 +85,7 @@ Windows 设置具有时间戳指示上次系统中安装设备实例 DEVPKEY_Dev
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

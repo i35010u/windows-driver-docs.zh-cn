@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 59622f5b9150f7195c3cd172505be221bf83b1a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05c6a4fcfb6c3da06e2c136e4e63c470ae96ebf3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384288"
 ---
 # <a name="smsendlirr-function"></a>SM\_SendLIRR 函数
 
@@ -108,7 +108,7 @@ LIRR 命令的结果。 微型端口驱动程序返回此信息在 SM RespBuffer
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SendLIRR\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566302)
+[**SM\_SendLIRR\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendlirr_out)
 
  
 

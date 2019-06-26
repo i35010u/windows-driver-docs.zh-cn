@@ -13,12 +13,12 @@ keywords:
 - 数据包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bdb37e22072617e6190035ab52f921be5ebbcc3
-ms.sourcegitcommit: 6a8675c349e6aba2a89a40b5f1451005bd5e1297
+ms.openlocfilehash: 65260eead78016a2d7461be432623606eb467699
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377255"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -72,7 +72,7 @@ ms.locfileid: "67169132"
 
 除了签名的驱动程序代码，还需要符合即插即用设备安装签名安装驱动程序的要求。  有关详细信息，请参阅[插即用 (PnP) 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
-有关对 ELAM 驱动程序进行签名的信息，请参阅[早期启动反恶意软件](https://msdn.microsoft.com/library/windows/desktop/hh848061(v=vs.85).aspx)。
+有关对 ELAM 驱动程序进行签名的信息，请参阅[早期启动反恶意软件](https://docs.microsoft.com/windows/desktop/w8cookbook/secured-boot)。
 
 ## <a name="see-also"></a>请参阅
 

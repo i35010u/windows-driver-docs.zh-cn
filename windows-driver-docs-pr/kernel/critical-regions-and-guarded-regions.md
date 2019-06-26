@@ -9,12 +9,12 @@ keywords:
 - 受保护的区域 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2014b59cec69372fb111171f9fd6e60fd1ca84b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cb0c1166abc2a23c67e9077725db4507ac256cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388240"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377147"
 ---
 # <a name="critical-regions-and-guarded-regions"></a>关键区域和受保护区域
 
@@ -25,9 +25,9 @@ ms.locfileid: "63388240"
 
 驱动程序可以进入和退出临界区，如下所示：
 
--   调用[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)输入关键区域。
+-   调用[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)输入关键区域。
 
--   调用[ **KeLeaveCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552964)退出临界区。
+-   调用[ **KeLeaveCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)退出临界区。
 
 每次调用**KeEnterCriticalRegion**必须具有匹配调用**KeLeaveCriticalRegion**。
 
@@ -35,13 +35,13 @@ ms.locfileid: "63388240"
 
 驱动程序可以进入和退出受保护的区域，如下所示：
 
--   调用[ **KeEnterGuardedRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552028)输入受保护的区域。
+-   调用[ **KeEnterGuardedRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keenterguardedregion)输入受保护的区域。
 
--   调用[ **KeLeaveGuardedRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552967)保留受保护的区域。
+-   调用[ **KeLeaveGuardedRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleaveguardedregion)保留受保护的区域。
 
 每次调用**KeEnterGuardedRegion**必须具有匹配调用**KeLeaveGuardedRegion**。
 
-开发用于 Windows Server 2003 和更高版本的 Windows 驱动程序可以使用受保护的区域禁用特殊内核 Apc。 驱动程序开发的早期版本的操作系统可以通过引发 APC 为当前 IRQL 禁用特殊内核 Apc\_级别通过调用[ **KeRaiseIrql**](https://msdn.microsoft.com/library/windows/hardware/ff553079)。 使用[ **KeLowerIrql** ](https://msdn.microsoft.com/library/windows/hardware/ff552968)降低当前 IRQL 到以前的值。
+开发用于 Windows Server 2003 和更高版本的 Windows 驱动程序可以使用受保护的区域禁用特殊内核 Apc。 驱动程序开发的早期版本的操作系统可以通过引发 APC 为当前 IRQL 禁用特殊内核 Apc\_级别通过调用[ **KeRaiseIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirql)。 使用[ **KeLowerIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kelowerirql)降低当前 IRQL 到以前的值。
 
  
 

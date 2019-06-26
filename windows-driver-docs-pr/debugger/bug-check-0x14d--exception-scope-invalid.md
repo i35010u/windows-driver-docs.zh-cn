@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 19cc73857e17dfc69ef6f842c77bf9a2ca580e21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ca3829323ee5c78c3a2985587f5469545626365
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361691"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367795"
 ---
 # <a name="bug-check-0x14d-exceptionscopeinvalid"></a>Bug 检查 0x14D：异常\_作用域\_无效
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361691"
 异常\_作用域\_无效错误检查的值为 0x0000014D。 这表示检测到异常用于调度内部不一致。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="exceptionscopeinvalid-parameters"></a>异常\_作用域\_无效的参数

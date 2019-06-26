@@ -7,12 +7,12 @@ keywords:
 - 安装的设备 WDK，枚举
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2fdbc37e48a6b6428ac08e017e1e68c6f7c78e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 817033cd9b6f49b01e36cb408f6c527dd0d969ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380285"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379471"
 ---
 # <a name="enumerating-installed-devices"></a>枚举已安装的设备
 
@@ -21,11 +21,11 @@ ms.locfileid: "63380285"
 
 若要安全地枚举已安装的设备，请执行以下步骤：
 
-1.  使用[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)或[ **SetupDiGetClassDevsEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551072)检索一组属于指定的设备信息设备安装程序类。 若要检索仅适用于系统中存在的设备的信息，请在中设置 DIGCF_PRESENT*标志*参数。
+1.  使用[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)或[ **SetupDiGetClassDevsEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa)检索一组属于指定的设备信息设备安装程序类。 若要检索仅适用于系统中存在的设备的信息，请在中设置 DIGCF_PRESENT*标志*参数。
 
-2.  使用[ **SetupDiEnumDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff551010)要枚举一组中的设备。
+2.  使用[ **SetupDiEnumDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)要枚举一组中的设备。
 
-3.  使用[ **SetupDiGetDeviceInstanceId** ](https://msdn.microsoft.com/library/windows/hardware/ff551106)检索唯一[设备实例标识符 (Id)](device-instance-ids.md)。
+3.  使用[ **SetupDiGetDeviceInstanceId** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)检索唯一[设备实例标识符 (Id)](device-instance-ids.md)。
 
  
 

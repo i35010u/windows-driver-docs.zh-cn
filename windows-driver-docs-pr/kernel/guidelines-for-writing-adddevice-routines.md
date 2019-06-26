@@ -6,12 +6,12 @@ keywords:
 - AddDevice 例程 WDK 内核，设计指南
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d39a6ff5b8adc357c4e788b336131b2ff3a682d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfb3d1fefa0247baf24e8be5dd2f7e14adf2b6bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359905"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375234"
 ---
 # <a name="guidelines-for-writing-adddevice-routines"></a>有关编写 AddDevice 例程的指导原则
 
@@ -19,7 +19,7 @@ ms.locfileid: "63359905"
 
 
 
-编写时应考虑以下设计准则[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程：
+编写时应考虑以下设计准则[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程：
 
 -   如果筛选器驱动程序确定其*AddDevice*例程调用它不需要对服务的设备，筛选器驱动程序必须返回状态\_成功，若要允许设备堆栈要加载的设备的其余部分。 筛选器驱动程序不会不创建设备对象也不会将其附加到设备堆栈;筛选器驱动程序只需返回成功，并允许驱动程序添加到堆栈的其余部分。
 
@@ -27,15 +27,15 @@ ms.locfileid: "63359905"
 
     您可能决定为长期的 I/O 缓冲区或后备链列表如分配驱动程序的需求的其他系统空间内存。 如果是这样， *AddDevice*例程可以调用以下例程：
 
-    [**ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)分页或非分页系统空间内存
+    [**ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)分页或非分页系统空间内存
 
-    [**ExInitializePagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545309)或[ **ExInitializeNPagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545301)初始化分页或非分页后备链列表
+    [**ExInitializePagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)或[ **ExInitializeNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)初始化分页或非分页后备链列表
 
 -   如果驱动程序都有设备专用线程或对任何内核定义调度程序对象，在等待*AddDevice*例程可以初始化[内核调度程序对象](kernel-dispatcher-objects.md)。
 
 -   如果该驱动程序使用任何 executive 自旋锁或为一个中断自旋锁，提供存储空间*AddDevice*例程可初始化这些自旋锁。 请参阅[旋转锁](spin-locks.md)有关详细信息。
 
--   调用时增强文件打开的安全性[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)。
+-   调用时增强文件打开的安全性[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)。
 
     指定的文件\_设备\_SECURE\_对的调用上打开特征**IoCreateDevice**。 Windows NT 4.0 SP5 及更高版本支持此特性。 它指示要执行的所有打开请求针对的设备对象的安全检查的 I/O 管理器。 供应商应在调用中指定这一特性**IoCreateDevice**如果文件\_设备\_SECURE\_INF 或设备的 INF 未在设备的安装程序类中设置打开特征驱动程序不执行打开其自己的安全检查。 (有关详细信息，请参阅[控制设备 Namespace 访问](controlling-device-namespace-access.md)。)
 

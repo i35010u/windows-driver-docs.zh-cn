@@ -11,12 +11,12 @@ keywords:
 - 属性包 WDK 筛选器管道
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42529a7cd318f4110ce683eb3c0a96399e6d6f21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 3998e550f4abf47a937242617042c5bc7d0a0a46
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555339"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382586"
 ---
 # <a name="filter-pipeline-configuration-file"></a>筛选器管道配置文件
 
@@ -68,7 +68,7 @@ ms.locfileid: "56555339"
 
 ### <a name="private-keywords"></a>Private 关键字
 
-[XPSDrv 配置模块](xpsdrv-configuration-module.md)可以放置*专用关键字*中的 PrintTicket 条目时它处理[XPS 驱动程序文档事件](xps-driver-document-events.md)期间[ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)函数调用。 而筛选器正在读取 PrintTicket，然后读取这些 PrintTicket 条目中的打印筛选器管道的处理筛选器。
+[XPSDrv 配置模块](xpsdrv-configuration-module.md)可以放置*专用关键字*中的 PrintTicket 条目时它处理[XPS 驱动程序文档事件](xps-driver-document-events.md)期间[ **DrvDocumentEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentevent)函数调用。 而筛选器正在读取 PrintTicket，然后读取这些 PrintTicket 条目中的打印筛选器管道的处理筛选器。
 
 ### <a name="filter-pipeline-property-bag"></a>筛选器管道属性包
 
@@ -85,7 +85,7 @@ DrvPopulateFilterServices(
     );
 ```
 
-有关上述函数的详细信息，请参阅[ **DrvPopulateFilterServices**](https://msdn.microsoft.com/library/windows/hardware/hh768268)。
+有关上述函数的详细信息，请参阅[ **DrvPopulateFilterServices**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-drvpopulatefilterservices)。
 
 下面的代码示例显示的 XML 语法 **&lt;FilterServiceProvider&gt;** 筛选器管道配置文件中的元素：
 

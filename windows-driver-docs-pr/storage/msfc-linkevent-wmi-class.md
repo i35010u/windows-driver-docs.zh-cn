@@ -4,12 +4,12 @@ description: MSFC\_LinkEvent WMI 类
 ms.assetid: 9507fb1a-ce2a-4ce9-8272-77c8c9d0a92c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a5428809627f1e8a7559a192d9bf060fefea84fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fd1c75481be7d8426d832d62ca1cd830dd5f19f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376728"
 ---
 # <a name="msfclinkevent-wmi-class"></a>MSFC\_LinkEvent WMI 类
 
@@ -38,7 +38,7 @@ class MSFC_LinkEvent : WMIEvent {
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_LinkEvent**](https://msdn.microsoft.com/library/windows/hardware/ff562514)
+[**MSFC\_LinkEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_linkevent)
 
 没有与此 WMI 类相关联的方法。
 

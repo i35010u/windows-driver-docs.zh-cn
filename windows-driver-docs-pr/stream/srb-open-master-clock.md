@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa3b353712b3d3c2ac6537df22866bab13c8738b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b30d765138e8c2cfd56236f84e34492a1b1d2c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387075"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377896"
 ---
 # <a name="srbopenmasterclock"></a>SRB\_开放\_MASTER\_时钟
 
@@ -42,7 +42,7 @@ ms.locfileid: "63387075"
 
 ### <a name="comments"></a>备注
 
-类驱动程序集**CommandData**。**MasterClockHandle**指向成员*pSrb*时钟对象的句柄到它创建表示主时钟。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。
+类驱动程序集**CommandData**。**MasterClockHandle**指向成员*pSrb*时钟对象的句柄到它创建表示主时钟。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。
 
 微型驱动程序应保留**CommandData.MasterClockHandle**字段指向主时钟的句柄 SRB 中的值。
 

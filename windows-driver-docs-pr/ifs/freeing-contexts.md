@@ -7,12 +7,12 @@ keywords:
 - 释放上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1142926e96da89f5cc23b2fdf0466a48519dcc68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9100a9bf404c94bc6ec92ca74bdf7cf46a2b78c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384570"
 ---
 # <a name="freeing-contexts"></a>释放上下文
 
@@ -24,7 +24,7 @@ ms.locfileid: "63367988"
 
 此规则的例外： 如果上下文已创建但尚未设置通过调用**FltSet***Xxx***上下文**，它不需要进行删除。 当其引用计数达到零时释放它。 (请参阅中的代码示例[释放上下文](releasing-contexts.md)。)
 
-当微筛选器驱动程序注册其上下文类型时，每个上下文定义可以选择性地包含之前释放上下文调用的上下文清理回调例程。 有关详细信息，请参阅[ **PFLT\_上下文\_清理\_回调**](https://msdn.microsoft.com/library/windows/hardware/ff551078)。
+当微筛选器驱动程序注册其上下文类型时，每个上下文定义可以选择性地包含之前释放上下文调用的上下文清理回调例程。 有关详细信息，请参阅[ **PFLT\_上下文\_清理\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)。
 
  
 

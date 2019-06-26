@@ -4,12 +4,12 @@ description: FLT\_文件\_名称\_选项
 ms.assetid: 6e21c11e-d2c8-4c57-8225-1fbc365cbbac
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cffba2edcd9116c1ebe12c1e5096276d92e76973
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 706ffbc8047ad68d702046e2e7bfa652b56da1b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370597"
 ---
 # <a name="fltfilenameoptions"></a>FLT\_文件\_名称\_选项
 
@@ -35,7 +35,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
     #define FLT_FILE_NAME_DO_NOT_CACHE                  0x02000000
 ```
 
-0 到 7 位指示的文件格式，可以使用查询[ **FltGetFileNameFormat** ](https://msdn.microsoft.com/library/windows/hardware/ff543030)宏。 有关这些格式的说明，请参阅[ **FLT\_文件\_名称\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff544633)。 当前定义以下值。
+0 到 7 位指示的文件格式，可以使用查询[ **FltGetFileNameFormat** ](https://docs.microsoft.com/previous-versions/ff543030(v=vs.85))宏。 有关这些格式的说明，请参阅[ **FLT\_文件\_名称\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_file_name_information)。 当前定义以下值。
 
 <table>
 <colgroup>
@@ -66,7 +66,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 
  
 
-8 到 15 位指定要由筛选器管理器，可通过使用查询的文件名称查询方法[ **FltGetFileNameQueryMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff543040)宏。 有关这些值的说明，请参阅[ **FltGetFileNameInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543032)。 当前定义以下值。
+8 到 15 位指定要由筛选器管理器，可通过使用查询的文件名称查询方法[ **FltGetFileNameQueryMethod** ](https://docs.microsoft.com/previous-versions/ff543040(v=vs.85))宏。 有关这些值的说明，请参阅[ **FltGetFileNameInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetfilenameinformation)。 当前定义以下值。
 
 <table>
 <colgroup>
@@ -140,17 +140,17 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 ## <a name="related-topics"></a>相关主题
 
 
-[**FLT\_FILE\_NAME\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff544633)
+[**FLT\_FILE\_NAME\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_file_name_information)
 
-[**FltGetDestinationFileNameInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543003)
+[**FltGetDestinationFileNameInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetdestinationfilenameinformation)
 
-[**FltGetFileNameFormat**](https://msdn.microsoft.com/library/windows/hardware/ff543030)
+[**FltGetFileNameFormat**](https://docs.microsoft.com/previous-versions/ff543030(v=vs.85))
 
-[**FltGetFileNameInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543032)
+[**FltGetFileNameInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetfilenameinformation)
 
-[**FltGetFileNameInformationUnsafe**](https://msdn.microsoft.com/library/windows/hardware/ff543035)
+[**FltGetFileNameInformationUnsafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetfilenameinformationunsafe)
 
-[**FltGetFileNameQueryMethod**](https://msdn.microsoft.com/library/windows/hardware/ff543040)
+[**FltGetFileNameQueryMethod**](https://docs.microsoft.com/previous-versions/ff543040(v=vs.85))
 
  
 

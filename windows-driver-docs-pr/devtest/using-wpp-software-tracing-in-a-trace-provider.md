@@ -7,12 +7,12 @@ keywords:
 - 跟踪 WDK，有关 WPP WPP 软件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79be44e1a36d0108ec7c9017f6f1a1a043dce07c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d0f5bda5d9026d4be87a79d2a31295f20a40006
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379873"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381817"
 ---
 # <a name="using-wpp-software-tracing-in-a-trace-provider"></a>在跟踪提供程序中使用 WPP 软件跟踪
 
@@ -22,9 +22,9 @@ ms.locfileid: "63379873"
 
 若要使用 WPP 软件跟踪中的默认窗体[跟踪提供程序](trace-provider.md)，如内核模式驱动程序或用户模式应用程序，执行以下操作：
 
--   定义一个控件唯一标识 GUID[跟踪提供程序](trace-provider.md)。 提供程序在其定义中指定此 GUID [WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏和中使用的相关的控件文件[Tracelog](tracelog.md)。
+-   定义一个控件唯一标识 GUID[跟踪提供程序](trace-provider.md)。 提供程序在其定义中指定此 GUID [WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏和中使用的相关的控件文件[Tracelog](tracelog.md)。
 
--   添加所需 WPP 相关 C 预处理器指令和 WPP 宏调用到提供程序的源文件，如中所述[添加到跟踪提供程序的 WPP 宏](adding-wpp-macros-to-a-trace-provider.md)并在[WPP 软件跟踪引用](https://msdn.microsoft.com/library/windows/hardware/ff556205)。
+-   添加所需 WPP 相关 C 预处理器指令和 WPP 宏调用到提供程序的源文件，如中所述[添加到跟踪提供程序的 WPP 宏](adding-wpp-macros-to-a-trace-provider.md)并在[WPP 软件跟踪引用](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556205(v=vs.85))。
 
 -   生成该驱动程序，如中所述[WPP 预处理器](wpp-preprocessor.md)。
 

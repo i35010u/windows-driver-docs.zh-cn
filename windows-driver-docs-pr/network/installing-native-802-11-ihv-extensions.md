@@ -8,12 +8,12 @@ keywords:
 - 本机 802.11 IHV 扩展 WDK 安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59d53e61de2fb8dc03ec309256b7e3395e497464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0714e63eabed796726839a84c60c32449a617ebf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324873"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385848"
 ---
 # <a name="installing-native-80211-ihv-extensions"></a>安装本机 802.11 IHV 扩展
 
@@ -36,7 +36,7 @@ ms.locfileid: "63324873"
     IhvUIExt.dll,,,2
     ```
 
-    有关 CopyFiles 指令的详细信息，请参阅[ **INF CopyFiles 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346)。
+    有关 CopyFiles 指令的详细信息，请参阅[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)。
 
 -   请确保 DestinationDirs 部分声明的目标*文件列表部分*CopyFiles 指令中使用。
 
@@ -48,9 +48,9 @@ ms.locfileid: "63324873"
     Sample-File-List-Section = 11
     ```
 
-    有关 DestinationDirs 部分的详细信息，请参阅[ **INF DestinationDirs 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547383)。
+    有关 DestinationDirs 部分的详细信息，请参阅[ **INF DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)。
 
--   请确保一个 AddReg 指令，且其关联*添加注册表部分*，添加到每个 WLAN 适配器的 INF 文件。 有关 AddReg 指令的详细信息，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+-   请确保一个 AddReg 指令，且其关联*添加注册表部分*，添加到每个 WLAN 适配器的 INF 文件。 有关 AddReg 指令的详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
     内*添加注册表部分*，必须声明为以下项。
 
@@ -73,7 +73,7 @@ ms.locfileid: "63324873"
 
     AdapterOUI 密钥用于验证是否将 WLAN 适配器 OUI 与匹配的值**OUI**的属性**IHV** XML 元素。 有关详细信息**IHV**元素和本机 802.11 XML 架构，请参阅 Microsoft Windows SDK 文档。
 
-INF 文件和其部分有关的详细信息，请参阅[创建一个 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff549520)。
+INF 文件和其部分有关的详细信息，请参阅[创建一个 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - 纹理筛选 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b34531b6cda8db7e19d9b0c9175e391c360237d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f32d40969ee7b2c4462193e3ed985ada9a4e4a37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384587"
 ---
 # <a name="texturing-requirements"></a>纹理要求
 
@@ -30,11 +30,11 @@ ms.locfileid: "63389893"
 
 2.  如果硬件具有其纹理上有纵横比的限制，必须位于该比率**dwMaxTextureAspectRatio** D3DDEVICEDESC7 结构中的成员。
 
-3.  如果设备支持仅纹理维度的 2 的幂，则它必须设置**dwTextureCaps**的成员[ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)为包含结构D3DPTEXTURECAPS\_POW2 标志在相应的基元类型 （行或三角形）。
+3.  如果设备支持仅纹理维度的 2 的幂，则它必须设置**dwTextureCaps**的成员[ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)为包含结构D3DPTEXTURECAPS\_POW2 标志在相应的基元类型 （行或三角形）。
 
 4.  如果设备可以支持任意大小的二维 (2D) 纹理 （即，不卷或多维数据集纹理） 时为纹理贴图层的纹理寻址模式设置为 D3DTADDRESS\_次固定，为纹理贴图层纹理换行功能禁用 (D3DRENDERSTATE\_包装*n*设置为 0)，和 MIP 映射不是在使用中，则它必须设置 D3DPTEXTURECAPS\_NONPOW2CONDITIONAL 标志。
 
-5.  如果设备仅支持的纹理维度是否相等，则它必须设置**dwTextureCaps**的成员[ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)为包含结构D3DPTEXTURECAPS\_SQUAREONLY 标志在相应的基元类型 （行或三角形）。
+5.  如果设备仅支持的纹理维度是否相等，则它必须设置**dwTextureCaps**的成员[ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)为包含结构D3DPTEXTURECAPS\_SQUAREONLY 标志在相应的基元类型 （行或三角形）。
 
 如果设备支持不受限制地以外的第一个和第二个要求中所述的任意大小的纹理，则它必须不设置任何第三中, 所述，第四和第五个要求的标志。
 

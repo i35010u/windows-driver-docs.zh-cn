@@ -8,12 +8,12 @@ keywords:
 - AVCCONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cca8650152be9426efe116983dc958ac08dcf6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbdfeb5137670399a60b170dc936e2648619d475
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384499"
 ---
 # <a name="connections-between-two-subunit-plugs-in-different-avc-units"></a>在不同 AV/C 单元中的两个子单元插头之间的连接
 
@@ -30,7 +30,7 @@ ms.locfileid: "63374251"
 
 方案 5 描述的连接的本地固定的**数据流**成员是 KSPIN\_数据流\_in。
 
-下表中的每一列对应的成员[ **AVCCONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554101)结构和源子单元即插即用这些成员中指定的值。
+下表中的每一列对应的成员[ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)结构和源子单元即插即用这些成员中指定的值。
 
 <table>
 <colgroup>

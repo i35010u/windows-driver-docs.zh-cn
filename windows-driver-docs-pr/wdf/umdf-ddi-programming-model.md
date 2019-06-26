@@ -9,12 +9,12 @@ keywords:
 - DDI WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62b667615518103553ccb598809c312f01b219a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2085af1a240daa48edc265cd4a40d2ddf3d4cd99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372301"
 ---
 # <a name="umdf-ddi-programming-model"></a>UMDF DDI 编程模型
 
@@ -27,13 +27,13 @@ ms.locfileid: "56563111"
 
 与框架的对象进行通信 UMDF 驱动程序通过其方法和属性。 该框架与通过事件通知，都是框架就可以调用以通知有关特定事件驱动程序的回调函数的驱动程序进行通信。 若要注册回调函数，该驱动程序可以调用，例如，以下 framework 对象的方法和可以传递一个指向**IUnknown**接口关联的所有接口的回调函数的驱动程序支持。
 
--   [**IWDFDevice::CreateIoQueue**](https://msdn.microsoft.com/library/windows/hardware/ff557020)
+-   [**IWDFDevice::CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)
 
--   [**IWDFDriver::CreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff558899)
+-   [**IWDFDriver::CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)
 
--   [**IWDFDriver::CreateWdfObject**](https://msdn.microsoft.com/library/windows/hardware/ff558906)
+-   [**IWDFDriver::CreateWdfObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createwdfobject)
 
-作为到框架的通信的驱动程序示例，请考虑设备的默认 I/O 队列对象。 驱动程序可以调用方法，如[ **IWDFIoQueue::GetState**](https://msdn.microsoft.com/library/windows/hardware/ff558959)来检索有关 I/O 队列的状态信息或[ **IWDFIoQueue::RetrieveNextRequest**](https://msdn.microsoft.com/library/windows/hardware/ff558967)从 I/O 队列中检索请求。 驱动程序还可以通过调用请求有关的 I/O 队列通知[ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)方法来注册回调接口，如[IQueueCallbackRead](https://msdn.microsoft.com/library/windows/hardware/ff556872)并[IQueueCallbackWrite](https://msdn.microsoft.com/library/windows/hardware/ff556882)。 这些接口方法随后由框架时调用应用程序发送读取和写入请求。
+作为到框架的通信的驱动程序示例，请考虑设备的默认 I/O 队列对象。 驱动程序可以调用方法，如[ **IWDFIoQueue::GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-getstate)来检索有关 I/O 队列的状态信息或[ **IWDFIoQueue::RetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)从 I/O 队列中检索请求。 驱动程序还可以通过调用请求有关的 I/O 队列通知[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)方法来注册回调接口，如[IQueueCallbackRead](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackread)并[IQueueCallbackWrite](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackwrite)。 这些接口方法随后由框架时调用应用程序发送读取和写入请求。
 
 该框架提供任何需要的驱动程序的回调方法的同步。 默认情况下，框架将同步设备对象级别;也就是说，框架不同时调用事件回叫方法或设备对象级别以下。 驱动程序可以通过请求没有进行的同步来覆盖此默认值。 有关详细信息，请参阅[指定回调同步模式](specifying-a-callback-synchronization-mode.md)。
 

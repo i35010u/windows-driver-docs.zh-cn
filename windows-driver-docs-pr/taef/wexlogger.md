@@ -4,12 +4,12 @@ description: WexLogger
 ms.assetid: D9F4AD08-19EA-4a6c-AD25-886FBEA334B8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4270d21d5b4ca1313e50d54c97a355cd3b9c179f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7dfce409c3ee6e3de49ac8ddf1ea8c308caa8c3d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383025"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384488"
 ---
 # <a name="wexlogger"></a>WexLogger
 
@@ -58,7 +58,7 @@ log.Comment("Render succeeded");
 ## <a name="logging-outside-taef"></a>日志记录外部 TAEF
 
 
-大多数情况下，初始化和完成日志记录将执行 TAEF，因此 WexLogger 将可供使用的测试用例持续时间内，如上所述，并将正确完成。 但是，如果客户端想要使用外部 TAEF WexLogger，它们将负责手动调用**LogController::InitializeLogging()** 并**LogController::FinalizeLogging()**。 对于本机和托管代码; 仅存在这一要求脚本不具有此附加要求。 LogController api，请参阅详细信息如下静态 LogController 方法表。
+大多数情况下，初始化和完成日志记录将执行 TAEF，因此 WexLogger 将可供使用的测试用例持续时间内，如上所述，并将正确完成。 但是，如果客户端想要使用外部 TAEF WexLogger，它们将负责手动调用**LogController::InitializeLogging()** 并**LogController::FinalizeLogging()** 。 对于本机和托管代码; 仅存在这一要求脚本不具有此附加要求。 LogController api，请参阅详细信息如下静态 LogController 方法表。
 
 请参阅[生成 WTT 日志](#generating-wtt-logs)部分，了解如何生成外部 TAEF WTT 日志的信息。
 
@@ -256,12 +256,12 @@ WexLogger 提供的功能的一个或更多的子进程来记录回单个父进�
 2.  通过将其设置在其环境块中，或将其作为自变量在命令提示符下传递通信与子进程的连接数据。 例如：
 
     **将作为 WexLogger 能够理解的命令提示符处的命名参数传递：**  
-    /wexlogger\_connectiondata=*\[connection data\]*
+    /wexlogger\_connectiondata= *\[connection data\]*
 
     **注意：** 如果使用此选项，然后步骤 1**子进程**以下部分**不是**必要。
 
     **将作为 WexLogger 能够理解的名称的环境变量传递：**  
-    \[YourAppName\_cmd\]=/wexlogger\_connectiondata=*\[connection data\]*
+    \[YourAppName\_cmd\]=/wexlogger\_connectiondata= *\[connection data\]*
 
     **注意：** 如果使用此选项，然后步骤 1**子进程**以下部分**不是**必要。
 
@@ -275,7 +275,7 @@ WexLogger 提供的功能的一个或更多的子进程来记录回单个父进�
     -   **RemoteLogController.WexLoggerRemoteConnectionData**，Wex.Logger.Interop.dll 中
 
 3.  启动子进程使用的连接数据
-4.  调用**RemoteLogController::InitalizeLogging (*\[在步骤 1 中创建的连接数据\]*)**。 必须进行此调用，启动子进程，因为它将超时，如果子不会调用后**LogController::InitializeLogging()** 及时。
+4.  调用**RemoteLogController::InitalizeLogging ( *\[在步骤 1 中创建的连接数据\]* )** 。 必须进行此调用，启动子进程，因为它将超时，如果子不会调用后**LogController::InitializeLogging()** 及时。
 
     **注意：** 请务必检查此调用的返回值。
 
@@ -290,7 +290,7 @@ WexLogger 提供的功能的一个或更多的子进程来记录回单个父进�
 
 1.  如果已连接数据**不**传递到子进程为命名参数在命令提示符下该 WexLogger 能够识别 （请参阅上述步骤 2），则必须设置这种情况下的环境变量：
 
-    \[YourAppName\_cmd\]=/wexlogger\_connectiondata=*\[connection data\]*
+    \[YourAppName\_cmd\]=/wexlogger\_connectiondata= *\[connection data\]*
 
     **例如：**
 
@@ -306,11 +306,11 @@ WexLogger 提供的功能的一个或更多的子进程来记录回单个父进�
 ## <a name="determining-test-outcome"></a>确定测试结果
 
 
-尽管没有提供显式声明的测试用例预期的结果的方法 (**日志:: Result()**)，没有任何**需要**测试用例以在大多数情况下使用此方法。
+尽管没有提供显式声明的测试用例预期的结果的方法 (**日志:: Result()** )，没有任何**需要**测试用例以在大多数情况下使用此方法。
 
-例如，如果测试用例不显式调用**日志:: Result()**，并**却不**记录错误 (通过**日志:: Error()**)，默认情况下它被视为传递测试用例; 如果它**does**日志错误，这是一个失败测试案例。
+例如，如果测试用例不显式调用**日志:: Result()** ，并**却不**记录错误 (通过**日志:: Error()** )，默认情况下它被视为传递测试用例; 如果它**does**日志错误，这是一个失败测试案例。
 
-但是，如果测试用例**does**显式调用**Log::Result(TestResults::TestPassed)**，但还**does**记录错误中测试用例、 测试仍将进行计数为失败由于测试中出错。
+但是，如果测试用例**does**显式调用**Log::Result(TestResults::TestPassed)** ，但还**does**记录错误中测试用例、 测试仍将进行计数为失败由于测试中出错。
 
 内部 TAEF 框架中，可以通过标记包含不同的默认测试结果的测试写此行为。 可以在"创作 TAEF Tests"文档中找到对此的详细信息。
 
@@ -328,7 +328,7 @@ WexLogger 提供的功能的一个或更多的子进程来记录回单个父进�
     te my.test.dll /enablewttlogging
     ```
 
--   如果您正在使用 WexLogger framework 外部的 TAEF，并且你未在实验室环境中运行，必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量包含此选项在调用之前**LogController::InitializeLogging()**。 例如：
+-   如果您正在使用 WexLogger framework 外部的 TAEF，并且你未在实验室环境中运行，必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量包含此选项在调用之前**LogController::InitializeLogging()** 。 例如：
     ```cpp
     Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/enablewttlogging");
     LogController.InitializeLogging();
@@ -403,7 +403,7 @@ te my.test.dll /screencaptureonerror /stacktraceonerror
 
 通过一个或多个已启用这些选项，您将收到额外输出每次调用日志:: Error()。
 
-注意：如果您正在使用 WexLogger TAEF 框架之外，则必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量来包含这些选项然后再调用**LogController::InitializeLogging()**。 例如：
+注意：如果您正在使用 WexLogger TAEF 框架之外，则必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量来包含这些选项然后再调用**LogController::InitializeLogging()** 。 例如：
 
 ```cpp
 Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/screencaptureonerror /minidumponerror /stacktraceonerror");
@@ -418,7 +418,7 @@ LogController.InitializeLogging();
 ## <a name="c-error-handling"></a>C++错误处理
 
 
-若要屏蔽的不必检查每个日志 API 调用的返回值的测试用例作者，WexLogger 报告意外的错误状态通过使用可选的回调机制;**WexLoggerErrorCallback**函数。 后的 initializaiton **WexLogger** (通过**LogController::InitializeLogging()**)，客户端可以选择指定**WexLoggerErrorCallback**时调用函数在出现意外的错误条件**WexLogger**。 **WexLoggerErrorCallback**函数必须使用以下签名：
+若要屏蔽的不必检查每个日志 API 调用的返回值的测试用例作者，WexLogger 报告意外的错误状态通过使用可选的回调机制;**WexLoggerErrorCallback**函数。 后的 initializaiton **WexLogger** (通过**LogController::InitializeLogging()** )，客户端可以选择指定**WexLoggerErrorCallback**时调用函数在出现意外的错误条件**WexLogger**。 **WexLoggerErrorCallback**函数必须使用以下签名：
 
 ```cpp
 void __stdcall MyLoggerErrorCallback(const unsigned short* pszMessage, HRESULT hr);
@@ -429,7 +429,7 @@ WexLoggerErrorCallback 函数的一个常见用途是写出到控制台的错误
 ## <a name="net-40-compatibility"></a>.NET 4.0 兼容性
 
 
-Wex.Logger.Interop 编译为 NetFx 2/3/3.5 二进制文件，以便它可以加载到 NetFx 2/3/3.5 和 4 的 NetFx 进程。 这允许 TAEF 运行上面的 NetFx 2 的所有托管程序集。 如果使用 Wex.Logger 外部 TAEF，则需要将添加[配置文件](https://msdn.microsoft.com/library/ms229689.aspx)exe 配置 NetFx 4 运行时将加载到它的 NetFx 2/3/3.5 二进制文件是过程。 配置文件应包含以下信息：
+Wex.Logger.Interop 编译为 NetFx 2/3/3.5 二进制文件，以便它可以加载到 NetFx 2/3/3.5 和 4 的 NetFx 进程。 这允许 TAEF 运行上面的 NetFx 2 的所有托管程序集。 如果使用 Wex.Logger 外部 TAEF，则需要将添加[配置文件](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms229689(v=vs.90))exe 配置 NetFx 4 运行时将加载到它的 NetFx 2/3/3.5 二进制文件是过程。 配置文件应包含以下信息：
 
 ```cpp
 <configuration> 

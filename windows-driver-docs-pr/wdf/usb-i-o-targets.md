@@ -10,12 +10,12 @@ keywords:
 - USB I/O 面向 WDK KMDF 有关 USB I/O 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29069f3c74bf38b656045d9c00a621e92881fa4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11f38ac962ab7c0cdbfd55080ca7c06107c9ec4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378495"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372299"
 ---
 # <a name="usb-io-targets"></a>USB I/O 目标
 
@@ -27,9 +27,9 @@ ms.locfileid: "63378495"
 
 每个 USB 设备和 USB 设备接口支持，每个管道都有单独的 I/O 目标。 控制传输的 USB 设备句柄发送到设备的 I/O 目标。 特定的管道处理的 I/O 传输发送到该管道的 I/O 目标。
 
-通过发送 USB 请求块与 USB 设备的 I/O 目标通信框架 ([**URBs**](https://msdn.microsoft.com/library/windows/hardware/ff538923))。 该框架提供隐藏 URBs 从您的驱动程序，使驱动程序不需要生成并将其发送本身的对象方法。 如果您希望您的驱动程序生成 URBs，KMDF 驱动程序可以使用一组额外的生成和发送 URBs 对象方法。
+通过发送 USB 请求块与 USB 设备的 I/O 目标通信框架 ([**URBs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb))。 该框架提供隐藏 URBs 从您的驱动程序，使驱动程序不需要生成并将其发送本身的对象方法。 如果您希望您的驱动程序生成 URBs，KMDF 驱动程序可以使用一组额外的生成和发送 URBs 对象方法。
 
-有关如何确定 USB 设备需要哪种类型的驱动程序的信息，请参阅[选择用于开发 USB 客户端驱动程序的驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff540215)。
+有关如何确定 USB 设备需要哪种类型的驱动程序的信息，请参阅[选择用于开发 USB 客户端驱动程序的驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 本部分包括：
 

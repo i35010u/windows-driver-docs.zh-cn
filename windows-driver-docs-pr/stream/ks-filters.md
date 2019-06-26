@@ -9,12 +9,12 @@ keywords:
 - 流式处理 WDK，筛选器的内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 014f22a144730dcfae711a5508f4b024cd5cb211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 186b51cdbc0574b3fb4aefcac05b59d2eebe4507
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382522"
 ---
 # <a name="ks-filters"></a>KS 筛选器
 
@@ -34,9 +34,9 @@ ms.locfileid: "63370251"
 
 在关系图描述筛选器的插针之间的内部关系。 更复杂的筛选器可能会封装转换数据流经筛选器的多个节点。
 
-筛选器使用指定的 pin 和内部节点之间的内部连接[KSPROPSETID\_拓扑](https://msdn.microsoft.com/library/windows/hardware/ff566598)属性集。
+筛选器使用指定的 pin 和内部节点之间的内部连接[KSPROPSETID\_拓扑](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-topology)属性集。
 
-[ **KSPROPERTY\_拓扑\_连接**](https://msdn.microsoft.com/library/windows/hardware/ff565802)属性查询 KS 筛选器的节点之间的所有连接。 此属性返回的数组[ **KSTOPOLOGY\_连接**](https://msdn.microsoft.com/library/windows/hardware/ff567148)。 每个 KSTOPOLOGY\_连接结构表示在筛选器内的单个数据路径连接。 在上面的一系列 KSTOPOLOGY 混音器关系图\_连接结构可能按如下所示：
+[ **KSPROPERTY\_拓扑\_连接**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-connections)属性查询 KS 筛选器的节点之间的所有连接。 此属性返回的数组[ **KSTOPOLOGY\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)。 每个 KSTOPOLOGY\_连接结构表示在筛选器内的单个数据路径连接。 在上面的一系列 KSTOPOLOGY 混音器关系图\_连接结构可能按如下所示：
 
 ```cpp
 //    FromNode,       FromNodePin,     ToNode,        ToNodePin,

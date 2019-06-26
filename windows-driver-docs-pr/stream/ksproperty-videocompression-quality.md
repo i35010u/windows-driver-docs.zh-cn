@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f1e1e8f4f2a4ed9ba8cd650eb9cb479172e4b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8952168e20cf84728306aac83d5be0364c772481
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360835"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382011"
 ---
 # <a name="kspropertyvideocompressionquality"></a>KSPROPERTY\_VIDEOCOMPRESSION\_质量
 
@@ -53,7 +53,7 @@ KSPROPERTY\_VIDECOMPRESSION\_质量属性控制视频的压缩质量设置。 �
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566018" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566018)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
 <td><p>长</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_VIDECOMPRESSION\_质量属性控制视频的压缩质量设置。 �
 
 此属性范围为从 0 到 10000 的值。 零表示最低质量，10000 最高。 微型驱动程序确定自己的默认值。
 
-微型驱动程序支持此属性应设置**KS\_CompressionCaps\_CanQuality**标记中**功能**隶属[ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565979)检索微型驱动程序的视频的压缩功能的结构。 如果微型驱动程序设置 KS\_CompressionCaps\_CanQuality，它应支持这两个 get 和 set 属性的请求。
+微型驱动程序支持此属性应设置**KS\_CompressionCaps\_CanQuality**标记中**功能**隶属[ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)检索微型驱动程序的视频的压缩功能的结构。 如果微型驱动程序设置 KS\_CompressionCaps\_CanQuality，它应支持这两个 get 和 set 属性的请求。
 
 此属性范围为从 0 到 10000 的值。 零表示最低质量，10000 最高。 微型驱动程序确定自己的默认值。
 
@@ -95,9 +95,9 @@ KSPROPERTY\_VIDECOMPRESSION\_质量属性控制视频的压缩质量设置。 �
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://msdn.microsoft.com/library/windows/hardware/ff566018)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565979)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

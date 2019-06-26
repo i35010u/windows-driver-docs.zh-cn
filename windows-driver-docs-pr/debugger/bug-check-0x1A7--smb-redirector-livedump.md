@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a8cff66082327b239de1d1159b405dfc4281deb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 101c0365b722e145b92873c9cd1d508f90af0bf2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362449"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367635"
 ---
 # <a name="bug-check-0x1a7-smbredirectorlivedump"></a>Bug 检查 0x1A7：SMB\_重定向程序\_LIVEDUMP
 
@@ -25,7 +25,7 @@ SMB\_重定向程序\_LIVEDUMP bug 检查的值为 0x000001A7。 它指示 SMB �
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
  
 

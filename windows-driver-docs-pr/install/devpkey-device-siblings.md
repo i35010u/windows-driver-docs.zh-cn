@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 190892136c1c9c5ced6a578580770ca10f3b7c5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8cc8e1256e3e30f8fe3371eae0198cab15fee45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378104"
 ---
 # <a name="devpkeydevicesiblings"></a>DEVPKEY_Device_Siblings
 
@@ -56,9 +56,9 @@ DEVPKEY_Device_Siblings 设备属性表示的设备实例的同级的设备的�
 <a name="remarks"></a>备注
 -------
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_Siblings 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Siblings 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持此属性。 有关如何检索这些早期版本的 Windows 上的设备的关系属性的信息，请参阅[检索设备关系](https://msdn.microsoft.com/library/windows/hardware/ff550630)。
+Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持此属性。 有关如何检索这些早期版本的 Windows 上的设备的关系属性的信息，请参阅[检索设备关系](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-device-relations)。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持此属性。 �
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

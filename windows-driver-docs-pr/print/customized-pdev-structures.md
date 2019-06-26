@@ -7,12 +7,12 @@ keywords:
 - PDEV WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 819287a94b9decbd918cbf1dd7d857e850ac2269
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7166e081757ccc3a8a64ed68da23ce39bf2451c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372388"
 ---
 # <a name="customized-pdev-structures"></a>自定义的 PDEV 结构
 
@@ -22,19 +22,19 @@ ms.locfileid: "63355699"
 
 呈现插件实现三个方法，以支持专用 PDEV 结构。 Unidrv 呈现插件必须实现以下方法：
 
-[**IPrintOemUni::EnablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff554249)
+[**IPrintOemUni::EnablePDEV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-enablepdev)
 
-[**IPrintOemUni::DisablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff554238)
+[**IPrintOemUni::DisablePDEV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-disablepdev)
 
-[**IPrintOemUni::ResetPDEV**](https://msdn.microsoft.com/library/windows/hardware/ff554270)
+[**IPrintOemUni::ResetPDEV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-resetpdev)
 
 Pscript5 呈现插件必须实现以下方法：
 
-[**IPrintOemPS::EnablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff553215)
+[**IPrintOemPS::EnablePDEV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps-enablepdev)
 
-[**IPrintOemPS::DisablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff553209)
+[**IPrintOemPS::DisablePDEV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps-disablepdev)
 
-[**IPrintOemPS::ResetPDEV**](https://msdn.microsoft.com/library/windows/hardware/ff553233)
+[**IPrintOemPS::ResetPDEV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps-resetpdev)
 
 PDEV 结构是一个通用的词条。 它表示一个专用的本地定义的结构，用于使用通过定义它的模块。 通常情况下，它用于存储物理设备特性。 每个打印机驱动程序和每个呈现的插件，定义其自己 PDEV 结构。 没有任何全局定义的类型"PDEV"结构。
 

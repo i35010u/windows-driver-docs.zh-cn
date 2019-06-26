@@ -4,12 +4,12 @@ description: 移植步骤
 ms.assetid: D8B7E534-7CFC-45EC-93E9-4B046598D82B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9600d83828d16d36e3773a7e4e0d5120c5d531f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d75092d487edc2bd48121c08996c7ca55543091
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391875"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382840"
 ---
 # <a name="steps-in-porting"></a>移植步骤
 
@@ -17,7 +17,7 @@ ms.locfileid: "63391875"
 具体取决于驱动程序的类型，移植过程涉及到执行以下步骤：
 
 1.  [端口 DriverEntry 例程](porting-driver-entry.md)并添加代码以创建 WDFDRIVER 对象。
-2.  [端口 AddDevice 例程](porting-adddevice-to-evtdriverdeviceadd.md)到[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调，并添加代码以创建 WDFDEVICE 对象。
+2.  [端口 AddDevice 例程](porting-adddevice-to-evtdriverdeviceadd.md)到[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调，并添加代码以创建 WDFDEVICE 对象。
 3.  添加对的支持[中断](porting-interrupt-functionality.md)如果驱动程序支持中断处理。
 
 此时，你可以执行剩余步骤以增量方式和按任意顺序测试和调试每次添加之后。 例如，您可以首先实现 I/O 队列并插和电源管理使用 framework 的默认设置。 调试过的基本 I/O 支持后，可以添加对更广泛即插即用和电源管理请求的支持。 剩余的步骤如下所示：

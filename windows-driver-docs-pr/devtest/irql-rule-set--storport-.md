@@ -4,12 +4,12 @@ description: 使用这些规则来验证您的驱动程序所需的 IRQL 在进�
 ms.assetid: 3322200A-2073-4568-B1FC-481B216D8F61
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 222c87a7112787356607649b09776abc47ef1bac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17d6c8f838e8662ed7963477468cad197072e0ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373669"
 ---
 # <a name="irql-rule-set-storport"></a>Irql 规则集 (Storport)
 
@@ -60,7 +60,7 @@ ms.locfileid: "63356493"
 
 **若要选择的 Irql 规则设置**
 
-1.  Microsoft Visual Studio 中选择您的驱动程序项目 (.vcxProj)。 从**驱动程序**菜单上，单击**启动 Static Driver Verifier...**.
+1.  Microsoft Visual Studio 中选择您的驱动程序项目 (.vcxProj)。 从**驱动程序**菜单上，单击**启动 Static Driver Verifier...** .
 
 2.  单击**规则**选项卡。下**规则集**，选择**Irql**。
 
@@ -70,7 +70,7 @@ ms.locfileid: "63356493"
     msbuild /t:sdv /p:Inputs="/check:Irql.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    有关详细信息，请参阅[以找到缺陷驱动程序中使用 Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/hh454281)并[Static Driver Verifier 命令 (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)。
+    有关详细信息，请参阅[以找到缺陷驱动程序中使用 Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)并[Static Driver Verifier 命令 (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)。
 
  
 

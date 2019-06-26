@@ -9,17 +9,17 @@ keywords:
 - 音频更改 WDK 视频捕获的事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85c796d58c8b53e7b789211ee8279cf29ef365fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 716278a6cd5596543d71fa62962f9c497d72cb5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324343"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377712"
 ---
 # <a name="tv-audio-change-event"></a>电视音频更改事件
 
 
-[KSEVENTSETID\_VIDCAP\_TVAUDIO](https://msdn.microsoft.com/library/windows/hardware/ff561776)事件集中包含电视音频已更改的事件。 下表描述的事件的一部分 KSEVENTSETID\_VIDCAP\_TVAUDIO 事件集。
+[KSEVENTSETID\_VIDCAP\_TVAUDIO](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vidcap-tvaudio)事件集中包含电视音频已更改的事件。 下表描述的事件的一部分 KSEVENTSETID\_VIDCAP\_TVAUDIO 事件集。
 
 <table>
 <colgroup>
@@ -34,7 +34,7 @@ ms.locfileid: "63324343"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561907" data-raw-source="[&lt;strong&gt;KSEVENT_TVAUDIO_CHANGED&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561907)"><strong>KSEVENT_TVAUDIO_CHANGED</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tvaudio-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TVAUDIO_CHANGED&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tvaudio-changed)"><strong>KSEVENT_TVAUDIO_CHANGED</strong></a></p></td>
 <td><p>发出信号的对 DirectShow 电视音频已更改，例如，由于新选定的通道上的第二音频程序的外观。</p></td>
 </tr>
 </tbody>

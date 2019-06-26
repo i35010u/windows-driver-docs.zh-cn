@@ -9,12 +9,12 @@ keywords:
 - MPEG 2 平移扫描示例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a367dbac7ed5f8a20060b8e26068157d703e12b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15630f30744c7bb551484d072b7dcb18849fe015
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372861"
 ---
 # <a name="mpeg-2-pan-scan-example"></a>MPEG-2 平移扫描示例
 
@@ -22,7 +22,7 @@ ms.locfileid: "63353017"
 ## <span id="ddk_mpeg_2_pan_scan_example_gg"></span><span id="DDK_MPEG_2_PAN_SCAN_EXAMPLE_GG"></span>
 
 
-当**PictureSourceRect16thPel**的成员[ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)结构用于选择由 mpeg-2 视频平移扫描指定的区域参数、 的值**PictureSourceRect16thPel**可以使用以下表达式计算成员。 这些值应违反时使用的 alpha 混合组合缓冲区所述的限制**PictureSourceRect16thPel**。 有关详细信息，请参阅**备注**部分，了解 DXVA\_BlendCombination 结构。
+当**PictureSourceRect16thPel**的成员[ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)结构用于选择由 mpeg-2 视频平移扫描指定的区域参数、 的值**PictureSourceRect16thPel**可以使用以下表达式计算成员。 这些值应违反时使用的 alpha 混合组合缓冲区所述的限制**PictureSourceRect16thPel**。 有关详细信息，请参阅**备注**部分，了解 DXVA\_BlendCombination 结构。
 
 带有某些 mpeg-2 平移扫描参数并，特别是，一些 mpeg-2 DVD 内容，需要一些调整到可能违反这些约束**PictureSourceRect16thPel**。
 

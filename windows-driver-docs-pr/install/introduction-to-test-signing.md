@@ -6,12 +6,12 @@ keywords:
 - 测试签名驱动程序包 WDK，有关测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2426a79f688a0df2ad5f4794a006b07a7a2c05f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cbba0bc04f9056203b0775060f3bb6bd5c30582
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364303"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374990"
 ---
 # <a name="introduction-to-test-signing"></a>测试签名简介
 
@@ -36,7 +36,7 @@ ms.locfileid: "63364303"
 
 开发和测试团队可以参与[WHQL 测试签名程序](whql-test-signature-program.md)、 Windows 硬件质量实验室 (WHQL) 将登录 PnP[驱动程序包](driver-packages.md)出于测试目的。 或者，开发和测试团队可以管理他们自己内部的签名过程，并使用以下类型的[测试证书](test-certificates.md)测试签名驱动程序：
 
--   [MakeCert 测试证书](makecert-test-certificate.md)，其中的数字证书创建[ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)工具。
+-   [MakeCert 测试证书](makecert-test-certificate.md)，其中的数字证书创建[ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)工具。
 
 -   [商业测试证书](commercial-test-certificate.md)，这是由 Microsoft 根证书程序成员的 CA 颁发的数字证书。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63364303"
 
 为了便于早期驱动程序开发和调试，可以暂时禁用内核模式代码签名需要加载和测试未签名的内核模式驱动程序。 但是，不能禁用需要系统管理员进行授权的未签名的驱动程序安装的即插即用驱动程序安装策略。 有关如何安装未签名的驱动程序的详细信息，请参阅[开发和测试期间安装未签名的驱动程序](installing-an-unsigned-driver-during-development-and-test.md)。
 
-有关最适当的工具来使用测试签名驱动程序的包的信息，请参阅[签名的驱动程序的工具](https://msdn.microsoft.com/library/windows/hardware/ff552958)。
+有关最适当的工具来使用测试签名驱动程序的包的信息，请参阅[签名的驱动程序的工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)。
 
 **请注意**  若要获取更好地了解测试签名驱动程序包中涉及的步骤，请参阅[如何测试签名驱动程序包](how-to-test-sign-a-driver-package.md)。 本主题提供了摘要测试签名过程中，并通过的测试签名的许多示例使用的步骤*ToastPkg*示例[驱动程序包](driver-packages.md)Windows Driver Kit (WDK) 中。
 

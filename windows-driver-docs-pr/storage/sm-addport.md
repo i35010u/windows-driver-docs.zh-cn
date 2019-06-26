@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5345d7a40711ec47159fd610796458b7c68447be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 613500602248a57175b992ee22287bbccf447a37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387948"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384321"
 ---
 # <a name="smaddport-function"></a>SM\_端口函数
 
@@ -84,9 +84,9 @@ void SM_AddPort(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_AddPort\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566213)
+[**SM\_AddPort\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_addport_in)
 
-[**SM\_AddPort\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566215)
+[**SM\_AddPort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_addport_out)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - 通知 DirectX 版本 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d911214831a0f03d764a1e20692f20d14f27190
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08d9c5f7be466e5b130b8f056b4aeef3e9e396b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372795"
 ---
 # <a name="notifying-about-directx-version"></a>DirectX 版本通知
 
@@ -24,9 +24,9 @@ DirectX 8.0 和更高版本的驱动程序始终通知有关 D3DGDI2 中的应�
 
 有关示例中，为 8.0 版本的 DirectX 运行时，DirectX 9.0 或更高版本的驱动程序可以设置使用 D3DMULTISAMPLE 元素的多个采样表面的样本数\_类型枚举类型，而不管是否驱动程序支持屏蔽多重采样。 但是，对于 9.0 版的 DirectX 运行时，DirectX 9.0 或更高版本的驱动程序必须不设置 D3DMULTISAMPLE\_DDSCAPS3 中的类型位\_MULTISAMPLE\_掩码屏蔽，除非该驱动程序支持为屏蔽的位。 详细了解 D3DMULTISAMPLE\_类型，请参阅 DirectX SDK 文档。
 
-在 D3DGDI2\_类型\_GETFORMATCOUNT 查询中，驱动程序通知中的运行时版本的 DirectX 9.0 **dwReserved**的成员[ **DD\_GETFORMATCOUNTDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551566)结构。 **DwReserved**成员设置为 DD\_运行时\_版本，即为 DirectX 9.0 0x00000900。
+在 D3DGDI2\_类型\_GETFORMATCOUNT 查询中，驱动程序通知中的运行时版本的 DirectX 9.0 **dwReserved**的成员[ **DD\_GETFORMATCOUNTDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatcountdata)结构。 **DwReserved**成员设置为 DD\_运行时\_版本，即为 DirectX 9.0 0x00000900。
 
-在 D3DGDI2\_类型\_GETFORMAT 查询中，驱动程序通知中的运行时版本的 DirectX 9.0 **dwSize** DDPIXELFORMAT 结构中指定的成员**格式**的成员[ **DD\_GETFORMATDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551569)结构。 **DwSize**成员也设置为 DD\_运行时\_版本。
+在 D3DGDI2\_类型\_GETFORMAT 查询中，驱动程序通知中的运行时版本的 DirectX 9.0 **dwSize** DDPIXELFORMAT 结构中指定的成员**格式**的成员[ **DD\_GETFORMATDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatdata)结构。 **DwSize**成员也设置为 DD\_运行时\_版本。
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_TYPE_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ed175414be7b8d42f268e761aa3a016825ca2579
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d601e60c13f87395e635a58341a4c1563a39edf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367623"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380762"
 ---
 # <a name="wditlvphytypelist"></a>WDI\_TLV\_PHY\_类型\_列表
 
@@ -26,14 +26,14 @@ WDI\_TLV\_PHY\_类型\_列表是包含一个物理类型数组 TLV。
 ## <a name="length"></a>长度
 
 
-数组的大小 （以字节为单位） [ **WDI\_PHY\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn926105)值。 该数组必须包含一个或多个值。
+数组的大小 （以字节为单位） [ **WDI\_PHY\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_phy_type)值。 该数组必须包含一个或多个值。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                            | 描述                  |
 |-------------------------------------------------|------------------------------|
-| [**WDI\_PHY\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/dn926105)\[\] | PHY 类型值的数组。 |
+| [**WDI\_PHY\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_phy_type)\[\] | PHY 类型值的数组。 |
 
  
 

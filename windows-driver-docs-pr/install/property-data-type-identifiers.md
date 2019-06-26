@@ -6,17 +6,17 @@ keywords:
 - 设备属性 WDK 设备安装，属性数据类型标识符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d10b78ef93b9fd16bff273efe30d01e6cfa20fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef4e2da61affe00817048d5a336821d27d2afec3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325974"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380473"
 ---
 # <a name="property-data-type-identifiers"></a>属性数据类型标识符
 
 
-属性数据类型标识符[ **DEVPROPTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff543546)-类型化值，该值表示属性的数据格式。 一般情况下，属性数据类型标识符为的按位 OR [**基本数据类型标识符**](https://msdn.microsoft.com/library/windows/hardware/ff537793)和一个[**属性数据类型修饰符**](https://msdn.microsoft.com/library/windows/hardware/ff549770). 属性数据类型标识符可以表示单个固定长度数据的基本类型值、 单个的可变长度数据的基本类型值、 固定长度数据的基本类型值的数组或可变长度数据的基本类型值的列表。
+属性数据类型标识符[ **DEVPROPTYPE**](https://docs.microsoft.com/previous-versions/ff543546(v=vs.85))-类型化值，该值表示属性的数据格式。 一般情况下，属性数据类型标识符为的按位 OR [**基本数据类型标识符**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))和一个[**属性数据类型修饰符**](https://docs.microsoft.com/previous-versions/ff549770(v=vs.85)). 属性数据类型标识符可以表示单个固定长度数据的基本类型值、 单个的可变长度数据的基本类型值、 固定长度数据的基本类型值的数组或可变长度数据的基本类型值的列表。
 
 中定义的受支持系统的基本数据类型标识符和属性数据类型修饰符*Devpropdef.h*。
 
@@ -24,13 +24,13 @@ Windows 将强制属性数据类型标识符的以下要求：
 
 -   基本数据类型标识符是一个 DEVPROP_TYPE_*Xxx*标识符。
 
--   如果基本数据类型标识符[ **DEVPROP_TYPE_EMPTY** ](https://msdn.microsoft.com/library/windows/hardware/ff543585)或[ **DEVPROP_TYPE_NULL**](https://msdn.microsoft.com/library/windows/hardware/ff543602)，属性数据类型标识符不能包含属性数据类型修饰符。
+-   如果基本数据类型标识符[ **DEVPROP_TYPE_EMPTY** ](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-type-empty)或[ **DEVPROP_TYPE_NULL**](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-type-null)，属性数据类型标识符不能包含属性数据类型修饰符。
 
 -   属性数据类型修饰符的属性数据类型标识符包含属性数据类型修饰符时，如果是一个 DEVPROP_TYPEMOD_*Xxx*标识符。
 
--   [ **DEVPROP_TYPEMOD_ARRAY** ](https://msdn.microsoft.com/library/windows/hardware/ff543556)属性数据类型修饰符可以仅使用固定长度的基本数据类型进行组合。
+-   [ **DEVPROP_TYPEMOD_ARRAY** ](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-typemod-array)属性数据类型修饰符可以仅使用固定长度的基本数据类型进行组合。
 
--   [ **DEVPROP_TYPEMOD_LIST** ](https://msdn.microsoft.com/library/windows/hardware/ff543559)属性数据类型修饰符可以仅使用长度可变的基本数据类型进行组合。
+-   [ **DEVPROP_TYPEMOD_LIST** ](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-typemod-list)属性数据类型修饰符可以仅使用长度可变的基本数据类型进行组合。
 
 除了强制实施的属性数据类型标识符的要求，Windows 还加强[属性值要求](property-value-requirements.md)依赖属性数据类型。
 

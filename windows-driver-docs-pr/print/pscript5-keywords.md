@@ -4,12 +4,12 @@ description: Pscript5 关键字
 ms.assetid: a5f4384a-8d78-4dc6-969b-f7a1fa6cb5e7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67764e4db2fea599b805c81e6a094e83e66b6a8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49986e4c414ded4a95f778f61cd6d8ae90edccd2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384693"
 ---
 # <a name="pscript5-keywords"></a>Pscript5 关键字
 
@@ -55,7 +55,7 @@ ms.locfileid: "63372522"
 <tr class="even">
 <td><p>%CustomPageSize</p></td>
 <td><p>自定义页面大小选项具有复杂的格式。 请参阅备注 2 此表后面。</p></td>
-<td><p>读取或指定自定义页面大小设置。 设置此功能还会导致<strong>dmPaperSize</strong>的公共成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构，以重置为 DMPAPER_CUSTOMSIZE （指示 PS 自定义大小） 和集DM_PAPERSIZE 位标志。 此功能可以是只读的公共 DEVMODEW 结构是否指示自定义纸张大小正在使用。</p>
+<td><p>读取或指定自定义页面大小设置。 设置此功能还会导致<strong>dmPaperSize</strong>的公共成员<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"> <strong>DEVMODEW</strong> </a>结构，以重置为 DMPAPER_CUSTOMSIZE （指示 PS 自定义大小） 和集DM_PAPERSIZE 位标志。 此功能可以是只读的公共 DEVMODEW 结构是否指示自定义纸张大小正在使用。</p>
 <p>文档粘性。</p></td>
 </tr>
 <tr class="odd">
@@ -112,7 +112,7 @@ ms.locfileid: "63372522"
 <td><p>%Orientation</p></td>
 <td><p></p>
 "Portrait" "Landscape" "RotatedLandscape"</td>
-<td><p>指定输出方向。 使用此技术配置方向更改私有和公共<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构的值，与一起使用时<strong>IPrintCoreHelperPS</strong>接口。 此警告不适用于<strong>IPrintCoreUI2</strong>接口。</p>
+<td><p>指定输出方向。 使用此技术配置方向更改私有和公共<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"> <strong>DEVMODEW</strong> </a>结构的值，与一起使用时<strong>IPrintCoreHelperPS</strong>接口。 此警告不适用于<strong>IPrintCoreUI2</strong>接口。</p>
 <p>文档粘性。</p></td>
 </tr>
 <tr class="odd">

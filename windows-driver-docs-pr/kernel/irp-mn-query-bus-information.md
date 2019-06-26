@@ -6,12 +6,12 @@ ms.assetid: a7ea1a81-7f03-41c7-8861-a2e1813c15cf
 keywords:
 - IRP_MN_QUERY_BUS_INFORMATION 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc14699760e5904e484a58d5f7f128f105d7ed9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a54791bd953a91907feb63f5c39ce86fa9ba055f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330205"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383297"
 ---
 # <a name="irpmnquerybusinformation"></a>IRP\_MN\_查询\_总线\_信息
 
@@ -45,14 +45,14 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 
 总线驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态。
 
-如果成功，总线驱动程序设置**Irp-&gt;IoStatus.Information**为指向已完成[ **PNP\_总线\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff559608)结构。 （请参阅"操作"部分，了解详细信息。）发生错误时，总线驱动程序设置**Irp-&gt;IoStatus.Information**为零。
+如果成功，总线驱动程序设置**Irp-&gt;IoStatus.Information**为指向已完成[ **PNP\_总线\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_pnp_bus_information)结构。 （请参阅"操作"部分，了解详细信息。）发生错误时，总线驱动程序设置**Irp-&gt;IoStatus.Information**为零。
 
 函数和筛选器驱动程序不处理此 IRP。
 
 <a name="operation"></a>操作
 ---------
 
-为此 IRP 的响应中返回的信息可供设备在总线上的函数和筛选器驱动程序。 函数和筛选器驱动程序可以调用[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)请求**DevicePropertyBusTypeGuid**， **DevicePropertyLegacyBusType**，或**DevicePropertyBusNumber**。 支持多个总线的设备的函数和筛选器驱动程序可以使用此信息来确定特定设备所驻留的总线上。
+为此 IRP 的响应中返回的信息可供设备在总线上的函数和筛选器驱动程序。 函数和筛选器驱动程序可以调用[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)请求**DevicePropertyBusTypeGuid**， **DevicePropertyLegacyBusType**，或**DevicePropertyBusNumber**。 支持多个总线的设备的函数和筛选器驱动程序可以使用此信息来确定特定设备所驻留的总线上。
 
 如果总线驱动程序对此 IRP 响应中返回的信息，它会分配**PNP\_总线\_信息**从分页内存的结构。 当不再需要时，即插即用管理器释放结构。
 
@@ -72,20 +72,20 @@ typedef struct _PNP_BUS_INFORMATION {
 总线驱动程序设置**BusTypeGuid**到设备所驻留的总线类型的 GUID。 Wdmguid.h 中列出的标准的总线类型 Guid。 对于使用 Uuidgen 其他总线类型，驱动程序编写器应生成 Guid。
 
 <a href="" id="legacybustype"></a>**LegacyBusType**  
-即插即用总线驱动程序设置**LegacyBusType**到[**接口\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff547839)的父总线。 中 wdm.h 中定义的接口类型。 某些总线具有特定**接口\_类型**值，例如**PCMCIABus**， **PCIBus**，或**PNPISABus**。 对于其他总线，尤其是较新总线喜欢 USB、 总线驱动程序将此成员设置为**PNPBus**。
+即插即用总线驱动程序设置**LegacyBusType**到[**接口\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_interface_type)的父总线。 中 wdm.h 中定义的接口类型。 某些总线具有特定**接口\_类型**值，例如**PCMCIABus**， **PCIBus**，或**PNPISABus**。 对于其他总线，尤其是较新总线喜欢 USB、 总线驱动程序将此成员设置为**PNPBus**。
 
 **LegacyBusType**指定用来与设备通信的接口。 这可能会或可能不对应的父总线类型。 例如，插入到 PCI CardBus 控制器 CardBus 卡的界面是**PCIBus**。 但是，在 PCI CardBus 控制器上的 PCMCIA 卡的界面是**PCMCIABus**。
 
 <a href="" id="busnumber"></a>**BusNumber**  
-总线驱动程序设置**BusNumber**为区分总线与相同类型的计算机上其他总线数字。 总线编号方案是总线特定的。 总线编号可能是虚拟的但必须匹配由旧式界面如任何编号[ **IoReportResourceUsage**](https://msdn.microsoft.com/library/windows/hardware/ff549616)。
+总线驱动程序设置**BusNumber**为区分总线与相同类型的计算机上其他总线数字。 总线编号方案是总线特定的。 总线编号可能是虚拟的但必须匹配由旧式界面如任何编号[ **IoReportResourceUsage**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 
 保留供系统使用。 驱动程序必须发送此 IRP。
 
-调用[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)以获取有关设备附加到的总线的信息。
+调用[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)以获取有关设备附加到的总线的信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -106,7 +106,7 @@ typedef struct _PNP_BUS_INFORMATION {
 ## <a name="see-also"></a>请参阅
 
 
-[**IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)
+[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)
 
  
 

@@ -5,12 +5,12 @@ ms.assetid: f8ee887a-969e-4167-9b39-9ee6ef8b1fbc
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LINK_SPEED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 097bc08b6a61f54b242d1ab844e23f2b94964a31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c364b7a156b9496828881e08796079417b30073d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369059"
 ---
 # <a name="oidgenlinkspeed"></a>OID\_GEN\_链接\_速度
 
@@ -37,7 +37,7 @@ ms.locfileid: "63369845"
 <a name="remarks"></a>备注
 -------
 
-[OID\_代\_链接\_状态](oid-gen-link-state.md)是 NDIS 6.0 和更高版本及更高版本的此 OID 的等效项。 但是 NDIS 6.0 和更高版本的微型端口驱动程序必须使用[ **NDIS\_状态\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567391)状态指示相反来指示链接速度会更改。
+[OID\_代\_链接\_状态](oid-gen-link-state.md)是 NDIS 6.0 和更高版本及更高版本的此 OID 的等效项。 但是 NDIS 6.0 和更高版本的微型端口驱动程序必须使用[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状态指示相反来指示链接速度会更改。
 
 度量单位是 100 bps，因此值为 100,000 表示的硬件比特率为 10 Mbps。
 
@@ -60,7 +60,7 @@ ms.locfileid: "63369845"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_STATUS\_LINK\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567391)
+[**NDIS\_STATUS\_LINK\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)
 
 [OID\_GEN\_LINK\_STATE](oid-gen-link-state.md)
 

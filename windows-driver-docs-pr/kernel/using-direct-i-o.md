@@ -9,12 +9,12 @@ keywords:
 - I/O WDK 内核，直接 I/O
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68bb773f5ab4b8c62667ca2b57b0cff190b91814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fcff7c2d6f3f2a572593d27198f91d884e1e7c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381658"
 ---
 # <a name="using-direct-io"></a>使用直接 I/O
 
@@ -28,9 +28,9 @@ ms.locfileid: "63387405"
 
 I/O 管理器确定 I/O 操作使用直接 I/O，如下所示：
 
--   有关[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)并[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)请求时，执行操作\_直接\_中设置 IO**标志**的成员[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
+-   有关[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求时，执行操作\_直接\_中设置 IO**标志**的成员[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
 
--   有关[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)并[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)请求时，IOCTL 代码的值包含方法\_IN\_直接访问或通过方法\_出\_直接作为*留空，则*IOCTL 值中的值。 有关详细信息，请参阅[定义的 I/O 控制代码](defining-i-o-control-codes.md)。
+-   有关[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)并[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)请求时，IOCTL 代码的值包含方法\_IN\_直接访问或通过方法\_出\_直接作为*留空，则*IOCTL 值中的值。 有关详细信息，请参阅[定义的 I/O 控制代码](defining-i-o-control-codes.md)。
 
 使用直接 I/O 驱动程序有时也将使用缓冲的 I/O 来处理某些 Irp。 具体而言，驱动程序通常使用缓冲的 I/O 有关的某些 I/O 控制代码**IRP\_MJ\_设备\_控制**需要数据传输，无论是否使用该驱动程序的请求直接 I/O 进行读取和写入操作。
 

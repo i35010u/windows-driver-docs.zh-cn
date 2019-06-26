@@ -9,12 +9,12 @@ keywords:
 - 设备堆栈 WDK 内核，设备特征
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1adc7d7d5416fd08aaacf3d1ab24c358335063f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b19d5cb4f7f61d73ee556ad352b2b46503291f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383006"
 ---
 # <a name="specifying-device-characteristics"></a>指定设备特征
 
@@ -22,13 +22,13 @@ ms.locfileid: "63367931"
 
 
 
-每个设备对象可以具有一个或多个设备特征。 中的标志作为存储设备特征**特征**的设备对象的成员[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构。
+每个设备对象可以具有一个或多个设备特征。 中的标志作为存储设备特征**特征**的设备对象的成员[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。
 
 大多数驱动程序指定的文件仅\_设备\_SECURE\_打开特征。 这可确保到设备的命名空间相同的安全设置应用于任何打开的请求。 有关详细信息，请参阅[控制设备 Namespace 访问](controlling-device-namespace-access.md)。
 
-该文件\_自动生成\_设备\_名称仅用于 PDOs。 该文件\_软盘\_软盘、 文件\_可移动\_媒体和文件\_编写\_一次\_媒体特征是特定于存储设备。 有关可能的设备特性标志的说明，请参阅的说明**特征**的成员[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)。
+该文件\_自动生成\_设备\_名称仅用于 PDOs。 该文件\_软盘\_软盘、 文件\_可移动\_媒体和文件\_编写\_一次\_媒体特征是特定于存储设备。 有关可能的设备特性标志的说明，请参阅的说明**特征**的成员[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)。
 
-某些设备特征，如文件\_自动生成\_设备\_名称，仅适用于单个设备对象。 在创建设备对象通过调用时，驱动程序可以指定单个设备对象的设备特征的设置[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)或[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)。
+某些设备特征，如文件\_自动生成\_设备\_名称，仅适用于单个设备对象。 在创建设备对象通过调用时，驱动程序可以指定单个设备对象的设备特征的设置[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)或[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。
 
 以下特征适用于整个设备堆栈：
 

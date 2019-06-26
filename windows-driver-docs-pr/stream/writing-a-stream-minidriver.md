@@ -8,12 +8,12 @@ keywords:
 - 微型驱动程序 WDK Windows 2000 内核流式处理、 编写
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c00bcd9db95bd9e3ca27da17f8236685996e9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1df004fb437789d471844324aa2688b4c69dfa0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385352"
 ---
 # <a name="writing-a-stream-minidriver"></a>编写流微型驱动程序
 
@@ -35,37 +35,37 @@ Stream 类驱动程序跟踪的微型驱动程序上的每个 pin。 在类驱�
 
 **每个微型驱动程序提供的例程**
 
-[*StrMiniCancelPacket*](https://msdn.microsoft.com/library/windows/hardware/ff568448)
+[*StrMiniCancelPacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_cancel_srb)
 
-[*StrMiniReceiveDevicePacket*](https://msdn.microsoft.com/library/windows/hardware/ff568463)
+[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
 
-[*StrMiniRequestTimeout*](https://msdn.microsoft.com/library/windows/hardware/ff568473)
+[*StrMiniRequestTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_request_timeout_handler)
 
-[*StrMiniEvent*](https://msdn.microsoft.com/library/windows/hardware/ff568457)
+[*StrMiniEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_event_routine)
 
-[*StrMiniInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff568459)
+[*StrMiniInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_interrupt)
 
 **例程微型驱动程序提供了为每个单独的流**
 
-[*StrMiniReceiveStreamDataPacket*](https://msdn.microsoft.com/library/windows/hardware/ff568470)
+[*StrMiniReceiveStreamDataPacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
 
-[**StrMiniReceiveStreamControlPacket**](https://msdn.microsoft.com/library/windows/hardware/ff568467)
+[**StrMiniReceiveStreamControlPacket**](https://docs.microsoft.com/previous-versions/ff568467(v=vs.85))
 
-[*StrMiniEvent*](https://msdn.microsoft.com/library/windows/hardware/ff568457)
+[*StrMiniEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_event_routine)
 
-[*StrMiniClock*](https://msdn.microsoft.com/library/windows/hardware/ff568452)
+[*StrMiniClock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_query_clock_routine)
 
 很可能微型驱动程序为多个不同的流使用相同的回调。 回调可以确定的名义利用其形参调用的流。
 
 微型驱动程序，如所有 WDM 驱动程序，还必须提供**DriverEntry**例程。 主要任务**DriverEntry**例程的微型驱动程序是将注册的类驱动程序微型驱动程序。
 
-在类驱动程序接收代表微型驱动程序的所有 I/O 请求。 若要获取其要完成该请求所需的信息，在类驱动程序生成的流请求块 (SRB)，并将其传递到其中一个**StrMini*XXX*数据包**例程。 在类驱动程序将对设备的 I/O 请求调度到整个[ *StrMiniReceiveDevicePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff568463)例程。 它将请求传递到的各个流[ *StrMiniReceiveStreamDataPacket* ](https://msdn.microsoft.com/library/windows/hardware/ff568470) （对于内核流式处理读取和写入请求） 或[ **StrMiniReceiveStreamControlPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff568467) （适用于其他请求）。
+在类驱动程序接收代表微型驱动程序的所有 I/O 请求。 若要获取其要完成该请求所需的信息，在类驱动程序生成的流请求块 (SRB)，并将其传递到其中一个**StrMini*XXX*数据包**例程。 在类驱动程序将对设备的 I/O 请求调度到整个[ *StrMiniReceiveDevicePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)例程。 它将请求传递到的各个流[ *StrMiniReceiveStreamDataPacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb) （对于内核流式处理读取和写入请求） 或[ **StrMiniReceiveStreamControlPacket** ](https://docs.microsoft.com/previous-versions/ff568467(v=vs.85)) （适用于其他请求）。
 
 通常情况下，类驱动程序其请求排队，并将它们传递一次一个地给微型驱动程序。 微型驱动程序，可能可以选择执行其自己的同步;微型驱动程序应负责无法立即处理的排队请求。 请参阅[微型驱动程序同步](minidriver-synchronization.md)有关详细信息。
 
-微型驱动程序必须提供用于操作流请求块的两个其他例程。 类驱动程序调用[ *StrMiniCancelPacket* ](https://msdn.microsoft.com/library/windows/hardware/ff568448)当它收到取消 IRP，并且需要告诉微型驱动程序来取消特定的数据包。 在类驱动程序还会跟踪的微型驱动程序所需的时间完成其处理的流请求块。 如果微型驱动程序花费的时间太长，类驱动程序超时请求，并调用微型驱动程序的[ *StrMiniRequestTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff568473)例程。
+微型驱动程序必须提供用于操作流请求块的两个其他例程。 类驱动程序调用[ *StrMiniCancelPacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_cancel_srb)当它收到取消 IRP，并且需要告诉微型驱动程序来取消特定的数据包。 在类驱动程序还会跟踪的微型驱动程序所需的时间完成其处理的流请求块。 如果微型驱动程序花费的时间太长，类驱动程序超时请求，并调用微型驱动程序的[ *StrMiniRequestTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_request_timeout_handler)例程。
 
-当硬件中断发生时，操作系统向发出信号类驱动程序，后者随后调用微型驱动程序的[ *StrMiniInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff568459)例程来处理中断。
+当硬件中断发生时，操作系统向发出信号类驱动程序，后者随后调用微型驱动程序的[ *StrMiniInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_interrupt)例程来处理中断。
 
  
 

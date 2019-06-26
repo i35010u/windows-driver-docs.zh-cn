@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_NETWORK_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 93867577d2a2ec73afe379040c4f05334103bff3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 476c6043a9890efd30e37ba02e5e1fdafc938491
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380149"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368565"
 ---
 # <a name="ndisstatusnetworkchange"></a>NDIS\_状态\_网络\_更改
 
@@ -31,7 +31,7 @@ NDIS 6.0 和更高版本的微型端口驱动程序应生成 NDIS\_状态\_网�
 
  
 
-NDIS 会提供一个以下 NDIS\_网络\_更改\_中的值类型**StatusBuffer**隶属[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构：
+NDIS 会提供一个以下 NDIS\_网络\_更改\_中的值类型**StatusBuffer**隶属[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构：
 
 <a href="" id="ndispossiblenetworkchange"></a>**NdisPossibleNetworkChange**  
 微型端口驱动程序检测到可能存在网络更改。 在这种情况下，覆盖协议必须检测到网络更改，如果有，并重新协商地址，如有必要。
@@ -42,9 +42,9 @@ NDIS 还使用此值时生成 NDIS\_状态\_网络\_更改状态指示对较旧�
 微型端口驱动程序检测到有网络更改，以便覆盖协议必须重新协商地址。
 
 <a href="" id="ndisnetworkchangefrommediaconnect"></a>**NdisNetworkChangeFromMediaConnect**  
-较旧 802.1x 无线的微型端口驱动程序，它模拟生成 802.3 [ **NDIS\_状态\_媒体\_CONNECT** ](ndis-status-media-connect.md)状态指示在时连接的状态。 使用此值中的 WMI 事件通知[GUID\_NDIS\_状态\_网络\_更改](https://msdn.microsoft.com/library/windows/hardware/ff553595)。 **NdisNetworkChangeFromMediaConnect**不使用在 NDIS\_状态\_网络\_更改状态指示。
+较旧 802.1x 无线的微型端口驱动程序，它模拟生成 802.3 [ **NDIS\_状态\_媒体\_CONNECT** ](ndis-status-media-connect.md)状态指示在时连接的状态。 使用此值中的 WMI 事件通知[GUID\_NDIS\_状态\_网络\_更改](https://docs.microsoft.com/windows-hardware/drivers/network/guid-ndis-status-network-change)。 **NdisNetworkChangeFromMediaConnect**不使用在 NDIS\_状态\_网络\_更改状态指示。
 
-**StatusBufferSize**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构设置为 sizeof (NDIS\_网络\_更改\_类型)。
+**StatusBufferSize**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构设置为 sizeof (NDIS\_网络\_更改\_类型)。
 
 <a name="requirements"></a>要求
 ------------
@@ -69,7 +69,7 @@ NDIS 还使用此值时生成 NDIS\_状态\_网络\_更改状态指示对较旧�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
 [**NDIS\_状态\_媒体\_连接**](ndis-status-media-connect.md)
 

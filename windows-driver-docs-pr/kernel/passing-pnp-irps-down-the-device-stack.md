@@ -11,12 +11,12 @@ keywords:
 - IoCompletion 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 647ac119a67c79f484195cff160f9c9c12f1c8d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 758c438b51ed24e8875a6222135d800cf9096bb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369290"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384748"
 ---
 # <a name="passing-pnp-irps-down-the-device-stack"></a>向设备堆栈的下层传递 PnP IRP
 
@@ -24,7 +24,7 @@ ms.locfileid: "63369290"
 
 
 
-PnP 管理器使用 Irp 直接驱动程序来启动、 停止和删除的设备和查询有关他们的设备的驱动程序。 所有 PnP Irp 具有主要函数代码[ **IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772)，并且所有即插即用驱动程序必须提供[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程，以服务此函数代码。 PnP 管理器初始化**Irp-&gt;IoStatus.Status**于状态\_不\_支持发送 IRP 时。 有关详细信息，请参阅[DispatchPnP 例程](dispatchpnp-routines.md)。
+PnP 管理器使用 Irp 直接驱动程序来启动、 停止和删除的设备和查询有关他们的设备的驱动程序。 所有 PnP Irp 具有主要函数代码[ **IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)，并且所有即插即用驱动程序必须提供[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程，以服务此函数代码。 PnP 管理器初始化**Irp-&gt;IoStatus.Status**于状态\_不\_支持发送 IRP 时。 有关详细信息，请参阅[DispatchPnP 例程](dispatchpnp-routines.md)。
 
 即插即用次要 Irp 的列表，请参阅[即插即用和播放次要 Irp](plug-and-play-minor-irps.md)。
 
@@ -32,16 +32,16 @@ PnP 管理器使用 Irp 直接驱动程序来启动、 停止和删除的设备�
 
 ![说明传递设备堆栈的下层插 irp 的关系图](images/passpnp.png)
 
-设备没有单个驱动程序可以假定它是唯一 PnP IRP 将响应的驱动因素。 举个例子，功能驱动程序用于响应[ **IRP\_MN\_查询\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)请求和完成而无需将其传递给 IRP下一步较低的驱动程序。 无较低的驱动程序支持的功能，如唯一实例 ID 或电源支持由父总线驱动程序管理功能报告。
+设备没有单个驱动程序可以假定它是唯一 PnP IRP 将响应的驱动因素。 举个例子，功能驱动程序用于响应[ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)请求和完成而无需将其传递给 IRP下一步较低的驱动程序。 无较低的驱动程序支持的功能，如唯一实例 ID 或电源支持由父总线驱动程序管理功能报告。
 
-当父总线驱动程序调用时，备份设备堆栈传输时 PnP IRP [ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) I/O 管理器调用任何[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程注册的函数驱动程序或筛选器驱动程序。
+当父总线驱动程序调用时，备份设备堆栈传输时 PnP IRP [ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) I/O 管理器调用任何[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程注册的函数驱动程序或筛选器驱动程序。
 
 当它收到 PnP IRP，函数或筛选器驱动程序必须执行以下操作：
 
 -   如果该驱动程序将 IRP 到响应中执行操作：
     1.  执行相应的操作。
     2.  设置**Irp-&gt;IoStatus.Status**到相应的状态，如状态\_成功。 设置**Irp-&gt;IoStatus.Information**，如果适合 IRP。
-    3.  设置下一步堆栈位置与[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)或[ **IoCopyCurrentIrpStackLocationToNext**](https://msdn.microsoft.com/library/windows/hardware/ff548387)。 如果将调用后一种的例程*IoCompletion*例程。
+    3.  设置下一步堆栈位置与[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)或[ **IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)。 如果将调用后一种的例程*IoCompletion*例程。
     4.  设置*IoCompletion*例程，如有必要。
     5.  无法完成 IRP。 (不要调用**IoCompleteRequest**。)父总线驱动程序将完成 IRP。
 -   如果该驱动程序不会执行此 IRP 的操作，它只是准备将 IRP 传递到下一步的驱动程序：
@@ -50,7 +50,7 @@ PnP 管理器使用 Irp 直接驱动程序来启动、 停止和删除的设备�
     3.  未设置*IoCompletion*例程。
     4.  无法完成 IRP。 (不要调用**IoCompleteRequest**。)父总线驱动程序将完成 IRP。
 
-如果函数或筛选器驱动程序没有失败 IRP，它将到下一个较低的驱动程序与传递 IRP [ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。 驱动程序都有指向下一个较低的驱动程序;从返回该指针[ **IoAttachDeviceToDeviceStack** ](https://msdn.microsoft.com/library/windows/hardware/ff548300)更高版本的驱动程序中调用[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。
+如果函数或筛选器驱动程序没有失败 IRP，它将到下一个较低的驱动程序与传递 IRP [ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。 驱动程序都有指向下一个较低的驱动程序;从返回该指针[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)更高版本的驱动程序中调用[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。
 
 父总线驱动程序完成后执行任何任务来响应 IRP IRP。 总线驱动程序调用后**IoCompleteRequest**，I/O 管理器调用任意*IoCompletion*例程注册的设备的函数或筛选器驱动程序。
 

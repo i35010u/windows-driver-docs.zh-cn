@@ -10,12 +10,12 @@ keywords:
 - 数值调节钮锁 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eedd8ec0e6d377870830c91723588da17b1e36ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04d96f822e7beb96a753bb0d4136646eae222dc9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381680"
 ---
 # <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>使用自旋锁时防止错误和死锁
 
@@ -23,7 +23,7 @@ ms.locfileid: "63369131"
 
 
 
-驱动程序例程持有旋转锁，虽然它不能导致硬件异常或引发软件异常，而没有导致系统停止运行。 换而言之，驱动程序的 ISR 和任何*SynchCritSection*驱动程序的调用中提供的例程[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)必须不会导致错误或陷阱，如页错误或算术异常，并在不能引发软件异常。 调用的例程[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)或[ **KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)也不会导致硬件异常或引发软件异常，直到它现发布其 executive 旋转锁，已停止运行在 IRQL = 调度\_级别。
+驱动程序例程持有旋转锁，虽然它不能导致硬件异常或引发软件异常，而没有导致系统停止运行。 换而言之，驱动程序的 ISR 和任何*SynchCritSection*驱动程序的调用中提供的例程[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)必须不会导致错误或陷阱，如页错误或算术异常，并在不能引发软件异常。 调用的例程[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)或[ **KeAcquireInStackQueuedSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))也不会导致硬件异常或引发软件异常，直到它现发布其 executive 旋转锁，已停止运行在 IRQL = 调度\_级别。
 
 ### <a name="pageable-data-and-support-routines"></a>可分页的数据和支持例程
 

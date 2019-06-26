@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5e6806250c514a0c823d6bbee58533491ca36fbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d71e712213acfed590eb998bfe758dddabe5323c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387080"
 ---
 # <a name="devpkeydevicedhprebalancepolicy"></a>DEVPKEY_Device_DHP_Rebalance_Policy
 
 
-DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备是否将参与资源重新平衡以下[动态硬件分区 (DHP)](https://msdn.microsoft.com/library/windows/hardware/ff544234)处理器热添加操作。
+DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备是否将参与资源重新平衡以下[动态硬件分区 (DHP)](https://docs.microsoft.com/windows-hardware/drivers/kernel/dynamic-hardware-partitioning-techniques)处理器热添加操作。
 
 <table>
 <colgroup>
@@ -66,13 +66,13 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备�
 
 如果存在 DEVPKEY_Device_DHP_Rebalance_Policy 设备属性和属性的值设置为 1，设备将不参与重新平衡新处理器动态添加到系统时的资源。
 
-设备的[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)中指定[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)的设备的 INF 文件。
+设备的[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)中指定[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)的设备的 INF 文件。
 
 网络适配器中的设备的默认行为 (类 = Net) 设备安装程序类是类的成员不会参与资源重新平衡新处理器动态添加到系统时。 所有其他设备安装程序类中的设备的默认行为是成员参与资源重新平衡新处理器动态添加到系统时。
 
 此设备属性不会影响是否由于其他原因而启动资源重新平衡将加入设备。
 
-可以通过调用访问 DEVPKEY_Device_DHP_Rebalance_Policy 属性[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)并[ **SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163).
+可以通过调用访问 DEVPKEY_Device_DHP_Rebalance_Policy 属性[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)并[ **SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw).
 
 <a name="requirements"></a>要求
 ------------
@@ -97,9 +97,9 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)
+[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

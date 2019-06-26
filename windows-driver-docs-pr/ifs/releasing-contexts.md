@@ -7,12 +7,12 @@ keywords:
 - 释放上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7f28a6421bfbd784f0b276cbee9a1578be7408
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ffebd5d0640b18b2170802c0219665ed7cf282ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385124"
 ---
 # <a name="releasing-contexts"></a>释放上下文
 
@@ -20,27 +20,27 @@ ms.locfileid: "63370115"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-微筛选器驱动程序通过调用释放上下文[ **FltReleaseContext**](https://msdn.microsoft.com/library/windows/hardware/ff544314)。 下面的例程之一的每个成功调用最终必须匹配通过调用**FltReleaseContext**:
+微筛选器驱动程序通过调用释放上下文[ **FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)。 下面的例程之一的每个成功调用最终必须匹配通过调用**FltReleaseContext**:
 
-[**FltAllocateContext**](https://msdn.microsoft.com/library/windows/hardware/ff541710)
+[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)
 
-[**FltGetInstanceContext**](https://msdn.microsoft.com/library/windows/hardware/ff543058)
+[**FltGetInstanceContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetinstancecontext)
 
-[**FltGetFileContext**](https://msdn.microsoft.com/library/windows/hardware/ff543025)
+[**FltGetFileContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetfilecontext)
 
-[**FltGetStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff543144)
+[**FltGetStreamContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetstreamcontext)
 
-[**FltGetStreamHandleContext**](https://msdn.microsoft.com/library/windows/hardware/ff543155)
+[**FltGetStreamHandleContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetstreamhandlecontext)
 
-[**FltGetTransactionContext**](https://msdn.microsoft.com/library/windows/hardware/ff543175)
+[**FltGetTransactionContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgettransactioncontext)
 
-[**FltGetVolumeContext**](https://msdn.microsoft.com/library/windows/hardware/ff543189)
+[**FltGetVolumeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetvolumecontext)
 
-[**FltReferenceContext**](https://msdn.microsoft.com/library/windows/hardware/ff544291)
+[**FltReferenceContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreferencecontext)
 
-请注意， *OldContext*返回指针**FltSet***Xxx***上下文**并*上下文*返回指针[**FltDeleteContext** ](https://msdn.microsoft.com/library/windows/hardware/ff541960)在不再需要时还必须发布。
+请注意， *OldContext*返回指针**FltSet***Xxx***上下文**并*上下文*返回指针[**FltDeleteContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeletecontext)在不再需要时还必须发布。
 
-在以下代码示例中，从 CTX 示例微筛选器驱动程序， **CtxInstanceSetup**例程创建和设置的实例上下文，然后调用[ **FltReleaseContext** ](https://msdn.microsoft.com/library/windows/hardware/ff544314):
+在以下代码示例中，从 CTX 示例微筛选器驱动程序， **CtxInstanceSetup**例程创建和设置的实例上下文，然后调用[ **FltReleaseContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext):
 
 ```cpp
 status = FltAllocateContext(
@@ -62,11 +62,11 @@ if (instanceContext != NULL) {
 return status;
 ```
 
-请注意， [ **FltReleaseContext** ](https://msdn.microsoft.com/library/windows/hardware/ff544314)调用而不管是否对[ **FltSetInstanceContext** ](https://msdn.microsoft.com/library/windows/hardware/ff544521)成功。 在这两种情况下，调用方必须调用**FltReleaseContext**来释放由设置该引用[ **FltAllocateContext** ](https://msdn.microsoft.com/library/windows/hardware/ff541710) (不**FltSetInstanceContext**).
+请注意， [ **FltReleaseContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)调用而不管是否对[ **FltSetInstanceContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetinstancecontext)成功。 在这两种情况下，调用方必须调用**FltReleaseContext**来释放由设置该引用[ **FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext) (不**FltSetInstanceContext**).
 
-如果实例已成功设置的上下文[ **FltSetInstanceContext** ](https://msdn.microsoft.com/library/windows/hardware/ff544521)添加其自己的实例上下文的引用。 因此，设置引用[ **FltAllocateContext** ](https://msdn.microsoft.com/library/windows/hardware/ff541710)不再需要以及对调用[ **FltReleaseContext** ](https://msdn.microsoft.com/library/windows/hardware/ff544314)将其删除。
+如果实例已成功设置的上下文[ **FltSetInstanceContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetinstancecontext)添加其自己的实例上下文的引用。 因此，设置引用[ **FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)不再需要以及对调用[ **FltReleaseContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)将其删除。
 
-如果在调用[ **FltSetInstanceContext** ](https://msdn.microsoft.com/library/windows/hardware/ff544521)失败，实例上下文具有只有一个引用，即的项目设置[ **FltAllocateContext** ](https://msdn.microsoft.com/library/windows/hardware/ff541710). 当[ **FltReleaseContext** ](https://msdn.microsoft.com/library/windows/hardware/ff544314)返回时，实例上下文具有引用计数为零，并且筛选器管理器释放它。
+如果在调用[ **FltSetInstanceContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetinstancecontext)失败，实例上下文具有只有一个引用，即的项目设置[ **FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext). 当[ **FltReleaseContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)返回时，实例上下文具有引用计数为零，并且筛选器管理器释放它。
 
  
 

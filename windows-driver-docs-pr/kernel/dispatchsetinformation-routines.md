@@ -9,12 +9,12 @@ keywords:
 - IRP_MJ_SET_INFORMATION I/O 函数代码
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f259e0b3bf2e743bcaa3b87115d436e4e00e2a22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8dc2bc374abc5ff464a69c18d55b0f9ad5da67ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384970"
 ---
 # <a name="dispatchsetinformation-routines"></a>DispatchSetInformation 例程
 
@@ -22,7 +22,7 @@ ms.locfileid: "63387192"
 
 
 
-驱动程序的[ *DispatchSetInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程处理的 Irp [ **IRP\_MJ\_设置\_信息** ](https://msdn.microsoft.com/library/windows/hardware/ff550799) I/O 函数代码。 此 I/O 函数代码的驱动程序支持是可选的并通常显示在更高级别的或文件系统驱动程序。 此请求发送的 I/O 管理器和其他操作系统组件，以及其他内核模式驱动程序。 例如，发送时在用户模式应用程序调用[ **SetEndOfFile**](https://msdn.microsoft.com/library/windows/desktop/aa365531)，并在调用内核模式组件[ **ZwSetInformationFile** ](https://msdn.microsoft.com/library/windows/hardware/ff567096).
+驱动程序的[ *DispatchSetInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程处理的 Irp [ **IRP\_MJ\_设置\_信息** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-set-information) I/O 函数代码。 此 I/O 函数代码的驱动程序支持是可选的并通常显示在更高级别的或文件系统驱动程序。 此请求发送的 I/O 管理器和其他操作系统组件，以及其他内核模式驱动程序。 例如，发送时在用户模式应用程序调用[ **SetEndOfFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-setendoffile)，并在调用内核模式组件[ **ZwSetInformationFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile).
 
  
 

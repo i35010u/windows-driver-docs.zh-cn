@@ -15,12 +15,12 @@ keywords:
 - 传输数据 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f51c6ed708badb260aa34d715aa89ccc11df8a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dd85a0297ca7bbdf61eb82e1b2877814383890e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371031"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385766"
 ---
 # <a name="isochronous-io-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量 I/O
 
@@ -32,17 +32,17 @@ ms.locfileid: "63371031"
 
 本部分包括：
 
-[设置同步传输的 IEEE 1394 设备](https://msdn.microsoft.com/library/windows/hardware/ff538108)
+[设置同步传输的 IEEE 1394 设备](https://docs.microsoft.com/windows-hardware/drivers/ieee/setting-up-isochronous-transfer-for-ieee-1394-devices)
 
-[缓冲等时 DMA 传输的 IEEE 1394 设备](https://msdn.microsoft.com/library/windows/hardware/ff537014)
+[缓冲等时 DMA 传输的 IEEE 1394 设备](https://docs.microsoft.com/windows-hardware/drivers/ieee/buffering-isochronous-dma-transfers-for-ieee-1394-devices)
 
-[等时侦听的 IEEE 1394 设备的选项](https://msdn.microsoft.com/library/windows/hardware/ff537377)
+[等时侦听的 IEEE 1394 设备的选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-listen-options-for-ieee-1394-devices)
 
-[IEEE 1394 设备等时讨论选项](https://msdn.microsoft.com/library/windows/hardware/ff537380)
+[IEEE 1394 设备等时讨论选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-talk-options-for-ieee-1394-devices)
 
-[适用于 IEEE 1394 设备同步的同步选项](https://msdn.microsoft.com/library/windows/hardware/ff537379)
+[适用于 IEEE 1394 设备同步的同步选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-synchronization-options-for-ieee-1394-devices)
 
-[完成同步数据传输](https://msdn.microsoft.com/library/windows/hardware/ff537058)
+[完成同步数据传输](https://docs.microsoft.com/windows-hardware/drivers/ieee/completing-an-isochronous-data-transfer)
 
  
 

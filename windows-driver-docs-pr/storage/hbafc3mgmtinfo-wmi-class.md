@@ -4,12 +4,12 @@ description: HBAFC3MgmtInfo WMI 类
 ms.assetid: 7c3e5b7e-aed9-4d82-91d9-e0c7b8f5ddf6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fe97654f5c4723d16951d88b9901c10af1a4b5d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5cb54755cc1cfaa8b170fd5f8be4b28951dfee71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383100"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386183"
 ---
 # <a name="hbafc3mgmtinfo-wmi-class"></a>HBAFC3MgmtInfo WMI 类
 
@@ -45,7 +45,7 @@ class HBAFC3MgmtInfo {
 };
 ```
 
-此类定义时编译的 WMI 工具套件，生成[ **HBAFC3MgmtInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556032)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义时编译的 WMI 工具套件，生成[ **HBAFC3MgmtInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

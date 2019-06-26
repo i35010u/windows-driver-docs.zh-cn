@@ -6,18 +6,18 @@ keywords:
 - 生成 NetAdapterCx 客户端驱动程序，构建 NIC 驱动程序
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e930e458cc336e1d5da77b088bf242b0bc98d68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a340ed692cdf373b50c311aef8623e437422c353
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372873"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386376"
 ---
 # <a name="building-a-netadaptercx-client-driver"></a>生成 NetAdapterCx 客户端驱动程序
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-若要获取最新版本的 Visual Studio 和 Windows Driver Kit (WDK)，请访问[硬件开发人员中心](https://developer.microsoft.com/windows/hardware/windows-driver-kit)。
+若要获取最新版本的 Visual Studio 和 Windows Driver Kit (WDK)，请访问[硬件开发人员中心](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
 
 使用以下步骤在 Visual Studio 中创建新的 NetAdapter 客户端驱动程序：
 

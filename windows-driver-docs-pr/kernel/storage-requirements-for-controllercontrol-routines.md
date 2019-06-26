@@ -9,12 +9,12 @@ keywords:
 - 存储 WDK 控制器对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f855379f2fd0eb9e5474aaf545c72807610ace
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a7a545b209d7e1717ca00123207e1991602ae3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331959"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382983"
 ---
 # <a name="storage-requirements-for-controllercontrol-routines"></a>ControllerControl 例程的存储要求
 
@@ -22,7 +22,7 @@ ms.locfileid: "63331959"
 
 
 
-如果它具有*ControllerControl*例程，非 WDM 驱动程序必须提供适用于驻留存储*ControllerObject*返回指针[ **IoCreateController**](https://msdn.microsoft.com/library/windows/hardware/ff548395).
+如果它具有*ControllerControl*例程，非 WDM 驱动程序必须提供适用于驻留存储*ControllerObject*返回指针[ **IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatecontroller).
 
 驱动程序可以提供必要的存储设备扩展在或中由驱动程序分配的非分页缓冲池。 通常情况下，使用控制器对象的驱动程序存储*ControllerObject*在每个设备对象，表示受由控制器的硬件的物理或逻辑设备的设备扩展中的指针对象。
 

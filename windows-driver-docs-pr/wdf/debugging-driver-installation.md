@@ -10,19 +10,19 @@ keywords:
 - 调试 WDK KMDF 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4deee1f1341e7436154a32c2186539ed9ec9b60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feece70c877750a49b073899156b711c97c6f803
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377481"
 ---
 # <a name="troubleshooting-kmdf-and-umdf-driver-installation"></a>排查 KMDF 和 UMDF 驱动程序安装问题
 
 
 框架的共同安装程序会创建调试消息。 如果您正在运行的 Windows 内部的版本，您可以看到这些消息在调试器中。
 
-此外，辅助安装程序将写入到其调试消息[安装程序操作日志](https://msdn.microsoft.com/library/windows/hardware/ff550900)(*%windir%\\setupact.log*) 文件。 安装程序操作日志包含共同安装程序和驱动程序的 INF 文件中指定的驱动程序的版本。 您应该验证这些按预期方式。
+此外，辅助安装程序将写入到其调试消息[安装程序操作日志](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi-text-logs)( *%windir%\\setupact.log*) 文件。 安装程序操作日志包含共同安装程序和驱动程序的 INF 文件中指定的驱动程序的版本。 您应该验证这些按预期方式。
 
 ## <a name="examining-kmdf-installation"></a>检查 KMDF 安装
 

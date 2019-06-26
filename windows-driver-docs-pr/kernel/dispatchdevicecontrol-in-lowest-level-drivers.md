@@ -9,12 +9,12 @@ keywords:
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e215dccc837f5b32a228ed6dd3b7762c37204260
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ad687bc8357e6f66806fe260bcd9225cc2eacef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350033"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382820"
 ---
 # <a name="dispatchdevicecontrol-in-lowest-level-drivers"></a>最低级驱动程序中的 DispatchDeviceControl
 
@@ -22,7 +22,7 @@ ms.locfileid: "63350033"
 
 
 
-[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)请求最低级别驱动程序需要的驱动程序将其设备的状态更改或提供的信息有关其设备的状态。 因为大多数类型的驱动程序需要处理大量的 I/O 控制代码，其[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程通常包含**切换**语句某种程度上类似于下面：
+[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)请求最低级别驱动程序需要的驱动程序将其设备的状态更改或提供的信息有关其设备的状态。 因为大多数类型的驱动程序需要处理大量的 I/O 控制代码，其[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程通常包含**切换**语句某种程度上类似于下面：
 
 ```cpp
     :    : 
@@ -56,7 +56,7 @@ switch (irpSp->Parameters.DeviceIoControl.IoControlCode)
 
 -   为了提高性能，每个最低级别的设备驱动程序的*DispatchDeviceControl*例程应满足的任何设备控制请求都可以而无需其他驱动程序例程 IRP 队列。
 
-如果*DispatchDeviceControl*例程可以完成 IRP，应调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)与*PriorityBoost*的 IO\_否\_增量。 如果*DispatchDeviceControl*例程必须排队进行进一步处理 IRP，必须调用[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)并返回状态\_PENDING。
+如果*DispatchDeviceControl*例程可以完成 IRP，应调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)与*PriorityBoost*的 IO\_否\_增量。 如果*DispatchDeviceControl*例程必须排队进行进一步处理 IRP，必须调用[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)并返回状态\_PENDING。
 
  
 

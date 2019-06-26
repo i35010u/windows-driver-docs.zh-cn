@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8158f5e9d97425b19d3765a647520873b2e9d20f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5fd1be85ac24b22d45115bdaac40579c2b7a1cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339651"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378085"
 ---
 # <a name="devpkeydeviceclassdefaultservice"></a>DEVPKEY_DeviceClass_DefaultService
 
 
-DEVPKEY_DeviceClass_DefaultService 设备属性表示的默认服务名称[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+DEVPKEY_DeviceClass_DefaultService 设备属性表示的默认服务名称[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -60,13 +60,13 @@ DEVPKEY_DeviceClass_DefaultService 设备属性表示的默认服务名称[设�
 <a name="remarks"></a>备注
 -------
 
-如果设备安装程序类安装的默认服务和设备不会安装特定于设备的服务[ **INF ClassInstall32.Services 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546339)的安装类的 INF 文件安装设备的类默认服务。
+如果设备安装程序类安装的默认服务和设备不会安装特定于设备的服务[ **INF ClassInstall32.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)的安装类的 INF 文件安装设备的类默认服务。
 
 DEVPKEY_DeviceClass_DefaultService 的值为的值**默认服务**类注册表项下的注册表值。
 
-您可以调用[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)或[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090)检索 DEVPKEY_DeviceClass_ 值DefaultService。
+您可以调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)检索 DEVPKEY_DeviceClass_ 值DefaultService。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_DefaultService 属性键。 可以通过访问对应访问此属性的值**默认服务**类注册表项下的注册表值。 有关如何对访问类注册表项下的值项的信息，请参阅[访问注册表项值下类注册表项](https://msdn.microsoft.com/library/windows/hardware/ff537751)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_DefaultService 属性键。 可以通过访问对应访问此属性的值**默认服务**类注册表项下的注册表值。 有关如何对访问类注册表项下的值项的信息，请参阅[访问注册表项值下类注册表项](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,11 +91,11 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF ClassInstall32.Services 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546339)
+[**INF ClassInstall32.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
  
 

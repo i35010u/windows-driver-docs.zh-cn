@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa377ae400a9a5da4a0ba92fe68c4eb649f6848a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1787d958a65628e4af4440795120ce8ab46c8d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383775"
 ---
 # <a name="wiadpspagesize"></a>WIA\_DPS\_PAGE\_SIZE
 
@@ -49,7 +49,7 @@ WIA\_DPS\_页\_SIZE 属性包含当前选定要扫描的页的大小。
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -83,7 +83,7 @@ WIA\_PROP\_列表类型化的值应依赖于有效的设置的 WIA\_IP\_ORIENTAT
 
 微型驱动程序必须确保 WIA\_IP\_ORIENTATION 属性同意与当前所选内容区域。 如果应用程序更改的值 WIA\_IP\_方向设为一个无效的当前所选的页面大小，微型驱动程序应更改 WIA 的值\_DPS\_页\_到页面大小支持的新的方向值的大小。
 
-如果应用程序设置 WIA\_DPS\_页面\_大小属性设置为 WIA\_页\_自定义的当前选择区域不受影响。 WIA 微型驱动程序应获取当前的图像布局中，从当前的设置开始[ **WIA\_IPS\_XPOS** ](wia-ips-xpos.md)并[ **WIA\_IPS\_YPOS** ](wia-ips-ypos.md)属性。 如果在外部扫描程序的平台上的所选内容区域中的结果的页面大小设置，微型驱动程序必须自动调整 WIA 的值\_IPS\_XPOS 和 WIA\_IP\_YPOS 属性设置为有效设置。 如果 WIA\_DPS\_页面\_大小和 WIA\_IP\_方向属性设置在同一时间并且它们是无效的它们应用结合使用时，微型驱动程序应失败通过返回中的错误的应用程序的设置[ **IWiaMiniDrv::drvValidateItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff545017)方法。
+如果应用程序设置 WIA\_DPS\_页面\_大小属性设置为 WIA\_页\_自定义的当前选择区域不受影响。 WIA 微型驱动程序应获取当前的图像布局中，从当前的设置开始[ **WIA\_IPS\_XPOS** ](wia-ips-xpos.md)并[ **WIA\_IPS\_YPOS** ](wia-ips-ypos.md)属性。 如果在外部扫描程序的平台上的所选内容区域中的结果的页面大小设置，微型驱动程序必须自动调整 WIA 的值\_IPS\_XPOS 和 WIA\_IP\_YPOS 属性设置为有效设置。 如果 WIA\_DPS\_页面\_大小和 WIA\_IP\_方向属性设置在同一时间并且它们是无效的它们应用结合使用时，微型驱动程序应失败通过返回中的错误的应用程序的设置[ **IWiaMiniDrv::drvValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)方法。
 
 下面的四个代码示例演示以下 WIA\_DPS\_页\_大小方案：
 
@@ -139,7 +139,7 @@ WIA_DPS_PAGE_SIZE = WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT = 10000 WIA_DPS_PAGE_WID
 
 ## <a name="see-also"></a>请参阅
 
-[**IWiaMiniDrv::drvValidateItemProperties**](https://msdn.microsoft.com/library/windows/hardware/ff545017)
+[**IWiaMiniDrv::drvValidateItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)
 
 [**WIA\_DPS\_PAGE\_HEIGHT**](wia-dps-page-height.md)
 

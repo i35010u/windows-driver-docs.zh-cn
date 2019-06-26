@@ -12,12 +12,12 @@ keywords:
 - 值 WDK 网络 INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce91eca10d49e0b3dfdcd8a3f87f2eadb2825387
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd28ec0fb1090fda1038a8411adef697b563555b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367793"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379293"
 ---
 # <a name="add-registry-sections-in-a-network-inf-file"></a>网络 INF 文件中的 Add-registry-sections
 
@@ -25,7 +25,7 @@ ms.locfileid: "63367793"
 
 
 
-INF 文件包含一个或多个*添加注册表部分*为每个组件的安装。 *添加注册表部分*将键和值添加到注册表。 **DDInstall** INF 文件部分包含**AddReg**指令，它引用一个或多个*添加注册表部分*。 有关详细信息*添加注册表部分*并**AddReg**指令，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+INF 文件包含一个或多个*添加注册表部分*为每个组件的安装。 *添加注册表部分*将键和值添加到注册表。 **DDInstall** INF 文件部分包含**AddReg**指令，它引用一个或多个*添加注册表部分*。 有关详细信息*添加注册表部分*并**AddReg**指令，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 ### <a name="adding-keys-and-values-to-instance-keys"></a>将键和值添加到的实例键
 

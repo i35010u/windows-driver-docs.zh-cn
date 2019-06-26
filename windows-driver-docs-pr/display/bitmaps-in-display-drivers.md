@@ -9,12 +9,12 @@ keywords:
 - 屏幕外内存 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 300dd7096c60a7095a7e44a6d71da51ef20305b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96308f6cc29df62fbbdc013f815d70385d5e81c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373951"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384622"
 ---
 # <a name="bitmaps-in-display-drivers"></a>显示驱动程序中的位图
 
@@ -42,7 +42,7 @@ ms.locfileid: "63373951"
 -   利用硬件执行支持 OpenGL，如掩码位块传输和双缓冲的操作。
 
 
-驱动程序应通过屏幕外内存中实现设备位图[ **DrvCreateDeviceBitmap**](https://msdn.microsoft.com/library/windows/hardware/ff556185)。
+驱动程序应通过屏幕外内存中实现设备位图[ **DrvCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)。
 
  
 

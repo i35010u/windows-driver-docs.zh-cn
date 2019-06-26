@@ -7,12 +7,12 @@ keywords:
 - 关键节例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c7e02b17f51039231c2a986978e1e26983590f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 613adf65a581022ea20557ae465b85f40c4b55d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327237"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386588"
 ---
 # <a name="introduction-to-synchcritsection-routines"></a>SynchCritSection 例程简介
 
@@ -26,9 +26,9 @@ ms.locfileid: "63327237"
 
 引发到设备的 DIRQL 值处理器的 IRQL 防止被中断，当前处理器由优先级较高的设备除外。 获取数值调节钮锁会阻止其他处理器执行任何与该数值调节钮锁相关的关键部分代码。 (此数值调节钮锁有时称为*中断自旋锁*。)
 
-设备驱动程序[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)并[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)或[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)例程经常必须访问的一些[硬件资源](hardware-resources.md)（如设备寄存器或其他总线相对内存） 或驱动程序的 ISR.作为驱动程序维护的数据 具体取决于驱动程序的设备或设计，其调度[ *AdapterControl*](https://msdn.microsoft.com/library/windows/hardware/ff540504)， [ *ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)，或计时器例程还可能会访问硬件资源或驱动程序维护的数据。
+设备驱动程序[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)并[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)或[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)例程经常必须访问的一些[硬件资源](hardware-resources.md)（如设备寄存器或其他总线相对内存） 或驱动程序的 ISR.作为驱动程序维护的数据 具体取决于驱动程序的设备或设计，其调度[ *AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)， [ *ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)，或计时器例程还可能会访问硬件资源或驱动程序维护的数据。
 
-若要调用任何非 ISR 关键节，驱动程序必须使用[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)例程。 此例程接受的地址*SynchCritSection*例程作为输入，以及驱动程序定义的上下文信息并中断对象指针。 系统使用中断对象指针来确定要使用的 DIRQL 和数值调节钮锁定*SynchCritSection*例程。 (该驱动程序之前提供这些值，使用[ **IoConnectInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff548371)函数的*旋转锁*并*SynchronizeIrql*参数。）
+若要调用任何非 ISR 关键节，驱动程序必须使用[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)例程。 此例程接受的地址*SynchCritSection*例程作为输入，以及驱动程序定义的上下文信息并中断对象指针。 系统使用中断对象指针来确定要使用的 DIRQL 和数值调节钮锁定*SynchCritSection*例程。 (该驱动程序之前提供这些值，使用[ **IoConnectInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)函数的*旋转锁*并*SynchronizeIrql*参数。）
 
  
 

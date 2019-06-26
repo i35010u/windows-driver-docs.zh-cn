@@ -9,12 +9,12 @@ keywords:
 - 验证过程 WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25782357a3f8c7bd9f2b2d0372aa4ce6c6216ecc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23dd1149e2fd1a7d47a2b47b6c039760e64994ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379875"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381797"
 ---
 # <a name="verification-process"></a>验证过程
 
@@ -35,7 +35,7 @@ SDV 开展*验证*，也就是说，一个测试，以确定是否该驱动程�
 
 ### <a name="span-idcheckspanspan-idcheckspancheck"></a><span id="check"></span><span id="CHECK"></span>Check
 
-期间**检查**步骤中，SDV 准备要进行和用于验证使用所选的规则来验证该驱动程序。 可以选择的规则的详细信息，请参阅[驱动程序验证程序的静态规则](https://msdn.microsoft.com/library/windows/hardware/ff551714)。
+期间**检查**步骤中，SDV 准备要进行和用于验证使用所选的规则来验证该驱动程序。 可以选择的规则的详细信息，请参阅[驱动程序验证程序的静态规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 SDV 开始通过确定如果所选的规则要求的操作系统模型的其他组件。 如果是这样，SDV 将其他操作系统模型文件复制到驱动程序的源目录。
 

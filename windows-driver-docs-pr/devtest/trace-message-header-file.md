@@ -8,12 +8,12 @@ keywords:
 - 文件 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49a75ba013366393766b8f91866a30fb974fb37e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f55b9b475ae935e1304ec78fa17f3ea8783428e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381813"
 ---
 # <a name="trace-message-header-file"></a>跟踪消息标头文件
 
@@ -28,7 +28,7 @@ WPP TMH 文件会自动生成编译时[跟踪提供程序](trace-provider.md)包
 #include SourceFileName.tmh
 ```
 
-这包括语句后的定义必须出现[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏，但对 WPP 宏的任何调用之前。
+这包括语句后的定义必须出现[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏，但对 WPP 宏的任何调用之前。
 
 有关详细信息，请参阅[添加到跟踪制造者 WPP 宏](adding-wpp-macros-to-a-trace-provider.md)，并查看[TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)，为软件跟踪设计的一个示例驱动程序。 TraceDrv 示例现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
 

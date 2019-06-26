@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28128
-ms.openlocfilehash: 9ad8ed3909536efc44c68a345df069915ebd049b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e75da94769aca9ba6a71e49d1494a1e461c90a71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364133"
 ---
 # <a name="c28128"></a>C28128
 
@@ -23,7 +23,7 @@ ms.locfileid: "63361411"
 
 该驱动程序直接访问应仅通过使用专用的函数访问的结构成员。
 
-例如，应使用[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)而不是直接修改**CancelRoutine**隶属[ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)结构。
+例如，应使用[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)而不是直接修改**CancelRoutine**隶属[ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)结构。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 

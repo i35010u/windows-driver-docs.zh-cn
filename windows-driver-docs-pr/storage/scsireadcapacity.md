@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8a9b318a7589cc5a42b132244ab4e408807d60f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c137a8d629f4a3d8a7528bbb77be2e0d075d031
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378157"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363351"
 ---
 # <a name="scsireadcapacity-function"></a>ScsiReadCapacity 函数
 
@@ -49,34 +49,34 @@ void ScsiReadCapacity(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **ScsiReadCapacity\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564910)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **ScsiReadCapacity\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_out)结构。
 
 *Cdb*   
-保存 SCSI 命令描述符块读取容量命令发送到目标设备。 此信息传递到中的微型端口驱动程序**Cdb**的成员[ **ScsiReadCapacity\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564901)结构。
+保存 SCSI 命令描述符块读取容量命令发送到目标设备。 此信息传递到中的微型端口驱动程序**Cdb**的成员[ **ScsiReadCapacity\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_in)结构。
 
 *HbaPortWWN*   
-通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**HbaPortWWN**的成员[ **ScsiReadCapacity\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564901)结构。
+通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**HbaPortWWN**的成员[ **ScsiReadCapacity\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_in)结构。
 
 *DiscoveredPortWWN*   
-通过它访问目标设备的端口全球通用名称。 此信息传递到中的微型端口驱动程序**DiscoveredPortWWN**的成员[ **ScsiReadCapacity\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564901)结构。
+通过它访问目标设备的端口全球通用名称。 此信息传递到中的微型端口驱动程序**DiscoveredPortWWN**的成员[ **ScsiReadCapacity\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_in)结构。
 
 *FcLun*   
-将收到 SCSI 逻辑单元的逻辑单元号读取容量命令。 此信息传递到中的微型端口驱动程序**FcLun**的成员[ **ScsiReadCapacity\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564901)结构。
+将收到 SCSI 逻辑单元的逻辑单元号读取容量命令。 此信息传递到中的微型端口驱动程序**FcLun**的成员[ **ScsiReadCapacity\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_in)结构。
 
 *ResponseBufferSize*   
-以字节为单位的缓冲区将保留读取的容量命令的结果大小。 微型端口驱动程序将返回此信息**ResponseBufferSize**的成员[ **ScsiReadCapacity\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564910)结构。
+以字节为单位的缓冲区将保留读取的容量命令的结果大小。 微型端口驱动程序将返回此信息**ResponseBufferSize**的成员[ **ScsiReadCapacity\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_out)结构。
 
 *SenseBufferSize*   
-以字节为单位的缓冲区将保留 SCSI 检测数据的 SCSI 查询命令而得出的大小。 微型端口驱动程序将返回此信息**SenseBufferSize**的成员[ **ScsiReadCapacity\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564910)结构。
+以字节为单位的缓冲区将保留 SCSI 检测数据的 SCSI 查询命令而得出的大小。 微型端口驱动程序将返回此信息**SenseBufferSize**的成员[ **ScsiReadCapacity\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_out)结构。
 
 *ScsiStatus*   
-SCSI 状态读取容量命令。 微型端口驱动程序将返回此信息**ScsiStatus**的成员[ **ScsiReadCapacity\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564910)结构。
+SCSI 状态读取容量命令。 微型端口驱动程序将返回此信息**ScsiStatus**的成员[ **ScsiReadCapacity\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_out)结构。
 
 *ResponseBuffer*   
-读取 SCSI 的结果，容量命令。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **ScsiReadCapacity\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564910)结构。
+读取 SCSI 的结果，容量命令。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **ScsiReadCapacity\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_out)结构。
 
 *SenseBuffer*   
-SCSI 检测数据得出 SCSI 的读取容量命令。 微型端口驱动程序将返回此信息**SenseBuffer**的成员[ **ScsiReadCapacity\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564910)结构。
+SCSI 检测数据得出 SCSI 的读取容量命令。 微型端口驱动程序将返回此信息**SenseBuffer**的成员[ **ScsiReadCapacity\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -117,9 +117,9 @@ SCSI 检测数据得出 SCSI 的读取容量命令。 微型端口驱动程序�
 
 [HBA\_状态](hba-status.md)
 
-[**ScsiReadCapacity\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff564901)
+[**ScsiReadCapacity\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_in)
 
-[**ScsiReadCapacity\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff564910)
+[**ScsiReadCapacity\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireadcapacity_out)
 
  
 

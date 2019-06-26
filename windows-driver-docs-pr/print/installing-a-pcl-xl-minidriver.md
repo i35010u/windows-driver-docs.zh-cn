@@ -7,12 +7,12 @@ keywords:
 - 微型驱动程序 WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36202095f6d007dc86d2177a8dc6e7c43cd226b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47ff106c645c7c4bac80bde397f2e927f5dc5977
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385974"
 ---
 # <a name="installing-a-pcl-xl-minidriver"></a>安装 PCL XL 微型驱动程序
 
@@ -27,7 +27,7 @@ Ntprint.inf 中 Windows XP 及更高版本，具有以下\[PCLXL。OEM\]部分�
 CopyFiles=PCLXL,@PCL5ERES.DLL
 ```
 
-[ **INF CopyFiles 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346)将所有中列出的文件复制\[PCLXL\]部分中，以及 pcl5eres.dll 的默认目标目录。 \[PCLXL\]部分也将出现在 ntprint.inf 并列出了要复制的文件。
+[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)将所有中列出的文件复制\[PCLXL\]部分中，以及 pcl5eres.dll 的默认目标目录。 \[PCLXL\]部分也将出现在 ntprint.inf 并列出了要复制的文件。
 
 ```cpp
 [PCLXL]

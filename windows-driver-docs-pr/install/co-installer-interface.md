@@ -7,12 +7,12 @@ keywords:
 - 接口 WDK 共同安装程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b82a56a3952f71ef8ff024cb81f22034521525b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1eafe9d061dbffd91c29910e7f6ea3bf3db547c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357049"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375327"
 ---
 # <a name="co-installer-interface"></a>辅助安装程序界面
 
@@ -34,13 +34,13 @@ typedef DWORD
 ```
 
 <a href="" id="installfunction"></a>*InstallFunction*  
-指定设备安装处理的请求，其中辅助安装程序具有的参与选项。 这些请求是使用 DIF 代码 （如 DIF_INSTALLDEVICE） 指定的。 有关详细信息，请参阅[设备安装函数代码](https://msdn.microsoft.com/library/windows/hardware/ff541307)。
+指定设备安装处理的请求，其中辅助安装程序具有的参与选项。 这些请求是使用 DIF 代码 （如 DIF_INSTALLDEVICE） 指定的。 有关详细信息，请参阅[设备安装函数代码](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))。
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
 提供的句柄[设备信息集](device-information-sets.md)。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-（可选） 标识的设备安装请求的目标设备。 如果此参数为非**NULL**，它标识设备信息元素中的设备信息集。 *DeviceInfoData*为非**NULL**时[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)调用特定于设备的共同安装程序。 可以使用具有一个 DIF 请求调用的特定于类共同安装程序 **NULL * * * DeviceInfoData*，例如 DIF_DETECT 或 DIF_FIRSTTIMESETUP。
+（可选） 标识的设备安装请求的目标设备。 如果此参数为非**NULL**，它标识设备信息元素中的设备信息集。 *DeviceInfoData*为非**NULL**时[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用特定于设备的共同安装程序。 可以使用具有一个 DIF 请求调用的特定于类共同安装程序 **NULL * * * DeviceInfoData*，例如 DIF_DETECT 或 DIF_FIRSTTIMESETUP。
 
 <a href="" id="context"></a>*上下文*  
 指向[ **COINSTALLER_CONTEXT_DATA** ](#coinstaller-context-data)结构。

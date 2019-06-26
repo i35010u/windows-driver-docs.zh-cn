@@ -13,12 +13,12 @@ keywords:
 - PDOs WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58cea02da33eb028b76b361ec20682be5a85b0e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b32f38aa3a355bc79befa1cd489399d7d24c5202
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382944"
 ---
 # <a name="understanding-the-path-of-waitwake-irps-through-a-device-tree"></a>通过设备树了解等待/唤醒 IRP 的路径
 
@@ -64,13 +64,13 @@ ACPI 筛选器驱动程序，如基础 ACPI 驱动程序本身，是透明的其
 
 ![等待/唤醒 irp 请求有关 usb 的示例配置](images/wwcascade.png)
 
-当总线驱动程序收到[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766)针对其创建 PDO，它必须请求另一个**IRP\_MN\_等待\_唤醒**设备 stack 为其拥有的电源策略并创建 FDO。
+当总线驱动程序收到[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)针对其创建 PDO，它必须请求另一个**IRP\_MN\_等待\_唤醒**设备 stack 为其拥有的电源策略并创建 FDO。
 
 上一图所示：
 
-1.  键盘驱动程序调用[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)发送等待/唤醒到其 PDO IRP (IRP1)。
+1.  键盘驱动程序调用[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)发送等待/唤醒到其 PDO IRP (IRP1)。
 
-    电源管理器分配 IRP，并将其通过 I/O 管理器发送到键盘设备堆栈的顶部。 驱动程序集[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程并传递 IRP 下堆栈，直到它达到键盘 PDO。 USB 集线器驱动程序，它相当于键盘的总线驱动程序，保存挂起的 IRP1。
+    电源管理器分配 IRP，并将其通过 I/O 管理器发送到键盘设备堆栈的顶部。 驱动程序集[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程并传递 IRP 下堆栈，直到它达到键盘 PDO。 USB 集线器驱动程序，它相当于键盘的总线驱动程序，保存挂起的 IRP1。
 
 2.  由于唤醒信号到达时，USB 集线器驱动程序不能将系统唤醒，USB 集线器驱动程序必须调用**PoRequestPowerIrp**请求等待/唤醒 IRP (IRP2) 的 USB 集线器设备堆栈。
 
@@ -88,7 +88,7 @@ ACPI 筛选器驱动程序，如基础 ACPI 驱动程序本身，是透明的其
 
 当键盘断言唤醒信号时，Acpi.sys 截取它。 ACPI，但是，不能确定键盘添加仅的信号是通过根设备的信号。 Acpi.sys 然后完成 IRP4，并在 I/O 管理器调用*IoCompletion*例程旅行备份 PCI 设备堆栈。 IRP4 完毕和全部*IoCompletion*例程已运行，调用 PCI 驱动程序的回调例程。 在其回调例程中，PCI 驱动程序确定信号是通过 USB 主控制器。 PCI 驱动程序然后完成 IRP3。 键盘驱动程序收到 IRP1 之前，通过 USB 主机控制器堆栈和 USB 集线器堆栈，会发生相同的序列。 现在，键盘驱动程序可以唤醒事件，根据需要提供服务。
 
-必须设置一个驱动程序将等待/唤醒 IRP 发送到父 PDO，每次[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)自己 IRP 的例程。 设置*取消*例程，该驱动程序有机会取消新 IRP，如果触发了该 IRP 已取消。 在 USB 示例中，如果键盘驱动程序取消其等待/唤醒 IRP （从而禁用键盘唤醒），则 USB 集线器、 USB 主控制器和 PCI 驱动程序必须取消它们由于键盘 IRP 发送 Irp。 有关详细信息，请参阅[取消的等待/唤醒 Irp 的例程](canceling-a-wait-wake-irp.md#ddk-cancel-routines-for-wait-wake-irps-kg)。
+必须设置一个驱动程序将等待/唤醒 IRP 发送到父 PDO，每次[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)自己 IRP 的例程。 设置*取消*例程，该驱动程序有机会取消新 IRP，如果触发了该 IRP 已取消。 在 USB 示例中，如果键盘驱动程序取消其等待/唤醒 IRP （从而禁用键盘唤醒），则 USB 集线器、 USB 主控制器和 PCI 驱动程序必须取消它们由于键盘 IRP 发送 Irp。 有关详细信息，请参阅[取消的等待/唤醒 Irp 的例程](canceling-a-wait-wake-irp.md#ddk-cancel-routines-for-wait-wake-irps-kg)。
 
 尽管父驱动程序可能会枚举可以等待/唤醒启用的多个子级，但只有一个等待/唤醒 IRP 可以处于挂起状态对 PDO。 在这种情况下，父驱动程序应确保它保持等待/唤醒 IRP 挂起时的任何其设备为启用了唤醒。 若要执行此操作，该驱动程序内部每次递增计数器收到等待/唤醒 IRP。 每次该驱动程序完成后等待/唤醒 IRP，它递减计数和结果值为非零值，如果将另一个等待/唤醒 IRP 发送到其设备堆栈。
 

@@ -7,12 +7,12 @@ keywords:
 - 进程特权 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf809c5d3e84550021ad87c088347a689dda1da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 383775111031460620f0a1bba0903787b42e6016
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369119"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378832"
 ---
 # <a name="privileges"></a>权限
 
@@ -37,15 +37,15 @@ ms.locfileid: "63369119"
 <tbody>
 <tr class="odd">
 <td><p><strong>SeManageVolumePrivilege</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567096" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567096)"><strong>ZwSetInformationFile</strong></a> with <em>FileInformationClass</em> = <strong>FileValidDataLengthInformation</strong></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile)"><strong>ZwSetInformationFile</strong></a> with <em>FileInformationClass</em> = <strong>FileValidDataLengthInformation</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>SeTakeOwnershipPrivilege</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563674" data-raw-source="[&lt;strong&gt;SeAccessCheck&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563674)"><strong>SeAccessCheck</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck" data-raw-source="[&lt;strong&gt;SeAccessCheck&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)"><strong>SeAccessCheck</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>SeSecurityPrivilege</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563674" data-raw-source="[&lt;strong&gt;SeAccessCheck&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563674)"><strong>SeAccessCheck</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck" data-raw-source="[&lt;strong&gt;SeAccessCheck&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)"><strong>SeAccessCheck</strong></a></p></td>
 </tr>
 </tbody>
 </table>

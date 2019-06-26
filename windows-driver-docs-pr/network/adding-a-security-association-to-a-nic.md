@@ -9,12 +9,12 @@ keywords:
 - AH 保护数据包 WDK IPsec 卸载、 安全关联
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 019d8e39122590adccff5570e4ba8b9933f21c3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdc4c279bdd78dafe37a7528cc35fa77f921279c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367847"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384732"
 ---
 # <a name="adding-a-security-association-to-a-nic"></a>将安全关联添加到 NIC
 
@@ -23,7 +23,7 @@ ms.locfileid: "63367847"
 
 
 
-后 TCP/IP 传输确定 NIC 可以执行 Internet 协议安全 (IPsec) 操作 (请参阅[报告 NIC 的 IPsec 功能](reporting-a-nic-s-ipsec-capabilities.md))，传输必须请求 NIC 的微型端口驱动程序以添加一个或多个入站和之前传输的 nic 的出站安全关联 (Sa) 可将 nic 的 IPsec 任务卸载 以请求微型端口驱动程序到 NIC，TCP/IP 传输集添加一个或多个 SAs [OID\_TCP\_任务\_IPSEC\_添加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569808)。
+后 TCP/IP 传输确定 NIC 可以执行 Internet 协议安全 (IPsec) 操作 (请参阅[报告 NIC 的 IPsec 功能](reporting-a-nic-s-ipsec-capabilities.md))，传输必须请求 NIC 的微型端口驱动程序以添加一个或多个入站和之前传输的 nic 的出站安全关联 (Sa) 可将 nic 的 IPsec 任务卸载 以请求微型端口驱动程序到 NIC，TCP/IP 传输集添加一个或多个 SAs [OID\_TCP\_任务\_IPSEC\_添加\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-sa)。
 
  
 

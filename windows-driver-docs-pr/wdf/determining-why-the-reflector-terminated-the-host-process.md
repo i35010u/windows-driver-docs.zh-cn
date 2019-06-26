@@ -8,12 +8,12 @@ keywords:
 - UMDF WDK reflector 终止主机进程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af7e4207a514cc7d45b4f24db1a627d301e03c45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ac2975568da83e4c0e28027637ff22d524a732f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383756"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377421"
 ---
 # <a name="determining-why-the-reflector-terminated-the-host-process"></a>确定反射器终止主机进程的原因
 
@@ -29,7 +29,7 @@ ms.locfileid: "63383756"
 
 1.  在 %windir%中找到最新的.dmp 文件\\system32\\LogFiles\\WUDF 目录。
 
-    **请注意**  UMDF 2.15 从开始，日志目录是 *%programdata%*\\Microsoft\\WDF。
+    **请注意**  UMDF 2.15 从开始，日志目录是 *%programdata%* \\Microsoft\\WDF。
 
      
 
@@ -45,11 +45,11 @@ ms.locfileid: "63383756"
 
 在其他情况下，可能需要将附加到实时的内核模式目标，以确定该发送程序终止主机进程的原因。 若要设置你的调试会话，请按照中所述的步骤[如何启用调试 UMDF 驱动程序的](enabling-a-debugger.md#kd)。
 
-一旦建立连接之后，通过使用显示未完成的 Irp [ **！ wdfkd.wdfumirps** ](https://msdn.microsoft.com/library/windows/hardware/dn265384) UMDF 调试器扩展 ([**！ wudfext.umirps**](https://msdn.microsoft.com/library/windows/hardware/ff566197)对于 UMDF 版本 1)。
+一旦建立连接之后，通过使用显示未完成的 Irp [ **！ wdfkd.wdfumirps** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps) UMDF 调试器扩展 ([ **！ wudfext.umirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umirps)对于 UMDF 版本 1)。
 
 -   如果 PnP IRP 或 power IRP 处于挂起状态，确定为什么驱动程序会导致 IRP 通过检查在主机进程的线程挂起。
 
-    可以使用[ **！ 过程**](https://msdn.microsoft.com/library/windows/hardware/ff564717)扩展来检查在主机进程中运行的线程。 **0x1f**标志值显示为每个线程的堆栈跟踪。
+    可以使用[ **！ 过程**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process)扩展来检查在主机进程中运行的线程。 **0x1f**标志值显示为每个线程的堆栈跟踪。
 
     **!process** *&lt;process addr&gt;* **0x1f**
 

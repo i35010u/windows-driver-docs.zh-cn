@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5a679fa505baa2d488df7a70518ddc8ac98232a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0c7256bdac73282af3c5a2c0a96004b8baf2141
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378551"
 ---
 # <a name="geteventbuffer-function"></a>GetEventBuffer 函数
 
@@ -42,13 +42,13 @@ void GetEventBuffer(
 ----------
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetEventBuffer\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553937)结构。
+在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetEventBuffer\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构。
 
 *EventCount*   
-返回时，指示已检索到其信息的事件数。 微型端口驱动程序将返回此信息**EventCount**的成员[ **GetEventBuffer\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553937)结构。
+返回时，指示已检索到其信息的事件数。 微型端口驱动程序将返回此信息**EventCount**的成员[ **GetEventBuffer\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构。
 
-*事件\[\]*   
-类型的结构数组[ **MSFC\_EventBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff562480)包含 HBA 事件队列中的下一步事件有关的信息。 微型端口驱动程序将返回此信息**事件**的成员[ **GetEventBuffer\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553937)结构。
+*事件\[\]*    
+类型的结构数组[ **MSFC\_EventBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)包含 HBA 事件队列中的下一步事件有关的信息。 微型端口驱动程序将返回此信息**事件**的成员[ **GetEventBuffer\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -89,9 +89,9 @@ void GetEventBuffer(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetEventBuffer\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff553937)
+[**GetEventBuffer\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)
 
-[**MSFC\_EventBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff562480)
+[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)
 
  
 

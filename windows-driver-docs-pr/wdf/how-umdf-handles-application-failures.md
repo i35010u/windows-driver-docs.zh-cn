@@ -9,12 +9,12 @@ keywords:
 - 应用程序故障 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58794bae3ae80ed4a737240b5bd3f0180963f752
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42055756ed9c46efeb91e731a429692fe5ef945a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382829"
 ---
 # <a name="how-umdf-handles-application-failures"></a>UMDF 如何处理应用程序故障
 
@@ -23,7 +23,7 @@ ms.locfileid: "63377406"
 
 当应用程序失败时，发生以下事件：
 
--   该发送程序接收[ **IRP\_MJ\_清理**](https://msdn.microsoft.com/library/windows/hardware/ff550718)。
+-   该发送程序接收[ **IRP\_MJ\_清理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)。
 
 -   清除请求发送到"取消"IPC 信道上的主机进程。
 

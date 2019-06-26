@@ -5,12 +5,12 @@ ms.assetid: a43451e6-f589-4963-acc7-855555655d37
 ms.date: 08/08/2017
 keywords: -OID_WWAN_SMS_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 151e4bc2b0a2b6414c31a9ec1b0a5276b3c65623
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91c1e0fcaa8d32bb5f484d05b57d09e83846b997
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387358"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384720"
 ---
 # <a name="oidwwansmsstatus"></a>OID\_WWAN\_SMS\_状态
 
@@ -26,7 +26,7 @@ OID\_WWAN\_SMS\_状态报告的 MB 设备的消息存储区状态。
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)。
+有关使用此 OID 的详细信息，请参阅[WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)。
 
 在处理此 OID 时，微型端口驱动程序可以访问用户识别模块 （SIM 卡），但不是应访问提供程序网络。
 
@@ -55,7 +55,7 @@ OID\_WWAN\_SMS\_状态报告的 MB 设备的消息存储区状态。
 ## <a name="see-also"></a>请参阅
 
 
-[WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)
+[WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 
 [**NDIS\_STATUS\_WWAN\_SMS\_STATUS**](ndis-status-wwan-sms-status.md)
 

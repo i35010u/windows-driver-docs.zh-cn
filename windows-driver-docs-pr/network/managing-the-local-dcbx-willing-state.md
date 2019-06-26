@@ -4,12 +4,12 @@ description: 管理本地 DCBX 意愿状态
 ms.assetid: B37CA18B-FCCD-414D-95AB-0C54B9F1F421
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8bf348dbc6ee033ae6cd0f0e3f85b04ff4bd7fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25805d3cac9ba70ceb59eac15e0151f371b8bfc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379207"
 ---
 # <a name="managing-the-local-dcbx-willing-state"></a>管理本地 DCBX 意愿状态
 
@@ -38,9 +38,9 @@ ETS 和 PFC TLVs 定义有点称为*愿意*位。 如果网络适配器与愿意
 
 微型端口驱动程序管理本地 DCBX 愿意状态如下所示：
 
--   通过调用初始化微型端口驱动程序时其[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，则它应该启用本地 DCBX 愿意根据专有由 IHV 定义的 QoS 设置的状态.
+-   通过调用初始化微型端口驱动程序时其[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，则它应该启用本地 DCBX 愿意根据专有由 IHV 定义的 QoS 设置的状态.
 
--   DCB 组件 (Msdcb.sys) 发出的一个对象标识符 (OID) 方法请求[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)网络适配器上配置的本地 QoS 参数。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构为此 OID 请求包含一个指向[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构。
+-   DCB 组件 (Msdcb.sys) 发出的一个对象标识符 (OID) 方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)网络适配器上配置的本地 QoS 参数。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构为此 OID 请求包含一个指向[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构。
 
     如果**NDIS\_QOS\_参数\_WILLING**中设置了标志**标志**此结构的成员，微型端口驱动程序，愿意状态 DCBX。 如果未设置此位，微型端口驱动程序禁用愿意状态 DCBX。
 
@@ -48,7 +48,7 @@ ETS 和 PFC TLVs 定义有点称为*愿意*位。 如果网络适配器与愿意
 
 有关本地 DCBX 愿意 bits 和 TLVs 的详细信息，请参阅 IEEE 802.1Qaz 草案标准。
 
-**请注意**  从 Windows Server 2012 开始，DCB 配置该组件，可以通过 PowerShell cmdlet 来设置或清除**NDIS\_QOS\_参数\_WILLING**标志时它会发出[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)请求。 这将导致要分别启用或禁用本地 DCBX 愿意状态的微型端口驱动程序。
+**请注意**  从 Windows Server 2012 开始，DCB 配置该组件，可以通过 PowerShell cmdlet 来设置或清除**NDIS\_QOS\_参数\_WILLING**标志时它会发出[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)请求。 这将导致要分别启用或禁用本地 DCBX 愿意状态的微型端口驱动程序。
 
  
 

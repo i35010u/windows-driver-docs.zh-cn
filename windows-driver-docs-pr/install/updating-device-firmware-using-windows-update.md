@@ -4,12 +4,12 @@ description: 本主题介绍如何使用 Windows Update (WU) 服务的设备的�
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6eeab3f3f202b34af9f094e2dd56380f3b9735b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c620882d02e54124c187ac5aae690be6067929d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384786"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>使用 Windows 更新更新设备固件
 
@@ -23,7 +23,7 @@ ms.locfileid: "63339493"
 
 通常情况下，固件更新驱动程序是轻量设备驱动程序，执行以下任务：
 
-* 设备启动时或在驱动程序中[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调函数：
+* 设备启动时或在驱动程序中[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数：
 
     1. 识别附加到的设备。
     2. 确定驱动程序是否在设备上的版本比新的固件版本。

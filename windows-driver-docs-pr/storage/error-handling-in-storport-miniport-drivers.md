@@ -4,12 +4,12 @@ description: Storport 微型端口驱动程序中的错误处理
 ms.assetid: 23ea8c36-56cf-45ae-a066-765d3a91b542
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d45ccefde367738be798f4f1965076baccf78623
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66c33442cf327b37573a94c10198fcf60bc96bb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369575"
 ---
 # <a name="error-handling-in-storport-miniport-drivers"></a>Storport 微型端口驱动程序中的错误处理
 
@@ -40,7 +40,7 @@ ms.locfileid: "63360921"
 
 对于数据不足，微型端口驱动程序必须更新 SRB **DataTransferLength**以指示实际传输数据量。
 
-此外，微型端口驱动程序应使用以下准则来记录上述错误的一些通过将传递到 SRB [ **StorPortLogError**](https://msdn.microsoft.com/library/windows/hardware/ff567426):
+此外，微型端口驱动程序应使用以下准则来记录上述错误的一些通过将传递到 SRB [ **StorPortLogError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportlogerror):
 
 记录裁量权 SRB 的驱动程序编写器的错误\_状态\_错误。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63360921"
 
 始终为 SRB 记录错误\_状态\_忙是否有硬件错误。
 
-若要记录错误，微型端口驱动程序调用[ **StorPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff567426)通过使用以下系统定义的错误或警告代码之一：
+若要记录错误，微型端口驱动程序调用[ **StorPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportlogerror)通过使用以下系统定义的错误或警告代码之一：
 
 SP\_总线\_奇偶校验\_错误映射到 SRB\_状态\_奇偶校验\_错误
 
@@ -80,7 +80,7 @@ SP\_坏\_转发\_转发的错误*固件*)
 
 SP\_坏\_转发\_警告
 
-[**StorPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff567426)分配错误日志数据包，将其设置，并代表微型端口驱动程序在事件日志中记录的 I/O 错误。 系统管理员或用户可以通过检查系统事件日志并，如有必要，重新配置、 修复或出现故障之前更换 HBA 监视 HBA 的条件。
+[**StorPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportlogerror)分配错误日志数据包，将其设置，并代表微型端口驱动程序在事件日志中记录的 I/O 错误。 系统管理员或用户可以通过检查系统事件日志并，如有必要，重新配置、 修复或出现故障之前更换 HBA 监视 HBA 的条件。
 
  
 

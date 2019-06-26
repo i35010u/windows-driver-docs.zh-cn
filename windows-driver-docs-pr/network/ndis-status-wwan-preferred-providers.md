@@ -5,12 +5,12 @@ ms.assetid: b0c06db9-82ca-4f94-80e6-3cf13197abf5
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_PREFERRED_PROVIDERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 089a08a8b4de53142a90d5b4e5992bbbe7f26fa7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 115c02b4338ee27334dafe5fb6ea7d18b63500a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377616"
 ---
 # <a name="ndisstatuswwanpreferredproviders"></a>NDIS\_状态\_WWAN\_首选\_提供程序
 
@@ -19,7 +19,7 @@ ms.locfileid: "63341393"
 
 微型端口驱动程序还可以发送未经请求的事件与该通知。
 
-使用此通知[ **NDIS\_WWAN\_首选\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567913)结构。
+使用此通知[ **NDIS\_WWAN\_首选\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -51,7 +51,7 @@ ms.locfileid: "63341393"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_PREFERRED\_PROVIDERS**](https://msdn.microsoft.com/library/windows/hardware/ff567913)
+[**NDIS\_WWAN\_PREFERRED\_PROVIDERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)
 
 [OID\_WWAN\_PREFERRED\_PROVIDERS](oid-wwan-preferred-providers.md)
 

@@ -9,12 +9,12 @@ keywords:
 - 服务例程 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca220ac893d235b99633179f7c4618a3ca9712bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77a994d17ad2e2e0a7276dbe9cbd4861c5366e3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357901"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382338"
 ---
 # <a name="gdi-support-services"></a>GDI 支持服务
 
@@ -22,7 +22,7 @@ ms.locfileid: "63357901"
 ## <span id="ddk_gdi_support_services_gg"></span><span id="DDK_GDI_SUPPORT_SERVICES_GG"></span>
 
 
-*GDI*导出可以简化驱动程序设计的许多服务例程。 该驱动程序可以直接调用这些例程。 名称的例程的是常规的图形引擎的服务的名称开头**Eng**。 始终与特定对象相关的服务例程开头的对象; 的名称例如， [ **CLIPOBJ\_cEnumStart** ](https://msdn.microsoft.com/library/windows/hardware/ff539421)是[ **CLIPOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff539417)服务。
+*GDI*导出可以简化驱动程序设计的许多服务例程。 该驱动程序可以直接调用这些例程。 名称的例程的是常规的图形引擎的服务的名称开头**Eng**。 始终与特定对象相关的服务例程开头的对象; 的名称例如， [ **CLIPOBJ\_cEnumStart** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_cenumstart)是[ **CLIPOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj)服务。
 
 **请注意**  中的第一个参数是指向用户对象的指针的服务例程是对该用户对象，方法，使用常规调用C++约定。 因此，驱动程序编写的C++可以访问作为方法的服务例程。
 
@@ -62,7 +62,7 @@ ms.locfileid: "63357901"
 
 [半色调服务](gdi-halftone-services.md)
 
-[使用图形 DDI](using-the-graphics-ddi.md)描述图形 DDI 入口点，还介绍了其中许多服务例程可用于帮助驱动程序实现的入口点。 每个服务函数的详细说明，请参阅[由打印机和显示器驱动程序的 GDI 函数调用](https://msdn.microsoft.com/library/windows/hardware/ff566544)。
+[使用图形 DDI](using-the-graphics-ddi.md)描述图形 DDI 入口点，还介绍了其中许多服务例程可用于帮助驱动程序实现的入口点。 每个服务函数的详细说明，请参阅[由打印机和显示器驱动程序的 GDI 函数调用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

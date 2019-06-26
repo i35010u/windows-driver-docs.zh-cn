@@ -4,12 +4,12 @@ description: 计时要求的诊断以收集调试信息如下所示。
 ms.assetid: A21687FE-1398-4722-89E3-BFB511AA48E3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45cb96f597367a22feb673b10e4843e8e9adbd70
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19f853cc6890977d16cfdeaf570ae471e7c34b3b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356859"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381128"
 ---
 # <a name="timings-for-diagnose-call"></a>诊断调用的计时
 
@@ -23,9 +23,9 @@ ms.locfileid: "63356859"
 ## <a name="related-topics"></a>相关主题
 
 
-[**eDiagnoseLevel**](https://msdn.microsoft.com/library/windows/hardware/mt297626)
+[**eDiagnoseLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-ediagnoselevel)
 
-[*MiniportWdiAdapterHangDiagnose*](https://msdn.microsoft.com/library/windows/hardware/mt297558)
+[*MiniportWdiAdapterHangDiagnose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_adapter_hang_diagnose)
 
  
 

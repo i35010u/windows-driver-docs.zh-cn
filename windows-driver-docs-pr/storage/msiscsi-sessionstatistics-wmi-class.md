@@ -4,12 +4,12 @@ description: MSiSCSI\_SessionStatistics WMI 类
 ms.assetid: fc9afa1b-dad3-4f3d-9fe2-e37d402f7bef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b5e2de2b91ddef3adceccc134a6668198d58aa85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d5dc1d7c7d0c67bf4d8898f8bb620fd960dfbbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389451"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384670"
 ---
 # <a name="msiscsisessionstatistics-wmi-class"></a>MSiSCSI\_SessionStatistics WMI 类
 
@@ -98,7 +98,7 @@ class MSiSCSI_SessionStatistics : Win32_PerfRawData {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_SessionStatistics** ](https://msdn.microsoft.com/library/windows/hardware/ff563137)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_SessionStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_sessionstatistics)数据结构。
 
 发起程序必须注册 MSiSCSI\_SessionStatistics 类具有以下会话的动态实例名称：
 

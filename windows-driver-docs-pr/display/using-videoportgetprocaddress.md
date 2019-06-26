@@ -7,12 +7,12 @@ keywords:
 - VideoPortGetProcAddress
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7af1231545192fb7da76bb162990ce264aa4c35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 707c39b096c8faa1d88c610310f86de5224ca8c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388982"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373561"
 ---
 # <a name="using-videoportgetprocaddress"></a>使用 VideoPortGetProcAddress
 
@@ -22,7 +22,7 @@ ms.locfileid: "63388982"
 
 微型端口驱动程序开发一个可以加载和运行较早的操作系统版本，在基于 NT 的操作系统版本上，只要微型端口驱动程序不会尝试使用特定于较新的操作系统版本的功能。
 
-微型端口驱动程序加载时， **VideoPortGetProcAddress**的成员[**视频\_端口\_配置\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff570531)结构包含的地址的视频端口驱动程序导出的回调例程[ **VideoPortGetProcAddress**](https://msdn.microsoft.com/library/windows/hardware/ff570315)。 微型端口驱动程序可以使用此回调例程来查找从导出的视频端口函数的地址*videoprt.sys*。 微型端口驱动程序具有函数的地址后，它可以使用此地址调用该函数。 下面的示例代码所示。
+微型端口驱动程序加载时， **VideoPortGetProcAddress**的成员[**视频\_端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_port_config_info)结构包含的地址的视频端口驱动程序导出的回调例程[ **VideoPortGetProcAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_port_get_proc_address)。 微型端口驱动程序可以使用此回调例程来查找从导出的视频端口函数的地址*videoprt.sys*。 微型端口驱动程序具有函数的地址后，它可以使用此地址调用该函数。 下面的示例代码所示。
 
 ```cpp
   // Useful typedef for a function pointer type

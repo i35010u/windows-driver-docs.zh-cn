@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎 API、 源
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b59dcc530b3d4c9708c7539b049b654e2a7aeaf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8452c5881edb3c171b5f7a8c4a736a2d80cd36f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353169"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368609"
 ---
 # <a name="using-source-files"></a>使用源文件
 
@@ -22,15 +22,15 @@ ms.locfileid: "63353169"
 
 ### <a name="span-idsourcepathspanspan-idsourcepathspansource-path"></a><span id="source_path"></span><span id="SOURCE_PATH"></span>源路径
 
-若要添加到源路径的目录或源服务器，请使用方法[ **AppendSourcePath**](https://msdn.microsoft.com/library/windows/hardware/ff538102)。 返回整个源路径[ **GetSourcePath** ](https://msdn.microsoft.com/library/windows/hardware/ff548358) ，可以使用更改[ **SetSourcePath**](https://msdn.microsoft.com/library/windows/hardware/ff556781)。 单个目录或源服务器可以检索从源路径中使用[ **GetSourcePathElement**](https://msdn.microsoft.com/library/windows/hardware/ff548367)。
+若要添加到源路径的目录或源服务器，请使用方法[ **AppendSourcePath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-appendsourcepath)。 返回整个源路径[ **GetSourcePath** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsourcepath) ，可以使用更改[ **SetSourcePath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-setsourcepath)。 单个目录或源服务器可以检索从源路径中使用[ **GetSourcePathElement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsourcepathelement)。
 
-若要查找源路径的相对路径的源文件，请使用[ **FindSourceFile** ](https://msdn.microsoft.com/library/windows/hardware/ff545423)或者，有关更多高级选项，使用源服务器时，使用[ **FindSourceFileAndToken**](https://msdn.microsoft.com/library/windows/hardware/ff545430). **FindSourceFileAndToken**还可以使用连同[ **GetSourceFileInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff548321)检索到的源服务器上的文件相关的变量。
+若要查找源路径的相对路径的源文件，请使用[ **FindSourceFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-findsourcefile)或者，有关更多高级选项，使用源服务器时，使用[ **FindSourceFileAndToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugadvanced3-findsourcefileandtoken). **FindSourceFileAndToken**还可以使用连同[ **GetSourceFileInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugadvanced3-getsourcefileinformation)检索到的源服务器上的文件相关的变量。
 
 ### <a name="span-idmatchingsourcefilestocodeinmemoryspanspan-idmatchingsourcefilestocodeinmemoryspanmatching-source-files-to-code-in-memory"></a><span id="matching_source_files_to_code_in_memory"></span><span id="MATCHING_SOURCE_FILES_TO_CODE_IN_MEMORY"></span>匹配的源代码文件，以在内存中的代码
 
-调试器引擎提供了三个方法，用于查找分别对应于源文件中的行的内存位置。 若要将源代码的单个行映射到的内存位置，请使用[ **GetOffsetByLine**](https://msdn.microsoft.com/library/windows/hardware/ff548022)。 若要搜索的多个源行或附近的源行的内存位置，请使用[ **GetSourceEntriesByLine**](https://msdn.microsoft.com/library/windows/hardware/ff548305)。 [ **GetSourceFileLineOffsets** ](https://msdn.microsoft.com/library/windows/hardware/ff548339)方法将返回源文件中的每个行的内存位置。
+调试器引擎提供了三个方法，用于查找分别对应于源文件中的行的内存位置。 若要将源代码的单个行映射到的内存位置，请使用[ **GetOffsetByLine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getoffsetbyline)。 若要搜索的多个源行或附近的源行的内存位置，请使用[ **GetSourceEntriesByLine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsourceentriesbyline)。 [ **GetSourceFileLineOffsets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsourcefilelineoffsets)方法将返回源文件中的每个行的内存位置。
 
-若要执行相反的操作，并找到与目标的内存中的位置相匹配的源文件的行，使用[ **GetLineByOffset**](https://msdn.microsoft.com/library/windows/hardware/ff546995)。
+若要执行相反的操作，并找到与目标的内存中的位置相匹配的源文件的行，使用[ **GetLineByOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getlinebyoffset)。
 
 **请注意**  内存位置和源代码文件中的行之间的关系不是一定是一一对应关系。 就可以为源代码，以与多个内存位置相对应的单个行和在单一内存位置，以分别对应于多个行的源代码。
 

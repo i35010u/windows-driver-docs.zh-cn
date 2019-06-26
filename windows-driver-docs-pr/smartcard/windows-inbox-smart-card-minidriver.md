@@ -4,12 +4,12 @@ description: Windows 收件箱智能卡微型驱动程序
 ms.assetid: 4B61607E-090A-4935-B944-110ACE9A4D83
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6711bb48a2a0e4b81067fa734c26fcbd2c8ca5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e80abba0d39b8dc0e61905f647d11b17af8f08f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348124"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369592"
 ---
 # <a name="windows-inbox-smart-card-minidriver"></a>Windows 收件箱智能卡微型驱动程序
 
@@ -20,7 +20,7 @@ ms.locfileid: "63348124"
 
 有关 GID 的详细信息，请参阅[通用标识设备规范](https://msdn.microsoft.com/windows/hardware/gg487496)网页。
 
-智能卡插入读取器和基本 CSP/KSP 时调用[ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)，类微型驱动程序将执行以下的发现过程，以将标记为任一 PIV-关联的卡或GID 合规：
+智能卡插入读取器和基本 CSP/KSP 时调用[ **CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))，类微型驱动程序将执行以下的发现过程，以将标记为任一 PIV-关联的卡或GID 合规：
 
 1.  发出 SELECT 命令来查找 PIV 辅助设备。 如果命令成功，Windows 会考虑卡为 PIV 设备和发现过程停止。
 2.  如果该命令将失败，则发出 SELECT 命令以找到 GID 辅助设备。 如果命令成功，Windows 会考虑卡为 GID 设备和发现过程停止。
@@ -602,7 +602,7 @@ SmartCardCardModule="msclmd.dll"
     -   指定一个日期值，是足够遥远的将来以避免与 Windows service pack 更新冲突。
     -   尽管 4 位版本号是可选的但必须指定明显高于收件箱驱动程序的 INF 文件中指定的当前版本的版本。
 
-INF 文件和语法的详细信息，请参阅[设备和驱动程序安装设计指南](https://msdn.microsoft.com/library/windows/hardware/ff549455)。
+INF 文件和语法的详细信息，请参阅[设备和驱动程序安装设计指南](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)。
 
  
 

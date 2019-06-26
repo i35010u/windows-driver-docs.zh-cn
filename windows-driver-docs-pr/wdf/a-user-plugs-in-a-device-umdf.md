@@ -7,12 +7,12 @@ keywords:
 - 插入设备方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec90d539a15c59a2dad36a4fdff0b6bcd9eb0b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd71fa2fa7c86ae87cbb8ea6cc0c6fc3d559993b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342156"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385337"
 ---
 # <a name="a-user-plugs-in-a-device"></a>用户插入设备
 
@@ -23,7 +23,7 @@ ms.locfileid: "63342156"
 
 ![umdf 驱动程序的设备枚举和启动序列](images/umdf-powerup-sequence.png)
 
-首先调用驱动程序的框架[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)回调，以便该驱动程序可以创建设备回调对象和一个用于表示设备的 framework 设备对象。 框架将继续进行向上访问序列，直到该设备正常调用驱动程序的回调例程。
+首先调用驱动程序的框架[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)回调，以便该驱动程序可以创建设备回调对象和一个用于表示设备的 framework 设备对象。 框架将继续进行向上访问序列，直到该设备正常调用驱动程序的回调例程。
 
 框架将继续通过此序列的每个支持使用驱动程序的最低驱动程序堆栈中启动一个时，驱动程序的设备的 UMDF 函数或筛选器驱动程序。
 

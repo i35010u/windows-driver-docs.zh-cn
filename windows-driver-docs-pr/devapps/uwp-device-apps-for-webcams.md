@@ -4,12 +4,12 @@ description: 此部分介绍相机的 UWP 设备应用。
 ms.assetid: 6CF13679-BCF3-443C-A864-4BBC54B8DA1C
 ms.date: 09/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 24feda30bbe41eba2021a02bda768b76200ef53b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06c9376950a595c6a9cc1a8cde59870cf4cb7bc8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359486"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369339"
 ---
 # <a name="uwp-device-apps-for-cameras"></a>适用于相机的 UWP 设备应用
 
@@ -34,7 +34,7 @@ ms.locfileid: "63359486"
 
 -   [驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例提供了用于相机的 UWP 设备应用程序的驱动程序 MFT。 驱动程序 MFT 是捕获视频时使用特定照相机使用媒体基础转换。 驱动程序 MFT 也称为是 MFT0，因为它是第一个 MFT 应用于从照相机中捕获的视频流。 捕获照片或视频从摄像机时，此 MFT 可以提供视频效果或其他处理。 可以与照相机的驱动程序包一起分发。
 
--   [摄像头捕获 UI](https://go.microsoft.com/fwlink/p/?linkid=228589)示例演示如何使用[Windows.Media.Capture.CameraCaptureUI](https://msdn.microsoft.com/library/windows/apps/br241030) API，后者会显示全屏显示 UI 的捕获照片或视频。 摄像头捕获 UI 提供了用于从照片切换到视频、 使时间延迟拍摄的照片，计时器和相机设置调节照相机选项控件的控件。
+-   [摄像头捕获 UI](https://go.microsoft.com/fwlink/p/?linkid=228589)示例演示如何使用[Windows.Media.Capture.CameraCaptureUI](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) API，后者会显示全屏显示 UI 的捕获照片或视频。 摄像头捕获 UI 提供了用于从照片切换到视频、 使时间延迟拍摄的照片，计时器和相机设置调节照相机选项控件的控件。
 
     可以使用此示例以调用[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。
 

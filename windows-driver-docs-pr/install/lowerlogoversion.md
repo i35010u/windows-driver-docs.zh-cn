@@ -6,17 +6,17 @@ keywords:
 - LowerLogoVersion
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9590339d89be7b99c7dce4b5bb25f7e64a4ad4f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5537c7a7d02fc02c9ec7dec3f7f24286b6bceb60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377667"
 ---
 # <a name="lowerlogoversion"></a>LowerLogoVersion
 
 
-**LowerLogoVersion**是[设备安装程序类属性](https://msdn.microsoft.com/library/windows/hardware/ff542239)的签名对分数的影响的驱动程序，如下所示：
+**LowerLogoVersion**是[设备安装程序类属性](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))的签名对分数的影响的驱动程序，如下所示：
 
 -   Windows 将最佳签名分数分配给具有相同的 Windows 版本的 WHQL 签名的驱动程序或更高版本比**LowerLogoVersion**值。
 
