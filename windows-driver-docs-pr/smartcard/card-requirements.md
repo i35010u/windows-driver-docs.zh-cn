@@ -4,12 +4,12 @@ description: 卡要求
 ms.assetid: 3BE887F9-4B35-4A83-9E98-DD7555DF2953
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c46911e0aa0fe77815b353f52e3e44ec665d00f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63a4f24f302e6476386f1beed02c18556908d8ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373540"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356734"
 ---
 # <a name="card-requirements"></a>卡要求
 
@@ -36,7 +36,7 @@ ms.locfileid: "63373540"
 1.  创建与每个人都具有读取和拥有写入权限的管理员卡 ID 文件，"cardid"卡的根目录中。 此文件包含在卡的唯一的 16 字节二进制标识符。 它永远不会更新或覆盖，除非卡是完全回收。
 2.  与具有读/写权限的所有人创建的缓存文件，"cardcf"的根目录中。 初始的内容是值为零的 6 个字节。
 3.  与每个人都具有读取和拥有写入权限的用户创建应用程序映射"cardapps"的根目录中。 初始的内容是一个 8 字节记录，其中包含字符串"mscp"跟 4 零字节。
-4.  创建基本 CSP CNG/KSP 应用程序通过调用[ **CardCreateDirectory**](https://msdn.microsoft.com/library/windows/hardware/dn468710)、 引用应用程序"mscp"、 与每个人都具有读取和用户拥有写入权限。
+4.  创建基本 CSP CNG/KSP 应用程序通过调用[ **CardCreateDirectory**](https://docs.microsoft.com/previous-versions/dn468710(v=vs.85))、 引用应用程序"mscp"、 与每个人都具有读取和用户拥有写入权限。
 5.  在与每个人都具有读取和写入权限的用户的"mscp"目录中创建证书映射文件中，"cmapfile"。 它是最初为空。
 
 从技术上讲，卡"创建"后步骤 2，但我们定义所有卡应都保留 Microsoft"mscp"应用程序，不管是实际使用。 本部分说明异常的事实，始终创建"mscp"应用程序和"mscp"应用程序中创建一个文件。 按预期方式卡创建由卡管理 Microsoft 提供的 DLL 中的函数来实现，提供此信息作为卡微型驱动程序作者能够正确地支持这些操作在该上下文中的参考信息。
