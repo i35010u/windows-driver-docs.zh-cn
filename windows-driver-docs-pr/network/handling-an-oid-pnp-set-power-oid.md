@@ -13,12 +13,12 @@ keywords:
 - 唤醒功能 WDK 网络，转换的电源状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b2f607ba5ed502cc18ba821076dd7ca6624089a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d6cdbecc030ea7e6d3c079429b58efe49cd76ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349719"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384396"
 ---
 # <a name="handling-an-oidpnpsetpower-oid"></a>处理 OID\_PNP\_设置\_POWER OID
 
@@ -26,7 +26,7 @@ ms.locfileid: "63349719"
 
 
 
-NDIS 发送的 OID 请求[OID\_PNP\_设置\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)通知微型端口驱动程序，网络适配器将会进行转换从睡眠状态的工作状态或处于休眠状态状态设置为处于工作状态。 OID\_PNP\_设置\_电源请求可以在加[OID\_PNP\_查询\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569778)请求。
+NDIS 发送的 OID 请求[OID\_PNP\_设置\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)通知微型端口驱动程序，网络适配器将会进行转换从睡眠状态的工作状态或处于休眠状态状态设置为处于工作状态。 OID\_PNP\_设置\_电源请求可以在加[OID\_PNP\_查询\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-query-power)请求。
 
 本部分包括：
 

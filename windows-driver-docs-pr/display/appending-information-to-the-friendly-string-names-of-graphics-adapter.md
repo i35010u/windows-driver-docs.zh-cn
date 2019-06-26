@@ -10,12 +10,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: a2828317136a7c3be2b23310a2b28f59778f7b2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c683f9e92d8140cf3630c880965ee18da38a0b0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385035"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384642"
 ---
 # <a name="appending-information-to-the-friendly-string-names-of-graphics-adapters"></a>将信息追加到的图形适配器的友好字符串名称
 
@@ -34,7 +34,7 @@ XDDM Foo Device Name (Microsoft Corporation)
 New Driver Model Foo Device Name (Microsoft Corporation - WDDM)
 ```
 
-有关详细信息*字符串*部分以及 *%strkey%* INF 中，在其他位置指定的令牌的更多信息参见[ **INF 字符串部分**](https://msdn.microsoft.com/library/windows/hardware/ff547485).
+有关详细信息*字符串*部分以及 *%strkey%* INF 中，在其他位置指定的令牌的更多信息参见[ **INF 字符串部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section).
 
  
 

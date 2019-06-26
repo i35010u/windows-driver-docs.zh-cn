@@ -5,24 +5,24 @@ ms.assetid: 7634fc32-9059-4f89-a591-7aa663b0c188
 ms.date: 08/08/2017
 keywords: -OID_WWAN_PROVISIONED_CONTEXTS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 78ea8f12f45601342fe47b3e6e0abd8baabd0adb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e160dfc6b0a4bbbacdc6d6decd7094f38ea44f26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383204"
 ---
 # <a name="oidwwanprovisionedcontexts"></a>OID\_WWAN\_已设置\_上下文
 
 
 OID\_WWAN\_已设置\_上下文读取或更新存储在 MB 设备或订阅服务器上标识模块 (SIM) 上的预配的上下文项。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_已预配\_上下文**](ndis-status-wwan-provisioned-contexts.md)状态通知包含[ **NDIS\_WWAN\_已预配\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff567914)结构，以提供有关预配的上下文项存储在 MB 设备或而不考虑完成集或查询的请求订阅服务器上标识模块 (SIM) 上的信息。
+微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_已预配\_上下文**](ndis-status-wwan-provisioned-contexts.md)状态通知包含[ **NDIS\_WWAN\_已预配\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts)结构，以提供有关预配的上下文项存储在 MB 设备或而不考虑完成集或查询的请求订阅服务器上标识模块 (SIM) 上的信息。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 数据包上下文管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)。
+有关使用此 OID 的详细信息，请参阅[WWAN 数据包上下文管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)。
 
 微型端口驱动程序应返回 NDIS\_状态\_不\_如果它们支持的 MB 设备不支持的预配的上下文检索支持。
 
@@ -50,7 +50,7 @@ OID\_WWAN\_已设置\_上下文读取或更新存储在 MB 设备或订阅服务
 
 预配的上下文列表应进行预配在设备中，更新由组 OID\_WWAN\_已设置\_上下文操作或更新的设备/操作员使用短信或 OTA。 它必须更新根据 OID 中提供的上下文信息动态\_WWAN\_MB 服务的连接操作。
 
-有关如何访问 AccessString、 用户名和密码，从列表中每个预配的上下文的 MB 设备的详细信息，请参阅[ **WWAN\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff571201)。
+有关如何访问 AccessString、 用户名和密码，从列表中每个预配的上下文的 MB 设备的详细信息，请参阅[ **WWAN\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_context)。
 
 <a name="requirements"></a>要求
 ------------
@@ -75,7 +75,7 @@ OID\_WWAN\_已设置\_上下文读取或更新存储在 MB 设备或订阅服务
 ## <a name="see-also"></a>请参阅
 
 
-[WWAN 数据包上下文管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)
+[WWAN 数据包上下文管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)
 
  
 

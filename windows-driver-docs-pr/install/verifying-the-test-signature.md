@@ -4,17 +4,17 @@ description: 验证测试签名
 ms.assetid: 996ce3d4-76b5-4c78-9ea9-ca8a04cfef99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c846d78f2ae798c8122b605e0aff070794c1ade
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6f26a149f1ea3878723d9c8aa212e77f2cf542d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339294"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380413"
 ---
 # <a name="verifying-the-test-signature"></a>验证测试签名
 
 
-测试证书复制到测试计算机上的受信任的根证书颁发机构证书存储后[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)可用于执行以下操作：
+测试证书复制到测试计算机上的受信任的根证书颁发机构证书存储后[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)可用于执行以下操作：
 
 -   验证指定的文件中的签名[驱动程序包](driver-packages.md) [编录文件](catalog-files.md)。
 
@@ -48,7 +48,7 @@ Signtool verify /pa /v /c tstamd64.cat toastpkg.inf
 Signtool verify /pa /v tstamd64.cat
 ```
 
-有关如何使用详细信息[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)若要验证的数字签名的编录文件，请参阅[验证 Test-Signed 编录文件签名](verifying-the-signature-of-a-test-signed-catalog-file.md)。
+有关如何使用详细信息[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)若要验证的数字签名的编录文件，请参阅[验证 Test-Signed 编录文件签名](verifying-the-signature-of-a-test-signed-catalog-file.md)。
 
  
 

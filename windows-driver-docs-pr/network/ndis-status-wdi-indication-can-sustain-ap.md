@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_CAN_SUSTAIN_AP 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f63ca5d4382ee112fdb1af5197dca1d45a78dd1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c85f147bda630839523ab23a412755acc4270b74
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385236"
 ---
 # <a name="ndisstatuswdiindicationcansustainap"></a>NDIS\_状态\_WDI\_指示\_可以\_SUSTAIN\_亚太
 
@@ -20,7 +20,7 @@ ms.locfileid: "63366417"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63366417"
 
 | 在任务栏的搜索框中键入                                                                                     | 允许多个 TLV 实例 | 可选 | 描述                                                     |
 |------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------|
-| [**WDI\_TLV\_INDICATION\_CAN\_SUSTAIN\_AP**](https://msdn.microsoft.com/library/windows/hardware/dn926317) |                                |          | 现在，适配器的原因可以承受 802.11 AP 的功能。 |
+| [**WDI\_TLV\_INDICATION\_CAN\_SUSTAIN\_AP**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-indication-can-sustain-ap) |                                |          | 现在，适配器的原因可以承受 802.11 AP 的功能。 |
 
  
 

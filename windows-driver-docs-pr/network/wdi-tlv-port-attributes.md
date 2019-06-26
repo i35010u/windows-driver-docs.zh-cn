@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PORT_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 61552853ad51a798386a55e68f5b1ad087081e53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ede26c45080d1bff401830c8338dbcd72f1a500a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366528"
 ---
 # <a name="wditlvportattributes"></a>WDI\_TLV\_端口\_属性
 
@@ -33,7 +33,7 @@ WDI\_TLV\_端口\_属性是 TLV 包含端口的属性。
 
 | 在任务栏的搜索框中键入                                              | 描述                                         |
 |---------------------------------------------------|-----------------------------------------------------|
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 指定与端口相关联的 MAC 地址。 |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定与端口相关联的 MAC 地址。 |
 | UINT16                                            | 指定的端口号。                          |
 
  

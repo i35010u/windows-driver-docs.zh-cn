@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 38e5e395340926b3902670efe6dc8f035f955a30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c029bd27aba14d684c0175b910359ccb3bbc549
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380755"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378241"
 ---
 # <a name="devpkeydevicegenericdriverinstalled"></a>DEVPKEY_Device_GenericDriverInstalled
 
@@ -60,7 +60,7 @@ Windows 设置 DEVPKEY_Device_GenericDriverInstalled 的值。
 
 DEVPKEY_Device_GenericDriverInstalled 的值设置为 DEVPROP_TRUE，指明已安装的基本驱动程序。 否则，该属性的值设置为 DEVPROP_FALSE。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_GenericDriverInstalled 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_GenericDriverInstalled 值。
 
 Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 
@@ -87,7 +87,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

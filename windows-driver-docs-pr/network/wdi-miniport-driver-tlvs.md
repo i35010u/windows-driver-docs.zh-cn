@@ -5,12 +5,12 @@ ms.assetid: BAE1E159-F0CB-4A74-9E35-4361C94518E6
 ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 205178436f9bd8e7bbcd3dbc5c7cea6332889060
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a8c2dc905215756f73140d0f179079ec020f5ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381151"
 ---
 # <a name="wdi-miniport-driver-tlvs"></a>WDI 微型端口驱动程序 TLVs
 
@@ -267,7 +267,7 @@ ms.locfileid: "63385373"
 -   [**WDI\_TLV\_PHY\_TX\_POWER\_LEVEL\_LIST**](wdi-tlv-phy-tx-power-level-list.md)
 -   [**WDI\_TLV\_PHY\_TYPE**](wdi-tlv-phy-type.md)
 -   [**WDI\_TLV\_PHY\_TYPE\_LIST**](wdi-tlv-phy-type-list.md)
--   [**WDI\_TLV\_PHY\_类型\_列表 （未使用）**](wdi-tlv-phy-type-list--disabled.md)
+-   [**WDI\_TLV\_PHY\_类型\_列表 （未使用）** ](wdi-tlv-phy-type-list--disabled.md)
 -   [**WDI\_TLV\_PLDR\_SUPPORT**](wdi-tlv-pldr-support.md)
 -   [**WDI\_TLV\_PM\_CAPABILITIES**](wdi-tlv-pm-capabilities.md)
 -   [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY**](wdi-tlv-pm-protocol-offload-80211rsn-rekey.md)
@@ -348,7 +348,7 @@ ms.locfileid: "63385373"
 -   [**WDI\_TLV\_WFD\_关联\_状态**](wdi-tlv-wfd-association-status.md)
 
 ## <a name="related-topics"></a>相关主题
-[WDI 消息结构](https://msdn.microsoft.com/library/windows/hardware/mt269163)  
+[WDI 消息结构](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-wi-fi-messages)  
 
 
 

@@ -4,12 +4,12 @@ description: MS\_SMHBA\_SAS\_PHY WMI 类
 ms.assetid: c4fcf9ae-d2ab-4791-bf1e-55087fe03185
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1db468aaecae3e43dab6cebd68f0f7b0dbcaf39e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b14290d44da932bdbed6346367693fad23da550
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325289"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386127"
 ---
 # <a name="mssmhbasasphy-wmi-class"></a>MS\_SMHBA\_SAS\_PHY WMI 类
 
@@ -46,7 +46,7 @@ class MS_SMHBA_SAS_PHY
 
 此类定义编译时通过 WMI 工具套件，它会生成以下数据结构：
 
-[**MS\_SMHBA\_SAS\_PHY**](https://msdn.microsoft.com/library/windows/hardware/ff563181)
+[**MS\_SMHBA\_SAS\_PHY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_sas_phy)
 
 没有与此 WMI 类相关联的方法。
 

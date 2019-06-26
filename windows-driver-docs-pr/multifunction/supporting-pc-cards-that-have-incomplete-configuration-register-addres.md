@@ -8,12 +8,12 @@ keywords:
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4100642afab95d695ea67b8560d59fa90925d2ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27326a54cb459dbee9eccbd81dcd5bf0e8d04465
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386380"
 ---
 # <a name="pc-cards-with-incomplete-configuration-register-addresses"></a>具有不完整的配置的 PC 卡注册地址
 
@@ -40,11 +40,11 @@ ms.locfileid: "63324539"
 
     INF 文件可以是函数打包为单个设备时，将使用的相同文件。 INF 文件不需要任何特殊的多功能语义。
 
-这样的多功能设备自定义 INF 必须包含至少一个[ **INF DDInstall.LogConfigOverride 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547339)。 重写部分必须包含**MfCardConfig**对于每个函数，确定位置的每个集配置注册表项。
+这样的多功能设备自定义 INF 必须包含至少一个[ **INF DDInstall.LogConfigOverride 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)。 重写部分必须包含**MfCardConfig**对于每个函数，确定位置的每个集配置注册表项。
 
 INF 必须重新提出所指定的设备，因为 INF 中存在替代配置时，如果 PnP 管理器不使用该设备从任何设备资源要求的所有资源要求。
 
-指定**MfCardConfig**条目使用的语法中所述[ **INF LogConfig 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547448)。
+指定**MfCardConfig**条目使用的语法中所述[ **INF LogConfig 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive)。
 
 例如，考虑以下内容摘自多功能 PC 卡设备包含一个调制解调器和网络适配器的自定义 INF:
 

@@ -3,12 +3,12 @@ Description: 介绍适用于连接到可用端口的 MUTT 设备必须运行设�
 title: 在 Visual Studio 中运行系统电源说明测试 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61c9c14b4dbea00de855e89135593836ba81f385
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0f97aef6bf6387e3101decf58ebc0181364e697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378312"
 ---
 # <a name="how-to-run-system-power-devfund-tests-in-visual-studio-for-mutt-devices"></a>如何在 Visual Studio 中针对 MUTT 设备运行系统电源 devfund 测试
 
@@ -64,7 +64,7 @@ ms.locfileid: "63366053"
 有关上述列表中测试的详细信息，请参阅**有关设备基本测试**中[如何选择和配置设备基础测试](https://go.microsoft.com/fwlink/p/?linkid=316387)。
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
 
 

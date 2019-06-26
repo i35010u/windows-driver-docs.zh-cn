@@ -10,12 +10,12 @@ keywords:
 - 绘制 WDK GDI，DEVMODEW 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57a77730819f0c24fd22ed745871f129594e2f15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8f6b727fa18d1fd009a098686cd6056ca5a40ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389894"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384586"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 结构
 
@@ -23,7 +23,7 @@ ms.locfileid: "63389894"
 ## <span id="ddk_the_devmodew_structure_gg"></span><span id="DDK_THE_DEVMODEW_STRUCTURE_GG"></span>
 
 
-[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构是 Microsoft Windows SDK 文档中所述的 DEVMODE 结构的 Unicode 版本。 （DEVMODEW 上的 W 后缀表示"宽型"或 Unicode 字符。）虽然应用程序可以使用任一结构，使用 DEVMODEW 结构而不是 DEVMODE 结构需要驱动程序。
+[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构是 Microsoft Windows SDK 文档中所述的 DEVMODE 结构的 Unicode 版本。 （DEVMODEW 上的 W 后缀表示"宽型"或 Unicode 字符。）虽然应用程序可以使用任一结构，使用 DEVMODEW 结构而不是 DEVMODE 结构需要驱动程序。
 
 ### <a name="span-idpublicandprivatemembersspanspan-idpublicandprivatemembersspanpublic-and-private-members"></a><span id="public_and_private_members"></span><span id="PUBLIC_AND_PRIVATE_MEMBERS"></span>公共和私有成员
 
@@ -41,15 +41,15 @@ ms.locfileid: "63389894"
 
 -   显示驱动程序 DEVMODEW 初始化
 
-    显示驱动程序[ **DrvGetModes** ](https://msdn.microsoft.com/library/windows/hardware/ff556233)入口点初始化为零的 DEVMODEW 结构的所有成员。 *DrvGetModes*然后复制显示驱动程序 DLL 的名称为**dmDeviceName**成员，将填充**dmSpecVersion**并**dmDriverVersion**成员DEVMODEW 结构和副本的版本使用相应的成员来显示属性信息。
+    显示驱动程序[ **DrvGetModes** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)入口点初始化为零的 DEVMODEW 结构的所有成员。 *DrvGetModes*然后复制显示驱动程序 DLL 的名称为**dmDeviceName**成员，将填充**dmSpecVersion**并**dmDriverVersion**成员DEVMODEW 结构和副本的版本使用相应的成员来显示属性信息。
 
 -   打印机驱动程序 DEVMODEW 初始化
 
-    应用程序时进行调用**DocumentProperties** （打印机接口 DLL 函数的 Microsoft Windows SDK 文档中所述） 或[ **DrvDocumentPropertySheets**](https://msdn.microsoft.com/library/windows/hardware/ff548548) （基于 NT 的操作系统图形 DDI），使用默认值创建 DEVMODEW 结构。 然后，应用程序可以自由地修改任何公共 DEVMODEW 成员。 后任何更改，应用程序应请对它调用之前，以合并使用这些驱动程序的内部 DEVMODEW 结构已更改的成员的同一函数的第二个调用。 第二次调用是必要的因为某些更改可能无法正常运行;打印机驱动程序必须调用以更正 DEVMODEW 结构。 当文档要打印时，应用程序传递的合并的 DEVMODEW 结构**CreateDC** （Microsoft Windows SDK 文档中介绍），这将传递到[ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211) DDI。 此时，驱动程序的呈现 DLL 验证 DEVMODEW 结构，并会在修复，如有必要，然后才可执行打印作业。
+    应用程序时进行调用**DocumentProperties** （打印机接口 DLL 函数的 Microsoft Windows SDK 文档中所述） 或[ **DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets) （基于 NT 的操作系统图形 DDI），使用默认值创建 DEVMODEW 结构。 然后，应用程序可以自由地修改任何公共 DEVMODEW 成员。 后任何更改，应用程序应请对它调用之前，以合并使用这些驱动程序的内部 DEVMODEW 结构已更改的成员的同一函数的第二个调用。 第二次调用是必要的因为某些更改可能无法正常运行;打印机驱动程序必须调用以更正 DEVMODEW 结构。 当文档要打印时，应用程序传递的合并的 DEVMODEW 结构**CreateDC** （Microsoft Windows SDK 文档中介绍），这将传递到[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev) DDI。 此时，驱动程序的呈现 DLL 验证 DEVMODEW 结构，并会在修复，如有必要，然后才可执行打印作业。
 
 ### <a name="span-idusingadevmodewstructurespanspan-idusingadevmodewstructurespanusing-a-devmodew-structure"></a><span id="using_a_devmodew_structure"></span><span id="USING_A_DEVMODEW_STRUCTURE"></span>使用 DEVMODEW 结构
 
-多个 Api 和图形 DDIs 为作为打印，并查询设备功能、 显示用户界面和其他此类目的 DEVMODEW 结构中使用的信息。 例如， [ **DrvConvertDevMode** ](https://msdn.microsoft.com/library/windows/hardware/ff548532)是转换到另一个操作系统版本从 DEVMODEW 结构 DDI 的打印后台处理程序图形。 这可能是必要的打印机驱动程序从不同的操作系统版本运行的另一台计算机获取 DEVMODEW 结构。
+多个 Api 和图形 DDIs 为作为打印，并查询设备功能、 显示用户界面和其他此类目的 DEVMODEW 结构中使用的信息。 例如， [ **DrvConvertDevMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvconvertdevmode)是转换到另一个操作系统版本从 DEVMODEW 结构 DDI 的打印后台处理程序图形。 这可能是必要的打印机驱动程序从不同的操作系统版本运行的另一台计算机获取 DEVMODEW 结构。
 
 ### <a name="span-idmodifyingadevmodewstructurespanspan-idmodifyingadevmodewstructurespanmodifying-a-devmodew-structure"></a><span id="modifying_a_devmodew_structure"></span><span id="MODIFYING_A_DEVMODEW_STRUCTURE"></span>修改 DEVMODEW 结构
 

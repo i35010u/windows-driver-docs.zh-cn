@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SEND_REQUEST_ACTION_FRAME 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9871162f5db6f2f44891df01cf87d9f4908bb360
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf032e40ddbb1ce31ae55f8b0ed4dc87e63fbcb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340081"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387225"
 ---
 # <a name="oidwditasksendrequestactionframe"></a>OID\_WDI\_TASK\_SEND\_REQUEST\_ACTION\_FRAME
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_发送\_请求\_操作\_帧请求的设备操作帧将请求�
 
 | Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
+| Port   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
 
  
 
@@ -40,8 +40,8 @@ OID\_WDI\_任务\_发送\_请求\_操作\_帧请求的设备操作帧将请求�
 
 | TLV                                                                                                             | 允许多个 TLV 实例 | 可选 | 描述                                     |
 |-----------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------|
-| [**WDI\_TLV\_SEND\_ACTION\_FRAME\_REQUEST\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn898053) |                                |          | 正在发送操作框架请求参数。 |
-| [**WDI\_TLV\_操作\_帧\_正文**](https://msdn.microsoft.com/library/windows/hardware/dn926118)                                         |                                |          | 操作帧正文中。                          |
+| [**WDI\_TLV\_SEND\_ACTION\_FRAME\_REQUEST\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-send-action-frame-request-parameters) |                                |          | 正在发送操作框架请求参数。 |
+| [**WDI\_TLV\_操作\_帧\_正文**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-action-frame-body)                                         |                                |          | 操作帧正文中。                          |
 
  
 

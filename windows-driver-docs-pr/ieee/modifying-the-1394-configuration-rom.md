@@ -8,12 +8,12 @@ keywords:
 - 配置 Rom WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5715354142e237460d5959926ae813a2f5c0b60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f59e2be9a3316b94461e3ef0a3291824da14d8f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370987"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385756"
 ---
 # <a name="modifying-the-1394-configuration-rom"></a>修改 1394 配置 ROM
 
@@ -29,10 +29,10 @@ Microsoft Windows 系统连接到 1394年总线公开描述功能单元支持的
 
 2.  驱动程序可以使用虚拟物理设备对象 (PDOs) 来模拟方式，便于您的设备驱动程序测试的硬件。
 
-    设备模拟允许开发人员测试它们未收到的设备的驱动程序。 硬件仿真驱动程序可以公开 1394年总线上的虚拟 1394年设备。 然后，开发人员可以调试在另一个系统在新硬件的驱动程序。 有关设备模拟功能的详细信息，请参阅[IEEE 1394 硬件仿真驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537214)。
+    设备模拟允许开发人员测试它们未收到的设备的驱动程序。 硬件仿真驱动程序可以公开 1394年总线上的虚拟 1394年设备。 然后，开发人员可以调试在另一个系统在新硬件的驱动程序。 有关设备模拟功能的详细信息，请参阅[IEEE 1394 硬件仿真驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/ieee-1394-hardware-emulation-drivers)。
 
 ## <a name="related-topics"></a>相关主题
-[检索 IEEE 1394 节点的配置 ROM 的内容](https://msdn.microsoft.com/library/windows/hardware/gg266408)  
+[检索 IEEE 1394 节点的配置 ROM 的内容](https://docs.microsoft.com/windows-hardware/drivers/ieee/retrieving-the-contents-of-a-ieee-1394-node-s-configuration-rom)  
 
 
 

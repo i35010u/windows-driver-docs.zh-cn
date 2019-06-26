@@ -7,12 +7,12 @@ keywords:
 ms.date: 11/01/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6e8a937b1e79ced499f0263d29977c611bd2cc1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40af34bef589bc4ff5027008cb8e9636b70ddc9a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382812"
 ---
 # <a name="summary-of-netadaptercx-objects"></a>NetAdapterCx 对象的摘要
 
@@ -26,7 +26,6 @@ WDFDEVICE 对象是一种标准[framework 对象](../wdf/wdf-objects.md)表示�
 
 大多数网络接口卡 (NIC) 驱动程序只能有一个 NETADAPTER 为其物理设备，但如果他们管理的服务器 NIC 有多个槽，某些客户端驱动程序可能具有多个 NETADAPTER。 例如，[移动宽带 WDF 类扩展 (MBBCx)](mobile-broadband-mbb-wdf-class-extension-mbbcx.md)客户端驱动程序可能管理多个 NETADAPTER 对象，每个元素表示附加的数据包数据协议 (PDP) 上下文。 
 
-必须初始化 NETADAPTER 对象，并将其从客户端驱动程序内创建[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add
-)通过调用回调函数[ **NetAdapterInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterinitallocate)并[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)。 然后，它必须从启动中的驱动程序[ *EVT_WDF_DEVICE_PREPARE_HARDWARE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)通过调用回调函数[ **NetAdapterStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart). 然后再调用**NetAdapterStart**，驱动程序可以根据需要设置适配器的功能，例如链接层功能、 电源功能、 数据路径功能，接收缩放功能，以及硬件卸载功能。
+必须初始化 NETADAPTER 对象，并将其从客户端驱动程序内创建[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)通过调用回调函数[ **NetAdapterInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterinitallocate)并[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)。 然后，它必须从启动中的驱动程序[ *EVT_WDF_DEVICE_PREPARE_HARDWARE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)通过调用回调函数[ **NetAdapterStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart). 然后再调用**NetAdapterStart**，驱动程序可以根据需要设置适配器的功能，例如链接层功能、 电源功能、 数据路径功能，接收缩放功能，以及硬件卸载功能。
 
 有关详细信息之间的关系[ **NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet)，并[ **NET_FRAGMENT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_fragment)对象，请参阅[数据包描述符和扩展](packet-descriptors-and-extensions.md)。 有关详细信息**NET_RING**对象，请参阅[Net 环和 net 环迭代器](net-rings-and-net-ring-iterators.md)。

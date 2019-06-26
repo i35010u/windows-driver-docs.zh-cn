@@ -4,12 +4,12 @@ description: 发送用户模式应用程序通过 HID 报告
 ms.assetid: 265d7393-62be-41ad-8f87-efcfa462de1f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fc130997ee844e70ab5e11268820ed60b649c6ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 136703f82685ac020aafb45a27adea8e7e4ae257
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384454"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385806"
 ---
 # <a name="sending-hid-reports-by-user-mode-applications"></a>发送用户模式应用程序通过 HID 报告
 
@@ -24,12 +24,12 @@ ms.locfileid: "63384454"
 
 ### <a href="" id="using-hidd-setxxx-routines"></a>使用 HidD\_SetXxx 例程
 
-应用程序可以使用以下[HIDClass 支持例程](https://msdn.microsoft.com/library/windows/hardware/ff538865)将 HID 报表发送到 HID 集合：
+应用程序可以使用以下[HIDClass 支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)将 HID 报表发送到 HID 集合：
 
-<a href="" id="hidd-setoutputreport"></a>[**HidD\_SetOutputReport**](https://msdn.microsoft.com/library/windows/hardware/ff539690)  
+<a href="" id="hidd-setoutputreport"></a>[**HidD\_SetOutputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setoutputreport)  
 将输出报告发送到 HID 集合 （Windows XP 和更高版本）。
 
-<a href="" id="hidd-setfeature"></a>[**HidD\_SetFeature**](https://msdn.microsoft.com/library/windows/hardware/ff539684)  
+<a href="" id="hidd-setfeature"></a>[**HidD\_SetFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setfeature)  
 将功能报表发送到 HID 集合。
 
  

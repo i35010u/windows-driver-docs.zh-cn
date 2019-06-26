@@ -4,12 +4,12 @@ description: WIA 驱动程序命令支持
 ms.assetid: 9c552316-7dd6-4102-88d3-fab9732d1e5d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b9346832723f38f7bbf10784807153abe7cc0cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 704189e861cc4e97b71b530327eceb848830cee3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383768"
 ---
 # <a name="wia-driver-command-support"></a>WIA 驱动程序命令支持
 
@@ -66,11 +66,11 @@ WIA\_CMD\_XXX 命令 Microsoft Windows SDK 文档中所述。 您可以包括您
 
 ### <a name="adding-device-command-support"></a>添加设备的命令支持
 
-若要正确设置为报告设备的命令将 WIA 微型驱动程序，报告中受支持的命令数组[ **IWiaMiniDrv::drvGetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543977)方法。 有关示例实现**IWiaMiniDrv::drvGetCapabilities**方法，请参阅[添加中断事件支持](adding-interrupt-event-support.md)。
+若要正确设置为报告设备的命令将 WIA 微型驱动程序，报告中受支持的命令数组[ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法。 有关示例实现**IWiaMiniDrv::drvGetCapabilities**方法，请参阅[添加中断事件支持](adding-interrupt-event-support.md)。
 
 ### <a name="implementing-the-iwiaminidrvdrvdevicecommand-method"></a>实现 IWiaMiniDrv::drvDeviceCommand 方法
 
-WIA 服务调用[ **IWiaMiniDrv::drvDeviceCommand** ](https://msdn.microsoft.com/library/windows/hardware/ff543967)方法以响应应用程序的调用**IWiaItem::DeviceCommand**方法 (中所述Microsoft Windows SDK 文档)。 **IWiaMiniDrv::drvDeviceCommand**方法应执行以下任务：
+WIA 服务调用[ **IWiaMiniDrv::drvDeviceCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand)方法以响应应用程序的调用**IWiaItem::DeviceCommand**方法 (中所述Microsoft Windows SDK 文档)。 **IWiaMiniDrv::drvDeviceCommand**方法应执行以下任务：
 
 1.  确定是否发送的命令支持的命令。
 

@@ -4,12 +4,12 @@ description: 驱动程序功能
 ms.assetid: 639eff56-655d-4b6a-95f0-daa1daf62fae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e7166ebca9173164eef8988ff5e68555b32d96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14f9b62924b3d55255c721b8df64b2a199e7c817
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364474"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385034"
 ---
 # <a name="driver-capabilities"></a>驱动程序功能
 
@@ -23,13 +23,13 @@ WIA 微型驱动程序负责生成表，其中列出了所有事件和它支持�
 
 ![说明 wia 微型驱动程序功能表的关系图](images/wia-capabilitiestable.png)
 
-数组的形式定义的功能表[ **WIA\_DEV\_CAP\_DRV** ](https://msdn.microsoft.com/library/windows/hardware/ff550233)结构。 微型驱动程序必须构造此数组并将其返回到 WIA 服务时 WIA 服务调用[ **IWiaMiniDrv::drvGetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543977)方法。
+数组的形式定义的功能表[ **WIA\_DEV\_CAP\_DRV** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_dev_cap_drv)结构。 微型驱动程序必须构造此数组并将其返回到 WIA 服务时 WIA 服务调用[ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法。
 
 ### <a name="defining-supported-events-and-commands"></a>定义支持事件和命令
 
 WIA 微型驱动程序必须描述的事件和设备支持到 WIA 服务的命令。
 
-### <a name="events"></a>事件
+### <a name="events"></a>Events
 
 *事件*是在必须向驱动程序报告的设备级别的操作。 例如，扫描程序可能被标记为"扫描"的前面板按钮。 用户按下此按钮时，他们期望扫描程序以开始扫描，或最起码，应用程序将启动以启动扫描。
 

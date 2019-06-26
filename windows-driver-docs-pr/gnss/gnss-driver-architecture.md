@@ -4,12 +4,12 @@ description: 概述了 GNSS UMDF 2.0 驱动程序体系结构，I/O 注意事项
 ms.assetid: 11B54F92-DC84-4D74-9BBE-C85047AD2167
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 125af7694a4e113e821ad9f4d196dc4cb2a7a96c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a27cd96060652aa2d9ae6d662525e3ae0f60b4fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371221"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385180"
 ---
 # <a name="gnss-driver-architecture"></a>GNSS 驱动程序体系结构
 
@@ -29,7 +29,7 @@ ms.locfileid: "63371221"
 
 -   **测试应用程序：** 用于测试 GNSS 功能的应用程序。
 
--   **GNSS API:****IGnssAdapter** COM （组件对象模型） 接口的公开 GNSS 设备连接到的位置服务，以及关于测试应用程序的内部组件的功能。 此 API 的确切形状是本文档的讨论范围内。 Windows 组件使用 GNSS 设备通过对编程**IGnssAdapter** COM 接口。 GNSS API 集是为唯一位置平台组件 （例如，位置服务和位置测试应用程序） 的专用 API，对其他第一方或第三方应用程序不可用。
+-   **GNSS API:** **IGnssAdapter** COM （组件对象模型） 接口的公开 GNSS 设备连接到的位置服务，以及关于测试应用程序的内部组件的功能。 此 API 的确切形状是本文档的讨论范围内。 Windows 组件使用 GNSS 设备通过对编程**IGnssAdapter** COM 接口。 GNSS API 集是为唯一位置平台组件 （例如，位置服务和位置测试应用程序） 的专用 API，对其他第一方或第三方应用程序不可用。
 
 -   **GNSS 适配器：** 这是一个独立 COM 对象实现**IGnssAdapter** COM 接口。 测试应用程序和位置服务的内部组件实例化此对象并使用通过在 GNSS 设备**IGnssAdapter**接口。 位置服务的 GNSS 定位引擎组件实现公开的 COM 类**IGnssAdapter**接口。 位置服务公开的工厂机制来测试和其他用于实例化 GNSS 适配器内的位置服务的 COM 类的单一实例 COM 对象的进程外应用程序。 进程外应用程序使用对 GNSS 驱动程序进行编程的 COM 接口指针。
 
@@ -91,13 +91,13 @@ GNSS 适配器和 GNSS 驱动程序之间的交互属于以下类别：
 
 若要在 Windows 平台上支持可扩展性和 GNSS 堆栈的适应性，GNSS 适配器和 GNSS 驱动程序建立达成共识的基础 GNSS 堆栈，以及提供的支持的各种定义完善的功能Windows 平台。 功能方面也定义由 Microsoft 作为此 GNSS 接口定义的一部分，并将随 GNSS 空间中的多个创新会继续，市场中出现一组不同的芯片集/驱动程序。 GNSS 适配器时的初始化，或者根据需要在查询基础 GNSS 驱动程序/设备的各种功能，并相应地优化与 GNSS 驱动程序的交互。
 
-完成 GNSS 适配器和 GNSS 驱动程序之间的功能的信息交换使用的控制代码[ **IOCTL\_GNSS\_发送\_平台\_功能**](https://msdn.microsoft.com/library/windows/hardware/dn917743)并[ **IOCTL\_GNSS\_获取\_设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/dn917730)。
+完成 GNSS 适配器和 GNSS 驱动程序之间的功能的信息交换使用的控制代码[ **IOCTL\_GNSS\_发送\_平台\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_send_platform_capability)并[ **IOCTL\_GNSS\_获取\_设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_get_device_capability)。
 
 ### <a name="gnss-driver-command-and-configuration"></a>GNSS 的驱动程序命令和配置
 
 GNSS 适配器可以执行一次性配置或 GNSS 驱动程序的定期重新配置。 同样 GNSS 适配器可能会执行某些特定于 GNSS 的命令通过驱动程序。 通过定义驱动程序和较高的级别的操作系统 (HLOS) 之间的一个命令执行协议来完成此操作。 具体取决于特定的命令类型，所需的操作可能立即或在系统重新启动后，才会生效。 GNSS 设备功能信息与类似，GNSS 命令也明确定义由 Microsoft 作为此 GNSS 接口定义的一部分，将继续不断发展，未来创新和因卡而异的 GNSS 设备驱动程序。
 
-设备命令执行和配置都是使用控件的代码[ **IOCTL\_GNSS\_发送\_DRIVERCOMMAND**](https://msdn.microsoft.com/library/windows/hardware/dn917742)。
+设备命令执行和配置都是使用控件的代码[ **IOCTL\_GNSS\_发送\_DRIVERCOMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_send_drivercommand)。
 
 ### <a name="position-information"></a>位置信息
 
@@ -113,16 +113,16 @@ GNSS 适配器可以执行一次性配置或 GNSS 驱动程序的定期重新配
 
 GNSS 驱动程序中检索位置信息的 act 都是通过修复，有状态的唯一会话中，包含以下操作：
 
-1.  **启动修复会话：** GNSS 适配器启动启动修复会话 （由于 LBS 应用程序请求）。 GNSS 适配器设置的特定要求和首选项关联的请求和 intimates GNSS 驱动程序以启动引擎通过发出控制代码获取解决方法[ **IOCTL\_GNSS\_开始\_FIXSESSION**](https://msdn.microsoft.com/library/windows/hardware/dn917750)。
+1.  **启动修复会话：** GNSS 适配器启动启动修复会话 （由于 LBS 应用程序请求）。 GNSS 适配器设置的特定要求和首选项关联的请求和 intimates GNSS 驱动程序以启动引擎通过发出控制代码获取解决方法[ **IOCTL\_GNSS\_开始\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)。
 
-2.  **获取设备位置 （修补程序数据）：** GNSS 适配器修复会话启动后，发出控制代码[ **IOCTL\_GNSS\_获取\_FIXDATA** ](https://msdn.microsoft.com/library/windows/hardware/dn917731)开始等待来自驱动程序会提供修补程序。 当新的位置信息从引擎可用时，对此挂起 get 修复请求作出响应 GNSS 驱动程序。
+2.  **获取设备位置 （修补程序数据）：** GNSS 适配器修复会话启动后，发出控制代码[ **IOCTL\_GNSS\_获取\_FIXDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata)开始等待来自驱动程序会提供修补程序。 当新的位置信息从引擎可用时，对此挂起 get 修复请求作出响应 GNSS 驱动程序。
 
     > [!NOTE]
     > 如果修复会话类型为 LKG 修补程序 （而非当前的修补程序），位置信息来自驱动程序的缓存。
 
     GNSS 适配器可确保始终可供 GNSS 驱动程序将修复数据可用时返回的异步 I/O 请求。 根据此修复程序，如果需要更多修补程序数据、 GNSS 适配器发出另一个 I/O 请求 （使用相同 IOCTL），此序列将继续，直到没有更多数据均可或修复会话将停止的性质。
 
-3.  **修改修复会话：** 如果 GNSS 驱动程序不支持多路复用的相同类型的修复会话 GNSS 适配器可能发放[ **IOCTL\_GNSS\_修改\_FIXSESSION** ](https://msdn.microsoft.com/library/windows/hardware/dn917740)为这还会在其级别多路复用纠正会话类型。
+3.  **修改修复会话：** 如果 GNSS 驱动程序不支持多路复用的相同类型的修复会话 GNSS 适配器可能发放[ **IOCTL\_GNSS\_修改\_FIXSESSION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_modify_fixsession)为这还会在其级别多路复用纠正会话类型。
 
 4.  **停止修复会话：** GNSS 适配器发出停止修复会话属于特定修补程序会话任何进一步的位置信息是需要或预期的时。
 
@@ -192,15 +192,15 @@ GNSS 适配器和以本机方式支持卸载在地域隔离区跟踪失败的情
 
 GNSS 适配器主动寻求 GNSS 驱动程序中的此类请求，从而始终将一个或多个待 Irp 执行 GNSS 驱动程序不能启动请求以在其自己的上层，因为可以完成这种类型的操作，以便 GNSS 灾难恢复iver 可以重新打开此类挂起的请求响应。 接收的请求协助/帮助程序日期时，GNSS 适配器提取数据 （或执行特定操作代表 GNSS 驱动程序），并随后注入到 GNSS 驱动程序通过另一个所需的信息**DeviceIoControl**调用。
 
-从驱动程序的通知处理通过常见的事件模型。 例如，对于 GNSS 协助 GNSS 适配器使用控制代码[ **IOCTL\_GNSS\_侦听\_AGNSS** ](https://msdn.microsoft.com/library/windows/hardware/dn917733) GNSS 驱动程序从接收 AGNSS 请求。 GNSS 适配器随后提取 AGNSS 协助数据和问题[ **IOCTL\_GNSS\_插入\_AGNSS** ](https://msdn.microsoft.com/library/windows/hardware/dn917732)若要将数据推送到 GNSS 驱动程序。
+从驱动程序的通知处理通过常见的事件模型。 例如，对于 GNSS 协助 GNSS 适配器使用控制代码[ **IOCTL\_GNSS\_侦听\_AGNSS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_agnss) GNSS 驱动程序从接收 AGNSS 请求。 GNSS 适配器随后提取 AGNSS 协助数据和问题[ **IOCTL\_GNSS\_插入\_AGNSS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_inject_agnss)若要将数据推送到 GNSS 驱动程序。
 
-该通知机制还用于接收与地域隔离区相关的警报数据和状态更新。 适配器使用的控制代码[ **IOCTL\_GNSS\_侦听\_地域隔离区\_警报**](https://msdn.microsoft.com/library/windows/hardware/dn917737)用于接收单个地域隔离区警报和[ **IOCTL\_GNSS\_侦听\_地域隔离区\_TRACKINGSTATUS** ](https://msdn.microsoft.com/library/windows/hardware/dn917736)用于跟踪的地域隔离区的总体状态中接收的更改。
+该通知机制还用于接收与地域隔离区相关的警报数据和状态更新。 适配器使用的控制代码[ **IOCTL\_GNSS\_侦听\_地域隔离区\_警报**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert)用于接收单个地域隔离区警报和[ **IOCTL\_GNSS\_侦听\_地域隔离区\_TRACKINGSTATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus)用于跟踪的地域隔离区的总体状态中接收的更改。
 
 ### <a name="gnss-driver-logging"></a>GNSS 驱动程序日志记录
 
 出于诊断目的，GNSS 驱动程序应记录错误和使用规定的日志记录机制 (WPP) 如下所述的 Microsoft 或 ETW 其他诊断信息。 建议的驱动程序用于 WPP 进行日志记录目的而不是 etw 的更多信息，虽然支持这两种机制。 WPP 所建议的原因是工具，可帮助调试驱动程序的可用性。
 
-驱动程序必须不记录任何信息，用户可读或为其他比通过此规定日志记录技术。 有关详细信息，请参阅[WPP 软件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556204)。
+驱动程序必须不记录任何信息，用户可读或为其他比通过此规定日志记录技术。 有关详细信息，请参阅[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。
 
 使用 WPP 软件跟踪日志记录消息将类似于使用 Windows 事件日志记录服务。 该驱动程序日志文件中记录消息 ID 和未格式化的二进制数据。 随后，后处理器将日志文件中的信息转换为可读的形式。 但是，WPP 软件跟踪支持更多的能力和灵活性大于所支持的事件日志记录服务的消息格式。 例如，WPP 软件跟踪提供 IP 地址、 Guid、 system Id、 时间戳和其他有用的数据类型的内置的支持。 此外，用户可以添加到其应用程序相关的自定义数据类型。
 
@@ -321,13 +321,13 @@ GNSS 适配器可能会启动请求的单个快照的修补程序，系统在连
 
 4.  GNSS 适配器发出 Ioctl 为任何特定于驱动程序的配置或命令。 GNSS 驱动程序执行所需的操作，并完成 I/O 操作。
 
-5.  GNSS 适配器问题[ **IOCTL\_GNSS\_启动\_FIXSESSION**](https://msdn.microsoft.com/library/windows/hardware/dn917750)，以及指定的类型和其他方面的解决方法的参数。 在收到此 IOCTL，GNSS 驱动程序与基础设备开始接收修补程序进行交互，并随后完成 I/O 操作。
+5.  GNSS 适配器问题[ **IOCTL\_GNSS\_启动\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)，以及指定的类型和其他方面的解决方法的参数。 在收到此 IOCTL，GNSS 驱动程序与基础设备开始接收修补程序进行交互，并随后完成 I/O 操作。
 
-6.  GNSS 适配器问题[ **IOCTL\_GNSS\_获取\_FIXDATA** ](https://msdn.microsoft.com/library/windows/hardware/dn917731)并等待 I/O 完成。 每当 GNSS 驱动程序具有中间的可用修补程序，它通过完成 I/O 操作返回的数据。
+6.  GNSS 适配器问题[ **IOCTL\_GNSS\_获取\_FIXDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata)并等待 I/O 完成。 每当 GNSS 驱动程序具有中间的可用修补程序，它通过完成 I/O 操作返回的数据。
 
 7.  直到 GNSS 驱动程序指示没有更多修补程序是预期 （最后一个修复收到） 重复步骤 6。
 
-8.  GNSS 适配器问题[ **IOCTL\_GNSS\_停止\_FIXSESSION**](https://msdn.microsoft.com/library/windows/hardware/dn917752)。 GNSS 驱动程序执行与原始的修补程序请求关联的所需的清除操作。
+8.  GNSS 适配器问题[ **IOCTL\_GNSS\_停止\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_fixsession)。 GNSS 驱动程序执行与原始的修补程序请求关联的所需的清除操作。
 
 9.  GNSS 适配器关闭驱动程序文件句柄使用**CloseHandle** API。
 

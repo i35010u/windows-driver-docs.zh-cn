@@ -7,12 +7,12 @@ keywords:
 - 常规安装函数 WDK SetupAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c38f5cbe6d0158a4362c4a9e35285a2eb28b01f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bbd61444879a7aba9ec27b4d3fca861bb7b7594
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339428"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384762"
 ---
 # <a name="using-general-setup-functions"></a>使用常规设置函数
 
@@ -32,7 +32,7 @@ ms.locfileid: "63339428"
 
 -   将日志项写入[SetupAPI 文本日志](setupapi-text-logs.md)。
 
-安装软件通常使用这些函数一起使用[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)并[PnP 配置管理器函数](https://msdn.microsoft.com/library/windows/hardware/ff549713)。
+安装软件通常使用这些函数一起使用[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))并[PnP 配置管理器函数](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))。
 
 在本部分中列出的常规安装程序函数中的 Microsoft Windows SDK 文档中详细介绍。
 

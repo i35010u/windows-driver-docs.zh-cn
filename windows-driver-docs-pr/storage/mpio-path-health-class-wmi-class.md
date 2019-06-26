@@ -4,12 +4,12 @@ description: MPIO\_路径\_运行状况\_类 WMI 类
 ms.assetid: fcbc86a4-9035-489e-a406-9901c5af0a32
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0ca61df04c831b8097da76f45b103b9f3d999a5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8431d9504afe106aeba8475180ab422e41159626
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383058"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386153"
 ---
 # <a name="mpiopathhealthclass-wmi-class"></a>MPIO\_路径\_运行状况\_类 WMI 类
 
@@ -143,7 +143,7 @@ class MPIO_PATH_HEALTH_CLASS
 };
 ```
 
-此类定义时编译的 WMI 工具套件，生成[ **MPIO\_路径\_运行状况\_类**](https://msdn.microsoft.com/library/windows/hardware/ff562424)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义时编译的 WMI 工具套件，生成[ **MPIO\_路径\_运行状况\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_path_health_class)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

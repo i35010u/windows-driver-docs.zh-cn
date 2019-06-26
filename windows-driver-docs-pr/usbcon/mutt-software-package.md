@@ -3,12 +3,12 @@ Description: MUTT 软件包包含几个工具与 MUTT 设备一起使用。 工�
 title: MUTT 软件包中的工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9488de20bff07db101f10c8e443a35f349537f
-ms.sourcegitcommit: 952c17357bd2dd91a4caad42313a063951317697
+ms.openlocfilehash: d75bc2038e607c27b33cd95143b9c55798eea25b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65515037"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383486"
 ---
 # <a name="tools-in-the-mutt-software-package"></a>MUTT 软件包中的工具
 
@@ -72,7 +72,7 @@ Microsoft USB 测试工具 (MUTT) 软件程序包中包含硬件测试工程师�
 
 -   在版本 1.9 及更早版本，在某些系统中后系统, 枚举 （当连接到 xHCI 控制器） 的高速 SuperMutt 设备从 S4 中恢复。 版本 1.9.1 更正该问题。
 
-1.9 版的更改
+1\.9 版的更改
 
 -   SuperMUTT 读取设备的 MS OS 描述符，默认情况下加载 WinUSB 驱动程序。
 -   默认情况下，与 WinUSB 支持选择性 superMUTT 挂起。
@@ -158,7 +158,7 @@ Microsoft USB 测试工具 (MUTT) 软件程序包中包含硬件测试工程师�
  
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
 
 

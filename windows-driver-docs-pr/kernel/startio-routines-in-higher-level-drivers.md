@@ -6,12 +6,12 @@ keywords:
 - StartIo 例程，更高级别的驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c99d78155f63908c02cda53caa444f887170b535
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bea19bcbe9d06991ba212fe61b66945dfbc40a04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382990"
 ---
 # <a name="startio-routines-in-higher-level-drivers"></a>较高级驱动程序中的 StartIo 例程
 
@@ -19,15 +19,15 @@ ms.locfileid: "63331953"
 
 
 
-任何更高级别的驱动程序可以具有[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程。 但是，此类驱动程序不太可能与现有的较低级驱动程序进行互操作，并且可能会表现出较差的性能特征。
+任何更高级别的驱动程序可以具有[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程。 但是，此类驱动程序不太可能与现有的较低级驱动程序进行互操作，并且可能会表现出较差的性能特征。
 
 一个*StartIo*更高级别的驱动程序中的例程将产生以下影响：
 
--   可以通过调用排队传入 Irp [ **IoStartPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550370)来自驱动程序的*调度*Xxx routine(s) 和[ **IoStartNextPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550358)从其[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) routine(s)，从而导致 Irp 为处理通过一次一个地*StartIo*例程。
+-   可以通过调用排队传入 Irp [ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)来自驱动程序的*调度*Xxx routine(s) 和[ **IoStartNextPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)从其[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) routine(s)，从而导致 Irp 为处理通过一次一个地*StartIo*例程。
 
 -   驱动程序的 I/O 吞吐量可能会变得明显慢期间的大量 I/O 需求，因为其*StartIo*例程可能成为瓶颈。
 
--   在驱动程序*StartIo*例程调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336) IRQL 在每个 IRP = 调度\_级别，从而导致所有较低级别驱动程序的调度例程还可以运行在 IRQL = 调度\_级别。 这会限制较低的驱动程序可以调用在其调度例程的支持例程的集。 因为大多数驱动程序编写者都认为其驱动程序的调度例程将运行，在 IRQL&lt;调度\_级别，更高级别的驱动程序不太可能与很多现有的较低级驱动程序进行互操作。
+-   在驱动程序*StartIo*例程调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) IRQL 在每个 IRP = 调度\_级别，从而导致所有较低级别驱动程序的调度例程还可以运行在 IRQL = 调度\_级别。 这会限制较低的驱动程序可以调用在其调度例程的支持例程的集。 因为大多数驱动程序编写者都认为其驱动程序的调度例程将运行，在 IRQL&lt;调度\_级别，更高级别的驱动程序不太可能与很多现有的较低级驱动程序进行互操作。
 
 -   *StartIo*例程会降低整体系统的吞吐量，因为在 IRQL 运行它，并在其链中的所有低级驱动程序的调度例程 = 调度\_级别。
 

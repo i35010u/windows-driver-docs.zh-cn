@@ -12,19 +12,19 @@ keywords:
 - 显示 BltDXGI 和 XR_BIAS WDK Windows 7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f81c0837544feb8c612a09b31a73c934a3d2d36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b364017dcd763e978955a7fb5932891bb7337e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363372"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381887"
 ---
 # <a name="extended-format-aware-requirements"></a>扩展格式感知要求
 
 
 本部分仅适用于 Windows 7 和更高版本的操作系统。
 
-识别的格式进行了扩展的用户模式显示驱动程序保证返回准确的值从其[ **CheckFormatSupport** ](https://msdn.microsoft.com/library/windows/hardware/ff539390)入口点函数的每种格式的表中[扩展格式的详细信息](details-of-the-extended-format.md)部分。 但是，驱动程序不一定支持每种格式。
+识别的格式进行了扩展的用户模式显示驱动程序保证返回准确的值从其[ **CheckFormatSupport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkformatsupport)入口点函数的每种格式的表中[扩展格式的详细信息](details-of-the-extended-format.md)部分。 但是，驱动程序不一定支持每种格式。
 
 支持扩展的格式中识别驱动程序隐式保证完全类型化后台缓冲区的该强制转换。
 
@@ -48,11 +48,11 @@ Direct3D 10.1 和更高版本 DDIs 已更新以允许用户模式显示驱动程
 
 ### <a name="span-idxrbiasandpresentdxgispanspan-idxrbiasandpresentdxgispanxrbias-and-presentdxgi"></a><span id="xr_bias_and_presentdxgi"></span><span id="XR_BIAS_AND_PRESENTDXGI"></span>XR\_偏置和 PresentDXGI
 
-驱动程序不需要支持开窗存在 XR\_偏置资源通过调用其[ **PresentDXGI** ](https://msdn.microsoft.com/library/windows/hardware/ff569179)函数。 在运行时级别，这种情况下会受到限制。 与其他所有格式，驱动程序执行的 XR 全屏幕存在\_偏差通过翻转操作或位块传输 (bitblt) 操作中使用相同的源和目标资源。 没有拉伸或转换是必需的。
+驱动程序不需要支持开窗存在 XR\_偏置资源通过调用其[ **PresentDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数。 在运行时级别，这种情况下会受到限制。 与其他所有格式，驱动程序执行的 XR 全屏幕存在\_偏差通过翻转操作或位块传输 (bitblt) 操作中使用相同的源和目标资源。 没有拉伸或转换是必需的。
 
 ### <a name="span-idxrbiasandbltdxgispanspan-idxrbiasandbltdxgispanxrbias-and-bltdxgi"></a><span id="xr_bias_and_bltdxgi"></span><span id="XR_BIAS_AND_BLTDXGI"></span>XR\_偏置和 BltDXGI
 
-Direct3D 运行时调用的驱动程序[ **BltDXGI** ](https://msdn.microsoft.com/library/windows/hardware/ff538252)函数以执行只对执行以下操作 XR\_偏差源资源：
+Direct3D 运行时调用的驱动程序[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数以执行只对执行以下操作 XR\_偏差源资源：
 
 -   复制到一个目标，它也是 XR\_偏差
 

@@ -9,12 +9,12 @@ keywords:
 - 深度缓冲区 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e70f923768bf7be7ca6352ac8a123b42a39ee5f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4045f4ecba4016c0e07aeef3fcab0d9db7144e22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351486"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380554"
 ---
 # <a name="render-target-requirements"></a>渲染目标要求
 
@@ -26,7 +26,7 @@ ms.locfileid: "63351486"
 
 ### <a name="span-idcolorbuffersspanspan-idcolorbuffersspancolor-buffers"></a><span id="color_buffers"></span><span id="COLOR_BUFFERS"></span>颜色缓冲区
 
-如果硬件不支持也是要用作纹理的呈现器目标 （即，设备不能"呈现为纹理"），该设备时不能调用**IDirect3DDevice7::SetRenderTarget**和**IDirect3D7::CreateDevice**方法。 Direct3D SDK 文档中介绍了这些方法。 呈现器目标是要用作纹理表示由 DDSCAPS 存在这一事实\_图面上的说明中的纹理标志 (请参阅**dwCaps**的成员[ **DDSCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff550286)结构)。
+如果硬件不支持也是要用作纹理的呈现器目标 （即，设备不能"呈现为纹理"），该设备时不能调用**IDirect3DDevice7::SetRenderTarget**和**IDirect3D7::CreateDevice**方法。 Direct3D SDK 文档中介绍了这些方法。 呈现器目标是要用作纹理表示由 DDSCAPS 存在这一事实\_图面上的说明中的纹理标志 (请参阅**dwCaps**的成员[ **DDSCAPS**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550286(v=vs.85))结构)。
 
 ### <a name="span-iddepthbuffersspanspan-iddepthbuffersspandepth-buffers"></a><span id="depth_buffers"></span><span id="DEPTH_BUFFERS"></span>深度缓冲区
 

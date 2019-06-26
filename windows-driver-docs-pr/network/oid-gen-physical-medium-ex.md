@@ -5,12 +5,12 @@ ms.assetid: cbac8c9b-d7fe-4588-8a64-599d04a77a72
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PHYSICAL_MEDIUM_EX 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0f0b934035cbe6cfac6e9f2cb82f6ee5efb277
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 614c3f3b6b761267e060bd68053a47862d7865d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382642"
 ---
 # <a name="oidgenphysicalmediumex"></a>OID\_GEN\_PHYSICAL\_MEDIUM\_EX
 
@@ -22,7 +22,7 @@ ms.locfileid: "63324463"
 
 NDIS NDIS 6.0 和更高版本的微型端口驱动程序处理此 OID。 微型端口驱动程序在初始化期间提供的物理介质的值。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含 NDIS\_物理\_中等枚举值。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含 NDIS\_物理\_中等枚举值。
 
 **请注意**  OID 之间的差异\_常规\_物理\_中等\_EX 和[OID\_常规\_物理\_介质](oid-gen-physical-medium.md)在于 OID\_代\_物理\_中等\_EX 版本中不重写**NdisPhysicalMedium802\_3** 与类型**NdisPhysicalMediumUnspecified**而 OID\_代\_物理\_中仍会执行。 我们建议 6.x 的所有驱动程序使用 EX 版本。 OID\_GEN\_物理\_MEDIUM\_EX 公开通过 WMI GUID。
 
@@ -59,7 +59,7 @@ NDIS 支持 OID\_GEN\_物理\_MEDIUM\_EX OID 适用于支持较新的网络，�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
 [OID\_GEN\_媒体\_支持](oid-gen-media-supported.md)
 

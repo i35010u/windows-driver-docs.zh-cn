@@ -4,19 +4,19 @@ description: WDK 中包含的标头中定义了以下 COM 接口。在可能的�
 ms.assetid: 8443D16A-ACE5-4A34-9FB7-CBACA7230116
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74bca278d5f8b6b1a452f7fafcc3471e2d5c3fef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed2aa26cf3bcdb860c96ef2481282309b2da1257
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386645"
 ---
 # <a name="com-interfaces"></a>COM 接口
 
 
 WDK 中包含的标头中定义了以下 COM 接口。
 
-**重要**  在可能的情况下，建议使用传统的 COM 提供的 SDK 标头。 有关详细信息，请参阅[COM 基础知识](https://msdn.microsoft.com/library/windows/desktop/ms694505)。
+**重要**  在可能的情况下，建议使用传统的 COM 提供的 SDK 标头。 有关详细信息，请参阅[COM 基础知识](https://docs.microsoft.com/windows/desktop/com/com-fundamentals)。
 
  
 

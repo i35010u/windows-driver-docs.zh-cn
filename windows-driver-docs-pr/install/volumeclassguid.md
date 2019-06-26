@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b636807af2c4425baa7b058f7cdf4b22929187f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7d2684d127ace4921c38df7e238cac73619916e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380404"
 ---
 # <a name="volumeclassguid"></a>VolumeClassGuid
 
 
-VolumeClassGuid 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)卷设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_VOLUME** ](guid-devinterface-volume.md)此类的新实例的类标识符。
+VolumeClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)卷设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_VOLUME** ](guid-devinterface-volume.md)此类的新实例的类标识符。
 
 <a name="remarks"></a>备注
 -------

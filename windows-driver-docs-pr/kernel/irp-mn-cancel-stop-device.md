@@ -6,12 +6,12 @@ ms.assetid: 7047c266-84b4-4260-ad75-d56c87c8c9ef
 keywords:
 - IRP_MN_CANCEL_STOP_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d0034468905d5507a0b59ba82641e5fbae457b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a077ad80a4c11379ff0e3bfa1751d3793a4faae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368402"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382252"
 ---
 # <a name="irpmncancelstopdevice"></a>IRP\_MN\_取消\_停止\_设备
 
@@ -52,7 +52,7 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 如果设备已处于活动状态时，驱动程序收到此 IRP，函数或筛选器驱动程序将只需将状态设置为成功，并将 IRP 传递到下一步的驱动程序。 父总线驱动程序完成 IRP。 对于此类取消停止 IRP，函数或筛选器驱动程序不需要设置完成例程。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)有关处理停止 Irp 的详细信息以及处理所有的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)有关处理停止 Irp 的详细信息以及处理所有的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 

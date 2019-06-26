@@ -7,12 +7,12 @@ keywords:
 - 插件 WDK 打印，访问接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd903fec5c4e4c8d8f5e90686adaac7e9152b64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 355a168f9e9b5ad377c31875ff2d5f44d544c1df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385410"
 ---
 # <a name="accessing-printer-driver-interfaces-from-plug-ins"></a>从插件访问打印机驱动程序接口
 
@@ -20,7 +20,7 @@ ms.locfileid: "63381194"
 
 
 
-如果插件调用的方法的驱动程序提供对属于[IPrintOemDriverUI](iprintoemdriverui-com-interface.md)， [IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)， [IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)， [IPrintCoreUI2](iprintcoreui2-com-interface.md)， [IPrintOemDriverUni](iprintoemdriveruni-com-interface.md)， [IPrintOemDriverPS](iprintoemdriverps-com-interface.md)，或[IPrintCorePS2](iprintcoreps2-com-interface.md) COM 接口，它必须获取的接口指针从驱动程序，如下所示：
+如果插件调用的方法的驱动程序提供对属于[IPrintOemDriverUI](iprintoemdriverui-com-interface.md)， [IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)， [IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)， [IPrintCoreUI2](iprintcoreui2-com-interface.md)， [IPrintOemDriverUni](iprintoemdriveruni-com-interface.md)， [IPrintOemDriverPS](iprintoemdriverps-com-interface.md)，或[IPrintCorePS2](iprintcoreps2-com-interface.md) COM 接口，它必须获取的接口指针从驱动程序，如下所示：
 
 1.  该插件必须实现 IPrintOemUI、 IPrintOemUI2、 IPrintOemUni、 IPrintOemUni2、 IPrintOemPS 或 IPrintOemPS2 接口的 PublishDriverInterface 方法。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63381194"
 
 5.  当[IPrintOemDriverUI](iprintoemdriverui-com-interface.md)， [IPrintCoreUI2](iprintcoreui2-com-interface.md)， [IPrintOemDriverUni](iprintoemdriveruni-com-interface.md)， [IPrintOemDriverPS](iprintoemdriverps-com-interface.md)，或[IPrintCorePS2](iprintcoreps2-com-interface.md)不再需要的接口指针，该插件必须调用接口的释放方法 （Windows SDK 文档中所述）。
 
-为插件以使用新的 Windows Vista [IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)或[IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)接口，以添加对支持的插件需要**OEMGI\_GETREQUESTEDHELPERINTERFACES**在其[ **IPrintOemUI::GetInfo**](https://msdn.microsoft.com/library/windows/hardware/ff554178)， [ **IPrintOemPS::GetInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff553221)，或[ **IPrintOemUni::GetInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff554256)方法。
+为插件以使用新的 Windows Vista [IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)或[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)接口，以添加对支持的插件需要**OEMGI\_GETREQUESTEDHELPERINTERFACES**在其[ **IPrintOemUI::GetInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-getinfo)， [ **IPrintOemPS::GetInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps-getinfo)，或[ **IPrintOemUni::GetInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-getinfo)方法。
 
  
 

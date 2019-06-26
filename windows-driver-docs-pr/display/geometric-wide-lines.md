@@ -11,12 +11,12 @@ keywords:
 - 几何行 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f5107e6d12480f11309c8c39e7974099755edb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f2ed582285abd6c9ea8e17504a38c0feb25aa5d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373451"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379983"
 ---
 # <a name="geometric-wide-lines"></a>几何宽线条
 
@@ -24,9 +24,9 @@ ms.locfileid: "63373451"
 ## <span id="ddk_geometric_wide_lines_gg"></span><span id="DDK_GEOMETRIC_WIDE_LINES_GG"></span>
 
 
-形状*几何*行由宽度、 联接样式和画笔和中的当前到设备的世界转换的结束帽样式[ **XFORMOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff570618)结构。 可以使用纯色或非实体的画笔绘制线条。
+形状*几何*行由宽度、 联接样式和画笔和中的当前到设备的世界转换的结束帽样式[ **XFORMOBJ** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570618(v=vs.85))结构。 可以使用纯色或非实体的画笔绘制线条。
 
-更高级的硬件驱动程序可能支持在几何宽线条[ **DrvStrokePath** ](https://msdn.microsoft.com/library/windows/hardware/ff556316)函数。 GDI 确定驱动程序是否可以绘制路径几何行包含通过测试 GCAPS\_GEOMETRICWIDE 中的功能标志[ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835) 调用中返回的结构[**DrvEnablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556211)。 如果该驱动程序不具有功能，或者如果函数失败以处理操作，因为路径或剪辑太过复杂，该设备，GDI 自动转换到更简单的调用[ **DrvFillPath**](https://msdn.microsoft.com/library/windows/hardware/ff556220)函数。
+更高级的硬件驱动程序可能支持在几何宽线条[ **DrvStrokePath** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)函数。 GDI 确定驱动程序是否可以绘制路径几何行包含通过测试 GCAPS\_GEOMETRICWIDE 中的功能标志[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo) 调用中返回的结构[**DrvEnablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)。 如果该驱动程序不具有功能，或者如果函数失败以处理操作，因为路径或剪辑太过复杂，该设备，GDI 自动转换到更简单的调用[ **DrvFillPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfillpath)函数。
 
 几何宽行具有显示驱动程序图形函数到特定的含义。 包含设备坐标的路径转换为使用当前变换的逆变换世界坐标。 使用指定的宽度的几何构造然后获取路径，考虑到帐户联接和末端的加宽的版本。 此路径是再次转换为设备坐标，用指定画笔填充。
 

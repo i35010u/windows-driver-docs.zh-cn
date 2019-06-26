@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9e3963531b94ed23490d0897cf98b72e0137f39c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 215cc82ab29f8dfce9c397a37d052fedb820c112
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363343"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384250"
 ---
 # <a name="package-xml-element"></a>package XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
-**包**XML 元素指定用于的 INF 文件[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)。
+**包**XML 元素指定用于的 INF 文件[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)。
 
 **元素标记**
 
@@ -80,7 +80,7 @@ ms.locfileid: "63363343"
 
 **注释**
 
-下面的代码示例演示**包**元素，它指定 DirAbc\\为的 INF 文件 Abc.inf[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)。
+下面的代码示例演示**包**元素，它指定 DirAbc\\为的 INF 文件 Abc.inf[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)。
 
 ```cpp
 <dpinst>

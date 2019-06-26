@@ -4,12 +4,12 @@ description: 本主题介绍了如何设置 Visual Studio 中的内核模式调�
 ms.assetid: D909CA2C-3870-4521-8F23-FBF93738F338
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5449f89d31cffeb2f7e55275d9ec3e6c84a5c01f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c131dd133c42c3ba6f234494a3291dc7da56d03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366375"
 ---
 # <a name="span-iddebuggersettingupkernel-modedebuggingusingserialoverusbinvisualstudiospansetting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studio"></span>设置内核模式调试使用通过 Visual Studio 中的 USB 串行
 
@@ -47,7 +47,7 @@ ms.locfileid: "63364781"
 
 在这些步骤中，Shark Cove 板是目标计算机。
 
-1.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
+1.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 2.  主机计算机上，在 Visual Studio 中，当您转至计算机配置对话框中，选择**预配计算机，并选择调试器设置**。
 3.  有关**连接类型**，选择**串行**。
 
@@ -76,7 +76,7 @@ ms.locfileid: "63364781"
 
 1.  在主计算机上，在 Visual Studio 的**驱动程序**菜单中，选择**测试 &gt; 配置计算机**。
 2.  选择测试计算机的名称，然后单击**下一步**。
-3.  选择**预配计算机，并选择调试器设置**。 单击“下一步” 。
+3.  选择**预配计算机，并选择调试器设置**。 单击“下一步”  。
 4.  验证是否为列出正确的 COM 端口号**端口**。
 
 ### <a name="span-idbaudratemustbethesameonhostandtargetspanspan-idbaudratemustbethesameonhostandtargetspanspan-idbaudratemustbethesameonhostandtargetspanbaud-rate-must-be-the-same-on-host-and-target"></a><span id="Baud_rate_must_be_the_same_on_host_and_target"></span><span id="baud_rate_must_be_the_same_on_host_and_target"></span><span id="BAUD_RATE_MUST_BE_THE_SAME_ON_HOST_AND_TARGET"></span>波特率必须是相同的主机和目标上
@@ -89,7 +89,7 @@ ms.locfileid: "63364781"
 
 1.  在主计算机上，在 Visual Studio 的**驱动程序**菜单中，选择**测试 &gt; 配置计算机**。
 2.  选择测试计算机的名称，然后单击**下一步**。
-3.  选择**预配计算机，并选择调试器设置**。 单击“下一步” 。
+3.  选择**预配计算机，并选择调试器设置**。 单击“下一步”  。
 4.  确认**波特率**是 115200。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题

@@ -8,12 +8,12 @@ keywords:
 - 转义符 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b5cb6b6cb2f0bb6e26622921a34fa492e64ca9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73afe4ef884e34ead82850ea2be842a9b8eb52fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373469"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384696"
 ---
 # <a name="pscript-supported-escapes"></a>Pscript 支持的转义符
 
@@ -42,12 +42,12 @@ Pscript5 打印机驱动程序支持以下转义符。
 <tr class="even">
 <td><p>CHECKJPEGFORMAT</p></td>
 <td><p>确定打印机是否可以处理 JPEG 图像。 有关此转义的详细信息，请参阅 Microsoft Windows SDK 文档中的 CHECKJPEGFORMAT。</p>
-<p>此转义生成调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff556260" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556260)"> <strong>DrvQueryDeviceSupport</strong> </a>函数。</p></td>
+<p>此转义生成调用<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport)"> <strong>DrvQueryDeviceSupport</strong> </a>函数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>CHECKPNGFORMAT</p></td>
 <td><p>确定打印机是否可以处理的 PNG 映像。 有关此转义的详细信息，请参阅 Windows SDK 文档中的 CHECKPNGFORMAT。</p>
-<p>此转义生成调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff556260" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556260)"> <strong>DrvQueryDeviceSupport</strong> </a>函数。</p></td>
+<p>此转义生成调用<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport)"> <strong>DrvQueryDeviceSupport</strong> </a>函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>CLIP_TO_PATH</p></td>
@@ -60,13 +60,13 @@ Pscript5 打印机驱动程序支持以下转义符。
 <tr class="even">
 <td><p>DRAWPATTERNRECT</p></td>
 <td><p>通过 Hewlett Packard LaserJet 或 LaserJet 兼容打印机使用的模式和规则的功能的页控件语言 (PCL) 中创建空白、 灰度或纯黑色的矩形。 灰度是包含特定的黑色和白色像素的灰色模式。 有关此转义的详细信息，请参阅 Windows SDK 文档中的 DRAWPATTERNRECT。</p>
-<p>此转义符，与在驱动程序相关联<a href="https://msdn.microsoft.com/library/windows/hardware/ff556217" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556217)"> <strong>DrvEscape</strong> </a>函数。</p></td>
+<p>此转义符，与在驱动程序相关联<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)"> <strong>DrvEscape</strong> </a>函数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ENCAPSULATED_POSTSCRIPT</p></td>
 <td><p>内嵌的 PostScript (EPS) 数据发送到打印机。</p>
 <p>Microsoft Windows NT 4.0 打印机驱动程序不支持此转义。</p>
-<p>此转义符，与在驱动程序相关联<a href="https://msdn.microsoft.com/library/windows/hardware/ff556203" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556203)"> <strong>DrvDrawEscape</strong> </a>函数。</p></td>
+<p>此转义符，与在驱动程序相关联<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"> <strong>DrvDrawEscape</strong> </a>函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>END_PATH</p></td>

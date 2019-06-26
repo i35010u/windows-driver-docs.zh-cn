@@ -8,12 +8,12 @@ keywords:
 - 模型部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10b8ff2269083b12e2c92b1202f68c2266465c44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca1450d79b01141757a3af63c0e7bed1d8b32418
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392974"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382209"
 ---
 # <a name="models-section-in-a-network-inf-file"></a>网络 INF 文件中的 Models 节
 
@@ -21,13 +21,13 @@ ms.locfileid: "63392974"
 
 
 
-**模型**网络 INF 文件中的部分基于泛型[ **INF 模型部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)。
+**模型**网络 INF 文件中的部分基于泛型[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)。
 
 **模型**INF 文件中的部分包含下列格式为每种类型的情况下的 INF 文件安装的组件的一项：
 
 \[*device-description*= *install-section.name*, *hw-id*\[, *compatible-id*...\]
 
-此项的详细说明，请参阅[创建一个 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff549520)。
+此项的详细说明，请参阅[创建一个 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)。
 
 *Hw id* （也称为设备、 硬件或组件 ID） 的网络适配器必须与匹配的 PnP 管理器为适配器提供的硬件 ID。
 

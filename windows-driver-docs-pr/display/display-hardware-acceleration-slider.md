@@ -9,12 +9,12 @@ keywords:
 - 加速滑块 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74baba77a1777d602d5274a77437565e7fd76eb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2944969d1aea7a719ca5f80dc38a3d1e9da1d4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329821"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385194"
 ---
 # <a name="display-hardware-acceleration-slider"></a>显示硬件加速滑块
 
@@ -37,23 +37,23 @@ ms.locfileid: "63329821"
 <span id="Level_2"></span><span id="level_2"></span><span id="LEVEL_2"></span>**级别 2**  
 以下显示驱动程序函数不会调用。 相反，GDI 中软件执行操作。
 
--   [**DrvStretchBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556302)
+-   [**DrvStretchBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstretchblt)
 
--   [**DrvPlgBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556258)
+-   [**DrvPlgBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvplgblt)
 
--   [**DrvFillPath**](https://msdn.microsoft.com/library/windows/hardware/ff556220)
+-   [**DrvFillPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfillpath)
 
--   [**DrvStrokeAndFillPath**](https://msdn.microsoft.com/library/windows/hardware/ff556311)
+-   [**DrvStrokeAndFillPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokeandfillpath)
 
--   [**DrvLineTo**](https://msdn.microsoft.com/library/windows/hardware/ff556245)
+-   [**DrvLineTo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto)
 
--   [**DrvStretchBltROP**](https://msdn.microsoft.com/library/windows/hardware/ff556306)
+-   [**DrvStretchBltROP**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstretchbltrop)
 
--   [**DrvTransparentBlt**](https://msdn.microsoft.com/library/windows/hardware/ff557283)
+-   [**DrvTransparentBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtransparentblt)
 
--   [**DrvAlphaBlend**](https://msdn.microsoft.com/library/windows/hardware/ff556176)
+-   [**DrvAlphaBlend**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvalphablend)
 
--   [**DrvGradientFill**](https://msdn.microsoft.com/library/windows/hardware/ff556236)
+-   [**DrvGradientFill**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill)
 
 <span id="Level_3"></span><span id="level_3"></span><span id="LEVEL_3"></span>**级别 3**  
 禁用 Microsoft DirectDraw 和 Direct3D 支持。
@@ -61,32 +61,32 @@ ms.locfileid: "63329821"
 <span id="Level_4"></span><span id="level_4"></span><span id="LEVEL_4"></span>**级别 4**  
 只能将以下图形操作，因此可以缩短。
 
--   [**DrvTextOut**](https://msdn.microsoft.com/library/windows/hardware/ff557277)
+-   [**DrvTextOut**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtextout)
 
--   [**DrvBitBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556180)
+-   [**DrvBitBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt)
 
--   [**DrvCopyBits**](https://msdn.microsoft.com/library/windows/hardware/ff556182)
+-   [**DrvCopyBits**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcopybits)
 
--   [**DrvStrokePath**](https://msdn.microsoft.com/library/windows/hardware/ff556316)
+-   [**DrvStrokePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)
 
 此外，不会调用以下显示驱动程序函数。
 
--   [**DrvSaveScreenBits**](https://msdn.microsoft.com/library/windows/hardware/ff556278)
+-   [**DrvSaveScreenBits**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsavescreenbits)
 
--   [**DrvEscape**](https://msdn.microsoft.com/library/windows/hardware/ff556217)
+-   [**DrvEscape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)
 
--   [**DrvDrawEscape**](https://msdn.microsoft.com/library/windows/hardware/ff556203)
+-   [**DrvDrawEscape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape)
 
--   [**DrvResetPDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556276)
+-   [**DrvResetPDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvresetpdev)
 
--   [**DrvSetPixelFormat**](https://msdn.microsoft.com/library/windows/hardware/ff556285)
+-   [**DrvSetPixelFormat**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)
 
--   [**DrvDescribePixelFormat**](https://msdn.microsoft.com/library/windows/hardware/ff556190)
+-   [**DrvDescribePixelFormat**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)
 
--   [**DrvSwapBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff556322)
+-   [**DrvSwapBuffers**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)
 
 <span id="Level_5"></span><span id="level_5"></span><span id="LEVEL_5"></span>**级别 5**  
-滑块位于最左侧的位置。 平移的驱动程序 （内核模式 GDI 的一部分） 将处理所有呈现。 GDI 调用显示器驱动程序[ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)并[ **DrvEnableSurface** ](https://msdn.microsoft.com/library/windows/hardware/ff556214)函数以创建主图面，同时调用若要设置的显示模式显示驱动程序。 显示驱动程序不调用以执行任何呈现。
+滑块位于最左侧的位置。 平移的驱动程序 （内核模式 GDI 的一部分） 将处理所有呈现。 GDI 调用显示器驱动程序[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)并[ **DrvEnableSurface** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface)函数以创建主图面，同时调用若要设置的显示模式显示驱动程序。 显示驱动程序不调用以执行任何呈现。
 
 限制显示硬件加速另一种方法是在中设置标志**CapabilityOverride**注册表项。 例如，设置 0x2 标志**CapabilityOverride**条目相当于将硬件加速滑块放在级别 3。 有关的说明**CapabilityOverride**注册表项，请参阅[显示 INF 文件部分](display-inf-file-sections.md)。
 

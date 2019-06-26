@@ -6,12 +6,12 @@ ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
 - IRP_MJ_SHUTDOWN 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd060c07e29f5b92188d768dd5facc5d6d85c83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20459241f40f4000dc16933a0d3e562424847af8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382254"
 ---
 # <a name="irpmjshutdown"></a>IRP\_MJ\_SHUTDOWN
 
@@ -40,7 +40,7 @@ ms.locfileid: "63368425"
 
 该驱动程序必须完成当前缓存在设备中或在完成关闭请求之前保存在驱动程序的内部缓冲区中的任何数据的传输。
 
-驱动程序不会收到**IRP\_MJ\_关闭**请求的设备对象，除非它注册为此，通过[ **IoRegisterShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549541)或[ **IoRegisterLastChanceShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549518)。
+驱动程序不会收到**IRP\_MJ\_关闭**请求的设备对象，除非它注册为此，通过[ **IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)或[ **IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)。
 
 <a name="requirements"></a>要求
 ------------
@@ -63,9 +63,9 @@ ms.locfileid: "63368425"
 
 [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-[**IoRegisterLastChanceShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549518)
+[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
 
-[**IoRegisterShutdownNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549541)
+[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)
 
  
 

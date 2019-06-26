@@ -14,19 +14,19 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 3f49c9ad7f0fd1db6c5dcefe8054342cc68874d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d477e0f5fa1da4ace403258679f4a2a3af74050c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365452"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379903"
 ---
 # <a name="installation-requirements-for-display-miniport-and-user-mode-display-drivers"></a>显示微型端口和用户模式显示驱动程序的安装要求
 
 
 使用 INF 文件标记为在操作系统上安装图形设备显示微型端口驱动程序**类 = 显示**。 在驱动程序安装过程中，将由系统提供显示类安装程序解释此 INF。
 
-图形设备显示微型端口驱动程序适用于 Windows Vista 及更高版本的 INF 文件必须存储下的所有软件设置[ **DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)。 这样做会导致操作系统将所有注册表值复制 (PnP) 插到软件密钥在注册表中。
+图形设备显示微型端口驱动程序适用于 Windows Vista 及更高版本的 INF 文件必须存储下的所有软件设置[ **DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。 这样做会导致操作系统将所有注册表值复制 (PnP) 插到软件密钥在注册表中。
 
 若要确保正确安装，必须符合对 Windows 显示驱动程序模型 (WDDM) 任何显示微型端口驱动程序的 INF 文件中提供以下信息。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63365452"
 
 [重写使用 INF 监视器 EDIDs](overriding-monitor-edids.md)
 
-应参考[INF 文件概述](https://msdn.microsoft.com/library/windows/hardware/ff549520)并[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)的部分，了解在创建了显示微型端口驱动程序 INF 文件的常规帮助。 详细了解注册表根的标识符，如**HKR**，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+应参考[INF 文件概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)并[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)的部分，了解在创建了显示微型端口驱动程序 INF 文件的常规帮助。 详细了解注册表根的标识符，如**HKR**，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 **请注意**  有没有 INF 部分和卸载指令显示特定于图形设备的驱动程序。
 

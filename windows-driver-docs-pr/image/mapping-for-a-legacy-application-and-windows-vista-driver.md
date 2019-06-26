@@ -4,12 +4,12 @@ description: 适用于旧版应用程序和 Windows Vista 驱动程序的映射
 ms.assetid: 6f4ebcc7-ecf0-4e0b-bcef-e5b72dc472dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c7c711bb93cfd9d1b33f55ed46aa2a49f4fb4a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52bc8ff3126171f533c65de6cde87e9206e7b774
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380386"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378849"
 ---
 # <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>适用于旧版应用程序和 Windows Vista 驱动程序的映射
 
@@ -40,7 +40,7 @@ ms.locfileid: "63380386"
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>忽略。 此消息始终会对的调用以及<a href="https://msdn.microsoft.com/library/windows/hardware/ff545039" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545039)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>。 不重复的任何消息，这在中实现<strong>GetNextStream</strong>实现相反。</p></td>
+<td><p>忽略。 此消息始终会对的调用以及<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>。 不重复的任何消息，这在中实现<strong>GetNextStream</strong>实现相反。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
@@ -92,7 +92,7 @@ ms.locfileid: "63380386"
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>忽略。 此消息始终会对的调用以及<a href="https://msdn.microsoft.com/library/windows/hardware/ff545039" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545039)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>。 若要避免重复消息，此消息中实现<strong>GetNextStream</strong>实现相反。</p></td>
+<td><p>忽略。 此消息始终会对的调用以及<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>。 若要避免重复消息，此消息中实现<strong>GetNextStream</strong>实现相反。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
@@ -121,7 +121,7 @@ ms.locfileid: "63380386"
 
  
 
-有关详细信息在旧传输消息，请参阅[IWiaMiniDrvCallBack 接口](https://msdn.microsoft.com/library/windows/hardware/ff543943)。
+有关详细信息在旧传输消息，请参阅[IWiaMiniDrvCallBack 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)。
 
 TYMED 常量的详细信息，请参阅[了解 TYMED](understanding-tymed.md)。
 

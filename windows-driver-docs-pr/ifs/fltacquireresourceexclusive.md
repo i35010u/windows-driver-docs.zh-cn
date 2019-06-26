@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca534dd7983147fe3ea971d3bf86bc5a8eee7815
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a5ad45adb6e24db8643026cc3402dc809c545c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393023"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384578"
 ---
 # <a name="fltacquireresourceexclusive-routine"></a>FltAcquireResourceExclusive 例程
 
@@ -40,7 +40,7 @@ VOID FltAcquireResourceExclusive(
 ----------
 
 *资源* \[in、 out\]  
-指向一个不透明的 ERESOURCE 结构的指针。 此结构必须由非分页缓冲池从调用方分配并通过调用来初始化[ **ExInitializeResourceLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545317)或[ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542).
+指向一个不透明的 ERESOURCE 结构的指针。 此结构必须由非分页缓冲池从调用方分配并通过调用来初始化[ **ExInitializeResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)或[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite).
 
 <a name="return-value"></a>返回值
 ------------
@@ -70,17 +70,17 @@ VOID FltAcquireResourceExclusive(
 
 **FltAcquireResourceExclusive**是包装[ **ExAcquireResourceExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544351)禁用正常内核 APC 传递。
 
-因为**FltAcquireResourceExclusive**禁用正常内核 APC 传递不需要调用[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)或[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)之前，调用**FltAcquireResourceExclusive**。
+因为**FltAcquireResourceExclusive**禁用正常内核 APC 传递不需要调用[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)或[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)之前，调用**FltAcquireResourceExclusive**。
 
 若要获取它后会释放该资源，请调用[ **FltReleaseResource**](fltreleaseresource.md)。 每次成功调用**FltAcquireResourceExclusive**的后续调用必须匹配**FltReleaseResource**。
 
 若要获取共享访问的资源，请调用[ **FltAcquireResourceShared**](fltacquireresourceshared.md)。
 
-若要从系统的资源列表中删除资源，请调用[ **ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)。
+若要从系统的资源列表中删除资源，请调用[ **ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)。
 
-若要初始化以供重复使用的资源，请调用[ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)。
+若要初始化以供重复使用的资源，请调用[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)。
 
-有关 ERESOURCE 结构的详细信息，请参阅[简介 ERESOURCE 例程](https://msdn.microsoft.com/library/windows/hardware/ff548046)内核体系结构设计指南中。
+有关 ERESOURCE 结构的详细信息，请参阅[简介 ERESOURCE 例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)内核体系结构设计指南中。
 
 <a name="requirements"></a>要求
 ------------
@@ -119,11 +119,11 @@ VOID FltAcquireResourceExclusive(
 
 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
 
-[**ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)
+[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545317)
+[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)
+[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)
 
 [**FltAcquireResourceShared**](fltacquireresourceshared.md)
 
@@ -131,7 +131,7 @@ VOID FltAcquireResourceExclusive(
 
 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)
 
-[**KeEnterCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552021)
+[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)
 
  
 

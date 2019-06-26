@@ -7,12 +7,12 @@ keywords:
 - CoNDIS WDK 网络、 参与方
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a69f0422f2a53848d2b8c1ff3195088f8319f6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fbc5989a78bdd80c7234f8b2b52d21b4a8a3807f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533146"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384728"
 ---
 # <a name="adding-and-dropping-parties"></a>添加和删除参与方
 
@@ -20,7 +20,7 @@ ms.locfileid: "56533146"
 
 
 
-面向连接的客户端可以向它与启动的传出 multipoint 调用添加参与方[ **NdisClMakeCall**](https://msdn.microsoft.com/library/windows/hardware/ff561635)。 面向连接的客户端还可以从 multipoint 调用自行或在要删除的远程方的请求时删除参与方。
+面向连接的客户端可以向它与启动的传出 multipoint 调用添加参与方[ **NdisClMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmakecall)。 面向连接的客户端还可以从 multipoint 调用自行或在要删除的远程方的请求时删除参与方。
 
 本部分包括：
 

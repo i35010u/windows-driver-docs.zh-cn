@@ -5,12 +5,12 @@ ms.assetid: fe94884b-f5e3-4c60-8f52-e61d0df81a2a
 ms.date: 08/08/2017
 keywords: -OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 792e7ea9d146f741762dc4fc025644af5c470146
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4682a1d13192db3a0cfe06dce88da1446a1dbda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386220"
 ---
 # <a name="oidgenpcidevicecustomproperties"></a>OID\_GEN\_PCI\_设备\_自定义\_属性
 
@@ -24,7 +24,7 @@ NDIS 处理 OID\_GEN\_PCI\_设备\_自定义\_属性和微型端口驱动程序�
 
 此查询是可选的其他 NDIS 驱动程序。
 
-返回 NDIS [ **NDIS\_PCI\_设备\_自定义\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff566745)结构，其中包含 PCI 的自定义属性。
+返回 NDIS [ **NDIS\_PCI\_设备\_自定义\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)结构，其中包含 PCI 的自定义属性。
 
 对于非 PCI 微型端口适配器，NDIS 失败 OID\_GEN\_PCI\_设备\_自定义\_属性与的 NDIS\_状态\_无效\_设备\_请求状态代码。
 
@@ -51,7 +51,7 @@ NDIS 处理 OID\_GEN\_PCI\_设备\_自定义\_属性和微型端口驱动程序�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_PCI\_设备\_自定义\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff566745)
+[**NDIS\_PCI\_设备\_自定义\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)
 
  
 

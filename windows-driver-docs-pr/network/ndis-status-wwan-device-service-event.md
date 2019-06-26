@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SERVICE_EVENT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fb652399b22a2bc948ef913dc4b24b39087a0c6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f8202fea6c18fe36d86f50d0d45af9aea6b487b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366618"
 ---
 # <a name="ndisstatuswwandeviceserviceevent"></a>NDIS\_状态\_WWAN\_设备\_服务\_事件
 
@@ -20,7 +20,7 @@ ms.locfileid: "63348535"
 
 微型端口驱动程序只能使用此通知将发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_设备\_服务\_事件**](https://msdn.microsoft.com/library/windows/hardware/hh439837)结构。
+使用此通知[ **NDIS\_WWAN\_设备\_服务\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_event)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -45,7 +45,7 @@ ms.locfileid: "63348535"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_DEVICE\_SERVICE\_EVENT**](https://msdn.microsoft.com/library/windows/hardware/hh439837)
+[**NDIS\_WWAN\_DEVICE\_SERVICE\_EVENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_event)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_NLO_DISCOVERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: deab9e17b1009b1e72dbfd4d849b70e3f185a053
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d96a1b4a5e730f63fa41e82b55fa27700fd70b9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390674"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384916"
 ---
 # <a name="ndisstatuswdiindicationnlodiscovery"></a>NDIS\_状态\_WDI\_指示\_NLO\_发现
 
@@ -20,7 +20,7 @@ ms.locfileid: "63390674"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -46,7 +46,7 @@ ms.locfileid: "63390674"
 
 | 在任务栏的搜索框中键入                                                   | 允许多个 TLV 实例 | 可选 | 描述                                                                                      |
 |--------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSS\_ENTRY**](https://msdn.microsoft.com/library/windows/hardware/dn926162) | X                              |          | BSSIDs 的列表。 该列表必须至少包含触发此发现状态的项。 |
+| [**WDI\_TLV\_BSS\_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry) | X                              |          | BSSIDs 的列表。 该列表必须至少包含触发此发现状态的项。 |
 
  
 

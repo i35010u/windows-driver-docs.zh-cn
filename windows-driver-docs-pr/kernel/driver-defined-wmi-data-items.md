@@ -12,12 +12,12 @@ keywords:
 - WMI WDK 内核类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4f60b9b54329682edccfbc81fea01b995d3fa48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96a19bfc82201c4c116e8098704bbad1a943e504
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384964"
 ---
 # <a name="driver-defined-wmi-data-items"></a>驱动程序定义的 WMI 数据项
 
@@ -35,7 +35,7 @@ WMI 数据或事件块的类定义中的数据项可以是以下值之一：
 
 将数据块发送给 WMI，驱动程序必须对齐 8 字节边界上的块的开头。 块中的所有后续数据项必须对齐上的数据类型的相应对齐方式。 一个**布尔**或**uint8**的 1 字节边界上对齐。 一个**sint16**， **uint16**，或**字符串**项应对齐 2 字节边界，依次类推。 数组应对齐基于数组的基类型。 应在字节边界上对齐的字节数组，数组 uint64 应对齐 8 字节边界，依次类推。 嵌入的类应对齐在被定义为嵌入类中的最大元素的嵌入类的自然对齐方式的基础。 例如，如果嵌入的类具有**uint64**，类的 8 字节边界上对齐。 WMI 数据项对齐遵循相同的约定 **/zp8** Microsoft C 编译器开关。
 
-驱动程序编写器不一定需要定义所需的项以外的块中的数据项**InstanceName**并**Active**。 例如，一个空事件块可用作通知发生了一个事件，而无需额外的数据。 或数据块可能只需枚举响应中的实例名称[ **IRP\_MN\_查询\_所有\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff551650)请求。
+驱动程序编写器不一定需要定义所需的项以外的块中的数据项**InstanceName**并**Active**。 例如，一个空事件块可用作通知发生了一个事件，而无需额外的数据。 或数据块可能只需枚举响应中的实例名称[ **IRP\_MN\_查询\_所有\_数据**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)请求。
 
 下表列出了可用于定义在 WMI 数据或事件块中的项的 MOF 数据类型。 有关 MOF 的数据类型的详细信息，请参阅 Microsoft Windows SDK。
 

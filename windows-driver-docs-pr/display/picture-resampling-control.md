@@ -9,12 +9,12 @@ keywords:
 - 重新采样图片 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b2309eb3ae18e3c3654356e66f939ea62513b30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2911efa93b961e1b1f71e4db6dd3687f38e74323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352220"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385568"
 ---
 # <a name="picture-resampling-control"></a>画面重新采样控制
 
@@ -28,7 +28,7 @@ ms.locfileid: "63352220"
 
 请注意该图片来重新采样控件不需要连接配置。 其操作需要仅支持相应受限模式下的 GUID。 无连接需进行配置以图片来重新采样控件，因为没有最小互操作性集必须定义进行其操作。
 
-中的单个缓冲区类型定义[ **DXVA\_PicResample** ](https://msdn.microsoft.com/library/windows/hardware/ff564010)结构控制重新采样过程。
+中的单个缓冲区类型定义[ **DXVA\_PicResample** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_picresample)结构控制重新采样过程。
 
  
 

@@ -4,12 +4,12 @@ description: 在框通用 I/O (GPIO) 按钮驱动程序报告给 Windows，基�
 ms.assetid: 7D96E1CB-3406-4D61-9D5C-65BC6BFD1FFA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6f0c40026327c04bb08d41e0927643dfc18518e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3850e9d4e623abf71b21064d7732c3b99a8917ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385168"
 ---
 # <a name="button-reporting"></a>按钮报告
 
@@ -97,9 +97,9 @@ ms.locfileid: "63326097"
  
 
 **注意**  
--   有关完整的指导和实现的电源按钮，请参阅[电源按钮行为和实现](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)。
--   连接待机按钮的指南，请参阅[连接待机状态唤醒的源](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)。
--   ACPI 实现的其他指南，请参阅[ACPI 设计指南](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)。
+-   有关完整的指导和实现的电源按钮，请参阅[电源按钮行为和实现](https://aka.ms/connect-redirect?DownloadID=47452)。
+-   连接待机按钮的指南，请参阅[连接待机状态唤醒的源](https://aka.ms/connect-redirect?DownloadID=49891)。
+-   ACPI 实现的其他指南，请参阅[ACPI 设计指南](https://aka.ms/connect-redirect?DownloadID=48755)。
 
  
 

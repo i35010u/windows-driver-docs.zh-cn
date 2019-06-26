@@ -11,12 +11,12 @@ keywords:
 - 超时 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25ae08b4ef5f4b6d5d83b6812816a00bb3830da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac3295d9386489986d1b28e473797b755323aef2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381569"
 ---
 # <a name="using-power-manager-routines-for-idle-detection"></a>使用电源管理器例程进行空闲检测
 
@@ -24,7 +24,7 @@ ms.locfileid: "63391061"
 
 
 
-电源管理器支持通过空闲检测[ **PoRegisterDeviceForIdleDetection** ](https://msdn.microsoft.com/library/windows/hardware/ff559721)并[ **PoSetDeviceBusy** ](https://msdn.microsoft.com/library/windows/hardware/ff559755)例程。
+电源管理器支持通过空闲检测[ **PoRegisterDeviceForIdleDetection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)并[ **PoSetDeviceBusy** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)例程。
 
 若要启用空闲检测其设备，设备电源策略所有者调用**PoRegisterDeviceForIdleDetection** ，并指定：
 
@@ -40,7 +40,7 @@ ms.locfileid: "63391061"
 
 任何给定设备的超时值应与设备的增益道具延迟成比例，并且根据观察到的设备的行为。 对于某些类型的设备，驱动程序可以指定节省和性能为-1 的设备类使用标准的电源策略超时的超时值。 请参阅详细信息的特定于设备的文档。
 
-当设备正在使用中时，该驱动程序必须调用[ **PoSetDeviceBusy**](https://msdn.microsoft.com/library/windows/hardware/ff559755)，并传递所返回的指针**PoRegisterDeviceForIdleDetection**。 **PoSetDeviceBusy**将重置空闲的计数器，从而重启设备空闲的倒计时。 该驱动程序应调用**PoSetDeviceBusy**在每次 I/O 操作。
+当设备正在使用中时，该驱动程序必须调用[ **PoSetDeviceBusy**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)，并传递所返回的指针**PoRegisterDeviceForIdleDetection**。 **PoSetDeviceBusy**将重置空闲的计数器，从而重启设备空闲的倒计时。 该驱动程序应调用**PoSetDeviceBusy**在每次 I/O 操作。
 
 若要确定设备是否处于空闲状态，电源管理器将使用当前系统电源策略 （节省或性能） 的驱动程序指定空闲超时值的空闲状态的计数器值进行比较。 请参阅 Microsoft Windows SDK for 与系统电源策略相关的函数。
 

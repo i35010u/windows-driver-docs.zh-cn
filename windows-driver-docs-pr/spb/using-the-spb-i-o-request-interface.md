@@ -4,16 +4,16 @@ description: 从 Windows 8 中，存储框架扩展 (SpbCx) 是支持的存储 I
 ms.assetid: 0A752413-FA0B-4C26-BF6D-19033E07095E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91ebce26adba414e14a4685b2f664248c99bfe23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0a007058fb4cb7f59b7c8f03cb4eb8bf747bcd1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383498"
 ---
 # <a name="using-the-spb-io-request-interface"></a>使用 SPB I/O 请求接口
 
-从 Windows 8 开始[存储框架扩展](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)(SpbCx) 是系统提供的组件，它支持[存储 I/O 请求接口](https://docs.microsoft.com/previous-versions//hh698224(v=vs.85))。 存储外围设备驱动程序使用此接口将 I/O 请求发送到设备连接到 I²C、 SPI，和其他[简单的外围总线](https://docs.microsoft.com/previous-versions//hh450903(v=vs.85))(SPBs)。 通过在不同的总线类型之间进行标准化的 I/O 请求接口可用，SpbCx 简化了跨各种硬件平台和不同的硬件中的存储控制器为一系列的外围设备提供驱动程序支持的任务供应商。
+从 Windows 8 开始[存储框架扩展](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)(SpbCx) 是系统提供的组件，它支持[存储 I/O 请求接口](https://docs.microsoft.com/previous-versions/hh698224(v=vs.85))。 存储外围设备驱动程序使用此接口将 I/O 请求发送到设备连接到 I²C、 SPI，和其他[简单的外围总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))(SPBs)。 通过在不同的总线类型之间进行标准化的 I/O 请求接口可用，SpbCx 简化了跨各种硬件平台和不同的硬件中的存储控制器为一系列的外围设备提供驱动程序支持的任务供应商。
 
 如果满足以下条件，与存储连接的外围设备的硬件供应商可以开发一个设备驱动程序可以跨多个总线类型工作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "63325301"
 
 驱动程序可以将 I/O 请求发送到与存储连接的外围设备之前，该驱动程序必须打开打开到设备的逻辑连接。 若要打开此连接，该驱动程序时，可使用它收到的连接 ID 作为插管理器从一个硬件资源。 有关详细信息，请参阅[存储外围设备的连接 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)。
 
-SpbCx 和存储控制器驱动程序，共同处理读取和写入存储连接的外围设备的请求。 以响应[ **IRP\_MJ\_读取**](https://docs.microsoft.com/previous-versions//ff546883(v=vs.85))请求，存储控制器将指定的字节数从外围设备传输到驱动程序所提供的缓冲区。 以响应[ **IRP\_MJ\_编写**](https://docs.microsoft.com/en-us/previous-versions//ff546904(v=vs.85))请求，存储控制器将指定的字节数从驱动程序所提供的缓冲区传输到外围设备。
+SpbCx 和存储控制器驱动程序，共同处理读取和写入存储连接的外围设备的请求。 以响应[ **IRP\_MJ\_读取**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))请求，存储控制器将指定的字节数从外围设备传输到驱动程序所提供的缓冲区。 以响应[ **IRP\_MJ\_编写**](https://docs.microsoft.com/en-us/previous-versions//ff546904(v=vs.85))请求，存储控制器将指定的字节数从驱动程序所提供的缓冲区传输到外围设备。
 
 有关**IRP\_MJ\_读取**或**IRP\_MJ\_编写**请求将零字节，SpbCx 完成状态请求\_成功状态代码，但不执行任何操作。
 

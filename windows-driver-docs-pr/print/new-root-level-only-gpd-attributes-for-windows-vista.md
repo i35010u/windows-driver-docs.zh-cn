@@ -7,12 +7,12 @@ keywords:
 - 常规打印机属性 WDK Unidrv，仅限根级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 396b844eecb6d4747d200856fa63ee0833bdac73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9be9818337085ee2f556040fc2e90978c63844c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355899"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384522"
 ---
 # <a name="new-root-level-only-gpd-attributes-for-windows-vista"></a>适用于 Windows Vista 的仅限根级别的新 GPD 属性
 
@@ -201,7 +201,7 @@ ms.locfileid: "63355899"
 *Endif: WINNT_60 
 ```
 
-在 Microsoft Windows Server 2003 或 Windows XP 中，当 Unidrv 打印在 HP/2 模式下，如果在收到阴影画笔[ **DrvRealizeBrush** ](https://msdn.microsoft.com/library/windows/hardware/ff556273)函数，以便打印机选择 Unidrv 发送命令相应的阴影画笔。 Unidrv 不控制阴影画笔的呈现方式。 例如，通过解析通常控制线之间的间距。 在更高的分辨率，间距获取小，同时在较低的分辨率，间距为更高版本。 因此，文档可能以不同方式打印如果使用不同的解决方法。
+在 Microsoft Windows Server 2003 或 Windows XP 中，当 Unidrv 打印在 HP/2 模式下，如果在收到阴影画笔[ **DrvRealizeBrush** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)函数，以便打印机选择 Unidrv 发送命令相应的阴影画笔。 Unidrv 不控制阴影画笔的呈现方式。 例如，通过解析通常控制线之间的间距。 在更高的分辨率，间距获取小，同时在较低的分辨率，间距为更高版本。 因此，文档可能以不同方式打印如果使用不同的解决方法。
 
 在 Windows Vista 中，如果指定了 GPD **UseImageForHatchBrush？** 特性 Unidrv 呈现一个位图表面上的阴影画笔，然后将该位图发送到设备。 Unidrv，因此，有一些控件上的阴影画笔的呈现方式。
 
@@ -217,9 +217,9 @@ ms.locfileid: "63355899"
 
 值**ReverseBandOrder？** 是**TRUE**或**FALSE**指示是否启用反向条带。 此属性会导致条带将按相反的顺序执行。 例如，对于纵向页上，条带会发生从底部到顶部而不是从上到下。
 
-此属性实质上是相同 ReverseBandOrderForEvenPages？，只不过**ReverseBandOrder？** 甚至被视为如果双工不处于活动状态 (**ReverseBandOrderForEvenPages？** works 仅当双工为 ON），并且它适用于所有页 (**ReverseBandOrderForEvenPages？** 仅适用于偶数页)。 有关如何使用的详细信息**ReverseBandOrder？** 和其他相关的信息，请参阅\* **ReverseBandOrderForEvenPages？**。 尤其注意插件必须撤消扫描行和扫描行中的位。
+此属性实质上是相同 ReverseBandOrderForEvenPages？，只不过**ReverseBandOrder？** 甚至被视为如果双工不处于活动状态 (**ReverseBandOrderForEvenPages？** works 仅当双工为 ON），并且它适用于所有页 (**ReverseBandOrderForEvenPages？** 仅适用于偶数页)。 有关如何使用的详细信息**ReverseBandOrder？** 和其他相关的信息，请参阅\* **ReverseBandOrderForEvenPages？** 。 尤其注意插件必须撤消扫描行和扫描行中的位。
 
-可以使用的组合\*ReverseBandOrderForEvenPages？ 和\* **ReverseBandOrder？**。
+可以使用的组合\*ReverseBandOrderForEvenPages？ 和\* **ReverseBandOrder？** 。
 
 当仅**ReverseBandOrder？** 设置为**TRUE**，条带将反转的所有页面。
 

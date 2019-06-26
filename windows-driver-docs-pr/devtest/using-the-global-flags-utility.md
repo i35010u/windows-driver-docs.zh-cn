@@ -7,12 +7,12 @@ keywords:
 - 驱动程序验证程序 WDK，全局标志实用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97aefe3397738391d7c510d92aa7028917a2c1b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8cdbde060c10e8c92c9c6a70f838fa4d2509159
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327240"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381806"
 ---
 # <a name="using-the-global-flags-utility"></a>使用全局标志实用工具
 
@@ -22,7 +22,7 @@ ms.locfileid: "63327240"
 
 全局标志 (gflags.exe) 实用程序提供了在系统注册表中设置某些项、 调整正在运行的系统的内核设置和更改图像文件的设置的简单方法。 可以使用图形化或命令行界面来设置这些项。
 
-Windows 支持工具包在和中的 Windows 调试工具软件包，可找到全局标志实用程序。 有关后者的信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+Windows 支持工具包在和中的 Windows 调试工具软件包，可找到全局标志实用程序。 有关后者的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 若要配置驱动程序验证程序的特殊池选项，或若要指定在单个内存分配中使用特殊的池，还可以使用全局标志实用程序。
 

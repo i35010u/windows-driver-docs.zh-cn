@@ -8,12 +8,12 @@ keywords:
 - WFP WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff5f91809335557bc4717dfb5ef4130f8572143d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 294e7b189c873f2829983fc7fbde1e32d0e3cd66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390959"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382605"
 ---
 # <a name="windows-filtering-platform-callout-drivers"></a>Windows 筛选平台标注驱动程序
 
@@ -34,9 +34,9 @@ ms.locfileid: "63390959"
 -   [Windows 筛选平台常量](windows-filtering-platform-constants.md)
 -   [其他 Windows 筛选平台函数](other-windows-filtering-platform-functions.md)
 
-有关 WFP 的概述，请参阅[Windows 筛选平台](https://msdn.microsoft.com/library/windows/desktop/aa366510)。
+有关 WFP 的概述，请参阅[Windows 筛选平台](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)。
 
-有关 WFP 的参考信息，请参阅[Windows 筛选平台标注驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff571067)。
+有关 WFP 的参考信息，请参阅[Windows 筛选平台标注驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
  
 

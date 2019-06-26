@@ -9,12 +9,12 @@ keywords:
 - Windows Vista 显示器驱动程序模型 WDK 的 VSync 控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d614b49dc71f5f222cd07af4454b9ab66e64db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f713b413cd37f7b9d716d9b392b81ffe62268da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365585"
 ---
 # <a name="saving-energy-with-vsync-control"></a>节能与 VSync 控制
 
@@ -29,27 +29,27 @@ ms.locfileid: "63351453"
 
 ### <a name="span-iddriverchangesforvsynccontrolspanspan-iddriverchangesforvsynccontrolspanwindowsvista-with-sp1-driver-changes-for-vsync-control"></a><span id="driver_changes_for_vsync_control"></span><span id="DRIVER_CHANGES_FOR_VSYNC_CONTROL"></span>Windows Vista SP1 驱动程序更改的 VSync 控制
 
-有关驱动程序以充分利用此功能，它们必须支持**VSyncPowerSaveAware**中的成员[ **DXGK\_VIDSCHCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff562863)结构，它是在 Windows Vista SP1 中引入。 请按照 WDDM 的现有驱动程序必须使用重新编译**VSyncPowerSaveAware**通过使用 Windows Server 2008 或更高版本的 WDK 的成员。
+有关驱动程序以充分利用此功能，它们必须支持**VSyncPowerSaveAware**中的成员[ **DXGK\_VIDSCHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)结构，它是在 Windows Vista SP1 中引入。 请按照 WDDM 的现有驱动程序必须使用重新编译**VSyncPowerSaveAware**通过使用 Windows Server 2008 或更高版本的 WDK 的成员。
 
 Windows Vista sp1 或更高版本系统与遵循 WDDM 和支持此功能的驱动程序将关闭计数功能的 VSync 中断发生任何 GPU 活动 10 个连续时间段内 1/Vsync，其中 VSync 是监视器的刷新频率。 如果垂直同步速率是 60 赫兹 (Hz)，VSync 中断发生一次每隔 16 毫秒。 因此，如果没有屏幕更新，VSync 中断处于关闭状态后 160 毫秒。 GPU 活动继续时，如果 VSync 中断再次打开来刷新屏幕。
 
 ### <a name="span-idwindows8display-onlyvsyncrequirementsspanspan-idwindows8display-onlyvsyncrequirementsspanspan-idwindows8display-onlyvsyncrequirementsspanwindows8-display-only-vsync-requirements"></a><span id="Windows_8_Display-Only_VSync_Requirements"></span><span id="windows_8_display-only_vsync_requirements"></span><span id="WINDOWS_8_DISPLAY-ONLY_VSYNC_REQUIREMENTS"></span>Windows 8 仅显示垂直同步要求
 
-从 Windows 8 中，是可选的[内核模式仅显示驱动程序 (KMDOD)](https://msdn.microsoft.com/library/windows/hardware/jj673962)以支持垂直同步功能，按如下所示：
+从 Windows 8 中，是可选的[内核模式仅显示驱动程序 (KMDOD)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)以支持垂直同步功能，按如下所示：
 
 <span id="Display-only_driver_supports_VSync_control"></span><span id="display-only_driver_supports_vsync_control"></span><span id="DISPLAY-ONLY_DRIVER_SUPPORTS_VSYNC_CONTROL"></span>仅显示驱动程序支持的 VSync 控制  
-如果 KMDOD 支持的 VSync 控制功能，它必须实现两者[ *DxgkDdiControlInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559602)并[ *DxgkDdiGetScanLine* ](https://msdn.microsoft.com/library/windows/hardware/ff559668)函数，而必须提供有效的函数指针，指向这两个函数中[ **KMDDOD\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/hh451571)结构。
+如果 KMDOD 支持的 VSync 控制功能，它必须实现两者[ *DxgkDdiControlInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)并[ *DxgkDdiGetScanLine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)函数，而必须提供有效的函数指针，指向这两个函数中[ **KMDDOD\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_kmddod_initialization_data)结构。
 
-在这种情况下还必须实现 KMDOD [ *DxgkDdiInterruptRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff559680)并[ *DxgkDdiDpcRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff559645)以便函数向操作系统报告的垂直同步中断。
+在这种情况下还必须实现 KMDOD [ *DxgkDdiInterruptRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine)并[ *DxgkDdiDpcRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_dpc_routine)以便函数向操作系统报告的垂直同步中断。
 
-此外，值**PixelRate**， **hSyncFreq**，并**vSyncFreq**的成员[ **DISPLAYCONFIG\_视频\_信号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff554007)结构不能为**D3DKMDT\_频率\_NOTSPECIFIED**。
+此外，值**PixelRate**， **hSyncFreq**，并**vSyncFreq**的成员[ **DISPLAYCONFIG\_视频\_信号\_信息**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构不能为**D3DKMDT\_频率\_NOTSPECIFIED**。
 
 <span id="Display-only_driver_does_not_support_VSync_control"></span><span id="display-only_driver_does_not_support_vsync_control"></span><span id="DISPLAY-ONLY_DRIVER_DOES_NOT_SUPPORT_VSYNC_CONTROL"></span>仅显示驱动程序不支持的 VSync 控制  
-如果 KMDOD 不支持的 VSync 控制功能，它不必须实现[ *DxgkDdiControlInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559602)或[ *DxgkDdiGetScanLine* ](https://msdn.microsoft.com/library/windows/hardware/ff559668)函数，必须提供有效的函数指针中的这些函数的任一[ **KMDDOD\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/hh451571)结构。
+如果 KMDOD 不支持的 VSync 控制功能，它不必须实现[ *DxgkDdiControlInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)或[ *DxgkDdiGetScanLine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)函数，必须提供有效的函数指针中的这些函数的任一[ **KMDDOD\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_kmddod_initialization_data)结构。
 
 在这种情况下 Microsoft DirectX 图形内核子系统模拟 VSync 中断和基于当前的模式和最后一个的模拟垂直同步时扫描行的值。
 
-此外，值**PixelRate**， **hSyncFreq**，并**vSyncFreq**的成员[ **DISPLAYCONFIG\_视频\_信号\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff554007)结构必须设置为**D3DKMDT\_频率\_NOTSPECIFIED**。
+此外，值**PixelRate**， **hSyncFreq**，并**vSyncFreq**的成员[ **DISPLAYCONFIG\_视频\_信号\_信息**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构必须设置为**D3DKMDT\_频率\_NOTSPECIFIED**。
 
 如果不满足这些条件，DirectX 图形内核子系统将加载 KMDOD。
 

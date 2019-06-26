@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_WPS_ENABLED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 54b3405d2bda5fa6da023aa66e3bedec20930374
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f17406ff0b7c638d95b0131903a8805eeb7e300
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375609"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385414"
 ---
 # <a name="wditlvp2pwpsenabled"></a>WDI\_TLV\_P2P\_WPS\_ENABLED
 
@@ -80,7 +80,7 @@ WDI\_TLV\_P2P\_WPS\_已启用是 TLV，指定是否启用了 Wi-fi 受保护的�
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WDI\_SET\_P2P\_WPS\_ENABLED](https://msdn.microsoft.com/library/windows/hardware/dn925938)
+[OID\_WDI\_SET\_P2P\_WPS\_ENABLED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-p2p-wps-enabled)
 
  
 

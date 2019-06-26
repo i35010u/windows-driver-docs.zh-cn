@@ -5,12 +5,12 @@ ms.assetid: CB6A0314-E410-4865-8833-801BDB24AA25
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: ea18cb642e22bc1845c347c8d1417098739902e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d4430b0c683e2ab29d19ead4a4745abce614ccf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358019"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384866"
 ---
 # <a name="direct3d-runtime-functions-called-by-user-mode-display-drivers"></a>Direct3D 调用的用户模式显示驱动程序的运行时函数
 
@@ -53,8 +53,8 @@ ms.locfileid: "63358019"
 |[PFND3DDDI_UPDATEALLOCATIONPROPERTYCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updateallocationpropertycb) |[PFND3DDDI_UPDATEOVERLAYCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updateoverlaycb) |
 |[PFND3DDDI_UPDATEGPUVIRTUALADDRESSCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb) |[PFND3DDDI_WAITFORSYNCHRONIZATIONOBJECT2CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobject2cb) |
 |[PFND3DDDI_WAITFORSYNCHRONIZATIONOBJECTCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobjectcb) |[PFND3DDDI_WAITFORSYNCHRONIZATIONOBJECTFROMCPUCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobjectfromcpucb) |
-|[PFND3DDDI_WAITFORSYNCHRONIZATIONOBJECTFROMGPUCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobjectfromgpucb) |[PFND3DWDDM2_0DDI_DECODEJPEG](https://msdn.microsoft.com/library/windows/hardware/dn937733.aspx) |
-|[PFND3DWDDM2_0DDI_ENCODEJPEG](https://msdn.microsoft.com/library/windows/hardware/dn937735.aspx) ||
+|[PFND3DDDI_WAITFORSYNCHRONIZATIONOBJECTFROMGPUCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobjectfromgpucb) |[PFND3DWDDM2_0DDI_DECODEJPEG](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn937733(v=vs.85)) |
+|[PFND3DWDDM2_0DDI_ENCODEJPEG](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn937735(v=vs.85)) ||
 
 ### <a name="direct3d-parameter-structures"></a>Direct3D 参数结构
 

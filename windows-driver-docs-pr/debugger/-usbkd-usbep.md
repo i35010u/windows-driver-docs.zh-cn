@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 38d6386e8e70e06e84aab1d54f174b1313792b94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e044f021598cff11d913860252e17b82ff5c7580
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367988"
 ---
 # <a name="usbkdusbep"></a>!usbkd.usbep
 
@@ -53,7 +53,7 @@ Usbkd.dll
 
 在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
 
-单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)获取全局终结点列表。
+单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)获取全局终结点列表。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0

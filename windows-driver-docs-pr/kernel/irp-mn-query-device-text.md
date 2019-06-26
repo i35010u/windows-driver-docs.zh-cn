@@ -6,12 +6,12 @@ ms.assetid: 07661709-8929-4567-a05f-96d995862ee6
 keywords:
 - IRP_MN_QUERY_DEVICE_TEXT 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: eedcf3d55e5e95ee877360a3ded21b914ffe5d45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: caa767e57545efedb56131f7e65af17baaddf10f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381439"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383286"
 ---
 # <a name="irpmnquerydevicetext"></a>IRP\_MN\_查询\_设备\_文本
 
@@ -33,7 +33,7 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.QueryDeviceText.DeviceTextType**的成员[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构是**设备\_文本\_类型**值，该值指定所请求的字符串。 可能的值**设备\_文本\_类型**包括**DeviceTextDescription**并**DeviceTextLocationInformation**。
+**Parameters.QueryDeviceText.DeviceTextType**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构是**设备\_文本\_类型**值，该值指定所请求的字符串。 可能的值**设备\_文本\_类型**包括**DeviceTextDescription**并**DeviceTextLocationInformation**。
 
 **Parameters.QueryDeviceText.LocaleId**是指定请求的文本的区域设置 LCID。
 
@@ -58,13 +58,13 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 
 如果总线驱动程序对此 IRP 响应中返回的信息，它会从分页的内存分配的以 NULL 结尾的 Unicode 字符串。 PnP 管理器不再需要时释放该字符串。
 
-如果设备不提供说明或位置的信息，将设备的父总线驱动程序会完成 IRP ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)) 而无需修改**Irp-&gt;IoStatus.Status**或**Irp-&gt;IoStatus.Information**。
+如果设备不提供说明或位置的信息，将设备的父总线驱动程序会完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) 而无需修改**Irp-&gt;IoStatus.Status**或**Irp-&gt;IoStatus.Information**。
 
 函数和筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus**。
 
 对于不同的区域设置支持不同的文本字符串的总线驱动程序应该能够处理请求的设备不显式支持的语言。 在这种情况下，总线驱动程序应返回最接近的匹配的区域设置或应回退和返回某些相应支持的区域设置字符串。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 

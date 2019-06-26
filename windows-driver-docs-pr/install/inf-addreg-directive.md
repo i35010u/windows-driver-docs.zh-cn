@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 984d3f8101b2f6f00c3a7a42013f62cce5407e22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88c7e40ac8401e490da57a30dee3f526c1ea938a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385928"
 ---
 # <a name="inf-addreg-directive"></a>INF AddReg 指令
 
@@ -99,14 +99,14 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 有关详细信息存储在下的驱动程序信息**HKEY_LOCAL_MACHINE**根，请参阅[注册表树和设备和驱动程序的密钥](registry-trees-and-keys.md)。
 
 <a href="" id="subkey"></a>*subkey*  
-此可选值，格式为 %*strkey*中定义的 %令牌[**字符串**](inf-strings-section.md)部分的 INF 或注册表路径下给定*reg 根*(<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...)，指定以下值之一：
+此可选值，格式为 %*strkey*中定义的 %令牌[**字符串**](inf-strings-section.md)部分的 INF 或注册表路径下给定*reg 根*(<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...)，指定以下值之一：
 
 -   若要添加到注册表中给定的注册表路径的末尾的一个新子项。
 -   此条目中指定的其他值写入 （可能替换给定的子项的现有已命名的值条目的值） 在其中一个现有子项。
 -   这两个新子项添加到其初始值条目以及注册表。
 
 <a href="" id="value-entry-name"></a>*value-entry-name*  
-此可选值要么名称中给定 （现有） 的现有值条目*子项*或创建要添加的新值项的名称中指定*子项*，无论它已存在或为新的密钥要添加到注册表。 此值可以表示为 **"**<em>带引号的字符串</em>**"** 或作为 %*strkey*INF 中定义的 %令牌[**字符串**](inf-strings-section.md)部分。 (如果这字符串类型的值，省略*值的条目名称*是默认值"未命名的"值输入此密钥。)
+此可选值要么名称中给定 （现有） 的现有值条目*子项*或创建要添加的新值项的名称中指定*子项*，无论它已存在或为新的密钥要添加到注册表。 此值可以表示为 **"** <em>带引号的字符串</em> **"** 或作为 %*strkey*INF 中定义的 %令牌[**字符串**](inf-strings-section.md)部分。 (如果这字符串类型的值，省略*值的条目名称*是默认值"未命名的"值输入此密钥。)
 
 操作系统支持一些系统定义的特殊*值的条目名称*关键字。 请参阅此实例的末尾**备注**部分，了解详细信息。
 
@@ -170,7 +170,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 -   注册表数值类型值可以表示为 （通过使用 0 x 表示法） 的十六进制或十进制数。
 
 <a href="" id="security-descriptor-string"></a>*security-descriptor-string*  
-指定要应用于创建的名为的所有注册表项的安全描述符*添加注册表部分*。 *安全描述符字符串*是标记，则指示 DACL 的字符串 (**d:**) 安全组件。
+指定要应用于创建的名为的所有注册表项的安全描述符*添加注册表部分*。 *安全描述符字符串*是标记，则指示 DACL 的字符串 (**d:** ) 安全组件。
 
 如果<em>添加注册表部分</em>**安全**部分未指定，则注册表项继承父项的安全设置。
 
@@ -181,7 +181,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 
 不要*不*指定对非特权用户授予写入权限的 ACE 字符串。
 
-有关安全描述符字符串的信息，请参阅[安全描述符定义语言 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)。 有关的安全描述符字符串格式的信息，请参阅安全描述符定义语言 (Windows)。
+有关安全描述符字符串的信息，请参阅[安全描述符定义语言 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关的安全描述符字符串格式的信息，请参阅安全描述符定义语言 (Windows)。
 
 有关如何指定安全描述符的详细信息，请参阅[创建安全的设备安装](creating-secure-device-installations.md)。
 
@@ -240,21 +240,21 @@ INF 中，可以指定只有以下值：
 #define FILE_DEVICE_SECURE_OPEN         0x00000100
 ```
 
-有关这些值的说明，请参阅[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)。
+有关这些值的说明，请参阅[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)。
 
 通过使用指定的特性值**DeviceCharacteristics**条目，每次调用中指定的是或运算**IoCreateDevice**设备堆栈上创建一个设备对象。 添加设备的所有对象之后，但启动设备之前，将发生或运算。
 
 *特征*（包括值为零） 的值将重写关联的类安装程序 INF 中指定的任何类范围内的设备特征。
 
-有关设备特征的详细信息，请参阅[指定设备特征](https://msdn.microsoft.com/library/windows/hardware/ff563818)。
+有关设备特征的详细信息，请参阅[指定设备特征](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)。
 
 <a href="" id="devicetype"></a>**DeviceType**  
-一个**DeviceType** HKR **AddReg**条目指定设备的设备类型。 设备类型是数字值的 FILE_DEVICE_*XXX*中定义常量*wdm.h 中*或*Ntddk.h*。 0x10001 的标志值指定的设备类型值都[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)。 有关详细信息，请参阅[指定设备类型](https://msdn.microsoft.com/library/windows/hardware/ff563821)。
+一个**DeviceType** HKR **AddReg**条目指定设备的设备类型。 设备类型是数字值的 FILE_DEVICE_*XXX*中定义常量*wdm.h 中*或*Ntddk.h*。 0x10001 的标志值指定的设备类型值都[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)。 有关详细信息，请参阅[指定设备类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)。
 
 类 installer INF 应指定适用于所有，或几乎所有的类中的设备的设备类型。 例如，如果在类中的设备的类型 FILE_DEVICE_CD_ROM，指定*设备类型*的 0x02。 如果设备 INF 中指定的值**DeviceType**，它将替代类安装程序中，设置的值，如果有的话。 如果指定了类或设备 INF **DeviceType**值，即插即用管理器应用到该类型*物理设备对象 (PDO)* 创建的设备的总线驱动程序。
 
 <a href="" id="security"></a>**安全**  
-一个**安全**HKR **AddReg**条目指定设备的安全描述符。 *安全描述符字符串*是标记，则指示 DACL 的字符串 (**d:**) 安全组件。
+一个**安全**HKR **AddReg**条目指定设备的安全描述符。 *安全描述符字符串*是标记，则指示 DACL 的字符串 (**d:** ) 安全组件。
 
 类 installer INF 可以指定设备类的安全描述符。 设备 INF 可以指定单个设备，重写类的安全性的安全描述符。 如果指定了类和/或设备 INF*安全描述符字符串*，即插即用管理器将传播到所有设备对象的描述符 ( *DOs*) 设备。 这包括函数设备对象 (*FDO*)、 可选*筛选 DOs*，和 PDO。
 
@@ -266,10 +266,10 @@ INF 中，可以指定只有以下值：
 **上边的筛选程序**HKR **AddReg**条目指定的即插即用的上限筛选器驱动程序。 中的此条目[ * **DDInstall *。HW** ](inf-ddinstall-hw-section.md)部分定义了一个或多个特定于设备的上限筛选器驱动程序。 在中[ **ClassInstall32** ](inf-classinstall32-section.md)部分中，此项定义一个或多个类范围上限筛选器驱动程序。
 
 <a href="" id="lowerfilters"></a>**下边的筛选程序**  
-一个**下边的筛选程序**HKR **AddReg**条目指定即插即用的较低的筛选器驱动程序。 中的此条目<em>DDInstall</em>**。硬件部分**定义一个或多个特定于设备的较低的筛选器驱动程序。 在中**ClassInstall32**部分中，此项定义一个或多个类范围低筛选器驱动程序。
+一个**下边的筛选程序**HKR **AddReg**条目指定即插即用的较低的筛选器驱动程序。 中的此条目<em>DDInstall</em> **。硬件部分**定义一个或多个特定于设备的较低的筛选器驱动程序。 在中**ClassInstall32**部分中，此项定义一个或多个类范围低筛选器驱动程序。
 
 <a href="" id="exclusive"></a>**Exclusive**  
-**独占**HKR **AddReg**项，如果它存在并且设置为"1"，指定该设备是否*独占设备*。 否则该设备不被视为为排他。 有关详细信息，请参阅[指定对设备对象的独占访问](https://msdn.microsoft.com/library/windows/hardware/ff563827)。
+**独占**HKR **AddReg**项，如果它存在并且设置为"1"，指定该设备是否*独占设备*。 否则该设备不被视为为排他。 有关详细信息，请参阅[指定对设备对象的独占访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-exclusive-access-to-device-objects)。
 
 <a href="" id="enumproppages32"></a>**EnumPropPages32**  
 **EnumPropPages32** HKR **AddReg**条目指定的动态链接库的名称 (*DLL*) 是特定于设备的属性页提供程序的文件。 它还指定的名称**ExtensionPropSheetPageProc**由 DLL 实现回调函数。 有关属性页和函数的详细信息，请参阅适用于 Windows 7 和.NET Framework 4.0 的 Microsoft Windows 软件开发工具包 (SDK)。
@@ -279,7 +279,7 @@ INF 中，可以指定只有以下值：
  
 
 <a href="" id="locationinformationoverride"></a>**LocationInformationOverride**  
-（Windows XP 和更高版本的 Windows）一个**LocationInformationOverride** HKR **AddReg**条目可以用于指定一个文本字符串，描述设备的物理位置。 它将替代**LocationInformation**设备的总线驱动程序在响应中提供的字符串[ **IRP_MN_QUERY_DEVICE_TEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff551674)请求。
+（Windows XP 和更高版本的 Windows）一个**LocationInformationOverride** HKR **AddReg**条目可以用于指定一个文本字符串，描述设备的物理位置。 它将替代**LocationInformation**设备的总线驱动程序在响应中提供的字符串[ **IRP_MN_QUERY_DEVICE_TEXT** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)请求。
 
 <a href="" id="resourcepickertags"></a>**ResourcePickerTags**  
 一个**ResourcePickerTags** HKR **AddReg**条目指定的设备资源选取器标记。
@@ -290,7 +290,7 @@ INF 中，可以指定只有以下值：
 <a name="examples"></a>示例
 --------
 
-**AddReg**指令引用在此示例中，引用的 INF 编写器定义部分下的 (SCSI) Miniport_EventLog_AddReg 部分**AddService**指令<em>DDInstall</em>**。服务**此 INF 部分。
+**AddReg**指令引用在此示例中，引用的 INF 编写器定义部分下的 (SCSI) Miniport_EventLog_AddReg 部分**AddService**指令<em>DDInstall</em> **。服务**此 INF 部分。
 
 ```ini
 [Miniport_EventLog_AddReg]

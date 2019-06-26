@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 293191f9a9e3ede97d56c162dd977032bdd03653
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 148989e8ba7bcbd2d18c7bfb109432bdb2377aac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384301"
 ---
 # <a name="smremoveport-function"></a>SM\_RemovePort 函数
 
@@ -84,9 +84,9 @@ void SM_RemovePort(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_RemovePort\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566274)
+[**SM\_RemovePort\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removeport_in)
 
-[**SM\_RemovePort\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566276)
+[**SM\_RemovePort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removeport_out)
 
  
 

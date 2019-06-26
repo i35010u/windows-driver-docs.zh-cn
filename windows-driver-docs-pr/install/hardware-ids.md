@@ -4,12 +4,12 @@ description: 硬件 ID 是 Windows 用来与设备 INF 文件匹配供应商定�
 ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5312df32adcc5a63e470491253cb1f5ec0c66c3
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 0c3a558ccf00d6db89267f473f647df1287bab04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383824"
 ---
 # <a name="hardware-id"></a>硬件 ID
 
@@ -39,11 +39,11 @@ ms.locfileid: "65106417"
 
 已建立自己的命名约定的现有设备类可能使用自定义格式。 有关其硬件 ID 格式的信息，请参阅此类总线的硬件规格。 新枚举器不应使用此格式。
 
-硬件 ID，不包括 NULL 终止符的字符数必须小于 MAX_DEVICE_ID_LEN。 此约束应用于所有字段和任意长度的总和"\\"字段中的硬件 id。 有关设备 Id 上的约束的详细信息，请参阅的操作部分[ **IRP_MN_QUERY_ID**](https://msdn.microsoft.com/library/windows/hardware/ff551679)。
+硬件 ID，不包括 NULL 终止符的字符数必须小于 MAX_DEVICE_ID_LEN。 此约束应用于所有字段和任意长度的总和"\\"字段中的硬件 id。 有关设备 Id 上的约束的详细信息，请参阅的操作部分[ **IRP_MN_QUERY_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)。
 
 ## <a name="obtaining-the-list-of-hardware-ids-for-a-device"></a>获取设备的硬件 Id 的列表
 
-若要获取的设备硬件 Id 列表，请调用[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)与*DeviceProperty*参数设置为**DevicePropertyHardwareID**. 硬件 Id，此例程检索列表是[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)值。 中的硬件列表，每个硬件 ID 和最后一个 NULL 终止符之后, 包括 NULL 终止符的字符的最大数是 REGSTR_VAL_MAX_HCID_LEN。 Id 可能的硬件 Id 列表中的最大数目为 64。
+若要获取的设备硬件 Id 列表，请调用[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)与*DeviceProperty*参数设置为**DevicePropertyHardwareID**. 硬件 Id，此例程检索列表是[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)值。 中的硬件列表，每个硬件 ID 和最后一个 NULL 终止符之后, 包括 NULL 终止符的字符的最大数是 REGSTR_VAL_MAX_HCID_LEN。 Id 可能的硬件 Id 列表中的最大数目为 64。
 
 ## <a name="examples-of-hardware-ids"></a>硬件 Id 的示例
 

@@ -11,12 +11,12 @@ keywords:
 - UlMonitorDigitModes
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 026f3cdc988bd6fdcbb7ea1e5ae71eecca36bcd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ef500476811f8950e8c03f40de3c5b9fe8e85fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384702"
 ---
 # <a name="responding-to-an-oidcotapilinecaps-query"></a>响应的 OID\_CO\_TAPI\_行\_CAPS 查询
 
@@ -24,7 +24,7 @@ ms.locfileid: "63347279"
 
 
 
-以响应[OID\_共同\_TAPI\_行\_CAPS](https://msdn.microsoft.com/library/windows/hardware/ff569098)查询、 呼叫管理器或 MCM 返回共同\_TAPI\_行\_CAPS 结构包含一条线\_开发人员\_CAPS 结构。 若要支持语音流式处理，呼叫管理器或 MCM 必须指定以下值的行中\_开发人员\_CAPS 结构：
+以响应[OID\_共同\_TAPI\_行\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-line-caps)查询、 呼叫管理器或 MCM 返回共同\_TAPI\_行\_CAPS 结构包含一条线\_开发人员\_CAPS 结构。 若要支持语音流式处理，呼叫管理器或 MCM 必须指定以下值的行中\_开发人员\_CAPS 结构：
 
 -   **ulMediaModes**
 

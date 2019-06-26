@@ -8,12 +8,12 @@ keywords:
 - 跟踪消息前缀 WDK Tracefmt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95228298ec048e0753e108691eed2546cdfadc52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c60359392686143c65ded544b7fa32c96e602f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354641"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379589"
 ---
 # <a name="trace-message-prefix"></a>跟踪消息前缀
 
@@ -107,13 +107,13 @@ Tracefmt 默认情况下，包括特定的数据元素，但用户可以添加�
 <td><p>%!标志 ！</p></td>
 <td><p>string</p></td>
 <td><p>显示的名称<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a>启用跟踪消息。</p>
-<p>(因为<a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>宏反转的标志和级别的参数，生成的 DoTraceMessage 消息显示的值<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a>此字段中.)</p></td>
+<p>(因为<a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>宏反转的标志和级别的参数，生成的 DoTraceMessage 消息显示的值<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a>此字段中.)</p></td>
 </tr>
 <tr class="even">
 <td><p>%!级别 ！</p></td>
 <td><p>string</p></td>
 <td><p>显示的值<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a>这样的跟踪消息。</p>
-<p>(因为<a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>宏反转的标志和级别的参数，生成的 DoTraceMessage 消息显示的名称<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a>此字段中。)</p></td>
+<p>(因为<a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>宏反转的标志和级别的参数，生成的 DoTraceMessage 消息显示的名称<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a>此字段中。)</p></td>
 </tr>
 <tr>
 <td><p>%!COMPNAME!</p></td>

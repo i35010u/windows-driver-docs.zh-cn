@@ -6,12 +6,12 @@ ms.assetid: 5cadb1e2-7011-42a5-8e41-6473069b25a6
 keywords:
 - IRP_MN_CANCEL_REMOVE_DEVICE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd7eea40cbe3b1108668c8ca3f61b66ea5dfad5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a0c1009dad83fe8cac0fe717c080df58e0ef4ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385614"
 ---
 # <a name="irpmncancelremovedevice"></a>IRP\_MN\_CANCEL\_REMOVE\_DEVICE
 
@@ -52,11 +52,11 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 
 如果设备已启动时驱动程序收到此 IRP，驱动程序只需将状态设置为成功和将 IRP 传递给下一步的驱动程序 （或完成 IRP，如果该驱动程序是总线驱动程序）。 对于此类取消删除 IRP，函数或筛选器驱动程序不需要设置完成例程。 设备可能无法在删除挂起状态下，由于，例如，驱动器失败以前**IRP\_MN\_查询\_删除\_设备**。
 
-PnP 管理器会调用任何**EventCategoryTargetDeviceChange**具有 GUID 的通知回调\_目标\_设备\_删除\_后取消**IRP\_MN\_取消\_删除\_设备**请求完成。 通过调用在设备上注册此类回调[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)。 PnP 管理器注册任何用户模式组件还要求对设备上的通知上，通过调用**RegisterDeviceNotification**。
+PnP 管理器会调用任何**EventCategoryTargetDeviceChange**具有 GUID 的通知回调\_目标\_设备\_删除\_后取消**IRP\_MN\_取消\_删除\_设备**请求完成。 通过调用在设备上注册此类回调[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。 PnP 管理器注册任何用户模式组件还要求对设备上的通知上，通过调用**RegisterDeviceNotification**。
 
 如果在设备上装入文件系统，则它必须撤消删除查询通知的响应中的操作的任何操作。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)有关处理删除 Irp 的详细信息以及处理所有的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)有关处理删除 Irp 的详细信息以及处理所有的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 
@@ -81,7 +81,7 @@ PnP 管理器会调用任何**EventCategoryTargetDeviceChange**具有 GUID 的�
 ## <a name="see-also"></a>请参阅
 
 
-[**IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)
+[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)
 
 [**IRP\_MN\_查询\_删除\_设备**](irp-mn-query-remove-device.md)
 

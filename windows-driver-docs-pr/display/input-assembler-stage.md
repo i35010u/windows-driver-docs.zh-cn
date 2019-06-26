@@ -4,12 +4,12 @@ description: 输入装配器阶段
 ms.assetid: 8db6a2ab-8354-4690-8141-2cdd91c77d5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa2a2f0d0065c4562b7aab79374e648305a49a66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d8fbd37c2116f7225e1f562a9de1c888494a68c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385176"
 ---
 # <a name="input-assembler-stage"></a>输入装配器阶段
 
@@ -24,7 +24,7 @@ ms.locfileid: "63350253"
 
 通过允许在非索引或索引呈现时，若要循环访问每个顶点缓冲区 （未编制索引的情况下） 中的范围或索引缓冲区 （索引大小写） 的顺序遍历，启用实例化的 geometry 呈现。 缓冲区绑定将被视为*实例数据*或*顶点数据*。 此标识指定如何执行实例化的呈现时使用的绑定的缓冲区。 地址生成的非索引或索引的呈现用于提取顶点数据，也可以计算为循环时，运行时执行实例化的呈现。 实例数据，但是，始终按顺序开始遍历从每个缓冲区的偏移量，在每个实例 （例如，正向后遍历的顶点数实例中的一个步骤） 的一个步骤的频率。 此外可以选择步骤速率为实例数据为实例频率 （即，一个步骤前滚其他所有实例，每个第三个实例，依次类推） 子调和。
 
-IA 的另一种特殊情况是，它可以读取流输出阶段的缓冲区写入。 此类方案，可以使新类型的绘制操作[ **DrawAuto**](https://msdn.microsoft.com/library/windows/hardware/ff556123)。 *DrawAuto*允许动态少量的输出写入到流输出缓冲区可以重复使用、 无需 CPU 干预，以确定实际写入的数据量。
+IA 的另一种特殊情况是，它可以读取流输出阶段的缓冲区写入。 此类方案，可以使新类型的绘制操作[ **DrawAuto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_drawauto)。 *DrawAuto*允许动态少量的输出写入到流输出缓冲区可以重复使用、 无需 CPU 干预，以确定实际写入的数据量。
 
 除了生成顶点缓冲区中的数据，IA 可以自动生成三个标量计数器值：VertexID、 PrimitiveID 和实例 Id，用于呈现管道中的着色器阶段的输入。
 
@@ -32,19 +32,19 @@ IA 的另一种特殊情况是，它可以读取流输出阶段的缓冲区写�
 
 Direct3D 运行时调用以下的驱动程序函数，来创建、 设置，并销毁 IA:
 
-[**CalcPrivateElementLayoutSize**](https://msdn.microsoft.com/library/windows/hardware/ff538289)
+[**CalcPrivateElementLayoutSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateelementlayoutsize)
 
-[**CreateElementLayout**](https://msdn.microsoft.com/library/windows/hardware/ff540640)
+[**CreateElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createelementlayout)
 
-[**DestroyElementLayout**](https://msdn.microsoft.com/library/windows/hardware/ff552771)
+[**DestroyElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyelementlayout)
 
-[**IaSetIndexBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff567387)
+[**IaSetIndexBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setindexbuffer)
 
-[**IaSetInputLayout**](https://msdn.microsoft.com/library/windows/hardware/ff567389)
+[**IaSetInputLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setinputlayout)
 
-[**IaSetTopology**](https://msdn.microsoft.com/library/windows/hardware/ff567390)
+[**IaSetTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_settopology)
 
-[**IaSetVertexBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff567392)
+[**IaSetVertexBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setvertexbuffers)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - ARM64
 ms.date: 07/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c22cbe5a780f1353c15b9c5dabde6e83e2d262dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 630230a2a8fc7de2ae616ef7ca9e541812257e86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366933"
 ---
 # <a name="debugging-on-arm64"></a>在 ARM64 上进行调试
 
@@ -55,9 +55,9 @@ ms.locfileid: "63377193"
 - 在仿真程序在内部生成数据未对齐、 非法指令，在页 I/O 错误异常，并处理它生成的。 当使用 WinDbg 时，请考虑配置这些异常作为*忽略*下调试 / 事件筛选器... 菜单项。  
 - 如果在用户模式下使用 ARM64 WinDbg，则不支持单步执行跨 x86 和 CHPE 函数边界。 若要解决此问题，请在目标代码上设置断点。 
 
-有关支持 ARM64 和 WOW64 的常规信息，请参阅[运行 32 位应用程序](https://msdn.microsoft.com/library/windows/desktop/aa384249.aspx)64 位 Windows 编程指南中。 
+有关支持 ARM64 和 WOW64 的常规信息，请参阅[运行 32 位应用程序](https://docs.microsoft.com/windows/desktop/WinProg64/running-32-bit-applications)64 位 Windows 编程指南中。 
 
-有关调试在 WOW64 下运行的应用程序的信息，请参阅[调试 WOW64](https://msdn.microsoft.com/library/windows/desktop/aa384163.aspx)。
+有关调试在 WOW64 下运行的应用程序的信息，请参阅[调试 WOW64](https://docs.microsoft.com/windows/desktop/WinProg64/debugging-wow64)。
 
 
 

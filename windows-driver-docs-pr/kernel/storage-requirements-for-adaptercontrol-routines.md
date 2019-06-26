@@ -10,12 +10,12 @@ keywords:
 - 存储 WDK DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d0252a2226b844c30f7521008ccfb6beff5cc61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afb3266a369cb1f15d33b0b1654536bd742a3da7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382976"
 ---
 # <a name="storage-requirements-for-adaptercontrol-routines"></a>AdapterControl 例程的存储要求
 
@@ -23,11 +23,11 @@ ms.locfileid: "63331943"
 
 
 
-如果它具有[ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)例程，驱动程序必须提供常驻存储以下：
+如果它具有[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程，驱动程序必须提供常驻存储以下：
 
 -   若要在其 DMA 操作中使用的上下文信息
 
--   返回一个适配器对象指针[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)
+-   返回一个适配器对象指针[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)
 
 -   ULONG 类型变量来保存系统确定最大*NumberOfMapRegisters*适用于任何给定的 DMA 传输请求
 

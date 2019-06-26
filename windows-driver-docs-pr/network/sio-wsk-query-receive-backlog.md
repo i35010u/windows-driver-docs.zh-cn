@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_QUERY_RECEIVE_BACKLOG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ed4d02617201f39c6ebeb9f98d02ed52069d4edc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8326b7aec056733fba14d17d75bf7c20344c687
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379141"
 ---
 # <a name="siowskqueryreceivebacklog"></a>SIO\_WSK\_查询\_接收\_积压工作
 
@@ -20,7 +20,7 @@ SIO\_WSK\_查询\_接收\_积压工作套接字 I/O 控制操作允许查询的�
 
 如果 WSK 应用程序使用此套接字的 I/O 控制操作来查询接收积压工作，它必须实现后的面向连接的套接字已连接到远程传输地址。
 
-若要查询的面向连接的套接字接收数据的当前积压，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要查询的面向连接的套接字接收数据的当前积压，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -30,7 +30,7 @@ SIO\_WSK\_查询\_接收\_积压工作套接字 I/O 控制操作允许查询的�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

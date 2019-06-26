@@ -4,12 +4,12 @@ description: 平板扫描仪的基本扫描
 ms.assetid: a1100a8d-752a-4109-b1dc-cf7c4bf5a100
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d06ef7b2635bb80ec3aaed528052ebd94527f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3d82c0110317438abdbd1c68abab68e434e4b4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366754"
 ---
 # <a name="basic-scanning-for-flatbed-scanners"></a>平板扫描仪的基本扫描
 
@@ -23,25 +23,25 @@ Windows Vista 中的平板项的编程和扫描行为等同于重载系统，由
 
 当程序扫描程序的平板、 但不是一定按此顺序，应用程序通常将执行以下操作：
 
--   枚举顶级 WIA 项并查找标记有项， **WiaItemTypeProgrammableDataSource**项标志且[ **WIA\_IPA\_项\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff551581)属性设置为 WIA\_类别\_平板。
+-   枚举顶级 WIA 项并查找标记有项， **WiaItemTypeProgrammableDataSource**项标志且[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性设置为 WIA\_类别\_平板。
 
--   读取的有效值[ **WIA\_IPA\_TYMED** ](https://msdn.microsoft.com/library/windows/hardware/ff551656)并[ **WIA\_IPA\_格式**](https://msdn.microsoft.com/library/windows/hardware/ff551553)属性。
+-   读取的有效值[ **WIA\_IPA\_TYMED** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)并[ **WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)属性。
 
 -   选择任一内存传输或文件传输类型通过设置 WIA\_IPA\_TYMED 属性。 有关可用的传输类型的详细信息，请参阅[数据传输](data-transfers.md)。 有关**IStream**-基于传输，WIA\_IPA\_TYMED 默认设置为 TYMED\_文件，不应更改。
 
 -   选择数据的最终格式通过设置 WIA\_IPA\_格式属性。
 
--   选择映像设置，如[ **WIA\_IPA\_深度**](https://msdn.microsoft.com/library/windows/hardware/ff551546)并[ **WIA\_IPA\_DATATYPE**](https://msdn.microsoft.com/library/windows/hardware/ff551543).
+-   选择映像设置，如[ **WIA\_IPA\_深度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)并[ **WIA\_IPA\_DATATYPE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype).
 
 -   使用此 WIA 项将数据传输。
 
 使用扫描程序的平板扫描时，该驱动程序通常将执行以下操作：
 
-1.  调用[ **IWiaMiniDrv::drvValidateItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff545017)并[ **IWiaMiniDrv::drvReadItemProperties**](https://msdn.microsoft.com/library/windows/hardware/ff545005)。 WIA 驱动程序应在应用程序的属性设置阶段过程中验证属性的任何设置。
+1.  调用[ **IWiaMiniDrv::drvValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)并[ **IWiaMiniDrv::drvReadItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvreaditemproperties)。 WIA 驱动程序应在应用程序的属性设置阶段过程中验证属性的任何设置。
 
-2.  调用[ **IWiaMiniDrv::drvWriteItemProperties**](https://msdn.microsoft.com/library/windows/hardware/ff545020)。 传入的 WIA 项上下文属于平板扫描仪项，以便让驱动程序知道应用程序想要使用扫描程序的平板扫描。
+2.  调用[ **IWiaMiniDrv::drvWriteItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)。 传入的 WIA 项上下文属于平板扫描仪项，以便让驱动程序知道应用程序想要使用扫描程序的平板扫描。
 
-3.  调用[ **IWiaMiniDrv::drvAcquireItemData**](https://msdn.microsoft.com/library/windows/hardware/ff543956)。 传入的 WIA 项上下文属于平板扫描仪项，因此驱动程序可以轻松地确定应用程序想要使用平板辊扫描。
+3.  调用[ **IWiaMiniDrv::drvAcquireItemData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)。 传入的 WIA 项上下文属于平板扫描仪项，因此驱动程序可以轻松地确定应用程序想要使用平板辊扫描。
 
 4.  程序设备，并从平板、 使用的当前平板项属性的扫描。 如果 WIA 驱动程序不在平板扫描模式下，它应尝试切换到扫描此模式。 没有特殊的设置应用程序切换为使用平板。 使用平板项要扫描是应用程序和驱动程序; 之间的协定用户同意平板时要使用的数据传输。
 

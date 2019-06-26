@@ -4,12 +4,12 @@ description: MSFC\_HbaApiVersion WMI 类
 ms.assetid: 642b8313-d1ca-4c07-9c39-b49ef65b4438
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ff89d0e4041b10e429270db1cbc752b78616ec8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a97e2579f71f20e8f26999eb97d26f356e81915
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378983"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384152"
 ---
 # <a name="msfchbaapiversion-wmi-class"></a>MSFC\_HbaApiVersion WMI 类
 
@@ -29,7 +29,7 @@ class MSFC_HbaApiVersion
 
 此类定义编译时通过 WMI 工具套件，它会生成以下数据结构：
 
-[**MSFC\_HbaApiVersion**](https://msdn.microsoft.com/library/windows/hardware/ff562507)
+[**MSFC\_HbaApiVersion**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff562507(v=vs.85))
 
 没有与此 WMI 类相关联的方法。
 

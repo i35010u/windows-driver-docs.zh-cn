@@ -11,12 +11,12 @@ keywords:
 - 页关键字 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6f93d8e998f3abdf99cfbfec14edcdba6fc7e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5760dc4474e3c01c422af72e2f1a74fc7d22f17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381363"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384223"
 ---
 # <a name="locking-pageable-code-or-data"></a>锁定可分页代码或数据
 
@@ -28,7 +28,7 @@ ms.locfileid: "63381363"
 
 它所管理的设备不处于活动状态时，偶尔使用设备 （例如调制解调器） 的驱动程序可以释放系统空间。 本部分将放在单个部分必须是常驻活动设备，提供服务的代码和您的驱动程序在内存中锁定代码，使用该设备时，便可以将指定为可分页。 当打开驱动程序的设备时，操作系统将存入内存的可分页的部分中，驱动程序锁定它存在直到不再需要。
 
-系统 CD 音频驱动程序代码使用此技术。 驱动程序的代码分为可分页几个部分根据制造商的 CD 设备。 某些品牌可能永远不会显示给定系统上。 此外，即使 CD-ROM 的系统上存在，它可能会访问很少，因此分组到可分页部分中，通过 CD 类型的代码可确保永远不会加载的设备的特定计算机上不存在的代码。 但是，当访问该设备，系统可加载相应的 CD 设备的代码。 然后驱动程序调用[ **MmLockPagableCodeSection** ](https://msdn.microsoft.com/library/windows/hardware/ff554601)例程，如所述，要到其设备时的内存中锁定其代码正在使用。
+系统 CD 音频驱动程序代码使用此技术。 驱动程序的代码分为可分页几个部分根据制造商的 CD 设备。 某些品牌可能永远不会显示给定系统上。 此外，即使 CD-ROM 的系统上存在，它可能会访问很少，因此分组到可分页部分中，通过 CD 类型的代码可确保永远不会加载的设备的特定计算机上不存在的代码。 但是，当访问该设备，系统可加载相应的 CD 设备的代码。 然后驱动程序调用[ **MmLockPagableCodeSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)例程，如所述，要到其设备时的内存中锁定其代码正在使用。
 
 若要隔离到命名的节的可分页的代码，请将其标记与以下编译器指令：
 
@@ -44,9 +44,9 @@ ms.locfileid: "63381363"
 #endif 
 ```
 
-使可分页的驱动程序代码驻留在内存中锁定，驱动程序调用[ **MmLockPagableCodeSection**](https://msdn.microsoft.com/library/windows/hardware/ff554601)，传递 （通常在驱动程序例程的入口点） 的地址是可分页的代码中部分。 **MmLockPagableCodeSection**中包含在调用的例程的部分的全部内容的锁。 换而言之，此调用可与相同的页关联的每个例程*Xxx*标识符常驻和锁定在内存中。
+使可分页的驱动程序代码驻留在内存中锁定，驱动程序调用[ **MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)，传递 （通常在驱动程序例程的入口点） 的地址是可分页的代码中部分。 **MmLockPagableCodeSection**中包含在调用的例程的部分的全部内容的锁。 换而言之，此调用可与相同的页关联的每个例程*Xxx*标识符常驻和锁定在内存中。
 
-**MmLockPagableCodeSection**返回的句柄时解锁部分使用 (通过调用[ **MmUnlockPagableImageSection** ](https://msdn.microsoft.com/library/windows/hardware/ff556377)例程) 或驱动程序时必须锁定中的节在其代码中的其他位置。
+**MmLockPagableCodeSection**返回的句柄时解锁部分使用 (通过调用[ **MmUnlockPagableImageSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpagableimagesection)例程) 或驱动程序时必须锁定中的节在其代码中的其他位置。
 
 驱动程序还可以将很少使用数据视为作为可分页，以便它，也可以出页之前它所支持的设备处于活动状态。 例如，系统混音器驱动程序将使用可分页的数据。 Mixer 设备都有与之关联，因此此驱动程序可以使其数据可分页无异步 I/O。
 
@@ -74,11 +74,11 @@ CHAR Array2[64*1024];
 
 隐式初始化为零的全局变量可以减少磁盘上的可执行文件的大小和孰优孰显式初始化为零。 除中，在其中它才可将变量放在特定的数据部分的情况下应避免使用显式的零初始化。
 
-若要使驻留在内存中的数据部分，并将其锁定在内存中，驱动程序调用[ **MmLockPagableDataSection**](https://msdn.microsoft.com/library/windows/hardware/ff554607)，传递数据项的可分页的数据部分中显示。 **MmLockPagableDataSection**返回要在后续锁定或解锁请求中使用的句柄。
+若要使驻留在内存中的数据部分，并将其锁定在内存中，驱动程序调用[ **MmLockPagableDataSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagabledatasection)，传递数据项的可分页的数据部分中显示。 **MmLockPagableDataSection**返回要在后续锁定或解锁请求中使用的句柄。
 
-若要还原锁定的节的可分页状态，请调用[ **MmUnlockPagableImageSection**](https://msdn.microsoft.com/library/windows/hardware/ff556377)，将返回的句柄值传递[ **MmLockPagableCodeSection**](https://msdn.microsoft.com/library/windows/hardware/ff554601)或[ **MmLockPagableDataSection**](https://msdn.microsoft.com/library/windows/hardware/ff554607)根据。 驱动程序的[ *Unload* ](https://msdn.microsoft.com/library/windows/hardware/ff564886)例程必须调用**MmUnlockPagableImageSection**释放其所获得的可锁定的代码和数据节的每个句柄。
+若要还原锁定的节的可分页状态，请调用[ **MmUnlockPagableImageSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpagableimagesection)，将返回的句柄值传递[ **MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)或[ **MmLockPagableDataSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagabledatasection)根据。 驱动程序的[ *Unload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程必须调用**MmUnlockPagableImageSection**释放其所获得的可锁定的代码和数据节的每个句柄。
 
-锁定节是代价高昂的操作，因为内存管理器锁定到内存中的页之前必须搜索其加载的模块列表。 如果驱动程序锁定在其代码中的多个位置中的部分，则应使用更高效[ **MmLockPagableSectionByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff554610)其首次调用后**MmLockPagable*Xxx*部分**。
+锁定节是代价高昂的操作，因为内存管理器锁定到内存中的页之前必须搜索其加载的模块列表。 如果驱动程序锁定在其代码中的多个位置中的部分，则应使用更高效[ **MmLockPagableSectionByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmlockpagablesectionbyhandle)其首次调用后**MmLockPagable*Xxx*部分**。
 
 句柄传递给**MmLockPagableSectionByHandle**是对的早期调用返回的句柄**MmLockPagableCodeSection**或**MmLockPagableDataSection**。
 

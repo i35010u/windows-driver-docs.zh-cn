@@ -16,12 +16,12 @@ keywords:
 - framework 对象 WDK KMDF，I/O 队列对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef636f79cd697c4fbf2d92fcd7f5f6af8fcf27c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c91318ab44cfd0bbb76e78e91d51a87f98b534d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378083"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384453"
 ---
 # <a name="framework-queue-objects"></a>框架队列对象
 
@@ -29,7 +29,7 @@ ms.locfileid: "63378083"
 
 
 
-Framework 队列对象表示*I/O 队列*，这是 I/O 的容器，驱动程序收到的请求。 每个驱动程序可以创建一个或多个 I/O 队列用于每个设备。 Framework 队列对象定义一组[事件的回调函数](https://msdn.microsoft.com/library/windows/hardware/dn265647)可提供驱动程序和驱动程序可以调用的对象方法的一组。
+Framework 队列对象表示*I/O 队列*，这是 I/O 的容器，驱动程序收到的请求。 每个驱动程序可以创建一个或多个 I/O 队列用于每个设备。 Framework 队列对象定义一组[事件的回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/)可提供驱动程序和驱动程序可以调用的对象方法的一组。
 
 当框架接收定向到一个驱动程序的设备的 I/O 请求时，该框架会将请求放置在相应的 I/O 队列。 如果您的驱动程序将注册一个或多个[请求处理程序](request-handlers.md)，框架可以通知您的驱动程序每次 I/O 请求时可用。 或者，您的驱动程序可以轮询请求的 I/O 队列。
 

@@ -10,12 +10,12 @@ keywords:
 - DXVA_MBctrl_P_OffHostIDCT_1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46432e442e4c41bfe2db8a1a490b86f698689ebe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d76743e7c97e34a31420044bfd407bd2920e5058
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385601"
 ---
 # <a name="macroblock-control-commands"></a>宏块控制命令
 
@@ -25,21 +25,21 @@ ms.locfileid: "63346845"
 
 在压缩的图片解码过程中每个已解码的宏块生成受宏块控制命令结构。 有四个宏块控制命令结构中定义*dxva.h*标头文件：
 
-[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563983)
+[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)
 
-[**DXVA\_MBctrl\_I\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563989)
+[**DXVA\_MBctrl\_I\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)
 
-[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563993)
+[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)
 
-[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563997)
+[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)
 
 在中显式定义的结构*dxva.h*泛型设计用于在 DirectX 弗吉尼亚宏块控制命令的特殊情况 此常规设计的说明，请参阅[泛型窗体的宏块控制命令结构](generic-form-of-macroblock-control-command-structures.md)。
 
 若要使用哪个宏块控制命令结构的选择基于图片要解码的类型以及如何对其进行解码。 以下结构成员和标志确定图片类型解码选项，并将使用这四个 DirectX VA 宏块控制结构：
 
--   **BPicIntra**， **bChromaFormat**， **bPicOBMC**， **bPicBinPB**， **bPic4MVallowed**和**bMV\_RPS**的成员[ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)结构。
+-   **BPicIntra**， **bChromaFormat**， **bPicOBMC**， **bPicBinPB**， **bPic4MVallowed**和**bMV\_RPS**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构。
 
--   **BConfigResidDiffHost**的成员[ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)结构。
+-   **BConfigResidDiffHost**的成员[ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)结构。
 
 -   *HostResidDiff*标志 (位中的 10 **wMBtype**的每个宏块控制结构的成员)。
 
@@ -59,7 +59,7 @@ ms.locfileid: "63346845"
 
 ### <a name="span-iddxvambctrlioffhostidct1spanspan-iddxvambctrlioffhostidct1spanspan-iddxvambctrlioffhostidct1spandxvambctrlioffhostidct1"></a><span id="DXVA_MBctrl_I_OffHostIDCT_1"></span><span id="dxva_mbctrl_i_offhostidct_1"></span><span id="DXVA_MBCTRL_I_OFFHOSTIDCT_1"></span>DXVA\_MBctrl\_I\_OffHostIDCT\_1
 
-[ **DXVA\_MBctrl\_我\_OffHostIDCT\_1** ](https://msdn.microsoft.com/library/windows/hardware/ff563989)结构用于内部图片 4:2:0 采样非主机残留差异解码。 以下结构成员和标志必须等于所示的值：
+[ **DXVA\_MBctrl\_我\_OffHostIDCT\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)结构用于内部图片 4:2:0 采样非主机残留差异解码。 以下结构成员和标志必须等于所示的值：
 
 -   **bPicIntra**必须等于 1 （内部图片）。
 
@@ -71,7 +71,7 @@ ms.locfileid: "63346845"
 
 ### <a name="span-iddxvambctrlphostresiddiff1spanspan-iddxvambctrlphostresiddiff1spanspan-iddxvambctrlphostresiddiff1spandxvambctrlphostresiddiff1"></a><span id="DXVA_MBctrl_P_HostResidDiff_1"></span><span id="dxva_mbctrl_p_hostresiddiff_1"></span><span id="DXVA_MBCTRL_P_HOSTRESIDDIFF_1"></span>DXVA\_MBctrl\_P\_HostResidDiff\_1
 
-[ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://msdn.microsoft.com/library/windows/hardware/ff563993)结构用于与基于主机的残留差异解码 P 和 B 的图片。 不使用以下宏块控制进程：OBMC、 使用的每个宏块的四个动作矢量的 B 部分的 PB 照片和使用动作矢量引用照片选择。
+[ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)结构用于与基于主机的残留差异解码 P 和 B 的图片。 不使用以下宏块控制进程：OBMC、 使用的每个宏块的四个动作矢量的 B 部分的 PB 照片和使用动作矢量引用照片选择。
 
 以下结构成员和标志必须等于所示的值：
 
@@ -91,7 +91,7 @@ ms.locfileid: "63346845"
 
 ### <a name="span-iddxvambctrlpoffhostidct1spanspan-iddxvambctrlpoffhostidct1spanspan-iddxvambctrlpoffhostidct1spandxvambctrlpoffhostidct1"></a><span id="DXVA_MBctrl_P_OffHostIDCT_1"></span><span id="dxva_mbctrl_p_offhostidct_1"></span><span id="DXVA_MBCTRL_P_OFFHOSTIDCT_1"></span>DXVA\_MBctrl\_P\_OffHostIDCT\_1
 
-[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1** ](https://msdn.microsoft.com/library/windows/hardware/ff563997)结构用于 P 和 B 的图片，4:2:0 采样非主机残留差异解码。 不使用以下宏块控制进程：OBMC、 使用的每个宏块的四个动作矢量的 B 部分的 PB 照片和使用动作矢量引用照片选择。
+[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)结构用于 P 和 B 的图片，4:2:0 采样非主机残留差异解码。 不使用以下宏块控制进程：OBMC、 使用的每个宏块的四个动作矢量的 B 部分的 PB 照片和使用动作矢量引用照片选择。
 
 以下结构成员和标志必须等于所示的值：
 

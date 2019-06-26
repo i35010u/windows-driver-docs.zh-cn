@@ -8,12 +8,12 @@ keywords:
 - 绑定更改 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccf45fba976db2a9aa2602769b08df22acdcfc18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a224e33b0e7742cb6b97d650acc181696170852
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353233"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382780"
 ---
 # <a name="changing-bindings-for-a-component"></a>更改组件的绑定
 
@@ -21,7 +21,7 @@ ms.locfileid: "63353233"
 
 
 
-网络配置子系统始终影响通知对象的网络组件绑定中的更改通知的通知对象。 子系统调用通知对象的[ **INetCfgComponentNotifyBinding::NotifyBindingPath** ](https://msdn.microsoft.com/library/windows/hardware/ff547731)方法，并将传递一个值，指定并提供了一个指向**INetCfgBindingPath**绑定路径更改中涉及的接口。 如果子系统通过 NCN\_禁用禁用与特定的网络卡的通知对象的网络组件共享的绑定路径，请使用另一个网卡通知对象激活绑定中的以下代码所示。
+网络配置子系统始终影响通知对象的网络组件绑定中的更改通知的通知对象。 子系统调用通知对象的[ **INetCfgComponentNotifyBinding::NotifyBindingPath** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547731(v=vs.85))方法，并将传递一个值，指定并提供了一个指向**INetCfgBindingPath**绑定路径更改中涉及的接口。 如果子系统通过 NCN\_禁用禁用与特定的网络卡的通知对象的网络组件共享的绑定路径，请使用另一个网卡通知对象激活绑定中的以下代码所示。
 
 ```C++
 HRESULT CSample::NotifyBindingPath(DWORD dwChangeFlag,

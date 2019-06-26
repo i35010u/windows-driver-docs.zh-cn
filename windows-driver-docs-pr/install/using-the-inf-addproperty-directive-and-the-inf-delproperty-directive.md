@@ -4,12 +4,12 @@ description: 使用 INF AddProperty 指令和 INF DelProperty 指令
 ms.assetid: e5ae8d66-b2dc-409e-bdac-9034a9e24672
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf63e5b2cb5d9ddda5d616d563f4f76fa07df949
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dac0f50c870a71d8236deda453177d895d72bf8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384749"
 ---
 # <a name="using-the-inf-addproperty-directive-and-the-inf-delproperty-directive"></a>使用 INF AddProperty 指令和 INF DelProperty 指令
 
@@ -43,10 +43,10 @@ ms.locfileid: "63339392"
  **{** <em>属性类别 guid</em> **}，** <em>属性 pid</em> **，** <em>类型</em> **，\[** <em>标志</em> ** \]，** <em>值</em>条目的值提供以下：
 
 <a href="" id="property-name"></a>*property-name*  
-名称标识 DEVPKEY_DrvPkg_*Xxx*属性。 例如， **DeviceModel**，表示[ **DEVPKEY_DrvPkg_Model** ](https://msdn.microsoft.com/library/windows/hardware/ff543523)属性，或者**DeviceVendorWebSite**，它表示[ **DEVPKEY_DrvPkg_VendorWebSite** ](https://msdn.microsoft.com/library/windows/hardware/ff543527)属性。
+名称标识 DEVPKEY_DrvPkg_*Xxx*属性。 例如， **DeviceModel**，表示[ **DEVPKEY_DrvPkg_Model** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-drvpkg-model)属性，或者**DeviceVendorWebSite**，它表示[ **DEVPKEY_DrvPkg_VendorWebSite** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-drvpkg-vendorwebsite)属性。
 
 <a href="" id="property-category-guid"></a>*property-category-guid*  
-属性所属的属性类别的 GUID 值。 例如，系统定义[ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)属性。 GUID 值还可以指定自定义设备类别。
+属性所属的属性类别的 GUID 值。 例如，系统定义[ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)属性。 GUID 值还可以指定自定义设备类别。
 
 <a href="" id="property-pid"></a>*property-pid*  
 标识的属性类别中的属性的属性标识符。 例如，DEVPKEY_Device_FriendlyName 属性的属性标识符的值为 14。
@@ -87,16 +87,16 @@ DeviceModel,,,,"Sample Device Model Name"
 *属性名称* \[ **、** *标志* \[ **，** <em>值</em>\] \] **{** <em>属性类别 guid</em> **}，** *属性 pid* \[ **，** *标志* \[ **，** <em>值</em>\] \]条目的值提供以下：
 
 <a href="" id="property-name"></a>*property-name*  
-名称标识 DEVPKEY_DrvPkg_*Xxx*属性。 例如， **DeviceModel**，表示[ **DEVPKEY_DrvPkg_Model** ](https://msdn.microsoft.com/library/windows/hardware/ff543523)属性，或者**DeviceVendorWebSite**，它表示[ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)属性。
+名称标识 DEVPKEY_DrvPkg_*Xxx*属性。 例如， **DeviceModel**，表示[ **DEVPKEY_DrvPkg_Model** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-drvpkg-model)属性，或者**DeviceVendorWebSite**，它表示[ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)属性。
 
 <a href="" id="property-category-guid"></a>*property-category-guid*  
-属性所属的属性类别的 GUID 值。 例如，系统定义[ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)属性。 GUID 值还可以指定自定义设备类别。
+属性所属的属性类别的 GUID 值。 例如，系统定义[ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)属性。 GUID 值还可以指定自定义设备类别。
 
 <a href="" id="property-pid"></a>*property-pid*  
 标识的属性类别中的属性的属性标识符。 例如，DEVPKEY_Device_FriendlyName 属性的属性标识符的值为 14。
 
 <a href="" id="flags"></a>*标志*  
-只能使用属性的数据类型是有效的可选标志[ **DEVPROP_TYPE_STRING_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff543614)。 如果设置了标志，删除操作删除指定的字符串*值*从属性字符串列表。
+只能使用属性的数据类型是有效的可选标志[ **DEVPROP_TYPE_STRING_LIST**](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-type-string-list)。 如果设置了标志，删除操作删除指定的字符串*值*从属性字符串列表。
 
 <a href="" id="value"></a>*value*  
 要从属性字符串列表中删除的字符串。

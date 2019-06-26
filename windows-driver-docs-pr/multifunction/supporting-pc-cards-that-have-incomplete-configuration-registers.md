@@ -8,12 +8,12 @@ keywords:
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e438eccd6028f59a8a8de144ea4351dedf16ce4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b31395f4e87edbe4336d52128dd93bea3086e1ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386377"
 ---
 # <a name="supporting-pc-cards-that-have-incomplete-configuration-registers"></a>支持具有不完整配置寄存器的电脑卡
 
@@ -53,11 +53,11 @@ ms.locfileid: "63379591"
 
 -   多功能设备的资源要求。
 
-    指定在资源需求[ **INF DDInstall.LogConfigOverride 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547339)。
+    指定在资源需求[ **INF DDInstall.LogConfigOverride 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)。
 
 -   设备的每个函数的硬件 ID。
 
-    指定在硬件 Id [ **INF DDInstall.HW 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547330)。
+    指定在硬件 Id [ **INF DDInstall.HW 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)。
 
 -   资源的设备，用于标识每个子函数所需的父资源的每个函数映射。
 
@@ -65,7 +65,7 @@ ms.locfileid: "63379591"
 
 INF 必须重新提出所指定的设备，因为 INF 中存在替代配置时，如果 PnP 管理器不使用该设备从任何设备资源要求的所有资源要求。
 
-对于此类设备，配置选项注册可以通过编程使用**PcCardConfig**类似编程单函数设备条目。 **PcCardConfig**条目包含适用于整个设备的信息。 **PcCardConfig**中记录条目[ **INF LogConfig 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547448)。
+对于此类设备，配置选项注册可以通过编程使用**PcCardConfig**类似编程单函数设备条目。 **PcCardConfig**条目包含适用于整个设备的信息。 **PcCardConfig**中记录条目[ **INF LogConfig 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive)。
 
 指定时**PcCardConfig**多功能设备的格式项*ConfigIndex*为单函数设备定义的相同。 配置注册单函数 PC 卡包含一组资源在该设备的属性中定义的索引。 此指令还可以用于使用基于索引的格式的配置选项注册某些多功能设备。
 

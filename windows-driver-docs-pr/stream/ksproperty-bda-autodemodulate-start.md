@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8855c41ebe9ada43e2fe7fbce62de01a95f27f6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34bff6bc7d7a162327358712b7f3991bfaaf5ad0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384148"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386920"
 ---
 # <a name="kspropertybdaautodemodulatestart"></a>KSPROPERTY\_BDA\_AUTODEMODULATE\_START
 
@@ -80,7 +80,7 @@ ms.locfileid: "63384148"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

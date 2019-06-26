@@ -18,12 +18,12 @@ keywords:
 - 状态转换会延迟 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2faaebfb81910add8e59229db8b83e5da9f52564
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 3f5aae2c72ec3be0d1a58fe40a925f6687b1efbc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385011"
 ---
 # <a name="device-low-power-states"></a>设备低功耗状态
 
@@ -58,7 +58,7 @@ D1 和 D2 中间低功耗状态。 设备的许多类未定义这些状态。 �
 一般情况下，若要将设备还原到 D0，D1 中所需的时间应早于来自 D2 还原到 D0。
 
 <a href="" id="wake-up-capability"></a>*唤醒功能*  
-D1 中的设备可能能够请求唤醒。 若要提供有关此状态是否可以支持唤醒信号的信息，总线驱动程序将使用[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构，或从 Windows 8 开始[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。
+D1 中的设备可能能够请求唤醒。 若要提供有关此状态是否可以支持唤醒信号的信息，总线驱动程序将使用[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构，或从 Windows 8 开始[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。
 
 通常情况下，设备使用 D1 这样做，因为在此状态下恢复不需要还原设备的完整硬件上下文的驱动程序。 为了尽量减少延迟的用户的角度看，D1 中的设备还原到 D0 应该不会导致尽可能少的延迟。 最小化状态转换中的延迟是比降低能耗更重要。
 
@@ -79,7 +79,7 @@ D2 是一种中间设备低功耗状态具有以下特征：
 将设备 D2 还原到 D0 采用至少只要设备 D1 中还原到 D0。 有一个大型的帧缓冲区的图形适配器是设备的具有大量的硬件上下文，若要从 D2 转换到 D0 后还原的示例。 对于此类设备 D2 的还原时间可能远大于 D1 的还原时间。
 
 <a href="" id="wake-up-capability"></a>*唤醒功能*  
-D2 中的设备可能能够请求唤醒。 若要提供有关此状态是否可以支持唤醒信号的信息，总线驱动程序将使用[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构，或从 Windows 8 开始[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。
+D2 中的设备可能能够请求唤醒。 若要提供有关此状态是否可以支持唤醒信号的信息，总线驱动程序将使用[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构，或从 Windows 8 开始[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。
 
 通常情况下，支持 D2 的驱动程序这样做，因为他们的设备不支持从 D3 唤醒。 对于这些设备，D2 状态的功耗降至最低的级别从其设备可以响应唤醒信号恢复中。 D1 状态，这实现以减少识别的用户的延迟，与实现 D2 状态中的目标是节省电量。 因此，D0 来自 D2 的还原时间通常超出了，从 D1 到 D0。 在 D2 状态下，例如，总线上的减少了的电源可能会导致关闭其部分功能，因此，需要额外的时间来重新启动，并将设备还原的设备。
 
@@ -89,7 +89,7 @@ D2 中的设备可能能够请求唤醒。 若要提供有关此状态是否可�
 
 D3 是最低功率设备低功耗状态。 所有设备都必须都支持此状态。
 
-从 Windows 8 开始，操作系统将 D3 细分为两个单独且完全不同子状态的状态，D3hot 和 D3cold。 早期版本的 Windows 定义 D3 状态，但不是 D3hot 和 D3cold substates。 但是，所有版本的[PCI 总线电源管理接口规范](https://www.pcisig.com/specifications/conventional/)定义单独 D3hot 和 D3cold 子状态和版本 4 及更高版本的[高级配置和电源接口规范](https://go.microsoft.com/fwlink/p/?linkid=57185)定义 D3hot 和 D3cold substates。
+从 Windows 8 开始，操作系统将 D3 细分为两个单独且完全不同子状态的状态，D3hot 和 D3cold。 早期版本的 Windows 定义 D3 状态，但不是 D3hot 和 D3cold substates。 但是，所有版本的[PCI 总线电源管理接口规范](https://pcisig.com/specifications/conventional/)定义单独 D3hot 和 D3cold 子状态和版本 4 及更高版本的[高级配置和电源接口规范](https://go.microsoft.com/fwlink/p/?linkid=57185)定义 D3hot 和 D3cold substates。
 
 虽然 Windows 8 之前的 Windows 版本没有显式定义 D3 D3hot 和 D3cold 子状态，但这些子状态存在隐式在这些早期版本的 Windows。 设备是隐式的 D3hot 子状态在中，如果设备处于显式 D3 状态，并且计算机处于 S0 系统电源状态。 D3hot，在设备连接到电源源 （尽管该设备可能配置为绘制低当前），并且可以检测到总线上设备的状态。 设备是隐式中的 D3cold 子状态中，如果它是显式 D3 状态，并且计算机处于低功耗 Sx 状态 （S0 以外的状态）。 在此隐式 D3cold 子状态，设备可能会收到最新，滴送但设备和计算机在有效地关闭之前发生唤醒事件时。
 
@@ -134,7 +134,7 @@ Power 主要删除从该设备，但不能从该计算机作为一个整体。 �
 总还原时间是最高的任何设备的电源状态，除了 D3cold，但通常不远大于来自 D2 的还原时间。
 
 <a href="" id="wake-up-capability"></a>*唤醒功能*  
-中的 D3hot 子状态的设备可能会或可能不能请求唤醒。 若要提供有关此子状态是否可以支持唤醒信号的信息，总线驱动程序将使用[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构，或从 Windows 8 开始[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。
+中的 D3hot 子状态的设备可能会或可能不能请求唤醒。 若要提供有关此子状态是否可以支持唤醒信号的信息，总线驱动程序将使用[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构，或从 Windows 8 开始[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。
 
 在 D3hot，只有最少滴送当前是可用的。 驱动程序和硬件必须为没有 power 做好准备。 通常支持 D3hot 总线规范提供了有关可在此状态的电源的详细的要求。 若要将设备恢复为工作状态，设备的驱动程序必须能够还原并重新初始化具体取决于 BIOS 选项可能适用于设备的 ROM 中运行的任何代码而无需设备。
 
@@ -159,7 +159,7 @@ D3cold 具有以下特征：
 总还原时间是最高的任何设备的电源状态。
 
 <a href="" id="wake-up-capability"></a>*唤醒功能*  
-中的 D3cold 子状态，设备可能能够触发唤醒睡眠计算机的唤醒信号。 此功能以报告[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构，然后通过使用 Windows 8 中，启动[ *GetIdleWakeInfo*](https://msdn.microsoft.com/library/windows/hardware/hh967712)例程中[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。 信号中唤醒计算机后，设备驱动程序将启动从 D3cold D0 到的设备的转换。 有关详细信息，请参阅以下备注。
+中的 D3cold 子状态，设备可能能够触发唤醒睡眠计算机的唤醒信号。 此功能以报告[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构，然后通过使用 Windows 8 中，启动[ *GetIdleWakeInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_idle_wake_info)例程中[GUID\_D3COLD\_支持\_接口](https://msdn.microsoft.com/library/windows/hardware/hh967714)驱动程序接口。 信号中唤醒计算机后，设备驱动程序将启动从 D3cold D0 到的设备的转换。 有关详细信息，请参阅以下备注。
 
 从 Windows 8 开始，在 D3cold 子状态的设备可能能够触发到 S0 系统电源状态的计算机的唤醒信号。 此功能报告的*GetIdleWakeInfo*例程。 **设备\_功能**结构不包含有关此功能的信息。 唤醒信号到达后，设备驱动程序将启动从 D3cold D0 到的设备的转换。 在这种情况下，在计算机处于唤醒状态时收到信号，并仅在设备需要唤醒。
 

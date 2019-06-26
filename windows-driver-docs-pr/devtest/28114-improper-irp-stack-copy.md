@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28114
-ms.openlocfilehash: 7bab641cbf7f420e73c2e1574bd8bef686f25ec5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 574512fe4459111f41f538afcaec0d45b8f523f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364145"
 ---
 # <a name="c28114"></a>C28114
 
@@ -36,7 +36,7 @@ ms.locfileid: "63361437"
 
  
 
-该驱动程序正在将 IRP 未正确复制。 未正确复制 IRP 可能会导致严重问题的驱动程序，包括丢失数据和系统崩溃。 如果必须复制 IRP 和[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387)不满足需要，则 IRP 的某些成员不应复制或复制后应归零。
+该驱动程序正在将 IRP 未正确复制。 未正确复制 IRP 可能会导致严重问题的驱动程序，包括丢失数据和系统崩溃。 如果必须复制 IRP 和[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)不满足需要，则 IRP 的某些成员不应复制或复制后应归零。
 
  
 

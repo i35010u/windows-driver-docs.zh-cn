@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b430112cd814ab7801a285a0c2195dd7e9c8bc85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 777053136ec76efa89fc059a7f322c8060b296ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383879"
 ---
 # <a name="mrxcollapseopen-routine"></a>MRxCollapseOpen 例程
 
 
-*MRxCollapseOpen*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向折叠到现有 SRV 上一个打开的文件系统请求\_打开结构。
+*MRxCollapseOpen*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向折叠到现有 SRV 上一个打开的文件系统请求\_打开结构。
 
 <a name="syntax"></a>语法
 ------
@@ -107,27 +107,27 @@ NTSTATUS MRxCollapseOpen(
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxAreFilesAliased**](https://msdn.microsoft.com/library/windows/hardware/ff549838)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
-[**MRxCleanupFobx**](https://msdn.microsoft.com/library/windows/hardware/ff549841)
+[**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://msdn.microsoft.com/library/windows/hardware/ff549845)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://msdn.microsoft.com/library/windows/hardware/ff549871)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://msdn.microsoft.com/library/windows/hardware/ff549872)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://msdn.microsoft.com/library/windows/hardware/ff549878)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxExtendForNonCache**](mrxextendfornoncache.md)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://msdn.microsoft.com/library/windows/hardware/ff550677)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://msdn.microsoft.com/library/windows/hardware/ff550691)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

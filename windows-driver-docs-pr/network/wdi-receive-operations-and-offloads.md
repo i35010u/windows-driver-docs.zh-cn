@@ -4,12 +4,12 @@ description: 操作卸载这些主要类别是可配置。MSDU 级别接收 oper
 ms.assetid: 7D2648BC-05F2-4F75-BA01-E0385C83E0E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46e307638dcbfdd6648a801560c2eb1b3f86d62f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39d7a312b7915913cac6b926ce2625bf28e3e65d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381134"
 ---
 # <a name="wdi-receive-operations-and-offloads"></a>WDI 接收操作和卸载
 
@@ -130,7 +130,7 @@ ms.locfileid: "63340925"
 <td align="left"><p>更高级别的协议 （任务） 卸载</p></td>
 <td align="left"><p>校验和</p></td>
 <td align="left"><p>校验和：启动时如果所需的可配置卸载。</p></td>
-<td align="left"><p>校验和：目标将传递其校验和卸载功能的设备 caps 设一部分到 WDI 在启动过程。 有关功能的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>。</p></td>
+<td align="left"><p>校验和：目标将传递其校验和卸载功能的设备 caps 设一部分到 WDI 在启动过程。 有关功能的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"> <strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -159,13 +159,13 @@ ms.locfileid: "63340925"
 ## <a name="related-topics"></a>相关主题
 
 
-[**NDIS\_TCP\_IP\_校验和\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff567878)
+[**NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)
 
 [WDI 数据传输](wdi-data-transfer.md)
 
-[**WDI\_免除\_操作\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn897820)
+[**WDI\_免除\_操作\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_exemption_action_type)
 
-[**WDI\_帧\_负载\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn897831)
+[**WDI\_帧\_负载\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_frame_payload_type)
 
  
 

@@ -12,21 +12,21 @@ keywords:
 - 错误注入 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba750aebcad32ffa450042a5189109aee3172c4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1163a64508a4f003f3ad12d76d81925cff0c762d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341909"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386456"
 ---
 # <a name="participating-in-error-injection"></a>参与错误注入
 
 
 若要参与错误信息检索，PSHED 插件必须实现以下回调函数：
 
-[*GetInjectionCapabilities*](https://msdn.microsoft.com/library/windows/hardware/ff559372)
+[*GetInjectionCapabilities*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_injection_capabilities)
 
-[*InjectError*](https://msdn.microsoft.com/library/windows/hardware/ff559397)
+[*InjectError*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_inject_error)
 
 下面的代码示例演示如何实现这些回调函数。
 

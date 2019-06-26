@@ -4,12 +4,12 @@ description: 本部分提供有关 Windows 合成传感器驱动程序堆栈的�
 ms.assetid: B53D76AC-127C-4B5A-B908-A647D2B3F164
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d4cb172bf7ab859f69c9f752f655a7d2ec1617f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfff1b8c8357b5b6e706fdf5eea4f6b8b193974a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386192"
 ---
 # <a name="fusion-sensor-implementation-details"></a>合成传感器实现详细信息
 
@@ -51,13 +51,13 @@ ms.locfileid: "63366541"
 
 The following structures and enumerations are used by the fusion data part of the logical sensor driver:
 
--   [**VEC3D**](https://msdn.microsoft.com/library/windows/hardware/dn946712)
+-   [**VEC3D**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
 
--   [**COORDINATE\_AXIS**](https://msdn.microsoft.com/library/windows/hardware/dn957021)
+-   [**COORDINATE\_AXIS**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
 
--   [**QUATERNION**](https://msdn.microsoft.com/library/windows/hardware/dn957081)
+-   [**QUATERNION**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
 
--   [**MATRIX3X3**](https://msdn.microsoft.com/library/windows/hardware/dn957074)
+-   [**MATRIX3X3**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
 
 -   [Fusion sensor enumerations](https://go.microsoft.com/fwlink/p/?linkid=839352) and [Fusion sensor structures](https://go.microsoft.com/fwlink/p/?linkid=839355) provide information about the entire sensor fusion data structure, which include the attitude (in multiple formats) and the linear acceleration, and the compass data.
 -->

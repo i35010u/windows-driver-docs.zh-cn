@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 251cff6bc6de239b09252e37f7d2f7b644f835b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 806fdc595d1584428b77f0c639bbf7cc696bd586
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378119"
 ---
 # <a name="devpkeydeviceresourcepickerexceptions"></a>DEVPKEY_Device_ResourcePickerExceptions
 
@@ -61,11 +61,11 @@ DEVPKEY_Device_ResourcePickerExceptions 设备属性表示允许的设备实例�
 <a name="remarks"></a>备注
 -------
 
-可以使用设置的值 DEVPKEY_Device_ResourcePickerExceptions [ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)包含在[ **INF *DDInstall*一节**](https://msdn.microsoft.com/library/windows/hardware/ff547344)安装设备的 INF 文件。
+可以使用设置的值 DEVPKEY_Device_ResourcePickerExceptions [ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)包含在[ **INF *DDInstall*一节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)安装设备的 INF 文件。
 
-可以通过调用检索的值 DEVPKEY_Device_ResourcePickerExceptions [ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)。
+可以通过调用检索的值 DEVPKEY_Device_ResourcePickerExceptions [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_ResourcePickerExceptions 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**ResourcePickerExceptions**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff537732)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_ResourcePickerExceptions 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**ResourcePickerExceptions**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,11 +90,11 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF *DDInstall*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 
