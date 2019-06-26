@@ -4,12 +4,12 @@ description: 调试器引擎简介
 ms.assetid: fa52a1f0-9397-48a5-acbd-ce5347c0baef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 885969afbd5699e9f3652d33076d89b9aa4ebdd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0dd013770d830834cad88acaf37091d871fb2ba1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361311"
 ---
 # <a name="debugger-engine-introduction"></a>调试器引擎简介
 
@@ -31,7 +31,7 @@ ms.locfileid: "63367225"
 
 对于许多概念与调试程序和调试器引擎相关，本文未尚未提供，请查看[调试技术](debugging-techniques.md)此文档的部分。
 
-若要获取的某些调试器引擎 API 的当前未记录的功能，请使用[ **Execute** ](https://msdn.microsoft.com/library/windows/hardware/ff543208)方法以执行单个调试器命令。
+若要获取的某些调试器引擎 API 的当前未记录的功能，请使用[ **Execute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-execute)方法以执行单个调试器命令。
 
 ### <a name="span-idextensionsspanspan-idextensionsspanextensions"></a><span id="extensions"></span><span id="EXTENSIONS"></span>扩展插件
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75b6d550981ce1d1717984ebb3ded4ed6fe2a57a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0b97893b39d8e81e11696a6da8ceb00767eba4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377873"
 ---
 # <a name="srbsetdataformat"></a>SRB\_设置\_数据\_格式
 
@@ -37,9 +37,9 @@ ms.locfileid: "63351607"
 
 ### <a name="comments"></a>备注
 
-在类驱动程序将传递中的新数据格式**CommandData**。**OpenFormat**的成员*pSrb*指针。 (此指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。)
+在类驱动程序将传递中的新数据格式**CommandData**。**OpenFormat**的成员*pSrb*指针。 (此指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。)
 
-有关数据格式的详细信息，请参阅[Stream 类微型驱动程序设计指南](https://msdn.microsoft.com/library/windows/hardware/ff568277)。 另请参阅[AVStream 中的数据范围交集](https://msdn.microsoft.com/library/windows/hardware/ff558680)。
+有关数据格式的详细信息，请参阅[Stream 类微型驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)。 另请参阅[AVStream 中的数据范围交集](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)。
 
  
 

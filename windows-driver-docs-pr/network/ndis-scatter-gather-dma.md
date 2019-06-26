@@ -11,12 +11,12 @@ keywords:
 - 网络接口卡 WDK 网络、 s
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5623532e4f023b76079da33e76929d40b79396fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2ce441905447e1dbabea41dfd879779074583b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329664"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368595"
 ---
 # <a name="ndis-scattergather-dma"></a>NDIS 分散/聚合 DMA
 
@@ -65,22 +65,22 @@ SGDMA 支持这种方法具有以下限制：
 
 ## <a name="registering-and-deregistering-dma-channels"></a>注册和取消 DMA 通道
 
-NDIS 微型端口驱动程序调用[ **NdisMRegisterScatterGatherDma** ](https://msdn.microsoft.com/library/windows/hardware/ff563659)函数从其[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数DMA 通道注册到 NDIS。
+NDIS 微型端口驱动程序调用[ **NdisMRegisterScatterGatherDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterscattergatherdma)函数从其[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数DMA 通道注册到 NDIS。
 
-微型端口驱动程序将传递到 DMA 说明[ **NdisMRegisterScatterGatherDma** ](https://msdn.microsoft.com/library/windows/hardware/ff563659)中*DmaDescription*参数。 **NdisMRegisterScatterGatherDma**返回应足够大以保存散播-聚集列表的缓冲区的大小。 微型端口驱动程序应使用此大小来预分配分散/集中列出的存储。
+微型端口驱动程序将传递到 DMA 说明[ **NdisMRegisterScatterGatherDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterscattergatherdma)中*DmaDescription*参数。 **NdisMRegisterScatterGatherDma**返回应足够大以保存散播-聚集列表的缓冲区的大小。 微型端口驱动程序应使用此大小来预分配分散/集中列出的存储。
 
-微型端口驱动程序还会传递[ **NdisMRegisterScatterGatherDma** ](https://msdn.microsoft.com/library/windows/hardware/ff563659)入口点*MiniportXxx*函数的 NDIS 调用以处理散播-聚集列表。 NDIS 调用微型端口驱动程序[ *MiniportProcessSGList* ](https://msdn.microsoft.com/library/windows/hardware/ff559420)函数后 HAL 已经构建了一个缓冲区的分散/集中列表。 **NdisMRegisterScatterGatherDma**提供的句柄*pNdisMiniportDmaHandle*微型端口驱动程序必须在对 NDIS 散播-聚集 DMA 函数的后续调用中使用的参数。
+微型端口驱动程序还会传递[ **NdisMRegisterScatterGatherDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterscattergatherdma)入口点*MiniportXxx*函数的 NDIS 调用以处理散播-聚集列表。 NDIS 调用微型端口驱动程序[ *MiniportProcessSGList* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_process_sg_list)函数后 HAL 已经构建了一个缓冲区的分散/集中列表。 **NdisMRegisterScatterGatherDma**提供的句柄*pNdisMiniportDmaHandle*微型端口驱动程序必须在对 NDIS 散播-聚集 DMA 函数的后续调用中使用的参数。
 
-NDIS 微型端口驱动程序调用[ **NdisMDeregisterScatterGatherDma** ](https://msdn.microsoft.com/library/windows/hardware/ff563581)函数从其[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)函数释放散播-聚集 DMA 资源。
+NDIS 微型端口驱动程序调用[ **NdisMDeregisterScatterGatherDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterscattergatherdma)函数从其[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数释放散播-聚集 DMA 资源。
 
 ## <a name="allocating-and-freeing-scattergather-lists"></a>分配和释放散播-聚集列表
 
-NDIS 微型端口驱动程序调用[ **NdisMAllocateNetBufferSGList** ](https://msdn.microsoft.com/library/windows/hardware/ff562776)函数，在其[ *MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)函数。 微型端口驱动程序调用**NdisMAllocateNetBufferSGList**一次为每个[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)必须映射的结构。 NDIS 资源变为可用，HAL 已准备好 SG 列表后，调用的驱动程序[ *MiniportProcessSGList* ](https://msdn.microsoft.com/library/windows/hardware/ff559420)函数。 可以调用 NDIS *MiniportProcessSGList*到微型端口驱动程序的调用之前还是之后**NdisMAllocateNetBufferSGList**返回。
+NDIS 微型端口驱动程序调用[ **NdisMAllocateNetBufferSGList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatenetbuffersglist)函数，在其[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)函数。 微型端口驱动程序调用**NdisMAllocateNetBufferSGList**一次为每个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)必须映射的结构。 NDIS 资源变为可用，HAL 已准备好 SG 列表后，调用的驱动程序[ *MiniportProcessSGList* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_process_sg_list)函数。 可以调用 NDIS *MiniportProcessSGList*到微型端口驱动程序的调用之前还是之后**NdisMAllocateNetBufferSGList**返回。
 
-若要提高系统性能，散播-聚集列表数据生成的网络时指定 MDL 开头**CurrentMdl**关联的成员[ **NET\_缓冲区\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568381)结构。 SG 列表中的网络数据的起始偏移量从 SG 列表的开头中指定的值由**CurrentMdlOffset**关联的成员**NET\_缓冲区\_数据**结构。
+若要提高系统性能，散播-聚集列表数据生成的网络时指定 MDL 开头**CurrentMdl**关联的成员[ **NET\_缓冲区\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_data)结构。 SG 列表中的网络数据的起始偏移量从 SG 列表的开头中指定的值由**CurrentMdlOffset**关联的成员**NET\_缓冲区\_数据**结构。
 
-微型端口驱动程序应调用时处理 DPC 发送完成的中断，和任何更多的微型端口驱动程序不需要 SG 列表之后， [ **NdisMFreeNetBufferSGList** ](https://msdn.microsoft.com/library/windows/hardware/ff563586)函数来释放SG 列表。
+微型端口驱动程序应调用时处理 DPC 发送完成的中断，和任何更多的微型端口驱动程序不需要 SG 列表之后， [ **NdisMFreeNetBufferSGList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreenetbuffersglist)函数来释放SG 列表。
 
-**请注意**  不调用[ **NdisMFreeNetBufferSGList** ](https://msdn.microsoft.com/library/windows/hardware/ff563586)驱动程序或硬件仍访问由描述的内存时[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构，它是与散播-聚集列表相关联。 
+**请注意**  不调用[ **NdisMFreeNetBufferSGList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreenetbuffersglist)驱动程序或硬件仍访问由描述的内存时[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构，它是与散播-聚集列表相关联。 
 
-在访问之前接收到的数据，微型端口驱动程序必须调用[ **NdisMFreeNetBufferSGList** ](https://msdn.microsoft.com/library/windows/hardware/ff563586)以刷新内存缓存。
+在访问之前接收到的数据，微型端口驱动程序必须调用[ **NdisMFreeNetBufferSGList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreenetbuffersglist)以刷新内存缓存。

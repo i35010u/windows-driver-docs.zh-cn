@@ -4,12 +4,12 @@ description: 检索图形内存数字
 ms.assetid: ec704093-ad9a-4717-8e9e-537a2848b1c7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2af0b2d0d88f7f1b1761d47ea97b927afcc1b1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef4b5c3755b6350888e2d2c93d4e0fe64482b8a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365666"
 ---
 # <a name="retrieving-graphics-memory-numbers"></a>检索图形内存数字
 
@@ -42,7 +42,7 @@ ms.locfileid: "63383211"
     }
     ```
 
-2.  应用程序确定了显示器驱动程序模型是 WDDM 后，应用程序可以使用新的 DirectX 版本 10 Api 来获取图形内存数字。 应用程序从下列选项中获取图形内存数字[ **DXGI\_适配器\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/bb173058)数据结构，它是位于 Dxgi.h，包含在 DirectX软件开发工具包 (SDK)。
+2.  应用程序确定了显示器驱动程序模型是 WDDM 后，应用程序可以使用新的 DirectX 版本 10 Api 来获取图形内存数字。 应用程序从下列选项中获取图形内存数字[ **DXGI\_适配器\_DESC** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ns-dxgi-dxgi_adapter_desc)数据结构，它是位于 Dxgi.h，包含在 DirectX软件开发工具包 (SDK)。
     ```cpp
     typedef struct DXGI_ADAPTER_DESC {
         WCHAR Description[ 128 ];

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f7aea079eabfb24d0d4fb4770f435fd71610eb
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: 1a1ca16eb1ec81de3bbbd7102c1223135c4c37a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367885"
 ---
 # <a name="bug-check-0x125-nmrinvalidstate"></a>Bug 检查 0x125：NMR\_无效\_状态
 
@@ -26,7 +26,7 @@ ms.locfileid: "59902699"
 NMR\_无效\_状态 bug 检查的值为 0x00000125。 这表示 NMR （网络模块注册机构） 已检测到无效的状态。 请参阅状态类型的参数 1。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="nmrinvalidstate-parameters"></a>NMR\_无效\_状态参数

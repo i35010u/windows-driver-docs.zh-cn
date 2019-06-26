@@ -5,12 +5,12 @@ ms.assetid: 192CAA41-0D17-4C06-8F13-68EA7C26D023
 keywords: 接收方缩放版本 2、 RSSv2、 接收端缩放版本 2 WDK，RSSv2 网络驱动程序
 ms.date: 10/12/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7dad30280a68c572c982e119b16bbce0b8293d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da4d6482f7d27203e12f5c20ed2963c00522e673
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368470"
 ---
 # <a name="receive-side-scaling-version-2-rssv2"></a>接收端缩放版本 2 (RSSv2)
 
@@ -33,18 +33,18 @@ ms.locfileid: "63353212"
 | RSSv1 | 第一代接收端缩放机制。 使用[OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)。 |
 | RSSv2 | 第二个生成接收的方缩放机制支持 Windows 10，版本 1803年和更高版本，本主题中所述。 |
 | 扩展实体| 微型端口适配器本身在本机 RSS 模式或在 RSSv2 模式下 VPort。 |
-| ITE | 间接寻址表项 （项） 的给定缩放实体。 每个 VPort Ite 的总数不能超过**NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**或**NumberOfIndirectionTableEntriesForDefaultVPort** VMQ 模式或本机 RSS 中的 128用例。 **NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**并**NumberOfIndirectionTableEntriesForDefaultVPort**属于[NDIS_NIC_SWITCH_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff566583)结构。 |
+| ITE | 间接寻址表项 （项） 的给定缩放实体。 每个 VPort Ite 的总数不能超过**NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**或**NumberOfIndirectionTableEntriesForDefaultVPort** VMQ 模式或本机 RSS 中的 128用例。 **NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**并**NumberOfIndirectionTableEntriesForDefaultVPort**属于[NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。 |
 | 缩放模式 | 每个 VPort vmswitch 策略，用于控制其 Ite 在运行时的处理方式。 这可以是静态 （由于负载发生变化而没有 ITE 移动） 或动态 （扩展和根据当前流量负载合并）。 |
 | 队列 | 一个基础硬件的对象 （队列） 支持项。 具体取决于硬件和间接表配置队列可能返回多个 Ite。 总数目的队列，其中包括一个由默认的队列，不能超过通常由管理员设置的预配置的限制。 |
 | 默认的处理器 | 一个处理器，它接收的数据包不能为其计算哈希值。 每个 VPort 具有默认处理器。
-| 主处理器 | 指定为一个处理器**ProcessorAffinity**的成员[NDIS_NIC_SWITCH_VPORT_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/hh451597) VPort 创建期间的结构。 此处理器可以更新在运行时，并指定 VMQ 流量定向的位置。 |
+| 主处理器 | 指定为一个处理器**ProcessorAffinity**的成员[NDIS_NIC_SWITCH_VPORT_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) VPort 创建期间的结构。 此处理器可以更新在运行时，并指定 VMQ 流量定向的位置。 |
 | 源 CPU | 当前映射到 ITE 处理器。 |
 | 目标 CPU | 项被重新映射到 （使用 RSSv2） 处理器。 |
 | 执行组件 CPU | 处理器的 RSSv2 提出请求。 |
 
 ## <a name="advertising-rssv2-capability-in-a-miniport-driver"></a>播发 RSSv2 微型端口驱动程序中的功能
 
-微型端口驱动程序通过设置播发 RSSv2 支持**CapabilitiesFlags**的成员[NDIS_RECEIVE_SCALE_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff567220)结构*NDIS_RSS_CAPS_SUPPORTS_INDEPENDENT_ENTRY_MOVE*标志。 此功能，才能 RSSv2 的 CPU 负载平衡功能，连同*NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED*使 RSSv1 动态均衡 VPorts （非默认的标志Vmq)。
+微型端口驱动程序通过设置播发 RSSv2 支持**CapabilitiesFlags**的成员[NDIS_RECEIVE_SCALE_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)结构*NDIS_RSS_CAPS_SUPPORTS_INDEPENDENT_ENTRY_MOVE*标志。 此功能，才能 RSSv2 的 CPU 负载平衡功能，连同*NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED*使 RSSv1 动态均衡 VPorts （非默认的标志Vmq)。
 
 > [!NOTE]
 > 上层协议假定默认 VPort 主处理器，可以移动的 RSSv2 微型端口驱动程序。
@@ -71,7 +71,7 @@ ms.locfileid: "63353212"
 | --- | --- | --- |
 | 微型端口 | [*MiniportSynchronousOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-miniport_synchronous_oid_request) | 不可用 |
 | Filter | <ul><li>[*FilterSynchronousOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-filter_synchronous_oid_request)</li><li>[*FilterSynchronousOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-filter_synchronous_oid_request_complete)</li></ul> | [**NdisFSynchronousOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsynchronousoidrequest) |
-| 协议 | 不可用 | [**NdisSynchronousOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissynchronousoidrequest) |
+| Protocol | 不可用 | [**NdisSynchronousOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissynchronousoidrequest) |
 
 ## <a name="rss-state-transitions-ite-updates-and-primarydefault-processors"></a>RSS 状态转换、 ITE 更新和主/默认处理器
 

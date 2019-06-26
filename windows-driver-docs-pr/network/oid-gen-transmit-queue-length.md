@@ -5,12 +5,12 @@ ms.assetid: 042a7df3-a204-45f8-b147-96def7438b4a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_TRANSMIT_QUEUE_LENGTH 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dd17076dfd7b0743409e37e6ad6ad2479a30e5cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8624ec39678dde434a1bf1661e137b623f4d8a88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385737"
 ---
 # <a name="oidgentransmitqueuelength"></a>OID\_GEN\_传输\_队列\_长度
 
@@ -39,7 +39,7 @@ ms.locfileid: "63387869"
 
 对于查询，将始终的数据包总数当前正在排队返回的数字。 此数字可以包含未提交的发送请求排队 NDIS 库中。
 
-有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)。
+有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
 
 <a name="requirements"></a>要求
 ------------

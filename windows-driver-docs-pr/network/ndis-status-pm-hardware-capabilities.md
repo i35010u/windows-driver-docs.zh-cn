@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PM_HARDWARE_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ecf125922f6c318968941532b461de36a8d811
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7a6bc7069ca6321a5929f341a319f893dd625c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363089"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368527"
 ---
 # <a name="ndisstatuspmhardwarecapabilities"></a>NDIS\_状态\_PM\_硬件\_功能
 
@@ -25,9 +25,9 @@ ms.locfileid: "63363089"
 
 802.11 网络适配器的微型端口驱动程序可以生成此状态指示。
 
-提供负载平衡故障转移 (LBFO) 支持的 MUX 中间驱动程序还可以生成此状态指示。 MUX 驱动程序将聚合的基础网络适配器 LBFO 团队的一部分的 PM 功能。 如果 PM 功能更改，因为适配器已添加或从团队中删除，MUX 驱动程序必须生成此状态指示。 有关 LBFO MUX 中间驱动程序的详细信息，请参阅[NDIS MUX 中间驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566498)。
+提供负载平衡故障转移 (LBFO) 支持的 MUX 中间驱动程序还可以生成此状态指示。 MUX 驱动程序将聚合的基础网络适配器 LBFO 团队的一部分的 PM 功能。 如果 PM 功能更改，因为适配器已添加或从团队中删除，MUX 驱动程序必须生成此状态指示。 有关 LBFO MUX 中间驱动程序的详细信息，请参阅[NDIS MUX 中间驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)。
 
-**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构包含一个指向[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)结构的更新的电源管理功能。
+**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含一个指向[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的更新的电源管理功能。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,9 +52,9 @@ ms.locfileid: "63363089"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)
+[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
  
 

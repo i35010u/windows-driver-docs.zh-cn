@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db9bdad8f5fc1bab91f02a31257506e81dc9d1cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40233969906bea261bb1e6229398b21687a2e4fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373736"
 ---
 # <a name="kspropertybdanodedescriptors"></a>KSPROPERTY\_BDA\_节点\_描述符
 
@@ -87,7 +87,7 @@ ms.locfileid: "63361699"
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaPropertyNodeDescriptors**](https://msdn.microsoft.com/library/windows/hardware/ff556484)
+[**BdaPropertyNodeDescriptors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertynodedescriptors)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

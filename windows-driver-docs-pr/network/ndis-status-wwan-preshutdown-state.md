@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_PRESHUTDOWN_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b820110f9e770d9ff1379d2eb062da3eb75541e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bd7238031ea78309eaba0e8c08c6f3ff644b4f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377593"
 ---
 # <a name="ndisstatuswwanpreshutdownstate"></a>NDIS\_状态\_WWAN\_PRESHUTDOWN\_状态
 
 
 NDIS\_状态\_WWAN\_PRESHUTDOWN\_状态通知是向主机 MBB 驱动程序中的单向通知。 调制解调器完成关闭之前所需的所有操作时，此通知将发送 MBB 驱动程序。
 
-使用此通知[ **NDIS\_WWAN\_PRESHUTDOWN\_状态**](https://msdn.microsoft.com/library/windows/hardware/mt593234)结构。
+使用此通知[ **NDIS\_WWAN\_PRESHUTDOWN\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preshutdown_state)结构。
 
 <a name="requirements"></a>要求
 ------------

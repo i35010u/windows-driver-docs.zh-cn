@@ -4,12 +4,12 @@ description: 若要启用 SDV 分析 Storport 驱动程序，必须使用为 Sto
 ms.assetid: 40BD11CD-A559-4F90-BF39-4ED2FB800392
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64ecfc2e698591f8e373ed2e76d88cf034561acb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ad901f3f8148b928ac3e37eb12af7e07d7019c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341149"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371421"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-storport-drivers"></a>使用 Storport 驱动程序的函数角色类型来声明函数
 
@@ -29,23 +29,23 @@ sp_DRIVER_INITIALIZE DriverEntry;
 | 函数角色类型                        | Storport 例程                                                                                                               |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | sp\_驱动程序\_初始化                    | DriverEntry                                                                                                                    |
-| HW\_初始化                            | [**HwStorInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff557396)                                                                               |
-| HW\_BUILDIO                               | [**HwStorBuildIo**](https://msdn.microsoft.com/library/windows/hardware/ff557369)                                                                                     |
-| HW\_STARTIO                               | [**HwStorStartIo**](https://msdn.microsoft.com/library/windows/hardware/ff557423)                                                                                     |
-| HW\_中断                             | [**HwStorInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff557403)                                                                                 |
-| HW\_计时器                                 | [**HwStorTimer**](https://msdn.microsoft.com/library/windows/hardware/ff557426)                                                                                         |
-| HW\_查找\_适配器                         | [**HwStorFindAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff557390)                                                                             |
-| HW\_重置\_总线                            | [**HwStorResetBus**](https://msdn.microsoft.com/library/windows/hardware/ff557415)                                                                                   |
-| HW\_适配器\_控件                      | [**HwStorAdapterControl**](https://msdn.microsoft.com/library/windows/hardware/ff557365)                                                                       |
-| HW\_被动\_初始化\_例程          | [**HwStorPassiveInitializeRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff557407)                                                   |
-| HW\_DPC\_例程                          | [**HwStorDpcRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff557383)                                                                               |
-| HW\_免费\_适配器\_资源              | HwFreeAdapterResources 一部分[**虚拟\_HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568010)结构。  |
-| HW\_PROCESS\_SERVICE\_REQUEST             | HwProcessServiceRequest 一部分[**虚拟\_HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568010)结构。 |
-| HW\_完成\_服务\_IRP                | HwCompleteServiceIrp 一部分[**虚拟\_HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568010)结构。    |
-| HW\_初始化\_跟踪                   | HwInitializeTracing 一部分[**虚拟\_HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568010)结构。     |
-| HW\_清理\_跟踪                      | HwCleanupTracing 一部分[**虚拟\_HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568010)结构。        |
-| 虚拟\_HW\_查找\_适配器                | HwFindAdapter 一部分[**虚拟\_HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568010)结构。           |
-| HW\_消息\_用信号通知\_中断\_例程 | [**HwMSInterruptRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff557268)                                                                       |
+| HW\_初始化                            | [**HwStorInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_initialize)                                                                               |
+| HW\_BUILDIO                               | [**HwStorBuildIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio)                                                                                     |
+| HW\_STARTIO                               | [**HwStorStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)                                                                                     |
+| HW\_中断                             | [**HwStorInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_interrupt)                                                                                 |
+| HW\_计时器                                 | [**HwStorTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_timer)                                                                                         |
+| HW\_查找\_适配器                         | [**HwStorFindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)                                                                             |
+| HW\_重置\_总线                            | [**HwStorResetBus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus)                                                                                   |
+| HW\_适配器\_控件                      | [**HwStorAdapterControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_adapter_control)                                                                       |
+| HW\_被动\_初始化\_例程          | [**HwStorPassiveInitializeRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_passive_initialize_routine)                                                   |
+| HW\_DPC\_例程                          | [**HwStorDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_dpc_routine)                                                                               |
+| HW\_免费\_适配器\_资源              | HwFreeAdapterResources 一部分[**虚拟\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)结构。  |
+| HW\_PROCESS\_SERVICE\_REQUEST             | HwProcessServiceRequest 一部分[**虚拟\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)结构。 |
+| HW\_完成\_服务\_IRP                | HwCompleteServiceIrp 一部分[**虚拟\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)结构。    |
+| HW\_初始化\_跟踪                   | HwInitializeTracing 一部分[**虚拟\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)结构。     |
+| HW\_清理\_跟踪                      | HwCleanupTracing 一部分[**虚拟\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)结构。        |
+| 虚拟\_HW\_查找\_适配器                | HwFindAdapter 一部分[**虚拟\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_virtual_hw_initialization_data)结构。           |
+| HW\_消息\_用信号通知\_中断\_例程 | [**HwMSInterruptRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_message_signaled_interrupt_routine)                                                                       |
 
  
 

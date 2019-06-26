@@ -9,12 +9,12 @@ keywords:
 - NDIS 筛选器驱动程序 WDK，开始筛选器模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4adf0795f8999e9da68b214528382538c8ba5cdc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef67248cc1a776398fd583ad6f748900f4870920
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390645"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377559"
 ---
 # <a name="starting-a-filter-module"></a>启动筛选器模块
 
@@ -22,13 +22,13 @@ ms.locfileid: "63390645"
 
 
 
-若要启动暂停的筛选器模块，NDIS 调用筛选器驱动程序[ *FilterSetModuleOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff549970)函数，如果有，然后通过调用[ *FilterRestart*](https://msdn.microsoft.com/library/windows/hardware/ff549962)函数。 筛选器模块进入*正在重新启动*中执行的开始处的状态*FilterRestart*函数。
+若要启动暂停的筛选器模块，NDIS 调用筛选器驱动程序[ *FilterSetModuleOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_set_module_options)函数，如果有，然后通过调用[ *FilterRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_restart)函数。 筛选器模块进入*正在重新启动*中执行的开始处的状态*FilterRestart*函数。
 
-如果该驱动程序提供的入口点[ *FilterSetModuleOptions*](https://msdn.microsoft.com/library/windows/hardware/ff549970)，驱动程序可以更改筛选器模块的部分特性。 有关详细信息，请参阅[数据绕过模式](data-bypass-mode.md)。
+如果该驱动程序提供的入口点[ *FilterSetModuleOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_set_module_options)，驱动程序可以更改筛选器模块的部分特性。 有关详细信息，请参阅[数据绕过模式](data-bypass-mode.md)。
 
-当它调用筛选器驱动程序[ *FilterRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff549962)函数，NDIS 将传递一个指向[ **NDIS\_重启\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff567255)结构中的筛选器驱动程序**RestartAttributes**的成员[ **NDIS\_筛选器\_重新启动\_参数** ](https://msdn.microsoft.com/library/windows/hardware/ff565572)结构。 筛选器驱动程序可以修改由基础驱动程序指定的重启属性。 有关如何修改重启属性的详细信息，请参阅*FilterRestart*。
+当它调用筛选器驱动程序[ *FilterRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_restart)函数，NDIS 将传递一个指向[ **NDIS\_重启\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_restart_attributes)结构中的筛选器驱动程序**RestartAttributes**的成员[ **NDIS\_筛选器\_重新启动\_参数** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_restart_parameters)结构。 筛选器驱动程序可以修改由基础驱动程序指定的重启属性。 有关如何修改重启属性的详细信息，请参阅*FilterRestart*。
 
-**请注意**  NDIS 调用[ *FilterSetModuleOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff549970)对于所有筛选器之前 NDIS 调用堆栈中的模块[ *FilterRestart*](https://msdn.microsoft.com/library/windows/hardware/ff549962)堆栈中的任何筛选器模块的函数。
+**请注意**  NDIS 调用[ *FilterSetModuleOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_set_module_options)对于所有筛选器之前 NDIS 调用堆栈中的模块[ *FilterRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_restart)堆栈中的任何筛选器模块的函数。
 
  
 
@@ -46,29 +46,29 @@ NDIS 插操作，重新启动驱动程序堆栈的一部分启动筛选器模块
 
 -   应启动任何新的接收的指示。
 
--   应拒绝对所做的所有新发送请求其[ *FilterSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff549966)立即通过调用函数[ **NdisFSendNetBufferListsComplete**](https://msdn.microsoft.com/library/windows/hardware/ff562618)函数。 它应在每个设置的完整状态[NET\_缓冲区\_列表](net-buffer-list-structure.md)到 NDIS\_状态\_已暂停。
+-   应拒绝对所做的所有新发送请求其[ *FilterSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists)立即通过调用函数[ **NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)函数。 它应在每个设置的完整状态[NET\_缓冲区\_列表](net-buffer-list-structure.md)到 NDIS\_状态\_已暂停。
 
--   可以提供与状态指示[ **NdisFIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff561824)函数。
+-   可以提供与状态指示[ **NdisFIndicateStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatestatus)函数。
 
     有关状态指示的详细信息，请参阅[筛选器模块状态指示](filter-module-status-indications.md)。
 
--   应处理中的 OID 请求[ *FilterOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff549954)函数。
+-   应处理中的 OID 请求[ *FilterOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_oid_request)函数。
 
     有关 OID 的请求的详细信息，请参阅[筛选器模块 OID 请求](filter-module-oid-requests.md)。
 
 -   应启动任何新的发送请求。
 
--   应返回新接收到 NDIS 指示立即通过调用[ **NdisFReturnNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff562613)函数。 如果有必要，驱动程序可以将复制此类之前将它们返回收到的指示。
+-   应返回新接收到 NDIS 指示立即通过调用[ **NdisFReturnNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreturnnetbufferlists)函数。 如果有必要，驱动程序可以将复制此类之前将它们返回收到的指示。
 
 -   可以对基础驱动程序设置进行 OID 请求或查询更新的配置信息。
 
--   应处理状态指示在其[ *FilterStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff549973)函数。
+-   应处理状态指示在其[ *FilterStatus* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_status)函数。
 
 -   应指示 NDIS\_状态\_成功或失败状态。 如果筛选器模块不会重启，NDIS 将其分离，然后如果它是必需的筛选器，NDIS 终止整个驱动程序堆栈。
 
-筛选器驱动程序已成功重启发送和接收操作后，它必须完成的重新启动操作。 筛选器驱动程序可以完成的重新启动操作以同步方式还是以异步方式返回 NDIS\_状态\_成功或 NDIS\_状态\_分别从 PENDING [ *FilterRestart*](https://msdn.microsoft.com/library/windows/hardware/ff549962)。
+筛选器驱动程序已成功重启发送和接收操作后，它必须完成的重新启动操作。 筛选器驱动程序可以完成的重新启动操作以同步方式还是以异步方式返回 NDIS\_状态\_成功或 NDIS\_状态\_分别从 PENDING [ *FilterRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_restart)。
 
-如果该驱动程序返回 NDIS\_状态\_挂起，它必须调用[ **NdisFRestartComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff562610)函数后重启操作。 在这种情况下，他驱动程序将传递到重新启动操作的最终状态**NdisFRestartComplete**。
+如果该驱动程序返回 NDIS\_状态\_挂起，它必须调用[ **NdisFRestartComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfrestartcomplete)函数后重启操作。 在这种情况下，他驱动程序将传递到重新启动操作的最终状态**NdisFRestartComplete**。
 
 重新启动操作已完成后，筛选器模块处于*运行*状态。 驱动程序继续正常发送和接收处理。
 

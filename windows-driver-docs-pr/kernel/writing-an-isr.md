@@ -10,12 +10,12 @@ keywords:
 - I/O WDK 内核中断
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3ec61d40e98171f5b0b173404b40d03dfec79e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10270eea0da44c2fbded88df114ceb50d249cf12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355995"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374135"
 ---
 # <a name="writing-an-isr"></a>编写 ISR
 
@@ -25,7 +25,7 @@ ms.locfileid: "63355995"
 
 生成中断的物理设备的驱动程序必须具有至少一个中断服务例程 (ISR)。 ISR 必须执行任何适于到设备，以便消除可能包括停止设备从中断的中断。 然后，它应仅执行必要的操作要保存状态，并将队列 DPC 完成 I/O 操作在比 ISR 执行的较低优先级 (IRQL)。
 
-在中断上下文中，在某些系统分配执行驱动程序的 ISR *DIRQL*按指定*SynchronizeIrql*参数[ **IoConnectInterruptEx**](https://msdn.microsoft.com/library/windows/hardware/ff548378).
+在中断上下文中，在某些系统分配执行驱动程序的 ISR *DIRQL*按指定*SynchronizeIrql*参数[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex).
 
 Isr 可中断。 另一台设备具有更高版本的系统分配 DIRQL 可能会中断，或进行高 IRQL 系统中断，在任何时间。
 
@@ -45,15 +45,15 @@ Isr 可中断。 另一台设备具有更高版本的系统分配 DIRQL 可能�
 
 2.  如有必要，请停止从中断，设备。
 
-3.  收集任何上下文信息[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079) (或[ *CustomDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542972)) 将需要完成处理的 I/O 例程当前操作。
+3.  收集任何上下文信息[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine) (或[ *CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)) 将需要完成处理的 I/O 例程当前操作。
 
 4.  将此上下文存储在可访问的区域*DpcForIsr*或*CustomDpc*例程，通常在处理当前的 I/O 请求引起的目标设备对象的设备扩展中中断。
 
     如果驱动程序与重叠的 I/O 操作，上下文信息必须包括的任何上下文以及完成 DPC 日常需求来完成每个请求所需的 DPC 例程的未完成请求的计数。 如果 ISR 调用之前已经运行了 DPC 处理另一个中断时，它必须不会覆盖尚未通过 DPC 完成的请求已保存的上下文。
 
-5.  如果该驱动程序有*DpcForIsr*例程，调用[ **IoRequestDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff549657)使用指向当前 IRP、 目标设备对象和已保存的上下文的指针。 **IoRequestDpc**队列*DpcForIsr*例程，以尽快 IRQL 低于调度运行\_级别处理器上。
+5.  如果该驱动程序有*DpcForIsr*例程，调用[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)使用指向当前 IRP、 目标设备对象和已保存的上下文的指针。 **IoRequestDpc**队列*DpcForIsr*例程，以尽快 IRQL 低于调度运行\_级别处理器上。
 
-    如果该驱动程序有*CustomDpc*例程，调用[ **KeInsertQueueDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff552185)用一个指针指向 DPC 对象 (与关联*CustomDpc*例程) 和任何已保存的上下文指针*CustomDpc*例程将需要完成该操作。 通常情况下，ISR 还将指针传递给当前的 IRP 和目标设备对象。 *CustomDpc*只要 IRQL 低于调度运行时例程\_级别处理器上。
+    如果该驱动程序有*CustomDpc*例程，调用[ **KeInsertQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)用一个指针指向 DPC 对象 (与关联*CustomDpc*例程) 和任何已保存的上下文指针*CustomDpc*例程将需要完成该操作。 通常情况下，ISR 还将指针传递给当前的 IRP 和目标设备对象。 *CustomDpc*只要 IRQL 低于调度运行时例程\_级别处理器上。
 
 6.  返回 **，则返回 TRUE**以指示其设备生成中断。
 

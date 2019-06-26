@@ -4,12 +4,12 @@ description: MSFC\_HBAPortAttributesResults WMI 类
 ms.assetid: f268a653-e3ee-47d0-9af8-925dc0545a2b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5a3010fd61bd18f13e35147fc4fb8e26a7eeb7fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8bbffa9a20953faec31d77bed0cef2f25bf2cb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378962"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376751"
 ---
 # <a name="msfchbaportattributesresults-wmi-class"></a>MSFC\_HBAPortAttributesResults WMI 类
 
@@ -64,7 +64,7 @@ class MSFC_HBAPortAttributesResults {
 
 此类在编译时定义生成以下数据结构：
 
-[**MSFC\_HBAPortAttributesResults**](https://msdn.microsoft.com/library/windows/hardware/ff562510)
+[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
 
 没有与此 WMI 类相关联的方法。
 

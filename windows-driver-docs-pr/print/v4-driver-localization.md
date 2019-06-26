@@ -4,19 +4,19 @@ description: Windows 8 提供了支持的打印机扩展和 UWP 的设备应用�
 ms.assetid: 5C587AF2-C51E-4728-A214-7FC1F8A6E445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31cffd917fad5cda53ba8ad4de2619720ee9bd32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e06e28be29d29329e15511be1b09387f9f26635e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362719"
 ---
 # <a name="v4-printer-driver-localization"></a>V4 打印机驱动程序本地化
 
 
 Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发的标准的、 已本地化的显示字符串。
 
-通过新提供了这些标准的、 已本地化的显示字符串[ **IPrintSchemaCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/hh451256)对象以支持某些功能和其关联的标准选项。 下表显示了 Windows 8 可以使用其标准本地化的功能显示字符串：
+通过新提供了这些标准的、 已本地化的显示字符串[ **IPrintSchemaCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)对象以支持某些功能和其关联的标准选项。 下表显示了 Windows 8 可以使用其标准本地化的功能显示字符串：
 
 <table>
 <colgroup>
@@ -96,7 +96,7 @@ Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发�
 
 跨不同的用户界面和 Api，显示名称各不相同。 使用以下三个流程图看到预期的本地化行为针对给定方案的概述。
 
-下面的流程图 UWP 应用中显示的预期的本地化行为如下所示[ **IPrintSchemaFeature** ](https://msdn.microsoft.com/library/windows/hardware/hh451284)并[ **IPrintSchemaOption**](https://msdn.microsoft.com/library/windows/hardware/hh451335)系列的对象。
+下面的流程图 UWP 应用中显示的预期的本地化行为如下所示[ **IPrintSchemaFeature** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)并[ **IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption)系列的对象。
 
 ![Windows 应用、 iprintschemafeature 或 iprintschemaoption 本地化行为流程图](images/locstringmodern.png)
 
@@ -149,9 +149,9 @@ o JobHolePunch，DocumentHolePunch o JobStapleAllDocuments DocumentStaple o JobB
 基于 PPD 驱动程序不支持资源 Dll。 因此，它可能有必要提供多个 PPD 文件。 Microsoft 建议使用 PPD 配置文件的 v4 打印驱动程序应使用本主题中介绍的方法包括每个区域设置的一个 PPD 文件。
 
 ## <a name="related-topics"></a>相关主题
-[**IPrintSchemaCapabilities**](https://msdn.microsoft.com/library/windows/hardware/hh451256)  
-[**IPrintSchemaFeature**](https://msdn.microsoft.com/library/windows/hardware/hh451284)  
-[**IPrintSchemaOption**](https://msdn.microsoft.com/library/windows/hardware/hh451335)  
+[**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)  
+[**IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)  
+[**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption)  
 [基于 GPD/PPD 的功能说明更改](gpd-ppd-based-feature-description-changes.md)  
 [标准功能](standard-features.md)  
 

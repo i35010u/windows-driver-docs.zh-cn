@@ -9,12 +9,12 @@ keywords:
 - Irp WDK 内核，可靠性问题
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3d064e5f1bd63d0876519025edeaac9a2683d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdadc1d5641945bc44b14807faa90fd3a07303ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377149"
 ---
 # <a name="creating-reliable-kernel-mode-drivers"></a>创建可靠的内核模式驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "63388248"
 
 -   正确保护设备对象。
 
-    由系统分配给设备对象的安全描述符控制用户对系统的驱动程序和设备访问权限。 大多数情况下，系统将在设备安装时设置设备安全参数。 有关详细信息，请参阅[创建安全的设备安装](https://msdn.microsoft.com/library/windows/hardware/ff540212)。 有时很适合的驱动程序播放中控制到其设备的访问权限的部件。 有关详细信息，请参阅[保护设备对象](securing-device-objects.md)。
+    由系统分配给设备对象的安全描述符控制用户对系统的驱动程序和设备访问权限。 大多数情况下，系统将在设备安装时设置设备安全参数。 有关详细信息，请参阅[创建安全的设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)。 有时很适合的驱动程序播放中控制到其设备的访问权限的部件。 有关详细信息，请参阅[保护设备对象](securing-device-objects.md)。
 
 -   正确验证设备的对象。
 
@@ -74,7 +74,7 @@ ms.locfileid: "63388248"
 
 -   正确处理 I/O 堆栈。
 
-    当[将 Irp 传递驱动程序堆栈的下层](passing-irps-down-the-driver-stack.md)，务必要调用的驱动程序[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)或[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387)设置下一步驱动程序的 I/O 堆栈位置。 不编写代码，直接将一个 I/O 堆栈位置复制到下一步。
+    当[将 Irp 传递驱动程序堆栈的下层](passing-irps-down-the-driver-stack.md)，务必要调用的驱动程序[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)或[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)设置下一步驱动程序的 I/O 堆栈位置。 不编写代码，直接将一个 I/O 堆栈位置复制到下一步。
 
 -   正确处理 IRP 完成操作。
 
@@ -90,7 +90,7 @@ ms.locfileid: "63388248"
 
 -   处理 IRP 清理并正确关闭操作。
 
-    请务必了解之间的区别[ **IRP\_MJ\_清理**](https://msdn.microsoft.com/library/windows/hardware/ff550718)并[ **IRP\_MJ\_关闭** ](https://msdn.microsoft.com/library/windows/hardware/ff550720)请求。 清理请求到达后关闭的应用程序的所有句柄上的文件对象，但有时在所有 I/O 之前请求已完成。 关闭请求到达后的文件对象的所有 I/O 请求已完成或已取消。 有关详细信息，请参阅下列主题：
+    请务必了解之间的区别[ **IRP\_MJ\_清理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)并[ **IRP\_MJ\_关闭** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)请求。 清理请求到达后关闭的应用程序的所有句柄上的文件对象，但有时在所有 I/O 之前请求已完成。 关闭请求到达后的文件对象的所有 I/O 请求已完成或已取消。 有关详细信息，请参阅下列主题：
 
     [DispatchCreate、 DispatchClose 和 DispatchCreateClose 例程](dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
 
@@ -102,7 +102,7 @@ ms.locfileid: "63388248"
 
 ### <a name="using-driver-verifier"></a>使用驱动程序验证程序
 
-[驱动程序验证程序](https://msdn.microsoft.com/library/windows/hardware/ff545448)是最重要的工具可用来确保您的驱动程序的可靠性。 各种常见驱动程序问题，包括在本部分中讨论了其中一些可以检查驱动程序验证程序。 但是，使用驱动程序验证程序不会替换仔细考虑周全的软件设计。
+[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)是最重要的工具可用来确保您的驱动程序的可靠性。 各种常见驱动程序问题，包括在本部分中讨论了其中一些可以检查驱动程序验证程序。 但是，使用驱动程序验证程序不会替换仔细考虑周全的软件设计。
 
  
 

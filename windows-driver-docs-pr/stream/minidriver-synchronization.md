@@ -9,12 +9,12 @@ keywords:
 - 同步 WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f790ce83603ffe974e670073e93426509894414
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ffa765cb1a49fce79ac73cac13fc1402b770d26d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363297"
 ---
 # <a name="minidriver-synchronization"></a>微型驱动程序同步
 
@@ -22,7 +22,7 @@ ms.locfileid: "63348519"
 
 
 
-流式处理的微型驱动程序开发人员可以选择允许在类驱动程序，以处理同步。 当微型驱动程序注册自己的类驱动程序时，他们可以通过设置选择类驱动程序提供同步**TurnOffSynchronization**的成员[ **HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff559682)到**FALSE**。
+流式处理的微型驱动程序开发人员可以选择允许在类驱动程序，以处理同步。 当微型驱动程序注册自己的类驱动程序时，他们可以通过设置选择类驱动程序提供同步**TurnOffSynchronization**的成员[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)到**FALSE**。
 
 当在类驱动程序处理同步时，它可确保永远不会同时执行两条微型驱动程序代码。 类驱动程序排队所有的流请求，并一次将其传递给微型驱动程序之一。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63348519"
 
 如果关闭了同步，微型驱动程序负责执行符合 WDM 模型同步。 如果在被动回调用微型驱动程序\_级别，然后可以通过任何更高版本的 IRQL 事件，如 Dpc 或中断抢占它。 同样，如果在调度回调用微型驱动程序\_级别，它可以随后会被抢占的中断。 操作共享的资源的微型驱动程序函数必须同步访问。
 
-流类同步处于关闭状态时，可以向相同或不同流同时发出多个请求。 微型驱动程序必须对其自己的请求进行排队和处理与其他线程和 ISR 任何硬件同步 旋转锁，互斥体，并[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)是一些同步对象可用于流微型驱动程序无需进行流类同步运行。
+流类同步处于关闭状态时，可以向相同或不同流同时发出多个请求。 微型驱动程序必须对其自己的请求进行排队和处理与其他线程和 ISR 任何硬件同步 旋转锁，互斥体，并[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)是一些同步对象可用于流微型驱动程序无需进行流类同步运行。
 
  
 

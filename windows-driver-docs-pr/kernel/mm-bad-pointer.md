@@ -4,12 +4,12 @@ description: Windows 内核宏
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cc92a84d8af5cf9d5b9752633e34c1ebdbf49dbc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46ab783d7acff09e72a76d4a6ca3a8bb726d0f78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380247"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386005"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 
@@ -139,7 +139,7 @@ IRQL:任何级别
 
 在中定义：Wdm.h
 
-\nThe **IoSkipCurrentIrpStackLocation**宏修改系统的[ **IO_STACK_LOCATION** ](https://msdn.microsoft.com/library/windows/hardware/ff550659)数组指针，以便当当前驱动程序调用的下一步低驱动程序该驱动程序收到相同**IO_STACK_LOCATION**当前驱动程序收到的结构。
+\nThe **IoSkipCurrentIrpStackLocation**宏修改系统的[ **IO_STACK_LOCATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)数组指针，以便当当前驱动程序调用的下一步低驱动程序该驱动程序收到相同**IO_STACK_LOCATION**当前驱动程序收到的结构。
 
 _Irp [中，out]_
 
@@ -151,15 +151,15 @@ _Irp [中，out]_
 
 **VOID**
 
-当您的驱动程序将 IRP 发送到下一步低驱动程序时，可以调用您的驱动程序**IoSkipCurrentIrpStackLocation**如果你不想要提供[ _IoCompletion_ ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程(其中的地址存储在驱动程序的[ **IO_STACK_LOCATION** ](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构)。 如果您调用**IoSkipCurrentIrpStackLocation**之前，调用[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)下, 一步低驱动程序收到相同**IO_STACK_LOCATION**您的驱动程序接收。
+当您的驱动程序将 IRP 发送到下一步低驱动程序时，可以调用您的驱动程序**IoSkipCurrentIrpStackLocation**如果你不想要提供[ _IoCompletion_ ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程(其中的地址存储在驱动程序的[ **IO_STACK_LOCATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构)。 如果您调用**IoSkipCurrentIrpStackLocation**之前，调用[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)下, 一步低驱动程序收到相同**IO_STACK_LOCATION**您的驱动程序接收。
 
-如果你想要提供_IoCompletion_ IRP 的例程，应调用您的驱动程序[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387)而不是**IoSkipCurrentIrpStackLocation**。 如果编写不正确的驱动程序，可以调用错误**IoSkipCurrentIrpStackLocation** ，并设置完成例程，该驱动程序可能会覆盖由其下方的驱动程序设置完成例程。
+如果你想要提供_IoCompletion_ IRP 的例程，应调用您的驱动程序[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)而不是**IoSkipCurrentIrpStackLocation**。 如果编写不正确的驱动程序，可以调用错误**IoSkipCurrentIrpStackLocation** ，并设置完成例程，该驱动程序可能会覆盖由其下方的驱动程序设置完成例程。
 
 如果驱动程序具有挂起 IRP，不应调用该驱动程序**IoSkipCurrentIrpStackLocation**将 IRP 传递给下一个较低的驱动程序之前。 如果该驱动程序调用**IoSkipCurrentIrpStackLocation**上然后再将它传递到下一个较低的驱动程序挂起 IRP，SL_PENDING_RETURNED 仍中设置了标志**控制**I/O 堆栈位置的成员下一步的驱动程序。 下一步的驱动程序拥有的堆栈位置，并可能会对其进行修改，因为它可能无法清除挂起的标志。 这种情况下可能会导致操作系统发出的 bug 检查或处理 IRP 永远不会完成。
 
 已挂起 IRP 的驱动程序应改为调用**IoCopyCurrentIrpStackLocationToNext**若要设置新的堆栈位置之前的下一个较低驱动程序调用**IoCallDriver**。
 
-如果您的驱动程序调用**IoSkipCurrentIrpStackLocation**，请注意不要修改**IO_STACK_LOCATION**结构较低的驱动程序或系统的行为可能会无意中影响的方式对于该驱动程序。 示例包括修改**IO_STACK_LOCATION**结构的**参数**union 或调用[ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)。
+如果您的驱动程序调用**IoSkipCurrentIrpStackLocation**，请注意不要修改**IO_STACK_LOCATION**结构较低的驱动程序或系统的行为可能会无意中影响的方式对于该驱动程序。 示例包括修改**IO_STACK_LOCATION**结构的**参数**union 或调用[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)。
 
 从 Windows 2000 开始可用。
 
@@ -170,7 +170,7 @@ IRQL:任何级别
 
 在中定义：Wdm.h
 
-**KeInitializeCallbackRecord**宏初始化[ **KBUGCHECK_CALLBACK_RECORD** ](https://msdn.microsoft.com/library/windows/hardware/ff551853)或者[ **KBUGCHECK_REASON_CALLBACK_记录**](https://msdn.microsoft.com/library/windows/hardware/ff551873)结构。
+**KeInitializeCallbackRecord**宏初始化[ **KBUGCHECK_CALLBACK_RECORD** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)或者[ **KBUGCHECK_REASON_CALLBACK_记录**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构。
 
 _CallbackRecord [in]_
 
@@ -209,7 +209,7 @@ IRQL:任何级别
 
 从 Windows 8.1 **MM_BAD_POINTER** wdm.h 中的标头文件中定义宏。 但是，使用此宏定义的驱动程序代码可以运行在以前版本的 Windows 与 Windows Vista 一起启动。
 
-从 Windows Vista 开始[ **MmBadPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff554494)全局变量是可用作指向保证是无效的地址的指针值的指针。 但是，从 Windows 8.1，将开始**MmBadPointer**已被弃用，并应更新驱动程序以使用**MM_BAD_POINTER**宏相反。
+从 Windows Vista 开始[ **MmBadPointer** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress)全局变量是可用作指向保证是无效的地址的指针值的指针。 但是，从 Windows 8.1，将开始**MmBadPointer**已被弃用，并应更新驱动程序以使用**MM_BAD_POINTER**宏相反。
 
 从 Windows 8.1\ 开始可用。 与以前版本的 Windows 启动 Windows Vista 兼容。 _
 
@@ -224,7 +224,7 @@ _[In] Mdl_
 
 **PMDL**
 
-一个指向[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)描述的物理内存中的虚拟内存缓冲区布局的结构。 有关详细信息，请参阅[使用 MDLs](using-mdls.md)。
+一个指向[ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)描述的物理内存中的虚拟内存缓冲区布局的结构。 有关详细信息，请参阅[使用 MDLs](using-mdls.md)。
 
 **返回值**
 
@@ -286,7 +286,7 @@ _[In] Mdl_
 
 **请注意**更改数组的内容可能会导致难以进行诊断的细微系统问题。 我们建议您不要读取或更改此数组的内容。
 
-对于可分页内存，数组的内容是仅对使用锁定的缓冲区的有效[ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)。 对于非分页池，该数组的内容是仅对使用更新 MDL 有效[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)， [ **MmAllocatePagesForMdlEx**](https://msdn.microsoft.com/library/windows/hardware/ff554489)，或[ **MmAllocatePagesForMdl**](https://msdn.microsoft.com/library/windows/hardware/ff554482)。
+对于可分页内存，数组的内容是仅对使用锁定的缓冲区的有效[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)。 对于非分页池，该数组的内容是仅对使用更新 MDL 有效[ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)， [ **MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)，或[ **MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)。
 
 有关 MDLs 详细信息，请参阅[使用 MDLs](using-mdls.md)。
 
@@ -315,7 +315,7 @@ _[In] Mdl_
 
 **MmGetMdlVirtualAddress**返回并不一定是当前线程上下文中有效的虚拟地址。 较低级别的驱动程序不应尝试使用返回的虚拟地址来访问内存，尤其是用户内存空间。
 
-返回到物理地址条目 MDL 中的索引使用的地址，可以输入到[ **MapTransfer**](https://msdn.microsoft.com/library/windows/hardware/ff554402)。
+返回到物理地址条目 MDL 中的索引使用的地址，可以输入到[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)。
 
 调用方**MmGetMdlVirtualAddress**可以在任何 IRQL 运行。 通常情况下，调用方运行在 IRQL = DISPATCH_LEVEL，因为此例程通常调用以获得_CurrentVa_参数**MapTransfer**。
 
@@ -362,21 +362,21 @@ _[In] 优先级_
 
 编程输入/输出 (PIO) 设备的驱动程序调用该例程来映射用户模式缓冲区，用于描述在 MDL **Irp-> MdlAddress**和该列已映射到用户模式虚拟地址范围，系统地址中的范围空间。
 
-在进入到此例程时，指定的 MDL 必须描述已锁定的物理页。 可以使用生成锁定的 MDL [ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)， [ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)， [ **IoBuildPartialMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548324)，或[ **MmAllocatePagesForMdlEx** ](https://msdn.microsoft.com/library/windows/hardware/ff554489)例程。
+在进入到此例程时，指定的 MDL 必须描述已锁定的物理页。 可以使用生成锁定的 MDL [ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)， [ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)， [ **IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)，或[ **MmAllocatePagesForMdlEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)例程。
 
 返回系统的地址空间映射，当**MmGetSystemAddressForMdlSafe**是不再需要它必须释放。 发布映射所需的步骤取决于 MDL 的构建方式。 以下是四种可能情况：
 
-*   如果通过调用生成 MDL **MmProbeAndLockPages**例程，它不需要显式释放的系统地址空间映射。 相反，调用[ **MmUnlockPages** ](https://msdn.microsoft.com/library/windows/hardware/ff556381)例程释放映射，如果其中一个已分配。
+*   如果通过调用生成 MDL **MmProbeAndLockPages**例程，它不需要显式释放的系统地址空间映射。 相反，调用[ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)例程释放映射，如果其中一个已分配。
 
 *   如果通过调用生成 MDL **MmBuildMdlForNonPagedPool**例程， **MmGetSystemAddressForMdlSafe**重复使用而不是创建一个新的现有系统地址空间映射。 在这种情况下，清除操作 （即，解除锁定和取消映射不是有必要）。
 
-*   如果通过调用生成 MDL **IoBuildPartialMdl**例程，该驱动程序必须调用[ **MmPrepareMdlForReuse** ](https://msdn.microsoft.com/library/windows/hardware/ff554660)例程或[ **IoFreeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff549126)例程来释放系统地址空间映射。
+*   如果通过调用生成 MDL **IoBuildPartialMdl**例程，该驱动程序必须调用[ **MmPrepareMdlForReuse** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)例程或[ **IoFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)例程来释放系统地址空间映射。
 
 *   如果通过调用生成 MDL **MmAllocatePagesForMdlEx**例程，该驱动程序必须调用**MmUnmapLockedPages**例程来释放系统地址空间映射。 如果**MmGetSystemAddressForMdlSafe**后续 MDL 称为不止一次**MmGetSystemAddressForMdlSafe**调用只返回第一次调用创建的映射。 调用一次**MmUnmapLockedPages**足以发布此映射。
 
-从 Windows 7 和 Windows Server 2008 R2 开始，它不需要显式调用**MmUnmapLockedPages**为已通过 MDL **MmAllocatePagesForMdlEx**。 相反，调用[ **MmFreePagesFromMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554521)例程释放系统地址空间映射，如果其中一个已分配。
+从 Windows 7 和 Windows Server 2008 R2 开始，它不需要显式调用**MmUnmapLockedPages**为已通过 MDL **MmAllocatePagesForMdlEx**。 相反，调用[ **MmFreePagesFromMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreepagesfrommdl)例程释放系统地址空间映射，如果其中一个已分配。
 
-若要创建新的系统地址空间映射**MmGetSystemAddressForMdlSafe**调用**MmMapLockedPagesSpecifyCache**与_CacheType_参数设置为**MmCached**。 而不需要缓存类型的驱动程序**MmCached**应调用**MmMapLockedPagesSpecifyCache**而不是调用直接**MmGetSystemAddressForMdlSafe**。 有关详细信息_CacheType_参数，请参阅[ **MmMapLockedPagesSpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554629)。
+若要创建新的系统地址空间映射**MmGetSystemAddressForMdlSafe**调用**MmMapLockedPagesSpecifyCache**与_CacheType_参数设置为**MmCached**。 而不需要缓存类型的驱动程序**MmCached**应调用**MmMapLockedPagesSpecifyCache**而不是调用直接**MmGetSystemAddressForMdlSafe**。 有关详细信息_CacheType_参数，请参阅[ **MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)。
 
 在调用**MmMapLockedPagesSpecifyCache**，仅当通过 MDL 所述的页面还没有与之关联的缓存类型使用指定的缓存类型。 但是，在几乎所有情况下，页面已具有关联的缓存类型，并且此缓存类型由新的映射。 此规则的例外是由分配的页**MmAllocatePagesForMdl**，该缓存类型设置为**MmCached**原始页面的缓存类型无关。
 
@@ -386,9 +386,9 @@ _[In] 优先级_
 
 返回的基址 MDL 中具有相同的偏移量作为虚拟地址。
 
-Windows 98 不支持**MmGetSystemAddressForMdlSafe**。 使用[ **MmGetSystemAddressForMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554556)相反。
+Windows 98 不支持**MmGetSystemAddressForMdlSafe**。 使用[ **MmGetSystemAddressForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemaddressformdl)相反。
 
-因为此宏将调用[ **MmMapLockedPagesSpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554629)，使用它可能需要将链接到 NtosKrnl.lib。
+因为此宏将调用[ **MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)，使用它可能需要将链接到 NtosKrnl.lib。
 
 从 Windows 2000 开始可用。
 
@@ -446,7 +446,7 @@ _[In] Mdl_
 
 **VOID**
 
-通过重复使用的相同的已分配的 MDL 驱动程序使用此宏_TargetMdl_对的调用中的参数[ **IoBuildPartialMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff548324)例程。 如果在调用**MmPrepareMdlForReuse**，指定部分 MDL 具有关联的映射到系统地址空间**MmPrepareMdlForReuse**释放映射，以便可以重用 MDL。
+通过重复使用的相同的已分配的 MDL 驱动程序使用此宏_TargetMdl_对的调用中的参数[ **IoBuildPartialMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)例程。 如果在调用**MmPrepareMdlForReuse**，指定部分 MDL 具有关联的映射到系统地址空间**MmPrepareMdlForReuse**释放映射，以便可以重用 MDL。
 
 **MmPrepareMdlForReuse**接受仅由生成的分部 MDLs **IoBuildPartialMdl**。 如果**MmPrepareMdlForReuse**接收映射到的系统地址空间，但不由生成 MDL **IoBuildPartialMdl**， **MmPrepareMdlForReuse**不会释放映射，并在选中版本中，则引发断言失败。
 
@@ -494,7 +494,7 @@ IRQL:任何级别
 
 此宏调用应在每个驱动程序例程的包含可分页的代码或访问的可分页的代码开始处。
 
-**PAGED_CODE**宏检查 IRQL 只能在驱动程序代码的执行宏的点。 如果该代码随后会 IRQL，宏将不会检测此更改。 驱动程序开发人员应使用[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)并[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)用于检测何时 IRQL 驱动程序例程的执行过程中引发不正确。
+**PAGED_CODE**宏检查 IRQL 只能在驱动程序代码的执行宏的点。 如果该代码随后会 IRQL，宏将不会检测此更改。 驱动程序开发人员应使用[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)并[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)用于检测何时 IRQL 驱动程序例程的执行过程中引发不正确。
 
 **PAGED_CODE**宏仅在选中的版本中的工作方式。
 
@@ -526,15 +526,15 @@ _IdlePointer [中，out]_
 
 **PULONG**
 
-指定一个非**NULL**空闲之前通过返回的指针[ **PoRegisterDeviceForIdleDetection**](https://msdn.microsoft.com/library/windows/hardware/ff559721)。 请注意， **PoRegisterDeviceForIdleDetection**可能会返回**NULL**指针。 调用方**PoSetDeviceBusy**必须验证指针是否非**NULL**之前将其传递给**PoSetDeviceBusy**。
+指定一个非**NULL**空闲之前通过返回的指针[ **PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)。 请注意， **PoRegisterDeviceForIdleDetection**可能会返回**NULL**指针。 调用方**PoSetDeviceBusy**必须验证指针是否非**NULL**之前将其传递给**PoSetDeviceBusy**。
 
 **返回值**
 
 **VOID**
 
-**请注意** [ **PoSetDeviceBusyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff559759)例程是直接替代**PoSetDeviceBusy**宏。 如果要为 Windows Vista Service Pack 1 (SP1) 和更高版本的 Windows 编写新的驱动程序代码，调用**PoSetDeviceBusyEx**而不是**PoSetDeviceBusy**。
+**请注意** [ **PoSetDeviceBusyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetdevicebusyex)例程是直接替代**PoSetDeviceBusy**宏。 如果要为 Windows Vista Service Pack 1 (SP1) 和更高版本的 Windows 编写新的驱动程序代码，调用**PoSetDeviceBusyEx**而不是**PoSetDeviceBusy**。
 
-驱动程序将使用**PoSetDeviceBusy**连同**PoRegisterDeviceForIdleDetection**启用系统空闲检测其设备。 如果空闲检测是否已注册的设备进入空闲状态，电源管理器将发送[ **IRP_MN_SET_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)请求将在请求进入睡眠状态中的设备。
+驱动程序将使用**PoSetDeviceBusy**连同**PoRegisterDeviceForIdleDetection**启用系统空闲检测其设备。 如果空闲检测是否已注册的设备进入空闲状态，电源管理器将发送[ **IRP_MN_SET_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求将在请求进入睡眠状态中的设备。
 
 **PoSetDeviceBusy**报告设备繁忙状态，以便电源管理器可以重新启动其空闲的倒计时。 如果设备未接通电源， **PoSetDeviceBusy**不会更改其状态。 也就是说，它不会导致系统发送电源的请求。
 
@@ -668,7 +668,7 @@ _DestinationString [out]_
 
 **PANSI_STRING**
 
-指向[ **ANSI_STRING** ](https://msdn.microsoft.com/library/windows/hardware/ff540605)结构进行初始化。
+指向[ **ANSI_STRING** ](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_string)结构进行初始化。
 
 _[In] 缓冲_
 
@@ -694,7 +694,7 @@ _[In] BufferSize_
 
 *   **缓冲区**。 _SourceString_。
 
-若要初始化非空计数 Unicode 字符串，调用[ **RtlInitAnsiString**](https://msdn.microsoft.com/library/windows/hardware/ff561918)。
+若要初始化非空计数 Unicode 字符串，调用[ **RtlInitAnsiString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitansistring)。
 
 在 Microsoft Windows XP 和更高版本的 Windows 中可用。
 
@@ -711,7 +711,7 @@ _DestinationString [out]_
 
 **PUNICODE_STRING**
 
-指向[ **UNICODE_STRING** ](https://msdn.microsoft.com/library/windows/hardware/ff564879)结构进行初始化。
+指向[ **UNICODE_STRING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)结构进行初始化。
 
 _[In] 缓冲_
 
@@ -737,7 +737,7 @@ _[In] BufferSize_
 
 *   **缓冲区**。 _SourceString_。
 
-若要初始化非空计数 Unicode 字符串，调用[ **RtlInitUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff561934)。
+若要初始化非空计数 Unicode 字符串，调用[ **RtlInitUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlinitunicodestring)。
 
 从开始，提供与 Windows XP。
 
@@ -754,7 +754,7 @@ _L1 [in]_
 
 **PLUID**
 
-指定[ **LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff554334)检查。
+指定[ **LUID** ](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_luid)检查。
 
 **返回值**
 

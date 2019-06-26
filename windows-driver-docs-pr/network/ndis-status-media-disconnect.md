@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_MEDIA_DISCONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 155e63b7bb3d2bf9af0d50f2db842869dc9dc52e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39889b36bcb6fdd91b61095979f6c6b7cb87c94a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380151"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368579"
 ---
 # <a name="ndisstatusmediadisconnect"></a>NDIS\_状态\_媒体\_断开连接
 
@@ -25,7 +25,7 @@ NDIS 转换 NDIS\_状态\_媒体\_到断开连接状态指示[ **NDIS\_状态\_�
 
 NDIS 5。*x*和更早的微型端口驱动程序指示[ **NDIS\_状态\_媒体\_CONNECT** ](ndis-status-media-connect.md)时连接的状态还原。
 
-详细了解 NDIS\_状态\_媒体\_断开连接，请参阅[，该值指示连接状态 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff546856)和[的 802.11 网络媒体状态指示](https://msdn.microsoft.com/library/windows/hardware/ff549301).
+详细了解 NDIS\_状态\_媒体\_断开连接，请参阅[，该值指示连接状态 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546856(v=vs.85))和[的 802.11 网络媒体状态指示](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549301(v=vs.85)).
 
 <a name="requirements"></a>要求
 ------------

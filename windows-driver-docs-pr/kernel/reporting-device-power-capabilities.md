@@ -11,12 +11,12 @@ keywords:
 - I/O 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f87b33f36ad1518e2b5d320a43bbe6016f551b91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ca69ef60db256d4e4fc479b81d842a685057106
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324495"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373408"
 ---
 # <a name="reporting-device-power-capabilities"></a>报告设备电源功能
 
@@ -24,9 +24,9 @@ ms.locfileid: "63324495"
 
 
 
-在枚举驱动程序报告特定于设备的信息以响应即插即用[ **IRP\_MN\_查询\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)请求。 驱动程序以及其他此类信息，报告中的设备的电源管理功能[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构。 通常情况下，总线驱动程序将填充此结构。
+在枚举驱动程序报告特定于设备的信息以响应即插即用[ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)请求。 驱动程序以及其他此类信息，报告中的设备的电源管理功能[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构。 通常情况下，总线驱动程序将填充此结构。
 
-更高级别的驱动程序应设置[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程的查询功能 IRP，以便它们可以创建结构的本地副本，并确保其包含适当的值。 作为一般规则，更高级别的驱动程序不应更改这些值。 但是，如果更改是必需的则驱动程序可以进一步限制设备功能，但不能向其中添加。 换而言之，驱动程序可以使限制性更强的规则，但不能放宽它们。
+更高级别的驱动程序应设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程的查询功能 IRP，以便它们可以创建结构的本地副本，并确保其包含适当的值。 作为一般规则，更高级别的驱动程序不应更改这些值。 但是，如果更改是必需的则驱动程序可以进一步限制设备功能，但不能向其中添加。 换而言之，驱动程序可以使限制性更强的规则，但不能放宽它们。
 
 IRP 完成且已运行所有驱动程序完成例程后，缓存该结构和驱动程序不能更改其内容。
 

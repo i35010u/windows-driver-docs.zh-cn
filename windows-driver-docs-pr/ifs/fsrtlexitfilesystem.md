@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00bb1b44085a441f0c79fbaf9478a73b46612466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6363505d37a72ddd1f3bbcc874f0cc160381a611
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365899"
 ---
 # <a name="fsrtlexitfilesystem-function"></a>FsRtlExitFileSystem 函数
 
@@ -53,11 +53,11 @@ VOID FsRtlExitFileSystem(
 
 每次成功调用[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)的后续调用必须匹配**FsRtlExitFileSystem**。
 
-请注意，与本地文件系统和网络重定向程序，不同文件系统筛选器驱动程序应永远不会禁用正常内核 Apc 的传递 (通过调用[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)或[**KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)或通过提升到 IRQL APC\_级别) 调用跨[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+请注意，与本地文件系统和网络重定向程序，不同文件系统筛选器驱动程序应永远不会禁用正常内核 Apc 的传递 (通过调用[ **FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)或[**KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)或通过提升到 IRQL APC\_级别) 调用跨[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
 
-文件系统筛选器驱动程序时应禁用正常内核 Apc 的唯一情况是在调用之前立即[ **ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)， [ **ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)， [ **ExAcquireResourceShared**](https://msdn.microsoft.com/library/windows/hardware/ff544359)， [ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)，或[ **ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)。 在调用[ **ExReleaseResource** ](https://msdn.microsoft.com/library/windows/hardware/ff545571)或[ **ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)，筛选器驱动程序应立即重新启用交付正常内核 Apc。 作为一种替代方法[ **FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)，可以使用微筛选器驱动程序[ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)， [ **FltAcquireResourceShared**](fltacquireresourceshared.md)，并[ **FltReleaseResource** ](fltreleaseresource.md)获取时正确处理 Apc 的例程和释放资源。
+文件系统筛选器驱动程序时应禁用正常内核 Apc 的唯一情况是在调用之前立即[ **ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)， [ **ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)， [ **ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)， [ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)，或[ **ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)。 在调用[ **ExReleaseResource** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)或[ **ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)，筛选器驱动程序应立即重新启用交付正常内核 Apc。 作为一种替代方法[ **FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)，可以使用微筛选器驱动程序[ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)， [ **FltAcquireResourceShared**](fltacquireresourceshared.md)，并[ **FltReleaseResource** ](fltreleaseresource.md)获取时正确处理 Apc 的例程和释放资源。
 
-不需要禁用然后再调用正常内核 Apc [ **ExAcquireSharedWaitForExclusive** ](https://msdn.microsoft.com/library/windows/hardware/ff544370)由于此例程调用[ **KeRaiseIrqlToDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553084)，它表示禁用这两个正常和特殊内核 Apc。 它不是也这样做之前，先[ **ExAcquireFastMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff544337)或[ **ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)，因为这些例程禁用正常内核 Apc。
+不需要禁用然后再调用正常内核 Apc [ **ExAcquireSharedWaitForExclusive** ](https://msdn.microsoft.com/library/windows/hardware/ff544370)由于此例程调用[ **KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)，它表示禁用这两个正常和特殊内核 Apc。 它不是也这样做之前，先[ **ExAcquireFastMutex** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))或[ **ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)，因为这些例程禁用正常内核 Apc。
 
 <a name="requirements"></a>要求
 ------------
@@ -86,13 +86,13 @@ VOID FsRtlExitFileSystem(
 ## <a name="see-also"></a>请参阅
 
 
-[**ExAcquireFastMutex**](https://msdn.microsoft.com/library/windows/hardware/ff544337)
+[**ExAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))
 
-[**ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)
+[**ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
 
-[**ExAcquireResourceShared**](https://msdn.microsoft.com/library/windows/hardware/ff544359)
+[**ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 [**ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)
 
@@ -100,11 +100,11 @@ VOID FsRtlExitFileSystem(
 
 [**ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)
 
-[**ExReleaseResource**](https://msdn.microsoft.com/library/windows/hardware/ff545571)
+[**ExReleaseResource**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
-[**ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
 
-[**ExTryToAcquireFastMutex**](https://msdn.microsoft.com/library/windows/hardware/ff545647)
+[**ExTryToAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))
 
 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)
 
@@ -114,11 +114,11 @@ VOID FsRtlExitFileSystem(
 
 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)
 
-[**IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
 
-[**KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)
+[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)
 
-[**KeRaiseIrqlToDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553084)
+[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)
 
  
 

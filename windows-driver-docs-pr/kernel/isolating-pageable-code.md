@@ -8,12 +8,12 @@ keywords:
 - 数值调节钮锁 WDK 内存
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aeac616d22df883b0ba9a919bd5c3b0e0dc8587
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 056257ab3c5f732f5703d2acab3800ed4cada192
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381390"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376437"
 ---
 # <a name="isolating-pageable-code"></a>隔离可分页代码
 
@@ -70,7 +70,7 @@ if (!DeviceObject->ReferenceCount && !DeviceObject->AttachedDevice) {
 
 前面的例程不能建立可分页 （节省大约 160 个字节） 通过将移动到一个单独的例程引用旋转锁几行代码。
 
-此外，请记住，驱动程序代码不能标记为可分页，如果它调用任何**Ke * Xxx*** 支持例程，如[ **KeReleaseMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553140)或[ **KeReleaseSemaphore**](https://msdn.microsoft.com/library/windows/hardware/ff553143)，在其中*等待*参数设置为**TRUE**。 此类调用将返回具有在调度的 IRQL\_级别。
+此外，请记住，驱动程序代码不能标记为可分页，如果它调用任何**Ke * Xxx*** 支持例程，如[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)或[ **KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)，在其中*等待*参数设置为**TRUE**。 此类调用将返回具有在调度的 IRQL\_级别。
 
  
 

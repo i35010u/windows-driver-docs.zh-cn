@@ -8,16 +8,16 @@ keywords:
 - 内核模式 ETW WDK 软件跟踪
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d28efb71879df2ae4700e770484753bb15b98bb5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d5e1d2b0a0ab3feffb09c8fc4de591edc7e6e5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332065"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371690"
 ---
 # <a name="adding-event-tracing-to-kernel-mode-drivers"></a>将事件跟踪添加到内核模式驱动程序
 
-本部分介绍如何使用 Windows 事件跟踪 (ETW) 内核模式 API 将事件跟踪添加到内核模式驱动程序。 ETW 内核模式 API 中引入了 Windows Vista 和更早的操作系统中不支持。 使用[WPP 软件跟踪](wpp-software-tracing.md)或[WMI 事件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff566350)如果您的驱动程序需要支持跟踪功能在 Windows 2000 及更高版本。
+本部分介绍如何使用 Windows 事件跟踪 (ETW) 内核模式 API 将事件跟踪添加到内核模式驱动程序。 ETW 内核模式 API 中引入了 Windows Vista 和更早的操作系统中不支持。 使用[WPP 软件跟踪](wpp-software-tracing.md)或[WMI 事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)如果您的驱动程序需要支持跟踪功能在 Windows 2000 及更高版本。
 
 > [!TIP]
 > 若要查看示例代码，演示如何实现 ETW 使用 Windows Driver Kit (WDK) 8.1 和 Visual Studio，请参阅[Eventdrv 示例](https://go.microsoft.com/fwlink/p/?linkid=256109)。
@@ -65,7 +65,7 @@ ms.locfileid: "63332065"
 
 除了渠道之外，您可以使用级别和关键字关联的事件。 关键字和级别提供的方法来启用事件，并提供用于筛选时发布事件的机制。 关键字可用于从逻辑上相关的事件分组在一起。 用于指示严重性或详细程度的事件，例如，关键、 错误、 警告或信息性，可以是一个级别。 Winmeta.xml 文件包含预定义的事件属性的值。
 
-当创建的事件负载 （事件消息和数据） 的模板时，必须指定输入和输出类型。 支持的类型的备注部分所述[ **InputType 复杂类型 (Windows)**](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)。
+当创建的事件负载 （事件消息和数据） 的模板时，必须指定输入和输出类型。 支持的类型的备注部分所述[ **InputType 复杂类型 (Windows)** ](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)。
 
 ```XML
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
@@ -179,7 +179,7 @@ ms.locfileid: "63332065"
 
 - 若要添加仪器指令清单和可配置的消息编译器属性，请使用 Visual Studio。
 
-**将消息编译器任务添加到项目文件**有关如何在生成过程中纳入消息编译器的示例，查看项目文件[Eventdrv 示例](https://go.microsoft.com/fwlink/p/?linkid=256109)。 在 Eventdrv.vcxproj 文件中，没有**&lt;MessageCompile&gt;** 调用消息编译器的部分。 消息编译器使用清单文件 (evntdrv.xml) 作为输入，生成标头文件 evntdrvEvents.h。 本部分还指定所生成的 RC 文件的路径，并启用内核模式日志记录宏。 可以复制本部分中，并将其添加到驱动程序项目文件 (.vcxproj)。
+**将消息编译器任务添加到项目文件**有关如何在生成过程中纳入消息编译器的示例，查看项目文件[Eventdrv 示例](https://go.microsoft.com/fwlink/p/?linkid=256109)。 在 Eventdrv.vcxproj 文件中，没有 **&lt;MessageCompile&gt;** 调用消息编译器的部分。 消息编译器使用清单文件 (evntdrv.xml) 作为输入，生成标头文件 evntdrvEvents.h。 本部分还指定所生成的 RC 文件的路径，并启用内核模式日志记录宏。 可以复制本部分中，并将其添加到驱动程序项目文件 (.vcxproj)。
 
 ```XML
 
@@ -254,7 +254,7 @@ ms.locfileid: "63332065"
    #endif
    ```
 
-   添加**EventRegister\<*提供程序*\>** 宏为你[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)函数。 创建并初始化设备对象的代码后添加此函数。 请注意，必须匹配对的调用**EventRegister\<*提供程序*\>** 函数通过调用**EventUnregister\< *提供程序*\>**。 您可以在您的驱动程序中注销该驱动程序[ </em>*卸载** ](<https://msdn.microsoft.com/library/windows/hardware/ff564886>)例程。
+   添加**EventRegister\<*提供程序*\>** 宏为你[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)函数。 创建并初始化设备对象的代码后添加此函数。 请注意，必须匹配对的调用**EventRegister\<*提供程序*\>** 函数通过调用**EventUnregister\< *提供程序*\>** 。 您可以在您的驱动程序中注销该驱动程序[ </em>*卸载** ](<https://msdn.microsoft.com/library/windows/hardware/ff564886>)例程。
 
    ```ManagedCPlusPlus
       // DriverEntry function

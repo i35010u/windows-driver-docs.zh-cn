@@ -4,19 +4,19 @@ description: 如果驱动程序验证程序检测到冲突，它将生成的 bug
 ms.assetid: 4B957C57-9095-4C81-9EBC-C92C620C5824
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 872aa470c378f420910b21609589c9cf8eeed6cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2007bad7c6b0e5b69199f9e21565cf24610aabb0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344892"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371563"
 ---
 # <a name="debugging-bug-check-0xc4-driververifierdetectedviolation"></a>调试 Bug 检查 0xC4：驱动程序\_VERIFIER\_检测到\_冲突
 
 
-如果[Driver Verifier](driver-verifier.md)检测到冲突，它将生成的 bug 检查停止计算机。 这是为了向您提供可能的大多数信息用于调试问题。 一个更频繁的 bug 检查驱动程序验证程序生成是[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187)。 本部分介绍调试这些冲突的一些示例策略。
+如果[Driver Verifier](driver-verifier.md)检测到冲突，它将生成的 bug 检查停止计算机。 这是为了向您提供可能的大多数信息用于调试问题。 一个更频繁的 bug 检查驱动程序验证程序生成是[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)。 本部分介绍调试这些冲突的一些示例策略。
 
-当[Driver Verifier](driver-verifier.md)问题[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187)，它使用的参数 1 值 （或子代码） 指定了冲突的具体原因。 **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**检测到超过 200 个冲突。
+当[Driver Verifier](driver-verifier.md)问题[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，它使用的参数 1 值 （或子代码） 指定了冲突的具体原因。 **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**检测到超过 200 个冲突。
 
 ## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
@@ -32,7 +32,7 @@ ms.locfileid: "63344892"
 -   运行[Driver Verifier](driver-verifier.md)保留用于测试的计算机上。
 -   启用内核调试，在测试计算机上。
 
-有关详细信息请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)并[处理 Bug 检查时驱动程序验证程序已启用](https://msdn.microsoft.com/library/windows/hardware/hh450984)。
+有关详细信息请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)并[处理 Bug 检查时驱动程序验证程序已启用](https://docs.microsoft.com/windows-hardware/drivers/debugger/handling-a-bug-check-when-driver-verifier-is-enabled)。
 
  
 

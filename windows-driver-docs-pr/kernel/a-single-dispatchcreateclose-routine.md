@@ -11,12 +11,12 @@ keywords:
 - 关闭调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a89e0e96edb174d3fa2c041f0b6f05f994c2a3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d1442de58f98921bbad2140a998fbb3a1fea5f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339146"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363469"
 ---
 # <a name="a-single-dispatchcreateclose-routine"></a>单个 DispatchCreateClose 例程
 
@@ -26,7 +26,7 @@ ms.locfileid: "63339146"
 
 许多驱动程序，尤其是较低级别的链中的驱动程序分层驱动程序，只需建立在收到其是否存在*创建*请求并只需确认的接收*关闭*请求。
 
-例如，端口驱动程序的设备控制器与一个或多个紧密耦合的类驱动程序调用[ **IoGetDeviceObjectPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff549198)可能具有的精简[ *DispatchCreateClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 例程可能不执行任何操作多个完整 IRP，如下所示：
+例如，端口驱动程序的设备控制器与一个或多个紧密耦合的类驱动程序调用[ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)可能具有的精简[ *DispatchCreateClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 例程可能不执行任何操作多个完整 IRP，如下所示：
 
 ```cpp
     :    : 
@@ -46,7 +46,7 @@ ms.locfileid: "63339146"
 
 若要处理的创建请求以打开文件对象，表示逻辑或物理设备，最高级别的驱动程序应执行以下操作：
 
-1.  调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)以获得到 IRP 中其 I/O 堆栈位置的指针。
+1.  调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)以获得到 IRP 中其 I/O 堆栈位置的指针。
 
 2.  检查**的文件对象**。**文件名**i/o 堆栈位置，并完成状态 IRP\_如果 Unicode 字符串在成功**FileName**长度为零; 否则，请完成状态 IRP\_无效\_参数。
 

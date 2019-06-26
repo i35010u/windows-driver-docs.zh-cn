@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a92d556c5fc34ddc63ca2aa15343f1661ebe9c48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb853a39296222da7ea31d5491290e777ae8e2c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377921"
 ---
 # <a name="srbgetstreamproperty"></a>SRB\_获取\_流\_属性
 
@@ -42,7 +42,7 @@ ms.locfileid: "63390869"
 
 ### <a name="comments"></a>备注
 
-类驱动程序将在操作的参数传递*pSrb*-&gt;**CommandData**。**PropertyInfo**缓冲，窗体结构[**流\_属性\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff568442)。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。
+类驱动程序将在操作的参数传递*pSrb*-&gt;**CommandData**。**PropertyInfo**缓冲，窗体结构[**流\_属性\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_stream_property_descriptor)。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。
 
 **属性**流的成员\_属性\_描述符结构描述的属性有问题，同时**PropertyInfo**成员指定用于复制的缓冲区属性数据。 如果缓冲区太小，微型驱动程序应设置**状态**指向成员*pSrb*到状态\_缓冲区\_溢出。
 
@@ -51,7 +51,7 @@ ms.locfileid: "63390869"
 
 [**SRB\_SET\_STREAM\_PROPERTY**](srb-set-stream-property.md)
 
-[**流\_属性\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff568442)
+[**流\_属性\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_stream_property_descriptor)
 
  
 

@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_CACHE_SD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1089c9fda0ca6347c0db1df54e3f9b1fed9ccb63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d60a21a8e85b32aecd935af1d5c573246acc8d32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377943"
 ---
 # <a name="wskcachesd"></a>WSK\_CACHE\_SD
 
 
-WSK 应用程序使用 WSK\_缓存\_SD 客户端控制操作，以获取可以传递到的安全描述符的缓存的副本[ **WskSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571149)， [ **WskSocketConnect**](https://msdn.microsoft.com/library/windows/hardware/ff571150)，并[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)函数。
+WSK 应用程序使用 WSK\_缓存\_SD 客户端控制操作，以获取可以传递到的安全描述符的缓存的副本[ **WskSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)， [ **WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)，并[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)函数。
 
-若要获取的安全描述符的缓存的副本，WSK 应用程序调用[ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)使用以下参数的函数。
+若要获取的安全描述符的缓存的副本，WSK 应用程序调用[ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)使用以下参数的函数。
 
 <table>
 <colgroup>

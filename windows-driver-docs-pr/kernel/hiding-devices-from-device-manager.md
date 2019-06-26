@@ -10,19 +10,19 @@ keywords:
 - NoDisplayClass 值 WDK 设备安装
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9a2483d39287f6dd2f0dc6a8ab0737e84b02d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ca217d09111a19bfc6cef8b81c677e0c321f6ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358799"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371879"
 ---
 # <a name="hiding-devices-from-device-manager"></a>在设备管理器中隐藏设备
 
 
 默认情况下，设备管理器的计算机上显示每个设备的状态。 在某些情况下，你可能想要阻止某些设备出现在设备管理器。 例如，主板可能包含不是用户可访问的槽的 CardBus 控制器。 用户不能使用该槽，因为您不希望设备管理器以显示有关设备的任何信息。
 
-若要隐藏的设备在设备管理器，您可以将设备标记为*隐藏的设备*。 通常情况下，设备管理器不显示隐藏的设备。 （请注意，但是，用户可以重写此设置并显示在设备管理器中的所有设备，甚至是隐藏的。 有关如何重写此设置的详细信息，请参阅[查看隐藏的设备](https://msdn.microsoft.com/library/windows/hardware/ff553955)。)
+若要隐藏的设备在设备管理器，您可以将设备标记为*隐藏的设备*。 通常情况下，设备管理器不显示隐藏的设备。 （请注意，但是，用户可以重写此设置并显示在设备管理器中的所有设备，甚至是隐藏的。 有关如何重写此设置的详细信息，请参阅[查看隐藏的设备](https://docs.microsoft.com/windows-hardware/drivers/install/viewing-hidden-devices)。)
 
 有两种方法，你将设备标记为隐藏： 内设备的驱动程序或通过使用 ACPI BIOS。
 
@@ -30,9 +30,9 @@ ms.locfileid: "63358799"
 
 驱动程序使用两种方法将标记为隐藏的驱动程序：
 
--   功能驱动程序或函数筛选器驱动程序可以请求通过响应隐藏已成功启动的设备的操作系统[ **IRP\_MN\_查询\_PNP\_设备\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff551698) IRP。 当 IRP 到达时，该驱动程序必须设置 PNP\_设备\_不\_显示\_UI 中的位**IoStatus.Information**到**TRUE**中的驱动程序调度例程。
+-   功能驱动程序或函数筛选器驱动程序可以请求通过响应隐藏已成功启动的设备的操作系统[ **IRP\_MN\_查询\_PNP\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state) IRP。 当 IRP 到达时，该驱动程序必须设置 PNP\_设备\_不\_显示\_UI 中的位**IoStatus.Information**到**TRUE**中的驱动程序调度例程。
 
--   在 Windows XP 和更高版本的 Windows 操作系统，总线驱动程序或总线筛选器驱动程序可以隐藏任何设备、 启动或以其他方式，通过响应[ **IRP\_MN\_查询\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551664) IRP。 当 IRP 到达时，必须设置驱动程序**Parameters.DeviceCapabilities.NoDisplayInUI**成员添加到**TRUE**驱动程序的调度例程中。 在某些情况下，总线筛选器驱动程序可能需要在完成例程中设置此位。 基础总线驱动程序的调度例程错误地清除其他驱动程序设置的所有功能字段时需要此额外步骤。
+-   在 Windows XP 和更高版本的 Windows 操作系统，总线驱动程序或总线筛选器驱动程序可以隐藏任何设备、 启动或以其他方式，通过响应[ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities) IRP。 当 IRP 到达时，必须设置驱动程序**Parameters.DeviceCapabilities.NoDisplayInUI**成员添加到**TRUE**驱动程序的调度例程中。 在某些情况下，总线筛选器驱动程序可能需要在完成例程中设置此位。 基础总线驱动程序的调度例程错误地清除其他驱动程序设置的所有功能字段时需要此额外步骤。
 
 ### <a name="hiding-devices-by-using-the-acpi-bios"></a>通过使用 ACPI BIOS 中隐藏的设备
 

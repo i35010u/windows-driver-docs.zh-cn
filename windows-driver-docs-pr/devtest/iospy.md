@@ -4,12 +4,12 @@ description: IoSpy 是记录有关对设备的内核模式驱动程序的 IOCTL 
 ms.assetid: 5fe52fe6-97b4-477a-9450-727c5bf9bd72
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3ccbd84b0f29683d6d94495fd8563d214be76a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9446da21ab50fd7e7ef8dceeba7114f83f622a7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373701"
 ---
 > [!NOTE]
 > IoSpy 和 IoAttack 不再在 WDK 中可用后 Windows 10 版本 1703年。
@@ -59,7 +59,7 @@ IoSpy 是记录有关对设备的内核模式驱动程序的 IOCTL 和 WMI 请�
 <td align="left"><p>一个或多个设备上禁用 I/O Spy。 卸载 IoSpy 并禁用 IOCTL 和 WMI 筛选的测试系统上的所有设备。</p>
 <p><strong>测试二进制文件：</strong>Devfund_IOSpy_DisableSupport.wsc</p>
 <p><strong>测试方法：</strong>DisableIoSpy</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
@@ -73,7 +73,7 @@ IoSpy 是记录有关对设备的内核模式驱动程序的 IOCTL 和 WMI 请�
 <td align="left"><p>测试系统上安装 IoSpy 并启用 IOCTL 和 WMI 筛选一个或多个设备上。 DQ 参数控制 IoSpy 筛选器驱动程序将安装在哪些设备。</p>
 <p><strong>测试二进制文件：</strong>Devfund_IOSpy_EnableSupport.wsc</p>
 <p><strong>测试方法：</strong>EnableIoSpy</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>DFD</em> -指定 IoSpy 数据文件的路径。 默认位置是 %SystemDrive%\DriverTest\IoSpy</p></td>
 </tr>

@@ -8,12 +8,12 @@ keywords:
 - 网络地址端口转换器 WDK IPsec 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1948ea7e6e5b0f136d8726a2fad8794731e9c07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1f8bc04aa31a8c1cc08607571dff3c3937045111
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563029"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368453"
 ---
 # <a name="traversing-nats-and-napts-with-udp-encapsulated-esp-packets"></a>使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
 
@@ -45,8 +45,8 @@ Microsoft 支持上端口 4500 ESP 数据包的 UDP 封装。 IKE 对等机端�
 -   维护一份 SAs，以便传输已卸载到 nic。
 
 -   支持以下 Oid:
-    -   [OID\_TCP\_TASK\_IPSEC\_ADD\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569809)
-    -   [OID\_TCP\_TASK\_IPSEC\_DELETE\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569811)
+    -   [OID\_TCP\_TASK\_IPSEC\_ADD\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-udpesp-sa)
+    -   [OID\_TCP\_TASK\_IPSEC\_DELETE\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-delete-udpesp-sa)
 
  
 

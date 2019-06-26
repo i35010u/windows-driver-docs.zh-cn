@@ -4,12 +4,12 @@ description: 安装测试证书
 ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd67a9ce610e2b3167791182dae5d20ce09d613
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da6dc5c4a44e219afc30ac748f9b4823bea04980
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341474"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385624"
 ---
 # <a name="installing-test-certificates"></a>安装测试证书
 
@@ -18,7 +18,7 @@ ms.locfileid: "63341474"
 
 CA 证书必须一次只能添加到受信任的根证书颁发机构证书存储。 添加后，它可验证所有驱动程序或驱动程序包已进行数字签名证书后之前在计算机上安装驱动程序包, 的签名。
 
-若要将测试证书添加到受信任的根证书颁发机构证书存储的最简单方法是通过[ **CertMgr** ](https://msdn.microsoft.com/library/windows/hardware/ff543411)工具。 本主题将介绍安装测试证书，Contoso.com(test) 的过程。 此证书存储中*ContosoTest.cer*文件。 有关如何创建此证书的详细信息，请参阅[创建测试证书](creating-test-certificates.md)。
+若要将测试证书添加到受信任的根证书颁发机构证书存储的最简单方法是通过[ **CertMgr** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)工具。 本主题将介绍安装测试证书，Contoso.com(test) 的过程。 此证书存储中*ContosoTest.cer*文件。 有关如何创建此证书的详细信息，请参阅[创建测试证书](creating-test-certificates.md)。
 
 以下命令行使用 Certmgr.exe 安装或，Contoso.com(test) 将证书添加到测试计算机的受信任的根证书颁发机构证书存储：
 
@@ -42,7 +42,7 @@ certmgr.exe /add ContosoTest.cer /s /r localMachine root
 
 ![受信任的根证书颁发机构证书的屏幕截图将存储在证书 mmc 管理单元](images/certstore2.png)
 
-有关 CertMgr 和其命令行自变量的详细信息，请参阅[ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)。
+有关 CertMgr 和其命令行自变量的详细信息，请参阅[ **CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)。
 
 有关如何安装测试证书的详细信息，请参阅[测试计算机上安装测试证书](installing-a-test-certificate-on-a-test-computer.md)。
 

@@ -8,12 +8,12 @@ keywords:
 - WDK WPP 宏
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eb6a46812d076b70c3f20ad65816db34d900e60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac55b640ebc38669e8754de2d192011356a216a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332057"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371463"
 ---
 # <a name="adding-wpp-macros-to-a-trace-provider"></a>将 WPP 宏添加到跟踪提供程序
 
@@ -29,27 +29,27 @@ ms.locfileid: "63332057"
     #include <source-file-name.tmh>
     ```
 
-    跟踪消息标头文件必须包含在源文件 WPP 宏的任何调用之前和之后定义[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏。
+    跟踪消息标头文件必须包含在源文件 WPP 宏的任何调用之前和之后定义[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏。
 
--   一个[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)定义每个源文件包含其他 WPP 宏指令。
+-   一个[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))定义每个源文件包含其他 WPP 宏指令。
 
     此定义指定驱动程序的控件 GUID 和驱动程序定义的跟踪标志名称。 定义必须添加到源代码文件之前 **\#包括** 语句包括文件的跟踪消息标头文件。
 
--   一个[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)宏调用驱动程序的源代码。
+-   一个[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏调用驱动程序的源代码。
 
-    有关驱动程序，此宏将激活软件驱动程序中的跟踪。 此宏是通常驱动程序在初始化期间调用，例如[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程。
+    有关驱动程序，此宏将激活软件驱动程序中的跟踪。 此宏是通常驱动程序在初始化期间调用，例如[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。
 
     对于用户模式应用程序，调用此宏其中不跟踪以前尝试的源代码中的某个位置。
 
     初始化后，可以使用[TraceView](traceview.md)或[Tracelog](tracelog.md)启动软件跟踪会话，并显示跟踪消息。
 
--   一个[WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)宏调用[跟踪提供程序的](trace-provider.md)源代码。 此宏将停用软件驱动程序中的跟踪。
+-   一个[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))宏调用[跟踪提供程序的](trace-provider.md)源代码。 此宏将停用软件驱动程序中的跟踪。
 
-    驱动程序，此宏调用通常添加到驱动程序的[ **Unload** ](https://msdn.microsoft.com/library/windows/hardware/ff564886)例程。
+    驱动程序，此宏调用通常添加到驱动程序的[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程。
 
     对于用户模式应用程序，此宏在源代码中的某个位置后调用的最后一个跟踪尝试进行。
 
--   [**DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)宏调用来记录跟踪消息。
+-   [**DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏调用来记录跟踪消息。
 
  
 

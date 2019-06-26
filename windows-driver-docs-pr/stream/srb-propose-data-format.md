@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 325f5403ad585813e81b06c3b8eb505c1a9cd5d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8206351223b7e4e455f66a371698727496a250f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377883"
 ---
 # <a name="srbproposedataformat"></a>SRB\_提议\_数据\_格式
 
@@ -45,11 +45,11 @@ ms.locfileid: "63351611"
 
 ### <a name="comments"></a>备注
 
-当在类驱动程序收到[ **KSPROPERTY\_连接\_PROPOSEDATAFORMAT** ](ksproperty-connection-proposedataformat.md)请求，它使用此 SRB 代码来确定是否支持此建议的格式。 在类驱动程序将传递中的建议的数据格式**CommandData**。**OpenFormat**指向成员*pSrb*。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。
+当在类驱动程序收到[ **KSPROPERTY\_连接\_PROPOSEDATAFORMAT** ](ksproperty-connection-proposedataformat.md)请求，它使用此 SRB 代码来确定是否支持此建议的格式。 在类驱动程序将传递中的建议的数据格式**CommandData**。**OpenFormat**指向成员*pSrb*。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。
 
 如果微型驱动程序不支持的数据格式，它会设置*pSrb*-&gt;**状态**状态\_不\_受支持。 如果微型驱动程序能够切换到指定的格式的流，它将此字段设置为状态\_成功。
 
-在更高版本的时间段的类驱动程序微型驱动程序是否能够接受新的格式，可能会发送微型驱动程序格式更改，这将由**OptionsFlags**中的成员[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构。
+在更高版本的时间段的类驱动程序微型驱动程序是否能够接受新的格式，可能会发送微型驱动程序格式更改，这将由**OptionsFlags**中的成员[ **KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)结构。
 
 ## <a name="see-also"></a>请参阅
 

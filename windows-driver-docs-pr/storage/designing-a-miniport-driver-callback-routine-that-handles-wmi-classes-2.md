@@ -7,12 +7,12 @@ keywords:
 - 回调例程 WDK WMI Srb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8114a2b9aa0a79d9bdd529605055a07a95494bb0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f58e46f2c4bbe63b66c7d483fc6a241f19dd62b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331739"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368293"
 ---
 # <a name="designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-with-methods"></a>设计可以通过方法处理 WMI 类的微型端口驱动程序回调例程
 
@@ -20,7 +20,7 @@ ms.locfileid: "63331739"
 ## <span id="ddk_designing_a_miniport_driver_callback_routine_that_handles_wmi_clas"></span><span id="DDK_DESIGNING_A_MINIPORT_DRIVER_CALLBACK_ROUTINE_THAT_HANDLES_WMI_CLAS"></span>
 
 
-本部分中使用的示例包含 WMI 方法的 WMI 类，并介绍相应的微型端口驱动程序回调例程应如下所示。 有关执行 WMI 方法的微型端口驱动程序回调例程的详细信息，请参阅[ **HwScsiWmiExecuteMethod**](https://msdn.microsoft.com/library/windows/hardware/ff557332)。
+本部分中使用的示例包含 WMI 方法的 WMI 类，并介绍相应的微型端口驱动程序回调例程应如下所示。 有关执行 WMI 方法的微型端口驱动程序回调例程的详细信息，请参阅[ **HwScsiWmiExecuteMethod**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_execute_method)。
 
 以下示例中 WMI 类包含 WMI 方法：
 
@@ -128,7 +128,7 @@ HwScsiWmiExecuteMethod (
     }
 ```
 
-WMI 工具套件 (**mofcomp**并**wmimofck**) 简化了编写此例程通过自动生成的二进制类型库和每个 wmi 定义符号常量的标头文件的任务类 GUID 索引和每个方法标识符。 有关如何使用这些工具的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://msdn.microsoft.com/library/windows/hardware/ff542012)并[使用 wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)。
+WMI 工具套件 (**mofcomp**并**wmimofck**) 简化了编写此例程通过自动生成的二进制类型库和每个 wmi 定义符号常量的标头文件的任务类 GUID 索引和每个方法标识符。 有关如何使用这些工具的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)并[使用 wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)。
 
 **Wmimofck**工具生成的.bmf 二进制文件从生成的.h 文件**mofcomp**。 通过连接到 WMI 类的名称的"GuidIndex"后缀来构成类索引的符号常量的名称。 例如，使用**MSFC\_FibrePortHBAMethods**类，该工具将创建名为符号常量**MSFC\_FibrePortHBAMethodsGuidIndex**表示GUID 为该类的的索引。 在类似的方式，该工具将使用到窗体符号常量表示的方法，而无需添加任何后缀的方法名称。 该方法的名称的符号常量是只需方法的名称。 在示例中，switch 语句测试方法标识符的值。 在 switch 语句中的每个用例对应于方法名称。
 
@@ -163,7 +163,7 @@ case MSFC_HBAPortMethodsGuidIndex:
     }
 ```
 
-返回前，应调用回调例程[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)。 此 SCSI 端口 WMI 库例程的信息，例如请求的状态和返回数据的大小更新请求上下文。 有关存储的请求上下文中的信息的详细信息，请参阅[ **SCSIWMI\_请求\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff564946)。
+返回前，应调用回调例程[ **ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)。 此 SCSI 端口 WMI 库例程的信息，例如请求的状态和返回数据的大小更新请求上下文。 有关存储的请求上下文中的信息的详细信息，请参阅[ **SCSIWMI\_请求\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmi_request_context)。
 
  
 

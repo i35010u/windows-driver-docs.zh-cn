@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7cdc3a3416416c4a717d6791219f689d54ab7e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c9c34577ab2a3627e97760591eace51e9586109
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375103"
 ---
 # <a name="nfp-maximum-message-size"></a>NFP 最大消息大小
 
@@ -24,7 +24,7 @@ ms.locfileid: "63354103"
 
 
 ## <a name="related-topics"></a>相关主题
-[IOCTL\_NFP\_GET\_MAX\_MESSAGE\_BYTES](https://msdn.microsoft.com/library/windows/hardware/jj853318)  
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[IOCTL\_NFP\_GET\_MAX\_MESSAGE\_BYTES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_max_message_bytes)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

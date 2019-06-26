@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 02121f426a757a068598e603dbf99101acaeb99d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6137471d0c1962d54c8579058b16aaf34d76208d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362671"
 ---
 # <a name="sendrls-function"></a>SendRLS 函数
 
@@ -45,22 +45,22 @@ void SendRLS(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRLS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565452)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRLS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_out)结构。
 
 *PortWWN*   
-通过其发送的 RLS 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRLS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565446)结构。
+通过其发送的 RLS 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRLS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_in)结构。
 
 *DestWWN*   
-目标端口全球通用名称。 此信息传递到中的微型端口驱动程序**DestWWN**的成员[ **SendRLS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565446)结构。
+目标端口全球通用名称。 此信息传递到中的微型端口驱动程序**DestWWN**的成员[ **SendRLS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_in)结构。
 
 *TotalRspBufferSize*   
-以字节为单位的 RLS 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRLS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565452)结构。
+以字节为单位的 RLS 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRLS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_out)结构。
 
 *ActualRspBufferSize*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRLS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565452)结构。
+以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRLS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_out)结构。
 
 *RspBuffer*   
-RLS 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRLS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565452)结构。
+RLS 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRLS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -101,9 +101,9 @@ RLS 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**�
 
 [HBA\_状态](hba-status.md)
 
-[**SendRLS\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565446)
+[**SendRLS\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_in)
 
-[**SendRLS\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565452)
+[**SendRLS\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrls_out)
 
  
 

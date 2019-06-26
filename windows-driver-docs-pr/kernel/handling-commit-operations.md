@@ -12,12 +12,12 @@ keywords:
 - 提交阶段 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da1a107f0ca554dfd91937148a39bdc68c20c0a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a008d8ee7d089bbcf2f6ca3c979c7de97b343f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359475"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377639"
 ---
 # <a name="handling-commit-operations"></a>处理提交操作
 
@@ -38,7 +38,7 @@ ms.locfileid: "63359475"
 
 包括 TP[上级事务管理器](creating-a-superior-transaction-manager.md)不能使用单阶段提交。
 
-如果资源管理器已注册为接收事务\_通知\_单个\_阶段\_提交通知 KTM 发送通知的此类事务的客户端调用时[ **ZwCommitTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff566420)。
+如果资源管理器已注册为接收事务\_通知\_单个\_阶段\_提交通知 KTM 发送通知的此类事务的客户端调用时[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)。
 
 当资源管理器收到事务\_通知\_单个\_阶段\_提交通知事务，它可以提交事务或拒绝单阶段提交。
 
@@ -46,15 +46,15 @@ ms.locfileid: "63359475"
 
 1.  刷新的非永久性缓存 （内存中存储） 中保存任何数据，如[封送处理区域 CLFS](clfs-marshalling-areas.md)有关[CLFS 日志流](using-log-streams-with-ktm.md)。
 
-    资源管理器必须将数据从缓存移动到持久性存储介质。 例如，可以调用的资源管理器使用 CLFS [ **ClfsFlushBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff541544)。
+    资源管理器必须将数据从缓存移动到持久性存储介质。 例如，可以调用的资源管理器使用 CLFS [ **ClfsFlushBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsflushbuffers)。
 
 2.  永久和公共进行所有数据更改 (即，资源管理器的作用域外可见)。
 
-3.  调用[ **ZwCommitComplete**](https://msdn.microsoft.com/library/windows/hardware/ff566418)。
+3.  调用[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)。
 
-在调用**ZwCommitComplete**，应调用资源管理器[ **ZwClose** ](https://msdn.microsoft.com/library/windows/hardware/ff566417)关闭登记句柄。
+在调用**ZwCommitComplete**，应调用资源管理器[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)关闭登记句柄。
 
-若要拒绝的事务的单阶段提交操作，资源管理器可以调用[ **ZwSinglePhaseReject**](https://msdn.microsoft.com/library/windows/hardware/ff567113)。 如果资源管理器调用**ZwSinglePhaseReject**，KTM 立即提交操作将从更改单阶段为多个阶段。
+若要拒绝的事务的单阶段提交操作，资源管理器可以调用[ **ZwSinglePhaseReject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)。 如果资源管理器调用**ZwSinglePhaseReject**，KTM 立即提交操作将从更改单阶段为多个阶段。
 
 如果在同一事务中登记其他资源管理器，则必须在[只读](creating-a-resource-manager.md#kernel-creating-a-read-only-enlistment)。 但是，它们必须注册才能接收事务\_通知\_RM\_断开连接的通知，它们接收处理单阶段提交操作的资源管理器将关闭登记处理未指示它已提交或回滚事务。
 
@@ -62,33 +62,33 @@ ms.locfileid: "63359475"
 
 在多阶段提交操作开始时将发生以下事件之一：
 
--   事务的客户端调用[ **ZwCommitTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff566420)，并没有资源管理器已注册接收事务\_通知\_单一\_阶段\_提交通知。
+-   事务的客户端调用[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)，并没有资源管理器已注册接收事务\_通知\_单一\_阶段\_提交通知。
 
--   资源管理器调用[ **ZwSinglePhaseReject** ](https://msdn.microsoft.com/library/windows/hardware/ff567113)接收到一个事务之后\_通知\_单一\_阶段\_提交通知。
+-   资源管理器调用[ **ZwSinglePhaseReject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)接收到一个事务之后\_通知\_单一\_阶段\_提交通知。
 
--   一个[上级事务管理器](creating-a-superior-transaction-manager.md)调用[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)。
+-   一个[上级事务管理器](creating-a-superior-transaction-manager.md)调用[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)。
 
 多阶段提交操作包括三个连续的阶段：*预先准备*，*准备*，并*提交*。
 
 **预先准备阶段**
 
-Pre-prepare 阶段 (也称为*阶段零*) 的提交操作开始时 KTM 发送事务\_通知\_PREPREPARE 通知到所有资源管理器。 KTM 发送此通知，如果没有资源管理器支持单阶段提交操作的事务，或如果上级事务管理器调用[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)。
+Pre-prepare 阶段 (也称为*阶段零*) 的提交操作开始时 KTM 发送事务\_通知\_PREPREPARE 通知到所有资源管理器。 KTM 发送此通知，如果没有资源管理器支持单阶段提交操作的事务，或如果上级事务管理器调用[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)。
 
 当每个资源管理器接收的事务\_通知\_PREPREPARE 通知时，它必须执行以下操作：
 
 1.  刷新的非永久性缓存 （内存中存储） 中保存任何数据，如[封送处理区域 CLFS](clfs-marshalling-areas.md)有关[CLFS 日志流](using-log-streams-with-ktm.md)。
 
-    资源管理器必须将数据从缓存移动到持久性存储介质。 例如，可以调用的资源管理器使用 CLFS [ **ClfsFlushBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff541544)。
+    资源管理器必须将数据从缓存移动到持久性存储介质。 例如，可以调用的资源管理器使用 CLFS [ **ClfsFlushBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsflushbuffers)。
 
-2.  调用[ **ZwPrePrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567040)。
+2.  调用[ **ZwPrePrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete)。
 
 后一个资源管理器调用了具有**ZwPreprepareComplete**，它可以继续接收和处理客户端请求。 但资源管理器必须将所有数据修改都视为缓存传递操作立即写入到持久性存储介质。
 
-如果资源管理器遇到错误，正在进行的事务\_通知\_PREPREPARE 通知，则应调用[ **ZwRollbackEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff567083)回滚该事务。
+如果资源管理器遇到错误，正在进行的事务\_通知\_PREPREPARE 通知，则应调用[ **ZwRollbackEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)回滚该事务。
 
 **准备阶段**
 
-在准备阶段 (也称为*第一阶段*) 的提交操作开始时 KTM 发送事务\_通知\_到所有资源管理器准备通知。 KTM 发送此通知后事务\_通知\_PREPREPARE 如果没有资源管理器支持单阶段提交或上级事务管理器会调用[ **ZwPrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567039).
+在准备阶段 (也称为*第一阶段*) 的提交操作开始时 KTM 发送事务\_通知\_到所有资源管理器准备通知。 KTM 发送此通知后事务\_通知\_PREPREPARE 如果没有资源管理器支持单阶段提交或上级事务管理器会调用[ **ZwPrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment).
 
 当每个资源管理器接收的事务\_通知\_准备通知时，它必须执行以下操作：
 
@@ -96,13 +96,13 @@ Pre-prepare 阶段 (也称为*阶段零*) 的提交操作开始时 KTM 发送事
 
 2.  请确保所有数据已被都移动到持久存储。
 
-3.  调用[ **ZwPrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567037)。
+3.  调用[ **ZwPrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)。
 
-如果资源管理器遇到错误，正在进行的事务\_通知\_准备通知，则应调用[ **ZwRollbackEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff567083)回滚事务。 但是，资源管理器不能回滚事务后它被称为**ZwPrepareComplete**。
+如果资源管理器遇到错误，正在进行的事务\_通知\_准备通知，则应调用[ **ZwRollbackEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)回滚事务。 但是，资源管理器不能回滚事务后它被称为**ZwPrepareComplete**。
 
 **提交阶段**
 
-提交阶段 (也称为*第二阶段*) 的提交操作开始时 KTM 发送事务\_通知\_到所有资源管理器提交通知。 KTM 发送此通知后事务\_通知\_准备如果没有资源管理器支持单阶段提交或上级事务管理器会调用[ **ZwCommitEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff566419).
+提交阶段 (也称为*第二阶段*) 的提交操作开始时 KTM 发送事务\_通知\_到所有资源管理器提交通知。 KTM 发送此通知后事务\_通知\_准备如果没有资源管理器支持单阶段提交或上级事务管理器会调用[ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment).
 
 当每个资源管理器接收的事务\_通知\_提交通知时，它必须执行以下操作：
 
@@ -110,9 +110,9 @@ Pre-prepare 阶段 (也称为*阶段零*) 的提交操作开始时 KTM 发送事
 
     通常情况下，资源管理器通过更改永久和公共中日志流事务的已保存的数据复制到数据库的公共、 永久存储。 有关如何使用日志流的详细信息，请参阅[使用日志流与 KTM 一起](using-log-streams-with-ktm.md)。
 
-2.  调用[ **ZwCommitComplete**](https://msdn.microsoft.com/library/windows/hardware/ff566418)。
+2.  调用[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)。
 
-资源管理器调用后**ZwCommitComplete**，则应调用[ **ZwClose** ](https://msdn.microsoft.com/library/windows/hardware/ff566417)关闭登记句柄。
+资源管理器调用后**ZwCommitComplete**，则应调用[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)关闭登记句柄。
 
 如果资源管理器遇到错误，正在进行的事务\_通知\_提交通知时，它应自行关闭。 操作系统重新加载的资源管理器，资源管理器的下一次[恢复过程](handling-recovery-operations.md)应还原到了已知保持完好，发生错误之前的状态的事务。
 

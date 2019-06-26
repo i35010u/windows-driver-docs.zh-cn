@@ -11,17 +11,17 @@ keywords:
 - 启用的错误源 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc24927a76845f5a7db39f1cfb3e4521d8eea95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c791344a61b3854be1a31937249ef8d65db6ae9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354481"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362594"
 ---
 # <a name="enabling-an-error-source"></a>启用错误源
 
 
-在用户模式应用程序可以让[错误源](hardware-errors-and-error-sources.md)通过调用[ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559525)方法。
+在用户模式应用程序可以让[错误源](hardware-errors-and-error-sources.md)通过调用[ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)方法。
 
 下面的代码示例演示如何启用错误源。
 
@@ -124,7 +124,7 @@ pClass->Release();
 pOutParameters->Release();
 ```
 
-在用户模式应用程序可以禁用[错误源](hardware-errors-and-error-sources.md)通过调用[ **WHEAErrorSourceMethods::DisableErrorSourceRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559523)方法。 有关禁用错误源的详细信息，请参阅[禁用错误源](disabling-an-error-source.md)。
+在用户模式应用程序可以禁用[错误源](hardware-errors-and-error-sources.md)通过调用[ **WHEAErrorSourceMethods::DisableErrorSourceRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)方法。 有关禁用错误源的详细信息，请参阅[禁用错误源](disabling-an-error-source.md)。
 
  
 

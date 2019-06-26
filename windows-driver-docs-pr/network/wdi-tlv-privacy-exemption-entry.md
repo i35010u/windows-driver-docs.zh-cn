@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PRIVACY_EXEMPTION_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 309d1bbaf3d674ff7838d8f574fc57054f419fbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a43f519cc1a9babd49bf80a3af2e4a150335cb38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342216"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366514"
 ---
 # <a name="wditlvprivacyexemptionentry"></a>WDI\_TLV\_隐私\_免除\_条目
 
@@ -34,8 +34,8 @@ WDI\_TLV\_隐私\_免除\_项是包含隐私例外条目 TLV。
 | 在任务栏的搜索框中键入                                                                   | 描述                                                 |
 |------------------------------------------------------------------------|-------------------------------------------------------------|
 | UINT16                                                                 | 指定 IEEE EtherType big endian 字节顺序。      |
-| [**WDI\_免除\_操作\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn897820) | 指定例外的操作类型。                 |
-| [**WDI\_免除\_数据包\_类型**](https://msdn.microsoft.com/library/windows/hardware/dn897823) | 指定例外适用于的数据包的类型。 |
+| [**WDI\_免除\_操作\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_exemption_action_type) | 指定例外的操作类型。                 |
+| [**WDI\_免除\_数据包\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_exemption_packet_type) | 指定例外适用于的数据包的类型。 |
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎目标
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 623b9eed23754f965a5b23a4c691a0b970463dd7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1f81a90b05583e0c7d1639bc6a8f1941a4c2ada
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380491"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366345"
 ---
 # <a name="targets"></a>目标
 
@@ -20,7 +20,7 @@ ms.locfileid: "63380491"
 
 ### <a name="span-idcrashdumpfilesspanspan-idcrashdumpfilesspancrash-dump-files"></a><span id="crash_dump_files"></span><span id="CRASH_DUMP_FILES"></span>故障转储文件
 
-使用打开用户模式和内核模式崩溃转储文件[ **OpenDumpFile**](https://msdn.microsoft.com/library/windows/hardware/ff552322)。 它还可以从目标创建转储文件引擎[ **WriteDumpFile2**](https://msdn.microsoft.com/library/windows/hardware/ff561382)。
+使用打开用户模式和内核模式崩溃转储文件[ **OpenDumpFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-opendumpfile)。 它还可以从目标创建转储文件引擎[ **WriteDumpFile2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-writedumpfile2)。
 
 ### <a name="span-idlive--user-mode-targetsspanspan-idlive--user-mode-targetsspanlive-user-mode-targets"></a><span id="live--user-mode-targets"></span><span id="LIVE--USER-MODE-TARGETS"></span>Live 用户模式目标
 
@@ -34,13 +34,13 @@ ms.locfileid: "63380491"
 
 ### <a name="span-idlive--kernel-mode-targetsspanspan-idlive--kernel-mode-targetsspanlive-kernel-mode-targets"></a><span id="live--kernel-mode-targets"></span><span id="LIVE--KERNEL-MODE-TARGETS"></span>Live、 内核模式目标
 
-该方法[ **AttachKernel** ](https://msdn.microsoft.com/library/windows/hardware/ff538145)连接到 Windows 内核调试器引擎。
+该方法[ **AttachKernel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-attachkernel)连接到 Windows 内核调试器引擎。
 
 ### <a name="span-idremote-targetsspanspan-idremote-targetsspanremote-targets"></a><span id="remote-targets"></span><span id="REMOTE-TARGETS"></span>远程目标
 
 当使用调试器引擎进行远程调试时，有可能两个额外的步骤：
 
-1.  连接到主机引擎。 如果主机引擎不是本地引擎实例，使用[ **DebugConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff540465)创建连接到主机引擎客户端对象。
+1.  连接到主机引擎。 如果主机引擎不是本地引擎实例，使用[ **DebugConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect)创建连接到主机引擎客户端对象。
 
 2.  连接到进程服务器或内核连接服务器的主机引擎。 如果主机引擎不能直接连接到目标，它必须连接到进程服务器或内核服务器连接。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63380491"
 
 ### <a name="span-idacquiringtargetsspanspan-idacquiringtargetsspanacquiring-targets"></a><span id="acquiring_targets"></span><span id="ACQUIRING_TARGETS"></span>获取目标
 
-时获取目标，直到目标会生成一个事件才完成目标的收购。 通常情况下，这意味着首先调用某种方法来将调试器附加到目标，然后调用[ **WaitForEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff561229)以便生成一个事件的目标。 此仍包含 true 目标为故障转储文件，因为这些始终存储事件通常导致要创建的转储文件的事件。
+时获取目标，直到目标会生成一个事件才完成目标的收购。 通常情况下，这意味着首先调用某种方法来将调试器附加到目标，然后调用[ **WaitForEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent)以便生成一个事件的目标。 此仍包含 true 目标为故障转储文件，因为这些始终存储事件通常导致要创建的转储文件的事件。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 

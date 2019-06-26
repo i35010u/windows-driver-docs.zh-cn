@@ -4,12 +4,12 @@ description: 静态图像设备的注册表项
 ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2f74a3c2b78b90ebc585964b8cb93cdbd290e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f120ca40fcee1610b2c87269e4619c955b421788
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374288"
 ---
 # <a name="registry-entries-for-still-image-devices"></a>静态图像设备的注册表项
 
@@ -62,7 +62,7 @@ Microsoft STI 使用多个注册表条目，其中一些可以修改由供应商
 
  
 
-客户端**StillImage**应调用 COM 接口[ **IStillImage::SetDeviceValue** ](https://msdn.microsoft.com/library/windows/hardware/ff543801)并[ **IStillImage::GetDeviceValue** ](https://msdn.microsoft.com/library/windows/hardware/ff543786)引用注册表。 映像微型驱动程序仍可以调用 Win32 注册表 API，指定接收的微型驱动程序的注册表项[ **IStiUSD::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff543824)方法。 此外可以在设置预定义的注册表条目的值[INF 文件](inf-files-for-still-image-devices.md)。
+客户端**StillImage**应调用 COM 接口[ **IStillImage::SetDeviceValue** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543801(v=vs.85))并[ **IStillImage::GetDeviceValue** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543786(v=vs.85))引用注册表。 映像微型驱动程序仍可以调用 Win32 注册表 API，指定接收的微型驱动程序的注册表项[ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)方法。 此外可以在设置预定义的注册表条目的值[INF 文件](inf-files-for-still-image-devices.md)。
 
 ### <a name="customized-registry-values"></a>自定义的注册表值
 
@@ -92,7 +92,7 @@ Microsoft STI 使用多个注册表条目，其中一些可以修改由供应商
 <p>0x1-信息性消息</p>
 <p>0x2-警告消息</p>
 <p>0x4-错误消息</p>
-<p>请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff543807" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543807)"> <strong>IStillImage::WriteToErrorLog</strong></a>。</p></td>
+<p>请参阅<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85)" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85))"> <strong>IStillImage::WriteToErrorLog</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>HKLM\SYSTEM\CurrentControlSet\Control\StillImage\Logging\STIMON</strong></p></td>

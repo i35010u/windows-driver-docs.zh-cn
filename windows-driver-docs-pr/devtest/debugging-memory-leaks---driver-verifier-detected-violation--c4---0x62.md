@@ -4,17 +4,17 @@ description: 驱动程序验证程序将生成将 0xC4 DRIVER_VERIFIER_DETECTED_
 ms.assetid: CDBE9A18-4126-4AD7-8E53-6D75DCA8B022
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01151f9b50e7e8a10e8f4e8a88a16c233bb10243
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe2b0f5e10635283fefeecd72f3d0a27a61bbf23
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371565"
 ---
 # <a name="debugging-memory-leaks---driververifierdetectedviolation-c4-0x62"></a>调试内存泄漏的驱动程序\_VERIFIER\_检测到\_冲突 (C4):0x62
 
 
-[Driver Verifier](driver-verifier.md)生成[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187) 0x62 驱动程序时但未事先卸载的参数 1 值释放所有其池分配。 未释放的内存分配 （也称为内存泄漏） 是降低的操作系统性能的一个常见原因。 这些可以片断系统池，并最终导致系统崩溃。
+[Driver Verifier](driver-verifier.md)生成[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) 0x62 驱动程序时但未事先卸载的参数 1 值释放所有其池分配。 未释放的内存分配 （也称为内存泄漏） 是降低的操作系统性能的一个常见原因。 这些可以片断系统池，并最终导致系统崩溃。
 
 内核调试程序连接到运行的测试计算机后[Driver Verifier](driver-verifier.md)，如果驱动程序验证程序检测到冲突，Windows 中断到调试器并显示错误的简短说明。
 
@@ -29,7 +29,7 @@ ms.locfileid: "63344842"
 
 ### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用 ！ 分析以显示 bug 检查有关的信息
 
-最佳的第一步是运行后可以控制在调试器中出现任何错误检查，与一样[ **！ 分析-v** ](https://msdn.microsoft.com/library/windows/hardware/ff562112)命令。
+最佳的第一步是运行后可以控制在调试器中出现任何错误检查，与一样[ **！ 分析-v** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)命令。
 
 ```
 kd> !analyze -v
@@ -61,17 +61,17 @@ Arg4: 00000003, total # of (paged+nonpaged) allocations that weren't freed.
     that were leaked that caused the bugcheck.
 ```
 
-一个[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187) 0x62 的值，如下所示描述与参数 1 (Arg1):
+一个[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) 0x62 的值，如下所示描述与参数 1 (Arg1):
 
 驱动程序\_VERIFIER\_检测到\_冲突 (C4) Arg1 Arg2 Arg3 了 Arg4 原因 Driver Verifier 标志 0x62 的驱动程序名称。
 已不释放，包括分页和非分页池的分配总保留的数。
-该驱动程序正在卸载不首先释放其池分配。 在 Windows 8.1，此 bug 检查如果也会出现第一个释放任何工作项的情况下卸载该驱动程序 ([**IO\_工作项**](https://msdn.microsoft.com/library/windows/hardware/ff550679)) 它必须与分配[ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)。 使用此参数的 bug 检查时才会发生时[池跟踪](pool-tracking.md)选项处于活动状态。
+该驱动程序正在卸载不首先释放其池分配。 在 Windows 8.1，此 bug 检查如果也会出现第一个释放任何工作项的情况下卸载该驱动程序 ([**IO\_工作项**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)) 它必须与分配[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)。 使用此参数的 bug 检查时才会发生时[池跟踪](pool-tracking.md)选项处于活动状态。
 指定[池跟踪](pool-tracking.md)(**verifier /flags 0x8**)。 使用标准标志启用池跟踪选项 (**verifier /standard** )。
  
 
 ### <a name="use-the-verifier-3-extension-command-to-find-out-about-the-pool-allocations"></a>使用 ！ verifier 3 扩展命令找出有关池分配
 
-对于此特定的错误检查，参数 4 (了 Arg4) 中提供的信息是最重要的。 了 Arg4 显示的未释放的分配数。 输出[ **！ 分析**](https://msdn.microsoft.com/library/windows/hardware/ff562112)命令还显示了[ **！ verifier** ](https://msdn.microsoft.com/library/windows/hardware/ff565591)调试器可用于显示内容的扩展命令这些分配的。 完整的输出 **！ verifier 3 MyDriver.sys**命令显示在下面的示例：
+对于此特定的错误检查，参数 4 (了 Arg4) 中提供的信息是最重要的。 了 Arg4 显示的未释放的分配数。 输出[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)命令还显示了[ **！ verifier** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)调试器可用于显示内容的扩展命令这些分配的。 完整的输出 **！ verifier 3 MyDriver.sys**命令显示在下面的示例：
 
 ```
 kd> !verifier 3 Mydriver.sys
@@ -149,7 +149,7 @@ Summary of All Verifier Statistics
 
 在示例中，该驱动程序，MyDriver.sys，具有两个内存分配和一个没有被正确释放的 I/O 工作项。 每个列表的请求分配了驱动程序代码中显示当前分配、 大小、 使用的池标记和地址的地址。 如果符号为有问题的驱动程序加载，它还将显示函数的调用方地址旁边的名称。
 
-显示的标记，只有一个 （适用于在地址 0x8645a000 分配） 提供的驱动程序本身 (**mdrv**)。 标记**VMdl** Driver Verifier 正在验证的驱动程序进行调用时，将使用[ **IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)。 同样，标记**Vfwi** Driver Verifier 正在验证的驱动程序发出请求以分配工作项使用时，将使用[ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)。
+显示的标记，只有一个 （适用于在地址 0x8645a000 分配） 提供的驱动程序本身 (**mdrv**)。 标记**VMdl** Driver Verifier 正在验证的驱动程序进行调用时，将使用[ **IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)。 同样，标记**Vfwi** Driver Verifier 正在验证的驱动程序发出请求以分配工作项使用时，将使用[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)。
 
 ### <a name="if-you-have-symbols-you-can-locate-where-in-the-source-files-the-memory-allocations-occurred"></a>如果您拥有符号可以找到在源文件中的内存分配发生的位置
 
@@ -258,18 +258,18 @@ Pool block 9a836fd0, Size 00000030, Thread 88758740
 
 [Static Driver Verifier](static-driver-verifier.md)是一个工具，扫描 Windows 驱动程序的源代码并通过模拟的各种代码路径执行报告可能存在的问题。 Static Driver Verifier 是一个很好的开发时间实用程序，以帮助识别这些类型的问题。
 
-有关其他方法可用，包括的方案，其中不涉及驱动程序验证程序，请参阅[查找内核模式内存泄漏](https://msdn.microsoft.com/library/windows/hardware/ff545403)。
+有关其他方法可用，包括的方案，其中不涉及驱动程序验证程序，请参阅[查找内核模式内存泄漏](https://docs.microsoft.com/windows-hardware/drivers/debugger/finding-a-kernel-mode-memory-leak)。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[查找内核模式内存泄漏](https://msdn.microsoft.com/library/windows/hardware/ff545403)
+[查找内核模式内存泄漏](https://docs.microsoft.com/windows-hardware/drivers/debugger/finding-a-kernel-mode-memory-leak)
 
 [静态驱动程序验证程序](static-driver-verifier.md)
 
-[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
-[处理 Bug 检查时驱动程序验证程序已启用](https://msdn.microsoft.com/library/windows/hardware/hh450984)
+[处理 Bug 检查时驱动程序验证程序已启用](https://docs.microsoft.com/windows-hardware/drivers/debugger/handling-a-bug-check-when-driver-verifier-is-enabled)
 
  
 

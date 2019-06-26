@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 690a62bee6b12046c57ef4bf430d7de4b6564758
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22145baa0432ad4af7b7744c54d4f9c6aa8b4de8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368669"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367251"
 ---
 # <a name="bug-check-0xa-irqlnotlessorequal"></a>Bug 检查 0xA：IRQL\_NOT\_LESS\_OR\_EQUAL
 
@@ -26,7 +26,7 @@ ms.locfileid: "63368669"
 IRQL\_不\_较少\_或\_相等 bug 检查的值为 0x0000000A。 这表示 Microsoft Windows 或访问的内核模式驱动程序都分页内存地址无效时引发的中断请求级别 (IRQL)。 这通常是错误的指针或 pageability 问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="irqlnotlessorequal-parameters"></a>IRQL\_不\_较少\_或\_等于参数
@@ -100,7 +100,7 @@ Bug 检查 0xA 通常被由于内核模式设备驱动程序使用不正确的�
 
 - 如果参数 3 指示这是尝试执行可分页的代码，则 IRQL 是过大，无法调用此函数。 在较低的 IRQL 运行或未标记为可分页的代码。
 
-- 否则，这可能是错误的指针，可能是因为使用后释放或位翻转。 调查使用的参数 1 的有效性[ **！ pte**](-pte.md)， [ **！ 地址**](-address.md)，并[ **ln （列表最接近符号）**](ln--list-nearest-symbols-.md)。
+- 否则，这可能是错误的指针，可能是因为使用后释放或位翻转。 调查使用的参数 1 的有效性[ **！ pte**](-pte.md)， [ **！ 地址**](-address.md)，并[ **ln （列表最接近符号）** ](ln--list-nearest-symbols-.md)。
 
 
 <a name="resolution"></a>分辨率
@@ -112,11 +112,11 @@ Bug 检查 0xA 通常被由于内核模式设备驱动程序使用不正确的�
 
 如果在蓝色屏幕上的已列出，请检查驱动程序的名称。
 
-检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 **驱动程序验证程序**
 
-驱动程序验证程序是一种工具，运行实时检查驱动程序的行为。 例如，驱动程序验证工具将检查内存资源，如内存池的使用。 如果它发现错误的驱动程序代码执行过程中，它会主动创建例外以允许驱动程序代码以进行进一步仔细检查该部分。 驱动程序验证程序管理器内置于 Windows，可在所有 Windows Pc 上。 若要启动驱动程序验证程序管理器，请键入*Verifer*在命令提示符。 可以配置你想要验证的驱动程序。 验证驱动程序的代码将添加开销在运行，因此请尝试并验证尽可能最少数量的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。
+驱动程序验证程序是一种工具，运行实时检查驱动程序的行为。 例如，驱动程序验证工具将检查内存资源，如内存池的使用。 如果它发现错误的驱动程序代码执行过程中，它会主动创建例外以允许驱动程序代码以进行进一步仔细检查该部分。 驱动程序验证程序管理器内置于 Windows，可在所有 Windows Pc 上。 若要启动驱动程序验证程序管理器，请键入*Verifer*在命令提示符。 可以配置你想要验证的驱动程序。 验证驱动程序的代码将添加开销在运行，因此请尝试并验证尽可能最少数量的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 下面是一个调试示例：
 
@@ -165,7 +165,7 @@ NDIS!_EthFilterIndicateReceiveComplete+0x31
 
 **解决硬件故障问题：** 如果硬件具有最近添加到系统，则删除它才能看到如果错误重复出现。 如果现有硬件出现故障，删除或更换有故障的组件。 应运行硬件诊断系统制造商提供。 有关这些过程的详细信息，请参阅您的计算机的所有者的手册。
 
-**解决错误系统服务问题：** 禁用服务，并确认这会解决该错误。 如果是这样，请与系统服务有关的可能更新的制造商联系。 如果在系统启动期间发生错误，请调查 Windows 修复选项。 有关详细信息，请参阅[Windows 10 中的恢复选项](https://windows.microsoft.com/windows-10/windows-10-recovery-options)。
+**解决错误系统服务问题：** 禁用服务，并确认这会解决该错误。 如果是这样，请与系统服务有关的可能更新的制造商联系。 如果在系统启动期间发生错误，请调查 Windows 修复选项。 有关详细信息，请参阅[Windows 10 中的恢复选项](https://support.microsoft.com/help/12415/windows-10-recovery-options)。
 
 **在解决有关防病毒软件问题：** 禁用计划，并确认这会解决该错误。 如果是这样，请与联系有关可能的更新程序的制造商。
 

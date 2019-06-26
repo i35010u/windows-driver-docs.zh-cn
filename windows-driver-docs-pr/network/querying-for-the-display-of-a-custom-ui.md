@@ -7,12 +7,12 @@ keywords:
 - 查询自定义用户界面显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f359fb087120412a9bbdd99fc6ed99cfb39d51b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50e7a1dfdf975e1b3ea54b48ac87c2fc7f336d8a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360963"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385434"
 ---
 # <a name="querying-for-the-display-of-a-custom-ui"></a>查询自定义 UI 的显示
 
@@ -29,9 +29,9 @@ ms.locfileid: "63360963"
 <a href="" id="post-association-------"></a>**后期关联**   
 IHV 扩展 DLL 之后连接阶段完成后关联操作。 有关后关联操作的详细信息，请参阅[后期关联操作](post-association-operations.md)。
 
-操作系统将调用本机 802.11 IHV 扩展 DLL [ *Dot11ExtIhvQueryUIRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff547507) IHV 处理程序函数查询是否可以显示自定义 UI。 操作系统将通过在连接过程的当前阶段传递*connectionPhase*参数。 如果必须显示自定义 UI，返回该 DLL [ **DOT11EXT\_IHV\_UI\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff547637)结构通过 p *pIhvUIRequest*参数。
+操作系统将调用本机 802.11 IHV 扩展 DLL [ *Dot11ExtIhvQueryUIRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_query_ui_request) IHV 处理程序函数查询是否可以显示自定义 UI。 操作系统将通过在连接过程的当前阶段传递*connectionPhase*参数。 如果必须显示自定义 UI，返回该 DLL [ **DOT11EXT\_IHV\_UI\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构通过 p *pIhvUIRequest*参数。
 
-通过[ **DOT11EXT\_IHV\_UI\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff547637)结构，本机 802.11 IHV 扩展 DLL 指定通过以下数据的自定义 UI。
+通过[ **DOT11EXT\_IHV\_UI\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构，本机 802.11 IHV 扩展 DLL 指定通过以下数据的自定义 UI。
 
 -   用户会话标识符 (ID)，用于标识特定的用户上下文。
 

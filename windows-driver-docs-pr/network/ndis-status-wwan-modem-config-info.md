@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9763e582e0470c8f40eb09d7d4401052cf351158
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0aab21c6ea477cf23cec61dfc352a688a44117a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377621"
 ---
 # <a name="ndisstatuswwanmodemconfiginfo"></a>NDIS_STATUS_WWAN_MODEM_CONFIG_INFO
 
@@ -28,7 +28,7 @@ MBB 驱动程序使用**NDIS_STATUS_WWAN_MODEM_CONFIG_INFO**通知来通知 MB �
 
 MBB 驱动程序必须仅发送未经请求**NDIS_STATUS_WWAN_MODEM_CONFIG_INFO**调制解调器的配置状态已更改。
 
-使用此通知[ **NDIS_WWAN_MODEM_CONFIG_INFO** ](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)结构。
+使用此通知[ **NDIS_WWAN_MODEM_CONFIG_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -55,6 +55,6 @@ MBB 驱动程序必须仅发送未经请求**NDIS_STATUS_WWAN_MODEM_CONFIG_INFO*
 
 [OID_WWAN_MODEM_CONFIG_INFO](oid-wwan-modem-config-info.md)
 
-[**NDIS_WWAN_MODEM_CONFIG_INFO**](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)
+[**NDIS_WWAN_MODEM_CONFIG_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)
  
 

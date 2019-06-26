@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bfed85bd5efa233c728e5644757401062708e0f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7510f9d4c406fa67c41c219cf730d724068fd06f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547984"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377919"
 ---
 # <a name="addport-function"></a>端口函数
 
@@ -36,14 +36,14 @@ void AddPort(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
-*PortWWN\[8\]*   
+*PortWWN\[8\]*    
 全球通用名称，指示其事件将被报告的端口的说明。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[**端口\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff550132)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[**端口\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -69,7 +69,7 @@ void AddPort(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
 </tr>
 </tbody>
@@ -78,9 +78,9 @@ void AddPort(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**AddPort\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff550131)
+[**AddPort\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_in)
 
-[**AddPort\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff550132)
+[**AddPort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_out)
 
  
 

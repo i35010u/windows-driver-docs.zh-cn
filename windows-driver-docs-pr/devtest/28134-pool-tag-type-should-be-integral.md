@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28134
-ms.openlocfilehash: 373e85d31a3ca2bc9d90974523d0d2d9abbb2c39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c08420c6f35bd65d7864175c5bc6b69b1bb61e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361409"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364138"
 ---
 # <a name="c28134"></a>C28134
 
@@ -36,7 +36,7 @@ ms.locfileid: "63361409"
 
  
 
-该驱动程序正在调用的函数分配的池标记，如[ **ExAllocatePoolWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff544520)，但它用单引号引起来使用文本以外的值，指定池标记的值。 不要在池标记中使用带引号的字符串。
+该驱动程序正在调用的函数分配的池标记，如[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)，但它用单引号引起来使用文本以外的值，指定池标记的值。 不要在池标记中使用带引号的字符串。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 

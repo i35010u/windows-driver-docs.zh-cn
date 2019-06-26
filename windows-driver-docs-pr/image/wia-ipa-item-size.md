@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75ab1f9bebde852b4f2915e32ceff093170e6f9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2531c541d8af30d183952c9cd73e26d33a6bd69c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377317"
 ---
 # <a name="wiaipaitemsize"></a>WIA\_IPA\_ITEM\_SIZE
 
@@ -40,7 +40,7 @@ WIA\_IPA\_项\_大小属性包含当前大小 （字节） 与 WIA 项相关联�
 
 值的 WIA\_IPA\_项\_大小属性包含是要传输的数据的总大小。 如果此值为零，WIA 微型驱动程序具有数据的精确大小所需信息。 （这种情况下很常见的压缩数据。）
 
-应用程序读取 WIA\_IPA\_项\_大小，以传输之前确定数据的大小。 WIA 服务读取此属性，以帮助中的数据传输分配内存。 有关数据传输的详细信息，请参阅[WIA 应用程序传输数据](https://msdn.microsoft.com/library/windows/hardware/ff548473)。
+应用程序读取 WIA\_IPA\_项\_大小，以传输之前确定数据的大小。 WIA 服务读取此属性，以帮助中的数据传输分配内存。 有关数据传输的详细信息，请参阅[WIA 应用程序传输数据](https://docs.microsoft.com/windows-hardware/drivers/image/transferring-data-to-a-wia-application)。
 
 如果 WIA\_IPA\_项\_大小设置为零并且 TYMED 配置用于文件传输，WIA 服务不会为 WIA 微型驱动程序分配任何内存。
 

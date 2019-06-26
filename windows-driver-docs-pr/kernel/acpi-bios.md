@@ -6,12 +6,12 @@ keywords:
 - ACPI BIOS WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bacde07581ed79ca399e0c7386ef337c9653f2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2e62f38b0068eeb2a52e5e2fc176295a07e0461
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363459"
 ---
 # <a name="acpi-bios"></a>ACPI BIOS
 
@@ -25,5 +25,5 @@ Windows Server 2003、 Windows XP 和 Windows 2000 要求 ACPI BIOS 日期 1999 
 
 设备管理器显示的单台计算机是否支持 ACPI。 检查驱动程序信息**计算机**设备类别。
 
-ACPI 的详细信息，请参阅[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+ACPI 的详细信息，请参阅[ACPI 5.0 规范](https://uefi.org/specifications)。
 

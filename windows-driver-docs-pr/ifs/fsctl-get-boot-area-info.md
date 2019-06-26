@@ -14,29 +14,29 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66271f6de4718c69b921fcb2a09a38f1e6fa3469
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65a58b4a2a751609de947995ad3996d84ed73eee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393018"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365039"
 ---
 # <a name="fsctlgetbootareainfo-control-code"></a>FSCTL\_获取\_BOOT\_区域\_信息控制代码
 
 
 **FSCTL\_获取\_引导\_区域\_信息**控制代码检索卷的引导扇区的位置。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)函数或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)以下函数参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)函数或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)以下函数参数。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 为其卷的文件对象指针**FSCTL\_获取\_引导\_区域\_信息**将检索启动信息。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 为其卷的文件对象指针**FSCTL\_获取\_引导\_区域\_信息**将检索启动信息。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 为其卷的文件句柄**FSCTL\_获取\_引导\_区域\_信息**将检索启动信息。 此参数是必需的不能**NULL**。
 
-必须使用 SE 打开此句柄\_管理\_卷\_名称访问权限。 有关详细信息，请参阅[文件安全和访问权限](https://msdn.microsoft.com/library/windows/desktop/aa364399)。
+必须使用 SE 打开此句柄\_管理\_卷\_名称访问权限。 有关详细信息，请参阅[文件安全和访问权限](https://docs.microsoft.com/windows/desktop/FileIO/file-security-and-access-rights)。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 该操作控制代码。 使用**FSCTL\_获取\_引导\_区域\_信息**对于此操作。
@@ -48,7 +48,7 @@ ms.locfileid: "63393018"
 不使用与此操作。 设置为零。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-一个指向[ **BOOT\_区域\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff728836)结构，它接收的卷的引导扇区的位置。
+一个指向[ **BOOT\_区域\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_boot_area_info)结构，它接收的卷的引导扇区的位置。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
 输出缓冲区，以字节为单位的大小。
@@ -56,7 +56,7 @@ ms.locfileid: "63393018"
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回适当的 NTSTATUS 值如以下之一：
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回适当的 NTSTATUS 值如以下之一：
 
 <table>
 <colgroup>
@@ -72,7 +72,7 @@ ms.locfileid: "63393018"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_SUCCESS</strong></p></td>
-<td align="left"><p>操作成功。 OutputBuffer 包含一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff728836" data-raw-source="[&lt;strong&gt;BOOT_AREA_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff728836)"> <strong>BOOT_AREA_INFO</strong> </a>结构。</p></td>
+<td align="left"><p>操作成功。 OutputBuffer 包含一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_boot_area_info" data-raw-source="[&lt;strong&gt;BOOT_AREA_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_boot_area_info)"> <strong>BOOT_AREA_INFO</strong> </a>结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_INVALID_PARAMETER</strong></p></td>
@@ -119,7 +119,7 @@ ms.locfileid: "63393018"
 ## <a name="see-also"></a>请参阅
 
 
-[**DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)
+[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
 
  
 

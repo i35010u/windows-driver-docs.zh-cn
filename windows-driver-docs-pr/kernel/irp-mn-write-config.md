@@ -6,12 +6,12 @@ ms.assetid: d57c30b8-83bd-41c9-906d-b8c95f8ca54e
 keywords:
 - IRP_MN_WRITE_CONFIG 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bb1da29df64250ee92f5f00d1edce07afa2b871
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b12c949ad7a4ef2f3c56d242645d1aefb77d7176
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381395"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376454"
 ---
 # <a name="irpmnwriteconfig"></a>IRP\_MN\_WRITE\_CONFIG
 
@@ -73,15 +73,15 @@ ULONG Length
 
 总线驱动程序处理其子设备 (子 PDOs) 此 IRP。
 
-函数和筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus.Status**并且未设置[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程。
+函数和筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus.Status**并且未设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 
 通常情况下，功能驱动程序将此 IRP 发送到设备堆栈向其附加并由父总线驱动程序处理 IRP。
 
-请参阅[处理 Irp](https://msdn.microsoft.com/library/windows/hardware/ff546847)有关发送 Irp 信息。 专门针对此 IRP 可以采用以下步骤：
+请参阅[处理 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)有关发送 Irp 信息。 专门针对此 IRP 可以采用以下步骤：
 
 -   分配来自分页池的缓冲区并将其初始化与要写入的数据。
 
@@ -95,7 +95,7 @@ ULONG Length
 
 驱动程序可以访问在调度的总线配置空间\_级别通过总线接口例程中，如果父总线驱动程序导出此类接口。 若要获取总线接口，驱动程序发送[ **IRP\_MN\_查询\_接口**](irp-mn-query-interface.md)请求到其父总线驱动程序。 然后，驱动程序调用在界面中返回的相应例程。
 
-例如，若要配置空间编写从调度\_驱动程序可以调用的级别**IRP\_MN\_查询\_接口**若要获取的驱动程序初始化期间[**总线\_界面\_标准**](https://msdn.microsoft.com/library/windows/hardware/ff540707)从父总线驱动程序的接口。 该驱动程序会将查询 IRP 发送从 IRQL 被动\_级别。 更高版本，从代码在 IRQL 调度\_级别，该驱动程序调用相应的例程返回在界面中，如**Interface.SetBusData**例程。
+例如，若要配置空间编写从调度\_驱动程序可以调用的级别**IRP\_MN\_查询\_接口**若要获取的驱动程序初始化期间[**总线\_界面\_标准**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)从父总线驱动程序的接口。 该驱动程序会将查询 IRP 发送从 IRQL 被动\_级别。 更高版本，从代码在 IRQL 调度\_级别，该驱动程序调用相应的例程返回在界面中，如**Interface.SetBusData**例程。
 
 <a name="requirements"></a>要求
 ------------

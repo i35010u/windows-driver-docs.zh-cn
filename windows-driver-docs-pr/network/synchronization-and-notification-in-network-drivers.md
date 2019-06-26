@@ -15,12 +15,12 @@ keywords:
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 419fb53f0e53eecb6441c148ad975dcb70622c32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f4d9003e2e448d8e9bf105b2497f80bf935ebb37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362551"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377971"
 ---
 # <a name="synchronization-and-notification-in-network-drivers"></a>网络驱动程序中的同步和通知
 
@@ -49,7 +49,7 @@ NDIS 提供了可用于同步在相同的 IRQL 运行的线程之间共享资源
 
 自旋锁的另一个特征是相关联的 IRQL。 尝试的获取的自旋锁暂时引发 IRQL 与旋转锁关联到请求线程的 IRQL。 这可以防止在同一处理器上的所有较低的 IRQL 线程优先执行的线程。 在更高版本的 IRQL 运行在同一处理器上的线程可抢占执行线程，但这些线程无法获取数值调节钮锁，因为它具有较低的 IRQL。 因此，一个线程已获取了自旋锁后，没有其他线程可以获取，直到已释放自旋锁。 编写良好的网络驱动程序最小化自旋锁的时间量。
 
-旋转锁的典型用法是保护队列。 例如，微型端口驱动程序将发送函数， [ *MiniportSendNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/ff559440)，可能会传递给它的协议驱动程序的数据包进行排队。 其他驱动程序函数还使用此队列中，因为*MiniportSendNetBufferLists*必须保护旋转锁的队列，以便一次只有一个线程可以操作的链接或内容。 *MiniportSendNetBufferLists*获取数值调节钮锁将数据包添加到队列，然后释放自旋锁。 使用旋转锁可确保持有锁的线程是安全地将数据包添加到队列时修改队列链接的唯一线程。 从队列数据包微型端口驱动程序时，此类访问受相同的旋转锁。 运行时修改的队列或任何链接字段组成队列开头的说明，该驱动程序必须保护旋转锁的队列。
+旋转锁的典型用法是保护队列。 例如，微型端口驱动程序将发送函数， [ *MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)，可能会传递给它的协议驱动程序的数据包进行排队。 其他驱动程序函数还使用此队列中，因为*MiniportSendNetBufferLists*必须保护旋转锁的队列，以便一次只有一个线程可以操作的链接或内容。 *MiniportSendNetBufferLists*获取数值调节钮锁将数据包添加到队列，然后释放自旋锁。 使用旋转锁可确保持有锁的线程是安全地将数据包添加到队列时修改队列链接的唯一线程。 从队列数据包微型端口驱动程序时，此类访问受相同的旋转锁。 运行时修改的队列或任何链接字段组成队列开头的说明，该驱动程序必须保护旋转锁的队列。
 
 驱动程序必须注意不要过度保护队列。 例如，驱动程序可以执行某些操作 （例如，在包含长度的字段中填充） 数据包的网络驱动程序保留字段中之前队列数据包。 驱动程序可以执行此操作由数值调节钮锁保护的代码区域外，但必须在队列数据包之前执行。 数据包是在队列上并正在运行的线程释放自旋锁后，该驱动程序必须假定其他线程可以取消立即排队数据包。
 
@@ -57,7 +57,7 @@ NDIS 提供了可用于同步在相同的 IRQL 运行的线程之间共享资源
 
 若要避免可能的死锁，NDIS 驱动程序应释放所有 NDIS 自旋锁而不调用 NDIS 函数之前**Ndis*Xxx*旋转锁**函数。 如果 NDIS 驱动程序不符合此要求，则会按如下所示发生死锁：
 
-1. 线程 1，其中包含 NDIS 自旋锁的调用**Ndis * Xxx*** 函数尝试获取 NDIS 通过调用旋转锁 B [ **NdisAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff560699)函数。
+1. 线程 1，其中包含 NDIS 自旋锁的调用**Ndis * Xxx*** 函数尝试获取 NDIS 通过调用旋转锁 B [ **NdisAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirespinlock)函数。
 
 2. 线程 2，它保存 NDIS 自旋锁 B，调用**Ndis * Xxx*** 尝试通过调用获取 NDIS 自旋锁的函数**NdisAcquireSpinLock**函数。
 
@@ -86,13 +86,13 @@ NdisReleaseSpinLock(B);
 
 计时器用于轮询或导致操作超时。 驱动程序创建一个计时器，并将函数与计时器相关联。 如果在计时器中指定的期限过期时调用相关联的函数。 计时器可以单步或定期。 一旦设置定期计时器，它将继续，直到显式清除每个期限过期时引发。 每次它引发时，都必须重置单步计时器。
 
-创建和初始化通过调用计时器[ **NdisAllocateTimerObject** ](https://msdn.microsoft.com/library/windows/hardware/ff561618)并通过调用设置[ **NdisSetTimerObject**](https://msdn.microsoft.com/library/windows/hardware/ff564563)。 如果使用非周期性的计时器，则它必须通过调用重置**NdisSetTimerObject**。 通过调用清除计时器[ **NdisCancelTimerObject**](https://msdn.microsoft.com/library/windows/hardware/ff561624)。
+创建和初始化通过调用计时器[ **NdisAllocateTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatetimerobject)并通过调用设置[ **NdisSetTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissettimerobject)。 如果使用非周期性的计时器，则它必须通过调用重置**NdisSetTimerObject**。 通过调用清除计时器[ **NdisCancelTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscanceltimerobject)。
 
-### <a name="events"></a>事件
+### <a name="events"></a>Events
 
-事件用于同步两个执行线程之间的操作。 事件是由驱动程序分配，并通过调用来初始化[ **NdisInitializeEvent**](https://msdn.microsoft.com/library/windows/hardware/ff562732)。 在 IRQL 运行的线程 = 被动\_级别调用[ **NdisWaitEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff564651)本身置于等待状态。 驱动程序线程等待事件，它指定要等待的最长时间，以及要等待的事件。 线程的等待是满足[ **NdisSetEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff564539)是调用导致事件发出信号，或指定的最大等待时间间隔过期时，以先发生者为准。
+事件用于同步两个执行线程之间的操作。 事件是由驱动程序分配，并通过调用来初始化[ **NdisInitializeEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitializeevent)。 在 IRQL 运行的线程 = 被动\_级别调用[ **NdisWaitEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswaitevent)本身置于等待状态。 驱动程序线程等待事件，它指定要等待的最长时间，以及要等待的事件。 线程的等待是满足[ **NdisSetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetevent)是调用导致事件发出信号，或指定的最大等待时间间隔过期时，以先发生者为准。
 
-通常情况下，将事件设置调用的协作线程**NdisSetEvent**。 在创建和必须设置以便向等待线程发出信号时，事件是信号。 事件保持终止状态，直到[ **NdisResetEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff564526)调用。
+通常情况下，将事件设置调用的协作线程**NdisSetEvent**。 在创建和必须设置以便向等待线程发出信号时，事件是信号。 事件保持终止状态，直到[ **NdisResetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisresetevent)调用。
 
 ## <a name="related-topics"></a>相关主题
 

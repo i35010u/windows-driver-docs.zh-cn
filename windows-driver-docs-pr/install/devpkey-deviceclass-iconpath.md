@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c9585273aee84f3c1a01b6aff9ddf3246acfd62d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d508f5c0df3b2bb0619f5a966039f3c677beaa2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392537"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362981"
 ---
 # <a name="devpkeydeviceclassiconpath"></a>DEVPKEY_DeviceClass_IconPath
 
 
-DEVPKEY_DeviceClass_IconPath 设备属性表示的图标列表[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+DEVPKEY_DeviceClass_IconPath 设备属性表示的图标列表[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -60,11 +60,11 @@ DEVPKEY_DeviceClass_IconPath 设备属性表示的图标列表[设备安装程�
 <a name="remarks"></a>备注
 -------
 
-您可以调用[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)或[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090)检索 DEVPKEY_DeviceClass_ 值IconPath。
+您可以调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)检索 DEVPKEY_DeviceClass_ 值IconPath。
 
 DEVPKEY_DeviceClass_IconPath 当值[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)-使用 Windows shell 的格式中的图标资源说明符的类型的列表。 图标资源说明符的格式是"*可执行文件的文件路径*，*资源标识符*，"位置*可执行文件的文件路径*包含完全限定的路径包含图标资源的计算机上的文件和*资源标识符*指定一个整数来标识的资源。 例如，图标资源说明符"%systemroot%\\system32\\DLL1.dll，-12"包含的可执行文件路径"%systemroot%\\system32\\DLL1.dll"和"-12"的资源标识符。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。 有关如何访问这些版本的 Windows 设备安装程序类图标信息的信息，请参阅[的设备安装程序类中访问图标属性](https://msdn.microsoft.com/library/windows/hardware/ff537746)。
+Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。 有关如何访问这些版本的 Windows 设备安装程序类图标信息的信息，请参阅[的设备安装程序类中访问图标属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-icon-properties-of-a-device-setup-class)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,11 +89,11 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。 有关�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiLoadClassIcon**](https://msdn.microsoft.com/library/windows/hardware/ff552053)
+[**SetupDiLoadClassIcon**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiloadclassicon)
 
  
 

@@ -4,12 +4,12 @@ description: WIA 驱动程序的注册表访问权限
 ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d83eff681187d392c1b1a9f79c43278d2b0efe24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba2d916e2ce22f233f616c0fb503bbf8331b6262
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376491"
 ---
 # <a name="registry-access-for-wia-drivers"></a>WIA 驱动程序的注册表访问权限
 
@@ -17,7 +17,7 @@ ms.locfileid: "63379608"
 
 
 
-驱动程序开发人员应了解访问所需的注册表项的权限。 在注册表的大部分是可用于驱动程序进行读取。 但是，WIA 驱动程序应仅向传递给它们中的注册表项写入[ **IStiUSD::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff543824)方法。
+驱动程序开发人员应了解访问所需的注册表项的权限。 在注册表的大部分是可用于驱动程序进行读取。 但是，WIA 驱动程序应仅向传递给它们中的注册表项写入[ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)方法。
 
 尽管因为 WIA 服务在高特权下运行在 Windows XP 中，可以写入其他注册表项**LocalSystem**帐户，这可不能再在低特权下**LocalService**帐户，在 Microsoft Windows Server 2003 和更高版本。
 

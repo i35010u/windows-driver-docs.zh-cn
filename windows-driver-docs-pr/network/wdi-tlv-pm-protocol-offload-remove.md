@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_REMOVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 779f047d2fef0119316cd945bfafbff74de34792
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 678febff425947dcb1ad8be194b15892bd16820a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373847"
 ---
 # <a name="wditlvpmprotocoloffloadremove"></a>WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_REMOVE
 
 
-WDI\_TLV\_PM\_协议\_卸载\_删除是包含要删除的协议卸载 ID TLV [OID\_WDI\_集\_删除\_PM\_协议\_卸载](https://msdn.microsoft.com/library/windows/hardware/dn925943)。
+WDI\_TLV\_PM\_协议\_卸载\_删除是包含要删除的协议卸载 ID TLV [OID\_WDI\_集\_删除\_PM\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-remove-pm-protocol-offload)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

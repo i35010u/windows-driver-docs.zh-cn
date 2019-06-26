@@ -9,12 +9,12 @@ keywords:
 - WDK HID 按钮用途
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f629555bf78105b0ad0f193b83eb88ee81b41b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02bce9ff79c1cf92e1a5e5c00bc483ace6f512ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375763"
 ---
 # <a name="button-capability-arrays"></a>按钮功能数组
 
@@ -22,15 +22,15 @@ ms.locfileid: "63390344"
 
 
 
-一个*按钮功能数组*包含有关支持的按钮使用情况的信息[顶级集合](top-level-collections.md)HID 报表为特定类型。 有关集合的功能的信息包含在其[ **HIDP\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff539697)结构。
+一个*按钮功能数组*包含有关支持的按钮使用情况的信息[顶级集合](top-level-collections.md)HID 报表为特定类型。 有关集合的功能的信息包含在其[ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)结构。
 
-用户模式应用程序或内核模式驱动程序将使用以下值之一[HIDClass 支持例程](https://msdn.microsoft.com/library/windows/hardware/ff538865)获取按钮功能的信息：
+用户模式应用程序或内核模式驱动程序将使用以下值之一[HIDClass 支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)获取按钮功能的信息：
 
--   [**HidP\_GetButtonCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539707)返回描述指定的报表类型中包含的所有按钮用途的按钮功能数组。
+-   [**HidP\_GetButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getbuttoncaps)返回描述指定的报表类型中包含的所有按钮用途的按钮功能数组。
 
--   [**HidP\_GetSpecificButtonCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539733)筛选器按钮功能信息，它将返回调用方指定的使用情况页，使用 ID 和[集合链接](link-collections.md)。
+-   [**HidP\_GetSpecificButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)筛选器按钮功能信息，它将返回调用方指定的使用情况页，使用 ID 和[集合链接](link-collections.md)。
 
-按钮功能包含一个数组[ **HIDP\_按钮\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff539693)结构，其中每个包含以下信息有关[的HID用途](hid-usages.md)或[使用范围](hid-usages.md#usage-range):
+按钮功能包含一个数组[ **HIDP\_按钮\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_button_caps)结构，其中每个包含以下信息有关[的HID用途](hid-usages.md)或[使用范围](hid-usages.md#usage-range):
 
 -   使用情况或使用范围的使用情况页面
 

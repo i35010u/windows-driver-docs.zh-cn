@@ -4,12 +4,12 @@ description: 可修改设备属性的 INF 文件条目值
 ms.assetid: 5ce0875f-2687-42d9-b980-ed184b552a62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4412180ff2ee00ed20e73490e409867b9eb15730
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1186375f4aa1d6caeb04d541e3e932a3b20171cc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365852"
 ---
 # <a name="inf-file-entry-values-that-modify-device-properties"></a>可修改设备属性的 INF 文件条目值
 
@@ -38,11 +38,11 @@ ms.locfileid: "63379369"
 
 某些 INF 文件条目的值提供 Windows 用来设置相应的系统定义的设备属性信息。 以下是几个示例的此类 INF 文件条目的值来提供值的设备属性：
 
--   [ **DEVPKEY_Device_DeviceDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff542407)设备实例属性设置*设备描述*中的项值[ **INF模型部分**](inf-models-section.md)。
+-   [ **DEVPKEY_Device_DeviceDesc** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-devicedesc)设备实例属性设置*设备描述*中的项值[ **INF模型部分**](inf-models-section.md)。
 
--   [ **DEVPKEY_DeviceClass_ClassName** ](https://msdn.microsoft.com/library/windows/hardware/ff542272)属性[设备安装程序类](device-setup-classes.md)通过设置*类名*INF中的项值**类**指令[ **INF 版本部分**](inf-version-section.md)。
+-   [ **DEVPKEY_DeviceClass_ClassName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceclass-classname)属性[设备安装程序类](device-setup-classes.md)通过设置*类名*INF中的项值**类**指令[ **INF 版本部分**](inf-version-section.md)。
 
--   [ **DEVPKEY_DeviceInterface_ClassGuid** ](https://msdn.microsoft.com/library/windows/hardware/ff542349)设备接口的属性设置*InterfaceClassGuid*中的项值[ **INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。
+-   [ **DEVPKEY_DeviceInterface_ClassGuid** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-classguid)设备接口的属性设置*InterfaceClassGuid*中的项值[ **INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。
 
 ### <a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>INF AddReg 指令和修改系统定义的设备属性的 INF DelReg 指令
 
