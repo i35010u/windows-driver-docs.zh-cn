@@ -4,12 +4,12 @@ description: 本主题介绍打印通知，并演示如何将C#版本的打印�
 ms.assetid: 39A06A8A-5603-44AB-8884-C12B8E2F1A45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 468b48b01067b8387ec7f4be7a3850c37f789156
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 408ce806e8141cd26fa03b983ddb5b5827261dee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369341"
 ---
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>使用 UWP 设备应用中的打印通知
 
@@ -18,7 +18,7 @@ ms.locfileid: "57350132"
 
 C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例演示应用程序的背景部分 (*后台任务*) 中**BackgroundTask**项目。 后台任务的代码位于**PrintBackgroundTask.cs**文件。 *前台应用程序*，可以从开始，启动该全屏应用位于**DeviceAppForPrinters**项目。 **InkLevel.xaml.cs**文件显示了一种方法，可从前台应用程序访问通知的详细信息。 若要使用打印通知，该示例使用的打印机扩展库中**PrinterExtensionLibrary**项目。 打印机扩展库提供了方便地访问 v4 打印驱动程序的打印机扩展插件接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
 
-**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也是在 JavaScript 和 c + + 中可用。 请注意由于 c + + 可以直接访问 COM，该示例的 c + + 版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
+**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也会出现在 JavaScript 和C++。 请注意，由于C++可以直接访问 COMC++示例的版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
 
  
 
@@ -31,7 +31,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 
  
 
-当 DriverEvent 发生，并且启动 UWP 设备应用的后台任务时，应用具有多个选项，则会继续运行指定。 有关任务的启动会导致流的更多详细信息，请参阅[驱动程序支持自定义 UI](https://msdn.microsoft.com/library/windows/hardware/jj659898)。
+当 DriverEvent 发生，并且启动 UWP 设备应用的后台任务时，应用具有多个选项，则会继续运行指定。 有关任务的启动会导致流的更多详细信息，请参阅[驱动程序支持自定义 UI](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-customized-ui)。
 
 可以选择的后台任务：
 
@@ -54,7 +54,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 4.  创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
 5.  构建您的应用程序的主页上的 UI。 可以从开始，它们将显示的全屏启动所有 UWP 设备应用程序。 使用入门体验突出显示你的产品或匹配特定品牌的方式和你的设备的功能中的服务。 没有任何特殊限制可以使用 UI 控件的类型。 若要开始使用的设计的全屏体验，请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
 6.  如果您正在编写您编写的应用程序与C#或 JavaScript 中，添加**PrinterExtensionLibrary**并**DeviceAppForPrintersLibrary**到您 UWP 设备应用程序解决方案的项目。 您可以找到这些项目中的每个[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。
-    **请注意**  因为 c + + 可以直接访问 COM，c + + 应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
+    **请注意**  由于C++可以直接访问 COMC++应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
 
      
 
@@ -367,7 +367,7 @@ void DisplayBackgroundTaskTriggerDetails()
 以下步骤生成您的应用程序并安装设备元数据。
 
 1.  启用测试签名。
-    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
+    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
     2.  从**工具**菜单中，选择**启用测试签名**。
 
 2.  重新启动计算机
@@ -379,7 +379,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
      
 
-    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
+    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
     2.  单击**编辑设备元数据**。 这样就可以编辑现有的设备元数据包。
     3.  在中**打开**对话框框中，找到与 UWP 设备应用程序相关联的设备元数据包。 (它具有**devicemetadata ms**文件扩展名。)
     4.  上**指定 UWP 设备应用信息**页上，输入中的 Microsoft Store 应用信息**UWP 设备应用**框。 单击**导入 UWP 应用程序清单文件**自动输入**包名称**，**发布服务器的名称**，以及**UWP 应用程序 ID**。
@@ -401,7 +401,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 -   **可能的原因：** 域策略已禁用了 toast 通知。 将保留在域，然后重试。
 
--   **可能的原因：** 打印机尚未实施 DriverEvents。 检查 v4 驱动程序支持 Bidi 和 DriverEvents。 有关详细信息，请参阅[驱动程序支持自定义 UI](https://msdn.microsoft.com/library/windows/hardware/jj659898)。
+-   **可能的原因：** 打印机尚未实施 DriverEvents。 检查 v4 驱动程序支持 Bidi 和 DriverEvents。 有关详细信息，请参阅[驱动程序支持自定义 UI](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-customized-ui)。
 
 -   **可能的原因：** 计算机具有无最新作业在打印队列中。 请确保该打印机图标显示在屏幕的右下角。 否则，将发送另一个打印作业。
 
@@ -409,10 +409,10 @@ void DisplayBackgroundTaskTriggerDetails()
 
 -   **可能的原因：** 清单或设备元数据，从而导致应用内 backgroundhost 崩溃或不显示任何 toast 错误地给出是通知应用程序中的入口点的类。 检查下列项目：
 
-    -   请确保正确地在给定的入口点**声明**清单设计器选项卡。 它应为 Namespace.ClassName 格式为C#和 c + +。 对于 JavaScript，它应为.js 文件的相对目录路径。
+    -   请确保正确地在给定的入口点**声明**清单设计器选项卡。 它应为 Namespace.ClassName 格式为C#和C++。 对于 JavaScript，它应为.js 文件的相对目录路径。
     -   完成后，JavaScript 应用程序应调用 close （）。
     -   C#类必须实现 Windows.ApplicationModel.Background.IBackgroundTask，必须具有公共 void`Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance)`方法。
-    -   C + + 类必须实现 Windows::ApplicationModel::Background::IBackgroundTask，必须具有`virtual void Run(Windows::ApplicationModel::Background::IBackgroundTaskInstance^ taskInstance) `方法。
+    -   C++类必须实现 Windows::ApplicationModel::Background::IBackgroundTask，必须具有`virtual void Run(Windows::ApplicationModel::Background::IBackgroundTaskInstance^ taskInstance) `方法。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
@@ -427,7 +427,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 [指导原则和清单的 toast 通知 （UWP 应用）](https://go.microsoft.com/fwlink/p/?LinkId=317193)
 
-[自定义 UI 的驱动程序支持](https://msdn.microsoft.com/library/windows/hardware/jj659898)
+[自定义 UI 的驱动程序支持](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-customized-ui)
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 

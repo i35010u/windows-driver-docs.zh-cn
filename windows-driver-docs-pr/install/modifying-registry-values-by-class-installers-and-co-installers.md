@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，修改注册表值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1230f334bcc8a17c0f6510210c1e8b52fb0f193c
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 9a0213675ea93324f3207e2815ec4734e7252fd6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377643"
 ---
 # <a name="modifying-registry-values-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表值
 
@@ -38,11 +38,11 @@ ms.locfileid: "65456373"
 
     安装程序类和共同安装程序必须遵循有关如何使用限制[RunOnce 注册表项](runonce-registry-key.md)中[INF 文件](overview-of-inf-files.md)。 具体而言，此注册表项必须是仅用于枚举通过使用软件设备枚举器 (SWENUM) 的仅限软件的设备的安装。
 
--   安装程序类和共同安装程序可以修改**CoInstallers32**并**EnumPropPages32**中设备的注册表值*软件密钥*时安装程序处理[ **DIF_REGISTER_COINSTALLERS** ](https://msdn.microsoft.com/library/windows/hardware/ff543715)请求。
+-   安装程序类和共同安装程序可以修改**CoInstallers32**并**EnumPropPages32**中设备的注册表值*软件密钥*时安装程序处理[ **DIF_REGISTER_COINSTALLERS** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-register-coinstallers)请求。
 
 以下指导原则后应执行以安全地修改注册表值类安装程序或共同安装程序：
 
--   安装程序类和共同安装程序必须首先使用[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)或[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)若要打开的句柄将修改注册表项。 打开句柄后，安装程序类和共同安装程序可以使用标准注册表函数来修改注册表值。
+-   安装程序类和共同安装程序必须首先使用[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)或[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)若要打开的句柄将修改注册表项。 打开句柄后，安装程序类和共同安装程序可以使用标准注册表函数来修改注册表值。
 
 -   不能使用安装程序类和共同安装程序**SetupDiDeleteDevRegKey**或*硬件密钥*设备。 有关详细信息，请参阅[删除设备的注册表项](deleting-the-registry-keys-of-a-device.md)。
 

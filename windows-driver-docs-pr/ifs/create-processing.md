@@ -10,12 +10,12 @@ keywords:
 - IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dbd45a5fbb4860c61116ee37519f085f7cf634f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e579ab843c2da4051ece346910554157d07ca60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370825"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366795"
 ---
 # <a name="create-processing"></a>创建处理
 
@@ -23,7 +23,7 @@ ms.locfileid: "63370825"
 ## <span id="ddk_create_processing_if"></span><span id="DDK_CREATE_PROCESSING_IF"></span>
 
 
-文件系统，过程中发生的有趣的安全工作的大部分[ **IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff548630)处理。 它是此步骤，必须分析传入的请求，确定调用方是否具有适当的权限来执行此操作，并授予或拒绝相应操作。 幸运的是，对于文件系统开发人员，大部分决策机制是在中实现安全引用监视器。 因此，在大多数情况下，文件系统仅需要调用适当的安全引用监视器例程，以正确确定的访问权限。 文件系统的风险发生时调用这些例程根据需要将失败并不恰当地向调用方授予访问权限。
+文件系统，过程中发生的有趣的安全工作的大部分[ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)处理。 它是此步骤，必须分析传入的请求，确定调用方是否具有适当的权限来执行此操作，并授予或拒绝相应操作。 幸运的是，对于文件系统开发人员，大部分决策机制是在中实现安全引用监视器。 因此，在大多数情况下，文件系统仅需要调用适当的安全引用监视器例程，以正确确定的访问权限。 文件系统的风险发生时调用这些例程根据需要将失败并不恰当地向调用方授予访问权限。
 
 对于标准文件系统，如 FAT 文件系统中，作为 IRP 的一部分进行检查\_MJ\_创建一些主要语义检查。 例如，FAT 文件系统具有大量检查，以确保该 IRP\_MJ\_创建处理允许基于文件或目录的状态。 FAT 文件系统进行这些检查包括检查只读媒体 （例如，尝试执行破坏性"创建"操作，因此覆盖或取代，在只读介质上不允许），共享访问权限检查和 oplock 检查。 此分析的最困难的部分之一是要意识到在某一级别 （例如文件级别） 的操作实际上可能会禁止由于不同的级别资源的状态 （例如在卷级别）。 例如，如果另一个进程以独占方式锁定了该卷可能未打开的文件。 常见用例以检查包括：
 
@@ -35,7 +35,7 @@ ms.locfileid: "63370825"
 
 此外，文件属性必须兼容。 只读属性的文件无法打开以进行写访问。 请注意在展开的泛型权利扩展后，应检查所需的访问权限。 例如，此检查 FASTFAT 文件系统中的处于**FatCheckFileAccess**函数 （请参阅 Acchksup.c 源文件从 WDK 包含 fastfat 示例）。
 
-下面的代码示例是特定于 FAT 语义。 实现 Dacl 的文件系统会执行额外的安全检查使用的安全引用监视器例程 ([**SeAccessCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563674)，例如。)
+下面的代码示例是特定于 FAT 语义。 实现 Dacl 的文件系统会执行额外的安全检查使用的安全引用监视器例程 ([**SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)，例如。)
 
 ```cpp
     //
@@ -109,7 +109,7 @@ ms.locfileid: "63370825"
     }
 ```
 
-幸运的是文件系统后安全检查已完成在初始创建 I/O 管理器执行检查的处理，后续的安全。 因此，例如，I/O 管理器可确保用户模式应用程序仅用于读访问情况下不执行针对已打开的文件的写入操作。 实际上，文件系统不应尝试强制执行对文件对象的只读语义即使在仅进行读取访问，它已打开期间 IRP\_MJ\_写入调度例程。 这是由于内存管理器将与给定的部分对象相关联的特定文件对象的方法。 通过该部分的后续写入会作为 IRP 发送\_MJ\_编写文件对象上的操作，即使该文件以只读方式打开。 文件句柄转换为在 Nt 系统服务入口点通过相应的文件对象时，换而言之，完成访问强制执行[ **ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)。
+幸运的是文件系统后安全检查已完成在初始创建 I/O 管理器执行检查的处理，后续的安全。 因此，例如，I/O 管理器可确保用户模式应用程序仅用于读访问情况下不执行针对已打开的文件的写入操作。 实际上，文件系统不应尝试强制执行对文件对象的只读语义即使在仅进行读取访问，它已打开期间 IRP\_MJ\_写入调度例程。 这是由于内存管理器将与给定的部分对象相关联的特定文件对象的方法。 通过该部分的后续写入会作为 IRP 发送\_MJ\_编写文件对象上的操作，即使该文件以只读方式打开。 文件句柄转换为在 Nt 系统服务入口点通过相应的文件对象时，换而言之，完成访问强制执行[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)。
 
 有两个其他位置中的文件系统语义安全检查必须进行"创建"处理类似于：
 

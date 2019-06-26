@@ -13,12 +13,12 @@ keywords:
 - 跟踪 WDK WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f72f3818d7ef207f0edb0681b2adc37401326bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8a8fcb35711278d582f3e917fa3c870904bcb7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379104"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377703"
 ---
 # <a name="wpp-software-tracing"></a>WPP 软件跟踪
 
@@ -29,7 +29,7 @@ ms.locfileid: "63379104"
 
 -   用户模式驱动程序、 应用程序或动态链接库 (DLL)。
 
-WPP 软件跟踪补充并增强[WMI 事件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff566350)通过添加方法来简化跟踪的跟踪提供程序操作。 它是用于跟踪提供程序记录实时二进制消息有效机制。 随后可将记录的消息转换的操作的跟踪提供程序的可读跟踪。
+WPP 软件跟踪补充并增强[WMI 事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)通过添加方法来简化跟踪的跟踪提供程序操作。 它是用于跟踪提供程序记录实时二进制消息有效机制。 随后可将记录的消息转换的操作的跟踪提供程序的可读跟踪。
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ WPP 软件跟踪补充并增强[WMI 事件跟踪](https://msdn.microsoft.com/lib
 <td align="left"><p>WPP 软件跟踪主要适用于在开发过程中调试代码。 如果你想要发布的可供对结构化的 ETW 事件，除了在开发期间，跟踪感兴趣的应用程序事件使用以下命令：</p>
 <ul>
 <li>有关内核模式驱动程序，使用<a href="event-tracing-for-windows--etw-.md" data-raw-source="[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)">事件跟踪 Windows (ETW)</a> API。</li>
-<li>对于用户模式驱动程序或应用程序，将<a href="https://msdn.microsoft.com/library/windows/desktop/bb968803" data-raw-source="[Event Tracing](https://msdn.microsoft.com/library/windows/desktop/bb968803)">事件跟踪</a>（Windows 桌面版） API。</li>
+<li>对于用户模式驱动程序或应用程序，将<a href="https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal" data-raw-source="[Event Tracing](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal)">事件跟踪</a>（Windows 桌面版） API。</li>
 </ul>
 有关详细信息，请参阅<a href="tools-for-software-tracing.md" data-raw-source="[When should I use WPP Software Tracing or the Event Tracing for Windows (ETW) API?](tools-for-software-tracing.md)">时应使用 WPP 软件跟踪或事件跟踪 Windows (ETW) API？</a></td>
 </tr>
@@ -62,9 +62,9 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 
 将 WPP 软件跟踪添加到驱动程序或应用程序的基本过程包括以下步骤。 如果使用 Visual Studio 模板提供在 WDK 中用于创建 WDF 驱动程序时，大部分的工作是出于您。
 
--   定义一个控件唯一标识该驱动程序或应用程序作为 GUID[跟踪提供程序](trace-provider.md)。 提供程序在其定义中指定此 GUID [WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏和中使用的相关的控件文件[Tracelog](tracelog.md)或另一个[跟踪控制器](trace-controller.md)。
+-   定义一个控件唯一标识该驱动程序或应用程序作为 GUID[跟踪提供程序](trace-provider.md)。 提供程序在其定义中指定此 GUID [WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏和中使用的相关的控件文件[Tracelog](tracelog.md)或另一个[跟踪控制器](trace-controller.md)。
 
--   添加所需 WPP 相关 C 预处理器指令和 WPP 宏调用到提供程序的源文件，如中所述[添加到 Windows 驱动程序 WPP 软件跟踪](adding-wpp-software-tracing-to-a-windows-driver.md)并在[WPP 软件跟踪引用](https://msdn.microsoft.com/library/windows/hardware/ff556205).
+-   添加所需 WPP 相关 C 预处理器指令和 WPP 宏调用到提供程序的源文件，如中所述[添加到 Windows 驱动程序 WPP 软件跟踪](adding-wpp-software-tracing-to-a-windows-driver.md)并在[WPP 软件跟踪引用](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556205(v=vs.85)).
 
 -   修改 Visual Studio 项目，以运行 WPP 预处理器并生成该驱动程序，如中所述[第 6 步](adding-wpp-software-tracing-to-a-windows-driver.md#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution)添加到 Windows 驱动程序 WPP 软件跟踪。 您可以参考[WPP 预处理器](wpp-preprocessor.md)的生成时间选项的详细信息。
 
@@ -80,18 +80,18 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 -   [WPP 预处理器](wpp-preprocessor.md)
 -   [跟踪和 WDF 驱动程序的诊断能力](tracing-and-diagnosability-for-wdf-drivers.md)
 
-**请注意**  事件跟踪 Windows (ETW) 和 WPP 支持大多数类型的内核模式和用户模式驱动程序。 但是，ETW 和 WPP 使用不适用于某些类型的驱动程序，例如微型端口驱动程序的类型。 若要确定是否支持特定驱动程序类型，基本 WPP 将宏添加到驱动程序，如[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)并[WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)。 如果由于未定义使用的类型，不会进行编译代码，ETW 和 WPP 不能支持的驱动程序类型。
+**请注意**  事件跟踪 Windows (ETW) 和 WPP 支持大多数类型的内核模式和用户模式驱动程序。 但是，ETW 和 WPP 使用不适用于某些类型的驱动程序，例如微型端口驱动程序的类型。 若要确定是否支持特定驱动程序类型，基本 WPP 将宏添加到驱动程序，如[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))并[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果由于未定义使用的类型，不会进行编译代码，ETW 和 WPP 不能支持的驱动程序类型。
 有关 ETW 的详细信息，请参阅[事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=179202)Windows SDK 文档中。
 
-**请注意**WPP 跟踪提供程序只能由一个跟踪会话一次启用。 请参阅[WPP 提供程序](https://msdn.microsoft.com/library/windows/desktop/aa363668#providers)有关详细信息。
+**请注意**WPP 跟踪提供程序只能由一个跟踪会话一次启用。 请参阅[WPP 提供程序](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing#providers)有关详细信息。
 
-璝惠[WMI 库支持例程](https://msdn.microsoft.com/library/windows/hardware/ff566359)的支持 WPP 软件跟踪，请参阅：
+璝惠[WMI 库支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)的支持 WPP 软件跟踪，请参阅：
 
-[**WmiQueryTraceInformation**](https://msdn.microsoft.com/library/windows/hardware/ff565820)
+[**WmiQueryTraceInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmiquerytraceinformation)
 
-[**WmiTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff565836)
+[**WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessage)
 
-[**WmiTraceMessageVa**](https://msdn.microsoft.com/library/windows/hardware/ff566340)
+[**WmiTraceMessageVa**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessageva)
 
  
 

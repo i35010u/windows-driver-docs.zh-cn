@@ -6,12 +6,12 @@ keywords:
 - 并行 WDK，连接的设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec8aa8e7076f59f93b6168b6204ec5e2b439f4d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 117dc1b7831ebbc45070c1d6a65ec84f10c47df0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373552"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385986"
 ---
 # <a name="connecting-to-a-parallel-device"></a>连接到并行设备
 
@@ -19,7 +19,7 @@ ms.locfileid: "63373552"
 
 
 
-客户端用[ **IOCTL\_内部\_PARCLASS\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff544040)请求以获取[ **PARCLASS\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff544334)结构，其中包含：
+客户端用[ **IOCTL\_内部\_PARCLASS\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_parclass_connect)请求以获取[ **PARCLASS\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ns-parallel-_parclass_information)结构，其中包含：
 
 -   分配给并行端口 I/O 资源
 
@@ -31,7 +31,7 @@ ms.locfileid: "63373552"
 
 回调例程提供典型功能驱动程序需要的功能。 使用回调例程是比使用等效的设备控制请求更加有效。
 
-从设备使用的客户端断开[ **IOCTL\_内部\_PARCLASS\_断开连接**](https://msdn.microsoft.com/library/windows/hardware/ff544046)请求。
+从设备使用的客户端断开[ **IOCTL\_内部\_PARCLASS\_断开连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_parclass_disconnect)请求。
 
  
 

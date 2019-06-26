@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79eb872c3761d483363c0eafd960cd662982c1c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 340afc75cfc22e37d8a94b4fa11fd42841f773c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332604"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360516"
 ---
 # <a name="kspropertysysaudioselectgraph"></a>KSPROPERTY\_SYSAUDIO\_SELECT\_GRAPH
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_选择\_使用关系图属性来显式包括 SysAudio pin 
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538500" data-raw-source="[&lt;strong&gt;SYSAUDIO_SELECT_GRAPH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538500)"><strong>SYSAUDIO_SELECT_GRAPH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_select_graph" data-raw-source="[&lt;strong&gt;SYSAUDIO_SELECT_GRAPH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_select_graph)"><strong>SYSAUDIO_SELECT_GRAPH</strong></a></p></td>
 <td align="left"><p>无</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY\_SYSAUDIO\_选择\_使用关系图属性来显式包括 SysAudio pin 
 
  
 
-属性描述符 （实例数据） 是一种结构的类型 SYSAUDIO\_选择\_张图表，其中指定的属性、 pin ID 和节点 id。 类型的嵌入结构指定的属性[ **KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)。 Pin ID 是标识 KS 筛选器，用于包装虚拟音频设备中的 pin 工厂的索引。 节点 ID 是标识中指定的 pin 数据路径的可选节点的索引。 有关详细信息，请参阅以下备注部分。
+属性描述符 （实例数据） 是一种结构的类型 SYSAUDIO\_选择\_张图表，其中指定的属性、 pin ID 和节点 id。 类型的嵌入结构指定的属性[ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))。 Pin ID 是标识 KS 筛选器，用于包装虚拟音频设备中的 pin 工厂的索引。 节点 ID 是标识中指定的 pin 数据路径的可选节点的索引。 有关详细信息，请参阅以下备注部分。
 
 为此属性定义没有属性值 （操作数据）。 指定属性值的缓冲区指针视为**NULL**和其大小为零。
 
@@ -99,9 +99,9 @@ KSPROPERTY\_SYSAUDIO\_选择\_图形组属性请求会影响仅 pin 请求后创
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**SYSAUDIO\_SELECT\_GRAPH**](https://msdn.microsoft.com/library/windows/hardware/ff538500)
+[**SYSAUDIO\_SELECT\_GRAPH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_select_graph)
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

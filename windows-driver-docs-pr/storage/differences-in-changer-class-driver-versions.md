@@ -8,12 +8,12 @@ keywords:
 - 类驱动程序 WDK 存储，更换器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c68c604a9722e02287c75425b9d6d9a37974a5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32ea5081a3dd8f0759cfc79b3ba4a85e8b16d1f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368290"
 ---
 # <a name="differences-in-changer-class-driver-versions"></a>更换器类驱动程序版本中的差异
 
@@ -23,7 +23,7 @@ ms.locfileid: "63384842"
 
 有的转换器类/miniclass 驱动程序对在 Windows XP 和 Windows 2000 中实现的三个主要区别：
 
-1.  不同的用[ **DriverEntry 的转换器 Miniclass 驱动程序**](https://msdn.microsoft.com/library/windows/hardware/ff552647)例程 miniclass 驱动程序中。
+1.  不同的用[ **DriverEntry 的转换器 Miniclass 驱动程序**](https://docs.microsoft.com/windows-hardware/drivers/storage/driverentry-of-changer-miniclass-drivers)例程 miniclass 驱动程序中。
 
     在 Windows 2000，转换器类驱动程序**DriverEntry**例程执行不同的驱动程序初始化任务，包括输入/输出请求的入口点的初始化。 在 Windows XP 和更高版本操作系统中，初始化发生在**DriverEntry** miniclass 驱动程序的例程。 请参阅[需换带机 Miniclass 例程](required-changer-miniclass-routines.md)有关详细信息的任务的 miniclass 驱动程序**DriverEntry**执行所需的例程。
 
@@ -41,17 +41,17 @@ ms.locfileid: "63384842"
 
 在 Windows 2000 中，在换带机类驱动程序提供 miniclass 驱动程序调用以下例程：
 
--   [**ChangerClassAllocatePool** ](https://msdn.microsoft.com/library/windows/hardware/ff551402) -分配池的内存。
+-   [**ChangerClassAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassallocatepool) -分配池的内存。
 
--   [**ChangerClassFreePool** ](https://msdn.microsoft.com/library/windows/hardware/ff551411) -释放池内存。
+-   [**ChangerClassFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassfreepool) -释放池内存。
 
--   [**ChangerClassDebugPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff551406) -打印调试信息。
+-   [**ChangerClassDebugPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassdebugprint) -打印调试信息。
 
 在 Windows XP 和更高版本操作系统中，提供了在换带机类驱动程序，除了例程之外的两个其他例程前面列出。
 
--   [**ChangerClassInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff551413) -换带机 miniclass 驱动程序调用**ChangerClassInitialize**中其**DriverEntry**例程，以初始化的驱动程序。 **ChangerClassInitialize**执行以前由 Windows 2000 转换器类驱动程序的执行的许多任务**DriverEntry**例程。
+-   [**ChangerClassInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize) -换带机 miniclass 驱动程序调用**ChangerClassInitialize**中其**DriverEntry**例程，以初始化的驱动程序。 **ChangerClassInitialize**执行以前由 Windows 2000 转换器类驱动程序的执行的许多任务**DriverEntry**例程。
 
--   [**ChangerClassSendSrbSynchronous** ](https://msdn.microsoft.com/library/windows/hardware/ff551415) -初始化，并以同步方式将 SRB 发送到所指示的目标设备。
+-   [**ChangerClassSendSrbSynchronous** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclasssendsrbsynchronous) -初始化，并以同步方式将 SRB 发送到所指示的目标设备。
 
  
 

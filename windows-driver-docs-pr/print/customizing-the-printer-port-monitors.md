@@ -13,12 +13,12 @@ keywords:
 - 双向通信 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07ac1ee03c461ea2a8931e5e827e3b113fb2c3e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36f4eba5f7f96da40ca254e07ca518359fcc53b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373485"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372369"
 ---
 # <a name="customizing-the-printer-port-monitors"></a>自定义打印机端口监视器
 
@@ -79,7 +79,7 @@ Bidi 扩展文件的格式正确 XML 必须符合提供与 Microsoft Windows Dri
 
 ### <a name="conversion-of-winsnmp-to-bidi-data-types"></a>WinSNMP 转换为 Bidi 数据类型
 
-中提供了简单网络管理协议 (SNMP) 类型和 bidi 类型之间的对应关系[ **BIDI\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff545211)枚举主题。
+中提供了简单网络管理协议 (SNMP) 类型和 bidi 类型之间的对应关系[ **BIDI\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)枚举主题。
 
 本部分的其余部分包含下列主题来帮助您创建 bidi 架构扩展。
 

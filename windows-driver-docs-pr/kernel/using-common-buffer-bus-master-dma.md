@@ -11,12 +11,12 @@ keywords:
 - 适配器对象 WDK 内核，总线 master DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eee81671cc1e0125112803c23cfc76109a2377ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ca67ef7c2a228369649e3224106cb214db00bbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382238"
 ---
 # <a name="using-common-buffer-bus-master-dma"></a>使用公用缓冲区总线主控 DMA
 
@@ -30,11 +30,11 @@ ms.locfileid: "63361102"
 
 设置常见缓冲区区域经济方面，如通过使用**页上\_大小**区块或单个分配，使可供基于数据包的 DMA 操作的详细映射寄存器。 它还留出更多可用的系统内存用于其他目的，这将产生更好的整体驱动程序和系统性能。
 
-若要为总线 master DMA 设置常见缓冲区，总线 master DMA 设备驱动程序必须调用[ **AllocateCommonBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff540575)返回的适配器对象指针[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)。 通常情况下，驱动程序，可以从此调用其[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程对于[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求。 仅当它将使用缓冲区重复其 DMA 操作而驱动程序保持加载状态，驱动程序应分配常见缓冲区。 下图说明了此类调用到**AllocateCommonBuffer**。
+若要为总线 master DMA 设置常见缓冲区，总线 master DMA 设备驱动程序必须调用[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)返回的适配器对象指针[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)。 通常情况下，驱动程序，可以从此调用其[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程对于[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 仅当它将使用缓冲区重复其 DMA 操作而驱动程序保持加载状态，驱动程序应分配常见缓冲区。 下图说明了此类调用到**AllocateCommonBuffer**。
 
 ![说明的总线 master dma 的常见缓冲区分配的关系图](images/3halcbff.png)
 
-请求的缓冲区，作为 LengthForBuffer 上, 图中所示的大小确定多少映射寄存器必须用于提供常见的缓冲区的虚拟到逻辑映射。 使用[**字节\_TO\_页**](https://msdn.microsoft.com/library/windows/hardware/ff540709)宏来确定页面所需的最大数目 (**字节\_TO\_页**(*LengthForBuffer*))。 此值不能大于*NumberOfMapRegisters*返回的[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)。
+请求的缓冲区，作为 LengthForBuffer 上, 图中所示的大小确定多少映射寄存器必须用于提供常见的缓冲区的虚拟到逻辑映射。 使用[**字节\_TO\_页**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)宏来确定页面所需的最大数目 (**字节\_TO\_页**(*LengthForBuffer*))。 此值不能大于*NumberOfMapRegisters*返回的[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)。
 
 此外，调用方必须提供以下：
 
@@ -54,7 +54,7 @@ ms.locfileid: "63361102"
 
 否则，该驱动程序可以使用分配的常见缓冲区作为驱动程序和适配器访问的存储区域 DMA 传输。
 
-当 PnP 管理器发送 IRP 停止或删除设备时，该驱动程序必须调用[ **FreeCommonBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff546511)释放它已经分配了每个常见缓冲区。
+当 PnP 管理器发送 IRP 停止或删除设备时，该驱动程序必须调用[ **FreeCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_common_buffer)释放它已经分配了每个常见缓冲区。
 
  
 

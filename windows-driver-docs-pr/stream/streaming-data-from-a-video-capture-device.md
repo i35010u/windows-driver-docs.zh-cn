@@ -7,12 +7,12 @@ keywords:
 - 捕获视频 WDK AVStream 中的流数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95652e3ac4c28d3018411dfe46770f68b84830af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51b7590555c13416f0767a4b9a9f1e2cccfcfb14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377786"
 ---
 # <a name="streaming-data-from-a-video-capture-device"></a>来自视频捕获设备的流式处理数据
 
@@ -29,7 +29,7 @@ ms.locfileid: "63374047"
 
 VBI 解码器必须立即通知的优化的更改。 例如，调谐器间切换时从一个通道，VBI 解码器必须通知优化操作的开始处以便它可以暂时停止信号不稳定的期间进行解码。 优化操作完成后，VBI 解码器必须通知新频道和视频的任何标准或可能已发生的国家/地区代码更改。
 
-通过纵横制筛选器，然后再转换其捕获筛选器上的模拟视频输入 pin，微型驱动程序必须将传播其调谐器的筛选器，从优化数据包。 此数据包是仅在用户模式下可用，直到它达到捕获筛选器。 微型驱动程序收到与此优化数据包[ **KS\_TVTUNER\_更改\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567691)上的模拟视频输入插针微型驱动程序的捕获的结构筛选器。
+通过纵横制筛选器，然后再转换其捕获筛选器上的模拟视频输入 pin，微型驱动程序必须将传播其调谐器的筛选器，从优化数据包。 此数据包是仅在用户模式下可用，直到它达到捕获筛选器。 微型驱动程序收到与此优化数据包[ **KS\_TVTUNER\_更改\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_tvtuner_change_info)上的模拟视频输入插针微型驱动程序的捕获的结构筛选器。
 
 微型驱动程序还必须将传播到 VBI 输出插针，其捕获筛选器使用的优化数据包[视频流扩展标头](video-stream-extended-headers.md)。 充当链 VBI 解码器同样必须传播到其输出插针从其输入插针扩展标头信息。
 

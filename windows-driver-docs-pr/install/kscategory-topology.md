@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 15c8ca4c096ac71383e0b68ca59c674700cc8e55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98f33723e12d72c03118cab036ad67601eded469
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361153"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366683"
 ---
 # <a name="kscategorytopology"></a>KSCATEGORY_TOPOLOGY
 
 
-KSCATEGORY_TOPOLOGY[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)音频设备的内部拓扑 (KS) 功能类别。
+KSCATEGORY_TOPOLOGY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)音频设备的内部拓扑 (KS) 功能类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_TOPOLOGY[设备接口类](https://msdn.microsoft.com/library/windows/
 
 KS 音频适配器设备驱动程序注册 KSCATEGORY_TOPOLOGY 向操作系统指示设备支持 KSCATEGORY_TOPOLOGY 功能分类的实例。
 
-有关设备的音频的适配器的接口类的信息，请参阅[音频适配器安装设备接口](https://msdn.microsoft.com/library/windows/hardware/ff536813)。
+有关设备的音频的适配器的接口类的信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
 
 [AC'97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075)中提供的 WDK 枚举 KSCATEGORY_TOPOLOGY 设备接口类的实例。
 

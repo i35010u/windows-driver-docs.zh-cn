@@ -9,12 +9,12 @@ keywords:
 - 卸载设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 540aeff00daf0ac359b19a2fc7be4e075620b4f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7e6ed192b23ad69e1000ff4b37257877061ab99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335070"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364722"
 ---
 # <a name="unload-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 Unload 例程
 
@@ -26,11 +26,11 @@ ms.locfileid: "63335070"
 
 *Unload*例程应首先检查以确保所有设备已被删除并且，如果没有，请执行以下操作为每个剩余的设备：
 
-1.  调用[ **BatteryClassUnload** ](https://msdn.microsoft.com/library/windows/hardware/ff536271)以通知的类驱动程序 miniclass 驱动程序正在卸载设备。
+1.  调用[ **BatteryClassUnload** ](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassunload)以通知的类驱动程序 miniclass 驱动程序正在卸载设备。
 
 2.  禁用来自较低的驱动程序，如 ACPI 驱动程序，使用该驱动程序接口的任何设备通知。
 
-3.  删除设备的设备对象通过调用[ **IoDeleteDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549083)，按如下所示：
+3.  删除设备的设备对象通过调用[ **IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)，按如下所示：
 
     ```cpp
         IoDeleteDevice (NewBatt->DeviceObject);

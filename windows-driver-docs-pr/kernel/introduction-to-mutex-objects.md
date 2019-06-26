@@ -10,12 +10,12 @@ keywords:
 - 等待 mutex 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff495e947018a6689b4e85e75f8518e5d3710d5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 703ec6d3250a70826dfc09797d7b2b05d6d0413c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341452"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369922"
 ---
 # <a name="introduction-to-mutex-objects"></a>互斥对象简介
 
@@ -32,23 +32,23 @@ ms.locfileid: "63341452"
 
 内核永远不会允许拥有互斥体，而无需第一个释放互斥体，然后将其设置为用信号通知状态导致转换为用户模式的线程。 如果拥有互斥体的任何 FSD 创建或驱动程序创建线程尝试在释放 mutex 的所有权之前将控制返回给 I/O 管理器，内核会停止系统。
 
-任何驱动程序，它使用互斥体对象必须调用[ **KeInitializeMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff552147)等待或释放其互斥体对象之前的一次。 下图说明了两个系统线程可能会使用互斥体对象。
+任何驱动程序，它使用互斥体对象必须调用[ **KeInitializeMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializemutex)等待或释放其互斥体对象之前的一次。 下图说明了两个系统线程可能会使用互斥体对象。
 
 ![说明等待 mutex 对象的关系图](images/3mutxobj.png)
 
 上图所示，使用互斥体对象的驱动程序必须为 mutex 对象，它必须是常驻提供存储。 可以使用该驱动程序[设备扩展](device-extensions.md)的驱动程序创建的设备对象，如果它使用的控制器扩展[控制器对象](using-controller-objects.md)，或由驱动程序分配的非分页缓冲的池。
 
-当驱动程序调用**KeInitializeMutex** (通常是从其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程)，它必须将一个指针传递给该互斥体对象的驱动程序的存储的内核初始化到用信号通知状态。
+当驱动程序调用**KeInitializeMutex** (通常是从其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程)，它必须将一个指针传递给该互斥体对象的驱动程序的存储的内核初始化到用信号通知状态。
 
 这样的最高级别的驱动程序已初始化后，它可以管理相互独占访问共享资源，如在上图中所示。 例如，驱动程序的本质上的同步操作和线程的调度例程可能会使用互斥体的 Irp 保护驱动程序创建队列。
 
 因为**KeInitializeMutex**始终 mutex 对象的初始状态设置为用信号通知 （如前面图所示）：
 
-1.  调度例程的首次调用[ **KeWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)与*互斥体*指针使当前线程立即进入就绪状态，提供线程互斥体的所有权和互斥体状态重置为未发出信号。 尽快调度例程继续运行，它可以安全地将 IRP 插入 mutex 保护队列。
+1.  调度例程的首次调用[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)与*互斥体*指针使当前线程立即进入就绪状态，提供线程互斥体的所有权和互斥体状态重置为未发出信号。 尽快调度例程继续运行，它可以安全地将 IRP 插入 mutex 保护队列。
 
 2.  当第二个线程 （另一个调度例程，驱动程序所提供的工作线程回调例程或驱动程序创建的线程） 调用**KeWaitForSingleObject**与*互斥体*指针，第二个线程将处于等待状态。
 
-3.  当调度例程完成队列中所述的步骤 1 作为 IRP 时，它将调用[ **KeReleaseMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553140)与*互斥体*指针和一个布尔值*等待*值，该值指示是否打算调用**KeWaitForSingleObject** (或[ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)) 与*Mutex*只要**KeReleaseMutex**返回控件。
+3.  当调度例程完成队列中所述的步骤 1 作为 IRP 时，它将调用[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)与*互斥体*指针和一个布尔值*等待*值，该值指示是否打算调用**KeWaitForSingleObject** (或[ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)) 与*Mutex*只要**KeReleaseMutex**返回控件。
 
 4.  假设的调度例程释放其所有权的步骤 3 中互斥体 (*等待*设置为**FALSE**)，该互斥体设置为通过用信号通知状态**KeReleaseMutex**。 互斥体当前有没有所有者，因此内核确定是否另一个线程正在等待该互斥体。 如果内核，使第二个线程 （请参阅步骤 2） 的互斥体所有者可能提升到实时优先级值最低的线程的优先级以及更改其状态为就绪。
 

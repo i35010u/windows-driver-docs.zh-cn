@@ -9,12 +9,12 @@ keywords:
 - 正在重试请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d161689c48d8d8364f0dada691162b14f551d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2d62ee9909357a9e57ca207ed0d7a08330b3a5f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386816"
 ---
 # <a name="storage-class-drivers-interpretrequestsense-routine"></a>存储类驱动程序的 InterpretRequestSense 例程
 
@@ -30,7 +30,7 @@ ms.locfileid: "63339044"
 
 *InterpretRequestSense*例程可能会调用一个驱动程序提供错误日志记录例程也。 每当存储类驱动程序日志的 I/O 错误，它应包括**PathId**， **TargetId**， **Lun**，以及**SrbStatus**设置值SRB 中的存储端口驱动程序和，如果可能，作为一部分错误相关的请求检测信息日志条目的**DumpData**。 请注意，不能使用存储类驱动程序**PathId**， **TargetId**，并**Lun**从这种 Srb 解决其他请求。
 
-有关日志记录的 I/O 错误的详细信息，请参阅[日志记录错误](https://msdn.microsoft.com/library/windows/hardware/ff554312)。
+有关日志记录的 I/O 错误的详细信息，请参阅[日志记录错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/logging-errors)。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 本机 802.11 IHV 扩展 DLL WDK，后期关联操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cee769a195b5e6168ea2c41bd198f71703709290
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1d8ffc5cee77d066707170965fbc23464c76856
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384534"
 ---
 # <a name="post-association-operations"></a>关联后的操作
 
@@ -22,7 +22,7 @@ ms.locfileid: "63342943"
 
  
 
-无线 LAN (WLAN) 适配器已成功完成时的访问点 (AP) 的关联操作，操作系统会创建关联的数据端口。 操作系统然后通过调用来启动数据端口上的后关联操作[ *Dot11ExtIhvPerformPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547492)函数。
+无线 LAN (WLAN) 适配器已成功完成时的访问点 (AP) 的关联操作，操作系统会创建关联的数据端口。 操作系统然后通过调用来启动数据端口上的后关联操作[ *Dot11ExtIhvPerformPostAssociate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)函数。
 
 **请注意**  For Windows Vista 中，只有在基础结构的基本服务设置 (BSS) 网络 IHV 扩展 DLL 支持。
 
@@ -36,7 +36,7 @@ ms.locfileid: "63342943"
 
 -   派生密码密钥并将它们下载到 WLAN 适配器。
 
-操作系统将 WLAN 适配器完成同 ap 解除关联操作，通过调用来终止数据端口上的后关联操作[ *Dot11ExtIhvStopPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547521)函数。 此调用，以下操作系统中删除关联的数据端口。
+操作系统将 WLAN 适配器完成同 ap 解除关联操作，通过调用来终止数据端口上的后关联操作[ *Dot11ExtIhvStopPostAssociate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_stop_post_associate)函数。 此调用，以下操作系统中删除关联的数据端口。
 
 以下主题介绍 IHV 扩展 DLL 必须做什么来执行或停止后关联的操作。
 

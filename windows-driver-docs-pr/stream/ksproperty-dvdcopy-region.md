@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53aea7985010841a83d0447ef7cb073ba4c5b018
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aab738e8870e3cf4197b5f9c82e85abaa80ed2f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368124"
 ---
 # <a name="kspropertydvdcopyregion"></a>KSPROPERTY\_DVDCOPY\_区域
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDCOPY\_REGION 属性指定 DVD 复制保护区域根据语言限�
 <td><p>否</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567638" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_REGION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567638)"><strong>KS_DVDCOPY_REGION</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_REGION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region)"><strong>KS_DVDCOPY_REGION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_REGION 属性指定 DVD 复制保护区域根据语言限�
 <a name="remarks"></a>备注
 -------
 
-有关语言限制的详细信息，请参阅[DVD 之前实行](https://msdn.microsoft.com/library/windows/hardware/ff559512)并[DVD 版权保护](https://msdn.microsoft.com/library/windows/hardware/ff558736)。
+有关语言限制的详细信息，请参阅[DVD 之前实行](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-regionalization)并[DVD 版权保护](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-copyright-protection)。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,7 +87,7 @@ KSPROPERTY\_DVDCOPY\_REGION 属性指定 DVD 复制保护区域根据语言限�
 ## <a name="see-also"></a>请参阅
 
 
-[**KS\_DVDCOPY\_REGION**](https://msdn.microsoft.com/library/windows/hardware/ff567638)
+[**KS\_DVDCOPY\_REGION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region)
 
  
 

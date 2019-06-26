@@ -11,12 +11,12 @@ keywords:
 - Isr WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a5cf4d56758ad2a33e650ddcdec10822b9b017e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa43a1ac64b22cbe5270fba512aef7b4f7bdd5c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377821"
 ---
 # <a name="stream-class-and-minidriver-interface"></a>流类和微型驱动程序接口
 
@@ -28,7 +28,7 @@ ms.locfileid: "63391385"
 
 控制命令和信息写入微型驱动程序的基本机制是*流请求块*(SRB)。 Srb 一组为每个微型驱动程序可以访问特定功能的驱动程序提供，并通常特定于设备支持的每个数据流。 此信息将通过向设备操作系统系统控制在较大的循环缓冲区 DMA。
 
-SRB 包含命令以及使用该命令关联的数据。 一个[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构包含与特定 SRB 相关的所有信息。 此结构，通常简称为 SRB，包含要补充该命令的其他参数。
+SRB 包含命令以及使用该命令关联的数据。 一个[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构包含与特定 SRB 相关的所有信息。 此结构，通常简称为 SRB，包含要补充该命令的其他参数。
 
 下图显示了在初始化过程中的流类和微型驱动程序之间的交互。
 
@@ -38,7 +38,7 @@ SRB 包含命令以及使用该命令关联的数据。 一个[ **HW\_流\_请�
 
 流式处理的微型驱动程序可以调用根据 WDM 系统服务。 但是，微型驱动程序不会分配一个设备对象，但使用的类驱动程序的设备对象发出系统调用。 大多数微型驱动程序不需要进行 WDM 系统调用，因为所有必要的功能是可从类驱动程序。
 
-微型驱动程序必须注意所有微型驱动程序入口点调用在 IRQL&gt;调度\_级别 WDM 系统服务调用时，除[ **StreamClassCallAtNewPriority** ](https://msdn.microsoft.com/library/windows/hardware/ff568230)例程。 此函数允许服务调用在 IRQL = 调度\_级别或被动\_级别，具体取决于指定的优先级。 IRQL 的这种限制可以通过设置重写**TurnOffSynchronization**中布尔[ **HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff559682)结构 **，则返回 TRUE**。
+微型驱动程序必须注意所有微型驱动程序入口点调用在 IRQL&gt;调度\_级别 WDM 系统服务调用时，除[ **StreamClassCallAtNewPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscallatnewpriority)例程。 此函数允许服务调用在 IRQL = 调度\_级别或被动\_级别，具体取决于指定的优先级。 IRQL 的这种限制可以通过设置重写**TurnOffSynchronization**中布尔[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)结构 **，则返回 TRUE**。
 
  
 

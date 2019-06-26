@@ -4,12 +4,12 @@ description: 增强的传输选择 (ETS) 算法
 ms.assetid: 952ECB1E-96AD-4717-8E49-68558E7E9AD4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ebf9b784f149a063d3b82698f196264cf21944
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2314820381f4ce2a6e5b568383763ffd809f8023
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379419"
 ---
 # <a name="enhanced-transmission-selection-ets-algorithm"></a>增强的传输选择 (ETS) 算法
 
@@ -20,7 +20,7 @@ ms.locfileid: "63372455"
 
 每个流量类被分配的直接连接的对等方之间的数据链接上的可用带宽的百分比。 如果流量类不使用其已分配的带宽，ETS 允许其他通信类，以使用流量类未使用的可用带宽。
 
-NDIS 服务质量 (QoS) 通信类定义的 OID 方法请求通过[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)指定以下流量类特性的结构：
+NDIS 服务质量 (QoS) 通信类定义的 OID 方法请求通过[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)指定以下流量类特性的结构：
 
 -   流量类的指定数目**NumTrafficClasses**成员。
 

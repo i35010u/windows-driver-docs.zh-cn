@@ -11,12 +11,12 @@ keywords:
 - 检查验证码签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6710e892a5dae0827394540786ae5bba00e6e19d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95400f0eea3f1b1fbc86a0e94d271863735384a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384754"
 ---
 # <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>使用 SetupAPI 验证驱动程序验证码签名
 
@@ -30,7 +30,7 @@ ms.locfileid: "63339379"
 
 检查 DNF_AUTHENTICODE_SIGNED 标志。
 
-Windows 驱动程序包含有效的 Authenticode 签名，如果设置此标志**标志**驱动程序节点的成员[ **SP_DRVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553290)结构。 (此外请注意，Windows，如果该驱动程序设置 DNF_INF_IS_SIGNED 标志[WHQL 版本签名](whql-release-signature.md)，如果系统提供的驱动程序，或如果它包含验证码签名。)
+Windows 驱动程序包含有效的 Authenticode 签名，如果设置此标志**标志**驱动程序节点的成员[ **SP_DRVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构。 (此外请注意，Windows，如果该驱动程序设置 DNF_INF_IS_SIGNED 标志[WHQL 版本签名](whql-release-signature.md)，如果系统提供的驱动程序，或如果它包含验证码签名。)
 
 ### <a name="to-verify-that-an-inf-file-has-a-valid-authenticode-signature"></a>若要验证的 INF 文件具有有效的 Authenticode 签名
 

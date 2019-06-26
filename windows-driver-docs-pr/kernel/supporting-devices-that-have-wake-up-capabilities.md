@@ -15,12 +15,12 @@ keywords:
 - I/O 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ca29d334f077081fd4143bd449aceade882e81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d2e12e28e1fbdda3170d91fac2d3b1c17acd20f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345435"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385116"
 ---
 # <a name="supporting-devices-that-have-wake-up-capabilities"></a>支持具有唤醒功能的设备
 
@@ -28,7 +28,7 @@ ms.locfileid: "63345435"
 
 
 
-可以响应外部唤醒信号的设备的驱动程序必须能够处理[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766)请求 (*等待/唤醒Irp*)。 此类设备的电源策略所有者必须能够发送**IRP\_MN\_等待\_唤醒**请求。
+可以响应外部唤醒信号的设备的驱动程序必须能够处理[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)请求 (*等待/唤醒Irp*)。 此类设备的电源策略所有者必须能够发送**IRP\_MN\_等待\_唤醒**请求。
 
 通常情况下，任何会导致要声明唤醒信号的设备也是正常的服务事件的设备。 例如，用户输入，这可能会导致键盘来唤醒系统，是键盘，其驱动程序的正常事件。
 

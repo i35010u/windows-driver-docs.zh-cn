@@ -7,12 +7,12 @@ keywords:
 - 客户端对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6861c3e060420c1b66be6c8f11c7571d37c3a04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2c0482dc75eafefc504966c53fb753aa349f27c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375090"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367017"
 ---
 # <a name="client-objects"></a>客户端对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "63375090"
 
 ### <a name="span-idprimary-clientsspanspan-idprimaryclientsspanprimary-clients"></a><span id="primary-clients"></span><span id="PRIMARY_CLIENTS"></span>主要客户端
 
-一个*主要客户端*客户端，已联接当前调试会话。 最初，创建一个新的客户端对象时，它不是主要的客户端。 客户端将成为主要的客户端时使用它来获取目标 (例如，通过调用[ **CreateProcess2**](https://msdn.microsoft.com/library/windows/hardware/ff539323)) 或连接到调试会话使用[ **ConnectSession**](https://msdn.microsoft.com/library/windows/hardware/ff539245)。 调试程序命令[ **.clients** ](-clients--list-debugging-clients-.md)列出了只有主客户端。
+一个*主要客户端*客户端，已联接当前调试会话。 最初，创建一个新的客户端对象时，它不是主要的客户端。 客户端将成为主要的客户端时使用它来获取目标 (例如，通过调用[ **CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)) 或连接到调试会话使用[ **ConnectSession**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-connectsession)。 调试程序命令[ **.clients** ](-clients--list-debugging-clients-.md)列出了只有主客户端。
 
 ### <a name="span-idcallback-objectsspanspan-idcallbackobjectsspancallback-objects"></a><span id="callback-objects"></span><span id="CALLBACK_OBJECTS"></span>回调对象
 
@@ -38,7 +38,7 @@ ms.locfileid: "63375090"
 
 ### <a name="span-idremote-debuggingspanspan-idremotedebuggingspanremote-debugging"></a><span id="remote-debugging"></span><span id="REMOTE_DEBUGGING"></span>远程调试
 
-客户端对象方便主机引擎的远程实例通信。 [ **DebugConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff540465)函数会创建连接到远程引擎实例的客户端对象; 通过注册的远程引擎和回调对象执行此客户端上调用的方法本地使用客户端将会调用远程引擎执行回调调用时。
+客户端对象方便主机引擎的远程实例通信。 [ **DebugConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect)函数会创建连接到远程引擎实例的客户端对象; 通过注册的远程引擎和回调对象执行此客户端上调用的方法本地使用客户端将会调用远程引擎执行回调调用时。
 
 ### <a name="span-idadditional-informationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 

@@ -7,12 +7,12 @@ keywords:
 - 排名生物识别驱动程序 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc9a56c5201890283c9bef44f27eb3531a925a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 329ced6ad146751ed4fda12e5d46c0a77b4aa1e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364688"
 ---
 # <a name="ranking-a-biometric-driver-on-windows-update"></a>在 Windows 更新上为生物识别驱动程序排名
 
@@ -38,7 +38,7 @@ ms.locfileid: "63328373"
 
 Microsoft 建议 0xa0 旧生物识别驱动程序的特征评分。 功能分数应永远不会设置为 0x00，，以防出现需要更高版本重写它。
 
-由一个 INF FeatureScore 指令中设置驱动程序的功能得分[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)设备。
+由一个 INF FeatureScore 指令中设置驱动程序的功能得分[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)设备。
 
 例如，下面的代码设置为 0x20 驱动程序的功能得分：
 

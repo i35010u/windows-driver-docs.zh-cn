@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 59d559254eed63f7aa85df5afde4d8321e44cb91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46927af0f08f37c77a264ac0bdeec0e0bf68fd9b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357623"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367949"
 ---
 # <a name="bug-check-0x108-thirdpartyfilesystemfailure"></a>Bug 检查 0x108：第三个\_参与方\_文件\_系统\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357623"
 第三个\_参与方\_文件\_系统\_故障错误检查的值为 0x00000108。 这表示第三方文件系统或文件系统筛选器中出现不可恢复的问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="thirdpartyfilesystemfailure-parameters"></a>第三个\_参与方\_文件\_系统\_失败参数
@@ -76,7 +76,7 @@ ms.locfileid: "63357623"
 <a name="resolution"></a>分辨率
 ----------
 
-**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
+**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
 
 **若要解决磁盘损坏问题：** 事件查看器检查从 SCSI、 IDE 或其他磁盘控制器的错误消息可能有助于确定该设备或导致错误的驱动程序的系统中。 请尝试禁用任何病毒扫描程序、 备份程序或持续监视系统的磁盘碎片整理程序工具。 您还应运行硬件诊断由文件系统或文件系统筛选器制造商提供。
 

@@ -4,12 +4,12 @@ description: V4 打印驱动程序模型使用新的安装程序模型来改善�
 ms.assetid: C1DF5496-14CF-4BF4-B85C-AF1A691C7AF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bd4610f1957bf8fe27ceb848a07a22f4a1f2c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcdd5d0a1bcb2edc09201b9eb50c51fae340b2eb
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393148"
 ---
 # <a name="v4-driver-setup-concepts"></a>V4 驱动程序安装的概念
 
@@ -33,7 +33,7 @@ V4 打印驱动程序是直接从驱动程序存储区，这消除了文件冲�
 
 如果已在现有设备中实现 CompatibleIDs，打印驱动程序应继续使用这些 CompatibleIDs。
 
-CompatibleIDs 不使用基于 IP 的打印设备的安装中。 因此，用户将需要确定相应的驱动程序使用的驱动程序的名称。 在打印类驱动程序有，我们建议制造商提供其网站上的兼容性列表的任何设备的打印类驱动程序支持。 有关如何实现 CompatibleIDs 硬件，包括完整的规则和限制，列表中的详细信息请参阅[如何在打印设备中实现兼容 Id](https://msdn.microsoft.com/library/windows/hardware/gg463313.aspx)。
+CompatibleIDs 不使用基于 IP 的打印设备的安装中。 因此，用户将需要确定相应的驱动程序使用的驱动程序的名称。 在打印类驱动程序有，我们建议制造商提供其网站上的兼容性列表的任何设备的打印类驱动程序支持。 有关如何实现 CompatibleIDs 硬件，包括完整的规则和限制，列表中的详细信息请参阅[如何在打印设备中实现兼容 Id](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613942(v=vs.85))。
 
 为了支持多个制造商无关 （标准） 打印类驱动程序，Microsoft 才支持几个标准 CompatibleIDs。 下表显示了这些标准 CompatibleIDs 和其关联的 PDL 文件类型。
 
@@ -137,7 +137,7 @@ c. 解决方案\#2 – 即插即用 devnode 是无关：安装程序将删除原
 
 **驱动程序分级**。 引入的 v4 打印驱动程序不会修改插排名行为。 当在插入设备时，将选定得分最高可用的驱动程序。 如果所选驱动程序是打印类驱动程序，并且没有更好地排名，匹配的驱动程序在 Windows Update 站点上，则所选驱动程序将自动替换的下次用户下载的 Windows 更新。
 
-有关驱动程序分级的详细信息，请参阅[如何 Windows Ranks Drivers](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)。
+有关驱动程序分级的详细信息，请参阅[如何 Windows Ranks Drivers](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)。
 
 ## <a name="driver-setup-best-practices"></a>驱动程序安装程序的最佳实践
 
@@ -181,8 +181,8 @@ c. CompatibleID 代码行："打印类驱动程序名称"= INSTALL\_部分、 12
 2. 打印类驱动程序 Inf，无需定义任何总线枚举器 (例如，WSDPRINT\)
 
 ## <a name="related-topics"></a>相关主题
-[如何在打印设备中实现兼容 Id](https://msdn.microsoft.com/library/windows/hardware/gg463313.aspx)  
-[Windows 驱动程序的级别](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)  
+[如何在打印设备中实现兼容 Id](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613942(v=vs.85))  
+[Windows 驱动程序的级别](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)  
 [端口监视器 MIB (PWG 5107.1 2005年)](http://www.pwg.org/standards.html)  
 
 

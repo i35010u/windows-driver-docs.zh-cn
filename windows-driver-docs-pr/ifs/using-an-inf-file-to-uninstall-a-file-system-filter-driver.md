@@ -7,12 +7,12 @@ keywords:
 - 卸载筛选器驱动程序 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 062b126b9bc0becca59cff7a1ef470c4fbd83dd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae02c91128ecea16f5a01556b1737faebfc08c77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379439"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380280"
 ---
 # <a name="using-an-inf-file-to-uninstall-a-file-system-filter-driver"></a>使用 INF 文件卸载文件系统筛选器驱动程序
 
@@ -52,11 +52,11 @@ InstallHinfSection(NULL,NULL,TEXT("DefaultUninstall 132 path-to-uninstall-dir\in
 
     有关如何列出你的应用程序中添加或删除程序的详细信息，Microsoft Windows SDK 文档的安装程序和系统管理部分中看到"删除应用程序"。
 
--   卸载应用程序不应删除的 INF 文件 （或其关联的 PNF 文件） 从 Windows INF 文件目录 (*%windir%\\INF*)。
+-   卸载应用程序不应删除的 INF 文件 （或其关联的 PNF 文件） 从 Windows INF 文件目录 ( *%windir%\\INF*)。
 
 -   卸载应用程序时，不能安全地删除一些筛选器驱动程序文件。 这些文件不应列入**DefaultUninstall.Services** INF 文件部分。
 
-有关详细信息卸载应用程序，请参阅[编写设备安装应用程序](https://msdn.microsoft.com/library/windows/hardware/ff554015)。
+有关详细信息卸载应用程序，请参阅[编写设备安装应用程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)。
 
  
 

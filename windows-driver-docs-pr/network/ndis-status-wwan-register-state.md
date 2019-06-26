@@ -5,12 +5,12 @@ ms.assetid: 3da8489a-6ca3-4897-9794-86665ce10e81
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_REGISTER_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 112703407a936bd52aa90f2e3c0921a0f5f4e368
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4acb6741aa582a9636c04a1b785179c6a9706fab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342949"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377587"
 ---
 # <a name="ndisstatuswwanregisterstate"></a>NDIS\_状态\_WWAN\_注册\_状态
 
@@ -19,7 +19,7 @@ ms.locfileid: "63342949"
 
 微型端口驱动程序还可以发送未经请求的事件与该通知。
 
-使用此通知[ **NDIS\_WWAN\_注册\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567917)结构。
+使用此通知[ **NDIS\_WWAN\_注册\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_registration_state)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -97,7 +97,7 @@ CDMA 的设备，不要支持 MB 服务发起的注册和注销。 但是，在�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_REGISTRATION\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567917)
+[**NDIS\_WWAN\_REGISTRATION\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_registration_state)
 
 [OID\_WWAN\_REGISTER\_STATE](oid-wwan-register-state.md)
 

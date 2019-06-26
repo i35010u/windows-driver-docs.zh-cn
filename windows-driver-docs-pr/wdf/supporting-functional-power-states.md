@@ -4,12 +4,12 @@ description: 支持功能性电源状态
 ms.assetid: F96214C9-702D-402E-B873-5DF57C521B34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b35c98b3faa551fbdf954c2d2a6ee0d9a24d5ca4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79bf569f7c99db281d18e59c71cc09f153bcac48
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368645"
 ---
 # <a name="supporting-functional-power-states"></a>支持功能性电源状态
 
@@ -43,7 +43,7 @@ ms.locfileid: "63382084"
 <td align="left"><p>支持</p></td>
 <td align="left"><p>支持</p></td>
 <td align="left"><p>当你希望 power 引擎插件 (PEP) 来确定的空闲超时值，并且您的驱动程序具有只有一个 F 状态。</p>
-<p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff545903" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545903)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>与<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>或<strong>SystemManagedIdleTimoutWithHint</strong>。</p></td>
+<p>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>与<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>或<strong>SystemManagedIdleTimoutWithHint</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="supporting-multiple-functional-power-states-for-single-component-devices.md" data-raw-source="[Single component, multiple states (F0, F1, F2…)](supporting-multiple-functional-power-states-for-single-component-devices.md)">单个组件，多个状态 (...F0，F1，F2)</a></p></td>
@@ -51,8 +51,8 @@ ms.locfileid: "63382084"
 <td align="left"><p>不支持</p></td>
 <td align="left"><p>当您的驱动程序具有多个 F 状态。</p>
 <ul>
-<li>调用<a href="https://msdn.microsoft.com/library/windows/hardware/hh451097" data-raw-source="[&lt;strong&gt;WdfDeviceWdmAssignPowerFrameworkSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451097)"> <strong>WdfDeviceWdmAssignPowerFrameworkSettings</strong> </a>注册 WDM PoFx 回调。</li>
-<li>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff545903" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545903)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>与<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>。</li>
+<li>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings" data-raw-source="[&lt;strong&gt;WdfDeviceWdmAssignPowerFrameworkSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings)"> <strong>WdfDeviceWdmAssignPowerFrameworkSettings</strong> </a>注册 WDM PoFx 回调。</li>
+<li>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>与<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>。</li>
 </ul>
 <p>在这种情况下，KMDF 处理与 PoFx 大多数交互。</p>
 <p>有关示例代码，请参阅<a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx 示例驱动程序</a>。</p></td>
@@ -69,7 +69,7 @@ ms.locfileid: "63382084"
 
  
 
-由于 KMDF 增加了基于 PoFx 的最小抽象，最好有 PoFx 写入您的驱动程序之前，对一个基本的了解。 相应地，我们建议您阅读[电源管理框架概述](https://msdn.microsoft.com/library/windows/hardware/hh406637)之前阅读这些主题。
+由于 KMDF 增加了基于 PoFx 的最小抽象，最好有 PoFx 写入您的驱动程序之前，对一个基本的了解。 相应地，我们建议您阅读[电源管理框架概述](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)之前阅读这些主题。
 
  
 

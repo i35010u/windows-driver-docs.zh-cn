@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 113612c470706a72ae3d53e15a51f0da6b4d86a4
-ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
+ms.openlocfilehash: cd8e9e0efc6d56b6cddfe409926b0d4262a7b70c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67266385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367177"
 ---
 # <a name="bug-check-0xc5-drivercorruptedexpool"></a>Bug 检查 0xC5：驱动程序\_损坏\_EXPOOL
 
@@ -26,7 +26,7 @@ ms.locfileid: "67266385"
 该驱动程序\_损坏\_EXPOOL bug 检查的值为 0x000000C5。 这表示系统尝试访问无效内存过高的 IRQL 的进程时。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="drivercorruptedexpool-parameters"></a>驱动程序\_损坏\_EXPOOL 参数

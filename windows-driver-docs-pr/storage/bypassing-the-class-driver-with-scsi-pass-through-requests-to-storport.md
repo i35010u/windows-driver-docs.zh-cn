@@ -4,12 +4,12 @@ description: 绕过向 Storport SCSI 传递请求的类驱动程序
 ms.assetid: 1162a1e7-a4f8-446f-8106-527f9b916382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3247c818297208a8ca97d35c0a438dca791b9a81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38ac6ba120790f9800eeed420e23bde4bfc7245d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380123"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362681"
 ---
 # <a name="bypass-a-class-driver-with-scsi-pass-through-requests-to-storport"></a>绕过向 Storport SCSI 传递请求的类驱动程序
 
@@ -17,7 +17,7 @@ ms.locfileid: "63380123"
 
 如果类驱动程序和设备声明，然后"传递"请求必须将定向到的类驱动程序通过打开相应的设备句柄。 如果设备没有类驱动程序且未声明该设备，然后"传递"请求可能会直接发送到适配器，同样，通过打开相应的设备句柄。
 
-SCSI 传递请求包含类型 IRP 的 IRP\_MJ\_设备\_IOCTL 代码控件[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://msdn.microsoft.com/library/windows/hardware/ff560519)或[ **IOCTL\_SCSI\_传递\_THROUGH\_直接**](https://msdn.microsoft.com/library/windows/hardware/ff560521)。 请求，如果通过类驱动程序的类驱动程序是设置有义务**MinorFunction** IRP 到 IRP 代码\_MJ\_设备\_控件。 Storport 检查此值以确定是否传递请求跳过的类驱动程序。 它是应用程序错误将传递请求直接发送到 Storport 如果目标设备具有已声明的存储类驱动程序。
+SCSI 传递请求包含类型 IRP 的 IRP\_MJ\_设备\_IOCTL 代码控件[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)或[ **IOCTL\_SCSI\_传递\_THROUGH\_直接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)。 请求，如果通过类驱动程序的类驱动程序是设置有义务**MinorFunction** IRP 到 IRP 代码\_MJ\_设备\_控件。 Storport 检查此值以确定是否传递请求跳过的类驱动程序。 它是应用程序错误将传递请求直接发送到 Storport 如果目标设备具有已声明的存储类驱动程序。
 
 Storport 不会检查传递的请求中嵌入的 SCSI 命令的有效性。
 

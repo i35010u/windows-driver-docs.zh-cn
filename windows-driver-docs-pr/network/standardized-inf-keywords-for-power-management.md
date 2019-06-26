@@ -4,12 +4,12 @@ description: 电源管理的标准化 INF 关键字
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9e7789589b24256aa2efdff9836b12d3c2df9b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7af3d8209a96dbbe03acaa089831d33809b4d5ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390665"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377569"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>电源管理的标准化 INF 关键字
 
@@ -17,29 +17,29 @@ ms.locfileid: "63390665"
 
 
 
-设备驱动程序 INF 文件中定义的电源管理进行了标准化关键字。 操作系统读取这些标准化的关键字并调整设备的当前电源管理功能。 设备驱动程序应始终指示到 NDIS 中设备的硬件电源管理功能[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)结构。
+设备驱动程序 INF 文件中定义的电源管理进行了标准化关键字。 操作系统读取这些标准化的关键字并调整设备的当前电源管理功能。 设备驱动程序应始终指示到 NDIS 中设备的硬件电源管理功能[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。
 
 以下的标准化的 INF 关键字定义来启用或禁用对电源管理功能的网络适配器的支持。
 
-<a href="" id="-wakeonpattern"></a>**\*WakeOnPattern**  
+<a href="" id="-wakeonpattern"></a> **\*WakeOnPattern**  
 描述是否应启用设备唤醒计算机时的网络数据包与指定的模式匹配的值。
 
-<a href="" id="-wakeonmagicpacket"></a>**\*WakeOnMagicPacket**  
+<a href="" id="-wakeonmagicpacket"></a> **\*WakeOnMagicPacket**  
 一个值，描述是否应启用设备唤醒计算机时，设备收到*幻数据包*。 (A*幻数据包*是包含 16 个连续副本接收的网络适配器的以太网地址的数据包)
 
-<a href="" id="-devicesleepondisconnect"></a>**\*DeviceSleepOnDisconnect**  
+<a href="" id="-devicesleepondisconnect"></a> **\*DeviceSleepOnDisconnect**  
 描述是否应启用该设备将设备置于低功耗状态 （睡眠状态） 的值在媒体是断开连接并且返回到全功率状态 （唤醒状态） 媒体时重新连接。
 
-<a href="" id="-pmarpoffload"></a>**\*PMARPOffload**  
+<a href="" id="-pmarpoffload"></a> **\*PMARPOffload**  
 一个值，描述是否应启用设备卸载地址解析协议 (ARP)，当系统进入睡眠状态。
 
-<a href="" id="-pmnsoffload"></a>**\*PMNSOffload**  
+<a href="" id="-pmnsoffload"></a> **\*PMNSOffload**  
 一个值，描述是否应启用设备卸载邻居请求 (NS)，当系统进入睡眠状态。
 
-<a href="" id="-pmwifirekeyoffload"></a>**\*PMWiFiRekeyOffload**  
+<a href="" id="-pmwifirekeyoffload"></a> **\*PMWiFiRekeyOffload**  
 一个值，描述是否应启用设备卸载组临时键 (GTK) 上无线的 LAN 唤醒 (WOL) 的计算机进入睡眠状态时重新生成的密钥。
 
-<a href="" id="-eee"></a>**\*EEE**  
+<a href="" id="-eee"></a> **\*EEE**  
 一个值，描述该设备是否应启用 IEEE 802.3az 能效较高的以太网。
 
 本主题末尾处表中的列描述枚举关键字的以下属性：
@@ -51,7 +51,7 @@ ms.locfileid: "63390665"
 显示文本与 SubkeyName 相关联。
 
 <a href="" id="value"></a>值  
-在列表中每个选项与关联枚举的整数值。 此值存储在**NDI\\params\\**<em>SubkeyName\\值。</em>
+在列表中每个选项与关联枚举的整数值。 此值存储在**NDI\\params\\** <em>SubkeyName\\值。</em>
 
 <a href="" id="enumdesc"></a>EnumDesc  
 与每个菜单中显示的值相关联的显示文本。

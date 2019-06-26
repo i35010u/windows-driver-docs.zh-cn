@@ -8,12 +8,12 @@ keywords:
 - COD_Type 子项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af0815f26312ef5412362d5fd37cf35a815f6582
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08e9f13edd8d2e5e831f46f91baa135ad086c6e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328250"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364661"
 ---
 # <a name="bluetooth-registry-entries"></a>蓝牙注册表项
 
@@ -28,7 +28,7 @@ ms.locfileid: "63328250"
 
 HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\BTHPORT\\Parameters
 
-请注意，设置这些值更改为系统，可能无论哪个附加蓝牙无线设备蓝牙类。 可以设置**COD 主要**并**COD 类型**到`DWORD`设备类定义的值中的字段值[蓝牙 SIG 分配数字](https://www.bluetooth.com/specifications/assigned-numbers/baseband)。
+请注意，设置这些值更改为系统，可能无论哪个附加蓝牙无线设备蓝牙类。 可以设置**COD 主要**并**COD 类型**到`DWORD`设备类定义的值中的字段值[蓝牙 SIG 分配数字](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)。
 
 蓝牙配置文件驱动程序 BthPort.sys，读取**COD 主要**并**COD 类型**值，以确定如何对设备查询响应。 这些值只会影响`COD_MAJOR_XXX`和`COD_XXX_MINOR_XXX`设备类的位。 `COD_SERVICE_XXX` Bits 不受此注册表项。
 

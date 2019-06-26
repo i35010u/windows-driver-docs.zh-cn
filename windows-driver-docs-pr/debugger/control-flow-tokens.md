@@ -8,12 +8,12 @@ keywords:
 - 调试器命令程序、 控制流令牌
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a52a84a2f0c1dd81b3955cbc7a268069b9fac6c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a72484fd5aa3fc2d5ab9a93a2b938e0034ae25e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375036"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366999"
 ---
 # <a name="control-flow-tokens"></a>控制流标记
 
@@ -55,7 +55,7 @@ ms.locfileid: "63375036"
 
 -   [**执行**](-do.md)令牌的行为类似于**执行**关键字在 C 中，只不过不能使用在条件前的在词"while"。
 
--   [ **.Break** ](https://msdn.microsoft.com/library/windows/hardware/ff556242)令牌的行为类似于**中断**在 C 中的关键字您可以使用此令牌中任何 **。 有关**， **.while**，或**执行**循环。
+-   [ **.Break** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-break)令牌的行为类似于**中断**在 C 中的关键字您可以使用此令牌中任何 **。 有关**， **.while**，或**执行**循环。
 
 -   [ **.Continue** ](-continue.md)令牌的行为类似于**继续**在 C 中的关键字您可以使用此令牌中任何 **。 有关**， **.while**，或**执行**循环。
 

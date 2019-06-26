@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c2036fd621ffd6500429a7ce8bfb70ba4a0fa8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b59b4469ee396aa6f81b60d6c2bfb68a7232512
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367299"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361495"
 ---
 # <a name="bug-check-0xf5-fltmgrfilesystem"></a>Bug 检查 0xF5：FLTMGR\_FILE\_SYSTEM
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367299"
 FLTMGR\_文件\_检查系统错误的值为 0x000000F5。 这表明无法恢复的错误发生在筛选器管理器中。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="fltmgrfilesystem-parameters"></a>FLTMGR\_文件\_系统参数

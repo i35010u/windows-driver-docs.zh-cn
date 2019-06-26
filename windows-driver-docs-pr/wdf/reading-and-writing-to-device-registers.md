@@ -4,21 +4,21 @@ description: 读取设备注册表和写入到设备注册表
 ms.assetid: 58A94C75-94C1-4517-A300-9F04AA7B771A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6584ea910624f07992ab6c3d40e1a86cfb973f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 648f6c6b772b08f9ccb0636c5606a889bfed7f64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390038"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376313"
 ---
 # <a name="reading-and-writing-to-device-registers"></a>读取设备注册表和写入到设备注册表
 
 
-驱动程序已映射的寄存器，如中所述后[查找和映射硬件资源](finding-and-mapping-hardware-resources.md)，KMDF 驱动程序将使用[ **HAL 库例程**](https://msdn.microsoft.com/library/windows/hardware/ff546644)读取和写入注册，而通常使用 UMDF 驱动程序 （版本 2.0 或更高版本） [WDF 注册/端口访问函数](https://msdn.microsoft.com/library/windows/hardware/dn265662)。
+驱动程序已映射的寄存器，如中所述后[查找和映射硬件资源](finding-and-mapping-hardware-resources.md)，KMDF 驱动程序将使用[ **HAL 库例程**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))读取和写入注册，而通常使用 UMDF 驱动程序 （版本 2.0 或更高版本） [WDF 注册/端口访问函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfhwaccess/)。
 
-如果需要直接访问内存映射寄存器 UMDF 驱动程序，它可以设置 INF 指令**UmdfRegisterAccessMode**到**RegisterAccessUsingUserModeMapping** ，然后调用[ **WdfDeviceGetHardwareRegisterMappedAddress** ](https://msdn.microsoft.com/library/windows/hardware/dn265603)可检索用户模式下映射的地址。 由于框架不会验证读取和写入访问以这种方式执行，这种技术不建议用于注册访问。 UMDF INF 指令的完整列表，请参阅[INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
+如果需要直接访问内存映射寄存器 UMDF 驱动程序，它可以设置 INF 指令**UmdfRegisterAccessMode**到**RegisterAccessUsingUserModeMapping** ，然后调用[ **WdfDeviceGetHardwareRegisterMappedAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegethardwareregistermappedaddress)可检索用户模式下映射的地址。 由于框架不会验证读取和写入访问以这种方式执行，这种技术不建议用于注册访问。 UMDF INF 指令的完整列表，请参阅[INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
 
-下面的示例包括无法使用 （1.13 或更高版本） 的 KMDF 或 UMDF （2.0 或更高版本） 已编译的代码。 该示例演示如何将驱动程序使用其[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调函数以检查其内存映射注册资源并将它们映射到用户模式地址空间。 该示例然后演示如何访问的内存位置。
+下面的示例包括无法使用 （1.13 或更高版本） 的 KMDF 或 UMDF （2.0 或更高版本） 已编译的代码。 该示例演示如何将驱动程序使用其[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数以检查其内存映射注册资源并将它们映射到用户模式地址空间。 该示例然后演示如何访问的内存位置。
 
 在访问设备寄存器和端口之前, UMDF 驱动程序必须设置**UmdfDirectHardwareAccess**指令**AllowDirectHardwareAccess**驱动程序的 INF 文件中。
 

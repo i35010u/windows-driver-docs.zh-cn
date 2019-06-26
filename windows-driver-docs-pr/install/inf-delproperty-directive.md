@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af3fee05f59822117c7416135f2dada6eb1dd17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d9c4540e78c1eac8d19eff5a088eb82e9d82678
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365845"
 ---
 # <a name="inf-delproperty-directive"></a>INF DelProperty 指令
 
@@ -81,7 +81,7 @@ DelProperty=del-property-section[,del-property-section]...  (Windows Vista and l
 一个可选的十六进制标志值，控制删除操作。 唯一支持的标志值如下所示：
 
 <a href="" id="0x00000001--flg-delproperty-multi-sz-delstring-"></a>**0x00000001** (FLG_DELPROPERTY_MULTI_SZ_DELSTRING)  
-如果属性数据类型为[ **DEVPROP_TYPE_STRING_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff543614)，该操作将删除与现有的字符串列表与提供的值条目值的字符串匹配的所有字符串。 所提供的字符串与字符串列表中的现有字符串之间的比较中不考虑的字符大小写。
+如果属性数据类型为[ **DEVPROP_TYPE_STRING_LIST**](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-type-string-list)，该操作将删除与现有的字符串列表与提供的值条目值的字符串匹配的所有字符串。 所提供的字符串与字符串列表中的现有字符串之间的比较中不考虑的字符大小写。
 
 <a href="" id="value"></a>*value*  
 如果属性数据类型为 DEVPROP_TYPE_STRING_LIST 且标志条目**0x00000001**，则*值*条目值提供了删除操作用于匹配的字符串中的搜索字符串现有的字符串列表，并且如果找到匹配的字符串，则删除操作从现有字符串列表中删除匹配的字符串。

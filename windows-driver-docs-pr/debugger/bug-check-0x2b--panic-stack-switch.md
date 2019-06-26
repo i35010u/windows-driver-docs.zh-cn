@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0572fd89535adc906ed8f16cc9bcaec1017d73b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36940f31fbc4c6bf9bec97926936af4c8d35008c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361546"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361926"
 ---
 # <a name="bug-check-0x2b-panicstackswitch"></a>Bug 检查 0x2B：PANIC\_堆栈\_开关
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361546"
 PANIC\_堆栈\_交换机 bug 检查的值为 0x0000002B。 这表示内核模式堆栈已溢出。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="panicstackswitch-parameters"></a>PANIC\_堆栈\_开关参数

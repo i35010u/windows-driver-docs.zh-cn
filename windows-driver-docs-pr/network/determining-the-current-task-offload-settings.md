@@ -7,17 +7,17 @@ keywords:
 - 当前任务加载 WDK TCP/IP 卸载的设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db3edc57ecb3bdd3520be9908f3a65c76a5579cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bff5404a9a681c31675a417560fd5e94fe965aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364207"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381410"
 ---
 # <a name="determining-the-current-task-offload-settings"></a>确定当前的任务卸载设置
 
 
-协议驱动程序可以通过发出确定基础的微型端口适配器的当前任务卸载封装设置[OID\_卸载\_封装](https://msdn.microsoft.com/library/windows/hardware/ff569762)OID 查询请求。
+协议驱动程序可以通过发出确定基础的微型端口适配器的当前任务卸载封装设置[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)OID 查询请求。
 
 
 

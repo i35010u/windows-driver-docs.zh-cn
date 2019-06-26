@@ -10,21 +10,21 @@ keywords:
 - 保护级别 WDK 显示 DPCP 优先顺序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b55f594291ec36d8e6c400ce03aeb59994d001
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9abfda0b6561561a53d7eed0920f145677f778f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350321"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384634"
 ---
 # <a name="assigning-precedence-to-protection-levels"></a>将优先顺序分配到保护级别
 
 
 优先级值分配给每个保护级别的每种保护类型。 这样一来，物理输出可以确定要使用如果两个或多个受保护的输出是与物理输出相关联，并且每个受保护的输出具有不同的保护级别的保护级别。
 
-Microsoft DirectX 图形内核子系统 (*Dxgkrnl.sys*) 可以进行到显示微型端口驱动程序的多个调用[ **DxgkDdiOPMCreateProtectedOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff559705)若要创建多个受保护的输出为特定的物理输出的函数。 此外，每个这些受保护的输出可以具有相同的输出保护类型的不同保护级别。
+Microsoft DirectX 图形内核子系统 (*Dxgkrnl.sys*) 可以进行到显示微型端口驱动程序的多个调用[ **DxgkDdiOPMCreateProtectedOutput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_opm_create_protected_output)若要创建多个受保护的输出为特定的物理输出的函数。 此外，每个这些受保护的输出可以具有相同的输出保护类型的不同保护级别。
 
-例如，假设图形适配器具有一个复合输出具有 CGMS 的保护类型，并受保护的输出 A 和 B 都与该复合输出相关联。 接下来，假设输出 A 的受保护的[ **CGMS 一个保护级别**](https://msdn.microsoft.com/library/windows/hardware/ff560846)设置为 DXGKMDT\_OPM\_CGMSA\_复制\_否\_更尽管受保护的输出 B 的 CGMS 一个保护级别设置为 DXGKMDT\_OPM\_CGMSA\_副本\_一个\_生成。 在此情况下，物理输出不能使用这两种保护级别。 因此，物理输出可以输出一次只有一个 CGMS 一个保护级别，因为物理输出必须具有高优先级使用 CGMS 一个保护级别。
+例如，假设图形适配器具有一个复合输出具有 CGMS 的保护类型，并受保护的输出 A 和 B 都与该复合输出相关联。 接下来，假设输出 A 的受保护的[ **CGMS 一个保护级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa)设置为 DXGKMDT\_OPM\_CGMSA\_复制\_否\_更尽管受保护的输出 B 的 CGMS 一个保护级别设置为 DXGKMDT\_OPM\_CGMSA\_副本\_一个\_生成。 在此情况下，物理输出不能使用这两种保护级别。 因此，物理输出可以输出一次只有一个 CGMS 一个保护级别，因为物理输出必须具有高优先级使用 CGMS 一个保护级别。
 
 以下各节显示物理输出应使用 （从最高优先级到最低优先级） 时不同的保护级别保护输出指示物理输出使用不同的保护级别。 请注意，这些表将应用于受保护包含 COPP 或 OPM 语义的输出结果。
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f8925b77941182c7425df4fec986e6d43bc13d83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6e15c8b774a976d5bccd10f33a0cc375e5daeb9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362109"
 ---
 # <a name="bug-check-0x173-coremsgcallinternalerror"></a>Bug 检查 0x173：COREMSGCALL\_内部\_错误
 
@@ -25,7 +25,7 @@ PFN\_共享\_计数错误检查的值为 0x00000173。 这表示 CoreMessageCall
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
  

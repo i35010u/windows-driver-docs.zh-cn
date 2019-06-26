@@ -7,12 +7,12 @@ keywords:
 - 图形 DLL WDK 打印机、 构建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e203066f09f027d734a131089edb42948f218eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f413bb9767bc47dae5cc205686fed6b5fb43c26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384192"
 ---
 # <a name="building-a-printer-graphics-dll"></a>生成打印机图形 DLL
 
@@ -53,8 +53,8 @@ ms.locfileid: "63330385"
 <td><p>必须与 win32k.lib 导入库链接对象模块。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556261" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556261)"> <strong>DrvQueryDriverInfo</strong> </a>函数必须返回<strong>TRUE</strong> DRVQUERY_USERMODE 的。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556261" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556261)"> <strong>DrvQueryDriverInfo</strong> </a>函数必须返回<strong>FALSE</strong> DRVQUERY_USERMODE 的。 （或者，该函数可以省略。）</p></td>
+<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo)"> <strong>DrvQueryDriverInfo</strong> </a>函数必须返回<strong>TRUE</strong> DRVQUERY_USERMODE 的。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo)"> <strong>DrvQueryDriverInfo</strong> </a>函数必须返回<strong>FALSE</strong> DRVQUERY_USERMODE 的。 （或者，该函数可以省略。）</p></td>
 </tr>
 </tbody>
 </table>

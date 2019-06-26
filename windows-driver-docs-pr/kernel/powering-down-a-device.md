@@ -21,12 +21,12 @@ keywords:
 - I/O 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91053c853868ea8bc43347fd855472fbb508aa59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d45f2103467af7e2b0aa543b78b5f4873787e45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369143"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374185"
 ---
 # <a name="powering-down-a-device"></a>关闭设备的电源
 
@@ -36,11 +36,11 @@ ms.locfileid: "63369143"
 
 除非为唤醒启用了设备，其驱动程序它关闭电源系统关闭时。 始终必须在删除或意外删除时关闭设备。
 
-移除某个设备，插管理器将发送[ **IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738)对设备堆栈请求。 在响应此 IRP，设备的驱动程序应确保设备接通电源关闭。 关闭该设备是隐式删除处理; 组成部分设备电源策略所有者不需要发送[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)对于**PowerDeviceD3**。
+移除某个设备，插管理器将发送[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)对设备堆栈请求。 在响应此 IRP，设备的驱动程序应确保设备接通电源关闭。 关闭该设备是隐式删除处理; 组成部分设备电源策略所有者不需要发送[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)对于**PowerDeviceD3**。
 
-驱动程序处理**IRP\_MN\_删除\_设备**请求，请等待挂起的 I/O 完成，执行任何必要的删除处理时，调用[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)通知设备处于状态 D3，电源管理器并删除它们创建为此设备的设备对象。 通常情况下，总线驱动程序将关闭设备电源。
+驱动程序处理**IRP\_MN\_删除\_设备**请求，请等待挂起的 I/O 完成，执行任何必要的删除处理时，调用[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)通知设备处于状态 D3，电源管理器并删除它们创建为此设备的设备对象。 通常情况下，总线驱动程序将关闭设备电源。
 
-如果从 Windows 2000 或更高版本操作系统意外移除某个设备，插管理器发送[ **IRP\_MN\_惊讶\_删除**](https://msdn.microsoft.com/library/windows/hardware/ff551760)对堆栈顶部的相应设备的请求。 在此 IRP 响应，设备的驱动程序应执行意外删除处理，如中所述[处理 IRP\_MN\_惊讶\_删除请求](handling-an-irp-mn-surprise-removal-request.md)。
+如果从 Windows 2000 或更高版本操作系统意外移除某个设备，插管理器发送[ **IRP\_MN\_惊讶\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)对堆栈顶部的相应设备的请求。 在此 IRP 响应，设备的驱动程序应执行意外删除处理，如中所述[处理 IRP\_MN\_惊讶\_删除请求](handling-an-irp-mn-surprise-removal-request.md)。
 
 在系统关闭电源管理器将发送**IRP\_MN\_设置\_POWER**系统电源状态 （S4 或 S5）。 当设备电源策略所有者将会收到此 IRP 时，它应发送**IRP\_MN\_设置\_POWER**有关**PowerDeviceD3**以便较低的驱动程序来完成其工作和电源向下设备。
 

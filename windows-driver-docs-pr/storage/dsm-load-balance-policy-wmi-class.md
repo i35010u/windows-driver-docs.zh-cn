@@ -4,12 +4,12 @@ description: DSM\_负载\_平衡\_策略 WMI 类
 ms.assetid: 7de58fe6-7c95-412a-9135-3894c07137a7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dfd2e1d024a66aae0079b8649a643c76a11dbac6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54056dbf5c83d852fd487120989828f043004b04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380673"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368241"
 ---
 # <a name="dsmloadbalancepolicy-wmi-class"></a>DSM\_负载\_平衡\_策略 WMI 类
 
@@ -83,7 +83,7 @@ class DSM_Load_Balance_Policy
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_负载\_平衡\_策略**](https://msdn.microsoft.com/library/windows/hardware/ff552696)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_负载\_平衡\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_load_balance_policy)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

@@ -6,21 +6,21 @@ keywords:
 - 捕获视频 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3615fe8bbe8c95475f9fa52c35694d7e57cb70ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc7c183941dea50a9a9609c39274142148f8ea77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385384"
 ---
 # <a name="video-capture-devices"></a>视频捕获设备
 
 
-本部分介绍如何创建视频捕获微型驱动程序，其遵循 Windows 驱动程序模型 (WDM) 体系结构。 它假定你熟悉中所述的概念[内核流式处理](kernel-streaming.md)。 有关创建适用于仅限音频设备，微型驱动程序信息[音频设备设计指南](https://msdn.microsoft.com/library/windows/hardware/ff536191)。
+本部分介绍如何创建视频捕获微型驱动程序，其遵循 Windows 驱动程序模型 (WDM) 体系结构。 它假定你熟悉中所述的概念[内核流式处理](kernel-streaming.md)。 有关创建适用于仅限音频设备，微型驱动程序信息[音频设备设计指南](https://docs.microsoft.com/windows-hardware/drivers/audio/index)。
 
 通过 DVD、 MPEG 解码器、 视频解码器和调谐器，视频端口扩展 (VPEs) 和单个适配器上的音频编解码器的集成，支持所有这些设备和处理资源争用的统一的驱动程序模型简化了开发工作。
 
-[AVStream](avstream-minidrivers-design-guide.md)并[Stream 类](https://msdn.microsoft.com/library/windows/hardware/ff568275)这两个接口提供一个框架，为集成设备提供支持。 这些接口支持内核模式驱动程序之间的数据传输。 这些数据传输不需要线程转换为用户模式下，从而避免性能问题。
+[AVStream](avstream-minidrivers-design-guide.md)并[Stream 类](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)这两个接口提供一个框架，为集成设备提供支持。 这些接口支持内核模式驱动程序之间的数据传输。 这些数据传输不需要线程转换为用户模式下，从而避免性能问题。
 
 这两个接口支持流式处理模型的标准和自定义数据类型的统一。 Microsoft 定义了适用于大多数标准设备的属性集。 如果需要供应商可以提供其他属性集。
 

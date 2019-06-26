@@ -9,12 +9,12 @@ keywords:
 - 超时 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3c3c77bff4c2597a89f66c7c43c9f990357c7e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92b6248f82c08b9d2f85b3a85d92dcd26377006f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391880"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382838"
 ---
 # <a name="host-process-timeouts-in-umdf"></a>UMDF 中的主机进程超时
 
@@ -29,7 +29,7 @@ ms.locfileid: "63391880"
 
 超时时间是反射器终止主机进程的最常见原因。
 
-您可以通过使用扩展的超时期限[WDF 验证程序控件应用程序](https://msdn.microsoft.com/library/windows/hardware/ff556129)。
+您可以通过使用扩展的超时期限[WDF 验证程序控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)。
 
  
 

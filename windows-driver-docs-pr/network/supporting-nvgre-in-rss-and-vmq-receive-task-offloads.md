@@ -4,12 +4,12 @@ description: 本部分介绍支持 NVGRE RSS 和 VMQ 接收任务卸载
 ms.assetid: 42660D55-31C0-4101-9EA1-159EBB76B019
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f0bf5311665b7a7a362b314d28ebe698f2c0dc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 425d99f2a24b146cf2b4045027218666ad5cfe32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381162"
 ---
 # <a name="supporting-nvgre-in-rss-and-vmq-receive-task-offloads"></a>在 RSS 和 VMQ 接收任务卸载中支持 NVGRE
 
@@ -20,7 +20,7 @@ NDIS 6.30 (Windows Server 2012) 引入了[网络虚拟化使用通用路由封�
 
  
 
-如果微型端口驱动程序支持 RSS 和 VMQ 封装的数据包，它必须播发中的这些功能**RssSupported**并**VmqSupported**的成员[ **NDIS\_封装\_数据包\_任务\_卸载**](https://msdn.microsoft.com/library/windows/hardware/jj991956)结构。 如果微型端口公布这些功能，接收[OID\_TCP\_卸载\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569807)OID 请求和成功 OID，NIC 必须执行 RSS 和 VMQ 上播发封装的数据类型。
+如果微型端口驱动程序支持 RSS 和 VMQ 封装的数据包，它必须播发中的这些功能**RssSupported**并**VmqSupported**的成员[ **NDIS\_封装\_数据包\_任务\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)结构。 如果微型端口公布这些功能，接收[OID\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求和成功 OID，NIC 必须执行 RSS 和 VMQ 上播发封装的数据类型。
 
 对于支持封装的数据包，它能分析，NIC 必须在内部 MAC 标头上的传输 （内部） 的 IP 标头和 VMQ 负载中的 TCP 或 UDP 标头上执行 RSS。
 

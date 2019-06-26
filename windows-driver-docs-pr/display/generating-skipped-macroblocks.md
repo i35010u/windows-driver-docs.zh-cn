@@ -7,12 +7,12 @@ keywords:
 - 跳过块效应 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28852808309a5fbda66c7f7d546b710ebe033601
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a06a0389eee08057c14bd0e81969b3d4822f55cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379991"
 ---
 # <a name="generating-skipped-macroblocks"></a>生成已跳过的宏块
 
@@ -38,7 +38,7 @@ ms.locfileid: "63391252"
 (bMacroblockWidthMinus1+1) X (MBskipsFollowing+1)
 ```
 
-**BMacroblockWidthMinus1**中包含成员[ **DXVA\_PictureParameters**](https://msdn.microsoft.com/library/windows/hardware/ff564012)。 *MBskipsFollowing*变量处于**wMBtype**的每个宏块控制结构的成员。
+**BMacroblockWidthMinus1**中包含成员[ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)。 *MBskipsFollowing*变量处于**wMBtype**的每个宏块控制结构的成员。
 
 ### <a name="span-idskippedmacroblocksinh263annexfspanspan-idskippedmacroblocksinh263annexfspanspan-idskippedmacroblocksinh263annexfspanskipped-macroblocks-in-h263-annex-f"></a><span id="Skipped_Macroblocks_in_H.263__Annex_F_"></span><span id="skipped_macroblocks_in_h.263__annex_f_"></span><span id="SKIPPED_MACROBLOCKS_IN_H.263__ANNEX_F_"></span>已跳过宏块中 H.263 （附录 F）
 
@@ -93,7 +93,7 @@ ms.locfileid: "63391252"
 
  
 
-（至少） 以下七个宏块需要生成的表所示的五个 DirectX VA 宏块控制命令。 *MBskipsFollowing*变量指示已跳过宏块的数目。 **WMBaddress**成员指示宏块的地址。 *MBskipsFollowing*并**wMBaddress**中包含[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563997)，并[ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://msdn.microsoft.com/library/windows/hardware/ff563993)结构。 ( *MBskipsFollowing*中定义变量**dwMB\_SNL**结构成员。)
+（至少） 以下七个宏块需要生成的表所示的五个 DirectX VA 宏块控制命令。 *MBskipsFollowing*变量指示已跳过宏块的数目。 **WMBaddress**成员指示宏块的地址。 *MBskipsFollowing*并**wMBaddress**中包含[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)，并[ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)结构。 ( *MBskipsFollowing*中定义变量**dwMB\_SNL**结构成员。)
 
 <table>
 <colgroup>

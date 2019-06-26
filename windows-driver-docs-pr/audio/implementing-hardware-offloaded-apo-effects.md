@@ -4,12 +4,12 @@ description: 硬件卸载音频处理对象 (Apo) 的提供可能的性能增强
 ms.assetid: 159DFFD2-2434-4EDC-A83C-455BA80F74C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003ed70c695725b7a1713e910edc8de0835f2c04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bd716fc9bf2999537bb887ad3c9f849ea083302
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359911"
 ---
 # <a name="implementing-hardware-offloaded-apo-effects"></a>实现硬件卸载的 APO 效果
 
@@ -47,7 +47,7 @@ ms.locfileid: "63333492"
 
 有关硬件卸载 a p o s，某些其他还必须考虑到支持的音频格式。
 
-实现每个 APO [ **IAudioProcessingObject::IsInputFormatSupported** ](https://msdn.microsoft.com/library/windows/hardware/ff536511)音频图形生成过程中用来确定输出音频格式和是否任何格式转换的方法是所需。
+实现每个 APO [ **IAudioProcessingObject::IsInputFormatSupported** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)音频图形生成过程中用来确定输出音频格式和是否任何格式转换的方法是所需。
 
 ```cpp
 HRESULT IsInputFormatSupported(
@@ -74,10 +74,10 @@ HRESULT IsInputFormatSupported(
 |                                                                                                                                  |                                           |
 |----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
 | **属性键**                                                                                                                 | **GUID**                                  |
-| [PKEY\_FX\_Offload\_StreamEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt604869)                                                  | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},11 |
-| [PKEY\_FX\_Offload\_ModeEffectClsid](https://msdn.microsoft.com/library/windows/hardware/mt604868)                                                      | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},12 |
-| [PKEY\_SFX\_Offload\_ProcessingModes\_Supported\_For\_Streaming](https://msdn.microsoft.com/library/windows/hardware/mt604871) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},11 |
-| [PKEY\_MFX\_Offload\_ProcessingModes\_Supported\_For\_Streaming](https://msdn.microsoft.com/library/windows/hardware/mt604870) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},12 |
+| [PKEY\_FX\_Offload\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-offload-streameffectclsid)                                                  | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},11 |
+| [PKEY\_FX\_Offload\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-offload-modeeffectclsid)                                                      | {D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},12 |
+| [PKEY\_SFX\_Offload\_ProcessingModes\_Supported\_For\_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-offload-processingmodes-supported-for-streaming) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},11 |
+| [PKEY\_MFX\_Offload\_ProcessingModes\_Supported\_For\_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-offload-processingmodes-supported-for-streaming) | {D3993A3F-99C2-4402-B5EC-A92A0367664B},12 |
 
  
 

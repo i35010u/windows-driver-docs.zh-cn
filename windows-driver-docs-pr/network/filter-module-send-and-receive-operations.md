@@ -10,12 +10,12 @@ keywords:
 - 筛选器驱动程序 WDK 网络中，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dfb8e01286a1388539682859872f290d97ed16d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6fcdbdb89a63e36eb0a01f3abd28c98df42480d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380920"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363400"
 ---
 # <a name="filter-module-send-and-receive-operations"></a>筛选器模块发送和接收操作
 
@@ -29,7 +29,7 @@ ms.locfileid: "63380920"
 
 驱动程序堆栈中的筛选器模块可以筛选所有发送请求并接收与基础适配器相关联的迹象。 这适用于所有协议绑定到适配器。 详细了解 NDIS 6.0 发送和接收操作，请参阅[发送和接收操作](send-and-receive-operations.md)。
 
-筛选器驱动程序不提供直接支持为旧的发送和接收操作上，基于[ **NDIS\_数据包**](https://msdn.microsoft.com/library/windows/hardware/ff557086)结构。 相反，NDIS 将从旧的微型端口驱动程序收到指示[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构。 此外，NDIS 处理从基于 NET 的发送请求所需的转换\_到旧的缓冲区结构发送请求基于 NDIS\_数据包结构。
+筛选器驱动程序不提供直接支持为旧的发送和接收操作上，基于[ **NDIS\_数据包**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构。 相反，NDIS 将从旧的微型端口驱动程序收到指示[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构。 此外，NDIS 处理从基于 NET 的发送请求所需的转换\_到旧的缓冲区结构发送请求基于 NDIS\_数据包结构。
 
 **请注意**  筛选器驱动程序可以更改发送和接收*FliterXxx*动态函数的筛选器模块。 有关详细信息，请参阅[数据绕过模式](data-bypass-mode.md)。
 

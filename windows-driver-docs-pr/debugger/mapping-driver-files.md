@@ -11,12 +11,12 @@ keywords:
 - 启动驱动程序替换
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8b2024711501fc64f02a9b967dd9c24fd74f23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 926132c7b7d65f294a025cfb33ee50b017d65fc3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383297"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366483"
 ---
 # <a name="mapping-driver-files"></a>映射驱动程序文件
 
@@ -96,7 +96,7 @@ Kdfiles 将尝试与服务控制管理器 (SCM) 数据库中存储的文件名�
 -   ntoskrnl.sys
 -   windows\\system32\\drivers\\ntoskrnl.sys
 
-映射文件可以包含空白行，并且可以包含以数字符号开头的注释行 (**\#**)。 但是，在文件中显示的"映射"后，接下来的两行必须是旧驱动程序和新的驱动程序。 空白的行和注释行无法分解的三个线条图块。
+映射文件可以包含空白行，并且可以包含以数字符号开头的注释行 ( **\#** )。 但是，在文件中显示的"映射"后，接下来的两行必须是旧驱动程序和新的驱动程序。 空白的行和注释行无法分解的三个线条图块。
 
 下面的示例显示了驱动程序替换映射文件。
 
@@ -128,7 +128,7 @@ map
 bcdedit -bootdebug on
 ```
 
-有关详细信息，请参阅[BCDEdit 选项参考](https://msdn.microsoft.com/library/windows/hardware/ff542205)。
+有关详细信息，请参阅[BCDEdit 选项参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 如果内核调试程序退出后，会发生没有多个驱动程序替代项。 但是，被取代的任何驱动程序恢复为其旧的二进制文件，因为实际上覆盖驱动程序文件。
 

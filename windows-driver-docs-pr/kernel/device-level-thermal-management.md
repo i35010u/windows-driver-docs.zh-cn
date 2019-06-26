@@ -4,12 +4,12 @@ description: 从 Windows 8 开始，Windows 支持设备级热量管理内核模
 ms.assetid: C66E0050-04E8-4DCD-B989-94A97558C4CE
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9fae6e9bcb09ee5192eb537f22682ea3aa0acea1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b87b6df95ad96524d886eb65ec3f230143f72978
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388141"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385014"
 ---
 # <a name="device-level-thermal-management"></a>设备级热量管理
 
@@ -23,7 +23,7 @@ ms.locfileid: "63388141"
 
 与此相反，尝试管理其设备本地，散热级别在隔离在平台中，与其他设备的设备驱动程序是更有可能做出不佳导致效率低下的电源使用情况和响应用户界面 (UI) 的决策。
 
-若要参与全局热量管理，设备驱动程序实现[GUID\_热量\_冷却\_接口](https://msdn.microsoft.com/library/windows/hardware/hh698265)驱动程序接口。 系统启动期间，系统提供驱动程序，Acpi.sys，系统以确定其中哪些支持此接口中的查询的设备驱动程序。 驱动程序可以接收[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)请求为此接口后随时[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)调用驱动程序的设备的例程。 以响应此请求，具有热量管理功能的设备的驱动程序可以提供一个指向[**热量\_冷却\_接口**](https://msdn.microsoft.com/library/windows/hardware/hh698275)结构。 此结构包含的一组由驱动程序实现的回调例程的指针。 若要管理的设备中的散热级别，操作系统将调用这些例程直接。
+若要参与全局热量管理，设备驱动程序实现[GUID\_热量\_冷却\_接口](https://msdn.microsoft.com/library/windows/hardware/hh698265)驱动程序接口。 系统启动期间，系统提供驱动程序，Acpi.sys，系统以确定其中哪些支持此接口中的查询的设备驱动程序。 驱动程序可以接收[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求为此接口后随时[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)调用驱动程序的设备的例程。 以响应此请求，具有热量管理功能的设备的驱动程序可以提供一个指向[**热量\_冷却\_接口**](https://msdn.microsoft.com/library/windows/hardware/hh698275)结构。 此结构包含的一组由驱动程序实现的回调例程的指针。 若要管理的设备中的散热级别，操作系统将调用这些例程直接。
 
 此接口中的两个主体例程都[ *ActiveCooling* ](https://msdn.microsoft.com/library/windows/hardware/hh698235)并[ *PassiveCooling*](https://msdn.microsoft.com/library/windows/hardware/hh698270)。 在驱动程序*ActiveCooling*例程公民或脱开 active 冷却设备中。 例如，此例程可能打开和关闭打开风扇。 在驱动程序*PassiveCooling*例程控制到必须限制的设备的性能来维护可接受的热量级别的程度。 例如，可能会调用此例程以半速以防止它过热运行设备。
 

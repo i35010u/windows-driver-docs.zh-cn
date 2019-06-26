@@ -4,12 +4,12 @@ description: 自动项
 ms.assetid: 59f9b71b-e4bd-44a3-a4f2-dfea9f1045e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 289f90f3a34325df8a1d6f2942189639be609bf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 427d3a97509dcfe0f33eab186d234c32bf5c076a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366755"
 ---
 # <a name="auto-item"></a>自动项
 
@@ -26,7 +26,7 @@ ms.locfileid: "63373371"
 
 WIA 体系结构不允许在自动配置扫描模式下运行来自动选择它使用传输图像数据从输入源获取的文件格式的扫描程序设备。 相反，应用程序确定文件格式，那么，通过显式选择一种格式或只需接受默认格式。 此限制将阻止设备将传输扫描的图像格式的数据的应用程序不能使用。
 
-WIA 微型驱动程序支持自动配置扫描的扫描程序设备应设置自动\_源标志位[ **WIA\_DPS\_文档\_处理\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551379)由 WIA 树中的根项目实现的属性值。 WIA 应用程序可以查询此属性以确定是否在设备的 WIA 项树包含自动项。
+WIA 微型驱动程序支持自动配置扫描的扫描程序设备应设置自动\_源标志位[ **WIA\_DPS\_文档\_处理\_功能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities)由 WIA 树中的根项目实现的属性值。 WIA 应用程序可以查询此属性以确定是否在设备的 WIA 项树包含自动项。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - 设备安装应用程序 WDK，准则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4836c78f2e1a864c291ad56f8b899bed6eb84676
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd25f55a13798c46185113374933264294c157b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391100"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383842"
 ---
 # <a name="guidelines-for-writing-device-installation-applications"></a>设备安装应用程序编写指南
 
@@ -47,7 +47,7 @@ ms.locfileid: "63391100"
 
 -   已安装的驱动程序文件从系统中删除在卸载操作时，即使该硬件被删除。
 
--   强制执行任何不必要的系统重启。 重启通常不是安装即插即用设备或软件应用程序所必需的。 *BRebootRequired*的参数[ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)函数指示需要重新启动。
+-   强制执行任何不必要的系统重启。 重启通常不是安装即插即用设备或软件应用程序所必需的。 *BRebootRequired*的参数[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数指示需要重新启动。
 
 -   使用 RunOnce 注册表项，因为这需要重启系统。
 

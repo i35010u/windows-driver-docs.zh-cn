@@ -10,12 +10,12 @@ keywords:
 - 事件通知 WDK XPSDrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 285383a33f7bccdabb724ed3818343456ccb4016
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d50343abebb3690d191699f89b035089468be6aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363371"
 ---
 # <a name="xpsdrv-configuration-module"></a>XPSDrv 配置模块
 
@@ -34,7 +34,7 @@ XPSDrv 打印机驱动程序的两个主要组件包括[版本 3 打印驱动程
 
 ### <a name="xpsdrv-document-events"></a>XPSDrv 文档事件
 
-XPSDrv 驱动程序可以接收通过 GDI 文档事件[ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)时基于 Win32 的应用程序要打印到它们，并将驱动程序可以接收通过 XPS 文档事件的功能DrvDocumentEvent WPF 应用程序打印到它们时。 有关 XPSDrv 文档事件的详细信息，请参阅[XPSDrv 驱动程序文档事件](xps-driver-document-events.md)。
+XPSDrv 驱动程序可以接收通过 GDI 文档事件[ **DrvDocumentEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentevent)时基于 Win32 的应用程序要打印到它们，并将驱动程序可以接收通过 XPS 文档事件的功能DrvDocumentEvent WPF 应用程序打印到它们时。 有关 XPSDrv 文档事件的详细信息，请参阅[XPSDrv 驱动程序文档事件](xps-driver-document-events.md)。
 
 ### <a name="xpsdrv-driver-installation"></a>XPSDrv 驱动程序安装
 

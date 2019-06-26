@@ -12,12 +12,12 @@ keywords:
 - 内存 WDK 引导参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44f681a3c60afec6b3d5d72bb2078d517e70f993
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4ccccb89149c187115694d887fb775db8f775f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360409"
 ---
 # <a name="boot-parameters-to-manipulate-memory"></a>用于操作内存的启动参数
 
@@ -25,7 +25,7 @@ ms.locfileid: "63344921"
 ## <span id="ddk_boot_parameters_to_manipulate_memory_tools"></span><span id="DDK_BOOT_PARAMETERS_TO_MANIPULATE_MEMORY_TOOLS"></span>
 
 
-您可以模拟用于测试而无需更改的计算机上的物理内存量的内存不足的环境。 相反，您可以通过使用限制可用于操作系统的内存**truncatememory**或**removememory**使用选项[ **BCDedit /set**](https://msdn.microsoft.com/library/windows/hardware/ff542202)命令。
+您可以模拟用于测试而无需更改的计算机上的物理内存量的内存不足的环境。 相反，您可以通过使用限制可用于操作系统的内存**truncatememory**或**removememory**使用选项[ **BCDedit /set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令。
 
 **/Maxmem**参数指定的最大 Windows 的可用内存量。 它被校准兆字节 (MB)。 将值设置为在计算机上任何金额小于实际的物理内存。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63344921"
 
 ### <a name="span-idbootparameterstotestinalowmemoryenvironmentinwindowsvistaaspanspan-idbootparameterstotestinalowmemoryenvironmentinwindowsvistaaspanboot-parameters-to-test-in-a-low-memory-environment-in-windows"></a><span id="boot_parameters_to_test_in_a_low_memory_environment_in_windows_vista_a"></span><span id="BOOT_PARAMETERS_TO_TEST_IN_A_LOW_MEMORY_ENVIRONMENT_IN_WINDOWS_VISTA_A"></span>在 Windows 中的内存不足的环境中测试的启动参数
 
-若要模拟内存不足的环境，请使用[ **BCDedit /set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)命令并**removememory**选择修改的启动项。 设置的值**removememory**减去此测试所需的内存大小的系统上的物理内存量。
+若要模拟内存不足的环境，请使用[ **BCDedit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令并**removememory**选择修改的启动项。 设置的值**removememory**减去此测试所需的内存大小的系统上的物理内存量。
 
 例如，若要限制使用 2 GB 到 512 MB 的可用内存的最大物理内存的计算机的内存，可设置的值**removememory** 1536 (2 GB (2048 MB)-512 MB = 1536 MB) 的参数。
 
@@ -53,7 +53,7 @@ bcdedit /set {18b123cd-2bf6-11db-bfae-00e018e2b8db} truncatememory Ox40000000
 
 因为**removememory**选项不会进行更有效地使用系统内存，而不是建议其使用**truncatememory**。
 
-完成后测试，您可以删除**removememory**并**truncatememory**使用的启动项选项[ **BCDEdit /deletevalue** ](https://msdn.microsoft.com/library/windows/hardware/jj856916)命令。
+完成后测试，您可以删除**removememory**并**truncatememory**使用的启动项选项[ **BCDEdit /deletevalue** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--deletevalue)命令。
 
  
 

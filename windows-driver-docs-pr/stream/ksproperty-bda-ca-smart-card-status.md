@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbb2b0febc584761a69bb84ff842e47cf3002d67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 845accb5a1f67f66c2d442177270d6f0eabd32bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357015"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364879"
 ---
 # <a name="kspropertybdacasmartcardstatus"></a>KSPROPERTY\_BDA\_CA\_智能\_卡\_状态
 
@@ -87,7 +87,7 @@ ms.locfileid: "63357015"
 
 [**KSEVENT\_BDA\_CA\_智能\_卡\_状态\_已更改**](ksevent-bda-ca-smart-card-status-changed.md)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

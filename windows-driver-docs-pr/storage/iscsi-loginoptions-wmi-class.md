@@ -4,12 +4,12 @@ description: ISCSI\_LoginOptions WMI 类
 ms.assetid: dc05f8e9-599d-4963-98a8-64e1d23c37a1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8f7fdb2eddf5a115d3bedb0d822a6f9d10eb7251
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc45a124ad183b7f52a81e52442ee877a8dac8f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359671"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378429"
 ---
 # <a name="iscsiloginoptions-wmi-class"></a>ISCSI\_LoginOptions WMI 类
 
@@ -73,7 +73,7 @@ class ISCSI_LoginOptions {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_LoginOptions** ](https://msdn.microsoft.com/library/windows/hardware/ff561541)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_LoginOptions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsidef/ns-iscsidef-_iscsi_loginoptions)数据结构。
 
  
 

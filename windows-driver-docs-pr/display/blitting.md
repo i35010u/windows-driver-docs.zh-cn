@@ -15,12 +15,12 @@ keywords:
 - DdBlt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ae0a0c05c630a09bea15e02b39b3005c69741f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5975ff3329eeb296548c9a463e96128b7f66cf7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384620"
 ---
 # <a name="blitting"></a>位图传送
 
@@ -30,7 +30,7 @@ ms.locfileid: "63382968"
 
 如果 blt 一个面中发生的情况，源和目标区域重叠时，必须确定正确方向，以避免覆盖之前将其复制的源的一部分。 这可以使用两个潜在的起始点在对角面完成。 所有需要 blt 引擎是位置和维度的每个映像。
 
-尽可能将一切应进行实际 blt 提高速度。 复制代码，以避免 IF 语句的部分可能会使速度更快，例如驱动程序。 或许这种技术的最佳实现是将代码放入一个宏并使用它在不同的位置，而无需进行函数调用。 有关详细信息，请参阅[ *DdBlt*](https://msdn.microsoft.com/library/windows/hardware/ff549205)。
+尽可能将一切应进行实际 blt 提高速度。 复制代码，以避免 IF 语句的部分可能会使速度更快，例如驱动程序。 或许这种技术的最佳实现是将代码放入一个宏并使用它在不同的位置，而无需进行函数调用。 有关详细信息，请参阅[ *DdBlt*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)。
 
  
 

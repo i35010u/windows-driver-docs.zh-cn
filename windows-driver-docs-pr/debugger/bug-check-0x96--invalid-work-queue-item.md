@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e178b556ff219b788f92ae9da4fc1f061dc25fc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7019b28256d9f828f97c467be343b43f0886f58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361714"
 ---
 # <a name="bug-check-0x96-invalidworkqueueitem"></a>Bug 检查 0x96：无效\_工作\_队列\_项
 
@@ -26,7 +26,7 @@ ms.locfileid: "63324717"
 无效\_工作\_队列\_项 bug 检查的值为 0x00000096。 此 bug 检查指示某个队列项被移除，包含**NULL**指针。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="invalidworkqueueitem-parameters"></a>无效\_工作\_队列\_项参数

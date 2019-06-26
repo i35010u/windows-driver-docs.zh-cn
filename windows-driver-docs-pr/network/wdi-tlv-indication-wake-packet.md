@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INDICATION_WAKE_PACKET 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c9cd776a34dfc3d845ea1c71bb8fb120d22f10a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd1dd12dd2fbbe85c4980a2c8370b674d6036767
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382859"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380759"
 ---
 # <a name="wditlvindicationwakepacket"></a>WDI\_TLV\_指示\_唤醒\_数据包
 
 
-WDI\_TLV\_指示\_唤醒\_数据包是包含有关唤醒数据包 TLV [NDIS\_状态\_WDI\_指示\_唤醒\_原因](https://msdn.microsoft.com/library/windows/hardware/dn925669)。 唤醒原因时 WDI\_唤醒\_原因\_代码数据包状态必须包括唤醒数据包封装在 WDI\_TLV\_指示\_唤醒\_数据包。
+WDI\_TLV\_指示\_唤醒\_数据包是包含有关唤醒数据包 TLV [NDIS\_状态\_WDI\_指示\_唤醒\_原因](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-wake-reason)。 唤醒原因时 WDI\_唤醒\_原因\_代码数据包状态必须包括唤醒数据包封装在 WDI\_TLV\_指示\_唤醒\_数据包。
 
 ## <a name="tlv-type"></a>TLV 类型
 

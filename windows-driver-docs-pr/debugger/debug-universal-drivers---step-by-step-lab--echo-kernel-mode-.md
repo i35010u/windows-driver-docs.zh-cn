@@ -8,12 +8,12 @@ keywords:
 - ECHO
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: abc15862af891762dc6c244b1f8f7767f2705386
-ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
+ms.openlocfilehash: 7a3a6aefb65bd90c63ca9e2a8ee6a1d88f600b86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940378"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367027"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）
 
@@ -91,7 +91,7 @@ ms.locfileid: "65940378"
 
 ![与双向箭头连接的两台 pc](images/debuglab-image-targethostdrawing1.png)
 
-若要使用的内核模式应用程序和使用 WinDbg，我们建议通过以太网传输使用 KDNET。 有关如何使用以太网传输协议的信息，请参阅[开始使用 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅[手动驱动程序部署准备一台计算机](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)并[设置向上 KDNET 网络内核调试自动](setting-up-a-network-debugging-connection-automatically.md)。
+若要使用的内核模式应用程序和使用 WinDbg，我们建议通过以太网传输使用 KDNET。 有关如何使用以太网传输协议的信息，请参阅[开始使用 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅[手动驱动程序部署准备一台计算机](https://docs.microsoft.com/windows-hardware/drivers)并[设置向上 KDNET 网络内核调试自动](setting-up-a-network-debugging-connection-automatically.md)。
 
 ### <a name="span-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="Configure__kernel_mode_debugging_using_ethernet"></span><span id="configure__kernel_mode_debugging_using_ethernet"></span><span id="CONFIGURE__KERNEL_MODE_DEBUGGING_USING_ETHERNET"></span>配置内核模式 – 调试使用以太网
 
@@ -745,7 +745,7 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
 
 ![设备有大约具有 20 个节点的节点树](images/debuglab-image-device-node-tree.png)
 
-**请注意**有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/hh439632)并[设备节点和设备堆栈](https://msdn.microsoft.com/library/windows/hardware/ff554721)。
+**请注意**有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)并[设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)。
 
 
 
@@ -855,11 +855,11 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
 
 11. **&lt;在主机系统**
 
-    启用驱动程序后， [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)调试断点应触发，并且在目标系统上的驱动程序代码的执行应暂停。 当到达断点时，应开始时停止执行*AddDevice*例程。 调试命令输出会显示"命中断点 1"。
+    启用驱动程序后， [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)调试断点应触发，并且在目标系统上的驱动程序代码的执行应暂停。 当到达断点时，应开始时停止执行*AddDevice*例程。 调试命令输出会显示"命中断点 1"。
 
     ![windbg 显示示例代码局部变量和命令窗口](images/debuglab-image-breakpoint-echo-deviceadd.png)
 
-12. 通过键入逐步执行代码--逐行**p**命令或按 F10，直到达到以下结尾[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。 大括号字符"}"将突出显示所示。
+12. 通过键入逐步执行代码--逐行**p**命令或按 F10，直到达到以下结尾[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 大括号字符"}"将突出显示所示。
 
     ![显示在开头 adddevice 例程时突出显示的大括号字符的代码窗口](images/debuglab-image-breakpoint-end-deviceadd.png)
 
@@ -974,7 +974,7 @@ ba r 4 0x0003f7bf0
 
 *在第 8 节，将显示有关变量的信息，并调用堆栈。*
 
-此实验室假定在你已停止[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程使用前面所述的过程。 若要查看输出显示于此，请重复前面所述的步骤，如有必要。
+此实验室假定在你已停止[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程使用前面所述的过程。 若要查看输出显示于此，请重复前面所述的步骤，如有必要。
 
 **&lt;在主机系统**
 
@@ -986,7 +986,7 @@ ba r 4 0x0003f7bf0
 
 **全局变量**
 
-也可以键入找到的全局变量地址位置 *？&lt;变量名&gt;*。
+也可以键入找到的全局变量地址位置 *？&lt;变量名&gt;* 。
 
 **本地变量**
 
@@ -1468,7 +1468,7 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-或者，您可以通过单击显示寄存器的内容**视图** &gt; **注册**。 有关详细信息请参阅[ **r （寄存器）**](r--registers-.md)。
+或者，您可以通过单击显示寄存器的内容**视图** &gt; **注册**。 有关详细信息请参阅[ **r （寄存器）** ](r--registers-.md)。
 
 逐句通过程序集语言代码执行和在其他情况下时，查看寄存器内容非常有用。 有关程序集语言反汇编的详细信息，请参阅[Annotated x86 反汇编](annotated-x86-disassembly.md)并[Annotated x64 反汇编](annotated-x64-disassembly.md)。
 

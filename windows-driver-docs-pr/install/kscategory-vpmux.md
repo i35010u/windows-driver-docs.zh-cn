@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e0675ae9ce016ff05809cd45102e4b77665827af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8b835c7274b31514326abc311284ebf12911ca9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346811"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385540"
 ---
 # <a name="kscategoryvpmux"></a>KSCATEGORY_VPMUX
 
 
-KSCATEGORY_VPMUX[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 支持视频的多路复用的功能类别。
+KSCATEGORY_VPMUX[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 支持视频的多路复用的功能类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_VPMUX[设备接口类](https://msdn.microsoft.com/library/windows/har
 
 KS 设备的驱动程序注册 KSCATEGORY_VPMUX 向操作系统指示设备支持 KSCATEGORY_VPMUX 功能分类的实例。
 
-有关视频设备的常规信息，请参阅[视频捕获设备](https://msdn.microsoft.com/library/windows/hardware/ff568699)。
+有关视频设备的常规信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)。
 
 有关视频设备的设备接口类的信息，请参阅[ **KSCATEGORY_VIDEO**](kscategory-video.md)。
 

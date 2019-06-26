@@ -9,12 +9,12 @@ keywords:
 - 加载部分检查生成 WDK 启动选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27993aaf78504ddf3ea490e98d52b0dea746b206
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 594198ba68e4b32beda3a9d527633496b068ef4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371639"
 ---
 #  <a name="boot-parameters-to-load-a-partial-checked-build"></a>用于加载部分已检验版本的启动参数
 
@@ -26,7 +26,7 @@ ms.locfileid: "63344932"
 
 ### <a name="span-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanspan-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanconfiguring-a-partial-checked-build-in-windows"></a><span id="configuring_a_partial_checked_build_in_windows_vista_and_later"></span><span id="CONFIGURING_A_PARTIAL_CHECKED_BUILD_IN_WINDOWS_VISTA_AND_LATER"></span>在 Windows 中配置部分已检验的版本
 
-若要配置部分检查生成使用[ **BCDedit /set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)命令并**内核**并**hal**选项。
+若要配置部分检查生成使用[ **BCDedit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令并**内核**并**hal**选项。
 
 以下命令将配置为使用的内核和硬件抽象层 (HAL) 付费版本的启动项。
 

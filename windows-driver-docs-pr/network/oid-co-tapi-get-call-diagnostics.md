@@ -6,12 +6,12 @@ keywords:
 - OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3bd7effbbe9fc5f1b5bff2da30037b8fec31954
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9a2aba33822e587782642eb0e58308b57c1d1f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380707"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383260"
 ---
 # <a name="oidcotapigetcalldiagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 
@@ -87,7 +87,7 @@ typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
 在调用的原因不可用，并且不能变得更高版本已知。
 
 **DiagInfo**  
-指定[NDIS_VAR_DATA_DESC](https://msdn.microsoft.com/library/windows/hardware/ff559020)结构，其中包含的偏移量，以及由呼叫管理器或 MCM 驱动程序提供的可选诊断信息的长度。 内容和格式的诊断信息是驱动程序确定。
+指定[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，其中包含的偏移量，以及由呼叫管理器或 MCM 驱动程序提供的可选诊断信息的长度。 内容和格式的诊断信息是驱动程序确定。
 
 ## <a name="requirements"></a>要求
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a63f6dafe9d59b164126c4b267b35f388ff2c3f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6ef7a40a5ea937cd5bfb8344df62acedb4d69e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348075"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368853"
 ---
 # <a name="kspropertybdapidfiltermappids"></a>KSPROPERTY\_BDA\_PIDFILTER\_MAP\_PIDS
 
@@ -89,9 +89,9 @@ PID 筛选器节点将与此属性与 Pid 列表节点当前传递下游所提�
 ## <a name="see-also"></a>请参阅
 
 
-[**BDA\_PID\_MAP**](https://msdn.microsoft.com/library/windows/hardware/ff556534)
+[**BDA\_PID\_MAP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_pid_map)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

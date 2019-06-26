@@ -9,12 +9,12 @@ keywords:
 - 编写 WDK 设备安装的共同安装程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be547e9a6744009398545ce3e6191ee1a068e81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0337a4062121a78ad9f2616f4713986842d683e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339156"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363476"
 ---
 # <a name="writing-class-installers-and-co-installers"></a>编写类安装程序和辅助安装程序
 
@@ -38,7 +38,7 @@ ms.locfileid: "63339156"
 ## <a name="displaying-a-user-interface"></a>显示用户界面
 
 
-设备安装通常在系统 （非交互式） 服务中运行。 因此，用户无法查看或响应将显示在此上下文中任何用户界面。 中提供任何对话框*共同安装程序*的处理过程[设备安装函数 (DIF) 代码](https://msdn.microsoft.com/library/windows/hardware/ff541307)，设备安装程序将停止响应。
+设备安装通常在系统 （非交互式） 服务中运行。 因此，用户无法查看或响应将显示在此上下文中任何用户界面。 中提供任何对话框*共同安装程序*的处理过程[设备安装函数 (DIF) 代码](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))，设备安装程序将停止响应。
 
 在大多数情况下，共同安装程序应该不与用户交互除外的处理期间[完成安装操作](finish-install-actions--windows-vista-and-later-.md)。 完成安装操作在交互式上下文中运行。
 
@@ -53,11 +53,11 @@ ms.locfileid: "63339156"
 
 若要安全地保留设备安装程序状态，类安装程序或共同安装程序应该将保存的状态信息为中设备的属性*驱动程序键*注册表中。 要实现这一点，请执行下列操作：
 
-1.  若要检索的注册表句柄的驱动程序键*设备实例*，使用[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)与*KeyType*参数将设置为 DIREG_DRV。
+1.  若要检索的注册表句柄的驱动程序键*设备实例*，使用[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)与*KeyType*参数将设置为 DIREG_DRV。
 
-2.  使用[ **SetupDiGetDevicePropertyKeys** ](https://msdn.microsoft.com/library/windows/hardware/ff551965) （若要检索的设备实例的所有属性密钥） 或[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)（用于检索指定的设备实例属性键）。
+2.  使用[ **SetupDiGetDevicePropertyKeys** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys) （若要检索的设备实例的所有属性密钥） 或[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)（用于检索指定的设备实例属性键）。
 
-3.  使用[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)保存设备实例属性键。
+3.  使用[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)保存设备实例属性键。
 
 ## <a name="loading-executable-or-dll-files"></a>正在加载可执行文件或 DLL 文件
 

@@ -4,12 +4,12 @@ description: METransformInputStreamStateChanged 事件指示输入流状态，�
 ms.assetid: 734080DD-8D96-4AF3-BB13-FDA8E0398C0B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0384c0aae1672207c752bc42c5546cc1a8081555
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24b746febc87b7cf95bade05b77df736d0451d35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348356"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363302"
 ---
 # <a name="metransforminputstreamstatechanged"></a>METransformInputStreamStateChanged
 
@@ -33,7 +33,7 @@ ms.locfileid: "63348356"
 ## <a name="remarks"></a>备注
 
 
-在响应此事件，设备转换管理器 (DTM) 将调用[ **GetInputStreamPreferredState** ](https://msdn.microsoft.com/library/windows/hardware/mt797670)上设备 MFT 具有指定的输入的流索引。 设备 MFT 将返回的首选的状态和媒体类型。
+在响应此事件，设备转换管理器 (DTM) 将调用[ **GetInputStreamPreferredState** ](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)上设备 MFT 具有指定的输入的流索引。 设备 MFT 将返回的首选的状态和媒体类型。
 
 DTM 将 devproxy 输出流上设置请求的媒体类型，然后将它转换成请求的流式处理状态。 如果成功，然后 DTM 将设备 MFT 输入流设置相同的媒体类型，并将它转换成请求的状态。
 

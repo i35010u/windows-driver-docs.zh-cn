@@ -4,12 +4,12 @@ description: MPIO\_获取\_描述符 WMI 类
 ms.assetid: 6d48c0b5-c20f-4017-aae5-0b00fa5de18d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bfa511e242532c031319c895e8e807cc9bf94b33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4263296f8962633cce9a0305e2dbdad7474f28d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383063"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386156"
 ---
 # <a name="mpiogetdescriptor-wmi-class"></a>MPIO\_获取\_描述符 WMI 类
 
@@ -51,7 +51,7 @@ class MPIO_GET_DESCRIPTOR
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_获取\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff562398)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_获取\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_get_descriptor)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

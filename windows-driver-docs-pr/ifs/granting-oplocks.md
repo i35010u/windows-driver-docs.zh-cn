@@ -4,12 +4,12 @@ description: 授予 Oplock
 ms.assetid: 7faf17ef-1596-4952-9575-616f66b37ed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e2f77d7b12be4d97f73dd0f93dccb23e001a59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40cfe733b6d0dd4e8bec22b107dce5a52d885108
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365896"
 ---
 # <a name="granting-oplocks"></a>授予 Oplock
 
@@ -29,7 +29,7 @@ ms.locfileid: "63370139"
 
 -   FSCTL\_REQUEST\_OPLOCK
 
-在列表中的前四个 FSCTLs 用于请求旧 oplock。 最后一个 FSCTL 用于与请求中请求 Windows 7 oplock\_OPLOCK\_输入\_标志\_中指定的请求标志**标志**成员的请求\_OPLOCK\_输入\_作为传递的缓冲区结构*lpInBuffer*参数[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)。 以类似方式[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)可以用于从内核模式下请求 Windows 7 oplock。 文件系统微筛选器必须使用[ **FltAllocateCallbackData** ](https://msdn.microsoft.com/library/windows/hardware/ff541703)并[ **FltPerformAsynchronousIo** ](https://msdn.microsoft.com/library/windows/hardware/ff543420)请求 Windows 7 oplock。 若要指定这四个 Windows 7 oplock 是所需，一个或多个标志 OPLOCK\_级别\_缓存\_读取、 OPLOCK\_级别\_缓存\_句柄或 OPLOCK\_级别\_缓存\_中设置写入**RequestedOplockLevel**请求的成员\_OPLOCK\_输入\_缓冲区结构。 有关详细信息，请参阅[ **FSCTL\_请求\_OPLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff545530)。
+在列表中的前四个 FSCTLs 用于请求旧 oplock。 最后一个 FSCTL 用于与请求中请求 Windows 7 oplock\_OPLOCK\_输入\_标志\_中指定的请求标志**标志**成员的请求\_OPLOCK\_输入\_作为传递的缓冲区结构*lpInBuffer*参数[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)。 以类似方式[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)可以用于从内核模式下请求 Windows 7 oplock。 文件系统微筛选器必须使用[ **FltAllocateCallbackData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecallbackdata)并[ **FltPerformAsynchronousIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltperformasynchronousio)请求 Windows 7 oplock。 若要指定这四个 Windows 7 oplock 是所需，一个或多个标志 OPLOCK\_级别\_缓存\_读取、 OPLOCK\_级别\_缓存\_句柄或 OPLOCK\_级别\_缓存\_中设置写入**RequestedOplockLevel**请求的成员\_OPLOCK\_输入\_缓冲区结构。 有关详细信息，请参阅[ **FSCTL\_请求\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)。
 
 文件系统时为可以授予 oplock 和 oplock 发出请求，返回状态\_PENDING （因此，oplock 永远不会授予同步 i/o）。 FSCTL IRP 破坏 oplock 之前未完成。 如果不能授予 oplock，则返回相应的错误代码。 返回的最常见的错误代码是状态\_OPLOCK\_不\_GRANTED 和状态\_无效\_参数 （和其等效的用户模式下模拟）。
 
@@ -73,7 +73,7 @@ NTFS 文件系统为提供了优化此过程通过文件\_保留\_OPFILTER 创�
 <ul>
 <li>如果打开用于同步访问，则返回 STATUS_OPLOCK_NOT_GRANTED （oplock 未授予对于同步 I/O 请求）。</li>
 </ul></li>
-<li>有没有<a href="https://msdn.microsoft.com/library/windows/hardware/ff565748" data-raw-source="[TxF](https://msdn.microsoft.com/library/windows/hardware/ff565748)">TxF</a>上的文件的任何流的事务。
+<li>有没有<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager" data-raw-source="[TxF](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager)">TxF</a>上的文件的任何流的事务。
 <ul>
 <li>返回其他 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>

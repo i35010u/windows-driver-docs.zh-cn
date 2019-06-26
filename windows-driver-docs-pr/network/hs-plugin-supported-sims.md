@@ -7,12 +7,12 @@ keywords:
 - PHS_PLUGIN_SUPPORTED_SIMS 结构指针与 Windows Vista 一起启动的网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c7d45a0ded04a285cedbd793534a7078fa2436
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6804143fe8be10d4e8306c742fe2832b0aa7f2f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364058"
 ---
 # <a name="hspluginsupportedsims-structure"></a>HS\_插件\_支持\_SIMS 结构
 
@@ -74,7 +74,7 @@ typedef struct _HS_PLUGIN_SUPPORTED_SIMS {
 
 [**HS\_SIM\_标识**](hs-sim-identity.md)
 
-[Microsoft 接口定义语言](https://msdn.microsoft.com//library/windows/desktop/aa367091)
+[Microsoft 接口定义语言](https://docs.microsoft.com/windows/desktop/Midl/midl-start-page)
 
  
 

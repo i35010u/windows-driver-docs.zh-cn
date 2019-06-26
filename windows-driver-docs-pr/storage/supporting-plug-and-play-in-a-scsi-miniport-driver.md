@@ -8,12 +8,12 @@ keywords:
 - Plug and Play WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 982e5f875ec298c8c6b2bd1ff0426ee456ba0dc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be6b416f39430578bb222669f4d8e0c461f915d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366235"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368186"
 ---
 # <a name="supporting-plug-and-play-in-a-scsi-miniport-driver"></a>支持 SCSI 微型端口驱动程序中的即插即用
 
@@ -25,7 +25,7 @@ Microsoft Windows 2000 和更高版本操作系统是插操作系统，尽管默
 
 插微型端口驱动程序必须实现*HwScsiAdapterControl*例程，以停止和管理与 HBA 的能力。 任何其他例程不所需的插微型端口驱动程序，以适应驱动程序初始化中的更改。
 
-SCSI 端口驱动程序创建 PDOs 适用于目标设备和微型端口驱动程序和处理请求 FDO 添加、 启动或代表微型端口驱动程序卸载设备。 有关插驱动程序的常规信息，请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)。
+SCSI 端口驱动程序创建 PDOs 适用于目标设备和微型端口驱动程序和处理请求 FDO 添加、 启动或代表微型端口驱动程序卸载设备。 有关插驱动程序的常规信息，请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
 
  
 

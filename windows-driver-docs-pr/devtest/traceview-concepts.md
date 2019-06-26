@@ -16,12 +16,12 @@ keywords:
 - TMF 文件 WDK，选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de4318021c115d9e983f4339eb94f50824fb28e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 224175f90d526d5d54d7632334809f0c3b80f4d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363814"
 ---
 # <a name="traceview-concepts"></a>TraceView 的概念
 
@@ -61,7 +61,7 @@ TraceView 可让你组合[跟踪日志](trace-log.md)显示或到实时跟踪会
 
 若要创建一个跟踪会话，必须确定跟踪提供程序，并找到提供程序生成的二进制跟踪消息的格式设置说明。 您可以执行此任一通过以下方式操作：
 
-- 找到行提供程序的源代码可执行文件的二进制文件。 TraceView 可以提取所有启用和设置的格式所需的信息[TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636)和列入清单的 ETW 事件。 它也会尝试查找[PDB 符号文件](pdb-symbol-files.md)要启用任意[WPP 软件跟踪](wpp-software-tracing.md)提供程序。
+- 找到行提供程序的源代码可执行文件的二进制文件。 TraceView 可以提取所有启用和设置的格式所需的信息[TraceLogging](https://docs.microsoft.com/windows/desktop/tracelogging/trace-logging-portal)和列入清单的 ETW 事件。 它也会尝试查找[PDB 符号文件](pdb-symbol-files.md)要启用任意[WPP 软件跟踪](wpp-software-tracing.md)提供程序。
 
 - 找到[PDB 符号文件](pdb-symbol-files.md)包含的源代码[WPP 软件跟踪](wpp-software-tracing.md)提供程序。 TraceView 可以从在 PDB 中提取文件的所有信息，需要标识提供者并设置其跟踪消息的格式。
 
@@ -69,7 +69,7 @@ TraceView 可让你组合[跟踪日志](trace-log.md)显示或到实时跟踪会
 
 - 输入[控制 GUID](control-guid.md)的提供程序，并指定 TMF 文件或存储 TMF 文件的目录的路径。
 
-    如果你输入前面标有星号的提供程序名称 (例如```*SampleProvider```)，TraceView 自动将名称转换使用某种标准算法的 GUID。 并非所有提供程序遵循这个标准，但很多，例如提供程序使用编写[。NET 的 EventSource](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.tracing.eventsource)，执行操作。
+    如果你输入前面标有星号的提供程序名称 (例如```*SampleProvider```)，TraceView 自动将名称转换使用某种标准算法的 GUID。 并非所有提供程序遵循这个标准，但很多，例如提供程序使用编写[。NET 的 EventSource](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource?view=netframework-4.8)，执行操作。
 
 - 选择[注册的提供程序](registered-provider.md)从列表中该 TraceView 组装并指定 TMF 文件或存储 TMF 文件的目录的路径。
 

@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 90def4671f3e4e291747ec94eeb148840f5d4ad9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c6f44fa3797de1b41ea76f413328f3dd03ef0a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339993"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386212"
 ---
 # <a name="oidwditasksendapassociationresponse"></a>OID\_WDI\_TASK\_SEND\_AP\_ASSOCIATION\_RESPONSE
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_发送\_AP\_关联\_响应请求 IHV 组件发送到对等设�
 
 | Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 端口必须保持干净状态后中止。 | 3                                     | 1                               |
+| Port   | 是。 端口必须保持干净状态后中止。 | 3                                     | 1                               |
 
  
 
@@ -32,10 +32,10 @@ OID\_WDI\_任务\_发送\_AP\_关联\_响应请求 IHV 组件发送到对等设�
 
 | TLV                                                                                                      | 允许多个 TLV 实例 | 可选 | 描述                                                                                                      |
 |----------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_关联\_响应\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn926137)      |                                |          | 关联响应参数。                                                                                 |
-| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                                |                                | X        | 端口必须将追加到关联响应 IE 向对等方适配器发送响应之前设置的更多 Ie。 |
-| [**WDI\_TLV\_传入\_关联\_请求\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn926315) |                                |          | 传入关联请求有关的信息。                                                              |
-| [**WDI\_TLV\_WFD\_关联\_状态**](https://msdn.microsoft.com/library/windows/hardware/mt269148)                        |                                | X        | 要设置关联请求被拒绝时的状态值。                                                  |
+| [**WDI\_TLV\_关联\_响应\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-response-parameters)      |                                |          | 关联响应参数。                                                                                 |
+| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                                |                                | X        | 端口必须将追加到关联响应 IE 向对等方适配器发送响应之前设置的更多 Ie。 |
+| [**WDI\_TLV\_传入\_关联\_请求\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-incoming-association-request-info) |                                |          | 传入关联请求有关的信息。                                                              |
+| [**WDI\_TLV\_WFD\_关联\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wfd-association-status)                        |                                | X        | 要设置关联请求被拒绝时的状态值。                                                  |
 
  
 

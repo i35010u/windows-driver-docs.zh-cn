@@ -11,12 +11,12 @@ keywords:
 - 升级网络组件 WDK，步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96c4b89da09db5b095a48b3d664c80bc7caed257
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 749a9c147b48a9200f53526a1709b2cd5904ea05
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369010"
 ---
 # <a name="upgrading-network-components"></a>升级网络组件
 
@@ -28,11 +28,11 @@ ms.locfileid: "63387145"
 
 **若要升级网络组件**
 
-1.  网络配置子系统创建通知对象的实例并调用该对象的[ **INetCfgComponentControl::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff547729)方法。 此方法将对象初始化，并提供对组件和网络配置的所有方面的访问。
+1.  网络配置子系统创建通知对象的实例并调用该对象的[ **INetCfgComponentControl::Initialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547729(v=vs.85))方法。 此方法将对象初始化，并提供对组件和网络配置的所有方面的访问。
 
-2.  当操作系统安装或升级到不同的版本时，网络配置子系统调用通知对象[ **INetCfgComponentSetup::Upgrade** ](https://msdn.microsoft.com/library/windows/hardware/ff547783)方法。
+2.  当操作系统安装或升级到不同的版本时，网络配置子系统调用通知对象[ **INetCfgComponentSetup::Upgrade** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547783(v=vs.85))方法。
 
-3.  子系统调用通知对象的[ **INetCfgComponentControl::ApplyRegistryChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547727)方法来修改注册表中的网络组件有关的信息，然后调用通知对象的[ **INetCfgComponentControl::ApplyPnpChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547726)方法，并传递[ **INetCfgPnpReconfigCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547935)若要配置该组件的驱动程序与已升级的信息的接口。
+3.  子系统调用通知对象的[ **INetCfgComponentControl::ApplyRegistryChanges** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547727(v=vs.85))方法来修改注册表中的网络组件有关的信息，然后调用通知对象的[ **INetCfgComponentControl::ApplyPnpChanges** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547726(v=vs.85))方法，并传递[ **INetCfgPnpReconfigCallback** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547935(v=vs.85))若要配置该组件的驱动程序与已升级的信息的接口。
 
  
 

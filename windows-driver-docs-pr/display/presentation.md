@@ -11,12 +11,12 @@ keywords:
 - DDBLT_LAST_PRESENTATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 447fdb356dfca551498b760bf6af3a241764e59f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 563fabb561e7ee9f1048f7c6044542446f32a53d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369281"
 ---
 # <a name="presentation"></a>呈现
 
@@ -24,7 +24,7 @@ ms.locfileid: "63383919"
 ## <span id="ddk_presentation_gg"></span><span id="DDK_PRESENTATION_GG"></span>
 
 
-DirectX 8.0 规范"演示文稿"（或进行呈现对用户可见的结果） 的概念在 API 中。 以前，这被完成在全屏幕模式下翻页，或在窗口模式下的平面闪。 应用程序使用的新**存在**API 来执行 full 屏幕翻转或开窗模式平面闪。 但是，此机制是尚未公开 DDI 级别。 运行时只需将映射**存在**API 为[ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306)或者[ *DdBlt* ](https://msdn.microsoft.com/library/windows/hardware/ff549205) DDI 条目具体取决于应用程序模式的点。
+DirectX 8.0 规范"演示文稿"（或进行呈现对用户可见的结果） 的概念在 API 中。 以前，这被完成在全屏幕模式下翻页，或在窗口模式下的平面闪。 应用程序使用的新**存在**API 来执行 full 屏幕翻转或开窗模式平面闪。 但是，此机制是尚未公开 DDI 级别。 运行时只需将映射**存在**API 为[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)或者[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) DDI 条目具体取决于应用程序模式的点。
 
 DirectX 8.0 已添加的作为传递给驱动程序的通知时 blt 操作实际上是两个新 DirectDraw blt 标志的一部分**存在**，并因此将标记框架边界。 这些新标志才有 DDBLT\_演示文稿和 DDBLT\_最后一个\_演示文稿。 需要两个标志是因为剪辑可能会导致单个**存在**调用调用驱动程序中的多个 blt 操作。 在此情况下，所有调用为 blts**存在**操作具有 DDBLT\_演示文稿标志设置。 但是，用于执行仅序列的最后一个 blt**存在**具有 DDBLT\_最后一个\_演示文稿位集。 因此，如果 blt 用于实现**存在**调用时，该驱动程序会看到与 DDBLT 的零个或多个 blts\_演示文稿设置与这两个 DDLT 恰好一个 blt 后跟位\_演示文稿和 DDBLT\_最后一个\_演示文稿的位组。 应用程序永远不会设置这些标志。 只有运行时被允许传递到 blt 的这些标志。 此外，这些标志仅传递给驱动程序支持 DirectX 8.0 DDI 中。
 

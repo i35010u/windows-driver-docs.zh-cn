@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5693d52c6646f94267de16d5f5cd5af65657e861
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd191593d16a888648e4fc6ce5f496c4ee3d8f52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356701"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363346"
 ---
 # <a name="scsireportluns-function"></a>ScsiReportLuns 函数
 
@@ -48,31 +48,31 @@ void ScsiReportLuns(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **ScsiReportLuns\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564937)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
 
 *Cdb*   
-命令描述符块包含 SCSI 报表 Lun 命令发送到目标设备。 此信息传递到中的微型端口驱动程序**Cdb**的成员[ **ScsiReportLuns\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564932)结构。
+命令描述符块包含 SCSI 报表 Lun 命令发送到目标设备。 此信息传递到中的微型端口驱动程序**Cdb**的成员[ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)结构。
 
 *HbaPortWWN*   
-通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**HbaPortWWN**的成员[ **ScsiReportLuns\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564932)结构。
+通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**HbaPortWWN**的成员[ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)结构。
 
 *DiscoveredPortWWN*   
-通过它访问目标设备的端口全球通用名称。 此信息传递到中的微型端口驱动程序**DiscoveredPortWWN**的成员[ **ScsiReportLuns\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564932)结构。
+通过它访问目标设备的端口全球通用名称。 此信息传递到中的微型端口驱动程序**DiscoveredPortWWN**的成员[ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)结构。
 
 *ResponseBufferSize*   
-以字节为单位的缓冲区将保留 SCSI 报告 Lun 命令的结果的大小。 微型端口驱动程序将返回此信息**ResponseBufferSize**的成员[ **ScsiReportLuns\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564937)结构。
+以字节为单位的缓冲区将保留 SCSI 报告 Lun 命令的结果的大小。 微型端口驱动程序将返回此信息**ResponseBufferSize**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
 
 *SenseBufferSize*   
-从 SCSI 报表 Lun 命令结果以字节为单位的缓冲区将保留 SCSI 检测数据的大小。 微型端口驱动程序将返回此信息**SenseBufferSize**的成员[ **ScsiReportLuns\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564937)结构。
+从 SCSI 报表 Lun 命令结果以字节为单位的缓冲区将保留 SCSI 检测数据的大小。 微型端口驱动程序将返回此信息**SenseBufferSize**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
 
 *ScsiStatus*   
-SCSI 报表 Lun 命令的状态。 微型端口驱动程序将返回此信息**ScsiStatus**的成员[ **ScsiReportLuns\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564937)结构。
+SCSI 报表 Lun 命令的状态。 微型端口驱动程序将返回此信息**ScsiStatus**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
 
 *ResponseBuffer*   
-SCSI 的结果将报告 Lun 命令。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **ScsiReportLuns\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564937)结构。
+SCSI 的结果将报告 Lun 命令。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
 
 *SenseBuffer*   
-生成从 SCSI 的 SCSI 意义上数据报告 Lun 命令。 微型端口驱动程序将返回此信息**SenseBuffer**的成员[ **ScsiReportLuns\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564937)结构。
+生成从 SCSI 的 SCSI 意义上数据报告 Lun 命令。 微型端口驱动程序将返回此信息**SenseBuffer**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -113,9 +113,9 @@ SCSI 的结果将报告 Lun 命令。 微型端口驱动程序将返回此信息
 
 [HBA\_状态](hba-status.md)
 
-[**ScsiReportLuns\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff564932)
+[**ScsiReportLuns\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)
 
-[**ScsiReportLuns\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff564937)
+[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)
 
  
 

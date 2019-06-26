@@ -4,12 +4,12 @@ description: 编码器属性集
 ms.assetid: b273464d-0d40-488c-a848-291f949609f0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed4485ba5eec89b0939ee305284bb271f57dc2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb394a60e10f131f453f17ab19de7dcd49ad7dac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363552"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384118"
 ---
 # <a name="encoder-property-sets"></a>编码器属性集
 
@@ -48,7 +48,7 @@ ms.locfileid: "63363552"
 
     属性的值，而此值的类型取决于属性。 例如，可以是一个只有两种状态-打开或关闭-中的属性通常具有一个 BOOL 值。 可以假定为 0xFFFFFFFF 0x0 从整数值的属性可能具有 ULONG 值。 更复杂的属性可能是数组或结构的值。
 
-属性描述符和更高版本的属性值是实例规范和操作数据缓冲区中所述的属性特定于版本[KS 属性、 事件和方法](https://msdn.microsoft.com/library/windows/hardware/ff567673)。
+属性描述符和更高版本的属性值是实例规范和操作数据缓冲区中所述的属性特定于版本[KS 属性、 事件和方法](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)。
 
 属性请求使用下列标志之一来指定要在属性上执行的操作：
 
@@ -58,11 +58,11 @@ ms.locfileid: "63363552"
 
 -   KSPROPERTY\_TYPE\_SET
 
-所有筛选器和 pin 对象支持属性对其的 basic 支持操作。 是否支持*获取*并*设置*操作取决于属性。 该属性表示的筛选器或 pin 对象的固有功能是可能需要仅*获取*操作。 表示可配置的设置的属性可能只需要*设置*操作，尽管*获取*操作也可能适用于读取的当前设置。 有关使用具有视频编码器属性的 get、 集和 basic 支持操作的详细信息，请参阅[KS 属性](https://msdn.microsoft.com/library/windows/hardware/ff567671)。
+所有筛选器和 pin 对象支持属性对其的 basic 支持操作。 是否支持*获取*并*设置*操作取决于属性。 该属性表示的筛选器或 pin 对象的固有功能是可能需要仅*获取*操作。 表示可配置的设置的属性可能只需要*设置*操作，尽管*获取*操作也可能适用于读取的当前设置。 有关使用具有视频编码器属性的 get、 集和 basic 支持操作的详细信息，请参阅[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。
 
 每个属性的说明中的表指示是否需要视频编码器微型驱动程序以支持读取或写入属性。 视频编码器微型驱动程序应返回状态\_不\_要获取或设置为不受微型驱动程序的属性的请求的响应中受支持。
 
-以下属性集每个包含一个视频编码器微型驱动程序必须实现的属性。 即，有效地每个属性获取自己的一组，因此指定 0 **PropertyId**的成员[ **KSPROPERTY\_项**](https://msdn.microsoft.com/library/windows/hardware/ff565176) 中的成员[ **KSPROPERTY\_设置**](https://msdn.microsoft.com/library/windows/hardware/ff565617)结构，根据需要。
+以下属性集每个包含一个视频编码器微型驱动程序必须实现的属性。 即，有效地每个属性获取自己的一组，因此指定 0 **PropertyId**的成员[ **KSPROPERTY\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item) 中的成员[ **KSPROPERTY\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_set)结构，根据需要。
 
 下面的属性设置属于编解码器 API:
 

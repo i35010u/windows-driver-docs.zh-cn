@@ -5,19 +5,19 @@ ms.assetid: 218b52ac-95ee-4047-ad75-76d6ae6ab14e
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_RCVBUF 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ee27d5493475bf6a8cbabd46a3bca144bac299fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5359ac9f72fda333d14fcc3275cac74a0e9cb641
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373773"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374745"
 ---
 # <a name="sorcvbuf"></a>SO\_RCVBUF
 
 
 SO\_RCVBUF 套接字选项确定大小的套接字的接收基础传输使用的缓冲区。 此套接字选项仅适用于侦听套接字、 数据报套接字和面向连接的套接字。
 
-若要设置此套接字选项的值，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要设置此套接字选项的值，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -76,7 +76,7 @@ SO\_RCVBUF 套接字选项确定大小的套接字的接收基础传输使用的
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

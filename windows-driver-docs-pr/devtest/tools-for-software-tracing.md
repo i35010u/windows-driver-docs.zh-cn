@@ -12,12 +12,12 @@ keywords:
 - 跟踪工具 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ea87821206a6aba081bd95a836042b86c515328
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a24dca714db3c9fb13460039f7a9ab673b44265a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339731"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360909"
 ---
 # <a name="tools-for-software-tracing"></a>用于软件跟踪的工具
 
@@ -85,9 +85,9 @@ Microsoft Windows Driver Kit (WDK) 包括一套应用程序和软件跟踪用于
 
 有关使用内核模式 ETW API 的驱动程序的信息，请参阅[事件跟踪 Windows (ETW)](event-tracing-for-windows--etw-.md)。
 
-有关使用 Windows Management Instrumentation (WMI) 扩展对 Windows 驱动程序模型 (WDM) 添加到任何驱动程序软件跟踪的信息，请参阅[WMI 事件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff566350)。
+有关使用 Windows Management Instrumentation (WMI) 扩展对 Windows 驱动程序模型 (WDM) 添加到任何驱动程序软件跟踪的信息，请参阅[WMI 事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)。
 
-**请注意**   ETW 和 WPP 支持大多数类型的内核模式驱动程序和用户模式应用程序。 但是，ETW 和 WPP 使用不适用于某些类型的驱动程序，例如微型端口驱动程序的类型。 若要确定是否支持特定驱动程序类型，基本 WPP 将宏添加到驱动程序，如[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)并[WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)。 如果由于未定义使用的类型，不会进行编译代码，ETW 和 WPP 都不能支持的驱动程序类型。 
+**请注意**   ETW 和 WPP 支持大多数类型的内核模式驱动程序和用户模式应用程序。 但是，ETW 和 WPP 使用不适用于某些类型的驱动程序，例如微型端口驱动程序的类型。 若要确定是否支持特定驱动程序类型，基本 WPP 将宏添加到驱动程序，如[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))并[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果由于未定义使用的类型，不会进行编译代码，ETW 和 WPP 都不能支持的驱动程序类型。 
 
 ## <a name="whats-in-this-section"></a>什么是在本部分中
 
@@ -117,4 +117,4 @@ Microsoft Windows Driver Kit (WDK) 包括一套应用程序和软件跟踪用于
 
 [内核模式性能监视](kernel-mode-performance-monitoring.md)
 
-有关概念性信息[关于事件跟踪](https://msdn.microsoft.com/library/windows/desktop/aa363668)，请参阅 Microsoft Windows SDK 文档。 
+有关概念性信息[关于事件跟踪](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)，请参阅 Microsoft Windows SDK 文档。 

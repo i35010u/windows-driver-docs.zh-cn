@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86bf82897efe12755852ced5081aab0835ef4a27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52766b5f29eb0f917d62d05cc8772af508f2a193
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323267"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361543"
 ---
 # <a name="bug-check-0xe0-acpibiosfatalerror"></a>Bug 检查 0xE0：ACPI\_BIOS\_FATAL\_ERROR
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323267"
 ACPI\_BIOS\_致命错误\_错误 bug 检查的值为 0x000000E0。 这表示您的计算机的组件之一是发生故障。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="acpibiosfatalerror-parameters"></a>ACPI\_BIOS\_致命错误\_错误参数

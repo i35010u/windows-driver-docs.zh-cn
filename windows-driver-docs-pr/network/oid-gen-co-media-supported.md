@@ -6,12 +6,12 @@ keywords:
 - OID_GEN_CO_MEDIA_SUPPORTED
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b473639e3788c38c876d7d116da1db5f29b6a97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6ccb08cde7fb56219683bcdbc3a9d07b2e23b70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361169"
 ---
 # <a name="oidgencomediasupported"></a>OID_GEN_CO_MEDIA_SUPPORTED
 
@@ -56,7 +56,7 @@ ATM 网络 LAN 仿真驱动程序声明为其中等**NdisMedium802_3** ，而非
 
 WAN 无线 NIC 驱动程序必须报告为其介质类型**NdisMediumWirelessWan**。 但是，这样的微型端口驱动程序还必须提供**NdisWWDIXEthernetFrames**标头格式到任何绑定选择此格式的协议和微型端口驱动程序可以提供其 NIC 的纯标头格式以及。 若要支持现有基于 LAN 的协议，驱动程序编写器可以提供 NDIS 中间驱动程序"翻译"无线 NIC 的纯标头格式和到理解现有协议的一个窗体的特定于中的信息。
 
-如果基础微型端口驱动程序将返回**NULL**此查询或如果使用实验性的媒体类型，必须指示驱动程序将会收到包含[NdisMCoIndicateReceivePacket](https://msdn.microsoft.com/library/windows/hardware/ff553455)。
+如果基础微型端口驱动程序将返回**NULL**此查询或如果使用实验性的媒体类型，必须指示驱动程序将会收到包含[NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))。
 
 
 ## <a name="requirements"></a>要求

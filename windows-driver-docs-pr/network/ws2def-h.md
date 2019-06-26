@@ -6,12 +6,12 @@ keywords:
 - Ws2def.h 网络驱动程序
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e2098970cf0809c610199f0940d1bb4c92045e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e4592ef434b81aa984c8a530d96c79344bb926b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377941"
 ---
 # <a name="ws2defh"></a>Ws2def.h
 
@@ -22,7 +22,7 @@ Ws2def.h 标头包含 Winsock2 规范的定义。 它包含在 Winsock2.h。 用
 > [!IMPORTANT]
 > 本部分的主题包含用于定义、 宏、 Oid、 状态指示和不是网络驱动程序参考 （结构、 枚举、 函数和回调） 的一部分的其他数据结构的页。 
 >
-> 有关适用于此标头的网络驱动程序参考的详细信息，请参阅[Ws2def.h （参考）](https://msdn.microsoft.com/library/windows/hardware/mt808757)。
+> 有关适用于此标头的网络驱动程序参考的详细信息，请参阅[Ws2def.h （参考）](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。
 
 ## <a name="in-this-section"></a>本节内容
 

@@ -15,12 +15,12 @@ keywords:
 - 将颜色空间转换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b53d21888f85912b798de043fa721b4e85cc3eda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06ebeef1b0248d627d16c43ef2df6161eb0496de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391261"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381847"
 ---
 # <a name="vmr-video-processing"></a>VMR 视频处理
 
@@ -58,11 +58,11 @@ VMR 的处理管道的输出接口始终是 Direct3D 呈现器目标。 应用�
 
 通常情况下，视频播放应用程序不会请求 VMR 执行 alpha 值混合处理或垂直/水平镜像视频作为它的显示。 VMR 便能将合并到单个阶段处理的所有视频。 在这种情况下，使用第一个管道。 如果应用程序请求 VMR 执行 alpha 值混合处理或垂直/水平镜像的视频图像之前显示，VMR 将插入到管道的附加阶段。 在这种情况下，使用第二个管道。
 
-下图显示了 VMR 用来处理视频管道*渐进式*视频时 ProcAmp 控制硬件不能执行颜色空间转换和不能水平调整期间视频图像的大小ProcAmp 调整操作 (由 DXVA\_VideoProcess\_YUV2RGB 和 DXVA\_VideoProcess\_StretchX 中的枚举器[ **DXVA\_VideoProcessCaps**](https://msdn.microsoft.com/library/windows/hardware/ff564076))，但支持 YUV 纹理。
+下图显示了 VMR 用来处理视频管道*渐进式*视频时 ProcAmp 控制硬件不能执行颜色空间转换和不能水平调整期间视频图像的大小ProcAmp 调整操作 (由 DXVA\_VideoProcess\_YUV2RGB 和 DXVA\_VideoProcess\_StretchX 中的枚举器[ **DXVA\_VideoProcessCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_videoprocesscaps))，但支持 YUV 纹理。
 
 ![说明不能执行颜色空间转换和不能调整水平大小，但可以支持 yuv 纹理的硬件的关系图](images/procamp2.png)
 
-下图显示了 VMR 用来处理视频管道*渐进式*视频时 ProcAmp 控制硬件不能执行颜色空间转换，不能在 ProcAmp 期间水平调整视频图像调整操作 (由 DXVA\_VideoProcess\_YUV2RGB 和 DXVA\_VideoProcess\_StretchX 中的枚举器[ **DXVA\_VideoProcessCaps**](https://msdn.microsoft.com/library/windows/hardware/ff564076))，并且不支持 YUV 纹理。
+下图显示了 VMR 用来处理视频管道*渐进式*视频时 ProcAmp 控制硬件不能执行颜色空间转换，不能在 ProcAmp 期间水平调整视频图像调整操作 (由 DXVA\_VideoProcess\_YUV2RGB 和 DXVA\_VideoProcess\_StretchX 中的枚举器[ **DXVA\_VideoProcessCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_videoprocesscaps))，并且不支持 YUV 纹理。
 
 ![说明不能执行颜色空间转换、 水平，不能调整大小和不能支持 yuv 纹理硬件的关系图](images/procamp3.png)
 

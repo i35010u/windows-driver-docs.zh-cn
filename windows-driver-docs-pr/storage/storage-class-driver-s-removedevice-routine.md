@@ -7,12 +7,12 @@ keywords:
 - 查询-删除请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3deba68f840c7b39c8607d521bccdc1b5f048f44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54f5a87648c25c83ea769ee481616d791131ee7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339004"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368880"
 ---
 # <a name="storage-class-drivers-removedevice-routine"></a>存储类驱动程序的 RemoveDevice 例程
 
@@ -20,7 +20,7 @@ ms.locfileid: "63339004"
 ## <span id="ddk_storage_class_drivers_removedevice_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_REMOVEDEVICE_ROUTINE_KG"></span>
 
 
-PnP 管理器时要删除设备，首先调用的类驱动程序[ **DispatchPnP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程与即插即用的查询删除请求 (IRP\_MJ\_与PNP[ **IRP\_MN\_查询\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551705)。 存储类驱动程序应会在以下情况下的任何查询删除请求失败：
+PnP 管理器时要删除设备，首先调用的类驱动程序[ **DispatchPnP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程与即插即用的查询删除请求 (IRP\_MJ\_与PNP[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)。 存储类驱动程序应会在以下情况下的任何查询删除请求失败：
 
 -   设备包含系统页面文件或休眠文件。
 
@@ -30,7 +30,7 @@ PnP 管理器时要删除设备，首先调用的类驱动程序[ **DispatchPnP*
 
 存储类驱动程序可能还无法满足该查询删除请求设备声明为故障转储，如果因为删除此类设备禁用故障转储。
 
-如果存储类驱动程序将返回状态\_SUCCESS 作为响应查询删除请求，即插即用管理器，然后调用类驱动程序*DispatchPnP*例程与即插即用的删除请求 (IRP\_MJ\_与 PNP [ **IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738))。 存储类驱动程序*DispatchPnP*日常操作会调用内部*RemoveDevice*例程或实现相同功能内联。
+如果存储类驱动程序将返回状态\_SUCCESS 作为响应查询删除请求，即插即用管理器，然后调用类驱动程序*DispatchPnP*例程与即插即用的删除请求 (IRP\_MJ\_与 PNP [ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device))。 存储类驱动程序*DispatchPnP*日常操作会调用内部*RemoveDevice*例程或实现相同功能内联。
 
 存储类驱动程序的*RemoveDevice*例程必须执行以下操作：
 
@@ -46,7 +46,7 @@ PnP 管理器时要删除设备，首先调用的类驱动程序[ **DispatchPnP*
 
 即使设备对象已被删除，如果它具有非零值的引用计数的设备对象仍然存在系统中，直到其引用计数达到零时后，然后以无提示方式消失。 存储类驱动程序必须尝试删除的设备对象后使用的设备对象指针。
 
-有关处理删除请求的详细信息，请参阅[删除设备](https://msdn.microsoft.com/library/windows/hardware/ff561046)。
+有关处理删除请求的详细信息，请参阅[删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
 
  
 

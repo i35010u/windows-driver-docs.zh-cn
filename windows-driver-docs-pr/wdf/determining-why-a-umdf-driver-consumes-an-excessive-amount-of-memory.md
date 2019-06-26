@@ -8,12 +8,12 @@ keywords:
 - UMDF WDK UMDF 驱动程序会占用过多的内存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b3bf4f5cf10096e5ab756084414a0e5c98eac80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 40ae0ade1c7f959b09d287983bbcc3357b1b301a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568142"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377447"
 ---
 # <a name="determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory"></a>确定 UMDF 驱动程序使用过多内存的原因
 
@@ -21,7 +21,7 @@ ms.locfileid: "56568142"
 
 本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 驱动程序中使用 Wudfext.dll 调试器扩展来确定为何 UMDF 驱动程序消耗过多的内存。
 
-从 UMDF 版本 2 开始，应改为使用 Wdfkd.dll 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)。
+从 UMDF 版本 2 开始，应改为使用 Wdfkd.dll 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展 (Wdfkd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
 
 若要调查内存使用情况，请使用以下步骤：
 
@@ -38,7 +38,7 @@ ms.locfileid: "56568142"
     这些对象可能在对象树中，最终将因此释放。 但是，要累计不必要地。 可能需要这些对象：
 
     -   更正到其父对象。
-    -   通过使用显式删除[ **IWDFObject::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)方法。
+    -   通过使用显式删除[ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)方法。
 
  
 

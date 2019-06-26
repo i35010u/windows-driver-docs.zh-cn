@@ -8,12 +8,12 @@ keywords:
 - SDV WDK，关于 Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c95e67345779c9b5e003319e50cd8b2b4e79cec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbe867151af2117845a04b22382d8271520c337b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384716"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363787"
 ---
 # <a name="understanding-static-driver-verifier"></a>了解静态驱动程序验证程序
 
@@ -36,7 +36,7 @@ ms.locfileid: "63384716"
 
 -   *控制*。 在正常情况下正常工作的驱动程序可以仅出现在发生异常情况，例如当它下面堆栈中的驱动程序失败时 IRP 的细微错误。 这种情况下难以进行，因此传统测试不会充分检测通过驱动程序代码的错误路径。
 
-SDV 增强了的观察和测试驱动程序时遇到的控件。 通过定义适当使用 WDM、 KMDF、 NDIS 和 Storport 函数的规则和监视这些规则的驱动程序的符合性，SDV 可以提高您发现错误的能力。 例如，WDM 规则[LowerDriverReturn](https://msdn.microsoft.com/library/windows/hardware/ff548273)指定，在某些情况下，驱动程序的调度例程应始终返回堆栈中较低的驱动程序返回的值。
+SDV 增强了的观察和测试驱动程序时遇到的控件。 通过定义适当使用 WDM、 KMDF、 NDIS 和 Storport 函数的规则和监视这些规则的驱动程序的符合性，SDV 可以提高您发现错误的能力。 例如，WDM 规则[LowerDriverReturn](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-lowerdriverreturn)指定，在某些情况下，驱动程序的调度例程应始终返回堆栈中较低的驱动程序返回的值。
 
 SDV 也会增加通过提供的控件：
 

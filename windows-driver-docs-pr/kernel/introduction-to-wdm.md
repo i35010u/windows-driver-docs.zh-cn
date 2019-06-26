@@ -11,12 +11,12 @@ keywords:
 - WDM 驱动程序 WDK 内核，有关 WDM 驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfaae90d1641d9def7fb833ba2e1166fd75c71c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: daca24ee2473401897f803dbc9c4e3d1e1fff0ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381703"
 ---
 # <a name="introduction-to-wdm"></a>WDM 简介
 
@@ -41,9 +41,9 @@ ms.locfileid: "63383797"
 
 ### <a name="should-you-write-a-wdm-driver"></a>您应编写 WDM 驱动程序？
 
-如果你正在编写新的驱动程序，请考虑使用[内核模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/dn265580)(KMDF)。 KMDF 提供比 WDM 接口更易于使用的接口。
+如果你正在编写新的驱动程序，请考虑使用[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/design-guide)(KMDF)。 KMDF 提供比 WDM 接口更易于使用的接口。
 
-不要编写 WDM 驱动程序如果驱动程序插入非 WDM 驱动程序的堆栈。 请阅读设备类型特定于 Microsoft 提供的驱动程序以确定如何新驱动程序的文档必须与 Microsoft 提供的驱动程序。 有关更多的设备特定于类型的信息，请参阅[设备和驱动程序技术](https://msdn.microsoft.com/library/windows/hardware/ff557557)。)
+不要编写 WDM 驱动程序如果驱动程序插入非 WDM 驱动程序的堆栈。 请阅读设备类型特定于 Microsoft 提供的驱动程序以确定如何新驱动程序的文档必须与 Microsoft 提供的驱动程序。 有关更多的设备特定于类型的信息，请参阅[设备和驱动程序技术](https://docs.microsoft.com/windows-hardware/drivers/)。)
 
 
 

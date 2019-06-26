@@ -11,12 +11,12 @@ keywords:
 - IRP 完成例程 WDK 文件系统，有关 IRP 完成例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 338c545fd61f462936207280f66cf8504b53f1b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed82fa6e50c103aefc06e53b444e695109af9a2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380277"
 ---
 # <a name="using-irp-completion-routines"></a>使用 IRP 完成例程
 
@@ -29,7 +29,7 @@ ms.locfileid: "63379421"
 </div>
  
 
-文件系统筛选器驱动程序使用类似于所使用的设备驱动程序的完成例程。 一个*完成例程*执行完成处理 IRP。 将传递到下一步低级驱动程序 IRP 的任何驱动程序例程可以选择注册完成例程的 IRP 通过调用[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)之前调用[**IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+文件系统筛选器驱动程序使用类似于所使用的设备驱动程序的完成例程。 一个*完成例程*执行完成处理 IRP。 将传递到下一步低级驱动程序 IRP 的任何驱动程序例程可以选择注册完成例程的 IRP 通过调用[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)之前调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
 
 每个 IRP 完成例程定义，如下所示：
 
@@ -44,7 +44,7 @@ NTSTATUS
 
 IRQL 在调用完成例程&lt;= 调度\_级别，请在任意线程上下文中。
 
-因为在 IRQL 调度调用它们\_级别，完成例程不能调用必须在较低的 IRQL，如调用的内核模式例程[ **IoDeleteDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549083)。 出于相同原因，必须从非分页缓冲池分配完成例程中使用任何数据结构。
+因为在 IRQL 调度调用它们\_级别，完成例程不能调用必须在较低的 IRQL，如调用的内核模式例程[ **IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)。 出于相同原因，必须从非分页缓冲池分配完成例程中使用任何数据结构。
 
 本部分讨论以下主题：
 

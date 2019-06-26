@@ -16,12 +16,12 @@ keywords:
 - 驱动程序重新加载 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 814cbfd448b1d7d3de0f731036537a1e807fc73d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a595acf53b68821110913161b7dee2997803d63c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374128"
 ---
 # <a name="writing-an-unload-routine"></a>编写 Unload 例程
 
@@ -29,9 +29,9 @@ ms.locfileid: "63355999"
 
 
 
-任何驱动程序，它可以替换，或卸载并重新加载，在系统运行时必须具有[ *Unload* ](https://msdn.microsoft.com/library/windows/hardware/ff564886)例程。 所有 WDM 驱动程序必须都具有*Unload*例程。
+任何驱动程序，它可以替换，或卸载并重新加载，在系统运行时必须具有[ *Unload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程。 所有 WDM 驱动程序必须都具有*Unload*例程。
 
-尽管*Unload*例程都是可选的非 WDM 驱动程序[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)将失败，不提供任何驱动程序*卸载*例程。
+尽管*Unload*例程都是可选的非 WDM 驱动程序[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)将失败，不提供任何驱动程序*卸载*例程。
 
 本部分包含以下主题：
 

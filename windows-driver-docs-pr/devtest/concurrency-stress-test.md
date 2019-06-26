@@ -4,17 +4,17 @@ description: 电源框架延迟模糊选项随机排列线程计划来帮助检�
 ms.assetid: A33DEA5B-4758-456A-B4CF-F036CB511A1F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f3268173a4500e1111aa08ed4027f5190add8fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd6ce751943b11b1dd72da29b889b01184b1fb33
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360382"
 ---
 # <a name="power-framework-delay-fuzzing"></a>电源框架延迟模糊处理
 
 
-电源框架延迟模糊选项随机排列线程计划，以帮助驱动程序中使用的检测并发 bug[电源管理框架 (PoFx)](https://msdn.microsoft.com/library/windows/hardware/hh406637)。 对不直接利用电源管理框架 (PoFx) 的驱动程序不建议使用此选项。
+电源框架延迟模糊选项随机排列线程计划，以帮助驱动程序中使用的检测并发 bug[电源管理框架 (PoFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)。 对不直接利用电源管理框架 (PoFx) 的驱动程序不建议使用此选项。
 
 **请注意**  此选项才可用从 Windows 8 开始。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63343102"
 
 -   **在命令行**
 
-    在命令行中，在由表示电源框架延迟模糊**verifier /flags 0x00008000 (位 15)**。 若要激活电源框架延迟模糊，使用 0x00008000 标志值，或将 0x00008000 添加到标志值。 例如：
+    在命令行中，在由表示电源框架延迟模糊**verifier /flags 0x00008000 (位 15)** 。 若要激活电源框架延迟模糊，使用 0x00008000 标志值，或将 0x00008000 添加到标志值。 例如：
 
     ```
     verifier /flags 0x00008000 /driver MyDriver.sys

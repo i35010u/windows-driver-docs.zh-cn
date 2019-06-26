@@ -4,12 +4,12 @@ description: 自定义交换机属性定义和注册
 ms.assetid: DB80E86D-8553-47B5-8AE1-6D430FDDE206
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b55f0b90829f3a662c47fbd3f22b56bf89625056
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b206b4d578d3cce6e235fabf53da6bd74cb82df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387394"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364953"
 ---
 # <a name="custom-switch-property-definition-and-registration"></a>自定义交换机属性定义和注册
 
@@ -68,7 +68,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_SwitchCustomSettingData.mof
 net start vmms
 ```
 
-有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://msdn.microsoft.com/library/windows/hardware/ff542012)。
+有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)。
 
 下面的示例演示如何配置示例功能。 在此示例中，Fabrikam\_SwitchCustomSettingData MOF 类用于配置名为"TestSwitch"的交换机。
 

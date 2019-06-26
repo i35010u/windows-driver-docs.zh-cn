@@ -4,12 +4,12 @@ description: NDIS QoS 流量类
 ms.assetid: 0DE61F97-7173-4D91-90F3-20EAFB810251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e05568cda29e6447344c3251b3786b9dc89abb15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1d60685e6bb08405adf399517c441ccf9bdd0c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369162"
 ---
 # <a name="ndis-qos-traffic-classes"></a>NDIS QoS 流量类
 
@@ -30,9 +30,9 @@ NDIS 服务质量 (QoS) 通信类指定一组策略，以确定网络适配器�
 
  
 
-流量类指定的对象标识符 (OID) 的方法请求通过[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构，它指定以下的 NDIS QoS 参数：
+流量类指定的对象标识符 (OID) 的方法请求通过[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，它指定以下的 NDIS QoS 参数：
 
--   流量类上的网络适配器配置的数目。 从零到范围中的值来标识每个流量类 (**NumTrafficClasses**-1)，其中**NumTrafficClasses**属于[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构。
+-   流量类上的网络适配器配置的数目。 从零到范围中的值来标识每个流量类 (**NumTrafficClasses**-1)，其中**NumTrafficClasses**属于[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构。
 
     **请注意**  从 NDIS 6.30，NDIS QoS 支持最多为 NDIS\_QOS\_最大\_流量\_类 (8) 通信类。 网络适配器必须支持至少三个通信类。
 
@@ -44,7 +44,7 @@ NDIS 服务质量 (QoS) 通信类指定一组策略，以确定网络适配器�
 
 -   分配到每个流量类，该类使用 ETS TSA 的传输带宽。
 
-OID 的方法请求[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)还指定流量分类。 这些分类定义流出数据包和 IEEE 802.1p 优先级级别之间的关系。 有关详细信息，请参阅[NDIS QoS 流量分类](ndis-qos-traffic-classifications.md)。
+OID 的方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)还指定流量分类。 这些分类定义流出数据包和 IEEE 802.1p 优先级级别之间的关系。 有关详细信息，请参阅[NDIS QoS 流量分类](ndis-qos-traffic-classifications.md)。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 启用程序对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b51108cd48db25de18192183ff2f1831fe5769e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3800f26cbbe5626bfd6bda2925ff40708fdccc20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368050"
 ---
 # <a name="supporting-power-management-for-dma-devices"></a>支持适用于 DMA 设备的电源管理
 
@@ -24,26 +24,26 @@ ms.locfileid: "63363960"
 
 DMA 促成因素对象定义一组可选事件回叫函数，DMA 设备的驱动程序可用于管理转换入和移出设备的使用 (D0) 状态。
 
-每次 DMA 设备进入其工作状态，且后框架已调用的驱动程序[ *EvtDeviceD0Entry* ](https://msdn.microsoft.com/library/windows/hardware/ff540848)回调函数，框架将调用以下 DMA 回调函数，在所列的顺序：
+每次 DMA 设备进入其工作状态，且后框架已调用的驱动程序[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)回调函数，框架将调用以下 DMA 回调函数，在所列的顺序：
 
-<a href="" id="---------evtdmaenablerfill--------"></a>[*EvtDmaEnablerFill*](https://msdn.microsoft.com/library/windows/hardware/ff540932)  
+<a href="" id="---------evtdmaenablerfill--------"></a>[*EvtDmaEnablerFill*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_fill)  
 分配设备的 DMA 缓冲区。
 
-<a href="" id="---------evtdmaenablerenable--------"></a>[*EvtDmaEnablerEnable*](https://msdn.microsoft.com/library/windows/hardware/ff540929)  
+<a href="" id="---------evtdmaenablerenable--------"></a>[*EvtDmaEnablerEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_enable)  
 在设备进入其工作 (D0) 状态后启用 DMA 的设备的功能。
 
-<a href="" id="---------evtdmaenablerselfmanagediostart--------"></a>[*EvtDmaEnablerSelfManagedIoStart*](https://msdn.microsoft.com/library/windows/hardware/ff541663)  
+<a href="" id="---------evtdmaenablerselfmanagediostart--------"></a>[*EvtDmaEnablerSelfManagedIoStart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_selfmanaged_io_start)  
 启动 DMA 设备的自托管的 I/O 操作。
 
-每次 DMA 设备离开它的工作状态，且 framework 之前已调用驱动程序的[ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)回调函数，框架将调用以下 DMA 回调函数，在所列的顺序：
+每次 DMA 设备离开它的工作状态，且 framework 之前已调用驱动程序的[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数，框架将调用以下 DMA 回调函数，在所列的顺序：
 
-<a href="" id="---------evtdmaenablerselfmanagediostop--------"></a>[*EvtDmaEnablerSelfManagedIoStop*](https://msdn.microsoft.com/library/windows/hardware/ff541677)  
+<a href="" id="---------evtdmaenablerselfmanagediostop--------"></a>[*EvtDmaEnablerSelfManagedIoStop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_selfmanaged_io_stop)  
 停止 DMA 设备的自托管的 I/O 操作。
 
-<a href="" id="---------evtdmaenablerdisable--------"></a>[*EvtDmaEnablerDisable*](https://msdn.microsoft.com/library/windows/hardware/ff540927)  
+<a href="" id="---------evtdmaenablerdisable--------"></a>[*EvtDmaEnablerDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_disable)  
 设备离开其工作 (D0) 状态之前，请禁用 DMA 的设备的功能。
 
-<a href="" id="---------evtdmaenablerflush--------"></a>[*EvtDmaEnablerFlush*](https://msdn.microsoft.com/library/windows/hardware/ff541655)  
+<a href="" id="---------evtdmaenablerflush--------"></a>[*EvtDmaEnablerFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_flush)  
 解除分配设备的 DMA 缓冲区。
 
 有关在其中框架调用驱动程序的事件回调函数的顺序的详细信息，请参阅[PnP 和电源管理方案](pnp-and-power-management-scenarios.md)。

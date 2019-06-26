@@ -4,12 +4,12 @@ description: 本部分介绍通过 I²C 传输支持 hid 标准的设备驱动�
 ms.assetid: 99384729-552C-4847-AA35-E0D413018104
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4813e9d83300861618d293a0ef9b4295b2a1998f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d22cf5684dbb295f292c8b009041f64caae77f3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375790"
 ---
 # <a name="architecture-and-overview-for-hid-over-the-ic-transport"></a>体系结构和通过 I²C 传输的 HID 概述
 
@@ -50,7 +50,7 @@ I²C 控制器驱动程序公开一个串行外围总线 （存储） IOCTL 界�
 
 SoC 平台上的连接是通常无法发现的因为没有标准的设备 SoC.使用总线上的枚举 因此，这些设备必须以静态方式中的高级配置和电源接口 (ACPI) 定义。 此外，组件通常具有跨越多个总线，而不是严格的分支树结构的多个依赖项。
 
-资源中心是管理所有设备和总线控制器间的连接的代理。 HIDI²C 驱动程序使用的资源中心以重新路由到相应的控制器驱动程序的设备打开请求。 有关资源中心的详细信息，请参阅[存储连接到设备的连接 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)主题。
+资源中心是管理所有设备和总线控制器间的连接的代理。 HIDI²C 驱动程序使用的资源中心以重新路由到相应的控制器驱动程序的设备打开请求。 有关资源中心的详细信息，请参阅[存储连接到设备的连接 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)主题。
 
  
 

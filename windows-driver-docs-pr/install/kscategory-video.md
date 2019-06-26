@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0c972856e24ea2ceec3104ec3ae79dd5bf1f3e9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61ed32f33e8b6671a50090a3899b5234778b874d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330534"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385274"
 ---
 # <a name="kscategoryvideo"></a>KSCATEGORY_VIDEO
 
 
-KSCATEGORY_VIDEO[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)视频设备 (KS) 功能类别。
+KSCATEGORY_VIDEO[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)视频设备 (KS) 功能类别。
 
 <table>
 <colgroup>
@@ -58,9 +58,9 @@ KS 视频设备的驱动程序注册 KSCATEGORY_VIDEO 向操作系统指示设�
 
 有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src/swtuner/algtuner* WDK 的目录。
 
-有关此功能的类别的详细信息，请参阅[提供 UVC INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff568123)。
+有关此功能的类别的详细信息，请参阅[提供 UVC INF 文件](https://docs.microsoft.com/windows-hardware/drivers/stream/providing-a-uvc-inf-file)。
 
-有关视频设备的常规信息，请参阅[视频捕获设备](https://msdn.microsoft.com/library/windows/hardware/ff568699)。
+有关视频设备的常规信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)。
 
 有关视频设备其他设备接口类的信息，请参阅[ **KSCATEGORY_TVAUDIO** ](kscategory-tvaudio.md)并[ **KSCATEGORY_TVTUNER** ](kscategory-tvtuner.md).
 

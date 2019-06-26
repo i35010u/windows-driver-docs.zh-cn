@@ -4,17 +4,17 @@ description: 指定访问权限
 ms.assetid: 8ef4b4bb-5f4e-4095-b4ab-1182c0f75619
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5017af564e071f69c2973513b8d826801d1ba5b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e77526cb40bb9d43d099040fc06cbff517701437
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339133"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363471"
 ---
 # <a name="specifying-access-rights"></a>指定访问权限
 
 
-访问\_掩码类型是指定一组中的访问权限的一个位掩码[访问掩码](https://msdn.microsoft.com/library/windows/hardware/ff538834)的[访问控制项](https://msdn.microsoft.com/library/windows/hardware/ff538813)。
+访问\_掩码类型是指定一组中的访问权限的一个位掩码[访问掩码](https://docs.microsoft.com/windows-hardware/drivers/ifs/access-mask)的[访问控制项](https://docs.microsoft.com/windows-hardware/drivers/ifs/access-control-entry)。
 
 ``` syntax
 typedef ULONG  ACCESS_MASK;
@@ -44,7 +44,7 @@ typedef ULONG  ACCESS_MASK;
 </tr>
 <tr class="odd">
 <td><p>同步</p></td>
-<td><p>调用方可以执行对象的等待操作。 (例如，该对象可以传递给<a href="https://msdn.microsoft.com/library/windows/hardware/ff553324" data-raw-source="[&lt;strong&gt;KeWaitForMultipleObjects&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553324)"> <strong>KeWaitForMultipleObjects</strong></a>。)</p></td>
+<td><p>调用方可以执行对象的等待操作。 (例如，该对象可以传递给<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects" data-raw-source="[&lt;strong&gt;KeWaitForMultipleObjects&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)"> <strong>KeWaitForMultipleObjects</strong></a>。)</p></td>
 </tr>
 <tr class="even">
 <td><p>WRITE_DAC</p></td>
@@ -135,21 +135,21 @@ typedef ULONG  ACCESS_MASK;
 
  
 
-每种类型的对象可以具有其自己的其他访问权限。 适用于文件、 目录或设备的访问权限的说明，请参阅[ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)。 适用于对象管理器目录的访问权限的说明，请参阅[ **ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)。 适用于注册表项的访问权限的说明，请参阅[ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)。 适用于部分对象的访问权限的说明，请参阅[ **ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)。 适用于 WMI 数据块的访问权限的说明，请参阅[ **IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)。
+每种类型的对象可以具有其自己的其他访问权限。 适用于文件、 目录或设备的访问权限的说明，请参阅[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)。 适用于对象管理器目录的访问权限的说明，请参阅[ **ZwCreateDirectoryObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)。 适用于注册表项的访问权限的说明，请参阅[ **ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)。 适用于部分对象的访问权限的说明，请参阅[ **ZwOpenSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)。 适用于 WMI 数据块的访问权限的说明，请参阅[ **IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiopenblock)。
 
 有关访问权限的详细信息，请参阅 Microsoft Windows SDK 文档中的以下主题：
 
--   [访问权限和访问掩码](https://msdn.microsoft.com/library/windows/desktop/aa374902)
--   [ACCESS\_MASK](https://msdn.microsoft.com/library/windows/desktop/aa374892)
+-   [访问权限和访问掩码](https://docs.microsoft.com/windows/desktop/SecAuthZ/access-rights-and-access-masks)
+-   [ACCESS\_MASK](https://docs.microsoft.com/windows/desktop/SecAuthZ/access-mask)
 
 Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）
 
 ## <a name="related-topics"></a>相关主题
-[**IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)  
-[**ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)  
-[**ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)  
-[**ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)  
-[**ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)  
+[**IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiopenblock)  
+[**ZwCreateDirectoryObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)  
+[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)  
+[**ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)  
+[**ZwOpenSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)  
 
 
 

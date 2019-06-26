@@ -7,12 +7,12 @@ keywords:
 - 设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f02f9b585f56992659a6153bbea8b8e02640e9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e746d2bc7eae799c87096a671545399bad26e7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377085"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387118"
 ---
 # <a name="device-properties"></a>设备属性
 
@@ -23,7 +23,7 @@ Windows Vista 和更高版本的 Windows 支持[统一的设备属性模型](uni
 
 Microsoft Windows Server 2003、 Windows XP 和 Windows 2000 不支持此模型中统一的设备属性。 但是这些早期的 Windows 版本支持对应[设备属性表示形式](device-property-representations--windows-server-2003--windows-xp--and-.md)依赖的组件类型和属性类型。 为了保持与这些早期的 Windows 版本的兼容性，Windows Vista 和更高版本的 Windows 还支持这些早期的表示形式。 但是，应使用统一的设备属性的模型的 Windows Vista 和更高版本才能访问设备的属性。
 
-有关组件的统一的设备属性模型的参考信息，包括设备属性函数、 系统定义的设备属性、 数据结构和 INF 文件指令，请参阅[设备属性参考](https://msdn.microsoft.com/library/windows/hardware/ff541483).
+有关组件的统一的设备属性模型的参考信息，包括设备属性函数、 系统定义的设备属性、 数据结构和 INF 文件指令，请参阅[设备属性参考](https://docs.microsoft.com/previous-versions/ff541483(v=vs.85)).
 
  
 

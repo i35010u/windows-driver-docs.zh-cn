@@ -4,12 +4,12 @@ description: 适用于 Windows 10 的照相机的驱动程序接口的所有设�
 ms.assetid: CB5EEDF2-650D-4CD3-A5DE-DF0D6F10B394
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30be0220c48c29aff792afc99f7196dbba7ae793
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fc8ef50d7469cbe7ca6d9cf62424e88def4d18b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385356"
 ---
 # <a name="universal-camera-driver-design-guide-for-windows-10"></a>适用于 Windows 10 的通用照相机驱动程序设计指南
 
@@ -31,7 +31,7 @@ ms.locfileid: "63329943"
 
 ## <a name="build-a-universal-camera-driver"></a>生成通用照相机驱动程序
 
-通用照相机驱动程序是基于 AVStream 微型驱动程序[Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)(WDM)。
+通用照相机驱动程序是基于 AVStream 微型驱动程序[Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)(WDM)。
 
 有关详细信息，请参阅以下各节中的[适用于 Windows 10 的通用照相机驱动程序模型参考](windows-10-technical-preview-camera-drivers-reference.md):
 

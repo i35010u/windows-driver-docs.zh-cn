@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd00b01a3e598d48cc98e2924e20201a9ecc4f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 341b8b200e8f9678b161a7989e236323874b39f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357004"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364883"
 ---
 # <a name="kspropertybdacontrollingpinid"></a>KSPROPERTY\_BDA\_控制\_PIN\_ID
 
@@ -87,13 +87,13 @@ ms.locfileid: "63357004"
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaPropertyGetControllingPinId**](https://msdn.microsoft.com/library/windows/hardware/ff556480)
+[**BdaPropertyGetControllingPinId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertygetcontrollingpinid)
 
-[**BDA\_模板\_连接**](https://msdn.microsoft.com/library/windows/hardware/ff556558)
+[**BDA\_模板\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_template_connection)
 
-[**KSP\_BDA\_NODE\_PIN**](https://msdn.microsoft.com/library/windows/hardware/ff566716)
+[**KSP\_BDA\_NODE\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdamedia/ns-bdamedia-_ksp_bda_node_pin)
 
-[**KSTOPOLOGY\_连接**](https://msdn.microsoft.com/library/windows/hardware/ff567148)
+[**KSTOPOLOGY\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)
 
  
 

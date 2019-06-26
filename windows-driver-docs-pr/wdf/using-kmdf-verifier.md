@@ -4,17 +4,17 @@ description: 使用 KMDF 验证程序
 ms.assetid: ab6a0149-9341-435b-b7e7-9c5d6520ebd8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3e781d04e506db62b0aa2ca4e336b743f641fed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec59065bdb69273a44fb6f0effc01f8abac13766
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327147"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372237"
 ---
 # <a name="using-kmdf-verifier"></a>使用 KMDF 验证程序
 
 
-该框架提供可用于测试正在运行的 KMDF 驱动程序的内置验证功能。 此功能，称为 KMDF 验证程序，广泛验证驱动程序的状态和驱动程序将传递给框架对象方法的参数。 您可以使用框架的验证程序本身，或者与常规用途[Driver Verifier (Verifier.exe)](https://msdn.microsoft.com/library/windows/hardware/ff545448)工具。
+该框架提供可用于测试正在运行的 KMDF 驱动程序的内置验证功能。 此功能，称为 KMDF 验证程序，广泛验证驱动程序的状态和驱动程序将传递给框架对象方法的参数。 您可以使用框架的验证程序本身，或者与常规用途[Driver Verifier (Verifier.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)工具。
 
 如果启用了 KMDF 验证工具，该框架检查锁获得和层次结构，确保对该框架的调用出现在正确的 IRQL、 验证正确的 I/O 取消和队列使用情况，并确保按照已编档的驱动程序和框架协定。 它还可以模拟内存不足条件，以便驱动程序开发人员可以测试是否驱动程序崩溃、 挂起，或无法卸载无做出正确响应。
 
@@ -24,7 +24,7 @@ ms.locfileid: "63327147"
 
 如果您的驱动程序已使用 KMDF 1.9 或更高版本生成和运行 Verifier.exe，会自动启用 KMDF 验证程序。
 
-此外可以使用[WDF 验证程序控件应用程序 (WdfVerifier.exe)](https://msdn.microsoft.com/library/windows/hardware/ff556129)来启用和禁用 KMDF 验证程序。
+此外可以使用[WDF 验证程序控件应用程序 (WdfVerifier.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)来启用和禁用 KMDF 验证程序。
 
 ## <a name="enabling-and-disabling-the-frameworks-built-in-verification"></a>启用和禁用框架的内置验证
 
@@ -37,28 +37,28 @@ ms.locfileid: "63327147"
     可能需要添加**VerifierOn**手动为如果尚未存在的子项。
 
 3.  使用设备管理器重新启用该设备，从而加载驱动程序。
-4.  当驱动程序调用[ **WdfDriverCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547175)，框架会检查注册表，并启用框架的验证程序，如**VerifierOn**为非零值。
+4.  当驱动程序调用[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)，框架会检查注册表，并启用框架的验证程序，如**VerifierOn**为非零值。
 
 若要禁用框架的验证程序，请按照相同的步骤，但设置的值**VerifierOn**为零。
 
-若要确定是否启用框架的验证程序，设置断点的位置后驱动程序调用[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175) ，并使用[ **！ wdfdriverinfo**](https://msdn.microsoft.com/library/windows/hardware/ff565724)调试器扩展命令：
+若要确定是否启用框架的验证程序，设置断点的位置后驱动程序调用[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate) ，并使用[ **！ wdfdriverinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)调试器扩展命令：
 
-**!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;* **** **0x1**
+**!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;*  **** **0x1**
 
 有关调试器扩展命令的详细信息，请参阅[基于框架的驱动程序的调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
 
 ## <a name="controlling-the-verifiers-behavior"></a>控制验证程序的行为
 
 
-我们建议你使用[WDF 验证程序控件应用程序](https://msdn.microsoft.com/library/windows/hardware/ff556129)来控制以下选项。 但是，可以直接修改注册表中的以下值。
+我们建议你使用[WDF 验证程序控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)来控制以下选项。 但是，可以直接修改注册表中的以下值。
 
 相关值位于**参数\\Wdf**的子项**HKEY\_本地\_机\\系统\\CurrentControlSet\\服务**密钥。
 
 <a href="" id="verifyon-----------------reg-dword-"></a>**VerifyOn** (**REG\_DWORD**)  
-将此值设置为非零值，以启用[ **WDFVERIFY** ](https://msdn.microsoft.com/library/windows/hardware/ff551167)宏。
+将此值设置为非零值，以启用[ **WDFVERIFY** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfverify)宏。
 
 <a href="" id="dbgbreakonerror-----------------------------reg-dword-"></a>**DbgBreakOnError** (**REG\_DWORD**)  
-如果此值设置为非零值，该框架将在调试器中中断 （如果可用） 每次将驱动程序要求[ **WdfVerifierDbgBreakPoint**](https://msdn.microsoft.com/library/windows/hardware/ff551164)。
+如果此值设置为非零值，该框架将在调试器中中断 （如果可用） 每次将驱动程序要求[ **WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)。
 
 <a href="" id="dbgwaitforsignaltimeoutinsec---------------reg-dword-"></a>**DbgWaitForSignalTimeoutInSec** (**REG\_DWORD**)  
 在 Windows 8 中，启动时**VerifierOn**并**DbgBreakOnError**设置为非零值，该驱动程序可以通过设置更改默认超时期限**DbgWaitForSignalTimeoutInSec**.

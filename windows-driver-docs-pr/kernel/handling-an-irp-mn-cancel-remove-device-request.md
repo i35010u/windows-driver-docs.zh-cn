@@ -7,12 +7,12 @@ keywords:
 - 虚假的取消删除请求 WDK 即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3577ee383671247ae468f2c3a363a79a30252cf9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82d2f9c09e8110c66f8943d5bbaacede65b28ffa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384238"
 ---
 # <a name="handling-an-irpmncancelremovedevice-request"></a>处理 IRP\_MN\_取消\_删除\_设备请求
 
@@ -20,11 +20,11 @@ ms.locfileid: "63359803"
 
 
 
-以响应[ **IRP\_MN\_取消\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff550823)请求，驱动程序的设备必须将设备恢复为它所处的状态在接收之前**IRP\_MN\_查询\_删除\_设备**请求。 通常情况下，驱动程序将设备恢复为已启动状态。
+以响应[ **IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)请求，驱动程序的设备必须将设备恢复为它所处的状态在接收之前**IRP\_MN\_查询\_删除\_设备**请求。 通常情况下，驱动程序将设备恢复为已启动状态。
 
 除了发送**IRP\_MN\_取消\_删除\_设备**到设备，即插即用管理器将发送 IRP 到设备的删除关系，如果有的话。 PnP 管理器还将取消删除 IRP 发送到设备的子级。
 
-PnP 管理器会调用任何**EventCategoryTargetDeviceChange**后的通知回调**IRP\_MN\_取消\_删除\_设备**请求完成。 通过调用在设备上注册此类回调[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)。 PnP 管理器注册任何用户模式组件还要求对此类通知上，通过调用**RegisterDeviceNotification**。
+PnP 管理器会调用任何**EventCategoryTargetDeviceChange**后的通知回调**IRP\_MN\_取消\_删除\_设备**请求完成。 通过调用在设备上注册此类回调[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。 PnP 管理器注册任何用户模式组件还要求对此类通知上，通过调用**RegisterDeviceNotification**。
 
 **IRP\_MN\_取消\_删除\_设备**依次按设备父总线驱动程序和设备堆栈中每个更高版本的驱动程序必须首先处理请求。 驱动程序句柄删除 Irp 中的其[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
 
@@ -32,15 +32,15 @@ PnP 管理器会调用任何**EventCategoryTargetDeviceChange**后的通知回�
 
 1.  在函数或筛选器驱动程序中，推迟重新启动设备，直到低级驱动程序已完成其重启操作。
 
-    函数或筛选器驱动程序设置[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程，传递**IRP\_MN\_取消\_删除\_设备**设备堆栈，并推迟重新启动操作，直到 IRP 用完所有较低的驱动程序。 (请参阅[低级驱动程序完成之前推迟 PnP IRP 处理](postponing-pnp-irp-processing-until-lower-drivers-finish.md)。)
+    函数或筛选器驱动程序设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程，传递**IRP\_MN\_取消\_删除\_设备**设备堆栈，并推迟重新启动操作，直到 IRP 用完所有较低的驱动程序。 (请参阅[低级驱动程序完成之前推迟 PnP IRP 处理](postponing-pnp-irp-processing-until-lower-drivers-finish.md)。)
 
 2.  较低的驱动程序完成后，将设备恢复为以前的即插即用状态。
 
     驱动程序将设备恢复为之前接收的状态**IRP\_MN\_查询\_删除\_设备**请求。 通常情况下，驱动程序将设备恢复为已启动状态。 具体操作取决于设备和驱动程序。
 
-    如果先前已对唤醒设备，设备电源策略所有者 （通常是功能驱动程序） 应发送[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766)若要重新启用唤醒的请求。 请参阅[电源管理](implementing-power-management.md)有关详细信息。
+    如果先前已对唤醒设备，设备电源策略所有者 （通常是功能驱动程序） 应发送[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)若要重新启用唤醒的请求。 请参阅[电源管理](implementing-power-management.md)有关详细信息。
 
-3.  设置**Irp-&gt;IoStatus.Status**于状态\_成功并完成与 IRP [ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)。
+3.  设置**Irp-&gt;IoStatus.Status**于状态\_成功并完成与 IRP [ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)。
 
     与任何 PnP IRP，总线驱动程序完成 IRP。
 

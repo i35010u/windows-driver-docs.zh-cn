@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 与 Windows Vista 一起启动的网络驱动程序的 NdisGetNextMdl 宏
 ms.localizationpriority: medium
-ms.openlocfilehash: b65a4d70a345d23531a25ebbec563ed442912add
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1280211dfee544e8c35a2e2823875be824290355
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338449"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383678"
 ---
 # <a name="ndisgetnextmdl-macro"></a>NdisGetNextMdl 宏
 
@@ -45,7 +45,7 @@ VOID NdisGetNextMdl(
 <a name="remarks"></a>备注
 -------
 
-**NdisGetNextMdl**宏提供的基于 MDL 版本[ **NdisGetNextBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff552070)函数。
+**NdisGetNextMdl**宏提供的基于 MDL 版本[ **NdisGetNextBuffer** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552070(v=vs.85))函数。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ VOID NdisGetNextMdl(
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisGetNextBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff552070)
+[**NdisGetNextBuffer**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552070(v=vs.85))
 
  
 

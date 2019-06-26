@@ -6,16 +6,16 @@ keywords:
 - 运行时筛选层标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 091079e2f5f170fcc139fcac724d7a8990ecabc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ef652ec1d3a8e8e774fe3cd912e54f8a78e6cff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382137"
 ---
 # <a name="run-time-filtering-layer-identifiers"></a>运行时筛选层标识符
 
-运行时筛选层标识符由内核模式标注驱动程序和为每个所表示的本地唯一标识符 ([LUID](https://msdn.microsoft.com/library/windows/hardware/ff557080))，这是 64 位大小。 这些标识符是 Fwpsk.h 中定义的 FWPS_BUILTIN_LAYERS 枚举中的常量值。 这些标识符定义，如下所示：
+运行时筛选层标识符由内核模式标注驱动程序和为每个所表示的本地唯一标识符 ([LUID](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid))，这是 64 位大小。 这些标识符是 Fwpsk.h 中定义的 FWPS_BUILTIN_LAYERS 枚举中的常量值。 这些标识符定义，如下所示：
 
 > [!NOTE]
 > 在运行时层标识符末尾的 V4 和 v6 上后缀表示层是否位于 IPv4 网络堆栈中或 IPv6 网络堆栈中。
@@ -75,5 +75,5 @@ ms.locfileid: "63386202"
 | FWPS_LAYER_RPC_PROXY_IF | 此筛选层允许用于检查 RpcProxy 连接时使用的接口。 这是用户模式下筛选层。 |
 | FWPS_LAYER_KM_AUTHORIZATION | 此筛选层允许授权建立安全关联。 |
 
-每个运行时层标识符具有关联的运行时数据字段标识符表示的一组常量值。 这些数据字段标识符被声明为中 Fwpsk.h FWPS_FIELDS_XXX 枚举。 有关详细信息，请参阅[数据字段标识符](https://msdn.microsoft.com/library/windows/hardware/ff546312)。
+每个运行时层标识符具有关联的运行时数据字段标识符表示的一组常量值。 这些数据字段标识符被声明为中 Fwpsk.h FWPS_FIELDS_XXX 枚举。 有关详细信息，请参阅[数据字段标识符](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)。
 

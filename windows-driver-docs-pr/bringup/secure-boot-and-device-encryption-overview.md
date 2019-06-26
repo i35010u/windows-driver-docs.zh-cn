@@ -4,12 +4,12 @@ description: 本主题概述了安全引导和设备加密功能，重点主要 
 ms.assetid: 4e206bd2-7bb4-48c2-9e01-8da041e798ef
 ms.date: 05/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e067a47fb535af8e217ed202ece51e48f3f15f80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07e484a77f8b3686b17b3bfb750d15cd2470577e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364517"
 ---
 # <a name="secure-boot-and-device-encryption-overview"></a>安全启动和设备加密概述
 
@@ -57,7 +57,7 @@ Oem 应注意以下要求和与安全启动相关的注意事项：
 
 -   作为安全启动启用过程在生产过程的一部分，必须预配重播保护内存块 (RPMB) eMMC 部件上。 此预配发生后，特定 eMMC 部分和设备中的 SoC 组件绑定在一起;eMMC 部分不能删除，并在另一台设备包含操作系统的利用了 RPMB 中重复使用。
 
--   启用安全启动后，所有驱动程序和设备上的应用必须签名以使其由操作系统加载。 有关详细信息，请参阅[代码签名](https://msdn.microsoft.com/library/windows/hardware/dn756634)。
+-   启用安全启动后，所有驱动程序和设备上的应用必须签名以使其由操作系统加载。 有关详细信息，请参阅[代码签名](https://docs.microsoft.com/previous-versions/windows/hardware/code-signing/dn756634(v=vs.85))。
 
 ## <a name="device-encryption"></a>设备加密
 

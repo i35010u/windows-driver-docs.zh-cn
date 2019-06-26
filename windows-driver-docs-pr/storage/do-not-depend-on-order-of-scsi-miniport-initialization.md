@@ -12,12 +12,12 @@ keywords:
 - 依赖于顺序的代码 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cd210324e74f30d0eb34caaa1ef19b64c5165da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a16725531c16dcfc7ab93182f8b569cfe2415f52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368284"
 ---
 # <a name="do-not-depend-on-order-of-scsi-miniport-initialization"></a>请勿依赖 SCSI 微型端口初始化顺序
 
@@ -25,7 +25,7 @@ ms.locfileid: "63342842"
 ## <span id="ddk_do_not_depend_on_order_of_scsi_miniport_initialization_kg"></span><span id="DDK_DO_NOT_DEPEND_ON_ORDER_OF_SCSI_MINIPORT_INITIALIZATION_KG"></span>
 
 
-某些微型端口驱动程序支持在诸如 PCI、 EISA 和 ISA.等的多个不同的系统总线上的 Hba 在 Microsoft Windows NT 4.0 中，这样的微型端口驱动程序的下*HwScsiFindAdapter*微型端口驱动程序调用的顺序调用 routine(s) [ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645). 在几个情况下，这用于跟踪卡片的位置上的总线的一种类型，因此微型端口驱动程序可以避免在检测到它在另一台。
+某些微型端口驱动程序支持在诸如 PCI、 EISA 和 ISA.等的多个不同的系统总线上的 Hba 在 Microsoft Windows NT 4.0 中，这样的微型端口驱动程序的下*HwScsiFindAdapter*微型端口驱动程序调用的顺序调用 routine(s) [ **ScsiPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize). 在几个情况下，这用于跟踪卡片的位置上的总线的一种类型，因此微型端口驱动程序可以避免在检测到它在另一台。
 
 例如，假定 Twiddle PCI SCSI HBA 而言也是访问 ISA 总线上。 在 Windows NT 4.0，因为微型端口驱动程序将跟踪的调用以初始化 PCI Hba 和 ISA 总线的位置所示。 微型端口驱动程序可以使用此信息，并扫描 ISA 总线确定 I/O 范围为要跳过。
 

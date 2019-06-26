@@ -8,12 +8,12 @@ keywords:
 - 总线驱动程序 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9185f81649a2c637aa94ce65df560c96e5673662
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78189ea8fb8879618e6f36f8d36e22a04d8639c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359835"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384243"
 ---
 # <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
 
@@ -27,7 +27,7 @@ ms.locfileid: "63359835"
 
     -   将状态设置\_无效\_设备\_状态中**Irp-&gt;IoStatus.Status**。
 
-    -   完成 IRP ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343))，指定的 IO 优先级提升\_否\_增量。
+    -   完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest))，指定的 IO 优先级提升\_否\_增量。
 
     -   返回的状态设置**Irp-&gt;IoStatus.Status**从[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
 
@@ -35,13 +35,13 @@ ms.locfileid: "63359835"
 
     只有一个等待/唤醒 IRP 可以处于挂起状态对 PDO。
 
-3.  如果设备支持唤醒从指定的系统电源状态和无等待/唤醒 IRP 已挂起，请调用[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)以指示 I/O 管理器将完成 IRP 或取消更高版本。 未设置[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程。
+3.  如果设备支持唤醒从指定的系统电源状态和无等待/唤醒 IRP 已挂起，请调用[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)以指示 I/O 管理器将完成 IRP 或取消更高版本。 未设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
 
 4.  设置设备硬件，从而使唤醒。
 
     依据总线驱动程序，其硬件，唤醒是依赖于设备的特定机制。 对于 PCI 设备，Pci.sys 负责设置 PME 启用位，因为此驱动程序拥有 PME 注册。 对于其他设备，请参阅特定于设备的类的文档。
 
-5.  如果 PDO 是子节点的 FDO[请求等待/唤醒 IRP](sending-a-wait-wake-irp.md) FDO，为确保设置[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程的当前 IRP (它包含挂起 IRP)。 不要尝试传递或重复使用当前的 IRP。
+5.  如果 PDO 是子节点的 FDO[请求等待/唤醒 IRP](sending-a-wait-wake-irp.md) FDO，为确保设置[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程的当前 IRP (它包含挂起 IRP)。 不要尝试传递或重复使用当前的 IRP。
 
 6.  返回状态\_从 PENDING *DispatchPower*例程。
 

@@ -4,12 +4,12 @@ description: 在两种类型的对象适配器和端口的上下文中的主机�
 ms.assetid: 0F375ED7-CB20-4F32-8ECE-4822D7787327
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6464ee4e0c5a2f7820382b710cd230b1a1caa990
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c446c860f0a0b98bf8cc5dba48ca3c9bbbc3ba6e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385324"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381146"
 ---
 # <a name="wi-fi-device-model-and-objects"></a>Wi-fi 设备模型和对象
 
@@ -23,14 +23,14 @@ ms.locfileid: "63385324"
 
 该适配器对象表示的 Wi-fi 设备中的 Wi-fi 功能。 命令和对此对象指示用于指示有关 Wi-fi 接口的状态。 对于具有多个 Wi-fi 设备的系统，每个适配器对象表示的另一个实例。
 
-## <a name="port"></a>端口
+## <a name="port"></a>Port
 
 
 可以是一个 Wi-fi 适配器同时使用多个连接例如基础结构客户端和 Wi-Fi Direct 组所有者。 Port 对象用于表示与每个此类连接关联的状态。 每个端口保存连接的 MAC 状态和任何物理状态特定于该连接。
 
 适配器可以是多个端口。 在端口上发出的命令应该只会影响保留该端口的状态。
 
-操作系统使用的操作模式，如 802.11 工作站、 Wi-Fi Direct 客户端或 Wi-Fi Direct 组所有者配置每个端口。 由操作模式和端口的状态确定固件必须准备好处理给定端口上的组命令。 一个端口可以采用两种状态之一：INIT 和 OP. 该端口是最初处于初始化状态且仅当操作系统发出一条命令 （如果客户端基础结构） 连接或启动亚太/转时将转换为操作状态。 端口返回到 init 函数运行时[OID\_WDI\_任务\_DOT11\_重置](https://msdn.microsoft.com/library/windows/hardware/dn925952)发送到 IHV 组件。
+操作系统使用的操作模式，如 802.11 工作站、 Wi-Fi Direct 客户端或 Wi-Fi Direct 组所有者配置每个端口。 由操作模式和端口的状态确定固件必须准备好处理给定端口上的组命令。 一个端口可以采用两种状态之一：INIT 和 OP. 该端口是最初处于初始化状态且仅当操作系统发出一条命令 （如果客户端基础结构） 连接或启动亚太/转时将转换为操作状态。 端口返回到 init 函数运行时[OID\_WDI\_任务\_DOT11\_重置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-dot11-reset)发送到 IHV 组件。
 
 ## <a name="port-availability-requirements"></a>端口可用性要求
 

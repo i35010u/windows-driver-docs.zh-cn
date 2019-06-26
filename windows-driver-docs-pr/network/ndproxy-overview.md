@@ -8,12 +8,12 @@ keywords:
 - 体系结构 WDK WAN NDPROXY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52f3297f318c6b7f7ad8beecb7059bd4400e7170
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 315849ded4c0d8e8156e6a78c30396d1b659c604
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364032"
 ---
 # <a name="ndproxy-overview"></a>NDPROXY 概述
 
@@ -21,7 +21,7 @@ ms.locfileid: "63380903"
 
 
 
-**请注意**  如果你正在阅读此页由于 27 的 2013 年 11 月[Microsoft 安全公告 (2914486)](https://technet.microsoft.com/security/advisory/2914486)影响 Windows XP 和 Windows Server 2003，您可能会发现此高信度计算[博客文章](http://blogs.technet.com/b/msrc/archive/2013/11/27/microsoft-releases-security-advisory-2914486.aspx)很有帮助。
+**请注意**  如果你正在阅读此页由于 27 的 2013 年 11 月[Microsoft 安全公告 (2914486)](https://docs.microsoft.com/security-updates/SecurityAdvisories/2014/2914486)影响 Windows XP 和 Windows Server 2003，您可能会发现此高信度计算[博客文章](https://blogs.technet.microsoft.com/msrc/2013/11/27/microsoft-releases-security-advisory-2914486/)很有帮助。
 
  
 
@@ -57,7 +57,7 @@ NDPROXY 通信通过 NDIS NDISWAN 驱动程序和以下项之一：
 
 有关面向连接的客户端、 调用管理器、 微型端口驱动程序和 MCMs 详细信息，请参阅[Connection-Oriented 环境](connection-oriented-environment.md)。
 
-NDPROXY 调用[ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)函数与面向连接的 TAPI Oid 来确定的 CoNDIS WAN 的微型端口驱动程序的功能。 NDPROXY 还注册了特定于 TAPI 的地址族、 创建虚拟连接 (VCs)、 使和接受调用，并激活 VCs，以便可以发送和接收的这些 VCs 数据。 有关处理 OID 的 CoNDIS WAN 微型端口驱动程序中的请求的详细信息，请参阅[CoNDIS WAN 微型端口驱动程序中处理查询](handling-queries-in-a-condis-wan-miniport-driver.md)并[设置的 CoNDIS WAN 微型端口驱动程序信息](setting-condis-wan-miniport-driver-information.md)。
+NDPROXY 调用[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)函数与面向连接的 TAPI Oid 来确定的 CoNDIS WAN 的微型端口驱动程序的功能。 NDPROXY 还注册了特定于 TAPI 的地址族、 创建虚拟连接 (VCs)、 使和接受调用，并激活 VCs，以便可以发送和接收的这些 VCs 数据。 有关处理 OID 的 CoNDIS WAN 微型端口驱动程序中的请求的详细信息，请参阅[CoNDIS WAN 微型端口驱动程序中处理查询](handling-queries-in-a-condis-wan-miniport-driver.md)并[设置的 CoNDIS WAN 微型端口驱动程序信息](setting-condis-wan-miniport-driver-information.md)。
 
  
 

@@ -12,17 +12,17 @@ keywords:
 - IRP_MN_QUERY_INTERFACE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f034a961b20c35ef596688395fd7973b44c9237
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b6db0717e2266aa112513bc6e9b9f63064935d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386780"
 ---
 # <a name="acquiring-usbcamd2-features"></a>获取 USBCAMD2 功能
 
 
-您必须获取一个指向[ **USBCAMD\_界面**](https://msdn.microsoft.com/library/windows/hardware/ff568605)结构，然后才能使用新的 USBCAMD2 功能。 若要获取的指针，生成并发送[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)从照相机微型驱动程序的请求[ **SRB\_初始化\_完成**](https://msdn.microsoft.com/library/windows/hardware/ff568182)中的处理程序[ *AdapterReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff554080)回调函数。 处理此 IRP USBCAMD2 微型驱动程序库，并返回类型 USBCAMD 的直接调用接口\_照相机微型驱动程序的接口。 接口是实质上是一个表的函数指针。
+您必须获取一个指向[ **USBCAMD\_界面**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-usbcamd_interface)结构，然后才能使用新的 USBCAMD2 功能。 若要获取的指针，生成并发送[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)从照相机微型驱动程序的请求[ **SRB\_初始化\_完成**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-initialization-complete)中的处理程序[ *AdapterReceivePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine)回调函数。 处理此 IRP USBCAMD2 微型驱动程序库，并返回类型 USBCAMD 的直接调用接口\_照相机微型驱动程序的接口。 接口是实质上是一个表的函数指针。
 
 下面的代码演示如何生成和发送 IRP\_MN\_查询\_接口请求从照相机微型驱动程序：
 

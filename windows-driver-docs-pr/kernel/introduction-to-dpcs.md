@@ -7,12 +7,12 @@ keywords:
 - Dpc WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 990e4151becb3d9a7bbee1b9ef303a542bd5795b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0461fc51f4cc7498a87c8ae85567ac61f2d3e383
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369767"
 ---
 # <a name="introduction-to-dpcs"></a>DPC 简介
 
@@ -20,7 +20,7 @@ ms.locfileid: "63341030"
 
 
 
-通常具有 ISR 任何驱动程序还具有至少一个[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)或[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)的完成处理例程中断驱动 I/O 操作。 典型的最低级别驱动*DpcForIsr*或*CustomDpc*例程执行以下操作：
+通常具有 ISR 任何驱动程序还具有至少一个[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)或[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)的完成处理例程中断驱动 I/O 操作。 典型的最低级别驱动*DpcForIsr*或*CustomDpc*例程执行以下操作：
 
 -   处理 ISR 开始处理的 I/O 操作完成。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cc363345ba6a4b20457f2cdaa29845f49a13058b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b9bbe4961c839edb3fc4420988a3b1f094a0ba4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347112"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361636"
 ---
 # <a name="bug-check-0xbe-attemptedwritetoreadonlymemory"></a>Bug 检查 0xBE：尝试\_编写\_TO\_READONLY\_内存
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347112"
 已尝试\_编写\_TO\_READONLY\_内存错误检查的值为 0x000000BE。 这被发出一个驱动程序尝试写入只读内存段。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="attemptedwritetoreadonlymemory-parameters"></a>尝试\_编写\_TO\_READONLY\_内存参数

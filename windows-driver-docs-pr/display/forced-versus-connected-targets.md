@@ -15,12 +15,12 @@ keywords:
 - 强制的目标 WDK Windows Server 2008 R2 显示与连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ddc82180342a83e267e4d2583e6fe55e8667916
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2122e8c67ac3b2f498d5995b83bb7cc540442dd2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325343"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385951"
 ---
 # <a name="forced-versus-connected-targets"></a>强制的目标与连接的目标
 
@@ -118,7 +118,7 @@ CCD Api 引入已连接的监视器和 forceable 目标的概念。 监视器已
 </tr>
 <tr class="even">
 <td align="left"><p>路径持久性</p></td>
-<td align="left"><p>这强制状态重新启动后会丢失。 Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>函数在即使其路径中的这些监视器的目标始终会销毁所有路径保存监视器<strong>ChangeDisplaySettingsEx</strong>调用。 如果调用方调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff569533" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569533)"> <strong>SetDisplayConfig</strong> </a> CCD 函数中设置的 SDC_USE_SUPPLIED_DISPLAY_CONFIG 或 SDC_TOPOLOGY_SUPPLIED 标志<em>标志</em>参数，则<strong>SetDisplayConfig</strong>将删除保留在路径的监视器。 如果在新的拓扑不包括此监视器处于的路径。 中的所有其他 SDC_TOPOLOGY_XXX 标志指定调用方<em>标志</em>参数， <strong>SetDisplayConfig</strong>中删除保留在路径的监视器，除非调用方还指定 SDC_PATH_PERSIST_新的拓扑结构中处于活动状态 IF_REQUIRED 标志和路径。</p></td>
+<td align="left"><p>这强制状态重新启动后会丢失。 Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>函数在即使其路径中的这些监视器的目标始终会销毁所有路径保存监视器<strong>ChangeDisplaySettingsEx</strong>调用。 如果调用方调用<a href="https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"> <strong>SetDisplayConfig</strong> </a> CCD 函数中设置的 SDC_USE_SUPPLIED_DISPLAY_CONFIG 或 SDC_TOPOLOGY_SUPPLIED 标志<em>标志</em>参数，则<strong>SetDisplayConfig</strong>将删除保留在路径的监视器。 如果在新的拓扑不包括此监视器处于的路径。 中的所有其他 SDC_TOPOLOGY_XXX 标志指定调用方<em>标志</em>参数， <strong>SetDisplayConfig</strong>中删除保留在路径的监视器，除非调用方还指定 SDC_PATH_PERSIST_新的拓扑结构中处于活动状态 IF_REQUIRED 标志和路径。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>启动持久性</p></td>

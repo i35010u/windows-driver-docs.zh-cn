@@ -4,12 +4,12 @@ description: 创建推送模型感知应用程序
 ms.assetid: 0f554b2c-0217-4109-8ef6-99c5400dfed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f80031cc9d7a1f132dbdcd854dedfe30e142a43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7dd8a30339a63ee909d586d04cba90aea2097e8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386309"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370089"
 ---
 # <a name="creating-push-model-aware-applications"></a>创建推送模型感知应用程序
 
@@ -19,9 +19,9 @@ ms.locfileid: "63386309"
 
 推送模型感知应用程序是指注册其自身的 Microsoft STI，以便它可以自动激活静止图像设备事件发生时。 应用程序可以进行推送模型注意通过以下两种方法之一：
 
--   调用[ **IStillImage::RegisterLaunchApplication**](https://msdn.microsoft.com/library/windows/hardware/ff543798)。 由应用程序或通过其安装程序，可以进行调用。
+-   调用[ **IStillImage::RegisterLaunchApplication**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543798(v=vs.85))。 由应用程序或通过其安装程序，可以进行调用。
 
--   在应用程序的安装信息 (INF) 文件中包括一个条目。 应通过引用的项[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320) INF 文件中。 下面的示例说明了项的语法：
+-   在应用程序的安装信息 (INF) 文件中包括一个条目。 应通过引用的项[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) INF 文件中。 下面的示例说明了项的语法：
 
     ```INF
     ; Register Application "Imaging" as a push-model aware application for use with the still image event monitor
@@ -36,7 +36,7 @@ ms.locfileid: "63386309"
 
 设备事件已分配给应用程序后，事件监视器将检测到分配的设备事件发生时启动应用程序。
 
-推送模型感知应用程序激活时，它应调用[ **IStillImage::GetSTILaunchInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff543790)来确定事件，并为其启动的设备。 然后，它可以调用[ **IStillImage::GetDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff543782)以获取有关设备的详细信息。
+推送模型感知应用程序激活时，它应调用[ **IStillImage::GetSTILaunchInformation** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543790(v=vs.85))来确定事件，并为其启动的设备。 然后，它可以调用[ **IStillImage::GetDeviceInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543782(v=vs.85))以获取有关设备的详细信息。
 
 应用程序必须处理该事件，或它必须创建解释为什么它无法处理该事件的用户显示。 有可能用户然后将使用控制面板以将设备事件与其他一些应用程序相关联。
 

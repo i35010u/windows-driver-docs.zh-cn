@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 09cd01f7195520747426a56f25a75a40b53072b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d21d88558c00857d35f117b26adece13daa915c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374827"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361417"
 ---
 # <a name="debugtypeoptsxxx"></a>DEBUG\_TYPEOPTS\_XXX
 
@@ -66,7 +66,7 @@ ms.locfileid: "63374827"
 
 默认情况下，所有格式设置选项的类型是关闭状态。
 
-有关类型的详细信息，请参阅[类型](https://msdn.microsoft.com/library/windows/hardware/ff558931)。
+有关类型的详细信息，请参阅[类型](https://docs.microsoft.com/windows-hardware/drivers/debugger/types)。
 
 <a name="requirements"></a>要求
 ------------

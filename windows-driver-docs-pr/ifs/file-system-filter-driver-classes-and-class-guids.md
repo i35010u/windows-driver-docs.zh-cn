@@ -10,12 +10,12 @@ keywords:
 - 文件系统筛选器驱动程序 WDK，类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6787d8b4cb6787cfae6003d263b42001a6e8d1ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc508e492f70e77466e50fcf475d95bf318dcfaf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385552"
 ---
 # <a name="file-system-filter-driver-classes-and-class-guids"></a>文件系统筛选器驱动程序类和类 GUID
 
@@ -23,11 +23,11 @@ ms.locfileid: "63327494"
 ## <span id="ddk_file_system_filter_driver_classes_and_class_guids_if"></span><span id="DDK_FILE_SYSTEM_FILTER_DRIVER_CLASSES_AND_CLASS_GUIDS_IF"></span>
 
 
-Microsoft Windows XP 和更高版本操作系统为文件系统筛选器驱动程序安装程序类。 这些类提供系统提供的设备安装程序类提供的硬件设备的功能的子集。 (有关硬件设备安装程序类的详细信息，请参阅[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。)
+Microsoft Windows XP 和更高版本操作系统为文件系统筛选器驱动程序安装程序类。 这些类提供系统提供的设备安装程序类提供的硬件设备的功能的子集。 (有关硬件设备安装程序类的详细信息，请参阅[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。)
 
 每个安装程序类是与类 GUID 相关联。 Guid devguid.h 中定义的系统定义的类中。
 
-本主题列出了文件系统筛选器驱动程序的安装程序类。 为每个类定义中**类**并**ClassGuid**条目包含应在指定值[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)筛选器的 INF 文件。 筛选器驱动程序应使用类和匹配驱动程序的 INF 文件中指定的加载顺序组的 GUID。
+本主题列出了文件系统筛选器驱动程序的安装程序类。 为每个类定义中**类**并**ClassGuid**条目包含应在指定值[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)筛选器的 INF 文件。 筛选器驱动程序应使用类和匹配驱动程序的 INF 文件中指定的加载顺序组的 GUID。
 
 提供的设备，而非或除此之外的 INF 文件中的适当的类 GUID 值**类** = *类名*条目，显著提高的性能搜索系统 INF 文件。
 

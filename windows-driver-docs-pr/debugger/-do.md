@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fba2b38421d880bb4c051396769a5c7a0877a2f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 436f77940bc50cb824df7a66e210e89cf2728529
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334570"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363163"
 ---
 # <a name="do"></a>.do
 
@@ -44,7 +44,7 @@ ms.locfileid: "63334570"
 <a name="remarks"></a>备注
 -------
 
-[ **.Break** ](https://msdn.microsoft.com/library/windows/hardware/ff556242)并[ **.continue** ](-continue.md)令牌可用于退出或重新启动*命令*块。
+[ **.Break** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-break)并[ **.continue** ](-continue.md)令牌可用于退出或重新启动*命令*块。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 错误代码 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 578ff7611bc25c894a8af4f592753cc6ecc0a6a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f3ccfeb986853dff58b2c9fe4b526412aef069f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365622"
 ---
 # <a name="returning-error-codes-from-copp-functions"></a>从 COPP 函数返回错误代码
 
@@ -34,7 +34,7 @@ ms.locfileid: "63351204"
 
 -   E\_意外的
 
-    显示驱动程序处于无效状态。 例如， [ *COPPSequenceStart* ](https://msdn.microsoft.com/library/windows/hardware/ff540421)函数调用之前[ *COPPKeyExchange* ](https://msdn.microsoft.com/library/windows/hardware/ff539646)函数。
+    显示驱动程序处于无效状态。 例如， [ *COPPSequenceStart* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppsequencestart)函数调用之前[ *COPPKeyExchange* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppkeyexchange)函数。
 
 -   E\_INVALIDARG
 
@@ -48,7 +48,7 @@ COPP DDI 可返回 E\_失败，而且 DDERR\_泛型错误代码; 但是，因为
 
 每个 COPP 函数的备注部分指定 DDERR\_ COPP 函数可以报告的错误代码。 COPP DDI 不应需要返回任何其他 DDERR\_错误代码。
 
-传播 COPP DDI 微型端口驱动程序中显示驱动程序到错误信息时, 不应使用的返回值[ **EngDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff564838)函数，因为 Windows内核操作从到 IOCTL 返回的错误值**EngDeviceIoControl**。 相反，应传递错误信息*lpInBuffer*的参数**EngDeviceIoControl**。 有关详细信息，请参阅[从显示器驱动程序调用 COPP DDI](calling-the-copp-ddi-from-the-display-driver.md)和中的代码示例[COPP 视频微型端口驱动程序模板](copp-video-miniport-driver-template.md)并[执行 COPP 操作](performing-copp-operations-example.md)。
+传播 COPP DDI 微型端口驱动程序中显示驱动程序到错误信息时, 不应使用的返回值[ **EngDeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol)函数，因为 Windows内核操作从到 IOCTL 返回的错误值**EngDeviceIoControl**。 相反，应传递错误信息*lpInBuffer*的参数**EngDeviceIoControl**。 有关详细信息，请参阅[从显示器驱动程序调用 COPP DDI](calling-the-copp-ddi-from-the-display-driver.md)和中的代码示例[COPP 视频微型端口驱动程序模板](copp-video-miniport-driver-template.md)并[执行 COPP 操作](performing-copp-operations-example.md)。
 
  
 

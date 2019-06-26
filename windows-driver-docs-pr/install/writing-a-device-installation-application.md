@@ -14,12 +14,12 @@ keywords:
 - 设备安装 WDK，应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4963dac2ff7bc9a626767bc2c3eb3e49b61471
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e7bff2a6d3601234d40d5a5f931e4a88c7b999e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363495"
 ---
 # <a name="writing-a-device-installation-application"></a>编写设备安装应用程序
 
@@ -31,7 +31,7 @@ ms.locfileid: "63339249"
 
  
 
-如果您的驱动程序打包安装这些组件。 设备安装应用程序和分发媒体应符合自动运行，以便自动运行该应用程序时自动启动用户插入分发介质。 有关自动运行的详细信息，请参阅[创建 AutoRun-Enabled 应用程序](https://msdn.microsoft.com/library/windows/desktop/cc144206)。
+如果您的驱动程序打包安装这些组件。 设备安装应用程序和分发媒体应符合自动运行，以便自动运行该应用程序时自动启动用户插入分发介质。 有关自动运行的详细信息，请参阅[创建 AutoRun-Enabled 应用程序](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/cc144206(v=vs.85))。
 
 有关如何编写设备安装应用程序的指南，请参阅[编写设备安装应用程序的指导原则](guidelines-for-writing-device-installation-applications.md)。
 

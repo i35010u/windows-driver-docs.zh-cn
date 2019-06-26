@@ -9,12 +9,12 @@ keywords:
 - 窗口控件 WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 701bc284d746eaf7e81991bbf94ed4dbade64622
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba50584d1175f17860d5e541d5a890fcc9793c5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365578"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372439"
 ---
 # <a name="cpsui-supported-window-controls"></a>CPSUI 支持的窗口控件
 
@@ -36,9 +36,9 @@ CPSUI 支持窗口控件包括：
 
 -   复选框
 
-指定时，始终必须使用此组窗口控件[属性工作表选项](property-sheet-options.md)。 使用指定的窗口控件[CPSUI 选项类型](https://msdn.microsoft.com/library/windows/hardware/ff547142)。 虽然通常这不是必需的可以自定义这些控件的外观。 有关详细信息，请参阅[Customizing CPSUI-Supported 窗口控件](customizing-cpsui-supported-window-controls.md)。
+指定时，始终必须使用此组窗口控件[属性工作表选项](property-sheet-options.md)。 使用指定的窗口控件[CPSUI 选项类型](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types)。 虽然通常这不是必需的可以自定义这些控件的外观。 有关详细信息，请参阅[Customizing CPSUI-Supported 窗口控件](customizing-cpsui-supported-window-controls.md)。
 
-CPSUI 还定义了两个特殊控件，调用扩展的复选框和扩展的推送按钮。 这些控件，它们提供超出标准复选框和推送按钮的功能，可以使用指定[ **EXTCHKBOX** ](https://msdn.microsoft.com/library/windows/hardware/ff548781)并[ **EXTPUSH**](https://msdn.microsoft.com/library/windows/hardware/ff548795)结构，分别。
+CPSUI 还定义了两个特殊控件，调用扩展的复选框和扩展的推送按钮。 这些控件，它们提供超出标准复选框和推送按钮的功能，可以使用指定[ **EXTCHKBOX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_extchkbox)并[ **EXTPUSH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_extpush)结构，分别。
 
  
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 711c81d0e78b01ca3198556dbc8f086b66cf6ada
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1acf61ef1314849a6ed90fb76c4fc80ccf07b62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382199"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366716"
 ---
 # <a name="kscategoryaudio"></a>KSCATEGORY_AUDIO
 
 
-KSCATEGORY_AUDIO[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 音频设备的功能类别。
+KSCATEGORY_AUDIO[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 音频设备的功能类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_AUDIO[设备接口类](https://msdn.microsoft.com/library/windows/har
 
 KS 音频设备的驱动程序注册此设备接口类，以向操作系统指示设备支持 KSCATEGORY_AUDIO 功能分类的实例。
 
-有关设备的音频的适配器的接口类的信息，请参阅[音频适配器安装设备接口](https://msdn.microsoft.com/library/windows/hardware/ff536813)。
+有关设备的音频的适配器的接口类的信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
 
 有关如何在一个 INF 文件中注册此功能的类别的信息，请参阅帮助文件*INFViewer.html*并*ac97smpl.inf*，其中所含[AC'97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075) WDK 中。
 

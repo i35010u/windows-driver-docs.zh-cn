@@ -9,12 +9,12 @@ keywords:
 - PINNAME_VIDEO_VIDEOPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 576172ab7732d2c7fa488fbd4b72d33e481ae546
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6765c37b0a6172dab192afde45a3e8c66d31d6f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385365"
 ---
 # <a name="videoport-category"></a>视频端口类别
 
@@ -35,7 +35,7 @@ ms.locfileid: "63329950"
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -69,7 +69,7 @@ ms.locfileid: "63329950"
 </tr>
 <tr class="even">
 <td><p><strong>所需的事件集</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561780" data-raw-source="[KSEVENTSETID_VPNotify](https://msdn.microsoft.com/library/windows/hardware/ff561780)">KSEVENTSETID_VPNotify</a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify" data-raw-source="[KSEVENTSETID_VPNotify](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify)">KSEVENTSETID_VPNotify</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DirectShow majortype</strong></p></td>

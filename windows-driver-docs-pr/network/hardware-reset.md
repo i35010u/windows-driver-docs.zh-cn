@@ -10,12 +10,12 @@ keywords:
 - 硬件重置 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 910ddf81b74e9e316d4de863609c0f1e91390d25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a159eedcae3d9d1a305c70b9d638fde28273338e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342628"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378701"
 ---
 # <a name="miniport-driver-hardware-reset"></a>微型端口驱动程序硬件重置
 
@@ -23,9 +23,9 @@ ms.locfileid: "63342628"
 
 
 
-微型端口驱动程序必须注册[ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432)函数与[ **NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654)。
+微型端口驱动程序必须注册[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)函数与[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)。
 
-*MiniportResetEx*可以通过调用完成同步或异步[ **NdisMResetComplete**](https://msdn.microsoft.com/library/windows/hardware/ff563663)（请参阅下图）。
+*MiniportResetEx*可以通过调用完成同步或异步[ **NdisMResetComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete)（请参阅下图）。
 
 ![说明重置网络接口卡的关系图](images/207-09.png)
 
@@ -39,16 +39,16 @@ ms.locfileid: "63342628"
 
 微型端口驱动程序负责将除多播的地址、 数据包筛选器、 任务卸载设置和模式唤醒设备硬件状态还原。 这些设置将还原由微型端口驱动程序或 NDIS。 微型端口驱动程序确定由谁来负责通过返回一个布尔值中的将这些设置还原*AddressingReset*参数。
 
-如果微型端口驱动程序将返回**FALSE**中*AddressingReset*参数，微型端口驱动程序将还原其多播的地址，数据包筛选器、 任务卸载设置和唤醒模式相对于其初始状态。 如果微型端口驱动程序将返回 **，则返回 TRUE**中*AddressingReset*，NDIS 调用无连接的微型端口驱动程序[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数或面向连接的微型端口驱动程序的[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)函数可设置以下配置设置：
+如果微型端口驱动程序将返回**FALSE**中*AddressingReset*参数，微型端口驱动程序将还原其多播的地址，数据包筛选器、 任务卸载设置和唤醒模式相对于其初始状态。 如果微型端口驱动程序将返回 **，则返回 TRUE**中*AddressingReset*，NDIS 调用无连接的微型端口驱动程序[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数或面向连接的微型端口驱动程序的[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数可设置以下配置设置：
 
--   通过设置请求的网络数据包筛选器[OID\_代\_当前\_数据包\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569575)。
+-   通过设置请求的网络数据包筛选器[OID\_代\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)。
 
--   通过设置请求的多播的地址列表[OID\_802\_3\_多播\_列表](https://msdn.microsoft.com/library/windows/hardware/ff569073)。
+-   通过设置请求的多播的地址列表[OID\_802\_3\_多播\_列表](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-multicast-list)。
 
--   任务卸载封装设置的 set 请求通过[OID\_卸载\_封装](https://msdn.microsoft.com/library/windows/hardware/ff569762)。
+-   任务卸载封装设置的 set 请求通过[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)。
 
--   电源管理唤醒模式通过的集请求[OID\_PNP\_添加\_唤醒\_向上\_模式](https://msdn.microsoft.com/library/windows/hardware/ff569773)。
-    **请注意**  从 NDIS 6.20 开始，通过设置唤醒模式[OID\_PM\_添加\_WOL\_模式](https://msdn.microsoft.com/library/windows/hardware/ff569764)微型端口驱动程序必须还原。
+-   电源管理唤醒模式通过的集请求[OID\_PNP\_添加\_唤醒\_向上\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-add-wake-up-pattern)。
+    **请注意**  从 NDIS 6.20 开始，通过设置唤醒模式[OID\_PM\_添加\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)微型端口驱动程序必须还原。
 
      
 
@@ -59,7 +59,7 @@ ms.locfileid: "63342628"
 
 [微型端口适配器状态和操作](miniport-adapter-states-and-operations.md)
 
-[微型端口驱动程序重置和 Halt 函数](https://msdn.microsoft.com/library/windows/hardware/ff564064)
+[微型端口驱动程序重置和 Halt 函数](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564064(v=vs.85))
 
  
 

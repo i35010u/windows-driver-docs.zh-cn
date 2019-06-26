@@ -4,12 +4,12 @@ description: 本部分中定义的规则合并 TCP/IP 段微型端口驱动程�
 ms.assetid: EC3C72EB-20A6-4D48-8E8C-F70EE4483193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b65e9adced45cbd7a55ca24bbb84ce24005905b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a17c87ad22d86e6810a35f0ee3f217eb29b4a01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382131"
 ---
 # <a name="rules-for-coalescing-tcpip-segments"></a>合并 TCP/IP 段的规则
 
@@ -169,7 +169,7 @@ TCP 时间戳选项是唯一可能合法合并的选项。 合并段与此选项
 
  
 
-时，该值指示合并的段，必须按如下所示指示以下带外信息通过设置**NetBufferListInfo**的成员[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)描述合并的段结构：
+时，该值指示合并的段，必须按如下所示指示以下带外信息通过设置**NetBufferListInfo**的成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)描述合并的段结构：
 
 -   已合并的段数必须存储到**NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\]。**CoalescedSegCount**成员。 此数字仅表示已合并的数据段。 纯 ACK 合并禁止的窗口更新段必须不被视为此字段的一部分。
 
@@ -179,7 +179,7 @@ TCP 时间戳选项是唯一可能合法合并的选项。 合并段与此选项
 
 **DupAckCount**并**RscTcpTimestampDelta**成员进行解释，当且仅当**CoalescedSegCount**成员是大于零。 如果**CoalescedSegCount**为零，段被视为非合并非-RSC 段。
 
-有关的内容信息**NetBufferListInfo**成员，请参阅[ **NDIS\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff566569)并[ **NDIS\_RSC\_NBL\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh451655)。
+有关的内容信息**NetBufferListInfo**成员，请参阅[ **NDIS\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ne-ndis-_ndis_net_buffer_list_info)并[ **NDIS\_RSC\_NBL\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_rsc_nbl_info)。
 
 PSH 位的所有合并的段应或运算。 换而言之，如果 PSH 位已设置任何单独的段中，微型端口驱动程序应在 SCU 设置 PSH 位。
 

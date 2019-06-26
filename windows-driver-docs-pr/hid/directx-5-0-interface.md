@@ -16,12 +16,12 @@ keywords:
 - VJoyD WDK HID 版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45280843a3e3900821a27bb363a2a1e4d4bba022
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12ec7b604ed8c6d978b46487a9e84947f2b8bacd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357577"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375744"
 ---
 #  <a name="directx-50-interface"></a>DirectX 5.0 接口
 
@@ -66,19 +66,19 @@ DirectX 5.0 和更高版本的接口的游戏杆微型驱动程序回调包含�
 
  
 
-[ **VJREGDRVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff543581)结构传递到新注册。
+[ **VJREGDRVINFO** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543581(v=vs.85))结构传递到新注册。
 
 **DwFunction** VJREGDRVINFO 结构的成员必须为 VJRT\_加载; 保留所有其他值。 VJRT\_LOADED，注册用于在原始的界面中，即在微型驱动程序加载到响应中的回调传递给 VJoyD 方式相同，新界面中使用。
 
-控制回调和轮询回调将合并成单个表，因为所有驱动程序必须提供控制回调，而极少设备是仅输出 （并因此不需要轮询回调）。 使用注册这些回调[ **VJPOLLREG** ](https://msdn.microsoft.com/library/windows/hardware/ff543577)结构。
+控制回调和轮询回调将合并成单个表，因为所有驱动程序必须提供控制回调，而极少设备是仅输出 （并因此不需要轮询回调）。 使用注册这些回调[ **VJPOLLREG** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543577(v=vs.85))结构。
 
 **LpCfg** VJPOLLREG 结构的成员将指向标准配置管理器回叫，与在原始界面 CfgRoutine 完全相同。 主要区别是 VJoyD 调用相应的配置管理器回调。 VJoyD 链接到已安装的设备节点的驱动程序，并调用此回调以通知配置管理器活动的驱动程序。 上一接口调用所有已加载的驱动程序用于每个配置管理器回叫，DirectX 5.0 和更高版本的接口仅调用一个驱动程序而它已链接到设备节点的已更改。 此外，不加载该驱动程序时，configuration manager 活动可能会发生这种情况，因为 VJoyD 实现基元缓存系统，以便在加载时启动设备节点后，如果此设备节点的通知驱动程序。
 
 由于始终为调用在其资源分配驱动程序，因此它们不应检查默认端口，以查找所需的资源。 遗憾的是，旧方法中的驱动程序，必须找到一些方法，可以使用上一接口也仍然可用。 这意味着，尽管 VJoyD 仅分配一组到单个驱动程序的资源，会加载任何旧驱动程序仍然可以使用未分配给它们的端口。 当已分配资源时，驱动程序应执行任何所需的设备，以确定设备状态的握手。
 
-[*初始化*](https://msdn.microsoft.com/library/windows/hardware/ff541025)回调 (指向**fpInitialize** VJPOLLREG 结构中的成员) 将替换*JoyId*中的回调以前的接口。 主要区别在于，VJoyD 传递回该驱动程序设备过程中传递给 VJoyD 注册以便可以区分这些实例，如果该驱动程序支持多个设备任何设备实例标识。
+[*初始化*](https://docs.microsoft.com/previous-versions/ff541025(v=vs.85))回调 (指向**fpInitialize** VJPOLLREG 结构中的成员) 将替换*JoyId*中的回调以前的接口。 主要区别在于，VJoyD 传递回该驱动程序设备过程中传递给 VJoyD 注册以便可以区分这些实例，如果该驱动程序支持多个设备任何设备实例标识。
 
-**请注意**  如果你需要打开注册表项，则应使用[VJOYD\_OpenConfigKey\_服务](https://msdn.microsoft.com/library/windows/hardware/ff543545)并[VJOYD\_OpenTypeKey\_服务](https://msdn.microsoft.com/library/windows/hardware/ff543549)宏而不是直接打开注册表项。 使用这些服务宏可确保打开正确的注册表分支。 此外，支持的服务的宏将在将来版本的 DirectInput 时可能会以不同方式结构化的基础的注册表数据。
+**请注意**  如果你需要打开注册表项，则应使用[VJOYD\_OpenConfigKey\_服务](https://docs.microsoft.com/previous-versions/ff543545(v=vs.85))并[VJOYD\_OpenTypeKey\_服务](https://docs.microsoft.com/previous-versions/ff543549(v=vs.85))宏而不是直接打开注册表项。 使用这些服务宏可确保打开正确的注册表分支。 此外，支持的服务的宏将在将来版本的 DirectInput 时可能会以不同方式结构化的基础的注册表数据。
 
  
 

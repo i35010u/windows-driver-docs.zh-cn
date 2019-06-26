@@ -4,12 +4,12 @@ description: 该过程包括设置符号和 Visual Studio 中的可执行文件�
 ms.assetid: BFFF9BBC-C926-4974-A43E-C3A2DDA74AA4
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f6df471ffcf8b3c623dc1125ea24ba4712a40be5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c299b26ce55ddc964c3b26c22e7263b39cca9d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366385"
 ---
 # <a name="setting-symbol-and-executable-image-paths-in-visual-studio"></a>在 Visual Studio 中设置符号和可执行映像路径
 
@@ -18,7 +18,7 @@ ms.locfileid: "63381943"
 >
 
 
-本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://msdn.microsoft.com/library/windows/hardware/ff557573)。
+本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://docs.microsoft.com/windows-hardware/drivers/)。
 
 ## <a name="span-idsettingthesymbolpathbyusingapropertypagespanspan-idsettingthesymbolpathbyusingapropertypagespanspan-idsettingthesymbolpathbyusingapropertypagespansetting-the-symbol-path-by-using-a-property-page"></a><span id="Setting_the_Symbol_Path_by_Using_a_Property_Page"></span><span id="setting_the_symbol_path_by_using_a_property_page"></span><span id="SETTING_THE_SYMBOL_PATH_BY_USING_A_PROPERTY_PAGE"></span>使用属性页设置符号路径
 

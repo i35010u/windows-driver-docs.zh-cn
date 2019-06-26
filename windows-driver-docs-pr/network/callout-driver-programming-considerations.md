@@ -10,12 +10,12 @@ keywords:
 - 用户模式下标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b71ca15eb81e6704484a734f9e42e159282587c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86792ea5eef9618ddbb8bfb3520342b02865d55b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369075"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382813"
 ---
 # <a name="callout-driver-programming-considerations"></a>标注驱动程序编程注意事项
 
@@ -32,9 +32,9 @@ ms.locfileid: "63369075"
 
 ### <a href="" id="blocking-at-the-application-layer-enforcement--ale--flow-established-l"></a>阻止在应用程序层强制 (ALE) 流建立层
 
-通常情况下，一个标注如果已添加到在其中一个筛选器引擎*ALE 流建立*筛选层 (FWPM\_层\_ALE\_流\_已建立\_V4或 FWPM\_层\_ALE\_流\_已建立\_V6)，将其[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数应永远不会返回 FWP\_操作\_阻止的操作。 决策进行授权或拒绝不应在其中一个 ALE 流执行的连接建立筛选层。 在其他 ALE 筛选层之一应始终将此类决策。
+通常情况下，一个标注如果已添加到在其中一个筛选器引擎*ALE 流建立*筛选层 (FWPM\_层\_ALE\_流\_已建立\_V4或 FWPM\_层\_ALE\_流\_已建立\_V6)，将其[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数应永远不会返回 FWP\_操作\_阻止的操作。 决策进行授权或拒绝不应在其中一个 ALE 流执行的连接建立筛选层。 在其他 ALE 筛选层之一应始终将此类决策。
 
-对这些产品的唯一正当理由[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数以返回 FWP\_操作\_阻止该操作是如果发生错误，可能会造成一些潜在的安全风险如果已建立的连接未结束。 在这种情况下，返回 FWP\_操作\_阻止的操作将关闭连接以防止潜在的安全风险被利用。
+对这些产品的唯一正当理由[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数以返回 FWP\_操作\_阻止该操作是如果发生错误，可能会造成一些潜在的安全风险如果已建立的连接未结束。 在这种情况下，返回 FWP\_操作\_阻止的操作将关闭连接以防止潜在的安全风险被利用。
 
 ### <a name="callout-function-execution-time"></a>标注函数执行时间
 
@@ -46,11 +46,11 @@ ms.locfileid: "63369075"
 
 ### <a name="inline-injection-of-tcp-packet-from-transport-layers"></a>从传输层的 TCP 数据包的内联注入
 
-由于 TCP 堆栈的锁定行为，在传输层标注无法插入新的或克隆 TCP 数据包[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)标注函数。 如果需要内联注入，标注必须排队 DPC 执行注入。
+由于 TCP 堆栈的锁定行为，在传输层标注无法插入新的或克隆 TCP 数据包[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)标注函数。 如果需要内联注入，标注必须排队 DPC 执行注入。
 
 ### <a name="outgoing-ip-header-alignment"></a>传出 IP 标头的对齐方式
 
-介绍 net 缓冲区列表中的 IP 标头 MDL ([**NET\_缓冲区\_当前\_MDL**](https://msdn.microsoft.com/library/windows/hardware/ff568379)([**NET\_缓冲\_列表\_第一个\_NB**](https://msdn.microsoft.com/library/windows/hardware/ff568394)(*netBufferList*))) 必须是指针对齐时之一[数据包注入函数](packet-injection-functions.md)用于将数据包数据注入到传出路径。 因为可能的传入数据包 IP 标头 MDL 指针对齐，标注必须重新生成 IP 标头 （如果尚不存在对齐） 时将传入数据包注入到传出路径。
+介绍 net 缓冲区列表中的 IP 标头 MDL ([**NET\_缓冲区\_当前\_MDL**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-current-mdl)([**NET\_缓冲\_列表\_第一个\_NB**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-first-nb)(*netBufferList*))) 必须是指针对齐时之一[数据包注入函数](packet-injection-functions.md)用于将数据包数据注入到传出路径。 因为可能的传入数据包 IP 标头 MDL 指针对齐，标注必须重新生成 IP 标头 （如果尚不存在对齐） 时将传入数据包注入到传出路径。
 
 ## <a name="related-topics"></a>相关主题
 

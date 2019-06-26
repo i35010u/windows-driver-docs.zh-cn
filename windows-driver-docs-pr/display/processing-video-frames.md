@@ -8,19 +8,19 @@ keywords:
 - 帧 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f91269cc59dfb7f01eb9cb7203ce6e5e91bb71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41dc0b882706c6ed115bc73e134f27f43cc4c58b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370175"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363701"
 ---
 # <a name="processing-video-frames"></a>处理视频帧
 
 
-Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **VideoProcessBeginFrame** ](https://msdn.microsoft.com/library/windows/hardware/ff570494)并[ **VideoProcessEndFrame** ](https://msdn.microsoft.com/library/windows/hardware/ff570497)若要指示这些用户模式显示驱动程序可以处理的视频帧的函数调用之间的时间段的功能。 Microsoft Direct3D 运行时用户模式显示驱动程序可以处理任何视频帧之前，必须调用用户模式显示驱动程序[ **SetVideoProcessRenderTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff569695)函数来设置呈现器视频处理的目标面。 但是，在调用*SetVideoProcessRenderTarget*可仅外部出现的开始范围和结束帧时间段。
+Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **VideoProcessBeginFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_videoprocessbeginframe)并[ **VideoProcessEndFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_videoprocessendframe)若要指示这些用户模式显示驱动程序可以处理的视频帧的函数调用之间的时间段的功能。 Microsoft Direct3D 运行时用户模式显示驱动程序可以处理任何视频帧之前，必须调用用户模式显示驱动程序[ **SetVideoProcessRenderTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setvideoprocessrendertarget)函数来设置呈现器视频处理的目标面。 但是，在调用*SetVideoProcessRenderTarget*可仅外部出现的开始范围和结束帧时间段。
 
-在呈现目标图面后视频处理已设置，用户模式显示驱动程序可以接收到调用其[ **VideoProcessBlt** ](https://msdn.microsoft.com/library/windows/hardware/ff570495)函数来处理视频帧之间开始帧和最终帧时间段。
+在呈现目标图面后视频处理已设置，用户模式显示驱动程序可以接收到调用其[ **VideoProcessBlt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_videoprocessblt)函数来处理视频帧之间开始帧和最终帧时间段。
 
  
 

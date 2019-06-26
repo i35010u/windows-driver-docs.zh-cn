@@ -15,12 +15,12 @@ keywords:
 - 请注意关闭事件 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d12949b12e9eff3eb0478749773094e8749833b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 808313dd844ef120261f58f03988b993eaff336e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363255"
 ---
 # <a name="midi-and-directmusic-components"></a>MIDI 和 DirectMusic 组件
 
@@ -62,9 +62,9 @@ Dmu 端口驱动程序就能够实现比 MIDI 端口驱动程序的高得多的�
 
 如果 DMusic 合成器没有硬件 sequencer，则它必须依赖于 Dmu 端口驱动程序软件 sequencer，这与在 MIDI 端口驱动程序，有一毫秒的计时器分辨率。
 
-适配器驱动程序通过调用创建 MIDI 或 Dmu 端口驱动程序[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715) GUID 值为**CLSID\_PortMidi**或**CLSID\_PortDMus**分别。 在 Windows XP 及更高版本，MIDI 和 Dmu 端口驱动程序将共享相同的软件实现。
+适配器驱动程序通过调用创建 MIDI 或 Dmu 端口驱动程序[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport) GUID 值为**CLSID\_PortMidi**或**CLSID\_PortDMus**分别。 在 Windows XP 及更高版本，MIDI 和 Dmu 端口驱动程序将共享相同的软件实现。
 
-在上图中的底部显示是 FMSynth、 UART 和 DMusUART，它包括在 Portcls.sys 的系统提供的微型端口驱动程序的名称。 适配器驱动程序创建一个微型端口驱动程序通过调用[ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)。 FMSynth 和 UART 提供[IMiniportMidi](https://msdn.microsoft.com/library/windows/hardware/ff536703)接口和 DMusUART 提供[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)接口。 请注意 UART （在 Windows 98 金色） 现已过时，仅支持现有的驱动程序。 新适配器驱动程序应改用 DMusUART （在 Windows 98 SE 和更高版本，并在 Windows 2000 及更高版本），它实现的 UART 的功能超集。 DMusUART 是支持 DLS 下载也硬件序列化不支持的 Dmu 微型端口驱动程序的示例。 FMSynth 和 DMusUART 微型端口驱动程序的源代码现已推出的示例音频驱动程序 Windows Driver Kit (WDK) 中。
+在上图中的底部显示是 FMSynth、 UART 和 DMusUART，它包括在 Portcls.sys 的系统提供的微型端口驱动程序的名称。 适配器驱动程序创建一个微型端口驱动程序通过调用[ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)。 FMSynth 和 UART 提供[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)接口和 DMusUART 提供[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)接口。 请注意 UART （在 Windows 98 金色） 现已过时，仅支持现有的驱动程序。 新适配器驱动程序应改用 DMusUART （在 Windows 98 SE 和更高版本，并在 Windows 2000 及更高版本），它实现的 UART 的功能超集。 DMusUART 是支持 DLS 下载也硬件序列化不支持的 Dmu 微型端口驱动程序的示例。 FMSynth 和 DMusUART 微型端口驱动程序的源代码现已推出的示例音频驱动程序 Windows Driver Kit (WDK) 中。
 
 下图显示了用户模式和内核模式组件 MIDI 应用程序使用到*捕获*MIDI 数据。 WDM 音频驱动程序通过将此应用程序接口 **midiIn * * * Xxx*函数。
 

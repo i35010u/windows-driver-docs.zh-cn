@@ -5,12 +5,12 @@ ms.assetid: 3eac6818-c346-47f6-b812-f98b808dc36a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_DISCONTINUITY_TIME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c21d8223fec9e08bfee378b5edb19fb762c92b7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26b11a4694eac734ce093c0863188676dc3c02ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381356"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369117"
 ---
 # <a name="oidgendiscontinuitytime"></a>OID\_GEN\_中断\_时间
 
@@ -28,9 +28,9 @@ ms.locfileid: "63381356"
 <a name="remarks"></a>备注
 -------
 
-仅[NDIS 网络接口](https://msdn.microsoft.com/library/windows/hardware/ff566527)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+仅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
 
-此 OID 返回时，该接口必须维护的统计信息计数器的不连续性时从上次计算机重新启动，开始。 例如，出现中断由于接口被禁用或关联的适配器已从计算机中删除。 有关统计信息计数器的详细信息，请参阅[OID\_代\_统计信息](oid-gen-statistics.md)。 若要获取当前时间，接口提供程序可以调用[ **NdisGetSystemUpTimeEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562675)函数。
+此 OID 返回时，该接口必须维护的统计信息计数器的不连续性时从上次计算机重新启动，开始。 例如，出现中断由于接口被禁用或关联的适配器已从计算机中删除。 有关统计信息计数器的详细信息，请参阅[OID\_代\_统计信息](oid-gen-statistics.md)。 若要获取当前时间，接口提供程序可以调用[ **NdisGetSystemUpTimeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetsystemuptimeex)函数。
 
 如果没有此类中断以来发生了接口的最后一个重新初始化此值应为零。 如果接口提供程序不会跟踪中断时间，此值应为零。
 
@@ -55,7 +55,7 @@ ms.locfileid: "63381356"
 ## <a name="see-also"></a>请参阅
 
 
-[NDIS 网络接口 Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

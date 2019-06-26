@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎 API 概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d52f3aad2e0363ddba3ad23a1cad7cd46f7cb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 19356776e5b311e00b5c21c167866b16ee685602
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366945"
 ---
 # <a name="debugger-engine-api-overview"></a>调试器引擎 API 概述
 
@@ -49,7 +49,7 @@ ms.locfileid: "56567115"
 
 [组装和拆装功能说明](assembling-and-disassembling-instructions.md)
 
-**重要**  IDebug\*接口如[ **IDebugEventCallbacks** ](https://msdn.microsoft.com/library/windows/hardware/ff550550)接口，尽管类似，COM 不是正确的 COM Api。 从托管代码中调用这些接口是一个不受支持的方案。 如果使用托管代码调用的接口，例如垃圾回收和线程所有权的问题会导致系统不稳定。
+**重要**  IDebug\*接口如[ **IDebugEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)接口，尽管类似，COM 不是正确的 COM Api。 从托管代码中调用这些接口是一个不受支持的方案。 如果使用托管代码调用的接口，例如垃圾回收和线程所有权的问题会导致系统不稳定。
 
  
 
