@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CONNECT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3f2119db4c760ac4c1c13c99cf40ee81927439
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 276398423da0151c57b16c209e4ada02287717d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371051"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358575"
 ---
 # <a name="wditlvconnectparameters"></a>WDI\_TLV\_CONNECT\_参数
 
 
-WDI\_TLV\_CONNECT\_参数是包含参数的 TLV [OID\_WDI\_任务\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/dn925948)和[OID\_WDI\_任务\_漫游](https://msdn.microsoft.com/library/windows/hardware/dn925958)。
+WDI\_TLV\_CONNECT\_参数是包含参数的 TLV [OID\_WDI\_任务\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-connect)和[OID\_WDI\_任务\_漫游](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-roam)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

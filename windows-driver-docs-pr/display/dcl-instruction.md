@@ -4,12 +4,12 @@ description: DCL 指令格式
 ms.assetid: 2833fe6a-f430-4a34-936f-04e997063671
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 02abef4420f05a1a25721c3a43105939b7245e22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0117a883bd9ac1a8bd1090b368768fdfa1d56ff4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358672"
 ---
 # <a name="dcl-instruction-format"></a>DCL 指令格式
 
@@ -40,7 +40,7 @@ DWORD 标记
 
 [目标参数标记](destination-parameter-token.md)
 
-指示寄存器号与[注册类型](https://msdn.microsoft.com/library/windows/hardware/ff569707)作为 D3DSPR\_采样器。 这些是使用此令牌中的唯一字段。
+指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_采样器。 这些是使用此令牌中的唯一字段。
 
 **输入或纹理仅注册。**
 
@@ -82,7 +82,7 @@ DWORD 标记
 
 [目标参数标记](destination-parameter-token.md)
 
-指示寄存器号与[注册类型](https://msdn.microsoft.com/library/windows/hardware/ff569707)作为 D3DSPR\_输入。 写掩码字段指示声明的组件。
+指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_输入。 写掩码字段指示声明的组件。
 
 **像素着色器 3\_0 及更高版本。**
 
@@ -107,7 +107,7 @@ DWORD 标记
 
 [目标参数标记](destination-parameter-token.md)
 
-指示寄存器号与[注册类型](https://msdn.microsoft.com/library/windows/hardware/ff569707)作为 D3DSPR\_纹理。 写掩码字段指示声明的组件。
+指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_纹理。 写掩码字段指示声明的组件。
 
 **仅注册人脸。**
 
@@ -166,7 +166,7 @@ DWORD 标记
 
 [目标参数标记](destination-parameter-token.md)
 
-指示寄存器号与[注册类型](https://msdn.microsoft.com/library/windows/hardware/ff569707)作为 D3DSPR\_输出。 写掩码字段定义哪个组件编写。
+指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_输出。 写掩码字段定义哪个组件编写。
 
 请注意几个 DCL 说明信息，其中描述了输出，可以使用相同的注册偏移量。 但是，每个 DCL 指令的写掩码组件必须不同。 例如，以下是在顶点着色器 3 中有效\_0 和更高版本：
 

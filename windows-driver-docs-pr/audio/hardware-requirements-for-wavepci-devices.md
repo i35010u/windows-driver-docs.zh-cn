@@ -14,12 +14,12 @@ keywords:
 - 拆分缓冲区帧 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d2aff4e6dddf2424cced3b47486422a289db6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: baa8d00a03d00f98f5224047aa6cf52cb10a656f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333626"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360023"
 ---
 # <a name="hardware-requirements-for-wavepci-devices"></a>WavePci 设备的硬件要求
 
@@ -51,11 +51,11 @@ WavePci 设备都需要支持散播-聚集 DMA 传输的总线 master DMA 控制
 
 -   **设备必须能够处理任意长度的数据传输。**
 
-    它应处理映射 (请参阅[ **IPortWavePciStream::GetMapping**](https://msdn.microsoft.com/library/windows/hardware/ff536909)) 大于内存页。 例如，4 千字节的传输有限的设备不符合 WavePci 的完整要求。 上支持 Microsoft Windows 的 64 位 Cpu，页大小为 8 千字节为单位，从而有可能某些映射将大于 4 千字节为单位的大小。 超过 32 千字节为单位的单个映射中的数据传输都是理论上，具体取决于物理内存碎片。 另一种极端，是可能的映射大小为 1 个字节。
+    它应处理映射 (请参阅[ **IPortWavePciStream::GetMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping)) 大于内存页。 例如，4 千字节的传输有限的设备不符合 WavePci 的完整要求。 上支持 Microsoft Windows 的 64 位 Cpu，页大小为 8 千字节为单位，从而有可能某些映射将大于 4 千字节为单位的大小。 超过 32 千字节为单位的单个映射中的数据传输都是理论上，具体取决于物理内存碎片。 另一种极端，是可能的映射大小为 1 个字节。
 
 -   **设备应处理数据传输到或从系统内存中的任何位置。**
 
-    跨 32 千字节或更大电源的两个边界的数据传输都是很可能的。 计算机现在可以包含多个 4 千兆字节的 RAM，并在这些系统中，映射可找到更高版本比 4 千兆字节在 64 位 CPU 或物理 x86 的情况下的物理内存中地址扩展 (PAE)。 若要实现在这些计算机上的最佳性能，供应商应创建支持 64 位寻址的设备。 否则，在软件中复制的数据是必需的。 一直使用 24 位寻址具有超过 16 兆字节为单位的 RAM 的系统上对设备所需的数据复制。 设备应使用而不是 WavePci WaveCyclic，如果它们不能读取或写入到任意位置在物理内存中。 驱动程序可以做出这一决定在设备启动时 (请参阅[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)) 后才有机会以确定是否达到其地址是只需访问的完整地址范围的系统内存总线。
+    跨 32 千字节或更大电源的两个边界的数据传输都是很可能的。 计算机现在可以包含多个 4 千兆字节的 RAM，并在这些系统中，映射可找到更高版本比 4 千兆字节在 64 位 CPU 或物理 x86 的情况下的物理内存中地址扩展 (PAE)。 若要实现在这些计算机上的最佳性能，供应商应创建支持 64 位寻址的设备。 否则，在软件中复制的数据是必需的。 一直使用 24 位寻址具有超过 16 兆字节为单位的 RAM 的系统上对设备所需的数据复制。 设备应使用而不是 WavePci WaveCyclic，如果它们不能读取或写入到任意位置在物理内存中。 驱动程序可以做出这一决定在设备启动时 (请参阅[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)) 后才有机会以确定是否达到其地址是只需访问的完整地址范围的系统内存总线。
 
 -   **设备应处理数据传输使用任意的对齐方式。**
 

@@ -13,12 +13,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d0d544118b6e030ed46b1008fc4116f6a4af724
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e12356fa23256abf0a4e9692876f24a56afa56a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355806"
 ---
 # <a name="supporting-acpi-devices"></a>支持 ACPI 设备
 
@@ -27,7 +27,7 @@ ms.locfileid: "63330889"
 
 ACPI 设备包括低级别系统设备，如电池、 热量区域和其他系统的 ACPI 名称空间中定义的设备。 ACPI 名称空间是 ACPI BIOS 用于引用对象的分层命名空间。
 
-系统提供的组合的操作[ACPI 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540493)和 ACPI BIOS 支持 ACPI 设备的基本功能并对操作系统的其余部分是透明的。 ACPI 设备指定由 ACPI 系统描述表中的定义块。 此外，设备的定义块指定的操作区域，指定用来访问设备数据的设备内存的连续块。
+系统提供的组合的操作[ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)和 ACPI BIOS 支持 ACPI 设备的基本功能并对操作系统的其余部分是透明的。 ACPI 设备指定由 ACPI 系统描述表中的定义块。 此外，设备的定义块指定的操作区域，指定用来访问设备数据的设备内存的连续块。
 
 若要增强的 ACPI 设备功能，供应商可以提供与通过提供由驱动程序的操作区域 ACPI BIOS 通信 WDM 功能驱动程序。 ACPI 驱动程序通过调用提供的功能驱动程序的操作区域处理程序来访问运营区域。
 
@@ -51,6 +51,6 @@ ACPI 设备包括低级别系统设备，如电池、 热量区域和其他系�
 
 [ACPI 设备功能驱动程序的操作](operation-of-an-acpi-device-function-driver.md)
 
-有关系统提供支持例程，支持 ACPI 设备功能的驱动程序，请参阅[ACPI 操作区域处理程序引用](https://msdn.microsoft.com/library/windows/hardware/ff536132)。
+有关系统提供支持例程，支持 ACPI 设备功能的驱动程序，请参阅[ACPI 操作区域处理程序引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi/index)。
 
 有关 ACPI 设备和命名空间的详细信息，请参阅[高级配置和电源接口 (ACPI) 规范](https://go.microsoft.com/fwlink/p/?linkid=866846)。

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3010002b73323b6f086d1e486ef633fa54481180
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d71b143e2a15f8997fb29e3c8ae36cc19eac8e3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353462"
 ---
 # <a name="tracelog-command-syntax"></a>Tracelog 命令语法
 
@@ -77,7 +77,7 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 
 使用 Tracelog **EnumerateTraceGuids**函数，实现**tracelog enumguid**命令。 有关此函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-<span id="_______-enumguidex___guid_"></span><span id="_______-ENUMGUIDEX___GUID_"></span> **-enumguidex** \[**\#**<em>guid</em>\]  
+<span id="_______-enumguidex___guid_"></span><span id="_______-ENUMGUIDEX___GUID_"></span> **-enumguidex** \[ **\#** <em>guid</em>\]  
 枚举 （或列出） 可以在系统上的提供商[注册](registered-provider.md)使用事件跟踪 Windows (ETW)。 EnumguidEx 显示的说明，请参阅[Tracelog Enumguid 显示](tracelog-enumguid-display.md)。
 
 使用 Tracelog **EnumerateTraceGuidsEx**函数，实现**tracelog enumguidex**命令。 有关此函数的详细信息，请参阅 Microsoft Windows SDK 文档。
@@ -85,7 +85,7 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 <span id="_______-flush___LoggerName__"></span><span id="_______-flush___loggername__"></span><span id="_______-FLUSH___LOGGERNAME__"></span> **-flush** \[*LoggerName*\]   
 刷新活动的缓冲区*LoggerName*跟踪会话。 如果*LoggerName*未指定，则跟踪日志刷新的缓冲区[NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)。
 
-这强制刷新是除了跟踪消息缓冲区已满时以及当停止跟踪会话时，会自动执行刷新，此外还包括激活的刷新计时器刷新 (**-ft**)。
+这强制刷新是除了跟踪消息缓冲区已满时以及当停止跟踪会话时，会自动执行刷新，此外还包括激活的刷新计时器刷新 ( **-ft**)。
 
 时刷新跟踪会话的缓冲区，缓冲区中的事件会立即传递到跟踪日志或跟踪使用者。
 
@@ -93,16 +93,16 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 
 使用 Tracelog **FlushTrace**函数，实现**tracelog-刷新**命令。 有关此函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-可以使用**tracelog-刷新**命令 **-f** *Logfile*选项以刷新当前正在对指定的缓冲区的跟踪消息[跟踪日志](trace-log.md)(.etl) 文件。 此参数的有效期仅为缓冲的跟踪会话 (**-缓冲**); 对于其他跟踪会话类型， **-f**参数将被忽略。
+可以使用**tracelog-刷新**命令 **-f** *Logfile*选项以刷新当前正在对指定的缓冲区的跟踪消息[跟踪日志](trace-log.md)(.etl) 文件。 此参数的有效期仅为缓冲的跟踪会话 ( **-缓冲**); 对于其他跟踪会话类型， **-f**参数将被忽略。
 
 此刷新会影响仅缓冲区的当前内容。 它不重未来的跟踪消息定向到跟踪日志。
 
-<span id="_______-l______"></span><span id="_______-L______"></span> **-l** \[*-lp*\]  
+<span id="_______-l______"></span><span id="_______-L______"></span> **-l** \[ *-lp*\]  
 列出了在计算机上运行的所有跟踪会话的属性。
 
 如果传递 **-lp**选项时，Tracelog 还将列出为每个会话启用的所有提供程序。
 
-<span id="_______-q___LoggerName_"></span><span id="_______-q___loggername_"></span><span id="_______-Q___LOGGERNAME_"></span> **-q** \[*LoggerName*\] \[*-lp*\]  
+<span id="_______-q___LoggerName_"></span><span id="_______-q___loggername_"></span><span id="_______-Q___LOGGERNAME_"></span> **-q** \[*LoggerName*\] \[ *-lp*\]  
 列出 （查询） 指定的跟踪会话的属性。 如果未指定*LoggerName*，Tracelog 查询[NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)。
 
 如果传递 **-lp**选项时，Tracelog 还将列出所有启用到该会话的提供程序。
@@ -121,7 +121,7 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 
 *LoggerName*可以任何名称符合 Windows 命名准则，最多 1,024 个字符。 如果名称包含空格，将名称括在引号中。 Tracelog 不区分大小写。
 
-默认值是 **"NT 内核记录器"**。 如果省略此参数，启动 Tracelog [NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)并声明错误，如果您使用**guid**参数来指定不同的跟踪提供程序。
+默认值是 **"NT 内核记录器"** 。 如果省略此参数，启动 Tracelog [NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)并声明错误，如果您使用**guid**参数来指定不同的跟踪提供程序。
 
 <span id="_______-stop__LoggerName_"></span><span id="_______-stop__loggername_"></span><span id="_______-STOP__LOGGERNAME_"></span> **-stop** \[*LoggerName*\]  
 在指定的跟踪会话中禁用提供程序，然后终止该会话。
@@ -130,8 +130,8 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 
 如果在启动[启动时全局记录器会话](boot-time-global-logger-session.md)其中跟踪了内核事件，需要使用该命令**tracelog-停止"NT 内核记录器"** 或**tracelog-停止 GlobalLogger**来将其停止。 当你使用任一命令以停止[全局记录器跟踪会话](global-logger-trace-session.md)跟踪会话，Tracelog 停止提供程序，但不重置注册表项的值。 若要重置全局记录器注册表项的值，请使用**tracelog-删除**。
 
-<span id="-systemrundown__LoggerName_"></span><span id="-systemrundown__loggername_"></span><span id="-SYSTEMRUNDOWN__LOGGERNAME_"></span>**-systemrundown** \[*LoggerName*\]  
-请求登录断开事件定向到 SystemTraceProvider *LoggerName*会话。 请参阅[配置和启动 SystemTraceProvider 会话](https://msdn.microsoft.com/library/windows/desktop/jj883720)有关启动跟踪会话信息。
+<span id="-systemrundown__LoggerName_"></span><span id="-systemrundown__loggername_"></span><span id="-SYSTEMRUNDOWN__LOGGERNAME_"></span> **-systemrundown** \[*LoggerName*\]  
+请求登录断开事件定向到 SystemTraceProvider *LoggerName*会话。 请参阅[配置和启动 SystemTraceProvider 会话](https://docs.microsoft.com/windows/desktop/ETW/configuring-and-starting-a-systemtraceprovider-session)有关启动跟踪会话信息。
 
 此命令才在 Windows 8 和更高版本的 Windows 上可用。
 
@@ -147,15 +147,15 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 <span id="_______-update_____LoggerName__"></span><span id="_______-update_____loggername__"></span><span id="_______-UPDATE_____LOGGERNAME__"></span> **-update** \[*LoggerName*\]   
 **Tracelog-更新**命令将在运行时更改跟踪会话的属性。
 
-在**tracelog-更新**命令，则-**guid**仅更新专用跟踪会话时，参数是有效 (**-um**)。若要添加或删除提供程序从标准跟踪会话，会话正在运行时，使用**tracelog-启用**并**tracelog-禁用**命令。
+在**tracelog-更新**命令，则-**guid**仅更新专用跟踪会话时，参数是有效 ( **-um**)。若要添加或删除提供程序从标准跟踪会话，会话正在运行时，使用**tracelog-启用**并**tracelog-禁用**命令。
 
-如果启动一个跟踪日志会话 (**-f**)，可以更新到实时会话 (**-rt**)，但消息仍要发送到跟踪使用者除了跟踪日志。 通过更新，不能消除在会话中的日志。 但是，您可以添加到跟踪日志会话的实时消息传递之前，必须首先使用**tracelog-刷新**命令来刷新缓冲区。
+如果启动一个跟踪日志会话 ( **-f**)，可以更新到实时会话 ( **-rt**)，但消息仍要发送到跟踪使用者除了跟踪日志。 通过更新，不能消除在会话中的日志。 但是，您可以添加到跟踪日志会话的实时消息传递之前，必须首先使用**tracelog-刷新**命令来刷新缓冲区。
 
-如果启动实时会话 (**-rt**)，然后更新到跟踪日志会话 (**-f**)，新的跟踪消息将无法再直接发送到跟踪使用者; 它们只发送给跟踪日志。 要将跟踪日志添加到实时跟踪会话，请同时使用 **-rt**并 **-f**中**tracelog-更新**命令。 您可以添加到跟踪日志会话的实时消息传递之前，必须先使用**tracelog-刷新**命令来刷新缓冲区。
+如果启动实时会话 ( **-rt**)，然后更新到跟踪日志会话 ( **-f**)，新的跟踪消息将无法再直接发送到跟踪使用者; 它们只发送给跟踪日志。 要将跟踪日志添加到实时跟踪会话，请同时使用 **-rt**并 **-f**中**tracelog-更新**命令。 您可以添加到跟踪日志会话的实时消息传递之前，必须先使用**tracelog-刷新**命令来刷新缓冲区。
 
 无法更新[全局记录器跟踪会话](global-logger-trace-session.md)。
 
-对专用 （用户模式） 跟踪会话中，可以更新日志文件名称 (**-f**) 和刷新计时器值 (**-ft**)。
+对专用 （用户模式） 跟踪会话中，可以更新日志文件名称 ( **-f**) 和刷新计时器值 ( **-ft**)。
 
 若要更新的标志和级别，使用**tracelog-启用**命令以重新启用具有新标志或级别的提供程序。
 
@@ -177,7 +177,7 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 <span id="_______-b_______BufferSize______"></span><span id="_______-b_______buffersize______"></span><span id="_______-B_______BUFFERSIZE______"></span> **-b** *BufferSize*   
 指定大小，以 kb 为单位，每个缓冲区分配的跟踪会话。 默认值取决于数目的处理器、 物理内存量和中使用的操作系统。
 
-<span id="-bt_n"></span><span id="-BT_N"></span>**-bt** *n*  
+<span id="-bt_n"></span><span id="-BT_N"></span> **-bt** *n*  
 指定的数量 (*n*) 的缓冲区填满之前开始将刷新它们。 此选项才可用在 Windows 8.1 中启动。
 
 <span id="_______-buffering______"></span><span id="_______-BUFFERING______"></span> **-buffering**   
@@ -199,7 +199,7 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 使用 **-pid**来指定进程。 不要使用**guid**与 **-critsec**。 系统定义的自定义 GUID (CritSecGuid) 的关键部分跟踪。 不能使用 **-堆**并 **-critsec**在同一命令中。
 
 <span id="_______-dpcisr______"></span><span id="_______-DPCISR______"></span> **-dpcisr**   
-启用延迟的过程调用 (Dpc) 的跟踪中断服务请求 (Isr) 映像加载事件 (**-i m g**)，并在内核中的上下文切换。 仅为 NT 内核记录器跟踪会话，此参数才有效。
+启用延迟的过程调用 (Dpc) 的跟踪中断服务请求 (Isr) 映像加载事件 ( **-i m g**)，并在内核中的上下文切换。 仅为 NT 内核记录器跟踪会话，此参数才有效。
 
 仅在跟踪日志包含在 Windows 驱动程序工具包适用于 Windows Vista 和更高版本的 WDK 版本中支持此选项。 **– 对 dpcisr**选项不能用于 **-eflag**选项。
 
@@ -211,10 +211,10 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 <span id="_______-enableproperty________n______"></span><span id="_______-ENABLEPROPERTY________N______"></span> **-enableproperty** *n*   
 请参阅的说明*EnabledProperties*中*EnableParameters*结构作为参数传递给[EnableTraceEx2](https://go.microsoft.com/fwlink/p/?linkid=155061)说明和支持的值。
 
-<span id="-EventIdFilter_____-in-out_n_id1_id2_..."></span><span id="-eventidfilter_____-in-out_n_id1_id2_..."></span><span id="-EVENTIDFILTER_____-IN-OUT_N_ID1_ID2_..."></span>**-EventIdFilter** {**-in**|**-out**} **** *n* **** *id1 id2 ...*  
+<span id="-EventIdFilter_____-in-out_n_id1_id2_..."></span><span id="-eventidfilter_____-in-out_n_id1_id2_..."></span><span id="-EVENTIDFILTER_____-IN-OUT_N_ID1_ID2_..."></span> **-EventIdFilter** { **-in**| **-out**} **** *n* **** *id1 id2 ...*  
 指定与事件 id 筛选器*n*事件 id (最大 64 事件 id 允许)。 此选项才可用在 Windows 8.1 中启动。
 
-<span id="___-ExeFilter____Executable_file____Executable_file_...__"></span><span id="___-exefilter____executable_file____executable_file_...__"></span><span id="___-EXEFILTER____EXECUTABLE_FILE____EXECUTABLE_FILE_...__"></span> **-ExeFilter** *Executable\_file* \[**;** *Executable\_file* ...\]   
+<span id="___-ExeFilter____Executable_file____Executable_file_...__"></span><span id="___-exefilter____executable_file____executable_file_...__"></span><span id="___-EXEFILTER____EXECUTABLE_FILE____EXECUTABLE_FILE_...__"></span> **-ExeFilter** *Executable\_file* \[ **;** *Executable\_file* ...\]   
 指定要筛选的可执行文件的名称。 可以指定文件的列表。 单独使用分号分隔的文件的名称。 排除未列出的文件。 此选项才可用在 Windows 8.1 中启动。
 
 <span id="_______-f___LogFile_"></span><span id="_______-f___logfile_"></span><span id="_______-F___LOGFILE_"></span> **-f** \[*LogFile*\]  
@@ -244,7 +244,7 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 
 请参阅**tracelog-刷新命令**。
 
-<span id="_______-guid___GUID___GUIDFile_"></span><span id="_______-guid___guid___guidfile_"></span><span id="_______-GUID___GUID___GUIDFILE_"></span> **-guid** {*\#GUID* | *file* | *\*name*}  
+<span id="_______-guid___GUID___GUIDFile_"></span><span id="_______-guid___guid___guidfile_"></span><span id="_______-GUID___GUID___GUIDFILE_"></span> **-guid** { *\#GUID* | *file* |  *\*name*}  
 使指定的跟踪提供程序。
 
 如果指定的文件，跟踪日志将在文件中指定的所有提供程序启用跟踪。 该文件的格式必须为：
@@ -255,9 +255,9 @@ guid1;matchanykeyword;level
 guid2;matchanykeyword;level
 ```
 
-如果指定了提供程序 GUID，GUID 必须为前面带有数字符号 (*\#*)。
+如果指定了提供程序 GUID，GUID 必须为前面带有数字符号 ( *\#* )。
 
-如果指定的提供程序名称，名称必须为前面带有星号 (*\**)。 然后会将名称转换为使用的相同算法的 GUID。NET 的事件源。 然后将使用此 GUID 来启用的提供程序。
+如果指定的提供程序名称，名称必须为前面带有星号 ( *\** )。 然后会将名称转换为使用的相同算法的 GUID。NET 的事件源。 然后将使用此 GUID 来启用的提供程序。
 
 如果省略此参数，则任何跟踪提供程序将消息不发送到跟踪会话。 但是，从开始跟踪会话之后, 您可以使用**tracelog-启用**命令以启用会话的一个或多个跟踪提供程序。
 
@@ -276,7 +276,7 @@ guid2;matchanykeyword;level
 <span id="_______-hf______"></span><span id="_______-HF______"></span> **-hf**   
 启用跟踪的硬页面错误 （需要磁盘访问，以解决的页面错误）。 仅为 NT 内核记录器跟踪会话，此参数才有效。
 
-<span id="-hybridshutdown_stoppersist"></span><span id="-HYBRIDSHUTDOWN_STOPPERSIST"></span>**-hybridshutdown** {**stop**|**persist**}  
+<span id="-hybridshutdown_stoppersist"></span><span id="-HYBRIDSHUTDOWN_STOPPERSIST"></span> **-hybridshutdown** {**stop**|**persist**}  
 控制混合关闭记录器行为。 此选项才可用在 Windows 8 中启动。
 
 *停止*将导致系统将执行混合关闭时停止该会话。
@@ -301,7 +301,7 @@ guid2;matchanykeyword;level
 
 有关在内核调试程序中显示跟踪消息的信息，请参阅注释。
 
-**-Lbr** *EventName\[**+** EventName+...\]:Filter\[**,** Filter,...\]*  
+**-Lbr** *EventName\[ **+** EventName+...\]:Filter\[ **,** Filter,...\]*  
 在内核事件配置 LBR 跟踪。
 
 使用 **-eflag 帮助**有关内核事件的列表。
@@ -351,7 +351,7 @@ guid2;matchanykeyword;level
 
 使用时 **-newfile**，则还必须使用 **-f** *日志文件*参数和的值*日志文件*必须包含一个名称字符 **%d**以指示十进制模式-例如，trace%d.etl。 否则，该命令将失败，错误\_无效\_名称。 Windows 会创建一个新文件每次递增的十进制值中的文件的名称。
 
-此参数不是有效，且预先分配 (**-prealloc**)、 循环日志记录 (**-cir**)、 与 NT 内核记录器会话或专用跟踪会话。
+此参数不是有效，且预先分配 ( **-prealloc**)、 循环日志记录 ( **-cir**)、 与 NT 内核记录器会话或专用跟踪会话。
 
 <span id="_______-nodisk______"></span><span id="_______-NODISK______"></span> **-nodisk**   
 物理磁盘 I/O 事件的禁用跟踪。 仅为 NT 内核记录器跟踪会话，此参数才有效。
@@ -383,13 +383,13 @@ TCP/IP 和用户数据报协议 (UDP) 事件的禁用跟踪。 仅为 NT 内核�
 <span id="_______-pf______"></span><span id="_______-PF______"></span> **-pf**   
 启用跟踪的所有页面错误。 仅为 NT 内核记录器跟踪会话，此参数才有效。
 
-<span id="___________________-PkgIdFilter____Package_Full_Name____Package_Full_Name..._"></span><span id="___________________-pkgidfilter____package_full_name____package_full_name..._"></span><span id="___________________-PKGIDFILTER____PACKAGE_FULL_NAME____PACKAGE_FULL_NAME..._"></span> **-PkgIdFilter** *Package Full Name* \[ **;***Package Full Name*...\]  
+<span id="___________________-PkgIdFilter____Package_Full_Name____Package_Full_Name..._"></span><span id="___________________-pkgidfilter____package_full_name____package_full_name..._"></span><span id="___________________-PKGIDFILTER____PACKAGE_FULL_NAME____PACKAGE_FULL_NAME..._"></span> **-PkgIdFilter** *Package Full Name* \[ * *;***Package Full Name*...\]  
 指定包 ID 筛选器。 可以指定的包文件的列表。 单独使用分号分隔的文件的名称。
 
-<span id="___-PkgAppIdFilter_____PRAID____PRAID..._"></span><span id="___-pkgappidfilter_____praid____praid..._"></span><span id="___-PKGAPPIDFILTER_____PRAID____PRAID..._"></span> **-PkgAppIdFilter** *PRAID* \[**;***PRAID*...\]  
+<span id="___-PkgAppIdFilter_____PRAID____PRAID..._"></span><span id="___-pkgappidfilter_____praid____praid..._"></span><span id="___-PKGAPPIDFILTER_____PRAID____PRAID..._"></span> **-PkgAppIdFilter** *PRAID* \[* *;***PRAID*...\]  
 指定相对于包的应用程序标识符 (PRAID) 筛选器。 PRAID 是内包的应用程序的唯一标识符。 您可以指定多个*PRAID*。 单独使用分号分隔的 Id。 此选项是适用于 UWP 应用在 Windows 8.1 中启动。
 
-<span id="-Pmc_Ctrs_Events"></span><span id="-pmc_ctrs_events"></span><span id="-PMC_CTRS_EVENTS"></span>**-Pmc** *Ctr1,Ctr2,...:Name+Name+...*  
+<span id="-Pmc_Ctrs_Events"></span><span id="-pmc_ctrs_events"></span><span id="-PMC_CTRS_EVENTS"></span> **-Pmc** *Ctr1,Ctr2,...:Name+Name+...*  
 配置性能监视器计数器 (PMC) 采样上指定的内核事件。 此选项才可用在 Windows 8 中启动。
 
 使用 **-ProfileSource 帮助**计数器的列表。
@@ -400,13 +400,13 @@ TCP/IP 和用户数据报协议 (UDP) 事件的禁用跟踪。 仅为 NT 内核�
 
 此参数需要 **-seq**或 **-cir**与*MaxFileSize*。 它不是有效，且 **-newfile**。
 
-<span id="-ProfileSource_src"></span><span id="-profilesource_src"></span><span id="-PROFILESOURCE_SRC"></span>**-ProfileSource** *src*  
+<span id="-ProfileSource_src"></span><span id="-profilesource_src"></span><span id="-PROFILESOURCE_SRC"></span> **-ProfileSource** *src*  
 配置要使用的分析源。 对于源的列表，可以使用命令**tracelog-ProfileSource 帮助**。 此选项才可用在 Windows 8 中启动。
 
 此选项才适用于 Windows 8 和更高版本的 Windows。
 
 <span id="_______-rt______"></span><span id="_______-RT______"></span> **-rt**   
-启动一个实时跟踪会话。 (跟踪日志会话 (**-f**) 是默认值。)
+启动一个实时跟踪会话。 (跟踪日志会话 ( **-f**) 是默认值。)
 
 如果您使用 **-rt**并 **-f**，跟踪消息发送到跟踪使用者和事件跟踪日志文件。 不能使用 **-rt**或 **-f**与 **-缓冲**。 有关详细信息，请参阅[跟踪会话](trace-session.md)。
 
@@ -416,7 +416,7 @@ TCP/IP 和用户数据报协议 (UDP) 事件的禁用跟踪。 仅为 NT 内核�
 <span id="_______-sessionguid______"></span><span id="_______-SESSIONGUID______"></span> **-sessionguid**   
 指定自动记录器会话 GUID 注册表值。
 
-<span id="-SetProfInt_n_src"></span><span id="-setprofint_n_src"></span><span id="-SETPROFINT_N_SRC"></span>**-SetProfInt** *n* **** *src*  
+<span id="-SetProfInt_n_src"></span><span id="-setprofint_n_src"></span><span id="-SETPROFINT_N_SRC"></span> **-SetProfInt** *n* **** *src*  
 > [!IMPORTANT]
 > 不建议更改的分析时间间隔。
 
@@ -433,11 +433,11 @@ TCP/IP 和用户数据报协议 (UDP) 事件的禁用跟踪。 仅为 NT 内核�
 **-stackwalk** \[*事件*\]  
 指定要收集堆栈上的内核事件。 使用 **-eflag 帮助**有关内核事件的列表。 此参数是仅适用于 NT 内核记录器或系统记录器跟踪会话。
 
-<span id="________________-StackWalkFilter_-in-outnid1_id2_..."></span><span id="________________-stackwalkfilter_-in-outnid1_id2_..."></span><span id="________________-STACKWALKFILTER_-IN-OUTNID1_ID2_..."></span> **-StackWalkFilter** {**-in**|**-out**}*nid1 id2 ...*  
+<span id="________________-StackWalkFilter_-in-outnid1_id2_..."></span><span id="________________-stackwalkfilter_-in-outnid1_id2_..."></span><span id="________________-STACKWALKFILTER_-IN-OUTNID1_ID2_..."></span> **-StackWalkFilter** { **-in**| **-out**}*nid1 id2 ...*  
 指定与事件 ID 筛选器*n*事件 Id （最大 64 事件 Id 允许）。 此选项才可用在 Windows 8.1 中启动。
 
-<span id="-systemlogger"></span><span id="-SYSTEMLOGGER"></span>**-systemlogger**  
-记录器可以接收 SystemTraceProvider 事件。 请参阅[配置和启动 SystemTraceProvider 会话](https://msdn.microsoft.com/library/windows/desktop/jj883720)。 此选项才可用在 Windows 8 中启动。
+<span id="-systemlogger"></span><span id="-SYSTEMLOGGER"></span> **-systemlogger**  
+记录器可以接收 SystemTraceProvider 事件。 请参阅[配置和启动 SystemTraceProvider 会话](https://docs.microsoft.com/windows/desktop/ETW/configuring-and-starting-a-systemtraceprovider-session)。 此选项才可用在 Windows 8 中启动。
 
 <span id="_______-um______"></span><span id="_______-UM______"></span> **-um**   
 指定此参数是必需的专用跟踪会话的专用跟踪会话。
@@ -461,7 +461,7 @@ TCP/IP 和用户数据报协议 (UDP) 事件的禁用跟踪。 仅为 NT 内核�
 
 **-UsePerfCounter**是默认计时器事件跟踪。
 
-<span id="_______-_____help___-_______"></span><span id="_______-_____HELP___-_______"></span> **-? |帮助 |-?**   
+<span id="_______-_____help___-_______"></span><span id="_______-_____HELP___-_______"></span> **-? |帮助 |-?**    
 显示用法信息。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
@@ -484,9 +484,9 @@ Windows 使用跟踪会话用于多种用途，其中一些关键正确操作。
 
 跟踪会话可以是实时跟踪会话和跟踪日志会话。 如果包括 **-rt** （实时） 和 **-f** （日志会话） 参数在同一命令中，系统会发送缓冲区内容日志和跟踪使用者。 但是，可以添加到跟踪日志会话的实时消息传递之前，缓冲区必须刷新通过使用**tracelog-刷新**命令。
 
-如果启动实时会话 (**-rt**)，然后更新到日志会话 (**-f**)，任何新的跟踪消息只发送给日志文件。 若要添加到实时会话日志文件，可以同时使用 **-rt**并 **-f**中**tracelog-更新**命令。
+如果启动实时会话 ( **-rt**)，然后更新到日志会话 ( **-f**)，任何新的跟踪消息只发送给日志文件。 若要添加到实时会话日志文件，可以同时使用 **-rt**并 **-f**中**tracelog-更新**命令。
 
-如果在启动日志会话 (**-f**)，可以更新到实时会话 (**-rt**)，但继续发送到跟踪使用者除了日志消息。 通过更新，不能消除在会话中的日志。
+如果在启动日志会话 ( **-f**)，可以更新到实时会话 ( **-rt**)，但继续发送到跟踪使用者除了日志消息。 通过更新，不能消除在会话中的日志。
 
 若要显示或将跟踪消息保存在实时的一次性仅会话中，您还可以使用跟踪使用者，如[Tracefmt](tracefmt.md)，或使用[TraceView](traceview.md)，这是一个跟踪控制器 （如跟踪日志） 和跟踪使用者。 在使用 Tracefmt，请务必包括 **-rt** Tracefmt 命令中的参数。
 
@@ -516,7 +516,7 @@ Windows 使用跟踪会话用于多种用途，其中一些关键正确操作。
 
 若要使用 NT 内核记录器启动跟踪会话，请省略中的会话名称**tracelog-开始**命令，并不使用**guid**参数来指定提供程序 GUID 文件。 **"NT 内核记录器"** 是默认会话名称。
 
-如果未指定会话名称，或为 **"NT 内核记录器"**，在系统启动的 NT 内核记录器跟踪会话，即使使用**guid**参数而不指定 GUID **SystemTraceControlGUID**，NT 内核记录器跟踪会话的控件的 GUID。 如果您指定不同的 GUID，则系统返回错误，（"系统记录器不接受应用程序 guid"），但仍能开始 NT 内核记录器跟踪会话。
+如果未指定会话名称，或为 **"NT 内核记录器"** ，在系统启动的 NT 内核记录器跟踪会话，即使使用**guid**参数而不指定 GUID **SystemTraceControlGUID**，NT 内核记录器跟踪会话的控件的 GUID。 如果您指定不同的 GUID，则系统返回错误，（"系统记录器不接受应用程序 guid"），但仍能开始 NT 内核记录器跟踪会话。
 
 默认情况下，当 Tracelog 启动的 NT 内核记录器跟踪会话，这样的进程、 线程、 物理磁盘 I/O、 跟踪和 TCP/IP 事件，但可以使用参数来禁用这些事件的跟踪和启用其他事件的跟踪。
 

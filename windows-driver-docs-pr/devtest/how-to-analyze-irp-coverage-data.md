@@ -6,12 +6,12 @@ keywords:
 - 驱动程序覆盖范围工具包 WDK，分析数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd6779cd00fb756fccc96f5a057e1eb3ad7110c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55bd5232a9881c70eb66a335386229a2e8019011
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329731"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356501"
 ---
 # <a name="how-to-analyze-irp-coverage-data"></a>如何分析 IRP 覆盖范围数据
 
@@ -26,7 +26,7 @@ ms.locfileid: "63329731"
 
 对于本主题中，我们使用，例如，从测试计算机上的设备节点 (devnode) 已启用的 IRP 覆盖率数据生成报表。 Devnode 是 9740，和 IRP 覆盖率先前通过运行已对 devnode**启用 IRP 覆盖率数据集合**在测试计算机上的工具。
 
-有关设置 WDK 和 Visual Studio 测试环境的信息，请参阅[方法如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)。 有关选择和配置测试和工具参数的信息，请参阅[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)并[设备基础测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)。
+有关设置 WDK 和 Visual Studio 测试环境的信息，请参阅[方法如何测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 有关选择和配置测试和工具参数的信息，请参阅[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)并[设备基础测试参数](https://docs.microsoft.com/windows-hardware/drivers)。
 
 IRP 覆盖率数据收集后，运行来生成此 devnode IRP 覆盖范围报表**显示收集 IRP 覆盖率数据**在测试计算机上的工具。
 

@@ -9,12 +9,12 @@ keywords:
 - 可取消 Irp WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25b2fd53bf4b3079839853dac31f6475d17279b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a5947725b86a7f4221a1e06d56d8f7e0e8b647e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345434"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355467"
 ---
 # <a name="synchronizing-irp-cancellation"></a>同步 IRP 取消
 
@@ -26,13 +26,13 @@ ms.locfileid: "63345434"
 
 -   驱动程序例程调用之后，但队列 IRP 之前。
 
--   后一个驱动程序将调用例程，但之前尝试处理 IRP。 例如，IRP 的驱动程序后可能被取消[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)调用例程时，之前*StartIo*例程从设备队列中移除 IRP。
+-   后一个驱动程序将调用例程，但之前尝试处理 IRP。 例如，IRP 的驱动程序后可能被取消[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)调用例程时，之前*StartIo*例程从设备队列中移除 IRP。
 
 -   在驱动程序后例程取消排队 IRP，但它之前启动请求的 I/O。
 
 请注意一个驱动程序排队 IRP，并释放任何保护该队列的自旋锁后，另一个线程可以访问和更改 IRP。 原始线程恢复的位置 — 甚至尽快下一行代码 — IRP 可能已被取消或否则更改。
 
-驱动程序可以使用取消安全 IRP 队列框架实现 IRP 排队。 然后将系统[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程会自动处理同步，以便安全地取消 Irp 的驱动程序。 请参阅[取消安全 IRP 队列](cancel-safe-irp-queues.md)有关详细信息。 否则，驱动程序必须实现其自己的同步。
+驱动程序可以使用取消安全 IRP 队列框架实现 IRP 排队。 然后将系统[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程会自动处理同步，以便安全地取消 Irp 的驱动程序。 请参阅[取消安全 IRP 队列](cancel-safe-irp-queues.md)有关详细信息。 否则，驱动程序必须实现其自己的同步。
 
 IRP 的以下成员包含有关取消的信息：
 

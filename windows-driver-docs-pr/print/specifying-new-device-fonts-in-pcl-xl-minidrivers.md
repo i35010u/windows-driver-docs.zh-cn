@@ -8,12 +8,12 @@ keywords:
 - 字体 WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90596e8d09a7a10edb939e19cf1063a392e81bc3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c4e75ba4c434bc53a3e9175824939a9f40634971
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372074"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355094"
 ---
 # <a name="specifying-new-device-fonts-in-pcl-xl-minidrivers"></a>在 PCL XL 微型驱动程序中指定新的设备字体
 
@@ -25,13 +25,13 @@ ms.locfileid: "63372074"
 
 UFM 文件采用以下格式：
 
-一个[ **UNIFM\_HDR** ](https://msdn.microsoft.com/library/windows/hardware/ff563587)结构，它可用作 UFM 文件的标头
+一个[ **UNIFM\_HDR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_unifm_hdr)结构，它可用作 UFM 文件的标头
 
-一个[ **UNIDRVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff562872)结构
+一个[ **UNIDRVINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_unidrvinfo)结构
 
-[ **IFIMETRICS** ](https://msdn.microsoft.com/library/windows/hardware/ff567418)结构
+[ **IFIMETRICS** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_ifimetrics)结构
 
-[ **EXTTEXTMETRIC** ](https://msdn.microsoft.com/library/windows/hardware/ff548801)结构
+[ **EXTTEXTMETRIC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_exttextmetric)结构
 
 字符宽度表
 

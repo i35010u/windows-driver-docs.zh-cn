@@ -12,12 +12,12 @@ keywords:
 - 合成器 WDK 音频，语音分配
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b55579b261ddf9fe7e45bd5ba010ce5332da8f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 653566fc7e8bad546fbc33b44f92614bcabadbf8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354134"
 ---
 # <a name="voice-allocation"></a>语音分配
 
@@ -47,7 +47,7 @@ DirectMusic synths-硬件和软件 — 应支持多个实例，以便最大限�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">时间</th>
+<th align="left">Time</th>
 <th align="left">请求</th>
 <th align="left">可用池</th>
 <th align="left">动态池</th>
@@ -118,7 +118,7 @@ DirectMusic synths-硬件和软件 — 应支持多个实例，以便最大限�
 
 请注意，DirectSound 缓冲区实际分配，出于可读性目的表中组合在一起。
 
-立即创建合成器 pin 实例后，应根据其不分配任何语音。 创建过程中后不久, [ **KSPROPERTY\_合成\_PORTPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff537405)接收到的属性项。 此外，此属性项指示是要与此实例相关联的语音数。 此项目还提供了无法分配有机会在所有请求的语音的情况下报告动态池的实际新大小的微型端口驱动程序。
+立即创建合成器 pin 实例后，应根据其不分配任何语音。 创建过程中后不久, [ **KSPROPERTY\_合成\_PORTPARAMETERS** ](https://docs.microsoft.com/previous-versions/ff537405(v=vs.85))接收到的属性项。 此外，此属性项指示是要与此实例相关联的语音数。 此项目还提供了无法分配有机会在所有请求的语音的情况下报告动态池的实际新大小的微型端口驱动程序。
 
  
 

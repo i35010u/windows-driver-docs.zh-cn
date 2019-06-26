@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfce585a92100ceb8f541839671e1e1edbc8b434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 471f315bfdfdf1d4e9db4b29da31e13377a9175e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379692"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355536"
 ---
 # <a name="mrxdevfcbxxxcontrolfile-routine"></a>MRxDevFcbXXXControlFile routine
 
 
-*MRxDevFcbXXXControlFile*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)将传递给网络微型重定向的设备 FCB 控件请求 （IOCTL 或 FSCTL 请求）。
+*MRxDevFcbXXXControlFile*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)将传递给网络微型重定向的设备 FCB 控件请求 （IOCTL 或 FSCTL 请求）。
 
 <a name="syntax"></a>语法
 ------
@@ -131,7 +131,7 @@ NTSTATUS MRxDevFcbXXXControlFile(
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxStart**](https://msdn.microsoft.com/library/windows/hardware/ff550829)
+[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)
 
 [**MRxStop**](mrxstop.md)
 

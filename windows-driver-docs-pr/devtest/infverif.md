@@ -4,12 +4,12 @@ description: InfVerif (InfVerif.exe) 是一种工具，可用于测试的驱动�
 ms.assetid: 6F565E1C-C6FC-4637-B476-FE4E4672CCC3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaed883fbba4d9b9186829d0af0a269fd4763803
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e90e3fc5057b0c038bdb69ea9b0d9a28342f237
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360772"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354800"
 ---
 # <a name="infverif"></a>InfVerif
 
@@ -62,9 +62,9 @@ InfVerif 工具将报告以下类型的错误/警告：
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[安装通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/installing_a_universal_driver)
+[安装通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
-[Using a Universal INF File](https://msdn.microsoft.com/library/windows/hardware/dn941087)（使用通用 INF 文件）
+[Using a Universal INF File](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-configurable-inf-file)（使用通用 INF 文件）
 
  
 

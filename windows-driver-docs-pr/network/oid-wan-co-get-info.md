@@ -5,12 +5,12 @@ ms.assetid: c97130a5-68e1-4c69-a5a5-9781ea59af0c
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WAN_CO_GET_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e5b4f9b6f884c20df931c7f9b15964047ec358
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fafc2b348d074a94505dca885aef8100c8387341
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353686"
 ---
 # <a name="oidwancogetinfo"></a>OID\_WAN\_共同\_获取\_信息
 
@@ -39,7 +39,7 @@ OID\_WAN\_共同\_获取\_信息 OID 请求微型端口驱动程序，以返回�
 <a href="" id="maxsendwindow"></a>**MaxSendWindow**  
 VC 上指定的最大未完成的 CoNDIS WAN 微型端口驱动程序可以处理的数据包数。 此成员必须设置为至少一个。
 
-NDISWAN 驱动程序使用此成员的值作为其提交中的数据包数量将请求发送到微型端口驱动程序的限制*MiniportCoSendPackets*函数之前 NDISWAN 保留发送的数据包。 这些数据包进行排队，直到微型端口驱动程序完成未完成发送。 微型端口驱动程序可以调整此值，动态和 VC 每个使用**SendWindow**中的成员[ **WAN\_CO\_LINKPARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff565819)结构的微型端口驱动程序将传递给[ **NdisMCoIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553458)。 NDISWAN 使用当前**SendWindow**与未完成发送其上限的值。 如果微型端口驱动程序设置**SendWindow** NDISWAN 必须为零，停止将数据包发送有关特定 VC。 也就是说，微型端口驱动程序指定发送窗口为实际上关闭的情况下，其中，，指定其无法接受来自 NDISWAN 任何数据包。
+NDISWAN 驱动程序使用此成员的值作为其提交中的数据包数量将请求发送到微型端口驱动程序的限制*MiniportCoSendPackets*函数之前 NDISWAN 保留发送的数据包。 这些数据包进行排队，直到微型端口驱动程序完成未完成发送。 微型端口驱动程序可以调整此值，动态和 VC 每个使用**SendWindow**中的成员[ **WAN\_CO\_LINKPARAMS** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))结构的微型端口驱动程序将传递给[ **NdisMCoIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553458(v=vs.85))。 NDISWAN 使用当前**SendWindow**与未完成发送其上限的值。 如果微型端口驱动程序设置**SendWindow** NDISWAN 必须为零，停止将数据包发送有关特定 VC。 也就是说，微型端口驱动程序指定发送窗口为实际上关闭的情况下，其中，，指定其无法接受来自 NDISWAN 任何数据包。
 
 因为 CoNDIS WAN 的微型端口驱动程序必须在内部，队列数据包的值**MaxSendWindow**理论上是**max**(ULONG)。 但是，此驱动程序确定该值应反映 NIC 的链接速度或硬件功能 例如，如果微型端口驱动程序的 NIC 始终具有至少四个数据包的空间，微型端口驱动程序集**MaxSendWindow**至 4，以便为任何传入数据包*MiniportCoSendPackets*可以放置在立即在硬件中。
 
@@ -149,13 +149,13 @@ NDISWAN 将从协议字段时此 LCP 选项进行协商，适用于删除 1 个�
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisMCoIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553458)
+[**NdisMCoIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553458(v=vs.85))
 
 [OID\_WAN\_CO\_GET\_LINK\_INFO](oid-wan-co-get-link-info.md)
 
 [OID\_WAN\_CO\_SET\_LINK\_INFO](oid-wan-co-set-link-info.md)
 
-[**WAN\_CO\_LINKPARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff565819)
+[**WAN\_CO\_LINKPARAMS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))
 
 
 

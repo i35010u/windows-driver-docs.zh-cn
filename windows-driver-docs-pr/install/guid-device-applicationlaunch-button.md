@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 81278aa4aaac7027ffe13708f2698e5f320c97f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8c5d1c489f640e3ba5307818d6908163c579d4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355496"
 ---
 # <a name="guiddeviceapplicationlaunchbutton"></a>GUID_DEVICE_APPLICATIONLAUNCH_BUTTON
 
 
-GUID_DEVICE_APPLICATIONLAUNCH_BUTTON[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为高级配置和电源接口 (ACPI) 应用程序启动按钮定义。
+GUID_DEVICE_APPLICATIONLAUNCH_BUTTON[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为高级配置和电源接口 (ACPI) 应用程序启动按钮定义。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVICE_APPLICATIONLAUNCH_BUTTON[设备接口类](https://msdn.microsoft.com
 <a name="remarks"></a>备注
 -------
 
-系统提供[ACPI 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540493)注册此设备接口类，以通知操作系统和应用程序的 ACPI 应用程序的状态的实例启动按钮。
+系统提供[ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)注册此设备接口类，以通知操作系统和应用程序的 ACPI 应用程序的状态的实例启动按钮。
 
-了解如何提供 WDM[函数的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff546516)ACPI 的设备，请参阅[支持 ACPI 设备](https://msdn.microsoft.com/library/windows/hardware/ff536161)。
+了解如何提供 WDM[函数的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)ACPI 的设备，请参阅[支持 ACPI 设备](https://docs.microsoft.com/windows-hardware/drivers/acpi/supporting-acpi-devices)。
 
 <a name="requirements"></a>要求
 ------------

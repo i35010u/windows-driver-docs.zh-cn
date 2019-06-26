@@ -8,12 +8,12 @@ keywords:
 - SYSVAD
 ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f080677e88433499d3a8ee3840d3810e8aa476b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c44da033442bc81d65d1ba5ec7e439454fb7308a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363304"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361445"
 ---
 # <a name="span-iddebuggerdebuguniversaldriverskernel-modespandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序的执行步骤的实验室 （Sysvad 内核模式）
 
@@ -39,7 +39,7 @@ WinDbg 可以单步执行源代码，设置断点、 查看变量 (包括C++对�
 -   适用于 Windows 10 的 Windows 驱动程序工具包 (WDK)
 -   该示例 Sysvad 音频驱动程序适用于 Windows 10
 
-有关下载和安装 WDK 的信息，请参阅[下载 Windows Driver Kit (WDK)](https://developer.microsoft.com/windows/hardware/windows-driver-kit)。
+有关下载和安装 WDK 的信息，请参阅[下载 Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
 
 ## <a name="span-idsysvaddebuggingwalkthroughoverviewspansysvad-debugging-walkthrough"></a><span id="sysvad_debugging_walkthrough_overview"></span>Sysvad 调试演练
 
@@ -79,7 +79,7 @@ Echo 驱动程序是一个更简单的驱动程序然后 Sysvad 音频驱动程�
 
 ![与双向箭头连接的两台 pc](images/debuglab-image-targethostdrawing1.png)
 
-若要使用内核模式应用程序并使用 WinDbg，我们建议通过以太网传输使用 KDNET。 有关如何使用以太网传输协议的信息，请参阅[开始使用 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅[手动驱动程序部署准备一台计算机](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)并[设置向上 KDNET 网络内核调试自动](setting-up-a-network-debugging-connection-automatically.md)。
+若要使用内核模式应用程序并使用 WinDbg，我们建议通过以太网传输使用 KDNET。 有关如何使用以太网传输协议的信息，请参阅[开始使用 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅[手动驱动程序部署准备一台计算机](https://docs.microsoft.com/windows-hardware/drivers)并[设置向上 KDNET 网络内核调试自动](setting-up-a-network-debugging-connection-automatically.md)。
 
 ### <a name="span-idconfigurekernelmodedebuggingusingethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="configure__kernel_mode_debugging_using_ethernet"></span>配置内核模式 – 调试使用以太网
 
@@ -316,7 +316,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-    b. 右键单击*Windows 驱动程序示例 master.zip*，然后选择**全部提取**。 指定新文件夹，或浏览到一个现有将存储提取的文件。 例如，可以指定*c:\\WDK\_示例\\*作为文件提取到其中的新文件夹。
+    b. 右键单击*Windows 驱动程序示例 master.zip*，然后选择**全部提取**。 指定新文件夹，或浏览到一个现有将存储提取的文件。 例如，可以指定*c:\\WDK\_示例\\* 作为文件提取到其中的新文件夹。
 
     c. 提取文件后，导航到以下子文件夹。
 
@@ -769,7 +769,7 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
 
 ![设备有大约具有 20 个节点的节点树](images/debuglab-image-device-node-tree.png)
 
-**请注意**  有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/hh439632)并[设备节点和设备堆栈](https://msdn.microsoft.com/library/windows/hardware/ff554721)。
+**请注意**  有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)并[设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)。
 
  
 
@@ -1264,7 +1264,7 @@ ba r 4 fffff800`7bc9eff0
 
 9.  **全局变量**
 
-    也可以键入找到的全局变量的内存位置 **？&lt;变量名&gt;**。
+    也可以键入找到的全局变量的内存位置 **？&lt;变量名&gt;** 。
 
     ```dbgcmd
     0: kd> ? signalProcessingMode
@@ -1424,7 +1424,7 @@ ba r 4 fffff800`7bc9eff0
 11 00000000`00000000 : 00000000`00000000 00000000`00000000 00000000`00000080 00000000`00000000 : 0x12e
 ```
 
-可以使用 DML 若要进一步探索代码。 当您单击的第一次 00 条目时[ **.frame （设置本地上下文）** ](-frame--set-local-context-.md)命令用于设置上下文，然后[ **dv （显示本地变量）**](dv--display-local-variables-.md)命令显示本地变量。
+可以使用 DML 若要进一步探索代码。 当您单击的第一次 00 条目时[ **.frame （设置本地上下文）** ](-frame--set-local-context-.md)命令用于设置上下文，然后[ **dv （显示本地变量）** ](dv--display-local-variables-.md)命令显示本地变量。
 
 ```dbgcmd
 0: kd> .frame 0n0;dv /t /v
@@ -1800,7 +1800,7 @@ fffff803`bb757020 cc              int     3
 
 ![windbg 寄存器窗口显示 12 个寄存器](images/sysvad-lab-audio-display-registers.png)
 
-逐句通过程序集语言代码执行和在其他情况下时，查看寄存器内容非常有用。 有关详细信息请参阅[ **r （寄存器）**](r--registers-.md)。
+逐句通过程序集语言代码执行和在其他情况下时，查看寄存器内容非常有用。 有关详细信息请参阅[ **r （寄存器）** ](r--registers-.md)。
 
 寄存器的内容的信息，请参阅[x86 体系结构](x86-architecture.md)并[x64 体系结构](x64-architecture.md)。
 

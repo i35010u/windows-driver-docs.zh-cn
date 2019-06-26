@@ -3,12 +3,12 @@ Description: 如果要生成一个新系统，建议使用本主题中的测试�
 title: 建议用于系统开发的 USB 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4519642815ef34c141be5497c1373fe2f033ca4
-ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
+ms.openlocfilehash: 25a1885bb0b2f3b60c4eb163e01dec18a9a52aa6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501772"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356575"
 ---
 # <a name="recommended-usb-tests-for-system-development"></a>建议用于系统开发的 USB 测试
 
@@ -26,11 +26,11 @@ ms.locfileid: "65501772"
 ## <a name="stage-1system-bring-up"></a>阶段 1 — 系统启动
 
 
--   [DF-IO （基本） 前后的睡眠](https://msdn.microsoft.com/library/windows/hardware/dn247481.aspx)
--   [DF - PNP（禁用和启用），带 IO 之前和之后（基本）](https://msdn.microsoft.com/library/windows/hardware/dn260411.aspx)
--   [USB 公开端口测试控制器](https://msdn.microsoft.com/library/windows/hardware/hh998021.aspx)
--   [USB xHCI 传输速度测试](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
--   [USB3 终止](https://msdn.microsoft.com/library/windows/hardware/jj124672.aspx)
+-   [DF-IO （基本） 前后的睡眠](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn247481(v=vs.85))
+-   [DF - PNP（禁用和启用），带 IO 之前和之后（基本）](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260411(v=vs.85))
+-   [USB 公开端口测试控制器](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
+-   [USB xHCI 传输速度测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
+-   [USB3 终止](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124672(v=vs.85))
 
 <table>
 <colgroup>
@@ -80,9 +80,9 @@ ms.locfileid: "65501772"
 ## <a name="stage-2system-integration"></a>阶段 2-系统集成
 
 
--   [DF-重启为重新启动 IO 之前和之后 （功能）](https://msdn.microsoft.com/library/windows/hardware/dn260266.aspx)
--   [DF-睡眠和 PNP （禁用和启用） IO 前后的 （功能）](https://msdn.microsoft.com/library/windows/hardware/dn260391.aspx)
--   [USB xHCI 传输速度测试](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
+-   [DF-重启为重新启动 IO 之前和之后 （功能）](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260266(v=vs.85))
+-   [DF-睡眠和 PNP （禁用和启用） IO 前后的 （功能）](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
+-   [USB xHCI 传输速度测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
 
 <table>
 <colgroup>
@@ -138,13 +138,13 @@ ms.locfileid: "65501772"
 
 系统 1
 
--   [DF-睡眠 （认证） 期间的 IO](https://msdn.microsoft.com/library/windows/hardware/dn247416.aspx)
--   [DF-并发硬件和操作系统系统 (CHAOS) 测试 （认证）](https://msdn.microsoft.com/library/windows/hardware/hh998603.aspx)
+-   [DF-睡眠 （认证） 期间的 IO](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn247416(v=vs.85))
+-   [DF-并发硬件和操作系统系统 (CHAOS) 测试 （认证）](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998603(v=vs.85))
 
 系统 2
 
--   [DF-睡眠和 PNP （禁用和启用） IO 前后的 （功能）](https://msdn.microsoft.com/library/windows/hardware/dn260391.aspx)
--   [USB xHCI 传输速度测试](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
+-   [DF-睡眠和 PNP （禁用和启用） IO 前后的 （功能）](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
+-   [USB xHCI 传输速度测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
 
 系统 3 （如果停靠支持）
 

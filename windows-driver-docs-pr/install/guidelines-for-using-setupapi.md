@@ -8,12 +8,12 @@ keywords:
 - 常规安装函数 WDK SetupAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a6abc3b0fe5f41edd2dae26ee97c5d92bb843b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e40f10a614bfbb7353f991bbbf00f20dbdfaf835
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355139"
 ---
 # <a name="guidelines-for-using-setupapi"></a>SetupAPI 使用指南
 
@@ -21,7 +21,7 @@ ms.locfileid: "63374563"
 
 
 
-以下是使用的准则[常规安装函数](https://msdn.microsoft.com/library/windows/hardware/ff544985)(**安装 * **Xxx*) 和[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)(** SetupDi***Xxx*) 提供的安装程序 Api:
+以下是使用的准则[常规安装函数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))(**安装 * **Xxx*) 和[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))(** SetupDi***Xxx*) 提供的安装程序 Api:
 
 -   绝不能假定安装文件的内容是无错误，或者你提供的安装文件尚未被恶意修改了。 因此，始终验证从安装程序 Api 函数接收到的所有信息。 确认字符串是有效长度的缓冲区很大，有效大小的且索引值的有效范围内。
 

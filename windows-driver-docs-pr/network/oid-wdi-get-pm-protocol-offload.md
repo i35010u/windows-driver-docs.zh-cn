@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_PM_PROTOCOL_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf76fc7b72c98e94625216dcdfb2a1f5a2b43d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af84ff750e1351dd3c5973ccb143ef0a8a3edfcc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353676"
 ---
 # <a name="oidwdigetpmprotocoloffload"></a>OID\_WDI\_GET\_PM\_PROTOCOL\_OFFLOAD
 
@@ -20,7 +20,7 @@ OID\_WDI\_获取\_PM\_协议\_卸载请求的协议列表将电源管理的卸�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 不适用           | 1                               |
+| Port  | 不适用           | 1                               |
 
  
 
@@ -29,7 +29,7 @@ OID\_WDI\_获取\_PM\_协议\_卸载请求的协议列表将电源管理的卸�
 
 | TLV                                                                                  | 允许多个 TLV 实例 | 可选 | 描述          |
 |--------------------------------------------------------------------------------------|--------------------------------|----------|----------------------|
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_GET**](https://msdn.microsoft.com/library/windows/hardware/dn898034) |                                |          | 协议卸载 id。 |
+| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_GET**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-get) |                                |          | 协议卸载 id。 |
 
  
 
@@ -38,9 +38,9 @@ OID\_WDI\_获取\_PM\_协议\_卸载请求的协议列表将电源管理的卸�
 
 | TLV                                                                                                         | 允许多个 TLV 实例 | 可选 | 描述                            |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------|
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv4ARP**](https://msdn.microsoft.com/library/windows/hardware/dn898035)                |                                | X        | IPv4 ARP 协议卸载参数。  |
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv6NS**](https://msdn.microsoft.com/library/windows/hardware/dn898036)                  |                                | X        | IPv6 NS 协议卸载参数。   |
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY**](https://msdn.microsoft.com/library/windows/hardware/dn898033) |                                | X        | 重新生成密钥 RSN 协议卸载参数。 |
+| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv4ARP**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv4arp)                |                                | X        | IPv4 ARP 协议卸载参数。  |
+| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv6NS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv6ns)                  |                                | X        | IPv6 NS 协议卸载参数。   |
+| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-80211rsn-rekey) |                                | X        | 重新生成密钥 RSN 协议卸载参数。 |
 
  
 

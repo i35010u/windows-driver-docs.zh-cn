@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b22c090abbb36dda353946fb2360044a6928b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd9304c59a33c2a40882d090ec0d80757dc36722
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354391"
 ---
 # <a name="kspropertyrtaudioclockregister"></a>KSPROPERTY\_RTAUDIO\_CLOCKREGISTER
 
@@ -52,15 +52,15 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER 属性会映射到客户端可以访问的虚
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537498" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537498)"><strong>KSRTAUDIO_HWREGISTER_PROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537497" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537497)"><strong>KSRTAUDIO_HWREGISTER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)"><strong>KSRTAUDIO_HWREGISTER_PROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister)"><strong>KSRTAUDIO_HWREGISTER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性描述符 （实例数据） 包含 KSRTAUDIO\_HWREGISTER\_属性结构，其中包含[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构。 发送请求之前, 在客户端加载 KSRTAUDIO\_HWREGISTER\_属性结构指示时钟注册的首选基址的值。
+属性描述符 （实例数据） 包含 KSRTAUDIO\_HWREGISTER\_属性结构，其中包含[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 发送请求之前, 在客户端加载 KSRTAUDIO\_HWREGISTER\_属性结构指示时钟注册的首选基址的值。
 
 （操作数据） 的属性值是指向 KSRTAUDIO\_HWREGISTER 结构的属性处理程序将注册地址和注册更新频率写入到其中。 此注册地址是硬件注册映射到的用户模式或内核模式虚拟地址。 客户端可以直接读取此地址注册。
 
@@ -79,7 +79,7 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER 属性请求将返回状态\_成功以指示�
 
 Pin 关闭时，将销毁时钟寄存器的映射。 客户端可以将注册一次只能映射生存期内的一个 pin 的实例，并映射该实例再次时钟注册任何后续调用将失败。
 
-它是通常更快地读取时钟注册比发送[ **KSPROPERTY\_时钟\_时间**](https://msdn.microsoft.com/library/windows/hardware/ff565095)请求，这要求用户模式和内核模式的之间的转换用户模式下客户端。
+它是通常更快地读取时钟注册比发送[ **KSPROPERTY\_时钟\_时间**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-clock-time)请求，这要求用户模式和内核模式的之间的转换用户模式下客户端。
 
 <a name="requirements"></a>要求
 ------------
@@ -104,9 +104,9 @@ Pin 关闭时，将销毁时钟寄存器的映射。 客户端可以将注册一
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSRTAUDIO\_HWREGISTER\_PROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537498)
+[**KSRTAUDIO\_HWREGISTER\_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)
 
-[**KSRTAUDIO\_HWREGISTER**](https://msdn.microsoft.com/library/windows/hardware/ff537497)
+[**KSRTAUDIO\_HWREGISTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister)
 
  
 

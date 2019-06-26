@@ -8,12 +8,12 @@ keywords:
 - WDK KTM 的事务
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f97f767690e893a56e20b2be2c0437ba31955e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c73224fff2e559b1f28dcd8517876835c40bd28a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364934"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362918"
 ---
 # <a name="using-kernel-transaction-manager"></a>使用内核事务管理器
 
@@ -29,7 +29,7 @@ ms.locfileid: "63364934"
 
 [使用 KTM](using-ktm.md)
 
-有关例程、 结构和枚举的 KTM 支持的信息，请参阅[内核事务管理器引用](https://msdn.microsoft.com/library/windows/hardware/ff553232)。
+有关例程、 结构和枚举的 KTM 支持的信息，请参阅[内核事务管理器引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 子系统 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2162e94a4afc94eaee7c39717750c0b0fe37d654
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e03e8ab5395dfe98185500470bcb5a38a33122ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360242"
 ---
 # <a name="winsock-kernel-architecture"></a>Winsock 内核体系结构
 
@@ -28,7 +28,7 @@ WSK 核心体系结构是 WSK 子系统。 WSK 子系统[网络模块](network-m
 
 附加到 WSK 子系统是 WSK 应用程序。 WSK 应用程序是实现 WSK NPI 的客户端以执行网络 I/O 操作的内核模式软件模块。 （在此上下文中，"客户端"不应与在客户端-服务器系统中使用的术语相混淆）。 . WSK 子系统可以 WSK 客户端 NPI 通知的异步事件 WSK 应用程序中调用函数。
 
-WSK 应用程序发现和使用的一组附加到 WSK 子系统[WSK 注册函数](https://msdn.microsoft.com/library/windows/hardware/ff571179)。 动态检测 WSK 子系统不可用并交换调度表构成的提供程序和客户端的 WSK NPI 端实现，应用程序可以使用这些函数。
+WSK 应用程序发现和使用的一组附加到 WSK 子系统[WSK 注册函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。 动态检测 WSK 子系统不可用并交换调度表构成的提供程序和客户端的 WSK NPI 端实现，应用程序可以使用这些函数。
 
 或者，WSK 应用程序可以使用附加到 WSK 子系统[网络模块注册机构 (NMR)](network-module-registrar2.md)。 有关详细信息，请参阅[用于 WSK 注册和注销使用 NMR](using-nmr-for-wsk-registration-and-unregistration.md)。
 

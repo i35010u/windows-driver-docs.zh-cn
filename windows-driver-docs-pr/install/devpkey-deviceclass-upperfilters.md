@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d411783efbcc7ac57fca58c21979085becbe4fb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce5b8fe194096a9cb70312024a6d0b9b61d4413c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355722"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362953"
 ---
 # <a name="devpkeydeviceclassupperfilters"></a>DEVPKEY_DeviceClass_UpperFilters
 
 
-DEVPKEY_DeviceClass_UpperFilters 设备属性表示为安装了较高级别筛选器驱动程序的服务名称的列表[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+DEVPKEY_DeviceClass_UpperFilters 设备属性表示为安装了较高级别筛选器驱动程序的服务名称的列表[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -68,11 +68,11 @@ DEVPKEY_DeviceClass_UpperFilters 设备属性表示为安装了较高级别筛�
 <a name="remarks"></a>备注
 -------
 
-类筛选器驱动程序安装时设置 DEVPKEY_DeviceClass_UpperFilters 的值。 有关如何安装类筛选器驱动程序的详细信息，请参阅[安装筛选器驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff547595)并[ **INF ClassInstall32 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546335)。
+类筛选器驱动程序安装时设置 DEVPKEY_DeviceClass_UpperFilters 的值。 有关如何安装类筛选器驱动程序的详细信息，请参阅[安装筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/installing-a-filter-driver)并[ **INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)。
 
-您可以调用[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)或[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090)检索 DEVPKEY_DeviceClass_ 值上边的筛选程序。
+您可以调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)检索 DEVPKEY_DeviceClass_ 值上边的筛选程序。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_UpperFilters 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**上边的筛选程序**类注册表项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问注册表项值下类注册表项](https://msdn.microsoft.com/library/windows/hardware/ff537751)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_UpperFilters 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**上边的筛选程序**类注册表项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问注册表项值下类注册表项](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)。
 
 <a name="requirements"></a>要求
 ------------
@@ -97,13 +97,13 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF ClassInstall32 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546335)
+[**INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiOpenClassRegKeyEx**](https://msdn.microsoft.com/library/windows/hardware/ff552067)
+[**SetupDiOpenClassRegKeyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)
 
  
 

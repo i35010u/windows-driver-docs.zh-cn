@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bbb1624f55dd3d421fb4e044ab3d929854901355
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: acfc5b26c1abe035bba17c0216327d7affda0cf1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354997"
 ---
 # <a name="kscategoryquality"></a>KSCATEGORY_QUALITY
 
 
-KSCATEGORY_QUALITY[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)质量管理 (KS) 功能类别。
+KSCATEGORY_QUALITY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)质量管理 (KS) 功能类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_QUALITY[设备接口类](https://msdn.microsoft.com/library/windows/h
 
 KS 设备的驱动程序注册 KSCATEGORY_QUALITY 向操作系统指示设备支持 KSCATEGORY_QUALITY 功能分类的实例。
 
-有关详细信息，请参阅[质量管理](https://msdn.microsoft.com/library/windows/hardware/ff568124)。
+有关详细信息，请参阅[质量管理](https://docs.microsoft.com/windows-hardware/drivers/stream/quality-management)。
 
 <a name="requirements"></a>要求
 ------------

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 263df085ca0875808cb165bd75bcad3a6ec96c80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b725d69aec2738fa237810b5b3902bab7b69818
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332741"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361021"
 ---
 # <a name="kspropertydirectsound3dlistenerdopplerfactor"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_DOPPLERFACTOR
 
@@ -53,7 +53,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_DOPPLERFACTOR 属性指定三维侦听器 Dop
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>浮点数</p></td>
 </tr>
 </tbody>
@@ -95,7 +95,7 @@ DirectSound 使用此属性来实现**IDirectSound3DListener::GetDopplerFactor**
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

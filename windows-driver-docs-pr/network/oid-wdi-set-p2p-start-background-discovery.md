@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d6f0549dbe26b7cf65eaa2ae7447f306c858a194
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a62c2b90748b8903c21024851e89b68061e51b5d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330163"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359186"
 ---
 # <a name="oidwdisetp2pstartbackgrounddiscovery"></a>OID\_WDI\_设置\_P2P\_启动\_背景\_发现
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_P2P\_启动\_背景\_发现指示要在后台定期执行 Wi-F
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） | 影响数据吞吐量/延迟 |
 |-------|--------------------------|---------------------------------|---------------------------------|
-| 端口  | 否                       | 1                               | 是                             |
+| Port  | 否                       | 1                               | 是                             |
 
  
 
@@ -29,7 +29,7 @@ OID\_WDI\_设置\_P2P\_启动\_背景\_发现指示要在后台定期执行 Wi-F
 
 如果提供的通道列表，则适配器应仅扫描对指定的通道。 否则，它应扫描的所有通道。 如果固件中发生来发现设备指定通道之外，它应仍发送到操作系统的信息。
 
-当侦听持续时间和通道 ([**WDI\_TLV\_P2P\_发现\_通道\_设置**](https://msdn.microsoft.com/library/windows/hardware/dn897877)) 指定，则它们将引用到远程设备的侦听时间。 根据侦听持续时间和通道的所有值，适配器需要拿出一个计划以最高效的方式扫描请求的通道。 操作系统也可指定侦听持续时间和通道的多个实例。 在这种情况下，适配器应首先提出了这些条目将侦听的持续时间和通道列表的值为非零的扫描计划。 然后，适配器应在以下情况下使用默认值：
+当侦听持续时间和通道 ([**WDI\_TLV\_P2P\_发现\_通道\_设置**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings)) 指定，则它们将引用到远程设备的侦听时间。 根据侦听持续时间和通道的所有值，适配器需要拿出一个计划以最高效的方式扫描请求的通道。 操作系统也可指定侦听持续时间和通道的多个实例。 在这种情况下，适配器应首先提出了这些条目将侦听的持续时间和通道列表的值为非零的扫描计划。 然后，适配器应在以下情况下使用默认值：
 
 1.  如果侦听持续时间为 0，则适配器应指定通道使用默认的扫描时间。
 2.  如果通道列表为空，适配器应扫描中的所有使用该带区的指定的侦听和周期时间带内通道。 扫描时间不会应用到任何具有单独的通道侦听由操作系统指定的持续时间。
@@ -43,11 +43,11 @@ D2 NIC 时，它将挂起后台发现，直到它回到 D0。
 
 | TLV                                                                                                | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                         |
 |----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_背景\_DISCOVER\_模式**](https://msdn.microsoft.com/library/windows/hardware/dn897864)     |                                |          | Wi-Fi Direct 背景发现模式的参数。                                                                                   |
-| [**WDI\_TLV\_P2P\_发现\_通道\_设置**](https://msdn.microsoft.com/library/windows/hardware/dn897877) | X                              | X        | 建议的列表可扫描的通道。                                                                                               |
-| [**WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn897873)                 |                                | X        | 发现 Wi-Fi Direct 设备和组所有者能够在 Wi-Fi Direct 设备期间搜索的列表。                                    |
-| [**WDI\_TLV\_P2P\_SERVICE\_NAME\_HASH**](https://msdn.microsoft.com/library/windows/hardware/dn898009)                   | X                              | X        | 要查询的服务哈希名称的列表。 如果这是必需 WDI\_P2P\_服务\_发现\_类型\_服务\_名称\_只指定了。 |
-| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                          |                                | X        | 必须包括在由端口发送的探测请求的一个或多个 Ie。                                                       |
+| [**WDI\_TLV\_P2P\_背景\_DISCOVER\_模式**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-background-discover-mode)     |                                |          | Wi-Fi Direct 背景发现模式的参数。                                                                                   |
+| [**WDI\_TLV\_P2P\_发现\_通道\_设置**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings) | X                              | X        | 建议的列表可扫描的通道。                                                                                               |
+| [**WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-device-filter-list)                 |                                | X        | 发现 Wi-Fi Direct 设备和组所有者能够在 Wi-Fi Direct 设备期间搜索的列表。                                    |
+| [**WDI\_TLV\_P2P\_SERVICE\_NAME\_HASH**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash)                   | X                              | X        | 要查询的服务哈希名称的列表。 如果这是必需 WDI\_P2P\_服务\_发现\_类型\_服务\_名称\_只指定了。 |
+| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                          |                                | X        | 必须包括在由端口发送的探测请求的一个或多个 Ie。                                                       |
 
  
 

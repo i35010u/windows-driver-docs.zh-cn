@@ -10,12 +10,12 @@ keywords:
 - 远程管理 WDK 引导参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b045ee198245272a2c3eb1be8a09794e5ee2e21b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c341bc214f659a3b4fc5c023c778c2af4993d17f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364713"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360415"
 ---
 # <a name="boot-parameters-to-enable-ems-redirection"></a>用于启用 EMS 重定向的启动参数
 
@@ -29,7 +29,7 @@ ms.locfileid: "63364713"
 
 ## <a name="enabling-ems-on-a-computer-without-an-acpi-spcr-table-in-operating-systems-prior-to-windows-server-2008"></a>没有 Windows Server 2008 之前的操作系统中的 ACPI SPCR 表的计算机上启用 EMS
 
-若要启用 EMS 控制台重定向的计算机具有 BIOS 固件，但不具有 ACPI 串行端口控制台重定向 (SPCR) 表上，添加 **重定向 = COM * * * x*并**redirectbaudrate =** 为参数\[启动加载器\]Boot.ini 文件部分。 这些参数设置为 EMS 控制台重定向的端口和传输速率。 在 BIOS 中的带外通信使用相同的端口和传输速率建立的。 然后，添加[ **/重定向**](https://msdn.microsoft.com/library/windows/hardware/ff557180)的启动项的参数。
+若要启用 EMS 控制台重定向的计算机具有 BIOS 固件，但不具有 ACPI 串行端口控制台重定向 (SPCR) 表上，添加 **重定向 = COM * * * x*并**redirectbaudrate =** 为参数\[启动加载器\]Boot.ini 文件部分。 这些参数设置为 EMS 控制台重定向的端口和传输速率。 在 BIOS 中的带外通信使用相同的端口和传输速率建立的。 然后，添加[ **/重定向**](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)的启动项的参数。
 
 以下 Bootcfg 命令启用 EMS 控制台重定向对列表中的第一个启动项目。 它为 COM2 设置的端口，并设置的传输速率为 115,200 千位 / 秒 (Kbps)。 这些是相同的端口和波特率率设置了管理员在带外端口 BIOS 设置。
 
@@ -69,11 +69,11 @@ multi(0)disk(0)rdisk(0)partition(2)\WINDOWS="Windows Server 2003, Standard" /fas
 
 ## <a name="enabling-ems-on-a-computer-without-an-acpi-spcr-table-in-windows-server-2008"></a>启用 Windows Server 2008 中的 ACPI SPCR 表没有的计算机上的 EMS
 
-若要启用 EMS 控制台重定向的计算机具有 BIOS 固件，但不具有 ACPI 串行端口控制台重定向 (SPCR) 表上，使用[ **BCDEdit /emssettings** ](https://msdn.microsoft.com/library/windows/hardware/ff542198)命令以设置 COM 端口和波特率。
+若要启用 EMS 控制台重定向的计算机具有 BIOS 固件，但不具有 ACPI 串行端口控制台重定向 (SPCR) 表上，使用[ **BCDEdit /emssettings** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--emssettings)命令以设置 COM 端口和波特率。
 
 这些参数设置为 EMS 控制台重定向的全局端口和传输速率。 在 BIOS 中的带外通信使用相同的端口和传输速率建立的。
 
-然后，使用[ **BCDEdit /ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)命令为启动项目启用 EMS。
+然后，使用[ **BCDEdit /ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)命令为启动项目启用 EMS。
 
 以下命令设置全局 EMS 重定向设置，以使用 COM2 和波特率为 115200，并为指定的启动项目启用 EMS。
 
@@ -87,7 +87,7 @@ bcdedit /ems {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 ## <a name="enabling-ems-on-a-computer-with-an-spcr-table-in-operating-systems-prior-to-windows-server-2008"></a>Windows Server 2008 之前的操作系统中的一个 SPCR 表使用的计算机上启用 EMS
 
-若要使用 ACPI BIOS 固件和 ACPI SPCR 表的计算机上启用 EMS，你可以使用**重定向 = USEBIOSSETTINGS**参数或 **重定向 = COM * * * x*和**redirectbaudrate =** 参数。 然后，可以添加[ **/重定向**](https://msdn.microsoft.com/library/windows/hardware/ff557180)的启动项的参数。
+若要使用 ACPI BIOS 固件和 ACPI SPCR 表的计算机上启用 EMS，你可以使用**重定向 = USEBIOSSETTINGS**参数或 **重定向 = COM * * * x*和**redirectbaudrate =** 参数。 然后，可以添加[ **/重定向**](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)的启动项的参数。
 
 下面的示例说明如何使用**重定向 = USEBIOSSETTINGS**参数。 以下 Bootcfg 命令启用 EMS 控制台重定向对列表中的第一个启动项目。
 
@@ -130,7 +130,7 @@ multi(0)disk(0)rdisk(0)partition(2)\WINDOWS="Windows Server 2003, Standard" /fas
 
 ## <a name="enabling-ems-on-a-computer-with-an-spcr-table-in-windows-server-2008"></a>Windows Server 2008 中的 SPCR 表使用的计算机上启用 EMS
 
-若要使用 ACPI BIOS 固件和 ACPI SPCR 表的计算机上启用 EMS，可以使用[ **BCDEdit /emssettings** ](https://msdn.microsoft.com/library/windows/hardware/ff542198)并指定**BIOS**参数或**emsport**并**emsbaudrate**参数。 若要为启动项目启用 EMS，请使用[ **BCDEdit /ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)命令。
+若要使用 ACPI BIOS 固件和 ACPI SPCR 表的计算机上启用 EMS，可以使用[ **BCDEdit /emssettings** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--emssettings)并指定**BIOS**参数或**emsport**并**emsbaudrate**参数。 若要为启动项目启用 EMS，请使用[ **BCDEdit /ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)命令。
 
 下面的示例演示如何使用**BIOS**参数。 以下的 BCDEdit 命令启用 EMS 控制台重定向对当前启动项目。
 
@@ -141,7 +141,7 @@ bcdedit /ems on
 
 ## <a name="enabling-ems-on-a-computer-with-efi-firmware-in-operating-systems-prior-to-windows-server-2008"></a>使用 Windows Server 2008 之前的操作系统中的 EFI 固件的计算机上启用 EMS
 
-若要使用 EFI 固件的计算机上启用 EMS，请使用 Bootcfg 添加[ **/重定向**](https://msdn.microsoft.com/library/windows/hardware/ff557180)的启动项的参数。 Windows 通过阅读 SPCR 表在固件中查找带的端口和其设置，并使用相同的端口和速率 EMS 控制台重定向。
+若要使用 EFI 固件的计算机上启用 EMS，请使用 Bootcfg 添加[ **/重定向**](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)的启动项的参数。 Windows 通过阅读 SPCR 表在固件中查找带的端口和其设置，并使用相同的端口和速率 EMS 控制台重定向。
 
 以下 Bootcfg 命令启用 EMS 基于 Itanium 的计算机上的重定向。 它使用 Bootcfg **/ems**开关与要添加的 ON 参数 **/重定向**启动项的参数。 **/Id**开关标识的启动项目。
 
@@ -169,7 +169,7 @@ OsFilePath:       \Device\HarddiskVolume3\WINDOWS
 
 ## <a name="enabling-ems-on-a-computer-with-efi-firmware-in-windows-server-2008"></a>使用 Windows Server 2008 中的 EFI 固件的计算机上启用 EMS
 
-若要使用 EFI 固件的计算机上启用 EMS，请使用[ **BCDEdit /ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)命令并指定的启动项。 Windows 通过阅读 SPCR 表在固件中查找带的端口和其设置，并使用相同的端口和速率 EMS 控制台重定向。
+若要使用 EFI 固件的计算机上启用 EMS，请使用[ **BCDEdit /ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)命令并指定的启动项。 Windows 通过阅读 SPCR 表在固件中查找带的端口和其设置，并使用相同的端口和速率 EMS 控制台重定向。
 
 以下命令启用 EMS 控制台重定向对具有 {18b123cd-2bf6-11db-bfae-00e018e2b8db} 的标识符指定的启动项。
 
@@ -203,7 +203,7 @@ bootcfg /ems OFF /id 1
 
 ## <a name="changing-ems-settings-on-a-computer-running-windows-server-2008"></a>更改运行 Windows Server 2008 的计算机上的 EMS 设置
 
-在 EMS 配置具有 ACPI BIOS 固件和 ACPI SPCR 表的计算机上的启动项上时，可以使用[ **BCDEdit /emssettings** ](https://msdn.microsoft.com/library/windows/hardware/ff542198)命令，并指定**BIOS**选项或**emsport**并**emsbaudrate**选项。 如果您使用**BIOS**选项，未设置**emsport**或**emsbaudrate**选项。
+在 EMS 配置具有 ACPI BIOS 固件和 ACPI SPCR 表的计算机上的启动项上时，可以使用[ **BCDEdit /emssettings** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--emssettings)命令，并指定**BIOS**选项或**emsport**并**emsbaudrate**选项。 如果您使用**BIOS**选项，未设置**emsport**或**emsbaudrate**选项。
 
 当在 EFI 固件的计算机上配置 EMS 或使用 ACPI BIOS 固件和不 ACPI SPCR 表，可以使用**BCDEdit /emssettings**命令并指定**emsport**并**emsbaudrate**选项。
 
@@ -215,7 +215,7 @@ bootcfg /ems OFF /id 1
 bcdedit /emssettings EMSPORT:2 EMSBAUDRATE:57600
 ```
 
-若要启用或禁用 EMS 上的启动项，请使用[ **BCDEdit /ems** ](https://msdn.microsoft.com/library/windows/hardware/ff542193)命令。
+若要启用或禁用 EMS 上的启动项，请使用[ **BCDEdit /ems** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--ems)命令。
 
 例如，以下命令启用 EMS 上具有 {173075c9-2cb2-11dc-b426-001558c41f5c} 的标识符的特定启动项...
 
@@ -230,4 +230,4 @@ bcdedit /ems off
 ```
 
 > [!NOTE]
-> 每个启动项使用作为标识符的 GUID。 如果未指定标识符**BCDEdit**命令将修改当前操作系统启动项目。 如果指定的启动项，则与启动项关联的 GUID 必须括在大括号 **{}**。 若要查看所有活动的引导条目的 GUID 标识符，请使用**bcdedit /enum**命令。
+> 每个启动项使用作为标识符的 GUID。 如果未指定标识符**BCDEdit**命令将修改当前操作系统启动项目。 如果指定的启动项，则与启动项关联的 GUID 必须括在大括号 **{}** 。 若要查看所有活动的引导条目的 GUID 标识符，请使用**bcdedit /enum**命令。

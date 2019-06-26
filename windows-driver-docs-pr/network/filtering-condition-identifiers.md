@@ -6,12 +6,12 @@ keywords:
 - 筛选条件标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14db0a8be2eddeecca89292114554c37e81fd71c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c30f766cbdb5349462a6ccdeec7941de278098d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347397"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353356"
 ---
 # <a name="filtering-condition-identifiers"></a>筛选条件标识符
 
@@ -55,7 +55,7 @@ ms.locfileid: "63347397"
 <p>FWPM_CONDITION_ARRIVAL_TUNNEL_TYPE</p>
 </td>
 <td>
-<p>如果使用隧道的封装方法的 IfType 成员<a href="https://msdn.microsoft.com/library/windows/hardware/aa366058"> <b>IP_ADAPTER_ADDRESSES</b> </a>结构是 IF_TYPE_TUNNEL。 隧道类型由 IANA 定义。 有关详细信息，请参阅<a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定义</a>和 Windows SDK <a href="https://msdn.microsoft.com/library/windows/hardware/ff557015">IP 帮助程序</a>文档。</p>
+<p>如果使用隧道的封装方法的 IfType 成员<a href="https://docs.microsoft.com/windows/desktop/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh"> <b>IP_ADAPTER_ADDRESSES</b> </a>结构是 IF_TYPE_TUNNEL。 隧道类型由 IANA 定义。 有关详细信息，请参阅<a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定义</a>和 Windows SDK <a href="https://docs.microsoft.com/windows-hardware/drivers/network/ip-helper">IP 帮助程序</a>文档。</p>
 <p>WFP 使用到达接口来匹配这种情况。 到达接口是之前执行弱主机或转发的数据包看到之前输入的 IP 堆栈入站网络中的第一个接口。</p>
 <p>这种情况是为了进行重新授权，非对称的因为它本质上是入站的条件。 这意味着 WFP，将对此条件中使用空值时正在对帐响应出站数据包的入站的连接。</p>
 <p>若要处理重新授权的第二个筛选器必须使用。 此第二个筛选器可以允许或阻止的空值，或使用一个不同的条件将具有此类情况的有效值。 在到达接口条件的情况下接口条件的下一个跃点类将具有一个有效的接口在出站数据包数。</p>
@@ -69,7 +69,7 @@ ms.locfileid: "63347397"
 <p>FWPM_CONDITION_IP_ARRIVAL_INTERFACE</p>
 </td>
 <td>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557080"> <b>LUID</b> </a>到达的 IP 地址相关联的网络接口。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid"> <b>LUID</b> </a>到达的 IP 地址相关联的网络接口。</p>
 <p>WFP 使用到达接口来匹配这种情况。 到达接口是之前执行弱主机或转发的数据包看到之前输入的 IP 堆栈入站网络中的第一个接口。</p>
 <p>这种情况是为了进行重新授权，非对称的因为它本质上是入站的条件。 这意味着 WFP，将对此条件中使用空值时正在对帐响应出站数据包的入站的连接。</p>
 <p>若要处理重新授权的第二个筛选器必须使用。 此第二个筛选器可以允许或阻止的空值，或使用一个不同的条件将具有此类情况的有效值。 在到达接口条件的情况下接口条件的下一个跃点类将具有一个有效的接口在出站数据包数。</p>
@@ -111,7 +111,7 @@ ms.locfileid: "63347397"
 <p>FWPM_CONDITION_NEXTHOP_TUNNEL_TYPE</p>
 </td>
 <td>
-<p>如果使用隧道的封装方法<b>IfType</b>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/aa366058"> <b>IP_ADAPTER_ADDRESSES</b> </a>结构是 IF_TYPE_TUNNEL。 隧道类型由 IANA 定义。 有关详细信息，请参阅<a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定义</a>和 Windows SDK <a href="https://msdn.microsoft.com/library/windows/hardware/ff557015">IP 帮助程序</a>文档。</p>
+<p>如果使用隧道的封装方法<b>IfType</b>的成员<a href="https://docs.microsoft.com/windows/desktop/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh"> <b>IP_ADAPTER_ADDRESSES</b> </a>结构是 IF_TYPE_TUNNEL。 隧道类型由 IANA 定义。 有关详细信息，请参阅<a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定义</a>和 Windows SDK <a href="https://docs.microsoft.com/windows-hardware/drivers/network/ip-helper">IP 帮助程序</a>文档。</p>
 <p>WFP 使用下一跃点接口来匹配这种情况。 下一跃点接口是数据包执行弱主机或转发后，IP 堆栈离开网络，出站之前看到的最后一个接口。</p>
 <p>这种情况是为了进行重新授权，非对称的因为它本质上是出站的条件。 这意味着 WFP，将对此条件中使用空值时正在对帐响应入站数据包的出站连接。</p>
 <p>若要处理重新授权的第二个筛选器必须使用。 此第二个筛选器可以允许或阻止的空值，或使用一个不同的条件将具有此类情况的有效值。 在下一跃点接口条件的情况下的接口条件到达类将拥有一个有效的接口上的入站数据包。</p>
@@ -125,7 +125,7 @@ ms.locfileid: "63347397"
 <p>FWPM_CONDITION_IP_NEXTHOP_INTERFACE</p>
 </td>
 <td>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557080"> <b>LUID</b></a>到达的 IP 地址相关联的网络接口。</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid"> <b>LUID</b></a>到达的 IP 地址相关联的网络接口。</p>
 <p>WFP 使用下一跃点接口来匹配这种情况。 下一跃点接口是数据包执行弱主机或转发后，IP 堆栈离开网络，出站之前看到的最后一个接口。</p>
 <p>这种情况是为了进行重新授权，非对称的因为它本质上是出站的条件。 这意味着 WFP，将对此条件中使用空值时正在对帐响应入站数据包的出站连接。</p>
 <p>若要处理重新授权的第二个筛选器必须使用。 此第二个筛选器可以允许或阻止的空值，或使用一个不同的条件将具有此类情况的有效值。 在下一跃点接口条件的情况下的接口条件到达类将拥有一个有效的接口上的入站数据包。</p>
@@ -249,7 +249,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_IP_PROTOCOL</p>
 </td>
 <td>
-<p>IP 协议号中的规定<a href="http://tools.ietf.org/html/rfc1700">RFC 1700</a>。</p>
+<p>IP 协议号中的规定<a href="https://tools.ietf.org/html/rfc1700">RFC 1700</a>。</p>
 </td>
 </tr>
 <tr>
@@ -273,7 +273,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_ICMP_TYPE</p>
 </td>
 <td>
-<p>ICMP 类型字段中指定<a href="http://tools.ietf.org/html/rfc792">RFC 792</a>。</p>
+<p>ICMP 类型字段中指定<a href="https://tools.ietf.org/html/rfc792">RFC 792</a>。</p>
 </td>
 </tr>
 <tr>
@@ -281,7 +281,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_ICMP_CODE</p>
 </td>
 <td>
-<p>ICMP 代码字段中指定<a href="http://tools.ietf.org/html/rfc792">RFC 792</a>。</p>
+<p>ICMP 代码字段中指定<a href="https://tools.ietf.org/html/rfc792">RFC 792</a>。</p>
 </td>
 </tr>
 <tr>
@@ -328,7 +328,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_EMBEDDED_PROTOCOL</p>
 </td>
 <td>
-<p>嵌入在 ICMP 数据包中, 指定的 IP 协议号<a href="http://tools.ietf.org/html/rfc1700">RFC 1700</a>。</p>
+<p>嵌入在 ICMP 数据包中, 指定的 IP 协议号<a href="https://tools.ietf.org/html/rfc1700">RFC 1700</a>。</p>
 </td>
 </tr>
 <tr>
@@ -487,7 +487,7 @@ SIO_RCVALL_MCAST
 </dd>
 </dl>
 </p>
-<p>有关这些原始套接字模式的说明，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ms741621"> <b>WSAIoctl</b> </a> Microsoft Windows SDK 文档中。</p>
+<p>有关这些原始套接字模式的说明，请参阅<a href="https://docs.microsoft.com/windows/desktop/api/winsock2/nf-winsock2-wsaioctl"> <b>WSAIoctl</b> </a> Microsoft Windows SDK 文档中。</p>
 </td>
 </tr>
 <tr>
@@ -582,7 +582,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_AUTH_TYPE</p>
 </td>
 <td>
-<p>身份验证服务类型。 有关身份验证的服务类型的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>身份验证服务常量</b></a> RPC 节的 Windows SDK 文档。</p>
+<p>身份验证服务类型。 有关身份验证的服务类型的详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/Rpc/authentication-service-constants"><b>身份验证服务常量</b></a> RPC 节的 Windows SDK 文档。</p>
 </td>
 </tr>
 <tr>
@@ -590,7 +590,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_AUTH_LEVEL</p>
 </td>
 <td>
-<p>身份验证服务级别。 有关身份验证服务级别的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/aa373553"><b>身份验证级别的常数</b></a> RPC 节的 Windows SDK 文档。</p>
+<p>身份验证服务级别。 有关身份验证服务级别的详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/Rpc/authentication-level-constants"><b>身份验证级别的常数</b></a> RPC 节的 Windows SDK 文档。</p>
 </td>
 </tr>
 <tr>
@@ -702,7 +702,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_PROXY_AUTH_TYPE</p>
 </td>
 <td>
-<p>RPC 代理身份验证服务类型。 有关身份验证的服务类型的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>身份验证服务常量</b></a> RPC 节的 Windows SDK 文档。</p>
+<p>RPC 代理身份验证服务类型。 有关身份验证的服务类型的详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/Rpc/authentication-service-constants"><b>身份验证服务常量</b></a> RPC 节的 Windows SDK 文档。</p>
 </td>
 </tr>
 <tr>
@@ -802,7 +802,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_NDIS_MEDIA_TYPE</p>
 </td>
 <td>
-<p>类型指定为其中一个的 NDIS 介质<a href="https://msdn.microsoft.com/library/windows/hardware/ff565910"> <b>NDIS_MEDIUM</b> </a>枚举值。</p>
+<p>类型指定为其中一个的 NDIS 介质<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_medium"> <b>NDIS_MEDIUM</b> </a>枚举值。</p>
 <div class="alert"><b>请注意</b>Windows 8、 Windows Server 2012 和更高版本的 Windows 中受支持。</div>
 <div> </div>
 </td>
@@ -832,7 +832,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_LOCAL_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>数据链接的本地 MAC 地址类型。 这是在中定义的值之一<a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
+<p>数据链接的本地 MAC 地址类型。 这是在中定义的值之一<a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
 <div class="alert"><b>请注意</b>Windows 8、 Windows Server 2012 和更高版本的 Windows 中受支持。</div>
 <div> </div>
 </td>
@@ -842,7 +842,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_REMOTE_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>数据链接类型的远程 MAC 地址。 这是在中定义的值之一<a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
+<p>数据链接类型的远程 MAC 地址。 这是在中定义的值之一<a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
 <div class="alert"><b>请注意</b>Windows 8、 Windows Server 2012 和更高版本的 Windows 中受支持。</div>
 <div> </div>
 </td>
@@ -892,7 +892,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_SOURCE_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>数据链接创建帧的接口的 MAC 地址类型。 这是在中定义的值之一<a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
+<p>数据链接创建帧的接口的 MAC 地址类型。 这是在中定义的值之一<a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
 <div class="alert"><b>请注意</b>Windows 8、 Windows Server 2012 和更高版本的 Windows 中受支持。</div>
 <div> </div>
 </td>
@@ -902,7 +902,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_MAC_DESTINATION_ADDRESS_TYPE</p>
 </td>
 <td>
-<p>数据链接到的目标框架的接口的 MAC 地址类型。 这是在中定义的值之一<a href="https://msdn.microsoft.com/library/windows/hardware/dd744934"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
+<p>数据链接到的目标框架的接口的 MAC 地址类型。 这是在中定义的值之一<a href="https://docs.microsoft.com/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001"> <b>DL_ADDRESS_TYPE</b> </a> FwpmTypes.h 中的枚举。</p>
 <div class="alert"><b>请注意</b>Windows 8、 Windows Server 2012 和更高版本的 Windows 中受支持。</div>
 <div> </div>
 </td>
@@ -942,7 +942,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_VSWITCH_NETWORK_TYPE</p>
 </td>
 <td>
-<p>与虚拟交换机相关联的网络的类型。 这是在中定义的值之一<a href="https://msdn.microsoft.com/library/windows/hardware/hh447394"> <b>FWP_VSWITCH_NETWORK_TYPE</b> </a> FwpTypes.h 中的枚举。</p>
+<p>与虚拟交换机相关联的网络的类型。 这是在中定义的值之一<a href="https://docs.microsoft.com/windows/desktop/api/fwptypes/ne-fwptypes-fwp_vswitch_network_type_"> <b>FWP_VSWITCH_NETWORK_TYPE</b> </a> FwpTypes.h 中的枚举。</p>
 <div class="alert"><b>请注意</b>中支持<i>Windows 8</i>和更高版本的 Windows。</div>
 <div> </div>
 </td>
@@ -972,7 +972,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_VSWITCH_SOURCE_INTERFACE_TYPE</p>
 </td>
 <td>
-<p>创建框架的虚拟交换机接口的类型。 这是在中定义的值之一<a href="https://msdn.microsoft.com/library/windows/hardware/hh451589"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h 中的枚举。</p>
+<p>创建框架的虚拟交换机接口的类型。 这是在中定义的值之一<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_nic_switch_type"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h 中的枚举。</p>
 <div class="alert"><b>请注意</b>Windows 8、 Windows Server 2012 和更高版本的 Windows 中受支持。</div>
 <div> </div>
 </td>
@@ -982,7 +982,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_VSWITCH_DESTINATION_INTERFACE_TYPE</p>
 </td>
 <td>
-<p>向其发送到帧的虚拟交换机接口的类型。 这是在中定义的值之一<a href="https://msdn.microsoft.com/library/windows/hardware/hh451589"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h 中的枚举。</p>
+<p>向其发送到帧的虚拟交换机接口的类型。 这是在中定义的值之一<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_nic_switch_type"> <b>NDIS_NIC_SWITCH_TYPE</b> </a> Ntddndis.h 中的枚举。</p>
 <div class="alert"><b>请注意</b>Windows 8、 Windows Server 2012 和更高版本的 Windows 中受支持。</div>
 <div> </div>
 </td>

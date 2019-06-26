@@ -4,12 +4,12 @@ description: SerCx2 通过向串行控制器驱动程序发出一个或多个 I/
 ms.assetid: 04DDFE53-4855-4029-BE1E-9D184B02A998
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c29685682913abc8e3f9976aebbeb164ceb86ded
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6bd5e6d9af2272690d25642ad100f0c668fbf34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354903"
 ---
 # <a name="overview-of-sercx2-io-transactions"></a>SerCx2 I/O 事务概述
 
@@ -58,7 +58,7 @@ SerCx2 以智能方式可以决定是否使用 PIO 或 DMA 来满足读取或写
 
 当串行控制器驱动程序注册的回调函数来支持系统 DMA 事务或自定义事务集时，驱动程序提供参数值，用于描述要执行这些事务的硬件的功能。 例如，对于系统 DMA 事务，参数包括对齐要求和 DMA 控制器的系统支持的最小值和最大传输长度。 SerCx2 使用这些参数来决定是否处理读取或写入请求为 PIO 事务或系统 DMA 事务，以及是否将拆分为两个或多个 I/O 事务的请求。
 
-但是，串行控制器可能无法充分描述由串行控制器驱动程序提供给 SerCx2 参数的特殊的硬件功能。 因此，该驱动程序可能有权访问依赖于硬件的信息，使驱动程序来更好地决定比 SerCx2 有关如何进行分区读取或写入到一个或多个 I/O 事务请求。 作为一个选项，可以实现这样的驱动程序[ *EvtSerCx2SelectNextReceiveTransactionType* ](https://msdn.microsoft.com/library/windows/hardware/dn265225)并[ *EvtSerCx2SelectNextTransmitTransactionType*](https://msdn.microsoft.com/library/windows/hardware/dn265226)事件回调函数。 SerCx2 调用这些函数中，如果它们实现，以便决定要用来满足读取或写入的 I/O 事务请求的驱动程序。
+但是，串行控制器可能无法充分描述由串行控制器驱动程序提供给 SerCx2 参数的特殊的硬件功能。 因此，该驱动程序可能有权访问依赖于硬件的信息，使驱动程序来更好地决定比 SerCx2 有关如何进行分区读取或写入到一个或多个 I/O 事务请求。 作为一个选项，可以实现这样的驱动程序[ *EvtSerCx2SelectNextReceiveTransactionType* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_select_next_receive_transaction_type)并[ *EvtSerCx2SelectNextTransmitTransactionType*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_select_next_transmit_transaction_type)事件回调函数。 SerCx2 调用这些函数中，如果它们实现，以便决定要用来满足读取或写入的 I/O 事务请求的驱动程序。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edb2e4962397c8cca15f1f571e9b6805361fb4af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 516ca2175f71287e1a801f5ce8da7edd15deff77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357010"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361105"
 ---
 # <a name="kspropertybdaspectralinversion"></a>KSPROPERTY\_BDA\_SPECTRAL\_INVERSION
 
@@ -87,9 +87,9 @@ SpectralInversion 枚举类型中的返回的值标识光谱反转的设置。
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
-[**SpectralInversion**](https://msdn.microsoft.com/library/windows/hardware/ff568154)
+[**SpectralInversion**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568154(v=vs.85))
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - 全双工应用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 360bf96203c3b8b0b22b2a33de02262421479d28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c2146e41b43ca6fbaadc28fe5ec12e595fb5449
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360139"
 ---
 # <a name="directsound-capture-effects"></a>DirectSound 捕获效果
 
@@ -48,11 +48,11 @@ DirectSound 8 添加了用于启用和控制音频捕获过程的第三方效果
 <tbody>
 <tr class="odd">
 <td align="left"><p>GUID_DSCFX_CLASS_AEC</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537150" data-raw-source="[&lt;strong&gt;KSNODETYPE_ACOUSTIC_ECHO_CANCEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537150)"><strong>KSNODETYPE_ACOUSTIC_ECHO_CANCEL</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel" data-raw-source="[&lt;strong&gt;KSNODETYPE_ACOUSTIC_ECHO_CANCEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel)"><strong>KSNODETYPE_ACOUSTIC_ECHO_CANCEL</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUID_DSCFX_CLASS_NS</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537182" data-raw-source="[&lt;strong&gt;KSNODETYPE_NOISE_SUPPRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537182)"><strong>KSNODETYPE_NOISE_SUPPRESS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress" data-raw-source="[&lt;strong&gt;KSNODETYPE_NOISE_SUPPRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress)"><strong>KSNODETYPE_NOISE_SUPPRESS</strong></a></p></td>
 </tr>
 </tbody>
 </table>

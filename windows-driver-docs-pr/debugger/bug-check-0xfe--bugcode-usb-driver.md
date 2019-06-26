@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 32c4aec13c8bedb6c9137abdc5477f0d046e642a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d32c731d9260ad074a1bfed4e66d04882a252d3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361477"
 ---
 # <a name="bug-check-0xfe-bugcodeusbdriver"></a>Bug 检查 0xFE：BUGCODE\_USB\_DRIVER
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367274"
 BUGCODE\_USB\_驱动程序 bug 检查的值为 0x000000FE。 这指示错误发生在通用串行总线 (USB) 驱动程序。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="bugcodeusbdriver-parameters"></a>BUGCODE\_USB\_驱动程序参数

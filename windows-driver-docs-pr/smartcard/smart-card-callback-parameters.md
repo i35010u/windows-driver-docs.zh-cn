@@ -8,12 +8,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 的智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a18240c2f97c7af4ecb7300f5de3c91f4cd8377
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d68ee5becb45e0362b10f619c36b208e47c51811
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390552"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356668"
 ---
 # <a name="smart-card-callback-parameters"></a>智能卡回调参数
 
@@ -21,7 +21,7 @@ ms.locfileid: "63390552"
 ## <span id="_ntovr_smart_card_callback_parameters"></span><span id="_NTOVR_SMART_CARD_CALLBACK_PARAMETERS"></span>
 
 
-对于所有 IOCTL 请求除外[ **IOCTL\_智能卡\_IS\_ABSENT** ](https://msdn.microsoft.com/library/windows/hardware/ff548905)并[ **IOCTL\_智能卡\_是\_存在**](https://msdn.microsoft.com/library/windows/hardware/ff548906)， [ **SmartcardDeviceControl (WDM)** ](https://msdn.microsoft.com/library/windows/hardware/ff548939)初始化**IoRequest**的成员[**智能卡\_扩展**](https://msdn.microsoft.com/library/windows/hardware/ff548974)结构之前调用回调例程。 下表指示初始化类的**SmartcardDeviceControl**执行。
+对于所有 IOCTL 请求除外[ **IOCTL\_智能卡\_IS\_ABSENT** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))并[ **IOCTL\_智能卡\_是\_存在**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))， [ **SmartcardDeviceControl (WDM)** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))初始化**IoRequest**的成员[**智能卡\_扩展**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/smclib/ns-smclib-_smartcard_extension)结构之前调用回调例程。 下表指示初始化类的**SmartcardDeviceControl**执行。
 
 <table>
 <colgroup>
@@ -84,7 +84,7 @@ ms.locfileid: "63390552"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>CurrentIrp</strong></p></td>
-<td align="left"><p>接收指向请求的每个控件请求除 IRP <a href="https://msdn.microsoft.com/library/windows/hardware/ff548905" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_ABSENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548905)"> <strong>IOCTL_SMARTCARD_IS_ABSENT</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff548906" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_PRESENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548906)"> <strong>IOCTL_SMARTCARD_IS_PRESENT</strong> </a>.</p></td>
+<td align="left"><p>接收指向请求的每个控件请求除 IRP <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_ABSENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))"> <strong>IOCTL_SMARTCARD_IS_ABSENT</strong> </a>并<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_PRESENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))"> <strong>IOCTL_SMARTCARD_IS_PRESENT</strong> </a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>NotificationIrp</strong></p></td>

@@ -4,12 +4,12 @@ description: 订阅服务器和设备信息 API
 ms.assetid: 45d6c053-b64b-4768-8e79-a090dcdf346e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bd1ac10579fd1f36f4b3c5075816cafbe5a565f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c0dc7fa9f3791956c27ca0829db7b0e8fda3184
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357884"
 ---
 # <a name="subscriber-and-device-information-api"></a>订阅服务器和设备信息 API
 
@@ -32,7 +32,7 @@ ms.locfileid: "63378322"
 
 -   **固件和硬件版本**固件和硬件的版本。
 
-订阅服务器和设备信息 API 的详细信息，请参阅[ **Windows.Networking.NetworkOperators 命名空间**](https://msdn.microsoft.com/library/windows/apps/br241148)。
+订阅服务器和设备信息 API 的详细信息，请参阅[ **Windows.Networking.NetworkOperators 命名空间**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

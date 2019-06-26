@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b04efab93fc641bc0f335b9afffea4c8e0dafa24
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 1968ea5fcdc16292c287b65afb38461753af9f53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161540"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354858"
 ---
 # <a name="kspropertyextensionunitinfo"></a>KSPROPERTY\_扩展\_单元\_信息
 
@@ -53,7 +53,7 @@ KSPROPERTY\_扩展\_单元\_属性检索的扩展单元描述符 guidExtensionCo
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>筛选器节点</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566720" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566720)"><strong>KSP_NODE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
 <td><p>PVOID</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ KSPROPERTY\_扩展\_单元\_属性检索的扩展单元描述符 guidExtensionCo
 
 设备在启动期间，系统提供的 USB 视频类驱动程序 (*Usbvideo.sys*) 将缓存从设备的扩展单元描述符信息。 *Usbvideo.sys*则使用此缓存信息以响应 KSPROPERTY\_扩展\_单元\_信息。
 
-因此，此属性返回的字段均与所提供的扩展单元描述符中的设备相同。 此类描述符的示例，请参阅[示例扩展单元描述符](https://msdn.microsoft.com/library/windows/hardware/ff568133)。
+因此，此属性返回的字段均与所提供的扩展单元描述符中的设备相同。 此类描述符的示例，请参阅[示例扩展单元描述符](https://docs.microsoft.com/windows-hardware/drivers/stream/sample-extension-unit-descriptor)。
 
 具体而言，KSPROPERTY\_扩展\_单元\_信息返回扩展单元从描述符后面加上数据字段，如以下表中所示的 GUID。
 
@@ -95,7 +95,7 @@ KSPROPERTY\_扩展\_单元\_属性检索的扩展单元描述符 guidExtensionCo
 
  
 
-下面的代码示例演示如何提交 KSPROPERTY\_扩展\_单元\_信息，来自完整示例中所示[示例扩展单元插件 DLL](https://msdn.microsoft.com/library/windows/hardware/ff568134):
+下面的代码示例演示如何提交 KSPROPERTY\_扩展\_单元\_信息，来自完整示例中所示[示例扩展单元插件 DLL](https://docs.microsoft.com/windows-hardware/drivers/stream/sample-extension-unit-plug-in-dll):
 
 ```cpp
 ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;

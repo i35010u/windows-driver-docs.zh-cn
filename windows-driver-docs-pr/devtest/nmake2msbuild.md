@@ -4,12 +4,12 @@ description: Nmake2MsBuild 实用程序生成的驱动程序，使用以前版�
 ms.assetid: D6E1C124-9A5F-486B-865E-45A0BC58A5A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b896b9147b2e5470c27992cad01a6fd1d766952
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5f2a375228b58ede3c61a27ed920ff2b79a883a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374655"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355028"
 ---
 # <a name="nmake2msbuild"></a>Nmake2MsBuild
 
@@ -112,7 +112,7 @@ nmake2msbuild.exe  .\myDriver\sources
 
 [将 WDK 源文件转换为 Visual Studio 项目](converting-a-wdk-sources-file-to-a-visual-studio-project.md)
 
-[从现有源文件创建驱动程序](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)
+[从现有源文件创建驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
 
 

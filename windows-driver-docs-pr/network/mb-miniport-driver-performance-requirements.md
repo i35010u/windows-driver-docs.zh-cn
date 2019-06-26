@@ -4,12 +4,12 @@ description: MB 微型端口驱动程序性能要求
 ms.assetid: 16986208-7572-412d-8839-71f1a66b074f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cc897488d143b7fe69bbfbe17dba3115dcd970
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 922fa09141bc6af7d3496cf40251cd745da0c401
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357787"
 ---
 # <a name="mb-miniport-driver-performance-requirements"></a>MB 微型端口驱动程序性能要求
 
@@ -31,22 +31,22 @@ ms.locfileid: "63343295"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>设备初始化时间 (以达到<a href="https://msdn.microsoft.com/library/windows/hardware/ff571227" data-raw-source="[&lt;strong&gt;WwanReadyStateInitialized&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571227)"> <strong>WwanReadyStateInitialized</strong></a>) 后插入到计算机 ( <a href="https://msdn.microsoft.com/library/windows/hardware/ff569833" data-raw-source="[OID_WWAN_READY_INFO](https://msdn.microsoft.com/library/windows/hardware/ff569833)">OID_WWAN_READY_INFO</a>)</p></td>
+<td align="left"><p>设备初始化时间 (以达到<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ne-wwan-_wwan_ready_state" data-raw-source="[&lt;strong&gt;WwanReadyStateInitialized&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ne-wwan-_wwan_ready_state)"> <strong>WwanReadyStateInitialized</strong></a>) 后插入到计算机 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info" data-raw-source="[OID_WWAN_READY_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)">OID_WWAN_READY_INFO</a>)</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>5</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>手动网络注册 ( <a href="https://msdn.microsoft.com/library/windows/hardware/ff569834" data-raw-source="[OID_WWAN_REGISTER_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569834)">OID_WWAN_REGISTER_STATE</a>)</p></td>
+<td align="left"><p>手动网络注册 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-register-state" data-raw-source="[OID_WWAN_REGISTER_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-register-state)">OID_WWAN_REGISTER_STATE</a>)</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>50</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>网络扫描操作 ( <a href="https://msdn.microsoft.com/library/windows/hardware/ff569843" data-raw-source="[OID_WWAN_VISIBLE_PROVIDERS](https://msdn.microsoft.com/library/windows/hardware/ff569843)">OID_WWAN_VISIBLE_PROVIDERS</a>)</p></td>
+<td align="left"><p>网络扫描操作 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-visible-providers" data-raw-source="[OID_WWAN_VISIBLE_PROVIDERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-visible-providers)">OID_WWAN_VISIBLE_PROVIDERS</a>)</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>200</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>数据包附加操作 ( <a href="https://msdn.microsoft.com/library/windows/hardware/ff569827" data-raw-source="[OID_WWAN_PACKET_SERVICE](https://msdn.microsoft.com/library/windows/hardware/ff569827)">OID_WWAN_PACKET_SERVICE</a>)</p></td>
+<td align="left"><p>数据包附加操作 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-packet-service" data-raw-source="[OID_WWAN_PACKET_SERVICE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-packet-service)">OID_WWAN_PACKET_SERVICE</a>)</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>5</p></td>
 </tr>
@@ -56,7 +56,7 @@ ms.locfileid: "63343295"
 <td align="left"><p>5</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>PDP 激活 ( <a href="https://msdn.microsoft.com/library/windows/hardware/ff569823" data-raw-source="[OID_WWAN_CONNECT](https://msdn.microsoft.com/library/windows/hardware/ff569823)">OID_WWAN_CONNECT</a>)</p></td>
+<td align="left"><p>PDP 激活 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-connect" data-raw-source="[OID_WWAN_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-connect)">OID_WWAN_CONNECT</a>)</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>10</p></td>
 </tr>
@@ -71,12 +71,12 @@ ms.locfileid: "63343295"
 <td align="left"><p>5</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567391" data-raw-source="[&lt;strong&gt;NDIS_STATUS_LINK_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567391)"><strong>NDIS_STATUS_LINK_STATE</strong> </a> PDP 激活后的通知</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state" data-raw-source="[&lt;strong&gt;NDIS_STATUS_LINK_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)"><strong>NDIS_STATUS_LINK_STATE</strong> </a> PDP 激活后的通知</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>10</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>以下固定操作完成的 ( <a href="https://msdn.microsoft.com/library/windows/hardware/ff569828" data-raw-source="[OID_WWAN_PIN](https://msdn.microsoft.com/library/windows/hardware/ff569828)">OID_WWAN_PIN</a>):</p>
+<td align="left"><p>以下固定操作完成的 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin" data-raw-source="[OID_WWAN_PIN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin)">OID_WWAN_PIN</a>):</p>
 <p>Enter</p>
 <p>启用</p>
 <p>禁用</p>
@@ -90,7 +90,7 @@ ms.locfileid: "63343295"
 <td align="left"><p>4</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569829" data-raw-source="[OID_WWAN_PIN_LIST](https://msdn.microsoft.com/library/windows/hardware/ff569829)">OID_WWAN_PIN_LIST</a>获取一系列响应支持的 PIN 类型</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin-list" data-raw-source="[OID_WWAN_PIN_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin-list)">OID_WWAN_PIN_LIST</a>获取一系列响应支持的 PIN 类型</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>4</p></td>
 </tr>

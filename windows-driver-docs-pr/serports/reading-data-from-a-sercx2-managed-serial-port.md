@@ -4,16 +4,16 @@ description: 串行控制器 （或 UART） 通常包括接收先进先出。
 ms.assetid: 36522E60-3616-4431-8C8C-3EAC4A6E4422
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2b04560779bc8d8007c32d7a39f3413ccaf608e
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 25b15708fcebf515bbebd121865eaf2d3ae76809
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356855"
 ---
 # <a name="reading-data-from-a-sercx2-managed-serial-port"></a>从 SerCx2 托管串行端口读取数据
 
-串行控制器 （或 UART） 通常包括接收先进先出。 此 FIFO 提供了硬件控制从外围设备连接到串行端口接收的数据缓冲。 若要从接收 FIFO 读取数据，此设备的外围设备驱动程序发送读取 ([**IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) 到串行端口的请求。
+串行控制器 （或 UART） 通常包括接收先进先出。 此 FIFO 提供了硬件控制从外围设备连接到串行端口接收的数据缓冲。 若要从接收 FIFO 读取数据，此设备的外围设备驱动程序发送读取 ([**IRP\_MJ\_读取**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))) 到串行端口的请求。
 
 如果串行端口速度超过外围设备驱动程序可以读取的数据仍以接收数据，接收可以溢出先进先出。 若要防止数据丢失，由于发生溢出，外围设备驱动程序通常应配置要使用硬件流控制的串行端口。 用流控制串行控制器硬件自动发出信号外围设备停止发送数据时接收 FIFO 是几乎已满。 通常，由 SerCx2 的串行端口应使用硬件流控制。 有关详细信息，请参阅[流控制详细信息](#flow-control-details)。
 
@@ -38,20 +38,20 @@ ms.locfileid: "65836344"
 ## <a name="interval-time-out-details"></a>间隔超时详细信息
 
 
-若要设置的超时参数的读取和写入请求，外围设备驱动程序可以发送[ **IOCTL\_串行\_设置\_超时**](https://msdn.microsoft.com/library/windows/hardware/ff546772)到串行端口的请求。 由控制的读取超时**ReadIntervalTimeout**， **ReadTotalTimeoutMultiplier**，并**ReadTotalTimeoutConstant**中此请求的参数值。 **ReadIntervalTimeout**指定两个连续字节中接收事务之间允许的最大时间间隔。 如果**ReadTotalTimeoutMultiplier**并**ReadTotalTimeoutConstant**是均为零，并接收串行控制器的先进先出为空时的读取的请求发送到串行端口，此请求不会不留出时间扩展 （并因此一直处于挂起状态 SerCx2 I/O 队列中的） 之前该端口接收至少一个字节的新数据后。 有关详细信息，请参阅[**串行\_超时**](https://msdn.microsoft.com/library/windows/hardware/hh439614)。
+若要设置的超时参数的读取和写入请求，外围设备驱动程序可以发送[ **IOCTL\_串行\_设置\_超时**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serial_set_timeouts)到串行端口的请求。 由控制的读取超时**ReadIntervalTimeout**， **ReadTotalTimeoutMultiplier**，并**ReadTotalTimeoutConstant**中此请求的参数值。 **ReadIntervalTimeout**指定两个连续字节中接收事务之间允许的最大时间间隔。 如果**ReadTotalTimeoutMultiplier**并**ReadTotalTimeoutConstant**是均为零，并接收串行控制器的先进先出为空时的读取的请求发送到串行端口，此请求不会不留出时间扩展 （并因此一直处于挂起状态 SerCx2 I/O 队列中的） 之前该端口接收至少一个字节的新数据后。 有关详细信息，请参阅[**串行\_超时**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ns-ntddser-_serial_timeouts)。
 
 芯片 (SoC) 集成线路上的系统上的串行端口可能能够从多个兆位 / 秒或更大的峰值费率外围设备接收数据。 此设备的外围设备驱动程序开发人员可能会想到设置间隔超时值 (所指定的**ReadIntervalTimeout**参数) 以毫秒为单位或更低，但此值是不可能具有所需效果。 这是因为系统时钟的粒度受限于用于检测间隔超时计时器的准确性。
 
 例如，如果系统时钟时间是 15 毫秒，并且驱动程序设置**ReadIntervalTimeout**值为 1 毫秒，从 0 到稍有超过 15 毫秒的范围中的任意位置的字节到间隔可能触发一次扩展。有时，此设置可能会导致超时，以便从外围设备的数据传输期间发生。 若要确保，仅在此传输完成后，则会出现超时，该驱动程序可以设置**ReadIntervalTimeout**到一定程度上大于 15 毫秒的值。 例如，如果**ReadIntervalTimeout**设置为 20 毫秒，30 毫秒到字节间隔可靠地触发超时，并小于或等于 15 毫秒的时间间隔不会触发超时时间。
 
-有关如何计时器准确性取决于系统时钟的详细信息，请参阅[计时器准确性](https://msdn.microsoft.com/library/windows/hardware/jj602805)。
+有关如何计时器准确性取决于系统时钟的详细信息，请参阅[计时器准确性](https://docs.microsoft.com/windows-hardware/drivers/kernel/timer-accuracy)。
 
 ## <a name="flow-control-details"></a>流控制详细信息
 
 
 最佳做法是，使用 SerCx2 托管串行端口的外围设备驱动程序应配置为使用硬件流控制以防止溢出接收先进先出这些端口。 如果没有挂起的读取请求，SerCx2 提供接收数据的超出了接收先进先出的容量无软件缓冲。 如果允许此 FIFO 溢出，数据都会丢失。
 
-若要启用硬件流控制，外围设备驱动程序可能会发送[ **IOCTL\_串行\_设置\_HANDFLOW** ](https://msdn.microsoft.com/library/windows/hardware/ff546736)请求设置握手和流控制串行端口的设置。 或驱动程序可能会发送[ **IOCTL\_串行\_应用\_默认\_CONFIGURATION** ](https://msdn.microsoft.com/library/windows/hardware/hh406621)配置要使用的一组的串行端口的请求包括硬件流控制的默认硬件设置。 **IOCTL\_串行\_设置\_HANDFLOW**请求使用[**串行\_HANDFLOW** ](https://msdn.microsoft.com/library/windows/hardware/jj680685)结构介绍了流控制设置。 **IOCTL\_串行\_应用\_默认\_配置**请求可能包含供应商指定的数据格式的类似信息。
+若要启用硬件流控制，外围设备驱动程序可能会发送[ **IOCTL\_串行\_设置\_HANDFLOW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serial_set_handflow)请求设置握手和流控制串行端口的设置。 或驱动程序可能会发送[ **IOCTL\_串行\_应用\_默认\_CONFIGURATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serial_apply_default_configuration)配置要使用的一组的串行端口的请求包括硬件流控制的默认硬件设置。 **IOCTL\_串行\_设置\_HANDFLOW**请求使用[**串行\_HANDFLOW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ns-ntddser-_serial_handflow)结构介绍了流控制设置。 **IOCTL\_串行\_应用\_默认\_配置**请求可能包含供应商指定的数据格式的类似信息。
 
 如果外围设备驱动程序将使用**IOCTL\_串行\_设置\_HANDFLOW**请求启用硬件流控制，该驱动程序应在设置以下标志**序列\_HANDFLOW**此请求中的结构：
 

@@ -10,12 +10,12 @@ keywords:
 - INF 文件媒体关键字 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af0a429a82e0db898e6d8409a4266e40281e12e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1e0a1e78708fe4c675a762a8b20c6f7af212da6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332353"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360457"
 ---
 # <a name="media-specific-inf-file-keywords"></a>特定于媒体的 INF 文件关键字
 
@@ -23,11 +23,11 @@ ms.locfileid: "63332353"
 ## <span id="media_specific_inf_file_keywords"></span><span id="MEDIA_SPECIFIC_INF_FILE_KEYWORDS"></span>
 
 
-在的 INF 文件关键字的列表[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)包含共有的所有设备类，但以下特定于媒体的 INF 文件关键字不会出现在列表中的关键字：
+在的 INF 文件关键字的列表[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)包含共有的所有设备类，但以下特定于媒体的 INF 文件关键字不会出现在列表中的关键字：
 
-[**SetupPreferredAudioDevices**](https://msdn.microsoft.com/library/windows/hardware/ff537899)
+[**SetupPreferredAudioDevices**](https://docs.microsoft.com/windows-hardware/drivers/audio/setuppreferredaudiodevices)
 
-**SetupPreferredAudioDevices**关键字支持在 Windows 2000 及更高版本。 有关详细信息，请参阅[媒体类 INF 扩展](https://msdn.microsoft.com/library/windows/hardware/ff537513)。
+**SetupPreferredAudioDevices**关键字支持在 Windows 2000 及更高版本。 有关详细信息，请参阅[媒体类 INF 扩展](https://docs.microsoft.com/windows-hardware/drivers/audio/media-class-inf-extensions)。
 
  
 

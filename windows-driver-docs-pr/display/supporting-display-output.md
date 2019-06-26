@@ -10,12 +10,12 @@ keywords:
 - 自动显示切换 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a1bf1a049a3685b00da1bf134c191d24a76cc44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 582c40ac08c11be025d8acce0fefec233656a215
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355540"
 ---
 # <a name="supporting-display-output-and-acpi-events"></a>支持显示输出和 ACPI 事件
 
@@ -25,7 +25,7 @@ ms.locfileid: "63331279"
 ## <a name="span-idbiosrequirementstosupportdisplayoutputdevicesspanspan-idbiosrequirementstosupportdisplayoutputdevicesspanspan-idbiosrequirementstosupportdisplayoutputdevicesspanbios-requirements-to-support-display-output-devices"></a><span id="BIOS_Requirements_to_Support_Display_Output_Devices"></span><span id="bios_requirements_to_support_display_output_devices"></span><span id="BIOS_REQUIREMENTS_TO_SUPPORT_DISPLAY_OUTPUT_DEVICES"></span>支持的输出显示设备的 BIOS 要求
 
 
-显示微型端口驱动程序或由系统 BIOS 支持显示输出设备配置的 ACPI 方法中。 [ **DxgkDdiNotifyAcpiEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff559695)函数调用以通知有关 ACPI 事件显示微型端口驱动程序。 例如，当用户按下键盘快捷方式为输出设备开关， **DxgkDdiNotifyAcpiEvent** ACPI 与调用函数\_通知\_周期\_显示\_热键通知和请求类型的 DXGK\_ACPI\_更改\_显示\_模式。 因此，操作系统将调用[ **DxgkDdiRecommendFunctionalVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559775)函数查询选择的显示输出设备。
+显示微型端口驱动程序或由系统 BIOS 支持显示输出设备配置的 ACPI 方法中。 [ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数调用以通知有关 ACPI 事件显示微型端口驱动程序。 例如，当用户按下键盘快捷方式为输出设备开关， **DxgkDdiNotifyAcpiEvent** ACPI 与调用函数\_通知\_周期\_显示\_热键通知和请求类型的 DXGK\_ACPI\_更改\_显示\_模式。 因此，操作系统将调用[ **DxgkDdiRecommendFunctionalVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_recommendfunctionalvidpn)函数查询选择的显示输出设备。
 
 Dispmprt.h 中定义的 ACPI 显示输出的下列别名：
 
@@ -44,7 +44,7 @@ Dispmprt.h 中定义的 ACPI 显示输出的下列别名：
 ## <a name="span-idexternalasynchronouseventsspanspan-idexternalasynchronouseventsspanspan-idexternalasynchronouseventsspanexternal-asynchronous-events"></a><span id="External_Asynchronous_Events"></span><span id="external_asynchronous_events"></span><span id="EXTERNAL_ASYNCHRONOUS_EVENTS"></span>外部异步事件
 
 
-有关影响显示输出设备的外部，异步事件，必须通知给操作系统。 Dispmprt.h 中定义和使用中的以下通知和相关的请求类型[ **DxgkDdiNotifyAcpiEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff559695)函数。
+有关影响显示输出设备的外部，异步事件，必须通知给操作系统。 Dispmprt.h 中定义和使用中的以下通知和相关的请求类型[ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数。
 
 -   ACPI\_通知\_周期\_显示\_热键-通知操作系统用户已按周期显示键盘快捷方式。
 -   ACPI\_通知\_下一步\_显示\_热键-通知操作系统用户已按下一步显示键盘快捷方式。
@@ -59,7 +59,7 @@ Dispmprt.h 中定义的 ACPI 显示输出的下列别名：
 -   DXGK\_ACPI\_更改\_显示\_模式-请求启动模式更改为新建议的活动的视频存在网络 (VidPN)。
 -   DXGK\_ACPI\_轮询\_显示\_子级的请求轮询的子级显示适配器的连接。
 
-**请注意**以前的请求是的值*AcpiFlags*返回参数[ **DxgkDdiNotifyAcpiEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff559695)函数。
+**请注意**以前的请求是的值*AcpiFlags*返回参数[ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数。
 
  
 

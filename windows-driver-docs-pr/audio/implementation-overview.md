@@ -4,12 +4,12 @@ description: 本主题是你必须是开发能够处理硬件卸载音频流的�
 ms.assetid: B93B9A6D-7317-482B-A0B8-298CE8F21193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb5fcb1a691f139e962039c0d64889ed0c5381c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9337df0a6e845d2971a7f4ea62fe8e63d73bb619
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333516"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359946"
 ---
 # <a name="implementation-overview"></a>实现概述
 
@@ -36,7 +36,7 @@ ms.locfileid: "63333516"
 有关此新类型的筛选器的 KS 拓扑中的 pin 的详细信息，请参阅[体系结构概述](architectural-overview.md)。
 "会导致"发现音频适配器及其驱动程序的用户模式音频系统中的实际服务是 AudioEndpointBuilder。 AudioEndpointBuilder 服务监视器**KSCATEGORY\_音频**设备接口到达和删除的类。 音频设备驱动程序时注册的新实例**KSCATEGORY\_音频**设备接口类设备接口到达通知触发。 AudioEndpointBuilder 服务将检测设备接口到达通知并会使用一种算法，以便它可以采取相应的操作在系统中检查的音频设备的拓扑。
 
-因此，您的驱动程序开发时音频驱动程序以支持可以处理卸载音频的适配器，必须使用新定义[ **KSNODETYPE\_音频\_引擎**](https://msdn.microsoft.com/library/windows/hardware/hh450866)音频终结点公开硬件音频引擎的功能。 有关音频终结点发现过程的详细信息，请参阅[音频终结点生成器算法](audio-endpoint-builder-algorithm.md)。
+因此，您的驱动程序开发时音频驱动程序以支持可以处理卸载音频的适配器，必须使用新定义[ **KSNODETYPE\_音频\_引擎**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-engine)音频终结点公开硬件音频引擎的功能。 有关音频终结点发现过程的详细信息，请参阅[音频终结点生成器算法](audio-endpoint-builder-algorithm.md)。
 
 ## <a name="span-iduserinterfaceconsiderationsspanspan-iduserinterfaceconsiderationsspanspan-iduserinterfaceconsiderationsspanuser-interface-considerations"></a><span id="User_Interface_Considerations"></span><span id="user_interface_considerations"></span><span id="USER_INTERFACE_CONSIDERATIONS"></span>用户界面的注意事项
 

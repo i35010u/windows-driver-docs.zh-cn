@@ -4,12 +4,12 @@ description: 取消 Windows Vista 中的数据传输
 ms.assetid: 0cdc02bf-23fe-4122-8d5f-f42c3c07da8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a456ee86ca7245cb4d2823abbd24c588150588
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 975222e9333a8c05d2861cec371ac3f452b80786
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373299"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355523"
 ---
 # <a name="cancellation-of-data-transfers-in-windows-vista"></a>取消 Windows Vista 中的数据传输
 
@@ -24,18 +24,18 @@ ms.locfileid: "63373299"
 
 Windows Vista 驱动程序可以通知应用程序已取消传输的两种不同方式：
 
--   该驱动程序接收到调用其[ **IWiaMiniDrv::drvNotifyPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff544998)使用 WIA\_事件\_取消\_IO 事件。 我们建议所有内核模式下都读取或写入操作使用重叠 I/O。 使用此过程仅保证*即时*取消。
+-   该驱动程序接收到调用其[ **IWiaMiniDrv::drvNotifyPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)使用 WIA\_事件\_取消\_IO 事件。 我们建议所有内核模式下都读取或写入操作使用重叠 I/O。 使用此过程仅保证*即时*取消。
 
--   S\_从两个回调函数返回 FALSE:**IWiaMiniDrvTransferCallback::GetNextStream**并[ **IWiaMiniDrvTransferCallback::SendMessage**](https://msdn.microsoft.com/library/windows/hardware/jj151552)。
+-   S\_从两个回调函数返回 FALSE:**IWiaMiniDrvTransferCallback::GetNextStream**并[ **IWiaMiniDrvTransferCallback::SendMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-sendmessage)。
 
-当应用程序调用**IWiaTransfer::Cancel**，则**IWiaMiniDrv::drvNotifyPnPEvent**方法应调用到驱动程序和 WIA\_事件\_取消\_IO。 此外， [ **IWiaMiniDrvTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/jj151551)并**IWiaMiniDrvTransferCallback::SendMessage**回调函数必须始终返回 S\_已取消传输后，则为 FALSE。
+当应用程序调用**IWiaTransfer::Cancel**，则**IWiaMiniDrv::drvNotifyPnPEvent**方法应调用到驱动程序和 WIA\_事件\_取消\_IO。 此外， [ **IWiaMiniDrvTransferCallback::GetNextStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)并**IWiaMiniDrvTransferCallback::SendMessage**回调函数必须始终返回 S\_已取消传输后，则为 FALSE。
 
 如果**IWiaTransferCallback::GetNextStream**返回 WIA\_状态\_跳过\_项期间[多项传输](multipage-istream-transfers.md)，应用程序将跳过 (即，不正在传输） 的当前项。 返回值为 S\_FALSE 仍意味着应取消整个传输。
 
 **IWiaTransfer**并**IWiaTransferCallback**接口 Microsoft Windows SDK 文档中所述。
 
 ## <a name="related-topics"></a>相关主题
-[**IWiaMiniDrvTransferCallback**](https://msdn.microsoft.com/library/windows/hardware/jj151550)  
+[**IWiaMiniDrvTransferCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvtransfercallback)  
 
 
 

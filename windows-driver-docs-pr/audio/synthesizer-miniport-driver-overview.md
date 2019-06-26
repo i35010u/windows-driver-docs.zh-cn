@@ -14,12 +14,12 @@ keywords:
 - 合成器 WDK 音频，内核模式硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53db733ab39d953b78b2787ec29193e631eadf8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c46d3ef342ea8d88a82d3dba62cca6bcc0fdff7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335399"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354238"
 ---
 # <a name="synthesizer-miniport-driver-overview"></a>合成器微型端口驱动程序概述
 
@@ -33,17 +33,17 @@ ms.locfileid: "63335399"
 
 内核模式 DirectMusic 驱动程序，最重要的标头文件是 dmusicks.h。 它包含您需要实现微型端口驱动程序的内核模式的主要接口。 这些接口是：
 
-[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)
+[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)
 
-[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)
+[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)
 
-[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)
+[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)
 
-[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IMasterClock](https://msdn.microsoft.com/library/windows/hardware/ff536696)
+[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)
 
-[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
 
 PortCls.sys 中实现这些接口的最后三个。
 
@@ -53,7 +53,7 @@ PortCls.sys 中实现这些接口的最后三个。
 
 ![说明到 directmusic 系统的适配器驱动程序的关系的关系图](images/dmkmbig.png)
 
-在最顶层级别，该驱动程序通过公开 DirectMusic 端口驱动程序 ( **IDirectMusicPort**接口实例)。 这是应用程序如何与 DirectMusic。 此端口驱动程序与通过流式处理通过调用的标准内核的 pin 实例向下进行通信[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)函数 （Microsoft Windows SDK 文档中所述）。
+在最顶层级别，该驱动程序通过公开 DirectMusic 端口驱动程序 ( **IDirectMusicPort**接口实例)。 这是应用程序如何与 DirectMusic。 此端口驱动程序与通过流式处理通过调用的标准内核的 pin 实例向下进行通信[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数 （Microsoft Windows SDK 文档中所述）。
 
 请注意，术语"端口"在上图中有两个冲突的含义。 避免混淆字词端口 DirectMusic api 的使用情况，在上面的用户模式下使用内核模式 Dmu 端口驱动程序。 条款在两个上下文中具有类似但略有不同含义。 具体而言，请注意， **IDirectMusicPort**图顶部的界面提供 Dmu 端口驱动程序实现的下半部分图中的单个插针实例的抽象。
 

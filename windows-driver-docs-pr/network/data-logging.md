@@ -7,19 +7,19 @@ keywords:
 - 日志记录 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b953b68419a12757178d6c3d73d524e4132da131
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 075f872abbb618643976eaa3cc5977098a6568a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354620"
 ---
 # <a name="data-logging"></a>数据日志记录
 
 
-若要确定数据应该是记录，一个标注[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)标注函数可以检查数据字段、 元数据字段和任何传递给它的原始数据的任意组合以及已存储的任何相关数据与筛选器或数据相关联的上下文中流。
+若要确定数据应该是记录，一个标注[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)标注函数可以检查数据字段、 元数据字段和任何传递给它的原始数据的任意组合以及已存储的任何相关数据与筛选器或数据相关联的上下文中流。
 
-例如，如果跟踪网络层筛选器将放弃多少传入 （入站） 的 IPv4 数据包的标注，则标注添加到筛选器引擎在 FWPM\_层\_入站\_IPPACKET\_V4\_放弃层。 在此情况下，标注的[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)标注函数可能类似于下面的示例：
+例如，如果跟踪网络层筛选器将放弃多少传入 （入站） 的 IPv4 数据包的标注，则标注添加到筛选器引擎在 FWPM\_层\_入站\_IPPACKET\_V4\_放弃层。 在此情况下，标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)标注函数可能类似于下面的示例：
 
 ```C++
 ULONG TotalDiscardCount = 0;
@@ -67,7 +67,7 @@ VOID NTAPI
 ## <a name="related-topics"></a>相关主题
 
 
-[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)
+[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

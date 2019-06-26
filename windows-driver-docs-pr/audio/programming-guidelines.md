@@ -4,17 +4,17 @@ description: 编程指南
 ms.assetid: 289bdf85-9138-4920-a61f-050c51077d3e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3a9803c7f335985abe3baa2929a17d1e9d02a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a366ee90fe4d8265ef829dc22347f2b818d7764e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362547"
 ---
 # <a name="programming-guidelines"></a>编程指南
 
 
-本部分介绍使用 DDI HD 音频版本的编程指南 (由定义[ **HDAUDIO\_总线\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff536413)， [ **HDAUDIO\_总线\_界面\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418)并[ **HDAUDIO\_总线\_接口\_BDL**](https://msdn.microsoft.com/library/windows/hardware/ff536416)结构) 到控制音频和调制解调器的编解码器已连接到 HD Audio 总线界面控制器。
+本部分介绍使用 DDI HD 音频版本的编程指南 (由定义[ **HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)， [ **HDAUDIO\_总线\_界面\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)并[ **HDAUDIO\_总线\_接口\_BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)结构) 到控制音频和调制解调器的编解码器已连接到 HD Audio 总线界面控制器。
 
 HD Audio 总线驱动程序公开一个或两个版本的 HD 音频 DDI 到其子元素，是用于音频和调制解调器编解码器的内核模式函数驱动程序。 （这些子对象的一个可能是 UAA HD Audio 类驱动程序）。这些驱动程序调用例程在 DDIs 访问 HD Audio 控制器设备的硬件功能。
 

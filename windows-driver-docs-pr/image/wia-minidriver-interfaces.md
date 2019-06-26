@@ -4,12 +4,12 @@ description: WIA 微型驱动程序接口
 ms.assetid: 6d069584-f9e1-4312-b8f2-1ef3d518faeb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2442972a981387a344df5d1b0d11533d4748b75b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ee0ffb88e52755355ab565fbbcef502342e0a44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355186"
 ---
 # <a name="wia-minidriver-interfaces"></a>WIA 微型驱动程序接口
 
@@ -17,7 +17,7 @@ ms.locfileid: "63343787"
 
 
 
-WIA 微型驱动程序是实现标准的 COM 对象**IUnknown** COM 接口 （这 Microsoft Windows SDK 文档中所述） 和两个其他特定于 WIA 的接口：[IStiUSD](istiusd-com-interface.md)并[IWiaMiniDrv](https://msdn.microsoft.com/library/windows/hardware/ff545027)。
+WIA 微型驱动程序是实现标准的 COM 对象**IUnknown** COM 接口 （这 Microsoft Windows SDK 文档中所述） 和两个其他特定于 WIA 的接口：[IStiUSD](istiusd-com-interface.md)并[IWiaMiniDrv](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)。
 
 ### <a name="istiusd-interface"></a>IStiUSD 接口
 

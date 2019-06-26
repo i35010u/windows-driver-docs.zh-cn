@@ -8,19 +8,19 @@ keywords:
 - 查询 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e51aec944825b6a289ebfa11529f3739ef66f0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12e61ddceb239d25bdc7d59c1c5f8f82dc81bd66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328710"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355281"
 ---
 # <a name="querying-for-an-hd-audio-ddi"></a>查询 HD 音频 DDI
 
 
-若要获取对具有高清晰度音频 DDI 的对象的计数的引用，音频或调制解调器的编解码器的功能驱动程序发送[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)IOCTL HD Audio 总线驱动程序。
+若要获取对具有高清晰度音频 DDI 的对象的计数的引用，音频或调制解调器的编解码器的功能驱动程序发送[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)IOCTL HD Audio 总线驱动程序。
 
-HD Audio 总线驱动程序在 Windows Vista 及更高版本，支持[ **HDAUDIO\_总线\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff536413)并[ **HDAUDIO\_总线\_接口\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418) DDI 的版本。 它不支持[ **HDAUDIO\_总线\_接口\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)版本。
+HD Audio 总线驱动程序在 Windows Vista 及更高版本，支持[ **HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)并[ **HDAUDIO\_总线\_接口\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2) DDI 的版本。 它不支持[ **HDAUDIO\_总线\_接口\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)版本。
 
 HD Audio 总线驱动程序可以安装在 Windows Server 2003 和 Windows XP 中的升级。 此总线驱动程序支持这两个 DDI 版本。
 

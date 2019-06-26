@@ -10,12 +10,12 @@ keywords:
 - 端口类音频适配器 WDK、 音量设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5ba4155d7a499646fadbee71b166d7c816f441
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f793853132974dbc0d5c0a8c40128ccf146b551c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333838"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359122"
 ---
 # <a name="customizing-hd-audio-driver-volume-settings"></a>自定义 HD 音频驱动程序音量设置
 
@@ -64,7 +64,7 @@ KS DB 单步执行值定义，如下所示:-2147483648 是-无穷大分贝 （�
 
 +2147483647 是 +32767.99998474 分贝 （提升）
 
-在单元上的度量值是使用 (1/65536 dB) 的详细信息，请参阅[ **KSPROPERTY\_音频\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)。
+在单元上的度量值是使用 (1/65536 dB) 的详细信息，请参阅[ **KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)。
 
 若要重写 wdmudio.inf 文件，使用 Include 和需求指令从下面的代码段中所示*Microsoft 虚拟音频设备驱动程序示例*作为的一部分[Windows Driver Kit (WDK) 8.1 示例](https://go.microsoft.com/fwlink/p/?LinkId=618052).
 
@@ -78,7 +78,7 @@ Needs=KS.Registration, WDMAUDIO.Registration
 ...
 ```
 
-Include 和需求指令的详细信息，请参阅[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)并[INF 文件的源媒体](https://msdn.microsoft.com/library/windows/hardware/ff552302)。
+Include 和需求指令的详细信息，请参阅[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)并[INF 文件的源媒体](https://docs.microsoft.com/windows-hardware/drivers/install/source-media-for-inf-files)。
 
 以下是示例 INF 包装所包装的音频类驱动程序的 INF 文件。
 
@@ -149,7 +149,7 @@ HKR,DefaultVolumeLevels\18,Boost,1,00,00,0A,00 ; Set to 0x000A0000 to set to 10d
 HdAudModel_DefaultVolume_DeviceDesc = "High Definition Audio Device"
 ```
 
-由于指定 HKR 相对路径，将基于特定的 INF 文件部分，可确定确切驱动程序注册表路径。 有关 HKR 相对路径的详细信息，请参阅[ **INF AddReg 指令 （Windows 驱动程序）**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。 以下两个注册表路径示例，你的注册表路径可能会有所不同。
+由于指定 HKR 相对路径，将基于特定的 INF 文件部分，可确定确切驱动程序注册表路径。 有关 HKR 相对路径的详细信息，请参阅[ **INF AddReg 指令 （Windows 驱动程序）** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。 以下两个注册表路径示例，你的注册表路径可能会有所不同。
 
 HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-11ce-bfc1-08002be10318}\\0002
 
@@ -159,7 +159,7 @@ HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [默认音频的音量设置](default-audio-volume-settings.md)  
-[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)  
+[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)  
 
 
 

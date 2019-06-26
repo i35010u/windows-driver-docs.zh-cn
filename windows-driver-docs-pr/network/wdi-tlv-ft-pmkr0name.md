@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FT_PMKR0NAME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dadb4a2f6dc2c5222d6f4cdef2a30d05fcef9b99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 346f274f32b1d79d1ba1e79d10765fd741bda3f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358538"
 ---
 # <a name="wditlvftpmkr0name"></a>WDI\_TLV\_FT\_PMKR0NAME
 
@@ -26,14 +26,14 @@ WDI\_TLV\_FT\_PMKR0NAME 是包含 PMKR0Name 或 PMKR1Name TLV (802.11r)。
 ## <a name="length"></a>长度
 
 
-大小 （以字节为单位） [ **WDI\_类型\_PMK\_名称**](https://msdn.microsoft.com/library/windows/hardware/mt269156)结构。
+大小 （以字节为单位） [ **WDI\_类型\_PMK\_名称**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_type_pmk_name)结构。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                   | 描述                         |
 |--------------------------------------------------------|-------------------------------------|
-| [**WDI\_TYPE\_PMK\_NAME**](https://msdn.microsoft.com/library/windows/hardware/mt269156) | PMKR0Name 或 PMKR1Name (802.11r)。 |
+| [**WDI\_TYPE\_PMK\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_type_pmk_name) | PMKR0Name 或 PMKR1Name (802.11r)。 |
 
  
 

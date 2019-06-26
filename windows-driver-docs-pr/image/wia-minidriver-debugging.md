@@ -4,12 +4,12 @@ description: WIA 微型驱动程序调试
 ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6df7c6a5e6cb14575afc1bd1edc9aec20c871a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de83d900e29497ee740d7749eb35a7445d8b9855
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355196"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA 微型驱动程序调试
 
@@ -29,7 +29,7 @@ WIA 服务进程内执行 WIA 驱动程序。 因此，若要执行这些驱动�
 
 如果您需要网络访问的符号和在调试器中的其他文件，这些可能不会显示如果在调试器下的 WIA 服务自动启动。 WIA 为 Windows XP 中的本地系统服务和以 localservice 身份运行 Microsoft Windows Server 2003 和更高版本的操作系统版本，并且没有适当的权限来访问网络。 因此，即使你的计算机可以"看到"的所有内容在网络上，可能无法再到调试器运行服务。 有关 WIA 服务的详细信息的更改的权限级别，请参阅[WIA 驱动程序的安全问题](security-issues-for-wia-drivers.md)。
 
--   如果驱动程序加载或初始化该驱动程序的 STI 部分期间出现问题 (例如，在为[ **IStiUSD::Initialize**](https://msdn.microsoft.com/library/windows/hardware/ff543824))，然后附加调试器时，该错误已有发生并已经太迟以获得有用的信息。 此问题的常见症状是，设备不会不会显示在**我的电脑**文件夹中，但*does*显示在**设备管理器**文件夹。
+-   如果驱动程序加载或初始化该驱动程序的 STI 部分期间出现问题 (例如，在为[ **IStiUSD::Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize))，然后附加调试器时，该错误已有发生并已经太迟以获得有用的信息。 此问题的常见症状是，设备不会不会显示在**我的电脑**文件夹中，但*does*显示在**设备管理器**文件夹。
 
 ### <a name="starting-the-wia-service-under-a-debugger"></a>启动在调试器下 WIA 服务
 
@@ -39,7 +39,7 @@ WIA 服务启动时，服务控制管理器 (SCM) 看起来在服务管理数据
 
 最初， **ImagePath**键设置为以下字符串值：
 
-"**%SystemRoot%\\System32\\svchost.exe -k imgsvc**"
+" **%SystemRoot%\\System32\\svchost.exe -k imgsvc**"
 
 若要运行 NTSD WIA 服务，例如，按如下所示修改上面的值：
 
@@ -88,6 +88,6 @@ WIA 服务启动时，服务控制管理器 (SCM) 看起来在服务管理数据
 
 为以下字符串值：
 
-"**%SystemRoot%\\System32\\stisvc.exe -k imgsvc**"
+" **%SystemRoot%\\System32\\stisvc.exe -k imgsvc**"
 
-现在，当 WIA 服务启动时，它运行下*stisvc.exe*而不是*svchost.exe*。 查找此过程是更简单，因为没有单个实例的*stisvc.exe*。 无需查找 PID 查找它。 因此，例如，如果你要开发使用 Microsoft Visual Studio 的驱动程序，则可以转到**开始调试**下的菜单项**构建**菜单中，单击**附加到进程...**，然后选择*stisvc.exe*列表中。
+现在，当 WIA 服务启动时，它运行下*stisvc.exe*而不是*svchost.exe*。 查找此过程是更简单，因为没有单个实例的*stisvc.exe*。 无需查找 PID 查找它。 因此，例如，如果你要开发使用 Microsoft Visual Studio 的驱动程序，则可以转到**开始调试**下的菜单项**构建**菜单中，单击**附加到进程...** ，然后选择*stisvc.exe*列表中。

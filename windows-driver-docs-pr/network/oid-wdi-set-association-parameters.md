@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ASSOCIATION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7dacbac9eaf8a6203a72ef249a0788d9f219265a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 681cc68754495e492b7593b3f862a0aa331811d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353654"
 ---
 # <a name="oidwdisetassociationparameters"></a>OID\_WDI\_设置\_关联\_参数
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_关联\_参数指定该适配器可以使用关联的一系列
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 否                       | 1                               |
+| Port  | 否                       | 1                               |
 
  
 
@@ -32,7 +32,7 @@ OID\_WDI\_设置\_关联\_参数指定该适配器可以使用关联的一系列
 
 | TLV                                                                     | 允许多个 TLV 实例 | 可选 | 描述                     |
 |-------------------------------------------------------------------------|--------------------------------|----------|---------------------------------|
-| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn926264) | X                              |          | BSS 条目和参数。 |
+| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-bss-entry) | X                              |          | BSS 条目和参数。 |
 
  
 

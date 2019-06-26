@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4e79b3d45e2801584e7048504c860c2246a3d45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5569999e22d55869955dfb1e7b193f7cb337a5fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332758"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361031"
 ---
 # <a name="kspropertydirectsound3dlistenerbatch"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_批处理
 
@@ -53,7 +53,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_批处理属性指定的批处理模式下设
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -97,7 +97,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_批处理属性请求返回状态\_成功以�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

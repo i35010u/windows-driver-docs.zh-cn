@@ -7,12 +7,12 @@ keywords:
 - ACPI 设备 WDK，评估控制方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d235720a377df453cd50abda856e30de7f3c1c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9423d3f948301d5b4435cd6b2877384ce415743c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328833"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355842"
 ---
 # <a name="evaluating-acpi-control-methods"></a>评估 ACPI 控制方法
 
@@ -21,27 +21,27 @@ ms.locfileid: "63328833"
 
 内核模式设备驱动程序符合要求的内核模式驱动程序框架 (KMDF) 为其加载它。 对于在 ACPI 枚举设备的设备堆栈中加载的驱动程序，ACPI 驱动程序始终是创建和运行的是 PDO 设备堆栈中的总线驱动程序。 此功能包括评估子对象的后代的父设备支持的控制方法。
 
-驱动程序通过发送以下项之一来评估控制方法[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)到设备的请求。
+驱动程序通过发送以下项之一来评估控制方法[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)到设备的请求。
 
--   [**IOCTL\_ACPI\_EVAL\_METHOD**](https://msdn.microsoft.com/library/windows/hardware/ff536148)
+-   [**IOCTL\_ACPI\_EVAL\_METHOD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)
 
     此请求以同步方式计算支持的请求发送到设备的控制方法。 若要使用此 IOCTL，设备的驱动程序提供了输入和输出的方法参数缓冲区，一种方法，并等待完成请求的事件对象的名称。 方法必须是请求发送到设备的 ACPI 命名空间中的直接子对象。
 
--   [**IOCTL\_ACPI\_异步\_EVAL\_方法**](https://msdn.microsoft.com/library/windows/hardware/ff536145)
+-   [**IOCTL\_ACPI\_异步\_EVAL\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method)
 
     此请求以异步方式计算支持的请求发送到设备的控制方法。 若要使用此 IOCTL，驱动程序，为设备提供输入和输出的方法参数缓冲区，方法的名称和一个*IoCompletion*例程较低级别的所有驱动程序已完成请求后，I/O 管理器会立即调用。 方法必须是请求发送到设备的 ACPI 命名空间中的直接子对象。
 
--   [**IOCTL\_ACPI\_EVAL\_METHOD\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff536149)
+-   [**IOCTL\_ACPI\_EVAL\_METHOD\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)
 
     此请求以同步方式计算支持的设备或设备的代子对象的控制方法为将请求发送。 若要使用此 IOCTL，设备的驱动程序提供了输入和输出方法参数缓冲区、 路径和该设备，并等待完成请求的事件对象的 ACPI 命名空间中的控制方法的名称。
 
--   [**IOCTL\_ACPI\_ASYNC\_EVAL\_METHOD\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff536146)
+-   [**IOCTL\_ACPI\_ASYNC\_EVAL\_METHOD\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)
 
     此请求的异步计算结果支持的设备或设备的代子对象的控制方法为将请求发送。 若要使用此 IOCTL，驱动程序，为设备提供输入和输出方法参数缓冲区、 路径和该设备，在 ACPI 命名空间中的控制方法的名称和一个*IoCompletion*毕竟 I/O 管理器调用的例程较低级别的驱动程序已完成请求。
 
-有关如何以同步方式评估 ACPI 控制方法的详细信息，请参阅[评估 ACPI 控件方法以同步方式](evaluating-acpi-control-methods-synchronously.md)。 有关如何以异步方式评估 ACPI 控制方法的详细信息，请参阅[ **IOCTL\_ACPI\_异步\_EVAL\_方法**](https://msdn.microsoft.com/library/windows/hardware/ff536145)和[**IOCTL\_ACPI\_异步\_EVAL\_方法\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff536146)。
+有关如何以同步方式评估 ACPI 控制方法的详细信息，请参阅[评估 ACPI 控件方法以同步方式](evaluating-acpi-control-methods-synchronously.md)。 有关如何以异步方式评估 ACPI 控制方法的详细信息，请参阅[ **IOCTL\_ACPI\_异步\_EVAL\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method)和[**IOCTL\_ACPI\_异步\_EVAL\_方法\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)。
 
-要计算的不是设备的直接子对象的控制方法的设备的驱动程序，该驱动程序必须提供的路径和名称的设备的 ACPI 命名空间中的方法。 为了获得的路径和名称的子对象的设备，Windows 支持[ **IOCTL\_ACPI\_枚举\_子级**](https://msdn.microsoft.com/library/windows/hardware/ff536147)请求，该设备的驱动程序可以使用以下枚举：
+要计算的不是设备的直接子对象的控制方法的设备的驱动程序，该驱动程序必须提供的路径和名称的设备的 ACPI 命名空间中的方法。 为了获得的路径和名称的子对象的设备，Windows 支持[ **IOCTL\_ACPI\_枚举\_子级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求，该设备的驱动程序可以使用以下枚举：
 
 -   设备和其直接子设备。
 

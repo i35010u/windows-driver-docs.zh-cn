@@ -7,12 +7,12 @@ keywords:
 - 安装程序类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d80bc77f27e8d774e8bf844721cd1f9dcbd15105
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75cbcac95bef68304b96856dac14ef5441a6c30f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364341"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356322"
 ---
 # <a name="creating-a-new-device-setup-class"></a>创建新的设备安装程序类
 
@@ -20,7 +20,7 @@ ms.locfileid: "63364341"
 
 
 
-您只应创建新的设备安装程序类，如果绝对必要。 通常可以将你的设备分配给之一[系统定义的设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff553419)。
+您只应创建新的设备安装程序类，如果绝对必要。 通常可以将你的设备分配给之一[系统定义的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。
 
 如果你的设备满足下列要求，应将其分配给现有的设备安装程序类：
 

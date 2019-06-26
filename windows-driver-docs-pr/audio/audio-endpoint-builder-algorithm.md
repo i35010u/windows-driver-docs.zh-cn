@@ -4,12 +4,12 @@ description: 音频终结点生成器算法
 ms.assetid: 2338bca7-5743-42c3-9baf-ac4a54cf0393
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aac4c8b70594f341c51b2109aa17e185c59d3ec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f69a97162761e4bd8518eade06a69105470da62d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331514"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355730"
 ---
 # <a name="audio-endpoint-builder-algorithm"></a>音频终结点生成器算法
 
@@ -22,7 +22,7 @@ AudioEndpointBuilder 服务使用算法来发现和枚举终结点。 该算法�
 
 使用在 Windows Vista 中，两个新的 Api [MMDevice API](https://go.microsoft.com/fwlink/p/?linkid=130863)并[wasapi 就可以了](https://go.microsoft.com/fwlink/p/?linkid=130864)，可以访问和处理这些新的音频设备。 MMDevice API 将新的音频设备称为终结点。
 
-AudioEndpointBuilder 服务监视器[ **KSCATEGORY\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff548261)设备接口到达和删除的类。 音频设备驱动程序时注册的新实例 KSCATEGORY\_音频设备界面类，AudioEndpointBuilder 服务检测到设备接口通知，以及使用算法来检查中的音频设备的拓扑系统并采取相应操作。
+AudioEndpointBuilder 服务监视器[ **KSCATEGORY\_音频**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-audio)设备接口到达和删除的类。 音频设备驱动程序时注册的新实例 KSCATEGORY\_音频设备界面类，AudioEndpointBuilder 服务检测到设备接口通知，以及使用算法来检查中的音频设备的拓扑系统并采取相应操作。
 
 以下列表总结了由 AudioEndpointBuilder 算法的工作方式：
 
@@ -32,7 +32,7 @@ AudioEndpointBuilder 服务监视器[ **KSCATEGORY\_音频**](https://msdn.micro
 
 3.  设置终结点的默认属性。 例如，AudioEndpointBuilder 设置名称、 图标和外形规格。
 
-4.  确定是否支持脉冲编码调制 (PCM) 的主机 pin 从终结点的路径，则为音频编解码器-3 (AC3) 或 Windows media 视频 (WMV)。 主机 pin 是一种 KSPIN 结构通过其通信成员设置为 KSPIN\_通信\_接收器或 KSPIN\_通信\_两者。 KSPIN 结构的详细信息，请参阅[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483)。
+4.  确定是否支持脉冲编码调制 (PCM) 的主机 pin 从终结点的路径，则为音频编解码器-3 (AC3) 或 Windows media 视频 (WMV)。 主机 pin 是一种 KSPIN 结构通过其通信成员设置为 KSPIN\_通信\_接收器或 KSPIN\_通信\_两者。 KSPIN 结构的详细信息，请参阅[ **KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin)。
 
 5.  填充属性中的信息的注册表项的音频设备接口的终结点 PropertyStore。
 

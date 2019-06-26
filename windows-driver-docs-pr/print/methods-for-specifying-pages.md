@@ -10,12 +10,12 @@ keywords:
 - PROPSHEETPAGE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3267ce97f51253b7c18b1c09417c2e6c77be1187
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8ee69c614031a743cae0d2a24a3e17b8b9bc87b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353509"
 ---
 # <a name="methods-for-specifying-pages"></a>用于指定页面的方法
 
@@ -23,9 +23,9 @@ ms.locfileid: "63358607"
 
 
 
-应用程序可以使用三种方法来指定 CPSUI 到属性表页。 以下方法的每个涉及调用的 CPSUI [ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)函数，并指定之一[ComPropSheet 函数代码](https://msdn.microsoft.com/library/windows/hardware/ff546214)。
+应用程序可以使用三种方法来指定 CPSUI 到属性表页。 以下方法的每个涉及调用的 CPSUI [ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)函数，并指定之一[ComPropSheet 函数代码](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)。
 
--   提供[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211)结构
+-   提供[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)结构
 
     如果应用程序通过将传递到 COMPROPSHEETUI 结构描述的属性表页**ComPropSheet**，它可以：
 
@@ -38,9 +38,9 @@ ms.locfileid: "63358607"
 
 -   提供一个回调函数
 
-    应用程序可以将传递[ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)的地址[ **PFNPROPSHEETUI**](https://msdn.microsoft.com/library/windows/hardware/ff559812)-类型化的回调函数，哪些 CPSUI 立即调用。 回调函数负责调用**ComPropSheet**本身创建属性表页。
+    应用程序可以将传递[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)的地址[ **PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfnpropsheetui)-类型化的回调函数，哪些 CPSUI 立即调用。 回调函数负责调用**ComPropSheet**本身创建属性表页。
 
-    打印后台处理程序使用此方法以打印机接口 DLL 的通知是否存在 CPSUI **DrvDocumentPropertySheets**并*Pscript*驱动程序使用的技术来通知 CPSUI是否存在[**IPrintOemUI::DocumentPropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff554173)并[ **IPrintOemUI::DevicePropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff554165)中的 COM 方法[用户接口插件](user-interface-plug-ins.md)。
+    打印后台处理程序使用此方法以打印机接口 DLL 的通知是否存在 CPSUI **DrvDocumentPropertySheets**并*Pscript*驱动程序使用的技术来通知 CPSUI是否存在[**IPrintOemUI::DocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-documentpropertysheets)并[ **IPrintOemUI::DevicePropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-devicepropertysheets)中的 COM 方法[用户接口插件](user-interface-plug-ins.md)。
 
 无论哪种方法用于指定新的页面，页面必须将分配给[父级组](group-parent.md)通过将组父传递的句柄**ComPropSheet**函数。
 

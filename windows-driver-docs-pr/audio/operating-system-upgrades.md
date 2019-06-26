@@ -11,12 +11,12 @@ keywords:
 - 迁移设置 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6867e25d64d7e287d66ee04fffd96bc2474cb3ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcc1214e590d2b1e25fde77b1c384a2c0805dba0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355340"
 ---
 # <a name="operating-system-upgrades"></a>操作系统升级
 
@@ -36,7 +36,7 @@ ms.locfileid: "63332257"
 
 某些专有的驱动程序，但是，会盲目地覆盖这些注册表设置使用默认值每次安装它们。 更好的方法是驱动程序以在安装时确定是否某些驱动程序特定的注册表项已存在。 如果它们存在，该驱动程序应保留而不是覆盖它们这些项中包含的设置。
 
-驱动程序的 INF 文件的添加注册表部分中的指令指定是否应覆盖现有的注册表项。 有关详细信息，请参阅说明 FLG\_ADDREG\_中的 NOCLOBBER 标志[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+驱动程序的 INF 文件的添加注册表部分中的指令指定是否应覆盖现有的注册表项。 有关详细信息，请参阅说明 FLG\_ADDREG\_中的 NOCLOBBER 标志[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 ### <a name="span-idmigrationdllspanspan-idmigrationdllspanspan-idmigrationdllspanmigration-dll"></a><span id="Migration_DLL"></span><span id="migration_dll"></span><span id="MIGRATION_DLL"></span>迁移 DLL
 

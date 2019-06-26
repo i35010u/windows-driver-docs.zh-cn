@@ -4,12 +4,12 @@ description: 本主题讨论了 Windows 8 驱动程序可用来选择加入的�
 ms.assetid: 43721EC9-4901-4C68-9CCC-E0A71BF2200E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2de1bcac68be13f32c96039adea5e499282f640
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c94997e99e55dec5afe0ce957ae4fc6220c7c36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333504"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359956"
 ---
 # <a name="span-idaudioimmediateidletimeoutopt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>即时空闲超时参加
 
@@ -40,7 +40,7 @@ HKLM\\System\\CurrentControlSet\\Control\\Class\\{4D36E96C-E325-11CE-BFC1-08002B
 
 如果选择在中即时空闲电源管理的驱动程序，它必须确保系统电源引擎插件 (PEP) 包含不必要地阻止所需的逻辑和持续向上和向下提供适配器支持的 Irp 接收即时连续的。 一些驻留规则应该应用为了保持设备的 I/O 请求批处理为提供支持。
 
-此外，允许以编程方式启用或禁用空闲电源管理的驱动程序的 Windows 7 中引入的新接口继续时不中选择即时空闲电源管理驱动程序已被拒绝。 这是通过[ **IPortClsPower::SetIdlePowerManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff536875)方法，并且将覆盖在注册表中，除了在其中设置*ImmediateIdle*是设置为 1 (TRUE)。
+此外，允许以编程方式启用或禁用空闲电源管理的驱动程序的 Windows 7 中引入的新接口继续时不中选择即时空闲电源管理驱动程序已被拒绝。 这是通过[ **IPortClsPower::SetIdlePowerManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclspower-setidlepowermanagement)方法，并且将覆盖在注册表中，除了在其中设置*ImmediateIdle*是设置为 1 (TRUE)。
 
  
 

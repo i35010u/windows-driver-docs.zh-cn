@@ -4,12 +4,12 @@ description: MSiSCSI\_LUNMappingInformation WMI 类
 ms.assetid: 646add52-f946-4169-9f6b-974253ec30af
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e40aa4b601feb670a4f2fb99fc42def75a57b31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7dfc7dc88017bf152120bf2746d4bdf20bdcedde
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353508"
 ---
 # <a name="msiscsilunmappinginformation-wmi-class"></a>MSiSCSI\_LUNMappingInformation WMI 类
 
@@ -25,7 +25,7 @@ MSiSCSI\_LUNMappingInformation 类公开操作系统将分配给特定的逻辑�
 
 MSiSCSI\_LUNMappingInformation 类中定义，则不发布*Operations.mof*。
 
-当 WMI 工具套件编译此类定义时，它会生成[ **MSiSCSI\_LUNMappingInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff563065)数据结构。
+当 WMI 工具套件编译此类定义时，它会生成[ **MSiSCSI\_LUNMappingInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_msiscsi_lunmappinginformation)数据结构。
 
 SCSI 地址信息的该 MSiSCSI\_LUNMappingInformation 公开必须与发起方的微型端口驱动程序提供的信息一致的逻辑单元的枚举期间端口驱动程序。
 

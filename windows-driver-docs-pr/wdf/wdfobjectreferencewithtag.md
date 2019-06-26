@@ -6,12 +6,12 @@ keywords:
 - WdfObjectReferenceWithTag 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4426aad88ad8466da6ce36a7bc84355db6af13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98bad0b0f240ddc155a457e6193a0cc7ae068ab5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385729"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354435"
 ---
 # <a name="wdfobjectreferencewithtag-macro"></a>WdfObjectReferenceWithTag 宏
 
@@ -51,11 +51,11 @@ Framework 对象的句柄。
 
 如果您的驱动程序调用**WdfObjectReferenceWithTag**递增引用计数，该驱动程序必须调用[ **WdfObjectDereferenceWithTag** ](wdfobjectdereferencewithtag.md)要递减计数。
 
-调用[ **WdfObjectReferenceActual** ](https://msdn.microsoft.com/library/windows/hardware/ff548760)或**WdfObjectReferenceWithTag**而不是[ **WdfObjectReference**](wdfobjectreference.md)向 Microsoft 调试器提供附加信息 （标记值、 行号和文件名称）。 **WdfObjectReferenceActual**允许您的驱动程序指定的行号和文件名称，而**WdfObjectReferenceWithTag**使用驱动程序的当前行号和文件名称。
+调用[ **WdfObjectReferenceActual** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectreferenceactual)或**WdfObjectReferenceWithTag**而不是[ **WdfObjectReference**](wdfobjectreference.md)向 Microsoft 调试器提供附加信息 （标记值、 行号和文件名称）。 **WdfObjectReferenceActual**允许您的驱动程序指定的行号和文件名称，而**WdfObjectReferenceWithTag**使用驱动程序的当前行号和文件名称。
 
-可以通过查看标记、 行号和文件名称值 **！ wdftagtracker**调试器扩展。 调试器扩展显示为一个指针，以及一系列字符的标记值。 有关调试器扩展的详细信息，请参阅[调试 KMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540790)。
+可以通过查看标记、 行号和文件名称值 **！ wdftagtracker**调试器扩展。 调试器扩展显示为一个指针，以及一系列字符的标记值。 有关调试器扩展的详细信息，请参阅[调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
 
-有关对象引用计数的详细信息，请参阅[Framework 对象生命周期](https://msdn.microsoft.com/library/windows/hardware/ff542889)。
+有关对象引用计数的详细信息，请参阅[Framework 对象生命周期](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)。
 
 <a name="examples"></a>示例
 --------

@@ -4,19 +4,19 @@ description: 智能卡微型驱动器
 ms.assetid: BE24E8C3-663A-47A3-B30C-CBB0AEF89E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb20231b804bdb47e4228c078562c730e7220aaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1a0e595611401ef6341e056ca79a2fe79cd4811
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382559"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356660"
 ---
 # <a name="smart-card-minidrivers"></a>智能卡微型驱动器
 
 
 智能卡微型驱动程序通过封装的大多数复杂的加密操作卡微型驱动程序开发人员提供更简单的替代开发旧的加密服务提供程序 (CSP)。
 
-有关智能卡微型驱动程序的规范的信息，请参阅[智能卡微型驱动程序规范](https://msdn.microsoft.com/library/windows/hardware/dn631754)。
+有关智能卡微型驱动程序的规范的信息，请参阅[智能卡微型驱动程序规范](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn631754(v=vs.85))。
 
 从 Windows Vista 开始，应用程序可以使用 Microsoft 加密 API:下一代 (CNG) 的基于智能卡加密服务。 在 Windows Vista 中引入的椭圆曲线加密 (ECC) 工作的一部分，在新的加密框架支持 ECC 智能卡。 应用程序和与现有 Rivest 仅使用 Adleman (RSA) 卡微型驱动程序通过旧 CAPI 子系统进行交互的接口继续无需修改即可。
 

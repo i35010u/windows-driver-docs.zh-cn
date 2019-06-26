@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f55f5c3ad2e166c3b5302f17db459b86ebdb2c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0092afc254c127583e2eca9f388efbc0537cd38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362377"
 ---
 # <a name="bug-check-0x100-loaderblockmismatch"></a>Bug 检查 0x100：加载程序\_阻止\_不匹配
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347836"
 加载程序\_阻止\_不匹配错误检查的值为 0x00000100。 这指示加载程序块是无效的或与系统为正在加载不匹配。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="loaderblockmismatch-parameters"></a>加载程序\_阻止\_不匹配参数

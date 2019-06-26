@@ -4,12 +4,12 @@ description: 当 NDIS 检测到空闲的时间超过的选择性挂起的空闲�
 ms.assetid: EEDA274F-AC7D-4515-BAAF-FBEDDF95D2DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 126e031d53aeac5190a5785948a648ab1f41a3f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46c19fa7d9aab8224ad2fc992749694dcdc97967
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373790"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357096"
 ---
 # <a name="wdi-usb-suspend-sequence"></a>WDI USB 挂起序列
 
@@ -27,9 +27,9 @@ ms.locfileid: "63373790"
 ## <a name="related-topics"></a>相关主题
 
 
-[*MiniportWdiIdleNotification*](https://msdn.microsoft.com/library/windows/hardware/mt297563)
+[*MiniportWdiIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_idle_notification)
 
-[**WDI\_TLV\_SET\_POWER\_DX\_REASON**](https://msdn.microsoft.com/library/windows/hardware/dn898060)
+[**WDI\_TLV\_SET\_POWER\_DX\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-power-dx-reason)
 
  
 

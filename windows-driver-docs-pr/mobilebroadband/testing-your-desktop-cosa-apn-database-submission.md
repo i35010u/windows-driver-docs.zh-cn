@@ -4,12 +4,12 @@ description: 测试桌面 COSA/APN 数据库提交
 ms.assetid: 8f45dbf0-4f96-4d11-b2a2-41b9e75b5e9b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c3b835a15c6fd02855bf69f1e81344f6b6b7c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da175fb7dc89768f071a0b3f5fb0e66bbaa5c2b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376993"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357855"
 ---
 # <a name="testing-your-desktop-cosaapn-database-submission"></a>测试桌面 COSA/APN 数据库提交
 
@@ -36,7 +36,7 @@ ms.locfileid: "63376993"
 
 提交您已完成的电子表格，其中包含您的 TAM 你 APN 的信息后，Microsoft 将为你创建预配的包 (.ppkg) 文件，并将其返回到你，因此可以安装和测试你的 APN。 
 
-有关如何安装预配包文件的详细信息，请参阅[预配包应用](https://technet.microsoft.com/itpro/windows/deploy/provisioning-apply-package)。
+有关如何安装预配包文件的详细信息，请参阅[预配包应用](https://docs.microsoft.com/windows/deploy/provisioning-apply-package)。
 
 ### <a name="modify-the-local-cosa-database-desktop-cosa"></a>修改本地 COSA 数据库 (桌面 COSA)
 

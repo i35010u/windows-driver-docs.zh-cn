@@ -17,12 +17,12 @@ keywords:
 - PCPIN_DESCRIPTOR 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2ec2c37f3b4244c8d17f5050eda21c0197adc78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dddb482ca90baf7e00a998679f60141d8441542
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354178"
 ---
 # <a name="topology-pins"></a>拓扑引脚
 
@@ -32,7 +32,7 @@ ms.locfileid: "63335274"
 
 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)拓扑插针上 KS 筛选器转换为 mixer API 向应用程序公开的源和目标混音器行。 （接收器） 输入插针变为源 mixer 行，并且输出 （源） 插针成为目标混音器行。
 
-如中所述[Pin 工厂](pin-factories.md)，微型端口驱动程序提供了一系列 pin 描述符，其中每个是类型的结构[ **PCPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537721) ，介绍属于筛选器的 pin 工厂。 每个 pin 描述符包含以下信息：
+如中所述[Pin 工厂](pin-factories.md)，微型端口驱动程序提供了一系列 pin 描述符，其中每个是类型的结构[ **PCPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcpin_descriptor) ，介绍属于筛选器的 pin 工厂。 每个 pin 描述符包含以下信息：
 
 -   **数据流方向说明符**
 
@@ -340,7 +340,7 @@ MIXERLINE\_TARGETTYPE\_WAVEIN
 
 不会显示在前面的表中的所有 pin 类别，WDMAud 将都转换为与目标类型的 MIXERLINE 目标 mixer 行输出插针\_TARGETTYPE\_未定义和组件类型的 MIXERLINE\_COMPONENTTYPE\_DST\_未定义。
 
-在前面的表中，大部分 KS 固定类别 Guid 具有 KSNODETYPE\_*Xxx*名称。 Ksmedia.h 和 Dmusprop.h 的标头文件中定义了这些名称。 (此命名约定的两个人员变动是 Guid KSCATEGORY\_音频和 PINNAME\_捕获，这也在 Ksmedia.h 中定义。)如中所述[拓扑节点](topology-nodes.md)，KSNODETYPE\_*Xxx* Guid 还可用于将 KS 指定节点类型。 大多数 KSNODETYPE\_*Xxx* Guid 指定 pin 类别或节点类型，但不是能同时指定。 例外情况是[ **KSNODETYPE\_合成器**](https://msdn.microsoft.com/library/windows/hardware/ff537203)，可以指定使用 pin 类别还是一个节点类型，具体取决于在其中的上下文。 有关一系列 KSNODETYPE\_*Xxx* Guid 表示 pin 类别，请参阅[Pin Category 属性](pin-category-property.md)。 有关一系列 KSNODETYPE\_*Xxx* Guid 表示节点类型，请参阅[音频拓扑节点](https://msdn.microsoft.com/library/windows/hardware/ff536219)。
+在前面的表中，大部分 KS 固定类别 Guid 具有 KSNODETYPE\_*Xxx*名称。 Ksmedia.h 和 Dmusprop.h 的标头文件中定义了这些名称。 (此命名约定的两个人员变动是 Guid KSCATEGORY\_音频和 PINNAME\_捕获，这也在 Ksmedia.h 中定义。)如中所述[拓扑节点](topology-nodes.md)，KSNODETYPE\_*Xxx* Guid 还可用于将 KS 指定节点类型。 大多数 KSNODETYPE\_*Xxx* Guid 指定 pin 类别或节点类型，但不是能同时指定。 例外情况是[ **KSNODETYPE\_合成器**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)，可以指定使用 pin 类别还是一个节点类型，具体取决于在其中的上下文。 有关一系列 KSNODETYPE\_*Xxx* Guid 表示 pin 类别，请参阅[Pin Category 属性](pin-category-property.md)。 有关一系列 KSNODETYPE\_*Xxx* Guid 表示节点类型，请参阅[音频拓扑节点](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)。
 
 KSCATEGORY\_音频是另一个双使用 GUID。 可用作任一**KS pin 类别 GUID**或**KS 筛选类别 GUID**，取决于上下文。 在设备安装、 音频驱动程序注册其设备接口筛选器类别 KSCATEGORY 下的\_音频。 有关详细信息，请参阅[音频适配器安装设备接口](installing-device-interfaces-for-an-audio-adapter.md)。
 

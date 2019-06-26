@@ -11,12 +11,12 @@ keywords:
 - 通道对象 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dcafb093a09c729eaec0850d4dd1f74d1c5b46d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c315ea0f58297ba2ab6ec655553e2d14e7def245
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360128"
 ---
 # <a name="dma-channel-objects"></a>DMA 通道对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "63333760"
 ## <span id="dma_channel_objects"></span><span id="DMA_CHANNEL_OBJECTS"></span>
 
 
-PortCls 系统驱动程序实现[IDmaChannel](https://msdn.microsoft.com/library/windows/hardware/ff536547)并[IDmaChannelSlave](https://msdn.microsoft.com/library/windows/hardware/ff536548)为了方便 WaveCyclic 和 WavePci 微型端口驱动程序的接口。 **IDmaChannel**表示 DMA 通道以及其关联的 DMA 缓冲区和缓冲区使用情况参数。 此外，WaveCyclic 微型端口驱动程序使用**IDmaChannelSlave**管理从属设备 DMA 通道。 **IDmaChannelSlave**继承自**IDmaChannel**。 有关控制 DMA 操作的信息，请参阅[适配器对象和 DMA](https://msdn.microsoft.com/library/windows/hardware/ff540519)。
+PortCls 系统驱动程序实现[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-idmachannel)并[IDmaChannelSlave](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-idmachannelslave)为了方便 WaveCyclic 和 WavePci 微型端口驱动程序的接口。 **IDmaChannel**表示 DMA 通道以及其关联的 DMA 缓冲区和缓冲区使用情况参数。 此外，WaveCyclic 微型端口驱动程序使用**IDmaChannelSlave**管理从属设备 DMA 通道。 **IDmaChannelSlave**继承自**IDmaChannel**。 有关控制 DMA 操作的信息，请参阅[适配器对象和 DMA](https://docs.microsoft.com/windows-hardware/drivers/kernel/adapter-objects-and-dma)。
 
 **IDmaChannel**对象将封装以下：
 
@@ -42,7 +42,7 @@ DMA 通道对象可以创建主数据库或从属的设备：
 
 -   主设备使用其自己总线主控 DMA 硬件系统总线上执行数据传输。
 
-有关使用从属的 DMA 通道对象 WaveCyclic 设备的一个示例，请参阅 Sb16 示例音频驱动程序中 Microsoft Windows Driver Kit (WDK)。 主 DMA 通道对象是略高于 backboard 共享 DMA 通道之间的端口和微型端口驱动程序有关的信息。 有关主和从属设备的详细信息，请参阅[适配器对象简介](https://msdn.microsoft.com/library/windows/hardware/ff547986)。
+有关使用从属的 DMA 通道对象 WaveCyclic 设备的一个示例，请参阅 Sb16 示例音频驱动程序中 Microsoft Windows Driver Kit (WDK)。 主 DMA 通道对象是略高于 backboard 共享 DMA 通道之间的端口和微型端口驱动程序有关的信息。 有关主和从属设备的详细信息，请参阅[适配器对象简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-adapter-objects)。
 
 主数据库或从属的设备的 DMA 通道对象公开了以下：
 
@@ -52,25 +52,25 @@ DMA 通道对象可以创建主数据库或从属的设备：
 
 -   一个缓冲区大小值，可以查询和更改
 
-*适配器对象*是一个用于 DMA 适配器结构*物理设备对象 (PDO)*。 微型端口驱动程序通过调用以下方法之一创建 DMA 通道对象时，自动创建的适配器对象：
+*适配器对象*是一个用于 DMA 适配器结构*物理设备对象 (PDO)* 。 微型端口驱动程序通过调用以下方法之一创建 DMA 通道对象时，自动创建的适配器对象：
 
-[**IPortWavePci::NewMasterDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff536916)
+[**IPortWavePci::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-newmasterdmachannel)
 
-[**IPortWaveCyclic::NewMasterDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff536900)
+[**IPortWaveCyclic::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavecyclic-newmasterdmachannel)
 
-[**IPortWaveCyclic::NewSlaveDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff536902)
+[**IPortWaveCyclic::NewSlaveDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavecyclic-newslavedmachannel)
 
-该方法[ **IDmaChannel::GetAdapterObject** ](https://msdn.microsoft.com/library/windows/hardware/ff536560)可用于获取该适配器对象的指针。
+该方法[ **IDmaChannel::GetAdapterObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-getadapterobject)可用于获取该适配器对象的指针。
 
-适配器驱动程序还可以调用[ **PcNewDmaChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff537712)函数来创建 DMA 通道对象，但此函数是更难使用比**IPortWave*Xxx*:: 新建*Xxx*DmaChannel**调用，因为调用方必须显式指定一个设备对象和其他上下文信息。
+适配器驱动程序还可以调用[ **PcNewDmaChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewdmachannel)函数来创建 DMA 通道对象，但此函数是更难使用比**IPortWave*Xxx*:: 新建*Xxx*DmaChannel**调用，因为调用方必须显式指定一个设备对象和其他上下文信息。
 
-对于从属的设备，DMA 通道[ **IDmaChannel::TransferCount** ](https://msdn.microsoft.com/library/windows/hardware/ff536565)方法返回的最大传输大小 ( *MapSize*参数) 这是对调用中指定[ **IDmaChannelSlave::Start**](https://msdn.microsoft.com/library/windows/hardware/ff536550)。 此外，该适配器对象提供了用于操作和查询 DMA 设备的一些方法。 这些方法均不是对主 DMA 通道有意义。
+对于从属的设备，DMA 通道[ **IDmaChannel::TransferCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-transfercount)方法返回的最大传输大小 ( *MapSize*参数) 这是对调用中指定[ **IDmaChannelSlave::Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-start)。 此外，该适配器对象提供了用于操作和查询 DMA 设备的一些方法。 这些方法均不是对主 DMA 通道有意义。
 
-[**IDmaChannel::AllocateBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536553)并[ **IDmaChannel::FreeBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536559)用于管理与 DMA 通道对象相关联的单个常见缓冲区。 分配给对象缓冲区被保证为可访问驱动程序 （使用内核虚拟内存地址） 和 DMA 设备 （与物理内存地址）。 此外，则缓冲区将以物理上连续。 通常情况下，最佳策略是微型端口驱动程序初始化期间分配 DMA 缓冲区，当物理上连续内存最大量。 [**IDmaChannel::AllocatedBufferSize** ](https://msdn.microsoft.com/library/windows/hardware/ff536554)调用中指定了返回的缓冲区的大小**IDmaChannel::AllocateBuffer**。
+[**IDmaChannel::AllocateBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatebuffer)并[ **IDmaChannel::FreeBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-freebuffer)用于管理与 DMA 通道对象相关联的单个常见缓冲区。 分配给对象缓冲区被保证为可访问驱动程序 （使用内核虚拟内存地址） 和 DMA 设备 （与物理内存地址）。 此外，则缓冲区将以物理上连续。 通常情况下，最佳策略是微型端口驱动程序初始化期间分配 DMA 缓冲区，当物理上连续内存最大量。 [**IDmaChannel::AllocatedBufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatedbuffersize)调用中指定了返回的缓冲区的大小**IDmaChannel::AllocateBuffer**。
 
-[**IDmaChannel::MaximumBufferSize** ](https://msdn.microsoft.com/library/windows/hardware/ff536561)指示可以使用的实际最大缓冲区大小。 如果已分配的大小不是页面大小的偶数倍，这可能会超过分配的大小。 可能会分配的大小小于如果 DMA 设备不能支持传输的已分配的大小。 [**IDmaChannel::BufferSize** ](https://msdn.microsoft.com/library/windows/hardware/ff536556)并[ **IDmaChannel::SetBufferSize** ](https://msdn.microsoft.com/library/windows/hardware/ff536563)用于查询和设置要用于 DMA 传输的缓冲区的大小。 当分配缓冲区时，缓冲区大小设置为最大缓冲区大小。 初始化后，端口驱动程序和微型端口驱动程序有机会更改的缓冲区大小或发现其当前值。 微型端口驱动程序使用的结果**IDmaChannel::BufferSize** DMA 通道启动时确定 DMA 操作的传输大小。 [**IDmaChannel::SystemAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff536564)并[ **IDmaChannel::PhysicalAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff536562)用于分别获取缓冲区中的虚拟和物理地址。
+[**IDmaChannel::MaximumBufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-maximumbuffersize)指示可以使用的实际最大缓冲区大小。 如果已分配的大小不是页面大小的偶数倍，这可能会超过分配的大小。 可能会分配的大小小于如果 DMA 设备不能支持传输的已分配的大小。 [**IDmaChannel::BufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-buffersize)并[ **IDmaChannel::SetBufferSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-setbuffersize)用于查询和设置要用于 DMA 传输的缓冲区的大小。 当分配缓冲区时，缓冲区大小设置为最大缓冲区大小。 初始化后，端口驱动程序和微型端口驱动程序有机会更改的缓冲区大小或发现其当前值。 微型端口驱动程序使用的结果**IDmaChannel::BufferSize** DMA 通道启动时确定 DMA 操作的传输大小。 [**IDmaChannel::SystemAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-systemaddress)并[ **IDmaChannel::PhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-physicaladdress)用于分别获取缓冲区中的虚拟和物理地址。
 
-[**IDmaChannel::CopyTo** ](https://msdn.microsoft.com/library/windows/hardware/ff536558)并[ **IDmaChannel::CopyFrom** ](https://msdn.microsoft.com/library/windows/hardware/ff536557)向 / 从 DMA 缓冲区复制示例数据。 WaveCyclic 端口驱动程序调用这些方法来将音频数据的应用程序缓冲区和微型端口驱动程序的循环缓冲区之间复制。
+[**IDmaChannel::CopyTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyto)并[ **IDmaChannel::CopyFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyfrom)向 / 从 DMA 缓冲区复制示例数据。 WaveCyclic 端口驱动程序调用这些方法来将音频数据的应用程序缓冲区和微型端口驱动程序的循环缓冲区之间复制。
 
 DMA 缓冲区一定不用于传输流的数据。 对于 WavePci 端口驱动程序，流的数据传送到 （或从检索） 微型端口驱动程序，因为散播-聚集映射的列表。 但是，微型端口驱动程序可能仍利用 DMA 缓冲区作为适配器驱动程序进行通信的共享的内存空间。
 
@@ -80,39 +80,39 @@ DMA 缓冲区一定不用于传输流的数据。 对于 WavePci 端口驱动程
 
 **IDmaChannel**接口支持以下方法：
 
-[**IDmaChannel::AllocateBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536553)
+[**IDmaChannel::AllocateBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatebuffer)
 
-[**IDmaChannel::AllocatedBufferSize**](https://msdn.microsoft.com/library/windows/hardware/ff536554)
+[**IDmaChannel::AllocatedBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-allocatedbuffersize)
 
-[**IDmaChannel::BufferSize**](https://msdn.microsoft.com/library/windows/hardware/ff536556)
+[**IDmaChannel::BufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-buffersize)
 
-[**IDmaChannel::CopyFrom**](https://msdn.microsoft.com/library/windows/hardware/ff536557)
+[**IDmaChannel::CopyFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyfrom)
 
-[**IDmaChannel::CopyTo**](https://msdn.microsoft.com/library/windows/hardware/ff536558)
+[**IDmaChannel::CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyto)
 
-[**IDmaChannel::FreeBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536559)
+[**IDmaChannel::FreeBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-freebuffer)
 
-[**IDmaChannel::GetAdapterObject**](https://msdn.microsoft.com/library/windows/hardware/ff536560)
+[**IDmaChannel::GetAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-getadapterobject)
 
-[**IDmaChannel::MaximumBufferSize**](https://msdn.microsoft.com/library/windows/hardware/ff536561)
+[**IDmaChannel::MaximumBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-maximumbuffersize)
 
-[**IDmaChannel::PhysicalAddress**](https://msdn.microsoft.com/library/windows/hardware/ff536562)
+[**IDmaChannel::PhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-physicaladdress)
 
-[**IDmaChannel::SetBufferSize**](https://msdn.microsoft.com/library/windows/hardware/ff536563)
+[**IDmaChannel::SetBufferSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-setbuffersize)
 
-[**IDmaChannel::SystemAddress**](https://msdn.microsoft.com/library/windows/hardware/ff536564)
+[**IDmaChannel::SystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-systemaddress)
 
-[**IDmaChannel::TransferCount**](https://msdn.microsoft.com/library/windows/hardware/ff536565)
+[**IDmaChannel::TransferCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-transfercount)
 
 **IDmaChannelSlave**接口扩展**IDmaChannel**通过添加以下方法：
 
-[**IDmaChannelSlave::ReadCounter**](https://msdn.microsoft.com/library/windows/hardware/ff536549)
+[**IDmaChannelSlave::ReadCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-readcounter)
 
-[**IDmaChannelSlave::Start**](https://msdn.microsoft.com/library/windows/hardware/ff536550)
+[**IDmaChannelSlave::Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-start)
 
-[**IDmaChannelSlave::Stop**](https://msdn.microsoft.com/library/windows/hardware/ff536551)
+[**IDmaChannelSlave::Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-stop)
 
-[**IDmaChannelSlave::WaitForTC**](https://msdn.microsoft.com/library/windows/hardware/ff536552)
+[**IDmaChannelSlave::WaitForTC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannelslave-waitfortc)
 
  
 

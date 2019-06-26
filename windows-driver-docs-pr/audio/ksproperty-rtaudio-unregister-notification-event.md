@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db873ce4b65d2b72d3fca6c4a0ef6444360c37d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 987bbe7954c5b56fe197848eb9a647ac5b7f22d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358737"
 ---
 # <a name="kspropertyrtaudiounregisternotificationevent"></a>KSPROPERTY\_RTAUDIO\_注销\_通知\_事件
 
@@ -52,7 +52,7 @@ KSPROPERTY\_RTAUDIO\_注销\_通知\_事件属性中取消注册 DMA 驱动事�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537499" data-raw-source="[&lt;strong&gt;KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537499)"><strong>KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property)"><strong>KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY</strong></a></p></td>
 <td align="left"><p><strong>NULL</strong></p></td>
 </tr>
 </tbody>
@@ -60,7 +60,7 @@ KSPROPERTY\_RTAUDIO\_注销\_通知\_事件属性中取消注册 DMA 驱动事�
 
  
 
-属性描述符 （实例数据） 包含 KSRTAUDIO\_通知\_事件\_包含的属性结构[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构以及用户模式事件句柄。
+属性描述符 （实例数据） 包含 KSRTAUDIO\_通知\_事件\_包含的属性结构[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构以及用户模式事件句柄。
 
 此属性在属性值 （操作数据） **NULL**因为没有返回任何操作数据。
 
@@ -102,7 +102,7 @@ KSPROPERTY\_ RTAUDIO\_注销\_通知\_事件属性请求将返回状态\_成功�
 
 此属性用于撤消注册用户模式下从 DMA 驱动事件通知的事件。
 
-Pin 时进入运行状态 (KSSTATE\_运行) 的已注册的事件都已终止一次或两次每个循环的音频缓冲区的周期，具体取决于通知计数请求何时[ **KSPROPERTY\_RTAUDIO\_缓冲区\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md)调用。 详细了解 KSSTATE\_运行，请参阅[状态转换](https://msdn.microsoft.com/library/windows/hardware/ff568227)主题。
+Pin 时进入运行状态 (KSSTATE\_运行) 的已注册的事件都已终止一次或两次每个循环的音频缓冲区的周期，具体取决于通知计数请求何时[ **KSPROPERTY\_RTAUDIO\_缓冲区\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md)调用。 详细了解 KSSTATE\_运行，请参阅[状态转换](https://docs.microsoft.com/windows-hardware/drivers/stream/state-transitions)主题。
 
 停止 pin 并在之前步骤中，您将其关闭，每个已注册的事件必须是通过调用 KSPROPERTY 注销后\_RTAUDIO\_注销\_通知\_事件。
 
@@ -129,9 +129,9 @@ Pin 时进入运行状态 (KSSTATE\_运行) 的已注册的事件都已终止一
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSRTAUDIO\_NOTIFICATION\_EVENT\_PROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537499)
+[**KSRTAUDIO\_NOTIFICATION\_EVENT\_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property)
 
 [**KSPROPERTY\_RTAUDIO\_缓冲区\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md)
 

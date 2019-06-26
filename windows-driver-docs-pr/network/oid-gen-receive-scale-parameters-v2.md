@@ -5,12 +5,12 @@ ms.assetid: 3897A898-2B00-45DF-AC05-7EC719EB7353
 keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2, OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 687db15ca59a2480ba2cf2a0a100599b3552b549
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 474e9a10ca974ca2aae0d3a1d898a1501ff93940
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364199"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355130"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
@@ -18,7 +18,7 @@ ms.locfileid: "63364199"
 
 向发送 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID [RSSv2](receive-side-scaling-version-2-rssv2-.md)-支持的微型端口驱动程序设置的间接寻址表，缩放实体的运行时参数。 替换 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)从 RSSv1 OID 和对 NDIS Light 权重筛选器 (LWFs) NDIS 6.80 之前不可见。 此 OID 是正则 OID，可以作为查询或一组请求发出。 在 IRQL 发出 = = passive_level 调用。 它可以针对给定的 VPort，当*NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID* NIC 开关创建时设置标志。 否则，它面向在本机 RSS 的情况下的物理 NIC。
 
-为查询，NDIS 和基础驱动程序可用于 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 查询 NIC 的 RSS 参数 返回 NDIS [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://msdn.microsoft.com/library/windows/hardware/96EAB6EE-BF9A-46AD-8DED-5D9BD2B6F219)结构，它定义当前的 RSS 参数。
+为查询，NDIS 和基础驱动程序可用于 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 查询 NIC 的 RSS 参数 返回 NDIS [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)结构，它定义当前的 RSS 参数。
 
 作为一组此 OID 的用途是执行以下操作：
 
@@ -66,6 +66,6 @@ ms.locfileid: "63364199"
 
 - [接收方缩放版本 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)
-- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://msdn.microsoft.com/library/windows/hardware/96EAB6EE-BF9A-46AD-8DED-5D9BD2B6F219)
+- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)
 - [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)
 

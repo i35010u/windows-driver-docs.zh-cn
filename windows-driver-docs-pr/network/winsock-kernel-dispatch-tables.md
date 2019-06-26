@@ -14,12 +14,12 @@ keywords:
 - 事件回调函数 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62de8e85bfd1ca9251bf5ae7a6c19e0d9eb8d41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4425baf23ad5d4d68f35e94edbcbcd9cef08a2a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360215"
 ---
 # <a name="winsock-kernel-dispatch-tables"></a>Winsock 内核调度表
 
@@ -40,19 +40,19 @@ ms.locfileid: "63387135"
 <tbody>
 <tr class="odd">
 <td align="left"><p>基本的套接字</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571171" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_BASIC_DISPATCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571171)"><strong>WSK_PROVIDER_BASIC_DISPATCH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_basic_dispatch" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_BASIC_DISPATCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_basic_dispatch)"><strong>WSK_PROVIDER_BASIC_DISPATCH</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>侦听套接字</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571176" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_LISTEN_DISPATCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571176)"><strong>WSK_PROVIDER_LISTEN_DISPATCH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_listen_dispatch" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_LISTEN_DISPATCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_listen_dispatch)"><strong>WSK_PROVIDER_LISTEN_DISPATCH</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>数据报套接字</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571174" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_DATAGRAM_DISPATCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571174)"><strong>WSK_PROVIDER_DATAGRAM_DISPATCH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_datagram_dispatch" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_DATAGRAM_DISPATCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_datagram_dispatch)"><strong>WSK_PROVIDER_DATAGRAM_DISPATCH</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>面向连接的套接字</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571173" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_CONNECTION_DISPATCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571173)"><strong>WSK_PROVIDER_CONNECTION_DISPATCH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_connection_dispatch" data-raw-source="[&lt;strong&gt;WSK_PROVIDER_CONNECTION_DISPATCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_connection_dispatch)"><strong>WSK_PROVIDER_CONNECTION_DISPATCH</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -75,15 +75,15 @@ ms.locfileid: "63387135"
 <tbody>
 <tr class="odd">
 <td align="left"><p>侦听套接字</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571162" data-raw-source="[&lt;strong&gt;WSK_CLIENT_LISTEN_DISPATCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571162)"><strong>WSK_CLIENT_LISTEN_DISPATCH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_listen_dispatch" data-raw-source="[&lt;strong&gt;WSK_CLIENT_LISTEN_DISPATCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_listen_dispatch)"><strong>WSK_CLIENT_LISTEN_DISPATCH</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>数据报套接字</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571158" data-raw-source="[&lt;strong&gt;WSK_CLIENT_DATAGRAM_DISPATCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571158)"><strong>WSK_CLIENT_DATAGRAM_DISPATCH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_datagram_dispatch" data-raw-source="[&lt;strong&gt;WSK_CLIENT_DATAGRAM_DISPATCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_datagram_dispatch)"><strong>WSK_CLIENT_DATAGRAM_DISPATCH</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>面向连接的套接字</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571156" data-raw-source="[&lt;strong&gt;WSK_CLIENT_CONNECTION_DISPATCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571156)"><strong>WSK_CLIENT_CONNECTION_DISPATCH</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_connection_dispatch" data-raw-source="[&lt;strong&gt;WSK_CLIENT_CONNECTION_DISPATCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_connection_dispatch)"><strong>WSK_CLIENT_CONNECTION_DISPATCH</strong></a></p></td>
 </tr>
 </tbody>
 </table>

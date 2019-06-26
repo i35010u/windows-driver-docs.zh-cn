@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a273d7684614ee495426b436317a30fa0ce2d59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2801d68257f98a42fdaef43ac5439deb8166f0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333310"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359028"
 ---
 # <a name="ksnodetype3deffects"></a>KSNODETYPE\_3D\_EFFECTS
 
@@ -35,7 +35,7 @@ KSNODETYPE\_3D\_效果节点用来控制 DirectSound 扬声器配置，通过以
 
 [**KSPROPERTY\_音频\_立体声\_演讲者\_GEOMETRY**](ksproperty-audio-stereo-speaker-geometry.md)
 
-有关详细信息，请参阅[DirectSound 扬声器配置设置](https://msdn.microsoft.com/library/windows/hardware/ff536332)。
+有关详细信息，请参阅[DirectSound 扬声器配置设置](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-speaker-configuration-settings)。
 
 此外，DirectSound 要求 KSNODETYPE\_3D\_效果节点支持以下 3D 侦听器和 3D 缓冲区属性：
 
