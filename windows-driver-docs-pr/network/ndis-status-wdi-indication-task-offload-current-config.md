@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_TASK_OFFLOAD_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: edb3daf1f6b4702232ef103d70b08c18df8b844d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 271e8e4eee97df291dde3239b32823b4087cb0ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372867"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375198"
 ---
 # <a name="ndisstatuswdiindicationtaskoffloadcurrentconfig"></a>NDIS\_状态\_WDI\_指示\_任务\_卸载\_当前\_配置
 
@@ -20,18 +20,18 @@ ms.locfileid: "63372867"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
-当更改 TCP 卸载功能的硬件，LE 将此未经请求的指示发送到下，用户设备，与新的 TCP/LSO 校验和功能。 使用值**NDIS\_卸载\_设置\_OFF**并**NDIS\_卸载\_设置\_ON** 中的成员[**WDI\_TLV\_TCP\_卸载\_功能**](https://msdn.microsoft.com/library/windows/hardware/dn898069)用于指示在更改卸载功能。 当 UE 向下发送[OID\_WDI\_设置\_TCP\_卸载\_参数](oid-wdi-set-tcp-offload-parameters.md)，LE 应更新的卸载功能，然后将发送此指示，以便OS 更新的最新的卸载功能信息。
+当更改 TCP 卸载功能的硬件，LE 将此未经请求的指示发送到下，用户设备，与新的 TCP/LSO 校验和功能。 使用值**NDIS\_卸载\_设置\_OFF**并**NDIS\_卸载\_设置\_ON** 中的成员[**WDI\_TLV\_TCP\_卸载\_功能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities)用于指示在更改卸载功能。 当 UE 向下发送[OID\_WDI\_设置\_TCP\_卸载\_参数](oid-wdi-set-tcp-offload-parameters.md)，LE 应更新的卸载功能，然后将发送此指示，以便OS 更新的最新的卸载功能信息。
 
 ## <a name="payload-data"></a>有效负载数据
 
 
 | 在任务栏的搜索框中键入                                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                              |
 |---------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------|
-| [**WDI\_TLV\_TCP\_卸载\_功能**](https://msdn.microsoft.com/library/windows/hardware/dn898069) |                                | X        | TCP/IP 校验和与大量发送卸载功能。 |
+| [**WDI\_TLV\_TCP\_卸载\_功能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities) |                                | X        | TCP/IP 校验和与大量发送卸载功能。 |
 
  
 

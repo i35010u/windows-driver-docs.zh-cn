@@ -9,12 +9,12 @@ keywords:
 - GUID_TARGET_DEVICE_QUERY_REMOVE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f72e34a78a1aae2ca450e8a4fc96d902afba6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c17401fe0d3b5fda1889d4cd2fe2c9eabf99157d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359866"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365462"
 ---
 # <a name="handling-a-guidtargetdevicequeryremove-event"></a>处理一个 GUID\_目标\_设备\_查询\_删除事件
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359866"
 
 
 
-PnP 管理器发送之前[ **IRP\_MN\_查询\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551705) IRP 到设备的驱动程序，它会调用任何通知回调为注册的例程**EventCategoryTargetDeviceChange**在设备上。 PnP 管理器指定*NotificationStructure*。**事件**的 GUID\_目标\_设备\_查询\_删除。
+PnP 管理器发送之前[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device) IRP 到设备的驱动程序，它会调用任何通知回调为注册的例程**EventCategoryTargetDeviceChange**在设备上。 PnP 管理器指定*NotificationStructure*。**事件**的 GUID\_目标\_设备\_查询\_删除。
 
 在响应此类通知，回调例程确定是否可以无需中断在系统中删除该设备。
 

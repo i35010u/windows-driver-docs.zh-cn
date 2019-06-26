@@ -3,12 +3,12 @@ title: 适用于 UVC 设备的 DShow 桥实现指南
 description: 提供了适用于 UVC 设备 DShow 桥实现指南。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccaa5be9ac2ff404335aaa5dc2f3a31caf75464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cb0a0fdcf2db20a9961adbd040eb7cd6815112e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363612"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387170"
 ---
 # <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>适用于 UVC 设备的 DShow 桥实现指南
 
@@ -149,4 +149,4 @@ UCHAR Example2\_MSOS20DescriptorSetForFutureWindows\[0x48\] =
 
 [USB 泛型父驱动程序 (Usbccgp.sys)](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-common-class-generic-parent-driver)
 
-[USB 规范](http://www.usb.org/developers/docs)
+[USB 规范](https://www.usb.org/documents)

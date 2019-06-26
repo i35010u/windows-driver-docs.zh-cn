@@ -5,26 +5,26 @@ ms.assetid: 55291392-C018-4578-9767-DC5621F75D44
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_DELETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a4226e27db36186919dbd6afd7c4e14c1b5e55e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 623a3e6caacea31903a1914e2d12d89ec5bd6596
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386977"
 ---
 # <a name="oidswitchpropertydelete"></a>OID\_交换机\_属性\_删除
 
 
 HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求的 OID\_切换\_属性\_删除以通知有关交换机策略属性删除可扩展交换机扩展。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向包含缓冲区[ **NDIS\_交换机\_属性\_删除\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598249)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向包含缓冲区[ **NDIS\_交换机\_属性\_删除\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
-转发扩展可以处理 OID 集请求的 OID\_交换机\_属性\_删除。 所有其他类型的扩展必须调用[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830) OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
+转发扩展可以处理 OID 集请求的 OID\_交换机\_属性\_删除。 所有其他类型的扩展必须调用[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest) OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
 
-有关如何处理 OID 的指导原则设置请求的 OID\_交换机\_属性\_删除，请参阅[管理交换机策略](https://msdn.microsoft.com/library/windows/hardware/hh598203)。
+有关如何处理 OID 的指导原则设置请求的 OID\_交换机\_属性\_删除，请参阅[管理交换机策略](https://docs.microsoft.com/windows-hardware/drivers/network/managing-switch-policies)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -106,13 +106,13 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 
 
 ****
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_交换机\_属性\_自定义**](https://msdn.microsoft.com/library/windows/hardware/hh598247)
+[**NDIS\_交换机\_属性\_自定义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_custom)
 
-[**NDIS\_SWITCH\_PROPERTY\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/hh598255)
+[**NDIS\_SWITCH\_PROPERTY\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)
 
-[**NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)
+[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)
 
  
 

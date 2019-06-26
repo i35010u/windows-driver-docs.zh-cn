@@ -7,12 +7,12 @@ keywords:
 - 多个头硬件 WDK DirectX 9.0 中，适配器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc59cc603954c3542e0f6baf27e4b0f1de48324e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85003a30008b8221b6fde880dd2eb44b8a13ccec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384556"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380180"
 ---
 # <a name="identifying-adapter-group-and-providing-capabilities"></a>识别适配器组和提供功能
 
@@ -20,7 +20,7 @@ ms.locfileid: "63384556"
 ## <span id="ddk_identifying_adapter_group_and_providing_capabilities_gg"></span><span id="DDK_IDENTIFYING_ADAPTER_GROUP_AND_PROVIDING_CAPABILITIES_GG"></span>
 
 
-DirectX 9.0 运行时发送**GetDriverInfo2**请求使用 D3DGDI2\_类型\_GETADAPTERGROUP 值到 DirectX 9.0 版本驱动程序请求的标识符组成的适配器的组驱动程序的多个头视频卡。 驱动程序将返回中的标识符**ulUniqueAdapterGroupId**的成员[ **DD\_GETADAPTERGROUPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551529)结构。 该驱动程序必须为 master 和组中的所有从属适配器提供的唯一标识符。 运行时在后续操作中使用此标识符，以确定给定的适配器是否为组的一部分。 此标识符必须是唯一的驱动程序，包括其他硬件供应商提供的驱动程序。 因此，建议以不能为常见的其他多个头视频卡的唯一的非零内核模式地址的形式报告此标识符。
+DirectX 9.0 运行时发送**GetDriverInfo2**请求使用 D3DGDI2\_类型\_GETADAPTERGROUP 值到 DirectX 9.0 版本驱动程序请求的标识符组成的适配器的组驱动程序的多个头视频卡。 驱动程序将返回中的标识符**ulUniqueAdapterGroupId**的成员[ **DD\_GETADAPTERGROUPDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getadaptergroupdata)结构。 该驱动程序必须为 master 和组中的所有从属适配器提供的唯一标识符。 运行时在后续操作中使用此标识符，以确定给定的适配器是否为组的一部分。 此标识符必须是唯一的驱动程序，包括其他硬件供应商提供的驱动程序。 因此，建议以不能为常见的其他多个头视频卡的唯一的非零内核模式地址的形式报告此标识符。
 
 DirectX 9.0 版本驱动程序指示其多个头硬件通过设置以下 D3DCAPS9 结构的成员的配置方式：
 

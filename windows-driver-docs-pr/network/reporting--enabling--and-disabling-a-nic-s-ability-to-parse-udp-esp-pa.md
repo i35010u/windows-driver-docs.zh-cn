@@ -7,12 +7,12 @@ keywords:
 - 分析的功能 WDK IPsec 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffaa096c0163a2b39504cc0509df6cfa186ea033
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a46badf0be2c795728d9311e257cea5097e4994
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361830"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373285"
 ---
 # <a name="reporting-enabling-and-disabling-a-nics-ability-to-parse-udp-esp-packets"></a>报告、 启用和禁用分析 UDP ESP 数据包的 NIC 的能力
 
@@ -21,7 +21,7 @@ ms.locfileid: "63361830"
 
 
 
-微型端口驱动程序指定 NIC 的 Internet 协议安全 (IPsec) 中的功能[ **NDIS\_IPSEC\_卸载\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff565796)结构。 有关详细信息，请参阅[报告 NIC 的 IPsec 功能](reporting-a-nic-s-ipsec-capabilities.md)。
+微型端口驱动程序指定 NIC 的 Internet 协议安全 (IPsec) 中的功能[ **NDIS\_IPSEC\_卸载\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)结构。 有关详细信息，请参阅[报告 NIC 的 IPsec 功能](reporting-a-nic-s-ipsec-capabilities.md)。
 
 微型端口报告来分析传入的 UDP 封装 ESP 数据包设置一个或多个标志的 NIC 的能力**支持**。 **保留**成员的 NDIS\_IPSEC\_卸载\_V1 结构。 微型端口驱动程序可以指定 any 或 all 中进行了描述的四个 UDP ESP 封装子[UDP ESP 封装类型](udp-esp-encapsulation-types.md)。
 

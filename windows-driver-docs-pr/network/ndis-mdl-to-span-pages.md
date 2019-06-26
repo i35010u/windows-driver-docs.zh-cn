@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 与 Windows Vista 一起启动的网络驱动程序的 NDIS_MDL_TO_SPAN_PAGES 宏
 ms.localizationpriority: medium
-ms.openlocfilehash: e5903a6f9505aa9ef4cade6b141154fa874b95c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c69272cb175c5dd228f6dd73c4b48944c8a0067
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378413"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385744"
 ---
 # <a name="ndismdltospanpages-macro"></a>NDIS\_MDL\_TO\_跨度\_页宏
 
@@ -41,7 +41,7 @@ int NDIS_MDL_TO_SPAN_PAGES(
 <a name="remarks"></a>备注
 -------
 
-**NDIS\_MDL\_TO\_跨度\_页**宏提供的基于 MDL 版本[ **NDIS\_缓冲区\_TO\_跨度\_页面**](https://msdn.microsoft.com/library/windows/hardware/ff556922)函数。
+**NDIS\_MDL\_TO\_跨度\_页**宏提供的基于 MDL 版本[ **NDIS\_缓冲区\_TO\_跨度\_页面**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556922(v=vs.85))函数。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +74,7 @@ int NDIS_MDL_TO_SPAN_PAGES(
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_缓冲区\_TO\_跨度\_页**](https://msdn.microsoft.com/library/windows/hardware/ff556922)
+[**NDIS\_缓冲区\_TO\_跨度\_页**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556922(v=vs.85))
 
  
 

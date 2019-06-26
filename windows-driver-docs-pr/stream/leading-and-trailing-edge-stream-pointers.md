@@ -8,12 +8,12 @@ keywords:
 - 尾随边缘流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cba66bb34a726076a97d47d52022cd0427f50ff7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 370ef4395a69c56b0a7738648122dcd9a7342671
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383554"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386647"
 ---
 # <a name="leading-and-trailing-edge-stream-pointers"></a>前导和尾随边缘流指针
 
@@ -25,7 +25,7 @@ ms.locfileid: "63383554"
 
 当新帧到达队列中时，AVStream 设置前沿以指向此帧中，前提是前导边缘不已指向一个帧。
 
-若要获取指向前导边缘流指针的指针，微型驱动程序调用[ **KsPinGetLeadingEdgeStreamPointer**](https://msdn.microsoft.com/library/windows/hardware/ff563513)。
+若要获取指向前导边缘流指针的指针，微型驱动程序调用[ **KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)。
 
 微型驱动程序负责提升中所有前导边缘，但下表中汇总的两种情况。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63383554"
 
 ### <a name="specifying-a-trailing-edge-stream-pointer"></a>指定的尾随边 Stream 指针
 
-微型驱动程序可以指定一个队列有尾随边缘流指针。 尾随边缘通常表示微型驱动程序感兴趣的最早的帧。 若要指定尾随边缘，设置 KSPIN\_标志\_DISTINCT\_尾随\_中的边缘标志**标志**的相关成员[ **KSPIN\_描述符\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)结构。 然后调用[ **KsPinGetTrailingEdgeStreamPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff563518)以获取尾随边缘流指针的指针。
+微型驱动程序可以指定一个队列有尾随边缘流指针。 尾随边缘通常表示微型驱动程序感兴趣的最早的帧。 若要指定尾随边缘，设置 KSPIN\_标志\_DISTINCT\_尾随\_中的边缘标志**标志**的相关成员[ **KSPIN\_描述符\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)结构。 然后调用[ **KsPinGetTrailingEdgeStreamPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingettrailingedgestreampointer)以获取尾随边缘流指针的指针。
 
 当尾随边缘的发展时，完成到它以前指向降到零的框架和框架的引用计数。 如果框架的最后一个包含在其 IRP，接收器 pin 完成时向调用方; IRP源 pin 将 IRP 发送到连接到的 pin。
 

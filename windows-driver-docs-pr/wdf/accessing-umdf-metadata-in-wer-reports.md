@@ -4,12 +4,12 @@ description: 本主题介绍的位置和用户模式驱动程序框架 (UMDF) �
 ms.assetid: ca5fe108-b4fb-4c90-87bc-9901854780d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b2832acc46db365c425315e4b92f6dcdd51d6dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b13a070fdfacd3e216817327197783fb0d400858
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379051"
 ---
 # <a name="accessing-umdf-metadata-in-wer-reports"></a>访问 WER 报表中的 UMDF 元数据
 
@@ -153,7 +153,7 @@ WdfComponentMax</code>
 </tr>
 <tr class="odd">
 <td align="left">6</td>
-<td align="left">消息</td>
+<td align="left">Message</td>
 <td align="left"><p>第一个数字是此字段将始终为 1，指示 IRP 参与该操作。 后续对的数字表示指示<strong>MajorFunction</strong>并<strong>MinorFunction</strong>的 IRP，分别。</p>
 <p>例如，在上述示例报表中，此字段包含值 11b00。 这意味着的操作是 IRP 反射器处理代表 IRP_MJ_PNP 主要函数值，并执行了 IRP_MN_START_DEVICE 次要函数值与驱动程序主机进程 (1 = IRP 消息，1b = IRP_MJ_PNP，00 = 执行了 IRP_MN_START_DEVICE)。</p></td>
 </tr>
@@ -213,7 +213,7 @@ WdfComponentMax</code>
 <tr class="odd">
 <td align="left">2</td>
 <td align="left">ExceptionCode</td>
-<td align="left"><p>发生异常的原因。 值的列表，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/aa363082" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363082)"> <strong>EXCEPTION_RECORD</strong></a>。</p></td>
+<td align="left"><p>发生异常的原因。 值的列表，请参阅<a href="https://docs.microsoft.com/windows/desktop/api/winnt/ns-winnt-_exception_record" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winnt/ns-winnt-_exception_record)"> <strong>EXCEPTION_RECORD</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">3</td>
@@ -291,7 +291,7 @@ WdfComponentMax</code>
 <ul>
 <li>内部</li>
 <li>驱动程序</li>
-<li>调用方</li>
+<li>Caller</li>
 <li>外部</li>
 <li>UnhandledException</li>
 </ul></td>

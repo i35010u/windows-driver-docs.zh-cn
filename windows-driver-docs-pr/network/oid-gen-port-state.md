@@ -5,17 +5,17 @@ ms.assetid: e0705b2e-08ea-4ed4-a6df-4c33b934c3dd
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PORT_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6349425aff9bb0a08bd6b14f85076eda1c2a6d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8f2f8782d2ffc5195f164b7e18855d2ced0e250
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380856"
 ---
 # <a name="oidgenportstate"></a>OID\_GEN\_端口\_状态
 
 
-为查询，基础驱动程序使用 OID\_常规\_端口\_要获取在指定的端口的当前状态的状态 OID **PortNumber**隶属[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构。
+为查询，基础驱动程序使用 OID\_常规\_端口\_要获取在指定的端口的当前状态的状态 OID **PortNumber**隶属[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构。
 
 **版本信息**
 
@@ -30,7 +30,7 @@ ms.locfileid: "63367585"
 
 NDIS 处理此 OID 和微型端口驱动程序不会收到此 OID 查询。
 
-如果查询成功，NDIS 返回 NDIS\_状态\_成功并返回中的端口状态信息[ **NDIS\_端口\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff566800)结构。
+如果查询成功，NDIS 返回 NDIS\_状态\_成功并返回中的端口状态信息[ **NDIS\_端口\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,9 +51,9 @@ NDIS 处理此 OID 和微型端口驱动程序不会收到此 OID 查询。
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_端口\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff566800)
+[**NDIS\_端口\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)
 
  
 

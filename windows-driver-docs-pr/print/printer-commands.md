@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18de40713521aa72349c99cf97836bb3f5d9c205
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24b2a9eb3495f187f1e540aa1c423ab3e47c0228
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380690"
 ---
 # <a name="printer-commands"></a>打印机命令
 
@@ -30,7 +30,7 @@ GPD 语言提供了每个预定义的命令名称通常使用的打印机操作�
 
 -   可以将特定于设备的命令字符串放在 GPD 文件中。 Unidrv 在适当的时间将命令字符串发送到打印后台处理程序。
 
--   您可以实现[ **IPrintOemUni::CommandCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff554216) COM 方法，动态生成的命令字符串。 Unidrv 每当时，它将命令发送到后台处理程序调用的方法。 有关详细信息请参阅[动态生成打印机命令](dynamically-generated-printer-commands.md)中[自定义 Microsoft 的打印机驱动程序](customizing-microsoft-s-printer-drivers.md)。
+-   您可以实现[ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback) COM 方法，动态生成的命令字符串。 Unidrv 每当时，它将命令发送到后台处理程序调用的方法。 有关详细信息请参阅[动态生成打印机命令](dynamically-generated-printer-commands.md)中[自定义 Microsoft 的打印机驱动程序](customizing-microsoft-s-printer-drivers.md)。
 
 以下主题介绍如何在 GPD 文件中指定打印机命令：
 

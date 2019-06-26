@@ -7,12 +7,12 @@ keywords:
 - WDK Direct3D 缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e2d924a3bfcafabe0c15f9294a814012af08d8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd3fb0f0deafb1f2de38665a072e927d7e182e1a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357961"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384854"
 ---
 # <a name="direct3d-vertex-buffers"></a>Direct3D 顶点缓冲区
 
@@ -20,7 +20,7 @@ ms.locfileid: "63357961"
 ## <span id="ddk_direct3d_vertex_buffers_gg"></span><span id="DDK_DIRECT3D_VERTEX_BUFFERS_GG"></span>
 
 
-顶点缓冲区中包含对的调用中的命令缓冲区的基元与关联的顶点数据[ **D3dDrawPrimitives2**](https://msdn.microsoft.com/library/windows/hardware/ff544704)。 使用灵活的顶点格式表示顶点 ([FVF](fvf--flexible-vertex-format-.md))，其中每个顶点可以具有与之关联的以下数据：
+顶点缓冲区中包含对的调用中的命令缓冲区的基元与关联的顶点数据[ **D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)。 使用灵活的顶点格式表示顶点 ([FVF](fvf--flexible-vertex-format-.md))，其中每个顶点可以具有与之关联的以下数据：
 
 -   位置 (*x、 y、 z 和 w 可选*) （必需）
 

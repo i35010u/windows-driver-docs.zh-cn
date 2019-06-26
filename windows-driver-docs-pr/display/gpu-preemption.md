@@ -4,12 +4,12 @@ description: 可从 Windows 8 开始新的 GPU 抢占模型。
 ms.assetid: 9382786E-2E1E-408F-A9E9-04EEEA1CC34A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f9a82d289cf09ab3eddea7d73813308d82b1721
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3bf94e85471af20e5db953f9d330796f658b138
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379475"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379954"
 ---
 # <a name="gpu-preemption"></a>GPU 抢占
 
@@ -55,19 +55,19 @@ ms.locfileid: "63379475"
 
 以下设备驱动程序接口 (DDIs) 都可用于显示微型端口驱动程序来实现 Windows 8 GPU 抢占模型。
 
--   [*DxgkCbCreateContextAllocation*](https://msdn.microsoft.com/library/windows/hardware/hh451312)
--   [*DxgkCbDestroyContextAllocation*](https://msdn.microsoft.com/library/windows/hardware/hh451317)
--   [*pfnSetPriorityCb*](https://msdn.microsoft.com/library/windows/hardware/ff568931)
--   [Dxgkrnl 接口](https://msdn.microsoft.com/library/windows/hardware/ff560940)
--   [**DXGKRNL\_INTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff560942)
--   [**D3DKMDT\_计算\_抢占\_粒度**](https://msdn.microsoft.com/library/windows/hardware/hh439326)
--   [**D3DKMDT\_图形\_抢占\_粒度**](https://msdn.microsoft.com/library/windows/hardware/hh439329)
--   [**D3DKMDT\_抢占\_CAP**](https://msdn.microsoft.com/library/windows/hardware/hh439334)
--   [**D3DKMT\_QUERYADAPTERINFO**](https://msdn.microsoft.com/library/windows/hardware/ff548203)
--   [**DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062)
--   [**DXGK\_SUBMITCOMMANDFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff562058)
--   [**DXGK\_VIDSCHCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff562863)
--   [**DXGKARGCB\_CREATECONTEXTALLOCATION**](https://msdn.microsoft.com/library/windows/hardware/hh451242)
+-   [*DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)
+-   [*DxgkCbDestroyContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_destroycontextallocation)
+-   [*pfnSetPriorityCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setprioritycb)
+-   [Dxgkrnl 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [**DXGKRNL\_INTERFACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgkrnl_interface)
+-   [**D3DKMDT\_计算\_抢占\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_compute_preemption_granularity)
+-   [**D3DKMDT\_图形\_抢占\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_graphics_preemption_granularity)
+-   [**D3DKMDT\_抢占\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_preemption_caps)
+-   [**D3DKMT\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)
+-   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**DXGK\_SUBMITCOMMANDFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_submitcommandflags)
+-   [**DXGK\_VIDSCHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)
+-   [**DXGKARGCB\_CREATECONTEXTALLOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkargcb_createcontextallocation)
 
 ## <a name="span-iddisplayminiportdriverimplementationspanspan-iddisplayminiportdriverimplementationspanspan-iddisplayminiportdriverimplementationspandisplay-miniport-driver-implementation"></a><span id="Display_miniport_driver_implementation"></span><span id="display_miniport_driver_implementation"></span><span id="DISPLAY_MINIPORT_DRIVER_IMPLEMENTATION"></span>显示微型端口驱动程序实现
 
@@ -75,13 +75,13 @@ ms.locfileid: "63379475"
 请按照下列常规步骤以在显示的微型端口驱动程序中实现 Windows 8 GPU 抢占模型：
 
 1.  编译您的驱动程序具有的标头**DXGKDDI\_界面\_版本** &gt; =  **DXGKDDI\_接口\_版本\_WIN8**。
-2.  通过设置声明对 Windows 8 GPU 抢占模型的支持**PreemptionAware**并**MultiEngineAware**的成员[ **DXGK\_VIDSCHCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff562863)结构为 1。 若要支持 Windows 7 抢占模型，将设置**PreemptionAware**为零。
-3.  指定支持的级别中的抢占粒度[ **D3DKMDT\_抢占\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/hh439334)结构，它接受的常量值从[ **D3DKMDT\_图形\_抢占\_粒度**](https://msdn.microsoft.com/library/windows/hardware/hh439329)并[ **D3DKMDT\_计算\_抢占\_粒度**](https://msdn.microsoft.com/library/windows/hardware/hh439326)枚举。
-4.  如果硬件支持延迟上下文切换，提交到的长度为零的缓冲区[ *DxgkDdiSubmitCommand* ](https://msdn.microsoft.com/library/windows/hardware/ff560790)函数，并设置*pSubmitCommand* - &gt;**标志**-&gt;**ContextSwitch**为 1 的成员。 请注意下的讨论**ContextSwitch**的成员[ **DXGK\_SUBMITCOMMANDFLAGS** ](https://msdn.microsoft.com/library/windows/hardware/ff562058)结构。
-5.  通过调用设置 GPU 上下文分配和设备上下文分配[ *DxgkCbCreateContextAllocation* ](https://msdn.microsoft.com/library/windows/hardware/hh451312)函数。 请注意的具体说明，为函数提供说明中的限制。
-6.  调用[ *DxgkCbDestroyContextAllocation* ](https://msdn.microsoft.com/library/windows/hardware/hh451317)函数来销毁 GPU 上下文分配和使用创建的设备上下文分配[ *DxgkCbCreateContextAllocation*](https://msdn.microsoft.com/library/windows/hardware/hh451312)。
-7.  准备 DMA 缓冲区，以响应对的调用时[ *DxgkDdiBuildPagingBuffer* ](https://msdn.microsoft.com/library/windows/hardware/ff559587)函数中，通过填写初始化上下文资源**InitContextResource**中的内部结构[ **DXGKARG\_BUILDPAGINGBUFFER** ](https://msdn.microsoft.com/library/windows/hardware/ff557540)结构。 如果在逐出上下文资源或将其重新定位，视频内存管理器将会保留上下文资源的内容。
-8.  该驱动程序必须支持内存映射 I/O 翻转下一次垂直同步。在 Windows 8 中，GPU 计划程序尝试抢占硬件，即使投掷处于挂起状态。 因此，若要防止撕裂现象和呈现项目，该驱动程序必须支持内存映射 I/O 翻转模式，必须**FlipOnVSyncMmIo**的成员[ **DXGK\_FLIPCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561069)结构为 1 并且支持下所述的操作**FlipOnVSyncMmIo**。
+2.  通过设置声明对 Windows 8 GPU 抢占模型的支持**PreemptionAware**并**MultiEngineAware**的成员[ **DXGK\_VIDSCHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)结构为 1。 若要支持 Windows 7 抢占模型，将设置**PreemptionAware**为零。
+3.  指定支持的级别中的抢占粒度[ **D3DKMDT\_抢占\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_preemption_caps)结构，它接受的常量值从[ **D3DKMDT\_图形\_抢占\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_graphics_preemption_granularity)并[ **D3DKMDT\_计算\_抢占\_粒度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_compute_preemption_granularity)枚举。
+4.  如果硬件支持延迟上下文切换，提交到的长度为零的缓冲区[ *DxgkDdiSubmitCommand* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)函数，并设置*pSubmitCommand* - &gt;**标志**-&gt;**ContextSwitch**为 1 的成员。 请注意下的讨论**ContextSwitch**的成员[ **DXGK\_SUBMITCOMMANDFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_submitcommandflags)结构。
+5.  通过调用设置 GPU 上下文分配和设备上下文分配[ *DxgkCbCreateContextAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)函数。 请注意的具体说明，为函数提供说明中的限制。
+6.  调用[ *DxgkCbDestroyContextAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_destroycontextallocation)函数来销毁 GPU 上下文分配和使用创建的设备上下文分配[ *DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)。
+7.  准备 DMA 缓冲区，以响应对的调用时[ *DxgkDdiBuildPagingBuffer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数中，通过填写初始化上下文资源**InitContextResource**中的内部结构[ **DXGKARG\_BUILDPAGINGBUFFER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)结构。 如果在逐出上下文资源或将其重新定位，视频内存管理器将会保留上下文资源的内容。
+8.  该驱动程序必须支持内存映射 I/O 翻转下一次垂直同步。在 Windows 8 中，GPU 计划程序尝试抢占硬件，即使投掷处于挂起状态。 因此，若要防止撕裂现象和呈现项目，该驱动程序必须支持内存映射 I/O 翻转模式，必须**FlipOnVSyncMmIo**的成员[ **DXGK\_FLIPCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_flipcaps)结构为 1 并且支持下所述的操作**FlipOnVSyncMmIo**。
 
 ### <a name="span-idmemorymappingconsiderationsinyourimplementationspanspan-idmemorymappingconsiderationsinyourimplementationspanspan-idmemorymappingconsiderationsinyourimplementationspanmemory-mapping-considerations-in-your-implementation"></a><span id="Memory_mapping_considerations_in_your_implementation"></span><span id="memory_mapping_considerations_in_your_implementation"></span><span id="MEMORY_MAPPING_CONSIDERATIONS_IN_YOUR_IMPLEMENTATION"></span>在实现中的内存映射注意事项
 
@@ -90,7 +90,7 @@ ms.locfileid: "63379475"
 -   DirectX 图形内核 (Dxgkrnl) 计划程序发送抢占命令时，请从 GPU 请求中旬 DMA 缓冲区抢占。 更细的粒度的中旬 DMA 缓冲区抢占的硬件设备应该生成更好的客户体验。
 -   允许分页命令隔离 Id 的重复使用： 如果优先的硬件队列中的分页命令导致的抢占请求，计划程序将重新提交的 Dxgkrnl 被抢占分页命令具有相同 fence 最初用于，以及分页的 Id将在该引擎上的任何其他命令之前计划命令。 非分页命令将使用新分配隔离 Id 重新提交。
 -   为拆分 DMA 缓冲区提供修补程序位置列表，请参阅[拆分 DMA 缓冲区](splitting-a-dma-buffer.md)。
--   可通过修补程序位置的遍历列表并拒绝的数据包执行解除绑定，或，未对分配的每个拆分数据包称为绑定泄漏检测的验证模式。 有些硬件支持虚拟地址，允许更高级别的可以进行此验证不必要的间接寻址。 在这种情况下，若要指示驱动程序的选择不使用的验证模式，设置**NoDmaPatching**的成员[ **DXGK\_VIDSCHCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff562863)结构为 1。
+-   可通过修补程序位置的遍历列表并拒绝的数据包执行解除绑定，或，未对分配的每个拆分数据包称为绑定泄漏检测的验证模式。 有些硬件支持虚拟地址，允许更高级别的可以进行此验证不必要的间接寻址。 在这种情况下，若要指示驱动程序的选择不使用的验证模式，设置**NoDmaPatching**的成员[ **DXGK\_VIDSCHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)结构为 1。
 -   在 Windows 7 中，计划程序可保证所有对应于相同的拆分 DMA 数据包呈现命令 Dxgkrnl 按顺序执行而无需切换到另一个呈现器上下文。 在 Windows 8 抢占模型中，计划程序可以从对应于相同的呈现命令的两个拆分数据包之间的不同的上下文执行呈现数据包。 因此，可识别的抢占的驱动程序应为正则是完整数据包提交相同的方式处理拆分/部分 DMA 数据包提交。 具体而言，GPU 状态必须保存或还原此类提交的边界上。
 -   广播到多个链接的显示适配器 (LDA) 模式下，其中多个物理 Gpu 链接以形成单个，更快，适配器虚拟 GPU 时，抢占感知的驱动程序不得更改拆分 DMA 缓冲区的内容。 这是因为在 Windows 8 抢占模型中，Dxgkrnl 计划程序无法再保证同步执行拆分数据包序列而无需切换到另一个上下文。 更改拆分 DMA 数据包的内容的驱动程序将降低数据包的数据的完整性，因为另一个引擎上执行数据包时，它将运行 DMA 缓冲区数据的相同副本。
 -   在 Windows 8 GPU 抢占模型中，Dxgkrnl 计划程序使具有关联的"上的信号提交"同步基元的数据包的抢占。 如果设备使用"上的信号提交"结合使用基于硬件的同步基元等待状态，则它必须支持抢占等待指令，等待条件得到满足之前的功能。

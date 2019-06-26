@@ -4,12 +4,12 @@ description: 添加图像格式支持
 ms.assetid: 1ffa7c0d-23ec-402a-a0b5-fb5596a851bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef5bfb29959b7ae10378fcff5ab3ebbcc671373
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4cb2a158955cf46959f3efbfb81694938309c41
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375939"
 ---
 # <a name="adding-image-format-support"></a>添加图像格式支持
 
@@ -17,7 +17,7 @@ ms.locfileid: "63367106"
 
 
 
-WIA 微型驱动程序报告给 WIA 服务中的图像格式[ **IWiaMiniDrv::drvGetWiaFormatInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff543986)方法。
+WIA 微型驱动程序报告给 WIA 服务中的图像格式[ **IWiaMiniDrv::drvGetWiaFormatInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)方法。
 
 ### <a href="" id="implementing-iwiaminidrv-drvgetwiaformatinfo"></a>实现 IWiaMiniDrv::drvGetWiaFormatInfo
 
@@ -41,7 +41,7 @@ TYMED\_回调
 
 TYMED\_多页\_回调
 
-下面的示例演示的实现[ **IWiaMiniDrv::drvGetWiaFormatInfo**](https://msdn.microsoft.com/library/windows/hardware/ff543986):
+下面的示例演示的实现[ **IWiaMiniDrv::drvGetWiaFormatInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo):
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvGetWiaFormatInfo(

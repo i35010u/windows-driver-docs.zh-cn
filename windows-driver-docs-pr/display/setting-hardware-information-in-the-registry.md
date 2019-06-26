@@ -9,12 +9,12 @@ keywords:
 - VideoPortGetRegistryParameters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9433dc4aec4fe869b674e1531b4094827f63f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c454e4972e1174bfe80175bb562e20ae7bf60f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390450"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365587"
 ---
 # <a name="setting-hardware-information-in-the-registry"></a>在注册表中设置硬件信息
 
@@ -22,7 +22,7 @@ ms.locfileid: "63390450"
 ## <span id="ddk_setting_hardware_information_in_the_registry_gg"></span><span id="DDK_SETTING_HARDWARE_INFORMATION_IN_THE_REGISTRY_GG"></span>
 
 
-[*HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)可以调用[ **VideoPortGetRegistryParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff570316)并[ **VideoPortSetRegistryParameters**](https://msdn.microsoft.com/library/windows/hardware/ff570365)函数来获取和设置在注册表中的配置信息。 例如， *HwVidFindAdapter*可能会在调用**VideoPortSetRegistryParameters**注册表中的下一次启动设置非易失性的配置信息。 它可能会调用**VideoPortGetRegistryParameters**若要获取特定于适配器的、 总线相对配置参数由安装程序写入到注册表。
+[*HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)可以调用[ **VideoPortGetRegistryParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetregistryparameters)并[ **VideoPortSetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsetregistryparameters)函数来获取和设置在注册表中的配置信息。 例如， *HwVidFindAdapter*可能会在调用**VideoPortSetRegistryParameters**注册表中的下一次启动设置非易失性的配置信息。 它可能会调用**VideoPortGetRegistryParameters**若要获取特定于适配器的、 总线相对配置参数由安装程序写入到注册表。
 
 建议微型端口驱动程序来显示有用的信息，向用户和帮助调试在注册表中设置特定硬件的信息。 芯片类型、 DAC 类型、 内存大小 （的适配器） 和一个字符串来标识该适配器，可以设置微型端口驱动程序。 通过控制面板中显示程序会显示此信息。
 

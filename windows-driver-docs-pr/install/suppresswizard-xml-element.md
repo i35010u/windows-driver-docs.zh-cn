@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 72c24e2bbd3ea296555b4563294ae229dd022233
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36e775a68a1fadd56c48a71d7622109862418489
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339635"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385868"
 ---
 # <a name="suppresswizard-xml-element"></a>suppressWizard XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **SuppressWizard** XML 元素为空元素，用于设置**suppressWizard**该 DPInst 标志为 ON，将配置 DPInst 禁止显示的向导页和其他用户消息生成。
 

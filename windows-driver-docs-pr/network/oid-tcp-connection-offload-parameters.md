@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_CONNECTION_OFFLOAD_PARAMETERS，WDK Oid，WDK，WDK 网络 Oid 的网络对象标识符
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f5a500a249237ce22a4205f7f5c010ab9189b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fb8b498dd5c62883d7dae05056d353416941712
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386968"
 ---
 # <a name="oidtcpconnectionoffloadparameters"></a>OID_TCP_CONNECTION_OFFLOAD_PARAMETERS
 
@@ -21,14 +21,14 @@ ms.locfileid: "63331809"
 
 ## <a name="remarks"></a>备注
 
-**InformationBuffer**的成员[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含[NDIS_TCP_CONNECTION_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff567876)结构。
+**InformationBuffer**的成员[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含[NDIS_TCP_CONNECTION_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)结构。
 
 > [!NOTE]
 > 不要混淆与 OID_TCP_CONNECTION_OFFLOAD_PARAMETERS [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) OID 管理应用程序用来启用或禁用 TCP 卸载功能。
 
 ### <a name="see-also"></a>请参阅
 
-[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)
 
 ## <a name="requirements"></a>要求

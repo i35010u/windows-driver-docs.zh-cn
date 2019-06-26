@@ -4,12 +4,12 @@ description: 通过嵌入式签名对驱动程序进行发布签名
 ms.assetid: ffea2479-83ee-4d94-a5e6-73ecea9fc17d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28d9032c9dbc09a1a3663c9d05046966c0f8df2a
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: c4195a48cdaf119b6d7def9d495929203f51bde8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387314"
 ---
 # <a name="release-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行发布签名
 
@@ -22,7 +22,7 @@ ms.locfileid: "65106369"
 
 -   通过不包括目录文件的驱动程序包安装该驱动程序。
 
-如同[编录文件](catalog-files.md)，则[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)工具用于通过使用测试证书嵌入在内核模式二进制文件中的数字签名。 下面的命令行显示了如何运行 SignTool 将执行以下操作：
+如同[编录文件](catalog-files.md)，则[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)工具用于通过使用测试证书嵌入在内核模式二进制文件中的数字签名。 下面的命令行显示了如何运行 SignTool 将执行以下操作：
 
 -   测试签名 Toastpkg 示例的 64 位版本的二进制文件、 toaster.sys。 在 WDK 安装目录中，此文件位于*src\\常规\\toaster\\toastpkg\\toastcd\\amd64*目录。
 
@@ -52,7 +52,7 @@ Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.
 
 -   **/N**选项指定的证书名称 (*Contoso.com)* 安装指定的证书存储区中。
 
--   **/T**选项指定 TSA 的 URL (*http://timestamp.verisign.com/scripts/timstamp.dll*) 将数字签名时间戳。
+-   **/T**选项指定 TSA 的 URL ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) 将数字签名时间戳。
 
     **重要**  泄露密钥吊销签名者的代码签名的私钥的情况下包括时间戳提供所需的信息。
 
@@ -60,7 +60,7 @@ Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.
 
 -   *amd64\\toaster.sys*指定将嵌入已签名的内核模式二进制文件的名称。
 
-有关 SignTool 及其命令行参数的详细信息，请参阅[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)。
+有关 SignTool 及其命令行参数的详细信息，请参阅[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)。
 
 有关发布对通过嵌入式签名的驱动程序签名的详细信息，请参阅[版本签名驱动程序包](release-signing-driver-packages.md)并[版本签名的驱动程序文件](release-signing-a-driver-file.md)。
 

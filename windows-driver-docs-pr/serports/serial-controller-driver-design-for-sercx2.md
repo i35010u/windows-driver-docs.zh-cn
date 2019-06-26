@@ -4,12 +4,12 @@ description: 若要管理串行控制器，你编写执行特定于硬件的任�
 ms.assetid: 67045E19-4EE1-4C31-A842-858E9A90233E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d779d10981a7e62ad6ccb47ddbabc9643567949a
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: eef691b3537da00079017dc9d5a5db8ab1bbc0e9
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394137"
 ---
 # <a name="serial-controller-driver-design-for-sercx2"></a>SerCx2 串行控制器驱动程序设计
 
@@ -35,7 +35,7 @@ ms.locfileid: "65836334"
 </tr>
 <tr class="even">
 <td><p><a href="sercx2-i-o-transactions.md" data-raw-source="[SerCx2 I/O Transactions](sercx2-i-o-transactions.md)">SerCx2 I/O 事务</a></p></td>
-<td><p>SerCx2 简化了读取的处理 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff546883" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546883)"><strong>IRP_MJ_READ</strong></a>) 和写入 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff546904" data-raw-source="[&lt;strong&gt;IRP_MJ_WRITE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546904)"><strong>IRP_MJ_WRITE</strong></a>) 适用于你串行控制器的请求驱动程序。 读取或写入请求的响应，SerCx2 向串行控制器驱动程序发出一个或多个 I/O 事务。 从驱动程序的角度来看，每个事务是一种简单和完成 I/O 操作。</p></td>
+<td><p>SerCx2 简化了读取的处理 (<a href="https://docs.microsoft.com/previous-versions/ff546883(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))"><strong>IRP_MJ_READ</strong></a>) 和写入 (<a href="https://docs.microsoft.com/previous-versions/ff546904(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_WRITE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))"><strong>IRP_MJ_WRITE</strong></a>) 适用于你串行控制器的请求驱动程序。 读取或写入请求的响应，SerCx2 向串行控制器驱动程序发出一个或多个 I/O 事务。 从驱动程序的角度来看，每个事务是一种简单和完成 I/O 操作。</p></td>
 </tr>
 </tbody>
 </table>

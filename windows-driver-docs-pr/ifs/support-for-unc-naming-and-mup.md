@@ -15,12 +15,12 @@ keywords:
 - 并行的前缀解析 WDK 网络重定向程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b86dddd6c52d4b2fa9649604289c7cef540a1a4a
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 669e244b650a573319b7d259ebec3c6f321bc9c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161560"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371319"
 ---
 # <a name="support-for-unc-naming-and-mup"></a>支持 UNC 命名和 MUP
 
@@ -59,7 +59,7 @@ MUP 确定哪个提供程序可以处理在基于名称的操作中，通常 IRP
 
 -   在维护 MUP 前缀缓存中输入提供程序和其声明的前缀。 对于后续基于名称的操作，MUP 使用此前缀缓存来确定是否提供程序尝试执行前缀解析之前已声明前缀。 此前缀缓存中的每个条目受到 （也称为 TTL） 的超时后添加到缓存。 此超时过期后立即引发一个条目，请在哪个时间点 MUP 将执行前缀解析再次为后续的基于名称的操作上此前缀。
 
-MUP 执行前缀解析通过发出[ **IOCTL\_是否重定向\_查询\_路径**](https://msdn.microsoft.com/library/windows/hardware/ff548313)网络重定向程序注册到 MUP 的请求。 IOCTL 的输入和输出缓冲区\_是否重定向\_查询\_路径如下所示：
+MUP 执行前缀解析通过发出[ **IOCTL\_是否重定向\_查询\_路径**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ni-ntifs-ioctl_redir_query_path)网络重定向程序注册到 MUP 的请求。 IOCTL 的输入和输出缓冲区\_是否重定向\_查询\_路径如下所示：
 
 <table>
 <colgroup>
@@ -192,9 +192,9 @@ IOCTL\_是否重定向\_查询\_路径请求应仅来自 MUP 和 IRP 的请求�
 
 如果网络重定向程序声明一个服务器名称 (\\\\，例如，服务器)，此服务器上的共享的所有请求将都转到此网络重定向程序。 此行为只是不可能由不同的网络重定向程序访问在同一服务器上的另一个共享的情况下可以接受的。 例如，网络重定向程序声明\\ \\UNC 路径的服务器将阻止其他网络重定向到此服务器上的其他共享的访问 (WebDAV 访问\\ \\server\\web，例如).
 
-任何旧的网络重定向程序 （不基于使用 RDBSS） 注册为与 MUP UNC 提供程序通过调用[ **FsRtlRegisterUncProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff547178)将收到 IOCTL\_是否重定向\_查询\_路径请求。
+任何旧的网络重定向程序 （不基于使用 RDBSS） 注册为与 MUP UNC 提供程序通过调用[ **FsRtlRegisterUncProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)将收到 IOCTL\_是否重定向\_查询\_路径请求。
 
-一个网络微型重定向，该值指示支持 UNC 提供程序会收到此前缀声明，就好像 IRP\_MJ\_创建调用。 此创建请求是类似于用户模式**Createfile**调用与文件一起\_创建\_树\_连接标志上设置。 网络微型重定向不会与调用收到的前缀声明[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。 前缀声明，将发送 RDBSS [ **MRxCreateSrvCall** ](https://msdn.microsoft.com/library/windows/hardware/ff549864)网络微型重定向到的调用后跟对请求[ **MRxSrvCallWinnerNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550824)并[ **MRxCreateVNetRoot**](https://msdn.microsoft.com/library/windows/hardware/ff549869)。 当网络微型重定向注册与 RDBSS 时，网络微型重定向的驱动程序调度表将被复制转移 RDBSS 为指向内部 RDBSS 入口点。 RDBSS 然后接收此 IOCTL\_是否重定向\_查询\_内部的网络微型重定向和调用路径**MRxCreateSrvCall**， **MRxSrvCallWinnerNotify**，并**MRxCreateVNetRoot**。 原始 IOCTL\_是否重定向\_查询\_路径 IRP 将包含在 RX\_上下文结构传递给**MRxCreateSrvCall**例程。 此外，RX 中的以下成员\_上下文传递给**MRxCreateSrvCall**将进行相应修改：
+一个网络微型重定向，该值指示支持 UNC 提供程序会收到此前缀声明，就好像 IRP\_MJ\_创建调用。 此创建请求是类似于用户模式**Createfile**调用与文件一起\_创建\_树\_连接标志上设置。 网络微型重定向不会与调用收到的前缀声明[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。 前缀声明，将发送 RDBSS [ **MRxCreateSrvCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_srvcall)网络微型重定向到的调用后跟对请求[ **MRxSrvCallWinnerNotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_srvcall_winner_notify)并[ **MRxCreateVNetRoot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_v_net_root)。 当网络微型重定向注册与 RDBSS 时，网络微型重定向的驱动程序调度表将被复制转移 RDBSS 为指向内部 RDBSS 入口点。 RDBSS 然后接收此 IOCTL\_是否重定向\_查询\_内部的网络微型重定向和调用路径**MRxCreateSrvCall**， **MRxSrvCallWinnerNotify**，并**MRxCreateVNetRoot**。 原始 IOCTL\_是否重定向\_查询\_路径 IRP 将包含在 RX\_上下文结构传递给**MRxCreateSrvCall**例程。 此外，RX 中的以下成员\_上下文传递给**MRxCreateSrvCall**将进行相应修改：
 
 **MajorFunction**成员设置为 IRP\_MJ\_创建即使原始 IRP 是 IRP\_MJ\_设备\_控件。
 
@@ -210,7 +210,7 @@ IOCTL\_是否重定向\_查询\_路径请求应仅来自 MUP 和 IRP 的请求�
 
 如果网络微型-重定向程序想要查看的前缀声明的详细信息，它可以读取这些成员中 RX\_上下文传递给**MRxCreateSrvCall**。 否则它可以仅尝试连接到服务器共享，并返回状态\_成功如果**MRxCreateSrvCall**调用是否成功。 RDBSS 将代表网络声明的前缀微型重定向。
 
-没有一种情况下网络微型重定向无法直接接收此 IOCTL。 网络微型重定向无法初始化和注册 RDBSS 之前保存一份其驱动程序调度表。 在调用[ **RxRegisterMinirdr** ](https://msdn.microsoft.com/library/windows/hardware/ff554693)注册 RDBSS，网络微型重定向可保存一份新的驱动程序调度表入口点，由 RDBSS 安装并还原其原始的驱动程序调度表。 还原驱动程序调度表将需要修改，以便网络微型重定向到感兴趣的那些检查接收的 IRP，完后调用转发到 RDBSS 驱动程序调度入口点。 驱动程序初始化 RDBSS 和调用时，将通过网络微型重定向的驱动程序调度表复制 RDBSS **RxRegisterMinrdr**。 一个网络微型重定向链接针对*rdbsslib.lib*必须保存其原始的驱动程序调度表，然后调用[ **RxDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554404)从其**DriverEntry**例程，以初始化 RDBSS 静态库，并还原其驱动程序调度表之后调用**RxRegisterMinrdr**。 这是因为在这种网络微型重定向程序调度表通过复制 RDBSS **RxDriverEntry**并**RxRegisterMinrdr**例程。
+没有一种情况下网络微型重定向无法直接接收此 IOCTL。 网络微型重定向无法初始化和注册 RDBSS 之前保存一份其驱动程序调度表。 在调用[ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)注册 RDBSS，网络微型重定向可保存一份新的驱动程序调度表入口点，由 RDBSS 安装并还原其原始的驱动程序调度表。 还原驱动程序调度表将需要修改，以便网络微型重定向到感兴趣的那些检查接收的 IRP，完后调用转发到 RDBSS 驱动程序调度入口点。 驱动程序初始化 RDBSS 和调用时，将通过网络微型重定向的驱动程序调度表复制 RDBSS **RxRegisterMinrdr**。 一个网络微型重定向链接针对*rdbsslib.lib*必须保存其原始的驱动程序调度表，然后调用[ **RxDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdriverentry)从其**DriverEntry**例程，以初始化 RDBSS 静态库，并还原其驱动程序调度表之后调用**RxRegisterMinrdr**。 这是因为在这种网络微型重定向程序调度表通过复制 RDBSS **RxDriverEntry**并**RxRegisterMinrdr**例程。
 
 提供程序在前缀解析期间进行查询的顺序受 REG\_SZ ProviderOrder 注册表值都存储在以下项：
 

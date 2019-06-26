@@ -10,12 +10,12 @@ keywords:
 - 合成器 WDK 音频，MIDI 传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9b9dfaed609b57ed9070c597bab95108505b433
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1626ea40ace629e12b28601399af5d488ddcfa33
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363237"
 ---
 # <a name="midi-transport"></a>MIDI 传输
 
@@ -35,7 +35,7 @@ Dmu 端口驱动程序实现一个接受来自 DirectMusic 用户模式组件，
 
 [SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)，哪些生成音频筛选器关系图中，连接到硬件 Dmu 端口驱动程序。 端口驱动程序的批接收器部分分发数据通过 SysAudio 可以连接到硬件设备及其批带 pin 码。 它从 Dmu 微型端口驱动程序 （而不考虑是硬件或软件合成器），提取批数据和处理所有的计时问题。 与用户模式相比，微型端口驱动程序是类似于合成器，而只是批接收器端口驱动程序的一部分。
 
-如果 Dmu 微型端口驱动程序可以提供其输出返回到主机，它公开 KSPIN 数据方向的批 pin\_数据流\_OUT (请参阅[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483))，哪些 SysAudio识别并连接到 KMixer。
+如果 Dmu 微型端口驱动程序可以提供其输出返回到主机，它公开 KSPIN 数据方向的批 pin\_数据流\_OUT (请参阅[ **KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin))，哪些 SysAudio识别并连接到 KMixer。
 
 有关批接收器的详细信息，请参阅[内核模式软件合成器的批接收器](a-wave-sink-for-kernel-mode-software-synthesizers.md)。
 

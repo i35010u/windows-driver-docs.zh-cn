@@ -4,12 +4,12 @@ description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a634c3d6d47ca5a66da123bc38b606c15f0ae8
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: d5b38ca5dac8bd56d5b0b2eea096aa9d2475d664
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456429"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386405"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
@@ -18,7 +18,7 @@ ms.locfileid: "65456429"
 
 -   [设备管理器](using-device-manager.md)。
 
--   调用的设备安装应用程序[SetupAPI](setupapi.md)并[设备安装](https://msdn.microsoft.com/library/windows/hardware/ff541299)函数。
+-   调用的设备安装应用程序[SetupAPI](setupapi.md)并[设备安装](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))函数。
 
 这些操作包括以下各项：
 
@@ -38,9 +38,9 @@ ms.locfileid: "65456429"
 
 -   设备管理器。 有关详细信息，请参阅[使用设备管理器](using-device-manager.md)。
 
--   调用的设备安装应用程序[SetupAPI](setupapi.md) [**SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)函数中的请求[ **DIF_删除**](https://msdn.microsoft.com/library/windows/hardware/ff543717)。 有关详细信息，请参阅[使用常规安装函数](using-general-setup-functions.md)。
+-   调用的设备安装应用程序[SetupAPI](setupapi.md) [**SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)函数中的请求[ **DIF_删除**](https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove)。 有关详细信息，请参阅[使用常规安装函数](using-general-setup-functions.md)。
 
--   设备安装应用程序调用 SetupAPI [ **DiUninstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544754)函数 （Windows 7 和更高版本的 Windows）。 有关详细信息，请参阅[使用设备安装函数](using-device-installation-functions.md)。
+-   设备安装应用程序调用 SetupAPI [ **DiUninstallDevice** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diuninstalldevice)函数 （Windows 7 和更高版本的 Windows）。 有关详细信息，请参阅[使用设备安装函数](using-device-installation-functions.md)。
 
 通过使用下列方法之一卸载设备后，请插即用 (PnP) 管理器中删除设备安装过程中创建的系统状态的子集。 例如，它将删除驱动程序二进制文件和设备之间的关联。 此关联用于通过服务控制管理器 (SCM) 加载适用于设备的驱动程序。
 

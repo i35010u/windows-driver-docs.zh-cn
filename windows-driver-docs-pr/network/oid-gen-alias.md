@@ -5,12 +5,12 @@ ms.assetid: ff5e6494-aa4e-4a0a-b773-64b612236c8c
 ms.date: 08/08/2017
 keywords: -OID_GEN_ALIAS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c096ca75c596f7066f090bcb9f42ac177313d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 361c0dfc20777c407824a41c82b062a0f1ea718c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349465"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385502"
 ---
 # <a name="oidgenalias"></a>OID\_常规\_别名
 
@@ -28,7 +28,7 @@ ms.locfileid: "63349465"
 <a name="remarks"></a>备注
 -------
 
-[NDIS 网络接口](https://msdn.microsoft.com/library/windows/hardware/ff566527)提供程序可以将分配为它的接口的唯一别名字符串。 如果名称应保持相同的接口与相关联，该提供程序可以使计算机重新启动后持久的字符串和需重新初始化。
+[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序可以将分配为它的接口的唯一别名字符串。 如果名称应保持相同的接口与相关联，该提供程序可以使计算机重新启动后持久的字符串和需重新初始化。
 
 仅 NDIS 网络接口提供程序，并因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
 
@@ -53,7 +53,7 @@ ms.locfileid: "63349465"
 ## <a name="see-also"></a>请参阅
 
 
-[NDIS 网络接口 Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

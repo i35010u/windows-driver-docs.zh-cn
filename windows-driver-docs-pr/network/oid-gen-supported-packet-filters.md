@@ -5,12 +5,12 @@ ms.assetid: c19cecf3-ae47-4fd1-b5dc-1f3de469e548
 ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_PACKET_FILTERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 157b47e3be2f47858c051f0600a4c77161696f0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87debd95e54b258fdaed5beb4b47a8395da2f227
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387885"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386992"
 ---
 # <a name="oidgensupportedpacketfilters"></a>OID\_GEN\_支持\_数据包\_筛选器
 
@@ -34,9 +34,9 @@ NDIS 和基础驱动程序获取的微型端口适配器可以筛选在初始化
 
 微型端口驱动程序在初始化过程中提供的受支持的数据包筛选器。
 
-若要指定受支持的数据包筛选器，微型端口驱动程序设置**SupportedPacketFilters**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)结构，并将传递到结构[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)函数。
+若要指定受支持的数据包筛选器，微型端口驱动程序设置**SupportedPacketFilters**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，并将传递到结构[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
-NDIS 将信息传递到协议驱动程序中**SupportedPacketFilters**的成员[ **NDIS\_绑定\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff564832)结构。
+NDIS 将信息传递到协议驱动程序中**SupportedPacketFilters**的成员[ **NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)结构。
 
 中的值**SupportedPacketFilters**是类型标志的位或运算的筛选器。 有关筛选器类型标志的列表，请参阅[OID\_代\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)OID。
 
@@ -59,11 +59,11 @@ NDIS 将信息传递到协议驱动程序中**SupportedPacketFilters**的成员[
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
 
-[**NDIS\_BIND\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff564832)
+[**NDIS\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
 
-[**NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
+[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
 [OID\_GEN\_CURRENT\_PACKET\_FILTER](oid-gen-current-packet-filter.md)
 

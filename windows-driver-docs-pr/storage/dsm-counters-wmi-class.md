@@ -4,12 +4,12 @@ description: DSM\_计数器 WMI 类
 ms.assetid: 11ff77d7-5643-45ec-ac38-26ee70e6ea94
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d9a038eb06228b83f567f336d7161807ad213ef1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9f5a8bebf89044358d72d997a9932265de7ec7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380677"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368258"
 ---
 # <a name="dsmcounters-wmi-class"></a>DSM\_计数器 WMI 类
 
@@ -60,7 +60,7 @@ class DSM_COUNTERS
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_计数器**](https://msdn.microsoft.com/library/windows/hardware/ff552683)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_计数器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_dsm_counters)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

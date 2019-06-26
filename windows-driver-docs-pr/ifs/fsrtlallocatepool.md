@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b4a7bec0ca877fccee7e50895a5409b83cc3a49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dadf8d1b8876353f9943706f13c5b49d9a23ae49
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370161"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366219"
 ---
 # <a name="fsrtlallocatepool"></a>FsRtlAllocatePool
 
@@ -25,7 +25,7 @@ ms.locfileid: "63370161"
 
 
 
-**FsRtlAllocatePool**例程已过时，但导出以支持现有的驱动程序二进制文件。 使用[ **FsRtlAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff545675)相反。
+**FsRtlAllocatePool**例程已过时，但导出以支持现有的驱动程序二进制文件。 使用[ **FsRtlAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlallocatepoolwithtag)相反。
 
  
 

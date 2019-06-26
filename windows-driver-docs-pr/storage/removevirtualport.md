@@ -12,12 +12,12 @@ api_type:
 - COM
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9276b12ec7d0b8e9c5238bc526f2d66b518e02a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad9797ed32f6342c250075053b59930097a07844
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349143"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368914"
 ---
 # <a name="removevirtualport-method"></a>RemoveVirtualPort 方法
 
@@ -37,7 +37,7 @@ void RemoveVirtualPort(
 <a name="parameters"></a>Parameters
 ----------
 
-*WWPN\[8\]*   
+*WWPN\[8\]*    
 要删除的虚拟端口的全球通用端口名称。
 
 *状态*   
@@ -51,7 +51,7 @@ void RemoveVirtualPort(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[NPIV 状态代码](https://msdn.microsoft.com/library/windows/hardware/dn386176)
+[NPIV 状态代码](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn386176(v=vs.85))
 
  
 

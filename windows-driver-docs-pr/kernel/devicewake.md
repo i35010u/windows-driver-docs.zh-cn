@@ -6,12 +6,12 @@ keywords:
 - DeviceWake
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0324877a14b1b560aa01d5e113740bad398c330
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32e8d2f2a049a7503cc9c0832f72925168fe43e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342732"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384996"
 ---
 # <a name="devicewake"></a>DeviceWake
 
@@ -19,7 +19,7 @@ ms.locfileid: "63342732"
 
 
 
-**DeviceWake**的成员[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)包含从其设备，可以发出唤醒最低 （最少的） 设备电源状态事件，或**PowerDeviceUnspecified**如果设备无法唤醒以响应外部信号。
+**DeviceWake**的成员[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)包含从其设备，可以发出唤醒最低 （最少的） 设备电源状态事件，或**PowerDeviceUnspecified**如果设备无法唤醒以响应外部信号。
 
 总线驱动程序设置此值。 更高级别的驱动程序可以将值更改为 higher-powered 状态。 例如，如果总线驱动程序设置**DeviceWake** D3 但驱动程序进一步启动设备堆栈支持唤醒只能从 D2，更高级别的驱动程序可以将值更改为 D2。
 

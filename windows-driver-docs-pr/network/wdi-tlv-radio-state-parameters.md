@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RADIO_STATE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 314f694f36127b4887bf2829273e4aef5e8cf819
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84c5929034c5035357134743d666c5bab3ee860a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362499"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366512"
 ---
 # <a name="wditlvradiostateparameters"></a>WDI\_TLV\_RADIO\_STATE\_PARAMETERS
 
 
-WDI\_TLV\_单选\_状态\_参数是包含单选状态参数 TLV [OID\_WDI\_任务\_设置\_单选\_状态](https://msdn.microsoft.com/library/windows/hardware/dn925963)。
+WDI\_TLV\_单选\_状态\_参数是包含单选状态参数 TLV [OID\_WDI\_任务\_设置\_单选\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-set-radio-state)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

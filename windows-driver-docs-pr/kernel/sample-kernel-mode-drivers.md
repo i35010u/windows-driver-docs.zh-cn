@@ -7,12 +7,12 @@ keywords:
 - 示例驱动程序 WDK 内核模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3f0e910e2301eabc1383409205f8054d870f57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8e07cfefcf800ca14704e1b13d65e424d525807
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342690"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373383"
 ---
 # <a name="sample-kernel-mode-drivers"></a>示例内核模式驱动程序
 
@@ -78,7 +78,7 @@ RegFltr 示例演示如何编写注册表筛选器驱动程序。
 
 [**tracedrv**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)  
 
-演示如何使用[WPP 软件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556204)。
+演示如何使用[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。
 
 [**UMDF 驱动程序框架示例**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/umdfSkeleton)
 

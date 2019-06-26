@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 551b3d61fe01e73cb890033b0c053df2c459d211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b897d5afd7ef8d6c3de5b660e85aa5079e00c452
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369800"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386758"
 ---
 # <a name="avcfunctioncommand"></a>AVC\_函数\_命令
 
@@ -136,7 +136,7 @@ typedef struct _AVC_COMMAND_IRB {
 <span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>**重试次数**  
 将此设置为所需的时间数*avc.sys*应尝试在没有响应每个超时后重试请求。 请注意，重试计数为零意味着再次重试请求。 尝试处理命令而不获取响应所用的时间总量计算由以下公式：
 
-***超时***  *\* (* * *<em>重试</em>** *+ 1)*
+***超时***  *\* (* * *<em>重试</em>* *  *+ 1)*
 
 如果忽略此参数**RetryFlag**为零。
 
@@ -165,7 +165,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 ### <a name="see-also"></a>请参阅
 
-[**AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)， [ **AvcCommandType**](https://msdn.microsoft.com/library/windows/hardware/ff554099)， [ **AvcResponseCode**](https://msdn.microsoft.com/library/windows/hardware/ff554105)， [**AVC\_函数\_查找\_对等方\_执行**](avc-function-find-peer-do.md)， [ **AVC\_函数\_对等\_做\_列表**](avc-function-peer-do-list.md)， [ **AVC\_函数\_GET\_子单元\_信息**](avc-function-get-subunit-info.md)
+[**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)， [ **AvcCommandType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavccommandtype)， [ **AvcResponseCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavcresponsecode)， [**AVC\_函数\_查找\_对等方\_执行**](avc-function-find-peer-do.md)， [ **AVC\_函数\_对等\_做\_列表**](avc-function-peer-do-list.md)， [ **AVC\_函数\_GET\_子单元\_信息**](avc-function-get-subunit-info.md)
 
  
 

@@ -3,17 +3,17 @@ Description: Windows.Devices.Usb 命名空间提供 Api 以便与外部 USB 设�
 title: USB 设备的 UWP 应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30bde1de66ca92298e34c272d2c8ddca339eac1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4519017a0238e888526ce247eeeedc5b73d51084
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385340"
 ---
 # <a name="uwp-app-for-a-usb-device"></a>USB 设备的 UWP 应用
 
 
-[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)命名空间提供与使用 WinUSB (Winusb.sys) 作为设备驱动程序的外部 USB 设备进行通信的 Windows 应用一种方法。
+[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)命名空间提供与使用 WinUSB (Winusb.sys) 作为设备驱动程序的外部 USB 设备进行通信的 Windows 应用一种方法。
 
 ## <a name="in-this-section"></a>本节内容
 
@@ -36,12 +36,12 @@ ms.locfileid: "63389107"
 </tr>
 <tr class="even">
 <td><p><a href="updating-the-app-manifest-with-usb-device-capabilities.md" data-raw-source="[How to add USB device capabilities to the app manifest](updating-the-app-manifest-with-usb-device-capabilities.md)">如何将 USB 设备功能添加到应用程序清单</a></p></td>
-<td><p>本主题介绍使用 Windows 应用所需的设备功能<a href="https://msdn.microsoft.com/library/windows/apps/dn278466" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn278466)"> <strong>Windows.Devices.Usb</strong> </a>命名空间。</p></td>
+<td><p>本主题介绍使用 Windows 应用所需的设备功能<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)"> <strong>Windows.Devices.Usb</strong> </a>命名空间。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="how-to-connect-to-a-usb-device--uwp-app-.md" data-raw-source="[How to connect to a USB device (UWP app)](how-to-connect-to-a-usb-device--uwp-app-.md)">如何连接到 USB 设备 （UWP 应用）</a></p></td>
 <td><p>在 Windows 8.1，可以编写与 USB 设备进行交互的 UWP 应用。 应用可以发送控制命令，获取设备的信息，并读取和写入数据传入/传出大容量和中断终结点。 您可以执行所有这些之前，必须找到设备，并建立连接。</p>
-<p>在此部分中，您将学习如何使用<a href="https://msdn.microsoft.com/library/windows/apps/br225446" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225446)"> <strong>DeviceWatcher</strong> </a>对象找到该设备，然后打开它开始从您的应用程序进行通信。 您将学习如何使用它完成后关闭设备。</p></td>
+<p>在此部分中，您将学习如何使用<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"> <strong>DeviceWatcher</strong> </a>对象找到该设备，然后打开它开始从您的应用程序进行通信。 您将学习如何使用它完成后关闭设备。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="how-to-send-a-usb-control-transfer--uwp-app-.md" data-raw-source="[How to send a USB control transfer (UWP app)](how-to-send-a-usb-control-transfer--uwp-app-.md)">如何发送 USB 控制传输 （UWP 应用）</a></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "63389107"
 </tr>
 <tr class="even">
 <td><p><a href="how-to-select-a-usb-interface-setting--uwp-app-.md" data-raw-source="[How to select a USB interface setting (UWP app)](how-to-select-a-usb-interface-setting--uwp-app-.md)">如何选择 USB 接口设置 （UWP 应用）</a></p></td>
-<td><p>在本主题中，您将学习如何更改 USB 接口内的设置。 将使用<a href="https://msdn.microsoft.com/library/windows/apps/dn264278" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn264278)"> <strong>UsbInterfaceSetting</strong> </a>对象来获取当前设置，并在界面中设置的设置。</p></td>
+<td><p>在本主题中，您将学习如何更改 USB 接口内的设置。 将使用<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting&lt;/strong&gt;](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)"> <strong>UsbInterfaceSetting</strong> </a>对象来获取当前设置，并在界面中设置的设置。</p></td>
 </tr>
 </tbody>
 </table>
@@ -78,7 +78,7 @@ ms.locfileid: "63389107"
 ## <a name="what-are-the-limitations-of-the-namespace"></a>命名空间的限制是什么？
 
 
-您*不能*使用[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)在这些情况下：
+您*不能*使用[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)在这些情况下：
 
 -   如果设备驱动程序不是 Winusb.sys。
 -   你想要与 USB 设备的同步终结点通信。
@@ -94,10 +94,10 @@ ms.locfileid: "63389107"
 
      
 
--   你的设备有多个 USB 配置，并且你想要选择第一个以外的配置。 [**Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)默认情况下选择的第一个配置。
+-   你的设备有多个 USB 配置，并且你想要选择第一个以外的配置。 [**Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)默认情况下选择的第一个配置。
 
 ## <a name="related-topics"></a>相关主题
-[**Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/dn278466)  
+[**Windows.Devices.Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)  
 
 
 

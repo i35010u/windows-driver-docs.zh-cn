@@ -9,12 +9,12 @@ keywords:
 - 解码器微型驱动程序 WDK DVD、 编写
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b25e03803d53e607152bc98987ca81ceef156b18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ec36ac40b60a05a95ad92ad1cb9b8840f1a389b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387168"
 ---
 # <a name="dvd-decoder-support-in-windows"></a>Windows 中的 DVD 解码器支持
 
@@ -34,7 +34,7 @@ ms.locfileid: "63363585"
 
 -   **WDM Stream 类驱动程序**
 
-    WDM 流类驱动程序支持流式处理的数据类型和 mpeg-2 和 ac-3 硬件解码器。 有关详细信息，请参阅[流式处理微型驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568275)。
+    WDM 流类驱动程序支持流式处理的数据类型和 mpeg-2 和 ac-3 硬件解码器。 有关详细信息，请参阅[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)。
 
 **请注意**   Microsoft 不提供 mpeg-2 或 ac-3 软件/硬件与 Windows XP 的解码器筛选器。 供应商必须提供每个所需的 DVD 数据流、 任一 DirectShow 兼容软件解码器或提供 WDM 流式处理兼容的 DVD 解码器微型驱动程序以支持其 DVD 硬件解码器。
 

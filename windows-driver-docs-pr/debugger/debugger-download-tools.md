@@ -7,12 +7,12 @@ keywords:
 - 下载
 ms.date: 01/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb53107af0e3721d5d71c1419eb0fe4c359363c
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 5b1cd20c5e248ee98549434950d3731e4284eaee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366959"
 ---
 # <a name="download-debugging-tools-for-windows"></a>下载适用于 Windows 调试工具
 
@@ -23,7 +23,7 @@ Windows 调试器 (WinDbg) 可用于调试内核模式和用户模式代码，�
 
 WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调试器数据模型，具有更现代的视觉效果、更快速的 Windows 和成熟的脚本体验。 现在，WinDbg Preview 使用与 WinDbg 相同的基础引擎，因此所有命令、扩展和工作流的运行仍然与从前相同。
 
- - 从 Microsoft Store 下载 WinDbg 预览：[WinDbg 预览](https://microsoft.com/store/p/windbg/9pgjgd53tn86)。
+ - 从 Microsoft Store 下载 WinDbg 预览：[WinDbg 预览](https://www.microsoft.com/store/p/windbg/9pgjgd53tn86)。
 
  - 了解有关安装和配置中的详细[WinDbg 预览版-安装](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)。
 
@@ -51,12 +51,12 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 
 ## <a name="looking-for-related-downloads"></a>查找相关下载？
 
- - [Windows 驱动程序工具包 (WDK)](https://developer.microsoft.com/windows/hardware/windows-driver-kit)
+ - [Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 
  - [Windows 调试器符号](debugger-download-symbols.md)  
 
- - [Windows HLK，HCK 或徽标工具包](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
+ - [Windows HLK，HCK 或徽标工具包](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
 
- - [Windows 评估和部署工具包 (Windows ADK)](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
+ - [Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 
  - [Windows Insider Preview 内部版本](https://insider.windows.com/)

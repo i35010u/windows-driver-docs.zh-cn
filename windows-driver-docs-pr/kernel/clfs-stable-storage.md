@@ -19,12 +19,12 @@ keywords:
 - 记录序列号 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd6fb99c9d0f549a19ea8e905068d198df9dd605
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1845d10b75f80205290b987b695c4dd17d32e691
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383342"
 ---
 # <a name="clfs-stable-storage"></a>CLFS 稳定存储
 
@@ -56,7 +56,7 @@ CLFS 使用逻辑容器标识符以使客户端日志记录的视图正写入时
 
 1.  客户端将写入足够的日志记录来填充所有三个容器。
 
-2.  客户端设置的日志基 (通过调用[ **ClfsAdvanceLogBase** ](https://msdn.microsoft.com/library/windows/hardware/ff540773)或[ **ClfsWriteRestartArea**](https://msdn.microsoft.com/library/windows/hardware/ff541770)。) 到一个容器中的记录2。 这样一来，客户端会说它不再需要容器 1 中的记录。
+2.  客户端设置的日志基 (通过调用[ **ClfsAdvanceLogBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsadvancelogbase)或[ **ClfsWriteRestartArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfswriterestartarea)。) 到一个容器中的记录2。 这样一来，客户端会说它不再需要容器 1 中的记录。
 
 3.  客户端会向日志写入另一条记录，并获取返回新写入记录的 LSN。 该 LSN 中的逻辑容器标识符为 4。 当记录刷新到稳定存储中时，在客户端看到逻辑容器 4 中的记录将转到物理容器 1。
 
@@ -68,11 +68,11 @@ CLFS 使用逻辑容器标识符以使客户端日志记录的视图正写入时
 
 给定的一条记录的 LSN，可以通过调用以下函数提取的逻辑容器标识符、 块偏移量，并记录序列号。
 
-[**ClfsLsnContainer**](https://msdn.microsoft.com/library/windows/hardware/ff541573)
+[**ClfsLsnContainer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsncontainer)
 
-[**ClfsLsnBlockOffset**](https://msdn.microsoft.com/library/windows/hardware/ff541569)
+[**ClfsLsnBlockOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnblockoffset)
 
-[**ClfsLsnRecordSequence**](https://msdn.microsoft.com/library/windows/hardware/ff541615)
+[**ClfsLsnRecordSequence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnrecordsequence)
 
 逻辑容器标识符是一个 32 位数字，因此没有 2 ^32 的可能的逻辑容器标识符，并且它们位于通过 0xFFFFFFFF 的范围内 0x0。 流最多可以有 2 ^32 的逻辑容器。
 

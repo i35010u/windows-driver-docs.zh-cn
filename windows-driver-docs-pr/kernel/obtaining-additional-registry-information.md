@@ -7,12 +7,12 @@ keywords:
 - 筛选驱动程序 WDK 内核，若要获取的其他信息的注册表
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa93162f0f9e189e34d63a2003b9fe8d0de15792
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ec1cf6ec13abbb838da16542d3ab614e231ae3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384937"
 ---
 # <a name="obtaining-additional-registry-information"></a>获取其他注册表信息
 
@@ -21,15 +21,15 @@ ms.locfileid: "63382912"
 
 -   对象标识符和名称
 
-    [ **CmCallbackGetKeyObjectIDEx** ](https://msdn.microsoft.com/library/windows/hardware/jj215789)例程检索的注册表项的标识符和对象名称与指定的注册表密钥对象相关联。
+    [ **CmCallbackGetKeyObjectIDEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmcallbackgetkeyobjectidex)例程检索的注册表项的标识符和对象名称与指定的注册表密钥对象相关联。
 
 -   事务对象
 
-    [ **CmGetBoundTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff541905)例程返回一个指向该事务对象，表示[事务](using-kernel-transaction-manager.md)(如果有） 关联的注册表项对象。
+    [ **CmGetBoundTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmgetboundtransaction)例程返回一个指向该事务对象，表示[事务](using-kernel-transaction-manager.md)(如果有） 关联的注册表项对象。
 
 -   版本信息
 
-    [ **CmGetCallbackVersion** ](https://msdn.microsoft.com/library/windows/hardware/ff541912)例程检索有关配置管理器的注册表回调功能的最新版本的主版本号和次版本号。
+    [ **CmGetCallbackVersion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmgetcallbackversion)例程检索有关配置管理器的注册表回调功能的最新版本的主版本号和次版本号。
 
  
 

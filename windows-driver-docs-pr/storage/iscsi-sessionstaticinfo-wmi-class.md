@@ -4,12 +4,12 @@ description: ISCSI\_SessionStaticInfo WMI 类
 ms.assetid: e6ef8389-c4f3-4498-9864-6e4c1e8ca5b5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e071beacb4a3b2603f3c47e1b21081021e0c8f75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77b03584f0d49dbf325f620cf608533cee7b77ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378399"
 ---
 # <a name="iscsisessionstaticinfo-wmi-class"></a>ISCSI\_SessionStaticInfo WMI 类
 
@@ -166,7 +166,7 @@ class ISCSI_SessionStaticInfo {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_SessionStaticInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff561565)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_SessionStaticInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_sessionstaticinfo)数据结构。
 
  
 

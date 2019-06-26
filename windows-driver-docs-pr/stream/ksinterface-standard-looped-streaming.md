@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2790708409e3ce9079d6c6329cc5043cb6a35fc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0d039d627f30716ed36828e45b65c531cadc9b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334018"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370438"
 ---
 # <a name="ksinterfacestandardloopedstreaming"></a>KSINTERFACE\_标准\_LOOPED\_流式处理
 
@@ -31,7 +31,7 @@ KSINTERFACE\_标准\_LOOPED\_DSound 的客户端使用流式处理接口。 在 
 
 ### <a name="see-also"></a>请参阅
 
-[KSINTERFACESETID\_标准](ksinterfacesetid-standard.md)， [ **KSPIN\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff563537)， [ **KSPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563533)
+[KSINTERFACESETID\_标准](ksinterfacesetid-standard.md)， [ **KSPIN\_接口**](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))， [ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)
 
  
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 78e5b04ccb3a57b1566fc5a785218ca88e8cc553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3374f175c2d5fe9e14222fd41ffd59a91e2f9d7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380085"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385544"
 ---
 # <a name="kscategorytvtuner"></a>KSCATEGORY_TVTUNER
 
 
-KSCATEGORY_TVTUNER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)电视调谐器设备 (KS) 功能类别。
+KSCATEGORY_TVTUNER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)电视调谐器设备 (KS) 功能类别。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS 设备的驱动程序注册 KSCATEGORY_TVTUNER 向操作系统指示设备支
 
 有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src/swtuner/algtuner* WDK 的目录。
 
-视频设备有关的信息，请参阅[视频捕获设备](https://msdn.microsoft.com/library/windows/hardware/ff568699)，[筛选器关系图示例](https://msdn.microsoft.com/library/windows/hardware/ff559605)，并[编码器设备](https://msdn.microsoft.com/library/windows/hardware/ff559535)。
+视频设备有关的信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)，[筛选器关系图示例](https://docs.microsoft.com/windows-hardware/drivers/stream/filter-graph-examples)，并[编码器设备](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-devices)。
 
 <a name="requirements"></a>要求
 ------------

@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe2fefa7c28b14d3e0f55f90b15ec8af95fec56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e0423811cbb8ecf2bc871ad04cba894c8aab1b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373713"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380721"
 ---
 # <a name="whats-new-for-nfc-device-drivers-in-windows-10"></a>What's new for Windows 10 中的 NFC 设备驱动程序
 
@@ -30,5 +30,5 @@ ms.locfileid: "63373713"
 
  
 ## <a name="related-topics"></a>相关主题
- [NFC 设备驱动程序接口 (DDI) 参考](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
+ [NFC 设备驱动程序接口 (DDI) 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
  

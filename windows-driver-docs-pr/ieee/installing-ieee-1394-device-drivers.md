@@ -7,12 +7,12 @@ keywords:
 - 1394 WDK 总线，驱动程序安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f1a4454b102f00aa4187aa475564c39b0ffdd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37bdefa6af9a51303dd10f8c9ea930cce95e0022
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371057"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385768"
 ---
 # <a name="installing-ieee-1394-device-drivers"></a>安装 IEEE 1394 设备驱动程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "63371057"
 
 本部分提供特定于 Microsoft Windows 2000 和更高版本操作系统中的 IEEE 1394 设备驱动程序的安装信息。
 
-供应商提供其自己的 IEEE 1394 设备驱动程序应使该驱动程序中的基本安装程序类的成员[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)的驱动程序的 INF 文件。 例如：
+供应商提供其自己的 IEEE 1394 设备驱动程序应使该驱动程序中的基本安装程序类的成员[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)的驱动程序的 INF 文件。 例如：
 
 ```cpp
 [Version]
@@ -32,7 +32,7 @@ Class = Base
 
 不没有与安装 IEEE 1394 设备驱动程序相关联的任何其他特殊的要求。
 
-有关在 Windows 2000 和更高版本操作系统的设备安装的常规信息，请参阅[设备安装概述](https://msdn.microsoft.com/library/windows/hardware/ff549455)。
+有关在 Windows 2000 和更高版本操作系统的设备安装的常规信息，请参阅[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)。
 
  
 

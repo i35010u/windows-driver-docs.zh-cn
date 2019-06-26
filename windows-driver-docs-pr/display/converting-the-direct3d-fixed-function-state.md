@@ -14,12 +14,12 @@ keywords:
 - 呈现 WDK 显示的状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eb742e9c11b271d408abd2f310936f62b5ebf22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e81ee6c1e2015712bd0eec43d254db60d7373f0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370295"
 ---
 # <a name="converting-the-direct3d-fixed-function-state"></a>转换 Direct3D 固定函数状态
 
@@ -66,19 +66,19 @@ Microsoft Direct3D 运行时将 Direct3D 固定函数状态转换为顶点或像
 
 ### <a name="span-idunusedusermodedisplaydriverfunctionsspanspan-idunusedusermodedisplaydriverfunctionsspanunused-user-mode-display-driver-functions"></a><span id="unused_user_mode_display_driver_functions"></span><span id="UNUSED_USER_MODE_DISPLAY_DRIVER_FUNCTIONS"></span>未使用的用户模式显示驱动程序函数
 
-以下[用户模式显示驱动程序函数](https://msdn.microsoft.com/library/windows/hardware/ff570118)启用固定函数顶点着色器转换器时不调用 Direct3D 运行时：
+以下[用户模式显示驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)启用固定函数顶点着色器转换器时不调用 Direct3D 运行时：
 
--   [**MultiplyTransform**](https://msdn.microsoft.com/library/windows/hardware/ff568516)
+-   [**MultiplyTransform**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_multiplytransform)
 
--   [**SetTransform**](https://msdn.microsoft.com/library/windows/hardware/ff569687)
+-   [**SetTransform**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_settransform)
 
--   [**SetMaterial**](https://msdn.microsoft.com/library/windows/hardware/ff569540)
+-   [**SetMaterial**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setmaterial)
 
--   [**SetLight**](https://msdn.microsoft.com/library/windows/hardware/ff569539)
+-   [**SetLight**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setlight)
 
--   [**CreateLight**](https://msdn.microsoft.com/library/windows/hardware/ff540658)
+-   [**CreateLight**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createlight)
 
--   [**DestroyLight**](https://msdn.microsoft.com/library/windows/hardware/ff552778)
+-   [**DestroyLight**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_destroylight)
 
 ### <a name="span-idunusedrenderstatesspanspan-idunusedrenderstatesspanunused-render-states"></a><span id="unused_render_states"></span><span id="UNUSED_RENDER_STATES"></span>未使用的呈现状态
 

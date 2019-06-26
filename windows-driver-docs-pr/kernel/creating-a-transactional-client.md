@@ -7,12 +7,12 @@ keywords:
 - 事务客户端 WDK KTM，创建事务的客户端
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63675a9d2815d7e5404be597e00bb840034c631b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b36e896890e0dfa4158a5bcbe5444fe977f418a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388299"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377173"
 ---
 # <a name="creating-a-transactional-client"></a>创建事务客户端
 
@@ -25,11 +25,11 @@ ms.locfileid: "63388299"
 
 1.  创建事务对象。
 
-    调用[ **ZwCreateTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566429)创建事务对象，提供了对象句柄，并将分配客户端可以将传递到资源管理器来标识的对象标识符 (GUID)事务。
+    调用[ **ZwCreateTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)创建事务对象，提供了对象句柄，并将分配客户端可以将传递到资源管理器来标识的对象标识符 (GUID)事务。
 
 2.  获取事务对象的标识符。
 
-    客户端可以调用[ **ZwQueryInformationTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567057)若要获取的对象标识符。
+    客户端可以调用[ **ZwQueryInformationTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)若要获取的对象标识符。
 
 3.  将事务对象的标识符传递到资源管理器。
 
@@ -41,7 +41,7 @@ ms.locfileid: "63388299"
 
 5.  提交或回滚事务。
 
-    如果资源的所有操作都成功，必须调用客户端[ **ZwCommitTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566420)若要永久操作。 如果操作失败，必须调用客户端[ **ZwRollbackTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567086)而不是**ZwCommitTransaction**。 例如，如果客户端的数据库管理器确定失败的写入操作的一系列之一，客户端必须调用**ZwRollbackTransaction** ，以便将成为永久性的任何写入操作。
+    如果资源的所有操作都成功，必须调用客户端[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)若要永久操作。 如果操作失败，必须调用客户端[ **ZwRollbackTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)而不是**ZwCommitTransaction**。 例如，如果客户端的数据库管理器确定失败的写入操作的一系列之一，客户端必须调用**ZwRollbackTransaction** ，以便将成为永久性的任何写入操作。
 
     客户端可以调用**ZwCommitTransaction**并**ZwRollbackTransaction**同步或异步。 如果客户端以同步方式调用这些例程，例程提交或回滚操作完成之前不会返回。
 
@@ -49,7 +49,7 @@ ms.locfileid: "63388299"
 
 6.  关闭事务对象句柄。
 
-    客户端已完成处理该事务后，它必须调用[ **ZwClose** ](https://msdn.microsoft.com/library/windows/hardware/ff566417)关闭事务对象的句柄
+    客户端已完成处理该事务后，它必须调用[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)关闭事务对象的句柄
 
 TP 可能包括多个资源管理器。 如果客户端的事务包括对多个资源，例如两个数据库的两个资源管理器支持，操作客户端通常执行以下操作：
 
@@ -63,7 +63,7 @@ TP 可能包括多个资源管理器。 如果客户端的事务包括对多个�
 
 如果包含在 TP*上级事务管理器*，事务的客户端通常不会调用 KTM。 有关高级事务管理器和客户端的详细信息，请参阅[上级事务管理器中创建](creating-a-superior-transaction-manager.md)。
 
-事务的客户端可以调用[ **ZwSetInformationTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567104)设置特定于事务的信息。 例如，客户端可以设置该事务的超时值或提供描述性字符串。 客户端可以调用[ **ZwQueryInformationTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567057)检索关于事务的信息。 例如，客户端可以调用此例程，以确定是否已提交或回滚事务。
+事务的客户端可以调用[ **ZwSetInformationTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationtransaction)设置特定于事务的信息。 例如，客户端可以设置该事务的超时值或提供描述性字符串。 客户端可以调用[ **ZwQueryInformationTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)检索关于事务的信息。 例如，客户端可以调用此例程，以确定是否已提交或回滚事务。
 
  
 

@@ -4,12 +4,12 @@ description: 本主题提供有关创建移动设备上安装的示例驱动程�
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a5badee09435dfa13f974503b7f5f1946b4e1797
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e21c33ad075d64279643e85b292ff5056bc29fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349169"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382891"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
@@ -77,12 +77,12 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 如果您安装 WDK 到默认位置，则可以找到**pkggen.exe**在以下位置：
 
-*%Systemroot%\\Program Files (x86)\\Windows 工具包\\10\\工具\\bin\\i386*指[运行 pkggen.exe 工具](https://msdn.microsoft.com/windows/hardware/dn756642.aspx#run-pkg)，为若要了解如何创建你的移动设备的包。 并查看[创建移动包](https://msdn.microsoft.com/windows/hardware/dn756642.aspx)有关的更全面介绍。
+*%Systemroot%\\Program Files (x86)\\Windows 工具包\\10\\工具\\bin\\i386*指[运行 pkggen.exe 工具](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)#run-pkg)，为若要了解如何创建你的移动设备的包。 并查看[创建移动包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))有关的更全面介绍。
 
 ## <a name="related-topics"></a>相关主题
-[创建移动包](https://msdn.microsoft.com/windows/hardware/dn756642.aspx)
+[创建移动包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))
 [查看 INX 文件](review-and-revise-the-inf-file.md)
-[运行 pkggen.exe 工具](https://msdn.microsoft.com/windows/hardware/dn756642.aspx#run-pkg)
+[运行 pkggen.exe 工具](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)#run-pkg)
 
 
 

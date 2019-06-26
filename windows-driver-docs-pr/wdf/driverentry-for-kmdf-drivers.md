@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 57c4979c6e7c9d2354b040346adcdc0d665404e8
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 040b39eca665245bd2080cea14a801550b7a7365
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368745"
 ---
 # <a name="driverentry-for-wdf-drivers-routine"></a>WDF 驱动程序例程的 DriverEntry
 
@@ -40,10 +40,10 @@ NTSTATUS DriverEntry(
 ----------
 
 *DriverObject* \[in\]  
-一个指向[**驱动程序\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff544174)结构，它表示驱动程序的 WDM 驱动程序对象。
+一个指向[**驱动程序\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)结构，它表示驱动程序的 WDM 驱动程序对象。
 
 *RegistryPath* \[in\]  
-一个指向[ **UNICODE\_字符串**](https://msdn.microsoft.com/library/windows/hardware/ff564879)结构，它指定的驱动程序的路径[Parameters 项](https://msdn.microsoft.com/library/windows/hardware/ff544262)注册表中。
+一个指向[ **UNICODE\_字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)结构，它指定的驱动程序的路径[Parameters 项](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-registry-keys-for-drivers)注册表中。
 
 <a name="return-value"></a>返回值
 ------------
@@ -55,25 +55,25 @@ NTSTATUS DriverEntry(
 
 基于框架的驱动程序必须具有所有 WDM 驱动程序，如**DriverEntry**例程，驱动程序加载后，将调用。 基于框架的驾驶**DriverEntry**例程必须：
 
--   激活[WPP 软件跟踪](https://msdn.microsoft.com/library/windows/hardware/dn940485)。
+-   激活[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)。
 
-    **DriverEntry**应包括[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)宏以激活软件跟踪。
+    **DriverEntry**应包括[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏以激活软件跟踪。
 
--   调用[ **WdfDriverCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547175)。
+-   调用[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)。
 
-    在调用[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175) ，驱动程序以使用 Windows 驱动程序框架接口。 (该驱动程序不能调用之前调用其他 framework 例程**WdfDriverCreate**。)
+    在调用[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate) ，驱动程序以使用 Windows 驱动程序框架接口。 (该驱动程序不能调用之前调用其他 framework 例程**WdfDriverCreate**。)
 
 -   分配的任何非特定于设备的系统资源和可能需要的全局变量。
 
-    通常情况下，驱动程序将与单个设备关联的系统资源。 因此，基于框架的驱动程序分配中的大多数资源[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调，它在检测到各个设备时调用。
+    通常情况下，驱动程序将与单个设备关联的系统资源。 因此，基于框架的驱动程序分配中的大多数资源[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调，它在检测到各个设备时调用。
 
     UMDF 驱动程序的多个实例可能由 Wudfhost 的单独实例托管，因为全局变量可能不能跨 UMDF 驱动程序的所有实例。
 
 -   从注册表获取特定于驱动程序的参数。
 
-    某些驱动程序从注册表获取参数。 这些驱动程序可以调用[ **WdfDriverOpenParametersRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547202)以打开包含这些参数的注册表项。
+    某些驱动程序从注册表获取参数。 这些驱动程序可以调用[ **WdfDriverOpenParametersRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey)以打开包含这些参数的注册表项。
 
--   提供[DriverEntry 返回值](https://msdn.microsoft.com/library/windows/hardware/ff544119)。
+-   提供[DriverEntry 返回值](https://docs.microsoft.com/windows-hardware/drivers/kernel/driverentry-return-values)。
 
 **请注意**  UMDF 驱动程序在用户模式下主机进程中，运行的同时 KMDF 驱动程序在系统进程中的内核模式下运行。 该框架可能会加载到主机进程的单独实例 UMDF 驱动程序的多个实例。 结果：
 
@@ -82,7 +82,7 @@ NTSTATUS DriverEntry(
 -   该框架可能 UMDF 驱动程序的 DriverEntry 例程多次调用如果加载不同的宿主进程中的驱动程序的实例。 与此相反，框架在仅一次调用 KMDF 驱动程序的 DriverEntry 例程。
 -   如果 UMDF 驱动程序时在其 DriverEntry 例程创建的全局变量，变量可能可能不可用的驱动程序的所有实例。 但是，KMDF 驱动程序创建其 DriverEntry 例程中的全局变量可供该驱动程序的所有实例。
 
-有关何时的详细信息基于框架的驾驶**DriverEntry**调用例程，请参阅[构建和 WDF 驱动程序加载](https://msdn.microsoft.com/library/windows/hardware/ff540730)。
+有关何时的详细信息基于框架的驾驶**DriverEntry**调用例程，请参阅[构建和 WDF 驱动程序加载](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-and-loading-a-kmdf-driver)。
 
 **DriverEntry**例程不在 WDK 标头中声明。 Static Driver Verifier (SDV) 和其他验证工具可能需要的声明如下所示：
 
@@ -189,9 +189,9 @@ DriverEntry(
 ## <a name="see-also"></a>请参阅
 
 
-[**WdfDriverCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547175)
+[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)
 
-[*EvtDriverDeviceAdd*](https://msdn.microsoft.com/library/windows/hardware/ff541693)
+[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)
 
  
 

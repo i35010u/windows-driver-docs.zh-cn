@@ -3,12 +3,12 @@ Description: 举例说明如何使用 USB ETW 和 Netmon Windows 不能识别 US
 title: 案例研究-未知的 USB 设备进行故障排除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10374abe124fa0748c22b7e20f5710b0ef988b15
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: 298c77c0730634cfb9f753fdbf976d9609bb3c81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368117"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
 
@@ -148,7 +148,7 @@ USB 错误事件和其他事件，提供有价值信息有关的问题其数据�
 |状态类型|Resource|
 |----|----|
 |**fid_NtStatus**|请参阅[NTSTATUS 值](https://go.microsoft.com/fwlink/p/?linkid=617532)。|
-|USB 请求块 (URB) 的状态字段或**fid_UsbdStatus**|作为 USBD_STATUS inc\api\usb.h 中 Windows Driver Kit (WDK) 中查找值。 此外可以使用[USBD\_状态](https://msdn.microsoft.com/library/windows/hardware/ff539136)。 本主题列出的符号名称和含义 USBD\_状态值。|
+|USB 请求块 (URB) 的状态字段或**fid_UsbdStatus**|作为 USBD_STATUS inc\api\usb.h 中 Windows Driver Kit (WDK) 中查找值。 此外可以使用[USBD\_状态](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出的符号名称和含义 USBD\_状态值。|
 
 ## <a name="reading-backwards-from-problem-events"></a>向后从问题事件读取
 

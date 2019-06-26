@@ -9,12 +9,12 @@ keywords:
 - 以太网帧发送
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 697f0d5e4d4f1d2531db3d0469c970e45a7fa341
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5bbaac38e6bc18c714b4d9bb7d6b7ecb7458a29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346753"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386845"
 ---
 # <a name="sending-ethernet-frames"></a>发送以太网帧
 
@@ -30,7 +30,7 @@ Windows TCP/IP 传输支持发送以太网帧的一组的要求。 任何驱动�
 
 对于以太网发送请求，驱动程序必须支持这些要求：
 
--   如果驱动程序产生的发送请求，驱动程序应分配[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)为以太网帧的结构。 **NetBufferListInfo**中每个 NET 成员\_缓冲区\_列表结构必须包含所需的特定使用带外 (OOB) 数据。 OOB 数据应用于的所有[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)与网络相关联的结构\_缓冲区\_列表结构。
+-   如果驱动程序产生的发送请求，驱动程序应分配[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)为以太网帧的结构。 **NetBufferListInfo**中每个 NET 成员\_缓冲区\_列表结构必须包含所需的特定使用带外 (OOB) 数据。 OOB 数据应用于的所有[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)与网络相关联的结构\_缓冲区\_列表结构。
 
 -   如果驱动程序产生的发送请求，该驱动程序应分配一个或多个 NET\_缓冲区为以太网帧的结构并将这些结构链接到 NET\_缓冲区\_列表结构。 每个 NET\_缓冲区结构链接到 NET\_缓冲区\_列表结构描述一个以太网帧。 该驱动程序可以链接多个 NET\_缓冲区\_列表结构中的发送请求。 
 

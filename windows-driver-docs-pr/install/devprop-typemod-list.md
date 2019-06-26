@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09215fa94fb7d05caf7c0dd393b3679a42fb05c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e30190d6f4ed7db63f6c303d8faec4379c6a397
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331269"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372735"
 ---
 # <a name="devproptypemodlist"></a>DEVPROP_TYPEMOD_LIST
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPEMOD_LIST 标识符表示属性数据类型修饰符，可以仅使用组合[**基本数据类型标识符**](https://msdn.microsoft.com/library/windows/hardware/ff537793)  [**DEVPROP_TYPE_STRING** ](devprop-type-string.md)并[ **DEVPROP_TYPE_SECURITY_DESCRIPTOR_STRING** ](devprop-type-security-descriptor-string.md)到创建的属性数据类型标识符表示[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)的以 NULL 结尾的 Unicode 字符串列表。
+在 Windows Vista 和更高版本的 Windows，DEVPROP_TYPEMOD_LIST 标识符表示属性数据类型修饰符，可以仅使用组合[**基本数据类型标识符**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))  [**DEVPROP_TYPE_STRING** ](devprop-type-string.md)并[ **DEVPROP_TYPE_SECURITY_DESCRIPTOR_STRING** ](devprop-type-security-descriptor-string.md)到创建的属性数据类型标识符表示[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)的以 NULL 结尾的 Unicode 字符串列表。
 
 <a name="remarks"></a>备注
 -------

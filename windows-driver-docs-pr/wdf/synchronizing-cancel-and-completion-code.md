@@ -11,12 +11,12 @@ keywords:
 - I/O 请求 WDK KMDF，同步
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bbd7a7fc72fca3d137c1ab605be0779a18da0c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f41140dc368057be4446ad964e35b5713bd9ee45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350661"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369500"
 ---
 # <a name="synchronizing-cancel-and-completion-code"></a>同步取消和完成代码
 
@@ -24,15 +24,15 @@ ms.locfileid: "63350661"
 
 
 
-如果您的驱动程序调用[ **WdfRequestMarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff549983)或[ **WdfRequestMarkCancelableEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549984)发出 I/O 请求那里可取消，则可能会同步问题。 例如，您的驱动程序和设备可能会执行设备 I/O 操作以异步方式通过的方式[ *EvtInterruptIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff541735)并[ *EvtInterruptDpc*](https://msdn.microsoft.com/library/windows/hardware/ff541721)回调函数，且两*EvtInterruptDpc*并[ *EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)回调函数可能包含对的调用[**WdfRequestComplete**](https://msdn.microsoft.com/library/windows/hardware/ff549945)。
+如果您的驱动程序调用[ **WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)或[ **WdfRequestMarkCancelableEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)发出 I/O 请求那里可取消，则可能会同步问题。 例如，您的驱动程序和设备可能会执行设备 I/O 操作以异步方式通过的方式[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)并[ *EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数，且两*EvtInterruptDpc*并[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数可能包含对的调用[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)。
 
-该驱动程序必须调用[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)只有一次为完成或取消请求。 但是，如果[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)并[ *EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)回调函数不相互同步，框架可以将其他执行时调用其中一个。
+该驱动程序必须调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)只有一次为完成或取消请求。 但是，如果[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)并[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数不相互同步，框架可以将其他执行时调用其中一个。
 
 避免此问题是如果您的驱动程序使用框架的简单[自动同步](using-automatic-synchronization.md)，因为自动同步可确保一次一个地，将调用的回调函数。
 
 如果您的驱动程序不使用框架的自动同步，它可以使用[framework 锁](using-framework-locks.md)同步取消和完成代码。
 
-该驱动程序是否使用框架的自动同步，或提供其自己的同步，该驱动程序的[ *EvtRequestCancel* ](https://msdn.microsoft.com/library/windows/hardware/ff541817)回调函数必须调用[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)来取消的请求。 在驱动程序[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)回调函数应调用[ **WdfRequestUnmarkCancelable** ](https://msdn.microsoft.com/library/windows/hardware/ff550035) ，如下所示：
+该驱动程序是否使用框架的自动同步，或提供其自己的同步，该驱动程序的[ *EvtRequestCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)回调函数必须调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)来取消的请求。 在驱动程序[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数应调用[ **WdfRequestUnmarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable) ，如下所示：
 
 ```cpp
 Status = WdfRequestUnmarkCancelable(Request);
@@ -41,9 +41,9 @@ if( Status != STATUS_CANCELLED ) {
     }
 ```
 
-此代码可确保该驱动程序不会调用[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)来完成该请求，如果该驱动程序已调用它取消请求。
+此代码可确保该驱动程序不会调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)来完成该请求，如果该驱动程序已调用它取消请求。
 
-详细了解您的驱动程序必须遵循时的规则中，它将调用**WdfRequestUnmarkCancelable**，请参阅[ **WdfRequestUnmarkCancelable**](https://msdn.microsoft.com/library/windows/hardware/ff550035)。
+详细了解您的驱动程序必须遵循时的规则中，它将调用**WdfRequestUnmarkCancelable**，请参阅[ **WdfRequestUnmarkCancelable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)。
 
  
 

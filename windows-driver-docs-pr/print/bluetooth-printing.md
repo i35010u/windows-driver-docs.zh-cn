@@ -8,19 +8,19 @@ keywords:
 - 无线连接 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cfa49f9ac332a3167380cc4014a7e05204fba22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3717501c17b9048e51143806cc1247941a17f29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360589"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384190"
 ---
 # <a name="bluetooth-printing"></a>蓝牙打印
 
 
 如果打印设备支持蓝牙，它应满足以下要求：
 
--   如果打印设备针对其 USB 或并行总线返回 1284 ID，蓝牙总线必须返回 1284 id。 如果出于[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)(PnP) 和标识、 设备返回 1284 ID 并行或 USB 总线上、 蓝牙总线还必须使用即插即用的标识的 1284 ID。
+-   如果打印设备针对其 USB 或并行总线返回 1284 ID，蓝牙总线必须返回 1284 id。 如果出于[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)(PnP) 和标识、 设备返回 1284 ID 并行或 USB 总线上、 蓝牙总线还必须使用即插即用的标识的 1284 ID。
     **请注意**  并行或 USB 端口有永远不会拥有的设备仍应包含一个 1284 id。 而无需 1284 ID PnP 将不会创建打印队列。
 
      

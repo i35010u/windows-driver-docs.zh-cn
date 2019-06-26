@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_SynthClock
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fc138212d48982333cced8466b1794e6e3e800
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c9aa608d324bb72650cedc24eee2f443c581611
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332471"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391555"
 ---
 # <a name="kspropsetidsynthclock"></a>KSPROPSETID\_SynthClock
 
@@ -21,7 +21,7 @@ ms.locfileid: "63332471"
 
 `KSPROPSETID_SynthClock`属性集用于获取 DirectMusic 合成器的主时钟时间。 此集包含单个 DirectMusic 筛选器对象的属性。 Dmu 端口驱动程序实现此属性的处理程序。
 
-有关详细信息，请参阅[Master 时钟](https://msdn.microsoft.com/library/windows/hardware/ff567717)并[合成器计时](https://msdn.microsoft.com/library/windows/hardware/ff538449)。
+有关详细信息，请参阅[Master 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/master-clocks)并[合成器计时](https://docs.microsoft.com/windows-hardware/drivers/audio/synthesizer-timing)。
 
 在此集中的属性项由 KSPROPERTY\_SYNTHCLOCK 枚举值，如标头中定义文件 Dmusprop.h。
 
@@ -54,7 +54,7 @@ KSPROPERTY\_合成器\_MASTERCLOCK 属性用于获取主时钟时间。
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONGLONG</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ KSPROPERTY\_合成器\_MASTERCLOCK 属性用于获取主时钟时间。
 
 KSPROPERTY\_合成\_MASTERCLOCK 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-有关详细信息，请参阅[Master 时钟](https://msdn.microsoft.com/library/windows/hardware/ff567717)。
+有关详细信息，请参阅[Master 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/master-clocks)。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - $Kernel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb4e1e5ad527df91273ad8b9ddaef84f0996ca1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aac76e5a893ce4742578315333b2710b14d882f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375987"
 ---
 # <a name="kernel-extended-attributes"></a>内核扩展属性
 内核扩展的特性 (内核 EA 的) 是作为一种方法来提高性能的图像文件签名验证添加到 Windows 8 中 NTFS 的功能。  它是代价高昂的操作来验证映像签名。 因此，有关存储信息，是否的二进制文件，以前已验证、 已更改或不会降低图像将不得不进行完整签名检查的实例数。
@@ -25,7 +25,7 @@ EA 具有名称前缀``$Kernel``只能从内核模式下进行修改。 此字�
 建议内核 EA 至少包含以下信息：
 - USN UsnJournalID
   - **UsnJournalID**字段是一个 GUID，标识 USN 日记文件的当前发展。  USN 日志可以删除并创建从每个卷的用户模式。  每次 USN 日志创建一个新**UsnJournalID**将生成的 GUID。  使用此字段中，你可以判断是否有一段时间内 USN 日志被禁用，并可以重新验证。
-    - 可以使用检索该值[FSCTL_QUERY_USN_JOURNAL](https://msdn.microsoft.com/library/windows/desktop/aa364583)。
+    - 可以使用检索该值[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)。
 - USN FileUSN
   - **FileUSN**值包含对文件进行和跟踪在给定的文件的主文件表 (MFT) 记录内的最后一个更改的 USN ID。
     - 当删除 USN 日志时， **FileUSN**重置为零。
@@ -34,7 +34,7 @@ EA 具有名称前缀``$Kernel``只能从内核模式下进行修改。 此字�
 
 
 ## <a name="setting-a-kernel-extended-attribute"></a>设置扩展属性的内核
-若要设置内核 EA，则它必须以前缀开头``"$Kernel."``和尾随的是有效的 EA 名称字符串。 将以无提示方式忽略尝试从用户模式下设置内核 EA。  请求将返回**STATUS_SUCCESS**但不能进行任何实际的 EA 修改。 若要设置调用 API，例如内核 EA [ZwSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961908)或[FltSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff544500)从内核模式不足够。  这是因为 SMB 支持 EA 的整个网络的设置，并从服务器上的内核模式发出这些请求。  
+若要设置内核 EA，则它必须以前缀开头``"$Kernel."``和尾随的是有效的 EA 名称字符串。 将以无提示方式忽略尝试从用户模式下设置内核 EA。  请求将返回**STATUS_SUCCESS**但不能进行任何实际的 EA 修改。 若要设置调用 API，例如内核 EA [ZwSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961908)或[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltseteafile)从内核模式不足够。  这是因为 SMB 支持 EA 的整个网络的设置，并从服务器上的内核模式发出这些请求。  
 
 若要设置内核 EA 调用方必须也设置**IRP_MN_KERNEL_CALL** IRP （I/O 请求数据包） 的 MinorFunction 字段中的值。 由于将此字段设置的唯一方法是通过生成自定义 IRP，例程[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)作为支持函数来设置内核 EA 导出从 FsRtl 包。
 
@@ -42,13 +42,13 @@ EA 具有名称前缀``$Kernel``只能从内核模式下进行修改。 此字�
 
 
 ## <a name="querying-an-extended-attribute"></a>查询的扩展的属性
-查询从用户模式下的文件上的 EA 将返回这两个正常和内核 EA。 它们将返回到用户模式，以最大程度减少任何应用程序兼容性问题。 法线[ZwQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961907)并[FltQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff543435)操作将返回正常和内核 EA 的用户和内核模式。
+查询从用户模式下的文件上的 EA 将返回这两个正常和内核 EA。 它们将返回到用户模式，以最大程度减少任何应用程序兼容性问题。 法线[ZwQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961907)并[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryeafile)操作将返回正常和内核 EA 的用户和内核模式。
 
 当仅**的文件对象**，则使用[FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)可能会更方便使用内核 EA 查询从内核模式。
 
 
 ## <a name="querying-update-sequence-number-journal-information"></a>查询更新序列号日志信息
-[FSCTL_QUERY_USN_JOURNAL](https://msdn.microsoft.com/library/windows/desktop/aa364583)操作要求**SE_MANAGE_VOLUME_PRIVILEGE**即使发出从内核模式，除非**IRP_MN_KERNEL_CALL**设置值IRP MinorFunction 字段。 例程**FsRtlKernelFsControlFile**已从内核以轻松地使内核模式组件，发出此 USN 请求中的 FsRtl 包中导出。
+[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作要求**SE_MANAGE_VOLUME_PRIVILEGE**即使发出从内核模式，除非**IRP_MN_KERNEL_CALL**设置值IRP MinorFunction 字段。 例程**FsRtlKernelFsControlFile**已从内核以轻松地使内核模式组件，发出此 USN 请求中的 FsRtl 包中导出。
 
 **请注意**不再与 Windows 10，版本 1703年及更高版本中开始此操作需要 SE_MANAGE_VOLUME_PRIVILEGE。  
 
@@ -69,9 +69,9 @@ EA 具有名称前缀``$Kernel``只能从内核模式下进行修改。 此字�
 
 
 ## <a name="see-also"></a>请参阅
-[FltQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff543435)  
-[FltSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff544500)  
-[FSCTL_QUERY_USN_JOURNAL](https://msdn.microsoft.com/library/windows/desktop/aa364583)  
+[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryeafile)  
+[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltseteafile)  
+[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)  
 [FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)      
 [FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)  
 [ZwQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961907)  

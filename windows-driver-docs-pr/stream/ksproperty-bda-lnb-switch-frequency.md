@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b79ea535bbaee7707eb7f830da524e36aa65f3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d93fbc8e83491bae5d94a14d1d4ef61adb0150ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359655"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376665"
 ---
 # <a name="kspropertybdalnbswitchfrequency"></a>KSPROPERTY\_BDA\_LNB\_SWITCH\_FREQUENCY
 
@@ -91,7 +91,7 @@ ms.locfileid: "63359655"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
 [**KSPROPERTY\_BDA\_LNB\_LOF\_HIGH\_BAND**](ksproperty-bda-lnb-lof-high-band.md)
 

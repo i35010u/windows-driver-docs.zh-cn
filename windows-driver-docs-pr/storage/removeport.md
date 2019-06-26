@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ac9d2e8003a0eda0fc5788f26844d58d62c01e33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea9e0f2394147e43f2c113d23326b9d4e8bc923b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368921"
 ---
 # <a name="removeport-function"></a>RemovePort 函数
 
@@ -43,7 +43,7 @@ void RemovePort(
 指示应从其事件报告给 WMI 客户端的端口的列表中删除的端口的全球通用名称。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **RemovePort\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564017)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **RemovePort\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removeport_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -78,9 +78,9 @@ void RemovePort(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemovePort\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff564014)
+[**RemovePort\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removeport_in)
 
-[**RemovePort\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff564017)
+[**RemovePort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removeport_out)
 
  
 

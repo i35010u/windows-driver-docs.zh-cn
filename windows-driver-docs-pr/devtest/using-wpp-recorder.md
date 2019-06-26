@@ -4,12 +4,12 @@ description: 即时跟踪记录器 (IFR) 是一个新的跟踪功能，允许跟
 ms.assetid: D11FA28E-3B0C-4D9D-AEDA-8A80DE58091C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7df66cfc6e9ff645171ad8563e0caf86daaf68f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d3dafaf8fdff305a2feb503336051775f8fac53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358936"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363778"
 ---
 # <a name="inflight-trace-recorder-ifr-for-logging-traces"></a>有关日志中记录跟踪的即时跟踪记录器 (IFR)
 
@@ -25,11 +25,11 @@ ms.locfileid: "63358936"
 -   最低操作系统：对于 KMDF 和 WDM 驱动程序开发人员的 Windows 8
 -   最低操作系统：(2.15) UMDF 驱动程序开发人员的 Windows 10
 
-**重要的 Api**
+**重要的 API**
 
--   [**WppRecorderLogGetDefault**](https://msdn.microsoft.com/library/windows/hardware/dn895240)
--   [**WppRecorderLogCreate （仅限内核模式驱动程序）**](https://msdn.microsoft.com/library/windows/hardware/dn914615)
--   [**WppRecorderDumpLiveDriverData**](https://msdn.microsoft.com/library/windows/hardware/dn914612)
+-   [**WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))
+-   [**WppRecorderLogCreate （仅限内核模式驱动程序）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)
+-   [**WppRecorderDumpLiveDriverData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderdumplivedriverdata)
 
 *即时跟踪记录器 (IFR)* 是新的跟踪功能，允许跟踪提供程序，如内核模式驱动程序，以获取最少的设置的跟踪日志并创建一组保留的最新的 WPP 日志消息的内存中缓冲区。
 
@@ -84,7 +84,7 @@ IFR 中的消息没有与之关联的时间戳。
 
         ![启用 visual studio 中的 wpp 软件跟踪](images/wpp-enable2.png)
 
--   如果不使用 WDF 驱动程序模板之一，设置 WPP 软件跟踪。 创建头文件 （类似于 trace.h WDF 模板附带）。 该标头文件包含 WPP 宏 ([WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)， [WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)) 和 WPP 控制标志和跟踪消息语句。 有关说明，请参阅[添加到 Windows 驱动程序 WPP 软件跟踪](adding-wpp-software-tracing-to-a-windows-driver.md)。
+-   如果不使用 WDF 驱动程序模板之一，设置 WPP 软件跟踪。 创建头文件 （类似于 trace.h WDF 模板附带）。 该标头文件包含 WPP 宏 ([WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))， [WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))) 和 WPP 控制标志和跟踪消息语句。 有关说明，请参阅[添加到 Windows 驱动程序 WPP 软件跟踪](adding-wpp-software-tracing-to-a-windows-driver.md)。
 
     请确保执行这些任务：
 
@@ -103,7 +103,7 @@ IFR 中的消息没有与之关联的时间戳。
         ```
 
     -   将打印跟踪语句的源文件中包括跟踪标头文件 （在此示例中，Trace.h）。
-    -   包括[跟踪消息格式](trace-message-format-file.md)源文件，与关联的文件 (*&lt;源文件&gt;*.tmh) 包含要打印的跟踪消息的源代码文件中。
+    -   包括[跟踪消息格式](trace-message-format-file.md)源文件，与关联的文件 ( *&lt;源文件&gt;* .tmh) 包含要打印的跟踪消息的源代码文件中。
         ```ManagedCPlusPlus
         #include "trace.h"
         //
@@ -140,7 +140,7 @@ IFR 中的消息没有与之关联的时间戳。
 3.  在项目属性页中，单击**配置属性**然后单击**WPP 跟踪**。
 4.  下**函数和宏选项**，单击**启用 WPP 记录器**，选择**是**从下拉列表菜单，然后单击**确定**。
 
-    这将定义**启用\_WPP\_记录器**编译器标志还将启用 DLL 宏 (**-dll** UMDF 驱动程序和**公里**对于 KMDF驱动程序）。
+    这将定义**启用\_WPP\_记录器**编译器标志还将启用 DLL 宏 ( **-dll** UMDF 驱动程序和**公里**对于 KMDF驱动程序）。
 
     即使使用启用 IFR，WPP 消息仍可以记录而无需使用 IFR 使用 Traceview 包含在 Windows Driver Kit (WDK) 之类的工具。
 
@@ -153,22 +153,22 @@ IFR 中的消息没有与之关联的时间戳。
 
     ![启用 visual studio 中的 wpp 记录器](images/wpp-enable4.png)
 
-6.  添加**Wpprecorder.h**调用 IFR Api，如每个源文件[ **WppRecorderLogCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn914615)设置你自己 IFR 日志。 调用后的 Api [WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)中调用*DriverEntry* KMDF 或 UMDF 2.15 驱动程序的例程。
+6.  添加**Wpprecorder.h**调用 IFR Api，如每个源文件[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)设置你自己 IFR 日志。 调用后的 Api [WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))中调用*DriverEntry* KMDF 或 UMDF 2.15 驱动程序的例程。
 
 ## <a name="span-idusethedefaultlogspanspan-idusethedefaultlogspanspan-idusethedefaultlogspanuse-the-default-log"></a><span id="Use__the_default_log"></span><span id="use__the_default_log"></span><span id="USE__THE_DEFAULT_LOG"></span>使用默认日志
 
 
 为驱动程序项目启用 WPP 后，WPP 创建默认日志。 WPP 打印的默认日志的缓冲区大小为 4096 个字节。 对于调试版本，缓冲区是 24576 字节。
 
-如果默认日志缓冲区分配失败，跟踪消息发送到 WPP。 也就是说，通过 IFR，则不记录跟踪消息，但跟踪仍被视为实时 WPP 跟踪。 若要确定是否已创建的默认日志，该驱动程序必须调用[ **WppRecorderIsDefaultLogAvailable**](https://msdn.microsoft.com/library/windows/hardware/dn914614)。 如果默认的日志不存在，该驱动程序想要使用 IFR，驱动程序必须创建一个日志。 有关详细信息，请参阅[创建自定义日志](#create)。
+如果默认日志缓冲区分配失败，跟踪消息发送到 WPP。 也就是说，通过 IFR，则不记录跟踪消息，但跟踪仍被视为实时 WPP 跟踪。 若要确定是否已创建的默认日志，该驱动程序必须调用[ **WppRecorderIsDefaultLogAvailable**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn914614(v=vs.85))。 如果默认的日志不存在，该驱动程序想要使用 IFR，驱动程序必须创建一个日志。 有关详细信息，请参阅[创建自定义日志](#create)。
 
-1.  初始化[**记录器\_配置\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914606)通过调用结构[**记录器\_配置\_PARAMS\_INIT**](https://msdn.microsoft.com/library/windows/hardware/dn914607)。 宏集**CreateDefaultLog**成员为 TRUE，指示该驱动程序想要使用的默认日志。
-2.  调用[ **WppRecorderConfigure** ](https://msdn.microsoft.com/library/windows/hardware/dn914611)通过指定的地址初始化[**记录器\_配置\_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/dn914606)结构。
-3.  可以获取记录器\_日志不透明句柄通过调用的默认日志[ **WppRecorderLogGetDefault**](https://msdn.microsoft.com/library/windows/hardware/dn895240)。
+1.  初始化[**记录器\_配置\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)通过调用结构[**记录器\_配置\_PARAMS\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-recorder_configure_params_init)。 宏集**CreateDefaultLog**成员为 TRUE，指示该驱动程序想要使用的默认日志。
+2.  调用[ **WppRecorderConfigure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderconfigure)通过指定的地址初始化[**记录器\_配置\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)结构。
+3.  可以获取记录器\_日志不透明句柄通过调用的默认日志[ **WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))。
 4.  通过调用 Trace.h 中声明的跟踪宏打印到默认日志的跟踪消息。 有关详细信息，请参阅[定义跟踪函数](#define)。
 5.  查看跟踪在调试器中的消息。 有关详细信息，请参阅[中查看跟踪消息](#view)。
 
-**请注意**若要禁用默认的日志，设置**CreateDefaultLog**的成员[**记录器\_配置\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914606)到为 FALSE，然后调用[ **WppRecorderConfigure**](https://msdn.microsoft.com/library/windows/hardware/dn914611)。
+**请注意**若要禁用默认的日志，设置**CreateDefaultLog**的成员[**记录器\_配置\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)到为 FALSE，然后调用[ **WppRecorderConfigure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderconfigure)。
 
 
 
@@ -247,15 +247,15 @@ IFR 的默认日志使用 4096 非分页缓冲池内存块。 所有跟踪消息
 
 在另一个示例中，有两个设备，并将其一台设备发送多个其他的详细跟踪消息。 如果驱动程序使用的默认日志，设备可能会导致缓冲区，并从另一台设备的消息可被删除。 相反，驱动程序可以创建两个自定义日志，以便每个设备可以将消息发送到其缓冲区，并可以单独查看从每个设备的消息。
 
-1.  初始化[**记录器\_日志\_创建\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914608)结构通过调用[**记录器\_日志\_创建\_PARAMS\_INIT**](https://msdn.microsoft.com/library/windows/hardware/dn914609)。 WPP 使用的默认日志参数，除非修改结构的成员。
+1.  初始化[**记录器\_日志\_创建\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_log_create_params)结构通过调用[**记录器\_日志\_创建\_PARAMS\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-recorder_log_create_params_init)。 WPP 使用的默认日志参数，除非修改结构的成员。
 2.  可选。 设置**TotalBufferSize**成员添加到所需的大小。 默认情况下的大小设置为 1024 个字节 (请参阅记录器\_日志\_默认\_缓冲区\_Wpprecorder.h 大小)。
     **请注意**WPP 日志从非页面缓冲池分配缓冲区。 日志被划分为两个循环缓冲区调用分区： 常规和错误。 错误分区仅显示跟踪的消息\_级别\_错误。 与所有其他级别相关的消息发送到常规分区。 设计分区以防止详细跟踪提供程序覆盖低优先级的消息与自己的错误消息。 调用方指定的缓冲区大小**TotalBufferSize**，指示这些分区的总大小。 错误分区不能超过总缓冲区大小的一半。 在初始化之后修改的缓冲区大小。
 
 
 
 3.  可选。 设置**LogIdentifier**为一个字符串，可帮助你识别此缓冲区中的跟踪消息。 字符串不得超过 16 个字符的长度。
-4.  调用[ **WppRecorderLogCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn914615)通过指定的地址填充[**记录器\_日志\_创建\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914608)结构。
-5.  跟踪消息打印到此新的缓冲区通过调用跟踪宏并传递记录器\_接收的日志句柄[ **WppRecorderLogCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn914615)调用。
+4.  调用[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)通过指定的地址填充[**记录器\_日志\_创建\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_log_create_params)结构。
+5.  跟踪消息打印到此新的缓冲区通过调用跟踪宏并传递记录器\_接收的日志句柄[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)调用。
 6.  查看跟踪在调试器中的消息。 有关详细信息，请参阅[中查看跟踪消息](#view)。
 
 在系统注册表中定义最大和最小缓冲区大小。 您可以相应地设置这些值以节省内存并配置日志记录功能。
@@ -287,9 +287,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<serviceName>\Parameters
    By default (0), IFR only logs errors, warnings, and informational events. Setting this value to 1 adds the verbose output to get logged. 
 ```
 
-如果在指定的大小[**记录器\_日志\_创建\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914608)的最小字节数少于[ **WppRecorderLogCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn914615)分配**WppRecorder\_PerBufferMinBytes**字节。 同样，如果大小超过最大值**WppRecorderLogCreate**分配**WppRecorder\_PerBufferMaxBytes**字节。
+如果在指定的大小[**记录器\_日志\_创建\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_log_create_params)的最小字节数少于[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)分配**WppRecorder\_PerBufferMinBytes**字节。 同样，如果大小超过最大值**WppRecorderLogCreate**分配**WppRecorder\_PerBufferMaxBytes**字节。
 
-若要删除自定义日志，请调用[ **WppRecorderLogDelete** ](https://msdn.microsoft.com/library/windows/hardware/dn914616)之前调用[WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)。 线程进入此函数后，所有线程必须不登录到此缓冲区不再。 您可以在调用此函数[ *EvtDriverUnload* ](https://msdn.microsoft.com/library/windows/hardware/ff541694)驱动程序的实现。
+若要删除自定义日志，请调用[ **WppRecorderLogDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogdelete)之前调用[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 线程进入此函数后，所有线程必须不登录到此缓冲区不再。 您可以在调用此函数[ *EvtDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)驱动程序的实现。
 
 此示例代码是驱动程序的驱动程序入口函数的代码段。 在此示例中，该驱动程序禁用默认日志、 创建自定义日志，并设置其缓冲区大小和标识符。
 
@@ -385,9 +385,9 @@ _In_ PUNICODE_STRING RegistryPath
 
 在上述示例中，有两个跟踪函数，TraceEvents 和 PrintEvents。 WPP 与函数声明中指定的参数生成用于这些函数的宏。 在使用本主题中的示例，该驱动程序使用 TraceEvents 和 PrintEvents。 PrintEvents 需要"IFRLOG"作为参数。 该驱动程序调用此函数时，必须指定记录器\_日志句柄作为"IFRLOG"的参数值。 仅当你创建的自定义缓冲区添加 IFRLOG。 TraceEvents 将打印到默认日志。 这在功能提供了向后兼容现有的跟踪语句，而无需任何更改。
 
-若要打印到默认日志的跟踪消息，该驱动程序或者调用 PrintEvents 使用收到的句柄[ **WppRecorderLogGetDefault** ](https://msdn.microsoft.com/library/windows/hardware/dn895240)调用，或调用 TraceEvents，而该句柄。
+若要打印到默认日志的跟踪消息，该驱动程序或者调用 PrintEvents 使用收到的句柄[ **WppRecorderLogGetDefault** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))调用，或调用 TraceEvents，而该句柄。
 
-若要打印到自定义日志，驱动程序通过对的调用中收到的句柄[ **WppRecorderLogCreate**](https://msdn.microsoft.com/library/windows/hardware/dn914615)。
+若要打印到自定义日志，驱动程序通过对的调用中收到的句柄[ **WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)。
 
 ## <a name="span-idmaketracemessagesavailableinpublicsymbolsspanspan-idmaketracemessagesavailableinpublicsymbolsspanspan-idmaketracemessagesavailableinpublicsymbolsspanmake-trace-messages-available-in-public-symbols"></a><span id="Make__trace_messages_available_in_public_symbols"></span><span id="make__trace_messages_available_in_public_symbols"></span><span id="MAKE__TRACE_MESSAGES_AVAILABLE_IN_PUBLIC_SYMBOLS"></span>使跟踪消息可在公共符号
 
@@ -413,37 +413,37 @@ _In_ PUNICODE_STRING RegistryPath
 ## <a name="span-idviewspanspan-idviewspanview-the-trace-messages"></a><span id="view"></span><span id="VIEW"></span>查看跟踪消息
 
 
-若要查看跟踪消息，请使用[Wdfkd 扩展](https://msdn.microsoft.com/library/windows/hardware/ff551876)Windows 调试器中。 扩展命令是 Wdfkd.dll。
+若要查看跟踪消息，请使用[Wdfkd 扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)Windows 调试器中。 扩展命令是 Wdfkd.dll。
 
 1.  加载 Wdfkd 命令中，输入`.load Wdfkd.dll`在调试器中。
 2.  使用以下命令来查看跟踪消息。
 
-    [**!wdfkd.wdflogdump**](https://msdn.microsoft.com/library/windows/hardware/ff565805)
+    [ **!wdfkd.wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)
 
-    [**!wdfkd.wdfcrashdump**](https://msdn.microsoft.com/library/windows/hardware/ff565682)
+    [ **!wdfkd.wdfcrashdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump)
 
-内核模式驱动程序可以通过查看跟踪日志[RCDRKD 扩展](https://msdn.microsoft.com/library/windows/hardware/hh920376)。 这些命令不可用到的用户模式驱动程序。
+内核模式驱动程序可以通过查看跟踪日志[RCDRKD 扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)。 这些命令不可用到的用户模式驱动程序。
 
 ## <a name="span-idbestpracticesspanspan-idbestpracticesspanspan-idbestpracticesspanbest-practices"></a><span id="Best_practices"></span><span id="best_practices"></span><span id="BEST_PRACTICES"></span>最佳做法
 
 
--   调用后 IFR Api [WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)中调用*DriverEntry*例程的内核模式驱动程序或在*DLLMain*例程UMDF 2.15 驱动程序。 如果全局策略通过禁用日志记录，然后调用 WPP\_INIT\_跟踪不会启用日志记录。
+-   调用后 IFR Api [WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))中调用*DriverEntry*例程的内核模式驱动程序或在*DLLMain*例程UMDF 2.15 驱动程序。 如果全局策略通过禁用日志记录，然后调用 WPP\_INIT\_跟踪不会启用日志记录。
 
--   如果[ **WppRecorderLogCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn914615)失败，该调用将返回 NULL 句柄。 在这种情况下，您可以选择忽略的返回值**WppRecorderLogCreate** ，并使用 RECODER\_日志句柄来打印 WPP 消息。
+-   如果[ **WppRecorderLogCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)失败，该调用将返回 NULL 句柄。 在这种情况下，您可以选择忽略的返回值**WppRecorderLogCreate** ，并使用 RECODER\_日志句柄来打印 WPP 消息。
 
--   不要删除返回的句柄[ **WppRecorderLogGetDefault**](https://msdn.microsoft.com/library/windows/hardware/dn895240)。 若要禁用默认的日志，请设置**CreateDefaultLog**的成员[**记录器\_配置\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914606)为 FALSE，然后调用[**WppRecorderConfigure**](https://msdn.microsoft.com/library/windows/hardware/dn914611)。
+-   不要删除返回的句柄[ **WppRecorderLogGetDefault**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/dn895240(v=vs.85))。 若要禁用默认的日志，请设置**CreateDefaultLog**的成员[**记录器\_配置\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/ns-wpprecorder-_recorder_configure_params)为 FALSE，然后调用[**WppRecorderConfigure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderconfigure)。
 
--   不要调用[ **WppRecorderLogSetIdentifier** ](https://msdn.microsoft.com/library/windows/hardware/dn895241)通过传递默认日志句柄。 不允许该操作。
+-   不要调用[ **WppRecorderLogSetIdentifier** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogsetidentifier)通过传递默认日志句柄。 不允许该操作。
 
--   从非页面缓冲池分配 IFR 缓冲区。 这些分配的累积影响可能会导致严重性能问题，特别是在较小的内存占用设备上。 请求中的较小缓冲区大小你[ **WppRecorderLogCreate**](https://msdn.microsoft.com/library/windows/hardware/dn914615)。 此外，如果不需要日志记录功能，则禁用默认日志。
+-   从非页面缓冲池分配 IFR 缓冲区。 这些分配的累积影响可能会导致严重性能问题，特别是在较小的内存占用设备上。 请求中的较小缓冲区大小你[ **WppRecorderLogCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)。 此外，如果不需要日志记录功能，则禁用默认日志。
 
--   若要查看日志缓冲区的大小，请使用[ **！ wdfkd.wdflogdump** ](https://msdn.microsoft.com/library/windows/hardware/ff565805)命令。 如果使用的[RCDRKD 扩展](https://msdn.microsoft.com/library/windows/hardware/hh920376)，然后可以通过查看大小[ **！ rcdrkd.rcdrloglist**](https://msdn.microsoft.com/library/windows/hardware/hh920383)
+-   若要查看日志缓冲区的大小，请使用[ **！ wdfkd.wdflogdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)命令。 如果使用的[RCDRKD 扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)，然后可以通过查看大小[ **！ rcdrkd.rcdrloglist**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-rcdrkd-rcdrloglist)
 
 ## <a name="span-idumdfandkmdfdifferencesspanspan-idumdfandkmdfdifferencesspanspan-idumdfandkmdfdifferencesspanumdf-and-kmdf-differences"></a><span id="UMDF_and_KMDF_differences"></span><span id="umdf_and_kmdf_differences"></span><span id="UMDF_AND_KMDF_DIFFERENCES"></span>UMDF 和 KMDF 差异
 
 
 -   只将内核模式驱动程序可以创建自定义的缓冲区。 此功能不适用于用户模式驱动程序。
--   不能使用查看某个用户模式驱动程序的跟踪日志[RCDRKD 扩展](https://msdn.microsoft.com/library/windows/hardware/hh920376)。 必须使用[Wdfkd 扩展](https://msdn.microsoft.com/library/windows/hardware/ff551876)。
+-   不能使用查看某个用户模式驱动程序的跟踪日志[RCDRKD 扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)。 必须使用[Wdfkd 扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
 
 
 

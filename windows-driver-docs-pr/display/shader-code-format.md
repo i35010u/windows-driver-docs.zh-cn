@@ -4,12 +4,12 @@ description: 着色器代码格式
 ms.assetid: 62377d19-8e45-4d0c-b974-0c0417d1a948
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 506c7be066efb38ef8ef473c6194ad1dd1c5e27a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7fe190eee8b7a56147fac027e58709ff6043003
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365503"
 ---
 # <a name="shader-code-format"></a>着色器代码格式
 
@@ -21,11 +21,11 @@ ms.locfileid: "63348323"
 
 DirectX3D 运行时的代码传递到驱动程序之前会验证着色器代码。 当驱动程序在到达着色器代码时，该驱动程序可以解释代码，因为代码的格式有效。 驱动程序读取着色器代码的令牌，该代码的解释。
 
-每个单独的着色器代码将使用常规的令牌布局格式。 第一个标记必须是[版本标记](version-token.md)。 版本标记提供了代码的版本号，并且还确定代码是否为像素或顶点着色器。 着色器内容遵循版本标记，且由各种[指令令牌](instruction-token.md)，与可能是混合[注释标记](comment-token.md)和空白区域。 根据指定的指令令牌的精确操作[标签](label-token.md)， [destination 参数](destination-parameter-token.md)，并[源参数标记](source-parameter-token.md)也可以是一部分的着色器内容，并按照指令令牌。 例如，如果指定的指令令牌[ADD 指令](https://msdn.microsoft.com/library/windows/hardware/ff538212)，该驱动程序确定一个目标和两个源参数标记遵循指令令牌。 [结束令牌](end-token.md)完成的着色器代码。
+每个单独的着色器代码将使用常规的令牌布局格式。 第一个标记必须是[版本标记](version-token.md)。 版本标记提供了代码的版本号，并且还确定代码是否为像素或顶点着色器。 着色器内容遵循版本标记，且由各种[指令令牌](instruction-token.md)，与可能是混合[注释标记](comment-token.md)和空白区域。 根据指定的指令令牌的精确操作[标签](label-token.md)， [destination 参数](destination-parameter-token.md)，并[源参数标记](source-parameter-token.md)也可以是一部分的着色器内容，并按照指令令牌。 例如，如果指定的指令令牌[ADD 指令](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)，该驱动程序确定一个目标和两个源参数标记遵循指令令牌。 [结束令牌](end-token.md)完成的着色器代码。
 
 安装说明进行操作 (例如，D3DSIO\_DCL 和 D3DSIO\_DEF) 包含格式独一无二的标记。
 
-每个着色器指令包含特定的令牌格式。 [着色器操作代码](https://msdn.microsoft.com/library/windows/hardware/ff569706)部分介绍了每个着色器指令的令牌格式。
+每个着色器指令包含特定的令牌格式。 [着色器操作代码](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)部分介绍了每个着色器指令的令牌格式。
 
 着色器说明与主指令开头和结尾 D3DSIO\_RET 或 D3DSIO\_结束指令。 子例程按照 D3DSIO\_RET 指令。
 

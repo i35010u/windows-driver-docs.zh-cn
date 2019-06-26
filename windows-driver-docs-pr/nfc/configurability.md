@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63bdc7235c1291bd1fe2259585712197717af45d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c91788077e4e1b6e7a0f4b4d0f60e8c811cc0dcf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377554"
 ---
 # <a name="configurability"></a>可配置性
 
@@ -29,21 +29,21 @@ ms.locfileid: "63375217"
 ## <a name="driver-flags"></a>驱动程序标志
 
 
-NFC CX 允许 NFC 客户端驱动程序，以提供[**驱动程序标志**](https://msdn.microsoft.com/library/windows/hardware/dn905542)配置类扩展的运行时实现。 这些标志允许 NFC CX，若要实现某些标准 NCI 操作略有不同，由于不同的固件实现由于 NCI 规范中的多义性。
+NFC CX 允许 NFC 客户端驱动程序，以提供[**驱动程序标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/ne-nfccx-_nfc_cx_driver_flags)配置类扩展的运行时实现。 这些标志允许 NFC CX，若要实现某些标准 NCI 操作略有不同，由于不同的固件实现由于 NCI 规范中的多义性。
 
 ## <a name="rf-discovery-configuration"></a>RF 发现配置
 
 
-可以将 RF 发现配置设置 NFC 客户端驱动程序通过[ **NfcCxSetRfDiscoveryConfig** ](https://msdn.microsoft.com/library/windows/hardware/dn905616)方法。 RF 发现配置应完成后调用的初始化期间[ **NfcCxDeviceInitialize**](https://msdn.microsoft.com/library/windows/hardware/dn905611)，否则返回错误。
+可以将 RF 发现配置设置 NFC 客户端驱动程序通过[ **NfcCxSetRfDiscoveryConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxsetrfdiscoveryconfig)方法。 RF 发现配置应完成后调用的初始化期间[ **NfcCxDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxdeviceinitialize)，否则返回错误。
 
 ## <a name="llcp-configuration"></a>LLCP 配置
 
 
-可以将 LLCP 配置设置 NFC 客户端驱动程序通过[ **NfcCxSetLlcpConfig** ](https://msdn.microsoft.com/library/windows/hardware/dn905615) NFC CX 由提供的方法。 应在初始化后完成 LLCP configuration [ **NfcCxDeviceInitialize**](https://msdn.microsoft.com/library/windows/hardware/dn905611)，否则返回错误。
+可以将 LLCP 配置设置 NFC 客户端驱动程序通过[ **NfcCxSetLlcpConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxsetllcpconfig) NFC CX 由提供的方法。 应在初始化后完成 LLCP configuration [ **NfcCxDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxdeviceinitialize)，否则返回错误。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC 类扩展 (CX) 引用](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 类扩展 (CX) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

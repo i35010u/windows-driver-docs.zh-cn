@@ -9,12 +9,12 @@ keywords:
 - RtlXxxRegistryYyy 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 759770a949541de488c13fcc39d021568ab3e0bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93715ec261ff93fbc1efe758bba8ea7c4c5add8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373453"
 ---
 # <a name="registry-run-time-library-routines"></a>注册表运行时库例程
 
@@ -24,7 +24,7 @@ ms.locfileid: "63338441"
 
 若要操作的注册表项，驱动程序可以调用**Rtl*Xxx*注册表 * Xxx*** 例程，提供较简单的接口比**Zw*Xxx*密钥**例程。 这样做时，该驱动程序不需要打开和关闭句柄;相反，该驱动程序是指密钥的名称。
 
-您传递*RelativeTo*并*路径*到每个参数**Rtl*Xxx*注册表 * Xxx*** 例程。 如果*RelativeTo*是 RTL\_注册表\_绝对的*路径*指定的密钥，开头的完整路径 **\\注册表**根。 如果*RelativeTo*是 RTL\_注册表\_处理，*路径*实际上开放句柄。 其他 RTL\_注册表\_*XXX*值*RelativeTo*指定的键; 在这些情况下，常见的根的路径*路径*指定相对于该根的路径。 例如，RTL\_注册表\_用户需要*路径*是相对于当前用户的注册表设置。 (此值相当于指定 HKEY\_当前\_用户模式应用程序中的用户。)有关说明所有 RTL\_注册表\_*XXX*值，请参阅[ **RtlCheckRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff561754)。
+您传递*RelativeTo*并*路径*到每个参数**Rtl*Xxx*注册表 * Xxx*** 例程。 如果*RelativeTo*是 RTL\_注册表\_绝对的*路径*指定的密钥，开头的完整路径 **\\注册表**根。 如果*RelativeTo*是 RTL\_注册表\_处理，*路径*实际上开放句柄。 其他 RTL\_注册表\_*XXX*值*RelativeTo*指定的键; 在这些情况下，常见的根的路径*路径*指定相对于该根的路径。 例如，RTL\_注册表\_用户需要*路径*是相对于当前用户的注册表设置。 (此值相当于指定 HKEY\_当前\_用户模式应用程序中的用户。)有关说明所有 RTL\_注册表\_*XXX*值，请参阅[ **RtlCheckRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcheckregistrykey)。
 
 下表列出了驱动程序可以通过调用执行的操作**Rtl*Xxx*注册表 * Xxx*** 例程。
 
@@ -42,23 +42,23 @@ ms.locfileid: "63338441"
 <tbody>
 <tr class="odd">
 <td><p>创建注册表项</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561822" data-raw-source="[&lt;strong&gt;RtlCreateRegistryKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561822)"><strong>RtlCreateRegistryKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcreateregistrykey" data-raw-source="[&lt;strong&gt;RtlCreateRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcreateregistrykey)"><strong>RtlCreateRegistryKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>检查是否存在注册表项</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561754" data-raw-source="[&lt;strong&gt;RtlCheckRegistryKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561754)"><strong>RtlCheckRegistryKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcheckregistrykey" data-raw-source="[&lt;strong&gt;RtlCheckRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcheckregistrykey)"><strong>RtlCheckRegistryKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>检查一个或多个注册表项值</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff562046" data-raw-source="[&lt;strong&gt;RtlQueryRegistryValues&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562046)"><strong>RtlQueryRegistryValues</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlqueryregistryvalues" data-raw-source="[&lt;strong&gt;RtlQueryRegistryValues&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlqueryregistryvalues)"><strong>RtlQueryRegistryValues</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>写入注册表项值</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563034" data-raw-source="[&lt;strong&gt;RtlWriteRegistryValue&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563034)"><strong>RtlWriteRegistryValue</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlwriteregistryvalue" data-raw-source="[&lt;strong&gt;RtlWriteRegistryValue&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlwriteregistryvalue)"><strong>RtlWriteRegistryValue</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>删除注册表项值</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561829" data-raw-source="[&lt;strong&gt;RtlDeleteRegistryValue&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561829)"><strong>RtlDeleteRegistryValue</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtldeleteregistryvalue" data-raw-source="[&lt;strong&gt;RtlDeleteRegistryValue&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtldeleteregistryvalue)"><strong>RtlDeleteRegistryValue</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +79,7 @@ status = RtlWriteRegistryValue(RTL_REGISTRY_ABSOLUTE,
                                sizeof(ULONG));
 ```
 
-虽然使用时，您编写更少的代码行**Rtl*Xxx*注册表 * Xxx*** 而不是例程**Zw*Xxx*密钥**例程，后一种的不需要执行某些操作。 例如，不**Rtl*Xxx*注册表 * Xxx*** 例程存在对应于[ **ZwEnumerateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566447)。
+虽然使用时，您编写更少的代码行**Rtl*Xxx*注册表 * Xxx*** 而不是例程**Zw*Xxx*密钥**例程，后一种的不需要执行某些操作。 例如，不**Rtl*Xxx*注册表 * Xxx*** 例程存在对应于[ **ZwEnumerateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratekey)。
 
 如果您执行多个相同的密钥操作**Zw*Xxx*密钥**例程的效率更高，可以为每个操作中使用相同的打开句柄。 与此相反， **Rtl*Xxx*注册表 * Xxx*** 例程打开和关闭每个操作的新句柄。
 

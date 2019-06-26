@@ -10,12 +10,12 @@ keywords:
 - 标志 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c8d19349f681429d706eaba7b24f98cd3bc320
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e8d67ffe55c3e00b9220ab3e9c60e6a67f2d989
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385548"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385244"
 ---
 # <a name="setting-device-object-flags-for-power-management"></a>为电源管理设置设备对象标志
 
@@ -23,7 +23,7 @@ ms.locfileid: "63385548"
 
 
 
-在其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程，每个驱动程序创建一个设备对象 （筛选设备对象 （执行）、 功能的设备对象 (FDO) 或物理设备对象 (PDO)） 并设置执行\_*XXX*设备对象来描述的设备属性和驱动程序配置中的标志。 以下设备对象标志与电源管理有关。
+在其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程，每个驱动程序创建一个设备对象 （筛选设备对象 （执行）、 功能的设备对象 (FDO) 或物理设备对象 (PDO)） 并设置执行\_*XXX*设备对象来描述的设备属性和驱动程序配置中的标志。 以下设备对象标志与电源管理有关。
 
 | Flag               | 描述                                                                                                                                                                                                                                                                                                |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,9 +34,9 @@ ms.locfileid: "63385548"
 
 创建的是 PDO 设备时，总线驱动程序通常会设置设备对象标志。 但是，某些功能的驱动程序可能需要更改这些标志的值作为的一部分他们*AddDevice*例程。 从 Windows Vista 开始，操作系统不需要设备堆栈中的所有设备对象都具有相同的与电源相关标志设置。 但是，在 Windows Server 2003、 Windows XP 和 Windows 2000，设备堆栈中的所有设备对象应都具有设置的相同电源相关标志。
 
-从 Windows 2000 开始，都分页路径中的设备的驱动程序必须未设置 DO\_电源\_PAGABLE 标志。 驱动程序是"分页路径"中，如果它参与了分页文件上的 I/O 操作。 未设置此标志的驱动程序必须是可调用在 IRQL = 调度\_级别。 有关详细信息，请参阅[调度例程的约束](https://msdn.microsoft.com/library/windows/hardware/ff539309)。
+从 Windows 2000 开始，都分页路径中的设备的驱动程序必须未设置 DO\_电源\_PAGABLE 标志。 驱动程序是"分页路径"中，如果它参与了分页文件上的 I/O 操作。 未设置此标志的驱动程序必须是可调用在 IRQL = 调度\_级别。 有关详细信息，请参阅[调度例程的约束](https://docs.microsoft.com/windows-hardware/drivers/ifs/constraints-on-dispatch-routines)。
 
-一般情况下，驱动程序不应改变总线驱动程序的值对于，请执行\_电源\_PAGABLE 标志和一个驱动程序必须永远不会设置此标志如果较低级驱动程序已清除。 当处理工作交接涉及[PnP 分页请求](https://msdn.microsoft.com/library/windows/hardware/ff554992)(通常以响应[ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)与[**IRP\_MN\_设备\_用法\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841)请求)，存储驱动程序必须仔细序列它自身的设置和清除的标志。
+一般情况下，驱动程序不应改变总线驱动程序的值对于，请执行\_电源\_PAGABLE 标志和一个驱动程序必须永远不会设置此标志如果较低级驱动程序已清除。 当处理工作交接涉及[PnP 分页请求](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-pnp-paging-requests)(通常以响应[ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)与[**IRP\_MN\_设备\_用法\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)请求)，存储驱动程序必须仔细序列它自身的设置和清除的标志。
 
 需要在启动时 power 浪涌的设备的驱动程序必须设置 DO\_电源\_之前清除执行操作的设备对象中的浪涌标志\_设备\_正在初始化标志。 设备堆栈，通常的总线驱动程序 (PDO) 中只有一个驱动程序所需设置了\_电源\_浪涌标志的设备。 该标志通知此类设备必须注册一次一个地支持与其他此类设备，以避免重载电源供应的序列中的电源管理器。 电源管理器可确保在任何给定时间，只有一个电源浪涌 IRP 是系统中的任意位置激活。
 

@@ -6,12 +6,12 @@ keywords:
 - 系统定义的设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3303baf46621e4037768ff56a658b85b842aedac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfa4ae50e99c87c9bbffc4b79125d88f8de92b28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385864"
 ---
 # <a name="system-defined-device-properties"></a>系统定义的设备属性
 
@@ -20,29 +20,29 @@ ms.locfileid: "63339639"
 
 在中定义以下系统定义的设备属性键*Devpkey.h*:
 
--   DEVPKEY_NAME 属性键，它表示组件的名称。 使用 DEVPKEY_NAME 属性的值来识别为其最终用户的组件。 Windows 支持的 DEVPKEY_NAME 属性[**设备实例**](https://msdn.microsoft.com/library/windows/hardware/ff543530)， [**设备安装程序类**](https://msdn.microsoft.com/library/windows/hardware/ff543534)，和[ **设备接口**](https://msdn.microsoft.com/library/windows/hardware/ff543533)。
+-   DEVPKEY_NAME 属性键，它表示组件的名称。 使用 DEVPKEY_NAME 属性的值来识别为其最终用户的组件。 Windows 支持的 DEVPKEY_NAME 属性[**设备实例**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-instance-)， [**设备安装程序类**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-setup-class-)，和[ **设备接口**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-interface-)。
 
--   属性键，分别代表[设备实例属性对应于 SPDRP_Xxx 标识符](https://msdn.microsoft.com/library/windows/hardware/ff541334)。 (SPDRP_*Xxx*中定义的标识符*Setupapi.h*。)
+-   属性键，分别代表[设备实例属性对应于 SPDRP_Xxx 标识符](https://docs.microsoft.com/previous-versions/ff541334(v=vs.85))。 (SPDRP_*Xxx*中定义的标识符*Setupapi.h*。)
 
 -   表示设备的属性项实例属性不具有相应 SPDRP_*Xxx*标识符。 这包括以下内容：
 
-    [设备状态和问题属性](https://msdn.microsoft.com/library/windows/hardware/ff542254)
+    [设备状态和问题属性](https://docs.microsoft.com/previous-versions/ff542254(v=vs.85))
 
-    [设备的关系属性](https://msdn.microsoft.com/library/windows/hardware/ff541498)，包括父设备、 子设备和同级设备
+    [设备的关系属性](https://docs.microsoft.com/previous-versions/ff541498(v=vs.85))，包括父设备、 子设备和同级设备
 
-    [设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff541205)
+    [设备驱动程序属性](https://docs.microsoft.com/previous-versions/ff541205(v=vs.85))
 
-    [设备驱动程序包属性](https://msdn.microsoft.com/library/windows/hardware/ff541200)
+    [设备驱动程序包属性](https://docs.microsoft.com/previous-versions/ff541200(v=vs.85))
 
-    [杂项其他设备属性](https://msdn.microsoft.com/library/windows/hardware/ff549289)
+    [杂项其他设备属性](https://docs.microsoft.com/previous-versions/ff549289(v=vs.85))
 
--   属性键，分别代表[设备安装程序类属性](https://msdn.microsoft.com/library/windows/hardware/ff542239)SPCRP_Xxx 标识符相对应。 (在中定义的 SPCRP_Xxx 标识符*Setupapi.h*。)
+-   属性键，分别代表[设备安装程序类属性](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))SPCRP_Xxx 标识符相对应。 (在中定义的 SPCRP_Xxx 标识符*Setupapi.h*。)
 
 -   表示不具有相应 SPCRP_Xxx 标识符的设备安装程序类属性的属性键。
 
--   属性键，分别代表[设备接口类属性](https://msdn.microsoft.com/library/windows/hardware/ff541406)。
+-   属性键，分别代表[设备接口类属性](https://docs.microsoft.com/previous-versions/ff541406(v=vs.85))。
 
--   属性键，分别代表[设备接口属性](https://msdn.microsoft.com/library/windows/hardware/ff541409)。
+-   属性键，分别代表[设备接口属性](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))。
 
 有关如何创建自定义设备属性的信息，请参阅[创建自定义设备属性](creating-custom-device-properties.md)。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6818e40c03778d47d5f5fa7e01fb594262ba7ba9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 552c112480acb840cccafb8f1d38bfa9baa8187b
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332779"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391455"
 ---
 # <a name="kspropertyaudiogfxrendertargetdeviceid"></a>KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID
 
@@ -53,7 +53,7 @@ KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID 属性用来通知 GFX 筛选器的�
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>WCHAR 数组</p></td>
 </tr>
 </tbody>
@@ -72,9 +72,9 @@ KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID 属性请求将返回状态\_成功�
 
 此设置只读属性，请求的目标是 GFX 筛选器配置用作是呈现 / 捕获 GFX 筛选器。
 
-若要确定保存属性值所需的缓冲区的大小，请参阅[音频属性的基本支持查询](https://msdn.microsoft.com/library/windows/hardware/ff536225)。
+若要确定保存属性值所需的缓冲区的大小，请参阅[音频属性的基本支持查询](https://docs.microsoft.com/windows-hardware/drivers/audio/basic-support-queries-for-audio-properties)。
 
-有关设备 Id 的其他信息，请参阅[设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)。
+有关设备 Id 的其他信息，请参阅[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,7 +95,7 @@ KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID 属性请求将返回状态\_成功�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

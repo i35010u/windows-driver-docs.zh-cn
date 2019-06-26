@@ -4,12 +4,12 @@ description: 设备属性页提供程序（属性页扩展 DLL）的特定要求
 ms.assetid: bc48d848-a216-442e-97ca-f990f8d243ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d09863264bb4d0ba64ef1b562efa31cea9eb094
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: a2bb049acf85ad490d152ea43e38f750cadd6f2b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456423"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385890"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-property-page-extension-dlls"></a>设备属性页提供程序（属性页扩展 DLL）的特定要求
 
@@ -47,7 +47,7 @@ ms.locfileid: "65456423"
 
 3.  如果该设备是网络适配器，则必须作为一个指定 NCF_HAS_UI**特征**中的值[ **INF DDInstall 部分**](inf-ddinstall-section.md)。 此值指示适配器支持用户界面。
 
-    有关详细信息，请参阅[的自定义属性页指定网络适配器](https://msdn.microsoft.com/library/windows/hardware/ff570843)。
+    有关详细信息，请参阅[的自定义属性页指定网络适配器](https://docs.microsoft.com/windows-hardware/drivers/network/specifying-custom-property-pages-for-network-adapters)。
 
  
 

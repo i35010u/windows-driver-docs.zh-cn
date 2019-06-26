@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_DISCONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a18882adea48a6e9c4256e4cf6aa11a1450f00ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2885a124087ee0934beaa09a7042ab145da3267d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383592"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387240"
 ---
 # <a name="oidwditaskdisconnect"></a>OID\_WDI\_TASK\_DISCONNECT
 
@@ -20,7 +20,7 @@ OID\_WDI\_任务\_断开连接用于终止与对等方的连接。
 
 | Object | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------|---------------------------------------|---------------------------------|
-| 端口   | 否            | 2                                     | 1                               |
+| Port   | 否            | 2                                     | 1                               |
 
  
 
@@ -31,7 +31,7 @@ OID\_WDI\_任务\_断开连接用于终止与对等方的连接。
 
 | TLV                                                                            | 允许多个 TLV 实例 | 可选 | 描述                |
 |--------------------------------------------------------------------------------|--------------------------------|----------|----------------------------|
-| [**WDI\_TLV\_断开连接\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn926300) |                                |          | 断开连接的参数。 |
+| [**WDI\_TLV\_断开连接\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-disconnect-parameters) |                                |          | 断开连接的参数。 |
 
  
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 356480f1c4ce98332ad69428e4c9512d68892f52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3642dc07bee9be83f0bd59ee6d4e0f1de6c83e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363749"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375275"
 ---
 # <a name="guiddevinterfaceimage"></a>GUID_DEVINTERFACE_IMAGE
 
 
-GUID_DEVINTERFACE_IMAGE[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[WIA 的设备和仍映像 (STI) 设备](https://msdn.microsoft.com/library/windows/hardware/ff542729)，包括数字照相机和扫描仪。
+GUID_DEVINTERFACE_IMAGE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[WIA 的设备和仍映像 (STI) 设备](https://docs.microsoft.com/windows-hardware/drivers/image/index)，包括数字照相机和扫描仪。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_IMAGE[设备接口类](https://msdn.microsoft.com/library/wind
 
 WIA 的设备的系统提供的内核模式驱动程序注册通知的操作系统和应用程序的 WIA 的设备存在此设备接口类的实例。
 
-WIA 驱动程序和 STI 驱动程序有关的信息，请参阅[Windows 图像采集驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff553346)。
+WIA 驱动程序和 STI 驱动程序有关的信息，请参阅[Windows 图像采集驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)。
 
 <a name="requirements"></a>要求
 ------------

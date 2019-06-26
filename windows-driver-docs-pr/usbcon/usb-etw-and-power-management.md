@@ -3,12 +3,12 @@ Description: 本主题提供了一条简短大致了解使用 ETW 来检查 USB 
 title: USB ETW 和电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5272a329a7c42a29921e40e2d5196e78b8d2b0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7344397f386329b57b44b134df13a776a40d2f7f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391767"
 ---
 # <a name="usb-etw-and-power-management"></a>USB ETW 和电源管理
 
@@ -23,7 +23,7 @@ ms.locfileid: "63376393"
 
 PowerCfg 检测到通过 USB 设备、 过多的处理器利用率、 增加了的计时器分辨率、 电源效率低下策略设置和电池容量下降的问题，包括无法做到有效利用选择性挂起的各种能源效率。 PowerCfg 标识不同级别的问题，包括服务器问题 （错误） 以及一些小问题 （警告）。
 
-Windows 电源管理和 PowerCfg 工具的详细信息，请参阅[Powercfg 命令行选项](https://technet.microsoft.com/library/cc748940(WS.10).aspx)并[使用 PowerCfg 评估系统能效](https://msdn.microsoft.com/library/windows/hardware/gg463250.aspx)。
+Windows 电源管理和 PowerCfg 工具的详细信息，请参阅[Powercfg 命令行选项](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc748940(v=ws.10))并[使用 PowerCfg 评估系统能效](https://docs.microsoft.com/previous-versions/windows/hardware/download/dn550976(v=vs.85))。
 
 ## <a name="related-topics"></a>相关主题
 [USB Windows 事件跟踪](usb-event-tracing-for-windows.md)  

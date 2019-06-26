@@ -12,12 +12,12 @@ keywords:
 - 次要版本号 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2544f6c59809aecaaa8fb54870ff80b6aa55ea74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a9d811cfbc8d50d856e186c99abc120045617c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384464"
 ---
 # <a name="framework-library-versioning"></a>框架库版本控制
 
@@ -39,7 +39,7 @@ ms.locfileid: "63391344"
 
 生成您的驱动程序时，MSBuild 实用工具将链接的包含 MSBuild 实用程序使用的库的版本号的存根 （stub） 文件的驱动程序。 当操作系统加载您的驱动程序时，框架的加载程序将检查驱动程序的存根 （stub） 以确定如果驱动程序将运行与系统上的框架库的版本中的版本信息。
 
-若要确定您的驱动程序正在使用的库版本，该驱动程序可以调用[ **WdfDriverIsVersionAvailable** ](https://msdn.microsoft.com/library/windows/hardware/ff547190)或[ **WdfDriverRetrieveVersionString**](https://msdn.microsoft.com/library/windows/hardware/ff547211).
+若要确定您的驱动程序正在使用的库版本，该驱动程序可以调用[ **WdfDriverIsVersionAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverisversionavailable)或[ **WdfDriverRetrieveVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrieveversionstring).
 
 KMDF 库的发行历史记录的信息，请参阅[KMDF 版本历史记录](kmdf-version-history.md)。
 

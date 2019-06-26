@@ -10,12 +10,12 @@ keywords:
 - 初始化 IDE 控制器微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cce0d2261f3eb302904f5ead51ed0217bf97a411
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b1dc53fdf3def48510d4e96d2eaaf6ec4d32a99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359110"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370452"
 ---
 # <a name="initializing-and-calling-ide-minidriver-routines"></a>初始化和调用 IDE 微型驱动程序例程
 
@@ -27,9 +27,9 @@ ms.locfileid: "63359110"
 
 ![微型驱动程序例程初始化程序流](images/idecallbacks.png)
 
-1.  PnP 管理器加载 IDE 控制器驱动程序的微型驱动程序，然后调用其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程，它将指针传递到控制器驱动程序的驱动程序对象。
+1.  PnP 管理器加载 IDE 控制器驱动程序的微型驱动程序，然后调用其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程，它将指针传递到控制器驱动程序的驱动程序对象。
 
-2.  微型驱动程序的**DriverEntry**调用[ **PciIdeXInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff563788)库例程，它将指针传递给微型驱动程序的**GetControllerProperties**例程。
+2.  微型驱动程序的**DriverEntry**调用[ **PciIdeXInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563788(v=vs.85))库例程，它将指针传递给微型驱动程序的**GetControllerProperties**例程。
 
 3.  **PciIdeXInitialize**存储到指针**GetControllerProperties**驱动程序对象中。
 
@@ -37,7 +37,7 @@ ms.locfileid: "63359110"
 
 5.  控制器驱动程序会检索一个指向**GetControllerProperties**存储在驱动程序对象。
 
-6.  控制器驱动程序调用**GetControllerProperties**，并向其传递一个指向[ **IDE\_控制器\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff559076)结构。
+6.  控制器驱动程序调用**GetControllerProperties**，并向其传递一个指向[ **IDE\_控制器\_属性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559076(v=vs.85))结构。
 
 7.  **GetControllerProperties**加载到 IDE 的一组标准的微型驱动程序例程的指针\_控制器\_属性。
 
@@ -57,17 +57,17 @@ ms.locfileid: "63359110"
 
 此例程确定是否可以通过 DMA I/O。
 
-[**HwIdeXChannelEnabled**](https://msdn.microsoft.com/library/windows/hardware/ff557252)
+[**HwIdeXChannelEnabled**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557252(v=vs.85))
 
-[**HwIdeXGetControllerProperties**](https://msdn.microsoft.com/library/windows/hardware/ff557254)
+[**HwIdeXGetControllerProperties**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557254(v=vs.85))
 
-[**HwIdeXSyncAccessRequired**](https://msdn.microsoft.com/library/windows/hardware/ff557256)
+[**HwIdeXSyncAccessRequired**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557256(v=vs.85))
 
-[**HwIdeXTransferModeSelect**](https://msdn.microsoft.com/library/windows/hardware/ff557260)
+[**HwIdeXTransferModeSelect**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557260(v=vs.85))
 
-[**HwIdeXUdmaModesSupported**](https://msdn.microsoft.com/library/windows/hardware/ff557264)
+[**HwIdeXUdmaModesSupported**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557264(v=vs.85))
 
-[**HwIdeXUseDma**](https://msdn.microsoft.com/library/windows/hardware/ff557266)
+[**HwIdeXUseDma**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557266(v=vs.85))
 
  
 

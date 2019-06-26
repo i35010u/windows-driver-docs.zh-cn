@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1c46404759531fd809ee04b6625891b2b611debe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc49bb97a74d836df57a69d85740c29f29956cfc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365840"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374217"
 ---
 # <a name="kscategoryencoder"></a>KSCATEGORY_ENCODER
 
 
-KSCATEGORY_ENCODER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 对数据进行编码的功能类别。
+KSCATEGORY_ENCODER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 对数据进行编码的功能类别。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS 设备的驱动程序注册 KSCATEGORY_ENCODER 向操作系统指示设备支
 
 有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src/swtuner/algtuner* WDK 的目录。
 
-有关编码器的信息，请参阅[编码器设备](https://msdn.microsoft.com/library/windows/hardware/ff559535)并[编码器安装和注册](https://msdn.microsoft.com/library/windows/hardware/ff559551)。
+有关编码器的信息，请参阅[编码器设备](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-devices)并[编码器安装和注册](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-installation-and-registration)。
 
 <a name="requirements"></a>要求
 ------------

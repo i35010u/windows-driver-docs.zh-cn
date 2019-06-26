@@ -3,17 +3,17 @@ Description: Winusb.dll 公开 WinUsb_GetPipePolicy 函数以检索管道的默�
 title: 用于管道策略修改的 WinUSB 函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be882716dba12fa59631c16209c695a0d6a5f078
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab94d3398371d57831b4f4f4defad7534e92fffe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389146"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385678"
 ---
 # <a name="winusb-functions-for-pipe-policy-modification"></a>用于管道策略修改的 WinUSB 函数
 
 
-若要启用应用程序来获取和设置管道的默认策略参数的终结点，Winusb.dll 公开[ **WinUsb\_GetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540266)函数以检索管道的默认策略。 [ **WinUsb\_SetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540304)函数允许应用程序策略参数设置为新值。
+若要启用应用程序来获取和设置管道的默认策略参数的终结点，Winusb.dll 公开[ **WinUsb\_GetPipePolicy** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)函数以检索管道的默认策略。 [ **WinUsb\_SetPipePolicy** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpipepolicy)函数允许应用程序策略参数设置为新值。
 
 WinUSB，可通过将策略应用到终结点的管道来修改其默认行为。 通过使用这些策略，可以配置 WinUSB 以最能满足您的设备与它的功能。 下表提供了一组受 WinUSB 管道策略。
 
@@ -100,7 +100,7 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 <tr class="even">
 <td>0x08</td>
 <td>MAXIMUM_TRANSFER_SIZE</td>
-<td>获取受 WinUSB USB 传输的最大大小。 这是一个只读的策略，可以通过调用来检索<a href="https://msdn.microsoft.com/library/windows/hardware/ff540266" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540266)"> <strong>WinUsb_GetPipePolicy</strong></a>。</td>
+<td>获取受 WinUSB USB 传输的最大大小。 这是一个只读的策略，可以通过调用来检索<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"> <strong>WinUsb_GetPipePolicy</strong></a>。</td>
 <td><p>大容量 (IN)</p>
 <p>大容量 (OUT)</p>
 <p>中断 (IN)</p>
@@ -142,7 +142,7 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 <td>SHORT_PACKET_TERMINATE(0x01)</td>
 <td>设备要求扩展传输以结尾的长度为零的数据包。 大多数设备不具有此要求。</td>
 <td><p>如果已启用 (策略参数值是<strong>，则返回 TRUE</strong>或非零值)，每个终结点，支持的最大数据包大小的倍数的写入请求后跟长度为零的数据包。</p>
-<p>之后将数据发送到主控制器，WinUSB 发送包含长度为零的数据包的写入请求，然后完成创建请求<a href="https://msdn.microsoft.com/library/windows/hardware/ff540322" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540322)"> <strong>WinUsb_WritePipe</strong></a>。</p></td>
+<p>之后将数据发送到主控制器，WinUSB 发送包含长度为零的数据包的写入请求，然后完成创建请求<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)"> <strong>WinUsb_WritePipe</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td>AUTO_CLEAR_STALL</td>
@@ -151,7 +151,7 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 <li><p>如果已启用 (策略参数值是<strong>，则返回 TRUE</strong>或非零值)，自动清除停滞条件。 此策略参数不会影响控制管道。</p>
 <p>时失败，并且主机控制器返回的状态不是 STATUS_CANCELLED 或 STATUS_DEVICE_NOT_CONNECTED 的读取请求，WinUSB 将完成失败的请求之前重置管道。 重置管道而不会中断流的数据清除的停止条件。 数据将继续，只要新传输保持到达从设备中的终结点的流。 新的传输可以包括一个停止发生时已在队列中。</p>
 <p>如果启用此策略不会显著影响性能。</p></li>
-<li>如果禁用 (策略参数值是<strong>FALSE</strong>或零)，到达终结点后停止传输的所有传输都失败，直到调用方手动重置终结点的管道，通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff540300" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540300)"> <strong>WinUsb_ResetPipe</strong></a>。</li>
+<li>如果禁用 (策略参数值是<strong>FALSE</strong>或零)，到达终结点后停止传输的所有传输都失败，直到调用方手动重置终结点的管道，通过调用<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe)"> <strong>WinUsb_ResetPipe</strong></a>。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -208,10 +208,10 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 <tr class="odd">
 <td>RAW_IO</td>
 <td>性能是优先考虑和应用程序提交到同一个终结点的同时读取的请求。
-<p>RAW_IO 施加某些限制由调用方中传递的缓冲区<a href="https://msdn.microsoft.com/library/windows/hardware/ff540297" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540297)"> <strong>WinUsb_ReadPipe</strong></a>:</p>
+<p>RAW_IO 施加某些限制由调用方中传递的缓冲区<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)"> <strong>WinUsb_ReadPipe</strong></a>:</p>
 <ul>
 <li>缓冲区长度必须最大的终结点的数据包大小的倍数。</li>
-<li>长度必须小于或等于的值来检索 MAXIMUM_TRANSFER_SIZE <a href="https://msdn.microsoft.com/library/windows/hardware/ff540266" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540266)"> <strong>WinUsb_GetPipePolicy</strong></a>。</li>
+<li>长度必须小于或等于的值来检索 MAXIMUM_TRANSFER_SIZE <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"> <strong>WinUsb_GetPipePolicy</strong></a>。</li>
 </ul></td>
 <td><p>如果启用，传输绕过队列和错误处理来提高性能的多个读取请求。 WinUSB 句柄读取请求，如下所示：</p>
 <ul>
@@ -237,9 +237,9 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 [选择用于开发 USB 客户端驱动程序的驱动程序模型](winusb-considerations.md)  
 [WinUSB (Winusb.sys) 安装](winusb-installation.md)  
 [如何通过使用 WinUSB 函数访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
-[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
-[**WinUsb\_GetPipePolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540266)  
-[**WinUsb\_SetPipePolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540304)  
+[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
+[**WinUsb\_GetPipePolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)  
+[**WinUsb\_SetPipePolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpipepolicy)  
 [WinUSB](winusb.md)  
 
 

@@ -3,12 +3,12 @@ title: Wi-Fi 热点卸载插件
 description: Wi-Fi 热点卸载插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f145063563487cdbef6fcd212c0761aa59ad7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a623890e8de324731d8d748e0288322bc0b0d0d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379165"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382609"
 ---
 # <a name="wi-fi-hotspot-offloading-plugin"></a>Wi-Fi 热点卸载插件
 
@@ -49,13 +49,13 @@ ms.locfileid: "63379165"
 * 提供程序名称 (最多**HS_CONST_MAX_PROVIDER_NAME_LENGTH**长度)
 * 网络名称 (最多**HS_CONST_MAX_NETWORK_DISPLAY_NAME_LENGTH**长度)
 * 在高级页上的消息 (最多**HS_CONST_MAX_ADVANCED_PAGE_STRING_LENGTH**长度)
-* 任何其他字符串传递给用户使用 HSHostSendUserMessage 函数 (最多**最大\_路径**长度)。 有关详细信息，请参阅[HS_HOST_SEND_USER_MESSAGE](https://msdn.microsoft.com/library/windows/hardware/dn789353)。
+* 任何其他字符串传递给用户使用 HSHostSendUserMessage 函数 (最多**最大\_路径**长度)。 有关详细信息，请参阅[HS_HOST_SEND_USER_MESSAGE](https://docs.microsoft.com/previous-versions/dn789353(v=vs.85))。
 
-**注意：** 有关的 Wi-fi 热点卸载功能和常量的详细信息，请参阅[Wi-fi 热点卸载常量](https://msdn.microsoft.com/library/windows/hardware/mt800328)。
+**注意：** 有关的 Wi-fi 热点卸载功能和常量的详细信息，请参阅[Wi-fi 热点卸载常量](https://docs.microsoft.com/previous-versions/mt800328(v=vs.85))。
 
 ## <a name="implementing-the-plugin"></a>实现插件
 
-将插件实现为 DLL。 函数[HSPluginGetVersion](https://msdn.microsoft.com/library/windows/hardware/dn789345)并[HSPluginInitPlugin](https://msdn.microsoft.com/library/windows/hardware/dn789346)通过指定插件 DLL 的.def 文件中或通过将"__declspec （dllexport）"关键字添加到它们在必须公开函数实现。
+将插件实现为 DLL。 函数[HSPluginGetVersion](https://docs.microsoft.com/previous-versions/dn789345(v=vs.85))并[HSPluginInitPlugin](https://docs.microsoft.com/previous-versions/dn789346(v=vs.85))通过指定插件 DLL 的.def 文件中或通过将"__declspec （dllexport）"关键字添加到它们在必须公开函数实现。
 
 ## <a name="initialization"></a>初始化
 
@@ -77,18 +77,18 @@ ms.locfileid: "63379165"
 
 该插件会向热点插件宿主返回以下信息：
 
-* 指向包含的插件 Api 列表的结构的指针 (**pHotspotPluginAPIs**)。 有关详细信息，请参阅[HOTSPOT_PLUGIN_APIS](https://msdn.microsoft.com/library/windows/hardware/dn789344)。
-* 指向包含该插件配置文件的结构的指针 (**pPluginProfile**)。 有关详细信息，请参阅[HS_PLUGIN_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789365)。 
+* 指向包含的插件 Api 列表的结构的指针 (**pHotspotPluginAPIs**)。 有关详细信息，请参阅[HOTSPOT_PLUGIN_APIS](https://docs.microsoft.com/previous-versions/dn789344(v=vs.85))。
+* 指向包含该插件配置文件的结构的指针 (**pPluginProfile**)。 有关详细信息，请参阅[HS_PLUGIN_PROFILE](https://docs.microsoft.com/previous-versions/dn789365(v=vs.85))。 
 
 该配置文件包括所有由插件所需的功能。 这由此得到的组合适用功能标志的值的单个值 (HS_FLAG_CAPABILITY_NETWORK_\*) 通过使用位或运算。 如果该插件指定 HS\_标志\_功能\_网络\_身份验证\_HTTP 功能或 HS\_标志\_功能\_网络\_身份验证\_EAP\_ \*功能， **dwSupportedSIMCount**的成员**HS_PLUGIN_PROFILE**结构必须设置为数受支持的 Sim。 该插件还必须指定它支持通过设置的网络的总数量**dwNumNetworksSupported**的成员及其**HS_PLUGIN_PROFILE**结构。
 
 ### <a name="hspluginqueryhiddennetwork-optional"></a>HsPluginQueryHiddenNetwork [Optional]
 
-如果指定了该插件**HS_FLAG_CAPABILITY_NETWORK_TYPE_HIDDEN**功能和设备可以支持隐藏的网络，要获取的隐藏的网络信息的热点插件主机调用此函数插件。 有关详细信息，请参阅[HS_PLUGIN_QUERY_HIDDEN_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789367)。
+如果指定了该插件**HS_FLAG_CAPABILITY_NETWORK_TYPE_HIDDEN**功能和设备可以支持隐藏的网络，要获取的隐藏的网络信息的热点插件主机调用此函数插件。 有关详细信息，请参阅[HS_PLUGIN_QUERY_HIDDEN_NETWORK](https://docs.microsoft.com/previous-versions/dn789367(v=vs.85))。
 
 ### <a name="hspluginquerysupportedsims-optional"></a>HsPluginQuerySupportedSIMs [可选]
 
-热点插件主机调用此函数，如果该插件指定一个非零值**dwSupportedSIMCount**。 调用时， **pNetworkIdentity**参数应为 NULL，该插件需要提供所有 sims 就支持的插件的列表。 调用此函数可能也更高版本上以标识与每个热点网络相关联的 Sim (在这段时间， **pNetworkIdentity**将为非 NULL)。 该插件必须提供支持 Sim 的列表。 有关详细信息，请参阅[HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://msdn.microsoft.com/library/windows/hardware/dn789368)。
+热点插件主机调用此函数，如果该插件指定一个非零值**dwSupportedSIMCount**。 调用时， **pNetworkIdentity**参数应为 NULL，该插件需要提供所有 sims 就支持的插件的列表。 调用此函数可能也更高版本上以标识与每个热点网络相关联的 Sim (在这段时间， **pNetworkIdentity**将为非 NULL)。 该插件必须提供支持 Sim 的列表。 有关详细信息，请参阅[HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://docs.microsoft.com/previous-versions/dn789368(v=vs.85))。
 
 ## <a name="run-time"></a>运行的时
 
@@ -96,15 +96,15 @@ ms.locfileid: "63379165"
 
 ### <a name="hspluginishotspotnetwork"></a>HSPluginIsHotspotNetwork
 
-热点插件宿主将调用此函数可确定指定的网络是否热点网络。 通过网络 (SSID，身份验证类型、 密码) 的标识信息[HS_NETWORK_IDENTITY](https://msdn.microsoft.com/library/windows/hardware/dn789356)结构。 该插件必须返回[eHS_NETWORK_STATE](https://msdn.microsoft.com/library/windows/hardware/dn756756)枚举值，该值指示网络的类型。 如果它是热点网络，则通过返回有关网络的信息[HS_NETWORK_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789357)结构。 有关详细信息，请参阅[HS_PLUGIN_IS_HOTSPOT_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789363)。
+热点插件宿主将调用此函数可确定指定的网络是否热点网络。 通过网络 (SSID，身份验证类型、 密码) 的标识信息[HS_NETWORK_IDENTITY](https://docs.microsoft.com/previous-versions/dn789356(v=vs.85))结构。 该插件必须返回[eHS_NETWORK_STATE](https://docs.microsoft.com/previous-versions/dn756756(v=vs.85))枚举值，该值指示网络的类型。 如果它是热点网络，则通过返回有关网络的信息[HS_NETWORK_PROFILE](https://docs.microsoft.com/previous-versions/dn789357(v=vs.85))结构。 有关详细信息，请参阅[HS_PLUGIN_IS_HOTSPOT_NETWORK](https://docs.microsoft.com/previous-versions/dn789363(v=vs.85))。
 
 ### <a name="hspluginquerysupportedsims-optional"></a>HsPluginQuerySupportedSIMs [可选]
 
-热点插件主机调用此函数，如果该插件指定的功能**HS\_标志\_功能\_网络\_身份验证\_HTTP**或**HS\_标志\_功能\_网络\_身份验证\_EAP**中*HS_NETWORK_PROFILE* 到调用参数[HS_PLUGIN_IS_HOTSPOT_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789363)。 此实例中调用时，pNetworkIdentity 参数应为非 NULL，并且插件必须提供 SIMs 列表支持 pNetworkIdentity 仅在指定的网络。 有关详细信息，请参阅[HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://msdn.microsoft.com/library/windows/hardware/dn789368)。
+热点插件主机调用此函数，如果该插件指定的功能**HS\_标志\_功能\_网络\_身份验证\_HTTP**或**HS\_标志\_功能\_网络\_身份验证\_EAP**中*HS_NETWORK_PROFILE* 到调用参数[HS_PLUGIN_IS_HOTSPOT_NETWORK](https://docs.microsoft.com/previous-versions/dn789363(v=vs.85))。 此实例中调用时，pNetworkIdentity 参数应为非 NULL，并且插件必须提供 SIMs 列表支持 pNetworkIdentity 仅在指定的网络。 有关详细信息，请参阅[HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://docs.microsoft.com/previous-versions/dn789368(v=vs.85))。
 
 ### <a name="hspluginquerycellularexceptionhosts-optional"></a>HSPluginQueryCellularExceptionHosts [Optional]
 
-热点插件主机调用此函数，如果**dwNumCellularExceptions**字段[HS_NETWORK_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789357)结构，该插件返回设置为非零值。 该插件必须返回调用时的移动电话的持有者主机的列表。 有关详细信息，请参阅[HS_PLUGIN_QUERY_CELLULAR_EXCEPTION_HOSTS](https://msdn.microsoft.com/library/windows/hardware/dn789366)。
+热点插件主机调用此函数，如果**dwNumCellularExceptions**字段[HS_NETWORK_PROFILE](https://docs.microsoft.com/previous-versions/dn789357(v=vs.85))结构，该插件返回设置为非零值。 该插件必须返回调用时的移动电话的持有者主机的列表。 有关详细信息，请参阅[HS_PLUGIN_QUERY_CELLULAR_EXCEPTION_HOSTS](https://docs.microsoft.com/previous-versions/dn789366(v=vs.85))。
 
 ## <a name="connect-time"></a>连接时间
 
@@ -112,7 +112,7 @@ ms.locfileid: "63379165"
 
 ### <a name="hspluginpreconnectinit"></a>HSPluginPreConnectInit
 
-热点插件主机调用此函数来通知与热点网络的连接中指定的插件[HS_NETWORK_IDENTITY](https://msdn.microsoft.com/library/windows/hardware/dn789356)结构，返回的插件，正在进行中。 有关详细信息，请参阅[HS_PLUGIN_PRE_CONNECT_INIT](https://msdn.microsoft.com/library/windows/hardware/dn789364)。
+热点插件主机调用此函数来通知与热点网络的连接中指定的插件[HS_NETWORK_IDENTITY](https://docs.microsoft.com/previous-versions/dn789356(v=vs.85))结构，返回的插件，正在进行中。 有关详细信息，请参阅[HS_PLUGIN_PRE_CONNECT_INIT](https://docs.microsoft.com/previous-versions/dn789364(v=vs.85))。
 
 ### <a name="hspluginstartpostconnectauth"></a>HSPluginStartPostConnectAuth
 
@@ -124,15 +124,15 @@ L2 连接完成后，热点插件主机调用此函数来通知插件以开始�
 
 ### <a name="hspluginstoppostconnectauth"></a>HSPluginStopPostConnectAuth
 
-热点插件主机调用此函数来终止网络身份验证，因为该设备以从网络断开连接。 有关详细信息，请参阅[HS_PLUGIN_STOP_POST_CONNECT_AUTH](https://msdn.microsoft.com/library/windows/hardware/dn789372)。
+热点插件主机调用此函数来终止网络身份验证，因为该设备以从网络断开连接。 有关详细信息，请参阅[HS_PLUGIN_STOP_POST_CONNECT_AUTH](https://docs.microsoft.com/previous-versions/dn789372(v=vs.85))。
 
 ### <a name="hsplugindisconnectfromnetwork"></a>HSPluginDisconnectFromNetwork
 
-热点插件主机调用此函数来通知该插件的设备将从网络断开连接。 有关详细信息，请参阅[HS_PLUGIN_DISCONNECT_FROM_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789361)。
+热点插件主机调用此函数来通知该插件的设备将从网络断开连接。 有关详细信息，请参阅[HS_PLUGIN_DISCONNECT_FROM_NETWORK](https://docs.microsoft.com/previous-versions/dn789361(v=vs.85))。
 
 ### <a name="hspluginreset"></a>HSPluginReset
 
-热点插件宿主将调用此函数可将该插件重置为其初始 （不仅仅是加载） 状态。 有关详细信息，请参阅[HS_PLUGIN_RESET](https://msdn.microsoft.com/library/windows/hardware/dn789369)。
+热点插件宿主将调用此函数可将该插件重置为其初始 （不仅仅是加载） 状态。 有关详细信息，请参阅[HS_PLUGIN_RESET](https://docs.microsoft.com/previous-versions/dn789369(v=vs.85))。
 
 ## <a name="periodic-calls"></a>定期调用
 
@@ -140,17 +140,17 @@ L2 连接完成后，热点插件主机调用此函数来通知插件以开始�
 
 ### <a name="hspluginsendkeepalive-optional"></a>HSPluginSendKeepAlive [可选]
 
-热点插件主机调用此函数中指定的频率**dwKeepAliveTimeMins**的成员[HS_NETWORK_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789357)结构返回该插件。 有关详细信息，请参阅[HS_PLUGIN_SEND_KEEP_ALIVE](https://msdn.microsoft.com/library/windows/hardware/dn789370)。
+热点插件主机调用此函数中指定的频率**dwKeepAliveTimeMins**的成员[HS_NETWORK_PROFILE](https://docs.microsoft.com/previous-versions/dn789357(v=vs.85))结构返回该插件。 有关详细信息，请参阅[HS_PLUGIN_SEND_KEEP_ALIVE](https://docs.microsoft.com/previous-versions/dn789370(v=vs.85))。
 
 ### <a name="hsplugincheckforupdates-optional"></a>HSPluginCheckForUpdates [可选]
 
-热点插件主机调用此函数中指定的频率**dwProfileUpdateTimeDays**的成员[HS_PLUGIN_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789365)结构。 
+热点插件主机调用此函数中指定的频率**dwProfileUpdateTimeDays**的成员[HS_PLUGIN_PROFILE](https://docs.microsoft.com/previous-versions/dn789365(v=vs.85))结构。 
 
 ## <a name="unloading-the-plugin"></a>卸载插件
 
 ### <a name="hsplugindeinit"></a>HSPluginDeinit
 
-热点插件宿主将调用此函数可启用该插件以刷新任何未保存的信息并卸载之前关闭任何打开的句柄。 该插件将提供在卸载的原因*UnloadReason*参数。 有关详细信息，请参阅[HS_PLUGIN_DEINIT](https://msdn.microsoft.com/library/windows/hardware/dn789360)。
+热点插件宿主将调用此函数可启用该插件以刷新任何未保存的信息并卸载之前关闭任何打开的句柄。 该插件将提供在卸载的原因*UnloadReason*参数。 有关详细信息，请参阅[HS_PLUGIN_DEINIT](https://docs.microsoft.com/previous-versions/dn789360(v=vs.85))。
 
 ## <a name="plugin-installation-package"></a>插件安装包
 
@@ -160,7 +160,7 @@ L2 连接完成后，热点插件主机调用此函数来通知插件以开始�
 
 必须签名 DLL 文件，并将其置于下**Programs\HotspotHost\\** <*ProviderName*>，其中 <*ProviderName*> 是DLL 提供程序名称。 
 
-有关对 DLL 进行签名的信息，请参阅[二进制文件和包签名](https://msdn.microsoft.com/library/windows/hardware/dn789217)。 
+有关对 DLL 进行签名的信息，请参阅[二进制文件和包签名](https://docs.microsoft.com/previous-versions/windows/hardware/code-signing/dn789217(v=vs.85))。 
 
 没有为命名 DLL 文件，因此确保在注册表中的文件的路径正确是所有所需的任何特定约定。 例如，可以为包中指定的注册表信息：
 

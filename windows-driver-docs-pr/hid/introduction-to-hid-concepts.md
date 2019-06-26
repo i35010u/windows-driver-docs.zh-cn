@@ -12,12 +12,12 @@ keywords:
 - 陀螺仪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b30948cea3a3d07b29e1f1843ff683fe11194e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74400481c3dc78b3f439fb4fd55ad31123d7d1a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364635"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376012"
 ---
 # <a name="introduction-to-hid-concepts"></a>HID 概念简介
 
@@ -72,26 +72,26 @@ HID 基于几个基本概念、 报告描述符和报告。 报表是在设备�
 
 以下列表标识了应用程序可以使用到 HID API： 确定属性的 HID 设备，并与该设备建立通信。 此外，应用程序可以使用这些 API 的一些用于标识某个顶部级别集合。
 
--   [**HidD\_GetAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff538900)
--   [**HidD\_GetHidGuid**](https://msdn.microsoft.com/library/windows/hardware/ff538924)
--   [**HidD\_GetIndexedString**](https://msdn.microsoft.com/library/windows/hardware/ff538927)
--   [**HidD\_GetManufacturerString**](https://msdn.microsoft.com/library/windows/hardware/ff538959)
--   [**HidD\_GetPhysicalDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff539677)
--   [**HidD\_GetPreparsedData**](https://msdn.microsoft.com/library/windows/hardware/ff539679)
--   [**HidD\_GetProductString**](https://msdn.microsoft.com/library/windows/hardware/ff539681)
--   [**HidD\_GetSerialNumberString**](https://msdn.microsoft.com/library/windows/hardware/ff539683)
--   [**HidD\_GetNumInputBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff539675)
--   [**HidD\_SetNumInputBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff539686)
+-   [**HidD\_GetAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getattributes)
+-   [**HidD\_GetHidGuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_gethidguid)
+-   [**HidD\_GetIndexedString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getindexedstring)
+-   [**HidD\_GetManufacturerString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getmanufacturerstring)
+-   [**HidD\_GetPhysicalDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getphysicaldescriptor)
+-   [**HidD\_GetPreparsedData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getpreparseddata)
+-   [**HidD\_GetProductString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getproductstring)
+-   [**HidD\_GetSerialNumberString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getserialnumberstring)
+-   [**HidD\_GetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getnuminputbuffers)
+-   [**HidD\_SetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setnuminputbuffers)
 
 ### <a name="data-movement"></a>数据移动
 
 以下列表标识的应用程序可以使用该应用程序和所选的设备之间来回移动数据的 HID API。
 
--   [**HidD\_GetInputReport**](https://msdn.microsoft.com/library/windows/hardware/ff538945)
--   [**HidD\_SetFeature**](https://msdn.microsoft.com/library/windows/hardware/ff539684)
--   [**HidD\_SetOutputReport**](https://msdn.microsoft.com/library/windows/hardware/ff539690)
--   [ReadFile](https://msdn.microsoft.com/library/windows/desktop/aa365467.aspx)
--   [WriteFile](https://msdn.microsoft.com/library/windows/desktop/aa365747.aspx)
+-   [**HidD\_GetInputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_getinputreport)
+-   [**HidD\_SetFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setfeature)
+-   [**HidD\_SetOutputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setoutputreport)
+-   [ReadFile](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)
+-   [WriteFile](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)
 
 ### <a name="report-creation-and-interpretation"></a>创建报表和解释
 
@@ -103,35 +103,35 @@ HID 基于几个基本概念、 报告描述符和报告。 报表是在设备�
 
 以下列表标识 HID 分析器 Api。
 
--   [**HidP\_GetButtonCaps**](https://msdn.microsoft.com/library/windows/hardware/ff539707)
--   [**HidP\_GetButtons**](https://msdn.microsoft.com/library/windows/hardware/ff539708)
--   [**HidP\_GetButtonsEx**](https://msdn.microsoft.com/library/windows/hardware/ff539712)
--   [**HidP\_GetCaps**](https://msdn.microsoft.com/library/windows/hardware/ff539715)
--   [**HidP\_GetData**](https://msdn.microsoft.com/library/windows/hardware/ff539718)
--   [**HidP\_GetExtendedAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff539721)
--   [**HidP\_GetLinkCollectionNodes**](https://msdn.microsoft.com/library/windows/hardware/ff539725)
--   [**HidP\_GetScaledUsageValue**](https://msdn.microsoft.com/library/windows/hardware/ff539729)
--   [**HidP\_GetSpecificButtonCaps**](https://msdn.microsoft.com/library/windows/hardware/ff539733)
--   [**HidP\_GetSpecificValueCaps**](https://msdn.microsoft.com/library/windows/hardware/ff539737)
--   [**HidP\_GetUsages**](https://msdn.microsoft.com/library/windows/hardware/ff539742)
--   [**HidP\_GetUsagesEx**](https://msdn.microsoft.com/library/windows/hardware/ff539745)
--   [**HidP\_GetUsageValue**](https://msdn.microsoft.com/library/windows/hardware/ff539748)
--   [**HidP\_GetUsageValueArray**](https://msdn.microsoft.com/library/windows/hardware/ff539750)
--   [**HidP\_GetValueCaps**](https://msdn.microsoft.com/library/windows/hardware/ff539754)
--   [**HidP\_InitializeReportForID**](https://msdn.microsoft.com/library/windows/hardware/ff539757)
--   [**HidP\_IsSameUsageAndPage**](https://msdn.microsoft.com/library/windows/hardware/ff539761)
--   [**HidP\_MaxDataListLength**](https://msdn.microsoft.com/library/windows/hardware/ff539768)
--   [**HidP\_MaxUsageListLength**](https://msdn.microsoft.com/library/windows/hardware/ff539770)
--   [**HidP\_SetButtons**](https://msdn.microsoft.com/library/windows/hardware/ff539779)
--   [**HidP\_SetData**](https://msdn.microsoft.com/library/windows/hardware/ff539783)
--   [**HidP\_SetScaledUsageValue**](https://msdn.microsoft.com/library/windows/hardware/ff539787)
--   [**HidP\_SetUsages**](https://msdn.microsoft.com/library/windows/hardware/ff539792)
--   [**HidP\_SetUsageValue**](https://msdn.microsoft.com/library/windows/hardware/ff539797)
--   [**HidP\_SetUsageValueArray**](https://msdn.microsoft.com/library/windows/hardware/ff539801)
--   [**HidP\_UnsetButtons**](https://msdn.microsoft.com/library/windows/hardware/ff539812)
--   [**HidP\_UnsetUsages**](https://msdn.microsoft.com/library/windows/hardware/ff539819)
--   [**HidP\_UsageAndPageListDifference**](https://msdn.microsoft.com/library/windows/hardware/ff539824)
--   [**HidP\_UsageListDifference**](https://msdn.microsoft.com/library/windows/hardware/ff539826)
+-   [**HidP\_GetButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getbuttoncaps)
+-   [**HidP\_GetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
+-   [**HidP\_GetButtonsEx**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
+-   [**HidP\_GetCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getcaps)
+-   [**HidP\_GetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getdata)
+-   [**HidP\_GetExtendedAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getextendedattributes)
+-   [**HidP\_GetLinkCollectionNodes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getlinkcollectionnodes)
+-   [**HidP\_GetScaledUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getscaledusagevalue)
+-   [**HidP\_GetSpecificButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)
+-   [**HidP\_GetSpecificValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificvaluecaps)
+-   [**HidP\_GetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusages)
+-   [**HidP\_GetUsagesEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagesex)
+-   [**HidP\_GetUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevalue)
+-   [**HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevaluearray)
+-   [**HidP\_GetValueCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getvaluecaps)
+-   [**HidP\_InitializeReportForID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_initializereportforid)
+-   [**HidP\_IsSameUsageAndPage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_usage_and_page)
+-   [**HidP\_MaxDataListLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_maxdatalistlength)
+-   [**HidP\_MaxUsageListLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_maxusagelistlength)
+-   [**HidP\_SetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
+-   [**HidP\_SetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setdata)
+-   [**HidP\_SetScaledUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setscaledusagevalue)
+-   [**HidP\_SetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusages)
+-   [**HidP\_SetUsageValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusagevalue)
+-   [**HidP\_SetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_setusagevaluearray)
+-   [**HidP\_UnsetButtons**](https://docs.microsoft.com/windows-hardware/drivers/hid/hdpi-h-macros)
+-   [**HidP\_UnsetUsages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_unsetusages)
+-   [**HidP\_UsageAndPageListDifference**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539824(v=vs.85))
+-   [**HidP\_UsageListDifference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_usagelistdifference)
 
  
 

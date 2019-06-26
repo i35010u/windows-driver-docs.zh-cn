@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3ddd29cb685f473f3b050e04f62077cc5b9547fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ebe588421ac6c49c52bea600d1ec80cda971d5d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387106"
 ---
 # <a name="devpkeydevicebusreporteddevicedesc"></a>DEVPKEY_Device_BusReportedDeviceDesc
 
@@ -56,9 +56,9 @@ DEVPKEY_Device_BusReportedDeviceDesc 设备属性表示设备实例总线驱动�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_BusReportedDeviceDesc 的值设置通过 Windows 即插即用和播放 (PnP) 设备实例总线驱动程序报告的字符串值。 总线驱动程序将返回此值时使用查询[ **IRP_MN_QUERY_DEVICE_TEXT**](https://msdn.microsoft.com/library/windows/hardware/ff551674)。
+DEVPKEY_Device_BusReportedDeviceDesc 的值设置通过 Windows 即插即用和播放 (PnP) 设备实例总线驱动程序报告的字符串值。 总线驱动程序将返回此值时使用查询[ **IRP_MN_QUERY_DEVICE_TEXT**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_BusReportedDeviceDesc 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_BusReportedDeviceDesc 值。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ DEVPKEY_Device_BusReportedDeviceDesc 的值设置通过 Windows 即插即用和�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

@@ -4,12 +4,12 @@ description: 串行总线驱动程序已加载基于创建的 ACPI，PDO 和可�
 ms.assetid: E6A3E1CF-C25B-429B-946D-B300BAF3CF9B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de4b7a842b8f49498a353ffe949fd36a6d8ea264
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 996631936f14fa737efa8d5716a6e316fc4c3ac8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364617"
 ---
 # <a name="serial-bus-driver-layer"></a>串行总线驱动程序层
 
@@ -124,14 +124,14 @@ WdfPdoInitSetEventCallbacks(DeviceInit, &Callbacks);
 ## <a name="span-idarmforwakespanspan-idarmforwakespanspan-idarmforwakespanarm-for-wake"></a><span id="Arm_for_Wake"></span><span id="arm_for_wake"></span><span id="ARM_FOR_WAKE"></span>唤醒 arm
 
 
-在进入空闲状态之前, 串行总线驱动程序将收到回调[ **EvtDeviceEnableWakeAtBus** ](https://msdn.microsoft.com/library/windows/hardware/ff540866)到 arm 唤醒。
+在进入空闲状态之前, 串行总线驱动程序将收到回调[ **EvtDeviceEnableWakeAtBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_enable_wake_at_bus)到 arm 唤醒。
 
 Arm 唤醒的机制是特定于 SoC 平台供应商，因此本部分的讨论范围内。 但是，Windows 要求总线驱动程序将准备好接收唤醒信号，且将有一个回调函数 (例如 ISR) 来处理这种信号。
 
 ## <a name="span-identeridlespanspan-identeridlespanspan-identeridlespanenter-idle"></a><span id="Enter_Idle"></span><span id="enter_idle"></span><span id="ENTER_IDLE"></span>输入空闲
 
 
-蓝牙核心驱动程序，基于时间的空闲检测机制。 在满足空闲的要求，核心驱动程序将开始启动进入空闲状态的堆栈。 它将调用[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)若要设置的能力以及完成函数进入 D2。 总线驱动程序已完成 IRP 后，调用此完成函数。 在此时间是，过渡到 D2 获取已完成。
+蓝牙核心驱动程序，基于时间的空闲检测机制。 在满足空闲的要求，核心驱动程序将开始启动进入空闲状态的堆栈。 它将调用[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)若要设置的能力以及完成函数进入 D2。 总线驱动程序已完成 IRP 后，调用此完成函数。 在此时间是，过渡到 D2 获取已完成。
 
 时转换为空闲状态，蓝牙核心驱动程序将取消所有挂起的读取请求，并重新启动它们恢复为活动状态时。 空 power 托管的队列需要使串行总线驱动程序本身进入空闲状态。
 
@@ -147,11 +147,11 @@ Arm 唤醒的机制是特定于 SoC 平台供应商，因此本部分的讨论�
 
 蓝牙函数与一个或多个设备配对并处于睡眠状态，而其单选正在定期扫描来自其配对的设备的请求。 如果配对的设备启动一个请求，获取接收的蓝牙无线开始此过程恢复为活动状态。 一旦设备堆栈已恢复为活动状态 (D0)，驱动程序才能开始处理此远程请求。
 
-在上一部分中所述，将由总线驱动程序中的唤醒信号处理函数处理此远程请求。 此唤醒信号处理函数应确保 PDO 的设备状态确实处于 D2 状态，然后调用[ **WdfDeviceIndicateWakeStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff546025) (PDO，成功状态) 以通知 KMDF 完成W/W （等待唤醒） IRP。 它是在这一次此 W/W IRP 完成函数时可调用和蓝牙核心驱动程序和电源策略所有者获取由其发起方的处理。
+在上一部分中所述，将由总线驱动程序中的唤醒信号处理函数处理此远程请求。 此唤醒信号处理函数应确保 PDO 的设备状态确实处于 D2 状态，然后调用[ **WdfDeviceIndicateWakeStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceindicatewakestatus) (PDO，成功状态) 以通知 KMDF 完成W/W （等待唤醒） IRP。 它是在这一次此 W/W IRP 完成函数时可调用和蓝牙核心驱动程序和电源策略所有者获取由其发起方的处理。
 
-W/W IRP 完成触发蓝牙核心驱动程序以启动到 D0 的转换。 它会请求[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)与完成函数来设置设备电源状态为 D0。
+W/W IRP 完成触发蓝牙核心驱动程序以启动到 D0 的转换。 它会请求[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)与完成函数来设置设备电源状态为 D0。
 
-在恢复活动 D0 状态之前串行总线驱动程序可能会收到一条通知[ **EvtDeviceDisableWakeAtBus** ](https://msdn.microsoft.com/library/windows/hardware/ff540858)若要禁用唤醒 – 这将完成过程后，若要反转什么[ **EvtDeviceEnableWakeAtBus** ](https://msdn.microsoft.com/library/windows/hardware/ff540866)像前面。
+在恢复活动 D0 状态之前串行总线驱动程序可能会收到一条通知[ **EvtDeviceDisableWakeAtBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_disable_wake_at_bus)若要禁用唤醒 – 这将完成过程后，若要反转什么[ **EvtDeviceEnableWakeAtBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_enable_wake_at_bus)像前面。
 
 恢复到 D0 的蓝牙驱动程序堆栈后，串行总线驱动程序然后可以完成远程设备请求。
 

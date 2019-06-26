@@ -11,12 +11,12 @@ keywords:
 - 驱动程序堆栈 WDK 配置信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd7b651700e2d811a0ffe3437f45e1b9ed92ea68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df25c490a2d5145a65ba8b5bab1a3d8ca134fb47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384932"
 ---
 # <a name="obtaining-device-configuration-information-at-irql--passivelevel"></a>获取设备配置信息在 IRQL = 被动\_级别
 
@@ -24,7 +24,7 @@ ms.locfileid: "63352061"
 
 
 
-向访问设备配置空间在 IRQL = 被动\_级别，则必须使用[ **IRP\_MN\_读取\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff551727)和[ **IRP\_MN\_编写\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff551769)。 指示 IRP 堆栈中你想要访问和其中的 I/O 缓冲区是其配置空间。 请参阅的说明[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)更多详细信息的结构。
+向访问设备配置空间在 IRQL = 被动\_级别，则必须使用[ **IRP\_MN\_读取\_配置**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)和[ **IRP\_MN\_编写\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)。 指示 IRP 堆栈中你想要访问和其中的 I/O 缓冲区是其配置空间。 请参阅的说明[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)更多详细信息的结构。
 
 下面的代码示例演示如何访问设备的配置空间。
 

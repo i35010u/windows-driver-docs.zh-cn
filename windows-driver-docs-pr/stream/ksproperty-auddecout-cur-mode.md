@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6de09fbd9bbd31a4242a411f26ddd2c54728ffa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9a53e89cdd5e1322f785be97ac644a6ee8db72a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374469"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386924"
 ---
 # <a name="kspropertyauddecoutcurmode"></a>KSPROPERTY\_AUDDECOUT\_CUR\_模式
 
@@ -81,7 +81,7 @@ KSPROPERTY\_AUDDECOUT\_CUR\_模式属性指示当前的音频输出模式。
 
 我们建议你指定默认值为 KSPROPERTY\_AUDDECOUT\_CUR\_微型驱动程序中的模式属性的序列化的注册表中设置的属性。
 
-有关详细信息，请参阅[音频微型端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff536206)。
+有关详细信息，请参阅[音频微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)。
 
 <a name="requirements"></a>要求
 ------------

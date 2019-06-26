@@ -4,12 +4,12 @@ description: 设备属性页提供程序的类型
 ms.assetid: b467543e-6907-44e5-b407-637cad7f6d78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ebae27b634f97d95d094f7150283ca86f779b95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af1afea7fd441c22586a56ed4570b33fc5e984c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339517"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370925"
 ---
 # <a name="types-of-device-property-page-providers"></a>设备属性页提供程序的类型
 
@@ -18,7 +18,7 @@ ms.locfileid: "63339517"
 
 -   **安装程序类和共同安装程序。**
 
-    一个[共同安装程序](writing-a-co-installer.md)通过支持可以提供一个或多个自定义设备属性页[ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://msdn.microsoft.com/library/windows/hardware/ff543656)设备安装函数 (DIF) 代码。 当安装程序，用于提供属性页句柄**DIF_ADDPROPERTYPAGE_ADVANCED**请求，它设置为属性页对话框过程的地址。
+    一个[共同安装程序](writing-a-co-installer.md)通过支持可以提供一个或多个自定义设备属性页[ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-addpropertypage-advanced)设备安装函数 (DIF) 代码。 当安装程序，用于提供属性页句柄**DIF_ADDPROPERTYPAGE_ADVANCED**请求，它设置为属性页对话框过程的地址。
 
     共同安装程序的 Toaster 示例 Windows Driver Kit (WDK) 中支持这种类型的设备属性页提供程序。 该文件位于*src\\常规\\toaster\\classinstaller* WDK 的子目录。
 

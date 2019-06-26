@@ -4,12 +4,12 @@ description: 非 HID 键盘和鼠标可以通过多个旧式总线连接，但�
 ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f29c31fae56bc7aac668d08854a40ee5bb55b5cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d44c3ddb3563d0d1f5f8d40f947656a6d4c882f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346250"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384838"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>键盘和鼠标类驱动程序
 
@@ -53,7 +53,7 @@ Kbdclass 和 Mouclass 每项功能：
 
 -   多个设备同步操作。
 
--   连接[类服务的回调例程](https://msdn.microsoft.com/library/windows/hardware/ff542274)功能驱动程序用于将数据从设备的输入的数据缓冲区传输到的数据缓冲区的类驱动程序。
+-   连接[类服务的回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/nc-kbdmou-pservice_callback_routine)功能驱动程序用于将数据从设备的输入的数据缓冲区传输到的数据缓冲区的类驱动程序。
 
 ## <a name="configuration-of-device-objects"></a>设备对象的配置
 
@@ -116,13 +116,13 @@ Kbdclass 和 Mouclass 收到创建请求后它们将执行以下操作插和旧�
 ## <a name="connect-a-service-callback-to-a-device"></a>连接到设备的服务回调
 
 
-类驱动程序必须连接到设备及其服务级别，然后才能打开设备。 类驱动程序连接其类服务后它们附加到设备堆栈类执行操作。 功能驱动程序使用类服务回调将输入的数据从设备传输到设备的类数据队列。 设备功能驱动程序的 ISR 调度完成例程调用类服务回调。 Kbdclass 提供类服务回调[ **KeyboardClassServiceCallback**](https://msdn.microsoft.com/library/windows/hardware/ff542324)，并 Mouclass 提供类服务回调[ **MouseClassServiceCallback**](https://msdn.microsoft.com/library/windows/hardware/ff542394).
+类驱动程序必须连接到设备及其服务级别，然后才能打开设备。 类驱动程序连接其类服务后它们附加到设备堆栈类执行操作。 功能驱动程序使用类服务回调将输入的数据从设备传输到设备的类数据队列。 设备功能驱动程序的 ISR 调度完成例程调用类服务回调。 Kbdclass 提供类服务回调[ **KeyboardClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542324(v=vs.85))，并 Mouclass 提供类服务回调[ **MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85)).
 
-供应商可以通过安装设备的较高级别筛选器驱动程序更改类服务回调的操作。 示例筛选器驱动程序[Kbfiltr](https://go.microsoft.com/fwlink/p/?linkid=256125)定义[ **KbFilter\_ServiceCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff542297)回调和示例筛选器驱动程序[Moufiltr](https://go.microsoft.com/fwlink/p/?linkid=256135)定义[ **MouFilter\_ServiceCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff542380)回调。 示例筛选器服务回调可以配置为修改的输入的数据，从设备的端口输入缓冲区传输到类数据队列。 例如，筛选器服务回调可以删除、 转换或插入数据。
+供应商可以通过安装设备的较高级别筛选器驱动程序更改类服务回调的操作。 示例筛选器驱动程序[Kbfiltr](https://go.microsoft.com/fwlink/p/?linkid=256125)定义[ **KbFilter\_ServiceCallback** ](https://docs.microsoft.com/previous-versions/ff542297(v=vs.85))回调和示例筛选器驱动程序[Moufiltr](https://go.microsoft.com/fwlink/p/?linkid=256135)定义[ **MouFilter\_ServiceCallback** ](https://docs.microsoft.com/previous-versions/ff542380(v=vs.85))回调。 示例筛选器服务回调可以配置为修改的输入的数据，从设备的端口输入缓冲区传输到类数据队列。 例如，筛选器服务回调可以删除、 转换或插入数据。
 
 按以下方式连接的类和筛选器服务回调：
 
--   在类驱动程序发送内部设备连接设备在堆栈的下层的请求 ([**IOCTL\_内部\_键盘\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff541279)或[ **IOCTL\_内部\_鼠标\_CONNECT**](https://msdn.microsoft.com/library/windows/hardware/ff541300))。 类将数据连接的连接指定\_数据结构，其中包括指向类设备对象和一个指向类服务回调。
+-   在类驱动程序发送内部设备连接设备在堆栈的下层的请求 ([**IOCTL\_内部\_键盘\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/ni-kbdmou-ioctl_internal_keyboard_connect)或[ **IOCTL\_内部\_鼠标\_CONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/kbdmou/ni-kbdmou-ioctl_internal_mouse_connect))。 类将数据连接的连接指定\_数据结构，其中包括指向类设备对象和一个指向类服务回调。
 
 -   筛选器驱动程序收到连接请求后，它将保存一份类连接数据，并使用筛选器连接数据替换请求的连接数据。 筛选器将数据连接指定的筛选器设备对象指针和指向筛选器驱动程序服务回调。 然后，筛选器驱动程序将筛选的连接请求发送到功能驱动程序。
 
@@ -137,19 +137,19 @@ Kbdclass 和 Mouclass 收到创建请求后它们将执行以下操作插和旧�
 
 I8042prt 支持以下内部设备控制请求有关的键盘设备，以及键盘设备上设置参数的查询信息：
 
-[**IOCTL\_键盘\_查询\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff541325)
+[**IOCTL\_键盘\_查询\_属性**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
 
-[**IOCTL\_键盘\_查询\_指示器\_翻译**](https://msdn.microsoft.com/library/windows/hardware/ff541352)
+[**IOCTL\_键盘\_查询\_指示器\_翻译**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
 
-[**IOCTL\_键盘\_查询\_指示器**](https://msdn.microsoft.com/library/windows/hardware/ff541337)
+[**IOCTL\_键盘\_查询\_指示器**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
 
-[**IOCTL\_键盘\_查询\_字符重复**](https://msdn.microsoft.com/library/windows/hardware/ff541357)
+[**IOCTL\_键盘\_查询\_字符重复**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
 
-[**IOCTL\_键盘\_设置\_指示器**](https://msdn.microsoft.com/library/windows/hardware/ff542059)
+[**IOCTL\_键盘\_设置\_指示器**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
 
-[**IOCTL\_键盘\_设置\_字符重复**](https://msdn.microsoft.com/library/windows/hardware/ff542070)
+[**IOCTL\_键盘\_设置\_字符重复**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
 
-有关所有键盘设备控制请求的详细信息，请参阅[I8042prt 键盘内部设备控制请求](https://msdn.microsoft.com/library/windows/hardware/ff539973)。
+有关所有键盘设备控制请求的详细信息，请参阅[I8042prt 键盘内部设备控制请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 ## <a name="scan-code-mapper-for-keyboards"></a>扫描码映射程序键盘
 
@@ -198,7 +198,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 |            |                                                    |
 |------------|----------------------------------------------------|
-| 值      | 解释                                     |
+| ReplTest1      | 解释                                     |
 | 0x00000000 | 标头：“版本”旁边的数字。 设置为零。                |
 | 0x00000000 | 标头：标志。 设置为零。                  |
 | 0x00000003 | 地图 （包括 null 项） 中的三个条目。   |
@@ -255,9 +255,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 I8042prt 支持以下内置设备控制请求来查询有关鼠标设备信息：
 
-[**IOCTL\_鼠标\_查询\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff542085)
+[**IOCTL\_鼠标\_查询\_属性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542085(v=vs.85))
 
-有关所有鼠标设备控制请求的详细信息，请参阅[I8042prt 鼠标内部设备控制请求](https://msdn.microsoft.com/library/windows/hardware/ff539982)。
+有关所有鼠标设备控制请求的详细信息，请参阅[I8042prt 鼠标内部设备控制请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 ## <a name="registry-settings-associated-with-mouse-class-driver"></a>与鼠标类驱动程序相关联的注册表设置
 
@@ -280,7 +280,7 @@ I8042prt 支持以下内置设备控制请求来查询有关鼠标设备信息�
 
 -   处理特定于设备的输入。
 
--   创建[**鼠标\_输入\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff542403)结构所需的[ **MouseClassServiceCallback**](https://msdn.microsoft.com/library/windows/hardware/ff542394)。
+-   创建[**鼠标\_输入\_数据**](https://docs.microsoft.com/windows/desktop/api/ntddmou/ns-ntddmou-_mouse_input_data)结构所需的[ **MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85))。
 
 -   将传输鼠标\_输入\_数据结构与通过调用 Mouclass 数据队列**MouseClassServiceCallback**中其 ISR 调度完成例程。
 

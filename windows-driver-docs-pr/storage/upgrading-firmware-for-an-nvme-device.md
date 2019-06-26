@@ -4,12 +4,12 @@ description: NVMe 存储设备上的固件更新颁发给该设备的微型端�
 ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0448455477b959ab6c097c77a2adfcb8ad0fa5dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9437d51baa99095c6381f939983757fa2e06bf3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386812"
 ---
 # <a name="upgrading-firmware-for-an-nvme-device"></a>升级为 NVMe 设备的固件
 
@@ -19,7 +19,7 @@ NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序
 ## <a name="span-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanfirmware-upgrade-process"></a><span id="Firmware_upgrade_process"></span><span id="firmware_upgrade_process"></span><span id="FIRMWARE_UPGRADE_PROCESS"></span>固件升级过程
 
 
-认证 Windows NVMe 设备都能在设备处于操作更新其固件。 使用更新固件[ **IOCTL\_SCSI\_微型端口**](https://msdn.microsoft.com/library/windows/hardware/ff560512)请求 SRB 包含具有关联的固件控制数据格式。 更新过程包括：
+认证 Windows NVMe 设备都能在设备处于操作更新其固件。 使用更新固件[ **IOCTL\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求 SRB 包含具有关联的固件控制数据格式。 更新过程包括：
 
 1.  收集固件插槽信息以确定更新的放置位置。 有一些在决定固件更新所在的位置的几个注意事项。
 
@@ -35,7 +35,7 @@ NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序
 ## <a name="span-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>微型端口固件控制请求
 
 
-在中设置每个函数命令**固件\_请求\_阻止**结构附带[ **SRB\_IO\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff566339)中的缓冲区[ **IOCTL\_SCSI\_微型端口**](https://msdn.microsoft.com/library/windows/hardware/ff560512)请求。 **ControlCode**的成员**SRB\_IO\_控制**设置为**IOCTL\_SCSI\_微型端口\_固件**表示微型端口固件操作。 函数的每个命令具有相关的信息的结构位于后**固件\_请求\_阻止**。 下表列出了每个函数命令，并包含有关系统缓冲区中的结构**IOCTL\_SCSI\_微型端口**。
+在中设置每个函数命令**固件\_请求\_阻止**结构附带[ **SRB\_IO\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ns-ntddscsi-_srb_io_control)中的缓冲区[ **IOCTL\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求。 **ControlCode**的成员**SRB\_IO\_控制**设置为**IOCTL\_SCSI\_微型端口\_固件**表示微型端口固件操作。 函数的每个命令具有相关的信息的结构位于后**固件\_请求\_阻止**。 下表列出了每个函数命令，并包含有关系统缓冲区中的结构**IOCTL\_SCSI\_微型端口**。
 
 <table>
 <colgroup>

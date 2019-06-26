@@ -19,12 +19,12 @@ keywords:
 - 传输数据 WDK 内核，异步
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5934d6193d87c05e44fdf7fed8a0609e5961650
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7386a7dc4edeb5384389bc6e21fc8f84aa18df9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364294"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371911"
 ---
 # <a name="handling-transfers-asynchronously"></a>以异步方式处理传输
 
@@ -32,7 +32,7 @@ ms.locfileid: "63364294"
 
 
 
-除了最高级别的驱动程序的所有驱动程序处理[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)并[ **IRP\_MJ\_编写** ](https://msdn.microsoft.com/library/windows/hardware/ff550819)异步请求。 *DispatchRead*并*DispatchWrite*甚至最高级别的驱动程序中的例程不能等待较低级驱动程序，以完成处理异步读取或写入请求; 它们必须通过此类请求到低级驱动程序并返回状态\_PENDING。
+除了最高级别的驱动程序的所有驱动程序处理[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)异步请求。 *DispatchRead*并*DispatchWrite*甚至最高级别的驱动程序中的例程不能等待较低级驱动程序，以完成处理异步读取或写入请求; 它们必须通过此类请求到低级驱动程序并返回状态\_PENDING。
 
 同样，最低级别的设备驱动程序的*DispatchReadWrite*例程必须传输将请求传递到其他驱动程序例程来处理设备 I/O 请求并返回状态\_PENDING。
 

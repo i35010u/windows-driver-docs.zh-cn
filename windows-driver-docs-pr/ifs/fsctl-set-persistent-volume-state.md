@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 697dd8aa46e2f1f83a51f4fb2b59b5d4d14ca875
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a863f3edc6a78add32904c32bb5bae39f59683d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361920"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380030"
 ---
 # <a name="fsctlsetpersistentvolumestate-control-code"></a>FSCTL\_设置\_的永久\_卷\_状态控制代码
 
 
 **FSCTL\_设置\_的永久\_卷\_状态**控制代码设置永久设置文件系统卷。 永久设置保留在计算机的重新启动之间的文件系统卷上。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 文件系统卷文件对象指针。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 文件系统卷文件对象指针。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 文件系统卷的文件句柄。 此参数是必需的不能**NULL**。
@@ -40,7 +40,7 @@ ms.locfileid: "63361920"
 操作的控制代码。 使用**FSCTL\_设置\_的永久\_卷\_状态**对于此操作。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-指向调用方分配的指针[**文件\_FS\_的永久\_卷\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540280)结构，其中包含永久设置文件系统卷。
+指向调用方分配的指针[**文件\_FS\_的永久\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)结构，其中包含永久设置文件系统卷。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 大小 （字节） 通过指向的缓冲区*InputBuffer*参数。
@@ -54,7 +54,7 @@ ms.locfileid: "63361920"
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功或适当的 NTSTATUS 值如以下之一：
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功或适当的 NTSTATUS 值如以下之一：
 
 <table>
 <colgroup>
@@ -70,11 +70,11 @@ ms.locfileid: "63361920"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_NOT_SUPPORTED</strong></p></td>
-<td align="left"><p>请求的注册表设置不是每个卷，或调用方指定的错误中的版本号<strong>版本</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff540280" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540280)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong> </a>.</p></td>
+<td align="left"><p>请求的注册表设置不是每个卷，或调用方指定的错误中的版本号<strong>版本</strong>的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong> </a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_INVALID_PARAMETER</strong></p></td>
-<td align="left"><p>文件系统卷不是一个打开的用户卷，或调用方指定中无效的标志<strong>FlagMask</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff540280" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540280)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong></a>。</p></td>
+<td align="left"><p>文件系统卷不是一个打开的用户卷，或调用方指定中无效的标志<strong>FlagMask</strong>的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_BUFFER_TOO_SMALL</strong></p></td>
@@ -124,9 +124,9 @@ ms.locfileid: "63361920"
 ## <a name="see-also"></a>请参阅
 
 
-[**文件\_FS\_的永久\_卷\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540280)
+[**文件\_FS\_的永久\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

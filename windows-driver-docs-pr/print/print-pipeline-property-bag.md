@@ -18,12 +18,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23ae404f052d7ea69152dacfcf9203fde5c9679f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df8ad363df165239f96a6fb5c8588b3557acb022
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340887"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385394"
 ---
 # <a name="print-pipeline-property-bag"></a>打印管道属性包
 
@@ -55,7 +55,7 @@ ms.locfileid: "63340887"
 <td><p>ProgressReport</p></td>
 <td><p>XPS_FP_PROGRESS_REPORT</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://msdn.microsoft.com/library/windows/hardware/ff554314" data-raw-source="[IPrintPipelineProgressReport](https://msdn.microsoft.com/library/windows/hardware/ff554314)">IPrintPipelineProgressReport</a>接口。</p></td>
+<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelineprogressreport" data-raw-source="[IPrintPipelineProgressReport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelineprogressreport)">IPrintPipelineProgressReport</a>接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PrinterHandle</p></td>
@@ -67,7 +67,7 @@ ms.locfileid: "63340887"
 <td><p>PerUserPrintTicket</p></td>
 <td><p>XPS_FP_USER_PRINT_TICKET</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://msdn.microsoft.com/library/windows/hardware/ff554338" data-raw-source="[IPrintReadStreamFactory](https://msdn.microsoft.com/library/windows/hardware/ff554338)">IPrintReadStreamFactory</a>接口。</p></td>
+<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory" data-raw-source="[IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)">IPrintReadStreamFactory</a>接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p>UserSecurityToken</p></td>
@@ -85,20 +85,20 @@ ms.locfileid: "63340887"
 <td><p>PrintClassFactory</p></td>
 <td><p>XPS_FP_PRINT_CLASS_FACTORY</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://msdn.microsoft.com/library/windows/hardware/ff551955" data-raw-source="[IPrintClassObjectFactory](https://msdn.microsoft.com/library/windows/hardware/ff551955)">IPrintClassObjectFactory</a>接口。</p></td>
+<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory" data-raw-source="[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)">IPrintClassObjectFactory</a>接口。</p></td>
 </tr>
 <tr class="even">
 <td><p>IPrintCoreHelper</p></td>
 <td><p>（没有任何符号名称，此属性名称。）</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://msdn.microsoft.com/library/windows/hardware/ff552960" data-raw-source="[IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)">IPrintCoreHelper</a>接口。</p>
+<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper" data-raw-source="[IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)">IPrintCoreHelper</a>接口。</p>
 <p>请注意，此属性仅用作配置 UI DLL unidrvui.dll 的 XPSDrv 打印机驱动程序中可用。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PrintDeviceCapabilities</p></td>
 <td><p>XPS_FP_PRINTDEVICECAPABILITIES</p></td>
 <td><p>VT_UNKNOWN</p></td>
-<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://msdn.microsoft.com/library/windows/hardware/ff554338" data-raw-source="[IPrintReadStreamFactory](https://msdn.microsoft.com/library/windows/hardware/ff554338)">IPrintReadStreamFactory</a>接口。</p>
+<td><p>一个指向<strong>IUnknown</strong>接口。 调用<strong>QueryInterface</strong>若要获取的指针<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory" data-raw-source="[IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)">IPrintReadStreamFactory</a>接口。</p>
 <p>允许 XPS 呈现筛选器，以从打印筛选器管道属性包检索 PrintDeviceCapabilities XML 文件。</p></td>
 </tr>
 </tbody>

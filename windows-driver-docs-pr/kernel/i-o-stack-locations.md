@@ -11,12 +11,12 @@ keywords:
 - IO_STACK_LOCATION 结构
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae09b1cddf0813a586a499b5f2c360011eeffc27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8bc5ef74d849c7e1af7f5bb0321c6a9f0040b0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371863"
 ---
 # <a name="io-stack-locations"></a>I/O 堆栈位置
 
@@ -24,11 +24,11 @@ ms.locfileid: "63380938"
 
 
 
-I/O 管理器提供的分层驱动程序链中每个驱动程序 I/O 堆栈位置设置了每个 IRP。 每个 I/O 堆栈位置组成[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构。
+I/O 管理器提供的分层驱动程序链中每个驱动程序 I/O 堆栈位置设置了每个 IRP。 每个 I/O 堆栈位置组成[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构。
 
-I/O 管理器创建的每个 IRP 的 I/O 堆栈位置的数组与数组元素对应的分层驱动程序链中每个驱动程序。 每个驱动程序拥有的堆栈位置中的数据包和调用之一[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)以获取有关 I/O 操作的特定于驱动程序的信息。
+I/O 管理器创建的每个 IRP 的 I/O 堆栈位置的数组与数组元素对应的分层驱动程序链中每个驱动程序。 每个驱动程序拥有的堆栈位置中的数据包和调用之一[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)以获取有关 I/O 操作的特定于驱动程序的信息。
 
-此类链中的每个驱动程序负责调用[ **IoGetNextIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549266)，然后设置下一步低驱动程序的 I/O 堆栈位置。 此外可以使用任何更高级别的驱动程序的 I/O 堆栈位置来存储有关操作的上下文，以便在驱动程序[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程可以执行其清理操作。
+此类链中的每个驱动程序负责调用[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)，然后设置下一步低驱动程序的 I/O 堆栈位置。 此外可以使用任何更高级别的驱动程序的 I/O 堆栈位置来存储有关操作的上下文，以便在驱动程序[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程可以执行其清理操作。
 
 [分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图在原始 IRP 中显示两个 I/O 堆栈位置，因为它显示了两个驱动程序、 文件系统驱动程序和大容量存储设备驱动程序。 在驱动程序分配 Irp[分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图没有所需的堆栈位置 FSD 创建它们。 将 Irp 为较低级别的驱动程序分配任何更高级别的驱动程序还可以确定多少个 I/O 堆栈位置应具有新 Irp，根据**StackSize**下一步低驱动程序的设备对象的值。
 
@@ -52,21 +52,21 @@ I/O 管理器创建的每个 IRP 的 I/O 堆栈位置的数组与数组元素对
 
 组的特定驱动程序处理的 IRP 主要和次要函数代码可以是特定于设备类型。 但是，最低级别的驱动程序和中间驱动程序 （包括即插即用的函数和筛选器驱动程序） 通常处理的基本请求以下组：
 
--   [**IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff550729) — 打开，指示它已存在且可用的 I/O 操作的目标设备对象
+-   [**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create) — 打开，指示它已存在且可用的 I/O 操作的目标设备对象
 
--   [**IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794) — 从设备传输数据
+-   [**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) — 从设备传输数据
 
--   [**IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819) — 将数据传输到设备
+-   [**IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) — 将数据传输到设备
 
--   [**IRP\_MJ\_设备\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff550744) — 设置 （或重置） 设备，根据系统定义的特定于设备的类型的 I/O 控制代码 (IOCTL)
+-   [**IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) — 设置 （或重置） 设备，根据系统定义的特定于设备的类型的 I/O 控制代码 (IOCTL)
 
--   [**IRP\_MJ\_关闭**](https://msdn.microsoft.com/library/windows/hardware/ff550720) — 关闭目标设备对象
+-   [**IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close) — 关闭目标设备对象
 
--   [**IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772) — 插对设备执行操作。 **IRP\_MJ\_PNP**通过 I/O 管理器的即插即用管理器发送请求。
+-   [**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp) — 插对设备执行操作。 **IRP\_MJ\_PNP**通过 I/O 管理器的即插即用管理器发送请求。
 
--   [**IRP\_MJ\_电源**](https://msdn.microsoft.com/library/windows/hardware/ff550784) — 执行电源操作在设备上的。 **IRP\_MJ\_POWER**电源管理器通过 I/O 管理器发送请求。
+-   [**IRP\_MJ\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) — 执行电源操作在设备上的。 **IRP\_MJ\_POWER**电源管理器通过 I/O 管理器发送请求。
 
-有关驱动程序所需处理主要 IRP 函数代码的详细信息，请参阅[IRP 主要函数代码](https://msdn.microsoft.com/library/windows/hardware/ff550710)。
+有关驱动程序所需处理主要 IRP 函数代码的详细信息，请参阅[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)。
 
 一般情况下，I/O 管理器将发送 Irp 到大容量存储设备驱动程序的至少两个 I/O 堆栈位置与因为文件系统上层的其他大容量存储设备的驱动程序。 I/O 管理器将 Irp 发送与任何具有它的上面没有其他驱动程序的驱动程序的堆栈位置。
 

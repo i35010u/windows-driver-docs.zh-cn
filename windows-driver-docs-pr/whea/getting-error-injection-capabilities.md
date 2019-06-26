@@ -11,17 +11,17 @@ keywords:
 - 注入硬件错误 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a778288b41c07419acb4dea2ce44223130d943e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2e02fb314100b8404ee8f6bf66807cd4228ba54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367993"
 ---
 # <a name="getting-error-injection-capabilities"></a>获取错误注入功能
 
 
-在用户模式应用程序可以获取有关错误的信息的硬件平台的注入功能通过调用[ **WHEAErrorInjectionMethods::GetErrorInjectionCapabilitiesRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559516)方法。 此方法返回[ **WHEA\_错误\_注入\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff560460)结构，它介绍了支持的错误注入功能硬件平台。
+在用户模式应用程序可以获取有关错误的信息的硬件平台的注入功能通过调用[ **WHEAErrorInjectionMethods::GetErrorInjectionCapabilitiesRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)方法。 此方法返回[ **WHEA\_错误\_注入\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_injection_capabilities)结构，它介绍了支持的错误注入功能硬件平台。
 
 下面的代码示例演示如何检索错误注入功能信息。
 

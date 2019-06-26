@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cd03dfbc3e5784ecbda3f3a93486d412ba9ada8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a80cf5bab4605cb63573fba8c1b8efab22dc3462
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387073"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377885"
 ---
 # <a name="srbopenstream"></a>SRB\_OPEN\_STREAM
 
@@ -45,9 +45,9 @@ ms.locfileid: "63387073"
 
 ### <a name="comments"></a>备注
 
-在类驱动程序提供了[ **HW\_流\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff559697)中的缓冲区*pSrb* - &gt; **StreamObject**，使用*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**设置为流的数量，以打开。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。 **StreamNumber**对应于流中的偏移量[ **HW\_流\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff559686)微型驱动程序提供响应的结构[**SRB\_获取\_流\_信息**](srb-get-stream-info.md)请求。 在类驱动程序指定打开的流应在提供的数据格式*pSrb*-&gt;**CommandData** - &gt; **OpenFormat**。
+在类驱动程序提供了[ **HW\_流\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)中的缓冲区*pSrb* - &gt; **StreamObject**，使用*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**设置为流的数量，以打开。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。 **StreamNumber**对应于流中的偏移量[ **HW\_流\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor)微型驱动程序提供响应的结构[**SRB\_获取\_流\_信息**](srb-get-stream-info.md)请求。 在类驱动程序指定打开的流应在提供的数据格式*pSrb*-&gt;**CommandData** - &gt; **OpenFormat**。
 
-当微型驱动程序收到此请求时，它应确定是否可以在这一次打开指定的流。 微型驱动程序还应验证[ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)格式传递。 SRB OpenFormat 字段。 如果可以打开流，微型驱动程序更新 HW\_流\_对象的结构，并返回状态\_成功。 如果最大流实例数已打开，或打开此流所需的硬件资源不可用，微型驱动程序将返回相应的错误状态。
+当微型驱动程序收到此请求时，它应确定是否可以在这一次打开指定的流。 微型驱动程序还应验证[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)格式传递。 SRB OpenFormat 字段。 如果可以打开流，微型驱动程序更新 HW\_流\_对象的结构，并返回状态\_成功。 如果最大流实例数已打开，或打开此流所需的硬件资源不可用，微型驱动程序将返回相应的错误状态。
 
 **当 SRB\_打开\_微型驱动程序收到流命令时，微型驱动程序应：**
 

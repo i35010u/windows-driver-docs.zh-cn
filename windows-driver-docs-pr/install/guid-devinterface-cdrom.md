@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dac56719f1334916bda5c00089210247317bc87e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf8e3c75144eda4b84e05af890107e8a6241243f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358826"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372731"
 ---
 # <a name="guiddevinterfacecdrom"></a>GUID_DEVINTERFACE_CDROM
 
 
-GUID_DEVINTERFACE_CDROM[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)定义的 CD-ROM[存储设备](https://msdn.microsoft.com/library/windows/hardware/ff566969)。
+GUID_DEVINTERFACE_CDROM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义的 CD-ROM[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。
 
 <table>
 <colgroup>
@@ -60,7 +60,7 @@ CD-ROM 存储设备的系统提供的类驱动程序注册通知的操作系统�
 
 有关 CD-ROM 换带机设备的设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_CDCHANGER**](guid-devinterface-cdchanger.md)。
 
-有关存储设备的信息，请参阅[存储设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff566976)。
+有关存储设备的信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
 <a name="requirements"></a>要求
 ------------

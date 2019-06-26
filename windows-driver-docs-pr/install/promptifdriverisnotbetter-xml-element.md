@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a95354d6963019286d82ec88bb541689d285fa1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a9c6d95db60d5cce48b0c27013bf199a58e249f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380469"
 ---
 # <a name="promptifdriverisnotbetter-xml-element"></a>promptIfDriverIsNotBetter XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **PromptIfDriverIsNotBetter** XML 元素为空元素，用于设置**promptIfDriverIsNotBetter**标志为 ON，将配置 DPInst 以显示一个对话框中，如果新的驱动程序不是更好的匹配项到比当前安装在设备的驱动程序的设备。 对话框告知用户这种情况下的，并提供了一个选项以替换与新的驱动程序在设备当前安装的驱动程序。
 

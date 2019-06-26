@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 18757cc3041b8e5673218516f4368a083892f502
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af92340222bfd1f6e5baab39bda2de06af81bdd3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389090"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371668"
 ---
 # <a name="bcdedit-emssettings"></a>BCDEdit /emssettings
 
@@ -46,15 +46,15 @@ ms.locfileid: "63389090"
 
 若要正确启用 EMS 控制台重定向，安装 Windows 后，Windows 需要知道计算机使用的带外通信的端口和传输速率。 Windows 使用这些相同的设置的 EMS 控制台重定向。
 
-在使用 BIOS 固件和 ACPI 串行端口控制台重定向 (SPCR) 表的计算机，Windows 可以找到通过读取 SPCR 表中的条目来建立在 BIOS 中的带外设置。 在这些系统中，您可以使用**BIOS**参数指示 Windows 在端口设置，或者你 SPCR 表中进行查找可以使用**emsport:**<em>端口</em>和**emsbaudrate:**<em>baudrate</em>参数来替代 SPCR 表中的设置。
+在使用 BIOS 固件和 ACPI 串行端口控制台重定向 (SPCR) 表的计算机，Windows 可以找到通过读取 SPCR 表中的条目来建立在 BIOS 中的带外设置。 在这些系统中，您可以使用**BIOS**参数指示 Windows 在端口设置，或者你 SPCR 表中进行查找可以使用**emsport:** <em>端口</em>和**emsbaudrate:** <em>baudrate</em>参数来替代 SPCR 表中的设置。
 
-计算机上具有 BIOS 固件，但不是具有 SPCR 表，使用 BCDEdit 并 **/emssettings**命令**emsport:**<em>端口</em>参数来指定的端口和与**emsbaudrate:**<em>baudrate</em>参数指定的传输速率。
+计算机上具有 BIOS 固件，但不是具有 SPCR 表，使用 BCDEdit 并 **/emssettings**命令**emsport:** <em>端口</em>参数来指定的端口和与**emsbaudrate:** <em>baudrate</em>参数指定的传输速率。
 
 在所有系统上使用[ **BCDEdit /ems** ](bcdedit--ems.md)命令并指定要启用 EMS 控制台重定向的启动项目加载的操作系统上的启动项。
 
 安装 Windows 之后，在本部分中所述的启动参数启用 EMS 控制台重定向。 有关全新安装或升级 Windows 过程中启用 EMS，"启用紧急管理服务"上搜索[Microsoft TechNet](https://go.microsoft.com/fwlink/p/?linkid=10111)网站。
 
-有关详细示例，请参阅[启用 EMS 重定向的启动参数](https://msdn.microsoft.com/library/windows/hardware/ff542282)。
+有关详细示例，请参阅[启用 EMS 重定向的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-ems-redirection)。
 
  
 

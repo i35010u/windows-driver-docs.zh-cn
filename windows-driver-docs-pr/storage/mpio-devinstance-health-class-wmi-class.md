@@ -4,12 +4,12 @@ description: MPIO\_DEVINSTANCE\_运行状况\_类 WMI 类
 ms.assetid: d2c77461-d89c-4c1b-86dc-3373de0f11e4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6ea752a24f3a902cbf00bb93d3b093a53a0b13de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30863ec93e521bb8eb91adf33e3a864fb1c27530
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391430"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386172"
 ---
 # <a name="mpiodevinstancehealthclass-wmi-class"></a>MPIO\_DEVINSTANCE\_运行状况\_类 WMI 类
 
@@ -140,7 +140,7 @@ class MPIO_DEVINSTANCE_HEALTH_CLASS
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_DEVINSTANCE\_运行状况\_类**](https://msdn.microsoft.com/library/windows/hardware/ff562337)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_DEVINSTANCE\_运行状况\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_devinstance_health_class)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

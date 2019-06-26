@@ -4,12 +4,12 @@ description: 完成测试签名和验证该驱动程序已准备好发布后，�
 ms.assetid: 71499A0A-95D0-411C-84D1-C4B91FA4E6B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccf11cd9c23287cef6b1bdd7a7e130420d21665f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84bc3d2439fbc48fe552372fa6928da5128389b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379359"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387316"
 ---
 # <a name="release-signing"></a>发布签名
 
@@ -20,7 +20,7 @@ ms.locfileid: "63379359"
 
 内核模式二进制文件是通过已发布签名：
 
-1.  Windows 硬件质量实验室 (WHQL 也称为 Winqual) 以释放签署驱动程序包。 WHQL 版本签名是通过 Windows 认证计划获得的。 以下链接介绍从开始到结束 Windows 认证计划上的五个步骤。 请参阅[Windows 硬件认证： 从这里开始](https://msdn.microsoft.com/windows/hardware/hh833792)有关此选项的详细信息。 在上面的链接中的步骤的任何问题应会定向到<sysdev@microsft.com>别名。
+1.  Windows 硬件质量实验室 (WHQL 也称为 Winqual) 以释放签署驱动程序包。 WHQL 版本签名是通过 Windows 认证计划获得的。 以下链接介绍从开始到结束 Windows 认证计划上的五个步骤。 请参阅[Windows 硬件认证： 从这里开始](https://docs.microsoft.com/previous-versions/hh833792(v=msdn.10))有关此选项的详细信息。 在上面的链接中的步骤的任何问题应会定向到<sysdev@microsft.com>别名。
 2.  而不是使用 WHQL 程序，驱动程序包可以是由驱动程序开发人员和供应商签名的版本。 此程序已开始从 Vista OS 版本。 版本签名会创建通过软件发行者证书 (SPC)。 从 Microsoft 授权颁发此类证书的第三方证书颁发机构 (CA) 获取 SPC。 使用这种类型的 SPC 生成的签名也符合 64 位和 32 位版本的 Windows Vista 和更高版本的 Windows 的即插即用驱动程序签名要求
 
 接下来介绍了发布登录方法 2 的驱动程序包所需的步骤。
@@ -63,7 +63,7 @@ Microsoft 提供的特定交叉证书用于代码签名的内核模式代码发�
 
 *更多部分内容摘自*[软件发布者证书](software-publisher-certificate.md):
 
-若要使用一个 SPC 进行签名的驱动程序符合的方式[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)，必须首先中个人信息交换中包含的证书信息 (*.pfx*)文件。 中包含的信息 *.pfx*然后必须将文件添加到驱动程序进行签名的本地计算机的个人证书存储。
+若要使用一个 SPC 进行签名的驱动程序符合的方式[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)，必须首先中个人信息交换中包含的证书信息 ( *.pfx*)文件。 中包含的信息 *.pfx*然后必须将文件添加到驱动程序进行签名的本地计算机的个人证书存储。
 
 CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此，你可以添加。*pfx*中所述的说明的个人证书存储的文件[在个人证书存储中安装.pfx 文件](software-publisher-certificate.md#installing-a-pfx-file-in-the-personal-certificate-store)。
 
@@ -77,7 +77,7 @@ CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此
 
 若要创建。*pfx*文件由 CA 颁发的对从文件中，按照这些说明进行操作：
 
--   要转换 *.pvk*文件和一个 *.spc*文件发送到 *.pfx*文件，请使用以下[ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)在命令提示符的命令：
+-   要转换 *.pvk*文件和一个 *.spc*文件发送到 *.pfx*文件，请使用以下[ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)在命令提示符的命令：
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
@@ -89,7 +89,7 @@ CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-以下描述中使用的参数[ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)命令：
+以下描述中使用的参数[ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)命令：
 
 -   **-Pvk**  *mypvkfile.pvk*参数指定 *.pvk*文件。
 

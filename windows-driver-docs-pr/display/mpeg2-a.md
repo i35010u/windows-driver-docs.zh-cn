@@ -6,12 +6,12 @@ keywords:
 - MPEG2_A 受限制的配置文件 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e040c995b2796a49ce6b23c2a90003b6850b1acd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4af2561413249315ed6e225c570448af736090ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372864"
 ---
 # <a name="mpeg2a"></a>MPEG2\_A
 
@@ -25,7 +25,7 @@ MPEG2\_由以下几组限制定义一个配置文件：
 
 ### <a name="span-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanrestrictions-on-dxvaconnectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA 限制\_ConnectMode
 
-上的以下限制[ **DXVA\_ConnectMode** ](https://msdn.microsoft.com/library/windows/hardware/ff563138)结构时，适用*bDXVA\_Func* 中定义的变量**dwFunction**的成员[ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)结构是否等于 1。
+上的以下限制[ **DXVA\_ConnectMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_connectmode)结构时，适用*bDXVA\_Func* 中定义的变量**dwFunction**的成员[ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)结构是否等于 1。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ MPEG2\_由以下几组限制定义一个配置文件：
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -151,7 +151,7 @@ MPEG2\_由以下几组限制定义一个配置文件：
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>MBscanMethod</em></p></td>
-<td align="left"><p>可能是零 （z 形） 的值或值为 1 （备用垂直） 如果<strong>ConfigHostInverseScan</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff563133" data-raw-source="[&lt;strong&gt;DXVA_ConfigPictureDecode&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563133)"> <strong>DXVA_ConfigPictureDecode</strong> </a>等于零。</p></td>
+<td align="left"><p>可能是零 （z 形） 的值或值为 1 （备用垂直） 如果<strong>ConfigHostInverseScan</strong>的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode" data-raw-source="[&lt;strong&gt;DXVA_ConfigPictureDecode&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)"> <strong>DXVA_ConfigPictureDecode</strong> </a>等于零。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>H261LoopFilter</p></td>
@@ -166,7 +166,7 @@ MPEG2\_由以下几组限制定义一个配置文件：
 
 任何位流缓冲区的内容必须包含 mpeg-2 主配置文件的视频格式的数据。
 
-**BNewQmatrix**的成员[ **DXVA\_QmatrixData** ](https://msdn.microsoft.com/library/windows/hardware/ff564034)为等于零，我使用反转量化矩阵时 = 2 和 3。
+**BNewQmatrix**的成员[ **DXVA\_QmatrixData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_qmatrixdata)为等于零，我使用反转量化矩阵时 = 2 和 3。
 
  
 

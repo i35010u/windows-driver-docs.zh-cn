@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d20d6da973b5a5a49bd7f0e5bf7c24adee375c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bffffaf88b9d0c03285516fa11f1f565c0ce610
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373105"
 ---
 # <a name="kspropertyconnectionstartat"></a>KSPROPERTY\_连接\_STARTAT
 
@@ -54,7 +54,7 @@ KSPROPERTY\_连接\_STARTAT 是由支持指定的事件发生时启动的筛选�
 <td><p>是</p></td>
 <td><p>Filter</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566776" data-raw-source="[&lt;strong&gt;KSRELATIVEEVENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566776)"><strong>KSRELATIVEEVENT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrelativeevent" data-raw-source="[&lt;strong&gt;KSRELATIVEEVENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrelativeevent)"><strong>KSRELATIVEEVENT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +85,9 @@ Pin 处于暂停状态，若要转换到运行状态的 pin 时，应仅请求�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSRELATIVEEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff566776)
+[**KSRELATIVEEVENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrelativeevent)
 
-[**KSEVENT\_ITEM**](https://msdn.microsoft.com/library/windows/hardware/ff561862)
+[**KSEVENT\_ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksevent_item)
 
  
 

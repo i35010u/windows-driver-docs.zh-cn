@@ -8,12 +8,12 @@ keywords:
 - 多个接口 WDK USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 278434ff8936d3ecd3067defc3d817ffd5aac922
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc4bdfcdfa0d373d8012ad0149db482c261c574b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369407"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385885"
 ---
 # <a name="standard-usb-identifiers"></a>标准 USB 标识符
 
@@ -63,7 +63,7 @@ USB\\CLASS_c(2)
 
 ### <a name="multiple-interface-usb-devices"></a>多个接口 USB 设备
 
-设备具有多个接口称为*复合*设备。 从 Windows 2000 中，新建[USB 复合设备](https://msdn.microsoft.com/library/windows/hardware/ff537109)插入到一台计算机，USB 集线器驱动程序创建一个物理设备对象 (PDO)，并通知其的子设备集已更改的操作系统。 查询使用新的 PDO 相关联的硬件标识符的中心驱动程序后, 操作系统搜索相应的 INF 文件，查找匹配项的标识符。 如果它找到的匹配项以外*USB\\复合*，它会加载驱动程序 INF 文件中指定。 但是，如果不找到任何其他匹配项，则操作系统将使用兼容 ID *USB\\复合*，它将加载通用父表 USB 驱动程序。 泛型父驱动程序然后创建一个单独的 PDO，并生成一组单独的复合设备的每个接口的硬件标识符。
+设备具有多个接口称为*复合*设备。 从 Windows 2000 中，新建[USB 复合设备](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)插入到一台计算机，USB 集线器驱动程序创建一个物理设备对象 (PDO)，并通知其的子设备集已更改的操作系统。 查询使用新的 PDO 相关联的硬件标识符的中心驱动程序后, 操作系统搜索相应的 INF 文件，查找匹配项的标识符。 如果它找到的匹配项以外*USB\\复合*，它会加载驱动程序 INF 文件中指定。 但是，如果不找到任何其他匹配项，则操作系统将使用兼容 ID *USB\\复合*，它将加载通用父表 USB 驱动程序。 泛型父驱动程序然后创建一个单独的 PDO，并生成一组单独的复合设备的每个接口的硬件标识符。
 
 每个接口具有以下形式的设备 ID:
 

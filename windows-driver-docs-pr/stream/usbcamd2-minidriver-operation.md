@@ -12,12 +12,12 @@ keywords:
 - Srb WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f94f562f0c91c5d50fe3eb2847fa7a9717637bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d415a029703081bc2c60c3241666cac41ba9dbf9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373045"
 ---
 # <a name="usbcamd2-minidriver-operation"></a>USBCAMD2 微型驱动程序操作
 
@@ -94,7 +94,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 
 | 组件 | 操作 |
 | --- | --- |
-| 照相机微型驱动程序 | 返回[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions//ff561658(v=vs.85))结构。 |
+| 照相机微型驱动程序 | 返回[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构。 |
 | 照相机微型驱动程序 | 检查请求的帧速率 (**VideoInfoHeader.AvgTimePerFrame**) 是所请求的视频格式的上限和下限的限制范围内。 如果超出限制，微型驱动程序应正确 pSrb 中的以下值-> CommandData.IntersectInfo-> Datarange:VideoInfoHeader.AvgTimePerFrame，VideoInfoHeader.dwBitRate。 |
 
 ## <a name="minidrivers-srbopenstream-handler"></a>微型驱动程序的 SRB\_打开\_流处理程序
@@ -131,7 +131,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 | --- | --- |
 | 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
 | USBCAMD2 | 如果任何流都仍然打开时，关闭它们通过调用微型驱动程序的[ **CamStopCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_stop_capture_routine_ex)并[ **CamFreeBandwidthEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_free_bw_routine_ex)回调对每个流的功能。 |
-| USBCAMD2 | 调用微型驱动程序的[ **CamUnInitialize** ](https://docs.microsoft.com/previous-versions//ff557646(v=vs.85))回调函数。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamUnInitialize** ](https://docs.microsoft.com/previous-versions/ff557646(v=vs.85))回调函数。 |
 | 照相机微型驱动程序 | 清除并释放资源。 |
 
 ## <a name="minidrivers-srbsurpriseremoval-handler"></a>微型驱动程序的 SRB\_惊讶\_删除处理程序

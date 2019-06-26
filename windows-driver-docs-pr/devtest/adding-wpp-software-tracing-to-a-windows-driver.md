@@ -4,12 +4,12 @@ description: 若要使用 WPP 软件跟踪在跟踪提供程序，如内核模�
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5fcdabb83c8e664de60bef7382c8b9a6ccba2de
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: f1254f82b84e93eb4cfcf56a46e6decffbb85720
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815085"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371686"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
@@ -27,17 +27,17 @@ ms.locfileid: "66815085"
 
 ## <a name="step-1-define-the-control-guid-and-trace-flags"></a>第 1 步：定义控件的 GUID 和跟踪标志
 
-必须唯一地定义每个跟踪提供程序 （如驱动程序或用户模式应用程序）。 执行此操作通过添加[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏，用于定义控件 GUID、 标识符和跟踪标志。 这样，以便可以识别并控制何时以及你希望跟踪。 虽然每个驱动程序通常有一个单独的控件的 GUID，驱动程序可以有多个控件的 Guid，或多个驱动程序可以共享一个控件的 GUID。
+必须唯一地定义每个跟踪提供程序 （如驱动程序或用户模式应用程序）。 执行此操作通过添加[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏，用于定义控件 GUID、 标识符和跟踪标志。 这样，以便可以识别并控制何时以及你希望跟踪。 虽然每个驱动程序通常有一个单独的控件的 GUID，驱动程序可以有多个控件的 Guid，或多个驱动程序可以共享一个控件的 GUID。
 
-为方便起见， [WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏通常在常见头文件中定义。 标头文件必须包含 (\#包括) 想要检测的跟踪任何源文件中。
+为方便起见， [WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏通常在常见头文件中定义。 标头文件必须包含 (\#包括) 想要检测的跟踪任何源文件中。
 
 **若要添加 WPP\_控制\_GUID 宏为您的驱动程序：**
 
 1.  添加一个新C++可用于定义 WPP 跟踪宏在 Visual Studio 项目的标头文件。 例如，右键单击解决方案资源管理器中的驱动程序，然后单击**外&gt;新项**。 将该文件 （存 Trace.h，例如)。
 
-2.  添加[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏来指定跟踪提供程序的友好名称，定义一个控件的 GUID，并定义可用于限定特定跟踪消息的跟踪标志。
+2.  添加[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏来指定跟踪提供程序的友好名称，定义一个控件的 GUID，并定义可用于限定特定跟踪消息的跟踪标志。
 
-    [WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏具有以下语法：
+    [WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏具有以下语法：
 
     **语法 WPP\_控制\_GUID**
 
@@ -87,7 +87,7 @@ ms.locfileid: "66815085"
 
 **选择跟踪消息函数**
 
-1.  默认跟踪消息函数是[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)宏。 如果使用默认函数可控制何时生成消息使用[跟踪标志](trace-level.md)您的提供程序的值。 跟踪标志的值为在步骤 1 中创建控件 GUID 时定义的标志。 如果您使用**DoTraceMessage**，默认 WPP 宏已定义为您 (WPP\_级别\_已启用和 WPP\_级别\_记录器)，因此可以跳过此步骤的其余部分并转到[步骤 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)。
+1.  默认跟踪消息函数是[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏。 如果使用默认函数可控制何时生成消息使用[跟踪标志](trace-level.md)您的提供程序的值。 跟踪标志的值为在步骤 1 中创建控件 GUID 时定义的标志。 如果您使用**DoTraceMessage**，默认 WPP 宏已定义为您 (WPP\_级别\_已启用和 WPP\_级别\_记录器)，因此可以跳过此步骤的其余部分并转到[步骤 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)。
 
 2.  如果使用 KMDF 或 UMDF 模板之一**TraceEvents**函数和必要的 WPP 宏已定义要启用该功能，因此你可以跳到[第 5 步](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)。
 
@@ -95,7 +95,7 @@ ms.locfileid: "66815085"
 
 **创建或自定义跟踪消息函数**
 
-1.  如果你正在使用的自定义跟踪消息功能，或者想要将调试打印功能转换 (例如， [ **KdPrint**](https://msdn.microsoft.com/library/windows/hardware/ff548092)) 若要生成跟踪消息，您需要定义用于标识和启用 WPP 宏跟踪提供程序中的跟踪消息函数。 Trace.h 标头文件添加到你的项目中放入这些宏。
+1.  如果你正在使用的自定义跟踪消息功能，或者想要将调试打印功能转换 (例如， [ **KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)) 若要生成跟踪消息，您需要定义用于标识和启用 WPP 宏跟踪提供程序中的跟踪消息函数。 Trace.h 标头文件添加到你的项目中放入这些宏。
 
 2.  定义 WPP 宏，以启用跟踪功能。
 
@@ -128,7 +128,7 @@ ms.locfileid: "66815085"
 
 
 
-定义，WPP 宏*条件*表示跟踪消息函数支持，以下划线分隔的函数的参数列表中的显示顺序的条件。 例如，默认跟踪消息函数[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)，仅支持[跟踪标志](trace-level.md)作为条件，因此，只有一个参数在宏名称中 (WPP\_级别\_已启用)。
+定义，WPP 宏*条件*表示跟踪消息函数支持，以下划线分隔的函数的参数列表中的显示顺序的条件。 例如，默认跟踪消息函数[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))，仅支持[跟踪标志](trace-level.md)作为条件，因此，只有一个参数在宏名称中 (WPP\_级别\_已启用)。
 
 **请注意**遗憾的是，默认宏的名称 (WPP\_级别\_已启用和 WPP\_级别\_记录器) 似乎指出了[跟踪级别](trace-level.md)参数，但它们实际上是指跟踪标志。
 
@@ -159,7 +159,7 @@ ms.locfileid: "66815085"
 //
 ```
 
-此外可以将现有调试 print 语句转换为跟踪语句通过添加一个类似的消息**FUNC** WPP 配置块中的声明。 例如，下面的示例添加的代码要转换的现有[ **KdPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff548092)语句。 **FUNC**声明全局还定义了**KdPrint**若要使用指定的跟踪级别和标志 {级别 = 跟踪\_级别\_信息、 标志 = 跟踪\_驱动程序}。 而不是将输出发送到调试器，调试 print 语句发送到跟踪日志。
+此外可以将现有调试 print 语句转换为跟踪语句通过添加一个类似的消息**FUNC** WPP 配置块中的声明。 例如，下面的示例添加的代码要转换的现有[ **KdPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)语句。 **FUNC**声明全局还定义了**KdPrint**若要使用指定的跟踪级别和标志 {级别 = 跟踪\_级别\_信息、 标志 = 跟踪\_驱动程序}。 而不是将输出发送到调试器，调试 print 语句发送到跟踪日志。
 
 ```ManagedCPlusPlus
 //
@@ -173,7 +173,7 @@ ms.locfileid: "66815085"
 //
 ```
 
-**请注意**如果你想要转换[ **KdPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548100)为跟踪消息函数，需要执行一些额外的步骤。 相比[ **KdPrint**](https://msdn.microsoft.com/library/windows/hardware/ff548092)，则**KdPrintEx**函数采用两个其他参数。 要转换**KdPrintEx**函数，您需要定义**WPP\_定义\_位**有关*ComponentID*，并定义自定义**WPP\_ *&lt;条件&gt;* \_记录器**并**WPP\_  *&lt;条件&gt;* \_已启用**宏。 第二个参数**KdPrintEx**指定的级别是类似于[跟踪级别](trace-level.md)值，因此不一定要重新定义它们。
+**请注意**如果你想要转换[ **KdPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)为跟踪消息函数，需要执行一些额外的步骤。 相比[ **KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)，则**KdPrintEx**函数采用两个其他参数。 要转换**KdPrintEx**函数，您需要定义**WPP\_定义\_位**有关*ComponentID*，并定义自定义**WPP\_ *&lt;条件&gt;* \_记录器**并**WPP\_  *&lt;条件&gt;* \_已启用**宏。 第二个参数**KdPrintEx**指定的级别是类似于[跟踪级别](trace-level.md)值，因此不一定要重新定义它们。
 
 
 
@@ -227,15 +227,15 @@ ms.locfileid: "66815085"
 
 **对驱动程序入口初始化 WPP**
 
--   添加[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)到宏*DriverEntry*例程的内核模式驱动程序或 UMDF 2.0 驱动程序，或对*DLLMain*用户模式驱动程序的例程 (UMDF 1.x) 或应用程序。
+-   添加[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))到宏*DriverEntry*例程的内核模式驱动程序或 UMDF 2.0 驱动程序，或对*DLLMain*用户模式驱动程序的例程 (UMDF 1.x) 或应用程序。
 
 **若要清理 WPP 资源上驱动程序退出**
 
--   添加[WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)宏为驱动程序卸载例程 (例如， *DriverContextCleanup*或*DriverUnload*) 的内核模式驱动程序或 UMDF 2.0驱动程序。
+-   添加[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))宏为驱动程序卸载例程 (例如， *DriverContextCleanup*或*DriverUnload*) 的内核模式驱动程序或 UMDF 2.0驱动程序。
 
-    用户模式驱动程序 (UMDF 1.x) 或应用程序中，添加[WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)到宏*DLLMain*例程。
+    用户模式驱动程序 (UMDF 1.x) 或应用程序中，添加[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))到宏*DLLMain*例程。
 
-    您还应添加[WPP\_清理](https://msdn.microsoft.com/library/windows/hardware/ff556179)到宏*DriverEntry*例程中用例*DriverEntry*失败。 例如，如果*DriverEntry*失败，不会调用驱动程序卸载例程。 请参阅在调用[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)在下面的示例。
+    您还应添加[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))到宏*DriverEntry*例程中用例*DriverEntry*失败。 例如，如果*DriverEntry*失败，不会调用驱动程序卸载例程。 请参阅在调用[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)在下面的示例。
 
 示例中的内核模式驱动程序使用 WPP\_INIT\_跟踪和 WPP\_中清除*DriverEntry*
 
@@ -367,11 +367,12 @@ DllMain(
 ## <a name="step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points"></a>步骤 5：检测驱动程序代码以生成在适当的位置的跟踪消息
 
 
-提供适当地定义函数的跟踪消息、 跟踪标志和级别，可以使用您选择任何跟踪消息函数。 默认跟踪消息函数是[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)宏。 可以将此宏添加到您的代码以将消息写入到日志文件。 下表列出了一些预定义的跟踪消息函数和调试打印的函数可用于创建跟踪消息。
+提供适当地定义函数的跟踪消息、 跟踪标志和级别，可以使用您选择任何跟踪消息函数。 默认跟踪消息函数是[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏。 可以将此宏添加到您的代码以将消息写入到日志文件。 下表列出了一些预定义的跟踪消息函数和调试打印的函数可用于创建跟踪消息。
 
 <table>
 <colgroup>
 <col width="50%" />
+
 <col width="50%" />
 </colgroup>
 <thead>
@@ -382,15 +383,15 @@ DllMain(
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"><strong>DoTraceMessage</strong></a></td>
-<td align="left"><p>这是默认跟踪消息函数。 使用的优点<a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>是已为用户定义函数。 可以使用在 WPP_CONFIG_GUIDS 宏中指定的跟踪标志。 使用的缺点<strong>DoTraceMessage</strong>，是该函数仅采用一个条件参数，即，跟踪标志。 如果你想要使用的跟踪级别，以记录仅错误或警告消息，则可以使用<strong>DoDebugTrace</strong>宏或使用<strong>TraceEvents</strong>，它使用跟踪标志和跟踪级别。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a></td>
+<td align="left"><p>这是默认跟踪消息函数。 使用的优点<a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"> <strong>DoTraceMessage</strong> </a>是已为用户定义函数。 可以使用在 WPP_CONFIG_GUIDS 宏中指定的跟踪标志。 使用的缺点<strong>DoTraceMessage</strong>，是该函数仅采用一个条件参数，即，跟踪标志。 如果你想要使用的跟踪级别，以记录仅错误或警告消息，则可以使用<strong>DoDebugTrace</strong>宏或使用<strong>TraceEvents</strong>，它使用跟踪标志和跟踪级别。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>TraceEvents</strong></td>
 <td align="left"><p>如果您创建 WDF 模板使用 Visual Studio 中的驱动程序，这是默认跟踪消息函数。 使用的优点<strong>TraceEvents</strong>是，跟踪消息函数，跟踪标志，并<a href="trace-level.md" data-raw-source="[Trace Level](trace-level.md)">跟踪级别</a>已为你定义。 此外，模板还包含检测机制来将消息写入到函数入口和退出的日志文件。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff548092" data-raw-source="[&lt;strong&gt;KdPrint&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548092)"><strong>KdPrint</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff548100" data-raw-source="[&lt;strong&gt;KdPrintEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548100)"> <strong>KdPrintEx</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff543632" data-raw-source="[&lt;strong&gt;DbgPrint&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543632)"> <strong>DbgPrint</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff543634" data-raw-source="[&lt;strong&gt;DbgPrintEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543634)"> <strong>DbgPrintEx</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint" data-raw-source="[&lt;strong&gt;KdPrint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)"><strong>KdPrint</strong></a>， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex" data-raw-source="[&lt;strong&gt;KdPrintEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)"> <strong>KdPrintEx</strong></a>， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint" data-raw-source="[&lt;strong&gt;DbgPrint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)"> <strong>DbgPrint</strong></a>， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex" data-raw-source="[&lt;strong&gt;DbgPrintEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex)"> <strong>DbgPrintEx</strong></a></td>
 <td align="left"><p>使用调试打印功能的优点是不需要修改现有的调试 print 语句。 您可以轻松地切换到在文件中记录跟踪消息在调试器中查看消息。 如果自定义跟踪消息函数，以包含一个调试打印功能，您不需要执行任何更多的工作。 使用 Logman 创建跟踪会话时或<a href="tracelog.md" data-raw-source="[Tracelog](tracelog.md)">Tracelog</a>，或另一个跟踪控制器，你只需指定标志和级别为您的提供程序。 满足指定的条件的任何调试 print 语句输出到日志中。</p></td>
 </tr>
 </tbody>
@@ -402,13 +403,13 @@ DllMain(
 
 **使用 DoTraceMessage 语句**
 
-1.  添加[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)到你的代码像调试打印例程的宏。 **DoTraceMessage**宏有 3 个参数： 标志级别 (*TraceFlagName*)，其定义的条件时写入跟踪消息，*消息*字符串，和可选的变量列表。
+1.  添加[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))到你的代码像调试打印例程的宏。 **DoTraceMessage**宏有 3 个参数： 标志级别 (*TraceFlagName*)，其定义的条件时写入跟踪消息，*消息*字符串，和可选的变量列表。
 
     ```
     DoTraceMessage(TraceFlagName, Message, [VariableList... ]
     ```
 
-    例如，以下[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)语句将包含该函数的名称写入**DoTraceMessage**语句时跟踪\_驱动程序的标志，WPP 中定义\_控制\_GUID，启用跟踪会话。
+    例如，以下[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句将包含该函数的名称写入**DoTraceMessage**语句时跟踪\_驱动程序的标志，WPP 中定义\_控制\_GUID，启用跟踪会话。
 
     ```ManagedCPlusPlus
          DoTraceMessage( TRACE_DRIVER, "\nEntering %!FUNC!" );

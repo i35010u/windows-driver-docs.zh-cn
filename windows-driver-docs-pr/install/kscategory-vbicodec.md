@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: de1cf995ad3c8b3ea99057ef398afaa6beab18b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6477b7e7c12fbcd1a5f1f16840d46ec386935358
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386266"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385541"
 ---
 # <a name="kscategoryvbicodec"></a>KSCATEGORY_VBICODEC
 
 
-KSCATEGORY_VBICODEC[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 功能的视频的遮蔽间隔 (VBI) 编解码器设备类别。
+KSCATEGORY_VBICODEC[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能的视频的遮蔽间隔 (VBI) 编解码器设备类别。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ KSCATEGORY_VBICODEC[设备接口类](https://msdn.microsoft.com/library/windows/
 
 KS 设备的驱动程序注册 KSCATEGORY_VBICODEC 向操作系统指示设备支持 KSCATEGORY_VBICODEC 功能分类的实例。
 
-有关视频设备的常规信息，请参阅[视频捕获设备](https://msdn.microsoft.com/library/windows/hardware/ff568699)。
+有关视频设备的常规信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)。
 
-有关视频消隐功能的详细信息，请参阅[流式处理视频捕获设备中的数据](https://msdn.microsoft.com/library/windows/hardware/ff568268)并[VBI 类别](https://msdn.microsoft.com/library/windows/hardware/ff568691)。
+有关视频消隐功能的详细信息，请参阅[流式处理视频捕获设备中的数据](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-data-from-a-video-capture-device)并[VBI 类别](https://docs.microsoft.com/windows-hardware/drivers/stream/vbi-category)。
 
 <a name="requirements"></a>要求
 ------------

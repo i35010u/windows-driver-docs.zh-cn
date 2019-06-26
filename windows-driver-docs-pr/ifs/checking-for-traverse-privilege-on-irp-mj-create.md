@@ -12,12 +12,12 @@ keywords:
 - SeChangeNotifyPrivilege
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06de785fdbbed8272e54d7c7df2047cd0b159266
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a059177cf75eb3c1236b954ae12f6efc3bed262
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379001"
 ---
 # <a name="checking-for-traverse-privilege-on-irpmjcreate"></a>检查遍历特权 IRP\_MJ\_创建
 
@@ -25,7 +25,7 @@ ms.locfileid: "63327904"
 ## <span id="ddk_checking_for_traverse_privilege_on_irp_mj_create_if"></span><span id="DDK_CHECKING_FOR_TRAVERSE_PRIVILEGE_ON_IRP_MJ_CREATE_IF"></span>
 
 
-主要关心的问题之一[ **IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff548630)检查是，调用方是否有遍历权限 （调用方没有访问该对象的路径的权限）。 由于大多数调用方有遍历权限，通常在文件系统中完成的第一个检查之一检查遍历权限：
+主要关心的问题之一[ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)检查是，调用方是否有遍历权限 （调用方没有访问该对象的路径的权限）。 由于大多数调用方有遍历权限，通常在文件系统中完成的第一个检查之一检查遍历权限：
 
 ```cpp
     BOOLEAN traverseCheck = 

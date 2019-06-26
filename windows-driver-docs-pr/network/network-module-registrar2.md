@@ -10,12 +10,12 @@ keywords:
 - 软件模块 WDK 网络模块注册机构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b8723f604a0a26fa197408653ad895f599e02a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa2fe60c1528355adff70664ca9744933d75b580
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331877"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386321"
 ---
 # <a name="network-module-registrar"></a>网络模块注册机构
 
@@ -34,7 +34,7 @@ ms.locfileid: "63331877"
 
 [编程注意事项](programming-considerations.md)
 
-使用[ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143)并[ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128)函数是用于注册和注销 WSK 的首选的方法应用程序。 网络模块注册机构可保留用于兼容性。 有关详细信息，请参阅[Winsock 内核应用程序注册](registering-a-winsock-kernel-application.md)。
+使用[ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)并[ **WskDeregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister)函数是用于注册和注销 WSK 的首选的方法应用程序。 网络模块注册机构可保留用于兼容性。 有关详细信息，请参阅[Winsock 内核应用程序注册](registering-a-winsock-kernel-application.md)。
 
  
 

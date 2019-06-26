@@ -11,12 +11,12 @@ keywords:
 - 转换电源状态 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d05eb24845eea55e44ebc3900835fcab9282229
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 800da6faa1c0f9a20b9c878613119c7c1e105ff3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364181"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381387"
 ---
 # <a name="device-power-states-for-network-adapters"></a>网络适配器的设备电源状态
 
@@ -32,10 +32,10 @@ ms.locfileid: "63364181"
 
 设备状态的详尽描述，请参阅以下主题：
 
-* [设备的电源状态](https://msdn.microsoft.com/library/windows/hardware/ff543162)
-* [设备处于工作状态 D0](https://msdn.microsoft.com/library/windows/hardware/ff543210)
-* [设备低功耗状态](https://msdn.microsoft.com/library/windows/hardware/ff543186)
-* [设备的电源状态所需的支持](https://msdn.microsoft.com/library/windows/hardware/ff561073)
+* [设备的电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)
+* [设备处于工作状态 D0](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-working-state-d0)
+* [设备低功耗状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)
+* [设备的电源状态所需的支持](https://docs.microsoft.com/windows-hardware/drivers/kernel/required-support-for-device-power-states)
 
 **请注意**  NDIS 进程电源管理 Irp，但 NDIS 驱动程序不这样做。
 
@@ -45,7 +45,7 @@ ms.locfileid: "63364181"
 
 ### <a href="" id="d0"></a>设备处于工作状态 D0
 
-此电源状态描述的所有设备[设备正常工作状态 D0](https://msdn.microsoft.com/library/windows/hardware/ff543210)。 网络适配器和微型端口驱动程序：
+此电源状态描述的所有设备[设备正常工作状态 D0](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-working-state-d0)。 网络适配器和微型端口驱动程序：
 
 <a href="" id="power-consumption"></a>功率消耗  
 网络适配器是完全供电和交付完整的功能和性能。
@@ -61,7 +61,7 @@ ms.locfileid: "63364181"
 
 ### <a href="" id="d1"></a>设备电源状态 D1
 
-此电源状态描述的所有设备[设备低功耗状态](https://msdn.microsoft.com/library/windows/hardware/ff543186)。 网络适配器和微型端口驱动程序：
+此电源状态描述的所有设备[设备低功耗状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)。 网络适配器和微型端口驱动程序：
 
 <a href="" id="power-consumption"></a>功率消耗  
 此状态是 highest-powered 睡眠状态。 功率消耗最小值 D0 状态和大于或等于在 D2 状态中。
@@ -81,7 +81,7 @@ ms.locfileid: "63364181"
 
 ### <a href="" id="d2"></a>设备电源状态更改为 D2
 
-此电源状态描述的所有设备[设备低功耗状态](https://msdn.microsoft.com/library/windows/hardware/ff543186)。 网络适配器和微型端口驱动程序：
+此电源状态描述的所有设备[设备低功耗状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)。 网络适配器和微型端口驱动程序：
 
 <a href="" id="power-consumption"></a>功率消耗  
 中间的睡眠状态。 功率消耗最小值在 D1 状态和大于或等于 D3 状态中。
@@ -97,10 +97,10 @@ D1 的一样。
 
 ### <a href="" id="d3"></a>设备电源状态 D3
 
-此电源状态描述的所有设备[设备低功耗状态](https://msdn.microsoft.com/library/windows/hardware/ff543186)。 网络适配器和微型端口驱动程序：
+此电源状态描述的所有设备[设备低功耗状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)。 网络适配器和微型端口驱动程序：
 
 <a href="" id="power-consumption"></a>功率消耗  
-带的电量最少的睡眠状态。 所需的能力可能会为非零值 (D3hot) 也可能是完全为零 (D3cold)。 有关 D3hot 和 D3cold 的详细信息，请参阅[设备低功耗状态](https://msdn.microsoft.com/library/windows/hardware/ff543186)。
+带的电量最少的睡眠状态。 所需的能力可能会为非零值 (D3hot) 也可能是完全为零 (D3cold)。 有关 D3hot 和 D3cold 的详细信息，请参阅[设备低功耗状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)。
 
 <a href="" id="device-context"></a>设备上下文  
 D1 的一样。

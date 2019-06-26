@@ -7,12 +7,12 @@ keywords:
 - 混合型的图片 WDK DirectX VA，alpha 混合数据加载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5edf23d4319372fb9f76f989504c7571dea57250
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fccf18e298e57e79a4027f5503247d3c719e3489
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344640"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384637"
 ---
 # <a name="alpha-blend-data-loading"></a>Alpha 混合数据加载
 
@@ -28,7 +28,7 @@ ms.locfileid: "63344640"
 
 -   AYUV 图形图面
 
-[ **DXVA\_ConfigAlphaLoad** ](https://msdn.microsoft.com/library/windows/hardware/ff563129)结构确定哪种方法使用。
+[ **DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)结构确定哪种方法使用。
 
  
 

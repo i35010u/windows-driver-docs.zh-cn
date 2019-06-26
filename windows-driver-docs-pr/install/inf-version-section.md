@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8002a496726dc802953871c560a8f6d6ea69f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c1381ca06a08a7adf98c5a5ca64a161098d3f82
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325811"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370034"
 ---
 # <a name="inf-version-section"></a>INF Version 节
 
@@ -50,8 +50,8 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 ## <a name="entries"></a>条目
 
 
-<a href="" id="signature--signature-name-"></a>**Signature="**<em>signature-name</em>**"**  
-必须是 **$Windows NT$** 或 **$Chicago$**。 这表示此 INF 的有效的操作系统。 这些签名值的含义如下。
+<a href="" id="signature--signature-name-"></a>**Signature="** <em>signature-name</em> **"**  
+必须是 **$Windows NT$** 或 **$Chicago$** 。 这表示此 INF 的有效的操作系统。 这些签名值的含义如下。
 
 | 签名值  | 含义                       |
 |------------------|-------------------------------|
@@ -66,10 +66,10 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 
 某些类安装程序将必须指定的签名值的方式上的其他要求。 此类要求，如果它们存在，设备特定于类型的各节论述了此 Windows Driver Kit (WDK)。
 
-INF 必须通过追加到系统定义的扩展提供特定于操作系统的安装信息及其*DDInstall*部分中，是否*签名名称*是<strong>$Windows NT$</strong>或 **$Chicago$**。 (请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)有关这些扩展的讨论。)
+INF 必须通过追加到系统定义的扩展提供特定于操作系统的安装信息及其*DDInstall*部分中，是否*签名名称*是<strong>$Windows NT$</strong>或 **$Chicago$** 。 (请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)有关这些扩展的讨论。)
 
-<a href="" id="class-class-name"></a>**Class=**<em>class-name</em>  
-对于任何标准的类型的设备，这将指定的名称[设备安装程序类](device-setup-classes.md)类型的情况下使用此 INF 文件安装的设备。 此名称通常是一个系统定义的类名称，如**Net**或**显示器**中列出了这些*Devguid.h*。 有关详细信息，请参阅[System-Supplied 设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff553419)。
+<a href="" id="class-class-name"></a>**Class=** <em>class-name</em>  
+对于任何标准的类型的设备，这将指定的名称[设备安装程序类](device-setup-classes.md)类型的情况下使用此 INF 文件安装的设备。 此名称通常是一个系统定义的类名称，如**Net**或**显示器**中列出了这些*Devguid.h*。 有关详细信息，请参阅[System-Supplied 设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。
 
 如果指定了 INF**类，** 还应指定相应系统定义的 GUID 值及其**ClassGUID**条目。 指定的任何预定义的设备安装程序类的设备匹配的 GUID 值可以安装设备，其驱动程序速度更快，因为这有助于系统安装程序代码，以优化其 INF 搜索。
 
@@ -81,12 +81,12 @@ INF 必须通过追加到系统定义的扩展提供特定于操作系统的安�
 
  
 
-<a href="" id="classguid--nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn-"></a>**ClassGuid={**<em>nnnnnnnn</em>**-***nnnn***-***nnnn***-***nnnn***-**<em>nnnnnnnnnnnn</em>**}**  
+<a href="" id="classguid--nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn-"></a>**ClassGuid={** <em>nnnnnnnn</em> **-***nnnn***-***nnnn***-***nnnn***-** <em>nnnnnnnnnnnn</em> **}**  
 指定[设备安装程序类](device-setup-classes.md)GUID。 GUID 值格式如下所示，其中每个*n*是十六进制数字。
 
 此 GUID 值在注册表中指定设备安装程序类子项 **...\\类**树中在其下进行编写的此 INF 文件从安装的设备驱动程序的注册表信息。 如果有的话，此特定于类的 GUID 值还标识设备和特定于类的属性页提供程序的类型的设备类安装程序。
 
-为新[设备安装程序类](device-setup-classes.md)，必须指定新生成 INF **ClassGUID**值。 有关如何创建 Guid 的详细信息，请参阅[驱动程序中使用 Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)。 另请参阅设备安装程序类。
+为新[设备安装程序类](device-setup-classes.md)，必须指定新生成 INF **ClassGUID**值。 有关如何创建 Guid 的详细信息，请参阅[驱动程序中使用 Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)。 另请参阅设备安装程序类。
 
 **请注意**  此项是必需的安装通过即插即用管理器的设备驱动程序。
 
@@ -97,8 +97,8 @@ INF 时创建扩展 INF 的初始版本，必须指定新生成**ExtensionId**�
 **请注意**此项才时创建扩展 INF，需要通过指定标识`Class = Extension`和`ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}`。
  
 
-<a href="" id="provider--inf-creator-"></a>**Provider=%**<em>INF-creator</em>**%**  
-标识提供程序的 INF 文件。 通常情况下，此值指定为**%** <em>OrganizationName</em> **%** 稍后 INF 文件中扩展的令牌[**字符串**](inf-strings-section.md)部分。 以字符为单位的提供程序名称的最大长度是 LINE_LEN。
+<a href="" id="provider--inf-creator-"></a>**Provider=%** <em>INF-creator</em> **%**  
+标识提供程序的 INF 文件。 通常情况下，此值指定为 **%** <em>OrganizationName</em> **%** 稍后 INF 文件中扩展的令牌[**字符串**](inf-strings-section.md)部分。 以字符为单位的提供程序名称的最大长度是 LINE_LEN。
 
 例如，通常随系统提供的 INF 文件指定*INF 创建者*作为<strong>%</strong>Msft<strong>%</strong>并定义<strong>%</strong> Msft<strong>%="</strong>Microsoft<strong>"</strong>中其[**字符串**](inf-strings-section.md)部分。
 
@@ -108,31 +108,31 @@ INF 时创建扩展 INF 的初始版本，必须指定新生成**ExtensionId**�
 
 
 
-<a href="" id="catalogfile-filename-cat"></a>**CatalogFile=**<em>filename</em>**.cat**  
+<a href="" id="catalogfile-filename-cat"></a>**CatalogFile=** <em>filename</em> **.cat**  
 指定一个目录 (。*cat*) 文件要包含在分发媒体的设备/驱动程序。
 
 当[驱动程序包](driver-packages.md)提交给 Microsoft 进行数字签名 WHQL 提供[编录文件](catalog-files.md)驱动程序包后 WHQL 已测试并分配给包的数字签名。 有关测试和 IHV 或 OEM 驱动程序包的签名的详细信息，请参阅[WHQL 版本签名](whql-release-signature.md)。 目录文件中未列出[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)部分或[ **CopyFiles** ](inf-copyfiles-directive.md) INF 的指令。 Windows 假定目录文件在与 INF 文件相同的位置。
 
 系统提供的 INF 文件永远不会具有**CatalogFile =** 条目因为操作系统验证的签名为针对此类 INF 所有系统提供*xxx.cat*文件。
 
-<a href="" id="catalogfile-nt-unique-filename-cat--"></a>**CatalogFile.nt=**<em>unique-filename</em>**.cat** |  
+<a href="" id="catalogfile-nt-unique-filename-cat--"></a>**CatalogFile.nt=** <em>unique-filename</em> **.cat** |  
 
-<a href="" id="catalogfile-ntx86-unique-filename-cat--"></a>**CatalogFile.ntx86=**<em>unique-filename</em>**.cat** |  
+<a href="" id="catalogfile-ntx86-unique-filename-cat--"></a>**CatalogFile.ntx86=** <em>unique-filename</em> **.cat** |  
 
-<a href="" id="catalogfile-ntia64-unique-filename-cat--"></a>**CatalogFile.ntia64=**<em>unique-filename</em>**.cat** |  
+<a href="" id="catalogfile-ntia64-unique-filename-cat--"></a>**CatalogFile.ntia64=** <em>unique-filename</em> **.cat** |  
 
-<a href="" id="catalogfile-ntamd64-unique-filename-cat"></a>**CatalogFile.ntamd64=**<em>unique-filename</em>**.cat**  
+<a href="" id="catalogfile-ntamd64-unique-filename-cat"></a>**CatalogFile.ntamd64=** <em>unique-filename</em> **.cat**  
 
-<a href="" id="catalogfile-ntarm-unique-filename-cat"></a>**CatalogFile.ntarm=**<em>unique-filename</em>**.cat**  
+<a href="" id="catalogfile-ntarm-unique-filename-cat"></a>**CatalogFile.ntarm=** <em>unique-filename</em> **.cat**  
 
-<a href="" id="catalogfile-ntarm64-unique-filename-cat"></a>**CatalogFile.ntarm64=**<em>unique-filename</em>**.cat**  
+<a href="" id="catalogfile-ntarm64-unique-filename-cat"></a>**CatalogFile.ntarm64=** <em>unique-filename</em> **.cat**  
 
 
-指定与另一个的 INF 编写器已确定的唯一文件名称。*cat*目录文件扩展名。 如果省略了这些可选条目，给定**CatalogFile =**<em>filename.cat</em>用于验证 WDM 设备/驱动程序安装。
+指定与另一个的 INF 编写器已确定的唯一文件名称。*cat*目录文件扩展名。 如果省略了这些可选条目，给定**CatalogFile =** <em>filename.cat</em>用于验证 WDM 设备/驱动程序安装。
 
 如果任何修饰**CatalogFile。*xxx* =**  INF 中存在项**版本**部分以及未修饰**CatalogFile =** 假定未修饰的条目条目，识别*filename.cat*用于验证设备安装、 驱动程序安装，还是两者都不指定修饰的项时这些平台上。
 
-对具有任何跨平台设备驱动程序 INF 文件**CatalogFile =** 并**CatalogFile。**<em>xxx</em> **=** 条目必须提供每个这样的.cat 文件的唯一 IHV/OEM-确定名称。
+对具有任何跨平台设备驱动程序 INF 文件**CatalogFile =** 并**CatalogFile。** <em>xxx</em> **=** 条目必须提供每个这样的.cat 文件的唯一 IHV/OEM-确定名称。
 
 有关如何使用系统定义的详细信息 **.nt**， **.ntx86**， **.ntia64**， **.ntamd64**， **.ntarm**，并 **.ntarm64**扩展，请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 

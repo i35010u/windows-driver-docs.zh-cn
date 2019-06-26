@@ -9,12 +9,12 @@ keywords:
 - 回调函数 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecbec2faa083aefec43c830027915d2a5ddcbbdd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5060a3aa72463d16596aa13c91b6e71dd358a443
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331285"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365651"
 ---
 # <a name="return-codes-for-direct3d-driver-callbacks"></a>Direct3D 驱动程序回调的返回代码
 
@@ -22,7 +22,7 @@ ms.locfileid: "63331285"
 ## <span id="ddk_return_codes_for_direct3d_driver_callbacks_gg"></span><span id="DDK_RETURN_CODES_FOR_DIRECT3D_DRIVER_CALLBACKS_GG"></span>
 
 
-下表列出了可以返回的值[Direct3D Driver-Supplied 函数](https://msdn.microsoft.com/library/windows/hardware/ff552859)。 DDHAL\_驱动程序\_*Xxx*值实际上返回的 DWORD 返回值。 D3D\_确定的值，D3DHAL\_*Xxx*值和 D3DERR\_*Xxx*中返回的错误代码为**ddrval**的成员特定函数的参数所指向的结构。
+下表列出了可以返回的值[Direct3D Driver-Supplied 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 DDHAL\_驱动程序\_*Xxx*值实际上返回的 DWORD 返回值。 D3D\_确定的值，D3DHAL\_*Xxx*值和 D3DERR\_*Xxx*中返回的错误代码为**ddrval**的成员特定函数的参数所指向的结构。
 
 有关每个函数可以返回的特定错误代码，请参阅参考部分中的函数和结构描述。 Direct3D 标头文件，请参阅*d3d.h*并*d3dhal.h*有关的错误代码和返回值的完整列表 (此外， *d3d8.h*和*d3d9.h*DirectX 版本 8.0 和 9.0)。 请注意，错误代码都是负值，并且不能结合使用。
 
@@ -35,7 +35,7 @@ Direct3D 驱动程序中的函数必须返回两个返回代码之一：DDHAL\_�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>

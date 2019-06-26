@@ -7,12 +7,12 @@ keywords:
 - 打印机自动配置 WDK 打印机，在设备安装过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d048827d1228847228f5203fb0cb41cc4e90cdc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0f8c037304e99e45e7e7814b3acc196264d3778
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370488"
 ---
 # <a name="autoconfiguration-during-device-installation"></a>设备安装期间的自动配置
 
@@ -23,7 +23,7 @@ ms.locfileid: "63350784"
 
 1.  安装打印机时，后台处理程序初始化该驱动程序通过调用`DrvPrinterEvent`并传递打印机\_事件\_初始化的调用中。
 
-2.  驱动程序使用[bidi 通信接口](https://msdn.microsoft.com/library/windows/hardware/ff545163)以获取感兴趣的其中包括可安装选项的值，例如数据\\Printer.Configuration.DuplexUnit:Installed 和\\Printer.Configuration.HardDisk:Installed。
+2.  驱动程序使用[bidi 通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)以获取感兴趣的其中包括可安装选项的值，例如数据\\Printer.Configuration.DuplexUnit:Installed 和\\Printer.Configuration.HardDisk:Installed。
 
 3.  双向通信接口查询这些属性的值的端口的监视器。 端口监视器可能具有某些请求在其缓存中的数据。 以下步骤中演示的目的，假设的值\\Printer.Configuration.HardDisk:Installed 位于端口监视器的缓存，但为\\Printer.Configuration.DuplexUnit:Installed 不是。
 

@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28144
-ms.openlocfilehash: 6be477ef5a054506e82831f116eaa360374a0eba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e14aad810dd78a23cd49b80f571c09661c2f59d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364128"
 ---
 # <a name="c28144"></a>C28144
 
@@ -36,9 +36,9 @@ ms.locfileid: "63361385"
 
  
 
-当驱动程序的[**取消**](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程退出的值**Irp-&gt;CancelIrql**成员不是当前 IRQL。 通常情况下，会出现此错误的驱动程序不会调用[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550)所提供的最新的 IRQL 与调用[ **IoAcquireCancelSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff548196)。
+当驱动程序的[**取消**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程退出的值**Irp-&gt;CancelIrql**成员不是当前 IRQL。 通常情况下，会出现此错误的驱动程序不会调用[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))所提供的最新的 IRQL 与调用[ **IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))。
 
-有关详细信息*取消*例程，请参阅[取消 Irp](https://msdn.microsoft.com/library/windows/hardware/ff540748)。 有关特定于此警告的信息，请参阅[指向考虑时取消 Irp](https://msdn.microsoft.com/library/windows/hardware/ff559700)。
+有关详细信息*取消*例程，请参阅[取消 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/canceling-irps)。 有关特定于此警告的信息，请参阅[指向考虑时取消 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/points-to-consider-when-canceling-irps)。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 

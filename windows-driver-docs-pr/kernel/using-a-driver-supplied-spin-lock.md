@@ -8,12 +8,12 @@ keywords:
 - 全局取消自旋锁 WDK 内核
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04faab726c2c712184737fbc602030a3405d41ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 226e3c6245b2a337167b1fc36ab8cc0fc16298ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383718"
 ---
 # <a name="using-a-driver-supplied-spin-lock"></a>使用驱动程序提供的自旋锁
 
@@ -21,9 +21,9 @@ ms.locfileid: "63355253"
 
 
 
-管理他们自己队列 Irp 的驱动程序可以使用驱动程序所提供的旋转锁，而不是系统取消自旋锁来同步对队列的访问。 可以通过在绝对必要时避免使用除取消自旋锁来提高性能。 由于系统只有一个取消自旋锁，驱动程序有时可能需要等待该数值调节钮锁变为可用。 使用驱动程序所提供的旋转锁可消除此潜在延迟并使取消自旋锁对 I/O 管理器和其他驱动程序。 尽管系统仍获取取消自旋锁时调用的驱动程序[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程，驱动程序可以使用其自己的自旋锁来保护 Irp 其队列。
+管理他们自己队列 Irp 的驱动程序可以使用驱动程序所提供的旋转锁，而不是系统取消自旋锁来同步对队列的访问。 可以通过在绝对必要时避免使用除取消自旋锁来提高性能。 由于系统只有一个取消自旋锁，驱动程序有时可能需要等待该数值调节钮锁变为可用。 使用驱动程序所提供的旋转锁可消除此潜在延迟并使取消自旋锁对 I/O 管理器和其他驱动程序。 尽管系统仍获取取消自旋锁时调用的驱动程序[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程，驱动程序可以使用其自己的自旋锁来保护 Irp 其队列。
 
-即使驱动程序不会挂起的 Irp，排队，但保留以某种其他方式的所有权，必须设置该驱动程序*取消*例程的 IRP 和必须使用旋转锁来保护 IRP 指针。 例如，假设一个驱动程序将标记 IRP 挂起状态，然后将 IRP 指针传递到上下文作为[ *IoTimer* ](https://msdn.microsoft.com/library/windows/hardware/ff550381)例程。 该驱动程序必须设置*取消*取消计时器，并且必须在这种使用相同的旋转锁的例程*取消*例程和计时器回调时访问 IRP。
+即使驱动程序不会挂起的 Irp，排队，但保留以某种其他方式的所有权，必须设置该驱动程序*取消*例程的 IRP 和必须使用旋转锁来保护 IRP 指针。 例如，假设一个驱动程序将标记 IRP 挂起状态，然后将 IRP 指针传递到上下文作为[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)例程。 该驱动程序必须设置*取消*取消计时器，并且必须在这种使用相同的旋转锁的例程*取消*例程和计时器回调时访问 IRP。
 
 排队自己 Irp，并使用其自己的自旋锁的任何驱动程序必须执行以下操作：
 
@@ -35,7 +35,7 @@ ms.locfileid: "63355253"
 
 -   获取的锁的保护中的队列*取消*例程。
 
-若要创建旋转锁，驱动程序调用[ **KeInitializeSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff552160)。 在以下示例中，该驱动程序将保存在旋转锁**设备\_上下文**结构以及已创建的队列：
+若要创建旋转锁，驱动程序调用[ **KeInitializeSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)。 在以下示例中，该驱动程序将保存在旋转锁**设备\_上下文**结构以及已创建的队列：
 
 ```cpp
 typedef struct {
@@ -51,7 +51,7 @@ VOID InitDeviceContext(DEVICE_CONTEXT *deviceContext)
 }
 ```
 
-若要进行排队 IRP，驱动程序将获取数值调节钮锁，调用[ **InsertTailList**](https://msdn.microsoft.com/library/windows/hardware/ff547823)，然后将标记 IRP 挂起状态，如以下示例所示：
+若要进行排队 IRP，驱动程序将获取数值调节钮锁，调用[ **InsertTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-inserttaillist)，然后将标记 IRP 挂起状态，如以下示例所示：
 
 ```cpp
 NTSTATUS QueueIrp(DEVICE_CONTEXT *deviceContext, PIRP Irp)
@@ -104,7 +104,7 @@ NTSTATUS QueueIrp(DEVICE_CONTEXT *deviceContext, PIRP Irp)
 }
 ```
 
-如示例所示，该驱动程序保存其旋转锁时它设置并清除*取消*例程。 该示例队列例程包含两次调用[ **IoSetCancelRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549674)。
+如示例所示，该驱动程序保存其旋转锁时它设置并清除*取消*例程。 该示例队列例程包含两次调用[ **IoSetCancelRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)。
 
 第一个调用集*取消*IRP 的例程。 但是，由于队列例程运行时，IRP 可能已取消，驱动程序必须检查**取消**IRP 的成员。
 
@@ -161,7 +161,7 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
 
 在示例中，该驱动程序获取关联的数值调节钮锁，然后才能访问队列。 同时保留数值调节钮锁定，它会检查该队列不为空，并获取下一步从队列 IRP。 然后，调用**IoSetCancelRoutine**重置*取消*IRP 的例程。 因为该驱动程序取消排队 IRP 和重置时，无法取消 IRP*取消*例程，该驱动程序必须检查返回的值**IoSetCancelRoutine**。 如果**IoSetCancelRoutine**返回**NULL**，这指示*取消*例程已经或很快就将调用，然后取消排队的例程允许*取消*例程完成 IRP。 它然后释放锁，可以在队列，并返回。
 
-请注意，使用[ **InitializeListHead** ](https://msdn.microsoft.com/library/windows/hardware/ff547799)前面例程中。 驱动程序无法将 IRP，重新排队，以便*取消*例程可以取消排队，但以调用会更简单**InitializeListHead**，这会重新初始化 IRP **ListEntry**使其指向 IRP 本身的字段。 使用自引用的指针很重要，因为列表的结构可能会更改之前*取消*例程获取自旋锁。 如果列表结构发生更改，可能生成的原始值和**ListEntry**无效，*取消*例程可能会损坏列表时取消排队 IRP。 但是，如果**ListEntry** IRP 本身，到点则*取消*例程将始终使用正确的 IRP。
+请注意，使用[ **InitializeListHead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializelisthead)前面例程中。 驱动程序无法将 IRP，重新排队，以便*取消*例程可以取消排队，但以调用会更简单**InitializeListHead**，这会重新初始化 IRP **ListEntry**使其指向 IRP 本身的字段。 使用自引用的指针很重要，因为列表的结构可能会更改之前*取消*例程获取自旋锁。 如果列表结构发生更改，可能生成的原始值和**ListEntry**无效，*取消*例程可能会损坏列表时取消排队 IRP。 但是，如果**ListEntry** IRP 本身，到点则*取消*例程将始终使用正确的 IRP。
 
 *取消*例程，反过来，只需执行以下：
 

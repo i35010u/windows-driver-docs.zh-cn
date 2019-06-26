@@ -11,12 +11,12 @@ keywords:
 - 等待程序 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a595b09b02f7d49a32cfeeb938525f186a3823b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609800a2fee6db3c167f973a2c3d28b003a7d94c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341004"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369735"
 ---
 # <a name="introduction-to-eresource-routines"></a>ERESOURCE 例程简介
 
@@ -38,7 +38,7 @@ ms.locfileid: "63341004"
 
 排他/共享同步的典型用法是实现读/写锁。 读/写锁允许多个线程执行读取的操作，但只有一个线程可以编写一次。 这可以实现直接在获取 ERESOURCE 方面。
 
-驱动程序为 ERESOURCE 分配存储并初始化与该[ **ExInitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545317)。 系统会维护所有 ERESOURCE 结构中使用的列表。 当驱动程序不再需要特定 ERESOURCE 时，它必须调用[ **ExDeleteResourceLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544578)要从系统的列表中删除。 该驱动程序还可以通过调用重用 ERESOURCE [ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)。
+驱动程序为 ERESOURCE 分配存储并初始化与该[ **ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)。 系统会维护所有 ERESOURCE 结构中使用的列表。 当驱动程序不再需要特定 ERESOURCE 时，它必须调用[ **ExDeleteResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)要从系统的列表中删除。 该驱动程序还可以通过调用重用 ERESOURCE [ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)。
 
 驱动程序可以执行 ERESOURCE 上的以下基本操作：
 
@@ -48,7 +48,7 @@ ms.locfileid: "63341004"
 
 -   转换为具有共享获取的排他获取[ **ExConvertExclusiveToSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544558)。
 
--   发布一获取的资源，具有[ **ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)。
+-   发布一获取的资源，具有[ **ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)。
 
 *等待*的参数[ **ExAcquireResourceSharedLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544363)并[ **ExAcquireResourceExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544351)确定当前线程是否等待 ERESOURCE 来获取。 如果指定的值**FALSE**和 ERESOURCE 句柄，则例程将返回**FALSE**。 如果指定的值 **，则返回 TRUE**，则当前线程置于 ERESOURCE 为相应的等待列表。
 
@@ -56,9 +56,9 @@ ms.locfileid: "63341004"
 
 驱动程序还可以按如下所示确定 ERESOURCE 的当前状态：
 
--   使用[ **ExIsResourceAcquiredLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545466)或[ **ExIsResourceAcquiredSharedLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545477)来确定 ERESOURCE 并且尚未获取为共享或排他。 使用[ **ExIsResourceAcquiredExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545458)来检查是否 ERESOURCE 已专门获取以独占方式。
+-   使用[ **ExIsResourceAcquiredLite** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545466(v=vs.85))或[ **ExIsResourceAcquiredSharedLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)来确定 ERESOURCE 并且尚未获取为共享或排他。 使用[ **ExIsResourceAcquiredExclusiveLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite)来检查是否 ERESOURCE 已专门获取以独占方式。
 
--   使用[ **ExGetSharedWaiterCount** ](https://msdn.microsoft.com/library/windows/hardware/ff545290)若要确定共享 ERESOURCE，等待数，并使用[ **ExGetExclusiveWaiterCount** ](https://msdn.microsoft.com/library/windows/hardware/ff544618)来确定的排他 ERESOURCE 等待数。
+-   使用[ **ExGetSharedWaiterCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetsharedwaitercount)若要确定共享 ERESOURCE，等待数，并使用[ **ExGetExclusiveWaiterCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetexclusivewaitercount)来确定的排他 ERESOURCE 等待数。
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5b9e9c2cf6e787dc757648ed9d26761cad59000
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74026606b88161a485fc4257e3f31487cc8e4db5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367092"
 ---
 # <a name="bug-check-0xec-sessionhasvalidspecialpoolonexit"></a>Bug 检查 0xEC：会话\_HAS\_有效\_特殊\_池\_ON\_退出
 
@@ -26,7 +26,7 @@ ms.locfileid: "63373096"
 会话\_HAS\_有效\_特殊\_池\_ON\_退出 bug 检查的值为 0x000000EC。 这指示会话卸载时发生会话驱动程序仍保留内存中。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="sessionhasvalidspecialpoolonexit-parameters"></a>会话\_HAS\_有效\_特殊\_池\_ON\_退出参数

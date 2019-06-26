@@ -4,12 +4,12 @@ description: 从在用户模式驱动程序框架 (UMDF) 版本 2 开始，可�
 ms.assetid: df1bfc10-379b-457f-a9c8-40fa10048f81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba636c96e7cbf3e38afb96f62ac069d4ac50f29a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62ae6efccd3326c2c64246e974124f63145ec193
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377470"
 ---
 # <a name="troubleshooting-umdf-20-driver-crashes"></a>排查 UMDF 2.0 驱动程序崩溃问题
 
@@ -34,22 +34,22 @@ ms.locfileid: "63330865"
   **** Note that driver host process may get terminated if you go past this break, making it difficult to debug the problem!
   ```
 
-- 使用[ **！ 分析**](https://msdn.microsoft.com/library/windows/hardware/ff562112)以显示你可以尝试故障和其他 UMDF 扩展命令有关的信息。
-- 使用[ **！ 进程 0 0x1f wudfhost.exe** ](https://msdn.microsoft.com/library/windows/hardware/ff564717)若要列出所有 Wudfhost.exe 驱动程序主机进程，包括线程的堆栈信息。
+- 使用[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)以显示你可以尝试故障和其他 UMDF 扩展命令有关的信息。
+- 使用[ **！ 进程 0 0x1f wudfhost.exe** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process)若要列出所有 Wudfhost.exe 驱动程序主机进程，包括线程的堆栈信息。
 
-  此外可以使用[ **！ wdfkd.wdfldr** ](https://msdn.microsoft.com/library/windows/hardware/ff565803)可以显示当前绑定到 WDF 的所有驱动程序。 当单击 UMDF 驱动程序的映像名称时，调试器将显示承载进程的地址。 然后可以单击以显示信息特定于该进程的进程地址。
+  此外可以使用[ **！ wdfkd.wdfldr** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfldr)可以显示当前绑定到 WDF 的所有驱动程序。 当单击 UMDF 驱动程序的映像名称时，调试器将显示承载进程的地址。 然后可以单击以显示信息特定于该进程的进程地址。
 
-- 如有必要，使用[ **.process /r/p*进程*** ](https://msdn.microsoft.com/library/windows/hardware/ff564723)进程上下文切换到的 Wudfhost 进程承载您的驱动程序。 使用[ **.cache forcedecodeuser** ](https://msdn.microsoft.com/library/windows/hardware/ff562180)并**lmu**以验证您的驱动程序位于当前进程中。
-- 检查线程调用堆栈 ([**！ 线程*地址***](https://msdn.microsoft.com/library/windows/hardware/ff565440)) 以确定驱动程序回调操作已超时。查看线程的计时周期计数。 在 Windows 8.1 中该发送程序将会超时后一分钟。
-- 使用[ **！ wdfkd.wdfdriverinfo MyDriver.dll 0x10** ](https://msdn.microsoft.com/library/windows/hardware/ff565724)详细窗体中显示设备树。 然后单击[ **！ wdfdevice**](https://msdn.microsoft.com/library/windows/hardware/ff565703)。 此命令显示详细的电源、 电源策略和插即用 (PnP) 的状态信息。
-- 使用[ **！ wdfkd.wdfumirps** ](https://msdn.microsoft.com/library/windows/hardware/dn265384)要查找挂起的 Irp。
-- 使用[ **！ wdfkd.wdfdevicequeues** ](https://msdn.microsoft.com/library/windows/hardware/ff565715)检查驱动程序的队列的状态。
-- 在内核模式调试会话中，可以使用[ **！ wmitrace.logdump WudfTrace** ](https://msdn.microsoft.com/library/windows/hardware/ff566159)显示跟踪日志。
+- 如有必要，使用[ **.process /r/p*进程*** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process--set-process-context-)进程上下文切换到的 Wudfhost 进程承载您的驱动程序。 使用[ **.cache forcedecodeuser** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-cache--set-cache-size-)并**lmu**以验证您的驱动程序位于当前进程中。
+- 检查线程调用堆栈 ([ **！ 线程*地址*** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)) 以确定驱动程序回调操作已超时。查看线程的计时周期计数。 在 Windows 8.1 中该发送程序将会超时后一分钟。
+- 使用[ **！ wdfkd.wdfdriverinfo MyDriver.dll 0x10** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)详细窗体中显示设备树。 然后单击[ **！ wdfdevice**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevice)。 此命令显示详细的电源、 电源策略和插即用 (PnP) 的状态信息。
+- 使用[ **！ wdfkd.wdfumirps** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)要查找挂起的 Irp。
+- 使用[ **！ wdfkd.wdfdevicequeues** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevicequeues)检查驱动程序的队列的状态。
+- 在内核模式调试会话中，可以使用[ **！ wmitrace.logdump WudfTrace** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wmitrace-logdump)显示跟踪日志。
 
 ## <a name="displaying-the-umdf-20-ifr-log"></a>显示 UMDF 2.0 IFR 日志
 
 
-在内核模式调试会话中，可以使用[ **！ wdfkd.wdflogdump** ](https://msdn.microsoft.com/library/windows/hardware/ff565805)扩展命令以显示 Windows 驱动程序框架 (WDF) 正在进行记录器 (IFR) 日志记录，如果可用。
+在内核模式调试会话中，可以使用[ **！ wdfkd.wdflogdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)扩展命令以显示 Windows 驱动程序框架 (WDF) 正在进行记录器 (IFR) 日志记录，如果可用。
 
 ## <a name="finding-memory-dump-files"></a>查找内存转储文件
 

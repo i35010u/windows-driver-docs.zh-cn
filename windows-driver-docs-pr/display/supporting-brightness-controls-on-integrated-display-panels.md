@@ -10,29 +10,29 @@ keywords:
 - 自动亮度 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aaa29e791956762959ca0567e4eaabbfccf7f03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19548bec4a8ca505eed45459711744279c6b5a32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374363"
 ---
 # <a name="supporting-brightness-controls-on-integrated-display-panels"></a>支持在集成的显示器的亮度控件
 
 
 亮度控件中的监视器驱动程序，Monitor.sys，由操作系统提供实现。 监视器驱动程序实现以允许应用程序 （例如操作系统的亮度滑块） 的亮度级别进行交互的 Windows Management Instrumentation (WMI) 接口。 监视器驱动程序注册与设备电源策略引擎 (DPPE)，以便亮度级别响应电源策略中的更改。 使用高级配置和电源接口 (ACPI) 来处理基于 ACPI 亮度键盘快捷方式注册监视器驱动程序。 与的兼容性[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)，显示器驱动程序实现基于 IOCTL 的亮度控件。
 
-显示微型端口驱动程序或由基本输入/输出系统 (BIOS) 可以支持更改集成的显示面板的亮度系统公开的 ACPI 方法。 对于标记为具有输出技术，用于在内部连接的计算机中的第一个视频目标 ([**D3DKMDT\_VOT\_内部**](https://msdn.microsoft.com/library/windows/hardware/ff546605))，监视器驱动程序调用显示微型端口驱动程序[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)查询函数[亮度控制接口](https://msdn.microsoft.com/library/windows/hardware/ff538260)GUID标识\_DEVINTERFACE\_亮度\_2 和 DXGK\_亮度\_接口\_版本\_1，和[亮度控制接口 V。2 （自适应和平滑的亮度控制）](https://msdn.microsoft.com/library/windows/hardware/jj647485)由 GUID 标识\_DEVINTERFACE\_亮度和 DXGK\_亮度\_接口\_版本\_2。 监视器驱动程序显示微型端口驱动程序不支持至少亮度控制接口，如果查询使用 ACPI \_BCL \_BCM，和\_BQC 子设备上的方法。 有关这些方法的详细信息，请参阅 ACPI 规范上[ACPI 网站](https://go.microsoft.com/fwlink/p/?linkid=57185)。
+显示微型端口驱动程序或由基本输入/输出系统 (BIOS) 可以支持更改集成的显示面板的亮度系统公开的 ACPI 方法。 对于标记为具有输出技术，用于在内部连接的计算机中的第一个视频目标 ([**D3DKMDT\_VOT\_内部**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology))，监视器驱动程序调用显示微型端口驱动程序[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)查询函数[亮度控制接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)GUID标识\_DEVINTERFACE\_亮度\_2 和 DXGK\_亮度\_接口\_版本\_1，和[亮度控制接口 V。2 （自适应和平滑的亮度控制）](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)由 GUID 标识\_DEVINTERFACE\_亮度和 DXGK\_亮度\_接口\_版本\_2。 监视器驱动程序显示微型端口驱动程序不支持至少亮度控制接口，如果查询使用 ACPI \_BCL \_BCM，和\_BQC 子设备上的方法。 有关这些方法的详细信息，请参阅 ACPI 规范上[ACPI 网站](https://go.microsoft.com/fwlink/p/?linkid=57185)。
 
 **请注意**  中 Windows 显示驱动程序模型 (WDDM)，ACPI 标识符不用于识别身份集成的显示面板。 这与不同[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)，它也支持仅显示具有 0x0110 标识符面板。
 
  
 
-如果显示微型端口驱动程序或 BIOS 公开 ACPI 方法支持亮度控件，显示器驱动程序将注册的亮度键盘快捷方式的 ACPI 通知。 没有备用机制存在是为了指示有关快捷关键通知监视器驱动程序。 如果监视器驱动程序不能使用任一亮度控制机制或显示微型端口驱动程序提供[亮度控制接口](https://msdn.microsoft.com/library/windows/hardware/ff538260)调用将失败，但[ **DxgkDdiGetPossibleBrightness** ](https://msdn.microsoft.com/library/windows/hardware/ff559661)函数，该监视器驱动程序不支持亮度控件。
+如果显示微型端口驱动程序或 BIOS 公开 ACPI 方法支持亮度控件，显示器驱动程序将注册的亮度键盘快捷方式的 ACPI 通知。 没有备用机制存在是为了指示有关快捷关键通知监视器驱动程序。 如果监视器驱动程序不能使用任一亮度控制机制或显示微型端口驱动程序提供[亮度控制接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)调用将失败，但[ **DxgkDdiGetPossibleBrightness** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)函数，该监视器驱动程序不支持亮度控件。
 
 ### <a name="span-idbrightnesslevelsspanspan-idbrightnesslevelsspanspan-idbrightnesslevelsspanbrightness-levels"></a><span id="Brightness_Levels"></span><span id="brightness_levels"></span><span id="BRIGHTNESS_LEVELS"></span>亮度级别
 
-亮度级别从 0 到 100 其中零处于关闭状态，100 是便携式计算机支持的最大亮度表示为范围内的单字节值。 便携式计算机的每台计算机必须报告为 100; 最大亮度级别但是，便携式计算机不需要支持级别为零。 从 0 到 100 的值的唯一要求是更大的值必须代表较高的亮度级别。 级别之间的增量不需要是一致的且便携式计算机可以支持任意数量的最大 101 级别的非重复值。 您必须决定如何将硬件级别映射到的亮度级别值的范围。 但是，显示微型端口驱动程序调用[ **DxgkDdiGetPossibleBrightness** ](https://msdn.microsoft.com/library/windows/hardware/ff559661)函数不应报告更多的亮度级别值比硬件支持。
+亮度级别从 0 到 100 其中零处于关闭状态，100 是便携式计算机支持的最大亮度表示为范围内的单字节值。 便携式计算机的每台计算机必须报告为 100; 最大亮度级别但是，便携式计算机不需要支持级别为零。 从 0 到 100 的值的唯一要求是更大的值必须代表较高的亮度级别。 级别之间的增量不需要是一致的且便携式计算机可以支持任意数量的最大 101 级别的非重复值。 您必须决定如何将硬件级别映射到的亮度级别值的范围。 但是，显示微型端口驱动程序调用[ **DxgkDdiGetPossibleBrightness** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)函数不应报告更多的亮度级别值比硬件支持。
 
 ### <a name="span-iddisablingautomaticbrightnesschangesbythebiosspanspan-iddisablingautomaticbrightnesschangesbythebiosspanspan-iddisablingautomaticbrightnesschangesbythebiosspandisabling-automatic-brightness-changes-by-the-bios"></a><span id="Disabling_Automatic_Brightness_Changes_by_the_BIOS"></span><span id="disabling_automatic_brightness_changes_by_the_bios"></span><span id="DISABLING_AUTOMATIC_BRIGHTNESS_CHANGES_BY_THE_BIOS"></span>禁用自动亮度更改 BIOS
 

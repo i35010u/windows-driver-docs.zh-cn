@@ -7,12 +7,12 @@ keywords:
 - 注册 IoCompletion 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bca1045ab65bcb24097161d4b8efc3e6877d465c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 981e8874a97ef95715db99c01c2b894a7a4536d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338461"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378737"
 ---
 # <a name="registering-an-iocompletion-routine"></a>注册 IoCompletion 例程
 
@@ -20,15 +20,15 @@ ms.locfileid: "63338461"
 
 
 
-若要注册[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程，调度例程调用[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)，提供*IoCompletion*例程的地址和它将随后传递到较低的驱动程序使用了 IRP [ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+若要注册[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程，调度例程调用[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)，提供*IoCompletion*例程的地址和它将随后传递到较低的驱动程序使用了 IRP [ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
 
 当调用**IoSetCompletionRoutine**，调度例程指定在其中 I/O 管理器应调用指定的情况*IoCompletion*例程。 你可以选择允许*IoCompletion*如果较低级别的驱动程序成功完成 IRP，调用例程 (*InvokeOnSuccess*)，完成并显示错误状态值 IRP (*InvokeOnError*)，或取消 IRP (*InvokeOnCancel*)，以任意组合。
 
 目的*IoCompletion*例程是监视低级驱动程序未与 IRP，并以进行处理，附加完成，如有必要。 具体来说，驱动程序的使用的最常见*IoCompletion*例程如下：
 
--   要释放的驱动程序分配的 IRP [ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)或[ **IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)
+-   要释放的驱动程序分配的 IRP [ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)或[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)
 
-    分配 IRP 的例程必须提供这些支持使用任何更高级别的驱动程序*IoCompletion*该 IRP 的例程。 *IoCompletion*例程必须调用[ **IoFreeIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549113)要释放的驱动程序分配 Irp。
+    分配 IRP 的例程必须提供这些支持使用任何更高级别的驱动程序*IoCompletion*该 IRP 的例程。 *IoCompletion*例程必须调用[ **IoFreeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)要释放的驱动程序分配 Irp。
 
 -   重复使用传入 IRP 请求低级驱动程序完成一定数量的操作，例如部分传输操作，直到可以满足原始请求，并将其通过完成*IoCompletion*例程
 
@@ -48,7 +48,7 @@ ms.locfileid: "63338461"
 
     通常情况下， *InvokeOnCancel*设置为**TRUE**，无论是否带有状态可能会返回 IRP\_已取消，以确保*IoCompletion*例程释放每个驱动程序分配的 IRP，或检查每个重复使用的 IRP 的完成状态。
 
-为使用较低的驱动程序分配 Irp 的调度例程**IoAllocateIrp**或[ **IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)必须设置*IoCompletion*为每个驱动程序分配的 IRP 例程。
+为使用较低的驱动程序分配 Irp 的调度例程**IoAllocateIrp**或[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)必须设置*IoCompletion*为每个驱动程序分配的 IRP 例程。
 
 -   调度例程必须设置有关这两个原始状态，IRP 和为其分配的 IRP(s) *IoCompletion*例程使用。 最低限度*IoCompletion*例程需要访问原始的 IRP 和已分配了多少其他 Irp 的计数。
 
@@ -64,7 +64,7 @@ ms.locfileid: "63338461"
 
 -   如果 IRP 将重复使用，应调用的调度例程**IoSetCompletionRoutine**所有*InvokeOnXxx*参数设置为**TRUE**。
 
--   对于异步请求，必须调用任何中间驱动程序的调度例程[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)原始 IRP 的。 然后，它必须返回状态\_PENDING 后已发送 IRP 到低级驱动程序。
+-   对于异步请求，必须调用任何中间驱动程序的调度例程[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)原始 IRP 的。 然后，它必须返回状态\_PENDING 后已发送 IRP 到低级驱动程序。
 
  
 

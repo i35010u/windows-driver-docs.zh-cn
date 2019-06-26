@@ -4,12 +4,12 @@ description: 在测试计算机上安装进行了测试签名的驱动程序包
 ms.assetid: d825acb6-d1de-4fc5-bde2-ea27bd706f61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 500a7f993c3b978e0d9b979ba079d803ecf831e9
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: 2692e4e6078731430dba343d441fb6401f9a4999
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383741"
 ---
 # <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>在测试计算机上安装进行了测试签名的驱动程序包
 
@@ -22,7 +22,7 @@ ms.locfileid: "66815093"
 
 你可以安装测试签名[驱动程序包](driver-packages.md)通过在计算机上：
 
--   [DevCon](https://msdn.microsoft.com/library/windows/hardware/ff544707)工具，它是用于安装驱动程序的 WDK 命令行工具。
+-   [DevCon](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon)工具，它是用于安装驱动程序的 WDK 命令行工具。
 
 本主题将首先查看测试签名驱动程序包的过程，然后介绍如何在测试计算机上安装驱动程序包。 本主题使用*ToastPkg*示例驱动程序包。 在 WDK 安装目录中，包的源代码文件都位于*src\\常规\\toaster\\toastpkg*目录。
 

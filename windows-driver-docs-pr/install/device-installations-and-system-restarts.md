@@ -11,12 +11,12 @@ keywords:
 - 设备安装期间重新启动
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c83cde688a8f228979abd2964c4fcf32dd05cafe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45d5458a980367da11a30c05e4a7fec116894080
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387138"
 ---
 # <a name="device-installations-and-system-restarts"></a>设备安装和系统重启
 
@@ -34,7 +34,7 @@ ms.locfileid: "63357797"
  
 
 <a href="" id="updating-a-driver-for-a-system-boot-device--"></a>正在更新系统启动设备的驱动程序。   
-如果系统的分页、 休眠或崩溃转储文件，可能可以保留一个设备，其驱动程序必须服务[ **IRP_MN_DEVICE_USAGE_NOTIFICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff550841)请求。 系统将其中一个磁盘上文件之前，先发送此请求。 如果驱动程序请求成功，它们必须失败任何后续[ **IRP_MN_QUERY_REMOVE_DEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff551705)请求。 当设备的驱动程序失败时的 IRP_MN_QUERY_REMOVE_DEVICE 请求时，系统会提示用户重新启动系统。
+如果系统的分页、 休眠或崩溃转储文件，可能可以保留一个设备，其驱动程序必须服务[ **IRP_MN_DEVICE_USAGE_NOTIFICATION** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)请求。 系统将其中一个磁盘上文件之前，先发送此请求。 如果驱动程序请求成功，它们必须失败任何后续[ **IRP_MN_QUERY_REMOVE_DEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求。 当设备的驱动程序失败时的 IRP_MN_QUERY_REMOVE_DEVICE 请求时，系统会提示用户重新启动系统。
 
 **请注意**  设备的安装程序文件不应启动系统重新启动。
 

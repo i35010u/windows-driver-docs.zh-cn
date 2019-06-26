@@ -4,12 +4,12 @@ description: Hyper-V 可扩展交换机扩展的 INF 要求
 ms.assetid: 378F619A-C799-4330-A388-9955A67251F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e67236218d221904c02b654f65bf766faaa46ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74230af31314fd6d9b3fd12f9959aaa80bab6b7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327705"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385098"
 ---
 # <a name="inf-requirements-for-hyper-v-extensible-switch-extensions"></a>Hyper-V 可扩展交换机扩展的 INF 要求
 
@@ -38,7 +38,7 @@ NDIS 筛选器驱动程序作为开发的 HYPER-V 可扩展交换机扩展。 �
 
   如果**FilterMediaTypes**条目仅指定**vmnetextension**值，该扩展将仅绑定到系统上的所有可扩展交换机的驱动程序堆栈。
 
-  如果**FilterMediaTypes**项指定了**vmnetextension**作为其他媒体类型，该扩展可以确定是否绑定内可扩展交换机驱动程序堆栈通过调用[ **NdisFGetOptionalSwitchHandlers**](https://msdn.microsoft.com/library/windows/hardware/hh598204)。 如果该函数将返回 NDIS\_状态\_内扩展驱动程序堆栈绑定成功，该扩展。 如果该函数将返回 NDIS\_状态\_不\_支持，扩展绑定内不同的物理网络接口的驱动程序堆栈。
+  如果**FilterMediaTypes**项指定了**vmnetextension**作为其他媒体类型，该扩展可以确定是否绑定内可扩展交换机驱动程序堆栈通过调用[ **NdisFGetOptionalSwitchHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfgetoptionalswitchhandlers)。 如果该函数将返回 NDIS\_状态\_内扩展驱动程序堆栈绑定成功，该扩展。 如果该函数将返回 NDIS\_状态\_不\_支持，扩展绑定内不同的物理网络接口的驱动程序堆栈。
 
   有关详细信息**FilterMediaTypes**条目，请参阅[中间驱动程序 UpperRange 和 LowerRange INF 文件条目](intermediate-driver-upperrange-and-lowerrange-inf-file-entries.md)。
 

@@ -9,12 +9,12 @@ keywords:
 - 使用值数组 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc87ae12413ba4545251117fba3db7a832061d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9ed2b21572e0beae894dd22b084be1c6593098d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385792"
 ---
 # <a name="value-capability-arrays"></a>值功能数组
 
@@ -22,15 +22,15 @@ ms.locfileid: "63376735"
 
 
 
-一个*值功能数组*包含有关支持的值使用情况的信息[顶级集合](top-level-collections.md)HID 报表为特定类型。 有关集合的值功能数组的信息包含在其[ **HIDP\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff539697)结构。
+一个*值功能数组*包含有关支持的值使用情况的信息[顶级集合](top-level-collections.md)HID 报表为特定类型。 有关集合的值功能数组的信息包含在其[ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)结构。
 
-用户模式应用程序或内核模式驱动程序将使用以下值之一[HIDClass 支持例程](https://msdn.microsoft.com/library/windows/hardware/ff538865)获取按钮功能的信息：
+用户模式应用程序或内核模式驱动程序将使用以下值之一[HIDClass 支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)获取按钮功能的信息：
 
--   [**HidP\_GetValueCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539754)返回描述调用方指定的报告类型中包含的所有值的值功能数组。
+-   [**HidP\_GetValueCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getvaluecaps)返回描述调用方指定的报告类型中包含的所有值的值功能数组。
 
--   [**HidP\_GetSpecificValueCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539737)筛选它将返回由调用方指定的使用情况页面、 使用情况、 链接集合和报告类型的值功能信息。
+-   [**HidP\_GetSpecificValueCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificvaluecaps)筛选它将返回由调用方指定的使用情况页面、 使用情况、 链接集合和报告类型的值功能信息。
 
-值功能包含一个数组[ **HIDP\_值\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff539832)结构，其中每个以下信息介绍[的HID用途](hid-usages.md)或[使用范围](hid-usages.md#usage-range):
+值功能包含一个数组[ **HIDP\_值\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_value_caps)结构，其中每个以下信息介绍[的HID用途](hid-usages.md)或[使用范围](hid-usages.md#usage-range):
 
 -   [使用情况页面](hid-usages.md#usage-page)的使用情况或使用范围
 
@@ -72,7 +72,7 @@ ms.locfileid: "63376735"
 
 此类的用法值数组的值功能结构必须在上一示例中，其**IsRange**成员设置为**FALSE**，将其**NotRange.Usage**成员设置为 17，其**ReportCount**成员设置为 5，并将其**BitSize**成员设置为 6。
 
-如果使用情况报告计数为 1，则使用**HidP\_GetUsageValue**提取使用情况值。 如果使用的报表计数大于 1， **HidP\_GetUsageValue**仅使用值数组中返回第一个数据项。 若要提取使用情况值数组中的所有数据项，请使用[ **HidP\_GetUsageValueArray**](https://msdn.microsoft.com/library/windows/hardware/ff539750)。
+如果使用情况报告计数为 1，则使用**HidP\_GetUsageValue**提取使用情况值。 如果使用的报表计数大于 1， **HidP\_GetUsageValue**仅使用值数组中返回第一个数据项。 若要提取使用情况值数组中的所有数据项，请使用[ **HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevaluearray)。
 
  
 

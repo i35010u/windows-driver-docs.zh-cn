@@ -20,12 +20,12 @@ keywords:
 - 卷 GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33aa59f884e99a17349c2c73a66dd404553de677
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e14bbffc9fae6cd8cf2e6b2c3a5468f585e5dbcb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344413"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371308"
 ---
 # <a name="storage-volumes"></a>存储卷
 
@@ -43,9 +43,9 @@ ms.locfileid: "63344413"
 
 *计数管理器*是负责管理存储卷的信息，例如卷名称、 驱动器号和卷装入点 I/O 系统的一部分。 当新的存储卷添加到系统中时，计数管理器将通知的以下两种方式在其到达：
 
--   创建存储卷调用的类驱动程序[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506) MOUNTDEV 中注册一个新接口\_已装载\_设备\_GUID 接口类。 在此情况下，插设备接口通知机制在系统中的警报计数管理器的卷的到达。
+-   创建存储卷调用的类驱动程序[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface) MOUNTDEV 中注册一个新接口\_已装载\_设备\_GUID 接口类。 在此情况下，插设备接口通知机制在系统中的警报计数管理器的卷的到达。
 
--   存储卷的驱动程序将计数管理器发送 IRP\_MJ\_设备\_控制请求指定[ **IOCTL\_MOUNTMGR\_卷\_到达\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff560477)对 i/o 控制代码。 可以通过调用创建此请求[ **IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)。
+-   存储卷的驱动程序将计数管理器发送 IRP\_MJ\_设备\_控制请求指定[ **IOCTL\_MOUNTMGR\_卷\_到达\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountmgr/ni-mountmgr-ioctl_mountmgr_volume_arrival_notification)对 i/o 控制代码。 可以通过调用创建此请求[ **IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)。
 
 ### <a name="span-idddkuniquevolumenameifspanspan-idddkuniquevolumenameifspanunique-volume-name"></a><span id="ddk_unique_volume_name_if"></span><span id="DDK_UNIQUE_VOLUME_NAME_IF"></span>唯一的卷名称
 
@@ -57,7 +57,7 @@ ms.locfileid: "63344413"
 
 -   该卷，例如驱动器号的建议持续性的符号链接名称 (例如，"\\DosDevices\\d:")
 
-有关存储驱动程序和装入管理器之间的交互的详细信息，请参阅[存储类驱动程序中支持装入管理器请求](https://msdn.microsoft.com/library/windows/hardware/ff567603)。
+有关存储驱动程序和装入管理器之间的交互的详细信息，请参阅[存储类驱动程序中支持装入管理器请求](https://docs.microsoft.com/windows-hardware/drivers/storage/supporting-mount-manager-requests-in-a-storage-class-driver)。
 
  
 

@@ -12,23 +12,23 @@ keywords:
 - 错误的信息检索 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 314ac2b6ecd141b63d5a631cdf9fddcc8e79ee4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76e57aef09a86ebcb0d20c934c99bcd066f7f49f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386462"
 ---
 # <a name="participating-in-error-information-retrieval"></a>参与错误信息检索
 
 
 若要参与错误信息检索，PSHED 插件必须实现以下回调函数：
 
-[*RetrieveErrorInfo*](https://msdn.microsoft.com/library/windows/hardware/ff559483)
+[*RetrieveErrorInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_retrieve_error_info)
 
-[*FinalizeErrorRecord*](https://msdn.microsoft.com/library/windows/hardware/ff559357)
+[*FinalizeErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_finalize_error_record)
 
-[*ClearErrorStatus*](https://msdn.microsoft.com/library/windows/hardware/ff559275)
+[*ClearErrorStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_clear_error_status)
 
 下面的代码示例演示如何实现这些回调函数。
 

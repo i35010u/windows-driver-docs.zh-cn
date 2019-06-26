@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f88a512bbc1db1b88ab6dd853a080d0933305dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bec499ee149adf1499175b867d8e8cda28b45ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358317"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367934"
 ---
 # <a name="bug-check-0x10f-resourcemanagerexceptionnothandled"></a>Bug 检查 0x10F：资源\_管理器\_异常\_不\_已处理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358317"
 资源\_管理器\_异常\_不\_已处理错误检查的值为 0x0000010F。 这表示内核事务管理器检测到内核模式资源管理器已引发异常以响应直接调用的回调。 资源管理器是处于意外且不可恢复的状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="resourcemanagerexceptionnothandled-parameters"></a>资源\_管理器\_异常\_不\_HANDLED 参数

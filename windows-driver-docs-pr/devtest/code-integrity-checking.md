@@ -6,16 +6,16 @@ keywords:
 - 驱动程序验证程序的代码完整性检查
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a596e6e1e9e7adc71efa3e66ac582b7bedcd1de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1be91e04333fe33af07b01338b078989fcbda00b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371621"
 ---
 # <a name="code-integrity-checking"></a>代码完整性检查
 
-[Device Guard](https://blogs.msdn.microsoft.com/windows_hardware_certification/2015/05/22/driver-compatibility-with-device-guard-in-windows-10/)可以使用硬件技术和虚拟化隔离的 Windows 操作系统其余部分中的代码完整性 (CI) 决策制定函数。 当使用基于虚拟化的安全隔离代码完整性，内核内存可能会变得可执行文件的唯一方法是通过代码完整性验证。 这意味着可写内容和可执行文件 (W + X) 的内核内存页面可以永远不会是不能直接修改可执行代码。 代码完整性检查确保这样的代码完整性规则，兼容性，并且检测到以下冲突：
+[Device Guard](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)可以使用硬件技术和虚拟化隔离的 Windows 操作系统其余部分中的代码完整性 (CI) 决策制定函数。 当使用基于虚拟化的安全隔离代码完整性，内核内存可能会变得可执行文件的唯一方法是通过代码完整性验证。 这意味着可写内容和可执行文件 (W + X) 的内核内存页面可以永远不会是不能直接修改可执行代码。 代码完整性检查确保这样的代码完整性规则，兼容性，并且检测到以下冲突：
 
 <table>
   <tr>
@@ -77,7 +77,7 @@ ms.locfileid: "63343937"
 
 * **在命令行**
 
-    在命令行中，在由表示端口微型端口接口检查**0x02000000 (位 25)**。 例如：
+    在命令行中，在由表示端口微型端口接口检查**0x02000000 (位 25)** 。 例如：
 
     `verifier /flags 0x02000000 /driver MyDriver.sys`
 

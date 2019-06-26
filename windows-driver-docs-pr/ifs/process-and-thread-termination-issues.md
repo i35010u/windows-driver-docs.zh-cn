@@ -10,12 +10,12 @@ keywords:
 - 终止进程或线程 WDK 的文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02d3f917b21439da077cded5461b9b7a01385245
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f629acdc3e8c766e8738228972ea7614e225d90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352765"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385151"
 ---
 # <a name="process-and-thread-termination-issues"></a>进程和线程终止问题
 
@@ -23,7 +23,7 @@ ms.locfileid: "63352765"
 ## <span id="ddk_process_and_thread_termination_issues_if"></span><span id="DDK_PROCESS_AND_THREAD_TERMINATION_ISSUES_IF"></span>
 
 
-存储与特定用户相关的状态信息的文件系统可能需要监视的进程和线程终止条件。 例如，与特定用户相关联的加密密钥可能需要终止，在放弃 （无论是计划内还是过早） 的专用的控件应用程序。 有关用于处理这些条件的例程的详细信息，请参阅[ **PsSetCreateProcessNotifyRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff559951)并[ **PsSetCreateThreadNotifyRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff559954).
+存储与特定用户相关的状态信息的文件系统可能需要监视的进程和线程终止条件。 例如，与特定用户相关联的加密密钥可能需要终止，在放弃 （无论是计划内还是过早） 的专用的控件应用程序。 有关用于处理这些条件的例程的详细信息，请参阅[ **PsSetCreateProcessNotifyRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreateprocessnotifyroutine)并[ **PsSetCreateThreadNotifyRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreatethreadnotifyroutine).
 
  
 

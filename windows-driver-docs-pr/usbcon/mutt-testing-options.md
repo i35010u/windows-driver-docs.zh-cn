@@ -3,12 +3,12 @@ Description: 在使用之前 MUTT 设备，必须准备的测试系统。
 title: 如何准备测试系统以运行 MUTT 测试工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e7c60595a621275c95fa98fc9d448e0a2f5e116
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: adf9a6d2c666566a54af609cb7f05a2068da1380
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383514"
 ---
 # <a name="how-to-prepare-the-test-system-to-run-mutt-test-tools"></a>如何准备测试系统以运行 MUTT 测试工具
 
@@ -66,10 +66,10 @@ ms.locfileid: "63379938"
 
 ### <a name="tracing-and-logging-events-in-the-usb-driver-stack"></a>跟踪和日志事件记录在 USB 驱动程序堆栈
 
-转到 https://aka.ms/usbtrace有关说明和下载用于捕获从 USB 驱动程序的 ETW 跟踪的脚本。
+转到 https://aka.ms/usbtrace 有关说明和下载用于捕获从 USB 驱动程序的 ETW 跟踪的脚本。
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
 
 

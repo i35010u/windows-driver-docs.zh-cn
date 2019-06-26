@@ -4,12 +4,12 @@ description: 本主题总结了支持的新的 1394年总线驱动程序的常�
 ms.assetid: 5473C6AC-284C-41B1-AA67-75696BE96C24
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 890f70f01b1d2950d256b67585cd14d00f376938
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a13152caf8d7e79e729df0efcfcefcea9eb9f29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376691"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385782"
 ---
 # <a name="device-driver-interface-ddi-changes-in-windows-7"></a>Windows 7 中的设备驱动程序接口 (DDI) 更改
 
@@ -23,13 +23,13 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 * [IEEE 总线驱动程序 DDI 更改](#ieee-bus-driver-ddi-changes)
 * [新标志的速度和有效负载大小](#new-flags-for-speed-and-payload-size)
 * [IEEE 1394 IOCTL 更改](#ieee-1394-ioctl-changes)
-* [相关的主题](#related-topics)
+* [相关主题](#related-topics)
 
 ## <a name="extended-bus-reset-notification"></a>扩展的总线重置通知
 
 1394ohci.sys 总线驱动程序支持的扩展的总线重置通知。 此通知总线重置通知的上下文中的 1394年客户端驱动程序返回有关当前生成 （如生成计数和节点 id) 总线的信息。 此信息可以消除对 1394年客户端驱动程序，才能同步检索生成计数、 节点 id 和其他信息，请使用其总线重置通知处理程序的需要。
 
-若要注册扩展的总线重置通知，客户端驱动程序使用的现有[**请求\_总线\_重置\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537638) I/O 请求，并指定新扩展\_通知\_中的例程标志**u.BusResetNotification.fulFlags**参数。 当扩展\_通知\_指定例程标志，则**u.BusResetNotification.ResetContext**参数指向[**总线\_重置\_数据**](https://msdn.microsoft.com/library/windows/hardware/gg266399)结构。
+若要注册扩展的总线重置通知，客户端驱动程序使用的现有[**请求\_总线\_重置\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537638) I/O 请求，并指定新扩展\_通知\_中的例程标志**u.BusResetNotification.fulFlags**参数。 当扩展\_通知\_指定例程标志，则**u.BusResetNotification.ResetContext**参数指向[**总线\_重置\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_bus_reset_data)结构。
 
 ## <a name="new-ioctls-for-phy-packet-support"></a>新 Ioctl PHY 数据包支持
 
@@ -60,7 +60,7 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 
 下表介绍每种新的受支持的速度的最大异步负载大小。
 
-| Flag                       | ReplTest1 | 描述 |
+| Flag                       | 值 | 描述 |
 |----------------------------|-------|-------------|
 | 异步\_有效负载\_800\_速率  | 4096  | 800 Mb/s    |
 | 异步\_有效负载\_1600年\_速率 | 4096  | 160 Mb/s    |
@@ -68,7 +68,7 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 
 下表介绍每种新的受支持的速度的速度标志。
 
-| Flag               | 值 | 描述 |
+| Flag               | ReplTest1 | 描述 |
 |--------------------|-------|-------------|
 | 速度\_标志\_800  | 0x08  | 800 Mb/s    |
 | SPEED\_FLAGS\_1600 | 0x10  | 160 Mb/s    |
@@ -95,7 +95,7 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 
 如果使用 raw 模式寻址，则应设置客户端驱动程序**nBlockSize**成员添加到支持的设备的连接速度的最大异步负载大小。
 
-Raw 模式寻址的详细信息，请参阅[发送异步 I/O 请求数据包上的 IEEE 1394 总线](https://msdn.microsoft.com/library/windows/hardware/ff538087)。
+Raw 模式寻址的详细信息，请参阅[发送异步 I/O 请求数据包上的 IEEE 1394 总线](https://docs.microsoft.com/windows-hardware/drivers/ieee/sending-asynchronous-i-o-request-packets-on-the-ieee-1394-bus)。
 
 [**REQUEST\_ASYNC\_WRITE**](https://msdn.microsoft.com/library/windows/hardware/ff537636)  
 
@@ -167,5 +167,5 @@ Raw 模式寻址的详细信息，请参阅[发送异步 I/O 请求数据包上�
 
 ## <a name="related-topics"></a>相关主题
 
-[IEEE 1394 驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/ff538867)  
-[在 Windows 7 中的 IEEE 1394 总线驱动程序](https://msdn.microsoft.com/library/windows/hardware/gg266402)  
+[IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)  
+[在 Windows 7 中的 IEEE 1394 总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/IEEE-1394-Bus-Driver-in-Windows-7)  

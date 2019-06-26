@@ -3,12 +3,12 @@ Description: 本主题列出了受支持的 USB 设备类的由 Microsoft 提供
 title: 包含在 Windows 中的 USB 设备类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3de0b27f2483509c395b4e685bded1d91f11a936
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64c70c37b78c74382d5337617edefe04c33ba6be
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393139"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>包含在 Windows 中的 USB 设备类驱动程序
 
@@ -28,15 +28,15 @@ ms.locfileid: "63379907"
 
 硬件供应商不应编写受支持的设备类的驱动程序。 Windows 类驱动程序可能不支持的所有功能所述的类规范中。 如果设备的功能的一些未实现的类驱动程序，供应商应提供补充类驱动程序来支持整个范围由设备提供的功能与协同工作的驱动程序。
 
-有关 USB 的常规信息-如果获得批准的设备类，请参阅[USB 技术](http://www.usb.org/developers/defined_class/)网站。
+有关 USB 的常规信息-如果获得批准的设备类，请参阅[USB 技术](https://www.usb.org/developers/defined_class/)网站。
 
-有关 USB 类规范和类代码的当前列表，请访问[USB DWG 网站](http://www.usb.org/about/dwg_charter/)。
+有关 USB 类规范和类代码的当前列表，请访问[USB DWG 网站](https://www.usb.org/about/dwg_charter/)。
 
 ## <a name="device-setup-classes"></a>设备安装程序类
 
 Windows 对设备进行分类*设备安装程序类*，这表示设备的功能。
 
-Microsoft 定义了适用于大多数设备安装程序类。 Ihv 和 Oem 可以定义新的设备安装程序类，但类仅如果没有，则现有应用。 有关详细信息，请参阅[系统定义设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff553419)。
+Microsoft 定义了适用于大多数设备安装程序类。 Ihv 和 Oem 可以定义新的设备安装程序类，但类仅如果没有，则现有应用。 有关详细信息，请参阅[系统定义设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。
 
 USB 设备的两个重要的设备安装程序类如下所示：
 
@@ -65,7 +65,7 @@ USB 设备的两个重要的设备安装程序类如下所示：
 {4d36e96c-e325-11ce-bfc1-08002be10318}</td>
       <td>Usbaudio.sys<p>Wdma\_usb.inf</p></td>
       <td>Windows 10 桌面版（家庭版、专业版、企业版和教育版）</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-      <td>Microsoft 通过 Usbaudio.sys 驱动程序为 USB 音频设备类提供支持。 详细信息，请参阅"USBAudio 类系统驱动程序"中<a href="https://msdn.microsoft.com/library/windows/hardware/ff537039">内核模式 WDM 音频组件</a>。 有关 Windows 音频支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8751">音频设备技术的 Windows</a>网站。</td>
+      <td>Microsoft 通过 Usbaudio.sys 驱动程序为 USB 音频设备类提供支持。 详细信息，请参阅"USBAudio 类系统驱动程序"中<a href="https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components">内核模式 WDM 音频组件</a>。 有关 Windows 音频支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8751">音频设备技术的 Windows</a>网站。</td>
     </tr>
     <tr>
       <td rowspan="4">通信和 CDC 控制 (02 h)</td>
@@ -86,7 +86,7 @@ USB 设备的两个重要的设备安装程序类如下所示：
         <td><strong>Net</strong></br>{4d36e972-e325-11ce-bfc1-08002be10318}</br><strong>请注意</strong>支持子类 0Eh (MBIM)</td>
         <td>wmbclass.sys</br>Netwmbclass.inf</td>
         <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</td>
-        <td>从 Windows 8 开始，Microsoft 提供的 wmbclass.sys 驱动程序，移动宽带设备。 查看，请<a href="https://msdn.microsoft.com/library/windows/hardware/dn265427">MB 接口模型</a>。
+        <td>从 Windows 8 开始，Microsoft 提供的 wmbclass.sys 驱动程序，移动宽带设备。 查看，请<a href="https://docs.microsoft.com/windows-hardware/drivers/network/mb-interface-model">MB 接口模型</a>。
 </td>
       </tr>
       <tr>
@@ -94,7 +94,7 @@ USB 设备的两个重要的设备安装程序类如下所示：
         <td><strong>HIDClass</strong></br>{745a17a0-74d3-11d0-b6fe-00a0c90f57da}</td>
         <td>Hidclass.sys</br>Hidusb.sys</br>Input.inf</td>
         <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-        <td>Microsoft 提供的 HID 类驱动程序 (Hidclass.sys) 和 miniclass 驱动程序 (Hidusb.sys) 运行符合的设备<a href="https://go.microsoft.com/fwlink/p/?LinkId=761243">USB HID 标准</a>。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/jj126193">HID 体系结构</a>并<a href="https://msdn.microsoft.com/library/windows/hardware/jj131708">微型驱动程序和 HID 类驱动程序</a>。 有关输入硬件的 Windows 支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8709">输入和 HID-体系结构和驱动程序支持</a>网站。</td>
+        <td>Microsoft 提供的 HID 类驱动程序 (Hidclass.sys) 和 miniclass 驱动程序 (Hidusb.sys) 运行符合的设备<a href="https://go.microsoft.com/fwlink/p/?LinkId=761243">USB HID 标准</a>。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/jj126193(v=vs.85)">HID 体系结构</a>并<a href="https://docs.microsoft.com/windows-hardware/drivers/hid/minidriver-operations">微型驱动程序和 HID 类驱动程序</a>。 有关输入硬件的 Windows 支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8709">输入和 HID-体系结构和驱动程序支持</a>网站。</td>
       </tr>
       <tr>
         <td>物理 (05 h)</td>
@@ -109,7 +109,7 @@ USB 设备的两个重要的设备安装程序类如下所示：
       <td><strong>Image</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
       <td>Usbscan.sys</br>Sti.inf</td>
       <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-      <td>Microsoft 提供了管理 Windows XP 和更高版本操作系统的 USB 数字照相机和扫描仪的 Usbscan.sys 驱动程序。 此驱动程序实现了 USB 组件的 Windows 映像体系结构 (WIA)。 有关 WIA 的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff553346">Windows 图像采集驱动程序</a>并<a href="https://go.microsoft.com/fwlink/p/?linkid=8768">Windows Imaging Component</a>网站。 Usbscan.sys WIA 中所扮演的角色的说明，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff550215">WIA 核心组件</a>。</td>
+      <td>Microsoft 提供了管理 Windows XP 和更高版本操作系统的 USB 数字照相机和扫描仪的 Usbscan.sys 驱动程序。 此驱动程序实现了 USB 组件的 Windows 映像体系结构 (WIA)。 有关 WIA 的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers">Windows 图像采集驱动程序</a>并<a href="https://go.microsoft.com/fwlink/p/?linkid=8768">Windows Imaging Component</a>网站。 Usbscan.sys WIA 中所扮演的角色的说明，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-core-components">WIA 核心组件</a>。</td>
     </tr>
     <tr>
       <td>打印机 (07 h)</td>
@@ -124,14 +124,14 @@ USB 设备的两个重要的设备安装程序类如下所示：
           <td><strong>USB</strong></td>
           <td>Usbstor.sys</td>
           <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-          <td>Microsoft 提供了 Usbstor.sys 端口驱动程序来管理与 Microsoft 的本机存储类驱动程序的 USB 大容量存储设备。 此驱动程序管理的示例设备堆栈，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff552547">USB 大容量存储设备的设备对象示例</a>。 有关 Windows 存储支持的信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8766">存储技术</a>网站。</td>
+          <td>Microsoft 提供了 Usbstor.sys 端口驱动程序来管理与 Microsoft 的本机存储类驱动程序的 USB 大容量存储设备。 此驱动程序管理的示例设备堆栈，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device">USB 大容量存储设备的设备对象示例</a>。 有关 Windows 存储支持的信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8766">存储技术</a>网站。</td>
         </tr>
         <tr>
          <td><strong>SCSIAdapter</strong><p>{4d36e97b-e325-11ce-bfc1-08002be10318}</td>
          <td>子类 (06) 和协议 (62)</br>Uaspstor.sys</br>Uaspstor.inf</td>
          <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</td>
          <td>Uaspstor.sys 是支持大容量流终结点的 SuperSpeed USB 设备的类驱动程序。 有关详细信息，请参阅： <ul>
-           <li><a href="https://msdn.microsoft.com/library/windows/hardware/gg585600.aspx">作为类驱动程序在 xHCI 上加载 UASP 存储驱动程序</a></li><li><a href="https://msdn.microsoft.com/library/windows/hardware/jj248714.aspx">针对 Windows 8 的 USB Attached SCSI (UAS) 最佳实践</li></ul></td>
+           <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642103(v=vs.85)">作为类驱动程序在 xHCI 上加载 UASP 存储驱动程序</a></li><li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642113(v=vs.85)">针对 Windows 8 的 USB Attached SCSI (UAS) 最佳实践</li></ul></td>
         </tr>
     </tr>
     <tr>
@@ -162,7 +162,7 @@ USB 设备的两个重要的设备安装程序类如下所示：
         <tr>
           <td>Usbccid.sys （已过时）</td>
           <td>Windows 10 桌面版</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-          <td>Microsoft 提供了 Usbccid.sys 最小化的类驱动程序来管理 USB 智能卡读卡器。 有关 Windows 中的智能卡驱动程序的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff549003">智能卡设计指南</a>。
+          <td>Microsoft 提供了 Usbccid.sys 最小化的类驱动程序来管理 USB 智能卡读卡器。 有关 Windows 中的智能卡驱动程序的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/smartcard/index">智能卡设计指南</a>。
           <p>请注意，对于 Windows Server 2003、 Windows XP 和 Windows 2000，特殊说明所需的加载该驱动程序，因为它可能已释放晚于操作系统。<p>
           <strong>请注意</strong>UMDF 驱动程序，WUDFUsbccidDriver.dll 替换为 Usbccid.sys 驱动程序。</td>
           </tr>
@@ -186,7 +186,7 @@ USB 设备的两个重要的设备安装程序类如下所示：
       <td>Usbvideo.sys<p>
 Usbvideo.inf</td>
       <td>Windows 10 桌面版<p>Windows Vista</td>
-      <td>Microsoft 提供 USB 视频类支持通过 Usbvideo.sys 驱动程序。 详细信息，请参阅"USB 视频类驱动程序"下<a href="https://msdn.microsoft.com/library/windows/hardware/ff554228">AVStream 微型驱动程序</a>。
+      <td>Microsoft 提供 USB 视频类支持通过 Usbvideo.sys 驱动程序。 详细信息，请参阅"USB 视频类驱动程序"下<a href="https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-minidrivers-design-guide">AVStream 微型驱动程序</a>。
       <p>请注意，对于 Windows XP，特殊说明所需的加载该驱动程序，因为它可能已释放比操作系统的更高版本。</td>
     </tr>
      <tr>
@@ -213,14 +213,14 @@ Usbvideo.inf</td>
       <td>蓝牙<p>{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}</td>
       <td>Bthusb.sys<p>Bth.inf</td>
       <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Vista</td>
-      <td>Microsoft 提供了 Bthusb.sys 微型端口驱动程序来管理 USB Bluetooth 无线电收发器。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff536596">蓝牙设计指南</a>。</td>
+      <td>Microsoft 提供了 Bthusb.sys 微型端口驱动程序来管理 USB Bluetooth 无线电收发器。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536596(v=vs.85)">蓝牙设计指南</a>。</td>
     </tr>     <tr>
       <td>杂项 (EFh)</td>
       <td><strong>Net</strong><p>
 {4d36e972-e325-11ce-bfc1-08002be10318}<p><strong>请注意</strong>  支持子类 04h 和协议 01 h</td>
       <td>Rndismp.sys</br>Rndismp.inf</td>
       <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Vista</td>
-      <td>在 Windows Vista 之前支持的 CDC 仅限于 RNDIS 特定于实现的唯一供应商协议使用的控件抽象模型 (ACM) (<strong>bInterfaceProtocol</strong>) 值为 0xFF。 RNDIS 设施中心中的单个类驱动程序，Rndismp.sys 所有 802 样式网卡的管理。 远程 NDIS 的详细讨论，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff569967">远程 NDIS 概述</a>。 Usb 远程 NDIS 的映射是 Usb8023.sys 驱动程序中实现的。 在 Windows 中的网络支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8759">网络和无线技术</a>网站。</td>
+      <td>在 Windows Vista 之前支持的 CDC 仅限于 RNDIS 特定于实现的唯一供应商协议使用的控件抽象模型 (ACM) (<strong>bInterfaceProtocol</strong>) 值为 0xFF。 RNDIS 设施中心中的单个类驱动程序，Rndismp.sys 所有 802 样式网卡的管理。 远程 NDIS 的详细讨论，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-remote-ndis--rndis-">远程 NDIS 概述</a>。 Usb 远程 NDIS 的映射是 Usb8023.sys 驱动程序中实现的。 在 Windows 中的网络支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8759">网络和无线技术</a>网站。</td>
     </tr>
     <tr>
       <td>特定于应用程序 (FEh)</td>

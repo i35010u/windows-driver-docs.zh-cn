@@ -8,12 +8,12 @@ keywords:
 - 存储驱动程序 WDK，微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f9c1e02583436ac3af9d0feaca0a121455c93c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 990d1ca49e6082613eb196b9db64d986bda92072
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354538"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368199"
 ---
 # <a name="storage-miniport-drivers"></a>存储器微型端口驱动程序
 
@@ -31,9 +31,9 @@ ms.locfileid: "63354538"
 
 [ATA 微型端口驱动程序](ata-miniport-drivers.md)
 
-存储微型端口驱动程序的最佳做法是避免调用操作系统以外的端口驱动程序支持库提供的例程的例程。 例如，存储微型端口驱动程序不应调用[ **KeQuerySystemTime**](https://msdn.microsoft.com/library/windows/hardware/ff553068)。 相反，微型端口驱动程序应调用例程，如[ **ScsiPortQuerySystemTime** ](https://msdn.microsoft.com/library/windows/hardware/ff564708)或[ **StorPortQuerySystemTime**](https://msdn.microsoft.com/library/windows/hardware/ff567465)。 存储微型端口驱动程序不应调用[ **MmGetPhysicalAddress**](https://msdn.microsoft.com/library/windows/hardware/ff554547)。 相反，微型端口驱动程序应调用例程，如[ **ScsiPortGetPhysicalAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff564636)并[ **StorPortGetPhysicalAddress**](https://msdn.microsoft.com/library/windows/hardware/ff567095)。
+存储微型端口驱动程序的最佳做法是避免调用操作系统以外的端口驱动程序支持库提供的例程的例程。 例如，存储微型端口驱动程序不应调用[ **KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)。 相反，微型端口驱动程序应调用例程，如[ **ScsiPortQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportquerysystemtime)或[ **StorPortQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportquerysystemtime)。 存储微型端口驱动程序不应调用[ **MmGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmgetphysicaladdress)。 相反，微型端口驱动程序应调用例程，如[ **ScsiPortGetPhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetphysicaladdress)并[ **StorPortGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetphysicaladdress)。
 
-不要使用[硬件抽象层例程](https://msdn.microsoft.com/library/windows/hardware/ff546644)微型端口驱动程序中。
+不要使用[硬件抽象层例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))微型端口驱动程序中。
 
 下面的列表说明了每种类型的存储微型端口驱动程序应使用的端口驱动程序支持库：
 

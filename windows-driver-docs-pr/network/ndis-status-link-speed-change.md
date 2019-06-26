@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_LINK_SPEED_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a43927435161ab2e5a4737b1db3ae7450681188
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50025c65d233ce489acf3d2fd5c4b867ff15d9e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368575"
 ---
 # <a name="ndisstatuslinkspeedchange"></a>NDIS\_状态\_链接\_速度\_更改
 
@@ -21,9 +21,9 @@ NDIS\_状态\_链接\_速度\_更改状态指示链接速度更改。
 <a name="remarks"></a>备注
 -------
 
-NDIS 转换 NDIS\_状态\_链接\_速度\_更改为的状态指示[ **NDIS\_状态\_链接\_状态**](ndis-status-link-state.md)状态指示为过量 NDIS 6.0 驱动程序。 当 NDIS 收到 NDIS\_状态\_链接\_速度\_更改状态 NDIS 颁发的 OID 查询请求[OID\_常规\_链接\_速度](https://msdn.microsoft.com/library/windows/hardware/ff569593). NDIS 使用 OID 的结果\_GEN\_链接\_速度查询发出 NDIS\_状态\_链接\_状态状态设置为过量 NDIS 6.0 驱动程序。
+NDIS 转换 NDIS\_状态\_链接\_速度\_更改为的状态指示[ **NDIS\_状态\_链接\_状态**](ndis-status-link-state.md)状态指示为过量 NDIS 6.0 驱动程序。 当 NDIS 收到 NDIS\_状态\_链接\_速度\_更改状态 NDIS 颁发的 OID 查询请求[OID\_常规\_链接\_速度](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed). NDIS 使用 OID 的结果\_GEN\_链接\_速度查询发出 NDIS\_状态\_链接\_状态状态设置为过量 NDIS 6.0 驱动程序。
 
-NDIS 5。*x*或更早的微型端口驱动程序提供的 DWORD 类型值*StatusBuffer*参数[ **NdisMIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff553538)函数。 详细了解 NDIS\_状态\_链接\_速度\_更改，请参阅[OID\_IRDA\_速率\_探查](https://msdn.microsoft.com/library/windows/hardware/ff560287)。
+NDIS 5。*x*或更早的微型端口驱动程序提供的 DWORD 类型值*StatusBuffer*参数[ **NdisMIndicateStatus** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553538(v=vs.85))函数。 详细了解 NDIS\_状态\_链接\_速度\_更改，请参阅[OID\_IRDA\_速率\_探查](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560287(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,11 +50,11 @@ NDIS 5。*x*或更早的微型端口驱动程序提供的 DWORD 类型值*Status
 
 [**NDIS\_STATUS\_LINK\_STATE**](ndis-status-link-state.md)
 
-[**NdisMIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553538)
+[**NdisMIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553538(v=vs.85))
 
-[OID\_GEN\_LINK\_SPEED](https://msdn.microsoft.com/library/windows/hardware/ff569593)
+[OID\_GEN\_LINK\_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed)
 
-[OID\_IRDA\_RATE\_SNIFF](https://msdn.microsoft.com/library/windows/hardware/ff560287)
+[OID\_IRDA\_RATE\_SNIFF](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560287(v=vs.85))
 
  
 

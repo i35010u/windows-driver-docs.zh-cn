@@ -9,12 +9,12 @@ keywords:
 - 用户对象 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe8594a1691889c3595434e424f06f4c61e622e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ec5927ca3ceba3cbeca85ee4ffb39c6b657c924
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382347"
 ---
 # <a name="gdi-user-objects"></a>GDI 用户对象
 
@@ -43,43 +43,43 @@ GDI 维护内部数据结构，但通过将它们作为向下传递到这些结�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538261" data-raw-source="[&lt;strong&gt;BRUSHOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538261)"><strong>BRUSHOBJ</strong></a></p></td>
-<td align="left"><p>定义图形函数的输出行、 文本或填充的画笔对象。 驱动程序可以调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff556272#wdkgloss-brushobj" data-raw-source="&lt;em&gt;BRUSHOBJ&lt;/em&gt;"> <em>BRUSHOBJ</em> </a>服务意识到画笔或查找以前缓存的通过 GDI 的实现。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_brushobj" data-raw-source="[&lt;strong&gt;BRUSHOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_brushobj)"><strong>BRUSHOBJ</strong></a></p></td>
+<td align="left"><p>定义图形函数的输出行、 文本或填充的画笔对象。 驱动程序可以调用<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-brushobj" data-raw-source="&lt;em&gt;BRUSHOBJ&lt;/em&gt;"> <em>BRUSHOBJ</em> </a>服务意识到画笔或查找以前缓存的通过 GDI 的实现。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff539417" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539417)"><strong>CLIPOBJ</strong></a></p></td>
-<td align="left"><p>该驱动程序提供访问权限<a href="https://msdn.microsoft.com/library/windows/hardware/ff556274#wdkgloss-clip-region" data-raw-source="&lt;em&gt;clip region&lt;/em&gt;"><em>剪辑区域</em></a>绘制或填充。 此区域可为一系列矩形的枚举。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipobj)"><strong>CLIPOBJ</strong></a></p></td>
+<td align="left"><p>该驱动程序提供访问权限<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-clip-region" data-raw-source="&lt;em&gt;clip region&lt;/em&gt;"><em>剪辑区域</em></a>绘制或填充。 此区域可为一系列矩形的枚举。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565804" data-raw-source="[&lt;strong&gt;FLOATOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565804)"><strong>FLOATOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_floatobj" data-raw-source="[&lt;strong&gt;FLOATOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_floatobj)"><strong>FLOATOBJ</strong></a></p></td>
 <td align="left"><p>允许图形驱动程序来模拟浮点运算。 所有其他内核模式驱动程序将禁用浮点操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565974" data-raw-source="[&lt;strong&gt;FONTOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565974)"><strong>FONTOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fontobj" data-raw-source="[&lt;strong&gt;FONTOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fontobj)"><strong>FONTOBJ</strong></a></p></td>
 <td align="left"><p>使驱动程序访问有关特定实例 （或实现） 的一种字体的信息。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568844" data-raw-source="[&lt;strong&gt;PALOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568844)"><strong>PALOBJ</strong></a></p></td>
-<td align="left"><p>一个包含 RGB 调色板颜色; 的结构可通过访问<a href="https://msdn.microsoft.com/library/windows/hardware/ff568845" data-raw-source="&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;"> <em>PALOBJ</em> </a>结构不包含任何公共成员。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_palobj" data-raw-source="[&lt;strong&gt;PALOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_palobj)"><strong>PALOBJ</strong></a></p></td>
+<td align="left"><p>一个包含 RGB 调色板颜色; 的结构可通过访问<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors" data-raw-source="&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;"> <em>PALOBJ</em> </a>结构不包含任何公共成员。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568849" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568849)"><strong>PATHOBJ</strong></a></p></td>
-<td align="left"><p>定义一个路径，指定将内容绘制 （行或贝塞尔曲线）。 一个<a href="https://msdn.microsoft.com/library/windows/hardware/ff556325#wdkgloss-pathobj" data-raw-source="&lt;em&gt;PATHOBJ&lt;/em&gt;"> <em>PATHOBJ</em> </a>结构传递给驱动程序来描述一组行和要对其应用笔划或填充的贝塞尔曲线。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_pathobj" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_pathobj)"><strong>PATHOBJ</strong></a></p></td>
+<td align="left"><p>定义一个路径，指定将内容绘制 （行或贝塞尔曲线）。 一个<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-pathobj" data-raw-source="&lt;em&gt;PATHOBJ&lt;/em&gt;"> <em>PATHOBJ</em> </a>结构传递给驱动程序来描述一组行和要对其应用笔划或填充的贝塞尔曲线。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569738" data-raw-source="[&lt;strong&gt;STROBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569738)"><strong>STROBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_strobj" data-raw-source="[&lt;strong&gt;STROBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_strobj)"><strong>STROBJ</strong></a></p></td>
 <td align="left"><p>枚举的驱动程序的标志符号句柄和描述要绘制的文本字符串的方式的位置的列表。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569901" data-raw-source="[&lt;strong&gt;SURFOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569901)"><strong>SURFOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_surfobj" data-raw-source="[&lt;strong&gt;SURFOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_surfobj)"><strong>SURFOBJ</strong></a></p></td>
 <td align="left"><p>标识一个表面，这可以是 GDI 位图、 依赖于设备的位图或设备管理面。 请参阅<a href="surface-types.md" data-raw-source="[Surface Types](surface-types.md)">图面类型</a>有关详细信息。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570618" data-raw-source="[&lt;strong&gt;XFORMOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570618)"><strong>XFORMOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570618(v=vs.85)" data-raw-source="[&lt;strong&gt;XFORMOBJ&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570618(v=vs.85))"><strong>XFORMOBJ</strong></a></p></td>
 <td align="left"><p>描述的任意线性二维转换，如几何宽线条。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570634" data-raw-source="[&lt;strong&gt;XLATEOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570634)"><strong>XLATEOBJ</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj" data-raw-source="[&lt;strong&gt;XLATEOBJ&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj)"><strong>XLATEOBJ</strong></a></p></td>
 <td align="left"><p>定义将像素从源图面格式转换为目标图面格式所需的翻译。</p></td>
 </tr>
 </tbody>

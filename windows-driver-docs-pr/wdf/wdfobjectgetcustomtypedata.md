@@ -6,12 +6,12 @@ keywords:
 - WdfObjectGetCustomTypeData macro
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d51725eb8d1740c10024987ddba5cb15c7f9e9c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62f1508c9897e1b9f4beff59fe0c293bfdc8a04b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385738"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372079"
 ---
 # <a name="wdfobjectgetcustomtypedata-macro"></a>WdfObjectGetCustomTypeData macro
 
@@ -47,7 +47,7 @@ Framework 对象的句柄。
 <a name="remarks"></a>备注
 -------
 
-有关对象驱动程序类型的详细信息，请参阅[Framework 对象自定义类型](https://msdn.microsoft.com/library/windows/hardware/hh406457)。
+有关对象驱动程序类型的详细信息，请参阅[Framework 对象自定义类型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)。
 
 <a name="requirements"></a>要求
 ------------

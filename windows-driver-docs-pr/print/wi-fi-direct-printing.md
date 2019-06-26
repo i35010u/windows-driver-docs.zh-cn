@@ -4,12 +4,12 @@ description: Windows 8.1 和更高版本的 Windows 支持通过 Wi-Fi Direct (W
 ms.assetid: B2FC1293-F9E4-43A4-84BF-21EF8C3D27E0
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ef2a07b95369716d567bb4bfd4c8d3cb94ca63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 675b761a7371d5b26379f1b1735ab045cdbc57d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370387"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368965"
 ---
 # <a name="wi-fi-direct-printing"></a>Wi-Fi 直接打印
 
@@ -85,7 +85,7 @@ Windows 8.1 和更高版本的 Windows 支持通过 Wi-Fi Direct (WFD) 打印。
 请参阅以下主题有关的相关信息：
 
 [容器 Id 概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)
-[PnP x:Plug and Play for Windows 规范的扩展](https://msdn.microsoft.com/windows/hardware/gg463082)
+[PnP x:Plug and Play for Windows 规范的扩展](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))
 [Wi-fi 联盟-Wi-Fi Direct 行业白皮书](https://go.microsoft.com/fwlink/p/?LinkId=784967)
  
 

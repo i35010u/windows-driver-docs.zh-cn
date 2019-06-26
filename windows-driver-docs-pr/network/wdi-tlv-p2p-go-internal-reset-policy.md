@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d0b49aed8609cee6d92ce59ecf1091ffed9d381f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c7705c3f3cc713f2b3661a7f147a395bcf70bd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329725"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384198"
 ---
 # <a name="wditlvp2pgointernalresetpolicy"></a>WDI\_TLV\_P2P\_GO\_INTERNAL\_RESET\_POLICY
 
@@ -33,7 +33,7 @@ UINT32 大小 （以字节为单位）。
 
 | 在任务栏的搜索框中键入                                                                                            | 描述                                                                                                                                                                                                                                                        |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_P2P\_GO\_INTERNAL\_RESET\_POLICY**](https://msdn.microsoft.com/library/windows/hardware/dn926096) (UINT32) | 如果 Wi-Fi Direct 转重置为已停止/重新启动由 IHV 组件本身 （例如，对于蓝牙共同 ex 空间流降级），此配置将定义的固件操作后重置通道选择要采用的策略。 |
+| [**WDI\_P2P\_GO\_INTERNAL\_RESET\_POLICY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_go_internal_reset_policy) (UINT32) | 如果 Wi-Fi Direct 转重置为已停止/重新启动由 IHV 组件本身 （例如，对于蓝牙共同 ex 空间流降级），此配置将定义的固件操作后重置通道选择要采用的策略。 |
 
  
 

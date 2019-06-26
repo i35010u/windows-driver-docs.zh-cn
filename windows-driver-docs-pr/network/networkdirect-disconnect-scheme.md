@@ -4,20 +4,20 @@ description: 本部分介绍的 NetworkDirect 断开连接方案
 ms.assetid: A7973588-5AED-494E-92CA-D5EFB2C7950A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1a96c82c7ce74f3d9d36b4eff463ff11978b018
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76dcb490e174d25ef47b8f24dd20d0cab985217a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371215"
 ---
 # <a name="networkdirect-disconnect-scheme"></a>NetworkDirect 断开连接方案
 
 
-此处所述的方案适用于[NDSPI](https://msdn.microsoft.com/library/cc904391)版本 2 和[NDKPI](network-direct-kernel-programming-interface--ndkpi-.md)。 使用以下术语：
+此处所述的方案适用于[NDSPI](https://docs.microsoft.com/previous-versions/windows/desktop/cc904391(v=vs.85))版本 2 和[NDKPI](network-direct-kernel-programming-interface--ndkpi-.md)。 使用以下术语：
 
 -   ND 用于引用 NDSPI 或 NDK。
--   *NdDisconnect*用于指 ND 使用者发出才能启动正常断开连接的函数调用。 对于 NDSPI，这是[ **INDConnector::Disconnect**](https://msdn.microsoft.com/library/cc904364)。 对于 NDKPI，它是*NdkDisconnect* ([*NDK\_FN\_断开连接*](https://msdn.microsoft.com/library/windows/hardware/hh439885))。
+-   *NdDisconnect*用于指 ND 使用者发出才能启动正常断开连接的函数调用。 对于 NDSPI，这是[ **INDConnector::Disconnect**](https://docs.microsoft.com/previous-versions/windows/desktop/cc904364(v=vs.85))。 对于 NDKPI，它是*NdkDisconnect* ([*NDK\_FN\_断开连接*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_disconnect))。
 -   *NdDisconnectIndication*用于引用时 ND 提供程序接收正常 ND 提供程序向 ND 使用者提供的指示从对等方断开连接，或者检测到由于任何原因 （而不是本地已中止连接NDK 使用者拥有如发出的用于启动*NdDisconnect*或*NdCloseConnector*)。
 
 下面，A 和 B 是指 ND 连接的两个方面。 使用者的引用 ND 使用者端 A 上，提供一个程序是指上一侧的 ND 提供程序，并同样使用者 B/提供程序 B 是指在端 B.这些相同的实体当使用者一个调用*NdDisconnect*，提供程序必须发送一个正常断开连接 B 端的通知，然后完成使用者一个*NdDisconnect*请求仅当两个以下条件发生：

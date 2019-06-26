@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS (0xDD) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 07f79ca479bfca3f308f753475e145f44174fc82
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 169a55d0e77d955b07809e50d1fc879debb7b022
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380077"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387196"
 ---
 # <a name="wditlvchecksumoffloadv6rxparameters-0xdd"></a>WDI\_TLV\_CHECKSUM\_卸载\_V6\_RX\_参数 (0xDD)
 
 
 WDI\_TLV\_CHECKSUM\_卸载\_V6\_RX\_参数是包含用于对 IPv6 的 Rx 校验和卸载 TLV。
 
-将报告功能值，如中所述[ **NDIS\_TCP\_IP\_校验和\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff567878)。 使用 NDIS\_卸载\_不\_支持和 NDIS\_卸载\_时，该值指示通过功能支持[OID\_WDI\_GET\_适配器\_功能](https://msdn.microsoft.com/library/windows/hardware/dn925838)。
+将报告功能值，如中所述[ **NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)。 使用 NDIS\_卸载\_不\_支持和 NDIS\_卸载\_时，该值指示通过功能支持[OID\_WDI\_GET\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

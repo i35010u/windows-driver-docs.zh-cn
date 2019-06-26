@@ -4,12 +4,12 @@ description: 广播驱动程序体系结构属性、事件和方法集
 ms.assetid: 4323c19a-e47d-4ec6-a39c-3f2e95c526e4
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1f6c9ddf7941cc9cd6a2b8a0f68d76d1b1cc9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0e6e60b09ed10ad865747ff4dbba572224b26ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370419"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386686"
 ---
 # <a name="broadcast-driver-architecture-property-event-and-method-sets"></a>广播驱动程序体系结构属性、事件和方法集
 
@@ -17,7 +17,7 @@ ms.locfileid: "63370419"
 ## <span id="ddk_broadcast_driver_architecture_property_event_and_method_sets_ks"></span><span id="DDK_BROADCAST_DRIVER_ARCHITECTURE_PROPERTY_EVENT_AND_METHOD_SETS_KS"></span>
 
 
-本部分介绍 BDA 微型驱动程序实现的属性、 事件和方法集。 这些设置中定义*bdamedia.h*。 BDA 微型驱动程序可以调度的一些属性并在这些集中到 BDA 支持库中的默认实现的方法。 有关详细信息，请参阅[广播驱动程序体系结构微型驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff556588)微型驱动程序如何使用函数 BDA 支持库提供两个集的默认处理。
+本部分介绍 BDA 微型驱动程序实现的属性、 事件和方法集。 这些设置中定义*bdamedia.h*。 BDA 微型驱动程序可以调度的一些属性并在这些集中到 BDA 支持库中的默认实现的方法。 有关详细信息，请参阅[广播驱动程序体系结构微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/broadcast-driver-architecture-minidrivers)微型驱动程序如何使用函数 BDA 支持库提供两个集的默认处理。
 
 以下各节提供有关 BDA 属性、 事件和方法集的详细信息：
 

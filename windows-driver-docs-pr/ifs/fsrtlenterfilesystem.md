@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f2d21a9d6f91e869851da710940d0095bb0460
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 48b83ae8348f462217ab8e5ae3176642578f2953
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365887"
 ---
 # <a name="fsrtlenterfilesystem-function"></a>FsRtlEnterFileSystem 函数
 
@@ -53,15 +53,15 @@ VOID FsRtlEnterFileSystem(
 
 每次成功调用**FsRtlEnterFileSystem**的后续调用必须匹配[ **FsRtlExitFileSystem**](fsrtlexitfilesystem.md)。
 
-请注意，与本地文件系统和网络重定向程序，不同文件系统筛选器驱动程序应永远不会禁用正常内核 Apc 的传递 (通过调用**FsRtlEnterFileSystem**或[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)或通过提升到 IRQL APC\_级别) 调用跨[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+请注意，与本地文件系统和网络重定向程序，不同文件系统筛选器驱动程序应永远不会禁用正常内核 Apc 的传递 (通过调用**FsRtlEnterFileSystem**或[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)或通过提升到 IRQL APC\_级别) 调用跨[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
 
 文件系统筛选器驱动程序应获取任何资源之前禁用正常内核 Apc。 文件系统筛选器驱动程序中获取以下例程使用的资源：
 
--   [**ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)
+-   [**ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 -   [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
 
--   [**ExAcquireResourceShared**](https://msdn.microsoft.com/library/windows/hardware/ff544359)
+-   [**ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 -   [**ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)
 
@@ -98,11 +98,11 @@ VOID FsRtlEnterFileSystem(
 ## <a name="see-also"></a>请参阅
 
 
-[**ExAcquireResourceExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544345)
+[**ExAcquireResourceExclusive**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
 
-[**ExAcquireResourceShared**](https://msdn.microsoft.com/library/windows/hardware/ff544359)
+[**ExAcquireResourceShared**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
 [**ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)
 
@@ -110,11 +110,11 @@ VOID FsRtlEnterFileSystem(
 
 [**ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)
 
-[**ExReleaseResource**](https://msdn.microsoft.com/library/windows/hardware/ff545571)
+[**ExReleaseResource**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)
 
-[**ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
 
-[**ExTryToAcquireFastMutex**](https://msdn.microsoft.com/library/windows/hardware/ff545647)
+[**ExTryToAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))
 
 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)
 
@@ -124,11 +124,11 @@ VOID FsRtlEnterFileSystem(
 
 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)
 
-[**IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
 
-[**KeEnterCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552021)
+[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)
 
-[**KeRaiseIrqlToDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553084)
+[**KeRaiseIrqlToDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keraiseirqltodpclevel)
 
  
 

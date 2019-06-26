@@ -14,17 +14,17 @@ keywords:
 - 企业 CA 测试证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7442f05d8d409f950b4e364fae179a61ce2e1b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34cbf360689a8c845a856dab98a300d6644e1662
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339598"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377245"
 ---
 # <a name="test-signing-a-driver-file"></a>对驱动程序文件进行测试签名
 
 
-使用[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)驱动程序文件中嵌入签名，如以下主题中所述：
+使用[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)驱动程序文件中嵌入签名，如以下主题中所述：
 
 [使用 MakeCert 测试证书或商业测试证书在驱动程序文件中嵌入测试签名](#using-a-makecert-test-certificate-or-a-commercial-test-certificate-to-)
 

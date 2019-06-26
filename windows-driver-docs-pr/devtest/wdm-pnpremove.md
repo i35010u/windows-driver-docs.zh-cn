@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9435b357d99f8b22a569a02709be512728b2a76b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 155872a2df6ddd59254239a5ead63afd4e85aff5
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393681"
 ---
 # <a name="pnpremove-rule-wdm"></a>PnpRemove 规则 (wdm)
 
@@ -25,7 +25,7 @@ ms.locfileid: "63329921"
 **PnpRemove**规则指定驱动程序无法完成 IRP\_MN\_惊讶\_删除、 IRP\_MN\_取消\_删除\_设备、 IRP\_MN\_取消\_停止\_设备或 IRP\_MN\_删除\_设备与失败的请求。
 
 > [!NOTE]
-> 在 Windows 8.1，你可以测试**PnpRemove**规则使用[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。 该规则不是当前可用于[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)。
+> 在 Windows 8.1，你可以测试**PnpRemove**规则使用[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。 该规则不是当前可用于[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)。
 
  
 
@@ -35,7 +35,7 @@ ms.locfileid: "63329921"
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00043006) |
+| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00043006) |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -51,7 +51,7 @@ ms.locfileid: "63329921"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>运行<a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a> ，然后选择<a href="https://msdn.microsoft.com/library/windows/hardware/hh454208" data-raw-source="[DDI compliance checking](https://msdn.microsoft.com/library/windows/hardware/hh454208)">DDI 符合性检查</a>选项。</p></td>
+<td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a> ，然后选择<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[DDI compliance checking](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">DDI 符合性检查</a>选项。</p></td>
 </tr>
 </tbody>
 </table>

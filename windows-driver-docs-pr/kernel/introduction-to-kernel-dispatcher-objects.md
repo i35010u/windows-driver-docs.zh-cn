@@ -10,12 +10,12 @@ keywords:
 - 不发出信号状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a6530955b26e9da466c813312d67cd65d3e0c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d47107a24e2f59dead155879f78fd93bcf47fcb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340969"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369725"
 ---
 # <a name="introduction-to-kernel-dispatcher-objects"></a>内核调度程序对象简介
 
@@ -31,7 +31,7 @@ ms.locfileid: "63340969"
 
 每个内核定义调度程序对象类型具有设置到用信号通知，或者设置为未用信号通知的状态。
 
-一组线程可以同步其操作，如果一个或多个线程调用[ **KeWaitForSingleObject**](https://msdn.microsoft.com/library/windows/hardware/ff553350)， [ **KeWaitForMutexObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553344)，或[ **KeWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff553324)。 这些函数采用调度程序对象指针作为输入并等待，直到另一个例程或线程将一个或多个调度程序对象设置为用信号通知状态。
+一组线程可以同步其操作，如果一个或多个线程调用[ **KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)， [ **KeWaitForMutexObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553344)，或[ **KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)。 这些函数采用调度程序对象指针作为输入并等待，直到另一个例程或线程将一个或多个调度程序对象设置为用信号通知状态。
 
 当线程调用**KeWaitForSingleObject**等待调度程序对象 (或**KeWaitForMutexObject**互斥体)，该线程放入*等待*状态直到调度程序对象设置为用信号通知状态。 一个线程可以调用**KeWaitForMultipleObjects**等待任何操作，或所有，调度程序对象是一组设置为用信号通知。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63340969"
 
 -   Nonarbitrary 线程上下文中执行时，驱动程序。
 
-    也就是说，您可以标识将进入等待状态的线程。 在实践中，是 nonarbitrary 线程上下文中执行的唯一驱动程序例程[ **DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff544113)， [ *AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)， [*重新初始化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)，和[*卸载*](https://msdn.microsoft.com/library/windows/hardware/ff564886)例程的任何驱动程序，以及最高级别的驱动程序的调度例程。 所有这些例程直接由系统调用。
+    也就是说，您可以标识将进入等待状态的线程。 在实践中，是 nonarbitrary 线程上下文中执行的唯一驱动程序例程[ **DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)， [ *AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)， [*重新初始化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)，和[*卸载*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程的任何驱动程序，以及最高级别的驱动程序的调度例程。 所有这些例程直接由系统调用。
 
 -   该驱动程序正在执行完全同步 I/O 请求。
 
@@ -69,13 +69,13 @@ ms.locfileid: "63340969"
 
 -   设备 I/O 控制请求的调度例程可以等待调度程序对象设置为用信号通知状态才传输类型的 I/O 控制代码是方法\_缓冲。
 
--   SCSI 微型端口驱动程序不应使用内核调度程序对象。 SCSI 微型端口驱动程序应只调用[SCSI 端口库例程](https://msdn.microsoft.com/library/windows/hardware/ff565375)。
+-   SCSI 微型端口驱动程序不应使用内核调度程序对象。 SCSI 微型端口驱动程序应只调用[SCSI 端口库例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 在任意线程上下文中执行其他每个标准驱动程序例程： 的任何线程恰巧是当前用于处理排队的操作或用于处理设备中断调用驱动程序例程。 此外，在引发 IRQL，在调度运行大多数标准驱动程序例程\_级别，或设备驱动程序，请在 DIRQL。
 
-如果有必要，驱动程序可以创建设备专用线程，这可以等待该驱动程序的其他例程 (除非 ISR 或[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)例程) 将调度程序对象设置为用信号通知状态和重置为未发出信号状态。
+如果有必要，驱动程序可以创建设备专用线程，这可以等待该驱动程序的其他例程 (除非 ISR 或[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程) 将调度程序对象设置为用信号通知状态和重置为未发出信号状态。
 
-一般原则是，如果希望在新的设备驱动程序将通常需要在 I/O 操作期间等待设备状态更改时停止的时间超过 50 微秒，考虑实施的驱动程序与设备专用线程。 如果设备驱动程序也是最高级别的驱动程序，请考虑使用[系统工作线程数](system-worker-threads.md)和实现一个或多个工作线程回调例程。 请参阅[ **PsCreateSystemThread** ](https://msdn.microsoft.com/library/windows/hardware/ff559932)并[管理与驱动程序创建线程的联锁的队列](managing-interlocked-queues-with-a-driver-created-thread.md)。
+一般原则是，如果希望在新的设备驱动程序将通常需要在 I/O 操作期间等待设备状态更改时停止的时间超过 50 微秒，考虑实施的驱动程序与设备专用线程。 如果设备驱动程序也是最高级别的驱动程序，请考虑使用[系统工作线程数](system-worker-threads.md)和实现一个或多个工作线程回调例程。 请参阅[ **PsCreateSystemThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)并[管理与驱动程序创建线程的联锁的队列](managing-interlocked-queues-with-a-driver-created-thread.md)。
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 628950a41f191e31b266b49ba599a738e0dbfab9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f41c5bd8f910f9fd2e508710ac94dd78ac1d415d
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392722"
 ---
 # <a name="kstimeddevicecallbacks-rule-"></a>KsTimedDeviceCallbacks 规则 （)
 
@@ -30,7 +30,7 @@ KsTimedDeviceCallbacks 规则指定一个内核流式处理 (KS) 微型端口驱
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00082002) |
+| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00082002) |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -49,7 +49,7 @@ KsTimedDeviceCallbacks 规则指定一个内核流式处理 (KS) 微型端口驱
 <td align="left"><p>若要验证此规则，请打开命令提示符窗口。 输入驱动程序验证程序命令，并指定<strong>/domain ks</strong>。</p>
 <p>例如：</p>
 <p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +59,7 @@ KsTimedDeviceCallbacks 规则指定一个内核流式处理 (KS) 微型端口驱
 <a name="see-also"></a>请参阅
 --------
 
-[锁定和解锁 Stream 指针](https://msdn.microsoft.com/library/windows/hardware/ff567709)
+[锁定和解锁 Stream 指针](https://docs.microsoft.com/windows-hardware/drivers/stream/locking-and-unlocking-stream-pointers)
  
 
  

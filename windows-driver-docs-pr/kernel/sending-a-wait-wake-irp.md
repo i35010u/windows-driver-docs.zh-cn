@@ -13,12 +13,12 @@ keywords:
 - 发送等待/唤醒 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2210ec915ca4d224f6ccbc2eeb3a4cef3d456cab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7682bcbc0d2fc5327067d49bfb68620f1fd2253
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364086"
 ---
 # <a name="sending-a-waitwake-irp"></a>发送等待/唤醒 IRP
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342679"
 
 
 
-次要 power IRP 代码[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766)提供用于唤醒设备或唤醒系统。 可以唤醒本身或系统的设备的驱动程序发送**IRP\_MN\_等待\_唤醒**请求。 系统发送**IRP\_MN\_等待\_唤醒**请求仅限为始终唤醒系统，例如电源开关的设备。
+次要 power IRP 代码[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)提供用于唤醒设备或唤醒系统。 可以唤醒本身或系统的设备的驱动程序发送**IRP\_MN\_等待\_唤醒**请求。 系统发送**IRP\_MN\_等待\_唤醒**请求仅限为始终唤醒系统，例如电源开关的设备。
 
 驱动程序发送**IRP\_MN\_等待\_唤醒**请求两个原因之一：
 

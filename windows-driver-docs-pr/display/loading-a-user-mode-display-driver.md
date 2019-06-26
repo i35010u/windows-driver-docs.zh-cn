@@ -8,12 +8,12 @@ keywords:
 - 加载驱动程序 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81932134fbd1d5f3500ac576a3bc0703dd19f72a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a923ee29e3a66ad071ccfb96e5ff1e143d05fcc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347583"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380382"
 ---
 # <a name="loading-a-user-mode-display-driver"></a>加载用户模式显示驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347583"
 HKR,, UserModeDriverName,    %REG_MULTI_SZ%, Xxx.dll
 ```
 
-INF 文件必须包含信息以指示要将用户模式显示驱动程序复制到系统的 %systemroot%的操作系统\\system32 目录。 有关详细信息，请参阅[ **INF CopyFiles 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546346)并[ **INF DestinationDirs 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547383)。
+INF 文件必须包含信息以指示要将用户模式显示驱动程序复制到系统的 %systemroot%的操作系统\\system32 目录。 有关详细信息，请参阅[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)并[ **INF DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)。
 
 Direct3D 运行时从注册表中获取用户模式显示驱动程序的 DLL 名称，以便加载运行时的进程空间中的用户模式显示驱动程序。
 

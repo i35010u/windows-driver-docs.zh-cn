@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16ae75a5de50453400e8463990805b1c82d98118
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d15af41c4b11739b5e03bff1718b639071b3fd8b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371727"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367129"
 ---
 # <a name="bug-check-0xda-systemptemisuse"></a>Bug 检查 0xDA：系统\_PTE\_滥用
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371727"
 系统\_PTE\_滥用 bug 检查的值为 0x000000DA。 这表示一种不正确的方法中已使用的页表项 (PTE) 例程。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="systemptemisuse-parameters"></a>系统\_PTE\_误用参数
@@ -198,8 +198,8 @@ ms.locfileid: "63371727"
 <td align="left"><p>无效的映射的地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
 <td align="left"><p>映射地址空间中的映射数</p></td>
-<td align="left"><p>调用方尝试释放映射地址空间是仍保留。 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff556392" data-raw-source="[MmUnmapReservedMapping](https://msdn.microsoft.com/library/windows/hardware/ff556392)">MmUnmapReservedMapping</a></strong></p>
-<p>前必须调用 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554512" data-raw-source="[MmFreeMappingAddress](https://msdn.microsoft.com/library/windows/hardware/ff554512)">MmFreeMappingAddress</a></strong>。</p></td>
+<td align="left"><p>调用方尝试释放映射地址空间是仍保留。 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p>
+<p>前必须调用 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreemappingaddress" data-raw-source="[MmFreeMappingAddress](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreemappingaddress)">MmFreeMappingAddress</a></strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x104</p></td>
@@ -220,7 +220,7 @@ ms.locfileid: "63371727"
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>非空映射的地址</p></td>
 <td align="left"><p>最后一个映射地址</p></td>
-<td align="left"><p>调用方尝试将 MDL 映射到不正确地保留映射地址空间。 调用方应具有名为<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff556392" data-raw-source="[MmUnmapReservedMapping](https://msdn.microsoft.com/library/windows/hardware/ff556392)">MmUnmapReservedMapping</a></strong>之前调用 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554640" data-raw-source="[MmMapLockedPagesWithReservedMapping](https://msdn.microsoft.com/library/windows/hardware/ff554640)">MmMapLockedPagesWithReservedMapping</a></strong></p></td>
+<td align="left"><p>调用方尝试将 MDL 映射到不正确地保留映射地址空间。 调用方应具有名为<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong>之前调用 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpageswithreservedmapping" data-raw-source="[MmMapLockedPagesWithReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpageswithreservedmapping)">MmMapLockedPagesWithReservedMapping</a></strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x108</p></td>

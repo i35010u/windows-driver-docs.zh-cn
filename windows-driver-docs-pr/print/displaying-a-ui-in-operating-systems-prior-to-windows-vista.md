@@ -11,12 +11,12 @@ keywords:
 - 用户界面 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 970e0ea9559bdafb3be6b48d42977d4667624768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5991b4d50afaa2e30167076d9c719c749fa7f272
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364003"
 ---
 # <a name="displaying-a-ui-in-operating-systems-prior-to-windows-vista"></a>在 Windows Vista 以前的操作系统中显示 UI
 
@@ -32,7 +32,7 @@ ms.locfileid: "63370943"
 
     在 Windows Vista 之前的操作系统版本中，异步通知调用失败。
 
--   通过显示简单的对话框[ **SplPromptUIInUsersSession** ](https://msdn.microsoft.com/library/windows/hardware/ff562679)函数。
+-   通过显示简单的对话框[ **SplPromptUIInUsersSession** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-splpromptuiinuserssession)函数。
 
 -   通过编写状态监视器显示复杂的用户界面元素。
 

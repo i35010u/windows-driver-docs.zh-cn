@@ -10,12 +10,12 @@ keywords:
 - 父对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30820eddd3ea14defa66c337c291ae044f8c3c34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e39e299c893e37221936f050a8e3f3fae771df3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378153"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371125"
 ---
 # <a name="introduction-to-framework-objects"></a>框架对象简介
 
@@ -39,7 +39,7 @@ Framework 的所有对象都具有以下特征：
 驱动程序可以注册回叫函数，它删除对象时，框架调用。 回调函数可以删除驱动程序分配的资源，例如特定于对象的内存分配。 有关这些回调函数的详细信息，请参阅[Framework 对象生命周期](framework-object-life-cycle.md)。
 
 <a href="" id="parent-object"></a>*父对象*  
-Framework 的所有对象可以都有一个父对象。 该框架将指定的大多数对象的默认父对象。 当驱动程序创建一个对象时，它可以指定重写对象的默认父对象的父对象。 若要将指定对象的父对象、 驱动程序组**ParentObject**的对象的成员[ **WDF\_对象\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构。 （对于几个对象类型，驱动程序不能重写默认的父对象。）当框架或驱动程序中删除父对象时，该框架还会删除父对象的子级。
+Framework 的所有对象可以都有一个父对象。 该框架将指定的大多数对象的默认父对象。 当驱动程序创建一个对象时，它可以指定重写对象的默认父对象的父对象。 若要将指定对象的父对象、 驱动程序组**ParentObject**的对象的成员[ **WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。 （对于几个对象类型，驱动程序不能重写默认的父对象。）当框架或驱动程序中删除父对象时，该框架还会删除父对象的子级。
 
 所有由 WDF 定义的对象的概述，请参阅[Framework 对象摘要](summary-of-framework-objects.md)。
 

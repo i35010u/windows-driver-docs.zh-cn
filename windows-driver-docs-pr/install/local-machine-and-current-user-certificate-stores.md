@@ -4,12 +4,12 @@ description: 本地计算机和当前用户证书存储
 ms.assetid: b7362f2e-c8ff-42e4-9edc-df4b9967df29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d36a1347d7728dd19230cfd3d5d2fd5a18379006
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e6551bb13f2cdfdb4ed53b882a17638f961506a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385552"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377671"
 ---
 # <a name="local-machine-and-current-user-certificate-stores"></a>本地计算机和当前用户证书存储
 
@@ -33,7 +33,7 @@ ms.locfileid: "63385552"
 
  
 
-有关如何添加或从系统证书存储中删除证书的详细信息，请参阅[ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)。
+有关如何添加或从系统证书存储中删除证书的详细信息，请参阅[ **CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)。
 
  
 

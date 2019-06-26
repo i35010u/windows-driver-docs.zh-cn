@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da46cfe74a64752ecfbc4f6c4d828cd4acca991d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8a1e2147f725299063d4d11fefa18630a07745f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344508"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371358"
 ---
 # <a name="rxdbgbreakpoint-function"></a>RxDbgBreakPoint 函数
 
@@ -53,7 +53,7 @@ VOID RxDbgBreakPoint(
 
 此例程会引发异常，如果已安装; 由内核调试程序否则可由调试系统进行处理。 如果没有调试器连接到系统，可以采用标准方式处理该异常。
 
-在内核模式下，异常中断处理，则将导致在蓝色屏幕 （bug 检查） 以生成。 但是，可以为已启用内核调试的目标计算机连接内核模式调试程序。 有关详细信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+在内核模式下，异常中断处理，则将导致在蓝色屏幕 （bug 检查） 以生成。 但是，可以为已启用内核调试的目标计算机连接内核模式调试程序。 有关详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,7 +84,7 @@ VOID RxDbgBreakPoint(
 
 [**RxAssert**](rxassert.md)
 
-[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - 32 位可寻址的设备 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2e2b07c6051ca8e4cd30e56786edde5030dc500
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2279137fe23ca5aff81367ddfb71041d68b264d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382088"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377773"
 ---
 # <a name="supporting-dma-in-64-bit-avstream-drivers"></a>在 64 位 AVStream 驱动程序中支持 DMA
 
@@ -26,7 +26,7 @@ ms.locfileid: "63382088"
 
 AVStream 支持在 32 位和 64 位可寻址的设备上的 DMA。
 
-Win64 平台应使用已编译的所有驱动程序[ **IKsDeviceFunctions::RegisterAdapterObjectEx** ](https://msdn.microsoft.com/library/windows/hardware/ff559852)而不是[ **KsDeviceRegisterAdapterObject**](https://msdn.microsoft.com/library/windows/hardware/ff561687).
+Win64 平台应使用已编译的所有驱动程序[ **IKsDeviceFunctions::RegisterAdapterObjectEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-iksdevicefunctions-registeradapterobjectex)而不是[ **KsDeviceRegisterAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksdeviceregisteradapterobject).
 
 **IKsDeviceFunctions::RegisterAdapterObjectEx**才可在 Microsoft Windows Server 2003 SP1 及更高版本。
 

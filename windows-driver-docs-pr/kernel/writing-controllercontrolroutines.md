@@ -7,12 +7,12 @@ keywords:
 - ControllerControl 例程编写
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcec280f64accb304c28a3b0eee798b30f99d235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4835a144472bc9f80019630ff64fd76a8996e51c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374118"
 ---
 # <a name="writing-controllercontrol-routines"></a>编写 ControllerControl 例程
 
@@ -24,7 +24,7 @@ ms.locfileid: "63355997"
 
 必须同步的操作，通过物理控制器，例如"AT"磁盘控制器、 到类似的设备的最低级别的设备驱动程序可以具有*ControllerControl*例程。
 
-当驱动程序调用[ **IoAllocateController**](https://msdn.microsoft.com/library/windows/hardware/ff548224)，将其*ControllerControl*如果硬件由控制器对象可立即运行时例程对于 I/O 操作。 否则为*ControllerControl*例程会排队，直到该控制器是免费的。
+当驱动程序调用[ **IoAllocateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioallocatecontroller)，将其*ControllerControl*如果硬件由控制器对象可立即运行时例程对于 I/O 操作。 否则为*ControllerControl*例程会排队，直到该控制器是免费的。
 
 **请注意**  WDM 驱动程序不能使用控制器对象和*ControllerControl*例程。
 

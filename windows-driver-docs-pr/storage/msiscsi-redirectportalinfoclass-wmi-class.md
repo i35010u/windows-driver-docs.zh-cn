@@ -4,12 +4,12 @@ description: MSiSCSI\_RedirectPortalInfoClass WMI 类
 ms.assetid: 38f510ed-1f31-4b3c-84c6-515f5d42a1f8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5283d4a3d717f36082a76a696aa5abd50c2a7e12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c73e80c50602a1a242fd51089057b516b878686e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384676"
 ---
 # <a name="msiscsiredirectportalinfoclass-wmi-class"></a>MSiSCSI\_RedirectPortalInfoClass WMI 类
 
@@ -49,7 +49,7 @@ class MSiSCSI_RedirectPortalInfoClass
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_RedirectPortalInfoClass** ](https://msdn.microsoft.com/library/windows/hardware/ff563117)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_RedirectPortalInfoClass** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_redirectportalinfoclass)数据结构。
 
  
 

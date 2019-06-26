@@ -4,12 +4,12 @@ description: 远程显示器驱动程序基于 Windows 2000 镜像驱动程序�
 ms.assetid: 249528D3-B5F1-41D8-86BF-B9DC623FB480
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd8ff555fc190468902e2b35c285e64eaf91578
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9004d7a0d53ff2ac5438e8d41e27b2580a44ab0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386442"
 ---
 # <a name="remote-display-drivers"></a>远程显示驱动程序
 
@@ -18,20 +18,20 @@ ms.locfileid: "63378437"
 
 若要成功安装并运行从 Windows 8 开始，远程显示器驱动程序必须实现仅以下设备驱动程序接口 (DDIs) 和没有更多。
 
--   [**DrvAssertMode**](https://msdn.microsoft.com/library/windows/hardware/ff556178)
--   [**DrvBitBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556180)
--   [**DrvCompletePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556181)
--   [**DrvCopyBits**](https://msdn.microsoft.com/library/windows/hardware/ff556182)
--   [**DrvDisableDriver**](https://msdn.microsoft.com/library/windows/hardware/ff556196)
--   [**DrvDisablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556198)
--   [**DrvDisableSurface**](https://msdn.microsoft.com/library/windows/hardware/ff556200)
--   [**DrvEnablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556211)
--   [**DrvEnableSurface**](https://msdn.microsoft.com/library/windows/hardware/ff556214)
--   [**DrvEscape**](https://msdn.microsoft.com/library/windows/hardware/ff556217)
--   [**DrvGetModes**](https://msdn.microsoft.com/library/windows/hardware/ff556233)
--   [**DrvMovePointer**](https://msdn.microsoft.com/library/windows/hardware/ff556248)
--   [**DrvResetPDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556276)
--   [**DrvSetPointerShape**](https://msdn.microsoft.com/library/windows/hardware/ff556289)
+-   [**DrvAssertMode**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvassertmode)
+-   [**DrvBitBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt)
+-   [**DrvCompletePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcompletepdev)
+-   [**DrvCopyBits**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcopybits)
+-   [**DrvDisableDriver**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisabledriver)
+-   [**DrvDisablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablepdev)
+-   [**DrvDisableSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablesurface)
+-   [**DrvEnablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)
+-   [**DrvEnableSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface)
+-   [**DrvEscape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)
+-   [**DrvGetModes**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)
+-   [**DrvMovePointer**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvmovepointer)
+-   [**DrvResetPDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvresetpdev)
+-   [**DrvSetPointerShape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpointershape)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_AUTO_POWER_SAVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dc34e729070cc62dccb6fc3069b4767f8fc56c13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1224c8ac0454805ac7d574186155e044e49d521
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384626"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387268"
 ---
 # <a name="oidwdigetautopowersave"></a>OID\_WDI\_GET\_AUTO\_POWER\_SAVE
 
@@ -20,7 +20,7 @@ OID\_WDI\_获取\_自动\_POWER\_保存获取省电状态的端口。
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 不适用           | 1                               |
+| Port  | 不适用           | 1                               |
 
  
 
@@ -35,7 +35,7 @@ OID\_WDI\_获取\_自动\_POWER\_保存获取省电状态的端口。
 
 | TLV                                                                          | 允许多个 TLV 实例 | 可选 | 描述                  |
 |------------------------------------------------------------------------------|--------------------------------|----------|------------------------------|
-| [**WDI\_TLV\_GET\_AUTO\_POWER\_SAVE**](https://msdn.microsoft.com/library/windows/hardware/dn926307) |                                |          | 自动 power 保存信息。 |
+| [**WDI\_TLV\_GET\_AUTO\_POWER\_SAVE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-get-auto-power-save) |                                |          | 自动 power 保存信息。 |
 
  
 

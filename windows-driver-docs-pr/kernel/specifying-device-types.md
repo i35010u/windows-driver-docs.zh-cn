@@ -7,12 +7,12 @@ keywords:
 - 设备类型 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d926dfcdeb1d32cc1d183f0482251f344934c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42e5b2d36c9b2f754c26d319d6e2c98077b27f48
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383008"
 ---
 # <a name="specifying-device-types"></a>指定设备类型
 
@@ -20,9 +20,9 @@ ms.locfileid: "63367851"
 
 
 
-每个设备对象都*设备类型*，这存储在**DeviceType**的成员及其[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构。 设备类型表示的基础硬件的驱动程序的类型。
+每个设备对象都*设备类型*，这存储在**DeviceType**的成员及其[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。 设备类型表示的基础硬件的驱动程序的类型。
 
-调用时，创建一个设备对象每个内核模式驱动程序必须指定相应的设备类型值[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)。 **IoCreateDevice**例程使用提供的设备类型来初始化**DeviceType**的成员**设备\_对象**结构。
+调用时，创建一个设备对象每个内核模式驱动程序必须指定相应的设备类型值[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)。 **IoCreateDevice**例程使用提供的设备类型来初始化**DeviceType**的成员**设备\_对象**结构。
 
 系统定义以下设备类型值，按字母顺序列出：
 

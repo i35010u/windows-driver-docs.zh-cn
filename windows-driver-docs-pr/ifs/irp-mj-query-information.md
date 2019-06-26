@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de1812876bd03cf21fb598d34d0fd223022c5e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 719700c238e08ce3044b58e0a891e1d7dfd02acd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384817"
 ---
 # <a name="irpmjqueryinformation"></a>IRP\_MJ\_QUERY\_INFORMATION
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324355"
 ## <a name="when-sent"></a>发送时间
 
 
-IRP\_MJ\_查询\_由 I/O 管理器和其他操作系统组件，以及其他内核模式驱动程序发送的信息请求。 可以将发送此请求，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**GetFileInformationByHandle**或当调用内核模式组件[ **ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)。
+IRP\_MJ\_查询\_由 I/O 管理器和其他操作系统组件，以及其他内核模式驱动程序发送的信息请求。 可以将发送此请求，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**GetFileInformationByHandle**或当调用内核模式组件[ **ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
@@ -34,14 +34,14 @@ IRP\_MJ\_查询\_由 I/O 管理器和其他操作系统组件，以及其他内�
 
 可以查询的文件和目录信息的类型是文件系统相关，但通常包括以下各项：
 
-FileAllInformation FileAlternateNameInformation FileAttributeTagInformation FileBasicInformation FileCompressionInformation FileEaInformation FileInternalInformation FileNameInformation FileNetworkOpenInformationFilePositionInformation FileStandardInformation FileStreamInformation FileHardLinkInformation 尽管 FileAccessInformation、 FileAlignmentInformation 和 FileModeInformation 信息类型可以也将作为参数传递到[ **ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)，此信息是独立于系统文件。 从而**ZwQueryInformationFile**提供此信息直接，而无需发送 IRP\_MJ\_查询\_到文件系统的信息请求。
+FileAllInformation FileAlternateNameInformation FileAttributeTagInformation FileBasicInformation FileCompressionInformation FileEaInformation FileInternalInformation FileNameInformation FileNetworkOpenInformationFilePositionInformation FileStandardInformation FileStreamInformation FileHardLinkInformation 尽管 FileAccessInformation、 FileAlignmentInformation 和 FileModeInformation 信息类型可以也将作为参数传递到[ **ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)，此信息是独立于系统文件。 从而**ZwQueryInformationFile**提供此信息直接，而无需发送 IRP\_MJ\_查询\_到文件系统的信息请求。
 
 有关这些信息类型的详细信息，请参阅下面的另请参阅链接。 有关所有可能的信息类型的列表，请参阅该文件\_信息\_中 ntifs.h 类枚举。
 
 ## <a name="operation-network-redirector-drivers"></a>操作：网络重定向程序驱动程序
 
 
-网络重定向程序驱动程序不基于[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)接收 IRP\_MJ\_查询\_FileAllInformation 或 FileNameInformation，信息请求必须与完整"做出响应\\服务器\\共享\\文件"与单个前导反斜杠之前的服务器名称的文件名称的路径。 此名称的信息的格式必须返回作为通用命名约定 (UNC) 名称访问的文件 (*\\\\服务器\\共享\\文件夹\\文件名.txt*，例如) 或位于映射的驱动器上的文件 (*x:\\文件夹\\文件名.txt*，例如)。
+网络重定向程序驱动程序不基于[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)接收 IRP\_MJ\_查询\_FileAllInformation 或 FileNameInformation，信息请求必须与完整"做出响应\\服务器\\共享\\文件"与单个前导反斜杠之前的服务器名称的文件名称的路径。 此名称的信息的格式必须返回作为通用命名约定 (UNC) 名称访问的文件 ( *\\\\服务器\\共享\\文件夹\\文件名.txt*，例如) 或位于映射的驱动器上的文件 (*x:\\文件夹\\文件名.txt*，例如)。
 
 有关网络微型重定向程序驱动程序 （驱动程序的动态链接到 rdbss.sys 或以静态方式链接与 rdbsslib.lib），IRP\_MJ\_查询\_在内部处理 FileNameInformation 的信息请求由 RDBSS 和正确的名称返回信息。 对于网络微型重定向程序驱动程序，IRP\_MJ\_查询\_FileAllInformation 的信息请求通过名称信息请求的一部分的 RDBSS 在内部处理。 FileAllInformation 请求的其他部分发送为单独的请求到网络的最小重定向程序驱动程序来解决。
 
@@ -55,7 +55,7 @@ FileAllInformation FileAlternateNameInformation FileAttributeTagInformation File
 ## <a name="parameters"></a>Parameters
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理查询文件信息请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理查询文件信息请求的 IRP 堆栈位置中设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象指针。
@@ -87,7 +87,7 @@ FileAllInformation FileAlternateNameInformation FileAttributeTagInformation File
 
 文件\_链接\_信息
 
-<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*指针，指向[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)有关接收最终的完成状态和信息的结构请求的操作。 有关详细信息，请参阅的说明*IoStatusBlock*中的参数[ **ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)。 例程。
+<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*指针，指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)有关接收最终的完成状态和信息的结构请求的操作。 有关详细信息，请参阅的说明*IoStatusBlock*中的参数[ **ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)。 例程。
 
 <a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*可选指向在其中的调用方提供输出缓冲区的内容*Irp-&gt;AssociatedIrp.SystemBuffer* I/O 管理器在 I/O 完成复制。 驱动程序不要使用此缓冲区来返回请求的任何数据。
 
@@ -117,11 +117,11 @@ FileAllInformation FileAlternateNameInformation FileAttributeTagInformation File
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileAttributeTagInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff545750" data-raw-source="[&lt;strong&gt;FILE_ATTRIBUTE_TAG_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545750)"> <strong>FILE_ATTRIBUTE_TAG_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_attribute_tag_information" data-raw-source="[&lt;strong&gt;FILE_ATTRIBUTE_TAG_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_attribute_tag_information)"> <strong>FILE_ATTRIBUTE_TAG_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileBasicInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff545762" data-raw-source="[&lt;strong&gt;FILE_BASIC_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545762)"> <strong>FILE_BASIC_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information" data-raw-source="[&lt;strong&gt;FILE_BASIC_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)"> <strong>FILE_BASIC_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileCompressionInformation</strong></p></td>
@@ -133,31 +133,31 @@ FileAllInformation FileAlternateNameInformation FileAttributeTagInformation File
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileInternalInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff540318" data-raw-source="[&lt;strong&gt;FILE_INTERNAL_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540318)"> <strong>FILE_INTERNAL_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_internal_information" data-raw-source="[&lt;strong&gt;FILE_INTERNAL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_internal_information)"> <strong>FILE_INTERNAL_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileNameInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff545817" data-raw-source="[&lt;strong&gt;FILE_NAME_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545817)"> <strong>FILE_NAME_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_name_information" data-raw-source="[&lt;strong&gt;FILE_NAME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_name_information)"> <strong>FILE_NAME_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileNetworkOpenInformation</strong></p></td>
-<td align="left"><p>返回单个<a href="https://msdn.microsoft.com/library/windows/hardware/ff545822" data-raw-source="[&lt;strong&gt;FILE_NETWORK_OPEN_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545822)"> <strong>FILE_NETWORK_OPEN_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回单个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information" data-raw-source="[&lt;strong&gt;FILE_NETWORK_OPEN_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information)"> <strong>FILE_NETWORK_OPEN_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FilePositionInformation</strong></p></td>
-<td align="left"><p>返回单个<a href="https://msdn.microsoft.com/library/windows/hardware/ff545848" data-raw-source="[&lt;strong&gt;FILE_POSITION_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545848)"> <strong>FILE_POSITION_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回单个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information" data-raw-source="[&lt;strong&gt;FILE_POSITION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)"> <strong>FILE_POSITION_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileStandardInformation</strong></p></td>
-<td align="left"><p>返回单个<a href="https://msdn.microsoft.com/library/windows/hardware/ff545855" data-raw-source="[&lt;strong&gt;FILE_STANDARD_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545855)"> <strong>FILE_STANDARD_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回单个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information" data-raw-source="[&lt;strong&gt;FILE_STANDARD_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)"> <strong>FILE_STANDARD_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileStreamInformation</strong></p></td>
-<td align="left"><p>返回单个<a href="https://msdn.microsoft.com/library/windows/hardware/ff540364" data-raw-source="[&lt;strong&gt;FILE_STREAM_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540364)"> <strong>FILE_STREAM_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回单个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information" data-raw-source="[&lt;strong&gt;FILE_STREAM_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)"> <strong>FILE_STREAM_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileHardLinkInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff728841" data-raw-source="[&lt;strong&gt;FILE_LINKS_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff728841)"> <strong>FILE_LINKS_INFORMATION</strong> </a>文件的结构。</p></td>
+<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_links_information" data-raw-source="[&lt;strong&gt;FILE_LINKS_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_links_information)"> <strong>FILE_LINKS_INFORMATION</strong> </a>文件的结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -176,39 +176,39 @@ IRP\_MJ\_查询\_信息操作始终缓冲的 I/O 管理器。 *Irp-&gt;Associate
 ## <a name="see-also"></a>请参阅
 
 
-[**文件\_对齐\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff545740)
+[**文件\_对齐\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_alignment_information)
 
-[**FILE\_ATTRIBUTE\_TAG\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff545750)
+[**FILE\_ATTRIBUTE\_TAG\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_attribute_tag_information)
 
-[**文件\_BASIC\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff545762)
+[**文件\_BASIC\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)
 
-[**FILE\_INTERNAL\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff540318)
+[**FILE\_INTERNAL\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_internal_information)
 
-[**文件\_名称\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff545817)
+[**文件\_名称\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_name_information)
 
-[**FILE\_NETWORK\_OPEN\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff545822)
+[**FILE\_NETWORK\_OPEN\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information)
 
-[**文件\_位置\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff545848)
+[**文件\_位置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)
 
-[**文件\_标准\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff545855)
+[**文件\_标准\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)
 
-[**文件\_流\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540364)
+[**文件\_流\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)
 
-[**文件\_链接\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff728841)
+[**文件\_链接\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_links_information)
 
-[**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoCheckEaBufferValidity**](https://msdn.microsoft.com/library/windows/hardware/ff548252)
+[**IoCheckEaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckeabuffervalidity)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_SET\_INFORMATION**](irp-mj-set-information.md)
 
-[**ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)
+[**ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)
 
  
 

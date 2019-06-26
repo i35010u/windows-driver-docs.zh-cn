@@ -4,12 +4,12 @@ description: ISCSI\_支持\_LB\_策略 WMI 类
 ms.assetid: c11eebe8-519a-473d-9e9c-8a787333223e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 36df0a2a5921c602f80206ec73bbdf9ebb83bdc6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0872ecc38dd0a4e73f4e9279e825dff93b64990d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366121"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378394"
 ---
 # <a name="iscsisupportedlbpolicies-wmi-class"></a>ISCSI\_支持\_LB\_策略 WMI 类
 
@@ -62,7 +62,7 @@ class ISCSI_Supported_LB_Policies {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_支持\_LB\_策略**](https://msdn.microsoft.com/library/windows/hardware/ff561570)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_支持\_LB\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_supported_lb_policies)数据结构。
 
  
 

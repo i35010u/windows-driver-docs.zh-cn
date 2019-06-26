@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - SIO_WSK_SET_TCP_SILENT_MODE 控制代码与 Windows Vista 一起启动的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 70fc504df0db9cb1d355199f7f1b0ddd0be34be6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8015a45c335ccd797f0edeb4fe5aba4e49c362a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376417"
 ---
 # <a name="siowsksettcpsilentmode-control-code"></a>SIO\_WSK\_设置\_TCP\_无提示\_模式控制代码
 
@@ -20,7 +20,7 @@ ms.locfileid: "63351684"
 
 在静默模式下的 TCP 连接不会在网络上发送任何数据或控制数据包。 此套接字的 I/O 控制操作仅适用于已连接的 TCP 套接字。 它不支持环回。
 
-若要执行此操作，调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要执行此操作，调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <a name="parameters"></a>Parameters
 ----------
@@ -52,13 +52,13 @@ ms.locfileid: "63351684"
 <a name="remarks"></a>备注
 -------
 
-WSK 应用程序调用时必须指定一个指向 IRP [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)函数可启用无提示模式。
+WSK 应用程序调用时必须指定一个指向 IRP [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)函数可启用无提示模式。
 
-WSK 应用程序之前调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)若要启用无提示模式下必须确保没有任何挂起的发送或断开连接请求。
+WSK 应用程序之前调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)若要启用无提示模式下必须确保没有任何挂起的发送或断开连接请求。
 
-[**WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)将返回**状态\_成功**启用无提示模式下时。 一旦启用了无提示模式下，发送和断开的连接请求将失败，**状态\_无效\_设备\_状态**，将以无提示方式忽略所有接收到的控件或数据数据包。
+[**WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)将返回**状态\_成功**启用无提示模式下时。 一旦启用了无提示模式下，发送和断开的连接请求将失败，**状态\_无效\_设备\_状态**，将以无提示方式忽略所有接收到的控件或数据数据包。
 
-此套接字上的唯一有效操作是[ **WskCloseSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571124)。
+此套接字上的唯一有效操作是[ **WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,9 +83,9 @@ WSK 应用程序之前调用[ **WskControlSocket** ](https://msdn.microsoft.com/
 ## <a name="see-also"></a>请参阅
 
 
-[**WskCloseSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571124)
+[**WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)
 
-[**WskControlSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571127)
+[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)
 
  
 

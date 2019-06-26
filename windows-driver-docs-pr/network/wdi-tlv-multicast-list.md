@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_MULTICAST_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3dae46090326fc1479ccd050fd06532c8c15b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd87e58f2f4208ca0f13071a426ee618fa06d0b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386952"
 ---
 # <a name="wditlvmulticastlist"></a>WDI\_TLV\_MULTICAST\_LIST
 
@@ -26,14 +26,14 @@ WDI\_TLV\_多播\_列表是 TLV 包含多播 MAC 地址的数组。
 ## <a name="length"></a>长度
 
 
-数组的大小 （以字节为单位） [ **WDI\_MAC\_地址**](https://msdn.microsoft.com/library/windows/hardware/dn926071)结构。 该数组必须包含一个或多个结构。
+数组的大小 （以字节为单位） [ **WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构。 该数组必须包含一个或多个结构。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                  | 描述                          |
 |-------------------------------------------------------|--------------------------------------|
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071)\[\] | 数组的多播 MAC 地址。 |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | 数组的多播 MAC 地址。 |
 
  
 

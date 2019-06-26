@@ -4,12 +4,12 @@ title: 编写 USB 类型 C 端口控制器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b0a35e31f3640f788b69e7bee08d8a9137b96e37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2fcf5bef8d68b00ed78fcebfe858372d7425821
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385347"
 ---
 # <a name="write-a-usb-type-c-port-controller-driver"></a>编写 USB 类型 C 端口控制器驱动程序
 
@@ -43,7 +43,7 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关 power 
 
 -   2017 年 5 月
 
-**重要的 Api**
+**重要的 API**
 
 [USB 类型 C 端口控制器界面驱动程序类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
 
@@ -211,4 +211,4 @@ UcmTcpciCx 将命令发送 I/O 的控制代码作为描述从客户端驱动程�
 客户端驱动程序可能需要将 I/O 请求发送到另一个驱动程序来执行硬件操作。 例如，在示例中，该驱动程序存储将请求发送到我<sup>2</sup>C 连接端口控制器。 在这种情况下，该驱动程序不能转发它来自 UcmTcpciCx 因为请求对象可能没有正确数目的堆栈位置中 WDM IRP 的 framework 请求对象。 客户端驱动程序必须创建另一个框架请求对象并将其转发到另一个驱动程序。 客户端驱动程序可以预分配其在初始化期间，而不是创建一个每次从 UcmTcpciCx 收到请求时所需的请求对象。 这可能是因为 UcmTcpciCx 有可确保只有一个请求未完成任何给定时间。 
 
 ## <a name="see-also"></a>请参阅
-[USB 类型 C 端口控制器界面驱动程序类扩展参考](https://msdn.microsoft.com/library/windows/hardware/mt805826)
+[USB 类型 C 端口控制器界面驱动程序类扩展参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))

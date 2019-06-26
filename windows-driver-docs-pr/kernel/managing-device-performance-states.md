@@ -9,12 +9,12 @@ keywords:
 - 自定义电源设置 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f5f05478854cfd09c60da765371607e72dc3d90
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e07ac7c0b3548e09d8ef5a5c43fd23a12530e50a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378728"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365787"
 ---
 # <a name="managing-device-performance-states"></a>管理设备性能状态
 
@@ -35,9 +35,9 @@ Windows Vista 功能的增强型的电源管理基础结构，它使驱动程序
 
 -   （可选） 的系统管理员可以创建的管理模板 (。ADM) 文件，它使组基于策略的新的电源设置的配置。
 
-单个电源设置包含所有唯一地标识名称、 描述和提供的电源设置的值所需的信息。 每个电源设置 GUID、 设置名称、 说明，与交流和直流电源方案的默认设置定义。 自定义电源设置可以创建以静态方式对于设备，通过使用[ **INF AddPowerSetting 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546313)，或动态注册，通过调用 Win32 电源管理功能的强大功能中包含使用 Microsoft Windows SDK 文档提供的管理参考。
+单个电源设置包含所有唯一地标识名称、 描述和提供的电源设置的值所需的信息。 每个电源设置 GUID、 设置名称、 说明，与交流和直流电源方案的默认设置定义。 自定义电源设置可以创建以静态方式对于设备，通过使用[ **INF AddPowerSetting 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addpowersetting-directive)，或动态注册，通过调用 Win32 电源管理功能的强大功能中包含使用 Microsoft Windows SDK 文档提供的管理参考。
 
-驱动程序调用[ **PoRegisterPowerSettingCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559727)注册电源管理器调用以通知对电源设置的更改的驱动程序的回调例程。 该设置更改时，电源管理器调用回调例程，并传递新的设置值。 驱动程序然后可以采取相应的电源设置的操作。 每个设置都由的电源设置 GUID 标识。 Wdm.h 中和 Ntpoapi.h 中定义的系统定义的电源设置 Guid。
+驱动程序调用[ **PoRegisterPowerSettingCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterpowersettingcallback)注册电源管理器调用以通知对电源设置的更改的驱动程序的回调例程。 该设置更改时，电源管理器调用回调例程，并传递新的设置值。 驱动程序然后可以采取相应的电源设置的操作。 每个设置都由的电源设置 GUID 标识。 Wdm.h 中和 Ntpoapi.h 中定义的系统定义的电源设置 Guid。
 
 例如，若要打开或关闭监视器电源处于打开状态时收到通知，驱动程序调用**PoRegisterPowerSettingCallback**，提供标识显示器的电源设置 GUID (GUID\_监视器\_电源\_ON) 和显示器电源设置的值更改时，电源管理器调用的回调例程的指针。
 

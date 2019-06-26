@@ -6,12 +6,12 @@ keywords:
 - 共同安装程序 WDK 设备安装功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cdd6adb874bdb16b005a5411b85191b0b099eb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1bbc054ecd43c6b63d95a3e48c395c11c9bc1b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375335"
 ---
 # <a name="co-installer-functionality"></a>辅助安装程序功能
 
@@ -23,13 +23,13 @@ ms.locfileid: "63353851"
 
 辅助安装程序可能会执行部分或全部以下操作：
 
--   处理一个或多个[设备安装函数代码](https://msdn.microsoft.com/library/windows/hardware/ff541307)（DIF 代码） 收到[共同安装程序入口点](co-installer-interface.md#co-installer-entry-point)函数。
+-   处理一个或多个[设备安装函数代码](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))（DIF 代码） 收到[共同安装程序入口点](co-installer-interface.md#co-installer-entry-point)函数。
 
 -   执行操作之前调用关联的类或设备安装程序时后调用的类或设备安装程序，还是两者，如中所述[共同安装程序操作](co-installer-operation.md)。
 
 -   [提供设备属性页](providing-device-property-pages.md)，其中显示设备管理器，以便用户可以修改设备参数。
 
--   从 Windows Vista 开始提供[完成安装操作](finish-install-actions--windows-vista-and-later-.md)(在响应[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)请求) 以安装应用程序。
+-   从 Windows Vista 开始提供[完成安装操作](finish-install-actions--windows-vista-and-later-.md)(在响应[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)请求) 以安装应用程序。
 
 辅助安装程序时调用的后续处理，必须检查**InstallResult**的成员[COINSTALLER_CONTEXT_DATA](co-installer-interface.md#coinstaller-context-data)结构。 如果其值不为 NO_ERROR，辅助安装程序必须执行所有必需清理操作并返回适当的值**InstallResult**。
 

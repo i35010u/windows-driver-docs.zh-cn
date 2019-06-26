@@ -3,17 +3,17 @@ Description: WinUSB 电源管理
 title: WinUSB 电源管理
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c57bfa041744eba9129e67c1097f4da5a0be0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e84ef44620283c82d1ce7b2c2967c3e02764d765
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385349"
 ---
 # <a name="winusb-power-management"></a>WinUSB 电源管理
 
 
-WinUSB 电源管理使用 KMDF 状态机。 电源策略通过调用[ **WinUsb\_SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540309)。
+WinUSB 电源管理使用 KMDF 状态机。 电源策略通过调用[ **WinUsb\_SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)。
 
 若要修改的 WinUSB power 行为，可在设备 INF 中修改默认注册表设置。 这些值必须通过添加中的值写入到设备注册表中的特定位置**硬件。AddReg** INF 部分。
 
@@ -36,7 +36,7 @@ HKR,,SystemWakeEnabled,0x00010001,1
 <a href="" id="selective-suspend"></a>**选择性挂起**  
 选择性挂起任何多个系统或 WinUSB 设置可以禁用。 单个设置不能强制 WinUSB 若要启用选择性挂起。
 
-以下电源中指定的策略设置[ **WinUsb\_SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540309)的*PolicyType*参数会影响选择性的行为挂起：
+以下电源中指定的策略设置[ **WinUsb\_SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)的*PolicyType*参数会影响选择性的行为挂起：
 
 -   自动\_挂起时设置为零，但它不会不设置设备选择性挂起模式。
 -   挂起\_延迟设置当设备变为空闲状态与 WinUSB 当请求进入选择性设备之间的时间挂起。
@@ -109,10 +109,10 @@ HKR,,SystemWakeEnabled,0x00010001,1
 [WinUSB (Winusb.sys) 安装](winusb-installation.md)  
 [如何通过使用 WinUSB 函数访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [针对管道策略修改 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
-[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
+[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
-[**WinUsb\_GetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540275)  
-[**WinUsb\_SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540309)  
+[**WinUsb\_GetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpowerpolicy)  
+[**WinUsb\_SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)  
 
 
 

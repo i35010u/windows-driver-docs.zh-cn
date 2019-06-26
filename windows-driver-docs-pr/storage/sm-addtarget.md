@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f3b68a143e92e1243a9f0bb9b02125f9060cc15d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9a6e693b3b4cdabb27426c1b2453d3f382af595
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384320"
 ---
 # <a name="smaddtarget-function"></a>SM\_AddTarget 函数
 
@@ -92,9 +92,9 @@ WMI 客户端将收到指定其事件的发现的目标全球通用名称 (WWN)�
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_AddTarget\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566218)
+[**SM\_AddTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_addtarget_in)
 
-[**SM\_AddTarget\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566219)
+[**SM\_AddTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_addtarget_out)
 
  
 

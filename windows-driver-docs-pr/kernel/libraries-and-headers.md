@@ -4,23 +4,23 @@ description: 库和标头
 ms.assetid: 0d4d0273-775f-4cbb-8b7f-63b22f3ccdae
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 849e879833c40eb06ac63562bbbae10185dd0ae0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 94bec3be577f763a15bef7f4f2404a1fea850d24
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384228"
 ---
 # <a name="libraries-and-headers"></a>库和标头
 
 
 内核模式驱动程序通过调用来使用本机系统服务例程**Nt**并**Zw** Ntoskrnl.exe 动态链接库 (DLL) 中的入口点。 此 DLL 包含这些例程的实际实现。 若要访问这些入口点，驱动程序静态链接到 Ntoskrnl.lib 库，后者是 Windows Driver Kit (WDK) 中可用。 在 Ntoskrnl.lib 中实现的例程是在运行时动态链接到 Ntoskrnl.exe 中的入口点的存根。
 
-WDK 文档介绍了一些，但不是全部**Zw** Ntoskrnl.exe 中的入口点。 有关的说明**Zw**例程可以调用的驱动程序，请参阅[ZwXxx 例程](https://msdn.microsoft.com/library/windows/hardware/ff567122)。
+WDK 文档介绍了一些，但不是全部**Zw** Ntoskrnl.exe 中的入口点。 有关的说明**Zw**例程可以调用的驱动程序，请参阅[ZwXxx 例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567122(v=vs.85))。
 
 大部分已编档**Zw**例程在 WDK 中 wdm.h 中标头文件中定义，但一些其他标头文件，如 Ntddk.h 和 Ntifs.h 中定义。
 
-通常情况下，用户模式应用程序不调用**Nt**并**Zw**例程。 相反，应用程序可能调用一个 Win32 例程，如[CreateFile](https://go.microsoft.com/fwlink/p/?linkid=152795)，后者随后调用本机系统服务例程，如[NtCreateFile](https://go.microsoft.com/fwlink/p/?linkid=157250)或[ **zwcreatefile 转换** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)，若要执行所请求的操作。 但是，在用户模式应用程序可能直接调用**Nt**或**Zw**例程，以执行 Win32 例程不支持的操作。
+通常情况下，用户模式应用程序不调用**Nt**并**Zw**例程。 相反，应用程序可能调用一个 Win32 例程，如[CreateFile](https://go.microsoft.com/fwlink/p/?linkid=152795)，后者随后调用本机系统服务例程，如[NtCreateFile](https://go.microsoft.com/fwlink/p/?linkid=157250)或[ **zwcreatefile 转换** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)，若要执行所请求的操作。 但是，在用户模式应用程序可能直接调用**Nt**或**Zw**例程，以执行 Win32 例程不支持的操作。
 
 用户模式应用程序使用本机系统服务例程通过调用 Ntdll.dll 动态链接库中的入口点。 这些入口点将调用转换为**Nt**并**Zw**执行捕获到内核模式的系统调用的例程。 若要访问这些入口点，在用户模式应用程序静态链接到 Ntdll.lib 库，可在 WDK 中。 在 Ntdll.lib 中实现的例程是在运行时动态链接到 Ntdll.dll 的入口点的存根。
 

@@ -4,17 +4,17 @@ description: Windows Driver Kit (WDK) 提供 MessageCompiler 任务，以便在�
 ms.assetid: 77B2DBF4-64EB-4396-BAA5-80F23C9899CC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9ff8bbe41ff03e3392bf439c989ec07b00782cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd96e717e8c7662abd8284e6b0f87e1905b262ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391337"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375649"
 ---
 # <a name="message-compiler-task"></a>消息编译器任务
 
 
-Windows Driver Kit (WDK) 提供 MessageCompiler 任务，以便在生成您的驱动程序使用 MSBuild 时，可以运行 MC.exe 的工具。 有关使用 MC.exe 的信息，请参阅[**消息编译器 MC.exe**](https://msdn.microsoft.com/library/windows/desktop/aa385638)。
+Windows Driver Kit (WDK) 提供 MessageCompiler 任务，以便在生成您的驱动程序使用 MSBuild 时，可以运行 MC.exe 的工具。 有关使用 MC.exe 的信息，请参阅[**消息编译器 MC.exe**](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)。
 
 MSBuild 使用 MessageCompile 项发送 MessageCompiler 任务的参数。 MessageCompile 项访问 mc.exe 项目文件中的项元数据。
 
@@ -264,7 +264,7 @@ mc.exe –s "c:\test\" a.mc
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**消息编译器 (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)
+[**消息编译器 (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)
 
  
 

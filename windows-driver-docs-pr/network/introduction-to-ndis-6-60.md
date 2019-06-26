@@ -4,12 +4,12 @@ description: 本部分介绍 NDIS 6.60，并介绍了从 NDIS 6.50 的更改。 
 ms.assetid: AFDFD1CD-2E07-4A4F-82E2-5E6C5AABD5A3
 ms.date: 06/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe12b73f1a4db94720a6468cf480407f2449d19d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca61a262ea3c5fbb0093dd39605b46e6ab881ea1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380598"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386350"
 ---
 # <a name="introduction-to-ndis-660"></a>NDIS 6.60 简介
 
@@ -50,7 +50,7 @@ WDK 适用于 Windows 10 版本 1607年支持标头版本控制。 标头版本�
 
 在 NDIS 6.60 中更新了以下数据结构。
 
-- [NDIS_NIC_SWITCH_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff566583)
-- [NDIS_RECEIVE_SCALE_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff567228)
-- [NDIS_RECEIVE_SCALE_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff567220)
+- [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
+- [NDIS_RECEIVE_SCALE_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)
+- [NDIS_RECEIVE_SCALE_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)
 

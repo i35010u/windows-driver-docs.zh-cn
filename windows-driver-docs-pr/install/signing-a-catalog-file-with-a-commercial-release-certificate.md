@@ -4,17 +4,17 @@ description: 使用商业发布证书对目录文件进行签名
 ms.assetid: 362b0c79-50b9-4749-80e2-62601d76e9e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ccb98c77c8c7e29ffbab77d2c73edca33826f4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d26458965ad429b7c5af7c1e20dc0cf3cdda3be3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373498"
 ---
 # <a name="signing-a-catalog-file-with-a-commercial-release-certificate"></a>使用商业发布证书对目录文件进行签名
 
 
-使用以下[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令以登录[编录文件](catalog-files.md)的内核模式[驱动程序包](driver-packages.md)与[商业版本发布证书](commercial-release-certificate.md)。
+使用以下[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令以登录[编录文件](catalog-files.md)的内核模式[驱动程序包](driver-packages.md)与[商业版本发布证书](commercial-release-certificate.md)。
 
 **请注意**  为 32 位版本的 Windows Vista 和更高版本的 Windows，商业版本发布证书可以用于签署内核模式驱动程序在这些 Windows 版本上释放。
 

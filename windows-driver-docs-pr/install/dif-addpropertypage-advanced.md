@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 661364e75d37b9f0515b155b1826a95949947cea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dfc26c47c1983b728f78af6103142fa40e1f8c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362057"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372729"
 ---
 # <a name="difaddpropertypageadvanced"></a>DIF_ADDPROPERTYPAGE_ADVANCED
 
@@ -58,16 +58,16 @@ DIF_ADDPROPERTYPAGE_ADVANCED 请求可让安装程序提供一个或多个设备
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://msdn.microsoft.com/library/windows/hardware/ff541247)，其中包含该设备。
+提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含该设备。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-根据需要提供一个指向[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)标识设备中设备的信息集的结构。 如果*DeviceInfoSet*是**NULL**，Windows 正在请求的属性页[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+根据需要提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)标识设备中设备的信息集的结构。 如果*DeviceInfoSet*是**NULL**，Windows 正在请求的属性页[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) 与关联*DeviceInfoData*、 如果指定，或与*DeviceInfoSet*.
+设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*、 如果指定，或与*DeviceInfoSet*.
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-[ **SP_ADDPROPERTYPAGE_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552337)与关联结构*DeviceInfoData*、 如果指定，或与*DeviceInfoSet*。
+[ **SP_ADDPROPERTYPAGE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)与关联结构*DeviceInfoData*、 如果指定，或与*DeviceInfoSet*。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -75,7 +75,7 @@ DIF_ADDPROPERTYPAGE_ADVANCED 请求可让安装程序提供一个或多个设备
 安装程序可以修改设备的安装参数。
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-安装程序可以修改[ **SP_ADDPROPERTYPAGE_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552337)提供自定义页。
+安装程序可以修改[ **SP_ADDPROPERTYPAGE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)提供自定义页。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -110,9 +110,9 @@ Windows 仅显示一个驱动程序页、 一个资源页上和设备的一个 p
 
 如果安装程序允许用户将需要删除并重新启动设备的 Windows 属性设置，安装程序必须设置 DI_FLAGSEX_PROPCHANGE_PENDING 标志的设备中安装参数从其**DialogProc**例程.
 
-有关如何提供设备属性页的详细信息，请参阅[提供的设备属性页](https://msdn.microsoft.com/library/windows/hardware/ff549784)。
+有关如何提供设备属性页的详细信息，请参阅[提供的设备属性页](https://docs.microsoft.com/windows-hardware/drivers/install/providing-device-property-pages)。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://msdn.microsoft.com/library/windows/hardware/ff546094)。
+有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
 
 <a name="requirements"></a>要求
 ------------
@@ -137,11 +137,11 @@ Windows 仅显示一个驱动程序页、 一个资源页上和设备的一个 p
 ## <a name="see-also"></a>请参阅
 
 
-[**SP_ADDPROPERTYPAGE_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552337)
+[**SP_ADDPROPERTYPAGE_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 事件通知 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8398ab93e6ab9208cc25954ba94a9575cccd5e73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca306701c973e56aba974cb88613a32a96eaf667
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385487"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373349"
 ---
 # <a name="exporting-a-miniportdevicepnpeventnotify-function"></a>导出 MiniportDevicePnPEventNotify 函数
 
@@ -23,7 +23,7 @@ ms.locfileid: "63385487"
 
 
 
-NDIS 调用微型端口驱动程序[ *MiniportDevicePnPEventNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff559369)函数，以通知以下插即用 (PnP) 事件的微型端口驱动程序：
+NDIS 调用微型端口驱动程序[ *MiniportDevicePnPEventNotify* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_device_pnp_event_notify)函数，以通知以下插即用 (PnP) 事件的微型端口驱动程序：
 
 -   微型端口驱动程序控制的 NIC 被意外删除。
 

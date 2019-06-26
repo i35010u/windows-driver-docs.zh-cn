@@ -4,17 +4,17 @@ description: 选择该设备的步骤 2 驱动程序
 ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e00a50a7836c30a7b4a86359c8603664ad9162e
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: c3263a15f4171e48f3ed27ca04bf00ae5b062cb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385874"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>步骤 2：选择设备的驱动程序
 
 
-检测到新设备并将其标识 Windows 后并将其[设备安装组件](https://msdn.microsoft.com/library/windows/hardware/ff541277)请执行以下步骤：
+检测到新设备并将其标识 Windows 后并将其[设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))请执行以下步骤：
 
 1.  Windows 搜索的相应[驱动程序包](driver-packages.md)设备。 有关此步骤的详细信息，请参阅[为驱动程序包搜索](#searching-for-the-driver)。
 2.  Windows 从一个或多个驱动程序包中选择最适用于设备的驱动程序。 有关此步骤的详细信息，请参阅[选择该驱动程序](#selecting-the-driver)。

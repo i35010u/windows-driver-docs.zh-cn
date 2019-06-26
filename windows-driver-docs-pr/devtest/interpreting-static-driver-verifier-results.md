@@ -12,12 +12,12 @@ keywords:
 - 验证结果 WDK Static Driver Verifier
 ms.date: 04/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 922e804db8e60443d6df75a230d4d199677bd495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f85f9192aefb7d79f4eed1a29923d4a7a37685bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373703"
 ---
 # <a name="interpreting-static-driver-verifier-results"></a>解释静态驱动程序验证程序结果
 
@@ -55,7 +55,7 @@ SDV 测试规则的冲突的驱动程序，但该驱动程序不支持的入口�
 
 如果该驱动程序未指定入口点，并且它调用的函数，规则监视器，此结果可能指示 SDV 找不到或未正确解释的入口点。 若要确认这种情况发生，检查，并如有必要，更正[Sdv map.h](sdv-map-h.md)文件。 有关此过程的信息，请参阅[扫描该驱动程序](scanning-the-driver.md)。
 
-有关每个规则的详细信息，请参阅[驱动程序验证程序的静态规则](https://msdn.microsoft.com/library/windows/hardware/ff551714)引用。
+有关每个规则的详细信息，请参阅[驱动程序验证程序的静态规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)引用。
 
 若要查看更多的驱动程序，运行验证使用不同的规则。
 
@@ -65,10 +65,10 @@ SDV 停止验证规则，因为它超出了其用于验证每个规则的时间�
 超时值被视为无结论的结果。 它不指示驱动程序错误。 如果 SDV 报告超时，扩展验证所允许的时间 ( **SDV\_SlamConfig\_超时**sdv default.xmlfile 中的值) 并再次运行验证。
 
 <span id="Completed__Property_"></span><span id="completed__property_"></span><span id="COMPLETED__PROPERTY_"></span>**已完成 （属性）**  
-SDV 已运行指定的驱动程序的驱动程序属性规则。 驱动程序属性规则检查驱动程序功能或支持的功能，以做进一步分析的准备。 例如，驱动程序属性规则， **CancelRoutine**，检查是否已注册的 WDM 驱动程序[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程。 如果*取消*例程未检测到，不适用于特定 WDM 规则。 这意味着未满足的驱动程序属性。
+SDV 已运行指定的驱动程序的驱动程序属性规则。 驱动程序属性规则检查驱动程序功能或支持的功能，以做进一步分析的准备。 例如，驱动程序属性规则， **CancelRoutine**，检查是否已注册的 WDM 驱动程序[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程。 如果*取消*例程未检测到，不适用于特定 WDM 规则。 这意味着未满足的驱动程序属性。
 
 <span id="Satisfied__Property_"></span><span id="satisfied__property_"></span><span id="SATISFIED__PROPERTY_"></span>**满足 （属性）**  
-SDV 已运行指定的驱动程序的驱动程序属性规则。 驱动程序属性规则检查驱动程序功能或支持的功能，以做进一步分析的准备。 例如，驱动程序属性规则， **CancelRoutine**，检查是否已注册的 WDM 驱动程序[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程。 如果*取消*例程进行检测，则应用特定 WDM 规则。 这意味着已满足驱动程序属性
+SDV 已运行指定的驱动程序的驱动程序属性规则。 驱动程序属性规则检查驱动程序功能或支持的功能，以做进一步分析的准备。 例如，驱动程序属性规则， **CancelRoutine**，检查是否已注册的 WDM 驱动程序[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程。 如果*取消*例程进行检测，则应用特定 WDM 规则。 这意味着已满足驱动程序属性
 
 <span id="Spaceouts"></span><span id="spaceouts"></span><span id="SPACEOUTS"></span>**Spaceouts**  
 SDV 停止验证，因为它超出了验证规则的内存限制的规则数。 在中设置的内存限制[静态驱动程序验证工具选项文件](static-driver-verifier-options-file.md)，sdv default.xml。

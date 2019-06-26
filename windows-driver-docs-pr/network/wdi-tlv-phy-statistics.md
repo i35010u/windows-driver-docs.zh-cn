@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fe7efbc022fef9047a97f7bb2bd7bc54a6d089
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eeed911a4adcd210db32eafddc5b125248fbc5ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380753"
 ---
 # <a name="wditlvphystatistics"></a>WDI\_TLV\_PHY\_统计信息
 
 
-WDI\_TLV\_PHY\_统计信息是包含每个物理统计信息的 TLV [OID\_WDI\_获取\_统计信息](https://msdn.microsoft.com/library/windows/hardware/dn925850)。
+WDI\_TLV\_PHY\_统计信息是包含每个物理统计信息的 TLV [OID\_WDI\_获取\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-statistics)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -44,7 +44,7 @@ WDI\_TLV\_PHY\_统计信息是包含每个物理统计信息的 TLV [OID\_WDI\_�
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926105" data-raw-source="[&lt;strong&gt;WDI_PHY_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926105)"><strong>WDI_PHY_TYPE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_phy_type" data-raw-source="[&lt;strong&gt;WDI_PHY_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_phy_type)"><strong>WDI_PHY_TYPE</strong></a></td>
 <td>此 PHY 的类型。</td>
 </tr>
 <tr class="even">

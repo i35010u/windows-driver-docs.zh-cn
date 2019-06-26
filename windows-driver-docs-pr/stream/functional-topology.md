@@ -17,12 +17,12 @@ keywords:
 - BDA WDK AVStream，控制节点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 223e090fcbed413dc60cd871b602ff52a8d8a377
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e6c7ac00774fd7da8941c8afc4e0a7cad10dab9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358632"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384059"
 ---
 # <a name="functional-topology"></a>功能拓扑
 
@@ -32,9 +32,9 @@ ms.locfileid: "63358632"
 
 若要启用的适用于所有类型的网络类型，采用了广播的接收器筛选器关系图生成和硬件和软件实现的例如，调谐器和解码器，广播体系结构采用筛选器关系图的熟悉的概念从 DirectShow 和中的概念抽象化*功能拓扑*。 功能的拓扑，像是一个筛选器图形，描述发生的转换的一系列上传入的信号。 但是，与筛选器图形，不同的功能的拓扑不描述任何实际筛选器或软件模块;或操作中的软件或硬件的实现方式。 相反，它描述了抽象的配置*控制节点*，其中每个表示某些常用的离散操作。
 
-根据计算机中安装的硬件和软件组件的类型，相同的功能拓扑可能会导致不同的筛选器图形配置或*实际拓扑*。 例如，如果硬件供应商选择实现调谐器和解调器上同一线路张卡，然后[内核流式处理 (KS) 代理模块](https://msdn.microsoft.com/library/windows/hardware/ff560877)这个硬件设备筛选器关系图中的表示为具有两个有单个筛选器内部控制节点。 BDA 设备筛选器区分开来本身更传统的 DirectShow 筛选器因为单个 BDA 设备筛选器可以封装为多硬件的函数 （控制节点实现） 内置于单个功能模块 （例如，一条线路卡或芯片）。
+根据计算机中安装的硬件和软件组件的类型，相同的功能拓扑可能会导致不同的筛选器图形配置或*实际拓扑*。 例如，如果硬件供应商选择实现调谐器和解调器上同一线路张卡，然后[内核流式处理 (KS) 代理模块](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)这个硬件设备筛选器关系图中的表示为具有两个有单个筛选器内部控制节点。 BDA 设备筛选器区分开来本身更传统的 DirectShow 筛选器因为单个 BDA 设备筛选器可以封装为多硬件的函数 （控制节点实现） 内置于单个功能模块 （例如，一条线路卡或芯片）。
 
-由 GUID 唯一地标识控制节点提供的函数。 节点说明的 GUID 的定义，请参阅[BDA 节点类别 Guid](https://msdn.microsoft.com/library/windows/hardware/ff556529)。 在关系图构建过程中，网络提供程序筛选器使用这些 Guid 来确定哪些节点可支持特定的网络类型或优化空间中。 指示广播的接收器筛选器关系图中的筛选器，通过 COM 接口、 节点类型和它们支持的 pin 类型。 BDA 驱动程序的筛选器指示 KS 属性集通过此相同信息。 筛选器包含数据结构，用于描述其节点类型、 固定类型和 pin 和节点可以连接的方式。 此信息的筛选器称为*模板拓扑*。 下图演示了模板拓扑。
+由 GUID 唯一地标识控制节点提供的函数。 节点说明的 GUID 的定义，请参阅[BDA 节点类别 Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-node-category-guids)。 在关系图构建过程中，网络提供程序筛选器使用这些 Guid 来确定哪些节点可支持特定的网络类型或优化空间中。 指示广播的接收器筛选器关系图中的筛选器，通过 COM 接口、 节点类型和它们支持的 pin 类型。 BDA 驱动程序的筛选器指示 KS 属性集通过此相同信息。 筛选器包含数据结构，用于描述其节点类型、 固定类型和 pin 和节点可以连接的方式。 此信息的筛选器称为*模板拓扑*。 下图演示了模板拓扑。
 
 ![说明模板拓扑关系图](images/bapinnod.png)
 

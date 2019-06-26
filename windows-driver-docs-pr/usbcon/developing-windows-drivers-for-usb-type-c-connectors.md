@@ -3,12 +3,12 @@ Description: 您需要编写用于连接器的驱动程序如果 USB C 类型系
 title: 为 USB 类型 C 连接器开发 Windows 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc06240f49b58ce836dbdd86099787314b20ea1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32306d25f53c5cdccf58211f9a6e985704b7952c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378362"
 ---
 # <a name="developing-windows-drivers-for-usb-type-c-connectors"></a>为 USB 类型 C 连接器开发 Windows 驱动程序
 您需要为连接器编写驱动程序，如果您的 USB C 类型系统不实现 PD 状态机，或实现状态机，但不支持通过非 ACPI 传输 UCSI。 如果是这样，您可以加载 Microsoft 提供[UCSI 驱动程序](ucsi.md)。
@@ -26,7 +26,7 @@ ms.locfileid: "63325211"
 -   Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 -   Windows 10 移动版
 
-**重要的 Api**
+**重要的 API**
 
 -   [USB 类型 C 驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
 
@@ -94,11 +94,11 @@ ms.locfileid: "63325211"
 
 [写入 USB 角色切换 (URS) 客户端驱动程序 ](usb-dual-role-driver-stack-architecture.md)
 
-[USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)（USB 双角色控制器驱动程序编程参考）
+[USB dual-role controller driver programming reference](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))（USB 双角色控制器驱动程序编程参考）
 
 [写入 USB 函数客户端驱动程序](developing-windows-drivers-for-usb-function-controllers.md)  
 
-[USB function controller programming reference](https://msdn.microsoft.com/library/windows/hardware/mt188013)（USB 功能控制器编程参考）
+[USB function controller programming reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)（USB 功能控制器编程参考）
 
 ## <a name="related-topics"></a>相关主题
 

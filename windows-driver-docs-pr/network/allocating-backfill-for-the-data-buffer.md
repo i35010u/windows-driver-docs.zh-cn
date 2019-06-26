@@ -9,12 +9,12 @@ keywords:
 - 数据回填空间 WDK 标头数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed03f808baab51a3dd6bb47581b6717a9b6b90f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 226ce041f1509f86f82514932429447adcdcbede
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367711"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386359"
 ---
 # <a name="allocating-backfill-for-the-data-buffer"></a>为数据缓冲区分配回填
 
@@ -22,7 +22,7 @@ ms.locfileid: "63367711"
 
 
 
-NDIS 指定微型端口驱动程序应分配中的数据回填空间量**BackfillSize**的成员[ **NDIS\_HD\_拆分\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)结构。 有关设置标头数据拆分属性的详细信息，请参阅[初始化标头数据拆分提供程序](initializing-a-header-data-split-provider.md)。
+NDIS 指定微型端口驱动程序应分配中的数据回填空间量**BackfillSize**的成员[ **NDIS\_HD\_拆分\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_hd_split_attributes)结构。 有关设置标头数据拆分属性的详细信息，请参阅[初始化标头数据拆分提供程序](initializing-a-header-data-split-provider.md)。
 
 微型端口驱动程序时 NIC 将拆分标头和接收的以太网帧中的数据，必须将至少包含回填存储预分配的字节数的**BackfillSize**指定之前的数据部分的起始地址帧。 回填存储必须跨越页边界。
 

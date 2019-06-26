@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8092ad90ad412de72c1d72510c27358b6c421640
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69a87bfb3f2f8200122dff191a83f3e5620519d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367441"
 ---
 # <a name="bug-check-0x44-multipleirpcompleterequests"></a>Bug 检查 0x44：多个\_IRP\_完成\_请求
 
@@ -26,7 +26,7 @@ ms.locfileid: "63325369"
 多个\_IRP\_完成\_请求错误检查的值为 0x00000044。 这指示一个驱动程序已尝试请求，它是完成 IRP 已经完成。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="multipleirpcompleterequests-parameters"></a>多个\_IRP\_完成\_请求参数

@@ -7,12 +7,12 @@ keywords:
 - 安装生物识别驱动程序 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3baaf63f05b9fa93aff0c72317408bf7d32a7289
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afbeb83c9de5d926bd509e9c434798e46d344069
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364702"
 ---
 # <a name="installing-a-biometric-driver"></a>安装生物识别驱动程序
 
@@ -86,7 +86,7 @@ ms.locfileid: "63328385"
 
 -   若要区分 WBDI 和旧驱动程序，供应商必须设置特征评分驱动程序 INX 文件中。 中未设置特征评分[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)示例。 有关设置特征评分的详细信息，请参阅[排名生物识别驱动程序在 Windows 更新上](ranking-a-biometric-driver-on-windows-update.md)。
 
-有关 INX 文件和它们之间的区别 INF 文件中的信息，请参阅[使用 INX 文件转换为创建 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff545473)。
+有关 INX 文件和它们之间的区别 INF 文件中的信息，请参阅[使用 INX 文件转换为创建 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-inx-files-to-create-inf-files)。
 
 若要替换旧驱动程序为 WBDI 驱动程序，使用以下过程：
 

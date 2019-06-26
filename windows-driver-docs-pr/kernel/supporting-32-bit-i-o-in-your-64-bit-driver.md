@@ -17,12 +17,12 @@ keywords:
 - 缓冲区指针 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b406413798edea839afee76c89600eea0bc46c9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1efc744de854ec7b6e64948f65a62c6adc4573d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382970"
 ---
 # <a name="supporting-32-bit-io-in-your-64-bit-driver"></a>在 64 位驱动程序中支持 32 位 I/O
 
@@ -30,13 +30,13 @@ ms.locfileid: "63392405"
 
 
 
-Windows (WOW64) 上的 Windows 允许 Microsoft Win32 用户模式应用程序在 64 位 Windows 上运行。 通过截获 Win32 函数调用和参数从指针精度类型转换为固定精度类型作为相应地对 64 位内核转换之前执行此操作。 此转换称为*形式转换*，为所有 Win32 函数，但有一个重要的例外自动完成： 数据缓冲区传递给[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216). 通过指向这些缓冲区的内容*InputBuffer*并*OutputBuffer*不 thunked 参数，因为其结构是特定于驱动程序。
+Windows (WOW64) 上的 Windows 允许 Microsoft Win32 用户模式应用程序在 64 位 Windows 上运行。 通过截获 Win32 函数调用和参数从指针精度类型转换为固定精度类型作为相应地对 64 位内核转换之前执行此操作。 此转换称为*形式转换*，为所有 Win32 函数，但有一个重要的例外自动完成： 数据缓冲区传递给[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol). 通过指向这些缓冲区的内容*InputBuffer*并*OutputBuffer*不 thunked 参数，因为其结构是特定于驱动程序。
 
 **请注意**  尽管缓冲区*内容*不 thunked 缓冲区*指针*转换为 64 位指针。
 
  
 
-用户模式应用程序调用[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)将 I/O 请求直接发送到指定的内核模式驱动程序。 此请求包含 I/O 控制代码 (IOCTL) 或文件系统的控制代码 (FSCTL) 和指针的输入和输出数据缓冲区。 这些数据缓冲区的格式是特定于 IOCTL 或 FSCTL，反过来由内核模式驱动程序定义。 因为缓冲区格式是任意的而且它已知的驱动程序和不 WOW64 的形式转换数据任务由驱动程序。
+用户模式应用程序调用[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)将 I/O 请求直接发送到指定的内核模式驱动程序。 此请求包含 I/O 控制代码 (IOCTL) 或文件系统的控制代码 (FSCTL) 和指针的输入和输出数据缓冲区。 这些数据缓冲区的格式是特定于 IOCTL 或 FSCTL，反过来由内核模式驱动程序定义。 因为缓冲区格式是任意的而且它已知的驱动程序和不 WOW64 的形式转换数据任务由驱动程序。
 
 如果满足以下所有 64 位驱动程序必须都支持 32 位 I/O:
 

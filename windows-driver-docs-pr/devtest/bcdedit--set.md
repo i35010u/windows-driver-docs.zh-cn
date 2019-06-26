@@ -2,7 +2,7 @@
 title: BCDEdit /set
 description: BCDEdit/set 命令设置 Windows 引导配置数据存储 (BCD) Windows 7、 Windows Server 2008、 Windows 8、 Windows 8.1，Windows 10、 Windows Server 2012 和 Windows Server 2012 R2 中的启动项选项值。
 ms.assetid: e66d9c55-9a44-4de2-a1a4-634c7d550735
-ms.date: 07/09/2018
+ms.date: 02/07/2018
 keywords:
 - BCDEdit /set Driver Development Tools
 topic_type:
@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1928c242ddde8f7fa0184fa95d2712220fa79186
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7137391bf4ff88f4339fc0e1adf3b0017aeef1f4
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393787"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
-**BCDEdit /set**命令设置 Windows 引导配置数据存储 (BCD) Windows 7、 Windows Server 2008、 Windows 8、 Windows 8.1，Windows 10、 Windows Server 2012 和 Windows Server 2012 R2 中的启动项选项值。 使用**BCDEdit /set**命令来配置特定的启动项元素，如内核调试程序设置、 内存选项或启用测试签名的内核模式代码或负载备用硬件抽象层 (HAL) 的选项和内核文件。 若要删除的启动项选项，请使用[ **BCDEdit /deletevalue** ](bcdedit--deletevalue.md)命令。
+**BCDEdit /set**命令在 Windows 引导配置数据存储 (BCD) 设置启动项选项值。 使用**BCDEdit /set**命令来配置特定的启动项元素，如内核调试程序设置、 内存选项或启用测试签名的内核模式代码或负载备用硬件抽象层 (HAL) 的选项和内核文件。 若要删除的启动项选项，请使用[ **BCDEdit /deletevalue** ](bcdedit--deletevalue.md)命令。
 
 > [!CAUTION]
 > 若要使用 BCDEdit 修改 BCD，所需管理权限。 更改某些启动项选项使用**BCDEdit /set**命令可能导致您的计算机无法运行。 或者，使用系统配置实用程序 (MSConfig.exe) 更改启动设置。
@@ -33,13 +33,13 @@ ms.locfileid: "56540889"
 bcdedit  /set [{ID}] datatype value
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
-\[**{ID}**\]  
-**{ID}** 是与启动条目关联的 GUID。 如果未指定 **{ID}**，命令将修改当前操作系统启动项目。 如果指定的启动项，则与启动项关联的 GUID 必须括在大括号 **{}**。 若要查看所有活动的引导条目的 GUID 标识符，请使用**bcdedit /enum**命令。 当前引导条目的标识符是 **{当前}**。 有关此选项的详细信息，请使用以下命令： **bcdedit /？ID**
+\[ **{ID}** \]  
+**{ID}** 是与启动条目关联的 GUID。 如果未指定 **{ID}** ，命令将修改当前操作系统启动项目。 如果指定的启动项，则与启动项关联的 GUID 必须括在大括号 **{}** 。 若要查看所有活动的引导条目的 GUID 标识符，请使用**bcdedit /enum**命令。 当前引导条目的标识符是 **{当前}** 。 有关此选项的详细信息，请使用以下命令： **bcdedit /？ID**
 
 > [!NOTE]
-> 如果使用的[Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)，必须使用引号将启动条目标识符，例如： **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** 或 **"{current}"**.
+> 如果使用的[Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)，必须使用引号将启动条目标识符，例如： **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** 或 **"{current}"** .
 
 *datatype* *value*  
 
@@ -81,7 +81,7 @@ bcdedit  /set [{ID}] datatype value
 > 不支持 Windows 8 和 Windows Server 2012 中。
 
 **disabledynamictick** \[ **yes** | **no** \]  
-启用和禁用动态计时器刻度线功能。 选项为从 Windows 8 和 Windows Server 2012 开始提供。
+启用和禁用动态计时器刻度线功能。 
 
 > [!NOTE]
 > 此选项应仅用于调试。
@@ -90,24 +90,24 @@ bcdedit  /set [{ID}] datatype value
 控制早期启动反恶意软件 (ELAM) 驱动程序的加载。 操作系统加载程序中删除此条目出于安全原因。 此选项仅可通过使用 F8 菜单上触发。 人必须在物理上存在 （在计算机上） 来触发此选项。
 
 > [!NOTE]
-> 此选项应仅用于调试。 选项为从 Windows 8 和 Windows Server 2012 开始提供。
+> 此选项应仅用于调试。 
 
 **forcelegacyplatform** \[ **yes** | **no** \]  
 强制 OS 假定旧 PC 设备的状态，如 CMOS 和键盘控制器。
 
 > [!NOTE]
-> 此选项应仅用于调试。 选项为从 Windows 8 和 Windows Server 2012 开始提供。
+> 此选项应仅用于调试。 
 
 **groupsize** *maxsize*设置的最大逻辑处理器数在单处理器组中，其中*最大大小*是任何介于 1 和 64 （含) 之间的 2 的幂。 默认情况下，处理器组具有的最大大小为 64 个逻辑处理器。 可以使用此启动配置设置重写的大小和计算机的处理器组的构成出于测试目的。 [处理器组](https://go.microsoft.com/fwlink/p/?linkid=155063)多于 64 个逻辑处理器的计算机提供支持。 此启动选项是 64 位版本的 Windows 7 和 Windows Server 2008 R2 和更高版本上可用。 此启动选项具有对 32 位版本的 Windows 7 没有影响。
 
-使用**groupsize**选项如果想要强制多个组，计算机具有 64 或更少活动的逻辑处理器。 有关使用此选项的详细信息，请参阅[测试多个处理器组支持的驱动程序的启动参数](https://msdn.microsoft.com/library/windows/hardware/ff542298)。
+使用**groupsize**选项如果想要强制多个组，计算机具有 64 或更少活动的逻辑处理器。 有关使用此选项的详细信息，请参阅[测试多个处理器组支持的驱动程序的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)。
 
 **groupaware** \[ **on** | **off** \]  
 需要注意的多个处理器组环境中的多个组的强制驱动程序。 使用此选项以帮助公开在驱动程序和组件中的跨组不兼容。 [处理器组](https://go.microsoft.com/fwlink/p/?linkid=155063)多于 64 个逻辑处理器的计算机提供支持。 此启动选项是 64 位版本的 Windows 7 和 Windows Server 2008 R2 和更高版本上可用。 此启动选项具有对 32 位版本的 Windows 7 没有影响。 可以使用**groupaware**选项和**groupsize**选项来测试对函数具有多个组的驱动程序兼容性计算机具有 64 或更少活动的逻辑处理器时。
 
 **Groupaware 上的**设置可确保组 0 以外的组中启动了进程。 这会增加驱动程序和组件之间的跨组交互的机会。 该选项还会修改的旧版功能的行为**KeSetTargetProcessorDpc**， **KeSetSystemAffinityThreadEx**，并**KeRevertToUserAffinityThreadEx**以便它们始终在最高编号组包含活动的逻辑处理器上执行。 应更改驱动程序调用这些旧的函数的任何调用对应的可识别组 (**KeSetTargetProcessorDpcEx**， **KeSetSystemGroupAffinityThread**，和**KeRevertToUserGroupAffinityThread**)。
 
-有关使用此选项的详细信息，请参阅[测试多个处理器组支持的驱动程序的启动参数](https://msdn.microsoft.com/library/windows/hardware/ff542298)。
+有关使用此选项的详细信息，请参阅[测试多个处理器组支持的驱动程序的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)。
 
 **hal** *文件*指示操作系统加载程序加载备用 HAL 文件。 指定的文件必须位于 %systemroot%\\system32 目录。
 
@@ -131,31 +131,23 @@ bcdedit /set hypervisorlaunchtype auto
 **1394**  
 指定用于调试的 IEEE 1394 (FireWire) 连接。 使用此选项时， **hypervisorchannel**还应设置选项。
 
+> [!IMPORTANT]
+> 1394 传输协议是可在 Windows 10，版本 1607年及更早版本中使用。 不在更高版本的 Windows 中可用。 应转换到其他传输，如使用以太网 KDNET 项目。 有关该传输的详细信息，请参阅[设置向上 KDNET 网络内核调试自动](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。
+
+
 **Net**  
 指定用于调试的以太网网络连接。 使用此选项时， **hypervisorhostip**选项必须也是设置。
 
 **hypervisorhostip** *IP 地址*(只使用何时**hypervisordebugtype**是**Net**。)对于通过网络连接调试虚拟机监控程序，指定主机调试器的 IPv4 地址。 有关调试的 HYPER-V 信息，请参阅[使用 HYPER-V 创建虚拟机](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)。
 
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
-
 **hypervisorhostport** \[ *port* \]  
 (仅使用何时**hypervisordebugtype**是**Net**。)为网络调试，指定要与主机调试器上进行通信的端口。 应为 49152 或更高版本。
-
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
 
 **hypervisordhcp** \[ **yes** | **no** \]  
 控件使用的 DHCP 网络调试器与虚拟机监控程序一起使用。 此值设置为**没有**强制使用的自动专用 IP 寻址 (APIPA) 获取链接本地 IP 地址。
 
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
-
 **hypervisoriommupolicy** \[ **default** | **enable** | **disable**\]  
 控制虚拟机监控程序是否使用输入输出内存管理单元 (IOMMU)。
-
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
 
 **hypervisorlaunchtype** \[ **Off** | **Auto** \]  
 控制虚拟机监控程序启动选项。 如果您设置了调试器为调试目标计算机上的 HYPER-V，此选项设置为**自动**目标计算机上。 有关详细信息，请参阅[使用 HYPER-V 创建虚拟机](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)。
@@ -166,31 +158,16 @@ bcdedit /set hypervisorlaunchtype auto
 **hypervisornumproc** *number*  
 指定可以在虚拟机监控程序中启动的逻辑处理器的总数。
 
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
-
 **hypervisorrootproc** *number*  
 根分区中指定的最大虚拟处理器数和后续拆分非统一内存体系结构 (NUMA) 节点，这可能会在虚拟机监控程序中启动的逻辑处理器的数量限制。
-
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
 
 **hypervisorrootprocpernode** *number*  
 可在预先拆分，非统一内存体系结构 (NUMA) 节点启动根分区中指定的虚拟处理器的总数。
 
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
-
 **hypervisorusekey** \[ *key* \]  
 (仅使用何时**hypervisordebugtype**是**Net**。)为网络调试指定用来对连接进行加密密钥。 \[0-9\]并\[a 到 z\]仅允许。
 
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
-
 **hypervisoruselargevtlb** \[ **是** | **没有**会增加虚拟转换旁路缓冲器 (TLB) 大小。
-
-> [!NOTE]
-> 选项为从 Windows 8 和 Windows Server 2012 开始提供。
 
 **increaseuserva** *兆字节为单位*以兆字节，为用户模式虚拟地址空间中指定的内存量。
 
@@ -267,12 +244,12 @@ bcdedit /set {current} onetimeadvancedoptions on
 
 **Pae**参数是仅在 32 位版本的 Windows 在基于 x86 和基于 x64 的处理器的计算机上运行的启动项上有效。 在 32 位版本的 Windows （Windows 8) 之前，默认情况下禁用 PAE。 但是，Windows 会自动启用 PAE 时计算机针对配置热添加内存设备在超过 4 GB 区域中，内存范围内定义的静态资源关系表 (SRAT)。 *热添加内存*支持而无需重新启动或关闭计算机可以添加内存设备。 在这种情况下，在系统启动时，必须启用 PAE，因为它是自动启用，以便系统可以立即解决扩展添加重启之间的内存。 仅在 Windows Server 2008 Datacenter Edition 上支持热添加内存用于基于 Itanium 的系统; Windows Server 2008和所有更高版本的 Windows Server datacenter 和 enterprise 版本上。 此外，对于 Windows Server 2008 之前的 Windows 版本，热添加内存支持仅在 ACPI BIOS，x86 的计算机上处理器和专用的硬件。 对于 Windows Server 2008 和更高版本的 Windows Server，它被支持所有处理器体系结构。
 
-在计算机上，并支持启用了硬件的数据执行保护 (DEP)，则运行 32 位版本的 Windows 操作系统支持 DEP，PAE 会自动启用 DEP 启用时，并且，所有 32 位版本的 Windows 操作系统上除 Windows Server 2003 SP1，PAE 系统已禁用时禁用 dep。 若要启用 PAE DEP 处于禁用状态时，你必须启用 PAE 显式，通过使用**nx AlwaysOff /set**并 **/set pae ForceEnable**。 DEP 的详细信息，请参阅[引导参数配置 DEP 和 PAE](https://msdn.microsoft.com/library/windows/hardware/ff542275)。
+在计算机上，并支持启用了硬件的数据执行保护 (DEP)，则运行 32 位版本的 Windows 操作系统支持 DEP，PAE 会自动启用 DEP 启用时，并且，所有 32 位版本的 Windows 操作系统上除 Windows Server 2003 SP1，PAE 系统已禁用时禁用 dep。 若要启用 PAE DEP 处于禁用状态时，你必须启用 PAE 显式，通过使用**nx AlwaysOff /set**并 **/set pae ForceEnable**。 DEP 的详细信息，请参阅[引导参数配置 DEP 和 PAE](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-configure-dep-and-pae)。
 
-有关使用详细信息**pae**参数和其他参数，会影响 PAE 配置，请参阅[引导参数配置 DEP 和 PAE](https://msdn.microsoft.com/library/windows/hardware/ff542275)。
+有关使用详细信息**pae**参数和其他参数，会影响 PAE 配置，请参阅[引导参数配置 DEP 和 PAE](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-configure-dep-and-pae)。
 
 **pciexpress** \[ **default** | **forcedisable**\]  
-启用或禁用 PCI Express 的功能。 如果计算机平台都支持 PCI Express 功能和 ACPI \_OSC 方法授予控制操作系统功能的 Windows 支持通过 PCI Express 本机控件功能 （这是默认值） 的高级的功能。 使用**forcedisable**选项来替代 PCI Express 的高级的功能，并且使用旧 PCI Express 的行为。 有关详细信息，请参阅[启用 PCI Express 的本机控件在 Windows 中](https://msdn.microsoft.com/library/windows/hardware/gg487424.aspx)。
+启用或禁用 PCI Express 的功能。 如果计算机平台都支持 PCI Express 功能和 ACPI \_OSC 方法授予控制操作系统功能的 Windows 支持通过 PCI Express 本机控件功能 （这是默认值） 的高级的功能。 使用**forcedisable**选项来替代 PCI Express 的高级的功能，并且使用旧 PCI Express 的行为。 有关详细信息，请参阅[启用 PCI Express 的本机控件在 Windows 中](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn631753(v=vs.85))。
 
 **quietboot** \[ **on** | **off** \]  
 控制的高分辨率来代替 Windows 启动屏幕显示和动画位图的显示。 在 Windows Vista 之前的操作系统 **/noguiboot**提供类似功能。
@@ -292,7 +269,7 @@ bcdedit /set {49916baf-0e08-11db-9af4-000bdbd316a0} removememory 256
 控件的显示驱动程序的名称，像它们在启动过程中加载。 使用**上的 sos**显示的名称。 使用**sos 关闭**禁止显示。
 
 **testsigning** \[ **on** | **off** \]  
-控制 Windows 10、 Windows 8.1，Windows 8、 Windows 7、 Windows Server 2008 或 Windows Vista 是否将加载任何类型的测试签名的内核模式代码。 此选项未设置默认情况下，在 64 位版本的 Windows 10、 Windows 8.1，Windows 8、 Windows 7、 Windows Server 2008 上的方式测试签名的内核模式驱动程序和 Windows Vista 将不会加载默认情况下。 在运行 BCDEdit 命令后，重新启动计算机，以便使更改生效。 有关详细信息，请参阅[简介测试签名](https://msdn.microsoft.com/library/windows/hardware/ff547660)。
+控制 Windows 10、 Windows 8.1，Windows 8、 Windows 7、 Windows Server 2008 或 Windows Vista 是否将加载任何类型的测试签名的内核模式代码。 此选项未设置默认情况下，在 64 位版本的 Windows 10、 Windows 8.1，Windows 8、 Windows 7、 Windows Server 2008 上的方式测试签名的内核模式驱动程序和 Windows Vista 将不会加载默认情况下。 在运行 BCDEdit 命令后，重新启动计算机，以便使更改生效。 有关详细信息，请参阅[简介测试签名](https://docs.microsoft.com/windows-hardware/drivers/install/introduction-to-test-signing)。
 
 > [!NOTE]
 > 设置 BCDEdit 选项之前，您可能需要禁用或暂停 BitLocker 和安全启动的计算机上。
@@ -349,7 +326,7 @@ bcdedit /set {49916baf-0e08-11db-9af4-000bdbd316a0} truncatememory 0x40000000
 
 若要删除一个启动选项值，已设置该值，请使用 **/deletevalue**选项。 该命令的语法如下所示：
 
-**bcdedit** /**deletevalue** \[**{ID}**\] *datatatype*
+**bcdedit** /**deletevalue** \[ **{ID}** \] *datatatype*
 
 例如，如果您更改处理器组选项**groupsize**为新值用于测试目的，可以通过键入以下命令，然后重新启动计算机还原为默认值为 64。
 
@@ -367,6 +344,6 @@ bcdedit /deletevalue groupsize
 |最低受支持的服务器|Windows Server 2008|
 |||
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [BCDEdit /deletevalue](bcdedit--deletevalue.md)

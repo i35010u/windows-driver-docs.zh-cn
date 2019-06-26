@@ -16,12 +16,12 @@ keywords:
 - 内核流式处理代理 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e6352203196ace9a938e80eb20273d41c1c4ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d283b45c3df0f5490e55cf84220d7a62cb19cbc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363651"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384122"
 ---
 # <a name="encoder-installation-and-registration"></a>编码器安装和注册
 
@@ -166,7 +166,7 @@ KSProxy.CLSID="17CCA71B-ECD7-11D0-B908-00A0C9223196"
 MyEncoderDeviceFriendlyName="My Encoder Device"
 ```
 
-**注意：** 为指定的 GUID *KSNAME\_筛选器*必须匹配**ReferenceGuid**中指定的成员[ **KSFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff562553)结构，描述您的筛选器。
+**注意：** 为指定的 GUID *KSNAME\_筛选器*必须匹配**ReferenceGuid**中指定的成员[ **KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)结构，描述您的筛选器。
 
  
 

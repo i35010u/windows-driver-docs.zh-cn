@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: 0442E4E2-DBC7-4EB0-BEB6-49EFF5132A1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e4cbfe2e61cbc474055f06e9e73f7a417a18b69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: HT
+ms.openlocfilehash: 1cfec4433668c6e98fafce560ae6007d0c21d944
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372195"
 ---
 # <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>将 Windows 性能工具包 (WPT) 与 WDF 配合使用
 
@@ -31,7 +31,7 @@ WPT 可用于获取性能见解，或排查性能问题。 例如：
 ## <a name="getting-started"></a>即刻体验
 
 
-WPT 是 Windows 评估和部署工具包 (ADK) 的一部分。 你可以安装从 ADK [Windows 硬件工具](http://dev.windows.com/featured/hardware/windows-10-hardware-preview-tools)站点。
+WPT 是 Windows 评估和部署工具包 (ADK) 的一部分。 你可以安装从 ADK [Windows 硬件工具](https://developer.microsoft.com/windows/featured/hardware/windows-10-hardware-preview-tools)站点。
 
 WPT 包含两个单独的工具：Windows 性能记录器和 Windows 性能分析器 (WPA)。 在本主题中，我们使用 WPR 来记录跟踪，然后 WPA 以可配置的 GUI 格式查看跟踪。
 
@@ -57,17 +57,13 @@ WPT 包含两个单独的工具：Windows 性能记录器和 Windows 性能分�
 3.  重新启动计算机。
 4.  在提升的命令提示符，输入以下命令。
 
-    **Wpr.exe** **-Start WdfPerfTraceProviders.wprp**
+    **Wpr.exe** **-Start WdfTraceLoggingProvider -filemode**
 
     此命令启用 WDF 的 ETW 提供程序。 记录跟踪启动计算机。
 
-    **请注意**为在步骤 2 中，Wpr.exe WdfPerfTraceProviders.wprp 应从复制和位置安装 WPT。 如果开发计算机上安装 WPT，将这些文件从 WPT 安装目录复制到目标计算机。
+    **请注意**  如从位置应在步骤 2 中，复制 Wpr.exe 安装 WPT。 如果开发计算机上安装 WPT，将这些文件从 WPT 安装目录复制到目标计算机。
 
-
-
-
-在桌面版本中 （主页、 专业版、 企业版和教育版） 的 Windows 10，也可以使用 Wprui.exe，提供用于记录跟踪的 GUI 中启动跟踪。
-
+    在桌面版本中 （主页、 专业版、 企业版和教育版） 的 Windows 10，也可以使用 Wprui.exe，提供用于记录跟踪的 GUI 中启动跟踪。 在更多选项下, 展开**资源分析**，然后选择**WDF 驱动程序活动**。
 
 5.  执行感兴趣的方案。
 6.  停止 ETW 跟踪会话：**Wpr.exe -Stop MyPerfTrace.etl**
@@ -98,9 +94,9 @@ WPT 可以通过两种方式显示 WDF I/O 请求完成的吞吐量：
 
 ![umdf i/o 请求性能的关系图](images/WpaUMDFIoCapture-Narrow.PNG)
 
-在中[摘要表](https://msdn.microsoft.com/library/windows/hardware/hh448109.aspx)，大多数列都很容易理解，但有几个需要注意的事项。 WdfDevice 列包含与 I/O 请求相关联的 WDFDEVICE 句柄。 ActivityID 包含 I/O 请求的唯一标识符。 当它向驱动程序提供的 I/O 请求时，框架将创建此标识符。 如果已经与相应的 IRP 相关联的活动标识符，框架将使用该标识符。 有关详细信息，请参阅[使用活动标识符](using-activity-identifiers.md)。
+在中[摘要表](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448109(v=win.10))，大多数列都很容易理解，但有几个需要注意的事项。 WdfDevice 列包含与 I/O 请求相关联的 WDFDEVICE 句柄。 ActivityID 包含 I/O 请求的唯一标识符。 当它向驱动程序提供的 I/O 请求时，框架将创建此标识符。 如果已经与相应的 IRP 相关联的活动标识符，框架将使用该标识符。 有关详细信息，请参阅[使用活动标识符](using-activity-identifiers.md)。
 
-框架将请求传递到该驱动程序，并退出时是时间戳，该驱动程序调用时，条目时间是跟踪时间戳[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)或相关的方法以完成请求。
+框架将请求传递到该驱动程序，并退出时是时间戳，该驱动程序调用时，条目时间是跟踪时间戳[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)或相关的方法以完成请求。
 
 ## <a name="kmdf-io-request-graph-and-summary-table"></a>KMDF I/O 请求图形和摘要表
 
@@ -112,7 +108,7 @@ WPT 可以通过两种方式显示 WDF I/O 请求完成的吞吐量：
 ## <a name="pnp-power-callback-graph-and-summary-table"></a>即插即用 Power 回调图形和摘要表
 
 
-WPT 还可以显示每个 PnP 和电源回调的处理时间。 以下屏幕截图显示[ *EvtDeviceD0Entry*](https://msdn.microsoft.com/library/windows/hardware/ff540848)， [ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)并[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调示例 KMDF 驱动程序和示例 UMDF 驱动程序的持续时间。
+WPT 还可以显示每个 PnP 和电源回调的处理时间。 以下屏幕截图显示[ *EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)， [ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)并[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调示例 KMDF 驱动程序和示例 UMDF 驱动程序的持续时间。
 
 WdfDevice 列包含与回调相关联的 WDFDEVICE 句柄。 ActivityID 包含回调实例的唯一标识符。
 
@@ -127,31 +123,31 @@ WdfDevice 列包含与回调相关联的 WDFDEVICE 句柄。 ActivityID 包含�
 
 若要确定何时 I/O 请求开始，framework 记录事件时调用以下回调：
 
--   [*EvtIoDefault*](https://msdn.microsoft.com/library/windows/hardware/ff541757)
--   [*EvtIoRead*](https://msdn.microsoft.com/library/windows/hardware/ff541776)
--   [*EvtIoWrite*](https://msdn.microsoft.com/library/windows/hardware/ff541813)
--   [*EvtIoDeviceControl*](https://msdn.microsoft.com/library/windows/hardware/ff541758)
--   [*EvtIoInternalDeviceControl*](https://msdn.microsoft.com/library/windows/hardware/ff541768)
+-   [*EvtIoDefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)
+-   [*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)
+-   [*EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)
+-   [*EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)
+-   [*EvtIoInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)
 
 该框架还会记录 I/O 请求开始事件时，驱动程序调用以下方法：
 
--   [**WdfIoQueueRetrieveNextRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548462)
--   [**WdfIoQueueRetrieveRequestByFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff548470)
--   [**WdfIoQueueRetrieveFoundRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548456)
+-   [**WdfIoQueueRetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)
+-   [**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)
+-   [**WdfIoQueueRetrieveFoundRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrievefoundrequest)
 
 若要确定 I/O 请求完成时，框架会跟踪该驱动程序调用时：
 
--   [**WdfRequestComplete**](https://msdn.microsoft.com/library/windows/hardware/ff549945)
--   [**WdfRequestCompleteWithInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549948)
--   [**WdfRequestCompleteWithPriorityBoost**](https://msdn.microsoft.com/library/windows/hardware/ff549949)
+-   [**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)
+-   [**WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)
+-   [**WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)
 
 最后，若要确定回调持续时间的 PnP/电源回调，该框架记录时它将调用以下驱动程序提供的回调例程，并在完成时：
 
--   [*EvtDeviceD0Entry*](https://msdn.microsoft.com/library/windows/hardware/ff540848)
--   [*EvtDeviceD0Exit*](https://msdn.microsoft.com/library/windows/hardware/ff540855)
--   [*EvtDevicePrepareHardware*](https://msdn.microsoft.com/library/windows/hardware/ff540880)
--   [*EvtDeviceReleaseHardware*](https://msdn.microsoft.com/library/windows/hardware/ff540890)
--   [*EvtIoStop*](https://msdn.microsoft.com/library/windows/hardware/ff541788)
+-   [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)
+-   [*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)
+-   [*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)
+-   [*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)
+-   [*EvtIoStop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)
 
 ## <a name="resources-and-troubleshooting"></a>资源和故障排除
 
@@ -170,13 +166,13 @@ WdfDevice 列包含与回调相关联的 WDFDEVICE 句柄。 ActivityID 包含�
     ----------------------------------
     ```
 
--   对于开发和仅用于测试用途，可以暂时禁用强制驱动程序代码签名策略。 有关详细信息，请参阅[开发和测试期间安装未签名的驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff547565)。
+-   对于开发和仅用于测试用途，可以暂时禁用强制驱动程序代码签名策略。 有关详细信息，请参阅[开发和测试期间安装未签名的驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/installing-an-unsigned-driver-during-development-and-test)。
 -   如果捕获跟踪在 Windows 10 移动版上的，你将需要将 MyPerfTrace.etl 从目标设备复制到具有 Wpa.exe 的计算机。 可以使用[TShell 工具](https://sysdev.microsoft.com/Hardware/oem/docs/Phone_Testing/TShell)若要执行此操作。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx)
+[Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
 
 
 

@@ -6,12 +6,12 @@ keywords:
 - GetFeatureAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 934b53fe996ec01faf25c370684262efb6ac0f07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68d4fb280d93fdc5115bf5af782a7471dd5a48fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339901"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362741"
 ---
 # <a name="using-getfeatureattribute"></a>使用 GetFeatureAttribute
 
@@ -21,7 +21,7 @@ ms.locfileid: "63339901"
 
 此函数仅支持 PPD 功能。 如果某个属性不可用， **GetFeatureAttribute**返回 E\_INVALIDARG。
 
-下表中*pdwDataType*参数接受值为[ **EATTRIBUTE\_数据类型**](https://msdn.microsoft.com/library/windows/hardware/ff548692)枚举类型。
+下表中*pdwDataType*参数接受值为[ **EATTRIBUTE\_数据类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)枚举类型。
 
 <table>
 <colgroup>

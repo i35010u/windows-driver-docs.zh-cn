@@ -10,12 +10,12 @@ keywords:
 - 标头数据拆分提供程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a01768105452ea638e2a5250761d0ca4fdb4c6b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b695d718f2bc5119b80d7524b2e5384678642ab1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388104"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383630"
 ---
 # <a name="splitting-ethernet-frames"></a>拆分以太网帧
 
@@ -29,7 +29,7 @@ ms.locfileid: "63388104"
 
  
 
-如果标头数据拆分为提供程序拆分符合标头数据帧拆分要求中所指示[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构必须具有NDIS\_NBL\_标志\_HD\_中设置拆分标志**NblFlags**成员。 如果标头数据拆分提供程序不会不会拆分一个帧，必须用下列标志中清除指示帧**NblFlags** :
+如果标头数据拆分为提供程序拆分符合标头数据帧拆分要求中所指示[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构必须具有NDIS\_NBL\_标志\_HD\_中设置拆分标志**NblFlags**成员。 如果标头数据拆分提供程序不会不会拆分一个帧，必须用下列标志中清除指示帧**NblFlags** :
 
 -   NDIS\_NBL\_FLAGS\_HD\_SPLIT
 
@@ -39,7 +39,7 @@ ms.locfileid: "63388104"
 
 有关详细信息，有关设置标头数据拆分 NET\_缓冲区\_清单标记和其他接收指示要求，请参阅[标头数据拆分接收指示](receive-indications-with-header-data-split.md)。
 
-有标头数据拆分提供程序可以在何处拆分接收的帧之外的标头数据拆分提供程序要求的情况。 在这些情况下，该提供程序应永远不会拆分 IP 标头、 IPv4 选项、 IPsec 标头、 IPv6 扩展标头或大写层协议标头，中间的以太网帧除非第一个 MDL 包含如 NDIS 为指定的至少多少字节预测先行大小。 有关预测先行大小的详细信息，请参阅[OID\_代\_当前\_预测先行](https://msdn.microsoft.com/library/windows/hardware/ff569574)。
+有标头数据拆分提供程序可以在何处拆分接收的帧之外的标头数据拆分提供程序要求的情况。 在这些情况下，该提供程序应永远不会拆分 IP 标头、 IPv4 选项、 IPsec 标头、 IPv6 扩展标头或大写层协议标头，中间的以太网帧除非第一个 MDL 包含如 NDIS 为指定的至少多少字节预测先行大小。 有关预测先行大小的详细信息，请参阅[OID\_代\_当前\_预测先行](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-lookahead)。
 
 本部分包括：
 

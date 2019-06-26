@@ -4,12 +4,12 @@ description: BDA 节点类别 GUID
 ms.assetid: cf439881-d20d-4efc-8ea3-3752e117b14d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd408ea016f9eb1ffbd0938a1594e06512629ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8732ccab41d210a22b7169008d2e1500ea488c52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386687"
 ---
 # <a name="bda-node-category-guids"></a>BDA 节点类别 GUID
 
@@ -17,7 +17,7 @@ ms.locfileid: "63392718"
 ## <span id="ddk_bda_node_category_guids_ks"></span><span id="DDK_BDA_NODE_CATEGORY_GUIDS_KS"></span>
 
 
-BDA 微型驱动程序使用 BDA 节点类别 Guid 来指定可用于创建 BDA 节点的类型。 BDA 微型驱动程序将分配其中一种 Guid 中的变量**类型**的成员[ **KSNODE\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563473)结构点。 *Bdamedia.h*标头文件定义了这些 Guid。
+BDA 微型驱动程序使用 BDA 节点类别 Guid 来指定可用于创建 BDA 节点的类型。 BDA 微型驱动程序将分配其中一种 Guid 中的变量**类型**的成员[ **KSNODE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksnode_descriptor)结构点。 *Bdamedia.h*标头文件定义了这些 Guid。
 
 网络提供商使用 KSPROPERTY\_BDA\_节点\_类型的属性[KSPROPSETID\_BdaTopology](kspropsetid-bdatopology.md)属性设置为检索可从节点类型的列表BDA 微型驱动程序。 此节点类型列表是一个数组 KSNODE\_描述符结构。
 

@@ -8,12 +8,12 @@ keywords:
 - 网络，WAN WDK 适配器安装要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1acbeac904781f26c3aab1e721f706b33c39732b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4785a2227002dc9560017b3d430b78996f98479f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393390"
 ---
 # <a name="installation-requirements-for-network-adapters"></a>网络适配器的安装要求
 
@@ -50,13 +50,13 @@ ms.locfileid: "63324919"
 <p><strong>ClassGuid</strong>= {4D36E972-E325-11CE-BFC1-08002BE10318}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547478" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547478)"><strong>INF SourceDisksNames 部分</strong></a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff547472" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547472)"> <strong>INF SourceDisksFiles 部分</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)"><strong>INF SourceDisksNames 部分</strong></a>并<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)"> <strong>INF SourceDisksFiles 部分</strong></a></p></td>
 <td align="left"><p>如果使用...</p></td>
 <td align="left"><p>所需如果 INF 文件不随 Windows 2000。 如果 INF 文件随 Windows 2000 <strong>LayoutFile</strong>必须在指定项<strong>版本</strong>部分中，并<strong>SourceDisksNames</strong>和<strong>SourceDisksFiles</strong>未使用部分。</p>
 <p>没有特定于网络的要求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547383" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547383)"><strong>INF DestinationDirs 部分</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)"><strong>INF DestinationDirs 部分</strong></a></p></td>
 <td align="left"><p>必需</p></td>
 <td align="left"><p>没有特定于网络的要求。</p></td>
 </tr>
@@ -67,7 +67,7 @@ ms.locfileid: "63324919"
 <p>不应列出非 PnP 适配器，如非即插即用 ISA 和 EISA 适配器。 请注意，Windows XP 和更高版本操作系统不支持非即插即用 ISA 适配器和 EISA 适配器。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547454" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547454)"><strong>INF 制造商部分</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)"><strong>INF 制造商部分</strong></a></p></td>
 <td align="left"><p>必需</p></td>
 <td align="left"><p>没有特定于网络的要求。</p></td>
 </tr>
@@ -115,7 +115,7 @@ ms.locfileid: "63324919"
 <p><a href="specifying-custom-property-pages-for-network-adapters.md" data-raw-source="[Specifying Custom Property Pages for Network Adapters](specifying-custom-property-pages-for-network-adapters.md)">指定网络适配器的自定义属性页</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547485" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547485)"><strong>INF 字符串部分</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)"><strong>INF 字符串部分</strong></a></p></td>
 <td align="left"><p>必需</p></td>
 <td align="left"><p>没有特定于网络的要求。</p></td>
 </tr>

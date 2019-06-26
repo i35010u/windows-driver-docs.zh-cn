@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4897c2af810056a0b9f0b5806991ec8508c4c9b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4cddab0abb086ff990e1a76a960519b2f2912fca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384784"
 ---
 # <a name="guidparalleldevice"></a>GUID_PARALLEL_DEVICE
 
 
-GUID_PARALLEL_DEVICE 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)的并行端口的支持 IEEE 1284 兼容的硬件接口。 对于此类的新实例，使用[ **GUID_DEVINTERFACE_PARALLEL** ](guid-devinterface-parallel.md)类标识符。
+GUID_PARALLEL_DEVICE 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)的并行端口的支持 IEEE 1284 兼容的硬件接口。 对于此类的新实例，使用[ **GUID_DEVINTERFACE_PARALLEL** ](guid-devinterface-parallel.md)类标识符。
 
 <a name="requirements"></a>要求
 ------------

@@ -7,12 +7,12 @@ keywords:
 - 调试驱动程序 WDK KMDF 注册表值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 490cfdc7456c00562bbc3105e595e2c3b852c675
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8900f1f77d8cbc2ad4dffbc35b887c8e9e07077d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390035"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376299"
 ---
 # <a name="registry-values-for-debugging-wdf-drivers-kmdf-and-umdf"></a>用于调试 WDF 驱动程序（KMDF 和 UMDF）的注册表值
 
@@ -43,10 +43,10 @@ HKR, Parameters\Wdf,DbgBreakOnError,0x00010001,1
 ```
 
 <a href="" id="verifyon-----------------reg-dword-"></a>**VerifyOn** (**REG\_DWORD**)  
-设置为非零值以启用[ **WDFVERIFY** ](https://msdn.microsoft.com/library/windows/hardware/ff551167)中 Wdfassert.h，定义或设置为零表示禁用该宏的宏。 如果未设置 VerifierOn 值，VerifyOn 隐式设置为非零值。
+设置为非零值以启用[ **WDFVERIFY** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfverify)中 Wdfassert.h，定义或设置为零表示禁用该宏的宏。 如果未设置 VerifierOn 值，VerifyOn 隐式设置为非零值。
 
 <a href="" id="dbgbreakonerror--reg-dword-"></a>**DbgBreakOnError** (**REG\_DWORD**)  
-如果设置为非零值，该框架进入调试器时驱动程序调用[ **WdfVerifierDbgBreakPoint**](https://msdn.microsoft.com/library/windows/hardware/ff551164)。 (如果**VerifierOn**值设置为，框架会中断到调试器，即使**DbgBreakOnError**值不存在。)请参阅上面的代码示例。
+如果设置为非零值，该框架进入调试器时驱动程序调用[ **WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)。 (如果**VerifierOn**值设置为，框架会中断到调试器，即使**DbgBreakOnError**值不存在。)请参阅上面的代码示例。
 
 <a href="" id="dbgwaitforsignaltimeoutinsec--reg-dword-"></a>**DbgWaitForSignalTimeoutInSec** (**REG\_DWORD**)  
 在 Windows 8 中，启动时**VerifierOn**并**DbgBreakOnError**设置为非零值，该驱动程序可以更改通过设置中断到调试器的默认超时期限**DbgWaitForSignalTimeoutInSec**。
@@ -87,7 +87,7 @@ HKR, Parameters\Wdf, LogPages,   0x00010001, 3 ; KMDF IFR size
 设置为非零值会导致崩溃转储文件中包括其事件记录器中的信息的框架。
 
 <a href="" id="tracedelaytime--reg-dword-"></a>**TraceDelayTime** (**REG\_DWORD**)  
-Microsoft Windows 2000，设置为非零值若要在初始化过程中引入延迟[WPP 软件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556204)。 以毫秒为单位指定的值和有用的值为 1000 （1 秒）。 没有此延迟，可能会丢失 WPP 跟踪的第一个部分。
+Microsoft Windows 2000，设置为非零值若要在初始化过程中引入延迟[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。 以毫秒为单位指定的值和有用的值为 1000 （1 秒）。 没有此延迟，可能会丢失 WPP 跟踪的第一个部分。
 
 <a href="" id="enhancedverifieroptions-----------------reg-dword-"></a>**EnhancedVerifierOptions** (**REG\_DWORD**)  
 此值包含的位图。 每个位表示用户可以通过设置位启用的其他验证程序选项。
@@ -96,9 +96,9 @@ Microsoft Windows 2000，设置为非零值若要在初始化过程中引入延�
 
 **0x1**:如果设置，请验证工具将检查每个驱动程序的事件回调函数是否执行以下操作：
 
--   在相同的 IRQL 的调用返回。 如果值不同， [ **WDF\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff557235) bug 检查出现的错误代码为 0xE。
+-   在相同的 IRQL 的调用返回。 如果值不同， [ **WDF\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x10d---wdf-violation) bug 检查出现的错误代码为 0xE。
 
--   再返回，退出所有[临界区](https://msdn.microsoft.com/library/windows/hardware/ff542925)其输入。 如果回调函数返回关键区域内输入，其[ **WDF\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff557235) bug 检查出现的错误代码为 0xF。
+-   再返回，退出所有[临界区](https://docs.microsoft.com/windows-hardware/drivers/kernel/critical-regions-and-guarded-regions)其输入。 如果回调函数返回关键区域内输入，其[ **WDF\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x10d---wdf-violation) bug 检查出现的错误代码为 0xF。
 
 **0x10000**:如果设置，并且如果该驱动程序已启用[保证向前推进](guaranteeing-forward-progress-of-i-o-operations.md)I/O 队列，该框架模拟内存不足的情况下为每个队列的 I/O 请求。
 
@@ -124,7 +124,7 @@ Microsoft Windows 2000，设置为非零值若要在初始化过程中引入延�
 ## <a name="umdf"></a>UMDF
 
 
-此外可以设置以下注册表值**HKLM\\软件\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\服务\\{193a1820-d9ac-4997-8c55-be817523f6aa}**。 这些值会影响系统上的所有 UMDF 驱动程序。
+此外可以设置以下注册表值**HKLM\\软件\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\服务\\{193a1820-d9ac-4997-8c55-be817523f6aa}** 。 这些值会影响系统上的所有 UMDF 驱动程序。
 
 <a href="" id="hostprocessdbgbreakonstart--reg-dword-"></a>**HostProcessDbgBreakOnStart** (**REG\_DWORD**)  
 在数秒内包含的延迟值。 在指定的延迟期间，主机进程中查找用户模式下调试程序一次第二个并且如果其中一个连接中的换行符。 如果在此时间段和中的高位未附加用户模式调试器**HostProcessDbgBreakOnStart**设置 (0x80000000)，可以一次尝试进入内核模式调试程序的框架。 例如：
@@ -143,7 +143,7 @@ Microsoft Windows 2000，设置为非零值若要在初始化过程中引入延�
 
 指定**HostProcessDbgBreakOnStart**或**HostProcessDbgBreakOnDriverLoad**会导致禁用其他 UMDF 超时 （例如，插操作） 框架。 这意味着，如果您的驱动程序导致过多的超时，使用这些值可能会导致您的目标上导致严重故障的驱动程序。
 
-此外可以通过使用 WDK 中包含 WDF 验证程序工具 (WdfVerifier.exe) 来设置这些注册表值。 在 UMDF 驱动程序中使用此工具的信息，请参阅[WDF 验证程序与管理 UMDF 验证程序的设置](https://msdn.microsoft.com/library/windows/hardware/ff548422)。
+此外可以通过使用 WDK 中包含 WDF 验证程序工具 (WdfVerifier.exe) 来设置这些注册表值。 在 UMDF 驱动程序中使用此工具的信息，请参阅[WDF 验证程序与管理 UMDF 验证程序的设置](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)。
 
 以下附加属性值都位于**HKLM\\软件\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\DebugMode**:
 
@@ -155,7 +155,7 @@ Microsoft Windows 2000，设置为非零值若要在初始化过程中引入延�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

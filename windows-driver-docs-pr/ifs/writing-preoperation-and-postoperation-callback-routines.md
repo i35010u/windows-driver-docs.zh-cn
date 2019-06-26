@@ -16,12 +16,12 @@ keywords:
 - 筛选 I/O 操作 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7bd355067810fbcee2feeb6c07aac0da43e48d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6711177bb980e9b045bd5bd1670b75103f1af90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385643"
 ---
 # <a name="writing-preoperation-and-postoperation-callback-routines"></a>编写预操作和后操作回调例程
 
@@ -29,7 +29,7 @@ ms.locfileid: "63367115"
 ## <span id="ddk_writing_preoperation_and_postoperation_callback_routines_if"></span><span id="DDK_WRITING_PREOPERATION_AND_POSTOPERATION_CALLBACK_ROUTINES_IF"></span>
 
 
-在其**DriverEntry**例程，微筛选器驱动程序可以注册最多一个[ **preoperation 回调例程**](https://msdn.microsoft.com/library/windows/hardware/ff551109)且最多一个[ **postoperation 回调例程**](https://msdn.microsoft.com/library/windows/hardware/ff551107)每种类型的 I/O 操作所需筛选器。
+在其**DriverEntry**例程，微筛选器驱动程序可以注册最多一个[ **preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)且最多一个[ **postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)每种类型的 I/O 操作所需筛选器。
 
 与传统文件系统筛选器驱动程序，不同的微筛选器驱动程序可以选择哪些类型的 I/O 操作来筛选。 微筛选器驱动程序可以注册为给定类型的 I/O 操作的 preoperation 回调例程，而不注册 postoperation 回调，反之亦然。 微筛选器驱动程序接收的 I/O 操作是操作它已为其注册 preoperation 或 postoperation 回调例程。
 

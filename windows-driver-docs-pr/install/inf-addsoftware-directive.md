@@ -3,12 +3,12 @@ title: INF AddSoftware 指令
 description: AddSoftware 指令介绍独立软件的安装。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8c757b95faf9047b1d06f66f79197d72f8a90b87
-ms.sourcegitcommit: 7e0ac000726f8e79d9eb8b9991a2c698f9472507
+ms.openlocfilehash: f1f6c1baf39b231235c9f1ec544ed8505abb9815
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65531267"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365859"
 ---
 # <a name="inf-addsoftware-directive"></a>INF AddSoftware 指令
 
@@ -69,8 +69,8 @@ SoftwareType=type-code
 
 使用安装任何软件**AddSoftware**将**不**如果卸载虚拟软件组件设备或其父设备中卸载。 如果您的软件不是 UWP 应用 (即使用**AddSoftware** ，值为 1)，请确保用户可以轻松地卸载它而无需离开在注册表中的跟踪。 为此，请执行以下操作：
 
-* 如果使用 MSI 安装程序，设置[添加/删除程序](https://msdn.microsoft.com/library/windows/desktop/aa368032)应用程序的 Windows 安装程序包中的条目。
-* 如果您使用的自定义 EXE 安装全局的注册表文件状态 （而不是补充本地设备设置），使用[卸载注册表项](https://msdn.microsoft.com/library/windows/desktop/aa372105)。 
+* 如果使用 MSI 安装程序，设置[添加/删除程序](https://docs.microsoft.com/windows/desktop/Msi/configuring-add-remove-programs-with-windows-installer)应用程序的 Windows 安装程序包中的条目。
+* 如果您使用的自定义 EXE 安装全局的注册表文件状态 （而不是补充本地设备设置），使用[卸载注册表项](https://docs.microsoft.com/windows/desktop/Msi/uninstall-registry-key)。 
 
 ## <a name="software-install-section-softwaretype"></a>[software-install-section]:SoftwareType
 

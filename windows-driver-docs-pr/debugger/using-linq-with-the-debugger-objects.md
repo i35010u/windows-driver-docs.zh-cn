@@ -5,12 +5,12 @@ keywords:
 - 将 LINQ 与调试器对象配合使用
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 401668d05f3f35c9bf1644699559fd25c01cfb27
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 676ba4a1a0599016dec8954e47b0d8e4ae0d3f5a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366320"
 ---
 # <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
@@ -337,7 +337,7 @@ kd> dx -r1 @$curprocess.Threads
 
 ## <a name="user-defined-variables---anonymous-types"></a>用户定义的变量的匿名类型
 
-完成此创建动态对象使用C#匿名类型语法 （新 {...}）。 有关更多信息，请参见有关匿名类型，请参阅[匿名类型 (C#编程指南)](https://msdn.microsoft.com/library/bb397696.aspx)。 本示例创建一个匿名类型包含整数和字符串值。
+完成此创建动态对象使用C#匿名类型语法 （新 {...}）。 有关更多信息，请参见有关匿名类型，请参阅[匿名类型 (C#编程指南)](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/classes-and-structs/anonymous-types)。 本示例创建一个匿名类型包含整数和字符串值。
 
 ```dbgcmd
 kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }
@@ -843,7 +843,7 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 </table>
 
 
-有关 CapabilityFlags 详细信息，请参阅[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)。
+有关 CapabilityFlags 详细信息，请参阅[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)。
 
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅

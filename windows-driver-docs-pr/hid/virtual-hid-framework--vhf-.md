@@ -4,12 +4,12 @@ description: 了解如何对操作系统编写的 HID 源驱动程序报告 HID 
 ms.assetid: 26964963-792F-4529-B4FC-110BF5C65B35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e04451937e840831fc224da9740e1dbd53bc15b0
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e5ac6bfb70a75049627fb3fadd12732af74d4bd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385790"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>使用虚拟 HID Framework (VHF) 编写的 HID 源驱动程序
 
@@ -23,11 +23,11 @@ ms.locfileid: "65405099"
 -   Windows 10
 -   HID 设备的驱动程序开发人员
 
-**重要的 Api**
+**重要的 API**
 
--   [虚拟 HID Framework 回调函数](https://msdn.microsoft.com/library/windows/hardware/dn925049)
--   [虚拟 HID Framework 方法](https://msdn.microsoft.com/library/windows/hardware/dn925053)
--   [虚拟 HID 框架结构](https://msdn.microsoft.com/library/windows/hardware/dn925054)
+-   [虚拟 HID Framework 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [虚拟 HID Framework 方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [虚拟 HID 框架结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 了解如何对操作系统编写的 HID 源驱动程序报告 HID 数据。
 
@@ -49,7 +49,7 @@ Hid 标准的输入的设备，如-键盘、 鼠标、 笔、 触摸屏输入或
 
 **HID 的源驱动程序 （您的驱动程序）**
 
-HID 源驱动程序链接到 Vhfkm.lib 和 Vhf.h 包括在其生成的项目。 该驱动程序可以编写通过使用[Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)(WDM) 或内核模式驱动程序框架 (KMDF) 的一部分[Windows 驱动程序框架 (WDF)](https://msdn.microsoft.com/library/windows/hardware/dn312126)。 为筛选器驱动程序或设备堆栈中的函数驱动程序可以加载驱动程序。
+HID 源驱动程序链接到 Vhfkm.lib 和 Vhf.h 包括在其生成的项目。 该驱动程序可以编写通过使用[Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)(WDM) 或内核模式驱动程序框架 (KMDF) 的一部分[Windows 驱动程序框架 (WDF)](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)。 为筛选器驱动程序或设备堆栈中的函数驱动程序可以加载驱动程序。
 
 **VHF 静态库 (vhfkm.lib)**
 
@@ -100,44 +100,44 @@ UCHAR HeadSetReportDescriptor[] = {
 
 ## <a name="create-a-virtual-hid-device"></a>创建一个虚拟的 HID 设备
 
-初始化[ **VHF\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/dn925044)结构通过调用[ **VHF\_配置\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/dn925046)宏，然后调用[ **VhfCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn925036)方法。 该驱动程序必须调用**VhfCreate**在被动\_级别后[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)调用，通常情况下，在驱动程序的[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调函数。
+初始化[ **VHF\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config)结构通过调用[ **VHF\_配置\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhf_config_init)宏，然后调用[ **VhfCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfcreate)方法。 该驱动程序必须调用**VhfCreate**在被动\_级别后[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)调用，通常情况下，在驱动程序的[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
 
-在中[ **VhfCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn925036)调用时，该驱动程序可以指定某些配置选项，如必须是以异步方式处理或设置设备信息 （供应商/产品 Id） 的操作。
+在中[ **VhfCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfcreate)调用时，该驱动程序可以指定某些配置选项，如必须是以异步方式处理或设置设备信息 （供应商/产品 Id） 的操作。
 
-例如，应用程序请求 TLC。 HID 类驱动程序对接收该请求时，对确定请求的类型，并创建一个适当[HID 微型驱动程序 IOCTL](https://msdn.microsoft.com/library/windows/hardware/ff539926)请求并将其转发到 VHF。 后获取 IOCTL 请求，VHF 可以处理该请求、 依赖于 HID 源驱动程序来处理它，或完成状态为请求\_不\_受支持。
+例如，应用程序请求 TLC。 HID 类驱动程序对接收该请求时，对确定请求的类型，并创建一个适当[HID 微型驱动程序 IOCTL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)请求并将其转发到 VHF。 后获取 IOCTL 请求，VHF 可以处理该请求、 依赖于 HID 源驱动程序来处理它，或完成状态为请求\_不\_受支持。
 
 VHF 处理这些 Ioctl:
 
--   [**IOCTL\_HID\_GET\_STRING**](https://msdn.microsoft.com/library/windows/hardware/ff541167)
--   [**IOCTL\_HID\_GET\_DEVICE\_ATTRIBUTES**](https://msdn.microsoft.com/library/windows/hardware/ff541093)
--   [**IOCTL\_HID\_获取\_设备\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff541098)
--   [**IOCTL\_HID\_获取\_报表\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff541147)
+-   [**IOCTL\_HID\_GET\_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_string)
+-   [**IOCTL\_HID\_GET\_DEVICE\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_device_attributes)
+-   [**IOCTL\_HID\_获取\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_device_descriptor)
+-   [**IOCTL\_HID\_获取\_报表\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_get_report_descriptor)
 
 该请求是否**GetFeature**， **SetFeature**， **WriteReport**，或者**GetInputReport**，并已注册的 HID 源驱动程序相应的回调函数，VHF 调用的回调函数。 在该函数的 HID 源驱动程序可以获取或设置 HID 虚拟设备的 HID 数据。 如果该驱动程序不会注册一个回调，VHF 完成状态为状态请求\_不\_受支持。
 
 VHF 调用有这些 Ioctl HID 源驱动程序实现事件回调函数：
 
--   [**IOCTL\_HID\_读取\_报表**](https://msdn.microsoft.com/library/windows/hardware/ff541172)
+-   [**IOCTL\_HID\_读取\_报表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_read_report)
 
-    如果该驱动程序想要提交缓冲区获取 HID 输入报告时的句柄缓冲策略，它必须实现[ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135)并指定一个指针，在**EvtVhfAsyncOperationGetInputReport**成员。 有关详细信息，请参阅[提交 HID 输入报告](#submit-the-hid-input-report)。
+    如果该驱动程序想要提交缓冲区获取 HID 输入报告时的句柄缓冲策略，它必须实现[ *EvtVhfReadyForNextReadReport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_ready_for_next_read_report)并指定一个指针，在**EvtVhfAsyncOperationGetInputReport**成员。 有关详细信息，请参阅[提交 HID 输入报告](#submit-the-hid-input-report)。
 
--   [**IOCTL\_HID\_获取\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff541103)或[ **IOCTL\_HID\_设置\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff541184)
+-   [**IOCTL\_HID\_获取\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_get_feature)或[ **IOCTL\_HID\_设置\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_set_feature)
 
-    如果该驱动程序想要获取或设置 HID 功能报表以异步方式，该驱动程序必须实现[ *EvtVhfAsyncOperation* ](https://msdn.microsoft.com/library/windows/hardware/dn897133)函数和指定一个指向 get 或 set 实现函数**EvtVhfAsyncOperationGetFeature**或**EvtVhfAsyncOperationSetFeature**的成员[ **VHF\_配置**](https://msdn.microsoft.com/library/windows/hardware/dn925044).
+    如果该驱动程序想要获取或设置 HID 功能报表以异步方式，该驱动程序必须实现[ *EvtVhfAsyncOperation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_async_operation)函数和指定一个指向 get 或 set 实现函数**EvtVhfAsyncOperationGetFeature**或**EvtVhfAsyncOperationSetFeature**的成员[ **VHF\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config).
 
--   [**IOCTL\_HID\_获取\_输入\_报表**](https://msdn.microsoft.com/library/windows/hardware/ff541128)
+-   [**IOCTL\_HID\_获取\_输入\_报表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_get_input_report)
 
-    如果该驱动程序想要以异步方式获取 HID 输入报表，该驱动程序必须实现[ *EvtVhfAsyncOperation* ](https://msdn.microsoft.com/library/windows/hardware/dn897133)函数，并指定到中的函数的指针**EvtVhfAsyncOperationGetInputReport**的成员[ **VHF\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn925044)。
+    如果该驱动程序想要以异步方式获取 HID 输入报表，该驱动程序必须实现[ *EvtVhfAsyncOperation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_async_operation)函数，并指定到中的函数的指针**EvtVhfAsyncOperationGetInputReport**的成员[ **VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config)。
 
--   [**IOCTL\_HID\_编写\_报表**](https://msdn.microsoft.com/library/windows/hardware/ff541221)
+-   [**IOCTL\_HID\_编写\_报表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ni-hidport-ioctl_hid_write_report)
 
-    如果该驱动程序想要以异步方式获取写入 HID 输入报表，该驱动程序必须实现[ *EvtVhfAsyncOperation* ](https://msdn.microsoft.com/library/windows/hardware/dn897133)函数，并指定到中的函数的指针**EvtVhfAsyncOperationWriteReport**的成员[ **VHF\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn925044)。
+    如果该驱动程序想要以异步方式获取写入 HID 输入报表，该驱动程序必须实现[ *EvtVhfAsyncOperation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_async_operation)函数，并指定到中的函数的指针**EvtVhfAsyncOperationWriteReport**的成员[ **VHF\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config)。
 
-对于任何其他[HID 微型驱动程序 IOCTL](https://msdn.microsoft.com/library/windows/hardware/ff539926)，VHF 完成状态为请求\_不\_受支持。
+对于任何其他[HID 微型驱动程序 IOCTL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)，VHF 完成状态为请求\_不\_受支持。
 
-通过调用删除虚拟的 HID 设备[ **VhfDelete**](https://msdn.microsoft.com/library/windows/hardware/dn925038)。 [ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134) callback 是必需的如果为虚拟的 HID 设备的驱动程序分配资源。 该驱动程序必须实现*EvtVhfCleanup*函数，并指定在该函数的指针**EvtVhfCleanup**的成员[ **VHF\_配置**](https://msdn.microsoft.com/library/windows/hardware/dn925044). *EvtVhfCleanup*之前调用**VhfDelete**调用完成。 有关详细信息，请参阅[删除虚拟 HID 设备](#delete-the-virtual-hid-device)。
+通过调用删除虚拟的 HID 设备[ **VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)。 [ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup) callback 是必需的如果为虚拟的 HID 设备的驱动程序分配资源。 该驱动程序必须实现*EvtVhfCleanup*函数，并指定在该函数的指针**EvtVhfCleanup**的成员[ **VHF\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/ns-vhf-_vhf_config). *EvtVhfCleanup*之前调用**VhfDelete**调用完成。 有关详细信息，请参阅[删除虚拟 HID 设备](#delete-the-virtual-hid-device)。
 
-**请注意**  驱动程序的异步操作完成后，必须调用[ **VhfAsyncOperationComplete** ](https://msdn.microsoft.com/library/windows/hardware/dn925060)设置操作的结果。 从事件回调或在以后从回调返回后，可以调用方法。
+**请注意**  驱动程序的异步操作完成后，必须调用[ **VhfAsyncOperationComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfasyncoperationcomplete)设置操作的结果。 从事件回调或在以后从回调返回后，可以调用方法。
 
 ```cpp
 NTSTATUS
@@ -190,11 +190,11 @@ Error:
 
 ## <a name="submit-the-hid-input-report"></a>提交 HID 输入的报告
 
-通过调用提交 HID 输入的报告[ **VhfReadReportSubmit**](https://msdn.microsoft.com/library/windows/hardware/dn925040)。
+通过调用提交 HID 输入的报告[ **VhfReadReportSubmit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfreadreportsubmit)。
 
 通常情况下，HID 设备发送的状态更改的信息发送输入的报告通过中断。 例如，耳机设备可能会发送报表，按钮的状态发生更改时。 在这种情况下，会调用驱动程序的中断服务例程 (ISR)。 在该例程中，该驱动程序可能会安排处理输入的报表，并将其提交给 VHF，将信息发送给系统的延迟的过程调用 (DPC)。 默认情况下，VHF 缓冲报表，HID 源驱动程序可以开始提交 HID 输入报表，因为它们进入。 这并不需要的 HID 源驱动程序来实现复杂的同步。
 
-HID 源驱动程序可以通过实现挂起报告的缓冲策略提交输入的报表。 若要避免重复缓冲，HID 源驱动程序可以实现[ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135) VHF 是否调用此回调的回调函数，并保持跟踪。 如果以前调用的 HID 源驱动程序可以调用[ **VhfReadReportSubmit** ](https://msdn.microsoft.com/library/windows/hardware/dn925040)要提交报告。 它必须等待*EvtVhfReadyForNextReadReport*然后才能调用获取调用**VhfReadReportSubmit**试。
+HID 源驱动程序可以通过实现挂起报告的缓冲策略提交输入的报表。 若要避免重复缓冲，HID 源驱动程序可以实现[ *EvtVhfReadyForNextReadReport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_ready_for_next_read_report) VHF 是否调用此回调的回调函数，并保持跟踪。 如果以前调用的 HID 源驱动程序可以调用[ **VhfReadReportSubmit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfreadreportsubmit)要提交报告。 它必须等待*EvtVhfReadyForNextReadReport*然后才能调用获取调用**VhfReadReportSubmit**试。
 
 ```cpp
 VOID
@@ -222,16 +222,16 @@ MY_SubmitReadReport(
 
 ## <a name="delete-the-virtual-hid-device"></a>删除虚拟 HID 设备
 
-删除虚拟 HID 设备通过调用[ **VhfDelete**](https://msdn.microsoft.com/library/windows/hardware/dn925038)。
+删除虚拟 HID 设备通过调用[ **VhfDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)。
 
-[**VhfDelete** ](https://msdn.microsoft.com/library/windows/hardware/dn925038)可以调用同步或异步指定 Wait 参数。 为同步调用，必须在调用方法在被动\_级别，例如从[ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)的设备对象。 **VhfDelete**虚拟 HID 设备中删除后返回。 如果该驱动程序调用**VhfDelete**异步，它会立即返回并调用 VHF [ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134)删除操作完成后。 该方法可以在最大调度调用\_级别。 在这种情况下，该驱动程序必须具有已注册并实现*EvtVhfCleanup*回调函数之前调用时[ **VhfCreate**](https://msdn.microsoft.com/library/windows/hardware/dn925036)。 下面是时 HID 源驱动程序想要删除虚拟 HID 设备的事件序列：
+[**VhfDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)可以调用同步或异步指定 Wait 参数。 为同步调用，必须在调用方法在被动\_级别，例如从[ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)的设备对象。 **VhfDelete**虚拟 HID 设备中删除后返回。 如果该驱动程序调用**VhfDelete**异步，它会立即返回并调用 VHF [ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup)删除操作完成后。 该方法可以在最大调度调用\_级别。 在这种情况下，该驱动程序必须具有已注册并实现*EvtVhfCleanup*回调函数之前调用时[ **VhfCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfcreate)。 下面是时 HID 源驱动程序想要删除虚拟 HID 设备的事件序列：
 
 1.  HID 的源驱动程序将停止启动 VHF 调用。
-2.  HID 的源调用[ **VhfDelete** ](https://msdn.microsoft.com/library/windows/hardware/dn925038)与*等待*设置为 FALSE。
+2.  HID 的源调用[ **VhfDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nf-vhf-vhfdelete)与*等待*设置为 FALSE。
 3.  VHF 停止调用由 HID 源驱动程序实现的回调函数。
 4.  VHF 开始报告该设备是缺少向即插即用管理器。 此时，可能会返回 VhfDelete 调用。
-5.  当设备报告为丢失设备时，调用 VHF [ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134)如果 HID 源驱动程序已注册其实现。
-6.  之后[ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134)返回 VHF 执行其清理。
+5.  当设备报告为丢失设备时，调用 VHF [ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup)如果 HID 源驱动程序已注册其实现。
+6.  之后[ *EvtVhfCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/nc-vhf-evt_vhf_cleanup)返回 VHF 执行其清理。
 
 ```cpp
 VOID
@@ -257,7 +257,7 @@ _In_ WDFOBJECT DeviceObject
 
 ## <a name="install-the-hid-source-driver"></a>安装的 HID 源驱动程序
 
-在安装的 HID 源驱动程序的 INF 文件，请确保声明 Vhf.sys 作为较低的筛选器驱动程序到 HID 源驱动程序通过使用[ **AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+在安装的 HID 源驱动程序的 INF 文件，请确保声明 Vhf.sys 作为较低的筛选器驱动程序到 HID 源驱动程序通过使用[ **AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 ```cpp
 [HIDVHF_Inst.NT.HW]
@@ -268,5 +268,5 @@ HKR,,"LowerFilters",0x00010000,"vhf"
 ```
 
 ## <a name="related-topics"></a>相关主题
-[人机接口设备](https://msdn.microsoft.com/library/windows/hardware/ff543301)
+[人机接口设备](https://developer.microsoft.com/windows/hardware)
 

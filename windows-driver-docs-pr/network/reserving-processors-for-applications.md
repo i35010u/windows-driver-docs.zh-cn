@@ -8,12 +8,12 @@ keywords:
 - 处理器 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ef6dfe6e40cef6cbaeb001cb38a49aa614c1b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23fb0637dc6663d4e88821c2932d80f880550fc7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358305"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378653"
 ---
 # <a name="reserving-processors-for-applications"></a>保留应用程序的处理器
 
@@ -31,9 +31,9 @@ NDIS 基 CPU 号码，使用默认值为 0，但管理员可以更改此值。 R
 
 **请注意**从 Windows 8 和 Windows Server 2012 中，管理员可以控制许多方面的网络适配器使用 PowerShell cmdlet。 现在不建议直接编辑注册表。
 
-PowerShell cmdlet 为保留 RSS Cpu [Set-netadapterrss](https://technet.microsoft.com/library/jj130863)。 使用的主要区别**Set-netadapterrss**并使用**RssBaseCpu**是针对每个网络适配器时运行 PowerShell cmdlet **RssBaseCpu**是全局的这意味着它将应用于所有网络适配器。 通常情况下，单独使用每个网络适配器的建议，因为它提供了更多的灵活性、 粒度和为每个网络适配器提供其自己的配置中的可理解性。 但是，管理员可能仍使用全局**RssBaseCpu**密钥如果他们想要在同一时间将配置应用于所有当前及未来的所有网络适配器。
+PowerShell cmdlet 为保留 RSS Cpu [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)。 使用的主要区别**Set-netadapterrss**并使用**RssBaseCpu**是针对每个网络适配器时运行 PowerShell cmdlet **RssBaseCpu**是全局的这意味着它将应用于所有网络适配器。 通常情况下，单独使用每个网络适配器的建议，因为它提供了更多的灵活性、 粒度和为每个网络适配器提供其自己的配置中的可理解性。 但是，管理员可能仍使用全局**RssBaseCpu**密钥如果他们想要在同一时间将配置应用于所有当前及未来的所有网络适配器。
 
-网络适配器 cmdlet 的完整列表，请参阅[Windows PowerShell 中的网络适配器 Cmdlet](https://technet.microsoft.com/library/jj134956)。
+网络适配器 cmdlet 的完整列表，请参阅[Windows PowerShell 中的网络适配器 Cmdlet](https://docs.microsoft.com/powershell/module/netadapter/)。
 
  
 

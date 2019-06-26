@@ -12,12 +12,12 @@ keywords:
 - 初始化驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9a975c42093c796c3b631410ad45a5972e092c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc16d18213a3f73e2c265040bdca372cca294e35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374149"
 ---
 # <a name="writing-a-driverentry-routine"></a>编写 DriverEntry 例程
 
@@ -25,9 +25,9 @@ ms.locfileid: "63372192"
 
 
 
-每个驱动程序必须具有[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程，初始化驱动程序范围内的数据结构和资源。 I/O 管理器调用**DriverEntry**例程时加载驱动程序。
+每个驱动程序必须具有[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程，初始化驱动程序范围内的数据结构和资源。 I/O 管理器调用**DriverEntry**例程时加载驱动程序。
 
-支持的所有驱动程序应，插即用 (PnP) 驱动程序中**DriverEntry**例程负责*驱动程序*初始化，而[ *AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程 (和可能是，处理即插即用的调度例程[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求) 是负责*设备*初始化。 驱动程序初始化包括导出驱动程序的初始化其他入口点特定对象的驱动程序使用和设置每个驱动程序的各种系统资源。 (非 PnP 驱动程序具有明显不同的要求，如驱动程序开发工具包中所述\[DDK\] Microsoft Windows NT 4.0 及更早版本。)
+支持的所有驱动程序应，插即用 (PnP) 驱动程序中**DriverEntry**例程负责*驱动程序*初始化，而[ *AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程 (和可能是，处理即插即用的调度例程[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求) 是负责*设备*初始化。 驱动程序初始化包括导出驱动程序的初始化其他入口点特定对象的驱动程序使用和设置每个驱动程序的各种系统资源。 (非 PnP 驱动程序具有明显不同的要求，如驱动程序开发工具包中所述\[DDK\] Microsoft Windows NT 4.0 及更早版本。)
 
 **DriverEntry**例程会在 IRQL 在系统线程的上下文中调用 = 被动\_级别。
 

@@ -9,12 +9,12 @@ keywords:
 - 效果子项 WDK 强制反馈
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c45de6bfdd67ee517dfeac41acb3292dcd57ba9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd068521e1b0eecbf9c1518515808374f10d4fe6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373004"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381054"
 ---
 # <a name="oemforcefeedback-registry-settings"></a>OEMForceFeedback 注册表设置
 
@@ -28,7 +28,7 @@ ms.locfileid: "63373004"
 
 一个新**OEMForceFeedback**定义键以包含强制反馈特定键和值。 此项下是**效果**子项包含两个值的每个效果。
 
-下**效果**子项是一个用于每个效果的子项的列表。 每个子项的名称是全局唯一标识符 (GUID) 在窗体"{12345678-1234-1234-1234-123456789012}"。 下名为"{...}"的密钥 是两个值。 默认值为字符串的效果的友好名称。 **特性**值是[ **DIEFFECTATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff538456)结构。
+下**效果**子项是一个用于每个效果的子项的列表。 每个子项的名称是全局唯一标识符 (GUID) 在窗体"{12345678-1234-1234-1234-123456789012}"。 下名为"{...}"的密钥 是两个值。 默认值为字符串的效果的友好名称。 **特性**值是[ **DIEFFECTATTRIBUTES** ](https://docs.microsoft.com/windows/desktop/api/dinputd/ns-dinputd-dieffectattributes)结构。
 
 ```cpp
 "{guid1}"
@@ -49,7 +49,7 @@ ms.locfileid: "63373004"
 
 可选值的名称指示使用哪种形式的接口。 如果**CLSID**值不存在，应为包含窗体中的 GUID 的字符串值"{12345678-1234-1234-1234-123456789012}"提供了驱动程序接口的 COM 对象。 如果**VJoyD**值存在时，它应该是长度为零的二进制值，该值指示 VJoyD 微型驱动程序与设备关联要使用应为驱动程序接口提供额外的回调。 添加值来指示，人机接口设备 (HID) 提供了驱动程序接口时实现。
 
-如果设备支持的硬件效果不属于任何预定义的类别 (DIEFT\_CONSTANTFORCE、 DIEFT\_RAMPFORCE、 DIEFT\_定期、 DIEFT\_条件或 DIEFT\_CUSTOMFORCE)，则[ **DIEFFECTATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff538456)结构的影响应指定 DIEFT\_作为效果类型的硬件。
+如果设备支持的硬件效果不属于任何预定义的类别 (DIEFT\_CONSTANTFORCE、 DIEFT\_RAMPFORCE、 DIEFT\_定期、 DIEFT\_条件或 DIEFT\_CUSTOMFORCE)，则[ **DIEFFECTATTRIBUTES** ](https://docs.microsoft.com/windows/desktop/api/dinputd/ns-dinputd-dieffectattributes)结构的影响应指定 DIEFT\_作为效果类型的硬件。
 
 设备可以支持处于某个预定义的类别 （在上一段中列出） 中的硬件效果，但还会收到不是标准的特定于类型的数据结构 （DICONSTANTFORCE、 DIRAMPFORCE 的一部分的其他参数DIPERIODIC、 DICONDITION 或 DICUSTOMFORCE）。 有关这些结构的信息，请参阅 DirectInput 部分的 DirectX 软件开发工具包 (SDK)。 在这些情况下，效果应列出两次，如下所示：
 

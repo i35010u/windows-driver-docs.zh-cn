@@ -10,12 +10,12 @@ keywords:
 - 请求检测 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a45786810fa0afed81032af4481142dfa7bf87e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7587cc600364d89fb54b9f7544edcdaafbcefaba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368221"
 ---
 # <a name="storage-class-drivers-buildrequest-routine"></a>存储类驱动程序的 BuildRequest 例程
 
@@ -29,7 +29,7 @@ ms.locfileid: "63339050"
 
 -   **Parameters.Scsi.Srb**包含指向 SRB
 
-每个类驱动程序负责 Srb 以及与它们使用的设置 Cdb 基础存储端口驱动程序分配内存。 在类驱动程序可以设置后备链列表为其 Srb **ExInitializeNPageLookasideList**或致电**ExAllocatePool**非分页内存。 请参阅[使用后备链列表](https://msdn.microsoft.com/library/windows/hardware/ff565416)有关使用后备链列表和非分页缓冲的池的详细信息。
+每个类驱动程序负责 Srb 以及与它们使用的设置 Cdb 基础存储端口驱动程序分配内存。 在类驱动程序可以设置后备链列表为其 Srb **ExInitializeNPageLookasideList**或致电**ExAllocatePool**非分页内存。 请参阅[使用后备链列表](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-lookaside-lists)有关使用后备链列表和非分页缓冲的池的详细信息。
 
 是否从池或驱动程序创建后备链列表，它分配内存，每个存储类驱动程序负责释放 Srb 为其分配的内存。 存储类驱动程序*IoCompletion*例程中, 所述[存储类驱动程序 IoCompletion 例程](storage-class-driver-s-iocompletion-routines.md)，通常发布回后备链列表为 Srb 分配的内存。
 
@@ -39,7 +39,7 @@ ms.locfileid: "63339050"
 
 类驱动程序加载后，它会设置大多数 Srb**函数**成员设置为 SRB\_函数\_EXECUTE\_SCSI、，该值指示通过总线发送的设备 I/O 请求。
 
-有关系统定义的 SRB 成员及其值的详细信息，请参阅[ **SCSI\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff565393)。
+有关系统定义的 SRB 成员及其值的详细信息，请参阅[ **SCSI\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)。
 
 ### <a name="span-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespansetting-up-srbs-for-request-sense"></a><span id="Setting_Up_SRBs_for_Request_Sense"></span><span id="setting_up_srbs_for_request_sense"></span><span id="SETTING_UP_SRBS_FOR_REQUEST_SENSE"></span>设置请求检测 Srb
 

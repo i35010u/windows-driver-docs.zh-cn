@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cc68047a87b0babae1d7cf1e80d6c751d527fa9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6cc779e5735cb452ec737de707adc3defbffdc96
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391586"
 ---
 # <a name="kspropertytelephonyproviderchange"></a>KSPROPERTY\_电话\_PROVIDERCHANGE
 
@@ -50,15 +50,15 @@ ms.locfileid: "63332579"
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt169885" data-raw-source="[&lt;strong&gt;KSTELEPHONY_PROVIDERCHANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt169885)"><strong>KSTELEPHONY_PROVIDERCHANGE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_providerchange" data-raw-source="[&lt;strong&gt;KSTELEPHONY_PROVIDERCHANGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_providerchange)"><strong>KSTELEPHONY_PROVIDERCHANGE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值为类型[ **KSTELEPHONY\_PROVIDERCHANGE**](https://msdn.microsoft.com/library/windows/hardware/mt169885)，后者指定电话呼叫类型和提供程序的类型更改操作。
+属性值为类型[ **KSTELEPHONY\_PROVIDERCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_providerchange)，后者指定电话呼叫类型和提供程序的类型更改操作。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -67,7 +67,7 @@ ms.locfileid: "63332579"
 <a name="remarks"></a>备注
 -------
 
-使用音频堆栈[ **KSTELEPHONY\_PROVIDERCHANGE** ](https://msdn.microsoft.com/library/windows/hardware/mt169885)属性以指示开始和结束 SRVCC 到音频驱动程序。 此属性进行通信的调用类型 (LTE 数据包交换 WLAN 数据包交换或电路交换式) 和提供程序更改操作 （开始、 结束或取消） 驱动程序。 对于结束 SRVCC 提供程序操作时，将忽略调用类型。
+使用音频堆栈[ **KSTELEPHONY\_PROVIDERCHANGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_providerchange)属性以指示开始和结束 SRVCC 到音频驱动程序。 此属性进行通信的调用类型 (LTE 数据包交换 WLAN 数据包交换或电路交换式) 和提供程序更改操作 （开始、 结束或取消） 驱动程序。 对于结束 SRVCC 提供程序操作时，将忽略调用类型。
 
 提供程序更改操作是何时**电话\_PROVIDERCHANGEOP\_开始**，该驱动程序更新到该提供程序的调用状态**电话服务\_CALLSTATE\_PROVIDERTRANSITION**。 提供程序更改操作是何时**电话\_PROVIDERCHANGEOP\_最终**，驱动程序更新到该提供程序的调用状态**电话服务\_CALLSTATE\_启用**。 在 SRVCC，驱动程序必须继续使用关联[ **KSNODETYPE\_电话\_BIDI** ](ksnodetype-telephony-bidi.md)终结点，而它不会更改此终结点的 jack 状态。 提供程序更改操作是何时**电话\_PROVIDERCHANGEOP\_取消**、 正在取消 SRVCC，并且该驱动程序应恢复为以前 SRVCC 调用。
 

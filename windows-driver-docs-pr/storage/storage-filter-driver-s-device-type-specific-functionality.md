@@ -9,12 +9,12 @@ keywords:
 - 设备类型特定的功能 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf5973213406c3fc5c29934c535205538c3bce88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a75dcb0a1093721f4dfee2e46dffa6aff37a38a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331707"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373189"
 ---
 # <a name="storage-filter-drivers-device-type-specific-functionality"></a>存储筛选器驱动程序的特定于设备类型的功能
 
@@ -32,7 +32,7 @@ ms.locfileid: "63331707"
 
 -   建立超时值的请求
 
--   提供一个或多个[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程和相应的存储类驱动程序，如处理某些错误情况和需要特殊的特定于设备的请求的重试处理
+-   提供一个或多个[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程和相应的存储类驱动程序，如处理某些错误情况和需要特殊的特定于设备的请求的重试处理
 
 一般情况下，SFD 具有作为存储类驱动程序的要求特定于设备的方式处理这些请求相同的职责。 存储类驱动程序的所需的功能的讨论，请参阅[存储类驱动程序](storage-class-drivers.md)。
 

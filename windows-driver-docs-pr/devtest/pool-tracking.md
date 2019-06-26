@@ -10,12 +10,12 @@ keywords:
 - 未释放的内存分配 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8562a9c8ebbc6523376b0c5e64df317b19c8c1e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e75e8ac0b23ce0de3fbf3b64273639b1e37ca812
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377705"
 ---
 # <a name="pool-tracking"></a>池跟踪
 
@@ -31,19 +31,19 @@ ms.locfileid: "63392079"
 
 如果驱动程序验证程序发出带有参数 1 等于 0x51、 0x52、 0x53、 0x54 或 0x59 此 bug 检查，驱动程序已写入到其分配以外的内存。 在这种情况下，应启用[特殊池](special-pool.md)功能来查找错误的源。
 
-请参阅[ **Bug 检查 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (驱动程序\_VERIFIER\_检测到\_冲突) 的 bug 列表检查参数。
+请参阅[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突) 的 bug 列表检查参数。
 
-从 Windows Vista 开始，启用池跟踪选项还将启用锁定的页的跟踪。 驱动程序验证程序时此选项处于活动状态，将发出[ **Bug 检查 0xCB** ](https://msdn.microsoft.com/library/windows/hardware/ff560212) (驱动程序\_左侧\_已锁定\_页\_IN\_进程） 如果驱动程序无法在 I/O 操作后释放锁定的页。
+从 Windows Vista 开始，启用池跟踪选项还将启用锁定的页的跟踪。 驱动程序验证程序时此选项处于活动状态，将发出[ **Bug 检查 0xCB** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xcb--driver-left-locked-pages-in-process) (驱动程序\_左侧\_已锁定\_页\_IN\_进程） 如果驱动程序无法在 I/O 操作后释放锁定的页。
 
 在 Windows 7 和更高版本的 Windows 操作系统中，池跟踪选项支持使用以下内核 Api 分配的内存：
 
--   [**IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)
+-   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)和其他例程可以分配 I/O 请求数据包 (IRP) 数据结构
+-   [**IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)和其他例程可以分配 I/O 请求数据包 (IRP) 数据结构
 
--   [**RtlAnsiStringToUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff561729)和其他运行时库 (RTL) 的字符串例程
+-   [**RtlAnsiStringToUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)和其他运行时库 (RTL) 的字符串例程
 
--   [**IoSetCompletionRoutineEx**](https://msdn.microsoft.com/library/windows/hardware/ff549686)
+-   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
 
 在 Windows 7 和更高版本的 Windows 操作系统中，激活池跟踪时，驱动程序验证工具可以检测尝试分配内核与缓冲池内存*配额*空闲进程的上下文中。 此类尝试通常是指该驱动程序从 DPC 例程中分配内存。 DPC 例程的线程或进程上下文是不可靠，因此尝试收费于该进程的配额不正确。
 
@@ -51,15 +51,15 @@ ms.locfileid: "63392079"
 
 内存池分配统计信息可以单独监视每个驱动程序正在验证。 由驱动程序验证程序管理器，Verifier.exe 命令行中，或日志文件中，可以显示这些统计信息。 请参阅[监视各个计数器](monitoring-individual-counters.md)有关详细信息。
 
-内核调试器扩展 **！ verifier 0x3**可用于驱动程序被卸载，或在运行跟踪时，驱动程序的当前分配后找到未完成的内存分配。 此扩展还显示了池标记、 对池的大小和每个分配的分配器的地址。 有关调试器扩展的信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+内核调试器扩展 **！ verifier 0x3**可用于驱动程序被卸载，或在运行跟踪时，驱动程序的当前分配后找到未完成的内存分配。 此扩展还显示了池标记、 对池的大小和每个分配的分配器的地址。 有关调试器扩展的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 ### <a name="span-idpoolquotachargesfromdpcroutinespanspan-idpoolquotachargesfromdpcroutinespanspan-idpoolquotachargesfromdpcroutinespanpool-quota-charges-from-dpc-routine"></a><span id="Pool_Quota_Charges_from_DPC_Routine"></span><span id="pool_quota_charges_from_dpc_routine"></span><span id="POOL_QUOTA_CHARGES_FROM_DPC_ROUTINE"></span>从 DPC 例程的池配额费用
 
-内核驱动程序可以调用[ **ExAllocatePoolWithQuotaTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544513)分配内核池内存和分配给当前进程的池配额的字节数进行收费。 驱动程序通常使用直接来自应用程序的请求相关的内存分配的配额。
+内核驱动程序可以调用[ **ExAllocatePoolWithQuotaTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)分配内核池内存和分配给当前进程的池配额的字节数进行收费。 驱动程序通常使用直接来自应用程序的请求相关的内存分配的配额。
 
 延迟的过程调用 (DPC) 例程可以在任何进程的上下文中运行。 因此，收费从 DPC 例程的配额将收取随机过程。 更糟糕的是，当 DPC 例程在空闲进程的上下文中运行，这种情况可能会导致内存损坏或系统崩溃。
 
-检测到 Windows 7 中，从开始，Driver Verifier [ **ExAllocatePoolWithQuotaTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544513)来自 DPC 例程的调用。
+检测到 Windows 7 中，从开始，Driver Verifier [ **ExAllocatePoolWithQuotaTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)来自 DPC 例程的调用。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
@@ -67,7 +67,7 @@ ms.locfileid: "63392079"
 
 -   **在命令行**
 
-    在命令行中，由表示池跟踪选项**位 3 (0x8)**。 若要激活池跟踪，请使用 0x8 标志值或将 0x8 添加到标志值。 例如：
+    在命令行中，由表示池跟踪选项**位 3 (0x8)** 。 若要激活池跟踪，请使用 0x8 标志值或将 0x8 添加到标志值。 例如：
 
     ```
     verifier /flags 0x8 /driver MyDriver.sys

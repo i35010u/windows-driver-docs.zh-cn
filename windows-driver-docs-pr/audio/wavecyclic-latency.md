@@ -7,12 +7,12 @@ keywords:
 - 静默间隔 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0642b2ce576a7b98432dd28466d2b4a20536077e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 772c43dd39488d1a02d00bac3b6b785b1d81f156
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328499"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364795"
 ---
 # <a name="wavecyclic-latency"></a>WaveCyclic 延迟
 
@@ -26,7 +26,7 @@ WaveCyclic 端口驱动程序会尝试以累计的循环缓冲区中的数据最
 
 一段后的近资源不足，KMixer 流可以包含无声段间隔。 如果 WaveCyclic 已收到来自 KMixer 维护 30，而不是四十毫秒为单位的 DMA 缓冲区中的额外数据的足够的波形数据，WaveCyclic 开始写入的有效数据结束后从 KMixer DMA 缓冲区静默。 此策略可确保如果资源不足发生并且对于设备读取超过有效的数据的结尾，音频设备呈现无声段而不是陈旧或未初始化的数据。
 
-写入 DMA 缓冲区静默量保持相当小，和如果 KMixer 未成功之前说出 silence 起提供 WaveCyclic 端口驱动程序使用其他数据，该数据将覆盖缓冲区中的静默。 缺少的资源不足的情况下，音频设备接收混合数据而无需强制无声段间隔持续的流。 调试您的驱动程序时，但是，可能会看到微型端口驱动程序[ **IMiniportWaveCyclicStream::Silence** ](https://msdn.microsoft.com/library/windows/hardware/ff536721)即使未耗尽音频输出程序被调用方法。
+写入 DMA 缓冲区静默量保持相当小，和如果 KMixer 未成功之前说出 silence 起提供 WaveCyclic 端口驱动程序使用其他数据，该数据将覆盖缓冲区中的静默。 缺少的资源不足的情况下，音频设备接收混合数据而无需强制无声段间隔持续的流。 调试您的驱动程序时，但是，可能会看到微型端口驱动程序[ **IMiniportWaveCyclicStream::Silence** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-silence)即使未耗尽音频输出程序被调用方法。
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SET_RADIO_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c39173824acf545f079d3cf83095a43ca4953e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 612104967d8c9034d4a66944c0fc5850ac5e1730
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387222"
 ---
 # <a name="oidwditasksetradiostate"></a>OID\_WDI\_TASK\_SET\_RADIO\_STATE
 
@@ -35,7 +35,7 @@ IHV 组件也可能会向主机发送未经请求的单选状态更改的迹象�
 
 | TLV                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                                                                                           |
 |-----------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_RADIO\_STATE\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn898043) |                                |          | 单选所需的状态。 如果此设置为 1，则启用单选。 如果此值设置为 0，单选处于关闭状态。 |
+| [**WDI\_TLV\_RADIO\_STATE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-radio-state-parameters) |                                |          | 单选所需的状态。 如果此设置为 1，则启用单选。 如果此值设置为 0，单选处于关闭状态。 |
 
  
 

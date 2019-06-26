@@ -4,12 +4,12 @@ description: 为使用多个接口测试工具 (MITT)、 订单需要 MITT 板�
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dde67b15c83688ad3eaa57bd41edad6954060a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 686ea47ffc0fb94c0971a5705610c931698288fe
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394122"
 ---
 # <a name="buy-hardware-for-using-mitt"></a>使用 MITT 购买硬件
 
@@ -18,7 +18,7 @@ ms.locfileid: "63361994"
 
 -   **MITT 板**
 
-    例如，FPGA 开发板 (Nexys2)。 请参阅[FPGA 板从 Digilent](http://www.digilentinc.com/nexys2)。
+    例如，FPGA 开发板 (Nexys2)。 请参阅[FPGA 板从 Digilent](https://store.digilentinc.com/nexys-2-spartan-3e-fpga-trainer-board-retired-see-nexys-4-ddr/)。
 
     ![mitt 板](images/g73a5707.jpg)
 
@@ -59,7 +59,7 @@ ms.locfileid: "63361994"
     -   接触点之间的距离
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

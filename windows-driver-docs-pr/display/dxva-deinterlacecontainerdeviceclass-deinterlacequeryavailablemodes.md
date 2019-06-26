@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: c69cc3bed839714f3efab8718c15aa06ce23b015
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2f3195b3fbc9b73786a2a4c8f7fa5fd7f2b3442
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360345"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375833"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassdeinterlacequeryavailablemodes-method"></a>DXVA\_DeinterlaceContainerDeviceClass::DeinterlaceQueryAvailableModes 方法
 
@@ -41,7 +41,7 @@ HRESULT DeinterlaceQueryAvailableModes(
 <a name="parameters"></a>Parameters
 ----------
 
-*lpVideoDescription* \[中\]提供一个指向[ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)结构，其中包含的视频流的说明若要执行去隔行或帧速率转换。
+*lpVideoDescription* \[中\]提供一个指向[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)结构，其中包含的视频流的说明若要执行去隔行或帧速率转换。
 
 *lpdwNumModesSupported* \[传入、 传出\]接收到取消隔行扫描或帧速率转换模式，在数组中返回数的指针*pGuidsDeinterlaceModes*。
 
@@ -55,17 +55,17 @@ HRESULT DeinterlaceQueryAvailableModes(
 <a name="remarks"></a>备注
 -------
 
-*LpVideoDescription*参数传递给驱动程序，以便该驱动程序可以支持解析和源视频的格式。 例如，驱动程序可能能够执行三个字段自适应取消隔行扫描的 480i 内容，但它可能仅能 bob 1080i 内容。 有关详细信息，请参阅[取消隔行扫描和帧速率转换视频内容](https://msdn.microsoft.com/library/windows/hardware/ff570502)。
+*LpVideoDescription*参数传递给驱动程序，以便该驱动程序可以支持解析和源视频的格式。 例如，驱动程序可能能够执行三个字段自适应取消隔行扫描的 480i 内容，但它可能仅能 bob 1080i 内容。 有关详细信息，请参阅[取消隔行扫描和帧速率转换视频内容](https://docs.microsoft.com/windows-hardware/drivers/display/video-content-for-deinterlace-and-frame-rate-conversion)。
 
 返回的 Guid *pGuidsDeinterlaceModes*应按顺序的降序质量返回参数 （即，最高的质量模式应占用返回的 GUID 数组的第一个元素）。
 
-所有驱动程序应该能够支持使用现有的 bob 模式*位块传输*(blt) 硬件。 有关模式的详细信息，请参阅[取消隔行扫描模式](https://msdn.microsoft.com/library/windows/hardware/ff552704)并[帧速率转换模式](https://msdn.microsoft.com/library/windows/hardware/ff566449)主题。
+所有驱动程序应该能够支持使用现有的 bob 模式*位块传输*(blt) 硬件。 有关模式的详细信息，请参阅[取消隔行扫描模式](https://docs.microsoft.com/windows-hardware/drivers/display/deinterlace-modes)并[帧速率转换模式](https://docs.microsoft.com/windows-hardware/drivers/display/frame-rate-conversion-modes)主题。
 
-驱动程序将返回它从请求响应中支持的 Guid （模式） *VMR*。 该驱动程序响应调用其[ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)回调函数。 驱动程序将返回通过 Guid **lpOutputData**的成员[ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)结构到*lpRenderData*的参数*DdMoCompRender*点。 **LpOutputData**成员将指向[ **DXVA\_DeinterlaceQueryAvailableModes** ](https://msdn.microsoft.com/library/windows/hardware/ff563951)结构，其中包含的 Guid 数组中**Guid**成员。
+驱动程序将返回它从请求响应中支持的 Guid （模式） *VMR*。 该驱动程序响应调用其[ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调函数。 驱动程序将返回通过 Guid **lpOutputData**的成员[ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构到*lpRenderData*的参数*DdMoCompRender*点。 **LpOutputData**成员将指向[ **DXVA\_DeinterlaceQueryAvailableModes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes)结构，其中包含的 Guid 数组中**Guid**成员。
 
 **映射到 RenderMoComp** ***DeinterlaceQueryAvailableModes***
 
-该示例*DeinterlaceQueryAvailableModes*函数将映射到调用直接**RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)结构。 **RenderMoComp**成员将指向引用的显示驱动程序提供函数[ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)结构。
+该示例*DeinterlaceQueryAvailableModes*函数将映射到调用直接**RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构。 **RenderMoComp**成员将指向引用的显示驱动程序提供函数[ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构。
 
 **RenderMoComp**驱动程序所提供的显示没有调用回调**BeginMoCompFrame**或**EndMoCompFrame**函数首先调用。
 
@@ -79,7 +79,7 @@ DD\_RENDERMOCOMPDATA 结构填充，如下所示。
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -97,11 +97,11 @@ DD\_RENDERMOCOMPDATA 结构填充，如下所示。
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpInputData</strong></p></td>
-<td align="left"><p>指向一个实心<a href="https://msdn.microsoft.com/library/windows/hardware/ff564070" data-raw-source="[&lt;strong&gt;DXVA_VideoDesc&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564070)"> <strong>DXVA_VideoDesc</strong> </a>结构。</p></td>
+<td align="left"><p>指向一个实心<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc" data-raw-source="[&lt;strong&gt;DXVA_VideoDesc&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)"> <strong>DXVA_VideoDesc</strong> </a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>lpOutputData</strong></p></td>
-<td align="left"><p>指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff563951" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceQueryAvailableModes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563951)"> <strong>DXVA_DeinterlaceQueryAvailableModes</strong> </a>结构。</p></td>
+<td align="left"><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes" data-raw-source="[&lt;strong&gt;DXVA_DeinterlaceQueryAvailableModes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes)"> <strong>DXVA_DeinterlaceQueryAvailableModes</strong> </a>结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -113,15 +113,15 @@ DD\_RENDERMOCOMPDATA 结构填充，如下所示。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)
+[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD\_RENDERMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff551693)
+[**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
 
 [**DeinterlaceQueryModeCaps**](dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps.md)
 
-[**DXVA\_VideoDesc**](https://msdn.microsoft.com/library/windows/hardware/ff564070)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
 
-[**DXVA\_SampleFormat**](https://msdn.microsoft.com/library/windows/hardware/ff564045)
+[**DXVA\_SampleFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)
 
  
 

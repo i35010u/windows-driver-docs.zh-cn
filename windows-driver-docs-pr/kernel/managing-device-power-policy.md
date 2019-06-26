@@ -11,12 +11,12 @@ keywords:
 - 初始设备电源状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9dc3a2ea21d91dd938d793c9e2779407874e1de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0060c021eca15cd072934e4f3a0236348b1f806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365795"
 ---
 # <a name="managing-device-power-policy"></a>管理设备电源策略
 
@@ -36,15 +36,15 @@ ms.locfileid: "63360301"
 
 设备电源策略所有者负责以下：
 
--   通过调用将在设备的初始电源状态设置为 D0 [ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)的方式与处理插 manager [ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求。
+-   通过调用将在设备的初始电源状态设置为 D0 [ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)的方式与处理插 manager [ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。
 
     设备应打开电源，根据需要;例如，设备必须启动以句柄的 I/O 请求。 设备电源策略所有者负责确定何时需要其设备，确保设备电源已打开，并设置正确的设备电源状态。 典型的设备的即插即用的启动设备 IRP 已经完成的时间应开机。
 
     作为一般规则，大多数设备应关机时在不使用，即使系统处于工作状态。
 
--   通过调用以响应系统电源请求发送设备电源请求[ **PoRequestPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559734)。
+-   通过调用以响应系统电源请求发送设备电源请求[ **PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)。
 
-    例如，当策略所有者收到系统集 power IRP，它将发送设备集 power IRP。 当系统进入任何睡眠状态时，大多数设备输入 D3。 **DeviceState**数组[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构列出了设备可以维护的每个系统电源的 highest-powered 状态状态。 (请参阅[报告设备电源功能](reporting-device-power-capabilities.md)。)
+    例如，当策略所有者收到系统集 power IRP，它将发送设备集 power IRP。 当系统进入任何睡眠状态时，大多数设备输入 D3。 **DeviceState**数组[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构列出了设备可以维护的每个系统电源的 highest-powered 状态状态。 (请参阅[报告设备电源功能](reporting-device-power-capabilities.md)。)
 
 -   检测当设备处于空闲状态并使其进入睡眠状态以节约能源。
 

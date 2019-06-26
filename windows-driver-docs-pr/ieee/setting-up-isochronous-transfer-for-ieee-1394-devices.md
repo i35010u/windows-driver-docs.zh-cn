@@ -12,12 +12,12 @@ keywords:
 - 分配的带宽
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2785ccf8456c3d43a48237eed60a292efc0f90a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32c4c0632a3d5dfce9f031172ba84863d44d66b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390311"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381025"
 ---
 # <a name="setting-up-isochronous-transfer-for-ieee-1394-devices"></a>设置 IEEE 1394 设备的常时等量传输
 
@@ -56,11 +56,11 @@ IEEE 1394 总线可以支持多个不同的限制为硬件所允许的速度。 
 
 -   如果该驱动程序将使用通道从设备读取数据 ( [**请求\_ISOCH\_侦听**](https://msdn.microsoft.com/library/windows/hardware/ff537655)操作)，它会设置资源\_用于\_IN\_正在监听标志。 如果驱动程序将使用该通道将数据写入到设备 ( [**请求\_ISOCH\_对话**](https://msdn.microsoft.com/library/windows/hardware/ff537660)操作)，它会设置资源\_用于\_IN\_谈话标志。
 
--   驱动程序使用该句柄为事务提供数据缓冲区。 （有关详细信息请 Step 5）。总线驱动程序按顺序使用缓冲区，直到用完，然后暂停操作，直到设备驱动程序将附加更多的缓冲区。 请参阅[IEEE 1394 设备缓冲同步 DMA 传输](https://msdn.microsoft.com/library/windows/hardware/ff537014)有关详细信息。
+-   驱动程序使用该句柄为事务提供数据缓冲区。 （有关详细信息请 Step 5）。总线驱动程序按顺序使用缓冲区，直到用完，然后暂停操作，直到设备驱动程序将附加更多的缓冲区。 请参阅[IEEE 1394 设备缓冲同步 DMA 传输](https://docs.microsoft.com/windows-hardware/drivers/ieee/buffering-isochronous-dma-transfers-for-ieee-1394-devices)有关详细信息。
 
--   驱动程序可能会指定为某个值的同步周期时钟的同步操作。 请参阅[IEEE 1394 设备同步的同步选项](https://msdn.microsoft.com/library/windows/hardware/ff537379)有关详细信息。
+-   驱动程序可能会指定为某个值的同步周期时钟的同步操作。 请参阅[IEEE 1394 设备同步的同步选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-synchronization-options-for-ieee-1394-devices)有关详细信息。
 
--   该驱动程序可以设置等时侦听的选项。 该驱动程序可以指示是否同步数据包标头都会去除的数据包。 该驱动程序还可以指示是否应将到达的数据复制到每个缓冲区，等待数据缓冲区一个数据包或每个缓冲区应填充数据。 请参阅[IEEE 1394 设备的同步侦听选项](https://msdn.microsoft.com/library/windows/hardware/ff537377)有关详细信息。
+-   该驱动程序可以设置等时侦听的选项。 该驱动程序可以指示是否同步数据包标头都会去除的数据包。 该驱动程序还可以指示是否应将到达的数据复制到每个缓冲区，等待数据缓冲区一个数据包或每个缓冲区应填充数据。 请参阅[IEEE 1394 设备的同步侦听选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-listen-options-for-ieee-1394-devices)有关详细信息。
 
 如果此请求失败，驱动程序应释放它们分配在前面步骤中的所有同步资源。
 
@@ -68,17 +68,17 @@ IEEE 1394 总线可以支持多个不同的限制为硬件所允许的速度。 
 
 后驱动程序分配一个资源句柄，它将缓冲区附加到该句柄。 主机 DMA 控制器将从中读取数据或将数据写入到的附加缓冲区。
 
-与每个缓冲区，驱动程序通过[ **ISOCH\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537401)结构-描述如何将使用缓冲区。 在缓冲区的 ISOCH\_描述符结构，该驱动程序可以指定以下信息：
+与每个缓冲区，驱动程序通过[ **ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)结构-描述如何将使用缓冲区。 在缓冲区的 ISOCH\_描述符结构，该驱动程序可以指定以下信息：
 
 -   最大每一帧的字节数。 当传输数据，主控制器会数据缓冲区拆分成此大小的数据包。
 
 -   一个可选的回调例程。 总线驱动程序完成处理时调用此例程
 
--   同步选项。 请参阅[IEEE 1394 设备同步的同步选项](https://msdn.microsoft.com/library/windows/hardware/ff537379)有关同步选项的说明。
+-   同步选项。 请参阅[IEEE 1394 设备同步的同步选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-synchronization-options-for-ieee-1394-devices)有关同步选项的说明。
 
--   对等时讨论操作，该驱动程序可以将此缓冲区指定为要预置到下一步的几个数据包标头的列表。 请参阅[IEEE 1394 设备的同步通信选项](https://msdn.microsoft.com/library/windows/hardware/ff537380)有关详细信息。
+-   对等时讨论操作，该驱动程序可以将此缓冲区指定为要预置到下一步的几个数据包标头的列表。 请参阅[IEEE 1394 设备的同步通信选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-talk-options-for-ieee-1394-devices)有关详细信息。
 
-操作开始后，驱动程序可以分离它不再需要的缓冲区，可以附加更多的缓冲区。 该驱动程序可以使用回调例程中标识[ **ISOCH\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537401)发出信号本身时总线驱动程序已完成处理附加的最后一个缓冲区。 请参阅[IEEE 1394 设备缓冲同步 DMA 传输](https://msdn.microsoft.com/library/windows/hardware/ff537014)DMA 缓冲的 IEEE 1394 设备的说明。
+操作开始后，驱动程序可以分离它不再需要的缓冲区，可以附加更多的缓冲区。 该驱动程序可以使用回调例程中标识[ **ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)发出信号本身时总线驱动程序已完成处理附加的最后一个缓冲区。 请参阅[IEEE 1394 设备缓冲同步 DMA 传输](https://docs.microsoft.com/windows-hardware/drivers/ieee/buffering-isochronous-dma-transfers-for-ieee-1394-devices)DMA 缓冲的 IEEE 1394 设备的说明。
 
 ### <a href="" id="step-6---begin-the-data-transfer"></a>步骤 6。 开始数据传输
 

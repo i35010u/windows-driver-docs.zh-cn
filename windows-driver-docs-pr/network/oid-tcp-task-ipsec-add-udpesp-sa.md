@@ -6,18 +6,18 @@ keywords:
 - OID_TCP_TASK_IPSEC_ADD_UDPESP_SA
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ddc2b0838eb2e5bd5d04628b3bf6d5842abda1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bb8cc120c20030db5a6cb06b6661c7edf745f45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354123"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386953"
 ---
 # <a name="oidtcptaskipsecaddudpespsa"></a>OID_TCP_TASK_IPSEC_ADD_UDPESP_SA
 
 传输协议设置 OID_TCP_TASK_IPSEC_ADD_UDPESP_SA 以请求微型端口驱动程序添加一个或多个安全关联 (Sa) 的 UDP 封装 ESP 数据包到 nic。
 
-每个 SA 的信息的格式为[OFFLOAD_IPSEC_ADD_UDPESP_SA](https://msdn.microsoft.com/library/windows/hardware/ff569057)结构。 请注意，此结构是几乎完全相同[OFFLOAD_IPSEC_ADD_SA](https://msdn.microsoft.com/library/windows/hardware/ff569056)中使用结构[OID_TCP_TASK_IPSEC_ADD_SA](oid-tcp-task-ipsec-add-sa.md)请求。 唯一的区别是 OFFLOAD_IPSEC_ADD_UDPESP_SA 结构，包含**EncapTypeEntry**并**EncapTypeEntryOffldHandle**成员。
+每个 SA 的信息的格式为[OFFLOAD_IPSEC_ADD_UDPESP_SA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_offload_ipsec_add_udpesp_sa)结构。 请注意，此结构是几乎完全相同[OFFLOAD_IPSEC_ADD_SA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_offload_ipsec_add_sa)中使用结构[OID_TCP_TASK_IPSEC_ADD_SA](oid-tcp-task-ipsec-add-sa.md)请求。 唯一的区别是 OFFLOAD_IPSEC_ADD_UDPESP_SA 结构，包含**EncapTypeEntry**并**EncapTypeEntryOffldHandle**成员。
 
 OFFLOAD_IPSEC_ADD_UDPESP_SA 结构的前七个成员 (**模式筛选器**， **SrcMask**， **DestAddr**， **DestMask**， **协议**， **SrcPort**，和**DestPort**) 构成指定源和目标，以及 IP 协议，SAs 将应用的筛选器。 此筛选器与传输模式连接--即，两个主机之间的端到端连接。 如果通过隧道建立了指定的连接，指定源和目标地址的隧道**SrcTunnelAddr**并**DestTunnelAddr**分别。
 
@@ -27,7 +27,7 @@ TCP/IP 传输可以指定在 IP 协议**协议**成员来指示，指定的 SAs 
 
 ## <a name="offloadsecurityassociation-structure"></a>OFFLOAD_SECURITY_ASSOCIATION 结构
 
-[OFFLOAD_SECURITY_ASSOCIATION](https://msdn.microsoft.com/library/windows/hardware/ff569061)结构指定单独的安全关联 (SA)。 OFFLOAD_SECURITY_ASSOCIATION 结构是中的元素**SecAssoc**变长数组。 **SecAssoc**包含一个或两个 OFFLOAD_SECURITY_ASSOCIATION 结构。
+[OFFLOAD_SECURITY_ASSOCIATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_offload_security_association)结构指定单独的安全关联 (SA)。 OFFLOAD_SECURITY_ASSOCIATION 结构是中的元素**SecAssoc**变长数组。 **SecAssoc**包含一个或两个 OFFLOAD_SECURITY_ASSOCIATION 结构。
 
 在处理身份验证标头 (AH) 的使用将有的操作类型为指定的 SA**进行身份验证**并且将具有**IntegrityAlgo** （完整性算法）。 SA 不会**ConfAlgo** （保密性算法）。 在这种情况下， **ConfAlgo**将包含零。
 
@@ -35,7 +35,7 @@ TCP/IP 传输可以指定在 IP 协议**协议**成员来指示，指定的 SAs 
 
 ## <a name="offloadalgoinfo-structure"></a>OFFLOAD_ALGO_INFO 结构
 
-[OFFLOAD_ALGO_INFO](https://msdn.microsoft.com/library/windows/hardware/ff568842)结构，它是成员的[OFFLOAD_SECURITY_ASSOCIATION](https://msdn.microsoft.com/library/windows/hardware/ff569061)结构，指定安全关联 (SA) 所使用的算法。
+[OFFLOAD_ALGO_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_offload_algo_info)结构，它是成员的[OFFLOAD_SECURITY_ASSOCIATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_offload_security_association)结构，指定安全关联 (SA) 所使用的算法。
 
 ## <a name="requirements"></a>要求
 

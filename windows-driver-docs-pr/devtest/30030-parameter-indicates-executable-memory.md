@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30030
-ms.openlocfilehash: b5542a3de5f333824c20d9f2588b5668b3861d66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3014a05934855aaae1795c5cb67803747fee3979
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347063"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371694"
 ---
 # <a name="c30030"></a>C30030
 
@@ -27,16 +27,16 @@ ms.locfileid: "63347063"
 
 使用以下选项之一：
 
--   指定预处理器定义[池\_NX\_OPTIN\_自动](https://msdn.microsoft.com/library/windows/hardware/hh920390)源/项目设置中。
--   指定预处理器定义[池\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)中，源/项目设置并调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 从驱动程序初始化函数 (**DriverEntry**或**DllInitialize**)。
+-   指定预处理器定义[池\_NX\_OPTIN\_自动](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)源/项目设置中。
+-   指定预处理器定义[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)中，源/项目设置并调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 从驱动程序初始化函数 (**DriverEntry**或**DllInitialize**)。
 
-**请注意**是否要使用的选项[池\_NX\_OPTIN\_自动](https://msdn.microsoft.com/library/windows/hardware/hh920390)或者[池\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)很大程度上取决于哪种平台上您的目标和要进行多少二进制文件。 这两种选项会导致这两种类型更改为您 （由编译器或在运行时） 为其 NX 等效项。 查看详细信息的主题链接。
+**请注意**是否要使用的选项[池\_NX\_OPTIN\_自动](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)或者[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)很大程度上取决于哪种平台上您的目标和要进行多少二进制文件。 这两种选项会导致这两种类型更改为您 （由编译器或在运行时） 为其 NX 等效项。 查看详细信息的主题链接。
 
 
 
 **请注意**如果以下条件之一为 true，则可能出现的假正警告：
 -   驱动程序初始化函数调用另一个调用的函数**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)**
--   要创建**驱动程序\_库**，并指定了[池\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)但没有初始化函数。
+-   要创建**驱动程序\_库**，并指定了[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)但没有初始化函数。
 
 
 
@@ -70,7 +70,7 @@ C_DEFINES=$(C_DEFINES)
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN=1
 ```
 
-在中**DriverEntry()**、 任何内存分配发生之前：
+在中**DriverEntry()** 、 任何内存分配发生之前：
 
 ```
 NTSTATUS
@@ -119,7 +119,7 @@ ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
 
 **其他特殊情况：**
 
-已在中的更改[ **ExInitializeNPagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545301)例程现在可用于指定非可执行文件的非分页缓冲的池内存。 例如，下面的代码生成此警告：
+已在中的更改[ **ExInitializeNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)例程现在可用于指定非可执行文件的非分页缓冲的池内存。 例如，下面的代码生成此警告：
 
 ```
 ExInitializeNPagedLookasideList(pLookaside,
@@ -146,7 +146,7 @@ ExInitializeNPagedLookasideList(pLookaside,
 ## <a name="span-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanfor-defects-involving-page-protections"></a><span id="For_defects_involving_page_protections_"></span><span id="for_defects_involving_page_protections_"></span><span id="FOR_DEFECTS_INVOLVING_PAGE_PROTECTIONS_"></span>为涉及页保护的缺陷：
 
 
-某些 Api，可以指定页保护[ **ZwMapViewOfSection** ](https://msdn.microsoft.com/library/windows/hardware/ff566481)就是其中之一。 在这些情况下，使用保护类型的非可执行文件版本。
+某些 Api，可以指定页保护[ **ZwMapViewOfSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)就是其中之一。 在这些情况下，使用保护类型的非可执行文件版本。
 
 更改：
 
@@ -190,12 +190,12 @@ Status = ZwMapViewOfSection(   handle,
 ## <a name="span-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanfor-defects-involving-cache-types"></a><span id="For_defects_involving_cache_types_"></span><span id="for_defects_involving_cache_types_"></span><span id="FOR_DEFECTS_INVOLVING_CACHE_TYPES_"></span>为涉及缓存类型的缺陷：
 
 
-某些 Api 分配内存以及可执行文件的权限取决于缓存类型。 两个此类 api [ **MmAllocateContiguousMemorySpecifyCache** ](https://msdn.microsoft.com/library/windows/hardware/ff554464)并[ **MmAllocateContiguousMemorySpecifyCacheNode**](https://msdn.microsoft.com/library/windows/hardware/ff554469)。 应缓存类型的**MmCached**使用 (请参阅[**内存\_缓存\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff554430))，然后将分配给可执行文件的内存。 若要解决此问题，请选择另一种缓存类型，或如果是必需的内存缓存然后使用 API [ **MmAllocateContiguousNodeMemory**](https://msdn.microsoft.com/library/windows/hardware/jj602795)。
+某些 Api 分配内存以及可执行文件的权限取决于缓存类型。 两个此类 api [ **MmAllocateContiguousMemorySpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)并[ **MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)。 应缓存类型的**MmCached**使用 (请参阅[**内存\_缓存\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_memory_caching_type))，然后将分配给可执行文件的内存。 若要解决此问题，请选择另一种缓存类型，或如果是必需的内存缓存然后使用 API [ **MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)。
 
 更改：
 
 -   **MmCached**到**MmNonCached**或**MmWriteCombined**如果不需要缓存的内存
--   到 API [ **MmAllocateContiguousNodeMemory** ](https://msdn.microsoft.com/library/windows/hardware/jj602795)是否需要缓存的内存
+-   到 API [ **MmAllocateContiguousNodeMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)是否需要缓存的内存
 
 下面的代码生成警告：
 
@@ -258,7 +258,7 @@ MmAllocateContiguousNodeMemory(       numberOfBytes,
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**池\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)
+[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)
 
 
 

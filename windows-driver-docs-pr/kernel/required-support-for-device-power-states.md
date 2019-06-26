@@ -12,12 +12,12 @@ keywords:
 - 端口驱动程序 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f49c132de9b1c4d382dea9c32fd2d29740655dbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc14a78e34ca4e4cdc444b38ccb5db34d7335ca8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373411"
 ---
 # <a name="required-support-for-device-power-states"></a>设备电源状态所需的支持
 
@@ -41,7 +41,7 @@ ms.locfileid: "63324535"
 
 -   流式处理驱动程序使用的流式处理的类驱动程序中的电源管理接口来处理设备的电源状态 D0 和 D3。 若要处理设备的电源状态 D1 和 D2，这些驱动程序必须使用在本部分中所述的电源管理接口。
 
--   SCSI 端口驱动程序管理的微型端口的 PnP 和电源管理要求的大多数。 SCSI 微型端口驱动程序必须支持即插即用和电源管理接口以及相关的例程，如[ **HwScsiAdapterControl**](https://msdn.microsoft.com/library/windows/hardware/ff557274)。
+-   SCSI 端口驱动程序管理的微型端口的 PnP 和电源管理要求的大多数。 SCSI 微型端口驱动程序必须支持即插即用和电源管理接口以及相关的例程，如[ **HwScsiAdapterControl**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))。
 
 -   视频端口驱动程序管理的微型端口的 PnP 和电源管理要求的大多数。 微型端口驱动程序必须支持特定于微型端口的例程，WDK 中其他地方所述。
 

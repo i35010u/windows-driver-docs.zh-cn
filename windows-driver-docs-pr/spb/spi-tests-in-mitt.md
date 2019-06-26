@@ -4,12 +4,12 @@ description: SPI 测试 MITT 软件程序包中包含的模块。
 ms.assetid: 8240841C-FFA0-48EC-AB7E-4E15E262C23D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ce4c3af38584d5bde545b7a295564cf1041e5ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8aa57f7d98267fede6aa847a28ed84410bb7ff8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376901"
 ---
 # <a name="spi-tests-in-mitt"></a>MITT 中的 SPI 测试
 
@@ -27,9 +27,9 @@ SPI MITT 软件程序包中包含的测试模块可用于测试 SPI 控制器测
 ## <a name="before-you-begin"></a>开始之前...
 
 
--   获取 MITT 板和 SPI 或 UART 适配器开发板。 请参阅[购买硬件使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919811)。
--   [下载 MITT 软件包](https://msdn.microsoft.com/library/windows/hardware/dn919810)。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919779)。
+-   获取 MITT 板和 SPI 或 UART 适配器开发板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
+-   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
+-   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
 
 ## <a name="hardware-setup"></a>硬件安装
 
@@ -67,7 +67,7 @@ SPI MITT 软件程序包中包含的测试模块可用于测试 SPI 控制器测
 
 
 
-2.  修改系统 ACPI，包括此 ASL 表。 可以使用[Microsoft ASL compiler](https://msdn.microsoft.com/library/windows/hardware/dn551195)。
+2.  修改系统 ACPI，包括此 ASL 表。 可以使用[Microsoft ASL compiler](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)。
 
     **请注意**更改"\\\\\_SB\_。SPI1"到 ACPI SPI 控制器，以测试如下所示的条目名称。 它定义了三个测试目标，SPI 频率 1 Mhz、 5 Mhz 和 20 Mhz。
 
@@ -125,7 +125,7 @@ Device(TP3) {
 
 现在您就可以运行 SPI 测试。 可以运行单个测试，所有测试，或手动运行测试。
 
-- 使用运行单个测试 **/name: *&lt;测试名称&gt;*** 选项。 此命令将运行 BasicIORead 测试：
+- 使用运行单个测试 **/name: *&lt;测试名称&gt;** * 选项。 此命令将运行 BasicIORead 测试：
 - 使用此命令运行所有测试：
 - 通过使用 MITT 软件程序包中包含的 SPBCmd.exe 工具手动运行测试。
 

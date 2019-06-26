@@ -4,12 +4,12 @@ description: 服务元数据
 ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38b779bff8cc0e66a374077dae21e552ebabf45a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 830702aef8be738d8adc1a050a26dbbaefd1f27b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369210"
 ---
 # <a name="service-metadata"></a>服务元数据
 
@@ -53,7 +53,7 @@ ms.locfileid: "56563624"
   移动宽带服务提供程序的唯一 ID。 此 GUID 还用于确定运算符使用预配帐户的元数据时。 如果更新设备元数据包，此 GUID 必须保持不变。 该服务数字对应于[ServiceNumber](servicenumber.md)服务元数据包架构中的元素。
 
 - **运算符徽标**   
-  Windows 连接管理器中显示网络条目旁边的自定义徽标。 （徽标时处于隐藏状态用户漫游网络上。）运算符徽标对应于[ServiceIconFile](serviceiconfile.md)服务元数据包架构中的元素。 有关徽标要求的详细信息，请参阅[服务图标要求](https://msdn.microsoft.com/library/windows/hardware/dn236416)。  
+  Windows 连接管理器中显示网络条目旁边的自定义徽标。 （徽标时处于隐藏状态用户漫游网络上。）运算符徽标对应于[ServiceIconFile](serviceiconfile.md)服务元数据包架构中的元素。 有关徽标要求的详细信息，请参阅[服务图标要求](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。  
   > [!IMPORTANT]
   > 在 Windows 10 版本 1709年及更高版本，此字段已替换为通过 COSA 品牌。 品牌 COSA 中的字段上的说明[规划你的桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)。 如果你面向的 Windows 10，版本 1709 之前, 的 Windows 版本仍会创建元数据包在本部分中所述。 有关 COSA 详细信息，请参阅[COSA 概述](cosa-overview.md)。 
 
@@ -87,7 +87,7 @@ ms.locfileid: "56563624"
 ## <a name="span-idservicemetadatapackagestructurespanspan-idservicemetadatapackagestructurespanspan-idservicemetadatapackagestructurespanservice-metadata-package-structure"></a><span id="Service_Metadata_Package_Structure"></span><span id="service_metadata_package_structure"></span><span id="SERVICE_METADATA_PACKAGE_STRUCTURE"></span>服务元数据包结构
 
 
-存储在压缩的 cab 文件以及必须具有文件扩展名的组件的服务元数据包 **.devicemetadata ms**。 服务元数据包将使用此文件扩展名，因为它们使用相同的基础平台作为设备元数据包。 在创建之前 **.devicemetadata ms**文件，必须先创建元数据包的全局唯一标识符 (GUID)。 然后，必须使用以下命名约定创建.devicemetadata ms 文件时：**&lt;GUID&gt;.devicemetadata ms**。
+存储在压缩的 cab 文件以及必须具有文件扩展名的组件的服务元数据包 **.devicemetadata ms**。 服务元数据包将使用此文件扩展名，因为它们使用相同的基础平台作为设备元数据包。 在创建之前 **.devicemetadata ms**文件，必须先创建元数据包的全局唯一标识符 (GUID)。 然后，必须使用以下命名约定创建.devicemetadata ms 文件时： **&lt;GUID&gt;.devicemetadata ms**。
 
 **请注意**  虽然的 cab 文件的常用文件扩展名 **.cab**，服务元数据包文件的文件扩展名必须是 **.devicemetadata ms**。 这是为了强调这一事实，最终用户不能解压缩或修改这些包。
 

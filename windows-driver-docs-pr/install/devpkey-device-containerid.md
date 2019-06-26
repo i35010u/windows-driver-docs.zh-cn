@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e7777bdb0976c458b82948b2093622b717635cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1c8347e5395fa5caa7385dd01364c1ef3c3101a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387084"
 ---
 # <a name="devpkeydevicecontainerid"></a>DEVPKEY_Device_ContainerId
 
@@ -74,7 +74,7 @@ DEVPKEY_Device_ContainerId 可以用于确定的设备容器分组*devnodes*在�
 
  
 
-有关 ContainerIDs 详细信息，请参阅[容器 Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)。
+有关 ContainerIDs 详细信息，请参阅[容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)。
 
 <a name="requirements"></a>要求
 ------------
@@ -99,9 +99,9 @@ DEVPKEY_Device_ContainerId 可以用于确定的设备容器分组*devnodes*在�
 ## <a name="see-also"></a>请参阅
 
 
-[容器 Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)
+[容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

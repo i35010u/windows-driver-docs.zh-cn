@@ -4,12 +4,12 @@ description: 构建 WIA 微型驱动程序
 ms.assetid: 7a13d355-f42e-406d-8cba-4739df1af9fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6d603118cbf835286e462799a257b2fc1f9d4b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f934b2613cf8a15ab1bb8c3f4a55caa42e0a06d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373310"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366745"
 ---
 # <a name="building-a-wia-minidriver"></a>构建 WIA 微型驱动程序
 
@@ -41,11 +41,11 @@ ms.locfileid: "63373310"
 </tr>
 <tr class="even">
 <td><p><em>stiusd.h</em></p></td>
-<td><p>定义<a href="https://msdn.microsoft.com/library/windows/hardware/ff543827" data-raw-source="[IStiUSD](https://msdn.microsoft.com/library/windows/hardware/ff543827)">IStiUSD</a>所有 WIA 微型驱动程序必须都实现的接口。</p></td>
+<td><p>定义<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index" data-raw-source="[IStiUSD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)">IStiUSD</a>所有 WIA 微型驱动程序必须都实现的接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>wiamindr.h</em></p></td>
-<td><p>定义<a href="https://msdn.microsoft.com/library/windows/hardware/ff545027" data-raw-source="[IWiaMiniDrv](https://msdn.microsoft.com/library/windows/hardware/ff545027)">IWiaMiniDrv</a>所有 WIA 微型驱动程序必须都实现的接口。 使用 WIA 微型驱动程序的其他接口在此处定义也。</p></td>
+<td><p>定义<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv" data-raw-source="[IWiaMiniDrv](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)">IWiaMiniDrv</a>所有 WIA 微型驱动程序必须都实现的接口。 使用 WIA 微型驱动程序的其他接口在此处定义也。</p></td>
 </tr>
 </tbody>
 </table>

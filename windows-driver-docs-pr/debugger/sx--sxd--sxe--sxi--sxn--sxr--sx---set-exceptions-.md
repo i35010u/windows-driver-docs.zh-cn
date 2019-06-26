@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: db9b92435bd60bde07fff905bb7af15337799f5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7c29f87f569a5f921aa3fbea6955823bfc3c515
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383005"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366355"
 ---
 # <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx、sxd、sxe、sxi、sxn、sxr、sx-（设置异常）
 
@@ -95,7 +95,7 @@ sxr
 
 **Sx-** 命令不会更改处理状态或指定的异常或事件的中断状态。 如果你想要更改的第一个 chance 命令或与特定事件关联的第二次命令，但不是希望更改任何其他内容，可以使用此命令。
 
-如果包括 **-h**选项 (或者如果**cc**， **hc**， **bpec**，或**ssec**指定事件)，**sxe**， **sxd**， **sxn**，以及**sxi**命令控件[处理状态](https://msdn.microsoft.com/library/windows/hardware/ff541490#handling-status)的事件或异常。 在所有其他情况下，这些命令来控制[会中断状态](https://msdn.microsoft.com/library/windows/hardware/ff541490#break-status)的事件或异常。
+如果包括 **-h**选项 (或者如果**cc**， **hc**， **bpec**，或**ssec**指定事件)，**sxe**， **sxd**， **sxn**，以及**sxi**命令控件[处理状态](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#handling-status)的事件或异常。 在所有其他情况下，这些命令来控制[会中断状态](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#break-status)的事件或异常。
 
 当您在设置中断状态时，这些命令将产生以下影响。
 

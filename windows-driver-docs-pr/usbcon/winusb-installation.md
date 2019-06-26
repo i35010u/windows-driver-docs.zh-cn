@@ -3,12 +3,12 @@ Description: 在内核模式堆栈中设备的 USB 设备的功能而不是实�
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0898e03722bfa73103966b5855cc016d9ce05ef1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c443aba3a413f3c1a1b941bd188b3130b98b101
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383479"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 
@@ -156,7 +156,7 @@ REG_MULTI_SZ = 0x00010000
 
 -   **USB\_Install.HW**:本部分是.inf 文件中的密钥。 它指定的设备接口全局唯一标识符 (GUID) 为你的设备。 **AddReg**指令设置标准注册表值中的指定的接口的 GUID。 Winusb.sys 作为设备的功能驱动程序加载时，它将读取注册表值 DeviceInterfaceGUIDs 项并使用指定的 GUID 来表示设备接口。 您应该使用专门针对你的设备创建来替换在此示例中的 GUID。 如果更改设备的协议，请创建一个新的设备接口的 GUID。
 
-    **请注意**  用户模式软件必须调用[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)来枚举与设备接口之一相关联的已注册的设备接口DeviceInterfaceGUIDs 项下指定的类。 **SetupDiGetClassDevs**返回用户模式软件必须传递到设备的设备句柄[ **WinUsb\_初始化**](https://msdn.microsoft.com/library/windows/hardware/ff540277)例程，以获取 WinUSB 句柄设备接口。 有关这些例程的详细信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    **请注意**  用户模式软件必须调用[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)来枚举与设备接口之一相关联的已注册的设备接口DeviceInterfaceGUIDs 项下指定的类。 **SetupDiGetClassDevs**返回用户模式软件必须传递到设备的设备句柄[ **WinUsb\_初始化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)例程，以获取 WinUSB 句柄设备接口。 有关这些例程的详细信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 以下 INF 安装 WinUSB 作为 OSR USB FX2 板的功能的基于 x64 的系统上的驱动程序。 示例演示了 WDF 共同安装程序的 INF。
 
@@ -279,13 +279,13 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 
 1. [下载 Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)并将其安装。
 2. USB 设备连接到计算机上创建驱动程序包文件夹。 例如，c:\\UsbDevice。
-3. 从复制 WinUSB 共同安装程序 (WinusbcoinstallerX.dll) **WinDDK\\**<em>BuildNumber</em>**\\redist\\winusb**驱动程序的包文件夹的文件夹。
+3. 从复制 WinUSB 共同安装程序 (WinusbcoinstallerX.dll) **WinDDK\\** <em>BuildNumber</em> **\\redist\\winusb**驱动程序的包文件夹的文件夹。
 
-   如有必要，WinUSB 共同安装程序 (Winusbcoinstaller.dll) 目标系统上安装 WinUSB。 WDK 包括具体取决于系统体系结构的共同安装程序的三个版本： 基于 x86 的、 基于 x64 和基于 Itanium 的系统。 它们都命名为 WinusbcoinstallerX.dll，位于中的相应子目录**WinDDK\\**<em>BuildNumber</em>**\\redist\\winusb**文件夹。
+   如有必要，WinUSB 共同安装程序 (Winusbcoinstaller.dll) 目标系统上安装 WinUSB。 WDK 包括具体取决于系统体系结构的共同安装程序的三个版本： 基于 x86 的、 基于 x64 和基于 Itanium 的系统。 它们都命名为 WinusbcoinstallerX.dll，位于中的相应子目录**WinDDK\\** <em>BuildNumber</em> **\\redist\\winusb**文件夹。
 
-4. 从复制 KMDF 共同安装程序 (WdfcoinstallerXXX.dll) **WinDDK\\**<em>BuildNumber</em>**\\redist\\wdf**到文件夹驱动程序包文件夹中。
+4. 从复制 KMDF 共同安装程序 (WdfcoinstallerXXX.dll) **WinDDK\\** <em>BuildNumber</em> **\\redist\\wdf**到文件夹驱动程序包文件夹中。
 
-   如有必要，KMDF 共同安装程序 (WdfcoinstallerXXX.dll) 目标系统上安装正确版本的 KMDF。 WinUSB 共同安装程序的版本必须与匹配 KMDF 共同安装程序，因为 KMDF 基于客户端驱动程序，例如 Winusb.sys，需要在系统上正确安装 KMDF framework 的相应版本。 例如，Winusbcoinstaller2.dll 需要 KMDF 1.9 版，Wdfcoinstaller01009.dll 安装。 WdfcoinstallerXXX.dll 的 x86 和 x64 版本所含下 WDK **WinDDK\\**<em>BuildNumber</em>**\\redist\\wdf**文件夹。 下表显示了 WinUSB 共同安装程序和关联的 KMDF 共同安装程序为目标系统上使用。
+   如有必要，KMDF 共同安装程序 (WdfcoinstallerXXX.dll) 目标系统上安装正确版本的 KMDF。 WinUSB 共同安装程序的版本必须与匹配 KMDF 共同安装程序，因为 KMDF 基于客户端驱动程序，例如 Winusb.sys，需要在系统上正确安装 KMDF framework 的相应版本。 例如，Winusbcoinstaller2.dll 需要 KMDF 1.9 版，Wdfcoinstaller01009.dll 安装。 WdfcoinstallerXXX.dll 的 x86 和 x64 版本所含下 WDK **WinDDK\\** <em>BuildNumber</em> **\\redist\\wdf**文件夹。 下表显示了 WinUSB 共同安装程序和关联的 KMDF 共同安装程序为目标系统上使用。
 
    使用此表来确定 WinUSB 共同安装程序和关联的 KMDF 共同安装程序。
 
@@ -336,7 +336,7 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 [如何通过使用 WinUSB 函数访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [WinUSB 电源管理](winusb-power-management.md)  
 [针对管道策略修改 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
-[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
+[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
 
 

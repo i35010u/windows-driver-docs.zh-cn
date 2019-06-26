@@ -13,12 +13,12 @@ keywords:
 - GetDriverInfo2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f49054ed927054834d35b11682c854b2eccb2db0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 237a030332369aed342e70f139cb8398a569a054
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379018"
 ---
 # <a name="managing-agp-heaps"></a>管理 AGP 堆
 
@@ -38,15 +38,15 @@ ms.locfileid: "63380405"
 
 有关详细信息**GetDriverInfo2**请求，请参阅[支持 GetDriverInfo2](supporting-getdriverinfo2.md)。
 
-显示驱动程序创建的显示设备时，接收**GetDriverInfo2** D3DGDI2 请求\_类型\_已推迟\_AGP\_注意通知其驱动程序用于确定是否它应禁用其其他机制处理 AGP 堆并改为使用 D3DGDI2\_类型\_免费\_延期\_AGP 和 D3DGDI2\_类型\_DEFER\_AGP\_FREES 随后会在运行时发送的通知。 在 D3DGDI2\_类型\_延期\_AGP\_注意通知 DirectX 运行时提供一个指针指向[ **DD\_已推迟\_AGP\_注意\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff550562)结构**lpvData**隶属[ **DD\_GETDRIVERINFODATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551550)数据结构。
+显示驱动程序创建的显示设备时，接收**GetDriverInfo2** D3DGDI2 请求\_类型\_已推迟\_AGP\_注意通知其驱动程序用于确定是否它应禁用其其他机制处理 AGP 堆并改为使用 D3DGDI2\_类型\_免费\_延期\_AGP 和 D3DGDI2\_类型\_DEFER\_AGP\_FREES 随后会在运行时发送的通知。 在 D3DGDI2\_类型\_延期\_AGP\_注意通知 DirectX 运行时提供一个指针指向[ **DD\_已推迟\_AGP\_注意\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_deferred_agp_aware_data)结构**lpvData**隶属[ **DD\_GETDRIVERINFODATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)数据结构。
 
 驱动程序有时会收到**GetDriverInfo2**请求 D3DGDI2\_类型\_DEFER\_AGP\_FREES 通知显示模式下更改发生之前。 DirectX 运行时仅发送此通知，如果运行时执行显示模式更改。 该驱动程序应检查销毁面针对创建表面的进程的进程的进程标识符 (PID)。 如果 Pid 不同，该驱动程序不应销毁 AGP 内存的用户模式下映射，因为应用程序可能仍使用的内存。
 
 驱动程序收到**GetDriverInfo2**请求 D3DGDI2\_类型\_免费\_已推迟\_AGP 通知时所有显示进程停止使用图面中的设备纹理、 顶点缓冲区和索引缓冲区时的显示模式下更改而被锁定。 此通知告诉驱动程序，它可以安全地销毁的所有用户模式下的 AGP 内存映射。
 
-在 D3DGDI2\_类型\_DEFER\_AGP\_FREES 和 D3DGDI2\_类型\_免费\_已推迟\_AGP 通知运行时提供一个指针指向[ **DD\_免费\_已推迟\_AGP\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff551528)结构**lpvData** DD 的成员\_GETDRIVERINFODATA 数据结构。 **DwProcessId** DD 成员\_免费\_已推迟\_AGP\_数据指定销毁 AGP 内存的进程的 PID。
+在 D3DGDI2\_类型\_DEFER\_AGP\_FREES 和 D3DGDI2\_类型\_免费\_已推迟\_AGP 通知运行时提供一个指针指向[ **DD\_免费\_已推迟\_AGP\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_free_deferred_agp_data)结构**lpvData** DD 的成员\_GETDRIVERINFODATA 数据结构。 **DwProcessId** DD 成员\_免费\_已推迟\_AGP\_数据指定销毁 AGP 内存的进程的 PID。
 
-请注意应用程序可以终止而无需运行时发送 D3DGDI2\_类型\_免费\_延期\_AGP 通知给驱动程序。 因此，驱动程序应释放的所有用户模式下映射的 AGP 内存时接收调用其[ **D3dDestroyDDLocal** ](https://msdn.microsoft.com/library/windows/hardware/ff544685)函数。
+请注意应用程序可以终止而无需运行时发送 D3DGDI2\_类型\_免费\_延期\_AGP 通知给驱动程序。 因此，驱动程序应释放的所有用户模式下映射的 AGP 内存时接收调用其[ **D3dDestroyDDLocal** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_destroyddlocal)函数。
 
  
 

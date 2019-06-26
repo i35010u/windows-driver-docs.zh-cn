@@ -5,12 +5,12 @@ ms.assetid: 676601c1-2647-4341-9a5c-cee895d2dbf7
 ms.date: 08/08/2017
 keywords: -OID_GEN_PORT_AUTHENTICATION_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dcc74e0a1d5ef936c94d51c50547d91270fa0a45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b2230aee48474c366ff83bceec56be8b535b084
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367582"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380862"
 ---
 # <a name="oidgenportauthenticationparameters"></a>OID\_GEN\_端口\_身份验证\_参数
 
@@ -32,7 +32,7 @@ ms.locfileid: "63367582"
 
 如果微型端口驱动程序不支持此 OID，微型端口驱动程序应返回 NDIS\_状态\_不\_受支持。
 
-如果微型端口驱动程序支持此 OID，驱动程序将返回 NDIS\_状态\_成功并提供接收端口方向、 端口控件状态，并进行身份验证中的状态[ **NDIS\_端口\_身份验证\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566788)结构。
+如果微型端口驱动程序支持此 OID，驱动程序将返回 NDIS\_状态\_成功并提供接收端口方向、 端口控件状态，并进行身份验证中的状态[ **NDIS\_端口\_身份验证\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -53,7 +53,7 @@ ms.locfileid: "63367582"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_端口\_身份验证\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566788)
+[**NDIS\_端口\_身份验证\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9b6dc47f9f3298612cc82c1ef2f6801d9109a558
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27c4590d0fdb46047dc3d3e3fcbc3bc677522361
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369483"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387111"
 ---
 # <a name="devpkeydeviceaddress"></a>DEVPKEY_Device_Address
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_Address 设备属性表示设备实例的特定于总线的地址
 <a name="remarks"></a>备注
 -------
 
-Windows 上其总线 DEVPKEY_Device_Address 将值设置为设备的地址。 有关解释设备地址的信息，请参阅**DevicePropertyAddress**的值*DeviceProperty*参数[ **IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203).
+Windows 上其总线 DEVPKEY_Device_Address 将值设置为设备的地址。 有关解释设备地址的信息，请参阅**DevicePropertyAddress**的值*DeviceProperty*参数[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty).
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_Address 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Address 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_Address 属性键。 相反，相应的 SPDRP_ADDRESS 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_Address 属性键。 相反，相应的 SPDRP_ADDRESS 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)
+[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

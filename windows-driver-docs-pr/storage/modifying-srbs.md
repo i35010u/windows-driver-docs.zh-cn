@@ -8,12 +8,12 @@ keywords:
 - SRB 修改 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 853217ec25fc53b1def2901a1193c9b2082cd392
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd1299201e7d58474f4096c55e5246d2e8302b44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386188"
 ---
 # <a name="modifying-srbs"></a>修改 SRB
 
@@ -21,7 +21,7 @@ ms.locfileid: "63355561"
 ## <span id="ddk_modifying_srbs_kg"></span><span id="DDK_MODIFYING_SRBS_KG"></span>
 
 
-如 SCSI 微型端口驱动程序的前面部分中提到[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff552654)例程必须请求端口驱动程序为 SRB 扩展分配内存如果微型端口驱动程序维护每个请求状态信息。
+如 SCSI 微型端口驱动程序的前面部分中提到[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)例程必须请求端口驱动程序为 SRB 扩展分配内存如果微型端口驱动程序维护每个请求状态信息。
 
 否则，SCSI 微型端口驱动程序可以将值写入到 Srb*仅*出于以下目的和*仅*中以下成员：
 
@@ -35,7 +35,7 @@ ms.locfileid: "63355561"
 
 -   微型端口驱动程序是否支持八个以上的逻辑单元，以设置**Lun**成员添加到逻辑单元号
 
-如果 HBA 可以处理超过 8 个逻辑单元，指示何时*HwScsiFindAdapter*设置[**端口\_配置\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff563900)，则端口驱动程序不会解释 LUN 信息。 微型端口驱动程序负责映射 8 位 LUN SRB scsi-3 地址，如有必要。
+如果 HBA 可以处理超过 8 个逻辑单元，指示何时*HwScsiFindAdapter*设置[**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)，则端口驱动程序不会解释 LUN 信息。 微型端口驱动程序负责映射 8 位 LUN SRB scsi-3 地址，如有必要。
 
 从 8 位 LUN 到 scsi-3 地址的映射是微型端口驱动程序特定。 下表显示了建议的映射，其中*P*是物理的寻址模式， *B*是总线，并且*T*是目标。
 

@@ -8,17 +8,17 @@ keywords:
 - WskSendTo
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d5848cf1a2abcf49e9ce5d373058d48a3b8efdb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf31762e2c838a660b15d63045dbabefd0a862a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346765"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386848"
 ---
 # <a name="sending-data-over-a-datagram-socket"></a>通过数据报套接字发送数据
 
 
-Winsock Kernel (WSK) 应用程序已绑定到本地传输地址的数据报套接字后它可以通过套接字发送数据报。 WSK 应用程序通过调用通过数据报套接字发送数据报[ **WskSendTo** ](https://msdn.microsoft.com/library/windows/hardware/ff571148)函数。
+Winsock Kernel (WSK) 应用程序已绑定到本地传输地址的数据报套接字后它可以通过套接字发送数据报。 WSK 应用程序通过调用通过数据报套接字发送数据报[ **WskSendTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)函数。
 
 下面的代码示例显示如何 WSK 应用程序可以通过数据报套接字发送数据报。
 
@@ -129,11 +129,11 @@ NTSTATUS
 }
 ```
 
-WSK 应用程序已设置固定的远程传输地址或数据报套接字，一个固定的目标传输地址*RemoteAddress*参数传递给[ **WskSendTo**](https://msdn.microsoft.com/library/windows/hardware/ff571148)函数是可选的可以是**NULL**。 如果**NULL**，数据报发送到固定的远程传输地址或固定的目标传输地址。 如果非**NULL**，数据报发送到指定的远程传输地址。
+WSK 应用程序已设置固定的远程传输地址或数据报套接字，一个固定的目标传输地址*RemoteAddress*参数传递给[ **WskSendTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)函数是可选的可以是**NULL**。 如果**NULL**，数据报发送到固定的远程传输地址或固定的目标传输地址。 如果非**NULL**，数据报发送到指定的远程传输地址。
 
-有关如何设置固定的远程传输地址的数据报套接字的详细信息，请参阅[ **SIO\_WSK\_设置\_远程\_地址**](https://msdn.microsoft.com/library/windows/hardware/ff570820)。
+有关如何设置固定的远程传输地址的数据报套接字的详细信息，请参阅[ **SIO\_WSK\_设置\_远程\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-remote-address)。
 
-有关如何设置固定的目标传输地址的数据报套接字的详细信息，请参阅[ **SIO\_WSK\_设置\_SENDTO\_地址**](https://msdn.microsoft.com/library/windows/hardware/ff570821).
+有关如何设置固定的目标传输地址的数据报套接字的详细信息，请参阅[ **SIO\_WSK\_设置\_SENDTO\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-sendto-address).
 
  
 

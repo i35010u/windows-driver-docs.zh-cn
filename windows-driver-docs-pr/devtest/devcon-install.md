@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 122eab295ea09855ca4c49d77fc1fa899de59adf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9fbf6b15245dcfd3d5bf7f3d39106f8358a86f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371537"
 ---
 # <a name="devcon-install"></a>DevCon Install
 
@@ -40,11 +40,11 @@ ms.locfileid: "63347046"
 <span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span> *HardwareID*   
 指定设备的硬件 ID。
 
-指定的硬件 ID 必须完全符合设备的硬件 ID。 模式不是有效的。 请不要键入一个单引号字符 () 以指示文本值。 有关详细信息，请参阅[硬件 Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)并[设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)。
+指定的硬件 ID 必须完全符合设备的硬件 ID。 模式不是有效的。 请不要键入一个单引号字符 (  ) 以指示文本值。 有关详细信息，请参阅[硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)并[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 
-系统可能需要重新启动才能使此更改生效。 若要让 DevCon 重新启动系统，添加条件的重新启动参数 (**/r**) 到该命令。
+系统可能需要重新启动才能使此更改生效。 若要让 DevCon 重新启动系统，添加条件的重新启动参数 ( **/r**) 到该命令。
 
 不能使用**DevCon 安装**插设备的操作。
 
@@ -70,9 +70,9 @@ devcon /r install c:\windows\inf\newdvc.inf ISAPNP\CSC4324\0
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[硬件 Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)
+[硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)
 
-[设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)
+[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)
 
 
 

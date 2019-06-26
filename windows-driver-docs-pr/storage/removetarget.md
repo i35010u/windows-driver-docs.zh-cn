@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a1faffa08cb47dba596f0e6cb1fbdb34b2381689
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 130a61c45e1adc3a0e420417091e2b0145956829
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368907"
 ---
 # <a name="removetarget-function"></a>RemoveTarget 函数
 
@@ -51,7 +51,7 @@ void RemoveTarget(
 要停止报告的事件。 如果此成员为零，WMI 提供程序客户端将停止报告事件与端口所指示的关联*DiscoveredPortWWN*。 如果此成员为非零值，则 WMI 提供程序将停止报告的所有事件相关都联的任何目标。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **RemoveTarget\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564039)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **RemoveTarget\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -86,9 +86,9 @@ void RemoveTarget(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemoveTarget\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff564033)
+[**RemoveTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_in)
 
-[**RemoveTarget\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff564039)
+[**RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_out)
 
  
 

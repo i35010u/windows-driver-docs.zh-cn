@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 714800ce1d24b0394c98210eeb817752ef54d23e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 202a3cf25f39e6a3cd15059f212c1e7e9d3c674d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370544"
 ---
 # <a name="smart-card-design-guide"></a>智能卡设计指南
 
@@ -51,6 +51,6 @@ Windows 智能卡 DDI 包括 IOCTL 请求的 Get 和 Set 属性。 为了满足�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[智能卡 DDI 和命令参考](https://msdn.microsoft.com/library/windows/hardware/dn905601)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[智能卡 DDI 和命令参考](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  
 

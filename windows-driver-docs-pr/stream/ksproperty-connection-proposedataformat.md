@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8cd31fbb4ee42bf5b86e95866d12c38d66d85ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54c8a666f86246a54559aa48b62667744835d370
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368673"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373116"
 ---
 # <a name="kspropertyconnectionproposedataformat"></a>KSPROPERTY\_CONNECTION\_PROPOSEDATAFORMAT
 
@@ -54,7 +54,7 @@ ms.locfileid: "63368673"
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "63368673"
 <a name="remarks"></a>备注
 -------
 
-此属性返回[ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)指定建议的数据格式。
+此属性返回[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)指定建议的数据格式。
 
 KS 筛选器将返回状态\_如果 pin 可以重置为建议的数据格式或错误代码否则成功。 请注意，此属性请求不会更改数据格式。 客户端使用[ **KSPROPERTY\_连接\_DATAFORMAT** ](ksproperty-connection-dataformat.md)更改的格式。
 
-另请参阅[KS 数据格式和数据范围](https://msdn.microsoft.com/library/windows/hardware/ff567632)。
+另请参阅[KS 数据格式和数据范围](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,7 +91,7 @@ KS 筛选器将返回状态\_如果 pin 可以重置为建议的数据格式或�
 
 [**KSPROPERTY\_连接\_DATAFORMAT**](ksproperty-connection-dataformat.md)
 
-[*AVStrMiniPinSetDataFormat*](https://msdn.microsoft.com/library/windows/hardware/ff556355)
+[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)
 
  
 

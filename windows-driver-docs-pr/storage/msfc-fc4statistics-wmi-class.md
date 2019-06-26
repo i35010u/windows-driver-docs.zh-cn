@@ -4,12 +4,12 @@ description: MSFC\_FC4STATISTICS WMI 类
 ms.assetid: 49cd4104-1fe8-46ec-9216-c5c078666c02
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f22986aa6596dc737489bd6b25e1d824307efcdd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc0c79fcdb0d4367e635ed69e0d9713aec7edb83
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377517"
 ---
 # <a name="msfcfc4statistics-wmi-class"></a>MSFC\_FC4STATISTICS WMI 类
 
@@ -33,7 +33,7 @@ class MSFC_FC4STATISTICS {
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_FC4STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/ff562492)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
 没有与此 WMI 类相关联的方法。
 

@@ -4,12 +4,12 @@ description: 将 PTP 格式代码映射到 WIA 格式 GUID
 ms.assetid: a69269c0-1474-4de5-9a08-94902ef1f089
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e19dcb705575aa728b4a167379795247c4b9aa6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60cbd1a2ce890c732c8c6cc12b752c7a88ce8f31
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380383"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376599"
 ---
 # <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>将 PTP 格式代码映射到 WIA 格式 GUID
 
@@ -17,7 +17,7 @@ ms.locfileid: "63380383"
 
 
 
-通过公开一个对象的格式[ **WIA\_IPA\_格式**](https://msdn.microsoft.com/library/windows/hardware/ff551553)以 GUID 形式表示的属性。 PTP 格式代码和 WIA Guid 之间的映射表所示：
+通过公开一个对象的格式[ **WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)以 GUID 形式表示的属性。 PTP 格式代码和 WIA Guid 之间的映射表所示：
 
 <table>
 <colgroup>

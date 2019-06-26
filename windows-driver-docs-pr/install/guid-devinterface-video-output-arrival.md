@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ee12871ac07e4b873fabf27ad76d23e6124837de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8981b27deefb3262d83cedc21879a1a3e8ec5b17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379467"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386415"
 ---
 # <a name="guiddevinterfacevideooutputarrival"></a>GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
 
 
-GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)定义的子设备[显示设备](https://msdn.microsoft.com/library/windows/hardware/ff554044)。
+GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义的子设备[显示设备](https://docs.microsoft.com/windows-hardware/drivers/display/index)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](https://msdn.microsoft.c
 
 此 Windows 操作系统不使用此设备接口类。
 
-显示设备的信息，请参阅[Windows Vista 显示器驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff570593)并[Windows 2000 显示器驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff570584)。
+显示设备的信息，请参阅[Windows Vista 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)并[Windows 2000 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-2000-display-driver-model-design-guide)。
 
 有关显示适配器的设备接口类的信息，请参阅[ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)。
 

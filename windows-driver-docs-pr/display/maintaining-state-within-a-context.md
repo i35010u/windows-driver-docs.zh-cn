@@ -9,12 +9,12 @@ keywords:
 - 公共状态 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d688d1dfbbbe09b2b2cc5c20dbb2d185879218
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5cc972ad7a527ba9bfaa847fec6f93535d2b9c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365930"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379023"
 ---
 # <a name="maintaining-state-within-a-context"></a>维护上下文中的状态
 
@@ -22,7 +22,7 @@ ms.locfileid: "63365930"
 ## <span id="ddk_maintaining_state_within_a_context_gg"></span><span id="DDK_MAINTAINING_STATE_WITHIN_A_CONTEXT_GG"></span>
 
 
-驱动程序更新与上下文关联其内部状态时其[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)调用回调。 此回调还必须在 Direct3D 中返回更新后的上下文公共状态。
+驱动程序更新与上下文关联其内部状态时其[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)调用回调。 此回调还必须在 Direct3D 中返回更新后的上下文公共状态。
 
  
 

@@ -9,21 +9,21 @@ keywords:
 - 客户端对象 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37c33669d826048428025bfc781d1040ad37c3d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba4605f478ba9a30cc8363e2a8b1a542c09dc17b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377051"
 ---
 # <a name="performing-control-operations-on-a-client-object"></a>针对客户端对象执行控制操作
 
 
-Winsock Kernel (WSK) 应用程序已成功附加到 WSK 子系统之后，它可以执行客户端对象上的控制操作 ( [ **WSK\_客户端**](https://msdn.microsoft.com/library/windows/hardware/ff571155)) 返回在附件 WSK 子系统。 这些控制操作不是特定于特定的套接字，但改为具有更多常规的作用域。 有关每个可在客户端对象执行管理操作的详细信息，请参阅[WSK 客户端控制操作](https://msdn.microsoft.com/library/windows/hardware/ff571157)。
+Winsock Kernel (WSK) 应用程序已成功附加到 WSK 子系统之后，它可以执行客户端对象上的控制操作 ( [ **WSK\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) 返回在附件 WSK 子系统。 这些控制操作不是特定于特定的套接字，但改为具有更多常规的作用域。 有关每个可在客户端对象执行管理操作的详细信息，请参阅[WSK 客户端控制操作](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client-control-operations)。
 
-WSK 应用程序通过调用执行客户端管理操作[ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)函数。 **WskControlClient**函数所指向的**WskControlClient**的成员[ **WSK\_提供程序\_调度**](https://msdn.microsoft.com/library/windows/hardware/ff571175)期间附件 WSK 子系统返回的结构。
+WSK 应用程序通过调用执行客户端管理操作[ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)函数。 **WskControlClient**函数所指向的**WskControlClient**的成员[ **WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)期间附件 WSK 子系统返回的结构。
 
-下面的代码示例演示如何使用一个应用程序，WSK [ **WSK\_传输\_列表\_查询**](https://msdn.microsoft.com/library/windows/hardware/ff571195)客户端管理操作来检索的列表创建新的套接字时，可以指定可用的网络传输。
+下面的代码示例演示如何使用一个应用程序，WSK [ **WSK\_传输\_列表\_查询**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-transport-list-query)客户端管理操作来检索的列表创建新的套接字时，可以指定可用的网络传输。
 
 ```C++
 // Function to retrieve a list of available network transports

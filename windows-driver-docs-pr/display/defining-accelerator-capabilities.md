@@ -9,12 +9,12 @@ keywords:
 - 受限制的配置文件 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b6751a906b48c22c4bc989e962a7bc658c4cd37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74aebaf943d28f01e093a8ca7efb6d85cc7049b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327156"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384904"
 ---
 # <a name="defining-accelerator-capabilities"></a>定义加速器功能
 
@@ -32,7 +32,7 @@ ms.locfileid: "63327156"
 
 ### <a name="span-idnonrestrictedoperationspanspan-idnonrestrictedoperationspanspan-idnonrestrictedoperationspannonrestricted-operation"></a><span id="Nonrestricted_Operation"></span><span id="nonrestricted_operation"></span><span id="NONRESTRICTED_OPERATION"></span>Nonrestricted 的操作
 
-如果在 DirectX VA 加速器使用而无需向受限制的配置文件，严格的一致性**wRestrictedMode**的成员[ **DXVA\_ConnectMode** ](https://msdn.microsoft.com/library/windows/hardware/ff563138)结构必须设置为 0xFFFF 以指示此缺少的限制。
+如果在 DirectX VA 加速器使用而无需向受限制的配置文件，严格的一致性**wRestrictedMode**的成员[ **DXVA\_ConnectMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_connectmode)结构必须设置为 0xFFFF 以指示此缺少的限制。
 
 所有定义的值**bDXVA\_Func**允许使用变量。
 

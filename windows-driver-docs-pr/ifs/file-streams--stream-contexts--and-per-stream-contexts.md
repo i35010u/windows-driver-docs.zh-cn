@@ -13,12 +13,12 @@ keywords:
 - 流上下文 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ac1bd55b1d13e4f263cdbf8cce0653c91f6ee76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5ca0a1fd9b90ec12a3e0f5e1e66de94507225da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385556"
 ---
 # <a name="file-streams-stream-contexts-and-per-stream-contexts"></a>文件流、流上下文和按流上下文
 
@@ -38,13 +38,13 @@ ms.locfileid: "63383836"
 
 ### <a name="span-idfilesystemsupportforper-streamcontextsspanspan-idfilesystemsupportforper-streamcontextsspanspan-idfilesystemsupportforper-streamcontextsspanfile-system-support-for-per-stream-contexts"></a><span id="File_System_Support_for_Per-Stream_Contexts"></span><span id="file_system_support_for_per-stream_contexts"></span><span id="FILE_SYSTEM_SUPPORT_FOR_PER-STREAM_CONTEXTS"></span>文件系统支持的每个 Stream 上下文
 
-Microsoft Windows XP 及更高版本，支持每个流上下文的文件系统必须使用包含的流上下文结构[ **FSRTL\_高级\_FCB\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff547334)结构。
+Microsoft Windows XP 及更高版本，支持每个流上下文的文件系统必须使用包含的流上下文结构[ **FSRTL\_高级\_FCB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)结构。
 
 文件系统为所有与特定文件流关联的每个流上下文的全局列表。 文件系统时创建新的流上下文 (FSRTL\_高级\_FCB\_标头对象) 的文件流，它会调用[ **FsRtlSetupAdvancedHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff547257)到初始化此列表。 当文件系统筛选器驱动程序调用[ **FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194)，筛选器创建的每个流上下文添加到全局列表。
 
 当文件系统中删除文件流及其流上下文时，它将调用[ **FsRtlTeardownPerStreamContexts** ](https://msdn.microsoft.com/library/windows/hardware/ff547295)来释放所有筛选器已将文件流关联的每个流上下文。 此例程调用[ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)例行为每个全局列表中的每个流上下文。 请注意， **FreeCallback**例程必须假定已释放的文件流的文件对象。
 
-若要查询文件系统是否支持每个流上下文由给定的文件对象表示的文件流，请调用[ **FsRtlSupportsPerStreamContexts** ](https://msdn.microsoft.com/library/windows/hardware/ff547285)上的文件对象。 请注意对于某些类型的文件，但没有为其他文件系统，可能会支持每个流上下文。 例如，NTFS 和 FAT 当前不支持每个流上下文的分页文件。 因此如果**FsRtlSupportsPerStreamContexts**返回**TRUE**对于一个文件流，这并不意味着，它将返回**TRUE**流的所有文件。
+若要查询文件系统是否支持每个流上下文由给定的文件对象表示的文件流，请调用[ **FsRtlSupportsPerStreamContexts** ](https://docs.microsoft.com/previous-versions/ff547285(v=vs.85))上的文件对象。 请注意对于某些类型的文件，但没有为其他文件系统，可能会支持每个流上下文。 例如，NTFS 和 FAT 当前不支持每个流上下文的分页文件。 因此如果**FsRtlSupportsPerStreamContexts**返回**TRUE**对于一个文件流，这并不意味着，它将返回**TRUE**流的所有文件。
 
  
 

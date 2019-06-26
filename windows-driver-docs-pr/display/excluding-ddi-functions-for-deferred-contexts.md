@@ -9,21 +9,21 @@ keywords:
 - 显示延迟的上下文 WDK Windows Server 2008 R2，请排除 DDI 函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a7532626cab62b764fff86c4b813f36a74de0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fee0417d08b59cca12f90d766d993ad0e949c000
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387892"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370991"
 ---
 # <a name="excluding-ddi-functions-for-deferred-contexts"></a>排除延迟上下文的 DDI 函数
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
 
-当 Microsoft Direct3D 运行时调用用户模式显示驱动程序[ **CreateDeferredContext** ](https://msdn.microsoft.com/library/windows/hardware/ff540622)函数来创建推迟的上下文，该驱动程序提供了运行时可调用的函数为此，延迟的上下文。 该驱动程序填充的成员[ **D3D11DDI\_DEVICEFUNCS** ](https://msdn.microsoft.com/library/windows/hardware/ff542141)结构**p11ContextFuncs**隶属[ **D3D11DDIARG\_CREATEDEFERREDCONTEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff542044)结构指向。 该驱动程序提供了驱动程序为推迟的上下文的函数的一个子集进行即时上下文。
+当 Microsoft Direct3D 运行时调用用户模式显示驱动程序[ **CreateDeferredContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)函数来创建推迟的上下文，该驱动程序提供了运行时可调用的函数为此，延迟的上下文。 该驱动程序填充的成员[ **D3D11DDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)结构**p11ContextFuncs**隶属[ **D3D11DDIARG\_CREATEDEFERREDCONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createdeferredcontext)结构指向。 该驱动程序提供了驱动程序为推迟的上下文的函数的一个子集进行即时上下文。
 
-该驱动程序通过设置以下成员不包括用于延迟上下文的许多函数[ **D3D11DDI\_DEVICEFUNCS** ](https://msdn.microsoft.com/library/windows/hardware/ff542141)或[ **D3D11\_1DDI\_DEVICEFUNCS** ](https://msdn.microsoft.com/library/windows/hardware/hh406443)到**NULL**:
+该驱动程序通过设置以下成员不包括用于延迟上下文的许多函数[ **D3D11DDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)或[ **D3D11\_1DDI\_DEVICEFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_devicefuncs)到**NULL**:
 
 ```cpp
 typedef struct D3D11DDI_DEVICEFUNCS {

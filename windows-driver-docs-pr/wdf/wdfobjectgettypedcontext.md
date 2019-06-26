@@ -6,12 +6,12 @@ keywords:
 - WdfObjectGetTypedContext macro
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a7da5dda6976c161246f119a8865a1ced002d4a
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 86f55c813d98c2916ea7532e4f47f34363ce1b87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385056"
 ---
 # <a name="wdfobjectgettypedcontext-macro"></a>WdfObjectGetTypedContext macro
 
@@ -49,7 +49,7 @@ Framework 对象的句柄。
 
 可以使用**WdfObjectGetTypedContext**宏，以获取任何框架对象上下文空间的指针。 使用此宏，因为调用特定于对象上下文访问器方法的替代方法由创建[ **WDF_DECLARE_CONTEXT_TYPE** ](wdf-declare-context-type.md)宏或[ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)宏。 请注意，如果您使用**WdfObjectGetTypedContext**，仍必须使用 WDF_DECLARE_CONTEXT_TYPE 或 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 来声明对象上下文。
 
-有关这些宏的详细信息，请参阅[框架对象上下文空间](https://msdn.microsoft.com/library/windows/hardware/ff542873)。
+有关这些宏的详细信息，请参阅[框架对象上下文空间](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)。
 
 <a name="examples"></a>示例
 --------

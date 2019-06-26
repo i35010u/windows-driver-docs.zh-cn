@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e171287ffb0ad9a0e1dd3ccb04cadda5c00481
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e9d278b63e123bfe0ac01a061814c9c90f95b96
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333025"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391491"
 ---
 # <a name="kspropertyaudiolatency"></a>KSPROPERTY\_音频\_延迟
 
@@ -53,8 +53,8 @@ KSPROPERTY\_音频\_延迟属性用于报告的延迟 （或音频缓冲量） �
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567145" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567145)"><strong>KSTIME</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstime" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstime)"><strong>KSTIME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_音频\_延迟属性请求将返回状态\_成功以指示已成功�
 <a name="remarks"></a>备注
 -------
 
-此属性用于查询 pin AEC 筛选器的流延迟。 有关详细信息，请参阅[Exposing Hardware-Accelerated 捕获效果](https://msdn.microsoft.com/library/windows/hardware/ff536379)。
+此属性用于查询 pin AEC 筛选器的流延迟。 有关详细信息，请参阅[Exposing Hardware-Accelerated 捕获效果](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-hardware-accelerated-capture-effects)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,9 +91,9 @@ KSPROPERTY\_音频\_延迟属性请求将返回状态\_成功以指示已成功�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSTIME**](https://msdn.microsoft.com/library/windows/hardware/ff567145)
+[**KSTIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstime)
 
  
 

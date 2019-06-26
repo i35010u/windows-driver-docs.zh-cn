@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e24e108230a506754bc8a2f53bba9a9e8634c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5ad8749c393243fc02c2702a00ac9cab13d4231
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383996"
 ---
 # <a name="kspropertytopologyname"></a>KSPROPERTY\_拓扑\_名称
 
@@ -53,7 +53,7 @@ KSPROPERTY\_拓扑\_NAME 属性提供本地化的 Unicode 字符串名称的节�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>节点</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566720" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566720)"><strong>KSP_NODE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
 <td><p>用于保存的字符串名称的缓冲区。</p></td>
 </tr>
 </tbody>
@@ -85,7 +85,7 @@ KSPROPERTY\_拓扑\_NAME 属性提供本地化的 Unicode 字符串名称的节�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

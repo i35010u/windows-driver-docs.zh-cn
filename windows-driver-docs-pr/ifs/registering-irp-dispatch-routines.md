@@ -9,12 +9,12 @@ keywords:
 - Irp WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b658a41298600c8216500b8a8c8eeeb6b8e262
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6cf6e99cbd6bc861cb64b272e5026145e8272fdc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344587"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385132"
 ---
 # <a name="registering-irp-dispatch-routines"></a>注册 IRP 调度例程
 
@@ -22,7 +22,7 @@ ms.locfileid: "63344587"
 ## <span id="ddk_registering_irp_dispatch_routines_if"></span><span id="DDK_REGISTERING_IRP_DISPATCH_ROUTINES_IF"></span>
 
 
-*DriverObject*筛选器驱动程序的参数[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程提供筛选器驱动程序的一个指向[**驱动程序对象**](https://msdn.microsoft.com/library/windows/hardware/ff544174)。 若要注册 I/O 请求数据包 (IRP) 调度例程，必须将存储到这些例程的入口点**MajorFunction**驱动程序对象的成员。 例如，假设"MyLegacyFilter"驱动程序可以按如下所示设置其调度例程的入口点：
+*DriverObject*筛选器驱动程序的参数[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程提供筛选器驱动程序的一个指向[**驱动程序对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)。 若要注册 I/O 请求数据包 (IRP) 调度例程，必须将存储到这些例程的入口点**MajorFunction**驱动程序对象的成员。 例如，假设"MyLegacyFilter"驱动程序可以按如下所示设置其调度例程的入口点：
 
 ```cpp
 for (i = 0; i <= IRP_MJ_MAXIMUM_FUNCTION; i++) {

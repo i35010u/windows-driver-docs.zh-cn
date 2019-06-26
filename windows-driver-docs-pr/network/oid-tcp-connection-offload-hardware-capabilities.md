@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，WDK Oid，WDK，WDK 网络 Oid 的网络对象标识符
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b30f73ac9405a5063d3166bca76bbf9f7823845c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e6217086d27f44d596aafa751444a7d98d03acb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331824"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386974"
 ---
 # <a name="oidtcpconnectionoffloadhardwarecapabilities"></a>OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES
 
@@ -21,18 +21,18 @@ ms.locfileid: "63331824"
 
 ## <a name="remarks"></a>备注
 
-NDIS 处理此 OID 的微型端口驱动程序。 微型端口驱动程序报告到 NDIS 的微型端口适配器连接卸载硬件功能。 有关将传递连接卸载硬件功能到 NDIS 从微型端口驱动程序和 NDIS 给基础驱动程序的信息，请参阅[NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)。
+NDIS 处理此 OID 的微型端口驱动程序。 微型端口驱动程序报告到 NDIS 的微型端口适配器连接卸载硬件功能。 有关将传递连接卸载硬件功能到 NDIS 从微型端口驱动程序和 NDIS 给基础驱动程序的信息，请参阅[NDIS_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)。
 
-**InformationBuffer**的成员[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含[NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)结构。
+**InformationBuffer**的成员[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含[NDIS_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)结构。
 
-OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，响应**封装**NDIS_TCP_CONNECTION_OFFLOAD 成员定义的微型端口适配器当前数据包封装硬件功能。 NDIS 提供中提供的标志的按位 OR**封装**成员。 NDIS_TCP_CONNECTION_OFFLOAD 的其他成员包含各种连接卸载服务的设置。 有关封装和其他功能的详细信息，请参阅[NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)并[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)。
+OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，响应**封装**NDIS_TCP_CONNECTION_OFFLOAD 成员定义的微型端口适配器当前数据包封装硬件功能。 NDIS 提供中提供的标志的按位 OR**封装**成员。 NDIS_TCP_CONNECTION_OFFLOAD 的其他成员包含各种连接卸载服务的设置。 有关封装和其他功能的详细信息，请参阅[NDIS_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)并[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)。
 
 
 ### <a name="see-also"></a>请参阅
 
-[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)  
-[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
-[NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)
+[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)  
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
+[NDIS_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)
 
 ## <a name="requirements"></a>要求
 

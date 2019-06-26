@@ -4,12 +4,12 @@ description: TAEF 提供了一种机制来执行测试装置比其相应的测�
 ms.assetid: FAFF5265-5268-412E-86A5-149B187B1376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 098241eb5ad4ed03950eff668265d9db41e9d57b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f837dd849574228e38fe49798198510e0e408fc5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324736"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373006"
 ---
 # <a name="runfixtureas"></a>RunFixtureAs
 
@@ -64,14 +64,14 @@ TAEF 沉浸式 Broker 进程中运行装置。
 
 **注意**  
 -   在 Windows 8 和更高版本的操作系统上仅支持代理。
--   必须在系统上启用测试签名策略。 有关详细信息[TESTSIGNING 启动配置选项](https://msdn.microsoft.com/library/windows/hardware/ff553484)。
+-   必须在系统上启用测试签名策略。 有关详细信息[TESTSIGNING 启动配置选项](https://docs.microsoft.com/windows-hardware/drivers/install/the-testsigning-boot-configuration-option)。
 -   使用远程运行测试 RunFixtureAs = Broker 当前不支持。
 -   当执行带有 RunFixtureAs = Broker TAEF 将使用"TE。对于固定例程执行，不是"TE ProcessHost.Broker.exe"过程。ProcessHost.exe"。
 
  
 
 <span id="UIAccess"></span><span id="uiaccess"></span><span id="UIACCESS"></span>**UIAccess**  
-TAEF 使用 UIAccess 执行级别标记-向上某个进程中运行装置。 有关 UI 自动化应用程序的 UIAccess 信息，请参阅[Windows 完整性机制设计](https://msdn.microsoft.com/library/bb625963)。
+TAEF 使用 UIAccess 执行级别标记-向上某个进程中运行装置。 有关 UI 自动化应用程序的 UIAccess 信息，请参阅[Windows 完整性机制设计](https://docs.microsoft.com/previous-versions/dotnet/articles/bb625963(v=msdn.10))。
 
 **注意**  
 -   在 Vista 和更高版本的操作系统才支持 UIAccess。

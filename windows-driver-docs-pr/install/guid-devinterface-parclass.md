@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ab08bb06e662e97bc956d7d5dfca21228f4810fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7d2a6e95e3105dd679c8afe400ec4e9f80e005c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386432"
 ---
 # <a name="guiddevinterfaceparclass"></a>GUID_DEVINTERFACE_PARCLASS
 
 
-GUID_DEVINTERFACE_PARCLASS[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)定义为附加到的设备[并行端口](https://msdn.microsoft.com/library/windows/hardware/ff544263)。
+GUID_DEVINTERFACE_PARCLASS[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义为附加到的设备[并行端口](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_PARCLASS[设备接口类](https://msdn.microsoft.com/library/w
 
 并行端口的系统提供的总线驱动程序创建每个硬件设备连接到并行端口将此设备接口类的实例。
 
-有关并行的设备和驱动程序的信息，请参阅[并行设备设计指南](https://msdn.microsoft.com/library/windows/hardware/ff544263)。
+有关并行的设备和驱动程序的信息，请参阅[并行设备设计指南](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))。
 
 有关并行端口设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)。
 

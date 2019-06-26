@@ -5,12 +5,12 @@ ms.assetid: 737ac1a5-9f7a-422b-9ccf-42a3176639bc
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RCV_OK 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ad86f3b513cbf91574e31ba000a721f95ac1646
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f855bfbae625e0ceb6a8e70c9fc1da79ae931851
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367538"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386216"
 ---
 # <a name="oidgenrcvok"></a>OID\_GEN\_RCV\_确定
 
@@ -39,7 +39,7 @@ ms.locfileid: "63367538"
 
 OID\_GEN\_RCV\_确定指定接收到没有错误的帧数。 但是， [OID\_代\_统计信息](oid-gen-statistics.md)不包括此信息。
 
-注意：统计信息 Oid 是强制性的 NDIS 6.0 和更高版本的微型端口驱动程序，除非 NDIS 处理它们。 有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)。
+注意：统计信息 Oid 是强制性的 NDIS 6.0 和更高版本的微型端口驱动程序，除非 NDIS 处理它们。 有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
 
 <a name="requirements"></a>要求
 ------------

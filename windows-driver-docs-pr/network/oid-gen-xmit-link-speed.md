@@ -5,12 +5,12 @@ ms.assetid: 0a390456-8974-4668-b624-55259c2f9e20
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_XMIT_LINK_SPEED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 60b327f047c9f1b510dcc8ec013237b4be100bb5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06727f9838fa91d01c46ca40f66048c7536e937b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355949"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385736"
 ---
 # <a name="oidgenxmitlinkspeed"></a>OID\_GEN\_XMIT\_LINK\_SPEED
 
@@ -28,7 +28,7 @@ ms.locfileid: "63355949"
 <a name="remarks"></a>备注
 -------
 
-仅[NDIS 网络接口](https://msdn.microsoft.com/library/windows/hardware/ff566527)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+仅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
 
 如果接口提供程序返回 NDIS\_状态\_成功后，查询的结果为 ULONG64 值，该值指示传输中每秒位数的接口的链接速度。
 
@@ -51,7 +51,7 @@ ms.locfileid: "63355949"
 ## <a name="see-also"></a>请参阅
 
 
-[NDIS 网络接口 Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b67117f9a9f75071c12f3819fbd4ed8d806c5f11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f48389862715402ab944f96cd5efff469440c20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363683"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385900"
 ---
 # <a name="kscategorydatadecompressor"></a>KSCATEGORY_DATADECOMPRESSOR
 
 
-KSCATEGORY_DATADECOMPRESSOR[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)解压缩的数据流的 (KS) 功能类别。
+KSCATEGORY_DATADECOMPRESSOR[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)解压缩的数据流的 (KS) 功能类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_DATADECOMPRESSOR[设备接口类](https://msdn.microsoft.com/library/
 
 KS 设备的驱动程序注册 KSCATEGORY_DATADECOMPRESSOR 向操作系统指示设备支持 KSCATEGORY_DATADECOMPRESSOR 功能分类的实例。
 
-KSCATEGORY_DATADECOMPRESSOR 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)。
+KSCATEGORY_DATADECOMPRESSOR 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)。
 
 有关为压缩数据流的 KS 功能类别定义的设备接口类的信息，请参阅[ **KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)。
 
@@ -81,7 +81,7 @@ KSCATEGORY_DATADECOMPRESSOR 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGOR
 
 [**KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

@@ -4,12 +4,12 @@ description: 本部分介绍 HID 客户端之间的通信方式的 HID 类驱动
 ms.assetid: 97550D1D-2C37-4996-8522-DB18B1AA3C4A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be15d880b997d6bff9ab3b1c6637270212955a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8aeeb3cfa09ae604c3394e1bed9c6fae0be2f601
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364614"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366251"
 ---
 # <a name="opening-hid-collections"></a>打开 HID 集合
 
@@ -27,7 +27,7 @@ HID 客户端可以运行在以下模式：
 
 一般情况下，在用户模式应用程序执行以下任务：
 
-- 调用[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)(**SetupDi * * * Xxx*函数) 来查找和标识 HID 集合。
+- 调用[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))(**SetupDi * * * Xxx*函数) 来查找和标识 HID 集合。
 
 - 调用 CreateFile 打开 HID 集合上的文件。
 
@@ -41,13 +41,13 @@ HID 客户端可以运行在以下模式：
 
 - 查找和标识 HID 集合
 
-  如果该驱动程序是一个函数或筛选器驱动程序，它是已附加到集合的设备堆栈。 但是，如果该驱动程序未附加到集合的设备堆栈，该驱动程序可以[使用插通知](https://msdn.microsoft.com/library/windows/hardware/ff565480)。
+  如果该驱动程序是一个函数或筛选器驱动程序，它是已附加到集合的设备堆栈。 但是，如果该驱动程序未附加到集合的设备堆栈，该驱动程序可以[使用插通知](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-pnp-notification)。
 
-- 使用[ **IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff550729)请求打开 HID 集合
+- 使用[ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)请求打开 HID 集合
 
 - 使用 IOCTL\_HID\_*Xxx*请求以获取 HID 集合 preparsed 的数据和有关 HID 收集的信息
 
-- 使用[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)请求以便读取输入的报表和[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)发送输出的报表的请求
+- 使用[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)请求以便读取输入的报表和[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)发送输出的报表的请求
 
 - 调用**HidP\_** <em>Xxx</em> HID 支持例程来解释 HID 报表
 

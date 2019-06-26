@@ -10,12 +10,12 @@ keywords:
 - 资源限制 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec21cad95e73fee1f7e0d2d47b354bbdd9cf135
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 870722da8a289979c9b6f42ce63c22b2a00a4ce5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386797"
 ---
 # <a name="use-only-supplied-resources-in-a-plug-and-play-scsi-miniport"></a>在即插即用 SCSI 微型端口中只使用供应的资源
 
@@ -27,7 +27,7 @@ Plug and Play 系统的目标之一是减少或消除通过访问已知的内存
 
 在插，总线驱动程序检测到可枚举的总线上的设备。 这将允许总线驱动程序处理的任何资源冲突，中断的总线和桥部件等提供特殊处理的修补程序。
 
-因此，SCSI 微型端口驱动程序必须使用在 Microsoft Windows 2000 和更高版本系统仅提供端口驱动程序 （如果有） 的资源。 微型端口驱动程序允许扫描在总线的 HBA，仅在端口驱动程序通过在零值的访问范围内。 如果尝试使用未分配给它，资源的微型端口驱动程序[ **ScsiPortGetDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff564629)调用将失败。 调用以读取和写入设备注册或未映射正确的端口也可能会失败。
+因此，SCSI 微型端口驱动程序必须使用在 Microsoft Windows 2000 和更高版本系统仅提供端口驱动程序 （如果有） 的资源。 微型端口驱动程序允许扫描在总线的 HBA，仅在端口驱动程序通过在零值的访问范围内。 如果尝试使用未分配给它，资源的微型端口驱动程序[ **ScsiPortGetDeviceBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetdevicebase)调用将失败。 调用以读取和写入设备注册或未映射正确的端口也可能会失败。
 
  
 

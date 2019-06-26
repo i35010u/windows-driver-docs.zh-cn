@@ -8,12 +8,12 @@ keywords:
 - 面向连接的驱动程序 WDK 网络，微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4727d82145ea9936b1c0064f28dd58342b3ab93e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a4569bbf10f009e095b8ddf36835f6fc637309f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374967"
 ---
 # <a name="connection-oriented-ndis-miniport-drivers"></a>面向连接的 NDIS 微型端口驱动程序
 
@@ -27,19 +27,19 @@ ms.locfileid: "63357421"
 
 面向连接的微型端口驱动程序必须将注册以下*MiniportXxx*函数特定于面向连接的操作：
 
--   [**MiniportCoCreateVc**](https://msdn.microsoft.com/library/windows/hardware/ff559354)
+-   [**MiniportCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_create_vc)
 
--   [**MiniportCoDeleteVc**](https://msdn.microsoft.com/library/windows/hardware/ff559358)
+-   [**MiniportCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_delete_vc)
 
--   [**MiniportCoActivateVc**](https://msdn.microsoft.com/library/windows/hardware/ff559351)
+-   [**MiniportCoActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_activate_vc)
 
--   [**MiniportCoDeactivateVc**](https://msdn.microsoft.com/library/windows/hardware/ff559356)
+-   [**MiniportCoDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_deactivate_vc)
 
--   [**MiniportCoSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff559365)
+-   [**MiniportCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_send_net_buffer_lists)
 
--   [**MiniportCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff559362)
+-   [**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)
 
-有关注册这些函数的详细信息，请参阅[ **NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654)。
+有关注册这些函数的详细信息，请参阅[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)。
 
  
 

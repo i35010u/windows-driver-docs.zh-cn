@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b23cd9ac7540dda4f40aa3b7e894a98b12523f99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 579d2f22854c12a7d4bc833d18120b6a822a7213
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366077"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365478"
 ---
 # <a name="kscategoryescalanteplatformdriver"></a>KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
 
 
-KSCATEGORY_ESCALANTE_PLATFORM_DRIVER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)已过时。 对于新的设备不使用。
+KSCATEGORY_ESCALANTE_PLATFORM_DRIVER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)已过时。 对于新的设备不使用。
 
 <table>
 <colgroup>

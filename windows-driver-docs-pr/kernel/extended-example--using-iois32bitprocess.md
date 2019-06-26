@@ -7,12 +7,12 @@ keywords:
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9241bbfd3aa3d0b57fdfde2da9191c19d6ed05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9efdfbc5e25566cad35329c83f0dab809e3d54a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361849"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386619"
 ---
 # <a name="extended-example-using-iois32bitprocess"></a>扩展示例：使用 IoIs32bitProcess
 
@@ -20,7 +20,7 @@ ms.locfileid: "63361849"
 
 
 
-下面的示例演示如何通过添加对的调用来修改用于 64 位的 32 位驱动程序[ **IoIs32bitProcess**](https://msdn.microsoft.com/library/windows/hardware/ff549372)。 请注意，此示例显示只需要修改的驱动程序代码的部分。
+下面的示例演示如何通过添加对的调用来修改用于 64 位的 32 位驱动程序[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)。 请注意，此示例显示只需要修改的驱动程序代码的部分。
 
 ### <a name="original-driver-code"></a>原始驱动程序代码
 

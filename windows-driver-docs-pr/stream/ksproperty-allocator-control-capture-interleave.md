@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8191d672fffda3304bf16bce37bf75d7d41133e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be9e48fe82fae41a82ceca316bd4764fb8fca631
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390891"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386928"
 ---
 # <a name="kspropertyallocatorcontrolcaptureinterleave"></a>KSPROPERTY\_ALLOCATOR\_控制\_捕获\_交错
 
@@ -53,7 +53,7 @@ KSPROPERTY\_ALLOCATOR\_控制\_捕获\_交错属性会通知覆盖 Mixer 是否�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564274" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564274)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -84,7 +84,7 @@ KSPROPERTY\_ALLOCATOR\_控制\_捕获\_交错属性会通知覆盖 Mixer 是否�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_ALLOCATOR\_控制\_捕获\_交错\_S**](https://msdn.microsoft.com/library/windows/hardware/ff564274)
+[**KSPROPERTY\_ALLOCATOR\_控制\_捕获\_交错\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_allocator_control_capture_interleave_s)
 
  
 

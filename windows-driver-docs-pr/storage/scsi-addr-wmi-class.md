@@ -4,12 +4,12 @@ description: SCSI\_ADDR WMI 类
 ms.assetid: 720cf803-b004-4c63-8884-66b0e07d82c0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d50391a3f01b3ad6a3265bb0f3f8af5d8749950a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 426eaa6a7ec68dae4b86ed79391baf2391244a63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384330"
 ---
 # <a name="scsiaddr-wmi-class"></a>SCSI\_ADDR WMI 类
 
@@ -29,7 +29,7 @@ class SCSI_ADDR
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **SCSI\_ADDR** ](https://msdn.microsoft.com/library/windows/hardware/ff564952)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **SCSI\_ADDR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_scsi_addr)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

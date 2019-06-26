@@ -10,12 +10,12 @@ keywords:
 - 标识符 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f577dbc0ee727a9a379b129f8252d6d2c64d55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4893cb53a7b722f6fca6b9474b30c21beb53b2b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340900"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380659"
 ---
 # <a name="printer-dirids"></a>打印机 Dirids
 
@@ -23,7 +23,7 @@ ms.locfileid: "63340900"
 
 
 
-指定目标目录 INF 文件、 目录标识符时 (`dirids`) 应使用。 有关详细信息，请参阅[使用 Dirids](https://msdn.microsoft.com/library/windows/hardware/ff553598)。
+指定目标目录 INF 文件、 目录标识符时 (`dirids`) 应使用。 有关详细信息，请参阅[使用 Dirids](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids)。
 
 下表列出了特定于打印机的`dirids`和每个用途。
 
@@ -49,12 +49,12 @@ ms.locfileid: "63340900"
 <tr class="even">
 <td><p>66001</p></td>
 <td><p>表示返回的目录路径<a href="https://go.microsoft.com/fwlink/p/?linkid=124455" data-raw-source="[GetPrintProcessorDirectory](https://go.microsoft.com/fwlink/p/?linkid=124455)">GetPrintProcessorDirectory</a>函数。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556325#wdkgloss-print-processor" data-raw-source="&lt;em&gt;Print processor&lt;/em&gt;"><em>打印处理器</em></a>文件。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-print-processor" data-raw-source="&lt;em&gt;Print processor&lt;/em&gt;"><em>打印处理器</em></a>文件。</p></td>
 </tr>
 <tr class="odd">
 <td><p>66002</p></td>
 <td><p>表示要复制到本地系统 \System32 的其他文件的目录路径。 请参阅此表后面的段落。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556325#wdkgloss-print-monitor" data-raw-source="&lt;em&gt;Print monitor&lt;/em&gt;"><em>打印监控器</em></a>文件。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-print-monitor" data-raw-source="&lt;em&gt;Print monitor&lt;/em&gt;"><em>打印监控器</em></a>文件。</p></td>
 </tr>
 <tr class="even">
 <td><p>66003</p></td>

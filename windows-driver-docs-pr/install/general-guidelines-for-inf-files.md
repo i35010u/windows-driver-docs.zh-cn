@@ -6,12 +6,12 @@ keywords:
 - INF 文件 WDK 设备安装，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 788d55c9f1a0c810da0d0952cdf56d9f6fe40f51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8243684a9a4d0bda25a6119325b8cc44f9c0e377
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392512"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387332"
 ---
 # <a name="general-guidelines-for-inf-files"></a>INF 文件常规指南
 
@@ -24,11 +24,11 @@ INF 文件具有许多常见的部分，并遵循单一的语法规则集。 但
 
 -   你的设备类的文档。
 
-    例如，如果你的设备是打印机，请参阅[安装和配置打印机驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff551648)。
+    例如，如果你的设备是打印机，请参阅[安装和配置打印机驱动程序](https://docs.microsoft.com/windows-hardware/drivers/print/installing-and-configuring-printer-drivers)。
 
 -   WDK 的 INF 文件的工具。
 
-    有关详细信息，请参阅[INF 文件的工具](https://msdn.microsoft.com/library/windows/hardware/ff552956)。 这些工具包括在\\WDK 的 Tools 子目录。
+    有关详细信息，请参阅[INF 文件的工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-inf-files)。 这些工具包括在\\WDK 的 Tools 子目录。
 
 -   示例 INF 文件和类似的设备的 INF 文件。
 
@@ -36,7 +36,7 @@ INF 文件具有许多常见的部分，并遵循单一的语法规则集。 但
 
 您可以创建或使用在其中您可以控制的换行插入任何文本编辑器来修改 INF 文件。 如果你 INF 包含非 ASCII 字符，将文件另存 Unicode 文件。
 
-INF 文件附带 Windows 7 和更早的操作系统必须具有的文件名称<em>xxxxxxxx</em>**.inf**，其中"*xxxxxxxx*"不超过 8 个字符。 从操作系统是单独发售的 INF 文件的名称不局限于八个字符。
+INF 文件附带 Windows 7 和更早的操作系统必须具有的文件名称<em>xxxxxxxx</em> **.inf**，其中"*xxxxxxxx*"不超过 8 个字符。 从操作系统是单独发售的 INF 文件的名称不局限于八个字符。
 
 从 Windows 8 开始，INF 文件的名称不受限制为八个字符，而不考虑如果或不提供与操作系统。
 

@@ -4,12 +4,12 @@ description: NDIS 唤醒原因状态指示
 ms.assetid: 2F79CB52-0359-4E14-B7A2-49CA55568C44
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 577051950f2056e0e84c00aebdeddb74959e3946
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cc2b34004d9d5c9e257b4223371a8ad7281cbe7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368969"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383690"
 ---
 # <a name="ndis-wake-reason-status-indications"></a>NDIS 唤醒原因状态指示
 
@@ -18,11 +18,11 @@ ms.locfileid: "63368969"
 
 [**NDIS\_状态\_PM\_唤醒\_原因**](ndis-status-pm-wake-reason.md)
 
-[**NDIS\_PM\_唤醒\_数据包**](https://msdn.microsoft.com/library/windows/hardware/hh451603)
+[**NDIS\_PM\_唤醒\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)
 
-[**NDIS\_PM\_WAKE\_REASON**](https://msdn.microsoft.com/library/windows/hardware/hh451605)
+[**NDIS\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)
 
-[**NDIS\_PM\_WAKE\_REASON\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/hh451607)
+[**NDIS\_PM\_WAKE\_REASON\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_pm_wake_reason_type)
 
  
 

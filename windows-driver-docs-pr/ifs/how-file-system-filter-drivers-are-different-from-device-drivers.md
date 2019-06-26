@@ -8,12 +8,12 @@ keywords:
 - 设备驱动程序 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8212824fced83564cab1400c9cd5c5aa0b82dee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f4d832187a729ed2710771e1f2c31a62989521e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365858"
 ---
 # <a name="how-file-system-filter-drivers-are-different-from-device-drivers"></a>文件系统筛选器驱动程序与设备驱动程序的差异在哪里
 
@@ -25,15 +25,15 @@ ms.locfileid: "63379072"
 
 ### <a name="span-idnopowermanagementspanspan-idnopowermanagementspanspan-idnopowermanagementspanno-power-management"></a><span id="No_Power_Management"></span><span id="no_power_management"></span><span id="NO_POWER_MANAGEMENT"></span>无电源管理
 
-由于文件系统筛选器驱动程序不是设备驱动程序，并且因此并不直接控制硬件设备，它们不接收[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784)请求。 相反，power Irp 直接发送到存储设备堆栈。 在极少数情况下，但是，文件系统筛选器驱动程序可能会干扰电源管理。 出于此原因，文件系统筛选器驱动程序不应注册调度例程的 IRP\_MJ\_中的 POWER **DriverEntry**例程中，并且它们不应调用[PoXxx](https://msdn.microsoft.com/library/windows/hardware/ff559835)例程。
+由于文件系统筛选器驱动程序不是设备驱动程序，并且因此并不直接控制硬件设备，它们不接收[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)请求。 相反，power Irp 直接发送到存储设备堆栈。 在极少数情况下，但是，文件系统筛选器驱动程序可能会干扰电源管理。 出于此原因，文件系统筛选器驱动程序不应注册调度例程的 IRP\_MJ\_中的 POWER **DriverEntry**例程中，并且它们不应调用[PoXxx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)例程。
 
 ### <a name="span-idnowdmspanspan-idnowdmspanspan-idnowdmspanno-wdm"></a><span id="No_WDM"></span><span id="no_wdm"></span><span id="NO_WDM"></span>No WDM
 
-文件系统筛选器驱动程序不能为 Windows 驱动程序模型 (WDM) 驱动程序。 在 Microsoft [Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)仅适用于设备驱动程序。 有关在 Windows Me、 Windows 98 和 Windows 95 文件系统驱动程序开发的详细信息，请参阅 Windows Me 驱动程序开发工具包 (DDK)。
+文件系统筛选器驱动程序不能为 Windows 驱动程序模型 (WDM) 驱动程序。 在 Microsoft [Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)仅适用于设备驱动程序。 有关在 Windows Me、 Windows 98 和 Windows 95 文件系统驱动程序开发的详细信息，请参阅 Windows Me 驱动程序开发工具包 (DDK)。
 
 ### <a name="span-idnoadddeviceorstartiospanspan-idnoadddeviceorstartiospanspan-idnoadddeviceorstartiospanno-adddevice-or-startio"></a><span id="No_AddDevice_or_StartIo"></span><span id="no_adddevice_or_startio"></span><span id="NO_ADDDEVICE_OR_STARTIO"></span>没有 AddDevice 或 StartIo
 
-由于文件系统筛选器驱动程序不是设备驱动程序，并且因此并不直接控制硬件设备，不应这样做[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)或[ **StartIo**](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程。
+由于文件系统筛选器驱动程序不是设备驱动程序，并且因此并不直接控制硬件设备，不应这样做[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)或[ **StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程。
 
 ### <a name="span-iddifferentdeviceobjectscreatedspanspan-iddifferentdeviceobjectscreatedspanspan-iddifferentdeviceobjectscreatedspandifferent-device-objects-created"></a><span id="Different_Device_Objects_Created"></span><span id="different_device_objects_created"></span><span id="DIFFERENT_DEVICE_OBJECTS_CREATED"></span>创建不同的设备对象
 
@@ -45,7 +45,7 @@ ms.locfileid: "63379072"
 
 ### <a name="span-idotherdifferencesspanspan-idotherdifferencesspanspan-idotherdifferencesspanother-differences"></a><span id="Other_Differences"></span><span id="other_differences"></span><span id="OTHER_DIFFERENCES"></span>其他差异
 
-由于文件系统筛选器驱动程序不是设备驱动程序，它们不会执行[直接内存访问 (DMA)](https://msdn.microsoft.com/library/windows/hardware/ff565374)。
+由于文件系统筛选器驱动程序不是设备驱动程序，它们不会执行[直接内存访问 (DMA)](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o-with-dma)。
 
 与不同的设备筛选器驱动程序，它可以将附加高于或低于目标设备的功能驱动程序，文件系统筛选器驱动程序可以将附加仅上面的目标文件系统驱动程序。 因此，在设备驱动程序术语中，文件系统筛选器驱动程序可以是仅一个上限筛选器，永远不会较低的筛选器。
 

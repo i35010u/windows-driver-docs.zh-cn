@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b804bf7f2fd8cd580827f6a54df0bef192a20c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf3a6e36aaec881d46eb1307f45a732d0ed5036c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344593"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381767"
 ---
 # <a name="rxallocatepoolwithtag-function"></a>\_RxAllocatePoolWithTag 函数
 
@@ -55,7 +55,7 @@ VOID* _RxAllocatePoolWithTag(
 内存块，以字节为单位，并将其分配的大小。
 
 *标记*   
-要用于标记为已分配的缓冲区的四个字节标记。 有关如何使用标记的说明，请参阅[ **ExAllocatePoolWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff544520)。 在标记中的每个字符的 ASCII 值必须介于 0 和 127 之间。
+要用于标记为已分配的缓冲区的四个字节标记。 有关如何使用标记的说明，请参阅[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)。 在标记中的每个字符的 ASCII 值必须介于 0 和 127 之间。
 
 *FileName*   
 指向源文件名发生内存分配的指针。 当前未使用此参数。
@@ -71,9 +71,9 @@ VOID* _RxAllocatePoolWithTag(
 <a name="remarks"></a>备注
 -------
 
-建议**RxAllocatePoolWithTag**宏调用而不是直接使用此例程。 在零售版本中，定义此宏调用[ **ExAllocatePoolWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff544520)。 在 checked 版本中，定义此宏调用 **\_RxAllocatePoolWithTag**。
+建议**RxAllocatePoolWithTag**宏调用而不是直接使用此例程。 在零售版本中，定义此宏调用[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)。 在 checked 版本中，定义此宏调用 **\_RxAllocatePoolWithTag**。
 
- **\_RxAllocatePoolWithTag**例程调用**ExAllocatePoolWithTagPriority**优先级 （请求的重要性） 设置为 LowPoolPriority。 在资源上运行较低时，系统可能会失败 LowPoolPriority 的请求。 驱动程序应准备好使用此例程时从发生分配失败中恢复。
+**\_RxAllocatePoolWithTag**例程调用**ExAllocatePoolWithTagPriority**优先级 （请求的重要性） 设置为 LowPoolPriority。 在资源上运行较低时，系统可能会失败 LowPoolPriority 的请求。 驱动程序应准备好使用此例程时从发生分配失败中恢复。
 
 当系统分配从页池内存中的缓冲区\_大小或更高版本，它将对齐页边界上的缓冲区。 小于页内存请求\_大小不一定是页边界上对齐，但始终适合单个页面，和一个 8 字节边界上对齐。 请求的块大小超过页任何成功分配\_大小不是页面的倍数\_大小浪费了上一次分配页上所有未使用的字节数。
 
@@ -110,11 +110,11 @@ VOID* _RxAllocatePoolWithTag(
 ## <a name="see-also"></a>请参阅
 
 
-[**ExAllocatePoolWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff544520)
+[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)
 
-[**\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
+[ **\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
 
-[**\_RxFreePool**](-rxfreepool.md)
+[ **\_RxFreePool**](-rxfreepool.md)
 
  
 

@@ -4,12 +4,12 @@ description: 编写 WDM 驱动程序
 ms.assetid: 379305f0-3caa-4c8d-add5-17e8c83f2429
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2b894bcff2e80d3fa24cb2168164efe883632349
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 299fecf0640617a4467adfc5adba004158a47152
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370567"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374098"
 ---
 # <a name="writing-wdm-drivers"></a>编写 WDM 驱动程序
 
@@ -30,7 +30,7 @@ ms.locfileid: "63370567"
 
     一个*设备驱动程序*是一套软件代码，必须将集成到操作系统。 若要完成这种集成，您必须编写的一组处理程序例程中您的驱动程序在进程调用从操作系统。 这些例程可以是简单的函数调用，但其中许多实现处理*I/O 请求数据包*(Irp)，这将简化驱动程序和操作系统之间的通信。
 
-**请注意**  WDM 驱动程序还可以使用 Windows 驱动程序框架 (WDF) 库来轻松地编写设备驱动程序的某些部分。 具体而言，内核模式驱动程序可以使用内核模式驱动程序框架 (KMDF)，它是 WDF 的一部分。 有关 KMDF 内核模式驱动程序的详细信息，请参阅[内核模式驱动程序框架概述](https://msdn.microsoft.com/library/windows/hardware/ff544296)。 请注意 KMDF 不会替换 WDM。 仍必须了解 WDM 编写 KMDF 驱动程序中的不同部分。
+**请注意**  WDM 驱动程序还可以使用 Windows 驱动程序框架 (WDF) 库来轻松地编写设备驱动程序的某些部分。 具体而言，内核模式驱动程序可以使用内核模式驱动程序框架 (KMDF)，它是 WDF 的一部分。 有关 KMDF 内核模式驱动程序的详细信息，请参阅[内核模式驱动程序框架概述](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)。 请注意 KMDF 不会替换 WDM。 仍必须了解 WDM 编写 KMDF 驱动程序中的不同部分。
 
  
 

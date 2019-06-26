@@ -4,12 +4,12 @@ description: Windows XP 和 Windows Me 的 WIA 送纸器扫描仪兼容性
 ms.assetid: 7877943e-ee61-455d-b489-db223e1ddbe1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd54ce7772b237476bbb60450dbfea5f4aad6435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f72ce533f971f5357c63ef192068363aefadcfc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388643"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365025"
 ---
 # <a name="wia-feeder-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP 和 Windows Me 的 WIA 送纸器扫描仪兼容性
 
@@ -21,7 +21,7 @@ ms.locfileid: "63388643"
 
 ### <a name="changes-from-windows-xp-to-windows-vista"></a>从 Windows XP 到 Windows Vista 的更改
 
-已更改的 Windows XP 和 Windows Vista 之间如何处理扫描的次数。 例如，在 Windows Vista 中，每个功能单元属于单独的类别。 这些类别都包含在[ **WIA\_IPA\_项\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff551581)属性设置为 WIA\_类别\_的送纸器进纸器和 WIA\_类别\_平板的平板。 如果这两项都是在 Windows Vista 出现在扫描仪上，都必须在项目树中表示。 在 Windows XP 中，在项目树中表示扫描仪功能单元的所有出现的单个扫描项。
+已更改的 Windows XP 和 Windows Vista 之间如何处理扫描的次数。 例如，在 Windows Vista 中，每个功能单元属于单独的类别。 这些类别都包含在[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性设置为 WIA\_类别\_的送纸器进纸器和 WIA\_类别\_平板的平板。 如果这两项都是在 Windows Vista 出现在扫描仪上，都必须在项目树中表示。 在 Windows XP 中，在项目树中表示扫描仪功能单元的所有出现的单个扫描项。
 
 下图显示在 Windows XP 中的扫描程序项树。
 

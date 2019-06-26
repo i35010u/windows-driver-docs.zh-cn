@@ -5,12 +5,12 @@ ms.assetid: 2a093bcb-ae6f-491c-a596-03e6f47b0b86
 ms.date: 08/08/2017
 keywords: -OID_GEN_MAC_OPTIONS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 23254474b06ed189ad93c274aad890b4f7893bdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bd0808748c52707354155a052c832c2e51b8ea9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359005"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369057"
 ---
 # <a name="oidgenmacoptions"></a>OID\_GEN\_MAC\_选项
 
@@ -52,7 +52,7 @@ NDIS NDIS 6.0 和更高版本的微型端口驱动程序处理此 OID。
 <a href="" id="ndis-mac-option-transfers-not-pend"></a>NDIS\_MAC\_选项\_传输\_不\_挂起  
 微型端口驱动程序永远不会完成异步接收的指示。
 
-指示的微型端口驱动程序收到具有操作[ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)函数应设置此标志。
+指示的微型端口驱动程序收到具有操作[ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)函数应设置此标志。
 
 <a href="" id="ndis-mac-option-no-loopback"></a>NDIS\_MAC\_选项\_否\_环回  
 因此 NDIS 将代表此驱动程序管理环回的 NIC 具有任何内部环回支持。 微型端口驱动程序不能提供其自己的软件环回高效的方式 NDIS，因此每个微型端口驱动程序应设置此标志，除非 NIC 有硬件环回支持。 WAN 微型端口驱动程序必须设置此标志。
@@ -68,20 +68,20 @@ NDIS NDIS 6.0 和更高版本的微型端口驱动程序处理此 OID。
 此标志已过时。
 
 <a href="" id="ndis-mac-option-8021p-priority"></a>NDIS\_MAC\_选项\_8021 P\_优先级  
-NIC 及其驱动程序支持的 802.1p 数据包优先级。 有关详细信息，请参阅[数据包优先级](https://msdn.microsoft.com/library/windows/hardware/ff562331)。 在接收数据包优先级值[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)更高层的驱动程序的结构。 数据包的 MAC 标头中生成相应的信息并将其通过网络传输。 此外，此 NIC 和其驱动程序支持来自从网络接收的数据包 MAC 标头中提取适当的信息。 此信息转发在 NET\_缓冲区到更高层的驱动程序的结构。
+NIC 及其驱动程序支持的 802.1p 数据包优先级。 有关详细信息，请参阅[数据包优先级](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562331(v=vs.85))。 在接收数据包优先级值[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)更高层的驱动程序的结构。 数据包的 MAC 标头中生成相应的信息并将其通过网络传输。 此外，此 NIC 和其驱动程序支持来自从网络接收的数据包 MAC 标头中提取适当的信息。 此信息转发在 NET\_缓冲区到更高层的驱动程序的结构。
 
 **请注意**  NDIS 6.0 和更高版本和更高版本及更高版本的微型端口驱动程序必须设置 NDIS\_MAC\_选项\_8021 P\_优先级标志。
 
  
 
 <a href="" id="ndis-mac-option-supports-mac-address-overwrite"></a>NDIS\_MAC\_选项\_支持\_MAC\_地址\_覆盖  
-NDIS 微型端口驱动程序调用时设置此标志[ **NdisReadNetworkAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff564512)函数。
+NDIS 微型端口驱动程序调用时设置此标志[ **NdisReadNetworkAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)函数。
 
 <a href="" id="ndis-mac-option-receive-at-dpc"></a>NDIS\_MAC\_OPTION\_RECEIVE\_AT\_DPC  
 此标志已过时。
 
 <a href="" id="ndis-mac-option-8021q-vlan"></a>NDIS\_MAC\_OPTION\_8021Q\_VLAN  
-微型端口驱动程序可以分配和数据包的 MAC 标头中删除 VLAN 标识符 (ID) 标记。 该驱动程序维护驱动程序处理每个 NIC 配置的 VLAN ID。 该驱动程序筛选掉不属于的 VLAN 到的 NIC 相关联，并将标记与 VLAN ID 的传出数据包的传入数据包 在驱动程序的过程[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数特定的 NIC，驱动程序的最初设置为零的 NIC 的 VLAN ID。 在驱动程序*MiniportInitializeEx*函数然后读取以下配置参数从注册表中，并，如果存在，参数，则 NIC 的 VLAN ID 设置为参数的值。
+微型端口驱动程序可以分配和数据包的 MAC 标头中删除 VLAN 标识符 (ID) 标记。 该驱动程序维护驱动程序处理每个 NIC 配置的 VLAN ID。 该驱动程序筛选掉不属于的 VLAN 到的 NIC 相关联，并将标记与 VLAN ID 的传出数据包的传入数据包 在驱动程序的过程[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数特定的 NIC，驱动程序的最初设置为零的 NIC 的 VLAN ID。 在驱动程序*MiniportInitializeEx*函数然后读取以下配置参数从注册表中，并，如果存在，参数，则 NIC 的 VLAN ID 设置为参数的值。
 
 ```syntax
 VlanId, REG_DWORD
@@ -113,11 +113,11 @@ VlanId, REG_DWORD
 ## <a name="see-also"></a>请参阅
 
 
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
-[**NdisReadNetworkAddress**](https://msdn.microsoft.com/library/windows/hardware/ff564512)
+[**NdisReadNetworkAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)
 
-[**NET\_BUFFER**](https://msdn.microsoft.com/library/windows/hardware/ff568376)
+[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)
 
  
 

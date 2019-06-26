@@ -8,12 +8,12 @@ keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，正在删除实例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c567f73f0b75538f94c00486fd688a3f70a9942b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 140414cebfb2a6d3ef7fda237e9844e26907b780
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348895"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384896"
 ---
 # <a name="deleting-instances-of-directx-va-device-objects"></a>删除 DirectX VA 设备对象的实例
 
@@ -21,7 +21,7 @@ ms.locfileid: "63348895"
 ## <span id="ddk_deleting_instances_of_directx_va_device_objects_gg"></span><span id="DDK_DELETING_INSTANCES_OF_DIRECTX_VA_DEVICE_OBJECTS_GG"></span>
 
 
-下面的示例代码用于删除 DirectX VA 设备对象的实例。 此代码是实现[ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)回调函数。 **DestroyMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)结构指向回调函数。
+下面的示例代码用于删除 DirectX VA 设备对象的实例。 此代码是实现[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)回调函数。 **DestroyMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构指向回调函数。
 
 ```cpp
 DWORD APIENTRY

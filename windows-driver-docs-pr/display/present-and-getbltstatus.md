@@ -10,12 +10,12 @@ keywords:
 - DdGetBltStatus
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cab5d2eec86f70402741518a4c81bd7b072fe85a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14aa4edffd07f8a48f0da46e08aaf603c4eeeb12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371368"
 ---
 # <a name="present-and-getbltstatus"></a>呈现和 GetBltStatus
 
@@ -23,7 +23,7 @@ ms.locfileid: "63352215"
 ## <span id="ddk_present_and_getbltstatus_gg"></span><span id="DDK_PRESENT_AND_GETBLTSTATUS_GG"></span>
 
 
-对于 DX8 运行时不会再调用[ *DdGetBltStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff549385) blts 涉及系统内存图面上。 这始终是 Windows 2000 上的行为。 结果是不再可以异步 DMA 到或从系统内存图面。 DX8 驱动程序不应本身是页锁定系统内存图面和视频内存传输到系统内存应该同步。
+对于 DX8 运行时不会再调用[ *DdGetBltStatus* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_getbltstatus) blts 涉及系统内存图面上。 这始终是 Windows 2000 上的行为。 结果是不再可以异步 DMA 到或从系统内存图面。 DX8 驱动程序不应本身是页锁定系统内存图面和视频内存传输到系统内存应该同步。
 
  
 

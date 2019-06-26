@@ -4,12 +4,12 @@ description: 设备阶段常规开发工具包
 ms.assetid: 259b3ac8-b9d3-4cbd-a003-e2d59e76bc1f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bac509276ceafc15c938b85fac3bc662bfba128
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ae4b098d43ac55895ee23b37c6bb9933c43a3b6
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391994"
 ---
 # <a name="device-stage-general-development-kit"></a>设备阶段常规开发工具包
 
@@ -27,7 +27,7 @@ ms.locfileid: "63365350"
 -   **Windows 7 设备阶段开发示例**-一系列示例图形和工具来帮助开发 Device Stage 体验。
 
 ## <a name="related-topics"></a>相关主题
-[Microsoft 设备体验开发工具包](https://msdn.microsoft.com/library/windows/hardware/gg463154)  
+[Microsoft 设备体验开发工具包](https://docs.microsoft.com/previous-versions/windows/hardware/device-stage/dn629504(v=vs.85))  
 
 
 

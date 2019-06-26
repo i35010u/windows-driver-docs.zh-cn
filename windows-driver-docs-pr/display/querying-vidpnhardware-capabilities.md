@@ -6,23 +6,23 @@ keywords:
 - VidPN WDK 显示，硬件功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 725186db025fb355b48200ad21a2b88eb1404c51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88bb6f4c110daa46412ae973c8ca82ebdae27849
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351458"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385044"
 ---
 # <a name="querying-vidpn-hardware-capabilities"></a>查询 VidPN 硬件功能
 
 
 从 Windows 7 开始，显示微型端口驱动程序所需报告的指定功能 VidPN 的所有硬件功能。 驱动程序应支持以下的回调函数和其关联的结构：
 
--   [**DxgkDdiQueryVidPnHWCapability** ](https://msdn.microsoft.com/library/windows/hardware/ff559771)函数
+-   [**DxgkDdiQueryVidPnHWCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)函数
 
--   [**DXGKARG\_QUERYVIDPNHWCAPABILITY** ](https://msdn.microsoft.com/library/windows/hardware/ff557628)结构
+-   [**DXGKARG\_QUERYVIDPNHWCAPABILITY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryvidpnhwcapability)结构
 
--   [**D3DKMDT\_VIDPN\_HW\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff546639)结构
+-   [**D3DKMDT\_VIDPN\_HW\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)结构
 
 当驱动程序报告的硬件功能时，应考虑克隆一个隐式过程，都将作为一部分旋转或缩放转换： 旋转或缩放之前，必须先克隆源。
 
@@ -38,7 +38,7 @@ ms.locfileid: "63351458"
 
 -   **P3:** 源 S2 有任何已应用的转换。
 
-当[ **DxgkDdiQueryVidPnHWCapability** ](https://msdn.microsoft.com/library/windows/hardware/ff559771)是调用，则驱动程序应返回旋转、 缩放和克隆的成员的值[ **D3DKMDT\_VIDPN\_HW\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff546639)根据下表：
+当[ **DxgkDdiQueryVidPnHWCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)是调用，则驱动程序应返回旋转、 缩放和克隆的成员的值[ **D3DKMDT\_VIDPN\_HW\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)根据下表：
 
 D3DKMDT 成员的返回值\_VIDPN\_HW\_功能的硬件功能 VidPN 路径 DriverRotation DriverScaling DriverCloning 硬件可以执行所有旋转、 缩放和克隆的转换。
 

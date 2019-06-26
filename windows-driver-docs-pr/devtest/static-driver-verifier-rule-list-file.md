@@ -12,17 +12,17 @@ keywords:
 - 文件的规则列表 WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa8da1ae137057ab2f609acf2edb7f919c6246e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb972d38a2852709079eb73e4234b9aa8ed0ddcd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365164"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375638"
 ---
 # <a name="static-driver-verifier-rule-list-file"></a>静态驱动程序验证程序规则列表文件
 
 
-SDV 规则列表文件是一个文本文件，其中列出了一个或多个[Static Driver Verifier 规则](https://msdn.microsoft.com/library/windows/hardware/ff551714)或规则名称模式，其中一条规则或规则在每一行上的名称模式。 这些规则可以按任意顺序显示，且它们验证它们出现的顺序。 文件扩展名为.sdv 文件，如 Test.sdv。
+SDV 规则列表文件是一个文本文件，其中列出了一个或多个[Static Driver Verifier 规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)或规则名称模式，其中一条规则或规则在每一行上的名称模式。 这些规则可以按任意顺序显示，且它们验证它们出现的顺序。 文件扩展名为.sdv 文件，如 Test.sdv。
 
 每个行列出该条例可在一个规则的名称，也可以是通配符 (\*)，它表示所有 SDV 规则。
 

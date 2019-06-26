@@ -7,12 +7,12 @@ keywords:
 - 如果不使用拆分 WDK 网络的以太网帧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c09a64994118e165413f086281dd0250655638a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 082039603369df6496062444d400a2ca5b766d7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382793"
 ---
 # <a name="cases-where-header-data-split-is-not-used"></a>不使用标头数据拆分的情况
 
@@ -26,7 +26,7 @@ ms.locfileid: "63368335"
 
  
 
-所有不会拆分的以太网帧必须遵循的一般 NDIS 规则和要求。 例如，在收到 MDLs 链中的第一个 MDL [ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构必须包含在帧的预测先行一部分或整个以太网帧 （两者中较小）中的几乎连续的缓冲区。 NDIS 设置与预期的大小[OID\_代\_当前\_预测先行](https://msdn.microsoft.com/library/windows/hardware/ff569574)OID。
+所有不会拆分的以太网帧必须遵循的一般 NDIS 规则和要求。 例如，在收到 MDLs 链中的第一个 MDL [ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构必须包含在帧的预测先行一部分或整个以太网帧 （两者中较小）中的几乎连续的缓冲区。 NDIS 设置与预期的大小[OID\_代\_当前\_预测先行](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-lookahead)OID。
 
 标头数据拆分提供程序：
 

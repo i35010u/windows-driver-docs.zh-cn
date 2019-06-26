@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f73493b5080a2b24fdc6b0f6e4eaf10aa6c990f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d495496e5ebee66857521b76621983dbdc352a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367479"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367287"
 ---
 # <a name="bug-check-0x8e-kernelmodeexceptionnothandled"></a>Bug 检查 0x8E：内核\_模式下\_异常\_不\_已处理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367479"
 内核\_模式下\_异常\_不\_已处理错误检查的值为 0x0000008E。 检查此错误指示在内核模式应用程序生成的错误处理程序未捕获异常。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="kernelmodeexceptionnothandled-parameters"></a>内核\_模式下\_异常\_不\_HANDLED 参数

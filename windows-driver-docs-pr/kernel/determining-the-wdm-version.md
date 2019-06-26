@@ -9,12 +9,12 @@ keywords:
 - 跨系统的兼容性 WDK WDM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 211181f5b725dfd50cedd9736d56a60a992d5c7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de1d9dc98cb1f47e9101e91883ae98dd2639424e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388176"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371269"
 ---
 # <a name="determining-the-wdm-version"></a>确定 WDM 版本
 
@@ -22,7 +22,7 @@ ms.locfileid: "63388176"
 
 
 
-跨系统 WDM 驱动程序应使用[ **IoIsWdmVersionAvailable** ](https://msdn.microsoft.com/library/windows/hardware/ff549382)例程，以确定哪个版本的 WDM 支持通过在其运行的系统。 参考页**IoIsWdmVersionAvailable**提供了一系列 WDM 版本号。
+跨系统 WDM 驱动程序应使用[ **IoIsWdmVersionAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioiswdmversionavailable)例程，以确定哪个版本的 WDM 支持通过在其运行的系统。 参考页**IoIsWdmVersionAvailable**提供了一系列 WDM 版本号。
 
 WDM 驱动程序应处理的差异的信息，请参阅[WDM 版本差异](differences-in-wdm-versions.md)。
 

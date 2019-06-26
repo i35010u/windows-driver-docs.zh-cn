@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ce2b8e539c4c8f1fc6eace35a0b597a7d1ce8b57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1df48917dd22ad82438f6d7d1be52ead37db47af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387092"
 ---
 # <a name="devpkeydeviceclass"></a>DEVPKEY_Device_Class
 
 
-DEVPKEY_Device_Class 设备属性表示的名称[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)属于设备实例。
+DEVPKEY_Device_Class 设备属性表示的名称[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)属于设备实例。
 
 <table>
 <colgroup>
@@ -60,11 +60,11 @@ DEVPKEY_Device_Class 设备属性表示的名称[设备安装程序类](https://
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_Class 属性的值将由*类名*类中的指令提供的值[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff546326)的 INF 文件安装设备。
+DEVPKEY_Device_Class 属性的值将由*类名*类中的指令提供的值[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)的 INF 文件安装设备。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_Class 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Class 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_Class 属性键。 相反，相应的 SPDRP_CLASS 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_Class 属性键。 相反，相应的 SPDRP_CLASS 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff546326)
+[**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

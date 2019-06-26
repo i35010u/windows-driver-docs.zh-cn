@@ -13,12 +13,12 @@ keywords:
 - 描述符 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59000e54a1b35e33d382fdeaae7ad943ded5232e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7d35628bd23d5f87dc3db0fc9dcbc799a9c035d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345972"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377516"
 ---
 # <a name="object-bags"></a>对象包
 
@@ -28,15 +28,15 @@ ms.locfileid: "63345972"
 
 AVStream 管理称为微型驱动程序可以看到每个 AVStream 对象对象包的构造。 对象包是一个通用容器用于保存动态分配的内存与给定对象相关联。
 
-以下结构具有成员类型 KSOBJECT\_袋，这相当于 PVOID:[**KSDEVICE**](https://msdn.microsoft.com/library/windows/hardware/ff561681)， [ **KSFILTERFACTORY**](https://msdn.microsoft.com/library/windows/hardware/ff562530)， [ **KSFILTER**](https://msdn.microsoft.com/library/windows/hardware/ff562522)，和[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483)。
+以下结构具有成员类型 KSOBJECT\_袋，这相当于 PVOID:[**KSDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice)， [ **KSFILTERFACTORY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilterfactory)， [ **KSFILTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter)，和[ **KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin)。
 
 对象包的用途包括：
 
 -   内存管理。
 
-    微型驱动程序可以使用内存管理对象的包以减少清理工作。 若要执行此操作，微型驱动程序首先必须调用[ **ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)分配动态内存，并将其与给定的对象相关联。 微型驱动程序然后将添加已分配的内存对象包到通过调用[ **KsAddItemToObjectBag**](https://msdn.microsoft.com/library/windows/hardware/ff560941)。
+    微型驱动程序可以使用内存管理对象的包以减少清理工作。 若要执行此操作，微型驱动程序首先必须调用[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)分配动态内存，并将其与给定的对象相关联。 微型驱动程序然后将添加已分配的内存对象包到通过调用[ **KsAddItemToObjectBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksadditemtoobjectbag)。
 
-    当调用微型驱动程序**KsAddItemToObjectBag**，AVStream 将默认清理函数相关联 (通常[ **ExFreePool**](https://msdn.microsoft.com/library/windows/hardware/ff544590)) 与对象。 或者，微型驱动程序可以包含指向中的微型驱动程序提供清理例程的指针*免费*的参数**KsAddItemToObjectBag**。 当对象已关闭时，AVStream 从对象包中删除的每个项，并调用相关联的清理例程。
+    当调用微型驱动程序**KsAddItemToObjectBag**，AVStream 将默认清理函数相关联 (通常[ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)) 与对象。 或者，微型驱动程序可以包含指向中的微型驱动程序提供清理例程的指针*免费*的参数**KsAddItemToObjectBag**。 当对象已关闭时，AVStream 从对象包中删除的每个项，并调用相关联的清理例程。
 
 -   动态共享分配多个 AVStream 对象之间的数据。
 
@@ -44,11 +44,11 @@ AVStream 管理称为微型驱动程序可以看到每个 AVStream 对象对象�
 
 -   确定哪个结构可以使用描述符进行编辑。
 
-    如果微型驱动程序动态分配一个描述符或描述符子结构，微型驱动程序将包中的相关对象的描述符。 [  **\_KsEdit** ](https://msdn.microsoft.com/library/windows/hardware/ff568796)函数然后使用此信息来确定是否可以编辑给定的结构。
+    如果微型驱动程序动态分配一个描述符或描述符子结构，微型驱动程序将包中的相关对象的描述符。 [  **\_KsEdit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-_ksedit)函数然后使用此信息来确定是否可以编辑给定的结构。
 
 AVStream 自动从移除项对象包如果删除所属的对象。
 
-微型驱动程序可以各项从包中取出对象通过调用[ **KsRemoveItemFromObjectBag** ](https://msdn.microsoft.com/library/windows/hardware/ff566798)或[ **KsDiscard**](https://msdn.microsoft.com/library/windows/hardware/ff561695)。
+微型驱动程序可以各项从包中取出对象通过调用[ **KsRemoveItemFromObjectBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksremoveitemfromobjectbag)或[ **KsDiscard**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksdiscard)。
 
  
 

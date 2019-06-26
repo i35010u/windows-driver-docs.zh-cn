@@ -9,12 +9,12 @@ keywords:
 - 任务卸载，WDK TCP/IP 传输，禁用服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96d5c49b7248831820cf2944f15172c23056bf83
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 8d3f1a7c9db0e82fcf7e440657fd0d5d08a613ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161553"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377954"
 ---
 # <a name="using-registry-values-to-enable-and-disable-task-offloading"></a>使用注册表值启用和禁用任务卸载
 
@@ -397,7 +397,7 @@ ms.locfileid: "67161553"
 
 没有限制的卸载，还可以启用组合。 例如，如果微型端口适配器支持 LSOV1 或 LSOV2，微型端口适配器也会计算 IP 和 TCP 校验和。 有关卸载的有效组合的详细信息，请参阅[合并类型的任务将卸载](combining-types-of-task-offloads.md)。
 
-如果使用注册表项设置禁用了任务卸载服务，协议驱动程序必须发出[OID\_卸载\_封装](https://msdn.microsoft.com/library/windows/hardware/ff569762)对象标识符 (OID)。
+如果使用注册表项设置禁用了任务卸载服务，协议驱动程序必须发出[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)对象标识符 (OID)。
 
 以下注册表值可用于启用或禁用任务卸载 TCP/IP 协议：
 

@@ -4,12 +4,12 @@ description: 移动宽带 Windows 运行时 API 的列表
 ms.assetid: 45ec97c4-1a58-48a8-ad50-1cd8fcc4763f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 561d6c1eabda02ac372a62d083f855c7100ccdab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 012b3c123212d25212154fa7dc338f06f7281273
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380377"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364975"
 ---
 # <a name="list-of-mobile-broadband-windows-runtime-apis"></a>移动宽带 Windows 运行时 API 的列表
 
@@ -80,7 +80,7 @@ ms.locfileid: "63380377"
     <DeviceCapability Name="BFCD56F7-3943-457F-A312-2E19BB6DC648" />
     ```
 
-    有关详细信息 **&lt;功能&gt;** 元素中，请参阅[应用程序清单文件适用于 Windows 8 的](https://msdn.microsoft.com/library/windows/apps/ff769509.aspx)。
+    有关详细信息 **&lt;功能&gt;** 元素中，请参阅[应用程序清单文件适用于 Windows 8 的](https://docs.microsoft.com/previous-versions/windows/apps/ff769509(v=vs.105))。
 
 **请注意**  不 UWP 应用 （例如，Microsoft Win32 服务或桌面应用程序） 的应用程序可以无限制地访问移动宽带帐户 API。 这是因为这些应用程序可以使用现有 Win32 和组件对象模型 (COM) Api 获取到移动宽带网络的完全访问权限。 不能从 UWP 应用使用这些 Api。
 

@@ -10,12 +10,12 @@ keywords:
 - 验证可移动介质进行的更改
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc426505fbccbd5d3fb650e44c61b51f2f5692e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c62e86aee271216507619a3825b0b24e5071f946
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373391"
 ---
 # <a name="responding-to-check-verify-requests-from-the-file-system"></a>响应来自文件系统的 Check-Verify 请求
 
@@ -23,7 +23,7 @@ ms.locfileid: "63324545"
 
 
 
-自行，文件系统可以将 IRP 发送到设备驱动程序的调度入口点[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744) 请求**Parameters.DeviceIoControl.IoControlCode**中 I/O 堆栈设置为以下位置：
+自行，文件系统可以将 IRP 发送到设备驱动程序的调度入口点[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) 请求**Parameters.DeviceIoControl.IoControlCode**中 I/O 堆栈设置为以下位置：
 
 <a href="" id="ioctl-xxx-check-verify"></a>IOCTL\_*XXX*\_检查\_验证  
 其中*XXX*是设备，如磁盘、 磁带或光盘的类型。
@@ -61,7 +61,7 @@ ms.locfileid: "63324545"
     -   **状态**将设置为 STATUS\_验证\_必需
     -   **信息**设置为零
 
-3.  调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP 中的输入。
+3.  调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP 中的输入。
 
 如果未装入卷，该驱动程序必须未设置 DO\_验证\_卷位。 该驱动程序应设置**IoStatus.Status**于状态\_IO\_设备\_错误，设置**IoStatus.Information**为零，并调用**IoCompleteRequest**与 IRP。
 

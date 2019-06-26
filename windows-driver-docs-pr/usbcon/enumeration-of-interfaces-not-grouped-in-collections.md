@@ -3,12 +3,12 @@ Description: 复合的 USB 设备上的接口可以在集合中分组或分别�
 title: 枚举 USB 复合设备上的接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf80573b7a1b02012e13216d1215a8bf6b90e30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d6f815574f91886c2e9427fe6947bffe8df628f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383021"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386269"
 ---
 # <a name="enumeration-of-interfaces-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口
 
@@ -25,7 +25,7 @@ ms.locfileid: "63383021"
 -   *p(4)* 是供应商将分配给设备的四位数字产品代码。
 -   *z(2)* 是从提取接口编号**bInterfaceNumber**接口描述符字段。
 
-泛型父驱动程序还会生成以下兼容 Id，通过使用接口描述符中的信息 ([**USB\_界面\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff540065)):
+泛型父驱动程序还会生成以下兼容 Id，通过使用接口描述符中的信息 ([**USB\_界面\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor)):
 
 `USB\CLASS_d(2)&SUBCLASS_s(2)&PROT_p(2)`
 

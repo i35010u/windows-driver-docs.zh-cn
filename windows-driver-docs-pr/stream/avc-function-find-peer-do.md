@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 127827166f1aa10ebb74ff3087e6a74af4d181b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1fee2d0e0c39508038a39cabc28e1f63e80eaf6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331711"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386748"
 ---
 # <a name="avcfunctionfindpeerdo"></a>AVC\_函数\_查找\_对等方\_执行操作
 
@@ -95,7 +95,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="see-also"></a>请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)， [ **AVC\_对等方\_执行\_定位器**](https://msdn.microsoft.com/library/windows/hardware/ff554180)， [**AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)， [ **ObDereferenceObject**](https://msdn.microsoft.com/library/windows/hardware/ff557724)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)， [ **AVC\_对等方\_执行\_定位器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_peer_do_locator)， [**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)， [ **ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)
 
  
 

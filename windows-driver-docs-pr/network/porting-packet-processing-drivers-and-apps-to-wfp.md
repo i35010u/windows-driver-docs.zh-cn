@@ -4,12 +4,12 @@ description: Windows 筛选平台 (WFP) 启用 TCP/IP 数据包筛选、 检查�
 ms.assetid: 9BB77BB8-1382-4F65-A4E8-80E229F43425
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 457f1a5bfbfb09344ff7996d10f3b68c43402b41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3153db6cbf5736171d24e1587a2a6f27af6c95d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342976"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384540"
 ---
 # <a name="porting-packet-processing-drivers-and-apps-to-wfp"></a>将数据包处理驱动程序和应用移植到 WFP
 
@@ -34,23 +34,23 @@ Windows 筛选平台 (WFP) 启用 TCP/IP 数据包筛选、 检查和修改、 �
 <tbody>
 <tr class="odd">
 <td align="left">防火墙钩或筛选器将挂钩适用于简单的数据包筛选驱动程序。</td>
-<td align="left">用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</td>
+<td align="left">用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</td>
 </tr>
 <tr class="even">
 <td align="left">防火墙钩或筛选器将挂钩深度数据包检查或修改驱动程序。</td>
-<td align="left">IP 层、 传输层或应用程序层强制 (ALE) 层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</td>
+<td align="left">IP 层、 传输层或应用程序层强制 (ALE) 层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</td>
 </tr>
 <tr class="odd">
 <td align="left">传输驱动程序接口 (TDI) 筛选器驱动程序进行简单的数据包筛选。</td>
-<td align="left">用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</td>
+<td align="left">用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</td>
 </tr>
 <tr class="even">
 <td align="left">有关深入的数据包或流检查或修改 TDI 筛选器驱动程序。</td>
-<td align="left"><p>传输层、 Stream 层和/或 ALE 标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a></p></td>
+<td align="left"><p>传输层、 Stream 层和/或 ALE 标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left">为 TCP 连接或用户数据报协议 (UDP) 流量管理 TDI 筛选器驱动程序。</td>
-<td align="left"><p>用于 TCP 连接管理：ALE 标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</p>
+<td align="left"><p>用于 TCP 连接管理：ALE 标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</p>
 <p>对于 TCP 代理：</p>
 <ul>
 <li>在 Windows Vista 中：数据包修改标注驱动程序。</li>
@@ -61,19 +61,19 @@ Windows 筛选平台 (WFP) 启用 TCP/IP 数据包筛选、 检查和修改、 �
 <li>在 Windows 8 和更高版本：MAC_FRAME 层标注驱动程序。</li>
 <li>在 Windows Vista 和 Windows 7:NDIS 轻型筛选器驱动程序。</li>
 </ul>
-<p>对于 UDP 流量管理：Stream 或数据报数据层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</p></td>
+<p>对于 UDP 流量管理：Stream 或数据报数据层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">Windows 套接字 LSP 进行简单的数据包筛选。</td>
-<td align="left">用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</td>
+<td align="left">用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</td>
 </tr>
 <tr class="odd">
 <td align="left">Windows 套接字 LSP 深度数据包检查或修改。</td>
-<td align="left"><p>IP 层，ALE、 传输协议 （如数据报数据），或 Stream 层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</p></td>
+<td align="left"><p>IP 层，ALE、 传输协议 （如数据报数据），或 Stream 层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">网络设备接口规范 (NDIS) 中间层进行简单的数据包筛选驱动程序。</td>
-<td align="left"><p>为基于 IP 的筛选：用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</p>
+<td align="left"><p>为基于 IP 的筛选：用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</p>
 <p>为基于 MAC 的筛选：</p>
 <ul>
 <li>在 Windows 8 和更高版本：MAC_FRAME 层标注驱动程序。</li>
@@ -82,8 +82,8 @@ Windows 筛选平台 (WFP) 启用 TCP/IP 数据包筛选、 检查和修改、 �
 </tr>
 <tr class="odd">
 <td align="left">为 TCP 连接或 UDP 流量管理的 NDIS 中间驱动程序。</td>
-<td align="left"><p>TCP 连接管理：ALE 标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</p>
-<p>UDP 流量管理：ALE 或传输层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://msdn.microsoft.com/library/windows/desktop/aa366510" data-raw-source="[WFP Win32 API](https://msdn.microsoft.com/library/windows/desktop/aa366510)">WFP Win32 API</a>。</p></td>
+<td align="left"><p>TCP 连接管理：ALE 标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</p>
+<p>UDP 流量管理：ALE 或传输层标注驱动程序和可选的用户模式应用程序或服务，它使用<a href="https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page" data-raw-source="[WFP Win32 API](https://docs.microsoft.com/windows/desktop/FWP/windows-filtering-platform-start-page)">WFP Win32 API</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">NDIS 轻型筛选器驱动程序来执行媒体访问控制 (MAC) 的级别筛选。</td>

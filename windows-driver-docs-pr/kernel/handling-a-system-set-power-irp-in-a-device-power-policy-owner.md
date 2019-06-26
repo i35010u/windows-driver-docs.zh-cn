@@ -7,12 +7,12 @@ keywords:
 - 设备电源策略所有者 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e8cb45d24f56a788d75a8c91cca222847fae21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c528b72cf6a6102c9841518fa6859c9c2568f23d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359828"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387006"
 ---
 # <a name="handling-a-system-set-power-irp-in-a-device-power-policy-owner"></a>处理设备电源策略所有者中的系统 Set-Power IRP
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359828"
 
 以响应系统集 power IRP[电源策略所有者](managing-device-power-policy.md)设备堆栈负责使其设备堆栈的适当的设备电源状态。
 
-作为通用规则，当设备电源策略所有者收到[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)系统电源状态，它应响应通过传递系统设备在堆栈的下层组 power IRP。 设备电源策略所有者还应响应通过发送设备堆栈的下层**IRP\_MN\_设置\_POWER**中的相应设备电源状态为[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程。 堆栈中的所有驱动程序已完成设备后集 power IRP 设备电源策略所有者完成系统集 power IRP。
+作为通用规则，当设备电源策略所有者收到[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)系统电源状态，它应响应通过传递系统设备在堆栈的下层组 power IRP。 设备电源策略所有者还应响应通过发送设备堆栈的下层**IRP\_MN\_设置\_POWER**中的相应设备电源状态为[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。 堆栈中的所有驱动程序已完成设备后集 power IRP 设备电源策略所有者完成系统集 power IRP。
 
 但是，为了提高系统恢复性能，不具有子设备的设备的设备电源所有者应使用不同的方法来减少所需的系统返回到的时间[处于工作状态 S0](system-working-state-s0.md)从[睡眠状态](system-sleeping-states.md)。 在这种情况下，在对系统的响应中返回到工作状态 S0、 系统集 power IRP 设备电源策略所有者应执行以下一系列操作：
 

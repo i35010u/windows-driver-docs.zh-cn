@@ -11,12 +11,12 @@ keywords:
 - UFF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6585b976e3d75e61b56374c697fde86dba1169e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca8548adb5ef53b60f9d671b8dd39c6b3e2de81a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372405"
 ---
 # <a name="customized-font-installers-for-unidrv"></a>自定义的 Unidrv 字体安装程序
 
@@ -34,9 +34,9 @@ ms.locfileid: "63365523"
 
     此插件必须实现以下 COM 接口方法：
 
-    [**IPrintOemUI::FontInstallerDlgProc**](https://msdn.microsoft.com/library/windows/hardware/ff554176)
+    [**IPrintOemUI::FontInstallerDlgProc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-fontinstallerdlgproc)
 
-    [**IPrintOemUI::UpdateExternalFonts**](https://msdn.microsoft.com/library/windows/hardware/ff554188)
+    [**IPrintOemUI::UpdateExternalFonts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-updateexternalfonts)
 
 -   提供一个单独的可执行文件
 

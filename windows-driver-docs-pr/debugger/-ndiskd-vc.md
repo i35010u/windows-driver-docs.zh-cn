@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e575a83ccd374491fb3ab17c7724d81222b3c84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b1f767a18e84678f46cdda78d0d428c41fce80c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363098"
 ---
 # <a name="ndiskdvc"></a>!ndiskd.vc
 
@@ -41,9 +41,9 @@ Ndiskd.dll
 <a name="remarks"></a>备注
 -------
 
-有关的 CoNDIS 详细信息，请参阅[Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)。
+有关的 CoNDIS 详细信息，请参阅[Connection-Oriented NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)。
 
-有关的 CoNDIS 虚拟连接的详细信息，请参阅[虚拟连接](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)。
+有关的 CoNDIS 虚拟连接的详细信息，请参阅[虚拟连接](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)。
 
 <a name="examples"></a>示例
 --------
@@ -98,21 +98,21 @@ VIRTUAL CALL
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[面向连接的 NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)
+[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
 
-[虚拟连接](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)
+[虚拟连接](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)
 
-[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
  
 

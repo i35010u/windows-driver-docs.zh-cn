@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 86c8b6a03b29267f97728e41e72e25aa54561c91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8be48eac90fdc3f392f9dd29b523907e9e42e40
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378534"
 ---
 # <a name="getfcpstatistics-function"></a>GetFCPStatistics 函数
 
@@ -42,13 +42,13 @@ void GetFCPStatistics(
 ----------
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFCPStatistics\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff554944)结构。
+在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFCPStatistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)结构。
 
 *ScsiId*   
-在返回时包含类型的结构[ **HBAScsiID** ](https://msdn.microsoft.com/library/windows/hardware/ff556042)保存标识设备的信息。 此信息传递到中的微型端口驱动程序**ScsiId**的成员[ **GetFCPStatistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554942)结构。
+在返回时包含类型的结构[ **HBAScsiID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid)保存标识设备的信息。 此信息传递到中的微型端口驱动程序**ScsiId**的成员[ **GetFCPStatistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)结构。
 
 *FC4Statistics*   
-在返回时包含类型的结构[ **MSFC\_FC4STATISTICS** ](https://msdn.microsoft.com/library/windows/hardware/ff562492)用于保存所指示的 SCSI 逻辑单元的统计信息。 微型端口驱动程序将返回此信息**FC4Statistics**的成员[ **GetFCPStatistics\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff554944)结构。
+在返回时包含类型的结构[ **MSFC\_FC4STATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)用于保存所指示的 SCSI 逻辑单元的统计信息。 微型端口驱动程序将返回此信息**FC4Statistics**的成员[ **GetFCPStatistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -87,11 +87,11 @@ void GetFCPStatistics(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetFCPStatistics\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff554942)
+[**GetFCPStatistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)
 
-[**GetFCPStatistics\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff554944)
+[**GetFCPStatistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)
 
-[**MSFC\_FC4STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/ff562492)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
  
 

@@ -14,12 +14,12 @@ keywords:
 - 状态值 WDK 磁带
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06195bcdc418417fb497bdbacb6d9313d8af51b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a24ef7f36076e3816e4d1826fb6232f8cfff6af5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366275"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369579"
 ---
 # <a name="processing-tape-device-control-requests"></a>处理磁带设备控制请求
 
@@ -27,7 +27,7 @@ ms.locfileid: "63366275"
 ## <span id="ddk_processing_tape_device_control_requests_kg"></span><span id="DDK_PROCESSING_TAPE_DEVICE_CONTROL_REQUESTS_KG"></span>
 
 
-所有磁带 miniclass 驱动程序必须使用所列的值的状态都报告[**磁带\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567975)枚举器。 但是，磁带类驱动程序完成的 I/O 控制请求，它将报告使用等效的 NT 状态值的状态。 下表提供了磁带之间的映射\_状态值和其等效的 NT 状态值：
+所有磁带 miniclass 驱动程序必须使用所列的值的状态都报告[**磁带\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ne-minitape-_tape_status)枚举器。 但是，磁带类驱动程序完成的 I/O 控制请求，它将报告使用等效的 NT 状态值的状态。 下表提供了磁带之间的映射\_状态值和其等效的 NT 状态值：
 
 <table>
 <colgroup>

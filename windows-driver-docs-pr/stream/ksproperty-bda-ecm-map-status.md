@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1338271e924625f4df36643e5528480c4c0930
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b8ec46a76bba1bb25959f220e1cf319e909c2ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364867"
 ---
 # <a name="kspropertybdaecmmapstatus"></a>KSPROPERTY\_BDA\_ECM\_MAP\_STATUS
 
@@ -87,7 +87,7 @@ ms.locfileid: "63342541"
 
 [**KSEVENT\_BDA\_程序\_流\_状态\_已更改**](ksevent-bda-program-flow-status-changed.md)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

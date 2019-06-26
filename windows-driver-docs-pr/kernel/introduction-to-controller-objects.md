@@ -9,12 +9,12 @@ keywords:
 - I/O WDK 内核重叠
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b949b319fd2bd2e9c7307be4f733fbe1f8f87458
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 164114ca8f813472a08e49879c01753f50c1fa4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341059"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369760"
 ---
 # <a name="introduction-to-controller-objects"></a>控制器对象简介
 
@@ -50,7 +50,7 @@ ms.locfileid: "63341059"
 
 -   执行当前正忙的设备对象的 I/O 操作并将传入 Irp 的其他设备对象重新排队，直到完成当前的 IRP。
 
-上述的同步方法序列化的所有驱动程序的目标设备对象处理 IRP。 请注意它也会强制驱动程序来完成当前 IRP 之前其[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程可以开始处理下一步 IRP，遗憾的是减少驱动程序性能。
+上述的同步方法序列化的所有驱动程序的目标设备对象处理 IRP。 请注意它也会强制驱动程序来完成当前 IRP 之前其[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程可以开始处理下一步 IRP，遗憾的是减少驱动程序性能。
 
 如果可以重叠某些设备操作，使用控制器对象可以提高驱动程序的 I/O 吞吐量，因为此同步方法使驱动程序以确定是否设置物理设备之前，它可以重叠操作。 例如，磁盘控制器可能会使驱动程序添加到重叠查找一个磁盘上与另一个磁盘上的读/写操作。
 

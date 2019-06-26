@@ -5,12 +5,12 @@ ms.assetid: 31A0BB2B-B571-4548-A9D1-BE44687DEA37
 ms.date: 08/08/2017
 keywords: -OID_NDK_CONNECTIONS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c15dd731ddd5dec5fb1d7d67b389fe4c4ffc1e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18e42347613cce87fbda1cd96d48e4fde11b88fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383600"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373909"
 ---
 # <a name="oidndkconnections"></a>OID\_NDK\_连接
 
@@ -22,7 +22,7 @@ NDIS 6.30 和更高版本的微型端口驱动程序提供 NDK 服务必须支�
 <a name="remarks"></a>备注
 -------
 
-NDIS 发出此 OID，若要从适配器获取活动的网络直接连接的列表。 适配器必须返回与连接的列表[ **NDIS\_NDK\_连接**](https://msdn.microsoft.com/library/windows/hardware/hh451561)结构在**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构。
+NDIS 发出此 OID，若要从适配器获取活动的网络直接连接的列表。 适配器必须返回与连接的列表[ **NDIS\_NDK\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ndk_connections)结构在**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构。
 
 此结构是可变的基于返回的连接数。 中指定连接数组，作为元素计数的大小**计数**成员。
 
@@ -57,9 +57,9 @@ NDIS 发出此 OID，若要从适配器获取活动的网络直接连接的列�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_NDK\_连接**](https://msdn.microsoft.com/library/windows/hardware/hh451561)
+[**NDIS\_NDK\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ndk_connections)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
  
 

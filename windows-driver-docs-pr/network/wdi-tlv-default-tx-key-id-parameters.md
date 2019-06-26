@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DEFAULT_TX_KEY_ID_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 78253d0e03cbebc534ac0bc64b455cc3b5b8e74d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bbb949a18f4a03c35d6fb7c77bc30e8bbdcd5773
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331823"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379377"
 ---
 # <a name="wditlvdefaulttxkeyidparameters"></a>WDI\_TLV\_DEFAULT\_TX\_KEY\_ID\_PARAMETERS
 
 
-WDI\_TLV\_默认\_TX\_密钥\_ID\_参数是包含默认 TLV 密钥 ID 的端口上的数据包传输[OID\_WDI\_设置\_默认\_密钥\_ID](https://msdn.microsoft.com/library/windows/hardware/dn925928)。
+WDI\_TLV\_默认\_TX\_密钥\_ID\_参数是包含默认 TLV 密钥 ID 的端口上的数据包传输[OID\_WDI\_设置\_默认\_密钥\_ID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-default-key-id)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

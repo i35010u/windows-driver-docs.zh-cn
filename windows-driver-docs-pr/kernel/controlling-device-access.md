@@ -10,12 +10,12 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e8f435306527e1f8c46971ae514e597d8226b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3d54ab5ccbfe4537b2ce651edfad5fde3ecdc87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343626"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377204"
 ---
 # <a name="controlling-device-access"></a>控制设备访问权限
 
@@ -29,9 +29,9 @@ ms.locfileid: "63343626"
 
 当 WDM 驱动程序 （而不是特定的总线驱动程序） 创建设备对象时，插管理器确定设备的安全描述符。 操作的顺序是按如下所示。
 
-1.  PnP 管理器会调用驱动程序的[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。
+1.  PnP 管理器会调用驱动程序的[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。
 
-2.  在驱动程序*AddDevice*例程调用[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)以创建设备对象并将其附加到设备对象堆栈。
+2.  在驱动程序*AddDevice*例程调用[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)以创建设备对象并将其附加到设备对象堆栈。
 
 3.  即插即用 manager 更新新创建的设备对象的安全描述符。
 
@@ -51,7 +51,7 @@ WDM 驱动程序，即插即用管理器确定设备对象的安全描述符，�
 
 ### <a name="controlling-device-access-for-wdm-bus-drivers"></a>用于 WDM 总线驱动程序来控制设备访问权限
 
-WDM 总线驱动程序必须提供的是 PDO 可以在 raw 模式中处理每个设备的安全描述符。 使用[ **IoCreateDeviceSecure** ](https://msdn.microsoft.com/library/windows/hardware/ff548407)带有安全描述符创建设备对象。
+WDM 总线驱动程序必须提供的是 PDO 可以在 raw 模式中处理每个设备的安全描述符。 使用[ **IoCreateDeviceSecure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)带有安全描述符创建设备对象。
 
 如果总线驱动程序不能运行在 raw 模式的设备，然后它不是需要提供的安全描述符。 PnP 管理器确定的安全描述符，如上文所述。 如果它必须确保其 PDOs 具有比默认描述符较严格的安全设置，总线驱动程序可以提供的安全描述符。 由总线驱动程序指定任何描述符由注册表中的设置重写。
 

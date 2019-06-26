@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003edbcd3b87b06cffecaaa566befc096e2878b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a203ac43821c62122e35f410b330f8e9b3c6e7ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393022"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384575"
 ---
 # <a name="fltreleaseresource-routine"></a>FltReleaseResource 例程
 
@@ -51,19 +51,19 @@ VOID FltReleaseResource(
 
 **FltReleaseResource**释放以前通过调用获取的资源[ **FltAcquireResourceExclusive** ](fltacquireresourceexclusive.md)或[ **FltAcquireResourceShared**](fltacquireresourceshared.md)。
 
-**FltReleaseResource**是包装[ **ExReleaseResourceLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545597) ，可再次正常内核 APC 传递。
+**FltReleaseResource**是包装[ **ExReleaseResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite) ，可再次正常内核 APC 传递。
 
-因为**FltReleaseResource**可再次正常内核 APC 交付、 不需要调用[ **KeLeaveCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552964)或者[ **FsRtlExitFileSystem** ](fsrtlexitfilesystem.md)后调用**FltReleaseResource**。
+因为**FltReleaseResource**可再次正常内核 APC 交付、 不需要调用[ **KeLeaveCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)或者[ **FsRtlExitFileSystem** ](fsrtlexitfilesystem.md)后调用**FltReleaseResource**。
 
 若要获取资源的独占访问权限，调用[ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)。
 
 若要获取共享访问的资源，请调用[ **FltAcquireResourceShared**](fltacquireresourceshared.md)。
 
-若要从系统的资源列表中删除资源，请调用[ **ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)。
+若要从系统的资源列表中删除资源，请调用[ **ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)。
 
-若要初始化以供重复使用的资源，请调用[ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)。
+若要初始化以供重复使用的资源，请调用[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)。
 
-有关 ERESOURCE 结构的详细信息，请参阅[简介 ERESOURCE 例程](https://msdn.microsoft.com/library/windows/hardware/ff548046)内核体系结构设计指南中。
+有关 ERESOURCE 结构的详细信息，请参阅[简介 ERESOURCE 例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)内核体系结构设计指南中。
 
 <a name="requirements"></a>要求
 ------------
@@ -104,13 +104,13 @@ VOID FltReleaseResource(
 ## <a name="see-also"></a>请参阅
 
 
-[**ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)
+[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545317)
+[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)
+[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)
 
-[**ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
 
 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)
 
@@ -118,7 +118,7 @@ VOID FltReleaseResource(
 
 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)
 
-[**KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)
+[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)
 
  
 

@@ -14,12 +14,12 @@ keywords:
 - 条目 WDK 错误日志
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc9a412d42c53db98cc0e380715576df2d5609de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f0b61cd95a273450f777a86a71bd89d7fb4d63e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555725"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374101"
 ---
 # <a name="writing-to-the-system-event-log"></a>写入到系统事件日志
 
@@ -39,7 +39,7 @@ ms.locfileid: "56555725"
 
 ![事件属性表的屏幕截图](images/event-properties.png)
 
-驱动程序使用[ **IoAllocateErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff548245)例程来分配一个错误日志条目。 日志条目包含可变长度[ **IO\_错误\_日志\_数据包**](https://msdn.microsoft.com/library/windows/hardware/ff550571)标头后, 跟插入字符串。
+驱动程序使用[ **IoAllocateErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)例程来分配一个错误日志条目。 日志条目包含可变长度[ **IO\_错误\_日志\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_error_log_packet)标头后, 跟插入字符串。
 
 下图显示了在内存中的错误日志项的布局。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56555725"
 
 **ErrorCode**的成员**IO\_错误\_日志\_数据包**指定错误的 NTSTATUS 值。 **DumpData**成员指定的日志项的任何转储数据。 **DumpData**是可变的数组，通过指定其大小**DumpDataSize**成员。 驱动程序指定的第一个插入字符串的开头**StringOffset**成员和中的字符串数**NumberOfStrings**成员。 每个插入字符串本身是以 null 结尾的 Unicode 字符串。
 
-后驱动程序填充分配的错误日志条目，它的项写入错误日志使用[ **IoWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff550527)。 **IoWriteErrorLogEntry**自动释放为日志条目分配的内存。 驱动程序可以使用[ **IoFreeErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff549107)以释放任何未使用的日志条目。
+后驱动程序填充分配的错误日志条目，它的项写入错误日志使用[ **IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)。 **IoWriteErrorLogEntry**自动释放为日志条目分配的内存。 驱动程序可以使用[ **IoFreeErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeerrorlogentry)以释放任何未使用的日志条目。
 
 预定义的错误代码 (窗体 IO\_ERR\_*XXX*) ntiologc.h 标头文件包含使用 Windows Driver Kit (WDK) 中定义。 可以 ntiologc.h 旁边的错误代码的声明的注释中找到与每个错误代码关联的错误消息。 若要使用预定义的错误代码，该驱动程序必须将系统文件，iologmsg.dll，注册为相关联的错误消息的源。 有关详细信息，请参阅[注册为错误消息源](registering-as-a-source-of-error-messages.md)。
 

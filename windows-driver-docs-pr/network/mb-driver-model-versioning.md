@@ -4,12 +4,12 @@ description: MB 驱动程序模型版本控制
 ms.assetid: f5778b36-4f84-4cfe-965c-36af225ac0dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b72b67507864b2177cd42ae43c318da390cf0ea7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e545f7ca9e8b4a94208fdccfad4e3ba48da0bee8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377990"
 ---
 # <a name="mb-driver-model-versioning"></a>MB 驱动程序模型版本控制
 
@@ -30,7 +30,7 @@ MB 驱动程序模型版本控制的驱动程序模型版本和单个 OID 数据
 
 当驱动程序模型移动到下一个版本时，其版本号将增加 1。 添加到驱动程序模型中任何新 Oid 将开始修订版 1;结构已更改其数据在其相应的修订版本将增加 1，任何现有 Oid 并不会更改任何现有 Oid 将保留其各自的修订号。
 
-驱动程序模型版本所传达[OID\_WWAN\_驱动程序\_CAPS](https://msdn.microsoft.com/library/windows/hardware/ff569825)。 MB 服务发送一个 OID\_WWAN\_驱动程序\_CAPS 查询请求期间的微型端口驱动程序[MB 微型端口驱动程序初始化](mb-miniport-driver-initialization.md)。 由描述各个 OID 修订**修订**的成员[ **NDIS\_对象\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff566588)结构，它是作为一部分包含每个单个 OID 的数据结构。
+驱动程序模型版本所传达[OID\_WWAN\_驱动程序\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)。 MB 服务发送一个 OID\_WWAN\_驱动程序\_CAPS 查询请求期间的微型端口驱动程序[MB 微型端口驱动程序初始化](mb-miniport-driver-initialization.md)。 由描述各个 OID 修订**修订**的成员[ **NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)结构，它是作为一部分包含每个单个 OID 的数据结构。
 
  
 

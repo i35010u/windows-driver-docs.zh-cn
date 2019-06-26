@@ -4,12 +4,12 @@ description: 本主题介绍使用 Microsoft Visual Studio 创建 UWP 设备应�
 ms.assetid: 4D8240AD-F589-4623-BC6E-47E304831250
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19bb9f718ff864ff2987950f9e4808bf7eda3416
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5cdfe2862dba9ec4fe60523d856edfabd1f1b960
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369359"
 ---
 # <a name="step-1-create-a-uwp-device-app"></a>第 1 步：创建 UWP 设备应用
 
@@ -42,7 +42,7 @@ UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或�
 | 用于相机的 UWP 设备应用程序   | 照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AvStream 驱动程序模型的详细信息，请参阅[AVStream 概述](https://go.microsoft.com/fwlink/p/?LinkId=273032)Windows 驱动程序工具包中。 一个附加组件，称为驱动程序 MFT （媒体基础转换），可以提供与要为相机提供自定义效果的驱动程序安装包。 有关详细信息，请参阅[Windows 应用商店设备应用用于相机](uwp-device-apps-for-webcams.md)。 |
 | 适用于打印机的 UWP 设备应用 | 打印机必须使用 v4 打印机驱动程序。 请参阅[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)的详细信息。                                                                                                                                                                                                                                                                                                                                                         |
 | USB Api                               | 若要使用 Windows 运行时[Windows.Devices.Usb](https://go.microsoft.com/fwlink/p/?LinkId=306694)Api，你的设备必须符合 Winusb.sys 驱动程序。                                                                                                                                                                                                                                                                                                                                      |
-| 人机接口设备 (HID) Api      | HID Api 专供通过 USB、 蓝牙、 蓝牙智能和 I2C 传输。 若要使用 Windows 运行时[Windows.Devices.HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) Api，你的设备必须符合 HIDClass.sys 驱动程序和驱动程序所需的传输。 有关详细信息，请参阅[HID 体系结构](https://msdn.microsoft.com/library/windows/hardware/jj126193)。                                                                                                            |
+| 人机接口设备 (HID) Api      | HID Api 专供通过 USB、 蓝牙、 蓝牙智能和 I2C 传输。 若要使用 Windows 运行时[Windows.Devices.HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) Api，你的设备必须符合 HIDClass.sys 驱动程序和驱动程序所需的传输。 有关详细信息，请参阅[HID 体系结构](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))。                                                                                                            |
 | 蓝牙 GATT Api                    | 若要使用 Windows 运行时的蓝牙 GATT Api 中， [Windows.Devices.Bluetooth.GenericAttributeProfile](https://go.microsoft.com/fwlink/p/?LinkId=306698)，你的设备必须符合 BthLEEnum.sys 驱动程序。                                                                                                                                                                                                                                                                                   |
 | 蓝牙 RFCOMM Api                  | 若要使用 Windows 运行时的蓝牙 RFCOMM Api 中， [Windows.Devices.Bluetooth.Rfcomm](https://go.microsoft.com/fwlink/p/?LinkId=306699)，你的设备必须符合的 Rfcomm.sys 和 BthEnum.sys 驱动程序。                                                                                                                                                                                                                                                                                    |
 

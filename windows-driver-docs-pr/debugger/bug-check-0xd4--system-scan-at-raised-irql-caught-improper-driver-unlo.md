@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf8d3e9137ccef55a9aad81a237f2bfbc6aa1295
-ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
+ms.openlocfilehash: e0d90a5594999d42b10169ff7d781d090dda2ab4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67266386"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367143"
 ---
 # <a name="bug-check-0xd4-systemscanatraisedirqlcaughtimproperdriverunload"></a>Bug 检查 0xD4：SYSTEM\_SCAN\_AT\_RAISED\_IRQL\_CAUGHT\_IMPROPER\_DRIVER\_UNLOAD
 
@@ -26,7 +26,7 @@ ms.locfileid: "67266386"
 系统\_扫描\_处\_凸起\_IRQL\_CAUGHT\_不恰当\_驱动程序\_卸载 bug 检查的值为 0x000000D4。 这表示，驱动程序未取消挂起操作卸载前倒带。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="systemscanatraisedirqlcaughtimproperdriverunload-parameters"></a>系统\_扫描\_处\_凸起\_IRQL\_CAUGHT\_不恰当\_驱动程序\_卸载参数

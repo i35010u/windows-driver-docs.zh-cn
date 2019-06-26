@@ -13,12 +13,12 @@ keywords:
 - 传播 DO_DIRECT_IO 标志
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eb99205772be342a2c5ac0ddd592919d1affde7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cbeb0547871751cc628c1dcb6c038b7ffc8d81db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385150"
 ---
 # <a name="propagating-the-dobufferedio-and-dodirectio-flags"></a>传播 DO\_缓冲\_IO 和 DO\_直接\_IO 标志
 
@@ -26,7 +26,7 @@ ms.locfileid: "56541929"
 ## <span id="ddk_propagating_the_do_buffered_io_and_do_direct_io_flags_if"></span><span id="DDK_PROPAGATING_THE_DO_BUFFERED_IO_AND_DO_DIRECT_IO_FLAGS_IF"></span>
 
 
-在后将筛选设备对象附加到文件系统或卷，始终请务必设置或清除执行\_缓冲\_IO 并执行\_直接\_IO 标志根据需要使其与下一步低设备的值驱动程序堆栈的对象。 (有关这些标志的详细信息，请参阅[方法的访问数据缓冲区](https://msdn.microsoft.com/library/windows/hardware/ff554436)。)此示例如下：
+在后将筛选设备对象附加到文件系统或卷，始终请务必设置或清除执行\_缓冲\_IO 并执行\_直接\_IO 标志根据需要使其与下一步低设备的值驱动程序堆栈的对象。 (有关这些标志的详细信息，请参阅[方法的访问数据缓冲区](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)。)此示例如下：
 
 ```cpp
 if (FlagOn( DeviceObject->Flags, DO_BUFFERED_IO )) {

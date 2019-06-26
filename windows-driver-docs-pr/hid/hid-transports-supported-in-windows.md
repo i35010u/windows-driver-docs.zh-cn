@@ -4,12 +4,12 @@ description: Windows 支持以下传输方式。
 ms.assetid: 03B66788-A930-4C18-A019-CA906634DC4C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e70740e3f611510101de9e629397fda1cd2ba28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a01c8ce049970aa1dfd524be3b826aff7076084
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388790"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363559"
 ---
 # <a name="hid-transports-supported-in-windows"></a>Windows 中支持的 HID 传输方式
 
@@ -44,7 +44,7 @@ Windows 支持以下传输方式。
 
  
 
-[**USB 一般 HID 测试**](https://msdn.microsoft.com/library/windows/hardware/dn942240) Windows 硬件 Lab Kit (HLK) 中介绍了 HidUsb 和 HidClass 驱动程序。 没有 HLK 测试的第三方 HID 微型驱动程序。 
+[**USB 一般 HID 测试**](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f7949ab5-dd13-4c74-876f-6d54ff85e213) Windows 硬件 Lab Kit (HLK) 中介绍了 HidUsb 和 HidClass 驱动程序。 没有 HLK 测试的第三方 HID 微型驱动程序。 
  
 
 

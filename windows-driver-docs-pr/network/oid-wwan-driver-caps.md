@@ -5,12 +5,12 @@ ms.assetid: 2310a341-6899-44ad-8dfb-a13fd0c42dcb
 ms.date: 08/08/2017
 keywords: -OID_WWAN_DRIVER_CAPS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fed4cfc9ac5595cacbe6ba3b145fc585a9b03c61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14b378f5d8b4518b315bc865c826fe9bcc650d2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343250"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385496"
 ---
 # <a name="oidwwandrivercaps"></a>OID\_WWAN\_DRIVER\_CAPS
 
@@ -19,12 +19,12 @@ OID\_WWAN\_驱动程序\_CAPS 返回微型端口驱动程序支持的 MB 驱动�
 
 不支持组的请求。
 
-微型端口驱动程序处理 OID\_WWAN\_驱动程序\_指针顶端才以同步方式，应立即返回其中的响应缓冲区包含[ **NDIS\_WWAN\_驱动程序\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff567908)结构，描述完成查询请求时由微型端口驱动程序实现的 MB 驱动程序模型的版本。
+微型端口驱动程序处理 OID\_WWAN\_驱动程序\_指针顶端才以同步方式，应立即返回其中的响应缓冲区包含[ **NDIS\_WWAN\_驱动程序\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)结构，描述完成查询请求时由微型端口驱动程序实现的 MB 驱动程序模型的版本。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[MB 微型端口驱动程序初始化](https://msdn.microsoft.com/library/windows/hardware/ff557186)。
+有关使用此 OID 的详细信息，请参阅[MB 微型端口驱动程序初始化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)。
 
 微型端口驱动程序不能访问提供程序网络或用户识别模块 （SIM 卡），处理查询操作时。
 
@@ -57,9 +57,9 @@ MB 驱动程序模型版本的当前版本定义通过 WWAN\_主要\_版本和 W
 ## <a name="see-also"></a>请参阅
 
 
-[MB 微型端口驱动程序初始化](https://msdn.microsoft.com/library/windows/hardware/ff557186)
+[MB 微型端口驱动程序初始化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
 
-[**NDIS\_WWAN\_DRIVER\_CAPS**](https://msdn.microsoft.com/library/windows/hardware/ff567908)
+[**NDIS\_WWAN\_DRIVER\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)
 
  
 

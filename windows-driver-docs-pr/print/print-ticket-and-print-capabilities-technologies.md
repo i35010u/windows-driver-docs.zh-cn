@@ -10,12 +10,12 @@ keywords:
 - 打印票证 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ba54db381a3defd905c3450712362d12f0b3dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 940e01b8e706c8f49be3a8038e848f4dedf9e931
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380683"
 ---
 # <a name="print-ticket-and-print-capabilities-technologies"></a>打印票证和打印功能技术
 
@@ -40,7 +40,7 @@ Microsoft Windows Vista 引入了打印功能和打印票证技术。 这些新�
 
 [打印 XPSDrv 呈现模块中的票证支持](print-ticket-support-in-the-xpsdrv-render-module.md)
 
-[提供程序的打印票证和使用者方法](https://msdn.microsoft.com/library/windows/hardware/ff556547)
+[提供程序的打印票证和使用者方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)
 
  
 

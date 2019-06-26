@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cc1019dbe9094c7b543f3e7d94877f910d4b2c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fcf8bff68757c53652db812fa93de5641e977be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358989"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386725"
 ---
 # <a name="avcfunctionpeerdolist"></a>AVC\_函数\_对等方\_执行\_列表
 
@@ -91,7 +91,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="see-also"></a>请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)， [ **AVC\_对等方\_执行\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff554179)， [ **AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)， [**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)， [ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)， [ **ExFreePool**](https://msdn.microsoft.com/library/windows/hardware/ff544590)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)， [ **AVC\_对等方\_执行\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_peer_do_list)， [ **AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)， [**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)， [ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)， [ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)
 
  
 

@@ -4,12 +4,12 @@ description: 两个已知的驱动程序签名问题如下所述。
 ms.assetid: EC244022-A02B-4AAD-93EE-B9AE3E72A674
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1592fab6e387c7d4c01c005e62dcdaad77403b96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 273daee6b40dbe80fc9249a942be64acce40d521
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385636"
 ---
 # <a name="appendix-4-driver-signing-issues"></a>附录 4：驱动程序签名问题
 
@@ -38,7 +38,7 @@ Signtool sign /fd sha256 /ac C:\MyCrossCert\Crosscert.cer /s my /n “MyCompany 
 
 其中 XX...XX 是用于辅助签名证书的哈希。 向/t 时间戳签名。
 
-**请注意**  请查看 Microsoft 安全公告 ([2880823](https://technet.microsoft.com/library/security/2880823))"不推荐使用的 sha-1 哈希算法为 Microsoft 根证书计划"其中描述了策略更改，其中 Microsoft 将会不再允许根证书颁发机构颁发 X.509 证书的 sha-1 哈希算法用于 SSL 和代码签名 2016 年 1 月 1 日之后的用途。
+**请注意**  请查看 Microsoft 安全公告 ([2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823))"不推荐使用的 sha-1 哈希算法为 Microsoft 根证书计划"其中描述了策略更改，其中 Microsoft 将会不再允许根证书颁发机构颁发 X.509 证书的 sha-1 哈希算法用于 SSL 和代码签名 2016 年 1 月 1 日之后的用途。
 
  
 

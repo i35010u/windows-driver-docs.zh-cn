@@ -14,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d31dc2539a728f5486c909e3395be404ebfd7e69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1944414572ba8d944743ecbcd9c14feccd774321
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366786"
 ---
 # <a name="pfreefunction-function-pointer"></a>PFREE\_函数函数指针
 
@@ -37,7 +37,7 @@ typedef VOID ( *FreeCallback)(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *缓冲区*\[中\]  
@@ -59,7 +59,7 @@ typedef VOID ( *FreeCallback)(
 
  
 
-若要定义*FreeCallback*回调函数名为*MyFreeFunction*，你必须首先提供的函数声明的[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808) (SDV) 和其他验证工具需要，按如下所示：
+若要定义*FreeCallback*回调函数名为*MyFreeFunction*，你必须首先提供的函数声明的[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier) (SDV) 和其他验证工具需要，按如下所示：
 
 ```cpp
 FREE_FUNCTION MyFreeFunction;
@@ -89,11 +89,11 @@ VOID
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>可用的起始 withWindows Vista。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Wdm.h 中 （包括 wdm.h 中或 Ntddk.h）</td>
 </tr>
 <tr class="even">
@@ -103,7 +103,7 @@ VOID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FsRtlTeardownPerFileContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547290)
@@ -114,9 +114,9 @@ VOID
 
 [**FSRTL\_PER\_STREAM\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff547357)
 
-[跟踪每个文件中的旧文件系统筛选器驱动程序的上下文](https://msdn.microsoft.com/library/windows/hardware/ff556856)
+[跟踪每个文件中的旧文件系统筛选器驱动程序的上下文](https://docs.microsoft.com/windows-hardware/drivers/ifs/tracking-per-file-context-in-a-legacy-file-system-filter-driver)
 
-[跟踪每个 Stream 上下文中的旧文件系统筛选器驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff556859)
+[跟踪每个 Stream 上下文中的旧文件系统筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/tracking-per-stream-context-in-a-legacy-file-system-filter-driver)
 
  
 

@@ -12,12 +12,12 @@ keywords:
 - 驱动程序堆栈 WDK 配置信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd20100a3270ec30fb38b8fb91a4332f4dbbf8fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c6001a6fbba75975a9d1528abf7e530b67898c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384941"
 ---
 # <a name="obtaining-device-configuration-information-at-irql--dispatchlevel"></a>获取设备配置信息在 IRQL = 调度\_级别
 
@@ -40,9 +40,9 @@ GUID_BUS_INTERFACE_STANDARD 接口 (在中定义`wdmguids.h`) 使设备驱动程
 
 访问在 IRQL PCI 设备的配置空间时，三个步骤所需 = 调度\_级别：
 
-1.  发送[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)请求在 IRQL = 被动\_级别以获取直接调用接口结构 (**总线\_界面\_标准**) 从 PCI 总线驱动程序。 存储在非分页缓冲的池内存 （通常在设备扩展）。
+1.  发送[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求在 IRQL = 被动\_级别以获取直接调用接口结构 (**总线\_界面\_标准**) 从 PCI 总线驱动程序。 存储在非分页缓冲的池内存 （通常在设备扩展）。
 
-2.  调用**总线\_界面\_标准**接口例程[ *SetBusData* ](https://msdn.microsoft.com/library/windows/hardware/gg604856)并[ *GetBusData* ](https://msdn.microsoft.com/library/windows/hardware/gg604850)，以访问 PCI 配置空间在 IRQL = 调度\_级别。
+2.  调用**总线\_界面\_标准**接口例程[ *SetBusData* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/gg604856(v=vs.85))并[ *GetBusData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)，以访问 PCI 配置空间在 IRQL = 调度\_级别。
 
 3.  取消对接口的引用。 PCI 总线驱动程序的引用计数在接口上之前会返回，以便访问接口的驱动程序必须对其取消引用，一旦不再需要。
 
@@ -108,7 +108,7 @@ End:
 }
 ```
 
-下面的代码段演示如何使用[ *GetBusData* ](https://msdn.microsoft.com/library/windows/hardware/gg604850)接口例程来获取配置的空间数据 （步骤 2）。
+下面的代码段演示如何使用[ *GetBusData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)接口例程来获取配置的空间数据 （步骤 2）。
 
 ```cpp
  bytes = busInterfaceStandard.GetBusData(
@@ -128,7 +128,7 @@ End:
 
 该接口与 PCI 总线驱动程序的访问同步总线硬件对调用方的访问。 驱动程序编写器不需要担心如何创建自旋锁以避免争用访问总线硬件的 PCI 总线驱动程序。
 
-请注意，是否它只需要是总线、 函数和设备号，这是通常不需要求助于总线接口，以获取此信息。 检索此数据可以是间接通过将传递到目标设备的 PDO [ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)函数，如下所示：
+请注意，是否它只需要是总线、 函数和设备号，这是通常不需要求助于总线接口，以获取此信息。 检索此数据可以是间接通过将传递到目标设备的 PDO [ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)函数，如下所示：
 
 ```cpp
     ULONG   propertyAddress, length;

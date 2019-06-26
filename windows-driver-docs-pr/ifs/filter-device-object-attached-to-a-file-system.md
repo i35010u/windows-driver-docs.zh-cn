@@ -9,12 +9,12 @@ keywords:
 - 文件系统筛选器驱动程序 WDK，设备对象 I/O 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ac461c09b91c00ec11118f1cc0907d751e22227
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d733cc671633864921bf10e1fb4901384783edb8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369261"
 ---
 # <a name="filter-device-object-attached-to-a-file-system"></a>附加到文件系统的筛选器设备对象
 
@@ -28,19 +28,19 @@ ms.locfileid: "63341519"
 
 文件系统上附加的筛选器设备对象通常会收到以下类型的 I/O 请求：
 
-[**IRP\_MJ\_DEVICE\_CONTROL**](https://msdn.microsoft.com/library/windows/hardware/ff548649)
+[**IRP\_MJ\_DEVICE\_CONTROL**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-device-control)
 
-[**IRP\_MJ\_文件\_系统\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff548670)
+[**IRP\_MJ\_文件\_系统\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)
 
-[**IRP\_MJ\_SHUTDOWN**](https://msdn.microsoft.com/library/windows/hardware/ff549423)
+[**IRP\_MJ\_SHUTDOWN**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-shutdown)
 
 如果文件系统支持对其控制设备对象的打开句柄，筛选器可能会看到以下类型的 I/O 的请求：
 
-[**IRP\_MJ\_CLEANUP**](https://msdn.microsoft.com/library/windows/hardware/ff548608)
+[**IRP\_MJ\_CLEANUP**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-cleanup)
 
-[**IRP\_MJ\_CLOSE**](https://msdn.microsoft.com/library/windows/hardware/ff548621)
+[**IRP\_MJ\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-close)
 
-[**IRP\_MJ\_CREATE**](https://msdn.microsoft.com/library/windows/hardware/ff548630)
+[**IRP\_MJ\_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)
 
 文件系统筛选器设备对象附加到文件系统需要默认情况下将所有无法识别或不需要的 Irp 传递给下一步低驱动程序，驱动程序堆栈上。
 

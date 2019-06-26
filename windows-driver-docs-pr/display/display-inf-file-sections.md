@@ -11,12 +11,12 @@ keywords:
 - 显示 INF 文件部分 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dad82914b5609af854bdf82d05f037219a045681
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37cad16e0acf7f77a5c116454b6260b20dccb7a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365753"
 ---
 # <a name="display-inf-file-sections"></a>显示 INF 文件节
 
@@ -24,11 +24,11 @@ ms.locfileid: "63382933"
 ## <span id="ddk_display_inf_file_sections_gg"></span><span id="DDK_DISPLAY_INF_FILE_SECTIONS_GG"></span>
 
 
-此节介绍了如何编写安装程序信息文件 (INF) 部分专门适用于图形适配器安装。 INF 文件有关的更多常规信息，请参阅[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。
+此节介绍了如何编写安装程序信息文件 (INF) 部分专门适用于图形适配器安装。 INF 文件有关的更多常规信息，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
 ### <a name="span-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanddinstallsoftwaresettings-section"></a><span id="DDInstall.SoftwareSettings_Section"></span><span id="ddinstall.softwaresettings_section"></span><span id="DDINSTALL.SOFTWARESETTINGS_SECTION"></span>DDInstall.SoftwareSettings 部分
 
-一个*DDInstall*。**SoftwareSettings**部分包含[ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)指令和/或[ **DelReg** ](https://msdn.microsoft.com/library/windows/hardware/ff547374)指令。 每个指令指向单独编写器定义 INF 部分，其中包含的安装程序以添加或删除注册表项。
+一个*DDInstall*。**SoftwareSettings**部分包含[ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)指令和/或[ **DelReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)指令。 每个指令指向单独编写器定义 INF 部分，其中包含的安装程序以添加或删除注册表项。
 
 例如，下面的代码演示**AddReg**指令指向一个名为的编写器定义添加的注册表部分**ACME 1234\_SoftwareDeviceSettings**。 **DelReg**指令指向一个名为删除注册表部分**ACME 1234\_DeleteSWSettings**。
 
@@ -50,7 +50,7 @@ HKR,, VideoDebugLevel, %REG_DWORD%, 2
 
 前面的代码首先设置的值**InstalledDisplayDrivers**进入显示器驱动程序的名称。 代码随后设置的值**OverRideMonitorPower**为 0 (即**FALSE**)。 此条目，应仅由 OEM 系统供应商合作，控制监视设备 （例如，LCD、 CRT 或电视） 的 power 行为。 如果设置为 1， **OverRideMonitorPower**限制到 D0 和 D3 监视设备的可能的电源状态。
 
-第三，该代码设置的值**MultiFunctionSupported**为 1 的条目 (换而言之， **TRUE**)，这是所需的适配器支持多个 PCI 函数的值。 最后，该代码设置的值**VideoDebugLevel**条目，控制检查生成用于调试消息的全局调试级别。 此值为 3 （最详细的消息） 的范围从 0 （不调试消息）。 有关全局调试级别的详细信息，请参阅[ **VideoDebugPrint**](https://msdn.microsoft.com/library/windows/hardware/ff570170)。
+第三，该代码设置的值**MultiFunctionSupported**为 1 的条目 (换而言之， **TRUE**)，这是所需的适配器支持多个 PCI 函数的值。 最后，该代码设置的值**VideoDebugLevel**条目，控制检查生成用于调试消息的全局调试级别。 此值为 3 （最详细的消息） 的范围从 0 （不调试消息）。 有关全局调试级别的详细信息，请参阅[ **VideoDebugPrint**](https://docs.microsoft.com/previous-versions/ff570170(v=vs.85))。
 
 大多数视频微型端口驱动程序不是兼容的 VGA，需要无**VgaCompatible**的注册表项。 如果您的微型端口驱动程序兼容的 VGA，请添加**VgaCompatible**注册表项并将其值设置为 1 (**TRUE**) 中添加的注册表部分，如下所示：
 
@@ -70,7 +70,7 @@ HKR,, MemClocking
 HKR,, CapabilityOverride
 ```
 
-**CapabilityOverride**条目指定对显示驱动程序将关闭系统的功能。 例如，即使显示驱动程序实现[ **DrvEscape** ](https://msdn.microsoft.com/library/windows/hardware/ff556217)函数，如果设置了 0x10 标志不能使用功能**CapabilityOverride**条目。
+**CapabilityOverride**条目指定对显示驱动程序将关闭系统的功能。 例如，即使显示驱动程序实现[ **DrvEscape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)函数，如果设置了 0x10 标志不能使用功能**CapabilityOverride**条目。
 
 值**CapabilityOverride**注册表项是一个或多个以下表中列出的标志的按位 OR。
 
@@ -96,15 +96,15 @@ HKR,, CapabilityOverride
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>禁用所有支持 Direct3D 硬件加速。 可防止对调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff549404" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549404)"> <strong>DdGetDriverInfo</strong></a><em>，</em>哪一到达该驱动程序请求 Direct3D 功能和回调信息。</p></td>
+<td align="left"><p>禁用所有支持 Direct3D 硬件加速。 可防止对调用<a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"> <strong>DdGetDriverInfo</strong></a><em>，</em>哪一到达该驱动程序请求 Direct3D 功能和回调信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>禁用所有支持 OpenGL 可安装的客户端驱动程序 (ICD) 和 miniclient 驱动程序 (MCD)。 可防止对调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff556285" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556285)"> <strong>DrvSetPixelFormat</strong></a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff556190" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556190)"> <strong>DrvDescribePixelFormat</strong></a>，并<a href="https://msdn.microsoft.com/library/windows/hardware/ff556322" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556322)"> <strong>DrvSwapBuffers</strong> </a>到达该驱动程序。 此外可以防止 OPENGL_GETINFO、 OPENGL_CMD 和 MCDFUNCS 转义到达该驱动程序。</p></td>
+<td align="left"><p>禁用所有支持 OpenGL 可安装的客户端驱动程序 (ICD) 和 miniclient 驱动程序 (MCD)。 可防止对调用<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"> <strong>DrvSetPixelFormat</strong></a>， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"> <strong>DrvDescribePixelFormat</strong></a>，并<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"> <strong>DrvSwapBuffers</strong> </a>到达该驱动程序。 此外可以防止 OPENGL_GETINFO、 OPENGL_CMD 和 MCDFUNCS 转义到达该驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10</p></td>
-<td align="left"><p>禁止支持人员的驱动程序中的所有转义符。 可防止对调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff556217" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556217)"> <strong>DrvEscape</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff556203" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556203)"> <strong>DrvDrawEscape</strong> </a>到达该驱动程序。</p></td>
+<td align="left"><p>禁止支持人员的驱动程序中的所有转义符。 可防止对调用<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)"> <strong>DrvEscape</strong> </a>并<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"> <strong>DrvDrawEscape</strong> </a>到达该驱动程序。</p></td>
 </tr>
 </tbody>
 </table>
@@ -117,7 +117,7 @@ Microsoft Windows XP 和早期版本的操作系统不删除**CapabilityOverride
 
 ### <a name="span-iddisablingagptransferratesandsidebandaddressingspanspan-iddisablingagptransferratesandsidebandaddressingspanspan-iddisablingagptransferratesandsidebandaddressingspandisabling-agp-transfer-rates-and-sideband-addressing"></a><span id="Disabling_AGP_Transfer_Rates_and_Sideband_Addressing"></span><span id="disabling_agp_transfer_rates_and_sideband_addressing"></span><span id="DISABLING_AGP_TRANSFER_RATES_AND_SIDEBAND_ADDRESSING"></span>禁用 AGP 传输速率和旁带寻址
 
-如有必要，可以修改您的显示适配器禁用某些 AGP 传输速率或旁带寻址的 INF 文件。 请注意，它将调用时，微型端口驱动程序可以更改 AGP 传输速率[ **AgpSetRate**](https://msdn.microsoft.com/library/windows/hardware/ff538226)，但不是允许此类调用以更改 INF 文件中禁用的传输速率。
+如有必要，可以修改您的显示适配器禁用某些 AGP 传输速率或旁带寻址的 INF 文件。 请注意，它将调用时，微型端口驱动程序可以更改 AGP 传输速率[ **AgpSetRate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_set_rate)，但不是允许此类调用以更改 INF 文件中禁用的传输速率。
 
 *Regstr.h*头文件，它提供与 Windows Driver Kit (WDK) 中，定义以下一组标志。
 
@@ -177,7 +177,7 @@ HKLM,"SYSTEM\CurrentControlSet\Control\AGP"
 HKLM,"SYSTEM\CurrentControlSet\Services\AcmeAGP\Parameters"
 ```
 
-若要禁用旁带寻址，并且在 0x012A (Nuclear3D) 的 DeviceID 0x1AD0 VendorID 通过技术平台上的设备，请添加**Nuclear3D\_Install.HW** INF 文件部分。 (有关此类型的 INF 安装部分的详细信息，请参阅[ **INF DDInstall.HW 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547330)。)在本部分中，包括[ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)类似于以下指令：
+若要禁用旁带寻址，并且在 0x012A (Nuclear3D) 的 DeviceID 0x1AD0 VendorID 通过技术平台上的设备，请添加**Nuclear3D\_Install.HW** INF 文件部分。 (有关此类型的 INF 安装部分的详细信息，请参阅[ **INF DDInstall.HW 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)。)在本部分中，包括[ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)类似于以下指令：
 
 ```inf
 [Nuclear3D_Install.HW] 

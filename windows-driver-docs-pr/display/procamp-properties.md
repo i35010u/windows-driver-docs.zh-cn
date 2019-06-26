@@ -6,12 +6,12 @@ keywords:
 - ProcAmp WDK DirectX VA 属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 399d2975d06360626c3590cd247b951cdea6d590
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 612db24bf80a455c7e8fb5dea4fc85e9b0157d1e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363707"
 ---
 # <a name="procamp-properties"></a>ProcAmp 属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "63352187"
 ## <span id="ddk_procamp_properties_gg"></span><span id="DDK_PROCAMP_PROPERTIES_GG"></span>
 
 
-当 VMR 查询 ProcAmp 属性信息的驱动程序时，显示器驱动程序必须提供最小值、 最大值、 步长、 和默认值。 该驱动程序可以提供此信息以响应对的调用其[ **ProcAmpControlQueryRange** ](https://msdn.microsoft.com/library/windows/hardware/ff563950)函数。 尽管该驱动程序可以返回 ProcAmp 属性的任何值，以下是建议的设置 （所有值都是浮点数）。
+当 VMR 查询 ProcAmp 属性信息的驱动程序时，显示器驱动程序必须提供最小值、 最大值、 步长、 和默认值。 该驱动程序可以提供此信息以响应对的调用其[ **ProcAmpControlQueryRange** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-procampcontrolqueryrange)函数。 尽管该驱动程序可以返回 ProcAmp 属性的任何值，以下是建议的设置 （所有值都是浮点数）。
 
 <table>
 <colgroup>

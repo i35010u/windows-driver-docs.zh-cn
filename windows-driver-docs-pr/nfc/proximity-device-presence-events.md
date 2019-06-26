@@ -1,23 +1,23 @@
 ---
-title: 邻近设备存在事件
-description: 邻近设备存在事件
+title: 邻近感应设备存在事件
+description: 邻近感应设备存在事件
 ms.assetid: 8E0E44D5-E6DD-4385-988E-EFDAA75C6D59
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 110f68cbc4d0a7d590415d3943310131b1a4fdfd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f86f1908453b4019c46ec0716aa950afb03693b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520303"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386515"
 ---
-# <a name="proximity-device-presence-events"></a>邻近设备存在事件
+# <a name="proximity-device-presence-events"></a>邻近感应设备存在事件
 
 
 NFP 提供程序使客户端接收的事件，只要 NFP 提供程序检测到的到达或离开近程设备 （触发操作的窗口）。 每当 NFP 提供程序检测到邻近，这意味着提供程序目前可以与一个或多个近程设备通信的提供程序需要发出*DeviceArrived*事件。 当 NFP 提供程序不再能够与任何近程设备通信时，需要发出*DeviceDeparted*事件。
@@ -28,6 +28,6 @@ NFP 提供程序还需要确保正确的已发布的消息才会传输一次设�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

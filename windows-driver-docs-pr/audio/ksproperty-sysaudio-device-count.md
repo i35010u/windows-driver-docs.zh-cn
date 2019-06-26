@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 236fc2fe7e9d81780665dbcc0683c6b60adbb6f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5edd84eea76ed5046018b2a693ed17980e7cee81
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332617"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391627"
 ---
 # <a name="kspropertysysaudiodevicecount"></a>KSPROPERTY\_SYSAUDIO\_设备\_计数
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_设备\_COUNT 属性，检索指定的虚拟 DirectSound �
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_SYSAUDIO\_设备\_计数属性请求将返回状态\_成功以指示
 <a name="remarks"></a>备注
 -------
 
-SysAudio 枚举执行批呈现在系统中的每个已启用的硬件设备的唯一虚拟音频设备。 在每个实例中，虚拟音频设备组成的硬件设备， [KMixer 系统驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537039#kmixer-system-driver)，和其他音频组件。 DirectSound 应用程序选择特定的硬件设备通过选择虚拟的音频设备，其中包含硬件设备。
+SysAudio 枚举执行批呈现在系统中的每个已启用的硬件设备的唯一虚拟音频设备。 在每个实例中，虚拟音频设备组成的硬件设备， [KMixer 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#kmixer-system-driver)，和其他音频组件。 DirectSound 应用程序选择特定的硬件设备通过选择虚拟的音频设备，其中包含硬件设备。
 
 例如，如果三个音频卡插入到系统总线，每个都包含具有 WaveCyclic 或 WavePci 微型端口驱动程序的批呈现设备 SysAudio 枚举具有设备 Id 0、 1 和 2 的三个虚拟音频设备。
 
@@ -95,7 +95,7 @@ SysAudio 维护其类别 KSCATEGORY 下在系统注册表中的虚拟音频设�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

@@ -13,12 +13,12 @@ keywords:
 - 用户模式 Dll WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c599d4aac38bf74025f66e81be6187df9a51e38
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3c6883755b24f351c7bf66970e90e85896ed423
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377957"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375717"
 ---
 # <a name="basic-architecture-of-a-network-redirector"></a>网络重定向程序的基本体系结构
 
@@ -48,7 +48,7 @@ ms.locfileid: "63377957"
 
 -   管理工具偶尔需要提供的访问权限的用户模式到内核模式驱动程序特殊的配置、 诊断和管理。 此外可以使用此工具来启用或禁用跟踪和解决问题的日志记录。 该工具会使用各种自定义专用 Ioctl 通信与内核驱动程序。 此工具还可能提供访问到服务控制管理器 (SCM) 来管理全局数据的存储位置安全地为用户模式网络提供程序 DLL 中介服务。
 
-**请注意**   TDI 将不支持在 Microsoft Windows 版本在 Windows Vista 后。 使用[Windows 筛选平台](https://msdn.microsoft.com/library/windows/hardware/ff571068)或[Winsock 内核](https://msdn.microsoft.com/library/windows/hardware/ff571083)相反。
+**请注意**   TDI 将不支持在 Microsoft Windows 版本在 Windows Vista 后。 使用[Windows 筛选平台](https://docs.microsoft.com/windows-hardware/drivers/network/windows-filtering-platform-callout-drivers2)或[Winsock 内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)相反。
 
  
 

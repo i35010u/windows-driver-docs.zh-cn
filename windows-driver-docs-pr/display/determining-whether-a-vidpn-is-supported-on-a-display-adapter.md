@@ -10,12 +10,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 8aea923286e1c54585e6d39f99056efd17c7046f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f132b5c7d3db0264e77ce5d615aef2dd2eff927f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384882"
 ---
 # <a name="determining-vidpn-support-on-a-display-adapter"></a>确定显示适配器上的 VidPN 支持
 
@@ -42,7 +42,7 @@ ms.locfileid: "63342418"
 
 在确定是否支持 VidPN 确定 VidPN 的拓扑是否有效。 换而言之，可以存在的视频源连接到指定拓扑的视频存在目标？ 请注意，它不要求在拓扑中的所有视频显示目标已连接监视器。 拓扑可以是有效的并且可以支持 VidPN，即使没有连接的监视器。
 
-有时，VidPN 管理器调用[ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)询问是否显示适配器上支持某些 VidPN 显示微型端口驱动程序。 一个参数传递给**DxgkDdiIsSupportedVidPn**是名为所需的 VidPN VidPN 对象的句柄。 **DxgkDdiIsSupportedVidPn**必须检查所需 VidPN 拓扑和必须记下这些视频显示源和目标中所需 VidPN 已经具有固定模式。 然后，它必须返回一个布尔值，该值指示是否将所需的 VidPN 支持 （根据本主题中前面提供的定义）。 有关检查拓扑、 源模式集和目标的 VidPN 模式集的信息，请参阅[VidPN 对象和接口](vidpn-objects-and-interfaces.md)。
+有时，VidPN 管理器调用[ **DxgkDdiIsSupportedVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_issupportedvidpn)询问是否显示适配器上支持某些 VidPN 显示微型端口驱动程序。 一个参数传递给**DxgkDdiIsSupportedVidPn**是名为所需的 VidPN VidPN 对象的句柄。 **DxgkDdiIsSupportedVidPn**必须检查所需 VidPN 拓扑和必须记下这些视频显示源和目标中所需 VidPN 已经具有固定模式。 然后，它必须返回一个布尔值，该值指示是否将所需的 VidPN 支持 （根据本主题中前面提供的定义）。 有关检查拓扑、 源模式集和目标的 VidPN 模式集的信息，请参阅[VidPN 对象和接口](vidpn-objects-and-interfaces.md)。
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 适配器对象 WDK 内核，总线 master DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eb662a552dbf05ed25f25207a49d5b0062c28fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 667f1567ac1f8f271c0af2204f780d75a6c94f82
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369969"
 ---
 # <a name="allocating-the-bus-master-adapter-object"></a>分配总线主控适配器对象
 
@@ -22,13 +22,13 @@ ms.locfileid: "63326061"
 
 
 
-若要准备基于数据包的、 总线 master DMA 驱动程序调用[ **KeFlushIoBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff552041)并[ **AllocateAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff540573)后接收[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)或者[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819). 该驱动程序调用这些例程之前，其调度例程应检查的 IRP 的参数的有效性。 它还可能会排队到另一个驱动程序例程进行进一步处理 IRP。 转移请求是当前 IRP 要求设备 I/O 操作。
+若要准备基于数据包的、 总线 master DMA 驱动程序调用[ **KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers)并[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)后接收[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)或者[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write). 该驱动程序调用这些例程之前，其调度例程应检查的 IRP 的参数的有效性。 它还可能会排队到另一个驱动程序例程进行进一步处理 IRP。 转移请求是当前 IRP 要求设备 I/O 操作。
 
-调用的驱动程序例程**AllocateAdapterChannel**必须执行在 IRQL = 调度\_级别。 以及指向返回的适配器对象的指针[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)，它将调用时，驱动程序必须提供以下**AllocateAdapterChannel**:
+调用的驱动程序例程**AllocateAdapterChannel**必须执行在 IRQL = 调度\_级别。 以及指向返回的适配器对象的指针[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)，它将调用时，驱动程序必须提供以下**AllocateAdapterChannel**:
 
 -   指向当前 IRP 的目标设备对象的指针
 
--   入口点及其[ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)例程
+-   入口点及其[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程
 
 -   指向任何驱动程序确定上下文信息的指针*AdapterControl*例程将使用
 
@@ -36,13 +36,13 @@ ms.locfileid: "63326061"
 
 在进入时， *AdapterControl*给定例程*DeviceObject*并*上下文*指针传递到调用中**AllocateAdapterChannel**，以及一个句柄 (*MapRegisterBase*) 的分配的映射注册。
 
-*AdapterControl*例程还提供一个指向**DeviceObject-&gt;CurrentIrp**如果该驱动程序有[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程。 如果该驱动程序管理的 Irp 自己队列，而不让*StartIo*例程，该驱动程序应包括指向当前 IRP 的指针调用时传递的上下文的一部分**AllocateAdapterChannel**.
+*AdapterControl*例程还提供一个指向**DeviceObject-&gt;CurrentIrp**如果该驱动程序有[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程。 如果该驱动程序管理的 Irp 自己队列，而不让*StartIo*例程，该驱动程序应包括指向当前 IRP 的指针调用时传递的上下文的一部分**AllocateAdapterChannel**.
 
 主总线 DMA 设备没有散播-聚集功能的驱动程序*AdapterControl*例程通常执行以下操作：
 
-1.  将保存或初始化该驱动程序会维护有关 DMA 操作任何上下文。 上下文可能包括输入*MapRegisterBase*句柄驱动程序必须将传递给[ **MapTransfer** ](https://msdn.microsoft.com/library/windows/hardware/ff554402)并[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)，则**长度**以字节为单位的来自其 I/O 请求的传输堆栈 IRP 中的位置等。
+1.  将保存或初始化该驱动程序会维护有关 DMA 操作任何上下文。 上下文可能包括输入*MapRegisterBase*句柄驱动程序必须将传递给[ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)并[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)，则**长度**以字节为单位的来自其 I/O 请求的传输堆栈 IRP 中的位置等。
 
-2.  调用[ **MmGetMdlVirtualAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff554539)跟**MapTransfer** (中所述[传输启动操作设置](setting-up-a-transfer-operation.md)、 下一步) 以获取其设备可用于启动在传输操作的逻辑地址。
+2.  调用[ **MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)跟**MapTransfer** (中所述[传输启动操作设置](setting-up-a-transfer-operation.md)、 下一步) 以获取其设备可用于启动在传输操作的逻辑地址。
 
 3.  将主机总线适配器设置开始在传输操作。
 
@@ -62,9 +62,9 @@ ms.locfileid: "63326061"
 
 有关其他信息，请参阅[写入 AdapterControl 例程](writing-adaptercontrol-routines.md)。
 
-请注意，可以使用驱动程序的执行主总线 DMA [ **GetScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff546531)并[ **PutScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff559967)例程而不考虑他们的设备是否支持散播-聚集 DMA。 使用这些例程可更改的驱动程序的要求*AdapterControl*例程，请参见[使用散播-聚集 DMA](using-scatter-gather-dma.md)有关详细信息。
+请注意，可以使用驱动程序的执行主总线 DMA [ **GetScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pget_scatter_gather_list)并[ **PutScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_scatter_gather_list)例程而不考虑他们的设备是否支持散播-聚集 DMA。 使用这些例程可更改的驱动程序的要求*AdapterControl*例程，请参见[使用散播-聚集 DMA](using-scatter-gather-dma.md)有关详细信息。
 
-*AdapterControl*例程必须返回类型 IO 的系统定义的值\_分配\_操作。 驱动程序使用总线 master DMA *AdapterControl*例程通常的返回值应**DeallocateObjectKeepRegisters**，这将允许驱动程序保留分配的映射注册目标设备对象直到其已经为当前的 IRP 传输所有请求的数据。 传输完成后，应调用 DPC 例程[ **FreeMapRegisters** ](https://msdn.microsoft.com/library/windows/hardware/ff546513)来释放分配的映射注册。 在其中的设备不支持命令排队，但是的情况下*AdapterControl*例程可以返回**KeepObject**时当前 IRP 的传输已完成，并且可以调用 DPC 例程[ **FreeAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff546507)相反。
+*AdapterControl*例程必须返回类型 IO 的系统定义的值\_分配\_操作。 驱动程序使用总线 master DMA *AdapterControl*例程通常的返回值应**DeallocateObjectKeepRegisters**，这将允许驱动程序保留分配的映射注册目标设备对象直到其已经为当前的 IRP 传输所有请求的数据。 传输完成后，应调用 DPC 例程[ **FreeMapRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)来释放分配的映射注册。 在其中的设备不支持命令排队，但是的情况下*AdapterControl*例程可以返回**KeepObject**时当前 IRP 的传输已完成，并且可以调用 DPC 例程[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)相反。
 
 *AdapterControl*例程不能等待主机总线适配器来完成 DMA 操作。
 
@@ -74,7 +74,7 @@ ms.locfileid: "63326061"
 
 2.  返回**DeallocateObjectKeepRegisters**。
 
-另一个驱动程序例程 (可能[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)例程) 必须调用**FlushAdapterBuffers** DMA 传输的每个操作完成时。 此例程还必须设置的任何其他 DMA 操作需满足当前 IRP。
+另一个驱动程序例程 (可能[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程) 必须调用**FlushAdapterBuffers** DMA 传输的每个操作完成时。 此例程还必须设置的任何其他 DMA 操作需满足当前 IRP。
 
 当驱动程序已满足当前 IRP 的传输请求，或者必须失败由于设备或总线 I/O 错误 IRP 时，它必须调用**FreeMapRegisters**。 此调用应发生到的最后一个调用后立即**FlushAdapterBuffers**为当前的 IRP，以便该驱动程序可以提供服务的其他 DMA 请求，可能是在总线上的其他设备。
 

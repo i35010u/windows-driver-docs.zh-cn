@@ -10,12 +10,12 @@ keywords:
 - 共享基础套接字 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bafb3c2242cbb22fe1508399400f1c7a6fe50f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec88b4f123af1633a987bad2fd4a9fc15ae76b89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386546"
 ---
 # <a name="duplicating-socket-handles-for-a-san"></a>复制 SAN 的套接字句柄
 
@@ -53,13 +53,13 @@ Windows 套接字开关，结合 TCP/IP 提供程序，检测并处理每个上�
 
 -   不控制套接字调用的进程**WSAAccept**， **WSPAccept**，或**AcceptEx**函数以启动侦听套接字上的连接接受操作。 SAN 服务提供商不交换的套接字的控件，直到所有接受控制进程启动的请求已完成。
 
-开关将执行以下步骤来交换连接 SAN 的套接字从控制进程到下一步控制进程的控制 (有关概述的交换处理，请参阅的文档备注部分中的表[**WSPDuplicateSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566282)函数。):
+开关将执行以下步骤来交换连接 SAN 的套接字从控制进程到下一步控制进程的控制 (有关概述的交换处理，请参阅的文档备注部分中的表[**WSPDuplicateSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566282(v=vs.85))函数。):
 
-1.  开关控制过程中挂起来自应用程序的新请求的处理。 当所有发送和 RDMA SAN 套接字上进行的操作已完成时，此开关调用 SAN 服务提供商的[ **WSPSend** ](https://msdn.microsoft.com/library/windows/hardware/ff566316)函数将消息发送到已连接的对等方请求以在挂起会话和调用的 SAN 服务提供商[ **WSPDeregisterMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff566279)函数，以释放所有本地缓冲区，用于发送操作。 在对等连接的交换机上 SAN 套接字，若要完成，正在进行中挂起的新的应用程序请求和等待所有发送和 RDMA 操作处理的结果，并释放所有 RDMA 的内存。 接下来，对等连接发送一个答复消息，指示在会话挂起。 收到以下确认消息，在本地终结点上的交换机调用 SAN 服务提供商**WSPDeregisterRdmaMemory**函数，以释放所有 RDMA 的内存。 此时，SAN 套接字连接这两个终结点只能具有接收申请处于挂起状态。 这些接收请求保持挂起状态以允许重新激活的会话的远程对等方的 SAN 套接字上。 在下一步中完成控制过程中在本地 SAN 套接字上的接收请求。 当挂起连接时，在远程对等连接队列新阻止或重叠的请求，切换到 SO 向上缓冲新非阻止发送\_SNDBUF 设置后达到缓冲区限制时，失败新非阻止发送和失败的所有新非阻止性将会收到包含 WSAEWOULDBLOCK。 控制进程中的本地交换机如同进程不具有的套接字控制处理应用程序套接字上的新请求。
+1.  开关控制过程中挂起来自应用程序的新请求的处理。 当所有发送和 RDMA SAN 套接字上进行的操作已完成时，此开关调用 SAN 服务提供商的[ **WSPSend** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566316(v=vs.85))函数将消息发送到已连接的对等方请求以在挂起会话和调用的 SAN 服务提供商[ **WSPDeregisterMemory** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566279(v=vs.85))函数，以释放所有本地缓冲区，用于发送操作。 在对等连接的交换机上 SAN 套接字，若要完成，正在进行中挂起的新的应用程序请求和等待所有发送和 RDMA 操作处理的结果，并释放所有 RDMA 的内存。 接下来，对等连接发送一个答复消息，指示在会话挂起。 收到以下确认消息，在本地终结点上的交换机调用 SAN 服务提供商**WSPDeregisterRdmaMemory**函数，以释放所有 RDMA 的内存。 此时，SAN 套接字连接这两个终结点只能具有接收申请处于挂起状态。 这些接收请求保持挂起状态以允许重新激活的会话的远程对等方的 SAN 套接字上。 在下一步中完成控制过程中在本地 SAN 套接字上的接收请求。 当挂起连接时，在远程对等连接队列新阻止或重叠的请求，切换到 SO 向上缓冲新非阻止发送\_SNDBUF 设置后达到缓冲区限制时，失败新非阻止发送和失败的所有新非阻止性将会收到包含 WSAEWOULDBLOCK。 控制进程中的本地交换机如同进程不具有的套接字控制处理应用程序套接字上的新请求。
 
 2.  开关在会话挂起后，调用 SAN 服务提供商**WSPDuplicateSocket**控制进程直接 SAN 服务提供程序，从而将套接字上下文传输到的地址空间中的函数下一步控制过程。 开关指定中的下一步控制过程*dwProcessId*的参数**WSPDuplicateSocket**。 **WSPDuplicateSocket**函数必须调用**WPUCompleteOverlappedRequest**函数来完成所有未完成接收请求，成功状态，零字节的套接字上。 SAN 服务提供商必须也会自动释放与这些请求关联的所有缓冲区。 由于交换机不会请求后 SAN 套接字上的任何其他操作，SAN 服务提供程序释放所有缓冲区**WSPDuplicateSocket**返回。 唯一可能的例外是**WSPCloseSocket**函数调用下, 一步中所述。 之后**WSPDuplicateSocket**返回时，交换机将中的值**dwProviderReserved** WSAPROTOCOL 成员\_INFOW 结构*lpProtocolInfo*输出参数所指向。 此开关使用此值来标识基础套接字下, 一步控制进程的上下文中。 因此中的值**dwProviderReserved**必须用于在系统上的所有进程间唯一地标识基础套接字和该套接字连接。 此外，此值必须是仅在交换机中指定进程的上下文中有效*dwProcessId*的参数**WSPDuplicateSocket**。
 
-3.  开关的套接字上下文传输到下一步控制进程的地址空间后，调用 SAN 服务提供商[ **WSPSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566319)下一步控制的上下文中函数过程。 在此调用中，此开关将传递基础套接字中返回的值**WSPDuplicateSocket**调用**dwProviderReserved** WSAPROTOCOL 成员\_INFOW向其结构*lpProtocolInfo*输入参数所指向。 如果下一步控制进程没有请求 SAN 套接字的创建，SAN 服务提供商必须创建一个新的套接字并调用**WPUCreateSocketHandle**函数获取的句柄，所需的任何新的套接字。 如果在下一步控制进程的上下文中创建了 SAN 套接字，SAN 服务提供商可以重新激活以前套接字和返回以前使用的套接字的相同描述符。 在这种情况下，SAN 服务提供程序不应调用**WPUCreateSocketHandle**，但应继续使用该交换机提供的原始套接字句柄。 或者，SAN 服务提供商可以创建新的套接字，而不考虑一个套接字是否以前存在于该过程。 在这种情况下，该交换机必须调用 SAN 服务提供商[ **WSPCloseSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566273)要释放的以前的套接字描述符的下一步控制进程的上下文中的函数。
+3.  开关的套接字上下文传输到下一步控制进程的地址空间后，调用 SAN 服务提供商[ **WSPSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566319(v=vs.85))下一步控制的上下文中函数过程。 在此调用中，此开关将传递基础套接字中返回的值**WSPDuplicateSocket**调用**dwProviderReserved** WSAPROTOCOL 成员\_INFOW向其结构*lpProtocolInfo*输入参数所指向。 如果下一步控制进程没有请求 SAN 套接字的创建，SAN 服务提供商必须创建一个新的套接字并调用**WPUCreateSocketHandle**函数获取的句柄，所需的任何新的套接字。 如果在下一步控制进程的上下文中创建了 SAN 套接字，SAN 服务提供商可以重新激活以前套接字和返回以前使用的套接字的相同描述符。 在这种情况下，SAN 服务提供程序不应调用**WPUCreateSocketHandle**，但应继续使用该交换机提供的原始套接字句柄。 或者，SAN 服务提供商可以创建新的套接字，而不考虑一个套接字是否以前存在于该过程。 在这种情况下，该交换机必须调用 SAN 服务提供商[ **WSPCloseSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566273(v=vs.85))要释放的以前的套接字描述符的下一步控制进程的上下文中的函数。
 
 4.  开关控制下一步的过程中重新启动应用程序中的新请求的处理。
 
@@ -71,7 +71,7 @@ Windows 套接字开关，结合 TCP/IP 提供程序，检测并处理每个上�
 
 请注意，在所有情况下，SAN 套接字描述符必须保持有效，直到开关调用 SAN 服务提供商**WSPCloseSocket**函数来显式关闭套接字。 即使 SAN 服务提供程序释放所有资源中之前接收特定进程的套接字**WSPDuplicateSocket**调用中，SAN 服务提供商必须重复使用套接字描述符直到开关调用**WSPCloseSocket**上该描述符。
 
-进程意外的退出或某些其他错误条件可能会中断 SAN 服务提供商的套接字复制操作。 例如，资源不足可能导致此类中断。 开关会将此类错误条件如同任何其他错误情况。 如有必要，切换将关闭与基础套接字中所有进程强制终止的套接字连接相关联的所有描述符。 如有可能，应完成的 SAN 服务提供程序的远程对等方[ **WSPRecv** ](https://msdn.microsoft.com/library/windows/hardware/ff566309)接收相应的错误代码，如 WSAECONNRESET 传入数据的调用。 此错误代码通知终止连接的远程对等方。 如果在远程对等方 switch 未收到此连接终止的指示，在远程对等方 switch 挂起连接如果超时请求挂起系统出现故障。
+进程意外的退出或某些其他错误条件可能会中断 SAN 服务提供商的套接字复制操作。 例如，资源不足可能导致此类中断。 开关会将此类错误条件如同任何其他错误情况。 如有必要，切换将关闭与基础套接字中所有进程强制终止的套接字连接相关联的所有描述符。 如有可能，应完成的 SAN 服务提供程序的远程对等方[ **WSPRecv** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566309(v=vs.85))接收相应的错误代码，如 WSAECONNRESET 传入数据的调用。 此错误代码通知终止连接的远程对等方。 如果在远程对等方 switch 未收到此连接终止的指示，在远程对等方 switch 挂起连接如果超时请求挂起系统出现故障。
 
  
 

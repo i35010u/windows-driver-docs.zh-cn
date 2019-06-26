@@ -8,12 +8,12 @@ keywords:
 - Unicode 字符串 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb8a6cf1d5664e421e47d491e09af7b26bb4eca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c84f1261ac9b812ef5e4aee8d33c15aa15a83f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372211"
 ---
 # <a name="using-string-objects"></a>使用字符串对象
 
@@ -27,11 +27,11 @@ WDF 仅使用 Unicode 字符串。 所有由 framework 对象定义的方法只�
 
 该框架定义*framework 字符串对象*KMDF 和 UMDF 驱动程序可以使用来表示 Unicode 字符串。
 
-您的驱动程序可以调用[ **WdfStringCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff550046)创建字符串对象，可以选择为该对象指定的 Unicode 字符串。
+您的驱动程序可以调用[ **WdfStringCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfstring/nf-wdfstring-wdfstringcreate)创建字符串对象，可以选择为该对象指定的 Unicode 字符串。
 
-某些框架的对象的方法，例如[ **WdfRegistryQueryString**](https://msdn.microsoft.com/library/windows/hardware/ff549923)，接受作为输入的字符串对象句柄并将字符串分配字符串对象。
+某些框架的对象的方法，例如[ **WdfRegistryQueryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfregistry/nf-wdfregistry-wdfregistryquerystring)，接受作为输入的字符串对象句柄并将字符串分配字符串对象。
 
-若要访问分配给一个字符串对象的字符串，您的驱动程序可以调用[ **WdfStringGetUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff550049)。
+若要访问分配给一个字符串对象的字符串，您的驱动程序可以调用[ **WdfStringGetUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfstring/nf-wdfstring-wdfstringgetunicodestring)。
 
  
 

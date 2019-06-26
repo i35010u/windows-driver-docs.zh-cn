@@ -8,12 +8,12 @@ keywords:
 - 启动选项 WDK，引导参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f330203a0065139f51f0a37a564f461845d0344
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 519cac2938ab247961affcbc8f3d1339cad13fd6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371613"
 ---
 # <a name="changing-boot-parameters"></a>更改启动参数
 
@@ -23,7 +23,7 @@ ms.locfileid: "63375361"
 
 ## <a name="span-idusingbcdeditspanspan-idusingbcdeditspanusing-bcdedit"></a><span id="using_bcdedit"></span><span id="USING_BCDEDIT"></span>使用 BCDEdit
 
-若要添加的启动项启动配置参数，使用 BCDEdit 启动条目选项来更改全局设置，例如 **/ems**， **/debug**， **/dbgsettings**，或设置每个参数使用[ **BCDEdit /set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)选项。 有关完整列表的 BCDEdit 选项，在命令提示符处，键入**BCDEdit /？** 或**BCDEdit /？** &lt;命令&gt;若要查找有关特定命令的帮助。
+若要添加的启动项启动配置参数，使用 BCDEdit 启动条目选项来更改全局设置，例如 **/ems**， **/debug**， **/dbgsettings**，或设置每个参数使用[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)选项。 有关完整列表的 BCDEdit 选项，在命令提示符处，键入**BCDEdit /？** 或**BCDEdit /？** &lt;命令&gt;若要查找有关特定命令的帮助。
 
 例如，以下命令将指定的启动项启用 PAE:
 

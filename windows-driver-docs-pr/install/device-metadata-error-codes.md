@@ -4,12 +4,12 @@ description: 设备元数据错误代码
 ms.assetid: 7ca3b9d3-8e7d-4421-affa-bddea2d4c262
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0724edeae8b219dd267367712229b3a9158f87e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbd6411a9886304c3ca7eee48c7be967757d1c6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387122"
 ---
 # <a name="device-metadata-error-codes"></a>设备元数据错误代码
 
@@ -129,7 +129,7 @@ ms.locfileid: "63357893"
 <td align="left"><p>50000022</p></td>
 <td align="left"><p><em>PackageInfo.xml</em>格式不正确，无法分析。</p>
 <div class="alert">
-<strong>请注意</strong>此错误代码包括用例其中任一<em>PackageInfo.xml</em>文档缺少必需的元素，或一个或多个它的元素不是有效的语法基于<a href="https://msdn.microsoft.com/library/windows/hardware/ff549614" data-raw-source="[PackageInfo XML Schema](https://msdn.microsoft.com/library/windows/hardware/ff549614)">PackageInfo XML架构</a>。
+<strong>请注意</strong>此错误代码包括用例其中任一<em>PackageInfo.xml</em>文档缺少必需的元素，或一个或多个它的元素不是有效的语法基于<a href="https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549614(v=vs.85)" data-raw-source="[PackageInfo XML Schema](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549614(v=vs.85))">PackageInfo XML架构</a>。
 </div>
 <div>
  

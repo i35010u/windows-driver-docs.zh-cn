@@ -7,12 +7,12 @@ keywords:
 - 完成 I/O 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9bfa4598522deba749cbc0e19761eab473c29d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d96d1301bcb4ce22aaf78cc31cf48eb7adb32155
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391119"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363551"
 ---
 # <a name="completing-the-irp"></a>完成 IRP
 
@@ -28,7 +28,7 @@ ms.locfileid: "63391119"
 
 1.  设置**Irp-&gt;IoStatus.Status**为适当的 NTSTATUS 值。
 
-2.  调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)返回 IRP 到 I/O 管理器。
+2.  调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)返回 IRP 到 I/O 管理器。
 
 3.  如步骤 1 中所示将同一状态值返回给调用方。
 
@@ -38,7 +38,7 @@ ms.locfileid: "63391119"
 
 -   向*失败*IRP 意味着若要完成使用错误或警告 NTSTATUS 值类似于状态\_无效\_设备\_请求或状态\_缓冲区\_溢出。
 
-NTSTATUS 值 ntstatus.h 中发现了定义。 这些值划分为四个类别： 成功后，信息性消息、 警告和错误。 有关详细信息，请参阅[使用 NTSTATUS 值](https://msdn.microsoft.com/library/windows/hardware/ff565436)。
+NTSTATUS 值 ntstatus.h 中发现了定义。 这些值划分为四个类别： 成功后，信息性消息、 警告和错误。 有关详细信息，请参阅[使用 NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)。
 
 **请注意**  虽然状态\_PENDING 是成功 NTSTATUS 值，而是编程错误才能完成，状态 IRP\_PENDING。
 

@@ -3,12 +3,12 @@ Description: 本主题提供的函数概述挂起和函数远程唤醒功能的�
 title: 如何实现复合的驱动程序中函数挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41de7e83354c04c4ad8cacb874f5a83edf5a4595
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53ba7b9abb05eff983b7ab51d24924dfa63d4925
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381071"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386266"
 ---
 # <a name="how-to-implement-function-suspend-in-a-composite-driver"></a>如何实现复合的驱动程序中函数挂起
 
@@ -40,21 +40,21 @@ ms.locfileid: "63381071"
 
 ### <a href="" id="determine-whether-the-usb-driver-stack-supports-function-suspend"></a>步骤 1:确定是否挂起 USB 驱动程序堆栈支持函数
 
-在开始设备例程 ([**IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)) 的复合驱动程序，请执行以下步骤：
+在开始设备例程 ([**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)) 的复合驱动程序，请执行以下步骤：
 
-1.  调用[ **USBD\_QueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh406230)例程，以确定基础的 USB 驱动程序堆栈是否支持该函数挂起功能。 调用需要有效 USBD 处理你在上一个调用中获取[ **USBD\_CreateHandle** ](https://msdn.microsoft.com/library/windows/hardware/hh406241)例程。
+1.  调用[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))例程，以确定基础的 USB 驱动程序堆栈是否支持该函数挂起功能。 调用需要有效 USBD 处理你在上一个调用中获取[ **USBD\_CreateHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)例程。
 
-    在成功调用[ **USBD\_QueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh406230)确定基础的 USB 驱动程序堆栈支持函数是否挂起。 该调用可以返回一个错误代码，指示 USB 驱动程序堆栈不支持函数挂起或所连接的设备不是 USB 3.0 多功能设备。
+    在成功调用[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))确定基础的 USB 驱动程序堆栈支持函数是否挂起。 该调用可以返回一个错误代码，指示 USB 驱动程序堆栈不支持函数挂起或所连接的设备不是 USB 3.0 多功能设备。
 
-2.  如果[ **USBD\_QueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh406230)调用指示函数挂起支持，复合设备注册到底层的 USB 驱动程序堆栈。 若要注册复合设备，必须将发送[ **IOCTL\_内部\_USB\_注册\_复合\_设备**](https://msdn.microsoft.com/library/windows/hardware/hh450854) I/O控制请求。 有关此请求的详细信息，请参阅[如何注册复合设备](register-a-composite-driver.md)。
+2.  如果[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))调用指示函数挂起支持，复合设备注册到底层的 USB 驱动程序堆栈。 若要注册复合设备，必须将发送[ **IOCTL\_内部\_USB\_注册\_复合\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device) I/O控制请求。 有关此请求的详细信息，请参阅[如何注册复合设备](register-a-composite-driver.md)。
 
-    注册请求使用[**注册\_复合\_设备**](https://msdn.microsoft.com/library/windows/hardware/hh450898)结构，以指定的复合的驱动程序的信息。 请确保您设置**CapabilityFunctionSuspend**为 1，表示复合驱动程序支持函数挂起。
+    注册请求使用[**注册\_复合\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_register_composite_device)结构，以指定的复合的驱动程序的信息。 请确保您设置**CapabilityFunctionSuspend**为 1，表示复合驱动程序支持函数挂起。
 
-有关代码示例，演示如何确定 USB 驱动程序堆栈是否支持函数挂起，请参阅[ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)。
+有关代码示例，演示如何确定 USB 驱动程序堆栈是否支持函数挂起，请参阅[ **USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))。
 
 ### <a href="" id="handle-the-idle-irp"></a>步骤 2:句柄空闲的 IRP
 
-客户端驱动程序可以发送空闲 IRP (请参阅[ **IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537270))。 客户端驱动程序已检测到该函数的空闲状态后，发送请求。 IRP 包含回调完成例程的指针 (称为*空闲回调*)，其由客户端驱动程序。 在空闲状态的回调中，客户端将执行任务，例如，取消挂起的 I/O 传输之前发送要挂起状态的函数。
+客户端驱动程序可以发送空闲 IRP (请参阅[ **IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification))。 客户端驱动程序已检测到该函数的空闲状态后，发送请求。 IRP 包含回调完成例程的指针 (称为*空闲回调*)，其由客户端驱动程序。 在空闲状态的回调中，客户端将执行任务，例如，取消挂起的 I/O 传输之前发送要挂起状态的函数。
 
 **请注意**  空闲的 IRP 机制取决于您的 USB 3.0 设备的客户端驱动程序。 但是，大多数客户端驱动程序都编写为支持 USB 2.0 和 USB 3.0 设备。 若要支持 USB 2.0 设备，驱动程序必须发送空闲 IRP，，因为复合驱动程序依赖于该 IRP 来跟踪每个函数的电源状态。 如果所有函数都都处于空闲状态，复合的驱动程序将发送整个设备以挂起状态。
 
@@ -64,9 +64,9 @@ ms.locfileid: "63381071"
 
 ### <a href="" id="send-a-request-for-remote-wake-up-notification"></a>步骤 3:将请求发送远程唤醒通知
 
-客户端驱动程序可以提交请求以提交 arm 其功能的远程唤醒[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784) IRP 次要功能代码设置为[**IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766) (等待唤醒 IRP)。 仅当该驱动程序想要输入由于用户事件的工作状态，客户端驱动程序将提交此请求。
+客户端驱动程序可以提交请求以提交 arm 其功能的远程唤醒[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) IRP 次要功能代码设置为[**IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) (等待唤醒 IRP)。 仅当该驱动程序想要输入由于用户事件的工作状态，客户端驱动程序将提交此请求。
 
-一旦收到等待唤醒 IRP，复合的驱动程序必须发送[ **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知** ](https://msdn.microsoft.com/library/windows/hardware/hh450856)到 USB 驱动程序堆栈的 I/O 控制请求。 请求启用 USB 驱动程序堆栈，以通知复合驱动程序，当堆栈收到有关恢复信号通知。 **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知**使用[**请求\_远程\_唤醒\_通知**](https://msdn.microsoft.com/library/windows/hardware/hh406227)结构，以指定的请求参数。 复合驱动程序必须指定的值之一是了解有关远程唤醒的函数的函数句柄。 复合驱动程序获得复合设备注册到 USB 驱动程序堆栈的前一个请求中该句柄。 有关复合驱动程序的注册请求的详细信息，请参阅[如何注册复合设备](register-a-composite-driver.md)。
+一旦收到等待唤醒 IRP，复合的驱动程序必须发送[ **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)到 USB 驱动程序堆栈的 I/O 控制请求。 请求启用 USB 驱动程序堆栈，以通知复合驱动程序，当堆栈收到有关恢复信号通知。 **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知**使用[**请求\_远程\_唤醒\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_request_remote_wake_notification)结构，以指定的请求参数。 复合驱动程序必须指定的值之一是了解有关远程唤醒的函数的函数句柄。 复合驱动程序获得复合设备注册到 USB 驱动程序堆栈的前一个请求中该句柄。 有关复合驱动程序的注册请求的详细信息，请参阅[如何注册复合设备](register-a-composite-driver.md)。
 
 在请求 IRP，复合的驱动程序提供一个指向 （远程唤醒） 完成例程，由复合驱动程序实现。
 
@@ -137,15 +137,15 @@ SendRequestForRemoteWakeNotification(
 }
 ```
 
-[ **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知**](https://msdn.microsoft.com/library/windows/hardware/hh450856)请求完成的在唤醒过程中收到有关恢复信号通知时 USB 驱动程序堆栈。 在此期间，USB 驱动程序堆栈还调用远程唤醒完成例程。
+[ **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)请求完成的在唤醒过程中收到有关恢复信号通知时 USB 驱动程序堆栈。 在此期间，USB 驱动程序堆栈还调用远程唤醒完成例程。
 
 复合的驱动程序必须保留挂起的等待唤醒 IRP，队列供以后处理。 USB 驱动程序堆栈获取调用驱动程序的远程唤醒完成例程时，复合的驱动程序必须完成该 IRP。
 
 ### <a href="" id="send-a-request-to-arm-the-function-for-remote-wake-up"></a>步骤 4:发送请求以 Arm 远程唤醒的函数
 
-若要将该函数发送到低功耗状态，客户端驱动程序提交[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)与请求后，若要更改的 Windows 驱动程序模型 （IRPWDM) 设备的电源状态更改为**D2**或**D3**。 通常情况下，客户端驱动程序发送**D2** IRP 如果驱动程序发送等待唤醒 IRP，更低，以便请求远程唤醒。 否则，客户端驱动程序将发送**D3** IRP。
+若要将该函数发送到低功耗状态，客户端驱动程序提交[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)与请求后，若要更改的 Windows 驱动程序模型 （IRPWDM) 设备的电源状态更改为**D2**或**D3**。 通常情况下，客户端驱动程序发送**D2** IRP 如果驱动程序发送等待唤醒 IRP，更低，以便请求远程唤醒。 否则，客户端驱动程序将发送**D3** IRP。
 
-在接收时**D2** IRP，复合的驱动程序必须首先确定等待唤醒 IRP 处于挂起状态的客户端驱动程序发送的前一个请求。 如果该 IRP 处于挂起状态，复合的驱动程序必须 arm 远程唤醒的函数。 若要执行此操作，复合的驱动程序必须发送一组\_功能控制请求的函数的第一个接口以允许设备将恢复信号发送。 若要发送控制请求，分配[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构通过调用[ **USBD\_UrbAllocate** ](https://msdn.microsoft.com/library/windows/hardware/hh406250)例程并调用[ **UsbBuildFeatureRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538932)若要设置格式的宏**URB**针对一\_功能请求。 在调用中，指定 URB\_函数\_设置\_功能\_TO\_作为操作代码和 USB 接口\_功能\_函数\_挂起功能选择器。 在中*索引*参数，设置**位 1**的最高有效字节。 将值复制到**wIndex**安装数据包的传输中的字段。
+在接收时**D2** IRP，复合的驱动程序必须首先确定等待唤醒 IRP 处于挂起状态的客户端驱动程序发送的前一个请求。 如果该 IRP 处于挂起状态，复合的驱动程序必须 arm 远程唤醒的函数。 若要执行此操作，复合的驱动程序必须发送一组\_功能控制请求的函数的第一个接口以允许设备将恢复信号发送。 若要发送控制请求，分配[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构通过调用[ **USBD\_UrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)例程并调用[ **UsbBuildFeatureRequest** ](https://docs.microsoft.com/previous-versions/ff538932(v=vs.85))若要设置格式的宏**URB**针对一\_功能请求。 在调用中，指定 URB\_函数\_设置\_功能\_TO\_作为操作代码和 USB 接口\_功能\_函数\_挂起功能选择器。 在中*索引*参数，设置**位 1**的最高有效字节。 将值复制到**wIndex**安装数据包的传输中的字段。
 
 下面的示例演示如何将发送一组\_功能控制请求。
 
@@ -246,11 +246,11 @@ Exit:
 
 在鼠标函数示例中，因为启用远程唤醒功能 （请参阅步骤 4），用户 wiggles 鼠标时，鼠标函数将生成上游到主控制器在网络上的恢复信号。 然后，控制器通过发送通知的数据包，其中包含有关唤醒函数的信息通知 USB 驱动程序堆栈。 有关函数唤醒通知的信息，请参阅 USB 3.0 规范中的图 8-17。
 
-USB 驱动程序堆栈完成时接收通知数据包，挂起[ **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知**](https://msdn.microsoft.com/library/windows/hardware/hh450856)请求 （请参阅步骤 3），并调用 （远程唤醒） 完成回调例程请求中指定并由复合驱动程序实现。 当通知到达复合驱动程序时，它通知相应客户端驱动程序函数已通过完成等待唤醒 IRP 之前发送客户端驱动程序进入工作状态。
+USB 驱动程序堆栈完成时接收通知数据包，挂起[ **IOCTL\_内部\_USB\_请求\_远程\_唤醒\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)请求 （请参阅步骤 3），并调用 （远程唤醒） 完成回调例程请求中指定并由复合驱动程序实现。 当通知到达复合驱动程序时，它通知相应客户端驱动程序函数已通过完成等待唤醒 IRP 之前发送客户端驱动程序进入工作状态。
 
-（远程唤醒） 完成例程，复合的驱动程序应将工作项排队以完成挂起的等待唤醒 IRP。 适用于 USB 3.0 设备仅发出继续信号并离开中的其他函数的函数会复合驱动程序被唤醒挂起状态。 队列工作项可确保与现有实现的 USB 2.0 设备功能的驱动程序的兼容性。 有关队列的工作项的信息，请参阅[ **IoQueueWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff549466)。
+（远程唤醒） 完成例程，复合的驱动程序应将工作项排队以完成挂起的等待唤醒 IRP。 适用于 USB 3.0 设备仅发出继续信号并离开中的其他函数的函数会复合驱动程序被唤醒挂起状态。 队列工作项可确保与现有实现的 USB 2.0 设备功能的驱动程序的兼容性。 有关队列的工作项的信息，请参阅[ **IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitem)。
 
-工作线程完成等待唤醒 IRP，并调用客户端驱动程序的完成例程。 然后将发送完成例程**D0** IRP 在工作状态中输入该函数。 在完成之前等待唤醒 IRP，复合的驱动程序应调用[ **PoSetSystemWake** ](https://msdn.microsoft.com/library/windows/hardware/ff559770)标记等待唤醒 IRP 与参与唤醒从系统挂起状态。 电源管理器记录的事件跟踪 Windows (ETW) 事件 （可在全球系统通道中查看），其中包含有关设备的系统中唤醒的信息。
+工作线程完成等待唤醒 IRP，并调用客户端驱动程序的完成例程。 然后将发送完成例程**D0** IRP 在工作状态中输入该函数。 在完成之前等待唤醒 IRP，复合的驱动程序应调用[ **PoSetSystemWake** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemwake)标记等待唤醒 IRP 与参与唤醒从系统挂起状态。 电源管理器记录的事件跟踪 Windows (ETW) 事件 （可在全球系统通道中查看），其中包含有关设备的系统中唤醒的信息。
 
 ## <a name="related-topics"></a>相关主题
 [USB 电源管理](usb-power-management.md)  

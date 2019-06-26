@@ -4,12 +4,12 @@ description: SerCx2 和串行控制器驱动程序合作共同管理永久连接
 ms.assetid: EF7F42D3-21A5-42F8-86AB-897281DF4F18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea57350c220ff0ed11be014f3d8b32beffaaf5a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bd74d551ce37ad4c21aca77b80e67c547c01322
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345297"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391415"
 ---
 # <a name="accessing-a-device-on-a-sercx2-managed-serial-port"></a>访问 SerCx2 托管串行端口上的设备
 
@@ -41,11 +41,11 @@ SerCx2 和串行控制器驱动程序合作共同管理永久连接到外围设�
 </tr>
 <tr class="odd">
 <td><p><a href="sercx2-handling-of-read-and-write-requests.md" data-raw-source="[SerCx2 Handling of Read and Write Requests](sercx2-handling-of-read-and-write-requests.md)">SerCx2 处理读取和写入请求</a></p></td>
-<td><p>外围设备的驱动程序将发送写入 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff546904" data-raw-source="[&lt;strong&gt;IRP_MJ_WRITE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546904)"><strong>IRP_MJ_WRITE</strong></a>) 和读取 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff546883" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546883)"><strong>IRP_MJ_READ</strong></a>) 到串行控制器上的端口的请求传输数据传入和传出外围设备连接到的端口。 在其中 SerCx2 处理这些请求的方式是有明确定义，即使请求超时或被取消。</p></td>
+<td><p>外围设备的驱动程序将发送写入 (<a href="https://docs.microsoft.com/previous-versions/ff546904(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_WRITE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))"><strong>IRP_MJ_WRITE</strong></a>) 和读取 (<a href="https://docs.microsoft.com/previous-versions/ff546883(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))"><strong>IRP_MJ_READ</strong></a>) 到串行控制器上的端口的请求传输数据传入和传出外围设备连接到的端口。 在其中 SerCx2 处理这些请求的方式是有明确定义，即使请求超时或被取消。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="reading-data-from-a-sercx2-managed-serial-port.md" data-raw-source="[Reading Data from a SerCx2-Managed Serial Port](reading-data-from-a-sercx2-managed-serial-port.md)">从 SerCx2 托管串行端口读取数据</a></p></td>
-<td><p>串行控制器 （或 UART） 通常包括接收先进先出。 此 FIFO 提供了硬件控制从外围设备连接到串行端口接收的数据缓冲。 若要从接收 FIFO 读取数据，此设备的外围设备驱动程序发送读取 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff546883" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546883)"><strong>IRP_MJ_READ</strong></a>) 到串行端口的请求。</p></td>
+<td><p>串行控制器 （或 UART） 通常包括接收先进先出。 此 FIFO 提供了硬件控制从外围设备连接到串行端口接收的数据缓冲。 若要从接收 FIFO 读取数据，此设备的外围设备驱动程序发送读取 (<a href="https://docs.microsoft.com/previous-versions/ff546883(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))"><strong>IRP_MJ_READ</strong></a>) 到串行端口的请求。</p></td>
 </tr>
 </tbody>
 </table>

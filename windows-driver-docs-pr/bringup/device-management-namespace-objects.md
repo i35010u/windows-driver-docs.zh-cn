@@ -4,17 +4,17 @@ description: ACPI 5.0 规范定义了几种类型的命名空间对象的可用�
 ms.assetid: 26C3312D-B1B0-4843-BF4E-1B03630C0BDD
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7dd987f5988c45fd4486c854b086090fad601c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc29478adbe553c1d9ab05456ebca8a6b0348eb5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328058"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364570"
 ---
 # <a name="device-management-namespace-objects"></a>设备管理命名空间对象
 
 
-[ACPI 5.0 规范](https://www.uefi.org/specifications)定义多种类型的命名空间可用于管理设备的对象。 例如，设备标识对象包含设备的连接到总线，例如 I2C，不支持子设备的硬件枚举的标识的信息。 其他类型的命名空间对象可以指定系统资源、 描述设备的依赖关系，并指示哪些设备可以被禁用。
+[ACPI 5.0 规范](https://uefi.org/specifications)定义多种类型的命名空间可用于管理设备的对象。 例如，设备标识对象包含设备的连接到总线，例如 I2C，不支持子设备的硬件枚举的标识的信息。 其他类型的命名空间对象可以指定系统资源、 描述设备的依赖关系，并指示哪些设备可以被禁用。
 
 ## <a name="device-identification-in-windows"></a>在 Windows 中的设备标识
 
@@ -42,7 +42,7 @@ ACPI\vvv[v]dddd
 
 用于识别 ACPI 中的设备的最低要求是硬件 ID (\_HID) 对象。 \_HID 返回的格式的字符串"ABC\[D\]*xxxx*"，其中"ABC\[D\]"是一个 3 或 4 个字符字符串，标识 ("供应商 ID")，该设备的制造商和*xxxx*是一个标识特定设备制造的该供应商 ("设备 ID") 的十六进制数字。 行业供应商 Id 必须唯一。 Microsoft 会分配这些字符串以确保它们都是唯一。 可以从供应商 Id[插 ID-PNPID 请求](https://go.microsoft.com/fwlink/p/?linkid=330999)。
 
-**请注意**  ACPI 5.0 还支持 PCI 分配供应商 Id 中使用\_HID 和其他标识对象，因此可能不需要从 Microsoft 获取供应商 ID。 有关硬件标识要求的详细信息，请参阅部分 6.1.5，"\_HID (硬件 ID)"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+**请注意**  ACPI 5.0 还支持 PCI 分配供应商 Id 中使用\_HID 和其他标识对象，因此可能不需要从 Microsoft 获取供应商 ID。 有关硬件标识要求的详细信息，请参阅部分 6.1.5，"\_HID (硬件 ID)"的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 
 
@@ -67,13 +67,13 @@ Microsoft 已保留供与收件箱驱动程序随 Windows 兼容的设备供应�
 
 ### <a name="subsystem-id-sub-hardware-revision-hrv-and-class-cls"></a>子系统 ID (\_SUB)，硬件版本 (\_HRV)，和类 (\_CLS)
 
-ACPI 5.0 定义\_SUB， \_HRV，并\_CLS 对象，可连同\_HID 创建更多唯一地标识特定的版本、 集成或使设备的硬件版本的标识符或若要指示中 PCI 定义设备类的成员身份。 这些对象通常是可选的但可能需要的 Windows 中的特定设备类。 有关这些对象的详细信息，请参阅部分 6.1，"设备标识对象"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+ACPI 5.0 定义\_SUB， \_HRV，并\_CLS 对象，可连同\_HID 创建更多唯一地标识特定的版本、 集成或使设备的硬件版本的标识符或若要指示中 PCI 定义设备类的成员身份。 这些对象通常是可选的但可能需要的 Windows 中的特定设备类。 有关这些对象的详细信息，请参阅部分 6.1，"设备标识对象"的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 对于可维护性，则 Windows 硬件认证工具包 (HCK) 要求 OEM 系统上的设备 Id 为"由四部分组成的"Id。 四个部分是供应商 ID、 设备 ID、 子系统供应商 (OEM) ID 和子系统 (OEM) 设备 id。 因此，子系统 ID (\_子) 对象是所必需的 OEM 平台。
 
 ### <a name="device-specific-method-dsm"></a>特定于设备的方法 (\_DSM)
 
-\_9.14.1，一节中定义 DSM 方法"\_DSM （设备特定的方法）"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。 此方法提供单个、 特定于设备的数据和控制功能可以无冲突其他此类特定于设备的方法调用的设备驱动程序。 \_DSM 为特定设备或设备类定义保证不与其他 Uuid 冲突 UUID (GUID)。 对于每个 UUID，没有一组已定义的函数的\_DSM 方法可以实现以提供数据或执行的驱动程序控制功能。 特定于类的数据和数据格式中单独的特定于设备的类的规范提供了和中还讨论了[ACPI 特定于设备的方法](acpi-device-specific-methods.md)。
+\_9.14.1，一节中定义 DSM 方法"\_DSM （设备特定的方法）"的[ACPI 5.0 规范](https://uefi.org/specifications)。 此方法提供单个、 特定于设备的数据和控制功能可以无冲突其他此类特定于设备的方法调用的设备驱动程序。 \_DSM 为特定设备或设备类定义保证不与其他 Uuid 冲突 UUID (GUID)。 对于每个 UUID，没有一组已定义的函数的\_DSM 方法可以实现以提供数据或执行的驱动程序控制功能。 特定于类的数据和数据格式中单独的特定于设备的类的规范提供了和中还讨论了[ACPI 特定于设备的方法](acpi-device-specific-methods.md)。
 
 ### <a name="address-adr-and-unique-id-uid"></a>地址 (\_ADR) 和唯一 ID (\_UID)
 
@@ -90,27 +90,27 @@ ACPI 5.0 定义\_SUB， \_HRV，并\_CLS 对象，可连同\_HID 创建更多唯
 
 新 SoC 的平台是 GPIO 和设备使用的简单外围总线 （存储） 资源。 有关详细信息，请参阅[常规用途 I/O (GPIO)](general-purpose-i-o--gpio-.md)并[简单外围总线 （存储）](simple-peripheral-bus--spb-.md)。
 
-此外新出现的 SoC 平台是一个常规用途的固定的 DMA 描述符。 FixedDMA 描述符支持由多个系统设备上共享 DMA 控制器硬件。 FixedDMA 描述符中列出了以静态方式分配给特定系统设备的 DMA 资源 （请求行和通道寄存器）。 有关详细信息，请参阅部分 19.5.49，"FixedDMA （DMA 资源描述符宏）"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+此外新出现的 SoC 平台是一个常规用途的固定的 DMA 描述符。 FixedDMA 描述符支持由多个系统设备上共享 DMA 控制器硬件。 FixedDMA 描述符中列出了以静态方式分配给特定系统设备的 DMA 资源 （请求行和通道寄存器）。 有关详细信息，请参阅部分 19.5.49，"FixedDMA （DMA 资源描述符宏）"的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ### <a name="device-status-changes"></a>设备状态变化
 
-ACPI 枚举设备可以禁用或删除的原因有多种。 状态 (\_STA) 对象提供以启用此类状态会改变以传达给操作系统。 有关的说明\_STA，请参阅部分 6.3.7 [ACPI 5.0 规范](https://www.uefi.org/specifications)。 Windows 使用\_STA 来确定是否应设备枚举、 显示为已禁用，或对用户不可见。 在固件中的此控件可用于许多应用程序，包括停靠和 USB OTG 函数主机切换。
+ACPI 枚举设备可以禁用或删除的原因有多种。 状态 (\_STA) 对象提供以启用此类状态会改变以传达给操作系统。 有关的说明\_STA，请参阅部分 6.3.7 [ACPI 5.0 规范](https://uefi.org/specifications)。 Windows 使用\_STA 来确定是否应设备枚举、 显示为已禁用，或对用户不可见。 在固件中的此控件可用于许多应用程序，包括停靠和 USB OTG 函数主机切换。
 
-此外，ACPI 提供 ASL 可用于通知的事件在平台中，如要停靠的一部分删除设备驱动程序的通知机制。 一般情况下，当 ACPI 设备的状态更改，固件必须执行的"设备检查"总线检查"通知会导致 Windows 重新枚举设备并重新评估其\_sta。 有关 ACPI 通知的信息，请参阅 5.6.6，"设备对象通知"部分的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+此外，ACPI 提供 ASL 可用于通知的事件在平台中，如要停靠的一部分删除设备驱动程序的通知机制。 一般情况下，当 ACPI 设备的状态更改，固件必须执行的"设备检查"总线检查"通知会导致 Windows 重新枚举设备并重新评估其\_sta。 有关 ACPI 通知的信息，请参阅 5.6.6，"设备对象通知"部分的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ## <a name="enabledisable"></a>启用/禁用
 
 
 作为 Windows 即插即用和播放的一部分，驱动程序必须能够动态启用和禁用用户或系统 （例如，对于更新驱动程序）。
 
-在 SoC 设备集成到 SoC 芯片，并且不能删除。 适用于大多数上 SoC 设备驱动程序可以启用和禁用的要求也被如此。 对于这些驱动程序不受限制的没有用于指示该驱动程序支持有序地删除驱动程序接口。 有关详细信息，请参阅上标题为"减少即插即用要求的 SoC 驱动程序"的文档[Microsoft Connect 网站](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47560)。
+在 SoC 设备集成到 SoC 芯片，并且不能删除。 适用于大多数上 SoC 设备驱动程序可以启用和禁用的要求也被如此。 对于这些驱动程序不受限制的没有用于指示该驱动程序支持有序地删除驱动程序接口。 有关详细信息，请参阅上标题为"减少即插即用要求的 SoC 驱动程序"的文档[Microsoft Connect 网站](https://aka.ms/connect-redirect?DownloadID=47560)。
 
 如果驱动程序支持有序地删除，并且可以禁用设备硬件 （即，设备可以配置为停止访问其已分配的资源），则该设备的 ACPI 命名空间节点可以包括禁用 (\_显示) 对象。 此方法将由操作系统进行评估时删除该驱动程序。 使用\_DIS 具有以下附加要求：
 
 -   \_只要设备已被禁用，STA 必须清除"启用和解码及其资源"位。
 -   设备必须提供设置资源设置 (\_SRS) 对象来重新启用的设备硬件，并设置中上述位\_sta。
 
-有关详细信息，请参阅部分 6.2.3 (\_显示)，6.2.15 (\_SRS)，和 6.3.7 (\_STA) 的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+有关详细信息，请参阅部分 6.2.3 (\_显示)，6.2.15 (\_SRS)，和 6.3.7 (\_STA) 的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ## <a name="device-dependencies"></a>设备依赖关系
 
@@ -119,7 +119,7 @@ ACPI 枚举设备可以禁用或删除的原因有多种。 状态 (\_STA) 对�
 
 1.  **Namespace 层次结构**。 是 （作为另一台设备的命名空间内的设备列出） 的子设备的任何设备是依赖于父设备。 例如，USB HSIC 设备是依赖于端口 （父） 和连接到控制器 （祖父）。 同样，列出在系统内存管理单元 (MMU) 设备的命名空间中的 GPU 设备是依赖于 MMU 设备。
 2.  **资源连接**。 设备连接到 GPIO 或存储控制器都依赖于这些控制器。 在设备的连接资源的包含描述这种类型的依赖关系\_CRS。
-3.  **OpRegion 依赖项**。 对于使用 OpRegions 执行 I/O 的 ASL 控制方法，依赖项是隐式未知操作系统因为它们只在控制方法计算确定。 此问题是特别适用于 GeneralPurposeIO 和 GenericSerialBus OpRegions 插驱动程序在其中提供到区域的访问权限。 若要缓解此问题，ACPI 定义 OpRegion 依赖关系 (\_DEP) 对象。 \_应在任何设备命名空间，在其中 OpRegion （硬件资源） 引用的一种控制方法，并 1 和 2 以上都不已应用中使用 DEP，引用的 OpRegion 连接资源。 有关详细信息，请参阅部分 6.5.8，"\_DEP （操作区域依赖项）"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+3.  **OpRegion 依赖项**。 对于使用 OpRegions 执行 I/O 的 ASL 控制方法，依赖项是隐式未知操作系统因为它们只在控制方法计算确定。 此问题是特别适用于 GeneralPurposeIO 和 GenericSerialBus OpRegions 插驱动程序在其中提供到区域的访问权限。 若要缓解此问题，ACPI 定义 OpRegion 依赖关系 (\_DEP) 对象。 \_应在任何设备命名空间，在其中 OpRegion （硬件资源） 引用的一种控制方法，并 1 和 2 以上都不已应用中使用 DEP，引用的 OpRegion 连接资源。 有关详细信息，请参阅部分 6.5.8，"\_DEP （操作区域依赖项）"的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 有也可以是软件依赖项之间的设备驱动程序。 此外必须描述这些依赖关系。 有关详情，请参阅以下资源：
 

@@ -6,12 +6,12 @@ keywords:
 - WDF_DECLARE_CUSTOM_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7991faa73ee65b01b01ba19c219124f02d6c0d0b
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: ac04419178b270620316caca60de27665d48c83a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372118"
 ---
 # <a name="wdfdeclarecustomtype-macro"></a>WDF_DECLARE_CUSTOM_TYPE 宏
 
@@ -45,7 +45,7 @@ void WDF_DECLARE_CUSTOM_TYPE(
 
 调用时**WDF_DECLARE_CUSTOM_TYPE**，驱动程序定义自己的自定义类型名称。 当选择自定义的类型名称，选择特定于驱动程序的域的名称。 作为约定，不是从开始你的自定义类型名称前缀*Wdf*。
 
-有关对象的自定义类型的详细信息，请参阅[Framework 对象的自定义类型](https://msdn.microsoft.com/library/windows/hardware/hh406457)。
+有关对象的自定义类型的详细信息，请参阅[Framework 对象的自定义类型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)。
 
 <a name="examples"></a>示例
 --------

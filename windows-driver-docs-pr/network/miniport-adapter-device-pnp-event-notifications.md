@@ -10,12 +10,12 @@ keywords:
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e68925623965c7686d434c9b76faaf46602bd7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e55b2190c45a3c91d40ee39eb171fed9b6d68b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351941"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373971"
 ---
 # <a name="miniport-adapter-device-pnp-event-notifications"></a>微型端口适配器设备 PnP 事件通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "63351941"
 
 
 
-NDIS 调用微型端口驱动程序[ *MiniportDevicePnPEventNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff559369)函数，以通知插即用 (PnP) 事件的驱动程序。
+NDIS 调用微型端口驱动程序[ *MiniportDevicePnPEventNotify* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_device_pnp_event_notify)函数，以通知插即用 (PnP) 事件的驱动程序。
 
 NDIS 提供了描述的即插即用事件的事件代码。 代码可以表示适配器已意外删除从系统或主机系统的电源配置文件已更改。
 

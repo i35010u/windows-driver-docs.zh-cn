@@ -4,12 +4,12 @@ description: 关于传感器驱动程序事件
 ms.assetid: 1e747743-f701-4854-92be-7b55c39fee08
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a832ca852e627707af3ccc03b4ee285dcd1613
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f30b0c6a0d3f7af4e2945df5f2b4e3c944fc627f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360936"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384512"
 ---
 # <a name="about-sensor-driver-events"></a>关于传感器驱动程序事件
 
@@ -18,13 +18,13 @@ ms.locfileid: "63360936"
 
 传感器驱动程序可以引发**状态更改事件**，通知的设备中转换到新的运行条件，以及其他种类的事件通知的应用程序。 您的驱动程序应引发你的设备提供了每个传感器的单独事件。
 
-**请注意**  不要使用[ **IWDFDevice::PostEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff558835)引发传感器事件。 传感器平台不会将转发到连接的客户端程序的此类事件。
+**请注意**  不要使用[ **IWDFDevice::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-postevent)引发传感器事件。 传感器平台不会将转发到连接的客户端程序的此类事件。
 
  
 
 ## <a name="state-change-events"></a>状态更改事件
 
-传感器驱动程序通过调用传感器类扩展引发状态更改事件[ **ISensorClassExtension::PostStateChange** ](https://msdn.microsoft.com/library/windows/hardware/ff545523)方法。 例如，已完成初始化传感器驱动程序会调用此方法用信号通知的新[ **SensorState** ](https://msdn.microsoft.com/library/windows/hardware/ff545708)名为传感器值\_状态\_准备就绪。
+传感器驱动程序通过调用传感器类扩展引发状态更改事件[ **ISensorClassExtension::PostStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)方法。 例如，已完成初始化传感器驱动程序会调用此方法用信号通知的新[ **SensorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)名为传感器值\_状态\_准备就绪。
 
 ## <a name="event-constants"></a>事件常量
 

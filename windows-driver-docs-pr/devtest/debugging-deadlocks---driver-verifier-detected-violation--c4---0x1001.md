@@ -4,17 +4,17 @@ description: 当驱动程序验证程序检测到数值调节钮锁层次结构�
 ms.assetid: 4C3ED1DB-5EDC-4386-B91C-CF86973EE1F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b49d9c51ca2141a12f518298bb56fd5505e94e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36e78d4c21d1b3717f0d3787a9f2a63b57681927
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344867"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371431"
 ---
 # <a name="span-iddevtestdebuggingdeadlocks-driververifierdetectedviolationc40x1001spandebugging-deadlocks---driververifierdetectedviolation-c4-0x1001"></a><span id="devtest.debugging_deadlocks_-_driver_verifier_detected_violation__c4___0x1001"></span>调试死锁的驱动程序\_VERIFIER\_检测到\_冲突 (C4):0x1001
 
 
-当[Driver Verifier](driver-verifier.md)检测到自旋锁层次结构冲突，驱动程序 Verifiergenerates [ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187) 0x1001 的参数 1 值。
+当[Driver Verifier](driver-verifier.md)检测到自旋锁层次结构冲突，驱动程序 Verifiergenerates [ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) 0x1001 的参数 1 值。
 
 当死锁检测选项处于活动状态 （死锁检测是驱动程序验证工具标准选项的一部分）， [Driver Verifier](driver-verifier.md)跟踪的每个分配的自旋锁并已获得和释放的顺序。 锁层次结构冲突意味着驱动程序验证程序检测到这种情况中至少一个的情况下，位置*LockA*是获取和保存之前*LockB*是已获得，并在另一个， *LockB*是获取和保存之前*LockA*是必需的。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63344867"
 (B)reak, (I)gnore, (W)arn only, (R)emove assert?
 ```
 
-若要调试此冲突运行 Windows 8.1 的计算机上，选择**B** （中断），请输入建议的调试器命令和 ([**！ 死锁**](https://msdn.microsoft.com/library/windows/hardware/ff562326)):
+若要调试此冲突运行 Windows 8.1 的计算机上，选择**B** （中断），请输入建议的调试器命令和 ([ **！ 死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)):
 
 ```
 kd> !deadlock
@@ -55,7 +55,7 @@ Lock A =   97dd800c (MyTestDriver!AlphaLock+0x00000000) - Type 'Spinlock'.
 Lock B =   97dd8008 (MyTestDriver!BravoLock+0x00000000) - Type 'Spinlock'.
 ```
 
-[ **！ 死锁**](https://msdn.microsoft.com/library/windows/hardware/ff562326) **3**还可以使用命令以显示详细信息，包括上一次时候的堆栈获取：
+[ **！ 死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock) **3**还可以使用命令以显示详细信息，包括上一次时候的堆栈获取：
 
 ```
 kd> !deadlock 3
@@ -113,7 +113,7 @@ Lock A =     97dd800c (MyTestDriver!AlphaLock+0x00000000) - Type 'Spinlock'.
     Stack:   << Current stack trace - use kb to display it >>
 ```
 
-调试器会建议使用[ **kb （显示堆栈回溯）** ](https://msdn.microsoft.com/library/windows/hardware/ff551943)命令以显示当前的堆栈跟踪。
+调试器会建议使用[ **kb （显示堆栈回溯）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令以显示当前的堆栈跟踪。
 
 ```
 kd> kb
@@ -226,16 +226,16 @@ NTSTATUS DeviceControlIrpWorker(_In_ PIRP Irp,
 
 若要修复此潜在的冲突，正确的做法是确保，只要该驱动程序尝试获取 AlphaLock，它会检查并确保没有保留 BravoLock。 最简单的解决方法是只需释放 BravoLock 和重新获取它，就立即获取 AlphaLock。 但更重要的代码更改可能会需要非常重要 BravoLock 保护任何数据不会更改在等待 AlphaLock 和 BravoLock 重新获取。
 
-有关自旋锁和其他同步技术的详细信息，请参阅[自旋锁](https://msdn.microsoft.com/library/windows/hardware/ff563830)。
+有关自旋锁和其他同步技术的详细信息，请参阅[自旋锁](https://docs.microsoft.com/windows-hardware/drivers/kernel/spin-locks)。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[自旋锁](https://msdn.microsoft.com/library/windows/hardware/ff563830)
+[自旋锁](https://docs.microsoft.com/windows-hardware/drivers/kernel/spin-locks)
 
-[**Bug 检查 0xC4:驱动程序\_VERIFIER\_检测到\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187)
+[**Bug 检查 0xC4:驱动程序\_VERIFIER\_检测到\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)
 
-[**!deadlock**](https://msdn.microsoft.com/library/windows/hardware/ff562326)
+[ **!deadlock**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)
 
 
 

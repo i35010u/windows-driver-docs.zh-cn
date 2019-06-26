@@ -6,12 +6,12 @@ keywords:
 - 禁用即插即用设备
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 082ebff5e3412fa32311522501e1d0bcebec2c65
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abff6de67a3135f704ead7fc06c25a6f8335a6f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331940"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382982"
 ---
 # <a name="stopping-a-device-to-disable-it-windows-98me"></a>停止设备以将其禁用 (Windows 98/Me)
 
@@ -23,17 +23,17 @@ ms.locfileid: "63331940"
 
 PnP 管理器将停止 Irp 发送按以下顺序：
 
-1.  即插即用 manager 问题[ **IRP\_MN\_查询\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551725)要求设备的驱动程序是否可以停用设备。
+1.  即插即用 manager 问题[ **IRP\_MN\_查询\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求设备的驱动程序是否可以停用设备。
 
     如果设备堆栈中的所有驱动程序返回状态\_成功后，驱动程序已将设备置于 （停止挂起） 的状态从该设备可以快速停止。
 
     PnP 管理器查询根据需要禁用该设备的任意多个设备堆栈。
 
-2.  如果**IRP\_MN\_查询\_停止\_设备**成功，即插即用 manager 问题[ **IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)停用设备。
+2.  如果**IRP\_MN\_查询\_停止\_设备**成功，即插即用 manager 问题[ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)停用设备。
 
     PnP 管理器将发送停止 IRP，仅当设备上一个查询停止 IRP 已成功完成。 在响应停止 IRP，驱动程序释放设备的硬件资源 （如其 I/O 端口） 和失败要求设备的访问权限的任何 Irp。
 
-3.  如果**IRP\_MN\_查询\_停止\_设备**失败，即插即用管理器将发送[ **IRP\_MN\_取消\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff550826)取消查询。
+3.  如果**IRP\_MN\_查询\_停止\_设备**失败，即插即用管理器将发送[ **IRP\_MN\_取消\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)取消查询。
 
     以响应**IRP\_MN\_取消\_停止\_设备**，设备的驱动程序将设备恢复为已启动状态并继续处理 I/O 请求的设备。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af574a8deeac086922eca11a811b8e717d1ca7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dba13879b6abf665e527858b34da41b5312d4273
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385932"
 ---
 # <a name="inf-addproperty-directive"></a>INF AddProperty 指令
 
@@ -90,7 +90,7 @@ GUID 值也可以是自定义的 GUID 值标识的自定义属性类别。
 指示所指示的属性类别中的特定属性的属性标识符*属性类别 guid*值。 内部系统方面的考虑，属性标识符必须大于或等于 2。
 
 <a href="" id="type"></a>type  
-中的数值，十进制或十六进制格式的[属性数据类型标识符](https://msdn.microsoft.com/library/windows/hardware/ff541476)由指定的属性*属性类别 guid*值和*属性 pid*值。 仅以下[**基本数据类型**](https://msdn.microsoft.com/library/windows/hardware/ff537793)支持：
+中的数值，十进制或十六进制格式的[属性数据类型标识符](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))由指定的属性*属性类别 guid*值和*属性 pid*值。 仅以下[**基本数据类型**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))支持：
 
 -   DEVPROP_TYPE_STRING
 -   DEVPROP_TYPE_STRING_LIST

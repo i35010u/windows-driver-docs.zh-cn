@@ -4,12 +4,12 @@ description: MSiSCSI\_RADIUSConfig WMI 类
 ms.assetid: e0fd1fea-3d8c-4d25-a9fd-0e115ecb8163
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a13d03ea3fd135742721563b5f16bdd33df42cf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e77af372ac1c32195e986de61cc4565384c773ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384674"
 ---
 # <a name="msiscsiradiusconfig-wmi-class"></a>MSiSCSI\_RADIUSConfig WMI 类
 
@@ -53,7 +53,7 @@ class MSiSCSI_RADIUSConfig {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_RADIUSConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff563112)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_RADIUSConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_radiusconfig)数据结构。
 
  
 

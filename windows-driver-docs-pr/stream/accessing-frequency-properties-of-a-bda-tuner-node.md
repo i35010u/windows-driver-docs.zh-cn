@@ -10,12 +10,12 @@ keywords:
 - 频率属性 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de6548a892f7429f6e0eaa4124c2394ebde2ed5b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cc168e3567960eb95d0584d19545e399b059971
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357185"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386778"
 ---
 # <a name="accessing-frequency-properties-of-a-bda-tuner-node"></a>访问 BDA 调谐器节点的频率属性
 
@@ -23,7 +23,7 @@ ms.locfileid: "63357185"
 
 
 
-使用网络提供商[KSPROPSETID\_BdaFrequencyFilter](https://msdn.microsoft.com/library/windows/hardware/ff566542)属性设置来控制 RF 调谐器拓扑中某节点 BDA 筛选器。 例如，网络提供商使用此属性设置为告知如何优化 RF 信号的调谐器节点。
+使用网络提供商[KSPROPSETID\_BdaFrequencyFilter](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdafrequencyfilter)属性设置来控制 RF 调谐器拓扑中某节点 BDA 筛选器。 例如，网络提供商使用此属性设置为告知如何优化 RF 信号的调谐器节点。
 
 下面的代码段，控制 BDA 微型驱动程序中的调谐器节点的 pin 截获，并提供了用于 KSPROPSETID 属性方法\_BdaFrequencyFilter 属性集。 请注意，某些 KSPROPSETID\_BdaFrequencyFilter 属性都只适用于特定类型的调谐器。
 

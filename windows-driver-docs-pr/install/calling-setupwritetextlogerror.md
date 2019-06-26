@@ -4,17 +4,17 @@ description: 调用 SetupWriteTextLogError
 ms.assetid: 55edc72a-2d53-4084-a1e4-e7e6515a4990
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1c43885ad71347e009312daa1088bd9d6e71d87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a217ccd807c5903c1affb9ed2a0e66b0d280814
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385287"
 ---
 # <a name="calling-setupwritetextlogerror"></a>调用 SetupWriteTextLogError
 
 
-[**SetupWriteTextLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff552232)会将信息写入特定于安装程序 Api 的错误或 Win32 错误到有关[SetupAPI 文本日志](setupapi-text-logs.md)。 **SetupWriteTextLogError**将两个连续的条目写入到文本日志： 第一个条目包含相同的信息与写入的相同的格式[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)和第二个条目记录对应的错误代码和错误的用户友好说明。
+[**SetupWriteTextLogError** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)会将信息写入特定于安装程序 Api 的错误或 Win32 错误到有关[SetupAPI 文本日志](setupapi-text-logs.md)。 **SetupWriteTextLogError**将两个连续的条目写入到文本日志： 第一个条目包含相同的信息与写入的相同的格式[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)和第二个条目记录对应的错误代码和错误的用户友好说明。
 
 若要调用**SetupWriteTextLogError**，应用程序提供了它将提供要调用的相同信息**SetupWriteTextLog**和，此外，将提供特定于安装程序 Api 的错误的值或Win32 错误。
 
@@ -24,7 +24,7 @@ ms.locfileid: "63380097"
 
 **SetupWriteTextLogError**将第二个日志条目写入采用以下格式：
 
-*entry_prefix time_stamp 类别* **<strong>* 缩进 * **错误：</strong>* 错误号错误-说明 *
+*entry_prefix time_stamp 类别* * *<strong>* 缩进 * **错误：</strong>* 错误号错误-说明 *
 
 其中：
 
@@ -34,9 +34,9 @@ ms.locfileid: "63380097"
 
 -   *错误说明*字段包含错误的用户友好说明。
 
-下面的示例演示如何应用程序通常可能调用[ **SetupWriteTextLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff552232)文本日志中记录有关错误的信息。 示例中使用的错误是系统启动错误。 应用程序调用**SetupWriteTextLogError**，提供以下参数值：
+下面的示例演示如何应用程序通常可能调用[ **SetupWriteTextLogError** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)文本日志中记录有关错误的信息。 示例中使用的错误是系统启动错误。 应用程序调用**SetupWriteTextLogError**，提供以下参数值：
 
-- *LogToken*设置为一个日志令牌值，该值可以通过调用获得[ **SetupGetThreadLogToken** ](https://msdn.microsoft.com/library/windows/hardware/ff552211)或者是系统定义的日志之一中所述的令牌值[登录令牌](log-tokens.md)。
+- *LogToken*设置为一个日志令牌值，该值可以通过调用获得[ **SetupGetThreadLogToken** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)或者是系统定义的日志之一中所述的令牌值[登录令牌](log-tokens.md)。
 
 - *类别*设置为 TXTLOG_VENDOR，指示该日志条目由供应商提供的应用程序。 事件类别中所述[启用文本日志的事件类别](enabling-event-categories-for-a-text-log.md)。
 
@@ -50,7 +50,7 @@ ms.locfileid: "63380097"
 
 参数*LogToken*，*类别*，并*LogFlags*影响的操作**SetupWriteTextLogError**与相同的方式这些参数影响的操作**SetupWriteTextLog**。
 
-下面的代码调用[ **SetupWriteTextLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff552232)编写此示例中的日志条目：
+下面的代码调用[ **SetupWriteTextLogError** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)编写此示例中的日志条目：
 
 ```cpp
 //The LogToken value was previously returned by call to

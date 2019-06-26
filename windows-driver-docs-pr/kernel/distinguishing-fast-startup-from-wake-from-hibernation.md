@@ -4,12 +4,12 @@ description: 从 Windows 8 开始，快速启动模式，可在更少的时间�
 ms.assetid: 1768F739-619A-441F-B270-029DD1F72953
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 47af091e3faa9284145a06dfc802b9d1d7dbcb0c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e336c2915898fc5d72abfffd9a8a515273a8674
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387181"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384965"
 ---
 # <a name="distinguishing-fast-startup-from-wake-from-hibernation"></a>快速启动与休眠唤醒的区分
 
@@ -26,15 +26,15 @@ ms.locfileid: "63387181"
 
 如果设备驱动程序配置以不同的方式取决于是否冷启动或唤醒从休眠发生设备，此驱动程序应，快速启动后, 配置设备像是冷启动 （而不是唤醒-从-休眠状态）出现。 例如，系统提供的 NDIS 驱动程序禁用快速启动，但不是用于唤醒从休眠的微型端口唤醒功能。
 
-若要从唤醒从休眠中区分快速启动，驱动程序可以检查系统集电源中的信息 ([**IRP\_MN\_设置\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744)) IRP告知驱动程序在计算机已进入 S0 （工作） 状态。 在驱动程序[I/O 堆栈位置](https://msdn.microsoft.com/library/windows/hardware/ff550659)在此 IRP 包含**Power**成员，它是一个结构，包含与电源相关的信息。 从 Windows Vista 开始**电源**成员结构包含**SystemPowerStateContext**成员，即[**系统\_POWER\_状态\_上下文**](https://msdn.microsoft.com/library/windows/hardware/jj835780)结构，其中包含之前的系统电源状态有关的信息。 此信息采用位域进行编码**系统\_电源\_状态\_上下文**结构。
+若要从唤醒从休眠中区分快速启动，驱动程序可以检查系统集电源中的信息 ([**IRP\_MN\_设置\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)) IRP告知驱动程序在计算机已进入 S0 （工作） 状态。 在驱动程序[I/O 堆栈位置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)在此 IRP 包含**Power**成员，它是一个结构，包含与电源相关的信息。 从 Windows Vista 开始**电源**成员结构包含**SystemPowerStateContext**成员，即[**系统\_POWER\_状态\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_system_power_state_context)结构，其中包含之前的系统电源状态有关的信息。 此信息采用位域进行编码**系统\_电源\_状态\_上下文**结构。
 
 中的位字段的大多数**系统\_电源\_状态\_上下文**结构仅供系统使用，是不透明的驱动程序。 但是，此结构包含两个位域**TargetSystemState**并**EffectiveSystemState**，可以读取由驱动程序以确定是否有快速启动或唤醒从休眠发生。
 
-**TargetSystemState**并**EffectiveSystemState**位域设置为[**系统\_POWER\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff564565)枚举值。 如果**TargetSystemState** = **PowerSystemHibernate**并**EffectiveSystemState** = **PowerSystemHibernate**，唤醒从休眠发生。 但是，如果**TargetSystemState** = **PowerSystemHibernate**并**EffectiveSystemState**  =  **PowerSystemShutdown**，快速启动。
+**TargetSystemState**并**EffectiveSystemState**位域设置为[**系统\_POWER\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_system_power_state)枚举值。 如果**TargetSystemState** = **PowerSystemHibernate**并**EffectiveSystemState** = **PowerSystemHibernate**，唤醒从休眠发生。 但是，如果**TargetSystemState** = **PowerSystemHibernate**并**EffectiveSystemState**  =  **PowerSystemShutdown**，快速启动。
 
 **TargetSystemState**位域指定为其驱动程序收到系统电源 IRP，计算机关闭或进入休眠状态前的最后一个系统电源状态转换。 **EffectiveSystemState**位字段指示有效的上一系统电源状态的设备，所识别的用户。 **TargetSystemState**并**EffectiveSystemState**如果，例如，驱动程序收到通知正在等待系统转换为休眠状态，但混合的值可能不匹配关闭随后发生。
 
-有关详细信息，请参阅[**系统\_POWER\_状态\_上下文**](https://msdn.microsoft.com/library/windows/hardware/jj835780)。
+有关详细信息，请参阅[**系统\_POWER\_状态\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_system_power_state_context)。
 
  
 

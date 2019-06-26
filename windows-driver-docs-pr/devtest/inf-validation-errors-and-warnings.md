@@ -4,12 +4,12 @@ description: 驱动程序安装错误和警告可以显示作为 Microsoft Visua
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6caa307ecdfe6a720f8f1050c89193a9a6e72040
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e98e2fb7ab63bd3c82a5305d7d601f0ade74eb26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360785"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366821"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -125,7 +125,7 @@ Provider="Microsoft"
 </tr>
 <tr>
 <td><strong>1220:不能直接引用定义中包含的 INF 部分</strong></td>
-<td>如果您的 INF 文件引用<a href="https://msdn.microsoft.com/library/windows/hardware/ff547344">DDInstall</a>部分中包含的 INF，必须使用<strong>需要</strong>指令。 引用一个部分中包含的 INF 的任何其他指令会导致错误 1220年。
+<td>如果您的 INF 文件引用<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section">DDInstall</a>部分中包含的 INF，必须使用<strong>需要</strong>指令。 引用一个部分中包含的 INF 的任何其他指令会导致错误 1220年。
 <p>在此示例中，A.INF 的安装部分引用中 B.INF 等效安装部分。</p>
 <p>A.INF 包含：</p>
 <div class="code">
@@ -178,7 +178,7 @@ CatalogFile=wudf.cat
 </tr>
 <tr>
 <td><strong>1235:字符串 [Strings] 中未定义的标记</strong></td>
-<td>指定的字符串标记有 [Strings] 部分中没有定义。 例如，INF 文件指定<em>%reg_dword%</em>中<em>添加注册表部分</em>指定的<a href="https://msdn.microsoft.com/library/windows/hardware/ff546320"> <strong>AddReg</strong> </a>指令，但没有没有相应的 REG_DWORD = 中的 0x00010001 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547485">[Strings]</a>部分。
+<td>指定的字符串标记有 [Strings] 部分中没有定义。 例如，INF 文件指定<em>%reg_dword%</em>中<em>添加注册表部分</em>指定的<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive"> <strong>AddReg</strong> </a>指令，但没有没有相应的 REG_DWORD = 中的 0x00010001 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section">[Strings]</a>部分。
 <p>如果您的 INF 文件指定一个包含环境变量的注册表值，通常会出现此错误。 例如：</p>
 <pre>
 [MyAddReg]
@@ -237,11 +237,11 @@ AddService = ,2.
 <tbody>
 <tr>
 <td><strong>1300:找到旧</strong><em>Xxx</em></td>
-<td>如果你使用不推荐使用的部分或指令如，将看到此错误<a href="https://msdn.microsoft.com/library/windows/hardware/ff547448"> <strong>LogConfig</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff547321"> <strong>DDInstall.CoInstallers</strong></a>。</td>
+<td>如果你使用不推荐使用的部分或指令如，将看到此错误<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive"> <strong>LogConfig</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section"> <strong>DDInstall.CoInstallers</strong></a>。</td>
 </tr>
 <tr>
 <td><strong>1301:找到旧</strong><em>Xxx</em><strong>操作</strong><em>Xxx</em></td>
-<td>如果你使用不推荐使用的部分或指令如，将看到此错误<a href="https://msdn.microsoft.com/library/windows/hardware/ff547448"> <strong>LogConfig</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff547321"> <strong>DDInstall.CoInstallers</strong></a>。</td>
+<td>如果你使用不推荐使用的部分或指令如，将看到此错误<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive"> <strong>LogConfig</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section"> <strong>DDInstall.CoInstallers</strong></a>。</td>
 </tr>
 <tr>
 <td><strong>1302:找到旧</strong><em>Xxx</em><strong>操作</strong><em>Xxx</em></td>
@@ -300,17 +300,17 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 </tr>
 <tr>
 <td><strong>2222:旧指令将被忽略。</strong></td>
-<td>此警告意味着 INF 指定一个不推荐使用的指令。 安装该驱动程序时，则不计算引用部分的指令。 例如， <a href="https://msdn.microsoft.com/library/windows/hardware/ff547448"> <strong>INF LogConfig 指令</strong></a>不再支持指令，因此下一节会导致此警告。
+<td>此警告意味着 INF 指定一个不推荐使用的指令。 安装该驱动程序时，则不计算引用部分的指令。 例如， <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive"> <strong>INF LogConfig 指令</strong></a>不再支持指令，因此下一节会导致此警告。
 <pre>
 [InstallSection.LogConfigOverride]
 LogConfig=LogConfigSection
 ...
 </pre>
-有关哪些 INF 指令不推荐使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff547388">INF 指令</a>。</td>
+有关哪些 INF 指令不推荐使用的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-directives">INF 指令</a>。</td>
 </tr>
 <tr>
 <td><strong>2223:部分应具有一个体系结构修饰</strong></td>
-<td>此警告意味着 INF 文件包含<a href="https://msdn.microsoft.com/library/windows/hardware/ff547454"> <strong>INF 制造商部分</strong></a> ，它指定<a href="https://msdn.microsoft.com/library/windows/hardware/ff547456"><strong>模型部分</strong></a>没有体系结构修饰。 例如，以下 INF 语法会导致警告 2223年:
+<td>此警告意味着 INF 文件包含<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section"> <strong>INF 制造商部分</strong></a> ，它指定<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section"><strong>模型部分</strong></a>没有体系结构修饰。 例如，以下 INF 语法会导致警告 2223年:
 <pre>
 [Manufacturer]
 %MfgName% = InstallSection

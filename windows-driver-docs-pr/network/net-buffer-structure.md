@@ -10,12 +10,12 @@ keywords:
 - NDIS_PACKET
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2339a151b20ca6196d0b669b69ae63b37ddea0f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b406c8714fefcfdcb00ee132f8d7df84759ea817
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323313"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385851"
 ---
 # <a name="netbuffer-structure"></a>NET\_缓冲区结构
 
@@ -23,15 +23,15 @@ ms.locfileid: "63323313"
 
 
 
-NDIS 6.0 及更高版本[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构是类似于[ **NDIS\_数据包**](https://msdn.microsoft.com/library/windows/hardware/ff557086)使用 NDIS 5 的结构。*x*和早期驱动程序。 每个网络\_缓冲区结构包的网络数据包。
+NDIS 6.0 及更高版本[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构是类似于[ **NDIS\_数据包**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))使用 NDIS 5 的结构。*x*和早期驱动程序。 每个网络\_缓冲区结构包的网络数据包。
 
 下图显示在网络中的字段\_缓冲区结构。
 
 ![说明在网络中的字段的关系图\-缓冲结构](images/netbuffer.png)
 
-NET\_缓冲区结构包括[ **NET\_缓冲区\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff568387)结构**NetBufferHeader**成员。 NET\_缓冲区\_标头结构包括[ **NET\_缓冲区\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568381)结构**NetBufferData**成员。 应使用 NDIS 宏来访问 NET\_缓冲区结构成员。 有关这些宏的完整列表，请参阅[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构参考页。
+NET\_缓冲区结构包括[ **NET\_缓冲区\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_header)结构**NetBufferHeader**成员。 NET\_缓冲区\_标头结构包括[ **NET\_缓冲区\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_data)结构**NetBufferData**成员。 应使用 NDIS 宏来访问 NET\_缓冲区结构成员。 有关这些宏的完整列表，请参阅[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构参考页。
 
-一些[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构成员仅供 NDIS。 驱动程序通常使用的成员包括：
+一些[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构成员仅供 NDIS。 驱动程序通常使用的成员包括：
 
 <a href="" id="protocolreserved"></a>**ProtocolReserved**  
 保留供协议驱动程序。
@@ -65,7 +65,7 @@ NDIS 提供了用于管理 MDL 链中的数据空间的函数。 使用当前驱
 
 驱动程序执行撤回，促进操作来增加和减少*已用数据空间*。 有关参加和高级操作的详细信息，请参阅[撤回和高级操作](retreat-and-advance-operations.md)。
 
-以下术语和定义描述的元素[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)数据空间：
+以下术语和定义描述的元素[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)数据空间：
 
 <a href="" id="used-data-space"></a>使用的数据空间  
 *已用数据空间*包含当前驱动程序使用的当前时间的数据。 驱动程序提高*已用数据空间*与参加操作并减少*用数据空间*与高级操作。

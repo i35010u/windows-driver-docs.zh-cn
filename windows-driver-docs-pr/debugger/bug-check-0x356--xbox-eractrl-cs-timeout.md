@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf6bb9c1d7209f46ba2efd38455cfbea32a356c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 147b01c3de9bf29486a26db3c8d94a25822a8669
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367498"
 ---
 # <a name="bug-check-bug-check-0x356-xboxeractrlcstimeout"></a>Bug 检查 Bug 检查 0x356:XBOX\_ERACTRL\_CS\_超时
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 XBOX_ERACTRL_CS_TIMEOUT bug 检查具有 0x00000356 值。 

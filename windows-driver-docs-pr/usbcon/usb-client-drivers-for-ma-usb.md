@@ -3,12 +3,12 @@ Description: USB 发送 MA USB 数据包的设备驱动程序。
 title: 不区分媒体的 (MA-USB) 协议的客户端驱动程序
 ms.date: 09/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 572dcf688633987f3b14b9fae2da9cf889a8c82e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9bb01d052ea99f135e23811611bb71cc04385b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368750"
 ---
 # <a name="usb-client-drivers-for-media-agnostic-ma-usb"></a>不区分媒体的 (MA-USB) 协议的客户端驱动程序
 
@@ -30,7 +30,7 @@ ms.locfileid: "63355052"
 下面是用于构建此 URB 一些最佳实践：
 
 
--    客户端 dirver 必须通过调用分配此 URB [WdfUsbTargetDeviceCreateUrb](https://msdn.microsoft.com/library/windows/hardware/hh439423)或[USBD_UrbAllocate](https://msdn.microsoft.com/library/windows/hardware/hh406250)。 
+-    客户端 dirver 必须通过调用分配此 URB [WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)或[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)。 
 - 可以在发送 URB < = 调度级别。
 - 如果 URB 到等非同步终结点为目标，USB 驱动程序堆栈使请求失败。
 - 客户端驱动程序必须假定此 URB 受第三方 USB 堆栈。 所有 Microsoft 将会都支持该 = 提供收件箱 USB 客户端驱动程序。
@@ -45,29 +45,29 @@ ms.locfileid: "63355052"
 ## <a name="getting-the-host-controller-transport-characteristics"></a>获取主机控制器传输特征
 客户端驱动程序可以通过发送这些 Ioctl 请求来检索的传输特征：
 
--    [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/36CF2034-C816-421A-8B59-A4DC4EFFEB70)
--    [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/4192501F-5A30-463C-924D-CD4F2C8C3764)
--    [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/1B71794C-EBAD-4F6C-A71C-C0D419D486BE) 
--    [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/A6D17761-4E5F-42FC-AB40-C2BCE7769243)
+-    [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
+-    [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
+-    [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change) 
+-    [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)
 
 传输特征可能或不可能是在所有情况下可用的因为 USB 驱动程序堆栈是依赖于基础传输公开这些值。 因此，客户端驱动程序必须确定哪些信息通过其他机制 IOCTL 请求失败时。 
 
 ### <a name="query-for-the-current-transport-characterisctics"></a>查询当前传输 characterisctics
 
-客户端驱动程序可以查询的传输特征在特定时间发送[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/36CF2034-C816-421A-8B59-A4DC4EFFEB70)请求。 收到请求后，USB 驱动程序堆栈完成后，它立即 USB_TRANSPORT_CHARACTERISTICS 结构中的当前传输特征有关的信息。 考虑到信息并不表示可以确定该算法或启动流驱动程序使用在任何时候，此请求的更改。 
+客户端驱动程序可以查询的传输特征在特定时间发送[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)请求。 收到请求后，USB 驱动程序堆栈完成后，它立即 USB_TRANSPORT_CHARACTERISTICS 结构中的当前传输特征有关的信息。 考虑到信息并不表示可以确定该算法或启动流驱动程序使用在任何时候，此请求的更改。 
 
 ### <a name="receive-changes-in-trasport-characteristics"></a>接收在 trasport 特征中的更改
 MA USB、 基础传输可能有线、 无线。 随着时间的推移有这些介质的传输特征显著变化。 客户端驱动程序可以获取有关正在发生的更改的通知。
 
-1.    发送[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/4192501F-5A30-463C-924D-CD4F2C8C3764)请求以注册通知。 如果注册成功，客户端驱动程序将接收一个句柄和传输特征的初始值。
+1.    发送[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)请求以注册通知。 如果注册成功，客户端驱动程序将接收一个句柄和传输特征的初始值。
 
-2.  发送[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/1B71794C-EBAD-4F6C-A71C-C0D419D486BE)请求与在步骤 1 中的注册句柄。 USB 驱动程序堆栈保留挂起的请求。 只要传输特征更改，挂起的请求已完成并且传输特征的新值。
+2.  发送[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)请求与在步骤 1 中的注册句柄。 USB 驱动程序堆栈保留挂起的请求。 只要传输特征更改，挂起的请求已完成并且传输特征的新值。
 
-3.  完成客户端并不希望获取进一步的通知，它应确保那里后是挂起的堆栈中没有 Ioctl，然后发送子代码 IOCTL [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/A6D17761-4E5F-42FC-AB40-C2BCE7769243)，并传入注册句柄。 如果客户端注销具有挂起的更改请求，USB 堆栈将完成其完成注销 IOCTL 之前。
+3.  完成客户端并不希望获取进一步的通知，它应确保那里后是挂起的堆栈中没有 Ioctl，然后发送子代码 IOCTL [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)，并传入注册句柄。 如果客户端注销具有挂起的更改请求，USB 堆栈将完成其完成注销 IOCTL 之前。
 
 ### <a name="query-for-device-characteristics"></a>设备特征的查询
 
-到 determione 有关 USB 设备，例如最大的常规特征发送和接收的任何请求延迟客户端驱动程序可以发送[IOCTL_USB_GET_DEVICE_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/D4A8DE43-3E81-4A1C-B1C0-ABE6000D9F11)请求。
+到 determione 有关 USB 设备，例如最大的常规特征发送和接收的任何请求延迟客户端驱动程序可以发送[IOCTL_USB_GET_DEVICE_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_device_characteristics)请求。
 
 ## <a name="setting-priority-for-a-bulk-endpoint"></a>设置为大容量终结点的优先级
 
@@ -100,13 +100,13 @@ REG_MULTI_SZ:"EndpointPriorities" =
 "2,1,0,BULK_OUT,1,INTERACTIVE"” // BULK OUT endpoint in configuration 2, interface 1, alt setting 1 has INTERACTIVE priority.
 ```
 ## <a name="see-also"></a>请参阅
-[WdfUsbTargetDeviceCreateUrb](https://msdn.microsoft.com/library/windows/hardware/hh439423)
+[WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)
 
-[USBD_UrbAllocate](https://msdn.microsoft.com/library/windows/hardware/hh406250)
-[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/36CF2034-C816-421A-8B59-A4DC4EFFEB70)
+[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)
+[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
 
-[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/4192501F-5A30-463C-924D-CD4F2C8C3764)
+[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
 
-[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/1B71794C-EBAD-4F6C-A71C-C0D419D486BE)
+[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)
 
-[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/A6D17761-4E5F-42FC-AB40-C2BCE7769243)
+[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)

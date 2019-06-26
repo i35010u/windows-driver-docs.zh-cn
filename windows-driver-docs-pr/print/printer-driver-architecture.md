@@ -10,12 +10,12 @@ keywords:
 - 打印机驱动程序 WDK，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c41685a855f42fc453c71ef300fb6c0ab9259a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8475113b5d684cf49f09b7effbcddd96522dece
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380634"
 ---
 # <a name="printer-driver-architecture"></a>打印机驱动程序体系结构
 
@@ -25,7 +25,7 @@ ms.locfileid: "63340903"
 
 通过 Microsoft Win32 GDI，或在 Windows Vista 中，Windows Presentation Foundation (WPF) 函数的调用由应用程序会创建打印作业。 Win32 函数后台处理应用程序数据作为 EMF，或它们可以立即呈现每个文档页面的可打印图像。 WPF 的函数为 XPS 假脱机文件后台处理应用程序数据。
 
-在 Windows Vista 之前的应用程序传递到打印机的打印机设置通过使用[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构。 Windows Vista 中的打印票证和打印功能技术通信打印机设置，以便在打印机和应用程序的打印机设置都是更加兼容。
+在 Windows Vista 之前的应用程序传递到打印机的打印机设置通过使用[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构。 Windows Vista 中的打印票证和打印功能技术通信打印机设置，以便在打印机和应用程序的打印机设置都是更加兼容。
 
 图像呈现是否执行立即或在打印处理期间在执行打印驱动程序：
 

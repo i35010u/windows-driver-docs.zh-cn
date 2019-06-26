@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b13cf9fdb22ad1fcd141f868120de3939967875
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a53be25a2df4434fd4cd97a3c5ad2a1d0df1f53d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363990"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384014"
 ---
 # <a name="kspropertystreamallocatorstatus"></a>KSPROPERTY\_STREAMALLOCATOR\_状态
 
@@ -54,7 +54,7 @@ KSPROPERTY\_STREAMALLOCATOR\_状态属性检索指定的分配器的当前状态
 <td><p>否</p></td>
 <td><p>分配器</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566866" data-raw-source="[&lt;strong&gt;KSSTREAMALLOCATOR_STATUS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566866)"><strong>KSSTREAMALLOCATOR_STATUS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstreamallocator_status" data-raw-source="[&lt;strong&gt;KSSTREAMALLOCATOR_STATUS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstreamallocator_status)"><strong>KSSTREAMALLOCATOR_STATUS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ KSPROPERTY\_STREAMALLOCATOR\_状态属性检索指定的分配器的当前状态
 ## <a name="see-also"></a>请参阅
 
 
-[**KSSTREAMALLOCATOR\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff566866)
+[**KSSTREAMALLOCATOR\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstreamallocator_status)
 
  
 

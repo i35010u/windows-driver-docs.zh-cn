@@ -6,21 +6,21 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 377091b9d384f111021c836f144c86816fffb241
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9dc108d11370ee5886afc8388abad464c1865fdd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366601"
 ---
 # <a name="ndisstatuswwandeviceslotmappinginfo"></a>NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息
 
 
-微型端口驱动程序使用**NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**通知来通知有关 MB 服务在前一次完成[OID\_WWAN\_设备\_槽\_映射\_信息](https://msdn.microsoft.com/library/windows/hardware/mt799831)查询或设置请求。
+微型端口驱动程序使用**NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**通知来通知有关 MB 服务在前一次完成[OID\_WWAN\_设备\_槽\_映射\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)查询或设置请求。
 
 微型端口驱动程序不能使用此通知将发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782403)结构。
+使用此通知[ **NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -45,9 +45,9 @@ ms.locfileid: "63357263"
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO](https://msdn.microsoft.com/library/windows/hardware/mt799831)
+[OID\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)
 
-[**NDIS\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt782403)
+[**NDIS\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)
 
  
 

@@ -15,12 +15,12 @@ keywords:
 - WDK RDBSS 的连接信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea8c7fd4a396b21a531003e8f6576b160302b4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5b502f794a7214028576d9cb2b45a694839f63f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383850"
 ---
 # <a name="the-vnetroot-structure"></a>V\_NET\_根结构
 
@@ -35,7 +35,7 @@ V\_NET\_根结构提供了映射到共享 （例如，用户驱动器映射的�
 \;m:\server\share\d1\d2
 ```
 
-名称的格式取决于是否存在本地设备 （"x:"，例如） 与此 V\_NET\_根结构。 在本地驱动器映射的情况下 (d1\\d2，例如)，本地驱动器映射到每台上获取前缀[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)打开上此 V\_NET\_根结构。
+名称的格式取决于是否存在本地设备 （"x:"，例如） 与此 V\_NET\_根结构。 在本地驱动器映射的情况下 (d1\\d2，例如)，本地驱动器映射到每台上获取前缀[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)打开上此 V\_NET\_根结构。
 
 V\_NET\_根结构还用于提供备用凭据。 对于这种 V 目的\_NET\_根结构是将备用凭据传播到 NET\_根作为默认值。 为实现此目的，必须没有其他引用。
 

@@ -4,12 +4,12 @@ description: Windows 8 提供了您的驱动程序 （可选） 可以充分利�
 ms.assetid: 1E71BFDF-3C67-41F6-968A-8AE54B54CCCB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e12306d7874d99cb0900c94353baeb1c3a2877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf54b94bf8189f69171067ceb1ea08016cea5f45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327923"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376048"
 ---
 # <a name="standby-hibernate-optimizations"></a>待机休眠优化
 
@@ -30,11 +30,11 @@ Windows 8 提供了您的驱动程序 （可选） 可以充分利用提高睡�
 
 这些结构是新的或更新从 Windows 8，以支持备用休眠状态开始。
 
--   [**DXGK\_QUERYADAPTERINFOTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff562010)
--   [**DXGK\_SEGMENTDESCRIPTOR3**](https://msdn.microsoft.com/library/windows/hardware/hh464086)
--   [**DXGK\_SEGMENTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff562039)
+-   [**DXGK\_QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
+-   [**DXGK\_SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)
+-   [**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
 
-可以支持此功能应可以利用我们的这些休眠优化每个设备。 当 WDDM 1.2 或更高版本的驱动程序枚举段功能时，它还必须设置一个或多个备用休眠标志**PreservedDuringStandby**， **PreservedDuringHibernate**，和**PartiallyPreservedDuringHibernate**。 请参阅备注的[ **DXGK\_SEGMENTFLAGS** ](https://msdn.microsoft.com/library/windows/hardware/ff562039)主题的更多详细信息。
+可以支持此功能应可以利用我们的这些休眠优化每个设备。 当 WDDM 1.2 或更高版本的驱动程序枚举段功能时，它还必须设置一个或多个备用休眠标志**PreservedDuringStandby**， **PreservedDuringHibernate**，和**PartiallyPreservedDuringHibernate**。 请参阅备注的[ **DXGK\_SEGMENTFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)主题的更多详细信息。
 
 ## <a name="span-idstandbyoptspanspan-idstandbyoptspanusing-standby-hibernate-optimizations"></a><span id="standbyopt"></span><span id="STANDBYOPT"></span>使用 standby 休眠优化
 

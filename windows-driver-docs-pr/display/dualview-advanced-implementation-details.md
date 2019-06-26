@@ -11,12 +11,12 @@ keywords:
 - 内存 WDK 双视图
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e685b11746d2a58440d7634b1303727b1cd3f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f92a6fa8f4f86db4fd784c1021dbbbf400ff127a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361273"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380263"
 ---
 # <a name="dualview-advanced-implementation-details"></a>DualView 高级实施详细信息
 
@@ -34,7 +34,7 @@ ms.locfileid: "63361273"
 
 在理想的双视图实现中，内存缓冲区使用情况进行优化，以便辅助显示处于禁用状态时使用的主显示整个视频内存。 这种优化是可选的但是;要使用的视频内存分配策略完全由驱动程序编写器。
 
-禁用辅助视图后，主视图应能够访问的视频内存，以使系统性能最大化所有部分。 启用辅助视图后，但是，微型端口驱动程序应只需相应的主视图的内存。 相反，微型端口驱动程序应保留为辅助视图，再更改为双视图模式的视频内存。 从 Windows XP （和更高版本的操作系统版本继续执行），还有新的视频请求时， [ **IOCTL\_视频\_交换机\_双视图**](https://msdn.microsoft.com/library/windows/hardware/ff568151)到帮助驱动程序编写器处理视频内存排列方式。 时 Windows XP （和更高版本） 处理调用**ChangeDisplaySettings**函数 （Windows SDK 文档中介绍），它将发送 IOCTL\_视频\_交换机\_双视图请求到每个双视图相关视图之前它会尝试更改的模式。 驱动程序可以使用该信息以使之前其需要的视频内存排列方式。
+禁用辅助视图后，主视图应能够访问的视频内存，以使系统性能最大化所有部分。 启用辅助视图后，但是，微型端口驱动程序应只需相应的主视图的内存。 相反，微型端口驱动程序应保留为辅助视图，再更改为双视图模式的视频内存。 从 Windows XP （和更高版本的操作系统版本继续执行），还有新的视频请求时， [ **IOCTL\_视频\_交换机\_双视图**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_switch_dualview)到帮助驱动程序编写器处理视频内存排列方式。 时 Windows XP （和更高版本） 处理调用**ChangeDisplaySettings**函数 （Windows SDK 文档中介绍），它将发送 IOCTL\_视频\_交换机\_双视图请求到每个双视图相关视图之前它会尝试更改的模式。 驱动程序可以使用该信息以使之前其需要的视频内存排列方式。
 
 下图演示双视图禁用了视频内存的排列方式。
 
@@ -54,7 +54,7 @@ ms.locfileid: "63361273"
 
 *物理子关系*反映适配器的视频芯片和其显示设备之间的关系。 在系统启动后，永远不会更改视频的芯片和显示设备之间的物理关系。 在前面的图和下图中，视频芯片拥有 LCD、 CRT 和电视显示设备;因此，所有三个显示设备是物理的视频芯片的子级。
 
-*逻辑子关系*反映在视图和显示设备之间的动态关系。 在下图中，已启用双视图，且这种情况是主视图 (视图 1) 拥有 LCD 设备，而辅助视图 (视图 2) 拥有 CRT 和电视节目的设备。 另一种说法是 LCD 设备的主视图的逻辑子 CRT 和电视节目设备时的逻辑子级的辅助视图。 微型端口驱动程序报告通过逻辑子关系[ **IOCTL\_视频\_获取\_子\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567801)请求。
+*逻辑子关系*反映在视图和显示设备之间的动态关系。 在下图中，已启用双视图，且这种情况是主视图 (视图 1) 拥有 LCD 设备，而辅助视图 (视图 2) 拥有 CRT 和电视节目的设备。 另一种说法是 LCD 设备的主视图的逻辑子 CRT 和电视节目设备时的逻辑子级的辅助视图。 微型端口驱动程序报告通过逻辑子关系[ **IOCTL\_视频\_获取\_子\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_get_child_state)请求。
 
 ![关系图演示双视图模式](images/childfig2.png)
 

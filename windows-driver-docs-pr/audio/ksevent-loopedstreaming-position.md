@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c2db83ad4be87df7cdff1b7bb496971e659173b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b99906618a060df0626c319e91652b672c1fadcc
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333359"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391537"
 ---
 # <a name="kseventloopedstreamingposition"></a>KSEVENT\_LOOPEDSTREAMING\_位置
 
@@ -44,8 +44,8 @@ KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中
 <tbody>
 <tr class="odd">
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561744" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561744)"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537505" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537505)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -67,9 +67,9 @@ KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中
 
 在 Windows Vista 中，没有任何批*Xxx*端口驱动程序实现事件处理程序或其他支持 KSEVENT\_LOOPEDSTREAMING\_位置事件。
 
-一个循环的缓冲区就是类型的音频流的数据缓冲区[ **KSINTERFACE\_标准\_LOOPED\_流式处理**](https://msdn.microsoft.com/library/windows/hardware/ff563381)。 当播放或录制光标达到循环缓冲区的末尾时，光标回绕到缓冲区的开头。
+一个循环的缓冲区就是类型的音频流的数据缓冲区[ **KSINTERFACE\_标准\_LOOPED\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)。 当播放或录制光标达到循环缓冲区的末尾时，光标回绕到缓冲区的开头。
 
-有关循环的缓冲区、 缓冲区位置，并播放和记录游标的详细信息，请参阅[音频 Position 属性](https://msdn.microsoft.com/library/windows/hardware/ff536211)。
+有关循环的缓冲区、 缓冲区位置，并播放和记录游标的详细信息，请参阅[音频 Position 属性](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,11 +90,11 @@ KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)
+[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSINTERFACE\_标准\_LOOPED\_流式处理**](https://msdn.microsoft.com/library/windows/hardware/ff563381)
+[**KSINTERFACE\_标准\_LOOPED\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)
 
-[**LOOPEDSTREAMING\_POSITION\_EVENT\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff537505)
+[**LOOPEDSTREAMING\_POSITION\_EVENT\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)
 
  
 

@@ -8,17 +8,17 @@ keywords:
 - 流数据深度检测 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d4876ba56d25b5b9b5ae27223292936a475c8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67d3391fd639d2b63c62d455ff755ec23ccd4776
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386825"
 ---
 # <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>使用标注进行流数据深度检测
 
 
-当一个标注检查流数据，其[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)标注函数可以检查固定的数据字段、 元数据字段和传递给它的原始流数据的任意组合，以及已存储在任何相关数据与筛选器或数据相关联的上下文流。
+当一个标注检查流数据，其[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)标注函数可以检查固定的数据字段、 元数据字段和传递给它的原始流数据的任意组合，以及已存储在任何相关数据与筛选器或数据相关联的上下文流。
 
 例如：
 
@@ -134,7 +134,7 @@ VOID NTAPI
 }
 ```
 
-中的值*筛选器-&gt;action.type*确定哪些操作的标注[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)标注函数应返回在**actionType**成员指向的结构*classifyOut*参数。 有关这些操作的详细信息，请参阅[ **FWPS\_ACTION0** ](https://msdn.microsoft.com/library/windows/hardware/ff551215)结构。
+中的值*筛选器-&gt;action.type*确定哪些操作的标注[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)标注函数应返回在**actionType**成员指向的结构*classifyOut*参数。 有关这些操作的详细信息，请参阅[ **FWPS\_ACTION0** ](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)结构。
 
 有关数据包和流数据检查的详细信息，请参阅[检查数据包和 Stream 数据](inspecting-packet-and-stream-data.md)。
 

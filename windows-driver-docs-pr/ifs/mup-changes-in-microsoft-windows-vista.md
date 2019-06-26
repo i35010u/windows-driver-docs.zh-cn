@@ -14,12 +14,12 @@ keywords:
 - 双精度筛选 WDK 网络重定向程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df27c731d809a00bf18fbf194c4bbf135c44209
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: af631e09ac2dafb3fa7ffbadad9ea52e79b58534
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161400"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386070"
 ---
 # <a name="mup-changes-in-microsoft-windows-vista"></a>Microsoft Windows Vista 中的 MUP 更改
 
@@ -30,15 +30,15 @@ MUP 和分布式文件系统 (DFS) 客户端是在单独的二进制文件。 MU
 
 在 Windows Vista 上定义新的重定向程序模型：
 
--   将注册为与 I/O 管理器的文件系统的 MUP 通过调用[ **IoRegisterFileSystem**](https://msdn.microsoft.com/library/windows/hardware/ff548494)。
+-   将注册为与 I/O 管理器的文件系统的 MUP 通过调用[ **IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfilesystem)。
 
--   网络重定向程序注册使用 MUP [ **FsRtlRegisterUncProviderEx** ](https://msdn.microsoft.com/library/windows/hardware/ff547184) ，在 Windows Vista 中引入的新例程。
+-   网络重定向程序注册使用 MUP [ **FsRtlRegisterUncProviderEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex) ，在 Windows Vista 中引入的新例程。
 
--   网络重定向程序未命名的设备将对象传递给[ **FsRtlRegisterUncProviderEx**](https://msdn.microsoft.com/library/windows/hardware/ff547184)。
+-   网络重定向程序未命名的设备将对象传递给[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)。
 
--   网络重定向器将传递到的设备名称[ **FsRtlRegisterUncProviderEx**](https://msdn.microsoft.com/library/windows/hardware/ff547184)。
+-   网络重定向器将传递到的设备名称[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)。
 
--   网络重定向程序不会注册为文件系统与 I/O 管理器 (不会调用[ **IoRegisterFileSystem**](https://msdn.microsoft.com/library/windows/hardware/ff548494))。
+-   网络重定向程序不会注册为文件系统与 I/O 管理器 (不会调用[ **IoRegisterFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioregisterfilesystem))。
 
 -   从 MUP 网络重定向程序，包括前缀解析、 Ioctl 和 FSCTLs，到的所有调用都都是使用启用的 Apc。 从其他组件对 MUP 的所有调用都需要使用已启用的 Apc 来进行。 将用于调用[ **FsRtlCancellableWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff545738)或[ **FsRtlCancellableWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff545731)，新在 Windows Vista 中引入的例程，这样可以确保如果发出 I/O 请求的线程终止，可以中止长时间等待。
 
@@ -46,7 +46,7 @@ MUP 和分布式文件系统 (DFS) 客户端是在单独的二进制文件。 MU
 
 -   注册到 MUP 网络重定向程序设备名称将成为到 MUP 设备对象的符号链接。
 
-对于 Windows Vista 重定向程序模型符合网络重定向程序，MUP 创建符号链接对象管理器命名空间中通过网络重定向程序对的调用中指定的设备名称[ **FsRtlRegisterUncProviderEx**](https://msdn.microsoft.com/library/windows/hardware/ff547184)。 此符号链接的目标是 MUP 设备对象 (\\设备\\Mup)。
+对于 Windows Vista 重定向程序模型符合网络重定向程序，MUP 创建符号链接对象管理器命名空间中通过网络重定向程序对的调用中指定的设备名称[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)。 此符号链接的目标是 MUP 设备对象 (\\设备\\Mup)。
 
 文件系统和网络重定向程序正在 MUP 设备对象的符号链接的设备名称注册 MUP 的优点是所有远程文件系统 I/O 操作，并不只基于名称的操作经过 MUP。 因此文件系统筛选器驱动程序的需要是远程文件系统堆栈上可以只需将附加到 MUP 设备对象中。 它不是必需的文件系统筛选器驱动程序进行硬编码提供程序设备对象名称 (\\设备\\LanmanRedirector，例如) 到了其驱动程序。 在这种方式，文件系统筛选器驱动程序可以监视由单个附件颁发给所有网络重定向程序的所有 I/O 操作。 这还消除了重复的文件系统筛选器驱动程序在 Windows Vista，单独连接到 DFS (mup.sys) 和单个网络重定向之前看到的 I/O 操作 (\\设备\\LanmanRedirector，例如) 中监视对 I/O 操作的顺序。
 
@@ -54,23 +54,23 @@ MUP 和分布式文件系统 (DFS) 客户端是在单独的二进制文件。 MU
 
 有关 Windows Vista 重定向程序模型符合网络重定向程序：
 
--   远程文件系统堆栈上的所有文件对象都解析为 MUP。 因此， [ **IoGetDeviceAttachmentBaseRef** ](https://msdn.microsoft.com/library/windows/hardware/ff548365) MUP，不网络重定向程序拥有的文件对象返回的设备对象。 但是，仍由网络重定向程序拥有的文件对象的内容。
+-   远程文件系统堆栈上的所有文件对象都解析为 MUP。 因此， [ **IoGetDeviceAttachmentBaseRef** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetdeviceattachmentbaseref) MUP，不网络重定向程序拥有的文件对象返回的设备对象。 但是，仍由网络重定向程序拥有的文件对象的内容。
 
 -   IRP\_MJ\_创建颁发给网络重定向程序的设备名称 (\\设备\\LanmanRedirector\\server\\共享，例如) 将加载到该网络重定向程序目标而无需通过 MUP 前缀解析，按照其处于 Windows Server 2003、 Windows XP 和 Windows 2000。
 
 不基于 Windows Vista RDBSS （动态或静态链接） 的网络重定向程序分别称为"旧版重定向程序"。 这些旧的网络重定向程序包括：
 
--   网络重定向程序编写的 Windows Server 2003、 Windows XP 和 Windows 2000 的 MUP 使用直接注册[ **FsRtlRegisterUncProvider**](https://msdn.microsoft.com/library/windows/hardware/ff547178)。
+-   网络重定向程序编写的 Windows Server 2003、 Windows XP 和 Windows 2000 的 MUP 使用直接注册[ **FsRtlRegisterUncProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)。
 
 -   最小-重定向程序编写的 Windows Server 2003、 Windows XP 和 Windows 2000，以静态方式与 rdbsslib.lib 库链接的 Windows Server 2003、 Windows XP 或 Windows 2000 的网络。
 
--   网络的重定向器为 Windows Vista 编写直接注册使用 MUP [ **FsRtlRegisterUncProviderEx**](https://msdn.microsoft.com/library/windows/hardware/ff547184)。
+-   网络的重定向器为 Windows Vista 编写直接注册使用 MUP [ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)。
 
-网络微型-重定向程序动态自动链接针对 Windows Vista RDBSS (rdbss.sys) 的符合到 Windows Vista 重定向程序模型，因为 MUP 使用注册 RDBSS [ *FsRtlRegisterUncProviderEx*](https://msdn.microsoft.com/library/windows/hardware/ff547184). 网络微型-重定向程序，以静态方式还会自动针对 Windows Vista RDBSS (rdbsslib.lib) 链接到 Windows Vista 重定向程序模型符合，因为 MUP 使用注册 RDBSS **FsRtlRegisterUncProviderEx**.
+网络微型-重定向程序动态自动链接针对 Windows Vista RDBSS (rdbss.sys) 的符合到 Windows Vista 重定向程序模型，因为 MUP 使用注册 RDBSS [ *FsRtlRegisterUncProviderEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex). 网络微型-重定向程序，以静态方式还会自动针对 Windows Vista RDBSS (rdbsslib.lib) 链接到 Windows Vista 重定向程序模型符合，因为 MUP 使用注册 RDBSS **FsRtlRegisterUncProviderEx**.
 
 为直接向 MUP 注册的 Windows Vista 编写的旧版网络重定向程序必须符合 Windows Vista 重定向程序模型。
 
-网络重定向程序编写的 Windows Server 2003、 Windows XP 和 Windows 2000 向注册的直接使用 MUP [ **FsRtlRegisterUncProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff547178)继续工作的方式，就像在 Windows Server 2003、 Windows XP 和 Windows 2000。 最小-重定向程序编写的 Windows Server 2003、 Windows XP 和 Windows 2000 的 Windows Server 2003、 Windows XP 和 Windows 2000 继续工作的方式，就像在 Windows Server 2003 上，与 rdbsslib.lib 库静态链接的网络Windows XP 和 Windows 2000。 这些旧的网络重定向程序和最小重定向程序会表现出的以下行为：
+网络重定向程序编写的 Windows Server 2003、 Windows XP 和 Windows 2000 向注册的直接使用 MUP [ **FsRtlRegisterUncProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)继续工作的方式，就像在 Windows Server 2003、 Windows XP 和 Windows 2000。 最小-重定向程序编写的 Windows Server 2003、 Windows XP 和 Windows 2000 的 Windows Server 2003、 Windows XP 和 Windows 2000 继续工作的方式，就像在 Windows Server 2003 上，与 rdbsslib.lib 库静态链接的网络Windows XP 和 Windows 2000。 这些旧的网络重定向程序和最小重定向程序会表现出的以下行为：
 
 -   它们将显示文件系统筛选器驱动程序的监视文件系统注册。
 
@@ -114,9 +114,9 @@ HKLM\System\CurrentControlSet\Services\Mup\Parameters.
 HKLM\CurrentControlSet\Control\NetworkProvider\Order
 ```
 
-在 Windows Vista MUP 执行以不同的方式取决于是否网络重定向程序注册到 MUP 通过调用的前缀解析[ **FsRtlRegisterUncProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff547178)或[ **FsRtlRegisterUncProviderEx**](https://msdn.microsoft.com/library/windows/hardware/ff547184)。 旧版网络重定向程序，通过调用注册 MUP **FsRtlRegisterUncProvider**将收到[ **IOCTL\_是否重定向\_查询\_路径**](https://msdn.microsoft.com/library/windows/hardware/ff548313)前缀解析请求。 这是 Windows Server 2003、 Windows XP 和 Windows 2000 使用的相同方法。
+在 Windows Vista MUP 执行以不同的方式取决于是否网络重定向程序注册到 MUP 通过调用的前缀解析[ **FsRtlRegisterUncProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider)或[ **FsRtlRegisterUncProviderEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)。 旧版网络重定向程序，通过调用注册 MUP **FsRtlRegisterUncProvider**将收到[ **IOCTL\_是否重定向\_查询\_路径**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ni-ntifs-ioctl_redir_query_path)前缀解析请求。 这是 Windows Server 2003、 Windows XP 和 Windows 2000 使用的相同方法。
 
-网络重定向程序的符合 Windows Vista 重定向程序模型，并通过调用注册 MUP [ **FsRtlRegisterUncProviderEx** ](https://msdn.microsoft.com/library/windows/hardware/ff547184)将收到[ **IOCTL\_是否重定向\_查询\_路径\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff548320)前缀解析请求。 请注意，在 Windows Vista 中，网络微型-重定向程序与 rdbsslib.lib 以静态方式链接或与 rdbss.sys 动态链接将调用**FsRtlRegisterUncProviderEx** RDBSS 通过间接。
+网络重定向程序的符合 Windows Vista 重定向程序模型，并通过调用注册 MUP [ **FsRtlRegisterUncProviderEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncproviderex)将收到[ **IOCTL\_是否重定向\_查询\_路径\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ni-ntifs-ioctl_redir_query_path_ex)前缀解析请求。 请注意，在 Windows Vista 中，网络微型-重定向程序与 rdbsslib.lib 以静态方式链接或与 rdbss.sys 动态链接将调用**FsRtlRegisterUncProviderEx** RDBSS 通过间接。
 
 IOCTL 的输入和输出缓冲区\_是否重定向\_查询\_路径\_EX 如下所示：
 
@@ -228,7 +228,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 
 当 UNC 提供程序收到 IOCTL\_是否重定向\_查询\_路径\_EX 请求，它必须确定它是否可以处理中指定的 UNC 路径**路径名**查询的成员\_路径\_请求\_EX 结构。 如果这样，UNC 提供程序必须更新**LengthAccepted**查询的成员\_路径\_响应结构，它已在使用和完成状态IRP的前缀长度，以字节为单位，\_成功。 如果提供程序无法处理指定的 UNC 路径，则必须失败 IOCTL\_是否重定向\_查询\_路径\_EX 请求并返回相应的 NTSTATUS 错误代码并不能更新**LengthAccepted**查询的成员\_路径\_响应结构。 提供程序不能修改任何其他成员或**PathName**在任何情况下的字符串。
 
-在 Windows Vista 中，网络微型重定向以使用 RDBSS，该值指示支持 UNC 提供程序会收到此前缀声明，就像常规树连接基础创建，类似于文件的用户模式下 Createfile 调用\_创建\_树\_连接标志设置。 将发送 RDBSS [ **MRxCreateSrvCall** ](https://msdn.microsoft.com/library/windows/hardware/ff549864)网络微型重定向到的调用后跟对请求[ **MRxSrvCallWinnerNotify** ](https://msdn.microsoft.com/library/windows/hardware/ff550824)并[ **MRxCreateVNetRoot**](https://msdn.microsoft.com/library/windows/hardware/ff549869)。 此前缀声明不会收到与调用[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。 当网络微型重定向注册与 RDBSS 时，网络微型重定向的驱动程序调度表将被复制转移 RDBSS 为指向内部 RDBSS 入口点。 RDBSS 然后接收此 IOCTL\_是否重定向\_查询\_路径\_在内部用于网络微型重定向和调用 EX **MRxCreateSrvCall**， **MRxSrvCallWinnerNotify**，并**MRxCreateVNetRoot**。 原始 IOCTL\_是否重定向\_查询\_路径\_EX IRP 将包含在 RX\_上下文传递给**MRxCreateSrvCall**例程。 此外，RX 中的以下成员\_上下文传递给**MRxCreateSrvCall**将进行相应修改：
+在 Windows Vista 中，网络微型重定向以使用 RDBSS，该值指示支持 UNC 提供程序会收到此前缀声明，就像常规树连接基础创建，类似于文件的用户模式下 Createfile 调用\_创建\_树\_连接标志设置。 将发送 RDBSS [ **MRxCreateSrvCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_srvcall)网络微型重定向到的调用后跟对请求[ **MRxSrvCallWinnerNotify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_srvcall_winner_notify)并[ **MRxCreateVNetRoot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_v_net_root)。 此前缀声明不会收到与调用[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。 当网络微型重定向注册与 RDBSS 时，网络微型重定向的驱动程序调度表将被复制转移 RDBSS 为指向内部 RDBSS 入口点。 RDBSS 然后接收此 IOCTL\_是否重定向\_查询\_路径\_在内部用于网络微型重定向和调用 EX **MRxCreateSrvCall**， **MRxSrvCallWinnerNotify**，并**MRxCreateVNetRoot**。 原始 IOCTL\_是否重定向\_查询\_路径\_EX IRP 将包含在 RX\_上下文传递给**MRxCreateSrvCall**例程。 此外，RX 中的以下成员\_上下文传递给**MRxCreateSrvCall**将进行相应修改：
 
 **MajorFunction**成员设置为 IRP\_MJ\_创建即使原始 IRP 是 IRP\_MJ\_设备\_控件。
 
@@ -248,7 +248,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 
 **Create.Flags**成员将具有 RX\_上下文\_创建\_标志\_UNC\_名称位集。
 
-如果网络微型-重定向程序想要查看的前缀声明的详细信息，它可以读取这些成员中 RX\_上下文结构传递给[ **MRxCreateSrvCall**](https://msdn.microsoft.com/library/windows/hardware/ff549864)。 否则，它可以只是尝试连接到服务器共享，并返回状态\_成功如果**MRxCreateSrvCall**调用是否成功。 RDBSS 将代表网络声明的前缀微型重定向。
+如果网络微型-重定向程序想要查看的前缀声明的详细信息，它可以读取这些成员中 RX\_上下文结构传递给[ **MRxCreateSrvCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_srvcall)。 否则，它可以只是尝试连接到服务器共享，并返回状态\_成功如果**MRxCreateSrvCall**调用是否成功。 RDBSS 将代表网络声明的前缀微型重定向。
 
 
 

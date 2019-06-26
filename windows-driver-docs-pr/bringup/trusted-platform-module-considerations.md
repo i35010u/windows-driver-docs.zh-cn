@@ -3,12 +3,12 @@ title: 受信任的平台模块 (TPM) 注意事项
 description: 受信任的平台模块 (TPM) 注意事项
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8ba6645ef8d5feef02e363898ea030822847814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e131b4782316aecfa65e8ad5f10557c3fcf80dfa
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337384"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391754"
 ---
 # <a name="trusted-platform-module-tpm-considerations"></a>受信任的平台模块 (TPM) 注意事项
 
@@ -22,9 +22,9 @@ ms.locfileid: "63337384"
 
 [TPM 的建议](https://docs.microsoft.com/windows/security/hardware-protection/tpm/tpm-recommendations)
 
-[受信任的平台模块 2.0:简要介绍](http://www.trustedcomputinggroup.org/trusted-platform-module-2-0-brief-introduction/)
+[受信任的平台模块 2.0:简要介绍](https://trustedcomputinggroup.org/resource/trusted-platform-module-2-0-a-brief-introduction/)
 
-[受信任的平台模块 (TPM)](http://www.trustedcomputinggroup.org/work-groups/trusted-platform-module/)
+[受信任的平台模块 (TPM)](https://trustedcomputinggroup.org/work-groups/trusted-platform-module/)
 
 
 

@@ -8,12 +8,12 @@ keywords:
 - Msi WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f6f529eec61b47a67453a10ce78ccb5443daf1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b3c804ea0c3224e19461c7455925f278708056f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361890"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384942"
 ---
 # <a name="enabling-message-signaled-interrupts-in-the-registry"></a>在注册表中启用消息信号中断
 
@@ -24,7 +24,7 @@ ms.locfileid: "63361890"
 
 此外可以使用注册表来指定要为其设备分配的 Msi 的最大数目。 **MessageNumberLimit**的条目**中断管理\\MessageSignaledInterruptProperties**是 REG\_DWORD 值，该值指定到 Msi 的最大数目分配。 有关 PCI 2.2 **MessageNumberLimit**必须是 1、 2、 4、 8 或 16。 PCI 3.0 **MessageNumberLimit**可以是任意数量最多 2,048。
 
-使用[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)驱动程序的 INF 文件以设置设备的硬件密钥下的注册表项中。 有关详细信息，请参阅[ **INF DDInstall.HW 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547330)。
+使用[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)驱动程序的 INF 文件以设置设备的硬件密钥下的注册表项中。 有关详细信息，请参阅[ **INF DDInstall.HW 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)。
 
 下面的代码示例演示如何设置**MSISupported**下的条目**中断管理\\MessageSignaledInterruptProperties**设备。 请注意，您必须首先创建**中断管理**并**中断管理\\MessageSignaledInterruptProperties**密钥才能设置**MSISupported**条目。
 

@@ -6,12 +6,12 @@ keywords:
 - 容器 Id WDK，关于
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3ca4c823eeb57be16b15bb94eee1326045a37e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e408ccdd1af64187fe284a141be33ebe8be705e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366651"
 ---
 # <a name="overview-of-container-ids"></a>容器 ID 概述
 
@@ -34,7 +34,7 @@ ms.locfileid: "63330259"
 
 一般情况下，不会返回 NULL_GUID 作为默认情况下时报告的容器 id。 相反，是否处理 IRP_MN_QUERY_ID BusQueryContainerIDs 用例并由 PnP 应用其默认逻辑。
 
-当返回 NULL_GUID 作为容器 ID，总线驱动程序声明到即插即用设备必须不是任何容器，因此返回 NULL_GUID 适合仅在非常特殊的情况下的一部分。 例如， *devnode*例如卷设备可能跨多个容器中的多个磁盘，但不是属于任何容器。 此类设备将出现[ **DEVPKEY_Device_BaseContainerId** ](https://msdn.microsoft.com/library/windows/hardware/ff542360)等于 NULL_GUID，并且它不会有[ **DEVPKEY_Device_ContainerId** ](https://msdn.microsoft.com/library/windows/hardware/ff542400)根本。
+当返回 NULL_GUID 作为容器 ID，总线驱动程序声明到即插即用设备必须不是任何容器，因此返回 NULL_GUID 适合仅在非常特殊的情况下的一部分。 例如， *devnode*例如卷设备可能跨多个容器中的多个磁盘，但不是属于任何容器。 此类设备将出现[ **DEVPKEY_Device_BaseContainerId** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-basecontainerid)等于 NULL_GUID，并且它不会有[ **DEVPKEY_Device_ContainerId** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-containerid)根本。
 
 除了非常特殊的情况下，总线驱动程序应永远不会返回 NULL_GUID 时报告的硬件设备和总线驱动程序应防止报告 NULL_GUID 值从其总线的硬件故障。 在这些情况下总线驱动程序应威胁这作为设备错误，或者将它视为像设备未报告的值。
 

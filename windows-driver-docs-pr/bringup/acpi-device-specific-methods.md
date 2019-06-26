@@ -4,19 +4,19 @@ description: 若要支持更多的功能和扩展来选择技术堆栈，Windows
 ms.assetid: E49BE897-28A5-42FE-875C-A8EB56EABF8B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d49bb40956cca3c8312d8aec4bf6d109385b94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 869208c9e22a766946fc4a9feab56225c0bd0afb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328123"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364595"
 ---
 # <a name="device-specific-methods-dsm"></a>特定于设备的方法 (\_DSM)
 
 
 若要支持更多的功能和扩展来选择技术堆栈，Windows 定义了特定于设备的方法 (\_DSM) 设备。
 
-[ACPI 5.0 规范](https://www.uefi.org/specifications)引入了 Windows 用于支持芯片 (SoC) 集成线路使用系统的硬件平台的多个特定于设备的方法。 在本部分中的主题描述了参数和返回值为这些方法定义。
+[ACPI 5.0 规范](https://uefi.org/specifications)引入了 Windows 用于支持芯片 (SoC) 集成线路使用系统的硬件平台的多个特定于设备的方法。 在本部分中的主题描述了参数和返回值为这些方法定义。
 
 ## <a name="in-this-section"></a>本节内容
 
@@ -51,7 +51,7 @@ ms.locfileid: "63328123"
 </tr>
 <tr class="odd">
 <td><p><a href="hidi2c-device-specific-method---dsm-.md" data-raw-source="[HIDI2C Device-Specific Method (_DSM)](hidi2c-device-specific-method---dsm-.md)">HIDI2C 特定于设备的方法 (_DSM)</a></p></td>
-<td><p>部分 9.14.1，"_DSM （设备特定的方法）"，在中定义 _DSM 方法<a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 规范</a>。 此方法提供单个、 特定于设备的数据和控制功能可以无冲突其他此类特定于设备的方法调用的设备驱动程序。</p></td>
+<td><p>部分 9.14.1，"_DSM （设备特定的方法）"，在中定义 _DSM 方法<a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 规范</a>。 此方法提供单个、 特定于设备的数据和控制功能可以无冲突其他此类特定于设备的方法调用的设备驱动程序。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="windows-button-array-device-specific-method---dsm-.md" data-raw-source="[Windows button array Device-Specific Method (_DSM)](windows-button-array-device-specific-method---dsm-.md)">Windows 按钮数组特定于设备的方法 (_DSM)</a></p></td>
@@ -70,8 +70,8 @@ ms.locfileid: "63328123"
 |                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 主题                                                                                                                                                                                       | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| [\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](https://msdn.microsoft.com/library/windows/hardware/mt604741) | \_字节可寻址能源支持的函数类 (函数接口 1) 的 DSM 接口设计为映射到 JEDEC 字节可寻址能源支持接口标准，以便最大程度减少 BIOS 复杂性。 它提供公共基础的报告设备功能和功能，以便操作系统软件可以通过相同的机制与各种实现交互。 此外，它允许对通过 I2C 寄存器访问特定于供应商的功能的支持。 |
-| [\_针对 SATA 的 DSM （设备特定的方法）](https://msdn.microsoft.com/library/windows/hardware/dn613874)                                                                               | 此方法使您能够作为一个整体管理独立于主控制器的 SATA 控制器的每个端口。                                                                                                                                                                                                                                                                                                                                                                           |
+| [\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](https://docs.microsoft.com/windows-hardware/drivers/storage/-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-) | \_字节可寻址能源支持的函数类 (函数接口 1) 的 DSM 接口设计为映射到 JEDEC 字节可寻址能源支持接口标准，以便最大程度减少 BIOS 复杂性。 它提供公共基础的报告设备功能和功能，以便操作系统软件可以通过相同的机制与各种实现交互。 此外，它允许对通过 I2C 寄存器访问特定于供应商的功能的支持。 |
+| [\_针对 SATA 的 DSM （设备特定的方法）](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613874(v=vs.85))                                                                               | 此方法使您能够作为一个整体管理独立于主控制器的 SATA 控制器的每个端口。                                                                                                                                                                                                                                                                                                                                                                           |
 
  
 

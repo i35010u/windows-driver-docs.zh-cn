@@ -6,12 +6,12 @@ keywords:
 - 多个头硬件 WDK DirectX 9.0，句柄分配
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3f708021d3e47b490be44fc2bf200f3f8bd991b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 607d1c768992341fca1899fb2e815080205fa3f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371002"
 ---
 # <a name="example-of-handle-assignments"></a>句柄分配示例
 
@@ -19,7 +19,7 @@ ms.locfileid: "63365943"
 ## <span id="ddk_example_of_handle_assignments_gg"></span><span id="DDK_EXAMPLE_OF_HANDLE_ASSIGNMENTS_GG"></span>
 
 
-下表显示了 Direct3D 句柄值的示例排列方式 (通过提供[ **D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840))，可能会出现在两个头方案。 所有每个标头的前端、 后和深度/模具表面具有唯一的句柄;主头必须使用所有这些句柄。 主头拥有所有纹理、 顶点缓冲区和索引缓冲区曲面。主头只能创建这些图面的句柄。
+下表显示了 Direct3D 句柄值的示例排列方式 (通过提供[ **D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex))，可能会出现在两个头方案。 所有每个标头的前端、 后和深度/模具表面具有唯一的句柄;主头必须使用所有这些句柄。 主头拥有所有纹理、 顶点缓冲区和索引缓冲区曲面。主头只能创建这些图面的句柄。
 
 <table>
 <colgroup>

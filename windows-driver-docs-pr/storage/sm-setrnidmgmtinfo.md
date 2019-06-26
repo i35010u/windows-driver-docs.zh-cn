@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0031be8539786d513f528577b8b306ba89f349f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 187662bb7d88a18b4ca8d128a1846f0813e3bacb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376885"
 ---
 # <a name="smsetrnidmgmtinfo-function"></a>SM\_SetRNIDMgmtInfo 函数
 
@@ -80,9 +80,9 @@ void SM_SetRNIDMgmtInfo(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SetRNIDMgmtInfo\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566337)
+[**SM\_SetRNIDMgmtInfo\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setrnidmgmtinfo_in)
 
-[**SM\_SetRNIDMgmtInfo\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566338)
+[**SM\_SetRNIDMgmtInfo\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setrnidmgmtinfo_out)
 
  
 

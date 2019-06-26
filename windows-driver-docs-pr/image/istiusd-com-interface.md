@@ -4,12 +4,12 @@ description: IStiUSD COM 接口
 ms.assetid: 2f805955-8c66-4c9e-839e-c8a98c6637a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea4f4f5b4670df9aff4a33719d5d0904c22f1ce7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 412d4ba0157896d8ea3d2d8cd51011c5505d203d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327451"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378887"
 ---
 # <a name="istiusd-com-interface"></a>IStiUSD COM 接口
 
@@ -23,49 +23,49 @@ ms.locfileid: "63327451"
 
 由定义的方法**IStiUSD**接口包括以下：
 
-<a href="" id="istiusd--devicereset"></a>[**IStiUSD::DeviceReset**](https://msdn.microsoft.com/library/windows/hardware/ff543812)  
+<a href="" id="istiusd--devicereset"></a>[**IStiUSD::DeviceReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-devicereset)  
 将静态图像设备重置到已知的初始化状态。
 
-<a href="" id="istiusd--diagnostic"></a>[**IStiUSD::Diagnostic**](https://msdn.microsoft.com/library/windows/hardware/ff543814)  
+<a href="" id="istiusd--diagnostic"></a>[**IStiUSD::Diagnostic**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-diagnostic)  
 在静态图像设备上运行诊断测试。
 
-<a href="" id="istiusd--escape"></a>[**IStiUSD::Escape**](https://msdn.microsoft.com/library/windows/hardware/ff543815)  
+<a href="" id="istiusd--escape"></a>[**IStiUSD::Escape**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)  
 执行静态图像设备上的特定于供应商的 I/O 操作。
 
-<a href="" id="istiusd--getcapabilities"></a>[**IStiUSD::GetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff543817)  
+<a href="" id="istiusd--getcapabilities"></a>[**IStiUSD::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)  
 返回一个静态的图像设备的功能。
 
-<a href="" id="istiusd--getlasterrorinfo"></a>[**IStiUSD::GetLastErrorInfo**](https://msdn.microsoft.com/library/windows/hardware/ff543820)  
+<a href="" id="istiusd--getlasterrorinfo"></a>[**IStiUSD::GetLastErrorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getlasterrorinfo)  
 返回有关与静态图像设备相关联的最后一个已知错误的信息。
 
-<a href="" id="istiusd--getnotificationdata"></a>[**IStiUSD::GetNotificationData**](https://msdn.microsoft.com/library/windows/hardware/ff543821)  
+<a href="" id="istiusd--getnotificationdata"></a>[**IStiUSD::GetNotificationData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)  
 返回的静态图像设备发生的最新事件的描述。
 
-<a href="" id="istiusd--getstatus"></a>[**IStiUSD::GetStatus**](https://msdn.microsoft.com/library/windows/hardware/ff543823)  
+<a href="" id="istiusd--getstatus"></a>[**IStiUSD::GetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)  
 返回静态图像设备的状态。
 
-<a href="" id="istiusd--initialize"></a>[**IStiUSD::Initialize**](https://msdn.microsoft.com/library/windows/hardware/ff543824)  
+<a href="" id="istiusd--initialize"></a>[**IStiUSD::Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)  
 初始化一个实例定义的 COM 对象**IStiUSD**接口。
 
-<a href="" id="istiusd--lockdevice"></a>[**IStiUSD::LockDevice**](https://msdn.microsoft.com/library/windows/hardware/ff543829)  
+<a href="" id="istiusd--lockdevice"></a>[**IStiUSD::LockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-lockdevice)  
 锁定供独占使用由调用方的设备。
 
 <a href="" id="istiusd--rawreadcommand"></a>**IStiUSD::RawReadCommand**  
 读取命令从静态图像设备信息。
 
-<a href="" id="istiusd--rawreaddata"></a>[**IStiUSD::RawReadData**](https://msdn.microsoft.com/library/windows/hardware/ff543834)  
+<a href="" id="istiusd--rawreaddata"></a>[**IStiUSD::RawReadData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-rawreaddata)  
 从静态图像设备读取数据。
 
-<a href="" id="istiusd--rawwritecommand"></a>[**IStiUSD::RawWriteCommand**](https://msdn.microsoft.com/library/windows/hardware/ff543836)  
+<a href="" id="istiusd--rawwritecommand"></a>[**IStiUSD::RawWriteCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-rawwritecommand)  
 写入静态图像设备命令的信息。
 
-<a href="" id="istiusd--rawwritedata"></a>[**IStiUSD::RawWriteData**](https://msdn.microsoft.com/library/windows/hardware/ff543839)  
+<a href="" id="istiusd--rawwritedata"></a>[**IStiUSD::RawWriteData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-rawwritedata)  
 将数据写入到静态图像设备。
 
-<a href="" id="istiusd--setnotificationhandle"></a>[**IStiUSD::SetNotificationHandle**](https://msdn.microsoft.com/library/windows/hardware/ff543840)  
+<a href="" id="istiusd--setnotificationhandle"></a>[**IStiUSD::SetNotificationHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)  
 指定应使用微型驱动程序通知设备事件的调用方的事件句柄。 通常由静止图像事件监视器调用。
 
-<a href="" id="istiusd--unlockdevice"></a>[**IStiUSD::UnLockDevice**](https://msdn.microsoft.com/library/windows/hardware/ff543843)  
+<a href="" id="istiusd--unlockdevice"></a>[**IStiUSD::UnLockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-unlockdevice)  
 解锁设备。
 
  

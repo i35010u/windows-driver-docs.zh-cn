@@ -6,12 +6,12 @@ ms.assetid: cbc5b959-0aae-4c86-b490-296965a7f158
 keywords:
 - IRP_MN_READ_CONFIG 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb3a95a97e2de5a3c139b7485f9f930da15ec02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2609a1cb456b06e1fb47687d82551c6c7213852
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381413"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370839"
 ---
 # <a name="irpmnreadconfig"></a>IRP\_MN\_READ\_CONFIG
 
@@ -31,7 +31,7 @@ ms.locfileid: "63381413"
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.ReadWriteConfig**的成员[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构本身就是一个包含以下结构信息：
+**Parameters.ReadWriteConfig**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构本身就是一个包含以下结构信息：
 
 ```cpp
 ULONG WhichSpace;
@@ -121,17 +121,17 @@ PCI\_*XXX*中 wdm.h 中定义了值。 PCCARD\_*XXX* Ntddpcm.h 中定义了值�
 
 总线驱动程序处理其子设备 (子 PDOs) 此 IRP。
 
-函数和筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus**。未设置状态和它们[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程。
+函数和筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus**。未设置状态和它们[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
 
 处理此请求的总线驱动程序应检查 WhichSpace 参数以确保它包含一个值，该驱动程序支持该值。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 
 通常情况下，功能驱动程序将此 IRP 发送到设备堆栈向其附加并由父总线驱动程序处理 IRP 中的顶部驱动程序。
 
-请参阅[处理 Irp](https://msdn.microsoft.com/library/windows/hardware/ff546847)有关发送 Irp 信息。 专门针对此 IRP 可以采用以下步骤：
+请参阅[处理 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)有关发送 Irp 信息。 专门针对此 IRP 可以采用以下步骤：
 
 -   分配来自分页池的缓冲区并将其初始化为零。
 
@@ -145,7 +145,7 @@ PCI\_*XXX*中 wdm.h 中定义了值。 PCCARD\_*XXX* Ntddpcm.h 中定义了值�
 
 驱动程序可以访问在调度的总线配置空间\_级别通过总线接口例程中，如果父总线驱动程序支持此类的接口。 若要获取总线接口，驱动程序发送[ **IRP\_MN\_查询\_接口**](irp-mn-query-interface.md)设备堆栈中的附加驱动程序的请求。 然后，驱动程序调用在界面中返回的相应例程。
 
-例如，若要配置空间读取调度\_级别，驱动程序可以调用**IRP\_MN\_查询\_接口**若要获取的驱动程序初始化期间[**总线\_界面\_标准**](https://msdn.microsoft.com/library/windows/hardware/ff540707)从父总线驱动程序的接口。 该驱动程序会将查询 IRP 发送从 IRQL 被动\_级别。 更高版本，从代码在 IRQL 调度\_级别，该驱动程序调用相应的例程返回在界面中，如**Interface.GetBusData**例程。
+例如，若要配置空间读取调度\_级别，驱动程序可以调用**IRP\_MN\_查询\_接口**若要获取的驱动程序初始化期间[**总线\_界面\_标准**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)从父总线驱动程序的接口。 该驱动程序会将查询 IRP 发送从 IRQL 被动\_级别。 更高版本，从代码在 IRQL 调度\_级别，该驱动程序调用相应的例程返回在界面中，如**Interface.GetBusData**例程。
 
 <a name="requirements"></a>要求
 ------------

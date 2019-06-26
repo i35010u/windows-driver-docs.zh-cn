@@ -3,12 +3,12 @@ Description: 适用于在构建 USB 类型 C 的系统的 Oem 支持 USB C 型�
 title: Windows 对 USB 类型 C 连接器的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 313e6caf41852998ca277011a9abe13d956d0a1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be4cca50437de9aadbcd65be59bfbdf75042e1fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368832"
 ---
 # <a name="windows-support-for-usb-type-c-connectors"></a>Windows 对 USB 类型 C 连接器的支持
 
@@ -53,7 +53,7 @@ USB C 型连接器是可还原和对称。
 - [与嵌入式控制器 USB C 类型系统的硬件设计](ucsi.md)
 
 请考虑的设计和开发的 USB 组件，包括最低硬件要求、 Windows 硬件兼容性计划要求和基于这些要求的其他建议的建议。
-[硬件组件指南 USB](https://msdn.microsoft.com/library/windows/hardware/dn915125)
+[硬件组件指南 USB](https://docs.microsoft.com/windows-hardware/design/component-guidelines/universal-serial-bus--usb-)
 
 ## <a name="choose-a-driver-model"></a>选择驱动程序模型
 

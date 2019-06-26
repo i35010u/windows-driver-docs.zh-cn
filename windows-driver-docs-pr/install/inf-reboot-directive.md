@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4003c4f0f143187f339f0dc9a0092d2ed46faa20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2ad3ad61e5b4bcf5b610a29d01de988ded3b071
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335228"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370038"
 ---
 # <a name="inf-reboot-directive"></a>INF Reboot 指令
 
@@ -35,7 +35,7 @@ Reboot
 
 **重新启动**因为需要重新启动系统将自动检测到基于设备的一部分遇到的常见条件对于安装在 Windows 上的 INF 文件几乎永远不会指定指令安装。 例如，系统会通知调用方如果某些目标的目标文件的文件复制操作是在使用中，或者如果设备无法自动重新启动安装过程，则需要重新启动。 **重新启动**为其重新启动系统始终是必需的系统本身不能自动检测此驱动程序安装后某些特定条件时，应仅使用指令。
 
-指定重新启动指令，则调用方将收到通知的系统重启所需的任何设备使用本节 INF 安装的安装。 安装已发起时通过函数的指针等[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)， [ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)，或[ **DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)，这将导致*NeedReboot* out 参数设置为 TRUE 这些例程。
+指定重新启动指令，则调用方将收到通知的系统重启所需的任何设备使用本节 INF 安装的安装。 安装已发起时通过函数的指针等[ **UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)， [ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)，或[ **DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)，这将导致*NeedReboot* out 参数设置为 TRUE 这些例程。
 
 <a name="remarks"></a>备注
 -------

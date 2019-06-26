@@ -8,21 +8,21 @@ keywords:
 - 打印机自动配置 WDK 打印机，IHV 端口监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2591eaa8bbd8b465a65e07d1911ba462d8d4fe88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b52d57bef2f3bf0171a564a0d2123ea751a97986
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350752"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370466"
 ---
 # <a name="autoconfiguration-in-an-ihv-port-monitor"></a>IHV 端口监视器中的自动配置
 
 
 想要开发端口监视器 IHV 必须设计为支持自动配置。 IHV 端口监视器中的自动配置为提供支持，请遵循以下准则：
 
--   实现[ **SendRecvBidiDataFromPort** ](https://msdn.microsoft.com/library/windows/hardware/ff562071)函数，并将放置在此函数的地址**pfnSendRecvBidiDataFromPort**隶属[**MONITOR2** ](https://msdn.microsoft.com/library/windows/hardware/ff557532)结构。
+-   实现[ **SendRecvBidiDataFromPort** ](https://docs.microsoft.com/previous-versions/ff562071(v=vs.85))函数，并将放置在此函数的地址**pfnSendRecvBidiDataFromPort**隶属[**MONITOR2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_monitor2)结构。
 
--   支持[bidi 通信架构](https://msdn.microsoft.com/library/windows/hardware/ff545175)。
+-   支持[bidi 通信架构](https://docs.microsoft.com/windows-hardware/drivers/print/bidi-communications-schema-reference)。
 
 -   支持 bidi 通知。
 

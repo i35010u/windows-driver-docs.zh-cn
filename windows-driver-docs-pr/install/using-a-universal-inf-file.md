@@ -4,12 +4,12 @@ description: 如果要构建一个通用或移动设备的驱动程序包，必�
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f45248683bd487d421bb3503bfff6b5fabc881
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5404dcfd2b5d342fafaf4122d8ae08108e30e2ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339440"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384776"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
@@ -60,10 +60,10 @@ ms.locfileid: "63339440"
 以下指令均有效存在一些注意事项：
 
 -   [ **INF AddReg 指令**](inf-addreg-directive.md)有效如果中指定的条目*添加注册表部分*具有*reg 根*值**HKR**，或在以下情况下：
-    -   用于注册[组件对象模型](https://msdn.microsoft.com/library/ee663262(v=vs.85).aspx)(COM) 对象可能在写入密钥：
+    -   用于注册[组件对象模型](https://docs.microsoft.com/windows/desktop/com)(COM) 对象可能在写入密钥：
         -   HKCR
         -   HKLM\SOFTWARE\Classes
-    -   用于创建[硬件 Media Foundation 转换](https://msdn.microsoft.com/library/windows/desktop/ms703138.aspx)(Mft)，可能在写入密钥：
+    -   用于创建[硬件 Media Foundation 转换](https://docs.microsoft.com/windows/desktop/medfound/media-foundation-transforms)(Mft)，可能在写入密钥：
         -   HKLM\SOFTWARE\Microsoft\Windows Media Foundation
         -   HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation
         -   HKLM\SOFTWARE\WOW3232Node\Microsoft\Windows Media Foundation
@@ -80,5 +80,5 @@ ms.locfileid: "63339440"
 
 ## <a name="see-also"></a>请参阅
 
-* [安装通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/installing_a_universal_driver)
-* [InfVerif](https://msdn.microsoft.com/library/windows/hardware/dn929319)
+* [安装通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
+* [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)

@@ -10,12 +10,12 @@ keywords:
 description: 定义对等标准 NFC 论坛有关的信息，确保设备的协议可以使用 NFC 进行交互。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0272feb0fd890058c34c911742fb0155b9c466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8212c433858234ceeb26aeb821e873339ae6ad6e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348409"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383162"
 ---
 # <a name="peer-to-peer"></a>对等
 
@@ -33,11 +33,11 @@ ms.locfileid: "63348409"
 -   远程 P2P 设备到达时，驱动程序必须建立与远程设备的默认 SNEP 服务器 （后跟"DeviceArrived"订阅触发） 的客户端 SNEP 连接。
 -   该驱动程序还必须能够接受其默认 SNEP 服务器从远程设备的 SNEP 客户端连接上的连接。
 -   接收 SNEP 服务器上的所有 NDEF 消息必须都转换为消息类型，如本文档中定义。
--   要发布的所有消息类型必须转换为 NDEF 消息并发送到远程设备，如上文所定义。 传输消息时，一旦[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853320)中定义完成本文档中。
+-   要发布的所有消息类型必须转换为 NDEF 消息并发送到远程设备，如上文所定义。 传输消息时，一旦[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)中定义完成本文档中。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

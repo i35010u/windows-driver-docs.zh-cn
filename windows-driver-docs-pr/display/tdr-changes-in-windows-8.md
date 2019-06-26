@@ -6,12 +6,12 @@ keywords:
 - （超时检测和恢复） TDR WDK 显示，Windows 8 中的更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7ad0cd9205de14e01b4ccb197090c856f68298
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8afa1f78834b267eff1a5ad2b2d6766ad5b541d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362722"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372023"
 ---
 # <a name="tdr-changes-in-windows-8"></a>Windows 8 中的 TDR 更改
 
@@ -50,23 +50,23 @@ ms.locfileid: "63362722"
 
 为了适应此行为更改，显示微型端口驱动程序应实现这些函数：
 
--   [*DxgkDdiQueryDependentEngineGroup*](https://msdn.microsoft.com/library/windows/hardware/hh451407)
--   [*DxgkDdiQueryEngineStatus*](https://msdn.microsoft.com/library/windows/hardware/hh451411)
--   [*DxgkDdiResetEngine*](https://msdn.microsoft.com/library/windows/hardware/hh451418)
+-   [*DxgkDdiQueryDependentEngineGroup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_querydependentenginegroup)
+-   [*DxgkDdiQueryEngineStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryenginestatus)
+-   [*DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)
 
-**请注意**  支持这些函数的驱动程序还必须支持零级同步[ *DxgkDdiCollectDbgInfo* ](https://msdn.microsoft.com/library/windows/hardware/ff559595)函数。 这是为了确保不会受到影响的调用是重置操作可以继续该零级微型端口。 请参阅备注的*DxgkDdiCollectDbgInfo*。
+**请注意**  支持这些函数的驱动程序还必须支持零级同步[ *DxgkDdiCollectDbgInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_collectdbginfo)函数。 这是为了确保不会受到影响的调用是重置操作可以继续该零级微型端口。 请参阅备注的*DxgkDdiCollectDbgInfo*。
 
  
 
 这些结构与相关联的新函数：
 
--   [**DXGK\_DRIVERCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff561062) (新**SupportPerEngineTDR**成员)
--   [**DXGK\_ENGINESTATUS**](https://msdn.microsoft.com/library/windows/hardware/hh464023)
--   [**DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://msdn.microsoft.com/library/windows/hardware/hh451294)
--   [**DXGKARG\_QUERYENGINESTATUS**](https://msdn.microsoft.com/library/windows/hardware/hh451299)
--   [**DXGKARG\_RESETENGINE**](https://msdn.microsoft.com/library/windows/hardware/hh451303)
+-   [**DXGK\_DRIVERCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps) (新**SupportPerEngineTDR**成员)
+-   [**DXGK\_ENGINESTATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_enginestatus)
+-   [**DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_querydependentenginegroup)
+-   [**DXGKARG\_QUERYENGINESTATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryenginestatus)
+-   [**DXGKARG\_RESETENGINE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_resetengine)
 
-显示微型端口驱动程序通过设置来指示对这些函数的支持[ **DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062)。**SupportPerEngineTDR**成员，在这种情况下，它必须实现[ *DxgkDdiQueryDependentEngineGroup*](https://msdn.microsoft.com/library/windows/hardware/hh451407)， [ *DxgkDdiQueryEngineStatus*](https://msdn.microsoft.com/library/windows/hardware/hh451411)，并[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)函数。
+显示微型端口驱动程序通过设置来指示对这些函数的支持[ **DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)。**SupportPerEngineTDR**成员，在这种情况下，它必须实现[ *DxgkDdiQueryDependentEngineGroup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_querydependentenginegroup)， [ *DxgkDdiQueryEngineStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryenginestatus)，并[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)函数。
 
 ## <a name="span-idtdrprocessdescriptionspanspan-idtdrprocessdescriptionspanspan-idtdrprocessdescriptionspantdr-process-description"></a><span id="TDR_process_description"></span><span id="tdr_process_description"></span><span id="TDR_PROCESS_DESCRIPTION"></span>TDR 进程说明
 
@@ -84,11 +84,11 @@ GPU 命令已太长时间才能完成或挂起硬件时，会发生 TDRs。 TDRs
 ## <a name="span-idnodesspanspan-idnodesspanspan-idnodesspannodes"></a><span id="Nodes"></span><span id="nodes"></span><span id="NODES"></span>节点
 
 
-在上面的 TDR 函数中，使用*节点*是可以独立进行安排的单一物理适配器的多个部分之一。 例如，三维节点、 视频解码节点，和复制节点可以全部存在于同一个物理适配器，并且每个可以分配中的单独节点序号值[ **DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://msdn.microsoft.com/library/windows/hardware/hh451294).**NodeOrdinal**调用中的成员[ *DxgkDdiQueryDependentEngineGroup*](https://msdn.microsoft.com/library/windows/hardware/hh451407)。
+在上面的 TDR 函数中，使用*节点*是可以独立进行安排的单一物理适配器的多个部分之一。 例如，三维节点、 视频解码节点，和复制节点可以全部存在于同一个物理适配器，并且每个可以分配中的单独节点序号值[ **DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_querydependentenginegroup).**NodeOrdinal**调用中的成员[ *DxgkDdiQueryDependentEngineGroup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_querydependentenginegroup)。
 
-通过显示微型端口驱动程序中报告的物理适配器中的节点数**NbAsymetricProcessingNodes**的成员[ **DXGK\_DRIVERCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff561062).**GpuEngineTopology**。
+通过显示微型端口驱动程序中报告的物理适配器中的节点数**NbAsymetricProcessingNodes**的成员[ **DXGK\_DRIVERCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps).**GpuEngineTopology**。
 
-节点的序号值传入**NodeOrdinal**的成员[ **DXGKARG\_CREATECONTEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff557567)结构时创建上下文。
+节点的序号值传入**NodeOrdinal**的成员[ **DXGKARG\_CREATECONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_createcontext)结构时创建上下文。
 
 ## <a name="span-idenginesspanspan-idenginesspanspan-idenginesspanengines"></a><span id="Engines"></span><span id="engines"></span><span id="ENGINES"></span>引擎
 
@@ -100,7 +100,7 @@ GPU 命令已太长时间才能完成或挂起硬件时，会发生 TDRs。 TDRs
 ## <a name="span-idengineordinalvalueatcontextcreationspanspan-idengineordinalvalueatcontextcreationspanspan-idengineordinalvalueatcontextcreationspanengine-ordinal-value-at-context-creation"></a><span id="Engine_ordinal_value_at_context_creation"></span><span id="engine_ordinal_value_at_context_creation"></span><span id="ENGINE_ORDINAL_VALUE_AT_CONTEXT_CREATION"></span>引擎在上下文创建时的序号值
 
 
-创建上下文后，设置引擎序号值对应的单个位**EngineAffinity**的成员[ **DXGKARG\_CREATECONTEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff557567)结构。 **EngineOrdinal**这和计划程序相关的其他结构的成员是从零开始的索引。 值**EngineAffinity**为 1 &lt; &lt; **EngineOrdinal**，以及**EngineOrdinal**中的最高的位位置**EngineAffinity**。
+创建上下文后，设置引擎序号值对应的单个位**EngineAffinity**的成员[ **DXGKARG\_CREATECONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_createcontext)结构。 **EngineOrdinal**这和计划程序相关的其他结构的成员是从零开始的索引。 值**EngineAffinity**为 1 &lt; &lt; **EngineOrdinal**，以及**EngineOrdinal**中的最高的位位置**EngineAffinity**。
 
 ## <a name="span-idpacketsunaffectedbyengineresetspanspan-idpacketsunaffectedbyengineresetspanspan-idpacketsunaffectedbyengineresetspanpackets-unaffected-by-engine-reset"></a><span id="Packets_unaffected_by_engine_reset"></span><span id="packets_unaffected_by_engine_reset"></span><span id="PACKETS_UNAFFECTED_BY_ENGINE_RESET"></span>数据包的引擎重置不会影响
 
@@ -113,12 +113,12 @@ GPU 计划程序可能要求驱动程序重新提交已太晚提交至引擎硬�
 ## <a name="span-idcallingsequencetoresetanenginespanspan-idcallingsequencetoresetanenginespanspan-idcallingsequencetoresetanenginespancalling-sequence-to-reset-an-engine"></a><span id="Calling_sequence_to_reset_an_engine"></span><span id="calling_sequence_to_reset_an_engine"></span><span id="CALLING_SEQUENCE_TO_RESET_AN_ENGINE"></span>若要重置引擎的调用序列
 
 
-当[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)成功，GPU 计划程序可确保**LastAbortedFenceId**引擎重置调用返回的值对应到现有隔离 ID 的硬件队列中或在 GPU 上的最后一个已完成的隔离 ID。 后一种情况可能发生时的硬件队列清空后 GPU 超时检测到，但引擎重置回调之前进行调用。
+当[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)成功，GPU 计划程序可确保**LastAbortedFenceId**引擎重置调用返回的值对应到现有隔离 ID 的硬件队列中或在 GPU 上的最后一个已完成的隔离 ID。 后一种情况可能发生时的硬件队列清空后 GPU 超时检测到，但引擎重置回调之前进行调用。
 
-在 GPU 上的最后一个已完成的隔离 ID 值必须维护驱动程序在任何时候因为还需要设置**DmaPreempted**。**LastCompletedFenceId**的成员[ **DXGKARGCB\_通知\_中断\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff557538)抢占中断通知结构。 应仅在这些情况下高级的最后一个已完成的隔离 ID:
+在 GPU 上的最后一个已完成的隔离 ID 值必须维护驱动程序在任何时候因为还需要设置**DmaPreempted**。**LastCompletedFenceId**的成员[ **DXGKARGCB\_通知\_中断\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkargcb_notify_interrupt_data)抢占中断通知结构。 应仅在这些情况下高级的最后一个已完成的隔离 ID:
 
 -   完成数据包时 （不预先清空），最后一个已完成的隔离 ID 应设置为已完成数据包的隔离 ID。
--   当[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)成功，应将 ID 设置为值的最后一个已完成的 fence **LastCompletedFenceId**引擎返回的成员重置调用。
+-   当[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)成功，应将 ID 设置为值的最后一个已完成的 fence **LastCompletedFenceId**引擎返回的成员重置调用。
 -   适配器范围重置，最后一个已完成的 fence ID 的所有节点上应将前移到最后一个提交在重置时隔离 ID。
 
 下面是成功引擎重置，按时间顺序由 GPU 计划程序所示：
@@ -129,7 +129,7 @@ GPU 计划程序可能要求驱动程序重新提交已太晚提交至引擎硬�
 4.  如果不有任何数据包的硬件队列中在此时，退出。 如果数据包已完成在步骤 2 和 3 之间的时间窗口中，则可能发生此问题。
 5.  所有排队的 Dpc 将被清除。
 6.  准备引擎重置。
-7.  调用[ *DxgkDdiResetEngine*](https://msdn.microsoft.com/library/windows/hardware/hh451418)。
+7.  调用[ *DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)。
 8.  如果**LastAbortedFenceId**成员是早于最后一个已完成隔离 ID 或大于最后一个提交的隔离 ID，DirectX 图形内核子系统会导致系统出现 bugcheck 发生。 在崩溃转储文件中，记录该错误的消息**检测错误 0x119**，其中包含以下四个参数：
     -   0xA，这意味着该驱动程序报告了无效的中止的隔离 ID
     -   **LastAbortedFenceId**驱动程序返回值
@@ -145,7 +145,7 @@ GPU 计划程序可能要求驱动程序重新提交已太晚提交至引擎硬�
 
 如果驱动程序不能执行重置操作因为硬件处于无效状态，或者由于硬件是不能进行的重置节点，该驱动程序应返回了失败状态代码。 如果 GPU 计划程序接收失败状态代码，它将执行适配器范围重置和重启操作以下[TDR 行为](timeout-detection-and-recovery.md)Windows 8 之前。
 
-即使驱动程序已选择加入的 Windows 8 TDR 行为，也 GPU 计划程序请求重置和重启的整个逻辑适配器时将会用例。 因此，驱动程序必须还要实现[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)并[ *DxgkDdiRestartFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559820)函数，并它们的语义仍与 Windows 8 之前相同。 当尝试重置使用的物理适配器[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)引出的逻辑的适配器，重置 **！ 分析**Windows 调试器的命令显示**TdrReason** TDR 恢复上下文的值设置为一个新的值**TdrEngineTimeoutPromotedToAdapterReset** = 9。
+即使驱动程序已选择加入的 Windows 8 TDR 行为，也 GPU 计划程序请求重置和重启的整个逻辑适配器时将会用例。 因此，驱动程序必须还要实现[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)并[ *DxgkDdiRestartFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)函数，并它们的语义仍与 Windows 8 之前相同。 当尝试重置使用的物理适配器[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)引出的逻辑的适配器，重置 **！ 分析**Windows 调试器的命令显示**TdrReason** TDR 恢复上下文的值设置为一个新的值**TdrEngineTimeoutPromotedToAdapterReset** = 9。
 
 ## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>硬件认证要求
 

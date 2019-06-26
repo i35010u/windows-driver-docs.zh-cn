@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28751
-ms.openlocfilehash: f72ee8b8372436e8269846b58131c201af51b6e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39dc9d7d8627644b8cf2729edf7769c784dca865
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374761"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371703"
 ---
 # <a name="c28751"></a>C28751
 
@@ -38,11 +38,11 @@ ms.locfileid: "63374761"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="ExAllocatePool"></span><span id="exallocatepool"></span><span id="EXALLOCATEPOOL"></span>ExAllocatePool</p></td>
-<td align="left"><p>可靠的替代：<a href="https://msdn.microsoft.com/library/windows/hardware/ff544520" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544520)"><strong>ExAllocatePoolWithTag</strong></a></p></td>
+<td align="left"><p>可靠的替代：<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)"><strong>ExAllocatePoolWithTag</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="ExAllocatePoolWithQuota"></span><span id="exallocatepoolwithquota"></span><span id="EXALLOCATEPOOLWITHQUOTA"></span>ExAllocatePoolWithQuota</p></td>
-<td align="left"><p>可靠的替代：<a href="https://msdn.microsoft.com/library/windows/hardware/ff544513" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithQuotaTag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544513)"><strong>ExAllocatePoolWithQuotaTag</strong></a> routine</p></td>
+<td align="left"><p>可靠的替代：<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithQuotaTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)"><strong>ExAllocatePoolWithQuotaTag</strong></a> routine</p></td>
 </tr>
 </tbody>
 </table>

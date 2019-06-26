@@ -9,31 +9,31 @@ keywords:
 - INF 文件 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e694073d8d3d7c3f80d951f412a0649997b46ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cc98228033c0baa739a2c507e2c16bf0a029a50
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327768"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385091"
 ---
 # <a name="inf-files-for-callout-drivers"></a>标注驱动程序的 INF 文件
 
 
 通过安装程序信息文件 (INF) 文件安装 Windows 筛选平台标注驱动程序。 标注驱动程序的 INF 文件包含仅以下 INF 文件部分：
 
-[**INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)
+[**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
 
-[**INF SourceDisksNames 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547478)
+[**INF SourceDisksNames 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)
 
-[**INF SourceDisksFiles 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547472)
+[**INF SourceDisksFiles 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)
 
-[**INF DestinationDirs 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547383)
+[**INF DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)
 
-[**INF DefaultInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547356)
+[**INF DefaultInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)
 
-[**INF DefaultInstall.Services 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547360)
+[**INF DefaultInstall.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
 
-[**INF 字符串部分**](https://msdn.microsoft.com/library/windows/hardware/ff547485)
+[**INF 字符串部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)
 
 例如：
 

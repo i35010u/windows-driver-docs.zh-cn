@@ -6,12 +6,12 @@ keywords:
 - 传统的 COM 端口 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ee95dae7ef8ce9ce1215f279de17a017c1f641
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 6aff01e1f79f2e82c1e67795a98e2d71602600b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836364"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383515"
 ---
 # <a name="installing-legacy-com-ports"></a>安装旧版 COM 端口
 
@@ -21,7 +21,7 @@ ms.locfileid: "65836364"
 
 当加载序列它来确定哪些旧端口不以前检测到通过检查**LegacyDiscovered**旧端口条目值。 如果此项值不存在或为零，序列将执行以下任务：
 
-1. 调用[ **IoReportDetectedDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549597)要报告给插管理器的设备。
+1. 调用[ **IoReportDetectedDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)要报告给插管理器的设备。
 
 2. 集**LegacyDiscovered**条目为 0x00000001，指示该端口已报告的端口值。
 
@@ -31,5 +31,5 @@ ms.locfileid: "65836364"
 
 **IoReportDetectedDevice**调用标记为根枚举设备的端口。 在后续进行系统启动时，插管理器会自动配置基于其 INF 文件中的信息的设备。
 
-插管理器中创建以下[兼容 Id](https://msdn.microsoft.com/library/windows/hardware/ff539950)为传统的 COM 端口：DETECTEDInternal\\串行和检测到\\串行。
+插管理器中创建以下[兼容 Id](https://docs.microsoft.com/windows-hardware/drivers/install/compatible-ids)为传统的 COM 端口：DETECTEDInternal\\串行和检测到\\串行。
 

@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DELETE_PORT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b9623fdc7dfaf098ccd6791f3aa6185973ab730d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 030d8a7a3f1835bf535e857e650a755d57d95806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331829"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384204"
 ---
 # <a name="wditlvdeleteportparameters"></a>WDI\_TLV\_删除\_端口\_参数
 
 
-WDI\_TLV\_删除\_端口\_参数是包含参数的 TLV [OID\_WDI\_任务\_删除\_端口](https://msdn.microsoft.com/library/windows/hardware/dn925950).
+WDI\_TLV\_删除\_端口\_参数是包含参数的 TLV [OID\_WDI\_任务\_删除\_端口](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-delete-port).
 
 ## <a name="tlv-type"></a>TLV 类型
 

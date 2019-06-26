@@ -13,12 +13,12 @@ keywords:
 - 初始化驱动程序 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 635d8141bc16c872d49447681242dd92bb721d16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 915014aa9747ae48ab802650b7764a1dafd07daf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374157"
 ---
 # <a name="writing-a-reinitialize-routine"></a>编写 Reinitialize 例程
 
@@ -26,11 +26,11 @@ ms.locfileid: "63380611"
 
 
 
-可以包含任何驱动程序，需要在阶段中初始化其自身[*重新初始化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)例程。 一个*重新初始化*后，会调用例程[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程返回控件和其他驱动程序已初始化自身。 通常情况下，*重新初始化*例程执行另一个驱动程序启动后必须完成的任务。
+可以包含任何驱动程序，需要在阶段中初始化其自身[*重新初始化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)例程。 一个*重新初始化*后，会调用例程[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程返回控件和其他驱动程序已初始化自身。 通常情况下，*重新初始化*例程执行另一个驱动程序启动后必须完成的任务。
 
-例如，系统的键盘类驱动程序， **kbdclass**，支持即插即用以及传统键盘的两个端口。 如果一个系统都包含一个或多个 PnP 管理器无法检测到的旧端口，在键盘类驱动程序必须不过创建每个端口和基于端口的较低级驱动程序本身层的设备对象。 因此，在类驱动程序还拥有*重新初始化*例程的调用后其**DriverEntry**并[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程具有已调用和其他驱动程序已加载。 *重新初始化*例程检测到该端口，创建一个设备对象，和层通过其他低级驱动程序设备驱动程序。
+例如，系统的键盘类驱动程序， **kbdclass**，支持即插即用以及传统键盘的两个端口。 如果一个系统都包含一个或多个 PnP 管理器无法检测到的旧端口，在键盘类驱动程序必须不过创建每个端口和基于端口的较低级驱动程序本身层的设备对象。 因此，在类驱动程序还拥有*重新初始化*例程的调用后其**DriverEntry**并[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程具有已调用和其他驱动程序已加载。 *重新初始化*例程检测到该端口，创建一个设备对象，和层通过其他低级驱动程序设备驱动程序。
 
-驱动程序的[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程调用[ **IoRegisterDriverReinitialization** ](https://msdn.microsoft.com/library/windows/hardware/ff549511)到队列*重新初始化*例程的执行。 *重新初始化*还可以调用例程**IoRegisterDriverReinitialization**本身，这会导致例程进行重新排队。 参数之一*重新初始化*指示它已被调用的次数。
+驱动程序的[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程调用[ **IoRegisterDriverReinitialization** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioregisterdriverreinitialization)到队列*重新初始化*例程的执行。 *重新初始化*还可以调用例程**IoRegisterDriverReinitialization**本身，这会导致例程进行重新排队。 参数之一*重新初始化*指示它已被调用的次数。
 
 在调用**IoRegisterDriverReinitialization**可以包括驱动程序定义的上下文数据，则系统将提供作为输入的指针*重新初始化*。 如果*重新初始化*例程使用注册表，上下文数据应包括*RegistryPath*指针传递给**DriverEntry**例程因为这指针不是输入的参数*重新初始化*例程。
 

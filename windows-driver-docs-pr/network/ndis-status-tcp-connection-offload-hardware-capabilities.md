@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a97a33ab6ca824dcf7045bc36b9edc902feb34d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c68abc8dc96ea9b6a9e8337c025a17d9f58d1570
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372570"
 ---
 # <a name="ndisstatustcpconnectionoffloadhardwarecapabilities"></a>NDIS\_状态\_TCP\_连接\_卸载\_硬件\_功能
 
@@ -23,9 +23,9 @@ MUX 中间驱动程序使用 NDIS\_状态\_TCP\_连接\_卸载\_硬件\_功能�
 
 如果在添加或删除基础 NIC，可以更改与 MUX 中间驱动程序相关联的总体硬件功能集。
 
-**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构包含[ **NDIS\_TCP\_连接\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff567875)结构。 NDIS\_TCP\_连接\_卸载指定任务卸载的硬件功能。
+**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含[ **NDIS\_TCP\_连接\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)结构。 NDIS\_TCP\_连接\_卸载指定任务卸载的硬件功能。
 
-有关任务卸载硬件功能的详细信息，请参阅[OID\_TCP\_连接\_卸载\_硬件\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569803)。
+有关任务卸载硬件功能的详细信息，请参阅[OID\_TCP\_连接\_卸载\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-hardware-capabilities)。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,11 +50,11 @@ MUX 中间驱动程序使用 NDIS\_状态\_TCP\_连接\_卸载\_硬件\_功能�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_TCP\_连接\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff567875)
+[**NDIS\_TCP\_连接\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)
 
-[OID\_TCP\_连接\_卸载\_硬件\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569803)
+[OID\_TCP\_连接\_卸载\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-hardware-capabilities)
 
  
 

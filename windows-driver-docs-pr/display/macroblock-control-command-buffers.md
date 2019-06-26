@@ -7,12 +7,12 @@ keywords:
 - 命令缓冲区 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8674be88550a4d13cc8559e44f9f2137634410a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afa3a7e32347105f30dee80d67d3e642d1573697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375396"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385606"
 ---
 # <a name="macroblock-control-command-buffers"></a>宏块控制命令缓冲区
 
@@ -32,7 +32,7 @@ ms.locfileid: "63375396"
 
 宏块控制命令和每个宏块的残留的差异数据会影响仅该宏块内的矩形区域。
 
-指定的宏块控制命令缓冲区中的宏块控制命令总数**dwNumMBsInBuffer**的相应成员[ **DXVA\_BufferDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff563122)结构。
+指定的宏块控制命令缓冲区中的宏块控制命令总数**dwNumMBsInBuffer**的相应成员[ **DXVA\_BufferDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_bufferdescription)结构。
 
 数量和类型的残留的差异数据缓冲区中的数据由**wPatternCode**，**全球合作伙伴大会\_Overflow**，并且**bNumCoef**的成员相应的宏块控制命令。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63375396"
 
 ![说明宏块控制命令缓冲区和残差差异数据缓冲区之间的关系的关系图](images/residdiffdata.png)
 
-如果**bConfigMBcontrolRasterOrder**的成员[ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)结构等于 1，则以下表达式所应用到上图中位置*我*是宏块控制命令缓冲区内宏块的索引。
+如果**bConfigMBcontrolRasterOrder**的成员[ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)结构等于 1，则以下表达式所应用到上图中位置*我*是宏块控制命令缓冲区内宏块的索引。
 
 ![说明 mb 控制命令缓冲区和残差差异数据缓冲区之间的关系的关系图](images/formula3.png)
 
