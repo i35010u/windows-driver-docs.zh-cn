@@ -16,12 +16,12 @@ keywords:
 - Stdunk 示例音频驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 797b125b9aca5968b380e511c40fda3ee731a4d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a6fb728afe77ad0c6c4b8aff8c7047c72d56e7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328651"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355272"
 ---
 # <a name="sample-audio-drivers"></a>示例音频驱动程序
 
@@ -108,7 +108,7 @@ d. 提取文件后，导航到以下子文件夹。
 
 有关详细信息，请参阅随附在 WDK 中的这些示例的自述文件文档。
 
-有关 WDK 示例的信息，请参阅[Windows 驱动程序工具包示例包 （Windows 驱动程序）。](https://msdn.microsoft.com/library/windows/hardware/ff554118)
+有关 WDK 示例的信息，请参阅[Windows 驱动程序工具包示例包 （Windows 驱动程序）。](https://docs.microsoft.com/windows-hardware/drivers/samples/index)
 
  
 

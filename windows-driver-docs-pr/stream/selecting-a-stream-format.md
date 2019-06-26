@@ -12,19 +12,19 @@ keywords:
 - 交集 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5979f18fb5525c322a6681238f5be874da97d92d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d791905e9957cf986915ba8933bd4d4f155398f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358412"
 ---
 # <a name="selecting-a-stream-format"></a>选择流格式
 
 
-视频捕获设备可以捕获在许多不同的格式的视频。 [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)结构用于传达有关宽度、 高度、 粒度，剪切、 信息和帧速率为特定颜色空间。 结构[ **KS\_DATARANGE\_视频**](https://msdn.microsoft.com/library/windows/hardware/ff567628)并[ **KS\_DATARANGE\_视频 2**](https://msdn.microsoft.com/library/windows/hardware/ff567629)是 KSDATARANGE 结构的扩展，应使用用于描述视频捕获格式。 使用 KS\_DATARANGE\_视频来描述仅视频帧。 使用 KS\_DATARANGE\_视频 2 来描述视频字段和视频帧，带或不带 bob 或将设置。
+视频捕获设备可以捕获在许多不同的格式的视频。 [ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构用于传达有关宽度、 高度、 粒度，剪切、 信息和帧速率为特定颜色空间。 结构[ **KS\_DATARANGE\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)并[ **KS\_DATARANGE\_视频 2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2)是 KSDATARANGE 结构的扩展，应使用用于描述视频捕获格式。 使用 KS\_DATARANGE\_视频来描述仅视频帧。 使用 KS\_DATARANGE\_视频 2 来描述视频字段和视频帧，带或不带 bob 或将设置。
 
-选择流格式的过程称为*执行数据交集*。 Stream 类接口发送[ **SRB\_获取\_数据\_交集**](https://msdn.microsoft.com/library/windows/hardware/ff568168)到 Stream 类微型驱动程序执行数据交集的请求。 微型驱动程序负责确定请求的数据范围的有效性，然后从提供的数据范围中，选择特定的流格式通常使用[ **KS\_DATAFORMAT\_VIDEOINFOHEADER** ](https://msdn.microsoft.com/library/windows/hardware/ff567331)或[ **KS\_DATAFORMAT\_VIDEOINFOHEADER2** ](https://msdn.microsoft.com/library/windows/hardware/ff567335)结构。
+选择流格式的过程称为*执行数据交集*。 Stream 类接口发送[ **SRB\_获取\_数据\_交集**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-data-intersection)到 Stream 类微型驱动程序执行数据交集的请求。 微型驱动程序负责确定请求的数据范围的有效性，然后从提供的数据范围中，选择特定的流格式通常使用[ **KS\_DATAFORMAT\_VIDEOINFOHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_videoinfoheader)或[ **KS\_DATAFORMAT\_VIDEOINFOHEADER2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_videoinfoheader2)结构。
 
 最后，微型驱动程序必须设置结果格式的特定成员，如下所示：
 

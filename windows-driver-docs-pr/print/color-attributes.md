@@ -7,12 +7,12 @@ keywords:
 - 常规打印机属性 WDK Unidrv，颜色
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a684f9b77abcac72a79a5c326f7cd6250abe15c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 746b8fd27306930e3095600ea3b5017c0778ba46
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351909"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359138"
 ---
 # <a name="color-attributes"></a>颜色属性
 
@@ -56,7 +56,7 @@ ms.locfileid: "63351909"
 <tr class="even">
 <td><p><strong></em>EnableGDIColorMapping</strong></p></td>
 <td><p><strong>TRUE</strong>或<strong>FALSE</strong>。 指示是否 GDI 应执行 gamut 映射从显示到打印机颜色空间。</p></td>
-<td><p>可选。 如果未指定，默认值是<strong>FALSE</strong>。 如果<strong>，则返回 TRUE</strong>，Unidrv 中设置 HT_FLAG_DO_DEVCLR_XFORM 标志<a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong> </a>结构。</p></td>
+<td><p>可选。 如果未指定，默认值是<strong>FALSE</strong>。 如果<strong>，则返回 TRUE</strong>，Unidrv 中设置 HT_FLAG_DO_DEVCLR_XFORM 标志<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)"> <strong>GDIINFO</strong> </a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>MagentaInCyanDye</strong></p></td>
@@ -86,7 +86,7 @@ ms.locfileid: "63351909"
 **请注意**  时 **\*ChangeColorModeOnDoc？** 颜色属性设置为**TRUE**，颜色优化已启用。 如果此属性设置为**FALSE**，不执行任何优化。 启用颜色优化时，假脱机文件中的颜色存在导致假脱机文件要播放的颜色;缺少的假脱机文件中的颜色会导致假脱机文件在单色播放。
 如果要创建呈现插件，以生成颜色水印 Unidrv，需要注意该颜色优化会导致颜色水印黑白文档在打印时以黑白模式打印。 若要确保正确颜色水印打印彩色和黑白文档，请禁用颜色优化。
 
-控制颜色优化 **\*ChangeColorModeOnDoc？** 还可以通过设置控制颜色特性**dwColorOptimization**隶属[ **特性\_INFO\_2** ](https://msdn.microsoft.com/library/windows/hardware/ff545091)或[**属性\_信息\_3** ](https://msdn.microsoft.com/library/windows/hardware/ff545093)结构。 此外可以通过使用控制颜色优化[ **GdiEndPageEMF** ](https://msdn.microsoft.com/library/windows/hardware/ff549468)函数。
+控制颜色优化 **\*ChangeColorModeOnDoc？** 还可以通过设置控制颜色特性**dwColorOptimization**隶属[ **特性\_INFO\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/ns-winddiui-_attribute_info_2)或[**属性\_信息\_3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/ns-winddiui-_attribute_info_3)结构。 此外可以通过使用控制颜色优化[ **GdiEndPageEMF** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winppi/nf-winppi-gdiendpageemf)函数。
 
  
 

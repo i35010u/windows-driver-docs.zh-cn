@@ -3,12 +3,12 @@ Description: 在本部分中的主题提供 USB 管道 URBs 的 I/O 请求，并
 title: 在 USB 客户端驱动程序中发送 USB 数据传输
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dd92cf4ac5eb08d2123c28fa604672ab74df39aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8837b45d8fe3df907abb13097f924a8371a800a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331609"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356623"
 ---
 # <a name="sending-usb-data-transfers-in-usb-client-drivers"></a>在 USB 客户端驱动程序中发送 USB 数据传输
 
@@ -67,7 +67,7 @@ ms.locfileid: "63331609"
 </tr>
 <tr class="odd">
 <td><p><a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">如何发送链接 MDLs</a></p></td>
-<td><p>在本主题中，您将学习有关 USB 驱动程序堆栈，并且如何客户端驱动程序可以发送的传输缓冲区作为链中的链接 MDLs 功能<a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[&lt;strong&gt;MDL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554414)"> <strong>MDL</strong> </a>结构。</p></td>
+<td><p>在本主题中，您将学习有关 USB 驱动程序堆栈，并且如何客户端驱动程序可以发送的传输缓冲区作为链中的链接 MDLs 功能<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[&lt;strong&gt;MDL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)"> <strong>MDL</strong> </a>结构。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="how-to-recover-from-usb-pipe-errors.md" data-raw-source="[How to recover from USB pipe errors](how-to-recover-from-usb-pipe-errors.md)">如何从 USB 管道错误中恢复</a></p></td>

@@ -1,14 +1,14 @@
 ---
-Description: The topics in this section examine the ways in which the WDM power model interacts with the power management properties of USB devices.
+Description: 在本部分中的主题检查 WDM 电源模型与 USB 设备的电源管理属性交互的方式。
 title: 在 USB 客户端驱动程序中实施电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2285cfc9e7096b73433a880cb7e4ef2279e3baeb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: baa5df03cbffcf5e42e9c4623e2df9ef2fc10d12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356581"
 ---
 # <a name="implementing-power-management-in-usb-client-drivers"></a>在 USB 客户端驱动程序中实施电源管理
 
@@ -17,9 +17,9 @@ ms.locfileid: "56576928"
 
 符合通用串行总线 (USB) 规范的 USB 设备的电源管理功能具有丰富和复杂一的电源管理功能。 务必要了解这些功能的交互方式使用 Windows 驱动程序模型 (WDM) 中，并特别是 Microsoft Windows 如何了调整，使标准 USB 功能来支持系统唤醒体系结构。
 
-WDM 内核模式驱动程序中的电源管理有关的信息，请参阅[实施电源管理](https://msdn.microsoft.com/library/windows/hardware/ff547131)。
+WDM 内核模式驱动程序中的电源管理有关的信息，请参阅[实施电源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)。
 
-USB 客户端驱动程序在内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 应使用支持的基本技术和相应框架，可用于管理电源的 USB 设备的机制。 有关管理 KMDF 基于客户端驱动程序中的能力的信息，请参阅[支持即插即用和您的驱动程序中的电源管理](https://msdn.microsoft.com/library/windows/hardware/ff544686); 对于 UMDF 基于客户端驱动程序，请参阅[基于 UMDF 驱动程序中的PnP和电源管理](https://msdn.microsoft.com/library/windows/hardware/ff560449).
+USB 客户端驱动程序在内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 应使用支持的基本技术和相应框架，可用于管理电源的 USB 设备的机制。 有关管理 KMDF 基于客户端驱动程序中的能力的信息，请参阅[支持即插即用和您的驱动程序中的电源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver); 对于 UMDF 基于客户端驱动程序，请参阅[基于 UMDF 驱动程序中的PnP和电源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-in-umdf-drivers).
 
 ## <a name="in-this-section"></a>本节内容
 

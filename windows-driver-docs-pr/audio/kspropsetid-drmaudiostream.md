@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_DrmAudioStream
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 965a1a5d81daa2be417cef101878e2ae97d0e408
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: efecf9ac02eb4dc06344da4f24afdf3ec6f605df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358702"
 ---
 # <a name="kspropsetiddrmaudiostream"></a>KSPROPSETID\_DrmAudioStream
 
@@ -19,11 +19,11 @@ ms.locfileid: "63332535"
 ## <span id="ddk_kspropsetid_drmaudiostream_ks"></span><span id="DDK_KSPROPSETID_DRMAUDIOSTREAM_KS"></span>
 
 
-`KSPROPSETID_DrmAudioStream`属性集指定 DRM 内容 ID 和 DRM 内容 KS 音频流上的权限。 有关 DRM 内容 Id 的背景信息，请参阅[数字权限管理](https://msdn.microsoft.com/library/windows/hardware/ff536260)。
+`KSPROPSETID_DrmAudioStream`属性集指定 DRM 内容 ID 和 DRM 内容 KS 音频流上的权限。 有关 DRM 内容 Id 的背景信息，请参阅[数字权限管理](https://docs.microsoft.com/windows-hardware/drivers/audio/digital-rights-management)。
 
 `KSPROPSETID_DrmAudioStream`属性集包含单个属性项：
 
-[**KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID**](https://msdn.microsoft.com/library/windows/hardware/ff537351)
+[**KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID**](https://docs.microsoft.com/previous-versions/ff537351(v=vs.85))
 
  
 

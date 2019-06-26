@@ -4,21 +4,21 @@ description: PwrTest 连接备用方案 (/ cs) 同时还帮助自动测试的已
 ms.assetid: 2601603D-F9AF-4DEB-9A1B-F5A091A51B2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dfd00a1637484860280ff137cfa8038d30af7d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9b4ceb6d2d251014680a863c05989766ce22696
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358247"
 ---
 # <a name="pwrtest-connected-standby-scenario"></a>PwrTest 连接待机方案
 
 
-PwrTest 连接备用方案 (**/cs**) 同时还帮助自动测试的已连接的备用转换。
+PwrTest 连接备用方案 ( **/cs**) 同时还帮助自动测试的已连接的备用转换。
 
 PwrTest 记录通过 PDC 阶段进度，并尝试登录平台空闲转换计数，如果系统支持。 这可用于诊断如果系统正在进入空闲状态时深入的平台，和任何软件组件造成了阻碍转换。
 
-此方案需要测试系统以支持*始终打开始终连接*(AoAc) 电源功能 （大多数 SoC 和 ARM 系统支持此）。 此方案还要求是一部分的 Windows 驱动程序测试框架 (WDTF) 的电源按钮驱动程序。 预配的系统，使用 Visual Studio 和 WDK 测试时，会自动安装 WDTF （和包含的电源按钮驱动程序）。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)。 WDTF 有关的信息，请参阅[ **Windows 设备测试框架 (WDTF) （Windows 驱动程序）**](https://msdn.microsoft.com/library/windows/hardware/ff539547)。
+此方案需要测试系统以支持*始终打开始终连接*(AoAc) 电源功能 （大多数 SoC 和 ARM 系统支持此）。 此方案还要求是一部分的 Windows 驱动程序测试框架 (WDTF) 的电源按钮驱动程序。 预配的系统，使用 Visual Studio 和 WDK 测试时，会自动安装 WDTF （和包含的电源按钮驱动程序）。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))。 WDTF 有关的信息，请参阅[ **Windows 设备测试框架 (WDTF) （Windows 驱动程序）** ](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>语法
 
@@ -27,13 +27,13 @@ PwrTest 记录通过 PDC 阶段进度，并尝试登录平台空闲转换计数�
 pwrtest /cs [/c:n] [/d:n] [/p:n][/?] 
 ```
 
-<span id="_c_n"></span><span id="_C_N"></span>**/c:**<em>n</em>  
+<span id="_c_n"></span><span id="_C_N"></span> **/c:** <em>n</em>  
 指定了多少个周期 （1 为默认值） 运行。
 
-<span id="_d_n"></span><span id="_D_N"></span>**/d:**<em>n</em>  
+<span id="_d_n"></span><span id="_D_N"></span> **/d:** <em>n</em>  
 指定的延迟时间 （以秒为单位） 之间连接备用转换 （60 秒是默认值）。
 
-<span id="_p_n"></span><span id="_P_N"></span>**/p:**<em>n</em>  
+<span id="_p_n"></span><span id="_P_N"></span> **/p:** <em>n</em>  
 指定连接备用退出时间 （以秒为单位; 60 秒是默认值）。
 
 **示例**

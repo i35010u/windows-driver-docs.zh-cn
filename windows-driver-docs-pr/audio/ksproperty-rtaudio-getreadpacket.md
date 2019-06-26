@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0894f0b083b69895457cdf4ee36b384c8d880202
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99aebaa6f982d69670aa11172194fb2400e9c3eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332676"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358752"
 ---
 # <a name="kspropertyrtaudiogetreadpacket"></a>KSPROPERTY\_RTAUDIO\_GETREADPACKET
 
@@ -31,10 +31,10 @@ KSPROPERTY\_RTAUDIO\_GETREADPACKET 返回有关捕获音频的数据包的信息
  
 |Get|设置|目标|属性描述符类型|属性值类型|
 |--- |--- |--- |--- |--- |
-|是|否|Pin|[KSPROPERTY](https://msdn.microsoft.com/library/windows/hardware/ff564262)|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
+|是|否|Pin|[KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
 
 
-属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构。 发送请求之前, 在客户端加载具有值，用于指示数据包编号、 数据包长度和其他信息的结构。
+属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 发送请求之前, 在客户端加载具有值，用于指示数据包编号、 数据包长度和其他信息的结构。
 
 属性值是类型的变量[ **KSRTAUDIO\_GETREADPACKET\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)。
 

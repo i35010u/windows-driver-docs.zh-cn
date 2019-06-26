@@ -4,12 +4,12 @@ description: 自定义音频驱动程序类型决策树
 ms.assetid: 7b055baa-1843-4e31-a98e-48b05de94e70
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 979c3247d087ce45384c98a91914595974f82383
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9302fd8481b5ff7060dea4523a6779353ad39fee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333848"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359109"
 ---
 # <a name="custom-audio-driver-type-decision-tree"></a>自定义音频驱动程序类型决策树
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333848"
 <span id="Custom_Audio_Drivers"></span><span id="custom_audio_drivers"></span><span id="CUSTOM_AUDIO_DRIVERS"></span>[自定义音频驱动程序](custom-audio-drivers.md)  
 提供 PortCls 和 AVStream 音频驱动程序的概述，并讨论了每种类型的优缺点。
 
-<span id="AVStream_Overview"></span><span id="avstream_overview"></span><span id="AVSTREAM_OVERVIEW"></span>[AVStream 概述](https://msdn.microsoft.com/library/windows/hardware/ff554240)  
+<span id="AVStream_Overview"></span><span id="avstream_overview"></span><span id="AVSTREAM_OVERVIEW"></span>[AVStream 概述](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)  
 提供了基于 AVStream 驱动程序的体系结构概述，并突出显示的情况下，此类型的驱动程序的最佳选择。
 
 您还必须确定有关音频驱动程序将使用的数据格式和它将支持的格式的范围。 有关数据格式和范围的详细信息，请参阅[音频数据格式和数据区域](audio-data-formats-and-data-ranges.md)。

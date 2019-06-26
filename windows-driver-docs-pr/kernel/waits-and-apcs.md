@@ -15,12 +15,12 @@ keywords:
 - 调度程序对象 WDK 内核等待
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5536a081e269ab3905e3f080030f4ae77d20d2a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3dba997a7aee7f059cee4922dde94a5a5830635e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391446"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358123"
 ---
 # <a name="waits-and-apcs"></a>等待和 APC
 
@@ -28,7 +28,7 @@ ms.locfileid: "63391446"
 
 
 
-等待调度程序对象代表用户模式下调用方的线程必须做好该等待会中断用户 APC 或线程终止。 当线程调用[ **KeWaitForSingleObject**](https://msdn.microsoft.com/library/windows/hardware/ff553350)， [ **KeWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff553324)， [ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)，或[ **KeDelayExecutionThread**](https://msdn.microsoft.com/library/windows/hardware/ff551986)，操作系统可以置于等待状态的线程。 通常情况下，该线程将一直处于等待状态直到操作系统可以完成操作，调用方请求。 但是，如果调用方指定*WaitMode* = UserMode，操作系统可能会中断等待。 在这种情况下，状态的 NTSTATUS 值退出例程\_用户\_APC。
+等待调度程序对象代表用户模式下调用方的线程必须做好该等待会中断用户 APC 或线程终止。 当线程调用[ **KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)， [ **KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)， [ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)，或[ **KeDelayExecutionThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kedelayexecutionthread)，操作系统可以置于等待状态的线程。 通常情况下，该线程将一直处于等待状态直到操作系统可以完成操作，调用方请求。 但是，如果调用方指定*WaitMode* = UserMode，操作系统可能会中断等待。 在这种情况下，状态的 NTSTATUS 值退出例程\_用户\_APC。
 
 任何驱动程序，它调用了一个与前面的四种例程*WaitMode* = UserMode 必须准备好接收状态的返回值\_用户\_APC。 该驱动程序必须完成当前操作状态\_用户\_APC 并将控制权返回到用户模式。
 
@@ -83,7 +83,7 @@ ms.locfileid: "63391446"
 
 警报，很少使用的操作系统，内部的机制，还可以中断可报警等待状态。 警报可以中断等待时*Alertable* = **TRUE**、 的值而不考虑*WaitMode*参数。 等待例程将返回状态的值\_ALERTED。
 
-请注意，内核 Apc 运行抢先，并且不会导致**KeWaitFor * Xxx*** 或**KeDelayExecutionThread**返回。 系统中断，并在内部继续等待。 驱动程序不正常情况下受此过程中，但很可能错过的暂时性条件，如调用的调度程序对象信号的驱动程序[ **KePulseEvent**](https://msdn.microsoft.com/library/windows/hardware/ff552979)。
+请注意，内核 Apc 运行抢先，并且不会导致**KeWaitFor * Xxx*** 或**KeDelayExecutionThread**返回。 系统中断，并在内部继续等待。 驱动程序不正常情况下受此过程中，但很可能错过的暂时性条件，如调用的调度程序对象信号的驱动程序[ **KePulseEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kepulseevent)。
 
  
 

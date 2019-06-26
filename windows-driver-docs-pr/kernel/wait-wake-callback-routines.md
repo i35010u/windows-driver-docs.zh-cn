@@ -8,12 +8,12 @@ keywords:
 - 回调例程 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c69105b004673ec78e663e8415e74b98e0a1a54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 338baece96095bfe3b8efa2457331fdbf1b38582
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391444"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358128"
 ---
 # <a name="waitwake-callback-routines"></a>等待/唤醒回调例程
 
@@ -21,9 +21,9 @@ ms.locfileid: "63391444"
 
 
 
-当驱动程序请求等待/唤醒 IRP 时，它必须以便它可以返回至工作状态 (D0) 设备，在发生唤醒事件时指定的回调例程。 发生唤醒事件和所有驱动程序已完成 IRP 后，系统会调用传递给回调例程[ **PoRequestPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559734)。
+当驱动程序请求等待/唤醒 IRP 时，它必须以便它可以返回至工作状态 (D0) 设备，在发生唤醒事件时指定的回调例程。 发生唤醒事件和所有驱动程序已完成 IRP 后，系统会调用传递给回调例程[ **PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)。
 
-因为此回调例程设置代表发出 IRP 的驱动程序，而不处理 IRP 的驱动程序 — 它不能调用[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776); 仅[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)设置为驱动程序通过在堆栈的下层 IRP 的例程应启动下一步电源 IRP。 请记住，并且策略所有者发送 IRP 不仅能够处理它，因此可能会设置*IoCompletion*传递除了请求等待/唤醒 IRP 时设置的回调例程在堆栈的下层 IRP 例程。
+因为此回调例程设置代表发出 IRP 的驱动程序，而不处理 IRP 的驱动程序 — 它不能调用[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp); 仅[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)设置为驱动程序通过在堆栈的下层 IRP 的例程应启动下一步电源 IRP。 请记住，并且策略所有者发送 IRP 不仅能够处理它，因此可能会设置*IoCompletion*传递除了请求等待/唤醒 IRP 时设置的回调例程在堆栈的下层 IRP 例程。
 
 回调例程具有下列职责：
 
@@ -31,9 +31,9 @@ ms.locfileid: "63391444"
 
 2.  服务导致唤醒信号的事件。
 
-3.  将通过调用来发出信号 D0 状态中唤醒设备设置[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)发送**PowerDeviceD0**请求。 该驱动程序还必须调用[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)通知电源管理器的新设备电源状态。 有关详细信息，请参阅[发送 IRP\_MN\_查询\_电源或 IRP\_MN\_设置\_的电源可用于设备的电源状态](sending-irp-mn-query-power-or-irp-mn-set-power-for-device-power-states.md)。
+3.  将通过调用来发出信号 D0 状态中唤醒设备设置[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)发送**PowerDeviceD0**请求。 该驱动程序还必须调用[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)通知电源管理器的新设备电源状态。 有关详细信息，请参阅[发送 IRP\_MN\_查询\_电源或 IRP\_MN\_设置\_的电源可用于设备的电源状态](sending-irp-mn-query-power-or-irp-mn-set-power-for-device-power-states.md)。
 
-4.  如果该驱动程序设置[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742) IRP，调用的例程[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)重置*取消*到日常**NULL**。
+4.  如果该驱动程序设置[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel) IRP，调用的例程[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)重置*取消*到日常**NULL**。
 
 5.  如果该驱动程序拥有多个设备的电源策略，则递减其等待/唤醒引用计数。 如果计数为非零值，指示的另一台设备以前发送等待/唤醒 IRP，请求另一个等待/唤醒 IRP (**PoRequestPowerIrp**) 对其 PDO。
 

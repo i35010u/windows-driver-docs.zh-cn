@@ -15,12 +15,12 @@ keywords:
 - 进行身份验证 DRM 内容 Id WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 327c4b69ffb80849e4f7ecd28a68ad7ad91019a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29e39c6c88477fe421f6e9ec0b3f35f6c8d8361c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333658"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360032"
 ---
 # <a name="forwarding-drm-content-ids"></a>转发 DRM 内容 ID
 
@@ -44,17 +44,17 @@ DRMK 进行身份验证的每个模块后，该模块提供 DRMK 有关信息的
 
 ![说明转发内容 id 的关系图](images/forwardid.png)
 
-在上游端模块调用下列任一[DRM 函数](https://msdn.microsoft.com/library/windows/hardware/ff536356)DRMK 提供有关下游模块的信息，并将转发的内容 ID 到该模块：
+在上游端模块调用下列任一[DRM 函数](https://docs.microsoft.com/windows-hardware/drivers/audio/drm-functions)DRMK 提供有关下游模块的信息，并将转发的内容 ID 到该模块：
 
-[**DrmForwardContentToDeviceObject**](https://msdn.microsoft.com/library/windows/hardware/ff536351)
+[**DrmForwardContentToDeviceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-drmforwardcontenttodeviceobject)
 
-[**DrmForwardContentToInterface**](https://msdn.microsoft.com/library/windows/hardware/ff536353)
+[**DrmForwardContentToInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-drmforwardcontenttointerface)
 
-[**DrmAddContentHandlers**](https://msdn.microsoft.com/library/windows/hardware/ff536347)
+[**DrmAddContentHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-drmaddcontenthandlers)
 
 每个"转发"函数提供 DRMK 使用 DRM 内容 ID，用于标识受保护的流和 DRMK 需要进行身份验证的下游模块的信息。 其中的这三个函数调用的选择取决于两个相邻模块用来相互通信，因为它们管理的受保护的内容传输接口的类型：
 
-1.  如果上游模块调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)以与下游模块进行通信，下游模块是 WDM 驱动程序的一部分。 在这种情况下，上游模块调用**DrmForwardContentToDeviceObject** DRMK 提供表示下游模块的设备对象。 DRMK 使用的设备对象进行身份验证的下游模块。
+1.  如果上游模块调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)以与下游模块进行通信，下游模块是 WDM 驱动程序的一部分。 在这种情况下，上游模块调用**DrmForwardContentToDeviceObject** DRMK 提供表示下游模块的设备对象。 DRMK 使用的设备对象进行身份验证的下游模块。
 
 2.  如果两个模块通信通过 COM 接口的下游模块实现，调用上游模块**DrmForwardContentToInterface**。 此调用为 DRMK 提供了指向下游模块的 COM 接口的指针。 仅调用 DRMK **IUnknown**此接口中的方法并不会假设即将其他方法，尽管本身的两个模块必须同意这些方法执行的操作。 DRMK 验证接口中的每个方法的入口点属于已经过身份验证模块。 如果入口点分布在多个模块之间，DRMK 进行身份验证的所有这些模块。
 
@@ -68,25 +68,25 @@ DRMK 进行身份验证的每个模块后，该模块提供 DRMK 有关信息的
 
 三个转发函数的每个略有不同的方式提供此信息的模块：
 
-1.  **DrmForwardContentToDeviceObject**函数发送[ **KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff537351)集属性请求到下游模块的设备对象。 此请求将转发的流内容 ID 和对下游模块内容的权限。
+1.  **DrmForwardContentToDeviceObject**函数发送[ **KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID** ](https://docs.microsoft.com/previous-versions/ff537351(v=vs.85))集属性请求到下游模块的设备对象。 此请求将转发的流内容 ID 和对下游模块内容的权限。
 
-2.  **DrmForwardContentToInterface**函数将查询的下游模块的 COM 接口[IDrmAudioStream](https://msdn.microsoft.com/library/windows/hardware/ff536568)接口。 如果查询成功，则函数调用[ **IDrmAudioStream::SetContentId** ](https://msdn.microsoft.com/library/windows/hardware/ff536570)方法以将内容 ID 和内容权限的下游模块转发。
+2.  **DrmForwardContentToInterface**函数将查询的下游模块的 COM 接口[IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nn-drmk-idrmaudiostream)接口。 如果查询成功，则函数调用[ **IDrmAudioStream::SetContentId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-idrmaudiostream-setcontentid)方法以将内容 ID 和内容权限的下游模块转发。
 
 3.  情况下**DrmAddContentHandlers**函数，调用方 （上游模块） 是负责转发的流内容 ID 和对下游模块内容的权限。 一次**DrmAddContentHandlers**与下游模块已经过身份验证、 上游模块会将内容 ID 和到下游的模块的内容权利传递通过调用之一，该值指示一个成功代码返回其内容处理程序。
 
 如果上游模块 WaveCyclic 或 WavePci 微型端口驱动程序，它可以调用相应 DRM 函数间接通过以下方法之一：
 
-[**IDrmPort2::ForwardContentToDeviceObject**](https://msdn.microsoft.com/library/windows/hardware/ff536579)
+[**IDrmPort2::ForwardContentToDeviceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idrmport2-forwardcontenttodeviceobject)
 
-[**IDrmPort::ForwardContentToInterface**](https://msdn.microsoft.com/library/windows/hardware/ff536586)
+[**IDrmPort::ForwardContentToInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idrmport-forwardcontenttointerface)
 
-[**IDrmPort2::AddContentHandlers**](https://msdn.microsoft.com/library/windows/hardware/ff536575)
+[**IDrmPort2::AddContentHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idrmport2-addcontenthandlers)
 
-有关详细信息，请参阅[DRM 函数](https://msdn.microsoft.com/library/windows/hardware/ff536356)。
+有关详细信息，请参阅[DRM 函数](https://docs.microsoft.com/windows-hardware/drivers/audio/drm-functions)。
 
-为简单起见，上述讨论假设数据路径中的每个模块接受来自单个源的流，并将转发到最多一个下游模块该流。 实际上，模块可以转发到两个或多个下游模块的流，但它必须首先进行身份验证的每个下游模块通过调用三个转发函数之一。 同样，模块可以混合在一起的几个输入的流，但它必须遵守的输入流内容的权限，通过提供适当级别的保护混合的输出流。 有关详细信息，请参阅的讨论[ **DrmCreateContentMixed** ](https://msdn.microsoft.com/library/windows/hardware/ff536348)函数，在[内容 Id 和内容的权限](content-ids-and-content-rights.md)。
+为简单起见，上述讨论假设数据路径中的每个模块接受来自单个源的流，并将转发到最多一个下游模块该流。 实际上，模块可以转发到两个或多个下游模块的流，但它必须首先进行身份验证的每个下游模块通过调用三个转发函数之一。 同样，模块可以混合在一起的几个输入的流，但它必须遵守的输入流内容的权限，通过提供适当级别的保护混合的输出流。 有关详细信息，请参阅的讨论[ **DrmCreateContentMixed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-drmcreatecontentmixed)函数，在[内容 Id 和内容的权限](content-ids-and-content-rights.md)。
 
-典型的安全数据路径组成[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)跟表示音频渲染设备的批筛选器。 筛选器作为 WaveCyclic 或 WavePci 微型端口驱动程序结合了相应的端口驱动程序实现。 若要验证的数据路径安全，DRMK KMixer，又将转发到筛选器的内容 ID 到将转发的内容 ID。 端口驱动程序，可以实现普通筛选器功能，接收的内容 ID，并将其转发给微型端口驱动程序。 具体而言，端口驱动程序调用**DrmForwardContentToInterface**函数将转发到的流对象实例化微型端口驱动程序来表示批输出插针音频呈现设备上的内容 ID. 对于此调用是指向流对象的其中一个参数的值[IMiniportWaveCyclicStream](https://msdn.microsoft.com/library/windows/hardware/ff536715)或[IMiniportWavePciStream](https://msdn.microsoft.com/library/windows/hardware/ff536725)接口。 通过此接口，该函数将查询的流对象及其**IDrmAudioStream**接口，并调用该接口**SetContentId**方法。
+典型的安全数据路径组成[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)跟表示音频渲染设备的批筛选器。 筛选器作为 WaveCyclic 或 WavePci 微型端口驱动程序结合了相应的端口驱动程序实现。 若要验证的数据路径安全，DRMK KMixer，又将转发到筛选器的内容 ID 到将转发的内容 ID。 端口驱动程序，可以实现普通筛选器功能，接收的内容 ID，并将其转发给微型端口驱动程序。 具体而言，端口驱动程序调用**DrmForwardContentToInterface**函数将转发到的流对象实例化微型端口驱动程序来表示批输出插针音频呈现设备上的内容 ID. 对于此调用是指向流对象的其中一个参数的值[IMiniportWaveCyclicStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavecyclicstream)或[IMiniportWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepcistream)接口。 通过此接口，该函数将查询的流对象及其**IDrmAudioStream**接口，并调用该接口**SetContentId**方法。
 
 有关详细信息，请参阅的实现**SetContentId** sb16 和 msvad 示例驱动程序中 Microsoft Windows Driver Kit (WDK) 中的方法。
 

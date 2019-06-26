@@ -4,12 +4,12 @@ description: 分析器生成器库有例程来解码为跟踪语句的 TLV 字�
 ms.assetid: 4F8B53E5-1F51-4119-AC06-7A710340E4A4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cee50be2223923c03fa3ebcd1874dd9152f150a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc4158a0d1865763c55a67d0340844830e823324
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380870"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358566"
 ---
 # <a name="wdi-tlv-dumpers"></a>WDI TLV 转储器
 
@@ -58,7 +58,7 @@ ms.locfileid: "63380870"
 
 喜欢分析 Api *pBuffer*指针和*BufferLength*参数应排除任何标头，并直接指向第一个 TLV。
 
-Api 消息变体包括消息 ID 和消息方向以更好地消除歧义 TLV。 这是很有帮助的因为相同的 TLV ID 可以解码不同的方式取决于上下文。 例如， [ **WDI\_TLV\_BSSID** ](https://msdn.microsoft.com/library/windows/hardware/dn926153)可以直接包含[ **WDI\_MAC\_地址**](https://msdn.microsoft.com/library/windows/hardware/dn926071)的一部分时[OID\_WDI\_任务\_扫描](https://msdn.microsoft.com/library/windows/hardware/dn925959)，也可以包含一系列**WDI\_MAC\_地址**的一部分时[ **WDI\_TLV\_P2P\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn897863)。
+Api 消息变体包括消息 ID 和消息方向以更好地消除歧义 TLV。 这是很有帮助的因为相同的 TLV ID 可以解码不同的方式取决于上下文。 例如， [ **WDI\_TLV\_BSSID** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)可以直接包含[ **WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)的一部分时[OID\_WDI\_任务\_扫描](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-scan)，也可以包含一系列**WDI\_MAC\_地址**的一部分时[ **WDI\_TLV\_P2P\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)。
 
  
 

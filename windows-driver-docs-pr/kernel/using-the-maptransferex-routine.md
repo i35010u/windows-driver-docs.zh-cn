@@ -4,22 +4,22 @@ description: MapTransferEx 例程初始化一系列以前分配的 DMA 资源并
 ms.assetid: 79D3DDB2-B134-43B2-A6CC-94035C793047
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c72ea9dd940cee71186c0b829bc536cf74143aed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ad0d21bbcf63e3f54eed8deaf2223cb6163e669
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358179"
 ---
 # <a name="using-the-maptransferex-routine"></a>使用 MapTransferEx 例程
 
 
-[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)例程初始化一系列以前分配的 DMA 资源并将开始 DMA 传输。 DMA 操作接口的版本 3 中提供了此例程。 从 Windows 8 开始支持此接口的版本 3。 有关 DMA 操作接口的详细信息，请参阅[ **DMA\_OPERATIONS**](https://msdn.microsoft.com/library/windows/hardware/ff544071)。
+[ **MapTransferEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer_ex)例程初始化一系列以前分配的 DMA 资源并将开始 DMA 传输。 DMA 操作接口的版本 3 中提供了此例程。 从 Windows 8 开始支持此接口的版本 3。 有关 DMA 操作接口的详细信息，请参阅[ **DMA\_OPERATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_operations)。
 
 ## <a name="comparison-of-maptransferex-to-maptransfer"></a>到 MapTransfer MapTransferEx 的比较
 
 
-**MapTransferEx**是的改进的版本[ **MapTransfer** ](https://msdn.microsoft.com/library/windows/hardware/ff554402)例程。 **MapTransfer** DMA 操作接口，从 Windows 2000 中的版本 1 开始的所有版本中可用。 调用一次**MapTransfer**可以将映射从 MDL 的物理内存的一个连续的块。 但是，可能会由 MDL 链描述复杂 DMA 传输的数据缓冲区，链中的每个 MDL 可能描述多个物理上连续内存块。 若要使用**MapTransfer**传输此类缓冲区，驱动程序必须对多次调用**MapTransfer**。 通常，在一对嵌套循环内进行这些调用。 内部循环从一个连续内存块的物理访问在每个 MDL 和外部循环进行循环访问从一个 MDL 到 MDL 链中下一步。
+**MapTransferEx**是的改进的版本[ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)例程。 **MapTransfer** DMA 操作接口，从 Windows 2000 中的版本 1 开始的所有版本中可用。 调用一次**MapTransfer**可以将映射从 MDL 的物理内存的一个连续的块。 但是，可能会由 MDL 链描述复杂 DMA 传输的数据缓冲区，链中的每个 MDL 可能描述多个物理上连续内存块。 若要使用**MapTransfer**传输此类缓冲区，驱动程序必须对多次调用**MapTransfer**。 通常，在一对嵌套循环内进行这些调用。 内部循环从一个连续内存块的物理访问在每个 MDL 和外部循环进行循环访问从一个 MDL 到 MDL 链中下一步。
 
 与此相反，一个调用到**MapTransferEx**可以针对复杂的 DMA 传输传输整个数据缓冲区。 以下三种**MapTransferEx**参数描述要用于传输的缓冲区内存。
 
@@ -69,7 +69,7 @@ ms.locfileid: "63372301"
 
 例如，如果**MapTransferEx**调用可以传输仅 X 到或从其缓冲区字节*偏移量*= B 和\**长度*= N （上输入），然后，在返回时，\**长度*= X。为下一步调用**MapTransferEx**，该驱动程序应设置*偏移量*= B + X 并\**长度*= N-X。在这两个调用中，无需修改即可使用相同的 MDL 链。
 
-如果调用方指定[ *DmaCompletionRoutine*](https://msdn.microsoft.com/library/windows/hardware/hh450991)， **MapTransferEx**写入\**长度*输出之前的值它会安排*DmaCompletionRoutine*运行。 此行为可确保已更新\**长度*值始终是可用之前*DmaCompletionRoutine*运行。 例如，如果 DMA 传输需要两个**MapTransferEx**调用， *DmaCompletionRoutine*第一个调用的计划可以获取\**长度*从第一次调用的输出值。 例程然后可以使用此值来计算\**长度*输入值以用于第二次调用。 通常情况下，*长度*参数指向的位置\* *CompletionContext*值提供给*DmaCompletionRoutine*为参数。
+如果调用方指定[ *DmaCompletionRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-dma_completion_routine)， **MapTransferEx**写入\**长度*输出之前的值它会安排*DmaCompletionRoutine*运行。 此行为可确保已更新\**长度*值始终是可用之前*DmaCompletionRoutine*运行。 例如，如果 DMA 传输需要两个**MapTransferEx**调用， *DmaCompletionRoutine*第一个调用的计划可以获取\**长度*从第一次调用的输出值。 例程然后可以使用此值来计算\**长度*输入值以用于第二次调用。 通常情况下，*长度*参数指向的位置\* *CompletionContext*值提供给*DmaCompletionRoutine*为参数。
 
  
 

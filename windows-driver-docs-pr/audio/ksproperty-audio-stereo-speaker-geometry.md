@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 012135a9e435662b4a1de6b10abbf461f046942c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 543a8b6d729dc4caae6ccd6bfb4dccf0b2606e55
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332910"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358881"
 ---
 # <a name="kspropertyaudiostereospeakergeometry"></a>KSPROPERTY\_音频\_立体声\_演讲者\_GEOMETRY
 
@@ -53,7 +53,7 @@ KSPROPERTY\_音频\_立体声\_演讲者\_结合使用 GEOMETRY 属性[ **KSPROP
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>固定/筛选器</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>长</p></td>
 </tr>
 </tbody>
@@ -94,7 +94,7 @@ KSPROPERTY\_音频\_立体声\_演讲者\_GEOMETRY 属性请求将返回状态\_
 
 DirectSound 将 KSPROPERTY\_音频\_立体声\_演讲者\_GEOMETRY 作为 DAC 节点上的筛选器属性和 3D 节点上的固定属性。
 
-有关其他信息，请参阅[DirectSound 扬声器配置设置](https://msdn.microsoft.com/library/windows/hardware/ff536332)。
+有关其他信息，请参阅[DirectSound 扬声器配置设置](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-speaker-configuration-settings)。
 
 <a name="requirements"></a>要求
 ------------
@@ -121,7 +121,7 @@ DirectSound 将 KSPROPERTY\_音频\_立体声\_演讲者\_GEOMETRY 作为 DAC �
 
 [**KSNODETYPE\_3D\_EFFECTS**](ksnodetype-3d-effects.md)
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

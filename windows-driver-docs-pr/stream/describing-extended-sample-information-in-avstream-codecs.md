@@ -6,17 +6,17 @@ keywords:
 - AVStream 硬件编解码器支持 WDK，扩展的示例信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76148fe0ae5617f948b271213e8e87b0c7218552
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87353cffc6772acf60dab9932edc0495d47c0d3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374083"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353254"
 ---
 # <a name="describing-extended-sample-information-in-avstream-codecs"></a>描述 AVStream 编解码器中的扩展示例信息
 
 
-解码器筛选器可以在扩展中找到扩展的示例信息[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构[ **KS\_帧\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff567645)，后者按照 KSSTREAM\_在内存中的标头。
+解码器筛选器可以在扩展中找到扩展的示例信息[ **KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)结构[ **KS\_帧\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info)，后者按照 KSSTREAM\_在内存中的标头。
 
 该驱动程序必须将传播 KSSTREAM 中指定的信息\_标头。从输出 （目标） KS 插针的输入 （源） OptionsFlags。
 

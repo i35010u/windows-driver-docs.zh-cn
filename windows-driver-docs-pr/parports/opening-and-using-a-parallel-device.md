@@ -7,12 +7,12 @@ keywords:
 - 并行设备 WDK，共享
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec96fea6c345c57e33f11bf3f34c207999160bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f3713c9975f9142e854da242305f6bc6dc276af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374549"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358506"
 ---
 # <a name="opening-and-using-a-parallel-device"></a>打开和使用并行设备
 
@@ -20,7 +20,7 @@ ms.locfileid: "63374549"
 
 
 
-并行端口的系统提供的总线驱动程序强制执行到并行设备附加到并行端口的独占访问。 如果并行设备处于打开状态，并行端口总线驱动程序失败，任何后续[ **IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff544131)设备在关闭设备之前的请求。 其他输入/输出请求发送到设备或调用之前，必须打开并行设备客户端[并行设备回调例程](https://msdn.microsoft.com/library/windows/hardware/ff544275)。 客户端必须尝试后客户端已关闭其设备上的文件与并行设备进行通信。 客户端必须先关闭设备以允许访问设备的其他客户端。
+并行端口的系统提供的总线驱动程序强制执行到并行设备附加到并行端口的独占访问。 如果并行设备处于打开状态，并行端口总线驱动程序失败，任何后续[ **IRP\_MJ\_创建**](https://docs.microsoft.com/previous-versions/ff544131(v=vs.85))设备在关闭设备之前的请求。 其他输入/输出请求发送到设备或调用之前，必须打开并行设备客户端[并行设备回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 客户端必须尝试后客户端已关闭其设备上的文件与并行设备进行通信。 客户端必须先关闭设备以允许访问设备的其他客户端。
 
 客户端通常执行以下操作：
 

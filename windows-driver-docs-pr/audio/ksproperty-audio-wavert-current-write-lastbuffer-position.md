@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22776d03ddc3ebe099d63b98d607f58cdacdd04c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2dcd5e64408dc015b12e7d5f7f4076689b0757f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358875"
 ---
 # <a name="kspropertyaudiowavertcurrentwritelastbufferposition"></a>KSPROPERTY\_音频\_WAVERT\_当前\_编写\_LASTBUFFER\_位置
 
@@ -69,7 +69,7 @@ KSPROPERTY\_音频\_WAVERT\_当前\_编写\_LASTBUFFER\_位置属性请求将返
 
 如果客户端应用程序使用 KSPROPERTY\_类型\_BASICSUPPORT 标志时它将发送 KSPROPERTY\_音频\_WAVERT\_当前\_编写\_LASTBUFFER\_对音频驱动程序和状态的位置属性请求\_返回成功，它确认该驱动程序支持新添加的 KSPROPERTY\_音频\_WAVERT\_当前\_编写\_LASTBUFFER\_POSITION 属性。
 
-当客户端应用程序执行到要卸载的流的音频驱动程序处理的音频缓冲区的最后一个写入操作时，音频驱动程序调用[ **SetStreamCurrentWritePositionForLastBuffer** ](https://msdn.microsoft.com/library/windows/hardware/dn338128)方法。 **SetStreamCurrentWritePositionForLastBuffer**方法指示最后一个缓冲区中的"写入位置"，在流中。 请注意，可以仅部分填充此最后一个缓冲区。
+当客户端应用程序执行到要卸载的流的音频驱动程序处理的音频缓冲区的最后一个写入操作时，音频驱动程序调用[ **SetStreamCurrentWritePositionForLastBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)方法。 **SetStreamCurrentWritePositionForLastBuffer**方法指示最后一个缓冲区中的"写入位置"，在流中。 请注意，可以仅部分填充此最后一个缓冲区。
 
 如果开发的没有设计成可与音频端口类驱动程序 (Portcls) 的音频驱动程序，则必须实现此属性处理程序新 KS 属性。
 
@@ -100,7 +100,7 @@ KSPROPERTY\_音频\_WAVERT\_当前\_编写\_LASTBUFFER\_位置属性请求将返
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**SetStreamCurrentWritePositionForLastBuffer**](https://msdn.microsoft.com/library/windows/hardware/dn338128)
+[**SetStreamCurrentWritePositionForLastBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)
 
  
 

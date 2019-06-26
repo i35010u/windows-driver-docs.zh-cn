@@ -14,12 +14,12 @@ keywords:
 - SymChk 工具 WDK BinPlace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8aaebb6cd2aa8fbbd6342f9d520097b88d8ef0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 652745217717313fe04268a494550ff37211f0e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358268"
 ---
 # <a name="public-symbols-and-private-symbols"></a>公共符号和专用符号
 
@@ -55,7 +55,7 @@ BinPlace 可以创建去除的符号文件。 这是通过创建新的符号文�
 
  
 
-如果您需要确定是否符号文件包含私有符号，可以使用[SymChk](https://msdn.microsoft.com/library/windows/hardware/ff558844)工具。 SymChk 是有关 Windows 调试工具软件包的一部分。 请参阅 SymChk 并[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)有关详细信息。
+如果您需要确定是否符号文件包含私有符号，可以使用[SymChk](https://docs.microsoft.com/windows-hardware/drivers/debugger/symchk)工具。 SymChk 是有关 Windows 调试工具软件包的一部分。 请参阅 SymChk 并[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)有关详细信息。
 
 如果您要提交到您的驱动程序[Windows 硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)，可以提交去除的符号文件，如果不想与 Microsoft 共享你的私有符号。 已去除通过 BinPlace 的符号文件不会公开您的驱动程序的体系结构，通常会被视为机密的任何部分。 有关详细信息，请参阅[Windows 硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)。
 

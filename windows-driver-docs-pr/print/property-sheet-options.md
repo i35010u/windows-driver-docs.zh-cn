@@ -10,12 +10,12 @@ keywords:
 - 可选择属性表页项 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9300f4410fe2e00dea4e7805d3cf8db7b815efd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c3daf9f4a1554970fcaa231028ebdd9f6a06af9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356022"
 ---
 # <a name="property-sheet-options"></a>属性表选项
 
@@ -27,13 +27,13 @@ ms.locfileid: "63376536"
 
 每个属性表页通常包含多个选项。 对于每个属性表选项，CPSUI 应用程序必须使用以下 CPSUI 结构：
 
--   一个[ **OPTITEM** ](https://msdn.microsoft.com/library/windows/hardware/ff559656)结构，它标识选项的显示名称和其他特征。
+-   一个[ **OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)结构，它标识选项的显示名称和其他特征。
 
--   一个[ **OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)结构，它标识的选项显示对话框类型 ([CPSUI 选项类型](https://msdn.microsoft.com/library/windows/hardware/ff547142))。
+-   一个[ **OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)结构，它标识的选项显示对话框类型 ([CPSUI 选项类型](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types))。
 
--   一个或多个[ **OPTPARAM** ](https://msdn.microsoft.com/library/windows/hardware/ff559660)结构，它识别的选项可供用户选择参数值。
+-   一个或多个[ **OPTPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)结构，它识别的选项可供用户选择参数值。
 
-若要使用这些 CPSUI 结构来描述属性工作表选项，包含选项的页必须使用定义[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211)结构。
+若要使用这些 CPSUI 结构来描述属性工作表选项，包含选项的页必须使用定义[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)结构。
 
  
 

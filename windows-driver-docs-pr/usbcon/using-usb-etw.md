@@ -3,12 +3,12 @@ Description: 本主题介绍有关活动 ID Guid，如何添加这些 Guid 在�
 title: 使用 USB ETW 跟踪中的活动 ID GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8977f94f6de275cc0f47f77a2318acbf33737baf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d784286dc1c314af739b7c7faefb535c87d8a0e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356558"
 ---
 # <a name="using-activity-id-guids-in-usb-etw-traces"></a>使用 USB ETW 跟踪中的活动 ID GUID
 
@@ -32,7 +32,7 @@ ms.locfileid: "63358225"
 ## <a name="how-to-add-an-activity-id-guid-in-an-application"></a>如何在应用程序中添加的活动 ID GUID
 
 
-应用程序可以通过调用包含活动 ID Guid [ **EventActivityIdControl**](https://msdn.microsoft.com/library/windows/desktop/aa363720)。 有关详细信息，请参阅[事件跟踪函数](https://msdn.microsoft.com/library/windows/desktop/aa363795)。
+应用程序可以通过调用包含活动 ID Guid [ **EventActivityIdControl**](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)。 有关详细信息，请参阅[事件跟踪函数](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-functions)。
 
 此示例代码演示如何设置活动 ID GUID 并将其发送到 ETW 提供程序，UMDF 驱动程序应用程序。
 
@@ -69,14 +69,14 @@ if(success == 0)
 }
 ```
 
-在前面的示例中，应用程序调用[ **EventActivityIdControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363720)若要创建的活动 ID (事件\_活动\_CTRL\_创建\_ID)，然后将其设置 (事件\_活动\_CTRL\_设置\_ID) 当前线程。 应用程序通过发送 （下一节中所述） 驱动程序定义 IOCTL 指定到 ETW 事件提供程序，如用户模式驱动程序，该活动的 GUID。
+在前面的示例中，应用程序调用[ **EventActivityIdControl** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)若要创建的活动 ID (事件\_活动\_CTRL\_创建\_ID)，然后将其设置 (事件\_活动\_CTRL\_设置\_ID) 当前线程。 应用程序通过发送 （下一节中所述） 驱动程序定义 IOCTL 指定到 ETW 事件提供程序，如用户模式驱动程序，该活动的 GUID。
 
-事件提供程序必须发布检测清单文件 (。MAN 文件）。 通过运行[**消息编译器 Mc.exe**](https://msdn.microsoft.com/library/windows/desktop/aa385638)，它包含定义事件提供程序、 事件属性、 通道和事件，会生成一个标头文件。 在示例中，应用程序调用 EventWriteReadFail，定义在生成的头文件中，将发生故障时的事件消息写入跟踪。
+事件提供程序必须发布检测清单文件 (。MAN 文件）。 通过运行[**消息编译器 Mc.exe**](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)，它包含定义事件提供程序、 事件属性、 通道和事件，会生成一个标头文件。 在示例中，应用程序调用 EventWriteReadFail，定义在生成的头文件中，将发生故障时的事件消息写入跟踪。
 
 ## <a name="how-to-set-the-activity-id-guid-in-a-umdf-driver"></a>如何在 UMDF 驱动程序中设置活动 ID GUID
 
 
-用户模式驱动程序创建，并通过调用来设置活动 ID Guid [ **EventActivityIdControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363720)和的调用是应用程序调用它们，方式类似于上一节中所述。 这些调用添加到当前线程，并该活动 ID GUID ID GUID 每当线程记录事件时使用的活动。 有关详细信息，请参阅[使用活动标识符](https://msdn.microsoft.com/library/windows/hardware/hh706287)。
+用户模式驱动程序创建，并通过调用来设置活动 ID Guid [ **EventActivityIdControl** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)和的调用是应用程序调用它们，方式类似于上一节中所述。 这些调用添加到当前线程，并该活动 ID GUID ID GUID 每当线程记录事件时使用的活动。 有关详细信息，请参阅[使用活动标识符](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-activity-identifiers)。
 
 此示例代码演示如何 UMDF 驱动程序设置活动 ID GUID 时创建和指定的应用程序通过 IOCTL。
 
@@ -195,7 +195,7 @@ CMyReadWriteQueue::ForwardFormattedRequest(
 }
 ```
 
-让我们看如何获取与关联的活动应用程序创建的 ID GUID[用户模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff560027)(UMDF) 客户端驱动程序。 当驱动程序收到 IOCTL 请求时从应用程序时，它将在私有成员中复制 GUID。 在某些时候，应用程序调用[ **ReadFile** ](https://msdn.microsoft.com/library/windows/desktop/aa365467)执行读取的操作。 框架将创建一个请求和调用驱动程序的处理程序，ForwardFormattedRequest。 在处理程序，该驱动程序的以前存储的活动 ID GUID 线程上设置通过调用[ **EventActivityIdControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363720)和 EventWriteReadFail 到跟踪事件消息。
+让我们看如何获取与关联的活动应用程序创建的 ID GUID[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-debugging)(UMDF) 客户端驱动程序。 当驱动程序收到 IOCTL 请求时从应用程序时，它将在私有成员中复制 GUID。 在某些时候，应用程序调用[ **ReadFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)执行读取的操作。 框架将创建一个请求和调用驱动程序的处理程序，ForwardFormattedRequest。 在处理程序，该驱动程序的以前存储的活动 ID GUID 线程上设置通过调用[ **EventActivityIdControl** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)和 EventWriteReadFail 到跟踪事件消息。
 
 **请注意**UMDF 驱动程序还必须包括通过检测清单文件生成的标头文件。 标头文件定义将跟踪消息写入如 EventWriteReadFail 宏。
 
@@ -206,11 +206,11 @@ CMyReadWriteQueue::ForwardFormattedRequest(
 
 在内核模式驱动程序可以跟踪消息源自在用户模式下的线程或驱动程序创建的线程上。 在这两个这些情况下，驱动程序需要活动线程的 ID GUID。
 
-跟踪消息，该驱动程序必须获取为事件提供程序的注册句柄 (请参阅[ **EtwRegister**](https://msdn.microsoft.com/library/windows/hardware/ff545603))，然后调用[ **EtwWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff545627)通过指定的 GUID 和事件消息。 有关详细信息，请参阅[添加到内核模式驱动程序的事件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff541236)。
+跟踪消息，该驱动程序必须获取为事件提供程序的注册句柄 (请参阅[ **EtwRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwregister))，然后调用[ **EtwWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwwrite)通过指定的 GUID 和事件消息。 有关详细信息，请参阅[添加到内核模式驱动程序的事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-event-tracing-to-kernel-mode-drivers)。
 
-如果您的内核模式驱动程序处理由应用程序或用户模式驱动程序创建的请求，内核模式驱动程序不创建和设置活动 ID GUID。 相反，I/O 管理器处理大部分活动 ID 传播。 当用户模式线程启动请求时，I/O 管理器创建请求 IRP，并会自动将当前线程的活动 ID GUID 复制到新的 IRP。 内核模式驱动程序而言，与该线程上的跟踪事件，它必须通过调用获取 GUID [ **IoGetActivityIdIrp**](https://msdn.microsoft.com/library/windows/hardware/hh439309)，然后调用[ **EtwWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff545627).
+如果您的内核模式驱动程序处理由应用程序或用户模式驱动程序创建的请求，内核模式驱动程序不创建和设置活动 ID GUID。 相反，I/O 管理器处理大部分活动 ID 传播。 当用户模式线程启动请求时，I/O 管理器创建请求 IRP，并会自动将当前线程的活动 ID GUID 复制到新的 IRP。 内核模式驱动程序而言，与该线程上的跟踪事件，它必须通过调用获取 GUID [ **IoGetActivityIdIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iogetactivityidirp)，然后调用[ **EtwWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwwrite).
 
-如果您的内核模式驱动程序与活动 ID GUID 创建 IRP，驱动程序可以调用[ **EtwActivityIdControl** ](https://msdn.microsoft.com/library/windows/hardware/ff545578)与事件\_活动\_CTRL\_创建\_设置\_ID 以生成新的 GUID。 该驱动程序中，可以然后将新的 GUID 与 IRP 的关联，通过调用[ **IoSetActivityIdIrp**](https://msdn.microsoft.com/library/windows/hardware/hh439382)，然后调用[ **EtwWrite**](https://msdn.microsoft.com/library/windows/hardware/ff545627)。
+如果您的内核模式驱动程序与活动 ID GUID 创建 IRP，驱动程序可以调用[ **EtwActivityIdControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwactivityidcontrol)与事件\_活动\_CTRL\_创建\_设置\_ID 以生成新的 GUID。 该驱动程序中，可以然后将新的 GUID 与 IRP 的关联，通过调用[ **IoSetActivityIdIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetactivityidirp)，然后调用[ **EtwWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-etwwrite)。
 
 活动 ID GUID 时一起传递 IRP 到下一步的低级驱动程序。 较低的驱动程序可以将其跟踪消息添加到线程。
 

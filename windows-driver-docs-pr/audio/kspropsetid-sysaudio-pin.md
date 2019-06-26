@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Sysaudio_Pin
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a17658596e0424d4c3a05b2122b06c3baa2f7fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdcfbc56003faadb0e4cc34acf1db9195063a81b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358690"
 ---
 # <a name="kspropsetidsysaudiopin"></a>KSPROPSETID\_Sysaudio\_Pin
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332463"
 ## <span id="ddk_kspropsetid_sysaudio_pin_ks"></span><span id="DDK_KSPROPSETID_SYSAUDIO_PIN_KS"></span>
 
 
-`KSPROPSETID_Sysaudio_Pin`属性集提供对 pin 实例的属性的访问有关[虚拟音频设备](https://msdn.microsoft.com/library/windows/hardware/ff538734)。 [SysAudio 系统驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver)代表 DirectSound 和其他客户端管理虚拟音频设备。
+`KSPROPSETID_Sysaudio_Pin`属性集提供对 pin 实例的属性的访问有关[虚拟音频设备](https://docs.microsoft.com/windows-hardware/drivers/audio/virtual-audio-devices)。 [SysAudio 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#sysaudio-system-driver)代表 DirectSound 和其他客户端管理虚拟音频设备。
 
 以下属性是唯一的成员的`KSPROPSETID_Sysaudio_Pin`属性集：
 

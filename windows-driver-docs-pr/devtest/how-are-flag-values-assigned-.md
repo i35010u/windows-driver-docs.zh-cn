@@ -4,12 +4,12 @@ description: 如何分配的标志值
 ms.assetid: de74e2d9-0ebf-4125-9dbb-42f7755010f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b25594cda206bc22c6c84d1fb6961aeffb5758d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67eb4272f816cb41eb76980f9547e7d3e00b1a0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358302"
 ---
 # <a name="how-are-flag-values-assigned"></a>标志值是如何分配的？
 
@@ -18,7 +18,7 @@ ms.locfileid: "63329699"
 
 通常情况下，跟踪标志表示越来越详细的报告级别。
 
-标志值定义中 WPP\_定义\_位的元素[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏，例如如本例所示：
+标志值定义中 WPP\_定义\_位的元素[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏，例如如本例所示：
 
 ```
 #define WPP_CONTROL_GUIDS \

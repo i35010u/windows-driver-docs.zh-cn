@@ -4,12 +4,12 @@ description: 存储和传输音频数据
 ms.assetid: c8d0af2f-1c3d-49d5-96ca-de1703f85448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb77c1a22006a25e216c1a863c3ae3ad14eda680
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ef08aba4f5a851d41dc43289a98882807cfd696
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358237"
 ---
 # <a name="storing-and-transferring-audio-data"></a>存储和传输音频数据
 
@@ -19,11 +19,11 @@ ms.locfileid: "63383718"
 
 Microsoft Windows Me 和 Windows XP 某些 WIA 驱动程序使用以下三个 WIA 属性用于存储音频数据：
 
-[**WIA\_IPC\_AUDIO\_AVAILABLE**](https://msdn.microsoft.com/library/windows/hardware/ff552530)
+[**WIA\_IPC\_AUDIO\_AVAILABLE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-audio-available)
 
-[**WIA\_IPC\_AUDIO\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552534)
+[**WIA\_IPC\_AUDIO\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-audio-data)
 
-[**WIA\_IPC\_AUDIO\_DATA\_FORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff552538)
+[**WIA\_IPC\_AUDIO\_DATA\_FORMAT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-audio-data-format)
 
 这些属性已过时，并应不再使用。
 

@@ -8,12 +8,12 @@ keywords:
 - 端口类音频适配器 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc213ade503bb193ad906a3414e5104d33a0c7f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 484c26d67c15a042090d999423c15adc8f4e3f2c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332302"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355348"
 ---
 # <a name="miscellaneous-installation-issues-for-an-audio-adapter"></a>音频适配器的其他安装问题
 
@@ -33,11 +33,11 @@ ms.locfileid: "63332302"
 
 -   音频驱动程序轻松地设计为允许多个音频适配器卡插入到同一系统的相同实例。 有关详细信息，请参阅[系统范围内唯一设备 Id](system-wide-unique-device-ids.md)。
 
--   INF 文件关键字所共有的所有设备类的列表，请参阅[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。 但是，此列表不包含多个特定于媒体的关键字。 有关详细信息，请参阅[特定于媒体的 INF 文件关键字](media-specific-inf-file-keywords.md)。
+-   INF 文件关键字所共有的所有设备类的列表，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。 但是，此列表不包含多个特定于媒体的关键字。 有关详细信息，请参阅[特定于媒体的 INF 文件关键字](media-specific-inf-file-keywords.md)。
 
 -   有关如何适配器驱动程序或微型端口驱动程序可以获取安装信息从注册表的信息，请参阅[检索设备安装程序信息](retrieving-device-setup-information.md)。
 
--   有关 Windows Vista 所支持的音频适配器不具有物理卷控件旋钮的信息，请参阅[Windows Vista 软件卷控件支持](https://msdn.microsoft.com/library/windows/hardware/ff539263)主题。
+-   有关 Windows Vista 所支持的音频适配器不具有物理卷控件旋钮的信息，请参阅[Windows Vista 软件卷控件支持](https://docs.microsoft.com/windows-hardware/drivers/audio/software-volume-control-support)主题。
 
  
 

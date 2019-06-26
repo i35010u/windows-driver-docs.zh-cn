@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c13ea095d4d30e19b43dc91df331665a656130ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f8b16221433561d95e3d00a6c494cf57522bb9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334116"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359777"
 ---
 # <a name="usbkdehciinfofromfdo"></a>!usbkd.ehci\_info\_from\_fdo
 
 
-[ **！ Usbkd.ehci\_信息\_从\_fdo** ](https://msdn.microsoft.com/library/windows/hardware/dn367058)命令显示有关 USB 主控制器的信息。
+[ **！ Usbkd.ehci\_信息\_从\_fdo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)命令显示有关 USB 主控制器的信息。
 
 ```dbgcmd
 !usbkd.ehci_info_from_fdo fdo
@@ -53,7 +53,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-在上面的输出，您可以看到的 USB 主控制器 FDO 的地址是`ffffe00001ca1050`。 传递到 FDO 的地址[ **！ ehci\_信息\_从\_fdo**](https://msdn.microsoft.com/library/windows/hardware/dn367058)。
+在上面的输出，您可以看到的 USB 主控制器 FDO 的地址是`ffffe00001ca1050`。 传递到 FDO 的地址[ **！ ehci\_信息\_从\_fdo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)。
 
 ```dbgcmd
 0: kd> !usbkd.ehci_info_from_fdo ffffe00001ca1050

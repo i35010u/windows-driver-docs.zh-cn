@@ -4,12 +4,12 @@ description: 常规 OID
 ms.assetid: fcd0e7fe-d1ab-4ec3-9c47-0bfb0ce63572
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48c5b2899cbc974ea0c90d65bf9c4b93ffcdad5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 464651d01dde6cd518d4f3204e29b837e03eaeb0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356278"
 ---
 # <a name="general-oids"></a>常规 OID
 
@@ -35,88 +35,88 @@ ms.locfileid: "63349919"
 <tbody>
 <tr class="odd">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569642" data-raw-source="[OID_GEN_SUPPORTED_LIST](https://msdn.microsoft.com/library/windows/hardware/ff569642)">OID_GEN_SUPPORTED_LIST</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-list" data-raw-source="[OID_GEN_SUPPORTED_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-list)">OID_GEN_SUPPORTED_LIST</a></p></td>
 <td align="left"><p>受支持的 Oid 的列表。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569585" data-raw-source="[OID_GEN_HARDWARE_STATUS](https://msdn.microsoft.com/library/windows/hardware/ff569585)">OID_GEN_HARDWARE_STATUS</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-hardware-status" data-raw-source="[OID_GEN_HARDWARE_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-hardware-status)">OID_GEN_HARDWARE_STATUS</a></p></td>
 <td align="left"><p>硬件状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569609" data-raw-source="[OID_GEN_MEDIA_SUPPORTED](https://msdn.microsoft.com/library/windows/hardware/ff569609)">OID_GEN_MEDIA_SUPPORTED</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-supported" data-raw-source="[OID_GEN_MEDIA_SUPPORTED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-supported)">OID_GEN_MEDIA_SUPPORTED</a></p></td>
 <td align="left"><p>支持的媒体类型 （编码）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569607" data-raw-source="[OID_GEN_MEDIA_IN_USE](https://msdn.microsoft.com/library/windows/hardware/ff569607)">OID_GEN_MEDIA_IN_USE</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-in-use" data-raw-source="[OID_GEN_MEDIA_IN_USE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-in-use)">OID_GEN_MEDIA_IN_USE</a></p></td>
 <td align="left"><p>在使用 （编码） 的媒体类型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569598" data-raw-source="[OID_GEN_MAXIMUM_FRAME_SIZE](https://msdn.microsoft.com/library/windows/hardware/ff569598)">OID_GEN_MAXIMUM_FRAME_SIZE</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-maximum-frame-size" data-raw-source="[OID_GEN_MAXIMUM_FRAME_SIZE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-maximum-frame-size)">OID_GEN_MAXIMUM_FRAME_SIZE</a></p></td>
 <td align="left"><p>以字节为单位的最大帧大小。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569593" data-raw-source="[OID_GEN_LINK_SPEED](https://msdn.microsoft.com/library/windows/hardware/ff569593)">OID_GEN_LINK_SPEED</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed" data-raw-source="[OID_GEN_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed)">OID_GEN_LINK_SPEED</a></p></td>
 <td align="left"><p>链接速度为 100 bps 为单位。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569644" data-raw-source="[OID_GEN_TRANSMIT_BLOCK_SIZE](https://msdn.microsoft.com/library/windows/hardware/ff569644)">OID_GEN_TRANSMIT_BLOCK_SIZE</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-transmit-block-size" data-raw-source="[OID_GEN_TRANSMIT_BLOCK_SIZE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-transmit-block-size)">OID_GEN_TRANSMIT_BLOCK_SIZE</a></p></td>
 <td align="left"><p>最小存储，以字节为单位，单个数据包中的 NIC 的传输缓冲区空间占用量</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569633" data-raw-source="[OID_GEN_RECEIVE_BLOCK_SIZE](https://msdn.microsoft.com/library/windows/hardware/ff569633)">OID_GEN_RECEIVE_BLOCK_SIZE</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-block-size" data-raw-source="[OID_GEN_RECEIVE_BLOCK_SIZE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-block-size)">OID_GEN_RECEIVE_BLOCK_SIZE</a></p></td>
 <td align="left"><p>存储，以字节为单位，单个数据包中的 NIC 的接收缓冲区空间占用量</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569651" data-raw-source="[OID_GEN_VENDOR_ID](https://msdn.microsoft.com/library/windows/hardware/ff569651)">OID_GEN_VENDOR_ID</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-vendor-id" data-raw-source="[OID_GEN_VENDOR_ID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-vendor-id)">OID_GEN_VENDOR_ID</a></p></td>
 <td align="left"><p>供应商 NIC 代码。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569649" data-raw-source="[OID_GEN_VENDOR_DESCRIPTION](https://msdn.microsoft.com/library/windows/hardware/ff569649)">OID_GEN_VENDOR_DESCRIPTION</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-vendor-description" data-raw-source="[OID_GEN_VENDOR_DESCRIPTION](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-vendor-description)">OID_GEN_VENDOR_DESCRIPTION</a></p></td>
 <td align="left"><p>供应商网络卡说明。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569650" data-raw-source="[OID_GEN_VENDOR_DRIVER_VERSION](https://msdn.microsoft.com/library/windows/hardware/ff569650)">OID_GEN_VENDOR_DRIVER_VERSION</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-vendor-driver-version" data-raw-source="[OID_GEN_VENDOR_DRIVER_VERSION](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-vendor-driver-version)">OID_GEN_VENDOR_DRIVER_VERSION</a></p></td>
 <td align="left"><p>供应商分配驱动程序的版本号。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569575" data-raw-source="[OID_GEN_CURRENT_PACKET_FILTER](https://msdn.microsoft.com/library/windows/hardware/ff569575)">OID_GEN_CURRENT_PACKET_FILTER</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter" data-raw-source="[OID_GEN_CURRENT_PACKET_FILTER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)">OID_GEN_CURRENT_PACKET_FILTER</a></p></td>
 <td align="left"><p>当前数据包筛选器 （编码）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569601" data-raw-source="[OID_GEN_MAXIMUM_TOTAL_SIZE](https://msdn.microsoft.com/library/windows/hardware/ff569601)">OID_GEN_MAXIMUM_TOTAL_SIZE</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-maximum-total-size" data-raw-source="[OID_GEN_MAXIMUM_TOTAL_SIZE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-maximum-total-size)">OID_GEN_MAXIMUM_TOTAL_SIZE</a></p></td>
 <td align="left"><p>以字节为单位的最大的数据包总长度。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>可选</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569639" data-raw-source="[OID_GEN_RNDIS_CONFIG_PARAMETER](https://msdn.microsoft.com/library/windows/hardware/ff569639)">OID_GEN_RNDIS_CONFIG_PARAMETER</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rndis-config-parameter" data-raw-source="[OID_GEN_RNDIS_CONFIG_PARAMETER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rndis-config-parameter)">OID_GEN_RNDIS_CONFIG_PARAMETER</a></p></td>
 <td align="left"><p>特定于设备的配置参数 （仅设置）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>可选</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569621" data-raw-source="[OID_GEN_PHYSICAL_MEDIUM](https://msdn.microsoft.com/library/windows/hardware/ff569621)">OID_GEN_PHYSICAL_MEDIUM</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium" data-raw-source="[OID_GEN_PHYSICAL_MEDIUM](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium)">OID_GEN_PHYSICAL_MEDIUM</a></p></td>
 <td align="left"><p>有关基础物理介质的信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必需</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569604" data-raw-source="[OID_GEN_MEDIA_CONNECT_STATUS](https://msdn.microsoft.com/library/windows/hardware/ff569604)">OID_GEN_MEDIA_CONNECT_STATUS</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-connect-status" data-raw-source="[OID_GEN_MEDIA_CONNECT_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-connect-status)">OID_GEN_MEDIA_CONNECT_STATUS</a></p></td>
 <td align="left"><p>NIC 的网络连接的状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>可选</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569597" data-raw-source="[OID_GEN_MAC_OPTIONS](https://msdn.microsoft.com/library/windows/hardware/ff569597)">OID_GEN_MAC_OPTIONS</a></p></td>
-<td align="left"><p>指定 NIC 的可选属性的位掩码 必须仅受支持的 Nic <a href="https://msdn.microsoft.com/library/windows/hardware/ff562331" data-raw-source="[802.1p packet priority](https://msdn.microsoft.com/library/windows/hardware/ff562331)">802.1p 数据包优先级</a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-mac-options" data-raw-source="[OID_GEN_MAC_OPTIONS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-mac-options)">OID_GEN_MAC_OPTIONS</a></p></td>
+<td align="left"><p>指定 NIC 的可选属性的位掩码 必须仅受支持的 Nic <a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562331(v=vs.85)" data-raw-source="[802.1p packet priority](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562331(v=vs.85))">802.1p 数据包优先级</a>。</p></td>
 </tr>
 </tbody>
 </table>

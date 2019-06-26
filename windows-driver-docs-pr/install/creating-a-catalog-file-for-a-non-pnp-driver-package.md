@@ -4,19 +4,19 @@ description: 为非 PnP 驱动程序包创建目录文件
 ms.assetid: b40a6f42-53a8-468f-abf1-335c5ead3cbd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e301da648db48a14ae97b3635b3283a2687d350
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad0e9aa1223fe90251f56f408da2937c83741d70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356324"
 ---
 # <a name="creating-a-catalog-file-for-a-non-pnp-driver-package"></a>为非 PnP 驱动程序包创建目录文件
 
 
 可以使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具来创建[编录文件](catalog-files.md)为非 PnP[驱动程序包](driver-packages.md)。
 
-**请注意**  必须使用 MakeCat 工具只是为了创建目录文件的情况下使用 INF 文件不安装的驱动程序包。 如果要安装驱动程序包，请使用 INF 文件，使用[ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)工具创建目录文件。 Inf2Cat 自动包含在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅[使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
+**请注意**  必须使用 MakeCat 工具只是为了创建目录文件的情况下使用 INF 文件不安装的驱动程序包。 如果要安装驱动程序包，请使用 INF 文件，使用[ **Inf2Cat** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)工具创建目录文件。 Inf2Cat 自动包含在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅[使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
 
  
 

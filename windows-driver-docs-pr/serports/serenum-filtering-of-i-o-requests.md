@@ -8,12 +8,12 @@ keywords:
 - 筛选 I/O 请求 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b019a81155d4ee90d5f18578441da896f6dc29
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 128f189dd6971d3645bc6562edd036a4b80d4c43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836326"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356764"
 ---
 # <a name="serenum-filtering-of-io-requests"></a>对 I/O 请求进行 Serenum 筛选
 
@@ -21,7 +21,7 @@ ms.locfileid: "65836326"
 
 - 处理与插和电源请求相关联的总线相关操作：
     -   如果存在，删除筛选器执行操作时，请删除 PDO。
-    -   枚举响应中的 RS-232 端口[ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)类型的请求**BusRelations**.
+    -   枚举响应中的 RS-232 端口[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)类型的请求**BusRelations**.
 - 完成 Serenum 特定于设备控制请求返回有关 RS-232 端口的信息。
 
 下面介绍 Serenum 筛选定向到 PDO （PDO 表示附加到 RS-232 端口的子设备） 的 I/O 请求的方式：

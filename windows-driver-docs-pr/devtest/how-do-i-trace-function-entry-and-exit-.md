@@ -4,19 +4,19 @@ description: 如何实现跟踪函数进入和退出
 ms.assetid: 08b0cf86-0f19-4972-8ae1-44ffdc968c16
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bbb7d307999c5eab10e7ce69906c2af20fd8a11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92c4d0d26f42991c79d9564a41b85fe4656defd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347705"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358282"
 ---
 # <a name="how-do-i-trace-function-entry-and-exit"></a>如何跟踪函数入口和出口？
 
 
 下面的示例代码演示如何跟踪函数进入和退出调用。 此代码适用于 Windows 2000 和更高版本的 Windows。
 
-首先，添加的定义[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏到源文件或头文件。 定义时[跟踪标志](trace-flags.md)，定义的函数跟踪标志，如下面的示例中所示：
+首先，添加的定义[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏到源文件或头文件。 定义时[跟踪标志](trace-flags.md)，定义的函数跟踪标志，如下面的示例中所示：
 
 ```
 #define WPP_CONTROL_GUIDS \

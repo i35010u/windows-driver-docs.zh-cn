@@ -11,12 +11,12 @@ keywords:
 - 并行设备 WDK，Ioctl
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d707bbd2b70b5af8ce580c5ba9ab489eceff6d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5e8056f88375953f1507ba087cf1607f1763954
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358524"
 ---
 # <a name="ioctl-and-callback-support-for-parallel-ports-and-devices"></a>对并行端口和设备的 IOCTL 和回调支持
 
@@ -62,7 +62,7 @@ ms.locfileid: "63373533"
 
 [运行并行设备附加到并行端口](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[系统提供并行的驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

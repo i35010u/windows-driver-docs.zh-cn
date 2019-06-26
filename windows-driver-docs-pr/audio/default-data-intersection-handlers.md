@@ -8,12 +8,12 @@ keywords:
 - 最小数据交集处理程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aee3aeb9c615367bffd158854158373c757320e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60459d8b33e75b509dd77c526ae47f4c66f1e3f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359070"
 ---
 # <a name="default-data-intersection-handlers"></a>默认数据交集处理程序
 
@@ -21,7 +21,7 @@ ms.locfileid: "63333918"
 ## <span id="default_data_intersection_handlers"></span><span id="DEFAULT_DATA_INTERSECTION_HANDLERS"></span>
 
 
-适配器的专有数据交集处理程序 (微型端口驱动程序对象的[ **IMiniport::DataRangeIntersection** ](https://msdn.microsoft.com/library/windows/hardware/ff536764)方法) 可以拒绝通过返回执行数据交集检查状态\_不\_实现状态代码。 在这种情况下，端口驱动程序的默认数据交集处理程序执行以适配器名义检查。
+适配器的专有数据交集处理程序 (微型端口驱动程序对象的[ **IMiniport::DataRangeIntersection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-datarangeintersection)方法) 可以拒绝通过返回执行数据交集检查状态\_不\_实现状态代码。 在这种情况下，端口驱动程序的默认数据交集处理程序执行以适配器名义检查。
 
 您可以实现的最小数据交集处理程序适配器驱动程序，因为**DataRangeIntersection**拒绝数据相交的所有请求通过返回状态的方法\_不\_实现。
 
@@ -33,7 +33,7 @@ ms.locfileid: "63333918"
 
 支持非 PCM 或多通道格式的适配器驱动程序应实现而不是依靠端口驱动程序处理这些格式的数据交集的专有数据交集处理程序。
 
-此外，默认处理程序仅支持音频格式，可以通过指定[ **KSDATAFORMAT\_DSOUND** ](https://msdn.microsoft.com/library/windows/hardware/ff537094)或[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095)结构。 不支持任何格式包含[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构，它需要使用，例如，指定一种格式通道掩码与两个以上声道。
+此外，默认处理程序仅支持音频格式，可以通过指定[ **KSDATAFORMAT\_DSOUND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_dsound)或[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)结构。 不支持任何格式包含[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构，它需要使用，例如，指定一种格式通道掩码与两个以上声道。
 
 在选择一种通用格式时从两个数据区域之间的交集，端口驱动程序的默认处理程序始终在每个参数的交集的区域中选择的最大值：
 
@@ -43,7 +43,7 @@ ms.locfileid: "63333918"
 
 -   如果交集跨 mono 和立体声格式，默认处理程序会选取立体声。
 
-如果默认处理程序选择不令人满意的格式，适配器驱动程序可以选择拒绝被失败的格式**NewStream**调用 (有关示例，请参阅[ **IMiniportWavePci::NewStream** ](https://msdn.microsoft.com/library/windows/hardware/ff536735)) SysAudio 尝试使用格式创建接收器 pin。 如果调用失败，SysAudio 将继续查找数据交集。 相反，它将尝试通过遍历直到它找到一个适配器的接收器 pin 可以支持还受系统筛选器，例如 KMixer PCM 格式的列表中创建的连接。 列表是第一次排序具有更高质量格式。 如前面一样，则适配器将拒绝被失败的列表中不令人满意的格式**NewStream**调用为这些格式。
+如果默认处理程序选择不令人满意的格式，适配器驱动程序可以选择拒绝被失败的格式**NewStream**调用 (有关示例，请参阅[ **IMiniportWavePci::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)) SysAudio 尝试使用格式创建接收器 pin。 如果调用失败，SysAudio 将继续查找数据交集。 相反，它将尝试通过遍历直到它找到一个适配器的接收器 pin 可以支持还受系统筛选器，例如 KMixer PCM 格式的列表中创建的连接。 列表是第一次排序具有更高质量格式。 如前面一样，则适配器将拒绝被失败的列表中不令人满意的格式**NewStream**调用为这些格式。
 
  
 

@@ -16,12 +16,12 @@ keywords:
 - KMDF 驱动程序 WDK KMDF，加载
 ms.date: 05/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc04ad4692da02dd413c3189083b314c06f81de
-ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
+ms.openlocfilehash: 73b5cb4a3e48a09a617980e4c81f23b0ef20682e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875089"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359126"
 ---
 # <a name="building-and-loading-a-wdf-driver"></a>生成和加载 WDF 驱动程序
 
@@ -51,7 +51,7 @@ ms.locfileid: "65875089"
 否则，请执行以下步骤：
 
 -   右键单击解决方案并选择**Configuration Manager**。  设置**项目配置**到所需的值 (例如**调试**)。
--   右键单击驱动程序项目，然后选择**属性**。  打开**配置属性-> 驱动程序设置-> 驱动程序模型**。  更改**KMDF 版本次要 （目标版本）** 或**UMDF 版本次要 （目标版本）** 中的值[驱动程序模型设置](../develop/driver-model-settings-properties-for-driver-projects.md)到所需的值。  有关信息**KMDF 版本次要 （最低要求）** 并**UMDF 版本次要 （最低要求）**，请参阅[指定最小所需](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-a-wdf-driver-for-multiple-versions-of-windows#specifying-minimum-required)。
+-   右键单击驱动程序项目，然后选择**属性**。  打开**配置属性-> 驱动程序设置-> 驱动程序模型**。  更改**KMDF 版本次要 （目标版本）** 或**UMDF 版本次要 （目标版本）** 中的值[驱动程序模型设置](../develop/driver-model-settings-properties-for-driver-projects.md)到所需的值。  有关信息**KMDF 版本次要 （最低要求）** 并**UMDF 版本次要 （最低要求）** ，请参阅[指定最小所需](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-a-wdf-driver-for-multiple-versions-of-windows#specifying-minimum-required)。
 
 可以使用 Windows Driver Kit (WDK) 随 Windows 10 构建 KMDF 1.9 1.29 驱动程序，以及 UMDF 1.9 2.29 驱动程序。
 
@@ -67,5 +67,5 @@ ms.locfileid: "65875089"
 
 存根 （stub） 文件包含一个特殊的入口点例程：**FxDriverEntry**。 MSBuild 设置存根 （stub） 的**FxDriverEntry**例程作为基于框架的驱动程序的初始入口点。
 
-当操作系统加载基于 framework 的驱动程序时，它还会加载存根 （stub） 文件和库的加载程序。 接下来，系统将调用存根 （stub） 文件**FxDriverEntry**例程。 然后，此例程调用加载程序。 加载程序将确定框架库，该驱动程序要求，然后加载正确的版本[版本的库](framework-library-versioning.md)作为内核模式服务 （如果尚未加载）。 最后，库调用的驱动程序[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)例程。
+当操作系统加载基于 framework 的驱动程序时，它还会加载存根 （stub） 文件和库的加载程序。 接下来，系统将调用存根 （stub） 文件**FxDriverEntry**例程。 然后，此例程调用加载程序。 加载程序将确定框架库，该驱动程序要求，然后加载正确的版本[版本的库](framework-library-versioning.md)作为内核模式服务 （如果尚未加载）。 最后，库调用的驱动程序[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程。
 

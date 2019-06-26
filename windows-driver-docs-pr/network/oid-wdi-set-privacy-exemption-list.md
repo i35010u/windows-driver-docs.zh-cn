@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_PRIVACY_EXEMPTION_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fc00502d2c67570ffce74b8457b736966a06f375
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 468406bddf74869d68464b2993e7479a9ca4626f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359172"
 ---
 # <a name="oidwdisetprivacyexemptionlist"></a>OID\_WDI\_设置\_隐私\_免除\_列表
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_隐私\_免除\_列表由主机提供的有关数据包说明�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -30,7 +30,7 @@ OID\_WDI\_设置\_隐私\_免除\_列表由主机提供的有关数据包说明�
 
 | TLV                                                                                 | 允许多个 TLV 实例 | 可选 | 描述                        |
 |-------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------|
-| [**WDI\_TLV\_隐私\_免除\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn898041) | X                              | X        | 隐私例外条目的列表。 |
+| [**WDI\_TLV\_隐私\_免除\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-privacy-exemption-entry) | X                              | X        | 隐私例外条目的列表。 |
 
  
 

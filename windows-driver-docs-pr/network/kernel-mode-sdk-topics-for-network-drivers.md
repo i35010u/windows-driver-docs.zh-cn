@@ -6,12 +6,12 @@ keywords:
 - 对于网络驱动程序，内核模式 SDK 网络驱动程序、 内核模式 Windows SDK 网络驱动程序、 内核模式的 Microsoft Windows SDK 网络驱动程序的内核模式 SDK 主题
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad8bf4e32f091e07f8af28c3a658311e7949a74e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 461c1bc7784e30c55fdcd2198b6e03d8b7291ba3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356237"
 ---
 # <a name="kernel-mode-sdk-topics-for-network-drivers"></a>网络驱动程序的内核模式 SDK 主题
 
@@ -20,7 +20,7 @@ ms.locfileid: "63352943"
 > [!IMPORTANT]
 > 本部分的标头主题包含用于定义、 Oid、 状态指示和不属于网络驱动程序参考其他数据结构的页。 参考主题包括结构、 枚举、 函数和回调。 
 >
-> 有关适用于这些标头的网络驱动程序参考的详细信息，请参阅[网络 SDK 标头文件中的驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/mt808525)。
+> 有关适用于这些标头的网络驱动程序参考的详细信息，请参阅[网络 SDK 标头文件中的驱动程序参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808525(v=vs.85))。
 
 本部分包含：
 

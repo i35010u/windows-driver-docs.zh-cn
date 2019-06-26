@@ -14,12 +14,12 @@ keywords:
 - 上级 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c035b398accb563efca4635424e0e0f8f690aba1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57564e95847558fd156ff0121e4850e4db71a5a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346171"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358208"
 ---
 # <a name="determining-the-parent-of-a-nonpresent-device"></a>确定虚幻设备的父设备
 
@@ -41,15 +41,15 @@ ms.locfileid: "63346171"
 
 ### <a href="" id="saving-the-parent-child-relationship"></a> 正在保存父/子关系
 
-若要保存的设备的父/子关系，请提供*设备共同安装程序*，它将设备的父级的设备实例 ID 保存在设备的硬件注册表项下创建用户项值。 应使用设备实例 ID，因为它保持不变系统进程之间以及跨系统重新启动而没有设备实例句柄。 当处理[ **DIF_INSTALLDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff543692)请求共同安装程序中，执行以下步骤以保存设备实例 id。
+若要保存的设备的父/子关系，请提供*设备共同安装程序*，它将设备的父级的设备实例 ID 保存在设备的硬件注册表项下创建用户项值。 应使用设备实例 ID，因为它保持不变系统进程之间以及跨系统重新启动而没有设备实例句柄。 当处理[ **DIF_INSTALLDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-installdevice)请求共同安装程序中，执行以下步骤以保存设备实例 id。
 
 ***<em>若要在注册表中保存的直接父级的设备实例 ID</em>***
 
-1.  调用[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)父级的设备获取设备实例句柄。
+1.  调用[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)父级的设备获取设备实例句柄。
 
-2.  父设备使用设备实例句柄，调用[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)来获取父设备的设备实例 ID。
+2.  父设备使用设备实例句柄，调用[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)来获取父设备的设备实例 ID。
 
-3.  调用[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)使用 DIREG_DEV 标志获取到设备的硬件注册表项句柄。
+3.  调用[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)使用 DIREG_DEV 标志获取到设备的硬件注册表项句柄。
 
 4.  调用**RegSetValueEx**将保存在设备的硬件注册表项下创建用户项值中的父设备的设备实例 ID。
 
@@ -63,7 +63,7 @@ ms.locfileid: "63346171"
 
 2.  调用**RegQueryValueEx**检索保存在设备共同安装程序中设置的项值中的父设备的设备实例 ID。
 
-检索父设备的设备实例 ID 后，调用[ **SetupDiOpenDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff552071)若要获取[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)父设备的结构。
+检索父设备的设备实例 ID 后，调用[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)若要获取[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)父设备的结构。
 
 ### <a href="" id="handling-a-chain-of-ancestors-for-a-nonpresent-device"></a> 处理虚幻设备的上级链
 

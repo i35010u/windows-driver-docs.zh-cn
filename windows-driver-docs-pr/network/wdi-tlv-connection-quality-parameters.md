@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CONNECTION_QUALITY_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ce8680e00d04276a7bb7fd80a96db8ae9ae977c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e519a5a255d37f3cb4f72ea0f8ef82523b404b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357258"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358578"
 ---
 # <a name="wditlvconnectionqualityparameters"></a>WDI\_TLV\_连接\_质量\_参数
 
@@ -33,7 +33,7 @@ UINT32 大小 （以字节为单位）。
 
 | 在任务栏的搜索框中键入   | 描述                                                                                                                          |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | 所需的 Wi-fi 连接质量提示中, 定义[ **WDI\_连接\_质量\_提示**](https://msdn.microsoft.com/library/windows/hardware/dn897807)。 |
+| UINT32 | 所需的 Wi-fi 连接质量提示中, 定义[ **WDI\_连接\_质量\_提示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_connection_quality_hint)。 |
 
  
 

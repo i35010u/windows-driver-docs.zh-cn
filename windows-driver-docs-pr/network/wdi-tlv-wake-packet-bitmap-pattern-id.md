@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_WAKE_PACKET_BITMAP_PATTERN_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a2a8f54951c638b5f121110379580416418d07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6ef58db37a11653bf90f387a0a079cb1fa73b1e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357201"
 ---
 # <a name="wditlvwakepacketbitmappatternid"></a>WDI\_TLV\_WAKE\_PACKET\_BITMAP\_PATTERN\_ID
 
@@ -66,7 +66,7 @@ UINT32 大小 （以字节为单位）。
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WDI\_SET\_ADD\_WOL\_PATTERN](https://msdn.microsoft.com/library/windows/hardware/dn925858)
+[OID\_WDI\_SET\_ADD\_WOL\_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-wol-pattern)
 
  
 

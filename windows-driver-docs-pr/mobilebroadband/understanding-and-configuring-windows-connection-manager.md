@@ -4,12 +4,12 @@ description: 了解和配置 Windows 连接管理器
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: edb62d851633340fe858b8fd5627654e5edea613
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 676d85427b41d04a3cea25356d41e233a354d8f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106358"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357939"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>了解和配置 Windows 连接管理器
 
@@ -29,7 +29,7 @@ ms.locfileid: "65106358"
 
 ## <a name="span-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>连接管理策略
 
-Windows 8、 Windows 8.1 和 Windows 10 包括许多控制连接管理的策略。 这些策略在 Windows 用户界面中不公开但可以通过使用配置[WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API 或组策略。
+Windows 8、 Windows 8.1 和 Windows 10 包括许多控制连接管理的策略。 这些策略在 Windows 用户界面中不公开但可以通过使用配置[WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API 或组策略。
 
 ### <a name="span-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanminimize-simultaneous-connections"></a><span id="Minimize_simultaneous_connections"></span><span id="minimize_simultaneous_connections"></span><span id="MINIMIZE_SIMULTANEOUS_CONNECTIONS"></span>最大程度减少同时连接
 
@@ -37,7 +37,7 @@ Windows 8、 Windows 8.1 和 Windows 10 包括许多控制连接管理的策略�
 
 #### <a name="versions-of-windows-before-windows-10-version-1809-build-17763404"></a>Windows 10，版本 1809 之前, 的 Windows 版本生成 17763.404
 
-在 Windows 8、 Windows 8.1 和 Windows 10，版本 1809年、 生成 17763.404 之前, 的 Windows 10 版本的此策略是一个布尔值，可以使用组策略进行修改或[WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API。
+在 Windows 8、 Windows 8.1 和 Windows 10，版本 1809年、 生成 17763.404 之前, 的 Windows 10 版本的此策略是一个布尔值，可以使用组策略进行修改或[WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API。
 
 如果禁用此策略，则行为将类似于 Windows 7 中的每个接口连接到最适合的网络在范围内，而不考虑其他接口的连接状态。
 
@@ -172,7 +172,7 @@ Wi-fi 配置文件创建的组策略是在网络列表的顶部。 用户可能�
 
 ### <a name="span-idcarrier-provisioningmetadataspanspan-idcarrier-provisioningmetadataspanspan-idcarrier-provisioningmetadataspancarrier-provisioning-metadata"></a><span id="Carrier-provisioning_metadata"></span><span id="carrier-provisioning_metadata"></span><span id="CARRIER-PROVISIONING_METADATA"></span>运营商预配的元数据
 
-移动宽带和 Wi-fi 热点运营商向 Windows 提供一系列的移动宽带和 Wi-fi 配置文件使用[ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)或[ **msProvisionNetworks** ](https://msdn.microsoft.com/library/hh848316) Api。
+移动宽带和 Wi-fi 热点运营商向 Windows 提供一系列的移动宽带和 Wi-fi 配置文件使用[ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)或[ **msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) Api。
 
 如果最初预配运算符创建配置文件添加到顶部 (仅限于 Wi-fi) 或现有的网络列表的底部 （如果移动宽带包含）。 您不能影响它们在网络列表中预配的网络的位置。 但是，您可以在网络列表中定义其网络的相对顺序。
 
@@ -200,17 +200,17 @@ Wi-fi 配置文件创建的组策略是在网络列表的顶部。 用户可能�
 
 应用程序可能使用合适的特定于媒体的 API 在网络列表中创建新的配置文件：
 
--   对于 Wi-fi 网络，请使用[ **WlanSetProfile** ](https://msdn.microsoft.com/library/windows/desktop/ms706795)函数。
+-   对于 Wi-fi 网络，请使用[ **WlanSetProfile** ](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofile)函数。
 
--   对于移动宽带网络，请使用[ **IMbnConnectionProfileManager::CreateConnectionProfile** ](https://msdn.microsoft.com/library/windows/desktop/dd430393)方法。
+-   对于移动宽带网络，请使用[ **IMbnConnectionProfileManager::CreateConnectionProfile** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofilemanager-createconnectionprofile)方法。
 
-若要修改网络列表的顺序，请使用[ **WcmSetProfileList** ](https://msdn.microsoft.com/library/windows/desktop/hh437598)函数。 我们不建议使用[ **WlanSetProfileList** ](https://msdn.microsoft.com/library/windows/desktop/ms706805)函数，因为它可能会以意外方式干扰移动宽带的配置文件的网络列表中的位置。
+若要修改网络列表的顺序，请使用[ **WcmSetProfileList** ](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetprofilelist)函数。 我们不建议使用[ **WlanSetProfileList** ](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofilelist)函数，因为它可能会以意外方式干扰移动宽带的配置文件的网络列表中的位置。
 
 若要从网络列表中删除配置文件，使用相应的特定于媒体的 API:
 
--   对于 Wi-fi 网络，请使用[ **WlanDeleteProfile** ](https://msdn.microsoft.com/library/windows/desktop/ms706617)函数。
+-   对于 Wi-fi 网络，请使用[ **WlanDeleteProfile** ](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlandeleteprofile)函数。
 
--   对于移动宽带网络，请使用[ **IMbnConnectionProfile::Delete** ](https://msdn.microsoft.com/library/windows/desktop/dd430396)方法。
+-   对于移动宽带网络，请使用[ **IMbnConnectionProfile::Delete** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete)方法。
 
 ### <a name="span-idcommand-linespanspan-idcommand-linespanspan-idcommand-linespancommand-line"></a><span id="Command-line"></span><span id="command-line"></span><span id="COMMAND-LINE"></span>Command-line
 

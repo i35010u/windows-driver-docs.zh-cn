@@ -3,12 +3,12 @@ Description: 有关在函数控制器支持 USB 充电器
 title: 支持 USB 充电器的 USB 筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c7b689d5ea194b1464fe8092e56d9548669f863
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fea9c84554a959cfd0734a9fcf5d66916521cfd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354085"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356592"
 ---
 # <a name="usb-filter-driver-for-supporting-usb-chargers"></a>支持 USB 充电器的 USB 筛选器驱动程序
 
@@ -16,7 +16,7 @@ ms.locfileid: "63354085"
 
 USB 函数堆栈允许设备，例如电话或平板电脑，收费时连接到主机和 USB 充电 USB 电池充电 (BC) 1.2 规范定义。 
 
-- 有两种类型的端口的设备可以使用针对向收费。 在设备上随设备附带的充电器充电的专用端口 (DCP) 从收费。 或者，设备可以从标准下游端口或在设备连接到 PC 时计费下游端口。 这种情况下都符合[USB BC 1.2 规范](http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf)。 
+- 有两种类型的端口的设备可以使用针对向收费。 在设备上随设备附带的充电器充电的专用端口 (DCP) 从收费。 或者，设备可以从标准下游端口或在设备连接到 PC 时计费下游端口。 这种情况下都符合[USB BC 1.2 规范](https://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf)。 
 - 某些充电器不符合规范。 USB 函数堆栈允许设备将从这些专有 USB 充电器充电。 
 
 若要支持符合规范的和专有充电器，这些操作是必需的。 

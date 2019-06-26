@@ -3,12 +3,12 @@ Description: 对无线移动通信设备类的支持
 title: 对无线移动通信设备类的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1402c9bbfafbba24753cf76539ee406b1c00bfb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11052be367ecbb430fc218dfa52916bdfd6475df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358322"
 ---
 # <a name="support-for-the-wireless-mobile-communication-device-class"></a>对无线移动通信设备类的支持
 
@@ -25,7 +25,7 @@ Windows WMCDC 体系结构使用本机 Windows 驱动程序来管理 WMCDC 设�
 
 ![示例设备配置和驱动程序堆栈](images/wmcdc-architecture.png)
 
-在上图中，WMCDC 设备包含单个逻辑话筒： OBEX 函数和调制解调器函数。 供应商提供的 INF 文件加载本机 Windows 驱动程序来管理调制解调器。 OBEX 函数由运行中的供应商提供的用户模式驱动程序[用户模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff561365)(UMDF)。 用户模式驱动程序使用 Windows 便携式设备 (WPD) 协议与用户应用程序和接口进行通信， [WinUSB](winusb.md)导出与 USB 堆栈进行通信。 一般情况下，供应商提供的 INF 文件将加载的每个接口集合使用 Winusb.sys Winusb.sys 的单独实例。
+在上图中，WMCDC 设备包含单个逻辑话筒： OBEX 函数和调制解调器函数。 供应商提供的 INF 文件加载本机 Windows 驱动程序来管理调制解调器。 OBEX 函数由运行中的供应商提供的用户模式驱动程序[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/user-mode-driver-framework-design-guide)(UMDF)。 用户模式驱动程序使用 Windows 便携式设备 (WPD) 协议与用户应用程序和接口进行通信， [WinUSB](winusb.md)导出与 USB 堆栈进行通信。 一般情况下，供应商提供的 INF 文件将加载的每个接口集合使用 Winusb.sys Winusb.sys 的单独实例。
 
 ### <a name="registry-settings"></a>注册表设置
 

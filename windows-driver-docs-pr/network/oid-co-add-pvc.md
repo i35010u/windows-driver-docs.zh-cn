@@ -6,12 +6,12 @@ keywords:
 - OID_CO_ADD_PVC
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 149fe8425be3eef925c9d6b4e75e1eb0d1b23f05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aea642db33b32baed46a003986407657851713d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351945"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357690"
 ---
 # <a name="oidcoaddpvc"></a>OID_CO_ADD_PVC
 
@@ -27,10 +27,10 @@ typedef struct _CO_PVC {
 此结构的成员包含下列信息：
 
 **NdisAfHandle**  
-指定返回的 NDIS 提供句柄[NdisClOpenAddressFamilyEx](https://msdn.microsoft.com/library/windows/hardware/ff561639)。
+指定返回的 NDIS 提供句柄[NdisClOpenAddressFamilyEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex)。
 
 **PvcParameters**  
-一个格式化[CO_SPECIFIC_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff545396)结构。 此结构包含描述 PVC 的特定于协议的参数。
+一个格式化[CO_SPECIFIC_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))结构。 此结构包含描述 PVC 的特定于协议的参数。
 
 PVC 由管理员手动配置。 监视此类活动的客户端通知新配置 PVC 呼叫管理器通过将此 OID 发送到呼叫管理器。 其他客户端然后可以使用新配置 PVC。
 

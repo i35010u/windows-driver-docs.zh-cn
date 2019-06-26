@@ -4,12 +4,12 @@ description: 将数据传输到 WIA 应用程序
 ms.assetid: 3ad906c9-968f-43d7-ae17-fc570440883d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9fa08a1a51afc1ae8d3ac9c8c4b0e207f5c368
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d440d8f90f6d2fba3b2ed3a4760607097c065143
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383714"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358214"
 ---
 # <a name="transferring-data-to-a-wia-application"></a>将数据传输到 WIA 应用程序
 
@@ -17,9 +17,9 @@ ms.locfileid: "63383714"
 
 
 
-当应用程序启动数据传输时，WIA 服务调用[ **IWiaMiniDrv::drvAcquireItemData** ](https://msdn.microsoft.com/library/windows/hardware/ff543956)方法执行传输。 此方法负责获取设备中的数据和发送数据返回到应用程序中使用[ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff543946)方法。
+当应用程序启动数据传输时，WIA 服务调用[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法执行传输。 此方法负责获取设备中的数据和发送数据返回到应用程序中使用[ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)方法。
 
-在 Microsoft Windows Millennium Edition （me） 和 Windows XP 中，WIA 微型驱动程序应该能够处理两种类型的数据传输： 文件和内存。 若要确定哪种类型的传输应用程序启动，微型驱动程序应阅读[ **WIA\_IPA\_TYMED** ](https://msdn.microsoft.com/library/windows/hardware/ff551656)属性值或检查**tymed**的成员[ **MINIDRV\_传输\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff545250)结构。 第二个选项是 WIA 微型驱动程序调用才有效[ **wiasGetImageInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff549249)第一次服务函数。 **WiasGetImageInformation**服务函数会自动读取 WIA\_IPA\_TYMED 属性和该值赋给**tymed** MINIDRV成员\_传输\_上下文结构。
+在 Microsoft Windows Millennium Edition （me） 和 Windows XP 中，WIA 微型驱动程序应该能够处理两种类型的数据传输： 文件和内存。 若要确定哪种类型的传输应用程序启动，微型驱动程序应阅读[ **WIA\_IPA\_TYMED** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)属性值或检查**tymed**的成员[ **MINIDRV\_传输\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)结构。 第二个选项是 WIA 微型驱动程序调用才有效[ **wiasGetImageInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasgetimageinformation)第一次服务函数。 **WiasGetImageInformation**服务函数会自动读取 WIA\_IPA\_TYMED 属性和该值赋给**tymed** MINIDRV成员\_传输\_上下文结构。
 
 首选的方法是为 WIA 微型驱动程序可以读取 WIA\_IPA\_TYMED 属性值。 这可以保证微型驱动程序正在执行的获取适当的类型。
 

@@ -3,12 +3,12 @@ title: MB 多 SIM 操作
 description: MB 多 SIM 操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed574ad545900fa22d779253824d49c32d4205c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2aed856a93390f8810106e9b049fa43657d8397
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357813"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
@@ -138,7 +138,7 @@ Windows 10 桌面 WMBCLASS 驱动程序中处理此集请求的争用条件，�
 |  | OID_WWAN_SLOT_INFO_STATUS |
 
 > [!NOTE]
-> [OID_WWAN_RADIO_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569832)适用于 Windows 10，版本 1703年也已更新。 有关详细信息，请参阅 OID_WWAN_RADIO_STATE。
+> [OID_WWAN_RADIO_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-radio-state)适用于 Windows 10，版本 1703年也已更新。 有关详细信息，请参阅 OID_WWAN_RADIO_STATE。
 
 ## <a name="mbim-interface-update-for-multi-sim-operations"></a>对于多 SIM 操作 MBIM 界面更新
 
@@ -391,7 +391,7 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_C
 
 以下 MBIM_MS_UICCSLOT_STATE 结构描述槽的可能的状态。
 
-| 状态 | 值 | 描述 |
+| 状态 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | UICCSlotStateUnknown | 0 | 调制解调器仍正在进行初始化以便 SIM 槽状态具有不确定性。 |
 | UICCSlotStateOffEmpty | 1 | UICC 槽已关机，不则存在任何卡。 无法确定存在已关机的槽中的卡的实现作为 UICCSlotStateOff 报告其状态。 |

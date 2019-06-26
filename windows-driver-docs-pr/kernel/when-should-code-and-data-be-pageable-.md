@@ -10,12 +10,12 @@ keywords:
 - 常驻代码 WDK 可分页驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e91814a53983a408d72500fc1cc2311deeb2de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c41d361a954448245edf8baff44c07b8cd42291
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358105"
 ---
 # <a name="when-should-code-and-data-be-pageable"></a>代码和数据何时应可分页？
 
@@ -31,7 +31,7 @@ ms.locfileid: "63335256"
 
 -   获取自旋锁。
 
--   调用内核的对象的任何支持例程，如[ **KeReleaseMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553140)或[ **KeReleaseSemaphore**](https://msdn.microsoft.com/library/windows/hardware/ff553143)，在其中*等待*参数设置为**TRUE**。 如果使用调用内核*等待*设置为**TRUE**，则调用将返回与在调度的 IRQL\_级别。
+-   调用内核的对象的任何支持例程，如[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)或[ **KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)，在其中*等待*参数设置为**TRUE**。 如果使用调用内核*等待*设置为**TRUE**，则调用将返回与在调度的 IRQL\_级别。
 
 驱动程序代码必须运行在 IRQL&lt;调度\_级别时，代码执行的任何内容，可能会导致页错误。 如果是这样的以下任何，代码可能会导致页错误：
 

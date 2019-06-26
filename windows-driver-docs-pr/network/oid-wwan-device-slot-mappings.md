@@ -5,25 +5,25 @@ ms.assetid: 54AF3447-7918-49CE-945A-DC8DC1E78CBF
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SLOT_MAPPING_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aecf6883c3ec790778ff1c86e5c32e1d04cf73b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31294f80732f686d84ca212f31865e9b1458dc10
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358600"
 ---
 # <a name="oidwwandeviceslotmappinginfo"></a>OID\_WWAN\_设备\_槽\_映射\_信息
 
 
 OID\_WWAN\_设备\_槽\_映射\_信息设置或返回的 MB 设备 （即执行器-slot 映射） 的设备-slot 映射。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782397)状态通知包含[ **NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782403)结构，以提供了有关执行器槽映射信息。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-slot-mappings)状态通知包含[ **NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)结构，以提供了有关执行器槽映射信息。
 
 下图说明了查询请求。
 
 ![插槽映射查询](images/multi-SIM_8_slotMappingQuery.png)
 
-微型端口驱动程序必须处理集请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782397)状态通知包含[ **NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782403)结构，其中又包含[ **WWAN\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt799890)结构，以指示当前映射状态。 即使集请求失败，这为 true。 有关 OID 的集请求的结构\_WWAN\_设备\_槽\_映射\_信息[ **NDIS\_WWAN\_设置\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782405)。
+微型端口驱动程序必须处理集请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-slot-mappings)状态通知包含[ **NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)结构，其中又包含[ **WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_slot_mapping_info)结构，以指示当前映射状态。 即使集请求失败，这为 true。 有关 OID 的集请求的结构\_WWAN\_设备\_槽\_映射\_信息[ **NDIS\_WWAN\_设置\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_device_slot_mapping_info)。
 
 下图说明了 set 请求。
 
@@ -57,11 +57,11 @@ OID\_WWAN\_设备\_槽\_映射\_信息设置或返回的 MB 设备 （即执行�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**](https://msdn.microsoft.com/library/windows/hardware/mt782397)
+[**NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-slot-mappings)
 
-[**NDIS\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt782403)
+[**NDIS\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)
 
-[**NDIS\_WWAN\_SET\_DEVICE\_SLOT\_MAPPING\_INFO**](https://msdn.microsoft.com/library/windows/hardware/mt782405)
+[**NDIS\_WWAN\_SET\_DEVICE\_SLOT\_MAPPING\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_device_slot_mapping_info)
 
  
 

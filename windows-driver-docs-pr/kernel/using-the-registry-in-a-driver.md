@@ -15,12 +15,12 @@ keywords:
 - 内核模式驱动程序 WDK、 注册表
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 738699c9c45539aac64cd9b468c6826d6c78220b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfd2c4b76825a7ff36259e7f0a9a44644bfa4734
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358169"
 ---
 # <a name="using-the-registry-in-a-driver"></a>在驱动程序中使用注册表
 
@@ -40,9 +40,9 @@ Microsoft Windows 高级管理人员提供了用于操控注册表的例程的�
 
 有关注册表的其他信息，请参阅：
 
-[**INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[驱动程序的注册表项](https://msdn.microsoft.com/library/windows/hardware/ff549538)
+[驱动程序的注册表项](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)
 
  
 

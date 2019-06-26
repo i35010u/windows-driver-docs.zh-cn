@@ -12,12 +12,12 @@ keywords:
 - 数据范围 WDK 音频，有关音频数据范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf3a6224dc23d6251a7e9aa67cc817e0cff7432
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60eb376ca10b72d32f4ba01ff14e53dd2d01f7c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355732"
 ---
 # <a name="audio-data-ranges"></a>音频数据范围
 
@@ -31,9 +31,9 @@ ms.locfileid: "63331555"
 
 有关使用属性请求来查询其数据范围和选择数据交集的音频 pin 信息，请参阅[Pin 数据范围和交集属性](pin-data-range-and-intersection-properties.md)。
 
-若要指定批 pin，数据范围[ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)结构后跟描述的一系列示例大小、 频率和 pin 支持的通道的信息。 此信息，包括 KSDATARANGE 结构本身，封装在[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)结构。
+若要指定批 pin，数据范围[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构后跟描述的一系列示例大小、 频率和 pin 支持的通道的信息。 此信息，包括 KSDATARANGE 结构本身，封装在[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构。
 
-若要指定 MIDI 或 DirectMusic pin 的数据范围，KSDATARANGE 结构后跟其他信息，包括通道和可以在同一时间播放的说明的最大数目。 此信息，以及 KSDATARANGE 结构本身，封装在[ **KSDATARANGE\_音乐**](https://msdn.microsoft.com/library/windows/hardware/ff537097)结构。
+若要指定 MIDI 或 DirectMusic pin 的数据范围，KSDATARANGE 结构后跟其他信息，包括通道和可以在同一时间播放的说明的最大数目。 此信息，以及 KSDATARANGE 结构本身，封装在[ **KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music)结构。
 
 本文档提供了几个示例的数据范围的使用 KSDATARANGE\_音频和 KSDATARANGE\_音乐结构：
 

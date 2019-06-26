@@ -14,12 +14,12 @@ keywords:
 - 适配器驱动程序 WDK 音频，构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4490de29470544e1f15ddfca16af9849e6b2dae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43eb438e1a8ca2854e3b2dc6d316a9b2075de14d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325415"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355776"
 ---
 # <a name="adapter-driver-construction"></a>适配器驱动程序构造
 
@@ -37,7 +37,7 @@ ms.locfileid: "63325415"
 
 常规适配器代码的示例，请参阅的实现**CAdapterCommon** Sb16、 Msvad 和 Ac97 示例音频驱动程序中 Microsoft Windows Driver Kit (WDK) 中的接口。
 
-通过使用分层的方法，供应商可以编写一个适配器驱动程序，在多个级别，具体取决于适配器的硬件功能之一上运行。 在确定的给定的硬件函数要求的支持级别，供应商应首先确定是否系统提供的微型端口驱动程序已存在的支持函数 (请参阅[ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)系统提供的微型端口驱动程序的函数的列表)。 如果不是，供应商必须实现专有的微型端口驱动程序，但可能仍将能够使用系统提供端口驱动程序之一 (请参阅[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715)系统提供的端口的函数的列表驱动程序）。
+通过使用分层的方法，供应商可以编写一个适配器驱动程序，在多个级别，具体取决于适配器的硬件功能之一上运行。 在确定的给定的硬件函数要求的支持级别，供应商应首先确定是否系统提供的微型端口驱动程序已存在的支持函数 (请参阅[ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)系统提供的微型端口驱动程序的函数的列表)。 如果不是，供应商必须实现专有的微型端口驱动程序，但可能仍将能够使用系统提供端口驱动程序之一 (请参阅[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)系统提供的端口的函数的列表驱动程序）。
 
 若要实现对设备的 WDM 支持，请执行以下步骤：
 

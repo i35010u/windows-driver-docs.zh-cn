@@ -4,12 +4,12 @@ description: 注册 NDIS QoS 功能
 ms.assetid: 03D70079-37A4-4FAA-BF18-ACED3A9E8267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50632ad1dfc185fa50afb961b97a10d672f5fc0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38d748c14265f38b9ed35da63dc68827e2811d9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373857"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359150"
 ---
 # <a name="registering-ndis-qos-capabilities"></a>注册 NDIS QoS 功能
 
@@ -30,7 +30,7 @@ ms.locfileid: "63373857"
 
 有关 NDIS QoS INF 关键字设置的详细信息，请参阅[NDIS QoS 的标准化 INF 关键字](standardized-inf-keywords-for-ndis-qos.md)。
 
-微型端口驱动程序报告通过基础的网络适配器的硬件 NDIS QoS 功能[ **NDIS\_QOS\_功能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)初始化的结构按以下方式：
+微型端口驱动程序报告通过基础的网络适配器的硬件 NDIS QoS 功能[ **NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)初始化的结构按以下方式：
 
 1.  微型端口驱动程序初始化**标头**成员。 驱动程序集**类型**的成员**标头**到 NDIS\_对象\_类型\_QOS\_功能。
 
@@ -70,17 +70,17 @@ ms.locfileid: "63373857"
 
      
 
-当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，该驱动程序注册的网络适配器的 NDIS QoS 属性通过执行以下步骤：
+当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，该驱动程序注册的网络适配器的 NDIS QoS 属性通过执行以下步骤：
 
-1.  微型端口驱动程序初始化[ **NDIS\_微型端口\_适配器\_硬件\_协助\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)结构。
+1.  微型端口驱动程序初始化[ **NDIS\_微型端口\_适配器\_硬件\_协助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
 
-    微型端口驱动程序集**HardwareQOSCapabilities**成员为指向 previouslyinitialized [ **NDIS\_QOS\_功能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)结构。
+    微型端口驱动程序集**HardwareQOSCapabilities**成员为指向 previouslyinitialized [ **NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构。
 
-    如果的注册表设置 **\*QOS** INF 关键字的一个值，则网络适配器上启用的 NDIS QoS 功能。 微型端口驱动程序集**CurrentQOSCapabilities**指向相同的指针到成员[ **NDIS\_QOS\_功能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)结构。
+    如果的注册表设置 **\*QOS** INF 关键字的一个值，则网络适配器上启用的 NDIS QoS 功能。 微型端口驱动程序集**CurrentQOSCapabilities**指向相同的指针到成员[ **NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构。
 
     如果的注册表设置 **\*QOS** INF 关键字的值为零、 NDIS QoS 功能已禁用网络适配器上。 微型端口驱动程序必须设置**CurrentQOSCapabilities**为 NULL 的成员。
 
-2.  驱动程序调用[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)并设置*MiniportAttributes*参数指向的指针[ **NDIS\_微型端口\_适配器\_硬件\_帮助\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)结构。
+2.  驱动程序调用[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)并设置*MiniportAttributes*参数指向的指针[ **NDIS\_微型端口\_适配器\_硬件\_帮助\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
 
 有关适配器初始化过程的详细信息，请参阅[初始化微型端口适配器](initializing-a-miniport-adapter.md)。
 

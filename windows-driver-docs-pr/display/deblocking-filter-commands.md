@@ -7,12 +7,12 @@ keywords:
 - 消除马赛克功能筛选命令 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90391018119db1e5c9854f5190354641850b00d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1663b1c9814bc5c8b7b9193960c3d7c2a668f2c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358651"
 ---
 # <a name="deblocking-filter-commands"></a>除块筛选器命令
 
@@ -24,7 +24,7 @@ ms.locfileid: "63383293"
 
 两种不同类型的筛选器的命令缓冲区消除马赛克功能是：
 
--   需要访问和修改的值的缓冲区重新构造外的当前筛选器 deblocking 命令缓冲区宏块的示例 (当**bPicDeblockConfined**的成员[ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)结构为零)。
+-   需要访问和修改的值的缓冲区重新构造外的当前筛选器 deblocking 命令缓冲区宏块的示例 (当**bPicDeblockConfined**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构为零)。
 
 -   不需要访问和修改的值的缓冲区重新构造外的当前筛选器 deblocking 命令缓冲区宏块的示例 (当**bPicDeblockConfined**为 1)。
 

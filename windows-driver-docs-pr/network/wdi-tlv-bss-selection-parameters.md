@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSS_SELECTION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b8d548a7aae8947970042925aeaf748f0a707425
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bf210ac72ff01a1bb092565cfdb7f58a35bc8c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382617"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358592"
 ---
 # <a name="wditlvbssselectionparameters"></a>WDI\_TLV\_BSS\_SELECTION\_PARAMETERS
 
 
-WDI\_TLV\_BSS\_选择\_参数是包含 TLV [ **WDI\_BSS\_选择\_标志**](https://msdn.microsoft.com/library/windows/hardware/mt297629) BSS 选择使用由主机的。
+WDI\_TLV\_BSS\_选择\_参数是包含 TLV [ **WDI\_BSS\_选择\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_bss_selection_flags) BSS 选择使用由主机的。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -33,7 +33,7 @@ UINT32 大小 （以字节为单位）。
 
 | 在任务栏的搜索框中键入   | 描述                                                                                                     |
 |--------|-----------------------------------------------------------------------------------------------------------------|
-| UINT32 | [**WDI\_BSS\_选择\_标志**](https://msdn.microsoft.com/library/windows/hardware/mt297629) ，用于主机 BSS 所选内容。 |
+| UINT32 | [**WDI\_BSS\_选择\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_bss_selection_flags) ，用于主机 BSS 所选内容。 |
 
  
 
