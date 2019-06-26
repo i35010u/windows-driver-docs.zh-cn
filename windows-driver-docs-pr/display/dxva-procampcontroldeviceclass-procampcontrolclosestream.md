@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: bc53cabb284afc2d92a41e74e5d3b9f4a7cb7a78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1aa6b4d6ff0207581b2a11bc1e43c1c75c4c28b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331294"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383100"
 ---
 # <a name="dxvaprocampcontroldeviceclassprocampcontrolclosestream-method"></a>DXVA\_ProcAmpControlDeviceClass::ProcAmpControlCloseStream 方法
 
@@ -39,7 +39,7 @@ HRESULT ProcAmpControlCloseStream(
 <a name="parameters"></a>Parameters
 ----------
 
-* * 无
+\* * 无
 
 <a name="return-value"></a>返回值
 ------------
@@ -49,12 +49,12 @@ HRESULT ProcAmpControlCloseStream(
 <a name="remarks"></a>备注
 -------
 
-**ProcAmpControlCloseStream**函数直接映射到**DestroyMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)结构，它指向的驱动程序提供[ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)回调。
+**ProcAmpControlCloseStream**函数直接映射到**DestroyMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构，它指向的驱动程序提供[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)回调。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)
+[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**ProcAmpControlOpenStream**](dxva-procampcontroldeviceclass-procampcontrolopenstream.md)
 

@@ -5,26 +5,26 @@ ms.assetid: 363D308D-CE88-4F3B-81FF-37A2D86CB7BC
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_PF_LUID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 65992a7e5f8afe66bf48954040c9b882acab7169
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea9cc25341031b17e6b8bfa83a6f9f3d656ce5b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362889"
 ---
 # <a name="oidsriovpfluid"></a>OID\_SRIOV\_PF\_LUID
 
 
 基础驱动程序将发出对象标识符 (OID) 查询请求的 OID\_SRIOV\_PF\_LUID 接收关联与 PCI Express (PCIe) 物理函数 (PF) 的网络的本地唯一标识符 (LUID)适配器。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_SRIOV\_PF\_LUID\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh451678)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_SRIOV\_PF\_LUID\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_pf_luid_info)结构。
 
 <a name="remarks"></a>备注
 -------
 
-NDIS 为 NDIS 调用之前 PF 生成 LUID [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) PF.的微型端口驱动程序的函数 此 LUID 之前 NDIS 调用都有效[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)驱动程序的函数。
+NDIS 为 NDIS 调用之前 PF 生成 LUID [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) PF.的微型端口驱动程序的函数 此 LUID 之前 NDIS 调用都有效[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)驱动程序的函数。
 
-**请注意**  的值**Luid**成员不同于**NetLuid**隶属[ **NDIS\_微型端口\_INIT\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff565972)结构。 此结构传递给微型端口驱动程序通过*MiniportInitParameters*的参数[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)。
+**请注意**  的值**Luid**成员不同于**NetLuid**隶属[ **NDIS\_微型端口\_INIT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_init_parameters)结构。 此结构传递给微型端口驱动程序通过*MiniportInitParameters*的参数[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)。
 
  
 
@@ -56,7 +56,7 @@ NDIS 时处理 OID\_SRIOV\_PF\_LUID 请求，它将返回一个下面的状态�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION。BytesNeeded</strong>中的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区太短。 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -91,11 +91,11 @@ NDIS 时处理 OID\_SRIOV\_PF\_LUID 请求，它将返回一个下面的状态�
 
 
 ****
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_PF\_LUID\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh451678)
+[**NDIS\_SRIOV\_PF\_LUID\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_pf_luid_info)
 
  
 

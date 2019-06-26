@@ -6,32 +6,32 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_REGISTER_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a4eb8530c35d537061fd8e7b138efd5f6bec4127
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06b2c7ed06a529d0a7fd98b9c324c6bed30536ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383212"
 ---
 # <a name="oidwwanregisterstate"></a>OID\_WWAN\_REGISTER\_STATE
 
 
 OID\_WWAN\_注册\_状态选择网络提供商注册。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_注册\_状态**](ndis-status-wwan-register-state.md)状态通知包含[ **NDIS\_WWAN\_注册\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567917)结构，以便提供有关已注册的网络提供程序而不考虑完成组的信息或查询请求。
+微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_注册\_状态**](ndis-status-wwan-register-state.md)状态通知包含[ **NDIS\_WWAN\_注册\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_registration_state)结构，以便提供有关已注册的网络提供程序而不考虑完成组的信息或查询请求。
 
-设置网络提供商，以将注册请求的调用方提供[ **NDIS\_WWAN\_设置\_注册\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567926)结构微型端口驱动程序的相应信息。
+设置网络提供商，以将注册请求的调用方提供[ **NDIS\_WWAN\_设置\_注册\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_register_state)结构微型端口驱动程序的相应信息。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 注册操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)。
+有关使用此 OID 的详细信息，请参阅[WWAN 注册操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-registration-operations)。
 
 微型端口驱动程序可以访问提供程序网络时处理查询或设置操作，但不是应访问用户识别模块 （SIM 卡）。
 
 MB 驱动程序模型支持两种注册方法-自动和手动。 为基于 CDMA 的网络，MB 驱动程序模型支持仅自动注册。
 
-支持手动注册的设备必须设置**WwanControlCaps**中的成员[ **WWAN\_设备\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff571204) WWAN结构\_CTRL\_CAPS\_REG\_手动。 请注意，基于 GSM 的设备必须支持手动注册。
+支持手动注册的设备必须设置**WwanControlCaps**中的成员[ **WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps) WWAN结构\_CTRL\_CAPS\_REG\_手动。 请注意，基于 GSM 的设备必须支持手动注册。
 
 当注册状态为自动，微型端口驱动程序必须指示要选择网络提供商基于特定于移动电话技术选择算法并继续注册其设备。
 
@@ -78,11 +78,11 @@ RegisterAction 值的语义定义，如下所示：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_SET\_REGISTER\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567926)
+[**NDIS\_WWAN\_SET\_REGISTER\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_register_state)
 
 [**NDIS\_状态\_WWAN\_注册\_状态**](ndis-status-wwan-register-state.md)
 
-[WWAN 注册操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)
+[WWAN 注册操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-registration-operations)
 
  
 

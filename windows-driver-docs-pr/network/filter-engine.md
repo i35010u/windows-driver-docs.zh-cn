@@ -6,17 +6,17 @@ keywords:
 - 筛选器引擎 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b66cd33d868881790bb538310ca6524e77f0ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6e2c1f85e6812f3c6b615376525d8db5ab8dd77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363413"
 ---
 # <a name="filter-engine"></a>筛选器引擎
 
 
-*筛选器引擎*是 Windows 筛选平台存储筛选器并执行筛选器约束性仲裁的组件。 [筛选器](filter.md)添加到筛选器引擎在指定[筛选层](filtering-layer.md)，以便筛选器引擎可以执行所需的筛选操作 （允许、 drop 或标注）。 如果指定了筛选器引擎中的筛选器[标注](callout.md)筛选器的操作筛选器引擎将调用的标注[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)函数，以便可以标注处理网络数据。
+*筛选器引擎*是 Windows 筛选平台存储筛选器并执行筛选器约束性仲裁的组件。 [筛选器](filter.md)添加到筛选器引擎在指定[筛选层](filtering-layer.md)，以便筛选器引擎可以执行所需的筛选操作 （允许、 drop 或标注）。 如果指定了筛选器引擎中的筛选器[标注](callout.md)筛选器的操作筛选器引擎将调用的标注[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)函数，以便可以标注处理网络数据。
 
  
 

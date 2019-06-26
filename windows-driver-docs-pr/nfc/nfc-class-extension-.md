@@ -11,12 +11,12 @@ keywords:
 - CX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ff8f74e80942dc8d8578e9921cf23e9b7995a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49c58e50c15397a56b43777947b2ebe28c59a503
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383578"
 ---
 # <a name="nfc-class-extension-cx-design-guide"></a>NFC 类扩展 (CX) 设计指南
 
@@ -32,10 +32,10 @@ NFC 类扩展驱动程序实现所有标准 NFC 论坛标记 （T1T、 T2T、 T3
 ## <a name="nfc-driver-ddi"></a>NFC 驱动程序 DDI
 Windows 定义 NFC 驱动程序由 NFC CX 驱动程序实现的 DDI 如下：
 
--   [邻近 DDI 附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)
--   [NFC 安全元素管理 DDI](https://msdn.microsoft.com/library/windows/hardware/dn905485)
--   [非接触式智能卡访问的智能卡 DDI](https://msdn.microsoft.com/library/windows/hardware/dn905601)
--   [NFC 射频硬件管理 DDI](https://msdn.microsoft.com/library/windows/hardware/dn905577)
+-   [邻近 DDI 附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [NFC 安全元素管理 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [非接触式智能卡访问的智能卡 DDI](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))
+-   [NFC 射频硬件管理 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 -   DTA DDI NFC 论坛认证
 
 ## <a name="nfc-forum-specifications"></a>NFC 论坛规范

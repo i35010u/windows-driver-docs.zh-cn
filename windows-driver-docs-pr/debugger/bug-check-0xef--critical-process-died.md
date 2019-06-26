@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cf9157bb026289226aa5e1ab54bb47825bc79ee7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe894a975ad1cbd1cab7800baf0b0c6896672892
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367075"
 ---
 # <a name="developer-content-bug-check-0xef-criticalprocessdied"></a>（开发人员内容）Bug 检查 0xEF:关键\_进程\_DIED
 
@@ -30,7 +30,7 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="criticalprocessdied-parameters"></a>关键\_进程\_DIED 参数
@@ -102,7 +102,7 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
 
 -   如果最近，添加新设备驱动程序或系统服务尝试删除或更新它们。 尝试确定导致新的错误检查代码才会显示在系统中更改的内容。
 
--   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+-   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 -   请与制造商联系，以查看更新的系统 BIOS 或固件是否可用。
 
@@ -118,7 +118,7 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
     SFC /scannow
     ```
 
-    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/kb/929833)。
+    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
 
 -   查找范围**设备管理器**若要查看的任何设备都带有感叹号 （！）。 查看任何错误的驱动程序的驱动程序属性中显示的事件日志。 请尝试更新相关的驱动程序。
 

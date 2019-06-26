@@ -4,12 +4,12 @@ description: 此过程介绍了远程调试使用 Visual Studio。
 ms.assetid: 9FA347BF-878E-46C8-8459-DC73A8B1EB26
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bb1e714d4c9187d5fdb298be00b446a5053878ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7de1cc9123c8bdc8edbeac6b8bb6d18e79b7cc84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366427"
 ---
 # <a name="remote-debugging-using-visual-studio"></a>使用 Visual Studio 进行远程调试
 
@@ -18,7 +18,7 @@ ms.locfileid: "63353536"
 >
 
 
-本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://msdn.microsoft.com/library/windows/hardware/ff557573)。
+本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Microsoft Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://docs.microsoft.com/windows-hardware/drivers/)。
 
 若要执行使用 Visual Studio 远程调试：
 

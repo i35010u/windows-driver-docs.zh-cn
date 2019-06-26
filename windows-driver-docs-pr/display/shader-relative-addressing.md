@@ -4,12 +4,12 @@ description: 着色器相对寻址
 ms.assetid: 7f936b56-cd41-4df5-8fc0-b8a7332ca7fa
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 95b5df1eb45f01a58777b0e691d699c04d0fbede
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 134113bdee84951635888abacdef89bb7a670d03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389983"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365506"
 ---
 # <a name="shader-relative-addressing"></a>着色器相对寻址
 
@@ -23,7 +23,7 @@ ms.locfileid: "63389983"
 
 此相对寻址令牌格式与目标相同或源参数标记和以下规则适用：
 
--   仅 D3DSPR\_ADDR 或 D3DSPR\_循环可用作[注册类型](https://msdn.microsoft.com/library/windows/hardware/ff569707)。
+-   仅 D3DSPR\_ADDR 或 D3DSPR\_循环可用作[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)。
 
 -   源参数标记中的 swizzle 位用于确定注册组件。
 

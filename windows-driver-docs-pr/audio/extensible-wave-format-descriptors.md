@@ -17,12 +17,12 @@ keywords:
 - WDM 音频数据格式 WDK
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec15f1f408f9b09e32e3b1bd14bb44a4404529e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28966461133ce95dc909234154b9898ef5c647ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333669"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360044"
 ---
 # <a name="extensible-wave-format-descriptors"></a>可扩展的波形格式描述符
 
@@ -34,21 +34,21 @@ ms.locfileid: "63333669"
 
 ![说明波形格式说明符的关系图](images/wavefmt.png)
 
-如下图所示的其他格式信息下面[ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)结构而异的数据格式。
+如下图所示的其他格式信息下面[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构而异的数据格式。
 
 音频系统中通过多种方式使用这种类型的格式说明符：
 
--   正如在上图中所示作为调用参数传递给微型端口驱动程序的格式说明符**NewStream**方法 (有关示例，请参阅[ **IMiniportWaveCyclic::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536723)).
+-   正如在上图中所示作为调用参数传递给微型端口驱动程序的格式说明符**NewStream**方法 (有关示例，请参阅[ **IMiniportWaveCyclic::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)).
 
--   *ResultantFormat*的参数[ **IMiniport::DataRangeIntersection** ](https://msdn.microsoft.com/library/windows/hardware/ff536764)指向缓冲区到该方法将写入一个格式说明符的方法类似于在上图中所示。
+-   *ResultantFormat*的参数[ **IMiniport::DataRangeIntersection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-datarangeintersection)指向缓冲区到该方法将写入一个格式说明符的方法类似于在上图中所示。
 
--   [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://msdn.microsoft.com/library/windows/hardware/ff565198)属性 get 请求检索类似如上图所示的格式说明符。
+-   [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)属性 get 请求检索类似如上图所示的格式说明符。
 
--   [ **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff565206)集属性请求会接受类似如上图所示的格式说明符。
+-   [ **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)集属性请求会接受类似如上图所示的格式说明符。
 
--   使用类似的格式[ **KsCreatePin** ](https://msdn.microsoft.com/library/windows/hardware/ff561652)函数的*Connect*调用参数。 此参数指向[ **KSPIN\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff563531)还包含一个格式说明符的缓冲区开始处的结构。 格式说明符，紧随 KSPIN\_连接结构，以在上图中所示的 KSDATAFORMAT 结构开始。
+-   使用类似的格式[ **KsCreatePin** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)函数的*Connect*调用参数。 此参数指向[ **KSPIN\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_connect)还包含一个格式说明符的缓冲区开始处的结构。 格式说明符，紧随 KSPIN\_连接结构，以在上图中所示的 KSDATAFORMAT 结构开始。
 
-遵循 KSDATAFORMAT 结构的格式信息应[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构或[ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)结构。 WAVEFORMATEXTENSIBLE 是可以描述更广泛的格式比 WAVEFORMATEX WAVEFORMATEX 的扩展的版本。 WAVEFORMATEX 是 pre WDM WAVEFORMAT 结构的扩展的版本。 WAVEFORMAT 已过时，不受任何版本的 Microsoft Windows 中的 WDM 音频子系统。
+遵循 KSDATAFORMAT 结构的格式信息应[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构或[ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)结构。 WAVEFORMATEXTENSIBLE 是可以描述更广泛的格式比 WAVEFORMATEX WAVEFORMATEX 的扩展的版本。 WAVEFORMATEX 是 pre WDM WAVEFORMAT 结构的扩展的版本。 WAVEFORMAT 已过时，不受任何版本的 Microsoft Windows 中的 WDM 音频子系统。
 
 同样，PCMWAVEFORMAT 结构是的 WAVEFORMAT 已过时，但 WDM 音频子系统为其提供有限的支持的扩展的版本。
 
@@ -171,7 +171,7 @@ WAVEFORMATEXTENSIBLE，在**dwBitsPerSample**容器大小，并**wValidBitsPerSa
 
 随着 WAVEFORMATEXTENSIBLE，注册格式已不再必要。 供应商独立可以将 Guid 分配给其新的格式，根据需要。 (中包含 GUID 的格式**子格式**WAVEFORMATEXTENSIBLE 的成员。)但是，Microsoft 列出了一些更受欢迎的格式中公共标题文件 Ksmedia.h 的 Guid (例如，KSDATAFORMAT\_子类型\_MPEG)。 定义一种新格式的 GUID 之前, 供应商应检查列表 KSDATAFORMAT\_子类型\_*XXX*中 Ksmedia.h 来确定适当的 GUID 是否已定义为特定的常量格式。
 
-当使用 WAVEFORMATEXTENSIBLE，设置**wFormatTag**到批\_格式\_可扩展并**子格式**到相应格式的 GUID。 对于整数 PCM 格式设置**子格式**到 KSDATAFORMAT\_子类型\_PCM。 对于 PCM 格式进行编码以浮点数形式的示例值，设置**子格式**到 KSDATAFORMAT\_子类型\_IEEE\_FLOAT。 对于这些格式之一，设置**cbSize**到**sizeof**(WAVEFORMATEXTENSIBLE)**-sizeof**(WAVEFORMATEX)。 有关使用 WAVEFORMATEXTENSIBLE 描述非 PCM 数据格式的信息，请参阅[支持非 PCM 波形格式](supporting-non-pcm-wave-formats.md)。
+当使用 WAVEFORMATEXTENSIBLE，设置**wFormatTag**到批\_格式\_可扩展并**子格式**到相应格式的 GUID。 对于整数 PCM 格式设置**子格式**到 KSDATAFORMAT\_子类型\_PCM。 对于 PCM 格式进行编码以浮点数形式的示例值，设置**子格式**到 KSDATAFORMAT\_子类型\_IEEE\_FLOAT。 对于这些格式之一，设置**cbSize**到**sizeof**(WAVEFORMATEXTENSIBLE) **-sizeof**(WAVEFORMATEX)。 有关使用 WAVEFORMATEXTENSIBLE 描述非 PCM 数据格式的信息，请参阅[支持非 PCM 波形格式](supporting-non-pcm-wave-formats.md)。
 
  
 

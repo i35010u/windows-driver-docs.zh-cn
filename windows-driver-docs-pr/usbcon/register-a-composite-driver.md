@@ -3,12 +3,12 @@ Description: 如何 USB 多功能设备，称为复合驱动程序，注册和�
 title: 如何注册的复合设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e092c6de69302762c0caec881974a95038bd4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0351a0869e3cb6d9ecc2b869f69929b735df4339
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378846"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368799"
 ---
 # <a name="how-to-register-a-composite-device"></a>如何注册的复合设备
 
@@ -24,15 +24,15 @@ USB 3.0 规范定义了*函数挂起和远程唤醒功能*，使各个函数进�
 -   通知基础的 USB 驱动程序堆栈，该驱动程序是负责发送请求以 arm 远程唤醒的函数。 远程唤醒请求被通过 USB 驱动程序堆栈，可将必要的协议请求发送到设备。
 -   获取通过 USB 驱动程序堆栈分配的函数的句柄 （一个每个函数） 的列表。 复合驱动程序然后可以使用中的驱动程序函数的句柄请求的函数与句柄关联的远程唤醒。
 
-通常情况下复合驱动程序发送注册请求中的驱动程序 AddDevice 或启动设备例程来处理[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749). 因此，复合的驱动程序释放的资源，如停止设备的驱动程序的卸载例程中注册为分配 ([**IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)) 或删除设备例程 ([**IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738))。
+通常情况下复合驱动程序发送注册请求中的驱动程序 AddDevice 或启动设备例程来处理[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device). 因此，复合的驱动程序释放的资源，如停止设备的驱动程序的卸载例程中注册为分配 ([**IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)) 或删除设备例程 ([**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device))。
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>先决条件
 
 在发送前注册请求，请确保：
 
 -   必须在设备中的函数数目。 数字可以派生 get 配置请求来检索的描述符。
--   获取以前调用的 USBD 句柄[ **USBD\_CreateHandle**](https://msdn.microsoft.com/library/windows/hardware/hh406241)。
--   基础的 USB 驱动程序堆栈支持 USB 3.0 设备。 若要执行此操作，调用[ **USBD\_IsInterfaceVersionSupported** ](https://msdn.microsoft.com/library/windows/hardware/hh406233) ，并将传递 USBD\_接口\_版本\_602 作为要检查的版本。
+-   获取以前调用的 USBD 句柄[ **USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)。
+-   基础的 USB 驱动程序堆栈支持 USB 3.0 设备。 若要执行此操作，调用[ **USBD\_IsInterfaceVersionSupported** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isinterfaceversionsupported) ，并将传递 USBD\_接口\_版本\_602 作为要检查的版本。
 
 有关代码示例，请参阅[实现函数挂起复合驱动程序中如何](how-to--implement-remote-and-function-wake-support.md)。
 说明
@@ -42,17 +42,17 @@ USB 3.0 规范定义了*函数挂起和远程唤醒功能*，使各个函数进�
 
 以下过程描述应如何生成和发送注册请求以复合驱动程序相关联的 USB 驱动程序堆栈。
 
-1.  分配[**复合\_设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/hh450801)结构，并将其初始化通过调用[**复合\_设备\_功能\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/hh450803)宏。
-2.  设置**CapabilityFunctionSuspend**的成员[**复合\_设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/hh450801)为 1。
-3.  分配[**注册\_复合\_设备**](https://msdn.microsoft.com/library/windows/hardware/hh450898)结构，并通过调用初始化结构[ **USBD\_BuildRegisterCompositeDevice** ](https://msdn.microsoft.com/library/windows/hardware/hh406229)例程。 在调用中，指定 USBD 句柄，初始化[**复合\_设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/hh450801)结构和功能的数量。
-4.  分配到 I/O 请求数据包 (IRP) 通过调用[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)并获得到 IRP 的第一个堆栈位置的指针 ([**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)) 通过调用[ **IoGetNextIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549266)。
+1.  分配[**复合\_设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_composite_device_capabilities)结构，并将其初始化通过调用[**复合\_设备\_功能\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-composite_device_capabilities_init)宏。
+2.  设置**CapabilityFunctionSuspend**的成员[**复合\_设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_composite_device_capabilities)为 1。
+3.  分配[**注册\_复合\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_register_composite_device)结构，并通过调用初始化结构[ **USBD\_BuildRegisterCompositeDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_buildregistercompositedevice)例程。 在调用中，指定 USBD 句柄，初始化[**复合\_设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_composite_device_capabilities)结构和功能的数量。
+4.  分配到 I/O 请求数据包 (IRP) 通过调用[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)并获得到 IRP 的第一个堆栈位置的指针 ([**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)) 通过调用[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)。
 5.  为大到足以保留函数句柄数组的缓冲区分配内存 (USBD\_函数\_处理)。 数组中的元素数必须为 PDOs 数。
-6.  通过设置以下成员的生成请求[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659):
-    -   通过设置指定的请求的类型**Parameters.DeviceIoControl.IoControlCode**到[ **IOCTL\_内部\_USB\_注册\_复合\_设备**](https://msdn.microsoft.com/library/windows/hardware/hh450854)。
-    -   通过设置指定的输入的参数**Parameters.Others.Argument1**到的地址初始化[**注册\_复合\_设备**](https://msdn.microsoft.com/library/windows/hardware/hh450898)结构。
+6.  通过设置以下成员的生成请求[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location):
+    -   通过设置指定的请求的类型**Parameters.DeviceIoControl.IoControlCode**到[ **IOCTL\_内部\_USB\_注册\_复合\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device)。
+    -   通过设置指定的输入的参数**Parameters.Others.Argument1**到的地址初始化[**注册\_复合\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_register_composite_device)结构。
     -   通过设置来指定输出参数**AssociatedIrp.SystemBuffer**到在步骤 5 中分配的缓冲区。
 
-7.  调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)将请求发送通过将 IRP 传递到下一步的堆栈位置。
+7.  调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)将请求发送通过将 IRP 传递到下一步的堆栈位置。
 
 完成后，检查返回的 USB 驱动程序堆栈的函数的句柄数组。 可以将数组存储在驱动程序的设备上下文以供将来使用。
 
@@ -145,11 +145,11 @@ End:
 
 ### <a name="unregister-the-composite-device"></a>注销在复合设备
 
-1.  通过调用分配 IRP [ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)并获得到 IRP 的第一个堆栈位置的指针 ([**IO\_堆栈\_位置** ](https://msdn.microsoft.com/library/windows/hardware/ff550659)) 通过调用[ **IoGetNextIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549266)。
-2.  通过设置生成请求**Parameters.DeviceIoControl.IoControlCode**的成员[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)到[ **IOCTL\_内部\_USB\_注销\_复合\_设备**](https://msdn.microsoft.com/library/windows/hardware/hh450855)。
-3.  调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)将请求发送通过将 IRP 传递到下一步的堆栈位置。
+1.  通过调用分配 IRP [ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)并获得到 IRP 的第一个堆栈位置的指针 ([**IO\_堆栈\_位置** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)) 通过调用[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)。
+2.  通过设置生成请求**Parameters.DeviceIoControl.IoControlCode**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)到[ **IOCTL\_内部\_USB\_注销\_复合\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)。
+3.  调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)将请求发送通过将 IRP 传递到下一步的堆栈位置。
 
-[ **IOCTL\_内部\_USB\_注销\_复合\_设备**](https://msdn.microsoft.com/library/windows/hardware/hh450855)请求中的复合驱动程序通过发送一次删除设备例程的上下文。 请求的目的是删除 USB 驱动程序堆栈和复合的驱动程序和其枚举的函数之间的关联。 请求还可清除创建维护该关联的任何资源和以前的注册请求中返回的所有函数句柄。
+[ **IOCTL\_内部\_USB\_注销\_复合\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)请求中的复合驱动程序通过发送一次删除设备例程的上下文。 请求的目的是删除 USB 驱动程序堆栈和复合的驱动程序和其枚举的函数之间的关联。 请求还可清除创建维护该关联的任何资源和以前的注册请求中返回的所有函数句柄。
 
 下面的代码示例演示如何生成和发送请求以取消注册复合设备。 该示例假定，复合的驱动程序以前注册的注册请求通过本主题中前面所述。
 
@@ -192,8 +192,8 @@ VOID  UnregisterCompositeDriver(
 ```
 
 ## <a name="related-topics"></a>相关主题
-[**IOCTL\_INTERNAL\_USB\_REGISTER\_COMPOSITE\_DEVICE**](https://msdn.microsoft.com/library/windows/hardware/hh450854)  
-[**IOCTL\_INTERNAL\_USB\_UNREGISTER\_COMPOSITE\_DEVICE**](https://msdn.microsoft.com/library/windows/hardware/hh450855)  
+[**IOCTL\_INTERNAL\_USB\_REGISTER\_COMPOSITE\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device)  
+[**IOCTL\_INTERNAL\_USB\_UNREGISTER\_COMPOSITE\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_unregister_composite_device)  
 
 
 

@@ -4,17 +4,17 @@ description: 此函数返回此接口版本所支持的函数。
 ms.assetid: AFF735D7-BB3F-4532-8BF4-F616C081921C
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2fa2cd7b3d30d556153f98e27e31e4f82d950314
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a160821f8b3b4bba5ab1c0e886f461ebe5edc724
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368959"
 ---
 # <a name="query-implemented-functions-function-index-0"></a>查询实现的功能（功能索引 0）
 
 
-此函数返回此接口版本所支持的函数。 函数的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关函数 0 的定义，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"中[ACPI 6.0 规范](https://www.uefi.org/specifications)。
+此函数返回此接口版本所支持的函数。 函数的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关函数 0 的定义，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"中[ACPI 6.0 规范](https://uefi.org/specifications)。
 
 ## <a name="arguments-arg-3"></a>自变量 (ARG 3)
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f01c98646698cc5b49881e5903b8d4a2960cdc35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59e8dd80d5a4945e1aa86a3bf3e3f7ccd902a377
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361583"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367543"
 ---
 # <a name="bug-check-0x20001-hypervisorerror"></a>Bug 检查 0x20001：虚拟机监控程序\_错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361583"
 虚拟机监控程序\_错误 bug 检查的值为 0x00020001。 这表示虚拟机监控程序遇到致命错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 ## <a name="hypervisorerror-parameters"></a>虚拟机监控程序\_错误参数
 

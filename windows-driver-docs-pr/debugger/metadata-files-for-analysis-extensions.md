@@ -4,12 +4,12 @@ description: 当您编写的分析扩展插件时，还可以编写描述所需�
 ms.assetid: 13B9B7A5-1D68-49A3-825B-454AC070FCC1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f859a93a32304c8fc75c3ebf4f101297fa515da0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1544f26c71207c0e25d294ee2d8b1d645cd999a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366473"
 ---
 # <a name="metadata-files-for-analysis-extension-plug-ins"></a>分析扩展插件的元数据文件
 
@@ -77,7 +77,7 @@ ExceptionCode   0xC0000005
 ExecutableName  MyApp.exe
 ```
 
-调试工具的 Windows 中有一个示例可用来生成一个名为 dbgexts.dll 的调试器扩展模块。 此扩展模块实现多个调试器扩展命令，但它也可以用作分析扩展插件;也就是说，它将导出[  **\_EFN\_分析**](https://msdn.microsoft.com/library/windows/hardware/jj983432)函数。 下面是描述 dbgexts.dll 作为分析扩展插件的元数据文件。
+调试工具的 Windows 中有一个示例可用来生成一个名为 dbgexts.dll 的调试器扩展模块。 此扩展模块实现多个调试器扩展命令，但它也可以用作分析扩展插件;也就是说，它将导出[  **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nc-extsfns-ext_analysis_plugin)函数。 下面是描述 dbgexts.dll 作为分析扩展插件的元数据文件。
 
 ```text
 PluginId         PluginSample
@@ -98,9 +98,9 @@ help text from plug-in analysis}
 
 [分析扩展插件写入扩展 ！ 分析](writing-an-analysis-extension-to-extend--analyze.md)
 
-[**\_EFN\_分析**](https://msdn.microsoft.com/library/windows/hardware/jj983432)
+[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nc-extsfns-ext_analysis_plugin)
 
-[**!analyze**](-analyze.md)
+[ **!analyze**](-analyze.md)
 
  
 

@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b14a63a64fde54a1139652850f70dceb861b67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6de3951916319eb4afbeb8a2166bc9a38f2f27a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367005"
 ---
 # <a name="debugfilterxxx"></a>DEBUG\_FILTER\_XXX
 
@@ -37,7 +37,7 @@ ms.locfileid: "63355376"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">Event</th>
 </tr>
 </thead>
@@ -98,7 +98,7 @@ ms.locfileid: "63355376"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -144,7 +144,7 @@ ms.locfileid: "63355376"
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_FILTER_GO_HANDLED</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556279#wdkgloss-exception" data-raw-source="&lt;em&gt;exception&lt;/em&gt;"><em>异常</em></a>已得到处理。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-exception" data-raw-source="&lt;em&gt;exception&lt;/em&gt;"><em>异常</em></a>已得到处理。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_FILTER_GO_NOT_HANDLED</p></td>

@@ -5,12 +5,12 @@ ms.assetid: 5c93ffe0-8067-4022-ba8e-e528e44692e6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PIN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 42e58929faa293234ef314b713186a3b3eea820a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae2046e885bfd0cb1b013db10fae9f58a81ceff3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360771"
 ---
 # <a name="oidwwanpin"></a>OID\_WWAN\_PIN
 
@@ -19,14 +19,14 @@ OID\_WWAN\_PIN 设置或返回与个人标识号 (Pin) 相关的信息。
 
 微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_PIN\_信息**](ndis-status-wwan-pin-info.md)状态通知时他们已完成的集或查询请求。
 
-微型端口驱动程序应发送[ **NDIS\_状态\_WWAN\_PIN\_信息**](ndis-status-wwan-pin-info.md)状态通知包含[ **NDIS\_WWAN\_PIN\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567911)结构返回固定类型和 PIN 输入状态的信息，主要用于指示是否需要 PIN 来解锁的 MB 设备或订阅服务器识别模块 （SIM 卡） 完成查询请求时。
+微型端口驱动程序应发送[ **NDIS\_状态\_WWAN\_PIN\_信息**](ndis-status-wwan-pin-info.md)状态通知包含[ **NDIS\_WWAN\_PIN\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)结构返回固定类型和 PIN 输入状态的信息，主要用于指示是否需要 PIN 来解锁的 MB 设备或订阅服务器识别模块 （SIM 卡） 完成查询请求时。
 
-调用方请求设置 Pin 与相关的信息提供[ **NDIS\_WWAN\_设置\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff567922)微型端口驱动程序将发送到 MB 设备的 PIN 的结构启用或禁用 PIN 设置或更改在 sim 卡 PIN。
+调用方请求设置 Pin 与相关的信息提供[ **NDIS\_WWAN\_设置\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin)微型端口驱动程序将发送到 MB 设备的 PIN 的结构启用或禁用 PIN 设置或更改在 sim 卡 PIN。
 
 <a name="remarks"></a>备注
 -------
 
-请参阅[WWAN Pin 操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)有关使用此 OID 的详细信息。
+请参阅[WWAN Pin 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)有关使用此 OID 的详细信息。
 
 Windows 7 微型端口驱动程序应使用 OID\_WWAN\_PIN。 Windows 8 微型端口驱动程序应使用[OID\_WWAN\_PIN\_EX](oid-wwan-pin-ex.md)。
 
@@ -69,13 +69,13 @@ MB API 支持除了 PIN1 其他 Pin。 但是，第三方连接管理器/GUI 将
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_PIN\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff567911)
+[**NDIS\_WWAN\_PIN\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)
 
-[**NDIS\_WWAN\_SET\_PIN**](https://msdn.microsoft.com/library/windows/hardware/ff567922)
+[**NDIS\_WWAN\_SET\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin)
 
 [**NDIS\_状态\_WWAN\_PIN\_信息**](ndis-status-wwan-pin-info.md)
 
-[WWAN 固定操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)
+[WWAN 固定操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)
 
  
 

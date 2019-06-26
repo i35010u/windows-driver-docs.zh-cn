@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d9896a368c1369327762f48d5dfeefb3de69e91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e54c51edff5593b048ca03d33fa92d23c478e6bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346357"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363067"
 ---
 # <a name="wmitracelogdump"></a>!wmitrace.logdump
 
@@ -74,7 +74,7 @@ Windows 软件跟踪预处理器 (WPP) 软件在跟踪过程中，跟踪会话�
 
 此扩展是类似于[ **！ wmitrace.eventlogdump** ](-wmitrace-eventlogdump.md)扩展，不同之处在于的输出 **！ wmitrace.logdump** WPP 样式，和输出格式 **！ wmitrace.eventlogdump**格式化为事件日志样式。 应选择其格式是适用于想要显示的数据的扩展。
 
-有关如何查看 UMDF 跟踪日志的信息，请参阅[基于 UMDF 驱动程序中使用 WPP 软件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff561391#viewing-the-umdf-trace-log)。
+有关如何查看 UMDF 跟踪日志的信息，请参阅[基于 UMDF 驱动程序中使用 WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-umdf-drivers#viewing-the-umdf-trace-log)。
 
  
 

@@ -12,12 +12,12 @@ keywords:
 - EventCategoryHardwareProfileChange 通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 643420c426f8dd9b439312306cdefbe1e7da3c32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a30ae03c7bc62f3f6b1334fb247de09f6e443fef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362931"
 ---
 # <a name="pnp-notification-overview"></a>PnP 通知概述
 
@@ -37,7 +37,7 @@ PnP 管理器提供了一种机制，用于驱动程序和应用程序在发生�
     <a href="" id="guid-device-interface-removal"></a>GUID\_DEVICE\_INTERFACE\_REMOVAL  
     指示已禁用了指定的类的设备接口。
 
-    请参阅[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)和相关的例程的有关设备接口的详细信息。
+    请参阅[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)和相关的例程的有关设备接口的详细信息。
 
 -   **EventCategoryTargetDeviceChange**
 
@@ -74,13 +74,13 @@ PnP 管理器提供了一种机制，用于驱动程序和应用程序在发生�
 
 即插即用通知，如下所示适用于内核模式组件：
 
-1.  驱动程序通过调用注册的事件类别的通知[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)。
+1.  驱动程序通过调用注册的事件类别的通知[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。
 
     即插即用通知回调例程将保持已注册，直到该驱动程序显式删除的注册。
 
 2.  PnP 管理器中的已注册的类别的事件发生时调用驱动程序的回调例程。
 
-3.  该驱动程序通过调用来消除回调注册[ **IoUnregisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff550398)。
+3.  该驱动程序通过调用来消除回调注册[ **IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)。
 
 不，驱动程序必须生成同步事件，或者等待要关闭的处理过程中出现的异步事件。
 

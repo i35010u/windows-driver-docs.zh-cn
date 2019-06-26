@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1702af363ee3049d518b5d08a172abe5efed48ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cba9798c3cb5c97a4d0cb4f892c57b46ab0f05ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358164"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362315"
 ---
 # <a name="bug-check-0x119-videoschedulerinternalerror"></a>Bug 检查 0x119：VIDEO\_SCHEDULER\_INTERNAL\_ERROR
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358164"
 视频\_计划程序\_内部\_错误 bug 检查的值为 0x00000119。 这表示视频的计划程序已检测到严重冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="videoschedulerinternalerror-parameters"></a>视频\_计划程序\_内部\_错误参数

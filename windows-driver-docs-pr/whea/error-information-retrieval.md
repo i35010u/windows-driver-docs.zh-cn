@@ -12,12 +12,12 @@ keywords:
 - 错误的信息检索 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 143d8296c23015bbc52052dcdf88c2d124dd1a06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd5da300f2fadbd1a816611097abd5d6ccc9283e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354457"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368007"
 ---
 # <a name="error-information-retrieval"></a>错误信息检索
 
@@ -33,7 +33,7 @@ ms.locfileid: "63354457"
 PSHED 支持错误情况，报告的标准错误源 PSHED 发现错误的信息检索的操作。 如果参与实现插件 PSHED[错误源发现](error-source-discovery.md)和其他错误源到操作系统 PSHED 不支持，插件 PSHED 必须也参与错误信息的报表检索以支持为这些错误源的错误信息检索操作。 PSHED 插件可以选择性地参与错误信息检索提供的标准错误源报告的错误情况的其他错误信息。
 
 **请注意**   PSHED 插件参与错误信息检索必须也参与[错误源发现](error-source-discovery.md)如果属于以下任一种情况：
--   PSHED 插件提供了到特定的错误源报告的硬件错误数据包的其他错误信息。 在这种情况下，插件 PSHED 必须修改中包含的值**MaxRawDataLength**的成员[ **WHEA\_错误\_源\_描述符** ](https://msdn.microsoft.com/library/windows/hardware/ff560505)错误源发现的其他错误信息期间该错误源的结构。
+-   PSHED 插件提供了到特定的错误源报告的硬件错误数据包的其他错误信息。 在这种情况下，插件 PSHED 必须修改中包含的值**MaxRawDataLength**的成员[ **WHEA\_错误\_源\_描述符** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)错误源发现的其他错误信息期间该错误源的结构。
 
 -   PSHED 插件提供其他错误的错误记录到记录部分有硬件错误报告受特定错误的来源。 在这种情况下，插件 PSHED 必须修改中包含的值**MaxSectionsPerRecord** WHEA 成员\_错误\_源\_描述符结构的该错误源错误源发现，以便获得更多错误记录部分。
 

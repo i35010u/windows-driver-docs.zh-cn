@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c237214b880e6a9d10dcfb5da8ffeb8c587ea9eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89ad63af61996c2aa22e462ce33d48f1eb5e2abe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342867"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368925"
 ---
 # <a name="removelink-function"></a>RemoveLink 函数
 
@@ -39,7 +39,7 @@ void RemoveLink(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **RemoveLink\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff563987)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **RemoveLink\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removelink_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -74,7 +74,7 @@ void RemoveLink(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemoveLink\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff563987)
+[**RemoveLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removelink_out)
 
  
 

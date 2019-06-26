@@ -9,12 +9,12 @@ keywords:
 - Dmu 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c703e8dba133d2b12eb5a54daf5a3d17ec11e25d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cca1a14a339fa2fcb0eadceb587140a67218c64e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333757"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360111"
 ---
 # <a name="dmus-miniport-driver"></a>DMus 微型端口驱动程序
 
@@ -30,53 +30,53 @@ MIDI 硬件设备的 Dmu 微型端口驱动程序应支持两个接口：
 
 -   流接口管理 MIDI 流，并会公开大部分的微型端口驱动程序的功能。
 
-微型端口接口[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)，继承中的方法[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)接口。 **IMiniportDMus**提供了以下其他方法：
+微型端口接口[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)，继承中的方法[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)接口。 **IMiniportDMus**提供了以下其他方法：
 
-[**IMiniportDMus::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536700)
+[**IMiniportDMus::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-init)
 
 初始化微型端口对象。
 
-[**IMiniportDMus::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536701)
+[**IMiniportDMus::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)
 
 创建新的流对象。
 
-[**IMiniportDMus::Service**](https://msdn.microsoft.com/library/windows/hardware/ff536702)
+[**IMiniportDMus::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-service)
 
 通知服务的请求的微型端口驱动程序。
 
-流接口[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)，继承中的方法**IUnknown**接口。 **IMXF**提供了以下其他方法：
+流接口[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)，继承中的方法**IUnknown**接口。 **IMXF**提供了以下其他方法：
 
-[**IMXF::ConnectOutput**](https://msdn.microsoft.com/library/windows/hardware/ff536785)
+[**IMXF::ConnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-connectoutput)
 
 连接到为数据源，此流对象**IMXF**的另一个流对象，它是数据接收器的接口。
 
-[**IMXF::DisconnectOutput**](https://msdn.microsoft.com/library/windows/hardware/ff536787)
+[**IMXF::DisconnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-disconnectoutput)
 
 断开此流对象从**IMXF**另一个是数据接收器的流对象的接口。
 
-[**IMXF::PutMessage**](https://msdn.microsoft.com/library/windows/hardware/ff536791)
+[**IMXF::PutMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage)
 
-Pass [ **DMU\_内核\_事件**](https://msdn.microsoft.com/library/windows/hardware/ff536340)数据接收器的结构。
+Pass [ **DMU\_内核\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event)数据接收器的结构。
 
-[**IMXF::SetState**](https://msdn.microsoft.com/library/windows/hardware/ff536792)
+[**IMXF::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-setstate)
 
 设置流的状态。
 
-另外，Dmu 微型端口驱动程序[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)接口提供的软件合成器 DLS 功能。 **ISynthSinkDMus**继承基接口中的方法**IMXF**。 **ISynthSinkDMus**提供了以下其他方法：
+另外，Dmu 微型端口驱动程序[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)接口提供的软件合成器 DLS 功能。 **ISynthSinkDMus**继承基接口中的方法**IMXF**。 **ISynthSinkDMus**提供了以下其他方法：
 
-[**ISynthSinkDMus::RefTimeToSample**](https://msdn.microsoft.com/library/windows/hardware/ff537013)
+[**ISynthSinkDMus::RefTimeToSample**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-reftimetosample)
 
 将引用时间转换为示例时间。
 
-[**ISynthSinkDMus::Render**](https://msdn.microsoft.com/library/windows/hardware/ff537015)
+[**ISynthSinkDMus::Render**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-render)
 
 将批数据呈现到批接收器的缓冲区。
 
-[**ISynthSinkDMus::SampleToRefTime**](https://msdn.microsoft.com/library/windows/hardware/ff537018)
+[**ISynthSinkDMus::SampleToRefTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-sampletoreftime)
 
 将示例时间转换为引用时间。
 
-[**ISynthSinkDMus::SyncToMaster**](https://msdn.microsoft.com/library/windows/hardware/ff537019)
+[**ISynthSinkDMus::SyncToMaster**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-synctomaster)
 
 将同步到 master 时钟示例时钟。
 
@@ -84,13 +84,13 @@ Pass [ **DMU\_内核\_事件**](https://msdn.microsoft.com/library/windows/hardw
 
 微型端口驱动程序 Dmu 端口驱动程序上调用以下接口：
 
-[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
 
-[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IMasterClock](https://msdn.microsoft.com/library/windows/hardware/ff536696)
+[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)
 
-PortCls 包含 UART 函数具有的 MIDI 设备的内置 Dmu 微型端口驱动程序。 有关详细信息，请参阅[ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)。
+PortCls 包含 UART 函数具有的 MIDI 设备的内置 Dmu 微型端口驱动程序。 有关详细信息，请参阅[ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)。
 
  
 

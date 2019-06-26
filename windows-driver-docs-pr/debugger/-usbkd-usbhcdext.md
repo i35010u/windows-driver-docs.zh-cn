@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dc5f93ee042ce918f3f5f7305a0176d4678ed69e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a11aa0dfc6432e1367e446a3328a8ab28a7d8f09
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362437"
 ---
 # <a name="usbkdusbhcdext"></a>!usbkd.usbhcdext
 
 
-[ **！ Usbkd.usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)命令显示从 USB 主控制器或 USB 根集线器的设备扩展的信息。
+[ **！ Usbkd.usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)命令显示从 USB 主控制器或 USB 根集线器的设备扩展的信息。
 
 ```dbgcmd
 !usbkd.usbhcdext DeviceExtension
@@ -58,7 +58,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 
 在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
 
-现在将传递到设备扩展的地址[ **！ usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)命令。
+现在将传递到设备扩展的地址[ **！ usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -114,7 +114,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 
 在上面的输出，您可以看到的是 PDO 根中心的设备扩展的地址是`ffffe0000213c1a0`。
 
-现在将传递到设备扩展的地址[ **！ usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)命令。
+现在将传递到设备扩展的地址[ **！ usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe0000213c1a0

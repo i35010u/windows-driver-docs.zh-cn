@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea628704feacbb584d83a36bd7355cf1587fe2cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 433e1555f5d947c15c433d6a22c1ee1b44163a2a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327978"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362427"
 ---
 # <a name="usbkdusbtt"></a>!usbkd.usbtt
 
@@ -53,7 +53,7 @@ Usbkd.dll
 
 在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
 
-单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)若要获取的地址`GlobalTtListHead`。 传递到该地址[ **！ usbkd.usblist**](-usbkd-usblist.md)，随后会显示的地址 **\_事务\_转换器**结构。
+单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)若要获取的地址`GlobalTtListHead`。 传递到该地址[ **！ usbkd.usblist**](-usbkd-usblist.md)，随后会显示的地址 **\_事务\_转换器**结构。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 

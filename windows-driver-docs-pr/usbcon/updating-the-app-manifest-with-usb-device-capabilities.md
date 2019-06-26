@@ -3,12 +3,12 @@ Description: 本主题介绍所需的使用 Windows.Devices.Usb 命名空间的 
 title: 如何将 USB 设备功能添加到应用部件清单
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 013695e2f0990172d3a79304f96dda4a9f0db553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3cd0db64cf5fe520efc1fefe5d18853380f7a3b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368762"
 ---
 # <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>如何将 USB 设备功能添加到应用部件清单
 
@@ -18,20 +18,20 @@ ms.locfileid: "63355095"
 -   使用 USB 设备功能，必须更新 Package.appxmanifest。
 -   设备类必须是一个受支持的类。
 
-本主题介绍使用 Windows 应用所需的设备功能[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)命名空间。
+本主题介绍使用 Windows 应用所需的设备功能[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)命名空间。
 
 ## <a name="usb-device-capability-usage"></a>USB 设备功能使用情况
 
 
-USB 应用必须包括在某些设备功能及其[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)指定设备有关的关键信息。 以下是所需的元素层次结构顺序：
+USB 应用必须包括在某些设备功能及其[应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)指定设备有关的关键信息。 以下是所需的元素层次结构顺序：
 
-[**&lt;DeviceCapability&gt;**](https://msdn.microsoft.com/library/windows/apps/br211430):**名称**属性必须为"usb"。
+[ **&lt;DeviceCapability&gt;** ](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability):**名称**属性必须为"usb"。
 
-**&lt;设备&gt;**:**Id**属性必须指定供应商/产品 Id，也可以是"any"，以允许访问的函数类型匹配的任何设备。
+**&lt;设备&gt;** :**Id**属性必须指定供应商/产品 Id，也可以是"any"，以允许访问的函数类型匹配的任何设备。
 
-**&lt;函数&gt;**:**类型**特性可以指定设备类代码、 名称或设备接口的 GUID。
+**&lt;函数&gt;** :**类型**特性可以指定设备类代码、 名称或设备接口的 GUID。
 
-**请注意**  不能修改 Microsoft Visual Studio 2013 中的 USB 设备功能。 您必须右键单击 Package.appxmanifest 文件中的**解决方案资源管理器**，然后选择**打开方式...**，然后**XML （文本） 编辑器**。 在纯 XML 中打开该文件。
+**请注意**  不能修改 Microsoft Visual Studio 2013 中的 USB 设备功能。 您必须右键单击 Package.appxmanifest 文件中的**解决方案资源管理器**，然后选择**打开方式...** ，然后**XML （文本） 编辑器**。 在纯 XML 中打开该文件。
 
  
 

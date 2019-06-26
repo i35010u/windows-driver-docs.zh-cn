@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed1e335fe0c3261e10d10b09d0a66e7eac8ce10a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c8a20751e3a9d55149eab9074961bcc614f4e98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361058"
 ---
 # <a name="kspropertyvpconfigscalefactor"></a>KSPROPERTY\_VPCONFIG\_SCALEFACTOR
 
@@ -54,7 +54,7 @@ KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性设置的视频端口维度对用户定�
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567268" data-raw-source="[&lt;strong&gt;KS_AMVPSIZE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567268)"><strong>KS_AMVPSIZE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpsize" data-raw-source="[&lt;strong&gt;KS_AMVPSIZE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpsize)"><strong>KS_AMVPSIZE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性设置的视频端口维度对用户定�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KS\_AMVPSIZE**](https://msdn.microsoft.com/library/windows/hardware/ff567268)
+[**KS\_AMVPSIZE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpsize)
 
  
 
