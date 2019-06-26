@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADD_PM_PROTOCOL_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1fd1db45482274a5c30993f4e4dd7900e42770d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd47b8cd9f4fc80ae2c6bea40ac4778223b8d08e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331227"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387259"
 ---
 # <a name="oidwdisetaddpmprotocoloffload"></a>OID\_WDI\_SET\_ADD\_PM\_PROTOCOL\_OFFLOAD
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_添加\_PM\_协议\_卸载将添加一个或多个协议的列
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -32,9 +32,9 @@ OID\_WDI\_设置\_添加\_PM\_协议\_卸载将添加一个或多个协议的列
 
 | TLV                                                                                                         | 允许多个 TLV 实例 | 可选 | 描述                            |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------|
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv4ARP**](https://msdn.microsoft.com/library/windows/hardware/dn898035)                |                                | X        | IPv4 ARP 协议卸载参数。  |
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv6NS**](https://msdn.microsoft.com/library/windows/hardware/dn898036)                  |                                | X        | IPv6 NS 协议卸载参数。   |
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY**](https://msdn.microsoft.com/library/windows/hardware/dn898033) |                                | X        | 重新生成密钥 RSN 协议卸载参数。 |
+| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv4ARP**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv4arp)                |                                | X        | IPv4 ARP 协议卸载参数。  |
+| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv6NS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv6ns)                  |                                | X        | IPv6 NS 协议卸载参数。   |
+| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-80211rsn-rekey) |                                | X        | 重新生成密钥 RSN 协议卸载参数。 |
 
  
 

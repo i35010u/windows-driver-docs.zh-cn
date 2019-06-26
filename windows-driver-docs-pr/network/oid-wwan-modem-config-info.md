@@ -6,19 +6,19 @@ ms.date: 08/08/2017
 keywords:
 - 从 Windows Vista 开始 OID_WWAN_MODEM_CONFIG_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee6dbf13c9a69f5a19b50463464ae22e26024df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9771208aa2f23f2fd8920b8c38521668c1c3e4c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376757"
 ---
 # <a name="oidwwanmodemconfiginfo"></a>OID\_WWAN\_调制解调器\_CONFIG\_信息
 
 
 OID\_WWAN\_调制解调器\_CONFIG\_信息检索有关调制解调器配置信息的信息。
 
-MBB 驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[NDIS\_状态\_WWAN\_调制解调器\_CONFIG\_信息](ndis-status-wwan-modem-config-info.md)状态通知包含[ **NDIS\_WWAN\_调制解调器\_配置\_INFO** ](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)结构，其中又包含[ **WWAN\_调制解调器\_配置\_信息**](https://msdn.microsoft.com/library/windows/hardware/14FBFA51-F4A5-417A-8905-241CEA543774)结构，以提供有关调制解调器的配置信息。
+MBB 驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[NDIS\_状态\_WWAN\_调制解调器\_CONFIG\_信息](ndis-status-wwan-modem-config-info.md)状态通知包含[ **NDIS\_WWAN\_调制解调器\_配置\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)结构，其中又包含[ **WWAN\_调制解调器\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_modem_config_info)结构，以提供有关调制解调器的配置信息。
 
 不适用集发出的请求。
 
@@ -52,9 +52,9 @@ MBB 驱动程序可能不具有有效信息尚未从调制解调器在早期的�
 
 [NDIS\_状态\_WWAN\_调制解调器\_配置\_信息](ndis-status-wwan-modem-config-info.md)
 
-[**NDIS\_WWAN\_调制解调器\_CONFIG\_信息**](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)
+[**NDIS\_WWAN\_调制解调器\_CONFIG\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)
 
-[**WWAN\_调制解调器\_CONFIG\_信息**](https://msdn.microsoft.com/library/windows/hardware/14FBFA51-F4A5-417A-8905-241CEA543774)
+[**WWAN\_调制解调器\_CONFIG\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_modem_config_info)
 
 
 

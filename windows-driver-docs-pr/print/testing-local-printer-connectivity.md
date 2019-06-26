@@ -9,12 +9,12 @@ keywords:
 - 连接 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b3869382216cc8c764a204ac4bc2266eeae9a2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee09c95bdd87c445c8778581ca270257289bdd49
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388055"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372350"
 ---
 # <a name="testing-local-printer-connectivity"></a>测试本地打印机连接
 
@@ -31,7 +31,7 @@ ms.locfileid: "63388055"
 
 1.  使用默认设置启用监视 Spoolsv.exe 设置应用程序验证器。 在各种硬件上测试，包括 32 位和 64 位计算机，建议。
 
-2.  使用驱动程序验证程序工具来监视正在使用的任何内核模式驱动程序。 打印机驱动程序，请务必包括 Win32k.sys。 请参阅[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)有关设置你的测试环境以使用该工具的信息。
+2.  使用驱动程序验证程序工具来监视正在使用的任何内核模式驱动程序。 打印机驱动程序，请务必包括 Win32k.sys。 请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)有关设置你的测试环境以使用该工具的信息。
 
 3.  有关电源管理测试，附加设备之前，请确保你的测试环境，支持所有可能的系统电源状态和设备可以输入并从所有状态成功唤醒。
 

@@ -12,20 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bd4980b5b890db28179dab1b6009db07ca24d2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5263ebd8c49dc9ab3351e30cca4512f6fee17352
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394021"
 ---
 # <a name="pcregisteradapterpower-rule-audio"></a>PcRegisterAdapterPower 规则 （音频）
 
 
 PcRegisterAdapterPower 规则指定 PortCls 微型端口驱动程序不应：
 
--   调用[ **PcRegisterAdapterPowerManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff537724)两次而无需对的干预调用[ **PcUnregisterAdapterPowerManagement**](https://msdn.microsoft.com/library/windows/hardware/ff537735)。
--   调用[ **PcUnregisterAdapterPowerManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff537735)而无需调用[ **PcRegisterAdapterPowerManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff537724)第一个。
+-   调用[ **PcRegisterAdapterPowerManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisteradapterpowermanagement)两次而无需对的干预调用[ **PcUnregisterAdapterPowerManagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcunregisteradapterpowermanagement)。
+-   调用[ **PcUnregisterAdapterPowerManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcunregisteradapterpowermanagement)而无需调用[ **PcRegisterAdapterPowerManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisteradapterpowermanagement)第一个。
 
 |              |       |
 |--------------|-------|
@@ -33,7 +33,7 @@ PcRegisterAdapterPower 规则指定 PortCls 微型端口驱动程序不应：
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00071006) |
+| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00071006) |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -52,7 +52,7 @@ PcRegisterAdapterPower 规则指定 PortCls 微型端口驱动程序不应：
 <td align="left"><p>若要验证此规则，请打开命令提示符窗口。 输入驱动程序验证程序命令，并指定<strong>/domain 音频</strong>。</p>
 <p>例如：</p>
 <p><strong>verifier /domain audio</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>
 </table>

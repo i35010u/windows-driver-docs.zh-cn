@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: afe2572d2241d694e64d9ad860a2a5a85c7060b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5375092c38ca70da652fd98d53e45fa8fafb91f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374209"
 ---
 # <a name="scanhardware-xml-element"></a>scanHardware XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
-**ScanHardware** XML 元素为空元素，用于设置**scanHardware**标志为 ON。 将此标志设置为 ON 配置 DPInst 安装[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)插即用 (PnP) 函数驱动程序仅当驱动程序包与匹配的计算机中配置的设备和驱动程序包是一个更适合的比当前安装在设备的驱动程序包的设备。
+**ScanHardware** XML 元素为空元素，用于设置**scanHardware**标志为 ON。 将此标志设置为 ON 配置 DPInst 安装[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)插即用 (PnP) 函数驱动程序仅当驱动程序包与匹配的计算机中配置的设备和驱动程序包是一个更适合的比当前安装在设备的驱动程序包的设备。
 
 ### <a name="element-tag"></a>元素标记
 

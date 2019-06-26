@@ -12,12 +12,12 @@ keywords:
 - UMDF 传感器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1186ad76fdaff67e21e848a074a67d7b4f5af31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 214bae0a5ffe6a2ae46afdb67c98d205ec80ecf2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382313"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363624"
 ---
 # <a name="geolocation-driver-sample-for-windows-81"></a>Windows 8.1 的地理位置驱动程序示例
 
@@ -29,9 +29,9 @@ Windows 8.1 的地理位置示例驱动程序演示了全球定位系统 (GPS) �
 此示例具有三个用途：首先，它演示了 UMDF 传感器驱动程序所需的最小功能。 其次，它提供了其生成有效的驱动程序的主干。 第三，它包括像 GPS 这样的设备提供单选状态更改通知单选管理 API 的支持。
 
 ## <a name="related-topics"></a>相关主题
-[传感器诊断工具](https://msdn.microsoft.com/library/windows/hardware/hh780319)  
+[传感器诊断工具](https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool)  
 [编写位置传感器驱动程序](writing-a-location-sensor-driver.md)  
-[编写传感器设备驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff545927)  
+[编写传感器设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/sensors/writing-a-sensor-device-driver)  
 
 
 

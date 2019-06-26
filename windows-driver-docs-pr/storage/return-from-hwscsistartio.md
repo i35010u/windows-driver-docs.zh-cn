@@ -9,12 +9,12 @@ keywords:
 - 状态值 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8c57e337946cd1fd902b43fee19dfcb74266307
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92d1e5f5901d6d8a0a1840f567b421640fef556e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325291"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386120"
 ---
 # <a name="return-from-hwscsistartio"></a>从 HwScsiStartIo 返回
 
@@ -22,13 +22,13 @@ ms.locfileid: "63325291"
 ## <span id="ddk_return_from_hwscsistartio_kg"></span><span id="DDK_RETURN_FROM_HWSCSISTARTIO_KG"></span>
 
 
-每个[ **HwScsiStartIo** ](https://msdn.microsoft.com/library/windows/hardware/ff557323)例程必须返回**TRUE**，，该值指示输入的请求已处理。
+每个[ **HwScsiStartIo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))例程必须返回**TRUE**，，该值指示输入的请求已处理。
 
 如果*HwScsiStartIo*例程不能执行请求的操作时调用它时， *HwScsiStartIo*应执行以下操作：
 
 1.  设置输入 SRB 的**SrbStatus**到 SRB\_状态\_忙。
 
-2.  调用[ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)与*NotificationType * * * RequestComplete** 和 SRB 中的输入。
+2.  调用[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)与*NotificationType * * * RequestComplete** 和 SRB 中的输入。
 
 3.  调用**ScsiPortNotification**与*NotificationType * * * NextRequest** 如果该驱动程序可以接受的请求到不同目标逻辑单元中的一个比只是完成 SRB。
 

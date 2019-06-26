@@ -7,12 +7,12 @@ keywords:
 - 调试器引擎概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 092f1fad8cc839e4727b0c6f53c8c29b3b0039b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 448b5f81ca0cd5550601b6e05feca0475d6e34c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368125"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361405"
 ---
 # <a name="debugger-engine-overview"></a>调试器引擎概述
 
@@ -51,7 +51,7 @@ ms.locfileid: "63368125"
 
 对于许多概念与调试程序和调试器引擎相关，本文未尚未提供，请查看[调试技术](debugging-techniques.md)此文档的部分。
 
-若要获取的某些调试器引擎 API 的当前未记录的功能，请使用[ **Execute** ](https://msdn.microsoft.com/library/windows/hardware/ff543208)方法以执行单个调试器命令。
+若要获取的某些调试器引擎 API 的当前未记录的功能，请使用[ **Execute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-execute)方法以执行单个调试器命令。
 
  
 

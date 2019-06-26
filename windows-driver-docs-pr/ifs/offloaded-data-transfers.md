@@ -4,12 +4,12 @@ description: 计算机之间或在同一台计算机传输数据是常见的文�
 ms.assetid: 66006CC0-8902-47CD-8E7C-187FE5BA71EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 455c3728e7184f2ecd8093836b27492c5f49cdec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eaa44e190ea34938970806c4c27410e73fdbe0b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352808"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386074"
 ---
 # <a name="offloaded-data-transfers"></a>卸载的数据传输
 
@@ -36,10 +36,10 @@ ms.locfileid: "63352808"
 
 简化的卸载数据传输方法的 Windows 8 中引入了两个新 FSCTLs。 这会转而离开服务器为 bit 以智能方式出现在存储子系统的移动的位移动的负担。 可视化命令语义的最佳方法是将它们视为类似于无缓冲的读取和无缓冲的写入。
 
-<span id="FSCTL_OFFLOAD_READ"></span><span id="fsctl_offload_read"></span>[**FSCTL\_OFFLOAD\_READ**](https://msdn.microsoft.com/library/windows/hardware/hh451101)  
-此控件请求需要执行内要读取的文件和所需的长度中的偏移量[ **FSCTL\_卸载\_读取\_输入**](https://msdn.microsoft.com/library/windows/hardware/hh451104)结构。 如果支持，托管文件的存储子系统接收相关联的卸载读取存储命令，并生成一个令牌，这是用于在读取命令卸载时读取的数据的逻辑表示形式。 此标记的字符串返回给调用方在[ **FSCTL\_卸载\_读取\_输出**](https://msdn.microsoft.com/library/windows/hardware/hh451109)结构。
+<span id="FSCTL_OFFLOAD_READ"></span><span id="fsctl_offload_read"></span>[**FSCTL\_OFFLOAD\_READ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)  
+此控件请求需要执行内要读取的文件和所需的长度中的偏移量[ **FSCTL\_卸载\_读取\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input)结构。 如果支持，托管文件的存储子系统接收相关联的卸载读取存储命令，并生成一个令牌，这是用于在读取命令卸载时读取的数据的逻辑表示形式。 此标记的字符串返回给调用方在[ **FSCTL\_卸载\_读取\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)结构。
 
-<span id="FSCTL_OFFLOAD_WRITE"></span><span id="fsctl_offload_write"></span>[**FSCTL\_OFFLOAD\_WRITE**](https://msdn.microsoft.com/library/windows/hardware/hh451122)  
+<span id="FSCTL_OFFLOAD_WRITE"></span><span id="fsctl_offload_write"></span>[**FSCTL\_OFFLOAD\_WRITE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)  
 此控件请求花费的要写入到的文件、 所需的长度的写入和要写入的数据的逻辑表示形式的令牌内的偏移量。 如果支持，托管要写入的文件的存储子系统将收到相关联的卸载写入存储命令。 它首先尝试识别给定的令牌，并随后会在可能的情况执行写入操作。 写操作完成下 Windows，并且因此文件系统和存储堆栈上的组件不会看到数据移动。 数据移动完成后，写入的字节数返回给调用方。
 
 ![卸载数据传输](images/odx-scenario-2.png)
@@ -52,9 +52,9 @@ ms.locfileid: "63352808"
 
 以下步骤总结了如何复制引擎将尝试卸载的数据传输：
 
-1.  复制引擎问题[ **FSCTL\_卸载\_读取**](https://msdn.microsoft.com/library/windows/hardware/hh451101)上源文件以获取读取的令牌。
+1.  复制引擎问题[ **FSCTL\_卸载\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)上源文件以获取读取的令牌。
 2.  如果检索读取的令牌的过程中出现错误，复制引擎将回退到传统的读取和写入 （传统复制文件的代码路径）。 如果失败指示源卷不支持卸载，复制引擎还会将标记每个过程缓存中的卷。 复制引擎不会尝试卸载再为每个过程缓存中的卷。
-3.  如果成功检索令牌，复制引擎将尝试发出[ **FSCTL\_卸载\_编写**](https://msdn.microsoft.com/library/windows/hardware/hh451122)上是大型的区块，直到所有的数据中的目标文件的命令标记以逻辑方式表示已编写的卸载。
+3.  如果成功检索令牌，复制引擎将尝试发出[ **FSCTL\_卸载\_编写**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)上是大型的区块，直到所有的数据中的目标文件的命令标记以逻辑方式表示已编写的卸载。
 4.  关闭 （其中读取或写入被截断） 结束从其中卸载代码路径中执行卸载的任何错误在读取或写入结果回退到传统的代码路径的读取和写入，复制引擎。 如果失败指示的目标卷不支持卸载，或源卷不能达到的目标量，复制引擎会更新相同的每个进程缓存，因此它不会尝试卸载这些卷上。 将定期重置此每个进程缓存。
 
 以下函数支持卸载的数据传输：
@@ -72,7 +72,7 @@ ms.locfileid: "63352808"
 
 ### <a name="span-idsupportedoffloaddatatransferscenariosspanspan-idsupportedoffloaddatatransferscenariosspanspan-idsupportedoffloaddatatransferscenariosspansupported-offload-data-transfer-scenarios"></a><span id="Supported_Offload_Data_Transfer_Scenarios"></span><span id="supported_offload_data_transfer_scenarios"></span><span id="SUPPORTED_OFFLOAD_DATA_TRANSFER_SCENARIOS"></span>支持的卸载数据传输方案
 
-在 HYPER-V 存储堆栈和 Windows SMB 文件服务器中提供的卸载操作的支持。 在后备物理存储支持 ODX 操作，调用方可以发出[ **FSCTL\_卸载\_读取**](https://msdn.microsoft.com/library/windows/hardware/hh451101)并[ **FSCTL\_卸载\_编写**](https://msdn.microsoft.com/library/windows/hardware/hh451122)到驻留在 Vhd 上或远程文件共享上，文件是从虚拟机中还是在物理硬件上。 下图说明的卸载的数据传输的最基本支持的源和目标。
+在 HYPER-V 存储堆栈和 Windows SMB 文件服务器中提供的卸载操作的支持。 在后备物理存储支持 ODX 操作，调用方可以发出[ **FSCTL\_卸载\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)并[ **FSCTL\_卸载\_编写**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)到驻留在 Vhd 上或远程文件共享上，文件是从虚拟机中还是在物理硬件上。 下图说明的卸载的数据传输的最基本支持的源和目标。
 
 ![卸载数据传输方案](images/odx-scenario-3.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "63352808"
 
 筛选器管理器，从 Windows 8 开始，若要指定为受支持的功能的卸载功能的筛选器。 如果卸载某项操作受支持或不; 统称为可以确定连接到此卷的文件系统筛选器如果不是，操作将失败并返回相应的错误代码。
 
-筛选器必须指示它支持[ **FSCTL\_卸载\_读取**](https://msdn.microsoft.com/library/windows/hardware/hh451101)并[ **FSCTL\_卸载\_编写** ](https://msdn.microsoft.com/library/windows/hardware/hh451122)通过注册表**DWORD**名为值**SupportedFeatures**，它位于驱动程序服务定义的注册表中： HKEY\_本地\_机器\\系统\\CurrentControlSet\\Services\\&lt;筛选器驱动程序名称&gt;\\。 此值包含 bits，确定哪些功能是选择中，并应在筛选器安装过程中设置的位域。
+筛选器必须指示它支持[ **FSCTL\_卸载\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)并[ **FSCTL\_卸载\_编写** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)通过注册表**DWORD**名为值**SupportedFeatures**，它位于驱动程序服务定义的注册表中： HKEY\_本地\_机器\\系统\\CurrentControlSet\\Services\\&lt;筛选器驱动程序名称&gt;\\。 此值包含 bits，确定哪些功能是选择中，并应在筛选器安装过程中设置的位域。
 
 目前的定义的位均为：
 
@@ -115,7 +115,7 @@ ms.locfileid: "63352808"
 
 -   了解新的数据流、 对筛选器和筛选器能够支持这些卸载的操作的影响。
 -   更新筛选器安装程序，以添加 REG\_DWORD 值**SupportedFeatures** hklm\\系统\\CurrentControlSet\\Services\\ \[筛选器\]子项。 初始化，以便指定卸载功能。
--   对于想要对其执行操作的筛选器卸载操作、 更新注册到**IRP\_MJ\_文件\_系统\_控制**来处理[ **FSCTL\_卸载\_读取**](https://msdn.microsoft.com/library/windows/hardware/hh451101)并[ **FSCTL\_卸载\_编写**](https://msdn.microsoft.com/library/windows/hardware/hh451122)。
+-   对于想要对其执行操作的筛选器卸载操作、 更新注册到**IRP\_MJ\_文件\_系统\_控制**来处理[ **FSCTL\_卸载\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)并[ **FSCTL\_卸载\_编写**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)。
 -   阻止卸载的操作所需的筛选器返回状态代码状态\_不\_支持从筛选器中。 不依赖注册表值以强制执行阻止卸载操作，因为最终用户可以更改它。 筛选器应显式允许或禁止卸载操作。
 
 ## <a name="span-idcopytokensspanspan-idcopytokensspanspan-idcopytokensspancopy-tokens"></a><span id="Copy_Tokens"></span><span id="copy_tokens"></span><span id="COPY_TOKENS"></span>复制令牌
@@ -125,13 +125,13 @@ ms.locfileid: "63352808"
 
 有一些标记，表示一种模式是定义完善的数据的类。 最常见的已知令牌是零令牌等效于零。 当令牌被定义为熟知令牌**TokenType**中的成员**存储\_卸载\_令牌**结构将设置为存储\_卸载\_令牌\_类型\_良好\_已知。 当设置此字段时， **WellKnownPattern**成员确定哪种模式的数据标记为。
 
--   当**WellKnownPattern**字段设置为存储\_卸载\_模式\_零个或存储\_卸载\_模式\_零\_与\_保护\_信息，它表示零令牌。 返回此令牌时[ **FSCTL\_卸载\_读取**](https://msdn.microsoft.com/library/windows/hardware/hh451101)操作，它指示包含所需的文件范围内的数据为逻辑上等同于零。 当此令牌提供给[ **FSCTL\_卸载\_编写**](https://msdn.microsoft.com/library/windows/hardware/hh451122)操作，它指示要写入到的文件所需的范围应逻辑上归零。
+-   当**WellKnownPattern**字段设置为存储\_卸载\_模式\_零个或存储\_卸载\_模式\_零\_与\_保护\_信息，它表示零令牌。 返回此令牌时[ **FSCTL\_卸载\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)操作，它指示包含所需的文件范围内的数据为逻辑上等同于零。 当此令牌提供给[ **FSCTL\_卸载\_编写**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write)操作，它指示要写入到的文件所需的范围应逻辑上归零。
 -   非零标记有当前定义的任何其他熟知令牌的模式。 不建议用户定义其自己熟知令牌模式。
 
 ## <a name="span-idtruncationspanspan-idtruncationspanspan-idtruncationspantruncation"></a><span id="Truncation"></span><span id="truncation"></span><span id="TRUNCATION"></span>截断
 
 
-与 Windows 进行通信的基础存储子系统可以处理更少了中的卸载操作所需的数据。 这称为截断。 支持卸载读取，这意味着返回的令牌表示的数据的较小的值，请求的范围。 这将由**TransferLength**中的成员[ **FSCTL\_卸载\_读取\_输出**](https://msdn.microsoft.com/library/windows/hardware/hh451109)结构，它是从要读取的文件的范围开始处的字节数。 对于卸载写截断指示超过了所需编写较少的数据。 这将由**LengthWritten**中的成员[ **FSCTL\_卸载\_编写\_输出**](https://msdn.microsoft.com/library/windows/hardware/hh451130)结构，它是从要写入的文件的范围开始处的字节数。 命令处理或限制中较大的区域，在堆栈中的错误导致截断。
+与 Windows 进行通信的基础存储子系统可以处理更少了中的卸载操作所需的数据。 这称为截断。 支持卸载读取，这意味着返回的令牌表示的数据的较小的值，请求的范围。 这将由**TransferLength**中的成员[ **FSCTL\_卸载\_读取\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)结构，它是从要读取的文件的范围开始处的字节数。 对于卸载写截断指示超过了所需编写较少的数据。 这将由**LengthWritten**中的成员[ **FSCTL\_卸载\_编写\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_output)结构，它是从要写入的文件的范围开始处的字节数。 命令处理或限制中较大的区域，在堆栈中的错误导致截断。
 
 有两种情况下读取或写入 NTFS 截断要进行卸载的范围：
 
@@ -139,7 +139,7 @@ ms.locfileid: "63352808"
 
     ![vdl eof 之前出现](images/odx-vdl-1.png)
 
-    期间[ **FSCTL\_卸载\_读取**](https://msdn.microsoft.com/library/windows/hardware/hh451101)操作，该标志卸载\_读取\_标志\_所有\_零\_超出\_当前\_中设置范围[ **FSCTL\_卸载\_读取\_输出**](https://msdn.microsoft.com/library/windows/hardware/hh451109) ，该值指示结构该文件的剩余部分包含零，并且**TransferLength**成员将被截断为 VDL。
+    期间[ **FSCTL\_卸载\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-read)操作，该标志卸载\_读取\_标志\_所有\_零\_超出\_当前\_中设置范围[ **FSCTL\_卸载\_读取\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output) ，该值指示结构该文件的剩余部分包含零，并且**TransferLength**成员将被截断为 VDL。
 
 2.  类似于方案 1 中，但当 VDL 未对齐到逻辑扇区边界，所需范围由 NTFS 截断为下一个逻辑扇区边界。
 
@@ -153,7 +153,7 @@ ms.locfileid: "63352808"
 -   NTFS 不支持的卸载 FSCTLs 执行使用 Bitlocker 或 NTFS 加密 (EFS)、 执行重复数据删除的文件、 压缩的文件、 驻留的文件、 稀疏文件加密的文件或文件参与 TxF 事务。
 -   NTFS 不支持的卸载 FSCTLs volsnap 快照中的文件执行。
 -   如果所需的文件范围未对齐到源设备上的逻辑扇区大小或所需的文件范围是目标设备上的逻辑扇区大小未对齐，NTFS 将失败卸载 FSCTL。 这遵循非缓存 IO 的语义相同。
--   目标文件必须是预分配 (**SetEndOfFile**而不**SetAllocation**) 之前[ **FSCTL\_卸载\_写**](https://msdn.microsoft.com/library/windows/hardware/hh451122).
+-   目标文件必须是预分配 (**SetEndOfFile**而不**SetAllocation**) 之前[ **FSCTL\_卸载\_写**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-offload-write).
 -   在处理卸载读取和卸载写入时，首先调用 NTFS [ **CcCoherencyFlushAndPurgeCache** ](https://msdn.microsoft.com/library/windows/hardware/ff539032)提交任何修改系统缓存中的数据。 这是相同的语义为非缓存 IO。
 
  

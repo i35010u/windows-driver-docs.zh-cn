@@ -4,39 +4,39 @@ description: 以下的照相机的驱动程序结构是适用于 Windows 10 新�
 ms.assetid: E1C2695B-F3E3-4B16-9552-C79B957A5470
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5cc1a88bef28d447535c9c425b46d8df56d9521
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69ebb67e27d1a18476374c1b60d29aea0d36b09e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357033"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386667"
 ---
 # <a name="camera-driver-structures"></a>照相机的驱动程序结构
 
 
 以下的照相机的驱动程序结构是适用于 Windows 10 新功能。
 
-[**CapturedMetadataExposureCompensation**](https://msdn.microsoft.com/library/windows/hardware/dn897242)
+[**CapturedMetadataExposureCompensation**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagcapturedmetadataexposurecompensation)
 
-[**CapturedMetadataISOGains**](https://msdn.microsoft.com/library/windows/hardware/dn927550)
+[**CapturedMetadataISOGains**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagcapturedmetadataisogains)
 
-[**CapturedMetadataWhiteBalanceGains**](https://msdn.microsoft.com/library/windows/hardware/dn927556)
+[**CapturedMetadataWhiteBalanceGains**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagcapturedmetadatawhitebalancegains)
 
-[**FaceCharacterization**](https://msdn.microsoft.com/library/windows/hardware/dn927642)
+[**FaceCharacterization**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagfacecharacterization)
 
-[**FaceCharacterizationBlobHeader**](https://msdn.microsoft.com/library/windows/hardware/dn927643)
+[**FaceCharacterizationBlobHeader**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagfacecharacterizationblobheader)
 
-[**FaceRectInfo**](https://msdn.microsoft.com/library/windows/hardware/dn927644)
+[**FaceRectInfo**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagfacerectinfo)
 
-[**FaceRectInfoBlobHeader**](https://msdn.microsoft.com/library/windows/hardware/dn927645)
+[**FaceRectInfoBlobHeader**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagfacerectinfoblobheader)
 
-[**HistogramBlobHeader**](https://msdn.microsoft.com/library/windows/hardware/dn927646)
+[**HistogramBlobHeader**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-taghistogramblobheader)
 
-[**HistogramDataHeader**](https://msdn.microsoft.com/library/windows/hardware/dn927647)
+[**HistogramDataHeader**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-taghistogramdataheader)
 
-[**HistogramGrid**](https://msdn.microsoft.com/library/windows/hardware/dn927648)
+[**HistogramGrid**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-taghistogramgrid)
 
-[**HistogramHeader**](https://msdn.microsoft.com/library/windows/hardware/dn927649)
+[**HistogramHeader**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-taghistogramheader)
 
 [**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
@@ -44,69 +44,69 @@ ms.locfileid: "63357033"
 
 [**KSCAMERA\_EXTENDEDPROP\_PHOTOMODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_photomode)
 
-[**KSCAMERA\_EXTENDEDPROP\_PROFILE**](https://msdn.microsoft.com/library/windows/hardware/dn925147)
+[**KSCAMERA\_EXTENDEDPROP\_PROFILE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_kscamera_extendedprop_profile)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPS**](https://msdn.microsoft.com/library/windows/hardware/dn925154)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcaps)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPSHEADER**](https://msdn.microsoft.com/library/windows/hardware/dn925159)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_CONFIGCAPSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_configcapsheader)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_EXPOSURE**](https://msdn.microsoft.com/library/windows/hardware/dn925161)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_EXPOSURE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_exposure)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_FOCUS**](https://msdn.microsoft.com/library/windows/hardware/dn925164)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_FOCUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_focus)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_INFO**](https://msdn.microsoft.com/library/windows/hardware/dn925167)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_info)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROL**](https://msdn.microsoft.com/library/windows/hardware/dn925171)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrol)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROLHEADER**](https://msdn.microsoft.com/library/windows/hardware/dn925175)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_ISPCONTROLHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_ispcontrolheader)
 
-[**KSCAMERA\_EXTENDEDPROP\_ROI\_WHITEBALANCE**](https://msdn.microsoft.com/library/windows/hardware/dn925178)
+[**KSCAMERA\_EXTENDEDPROP\_ROI\_WHITEBALANCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_roi_whitebalance)
 
-[**KSCAMERA\_元数据\_ITEMHEADER**](https://msdn.microsoft.com/library/windows/hardware/dn925184)
+[**KSCAMERA\_元数据\_ITEMHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader)
 
-[**KSCAMERA\_元数据\_PHOTOCONFIRMATION**](https://msdn.microsoft.com/library/windows/hardware/dn925187)
+[**KSCAMERA\_元数据\_PHOTOCONFIRMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation)
 
-[**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**](https://msdn.microsoft.com/library/windows/hardware/dn925190)
+[**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)
 
-[**KSCAMERA\_PERFRAMESETTING\_CAP\_项\_标头**](https://msdn.microsoft.com/library/windows/hardware/dn925193)
+[**KSCAMERA\_PERFRAMESETTING\_CAP\_项\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_item_header)
 
-[**KSCAMERA\_PERFRAMESETTING\_自定义\_项**](https://msdn.microsoft.com/library/windows/hardware/dn925198)
+[**KSCAMERA\_PERFRAMESETTING\_自定义\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_custom_item)
 
-[**KSCAMERA\_PERFRAMESETTING\_FRAME\_HEADER**](https://msdn.microsoft.com/library/windows/hardware/dn925200)
+[**KSCAMERA\_PERFRAMESETTING\_FRAME\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_frame_header)
 
-[**KSCAMERA\_PERFRAMESETTING\_标头**](https://msdn.microsoft.com/library/windows/hardware/dn925204)
+[**KSCAMERA\_PERFRAMESETTING\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_header)
 
-[**KSCAMERA\_PERFRAMESETTING\_ITEM\_HEADER**](https://msdn.microsoft.com/library/windows/hardware/dn925209)
+[**KSCAMERA\_PERFRAMESETTING\_ITEM\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_item_header)
 
-[**KSCAMERA\_配置文件\_CONCURRENCYINFO**](https://msdn.microsoft.com/library/windows/hardware/dn925213)
+[**KSCAMERA\_配置文件\_CONCURRENCYINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_kscamera_profile_concurrencyinfo)
 
-[**KSCAMERA\_配置文件\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn925214)
+[**KSCAMERA\_配置文件\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_kscamera_profile_info)
 
-[**KSCAMERA\_配置文件\_MEDIAINFO**](https://msdn.microsoft.com/library/windows/hardware/dn925217)
+[**KSCAMERA\_配置文件\_MEDIAINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_kscamera_profile_mediainfo)
 
-[**KSCAMERA\_配置文件\_PININFO**](https://msdn.microsoft.com/library/windows/hardware/dn925220)
+[**KSCAMERA\_配置文件\_PININFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_kscamera_profile_pininfo)
 
-[**KSDEVICE\_PROFILE\_INFO**](https://msdn.microsoft.com/library/windows/hardware/dn925223)
+[**KSDEVICE\_PROFILE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksdevice_profile_info)
 
-[**KSDEVICE\_THERMAL\_DISPATCH**](https://msdn.microsoft.com/library/windows/hardware/mt186389)
+[**KSDEVICE\_THERMAL\_DISPATCH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_thermal_dispatch)
 
-[**KSPIN\_MDL\_CACHING\_通知**](https://msdn.microsoft.com/library/windows/hardware/mt186393)
+[**KSPIN\_MDL\_CACHING\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_mdl_caching_notification)
 
-[**KSPIN\_MDL\_CACHING\_NOTIFICATION32**](https://msdn.microsoft.com/library/windows/hardware/mt186394)
+[**KSPIN\_MDL\_CACHING\_NOTIFICATION32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_mdl_caching_notification32)
 
-[**KSPROPERTY\_单步执行\_长**](https://msdn.microsoft.com/library/windows/hardware/dn936838)
+[**KSPROPERTY\_单步执行\_长**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn936838(v=vs.85))
 
-[**KSPROPERTY\_单步执行\_LONGLONG**](https://msdn.microsoft.com/library/windows/hardware/dn936841)
+[**KSPROPERTY\_单步执行\_LONGLONG**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn936841(v=vs.85))
 
-[**KSSTREAM\_元数据\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn936959)
+[**KSSTREAM\_元数据\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_metadata_info)
 
-[**KSSTREAM\_UVC\_METADATA**](https://msdn.microsoft.com/library/windows/hardware/mt186397)
+[**KSSTREAM\_UVC\_METADATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_uvc_metadata)
 
-[**KSSTREAM\_UVC\_METADATATYPE\_TIMESTAMP**](https://msdn.microsoft.com/library/windows/hardware/mt186398)
+[**KSSTREAM\_UVC\_METADATATYPE\_TIMESTAMP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_uvc_metadatatype_timestamp)
 
-[**MetadataTimeStamps**](https://msdn.microsoft.com/library/windows/hardware/dn898736)
+[**MetadataTimeStamps**](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-tagmetadatatimestamps)
 
-[**MF\_MDL\_共享\_负载\_密钥**](https://msdn.microsoft.com/library/windows/hardware/mt186399)
+[**MF\_MDL\_共享\_负载\_密钥**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_mf_mdl_shared_payload_key)
 
  
 

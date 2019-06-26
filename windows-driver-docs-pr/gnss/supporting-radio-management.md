@@ -10,19 +10,19 @@ keywords:
 - 单选管理、 GPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6bc428469d1290065e4669cd86eec6d3073dbbf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cd840a2c99a3518d4ea32c58e133bb011515bfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326179"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363620"
 ---
 # <a name="supporting-radio-management"></a>支持无线电管理
 
 > [!IMPORTANT] 
 > 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。
 
-当用户在其 Windows 8 便携式计算机、 笔记本或平板电脑上的 PC 设置中选择无线选项时，他们可以打开任何连接的无线设备，或关闭。 这些无线设备可能包括 Wi-fi 天线或 GPS 设备。 PC 设置以及给定的无线设备之间的内部链接是[单选管理 API](https://msdn.microsoft.com/library/windows/hardware/hh406615)和相应的单选管理 DLL 对于给定的设备。
+当用户在其 Windows 8 便携式计算机、 笔记本或平板电脑上的 PC 设置中选择无线选项时，他们可以打开任何连接的无线设备，或关闭。 这些无线设备可能包括 Wi-fi 天线或 GPS 设备。 PC 设置以及给定的无线设备之间的内部链接是[单选管理 API](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))和相应的单选管理 DLL 对于给定的设备。
 
 单选管理 API 是一组作为 Windows 驱动程序工具包的一部分提供的 COM/Win32 接口。 这些接口包括方法的：
 

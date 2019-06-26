@@ -4,25 +4,25 @@ description: 如何对驱动程序包进行测试签名
 ms.assetid: 992f0974-0b0e-4c96-ad16-c5894067896c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b93c83d44aa25ac15fef1a4beaa4264aaa80891a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49b82a40cce82c7074f37cb6f73860dedc6d4272
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387031"
 ---
 # <a name="how-to-test-sign-a-driver-package"></a>如何对驱动程序包进行测试签名
 
 
 本部分提供有关的基本步骤的信息，则必须按照时您测试签名[驱动程序包](driver-packages.md)。 
 
-测试签名是指使用测试证书进行签名的预发布版本[驱动程序包](driver-packages.md)以用于测试计算机。 具体而言，这允许开发人员使用自签名的证书，例如签名内核模式二进制文件[ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)工具生成。 此功能允许开发人员要进行测试驱动程序签名验证已启用内核模式在 Windows 上的二进制文件。
+测试签名是指使用测试证书进行签名的预发布版本[驱动程序包](driver-packages.md)以用于测试计算机。 具体而言，这允许开发人员使用自签名的证书，例如签名内核模式二进制文件[ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)工具生成。 此功能允许开发人员要进行测试驱动程序签名验证已启用内核模式在 Windows 上的二进制文件。
 
 Windows 支持仅用于开发和测试目的测试签名的驱动程序。 测试签名的驱动程序不得用于生产目的或发布给客户。
 
 本部分包括主题，描述了这些步骤，并提供示例，如下所示：
 
--   创建测试证书用于签署驱动程序包。 在本部分中的步骤进行了介绍创建和使用一个名为的自签名的测试证书*Contoso.com(Test)*。 在此部分中讨论的许多示例中使用此证书。
+-   创建测试证书用于签署驱动程序包。 在本部分中的步骤进行了介绍创建和使用一个名为的自签名的测试证书*Contoso.com(Test)* 。 在此部分中讨论的许多示例中使用此证书。
 
 -   正在准备[驱动程序包](driver-packages.md)进行测试签名。 这包括创建[编录文件](catalog-files.md)，其中包含的数字签名。
 
@@ -39,7 +39,7 @@ Windows 支持仅用于开发和测试目的测试签名的驱动程序。 测�
 在本部分中，不同的计算机用于测试签名驱动程序所涉及的各种流程。 这些计算机称为，如下所示：
 
 <a href="" id="signing-computer"></a>**签名的计算机**  
-这是用于测试签名驱动程序包适用于 Windows Vista 和更高版本的 Windows 的计算机。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 若要使用[驱动程序签名工具](https://msdn.microsoft.com/library/windows/hardware/ff552958)、 此计算机必须安装 Windows Vista 和更高版本的 Windows Driver Kit (WDK) 安装。
+这是用于测试签名驱动程序包适用于 Windows Vista 和更高版本的 Windows 的计算机。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 若要使用[驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)、 此计算机必须安装 Windows Vista 和更高版本的 Windows Driver Kit (WDK) 安装。
 
 <a href="" id="test-computer"></a>**测试计算机**  
 这是用于安装和测试的测试签名驱动程序包的计算机。 此计算机必须运行 Windows Vista 或更高版本的 Windows。

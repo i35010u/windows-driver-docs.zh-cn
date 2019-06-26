@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d9922ba3eab75edcfab51dcc1ac9203987b45d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b4575a2c0a3aadcf3e00e122f942c0925ff8856
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386222"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368548"
 ---
 # <a name="ndisstatuspacketfilter"></a>NDIS\_状态\_数据包\_筛选器
 
@@ -25,9 +25,9 @@ NDIS 不保证数据包筛选器已更改时 NDIS 生成 NDIS\_状态\_数据包
 
 NDIS 筛选器驱动程序还可以生成 NDIS\_状态\_数据包\_筛选器状态指示。
 
-NDIS 提供中的筛选器类型标志的按位 OR **StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构。 有关筛选器类型标志的列表，请参阅[OID\_代\_当前\_数据包\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569575)OID。 有关数据包筛选器的其他信息，请参阅[OID\_代\_支持\_数据包\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569643)。
+NDIS 提供中的筛选器类型标志的按位 OR **StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构。 有关筛选器类型标志的列表，请参阅[OID\_代\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)OID。 有关数据包筛选器的其他信息，请参阅[OID\_代\_支持\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-packet-filters)。
 
-**StatusBufferSize**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构设置为 sizeof(ULONG)。
+**StatusBufferSize**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构设置为 sizeof(ULONG)。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,11 +52,11 @@ NDIS 提供中的筛选器类型标志的按位 OR **StatusBuffer**的成员[ **
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_GEN\_CURRENT\_PACKET\_FILTER](https://msdn.microsoft.com/library/windows/hardware/ff569575)
+[OID\_GEN\_CURRENT\_PACKET\_FILTER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)
 
-[OID\_GEN\_支持\_数据包\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569643)
+[OID\_GEN\_支持\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-packet-filters)
 
  
 

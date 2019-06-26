@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_IHV 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3ae840719a3548a72662acb49cdd74991787fc82
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c41f1f68bdaa39bc0c2d57d499cbc007767cac73
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387238"
 ---
 # <a name="oidwditaskihv"></a>OID\_WDI\_TASK\_IHV
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_IHV 用于启动 IHV 启动的任务。
 
 | Object | 中止支持                                           | 默认优先级 （主机驱动程序策略）       | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------------|---------------------------------|
-| 端口   | 是。 端口必须保持干净状态后中止。 | 优先级取决于 IHV 请求设置。 | 10                              |
+| Port   | 是。 端口必须保持干净状态后中止。 | 优先级取决于 IHV 请求设置。 | 10                              |
 
  
 
@@ -32,7 +32,7 @@ OID\_WDI\_任务\_IHV 用于启动 IHV 启动的任务。
 
 | TLV                                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_TASK\_DEVICE\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/dn926313) |                                | X        | IHV 组件提供的上下文数据。 这从转发[NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求](ndis-status-wdi-indication-ihv-task-request.md)。 |
+| [**WDI\_TLV\_IHV\_TASK\_DEVICE\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-task-device-context) |                                | X        | IHV 组件提供的上下文数据。 这从转发[NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求](ndis-status-wdi-indication-ihv-task-request.md)。 |
 
  
 

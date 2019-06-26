@@ -11,12 +11,12 @@ keywords:
 - Irp WDK 内核，状态信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e5cc1286d49e4b6b48343b0248f83dc4bd46280
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d64f0b90d6105b0d8f8c6645d7e84492d2599e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364267"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371857"
 ---
 # <a name="io-status-blocks"></a>I/O 状态块
 
@@ -24,9 +24,9 @@ ms.locfileid: "63364267"
 
 
 
-I/O 状态块中，其中包括[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)结构，是属于每个[ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694). I/O 状态块有两个用途：
+I/O 状态块中，其中包括[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)结构，是属于每个[ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp). I/O 状态块有两个用途：
 
--   它提供了更高级别的驱动程序的[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)一种方式，确定服务工作完成 IRP 的例程。
+-   它提供了更高级别的驱动程序的[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)一种方式，确定服务工作完成 IRP 的例程。
 
 -   它提供了有关为什么该服务的工作或不起作用的详细信息。
 

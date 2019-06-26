@@ -4,12 +4,12 @@ description: 文件系统要求
 ms.assetid: 2C363978-3C98-4838-8C55-F804D2C75BEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bec3acad4a88463a2cc1c85cd2cd7f84a41579e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03efaeed2229c80639bd0f1b9b21328486c541a9
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360143"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393092"
 ---
 # <a name="file-system-requirements"></a>文件系统要求
 
@@ -305,15 +305,15 @@ typedef struct _CONTAINER_MAP_RECORD
 <tbody>
 <tr class="odd">
 <td align="left">UserCreateDeleteDirAc</td>
-<td align="left"><p>用户和管理员可以创建文件的目录中通过使用<a href="https://msdn.microsoft.com/library/windows/hardware/dn468711" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468711)"> <strong>CardCreateFile</strong></a>。</p>
-<p>用户和管理员可以删除的目录 （如果不为空），通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/dn468716" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468716)"> <strong>CardDeleteDirectory</strong></a>。</p>
-<p>每个人都可以通过使用列出目录的内容<a href="https://msdn.microsoft.com/library/windows/hardware/dn468721" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468721)"> <strong>CardEnumFiles</strong></a>。</p></td>
+<td align="left"><p>用户和管理员可以创建文件的目录中通过使用<a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))"> <strong>CardCreateFile</strong></a>。</p>
+<p>用户和管理员可以删除的目录 （如果不为空），通过调用<a href="https://docs.microsoft.com/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468716(v=vs.85))"> <strong>CardDeleteDirectory</strong></a>。</p>
+<p>每个人都可以通过使用列出目录的内容<a href="https://docs.microsoft.com/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468721(v=vs.85))"> <strong>CardEnumFiles</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">AdminCreateDeleteDirAc</td>
-<td align="left"><p>管理员可以创建文件的目录中通过使用<a href="https://msdn.microsoft.com/library/windows/hardware/dn468711" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468711)"> <strong>CardCreateFile</strong></a>。</p>
-<p>管理员可以通过删除目录<a href="https://msdn.microsoft.com/library/windows/hardware/dn468716" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468716)"> <strong>CardDeleteDirectory</strong></a>。</p>
-<p>每个人都可以通过使用列出目录的内容<a href="https://msdn.microsoft.com/library/windows/hardware/dn468721" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468721)"> <strong>CardEnumFiles</strong></a>。</p>
+<td align="left"><p>管理员可以创建文件的目录中通过使用<a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))"> <strong>CardCreateFile</strong></a>。</p>
+<p>管理员可以通过删除目录<a href="https://docs.microsoft.com/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468716(v=vs.85))"> <strong>CardDeleteDirectory</strong></a>。</p>
+<p>每个人都可以通过使用列出目录的内容<a href="https://docs.microsoft.com/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468721(v=vs.85))"> <strong>CardEnumFiles</strong></a>。</p>
 <div class="alert">
 <strong>请注意</strong>  此 ACL 是可选的。 它可能会从智能卡微型驱动程序规范的未来版本中删除。
 </div>
@@ -372,7 +372,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
 访问条件是类似于 Acl。 访问的主体可以访问给定的文件和内容的条件控制他们可以执行的操作。 在卡上的每个文件具有访问条件，可以通过主体和其访问权限的列表所述。 如果某一主体或特权未包含在说明中，则假定要对其拒绝。 通常情况下，在卡上强制实施访问条件。
 
-下表列出了可通过访问条件[ **CardCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/dn468711)并将它们映射到适当的访问条件助记键。
+下表列出了可通过访问条件[ **CardCreateFile** ](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))并将它们映射到适当的访问条件助记键。
 
 <table>
 <colgroup>
@@ -395,7 +395,7 @@ typedef struct _CONTAINER_MAP_RECORD
 </tr>
 <tr class="even">
 <td align="left">EveryoneReadUserWriteAc</td>
-<td align="left"><p>这意味着每个人都可以读取该文件或获取文件信息 (<a href="https://msdn.microsoft.com/library/windows/hardware/dn468727" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468727)"><strong>CardReadFile</strong> </a>或<strong>CardGetFileInfo</strong>) 分别，并且用户和管理员可以读取文件，写入该文件，并删除该文件。</p></td>
+<td align="left"><p>这意味着每个人都可以读取该文件或获取文件信息 (<a href="https://docs.microsoft.com/previous-versions/dn468727(v=vs.85)" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468727(v=vs.85))"><strong>CardReadFile</strong> </a>或<strong>CardGetFileInfo</strong>) 分别，并且用户和管理员可以读取文件，写入该文件，并删除该文件。</p></td>
 <td align="left">E(R)，U(RW)，A(RW)</td>
 </tr>
 <tr class="odd">
@@ -405,7 +405,7 @@ typedef struct _CONTAINER_MAP_RECORD
 </tr>
 <tr class="even">
 <td align="left">EveryoneReadAdminWriteAc</td>
-<td align="left"><p>这意味着每个人都可以读取该文件或获取文件信息 (<a href="https://msdn.microsoft.com/library/windows/hardware/dn468727" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468727)"><strong>CardReadFile</strong> </a>或<strong>CardGetFileInfo</strong>) 分别，但是，只有管理员可以编写文件和删除文件。</p></td>
+<td align="left"><p>这意味着每个人都可以读取该文件或获取文件信息 (<a href="https://docs.microsoft.com/previous-versions/dn468727(v=vs.85)" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468727(v=vs.85))"><strong>CardReadFile</strong> </a>或<strong>CardGetFileInfo</strong>) 分别，但是，只有管理员可以编写文件和删除文件。</p></td>
 <td align="left">E(R)，U(R)，A(RW)</td>
 </tr>
 <tr class="odd">
@@ -464,7 +464,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
 ### <a name="span-idnotesonthedirectoryandfileaccessconditionsspanspan-idnotesonthedirectoryandfileaccessconditionsspanspan-idnotesonthedirectoryandfileaccessconditionsspannotes-on-the-directory-and-file-access-conditions"></a><span id="Notes_on_the_Directory_and_File_Access_Conditions"></span><span id="notes_on_the_directory_and_file_access_conditions"></span><span id="NOTES_ON_THE_DIRECTORY_AND_FILE_ACCESS_CONDITIONS"></span>有关目录和文件访问条件的说明
 
--   主体需要的文件的读取访问权限[ **CardGetFileInfo** ](https://msdn.microsoft.com/library/windows/hardware/dn468727)才能成功。
+-   主体需要的文件的读取访问权限[ **CardGetFileInfo** ](https://docs.microsoft.com/previous-versions/dn468727(v=vs.85))才能成功。
 -   没有单独的列表的权限以列出目录的内容。
 -   "创建对目录访问"意味着您在目录中，创建文件的权限而"删除的目录的访问权限"，这意味着删除目录本身的权限。 若要删除的文件，主体卡必须到该文件本身具有写访问权限。
 -   不能通过使用 E(W) 权限创建的目录的智能卡微型驱动程序接口。

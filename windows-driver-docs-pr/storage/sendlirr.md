@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bed3cd3b62d87613231139076d1014cef791e120
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3d5fd4d4f87928abda7e1c91e3bc9a42e8e5c44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383564"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362673"
 ---
 # <a name="sendlirr-function"></a>SendLIRR 函数
 
@@ -47,28 +47,28 @@ void SendLIRR(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendLIRR\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565439)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendLIRR\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)结构。
 
 *SourceWWN*   
-通过其发送 LIRR 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**SourceWWN**的成员[ **SendLIRR\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565435)结构。
+通过其发送 LIRR 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**SourceWWN**的成员[ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)结构。
 
 *DestWWN*   
-目标端口全球通用名称。 此信息传递到中的微型端口驱动程序**DestWWN**的成员[ **SendLIRR\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565435)结构。
+目标端口全球通用名称。 此信息传递到中的微型端口驱动程序**DestWWN**的成员[ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)结构。
 
 *函数*   
-标识哪个注册函数的代码是执行。 这些值可以分配给此成员说明，请参阅 T11 委员会*光纤通道组帧和信号发送*规范。 此信息传递到中的微型端口驱动程序**函数**的成员[ **SendLIRR\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565435)结构。
+标识哪个注册函数的代码是执行。 这些值可以分配给此成员说明，请参阅 T11 委员会*光纤通道组帧和信号发送*规范。 此信息传递到中的微型端口驱动程序**函数**的成员[ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)结构。
 
 *类型*   
-哪些链接请求信息的设备类型。 这些值可以分配给此成员说明，请参阅 T11 委员会*光纤通道组帧和信号发送*规范。 此信息传递到中的微型端口驱动程序**函数**的成员[ **SendLIRR\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565435)结构。
+哪些链接请求信息的设备类型。 这些值可以分配给此成员说明，请参阅 T11 委员会*光纤通道组帧和信号发送*规范。 此信息传递到中的微型端口驱动程序**函数**的成员[ **SendLIRR\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)结构。
 
 *TotalRspBufferSize*   
-以字节为单位的 LIRR 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendLIRR\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565439)结构。
+以字节为单位的 LIRR 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendLIRR\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)结构。
 
 *ActualRspBufferSize*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendLIRR\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565439)结构。
+以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendLIRR\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)结构。
 
 *RspBuffer*   
-LIRR 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendLIRR\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565439)结构。
+LIRR 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendLIRR\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -109,9 +109,9 @@ LIRR 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**�
 
 [HBA\_状态](hba-status.md)
 
-[**SendLIRR\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565435)
+[**SendLIRR\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_in)
 
-[**SendLIRR\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565439)
+[**SendLIRR\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendlirr_out)
 
  
 

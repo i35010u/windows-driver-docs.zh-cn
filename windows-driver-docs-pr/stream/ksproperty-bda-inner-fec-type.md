@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fdd9ed4757f52cbe069c958ef9cea1135d81731
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bd3917e01a4d1a9f4cadc50959f0cd07866fad9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359651"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364853"
 ---
 # <a name="kspropertybdainnerfectype"></a>KSPROPERTY\_BDA\_INNER\_FEC\_TYPE
 
@@ -87,9 +87,9 @@ FECMethod 枚举类型中的返回的值标识 FEC 类型。
 ## <a name="see-also"></a>请参阅
 
 
-[**FECMethod**](https://msdn.microsoft.com/library/windows/hardware/ff559594)
+[**FECMethod**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/fecmethod)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

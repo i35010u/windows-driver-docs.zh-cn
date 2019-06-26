@@ -12,12 +12,12 @@ keywords:
 - Dmu 流式传输的数据格式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8620aca8fe141af1adb0e9a02b73b167e2ca857b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16d8c72c16106d7200a87094cff9fe25eda35030
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363210"
 ---
 # <a name="music-technology-guids"></a>音乐技术 GUID
 
@@ -25,7 +25,7 @@ ms.locfileid: "63332293"
 ## <span id="music_technology_guids"></span><span id="MUSIC_TECHNOLOGY_GUIDS"></span>
 
 
-MIDI 或 Dmu 微型端口驱动程序必须指定每个其插针，都是能够处理的流格式的范围。 如中所述[Pin 工厂](pin-factories.md)，驱动程序的一个或多个数据范围说明符，其中每个是一种结构类型的数组的形式指定此信息[ **KSDATARANGE\_音乐**](https://msdn.microsoft.com/library/windows/hardware/ff537097). 此结构**技术**成员指示哪种类型的合成器技术的 MIDI 或 DirectMusic 设备使用。 微型端口驱动程序可以设置**技术**成员添加到表 （左列） 所示的 GUID 值之一。
+MIDI 或 Dmu 微型端口驱动程序必须指定每个其插针，都是能够处理的流格式的范围。 如中所述[Pin 工厂](pin-factories.md)，驱动程序的一个或多个数据范围说明符，其中每个是一种结构类型的数组的形式指定此信息[ **KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music). 此结构**技术**成员指示哪种类型的合成器技术的 MIDI 或 DirectMusic 设备使用。 微型端口驱动程序可以设置**技术**成员添加到表 （左列） 所示的 GUID 值之一。
 
 <table>
 <colgroup>
@@ -85,7 +85,7 @@ MIDI 或 Dmu 微型端口驱动程序必须指定每个其插针，都是能够�
 
 枚举设备时，使用 Windows 多媒体 midiOut 或 midiIn API 的 MIDI 应用程序可以看到 MIDI pin，但不是 DirectMusic pin。 DirectMusic 应用程序可以看到 MIDI 和 DirectMusic 插针。 MIDI 或 Dmu 微型端口驱动程序通过 pin 的数据范围指向 KSDATAFORMAT 中设置的子类型 GUID 标识 MIDI pin\_子类型\_MIDI。 Dmu 微型端口驱动程序通过将 GUID 的子类型设置为 KSDATAFORMAT 标识 DirectMusic pin\_子类型\_DIRECTMUSIC。 有关 MIDI 和 DirectMusic 插针的数据范围的示例，请参阅[MIDI Stream 数据范围](midi-stream-data-range.md)并[DirectMusic Stream 数据范围](directmusic-stream-data-range.md)。
 
-中所述[MIDI 和 DirectMusic 筛选器](midi-and-directmusic-filters.md)，适配器驱动程序调用[ **PcNewMiniport** ](https://msdn.microsoft.com/library/windows/hardware/ff537714)函数来创建一个系统提供微型端口的实例在 Portcls.sys 驱动程序。 调用方指定一个驱动程序的 Guid 在下表来指定要实例化的微型端口驱动程序。
+中所述[MIDI 和 DirectMusic 筛选器](midi-and-directmusic-filters.md)，适配器驱动程序调用[ **PcNewMiniport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)函数来创建一个系统提供微型端口的实例在 Portcls.sys 驱动程序。 调用方指定一个驱动程序的 Guid 在下表来指定要实例化的微型端口驱动程序。
 
 <table>
 <colgroup>
@@ -132,7 +132,7 @@ MIDI 或 Dmu 微型端口驱动程序必须指定每个其插针，都是能够�
 
 若要使自身可作为默认设备，可以播放原始 MIDI 波表设备应公开本身为波表设备，而不是 MPU 401 设备。 但是，如果适配器驱动程序使用系统提供 MPU 401 微型端口驱动程序，DMusUART，来管理其波表合成器设备，该微型端口驱动程序以静态方式分配技术 GUID KSMUSIC\_技术\_端口连接到其pin。
 
-通过调用[ **IMusicTechnology::SetTechnology** ](https://msdn.microsoft.com/library/windows/hardware/ff536780)方法中，适配器驱动程序可以覆盖微型端口驱动程序的数据区域中的技术的 Guid。 在下面的代码示例中，适配器驱动程序技术 GUID DMusUART 微型端口驱动程序的数据范围中从其默认值更改，KSMUSIC\_技术\_端口的值 KSMUSIC\_技术\_波表。 使用此新设置，类似于 MPU 的波表设备都有资格 midiOut API 作为默认 MIDI 设备被选中。
+通过调用[ **IMusicTechnology::SetTechnology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-imusictechnology-settechnology)方法中，适配器驱动程序可以覆盖微型端口驱动程序的数据区域中的技术的 Guid。 在下面的代码示例中，适配器驱动程序技术 GUID DMusUART 微型端口驱动程序的数据范围中从其默认值更改，KSMUSIC\_技术\_端口的值 KSMUSIC\_技术\_波表。 使用此新设置，类似于 MPU 的波表设备都有资格 midiOut API 作为默认 MIDI 设备被选中。
 
 ```cpp
   // Create the miniport object.
@@ -157,7 +157,7 @@ MIDI 或 Dmu 微型端口驱动程序必须指定每个其插针，都是能够�
   }
 ```
 
-在前面的代码示例中的注释中所示，适配器驱动程序应调用[ **SetTechnology** ](https://msdn.microsoft.com/library/windows/hardware/ff536780)调用端口驱动程序之前`Init`方法 （后者，反过来，将调用微型端口驱动程序的`Init`方法)。 系统提供 DMusUART 和 UART 微型端口驱动程序同时支持[IMusicTechnology](https://msdn.microsoft.com/library/windows/hardware/ff536778)接口。 有关其他微型端口驱动程序，支持 IMusicTechnology 是可选的。 有关详细信息，请参阅的实现**SetTechnology** DMusUART 示例音频驱动程序中 Microsoft Windows Driver Kit (WDK) 中的方法。
+在前面的代码示例中的注释中所示，适配器驱动程序应调用[ **SetTechnology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-imusictechnology-settechnology)调用端口驱动程序之前`Init`方法 （后者，反过来，将调用微型端口驱动程序的`Init`方法)。 系统提供 DMusUART 和 UART 微型端口驱动程序同时支持[IMusicTechnology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-imusictechnology)接口。 有关其他微型端口驱动程序，支持 IMusicTechnology 是可选的。 有关详细信息，请参阅的实现**SetTechnology** DMusUART 示例音频驱动程序中 Microsoft Windows Driver Kit (WDK) 中的方法。
 
  
 

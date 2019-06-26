@@ -4,12 +4,12 @@ description: MB 操作语义
 ms.assetid: 5f04b7fd-3df3-4efa-bb26-c7f4cd3c9ebd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bbaaa26143c7f05d21caaa0807995f34aa53b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35a9abed7921cf569960297964292a7bcc875c90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374059"
 ---
 # <a name="mb-operational-semantics"></a>MB 操作语义
 
@@ -22,7 +22,7 @@ MB 驱动程序模型使用 NDIS 中提供的异步通知机制假设 MB 服务�
 
 ### <a name="asynchronous-set-and-query-requests"></a>异步*设置*并*查询*请求
 
-许多*设置*并*查询*MB 服务所使用的 OID 请求异步处理。 有关详细信息*设置*并*查询*OID 请求，请参阅[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)。 中的"WWAN 特定 Oid"表[MB 数据模型](mb-data-model.md)主题标识的 Oid 以异步方式处理。
+许多*设置*并*查询*MB 服务所使用的 OID 请求异步处理。 有关详细信息*设置*并*查询*OID 请求，请参阅[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)。 中的"WWAN 特定 Oid"表[MB 数据模型](mb-data-model.md)主题标识的 Oid 以异步方式处理。
 
 下图表示的异步交互序列*查询*MB 服务和微型端口驱动程序之间的事务。 粗体表示 OID 标识符或事务流控制中的标签和中常规文本的标签表示 OID 结构中的重要标志。
 
@@ -30,11 +30,11 @@ MB 驱动程序模型使用 NDIS 中提供的异步通知机制假设 MB 服务�
 
 是两个相同的三次握手*查询*并*设置*请求。
 
-除[OID\_WWAN\_驱动程序\_CAPS](https://msdn.microsoft.com/library/windows/hardware/ff569825)，所有其他特定于 MB 的 OID 请求微型端口驱动程序和 MB 之间按照信息交换的异步事务机制具有以下附加说明的服务：
+除[OID\_WWAN\_驱动程序\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)，所有其他特定于 MB 的 OID 请求微型端口驱动程序和 MB 之间按照信息交换的异步事务机制具有以下附加说明的服务：
 
 -   微型端口驱动程序应该会按照在任何错误条件，如无效的 OID 请求的 OID 请求立即失败。
 
--   微型端口驱动程序必须返回正确的错误代码与任何特定于 WWAN 的错误条件 (例如，WWAN\_状态\_XXX) 中指定**uStatus**事件通知结构的成员。 微型端口驱动程序应也相应地填充中的成员，请按照**uStatus**成员，根据需要。 例如，填充微型端口驱动程序应**ContextState.uNwError**的成员[ **NDIS\_WWAN\_上下文\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567906)结构，如果可用。 但是，发生故障时处理 Oid 与 Pin 时，微型端口驱动程序可能不一定要在中指定的当前 PIN 状态信息**PinInfo.PinState**的成员[ **NDIS\_WWAN\_PIN\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567911)。
+-   微型端口驱动程序必须返回正确的错误代码与任何特定于 WWAN 的错误条件 (例如，WWAN\_状态\_XXX) 中指定**uStatus**事件通知结构的成员。 微型端口驱动程序应也相应地填充中的成员，请按照**uStatus**成员，根据需要。 例如，填充微型端口驱动程序应**ContextState.uNwError**的成员[ **NDIS\_WWAN\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)结构，如果可用。 但是，发生故障时处理 Oid 与 Pin 时，微型端口驱动程序可能不一定要在中指定的当前 PIN 状态信息**PinInfo.PinState**的成员[ **NDIS\_WWAN\_PIN\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)。
 
 -   微型端口驱动程序应返回 NDIS\_状态\_指示\_作为临时的全都是异步的 OID 请求响应所需。
 
@@ -50,7 +50,7 @@ MB 驱动程序模型使用 NDIS 中提供的异步通知机制假设 MB 服务�
 
 *NDIS 6.0 规范*（随 Windows Vista 一起发布） 引入了一个新的状态代码和 NDIS\_状态\_指示\_必需，传达的异步性质的微型端口驱动程序微型端口驱动程序的临时响应 OID 请求中的 MB 服务的事务。
 
-如中所述[MB 接口概述](mb-interface-overview.md)，MB 服务没有直接访问权限分配的 MB 微型端口驱动程序的内核模式内存。 假定要复制和由提供给 MB 服务一些中介，例如，WMI 在内核模式内存中存储的执行结果或[NDIS 筛选器驱动程序](ndis-filter-drivers2.md)。 因此，微型端口驱动程序可以释放已分配的内核模式内存后[ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)函数调用返回事务的指示。
+如中所述[MB 接口概述](mb-interface-overview.md)，MB 服务没有直接访问权限分配的 MB 微型端口驱动程序的内核模式内存。 假定要复制和由提供给 MB 服务一些中介，例如，WMI 在内核模式内存中存储的执行结果或[NDIS 筛选器驱动程序](ndis-filter-drivers2.md)。 因此，微型端口驱动程序可以释放已分配的内核模式内存后[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)函数调用返回事务的指示。
 
 在下面的过程介绍了微型端口驱动程序和 MB 服务必须遵循的握手过程。
 
@@ -58,7 +58,7 @@ MB 驱动程序模型使用 NDIS 中提供的异步通知机制假设 MB 服务�
 
 收到 OID 的请求，微型端口驱动程序应执行以下步骤：
 
-1.  在内核模式，将复制的内容中分配内存[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)与 OID 请求相关联的数据结构。
+1.  在内核模式，将复制的内容中分配内存[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)与 OID 请求相关联的数据结构。
 
 2.  请求的参数，请确保**RequestId**并**RequestHandle** OID 请求结构的成员也会被复制。 这些成员将使用更高版本中事务性*指示*。
 
@@ -66,7 +66,7 @@ MB 驱动程序模型使用 NDIS 中提供的异步通知机制假设 MB 服务�
 
 4.  在完成该操作，将结果存储在本地或驱动程序分配内存中，根据需要。
 
-5.  调用[ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)函数，以通知 MB 服务是否已完成未完成的操作。 微型端口驱动程序的 NDIS 成员中应填充\_状态\_指示结构，如下所示：
+5.  调用[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)函数，以通知 MB 服务是否已完成未完成的操作。 微型端口驱动程序的 NDIS 成员中应填充\_状态\_指示结构，如下所示：
     1.  设置**StatusCode**状态通知的类型的成员。 例如，NDIS\_状态\_WWAN\_XXX。
     2.  设置**DestinationHandle**成员添加到**RequestHandle** NDIS 中收到的成员\_OID\_请求数据结构的微型端口驱动程序收到相应的 OID 请求。
     3.  设置**RequestId**成员以匹配**RequestId** NDIS 成员\_OID\_请求状态结构微型端口驱动程序收到相应的 OID 请求时。
@@ -81,7 +81,7 @@ MB 服务通过使用以下过程来处理异步事务：
 
 1.  为基于 OID 数据结构的请求分配缓冲区内存。 填充数据使用适当的值的结构成员。
 
-2.  调用[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)函数与**InformationBuffer**成员指向 OID 数据结构 OID 请求并等待到微型端口驱动程序响应。
+2.  调用[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)函数与**InformationBuffer**成员指向 OID 数据结构 OID 请求并等待到微型端口驱动程序响应。
 
 3.  收到的 NDIS\_状态\_指示\_必需从微型端口驱动程序，MB 服务保存的临时响应**RequestId**，释放分配的内存，并将标记为打开的事务。 此时，MB 服务可以自由地处理后续 OID 请求并通知。
 
@@ -105,45 +105,45 @@ MB 服务通过使用以下过程来处理异步事务：
 
 对于任何 WWAN 特定的事件通知，必须设置微型端口驱动程序**RequestId**成员的 NDIS\_状态\_指示结构为零。 **StatusCode**成员指定的 MB 设备中的哪个对象已更改。 微型端口驱动程序可以将此对象设置为以下值之一：
 
-[**NDIS\_STATUS\_WWAN\_DEVICE\_CAPS**](https://msdn.microsoft.com/library/windows/hardware/ff567845)
+[**NDIS\_STATUS\_WWAN\_DEVICE\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)
 
-[**NDIS\_状态\_WWAN\_准备\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567856)
+[**NDIS\_状态\_WWAN\_准备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-ready-info)
 
-[**NDIS\_STATUS\_WWAN\_RADIO\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567855)
+[**NDIS\_STATUS\_WWAN\_RADIO\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-radio-state)
 
-[**NDIS\_状态\_WWAN\_PIN\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567851)
+[**NDIS\_状态\_WWAN\_PIN\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-pin-info)
 
-[**NDIS\_STATUS\_WWAN\_PIN\_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff567852)
+[**NDIS\_STATUS\_WWAN\_PIN\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-pin-list)
 
-[**NDIS\_状态\_WWAN\_主页\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567848)
+[**NDIS\_状态\_WWAN\_主页\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-home-provider)
 
-[**NDIS\_STATUS\_WWAN\_PREFERRED\_PROVIDERS**](https://msdn.microsoft.com/library/windows/hardware/ff567853)
+[**NDIS\_STATUS\_WWAN\_PREFERRED\_PROVIDERS**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-providers)
 
-[**NDIS\_状态\_WWAN\_VISIBLE\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567866)
+[**NDIS\_状态\_WWAN\_VISIBLE\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-visible-providers)
 
-[**NDIS\_状态\_WWAN\_注册\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567857)
+[**NDIS\_状态\_WWAN\_注册\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-register-state)
 
-[**NDIS\_STATUS\_WWAN\_PACKET\_SERVICE**](https://msdn.microsoft.com/library/windows/hardware/ff567850)
+[**NDIS\_STATUS\_WWAN\_PACKET\_SERVICE**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-packet-service)
 
-[**NDIS\_状态\_WWAN\_信号\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567859)
+[**NDIS\_状态\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-signal-state)
 
-[**NDIS\_状态\_WWAN\_上下文\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567843)
+[**NDIS\_状态\_WWAN\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-context-state)
 
-[**NDIS\_状态\_WWAN\_已设置\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff567854)
+[**NDIS\_状态\_WWAN\_已设置\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-provisioned-contexts)
 
-[**NDIS\_状态\_WWAN\_服务\_激活**](https://msdn.microsoft.com/library/windows/hardware/ff567858)
+[**NDIS\_状态\_WWAN\_服务\_激活**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-service-activation)
 
-[**NDIS\_状态\_WWAN\_SMS\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff567860)
+[**NDIS\_状态\_WWAN\_SMS\_配置**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-configuration)
 
-[**NDIS\_STATUS\_WWAN\_SMS\_RECEIVE**](https://msdn.microsoft.com/library/windows/hardware/ff567862)
+[**NDIS\_STATUS\_WWAN\_SMS\_RECEIVE**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-receive)
 
-[**NDIS\_STATUS\_WWAN\_SMS\_SEND**](https://msdn.microsoft.com/library/windows/hardware/ff567863)
+[**NDIS\_STATUS\_WWAN\_SMS\_SEND**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-send)
 
-[**NDIS\_状态\_WWAN\_SMS\_删除**](https://msdn.microsoft.com/library/windows/hardware/ff567861)
+[**NDIS\_状态\_WWAN\_SMS\_删除**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-delete)
 
-[**NDIS\_STATUS\_WWAN\_SMS\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/ff567864)
+[**NDIS\_STATUS\_WWAN\_SMS\_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-status)
 
-[**NDIS\_STATUS\_WWAN\_VENDOR\_SPECIFIC**](https://msdn.microsoft.com/library/windows/hardware/ff567865)
+[**NDIS\_STATUS\_WWAN\_VENDOR\_SPECIFIC**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-vendor-specific)
 
 MB 服务还可以处理从 NDIS 其他事件通知。 这些非 MB 事件通知不一定是受要求的约束，其**RequestId**值将设置为零。
 
@@ -157,7 +157,7 @@ MB 服务需要事务通知，以便它可以关闭打开的事务。 它是最�
 
 ### <a name="status-indication-structure"></a>状态指示结构
 
-这两个异步响应给定的 OID 请求和未经请求的事件通知结构共享以下指向的结构成员**StatusBuffer**的成员*StatusIndication*参数[ **NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600):
+这两个异步响应给定的 OID 请求和未经请求的事件通知结构共享以下指向的结构成员**StatusBuffer**的成员*StatusIndication*参数[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex):
 
 ```C++
 typedef struct _NDIS_WWAN_XXX {
@@ -258,7 +258,7 @@ typedef struct _NDIS_WWAN_XXX {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -373,7 +373,7 @@ typedef struct _NDIS_WWAN_XXX {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>

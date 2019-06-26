@@ -4,12 +4,12 @@ description: Hyper-V 可扩展交换机策略概述
 ms.assetid: 1D0AC55B-60F7-400E-A376-F3E2F7373A92
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dce3c0ff8072655d8922171319c9494084863e4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03529154bb12011839c48f0daf6cff2ac0ca75fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327701"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385726"
 ---
 # <a name="overview-of-hyper-v-extensible-switch-policies"></a>Hyper-V 可扩展交换机策略概述
 
@@ -123,7 +123,7 @@ typedef struct _VARIABLE_LENGTH_STRING
 
     当向扩展名为基础，发出自定义策略属性**PropertyVersion**定义策略的属性的结构的成员包含序列化的版本值。
 
-    例如，当可扩展交换机接口发出的对象标识符 (OID) 请求[OID\_切换\_端口\_属性\_添加](https://msdn.microsoft.com/library/windows/hardware/hh598275)，OID 是与相关联[**NDIS\_交换机\_端口\_属性\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598238)结构。 **PropertyVersion**该结构的成员包含的序列化的版本值。
+    例如，当可扩展交换机接口发出的对象标识符 (OID) 请求[OID\_切换\_端口\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)，OID 是与相关联[**NDIS\_交换机\_端口\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构。 **PropertyVersion**该结构的成员包含的序列化的版本值。
 
 -   所有可变长度字符串会被都序列化为包含序列都化的 C 结构的缓冲区内的偏移量。 每个可变长度字符串的格式设置为**变量\_长度\_字符串**此缓冲区偏移量中的结构。
 

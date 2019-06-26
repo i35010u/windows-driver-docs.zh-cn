@@ -4,12 +4,12 @@ description: DSM\_负载\_平衡\_策略\_V2 WMI 类
 ms.assetid: 8895d0ca-b9bd-4f8d-bf8f-4ba2f459c264
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d010206ab8be17f4dd1f33ade327aa83fb99f188
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1921d549cb23d68f36a0cce6dde726b9b27a1b56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380670"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368239"
 ---
 # <a name="dsmloadbalancepolicyv2-wmi-class"></a>DSM\_负载\_平衡\_策略\_V2 WMI 类
 
@@ -83,7 +83,7 @@ class DSM_Load_Balance_Policy_V2
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_负载\_平衡\_策略\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff552698)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_负载\_平衡\_策略\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_load_balance_policy_v2)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

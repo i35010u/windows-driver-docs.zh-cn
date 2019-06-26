@@ -10,12 +10,12 @@ keywords:
 - 注册表 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03afdab59d1a54b7d24f137405ffc2b1785e4ac9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd22bda58628b5600472cd28f51da7422d0fe55a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366244"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386286"
 ---
 # <a name="registry-entries-for-plug-and-play-scsi-miniport-drivers"></a>即插即用 SCSI 微型端口驱动程序的注册表项
 
@@ -29,7 +29,7 @@ ms.locfileid: "63366244"
 
 -   具有**PnPInterface**指示的接口的注册表项对于该微型端口驱动程序支持插。
 
-安装微型端口驱动程序作为 SCSI HBA 的服务通常通过提供正确的驱动程序为一个给定的 HBA 来控制该设备插硬件 ID 相匹配的安装程序信息 (INF) 文件。 有关设置的 INF 文件的详细信息，请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)*。*
+安装微型端口驱动程序作为 SCSI HBA 的服务通常通过提供正确的驱动程序为一个给定的 HBA 来控制该设备插硬件 ID 相匹配的安装程序信息 (INF) 文件。 有关设置的 INF 文件的详细信息，请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) *。*
 
 除非微型端口驱动程序安装为服务的 HBA **PnPInterface**注册表项会*防止*中初始化的微型端口驱动程序。 仅当插查找相应的 HBA 时初始化的指定的接口。 如果没有服务正确地分配到 HBA，插将永远不会确定要通知时检测到设备的驱动程序。 此行为是有意设计和微型端口驱动程序不应尝试绕过它。
 

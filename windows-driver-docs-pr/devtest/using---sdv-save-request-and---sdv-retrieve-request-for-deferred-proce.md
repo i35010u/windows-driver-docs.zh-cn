@@ -11,12 +11,12 @@ keywords:
 - 分析 dpc 进行标记
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b15e8f76027bc25c168d4d993652bfc671223c6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed2f13e5ab001712cf45dd8cee14d4181b923691
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363785"
 ---
 # <a name="using-sdvsaverequest-and-sdvretrieverequest-for-deferred-procedure-calls"></a>使用\_ \_sdv\_保存\_请求并\_ \_sdv\_检索\_延迟过程调用的请求
 
@@ -37,9 +37,9 @@ __sdv_retrieve_request( request )
 
 这些函数仅供静态分析工具。 编译器将忽略函数。
 
-下面的代码示例演示如何 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**函数用于指导 SDV，以便 SDV 可以映射延迟的请求。 SDV 可以使用此映射来验证[DeferredRequestCompleted](https://msdn.microsoft.com/library/windows/hardware/ff544670)规则。 DeferredRequestCompleted 规则需要 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**出现在你的代码。 规则有两个驱动程序属性 (**AliasWithinDispatch**， **AliasWithinTimerDpc**)，查看是否存在 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**函数。
+下面的代码示例演示如何 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**函数用于指导 SDV，以便 SDV 可以映射延迟的请求。 SDV 可以使用此映射来验证[DeferredRequestCompleted](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-deferredrequestcompleted)规则。 DeferredRequestCompleted 规则需要 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**出现在你的代码。 规则有两个驱动程序属性 (**AliasWithinDispatch**， **AliasWithinTimerDpc**)，查看是否存在 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**函数。
 
-在下面的代码示例，该函数*EchoEvtIoRead*是[ *EvtIoRead* ](https://msdn.microsoft.com/library/windows/hardware/ff541776)保存对 framework 请求对象的句柄的事件的回调函数队列的上下文区域。 该函数*EchoEvtTimerFunc*是[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)检索它的事件的回调函数。
+在下面的代码示例，该函数*EchoEvtIoRead*是[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)保存对 framework 请求对象的句柄的事件的回调函数队列的上下文区域。 该函数*EchoEvtTimerFunc*是[ *EvtTimerFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nc-wdftimer-evt_wdf_timer)检索它的事件的回调函数。
 
 ```
 VOID

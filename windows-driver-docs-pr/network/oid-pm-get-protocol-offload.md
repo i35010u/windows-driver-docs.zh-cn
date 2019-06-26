@@ -5,26 +5,26 @@ ms.assetid: c14b9278-6f24-41a1-bc2e-536a75460ecd
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_GET_PROTOCOL_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b2c88f2d96334bdf074d3ac1dcb994922e2bd6b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf74c8499161cb592988fe5b7b855334cf7d46a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362316"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360798"
 ---
 # <a name="oidpmgetprotocoloffload"></a>OID\_PM\_获取\_协议\_卸载
 
 
 基础驱动程序发出 OID 方法请求的 OID\_PM\_获取\_协议\_卸载以获得参数设置为低能耗协议卸载网络适配器中。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构最初包含一个指向 ULONG 协议卸载标识符。 通过 OID 方法请求成功返回后**InformationBuffer**的成员**NDIS\_OID\_请求**结构包含一个指向[**NDIS\_PM\_协议\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566760)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构最初包含一个指向 ULONG 协议卸载标识符。 通过 OID 方法请求成功返回后**InformationBuffer**的成员**NDIS\_OID\_请求**结构包含一个指向[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构。
 
 <a name="remarks"></a>备注
 -------
 
 NDIS 6.20 和更高版本的协议驱动程序使用 OID\_PM\_获取\_协议\_卸载从网络适配器的卸载方法来检索参数设置为低能耗协议的 OID。
 
-信息缓冲区必须指向 ULONG 类型协议卸载标识符。 NDIS 中设置此协议卸载标识符**ProtocolOffloadId**的成员[ **NDIS\_PM\_协议\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566760)结构时 NDIS 发送之前[OID\_PM\_添加\_协议\_卸载](oid-pm-add-protocol-offload.md)OID 为基础的网络适配器的请求。
+信息缓冲区必须指向 ULONG 类型协议卸载标识符。 NDIS 中设置此协议卸载标识符**ProtocolOffloadId**的成员[ **NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构时 NDIS 发送之前[OID\_PM\_添加\_协议\_卸载](oid-pm-add-protocol-offload.md)OID 为基础的网络适配器的请求。
 
 微型端口驱动程序返回请求的以下状态代码之一：
 
@@ -69,7 +69,7 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID\_PM\_获取\_协议\_�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_PM\_协议\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566760)
+[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)
 
 [OID\_PM\_添加\_协议\_卸载](oid-pm-add-protocol-offload.md)
 

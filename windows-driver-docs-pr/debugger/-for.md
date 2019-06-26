@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 09e3d3fc802c7a81aa9e1564a1bb7ee6f6d52fd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f28a12f897152b98e68091519d30a7bacb1a1f06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336632"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364312"
 ---
 # <a name="for"></a>.for
 
@@ -58,7 +58,7 @@ ms.locfileid: "63336632"
 0:000> .for (r eax=0; @eax < 7; r eax=@eax+1; r ebx=@ebx+1) { .... }
 ```
 
-[ **.Break** ](https://msdn.microsoft.com/library/windows/hardware/ff556242)并[ **.continue** ](-continue.md)令牌可用于退出或重新启动*命令*块。
+[ **.Break** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-break)并[ **.continue** ](-continue.md)令牌可用于退出或重新启动*命令*块。
 
  
 

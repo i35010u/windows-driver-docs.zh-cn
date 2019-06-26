@@ -4,12 +4,12 @@ description: 使用内核模式性能计数器
 ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87822a0c19665898549cab5f3ed6b984aa19377c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7f302ce1ab595bedb5622be8cb4d7e9c7a438b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371572"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363784"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>使用内核模式性能计数器
 
@@ -30,7 +30,7 @@ ms.locfileid: "63371572"
 
 3.  添加代码以注册和注销的计数器集。
 
-    有关详细信息，请参阅[ **PcwRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff550323)并[ **PcwUnregister** ](https://msdn.microsoft.com/library/windows/hardware/ff550326)函数。
+    有关详细信息，请参阅[ **PcwRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwregister)并[ **PcwUnregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwunregister)函数。
 
 4.  添加代码以公开实例。
 

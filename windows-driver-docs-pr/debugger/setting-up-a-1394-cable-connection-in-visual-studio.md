@@ -4,12 +4,12 @@ description: 可以使用 Microsoft Visual Studio 设置和执行内核模式调
 ms.assetid: 07784500-83F1-4927-998F-7CEEEADAA2B0
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fdba3fb40ce68c9fca9640221560a15b4239f4a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65f9dfb5dff6b13fef47ba4112624d6652a4574a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381952"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366389"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 1394 线缆进行的内核模式调试
 
@@ -28,7 +28,7 @@ ms.locfileid: "63381952"
 
 
 1.  连接到已选择在主机和目标计算机上进行调试的 1394 年控制器 1394年电缆。
-2.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
+2.  开始配置主机和目标计算机中所述[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 3.  主机计算机上，在 Visual Studio 中，转到计算机配置对话框后，选择**预配计算机，并选择调试器设置**。
 4.  有关**连接类型**，选择**Firewire**。
 
@@ -71,7 +71,7 @@ busparams               4.0.0
 
 如果您看不到值为输入**总线参数**，输入以下命令：
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 其中*b*， *d*，并*f*是总线、 设备和已选择要用于调试的目标计算机上的 1394年控制器的函数数量。
 
@@ -107,7 +107,7 @@ busparams               4.0.0
 
 如果您决定有多个目标计算机上启用的 1394年控制器，必须指定总线参数，以便调试器知道哪一个控制器来声明以进行调试。 若要指定总线参数，打开设备管理器，并找到你想要用于调试的 1394年控制器。 打开控制器的属性页并记下的总线数、 设备数量和函数数量。 在提升的命令提示符窗口，输入以下命令，其中*b*， *d*，并*f*是十进制格式的总线、 设备和函数编号：
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 重新启动目标计算机。
 

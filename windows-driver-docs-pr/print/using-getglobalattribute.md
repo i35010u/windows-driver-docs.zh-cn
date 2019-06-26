@@ -6,12 +6,12 @@ keywords:
 - GetGlobalAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72024925395119dc0d54843b09a0d09d88c93b5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 271bf32129c906728387a0ded92e641ebe4e2cda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373461"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362730"
 ---
 # <a name="using-getglobalattribute"></a>使用 GetGlobalAttribute
 
@@ -21,7 +21,7 @@ ms.locfileid: "63373461"
 
 所有全局特性名称都相同中定义的关键字名称*PostScript 打印机说明文件格式规范、 v4.3*。 请参阅其语义此规范。 （此资源可能不会在某些语言和国家/地区中可用。）
 
-下表中*pdwDataType*参数接受值为[ **EATTRIBUTE\_数据类型**](https://msdn.microsoft.com/library/windows/hardware/ff548692)枚举类型。
+下表中*pdwDataType*参数接受值为[ **EATTRIBUTE\_数据类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)枚举类型。
 
 <table>
 <colgroup>

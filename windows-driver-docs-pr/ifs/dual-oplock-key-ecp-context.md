@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0ba635e1df0999b9fd89a1736f4f03f4a395c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad5182048de61499d8e8bb36fe41a87af6761fb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383855"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386094"
 ---
 # <a name="dualoplockkeyecpcontext-structure"></a>双\_OPLOCK\_密钥\_ECP\_上下文结构
 
@@ -57,9 +57,9 @@ typedef struct _DUAL_OPLOCK_KEY_ECP_CONTEXT {
 <a name="remarks"></a>备注
 -------
 
-**双\_OPLOCK\_密钥\_ECP\_上下文**结构提供了双 oplock 密钥以允许将文件和目录的机会锁请求。 像[ **OPLOCK\_密钥\_ECP\_上下文**](oplock-key-ecp-context.md)结构**双\_OPLOCK\_密钥\_ECP\_上下文**在额外设置创建参数列表 ([**ECP\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff540148)) 和更高版本的文件对象与关联处理的过程[**IRP\_MJ\_创建**](irp-mj-create.md)通过文件系统或文件系统筛选器驱动程序。
+**双\_OPLOCK\_密钥\_ECP\_上下文**结构提供了双 oplock 密钥以允许将文件和目录的机会锁请求。 像[ **OPLOCK\_密钥\_ECP\_上下文**](oplock-key-ecp-context.md)结构**双\_OPLOCK\_密钥\_ECP\_上下文**在额外设置创建参数列表 ([**ECP\_列表**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))) 和更高版本的文件对象与关联处理的过程[**IRP\_MJ\_创建**](irp-mj-create.md)通过文件系统或文件系统筛选器驱动程序。
 
-该值**GUID\_ECP\_双\_OPLOCK\_密钥**调用如支持例程时使用[ **FsRtlAllocateExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545609)， [ **FsRtlInitializeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546113)，或[ **FltRemoveExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff544339)。
+该值**GUID\_ECP\_双\_OPLOCK\_密钥**调用如支持例程时使用[ **FsRtlAllocateExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545609)， [ **FsRtlInitializeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546113)，或[ **FltRemoveExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltremoveextracreateparameter)。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,17 +84,17 @@ typedef struct _DUAL_OPLOCK_KEY_ECP_CONTEXT {
 ## <a name="see-also"></a>请参阅
 
 
-[**ECP\_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff540148)
+[**ECP\_LIST**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))
 
-[**IO\_DRIVER\_CREATE\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff548565)
+[**IO\_DRIVER\_CREATE\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_io_driver_create_context)
 
-[**IoCreateFileEx**](https://msdn.microsoft.com/library/windows/hardware/ff548283)
+[**IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)
 
 [**IRP\_MJ\_CREATE**](irp-mj-create.md)
 
 [**OPLOCK\_KEY\_ECP\_CONTEXT**](oplock-key-ecp-context.md)
 
-[Oplock 语义](https://msdn.microsoft.com/library/windows/hardware/ff551007)
+[Oplock 语义](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-semantics)
 
  
 

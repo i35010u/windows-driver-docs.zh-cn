@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_SET_STATIC_EVENT_CALLBACKS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 19bee586264f06c08e2f8d8831d88ad743b4d2a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca182adbb4a1be121a6c352be67d07cb28a8ffad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386312"
 ---
 # <a name="wsksetstaticeventcallbacks"></a>WSK\_设置\_静态\_事件\_回调
 
@@ -20,7 +20,7 @@ WSK 应用程序使用 WSK\_设置\_静态\_事件\_回调客户端管理操作�
 
 如果 WSK 应用程序使用 WSK\_设置\_静态\_事件\_回调客户端管理操作，它必须执行此操作之前创建任何套接字。
 
-若要自动启用它会创建每个套接字上的某些事件回调函数，WSK 应用程序调用[ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)使用以下参数的函数。
+若要自动启用它会创建每个套接字上的某些事件回调函数，WSK 应用程序调用[ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ WSK 应用程序使用 WSK\_设置\_静态\_事件\_回调客户端管理操作�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff571166" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571166)"> <strong>WSK_EVENT_CALLBACK_CONTROL</strong> </a>结构，它指定所需的事件回调函数，来自动启用</p></td>
+<td><p>一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control)"> <strong>WSK_EVENT_CALLBACK_CONTROL</strong> </a>结构，它指定所需的事件回调函数，来自动启用</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -65,11 +65,11 @@ WSK 应用程序使用 WSK\_设置\_静态\_事件\_回调客户端管理操作�
 </tbody>
 </table>
 
-WSK 应用程序可以指定不同的套接字类型中的事件标志的组合**EventMask**的成员[ **WSK\_事件\_回调\_控件** ](https://msdn.microsoft.com/library/windows/hardware/ff571166)结构。 WSK 子系统时 WSK 应用程序创建新的套接字，将自动启用特定于相应的事件回调函数[类别](https://msdn.microsoft.com/library/windows/hardware/ff571093)WSK 套接字正在创建。
+WSK 应用程序可以指定不同的套接字类型中的事件标志的组合**EventMask**的成员[ **WSK\_事件\_回调\_控件** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_event_callback_control)结构。 WSK 子系统时 WSK 应用程序创建新的套接字，将自动启用特定于相应的事件回调函数[类别](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)WSK 套接字正在创建。
 
 有关标准 WSK 事件回调函数的事件标志的详细信息，请参阅[**因此\_WSK\_事件\_回调**](so-wsk-event-callback.md)。
 
-有关启用和禁用套接字的事件回调函数的详细信息，请参阅[启用和禁用事件回调函数](https://msdn.microsoft.com/library/windows/hardware/ff548851)。
+有关启用和禁用套接字的事件回调函数的详细信息，请参阅[启用和禁用事件回调函数](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-event-callback-functions)。
 
 *Irp*参数必须是**NULL**此客户端控制操作。
 

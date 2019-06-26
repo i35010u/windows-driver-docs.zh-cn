@@ -4,17 +4,17 @@ description: Microsoft ASL 编译器版本 5.0 ACPI 5.0 规范中支持的功能
 ms.assetid: E6EC168F-DB4B-461A-874A-F5278E8F9200
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 307ced356e9347b38cd320038465ba5ebff79e6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3a148931bc655d706449059289dff6b1a0ed69b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337538"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364520"
 ---
 # <a name="microsoft-asl-compiler"></a>Microsoft ASL 编译器
 
 
-5.0 版本的 Microsoft ACPI 源语言 (ASL) 编译器支持高级配置和电源接口规范，修订版本 5.0 中的功能 ([ACPI 5.0 规范](https://www.uefi.org/specifications))。 ASL 编译器都会使用 Windows Driver Kit (WDK)。 查找工具中 Asl.exe 可执行文件\\arm\\ACPIVerify、 工具\\arm64\\ACPIVerify、 工具\\x86\\ACPIVerify 或工具\\x64\\ACPIVerify 安装 WDK 目录。
+5\.0 版本的 Microsoft ACPI 源语言 (ASL) 编译器支持高级配置和电源接口规范，修订版本 5.0 中的功能 ([ACPI 5.0 规范](https://uefi.org/specifications))。 ASL 编译器都会使用 Windows Driver Kit (WDK)。 查找工具中 Asl.exe 可执行文件\\arm\\ACPIVerify、 工具\\arm64\\ACPIVerify、 工具\\x86\\ACPIVerify 或工具\\x64\\ACPIVerify 安装 WDK 目录。
 
 ## <a name="command-line-options"></a>命令行选项
 
@@ -80,8 +80,8 @@ asl.exe /loadtable [-v] [-d] <AMLFile>
 ## <a name="additional-resources"></a>其他资源
 
 -   [ACPICA 文档](https://acpica.org/documentation/)
--   [ACPI 网站](https://www.uefi.org/specifications/)
--   [ACPI 调试](https://msdn.microsoft.com/library/windows/hardware/ff537808)
--   [Acpi.sys:Windows ACPI 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540493)
--   [电源管理和 ACPI](https://msdn.microsoft.com/library/windows/hardware/dn614610)
+-   [ACPI 网站](https://uefi.org/specifications/)
+-   [ACPI 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/acpi-debugging)
+-   [Acpi.sys:Windows ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)
+-   [电源管理和 ACPI](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614610(v=vs.85))
 

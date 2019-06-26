@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_DELETE_PORT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 19f28424729b7efb97079338f444fe6ba9b02624
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6c7e43f7fa897c4b9148e63c692e1d5fe318b17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387246"
 ---
 # <a name="oidwditaskdeleteport"></a>OID\_WDI\_TASK\_DELETE\_PORT
 
@@ -30,7 +30,7 @@ OID\_WDI\_任务\_删除\_端口请求 IHV 组件释放所有资源 （包括 MA
 
 | TLV                                                                               | 允许多个 TLV 实例 | 可选 | 描述                 |
 |-----------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------|
-| [**WDI\_TLV\_DELETE\_PORT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926288) |                                |          | 删除端口参数。 |
+| [**WDI\_TLV\_DELETE\_PORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-delete-port-parameters) |                                |          | 删除端口参数。 |
 
  
 

@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 85524f42e57c15a7aa08c38ce0ae0878b9f56ce1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb1580b7fad983a81560716ed3e3ad4bf89cb1d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375300"
 ---
 # <a name="dpinst-xml-element"></a>dpinst XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **Dpinst** XML 元素是包含自定义驱动程序安装的子元素的 DPInst 描述符文件中的根 XML 元素。
 

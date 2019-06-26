@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a677e282689a761b13b40abbaea4427de4a5d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52ded1b0cdc592fb1a7a947fa9be81dabbf32f50
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334428"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363100"
 ---
 # <a name="ofilter-filter-target-output"></a>.ofilter（筛选目标输出）
 
@@ -34,7 +34,7 @@ ms.locfileid: "63334428"
 ## <a name="span-idddkmetafiltertargetoutputdbgspanspan-idddkmetafiltertargetoutputdbgspanparameters"></a><span id="ddk_meta_filter_target_output_dbg"></span><span id="DDK_META_FILTER_TARGET_OUTPUT_DBG"></span>参数
 
 
-<span id="_______________"></span> **/!**   
+<span id="_______________"></span> **/!**    
 反转该筛选器，以便调试器将显示不包含的仅限 output*字符串*。 如果不使用此参数，调试器将显示包含的仅限 output*字符串*。
 
 <span id="_______String______"></span><span id="_______string______"></span><span id="_______STRING______"></span> *字符串*   
@@ -69,14 +69,14 @@ ms.locfileid: "63334428"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关详细信息[ **OutputDebugString** ](https://msdn.microsoft.com/library/windows/desktop/aa363362)和其他用户模式下例程，请参阅 Microsoft Windows SDK 文档。 有关详细信息**DbgPrint**， **DbgPrintEx**，和其他内核模式例程，请参阅 Windows Driver Kit (WDK)。
+有关详细信息[ **OutputDebugString** ](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)和其他用户模式下例程，请参阅 Microsoft Windows SDK 文档。 有关详细信息**DbgPrint**， **DbgPrintEx**，和其他内核模式例程，请参阅 Windows Driver Kit (WDK)。
 
 <a name="remarks"></a>备注
 -------
 
 如果您使用 **.ofilter**命令不带参数，则调试器会显示当前的模式匹配条件。
 
-若要清除现有的筛选器，请使用 **.ofilter""**。 此命令可以筛选由用户模式下例程发送任何数据 (如[ **OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362)) 和内核模式例程 (如**DbgPrint**)。 但是，调试器将始终显示提示， **DbgPrompt**发送。
+若要清除现有的筛选器，请使用 **.ofilter""** 。 此命令可以筛选由用户模式下例程发送任何数据 (如[ **OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)) 和内核模式例程 (如**DbgPrint**)。 但是，调试器将始终显示提示， **DbgPrompt**发送。
 
 **DbgPrintEx**并**KdPrintEx**例程提供筛选不希望的调试消息的另一种方法。
 

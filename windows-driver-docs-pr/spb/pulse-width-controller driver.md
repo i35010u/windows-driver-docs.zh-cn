@@ -4,12 +4,12 @@ description: PWM 控制器属于 SoC 和到 SoC 地址空间，内存映射。 �
 ms.assetid: 911375A9-6761-45C1-BB5E-79BC0E4409AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa980ceb8c5e2d9108c5763ee9bfee6d99331032
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f1bbeb1a4550f2f967088e44575a22408161717
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352710"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386303"
 ---
 # <a name="pwm-driver-for-an-on-soc-pwm-module"></a>SoC 上 PWM 模块的 PWM 驱动程序
 提供访问脉冲的宽度调整 (PWM) 控制器属于 SoC 和 SoC 地址空间为内存映射，需要编写器的内核模式驱动程序。 该驱动程序必须注册的设备类接口的 PWM 控制器，以便 UWP 应用可以访问系统公开 PWM 设备通过 PWM WinRT Api Windows.Devices.Pwm 命名空间中定义。 
@@ -43,9 +43,9 @@ PWM 设备已抽象化为一个控制器和一个或多个 pin。 控制在控�
 
 -   Windows 10 版本
 
-**重要的 Api**
+**重要的 API**
 
--   [PWM Ioctl](https://msdn.microsoft.com/library/windows/desktop/mt826481)
+-   [PWM Ioctl](https://docs.microsoft.com/windows/desktop/DevIO/pwm-api)
 
 ## <a name="about-pwm"></a>有关 PWM
 PWM 介绍用于生成矩形 pulse 批调制的 pulse 宽度导致波形的平均值的变体的基本方法。  
@@ -101,9 +101,9 @@ DEFINE_GUID(GUID_DEVINTERFACE_PWM_CONTROLLER, 0x60824b4c, 0xeed1, 0x4c9c, 0xb4, 
 
 ## <a name="setting-device-interface-properties"></a>设置设备接口属性
 
-若要从 UWP 应用使用 PWM WinRT Api 这些[设备接口属性](https://msdn.microsoft.com/library/windows/hardware/ff541409(v=vs.85).aspx)必须设置。
+若要从 UWP 应用使用 PWM WinRT Api 这些[设备接口属性](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))必须设置。
 
--   [DEVPKEY_DeviceInterface_Restricted](https://msdn.microsoft.com/library/windows/hardware/hh406291(v=vs.85).aspx) 
+-   [DEVPKEY_DeviceInterface_Restricted](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted) 
 
     根据当前的 UWP 设备访问模型设置为 FALSE 的受限的设备接口属性需要让 PWM 设备接口的 UWP 应用访问。   
 
@@ -487,20 +487,20 @@ PWM IOCTL 请求发送的应用程序或另一个驱动程序，并且控制器�
 
 **控制器 Ioctl**
 
--    [**IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD**](https://msdn.microsoft.com/library/windows/desktop/mt826475) 
--    [**IOCTL_PWM_CONTROLLER_GET_INFO**](https://msdn.microsoft.com/library/windows/desktop/mt826476) 
--    [**IOCTL_PWM_CONTROLLER_SET_DESIRED_PERIOD**](https://msdn.microsoft.com/library/windows/desktop/mt826478)
+-    [**IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_get_actual_period) 
+-    [**IOCTL_PWM_CONTROLLER_GET_INFO**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_get_info) 
+-    [**IOCTL_PWM_CONTROLLER_SET_DESIRED_PERIOD**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_set_desired_period)
 
 
 **Pin Ioctl**
 
--    [**IOCTL_PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://msdn.microsoft.com/library/windows/desktop/mt843915)
--    [**IOCTL_PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://msdn.microsoft.com/library/windows/desktop/mt843918)
--    [**IOCTL_PWM_PIN_GET_POLARITY**](https://msdn.microsoft.com/library/windows/desktop/mt843916)
--    [**IOCTL_PWM_PIN_SET_POLARITY**](https://msdn.microsoft.com/library/windows/desktop/mt843919)
--    [**IOCTL_PWM_PIN_START**](https://msdn.microsoft.com/library/windows/desktop/mt843920)
--    [**IOCTL_PWM_PIN_STOP**](https://msdn.microsoft.com/library/windows/desktop/mt843921)
--    [**IOCTL_PWM_PIN_IS_STARTED**](https://msdn.microsoft.com/library/windows/desktop/mt843917)    
+-    [**IOCTL_PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_get_active_duty_cycle_percentage)
+-    [**IOCTL_PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_set_active_duty_cycle_percentage)
+-    [**IOCTL_PWM_PIN_GET_POLARITY**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_get_polarity)
+-    [**IOCTL_PWM_PIN_SET_POLARITY**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_set_polarity)
+-    [**IOCTL_PWM_PIN_START**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_start)
+-    [**IOCTL_PWM_PIN_STOP**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_stop)
+-    [**IOCTL_PWM_PIN_IS_STARTED**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_is_started)    
 
 对于每个 IOCTL 请求，PWM drivr 必须验证以下： 
 

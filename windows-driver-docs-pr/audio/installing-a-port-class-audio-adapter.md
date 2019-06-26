@@ -14,12 +14,12 @@ keywords:
 - 音频适配器驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e86466f11e950989d84c5de21cc3a032c44dfb5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42a8f94cbd0337e00daac007c7a0e428fffd7b7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359888"
 ---
 # <a name="installing-a-port-class-audio-adapter"></a>安装端口类音频适配器
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333436"
 ## <span id="installing_a_port_class_audio_adapter"></span><span id="INSTALLING_A_PORT_CLASS_AUDIO_ADAPTER"></span>
 
 
-本部分介绍在要安装的端口类音频适配器的 INF 文件中应包括供应商的特定于设备的类的信息。 有关常规的 INF 文件要求和选项的所有设备类的说明，请参阅[设备安装概述](https://msdn.microsoft.com/library/windows/hardware/ff549455)。
+本部分介绍在要安装的端口类音频适配器的 INF 文件中应包括供应商的特定于设备的类的信息。 有关常规的 INF 文件要求和选项的所有设备类的说明，请参阅[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)。
 
 在本部分中所需的 INF 文件条目的说明基于假设的 XYZ 音频设备。 此设备的驱动程序包含在一个名为 Xyzaudio.sys 文件中。 示例**制造商**并**模型**设备的部分如下所示：
 
@@ -38,7 +38,7 @@ ms.locfileid: "63333436"
   AddReg=XYZ-Audio-Device.AddReg
 ```
 
-有关详细信息，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+有关详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 有关其他示例，请参阅 SYVAD 音频示例中包含的 INF 文件。 有关详细信息，请参阅[示例音频驱动程序](sample-audio-drivers.md)并[音频的通用 Windows 驱动程序](audio-universal-drivers.md)。
 

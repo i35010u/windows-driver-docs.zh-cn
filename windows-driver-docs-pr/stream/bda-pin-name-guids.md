@@ -4,12 +4,12 @@ description: BDA 引脚名称 GUID
 ms.assetid: 098e4c49-13dd-4c9a-8ce4-06b99b7c5fa3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2eb03d509e2755604b5c0ec3b6519afe32053a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2287965222b0636cd298ed2e0dd3549084441fed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392720"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386683"
 ---
 # <a name="bda-pin-name-guids"></a>BDA 引脚名称 GUID
 
@@ -17,7 +17,7 @@ ms.locfileid: "63392720"
 ## <span id="ddk_bda_pin_name_guids_ks"></span><span id="DDK_BDA_PIN_NAME_GUIDS_KS"></span>
 
 
-BDA 微型驱动程序使用 BDA pin 名称 Guid 来指定名称和类别的 pin，它支持。 BDA 微型驱动程序将这些分配到 Guid**名称**并**类别**的成员[ **KSPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563533)结构。 *Bdamedia.h*标头文件定义了这些 Guid。 筛选器的插针指定其名称和类别来连接到这些名称和类别还指定其他筛选器的 pin。
+BDA 微型驱动程序使用 BDA pin 名称 Guid 来指定名称和类别的 pin，它支持。 BDA 微型驱动程序将这些分配到 Guid**名称**并**类别**的成员[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)结构。 *Bdamedia.h*标头文件定义了这些 Guid。 筛选器的插针指定其名称和类别来连接到这些名称和类别还指定其他筛选器的 pin。
 
 BDA 中提供了以下固定名称 Guid:
 

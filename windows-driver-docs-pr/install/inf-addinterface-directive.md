@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdc7b165318f7bbbef02dbc148ecb2e9071ef55d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9edcdba0c1ee776f8613b3c151f6b79337957ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390752"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385924"
 ---
 # <a name="inf-addinterface-directive"></a>INF AddInterface 指令
 
@@ -36,12 +36,12 @@ AddInterface={InterfaceClassGUID} [,[reference-string] [,[add-interface-section]
 
 
 <a href="" id="interfaceclassguid"></a>*InterfaceClassGUID*  
-指定标识设备接口类的 GUID 值。 这可以表示为一个显式的 GUID 值的窗体 **{**<em>nnnnnnnn</em>**-***nnnn***-***nnnn*-* nnnn***-**<em>nnnnnnnnnnnn</em>**}** 或作为 %*strkey*%令牌到定义 **"{**<em>nnnnnnnn</em>**-***nnnn***-***nnnn*-* nnnn***-**<em>nnnnnnnnnnnn</em>**}"** 中[**字符串**](inf-strings-section.md) INF 文件部分。
+指定标识设备接口类的 GUID 值。 这可以表示为一个显式的 GUID 值的窗体 **{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}** 或作为 %*strkey*%令牌到定义 **"{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}"** 中[**字符串**](inf-strings-section.md) INF 文件部分。
 
-有关如何创建 GUID 的详细信息，请参阅[驱动程序中使用 Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)。 有关系统定义的接口类 GUID，请参阅相应的标头，诸如*Ks.h*内核流接口的 Guid。
+有关如何创建 GUID 的详细信息，请参阅[驱动程序中使用 Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)。 有关系统定义的接口类 GUID，请参阅相应的标头，诸如*Ks.h*内核流接口的 Guid。
 
 <a href="" id="reference-string"></a>*reference-string*  
-此可选值，与特定于设备的类的实例指定的接口，关联可以表示为 **"**<em>带引号的字符串</em>**"** 或作为 %*strkey*中定义的 %令牌[ **INF 字符串部分**](inf-strings-section.md)。
+此可选值，与特定于设备的类的实例指定的接口，关联可以表示为 **"** <em>带引号的字符串</em> **"** 或作为 %*strkey*中定义的 %令牌[ **INF 字符串部分**](inf-strings-section.md)。
 
 即插即用的函数和筛选器驱动程序通常省略此值从**AddInterface =** 其 INF 文件中的条目。 一个*引用字符串*由*swenum*驱动程序，因为软件通过使用单个接口类的多个实例创建按需的设备的占位符。 相同*InterfaceClassGUID*值可以是具有两个 INF 条目中指定或多个唯一*引用字符串*s。 因为 I/O 管理器将传递*引用字符串*作为路径组件的接口实例的名称，只要打开它的值，已安装的驱动程序可以区分的同一个类的一个接口实例设备。
 
@@ -54,9 +54,9 @@ AddInterface={InterfaceClassGUID} [,[reference-string] [,[add-interface-section]
 <a name="remarks"></a>备注
 -------
 
-如果[设备接口类](device-interface-classes.md)通过指定标识 **{**<em>InterfaceClassGUID</em>**}** 是未安装，请在系统设置代码在系统中安装此类。 任何 INF 文件来安装一个新类还具有[ **INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。 本部分包含指定 **{**<em>InterfaceClassGUID</em>**}** 并引用*接口安装部分*的设置此类的特定于接口的安装操作。
+如果[设备接口类](device-interface-classes.md)通过指定标识 **{** <em>InterfaceClassGUID</em> **}** 是未安装，请在系统设置代码在系统中安装此类。 任何 INF 文件来安装一个新类还具有[ **INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。 本部分包含指定 **{** <em>InterfaceClassGUID</em> **}** 并引用*接口安装部分*的设置此类的特定于接口的安装操作。
 
-若要启用更高级的组件运行时使用的设备接口类的实例，请将设备驱动程序必须先调用[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)要检索的符号链接名称若要启用的设备接口实例。  通常情况下，即插即用的函数或筛选器驱动程序，可以从此调用其[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。  若要启用 INF 中预配的设备接口的实例，该设备驱动程序必须提供 **{**<em>InterfaceClassGUID</em>**}** 和*引用字符串*时，它调用 INF 中指定[ **IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)。  然后，该驱动程序调用[ **IoSetDeviceInterfaceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549700)若要启用使用返回的符号链接名称的接口[ **IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506). 
+若要启用更高级的组件运行时使用的设备接口类的实例，请将设备驱动程序必须先调用[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)要检索的符号链接名称若要启用的设备接口实例。  通常情况下，即插即用的函数或筛选器驱动程序，可以从此调用其[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。  若要启用 INF 中预配的设备接口的实例，该设备驱动程序必须提供 **{** <em>InterfaceClassGUID</em> **}** 和*引用字符串*时，它调用 INF 中指定[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)。  然后，该驱动程序调用[ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)若要启用使用返回的符号链接名称的接口[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface). 
 
 每个**AddInterface**指令[ **INF DDInstall.Interfaces 部分**](inf-ddinstall-interfaces-section.md) INF 编写器的定义可以引用*添加-接口-部分* INF 文件中的其他位置。 每个 INF 编写器定义的节名称必须是唯一的 INF 文件中的和必须遵从常规规则，用于定义的节名称。 有关这些规则的详细信息，请参阅[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
 
@@ -84,7 +84,7 @@ AddReg=add-registry-section[, add-registry-section]...
 
 *添加注册表部分*内引用*添加接口部分*是特定于设备、 驱动程序和接口的实例。 它可能具有值项定义导出的设备接口实例的友好名称，以便仍然更高级的组件可以引用该接口由其用户界面中的友好名称。
 
-**HKR**中此类指定*添加注册表部分*部分指定设备接口的运行时可访问状态注册表项。  该驱动程序可以访问存储在此注册表项在运行时通过调用状态[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)要检索的句柄状态注册表项。  用户模式组件可以通过调用查询的状态[ **CM_Open_Device_Interface_Key**](https://msdn.microsoft.com/library/windows/hardware/hh780223)。
+**HKR**中此类指定*添加注册表部分*部分指定设备接口的运行时可访问状态注册表项。  该驱动程序可以访问存储在此注册表项在运行时通过调用状态[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)要检索的句柄状态注册表项。  用户模式组件可以通过调用查询的状态[ **CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)。
 
 <a name="examples"></a>示例
 --------
@@ -157,9 +157,9 @@ ESSAud.Wave.szPname="ESS AudioDrive"
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 
-[**IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)
+[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)
 
-[**IoSetDeviceInterfaceState**](https://msdn.microsoft.com/library/windows/hardware/ff549700)
+[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)
 
 [**RenFiles**](inf-renfiles-directive.md)
 

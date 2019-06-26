@@ -4,12 +4,12 @@ description: 自动配置的扫描
 ms.assetid: 6904e216-3eb7-419f-a6ca-198defaeebe0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 196e56d6b468014450c3d12279a88e05459d5c2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 825fb1e22a27a119f392b3d2d70d1428bdf7db7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366764"
 ---
 # <a name="auto-configured-scanning"></a>自动配置的扫描
 
@@ -22,7 +22,7 @@ ms.locfileid: "63373351"
 
 WIA 2.0 微型驱动程序可以支持自动配置所有类型的 WIA 扫描程序设备，包括连接到串行和并行端口、 连接到 USB、 SCSI、 和 IEEE 1394 总线的扫描仪和已连接网络的 Web 服务扫描程序的扫描程序都扫描。
 
-在 Windows Vista 中，Microsoft Web Services for Devices (WSD) 扫描类驱动程序包括一个自定义驱动程序扩展插件以支持自动配置扫描。 此驱动程序提供了自动配置扫描仅为实现 Windows 设备协议 (WDP) 1.0 的扫描仪的网络 WIA 扫描程序设备。 在 Windows 7 中，WSD 扫描类驱动程序实现自动配置扫描中前面段落所述的标准功能，而不作为自定义驱动程序扩展。 有关 WSD 扫描类驱动程序的详细信息，请参阅[与适用于设备的 Web 服务的 WIA](wia-with-web-services-for-devices.md)。 有关扫描程序 WDP 的详细信息，请参阅[Web 服务的设备扫描服务架构](https://msdn.microsoft.com/library/windows/hardware/ff547963)。
+在 Windows Vista 中，Microsoft Web Services for Devices (WSD) 扫描类驱动程序包括一个自定义驱动程序扩展插件以支持自动配置扫描。 此驱动程序提供了自动配置扫描仅为实现 Windows 设备协议 (WDP) 1.0 的扫描仪的网络 WIA 扫描程序设备。 在 Windows 7 中，WSD 扫描类驱动程序实现自动配置扫描中前面段落所述的标准功能，而不作为自定义驱动程序扩展。 有关 WSD 扫描类驱动程序的详细信息，请参阅[与适用于设备的 Web 服务的 WIA](wia-with-web-services-for-devices.md)。 有关扫描程序 WDP 的详细信息，请参阅[Web 服务的设备扫描服务架构](https://docs.microsoft.com/windows-hardware/drivers/image/scan-service--ws-scan--schema)。
 
 ### <a name="examples"></a>示例
 

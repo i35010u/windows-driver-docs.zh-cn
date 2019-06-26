@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_LISTEN_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 11220bee8a6fdd5b1bdf5e4858251af0f9037944
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69f336c090e7a494ec74113682e7ddcfa157c8e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362911"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355427"
 ---
 # <a name="wditlvp2plistenstate"></a>WDI\_TLV\_P2P\_LISTEN\_STATE
 
@@ -33,7 +33,7 @@ WDI\_TLV\_P2P\_侦听\_状态是 TLV，其中包含 Wi-Fi Direct 侦听状态。
 
 | 在任务栏的搜索框中键入                                                         | 描述                            |
 |--------------------------------------------------------------|----------------------------------------|
-| [**WDI\_P2P\_LISTEN\_STATE**](https://msdn.microsoft.com/library/windows/hardware/dn926097) | 所需的 Wi-Fi Direct 侦听状态。 |
+| [**WDI\_P2P\_LISTEN\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_listen_state) | 所需的 Wi-Fi Direct 侦听状态。 |
 
  
 

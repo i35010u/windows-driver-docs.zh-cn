@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f3532ff933f6912db02381b2c0581ae24b1033df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28052e758d5951ac77eb1e0e13bbd6341d0f9ca5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387232"
 ---
 # <a name="oidwditaskp2psendresponseactionframe"></a>OID\_WDI\_TASK\_P2P\_SEND\_RESPONSE\_ACTION\_FRAME
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_P2P\_发送\_响应\_操作\_帧颁发给 IHV 组件以将 Wi-
 
 | Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
+| Port   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
 
  
 
@@ -57,13 +57,13 @@ WDI 接口本身保持不变，并且继续使用毫秒单位，就像以前那�
 
 | TLV                                                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                    |
 |-------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_ACTION\_FRAME\_RESPONSE\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn897859)   |                                |          | 参数，如操作帧类型，目标对等方适配器和对话框令牌的设备地址。                                                 |
-| [**WDI\_TLV\_P2P\_GO\_NEGOTIATION\_RESPONSE\_INFO**](https://msdn.microsoft.com/library/windows/hardware/dn897942)           |                                | X        | 请转协商响应参数。 如果 wfdRequestFrameType 转协商响应，该端口应仅检查此结构。            |
-| [**WDI\_TLV\_P2P\_转\_协商\_确认\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn897880)   |                                | X        | 请转协商确认参数。 如果 wfdRequestFrameType 转协商确认消息，该端口应只能检查此结构。    |
-| [**WDI\_TLV\_P2P\_邀请\_响应\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn897968)                    |                                | X        | 邀请响应参数。 如果 wfdRequestFrameType 是邀请的响应，该端口仅应检查此结构。                   |
-| [**WDI\_TLV\_P2P\_预配\_发现\_响应\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn897983) |                                | X        | 预配发现响应参数。 如果 wfdRequestFrameType 是配置发现响应，该端口仅应检查此结构。 |
-| [**WDI\_TLV\_P2P\_传入\_帧\_信息**](https://msdn.microsoft.com/library/windows/hardware/dn897957)                |                                |          | 但指定从以前接收的 P2P 操作帧的信息。 接收的指示提供返回到该端口。            |
-| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                                         |                                | X        | 必须包含在由端口发送帧的一个或多个 Ie。                                                                           |
+| [**WDI\_TLV\_P2P\_ACTION\_FRAME\_RESPONSE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-action-frame-response-parameters)   |                                |          | 参数，如操作帧类型，目标对等方适配器和对话框令牌的设备地址。                                                 |
+| [**WDI\_TLV\_P2P\_GO\_NEGOTIATION\_RESPONSE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-negotiation-response-info)           |                                | X        | 请转协商响应参数。 如果 wfdRequestFrameType 转协商响应，该端口应仅检查此结构。            |
+| [**WDI\_TLV\_P2P\_转\_协商\_确认\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-negotiation-confirmation-info)   |                                | X        | 请转协商确认参数。 如果 wfdRequestFrameType 转协商确认消息，该端口应只能检查此结构。    |
+| [**WDI\_TLV\_P2P\_邀请\_响应\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-invitation-response-info)                    |                                | X        | 邀请响应参数。 如果 wfdRequestFrameType 是邀请的响应，该端口仅应检查此结构。                   |
+| [**WDI\_TLV\_P2P\_预配\_发现\_响应\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-provision-discovery-response-info) |                                | X        | 预配发现响应参数。 如果 wfdRequestFrameType 是配置发现响应，该端口仅应检查此结构。 |
+| [**WDI\_TLV\_P2P\_传入\_帧\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-incoming-frame-information)                |                                |          | 但指定从以前接收的 P2P 操作帧的信息。 接收的指示提供返回到该端口。            |
+| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                                         |                                | X        | 必须包含在由端口发送帧的一个或多个 Ie。                                                                           |
 
  
 

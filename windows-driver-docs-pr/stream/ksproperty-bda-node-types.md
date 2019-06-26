@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 893e112d26b39419d98b5a4cfedad1cdf22f4bb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 590dbb0659bf11f36f85d3404d9c87175352bf70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362235"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386916"
 ---
 # <a name="kspropertybdanodetypes"></a>KSPROPERTY\_BDA\_NODE\_TYPES
 
@@ -85,9 +85,9 @@ ms.locfileid: "63362235"
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaPropertyNodeTypes**](https://msdn.microsoft.com/library/windows/hardware/ff556497)
+[**BdaPropertyNodeTypes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertynodetypes)
 
-[**KSNODE\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563473)
+[**KSNODE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksnode_descriptor)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

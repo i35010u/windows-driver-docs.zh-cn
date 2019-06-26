@@ -8,12 +8,12 @@ keywords:
 - 安装程序调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f029ce155b512a667d225ceb97fd8116432f1dd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f61bcdc6d3db36d136cce714ea009965a87e450
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346321"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366926"
 ---
 # <a name="debugging-windows-setup-and-the-os-loader"></a>调试 Windows 安装程序和 OS 加载程序
 
@@ -23,8 +23,8 @@ ms.locfileid: "63346321"
 
 有关在启动调试一台计算机的信息，请参阅以下主题。
 
--   [**BCDEdit /bootdebug**](https://msdn.microsoft.com/library/windows/hardware/ff542183)
--   [引用的 BCD 引导选项](https://msdn.microsoft.com/library/windows/hardware/ff542205)
+-   [**BCDEdit /bootdebug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--bootdebug)
+-   [引用的 BCD 引导选项](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

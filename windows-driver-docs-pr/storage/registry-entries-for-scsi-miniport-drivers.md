@@ -13,12 +13,12 @@ keywords:
 - 伪 Lun WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3029c27c35aa3f8f09e7df6951acc413f3dda16a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b30b56531349992478273c63f2781844fcfa55e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368958"
 ---
 # <a name="registry-entries-for-scsi-miniport-drivers"></a>SCSI 微型端口驱动程序的注册表项
 
@@ -56,7 +56,7 @@ ms.locfileid: "63374493"
     -   操作系统版本：此功能是在 Windows NT 4.0 SP4 和更高版本操作系统中可用。
 -   **BusType**
     -   位置:HKLM\\系统\\CurrentControlSet\\Services\\&lt;ServiceName&gt;\\参数\\BusType，其中&lt;ServiceName&gt; = 使用指定的微型端口驱动程序名称**AddServices**指令 INF 文件中。
-    -   值：与相同[**存储\_总线\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff566356)枚举器：
+    -   值：与相同[**存储\_总线\_类型**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff566356(v=vs.85))枚举器：
     -   含义：指示适配器连接到的总线类型。
     -   操作系统版本：此功能是在 Windows 2000 和更高版本操作系统中可用。
 -   **CreateInitiatorLU**

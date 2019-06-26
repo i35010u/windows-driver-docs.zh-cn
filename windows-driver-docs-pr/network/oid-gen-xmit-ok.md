@@ -5,12 +5,12 @@ ms.assetid: ac7120a3-58bb-4047-b4b7-ad9fbaf14e4f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_XMIT_OK 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 72108ade883a18748ad1839258d00c37769673ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d97a14765112a61347797a6283dd6f5431c492b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385734"
 ---
 # <a name="oidgenxmitok"></a>OID\_GEN\_XMIT\_确定
 
@@ -39,7 +39,7 @@ ms.locfileid: "63355931"
 
 OID\_GEN\_XMIT\_确定指定的错误没有传输的帧数。 但是， [OID\_代\_统计信息](oid-gen-statistics.md)不包括此信息。
 
-注意：统计信息 Oid 是强制性的 NDIS 6.0 和更高版本的微型端口驱动程序，除非 NDIS 处理它们。 有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)。
+注意：统计信息 Oid 是强制性的 NDIS 6.0 和更高版本的微型端口驱动程序，除非 NDIS 处理它们。 有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
 
 <a name="requirements"></a>要求
 ------------

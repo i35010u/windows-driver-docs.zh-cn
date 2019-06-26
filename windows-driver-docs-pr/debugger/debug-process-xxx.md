@@ -13,17 +13,17 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f89e1a255133e0b23037f7fd6bf630bcf2f669
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd957c3e15efbc2a06f05374b5b43a05852a8f72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339759"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366979"
 ---
 # <a name="debugprocessxxx"></a>DEBUG\_PROCESS\_XXX
 
 
-处理选项有点设置该控件如何[调试器引擎](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)将用户模式[进程](https://msdn.microsoft.com/library/windows/hardware/ff539300#processes)。 其中某些进程选项是全局;其他人是特定于进程。
+处理选项有点设置该控件如何[调试器引擎](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine)将用户模式[进程](https://docs.microsoft.com/windows-hardware/drivers/debugger/controlling-threads-and-processes#processes)。 其中某些进程选项是全局;其他人是特定于进程。
 
 处理选项仅适用于实时用户模式下调试。
 
@@ -71,7 +71,7 @@ ms.locfileid: "63339759"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**.childdbg**](https://msdn.microsoft.com/library/windows/hardware/ff562215)
+[ **.childdbg**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-childdbg--debug-child-processes-)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - 返回状态 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f7d305d3599b7d105f9580bd0812d7efd1ec95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 674dfc788bad0b87b53d289286b8d8482d5dac36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344554"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385942"
 ---
 # <a name="returning-status-from-a-minifilter-driverentry-routine"></a>从微筛选器 DriverEntry 例程返回状态
 
@@ -22,7 +22,7 @@ ms.locfileid: "63344554"
 
 微筛选器驱动程序**DriverEntry**例程通常将返回状态\_成功。 但是，如果微筛选器初始化失败， **DriverEntry**例程应返回相应的错误 NTSTATUS 值。
 
-如果**DriverEntry**例程将返回一个状态的值，并不代表成功 NTSTATUS 值，系统就会卸载微筛选器驱动程序。 在微筛选器驱动程序[ **FilterUnloadCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff551085)不调用例程。 出于此原因， **DriverEntry**例程必须释放返回一个状态的值，并不代表成功 NTSTATUS 值之前的系统资源分配任何内存。
+如果**DriverEntry**例程将返回一个状态的值，并不代表成功 NTSTATUS 值，系统就会卸载微筛选器驱动程序。 在微筛选器驱动程序[ **FilterUnloadCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)不调用例程。 出于此原因， **DriverEntry**例程必须释放返回一个状态的值，并不代表成功 NTSTATUS 值之前的系统资源分配任何内存。
 
  
 

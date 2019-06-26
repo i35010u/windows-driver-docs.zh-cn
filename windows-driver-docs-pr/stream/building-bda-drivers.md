@@ -10,12 +10,12 @@ keywords:
 - WDK BDA 宏
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0910e912280f1518422048e2afbd19d4682d8323
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: aeb7dca13d40a74f03c75b4056a959a06070f1be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575509"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386676"
 ---
 # <a name="building-bda-drivers"></a>生成 BDA 驱动程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "56575509"
 
 
 
-**请注意**  开始 Windows 8，WDK 构建环境不再使用 Build.exe。 请参阅[WDK 和 Visual Studio 构建环境](https://msdn.microsoft.com/library/windows/hardware/hh454286)。 以下讨论仅适用于构建您的驱动程序使用 WDK Windows 7 版本或更早版本。
+**请注意**  开始 Windows 8，WDK 构建环境不再使用 Build.exe。 请参阅[WDK 和 Visual Studio 构建环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)。 以下讨论仅适用于构建您的驱动程序使用 WDK Windows 7 版本或更早版本。
 
  
 

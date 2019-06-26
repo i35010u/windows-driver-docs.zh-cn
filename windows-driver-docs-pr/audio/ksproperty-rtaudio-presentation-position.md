@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 01/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa3bc9613bd4e57d3b181015ddee9baeaeb8b3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d525a9443ee6ce36da7a4dbb91756fe83ba9eb3
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332666"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391640"
 ---
 # <a name="kspropertyrtaudiopresentationposition"></a>KSPROPERTY\_RTAUDIO\_演示文稿\_位置
 
@@ -50,16 +50,16 @@ KSPROPERTY\_RTAUDIO\_演示文稿\_返回流表示信息的位置。
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position"><STRONG>KSAUDIO_PRESENTATION_POSITION</STRONG></a></p></td>
 </tr>
 </tbody>
 </table>
  
 
-属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构。 发送请求之前, 在客户端加载具有值，用于描述音频数据的流中的当前光标位置的结构。
+属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 发送请求之前, 在客户端加载具有值，用于描述音频数据的流中的当前光标位置的结构。
 
-属性值是[ **KSAUDIO\_演示文稿\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450865)结构，它表示音频的数据流中的最新的演示文稿位置。
+属性值是[ **KSAUDIO\_演示文稿\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position)结构，它表示音频的数据流中的最新的演示文稿位置。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -70,7 +70,7 @@ KSPROPERTY\_RTAUDIO\_演示文稿\_位置属性请求将返回状态\_成功以�
 
 操作系统可能会定期从驱动程序以允许将与音频流同步视频或其他活动的上层从驱动程序检索最新的演示文稿位置信息中获取此属性。
 
-在的 u64PositionInBlocks 成员中返回的值[ **KSAUDIO\_演示文稿\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450865)应符合 KSPROPERTY返回的数据包计数\_RTAUDIO\_PACKETCOUNT 和驱动程序的数据包编号解释传递到 SetWritePacket。 换而言之，数据包 0 的第一个示例是块 0。
+在的 u64PositionInBlocks 成员中返回的值[ **KSAUDIO\_演示文稿\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position)应符合 KSPROPERTY返回的数据包计数\_RTAUDIO\_PACKETCOUNT 和驱动程序的数据包编号解释传递到 SetWritePacket。 换而言之，数据包 0 的第一个示例是块 0。
 
 这并不意味着该 KSPROPERTY\_RTAUDIO\_PACKETCOUNT 和 KSPROPERTY\_RTAUDIO\_演示文稿\_位置，如果同时，调用将会返回到相同的示例，请参阅的值。 KSPROPERTY\_RTAUDIO\_PACKETCOUNT 返回信息的示例从 WaveRT 缓冲区传输到的硬件，同时 KSPROPERTY\_RTAUDIO\_演示文稿\_位置返回有关在系统的输出的示例的信息。 这些是信息的两个不同片段。
 

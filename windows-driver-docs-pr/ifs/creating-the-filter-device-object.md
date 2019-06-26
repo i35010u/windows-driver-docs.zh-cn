@@ -11,12 +11,12 @@ keywords:
 - 筛选器 DOs WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23855c49a21b874809fe998826d801e452f67d13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bd6111b0c9f9b85f0573c8c233c78fd0c8d6f1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359347"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366793"
 ---
 # <a name="creating-the-filter-device-object"></a>创建筛选器设备对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "63359347"
 ## <span id="ddk_creating_the_filter_device_object_if"></span><span id="DDK_CREATING_THE_FILTER_DEVICE_OBJECT_IF"></span>
 
 
-调用[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)创建筛选器设备对象附加到卷或文件系统堆栈，如以下示例所示：
+调用[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)创建筛选器设备对象附加到卷或文件系统堆栈，如以下示例所示：
 
 ```cpp
 status = IoCreateDevice(
@@ -45,7 +45,7 @@ status = IoCreateDevice(
 PDEVICE_OBJECT AttachedToDeviceObject;
 ```
 
-在上述调用到[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)，并设置*DeviceName*参数**NULL**指定筛选设备对象将未命名。 筛选设备对象永远不会被命名为。 由于筛选设备对象附加到文件系统卷或卷驱动程序堆栈，为筛选设备对象分配名称会创建系统安全漏洞。
+在上述调用到[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)，并设置*DeviceName*参数**NULL**指定筛选设备对象将未命名。 筛选设备对象永远不会被命名为。 由于筛选设备对象附加到文件系统卷或卷驱动程序堆栈，为筛选设备对象分配名称会创建系统安全漏洞。
 
 *DeviceType*参数必须始终设置为 （文件系统或筛选器） 的目标设备对象的筛选器设备对象附加到的设备类型相同。 请务必传播这样一来，设备类型，因为它用在 I/O 管理器，报告返回给应用程序。
 

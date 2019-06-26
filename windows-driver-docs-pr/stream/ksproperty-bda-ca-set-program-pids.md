@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69a83c6d750605c9ab00d4f4b3c989f26449663e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d15d6d1cac90709fa45414ace31a5f8f223065a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364891"
 ---
 # <a name="kspropertybdacasetprogrampids"></a>KSPROPERTY\_BDA\_CA\_SET\_PROGRAM\_PIDS
 
@@ -85,11 +85,11 @@ BDA\_程序\_PID\_列表结构包含的指定程序的数据包标识符列表�
 ## <a name="see-also"></a>请参阅
 
 
-[**BDA\_PROGRAM\_PID\_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff556549)
+[**BDA\_PROGRAM\_PID\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_program_pid_list)
 
 [**KSEVENT\_BDA\_程序\_流\_状态\_已更改**](ksevent-bda-program-flow-status-changed.md)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

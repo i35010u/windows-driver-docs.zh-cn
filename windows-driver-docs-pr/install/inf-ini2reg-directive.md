@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb47ba37497f378082b855452ab8db79f334df3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 500f422a91baa313947e5d4e2127857b89eba7ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365843"
 ---
 # <a name="inf-ini2reg-directive"></a>INF Ini2Reg 指令
 
@@ -72,7 +72,7 @@ ini-file,ini-section,[ini-key],reg-root,subkey[,flags]
 标识在此条目中提供的其他值的注册表树的根。 有关详细信息，请参阅参考[ **AddReg 指令**](inf-addreg-directive.md)。
 
 <a href="" id="subkey"></a>*subkey*  
-标识要接收的值的子项表示为 %*strkey*中定义的 %令牌[**字符串**](inf-strings-section.md)部分的 INF 或显式的注册表路径 (<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...) 从给定*reg 根*。
+标识要接收的值的子项表示为 %*strkey*中定义的 %令牌[**字符串**](inf-strings-section.md)部分的 INF 或显式的注册表路径 (<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...) 从给定*reg 根*。
 
 <a href="" id="flags"></a>*flags*  
 指定如何处理转移之后的给定的信息对注册表和/或 （以位 1） 是否覆盖现有的注册表信息，如下所示的 INI 文件 （以位 0）：
@@ -94,7 +94,7 @@ ini-file,ini-section,[ini-key],reg-root,subkey[,flags]
 
 **Ini2Reg**指令在任何正式语法语句中所示的部分是否有效。 此指令也是有效引用的 INF 编写器定义各节中[ **AddInterface** ](inf-addinterface-directive.md)指令或在引用[ **InterfaceInstall32**](inf-interfaceinstall32-section.md)部分。
 
-如果一个 INF 文件用于在 Windows XP 和更高版本的 Windows 上安装的设备，不应包含的 INF 文件**Ini2Reg**指令。 INF 文件，其中包含**Ini2Reg**指令不会传递["设计 Windows"徽标测试](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)，将不会收到数字签名，并因此将信任的 Windows (请参阅[如何Windows 中选择驱动程序](how-setup-selects-drivers.md))。
+如果一个 INF 文件用于在 Windows XP 和更高版本的 Windows 上安装的设备，不应包含的 INF 文件**Ini2Reg**指令。 INF 文件，其中包含**Ini2Reg**指令不会传递["设计 Windows"徽标测试](https://docs.microsoft.com/windows-hardware/drivers)，将不会收到数字签名，并因此将信任的 Windows (请参阅[如何Windows 中选择驱动程序](how-setup-selects-drivers.md))。
 
 每个*注册表部分 ini*名称必须是唯一的 INF 文件。 每个 INF 编写器创建的部分名称的 INF 文件中必须是唯一和必须遵从常规规则，用于定义的节名称。 有关这些规则的详细信息，请参阅[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
 

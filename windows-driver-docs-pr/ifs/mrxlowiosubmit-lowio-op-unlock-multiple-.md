@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 085d3c72ab7fab2eb651a586030431bd363ed202
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79fb5258b050a27a7cdfb3d915cfe6cc54529480
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370091"
 ---
 # <a name="mrxlowiosubmitlowioopunlockmultiple-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]例程
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求的网络最小重定向程序中删除多个文件对象持有的锁。
+*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求的网络最小重定向程序中删除多个文件对象持有的锁。
 
 <a name="syntax"></a>语法
 ------
@@ -104,7 +104,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE](
 
 RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 接收响应[ **IRP\_MJ\_锁\_控件**](irp-mj-lock-control.md) IRP 的细微的代码请求\_MN\_解锁\_所有或 IRP\_MN\_解锁\_所有\_BY\_密钥。
 
-然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]*，RDBSS 修改 RX 中的以下成员\_上下文结构指向*RxContext*参数：
+然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* ，RDBSS 修改 RX 中的以下成员\_上下文结构指向*RxContext*参数：
 
 **LowIoContext.Operation**成员设置为 LOWIO\_OP\_解锁\_多个。
 
@@ -127,7 +127,7 @@ typedef struct _LOWIO_LOCK_LIST {
 
 **LowIoContext.Operation** RX 成员\_上下文指定要执行的较低的 I/O 操作。 可以为多个较低的 I/O 例程，使其指向网络微型重定向中的相同例程，因为**LowIoContext.Operation**成员可用于区分低请求的 I/O 操作。 例如，与文件锁相关的所有 I/O 调用可以在网络微型-重定向程序中都调用相同的低 I/O 例程，可以使用此例程**LowIoContext.Operation**成员区分锁定和解锁请求的操作。
 
-如果*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 例程可能需要很长时间才能完成，网络微型重定向程序驱动程序应释放FCB 之前启动的网络通信的结构。 FCB 结构可以释放通过调用[ **RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)。 虽然*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 处理例程， **LowIoContext.ResourceThreadId** RX 成员\_上下文保证以指示启动了 RDBSS 中的操作的进程线程。
+如果*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 例程可能需要很长时间才能完成，网络微型重定向程序驱动程序应释放FCB 之前启动的网络通信的结构。 FCB 结构可以释放通过调用[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)。 虽然*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 处理例程， **LowIoContext.ResourceThreadId** RX 成员\_上下文保证以指示启动了 RDBSS 中的操作的进程线程。
 
 **LowIoContext.ResourceThreadId** RX 成员\_上下文可用于释放 FCB 结构代表另一个线程。 完成异步例程后，可以释放已获取从初始线程的 FCB 结构。
 
@@ -154,23 +154,23 @@ typedef struct _LOWIO_LOCK_LIST {
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]**](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]**](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]**](mrxlowiosubmit-lowio-op-ioctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]**](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]**](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]**](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]**](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]**](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

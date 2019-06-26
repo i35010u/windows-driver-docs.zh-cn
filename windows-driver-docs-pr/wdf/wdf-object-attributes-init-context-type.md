@@ -6,19 +6,19 @@ keywords:
 - WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd6ab18ff21862ec1c6c83dec12c0e705155fbd
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 7c9df33b879048f74488cf33754471e49f5adb8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372113"
 ---
 # <a name="wdfobjectattributesinitcontexttype-macro"></a>WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏初始化的驱动程序[ **WDF_OBJECT_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构，并将插入对象的驱动程序定义的上下文到结构的信息。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏初始化的驱动程序[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，并将插入对象的驱动程序定义的上下文到结构的信息。
 
 <a name="syntax"></a>语法
 ------
@@ -34,7 +34,7 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 ----------
 
 *_attributes*   
-一个指向[ **WDF_OBJECT_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构。
+一个指向[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。
 
 *_contexttype*   
 描述对象的上下文空间的内容的驱动程序定义的结构结构类型名称。
@@ -49,12 +49,12 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 
 然后再调用**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**，则必须调用[ **WDF_DECLARE_CONTEXT_TYPE** ](wdf-declare-context-type.md)或者[ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)全局范围内 （而不是在某个函数）。
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏将合并[ **WDF_OBJECT_ATTRIBUTES_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552402)函数和[ **WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE** ](wdf-object-attributes-set-context-type.md)宏。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏将合并[ **WDF_OBJECT_ATTRIBUTES_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数和[ **WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE** ](wdf-object-attributes-set-context-type.md)宏。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例定义 WDM_NDIS_REQUEST 上下文结构。 然后，该示例调用[ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)宏进行注册，该结构和指定的上下文访问器方法将被命名为**RequestGetMyContext**. 然后，在函数中，示例分配[ **WDF_OBJECT_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff552400)结构，然后初始化**WDF_OBJECT_ATTRIBUTES**结构。
+下面的代码示例定义 WDM_NDIS_REQUEST 上下文结构。 然后，该示例调用[ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)宏进行注册，该结构和指定的上下文访问器方法将被命名为**RequestGetMyContext**. 然后，在函数中，示例分配[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，然后初始化**WDF_OBJECT_ATTRIBUTES**结构。
 
 ```cpp
 typedef struct _WDM_NDIS_REQUEST
@@ -110,9 +110,9 @@ WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &attributes, WDM_NDIS_REQUEST );
 ## <a name="see-also"></a>请参阅
 
 
-[**WDF_OBJECT_ATTRIBUTES**](https://msdn.microsoft.com/library/windows/hardware/ff552400)
+[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)
 
-[**WDF_OBJECT_ATTRIBUTES_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552402)
+[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)
 
 [**WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE**](wdf-object-attributes-set-context-type.md)
 

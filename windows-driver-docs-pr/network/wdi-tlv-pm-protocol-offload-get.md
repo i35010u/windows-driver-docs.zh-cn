@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_GET 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c2781cc3242716b45bdcd4efe133b8347740527a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c8cd3d48be2bdb5a0e08ce56689c1737474fffd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373853"
 ---
 # <a name="wditlvpmprotocoloffloadget"></a>WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_GET
 
 
-WDI\_TLV\_PM\_协议\_卸载\_GET 是包含的协议卸载 ID TLV [OID\_WDI\_获取\_PM\_协议\_卸载](https://msdn.microsoft.com/library/windows/hardware/dn925846)。
+WDI\_TLV\_PM\_协议\_卸载\_GET 是包含的协议卸载 ID TLV [OID\_WDI\_获取\_PM\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-pm-protocol-offload)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

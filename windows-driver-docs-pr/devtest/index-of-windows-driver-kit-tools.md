@@ -20,12 +20,12 @@ keywords:
 - GUIDGen.exe WDK
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cac00eb60b57dee3eb425bfa6ec86f8c25abd7c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06477b84eee3be880a83440689b5319f2a1846cd
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394095"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows 驱动程序工具包工具的索引
 
@@ -103,7 +103,7 @@ ms.locfileid: "63360777"
 <td align="left"><p>此工具可以构造的图形表示形式显示筛选器和筛选器的内部节点之间的 pin pin 连接的筛选器关系图。</p>
 <p>%WindowsSdkDir%\tools\x86\KsStudio.chm</p>
 <p>%WindowsSdkDir%\tools\x64\KsStudio.chm</p>
-<p>请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff554257" data-raw-source="[AVStream Testing and Debugging](https://msdn.microsoft.com/library/windows/hardware/ff554257)">AVStream 测试和调试</a>有关详细信息。</p></td>
+<p>请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-testing-and-debugging" data-raw-source="[AVStream Testing and Debugging](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-testing-and-debugging)">AVStream 测试和调试</a>有关详细信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>USB 设备查看器 (Usbview.exe)</p>
@@ -263,7 +263,7 @@ ms.locfileid: "63360777"
 <td align="left"><p>显示跟踪来自 WPD 组件的信息。 此工具将替代了以前版本的 WDK 中附带的 WpdMon.exe。</p>
 <p>WDK 文档：</p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows 便携设备</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD 驱动程序开发工具</a>，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh451296" data-raw-source="[Using the Network Monitor Tool](https://msdn.microsoft.com/library/windows/hardware/hh451296)">使用网络监视器工具</a>。</p></td>
+<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD 驱动程序开发工具</a>，请参阅<a href="https://docs.microsoft.com/previous-versions/hh451296(v=vs.85)" data-raw-source="[Using the Network Monitor Tool](https://docs.microsoft.com/previous-versions/hh451296(v=vs.85))">使用网络监视器工具</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -330,8 +330,8 @@ ms.locfileid: "63360777"
 <p>%WindowsSdkDir%\tools\x86\makentf.exe</p></td>
 <td align="left"><p>将 Adobe 字体指标 (AFM) 文件和东亚字体 AFM 文件转换为 Windows 字体文件 (.ntf)。</p>
 <p>WDK 文档：</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546364" data-raw-source="[Converting AFM Files to NTF Files](https://msdn.microsoft.com/library/windows/hardware/ff546364)">将 AFM 文件转换为 NTF 文件</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546366" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://msdn.microsoft.com/library/windows/hardware/ff546366)">将东亚 AFM 文件转换为 NTF 文件</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files" data-raw-source="[Converting AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files)">将 AFM 文件转换为 NTF 文件</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files)">将东亚 AFM 文件转换为 NTF 文件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PPDCheck (Ppdcheck.exe)</p>
@@ -388,7 +388,7 @@ ms.locfileid: "63360777"
 <p>%WindowsSdkDir%\tools\x86&lt;/p&gt;</td>
 <td align="left"><p>测试驱动程序、 固件和硬件的传感器和位置的功能。 若要测试数据检索、 事件处理、 报告间隔，请更改敏感度，检索属性的传感器和位置 API，将调用该工具。</p>
 <p>WDK 文档：</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh780319" data-raw-source="[Testing sensor functionality with the Sensor Diagnostic Tool](https://msdn.microsoft.com/library/windows/hardware/hh780319)">使用传感器诊断工具测试传感器功能</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool" data-raw-source="[Testing sensor functionality with the Sensor Diagnostic Tool](https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool)">使用传感器诊断工具测试传感器功能</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -438,7 +438,7 @@ ms.locfileid: "63360777"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\CertMgr.exe</p>
 <p>%WindowsSdkDir%\bin\x86\CertMgr.exe</p></td>
-<td align="left"><p>管理证书，证书信任列表 (Ctl) 和证书吊销列表 (Crl) 用于签署驱动程序和<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver packages](https://msdn.microsoft.com/library/windows/hardware/ff544840)">驱动程序包</a>。</p>
+<td align="left"><p>管理证书，证书信任列表 (Ctl) 和证书吊销列表 (Crl) 用于签署驱动程序和<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver packages](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">驱动程序包</a>。</p>
 <p>WDK 文档：</p>
 <p><a href="certmgr.md" data-raw-source="[&lt;strong&gt;CertMgr&lt;/strong&gt;](certmgr.md)"><strong>CertMgr</strong></a></p></td>
 </tr>
@@ -514,7 +514,7 @@ ms.locfileid: "63360777"
 <td align="left"><p>驱动程序验证日志 (DVL)</p>
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>要求使用 Microsoft Visual Studio 和 WDK。 从<strong>驱动程序</strong>菜单上，单击<strong>创建驱动程序验证日志...</strong></p></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=227016" data-raw-source="[Windows Server 2012 Hardware Certification Program](https://go.microsoft.com/fwlink/p/?linkid=227016)">Windows Server 2012 的硬件认证计划</a>需要的所有适用的驱动程序提交的驱动程序验证日志 (DVL)。 DVL 包含来自代码分析和静态驱动程序验证程序日志文件的结果的摘要。 请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_verification_log" data-raw-source="[Creating a Driver Verification Log](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_verification_log)">创建驱动程序验证日志</a>。</p></td>
+<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=227016" data-raw-source="[Windows Server 2012 Hardware Certification Program](https://go.microsoft.com/fwlink/p/?linkid=227016)">Windows Server 2012 的硬件认证计划</a>需要的所有适用的驱动程序提交的驱动程序验证日志 (DVL)。 DVL 包含来自代码分析和静态驱动程序验证程序日志文件的结果的摘要。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Creating a Driver Verification Log](https://docs.microsoft.com/windows-hardware/drivers)">创建驱动程序验证日志</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>增强的存储证书管理工具 (EhStorCertMgrCmd.exe)</p>
@@ -530,7 +530,7 @@ ms.locfileid: "63360777"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\ECManGen.exe</p>
 <p>%WindowsSdkDir%\bin\x86\ECManGen.exe</p></td>
-<td align="left"><p>一个用于创建的事件或性能计数器清单工具 (*.man) 从零开始，无需使用的 XML 标记。 有关创建清单文件的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/dd996930" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd996930)">检测清单 (Windows) 编写</a>部分以及<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">添加到内核模式驱动程序的事件跟踪</a>。</p></td>
+<td align="left"><p>一个用于创建的事件或性能计数器清单工具 (*.man) 从零开始，无需使用的 XML 标记。 有关创建清单文件的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)">检测清单 (Windows) 编写</a>部分以及<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">添加到内核模式驱动程序的事件跟踪</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUIDgen (Guidgen.exe)</p>
@@ -544,7 +544,7 @@ ms.locfileid: "63360777"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\inf2cat.exe</p>
 <p>%WindowsSdkDir%\bin\x86\inf2cat.exe</p></td>
-<td align="left"><p>确定是否<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver package's](https://msdn.microsoft.com/library/windows/hardware/ff544840)">驱动程序包</a>INF 文件可以是指定的 Windows 版本中，列表进行数字签名，并且如果是这样，将生成无符号<a href="https://msdn.microsoft.com/library/windows/hardware/ff537872" data-raw-source="[catalog files](https://msdn.microsoft.com/library/windows/hardware/ff537872)">编录文件</a>的可以应用到指定的 Windows版本。</p>
+<td align="left"><p>确定是否<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver package's](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">驱动程序包</a>INF 文件可以是指定的 Windows 版本中，列表进行数字签名，并且如果是这样，将生成无符号<a href="https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files" data-raw-source="[catalog files](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)">编录文件</a>的可以应用到指定的 Windows版本。</p>
 <p>WDK 文档：</p>
 <p><a href="inf2cat.md" data-raw-source="[&lt;strong&gt;Inf2Cat&lt;/strong&gt;](inf2cat.md)"><strong>Inf2Cat</strong></a></p></td>
 </tr>
@@ -566,7 +566,7 @@ ms.locfileid: "63360777"
 <td align="left"><p>WDKPath\bin\amd64\MakeCat.exe</p>
 <p>WDKPath\bin\ia64\MakeCat.exe</p>
 <p>WDKPath\bin\x86\MakeCat.exe</p></td>
-<td align="left"><p>创建<a href="https://msdn.microsoft.com/library/windows/hardware/ff537872" data-raw-source="[catalog file](https://msdn.microsoft.com/library/windows/hardware/ff537872)">编录文件</a>有关<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver package](https://msdn.microsoft.com/library/windows/hardware/ff544840)">驱动程序包</a>。</p>
+<td align="left"><p>创建<a href="https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files" data-raw-source="[catalog file](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)">编录文件</a>有关<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver package](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">驱动程序包</a>。</p>
 <p>WDK 文档：</p>
 <p><a href="makecat.md" data-raw-source="[MakeCat](makecat.md)">MakeCat</a></p></td>
 </tr>
@@ -599,7 +599,7 @@ ms.locfileid: "63360777"
 <td align="left"><p>PnPUtil (PnPUtil.exe)</p>
 <p><strong>WDK 工具：</strong>否</p></td>
 <td align="left"><p>%Windir%\system32\pnputil.exe</p></td>
-<td align="left"><p>安装或删除的命令行工具<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver packages](https://msdn.microsoft.com/library/windows/hardware/ff544840)">驱动程序包</a>从 Windows 驱动程序存储区。</p>
+<td align="left"><p>安装或删除的命令行工具<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver packages](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">驱动程序包</a>从 Windows 驱动程序存储区。</p>
 <p>此工具是在 Windows 7 和更高版本的 Windows 中可用。</p>
 <p>WDK 文档：</p>
 <p><a href="pnputil.md" data-raw-source="[PnPUtil](pnputil.md)">PnPUtil</a></p></td>
@@ -772,7 +772,7 @@ ms.locfileid: "63360777"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x86\wmimofck.exe</p></td>
 <td align="left"><p>WDK 文档：</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565588" data-raw-source="[Using wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)">使用 wmimofck.exe</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe" data-raw-source="[Using wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)">使用 wmimofck.exe</a></p>
 <p>有关命令选项的信息，请键入</p>
 <p><strong>wmimofck -?</strong></p></td>
 </tr>
@@ -808,7 +808,7 @@ ms.locfileid: "63360777"
 
 以下工具已添加或已改变的 WDK 8.1:
 
--   HCK 测试套件 (请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)并[如何在 WDK 8.1 中运行 HCK 测试套件](https://msdn.microsoft.com/windows-drivers/develop/run_the_hck_test_suites_in_the_wdk)。)
+-   HCK 测试套件 (请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)并[如何在 WDK 8.1 中运行 HCK 测试套件](https://docs.microsoft.com/windows-hardware/drivers)。)
 
 -   [驱动程序验证程序](driver-verifier.md)— 现在有四个新选项来在 Windows 驱动程序中检测错误。
 -   [PwrTest](pwrtest.md)-更新的文档，新的测试方案，包括支持连接待机电源状态。
@@ -820,7 +820,7 @@ ms.locfileid: "63360777"
 
 -   蓝牙查询记录验证程序 (Sdpverify.exe)
 
--   设备基础测试 (请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)并[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)。
+-   设备基础测试 (请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)并[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)。
 
 -   传感器诊断工具 (sensordiagnostictool.exe)
 

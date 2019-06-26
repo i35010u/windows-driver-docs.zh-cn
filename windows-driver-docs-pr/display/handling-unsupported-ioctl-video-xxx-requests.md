@@ -10,12 +10,12 @@ keywords:
 - I/O WDK 微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fcd563a2b3529fb78ecfd7d70e18602769b7cc4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b9ae27c740f26e72a28d9a0f772dd0cb27cee0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369827"
 ---
 # <a name="handling-unsupported-ioctlvideoxxx-requests"></a>处理不受支持的 IOCTL\_视频\_XXX 请求
 
@@ -23,7 +23,7 @@ ms.locfileid: "63353908"
 ## <span id="ddk_handling_unsupported_ioctl_video_xxx_requests_gg"></span><span id="DDK_HANDLING_UNSUPPORTED_IOCTL_VIDEO_XXX_REQUESTS_GG"></span>
 
 
-每个[ *HwVidStartIO* ](https://msdn.microsoft.com/library/windows/hardware/ff567367)函数还必须处理接收不受支持 IOCTL\_视频\_*XXX*，按如下所示：
+每个[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)函数还必须处理接收不受支持 IOCTL\_视频\_*XXX*，按如下所示：
 
 1.  设置输入 VRP 的**状态**字段错误\_无效\_函数。
 
@@ -31,7 +31,7 @@ ms.locfileid: "63353908"
 
 3.  返回 **，则返回 TRUE**以指示处理请求。
 
-请参阅[**视频\_请求\_数据包**](https://msdn.microsoft.com/library/windows/hardware/ff570547)并[**状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff569732)结构更多详细信息。
+请参阅[**视频\_请求\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)并[**状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_status_block)结构更多详细信息。
 
  
 

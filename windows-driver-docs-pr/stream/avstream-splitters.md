@@ -15,12 +15,12 @@ keywords:
 - 帧 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51319b6810008418dc902b315d8a8d218d7b7747
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2354cda1b30f70a4b52803a515e927d99597e2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348395"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386700"
 ---
 # <a name="avstream-splitters"></a>AVStream 拆分器
 
@@ -30,7 +30,7 @@ ms.locfileid: "63348395"
 
 AVStream 微型驱动程序可以使用 AVStream 类驱动程序的功能将数据流拆分为多个副本，如流通过给定的 pin。 此拆分过程很有用，如果您的驱动程序需要进行复制来生成两个相同的输出流的输入的流。
 
-若要执行此操作，设置 KSPIN\_标志\_中的拆分器**标志**的插针的成员[ **KSPIN\_描述符\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)结构。 此标志已设置 pin，pin 充当自动拆分器。 AVStream 会自动将复制拆分流所需的所有数据。
+若要执行此操作，设置 KSPIN\_标志\_中的拆分器**标志**的插针的成员[ **KSPIN\_描述符\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)结构。 此标志已设置 pin，pin 充当自动拆分器。 AVStream 会自动将复制拆分流所需的所有数据。
 
 在版本晚于 DirectX8.0，KSPIN\_标志\_拆分器标志 pin 适用于这两者[筛选器以中心](filter-centric-processing.md)和[pin 以中心](pin-centric-processing.md)筛选器。 早期版本支持仅用于插针上筛选器为中心的筛选器的此标志。
 
@@ -42,13 +42,13 @@ AVStream 微型驱动程序可以使用 AVStream 类驱动程序的功能将数�
 
 为简单起见，此图不显示如何将帧提供给输出插针。 若要提供输出插针的帧，例如，可能有请求者和与每个队列相关联的分配器和属于本部分中的管道。 或者，帧可能来自下游的筛选器。
 
-在中[ **KSFILTER\_调度**](https://msdn.microsoft.com/library/windows/hardware/ff562554)结构，微型驱动程序指定一个指向供应商提供[ *AVStrMiniFilterProcess*](https://msdn.microsoft.com/library/windows/hardware/ff556315)回调例程。 此回调例程是微型驱动程序，接收一个指向[ **KSPROCESSPIN\_INDEXENTRY** ](https://msdn.microsoft.com/library/windows/hardware/ff564260)结构，它包含的数组[ **KSPROCESSPIN** ](https://msdn.microsoft.com/library/windows/hardware/ff564256)结构如下所述。
+在中[ **KSFILTER\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_dispatch)结构，微型驱动程序指定一个指向供应商提供[ *AVStrMiniFilterProcess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksfilterprocess)回调例程。 此回调例程是微型驱动程序，接收一个指向[ **KSPROCESSPIN\_INDEXENTRY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin_indexentry)结构，它包含的数组[ **KSPROCESSPIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin)结构如下所述。
 
 此图显示了微型驱动程序如何区分两个输出插针，进程 pin 列表中：
 
 ![流程图固定表的两个拆分 pin](images/splitppin1.png)
 
-在此图中，DB 指**DelegateBranch**的成员[ **KSPROCESSPIN** ](https://msdn.microsoft.com/library/windows/hardware/ff564256)结构和 CS 指**CopySource**成员。 这两个**DelegateBranch**并**CopySource**输入插针和第一个输出插针的成员是**NULL**。 这表示微型驱动程序会负责处理这些引脚的帧。
+在此图中，DB 指**DelegateBranch**的成员[ **KSPROCESSPIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin)结构和 CS 指**CopySource**成员。 这两个**DelegateBranch**并**CopySource**输入插针和第一个输出插针的成员是**NULL**。 这表示微型驱动程序会负责处理这些引脚的帧。
 
 第二个输出插针，但是，具有**CopySource**指回第一个输出插针。 这指示第二个输出插针从第一个输出插针的单独管道中，AVStream 自动复制位于任何数据插入到第二个输出插针的队列中的第一个输出插针的队列。
 
@@ -64,7 +64,7 @@ Pin A 和 B 分配到同一个管道，因为下游的筛选器不会更改数�
 
 *微型驱动程序仅与输入的队列和单个输出队列进行交互。* AVStream 会自动将复制从 A / B 队列和 C 队列。 它还会创建一个拆分器对象，它将发送的同一个数据帧通过 pin A 和 B 的 pin （请注意，不同的流标头）。
 
-数组[ **KSPROCESSPIN** ](https://msdn.microsoft.com/library/windows/hardware/ff564256)结构如下所示：
+数组[ **KSPROCESSPIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksprocesspin)结构如下所示：
 
 ![流程图固定表的三个拆分输出插针](images/splitppin2.png)
 

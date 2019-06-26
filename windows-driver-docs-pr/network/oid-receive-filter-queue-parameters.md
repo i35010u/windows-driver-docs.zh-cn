@@ -5,19 +5,19 @@ ms.assetid: f6cd7896-0811-4029-b1d8-8cf800d7813e
 ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_QUEUE_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d82a2ba4cb920ed0b697207b669b94860ea4cdb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6b76956a9a159f14834695654672507cd208aab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376763"
 ---
 # <a name="oidreceivefilterqueueparameters"></a>OID\_RECEIVE\_FILTER\_QUEUE\_PARAMETERS
 
 
-基础驱动程序发出对象标识符 (OID) 方法请求的 OID\_接收\_筛选器\_队列\_参数来获取接收队列的当前配置参数。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_接收\_队列\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567211)结构类型的队列标识符**NDIS\_接收\_队列\_ID**。 通过 OID 方法请求成功返回后**InformationBuffer**的成员**NDIS\_OID\_请求**结构包含一个指向**NDIS\_接收\_队列\_参数**结构。
+基础驱动程序发出对象标识符 (OID) 方法请求的 OID\_接收\_筛选器\_队列\_参数来获取接收队列的当前配置参数。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构类型的队列标识符**NDIS\_接收\_队列\_ID**。 通过 OID 方法请求成功返回后**InformationBuffer**的成员**NDIS\_OID\_请求**结构包含一个指向**NDIS\_接收\_队列\_参数**结构。
 
-过量驱动程序问题 OID 设置请求的 OID\_接收\_筛选器\_队列\_参数来更改队列的当前配置参数。 基础驱动程序提供一个指针指向[ **NDIS\_接收\_队列\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567211)结构**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构。
+过量驱动程序问题 OID 设置请求的 OID\_接收\_筛选器\_队列\_参数来更改队列的当前配置参数。 基础驱动程序提供一个指针指向[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -30,7 +30,7 @@ ms.locfileid: "63362561"
 
 基础驱动程序获取队列标识符输入的值从早期[OID\_接收\_筛选器\_分配\_队列](oid-receive-filter-allocate-queue.md)方法 OID 请求。
 
-基础驱动程序分配一个队列后，它可以更改已设置相应更改标志的配置参数 (NDIS\_接收\_队列\_参数\_*Xxx*\_已更改) 中**标志**的成员[ **NDIS\_接收\_队列\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567211)结构。 但是，已分配队列后，基础驱动程序不能更改不具有相应更改标志的配置参数。
+基础驱动程序分配一个队列后，它可以更改已设置相应更改标志的配置参数 (NDIS\_接收\_队列\_参数\_*Xxx*\_已更改) 中**标志**的成员[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构。 但是，已分配队列后，基础驱动程序不能更改不具有相应更改标志的配置参数。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -96,9 +96,9 @@ NDIS 处理 OID 方法请求的 OID\_接收\_筛选器\_队列\_微型端口驱�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_RECEIVE\_QUEUE\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff567211)
+[**NDIS\_RECEIVE\_QUEUE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)
 
 [OID\_RECEIVE\_FILTER\_ALLOCATE\_QUEUE](oid-receive-filter-allocate-queue.md)
 

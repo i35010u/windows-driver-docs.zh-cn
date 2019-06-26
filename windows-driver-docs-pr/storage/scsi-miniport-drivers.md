@@ -10,12 +10,12 @@ keywords:
 - HBA WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0e5523d18b6dbb500a41ffc48c6cc2c54a4924
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 213dcbeda8bb27f283cea1c46d84ae54ea7f30a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368727"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386490"
 ---
 # <a name="scsi-miniport-drivers"></a>SCSI 微型端口驱动程序
 
@@ -35,7 +35,7 @@ ms.locfileid: "63368727"
 
 [必需和可选 SCSI 微型端口驱动程序例程](required-and-optional-scsi-miniport-driver-routines.md)
 
-基于 NT 的操作系统的 SCSI 微型端口驱动程序特定于 HBA 的但独立于操作系统的。 每个微型端口驱动程序，即使用系统提供 SCSI 端口驱动程序，它是一个动态链接库 (DLL)，并调用仅端口驱动程序的链接本身 **ScsiPort * * * Xxx*例程与系统和其 HBA 进行通信。 此类 SCSI 微型端口驱动程序运行其他 Microsoft 操作系统上支持 Microsoft Win32 应用程序，还将导出 **ScsiPort * * * Xxx*例程。 有关详细信息 **ScsiPort * * * Xxx*例程，请参阅[SCSI 端口库例程](https://msdn.microsoft.com/library/windows/hardware/ff565375)。
+基于 NT 的操作系统的 SCSI 微型端口驱动程序特定于 HBA 的但独立于操作系统的。 每个微型端口驱动程序，即使用系统提供 SCSI 端口驱动程序，它是一个动态链接库 (DLL)，并调用仅端口驱动程序的链接本身 **ScsiPort * * * Xxx*例程与系统和其 HBA 进行通信。 此类 SCSI 微型端口驱动程序运行其他 Microsoft 操作系统上支持 Microsoft Win32 应用程序，还将导出 **ScsiPort * * * Xxx*例程。 有关详细信息 **ScsiPort * * * Xxx*例程，请参阅[SCSI 端口库例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 请注意，任何 SCSI 微型端口驱动程序的调用例程以外 **ScsiPort * * * Xxx*无法在这两个 Microsoft 操作系统环境中运行。 若要跨多个 Microsoft Windows 系统，包括基于 NT 的操作系统，保持可移植 SCSI 微型端口驱动程序必须调用仅系统提供 **ScsiPort * * * Xxx*。
 

@@ -9,12 +9,12 @@ keywords:
 - 4 3 平移扫描示例 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77d579ad68f13b44fae6f450048ecaa5c6111e17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db68850ce8afcf35c65a23c0f5c62976f2eb9708
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366804"
 ---
 # <a name="dvd-43-pan-scan-within-169-pictures-example"></a>16:9 画面中的 DVD 4:3 平移扫描示例
 
@@ -22,7 +22,7 @@ ms.locfileid: "63361243"
 ## <span id="ddk_dvd_4_3_pan_scan_within_16_9_pictures_example_gg"></span><span id="DDK_DVD_4_3_PAN_SCAN_WITHIN_16_9_PICTURES_EXAMPLE_GG"></span>
 
 
-在为 16:9 图片中 4:3 平移扫描 DVD 使用 mpeg-2，平移扫描 mpeg-2 变量不能违反中指定的限制[ **DXVA\_BlendCombination** ](https://msdn.microsoft.com/library/windows/hardware/ff563120)结构。 这些变量也必须维护所需的 DVD 规范的以下限制。
+在为 16:9 图片中 4:3 平移扫描 DVD 使用 mpeg-2，平移扫描 mpeg-2 变量不能违反中指定的限制[ **DXVA\_BlendCombination** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_blendcombination)结构。 这些变量也必须维护所需的 DVD 规范的以下限制。
 
 <table>
 <colgroup>

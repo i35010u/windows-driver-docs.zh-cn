@@ -14,12 +14,12 @@ keywords:
 - 版本签名驱动程序包 WDK，有关测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 777ebffd59e2b14766050698aecff2995aca2b8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 011887145b17c78b44d96717ddff238c2d8ec056
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387036"
 ---
 # <a name="how-to-release-sign-a-driver-package"></a>如何对驱动程序包进行发布签名
 
@@ -43,7 +43,7 @@ ms.locfileid: "63386937"
 在本部分中，不同的计算机用于版本签名驱动程序所涉及的各种流程。 这些计算机称为，如下所示：
 
 <a href="" id="--------signing-computer"></a> **签名的计算机**  
-这是使用版本签名驱动程序包适用于 Windows Vista 和更高版本的 Windows 的计算机。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 若要使用[驱动程序签名工具](https://msdn.microsoft.com/library/windows/hardware/ff552958)、 此计算机必须安装 Windows Vista 和更高版本的 Windows Driver Kit (WDK) 安装。
+这是使用版本签名驱动程序包适用于 Windows Vista 和更高版本的 Windows 的计算机。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 若要使用[驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)、 此计算机必须安装 Windows Vista 和更高版本的 Windows Driver Kit (WDK) 安装。
 
 <a href="" id="test-computer"></a>**测试计算机**  
 这是用于安装和测试已发布签名驱动程序包的计算机。 此计算机必须运行 Windows Vista 或更高版本的 Windows。

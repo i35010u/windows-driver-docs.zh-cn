@@ -7,12 +7,12 @@ keywords:
 - 启动 WDK 显示类型值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d0ed77239757d11b5a438867b6c43d045732a87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26451d4fe3bea772584cbcefe3bba4c89599987e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365523"
 ---
 # <a name="setting-the-start-type-value"></a>设置启动类型值
 
@@ -34,7 +34,7 @@ LoadOrderGroup = Video
 ServiceBinary  = %12%\r200.sys
 ```
 
-详细了解与之关联的服务安装部分**AddService**指令，请参阅[ **INF AddService 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546326)。
+详细了解与之关联的服务安装部分**AddService**指令，请参阅[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 数据传输 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e8c7e0ee11191c9cdea058d57388c141a92464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24624f205062c9336d3badf76566738c2e3d1577
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364271"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371876"
 ---
 # <a name="io-programming-techniques"></a>I/O 编程技术
 
@@ -35,7 +35,7 @@ ms.locfileid: "63364271"
 
 [旧 I/O 编程](legacy-i-o-programming.md)
 
-I/O 管理器的体系结构信息，请参阅[Windows I/O 管理器](windows-kernel-mode-i-o-manager.md)。 I/O 管理器的参考信息，请参阅[I/O 管理器例程](https://msdn.microsoft.com/library/windows/hardware/ff551797)。
+I/O 管理器的体系结构信息，请参阅[Windows I/O 管理器](windows-kernel-mode-i-o-manager.md)。 I/O 管理器的参考信息，请参阅[I/O 管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))。
 
  
 

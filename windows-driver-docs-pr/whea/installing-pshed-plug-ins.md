@@ -8,17 +8,17 @@ keywords:
 - WHEA WDK，安装 PSHED 插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65c0a81d6efa6770f40fb92d3abbade44b6dfce5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d9a8e88441483fe101c8bca064defd335c2a538
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340793"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386466"
 ---
 # <a name="installing-pshed-plug-ins"></a>安装 PSHED 插件
 
 
-像任何其他 Windows 安装插件 PSHED[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)。 有关如何安装驱动程序包的详细信息，请参阅[设备安装](https://msdn.microsoft.com/library/windows/hardware/ff541156)。
+像任何其他 Windows 安装插件 PSHED[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)。 有关如何安装驱动程序包的详细信息，请参阅[设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/index)。
 
  
 

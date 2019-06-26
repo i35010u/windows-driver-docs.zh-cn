@@ -4,12 +4,12 @@ description: 本部分介绍联合功能描述符和 MBIM 向后兼容的 MB 设
 ms.assetid: 4B8C63DD-4B8D-40AB-A6DF-0466343E7E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caf0ed463cac22996d937819191284260f95e8e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aeb663a4eacb06832dcca998838a85d770651b38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367628"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374035"
 ---
 # <a name="mb-union-function-descriptors"></a>MB 联合功能描述符
 
@@ -17,7 +17,7 @@ ms.locfileid: "63367628"
 ## <a name="union-function-descriptors"></a>联合功能描述符
 
 
-实现 Ufd 的移动宽带设备具有设备类 / 子类 / 协议的 2 / 0 / 0 作为设备所需的 CDC。 这会阻止 Windows 设备上加载 USBCCGP。 有关 Windows 如何加载 USBCCGP 复合设备上的信息，请参阅[USB 通用父驱动程序 (Usbccgp.sys)](https://msdn.microsoft.com/library/windows/hardware/ff539234)。
+实现 Ufd 的移动宽带设备具有设备类 / 子类 / 协议的 2 / 0 / 0 作为设备所需的 CDC。 这会阻止 Windows 设备上加载 USBCCGP。 有关 Windows 如何加载 USBCCGP 复合设备上的信息，请参阅[USB 通用父驱动程序 (Usbccgp.sys)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 若要允许 Windows 加载 USBCCGP，设备需要报告的 Microsoft 操作系统兼容 ID 为"CDC\_WMC"未配置设备时。 检测的兼容 ID 后"CDC\_WMC"，Windows 加载 USBCCGP，并 USBCCGP 1 到设备上设置的配置。 USBCCGP 然后将再次查询的 Microsoft 操作系统兼容 Id 中。 但是，设备应报告的 Microsoft 操作系统兼容 ID 时这一次，"CDC\_WMC"。 设备可能会报告 Microsoft 操作系统兼容 Id 中所选的配置函数。
 
