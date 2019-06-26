@@ -55,12 +55,12 @@ api_type:
 - NA
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2452edd6c8cfb7bc8df788bc7083c7538e2c09f0
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: c34eb2f500967ec240abe9a8e409210958d5bfa8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349470"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354458"
 ---
 # <a name="sensorcategorylocation"></a>传感器\_类别\_位置
 
@@ -331,7 +331,7 @@ ms.locfileid: "57349470"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>计数数组，其中包含在视图中的每个附属方位。</p>
 <p>向量类型的数据始终序列化为<strong>VT_UI1</strong> （无符号，1 字节字符的一个数组）。 此数据字段实际上包含 IEEE 8 字节实际值为每个值 (<strong>| VT_ R8</strong>)。 使用-1 作为占位符的空值。</p>
-<p>有关使用与数组一起使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">检索矢量类型</a>。</p></td>
+<p>有关使用与数组一起使用的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_ELEVATION"></span><span id="sensor_data_type_satellites_in_view_elevation"></span>
@@ -339,7 +339,7 @@ ms.locfileid: "57349470"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>计数数组，其中包含的每个附属提升视图中。</p>
 <p>向量类型的数据始终序列化为<strong>VT_UI1</strong> （无符号，1 字节字符的一个数组）。 此数据字段实际上包含 IEEE 8 字节实际值为每个值 (<strong>VT_R8</strong>)。 使用-91 作为占位符的空值。</p>
-<p>有关使用与数组一起使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">检索矢量类型</a>。</p></td>
+<p>有关使用与数组一起使用的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_ID"></span><span id="sensor_data_type_satellites_in_view_id"></span>
@@ -347,7 +347,7 @@ ms.locfileid: "57349470"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>统计视图中包含的每个附属 ID 的数组。</p>
 <p>向量类型的数据始终序列化为<strong>VT_UI1</strong> （无符号，1 字节字符的一个数组）。 此数据字段实际上包含每个值为 4 字节无符号整数 (<strong>VT_UI4</strong>)。</p>
-<p>有关使用与数组一起使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">检索矢量类型</a>。</p></td>
+<p>有关使用与数组一起使用的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_PRNS"></span><span id="sensor_data_type_satellites_in_view_prns"></span>
@@ -355,7 +355,7 @@ ms.locfileid: "57349470"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>计数数组，其中包含的附属项的伪随机噪音代码视图中。</p>
 <p>向量类型的数据始终序列化为<strong>VT_UI1</strong> （无符号，1 字节字符的一个数组）。 此数据字段实际上包含每个值为 4 字节无符号整数 (<strong>VT_UI4</strong>)。 使用零 (0) 作为占位符的空值。</p>
-<p>有关使用与数组一起使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">检索矢量类型</a>。</p></td>
+<p>有关使用与数组一起使用的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_USED_PRNS_AND_CONSTELLATIONS"></span><span id="sensor_data_type_satellites_used_prns_and_constellations"></span>
@@ -363,7 +363,7 @@ ms.locfileid: "57349470"
 <td><p><strong>VT_VECTOR|VT_UI2</strong></p>
 <p>计数数组，其中包含解决方案中使用的附属项的伪随机噪音代码。</p>
 <p>向量类型的数据始终序列化为<strong>VT_UI2</strong> （无符号的 2 字节字符数组）。 此数据字段必须包含每个值为 4 字节无符号整数 (<strong>VT_UI4</strong>)。 使用零 (0) 作为占位符的空值。</p>
-<p>有关使用与数组一起使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">检索矢量类型</a>。</p></td>
+<p>有关使用与数组一起使用的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_STN_RATIO"></span><span id="sensor_data_type_satellites_in_view_stn_ratio"></span>
@@ -372,7 +372,7 @@ ms.locfileid: "57349470"
 <p>计数数组视图中包含的附属项干扰信号比率。</p>
 <p>向量类型的数据始终序列化为<strong>VT_UI1</strong> （无符号，1 字节字符的一个数组）。 此数据字段实际上包含 IEEE 8 字节实际值为每个值 (<strong>VT_R8</strong>)。 使用零 (0) 作为占位符的空值。</p>
 <p>此属性是必需的所有的 GPS 设备必须支持。</p>
-<p>有关使用与数组一起使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">检索矢量类型</a>。</p></td>
+<p>有关使用与数组一起使用的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_USED_COUNT"></span><span id="sensor_data_type_satellites_used_count"></span>
@@ -386,7 +386,7 @@ ms.locfileid: "57349470"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>计数数组，其中包含解决方案中使用的附属项的伪随机噪音代码。</p>
 <p>向量类型的数据始终序列化为<strong>VT_UI1</strong> （无符号，1 字节字符的一个数组）。 此数据字段必须包含每个值为 4 字节无符号整数 (<strong>VT_UI4</strong>)。 使用零 (0) 作为占位符的空值。</p>
-<p>有关使用与数组一起使用的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">检索矢量类型</a>。</p></td>
+<p>有关使用与数组一起使用的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SPEED_KNOTS"></span><span id="sensor_data_type_speed_knots"></span>

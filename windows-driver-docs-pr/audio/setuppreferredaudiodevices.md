@@ -4,12 +4,12 @@ description: SetupPreferredAudioDevices
 ms.assetid: cc6b7da4-335d-4629-ba54-32aa32a1eb09
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1811c10c9ac649c7e58d5f7c7cd6b89946664d39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 517f3c57b0b4a7c6b61dbb445eb8124b349630e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355261"
 ---
 # <a name="setuppreferredaudiodevices"></a>SetupPreferredAudioDevices
 
@@ -19,11 +19,11 @@ ms.locfileid: "63328639"
 
 SetupPreferredAudioDevices 关键字表示首选音频设备，这是当系统包含一个音频系统默认情况下启用的设备或更多的音频设备。 此关键字是媒体类特定且受 Microsoft Windows Millennium Edition/Windows 98、 Microsoft Windows 2000、 Windows XP 和 Windows Vista。 不支持在 Windows 7 中的 SetupPreferredAudioDevicesis。
 
-当创建音频设备，而不是显式指定设备的应用程序可以选择要使用默认值 （或首选） 设备。 (有关示例，请参阅的说明[ **waveOutOpen** ](https://msdn.microsoft.com/library/windows/desktop/dd743866)并**DirectSoundCreate** Microsoft Windows SDK 文档中的函数。)
+当创建音频设备，而不是显式指定设备的应用程序可以选择要使用默认值 （或首选） 设备。 (有关示例，请参阅的说明[ **waveOutOpen** ](https://docs.microsoft.com/previous-versions/dd743866(v=vs.85))并**DirectSoundCreate** Microsoft Windows SDK 文档中的函数。)
 
 跟踪系统注册表中的当前首选音频设备的音频系统。 在用户通过安装新的音频设备升级一个系统，通常安装在设备的专有 INF 文件更新注册表，以将新设备指定为首选音频设备。
 
-SetupPreferredAudioDevices 关键字可以出现在中的注册表更新指令**添加注册表部分**(请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)) 的 INF 文件音频设备。 此指令的格式如下：
+SetupPreferredAudioDevices 关键字可以出现在中的注册表更新指令**添加注册表部分**(请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)) 的 INF 文件音频设备。 此指令的格式如下：
 
 *reg rootkey*， \[*注册表子项*\]SetupPreferredAudioDevices \[*标志*\]， \[ *dword 值*\]
 

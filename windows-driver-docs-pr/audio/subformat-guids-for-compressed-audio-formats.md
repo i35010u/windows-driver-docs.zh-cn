@@ -4,12 +4,12 @@ description: 压缩的音频格式的子格式 GUID
 ms.assetid: f9595d6c-952c-4266-8eb5-5c8581051d28
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e8f98aa32f658ea9cc530859523330a2189477
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 78aaf7021bd163df49c1da399a43b40d059d2db8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161387"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354246"
 ---
 # <a name="subformat-guids-for-compressed-audio-formats"></a>压缩的音频格式的子格式 GUID
 
@@ -18,7 +18,7 @@ ms.locfileid: "67161387"
 
 由于 CEA 861 D 标准，必须确保不受 CEA 设备的音频格式才会传输到此类设备。 高清晰度多媒体接口 (HDMI) 和[DisplayPort](https://www.displayport.org/)是 CEA 设备的示例。
 
-对于用户模式下访问 Guid 中指定**子格式**的成员[WAVEFORMATEXTENSIBLE](https://go.microsoft.com/fwlink/p/?linkid=142020)并在**FormatExt**隶属[WAVEFORMATEXTENSIBLE\_IEC61937](https://go.microsoft.com/fwlink/p/?linkid=142021)。 对于音频驱动程序的内核模式下访问，Guid 中指定**DataRange**的成员[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)结构，
+对于用户模式下访问 Guid 中指定**子格式**的成员[WAVEFORMATEXTENSIBLE](https://go.microsoft.com/fwlink/p/?linkid=142020)并在**FormatExt**隶属[WAVEFORMATEXTENSIBLE\_IEC61937](https://go.microsoft.com/fwlink/p/?linkid=142021)。 对于音频驱动程序的内核模式下访问，Guid 中指定**DataRange**的成员[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构，
 
 下表中列出的可用压缩的音频格式的 Guid。
 
@@ -181,9 +181,9 @@ ms.locfileid: "67161387"
 
  
 
-下面的代码示例演示如何音频微型端口驱动程序定义和初始化[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)结构以用于具有完全正常运行 Dolby Digital 的 HDMI 接收器此外，解码器。 此类型的接收器支持 44.1 和 48 KHz 传输的速率。
+下面的代码示例演示如何音频微型端口驱动程序定义和初始化[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构以用于具有完全正常运行 Dolby Digital 的 HDMI 接收器此外，解码器。 此类型的接收器支持 44.1 和 48 KHz 传输的速率。
 
-对于 48 KHz 采样率，音频微型端口驱动程序将使用下面的代码对定义和初始化[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)结构。 此代码显示了音频微型端口驱动程序公开的多个数据区域：
+对于 48 KHz 采样率，音频微型端口驱动程序将使用下面的代码对定义和初始化[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构。 此代码显示了音频微型端口驱动程序公开的多个数据区域：
 
 ```cpp
 //Define and initialize KSDATARANGE_AUDIO structure
@@ -203,7 +203,7 @@ drDDPlus48.MinimumSampleFrequency = 192000; // 48 KHz * 4.
 drDDPlus48.MaximumSampleFrequency = 192000;
 ```
 
-对于采样率为 44.1 KHz 时，音频微型端口驱动程序将使用下面的代码对定义和初始化[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)结构：
+对于采样率为 44.1 KHz 时，音频微型端口驱动程序将使用下面的代码对定义和初始化[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构：
 
 ```cpp
 //Define and initialize KSDATARANGE_AUDIO structure

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1589aa5303b74952d2d4327155091a6a76093a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56ed5fddbb8845b7a3f8ce23e9d1ff4f8e003611
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368813"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354456"
 ---
 # <a name="sensor-icon-constants"></a>传感器图标常量
 
@@ -140,7 +140,7 @@ ms.locfileid: "63368813"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[指定一个图标](https://msdn.microsoft.com/library/windows/hardware/ff545876)
+[指定一个图标](https://docs.microsoft.com/windows-hardware/drivers/sensors/specifying-an-icon)
 
  
 

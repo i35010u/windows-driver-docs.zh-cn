@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 288d877d6942183ae7fbdaead0ff4e24e09fc3ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76b13e53802d39626950c8d2261723430b3a7ac6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346496"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353237"
 ---
 # <a name="kspropertymediaseekingpositions"></a>KSPROPERTY\_MEDIASEEKING\_位置
 
@@ -54,7 +54,7 @@ KSPROPERTY\_MEDIASEEKING\_POSITIONS 属性筛选器设置的媒体时间和/或�
 <td><p>是</p></td>
 <td><p>Filter</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565207" data-raw-source="[&lt;strong&gt;KSPROPERTY_POSITIONS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565207)"><strong>KSPROPERTY_POSITIONS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_positions" data-raw-source="[&lt;strong&gt;KSPROPERTY_POSITIONS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_positions)"><strong>KSPROPERTY_POSITIONS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ KSPROPERTY\_结构指定当前的位置定位和停止的流的位置相对于�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSPROPERTY\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff565207)
+[**KSPROPERTY\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_positions)
 
  
 

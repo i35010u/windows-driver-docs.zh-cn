@@ -6,12 +6,12 @@ keywords:
 - 转换扬声器配置请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c2b7d76dbe64d6e9ef547fe5ad3c828575d806e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42f30166f6e88a552b113b532ae77272cfcfab07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335416"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354168"
 ---
 # <a name="translating-speaker-configuration-requests"></a>转换 Speaker-Configuration 请求
 
@@ -23,7 +23,7 @@ ms.locfileid: "63335416"
 
  
 
-当应用程序调用**IDirectSound::SetSpeakerConfig** （请参阅 Microsoft Windows SDK 文档） 若要更改扬声器配置，DirectSound 转换指定的 DSSPEAKER\_*Xxx*扬声器配置参数等效 KSAUDIO\_*Xxx*通道配置掩码。 它将发送[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)包含此掩码表示 DirectSound 设备筛选的组属性请求。
+当应用程序调用**IDirectSound::SetSpeakerConfig** （请参阅 Microsoft Windows SDK 文档） 若要更改扬声器配置，DirectSound 转换指定的 DSSPEAKER\_*Xxx*扬声器配置参数等效 KSAUDIO\_*Xxx*通道配置掩码。 它将发送[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)包含此掩码表示 DirectSound 设备筛选的组属性请求。
 
 在下面的表中，每个 DSSPEAKER\_*Xxx*左侧的参数与等效 KSAUDIO 配对\_*Xxx*在右侧的通道配置掩码。
 
@@ -76,7 +76,7 @@ ms.locfileid: "63335416"
 
  
 
-在上表中，DirectSound 其耳机和立体声扬声器配置指定具有相同通道掩码 KSAUDIO\_演讲者\_立体声。 若要区分这两个配置，DirectSound 发送筛选器指定演讲者几何图形的第二个集属性请求 (请参阅[ **KSPROPERTY\_音频\_立体声\_说话人\_几何图形**](https://msdn.microsoft.com/library/windows/hardware/ff537305))。 若要指示耳机，DirectSound 将值传递 KSAUDIO\_立体声\_演讲者\_GEOMETRY\_耳机使用说话人 geometry 请求。
+在上表中，DirectSound 其耳机和立体声扬声器配置指定具有相同通道掩码 KSAUDIO\_演讲者\_立体声。 若要区分这两个配置，DirectSound 发送筛选器指定演讲者几何图形的第二个集属性请求 (请参阅[ **KSPROPERTY\_音频\_立体声\_说话人\_几何图形**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-stereo-speaker-geometry))。 若要指示耳机，DirectSound 将值传递 KSAUDIO\_立体声\_演讲者\_GEOMETRY\_耳机使用说话人 geometry 请求。
 
 对于立体扬声器，但是，调用方流入**SetSpeakerConfig**可以指定一个或多个可能 DSSPEAKER\_*Xxx*立体声演讲者几何图形。 这些包中的以下表和等效 KSAUDIO 左列显示\_*Xxx*参数显示在右侧。
 

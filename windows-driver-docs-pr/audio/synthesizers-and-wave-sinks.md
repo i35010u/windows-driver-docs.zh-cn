@@ -20,12 +20,12 @@ keywords:
 - Dmu 端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7be4a2c764744162576bdcb75d37d268cabe877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14263ab8c78348a5ae37bc9aaa3007927531fcba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354199"
 ---
 # <a name="synthesizers-and-wave-sinks"></a>合成器和 Wave 接收器
 
@@ -55,7 +55,7 @@ DirectX 8 及更高版本，DirectMusic 始终使用其内置批接收器来从�
 
 完成这些步骤后，用户模式下 DirectMusic 端口应为打开状态且用于已激活。 只要此驱动程序代码的大部分操作有效的产品，可以开始实现功能。 用于用户模式下的 Microsoft 软件合成器作为模板的源代码并开始添加新功能。
 
-用户模式软件合成器可以作为一个对象来实现[IDirectMusicSynth](https://msdn.microsoft.com/library/windows/hardware/ff536519)接口。 用户模式下批接收器可以作为一个对象来实现[IDirectMusicSynthSink](https://msdn.microsoft.com/library/windows/hardware/ff536520)接口。 有关详细信息，请参阅[IDirectMusicSynth 和 IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)。
+用户模式软件合成器可以作为一个对象来实现[IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)接口。 用户模式下批接收器可以作为一个对象来实现[IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)接口。 有关详细信息，请参阅[IDirectMusicSynth 和 IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)。
 
  
 

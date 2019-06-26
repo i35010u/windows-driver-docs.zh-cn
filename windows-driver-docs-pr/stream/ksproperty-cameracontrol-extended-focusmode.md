@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a6504be2543611f462bde0934e9a903be368497
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9859c6e4a9a620300c7135a03de455498a11106
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347972"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355384"
 ---
 # <a name="kspropertycameracontrolextendedfocusmode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_FOCUSMODE
 
@@ -55,7 +55,7 @@ ms.locfileid: "63347972"
 </tbody>
 </table>
 
-（操作数据） 的属性值包含[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和一个[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://msdn.microsoft.com/library/windows/hardware/dn567566)结构。
+（操作数据） 的属性值包含[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和一个[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构。
 
 Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING). **大小**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)设置为此属性的总数据大小。
 
@@ -176,13 +176,13 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 </table>
 
 
-如果以前不设置了任何焦点范围标志，则该驱动程序设置**标志**到 KSCAMERA\_EXTENDEDPROP\_焦点\_范围\_FULLRANGE 以及 KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_自动 （默认值）。 成员[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://msdn.microsoft.com/library/windows/hardware/dn567566)结构，它遵循[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)根据焦点模式的要求设置。
+如果以前不设置了任何焦点范围标志，则该驱动程序设置**标志**到 KSCAMERA\_EXTENDEDPROP\_焦点\_范围\_FULLRANGE 以及 KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_自动 （默认值）。 成员[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构，它遵循[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)根据焦点模式的要求设置。
 
 **VideoProp.Value.ull**值必须包含当前的曝光度设置，当模式为 KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_自动。
 
 ### <a name="setting-the-property"></a>将属性设置
 
-设置该属性是，KSPROPERTY\_类型\_集请求**标志**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)将包含要设置的焦点模式。 **VideoProc.Value**的成员[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://msdn.microsoft.com/library/windows/hardware/dn567566)必须时忽略**标志**包含 KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_AUTO、 KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_锁，KSCAMERA\_EXTENDEDPROP\_焦点\_持续标志。
+设置该属性是，KSPROPERTY\_类型\_集请求**标志**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)将包含要设置的焦点模式。 **VideoProc.Value**的成员[ **KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)必须时忽略**标志**包含 KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_AUTO、 KSCAMERA\_EXTENDEDPROP\_VIDEOPROCFLAG\_锁，KSCAMERA\_EXTENDEDPROP\_焦点\_持续标志。
 
 ## <a name="requirements"></a>要求
 
@@ -207,4 +207,4 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 
 [**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**](https://msdn.microsoft.com/library/windows/hardware/dn567566)
+[**KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)

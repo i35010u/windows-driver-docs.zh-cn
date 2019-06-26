@@ -4,12 +4,12 @@ description: 提供有关在 Windows 10 的蓝牙版本和配置文件支持的�
 ms.assetid: F43DA802-37D0-4527-AA51-DA3C0AEF6914
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a13c2a3cc1c4dd9d69ddde93b5d66df3f5bb3bbd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bb94fbe322f3e73fd792844100b77de6078b2cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354008"
 ---
 # <a name="bluetooth-version-and-profile-support-in-windows-10"></a>Windows 10 中的蓝牙版本和配置文件支持
 
@@ -29,12 +29,12 @@ ms.locfileid: "63328230"
 
 -   版本 1.1
 -   版本 2.0
--   2.0 版本带有 edr 规范
+-   2\.0 版本带有 edr 规范
 -   版本 2.1
 -   版本 2.1 使用 edr 规范
 -   版本 4.0
 -   版本 4.1
--   5.0 版
+-   5\.0 版
 
 Windows Server 2016 不支持蓝牙。
 
@@ -223,7 +223,7 @@ Windows 10 (版本 1803) 支持蓝牙版本 5.0 和以下蓝牙用户配置文�
 ## <a name="span-idnewfeaturesandrecommendationsforwindows10andlaterspanspan-idnewfeaturesandrecommendationsforwindows10andlaterspanspan-idnewfeaturesandrecommendationsforwindows10andlaterspannew-features-and-recommendations-for-windows10-and-later"></a><span id="New_features_and_recommendations_for_Windows_10_and_later"></span><span id="new_features_and_recommendations_for_windows_10_and_later"></span><span id="NEW_FEATURES_AND_RECOMMENDATIONS_FOR_WINDOWS_10_AND_LATER"></span>新功能和建议适用于 Windows 10 及更高版本
 
 
-若要了解有关新功能和不同版本的 Windows 10 的硬件开发人员建议的详细信息，请参阅[蓝牙](https://msdn.microsoft.com/library/windows/hardware/dn915047)中[硬件组件指南](https://msdn.microsoft.com/library/windows/hardware/dn915049)部分。
+若要了解有关新功能和不同版本的 Windows 10 的硬件开发人员建议的详细信息，请参阅[蓝牙](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)中[硬件组件指南](https://docs.microsoft.com/windows-hardware/design/component-guidelines/components)部分。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

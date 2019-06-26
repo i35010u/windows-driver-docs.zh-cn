@@ -4,12 +4,12 @@ description: 虚拟端口 (VPort)
 ms.assetid: FCE0B5F5-5E2E-493A-BE25-57FB2C8B0389
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f1875343a6de5ef827f13f3b2b699618deda236
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 030cd0f7603ea00852d0e891d75be5b1d70fbc8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353640"
 ---
 # <a name="virtual-ports-vports"></a>虚拟端口 (VPort)
 
@@ -28,17 +28,17 @@ NIC 到一个或多个 VPorts 切换从物理端口的桥网络流量。 这提�
 
 每个 VPort 都有一个唯一标识符 (*VPortId*) 这是唯一的网络适配器上的 NIC 开关。 默认 VPort 始终默认 NIC 交换机上存在，并且永远不会被删除。 默认值 VPort 具有 NDIS VPortId\_默认\_VPORT\_id。
 
-当 PF 微型端口驱动程序处理的对象标识符 (OID) 方法请求[OID\_NIC\_切换\_创建\_切换](https://msdn.microsoft.com/library/windows/hardware/hh451815)，它会创建 NIC 开关和默认值为 VPort该开关。 默认值 VPort 始终附加到 PF，并始终处于运行状态。
+当 PF 微型端口驱动程序处理的对象标识符 (OID) 方法请求[OID\_NIC\_切换\_创建\_切换](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)，它会创建 NIC 开关和默认值为 VPort该开关。 默认值 VPort 始终附加到 PF，并始终处于运行状态。
 
-通过 OID 方法请求的创建非默认 VPorts [OID\_NIC\_交换机\_创建\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)。 只有一个非默认 VPort 可以附加到 VF。 附加完成后，默认值为的操作状态。 一个或多个非默认 VPorts 还可以创建并附加到 PF. 这些 VPorts 不再运行时创建，并且可能会变得通过 OID 集请求的操作[OID\_NIC\_交换机\_VPORT\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451825)。
+通过 OID 方法请求的创建非默认 VPorts [OID\_NIC\_交换机\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。 只有一个非默认 VPort 可以附加到 VF。 附加完成后，默认值为的操作状态。 一个或多个非默认 VPorts 还可以创建并附加到 PF. 这些 VPorts 不再运行时创建，并且可能会变得通过 OID 集请求的操作[OID\_NIC\_交换机\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。
 
-**请注意**后 VPort 开始运行，它可以仅会变得不再运行时通过的 OID 请求删除[OID\_NIC\_交换机\_删除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451818).
+**请注意**后 VPort 开始运行，它可以仅会变得不再运行时通过的 OID 请求删除[OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport).
 
 
 
-每个 VPort 具有一个或多个硬件队列对关联的接收和传输数据包。 默认情况下 VPort 情况下，网络适配器上的默认队列对保留供使用。 队列对的非默认分配和分配时通过创建 VPort VPorts [OID\_NIC\_交换机\_创建\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)请求。
+每个 VPort 具有一个或多个硬件队列对关联的接收和传输数据包。 默认情况下 VPort 情况下，网络适配器上的默认队列对保留供使用。 队列对的非默认分配和分配时通过创建 VPort VPorts [OID\_NIC\_交换机\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)请求。
 
-创建和配置通过 OID 方法请求的非默认 VPorts [OID\_NIC\_交换机\_创建\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)。 通过 OID 集请求的重新配置的默认 VPort 和非默认 VPorts [OID\_NIC\_交换机\_VPORT\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451825)。 每个 OID 请求包含[ **NDIS\_NIC\_交换机\_VPORT\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451597)结构，它指定下面的配置参数：
+创建和配置通过 OID 方法请求的非默认 VPorts [OID\_NIC\_交换机\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。 通过 OID 集请求的重新配置的默认 VPort 和非默认 VPorts [OID\_NIC\_交换机\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。 每个 OID 请求包含[ **NDIS\_NIC\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构，它指定下面的配置参数：
 
 -   VPort 附加到 PCIe 函数。
 
@@ -60,7 +60,7 @@ NIC 到一个或多个 VPorts 切换从物理端口的桥网络流量。 这提�
 
     每个非默认 VPort 可以配置为具有不同数目的队列对。 这称为*非对称分配*队列对。 如果 NIC 不允许此类的非对称分配，每个非默认 VPort 被配置为具有同等数量的队列对。 这称为*对称分配*队列对。 有关详细信息，请参阅[对称和非对称队列分配对](symmetric-and-asymmetric-assignment-of-queue-pairs.md)。
 
-    **请注意**PF 微型端口驱动程序报告它是否支持非对称分配的队列对期间[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)。 有关详细信息，请参阅[初始化 PF 微型端口驱动程序](initializing-a-pf-miniport-driver.md)。
+    **请注意**PF 微型端口驱动程序报告它是否支持非对称分配的队列对期间[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)。 有关详细信息，请参阅[初始化 PF 微型端口驱动程序](initializing-a-pf-miniport-driver.md)。
 
 
 
@@ -76,9 +76,9 @@ NIC 到一个或多个 VPorts 切换从物理端口的桥网络流量。 这提�
 
     可以为不同 VPorts 指定不同的中断裁决类型。 这样，虚拟化堆栈来控制生成的特定 VPort 中断的数量。
 
-除了配置过量驱动程序的参数，可以配置接收筛选器的每个 VPort 通过发出的 OID 方法请求[OID\_接收\_筛选器\_设置\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569795). NIC 开关执行指定接收 VPort 基础上筛选。
+除了配置过量驱动程序的参数，可以配置接收筛选器的每个 VPort 通过发出的 OID 方法请求[OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter). NIC 开关执行指定接收 VPort 基础上筛选。
 
-接收 VPorts 包括数据包筛选条件，例如媒体访问控制 (MAC) 地址和虚拟 LAN (VLAN) 标识符的列表筛选器参数。 对 MAC 地址和 VLAN 标识符筛选器中指定始终一起[ **NDIS\_接收\_筛选器\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567181) 与相关联[OID\_接收\_筛选器\_设置\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569795)请求。 NIC 交换机必须筛选到交换机的传入数据包的目标 MAC 地址和 VLAN 标识符与 VPort 设置任何接收筛选条件相匹配。 NIC 交换机筛选从任一另一个 VPort 或从外部物理端口接收的数据包。 如果数据包与筛选器相匹配，NIC 交换机必须将其转发到 VPort。
+接收 VPorts 包括数据包筛选条件，例如媒体访问控制 (MAC) 地址和虚拟 LAN (VLAN) 标识符的列表筛选器参数。 对 MAC 地址和 VLAN 标识符筛选器中指定始终一起[ **NDIS\_接收\_筛选器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters) 与相关联[OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)请求。 NIC 交换机必须筛选到交换机的传入数据包的目标 MAC 地址和 VLAN 标识符与 VPort 设置任何接收筛选条件相匹配。 NIC 交换机筛选从任一另一个 VPort 或从外部物理端口接收的数据包。 如果数据包与筛选器相匹配，NIC 交换机必须将其转发到 VPort。
 
 可能会对 VPort 设置多个 MAC 地址和 VLAN 标识符对。 如果仅设置 MAC 地址，接收筛选器指定 VPort 应接收数据包符合以下条件：
 
@@ -86,7 +86,7 @@ NIC 到一个或多个 VPorts 切换从物理端口的桥网络流量。 这提�
 
 -   数据包的 VLAN 标记或 （如果 VLAN 标记为存在） 的零为 VLAN 标识符。
 
-通过 OID 的集请求删除非默认 VPorts [OID\_NIC\_交换机\_删除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)。 默认值通过 OID 集请求的删除 NIC 开关时，仅删除 VPort [OID\_NIC\_切换\_删除\_切换](https://msdn.microsoft.com/library/windows/hardware/hh451817)。
+通过 OID 的集请求删除非默认 VPorts [OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。 默认值通过 OID 集请求的删除 NIC 开关时，仅删除 VPort [OID\_NIC\_切换\_删除\_切换](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)。
 
 
 

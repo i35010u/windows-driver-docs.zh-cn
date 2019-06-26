@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5570d2eb47afb79b9a2a90d081a1f2d90d641743
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b498f207938e9640f6d107cede6c831e8f81511
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362799"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353296"
 ---
 # <a name="wditlvp2pprovisionserviceattributes"></a>WDI\_TLV\_P2P\_PROVISION\_SERVICE\_ATTRIBUTES
 
@@ -34,13 +34,13 @@ WDI\_TLV\_P2P\_预配\_服务\_属性是包含 Wi-Fi Direct 预配服务特性 T
 | 在任务栏的搜索框中键入                                              | 描述                                                                                                                                        |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                             | Wi-Fi Direct 状态代码，如 Wi-Fi Direct 规范所定义。                                                                            |
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 以后 Wi-Fi Direct 进行连接的本地 MAC 地址。                                                                                              |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 以后 Wi-Fi Direct 进行连接的本地 MAC 地址。                                                                                              |
 | UINT8                                             | 连接功能位掩码。                                                                                                                     |
 | UINT32                                            | 功能功能位掩码。                                                                                                                        |
 | UINT32                                            | 服务实例的播发 ID。                                                                                                         |
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 服务实例的服务地址。                                                                                                          |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 服务实例的服务地址。                                                                                                          |
 | UINT32                                            | 唯一标识连接到该服务的会话的会话 ID。                                                                                    |
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 唯一标识连接到该服务的会话的会话地址。                                                                               |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 唯一标识连接到该服务的会话的会话地址。                                                                               |
 | UINT16                                            | 转配置超时以毫秒为单位。                                                                                                          |
 | UINT16                                            | 客户端配置超时以毫秒为单位。                                                                                                      |
 | UINT8                                             | 指示是否的永久组将用于连接的标志。 如果将使用的永久组，该标志设置为 1。                  |

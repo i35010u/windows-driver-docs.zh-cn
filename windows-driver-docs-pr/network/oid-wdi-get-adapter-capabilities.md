@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_ADAPTER_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e07449f00f60059f7f87ed18d7abe6da846e8c2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d7477f741c34bcc4250a28f2017c7b7defd083d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384629"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353678"
 ---
 # <a name="oidwdigetadaptercapabilities"></a>OID\_WDI\_获取\_适配器\_功能
 
@@ -31,7 +31,7 @@ OID\_WDI\_获取\_适配器\_功能是一个只读属性，在初始化期间发
 ## <a name="get-property-results"></a>获取属性的结果
 
 
-如果适配器支持 Wi-Fi Direct，同时[ **WDI\_TLV\_AP\_特性**](https://msdn.microsoft.com/library/windows/hardware/dn926129)并[ **WDI\_TLV\_P2P\_特性**](https://msdn.microsoft.com/library/windows/hardware/dn897863)必须指定。
+如果适配器支持 Wi-Fi Direct，同时[ **WDI\_TLV\_AP\_特性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-attributes)并[ **WDI\_TLV\_P2P\_特性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)必须指定。
 
 <table>
 <colgroup>
@@ -50,89 +50,89 @@ OID\_WDI\_获取\_适配器\_功能是一个只读属性，在初始化期间发
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926255" data-raw-source="[&lt;strong&gt;WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926255)"><strong>WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-communication-configuration-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-communication-configuration-attributes)"><strong>WDI_TLV_COMMUNICATION_CONFIGURATION_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>主机适配器通信协议配置属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897835" data-raw-source="[&lt;strong&gt;WDI_TLV_INTERFACE_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897835)"><strong>WDI_TLV_INTERFACE_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-interface-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_INTERFACE_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-interface-attributes)"><strong>WDI_TLV_INTERFACE_ATTRIBUTES</strong></a></td>
 <td></td>
 <td></td>
 <td>接口特性。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898066" data-raw-source="[&lt;strong&gt;WDI_TLV_STATION_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898066)"><strong>WDI_TLV_STATION_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-station-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_STATION_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-station-attributes)"><strong>WDI_TLV_STATION_ATTRIBUTES</strong></a></td>
 <td></td>
 <td></td>
 <td>工作站属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926129" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926129)"><strong>WDI_TLV_AP_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-attributes)"><strong>WDI_TLV_AP_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>访问点属性。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898078" data-raw-source="[&lt;strong&gt;WDI_TLV_VIRTUALIZATION_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898078)"><strong>WDI_TLV_VIRTUALIZATION_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-virtualization-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_VIRTUALIZATION_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-virtualization-attributes)"><strong>WDI_TLV_VIRTUALIZATION_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>虚拟化的属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897863" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897863)"><strong>WDI_TLV_P2P_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)"><strong>WDI_TLV_P2P_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>Wi-Fi Direct 属性。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926277" data-raw-source="[&lt;strong&gt;WDI_TLV_DATAPATH_ATTRIBUTES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926277)"><strong>WDI_TLV_DATAPATH_ATTRIBUTES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-datapath-attributes" data-raw-source="[&lt;strong&gt;WDI_TLV_DATAPATH_ATTRIBUTES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-datapath-attributes)"><strong>WDI_TLV_DATAPATH_ATTRIBUTES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>数据路径属性。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926146" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926146)"><strong>WDI_TLV_BAND_INFO</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-info" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-info)"><strong>WDI_TLV_BAND_INFO</strong></a></td>
 <td>X</td>
 <td>X</td>
 <td>带区信息。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898023" data-raw-source="[&lt;strong&gt;WDI_TLV_PHY_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898023)"><strong>WDI_TLV_PHY_INFO</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-info" data-raw-source="[&lt;strong&gt;WDI_TLV_PHY_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-info)"><strong>WDI_TLV_PHY_INFO</strong></a></td>
 <td>X</td>
 <td>X</td>
 <td>PHY 信息。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898032" data-raw-source="[&lt;strong&gt;WDI_TLV_PM_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898032)"><strong>WDI_TLV_PM_CAPABILITIES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-capabilities" data-raw-source="[&lt;strong&gt;WDI_TLV_PM_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-capabilities)"><strong>WDI_TLV_PM_CAPABILITIES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>电源管理功能。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926268" data-raw-source="[&lt;strong&gt;WDI_TLV_COUNTRY_REGION_LIST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926268)"><strong>WDI_TLV_COUNTRY_REGION_LIST</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-country-region-list" data-raw-source="[&lt;strong&gt;WDI_TLV_COUNTRY_REGION_LIST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-country-region-list)"><strong>WDI_TLV_COUNTRY_REGION_LIST</strong></a></td>
 <td></td>
 <td>X</td>
 <td>国家或地区代码。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898046" data-raw-source="[&lt;strong&gt;WDI_TLV_RECEIVE_COALESCING_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898046)"><strong>WDI_TLV_RECEIVE_COALESCING_CAPABILITIES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-receive-coalescing-capabilities" data-raw-source="[&lt;strong&gt;WDI_TLV_RECEIVE_COALESCING_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-receive-coalescing-capabilities)"><strong>WDI_TLV_RECEIVE_COALESCING_CAPABILITIES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>硬件辅助接收筛选器功能。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898069" data-raw-source="[&lt;strong&gt;WDI_TLV_TCP_OFFLOAD_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898069)"><strong>WDI_TLV_TCP_OFFLOAD_CAPABILITIES</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities" data-raw-source="[&lt;strong&gt;WDI_TLV_TCP_OFFLOAD_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities)"><strong>WDI_TLV_TCP_OFFLOAD_CAPABILITIES</strong></a></td>
 <td></td>
 <td>X</td>
 <td>TCP/IP 卸载功能。</td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt769918" data-raw-source="[&lt;strong&gt;WDI_TLV_SUPPORTED_GUIDS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt769918)"><strong>WDI_TLV_SUPPORTED_GUIDS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-supported-guids" data-raw-source="[&lt;strong&gt;WDI_TLV_SUPPORTED_GUIDS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-supported-guids)"><strong>WDI_TLV_SUPPORTED_GUIDS</strong></a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 <td><p>在 Windows 10，版本 1607，WDI 版本 1.0.21 中添加。</p>
-<p>将传递到 NDIS WDI 查询时的 Guid 的列表<a href="https://msdn.microsoft.com/library/windows/hardware/ff569641" data-raw-source="[OID_GEN_SUPPORTED_GUIDS](https://msdn.microsoft.com/library/windows/hardware/ff569641)">OID_GEN_SUPPORTED_GUIDS</a>。</p></td>
+<p>将传递到 NDIS WDI 查询时的 Guid 的列表<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-guids" data-raw-source="[OID_GEN_SUPPORTED_GUIDS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-guids)">OID_GEN_SUPPORTED_GUIDS</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="wdi-tlv-os-power-management-features.md" data-raw-source="[&lt;strong&gt;WDI_TLV_OS_POWER_MANAGEMENT_FEATURES&lt;/strong&gt;](wdi-tlv-os-power-management-features.md)"><strong>WDI_TLV_OS_POWER_MANAGEMENT_FEATURES</strong></a></p></td>

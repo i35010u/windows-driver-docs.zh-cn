@@ -4,17 +4,17 @@ description: 按操作系统划分的微型端口驱动程序类型
 ms.assetid: 6ab0e4e4-5118-4df5-ba4e-7da66ce5880d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c71078f5888a658afb70930453a65fae3a1b48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc014ba43a91072abf13884d64844e9255f2d96a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332315"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355353"
 ---
 # <a name="miniport-driver-types-by-operating-system"></a>按操作系统划分的微型端口驱动程序类型
 
 
-当开发音频驱动程序时，必须确定您的驱动程序将可结合使用 PortCls 系统驱动程序 (Portcls.sys) 或 AVStream 类系统驱动程序。 如果视频流不是必需的您可能需要的驱动程序，适用于 PortCls 系统驱动程序。 有关这两种类型的系统驱动程序的详细信息，请参阅[端口类简介](introduction-to-port-class.md)并[AVStream 概述](https://msdn.microsoft.com/library/windows/hardware/ff554240)主题。
+当开发音频驱动程序时，必须确定您的驱动程序将可结合使用 PortCls 系统驱动程序 (Portcls.sys) 或 AVStream 类系统驱动程序。 如果视频流不是必需的您可能需要的驱动程序，适用于 PortCls 系统驱动程序。 有关这两种类型的系统驱动程序的详细信息，请参阅[端口类简介](introduction-to-port-class.md)并[AVStream 概述](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)主题。
 
 PortCls 系统驱动程序 (Portcls.sys) 提供了几个内置端口驱动程序以支持的呈现和捕获批和 MIDI 流音频设备。 通常情况下，端口驱动程序提供了大多数的音频子每类功能。
 

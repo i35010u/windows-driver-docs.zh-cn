@@ -13,12 +13,12 @@ keywords:
 - 非 PCM 的音频格式 WDK、 WMA Pro
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 757c87ccc2234773b6570bde8b4a0e5f56cc0ffe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4db2f788e8af531c4d940b118a7cf320aa070c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328617"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354284"
 ---
 # <a name="specifying-wma-pro-data-ranges"></a>指定 WMA Pro 数据范围
 
@@ -39,7 +39,7 @@ ms.locfileid: "63328617"
                       DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_WMASPDIF)
 ```
 
-以下代码示例演示如何指定 WaveCyclic 或 WavePci 微型端口驱动程序[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)表支持 WMA Pro-反复-S/PDIF pin 条目和AC-3-over-S/PDIF 格式：
+以下代码示例演示如何指定 WaveCyclic 或 WavePci 微型端口驱动程序[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)表支持 WMA Pro-反复-S/PDIF pin 条目和AC-3-over-S/PDIF 格式：
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesSpdifOut[] =

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DATAPATH_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a86ae49462f2f44206155d7985f2bc3f9ef7537
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45a1e0ae5a3c9a01dd02a312d0ccfec38f8a4f27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331833"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353618"
 ---
 # <a name="wditlvdatapathcapabilities"></a>WDI\_TLV\_数据路径\_功能
 
@@ -44,7 +44,7 @@ WDI\_TLV\_数据路径\_功能是包含数据路径功能 TLV。
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926068" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926068)"><strong>WDI_INTERCONNECT_TYPE</strong></a> (UINT32)</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_interconnect_type" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_interconnect_type)"><strong>WDI_INTERCONNECT_TYPE</strong></a> (UINT32)</td>
 <td>互连类型。</td>
 </tr>
 <tr class="even">

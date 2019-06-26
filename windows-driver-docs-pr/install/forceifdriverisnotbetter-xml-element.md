@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 14f19564df66e4d83d8880d69571f490e8f86e79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ffb8aea9579a7d0fde2fc948528a73745c3086c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377080"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353794"
 ---
 # <a name="forceifdriverisnotbetter-xml-element"></a>forceIfDriverIsNotBetter XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **ForceIfDriverIsNotBetter** XML 元素为空元素，用于设置**forceIfDriverIsNotBetter**标志为 ON，将配置 DPInst 安装在设备上的驱动程序，即使这是驱动程序在设备上当前安装的是更好的匹配比新的驱动程序。
 

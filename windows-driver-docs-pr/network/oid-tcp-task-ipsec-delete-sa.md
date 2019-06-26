@@ -6,16 +6,16 @@ keywords:
 - OID_TCP_TASK_IPSEC_DELETE_SA
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6c61150fd7976f2fb6b9b0c590bf524afadf94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36503de3e132073f01fb0fab324c5e6bab12bd36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353720"
 ---
 # <a name="oidtcptaskipsecdeletesa"></a>OID_TCP_TASK_IPSEC_DELETE_SA
 
-传输协议设置 OID_TCP_TASK_IPSEC_DELETE_SA OID 以请求微型端口驱动程序从 NIC 中删除安全关联 (SA) SA 信息的格式为[OFFLOAD_IPSEC_DELETE_SA](https://msdn.microsoft.com/library/windows/hardware/ff569058)结构。
+传输协议设置 OID_TCP_TASK_IPSEC_DELETE_SA OID 以请求微型端口驱动程序从 NIC 中删除安全关联 (SA) SA 信息的格式为[OFFLOAD_IPSEC_DELETE_SA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_offload_ipsec_delete_sa)结构。
 
 在接收到此请求，微型端口驱动程序应删除任何系统资源分配给 SA 指定的 SA 从 NIC 和免费。
 

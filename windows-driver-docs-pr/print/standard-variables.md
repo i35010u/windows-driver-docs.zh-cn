@@ -8,12 +8,12 @@ keywords:
 - 标准变量 WDK GPD 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d19d4fd97a53252283a725f635876d166a8607
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcaa8fa77fb7ce9c522e80b994acdf86d68182d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355080"
 ---
 # <a name="standard-variables"></a>标准变量
 
@@ -175,8 +175,8 @@ GPD 语言定义一组标准可以使用的命令字符串中引用的变量[命
 </tr>
 <tr class="even">
 <td><p><strong>PageNumber</strong></p></td>
-<td><p>当前正在打印的页的页码。 请注意，这不会不一定对应于应用程序的页码，但而不是数乘以<a href="https://msdn.microsoft.com/library/windows/hardware/ff556281" data-raw-source="[&lt;em&gt;DrvSendPage&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556281)"> <em>DrvSendPage</em> </a>已调用。</p>
-<p>此值初始化<a href="https://msdn.microsoft.com/library/windows/hardware/ff556296" data-raw-source="[&lt;strong&gt;DrvStartDoc&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556296)"> <strong>DrvStartDoc</strong> </a> ，并通过递增<strong>DrvSendPage</strong>。</p>
+<td><p>当前正在打印的页的页码。 请注意，这不会不一定对应于应用程序的页码，但而不是数乘以<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsendpage" data-raw-source="[&lt;em&gt;DrvSendPage&lt;/em&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsendpage)"> <em>DrvSendPage</em> </a>已调用。</p>
+<p>此值初始化<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartdoc" data-raw-source="[&lt;strong&gt;DrvStartDoc&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartdoc)"> <strong>DrvStartDoc</strong> </a> ，并通过递增<strong>DrvSendPage</strong>。</p>
 <p>例如，如果 N = 4 选择，则<strong>PageNumber</strong>仅当正在打印文档的第五个页时递增至 2。</p>
 <p>再举一例，如果 （后至前） 按相反的顺序打印文档<strong>PageNumber</strong>标准变量仍报告作为第一页打印的第一页，即使这是文档的最后一页。</p>
 <p>此行为需要适当地支持自动进行双面打印功能。</p>

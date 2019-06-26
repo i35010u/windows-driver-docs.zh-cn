@@ -6,17 +6,17 @@ keywords:
 - ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏 ACPI 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb682142fe13b46dc324d52379360ac4422c29e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c750fe8d6cbcce2c3e8d0b2cb347c143faefc38b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355900"
 ---
 # <a name="acpienumchildlengthfromchild-macro"></a>ACPI\_ENUM\_子\_长度\_FROM\_子宏
 
 
-ACPI\_ENUM\_子\_长度\_FROM\_子宏计算大小 （字节） 长度可变[ **ACPI\_枚举\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536109)结构。
+ACPI\_ENUM\_子\_长度\_FROM\_子宏计算大小 （字节） 长度可变[ **ACPI\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)结构。
 
 <a name="syntax"></a>语法
 ------
@@ -41,7 +41,7 @@ void ACPI_ENUM_CHILD_LENGTH_FROM_CHILD(
 <a name="remarks"></a>备注
 -------
 
-驱动程序可以使用此宏来计算的大小，以字节为单位的 ACPI\_ENUM\_中的子结构[ **ACPI\_枚举\_子级\_输出\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff536112)结构。
+驱动程序可以使用此宏来计算的大小，以字节为单位的 ACPI\_ENUM\_中的子结构[ **ACPI\_枚举\_子级\_输出\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,9 +66,9 @@ void ACPI_ENUM_CHILD_LENGTH_FROM_CHILD(
 ## <a name="see-also"></a>请参阅
 
 
-[**ACPI\_ENUM\_CHILD**](https://msdn.microsoft.com/library/windows/hardware/ff536109)
+[**ACPI\_ENUM\_CHILD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)
 
-[**ACPI\_ENUM\_CHILDREN\_OUTPUT\_BUFFER**](https://msdn.microsoft.com/library/windows/hardware/ff536112)
+[**ACPI\_ENUM\_CHILDREN\_OUTPUT\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)
 
  
 

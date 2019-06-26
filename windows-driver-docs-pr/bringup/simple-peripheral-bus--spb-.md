@@ -4,12 +4,12 @@ description: SoC 集成电路充分利用简单，低-pin-计数，和低功耗�
 ms.assetid: E85BDD36-7ECE-47DB-A770-E28DA8383BA2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcdbec4748deb281f462f2416f865f1dfb89d30a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5df6feb0afeb28f71b737e9600d527a680947aa5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337398"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353953"
 ---
 # <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
@@ -23,19 +23,19 @@ ms.locfileid: "63337398"
 
 ### <a name="spb-namespace-objects"></a>存储命名空间对象
 
-存储控制器和外围设备连接到它们，通过 ACPI 枚举。 使用串行总线连接资源描述符描述它们之间的连接。 详细信息，请参阅部分 6.4.3.8，"连接描述符"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+存储控制器和外围设备连接到它们，通过 ACPI 枚举。 使用串行总线连接资源描述符描述它们之间的连接。 详细信息，请参阅部分 6.4.3.8，"连接描述符"的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ### <a name="spb-resource-descriptors"></a>存储资源描述符
 
 与 GPIO 连接情况一样，存储连接均由正在使用的设备，通过新的资源描述符操作系统描述。 通用串行总线资源描述符用于声明 I²C 连接、 SPI 连接和 UART 连接，并且可以扩展以在将来支持其他串行总线类型。
 
-用于这些描述符的资源模板宏 19.5.55，部分所述"I2CSerialBus （I2C 串行总线连接资源描述符宏）"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+用于这些描述符的资源模板宏 19.5.55，部分所述"I2CSerialBus （I2C 串行总线连接资源描述符宏）"的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ### <a name="genericserialbus-opregions"></a>GenericSerialBus OpRegions
 
-此外与 GPIO 类似，ACPI 5.0 定义 OpRegion 用于存储控制器，GenericSerialBus （部分 5.5.2.4.5 ACPI 5.0 规范）。 由于 SPBs 通信总线，GenericSerialBus OpRegions 支持各种协议用于访问存储的目标设备。 有关详细信息，请参阅 》 的部分 5.5.2.4.5.3，"使用 GenericSerialBus 协议"， [ACPI 5.0 规范](https://www.uefi.org/specifications)。
+此外与 GPIO 类似，ACPI 5.0 定义 OpRegion 用于存储控制器，GenericSerialBus （部分 5.5.2.4.5 ACPI 5.0 规范）。 由于 SPBs 通信总线，GenericSerialBus OpRegions 支持各种协议用于访问存储的目标设备。 有关详细信息，请参阅 》 的部分 5.5.2.4.5.3，"使用 GenericSerialBus 协议"， [ACPI 5.0 规范](https://uefi.org/specifications)。
 
-通常使用 SPBs，是 ASL 控制方法，以与设备操作系统的驱动程序共享到的存储目标设备的访问权限的必要条件。 若要确保这些访问的同步，ACPI 5.0 定义设备锁定互斥体 (\_DLM) 对象。 有关详细信息，请参阅部分 5.7.5 [ACPI 5.0 规范](https://www.uefi.org/specifications)。
+通常使用 SPBs，是 ASL 控制方法，以与设备操作系统的驱动程序共享到的存储目标设备的访问权限的必要条件。 若要确保这些访问的同步，ACPI 5.0 定义设备锁定互斥体 (\_DLM) 对象。 有关详细信息，请参阅部分 5.7.5 [ACPI 5.0 规范](https://uefi.org/specifications)。
 
  
 

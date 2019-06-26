@@ -4,12 +4,12 @@ description: 虚拟机队列 (VMQ)
 ms.assetid: c502c7d6-bdf1-4656-b5a5-339250910f08
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 042007d7437d65ba76fc6f167c052223e4708d51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 285e8d2e07bf8519ab13fff81a5759a6f9698108
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338330"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353637"
 ---
 # <a name="virtual-machine-queue-vmq"></a>虚拟机队列 (VMQ)
 
@@ -29,7 +29,7 @@ ms.locfileid: "63338330"
 
 -   通过使用目标媒体访问控制 (MAC) 地址将数据包路由到不同的网络适配器硬件中的接收数据包的分类接收队列。
 
--   NIC 可以使用 DMA 将数据包传送到虚拟机的直接共享内存。 有关共享内存的详细信息，请参阅[NDIS 内存管理界面](https://msdn.microsoft.com/library/windows/hardware/ff564749)。
+-   NIC 可以使用 DMA 将数据包传送到虚拟机的直接共享内存。 有关共享内存的详细信息，请参阅[NDIS 内存管理界面](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
 -   缩放到多个处理器，通过处理不同的处理器上的不同虚拟机的数据包。
 

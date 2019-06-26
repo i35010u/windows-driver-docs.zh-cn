@@ -10,21 +10,21 @@ keywords:
 - WDF_VIOLATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 776ea4eb7b2135b7599e0a657a8084c8447236f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ea1a1387117ba1509030fb1fbb7fe13bd6de88e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330859"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353206"
 ---
 # <a name="bug-checks-from-kmdf-drivers"></a>从 KMDF 驱动程序进行 Bug 检查
 
 
 该框架会为多种类型的基于框架的驱动程序中的错误。 如果发生这些错误之一，则框架将创建 WDF\_冲突错误检查。
 
-有关该框架会为驱动程序错误类型的信息，请参阅[ **WDF\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff557235)。
+有关该框架会为驱动程序错误类型的信息，请参阅[ **WDF\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x10d---wdf-violation)。
 
-您的驱动程序可以通过调用创建的 bug 检查[ **WdfVerifierKeBugCheck**](https://msdn.microsoft.com/library/windows/hardware/ff551166)。
+您的驱动程序可以通过调用创建的 bug 检查[ **WdfVerifierKeBugCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfverifier/nf-wdfverifier-wdfverifierkebugcheck)。
 
  
 

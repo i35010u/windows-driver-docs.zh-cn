@@ -11,12 +11,12 @@ keywords:
 - 属性页 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1de7f990d6c7e3a445931d8f8848d9a3f25b2df9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66be6a9120c3ffbc619b84c362691376759b6cdc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354536"
 ---
 # <a name="notify-objects-for-network-components"></a>网络组件的通知对象
 
@@ -40,7 +40,7 @@ ms.locfileid: "63331839"
 
 [创建通知对象](creating-a-notify-object.md)
 
-有关参考信息为接口方法支持通知对象，请参阅[通知对象](https://msdn.microsoft.com/library/windows/hardware/ff559161)。
+有关参考信息为接口方法支持通知对象，请参阅[通知对象](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559161(v=vs.85))。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUni3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e28efbddce1f27e6dd20af41fdd6e1ff5c3ef2b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da35f4e2e61aac9bc95d11ab6caa9fd7895af21d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353264"
 ---
 # <a name="iprintoemuni3-com-interface"></a>IPrintOemUni3 COM 接口
 
@@ -36,15 +36,15 @@ ms.locfileid: "63384212"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554201" data-raw-source="[&lt;strong&gt;IPrintOemUni3::DownloadPattern&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554201)"><strong>IPrintOemUni3::DownloadPattern</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-downloadpattern" data-raw-source="[&lt;strong&gt;IPrintOemUni3::DownloadPattern&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-downloadpattern)"><strong>IPrintOemUni3::DownloadPattern</strong></a></p></td>
 <td><p>允许插件以将其下载到打印机的一种模式。</p></td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff554205" data-raw-source="[&lt;strong&gt;IPrintOemUni3::GetPDEVAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554205)"><strong>IPrintOemUni3::GetPDEVAdjustment</strong></a></td>
-<td><p>允许插件以将其重写特定<a href="https://msdn.microsoft.com/library/windows/hardware/ff556325#wdkgloss-pdev" data-raw-source="&lt;em&gt;PDEV&lt;/em&gt;"> <em>PDEV</em> </a>设置。</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-getpdevadjustment" data-raw-source="[&lt;strong&gt;IPrintOemUni3::GetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-getpdevadjustment)"><strong>IPrintOemUni3::GetPDEVAdjustment</strong></a></td>
+<td><p>允许插件以将其重写特定<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-pdev" data-raw-source="&lt;em&gt;PDEV&lt;/em&gt;"> <em>PDEV</em> </a>设置。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff554209" data-raw-source="[&lt;strong&gt;IPrintOemUni3::SetBandSize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554209)"><strong>IPrintOemUni3::SetBandSize</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-setbandsize" data-raw-source="[&lt;strong&gt;IPrintOemUni3::SetBandSize&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni3-setbandsize)"><strong>IPrintOemUni3::SetBandSize</strong></a></td>
 <td><p>允许插件以将其指定所需的带区大小上打印输出</p></td>
 </tr>
 </tbody>

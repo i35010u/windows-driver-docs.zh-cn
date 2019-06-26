@@ -7,19 +7,19 @@ keywords:
 - Direct3D 11 版 WDK Windows Server 2008 R2 显示，从而启用 DDI 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73bdda91b8dee52a87bddf59585efbc610e9e1c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2718e45cffcccf29ba36316ae1a3b0471388417
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379479"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355576"
 ---
 # <a name="enabling-support-for-the-direct3d-version-11-ddi"></a>启用 Direct3D 版本 11 DDI 的支持
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
 
-若要启用支持的用户模式显示驱动程序 DLL 的版本 11 DDI、 INF 文件，安装了显示器驱动程序的图形设备必须列出无论 DLL 的名称的 Direct3D 版本 11 DDI 中存在相同 DLL 作为[Direct3D 版本 9 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552927)并[Direct3D 版本 10 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552909)或在单独的 DLL 中。
+若要启用支持的用户模式显示驱动程序 DLL 的版本 11 DDI、 INF 文件，安装了显示器驱动程序的图形设备必须列出无论 DLL 的名称的 Direct3D 版本 11 DDI 中存在相同 DLL 作为[Direct3D 版本 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/index)并[Direct3D 版本 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)或在单独的 DLL 中。
 
 [显示微型端口和用户模式显示驱动程序的安装要求](installing-display-miniport-and-user-mode-display-drivers.md)部分介绍如何安装和使用 Windows Vista 显示器驱动程序模型根据用户模式显示驱动程序。 为启用还支持 Direct3D 版本 11 DDI，必须指定包含版本 11 的 DLL 的名称作为用户模式下的列表中的第三个项 DDI 显示驱动程序名称，即使 DDI 中存在的版本 11 版本 9 和 10 DDIs 作为同一个 DLL。
 

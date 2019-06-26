@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c022ee410efb7d7e97fe9be62eeff5a6a535842d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e291d3ce44e377fa1b3204ffb4c3f0698532932
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353496"
 ---
 # <a name="smsetbindingsupport-function"></a>SM\_SetBindingSupport 函数
 
@@ -88,9 +88,9 @@ void SM_SetBindingSupport(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SetBindingSupport\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566330)
+[**SM\_SetBindingSupport\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setbindingsupport_in)
 
-[**SM\_SetBindingSupport\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566331)
+[**SM\_SetBindingSupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setbindingsupport_out)
 
  
 

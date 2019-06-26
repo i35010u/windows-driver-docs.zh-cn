@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ENCAPSULATION_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 38e437abee229a0e40067e94a8111eb3261a4708
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3bf12d25f2862372127cd8e3d2316e948d64a20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330177"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354498"
 ---
 # <a name="oidwdisetencapsulationoffload"></a>OID\_WDI\_SET\_ENCAPSULATION\_OFFLOAD
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_封装\_卸载发送由操作系统，以指示较低边缘驱
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -32,8 +32,8 @@ LE 收到此消息后，应指示其当前的封装卸载配置与[NDIS\_状态\
 
 | TLV                                                                                                                   | 允许多个 TLV 实例 | 可选 | 描述                                     |
 |-----------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------|
-| [**WDI\_TLV\_SET\_ENCAPSULATION\_OFFLOAD\_V4\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn898058) |                                |          | 指定是否应启动 IPv4 卸载。 |
-| [**WDI\_TLV\_SET\_ENCAPSULATION\_OFFLOAD\_V6\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn898059) |                                |          | 指定是否应启动 IPv6 卸载。 |
+| [**WDI\_TLV\_SET\_ENCAPSULATION\_OFFLOAD\_V4\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-encapsulation-offload-v4-parameters) |                                |          | 指定是否应启动 IPv4 卸载。 |
+| [**WDI\_TLV\_SET\_ENCAPSULATION\_OFFLOAD\_V6\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-encapsulation-offload-v6-parameters) |                                |          | 指定是否应启动 IPv6 卸载。 |
 
  
 

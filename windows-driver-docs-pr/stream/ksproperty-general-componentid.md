@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b0907cebc3a4b08ac03471373c3690e2649566
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 866414c5c0ded0200ac59971e9425a57af2134c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363993"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354820"
 ---
 # <a name="kspropertygeneralcomponentid"></a>KSPROPERTY\_常规\_COMPONENTID
 
 
-KSPROPERTY\_常规\_COMPONENTID 属性是可选属性，允许访问常规组件信息存储在客户端[ **KSCOMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff561027)结构。
+KSPROPERTY\_常规\_COMPONENTID 属性是可选属性，允许访问常规组件信息存储在客户端[ **KSCOMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)结构。
 
 ## <span id="ddk_ksproperty_general_componentid_ks"></span><span id="DDK_KSPROPERTY_GENERAL_COMPONENTID_KS"></span>
 
@@ -54,7 +54,7 @@ KSPROPERTY\_常规\_COMPONENTID 属性是可选属性，允许访问常规组件
 <td><p>否</p></td>
 <td><p>Filter</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561027" data-raw-source="[&lt;strong&gt;KSCOMPONENTID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561027)"><strong>KSCOMPONENTID</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid" data-raw-source="[&lt;strong&gt;KSCOMPONENTID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)"><strong>KSCOMPONENTID</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ KSPROPERTY\_常规\_COMPONENTID 属性是可选属性，允许访问常规组件
 <a name="remarks"></a>备注
 -------
 
-[ **KSCOMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff561027)结构包含的 GUID 值**制造商**，**产品**，**组件**，并**名称**。 它包含 ULONG 值**版本**并**修订**。
+[ **KSCOMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)结构包含的 GUID 值**制造商**，**产品**，**组件**，并**名称**。 它包含 ULONG 值**版本**并**修订**。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,7 +85,7 @@ KSPROPERTY\_常规\_COMPONENTID 属性是可选属性，允许访问常规组件
 ## <a name="see-also"></a>请参阅
 
 
-[**KSCOMPONENTID**](https://msdn.microsoft.com/library/windows/hardware/ff561027)
+[**KSCOMPONENTID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)
 
  
 

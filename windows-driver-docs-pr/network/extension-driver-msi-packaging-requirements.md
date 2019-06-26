@@ -4,12 +4,12 @@ description: 交换机扩展必须打包到可以无提示方式安装的 MSI �
 ms.assetid: 300118F9-D9C7-4AFA-B54A-59666BC680F1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06fa51361afe23d74523b1bc58df1ef16b077a48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79b2a513ad0e1590a3175f45f23213ea10497d06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360205"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353746"
 ---
 # <a name="extension-driver-msi-packaging-requirements"></a>扩展驱动程序 MSI 打包要求
 
@@ -35,7 +35,7 @@ MSI 文件必须满足以下要求：
 | **DriverInstallParams**         | 必需 | **String** | 若要以无提示方式安装此驱动程序所使用的参数。 示例： /q                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **IsManagedByExtensionManager** | 可选 | **String** | 存在且非零值 = 是，0 或不存在 = 否                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | **MinApplicableOSVersion**      | 必需 | **String** | 此扩展将在上运行的 Windows 操作系统最低版本。 操作系统版本号，请参阅操作系统版本。 请注意，HYPER-V 可扩展交换机功能已添加在 Windows Server 2012 中，因此此字段的最低有效值为"6.2"。                                                                                                                                                                                                                    |
-| **MaxApplicableOSVersion**      | 可选 | **String** | 此扩展将在上运行的 Windows 操作系统最大版本。 请参阅[Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832)对于操作系统的版本号。 请注意，HYPER-V 可扩展交换机功能已添加在 Windows Server 2012 中，因此此字段的最低有效值是"6.2"或的值**MinApplicableOSVersion**，大者为准。 此字段是可选字段。 如果未不指定任何值，此扩展将运行**MinApplicableOSVersion**及更高版本。 |
+| **MaxApplicableOSVersion**      | 可选 | **String** | 此扩展将在上运行的 Windows 操作系统最大版本。 请参阅[Operating System Version](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)对于操作系统的版本号。 请注意，HYPER-V 可扩展交换机功能已添加在 Windows Server 2012 中，因此此字段的最低有效值是"6.2"或的值**MinApplicableOSVersion**，大者为准。 此字段是可选字段。 如果未不指定任何值，此扩展将运行**MinApplicableOSVersion**及更高版本。 |
 
  
 

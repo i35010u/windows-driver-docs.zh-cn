@@ -8,12 +8,12 @@ keywords:
 - 媒体更改通知 WDK 可移动媒体
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c0f16444119e460ddab1434f8422769310ca2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba681783d64fb52d2f0921d77bfad2a421295539
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341959"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354991"
 ---
 # <a name="notifying-the-file-system-of-possible-media-changes"></a>向文件系统通知可能发生了媒体更改
 
@@ -25,7 +25,7 @@ ms.locfileid: "63341959"
 
 如果其物理设备将指示之前驱动程序开始一个 I/O 操作的媒体的状态可能已更改，或者在操作期间，驱动程序必须执行以下操作：
 
-1.  确保通过检查 VPB 装载卷\_中的已装载标志*VPB*。 (如果不装入卷，该驱动程序必须未设置 DO\_验证\_卷位。 该驱动程序应设置**IoStatus.Status**于状态\_IO\_设备\_错误，设置**IoStatus.Information**为零，并调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)与 IRP。)
+1.  确保通过检查 VPB 装载卷\_中的已装载标志*VPB*。 (如果不装入卷，该驱动程序必须未设置 DO\_验证\_卷位。 该驱动程序应设置**IoStatus.Status**于状态\_IO\_设备\_错误，设置**IoStatus.Information**为零，并调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)与 IRP。)
 
 2.  设置**标志**中**DeviceObject**通过实现或运算**标志**使用\_验证\_卷。
 
@@ -33,7 +33,7 @@ ms.locfileid: "63341959"
     -   **状态**将设置为 STATUS\_验证\_必需
     -   **信息**设置为零
 
-4.  之前完成与任何 IRP **IoStatus**在其中阻止**状态**字段未设置为状态\_成功后，该驱动程序必须调用[ **IoIsErrorUserInduced**](https://msdn.microsoft.com/library/windows/hardware/ff549375)，这会返回一个布尔值**TRUE**以下任一**状态**值：
+4.  之前完成与任何 IRP **IoStatus**在其中阻止**状态**字段未设置为状态\_成功后，该驱动程序必须调用[ **IoIsErrorUserInduced**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioiserroruserinduced)，这会返回一个布尔值**TRUE**以下任一**状态**值：
 
     -   状态\_验证\_必需
     -   状态\_否\_媒体\_IN\_设备
@@ -43,7 +43,7 @@ ms.locfileid: "63341959"
     -   状态\_IO\_超时
     -   状态\_设备\_不\_准备就绪
 
-    如果**IoIsErrorUserInduced**返回**TRUE**，该驱动程序必须调用[ **IoSetHardErrorOrVerifyDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549707)以便 FSD 可以打开一个对话框到用户，用户可以选择提供正确的介质，然后重试原始请求，或取消请求的操作。
+    如果**IoIsErrorUserInduced**返回**TRUE**，该驱动程序必须调用[ **IoSetHardErrorOrVerifyDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetharderrororverifydevice)以便 FSD 可以打开一个对话框到用户，用户可以选择提供正确的介质，然后重试原始请求，或取消请求的操作。
 
  
 

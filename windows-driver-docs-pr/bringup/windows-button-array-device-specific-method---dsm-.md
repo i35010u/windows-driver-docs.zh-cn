@@ -4,12 +4,12 @@ description: 若要支持的 Windows 按钮用户界面 (UI) 的发展，Windows
 ms.assetid: B79ED0F9-B46A-4915-8FF3-5CF3D2E0E945
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fdfa6c35d0cfc715401c7b89f42f6c9c35d8466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 129ed5b0a20d8644378a8e5a4b4b4257198926fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353932"
 ---
 # <a name="windows-button-array-device-specific-method-dsm"></a>Windows 按钮数组特定于设备的方法 (\_DSM)
 
@@ -26,7 +26,7 @@ ms.locfileid: "63338093"
 -   **Arg0:** UUID = dfbcf3c5-e7a5-44e6-9c1f-29c76f6e059c
 -   **Arg1:** 修订 ID = 0
 -   **Arg2:** 函数索引 = 1
--   **Arg3:**（未使用） 的空包
+-   **Arg3:** （未使用） 的空包
 
 ### <a name="return"></a>返回
 
@@ -37,7 +37,7 @@ ms.locfileid: "63338093"
 -   1 位：此位应设置为 1，如果电源按钮被绑定到构成中断控制器 (GPIO 或其他) 的支持级别检测。 否则，此位应为 0。
 -   位 0:如果该平台支持 ACPI 电源按钮的重写时间为 10 秒或更高版本应设置此位为 1。 否则，此位应为 0。
 
-**请注意**  函数索引为 0 的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关详细信息，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"，在[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+**请注意**  函数索引为 0 的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关详细信息，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
 
  
 

@@ -4,12 +4,12 @@ description: 说明如何使用 Windows 中的蓝牙用户界面的软件开发�
 ms.assetid: 7E342615-217A-4252-AAC4-7F7EE013840D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc4f024d6811c27a05ee9df3594d535fa093ec71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc4ad313beb432d5d92688f034b6c9a97ddb3160
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328244"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354036"
 ---
 # <a name="bluetooth-user-interface"></a>蓝牙用户界面
 
@@ -53,7 +53,7 @@ ms.locfileid: "63328244"
 ## <a name="span-idcanvendorsaddtabstothecontrolpanelbluetoothsettingsapplicationspanspan-idcanvendorsaddtabstothecontrolpanelbluetoothsettingsapplicationspanspan-idcanvendorsaddtabstothecontrolpanelbluetoothsettingsapplicationspancan-vendors-add-tabs-to-the-control-panel-bluetooth-settings-application"></a><span id="Can_vendors_add_tabs_to_the_Control_Panel_Bluetooth_Settings_application_"></span><span id="can_vendors_add_tabs_to_the_control_panel_bluetooth_settings_application_"></span><span id="CAN_VENDORS_ADD_TABS_TO_THE_CONTROL_PANEL_BLUETOOTH_SETTINGS_APPLICATION_"></span>供应商是否可以将选项卡添加到控制面板蓝牙设置应用程序？
 
 
-是的供应商可以通过实现应用程序 shell 属性页处理程序添加选项卡。 例如，Ihv 现成 Bluetooth 堆栈实现扩展可以实现的属性表处理程序添加配置文件的文件传输，例如添加到版本 2.1 蓝牙规范和等等的增强功能的选项卡。 有关如何实现属性页处理程序的详细信息，请参阅[属性页处理程序](https://msdn.microsoft.com/library/windows/desktop/cc144106)。
+是的供应商可以通过实现应用程序 shell 属性页处理程序添加选项卡。 例如，Ihv 现成 Bluetooth 堆栈实现扩展可以实现的属性表处理程序添加配置文件的文件传输，例如添加到版本 2.1 蓝牙规范和等等的增强功能的选项卡。 有关如何实现属性页处理程序的详细信息，请参阅[属性页处理程序](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/cc144106(v=vs.85))。
 
 ## <a name="span-idwhydoeswindows7andwindowsvistadisplayadialogboxwhenabluetoothaudiodeviceisinitiallyconnectedspanspan-idwhydoeswindows7andwindowsvistadisplayadialogboxwhenabluetoothaudiodeviceisinitiallyconnectedspanspan-idwhydoeswindows7andwindowsvistadisplayadialogboxwhenabluetoothaudiodeviceisinitiallyconnectedspanwhy-does-windows-7-and-windows-vista-display-a-dialog-box-when-a-bluetooth-audio-device-is-initially-connected"></a><span id="Why_does_Windows_7_and_Windows_Vista_display_a_dialog_box_when_a_Bluetooth_audio_device_is_initially_connected_"></span><span id="why_does_windows_7_and_windows_vista_display_a_dialog_box_when_a_bluetooth_audio_device_is_initially_connected_"></span><span id="WHY_DOES_WINDOWS_7_AND_WINDOWS_VISTA_DISPLAY_A_DIALOG_BOX_WHEN_A_BLUETOOTH_AUDIO_DEVICE_IS_INITIALLY_CONNECTED_"></span>为什么 Windows 7 和 Windows Vista 显示一个对话框时蓝牙音频设备最初要连接？
 

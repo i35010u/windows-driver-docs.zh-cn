@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c08ae3fd10a8f0c29b72bb842896b0a05495d67a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 214aed1e2bf69476a68d96911eb38fac840fb97d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353292"
 ---
 # <a name="wditlvp2psendactionframeresultparameters"></a>WDI\_TLV\_P2P\_发送\_操作\_帧\_结果\_参数
 
@@ -33,7 +33,7 @@ WDI\_TLV\_P2P\_发送\_操作\_帧\_结果\_参数是包含 Wi-Fi Direct TLV 发
 
 | 在任务栏的搜索框中键入                                              | 描述                                           |
 |---------------------------------------------------|-------------------------------------------------------|
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 目标 Wi-Fi Direct 设备的设备地址。 |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 目标 Wi-Fi Direct 设备的设备地址。 |
 | UINT8                                             | Wi-Fi Direct 对话框标记，表示此事务。   |
 
  

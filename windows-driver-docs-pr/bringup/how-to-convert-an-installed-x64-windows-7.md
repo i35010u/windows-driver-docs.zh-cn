@@ -3,12 +3,12 @@ title: 如何转换已安装的 x64 Windows 7 系统
 description: 如何转换已安装的 x64 Windows 7 系统
 ms.date: 01/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cffd5cfbf35961844f840f4b4b6e40c8e8e1107e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 418bcffd567917b546a57e598c75e09cb4f464ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353986"
 ---
 # <a name="how-to-convert-an-installed-x64-windows-7-system"></a>如何转换已安装的 x64 Windows 7 系统
 
@@ -129,8 +129,8 @@ path \WINDOWS\system32\winload.efi
 
 ## <a name="related-resources"></a>相关资源
 
-[建议使用基于 UEFI 的磁盘分区配置](https://technet.microsoft.com/library/dd744301)
+[建议使用基于 UEFI 的磁盘分区配置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd744301(v=ws.10))
 
-[Win7 备份程序、 系统设置和文件](http://windows.microsoft.com/windows/back-up-programs-system-settings-files#1TC=windows-7)
+[Win7 备份程序、 系统设置和文件](https://support.microsoft.com/help/17127/windows-back-up-restore#1TC=windows-7)
 
-[Win7 保护文件和使用 Windows 7 备份 PC](https://blogs.technet.microsoft.com/filecab/2009/10/23/protect-your-files-and-pc-with-windows-7-backup/)
+[Win7 保护文件和使用 Windows 7 备份 PC](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/bg-p/FileCAB)

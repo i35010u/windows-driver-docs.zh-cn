@@ -9,12 +9,12 @@ keywords:
 - 内存 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a46856cbee659ad65a07c316f9fb4ad45511b8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75f76c761fe8bdfa2d4e776f9b1c7ebe453182ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376035"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354736"
 ---
 # <a name="gdi-memory-services"></a>GDI 内存服务
 
@@ -37,44 +37,44 @@ GDI 到驱动程序编写人员，包括分配和释放系统内存、 用户内
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564176" data-raw-source="[&lt;strong&gt;EngAllocMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564176)"><strong>EngAllocMem</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem" data-raw-source="[&lt;strong&gt;EngAllocMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)"><strong>EngAllocMem</strong></a></p></td>
 <td align="left"><p>分配的内存块，并将插入之前分配的调用方提供的标记。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564177" data-raw-source="[&lt;strong&gt;EngAllocPrivateUserMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564177)"><strong>EngAllocPrivateUserMem</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocprivateusermem" data-raw-source="[&lt;strong&gt;EngAllocPrivateUserMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocprivateusermem)"><strong>EngAllocPrivateUserMem</strong></a></p></td>
 <td align="left"><p>从指定进程的地址空间分配的专用用户内存块，并将插入之前分配的调用方提供的标记。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564178" data-raw-source="[&lt;strong&gt;EngAllocUserMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564178)"><strong>EngAllocUserMem</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem" data-raw-source="[&lt;strong&gt;EngAllocUserMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)"><strong>EngAllocUserMem</strong></a></p></td>
 <td align="left"><p>从当前进程的地址空间分配的内存块，并将插入之前分配的调用方提供的标记。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564895" data-raw-source="[&lt;strong&gt;EngFreeMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564895)"><strong>EngFreeMem</strong></a></p></td>
-<td align="left"><p>释放系统内存分配的块<a href="https://msdn.microsoft.com/library/windows/hardware/ff564176" data-raw-source="[&lt;strong&gt;EngAllocMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564176)"> <strong>EngAllocMem</strong></a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engfreemem" data-raw-source="[&lt;strong&gt;EngFreeMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engfreemem)"><strong>EngFreeMem</strong></a></p></td>
+<td align="left"><p>释放系统内存分配的块<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem" data-raw-source="[&lt;strong&gt;EngAllocMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)"> <strong>EngAllocMem</strong></a>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564907" data-raw-source="[&lt;strong&gt;EngFreePrivateUserMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564907)"><strong>EngFreePrivateUserMem</strong></a></p></td>
-<td align="left"><p>解除分配的专用用户分配的内存块<a href="https://msdn.microsoft.com/library/windows/hardware/ff564177" data-raw-source="[&lt;strong&gt;EngAllocPrivateUserMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564177)"> <strong>EngAllocPrivateUserMem</strong></a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engfreeprivateusermem" data-raw-source="[&lt;strong&gt;EngFreePrivateUserMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engfreeprivateusermem)"><strong>EngFreePrivateUserMem</strong></a></p></td>
+<td align="left"><p>解除分配的专用用户分配的内存块<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocprivateusermem" data-raw-source="[&lt;strong&gt;EngAllocPrivateUserMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocprivateusermem)"> <strong>EngAllocPrivateUserMem</strong></a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564912" data-raw-source="[&lt;strong&gt;EngFreeUserMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564912)"><strong>EngFreeUserMem</strong></a></p></td>
-<td align="left"><p>解除分配的用户分配的内存块<a href="https://msdn.microsoft.com/library/windows/hardware/ff564178" data-raw-source="[&lt;strong&gt;EngAllocUserMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564178)"> <strong>EngAllocUserMem</strong></a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engfreeusermem" data-raw-source="[&lt;strong&gt;EngFreeUserMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engfreeusermem)"><strong>EngFreeUserMem</strong></a></p></td>
+<td align="left"><p>解除分配的用户分配的内存块<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem" data-raw-source="[&lt;strong&gt;EngAllocUserMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)"> <strong>EngAllocUserMem</strong></a>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565011" data-raw-source="[&lt;strong&gt;EngSecureMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565011)"><strong>EngSecureMem</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsecuremem" data-raw-source="[&lt;strong&gt;EngSecureMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsecuremem)"><strong>EngSecureMem</strong></a></p></td>
 <td align="left"><p>锁定在内存中指定的地址范围。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565454" data-raw-source="[&lt;strong&gt;EngUnsecureMem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565454)"><strong>EngUnsecureMem</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engunsecuremem" data-raw-source="[&lt;strong&gt;EngUnsecureMem&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engunsecuremem)"><strong>EngUnsecureMem</strong></a></p></td>
 <td align="left"><p>解除锁定锁定的内存地址范围。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567267" data-raw-source="[&lt;strong&gt;HeapVidMemAllocAligned&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567267)"><strong>HeapVidMemAllocAligned</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned" data-raw-source="[&lt;strong&gt;HeapVidMemAllocAligned&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)"><strong>HeapVidMemAllocAligned</strong></a></p></td>
 <td align="left"><p>分配<em>屏外内存</em>使用 DirectDraw 视频内存堆管理器的显示驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570554" data-raw-source="[&lt;strong&gt;VidMemFree&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570554)"><strong>VidMemFree</strong></a></p></td>
-<td align="left"><p>释放由的显示驱动程序分配的屏幕外内存<a href="https://msdn.microsoft.com/library/windows/hardware/ff567267" data-raw-source="[&lt;strong&gt;HeapVidMemAllocAligned&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567267)"> <strong>HeapVidMemAllocAligned</strong></a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-vidmemfree" data-raw-source="[&lt;strong&gt;VidMemFree&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-vidmemfree)"><strong>VidMemFree</strong></a></p></td>
+<td align="left"><p>释放由的显示驱动程序分配的屏幕外内存<a href="https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned" data-raw-source="[&lt;strong&gt;HeapVidMemAllocAligned&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)"> <strong>HeapVidMemAllocAligned</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>

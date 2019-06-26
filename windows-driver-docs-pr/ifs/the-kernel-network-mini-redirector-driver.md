@@ -10,12 +10,12 @@ keywords:
 - 最小-重定向程序 WDK，有关内核网络微型重定向程序驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3624399021ac3ba4fb271f090b426324bbed6d75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e1e5466e526e58b9c261b68cdb2d541df3f669e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354670"
 ---
 # <a name="the-kernel-network-mini-redirector-driver"></a>内核网络微型重定向程序驱动程序
 
@@ -25,11 +25,11 @@ ms.locfileid: "63330953"
 
 内核网络微型重定向程序驱动程序实现多个用于通过重定向驱动器缓冲子系统 (RDBSS) 与该驱动程序进行通信的回调例程。 在此文档的其余部分，内核网络微型重定向程序驱动程序称为网络微型重定向程序驱动程序。
 
-网络微型重定向程序驱动程序的第一次启动 (在其**DriverEntry**例程)，该驱动程序调用 RDBSS [ **RxRegisterMinirdr** ](https://msdn.microsoft.com/library/windows/hardware/ff554693)例程，以注册网络使用 RDBSS 微型重定向程序驱动程序。 网络微型重定向程序驱动程序传入 MINIRDR\_调度结构，其中包括配置数据以及网络微型重定向程序驱动程序实现 （调度表） 的例程的指针。
+网络微型重定向程序驱动程序的第一次启动 (在其**DriverEntry**例程)，该驱动程序调用 RDBSS [ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)例程，以注册网络使用 RDBSS 微型重定向程序驱动程序。 网络微型重定向程序驱动程序传入 MINIRDR\_调度结构，其中包括配置数据以及网络微型重定向程序驱动程序实现 （调度表） 的例程的指针。
 
 可以选择实现的这些例程仅某些网络微型重定向。 由网络微型重定向不实现任何例程应设置为**NULL** MINIRDR 中的指针\_调度结构传递给**RxRegisterMinirdr**。 RDBSS 只会调用由网络微型-重定向程序实现的例程。
 
-由网络微型重定向实现的例程的一个特殊类别是表示传统的文件 I/O 调用的读取、 写入和其他文件操作的低 I/O 操作。 所有较低的 I/O 例程可由 RDBSS 以异步方式调用。 网络微型重定向的内核驱动程序必须进行某些，实现任何低 I/O 例程可以安全地调用以异步方式。 较低的 I/O 例程中作为传递的例程的指针的数组作为一部分 MINIRDR\_调度结构从[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程。 数组项的值是要执行的较低的 I/O 操作。 所有较低的 I/O 例程预期指向 RX\_上下文结构中作为参数进行传递。 RX\_上下文的数据结构具有**LowIoContext.Operation**还指定了要执行的较低的 I/O 操作的成员。 可以为多个较低的 I/O 例程，以指向网络微型重定向程序驱动程序中的相同例程，因为这样**LowIoContext.Operation**成员可用于指定请求的较低的 I/O 操作。 例如，所有与文件锁相关的低 I/O 调用可以在网络微型-重定向程序中调用相同的低 I/O 例程，并可以使用此例程**LowIoContext.Operation**成员指定锁定或解锁的操作请求。
+由网络微型重定向实现的例程的一个特殊类别是表示传统的文件 I/O 调用的读取、 写入和其他文件操作的低 I/O 操作。 所有较低的 I/O 例程可由 RDBSS 以异步方式调用。 网络微型重定向的内核驱动程序必须进行某些，实现任何低 I/O 例程可以安全地调用以异步方式。 较低的 I/O 例程中作为传递的例程的指针的数组作为一部分 MINIRDR\_调度结构从[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。 数组项的值是要执行的较低的 I/O 操作。 所有较低的 I/O 例程预期指向 RX\_上下文结构中作为参数进行传递。 RX\_上下文的数据结构具有**LowIoContext.Operation**还指定了要执行的较低的 I/O 操作的成员。 可以为多个较低的 I/O 例程，以指向网络微型重定向程序驱动程序中的相同例程，因为这样**LowIoContext.Operation**成员可用于指定请求的较低的 I/O 操作。 例如，所有与文件锁相关的低 I/O 调用可以在网络微型-重定向程序中调用相同的低 I/O 例程，并可以使用此例程**LowIoContext.Operation**成员指定锁定或解锁的操作请求。
 
 RDBSS 还假定对于少数其他例程由网络微型重定向实现异步操作。 这些例程用于建立与远程资源的连接。 连接操作可能要花费相当长的时间才能完成，因为 RDBSS 假定这些例程实施为异步操作。
 

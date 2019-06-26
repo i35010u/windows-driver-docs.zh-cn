@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c77198cd2eb297a3bee8cc5890e3bd35186789
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcac60893a8ad7aeda993f77e4389a4b990da761
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355386"
 ---
 # <a name="kspropertycameracontrolextendedfaceauthmode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_FACEAUTH\_模式
 
@@ -124,7 +124,7 @@ IR 照相机应该播发**KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_模式\_禁用**如�
 </tr>
 <tr class="odd">
 <td><p>大小</p></td>
-<td><p>这必须是<strong>sizeof</strong>(<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + <strong>sizeof</strong>(<a href="https://msdn.microsoft.com/library/windows/hardware/dn567566" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn567566)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>).</p></td>
+<td><p>这必须是<strong>sizeof</strong>(<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + <strong>sizeof</strong>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>).</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>

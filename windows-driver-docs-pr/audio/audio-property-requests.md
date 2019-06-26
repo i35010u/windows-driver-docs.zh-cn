@@ -15,12 +15,12 @@ keywords:
 - 属性请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf22d72b2b5fbf6bb02154851014ea0cde0b248
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ab33e12650ed7a04f1e4e5a2e6b939b49de891c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331423"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355654"
 ---
 # <a name="audio-property-requests"></a>音频属性请求
 
@@ -28,13 +28,13 @@ ms.locfileid: "63331423"
 ## <span id="audio_property_requests"></span><span id="AUDIO_PROPERTY_REQUESTS"></span>
 
 
-Microsoft Windows 驱动程序模型 (WDM) 的音频驱动程序的客户端可以将请求发送[KS 属性](https://msdn.microsoft.com/library/windows/hardware/ff567671)KS 筛选器和驱动程序已实例化的 pin。 例如，用户模式下客户端可以发送 KS 属性请求，通过调用[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)起作用 （请参阅 Microsoft Windows SDK 文档） IOCTL 到 O 控制代码\_KS\_属性。 此函数将发送 IRP 包含对指定的筛选器或 pin 对象的属性请求。
+Microsoft Windows 驱动程序模型 (WDM) 的音频驱动程序的客户端可以将请求发送[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)KS 筛选器和驱动程序已实例化的 pin。 例如，用户模式下客户端可以发送 KS 属性请求，通过调用[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)起作用 （请参阅 Microsoft Windows SDK 文档） IOCTL 到 O 控制代码\_KS\_属性。 此函数将发送 IRP 包含对指定的筛选器或 pin 对象的属性请求。
 
-音频驱动程序属性上支持 get、 set 和 basic 支持请求 (KSPROPERTY\_类型\_GET、 KSPROPERTY\_类型\_集和 KSPROPERTY\_类型\_BASICSUPPORT)。 有关详细信息，请参阅[音频驱动程序的属性集](https://msdn.microsoft.com/library/windows/hardware/ff536197)。
+音频驱动程序属性上支持 get、 set 和 basic 支持请求 (KSPROPERTY\_类型\_GET、 KSPROPERTY\_类型\_集和 KSPROPERTY\_类型\_BASICSUPPORT)。 有关详细信息，请参阅[音频驱动程序的属性集](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)。
 
 客户端可以发送三种类型的属性的请求： 筛选器属性、 pin 属性和节点属性。 有关详细信息，请参阅[筛选器、 Pin 和节点属性](filter--pin--and-node-properties.md)。
 
-客户端将筛选器属性请求发送给筛选器对象，其实例句柄通过指定目标筛选器 (请参阅[筛选器工厂](filter-factories.md))。 同样，将 pin 属性请求发送给 pin 对象，则目标 pin 指定通过其实例句柄 (请参阅[Pin 工厂](pin-factories.md))。 包含请求的任何一种[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构，它指定以下：
+客户端将筛选器属性请求发送给筛选器对象，其实例句柄通过指定目标筛选器 (请参阅[筛选器工厂](filter-factories.md))。 同样，将 pin 属性请求发送给 pin 对象，则目标 pin 指定通过其实例句柄 (请参阅[Pin 工厂](pin-factories.md))。 包含请求的任何一种[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构，它指定以下：
 
 -   标识属性集的 GUID
 
@@ -44,9 +44,9 @@ Microsoft Windows 驱动程序模型 (WDM) 的音频驱动程序的客户端可�
 
 相关的属性中收集在一起以形成一个属性设置。 通过其属性设置并指定其组中的位置的索引标识的特定属性。
 
-节点属性请求包含[ **KSNODEPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff537143)结构，它结合了 KSPROPERTY 结构和一个节点 id。 具体取决于节点属性，属性请求的目标是筛选器实例或 pin 实例。
+节点属性请求包含[ **KSNODEPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)结构，它结合了 KSPROPERTY 结构和一个节点 id。 具体取决于节点属性，属性请求的目标是筛选器实例或 pin 实例。
 
-如果筛选器可以创建多个特定节点类型的实例，由固定句柄指定请求的目标。 句柄标识的开头或末尾节点实例所驻留的数据路径的 pin 实例。 在包含的总和或 MUX 节点的筛选器的情况下 (请参阅[ **KSNODETYPE\_SUM** ](https://msdn.microsoft.com/library/windows/hardware/ff537196)并[ **KSNODETYPE\_MUX** ](https://msdn.microsoft.com/library/windows/hardware/ff537180))，则适用以下规则：
+如果筛选器可以创建多个特定节点类型的实例，由固定句柄指定请求的目标。 句柄标识的开头或末尾节点实例所驻留的数据路径的 pin 实例。 在包含的总和或 MUX 节点的筛选器的情况下 (请参阅[ **KSNODETYPE\_SUM** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum)并[ **KSNODETYPE\_MUX** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux))，则适用以下规则：
 
 -   如果该属性属于存在于一个接收器 （输入） 的 pin 的下游和上游的总和或 MUX 节点从一个节点，属性请求发送到接收器插针。
 

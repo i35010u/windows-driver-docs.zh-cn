@@ -4,12 +4,12 @@ description: 短信 API
 ms.assetid: d39d82b0-d88d-4448-a24a-22f329e95106
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20444950ac4e11f4354c9bc0004bcc3b8315700c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9392310bf93f85273be27bb4d1256b23643ba6a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323696"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355456"
 ---
 # <a name="sms-api"></a>短信 API
 
@@ -28,7 +28,7 @@ Windows 提供了短信 API 接收运算符超额和漫游通知、 发送和接
 
 -   获取的移动宽带设备属性 (帐户的电话号码，全球移动通信系统\[GSM\]或多个访问代码除法\[CDMA\]，和类似信息)。
 
-有关 SMS API 的详细信息，请参阅[ **Windows.Devices.Sms 命名空间**](https://msdn.microsoft.com/library/windows/apps/br206567)。
+有关 SMS API 的详细信息，请参阅[ **Windows.Devices.Sms 命名空间**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms)。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

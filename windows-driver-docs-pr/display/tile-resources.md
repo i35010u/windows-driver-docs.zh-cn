@@ -4,12 +4,12 @@ description: 有关磁贴资源，运行设备分页队列上的异步视频内�
 ms.assetid: D48D2046-64A6-4B0E-9235-84DD2A83DB39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a663c211d154411e5191072aaf1464ca93f3b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2e99a59954e7187703919f9ff1abbb9bc45067e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354680"
 ---
 # <a name="tile-resources"></a>平铺资源
 
@@ -29,7 +29,7 @@ ms.locfileid: "63389851"
 
 从理论上讲，今天的数据包中基于计划我们可以实现设备分页队列中等待部分的操作、 监视等待并等待条件满足后提交到共享的系统上下文的分页操作。 但是，随着我们超出数据包基于计划，然后拖动到我们想要确保我们可以使用 GPU 的 GPU 硬件计划同步基元以供互锁操作以确保最佳性能。
 
-若要解决此问题，我们将引入每个上下文分页随附上下文的概念。 分页随附上下文惰式创建在首次调用[ *UpdateGpuVirtualAddress* ](https://msdn.microsoft.com/library/windows/hardware/dn906365)和用于需要互锁的同步的所有页表更新。 *UpdateGpuVirtualAddress*将监视的 GPU fence 对象和特定限制值作为参数。 随附上下文等待对此受监视的 fence 页表更新然后递增监视的 fence 对象并向它发出信号。 这允许呈现上下文与配套上下文紧密同步。
+若要解决此问题，我们将引入每个上下文分页随附上下文的概念。 分页随附上下文惰式创建在首次调用[ *UpdateGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)和用于需要互锁的同步的所有页表更新。 *UpdateGpuVirtualAddress*将监视的 GPU fence 对象和特定限制值作为参数。 随附上下文等待对此受监视的 fence 页表更新然后递增监视的 fence 对象并向它发出信号。 这允许呈现上下文与配套上下文紧密同步。
 
 使用随附的上下文的页表更新如下图所示。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63389851"
 
 从而使进程 GPU 页表都通过使得更新命令来更新使用 GPU 的各页表项的地址空间可见初始化每个进程特权的 GPU 虚拟地址空间。 此外，由进程创建的池也将映射到的地址空间的所有磁贴。
 
-页表项更新随附上下文的方法是有点特殊，需要一些说明。 当*映射*操作排队等待执行共享的系统上下文、 视频内存管理器知道要映射到的物理地址和这些物理地址可以直接在关联的分页缓冲区中出现。 [*UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)这种情况下使用分页操作和视频内存管理器可保证在一些特定的页上的分页操作将完成之前这些页重新用于其他用途。
+页表项更新随附上下文的方法是有点特殊，需要一些说明。 当*映射*操作排队等待执行共享的系统上下文、 视频内存管理器知道要映射到的物理地址和这些物理地址可以直接在关联的分页缓冲区中出现。 [*UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)这种情况下使用分页操作和视频内存管理器可保证在一些特定的页上的分页操作将完成之前这些页重新用于其他用途。
 
 但是，对于页面上的表的配套上下文的同步更新，情况会更加困难。 视频内存管理器知道物理页的磁贴池正在引用时生成的 update 操作，但是，给定的这些操作将排队等候，后面任意长 GPU 等待 （应用程序可能甚至发生死锁和永远不会发出信号），视频内存管理器不知道在实际执行操作执行分页操作时，磁贴池的物理页将是什么，视频内存管理器不能保持该磁贴池在该位置的任意长的时间。
 
@@ -62,9 +62,9 @@ ms.locfileid: "63389851"
 ## <a name="span-idupdategpuvirtualaddressongpuswithcpuvirtualpagetableupdatemodespanspan-idupdategpuvirtualaddressongpuswithcpuvirtualpagetableupdatemodespanspan-idupdategpuvirtualaddressongpuswithcpuvirtualpagetableupdatemodespan-update-gpu-virtual-address-on-gpus-with-cpuvirtual-page-table-update-mode"></a><span id="_Update_GPU_virtual_address_on_GPUs_with_CPU_VIRTUAL_page_table_update_mode"></span><span id="_update_gpu_virtual_address_on_gpus_with_cpu_virtual_page_table_update_mode"></span><span id="_UPDATE_GPU_VIRTUAL_ADDRESS_ON_GPUS_WITH_CPU_VIRTUAL_PAGE_TABLE_UPDATE_MODE"></span> CPU 使用更新的 Gpu 上的 GPU 虚拟地址\_虚拟页表更新模式
 
 
-在 Gpu 上的支持**DXGK\_PAGETABLEUPDATE\_CPU\_虚拟**页表更新模式下**CopyPageTableEntries**操作不会使用。 这些集成 GPU，不要使用分页缓冲区。 视频内存管理器将推迟到适当的时间和使用更新操作[ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)操作设置页上的表。
+在 Gpu 上的支持**DXGK\_PAGETABLEUPDATE\_CPU\_虚拟**页表更新模式下**CopyPageTableEntries**操作不会使用。 这些集成 GPU，不要使用分页缓冲区。 视频内存管理器将推迟到适当的时间和使用更新操作[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作设置页上的表。
 
-此方法的缺点在于[ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)均不与呈现操作的并行操作。 优点是，该驱动程序不需要实现对分页缓冲区的支持和实施*UpdatePageTable*作为一项即时操作。
+此方法的缺点在于[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)均不与呈现操作的并行操作。 优点是，该驱动程序不需要实现对分页缓冲区的支持和实施*UpdatePageTable*作为一项即时操作。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 内存不足，无法检查 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe03c5ca66904d7232fe3ca078610f0dfdea4d68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f5391d090d5cfa1a1a665e1df34fb914623b0f7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354779"
 ---
 # <a name="low-resources-simulation"></a>资源不足模拟
 
@@ -23,31 +23,31 @@ ms.locfileid: "63372784"
 
 当低资源模拟选项 (名为*随机化的资源不足模拟*Windows 8.1 中) 是处于活动状态，驱动程序验证程序进行故障的驱动程序的内存分配随机实例，如果该驱动程序上运行可能会出现内存不足的计算机。 这会测试驱动程序的正确响应内存不足和其他资源不足的情况的能力。
 
-低资源模拟测试失败请求的多个不同的功能，包括对的调用的分配[ **ExAllocatePoolWithXXX**](https://msdn.microsoft.com/library/windows/hardware/ff544520)， [ **MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)， [ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)， [ **MmMapLockedPagesSpecifyCache** ](https://msdn.microsoft.com/library/windows/hardware/ff554629)，并[ **MmMapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/ff554618)。
+低资源模拟测试失败请求的多个不同的功能，包括对的调用的分配[ **ExAllocatePoolWithXXX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)， [ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)， [ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)， [ **MmMapLockedPagesSpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)，并[ **MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)。
 
-从 Windows Vista 开始，低资源模拟测试还会注入到的错误[ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)， [ **IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)，[ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)， [ **IoAllocateErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff548245)， [ **MmAllocateContiguousMemory**](https://msdn.microsoft.com/library/windows/hardware/ff554460)， [ **MmAllocateContiguousMemorySpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554464)， [ **MmAllocatePagesForMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554482)，并[ **MmAllocatePagesForMdlEx**](https://msdn.microsoft.com/library/windows/hardware/ff554489)。 此外，Windows vista 中，从开始，启用低资源模拟时，调用[ **KeWaitForMultipleObjects** ](https://msdn.microsoft.com/library/windows/hardware/ff553324)或[ **KeWaitForSingleObject**](https://msdn.microsoft.com/library/windows/hardware/ff553350)与*Alertable*参数设置为**TRUE**可以返回状态\_低权限的进程的上下文中运行时向你发出警报。 这模拟的是来自同一非特权应用程序中的另一个线程可能线程警报。
+从 Windows Vista 开始，低资源模拟测试还会注入到的错误[ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)， [ **IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)，[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)， [ **IoAllocateErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)， [ **MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)， [ **MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)， [ **MmAllocatePagesForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)，并[ **MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)。 此外，Windows vista 中，从开始，启用低资源模拟时，调用[ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)或[ **KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)与*Alertable*参数设置为**TRUE**可以返回状态\_低权限的进程的上下文中运行时向你发出警报。 这模拟的是来自同一非特权应用程序中的另一个线程可能线程警报。
 
-低资源模拟测试还将故障注入到以下的 GDI 函数：[**EngAllocMem**](https://msdn.microsoft.com/library/windows/hardware/ff564176)， [ **EngAllocUserMem**](https://msdn.microsoft.com/library/windows/hardware/ff564178)， [ **EngCreateBitmap**](https://msdn.microsoft.com/library/windows/hardware/ff564199)， [ **EngCreateDeviceSurface**](https://msdn.microsoft.com/library/windows/hardware/ff564206)， [ **EngCreateDeviceBitmap**](https://msdn.microsoft.com/library/windows/hardware/ff564204)， [ **EngCreatePalette** ](https://msdn.microsoft.com/library/windows/hardware/ff564212)， [ **EngCreateClip**](https://msdn.microsoft.com/library/windows/hardware/ff564202)， [ **EngCreatePath**](https://msdn.microsoft.com/library/windows/hardware/ff564755)， [ **EngCreateWnd**](https://msdn.microsoft.com/library/windows/hardware/ff564769)， [ **EngCreateDriverObj**](https://msdn.microsoft.com/library/windows/hardware/ff564207)， [ **BRUSHOBJ\_pvAllocRbrush**](https://msdn.microsoft.com/library/windows/hardware/ff538263)，和[**CLIPOBJ\_ppoGetPath**](https://msdn.microsoft.com/library/windows/hardware/ff539423)。
+低资源模拟测试还将故障注入到以下的 GDI 函数：[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)， [ **EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)， [ **EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)， [ **EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)， [ **EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)， [ **EngCreatePalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)， [ **EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)， [ **EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)， [ **EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)， [ **EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)， [ **BRUSHOBJ\_pvAllocRbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)，和[**CLIPOBJ\_ppoGetPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)。
 
 在 Windows 7 和更高版本的 Windows 操作系统中，低资源模拟选项支持使用以下内核 Api 分配的内存：
 
--   [**IoAllocateMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548263)
+-   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)和其他例程可以分配 I/O 请求数据包 (IRP) 数据结构
+-   [**IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)和其他例程可以分配 I/O 请求数据包 (IRP) 数据结构
 
--   [**RtlAnsiStringToUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff561729)和其他运行时库 (RTL) 的字符串例程
+-   [**RtlAnsiStringToUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)和其他运行时库 (RTL) 的字符串例程
 
--   [**IoSetCompletionRoutineEx**](https://msdn.microsoft.com/library/windows/hardware/ff549686)
+-   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
 
 从 Windows 8.1 开始，低资源模拟选项也会失败分配请求的对 MmAllocateNodePagesForMdlEx 的调用。 此外，对于某些函数，驱动程序验证程序现在将填充具有随机模式已分配的内存。 但仅在函数为其返回未初始化的内存的情况下。 这些功能包括：
 
--   [**MmAllocatePagesForMdlEx**](https://msdn.microsoft.com/library/windows/hardware/ff554489)
+-   [**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)
 -   MmAllocateNodePagesForMdlEx
--   [**MmAllocateContiguousMemory**](https://msdn.microsoft.com/library/windows/hardware/ff554460)
--   [**MmAllocateContiguousMemorySpecifyCache**](https://msdn.microsoft.com/library/windows/hardware/ff554464)
--   [**MmAllocateContiguousMemorySpecifyCacheNode**](https://msdn.microsoft.com/library/windows/hardware/ff554469)
--   [**MmAllocateContiguousNodeMemory**](https://msdn.microsoft.com/library/windows/hardware/jj602795)
--   [**MmAllocateNonCachedMemory**](https://msdn.microsoft.com/library/windows/hardware/ff554479)
+-   [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)
+-   [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)
+-   [**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)
+-   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)
+-   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
 ### <a name="span-idcustomsettingsforlowresourcessimulationspanspan-idcustomsettingsforlowresourcessimulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>资源不足模拟的自定义设置
 

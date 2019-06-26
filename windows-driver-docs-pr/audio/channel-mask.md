@@ -26,23 +26,23 @@ keywords:
 - 数据格式以 WDK 音频通道掩码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6154059f7b282e3bef75a8c295868f67129fa26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36c51c3280c8cda55e2bd52fb1979ac053db0f4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333898"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355608"
 ---
 # <a name="channel-mask"></a>声道掩码
 
 
-在 Windows 中， [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构定义多渠道的 PCM 音频流的数据格式。 此结构指定的参数，如示例中的每个 PCM 的位数的流和通道掩码中的通道数。 通道掩码指定的映射到扬声器的通道。 下图显示通道掩码中的单个位。
+在 Windows 中， [ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构定义多渠道的 PCM 音频流的数据格式。 此结构指定的参数，如示例中的每个 PCM 的位数的流和通道掩码中的通道数。 通道掩码指定的映射到扬声器的通道。 下图显示通道掩码中的单个位。
 
 ![说明通道掩码中的单个位的关系图](images/spkrcfg3.png)
 
 通道掩码中的每个位表示特定说话人位置。 如果掩码为特定扬声器位置分配一个通道，表示该位置的掩码位设置为 1;未分配的演讲者职位的所有掩码位将都设置为 0。 WAVEFORMATEXTENSIBLE 结构定义中未显示在上图中，通道掩码附加的位，但这些位正在讨论的家庭影院扬声器配置没有任何关系，并为简单起见，省略了。
 
-编码的通道掩码在上图中的扬声器位置是类似于使用的属性值[ **KSPROPERTY\_音频\_通道\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537250)属性请求。 有关详细信息，请参阅[ **KSAUDIO\_通道\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537083)。
+编码的通道掩码在上图中的扬声器位置是类似于使用的属性值[ **KSPROPERTY\_音频\_通道\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)属性请求。 有关详细信息，请参阅[ **KSAUDIO\_通道\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)。
 
 下表显示在上图中的每个掩码位的含义。
 

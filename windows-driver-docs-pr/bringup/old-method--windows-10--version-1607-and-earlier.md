@@ -3,12 +3,12 @@ title: 旧方法-Windows 10 版本 1607年及更早版本
 description: 旧方法-Windows 10 版本 1607年及更早版本
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 739b8a90c89372f5e3175591cfa971b4e3116df0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a7e95e9da5e3c22c6968a77b36e296b1d1deda7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337511"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353959"
 ---
 # <a name="old-method---windows-10-version-1607-and-earlier"></a>旧方法-Windows 10 版本 1607年及更早版本
 
@@ -42,7 +42,7 @@ ms.locfileid: "63337511"
 
       - 插入安装媒体上，重新启动，并通过安装程序。 如果遇到类似的文本的错误消息"不能安装到所选设备"或"磁盘格式不受支持"然后启动设备检测 CSM 和尝试启动到旧版启动 MBR 方法。
 
-      - 或者，按照步骤手动配置 UEFI 启动方法的 GPT 磁盘。 看一下[Recommended UEFI-Based 磁盘分区配置](https://technet.microsoft.com/library/dd744301)然后运行 setup.exe 以第三分区为目标。
+      - 或者，按照步骤手动配置 UEFI 启动方法的 GPT 磁盘。 看一下[Recommended UEFI-Based 磁盘分区配置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd744301(v=ws.10))然后运行 setup.exe 以第三分区为目标。
 
 8. Windows 7 安装对系统和运行 （可能需要最新版本的修补程序） 后再升级到 Windows 10。
 
@@ -53,4 +53,4 @@ ms.locfileid: "63337511"
 
 ## <a name="related-resources"></a>相关资源
 
-[建议使用基于 UEFI 的磁盘分区配置](https://technet.microsoft.com/library/dd744301)
+[建议使用基于 UEFI 的磁盘分区配置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd744301(v=ws.10))

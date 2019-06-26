@@ -4,12 +4,12 @@ description: 下表总结了蓝牙核心驱动程序支持的设备和系统电�
 ms.assetid: 25A3598E-51A7-4B16-92F7-9D2F39177946
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58fbf752748e57c0fe0017d902d942474d0af1e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13703c29e96c7f18970854a436832e9ecd91a55e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354039"
 ---
 # <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>蓝牙核心驱动程序层和支持的功率转换
 
@@ -118,7 +118,7 @@ ms.locfileid: "63328323"
 ## <a name="span-idradiomanagementspanspan-idradiomanagementspanspan-idradiomanagementspanradio-management"></a><span id="Radio_Management"></span><span id="radio_management"></span><span id="RADIO_MANAGEMENT"></span>单选管理
 
 
-展望未来，将针对蓝牙 4.0 无线电收发器标准化单选管理 (RM)。 Bluetooth 堆栈将沿 HCI 发送\_重置命令，该单选应通过将单选放在任何传输模式和 D3 电源状态中的设备响应命令。 堆栈将意外删除所有子 devnodes，有效地将单选放入"飞行"模式。 串行总线驱动程序将保持处于关闭状态的单选中加载时，以便它可以接收请求从堆栈启用单选。 收件箱堆栈将处理 devnodes 重新枚举。 有关的单选管理实现的更多详细信息，请参阅[蓝牙软件无线电交换机函数原型](https://msdn.microsoft.com/library/windows/hardware/hh450832)。
+展望未来，将针对蓝牙 4.0 无线电收发器标准化单选管理 (RM)。 Bluetooth 堆栈将沿 HCI 发送\_重置命令，该单选应通过将单选放在任何传输模式和 D3 电源状态中的设备响应命令。 堆栈将意外删除所有子 devnodes，有效地将单选放入"飞行"模式。 串行总线驱动程序将保持处于关闭状态的单选中加载时，以便它可以接收请求从堆栈启用单选。 收件箱堆栈将处理 devnodes 重新枚举。 有关的单选管理实现的更多详细信息，请参阅[蓝牙软件无线电交换机函数原型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

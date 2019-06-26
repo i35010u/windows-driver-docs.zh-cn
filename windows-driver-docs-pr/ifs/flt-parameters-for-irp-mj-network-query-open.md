@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 805319c2f22f45cdb573498407b84d4670ee35e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7ed19b2c5a58fd1dba80d11b37c958640c01763
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377655"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353807"
 ---
 # <a name="fltparameters-for-irpmjnetworkqueryopen-union"></a>FLT\_IRP 的参数\_MJ\_网络\_查询\_打开的并集
 
 
-使用以下联合组件时**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff544638)结构，该操作是 IRP\_MJ\_网络\_查询\_打开。
+使用以下联合组件时**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构，该操作是 IRP\_MJ\_网络\_查询\_打开。
 
 <a name="syntax"></a>语法
 ------
@@ -52,12 +52,12 @@ typedef union _FLT_PARAMETERS {
 创建表示此打开操作的 IRP 的指针。 此 IRP 是由文件系统的公共打开/创建代码，但不是实际完成。
 
 **NetworkInformation**  
-指向[**文件\_网络\_打开\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff545822)-用于接收请求的文件信息的结构化的缓冲区。
+指向[**文件\_网络\_打开\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information)-用于接收请求的文件信息的结构化的缓冲区。
 
 <a name="remarks"></a>备注
 -------
 
-[ **FLT\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff544673)结构 IRP\_MJ\_网络\_查询\_打开操作包含的参数表示的回调数据的 NetworkQueryOpen 操作 ([**FLT\_回调\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 结构。 **FLT\_参数**结构包含在[ **FLT\_IO\_参数\_块**](https://msdn.microsoft.com/library/windows/hardware/ff544638)结构。
+[ **FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构 IRP\_MJ\_网络\_查询\_打开操作包含的参数表示的回调数据的 NetworkQueryOpen 操作 ([**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 **FLT\_参数**结构包含在[ **FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
 
 &gt; \[!请注意\]IRP 与关联的文件对象\_MJ\_网络\_查询\_打开是基于堆栈的对象。
 &gt;为 NetworkQueryOpen 回调注册的筛选器不能引用此对象。 也就是说，不要调用 ObReferenceObject 或 ObDereferenceObject 对此基于堆栈的文件对象。 此外，不保存指针的对象。
@@ -85,25 +85,25 @@ IRP\_MJ\_网络\_查询\_打开是一个快速的 I/O 操作。 它是 FastIoQue
 ## <a name="see-also"></a>请参阅
 
 
-[**FILE\_NETWORK\_OPEN\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff545822)
+[**FILE\_NETWORK\_OPEN\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information)
 
-[**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544645)
+[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544648)
+[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544654)
+[**FLT\_IS\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FltQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff543439)
+[**FltQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryinformationfile)
 
 [**IRP\_MJ\_查询\_信息**](irp-mj-query-information.md)
 
-[**ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)
+[**ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)
 
  
 

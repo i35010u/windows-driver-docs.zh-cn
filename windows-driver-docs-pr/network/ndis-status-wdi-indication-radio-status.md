@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_RADIO_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bb01101302e3e06b4c5abc9a852743726a394a1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bc2c7969bcc9dd1f7977503ca8ca236506233d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361058"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353317"
 ---
 # <a name="ndisstatuswdiindicationradiostatus"></a>NDIS\_状态\_WDI\_指示\_单选\_状态
 
@@ -20,7 +20,7 @@ ms.locfileid: "63361058"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63361058"
 
 | 在任务栏的搜索框中键入                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                              |
 |-----------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------|
-| [**WDI\_TLV\_RADIO\_STATE**](https://msdn.microsoft.com/library/windows/hardware/dn898043) |                                |          | 在硬件和软件无线电当前状态。 |
+| [**WDI\_TLV\_RADIO\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-radio-state-parameters) |                                |          | 在硬件和软件无线电当前状态。 |
 
  
 

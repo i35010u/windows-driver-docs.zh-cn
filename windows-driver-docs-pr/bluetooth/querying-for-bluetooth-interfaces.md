@@ -8,12 +8,12 @@ keywords:
 - 接口 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0231b26e38aba2af044d921ee9fb0039e07e1fec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e80cd3d00cb30abf85ab3aaffcc4ff9418447fa3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354002"
 ---
 # <a name="querying-for-bluetooth-interfaces"></a>查询蓝牙接口
 
@@ -35,24 +35,24 @@ ms.locfileid: "63328187"
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_SDP_NODE_INTERFACE</p></td>
 <td align="left"><p>GUID_BTHDDI_SDP_NODE_INTERFACE 以获取指向函数，以便创建服务发现协议 (SDP) 记录的配置文件驱动程序查询。</p>
-<p>此接口对应于<a href="https://msdn.microsoft.com/library/windows/hardware/ff536635" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_NODE_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536635)"> <strong>BTHDDI_SDP_NODE_INTERFACE</strong> </a>结构。</p></td>
+<p>此接口对应于<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_NODE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface)"> <strong>BTHDDI_SDP_NODE_INTERFACE</strong> </a>结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE</p></td>
 <td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE 以获取指向函数，以便分析 SDP 记录的配置文件驱动程序查询。</p>
-<p>此接口对应于<a href="https://msdn.microsoft.com/library/windows/hardware/ff536636" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_PARSE_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536636)"> <strong>BTHDDI_SDP_PARSE_INTERFACE</strong> </a>结构。</p></td>
+<p>此接口对应于<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_PARSE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface)"> <strong>BTHDDI_SDP_PARSE_INTERFACE</strong> </a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_PROFILE_DRIVER_INTERFACE</p></td>
 <td align="left"><p>若要获取指向函数，以便创建、 分配、 重用和免费 BRBs BTHDDI_PROFILE_DRIVER_INTERFACE 的配置文件驱动程序查询。</p>
-<p>此接口对应于<a href="https://msdn.microsoft.com/library/windows/hardware/ff536645" data-raw-source="[&lt;strong&gt;BTH_PROFILE_DRIVER_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536645)"> <strong>BTH_PROFILE_DRIVER_INTERFACE</strong> </a>结构。</p></td>
+<p>此接口对应于<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_bth_profile_driver_interface" data-raw-source="[&lt;strong&gt;BTH_PROFILE_DRIVER_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_bth_profile_driver_interface)"> <strong>BTH_PROFILE_DRIVER_INTERFACE</strong> </a>结构。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-若要获取任何这些接口，配置文件驱动程序必须首先生成并发送[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687) IRP 到蓝牙驱动程序堆栈。
+若要获取任何这些接口，配置文件驱动程序必须首先生成并发送[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface) IRP 到蓝牙驱动程序堆栈。
 
 以下步骤是获取这些接口的其中一个的一般过程。
 

@@ -4,12 +4,12 @@ description: 若要支持 USB 子系统的设备类特定配置，Windows 定义
 ms.assetid: 8F0EDE17-9895-4C24-B061-963DA0D7882B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6379d3b85d092e6867fc60436b1a7f5ebd6dc185
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cda503d75207e5e8ac1fa152af9b8f456466849
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353946"
 ---
 # <a name="usb-device-specific-method-dsm"></a>USB 设备特定的方法 (\_DSM)
 
@@ -26,7 +26,7 @@ ms.locfileid: "63337350"
 -   **Arg0:** UUID = ce2ee385-00e6-48cb-9f05-2edb927c4899
 -   **Arg1:** 修订 ID = 0
 -   **Arg2:** 函数索引 = 1
--   **Arg3:**（未使用） 的空包
+-   **Arg3:** （未使用） 的空包
 
 ### <a name="return"></a>返回
 
@@ -44,7 +44,7 @@ ms.locfileid: "63337350"
 -   **Arg0:** UUID = ce2ee385-00e6-48cb-9f05-2edb927c4899
 -   **Arg1:** 修订 ID = 0
 -   **Arg2:** 函数索引 = 2
--   **Arg3:**（未使用） 的空包
+-   **Arg3:** （未使用） 的空包
 
 ### <a name="return"></a>返回
 
@@ -82,7 +82,7 @@ ms.locfileid: "63337350"
 
 使用此函数时， \_DSM 方法必须出现在 USB 端口设备下。
 
-**请注意**  函数索引为 0 的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关详细信息，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"，在[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+**请注意**  函数索引为 0 的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关详细信息，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
 
  
 

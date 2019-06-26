@@ -7,12 +7,12 @@ keywords:
 - 标准功能，WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6dc952e6c94fca9f27d1e61da6ceab81368e060
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad223a9ae86b6ddaa3f9842e3af01c10dcf5dd43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375195"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355081"
 ---
 # <a name="standard-features"></a>标准功能
 
@@ -108,7 +108,7 @@ ms.locfileid: "63375195"
 <td><p>请参阅<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">标准选项</a>。</p>
 <p>不允许使用自定义的选项。</p></td>
 <td><p>可选。 如果未指定，默认方向为纵向。</p>
-<p>适用于 Windows 7 <strong>MxdcGetPDEVAdjustment</strong>函数具有横向旋转的新参数。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff557558" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557558)"> <strong>MxdcXDCGetPDEVAdjustment</strong></a>。</p></td>
+<p>适用于 Windows 7 <strong>MxdcGetPDEVAdjustment</strong>函数具有横向旋转的新参数。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mxdc/nf-mxdc-mxdcgetpdevadjustment" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mxdc/nf-mxdc-mxdcgetpdevadjustment)"> <strong>MxdcXDCGetPDEVAdjustment</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>OutputBin</strong></p></td>

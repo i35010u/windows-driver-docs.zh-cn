@@ -11,12 +11,12 @@ keywords:
 - WDK GDI 的性能计数器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7e54bfa34ec8013547431b81fb2851e99fcd7af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3fd354aada1586db1ae38240512eec17c7d2a035
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377657"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354738"
 ---
 # <a name="gdi-information-services"></a>GDI 信息服务
 
@@ -39,27 +39,27 @@ GDI 提供驱动程序可用于查询系统的有关设备和系统属性、 文
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564986" data-raw-source="[&lt;strong&gt;EngQueryDeviceAttribute&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564986)"><strong>EngQueryDeviceAttribute</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerydeviceattribute" data-raw-source="[&lt;strong&gt;EngQueryDeviceAttribute&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerydeviceattribute)"><strong>EngQueryDeviceAttribute</strong></a></p></td>
 <td align="left"><p>允许查询有关特定属性系统中的设备驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564988" data-raw-source="[&lt;strong&gt;EngQueryFileTimeStamp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564988)"><strong>EngQueryFileTimeStamp</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engqueryfiletimestamp" data-raw-source="[&lt;strong&gt;EngQueryFileTimeStamp&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engqueryfiletimestamp)"><strong>EngQueryFileTimeStamp</strong></a></p></td>
 <td align="left"><p>返回一个文件的时间戳。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564990" data-raw-source="[&lt;strong&gt;EngQueryLocalTime&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564990)"><strong>EngQueryLocalTime</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerylocaltime" data-raw-source="[&lt;strong&gt;EngQueryLocalTime&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerylocaltime)"><strong>EngQueryLocalTime</strong></a></p></td>
 <td align="left"><p>查询本地时间。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564994" data-raw-source="[&lt;strong&gt;EngQueryPerformanceCounter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564994)"><strong>EngQueryPerformanceCounter</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engqueryperformancecounter" data-raw-source="[&lt;strong&gt;EngQueryPerformanceCounter&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engqueryperformancecounter)"><strong>EngQueryPerformanceCounter</strong></a></p></td>
 <td align="left"><p>查询的性能计数器。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564996" data-raw-source="[&lt;strong&gt;EngQueryPerformanceFrequency&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564996)"><strong>EngQueryPerformanceFrequency</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engqueryperformancefrequency" data-raw-source="[&lt;strong&gt;EngQueryPerformanceFrequency&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engqueryperformancefrequency)"><strong>EngQueryPerformanceFrequency</strong></a></p></td>
 <td align="left"><p>查询的性能计数器的频率。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564997" data-raw-source="[&lt;strong&gt;EngQuerySystemAttribute&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564997)"><strong>EngQuerySystemAttribute</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerysystemattribute" data-raw-source="[&lt;strong&gt;EngQuerySystemAttribute&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerysystemattribute)"><strong>EngQuerySystemAttribute</strong></a></p></td>
 <td align="left"><p>查询处理器或特定于系统的功能。</p></td>
 </tr>
 </tbody>

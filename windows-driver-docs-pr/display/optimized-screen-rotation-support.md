@@ -4,12 +4,12 @@ description: Windows 8 可确保通过确保从图形适配器输出旋转模式
 ms.assetid: CFDB4713-EC90-4FAB-B379-742C52888BB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5daba1898d782332cd91d0a7922a3215128ffad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee90d7bdf097aaa3dd3604f2cf5a47f12ce8f2b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358364"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353429"
 ---
 # <a name="optimized-screen-rotation-support"></a>优化的屏幕旋转支持
 
@@ -33,11 +33,11 @@ Windows 8 可确保通过确保从图形适配器输出旋转模式更改期间�
 
 显示微型端口驱动程序必须支持更新路径旋转时调用这些驱动程序实现的函数：
 
--   [*DxgkDdiCommitVidPn*](https://msdn.microsoft.com/library/windows/hardware/ff559597)
--   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://msdn.microsoft.com/library/windows/hardware/ff560803)
+-   [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)
+-   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)
 
-该驱动程序必须指示支持对的调用中顺畅旋转[ *DxgkDdiUpdateActiveVidPnPresentPath* ](https://msdn.microsoft.com/library/windows/hardware/ff560803)通过设置[ **DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062)结构的**SupportSmoothRotation**成员，它是从 Windows 8 开始提供。
-该驱动程序必须始终为可以设置在调用期间路径旋转[ *DxgkDdiCommitVidPn*](https://msdn.microsoft.com/library/windows/hardware/ff559597)。
+该驱动程序必须指示支持对的调用中顺畅旋转[ *DxgkDdiUpdateActiveVidPnPresentPath* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)通过设置[ **DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)结构的**SupportSmoothRotation**成员，它是从 Windows 8 开始提供。
+该驱动程序必须始终为可以设置在调用期间路径旋转[ *DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)。
 
 ## <a name="span-idsmoothrotationscenariosspanspan-idsmoothrotationscenariosspanspan-idsmoothrotationscenariosspansmooth-rotation-scenarios"></a><span id="Smooth_rotation_scenarios"></span><span id="smooth_rotation_scenarios"></span><span id="SMOOTH_ROTATION_SCENARIOS"></span>顺畅旋转方案
 

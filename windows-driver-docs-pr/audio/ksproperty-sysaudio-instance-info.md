@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b94a5e0b8fd18fc689a7a18b0de9f1920b7d48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1cee7aa90516e10400a829b007c32a2ee6c5a07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354352"
 ---
 # <a name="kspropertysysaudioinstanceinfo"></a>KSPROPERTY\_SYSAUDIO\_实例\_信息
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_实例\_属性打开虚拟的音频设备，以及指定�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538490" data-raw-source="[&lt;strong&gt;SYSAUDIO_INSTANCE_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538490)"><strong>SYSAUDIO_INSTANCE_INFO</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_instance_info" data-raw-source="[&lt;strong&gt;SYSAUDIO_INSTANCE_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_instance_info)"><strong>SYSAUDIO_INSTANCE_INFO</strong></a></p></td>
 <td align="left"><p>无</p></td>
 </tr>
 </tbody>
@@ -88,7 +88,7 @@ KSPROPERTY\_SYSAUDIO\_实例\_信息属性请求将返回状态\_成功以指示
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**SYSAUDIO\_INSTANCE\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff538490)
+[**SYSAUDIO\_INSTANCE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_instance_info)
 
  
 

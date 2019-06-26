@@ -4,12 +4,12 @@ description: 本主题提供有关创作更新驱动程序包的信息，并提�
 ms.assetid: 9018900A-3670-4C78-9094-1DDAB82847DD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1644d0f152627fb8f043160bbf8ee514edcf9a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe270c24069362210c958e4241e623ef45bfeb89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353993"
 ---
 # <a name="authoring-an-update-driver-package"></a>创作更新驱动程序包
 
@@ -111,7 +111,7 @@ Modify any strings here [optional]
 <thead>
 <tr class="header">
 <th>部分/字段</th>
-<th>值</th>
+<th>ReplTest1</th>
 <th>备注</th>
 </tr>
 </thead>
@@ -279,7 +279,7 @@ Modify any strings here [optional]
     pvk2pfx.exe -pvk fwu.pvk -spc fwu.cer -pi <Password entered during makecert prompt> -spc fwu.cer -pfx fwu.pfx
     ```
 
-    有关详细信息，请参阅[ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)。
+    有关详细信息，请参阅[ **MakeCert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)。
 
 3.  运行以下命令以创建编录文件。
 
@@ -287,9 +287,9 @@ Modify any strings here [optional]
     Inf2Cat.exe /driver:"." /os:8_x64
     ```
 
-    */Driver*参数指向 INF 所在的位置。 更改的值 */os*参数取决于为其固件驱动程序包适用于 OS。 有关详细信息，请参阅[ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)。
+    */Driver*参数指向 INF 所在的位置。 更改的值 */os*参数取决于为其固件驱动程序包适用于 OS。 有关详细信息，请参阅[ **Inf2Cat**](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)。
 
-    有关安全目录和驱动程序的详细信息，请参阅[目录文件和数字签名](https://msdn.microsoft.com/library/windows/hardware/ff537872)并[为 PnP 驱动程序包创建编录文件](https://msdn.microsoft.com/library/windows/hardware/ff540161)。
+    有关安全目录和驱动程序的详细信息，请参阅[目录文件和数字签名](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)并[为 PnP 驱动程序包创建编录文件](https://docs.microsoft.com/windows-hardware/drivers/install/creating-a-catalog-file-for-a-pnp-driver-package)。
 
 4.  运行以下命令对目录文件进行签名。
 
@@ -297,7 +297,7 @@ Modify any strings here [optional]
     signtool sign /fd sha256 /f fwu.pfx /p <Password entered during makecert prompt> delta.cat
     ```
 
-    有关详细信息，请参阅[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)。
+    有关详细信息，请参阅[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)。
 
 5.  在测试系统上安装测试证书：
     1.  双击 fwu.cer 文件，然后选择**安装证书**选项。

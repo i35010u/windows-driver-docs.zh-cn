@@ -10,12 +10,12 @@ keywords:
 - Windows Management Instrumentation WDK 网络 Oid
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49aa0f1f5e6be80049d5d6d60975f3c0f789710c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c14ba331e67b3833fa1608ffd56b5e5b2c4bbb71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353290"
 ---
 # <a name="standard-miniport-driver-oids-registered-with-wmi"></a>已注册到 WMI 的标准微型端口驱动程序 OID
 
@@ -23,7 +23,7 @@ ms.locfileid: "63346011"
 
 
 
-NDIS 注册到 WMI Guid WMI 的微型端口适配器。 若要获取的 Oid 的微型端口适配器支持，NDIS 问题列表[OID\_代\_支持\_列表](https://msdn.microsoft.com/library/windows/hardware/ff569642)到关联的微型端口驱动程序的查询。 微型端口驱动程序必须提供所有微型端口适配器支持的 Oid 的列表。 此列表必须包含所有必需的 Oid，如果有的话，应包含可选的自定义 Oid。
+NDIS 注册到 WMI Guid WMI 的微型端口适配器。 若要获取的 Oid 的微型端口适配器支持，NDIS 问题列表[OID\_代\_支持\_列表](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-list)到关联的微型端口驱动程序的查询。 微型端口驱动程序必须提供所有微型端口适配器支持的 Oid 的列表。 此列表必须包含所有必需的 Oid，如果有的话，应包含可选的自定义 Oid。
 
 NDIS 映射到 WMI Guid 的受支持的 Oid 并注册 WMI Guid。 NDIS 转换 WMI GUID 请求 OID 请求，如有必要，为已注册的 Oid。
 

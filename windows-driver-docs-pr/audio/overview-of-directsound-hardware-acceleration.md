@@ -6,12 +6,12 @@ keywords:
 - 硬件加速 WDK DirectSound 有关 DirectSound 硬件加速
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 610712f39e8837e7ce687c0147b12b8ee450f1fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e41110c09220d4da81b157abc3a47587bd8cdc1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355335"
 ---
 # <a name="overview-of-directsound-hardware-acceleration"></a>DirectSound 硬件加速概述
 
@@ -37,7 +37,7 @@ DirectSound 采用硬件加速的设备提供多个硬件混合使用 pin。 每
 
 有关详细信息，请参阅 Microsoft Windows SDK 文档中的语音管理的讨论。
 
-DirectSound 可以使用两种类型的硬件 mixer pin:2D 和 3D。 2D pin 执行 SRC、 衰减，和混合使用，但不是三维定位。 DirectSound 可以使用 2D pin 进行三维定位通过在软件中执行必要的衰减和频率计算并将结果应用于的 2D 插针的相应节点。 与此相反，3D pin 包含无法计算而不是依靠 DirectSound 若要执行此操作的 3D 缓冲区和 3D 侦听器属性直接从其自身三维效果的三维节点。 3D 节点的属性的列表，请参阅[ **KSNODETYPE\_3D\_效果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)。 有关 2D 和 3D pin 的详细信息，请参阅[WDM 音频中支持 2D DirectSound 加速](supporting-2d-directsound-acceleration-in-wdm-audio.md)并[WDM 音频中支持三维 DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md)。
+DirectSound 可以使用两种类型的硬件 mixer pin:2D 和 3D。 2D pin 执行 SRC、 衰减，和混合使用，但不是三维定位。 DirectSound 可以使用 2D pin 进行三维定位通过在软件中执行必要的衰减和频率计算并将结果应用于的 2D 插针的相应节点。 与此相反，3D pin 包含无法计算而不是依靠 DirectSound 若要执行此操作的 3D 缓冲区和 3D 侦听器属性直接从其自身三维效果的三维节点。 3D 节点的属性的列表，请参阅[ **KSNODETYPE\_3D\_效果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects)。 有关 2D 和 3D pin 的详细信息，请参阅[WDM 音频中支持 2D DirectSound 加速](supporting-2d-directsound-acceleration-in-wdm-audio.md)并[WDM 音频中支持三维 DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md)。
 
  
 

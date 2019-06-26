@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_NEXT_ACTION_FRAME_DIALOG_TOKEN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a5c2c208211580f6f6b868e447352c9826eb158e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fceb6564af7d2c38478f110bbcfa06182524adbe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353671"
 ---
 # <a name="oidwdigetnextactionframedialogtoken"></a>OID\_WDI\_GET\_NEXT\_ACTION\_FRAME\_DIALOG\_TOKEN
 
@@ -20,7 +20,7 @@ OID\_WDI\_获取\_下一步\_操作\_帧\_对话框\_令牌请求 DialogToken �
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 否                       | 1                               |
+| Port  | 否                       | 1                               |
 
  
 
@@ -33,7 +33,7 @@ OID\_WDI\_获取\_下一步\_操作\_帧\_对话框\_令牌请求 DialogToken �
 
 | TLV                                                                     | 允许多个 TLV 实例 | 可选 | 描述     |
 |-------------------------------------------------------------------------|--------------------------------|----------|-----------------|
-| [**WDI\_TLV\_NEXT\_DIALOG\_TOKEN**](https://msdn.microsoft.com/library/windows/hardware/dn897854) |                                |          | 对话框标志。 |
+| [**WDI\_TLV\_NEXT\_DIALOG\_TOKEN**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-next-dialog-token) |                                |          | 对话框标志。 |
 
  
 

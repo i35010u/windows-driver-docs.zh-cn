@@ -4,12 +4,12 @@ description: 设计移动宽带应用中的帮助和支持页面
 ms.assetid: bac8987e-e801-4488-b204-5532fb3ced1b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c80b7832a49adc67ad91842e0cbcec59c938e45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5afa4bb7a7932ad129d512e029a4257d3858ed4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354660"
 ---
 # <a name="design-help-and-support-pages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的帮助和支持页面
 
@@ -46,7 +46,7 @@ ms.locfileid: "63383776"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>其他资源
 
 
--   有关如何使用内置控件的详细信息，请参阅[添加控件和内容](https://msdn.microsoft.com/library/windows/apps/hh465393)。
+-   有关如何使用内置控件的详细信息，请参阅[添加控件和内容](https://docs.microsoft.com/previous-versions/windows/apps/hh465393(v=win.10))。
 
 -   [移动宽带的 WinRT API 概述](mobile-broadband-winrt-api-overview.md)
 

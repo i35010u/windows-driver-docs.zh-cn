@@ -4,12 +4,12 @@ description: 本白皮书提供有关 PCI Express 图形信息对于 Microsoft W
 ms.assetid: 30FC1CF9-B642-4E00-869C-63009BA3F128
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcdf1aa33dd0bb170d63a21adca2dc9d55cf4b42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6ea7095ea2ea4c7eaf24a9afe5a85cc22a106e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380543"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353547"
 ---
 # <a name="pci-express-faq-for-graphics"></a>有关图形的 PCI Express 常见问题解答
 
@@ -134,7 +134,7 @@ PCIe 将支持搜寻。 它将现在可将映射为可缓存此类共享的内�
 不能插入 x16 到 x8 图形卡插槽。 您可以但是，如果你想插入 x8 卡 PCIe 智能卡插入 x16 槽。 P 球道 PCIe 卡将一些速度的 n 球道 PCIe 槽，以在工作，其中 n &gt; p。 这不是 true，如果 n &lt; p。
 
 ## <a name="related-topics"></a>相关主题
-[PCI-SIG](http://www.pcisig.com)  
+[PCI-SIG](http://pcisig.com/)  
 
 
 

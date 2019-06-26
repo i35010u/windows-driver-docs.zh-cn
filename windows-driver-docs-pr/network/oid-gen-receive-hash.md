@@ -5,17 +5,17 @@ ms.assetid: be120dab-c98d-418f-8777-e2fb37b774a1
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_HASH 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b43c1e6e16220ce2b3fcfd1693ff79e73281188
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f847bd4537a77cf6a72aa07a103f049fc40185b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391029"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353316"
 ---
 # <a name="oidgenreceivehash"></a>OID\_GEN\_RECEIVE\_HASH
 
 
-为查询，NDIS 和基础驱动程序使用 OID\_GEN\_接收\_哈希 OID，若要获取当前接收哈希计算的微型端口适配器使用的设置。 返回 NDIS [ **NDIS\_接收\_哈希\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567190)结构，其中包含当前接收哈希设置。
+为查询，NDIS 和基础驱动程序使用 OID\_GEN\_接收\_哈希 OID，若要获取当前接收哈希计算的微型端口适配器使用的设置。 返回 NDIS [ **NDIS\_接收\_哈希\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)结构，其中包含当前接收哈希设置。
 
 作为一组 NDIS 和基础驱动程序使用 OID\_GEN\_接收\_微型端口适配器上配置的接收哈希计算的哈希 OID。 微型端口驱动程序将收到 NDIS\_接收\_哈希\_参数结构。
 
@@ -32,7 +32,7 @@ NDIS 微型端口驱动程序，请查询不请求。
 
  
 
-**请注意**  机密密钥追加之后[ **NDIS\_接收\_哈希\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567190)结构成员。
+**请注意**  机密密钥追加之后[ **NDIS\_接收\_哈希\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)结构成员。
 
  
 
@@ -59,7 +59,7 @@ NDIS 微型端口驱动程序，请查询不请求。
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_RECEIVE\_HASH\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff567190)
+[**NDIS\_RECEIVE\_HASH\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)
 
  
 

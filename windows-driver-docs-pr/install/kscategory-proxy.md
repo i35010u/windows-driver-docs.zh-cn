@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 23f4f52689126081522dbd3d1322ddbd600a8e2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c90c965b430d6bb3cb9b2ce1fef711ed62e478b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355014"
 ---
 # <a name="kscategoryproxy"></a>KSCATEGORY_PROXY
 
 
-KSCATEGORY_PROXY[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)表示[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 保留供独占使用的功能类别[流式处理代理模块内核](https://msdn.microsoft.com/library/windows/hardware/ff560877).
+KSCATEGORY_PROXY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)表示[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 保留供独占使用的功能类别[流式处理代理模块内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index).
 
 <table>
 <colgroup>

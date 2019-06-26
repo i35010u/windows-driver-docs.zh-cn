@@ -6,19 +6,19 @@ ms.assetid: 35b95ba0-efd0-420a-abe0-664fc6311d02
 keywords:
 - IRP_MN_ENABLE_EVENTS Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: c2a8d64cb6f0f900bda09ad1bf3b6d3bfa55f3a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84874bbd689040f0580393ce0f79b59317775eed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353368"
 ---
 # <a name="irpmnenableevents"></a>IRP\_MN\_ENABLE\_EVENTS
 
 
-注册一个或多个事件块任何 WMI 驱动程序必须处理此 IRP。 驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://msdn.microsoft.com/library/windows/hardware/ff546968)。
+注册一个或多个事件块任何 WMI 驱动程序必须处理此 IRP。 驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
 
-如果驱动程序调用[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)处理**IRP\_MN\_启用\_事件**请求时，WMI 反过来调用驱动程序的[ *DpWmiFunctionControl* ](https://msdn.microsoft.com/library/windows/hardware/ff544094)例程。
+如果驱动程序调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)处理**IRP\_MN\_启用\_事件**请求时，WMI 反过来调用驱动程序的[ *DpWmiFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)例程。
 
 <a name="major-code"></a>主代码
 ----------
@@ -49,7 +49,7 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-如果该驱动程序通过调用来处理 IRP [ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)，WMI 集**Irp-&gt;IoStatus.Status**并**Irp-&gt;IoStatus.Information** I/O 状态块中。
+如果该驱动程序通过调用来处理 IRP [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，WMI 集**Irp-&gt;IoStatus.Status**并**Irp-&gt;IoStatus.Information** I/O 状态块中。
 
 否则，该驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态，如下所示：
 
@@ -62,11 +62,11 @@ STATUS\_INVALID\_DEVICE\_REQUEST
 <a name="operation"></a>操作
 ---------
 
-驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://msdn.microsoft.com/library/windows/hardware/ff565834)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://msdn.microsoft.com/library/windows/hardware/ff546968)。
+驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
 
-如果驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)，例程调用的驱动程序[ *DpWmiFunctionControl* ](https://msdn.microsoft.com/library/windows/hardware/ff544094)例程，返回状态或\_成功如果驱动程序不会定义该例程。
+如果驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，例程调用的驱动程序[ *DpWmiFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)例程，返回状态或\_成功如果驱动程序不会定义该例程。
 
-如果驱动程序处理**IRP\_MN\_启用\_事件**请求本身，才应该这样做**Parameters.WMI.ProviderId**指向与相同的设备对象该驱动程序传递到指针[ **IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)。 否则，该驱动程序必须将请求转发到下一步低驱动程序。
+如果驱动程序处理**IRP\_MN\_启用\_事件**请求本身，才应该这样做**Parameters.WMI.ProviderId**指向与相同的设备对象该驱动程序传递到指针[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)。 否则，该驱动程序必须将请求转发到下一步低驱动程序。
 
 该驱动程序处理请求之前，它应该确定是否**Parameters.WMI.DataPath**指向该驱动程序支持的 GUID。 如果不是，该驱动程序必须失败 IRP，并返回状态\_WMI\_GUID\_不\_找到。
 
@@ -74,9 +74,9 @@ STATUS\_INVALID\_DEVICE\_REQUEST
 
 不需要的驱动程序来检查是否已启用事件的事件块因为 WMI 将发送一个请求，若要启用用于事件块，当第一个数据使用者启用该事件。 WMI 不会发送另一个请求以启用无有干预性禁用请求。
 
-注册跟踪块的驱动程序 (WMIREG\_标志\_跟踪\_GUID) 还必须确定是否要将事件发送到 WMI 或跟踪系统记录器。 如果请求跟踪，则**Parameters.WMI.Buffer**指向[ **WNODE\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff566375)结构在其中**标志**是设置与 WNODE\_标志\_跟踪\_GUID 和**HistoricalContext**包含记录器的句柄。
+注册跟踪块的驱动程序 (WMIREG\_标志\_跟踪\_GUID) 还必须确定是否要将事件发送到 WMI 或跟踪系统记录器。 如果请求跟踪，则**Parameters.WMI.Buffer**指向[ **WNODE\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-_wnode_header)结构在其中**标志**是设置与 WNODE\_标志\_跟踪\_GUID 和**HistoricalContext**包含记录器的句柄。
 
-有关事件块定义的详细信息，发送事件和跟踪，请参阅[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)。
+有关事件块定义的详细信息，发送事件和跟踪，请参阅[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)。
 
 <a name="requirements"></a>要求
 ------------
@@ -97,19 +97,19 @@ STATUS\_INVALID\_DEVICE\_REQUEST
 ## <a name="see-also"></a>请参阅
 
 
-[*DpWmiFunctionControl*](https://msdn.microsoft.com/library/windows/hardware/ff544094)
+[*DpWmiFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)
 
-[**IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
 
 [**IRP\_MN\_DISABLE\_EVENTS**](irp-mn-disable-events.md)
 
-[**WMILIB\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff565813)
+[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)
+[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
 
-[**WNODE\_EVENT\_ITEM**](https://msdn.microsoft.com/library/windows/hardware/ff566373)
+[**WNODE\_EVENT\_ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_event_item)
 
-[**WNODE\_HEADER**](https://msdn.microsoft.com/library/windows/hardware/ff566375)
+[**WNODE\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-_wnode_header)
 
  
 

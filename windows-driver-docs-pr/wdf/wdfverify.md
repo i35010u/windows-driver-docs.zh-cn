@@ -6,12 +6,12 @@ keywords:
 - WDFVERIFY 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 230397acb92ea67097f0d161a1a75ef0003a4521
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: eec94b8472a09f64dba592a46cc7768a72149cbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161403"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354432"
 ---
 # <a name="wdfverify-macro"></a>WDFVERIFY 宏
 
@@ -45,9 +45,9 @@ WDFVERIFY 测试逻辑表达式。
 
 代码**WDFVERIFY**生成您在发布配置或调试配置中的驱动程序时，宏包含驱动程序的二进制文件中。 如果您的驱动程序的二进制包括**WDFVERIFY**代码，代码将运行时检查内部版本号或免费版本的 Microsoft Windows 操作系统运行您的驱动程序。
 
-**WDFVERIFY**代码进入内核调试器仅当**VerifyOn**在注册表中设置值。 有关可用于调试您的驱动程序的注册表项的详细信息，请参阅[Debugging Framework-Based 驱动程序的注册表项](https://msdn.microsoft.com/library/windows/hardware/ff544573)。
+**WDFVERIFY**代码进入内核调试器仅当**VerifyOn**在注册表中设置值。 有关可用于调试您的驱动程序的注册表项的详细信息，请参阅[Debugging Framework-Based 驱动程序的注册表项](https://docs.microsoft.com/windows-hardware/drivers/wdf/registry-values-for-debugging-kmdf-drivers)。
 
-有关调试您的驱动程序的详细信息，请参阅[调试 KMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540790)。
+有关调试您的驱动程序的详细信息，请参阅[调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
 
 <a name="examples"></a>示例
 --------

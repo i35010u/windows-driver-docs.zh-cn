@@ -7,12 +7,12 @@ keywords:
 - 泛型 NDIS 对象 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b67daaa31d7cbe9a46885e5799685da9cb3f0113
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2a14525ed88655495c45414659fba4cc0e6393b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354967"
 ---
 # <a name="ndis-objects"></a>NDIS 对象
 
@@ -20,7 +20,7 @@ ms.locfileid: "56547099"
 
 
 
-组件不具有 NDIS 处理使用[ **NdisAllocateGenericObject** ](https://msdn.microsoft.com/library/windows/hardware/ff561603)函数来分配泛型 NDIS 对象。 一个组件，必须调用[ **NdisFreeGenericObject** ](https://msdn.microsoft.com/library/windows/hardware/ff561850)函数来释放与创建一个泛型对象**NdisAllocateGenericObject**。
+组件不具有 NDIS 处理使用[ **NdisAllocateGenericObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocategenericobject)函数来分配泛型 NDIS 对象。 一个组件，必须调用[ **NdisFreeGenericObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreegenericobject)函数来释放与创建一个泛型对象**NdisAllocateGenericObject**。
 
 有关使用泛型对象的信息，请参阅[获取池处理](obtaining-pool-handles.md)。
 

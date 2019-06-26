@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 982d0b18fe330785cadc60810c8c205c1dfb9642
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 403fc77222bac6d5de7c486af188bb73d9c90bb8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354422"
 ---
 # <a name="kspropertyaecstatus"></a>KSPROPERTY\_AEC\_状态
 
@@ -53,7 +53,7 @@ KSPROPERTY\_AEC\_STATUS 属性用于监视 AEC 节点的状态 ([**KSNODETYPE\_�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -115,7 +115,7 @@ KSPROPERTY\_AEC\_状态属性请求返回状态\_成功以指示已成功完成�
 
 CH 状态 AEC 算法收敛后，切换到已聚合状态，AEC\_状态\_FD\_历史记录\_持续\_聚合。 如果 AEC 算法不断失去收敛，CH 状态切换到 diverged 状态，AEC\_状态\_FD\_历史记录\_以前\_DIVERGED。 尽管状态是最有可能从聚合状态切换为 diverged 状态，但它可能还切换直接从初始化状态到 diverged 状态。 CH 状态已切换到 diverged 状态后，它将保留，因为检测到之前的算法是重置或资源不足的状态。
 
-当[AEC 系统筛选器](https://msdn.microsoft.com/library/windows/hardware/ff536174)检测到资源不足的其四个插针，-任一个中的捕获、 捕获扩展、 呈现器中或呈现出-它将重置其内部状态，包括聚合历史记录。
+当[AEC 系统筛选器](https://docs.microsoft.com/windows-hardware/drivers/audio/aec-system-filter)检测到资源不足的其四个插针，-任一个中的捕获、 捕获扩展、 呈现器中或呈现出-它将重置其内部状态，包括聚合历史记录。
 
 请注意，第三个 CH 状态位的 2 位当前未使用。
 
@@ -140,7 +140,7 @@ CH 状态 AEC 算法收敛后，切换到已聚合状态，AEC\_状态\_FD\_历�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_ACOUSTIC\_ECHO\_CANCEL**](ksnodetype-acoustic-echo-cancel.md)
 

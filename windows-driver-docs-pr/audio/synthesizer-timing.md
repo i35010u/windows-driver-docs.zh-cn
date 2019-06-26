@@ -17,12 +17,12 @@ keywords:
 - 时钟 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2bab09b323bf012e42c809671421bc6720ed40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c24bbbe6e8a43b49b8126e6cfe87b34db548f3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328571"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354210"
 ---
 # <a name="synthesizer-timing"></a>合成器计时
 
@@ -36,7 +36,7 @@ ms.locfileid: "63328571"
 
 -   采样时间
 
-引用时间是一系列消息将会播放的绝对时间 （以 master 时钟为单位）。 在用户模式下实现中，它传递给[ **IDirectMusicSynth::PlayBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536540) MIDI 消息送入合成器的方法。 合成器、 批接收器和 DirectMusic 的其余部分应由您的实现的附加到合成器的相同主时钟下的所有工作[ **IDirectMusicSynth::SetMasterClock** ](https://msdn.microsoft.com/library/windows/hardware/ff536543)方法再到通过波形接收器[ **IDirectMusicSynthSink::SetMasterClock**](https://msdn.microsoft.com/library/windows/hardware/ff536528)。
+引用时间是一系列消息将会播放的绝对时间 （以 master 时钟为单位）。 在用户模式下实现中，它传递给[ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) MIDI 消息送入合成器的方法。 合成器、 批接收器和 DirectMusic 的其余部分应由您的实现的附加到合成器的相同主时钟下的所有工作[ **IDirectMusicSynth::SetMasterClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-setmasterclock)方法再到通过波形接收器[ **IDirectMusicSynthSink::SetMasterClock**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-setmasterclock)。
 
 采样时间用于度量到合成器的输出缓冲区的偏移量。 此缓冲区填充波样本的因此示例时间是相对于采样率。 例如，在为 22.1 kHz 采样率，每秒是时间的等效 22,100 示例或 44,200 字节 （对于 16 位的 mono 格式）。
 

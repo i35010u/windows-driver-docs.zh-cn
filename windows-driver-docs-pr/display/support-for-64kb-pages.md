@@ -4,28 +4,28 @@ description: 为了支持 64KB 页 Windows 显示器驱动程序模型 (WDDM) v2
 ms.assetid: 24D4854E-BBD7-46A9-8FEF-EF13D2968E6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c63fe404637e0b0a1c3568c00d0b6ae910810ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5984d481dbf71dcd5879f884b291d793be4323b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353842"
 ---
 # <a name="support-for-64kb-pages"></a>64KB 页面支持
 
 
 为了支持 64KB 页 Windows 显示器驱动程序模型 (WDDM) v2 提供了两种类型的叶页表，一个支持 4 KB 页表项，另一个支持 64 kb。 这两个页表条目的大小涵盖的相同的虚拟地址范围，因此 4 KB 页的页表具有 16 倍的条目数为 64 KB 的页表。
 
-由定义的 64KB 页表大小[ **DXGK\_GPUMMUCAPS**](https://msdn.microsoft.com/library/windows/hardware/dn906348)::**LeafPageTableSizeFor64KPagesInBytes**。
+由定义的 64KB 页表大小[ **DXGK\_GPUMMUCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)::**LeafPageTableSizeFor64KPagesInBytes**。
 
-[ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)操作的一个标志，指示更新的页表类型时， [ **DXGK\_UPDATEPAGETABLEFLAGS**](https://msdn.microsoft.com/library/windows/hardware/dn914482)::**Use64KBPages**。
+[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)操作的一个标志，指示更新的页表类型时， [ **DXGK\_UPDATEPAGETABLEFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_updatepagetableflags)::**Use64KBPages**。
 
 有两种模式的 WDDM v2 支持的操作：
 
 1.  级别 1 页表页表项点到 4 KB 的页表或 64KB 页表。
 2.  在同一时间，第 1 级页表的页表条目指向 4 KB 的页表和 64 KB 的页表。 这称为"双 PTE"模式。
 
-*双 PTE*表示支持[ **DXGK\_GPUMMUCAPS**](https://msdn.microsoft.com/library/windows/hardware/dn906348)::**DualPteSupported**上限。
+*双 PTE*表示支持[ **DXGK\_GPUMMUCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gpummucaps)::**DualPteSupported**上限。
 视频内存管理器会选择基于分配对齐方式、 图形处理单元 (GPU) 内存段属性和 GPU 内存的段类型的页大小。 将使用 64 KB 页为单位，如果其对齐和大小是多个映射分配 64 KB，并且是支持 64 KB 页为单位的内存段中。
 
 ## <a name="span-idsingleptemodespanspan-idsingleptemodespanspan-idsingleptemodespansingle-pte-mode"></a><span id="Single_PTE_mode"></span><span id="single_pte_mode"></span><span id="SINGLE_PTE_MODE"></span>单一 PTE 模式
@@ -33,7 +33,7 @@ ms.locfileid: "63375919"
 
 在此模式下的第 1 级页表页表项点到 4 KB 的页表或 64KB 页表。
 
-[**DXGK\_PTE**](https://msdn.microsoft.com/library/windows/hardware/ff562008)::**PageTablePageSize**字段添加到**DXGK\_PTE**。 它应仅对第 1 级页表 （页目录中的旧术语） 的页表项。 此字段指示内核模式驱动程序 （使用 64KB 或 4 KB 页） 的相应页表的类型。
+[**DXGK\_PTE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_dxgk_pte)::**PageTablePageSize**字段添加到**DXGK\_PTE**。 它应仅对第 1 级页表 （页目录中的旧术语） 的页表项。 此字段指示内核模式驱动程序 （使用 64KB 或 4 KB 页） 的相应页表的类型。
 
 视频内存管理器会选择要用于虚拟地址的 64KB 页表时的范围：
 
@@ -47,8 +47,8 @@ ms.locfileid: "63375919"
 转换完成，如下所示：
 
 1.  过程的所有上下文都将都挂起。
-2.  现有的页表条目更新为指向 4 KB 页为单位。 该驱动程序将获得[ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)分页操作。
-3.  级别 1 页表条目指向的页表随即更新以反映新的页面大小 (**PageTablePageSize** = **DXGK\_PTE\_页\_表\_页上\_4KB**)。 该驱动程序将获得[ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)分页操作。
+2.  现有的页表条目更新为指向 4 KB 页为单位。 该驱动程序将获得[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)分页操作。
+3.  级别 1 页表条目指向的页表随即更新以反映新的页面大小 (**PageTablePageSize** = **DXGK\_PTE\_页\_表\_页上\_4KB**)。 该驱动程序将获得[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)分页操作。
 4.  恢复过程的所有上下文。
 
 当页表具有唯一的 4 KB 页表项，并且必须指向 4 KB 页的页表条目数为零时，将转换的页表为使用 64KB 页表项。
@@ -56,8 +56,8 @@ ms.locfileid: "63375919"
 转换完成，如下所示：
 
 1.  过程的所有上下文都将都挂起。
-2.  现有的页表条目更新为指向 64 KB 页为单位。 该驱动程序将获得[ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)分页操作。
-3.  级别 1 页表条目指向的页表随即更新以反映新的页面大小 (**PageTablePageSize** = **DXGK\_PTE\_页\_表\_页上\_64KB**)。 该驱动程序将获得[ *UpdatePageTable* ](https://msdn.microsoft.com/library/windows/hardware/ff560815)分页操作。
+2.  现有的页表条目更新为指向 64 KB 页为单位。 该驱动程序将获得[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)分页操作。
+3.  级别 1 页表条目指向的页表随即更新以反映新的页面大小 (**PageTablePageSize** = **DXGK\_PTE\_页\_表\_页上\_64KB**)。 该驱动程序将获得[ *UpdatePageTable* ](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)分页操作。
 4.  恢复过程的所有上下文。
 
 若要防止频繁切换不同的页表的大小，该驱动程序应打包小的分配在一起。

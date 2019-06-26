@@ -6,17 +6,17 @@ keywords:
 - 生物识别驱动程序 WDK WinUSB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9008446f982d3bfc80ba40f16c8c9915524456c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88e7667e3a7b36638937af29cb4efd69fc1a52d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328357"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354062"
 ---
 # <a name="using-winusb-in-a-wbdi-driver"></a>在 WBDI 驱动程序中使用 WinUSB
 
 
-Microsoft 建议 WBDI 驱动程序使用[USB I/O 目标](https://msdn.microsoft.com/library/windows/hardware/ff561358)生成到用户模式驱动程序框架 (UMDF)。
+Microsoft 建议 WBDI 驱动程序使用[USB I/O 目标](https://docs.microsoft.com/windows-hardware/drivers/wdf/usb-i-o-targets-in-umdf)生成到用户模式驱动程序框架 (UMDF)。
 
 ### <a name="span-idsettingumdfdispatcherspanspan-idsettingumdfdispatcherspansetting-umdfdispatcher"></a><span id="setting_umdfdispatcher"></span><span id="SETTING_UMDFDISPATCHER"></span>设置 UmdfDispatcher
 
@@ -32,7 +32,7 @@ UmdfService=WudfBioUsbSample, WudfBioUsbSample_Install
 UmdfServiceOrder=WudfBioUsbSample
 ```
 
-有关 UmdfDispatcher 的特定信息，请参阅[指定 UmdfDispatcher INF 指令](https://msdn.microsoft.com/library/windows/hardware/ff560526)。 WDF 注册表指令的常规信息，请参阅[指定 WDF 指令](https://msdn.microsoft.com/library/windows/hardware/ff560526)。
+有关 UmdfDispatcher 的特定信息，请参阅[指定 UmdfDispatcher INF 指令](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)。 WDF 注册表指令的常规信息，请参阅[指定 WDF 指令](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)。
 
 ### <a name="span-idpendingasynchronousreadrequestsspanspan-idpendingasynchronousreadrequestsspanpending-asynchronous-read-requests"></a><span id="pending_asynchronous_read_requests"></span><span id="PENDING_ASYNCHRONOUS_READ_REQUESTS"></span>挂起的异步读取请求
 
@@ -42,17 +42,17 @@ WinUsb 可以处理多个未完成的读取的请求。 需要扫描期间的读
 
 挂起的读取请求的代码应为循环的以下步骤：
 
-1.  通过调用创建的预分配的 framework 内存对象[ **IWDFDriver::CreatePreallocatedWdfMemory**](https://msdn.microsoft.com/library/windows/hardware/ff558902)。
+1.  通过调用创建的预分配的 framework 内存对象[ **IWDFDriver::CreatePreallocatedWdfMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)。
 
-2.  提供的代码回调[ **OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)例程。 请参阅`CBiometricDevice::OnCompletion`示例中。
+2.  提供的代码回调[ **OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)例程。 请参阅`CBiometricDevice::OnCompletion`示例中。
 
-3.  获取一个指向[ **IRequestCallbackRequestCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556904)所属对象的接口。
+3.  获取一个指向[ **IRequestCallbackRequestCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)所属对象的接口。
 
-4.  通过调用注册的回调函数[ **IWDFIoRequest::SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)并传入到指针[ **IRequestCallbackRequestCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff556904)在上一步中获得的。 I/O 请求完成时，框架将立即调用回调。
+4.  通过调用注册的回调函数[ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)并传入到指针[ **IRequestCallbackRequestCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)在上一步中获得的。 I/O 请求完成时，框架将立即调用回调。
 
-5.  调用[ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)将读取的请求发送到设备。
+5.  调用[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)将读取的请求发送到设备。
 
-6.  回调完成时，进程将读取请求。 之前[ **OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)例程启动新的挂起的读取请求，它应该检查 I/O 目标的状态。 若要执行此操作，查询[IWDFUsbTargetPipe](https://msdn.microsoft.com/library/windows/hardware/ff560391)指向的指针为其[IWDFIoTargetStateManagement](https://msdn.microsoft.com/library/windows/hardware/ff559198)接口。 然后调用[ **IWDFIoTargetStateManagement::GetState**](https://msdn.microsoft.com/library/windows/hardware/ff559202):
+6.  回调完成时，进程将读取请求。 之前[ **OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)例程启动新的挂起的读取请求，它应该检查 I/O 目标的状态。 若要执行此操作，查询[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)指向的指针为其[IWDFIoTargetStateManagement](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)接口。 然后调用[ **IWDFIoTargetStateManagement::GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate):
     ```cpp
     IWDFIoTarget * pTarget
     IWDFIoTargetStateManagement * pStateMgmt = NULL;

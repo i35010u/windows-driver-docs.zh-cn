@@ -4,12 +4,12 @@ description: HFP 设备启动本主题将讨论蓝牙免提配置文件 (HFP) �
 ms.assetid: C478BCBA-2A17-4604-AE2B-99B3445C741B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13434323205ff001db3eb1105ecfd2c5817ed878
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53fc4269e30aba98c77ff9acb6b04a6263b23d2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354275"
 ---
 # <a name="hfp-device-startup"></a>HFP 设备启动
 
@@ -46,7 +46,7 @@ HFP 设备启动本主题将讨论蓝牙免提配置文件 (HFP) 设备到达音
 ## <a name="span-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanretrieving-static-information"></a><span id="Retrieving_static_information"></span><span id="retrieving_static_information"></span><span id="RETRIEVING_STATIC_INFORMATION"></span>检索静态信息
 
 
-音频驱动程序可以从 HFP 驱动程序检索静态信息。 例如，HFP 驱动程序可以提供 ksnodetype、 容器 id 和配对 HFP 设备的友好名称。 音频驱动程序可以使用此信息来创建和初始化 KS 筛选器或筛选器表示配对的 HFP 设备。 音频驱动程序将使用[ **IOCTL\_BTHHFP\_设备\_获取\_描述符**](https://msdn.microsoft.com/library/windows/hardware/dn265108)来获取此信息。
+音频驱动程序可以从 HFP 驱动程序检索静态信息。 例如，HFP 驱动程序可以提供 ksnodetype、 容器 id 和配对 HFP 设备的友好名称。 音频驱动程序可以使用此信息来创建和初始化 KS 筛选器或筛选器表示配对的 HFP 设备。 音频驱动程序将使用[ **IOCTL\_BTHHFP\_设备\_获取\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)来获取此信息。
 
 音频驱动程序还可以检索配对 HFP 设备的蓝牙地址。 每个配对的 HFP 设备有一个唯一的蓝牙地址，，这可用作唯一标识符字符串。 有关详细信息，请参阅[HF 设备蓝牙获取地址](obtaining-bluetooth-address-of-hf-device.md)。
 
@@ -81,7 +81,7 @@ HFP 设备启动本主题将讨论蓝牙免提配置文件 (HFP) 设备到达音
 音频驱动程序将发送 get 卷状态 IOCTL，若要获取中音量级别中的耳机该卷的状态已发生的任何更改的信息。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/hardware/dn265108)  
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)  
 [理论上的操作](theory-of-operation.md)  
 [获取 HF 设备的蓝牙地址](obtaining-bluetooth-address-of-hf-device.md)  
 

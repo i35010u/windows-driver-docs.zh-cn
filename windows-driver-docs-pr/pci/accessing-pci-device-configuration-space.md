@@ -9,25 +9,25 @@ keywords:
 - IRP_MN_WRITE_CONFIG
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65d7ced2c053cea016b909171b0250e8fe7dd4fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ba655885c886f5930ca91c925ec5b2865ee005a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366126"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353560"
 ---
 # <a name="accessing-pci-device-configuration-space"></a>访问 PCI 设备配置空间
 
 
 外围组件互连 (PCI) 设备上的某些操作被保留的设备的功能驱动程序。 此类操作包括，例如，访问总线的特定于设备的配置空间和编程的直接内存访问 (DMA) 控制器。 Microsoft 提供系统支持通过两种方法访问 PCI 设备的配置空间：
 
--   [**总线\_界面\_标准**](https://msdn.microsoft.com/library/windows/hardware/ff540707)总线接口
+-   [**总线\_界面\_标准**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)总线接口
 
--   配置 I/O 请求数据包 (Irp) [ **IRP\_MN\_读取\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)并[ **IRP\_MN\_编写\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff551769)
+-   配置 I/O 请求数据包 (Irp) [ **IRP\_MN\_读取\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)并[ **IRP\_MN\_编写\_配置**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)
 
 Windows XP 和 Windows Server 2003 和更高版本操作系统有配置空间标头的独有控制由定义*PCI 本地总线*规范，以及所有的功能中的功能链接的列表。 驱动程序必须尝试修改这些寄存器。
 
-但是，驱动程序可以写入不属于的标头或供应商定义的这使用 IRP 的功能列表的配置空间\_MN\_编写\_配置请求或**SetBusData**总线方法\_接口\_标准。 驱动程序还可以阅读使用设备的功能，使用 IRP\_MN\_读取\_配置请求或者**GetBusData**总线方法\_接口\_标准。 若要使用 IRP\_MN\_读取\_配置或 IRP\_MN\_编写\_的配置来说，驱动程序必须运行在被动\_级别。 有关功能和相应的驱动程序可以查询的结构的列表，请参阅[PCI 结构](https://msdn.microsoft.com/library/windows/hardware/ff537590)部分。
+但是，驱动程序可以写入不属于的标头或供应商定义的这使用 IRP 的功能列表的配置空间\_MN\_编写\_配置请求或**SetBusData**总线方法\_接口\_标准。 驱动程序还可以阅读使用设备的功能，使用 IRP\_MN\_读取\_配置请求或者**GetBusData**总线方法\_接口\_标准。 若要使用 IRP\_MN\_读取\_配置或 IRP\_MN\_编写\_的配置来说，驱动程序必须运行在被动\_级别。 有关功能和相应的驱动程序可以查询的结构的列表，请参阅[PCI 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)部分。
 
 驱动程序可以读取扩展 PCI 设备配置空间 （即，超过 256 个字节的配置数据） 使用 IRP\_MN\_读取\_配置请求或者**GetBusData**方法总线\_接口\_标准。 同样，驱动程序可以写入其扩展 PCI 设备配置空间进行使用 IRP\_MN\_编写\_配置请求或**SetBusData**总线方法\_接口\_标准。 如果设备不具有扩展的配置空间或平台的设备上未定义的扩展的配置空间的路径，读取的请求将返回 0xFFFF 和写入请求不会产生影响。 若要确定如果操作成功，驱动程序可以检查读取或写入的字节的数。
 

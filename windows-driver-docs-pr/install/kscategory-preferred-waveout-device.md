@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ecab1c3254455a415d6a13b52dc3955f9e386107
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 540281cb3a638a5fc05a58e3ca4ec6c70888e1a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372680"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353383"
 ---
 # <a name="kscategorypreferredwaveoutdevice"></a>KSCATEGORY_PREFERRED_WAVEOUT_DEVICE
 
 
-KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 功能的首选的批输入设备类别。
+KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能的首选的批输入设备类别。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](https://msdn.microsoft.com/l
 
 用户在控制面板中的多媒体属性页中选择首选的批输入的设备。
 
-此功能的类别保留供独占使用的系统提供[WDM 音频组件](https://msdn.microsoft.com/library/windows/hardware/ff538905)。
+此功能的类别保留供独占使用的系统提供[WDM 音频组件](https://docs.microsoft.com/windows-hardware/drivers/audio/wdm-audio-components)。
 
 <a name="requirements"></a>要求
 ------------

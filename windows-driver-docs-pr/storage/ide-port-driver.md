@@ -4,15 +4,15 @@ description: IDE 端口驱动程序
 ms.assetid: 8e292680-6fa7-4f6b-b4ec-6f0f0d795d03
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efa9dacd5faa39a346baac25e80b70ac8a7fcded
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 141f6bfbfb60d3853af63a4e4489445dfbf26203
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383069"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354919"
 ---
 # <a name="ide-port-driver"></a>IDE 端口驱动程序
-**请注意**ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
+**请注意**ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
 
 在 Microsoft Windows NT 4.0 中，具有 IDE 总线相关联的端口/微型端口驱动程序对是 SCSI 微型端口驱动程序， *atapi.sys*，链接到 SCSI 端口驱动程序*scsiport.sys*。
 

@@ -6,12 +6,12 @@ keywords:
 - PCM 流数据范围 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38557a6373eb1f3c07a711c14eef4299f54cbb4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a1ec3bd2509a541d2b4292c935b3fd492ece7b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332235"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355312"
 ---
 # <a name="pcm-stream-data-range"></a>PCM 流数据范围
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332235"
 ## <span id="pcm_stream_data_range"></span><span id="PCM_STREAM_DATA_RANGE"></span>
 
 
-此示例使用[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)结构来描述 PCM 流的数据范围。
+此示例使用[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构来描述 PCM 流的数据范围。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);

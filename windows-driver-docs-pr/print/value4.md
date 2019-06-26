@@ -6,12 +6,12 @@ keywords:
 - 值构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f48c5e71e3f3779efee4c1641841ff04009acae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b81a0fddfe1a0edcf158f6d73a5770f1a7d8894e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376443"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354900"
 ---
 # <a name="value-tcpip"></a>Value (TCP/IP)
 
@@ -39,7 +39,7 @@ TCP/IP`Value`构造可以扩展从特定的 MIB 对象检索数据的查询的�
 <td><p>（可选）一个布尔值，该值指示端口监视器是否将通知发送到该驱动程序。 一个<strong>，则返回 TRUE</strong>值指示端口监视器将通知发送到驱动程序;<strong>FALSE</strong>指示端口监视器不向驱动程序发送通知。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>名称</strong></p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
@@ -52,7 +52,7 @@ TCP/IP`Value`构造可以扩展从特定的 MIB 对象检索数据的查询的�
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p>中的数据类型<code> Value</code>构造中的值<a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>枚举。</p></td>
+<td><p>中的数据类型<code> Value</code>构造中的值<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>枚举。</p></td>
 </tr>
 </tbody>
 </table>

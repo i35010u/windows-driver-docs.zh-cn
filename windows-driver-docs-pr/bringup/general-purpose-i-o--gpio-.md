@@ -4,19 +4,19 @@ description: 芯片 (SoC) 集成线路上的系统地广泛使用的通用 I/O (
 ms.assetid: 9EB4EFC3-B94E-42C9-9FC7-12DF4AD01622
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f8da517665d4a0cc897ea82f8e2ccc69efa94f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1c1cbedf49fc95d184a60d8d4e093bbecf9ce06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353974"
 ---
 # <a name="general-purpose-io-gpio"></a>常规用途 I/O (GPIO)
 
 
 芯片 (SoC) 集成线路上的系统地广泛使用的通用 I/O (GPIO) 插针。 对于基于 SoC 的平台，Windows 定义 GPIO 硬件常规抽象和这种抽象形式需要高级配置和电源接口 (ACPI) 命名空间的支持。
 
-支持的 GPIO 抽象[ACPI 5.0 规范](https://www.uefi.org/specifications)这篇文章中列出的定义。
+支持的 GPIO 抽象[ACPI 5.0 规范](https://uefi.org/specifications)这篇文章中列出的定义。
 
 若要验证你的 GPIO 控制器是否满足所有 Windows 平台要求，请参阅[GPIO 控制器要求清单](gpio-controller-requirements-checklist.md)。
 

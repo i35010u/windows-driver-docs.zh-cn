@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a00e2e14182c917beaae3a76185177ae6752ea94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7d2d1c7a27d3e021db02bbb495a05874efd58a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353790"
 ---
 # <a name="guiddevinterfaceusbdevice"></a>GUID_DEVINTERFACE_USB_DEVICE
 
 
-GUID_DEVINTERFACE_USB_DEVICE[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[USB 设备](https://msdn.microsoft.com/library/windows/hardware/ff538930)，附加到的 USB 集线器。
+GUID_DEVINTERFACE_USB_DEVICE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[USB 设备](https://docs.microsoft.com/windows-hardware/drivers/)，附加到的 USB 集线器。
 
 <table>
 <colgroup>

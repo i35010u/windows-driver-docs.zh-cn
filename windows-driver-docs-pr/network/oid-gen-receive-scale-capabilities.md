@@ -5,12 +5,12 @@ ms.assetid: b7640ec3-248c-4db2-818d-3976df2dcb9b
 ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_SCALE_CAPABILITIES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c63bdc1a616b91d8e7f262c9107bcaac4e5d773
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bd06464c699e3befb5f228fb637d7b326b0d936
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355127"
 ---
 # <a name="oidgenreceivescalecapabilities"></a>OID\_GEN\_接收\_规模\_功能
 
@@ -22,7 +22,7 @@ ms.locfileid: "63362853"
 
 NDIS 微型端口驱动程序不会收到此 OID 请求。 NDIS 处理查询的微型端口驱动程序。
 
-微型端口驱动程序返回中的 RSS 功能[ **NDIS\_接收\_规模\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff567220)结构。
+微型端口驱动程序返回中的 RSS 功能[ **NDIS\_接收\_规模\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -47,7 +47,7 @@ NDIS 微型端口驱动程序不会收到此 OID 请求。 NDIS 处理查询的�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_接收\_规模\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff567220)
+[**NDIS\_接收\_规模\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)
 
  
 

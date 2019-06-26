@@ -8,12 +8,12 @@ keywords:
 - WaveCyclic 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 994994954e6f651d6b5a6eeea5b11985397abc31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43000886805d646dcfebf29ef074525f74c50ee7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354109"
 ---
 # <a name="wavecyclic-miniport-driver"></a>WaveCyclic 微型端口驱动程序
 
@@ -39,39 +39,39 @@ WaveCyclic 微型端口驱动程序应实现两个接口：
 
 -   **流接口**管理批流，并会公开大部分的微型端口驱动程序的功能。
 
-微型端口接口[IMiniportWaveCyclic](https://msdn.microsoft.com/library/windows/hardware/ff536714)，继承中的方法[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)接口。 IMiniportWaveCyclic 提供了以下其他方法：
+微型端口接口[IMiniportWaveCyclic](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavecyclic)，继承中的方法[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)接口。 IMiniportWaveCyclic 提供了以下其他方法：
 
-[**IMiniportWaveCyclic::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536722)
+[**IMiniportWaveCyclic::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-init)
 
 初始化微型端口对象。
 
-[**IMiniportWaveCyclic::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536723)
+[**IMiniportWaveCyclic::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)
 
 创建新的流对象。
 
-流接口[IMiniportWaveCyclicStream](https://msdn.microsoft.com/library/windows/hardware/ff536715)，继承中的方法[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)接口。 IMiniportWaveCyclicStream 提供了以下其他方法：
+流接口[IMiniportWaveCyclicStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavecyclicstream)，继承中的方法[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 IMiniportWaveCyclicStream 提供了以下其他方法：
 
-[**IMiniportWaveCyclicStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536716)
+[**IMiniportWaveCyclicStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-getposition)
 
 获取批流中的设备的当前位置。
 
-[**IMiniportWaveCyclicStream::NormalizePhysicalPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536717)
+[**IMiniportWaveCyclicStream::NormalizePhysicalPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-normalizephysicalposition)
 
 将基于时间的值转换为物理缓冲区位置值。
 
-[**IMiniportWaveCyclicStream::SetFormat**](https://msdn.microsoft.com/library/windows/hardware/ff536718)
+[**IMiniportWaveCyclicStream::SetFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-setformat)
 
 设置批流的数据格式。
 
-[**IMiniportWaveCyclicStream::SetNotificationFreq**](https://msdn.microsoft.com/library/windows/hardware/ff536719)
+[**IMiniportWaveCyclicStream::SetNotificationFreq**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-setnotificationfreq)
 
 设置在通知中会发生中断的频率。
 
-[**IMiniportWaveCyclicStream::SetState**](https://msdn.microsoft.com/library/windows/hardware/ff536720)
+[**IMiniportWaveCyclicStream::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-setstate)
 
 设置批流的状态。
 
-[**IMiniportWaveCyclicStream::Silence**](https://msdn.microsoft.com/library/windows/hardware/ff536721)
+[**IMiniportWaveCyclicStream::Silence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-silence)
 
 复制到缓冲区中的无声段。
  

@@ -8,12 +8,12 @@ keywords:
 - 子设备 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0171b629b3a5978cd90b72fd2f617e0f6f1697c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c718dacfaf5064d8e820eef41027ce4d48797885
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328603"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354248"
 ---
 # <a name="subdevice-creation"></a>创建子设备
 
@@ -56,7 +56,7 @@ ms.locfileid: "63328603"
 
  
 
-子 IMiniport*Xxx*和 IPort*Xxx*接口继承自基接口[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)并[IPort](https://msdn.microsoft.com/library/windows/hardware/ff536842)分别。
+子 IMiniport*Xxx*和 IPort*Xxx*接口继承自基接口[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)并[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iport)分别。
 
 PortCls 系统驱动程序不区分端口驱动程序和微型端口驱动程序。 它只是需要一个对象，如端口对象，可以处理系统生成的请求的接口。
 
@@ -123,7 +123,7 @@ PortCls 系统驱动程序不区分端口驱动程序和微型端口驱动程序
   }
 ```
 
-在前面的代码示例中调用 PortCls 函数的信息，请参阅[ **PcNewPort**](https://msdn.microsoft.com/library/windows/hardware/ff537715)， [ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)，和[**PcRegisterSubdevice**](https://msdn.microsoft.com/library/windows/hardware/ff537731)。
+在前面的代码示例中调用 PortCls 函数的信息，请参阅[ **PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)， [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)，和[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)。
 
  
 

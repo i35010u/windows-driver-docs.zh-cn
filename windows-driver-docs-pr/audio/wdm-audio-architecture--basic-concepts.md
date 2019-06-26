@@ -9,12 +9,12 @@ keywords:
 - Windows 驱动程序模型 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f1987806864d96439fccf100c70ddb829d7edf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef6c95d9637d9827dabe8dcfb4e723dc8fc43d4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328753"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354106"
 ---
 # <a name="wdm-audio-architecture-basic-concepts"></a>WDM 音频体系结构：基本概念
 
@@ -22,7 +22,7 @@ ms.locfileid: "63328753"
 ## <span id="wdm_audio_architecture_basic_concepts"></span><span id="WDM_AUDIO_ARCHITECTURE_BASIC_CONCEPTS"></span>
 
 
-本部分介绍的基本体系结构概念[Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)(WDM) 音频驱动程序。 WDM 音频体系结构基于的内核流式处理 (KS) 服务，并支持在 Microsoft Windows 2000 及更高版本并在 Windows 中我 / 98。 KS 服务有关的信息，请参阅[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff560842)。
+本部分介绍的基本体系结构概念[Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)(WDM) 音频驱动程序。 WDM 音频体系结构基于的内核流式处理 (KS) 服务，并支持在 Microsoft Windows 2000 及更高版本并在 Windows 中我 / 98。 KS 服务有关的信息，请参阅[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming)。
 
 本部分讨论以下主题：
 

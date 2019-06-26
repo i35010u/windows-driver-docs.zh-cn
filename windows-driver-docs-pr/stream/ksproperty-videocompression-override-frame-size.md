@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fd9e4c23c599ce77ef8531c5edc5a0f01e39a15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14d084503742671b06aa54aee6723dba7472c74f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355926"
 ---
 # <a name="kspropertyvideocompressionoverrideframesize"></a>KSPROPERTY\_VIDEOCOMPRESSION\_重写\_帧\_大小
 
@@ -53,7 +53,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_重写\_帧\_大小属性临时替代的帧大小 
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566018" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566018)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
 <td><p>长</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_重写\_帧\_大小属性临时替代的帧大小 
 
 **值**KSPROPERTY 成员\_VIDEOCOMPRESSION\_S 结构指定的帧的重写数据速率。
 
-微型驱动程序支持此属性应设置**KS\_CompressionCaps\_CanCrunch**标记中**功能**隶属[ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565979)检索设备的视频的压缩功能的结构。
+微型驱动程序支持此属性应设置**KS\_CompressionCaps\_CanCrunch**标记中**功能**隶属[ **KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)检索设备的视频的压缩功能的结构。
 
 通过视频捕获微型驱动程序不支持此属性。
 
@@ -93,9 +93,9 @@ KSPROPERTY\_VIDEOCOMPRESSION\_重写\_帧\_大小属性临时替代的帧大小 
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://msdn.microsoft.com/library/windows/hardware/ff566018)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_s)
 
-[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565979)
+[**KSPROPERTY\_VIDEOCOMPRESSION\_GETINFO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocompression_getinfo_s)
 
  
 

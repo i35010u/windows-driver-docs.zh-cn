@@ -8,12 +8,12 @@ keywords:
 - 接口名称 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbdb0c8235e53c71aefe84e397d0288055dce0de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1c32b7f1cba184099f2a7decf64447a0a0116b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355337"
 ---
 # <a name="obtaining-a-device-interface-name"></a>获取设备接口名称
 
@@ -23,13 +23,13 @@ ms.locfileid: "63332282"
 
 在 Windows Me 和 Windows 2000 和更高版本、 Windows 多媒体函数**waveInMessage**， **waveOutMessage**， **midiInMessage**， **midiOutMessage**，并**mixerMessage**可以检索设备的设备接口名称。 此信息可为需要 waveIn、 waveOut、 midiIn、 midiOut 或混音器 API 的外部设备进行标识的应用程序。 在这些 Api 之一，则设备 ID 就足够了。
 
-插 manager 会生成设备接口名称来唯一标识它枚举每个设备。 应用程序应将包含一个设备接口名称作为不透明的字符串。 有关设备接口的详细信息，请参阅[简介设备接口](https://msdn.microsoft.com/library/windows/hardware/ff549460)。
+插 manager 会生成设备接口名称来唯一标识它枚举每个设备。 应用程序应将包含一个设备接口名称作为不透明的字符串。 有关设备接口的详细信息，请参阅[简介设备接口](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)。
 
 标头文件 Mmddk.h 定义为了获取设备接口名称的两个消息常量：
 
-[**DRV\_QUERYDEVICEINTERFACESIZE**](https://msdn.microsoft.com/library/windows/hardware/ff536364)
+[**DRV\_QUERYDEVICEINTERFACESIZE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536364(v=vs.85))
 
-[**DRV\_QUERYDEVICEINTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff536363)
+[**DRV\_QUERYDEVICEINTERFACE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536363(v=vs.85))
 
 第一条消息获取以字节为单位保存包含设备接口名称的字符串所需的缓冲区的大小。 第二条消息中检索所需大小的缓冲区中的名称字符串。
 

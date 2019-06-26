@@ -7,12 +7,12 @@ keywords:
 - SDEL 查询
 ms.date: 11/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf982a69e7e22088bb09eb8380ad5720c1800daf
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 60f92999cba81a5b7c6b0a9c6cda1e535559a9f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353869"
 ---
 # <a name="run-the-tests"></a>运行测试
 ## <a name="description-of-the-tests-and-configuration-file"></a>测试和配置文件的说明
@@ -37,7 +37,7 @@ ms.locfileid: "67161547"
 
 **系统-PNP （禁用和启用） 与 IO 之前和之后 （可靠性）**
 -   二进制：Sysfund_PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven.dll
--   [文档](https://msdn.microsoft.com/de-de/library/windows/hardware/dn941373(v=vs.85).aspx)
+-   [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b2849bf1-3478-4fd7-a577-31001084e908)
 
 **系统-即插即用中删除设备测试 （可靠性）**
 -   二进制：Sysfund_PNP_RemoveAndRestartDevice_DataDriven.dll
@@ -49,7 +49,7 @@ ms.locfileid: "67161547"
 
 **系统-IO (可靠性 SysFund) 前后的睡眠** 
 -   二进制：Sysfund_Sleep_With_IO_BeforeAndAfter_DataDriven.dll
--   [文档](https://msdn.microsoft.com/library/windows/hardware/dn940448(v=vs.85).aspx)
+-   [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/16ac817e-b042-4679-8027-c6c44d1ce29f)
 
 **设备状态检查**
 -   二进制：Utility_DeviceStatusCheck_DataDriven.dll
@@ -72,7 +72,7 @@ ms.locfileid: "67161547"
 测试和实用程序将使用所需的元素，将忽略所有其他元素。
 ### <a name="wdtftestxml-parameter-descriptions-and-use"></a>WDTFTest.xml 参数说明和使用
 #### <a name="configuring-the-sdel-query"></a>配置 SDEL 查询
-[SDEL 语言](https://msdn.microsoft.com/library/windows/hardware/ff538361%28v=vs.85%29.aspx)用于创建返回测试和实用程序的目标设备的查询。 将以下 SDEL 相关参数一起使用 AND 语句创建完整的查询：
+[SDEL 语言](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)用于创建返回测试和实用程序的目标设备的查询。 将以下 SDEL 相关参数一起使用 AND 语句创建完整的查询：
 
 **SDEL**:该值*IsDevice*指定完整的一组设备在系统上。  通常情况下，不编辑此参数，除非你只想要测试的特定驱动程序或设备。  下一步 SDEL 相关参数将通过指定驱动程序从此超集创建设备的子集或不进行测试，以便可以在此参数的设备保持不变。
 ```
@@ -117,7 +117,7 @@ ms.locfileid: "67161547"
 
 #### <a name="parameters-that-apply-to-utilityenabledisabledriververifierdatadrivendll-only"></a>将应用于参数```utility_enabledisabledriververifier_datadriven.dll```仅：
 
-**DriverVerifierLevel**:0x209BB 的默认值等于"标准标志" [Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)。
+**DriverVerifierLevel**:0x209BB 的默认值等于"标准标志" [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 ```
     <Parameter Name="DriverVerifierLevel">0x209BB</Parameter>
 ```
@@ -187,7 +187,7 @@ ms.locfileid: "67161547"
     Error: Verify: SUCCEEDED(m_pDeviceDepot->Query(CComBSTR(DQ), &m_pTestTargets)) - Value (0x80070057) [File: onecore\base\tools\wdtf\tests\devfund\datadriven\sysfund_pnp_disableenable_with_io_beforeandafter_datadriven\test.cpp, Function: PNP_DisableEnable_With_IO_BeforeAndAfter::PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven_Test, Line: 231]
     EndGroup: PNP_DisableEnable_With_IO_BeforeAndAfter::PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven_Test#0 [Failed]
 ```
-HRESULT"0x80070057"意味着"E_INVALIDARG:一个或多个参数是无效的"。 请仔细检查 WDTFTest.xml 配置文件对照[SDEL 文档](https://msdn.microsoft.com/library/windows/hardware/ff538361%28v=vs.85%29.aspx)并查找可能导致此错误的查询格式不正确。
+HRESULT"0x80070057"意味着"E_INVALIDARG:一个或多个参数是无效的"。 请仔细检查 WDTFTest.xml 配置文件对照[SDEL 文档](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)并查找可能导致此错误的查询格式不正确。
 
 ### <a name="test-is-blocked-because-it-might-reboot-the-machine"></a>测试是被阻止，因为它可能会重新启动计算机
 某些 SysFund 测试可以在测试过程中重新启动计算机。 若要运行的测试可以重新启动计算机，"/ rebootstatefile"必须使用参数：

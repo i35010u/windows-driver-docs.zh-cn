@@ -11,12 +11,12 @@ keywords:
 - 源端口 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3a1cff504824aa5e1796f0dbb196fe41fd05e3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5b317c8ad1f0e8b6b17e747558185551094763b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378286"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354964"
 ---
 # <a name="ndis-port-send-and-receive-operations"></a>NDIS 端口发送和接收操作
 
@@ -28,7 +28,7 @@ NDIS 驱动程序可以将相关联的发送和接收使用 NDIS 端口的操作
 
 如果微型端口驱动程序分配端口，过量驱动程序可以使用这些端口来发送和接收相关联的微型端口适配器的相应子接口上的数据。 但是，基础驱动程序必须确保端口发送的任何数据之前处于活动状态。 在关联的子接口变得可用时，微型端口驱动程序将激活端口。 有关激活微型端口驱动程序中的端口的详细信息，请参阅[激活 NDIS 端口](activating-an-ndis-port.md)。
 
-当调用 NDIS [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)协议驱动程序，NDIS 函数提供了一系列中的所有当前活动端口**ActivePorts** 的成员[**NDIS\_绑定\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff564832)结构*BindParameters*参数指向。 NDIS 还会通知与即插即用事件时端口是激活和停用协议驱动程序。 有关即插即用端口的激活和停用通知的详细信息，请参阅[处理 NDIS 端口即插即用通知](handling-ndis-ports-pnp-event-notifications.md)。 有关更多常规信息大约发送和接收操作，请参阅[发送和接收操作](send-and-receive-operations.md)。
+当调用 NDIS [ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)协议驱动程序，NDIS 函数提供了一系列中的所有当前活动端口**ActivePorts** 的成员[**NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)结构*BindParameters*参数指向。 NDIS 还会通知与即插即用事件时端口是激活和停用协议驱动程序。 有关即插即用端口的激活和停用通知的详细信息，请参阅[处理 NDIS 端口即插即用通知](handling-ndis-ports-pnp-event-notifications.md)。 有关更多常规信息大约发送和接收操作，请参阅[发送和接收操作](send-and-receive-operations.md)。
 
  
 

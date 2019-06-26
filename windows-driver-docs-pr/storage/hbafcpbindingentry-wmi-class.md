@@ -4,12 +4,12 @@ description: HBAFCPBindingEntry WMI 类
 ms.assetid: 58993d0d-2044-430d-b8f6-5ea3b68d460b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8b8321ad5255213e4320db015468247a97786a27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f41288392d17d8e8f78775a76a2ed0ad5f6de83a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353497"
 ---
 # <a name="hbafcpbindingentry-wmi-class"></a>HBAFCPBindingEntry WMI 类
 
@@ -34,7 +34,7 @@ class HBAFCPBindingEntry {
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**HBAFCPBindingEntry**](https://msdn.microsoft.com/library/windows/hardware/ff556034)
+[**HBAFCPBindingEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry)
 
 没有与此 WMI 类相关联的方法。
 

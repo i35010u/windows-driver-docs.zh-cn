@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e6fa74b90d0e3dbbf720487ef3f8b57dcd2ac383
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1dc3b272a92a62a4764b415561c6413b9aa225df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354896"
 ---
 # <a name="smsetpersistentbinding-function"></a>SM\_SetPersistentBinding 函数
 
@@ -100,9 +100,9 @@ SM 检索的永久绑定的总数\_GetPersistentBinding 方法。 此值将为�
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SetPersistentBinding\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566334)
+[**SM\_SetPersistentBinding\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setpersistentbinding_in)
 
-[**SM\_SetPersistentBinding\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566335)
+[**SM\_SetPersistentBinding\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_setpersistentbinding_out)
 
  
 

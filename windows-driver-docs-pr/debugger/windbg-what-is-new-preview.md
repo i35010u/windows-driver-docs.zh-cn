@@ -6,16 +6,31 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: ff41adbef91d70e3a9c6952cc381148512c8f210
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 413cd65e40bf4210e90d3910037a22efb2e681f3
+ms.sourcegitcommit: f1302058e374c02531d2e4db260ebc8ed8ad3a85
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67350312"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
 本主题提供在 WinDbg 预览调试器中新增的信息。
+
+## <a name="10190512001"></a>1.0.1905.12001
+**改进 SymSetDiaSession 错误缓解**-我们修复上个月来缓解应用程序在某些情况下仍不工作到我们的进程注入 DbgHelp 所引起的错误。 我们对它进行了改进，并会继续监视有关此错误的反馈。
+
+**强调文字颜色自定义**-许多方案需要的 WinDbg 打开多个实例和它们之间来回移动，可以令人困惑并花费一些时间才能找出哪一个是"正确"。 我们已添加了能够更改可帮助直观地将会话区分开来，使它们更容易之间交换的蓝色强调文字颜色。
+
+只需单击**视图**功能区并选择一个选项来**主题色**的最后一节。 在将来的会话启动最新的目标，将作为目标的工作区的一部分保存的强调文字颜色。
+
+**源代码词汇切分改进**-现在具有用于进行词汇切分铁锈色源文件的基本支持，在源窗口和C++SEH __try/__except/__finally/__leave。
+
+**协同程序改进**-改进了对协同程序本地变量和某些支持优化变量。
+
+**默认符号和源缓存设置**-添加到设置菜单下的一个选项**调试设置**若要更改符号缓存位置。 **请注意**-没有一个已知的问题，从而使其保留为空将导致源加载失败。 我们将添加验证，以避免这种情况发生在将来的版本中。
+
+**-pv 修复**-修复了可能已阻止的 pv 的 bug (非入侵性附加) 无法在某些情况下工作。
 
 ## <a name="10190418001"></a>1.0.1904.18001
 
@@ -41,7 +56,7 @@ ms.locfileid: "65106411"
 
 **调试器数据模型C++标头**-新增了一个C++标头，DbgModel.h，用于扩展调试程序数据的 Windows SDK 的一部分包含模型通过C++。 你可以找到详细信息中的[调试程序数据模型C++概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包括将一些更多的"API style"功能添加到可以访问通过 dx 命令、 JavaScript 和新 DbgModel.h 标头的调试程序数据模型的新扩展。 此扩展扩展数据模型以包括通过，程序集和代码来执行有关的知识[Debugger.Utility.Code](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)命名空间，并通过本地文件系统[Debugger.Utility.FileSystem命名空间](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)。
 
-**综合类型扩展**使用此新的 API 扩展，我们的新样本上有 GitHub 存储库此处- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes。 此 JavaScript 扩展读取基本 C 头文件，并定义结构和联合标头中定义的综合类型信息。 Dx 命令中，通过内存可查看结构化如同具有包含这些类型的类型信息的 PDB。
+**综合类型扩展**使用此新的 API 扩展，我们的新样本上有 GitHub 存储库此处- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 。 此 JavaScript 扩展读取基本 C 头文件，并定义结构和联合标头中定义的综合类型信息。 Dx 命令中，通过内存可查看结构化如同具有包含这些类型的类型信息的 PDB。
 
 其他的更改和 bug 修复：
 

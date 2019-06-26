@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f31403dd9d5d5c4bd0afd6e1400428508547ed8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4298097dd295765ca776a5281062bb7c500c3948
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355380"
 ---
 # <a name="kspropertycameracontrolextendedfocuspriority"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_FOCUSPRIORITY
 
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_FOCUSPRIORITY**属性中定义 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn917962)枚举用于配置焦点优先级。 当焦点优先级设置时，将重点放将优先于执行，以便确保拍摄的图片始终处于焦点的图片。 否则，图片将立即执行而不考虑是否图片处于活动状态。 处理失败的焦点和超时是否是必需的行为是为该驱动程序和多达 OEM 内部。
+**KSPROPERTY\_CAMERACONTROL\_扩展\_FOCUSPRIORITY**属性中定义 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举用于配置焦点优先级。 当焦点优先级设置时，将重点放将优先于执行，以便确保拍摄的图片始终处于焦点的图片。 否则，图片将立即执行而不考虑是否图片处于活动状态。 处理失败的焦点和超时是否是必需的行为是为该驱动程序和多达 OEM 内部。
 
 ## <a name="usage-summary-table"></a>使用率摘要表
 

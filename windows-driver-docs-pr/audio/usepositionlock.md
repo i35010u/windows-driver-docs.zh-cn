@@ -4,12 +4,12 @@ description: UsePositionLock 注册表值更改 PortCls 如何序列化其 I/O�
 ms.assetid: AD5AF873-4129-4C82-B251-0469CF6149E9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa3afab0ad8fd70495c57bc1a34bed946f5a27f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76e82ddeb510ae5909c5db1ea60ea86e809eff25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354158"
 ---
 # <a name="usepositionlock"></a>UsePositionLock
 
@@ -50,15 +50,15 @@ HKR, DispatchSettings, UsePositionLock, 3, 01, 00, 00, 00
 
 这意味着以下微型端口的回调不会序列化与其他属性请求 （包括设置状态的请求）。
 
--   [**IMiniportWaveRTInputStream::GetReadPacket**](https://msdn.microsoft.com/library/windows/hardware/dn946533)
+-   [**IMiniportWaveRTInputStream::GetReadPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)
 
--   [**IMiniportWaveRTOutputStream::SetWritePacket**](https://msdn.microsoft.com/library/windows/hardware/dn946537)
+-   [**IMiniportWaveRTOutputStream::SetWritePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertoutputstream-setwritepacket)
 
--   [**IMiniportWaveRTOutputStream::GetOutputStreamPresentationPosition**](https://msdn.microsoft.com/library/windows/hardware/dn946535)
+-   [**IMiniportWaveRTOutputStream::GetOutputStreamPresentationPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertoutputstream-getoutputstreampresentationposition)
 
--   [**IMiniportWaveRTOutputStream::GetPacketCount**](https://msdn.microsoft.com/library/windows/hardware/dn946536)
+-   [**IMiniportWaveRTOutputStream::GetPacketCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertoutputstream-getpacketcount)
 
--   [**IMiniportWaveRTStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536749)
+-   [**IMiniportWaveRTStream::GetPosition**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536749(v=vs.85))
 
  
 

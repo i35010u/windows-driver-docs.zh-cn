@@ -4,12 +4,12 @@ description: 开发 WIA 视频驱动程序
 ms.assetid: 3cf14fd3-1dfa-480e-a69c-c4d2c196a504
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0579d3db48d6e5943b24ee021711e89d620649d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bc4ada8af6ec6090ddd3b3b340ebc41412b9cd1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364575"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353816"
 ---
 # <a name="developing-a-wia-video-driver"></a>开发 WIA 视频驱动程序
 
@@ -34,7 +34,7 @@ ICMProfiles="sRGB Color Space Profile.icm"
 
 如果没有进行这些新增功能 WIA 将无法识别该设备。 请务必*添加*INF 文件对这些更改。 不要使用仅以下行替换 INF 文件。
 
-有关如何支持的示例从摄像机 USBCAMD 模型使用从您的驱动程序仍处于 pin WIA 请参阅[USB-Based 照相机，摄像机带有捕获按钮](https://msdn.microsoft.com/library/windows/hardware/ff568643)。
+有关如何支持的示例从摄像机 USBCAMD 模型使用从您的驱动程序仍处于 pin WIA 请参阅[USB-Based 照相机，摄像机带有捕获按钮](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-based-camera-with-a-capture-button)。
 
  
 

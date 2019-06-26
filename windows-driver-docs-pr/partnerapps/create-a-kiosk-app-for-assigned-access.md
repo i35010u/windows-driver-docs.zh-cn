@@ -4,12 +4,12 @@ description: 展台应用的分配访问权限的最佳做法
 ms.assetid: 2405B5BB-2214-4B40-B3A1-C47073390B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d6e3f27183154851e6d7d84cf78200c995f7a0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3088a5c8933ebf141a37b825f2cf04dc56903d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353584"
 ---
 # <a name="kiosk-apps-for-assigned-access-best-practices"></a>涉及分配的访问权限的展台应用：最佳做法
 
@@ -298,18 +298,18 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 ## <a name="span-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanappendix-2-troubleshooting"></a><span id="Appendix_2__troubleshooting"></span><span id="appendix_2__troubleshooting"></span><span id="APPENDIX_2__TROUBLESHOOTING"></span>附录 2： 故障排除
 
 
-通常情况下，如果无法激活上面锁屏应用展台应用，你可以在锁定屏幕中找到激活错误代码。 使用错误代码来通过查找 Windows 发现问题[系统错误代码](https://msdn.microsoft.com/library/windows/desktop/ms681381)。 此外，事件查看器包含激活故障的详细信息。 为此，请执行以下操作：
+通常情况下，如果无法激活上面锁屏应用展台应用，你可以在锁定屏幕中找到激活错误代码。 使用错误代码来通过查找 Windows 发现问题[系统错误代码](https://docs.microsoft.com/windows/desktop/Debug/system-error-codes)。 此外，事件查看器包含激活故障的详细信息。 为此，请执行以下操作：
 
 1.  打开**事件查看器**。 有两个可能位置查找激活错误。
 2.  在中**事件查看器 （本地）** 窗格中，展开**Windows 日志**，然后单击**应用程序**。
-3.  此外，在**事件查看器 （本地）**，展开**应用程序和服务日志**，展开**Windows**，展开**应用**，然后单击**Microsoft-Windows-TWinUI/操作**。
+3.  此外，在**事件查看器 （本地）** ，展开**应用程序和服务日志**，展开**Windows**，展开**应用**，然后单击**Microsoft-Windows-TWinUI/操作**。
 
 请注意，因为未在全屏幕模式下，运行已分配的访问与展台应用**ApplicationView.GetForCurrentView()。IsFullScreenMode**将返回 false。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[已分配的访问](https://msdn.microsoft.com/library/windows/hardware/mt620040)
+[已分配的访问](https://docs.microsoft.com/windows-hardware/customize/enterprise/assigned-access)
 
 [显示应用多个视图]( https://go.microsoft.com/fwlink/?LinkId=708251)
 

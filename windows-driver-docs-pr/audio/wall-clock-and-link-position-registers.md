@@ -12,12 +12,12 @@ keywords:
 - 时钟 WDK 音频，HD Audio
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af329930b41058ec8ca10abae347fdf5c27ba5e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 210de35d94ccc17035108d2aa04fe4f2e42bdb57
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335069"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354124"
 ---
 # <a name="wall-clock-and-link-position-registers"></a>时钟和链接位置寄存器
 
@@ -32,7 +32,7 @@ HD Audio 控制器包含 32 位墙时钟计数器寄存器的 HD 音频链接并
 
 循环缓冲区偏移量为只是以字节为单位的当前读取或写入的位置开始从循环缓冲区的偏移量。 一旦达到缓冲区的末尾，位置回绕到缓冲区和循环缓冲区偏移量重置为零的开始。 循环缓冲区驻留在系统内存中。 有关详细信息，请参阅*Intel 高定义音频规范*处[Intel HD Audio](https://go.microsoft.com/fwlink/p/?linkid=42508)网站。
 
-内核模式功能驱动程序可以读取时钟和直接链接位置寄存器。 若要启用直接访问，HD Audio 总线驱动程序映射包含到系统虚拟内存的寄存器的物理内存。 该函数将驱动程序调用[ **GetWallClockRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff536401)或[ **GetLinkPositionRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff536398)例程，以获取虚拟系统到墙上时钟注册或链接位置注册的地址指针。 HD 音频 DDI 这两个版本中提供了两个例程。
+内核模式功能驱动程序可以读取时钟和直接链接位置寄存器。 若要启用直接访问，HD Audio 总线驱动程序映射包含到系统虚拟内存的寄存器的物理内存。 该函数将驱动程序调用[ **GetWallClockRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pget_wall_clock_register)或[ **GetLinkPositionRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pget_link_position_register)例程，以获取虚拟系统到墙上时钟注册或链接位置注册的地址指针。 HD 音频 DDI 这两个版本中提供了两个例程。
 
 HD Audio 控制器硬件镜像到不包含任何控制器中的其他寄存器的内存页的墙时钟和链接位置寄存器。 因此，如果功能驱动程序映射的镜像的时钟或注册到用户模式下，任何用户模式程序可以访问的控制器的任何位置的其他寄存器。 该驱动程序永远不会允许用户模式程序触摸这些其他寄存器和计划硬件。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d4a8610da1562236a1a2c3a648b56b31c9da903e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 819ff6dae18268ec47b15f90b6d91cf4c4dc99af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360196"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353330"
 ---
 # <a name="ndisstatuswdiindicationp2psendrequestactionframecomplete"></a>NDIS\_状态\_WDI\_指示\_P2P\_发送\_请求\_操作\_帧\_完成
 
@@ -20,7 +20,7 @@ ms.locfileid: "63360196"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63360196"
 
 | 在任务栏的搜索框中键入                                                                                                       | 允许多个 TLV 实例 | 可选                                            | 描述                                                           |
 |------------------------------------------------------------------------------------------------------------|--------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_SEND\_ACTION\_FRAME\_RESULT**](https://msdn.microsoft.com/library/windows/hardware/dn897993) |                                | 此绑定的 TLV 处于仅需要状态是否成功。 | 有关对等方发送的请求操作帧的信息。 |
+| [**WDI\_TLV\_P2P\_SEND\_ACTION\_FRAME\_RESULT**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-send-action-frame-result-parameters) |                                | 此绑定的 TLV 处于仅需要状态是否成功。 | 有关对等方发送的请求操作帧的信息。 |
 
  
 

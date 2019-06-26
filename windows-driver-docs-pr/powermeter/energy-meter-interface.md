@@ -7,12 +7,12 @@ keywords:
 - PMI WDK 能源计量
 ms.date: 11/17/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 563e23a23e6d6d61c9ce503cb856aa07376296a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1edcf28b1894f685cf20d23f93a77941a791a99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354927"
 ---
 # <a name="energy-meter-interface"></a>电能表接口
 
@@ -24,7 +24,7 @@ ms.locfileid: "63381295"
 
 ## <a name="discovering-devices-that-implement-emi"></a>发现实现电磁干扰的设备
 
-客户端发现的设备，支持通过调用电磁干扰[SetupDiEnumDeviceInterfaces](https://msdn.microsoft.com/library/windows/hardware/ff551015.aspx)并[SetupDiGetDeviceInterfaceDetail](https://msdn.microsoft.com/library/windows/hardware/ff551120.aspx)。 为每个计量电磁干扰符合标准，并在系统中存在的设备的能源创建电磁干扰设备接口的一个实例。 
+客户端发现的设备，支持通过调用电磁干扰[SetupDiEnumDeviceInterfaces](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)并[SetupDiGetDeviceInterfaceDetail](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)。 为每个计量电磁干扰符合标准，并在系统中存在的设备的能源创建电磁干扰设备接口的一个实例。 
 
 电磁干扰设备接口的 guid **{45BD8344-7ED6-49cf-A440-C276C933B053}** emi.h 中定义。 或者，代码可以使用 GUID_DEVICE_ENERGY_METER 来指定此 GUID。 
 
@@ -32,21 +32,21 @@ ms.locfileid: "63381295"
 
 客户端代码通常与电磁干扰，使用以下过程进行交互：
 
-1. 调用[IOCTL_EMI_GET_VERSION](https://msdn.microsoft.com/library/windows/hardware/dn957440.aspx) ，并检查在返回设备支持的电磁干扰界面版本[EMI_VERSION](https://msdn.microsoft.com/library/windows/hardware/dn957430.aspx)值。 在 Windows 10 设备可以支持 EMI_VERSION_V1。 在 Windows 10 版本 1809，设备还可以支持 EMI_VERSION_V2。 将来的操作系统版本可能会带来更高版本。 
+1. 调用[IOCTL_EMI_GET_VERSION](https://docs.microsoft.com/windows/desktop/api/emi/ni-emi-ioctl_emi_get_version) ，并检查在返回设备支持的电磁干扰界面版本[EMI_VERSION](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_version)值。 在 Windows 10 设备可以支持 EMI_VERSION_V1。 在 Windows 10 版本 1809，设备还可以支持 EMI_VERSION_V2。 将来的操作系统版本可能会带来更高版本。 
 
 2. 调用 IOCTL_EMI_GET_METADATA_SIZE 获取电磁干扰元数据的大小。 
 
-3. 分配的所需的电磁干扰元数据大小和调用缓冲区[IOCTL_EMI_GET_METADATA](https://msdn.microsoft.com/library/windows/hardware/dn957436.aspx)。 验证返回的 EMI_MEASUREMENT_UNIT EmiMeasurementUnitPicowattHours。 Windows 10 后的版本可能会定义额外的单位类型。 
+3. 分配的所需的电磁干扰元数据大小和调用缓冲区[IOCTL_EMI_GET_METADATA](https://docs.microsoft.com/windows/desktop/api/emi/ni-emi-ioctl_emi_get_metadata)。 验证返回的 EMI_MEASUREMENT_UNIT EmiMeasurementUnitPicowattHours。 Windows 10 后的版本可能会定义额外的单位类型。 
 
-4. 若要测量总能源消耗，调用[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)。 在返回的 AbsoluteEnergy 值[EMI_CHANNEL_MEASUREMENT_DATA 结构](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)是 picowatt 小时与一些任意的零点内的总累计的能量。 一般情况下，您需要在两个不同的时间比较示例，并将该间隔内的能源消耗能源值相减。 
+4. 若要测量总能源消耗，调用[IOCTL_EMI_GET_MEASUREMENT](https://docs.microsoft.com/windows/desktop/api/emi/ni-emi-ioctl_emi_get_measurement)。 在返回的 AbsoluteEnergy 值[EMI_CHANNEL_MEASUREMENT_DATA 结构](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)是 picowatt 小时与一些任意的零点内的总累计的能量。 一般情况下，您需要在两个不同的时间比较示例，并将该间隔内的能源消耗能源值相减。 
 
-5. 若要测量的平均能源消耗，请调用[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)开头和末尾所需的间隔。 AbsoluteEnergy 和 AbsoluteTime 值中减去[EMI_CHANNEL_MEASUREMENT_DATA 结构](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)从这些文章的示例返回由后者的示例。
+5. 若要测量的平均能源消耗，请调用[IOCTL_EMI_GET_MEASUREMENT](https://docs.microsoft.com/windows/desktop/api/emi/ni-emi-ioctl_emi_get_measurement)开头和末尾所需的间隔。 AbsoluteEnergy 和 AbsoluteTime 值中减去[EMI_CHANNEL_MEASUREMENT_DATA 结构](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)从这些文章的示例返回由后者的示例。
 
 有关详细信息，请参阅以下主题。
 
-[电磁干扰 Ioctl](https://msdn.microsoft.com/library/windows/hardware/dn957425.aspx) -本部分介绍支持的能源度量接口 （电磁干扰） 的 I/O 控制代码 (Ioctl)。
+[电磁干扰 Ioctl](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn957425(v=vs.85)) -本部分介绍支持的能源度量接口 （电磁干扰） 的 I/O 控制代码 (Ioctl)。
  
-[电磁干扰枚举和结构](https://msdn.microsoft.com/library/windows/hardware/dn957424.aspx)-本部分介绍枚举和结构所支持的能源度量接口 （电磁干扰）。
+[电磁干扰枚举和结构](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn957424(v=vs.85))-本部分介绍枚举和结构所支持的能源度量接口 （电磁干扰）。
  
 
 

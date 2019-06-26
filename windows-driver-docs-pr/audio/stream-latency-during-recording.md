@@ -4,12 +4,12 @@ description: 录制期间的流延迟
 ms.assetid: b9391b34-acd8-4434-b00c-48bbbc0b6647
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f1f5f4987e239ea0c05949b580bf1e7c2b81b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e85a90b337b1a91438fa99edf71617721249829e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354265"
 ---
 # <a name="stream-latency-during-recording"></a>录制期间的流延迟
 
@@ -34,9 +34,9 @@ ms.locfileid: "63328611"
 
 通过让定期通知音频引擎的音频设备，客户端可以缩小延迟比其他实用。
 
-客户端 （通常的音频引擎） 可以获取的音频设备有助于流延迟，发送的延迟问题的摘要[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://msdn.microsoft.com/library/windows/hardware/ff537378)WaveRT 端口驱动程序的请求。
+客户端 （通常的音频引擎） 可以获取的音频设备有助于流延迟，发送的延迟问题的摘要[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-hwlatency)WaveRT 端口驱动程序的请求。
 
-客户端确定分离以记录和读取位置之间维护量后，客户端监视中的记录的位置确定应滞后多少读取的位置的更改。 在 Windows Server 2008 和更高版本操作系统中，客户端发出[ **KSPROPERTY\_音频\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)或者[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://msdn.microsoft.com/library/windows/hardware/ff537381)属性请求以确定记录位置。 后一种方法是更高效，因为它允许客户端读取无转换到内核模式例程的信息，可直接将记录位置。
+客户端确定分离以记录和读取位置之间维护量后，客户端监视中的记录的位置确定应滞后多少读取的位置的更改。 在 Windows Server 2008 和更高版本操作系统中，客户端发出[ **KSPROPERTY\_音频\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)或者[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-positionregister)属性请求以确定记录位置。 后一种方法是更高效，因为它允许客户端读取无转换到内核模式例程的信息，可直接将记录位置。
 
  
 

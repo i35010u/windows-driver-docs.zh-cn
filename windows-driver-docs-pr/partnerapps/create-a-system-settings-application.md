@@ -4,12 +4,12 @@ description: 创建合作伙伴设置应用
 ms.assetid: 3b549c11-f8b2-46e8-9d22-4edc787743ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64e15e9175a87c5bb64a027b20d22b4313b1a6db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7417af3e917a7bc6d0aed64ddd8db2511a914183
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567007"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353577"
 ---
 # <a name="create-a-partner-settings-app"></a>创建合作伙伴设置应用
 
@@ -29,7 +29,7 @@ Oem 和移动运营商可以公开自定义功能设置的设备硬件将它与�
 
 ![在设置应用中的设备列表](images/devices-list-in-settings.png)
 
-您可以找到一系列中的所有级别两个页面[启动 Windows 设置应用](https://msdn.microsoft.com/windows/uwp/launch-resume/launch-settings-app)主题。 请务必注意，必须与在放入的页面相关的所有链接。
+您可以找到一系列中的所有级别两个页面[启动 Windows 设置应用](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)主题。 请务必注意，必须与在放入的页面相关的所有链接。
 
 此外，您就能够将最多五个搜索词添加在每个页上，它必须是与页面上的内容。 为获得最佳的搜索体验，使用特定的短语。 使用常规和一个 word 条款可能会导致您不相关搜索结果中出现的链接。  
 
@@ -56,9 +56,9 @@ Oem 和移动运营商可以公开自定义功能设置的设备硬件将它与�
 ## <a name="creating-system-settings-applications"></a>创建系统设置应用程序
 
 > [!NOTE]
-> 设置应用程序通用 Windows 平台应用，应遵守所有 UWP 编程原则。 请参阅[适用于通用 Windows 平台 (UWP) 应用准则](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx)有关详细信息。
+> 设置应用程序通用 Windows 平台应用，应遵守所有 UWP 编程原则。 请参阅[适用于通用 Windows 平台 (UWP) 应用准则](https://developer.microsoft.com/windows/apps/design)有关详细信息。
 
-1. 使用 Windows 软件开发工具包 (SDK) 来创建 Windows 通用应用。 创建 Windows 通用应用程序的详细信息，请参阅[使用 Visual Studio 构建 UWP 应用](https://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx)。
+1. 使用 Windows 软件开发工具包 (SDK) 来创建 Windows 通用应用。 创建 Windows 通用应用程序的详细信息，请参阅[使用 Visual Studio 构建 UWP 应用](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)。
 
     如果您要编写面向 Windows Phone 的设置应用程序，还可以创建 Windows Phone Silverlight 应用程序。
 

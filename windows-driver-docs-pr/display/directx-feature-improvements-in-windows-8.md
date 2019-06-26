@@ -4,12 +4,12 @@ description: Windows 8 包含 Microsoft DirectX 功能改进，开发人员、 �
 ms.assetid: 0622DA0D-41ED-4B47-B090-8D5B85E10EB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4fb6c19989f24a30f5ced4630387a9474d3fad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92560f67bfbd8a7522104b43eb899eba3a8b4bac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328404"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353458"
 ---
 # <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 中的 DirectX 功能改进
 
@@ -31,7 +31,7 @@ Windows 8 包含 Microsoft DirectX 功能改进，开发人员、 最终用户�
 ## <a name="span-idpixelformatsspanspan-idpixelformatsspanpixel-formats-5551-565-4444"></a><span id="pixelformats"></span><span id="PIXELFORMATS"></span>像素格式 (5551，565、 4444)
 
 
-若要更好地支持在低功耗配置中使用 DirectX 的图形，从以下的 DirectX 9 像素格式[ **DXGI\_格式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)必须在 Direct3D 为中支持枚举Windows 8:
+若要更好地支持在低功耗配置中使用 DirectX 的图形，从以下的 DirectX 9 像素格式[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)必须在 Direct3D 为中支持枚举Windows 8:
 
 -   **DXGI\_FORMAT\_B5G6R5\_UNORM**
 -   **DXGI\_FORMAT\_B5G5R5A1\_UNORM**
@@ -100,7 +100,7 @@ Windows 8 包含 Microsoft DirectX 功能改进，开发人员、 最终用户�
 
 Direct3D 10.0 的 Direct3D 11.0 硬件 (和功能级别 10\_0-11\_0) 支持 ForcedSampleCount 设置为 1 （和呈现目标视图任何示例计数） 以及所述的限制 （例如，没有深度/模具）。
 
-适用于 10\_0，10\_1 和 11\_0 硬件，当[ **D3D11\_1\_DDI\_光栅器\_DESC**](https://msdn.microsoft.com/library/windows/hardware/hh451052)。**ForcedSampleCount**设置为 1，行呈现不能配置为 2 的三角形 （四边形） 的基于模式 (即**MultisampleEnable**状态无法设置为 true)。 此限制不存在适用于 11\_1 的硬件。 请注意的命名**MultisampleEnable**状态有误导性，因为它不再具有启用多重采样执行任何操作; 相反，它是现在一起使用的控件之一**AntialiasedLineEnable**用于选择行呈现模式。
+适用于 10\_0，10\_1 和 11\_0 硬件，当[ **D3D11\_1\_DDI\_光栅器\_DESC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1_ddi_rasterizer_desc)。**ForcedSampleCount**设置为 1，行呈现不能配置为 2 的三角形 （四边形） 的基于模式 (即**MultisampleEnable**状态无法设置为 true)。 此限制不存在适用于 11\_1 的硬件。 请注意的命名**MultisampleEnable**状态有误导性，因为它不再具有启用多重采样执行任何操作; 相反，它是现在一起使用的控件之一**AntialiasedLineEnable**用于选择行呈现模式。
 
 这与限制的独立于目标的光栅化窗体**ForcedSampleCount** = 1，与 Direct3D 10.0 中已存在但 Direct3D 10.1 和 Direct3D 变得不可用的模式相符 (和功能级别 10\_1 和 11\_0) 由于 API 进行了更改。 Direct3D 10.0 中此模式为中心采样即使在已可用的多个采样抗锯齿 (MSAA) 表面上呈现**MultisampleEnable**设置为 false (这可以通过切换切换和**MultisampleEnable**)。 在 Direct3D 中 10.1 + **MultisampleEnable**不再影响多重采样 （尽管名称），并仅控制行呈现行为。
 
@@ -181,7 +181,7 @@ Direct3D 11 允许光栅化到无序访问视图 (Uav) 与任何呈现目标视�
 
 ### <a name="span-idoffsettingconstantbufferupdatesspanspan-idoffsettingconstantbufferupdatesspanspan-idoffsettingconstantbufferupdatesspanoffsetting-constant-buffer-updates"></a><span id="Offsetting_constant_buffer_updates"></span><span id="offsetting_constant_buffer_updates"></span><span id="OFFSETTING_CONSTANT_BUFFER_UPDATES"></span>偏移常量缓冲区更新
 
-高性能游戏引擎为常见的需求之一是收集的常量引用的单独的常量缓冲区更新大批量**绘制\\*** 调用时，每次需要自己常量。 这得益于允许应用程序来创建较大的缓冲区，然后定位到区域中的单个着色器 (类似于视图，但无需使整个对象来描述视图)。
+高性能游戏引擎为常见的需求之一是收集的常量引用的单独的常量缓冲区更新大批量**绘制\\** * 调用时，每次需要自己常量。 这得益于允许应用程序来创建较大的缓冲区，然后定位到区域中的单个着色器 (类似于视图，但无需使整个对象来描述视图)。
 
 常量缓冲区现在可以创建具有大小大于可寻址的最大的常量缓冲区大小的单个着色器 （最多 4096 16 字节元素-65 kB，其中每个元素是一个四分量着色器常量）。 常量缓冲区资源大小现在仅受系统能够处理的内存分配的大小限制。
 
@@ -211,23 +211,23 @@ Tileable 复制操作，以通知实现，图像源和目标都是像素对齐�
 
 这些函数和结构是新的或更新 Windows 8:
 
--   [*AssignDebugBinary*](https://msdn.microsoft.com/library/windows/hardware/hh406234)
--   [*CalcPrivateBlendStateSize(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh406237)
--   [*ClearView*](https://msdn.microsoft.com/library/windows/hardware/hh406255)
--   [*DefaultConstantBufferUpdateSubresourceUP(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh802464)
--   [*ResourceUpdateSubresourceUP(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh439847)
--   [*VsSetConstantBuffers(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh439921)
--   [**D3D11\_1DDI\_D3D11\_OPTIONS\_DATA**](https://msdn.microsoft.com/library/windows/hardware/hh406442)
--   [**D3DDDI\_BLTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff544379)
--   [**D3DDDI\_COPY\_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh451175)
--   [**D3DDDIARG\_BUFFERBLT1**](https://msdn.microsoft.com/library/windows/hardware/hh451069)
--   [**D3DDDIARG\_DISCARD**](https://msdn.microsoft.com/library/windows/hardware/hh451076)
--   [**D3DDDIARG\_TEXBLT1**](https://msdn.microsoft.com/library/windows/hardware/hh451142)
--   [**D3DDDIARG\_VOLUMEBLT1**](https://msdn.microsoft.com/library/windows/hardware/hh451145)
--   [**D3DDDICAPS\_体系结构\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh451150)
--   [**D3DDDICAPS\_着色器\_MIN\_精度**](https://msdn.microsoft.com/library/windows/hardware/hh451152)
--   [**D3DDDICAPS\_着色器\_MIN\_精度\_支持**](https://msdn.microsoft.com/library/windows/hardware/hh451154)
--   [**D3DDDICAPS\_TYPE**](https://msdn.microsoft.com/library/windows/hardware/ff544132)
+-   [*AssignDebugBinary*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_assigndebugbinary)
+-   [*CalcPrivateBlendStateSize(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_calcprivateblendstatesize)
+-   [*ClearView*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_clearview)
+-   [*DefaultConstantBufferUpdateSubresourceUP(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
+-   [*ResourceUpdateSubresourceUP(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_resourceupdatesubresourceup)
+-   [*VsSetConstantBuffers(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_setconstantbuffers)
+-   [**D3D11\_1DDI\_D3D11\_OPTIONS\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_d3d11_options_data)
+-   [**D3DDDI\_BLTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_bltflags)
+-   [**D3DDDI\_COPY\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-d3dddi_copy_flags)
+-   [**D3DDDIARG\_BUFFERBLT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_bufferblt1)
+-   [**D3DDDIARG\_DISCARD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_discard)
+-   [**D3DDDIARG\_TEXBLT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_texblt1)
+-   [**D3DDDIARG\_VOLUMEBLT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_volumeblt1)
+-   [**D3DDDICAPS\_体系结构\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-d3dddicaps_architecture_info)
+-   [**D3DDDICAPS\_着色器\_MIN\_精度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-d3dddicaps_shader_min_precision)
+-   [**D3DDDICAPS\_着色器\_MIN\_精度\_支持**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-d3dddicaps_shader_min_precision_support)
+-   [**D3DDDICAPS\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-_d3dddicaps_type)
 
  
 

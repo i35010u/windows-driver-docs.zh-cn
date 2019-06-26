@@ -9,12 +9,12 @@ keywords:
 - 版本 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f79b19799bbb1aa8c4def21888b97c31d6ad769b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5cd4405c69a99679194c144b2a5684c29877f24
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328615"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354285"
 ---
 # <a name="specifying-version-information-for-an-audio-adapter"></a>指定音频适配器的版本信息
 
@@ -30,7 +30,7 @@ ms.locfileid: "63328615"
   ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
 ```
 
-有关其他版本要求和选项的所有设备类的说明，请参阅[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)。
+有关其他版本要求和选项的所有设备类的说明，请参阅[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)。
 
  
 

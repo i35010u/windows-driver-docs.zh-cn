@@ -4,12 +4,12 @@ description: 虚拟机网络适配器
 ms.assetid: 8A2A708C-AB43-4D9F-A7CB-2AC4438BCD54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55f23ed8e66b1946cb9b310982f7d8c06a5d55e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aadc38e75eeb8efdb9a97a3606dcf8723f1d1566
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354490"
 ---
 # <a name="virtual-machine-network-adapters"></a>虚拟机网络适配器
 
@@ -36,21 +36,21 @@ VM 网络适配器支持以下虚拟化类型：
 
 用户启动的 HYPER-V VM 时，将执行以下步骤：
 
-1.  可扩展交换机的协议边缘发出的一个对象标识符 (OID) 组请求[OID\_切换\_端口\_创建](https://msdn.microsoft.com/library/windows/hardware/hh598272)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展，为 VM 创建一个端口。
+1.  可扩展交换机的协议边缘发出的一个对象标识符 (OID) 组请求[OID\_切换\_端口\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展，为 VM 创建一个端口。
 
-2.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_创建](https://msdn.microsoft.com/library/windows/hardware/hh598272)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展先前创建的 VM 端口创建 VM 网络适配器的网络连接。
+2.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展先前创建的 VM 端口创建 VM 网络适配器的网络连接。
 
-3.  当网络堆栈是否正常运行，并且绑定到 VM 网络适配器时，可扩展交换机的协议边缘会发出的 OID 集请求[OID\_切换\_NIC\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/hh598272)下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展的 VM 网络适配器的网络连接已连接并且正常运行。 此时，该扩展可以检查、 注入，并将数据包转发到已连接到 VM 网络适配器的端口。
+3.  当网络堆栈是否正常运行，并且绑定到 VM 网络适配器时，可扩展交换机的协议边缘会发出的 OID 集请求[OID\_切换\_NIC\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展的 VM 网络适配器的网络连接已连接并且正常运行。 此时，该扩展可以检查、 注入，并将数据包转发到已连接到 VM 网络适配器的端口。
 
 当用户停止的 HYPER-V VM 时，将执行以下步骤：
 
-1.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_断开连接](https://msdn.microsoft.com/library/windows/hardware/hh598265)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知到的 VM 网络适配器的连接，则正在将调用的基础可扩展交换机扩展。
+1.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_断开连接](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知到的 VM 网络适配器的连接，则正在将调用的基础可扩展交换机扩展。
 
-2.  完成所有数据包流量和目标网络连接的 OID 请求后，可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_删除](https://msdn.microsoft.com/library/windows/hardware/hh598272)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展，与 VM 网络适配器的连接已适当地销毁并删除。
+2.  完成所有数据包流量和目标网络连接的 OID 请求后，可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展，与 VM 网络适配器的连接已适当地销毁并删除。
 
-3.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_端口\_拆卸](https://msdn.microsoft.com/library/windows/hardware/hh598279)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知所用的 VM 网络适配器连接的端口，则在将调用的基础可扩展交换机扩展。
+3.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_端口\_拆卸](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-teardown)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知所用的 VM 网络适配器连接的端口，则在将调用的基础可扩展交换机扩展。
 
-4.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_端口\_删除](https://msdn.microsoft.com/library/windows/hardware/hh598273)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展已销毁并删除 VM 端口。
+4.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_端口\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-delete)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展已销毁并删除 VM 端口。
 
  
 

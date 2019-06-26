@@ -5,12 +5,12 @@ ms.assetid: 5efaa724-80b4-4721-a1b0-8ba67c03bb32
 ms.date: 08/08/2017
 keywords: -OID_802_3_DELETE_MULTICAST_ADDRESS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1edd7f5dfe57c943a05daf4277b00544eb6baf87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f846aa521ef32ef456696057e38e92d60404436
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350989"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355458"
 ---
 # <a name="oid8023deletemulticastaddress"></a>OID\_802\_3\_删除\_多播\_地址
 
@@ -28,7 +28,7 @@ ms.locfileid: "63350989"
 <a name="remarks"></a>备注
 -------
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含要从删除的 6 个字节地址多播的地址列表。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含要从删除的 6 个字节地址多播的地址列表。
 
 OID\_802\_3\_删除\_多播\_地址 OID 请求可以删除只能有一个地址。 若要删除多个地址，协议驱动程序必须发出多个 OID\_802\_3\_删除\_多播\_地址 OID 请求。
 
@@ -42,7 +42,7 @@ NDIS 微型端口驱动程序不直接接收此 OID 请求。 相反，NDIS 合�
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-微型端口驱动程序[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数将返回以下值之一用于此请求：
+微型端口驱动程序[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数将返回以下值之一用于此请求：
 
 <table>
 <colgroup>
@@ -62,7 +62,7 @@ NDIS 微型端口驱动程序不直接接收此 OID 请求。 相反，NDIS 合�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff563622" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563622)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递<strong>NDIS_STATUS_SUCCESS</strong>对于<em>状态</em>参数。</p></td>
+<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递<strong>NDIS_STATUS_SUCCESS</strong>对于<em>状态</em>参数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
@@ -70,7 +70,7 @@ NDIS 微型端口驱动程序不直接接收此 OID 请求。 相反，NDIS 合�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_REQUEST_ABORTED</strong></p></td>
-<td><p>微型端口驱动程序已停止处理请求。 例如，名为 NDIS <a href="https://msdn.microsoft.com/library/windows/hardware/ff559432" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559432)"> <em>MiniportResetEx</em> </a>函数。</p></td>
+<td><p>微型端口驱动程序已停止处理请求。 例如，名为 NDIS <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)"> <em>MiniportResetEx</em> </a>函数。</p></td>
 </tr>
 </tbody>
 </table>

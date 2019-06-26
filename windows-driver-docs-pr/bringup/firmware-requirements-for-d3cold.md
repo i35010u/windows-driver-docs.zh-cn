@@ -4,24 +4,24 @@ description: 从 Windows 8 开始，设备可以输入 D3cold 电源子状态甚
 ms.assetid: 4BADC310-CC53-4084-A592-66197C348279
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff10d3af3c23cf857e2e68f772bfeacc59683d03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 147a963ae4e2d7ba63300a7b3e6f5a36d98aeb26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338675"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353982"
 ---
 # <a name="firmware-requirements-for-d3cold"></a>D3cold 固件要求
 
 
 从 Windows 8 开始，设备可以输入 D3cold 电源子状态甚至时系统将保留在 S0 电源状态。 本主题介绍实现 D3cold 要求支持嵌入式设备的固件。 下面的讨论旨在帮助固件开发人员，使其嵌入的设备能够可靠地进入和退出 D3cold。
 
-此外，设备驱动程序要求，以支持 D3cold 简要讨论了。 D3cold 的设备驱动程序支持的详细信息，请参阅[驱动程序中支持 D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)。
+此外，设备驱动程序要求，以支持 D3cold 简要讨论了。 D3cold 的设备驱动程序支持的详细信息，请参阅[驱动程序中支持 D3cold](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)。
 
 ## <a name="introduction"></a>简介
 
 
-[设备的电源状态](https://msdn.microsoft.com/library/windows/hardware/ff543162)在 ACPI 规范中，并在各种总线规范中定义。 PCI 总线规范，因为它引入了 PCI 电源管理，拆分为两种子状态，D3hot 和 D3cold D3 (off) 设备电源状态。 这一区别是添加到 ACPI 3.0 中的 ACPI 规范，并在 ACPI 4.0 中扩展。 Windows 始终支持两种 D3 子状态，但 Windows 7 和更早版本的 Windows 支持 D3cold 子状态仅当整个计算机退出 S0 （工作） 系统电源状态进入睡眠或休眠状态 — 通常 S3 和 S4。 从 Windows 8 开始，设备驱动程序可以启用其设备，以便即使系统处于 S0 输入 D3cold 状态。
+[设备的电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)在 ACPI 规范中，并在各种总线规范中定义。 PCI 总线规范，因为它引入了 PCI 电源管理，拆分为两种子状态，D3hot 和 D3cold D3 (off) 设备电源状态。 这一区别是添加到 ACPI 3.0 中的 ACPI 规范，并在 ACPI 4.0 中扩展。 Windows 始终支持两种 D3 子状态，但 Windows 7 和更早版本的 Windows 支持 D3cold 子状态仅当整个计算机退出 S0 （工作） 系统电源状态进入睡眠或休眠状态 — 通常 S3 和 S4。 从 Windows 8 开始，设备驱动程序可以启用其设备，以便即使系统处于 S0 输入 D3cold 状态。
 
 D3hot，通常只需调用"D3"，是设备的"软关闭"状态。 在此状态下，总线扫描速度，可以检测到该设备并发送到设备的命令可能会导致它幂上再次。 在 D3cold，所有电源都删除，使用少量的能力，能够促成设备的唤醒逻辑的可能异常。 例如，对于 PCI Express (PCIe) 的设备，主要设备电源，Vcc，经常已关闭到 D3cold 转换中。 关闭 Vcc 可以降低功率消耗和扩展移动硬件平台可以在电池电量运行的时间。 D3cold 设备时，它不能检测到的总线扫描并不能接收命令。 还原 Vcc power 将设备移到通常等效于 D0 状态未初始化状态。 软件必须重新初始化该设备以将其放入工作状态。
 
@@ -32,7 +32,7 @@ D3hot，通常只需调用"D3"，是设备的"软关闭"状态。 在此状态�
 -   固件和平台要求
 -   设备驱动程序要求
 
-这两个类别的第一个是在本文的重点。 显示第二个类别的简要概述。 有关设备驱动程序要求的详细信息，请参阅[驱动程序中支持 D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)。
+这两个类别的第一个是在本文的重点。 显示第二个类别的简要概述。 有关设备驱动程序要求的详细信息，请参阅[驱动程序中支持 D3cold](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)。
 
 ## <a name="firmware-and-platform-requirements"></a>固件和平台要求
 
@@ -157,7 +157,7 @@ Scope (\_SB)
 
 如果嵌入式的设备符合公共总线规范，如 PCIe 或 USB，此设备是通过总线定义的机制，可发现并 power 可以提供部分或全部通过总线。 如果此设备不由其他旁带 power 资源提供支持，设备的主电源源是将设备连接到父总线控制器的链接。 总线枚举设备可以通过标识\_ADR 嵌入式的设备的定义中的对象。 \_ADR 对象用于 OSPM 提供嵌入式的设备的父总线上设备的地址。 此地址用于为设备 （如所示的 ACPI 固件） 的平台的表示形式将关联的设备 （如所示的总线硬件） 总线的表示形式。 ( \_ADR 地址编码是特定于总线的。 有关详细信息，请参阅 6.1.1 节"\_ADR （地址）"，在 ACPI 5.0 规范中。)采用这种机制时, D3cold 支持必须与父总线驱动程序相协调。
 
-如果嵌入式设备的主电源是将此设备连接到其父总线的链接，将设备放入 D3cold 的关键要求是能耗更低的链接。 有关过渡到 D3cold 的详细信息，请参阅中的状态关系图[设备的电源状态](https://msdn.microsoft.com/library/windows/hardware/ff543162)。
+如果嵌入式设备的主电源是将此设备连接到其父总线的链接，将设备放入 D3cold 的关键要求是能耗更低的链接。 有关过渡到 D3cold 的详细信息，请参阅中的状态关系图[设备的电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)。
 
 **平台固件**
 
@@ -344,14 +344,14 @@ Scope (\_SB)
 ## <a name="device-driver-requirements"></a>设备驱动程序要求
 
 
-设备 （通常是功能驱动程序） 的电源策略所有者告知操作系统是否启用从 D3hot D3cold 到的设备的转换。 该驱动程序可以提供此信息在安装设备的 INF 文件中。 或者，驱动程序可以调用[ *SetD3ColdSupport* ](https://msdn.microsoft.com/library/windows/hardware/hh967716)在运行时动态地启用或禁用设备的转换为 D3cold 例程。 通过启用设备输入 D3cold，驱动程序可保证以下行为：
+设备 （通常是功能驱动程序） 的电源策略所有者告知操作系统是否启用从 D3hot D3cold 到的设备的转换。 该驱动程序可以提供此信息在安装设备的 INF 文件中。 或者，驱动程序可以调用[ *SetD3ColdSupport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_d3cold_support)在运行时动态地启用或禁用设备的转换为 D3cold 例程。 通过启用设备输入 D3cold，驱动程序可保证以下行为：
 
 -   在计算机保留在 S0 中时，设备可以容忍 D3hot 从转换到 D3cold。
 -   从 D3cold 恢复 D0 时，设备将正常工作。
 
 设备不能满足任一要求，输入 D3cold 后, 可能不可用之前在计算机重新启动或进入休眠状态。 如果设备必须能够从进入任何低功耗 Dx 状态信号发生唤醒事件，进入 D3cold 必须未启用除非驱动程序为特定设备的唤醒信号，将在 D3cold 中正常工作。
 
-有关详细信息，请参阅[驱动程序中支持 D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)。
+有关详细信息，请参阅[驱动程序中支持 D3cold](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)。
 
  
 

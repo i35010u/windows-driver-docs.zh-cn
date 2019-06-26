@@ -14,12 +14,12 @@ keywords:
 - 非 PCM 音频格式 WDK、 ac-3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6b9480e9ad1d81af5d547f57bbe1f0f4ddfc70d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c011f5ac71cd472652f5dc6dd8e2295e22c4da0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328621"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354291"
 ---
 # <a name="specifying-ac-3-data-ranges"></a>指定 AC-3 数据范围
 
@@ -42,7 +42,7 @@ ms.locfileid: "63328621"
                       DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_DOLBY_AC3_SPDIF)
 ```
 
-以下代码示例演示如何指定 WaveCyclic 或 WavePci 微型端口驱动程序[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)表支持 AC-3-over-S/PDIF 格式 pin 条目：
+以下代码示例演示如何指定 WaveCyclic 或 WavePci 微型端口驱动程序[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)表支持 AC-3-over-S/PDIF 格式 pin 条目：
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesAC3Stream[] =

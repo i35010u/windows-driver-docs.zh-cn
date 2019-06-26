@@ -7,12 +7,12 @@ keywords:
 - 音频驱动程序 WDK，供应商选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b5c7c3789db267533e211852f9f4b44ebb68516
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56043e570d6c66a03e8eaf054de26c1588e6f914
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328529"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354132"
 ---
 # <a name="vendor-audio-driver-options"></a>供应商音频驱动程序选项
 
@@ -30,11 +30,11 @@ ms.locfileid: "63328529"
 
 但是，如果这些选项并不足够，供应商可以实现以下项之一：
 
--   专有 KS 筛选器 (请参阅[KS 筛选器](https://msdn.microsoft.com/library/windows/hardware/ff567644))
+-   专有 KS 筛选器 (请参阅[KS 筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-filters))
 
 -   Microsoft 不建议专有 KS 筛选器，因为它们是很难实现，且不必要的大多数 ISA、 PCI 和 USB 设备。
 
--   Stream 类微型驱动程序 (请参阅[流式处理微型驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568277))
+-   Stream 类微型驱动程序 (请参阅[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2))
 
 -   Microsoft 不建议专有流类微型驱动程序，因为它难以实现，但也可以是适用于集成音频和视频的设备。
 

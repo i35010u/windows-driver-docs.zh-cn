@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_TASK_OFFLOAD
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89d1bb66da0b8a06997f4b619514cce89fe514f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85a5b7920351589b5b0043fa581004223763f116
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353698"
 ---
 # <a name="oidtcptaskoffload"></a>OID_TCP_TASK_OFFLOAD
 
@@ -19,23 +19,23 @@ ms.locfileid: "63350907"
 
 ## <a name="querying-offload-capabilities"></a>查询卸载功能
 
-当主机堆栈查询 OID_TCP_TASK_OFFLOAD 时，它会提供在*InformationBuffer* [NDIS_TASK_OFFLOAD_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff559004)结构。 此结构有如下规定：
+当主机堆栈查询 OID_TCP_TASK_OFFLOAD 时，它会提供在*InformationBuffer* [NDIS_TASK_OFFLOAD_HEADER](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559004(v=vs.85))结构。 此结构有如下规定：
 
 - 由主机堆栈支持卸载版本。
 - 为封装格式发送和接收数据包由主机堆栈处理。
 - 此类数据包封装标头的大小。
 
-使用此信息，微型端口驱动程序或其 NIC 可以传输数据包，这是用于执行卸载任务的先决条件中找到第一个 IP 标头的开头。 卸载目标需要知道到封装格式进程接收数据包。 OID_TCP_TASK_OFFLOAD 的查询响应，微型端口驱动程序或卸载目标返回时，在*InformationBuffer*，NDIS_TASK_OFFLOAD_HEADER 结构后面紧跟一个或多个[NDIS_TASK_卸载](https://msdn.microsoft.com/library/windows/hardware/ff558995)结构。 每个 NDIS_TASK_OFFLOAD 结构描述的微型端口驱动程序的 NIC 或卸载目标支持的卸载功能。 如果微型端口驱动程序的 NIC 或卸载目标支持多个版本的特定卸载功能，则它应返回一个 NDIS_TASK_OFFLOAD 结构为每个版本。
+使用此信息，微型端口驱动程序或其 NIC 可以传输数据包，这是用于执行卸载任务的先决条件中找到第一个 IP 标头的开头。 卸载目标需要知道到封装格式进程接收数据包。 OID_TCP_TASK_OFFLOAD 的查询响应，微型端口驱动程序或卸载目标返回时，在*InformationBuffer*，NDIS_TASK_OFFLOAD_HEADER 结构后面紧跟一个或多个[NDIS_TASK_卸载](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff558995(v=vs.85))结构。 每个 NDIS_TASK_OFFLOAD 结构描述的微型端口驱动程序的 NIC 或卸载目标支持的卸载功能。 如果微型端口驱动程序的 NIC 或卸载目标支持多个版本的特定卸载功能，则它应返回一个 NDIS_TASK_OFFLOAD 结构为每个版本。
 
 每个 NDIS_TASK_OFFLOAD 结构已**任务**成员，用于指定特定卸载的功能结构取决于。 每个 NDIS_TASK_OFFLOAD 结构还有**TaskBuffer** ，其中包含与指定的卸载功能相关的信息。 中的信息**TaskBuffer**格式化为一个以下结构：
 
-- [NDIS_TASK_TCP_IP_CHECKSUM](https://msdn.microsoft.com/library/windows/hardware/ff559004)  
+- [NDIS_TASK_TCP_IP_CHECKSUM](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559004(v=vs.85))  
     指定校验和卸载功能。
-- [NDIS_TASK_IPSEC](https://msdn.microsoft.com/library/windows/hardware/ff558990)  
+- [NDIS_TASK_IPSEC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff558990(v=vs.85))  
     指定 Internet 协议安全 (IPsec) 卸载功能。
-- [NDIS_TASK_TCP_LARGE_SEND](https://msdn.microsoft.com/library/windows/hardware/ff559008)  
+- [NDIS_TASK_TCP_LARGE_SEND](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559008(v=vs.85))  
     指定大型 TCP 数据包分段功能。
-- [NDIS_TASK_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567873)  
+- [NDIS_TASK_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)  
     指定 TCP 烟囱卸载功能。 NDIS_TASK_TCP_CONNECTION_OFFLOAD 的详细信息，请参阅[TCP 烟囱卸载](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)。
 
 > [!NOTE]
@@ -53,10 +53,10 @@ ms.locfileid: "63350907"
 
 卸载目标可以使用暂停或恢复将卸载指示若要更改其报告的 TCP 卸载功能：
 
-- 卸载目标调用，从而使暂停指示[NdisMIndicateStatusEx](https://msdn.microsoft.com/library/windows/hardware/ff563600) NDIS_STATUS_INDICATION 配合->**StatusCode**成员设置为 NDIS_STATUS_OFFLOAD_PAUSE。
+- 卸载目标调用，从而使暂停指示[NdisMIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex) NDIS_STATUS_INDICATION 配合->**StatusCode**成员设置为 NDIS_STATUS_OFFLOAD_PAUSE。
 - 卸载目标调用，从而使恢复指示**NdisMIndicateStatusEx** NDIS_STATUS_INDICATION 配合->**StatusCode**成员设置为 NDIS_STATUS_OFFLOAD_RESUME。
 
-卸载目标请求主机堆栈继续卸载状态对象后，主机堆栈查询 OID_TCP_TASK_OFFLOAD 再次以获取卸载目标的 TCP 卸载修订后的功能。 有关详细信息，请参阅[NDIS_STATUS_OFFLOAD_RESUME](https://msdn.microsoft.com/library/windows/hardware/ff567405)。
+卸载目标请求主机堆栈继续卸载状态对象后，主机堆栈查询 OID_TCP_TASK_OFFLOAD 再次以获取卸载目标的 TCP 卸载修订后的功能。 有关详细信息，请参阅[NDIS_STATUS_OFFLOAD_RESUME](https://docs.microsoft.com/windows-hardware/drivers/network/)。
 
 ## <a name="disabling-offload-capabilities"></a>禁用卸载功能
 

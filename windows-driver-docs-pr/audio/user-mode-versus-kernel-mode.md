@@ -14,12 +14,12 @@ keywords:
 - DirectMusic 内核模式 WDK 音频，对应于用户模式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a94943d2ec07fe783963e6b1c4e3595da0e5419
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bf38a3b33d390384fac8d84331edce018554269
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335336"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354142"
 ---
 # <a name="user-mode-versus-kernel-mode"></a>用户模式与内核模式
 
@@ -29,7 +29,7 @@ ms.locfileid: "63335336"
 
 可以编写自定义的合成器为在用户模式或内核模式下运行。 一般情况下，软件 synths 更轻松地实现在用户模式下，但它们通常可以实现在内核模式下更低的延迟。 可以仅在内核模式下支持硬件组件。 充分的理由存在，但是，对于初级开发在用户模式下，即使最终实现是在内核模式下运行。
 
-构建软件合成器 （和批接收器） 是在用户模式下要简单得多。 用户模式接口是易于使用，并且调试已得到简化。 另一个好处是，生成的组件是 Microsoft Windows 可执行文件。 此可执行文件是一个 COM 对象，因为安装它是只需使用 regsvr32.exe 命令行自注册。 (RegSvr32 系统应用程序调用 DLL 的[ **DllRegisterServer** ](https://msdn.microsoft.com/library/windows/desktop/ms682162)函数。 有关详细信息，请参阅 Microsoft Windows SDK 文档。）
+构建软件合成器 （和批接收器） 是在用户模式下要简单得多。 用户模式接口是易于使用，并且调试已得到简化。 另一个好处是，生成的组件是 Microsoft Windows 可执行文件。 此可执行文件是一个 COM 对象，因为安装它是只需使用 regsvr32.exe 命令行自注册。 (RegSvr32 系统应用程序调用 DLL 的[ **DllRegisterServer** ](https://docs.microsoft.com/windows/desktop/api/olectl/nf-olectl-dllregisterserver)函数。 有关详细信息，请参阅 Microsoft Windows SDK 文档。）
 
 如果只需要一个用户模式下实现，可交付产品的应用程序而不是一个驱动程序。 用户可以避免复杂的驱动程序安装过程中，并安装后无需重新启动所需。 然后可以为一个可用的端口，具体取决于是否想要能够使用它其他应用程序枚举用户模式组件。 有关详细信息，请参阅[注册你的合成器](registering-your-synthesizer.md)。
 

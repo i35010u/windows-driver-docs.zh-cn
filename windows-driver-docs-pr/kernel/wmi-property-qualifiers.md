@@ -9,12 +9,12 @@ keywords:
 - 标准 MOF 限定符 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86dd32e25cfe4a16e8a0c379abed235015420850
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77aa7f128916d1d6b13def23324f3d733bb573c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327227"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353776"
 ---
 # <a name="wmi-property-qualifiers"></a>WMI 属性限定符
 
@@ -24,7 +24,7 @@ ms.locfileid: "63327227"
 
 下表列出了必需和可选 MOF 属性限定符可用于定义在 WMI 数据或事件块中的项。
 
-以下是标准 MOF 限定符：**键**，**读取**，**编写**， **ValueMap**，并**值**. 有关这些和其他标准 MOF 限定符的详细信息，请参阅[MOF 数据类型](https://msdn.microsoft.com/library/aa392392)。
+以下是标准 MOF 限定符：**键**，**读取**，**编写**， **ValueMap**，并**值**. 有关这些和其他标准 MOF 限定符的详细信息，请参阅[MOF 数据类型](https://docs.microsoft.com/windows/desktop/WmiSdk/mof-data-types)。
 
 <table>
 <colgroup>

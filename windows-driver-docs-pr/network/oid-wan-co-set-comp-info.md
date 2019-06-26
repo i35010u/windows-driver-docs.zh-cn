@@ -5,12 +5,12 @@ ms.assetid: f3b6b846-fa8c-425b-ba05-45927e744d66
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WAN_CO_SET_COMP_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 574d3fcc2015278bd6fb41a9e9086fde02af3d30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aaa9f7ab189e69e1e25c26941a6ceb1a362a700e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384235"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353670"
 ---
 # <a name="oidwancosetcompinfo"></a>OID\_WAN\_共同\_设置\_COMP\_信息
 
@@ -40,7 +40,7 @@ OID\_WAN\_共同\_设置\_COMP\_信息 OID 通知到的微型端口驱动程序�
 <a name="remarks"></a>备注
 -------
 
-有关详细信息的 NDIS\_WAN\_压缩\_信息结构，请参阅[OID\_WAN\_获取\_COMP\_信息](https://msdn.microsoft.com/library/windows/hardware/ff561202)。
+有关详细信息的 NDIS\_WAN\_压缩\_信息结构，请参阅[OID\_WAN\_获取\_COMP\_信息](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561202(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------

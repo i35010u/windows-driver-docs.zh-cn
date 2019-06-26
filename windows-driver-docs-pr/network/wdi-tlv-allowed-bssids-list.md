@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ALLOWED_BSSIDS_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aa222b0cd05be2ae522a9467116816cb1481aff3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5781064e68631a50f8a762abc26a2b4236861c37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353620"
 ---
 # <a name="wditlvallowedbssidslist"></a>WDI\_TLV\_ALLOWED\_BSSIDS\_LIST
 
@@ -26,14 +26,14 @@ WDI\_TLV\_允许\_BSSIDS\_列表是包含一系列允许关联所使用的 BSSID
 ## <a name="length"></a>长度
 
 
-数组的大小 （以字节为单位） [ **WDI\_MAC\_地址**](https://msdn.microsoft.com/library/windows/hardware/dn926071)结构。 该数组必须包含一个或多个结构。
+数组的大小 （以字节为单位） [ **WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构。 该数组必须包含一个或多个结构。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                  | 描述                                                   |
 |-------------------------------------------------------|---------------------------------------------------------------|
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071)\[\] | BSSIDs 允许关联所使用的列表。 |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | BSSIDs 允许关联所使用的列表。 |
 
  
 

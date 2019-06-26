@@ -3,12 +3,12 @@ title: 3D 打印合作伙伴加入指南
 description: 本主题介绍如何在 Windows 更新上实现 3D 打印机驱动程序，然后发布。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a923651df76199d8ff6179c1475c271ebad2e33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f43fad2f1559e503a2eefaba54207d9b238e872
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355212"
 ---
 # <a name="3d-print-partner-onboarding-guide"></a>3D 打印合作伙伴加入指南
 
@@ -20,9 +20,9 @@ ms.locfileid: "63323539"
 
 ### <a name="upper-driver-render-filter"></a>上部驱动程序 （呈现筛选器）
 
-- 实现切片器。 驱动程序采用[3MF](http://www.3mf.io)作为输入，生成 G 代码或其他类似的计算机级数据。
+- 实现切片器。 驱动程序采用[3MF](https://3mf.io/)作为输入，生成 G 代码或其他类似的计算机级数据。
 
-- 创建打印队列。 该设备将显示下**设备和打印机**并在**3D 打印对话框**为兼容[3D 打印应用程序](https://developer.microsoft.com/windows/hardware/3d-software-partners)。
+- 创建打印队列。 该设备将显示下**设备和打印机**并在**3D 打印对话框**为兼容[3D 打印应用程序](https://developer.microsoft.com/windows/hardware/3d-print/software-partners)。
 
 ### <a name="lower-driver-usb-driver"></a>较低的驱动程序 （USB 驱动程序）
 
@@ -44,7 +44,7 @@ ms.locfileid: "63323539"
 
 1. 获取并验证设备 USB 硬件 ID
 
-    - 请确保设备固件具有唯一供应商 ID 和产品 ID (VID/PID) 由分配[USB 实现论坛 (USB-如果)](http://www.usb.org)。 对于 USBSER 设备，我们强烈建议使用唯一的序列号以防止冲突在 USB 端口的更改。
+    - 请确保设备固件具有唯一供应商 ID 和产品 ID (VID/PID) 由分配[USB 实现论坛 (USB-如果)](https://www.usb.org/)。 对于 USBSER 设备，我们强烈建议使用唯一的序列号以防止冲突在 USB 端口的更改。
 
 2. 安装 Microsoft 工具和 Sdk
 

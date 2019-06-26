@@ -4,12 +4,12 @@ description: OEM 徽标和更新文本，有两个组件固件更新启动屏幕
 ms.assetid: 7ACD6BFC-AB92-4BCC-A9E1-9574D959B577
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 02f07f71943a6ad1a5433d26da7c66b01be0f8e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 859cf078853357f1b1dd98f6f37f032165dacaa0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354000"
 ---
 # <a name="boot-screen-components"></a>启动屏幕组件
 
@@ -58,7 +58,7 @@ BGRT 中两个重要的字段是"图像偏移量 X"和"图像偏移量 Y"。 这
 > [!NOTE]
 > OEM 徽标不出现在任何满足在 OOBE 屏幕上。
 
-有关 BGRT 的其他详细信息，请参阅部分 5.2.22[高级配置和电源接口 (ACPI) 规范](https://www.uefi.org/specifications)。
+有关 BGRT 的其他详细信息，请参阅部分 5.2.22[高级配置和电源接口 (ACPI) 规范](https://uefi.org/specifications)。
 
 ## <a name="update-text"></a>更新文本
 
@@ -165,7 +165,7 @@ BGRT 中两个重要的字段是"图像偏移量 X"和"图像偏移量 Y"。 这
 
 固件更新显示 capsule 建模从启动图形资源表 (BGRT) 在 ACPI 5.0 中定义。 BGRT 定义系统固件来提供到 OS 启动加载程序的图形的机制。 尽管两个表类似，有几个明显的差异。
 
-| BGRT | 固件更新显示 capsule | 原因 |
+| BGRT | 固件更新显示 capsule | Reason |
 |---|---|---|
 | 指向位图 | 通过嵌入位图，capsule 保存和还原单个操作。 | 0 |
 | 不包含视频模式 | 包含视频的模式 | 为了避免 UpdateCapsule 调用期间需要为查询视频模式的固件。 |

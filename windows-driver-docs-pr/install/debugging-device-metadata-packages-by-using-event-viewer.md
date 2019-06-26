@@ -4,12 +4,12 @@ description: 使用事件查看器调试设备元数据包
 ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10a6ba2d48a0d191822a799c9bb33e8f2308af01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8c344aa0a8079cd50004f3b82e0fe25bf046021
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352074"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353394"
 ---
 # <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>使用事件查看器调试设备元数据包
 
@@ -107,7 +107,7 @@ Dmrc 如何查询安装特定设备的设备元数据包。
 
 -   事件的说明。
 
--   设备查找密钥，如设备的硬件 ID 或模型 id。 有关详细信息，请参阅[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)并[ **ModelID**](https://msdn.microsoft.com/library/windows/hardware/ff549295)。
+-   设备查找密钥，如设备的硬件 ID 或模型 id。 有关详细信息，请参阅[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))并[ **ModelID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
 
     **请注意**  硬件的列表 Id 作为参数传递时，仅限最具体的硬件 ID 将记录。
 

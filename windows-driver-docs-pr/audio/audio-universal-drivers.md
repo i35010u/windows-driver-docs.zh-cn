@@ -4,12 +4,12 @@ description: Windows 10 中，您可以编写一个通用的音频驱动程序�
 ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 795050c4d65f5be9d98dfc14572bd782bcb5d751
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c11f2ac001beee53b1d41839cc15468cd9a7e7ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355624"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>音频的通用 Windows 驱动程序
 
@@ -21,15 +21,15 @@ Ihv 可以开发适用于所有设备 （台式计算机、 便携式计算机�
 
 这些工具可以用来开发通用 Windows 驱动程序支持：
 
-- Visual Studio 2015 的支持：没有要将"目标平台"设置为等于"世界"的驱动程序设置。 有关设置驱动程序开发环境的详细信息，请参阅[通用 Windows 驱动程序入门](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)。
+- Visual Studio 2015 的支持：没有要将"目标平台"设置为等于"世界"的驱动程序设置。 有关设置驱动程序开发环境的详细信息，请参阅[通用 Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers)。
 
-- APIValidator 工具：你可以使用 ApiValidator.exe 工具验证你的驱动程序调用的 API 是否对通用 Windows 驱动程序有效。 此工具是一部分适用于 Windows 10 的 Windows Driver Kit (WDK)，如果您使用的 Visual Studio 2015 将自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)。
+- APIValidator 工具：你可以使用 ApiValidator.exe 工具验证你的驱动程序调用的 API 是否对通用 Windows 驱动程序有效。 此工具是一部分适用于 Windows 10 的 Windows Driver Kit (WDK)，如果您使用的 Visual Studio 2015 将自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
-- 更新的 DDI 参考文档：正在更新 DDI 参考文档，以指示哪些 DDIs 支持通用 Windows 驱动程序。 有关详细信息，请参阅[音频设备引用](https://msdn.microsoft.com/library/windows/hardware/ff536192)。
+- 更新的 DDI 参考文档：正在更新 DDI 参考文档，以指示哪些 DDIs 支持通用 Windows 驱动程序。 有关详细信息，请参阅[音频设备引用](https://docs.microsoft.com/previous-versions/ff536192(v=vs.85))。
 
 ## <a name="create-a-universal-audio-driver"></a>创建通用的音频驱动程序
 
-有关分步指南，请参阅[通用 Windows 驱动程序入门](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)。 下面是这些步骤的摘要：
+有关分步指南，请参阅[通用 Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers)。 下面是这些步骤的摘要：
 
 1. 加载通用音频 sysvad 示例使用作为起始点的通用音频驱动程序。 或者，空 WDM 驱动程序模板开始，并根据需要为音频驱动程序代码中添加通用 sysvad 示例。
 
@@ -49,29 +49,29 @@ Sysvad 和 SwapAPO 都已转换为通用 Windows 驱动程序示例。 有关详
 
 使用通用的音频驱动程序时，为以下 DDIs 都是可用。
 
-- [音频驱动程序的事件集](https://msdn.microsoft.com/library/windows/hardware/ff536195)
+- [音频驱动程序的事件集](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-event-sets)
 
-- [音频驱动程序接口](https://msdn.microsoft.com/library/windows/hardware/ff536196)
+- [音频驱动程序接口](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-interfaces)
 
-- [音频驱动程序的属性集](https://msdn.microsoft.com/library/windows/hardware/ff536197)
+- [音频驱动程序的属性集](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)
 
-- [音频驱动程序结构](https://msdn.microsoft.com/library/windows/hardware/ff536198)
+- [音频驱动程序结构](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-structures)
 
-- [音频拓扑节点](https://msdn.microsoft.com/library/windows/hardware/ff536219)
+- [音频拓扑节点](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)
 
-- [高清晰度音频 DDI 引用](https://msdn.microsoft.com/library/windows/hardware/ff536445)
+- [高清晰度音频 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/audio/high-definition-audio-ddi-reference)
 
-- [端口类音频驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff537764)
+- [端口类音频驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/audio/port-class-audio-driver-reference)
 
 ## <a name="convert-an-existing-audio-driver-to-a-universal-windows-driver"></a>将现有的音频驱动程序转换为通用 Windows 驱动程序
 
 请按照此过程将现有的音频驱动程序转换为通用 Windows 驱动程序。
 
-1. 确定是否将在 OneCoreUAP Windows 上运行现有的驱动程序调用。 检查引用页的要求部分。 有关详细信息请参阅[音频设备引用](https://msdn.microsoft.com/library/windows/hardware/ff536192)。
+1. 确定是否将在 OneCoreUAP Windows 上运行现有的驱动程序调用。 检查引用页的要求部分。 有关详细信息请参阅[音频设备引用](https://docs.microsoft.com/previous-versions/ff536192(v=vs.85))。
 
 2. 作为通用 Windows 驱动程序，重新编译您的驱动程序。 在项目属性中，设置为"通用"的目标平台。
 
-3. 使用 ApiValidator.exe 工具验证 DDIs 驱动程序调用适用于通用 Windows 驱动程序。 此工具是一部分适用于 Windows 10 的 Windows Driver Kit (WDK)，如果您使用的 Visual Studio 2015 将自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)。
+3. 使用 ApiValidator.exe 工具验证 DDIs 驱动程序调用适用于通用 Windows 驱动程序。 此工具是一部分适用于 Windows 10 的 Windows Driver Kit (WDK)，如果您使用的 Visual Studio 2015 将自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
 4. 如果该驱动程序调用不属于 OneCoreUAP 的接口，则编译器将显示错误。
 
@@ -128,7 +128,7 @@ APO INF 包，必须提交到合作伙伴中心单独从基础驱动程序包。
 
 ### <a name="programmatically-launching-uwp-hardware-support-apps"></a>以编程方式启动 UWP 硬件支持应用程序
 
-若要以编程方式启动 UWP 硬件支持应用程序中，基于驱动程序事件 （例如，在新的音频设备连接时），请使用 Windows Shell Api。 Windows 10 Shell Api 支持一种方法启动 UWP 用户界面基于资源激活或通过直接[IApplicationActivationManager](https://msdn.microsoft.com/library/windows/desktop/hh706903.aspx)。 您可以找到更多详细信息中的 UWP 应用程序自动启动[自动启动的 Windows 10 UWP 应用](https://docs.microsoft.com/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)。  
+若要以编程方式启动 UWP 硬件支持应用程序中，基于驱动程序事件 （例如，在新的音频设备连接时），请使用 Windows Shell Api。 Windows 10 Shell Api 支持一种方法启动 UWP 用户界面基于资源激活或通过直接[IApplicationActivationManager](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)。 您可以找到更多详细信息中的 UWP 应用程序自动启动[自动启动的 Windows 10 UWP 应用](https://docs.microsoft.com/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)。  
 
 ### <a name="apo-and-device-driver-vendor-use-of-the-audiomodules-api"></a>APO、 设备驱动程序供应商使用 AudioModules API
 
@@ -234,7 +234,7 @@ Windows 服务不是为管理用户模式组件，如不是绝对必需，但是
    C:\Program Files (x86)\Windows Kits\10\src\audio\sysvad\x64\Debug\package`
    ```
 
-4. 遵循中的指导[创建包](https://msdn.microsoft.com/library/dn756642)创建包含移动映像的驱动程序文件的包。
+4. 遵循中的指导[创建包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))创建包含移动映像的驱动程序文件的包。
 
 5. 若要安装移动驱动程序包 （.spkg 文件），您需要将程序包合并到一个移动的 OS 映像。 使用 ImgGen.spkg 驱动程序包添加到可以然后刷新为移动设备的完整闪存更新 (FFU) 映像。 可能需要删除移动的映像，以允许进行测试的 sysvad 虚拟音频驱动程序中存在其他音频驱动程序。
 
