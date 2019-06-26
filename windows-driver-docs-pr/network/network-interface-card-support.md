@@ -11,12 +11,12 @@ keywords:
 - 非主总线 DMA Nic WDK 网络
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2095da6be5896f18f07cde40b9e4e40274bfc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b2aa3ec1d96a52b8d4f3b66d2b1a2b961b30ceb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357673"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386324"
 ---
 # <a name="network-interface-card-support"></a>网络接口卡支持
 
@@ -24,9 +24,9 @@ ms.locfileid: "63357673"
 
 ## <a name="reporting-a-nics-medium-type-to-ndis"></a>报告到 NDIS NIC 的介质类型
 
-若要报告 NIC 的介质类型，微型端口驱动程序，将传递一个指向[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)结构中*MiniportAttributes*的参数[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)函数。 微型端口驱动程序调用**NdisMSetMiniportAttributes**从其[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)在初始化过程中的函数。 微型端口驱动程序应设置*MiniportAttributes*属性中设置的注册属性后[ **NDIS\_微型端口\_适配器\_注册\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)结构并且之前设置其他属性。 设置*MiniportAttributes*属性是必需的。 驱动程序集**MediaType**的成员**NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**结构为相应的媒体类型设置时*MiniportAttributes*属性。
+若要报告 NIC 的介质类型，微型端口驱动程序，将传递一个指向[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构中*MiniportAttributes*的参数[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。 微型端口驱动程序调用**NdisMSetMiniportAttributes**从其[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)在初始化过程中的函数。 微型端口驱动程序应设置*MiniportAttributes*属性中设置的注册属性后[ **NDIS\_微型端口\_适配器\_注册\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构并且之前设置其他属性。 设置*MiniportAttributes*属性是必需的。 驱动程序集**MediaType**的成员**NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**结构为相应的媒体类型设置时*MiniportAttributes*属性。
 
-当基础的 NDIS 协议驱动程序调用[ **NdisOpenAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563715)要绑定到指定的微型端口适配器，它提供中等类型可以对的列表。 NDIS 使用从微型端口驱动程序和协议驱动程序的信息来设置绑定。 此绑定将向上和向下驱动程序堆栈的网络数据传输提供的路径。
+当基础的 NDIS 协议驱动程序调用[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)要绑定到指定的微型端口适配器，它提供中等类型可以对的列表。 NDIS 使用从微型端口驱动程序和协议驱动程序的信息来设置绑定。 此绑定将向上和向下驱动程序堆栈的网络数据传输提供的路径。
 
 ## <a name="physical-nics"></a>物理 Nic
 

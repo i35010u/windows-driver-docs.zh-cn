@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1db89acde8da9e7bf76785769b4d2eac45179510
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9344f554202330e3589b557d99dd6a8deb0a7e3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377367"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366711"
 ---
 # <a name="kscategorybdanetworkepg"></a>KSCATEGORY_BDA_NETWORK_EPG
 
 
-KSCATEGORY_BDA_NETWORK_EPG[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 功能类别中的电子版收视指南 (EPG)[广播驱动程序体系结构](https://msdn.microsoft.com/library/windows/hardware/ff556573)(BDA)。
+KSCATEGORY_BDA_NETWORK_EPG[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能类别中的电子版收视指南 (EPG)[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(BDA)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_BDA_NETWORK_EPG[设备接口类](https://msdn.microsoft.com/library/w
 
 BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_EPG 向操作系统指示设备支持 BDA EPG 筛选器的实例。
 
-有关详细信息，请参阅[BDA 筛选器类别 Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)。
+有关详细信息，请参阅[BDA 筛选器类别 Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
 
 <a name="requirements"></a>要求
 ------------

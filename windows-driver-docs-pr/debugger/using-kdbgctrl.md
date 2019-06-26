@@ -9,12 +9,12 @@ keywords:
 - DbgPrint 缓冲区，KDbgCtrl 实用程序
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ee250977198e420ec2a818d18e9953f4efcf9193
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa5f793c64e310947253c91ae7b8043c978dc719
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368620"
 ---
 # <a name="using-kdbgctrl"></a>使用 KDbgCtrl
 
@@ -25,7 +25,7 @@ KDbgCtrl （内核调试控件、 kdbgctrl.exe） 工具可用于控制内核调
 
 KDbgCtrl 可以控制五个不同的设置：完整的内核调试、 自动内核调试，用户模式下的错误处理、 阻止的内核调试和 DbgPrint 缓冲区的大小。
 
-若要使用 KDbgCtrl，您必须已启用的上一次启动之前对目标计算机的启动设置中的内核调试。 KDbgCtrl 不能用于启用内核调试，如果没有这样做。 请参阅[启用调试的启动参数](https://msdn.microsoft.com/library/windows/hardware/ff542279)的详细信息请参阅启动设置。
+若要使用 KDbgCtrl，您必须已启用的上一次启动之前对目标计算机的启动设置中的内核调试。 KDbgCtrl 不能用于启用内核调试，如果没有这样做。 请参阅[启用调试的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-debugging)的详细信息请参阅启动设置。
 
 ### <a name="span-idfullkerneldebuggingspanspan-idfullkerneldebuggingspanfull-kernel-debugging"></a><span id="full_kernel_debugging"></span><span id="FULL_KERNEL_DEBUGGING"></span>完整的内核调试
 

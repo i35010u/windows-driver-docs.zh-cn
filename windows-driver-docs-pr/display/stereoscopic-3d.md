@@ -4,12 +4,12 @@ description: Windows 8 提供了一致的 API 和设备驱动程序接口 (DDI) 
 ms.assetid: 2F83E5C6-E333-4BF6-A133-C65A23DAEF62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cc8dde4ab8c427e0701556e6e721ad6ca162f2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 715a46065d20246bcd534749e35d04f881f8fa05
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376037"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363689"
 ---
 # <a name="stereoscopic-3d"></a>立体 3D
 
@@ -63,31 +63,31 @@ Windows 8 提供了一致的 API 和设备驱动程序接口 (DDI) 平台立体�
 
 这些 DDIs 会更新 Windows 8 上 VidPN 支持立体三维呈现。
 
--   [**D3D11DDIARG\_CREATERESOURCE**](https://msdn.microsoft.com/library/windows/hardware/ff542062)
--   [**D3DDDI\_ALLOCATIONINFO**](https://msdn.microsoft.com/library/windows/hardware/ff544364)
--   [**D3DKMDT\_VIDPN\_源\_模式\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff546727)
--   [**D3DKMT\_PRESENTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff548179)
--   [**DXGI\_DDI\_ARG\_旋转\_资源\_标识**](https://msdn.microsoft.com/library/windows/hardware/ff557476)
--   [**DXGK\_PRESENTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff562005)
--   [**DXGK\_SETVIDPNSOURCEADDRESS\_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff562052)
--   [**DXGKARG\_OPENALLOCATION**](https://msdn.microsoft.com/library/windows/hardware/ff557609)
+-   [**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)
+-   [**D3DDDI\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)
+-   [**D3DKMDT\_VIDPN\_源\_模式\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_vidpn_source_mode_type)
+-   [**D3DKMT\_PRESENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_presentflags)
+-   [**DXGI\_DDI\_ARG\_旋转\_资源\_标识**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_rotate_resource_identities)
+-   [**DXGK\_PRESENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_presentflags)
+-   [**DXGK\_SETVIDPNSOURCEADDRESS\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_setvidpnsourceaddress_flags)
+-   [**DXGKARG\_OPENALLOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_openallocation)
 
 ## <a name="span-idstereoscopic3-dswapchainddisspanspan-idstereoscopic3-dswapchainddisspanspan-idstereoscopic3-dswapchainddisspanstereoscopic-3-d-swapchain-ddis"></a><span id="Stereoscopic_3-D_swapchain_DDIs"></span><span id="stereoscopic_3-d_swapchain_ddis"></span><span id="STEREOSCOPIC_3-D_SWAPCHAIN_DDIS"></span>立体三维 swapchain DDIs
 
 
 这些 DDIs 是新的或更新 Windows 8 支持立体三维交换链。
 
--   [*BltDXGI*](https://msdn.microsoft.com/library/windows/hardware/ff538252)
--   [*Blt1DXGI*](https://msdn.microsoft.com/library/windows/hardware/hh406235)
--   [*CreateResource(D3D10)*](https://msdn.microsoft.com/library/windows/hardware/ff540691)
--   [*CreateResource(D3D11)*](https://msdn.microsoft.com/library/windows/hardware/ff540694)
--   [*RotateResourceIdentitiesDXGI*](https://msdn.microsoft.com/library/windows/hardware/ff569514)
--   [**D3DDDI\_ALLOCATIONINFO**](https://msdn.microsoft.com/library/windows/hardware/ff544364)
--   [**D3D10DDIARG\_CREATERESOURCE**](https://msdn.microsoft.com/library/windows/hardware/ff541697)
--   [**D3D11DDIARG\_CREATERESOURCE**](https://msdn.microsoft.com/library/windows/hardware/ff542062)
--   [**DXGI\_DDI\_ARG\_旋转\_资源\_标识**](https://msdn.microsoft.com/library/windows/hardware/ff557476)
--   [**DXGI\_DDI\_PRESENT\_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff557509)
--   [**DXGI\_DDI\_PRIMARY\_DESC**](https://msdn.microsoft.com/library/windows/hardware/ff557511)
+-   [*BltDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
+-   [*Blt1DXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
+-   [*CreateResource(D3D10)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)
+-   [*CreateResource(D3D11)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)
+-   [*RotateResourceIdentitiesDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)
+-   [**D3DDDI\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)
+-   [**D3D10DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)
+-   [**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)
+-   [**DXGI\_DDI\_ARG\_旋转\_资源\_标识**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_rotate_resource_identities)
+-   [**DXGI\_DDI\_PRESENT\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_present_flags)
+-   [**DXGI\_DDI\_PRIMARY\_DESC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_primary_desc)
 
 ## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>硬件认证要求
 

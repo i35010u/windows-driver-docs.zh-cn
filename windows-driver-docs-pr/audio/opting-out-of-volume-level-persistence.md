@@ -4,12 +4,12 @@ description: 选择退出音量级别持久性
 ms.assetid: e96533be-25e8-49ae-8e56-7105dfa92b5a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d5742006ae28e4a5db2166e674197e4f4ab0f29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d2714ac7bbe5a410ba6827b1c426f370e9ff62a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332275"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363176"
 ---
 # <a name="opting-out-of-volume-level-persistence"></a>选择退出音量级别持久性
 
@@ -18,7 +18,7 @@ ms.locfileid: "63332275"
 
 您可能希望您的驱动程序可以选择不使用卷暂留，如果您的驱动程序必须在其自己的注册表缓存并且在驱动程序加载硬件本身上设置的级别。
 
-若要选择退出使用 INF 文件的卷暂留，请使用[ **AddProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff546318)注册表指令设置主键的值\_AudioDevice\_DontPersistControls 注册表为"1"的键。 默认值为"0"。
+若要选择退出使用 INF 文件的卷暂留，请使用[ **AddProperty** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)注册表指令设置主键的值\_AudioDevice\_DontPersistControls 注册表为"1"的键。 默认值为"0"。
 
 下面的 INF 文件片断演示如何选择退出卷持久性：
 
@@ -55,11 +55,11 @@ MfgName = "My Company Name Inc"
 DeviceDescription = "My WDM device driver"
 ```
 
-**请注意**  前面的 INF 文件片段中，仅显示**版本**部分以及与相关的各部分[ **AddProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff546318)指令。
+**请注意**  前面的 INF 文件片段中，仅显示**版本**部分以及与相关的各部分[ **AddProperty** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)指令。
 
  
 
-**%Mfgname%= CompanyName**行中的条目**制造商**部分引用**CompanyName**部分的位置的模型和硬件 ID (hw id) 的音频的适配器提供了。 本部分中的 INF 文件，其中提供模型和硬件 id 信息，称为*模型部分*。 部分的实际标题是用户定义和在前面的示例很**CompanyName**。 INF 文件的模型部分的详细信息，请参阅[ **INF 模型部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)。
+**%Mfgname%= CompanyName**行中的条目**制造商**部分引用**CompanyName**部分的位置的模型和硬件 ID (hw id) 的音频的适配器提供了。 本部分中的 INF 文件，其中提供模型和硬件 id 信息，称为*模型部分*。 部分的实际标题是用户定义和在前面的示例很**CompanyName**。 INF 文件的模型部分的详细信息，请参阅[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)。
 
 模型部分中，引用有关其他安装程序必须将复制的 INF 文件提供了信息的设备驱动程序安装 (DDInstall) 部分。 本部分中的实际标题是用户定义和在前面的示例很**HdAudModel**。 **需求 = KS。注册...** 行条目提供有关安装程序必须从其检索的 INF 文件内的特定部分数据的信息安装
 
@@ -69,7 +69,7 @@ DeviceDescription = "My WDM device driver"
 
 **HdAudModel**部分显示了第一个注释掉的两个行项。已被注释掉的行项设置的值将设备属性设为"1。 未被注释掉的行项是安装程序读取。 此行条目会导致值的设备属性设置为"0。 当此设备属性设置为"0"时，选择弃用卷持久性的音频设备。
 
-有关 AddProperty 指令的详细信息，请参阅[ **INF AddProperty 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546318)。
+有关 AddProperty 指令的详细信息，请参阅[ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)。
 
 在前面的 INF 文件片段中的属性类别 GUID 和属性 ID 对应的属性名称是主键\_AudioDevice\_DontPersistControls。
 

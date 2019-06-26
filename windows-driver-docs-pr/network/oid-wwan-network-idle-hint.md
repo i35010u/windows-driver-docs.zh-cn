@@ -5,12 +5,12 @@ ms.assetid: 1FE758C1-543A-45B4-A377-336A1307689F
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_NETWORK_IDLE_HINT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e44e2c0c399ee8ea9a1f7c65792ac167324a5892
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2765c66ef4da9ffa395171c5c38a0dabdce77d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388768"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360774"
 ---
 # <a name="oidwwannetworkidlehint"></a>OID\_WWAN\_NETWORK\_IDLE\_HINT
 
@@ -19,7 +19,7 @@ OID\_WWAN\_网络\_空闲\_提示将提示发送到有关是否应数据的接�
 
 不支持查询请求。
 
-微型端口驱动程序必须处理集请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本完成与请求的必需[ **NDIS\_WWAN\_网络\_空闲\_提示**](https://msdn.microsoft.com/library/windows/hardware/dn931088)结构，指示网络空闲提示。
+微型端口驱动程序必须处理集请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本完成与请求的必需[ **NDIS\_WWAN\_网络\_空闲\_提示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)结构，指示网络空闲提示。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,7 +44,7 @@ OID\_WWAN\_网络\_空闲\_提示将提示发送到有关是否应数据的接�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_NETWORK\_IDLE\_HINT**](https://msdn.microsoft.com/library/windows/hardware/dn931088)
+[**NDIS\_WWAN\_NETWORK\_IDLE\_HINT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)
 
  
 

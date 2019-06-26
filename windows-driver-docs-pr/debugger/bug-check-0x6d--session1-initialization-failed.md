@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 623f69c399af907dea23286c3c80248877f01b9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d10097dec8f24a17fc6ed6fa727b8f302ae0448a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361771"
 ---
 # <a name="bug-check-0x6d-session1initializationfailed"></a>Bug 检查 0x6D：SESSION1\_初始化\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367447"
 SESSION1\_初始化\_失败错误检查的值为 0x0000006D。 此 bug 检查指示 Microsoft Windows 操作系统的初始化失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="session1initializationfailed-parameters"></a>SESSION1\_初始化\_失败参数

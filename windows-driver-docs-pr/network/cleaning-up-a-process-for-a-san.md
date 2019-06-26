@@ -7,12 +7,12 @@ keywords:
 - 清理 SAN 过程 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb500a6110faf1eb791207d19128817e5bc84d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d88a75364760a1a0c02e3e427d9a51fa89ca9fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382784"
 ---
 # <a name="cleaning-up-a-process-for-a-san"></a>清理 SAN 的进程
 
@@ -20,7 +20,7 @@ ms.locfileid: "63353301"
 
 
 
-准备就绪以进行清除的进程在其中运行应用程序时，它开始调用 Windows 套接字开关**WSPCleanup**函数。 开关，反过来，调用[ **WSPCleanup** ](https://msdn.microsoft.com/library/windows/hardware/ff566270) TCP/IP 提供程序和所有 SAN 服务提供程序的函数。 所有提供程序应释放它们使用的资源。 例如，资源可以包括用来同步事件的对象和用于执行数据传输的内存。
+准备就绪以进行清除的进程在其中运行应用程序时，它开始调用 Windows 套接字开关**WSPCleanup**函数。 开关，反过来，调用[ **WSPCleanup** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566270(v=vs.85)) TCP/IP 提供程序和所有 SAN 服务提供程序的函数。 所有提供程序应释放它们使用的资源。 例如，资源可以包括用来同步事件的对象和用于执行数据传输的内存。
 
  
 

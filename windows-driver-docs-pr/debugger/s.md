@@ -8,12 +8,12 @@ keywords:
 - 挂起的进程
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c661f34e24ad840f77688ab5336ef6504a606a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c583ab9cf7b5c6c1bbd8244d028ce2667b026ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382013"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366408"
 ---
 # <a name="s"></a>S
 
@@ -33,7 +33,7 @@ ms.locfileid: "63382013"
 引擎对其具有内置筛选器异常事件筛选器。 最具体的异常筛选器是指特定类型的异常 （由异常代码标识），但默认异常筛选器也被称为特定异常筛选器。
 
 <span id="specific_event_filter"></span><span id="SPECIFIC_EVENT_FILTER"></span>**特定事件筛选器**  
-不是异常的事件的事件筛选器。 中列出的特定事件筛选器[**调试\_筛选器\_XXX**](https://msdn.microsoft.com/library/windows/hardware/ff541490)。
+不是异常的事件的事件筛选器。 中列出的特定事件筛选器[**调试\_筛选器\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx)。
 
 <span id="specific_filter"></span><span id="SPECIFIC_FILTER"></span>**特定筛选器**  
 事件筛选器引擎对其具有内置筛选器的事件。

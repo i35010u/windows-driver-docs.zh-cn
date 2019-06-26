@@ -5,12 +5,12 @@ ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18, 19H1
-ms.openlocfilehash: 0fe540b7ecd20887032f968ac2efa4f234f30f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f90dfdd233b62da43af50797b1ee82b9c9e68ed8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391143"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386244"
 ---
 # <a name="whats-new-for-windows-10-display-drivers-wddm-20-and-later"></a>What's new for Windows 10 显示器驱动程序 (WDDM 2.0 及更高版本)
 
@@ -34,7 +34,7 @@ ms.locfileid: "63391143"
 
 Scanout 很快 VBlank，扫描垂直方向从上到下图中，可能会开始和完成下一步 VBlank 之前短暂。 这并不总是的情况下，具体取决于像素时钟的时间和纹理; 中的数据的布局尤其是如果没有可用的实际压缩。 
 
-添加了新 DDIs 分隔并了解转换发生之前 scanout，以便为 （如果可能） 启用前端缓冲区呈现。 请参阅[D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags)并[PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
+添加了新 DDIs 分隔并了解转换发生之前 scanout，以便为 （如果可能） 启用前端缓冲区呈现。 请参阅 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) 和 [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
 
 ### <a name="variable-rate-shading"></a>明暗度变量速率
 
@@ -71,7 +71,7 @@ WDDM 2.6 中的新模型 MSAA 扩展到相反*粗略像素*方向，通过添加
 
 * 每个启发顶点速率，也称为每个基元费率，可用于多个视区，如果 SupportsPerVertexShadingRateWithMultipleViewports cap 标记，则返回 true。 此外，在这种情况下，它可用时 SV_ViewportIndex 写入。
 
-请参阅[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062)并[D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
+请参阅 [PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) 和 [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
 
 ### <a name="collect-diagnostic-info"></a>收集诊断信息
 
@@ -79,15 +79,15 @@ WDDM 2.6 中的新模型 MSAA 扩展到相反*粗略像素*方向，通过添加
 
 新 DDI 应允许 OS 在收集信息随时加载驱动程序。 操作系统将当前使用 DxgkDdiCollectDebugInfo 函数为 TDR （超时检测和恢复） 由查询驱动程序的专用数据微型端口实现的相关案例。 新 DDI 将用于收集数据的原因多种多样。 诊断需要提供所请求的信息类型时，操作系统将调用此 DDI。 该驱动程序应该收集重要调查该问题并将其提交到 OS 的所有私有信息。 将最终弃用，替换为 DxgkDdiCollectDiagnosticInfo DxgkDdiCollectDebugInfo。
 
-请参阅[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
+请参阅 [DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
 
 ### <a name="background-processing"></a>后台处理
 
-后台处理允许用户模式驱动程序来表达所需的行为，并在运行时线程处理来控制/监视器它。 用户模式驱动程序将启动后台线程和分配为低的线程优先级作为可能的并且依赖于 NT 计划程序，以确保这些线程不会中断通常带成功的关键路径线程。
+后台处理允许用户模式驱动程序来表达所需的行为，并在运行时线程处理来控制/监视器它。 用户模式驱动程序将运转后台线程，为线程分配尽量低的优先级，并依赖于 NT 计划程序来确保这些线程不会干扰关键路径线程（一般会成功）。
 
 Api 允许应用将调整后台处理量是适用于其工作负荷，以及何时执行该工作。
 
-请参阅[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
+请参阅 [PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
 
 ### <a name="driver-hot-update"></a>驱动程序热更新
 
@@ -101,7 +101,7 @@ Api 允许应用将调整后台处理量是适用于其工作负荷，以及何�
 
 ### <a name="content-changes"></a>内容更改
 
-| 主题 | date | 描述 |
+| 主题 | Date | 描述 |
 | --- | --- | --- |
 | [EDID HMDs 和专用的显示扩展插件 (VSDB)](specialized-monitors-edid-extension.md) | 12/03/2018 | 显示设备制造商的规范 |
 | [DirectX 图形内核子系统 (Dxgkrnl.sys)](directx-graphics-kernel-subsystem.md) | 12/04/2018 | 通过 Microsoft DirectX 图形内核子系统 (Dxgkrnl.sys) 实现的 Windows 操作系统的内核模式接口。 |
@@ -118,8 +118,8 @@ Api 允许应用将调整后台处理量是适用于其工作负荷，以及何�
 
 有关 raytracing 的详细信息，请参阅：
 
-* [宣布推出 Microsoft DirectX Raytracing](https://blogs.msdn.microsoft.com/directx/2018/03/19/announcing-microsoft-directx-raytracing/)
-* [DirectX Raytracing 和 Windows 10 2018 年 10 月更新](https://blogs.msdn.microsoft.com/directx/2018/10/02/directx-raytracing-and-the-windows-10-october-2018-update/)
+* [宣布推出 Microsoft DirectX Raytracing](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)
+* [DirectX Raytracing 和 Windows 10 2018 年 10 月更新](https://devblogs.microsoft.com/directx/directx-raytracing-and-the-windows-10-october-2018-update/)
 * [DirectX 论坛](https://forums.directxtech.com/index.php?topic=5985.0)
 
 ### <a name="display-synchronization"></a>显示同步
@@ -167,7 +167,7 @@ WDDM 2.0 包括内存管理更新。
 
 ### <a name="driver-residency"></a>驱动程序驻留
 
--   视频内存管理器可确保在提交给驱动程序的命令缓冲区之前分配是驻留在内存中。 为了帮助实现此功能，新用户模式驱动程序设备驱动程序接口 (DDIs) 已添加 ([*MakeResident*](https://msdn.microsoft.com/library/windows/hardware/dn906357)， [ *TrimResidency* ](https://msdn.microsoft.com/library/windows/hardware/dn906364)， [*逐出*](https://msdn.microsoft.com/library/windows/hardware/dn906355))。
+-   视频内存管理器可确保在提交给驱动程序的命令缓冲区之前分配是驻留在内存中。 为了帮助实现此功能，新用户模式驱动程序设备驱动程序接口 (DDIs) 已添加 ([*MakeResident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)， [ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)， [*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb))。
 -   分配和修补程序的位置列表是被淘汰了，因为它不需要在新的模型。
 -   用户模式驱动程序现在负责处理分配跟踪，并且添加了几个新 DDIs 以启用此功能。
 -   驱动程序非常给定内存预算，预期内存压力下调整。 这样，通用 Windows 的驱动程序跨应用程序平台。

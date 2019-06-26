@@ -8,12 +8,12 @@ keywords:
 - Irp WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cee420f417f842a34155f79361d96329b68c03a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dde83f45cf2c9ff7ba6bdbe0b5a328383920e9a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379059"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375706"
 ---
 # <a name="io-requests-generated-by-the-minifilter-driver"></a>由微筛选器驱动程序生成的 I/O 请求
 
@@ -26,57 +26,57 @@ ms.locfileid: "63379059"
 
 筛选器管理器用于创建、 打开、 读取和写入文件提供以下支持例程：
 
-[**FltClose**](https://msdn.microsoft.com/library/windows/hardware/ff541863)
+[**FltClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltclose)
 
-[**FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)
+[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)
 
-[**FltCreateFileEx**](https://msdn.microsoft.com/library/windows/hardware/ff541937)
+[**FltCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefileex)
 
-[**FltReadFile**](https://msdn.microsoft.com/library/windows/hardware/ff544286)
+[**FltReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreadfile)
 
-[**FltWriteFile**](https://msdn.microsoft.com/library/windows/hardware/ff544610)
+[**FltWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltwritefile)
 
 用于设置和删除重新分析点提供了以下支持例程：
 
-[**FltTagFile**](https://msdn.microsoft.com/library/windows/hardware/ff544589)
+[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-flttagfile)
 
-[**FltUntagFile**](https://msdn.microsoft.com/library/windows/hardware/ff544608)
+[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile)
 
 用于生成输入/输出请求提供了以下支持例程：
 
-[*FltAllocateCallbackData*](https://msdn.microsoft.com/library/windows/hardware/ff541703)
+[*FltAllocateCallbackData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecallbackdata)
 
-[**FltFreeCallbackData**](https://msdn.microsoft.com/library/windows/hardware/ff542949)
+[**FltFreeCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreecallbackdata)
 
-[**FltPerformAsynchronousIo**](https://msdn.microsoft.com/library/windows/hardware/ff543420)
+[**FltPerformAsynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltperformasynchronousio)
 
-[*FltPerformSynchronousIo*](https://msdn.microsoft.com/library/windows/hardware/ff543421)
+[*FltPerformSynchronousIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltperformsynchronousio)
 
-[**FltReuseCallbackData**](https://msdn.microsoft.com/library/windows/hardware/ff544358)
+[**FltReuseCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreusecallbackdata)
 
 用于取消文件打开请求和重新签发的 I/O 请求提供了以下支持例程：
 
-[**FltCancelFileOpen**](https://msdn.microsoft.com/library/windows/hardware/ff541784)
+[**FltCancelFileOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcancelfileopen)
 
-[**FltReissueSynchronousIo**](https://msdn.microsoft.com/library/windows/hardware/ff544311)
+[**FltReissueSynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreissuesynchronousio)
 
 筛选器管理器还提供了以下常规用途例程：
 
-[**FltDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542046)
+[**FltDeviceIoControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeviceiocontrolfile)
 
-[**FltFlushBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff542099)
+[**FltFlushBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltflushbuffers)
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**FltQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff543439)
+[**FltQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryinformationfile)
 
-[**FltQuerySecurityObject**](https://msdn.microsoft.com/library/windows/hardware/ff543441)
+[**FltQuerySecurityObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltquerysecurityobject)
 
-[**FltQueryVolumeInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff543446)
+[**FltQueryVolumeInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryvolumeinformationfile)
 
-[**FltSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff544516)
+[**FltSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetinformationfile)
 
-[**FltSetSecurityObject**](https://msdn.microsoft.com/library/windows/hardware/ff544538)
+[**FltSetSecurityObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetsecurityobject)
 
  
 

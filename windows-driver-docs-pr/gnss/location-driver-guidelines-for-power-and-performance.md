@@ -4,12 +4,12 @@ description: 以下各节介绍准则以确保您位置的驱动程序，以节�
 ms.assetid: 81B9A3A1-D273-48C8-A808-CDB1533A1B6A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf754176ec9cacb224eae7ccd8c883bda638cf9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c315186a98d2aab5f70a73c1fa30584811ceed4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371043"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363655"
 ---
 # <a name="location-driver-guidelines-for-power-and-performance"></a>位置驱动程序功率和性能指南
 
@@ -22,7 +22,7 @@ ms.locfileid: "63371043"
 
 当连接的客户端数为零时，位置传感器应输入最低可能的电源状态，最好是 D3。 当一个事件指示客户端连接时，传感器应退出低功耗状态，并获取数据。
 
-此外，如果位置设备包含单选，例如 GPS 位置传感器，然后单选状态必须也使用跟踪[无线电管理](https://msdn.microsoft.com/library/windows/hardware/hh406615)。 驱动程序编写器必须创建用于设置单选的状态的驱动程序进行通信的单选管理实现。 单选管理实现以及如何与驱动程序进行通信的一个示例是在[传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)。
+此外，如果位置设备包含单选，例如 GPS 位置传感器，然后单选状态必须也使用跟踪[无线电管理](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))。 驱动程序编写器必须创建用于设置单选的状态的驱动程序进行通信的单选管理实现。 单选管理实现以及如何与驱动程序进行通信的一个示例是在[传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)。
 
 跟踪时连接的客户端和广播状态，位置传感器应输入最低可能的电源状态，最好是 D3，在没有连接的客户端上单选时任何时间。 下图展示了连接的客户端、 单选状态，并建议相应的设备状态的状态机。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63371043"
 
 |               |             |                  |                   |            |               |             |
 |---------------|-------------|------------------|-------------------|------------|---------------|-------------|
-| 输入        |             |                  |                   | 输出    |               |             |
+| 输入        |             |                  |                   | outputs    |               |             |
 | 客户端存在 | 无线电收发器状态 | CRI              | 位置报告 | ASIC 状态 | 传感器状态  | 电源状态 |
 | 否            | Any         | Any              | Any               | 关闭        | 不可用           | D3          |
 | 是           | 开          | &lt;= 120 秒 | 否                | 开         | 初始化  | D0          |
@@ -49,7 +49,7 @@ ms.locfileid: "63371043"
 
 通过订阅事件，使用位置数据的应用程序通过设置传感器请求数据更新事件的最大频率\_属性\_当前\_报表\_间隔属性。 为节省电源，您的驱动程序应不频率高于最低请求的报告间隔发送数据报告。
 
-有关如何跟踪每个应用程序的值的详细信息，请参阅[筛选数据](https://msdn.microsoft.com/library/windows/hardware/hh706201)。 此外可以找到示例的跟踪中的报告间隔[传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)WDK 中。
+有关如何跟踪每个应用程序的值的详细信息，请参阅[筛选数据](https://docs.microsoft.com/windows-hardware/drivers/sensors/filtering-data)。 此外可以找到示例的跟踪中的报告间隔[传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)WDK 中。
 
 ### <a name="tracking-desired-accuracy"></a>跟踪所需的准确性
 
@@ -65,7 +65,7 @@ ms.locfileid: "63371043"
 
 ### <a name="detecting-idle-states"></a>检测空闲状态
 
-您的驱动程序应检测空闲状态，并进入低功耗状态。 例如，GPS 设备的位置不会更改，没有任何挂起的 I/O 请求，或数据不可用时，可能会出现空闲状态。 如果你的 GPS 或 GNSS 设备通过 USB 中实现时，它必须支持选择性挂起。 请参阅[支持空闲电源关闭基于 UMDF 驱动程序中](https://msdn.microsoft.com/library/windows/hardware/ff561211.aspx)的详细信息。
+您的驱动程序应检测空闲状态，并进入低功耗状态。 例如，GPS 设备的位置不会更改，没有任何挂起的 I/O 请求，或数据不可用时，可能会出现空闲状态。 如果你的 GPS 或 GNSS 设备通过 USB 中实现时，它必须支持选择性挂起。 请参阅[支持空闲电源关闭基于 UMDF 驱动程序中](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-idle-power-down-in-umdf-drivers)的详细信息。
 
 ### <a name="position-injection-for-gps-and-gnss"></a>GPS 和 GNSS 位置注入
 
@@ -79,7 +79,7 @@ GPS 或 GNSS 传感器可用于三角测量传感器数据在系统上加快了�
 
  
 
-**重要**  不实例化[ **ILocation** ](https://msdn.microsoft.com/library/windows/desktop/dd317674)从其他位置传感器获取数据。 请改用传感器 API ([**ISensorManager**](https://msdn.microsoft.com/library/windows/desktop/dd318946))。
+**重要**  不实例化[ **ILocation** ](https://docs.microsoft.com/windows/desktop/api/locationapi/nn-locationapi-ilocation)从其他位置传感器获取数据。 请改用传感器 API ([**ISensorManager**](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nn-sensorsapi-isensormanager))。
 
  
 
@@ -87,7 +87,7 @@ GPS 或 GNSS 传感器可用于三角测量传感器数据在系统上加快了�
 
  
 
-若要访问三角测量传感器，请调用[ **ISensorManager::GetSensorByType** ](https://msdn.microsoft.com/library/windows/desktop/dd318866)类型传感器\_类型\_位置\_三角测量。 这将返回所有三角测量传感器，其中包括内置于 Windows 8 Windows 位置提供程序。 GPS 驱动程序必须能够处理任何位置从零到多个传感器返回的传感器。 请参阅[检索的传感器对象](https://msdn.microsoft.com/library/windows/desktop/dd318960)有关详细信息的使用**GetSensorsByType**。
+若要访问三角测量传感器，请调用[ **ISensorManager::GetSensorByType** ](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensormanager-getsensorsbytype)类型传感器\_类型\_位置\_三角测量。 这将返回所有三角测量传感器，其中包括内置于 Windows 8 Windows 位置提供程序。 GPS 驱动程序必须能够处理任何位置从零到多个传感器返回的传感器。 请参阅[检索的传感器对象](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-a-sensor)有关详细信息的使用**GetSensorsByType**。
 
 **请注意**  的 Windows 位置提供程序不提供任何保证的准确性或可用性。
 

@@ -4,12 +4,12 @@ description: 设计移动宽带应用的登陆页面
 ms.assetid: 3a42886f-8a32-4576-af31-65443bb718ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e9f8d7ba8c0f644190989d2e8ccb0789adcbb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c54350bcb3064dc7a21b23143306483734b87f58
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393477"
 ---
 # <a name="design-the-landing-page-of-a-mobile-broadband-app"></a>设计移动宽带应用的登陆页面
 
@@ -64,13 +64,13 @@ ms.locfileid: "56564223"
 
 描述的登陆页面，时，一定要考虑在应用程序中的导航。 你的应用具有多页，具有各种目的。 Windows 10 提供了可用于导航的以下工具：
 
--   **后退按钮**后退按钮可用于返回到应用程序中的上一页。 有关后按钮样式设置的详细信息，请参阅[快速入门： 控件样式](https://msdn.microsoft.com/library/windows/apps/hh465498)。
+-   **后退按钮**后退按钮可用于返回到应用程序中的上一页。 有关后按钮样式设置的详细信息，请参阅[快速入门： 控件样式](https://docs.microsoft.com/previous-versions/windows/apps/hh465498(v=win.10))。
 
 -   **下拉列表功能具有标头文本可见性：** 标头文本用作应用程序中的多个页面间导航下拉列表可见。 在上面的图，单击**帐户概述**会导致应用可以在下图中所示为导航中的页面的下拉列表：
 
     ![应用程序之间导航](images/mb-fig3-nav-between-apps.png)
 
-    有关设计应用程序导航的详细信息，请参阅[快速入门：使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)并[**选择元素 | 选择对象**](https://msdn.microsoft.com/library/windows/apps/hh466252)。
+    有关设计应用程序导航的详细信息，请参阅[快速入门：使用单页导航](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))并[**选择元素 | 选择对象**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)。
 
 ## <a name="span-idopbrandspanspan-idopbrandspanoperator-branding"></a><span id="opbrand"></span><span id="OPBRAND"></span>品牌的运算符
 
@@ -99,13 +99,13 @@ ms.locfileid: "56564223"
 ## <a name="span-idresspanspan-idresspanadditional-resources"></a><span id="res"></span><span id="RES"></span>其他资源
 
 
--   [适用于 UWP 应用的索引的用户体验指南](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [适用于 UWP 应用的索引的用户体验指南](https://developer.microsoft.com/windows/apps/design)
 
--   [添加控件和内容](https://msdn.microsoft.com/library/windows/apps/hh465393)
+-   [添加控件和内容](https://docs.microsoft.com/previous-versions/windows/apps/hh465393(v=win.10))
 
 -   [使优秀的 UWP 应用程序](https://msdn.microsoft.com/library/windows/apps/hh464920)
 
--   [对 UI 进行布局](https://msdn.microsoft.com/library/windows/apps/hh465304)
+-   [对 UI 进行布局](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))
 
 -   [与其他 Windows 组件集成，移动宽带应用](integrate-a-mobile-broadband-app-with-other-windows-components.md#splash)
 

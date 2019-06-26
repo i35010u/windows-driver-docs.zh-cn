@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5f81e6f48b1f28aedb580fe8381984c1fcffc950
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: febb28cf8a4b2881c4449fee8c21aa4a8d4f25fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380655"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353505"
 ---
 # <a name="dsmsetloadbalancepolicyalua-function"></a>DsmSetLoadBalancePolicyALUA 函数
 
@@ -40,7 +40,7 @@ void DsmSetLoadBalancePolicyALUA(
 ----------
 
 *LoadBalancePolicy*   
-一个[ **DsmSetLoadBalancePolicyALUA\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff552675)结构。
+一个[ **DsmSetLoadBalancePolicyALUA\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicyalua_out)结构。
 
 *状态*   
 操作的状态。

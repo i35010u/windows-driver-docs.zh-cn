@@ -17,12 +17,12 @@ keywords:
 - PortCls WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50718cd3a4f084e94a267ac30d902af04388fcd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dddc0583fbc0034259c47918b63933084912036
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359856"
 ---
 # <a name="introduction-to-port-class"></a>端口类简介
 
@@ -42,13 +42,13 @@ PortCls Portcls.sys 系统文件中实现作为导出驱动程序 (内核模式 
 
 -   一系列*音频端口*驱动程序
 
-将音频设备的硬件供应商提供负责*适配器驱动程序*。 适配器驱动程序包含初始化和微型端口驱动程序管理代码 (包括[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数) 和一系列*音频微型端口*驱动程序。
+将音频设备的硬件供应商提供负责*适配器驱动程序*。 适配器驱动程序包含初始化和微型端口驱动程序管理代码 (包括[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数) 和一系列*音频微型端口*驱动程序。
 
-当操作系统加载适配器驱动程序时，适配器驱动程序创建一组的微型端口驱动程序对象，并提示 PortCls 系统驱动程序，以创建一组对应的端口驱动程序对象。 (中的代码示例[子创建](subdevice-creation.md)说明了此过程。)这些端口驱动程序通常是 Portcls.sys 文件中可用的子集。 每个微型端口驱动程序将绑定本身到匹配的端口驱动程序从以形成一个完整的 Portcls.sys*子*驱动程序。 组合子端口微型端口驱动程序是 KS 筛选器 (请参阅[音频筛选器](audio-filters.md))。 例如，典型的适配器驱动程序可能包含三个微型端口驱动程序：WaveRT、 DMusUART 和拓扑 (与[IMiniportWaveRT](https://msdn.microsoft.com/library/windows/hardware/ff536737)， [IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)，并[IMiniportTopology](https://msdn.microsoft.com/library/windows/hardware/ff536712)接口)。 在初始化期间，这些微型端口驱动程序绑定到 WaveRT、 Dmu 和拓扑端口驱动程序 (与[IPortWaveRT](https://msdn.microsoft.com/library/windows/hardware/ff536920)， [IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)，并[IPortTopology](https://msdn.microsoft.com/library/windows/hardware/ff536896)接口） Portcls.sys 文件中包含的。 每个这些三个子驱动程序采用 KS 筛选器的窗体。 三个筛选器一起提供的完整功能的声卡。
+当操作系统加载适配器驱动程序时，适配器驱动程序创建一组的微型端口驱动程序对象，并提示 PortCls 系统驱动程序，以创建一组对应的端口驱动程序对象。 (中的代码示例[子创建](subdevice-creation.md)说明了此过程。)这些端口驱动程序通常是 Portcls.sys 文件中可用的子集。 每个微型端口驱动程序将绑定本身到匹配的端口驱动程序从以形成一个完整的 Portcls.sys*子*驱动程序。 组合子端口微型端口驱动程序是 KS 筛选器 (请参阅[音频筛选器](audio-filters.md))。 例如，典型的适配器驱动程序可能包含三个微型端口驱动程序：WaveRT、 DMusUART 和拓扑 (与[IMiniportWaveRT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavert)， [IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)，并[IMiniportTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiporttopology)接口)。 在初始化期间，这些微型端口驱动程序绑定到 WaveRT、 Dmu 和拓扑端口驱动程序 (与[IPortWaveRT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportwavert)， [IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)，并[IPortTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iporttopology)接口） Portcls.sys 文件中包含的。 每个这些三个子驱动程序采用 KS 筛选器的窗体。 三个筛选器一起提供的完整功能的声卡。
 
 通常情况下，端口驱动程序提供了大多数的音频子每个类的功能。 例如，WaveRT 端口驱动程序的大部分内容是流式传输到基于 DMA 的音频设备时，音频数据所需的工作而微型端口驱动程序提供特定于设备的详细信息，例如 DMA 地址和设备名称。
 
-音频适配器驱动程序和微型端口驱动程序通常以 Microsoft 编写C++和广泛使用的 COM 接口。 端口微型端口驱动程序体系结构将提升模块化设计。 微型端口驱动程序编写人员应实现其驱动程序，因为C++类派生自[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)接口，该标头文件 Portcls.h 中定义接口。 硬件初始化发生在驱动程序加载时间--通常**Init**方法**IMiniport**-派生类 (例如， [ **IMiniportWaveRT::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536759)). 有关音频微型端口驱动程序的 COM 实现的详细信息，请参阅[内核中的 COM](com-in-the-kernel.md)。
+音频适配器驱动程序和微型端口驱动程序通常以 Microsoft 编写C++和广泛使用的 COM 接口。 端口微型端口驱动程序体系结构将提升模块化设计。 微型端口驱动程序编写人员应实现其驱动程序，因为C++类派生自[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)接口，该标头文件 Portcls.h 中定义接口。 硬件初始化发生在驱动程序加载时间--通常**Init**方法**IMiniport**-派生类 (例如， [ **IMiniportWaveRT::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavert-init)). 有关音频微型端口驱动程序的 COM 实现的详细信息，请参阅[内核中的 COM](com-in-the-kernel.md)。
 
 下图说明了端口和微型端口驱动程序和音频堆栈中的位置之间的关系。
 

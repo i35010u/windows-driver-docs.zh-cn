@@ -4,12 +4,12 @@ description: AddConnectionToSession
 ms.assetid: c2762e75-8732-4c48-83a9-24ccd39218eb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8bf9abc658b7e73db4c388276dcfa4d0c81c479b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cbf86e5661637fe3df97e96e1182de32d8b6a06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382745"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386292"
 ---
 # <a name="addconnectiontosession"></a>AddConnectionToSession
 
@@ -18,7 +18,7 @@ ms.locfileid: "63382745"
 
 支持的微型端口驱动程序[MSiSCSI\_操作类](msiscsi-operations-wmi-class.md)必须提供至少一个存根 （stub） 针对此方法，但该方法的功能的实现是可选的。 如果该方法未实现添加的连接功能，它应返回错误。
 
-**AddConnectionToSession**属于未发布 MSiSCSI\_操作 WMI 类。 有关参数的说明**AddConnectionToSession**方法，请参阅成员的说明[ **AddConnectionToSession\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff550122)和[ **AddConnectionToSession\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff550123)结构。
+**AddConnectionToSession**属于未发布 MSiSCSI\_操作 WMI 类。 有关参数的说明**AddConnectionToSession**方法，请参阅成员的说明[ **AddConnectionToSession\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_addconnectiontosession_in)和[ **AddConnectionToSession\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_addconnectiontosession_out)结构。
 
  
 

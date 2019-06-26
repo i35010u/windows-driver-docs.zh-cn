@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 05310b438903a114631b764b8d7e068e78c4f5a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d5612184954853960232cf44b548823bac3aa07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362510"
 ---
 # <a name="fxdevice"></a>!fxdevice
 
 
 ！ Fxdevice 扩展显示有关所有电源管理框架 (PoFx) 的摘要信息注册设备。 可以在内核模式调试期间仅使用此命令。
 
-有关 PoFX 详细信息，请参阅[电源管理框架概述](https://msdn.microsoft.com/library/windows/hardware/hh406637)。
+有关 PoFX 详细信息，请参阅[电源管理框架概述](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)。
 
 语法
 
@@ -35,7 +35,7 @@ ms.locfileid: "63336597"
 ## <a name="span-idddkthreaddbgspanspan-idddkthreaddbgspanparameters"></a><span id="ddk__thread_dbg"></span><span id="DDK__THREAD_DBG"></span>参数
 
 
-<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span> **&lt; FxDevice Address&gt;**   
+<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span> **&lt; FxDevice Address&gt;**    
 提供 FxDevice 要显示的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL

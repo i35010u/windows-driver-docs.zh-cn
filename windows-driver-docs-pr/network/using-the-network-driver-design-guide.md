@@ -6,12 +6,12 @@ keywords:
 - 网络驱动程序 WDK，文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b2bf7c48a9efaee8b1dd3117ab1d791cfdeb83f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0abdeee8ba22722f9eeb34c1a9558806adec16fe
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342286"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391406"
 ---
 # <a name="using-the-network-driver-design-guide"></a>使用网络驱动程序设计指南
 
@@ -39,7 +39,7 @@ Microsoft 基于 Windows 的操作系统支持多种类型的内核模式网络�
 
     有关 NDIS 6.1 的详细信息，请参阅[简介 NDIS 6.1](introduction-to-ndis-6-1.md)。
 
--   NDIS 6.0 中，这在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序和支持早期 NDIS 版本未提供的许多其他服务。 NDIS 6.0 提供了对驱动程序初始化和网络数据管理，包括所需的驱动程序重新配置在运行时支持的重大更新和[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)用于处理网络数据包数据体系结构。 支持运行时重新配置的详细信息，请参阅[驱动程序堆栈管理](driver-stack-management.md)。 有关如何处理在 NDIS 6.0 中的网络数据包数据的详细信息请参阅[NET\_缓冲体系结构](net-buffer-architecture.md)。
+-   NDIS 6.0 中，这在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序和支持早期 NDIS 版本未提供的许多其他服务。 NDIS 6.0 提供了对驱动程序初始化和网络数据管理，包括所需的驱动程序重新配置在运行时支持的重大更新和[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)用于处理网络数据包数据体系结构。 支持运行时重新配置的详细信息，请参阅[驱动程序堆栈管理](driver-stack-management.md)。 有关如何处理在 NDIS 6.0 中的网络数据包数据的详细信息请参阅[NET\_缓冲体系结构](net-buffer-architecture.md)。
 
     NDIS 6.0 的详细信息，请参阅[简介 NDIS 6.0](introduction-to-ndis-6-0.md)。
 
@@ -82,7 +82,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的内核模
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570735" data-raw-source="[Scalable Networking](https://msdn.microsoft.com/library/windows/hardware/ff570735)">可缩放网络</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Scalable Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">可缩放网络</a></p></td>
 <td align="left"><p>支持的网络适配器，如下所示的任务卸载的网络技术：</p>
 <ul>
 <li><p><a href="header-data-split.md" data-raw-source="[Header-Data Split](header-data-split.md)">标头数据拆分</a>，将拆分标头和中的数据的服务接收到单独的缓冲区的以太网帧。</p></li>
@@ -109,15 +109,15 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的内核模
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571095" data-raw-source="[Wireless Networking](https://msdn.microsoft.com/library/windows/hardware/ff571095)">无线网络</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Wireless Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">无线网络</a></p></td>
 <td align="left"><p>包含本机 802.11 无线 LAN 的网络功能。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568366" data-raw-source="[Network Module Registrar](https://msdn.microsoft.com/library/windows/hardware/ff568366)">网络模块注册器</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Network Module Registrar](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">网络模块注册器</a></p></td>
 <td align="left"><p>系统工具，使得将附加到另一个网络模块的驱动程序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571083" data-raw-source="[Winsock Kernel](https://msdn.microsoft.com/library/windows/hardware/ff571083)">Winsock 内核</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">Winsock 内核</a></p></td>
 <td align="left"><p>内核模式网络编程接口 (NPI)。</p></td>
 </tr>
 <tr class="even">
@@ -133,7 +133,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的内核模
 <td align="left"><p>使用 Windows 套接字直接支持高性能、 面向连接的网络的网络连接的类型。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570659" data-raw-source="[Remote NDIS (RNDIS)](https://msdn.microsoft.com/library/windows/hardware/ff570659)">远程 NDIS (RNDIS)</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff570659(v=vs.85)" data-raw-source="[Remote NDIS (RNDIS)](https://docs.microsoft.com/previous-versions/ff570659(v=vs.85))">远程 NDIS (RNDIS)</a></p></td>
 <td align="left"><p>定义系统提供的、 独立于总线的消息设置通过 USB 总线类规范。</p></td>
 </tr>
 </tbody>

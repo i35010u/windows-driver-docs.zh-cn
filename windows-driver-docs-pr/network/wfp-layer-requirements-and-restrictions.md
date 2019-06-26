@@ -8,12 +8,12 @@ keywords:
 - 对于处理 WDK Windows 筛选平台数据包层
 ms.date: 01/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2572a94f9889fe11afbd9803038817c922431593
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 65af57fd54cedef4acb03ea27c2a6fbbd563d503
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356987"
 ---
 # <a name="wfp-layer-requirements-and-restrictions"></a>WFP 层要求和限制
 
@@ -23,13 +23,13 @@ ms.locfileid: "67161405"
 <a href="" id="forwarding-layer-------"></a>**转发层**   
 如果源自，或为分配给计算机的地址发送到某个数据包启用 IP 转发和发送或比其上的接口不同接口上接收数据包的 IP 数据包将传递到转发层 l分配本地地址。 默认情况下，IP 转发已禁用，并且可以通过启用**netsh interface ipv4 设置接口**命令为 IPv4 转发或**netsh 接口 ipv6 设置接口**命令获取 IPv6转发。
 
-转发层可以转发收到的每个片段到达时，或保留的 IP 有效负载的片段，直到所有片段已推出，然后将其转发。 这称为*片段分组*。 如果片段分组是已禁用 （默认情况下禁用），转发 IP 数据包指示片段到 WFP 一次。 启用片段分组后，片段指定给 WFP 两次-首先如片段本身，并再次在片段组描述[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)链。 WFP 集**FWP\_条件\_标志\_IS\_片段\_组**标志时，它指示片段到转发层调出的组。 可以使用启用片段分组**netsh 接口 {ipv4 | ipv6} 设置全局 groupforwardedfragments = 启用**命令。 片段分组是不同于重组，这是在目标主机上的原始 IP 数据包的重新构造。
+转发层可以转发收到的每个片段到达时，或保留的 IP 有效负载的片段，直到所有片段已推出，然后将其转发。 这称为*片段分组*。 如果片段分组是已禁用 （默认情况下禁用），转发 IP 数据包指示片段到 WFP 一次。 启用片段分组后，片段指定给 WFP 两次-首先如片段本身，并再次在片段组描述[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)链。 WFP 集**FWP\_条件\_标志\_IS\_片段\_组**标志时，它指示片段到转发层调出的组。 可以使用启用片段分组**netsh 接口 {ipv4 | ipv6} 设置全局 groupforwardedfragments = 启用**命令。 片段分组是不同于重组，这是在目标主机上的原始 IP 数据包的重新构造。
 
-[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构，它指示在转发层可描述 IP 数据包分段，还是 IP 数据包片段组的完整的 IP 数据包。 虽然 IP 数据包分段遍历转发层，将进行说明两次到标注： 第一次用作片断形式，以及同样，片段组内的一个片段。
+[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构，它指示在转发层可描述 IP 数据包分段，还是 IP 数据包片段组的完整的 IP 数据包。 虽然 IP 数据包分段遍历转发层，将进行说明两次到标注： 第一次用作片断形式，以及同样，片段组内的一个片段。
 
-如果指示片段组， **FWP\_条件\_标志\_IS\_片段\_组**标志作为传入值传递给标注驱动[*classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数。 在这种情况下， [ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)指向结构*NetBufferList*参数是的第一个节点**NET\_缓冲区\_列表**链与每个**NET\_缓冲区\_列表**描述数据包片段。
+如果指示片段组， **FWP\_条件\_标志\_IS\_片段\_组**标志作为传入值传递给标注驱动[*classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数。 在这种情况下， [ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)指向结构*NetBufferList*参数是的第一个节点**NET\_缓冲区\_列表**链与每个**NET\_缓冲区\_列表**描述数据包片段。
 
-向前插入的数据包不会呈现给任何 WFP 层中。 插入的数据包可以再次指定给标注驱动程序。 若要防止无限循环，该驱动程序应首先调用[ **FwpsQueryPacketInjectionState0** ](https://msdn.microsoft.com/library/windows/hardware/ff551202)函数才能继续执行调用*classifyFn*标注函数，因此，驱动程序应允许将注入状态的数据包[ **FWPS\_数据包\_注入\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff552408)设置为**FWPS\_数据包\_INJECTED\_BY\_自助**或者**FWPS\_数据包\_以前\_INJECTED\_BY\_自助**通过不变。
+向前插入的数据包不会呈现给任何 WFP 层中。 插入的数据包可以再次指定给标注驱动程序。 若要防止无限循环，该驱动程序应首先调用[ **FwpsQueryPacketInjectionState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)函数才能继续执行调用*classifyFn*标注函数，因此，驱动程序应允许将注入状态的数据包[ **FWPS\_数据包\_注入\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_packet_injection_state_)设置为**FWPS\_数据包\_INJECTED\_BY\_自助**或者**FWPS\_数据包\_以前\_INJECTED\_BY\_自助**通过不变。
 
 可以使用以下命令以查看系统的当前"组转发片段"设置： **netsh 接口 {ipv4 | ipv6} 显示全局**。
 

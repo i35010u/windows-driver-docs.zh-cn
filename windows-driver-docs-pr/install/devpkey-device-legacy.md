@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f35f1d51f0ce7a92e9663b45680157ef2cee2f8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfd560ba0fc661fa803fc40119776b9bf2692e23
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378201"
 ---
 # <a name="devpkeydevicelegacy"></a>DEVPKEY_Device_Legacy
 
@@ -58,7 +58,7 @@ DEVPKEY_Device_Legacy 设备属性表示一个布尔值，指示设备是否为�
 
 即插即用 manager DEVPKEY_Device_Reported 将值设置为 DEVPROP_TRUE 如果 PnP 管理器自动创建该设备为根枚举设备的非 PnP 设备驱动程序加载时。 否则，即插即用管理器将属性的值设置为 DEVPROP_FALSE。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_Legacy 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Legacy 值。
 
 Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 
@@ -85,7 +85,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

@@ -14,12 +14,12 @@ keywords:
 - 音频 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3cfe39755aa47c16d60c8085e3af0ee844bb966
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64ab96271277cd69d20b0e76e71600bf1e497b1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386702"
 ---
 # <a name="avstream-minidrivers-design-guide"></a>AVStream 微型驱动程序设计指南
 
@@ -35,11 +35,11 @@ ms.locfileid: "63323328"
 
 [编写 AVStream 微型驱动程序](writing-an-avstream-minidriver.md)
 
-[广播驱动程序体系结构的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff556573)
+[广播驱动程序体系结构的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
 [编码器设备](encoder-devices.md)
 
-[AV/C 客户端驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff556364)
+[AV/C 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
 [USB 视频类驱动程序](usb-video-class-driver.md)
 

@@ -6,12 +6,12 @@ keywords:
 - 容器 Id WDK 故障排除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 165189d318d5065d594cf721a9b0c958e536bdf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b103c8c1ec2973a837f9267c6ca0846951930dfd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339518"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384788"
 ---
 # <a name="troubleshooting-the-implementation-of-container-ids"></a>排查容器 ID 实现问题
 
@@ -41,7 +41,7 @@ ms.locfileid: "63339518"
 
     请确保容器 ID 或硬件中的唯一标识符的格式符合给定的总线的格式要求。 有关详细信息，请参阅[从特定于总线的唯一 ID 生成的容器 Id](container-ids-generated-from-a-bus-specific-unique-id.md)。
 
-    如果设备 devnodes 枚举由自定义总线驱动程序，请检查总线驱动程序的正确响应[ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)请求**BusQueryContainerID**.
+    如果设备 devnodes 枚举由自定义总线驱动程序，请检查总线驱动程序的正确响应[ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)请求**BusQueryContainerID**.
 
 -   设备同时连接到计算机的多个总线？
 

@@ -6,17 +6,17 @@ ms.assetid: 1b4dfc87-3f74-4e33-9dbb-72d4f72480fc
 keywords:
 - IRP_MJ_SYSTEM_CONTROL Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: c0db08fa71ee399d4193e297dab91d51a37ebdaf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17a74a7029b8130f31a1abadf4dd3aaf7a7d2d99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382255"
 ---
 # <a name="irpmjsystemcontrol"></a>IRP\_MJ\_SYSTEM\_CONTROL
 
 
-所有驱动程序必须提供[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)处理例程**IRP\_MJ\_系统\_控制**请求它发送的内核模式组件[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI)。
+所有驱动程序必须提供[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)处理例程**IRP\_MJ\_系统\_控制**请求它发送的内核模式组件[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI)。
 
 <a name="when-sent"></a>发送时间
 ---------
@@ -38,9 +38,9 @@ WMI 内核模式组件可以发送**IRP\_MJ\_系统\_控制**请求驱动程序�
 
 所有驱动程序必须支持**IRP\_MJ\_系统\_控制**请求通过提供[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程.
 
-支持的驱动程序[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI) 必须处理**IRP\_MJ\_系统\_控制**请求通过处理次要函数与此主要函数代码相关联的代码。 有关 WMI 次要函数代码的信息，请参阅[WMI 次要 Irp](wmi-minor-irps.md)。
+支持的驱动程序[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI) 必须处理**IRP\_MJ\_系统\_控制**请求通过处理次要函数与此主要函数代码相关联的代码。 有关 WMI 次要函数代码的信息，请参阅[WMI 次要 Irp](wmi-minor-irps.md)。
 
-不支持通过 WMI 的驱动程序[注册为 WMI 数据提供程序](https://msdn.microsoft.com/library/windows/hardware/ff560870)必须传递**IRP\_MJ\_系统\_控制**到下一个较低的驱动程序的请求。
+不支持通过 WMI 的驱动程序[注册为 WMI 数据提供程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/registering-as-a-wmi-data-provider)必须传递**IRP\_MJ\_系统\_控制**到下一个较低的驱动程序的请求。
 
 <a name="requirements"></a>要求
 ------------

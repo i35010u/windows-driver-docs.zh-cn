@@ -10,12 +10,12 @@ keywords:
 - 用户模式下标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b8ee9c6b24c69c0d8d0a43a5db24f8ac7a8f79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44ca188d9b2ef84ee19a4998765fce59b874e292
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379341"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386358"
 ---
 # <a name="calling-other-windows-filtering-platform-functions"></a>调用其他 Windows 筛选平台函数
 
@@ -28,7 +28,7 @@ ms.locfileid: "63379341"
 
 [关闭与筛选器引擎的会话。](closing-a-session-to-the-filter-engine.md)
 
-可以从标注驱动程序调用的其他 Windows 筛选平台函数的列表，请参阅[其他 Windows 筛选平台函数](https://msdn.microsoft.com/library/windows/hardware/ff569961)。 有关如何使用这些函数的详细信息，请参阅[Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK 中的文档。
+可以从标注驱动程序调用的其他 Windows 筛选平台函数的列表，请参阅[其他 Windows 筛选平台函数](https://docs.microsoft.com/windows-hardware/drivers/network/other-windows-filtering-platform-functions)。 有关如何使用这些函数的详细信息，请参阅[Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK 中的文档。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - 修改注册表值 WDK 设备安装，设备软件密钥
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5c2601ad75682f514b7514c2f3d211f64acc9be
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 2d9b829fed68a0653c733f77d56819fa17263d77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456364"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386231"
 ---
 # <a name="modifying-registry-values-in-a-devices-software-key"></a>修改设备的软件键中的注册表值
 
@@ -47,13 +47,13 @@ ms.locfileid: "65456364"
 
 若要安全地修改设备的软件密钥中的其他注册表条目的值，请遵循以下准则：
 
--   使用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)并[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)检索和设置标准或自定义属性。
+-   使用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)并[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)检索和设置标准或自定义属性。
 
     有关详细信息，请参阅[访问设备驱动程序属性](accessing-device-driver-properties.md)。
 
 -   设置由操作系统不保留这些设备属性。
 
-    例如，若要更改显示给用户的设备的名称，更改其[ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)设备属性。
+    例如，若要更改显示给用户的设备的名称，更改其[ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)设备属性。
 
  
 

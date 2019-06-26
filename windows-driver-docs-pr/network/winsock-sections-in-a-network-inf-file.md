@@ -1,6 +1,6 @@
 ---
-title: Winsock 网络 INF 文件中的各部分
-description: Winsock 网络 INF 文件中的各部分
+title: 网络 INF 文件中的 Winsock 节
+description: 网络 INF 文件中的 Winsock 节
 ms.assetid: 179a8570-287b-446e-8b56-a9f23071e84d
 keywords:
 - INF 文件 WDK 网络，Winsock 部分
@@ -8,14 +8,14 @@ keywords:
 - Winsock 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 820316b0c64c15ebc100e5f5c67b323619cc2c0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5ee02e73cca6844a1204d1c4f8d2cc271a666047
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525669"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368435"
 ---
-# <a name="winsock-sections-in-a-network-inf-file"></a>Winsock 网络 INF 文件中的各部分
+# <a name="winsock-sections-in-a-network-inf-file"></a>网络 INF 文件中的 Winsock 节
 
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "56525669"
 </tr>
 <tr class="even">
 <td align="left"><p>HelperDllName</p></td>
-<td align="left"><p>REG_EXPAND_SZ 值，该值指定 Windows 套接字帮助程序 (WSH) 协议的 DLL 的路径。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff566260" data-raw-source="[WSH DLL Function Summary](https://msdn.microsoft.com/library/windows/hardware/ff566260)">WSH DLL 函数摘要</a>。</p></td>
+<td align="left"><p>REG_EXPAND_SZ 值，该值指定 Windows 套接字帮助程序 (WSH) 协议的 DLL 的路径。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566260(v=vs.85)" data-raw-source="[WSH DLL Function Summary](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566260(v=vs.85))">WSH DLL 函数摘要</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MaxSockAddrLength</p></td>
@@ -94,7 +94,7 @@ ms.locfileid: "56525669"
 <td align="left"><p>REG_DWORD 值，该值指定命名空间提供程序支持的命名空间。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>一个可选的 REG_DWORD 值，指定命名空间提供程序的版本号。 如果未指定此值，默认值 (1) 用于的版本号。</p></td>
 </tr>
 </tbody>
@@ -112,7 +112,7 @@ ms.locfileid: "56525669"
 <thead>
 <tr class="header">
 <th align="left">命名空间</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

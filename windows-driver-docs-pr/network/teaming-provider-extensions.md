@@ -4,12 +4,12 @@ description: 组合提供程序扩展
 ms.assetid: 94F73ECD-54D0-4218-B3C4-33DC3BD57ED0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cac8019547ac19006c46433307eb0ce9c75ecf37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa4f4c7173ef582cdc86732051e5f7997eefe7c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350844"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379757"
 ---
 # <a name="teaming-provider-extensions"></a>组合提供程序扩展
 
@@ -44,7 +44,7 @@ ms.locfileid: "63350844"
 
 -   组合的提供程序必须保持为不可扩展交换机的网络连接必须为其建立每个物理网络适配器的状态。
 
-    有关每个绑定到外部网络适配器的物理网络适配器，可扩展交换机的协议边缘问题的一个单独的 OID 集请求[OID\_切换\_NIC\_创建](https://msdn.microsoft.com/library/windows/hardware/hh598263)。 此 OID 请求通知有关与基础物理适配器的网络连接创建的扩展。
+    有关每个绑定到外部网络适配器的物理网络适配器，可扩展交换机的协议边缘问题的一个单独的 OID 集请求[OID\_切换\_NIC\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)。 此 OID 请求通知有关与基础物理适配器的网络连接创建的扩展。
 
 -   创建与物理网络适配器的网络连接时，它分配对外部网络适配器连接到的端口都是唯一一个非零的索引值。
 
@@ -54,15 +54,15 @@ ms.locfileid: "63350844"
 
 -   如果组合提供程序问题，或将数据包转发到的物理适配器，它必须指定连接的物理适配器的非零的网络适配器索引值。
 
-    当提供程序接收数据包时，它可以确定从数据包的带外转发上下文中的源网络适配器索引值[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。 有关转发上下文的详细信息，请参阅[HYPER-V 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
+    当提供程序接收数据包时，它可以确定从数据包的带外转发上下文中的源网络适配器索引值[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 有关转发上下文的详细信息，请参阅[HYPER-V 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
 
     有关详细信息，请参阅[HYPER-V 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 
--   若要发出的物理适配器的 OID 将请求转发，组合的提供程序必须封装 OID 请求内的[ **NDIS\_交换机\_NIC\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)结构。 提供程序必须设置**DestinationNicIndex**为非零的网络适配器的索引值的物理适配器连接的成员。 然后提供者所颁发的 OID 集请求[OID\_交换机\_NIC\_请求](https://msdn.microsoft.com/library/windows/hardware/hh598266)将封装的 OID 请求传递到目标物理适配器。
+-   若要发出的物理适配器的 OID 将请求转发，组合的提供程序必须封装 OID 请求内的[ **NDIS\_交换机\_NIC\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构。 提供程序必须设置**DestinationNicIndex**为非零的网络适配器的索引值的物理适配器连接的成员。 然后提供者所颁发的 OID 集请求[OID\_交换机\_NIC\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)将封装的 OID 请求传递到目标物理适配器。
 
     有关详细信息，请参阅[到物理网络适配器管理 OID 请求](managing-oid-requests-to-physical-network-adapters.md)。
 
--   组合的提供程序可以发出代表基础物理适配器的 NDIS 状态指示。 若要执行此操作，该提供程序必须封装中的指示[ **NDIS\_交换机\_NIC\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/hh598217)结构。 提供程序必须设置**SourceNicIndex**为非零的网络适配器的索引值的物理适配器连接的成员。 然后，该提供程序发出的 NDIS 状态指示[ **NDIS\_状态\_交换机\_NIC\_状态**](https://msdn.microsoft.com/library/windows/hardware/hh598205)提供封装的状态指示到过量可扩展交换机驱动程序堆栈中的驱动程序。
+-   组合的提供程序可以发出代表基础物理适配器的 NDIS 状态指示。 若要执行此操作，该提供程序必须封装中的指示[ **NDIS\_交换机\_NIC\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构。 提供程序必须设置**SourceNicIndex**为非零的网络适配器的索引值的物理适配器连接的成员。 然后，该提供程序发出的 NDIS 状态指示[ **NDIS\_状态\_交换机\_NIC\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)提供封装的状态指示到过量可扩展交换机驱动程序堆栈中的驱动程序。
 
     有关详细信息，请参阅[从物理网络适配器管理 NDIS 状态指示](managing-ndis-status-indications-from-physical-network-adapters.md)。
 

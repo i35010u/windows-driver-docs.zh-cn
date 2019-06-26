@@ -9,12 +9,12 @@ keywords:
 - 微型端口驱动程序 WDK，移植到 NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04461247d1e2de053a49944bee8437e27c2b413f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72e2de480ac47b9f92730bbee2b4655a9fe600fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360757"
 ---
 # <a name="summary-of-changes-required-to-port-a-miniport-driver-to-ndis-620"></a>将微型端口驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
@@ -44,7 +44,7 @@ NDIS 6.20 保留与早期 NDIS 版本的向后兼容性。 有关向后兼容性
     支持超过 64 个处理器的详细信息，请参阅[支持多个 64 位处理器中 NDIS 6.20](support-for-more-than-64-processors-in-ndis-6-20.md)。
 
 <a href="" id="driver-initialization"></a>**驱动程序初始化**  
--   将 NDIS 版本设置为在 6.20 **MajorNdisVersion**并**MinorNdisVersion**的成员[ **NDIS\_微型端口\_驱动程序\_特征**](https://msdn.microsoft.com/library/windows/hardware/ff565958)结构，它传递给[ **NdisMRegisterMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff563654)函数。
+-   将 NDIS 版本设置为在 6.20 **MajorNdisVersion**并**MinorNdisVersion**的成员[ **NDIS\_微型端口\_驱动程序\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics)结构，它传递给[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)函数。
 
 -   在中设置的微型端口驱动程序版本**MajorDriverVersion**并**MinorDriverVersion** NDIS 成员\_微型端口\_驱动程序\_特征为适当的驱动程序特定值的结构。
 
@@ -57,17 +57,17 @@ NDIS 6.20 保留与早期 NDIS 版本的向后兼容性。 有关向后兼容性
     -   硬件协助 (VMQ)
 -   使用这些结构的更新的版本：
 
-    -   [**NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
-    -   [**NDIS\_RESTART\_GENERAL\_ATTRIBUTES**](https://msdn.microsoft.com/library/windows/hardware/ff567260)
-    -   [**NDIS\_RECEIVE\_SCALE\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff567228)
-    -   [**NDIS\_微型端口\_适配器\_硬件\_帮助\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)
+    -   [**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
+    -   [**NDIS\_RESTART\_GENERAL\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_restart_general_attributes)
+    -   [**NDIS\_RECEIVE\_SCALE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)
+    -   [**NDIS\_微型端口\_适配器\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
 
     NDIS 结构版本信息有关的信息，请参阅[指定 NDIS 版本信息](specifying-ndis-version-information.md)。
 
 <a href="" id="send-and-receive-code-paths"></a>**发送和接收的代码路径**  
--   NDIS 6.20 驱动程序必须支持接收方在处理过程中的限制 (RST) 接收中断。 *ReceiveThrottleParameters*的参数[ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)并[ *MiniportMessageInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559411) DPC 处理程序函数依次指向[ **NDIS\_接收\_限制\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567241)结构。 在延缓的过程调用 (DPC) 处理程序中，进入**MaxNblsToIndicate**成员的 NDIS\_接收\_限制\_参数结构指定的最大数目[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)微型端口驱动程序应指示 DPC 中的结构。 RST 的详细信息，请参阅[接收端限制在 NDIS 6.20](receive-side-throttle-in-ndis-6-20.md)。
+-   NDIS 6.20 驱动程序必须支持接收方在处理过程中的限制 (RST) 接收中断。 *ReceiveThrottleParameters*的参数[ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)并[ *MiniportMessageInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt_dpc) DPC 处理程序函数依次指向[ **NDIS\_接收\_限制\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_receive_throttle_parameters)结构。 在延缓的过程调用 (DPC) 处理程序中，进入**MaxNblsToIndicate**成员的 NDIS\_接收\_限制\_参数结构指定的最大数目[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)微型端口驱动程序应指示 DPC 中的结构。 RST 的详细信息，请参阅[接收端限制在 NDIS 6.20](receive-side-throttle-in-ndis-6-20.md)。
 
--   使用的更新的版本[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构。
+-   使用的更新的版本[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构。
 
 -   选择性地支持虚拟机队列 (VMQ) 接口。 有关 VMQ 的详细信息，请参阅[虚拟机队列 (VMQ) 在 NDIS 6.20](virtual-machine-queue--vmq--in-ndis-6-20.md)。
 

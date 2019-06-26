@@ -4,12 +4,12 @@ description: 排查 WIA 微型驱动程序问题
 ms.assetid: a0944bdd-56c4-4f7b-b542-eb353cd4d1f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f79c92fbca686d31c29f6014898e5143a7c8673d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a6057edfecf9868dfab28e0fdc6135d28a32474
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343774"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355194"
 ---
 # <a name="wia-minidriver-troubleshooting"></a>排查 WIA 微型驱动程序问题
 
@@ -46,7 +46,7 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
  drvValidateItemProperties with hr = 0x80070057 (This is normal if the app wrote an invalid value)
 ```
 
-该输出显示水平分辨率属性导致了故障。 应用程序尝试将分辨率设置为 1200，但支持的分辨率列表不包括 1200年。 因此，WIA 服务验证帮助程序[ **wiasValidateItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff549454)拒绝该请求将此值设置。
+该输出显示水平分辨率属性导致了故障。 应用程序尝试将分辨率设置为 1200，但支持的分辨率列表不包括 1200年。 因此，WIA 服务验证帮助程序[ **wiasValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasvalidateitemproperties)拒绝该请求将此值设置。
 
 现在，识别了问题，它是由开发人员确定它是否是驱动程序，或者必须修改该应用程序。 如果扫描程序的规范允许其支持 100 到 1400 dpi 之间的所有解决方法，该驱动程序应能处理对 1200 dpi 的请求。 如果扫描程序不支持此设置，应更改应用程序，因此它不会尝试将水平分辨率设置为不能用于此属性的值。 在这种情况下，应用程序应然后检查一个值，然后再尝试将属性设置为此值有效。
 
@@ -63,7 +63,7 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>含义</th>
 </tr>
 </thead>

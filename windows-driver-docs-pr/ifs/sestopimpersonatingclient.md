@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dfd01a7cb7c1768eef553b4137c3ddf763ee1fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 085147139c1bd285b0c142ea978184323f0d3eb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344471"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371313"
 ---
 # <a name="sestopimpersonatingclient-routine"></a>SeStopImpersonatingClient 例程
 
@@ -46,7 +46,7 @@ VOID SeStopImpersonatingClient(void);
 <a name="remarks"></a>备注
 -------
 
-服务器线程可以模拟用户，通过调用[ **SeImpersonateClientEx** ](https://msdn.microsoft.com/library/windows/hardware/ff556659)例程。 线程完成时模拟用户，它会调用**SeStopImpersonatingClient**例程，以结束模拟。
+服务器线程可以模拟用户，通过调用[ **SeImpersonateClientEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seimpersonateclientex)例程。 线程完成时模拟用户，它会调用**SeStopImpersonatingClient**例程，以结束模拟。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,7 +79,7 @@ VOID SeStopImpersonatingClient(void);
 ## <a name="see-also"></a>请参阅
 
 
-[**SeImpersonateClientEx**](https://msdn.microsoft.com/library/windows/hardware/ff556659)
+[**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seimpersonateclientex)
 
  
 

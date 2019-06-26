@@ -14,12 +14,12 @@ keywords:
 - 物理堆 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d76dad4381703ce654ae57316690131a12338cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa375ab4049eacf90dfb1a9ac171bc7dcaf19ba4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376033"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356348"
 ---
 # <a name="specifying-nonlocal-display-memory-heaps"></a>指定非本地显示内存堆
 
@@ -27,7 +27,7 @@ ms.locfileid: "63376033"
 ## <span id="ddk_specifying_nonlocal_display_memory_heaps_gg"></span><span id="DDK_SPECIFYING_NONLOCAL_DISPLAY_MEMORY_HEAPS_GG"></span>
 
 
-DirectDraw 驱动程序控制 AGP 的内存量通过返回堆中的可用和到哪些表面[ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627)结构，它是传递的回 DirectDraw。 该驱动程序标识非本地堆，通过指定 VIDMEM\_ISNONLOCAL 标志**dwFlags**的成员[ **VIDEOMEMORY** ](https://msdn.microsoft.com/library/windows/hardware/ff570171)数据结构介绍在堆。 此外，驱动程序可以选择通过指定 VIDMEM 启用组合的非本地堆上内存写入\_除了 VIDMEM ISWC 标志\_ISNONLOCAL。
+DirectDraw 驱动程序控制 AGP 的内存量通过返回堆中的可用和到哪些表面[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构，它是传递的回 DirectDraw。 该驱动程序标识非本地堆，通过指定 VIDMEM\_ISNONLOCAL 标志**dwFlags**的成员[ **VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)数据结构介绍在堆。 此外，驱动程序可以选择通过指定 VIDMEM 启用组合的非本地堆上内存写入\_除了 VIDMEM ISWC 标志\_ISNONLOCAL。
 
 它负责的大小 （线性或矩形）、 属性 （写入组合） 和图面类型堆不应而且不能用于向 DirectDraw 描述 AGP 兼容 DirectDraw 驱动程序。 但是，它不是驱动程序的责任才能实际保留到它的堆集或提交内存的地址空间。 这是由 DirectDraw 处理驱动程序的代表。 DirectDraw 隐藏从驱动程序管理 AGP 内存的详细信息。
 
@@ -41,7 +41,7 @@ DirectDraw 确定 (fpEnd-fpStart) 通过线性堆 + 1 （请注意，指定的�
 
 当 DirectDraw 已确定正确的地址 （线性和物理） 堆的时它将其存储在其堆描述符。 DirectDraw 还提供了一种机制来在初始化时，这些地址的通知驱动程序。 如何做到这一点是特定于平台：
 
--   Microsoft Windows 2000 及更高版本，这通过[ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)调用使用 GUID\_UpdateNonLocalHeap GUID。 当此 GUID 传递给*DDGetDriverInfo*，堆数据传入[ **DD\_UPDATENONLOCALHEAPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551748)数据结构。
+-   Microsoft Windows 2000 及更高版本，这通过[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)调用使用 GUID\_UpdateNonLocalHeap GUID。 当此 GUID 传递给*DDGetDriverInfo*，堆数据传入[ **DD\_UPDATENONLOCALHEAPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_updatenonlocalheapdata)数据结构。
 
  
 

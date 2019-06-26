@@ -8,12 +8,12 @@ keywords:
 - 文本日志 WDK SetupAPI，部分正文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17264b2db9d8bd40913b3a6b02e58eca16097874
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75b0ce132f07a6bf22f2d9e7da232df3f9a7d187
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359250"
 ---
 # <a name="format-of-a-text-log-section-body"></a>文本日志部分正文的格式
 
@@ -57,7 +57,7 @@ ms.locfileid: "63377076"
  
 
 <a href="" id="time-stamp-field"></a>*time_stamp* field  
-指示记录的事件发生时的系统时间。 *Time_stamp*字段是可选的 SetupAPI 默认不包括时间戳。 但是， [ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)支持中的日志条目包括时间戳。 格式*time_stamp*字段是相同的格式*time_stamp*中所述的字段[文本日志部分标头的格式](format-of-a-text-log-section-header.md)。
+指示记录的事件发生时的系统时间。 *Time_stamp*字段是可选的 SetupAPI 默认不包括时间戳。 但是， [ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)支持中的日志条目包括时间戳。 格式*time_stamp*字段是相同的格式*time_stamp*中所述的字段[文本日志部分标头的格式](format-of-a-text-log-section-header.md)。
 
 <a href="" id="event-category-field"></a>*event_category* field  
 表示所做的日志条目的安装程序 Api 操作的类别。 *Event_category*字段通常存在，但不是必需的。 如果*event_category*字段存在，它将包含下表中列出的字符串之一。

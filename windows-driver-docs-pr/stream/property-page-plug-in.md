@@ -7,12 +7,12 @@ keywords:
 - 属性页 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca2464ee8b40dfb68b434d02b0f09d2f1ef60666
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c375960aaf37350680d99e7a3e9ec1b43fab9247
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362209"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363274"
 ---
 # <a name="property-page-plug-in"></a>属性页插件
 
@@ -63,7 +63,7 @@ private:
 
 若要初始化的属性页，宿主的属性表调用[IPropertyPage::SetPageSite](https://go.microsoft.com/fwlink/p/?linkid=106442)。 此调用会导致调用即插即用接**OnConnect**方法。 在此调用时，属性页已连接到该筛选器，但尚未显示属性页。
 
-对的调用中提供的参数**OnConnect** KS 代理，然后指向指针的查询必须处于**IKsPropertySet**。 然后，可以调用[ **IKsPropertySet::Get** ](https://msdn.microsoft.com/library/windows/hardware/ff560719)并[ **IKsPropertySet::Set** ](https://msdn.microsoft.com/library/windows/hardware/ff560721)来操作的驱动程序公开的属性。
+对的调用中提供的参数**OnConnect** KS 代理，然后指向指针的查询必须处于**IKsPropertySet**。 然后，可以调用[ **IKsPropertySet::Get** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikspropertyset-get)并[ **IKsPropertySet::Set** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nf-dsound-ikspropertyset-set)来操作的驱动程序公开的属性。
 
 你还必须提供**CreateInstance**方法。 系统调用属性页的方法来创建属性页的实例。 此方法应调用其进行实例化类的构造函数。
 

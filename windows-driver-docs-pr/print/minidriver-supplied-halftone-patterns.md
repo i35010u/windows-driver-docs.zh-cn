@@ -7,12 +7,12 @@ keywords:
 - 微型驱动程序提供半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f97eed9f2072524a51317b8ed2cb8320f41564f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de1908fd7a75188e0c9891b218d82af93fb134a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380138"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382039"
 ---
 # <a name="minidriver-supplied-halftone-patterns"></a>微型驱动程序提供的半色调模式
 
@@ -36,7 +36,7 @@ ms.locfileid: "63380138"
 
     其中 halftone.bin 是包含半色调模式的文件。
 
--   \*HTCallbackID 特性，您可以指示要实施[ **IPrintOemUni::HalftonePattern** ](https://msdn.microsoft.com/library/windows/hardware/ff554258)中的方法[呈现插件](rendering-plug-ins.md). 一个唯一\* **HTCallbackID**值必须为每个模式提供**IPrintOemUni::HalftonePattern**方法支持。
+-   \*HTCallbackID 特性，您可以指示要实施[ **IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)中的方法[呈现插件](rendering-plug-ins.md). 一个唯一\* **HTCallbackID**值必须为每个模式提供**IPrintOemUni::HalftonePattern**方法支持。
 
 你可以提供半色调模式资源**IPrintOemUni::HalftonePattern**方法，或两者，按如下所示：
 

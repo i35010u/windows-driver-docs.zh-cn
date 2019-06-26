@@ -13,12 +13,12 @@ keywords:
 - 引导参数 WDK
 ms.date: 07/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d0193b302f5a4101775cbfef2050c3b12e48e5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27cd16807fe30303cdc94dab697643627895b386
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356333"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361283"
 ---
 # <a name="overview-of-the-bootini-file"></a>Boot.ini 文件概述
 
@@ -72,8 +72,8 @@ Boot.ini 具有两个主要部分：
     "Microsoft Windows XP Professional"
     ```
 
--   *启动入口参数*，也称为*引导参数*或*负载选项*启用、 禁用和配置操作系统功能。 引导参数类似于命令行参数，每个以正斜杠 （/） 开头，如[ **/debug**](https://msdn.microsoft.com/library/windows/hardware/ff556253)。 在每个启动项目，可以有零个或多个启动参数。
+-   *启动入口参数*，也称为*引导参数*或*负载选项*启用、 禁用和配置操作系统功能。 引导参数类似于命令行参数，每个以正斜杠 （/） 开头，如[ **/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/-debug)。 在每个启动项目，可以有零个或多个启动参数。
 
-    与测试和调试驱动程序的启动参数的列表，请参阅[Boot.ini 引导参数引用](https://msdn.microsoft.com/library/windows/hardware/ff542248)。
+    与测试和调试驱动程序的启动参数的列表，请参阅[Boot.ini 引导参数引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 可以具有相同的操作系统，每个都有一组不同的引导参数的多个启动项。 Windows 创建标准引导条目在安装操作系统，并且可以创建其他，通过编辑 Boot.ini 自定义的操作系统条目。

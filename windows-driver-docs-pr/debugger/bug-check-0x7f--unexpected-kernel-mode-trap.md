@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fa0a0588b43fa5f76021412e9075978768a99ab
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: d07eda994867d99cbc09b3d114974d5bd53fd692
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361735"
 ---
 # <a name="bug-check-0x7f-unexpectedkernelmodetrap"></a>Bug 检查 0x7F：意外\_内核\_模式\_陷阱
 
@@ -28,7 +28,7 @@ ms.locfileid: "59903777"
 可能是此陷阱*绑定的陷阱*（陷阱内核不允许捕获） 或*双容错*（处理总是会导致系统出现故障的早期错误时出现的错误）。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="unexpectedkernelmodetrap-parameters"></a>意外\_内核\_模式\_陷阱参数

@@ -11,12 +11,12 @@ keywords:
 - 设备状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06dbe787b4d97fbe17beb6972464de943f7b37f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5abed19a2fc7f9095afbd5e0831460123496f494
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386616"
 ---
 # <a name="failure-to-check-a-drivers-state"></a>无法检查驱动程序的状态
 
@@ -37,7 +37,7 @@ ms.locfileid: "63360027"
 
 在调试内部版本，如果该驱动程序已持有 IRP 挂起状态，系统将断言。 在免费版本中，但是，该驱动程序不检查此错误。 两次调用相同的 IOCTL 原因驱动程序无法继续跟踪的 IRP。
 
-在多处理器系统上，此代码片段可能会导致其他问题。 假设在条目上此例程具有 （操作的权限） 的所有权此 IRP。 当该例程将保存**Irp**中的全局结构指针**扩展-&gt;WaitEventIrp**，另一个线程可以从该全局结构获取 IRP 地址并对执行操作IRP。 若要避免此问题，该驱动程序应将标记挂起的 IRP 将保存 IRP 和应包括对这两个调用前[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)和联锁序列中的分配。 一个[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742) IRP 的例程也有必要。
+在多处理器系统上，此代码片段可能会导致其他问题。 假设在条目上此例程具有 （操作的权限） 的所有权此 IRP。 当该例程将保存**Irp**中的全局结构指针**扩展-&gt;WaitEventIrp**，另一个线程可以从该全局结构获取 IRP 地址并对执行操作IRP。 若要避免此问题，该驱动程序应将标记挂起的 IRP 将保存 IRP 和应包括对这两个调用前[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)和联锁序列中的分配。 一个[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel) IRP 的例程也有必要。
 
  
 

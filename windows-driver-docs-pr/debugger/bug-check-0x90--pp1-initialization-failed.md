@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a1942cc86cd92cee35373855ff746c9afc215d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e710c28b74c23bfbf77611b44e0955ef1c2dde0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361701"
 ---
 # <a name="bug-check-0x90-pp1initializationfailed"></a>Bug 检查 0x90：PP1\_初始化\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367328"
 PP1\_初始化\_失败错误检查的值为 0x00000090。 此 bug 检查指示插即用 (PnP) 管理器无法初始化。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="pp1initializationfailed-parameters"></a>PP1\_初始化\_失败参数

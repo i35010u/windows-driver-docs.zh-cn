@@ -8,12 +8,12 @@ keywords:
 ms.assetid: 0E7CC153-5434-459D-9773-8CCAFBACD016
 ms.date: 04/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f6fcbe43c6bce7fc63bbae4bed1cb7923851124
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0ae755feda5de44a86eeb1129bbbb3d77ea7d7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382629"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379405"
 ---
 # <a name="native-80211-ihv-extensibility-functions"></a>本机 802.11 IHV 扩展性函数
 
@@ -30,53 +30,53 @@ ms.locfileid: "63382629"
 IHV UI 扩展 DLL 的详细信息，请参阅[本机 802.11 IHV UI 扩展 DLL](native-802-11-ihv-ui-extensions-dll2.md)。
 
 > [!NOTE]
-> IHV 扩展 DLL 调用通过函数指针的成员与相关联的每个本机 802.11 IHV 扩展性函数[DOT11EXT_APIS](https://msdn.microsoft.com/library/windows/hardware/ff547617)结构。 当操作系统将调用[Dot11ExtIhvInitService](https://msdn.microsoft.com/library/windows/hardware/ff547470) IHV 处理程序函数，它将传递的指针的列表到 IHV 扩展性函数通过*pDot11ExtAPI*参数。
+> IHV 扩展 DLL 调用通过函数指针的成员与相关联的每个本机 802.11 IHV 扩展性函数[DOT11EXT_APIS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_apis)结构。 当操作系统将调用[Dot11ExtIhvInitService](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_service) IHV 处理程序函数，它将传递的指针的列表到 IHV 扩展性函数通过*pDot11ExtAPI*参数。
  
 下表列出了可由 IHV 扩展 DLL 调用本机 802.11 IHV 扩展性函数。 每个 IHV 扩展性函数只能在这些情况下调用。
 
 
 - **在服务初始化之后调用**  
-IHV 扩展性函数只能调用后[Dot11ExtIhvInitService](https://msdn.microsoft.com/library/windows/hardware/ff547470)调用 IHV 处理程序函数以初始化 IHV 扩展 DLL。 此外，扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitService](https://msdn.microsoft.com/library/windows/hardware/ff547457)调用 IHV 处理程序函数。
+IHV 扩展性函数只能调用后[Dot11ExtIhvInitService](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_service)调用 IHV 处理程序函数以初始化 IHV 扩展 DLL。 此外，扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitService](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_service)调用 IHV 处理程序函数。
 - **适配器在初始化之后调用**  
-IHV 扩展性函数只能调用后[Dot11ExtIhvInitAdapter](https://msdn.microsoft.com/library/windows/hardware/ff547469)调用 IHV 处理程序函数来初始化 IHV WLAN 适配器的接口。  
+IHV 扩展性函数只能调用后[Dot11ExtIhvInitAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter)调用 IHV 处理程序函数来初始化 IHV WLAN 适配器的接口。  
 IHV 扩展性函数要求有句柄，标识将 WLAN 适配器。 当*Dot11ExtIhvInitAdapter*是调用，IHV 扩展 DLL 传递通过此句柄*hDot11SvcHandle*参数。  
-扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitAdapter](https://msdn.microsoft.com/library/windows/hardware/ff547452)调用 IHV 处理程序函数。
+扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter)调用 IHV 处理程序函数。
 - **在预关联之后调用**  
-IHV 扩展性函数只能调用后[Dot11ExtIhvPerformPreAssociate](https://msdn.microsoft.com/library/windows/hardware/ff547499)调用 IHV 处理程序函数以启动预关联操作与基本的服务集 (BSS) 网络。  
+IHV 扩展性函数只能调用后[Dot11ExtIhvPerformPreAssociate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_pre_associate)调用 IHV 处理程序函数以启动预关联操作与基本的服务集 (BSS) 网络。  
 IHV 扩展性函数要求有句柄，标识 BSS 网络连接。 当*Dot11ExtIhvPerformPreAssociate*是调用，IHV 扩展 DLL 传递通过此句柄*hConnection*参数。  
-扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitAdapter](https://msdn.microsoft.com/library/windows/hardware/ff547452)或[Dot11ExtIhvAdapterReset](https://msdn.microsoft.com/library/windows/hardware/ff547434)已调用 IHV 处理程序函数。
+扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter)或[Dot11ExtIhvAdapterReset](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)已调用 IHV 处理程序函数。
 - **在后关联后调用**  
-IHV 扩展性函数只能调用后[Dot11ExtIhvPerformPostAssociate](https://msdn.microsoft.com/library/windows/hardware/ff547492)调用 IHV 处理程序函数以启动后关联操作与基本的服务集 (BSS) 网络。  
+IHV 扩展性函数只能调用后[Dot11ExtIhvPerformPostAssociate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)调用 IHV 处理程序函数以启动后关联操作与基本的服务集 (BSS) 网络。  
 IHV 扩展性函数要求有句柄，它标识与 BSS 网络连接的安全会话。 当*Dot11ExtIhvPerformPostAssociate*是调用，IHV 扩展 DLL 传递通过此句柄*hSecuritySessionID*参数。  
-扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitAdapter](https://msdn.microsoft.com/library/windows/hardware/ff547452)或[Dot11ExtIhvAdapterReset](https://msdn.microsoft.com/library/windows/hardware/ff547434)已调用 IHV 处理程序函数。
+扩展 DLL 不能调用 IHV 扩展性函数之后， [Dot11ExtIhvDeinitAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter)或[Dot11ExtIhvAdapterReset](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)已调用 IHV 处理程序函数。
 
 | 函数 | 在服务初始化之后调用 | 适配器在初始化之后调用 | 在预关联之后调用 | 在后关联后调用 |
 | --- | --- | --- | --- | --- |
-| [Dot11ExtAllocateBuffer](https://msdn.microsoft.com/library/windows/hardware/ff547419) | X |   |   |   |
-| [Dot11ExtFreeBuffer](https://msdn.microsoft.com/library/windows/hardware/ff547422) | X |   |   |   |
-| [Dot11ExtGetProfileCustomUserData](https://msdn.microsoft.com/library/windows/hardware/ff547430) |   |   | X |   | 
-| [Dot11ExtNicSpecificExtension](https://msdn.microsoft.com/library/windows/hardware/ff547526) |   | X |   |   |
-| [Dot11ExtStartOneX](https://msdn.microsoft.com/library/windows/hardware/ff547610) |   |   |   | X |
-| [Dot11ExtStopOneX](https://msdn.microsoft.com/library/windows/hardware/ff547614) |   |   |   | X |
-| [Dot11ExtPostAssociateCompletion](https://msdn.microsoft.com/library/windows/hardware/ff547530) |   |   |   | X |
-| [Dot11ExtPreAssociateCompletion](https://msdn.microsoft.com/library/windows/hardware/ff547538) |   |   | X |   |
-| [Dot11ExtProcessOneXPacket](https://msdn.microsoft.com/library/windows/hardware/ff547541) |   |   |   | X |
-| [Dot11ExtQueryVirtualStationProperties](https://msdn.microsoft.com/library/windows/hardware/ff547544) |   | X |   |   |
-| [Dot11ExtReleaseVirtualStation](https://msdn.microsoft.com/library/windows/hardware/ff547549) |   | X |   |   |
-| [Dot11ExtRequestVirtualStation](https://msdn.microsoft.com/library/windows/hardware/ff547556) |   | X |   |   |
-| [Dot11ExtSendNotification](https://msdn.microsoft.com/library/windows/hardware/ff547560) |   | X |   |   |
-| [Dot11ExtSendUIRequest](https://msdn.microsoft.com/library/windows/hardware/ff547567) |   | X |   |   |
-| [Dot11ExtSetAuthAlgorithm](https://msdn.microsoft.com/library/windows/hardware/ff547571) |   | X |   |   |
-| [Dot11ExtSetCurrentProfile](https://msdn.microsoft.com/library/windows/hardware/ff547574) |   |   | X |   |
-| [Dot11ExtSetDefaultKey](https://msdn.microsoft.com/library/windows/hardware/ff547578) |   | X |   |   |
-| [Dot11ExtSetDefaultKeyId](https://msdn.microsoft.com/library/windows/hardware/ff547584)|   | X |   |   |
-| [Dot11ExtSetEtherTypeHandling](https://msdn.microsoft.com/library/windows/hardware/ff547587) |   | X |   |   |
-| [Dot11ExtSetExcludeUnencrypted](https://msdn.microsoft.com/library/windows/hardware/ff547589) |   | X |   |   |
-| [Dot11ExtSetKeyMappingKey](https://msdn.microsoft.com/library/windows/hardware/ff547597) |   | X |   |   |
-| [Dot11ExtSetMulticastCipherAlgorithm](https://msdn.microsoft.com/library/windows/hardware/ff547599) |   | X |   |   |
-| [Dot11ExtSetProfileCustomUserData](https://msdn.microsoft.com/library/windows/hardware/ff547603) |   | X |   |   |
-| [Dot11ExtSetUnicastCipherAlgorithm](https://msdn.microsoft.com/library/windows/hardware/ff547606) |   | X |   |   |
-| [Dot11ExtSetVirtualStationAPProperties](https://msdn.microsoft.com/library/windows/hardware/ff547609) |   |   | X |   | 
+| [Dot11ExtAllocateBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_allocate_buffer) | X |   |   |   |
+| [Dot11ExtFreeBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_free_buffer) | X |   |   |   |
+| [Dot11ExtGetProfileCustomUserData](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_get_profile_custom_user_data) |   |   | X |   | 
+| [Dot11ExtNicSpecificExtension](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension) |   | X |   |   |
+| [Dot11ExtStartOneX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_onex_start) |   |   |   | X |
+| [Dot11ExtStopOneX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_onex_stop) |   |   |   | X |
+| [Dot11ExtPostAssociateCompletion](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_post_associate_completion) |   |   |   | X |
+| [Dot11ExtPreAssociateCompletion](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_pre_associate_completion) |   |   | X |   |
+| [Dot11ExtProcessOneXPacket](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_process_onex_packet) |   |   |   | X |
+| [Dot11ExtQueryVirtualStationProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_query_virtual_station_properties) |   | X |   |   |
+| [Dot11ExtReleaseVirtualStation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_release_virtual_station) |   | X |   |   |
+| [Dot11ExtRequestVirtualStation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_request_virtual_station) |   | X |   |   |
+| [Dot11ExtSendNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_notification) |   | X |   |   |
+| [Dot11ExtSendUIRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request) |   | X |   |   |
+| [Dot11ExtSetAuthAlgorithm](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_auth_algorithm) |   | X |   |   |
+| [Dot11ExtSetCurrentProfile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_current_profile) |   |   | X |   |
+| [Dot11ExtSetDefaultKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_default_key) |   | X |   |   |
+| [Dot11ExtSetDefaultKeyId](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_default_key_id)|   | X |   |   |
+| [Dot11ExtSetEtherTypeHandling](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling) |   | X |   |   |
+| [Dot11ExtSetExcludeUnencrypted](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_exclude_unencrypted) |   | X |   |   |
+| [Dot11ExtSetKeyMappingKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_key_mapping_key) |   | X |   |   |
+| [Dot11ExtSetMulticastCipherAlgorithm](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_multicast_cipher_algorithm) |   | X |   |   |
+| [Dot11ExtSetProfileCustomUserData](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_profile_custom_user_data) |   | X |   |   |
+| [Dot11ExtSetUnicastCipherAlgorithm](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_unicast_cipher_algorithm) |   | X |   |   |
+| [Dot11ExtSetVirtualStationAPProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_virtual_station_ap_properties) |   |   | X |   | 
 
 有关 IHV 处理程序函数的详细信息，请参阅[本机 802.11 IHV 处理程序函数](native-802-11-ihv-handler-functions.md)。
 

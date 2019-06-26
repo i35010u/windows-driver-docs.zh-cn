@@ -4,12 +4,12 @@ description: 检索 SPCRP_Xxx 属性
 ms.assetid: a5d52da9-a593-42bd-aeaf-8ab203bc3d21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c94ea84c139cfaec7a800734a67c3dcd632376ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd557f70585b4b3903503d170c39f80621526140
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384261"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382278"
 ---
 # <a name="retrieving-spcrpxxx-properties"></a>检索 SPCRP_Xxx 属性
 
@@ -18,11 +18,11 @@ ms.locfileid: "63384261"
 
 Windows Server 2003、 Windows XP 和 Windows 2000 还支持大部分设备安装程序类属性。 但是，这些早期版本的 Windows 不支持统一的设备属性模型属性键。 相反，这些版本的 Windows 版本使用 SPCRP_*Xxx*标识符表示并访问设备安装程序类属性。 若要保持与早期版本的 Windows 兼容性，Windows Vista 和更高版本还支持使用 SPCRP_*Xxx*标识符，以访问设备安装程序类属性。 但是，应使用统一的设备属性模型属性键来访问设备安装程序类属性。
 
-系统定义的设备安装程序类属性的列表，请参阅[设备安装程序类属性，对应于 SPCRP_Xxx 标识符](https://msdn.microsoft.com/library/windows/hardware/ff542245)。 属性的密钥标识符用于访问在 Windows Vista 和更高版本中的属性按列出的设备安装程序类属性。 与属性键一起提供的信息还包括相应 SPCRP_*Xxx*可用于访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的属性的标识符。
+系统定义的设备安装程序类属性的列表，请参阅[设备安装程序类属性，对应于 SPCRP_Xxx 标识符](https://docs.microsoft.com/previous-versions/ff542245(v=vs.85))。 属性的密钥标识符用于访问在 Windows Vista 和更高版本中的属性按列出的设备安装程序类属性。 与属性键一起提供的信息还包括相应 SPCRP_*Xxx*可用于访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的属性的标识符。
 
 有关如何使用属性键来访问在 Windows Vista 和更高版本的设备安装程序类属性的信息，请参阅[访问设备类属性 （Windows Vista 和更高版本）](accessing-device-class-properties--windows-vista-and-later-.md)。
 
-若要检索在 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备安装程序类属性，请使用[ **SetupDiGetClassRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551097)函数。
+若要检索在 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备安装程序类属性，请使用[ **SetupDiGetClassRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)函数。
 
 若要使用 SetupDiGetClassRegistryProperty 检索与 SPCRP_Xxx 标识符相对应的属性，请按照下列步骤：
 
@@ -37,7 +37,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 还支持大部分设备安�
     -   设置*MachineName*到的计算机的名称。
     -   设置为保留**NULL**。
 
-    以响应对的调用[ **SetupDiGetClassRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551097)， **SetupDiGetClassRegistryProperty**设置\* *RequiredSize*大小，以字节为单位，检索属性值，所需的缓冲区的记录的错误代码 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 随后调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回最近记录的错误代码。
+    以响应对的调用[ **SetupDiGetClassRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)， **SetupDiGetClassRegistryProperty**设置\* *RequiredSize*大小，以字节为单位，检索属性值，所需的缓冲区的记录的错误代码 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 随后调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回最近记录的错误代码。
 
 2.  调用**SetupDiGetClassRegistryProperty**再次以检索属性值，并提供相同的第一个调用中，除以下更改外中提供的参数：
     -   设置*PropertyBuffer*到指向该缓冲区用于接收的属性值的指针。

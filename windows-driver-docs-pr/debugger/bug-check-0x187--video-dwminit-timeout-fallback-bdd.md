@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8795d1bc0b8dcdefa0ee92898dd459b7ceaad8b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2e4c97f4f6f04d25aadc3d06558fc89d55807f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352476"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362091"
 ---
 # <a name="bug-check-0x187-videodwminittimeoutfallbackbdd"></a>Bug 检查 0x187：视频\_DWMINIT\_超时\_回退\_BDD
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352476"
 视频\_DWMINIT\_超时\_回退\_BDD bug 检查的值为 0x00000187。 这表示视频的回退到 BDD，而无需使用 IHV 驱动程序。 这将始终生成实时转储。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="videodwminittimeoutfallbackbdd-parameters"></a>视频\_DWMINIT\_超时\_回退\_BDD 参数

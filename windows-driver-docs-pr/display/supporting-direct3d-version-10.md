@@ -4,17 +4,17 @@ description: 支持 Direct3D 版本 10
 ms.assetid: 2f7ff2a4-25ac-4e82-9b44-f64a8b814601
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f45678e504eef7b2747862f9c3e24d59e4d94611
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5ae6d6ccb7530a8d73f697e7c4315d1235160f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375875"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386440"
 ---
 # <a name="supporting-direct3d-version-10"></a>支持 Direct3D 版本 10
 
 
-以下部分介绍的 Direct3D 版本 10 和如何支持和使用的新功能[Direct3D 版本 10 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552909):
+以下部分介绍的 Direct3D 版本 10 和如何支持和使用的新功能[Direct3D 版本 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index):
 
 [启用对 Direct3D 版本 10 DDI 的支持](enabling-support-for-the-direct3d-version-10-ddi.md)
 

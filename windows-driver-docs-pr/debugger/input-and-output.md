@@ -8,12 +8,12 @@ keywords:
 - output
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b468aedee74ed0f07e5127eff8fd6bf16ae86a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8250722a6d024e828b40747ef8118cb982e5047
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366825"
 ---
 # <a name="input-and-output"></a>输入和输出
 
@@ -22,7 +22,7 @@ ms.locfileid: "63372079"
 
 调试器引擎维护*输入的流*和一个*输出流*。 输入可请求从输入的流和输出发送到输出流。
 
-当[**输入**](https://msdn.microsoft.com/library/windows/hardware/ff550962)方法调用来请求从该引擎的输入流输入时，引擎将调用所有已注册[输入回调](using-input-and-output.md#input-callbacks)通知他们，它是等待输入。 然后，在等待输入进行输入，通过调用的回调[ **ReturnInput** ](https://msdn.microsoft.com/library/windows/hardware/ff554600)方法。
+当[**输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol-input)方法调用来请求从该引擎的输入流输入时，引擎将调用所有已注册[输入回调](using-input-and-output.md#input-callbacks)通知他们，它是等待输入。 然后，在等待输入进行输入，通过调用的回调[ **ReturnInput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-returninput)方法。
 
 当输出发送到引擎的输出流时，引擎将调用的已注册[输出回调](using-input-and-output.md#output-callbacks)将输出传递给它们。 当将输出发送到输出流，它可以筛选由客户端对象中;在这种情况下，仅向注册的特定客户端对象的输出回调将接收输出。
 

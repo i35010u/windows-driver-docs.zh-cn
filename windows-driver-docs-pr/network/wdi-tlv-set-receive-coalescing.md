@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_RECEIVE_COALESCING 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ee9b204af244d88c31cf586486708f594fee75c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edb89f248316ee36d9b4c4031ad99ff28566d58d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362787"
 ---
 # <a name="wditlvsetreceivecoalescing"></a>WDI\_TLV\_SET\_RECEIVE\_COALESCING
 
 
-WDI\_TLV\_设置\_接收\_COALESCING 是包含接收的数据包合并参数 TLV [OID\_WDI\_设置\_接收\_合并](https://msdn.microsoft.com/library/windows/hardware/dn925941)。
+WDI\_TLV\_设置\_接收\_COALESCING 是包含接收的数据包合并参数 TLV [OID\_WDI\_设置\_接收\_合并](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-receive-coalescing)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

@@ -7,12 +7,12 @@ keywords:
 - 内存池监视器 WDK，显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de486ea2c5533242c67d882b2148702c0af2f9fc
-ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
+ms.openlocfilehash: ea1ee90c780bf56cb1e202b3f4b749c233157e63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051638"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358271"
 ---
 # <a name="poolmon-display"></a>PoolMon 显示
 
@@ -35,7 +35,7 @@ Poolmon 可在命令窗口中显示有关池的内存分配数据的列。 使�
 |**字节数**|以字节为单位使用的分配的大小。|
 |**( )**|自上次更新后的分配大小变化。|
 |**每个分配**|值的字节数除以的值的比较。|
-|**Mapped_Driver**|本地驱动程序 (**/c**) 和其他常用的驱动程序和系统组件 (**/g**) 分配的池标记值。 会显示此列，只能使用 **/c**或 **/g**参数。|
+|**Mapped_Driver**|本地驱动程序 ( **/c**) 和其他常用的驱动程序和系统组件 ( **/g**) 分配的池标记值。 会显示此列，只能使用 **/c**或 **/g**参数。|
 
 以下示例 PoolMon 输出按分配数。 (若要排序你显示这种方式，请启动与 PoolMon **/a**参数。)
 
@@ -65,4 +65,4 @@ Poolmon 可显示的数据是收集和计算的 Windows，只要启用了池标�
 
 ## <a name="interpreting-tag-values"></a>解释标记值
 
-所有池内存分配都有标记，但是它们却不是所有特性的标记值。 池分配具有特性标记的值时分配的内存的驱动程序使用设置标记值的内存[ **ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)或[ **ExAllocatePoolWithQuotaTag**](https://msdn.microsoft.com/library/windows/hardware/ff544513)。 如果该驱动程序不会分配某个标记值 ([**ExAllocatePool**](https://msdn.microsoft.com/library/windows/hardware/ff544501)， [ **ExAllocatePoolWithQuota**](https://msdn.microsoft.com/library/windows/hardware/ff544506))，Windows 仍会创建一个标记，但它无分配默认标记值。 因此，无法区分从其他池分配的该驱动程序分配的统计信息。
+所有池内存分配都有标记，但是它们却不是所有特性的标记值。 池分配具有特性标记的值时分配的内存的驱动程序使用设置标记值的内存[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)或[ **ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)。 如果该驱动程序不会分配某个标记值 ([**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool)， [ **ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquota))，Windows 仍会创建一个标记，但它无分配默认标记值。 因此，无法区分从其他池分配的该驱动程序分配的统计信息。

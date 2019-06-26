@@ -8,12 +8,12 @@ keywords:
 - 查询能耗 Irp WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d94e8439c1cd85466bc3473fb1ca923eeb601aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12706c591573a995b3d796d4e22e8d43c35a7e7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372367"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385628"
 ---
 # <a name="handling-irpmnquerypower-for-system-power-states"></a>处理 IRP\_MN\_查询\_的电源可用于系统的电源状态
 
@@ -21,9 +21,9 @@ ms.locfileid: "63372367"
 
 
 
-电源管理器将发送具有细微的 IRP 代码 power IRP [ **IRP\_MN\_查询\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)并**SystemPowerState**中**Parameters.Power.Type**以确定是否可以安全地更改到指定的系统电源状态 (S1-S5) 并允许驱动程序，以准备进行此类更改。
+电源管理器将发送具有细微的 IRP 代码 power IRP [ **IRP\_MN\_查询\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)并**SystemPowerState**中**Parameters.Power.Type**以确定是否可以安全地更改到指定的系统电源状态 (S1-S5) 并允许驱动程序，以准备进行此类更改。
 
-只要有可能，在发送前查询电源管理器[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)请求较低 （不太通电） 状态。 但是，在电池故障的情况下或即将断电，电源管理器将发送集 power IRP 而无需首先查询。 电源管理器永远不会发送 IRP 即可使系统处于工作状态 (S0) 之前发送查询。
+只要有可能，在发送前查询电源管理器[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求较低 （不太通电） 状态。 但是，在电池故障的情况下或即将断电，电源管理器将发送集 power IRP 而无需首先查询。 电源管理器永远不会发送 IRP 即可使系统处于工作状态 (S0) 之前发送查询。
 
 有关设备的电源策略所有者如何处理系统查询能耗请求的信息，请参阅[处理设备电源策略所有者中系统查询能耗 IRP](handling-a-system-query-power-irp-in-a-device-power-policy-owner.md)。
 

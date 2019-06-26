@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c82c6787948473707fc23e29fd927b56c2a3c0e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1c0ec5833c3af47f354307de44466fbff619e87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343759"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366699"
 ---
 # <a name="kscategorysplitter"></a>KSCATEGORY_SPLITTER
 
 
-KSCATEGORY_SPLITTER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 功能类别将拆分数据流。
+KSCATEGORY_SPLITTER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能类别将拆分数据流。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ KSCATEGORY_SPLITTER[设备接口类](https://msdn.microsoft.com/library/windows/
 
 KS 音频适配器设备驱动程序注册 KSCATEGORY_SPLITTER 向操作系统指示设备支持 KSCATEGORY_SPLITTER 功能分类的实例。
 
-KSCATEGORY_SPLITTER 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799)功能类别。
+KSCATEGORY_SPLITTER 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)功能类别。
 
-有关拆分条中的常规信息，请参阅[AVStream 拆分条](https://msdn.microsoft.com/library/windows/hardware/ff554255)。
+有关拆分条中的常规信息，请参阅[AVStream 拆分条](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-splitters)。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,7 +79,7 @@ KSCATEGORY_SPLITTER 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](
 ## <a name="see-also"></a>请参阅
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

@@ -4,12 +4,12 @@ description: CODECAPI\_包括
 ms.assetid: c1b65350-32b9-4c94-a6d4-74cb9959d737
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbc0fd0642dbfd5b17e116d14cca7b4ca67a16e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be21fad3cd401a0cab02b8745f48905c15d72437
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384593"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386650"
 ---
 # <a name="codecapichangelists"></a>CODECAPI\_包括
 
@@ -41,21 +41,21 @@ CODECAPI\_包括事件用于返回已因属性而更改的 Guid 列表"设置"�
 <td><p>是 （支持的查询）</p></td>
 <td><p>是</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561937" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561937)"><strong>KSE_NODE</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561750" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561750)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kse_node" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kse_node)"><strong>KSE_NODE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关 DirectShow 筛选器和 KsProxy 详细信息请参阅[内核流式处理代理](https://msdn.microsoft.com/library/windows/hardware/ff560877)。
+有关 DirectShow 筛选器和 KsProxy 详细信息请参阅[内核流式处理代理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)。
 
-驱动程序使用 AVStream [ **KsGenerateEvents** ](https://msdn.microsoft.com/library/windows/hardware/ff562597)发布更改的 Guid 的列表。
+驱动程序使用 AVStream [ **KsGenerateEvents** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgenerateevents)发布更改的 Guid 的列表。
 
 ### <a name="see-also"></a>请参阅
 
-[**KsGenerateEvents**](https://msdn.microsoft.com/library/windows/hardware/ff562597)， [CODECAPI\_ALLSETTINGS](codecapi-allsettings.md)， [CODECAPI\_SETALLDEFAULTS](codecapi-setalldefaults.md)
+[**KsGenerateEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksgenerateevents)， [CODECAPI\_ALLSETTINGS](codecapi-allsettings.md)， [CODECAPI\_SETALLDEFAULTS](codecapi-setalldefaults.md)
 
  
 

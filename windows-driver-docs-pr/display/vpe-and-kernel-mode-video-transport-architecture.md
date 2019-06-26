@@ -10,12 +10,12 @@ keywords:
 - 视频捕获 WDK 视频传输内核模式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cd23ec90f61319e2cf5a6df301f6d9ccf610685
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1784c5efde83a084c94be0d56509efde0831ca1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376023"
 ---
 # <a name="vpe-and-kernel-mode-video-transport-architecture"></a>VPE 和内核模式视频传输体系结构
 
@@ -23,7 +23,7 @@ ms.locfileid: "63391225"
 ## <span id="ddk_vpe_and_kernel_mode_video_transport_architecture_gg"></span><span id="DDK_VPE_AND_KERNEL_MODE_VIDEO_TRANSPORT_ARCHITECTURE_GG"></span>
 
 
-本部分提供一些有关 Windows 2000 和更高版本的视频端口扩展 (VPE) 和内核模式下在 DirectX 5.0 和更高版本的视频传输体系结构的详细信息。 内核模式视频传输体系结构基于 Microsoft 添加为独立于设备的代码的新函数。 内核模式视频传输组成[ **DxApi** ](https://msdn.microsoft.com/library/windows/hardware/ff557364) DirectDraw，过程中提供的函数[微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)，以及提供的 COM 接口方法作为 DirectDraw 的一部分。
+本部分提供一些有关 Windows 2000 和更高版本的视频端口扩展 (VPE) 和内核模式下在 DirectX 5.0 和更高版本的视频传输体系结构的详细信息。 内核模式视频传输体系结构基于 Microsoft 添加为独立于设备的代码的新函数。 内核模式视频传输组成[ **DxApi** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxapi/nf-dxapi-dxapi) DirectDraw，过程中提供的函数[微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)，以及提供的 COM 接口方法作为 DirectDraw 的一部分。
 
 ### <a name="span-idwindows2000andlaterspanspan-idwindows2000andlaterspanwindows-2000-and-later"></a><span id="windows_2000_and_later"></span><span id="WINDOWS_2000_AND_LATER"></span>Windows 2000 及更高版本
 
@@ -33,7 +33,7 @@ ms.locfileid: "63391225"
 
 有关 DxApi 回调的详细信息，请参阅[DxApi 微型端口驱动程序函数对于 Windows 2000 和更高版本](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)。
 
-上图显示了与 （虚线表示内核转换） 的其他内核模式和用户模式组件相关的内核模式视频传输体系结构。 在此体系结构，DirectShow （或另一个用户模式下客户端） 调用[IDirectDrawKernel](https://msdn.microsoft.com/library/windows/hardware/ff567398)并[IDirectDrawSurfaceKernel](https://msdn.microsoft.com/library/windows/hardware/ff567409) DirectDraw COM 界面，可获取的句柄 DirectDraw 对象和图面上的对象。
+上图显示了与 （虚线表示内核转换） 的其他内核模式和用户模式组件相关的内核模式视频传输体系结构。 在此体系结构，DirectShow （或另一个用户模式下客户端） 调用[IDirectDrawKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)并[IDirectDrawSurfaceKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) DirectDraw COM 界面，可获取的句柄 DirectDraw 对象和图面上的对象。
 
 **请注意**  此体系结构还支持 PCI 总线用于 MPEG 设备和 VGA 设备之间的数据流。
 

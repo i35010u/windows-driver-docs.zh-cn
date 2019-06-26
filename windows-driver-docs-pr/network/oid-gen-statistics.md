@@ -5,12 +5,12 @@ ms.assetid: ff81d6b0-806d-4ddf-9da1-a169221be61f
 ms.date: 08/08/2017
 keywords: -OID_GEN_STATISTICS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf0225cb619a87db386adb6140a3472e80edfae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 059e96534bcb16c0958a0a0ea1e631c86dd39a0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387000"
 ---
 # <a name="oidgenstatistics"></a>OID\_常规\_统计信息
 
@@ -58,7 +58,7 @@ NDIS\_统计信息\_信息结构定义，如下所示：
 此结构包含以下成员：
 
 <a href="" id="header"></a>**标头**  
-[ **NDIS\_对象\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff566588) ndis 结构\_统计信息\_信息结构。 设置**类型**结构中的成员的**标头**指定到 NDIS\_对象\_类型\_默认情况下，**修订**成员添加到 NDIS\_统计信息\_信息\_修订\_1，并且**大小**成员添加到 NDIS\_SIZEOF\_统计信息\_INFO\_修订\_1。
+[ **NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header) ndis 结构\_统计信息\_信息结构。 设置**类型**结构中的成员的**标头**指定到 NDIS\_对象\_类型\_默认情况下，**修订**成员添加到 NDIS\_统计信息\_信息\_修订\_1，并且**大小**成员添加到 NDIS\_SIZEOF\_统计信息\_INFO\_修订\_1。
 
 <a href="" id="supportedstatistics"></a>**SupportedStatistics**  
 微型端口驱动程序支持的统计信息集。
@@ -201,7 +201,7 @@ NDIS\_统计信息\_信息结构定义，如下所示：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_对象\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff566588)
+[**NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
 
 [OID\_GEN\_BROADCAST\_BYTES\_RCV](oid-gen-broadcast-bytes-rcv.md)
 

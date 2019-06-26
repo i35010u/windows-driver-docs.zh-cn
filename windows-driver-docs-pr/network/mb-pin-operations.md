@@ -4,12 +4,12 @@ description: MB PIN 操作
 ms.assetid: ca9e1537-29e8-4849-a634-5c2177886321
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc6e164116a4c427b4da5395d9b865811bf506f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d3ce5cc457e997450b662b30e1b6a3b6072e486
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374045"
 ---
 # <a name="mb-pin-operations"></a>MB PIN 操作
 
@@ -18,7 +18,7 @@ ms.locfileid: "63343293"
 
 ## <a name="mb-pin-operations-for-device-hibernation"></a>MB 设备休眠状态的固定操作
 
-每个[3GPP](http://www.3gpp.org/about-3gpp)标准，有不同类型的 SIM Pin。  此页上的信息仅适用于 SIM PIN1，也称为通用给定 SIM 卡的 PIN。  
+每个[3GPP](https://www.3gpp.org/about-3gpp)标准，有不同类型的 SIM Pin。  此页上的信息仅适用于 SIM PIN1，也称为通用给定 SIM 卡的 PIN。  
 
 每次从低功耗状态，恢复蜂窝调制解调器 3GPP 标准要求连接到移动电话网络之前刷新 SIM 凭据。  
 
@@ -32,7 +32,7 @@ Windows 通过检测基础的调制解调器设备退出 D3 冷电源状态时�
 
 有关如何启用 D3 冷 USB 调制解调器设备中的信息，请参阅：
 
-* [USB 设备的支持 D3Cold](https://blogs.msdn.microsoft.com/usbcoreblog/2013/02/18/supporting-d3cold-for-usb-devices)。
-* [在驱动程序支持 D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)
+* [USB 设备的支持 D3Cold](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog)。
+* [在驱动程序支持 D3cold](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)
 
-有关固定操作的其他信息，请参阅[OID\_WWAN\_PIN](https://msdn.microsoft.com/library/windows/hardware/ff569828)。
+有关固定操作的其他信息，请参阅[OID\_WWAN\_PIN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin)。

@@ -7,19 +7,19 @@ keywords:
 - PSHED 插件 WDK WHEA，有关特定于平台的硬件错误驱动程序插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f864db184a687a7128a8e2dda2865dfa6ca115e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60ec3b4dd93f64a551367ce0a826028aa45fd5a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340796"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386464"
 ---
 # <a name="introduction-to-pshed-plug-ins"></a>PSHED 插件简介
 
 
 平台供应商可以通过提供 PSHED 插件，充分利用特定于平台的功能补充默认 PSHED 功能。 PSHED 插件是实现一个回调接口，由 PSHED 调用的专用的 Windows 设备驱动程序。 PSHED 插件旨在补充或替代 PSHED 由 Microsoft 提供的默认行为。
 
-作为实现插件 PSHED [Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)(WDM) 设备驱动程序特定的硬件标识符枚举在系统启动时加载插即用 (PnP) 管理器。 平台供应商指定启动加载的插件 PSHED 的硬件标识符。 此硬件标识符可以是在 ACPI 名称空间中，也可以是另一个设备命名空间中。
+作为实现插件 PSHED [Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)(WDM) 设备驱动程序特定的硬件标识符枚举在系统启动时加载插即用 (PnP) 管理器。 平台供应商指定启动加载的插件 PSHED 的硬件标识符。 此硬件标识符可以是在 ACPI 名称空间中，也可以是另一个设备命名空间中。
 
 PSHED 插件不处理任何用户模式应用程序或更高级别驱动程序启动的 I/O 请求。 因此，PSHED 插件仅用于实现驱动程序调度例程 (请参阅[ **DRIVER_DISPATCH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)) 来处理[IRP_MJ_PNP](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)和[IRP_MJ_POWER](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) Irp。 PSHED 插件无需注册设备接口或创建为它们的设备对象的符号链接。
 

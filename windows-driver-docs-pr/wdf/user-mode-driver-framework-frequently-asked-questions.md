@@ -4,12 +4,12 @@ description: Windows 驱动程序框架 (WDF) 是一组可用于编写在 Window
 ms.assetid: 0c07e514-73f9-4d24-86ad-8ac036fdbcf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b94151a985dfdfa262cfadeaff93b2da70f24e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 728116e9c0c59daf35d6e0a27a2647723a668af9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337790"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372292"
 ---
 # <a name="user-mode-driver-framework-frequently-asked-questions"></a>用户模式驱动程序框架常见问题解答
 
@@ -83,7 +83,7 @@ UMDF 驱动程序在驱动程序主机进程，这在 LocalService 帐户的安�
 ## <a name="what-is-the-difference-between-a-user-mode-driver-and-an-application"></a>用户模式驱动程序和应用程序之间的区别是什么？
 
 
-用户模式驱动程序将启动由驱动程序管理器，并在驱动程序主机进程中运行。 驱动程序的单个实例可以同时从多个应用程序请求提供服务。 若要与该驱动程序进行通信，应用程序向驱动程序的设备通过 Win32 API 发出 I/O 请求。 用户模式驱动程序中的主入口点是[ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)接口 (UMDF 1.11 及更早版本) 或[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)例程 （从 UMDF 2.0），而非**main （)** 函数。
+用户模式驱动程序将启动由驱动程序管理器，并在驱动程序主机进程中运行。 驱动程序的单个实例可以同时从多个应用程序请求提供服务。 若要与该驱动程序进行通信，应用程序向驱动程序的设备通过 Win32 API 发出 I/O 请求。 用户模式驱动程序中的主入口点是[ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)接口 (UMDF 1.11 及更早版本) 或[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程 （从 UMDF 2.0），而非**main （)** 函数。
 
 驱动程序还包括其他接口或调用的回调，以响应 I/O 请求和插和电源通知。 UMDF 驱动程序管理的设备集成到系统并参与插和电源管理。
 
@@ -99,9 +99,9 @@ UMDF 驱动程序在驱动程序主机进程，这在 LocalService 帐户的安�
 
 您可以找到以下论坛上的 Windows 驱动程序的所有方面的讨论：
 
--   Microsoft 将维护[Windows 硬件 WDK 和驱动程序开发](http://social.msdn.microsoft.com/Forums/windowsdesktop/home?forum=wdk)论坛。
+-   Microsoft 将维护[Windows 硬件 WDK 和驱动程序开发](https://social.msdn.microsoft.com/Forums/windowsdesktop/home?forum=wdk)论坛。
 
--   打开系统 Resources (OSR) 减少[OSR Online NTDEV 列表](http://www.osronline.com/showlists.cfm?list=ntdev)论坛。
+-   打开系统 Resources (OSR) 减少[OSR Online NTDEV 列表](https://community.osr.com/)论坛。
 
  
 

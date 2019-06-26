@@ -4,17 +4,17 @@ description: ACPI 5.0 规范引入了一组新的硬件要求，以支持运行 
 ms.assetid: C8AA4EE1-D9A6-438E-801B-8EDDF8AA0560
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 807841e42f46a4204619df75a9937f510115a2d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3504315b3a3aa87a1188b0736ca39549619ade9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364545"
 ---
 # <a name="hardware-requirements-for-soc-based-platforms"></a>基于 SoC 的平台的硬件要求
 
 
-[ACPI 5.0 规范](https://www.uefi.org/specifications)引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。 ACPI 5.0 支持硬件减少系统设计，以降低成本，并支持连接待机电源模型以启用长的电池使用寿命。
+[ACPI 5.0 规范](https://uefi.org/specifications)引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。 ACPI 5.0 支持硬件减少系统设计，以降低成本，并支持连接待机电源模型以启用长的电池使用寿命。
 
 ## <a name="hardware-reduced-acpi-platforms"></a>硬件减少 ACPI 平台
 
@@ -39,7 +39,7 @@ ms.locfileid: "63337526"
 
 Windows 支持具有低能耗空闲 S0 功能而不考虑它们实现硬件减少 ACPI 或完整 ACPI 的平台。 但是，根据 ACPI 5.0 规范的要求，Windows 不使用具有低能耗空闲 S0 功能，而不考虑 ACPI 配置的平台上传统睡眠/恢复功能。
 
-有关连接待机电源模型的详细信息，请参阅[现代备用](https://msdn.microsoft.com/library/windows/hardware/dn915061)。
+有关连接待机电源模型的详细信息，请参阅[现代备用](https://docs.microsoft.com/previous-versions/dn915061(v=vs.85))。
 
 ## <a name="acpi-events"></a>ACPI 事件
 

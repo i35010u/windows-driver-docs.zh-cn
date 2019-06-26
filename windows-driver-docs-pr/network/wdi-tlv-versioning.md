@@ -4,12 +4,12 @@ description: 若要维护向后兼容性，WDI 和微型端口使用 TLV 流作�
 ms.assetid: 308B4C7A-4AC1-4FEB-9775-65ED088F7C48
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4776939ca6f40b5919133b08ff4c5e3e04506a34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 07e04e1d5a55eeaeaae4786ef3aac101ea1133d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357282"
 ---
 # <a name="wdi-tlv-versioning"></a>WDI TLV 版本控制
 
@@ -35,7 +35,7 @@ typedef const TLV_CONTEXT * PCTLV_CONTEXT;
 
 XML 具有其扩充，以支持此版本控制与允许在 containerRefs 上的两个属性： *versionAdded*并*versionRemoved*。 这是什么驱动器的解析器和生成器来调整根据对等方版本的字节流。
 
-**请注意**  分析器和生成器假定它们始终链接与 WDI\_版本\_最新。 微型端口应始终传递 WDI\_版本\_的最新[ **NDIS\_微型端口\_驱动程序\_WDI\_特征**](https://msdn.microsoft.com/library/windows/hardware/mt297617)::**WdiVersion**调用时[ **NdisMRegisterWdiMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/mt297596)而不是使用特定版本，如 WDI\_版本\_1\_0，因为它们将会过期并会导致出现问题 TLV 分析器生成器，因为另一端可能会发送是意外的字节流。
+**请注意**  分析器和生成器假定它们始终链接与 WDI\_版本\_最新。 微型端口应始终传递 WDI\_版本\_的最新[ **NDIS\_微型端口\_驱动程序\_WDI\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)::**WdiVersion**调用时[ **NdisMRegisterWdiMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)而不是使用特定版本，如 WDI\_版本\_1\_0，因为它们将会过期并会导致出现问题 TLV 分析器生成器，因为另一端可能会发送是意外的字节流。
 
  
 

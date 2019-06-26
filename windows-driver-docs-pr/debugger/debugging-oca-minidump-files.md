@@ -4,17 +4,17 @@ description: 联机崩溃分析 (OCA) 是适用于 Windows 错误报告 (WER) �
 ms.assetid: 56F4202D-6A5F-4177-BBFD-70DA717FF24A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a29ec8c61a0a2e3d4873370c800ab6a80f359a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a345f080250f0d5c7dd690f759cd5d9c9551878f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350577"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391965"
 ---
 # <a name="debugging-oca-minidump-files"></a>调试 OCA 小型转储文件
 
 
-在线崩溃分析 (OCA) 是报表的工具，以便[Windows 错误报告 (WER)](https://msdn.microsoft.com/library/windows/hardware/gg487440)信息。 贵公司可以使用 OCA 崩溃转储来分析客户问题。
+在线崩溃分析 (OCA) 是报表的工具，以便[Windows 错误报告 (WER)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)信息。 贵公司可以使用 OCA 崩溃转储来分析客户问题。
 
 ## <a name="span-idanalyzedumpfilesspanspan-idanalyzedumpfilesspanspan-idanalyzedumpfilesspananalyze-dump-files"></a><span id="Analyze_dump_files"></span><span id="analyze_dump_files"></span><span id="ANALYZE_DUMP_FILES"></span>分析转储文件
 
@@ -42,7 +42,7 @@ ms.locfileid: "63350577"
 -   局部变量的名称、数据类型、地址和范围。
 -   对应于每个二进制指令的源代码中的行号。
 
-[Windows 驱动程序工具包 (WDK)](https://msdn.microsoft.com/library/windows/hardware/gg487463) 包括一些可用于减少符号文件中符号数量的工具。 将包含所有源级信息的符号文件称为完整的符号文件。 简化信息的符号文件被称为剥离符号文件。
+[Windows 驱动程序工具包 (WDK)](https://developer.microsoft.com/windows/hardware) 包括一些可用于减少符号文件中符号数量的工具。 将包含所有源级信息的符号文件称为完整的符号文件。 简化信息的符号文件被称为剥离符号文件。
 
 由于符号数据对于从 Windows 错误报告 (WER) 数据中获取有意义的崩溃信息至关重要，因此鼓励你在提交要签名的驱动程序时提交符号。 提交符号时，将它们存储在服务器上，从而使符号数据与相关联的 WER 进程同步。 通过此存储流程，你可以轻松地对小型转储文件中报告的崩溃进行分类，并最终接收从 Microsoft 返回的更佳数据。
 
@@ -51,7 +51,7 @@ Microsoft 在 Internet 上提供符号服务器，你可以使用它来分析显
 ## <a name="span-idintegratewerintoapplicationsspanspan-idintegratewerintoapplicationsspanspan-idintegratewerintoapplicationsspanintegrate-wer-into-applications"></a><span id="Integrate_WER_into_applications"></span><span id="integrate_wer_into_applications"></span><span id="INTEGRATE_WER_INTO_APPLICATIONS"></span>将 WER 集成到应用程序
 
 
-有关将 WER 集成到应用程序中的更多信息，请参阅[使用 WER](https://msdn.microsoft.com/library/bb513616.aspx)。
+有关将 WER 集成到应用程序中的更多信息，请参阅[使用 WER](https://docs.microsoft.com/windows/desktop/wer/using-wer)。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
@@ -62,13 +62,13 @@ Microsoft 在 Internet 上提供符号服务器，你可以使用它来分析显
 
 [驱动程序调试基础知识\[WinHEC 2007; 633 KB\] \[PPT\]](https://download.microsoft.com/download/a/f/d/afdfd50d-6eb9-425e-84e1-b4085a80e34e/dvr-t410_wh07.pptx)
 
-[如何读取 Windows 如果发生了崩溃，创建很小的内存转储文件](https://support.microsoft.com/kb/315263)
+[如何读取 Windows 如果发生了崩溃，创建很小的内存转储文件](https://support.microsoft.com/help/315263/how-to-read-the-small-memory-dump-file-that-is-created-by-windows-if-a)
 
-[资源定义语句](https://msdn.microsoft.com/library/aa381043.aspx)
+[资源定义语句](https://docs.microsoft.com/windows/desktop/menurc/resource-definition-statements)
 
-[Windows 错误报告](https://msdn.microsoft.com/library/bb513641(vs.85).aspx)
+[Windows 错误报告](https://docs.microsoft.com/windows/desktop/wer/windows-error-reporting)
 
-[VERSIONINFO 资源](https://msdn.microsoft.com/library/aa381058.aspx)
+[VERSIONINFO 资源](https://docs.microsoft.com/windows/desktop/menurc/versioninfo-resource)
 
  
 

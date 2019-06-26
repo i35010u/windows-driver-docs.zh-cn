@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3624a1c69f6769ebde201789676e52731a4bac5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1eed833830e1ba889ac011875314cf14dab6ccdc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359265"
 ---
 # <a name="rxnewmapuserbuffer-function"></a>RxNewMapUserBuffer 函数
 
@@ -51,7 +51,7 @@ PVOID RxNewMapUserBuffer(
 
 如果 MDL 存在，则假设条件是 MDL 描述用户缓冲区，并返回 MDL 的系统地址**RxNewMapUserBuffer**。 否则，将直接通过返回用户缓冲区**RxNewMapUserBuffer**。
 
-**RxNewMapUserBuffer**例程检查**CurrentIrp**-&gt;**MdlAddress**隶属*RxContext*变量是**NULL** ，并返回**CurrentIrp**-&gt;**UserBuffer**隶属*RxContext*变量时出现这种情况。 如果**CurrentIrp**-&gt;**MdlAddress**成员不是**NULL**，然后**RxNewMapUserBuffer**将调用[ **MmGetSystemAddressForMdlSafe** ](https://msdn.microsoft.com/library/windows/hardware/ff554559)从 IRP 返回 MDL。
+**RxNewMapUserBuffer**例程检查**CurrentIrp**-&gt;**MdlAddress**隶属*RxContext*变量是**NULL** ，并返回**CurrentIrp**-&gt;**UserBuffer**隶属*RxContext*变量时出现这种情况。 如果**CurrentIrp**-&gt;**MdlAddress**成员不是**NULL**，然后**RxNewMapUserBuffer**将调用[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)从 IRP 返回 MDL。
 
 请注意， **RxNewMapUserBuffer**例程才在 Windows XP 和 Windows 2000 上可用。
 
@@ -86,15 +86,15 @@ PVOID RxNewMapUserBuffer(
 ## <a name="see-also"></a>请参阅
 
 
-[**MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)
+[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)
 
-[**RxLowIoCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff554525)
+[**RxLowIoCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lowio/nf-lowio-rxlowiocompletion)
 
-[**RxLowIoGetBufferAddress**](https://msdn.microsoft.com/library/windows/hardware/ff554529)
+[**RxLowIoGetBufferAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lowio/nf-lowio-rxlowiogetbufferaddress)
 
-[**RxMapSystemBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff554549)
+[**RxMapSystemBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxmapsystembuffer)
 
-[**RX\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff554751)
+[**RX\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/ns-rxcontx-_rx_context)
 
  
 

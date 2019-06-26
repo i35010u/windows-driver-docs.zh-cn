@@ -4,12 +4,12 @@ description: 正在检查 IRP_MJ_SET_INFORMATION 操作 Oplock 状态
 ms.assetid: d164be8d-cf42-4b96-9883-e0f8223bfde4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d00b47675e9af7846e588c859278c8ecc5f6042
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df41fe498b6fc92a963999e4f98a1bb2c8704be5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359257"
 ---
 # <a name="checking-the-oplock-state-of-an-irpmjsetinformation-operation"></a>正在检查 IRP_MJ_SET_INFORMATION 操作 Oplock 状态
 
@@ -241,7 +241,7 @@ ms.locfileid: "63324406"
   <p><b>AND</b></p>
   </li>
   <li>
-  <p><a href="https://msdn.microsoft.com/library/windows/hardware/ff545765"><b>FILE_DISPOSITION_INFORMATION</b></a>。是 DeleteFile <b>，则返回 TRUE</b>。</p>
+  <p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information"><b>FILE_DISPOSITION_INFORMATION</b></a>。是 DeleteFile <b>，则返回 TRUE</b>。</p>
   </li>
   </ul>
   </td>
@@ -271,7 +271,7 @@ ms.locfileid: "63324406"
   <p><b>AND</b></p>
   </li>
   <li>
-  <p><a href="https://msdn.microsoft.com/library/windows/hardware/ff545765"><b>FILE_DISPOSITION_INFORMATION</b></a>。是 DeleteFile <b>，则返回 TRUE</b>。</p>
+  <p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_disposition_information"><b>FILE_DISPOSITION_INFORMATION</b></a>。是 DeleteFile <b>，则返回 TRUE</b>。</p>
   </li>
   </ul>
   </td>

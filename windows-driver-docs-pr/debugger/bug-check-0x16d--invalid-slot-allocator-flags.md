@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 169b4b74d9aa3411927d06fcad6bcf635d36e7c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb929492d539fb7eac6495e1d8c914a7e9470502
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362113"
 ---
 # <a name="bug-check-0x16d-invalidslotallocatorflags"></a>Bug 检查 0x16D：无效\_槽\_分配器\_标志
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352591"
 无效\_槽\_分配器\_标志 bug 检查的值为 0x0000016D。 这表示提供给其中一个槽分配器 Api 的标志无效。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="invalidslotallocatorflags-parameters"></a>无效\_槽\_分配器\_标志参数

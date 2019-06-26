@@ -4,19 +4,19 @@ description: 设置本地 NDIS QoS 参数
 ms.assetid: 7AB30829-16A0-46BF-8066-506E01E718A4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e499fbe42c94322009b239b82400cb4988fd60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 240a51d2d434629e9d80160ea1605835f9e58950
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375141"
 ---
 # <a name="setting-local-ndis-qos-parameters"></a>设置本地 NDIS QoS 参数
 
 
 本地 NDIS 服务质量 (QoS) 参数指定的微型端口驱动程序和其网络适配器的预配本地 QoS 设置。 微型端口驱动程序中通过以下方式获取本地的 NDIS QoS 参数：
 
--   通过的对象标识符 (OID) 方法请求[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)数据中心桥接 (DCB) 组件 (Msdcb.sys) 颁发。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构，它指定本地的 NDIS QoS 参数。
+-   通过的对象标识符 (OID) 方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)数据中心桥接 (DCB) 组件 (Msdcb.sys) 颁发。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，它指定本地的 NDIS QoS 参数。
 
     有关 DCB 组件的详细信息，请参阅[NDIS QoS 体系结构的数据中心桥接](ndis-qos-architecture-for-data-center-bridging.md)。
 
@@ -24,11 +24,11 @@ ms.locfileid: "63346639"
 
      
 
--   通过在系统注册表中存储和网络适配器的独立硬件供应商 (IHV) 所定义的专有设置。 微型端口驱动程序将读取这些设置时其[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) NDIS 调用函数。
+-   通过在系统注册表中存储和网络适配器的独立硬件供应商 (IHV) 所定义的专有设置。 微型端口驱动程序将读取这些设置时其[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) NDIS 调用函数。
 
 -   通过颁发给微型端口驱动程序通过由 IHV 开发管理应用程序特有的设置。
 
-DCB 组件时发出的 OID 方法请求[OID\_QOS\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451835)，则**NDIS\_QOS\_参数\_WILLING**的标志**NDIS\_QOS\_参数。标志**成员指定微型端口驱动程序如何解析从本地的 NDIS QoS 参数及其操作 QoS 参数。 根据此标志，驱动程序将按以下方式解决本地 QoS 参数：
+DCB 组件时发出的 OID 方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)，则**NDIS\_QOS\_参数\_WILLING**的标志**NDIS\_QOS\_参数。标志**成员指定微型端口驱动程序如何解析从本地的 NDIS QoS 参数及其操作 QoS 参数。 根据此标志，驱动程序将按以下方式解决本地 QoS 参数：
 
 -   如果**NDIS\_QOS\_参数\_WILLING**设置标志，微型端口驱动程序必须启用本地 DCB 交换 (DCBX) 愿意状态。 这将允许驱动程序进行远程配置与 QoS 参数。 在这种情况下，该驱动程序解析其操作的 QoS 参数基于远程 QoS 参数。
 
@@ -52,7 +52,7 @@ DCB 组件时发出的 OID 方法请求[OID\_QOS\_参数](https://msdn.microsoft
 
      
 
--   微型端口驱动程序应*应用*中包含的本地 QoS 参数[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)结构时它解析其操作的 NDIS QoS 参数。 如果要将驱动程序应用这些本地 QoS 参数，它必须使用它来自远程对等方的任何远程 QoS 参数。
+-   微型端口驱动程序应*应用*中包含的本地 QoS 参数[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构时它解析其操作的 NDIS QoS 参数。 如果要将驱动程序应用这些本地 QoS 参数，它必须使用它来自远程对等方的任何远程 QoS 参数。
 
     此过程的详细信息，请参阅[解析操作的 NDIS QoS 参数](resolving-operational-ndis-qos-parameters.md)。
 

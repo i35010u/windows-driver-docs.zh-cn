@@ -6,12 +6,12 @@ keywords:
 - GetDescriptor
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f3f439c1fd1a72561cb5c25adf8e8158b94de8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee0b0f5fa489d944f94e7a068340d3ebd60fd29b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339028"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368201"
 ---
 # <a name="storage-class-drivers-getdescriptor-routine"></a>存储类驱动程序的 GetDescriptor 例程
 
@@ -21,9 +21,9 @@ ms.locfileid: "63339028"
 
 对于数据传输操作中，存储类驱动程序需要有关每个 HBA 驱动其设备连接到总线的配置信息。 若要获取此信息，请类驱动程序可以调用内部*GetDescriptor*例程或实现中相同的功能及其*StartDevice*例程。 (有关*StartDevice*，请参阅[存储类驱动程序中处理即插即用启动](handling-pnp-start-in-a-storage-class-driver.md)。)
 
-一个*GetDescriptor*例程生成，并设置查询属性请求 ([**IRP\_MJ\_设备\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff550744)与[**IOCTL\_存储\_查询\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff560590)) 端口驱动程序检索的类驱动程序存储在其设备的设备和适配器描述符扩展插件。 类驱动程序还可能会根据返回的描述符数据的设备扩展中设置确定驱动程序编写器的标志。
+一个*GetDescriptor*例程生成，并设置查询属性请求 ([**IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)与[**IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)) 端口驱动程序检索的类驱动程序存储在其设备的设备和适配器描述符扩展插件。 类驱动程序还可能会根据返回的描述符数据的设备扩展中设置确定驱动程序编写器的标志。
 
-返回的类驱动程序将检查[**存储\_设备\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff566971)数据，如确定设备功能 （SCSI 查询数据或非 SCSI 等效项）SCSI 设备类型，无论设备的介质 （如果有） 是可移动 (**RemovableMedia**)，无论设备是否支持多个未完成的命令 (**CommandQueueing**)，和各种 ID字符串。 返回的类驱动程序将检查[**存储\_适配器\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff566346)数据来确定适配器功能，包括：
+返回的类驱动程序将检查[**存储\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_device_descriptor)数据，如确定设备功能 （SCSI 查询数据或非 SCSI 等效项）SCSI 设备类型，无论设备的介质 （如果有） 是可移动 (**RemovableMedia**)，无论设备是否支持多个未完成的命令 (**CommandQueueing**)，和各种 ID字符串。 返回的类驱动程序将检查[**存储\_适配器\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)数据来确定适配器功能，包括：
 
 -   最大特定 HBA 可以在单个操作中传输的字节数 (**MaximumTransferLength**)。
 
@@ -31,9 +31,9 @@ ms.locfileid: "63339028"
 
 -   HBA 的对齐要求的传输，因此可以正确设置的类驱动程序**AlignmentRequirement**字段中其设备对象 (**AlignmentMask**)。
 
-    发送的应用程序[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://msdn.microsoft.com/library/windows/hardware/ff560519)请求还可以使用此字段。
+    发送的应用程序[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)请求还可以使用此字段。
 
-    有关设置详细信息**AlignmentRequirement**中的设备对象，请参阅[初始化设备对象](https://msdn.microsoft.com/library/windows/hardware/ff547807)。
+    有关设置详细信息**AlignmentRequirement**中的设备对象，请参阅[初始化设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/initializing-a-device-object)。
 
 -   HBA 支持 SCSI 标记队列和/或逻辑单元内部队列 (**CommandQueueing**)。
 

@@ -4,12 +4,12 @@ description: 本主题介绍适用于硬件按钮和指示器的 Windows 8.1 测
 ms.assetid: 47E24D50-6007-4CD7-91C5-2D72788106B8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a42f6c4b07bf02d3a8889a50a3dde80db5c5ff25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb2d5e3b918364560485c835c6df04cff67be018
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360891"
 ---
 # <a name="gpio-buttons-and-indicators-supplemental-testing"></a>GPIO 按钮和指示器实现测试
 
@@ -61,9 +61,9 @@ ms.locfileid: "63326099"
 -   便携式计算机/盖板模式指示器
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[电源按钮行为](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)  
-[GPIO 按钮使用 MITT 平台进行测试](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48735)  
-[在 MITT GPIO 测试](https://msdn.microsoft.com/library/windows/hardware/dn919780)  
+[电源按钮行为](https://aka.ms/connect-redirect?DownloadID=47452)  
+[GPIO 按钮使用 MITT 平台进行测试](https://aka.ms/connect-redirect?DownloadID=48735)  
+[在 MITT GPIO 测试](https://docs.microsoft.com/windows-hardware/drivers/spb/gpio-tests-in-mitt)  
 
 
 

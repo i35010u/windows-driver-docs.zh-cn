@@ -11,12 +11,12 @@ keywords:
 - 重复使用的 I/O 请求对象 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ffa2641991b83a35abade8ec15b182f206500e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fc4816f100b724d8bf2b6561a9a6cf2569f4806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325185"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376244"
 ---
 # <a name="reusing-framework-request-objects-in-umdf"></a>重复使用在 UMDF Framework 请求对象
 
@@ -25,9 +25,9 @@ ms.locfileid: "63325185"
 
 若要提高驱动程序性能，基于框架的驱动程序的创建和发送许多几乎完全相同的异步请求到 I/O 的目标可以重复使用的请求而不是创建每个请求一个新的请求对象的对象。 请求完成后，驱动程序可以重复使用一个请求对象。
 
-如果驱动程序已通过调用创建一个请求对象[ **IWDFDevice::CreateRequest**](https://msdn.microsoft.com/library/windows/hardware/ff557021)，它可以通过调用重用请求[ **IWDFIoRequest2::Reuse**](https://msdn.microsoft.com/library/windows/hardware/ff559048). 驱动程序也可以重复使用它从其 I/O 队列中的框架接收的请求对象。
+如果驱动程序已通过调用创建一个请求对象[ **IWDFDevice::CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)，它可以通过调用重用请求[ **IWDFIoRequest2::Reuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-reuse). 驱动程序也可以重复使用它从其 I/O 队列中的框架接收的请求对象。
 
-如果您的驱动程序提供了[ **IRequestCallbackRequestCompletion::OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)它重用一个请求对象的回调函数，该驱动程序必须调用[ **IWDFIoRequest::SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)它调用后[**重用**](https://msdn.microsoft.com/library/windows/hardware/ff559048)。
+如果您的驱动程序提供了[ **IRequestCallbackRequestCompletion::OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)它重用一个请求对象的回调函数，该驱动程序必须调用[ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)它调用后[**重用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)。
 
  
 

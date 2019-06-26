@@ -7,12 +7,12 @@ keywords:
 - 本机 802.11 IHV 扩展 DLL WDK，有关本机 802.11 IHV 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba96bc3507d8b2456031985755ce2246157c4fde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 254a5868de08e81c86fcabce8232f6ec913e8657
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387282"
 ---
 # <a name="native-80211-ihv-extensions-dll-overview"></a>本机 802.11 IHV 扩展 DLL 概述
 
@@ -33,15 +33,15 @@ ms.locfileid: "63382624"
 
 -   网络配置文件的专有扩展的验证。 例如，IHV 扩展 DLL 负责 IHV 定义的安全选项的用户设置的验证。
 
--   本机 802.11 微型端口驱动程序的配置。 例如，在开始之前连接操作的微型端口驱动程序，操作系统将调用[ *Dot11ExtIhvPerformPreAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547499)函数，以便可以 IHV 扩展 DLL使用与到 BSS 网络连接相关的专有扩展插件配置驱动程序。
+-   本机 802.11 微型端口驱动程序的配置。 例如，在开始之前连接操作的微型端口驱动程序，操作系统将调用[ *Dot11ExtIhvPerformPreAssociate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_pre_associate)函数，以便可以 IHV 扩展 DLL使用与到 BSS 网络连接相关的专有扩展插件配置驱动程序。
 
 -   IHV UI 扩展 DLL 的接口。 通过此接口，IHV 扩展 DLL 可以请求用户输入或通知。 IHV UI 扩展 DLL 的详细信息，请参阅[本机 802.11 IHV UI 扩展 DLL](native-802-11-ihv-ui-extensions-dll2.md)。
 
 本机 802.11 IHV 扩展性主机进程将 IHV 扩展 DLL 加载到在第一个到达和检测为其安装 DLL 的无线 LAN (WLAN) 适配器时的进程空间中。 有关本机 802.11 IHV 扩展性主机进程和本机 802.11 框架的详细信息，请参阅[本机 802.11 软件体系结构](native-802-11-software-architecture.md)。
 
-本机 802.11 IHV 扩展性主机进程提供了一个 API 通过其 IHV 扩展性功能。 通过此 API，IHV 扩展 DLL 可以接口本机 802.11 微型端口驱动程序或 IHV UI 扩展 DLL。 有关 IHV 扩展性函数的详细信息，请参阅[本机 802.11 IHV 扩展性函数](https://msdn.microsoft.com/library/windows/hardware/ff560609)。
+本机 802.11 IHV 扩展性主机进程提供了一个 API 通过其 IHV 扩展性功能。 通过此 API，IHV 扩展 DLL 可以接口本机 802.11 微型端口驱动程序或 IHV UI 扩展 DLL。 有关 IHV 扩展性函数的详细信息，请参阅[本机 802.11 IHV 扩展性函数](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-extensibility-functions)。
 
-同样，IHV 扩展 DLL 提供了通过其 IHV 处理程序函数的 API。 本机 802.11 IHV 扩展性主机进程使用此 API 进行各种操作，例如启动快照前或后关联的操作。 有关 IHV 处理程序函数的详细信息，请参阅[本机 802.11 IHV 处理程序函数](https://msdn.microsoft.com/library/windows/hardware/ff560627)。
+同样，IHV 扩展 DLL 提供了通过其 IHV 处理程序函数的 API。 本机 802.11 IHV 扩展性主机进程使用此 API 进行各种操作，例如启动快照前或后关联的操作。 有关 IHV 处理程序函数的详细信息，请参阅[本机 802.11 IHV 处理程序函数](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-ihv-handler-functions)。
 
  
 

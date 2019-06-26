@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cbbe5a27df8f4c09ae27f44ee7ac16c5fb616f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2919734345d150adf43193062a182d29fa575fec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353659"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367827"
 ---
 # <a name="bug-check-0x13c-invalidiobooststate"></a>Bug 检查 0x13C：无效\_IO\_BOOST\_状态
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353659"
 无效\_IO\_BOOST\_状态 bug 检查的值为 0x0000013C。 这表示在线程退出，I/O boost 状态无效。 线程退出时，这应为零。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="invalidiobooststate-parameters"></a>无效\_IO\_BOOST\_状态参数

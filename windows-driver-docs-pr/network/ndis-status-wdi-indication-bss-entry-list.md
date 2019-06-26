@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_BSS_ENTRY_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 64b9baa9f923b3b4b8064f8ddc28342088736e1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f06036f2716971c29a146de10a0d128161f8d18
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366403"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360253"
 ---
 # <a name="ndisstatuswdiindicationbssentrylist"></a>NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表
 
@@ -20,7 +20,7 @@ ms.locfileid: "63366403"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63366403"
 
 | 在任务栏的搜索框中键入                                                   | 允许多个 TLV 实例 | 可选 | 描述                 |
 |--------------------------------------------------------|--------------------------------|----------|-----------------------------|
-| [**WDI\_TLV\_BSS\_ENTRY**](https://msdn.microsoft.com/library/windows/hardware/dn926162) | X                              | X        | 更新 BSSIDs 的列表。 |
+| [**WDI\_TLV\_BSS\_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry) | X                              | X        | 更新 BSSIDs 的列表。 |
 
  
 

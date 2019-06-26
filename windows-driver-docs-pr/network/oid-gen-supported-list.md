@@ -5,12 +5,12 @@ ms.assetid: 4e663204-eee0-4732-83c9-ec1dacd41034
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 263789fe3249bfd98b83a51fe1627351ed2d26ae
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 22935f04df1de75b97f6ea2762b2634fe0f1c503
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148527"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386995"
 ---
 # <a name="oidgensupportedlist"></a>OID\_GEN\_支持\_列表
 
@@ -26,13 +26,13 @@ ms.locfileid: "67148527"
 未请求。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。 请参阅[OID\_代\_支持\_列表 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff560258)。
+必需。 请参阅[OID\_代\_支持\_列表 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))。
 
 <a href="" id="windows-xp"></a>Windows XP  
 支持。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。 请参阅[OID\_代\_支持\_列表 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff560258)。
+必需。 请参阅[OID\_代\_支持\_列表 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))。
 
 <a name="remarks"></a>备注
 -------

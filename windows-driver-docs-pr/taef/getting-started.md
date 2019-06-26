@@ -4,12 +4,12 @@ description: 测试创作和执行框架 (TAEF) 入门
 ms.assetid: 7F57C5EF-141A-4303-9B9F-2EC118324BF8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc47b4b8e3dcf60c8fefdbbb55cf08f98cbb1a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9b5f505d2cfdf9786fb7acc19764a144e8df21b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373012"
 ---
 # <a name="getting-started"></a>入门
 
@@ -17,14 +17,14 @@ ms.locfileid: "56533338"
 ## <a name="installation"></a>安装
 
 
-当你安装[Windows Driver Kit](https://developer.microsoft.com/windows/hardware/windows-driver-kit)，TAEF 文件放置在测试\\运行时\\TAEF WDK 的子目录。 当您设置测试计算机以进行部署，以下说明[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)，TAEF 文件安装在测试计算机上。
+当你安装[Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)，TAEF 文件放置在测试\\运行时\\TAEF WDK 的子目录。 当您设置测试计算机以进行部署，以下说明[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))，TAEF 文件安装在测试计算机上。
 
 此外可以安装 TAEF 文件手动，请参阅[手动安装，并在测试计算机上卸载 TAEF](#manually-installing-and-uninstalling-taef-on-a-test-computer)。
 
 ## <a name="authoring-tests"></a>创作测试
 
 
-TAEF 不限制通过本机或托管的关联用户。 用户可以创作测试时选择的最高效的语言。 TAEF 支持在 C/c + + 中编写测试C#，JScript 和 VBScript。
+TAEF 不限制通过本机或托管的关联用户。 用户可以创作测试时选择的最高效的语言。 TAEF 支持用 C 编写测试 /C++， C#，JScript 和 VBScript。
 
 有关详细信息，请参阅[创作测试](authoring-tests.md)。
 

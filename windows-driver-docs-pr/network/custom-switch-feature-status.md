@@ -4,12 +4,12 @@ description: 自定义交换机功能状态
 ms.assetid: 2362EE05-9CC9-451D-80D1-C18CC9274BAB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5efba9e9f5e2dbb0c7731998a1164bdc74feaa34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ac3ed87e4b6e31bec0f33402a4788c663146ab3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387395"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383700"
 ---
 # <a name="custom-switch-feature-status"></a>自定义交换机功能状态
 
@@ -61,7 +61,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_CustomSwitchData.mof
 net start vmms
 ```
 
-有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://msdn.microsoft.com/library/windows/hardware/ff542012)。
+有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)。
 
 下面的示例演示如何使用自定义开关功能状态定义来获取开关的数据。 在此示例中，Fabrikam\_CustomSwitchData MOF 类用于从名为"TestSwitch"的交换机获取切换状态。 Fabrikam，Inc.扩展 vSwitch"TestSwitch"上已启用且正在返回 123 的状态。
 

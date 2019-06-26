@@ -8,12 +8,12 @@ keywords:
 - 升级测试 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 672e95f384b9ddce84889598996da366ba132e9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac0bbe0a55bbafef589e1264894e1c6033f69a2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363429"
 ---
 # <a name="examining-the-answerfile"></a>检查应答文件
 
@@ -80,7 +80,7 @@ params.*postupgrade-ID*
 
 每个条目应答文件中指定该组件的参数部分的名称。 例如，如果组件的 Windows 2000 或更高版本的设备 ID 是 netadapter2 中的项**NetAdapters**部分**params.netadapter2**。 顶级部分和应答文件中的参数部分不可见的网络迁移 DLL。
 
-NetSetup 将扩展添加到组件的参数部分名称， **OemSection**来创建*OEM 部分*组件名称。 例如，如果参数部分的一个组件是 params.netadapter2， *OEM 部分*名称的组件是 params.netadapter2.OemSection。 将传递 NetSetup *OEM 部分*名称用作*szSectionName*参数[ **DoPreUpgradeProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff545634)函数提供的网络迁移 DLL 组件。 **DoPreUpgradeProcessing**函数调用[ **NetUpgradeAddSection** ](https://msdn.microsoft.com/library/windows/hardware/ff559063)函数来创建*OEM 部分*组件在应答文件。 **DoPreUpgradeProcessing**函数然后调用[ **NetUpgradeAddLineToSection** ](https://msdn.microsoft.com/library/windows/hardware/ff559059)添加到特定于组件的信息*OEM 部分*.
+NetSetup 将扩展添加到组件的参数部分名称， **OemSection**来创建*OEM 部分*组件名称。 例如，如果参数部分的一个组件是 params.netadapter2， *OEM 部分*名称的组件是 params.netadapter2.OemSection。 将传递 NetSetup *OEM 部分*名称用作*szSectionName*参数[ **DoPreUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545634(v=vs.85))函数提供的网络迁移 DLL 组件。 **DoPreUpgradeProcessing**函数调用[ **NetUpgradeAddSection** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559063(v=vs.85))函数来创建*OEM 部分*组件在应答文件。 **DoPreUpgradeProcessing**函数然后调用[ **NetUpgradeAddLineToSection** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559059(v=vs.85))添加到特定于组件的信息*OEM 部分*.
 
 应答文件的以下部分显示的部分和条目的网络适配器的 Windows 2000 或更高版本的设备 ID 是**adapter2**:
 
@@ -105,9 +105,9 @@ HKR,0\1,IsdnSpid,0,"222"
 HKR,0,IsdnSwitchType,0x00010001,1
 ```
 
-在 GUI 模式阶段，NetSetup 检测[ **InfToRunAfterInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff559059)密钥编写的 DLL 在迁移到**params.adapter2.OemSection**的示例应答文件。 按此键的指引，处理 NetSetup **adapter2。SectionToRun.AddReg**部分。 **Adapter2。SectionToRun.AddReg**部分指导 NetSetup 将参数值添加到在 Windows 2000 或更高版本的注册表中 adapater2 的实例键。 DLL 读取 adapter2 迁移升级的 Winnt32 阶段的注册表的升级前的参数值应匹配这些参数值。
+在 GUI 模式阶段，NetSetup 检测[ **InfToRunAfterInstall** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559059(v=vs.85))密钥编写的 DLL 在迁移到**params.adapter2.OemSection**的示例应答文件。 按此键的指引，处理 NetSetup **adapter2。SectionToRun.AddReg**部分。 **Adapter2。SectionToRun.AddReg**部分指导 NetSetup 将参数值添加到在 Windows 2000 或更高版本的注册表中 adapater2 的实例键。 DLL 读取 adapter2 迁移升级的 Winnt32 阶段的注册表的升级前的参数值应匹配这些参数值。
 
-如果网络迁移 DLL 是要在 GUI 模式阶段，加载其[ **DoPreUpgradeProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff545634)函数设置 NUA\_负载\_POST\_升级标志。 此标志会导致 NetSetup 编写**OemDllToLoad**进入到应答文件中的组件的参数部分。 **OemDllToLoad**条目会导致 NetSetup 加载组件迁移 DLL 在 GUI 模式阶段。
+如果网络迁移 DLL 是要在 GUI 模式阶段，加载其[ **DoPreUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545634(v=vs.85))函数设置 NUA\_负载\_POST\_升级标志。 此标志会导致 NetSetup 编写**OemDllToLoad**进入到应答文件中的组件的参数部分。 **OemDllToLoad**条目会导致 NetSetup 加载组件迁移 DLL 在 GUI 模式阶段。
 
 下面的示例演示的应答文件部分和条目的组件的网络在 GUI 模式阶段期间加载 DLL 的迁移：
 

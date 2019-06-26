@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96d8e707a44bdb5f5f6944f3226e90196f13e46f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a9b0a869b6993cae7d9494e7f542244f138abe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330915"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386414"
 ---
 # <a name="headerpath-xml-element"></a>headerPath XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **HeaderPath** XML 元素指定有关 DPInst DPInst EULA 页面和 DPInst 安装页的右上角显示的自定义标头位图源文件名。
 

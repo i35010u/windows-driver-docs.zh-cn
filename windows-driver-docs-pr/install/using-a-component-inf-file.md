@@ -3,12 +3,12 @@ title: 使用组件 INF 文件
 description: 介绍如何使用软件组件包括特定于设备的用户模式软件。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 633023f0187a3ff1d331d1bdf83bad258d125ce1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eeda366397fc82430a1667da4adaebdddf872cbb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339439"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380449"
 ---
 # <a name="using-a-component-inf-file"></a>使用组件 INF 文件
 
@@ -82,15 +82,15 @@ Needs=UmPass.Services
 
 接下来，如果软件组件定目标到通用[目标平台](../develop/windows-10-editions-for-universal-drivers.md)，使用以下过程：
 
-1. 调用[ **CM_Locate_DevNode** ](https://msdn.microsoft.com/library/windows/hardware/ff538742)与设备实例 ID 的软件组件，以检索设备句柄。
-2. 调用[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)检索到该设备的父级的句柄。  此父级是软件组件使用添加的设备[INF AddComponent 指令](inf-addcomponent-directive.md)。
-3. 然后，若要检索父级的设备实例 ID，请调用[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)从句柄上[ **CM_Get_Parent**](https://msdn.microsoft.com/library/windows/hardware/ff538610)。
+1. 调用[ **CM_Locate_DevNode** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_locate_devnodea)与设备实例 ID 的软件组件，以检索设备句柄。
+2. 调用[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)检索到该设备的父级的句柄。  此父级是软件组件使用添加的设备[INF AddComponent 指令](inf-addcomponent-directive.md)。
+3. 然后，若要检索父级的设备实例 ID，请调用[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)从句柄上[ **CM_Get_Parent**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)。
 
 如果软件组件面向桌面[目标平台](../develop/windows-10-editions-for-universal-drivers.md)只，请使用以下过程：
 
-1. 调用[ **SetupDiCreateDeviceInfoList** ](https://msdn.microsoft.com/library/windows/hardware/ff550956)若要创建空的设备信息设置。
-2. 调用[ **SetupDiOpenDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff552071)与软件组件设备的设备实例 id。
-3. 调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)与`DEVPKEY_Device_Parent`要检索父级的设备实例 ID。
+1. 调用[ **SetupDiCreateDeviceInfoList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfolist)若要创建空的设备信息设置。
+2. 调用[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)与软件组件设备的设备实例 id。
+3. 调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)与`DEVPKEY_Device_Parent`要检索父级的设备实例 ID。
 
 ## <a name="example"></a>示例
 
@@ -178,9 +178,9 @@ CONTOSO = "Contoso"
 ContosoCtrlPnl.DeviceDesc = "Contoso Control Panel" 
 ```
 
-驱动程序验证和提交过程是相同的组件与正则 Inf Inf。 有关详细信息，请参阅[Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)。
+驱动程序验证和提交过程是相同的组件与正则 Inf Inf。 有关详细信息，请参阅[Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
 
-安装程序类的详细信息，请参阅[系统定义设备安装程序类可用于供应商](https://msdn.microsoft.com/library/windows/hardware/ff553426)。
+安装程序类的详细信息，请参阅[系统定义设备安装程序类可用于供应商](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)。
 
 ## <a name="see-also"></a>请参阅
 

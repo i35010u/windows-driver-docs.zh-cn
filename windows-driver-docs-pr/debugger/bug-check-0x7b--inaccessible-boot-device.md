@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d560f7216de76fea185bd7e5e679d79ae128112
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06362901f3b9ed4217448fc41697df338eb69954
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361751"
 ---
 # <a name="bug-check-0x7b-inaccessiblebootdevice"></a>Bug 检查 0x7B：无法访问\_启动\_设备
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367521"
 无法访问\_启动\_设备错误检查的值为 0x0000007B。 此 bug 检查指示 Microsoft Windows 操作系统将无法在启动期间的对系统分区的访问。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="inaccessiblebootdevice-parameters"></a>无法访问\_启动\_设备参数
@@ -133,7 +133,7 @@ F12 ESC F9 F10 F8**常见 BIOS 设置密钥**
 
 每个制造商生产的 BIOS 设置参数而异，通常使用这些密钥。 检查系统文档以确定使用何种安装程序密钥。
 
-ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
+ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\** *
 
 **如果可以启动 Windows**
 
@@ -158,7 +158,7 @@ ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
 
 -   查找范围**设备管理器**若要查看的任何设备都带有感叹号 （！）。 查看任何错误的驱动程序的驱动程序属性中显示的事件日志。 请尝试更新相关的驱动程序。
 
--   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+-   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 -   您可以尝试运行硬件诊断程序提供的系统制造商。
 
@@ -168,7 +168,7 @@ ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
     SFC /scannow
     ```
 
-    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/kb/929833)。
+    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
 
 -   后自动修复，在选择选项屏幕上，选择**进行故障排除&gt;高级选项&gt;系统还原**。 此选项将你的电脑带回到较早的时间点（称为系统还原点）。 还原点时安装新的应用程序、 驱动程序、 更新或手动创建还原点时生成。 遇到错误之前，请选择一个还原点。
 

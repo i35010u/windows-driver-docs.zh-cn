@@ -7,12 +7,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60636066498fc7ae0017544d044ab50e8920647f
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.openlocfilehash: 187eaaef53bc8030b91e19142f5db4ce79d52b16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813586"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360934"
 ---
 # <a name="survey-of-verification-tools"></a>验证工具调查
 
@@ -45,7 +45,7 @@ ms.locfileid: "66813586"
     -   **使用提升的 IRQL 在运行时可分页内存。** 当已验证的驱动程序将引发在调度 IRQL\_级别或更高版本，驱动程序验证程序修剪系统工作集，从所有可分页内存模拟内存不足的情况下系统。 如果尝试使用其中一个可分页虚拟地址，该驱动程序崩溃。
     -   **低资源模拟。** 若要模拟的系统资源不足的情况下，驱动程序验证程序可能会失败由驱动程序调用 Api 的各种操作系统内核。
     -   **内存泄漏。** 驱动程序验证程序跟踪所做的驱动程序的内存分配的并确保该驱动程序被卸载之前, 释放内存。
-    -   **需要很长时间以完成或取消的 I/O 操作。** 驱动程序验证程序可以测试用于响应状态的驱动程序的逻辑\_PENDING 返回值从[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
+    -   **需要很长时间以完成或取消的 I/O 操作。** 驱动程序验证程序可以测试用于响应状态的驱动程序的逻辑\_PENDING 返回值从[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
     -   **DDI 符合性检查。** （可从 Windows 8 开始）驱动程序验证器应用一组检查驱动程序和操作系统的内核接口之间的正确交互的设备驱动程序接口 (DDI) 规则。 这些规则对应于在分析驱动程序源代码中使用 Static Driver Verifier 的规则。 如果驱动程序验证工具发现错误时启用 DDI 符合性检查，运行[Static Driver Verifier](static-driver-verifier.md)和选择的相同规则，导致该错误。 Static Driver Verifier 可帮助您的驱动程序源代码中找到缺陷的原因。
 -   [应用程序验证工具](application-verifier.md)是一个用于用户模式应用程序和驱动程序以 C 编写的动态验证工具 /C++。 它不会验证托管的代码。 应用程序验证程序不包含在 WDK 中，但可以下载并安装它从[Microsoft Download Center](https://go.microsoft.com/fwlink/p/?linkid=11573)。
 

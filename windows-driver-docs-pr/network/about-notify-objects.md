@@ -10,12 +10,12 @@ keywords:
 - 子系统 WDK 网络配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 651e61b0c18fe7cee505042249248d41357d36d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 211cc1debea3d885f46bdd428142a8b791c70781
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367910"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386580"
 ---
 # <a name="about-notify-objects"></a>关于通知对象
 
@@ -32,7 +32,7 @@ ms.locfileid: "63367910"
 -   例如，Microsoft 网络客户端的客户端
 
 **请注意**  网络卡不支持，并且不能拥有通知对象。 参与是配置网络或安装和卸载的物理或虚拟网络卡必须使用 INF 文件或设备共同安装程序机制。
-有关详细信息，请参阅[编写共同安装程序](https://msdn.microsoft.com/library/windows/hardware/ff554011)。
+有关详细信息，请参阅[编写共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer)。
 
  
 
@@ -40,7 +40,7 @@ ms.locfileid: "63367910"
 
 -   公开接口到网络配置子系统的方法，以便网络配置子系统可以通知的事件通知对象在其请求发送通知的匹配项的通知对象。
 
--   调用方法的网络配置子系统的公共接口来执行操作，其中包括但不限于安装和删除网络设备。 有关详细信息，请参阅[网络配置接口](https://msdn.microsoft.com/library/windows/hardware/ff559080)。
+-   调用方法的网络配置子系统的公共接口来执行操作，其中包括但不限于安装和删除网络设备。 有关详细信息，请参阅[网络配置接口](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v=vs.85))。
 
 请求和接收通知以及与彼此通信，通知对象和网络配置子系统实现组件对象模型 (COM) 接口。
 

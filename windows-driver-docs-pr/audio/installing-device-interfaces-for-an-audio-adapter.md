@@ -11,12 +11,12 @@ keywords:
 - 音频设备接口 WDK
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eaa23ba599e5afdd4e7b36817619ba67112f09d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d4c605303bd01c42bf76ac9da26cbcdee1d4342
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359876"
 ---
 # <a name="installing-device-interfaces-for-an-audio-adapter"></a>为音频适配器安装设备接口
 
@@ -26,7 +26,7 @@ ms.locfileid: "63333463"
 
 客户端访问音频设备通过一系列*设备接口*的供应商指定适配器的 INF 文件中。 INF 文件中指定的设备接口具有一对一的对应关系与适配器驱动程序创建时初始化设备子设备 (请参阅[子创建](subdevice-creation.md))。 对于每个设备接口，该 INF 文件指定**FriendlyName**条目值，该值是在用户模式下，接口的注册表项下可访问。
 
-在内核流体系结构，拓扑类别 (请参阅[ **KSPROPERTY\_拓扑\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff565799)) 表示设备接口的类。
+在内核流体系结构，拓扑类别 (请参阅[ **KSPROPERTY\_拓扑\_类别**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)) 表示设备接口的类。
 
 下表列出了拓扑类别音频适配器是最有可能要用来描述其子设备的功能。
 
@@ -61,7 +61,7 @@ ms.locfileid: "63333463"
 
 ### <a name="span-idexampleinstallingaudiodeviceinterfacesspanspan-idexampleinstallingaudiodeviceinterfacesspanexample-installing-audio-device-interfaces"></a><span id="example__installing_audio_device_interfaces"></span><span id="EXAMPLE__INSTALLING_AUDIO_DEVICE_INTERFACES"></span>示例：安装的音频设备接口
 
-在此示例中，使用 XYZ 音频设备的设备安装部分[ **INF AddInterface 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546310)安装四个音频适配器接口。 在下面的示例，每个四个指令将唯一引用字符串分配给一个接口，适配器驱动程序可用来区分每个接口类的实例。
+在此示例中，使用 XYZ 音频设备的设备安装部分[ **INF AddInterface 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)安装四个音频适配器接口。 在下面的示例，每个四个指令将唯一引用字符串分配给一个接口，适配器驱动程序可用来区分每个接口类的实例。
 
 ```inf
   [XYZ-Audio-Device.Interfaces]
@@ -93,7 +93,7 @@ ms.locfileid: "63333463"
   HKR,,CLSID,,%Proxy.CLSID%
 ```
 
-在此示例中的关键字 HKR 表示设备的系统提供的注册表路径。 有关详细信息，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+在此示例中的关键字 HKR 表示设备的系统提供的注册表路径。 有关详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 下面是此示例中的字符串部分。
 

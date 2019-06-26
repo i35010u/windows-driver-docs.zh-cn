@@ -13,19 +13,19 @@ keywords:
 - 微型驱动程序 WDK vram 能够捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15648b4a90d3be8e89662406132babbad8ab4a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e33a58ce1de5794913affa95b9e2396dff608f5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386658"
 ---
 # <a name="capturing-video-to-vram-using-avstream"></a>使用 AVStream 将视频捕获到 VRAM
 
 
 从 Windows Vista 开始，视频和音频图形适配器的 vram 能够直接向可以捕获 AVStream 驱动程序。 AVStream 驱动程序在 Windows Vista 之前已存在的必须首先将数据置于 vram 能够、 将其传输到系统内存，然后最后再到 vram 能够显示。
 
-新的 vram 能够捕获支持利用 GPU 计划和所提供的 vram 能够虚拟化的[Windows Vista 显示器驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff570593)。
+新的 vram 能够捕获支持利用 GPU 计划和所提供的 vram 能够虚拟化的[Windows Vista 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)。
 
 若要捕获到 vram 能够，设备必须包括捕获并显示相同的视频卡上的功能。
 

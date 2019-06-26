@@ -6,12 +6,12 @@ keywords:
 - 虚拟连接 WDK 的 CoNDIS，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6728dc8c803c5567f7dcc771331838322efb05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1db840bf352b9fedc60d407ca29ccf37488b90b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357396"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374941"
 ---
 # <a name="creating-a-vc"></a>创建 VC
 
@@ -25,7 +25,7 @@ ms.locfileid: "63357396"
 
 ### <a name="client-initiated-creation-of-a-vc"></a>客户端发起的 VC 的创建
 
-之前[拨打电话](making-a-call.md)与[ **NdisClMakeCall**](https://msdn.microsoft.com/library/windows/hardware/ff561635)，在面向连接的客户端调用[ **NdisCoCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff561696)若要启动的 VC 创建。
+之前[拨打电话](making-a-call.md)与[ **NdisClMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmakecall)，在面向连接的客户端调用[ **NdisCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscocreatevc)若要启动的 VC 创建。
 
 下图显示的某调用的客户端管理器启动 VC 创建。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63357396"
 
 ![说明启动 vc 创建 mcm 驱动程序的客户端的关系图](images/fig1-05.png)
 
-当呼叫管理器的面向连接的客户端调用**NdisCoCreateVc**，NDIS 调用，以与同步操作[ **ProtocolCoCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff570252)调用的函数管理器和[ **MiniportCoCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559354)基础微型端口驱动程序的函数 （请参阅本主题中的第一个图形）。 NDIS 传递*NdisVcHandle*同时表示 VC *ProtocolCoCreateVc*并*MiniportCoCreateVc*。 如果在调用**NdisCoCreateVc**是否成功，请返回 NDIS *NdisVcHandle*到**NdisCoCreateVc**。
+当呼叫管理器的面向连接的客户端调用**NdisCoCreateVc**，NDIS 调用，以与同步操作[ **ProtocolCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_create_vc)调用的函数管理器和[ **MiniportCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_create_vc)基础微型端口驱动程序的函数 （请参阅本主题中的第一个图形）。 NDIS 传递*NdisVcHandle*同时表示 VC *ProtocolCoCreateVc*并*MiniportCoCreateVc*。 如果在调用**NdisCoCreateVc**是否成功，请返回 NDIS *NdisVcHandle*到**NdisCoCreateVc**。
 
 *ProtocolCoCreateVc*分配并初始化任何动态资源和呼叫管理器需要执行后续操作将激活 VC 的结构。 *MiniportCoCreateVc*分配并初始化微型端口驱动程序所需的用于维护有关 VC 的状态信息的任何资源。 这两*ProtocolCoCreateVc*并*MiniportCoCreateVc*存储*NdisVcHandle* 。
 
@@ -43,19 +43,19 @@ ms.locfileid: "63357396"
 
 ### <a name="call-manager-initiated-creation-of-a-vc"></a>调用管理器启动创建 VC
 
-之前[，该值指示的传入呼叫](indicating-an-incoming-call.md)向面向连接的客户端与[ **NdisCmDispatchIncomingCall**](https://msdn.microsoft.com/library/windows/hardware/ff561664)，呼叫管理器调用**NdisCoCreateVc**若要启动的 VC 创建 （请参阅下图）。
+之前[，该值指示的传入呼叫](indicating-an-incoming-call.md)向面向连接的客户端与[ **NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall)，呼叫管理器调用**NdisCoCreateVc**若要启动的 VC 创建 （请参阅下图）。
 
 ![说明启动 vc 创建呼叫管理器的关系图](images/cm-06.png)
 
-当呼叫管理器调用[ **NdisCoCreateVc**](https://msdn.microsoft.com/library/windows/hardware/ff561696)，NDIS 调用，以与同步操作[ **ProtocolCoCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff570252)的函数面向连接的客户端注册 SAP 在其正在接收调用，并将[ **MiniportCoCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559354)函数的基础的微型端口。 NDIS 传递*NdisVcHandle*同时表示 VC *ProtocolCoCreateVc*并*MiniportCoCreateVc*。 如果在调用**NdisCoCreateVc**是否成功，请返回 NDIS *NdisVcHandle*到**NdisCoCreateVc**。
+当呼叫管理器调用[ **NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscocreatevc)，NDIS 调用，以与同步操作[ **ProtocolCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_create_vc)的函数面向连接的客户端注册 SAP 在其正在接收调用，并将[ **MiniportCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_create_vc)函数的基础的微型端口。 NDIS 传递*NdisVcHandle*同时表示 VC *ProtocolCoCreateVc*并*MiniportCoCreateVc*。 如果在调用**NdisCoCreateVc**是否成功，请返回 NDIS *NdisVcHandle*到**NdisCoCreateVc**。
 
 ### <a name="mcm-driver-initiated-creation-of-a-vc"></a>MCM 驱动程序启动创建的 VC
 
-之前[，该值指示的传入呼叫](indicating-an-incoming-call.md)向面向连接的客户端与[ **NdisMCmDispatchIncomingCall**](https://msdn.microsoft.com/library/windows/hardware/ff562830)，MCM 驱动程序调用[ **NdisMCmCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff562812)若要启动的 VC 创建 （请参阅下图）。
+之前[，该值指示的传入呼叫](indicating-an-incoming-call.md)向面向连接的客户端与[ **NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingcall)，MCM 驱动程序调用[ **NdisMCmCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmcreatevc)若要启动的 VC 创建 （请参阅下图）。
 
 ![说明启动 vc 创建 mcm 驱动程序的关系图](images/fig1-06.png)
 
-当 MCM 驱动程序调用**NdisMCmCreateVc**，作为一项同步操作之前的 NDIS 调用**NdisMCmCreateVc**返回时， [ **ProtocolCoCreateVc**](https://msdn.microsoft.com/library/windows/hardware/ff570252)的面向连接的客户端的注册的 SAP 接收调用的函数。 将传递 NDIS *NdisVcHandle* ，表示为 VC *ProtocolCoCreateVc*。 如果在调用**NdisMCmCreateVc**是否成功，请返回 NDIS *NdisVcHandle*到**NdisMCmCreateVc**。
+当 MCM 驱动程序调用**NdisMCmCreateVc**，作为一项同步操作之前的 NDIS 调用**NdisMCmCreateVc**返回时， [ **ProtocolCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_create_vc)的面向连接的客户端的注册的 SAP 接收调用的函数。 将传递 NDIS *NdisVcHandle* ，表示为 VC *ProtocolCoCreateVc*。 如果在调用**NdisMCmCreateVc**是否成功，请返回 NDIS *NdisVcHandle*到**NdisMCmCreateVc**。
 
 *ProtocolCoCreateVc*分配并初始化任何动态资源和客户端需要执行后续操作 VC 的结构。 *ProtocolCoCreateVc*还会将存储*NdisVcHandle* 。
 

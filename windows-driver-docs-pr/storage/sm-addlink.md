@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7d2c4425fc238b3303634ce392ff040001b10e93
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 555e0d6aab241f19903f857b2abea036d35d541b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341197"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363923"
 ---
 # <a name="smaddlink-function"></a>SM\_AddLink 函数
 
@@ -76,7 +76,7 @@ void SM_AddLink(
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_AddLink\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff566210)
+[**SM\_AddLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_addlink_out)
 
  
 

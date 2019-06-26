@@ -4,12 +4,12 @@ description: 与 Static Driver Verifier 一起使用的命令
 ms.assetid: F0663631-AD7B-4BFE-8E07-7BB2FFC72911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4840a3f5138fd6b8212e89681a37717af4d8d0fe
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: 16e7120016af600b89cf4b3ef53a2058bbeec873
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364165"
 ---
 #  <a name="static-driver-verifier-commands-msbuild"></a>静态驱动程序验证程序命令 (MSBuild)
 
@@ -89,7 +89,7 @@ SDV 命令显示使用情况。 使用此参数的命令，无需在生成环境
 msbuild /t:sdv /p:Inputs="/check:*" mydriver.VcxProj /p:Configuration="Windows 7 Release"/p:Platform=Win32
 ```
 
-<span id="To_run_SDV_using_the_CancelSpinLock_rule_on_the_driver_files_in_the_local_directory_"></span><span id="to_run_sdv_using_the_cancelspinlock_rule_on_the_driver_files_in_the_local_directory_"></span><span id="TO_RUN_SDV_USING_THE_CANCELSPINLOCK_RULE_ON_THE_DRIVER_FILES_IN_THE_LOCAL_DIRECTORY_"></span>若要运行使用 SDV [CancelSpinLock](https://msdn.microsoft.com/library/windows/hardware/ff542478)上的本地目录中的驱动程序文件的规则：  
+<span id="To_run_SDV_using_the_CancelSpinLock_rule_on_the_driver_files_in_the_local_directory_"></span><span id="to_run_sdv_using_the_cancelspinlock_rule_on_the_driver_files_in_the_local_directory_"></span><span id="TO_RUN_SDV_USING_THE_CANCELSPINLOCK_RULE_ON_THE_DRIVER_FILES_IN_THE_LOCAL_DIRECTORY_"></span>若要运行使用 SDV [CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)上的本地目录中的驱动程序文件的规则：  
 ```
 msbuild /t:sdv /p:Inputs="/check:CancelSpinLock" mydriver.VcxProj /p:Configuration="Windows 7 Release" /p:Platform=Win32
 ```

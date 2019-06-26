@@ -9,12 +9,12 @@ keywords:
 - AddDevice 例程 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b257863243c07fc5d2233f7c30973e7dac01ace
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 244e6799c4177f13a121257becbc2908ca1e506a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331714"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368206"
 ---
 # <a name="storage-filter-drivers-adddevice-routine"></a>存储筛选器驱动程序的 AddDevice 例程
 
@@ -22,9 +22,9 @@ ms.locfileid: "63331714"
 ## <span id="ddk_storage_filter_driver_s_adddevice_routine_kg"></span><span id="DDK_STORAGE_FILTER_DRIVER_S_ADDDEVICE_ROUTINE_KG"></span>
 
 
-PnP 管理器调用[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)存储筛选器驱动程序检测到由该驱动程序控制的设备时的例程。 *AddDevice*例程存储筛选器驱动程序 (SFD) 是类似的存储类驱动程序，不同之处在于它不能尝试声明设备 (SRB\_函数\_声明\_设备)。
+PnP 管理器调用[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)存储筛选器驱动程序检测到由该驱动程序控制的设备时的例程。 *AddDevice*例程存储筛选器驱动程序 (SFD) 是类似的存储类驱动程序，不同之处在于它不能尝试声明设备 (SRB\_函数\_声明\_设备)。
 
-有关存储类驱动程序的信息[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程，请参阅[存储类驱动程序](storage-class-drivers.md)。 有关即插即用驱动程序的常规信息*AddDevice*例程，请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)。
+有关存储类驱动程序的信息[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程，请参阅[存储类驱动程序](storage-class-drivers.md)。 有关即插即用驱动程序的常规信息*AddDevice*例程，请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
 
  
 

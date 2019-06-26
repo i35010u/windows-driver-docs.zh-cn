@@ -8,12 +8,12 @@ keywords:
 - 类驱动程序 WDK 存储，更换器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91613ffdd4037b6622537eff242a6d9cd72c25a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a335cd9dec3c85127de78dee5c7f919a1df6315b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390209"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386806"
 ---
 # <a name="the-changer-class-driver"></a>更换器类驱动程序
 
@@ -33,9 +33,9 @@ ms.locfileid: "63390209"
 
 -   调用 **换带机 * * * Xxx* miniclass 驱动程序例程，以确定要为特定于设备的信息分配和准备换带机接收其他请求的空间量。
 
--   执行与设备无关的预处理[ **IRP\_MJ\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550744)请求时，调用相应 **换带机 * * * Xxx* miniclass 例程，并完成请求。
+-   执行与设备无关的预处理[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)请求时，调用相应 **换带机 * * * Xxx* miniclass 例程，并完成请求。
 
--   执行独立于设备的预处理错误并调用 miniclass 驱动[ **ChangerError** ](https://msdn.microsoft.com/library/windows/hardware/ff551418)例程进行特定于设备的处理。
+-   执行独立于设备的预处理错误并调用 miniclass 驱动[ **ChangerError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changererror)例程进行特定于设备的处理。
 
 -   调用 **换带机 * * * Xxx* miniclass 驱动程序例程，以获取产品数据，更改元素的状态，或查询查询或批量标记数据。
 

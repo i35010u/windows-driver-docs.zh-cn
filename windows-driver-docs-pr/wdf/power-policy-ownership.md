@@ -15,31 +15,31 @@ keywords:
 - 电源状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f355e1d3dbb4564ea5fed025de60539b08626cbf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdfdddedab23c1b6e455b220804d10322e5ff36f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376345"
 ---
 # <a name="power-policy-ownership"></a>电源策略所有权
 
 
-每个设备、 一个 （且只有一个） 的设备的驱动程序必须是设备的*电源策略所有者*。 电源策略所有者确定适当[设备电源状态](https://msdn.microsoft.com/library/windows/hardware/ff543162)的到设备的驱动程序堆栈每当设备的电源状态应更改设备并将其发送请求。
+每个设备、 一个 （且只有一个） 的设备的驱动程序必须是设备的*电源策略所有者*。 电源策略所有者确定适当[设备电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)的到设备的驱动程序堆栈每当设备的电源状态应更改设备并将其发送请求。
 
-基于框架的驱动程序不包含请求的代码在设备的电源状态下，会更改，因为该框架提供了该代码。 默认情况下，每当系统进入[系统睡眠状态](https://msdn.microsoft.com/library/windows/hardware/ff564575)，框架会要求你的设备的总线，以降低到 D3 的设备电源状态的驱动程序。 （您的驱动程序可以更改默认行为，以便该框架你的设备的睡眠状态设置为 D1 或 D2，如果该设备提供唤醒功能。）当系统电源返回到其[处理 (S0) 状态](https://msdn.microsoft.com/library/windows/hardware/ff564591)，框架请求总线驱动程序，以将设备还原到其工作 (D0) 状态。
+基于框架的驱动程序不包含请求的代码在设备的电源状态下，会更改，因为该框架提供了该代码。 默认情况下，每当系统进入[系统睡眠状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-sleeping-states)，框架会要求你的设备的总线，以降低到 D3 的设备电源状态的驱动程序。 （您的驱动程序可以更改默认行为，以便该框架你的设备的睡眠状态设置为 D1 或 D2，如果该设备提供唤醒功能。）当系统电源返回到其[处理 (S0) 状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-working-state-s0)，框架请求总线驱动程序，以将设备还原到其工作 (D0) 状态。
 
 电源策略所有者程序还负责启用和禁用以下设备功能：
 
--   输入你的设备的功能[低功耗 （睡眠） 状态](https://msdn.microsoft.com/library/windows/hardware/ff543186)时处于空闲状态且系统保持在其工作 (S0) 状态
+-   输入你的设备的功能[低功耗 （睡眠） 状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)时处于空闲状态且系统保持在其工作 (S0) 状态
 
 -   你的设备的能力本身从睡眠状态唤醒时检测到的外部事件
 
 -   你的设备的功能唤醒从休眠状态，检测到的外部事件时系统的整个系统
 
-如果你的设备支持这些空闲关机和系统唤醒功能，还可以调用的电源策略所有者[ **WdfDeviceInitSetPowerPolicyEventCallbacks** ](https://msdn.microsoft.com/library/windows/hardware/ff546774)注册一套电源策略事件回调函数。
+如果你的设备支持这些空闲关机和系统唤醒功能，还可以调用的电源策略所有者[ **WdfDeviceInitSetPowerPolicyEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)注册一套电源策略事件回调函数。
 
-默认情况下，基于框架的驱动程序，请在设备的功能驱动程序是电源策略所有者。 (如果没有任何功能驱动程序和总线驱动程序已调用[ **WdfPdoInitAssignRawDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548802)，总线驱动程序是电源策略所有者)。 如果你想要更改驱动程序堆栈的电源策略所有者，必须调用默认电源策略所有者[ **WdfDeviceInitSetPowerPolicyOwnership** ](https://msdn.microsoft.com/library/windows/hardware/ff546776)禁用所有权，并将该驱动程序电源策略所有者必须调用**WdfDeviceInitSetPowerPolicyOwnership**启用所有权。
+默认情况下，基于框架的驱动程序，请在设备的功能驱动程序是电源策略所有者。 (如果没有任何功能驱动程序和总线驱动程序已调用[ **WdfPdoInitAssignRawDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)，总线驱动程序是电源策略所有者)。 如果你想要更改驱动程序堆栈的电源策略所有者，必须调用默认电源策略所有者[ **WdfDeviceInitSetPowerPolicyOwnership** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)禁用所有权，并将该驱动程序电源策略所有者必须调用**WdfDeviceInitSetPowerPolicyOwnership**启用所有权。
 
 框架的用途的电源策略所有者的以下工作：
 

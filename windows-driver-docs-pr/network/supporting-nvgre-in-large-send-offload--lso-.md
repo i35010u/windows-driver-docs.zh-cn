@@ -4,12 +4,12 @@ description: 本部分介绍支持 NVGRE 中大量发送卸载 (LSO)
 ms.assetid: 1EB1B8C2-85C1-4256-BE96-C8B9F1D222B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 833c4ca772178774ad31b040effd5e41183400fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11639cc8b14819bc90107f57fe8e664b433d4a86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384220"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381163"
 ---
 # <a name="supporting-nvgre-in-large-send-offload-lso"></a>在大规模发送卸载 (LSO) 中支持 NVGRE
 
@@ -20,22 +20,22 @@ NDIS 6.30 (Windows Server 2012) 引入了[网络虚拟化使用通用路由封�
 
  
 
-如果[ **NDIS\_TCP\_发送\_将卸载\_补充\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**IsEncapsulatedPacket**是**TRUE**并**TcpIpChecksumNetBufferListInfo**带外 (OOB) 的信息是有效的这表示该 NVGRE需要的支持和 NIC 必须执行 LSOV2 卸载格式 NVGRE 数据包，满足以下条件：
+如果[ **NDIS\_TCP\_发送\_将卸载\_补充\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**IsEncapsulatedPacket**是**TRUE**并**TcpIpChecksumNetBufferListInfo**带外 (OOB) 的信息是有效的这表示该 NVGRE需要的支持和 NIC 必须执行 LSOV2 卸载格式 NVGRE 数据包，满足以下条件：
 
--   仅在值[ **NDIS\_TCP\_LARGE\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit**结构都有效。 中的值不能引用 NIC 和微型端口驱动程序**NDIS\_TCP\_LARGE\_发送\_卸载\_NET\_缓冲区\_列表\_INFO**。**LsoV1Transmit**结构。
--   [ **NDIS\_TCP\_LARGE\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit**。**TcpHeaderOffset**成员没有正确的偏移量的值，并且必须不能由 NIC 或微型端口驱动程序。
+-   仅在值[ **NDIS\_TCP\_LARGE\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**结构都有效。 中的值不能引用 NIC 和微型端口驱动程序**NDIS\_TCP\_LARGE\_发送\_卸载\_NET\_缓冲区\_列表\_INFO**。**LsoV1Transmit**结构。
+-   [ **NDIS\_TCP\_LARGE\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**。**TcpHeaderOffset**成员没有正确的偏移量的值，并且必须不能由 NIC 或微型端口驱动程序。
 
 若要在 LSOV2 支持 NVGRE，协议和筛选器驱动程序必须进行以下更改：
 
--   减少**MSS**中的值[ **NDIS\_TCP\_大\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567882)。**LsoV2Transmit**结构来应对新 GRE 标头。
+-   减少**MSS**中的值[ **NDIS\_TCP\_大\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)。**LsoV2Transmit**结构来应对新 GRE 标头。
 -   向下可能无法减少的精确倍数的 TCP 有效负载长度发送**MSS**值。
--   调整**InnerFrameOffset**， **TransportIpHeaderRelativeOffset**，并**TcpHeaderRelativeOffset**中的值[ **NDIS\_TCP\_发送\_将卸载\_补充\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/jj991957)结构来应对 GRE标头。
+-   调整**InnerFrameOffset**， **TransportIpHeaderRelativeOffset**，并**TcpHeaderRelativeOffset**中的值[ **NDIS\_TCP\_发送\_将卸载\_补充\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)结构来应对 GRE标头。
 
-Nic 微型端口驱动程序可能会通过**InnerFrameOffset**， **TransportIpHeaderRelativeOffset**，并**TcpHeaderRelativeOffset** 中提供值[ **NDIS\_TCP\_发送\_卸载\_补充\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/jj991957)结构。 NIC 或微型端口驱动程序可能会执行任何所需的标头检查隧道 （外部） IP 标头或后续标头来验证这些偏移量。
+Nic 微型端口驱动程序可能会通过**InnerFrameOffset**， **TransportIpHeaderRelativeOffset**，并**TcpHeaderRelativeOffset** 中提供值[ **NDIS\_TCP\_发送\_卸载\_补充\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)结构。 NIC 或微型端口驱动程序可能会执行任何所需的标头检查隧道 （外部） IP 标头或后续标头来验证这些偏移量。
 
-微型端口驱动程序必须处理的情况其中[ **NDIS\_TCP\_发送\_将卸载\_补充\_NET\_缓冲区\_列表\_INFO**](https://msdn.microsoft.com/library/windows/hardware/jj991957)。**InnerFrameOffset**可能在不同散播-聚集列表比数据包的开头。 所有预置的封装标头 (ETH，IP，GRE) 将是物理上连续的且将在数据包的第一个 MDL 可以保证协议驱动程序。
+微型端口驱动程序必须处理的情况其中[ **NDIS\_TCP\_发送\_将卸载\_补充\_NET\_缓冲区\_列表\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)。**InnerFrameOffset**可能在不同散播-聚集列表比数据包的开头。 所有预置的封装标头 (ETH，IP，GRE) 将是物理上连续的且将在数据包的第一个 MDL 可以保证协议驱动程序。
 
-协议和筛选器驱动程序不能确保总 TCP 有效负载长度是减少的精确倍数**MSS**值。 出于此原因，微型端口驱动程序和 Nic 必须更新 （外部） 隧道 IP 标头。 Nic 必须尽可能减少基于生成多大段**MSS**中的值[ **NDIS\_TCP\_大\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567882)。**LsoV2Transmit** OOB 信息。 只有一个子-**MSS**段可能会生成针对每个 LSOv2 发送。
+协议和筛选器驱动程序不能确保总 TCP 有效负载长度是减少的精确倍数**MSS**值。 出于此原因，微型端口驱动程序和 Nic 必须更新 （外部） 隧道 IP 标头。 Nic 必须尽可能减少基于生成多大段**MSS**中的值[ **NDIS\_TCP\_大\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)。**LsoV2Transmit** OOB 信息。 只有一个子-**MSS**段可能会生成针对每个 LSOv2 发送。
 
 微型端口驱动程序必须执行以下操作：
 

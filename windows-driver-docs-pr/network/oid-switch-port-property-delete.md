@@ -5,26 +5,26 @@ ms.assetid: BA8AB5D9-FF2C-4E16-B09F-B09E3EC19B90
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_DELETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 45c188adc166e375da912ea548f1f062c2b1a671
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb8fa62d10e07beb4c01a1f2d879d76be9f1465a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386988"
 ---
 # <a name="oidswitchportpropertydelete"></a>OID\_SWITCH\_PORT\_PROPERTY\_DELETE
 
 
 HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求的 OID\_切换\_端口\_属性\_删除以通知有关的删除可扩展交换机扩展可扩展交换机端口的策略属性。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向包含缓冲区[ **NDIS\_交换机\_端口\_属性\_删除\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598232)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向包含缓冲区[ **NDIS\_交换机\_端口\_属性\_删除\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
-转发扩展可以处理 OID 集请求的 OID\_交换机\_端口\_属性\_删除。 所有其他类型的扩展必须调用[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830) OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
+转发扩展可以处理 OID 集请求的 OID\_交换机\_端口\_属性\_删除。 所有其他类型的扩展必须调用[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest) OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
 
-有关如何处理 OID 的指导原则设置请求的 OID\_交换机\_端口\_属性\_删除，请参阅[管理端口策略](https://msdn.microsoft.com/library/windows/hardware/hh598202)。
+有关如何处理 OID 的指导原则设置请求的 OID\_交换机\_端口\_属性\_删除，请参阅[管理端口策略](https://docs.microsoft.com/windows-hardware/drivers/network/managing-port-policies)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -106,15 +106,15 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 
 
 ****
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_交换机\_端口\_属性\_自定义**](https://msdn.microsoft.com/library/windows/hardware/hh598230)
+[**NDIS\_交换机\_端口\_属性\_自定义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_custom)
 
-[**NDIS\_交换机\_端口\_属性\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598238)
+[**NDIS\_交换机\_端口\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)
 
-[**NDIS\_交换机\_端口\_属性\_VLAN**](https://msdn.microsoft.com/library/windows/hardware/hh598243)
+[**NDIS\_交换机\_端口\_属性\_VLAN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_vlan)
 
-[**NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)
+[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)
 
  
 

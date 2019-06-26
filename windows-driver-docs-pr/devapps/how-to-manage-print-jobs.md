@@ -4,12 +4,12 @@ description: 在 Windows 8.1，UWP 应用的打印机的设备应用程序可以
 ms.assetid: 30E247DB-E5B0-4CD5-89F5-4227EE20A564
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea61ec736cb596a7c1b8d36dd379fc04923cf8aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e9bb4b27115b24f0355281684e6a92baf7ab161
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330696"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369351"
 ---
 # <a name="how-to-manage-print-jobs-in-a-uwp-device-app"></a>如何管理 UWP 设备应用中的打印作业
 
@@ -25,7 +25,7 @@ C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlin
 ## <a name="span-idmanagingprintjobsspanspan-idmanagingprintjobsspanspan-idmanagingprintjobsspanmanaging-print-jobs"></a><span id="Managing_print_jobs"></span><span id="managing_print_jobs"></span><span id="MANAGING_PRINT_JOBS"></span>管理打印作业
 
 
-Windows 8.1 引入了新的 v4 打印机驱动程序可用于管理打印作业中的打印机扩展插件接口：[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)， [ **IPrinterQueueView**](https://msdn.microsoft.com/library/windows/hardware/dn265392)， [ **IPrinterQueueViewEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265393)， [ **IPrintJob**](https://msdn.microsoft.com/library/windows/hardware/dn265396)，并[ **IPrintJobCollection**](https://msdn.microsoft.com/library/windows/hardware/dn265397)。 这些接口，让可以监视和取消打印作业。 有关详细信息，请参阅[打印作业管理 （v4 打印机驱动程序）](https://msdn.microsoft.com/library/windows/hardware/dn265419)。
+Windows 8.1 引入了新的 v4 打印机驱动程序可用于管理打印作业中的打印机扩展插件接口：[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)， [ **IPrinterQueueView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueview)， [ **IPrinterQueueViewEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueviewevent)， [ **IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjob)，并[ **IPrintJobCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjobcollection)。 这些接口，让可以监视和取消打印作业。 有关详细信息，请参阅[打印作业管理 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)。
 
 **提示**   C#和 JavaScript 应用程序不能直接使用 COM Api。 如果您要编写C#或 JavaScript UWP 设备应用，使用打印机扩展库来访问这些接口 （如本主题中所示）。
 
@@ -294,7 +294,7 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 以下步骤生成您的应用程序并安装设备元数据。
 
 1.  启用测试签名。
-    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
+    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
     2.  从**工具**菜单中，选择**启用测试签名**。
 
 2.  重新启动计算机
@@ -306,7 +306,7 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 
      
 
-    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
+    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
     2.  单击**编辑设备元数据**。 这样就可以编辑现有的设备元数据包。
     3.  在中**打开**对话框框中，找到与 UWP 设备应用程序相关联的设备元数据包。 (它具有**devicemetadata ms**文件扩展名。)
     4.  上**指定 UWP 设备应用信息**页上，输入中的 Microsoft Store 应用信息**UWP 设备应用**框。 单击**导入 UWP 应用程序清单文件**自动输入**包名称**，**发布服务器的名称**，以及**UWP 应用程序 ID**。
@@ -320,7 +320,7 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[作业管理 （v4 打印机驱动程序）](https://msdn.microsoft.com/library/windows/hardware/dn265419)
+[作业管理 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 

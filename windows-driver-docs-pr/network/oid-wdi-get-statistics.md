@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e824f4444501c88e40d3c4e0d8f2d3c8bc8c05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c141b531a070cac0f892077061caaaa1f742ca62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346779"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387266"
 ---
 # <a name="oidwdigetstatistics"></a>OID\_WDI\_GET\_STATISTICS
 
@@ -20,7 +20,7 @@ OID\_WDI\_获取\_统计信息请求 IHV 组件返回 MAC 和物理层的统计�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 不支持 set 语句        | 1                               |
+| Port  | 不支持 set 语句        | 1                               |
 
  
 
@@ -35,8 +35,8 @@ MAC 统计信息必须所有维护每个端口。 除非被免除，还必须给
 
 | TLV                                                              | 允许多个 TLV 实例 | 可选 | 描述              |
 |------------------------------------------------------------------|--------------------------------|----------|--------------------------|
-| [**WDI\_TLV\_MAC\_STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/dn897846) | X                              |          | 每个对等的 MAC 统计信息。 |
-| [**WDI\_TLV\_PHY\_STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/dn898025) | X                              |          | 每个端口的物理统计信息。 |
+| [**WDI\_TLV\_MAC\_STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-mac-statistics) | X                              |          | 每个对等的 MAC 统计信息。 |
+| [**WDI\_TLV\_PHY\_STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-statistics) | X                              |          | 每个端口的物理统计信息。 |
 
  
 

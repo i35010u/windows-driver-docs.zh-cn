@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d097ec114a5d87b9f348bdd47287b21a8de9d8fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7707f19c8876eb5db9bf1f856b8aa705538be2bf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360872"
 ---
 # <a name="mrxsetvolumeinfo-routine"></a>MRxSetVolumeInfo routine
 
 
-*MRxSetVolumeInfo*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向设置卷信息。
+*MRxSetVolumeInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向设置卷信息。
 
 <a name="syntax"></a>语法
 ------
@@ -131,7 +131,7 @@ RDBSS 发出调用*MRxSetVolumeInfo*接收响应[ **IRP\_MJ\_设置\_卷\_信息
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

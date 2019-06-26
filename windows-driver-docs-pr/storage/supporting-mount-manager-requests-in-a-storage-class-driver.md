@@ -17,12 +17,12 @@ keywords:
 - 非持久性名称 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a05bb94b0be40e790074ee82ddcef48fb6d52160
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a2c7d087294762a772aa848c7f1b4d8d483ef2b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368192"
 ---
 # <a name="supporting-mount-manager-requests-in-a-storage-class-driver"></a>支持存储类驱动程序中的装入管理器请求
 
@@ -36,7 +36,7 @@ ms.locfileid: "63342194"
 
 此符号链接名称被称为*唯一卷名称*。 像是传统的卷标签，它仍然存在时系统重新启动，但如驱动器号，并且与不同的卷标，它是唯一的。 唯一卷名称的格式为：
 
-"**\\??\\卷 {**<em>GUID</em>**}\\**
+" **\\??\\卷 {** <em>GUID</em> **}\\**
 
 其中*GUID*是确定的卷的全局唯一标识符。
 
@@ -50,25 +50,25 @@ ms.locfileid: "63342194"
 
 ![演示如何持久名称显示在 mounteddevices 注册表项的屏幕截图](images/mntmgr.png)
 
-计数管理器依赖于插设备接口通知机制来提醒的卷到达和删除它。 因此每个客户端 （即，每个卷驱动程序，通常类驱动程序） 必须创建接口 MOUNTDEV\_已装载\_设备\_GUID 接口类通过调用[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)以通知它所管理的卷的系统中到达的装入管理器。 MOUNTDEV\_已装载\_设备\_GUID 接口类中定义 GUID *mountmgr.h*。
+计数管理器依赖于插设备接口通知机制来提醒的卷到达和删除它。 因此每个客户端 （即，每个卷驱动程序，通常类驱动程序） 必须创建接口 MOUNTDEV\_已装载\_设备\_GUID 接口类通过调用[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)以通知它所管理的卷的系统中到达的装入管理器。 MOUNTDEV\_已装载\_设备\_GUID 接口类中定义 GUID *mountmgr.h*。
 
 收到的卷接口到达插通知时，装入管理器发送客户端三个设备控制 Irp:
 
-* [**IOCTL\_MOUNTDEV\_查询\_设备\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff560437)
-* [**IOCTL\_MOUNTDEV\_查询\_UNIQUE\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff560441)
-* [**IOCTL\_MOUNTDEV\_查询\_建议\_链接\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff560440)
+* [**IOCTL\_MOUNTDEV\_查询\_设备\_名称**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountmgr/ni-mountmgr-ioctl_mountdev_query_device_name)
+* [**IOCTL\_MOUNTDEV\_查询\_UNIQUE\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountdev/ni-mountdev-ioctl_mountdev_query_unique_id)
+* [**IOCTL\_MOUNTDEV\_查询\_建议\_链接\_名称**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountdev/ni-mountdev-ioctl_mountdev_query_suggested_link_name)
 
-在以下三个 Ioctl 响应客户端应该返回卷的非持久性设备对象名称 （或目标名称） 位于中**设备**系统对象树的目录 (例如："\\设备\\HarddiskVolume1")，唯一的卷 ID，并建议持久的符号链接名称对于卷，分别。 尽管客户端可能会选择将忽略[ **IOCTL\_MOUNTDEV\_查询\_建议\_链接\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff560440)，会要求他们提供唯一的卷 ID 时接收[ **IOCTL\_MOUNTDEV\_查询\_设备\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff560437)或 IOCTL\_MOUNTDEV\_查询\_UNIQUE\_id。 计数管理器完全依赖于客户端提供唯一的卷 ID，并且如果客户端未提供它，然后装入管理器不能分配给卷的装入点，例如驱动器号。
+在以下三个 Ioctl 响应客户端应该返回卷的非持久性设备对象名称 （或目标名称） 位于中**设备**系统对象树的目录 (例如："\\设备\\HarddiskVolume1")，唯一的卷 ID，并建议持久的符号链接名称对于卷，分别。 尽管客户端可能会选择将忽略[ **IOCTL\_MOUNTDEV\_查询\_建议\_链接\_名称**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountdev/ni-mountdev-ioctl_mountdev_query_suggested_link_name)，会要求他们提供唯一的卷 ID 时接收[ **IOCTL\_MOUNTDEV\_查询\_设备\_名称**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountmgr/ni-mountmgr-ioctl_mountdev_query_device_name)或 IOCTL\_MOUNTDEV\_查询\_UNIQUE\_id。 计数管理器完全依赖于客户端提供唯一的卷 ID，并且如果客户端未提供它，然后装入管理器不能分配给卷的装入点，例如驱动器号。
 
-有关这些 Ioctl 的详细信息，请参阅[I/O 控制代码发送由计数管理器](https://msdn.microsoft.com/library/windows/hardware/ff561594)。
+有关这些 Ioctl 的详细信息，请参阅[I/O 控制代码发送由计数管理器](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
-如果客户端警报到达其卷的装入管理器，但无法提供的唯一 ID 的查询时的卷，卷上放置*死信装入的设备*列表。 在这种情况，客户端可以发送[ **IOCTL\_MOUNTMGR\_检查\_UNPROCESSED\_卷**](https://msdn.microsoft.com/library/windows/hardware/ff560454) IOCTL 到装入管理器的请求装入管理器重新扫描其死信已装载的设备列表，并再次尝试查询列表上的客户端用于其各自卷的唯一 Id。 详细了解 IOCTL\_MOUNTMGR\_xxx Ioctl，请参阅[I/O 控制代码发送装载 Manager 客户端](https://msdn.microsoft.com/library/windows/hardware/ff561593)
+如果客户端警报到达其卷的装入管理器，但无法提供的唯一 ID 的查询时的卷，卷上放置*死信装入的设备*列表。 在这种情况，客户端可以发送[ **IOCTL\_MOUNTMGR\_检查\_UNPROCESSED\_卷**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountmgr/ni-mountmgr-ioctl_mountmgr_check_unprocessed_volumes) IOCTL 到装入管理器的请求装入管理器重新扫描其死信已装载的设备列表，并再次尝试查询列表上的客户端用于其各自卷的唯一 Id。 详细了解 IOCTL\_MOUNTMGR\_xxx Ioctl，请参阅[I/O 控制代码发送装载 Manager 客户端](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 装载后管理器收到唯一卷 ID 对于新引入的卷，然后搜索其数据库进行所有永久分配给该唯一 ID 的名称，并创建符号链接到每个持久性的符号链接名称的卷。
 
 当计数管理器检测到，卷已脱机然后删除符号链接指向的设备对象而不会删除计数管理器的数据库中相应的符号链接名称。
 
-有关如何装入管理器客户端创建持久的符号名称的信息，请参阅[ **IOCTL\_MOUNTMGR\_创建\_点**](https://msdn.microsoft.com/library/windows/hardware/ff560457)。
+有关如何装入管理器客户端创建持久的符号名称的信息，请参阅[ **IOCTL\_MOUNTMGR\_创建\_点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountmgr/ni-mountmgr-ioctl_mountmgr_create_point)。
 
  
 

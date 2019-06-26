@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28a3dd4abe1e4fb2a76fa75366758d386a7810fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2877bce3c32ca5aec13d1b1bbb9cfc0aa38eb6f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374496"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386717"
 ---
 # <a name="avcstrmopen"></a>AVCSTRM\_OPEN
 
@@ -31,7 +31,7 @@ ms.locfileid: "63374496"
 
 如果成功， *avcstrm.sys*设置**Irp-&gt;IoStatus.Status**状态\_成功。
 
-如果成功，状态\_与流上下文中一起返回成功**AVCStreamContext**的成员[ **AVC\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff554194)结构。 对于其他随后使用此上下文*avcstrm.sys*请求。
+如果成功，状态\_与流上下文中一起返回成功**AVCStreamContext**的成员[ **AVC\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)结构。 对于其他随后使用此上下文*avcstrm.sys*请求。
 
 可能的错误返回的值包括：
 
@@ -103,7 +103,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 ### <a name="span-idavcstreamrequestblockinputspanspan-idavcstreamrequestblockinputspanavcstreamrequestblock-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC\_流\_请求\_块输入
 
 <span id="SizeOfThisBlock__Version_and_Function"></span><span id="sizeofthisblock__version_and_function"></span><span id="SIZEOFTHISBLOCK__VERSION_AND_FUNCTION"></span>**SizeOfThisBlock、 版本和函数**  
-使用[ **INIT\_AVCSTRM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff560750)宏来初始化这些成员。 传递**AVCSTRM\_打开**宏的请求参数中。
+使用[ **INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化这些成员。 传递**AVCSTRM\_打开**宏的请求参数中。
 
 <span id="AVCStreamContext"></span><span id="avcstreamcontext"></span><span id="AVCSTREAMCONTEXT"></span>**AVCStreamContext**  
 指定的流上下文 （句柄）。 这应该是**NULL**在输入时，如果**AVCSTRM\_打开**成功，返回此成员包含有效的流上下文后续*avcstrm.sys*操作。
@@ -111,9 +111,9 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 <span id="OpenStruct"></span><span id="openstruct"></span><span id="OPENSTRUCT"></span>**OpenStruct**  
 指定要创建的 AV/C 流的说明。
 
-[ **AVCSTRM\_格式**](https://msdn.microsoft.com/library/windows/hardware/ff554114)枚举提供支持的 AV/C 流式处理格式 （从 IEC 61883 规范中） 的列表*avcstrm.sys*支持，如 SDDV (61883-2) 和 MPEG2TS (61883-4)。
+[ **AVCSTRM\_格式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_format)枚举提供支持的 AV/C 流式处理格式 （从 IEC 61883 规范中） 的列表*avcstrm.sys*支持，如 SDDV (61883-2) 和 MPEG2TS (61883-4)。
 
-若要使同步连接、 CIP 标头和次级单位依赖参数所需和中定义[ **AVCSTRM\_格式\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff554117)结构。
+若要使同步连接、 CIP 标头和次级单位依赖参数所需和中定义[ **AVCSTRM\_格式\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_format_info)结构。
 
 下面是用于接收数据的 MPEG2TS 格式信息的示例：
 
@@ -149,9 +149,9 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
     },
 ```
 
-子单元驱动程序必须首先分配 IRP 和一个[ **AVC\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff554194)结构。 接下来，它应使用[ **INIT\_AVCSTRM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff560750)宏来初始化 AVC\_流\_请求\_块结构传递**AVCSTRM\_打开**为宏的请求参数。 接下来，设置子单元驱动程序**AVCStreamContext**成员添加到**NULL**。 成功执行操作，此成员应包含有效的流上下文 （句柄），可在后续*avcstrm.sys*操作。 此成员不应修改之后直到流已关闭，通过[ **AVCSTRM\_关闭**](avcstrm-close.md)... 最后，将子单元驱动程序设置**OpenStruct**的成员**CommandData**描述要打开的流的并集。
+子单元驱动程序必须首先分配 IRP 和一个[ **AVC\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)结构。 接下来，它应使用[ **INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化 AVC\_流\_请求\_块结构传递**AVCSTRM\_打开**为宏的请求参数。 接下来，设置子单元驱动程序**AVCStreamContext**成员添加到**NULL**。 成功执行操作，此成员应包含有效的流上下文 （句柄），可在后续*avcstrm.sys*操作。 此成员不应修改之后直到流已关闭，通过[ **AVCSTRM\_关闭**](avcstrm-close.md)... 最后，将子单元驱动程序设置**OpenStruct**的成员**CommandData**描述要打开的流的并集。
 
-若要发送此请求，子单元提交[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)与 IRP **IoControlCode** IRP 成员设置为[ **IOCTL\_AVCSTRM\_类**](https://msdn.microsoft.com/library/windows/hardware/ff560778)并**Argument1** IRP 成员设置为AVC\_流\_请求\_描述发生的打开操作的块结构。
+若要发送此请求，子单元提交[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)与 IRP **IoControlCode** IRP 成员设置为[ **IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)并**Argument1** IRP 成员设置为AVC\_流\_请求\_描述发生的打开操作的块结构。
 
 子单元驱动程序可能会以同步方式完成此命令。 挂起的操作中而不立即返回的结果*avcstrm.sys*。
 
@@ -159,7 +159,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="see-also"></a>请参阅
 
-[**AVC\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff554194)， [ **INIT\_AVCSTRM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff560750)， [ **IRP\_MJ\_内部\_设备\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff550766)， [ **IOCTL\_AVCSTRM\_类**](https://msdn.microsoft.com/library/windows/hardware/ff560778)， [ **AVCSTRM\_打开\_结构**](https://msdn.microsoft.com/library/windows/hardware/ff554127)， [ **AVCSTRM\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554120)， [ **AVCSTRM\_格式**](https://msdn.microsoft.com/library/windows/hardware/ff554114)， [ **AVCSTRM\_格式\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff554117)
+[**AVC\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)， [ **INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)， [ **IRP\_MJ\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)， [ **IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)， [ **AVCSTRM\_打开\_结构**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_open_struct)， [ **AVCSTRM\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_function)， [ **AVCSTRM\_格式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_format)， [ **AVCSTRM\_格式\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_format_info)
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 702aff43ce9fd6b4da8eb939501d9299a85d0028
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: e48cadb86e5767cbd91ab57dbf2c7c812b16d060
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161375"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391528"
 ---
 # <a name="kseventpincapsformatchange"></a>KSEVENT\_PINCAPS\_格式
 
@@ -44,8 +44,8 @@ ms.locfileid: "67161375"
 <tbody>
 <tr class="odd">
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561744" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561744)"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561750" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561750)"><strong>KSEVENTDATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +57,7 @@ ms.locfileid: "67161375"
 <a name="remarks"></a>备注
 -------
 
-当音频端口驱动程序调用[ **EventHandler** ](https://msdn.microsoft.com/library/windows/hardware/ff536374)例程对于其微型端口驱动程序，它将传递[ **PCEVENT\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff537693)结构。 此结构包含一个指向[ **PCEVENT\_项**](https://msdn.microsoft.com/library/windows/hardware/ff537692)结构，用于描述支持的筛选器、 pin 或节点的事件。
+当音频端口驱动程序调用[ **EventHandler** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nc-portcls-pcpfnevent_handler)例程对于其微型端口驱动程序，它将传递[ **PCEVENT\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-_pcevent_request)结构。 此结构包含一个指向[ **PCEVENT\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcevent_item)结构，用于描述支持的筛选器、 pin 或节点的事件。
 
 因此，例如，驱动程序的支持`KSEVENT_PINCAPS_FORMATCHANGE`事件必须填充**PCEVENT\_项**结构，如下所示：
 
@@ -72,11 +72,11 @@ static PCEVENT_ITEM FormatChangePinEvent[] = {
 };
 ```
 
-在前面的代码示例中，MyEventHandler 的自定义事件处理程序必须监视`KSEVENT_PINCAPS_FORMATCHANGE`事件并将其注册到 Portcls 时 KSEVENT\_PINCAPS\_触发格式。 微型端口驱动程序必须调用[ **IPortEvents::AddEventToEventList** ](https://msdn.microsoft.com/library/windows/hardware/ff536886)方法来注册该事件。
+在前面的代码示例中，MyEventHandler 的自定义事件处理程序必须监视`KSEVENT_PINCAPS_FORMATCHANGE`事件并将其注册到 Portcls 时 KSEVENT\_PINCAPS\_触发格式。 微型端口驱动程序必须调用[ **IPortEvents::AddEventToEventList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-addeventtoeventlist)方法来注册该事件。
 
-若要获取 pin、 节点、 连接和支持的微型端口驱动程序属性的说明，端口驱动程序调用[ **IMiniport::GetDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff536765)方法。 此方法调用返回[ **PCFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537694)指向自动化表的结构 ([**PCAUTOMATION\_表**](https://msdn.microsoft.com/library/windows/hardware/ff537685)). **PCAUTOMATION\_表**结构具有**事件**成员。 此成员将指向与微型端口驱动程序支持的筛选器相关联的事件的数组。 因此，你必须设置**事件**成员以指向包含事件数组**PCEVENT\_项**结构`KSEVENT_PINCAPS_FORMATCHANGE`事件。
+若要获取 pin、 节点、 连接和支持的微型端口驱动程序属性的说明，端口驱动程序调用[ **IMiniport::GetDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-getdescription)方法。 此方法调用返回[ **PCFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)指向自动化表的结构 ([**PCAUTOMATION\_表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcautomation_table)). **PCAUTOMATION\_表**结构具有**事件**成员。 此成员将指向与微型端口驱动程序支持的筛选器相关联的事件的数组。 因此，你必须设置**事件**成员以指向包含事件数组**PCEVENT\_项**结构`KSEVENT_PINCAPS_FORMATCHANGE`事件。
 
-当微型端口驱动程序检测到动态格式更改时，它必须调用[ **IPortEvents::GenerateEventList** ](https://msdn.microsoft.com/library/windows/hardware/ff536889)方法用信号通知`KSEVENT_PINCAPS_FORMATCHANGE`事件。
+当微型端口驱动程序检测到动态格式更改时，它必须调用[ **IPortEvents::GenerateEventList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-generateeventlist)方法用信号通知`KSEVENT_PINCAPS_FORMATCHANGE`事件。
 
 <a name="requirements"></a>要求
 ------------
@@ -101,25 +101,25 @@ static PCEVENT_ITEM FormatChangePinEvent[] = {
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**EventHandler**](https://msdn.microsoft.com/library/windows/hardware/ff536374)
+[**EventHandler**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nc-portcls-pcpfnevent_handler)
 
-[**IMiniport::GetDescription**](https://msdn.microsoft.com/library/windows/hardware/ff536765)
+[**IMiniport::GetDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-getdescription)
 
-[**IPortEvents::AddEventToEventList**](https://msdn.microsoft.com/library/windows/hardware/ff536886)
+[**IPortEvents::AddEventToEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-addeventtoeventlist)
 
-[**IPortEvents::GenerateEventList**](https://msdn.microsoft.com/library/windows/hardware/ff536889)
+[**IPortEvents::GenerateEventList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportevents-generateeventlist)
 
-[**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)
+[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://msdn.microsoft.com/library/windows/hardware/ff561750)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
 
-[**PCAUTOMATION\_表**](https://msdn.microsoft.com/library/windows/hardware/ff537685)
+[**PCAUTOMATION\_表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcautomation_table)
 
-[**PCEVENT\_项**](https://msdn.microsoft.com/library/windows/hardware/ff537692)
+[**PCEVENT\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcevent_item)
 
-[**PCEVENT\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff537693)
+[**PCEVENT\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-_pcevent_request)
 
-[**PCFILTER\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/hardware/ff537694)
+[**PCFILTER\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)
 
  
 

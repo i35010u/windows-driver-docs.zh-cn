@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 21ea8c4f5714d95833c43ed65bea650063c1dc1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c83d970e2c003df13ebfbd1c382b6c57d22d3c4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360835"
 ---
 # <a name="icon-xml-element"></a>icon XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
-**图标**XML 元素指定 DPInst DPInst EULA 页面显示一个自定义图标的源文件。 DPInst 使用此图标来表示 DPInst 桌面 Microsoft Windows 任务栏上。 DPInst 还使用此图标表示的项[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)，这将增加 DPInst**程序和功能**控制面板中
+**图标**XML 元素指定 DPInst DPInst EULA 页面显示一个自定义图标的源文件。 DPInst 使用此图标来表示 DPInst 桌面 Microsoft Windows 任务栏上。 DPInst 还使用此图标表示的项[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)，这将增加 DPInst**程序和功能**控制面板中
 
 **请注意**  在 Windows Vista 之前 DPInst 添加到驱动程序包的条目**添加或删除程序**控制面板中。
 

@@ -11,12 +11,12 @@ keywords:
 - Sid WDK 的文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0bc5ba37923f7c44aeea23b343598ba974c232e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aad8e527a5c0517d6d6552cfaf4f19bfafdaf55d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381763"
 ---
 # <a name="access-control-entry"></a>访问控制项
 
@@ -46,7 +46,7 @@ ms.locfileid: "63323335"
 
 因此，类型中的三个用于控制以编程方式访问一个对象，而其他两个用于控制安全子系统的审核和警报行为时访问的对象。 请注意，通过合并某些信息计算的安全子系统的实际行为或所有 Ace 与对象相关联。
 
-驱动程序可能会构造的访问权限的访问控制项\_允许\_ACE\_类型使用该例程[ **RtlAddAccessAllowedAce**](https://msdn.microsoft.com/library/windows/hardware/ff552092)。 用于添加其他类型的 ACE 条目，驱动程序编写人员必须构造自己的函数，因为 WDK 不提供任何其他支持例程。
+驱动程序可能会构造的访问权限的访问控制项\_允许\_ACE\_类型使用该例程[ **RtlAddAccessAllowedAce**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtladdaccessallowedace)。 用于添加其他类型的 ACE 条目，驱动程序编写人员必须构造自己的函数，因为 WDK 不提供任何其他支持例程。
 
  
 

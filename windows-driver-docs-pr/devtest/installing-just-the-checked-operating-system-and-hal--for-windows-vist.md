@@ -4,12 +4,12 @@ description: 只安装已检验的操作系统和 HAL（适用于 Windows Vista 
 ms.assetid: 1203b7cd-50b9-4174-8bec-112019444fac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 727cebe2bbe3f3a4f324428501c9d06f87c29ddf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a8f2c3e7d7735d63ab8747767c7009fbef4f423
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356603"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354795"
 ---
 # <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>只安装已检验的操作系统和 HAL（适用于 Windows Vista 和更高版本）
 
@@ -20,7 +20,7 @@ ms.locfileid: "63356603"
 
 在安装部分已检验的版本之前，必须确定版本的操作系统映像和 HAL 文件用于在系统上安装免费的生成。
 
-**提示**  于 64 位版本的 Windows Vista 及更高版本中，此过程非常简单。 如果有[Windows Driver Kit (WDK)](https://msdn.microsoft.com/library/windows/hardware/ff557573)，可以使用的操作系统映像和从调试的 HAL 文件\\WDK 的目录。 请参阅[安装已检验的版本](installing-the-checked-build.md)。 没有为 amd64 或 ia64 每个只有一个版本。 文件的名称是 ntkrnlmp.exe 和 Hal.dll。 如果你使用的 Windows 版本的 WDK，可以跳到[步骤 2:复制所选的文件](#step-2---copying-the-checked-files)。
+**提示**  于 64 位版本的 Windows Vista 及更高版本中，此过程非常简单。 如果有[Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/)，可以使用的操作系统映像和从调试的 HAL 文件\\WDK 的目录。 请参阅[安装已检验的版本](installing-the-checked-build.md)。 没有为 amd64 或 ia64 每个只有一个版本。 文件的名称是 ntkrnlmp.exe 和 Hal.dll。 如果你使用的 Windows 版本的 WDK，可以跳到[步骤 2:复制所选的文件](#step-2---copying-the-checked-files)。
 
  
 
@@ -120,13 +120,13 @@ PAE 支持多处理器 x86 体系结构系统。
 
 选中的文件复制到 %systemroot%后\\system32 目录中，必须创建一个启动时间项，使得系统以开始使用这些已检查的文件。 可以使用 BCDEdit 若要创建此。
 
-**提示**  可以复制现有的启动项目，以创建一个新的启动项，可以修改为使用选中的操作系统映像和 HAL。 例如，若要创建的当前启动项目的副本，请使用以下命令： **bcdedit /copy {current} /d"Windows 8.1 部分检查生成"**。
+**提示**  可以复制现有的启动项目，以创建一个新的启动项，可以修改为使用选中的操作系统映像和 HAL。 例如，若要创建的当前启动项目的副本，请使用以下命令： **bcdedit /copy {current} /d"Windows 8.1 部分检查生成"** 。
 有关使用 BCDEdit 的一般说明，请参阅[工具用于驱动程序测试和调试更改启动选项](boot-options-for-driver-testing-and-debugging.md)并[编辑启动选项](editing-boot-options.md)。
 
 **请注意**  之前设置可能需要禁用或暂停 BitLocker 和安全启动的计算机上的 BCDEdit 选项。
 
  
-若要配置部分已检验的版本，Windows Vista 及更高版本，请使用[ **BCDEdit /set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)命令并**内核**并**hal**选项。
+若要配置部分已检验的版本，Windows Vista 及更高版本，请使用[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令并**内核**并**hal**选项。
 
 例如，以下命令将配置为使用的内核和 HAL 付费版本的启动项。
 
@@ -138,7 +138,7 @@ bcdedit /set {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} kernel ntkrnlmp.chk
 bcdedit /set {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} hal hal.chk
 ```
 
-此外必须配置计算机以进行内核调试。 具体而言，必须启用用于启动调试的启动项目[ **BCDEdit /bootdebug**](https://msdn.microsoft.com/library/windows/hardware/ff542183)。 如果不启用启动调试并不具有内核调试程序连接到计算机，计算机将启动到 Windows 恢复环境中，如果选择此新的启动项目。
+此外必须配置计算机以进行内核调试。 具体而言，必须启用用于启动调试的启动项目[ **BCDEdit /bootdebug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--bootdebug)。 如果不启用启动调试并不具有内核调试程序连接到计算机，计算机将启动到 Windows 恢复环境中，如果选择此新的启动项目。
 
 ```
 bcdedit /bootdebug {44a942bf-d6ee-11e3-baf8-000ffee4f6cd} on
@@ -192,9 +192,9 @@ Microsoft (R) Windows (R) 6.00. 6001 Service Pack 1 Multiprocessor Checked.
 ## <a name="related-topics"></a>相关主题
 
 
-[设置调试 （内核模式和用户模式下）](https://msdn.microsoft.com/library/windows/hardware/hh450944)
+[设置调试 （内核模式和用户模式下）](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-set-up-for-debugging)
 
-[Windows 调试工具](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

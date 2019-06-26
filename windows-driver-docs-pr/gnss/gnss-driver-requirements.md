@@ -4,12 +4,12 @@ description: 介绍适用于 Windows 10 开发 GNSS 驱动程序时要考虑的�
 ms.assetid: BA117292-4877-4753-8FEB-2DEE6450155D
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac983cd92fb2079311e079f98a58ae79f637cd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9f37a4a1e9794c10703e0ca12bf8660e56d8092
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371119"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363667"
 ---
 # <a name="gnss-driver-requirements"></a>GNSS 驱动程序要求
 
@@ -28,7 +28,7 @@ ms.locfileid: "63371119"
 
     GNSS 驱动程序的多个应用程序会话中的支持已启用测试中的应用程序 HLOS GNSS 适配器时直接与 GNSS 驱动程序交互的优势。 测试应用程序和 GNSS 适配器是我们被视为不同的应用程序可以请求到单个 GNSS 驱动程序不同的会话同时。 如果不支持多个应用程序会话，然后 GNSS 驱动程序需要为测试与通过 OS 位置平台，或应否则停止托管 OS 位置平台的服务以避免干扰测试应用程序。
 
--   **解决会话：** 获取定位信息从基础驱动程序 （一个镜头或跟踪） 的行为已抽象化为修复会话概念。 驱动程序必须支持至少一个修补程序会话的支持每个会话类型。 会话类型定义下[ **GNSS\_FIXSESSIONTYPE** ](https://msdn.microsoft.com/library/windows/hardware/dn925150)枚举。
+-   **解决会话：** 获取定位信息从基础驱动程序 （一个镜头或跟踪） 的行为已抽象化为修复会话概念。 驱动程序必须支持至少一个修补程序会话的支持每个会话类型。 会话类型定义下[ **GNSS\_FIXSESSIONTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ne-gnssdriver-gnss_fixsessiontype)枚举。
 
     -   至少，GNSS 驱动程序必须支持单个单次触发的修复会话。
 
@@ -73,7 +73,7 @@ ms.locfileid: "63371119"
     -   不支持连接的待机的设备将具有所有设备时出现现代待机或休眠状态时已取消的卸载的操作。 这包括卸载地域隔离区、 跟踪、 距离或定期跟踪会话。
     -   支持连接的待机的设备将继续时在设备进入连接待机和 GNSS 设备应以尽可能高效地继续跟踪操作和预期需要提供能够所有活动的卸载的操作本例中为通知发送到在 HLOS 地域隔离区触发器条件或更新是相关的跟踪会话。 如果没有支持连接待机的设备中卸载的操作，GNSS 设备应该转到最低的电源状态可能，但仍将能够从 HLOS 侦听位置会话请求。 在支持 SUPL 的设备，它必须还能 GNSS 设备和 SUPL 堆栈 NI 通知中连接待机状态唤醒。
 
-    驱动程序的电源管理的常规信息可在[驱动程序的电源管理责任](https://msdn.microsoft.com/library/windows/hardware/ff559825)。
+    驱动程序的电源管理的常规信息可在[驱动程序的电源管理责任](https://docs.microsoft.com/windows-hardware/drivers/kernel/power-management-responsibilities-for-drivers)。
 
 -   **电源问题需要考虑：** GNSS 驱动程序堆栈必须考虑能源占用量作为主要设计目标，并最大程度减少保留主处理器唤醒状态最大程度地。 所有高级功能支持 （例如不同的修复类型） 必须执行如比主应用程序的处理器不需要处于活动状态超过所需的节能的方式和大多数处理可以卸载到芯片组/低功耗处理器。 作为一般规则，除非另有说明从 HLOS，GNSS 驱动程序必须始终视为功率消耗的最重要的约束，并必须设计为执行具有最少的能源占用量的正常操作。 GNSS 驱动程序接口被专门允许移动设备经常更新，过渡到低能耗模式并提供对 GNSS 驱动程序，以优化电源使用情况的需要与电源相关提示。 有关跟踪、 地理围栏和所需长时间运行普遍位置监视的其他功能，GNSS 驱动程序/引擎必须充分利用低能耗硬件/处理器。 如果此类功能驱动程序中使用暴力破解轮询机制来实现，或者它需要在应用程序处理器中实现，该驱动程序不应声明本身为此类操作的支持。 这将允许 HLOS 限制公开此类功能对平台的其余部分，或使用这些功能基于其他平台服务/基元的备用实现。
 
@@ -129,7 +129,7 @@ ms.locfileid: "63371119"
 </tr>
 <tr class="odd">
 <td><p>对 MultipleAppSessions 的支持</p></td>
-<td><p>推荐</p></td>
+<td><p>建议</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -141,7 +141,7 @@ ms.locfileid: "63371119"
 </tr>
 <tr class="odd">
 <td><p>获取通过 Microsoft （使用 Agss_inject Ioctl） GNSS 协助支持</p></td>
-<td><p>推荐</p></td>
+<td><p>建议</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -178,7 +178,7 @@ ms.locfileid: "63371119"
 <tr class="odd">
 <td><p>地理围栏的本机支持</p></td>
 <td><p>可选</p></td>
-<td><p>推荐</p></td>
+<td><p>建议</p></td>
 <td><p>仅循环地域隔离区所需和支持。</p></td>
 </tr>
 <tr class="even">
@@ -189,7 +189,7 @@ ms.locfileid: "63371119"
 </tr>
 <tr class="odd">
 <td><p>报告错误</p></td>
-<td><p>推荐</p></td>
+<td><p>建议</p></td>
 <td></td>
 <td><p>使用 GNSS_ErrorInfo</p></td>
 </tr>
@@ -246,7 +246,7 @@ ms.locfileid: "63371119"
 </tr>
 <tr class="even">
 <td><p>GNSS_ForceSatelliteSystem 的驱动程序命令</p></td>
-<td><p>推荐</p></td>
+<td><p>建议</p></td>
 <td></td>
 <td><p>适用于测试目的。 某些移动运营商或 Oem 可能会需要此进行测试。</p></td>
 </tr>

@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3f7307002a4352f9711d3bda48bec0f9024fb69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5ef06be43537bfd2ce64fe5bfb15e46f6aed9c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360571"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378595"
 ---
 # <a name="handling-color-formats"></a>处理颜色格式
 
@@ -60,7 +60,7 @@ ms.locfileid: "63360571"
 </tr>
 <tr class="even">
 <td><p>4</p></td>
-<td><p>1 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556274#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>)</p></td>
+<td><p>1 (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -73,9 +73,9 @@ ms.locfileid: "63360571"
 
 -   设置\*DevNumOfPlanes 和\*DevBPP 属性为零。 执行此操作可防止 Unidrv 将 DIB 数据发送到打印机。
 
--   提供[呈现插件](rendering-plug-ins.md)实现[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)方法。
+-   提供[呈现插件](rendering-plug-ins.md)实现[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法。
 
-[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)方法必须执行以下操作：
+[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法必须执行以下操作：
 
 -   将 DIB 数据转换为打印机的颜色格式。
 
@@ -83,7 +83,7 @@ ms.locfileid: "63360571"
 
 -   将数据发送到打印后台处理程序。
 
-提供有关详细信息[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)函数中，请参阅[自定义颜色格式](customized-color-formats.md)。
+提供有关详细信息[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)函数中，请参阅[自定义颜色格式](customized-color-formats.md)。
 
 ### <a name="rendering-high-quality-images"></a>呈现高质量的图像
 

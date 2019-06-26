@@ -4,12 +4,12 @@ description: SIM 工具包
 ms.assetid: 39869948-d61c-438c-a90c-05dcb099acad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 351dbe512f2009553db5ba0127db56d367b5fb10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c3199bf2d87d413af845b308c11c2c36cb8c84f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380815"
 ---
 # <a name="sim-toolkit"></a>SIM 工具包
 
@@ -61,7 +61,7 @@ SIM 工具包 UI 应用程序还可以播放声音，并启动浏览器。
 
 -   GETINKEY:60 秒
 
-有关这些自定义的信息，请参阅[自定义 SIM 工具包](https://msdn.microsoft.com/library/windows/hardware/mt629102)。
+有关这些自定义的信息，请参阅[自定义 SIM 工具包](https://docs.microsoft.com/windows-hardware/customize/mobile/mcsf/customize-the-sim-toolkit)。
 
 ### <a name="example-of-processing-a-sim-toolkit-command"></a>正在处理 SIM 工具包命令的示例
 

@@ -3,12 +3,12 @@ Description: 本主题说明如何测试 USB 类型-C 启用系统和 Windows �
 title: USB 类型 C 手动互操作性测试过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d67c271a1983222ebbe8aa529b6c216cac979eea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdbbe69fb2defd000933a0842b6a2cfcf07cb392
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324382"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393133"
 ---
 # <a name="usb-type-c-manual-interoperability-test-procedures"></a>USB 类型 C 手动互操作性测试过程
 
@@ -19,7 +19,7 @@ ms.locfileid: "63324382"
 -   各种测试计划旨在为分配的时间内解决特定的用途。
 -   诊断过程和提示以确认方案，例如设备添加和删除。
 
-* * 适用于 * *
+\* * 适用于 * *
 
 -   Windows 10
 
@@ -155,7 +155,7 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
 对其他可用的系统电源状态重复此测试：进入睡眠状态 (S3)、 休眠 (S4) 和混合睡眠。
 
-**请注意**  pwrtest.exe，包含在 Windows Driver Kit (WDK) 中，用于简化向电源状态的过渡。 有关详细信息，请参阅[PwrTest](https://msdn.microsoft.com/library/windows/hardware/ff550682)。
+**请注意**  pwrtest.exe，包含在 Windows Driver Kit (WDK) 中，用于简化向电源状态的过渡。 有关详细信息，请参阅[PwrTest](https://docs.microsoft.com/windows-hardware/drivers/devtest/pwrtest)。
 
  
 
@@ -175,7 +175,7 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 其他信息的选择性挂起可以从以下源中找到：
 
 -   [启用选择性暂停的 HID](https://go.microsoft.com/fwlink/p/?LinkId=623307)
--   [有关 HID USB 设备的选择性挂起](https://msdn.microsoft.com/library/windows/hardware/jj131716)
+-   [有关 HID USB 设备的选择性挂起](https://docs.microsoft.com/windows-hardware/drivers/hid/selective-suspend-for-hid-over-usb-devices)
 -   [揭秘选择性挂起]( https://go.microsoft.com/fwlink/p/?LinkId=623308)
 
 ## <a href="" id="ft5"></a>FT 情况 5:停靠标识

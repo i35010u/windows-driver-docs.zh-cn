@@ -4,12 +4,12 @@ description: 使用 INF 文件可以重写扩展显示标识数据 (EDID) 的任
 ms.assetid: AA7DC29B-54D5-461A-8252-600D84F0F581
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 007e804eb65b6713ae015c6ae16a506bbedc5ed6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a84fb6212511a8ceb06b532c30509519dd166a74
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366208"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394110"
 ---
 # <a name="overriding-monitor-edids-with-an-inf"></a>重写使用 INF 监视器 EDIDs
 
@@ -67,7 +67,7 @@ EDID 数据格式化为一个或多个 128 字节块为单位：
 ## <a name="span-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanoverriding-an-edid-with-an-inf"></a><span id="Overriding_an_EDID_with_an_INF"></span><span id="overriding_an_edid_with_an_inf"></span><span id="OVERRIDING_AN_EDID_WITH_AN_INF"></span>重写使用 INF EDID
 
 
-若要重写 EDID，包括[ **AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)中为每个你想要重写，采用以下格式的块 INF:
+若要重写 EDID，包括[ **AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)中为每个你想要重写，采用以下格式的块 INF:
 
 ```inf
 HKR, EDID_OVERRIDE, BlockNumber, Byte 1, Byte 2, Byte 3, Byte 4,...
@@ -88,7 +88,7 @@ HKR, EDID_OVERRIDE, 5, 1, 24, 5C, ..., 2D
 ...
 ```
 
-有关详细信息中常规、 Inf 和**AddReg**和**DDInstall**信息，请参见[创建 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff538378)。
+有关详细信息中常规、 Inf 和**AddReg**和**DDInstall**信息，请参见[创建 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/hid/creating-an-inf-file)。
 
 ```inf
 ; monsamp.INF

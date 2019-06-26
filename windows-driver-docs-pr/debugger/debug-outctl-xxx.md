@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 071d675430ac36829a6f7121d24ac02dcff836e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ef36199c42beacf0eca61f8d55a90633e9240b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361441"
 ---
 # <a name="debugoutctlxxx"></a>DEBUG\_OUTCTL\_XXX
 
@@ -38,14 +38,14 @@ ms.locfileid: "63366223"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_THIS_CLIENT</p></td>
-<td align="left"><p>通过此客户端调用的方法由生成输出将只发送到此客户端<a href="https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks" data-raw-source="[output callbacks](https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks)">输出回调</a>。</p></td>
+<td align="left"><p>通过此客户端调用的方法由生成输出将只发送到此客户端<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks" data-raw-source="[output callbacks](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks)">输出回调</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_ALL_CLIENTS</p></td>
@@ -77,7 +77,7 @@ ms.locfileid: "63366223"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">描述</th>
 </tr>
 </thead>

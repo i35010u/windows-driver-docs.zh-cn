@@ -9,12 +9,12 @@ keywords:
 - DIF_FINISHINSTALL_ACTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 864dc05160af9936e933627232d0be9302498b43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdb393883831b65d8359891185c525486d15e6c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385936"
 ---
 # <a name="implementing-finish-install-actions"></a>实施 Finish-Install 操作
 
@@ -23,11 +23,11 @@ ms.locfileid: "63373194"
 
 若要执行的操作完成安装，安装程序：
 
-1.  安装程序在处理时设置 DI_FLAGSEX_FINISHINSTALL_ACTION 标志[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702) DIF 代码，并返回以下错误代码之一：
+1.  安装程序在处理时设置 DI_FLAGSEX_FINISHINSTALL_ACTION 标志[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall) DIF 代码，并返回以下错误代码之一：
     -   如果它是类安装程序而无需完成安装向导页，ERROR_DI_DO_DEFAULT。
     -   如果它是使用完成安装向导页或带或不带完成安装向导页的共同安装程序类安装程序，NO_ERROR。
 
-2.  执行完成安装操作，在处理时会[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)请求。
+2.  执行完成安装操作，在处理时会[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)请求。
 
     安装程序将返回一个错误代码如下表中。
 

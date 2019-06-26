@@ -4,12 +4,12 @@ description: Windows 8 引入了新的基于 Microsoft DirectX 图形基础结�
 ms.assetid: 5D4CBEA1-3C13-4B5C-A43D-7E6DBBB1A80F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b9e7d6792d60a231da694ff409c7e502a734a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 306d812ef0e04a8241075cdb2728642b8cc8c8d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384894"
 ---
 # <a name="desktop-duplication"></a>桌面复制
 
@@ -41,7 +41,7 @@ Windows 8 引入了一个称为基于 DXGI 的 API *Desktop 重复 API*。 此 A
     -   应用程序可以选择使用硬件加速来处理数据移动和鼠标数据。
     -   应用程序可以选择要用于压缩，再流出的硬件加速。
 
-有关详细的文档和示例，请参阅[Desktop 重复 API](https://msdn.microsoft.com/library/windows/desktop/hh404487)。
+有关详细的文档和示例，请参阅[Desktop 重复 API](https://docs.microsoft.com/windows/desktop/direct3ddxgi/desktop-dup-api)。
 
  
 

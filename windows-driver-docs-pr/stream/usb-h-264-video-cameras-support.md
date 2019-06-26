@@ -4,12 +4,12 @@ description: 从 Windows 8 开始，支持 H.264 视频编解码器 （编码器
 ms.assetid: EB73E2B2-B34E-4DC1-807A-4990A54E6E8D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aa183949986475444c3cded4944b598d231c40f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8842072f52c9fe831f5b7bd8417b26530e626ff7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368820"
 ---
 # <a name="usb-h264-video-cameras-support"></a>USB H.264 视频摄像机支持
 
@@ -34,9 +34,9 @@ UVC 类驱动程序 Usbvideo.sys 查询视频摄像机直接以获取其功能�
  
 
 ## <a name="related-topics"></a>相关主题
-[**KS\_DATAFORMAT\_H264VIDEOINFO**](https://msdn.microsoft.com/library/windows/hardware/hh463996)  
-[**KS\_DATARANGE\_H264\_VIDEO**](https://msdn.microsoft.com/library/windows/hardware/hh464002)  
-[**KS\_H264VIDEOINFO**](https://msdn.microsoft.com/library/windows/hardware/hh464008)  
+[**KS\_DATAFORMAT\_H264VIDEOINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_h264videoinfo)  
+[**KS\_DATARANGE\_H264\_VIDEO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_h264_video)  
+[**KS\_H264VIDEOINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_h264videoinfo)  
 
 
 

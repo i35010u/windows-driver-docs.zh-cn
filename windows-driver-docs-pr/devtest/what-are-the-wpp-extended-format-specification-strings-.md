@@ -4,19 +4,19 @@ description: 什么是 WPP 扩展格式规范字符串
 ms.assetid: f05117c0-cb4b-483a-a141-08423555170a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b4ee86a2d9ac5c93c9df135032aa5f19b59856
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb74648fffb386f818651f74b102fd130ed111e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385031"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371369"
 ---
 # <a name="what-are-the-wpp-extended-format-specification-strings"></a>什么是 WPP 扩展格式规范字符串？
 
 
 WPP 跟踪消息的费用为定义的标准格式字符串中包含可以使用的预定义的格式规范字符串**printf**。
 
-可以使用 **%！标志 ！**, **%!FUNC ！** 和 **%！级别 ！** 中字符串[跟踪消息前缀](trace-message-prefix.md)，然后在任何跟踪函数或宏，如[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)。
+可以使用 **%！标志 ！** , **%!FUNC ！** 和 **%！级别 ！** 中字符串[跟踪消息前缀](trace-message-prefix.md)，然后在任何跟踪函数或宏，如[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))。
 
 跟踪的任何函数中，可以使用其他扩展的字符串。
 
@@ -101,7 +101,7 @@ WPP 跟踪消息的费用为定义的标准格式字符串中包含可以使用�
 <td align="left"><p>类型库。 表示 COM 类型库的 GUID。 显示与 GUID 关联的字符串。 当设置格式的跟踪消息时，WPP 在注册表中查找字符串。</p></td>
 </tr>
 <tr class="even">
-<td align="left">时间</td>
+<td align="left">Time</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">

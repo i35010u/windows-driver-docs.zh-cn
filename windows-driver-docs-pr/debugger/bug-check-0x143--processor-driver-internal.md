@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1766f98e3ba794c439ab187d494a7719e8525ea7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a61817fcf55d999e5da4d3c2601372f2562caea7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367812"
 ---
 # <a name="bug-check-0x143-processordriverinternal"></a>Bug 检查 0x143：处理器\_驱动程序\_内部
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360463"
 处理器\_驱动程序\_内部 bug 检查的值为 0x00000143。 这表示处理器电源管理 (PPM) 驱动程序遇到错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="processordriverinternal-parameters"></a>处理器\_驱动程序\_内部参数

@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a10f871b96afe67c2fb73a08ed56d9eb58a97283
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c7d42987c3d7f8e08ada87d2790a574330a2f50
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367693"
 ---
 # <a name="bug-check-0x17d-pdcunexpectedrevocationlivedump"></a>Bug 检查 0x17D:PDC\_意外\_吊销\_LIVEDUMP
 
 PDC\_意外\_吊销\_LIVEDUMP bug 检查的值为 0x0000017D。 它表示已被意外吊销激活器。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 

@@ -8,12 +8,12 @@ keywords:
 - 处理互斥体 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92b731dfe3196ea56f645f37cda373cc711f8f7e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1222e8ba8f8b43a139213f0aeb7acffcfdd810c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379061"
 ---
 # <a name="processing-mutex-in-avstream"></a>在 AVStream 中处理互斥
 
@@ -31,7 +31,7 @@ ms.locfileid: "63362215"
 
 若要操作处理互斥体，使用以下函数：
 
-[**KsFilterAcquireProcessingMutex**](https://msdn.microsoft.com/library/windows/hardware/ff562524)， [ **KsPinAcquireProcessingMutex**](https://msdn.microsoft.com/library/windows/hardware/ff563488)， [ **KsFilterReleaseProcessingMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff562552)， [ **KsPinReleaseProcessingMutex**](https://msdn.microsoft.com/library/windows/hardware/ff563527)
+[**KsFilterAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilteracquireprocessingmutex)， [ **KsPinAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinacquireprocessingmutex)， [ **KsFilterReleaseProcessingMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilterreleaseprocessingmutex)， [ **KsPinReleaseProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinreleaseprocessingmutex)
 
  
 

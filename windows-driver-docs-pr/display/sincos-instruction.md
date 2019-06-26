@@ -4,12 +4,12 @@ description: SINCOS 指令格式
 ms.assetid: df9b51ef-5a9f-4222-a0be-a40d5b577f9a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e21722699b161c6a5f365747e980fc5df4f0726
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bd9c2121f606d97252a75fbde750e8f16e036da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391233"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365492"
 ---
 # <a name="sincos-instruction-format"></a>SINCOS 指令格式
 
@@ -23,7 +23,7 @@ SINCOS 指令计算正弦和余弦值，以弧度为单位。 结果的 X 分量
 
 [指令令牌](instruction-token.md)，其中包含 D3DSIO\_SINCOS。 指令的长度为 4。
 
-[目标参数标记](destination-parameter-token.md)使用 D3DSPR\_TEMP[注册类型](https://msdn.microsoft.com/library/windows/hardware/ff569707)。
+[目标参数标记](destination-parameter-token.md)使用 D3DSPR\_TEMP[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)。
 
 第一个[源参数标记](source-parameter-token.md)。 要求必须指定显式使用复制 swizzle，也就是说，X、 Y、 Z 或 W swizzle 组件 （或等效的 R、 G、 B 或 A）。
 

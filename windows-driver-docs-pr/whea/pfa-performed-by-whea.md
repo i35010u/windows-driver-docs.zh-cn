@@ -11,12 +11,12 @@ keywords:
 - LLHEH WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c872d0fa9c58e75df5c763fc8a12075383b8e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c3a623155e7c2c520221c66ad135247a9f8a05c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387156"
 ---
 # <a name="pfa-performed-by-whea"></a>由 WHEA 执行的 PFA
 
@@ -31,7 +31,7 @@ ECC 内存错误时，WHEA 会执行以下步骤：
 
 1.  *低级别的硬件错误处理程序*(*LLHEH*) 通知的内存错误条件是否存在。
 
-2.  LLHEH 从错误源检索内存错误信息和使用错误数据来填充硬件错误数据包中。 此数据包的格式设置为[WHEA\_错误\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff560465)结构。
+2.  LLHEH 从错误源检索内存错误信息和使用错误数据来填充硬件错误数据包中。 此数据包的格式设置为[WHEA\_错误\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构。
 
 3.  若要检索特定于平台的硬件错误的任何信息 PSHED LLHEH 调用。 如果 PSHED 插件中安装并注册要检索有关错误的信息，PSHED 将调入 PSHED 插件，以便该插件可以修改返回给 LLHEH 的错误信息。
 
@@ -43,7 +43,7 @@ ECC 内存错误时，WHEA 会执行以下步骤：
 
 7.  如果 PSHED 插件安装并注册要检索有关错误的信息，PSHED 将调入 PSHED 插件，以便该插件可以修改的错误记录中的信息。
 
-    **请注意**  PSHED 插件不执行 PFA 时，如果它必须设置**PlatformPfaControl**位[ **WHEA\_错误\_数据包\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff560472)的成员[WHEA\_错误\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff560465)结构。
+    **请注意**  PSHED 插件不执行 PFA 时，如果它必须设置**PlatformPfaControl**位[ **WHEA\_错误\_数据包\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_flags)的成员[WHEA\_错误\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构。
 
      
 

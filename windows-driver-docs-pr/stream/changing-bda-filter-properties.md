@@ -8,12 +8,12 @@ keywords:
 - 方法设置 WDK BDA，筛选器属性更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f2d456e8e19154c4d5d1c3012defd46343c9c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 252f2d35a721a52b6ee4839a28d78e0386b5b8b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386654"
 ---
 # <a name="changing-bda-filter-properties"></a>更改 BDA 筛选器属性
 
@@ -21,7 +21,7 @@ ms.locfileid: "63351851"
 
 
 
-因为视图媒体广播可以同时运行的系统的应用程序的多个实例，您应编写 BDA 微型驱动程序以适应一个筛选器的多个实例。 每个筛选器实例可以包含不同的信息。 例如，调谐器筛选器的一个实例可以包含调到频道 5，而另一个实例可以包含调到第 8 频道的请求的请求。 控件从一个实例转换到另一个，如 BDA 微型驱动程序必须指示基础优化设备，若要更改的资源配置的方式。 BDA 微型驱动程序处理的方法请求[KSMETHODSETID\_BdaChangeSync](https://msdn.microsoft.com/library/windows/hardware/ff563403)微型驱动程序的筛选器实例上一个请求方法设置来协调一组属性。
+因为视图媒体广播可以同时运行的系统的应用程序的多个实例，您应编写 BDA 微型驱动程序以适应一个筛选器的多个实例。 每个筛选器实例可以包含不同的信息。 例如，调谐器筛选器的一个实例可以包含调到频道 5，而另一个实例可以包含调到第 8 频道的请求的请求。 控件从一个实例转换到另一个，如 BDA 微型驱动程序必须指示基础优化设备，若要更改的资源配置的方式。 BDA 微型驱动程序处理的方法请求[KSMETHODSETID\_BdaChangeSync](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdachangesync)微型驱动程序的筛选器实例上一个请求方法设置来协调一组属性。
 
 KSMETHODSETID 的主要用途\_BdaChangeSync 方法集是提供触发点筛选器基础微型驱动程序可以获取和释放资源从微型驱动程序的设备对象。 微型驱动程序必须协调这些触发点与筛选器转换到和从已停止状态。 例如，如果筛选器是处于停止状态，微型驱动程序应将新的资源分配给筛选器，但不是获取这些资源，只要提交 BDA 拓扑更改到指定的网络提供程序。 当筛选器随后转换从其已停止状态时，微型驱动程序应尝试获取这些资源从基础设备。
 
@@ -29,13 +29,13 @@ KSMETHODSETID 的主要用途\_BdaChangeSync 方法集是提供触发点筛选�
 
 通常情况下，BDA 微型驱动程序的筛选器对象截获，并提供了方法的方法的 KSMETHODSETID\_BdaChangeSync 方法集。 例如，微型驱动程序提供了用于启动、 检查和提交筛选器更改以及获取筛选器的更改状态的方法。 此外，微型驱动程序提供的以下方法应调用相应的 BDA 支持同步微型驱动程序以前已注册 BDA 支持库的结构上的更改的库函数：
 
--   开始更改方法调用[ **BdaStartChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff556507)函数。
+-   开始更改方法调用[ **BdaStartChanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdastartchanges)函数。
 
--   检查更改方法调用[ **BdaCheckChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff556433)函数。
+-   检查更改方法调用[ **BdaCheckChanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacheckchanges)函数。
 
--   提交更改方法调用[ **BdaCommitChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff556435)函数。
+-   提交更改方法调用[ **BdaCommitChanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacommitchanges)函数。
 
--   获取已更改状态方法调用[ **BdaGetChangeState** ](https://msdn.microsoft.com/library/windows/hardware/ff556458)函数。
+-   获取已更改状态方法调用[ **BdaGetChangeState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdagetchangestate)函数。
 
 下面的代码段演示如何以截获方法请求的 KSMETHODSETID\_BdaChangeSync 方法使用的内部方法设置：
 

@@ -4,17 +4,17 @@ description: 您可以使用事件跟踪 Windows (ETW) 或 Windows 软件跟踪�
 ms.assetid: F23E5516-36B9-478E-90D3-54D1C52CB467
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 970b20c211b3ac163136e14ab5e03d6d843d6cf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc5df2a5de31ff882eb0b3bf32fd68cfd5f884de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375730"
 ---
 # <a name="event-tracing"></a>事件跟踪
 
 
-您可以使用事件跟踪 Windows (ETW) 或 Windows 软件跟踪预处理器 (WPP) 若要通过 I²C 设备驱动程序在你 HID 跟踪操作。 有关 ETW 的详细信息，请参阅[事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=256040)Windows 开发参考中的主题。 有关 WPP 详细信息，请参阅[WPP 软件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556204)并[即时跟踪记录器 (IFR) 的日志中记录跟踪](https://msdn.microsoft.com/library/windows/hardware/dn914610)。
+您可以使用事件跟踪 Windows (ETW) 或 Windows 软件跟踪预处理器 (WPP) 若要通过 I²C 设备驱动程序在你 HID 跟踪操作。 有关 ETW 的详细信息，请参阅[事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=256040)Windows 开发参考中的主题。 有关 WPP 详细信息，请参阅[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)并[即时跟踪记录器 (IFR) 的日志中记录跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-wpp-recorder)。
 
 ## <a name="using-the-inflight-trace-recorder-ifr"></a>使用即时跟踪记录器 (IFR)
 

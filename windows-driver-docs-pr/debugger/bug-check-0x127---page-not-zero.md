@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f167d5930b3dd7558af9833f3a9264a002cf1183
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4043dfc9192eb6af3a538a605a0534b296fc3991
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367877"
 ---
 # <a name="bug-check-0x127-pagenotzero"></a>Bug 检查 0x127：PAGE\_NOT\_ZERO
 
@@ -26,7 +26,7 @@ ms.locfileid: "63354803"
 页面\_不\_零错误检查的值为 0x00000127。 此 bug 检查指示应已填充了零页面不是。 检查此错误可能是由于硬件错误或者特权的组件释放后修改页。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="pagenotzero-parameters"></a>页\_不\_零个参数

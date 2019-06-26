@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a9e6b6e2e44ca75a145f027ec77b1d2da2cab0b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67ad637c336cb3e85113b6d55d3517d01dfb9257
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392480"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387336"
 ---
 # <a name="group-xml-element"></a>group XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
-**组**XML 元素指定的有序的集合[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)该 DPInst 处理作为驱动程序包组。
+**组**XML 元素指定的有序的集合[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)该 DPInst 处理作为驱动程序包组。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -69,7 +69,7 @@ ms.locfileid: "63392480"
 
 ### <a href="" id="comments"></a>备注
 
-下面的代码示例演示**组**元素包含两个[**打包 XML 元素**](package-xml-element.md)并[ **installAllOrNoneXML 元素**](installallornone-xml-element.md)。 该示例**组**元素配置来处理"Abc"的 DPInst[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)和"Def"驱动程序包作为一个组。 **InstallAllOrNone** XML 元素配置 DPInst 安装驱动程序程序包组中的驱动程序包，才可以安装这两个驱动程序。
+下面的代码示例演示**组**元素包含两个[**打包 XML 元素**](package-xml-element.md)并[ **installAllOrNoneXML 元素**](installallornone-xml-element.md)。 该示例**组**元素配置来处理"Abc"的 DPInst[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)和"Def"驱动程序包作为一个组。 **InstallAllOrNone** XML 元素配置 DPInst 安装驱动程序程序包组中的驱动程序包，才可以安装这两个驱动程序。
 
 ```cpp
 <dpinst>

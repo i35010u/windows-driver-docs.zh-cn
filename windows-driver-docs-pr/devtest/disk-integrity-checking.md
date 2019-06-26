@@ -8,12 +8,12 @@ keywords:
 - 存储准确性 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f7a4deb4a694ff39be7d0d2b694e9a1aad8dea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 228d00b26760a4215bf9dfa594ade4a8a33b4ea7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329681"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360357"
 ---
 # <a name="disk-integrity-checking"></a>磁盘完整性检查
 
@@ -31,7 +31,7 @@ ms.locfileid: "63329681"
 
 一旦加载 Windows，其驱动程序，驱动程序验证程序开始监视所有读取和写入到这些驱动器所做的操作。 驱动程序验证程序计算每个扇区的访问，并将保存此值的 CRC （循环冗余检查） 校验和值。 下次访问此扇区时，驱动程序验证程序重新计算此校验和，并将它与以前的值进行比较。
 
-如果校验和值发生更改，则表明磁盘完整性问题--读取的操作返回有故障的信息或磁盘介质的上次访问以来已更改其内容。 在此情况下，驱动程序验证程序问题 bug 检查与参数 1 等于 0xA0 0xC4。 其他参数标识 IRP 发出请求，较低的设备，并出现错误的扇区的设备对象。 有关详细信息，请参阅[ **Bug 检查 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (驱动程序\_VERIFIER\_检测到\_冲突)。
+如果校验和值发生更改，则表明磁盘完整性问题--读取的操作返回有故障的信息或磁盘介质的上次访问以来已更改其内容。 在此情况下，驱动程序验证程序问题 bug 检查与参数 1 等于 0xA0 0xC4。 其他参数标识 IRP 发出请求，较低的设备，并出现错误的扇区的设备对象。 有关详细信息，请参阅[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突)。
 
 ### <a name="span-idperformanceissuesspanspan-idperformanceissuesspanperformance-issues"></a><span id="performance_issues"></span><span id="PERFORMANCE_ISSUES"></span>性能问题
 

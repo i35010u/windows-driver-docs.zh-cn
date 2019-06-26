@@ -11,12 +11,12 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 223c6ae8277ad5a31984ecdf1c3ada1851b941b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cad1162aebc9e109558977359f6cfc5e2bc07d85
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377309"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394099"
 ---
 # <a name="sddl-for-device-objects"></a>设备对象的 SDDL
 
@@ -24,7 +24,7 @@ ms.locfileid: "63377309"
 
 
 
-安全描述符定义语言 (SDDL) 用于表示安全描述符。 是一个 SDDL 字符串可以指定设备对象的安全[INF 文件中放置](https://msdn.microsoft.com/library/windows/hardware/ff540212)或传递给[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)。 [安全描述符定义语言](https://msdn.microsoft.com/library/windows/desktop/aa379567)完全记录在 Microsoft Windows SDK 文档。
+安全描述符定义语言 (SDDL) 用于表示安全描述符。 是一个 SDDL 字符串可以指定设备对象的安全[INF 文件中放置](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)或传递给[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。 [安全描述符定义语言](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)完全记录在 Microsoft Windows SDK 文档。
 
 虽然 INF 文件支持完整范围的 SDDL，但通过支持语言的一个子集**IoCreateDeviceSecure**例程。 在此处定义该子集。
 
@@ -270,7 +270,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <td><p>UD</p></td>
 <td><p>用户模式驱动程序</p>
 <p>此 SID 授予访问权限的用户模式驱动程序。 目前，此 SID 包含仅专为用户模式驱动程序框架 (UMDF) 的驱动程序。 此 SID 是从 Windows 8 开始提供。</p>
-<p>在早期版本的 Windows，不能识别"UD"缩写，必须指定完全限定的窗体的此 SID (S-1-5-84-0-0-0-0-0) 授予对 UMDF 驱动程序访问权限。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh439567" data-raw-source="[Controlling Device Access](https://msdn.microsoft.com/library/windows/hardware/hh439567)">控制的设备访问</a>用户模式驱动程序框架文档中。</p></td>
+<p>在早期版本的 Windows，不能识别"UD"缩写，必须指定完全限定的窗体的此 SID (S-1-5-84-0-0-0-0-0) 授予对 UMDF 驱动程序访问权限。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access)">控制的设备访问</a>用户模式驱动程序框架文档中。</p></td>
 </tr>
 </tbody>
 </table>

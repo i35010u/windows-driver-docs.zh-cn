@@ -10,12 +10,12 @@ keywords:
 - 状态块 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6dbd1f49848deab86b69555a43806ea11459ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e53261d4a715fe94d2a63a0964ed84aaee30125
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364269"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371887"
 ---
 # <a name="how-to-complete-an-irp-in-a-dispatch-routine"></a>如何在 Dispatch 例程中完成 IRP
 
@@ -29,7 +29,7 @@ ms.locfileid: "63364269"
 
     -   调度例程集**状态**到状态\_成功或相应的错误 (状态\_*XXX*)，可以是对支持例程的调用返回的值或，对于某些同步请求，较低的驱动程序。
 
-        如果较低级驱动程序将返回状态\_挂起状态，更高级别的驱动程序不应调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)的 IRP，有一个例外：更高级别的驱动程序可以使用某个事件之间的同步其[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例程和中这种情况下其调度例程*IoCompletion*例程信号事件并返回状态\_更多\_处理\_必需。 调度例程等待事件，然后调用**IoCompleteRequest**完成 IRP。
+        如果较低级驱动程序将返回状态\_挂起状态，更高级别的驱动程序不应调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)的 IRP，有一个例外：更高级别的驱动程序可以使用某个事件之间的同步其[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程和中这种情况下其调度例程*IoCompletion*例程信号事件并返回状态\_更多\_处理\_必需。 调度例程等待事件，然后调用**IoCompleteRequest**完成 IRP。
 
     -   它会设置**信息**到的字节数已成功传输的请求来传输数据，如读取或写入请求，已满足。
 

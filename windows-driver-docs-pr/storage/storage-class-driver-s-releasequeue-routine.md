@@ -9,12 +9,12 @@ keywords:
 - 已冻结的队列 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c9f2be59fc652ae3e9b262b6a8bcc0f66eea0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dc978b236bd1c3afc8ffb7fdc17540d7216d293
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368887"
 ---
 # <a name="storage-class-drivers-releasequeue-routine"></a>存储类驱动程序的 ReleaseQueue 例程
 
@@ -38,7 +38,7 @@ ms.locfileid: "63339026"
 
 一个*ReleaseQueue*例程分配并设置 IRP 和 SRB 以发布或刷新冻结的队列。 **函数**SRB 成员必须设置为 SRB\_函数\_发行\_队列或 SRB\_函数\_刷新\_队列中，这两个版本冻结的队列并取消所有当前排队的请求的目标逻辑单元。 端口驱动程序完成刷新队列中的所有请求其**SrbStatus**成员设置为 SRB\_状态\_请求\_刷新。
 
-未能解除冻结的队列可让设备不可访问，因此驱动程序的*ReleaseQueue*例程应设计为可成功甚至在内存不足的情况。 一个*ReleaseQueue*例程应首先尝试通过调用为 SRB 分配内存[ **ExAllocatePool** ](https://msdn.microsoft.com/library/windows/hardware/ff544501)与**非分页池**内存类型，然后该分配失败时，如果使用已预先分配驱动程序初始化期间 SRB。 如果该驱动程序分配用于保留时保存初始化其设备扩展，如中所述 SRB[设置了存储类驱动程序的设备扩展](setting-up-a-storage-class-driver-s-device-extension.md)，将其*ReleaseQueue*如果可以使用该 SRB在多个并发发布操作可能需要的情况下，内存池较低，用适当的同步机制。
+未能解除冻结的队列可让设备不可访问，因此驱动程序的*ReleaseQueue*例程应设计为可成功甚至在内存不足的情况。 一个*ReleaseQueue*例程应首先尝试通过调用为 SRB 分配内存[ **ExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool)与**非分页池**内存类型，然后该分配失败时，如果使用已预先分配驱动程序初始化期间 SRB。 如果该驱动程序分配用于保留时保存初始化其设备扩展，如中所述 SRB[设置了存储类驱动程序的设备扩展](setting-up-a-storage-class-driver-s-device-extension.md)，将其*ReleaseQueue*如果可以使用该 SRB在多个并发发布操作可能需要的情况下，内存池较低，用适当的同步机制。
 
 请注意，类驱动程序*ReleaseQueue*以异步方式调用例程通常从其*IoCompletion*例程。 类驱动程序*IoCompletion*不能调用例程*ReleaseQueue*刷新是否未被冻结的队列。 但是，它可以调用*ReleaseQueue*释放未冻结的队列和端口驱动程序只需将忽略此类请求。
 

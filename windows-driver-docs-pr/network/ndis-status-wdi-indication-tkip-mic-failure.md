@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d18766235cbe5a0768a94132f5af0d33a1afe490
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 135f8fcdefa4d66c1026a4df8abb8733d67f7cfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323347"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375193"
 ---
 # <a name="ndisstatuswdiindicationtkipmicfailure"></a>NDIS\_状态\_WDI\_指示\_TKIP\_MIC\_失败
 
@@ -20,7 +20,7 @@ ms.locfileid: "63323347"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63323347"
 
 | 在任务栏的搜索框中键入                                                                             | 允许多个 TLV 实例 | 可选 | 描述                       |
 |----------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------|
-| [**WDI\_TLV\_TKIP\_MIC\_FAILURE\_INFO**](https://msdn.microsoft.com/library/windows/hardware/dn898072) |                                |          | TKIP MIC 失败信息。 |
+| [**WDI\_TLV\_TKIP\_MIC\_FAILURE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tkip-mic-failure-info) |                                |          | TKIP MIC 失败信息。 |
 
  
 

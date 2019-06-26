@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6567bf3b9bc5a737f68f64dca0f348b73204f40f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f2daa0eac3fa6c396b3c92f4fa36692370639eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380799"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386484"
 ---
 # <a name="kspropertyqualityreport"></a>KSPROPERTY\_质量\_报表
 
@@ -54,7 +54,7 @@ KSPROPERTY\_质量\_报表属性是可选属性，如果 pin 支持质量管理�
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566728" data-raw-source="[&lt;strong&gt;KSQUALITY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566728)"><strong>KSQUALITY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality" data-raw-source="[&lt;strong&gt;KSQUALITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality)"><strong>KSQUALITY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ KSPROPERTY\_质量\_报表属性是可选属性，如果 pin 支持质量管理�
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_质量\_报表的属性值为类型[ **KSQUALITY** ](https://msdn.microsoft.com/library/windows/hardware/ff566728)结构。 使用此结构来获取或设置当前正在使用的帧的比例和从最佳帧回执时间差异。
+KSPROPERTY\_质量\_报表的属性值为类型[ **KSQUALITY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality)结构。 使用此结构来获取或设置当前正在使用的帧的比例和从最佳帧回执时间差异。
 
 在类驱动程序不处理此属性;流微型驱动程序必须提供自己的处理。
 
@@ -89,7 +89,7 @@ KSPROPERTY\_质量\_报表的属性值为类型[ **KSQUALITY** ](https://msdn.mi
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSQUALITY**](https://msdn.microsoft.com/library/windows/hardware/ff566728)
+[**KSQUALITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksquality)
 
  
 

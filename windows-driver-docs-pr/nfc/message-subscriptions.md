@@ -10,23 +10,23 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9ae0834d88925b73d13a7da1a910c9573c071e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d45ff27cc232234eb5ede8caedf4c677eb9ea92d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378710"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375101"
 ---
 # <a name="nfp-message-subscriptions"></a>NFP 消息订阅
 
 
 订阅表示为驱动程序中的唯一打开句柄。 订阅使处于活动状态的打开的句柄到"Sub\\"设备命名空间。 订阅的类型定义之后的内容为"Sub\\"前缀。
 
-在接收到消息的回调提供通过已完成[ **IOCTL\_NFP\_获取\_下一步\_已订阅\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853319)。
+在接收到消息的回调提供通过已完成[ **IOCTL\_NFP\_获取\_下一步\_已订阅\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)。
 
-可以通过暂时禁用订阅[ **IOCTL\_NFP\_禁用**](https://msdn.microsoft.com/library/windows/hardware/jj853315)。
+可以通过暂时禁用订阅[ **IOCTL\_NFP\_禁用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_disable)。
 
-订阅可以通过重新启动[ **IOCTL\_NFP\_启用**](https://msdn.microsoft.com/library/windows/hardware/jj853316)。
+订阅可以通过重新启动[ **IOCTL\_NFP\_启用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_enable)。
 
 ## <a name="handles"></a>句柄
 
@@ -86,16 +86,16 @@ ms.locfileid: "63378710"
 ## <a name="unresponsive-or-misbehaving-clients"></a>无响应或行为不正确的客户端
 
 
-如果客户端将停止未能发送所需通过清空"Received"队列[ **IOCTL\_NFP\_获取\_下一步\_已订阅\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853319)十台到二十秒钟的请求\[10-20 秒\]，则驱动程序应假定客户端将消失。 正常情况下，客户端应刷新其请求一秒内还\[1s\]。 如果发生这种情况，驱动程序必须将"CompleteEventImmediately"计数器设置为零，必须递增计数器，直到客户端唤醒，并将所需的 IRP 发送。
+如果客户端将停止未能发送所需通过清空"Received"队列[ **IOCTL\_NFP\_获取\_下一步\_已订阅\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)十台到二十秒钟的请求\[10-20 秒\]，则驱动程序应假定客户端将消失。 正常情况下，客户端应刷新其请求一秒内还\[1s\]。 如果发生这种情况，驱动程序必须将"CompleteEventImmediately"计数器设置为零，必须递增计数器，直到客户端唤醒，并将所需的 IRP 发送。
 
 ### <a name="required-actions"></a>所需的操作
 
-该驱动程序必须设置"CompleteEventImmediately"计数器为零，必须递增计数器，如果客户端未发送更换[ **IOCTL\_NFP\_获取\_下一步\_订阅\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853319)以前 IOCTL 完成后 10 到 20 秒内。
+该驱动程序必须设置"CompleteEventImmediately"计数器为零，必须递增计数器，如果客户端未发送更换[ **IOCTL\_NFP\_获取\_下一步\_订阅\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)以前 IOCTL 完成后 10 到 20 秒内。
 
 ## <a name="malformed-messages"></a>格式不正确的消息
 
 
-客户端很可能删除或忽略所有错误 (除状态\_缓冲区\_OVERFLOW) 从返回[ **IOCTL\_NFP\_获取\_下一步\_订阅\_消息**](https://msdn.microsoft.com/library/windows/hardware/jj853319)。 因此，驱动程序不应完成，这些错误条件只是因为收到格式不正确的消息。
+客户端很可能删除或忽略所有错误 (除状态\_缓冲区\_OVERFLOW) 从返回[ **IOCTL\_NFP\_获取\_下一步\_订阅\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)。 因此，驱动程序不应完成，这些错误条件只是因为收到格式不正确的消息。
 
 ### <a name="required-actions"></a>所需的操作
 
@@ -127,6 +127,6 @@ ms.locfileid: "63378710"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[邻近 DDI 引用附近](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

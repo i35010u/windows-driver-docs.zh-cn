@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e4d3d93833fc553b4a2e98f2fcc3e1129ba7214
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bf42a7d4d4f02646f91c2aaeb70b73d2e74c568
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370080"
 ---
 # <a name="mrxquerydirectory-routine"></a>MRxQueryDirectory 例程
 
 
-*MRxQueryDirectory*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向查询文件目录的信息。
+*MRxQueryDirectory*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询文件目录的信息。
 
 <a name="syntax"></a>语法
 ------
@@ -118,7 +118,7 @@ NTSTATUS MRxQueryDirectory(
 
 通配符查询 ("\*。\*"，例如)，将设置 RDBSS **UnicodeQueryTemplate.Buffer**传递关联 FOBX 通配符查询的成员。
 
-如果**PostRequest** RX 成员\_上下文结构**TRUE**返回时从*MRxQueryDirectory*，然后将调用 RDBSS [ **RxFsdPostRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff554472)传递 RX\_上下文结构到辅助队列中进行处理的文件系统进程 (FSP)。
+如果**PostRequest** RX 成员\_上下文结构**TRUE**返回时从*MRxQueryDirectory*，然后将调用 RDBSS [ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)传递 RX\_上下文结构到辅助队列中进行处理的文件系统进程 (FSP)。
 
 <a name="requirements"></a>要求
 ------------
@@ -143,7 +143,7 @@ NTSTATUS MRxQueryDirectory(
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryEaInfo**](mrxqueryeainfo.md)
 
@@ -167,7 +167,7 @@ NTSTATUS MRxQueryDirectory(
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://msdn.microsoft.com/library/windows/hardware/ff554472)
+[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
 

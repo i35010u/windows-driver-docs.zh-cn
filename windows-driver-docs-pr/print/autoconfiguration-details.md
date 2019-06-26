@@ -7,12 +7,12 @@ keywords:
 - 打印机自动配置 WDK 打印机，有关打印机自动配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a93005862ccec292fccc41477680bd0af0f073
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70c4a6cd3d6756bbdf429389e273b98a9f6d98ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370489"
 ---
 # <a name="autoconfiguration-details"></a>自动配置详细信息
 
@@ -31,7 +31,7 @@ ms.locfileid: "63350803"
 
 -   可以接收有关设备使用 bidi 通知架构的配置更改的通知。
 
--   可以要求从打印机使用的配置数据[bidi 通信接口](https://msdn.microsoft.com/library/windows/hardware/ff545163)，并专门 IBidiSpl2 COM 接口。
+-   可以要求从打印机使用的配置数据[bidi 通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)，并专门 IBidiSpl2 COM 接口。
 
 端口监视器必须：
 

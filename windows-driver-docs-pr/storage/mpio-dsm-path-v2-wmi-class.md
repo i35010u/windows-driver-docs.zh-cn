@@ -4,12 +4,12 @@ description: MPIO\_DSM\_路径\_V2 WMI 类
 ms.assetid: ec7d75a0-cb40-46e8-ab1d-137a9331193e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 35ff00381b023d8e1627de14a7aa5be1f6b43a1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a9e57f9291ee0407b606ebf32dada8bbf0d69b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375595"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386164"
 ---
 # <a name="mpiodsmpathv2-wmi-class"></a>MPIO\_DSM\_路径\_V2 WMI 类
 
@@ -174,7 +174,7 @@ class MPIO_DSM_Path_V2
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_DSM\_路径\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff562386)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_DSM\_路径\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_dsm_path_v2)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

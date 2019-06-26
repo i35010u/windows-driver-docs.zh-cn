@@ -4,12 +4,12 @@ description: 从 Windows 10 开始，你可以扩展驱动程序程序包 INF �
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83b5d99db73c0f2ba82cbc8cbda66875f58d79ac
-ms.sourcegitcommit: 1de5a464a908f77a1f68fcd52ac33852e9419589
+ms.openlocfilehash: faed1e66952e25d1b5b6e1d3340a500365768451
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66220061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384778"
 ---
 # <a name="using-an-extension-inf-file"></a>使用扩展 INF 文件
 
@@ -63,7 +63,7 @@ ms.locfileid: "66220061"
 
 以下是您需要定义作为扩展 INF INF 的条目。
 
-1.  指定以下值作为**类**并**ClassGuid**中[**版本**](inf-version-section.md)部分。 安装程序类的详细信息，请参阅[系统定义设备安装程序类可用于供应商](https://msdn.microsoft.com/library/windows/hardware/ff553426)。
+1.  指定以下值作为**类**并**ClassGuid**中[**版本**](inf-version-section.md)部分。 安装程序类的详细信息，请参阅[系统定义设备安装程序类可用于供应商](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)。
 
     ```cpp
     [Version]
@@ -100,7 +100,7 @@ ms.locfileid: "66220061"
 
 在大多数情况下，您将提交扩展 INF 包到硬件开发人员中心单独从基础驱动程序包。  如何为包扩展 Inf，以及一些代码示例链接示例，请参阅[通用驱动程序方案](../develop/universal-driver-scenarios.md)。
 
-驱动程序验证和提交过程是相同的扩展插件与正则 Inf Inf。 有关详细信息，请参阅[Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)。
+驱动程序验证和提交过程是相同的扩展插件与正则 Inf Inf。 有关详细信息，请参阅[Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
 
 ## <a name="uninstalling-an-extension-driver"></a>卸载扩展驱动程序
 

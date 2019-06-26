@@ -6,12 +6,12 @@ keywords:
 - 使用 WDK 标记引用的对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cd71cca13a7d87fb4e981215cef0f6c593964a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a38db3c02fd749c4cb6f7d05b7d55c8ad75026f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386584"
 ---
 # <a name="object-reference-tracing-with-tags"></a>使用标记进行对象引用跟踪
 
@@ -28,17 +28,17 @@ ms.locfileid: "63351072"
 
 在 Windows 7 和更高版本的 Windows 中，可以标记对象的引用来轻松地找到这些 bug。 下面的例程标记相关联的获取和释放对内核对象的引用：
 
-[**ObDereferenceObjectDeferDeleteWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff557732)
+[**ObDereferenceObjectDeferDeleteWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobjectdeferdeletewithtag)
 
-[**ObDereferenceObjectWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff557734)
+[**ObDereferenceObjectWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobjectwithtag)
 
-[**ObReferenceObjectByHandleWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff558683)
+[**ObReferenceObjectByHandleWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandlewithtag)
 
-[**ObReferenceObjectByPointerWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff558688)
+[**ObReferenceObjectByPointerWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointerwithtag)
 
-[**ObReferenceObjectWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff558690)
+[**ObReferenceObjectWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectwithtag)
 
-例如， **ObReferenceObjectWithTag**并**ObDereferenceObjectWithTag**，可在 Windows 7 和更高版本的 Windows，是的增强的版本[ **ObReferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff558678)并[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)例程，Windows 2000 和更高版本的 Windows 中可用。 这些增强的例程，可提供一个 4 字节的自定义标记值作为输入参数。 每次调用的标记值添加到[对象引用跟踪](https://go.microsoft.com/fwlink/p/?linkid=153590)可通过访问[Windows 调试工具](https://go.microsoft.com/fwlink/p/?linkid=153599)。 **ObReferenceObject**并**ObDereferenceObject**执行不使调用方指定的自定义标记，但是，在 Windows 7 和更高版本的 Windows 中，这些例程 （具有标记值"Dflt"） 的默认标记添加到跟踪。 因此，调用**ObReferenceObject**或**ObDereferenceObject**具有相同的效果与调用**ObReferenceObjectWithTag**或**ObDereferenceObjectWithTag** ，它指定"Dflt"标记值。 （在程序中，此标记值表示为 0x746c6644 或 tlfD。）
+例如， **ObReferenceObjectWithTag**并**ObDereferenceObjectWithTag**，可在 Windows 7 和更高版本的 Windows，是的增强的版本[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)并[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)例程，Windows 2000 和更高版本的 Windows 中可用。 这些增强的例程，可提供一个 4 字节的自定义标记值作为输入参数。 每次调用的标记值添加到[对象引用跟踪](https://go.microsoft.com/fwlink/p/?linkid=153590)可通过访问[Windows 调试工具](https://go.microsoft.com/fwlink/p/?linkid=153599)。 **ObReferenceObject**并**ObDereferenceObject**执行不使调用方指定的自定义标记，但是，在 Windows 7 和更高版本的 Windows 中，这些例程 （具有标记值"Dflt"） 的默认标记添加到跟踪。 因此，调用**ObReferenceObject**或**ObDereferenceObject**具有相同的效果与调用**ObReferenceObjectWithTag**或**ObDereferenceObjectWithTag** ，它指定"Dflt"标记值。 （在程序中，此标记值表示为 0x746c6644 或 tlfD。）
 
 若要跟踪的潜在对象泄漏或未得到充分的引用，标识一组相关联**ObReferenceObject*Xxx*WithTag**并**ObDereferenceObject*Xxx*WithTag**中您的驱动程序的递增和递减引用计数的特定对象的调用。 选择常见标记值 (例如，"Lky8") 使用此集中的所有调用。 您的驱动程序完成后使用对象的递减数应完全匹配增量的数。 如果这些编号不匹配，您的驱动程序已存在 bug，对象引用。 调试器可以递增和递减为每个标记值的数字进行比较，并告知您是否它们不匹配。 借助此功能，您可以快速找出源的引用计数不匹配。
 

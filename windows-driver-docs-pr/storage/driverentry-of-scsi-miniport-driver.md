@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 57dc75fa879d3ec79e5471104064cf387e8990b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 629778fc5987971e7d8bf8b056f55f7aee38596b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368261"
 ---
 # <a name="driverentry-of-scsi-miniport-driver-routine"></a>DriverEntry 的 SCSI 微型端口驱动程序例程
 
 
 每个微型端口驱动程序必须具有显式命名的例程**DriverEntry**才能加载。
 
-&gt; \[!请注意\] &gt; SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
+&gt; \[!请注意\] &gt; SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
 
  
 
@@ -64,11 +64,11 @@ ULONG DriverEntry(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**HW\_INITIALIZATION\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff557456)
+[**HW\_INITIALIZATION\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)
 
-[*HwScsiFindAdapter*](https://msdn.microsoft.com/library/windows/hardware/ff557300)
+[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))
 
-[**ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)
+[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)
 
  
 

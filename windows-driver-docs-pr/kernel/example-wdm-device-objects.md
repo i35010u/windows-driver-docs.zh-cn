@@ -13,12 +13,12 @@ keywords:
 - 筛选器 DOs WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73cd60fc30e362259d8721461ba247c2ba264d1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: afcde6eb20b0a96af34c848fbd8566ae9db7ec3f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576956"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386626"
 ---
 # <a name="example-wdm-device-objects"></a>示例 WDM 设备对象
 
@@ -26,7 +26,7 @@ ms.locfileid: "56576956"
 
 
 
-下图说明了该设备对象表示在图演示前面所示的键盘和鼠标设备[键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 在图演示所示的键盘和鼠标的驱动程序[键盘和鼠标的驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)创建这些设备对象通过调用 I/O 支持例程 ([**IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)).
+下图说明了该设备对象表示在图演示前面所示的键盘和鼠标设备[键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 在图演示所示的键盘和鼠标的驱动程序[键盘和鼠标的驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)创建这些设备对象通过调用 I/O 支持例程 ([**IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)).
 
 ![键盘和鼠标设备对象](images/2sampdos.png)
 

@@ -4,19 +4,19 @@ description: 若要支持的热量区域和温度传感器的更灵活的设计�
 ms.assetid: A8D90493-EE4A-40EC-BE8D-54B1C9EE94AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c673d4aa026a61fb196f0b66d684a7d86893ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b031314b9342fcd19178af164269c4814263478
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328062"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364563"
 ---
 # <a name="device-specific-method-for-microsoft-thermal-extensions"></a>Microsoft 热量扩展的特定于设备的方法
 
 
 若要支持的热量区域和温度传感器的更灵活的设计，Windows 支持扩展 ACPI 散热区域模型。 具体而言，Windows 对于每个热量区域支持的热量最小的中止值限制 (MTL)，还支持共享热量区域之间的温度传感器。
 
-有关 MTL 的详细信息，请参阅上标题为"在 Windows 的热量管理"的文档[Microsoft Connect 网站](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48106)。
+有关 MTL 的详细信息，请参阅上标题为"在 Windows 的热量管理"的文档[Microsoft Connect 网站](https://aka.ms/connect-redirect?DownloadID=48106)。
 
 若要使用这些功能，Oem 可以包括以下特定于设备的方法 (\_DSM) 任何热量区域的命名空间中。
 
@@ -30,7 +30,7 @@ ms.locfileid: "63328062"
 -   **Arg0:** UUID = 14d399cd-7a27-4b18-8fb4-7cb7b9f4e500
 -   **Arg1:** 修订 ID = 0
 -   **Arg2:** 函数索引 = 1
--   **Arg3:**（未使用） 的空包
+-   **Arg3:** （未使用） 的空包
 
 ### <a name="return"></a>返回
 
@@ -45,7 +45,7 @@ ms.locfileid: "63328062"
 -   **Arg0:** UUID = 14d399cd-7a27-4b18-8fb4-7cb7b9f4e500
 -   **Arg1:** 修订 ID = 0
 -   **Arg2:** 函数索引 = 2
--   **Arg3:**（未使用） 的空包
+-   **Arg3:** （未使用） 的空包
 
 ### <a name="return"></a>返回
 

@@ -4,12 +4,12 @@ description: STI 组件概述
 ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbe34f780fcf3f153551987db0b1a21f91ca7a54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f856a68715e29b263f62831669f2458b023be0c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374325"
 ---
 # <a name="overview-of-sti-components"></a>STI 组件概述
 
@@ -65,7 +65,7 @@ Microsoft STI 定义一组 COM 接口，提供的各种 Microsoft STI 组件之�
 
 ### <a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>用户模式下仍映像微型驱动程序
 
-用户模式下仍映像微型驱动程序是为提供适当的内核模式驱动程序的特定于设备的用户模式接口的供应商提供的组件。 每个这些用户模式驱动程序必须实现[IStiUSD COM 接口](istiusd-com-interface.md)。 它们与内核模式驱动程序通信通过调用[ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)， **ReadFile**， **WriteFile**，和[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) Win32 函数 （Microsoft Windows SDK 文档中所述）。 有关详细信息，请参阅[创建用户模式下仍映像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
+用户模式下仍映像微型驱动程序是为提供适当的内核模式驱动程序的特定于设备的用户模式接口的供应商提供的组件。 每个这些用户模式驱动程序必须实现[IStiUSD COM 接口](istiusd-com-interface.md)。 它们与内核模式驱动程序通信通过调用[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)， **ReadFile**， **WriteFile**，和[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数 （Microsoft Windows SDK 文档中所述）。 有关详细信息，请参阅[创建用户模式下仍映像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
 
 ### <a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>内核模式下仍映像驱动程序
 
@@ -83,13 +83,13 @@ Microsoft 仍支持图像设备连接到 SCSI、 USB、 并行，IEEE 1394 兼�
 用户模式驱动程序调用总线特有[内核模式驱动程序进行静止图像设备](accessing-kernel-mode-drivers-for-still-image-devices.md)。
 
 <a href="" id="devices-connected-to-a-parallel-port"></a>**连接到并行端口设备**  
-扩展功能端口 (ECP) 并支持增强的并行端口 (EPP) 模式。 供应商提供内核模式*筛选器驱动程序*可以添加用户模式下仍映像驱动程序和内核模式总线驱动程序堆栈之间。 (有关并行端口驱动程序的详细信息，请参阅[并行设备设计指南](https://msdn.microsoft.com/library/windows/hardware/ff544263)并[并行设备引用](https://msdn.microsoft.com/library/windows/hardware/ff544269)。 有关筛选器驱动程序的详细信息，请参阅[筛选器驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff545890)。)
+扩展功能端口 (ECP) 并支持增强的并行端口 (EPP) 模式。 供应商提供内核模式*筛选器驱动程序*可以添加用户模式下仍映像驱动程序和内核模式总线驱动程序堆栈之间。 (有关并行端口驱动程序的详细信息，请参阅[并行设备设计指南](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))并[并行设备引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 有关筛选器驱动程序的详细信息，请参阅[筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)。)
 
 <a href="" id="devices-connected-to-an-ieee-1394-bus"></a>**设备连接到 IEEE 1394 总线**  
 对于支持 sbp-2 协议的设备，用户模式驱动程序可以调用的 sbp-2 接口。 否则，供应商提供的筛选器驱动程序是必需的。
 
 <a href="" id="devices-connected-to-a-serial-port"></a>**设备连接到串行端口**  
-使用标准的串行端口驱动程序。 (有关详细信息，请参阅[串行设备和驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff547451)。)
+使用标准的串行端口驱动程序。 (有关详细信息，请参阅[串行设备和驱动程序](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))。)
 
 <a href="" id="devices-connected-to-an-infrared-interface"></a>**设备连接到红外接口**  
 驱动程序可以调用**IrSock**软件界面 （Microsoft Windows SDK 文档中所述）。

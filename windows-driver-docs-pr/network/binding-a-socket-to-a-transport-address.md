@@ -10,12 +10,12 @@ keywords:
 - 传输地址 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6aec2889d524592f029919f5b3bcc49a5247a0a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 9d8426226782a66bb545bac440823549745e952e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350012"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354636"
 ---
 # <a name="binding-a-socket-to-a-transport-address"></a>将套接字绑定到传输地址
 
@@ -26,7 +26,7 @@ Winsock Kernel (WSK) 应用程序已成功创建套接字后，它可以将该�
 
  
 
-WSK 应用程序的调用将套接字绑定到本地传输地址[ **WskBind** ](https://msdn.microsoft.com/library/windows/hardware/ff571121)函数。 **WskBind**函数所指向的**WskBind**套接字的提供程序调度结构的成员。 一个套接字提供程序调度结构所指向的**调度**套接字对象结构的成员 ( [ **WSK\_套接字**](https://msdn.microsoft.com/library/windows/hardware/ff571182)) 返回在创建套接字期间 WSK 子系统。
+WSK 应用程序的调用将套接字绑定到本地传输地址[ **WskBind** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_bind)函数。 **WskBind**函数所指向的**WskBind**套接字的提供程序调度结构的成员。 一个套接字提供程序调度结构所指向的**调度**套接字对象结构的成员 ( [ **WSK\_套接字**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket)) 返回在创建套接字期间 WSK 子系统。
 
 一个套接字可绑定到本地的通配符地址。 已绑定到本地的通配符地址的套接字的行为的详细信息，请参阅**WskBind**。
 
@@ -131,7 +131,7 @@ NTSTATUS
 }
 ```
 
-对于面向连接的套接字，WSK 应用程序可以调用[ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)函数来创建、 绑定和连接中的单个函数调用的套接字。
+对于面向连接的套接字，WSK 应用程序可以调用[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建、 绑定和连接中的单个函数调用的套接字。
 
  
 

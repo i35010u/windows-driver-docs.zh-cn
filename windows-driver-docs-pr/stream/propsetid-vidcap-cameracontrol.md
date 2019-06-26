@@ -6,12 +6,12 @@ keywords:
 - KSPROPERTY_VIDCAP_CAMERACONTROL
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54231c135b9d3cc27eacfe345b2fb3e2760e6867
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 851416fefc0246c3c30b10127fb42edee7535630
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387112"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379070"
 ---
 # <a name="propsetidvidcapcameracontrol"></a>PROPSETID\_VIDCAP\_CAMERACONTROL
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDCAP\_中 Ksmedia.h CAMERACONTROL 枚举指定此集的属性。
 
 [**KSPROPERTY\_CAMERACONTROL\_倾斜**](ksproperty-cameracontrol-tilt.md)
 
-通过引入[USB 视频类驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568649)，以下属性已添加到 KSPROPERTY\_VIDCAP\_CAMERACONTROL 枚举。 在 Windows Vista 和更高版本的 Windows 中支持这些属性：
+通过引入[USB 视频类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)，以下属性已添加到 KSPROPERTY\_VIDCAP\_CAMERACONTROL 枚举。 在 Windows Vista 和更高版本的 Windows 中支持这些属性：
 
 [**KSPROPERTY\_CAMERACONTROL\_扫描模式**](ksproperty-cameracontrol-scanmode.md)
 
@@ -78,7 +78,7 @@ DirectShow **IAMCameraControl**接口 （请参阅 Microsoft DirectShow 文档�
 
 [**KSPROPERTY\_CAMERACONTROL\_闪存\_属性**](ksproperty-cameracontrol-flash-property.md)
 
-[**KSPROPERTY\_CAMERACONTROL\_映像\_PIN\_功能\_S**](https://msdn.microsoft.com/library/windows/hardware/jj553707)
+[**KSPROPERTY\_CAMERACONTROL\_映像\_PIN\_功能\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_image_pin_capability_s)
 
 [**KSPROPERTY\_CAMERACONTROL\_区域\_OF\_感兴趣\_属性**](ksproperty-cameracontrol-region-of-interest-property.md)
 

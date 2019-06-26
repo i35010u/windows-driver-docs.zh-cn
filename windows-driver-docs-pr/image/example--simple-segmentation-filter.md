@@ -4,12 +4,12 @@ description: 示例简单分段的筛选器
 ms.assetid: 9c77fea4-61d9-4bec-8d8d-35436d00c1ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ada6abf55e6f324785bf7b85aa862a64015b1e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da1939dbb6d34f42dacb074aecfef0963b2377a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373081"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385026"
 ---
 # <a name="example-simple-segmentation-filter"></a>例如：简单的分段筛选器
 
@@ -17,7 +17,7 @@ ms.locfileid: "63373081"
 
 
 
-以下代码示例演示如何实现简单的分段筛选器。 在示例中的分段筛选器不使用[ **WIA\_IPS\_反扭曲\_X** ](https://msdn.microsoft.com/library/windows/hardware/ff552581)并[ **WIA\_IP\_反扭曲\_Y** ](https://msdn.microsoft.com/library/windows/hardware/ff552587)属性。 为清楚起见，省略了错误检查代码。
+以下代码示例演示如何实现简单的分段筛选器。 在示例中的分段筛选器不使用[ **WIA\_IPS\_反扭曲\_X** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-x)并[ **WIA\_IP\_反扭曲\_Y** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-y)属性。 为清楚起见，省略了错误检查代码。
 
 ```cpp
 typedef struct _SUB_RECT

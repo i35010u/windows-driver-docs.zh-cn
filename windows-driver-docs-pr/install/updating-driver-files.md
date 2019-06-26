@@ -12,12 +12,12 @@ keywords:
 - WDK 的现有驱动程序更新
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc88fa941c2245549fabece328b822f252a58bce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 571d7ad3f9fe7fa49261b5594271aadbf1ee8343
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380453"
 ---
 # <a name="updating-driver-files"></a>更新驱动程序文件
 
@@ -37,26 +37,26 @@ ms.locfileid: "63339445"
 
 -   运行安装软件的设备。
 
--   从 Windows Vista 开始，你可以运行[PnPUtil](https://msdn.microsoft.com/library/windows/hardware/ff550419)工具从提升的命令提示符来安装或更新[驱动程序包](driver-packages.md)设备。
+-   从 Windows Vista 开始，你可以运行[PnPUtil](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnputil)工具从提升的命令提示符来安装或更新[驱动程序包](driver-packages.md)设备。
 
 在编写安装软件和更新现有的驱动程序的 INF 文件时，请使用以下指导原则。
 
--   安装软件可以调用[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)，提供一个 INF 文件和硬件 ID，若要更新的与硬件 ID 匹配的设备驱动程序
+-   安装软件可以调用[ **UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)，提供一个 INF 文件和硬件 ID，若要更新的与硬件 ID 匹配的设备驱动程序
 
     从 Windows Vista 开始，安装软件还可以调用以下操作来更新驱动程序之一：
 
-    -   [**DiInstallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff544717)，其中预安装的驱动程序，然后在驱动程序支持的系统中存在的设备上安装驱动程序。
-    -   [**DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)，这将指定的驱动程序安装从系统中的指定设备上的驱动程序存储。
+    -   [**DiInstallDriver**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)，其中预安装的驱动程序，然后在驱动程序支持的系统中存在的设备上安装驱动程序。
+    -   [**DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)，这将指定的驱动程序安装从系统中的指定设备上的驱动程序存储。
 
     有关详细信息，请参阅[编写设备安装应用程序](writing-a-device-installation-application.md)。
 
--   当升级驱动程序，类安装程序和共同安装程序不应提供在响应中的完成安装页[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)除非绝对必要。 如果可能，请从以前安装的设置获取完成安装信息。
+-   当升级驱动程序，类安装程序和共同安装程序不应提供在响应中的完成安装页[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)除非绝对必要。 如果可能，请从以前安装的设置获取完成安装信息。
 
 -   可能的范围内，安装程序类和共同安装程序应避免使基于它们所提供的初始安装还是要更新已安装的设备驱动程序的行为。
 
--   从 Windows XP 中，注册表值**CoInstallers32**并**EnumPropPages32**之前的交付删除[ **DIF_REGISTER_COINSTALLERS**](https://msdn.microsoft.com/library/windows/hardware/ff543715). 对于较早的操作系统版本的 INF 文件必须显式删除这些值或执行 nonappending 修改它们的操作。
+-   从 Windows XP 中，注册表值**CoInstallers32**并**EnumPropPages32**之前的交付删除[ **DIF_REGISTER_COINSTALLERS**](https://docs.microsoft.com/windows-hardware/drivers/install/dif-register-coinstallers). 对于较早的操作系统版本的 INF 文件必须显式删除这些值或执行 nonappending 修改它们的操作。
 
--   从 Windows XP 中，注册表值**上边的筛选程序**并**下边的筛选程序**之前的交付删除[ **DIF_INSTALLDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff543692). 对于较早的操作系统版本的 INF 文件必须显式删除这些值或执行 nonappending 修改它们的操作。
+-   从 Windows XP 中，注册表值**上边的筛选程序**并**下边的筛选程序**之前的交付删除[ **DIF_INSTALLDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-installdevice). 对于较早的操作系统版本的 INF 文件必须显式删除这些值或执行 nonappending 修改它们的操作。
 
 -   不要*不*使用[ **INF DelFiles 指令**](inf-delfiles-directive.md)或者[ **INF RenFiles 指令**](inf-renfiles-directive.md)更新时驱动程序。 Windows 不能保证不使用特定文件的另一台设备。 (安装程序类和共同安装程序可以删除或重命名文件，*如果*它们能够可靠地确定没有设备正在使用的文件。)
 

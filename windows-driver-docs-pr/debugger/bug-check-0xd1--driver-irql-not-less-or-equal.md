@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 66b8fcf0a1c2a9e798075a30313112e17e75cde2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fc61645978154e84b3f72aeab805d90a9410ad4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371805"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361572"
 ---
 # <a name="bug-check-0xd1-driverirqlnotlessorequal"></a>Bug 检查 0xD1：DRIVER\_IRQL\_NOT\_LESS\_OR\_EQUAL
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371805"
 该驱动程序\_IRQL\_不\_较少\_或\_相等 bug 检查的值为 0x000000D1。 这表示内核模式驱动程序尝试访问时进程 IRQL 过高的可分页内存。 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="driverirqlnotlessorequal-parameters"></a>驱动程序\_IRQL\_不\_较少\_或\_等于参数

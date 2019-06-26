@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a90695e84ca8e903b85b15944a302fe151f0166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ecc636dd9618e3eefb3715d0808274b4255dc8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520028"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363913"
 ---
 # <a name="kspropertymediaseekingconverttimeformat"></a>KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT
 
@@ -53,7 +53,7 @@ KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT 属性将指定的媒体时间从一
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>无</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566726" data-raw-source="[&lt;strong&gt;KSP_TIMEFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566726)"><strong>KSP_TIMEFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_timeformat" data-raw-source="[&lt;strong&gt;KSP_TIMEFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_timeformat)"><strong>KSP_TIMEFORMAT</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -64,7 +64,7 @@ KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT 属性将指定的媒体时间从一
 <a name="remarks"></a>备注
 -------
 
-另请参阅[KS 属性](https://msdn.microsoft.com/library/windows/hardware/ff567671)。
+另请参阅[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,16 +76,16 @@ KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT 属性将指定的媒体时间从一
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**KSP\_TIMEFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff566726)
+[**KSP\_TIMEFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_timeformat)
 
 [KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)
 

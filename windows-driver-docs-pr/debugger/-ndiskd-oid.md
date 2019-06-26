@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d13728dd646a86dd7bd32073a0886142beb6c77
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8a9af5dcfcdf9e2d2be4f5bd658b746334709b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363118"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
 
@@ -52,7 +52,7 @@ Ndiskd.dll
 <a name="remarks"></a>备注
 -------
 
-**！ ndiskd.oid**显示列表的所有挂起的 Oid 在系统上一次，因此它可以帮助调试系统挂起或[0x9F bug 检查](https://msdn.microsoft.com/library/windows/hardware/ff559329)的情况下 (驱动程序\_POWER\_状态\_失败)。 例如，假设分析的虚构 0x9F bug 检查揭示系统已挂起上 IRP，正在等待 NDIS。 在 NDIS，从操作系统的 Irp 将转换为 Oid，包括电源转换，因此，通过运行 **！ ndiskd.oid**大家可以看到，在此示例中，堆栈的底部处的设备可能已被一堆到[OID\_PNP\_设置\_电源](https://msdn.microsoft.com/library/windows/hardware/ff569780)和挂起堆栈的其余部分。 NDIS 驱动程序应该不挂起 OID 对超过一秒，以便可以然后调查为什么该设备保留太长时间挂起的 OID 来尝试解决该问题。
+**！ ndiskd.oid**显示列表的所有挂起的 Oid 在系统上一次，因此它可以帮助调试系统挂起或[0x9F bug 检查](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)的情况下 (驱动程序\_POWER\_状态\_失败)。 例如，假设分析的虚构 0x9F bug 检查揭示系统已挂起上 IRP，正在等待 NDIS。 在 NDIS，从操作系统的 Irp 将转换为 Oid，包括电源转换，因此，通过运行 **！ ndiskd.oid**大家可以看到，在此示例中，堆栈的底部处的设备可能已被一堆到[OID\_PNP\_设置\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)和挂起堆栈的其余部分。 NDIS 驱动程序应该不挂起 OID 对超过一秒，以便可以然后调查为什么该设备保留太长时间挂起的 OID 来尝试解决该问题。
 
 <a name="examples"></a>示例
 --------
@@ -121,32 +121,32 @@ ALL PENDING OIDs
         Current OID        OID_GEN_STATISTICS
 ```
 
-在此示例中，是挂起的 OID [OID\_代\_统计信息](https://msdn.microsoft.com/library/windows/hardware/ff569640)。 当您查看的结果 ！ ndiskd.oid，回想一下，筛选器克隆 OID 请求并将其传递堆栈的下层，和 Oid 通常传递筛选器来筛选到微型端口。 因此，尽管它可能看上去是有三个单独的 OID 请求具有相同名称在此示例中，但没有实际一个逻辑操作发生是以物理方式分布在 3 个 Oid 和对 3 个的驱动程序。
+在此示例中，是挂起的 OID [OID\_代\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)。 当您查看的结果 ！ ndiskd.oid，回想一下，筛选器克隆 OID 请求并将其传递堆栈的下层，和 Oid 通常传递筛选器来筛选到微型端口。 因此，尽管它可能看上去是有三个单独的 OID 请求具有相同名称在此示例中，但没有实际一个逻辑操作发生是以物理方式分布在 3 个 Oid 和对 3 个的驱动程序。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[0x9F bug 检查](https://msdn.microsoft.com/library/windows/hardware/ff559329)
+[0x9F bug 检查](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)
 
-[OID\_PNP\_SET\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)
+[OID\_PNP\_SET\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
-[**最佳实践，bu，bm （设置断点）**](bp--bu--bm--set-breakpoint-.md)
+[**最佳实践，bu，bm （设置断点）** ](bp--bu--bm--set-breakpoint-.md)
 
-[OID\_GEN\_STATISTICS](https://msdn.microsoft.com/library/windows/hardware/ff569640)
+[OID\_GEN\_STATISTICS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)
 
-[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)
+[NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
-[NDIS OID 请求接口](https://msdn.microsoft.com/library/windows/hardware/ff566713)
+[NDIS OID 请求接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

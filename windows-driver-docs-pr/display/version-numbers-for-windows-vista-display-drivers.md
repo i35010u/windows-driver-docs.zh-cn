@@ -8,19 +8,19 @@ keywords:
 - 版本号 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 658900f0a2614e096a854bac49d0871ed5bb1bc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: daa2139196eb6fa7da6413b12a8adb8a4e3627cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376120"
 ---
 # <a name="version-numbers-for-wddm-drivers"></a>WDDM 驱动程序的版本号
 
 
 若要确保符合到 Windows 显示驱动程序模型 (WDDM) 的显示驱动程序或[Windows 2000 显示器驱动程序模型 (XDDM)](windows-2000-display-driver-model-design-guide.md)特定版本的 Microsoft DirectX 使用 Microsoft Windows 上运行，你必须应用对该驱动程序的相应版本号。 如果供应商将显示器驱动程序分发具有错误版本号或使用格式不正确的版本号，最终用户将在安装任何 DirectX 应用程序时遇到困难。
 
-**请注意**   **DriverVer**指令提供了一种方法，若要添加的驱动程序包，其中包括驱动程序文件和 INF 文件本身，到 INF 文件版本信息。 通过使用**DriverVer**指令，您可以安全地和明确替换驱动程序包由同一个包的未来版本。 有关此指令的详细信息，请参阅[ **INF DriverVer 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547394)。
+**请注意**   **DriverVer**指令提供了一种方法，若要添加的驱动程序包，其中包括驱动程序文件和 INF 文件本身，到 INF 文件版本信息。 通过使用**DriverVer**指令，您可以安全地和明确替换驱动程序包由同一个包的未来版本。 有关此指令的详细信息，请参阅[ **INF DriverVer 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)。
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 非 PnP 驱动程序目录文件 WDK 驱动程序签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eeda8449a05d88479ee660ffa9297c51ad6c9e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d18dc1a027f69224aeed0c3456200685b7133d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352043"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383744"
 ---
 # <a name="installing-a-test-signed-catalog-file-for-a-non-pnp-driver"></a>安装适用于非 PnP 驱动程序且已进行测试签名的目录文件
 
@@ -23,9 +23,9 @@ ms.locfileid: "63352043"
 
 驱动程序安装应用程序可以以编程方式来安装目录文件在系统组件和驱动程序数据库中使用[CryptCATAdminAddCatalog](https://go.microsoft.com/fwlink/p/?linkid=104926)加密函数。 如果应用程序是可再发行组件，应使用这种方法来安装目录文件。 有关此方法的详细信息，请参阅[使用 CryptCATAdminAddCatalog 安装目录文件](installing-a-catalog-file-by-using-cryptcatadminaddcatalog.md)。
 
-或者，可以使用[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)要安装的工具[编录文件](catalog-files.md)系统组件和驱动程序数据库中。 但是，SignTool 不是可再发行组件的工具。 因此，安装应用程序可以使用 SignTool 的计算机上才符合该工具 Microsoft 软件许可条款的方式在计算机上已安装该工具。 有关此方法的详细信息，请参阅[安装目录文件使用 SignTool](installing-a-catalog-file-by-using-signtool.md)。
+或者，可以使用[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)要安装的工具[编录文件](catalog-files.md)系统组件和驱动程序数据库中。 但是，SignTool 不是可再发行组件的工具。 因此，安装应用程序可以使用 SignTool 的计算机上才符合该工具 Microsoft 软件许可条款的方式在计算机上已安装该工具。 有关此方法的详细信息，请参阅[安装目录文件使用 SignTool](installing-a-catalog-file-by-using-signtool.md)。
 
-**提示**  使用嵌入式的签名是通常会更简单、 更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)。
+**提示**  使用嵌入式的签名是通常会更简单、 更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
  
 

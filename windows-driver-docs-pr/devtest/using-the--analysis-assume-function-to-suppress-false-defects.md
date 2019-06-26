@@ -4,12 +4,12 @@ description: 使用 _analysis_assume 函数抑制误判缺陷
 ms.assetid: eb71a664-ada5-44e3-b75d-b1a7348b115f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 215121b46c1fb8f49f24bb8eece471e62f20f7fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fff9be124fe8dbe0658d4a992733da01ab6d5ac7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363776"
 ---
 # <a name="using-the-analysisassume-function-to-suppress-false-defects"></a>使用\_分析\_假定禁止显示 False 缺陷函数
 
@@ -32,7 +32,7 @@ SDV 时使用此函数，假设条件表示由*表达式*是**true**点位置 **
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-在下面的代码示例，KMDF 规则[RequestCompletedLocal](https://msdn.microsoft.com/library/windows/hardware/ff551609)报告缺陷。 这是误报缺陷，因为无法正确解释 SDV**切换**语句，因此不会进入分支完成请求。
+在下面的代码示例，KMDF 规则[RequestCompletedLocal](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-requestcompletedlocal)报告缺陷。 这是误报缺陷，因为无法正确解释 SDV**切换**语句，因此不会进入分支完成请求。
 
 在此**切换**语句中，有六个可能的情况。 该驱动程序已经定义了六个 IOCTL 代码，因此，该驱动程序将绝对需要的一个分支。 如果采用的一个分支，该请求是成功完成。
 

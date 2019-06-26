@@ -9,12 +9,12 @@ keywords:
 - 物理时间 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24681511618126434518572d67e8c4141bbaf3e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60e3c3ef5062ca0fe05f287361e37ef80ff57547
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386631"
 ---
 # <a name="master-clocks"></a>主时钟
 
@@ -22,7 +22,7 @@ ms.locfileid: "63364879"
 
 
 
-微型驱动程序可以将流到由其他微型驱动程序; 创建的时钟同步可将多个流同步到一个时钟。 如果 pin 使用或生成此类*主时钟*，微型驱动程序应支持[ **KSPROPERTY\_流\_MASTERCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff565713)。 客户端还可以使用此属性设置为固定的主时钟。 执行呈现和频繁地捕获操作的 pin 使用主时钟。 微型驱动程序负责释放终止时的时钟引用。
+微型驱动程序可以将流到由其他微型驱动程序; 创建的时钟同步可将多个流同步到一个时钟。 如果 pin 使用或生成此类*主时钟*，微型驱动程序应支持[ **KSPROPERTY\_流\_MASTERCLOCK**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-masterclock)。 客户端还可以使用此属性设置为固定的主时钟。 执行呈现和频繁地捕获操作的 pin 使用主时钟。 微型驱动程序负责释放终止时的时钟引用。
 
 主时钟的接口是支持的方法、 属性和事件的文件对象。
 

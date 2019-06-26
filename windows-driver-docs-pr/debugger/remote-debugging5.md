@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎，远程调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80e17425462079d09e3f9b260d8bcd4a1f7a691e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9bf0ee28e37ba8758c7182419fb84f379bd62be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353573"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366419"
 ---
 # <a name="remote-debugging-debugger-engine"></a>远程调试 （调试器引擎）
 
@@ -22,7 +22,7 @@ ms.locfileid: "63353573"
 
 多个客户端可以同时连接到主机引擎。 并在同一个调试会话中的主机引擎可以连接到多个目标。 （可选） 可以有一个或多个代理客户端主机引擎之间和主机引擎和每个目标之间。
 
-智能客户端是直接与主机引擎进行通信的客户端对象。 通过调用创建调试客户端[ **DebugConnect**](https://msdn.microsoft.com/library/windows/hardware/ff540465); 与主机引擎使用表示该引擎的 API 中的方法调用的 RPC 调用的客户端通信 （包括调用的主机引擎对客户端[回调对象](client-objects.md#callback-objects))。
+智能客户端是直接与主机引擎进行通信的客户端对象。 通过调用创建调试客户端[ **DebugConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect); 与主机引擎使用表示该引擎的 API 中的方法调用的 RPC 调用的客户端通信 （包括调用的主机引擎对客户端[回调对象](client-objects.md#callback-objects))。
 
 调试服务器是直接与目标进行通信，并且仍主机引擎的引擎实例。 进程服务器和内核连接服务器直接与目标进行通信，而不是主机引擎。 主机引擎与进程服务器或内核连接服务器，通信通过发送低级别的内存、 处理器和操作系统的请求，并且服务器发送回结果。
 

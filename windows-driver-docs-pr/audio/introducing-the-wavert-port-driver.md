@@ -4,12 +4,12 @@ description: WaveRT 端口驱动程序简介
 ms.assetid: 48b2b59e-385e-4814-ac20-c4b1a08f32dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 624a4c0524fde1a19e701bf6ff9c4c54fad1b15f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe865d6635e690ce4bb348e5d9fe36b09ea7a388
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359866"
 ---
 # <a name="introducing-the-wavert-port-driver"></a>WaveRT 端口驱动程序简介
 
@@ -22,11 +22,11 @@ ms.locfileid: "63333420"
 
 -   故障复原能力的音频流
 
-WaveCyclic 和 WavePci 端口驱动程序的 Microsoft Windows 早期版本中，如 WaveRT 端口驱动程序提供的一般功能[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff560842)(KS) 筛选器。 WaveRT 端口驱动程序提供支持的音频设备可以执行以下操作：
+WaveCyclic 和 WavePci 端口驱动程序的 Microsoft Windows 早期版本中，如 WaveRT 端口驱动程序提供的一般功能[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming)(KS) 筛选器。 WaveRT 端口驱动程序提供支持的音频设备可以执行以下操作：
 
 -   它们可以连接到系统总线，例如 PCI Express 总线。
 
--   他们可以播放或记录批数据 (音频数据描述[ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)或[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构)。
+-   他们可以播放或记录批数据 (音频数据描述[ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)或[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构)。
 
 -   他们可以使用可在 Windows Vista 中，若要减少的音频流的延迟的改进计划支持。
 

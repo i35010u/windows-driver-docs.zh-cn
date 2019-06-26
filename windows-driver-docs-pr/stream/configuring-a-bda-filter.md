@@ -9,12 +9,12 @@ keywords:
 - 筛选器配置 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67271ef4282cf2e8634f16dc35bafe50db68bfd6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5676193716a52220377bff23cca7514b20369ef2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374189"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386644"
 ---
 # <a name="configuring-a-bda-filter"></a>配置 BDA 筛选器
 
@@ -22,7 +22,7 @@ ms.locfileid: "63374189"
 
 
 
-BDA 微型驱动程序处理的方法请求[KSMETHODSETID\_BdaDeviceConfiguration](https://msdn.microsoft.com/library/windows/hardware/ff563404)方法设置为当前筛选器关系图中微型驱动程序中配置筛选器实例。
+BDA 微型驱动程序处理的方法请求[KSMETHODSETID\_BdaDeviceConfiguration](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)方法设置为当前筛选器关系图中微型驱动程序中配置筛选器实例。
 
 在以下代码片段中，两个方法的 KSMETHODSETID\_BdaDeviceConfiguration 方法集将被分派给 BDA 支持库的直接和剩余的方法先截获 BDA 微型驱动程序调度到之前BDA 支持库。
 
@@ -99,7 +99,7 @@ errExit:
 }
 ```
 
-KSMETHOD\_BDA\_创建\_拓扑方法请求调用微型驱动程序的 CFilter::CreateTopology 方法。 此方法调用 BDA 支持库函数[ **BdaMethodCreateTopology** ](https://msdn.microsoft.com/library/windows/hardware/ff556471)创建筛选器插针之间的拓扑。 此函数在第 3 环，这反映了其他属性集，筛选器的已知的连接中实际创建拓扑结构。 BDA 微型驱动程序应截获 KSMETHOD\_BDA\_创建\_拓扑中所示上述代码段中如果该微型驱动程序时必须发送特殊说明硬件连接特定的方法请求pin 类型--例如，如果 BDA 设备执行硬件解多路复用，并创建任意数目的输出插针，按从单个输入插针关闭扇形展开。
+KSMETHOD\_BDA\_创建\_拓扑方法请求调用微型驱动程序的 CFilter::CreateTopology 方法。 此方法调用 BDA 支持库函数[ **BdaMethodCreateTopology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatetopology)创建筛选器插针之间的拓扑。 此函数在第 3 环，这反映了其他属性集，筛选器的已知的连接中实际创建拓扑结构。 BDA 微型驱动程序应截获 KSMETHOD\_BDA\_创建\_拓扑中所示上述代码段中如果该微型驱动程序时必须发送特殊说明硬件连接特定的方法请求pin 类型--例如，如果 BDA 设备执行硬件解多路复用，并创建任意数目的输出插针，按从单个输入插针关闭扇形展开。
 
  
 

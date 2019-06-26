@@ -4,17 +4,17 @@ description: JSConstraintsDebug (JSConstraintsDebug.exe) 是一个命令行工�
 ms.assetid: 48C39A2C-7EA6-4BAA-B5E8-3B426C9697B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d276834e26f7c1fd35d380e3d89f5c990f5e06a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fe2a51979dd2ab3a69eeb553582b1b1a24bd6b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340433"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373657"
 ---
 # <a name="jsconstraintsdebug"></a>JSConstraintsDebug
 
 
-JSConstraintsDebug (JSConstraintsDebug.exe) 是一个命令行工具，提供了有关调试支持[JavaScript 约束](https://msdn.microsoft.com/library/windows/hardware/jj218731)开发时[V4 打印机驱动程序](https://msdn.microsoft.com/library/windows/hardware/hh706306)。
+JSConstraintsDebug (JSConstraintsDebug.exe) 是一个命令行工具，提供了有关调试支持[JavaScript 约束](https://docs.microsoft.com/windows-hardware/drivers/print/javascript-constraints)开发时[V4 打印机驱动程序](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver)。
 
 <table>
 <colgroup>
@@ -36,13 +36,13 @@ JSConstraintsDebug (JSConstraintsDebug.exe) 是一个命令行工具，提供了
 
 该工具执行以下相关入口点 Api 的每个用户提供的打印票证针对目标的驱动程序的 JavaScript 约束上：
 
-[**PTGetPrintCapabilities**](https://msdn.microsoft.com/library/windows/desktop/dd162881)
+[**PTGetPrintCapabilities**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptgetprintcapabilities)
 
-[**PTConvertDevModeToPrintTicket**](https://msdn.microsoft.com/library/windows/desktop/dd162879)
+[**PTConvertDevModeToPrintTicket**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptconvertdevmodetoprintticket)
 
-[**TConvertPrintTicketToDevMode**](https://msdn.microsoft.com/library/windows/desktop/dd162880)
+[**TConvertPrintTicketToDevMode**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptconvertprinttickettodevmode)
 
-[**PTMergeAndValidatePrintTicket**](https://msdn.microsoft.com/library/windows/desktop/dd162884)
+[**PTMergeAndValidatePrintTicket**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)
 
 在执行期间该工具将提示输入适当的 IDE 调试程序，如 Visual Studio。 选择它后将打开并在 JavaScript 调试器语句处停止约束源代码。
 

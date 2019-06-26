@@ -8,12 +8,12 @@ keywords:
 - IPrintOemUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 916fdba3e1a22db48bc95200ed1c88804e15abb9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52d846f697fb05ad7d73e5aa0949be2b5d97d736
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355677"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372385"
 ---
 # <a name="customizing-other-printer-interface-operations"></a>自定义其他打印机接口操作
 
@@ -23,13 +23,13 @@ ms.locfileid: "63355677"
 
 （可选），UI 插件可以实现以下 IPrintOemUI 方法：
 
-[**IPrintOemUI::DeviceCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff554162)
+[**IPrintOemUI::DeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-devicecapabilities)
 
-[**IPrintOemUI::DevQueryPrintEx**](https://msdn.microsoft.com/library/windows/hardware/ff554172)
+[**IPrintOemUI::DevQueryPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-devqueryprintex)
 
-[**IPrintOemUI::PrinterEvent**](https://msdn.microsoft.com/library/windows/hardware/ff554182)
+[**IPrintOemUI::PrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-printerevent)
 
-[**IPrintOemUI::UpgradePrinter**](https://msdn.microsoft.com/library/windows/hardware/ff554189)
+[**IPrintOemUI::UpgradePrinter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-upgradeprinter)
 
 方法是等效于同样命名的函数导出由用户模式[打印机接口 DLL](printer-interface-dll.md)由 Unidrv 和 Pscript5。 这些自定义方法不会替代驱动程序的打印机接口 DLL 中的等效函数。 每种情况下，首先，调用 DLL 函数中的打印机接口，然后该驱动程序调用插件的自定义方法。
 

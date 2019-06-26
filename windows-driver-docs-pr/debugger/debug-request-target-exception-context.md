@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e85b67bfb58caa4d2715150a92d8ff9dabd5877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a48ec1f66ebb7997ac545bbe88d3688fadfaf7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366970"
 ---
 # <a name="debugrequesttargetexceptioncontext"></a>调试\_请求\_目标\_异常\_上下文
 
 
-调试\_请求\_目标\_异常\_上下文[**请求**](request.md)操作返回[线程上下文](https://msdn.microsoft.com/library/windows/hardware/ff554702#thread-context)中的用户模式的小型转储文件的存储事件。
+调试\_请求\_目标\_异常\_上下文[**请求**](request.md)操作返回[线程上下文](https://docs.microsoft.com/windows-hardware/drivers/debugger/scopes-and-symbol-groups#thread-context)中的用户模式的小型转储文件的存储事件。
 
 **Parameters**
 
@@ -35,14 +35,14 @@ ms.locfileid: "63349039"
 <a name="remarks"></a>备注
 -------
 
-此信息也会返回给*上下文*由参数[ **GetStoredEventInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff548431)方法。
+此信息也会返回给*上下文*由参数[ **GetStoredEventInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-getstoredeventinformation)方法。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**请求**](request.md)
 
-[**GetStoredEventInformation**](https://msdn.microsoft.com/library/windows/hardware/ff548431)
+[**GetStoredEventInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-getstoredeventinformation)
 
  
 

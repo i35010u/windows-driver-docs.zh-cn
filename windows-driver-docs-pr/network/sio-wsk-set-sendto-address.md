@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_SET_SENDTO_ADDRESS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d3b07421a412e53e6215f4b20546290e5669c19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c09f3971c888496cca51a9359af21b9818d453f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379133"
 ---
 # <a name="siowsksetsendtoaddress"></a>SIO\_WSK\_SET\_SENDTO\_ADDRESS
 
@@ -20,11 +20,11 @@ SIO\_WSK\_设置\_SENDTO\_地址套接字 I/O 控制操作允许 WSK 的应用�
 
 如果 WSK 应用程序设置数据报套接字的固定的目标传输地址，通过套接字发送的所有数据报发送到固定的目标传输地址。 但是，数据报的套接字上接收将接受来自任何传输地址。
 
-它通过套接字将数据报发送由指定替代远程传输地址中的时，WSK 应用程序可以重写固定的目标传输地址*RemoteAddress*参数调用时[**WskSendTo** ](https://msdn.microsoft.com/library/windows/hardware/ff571148)函数。 在这种情况下，数据报发送到备用远程传输地址而不是固定的目标传输地址。
+它通过套接字将数据报发送由指定替代远程传输地址中的时，WSK 应用程序可以重写固定的目标传输地址*RemoteAddress*参数调用时[**WskSendTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)函数。 在这种情况下，数据报发送到备用远程传输地址而不是固定的目标传输地址。
 
 如果 WSK 应用程序使用此套接字的 I/O 控制操作指定固定的目标传输地址，它必须实现后的数据报套接字已绑定到本地传输地址。
 
-若要设置数据报套接字的固定的目标传输地址，WSK 应用程序调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)使用以下参数的函数。
+若要设置数据报套接字的固定的目标传输地址，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
 
 <table>
 <colgroup>
@@ -84,7 +84,7 @@ SIO\_WSK\_设置\_SENDTO\_地址套接字 I/O 控制操作允许 WSK 的应用�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

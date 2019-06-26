@@ -3,12 +3,12 @@ Description: 本部分介绍 USB 驱动程序开发。
 title: USB 客户端驱动程序开发入门
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07f8120c47fd0ff99ba20465d37061f5260fbb9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 247073421b5cee2f198e8aa578af19d27849ca38
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374467"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391773"
 ---
 # <a name="getting-started-with-usb-client-driver-development"></a>USB 客户端驱动程序开发入门
 
@@ -56,10 +56,10 @@ ms.locfileid: "63374467"
 <td><p><strong>步骤 5</strong>— 你熟悉 Microsoft 提供的 USB 驱动程序堆栈和驱动程序开发概念。</p>
 <ul>
 <li><a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">在 Windows 中的 USB 宿主端驱动程序</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/ff554731" data-raw-source="[Concepts for All Driver Developers](https://msdn.microsoft.com/library/windows/hardware/ff554731)">对所有驱动程序开发人员概念</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers" data-raw-source="[Concepts for All Driver Developers](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)">对所有驱动程序开发人员概念</a></li>
 <li><a href="usb-concepts-for-all-developers.md" data-raw-source="[Concepts for all USB developers](usb-concepts-for-all-developers.md)">所有 USB 开发人员的概念</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/ff554721" data-raw-source="[Device nodes and device stacks](https://msdn.microsoft.com/library/windows/hardware/ff554721)">设备节点和设备堆栈</a></li>
-<li><em>使用 Windows Driver Foundation 开发驱动程序</em>、 由 Penny Orwick 和 Smith 专家编写。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/dn605830" data-raw-source="[Developing Drivers with WDF](https://msdn.microsoft.com/library/windows/hardware/dn605830)">开发驱动程序与 WDF</a>。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks" data-raw-source="[Device nodes and device stacks](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)">设备节点和设备堆栈</a></li>
+<li><em>使用 Windows Driver Foundation 开发驱动程序</em>、 由 Penny Orwick 和 Smith 专家编写。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/developing-drivers-with-wdf" data-raw-source="[Developing Drivers with WDF](https://docs.microsoft.com/windows-hardware/drivers/wdf/developing-drivers-with-wdf)">开发驱动程序与 WDF</a>。</li>
 <li><a href="usb-driver-samples-in-wdk.md" data-raw-source="[USB driver samples](usb-driver-samples-in-wdk.md)">USB 驱动程序示例</a></li>
 </ul></td>
 <td><ul>
@@ -73,12 +73,12 @@ ms.locfileid: "63374467"
 <ul>
 <li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install the latest Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=617580)">安装最新的 Windows Driver Kit (WDK)</a>。</li>
 <li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install Microsoft Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=617580)">安装 Microsoft Visual Studio 2012</a>。</li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh450944" data-raw-source="[Get Set Up for Debugging](https://msdn.microsoft.com/library/windows/hardware/hh450944)">获取或设置最多用于调试</a>。</li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-set-up-for-debugging" data-raw-source="[Get Set Up for Debugging](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-set-up-for-debugging)">获取或设置最多用于调试</a>。</li>
 <li>请确保你拥有<a href="headers-and-libraries-for-a-usb-client-driver.md" data-raw-source="[Headers and libraries required by a USB client driver](headers-and-libraries-for-a-usb-client-driver.md)">标头和库所需的 USB 客户端驱动程序</a>。</li>
 </ul></td>
 <td><ul>
 <li>如果你正在编写一个内核模式驱动程序，应配置在主机和目标计算机上通过以太网网络、 1394年电缆、 USB 2.0 或 3.0 调试缆线或调制解调器电缆进行调试。</li>
-<li>如果你正在编写的用户模式驱动程序，您可以使用 Microsoft Visual Studio 环境中可用的用户模式下调试。 您应该知道<a href="https://msdn.microsoft.com/library/windows/hardware/hh406273" data-raw-source="[how to attach to a process or launch a process under the debugger](https://msdn.microsoft.com/library/windows/hardware/hh406273)">如何附加到进程或启动的进程在调试器下</a>。</li>
+<li>如果你正在编写的用户模式驱动程序，您可以使用 Microsoft Visual Studio 环境中可用的用户模式下调试。 您应该知道<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-user-mode-process-using-visual-studio" data-raw-source="[how to attach to a process or launch a process under the debugger](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-user-mode-process-using-visual-studio)">如何附加到进程或启动的进程在调试器下</a>。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -121,7 +121,7 @@ ms.locfileid: "63374467"
 [下载最新驱动程序的开发工具](https://go.microsoft.com/fwlink/p/?linkid=617585)，确保您的产品可靠且与通过 Windows 兼容[Windows 认证计划](https://go.microsoft.com/fwlink/p/?linkid=617591)，了解[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507).
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB) 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB) 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/)  
 [如何启用 USB 选择性挂起和系统唤醒 USB 设备在 UMDF 驱动程序中](https://go.microsoft.com/fwlink/p/?linkid=617587)  
 [USB 驱动程序开发指南](usb-driver-development-guide.md)  
 

@@ -6,12 +6,12 @@ ms.assetid: b9a6f06b-07d9-4539-bd41-21cdccdc4b25
 keywords:
 - IRP_MN_QUERY_RESOURCES 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: e7f88927d772ed26d945456dfd46c6fe2f939af3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04c023474cb8fbfcbb4f6ef232179f9c66a105f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370854"
 ---
 # <a name="irpmnqueryresources"></a>IRP\_MN\_查询\_资源
 
@@ -45,24 +45,24 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 
 处理此 IRP 的总线驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态。
 
-如果成功，总线驱动程序设置**Irp-&gt;IoStatus.Information**指向的[ **CM\_资源\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff541994) ，其中包含所需的信息。 发生错误时，总线驱动程序设置**Irp-&gt;IoStatus.Information**为零。
+如果成功，总线驱动程序设置**Irp-&gt;IoStatus.Information**指向的[ **CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list) ，其中包含所需的信息。 发生错误时，总线驱动程序设置**Irp-&gt;IoStatus.Information**为零。
 
 <a name="operation"></a>操作
 ---------
 
-如果总线驱动程序对此 IRP 响应中返回的资源列表，它会分配[ **CM\_资源\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff541994)从分页的内存。 当不再需要时，即插即用管理器释放缓冲区。
+如果总线驱动程序对此 IRP 响应中返回的资源列表，它会分配[ **CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)从分页的内存。 当不再需要时，即插即用管理器释放缓冲区。
 
-如果设备不需要任何硬件资源，将设备的父总线驱动程序会完成 IRP ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)) 而无需修改**Irp-&gt;IoStatus.Status**或**Irp-&gt;IoStatus.Information**。
+如果设备不需要任何硬件资源，将设备的父总线驱动程序会完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) 而无需修改**Irp-&gt;IoStatus.Status**或**Irp-&gt;IoStatus.Information**。
 
 函数和筛选器驱动程序不会收到此 IRP。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **发送此 IRP**
 
 保留供系统使用。 驱动程序必须发送此 IRP。
 
-驱动程序可以调用[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)原始和已翻译的窗体中获取设备的启动配置。
+驱动程序可以调用[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)原始和已翻译的窗体中获取设备的启动配置。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,9 +83,9 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 ## <a name="see-also"></a>请参阅
 
 
-[**CM\_资源\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff541994)
+[**CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)
 
-[**IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)
+[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)
 
  
 

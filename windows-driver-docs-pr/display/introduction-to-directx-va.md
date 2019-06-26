@@ -8,12 +8,12 @@ keywords:
 - VA WDK DirectX，有关 DirectX 视频加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd1bd3781b85d84f86b4a7588756e7b65bb9432
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34cd076af5b9c3a5fd24de77d4696cf2e371fdac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379865"
 ---
 # <a name="introduction-to-directx-va"></a>DirectX VA 简介
 
@@ -25,7 +25,7 @@ DirectX VA 允许将频繁地执行简单的硬件快捷键要执行的视频处
 
 DirectX VA API 和相应[动作补偿](motion-compensation.md)DDI 提供支持以下操作：
 
--   [Alpha 值混合处理](https://msdn.microsoft.com/library/windows/hardware/ff538232)的目的，例如 DVD 子图支持。
+-   [Alpha 值混合处理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)的目的，例如 DVD 子图支持。
 
 -   [加密](encryption-support.md)需要它的应用程序。
 

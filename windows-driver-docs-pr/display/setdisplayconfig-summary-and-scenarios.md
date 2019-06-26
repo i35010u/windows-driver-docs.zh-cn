@@ -13,23 +13,23 @@ keywords:
 - SetDisplayConfig WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e66eda4461096c81156dfa7b8f97e290acce7903
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 165248a1b71258c94ef524603cce17d60637c5fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390484"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365588"
 ---
 # <a name="setdisplayconfig-summary-and-scenarios"></a>SetDisplayConfig 摘要和方案
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
 
-以下部分汇总了如何使用调用方[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533) CCD 函数，并提供了有关使用方案**SetDisplayConfig**。
+以下部分汇总了如何使用调用方[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) CCD 函数，并提供了有关使用方案**SetDisplayConfig**。
 
 ### <a name="span-idsetdisplayconfigsummaryspanspan-idsetdisplayconfigsummaryspansetdisplayconfig-summary"></a><span id="setdisplayconfig_summary"></span><span id="SETDISPLAYCONFIG_SUMMARY"></span>SetDisplayConfig 摘要
 
-可以使用调用方[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)应用以及其他显示设置拓扑。 也就是说，可以使用调用方**SetDisplayConfig**若要设置拓扑、 布局、 方向、 纵横比，位深度，依次类推。 可以使用调用方**SetDisplayConfig**来执行以下操作：
+可以使用调用方[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)应用以及其他显示设置拓扑。 也就是说，可以使用调用方**SetDisplayConfig**若要设置拓扑、 布局、 方向、 纵横比，位深度，依次类推。 可以使用调用方**SetDisplayConfig**来执行以下操作：
 
 -   设置源和目标的特定的拓扑。
 
@@ -47,19 +47,19 @@ ms.locfileid: "63390484"
 
 ### <a name="span-idsetdisplayconfigscenariosspanspan-idsetdisplayconfigscenariosspansetdisplayconfig-scenarios"></a><span id="setdisplayconfig_scenarios"></span><span id="SETDISPLAYCONFIG_SCENARIOS"></span>SetDisplayConfig 方案
 
-[**SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)在以下情况下调用：
+[**SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)在以下情况下调用：
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)若要测试所有可能的选项来填充**多监视器**下拉列表框。
+-   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)若要测试所有可能的选项来填充**多监视器**下拉列表框。
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)将用户从下拉列表菜单中选择该设置。
+-   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)将用户从下拉列表菜单中选择该设置。
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)以便将用户选择了从用户界面的设置。 这些设置包括解析、 布局、 方向、 缩放、 主、 位深度，并刷新频率。
+-   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)以便将用户选择了从用户界面的设置。 这些设置包括解析、 布局、 方向、 缩放、 主、 位深度，并刷新频率。
 
--   显示用户进行选择后，热键调用[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)应用从持久性数据库的相应设置。
+-   显示用户进行选择后，热键调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)应用从持久性数据库的相应设置。
 
--   控制面板用户下的任务接口调用[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)应用适当的设置基于任务的类型。
+-   控制面板用户下的任务接口调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)应用适当的设置基于任务的类型。
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)启动或停止特定目标上强制的投影。
+-   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)启动或停止特定目标上强制的投影。
 
  
 

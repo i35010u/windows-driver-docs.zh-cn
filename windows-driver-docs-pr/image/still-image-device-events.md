@@ -4,12 +4,12 @@ description: 静态图像设备事件
 ms.assetid: 5f9be89c-8442-4894-b2f6-a4d3558464bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d6b545966169e6c55d8028108049118329f366
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e738fde61797cff31c11a9b554aa5f6edcef159
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383720"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386914"
 ---
 # <a name="still-image-device-events"></a>静态图像设备事件
 
@@ -80,11 +80,11 @@ ms.locfileid: "63383720"
 
 ### <a name="event-notification"></a>事件通知
 
-该驱动程序必须监视设备 （使用任一异步 I/O 或轮询） 以确定与每个 GUID 关联的事件发生时。 根据设备功能，该驱动程序可以通知设备事件的匹配项的客户端以异步方式或通过响应请求来轮询设备。 能够提供通知的设备事件 （按这两种方法） 的所有驱动程序必须设置 STI\_GENCAP\_中设备的通知标志[ **STI\_DEV\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff548380)结构。 支持轮询和非异步通知的驱动程序还必须设置 STI\_GENCAP\_轮询\_需要同一结构中的标志。 (还必须使用指示这些功能**功能**中的关键字[INF 文件静止图像设备](inf-files-for-still-image-devices.md)。)
+该驱动程序必须监视设备 （使用任一异步 I/O 或轮询） 以确定与每个 GUID 关联的事件发生时。 根据设备功能，该驱动程序可以通知设备事件的匹配项的客户端以异步方式或通过响应请求来轮询设备。 能够提供通知的设备事件 （按这两种方法） 的所有驱动程序必须设置 STI\_GENCAP\_中设备的通知标志[ **STI\_DEV\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_dev_caps)结构。 支持轮询和非异步通知的驱动程序还必须设置 STI\_GENCAP\_轮询\_需要同一结构中的标志。 (还必须使用指示这些功能**功能**中的关键字[INF 文件静止图像设备](inf-files-for-still-image-devices.md)。)
 
-如果驱动程序支持的事件的异步通知，事件监视调用[ **IStiUSD::SetNotificationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff543840)请求通知，以及提供一个事件句柄。 设备事件发生时，该驱动程序必须通过调用通知事件监视器**SetEvent** （请参阅 Microsoft Windows SDK 文档），作为参数使用的事件句柄。 然后，客户端可以调用[ **IStiUSD::GetNotificationData** ](https://msdn.microsoft.com/library/windows/hardware/ff543821)若要获取该事件的 GUID。
+如果驱动程序支持的事件的异步通知，事件监视调用[ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)请求通知，以及提供一个事件句柄。 设备事件发生时，该驱动程序必须通过调用通知事件监视器**SetEvent** （请参阅 Microsoft Windows SDK 文档），作为参数使用的事件句柄。 然后，客户端可以调用[ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)若要获取该事件的 GUID。
 
-如果轮询是必需的该事件监视调用[ **IStiUSD::GetStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff543823)若要轮询的驱动程序，又必须轮询中的设备并返回结果[ **STI\_设备\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff548369)结构。
+如果轮询是必需的该事件监视调用[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)若要轮询的驱动程序，又必须轮询中的设备并返回结果[ **STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)结构。
 
  
 

@@ -4,12 +4,12 @@ description: 本主题详细介绍 WDF 验证程序 （测试使用仅限） UMD
 ms.assetid: cce75c2e-fc93-4c17-9560-aef55451528b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acf49611495268e7c09928fe521b4c05b5c3378b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e898489d6b412a8aa4ef8e952b22b2a85d28ac96
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351800"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363803"
 ---
 # <a name="umdf-settings-test-use-only-tab"></a>UMDF 设置（仅供测试）选项卡
 
@@ -20,7 +20,7 @@ ms.locfileid: "63351800"
 
 ![方 umdf 设置 （仅供测试使用） 选项卡的屏幕截图](images/wdfverifier-tab4.png)
 
-默认情况下[UMDF 正在进行记录器 (IFR)](https://msdn.microsoft.com/library/windows/hardware/ff545531)以便日志可以保留系统崩溃时存储在非分页内存中。 但是，在极少数情况下，可能需要在非分页内存中释放空间。 例如，可能是测试包含多个 UMDF 驱动程序的系统的压力[设备池](https://msdn.microsoft.com/library/windows/hardware/hh463993)是关闭，和非分页内存超出。 可以通过选择来获取可用的非分页内存略微提高**使用分页缓冲池**框。
+默认情况下[UMDF 正在进行记录器 (IFR)](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-s-event-logger)以便日志可以保留系统崩溃时存储在非分页内存中。 但是，在极少数情况下，可能需要在非分页内存中释放空间。 例如，可能是测试包含多个 UMDF 驱动程序的系统的压力[设备池](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-device-pooling-in-umdf-drivers)是关闭，和非分页内存超出。 可以通过选择来获取可用的非分页内存略微提高**使用分页缓冲池**框。
 
 此外，有时分析等工具驱动程序验证程序可能会降低系统性能足够的 CPU 密集型测试默认 UMDF 超时触发即使驱动程序未进行任何处理错误。 在这种情况下，增加超时值可能会降低这种类型的意外超时。
 

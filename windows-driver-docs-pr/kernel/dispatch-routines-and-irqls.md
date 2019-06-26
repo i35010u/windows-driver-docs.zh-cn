@@ -7,12 +7,12 @@ keywords:
 - 于 Irql WDK 调度例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9821d992fe0db9cc18b18e5a2448e0e9908f65
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ad3e092e90b114f506d63f09aafa79a591c1f2a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342691"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384984"
 ---
 # <a name="dispatch-routines-and-irqls"></a>Dispatch 例程和于 IRQL
 
@@ -28,9 +28,9 @@ ms.locfileid: "63342691"
 
 -   [ *DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)， [ *DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)，并[ *DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程的最低级别的设备驱动程序和中间驱动程序的上面它们在系统分页路径中，可以调用在 IRQL = APC\_级别和在任意线程上下文中。
 
-    *DispatchRead*和/或*DispatchWrite*例程和任何其他例程，还进程读取和/或写入请求，在这种最低级别的设备或中间驱动程序，必须驻留在所有时间。 这些驱动程序例程可以既不是可分页，也不能属于一个驱动程序的可分页图像部分;它们必须访问的任何可分页内存。 此外，它们不应依赖于任何阻止调用 (如[ **KeWaitForSingleObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)使用非零的超时值)。
+    *DispatchRead*和/或*DispatchWrite*例程和任何其他例程，还进程读取和/或写入请求，在这种最低级别的设备或中间驱动程序，必须驻留在所有时间。 这些驱动程序例程可以既不是可分页，也不能属于一个驱动程序的可分页图像部分;它们必须访问的任何可分页内存。 此外，它们不应依赖于任何阻止调用 (如[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)使用非零的超时值)。
 
--   [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程休眠和/或分页路径中的驱动程序可以调用在 IRQL = 调度\_级别。 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程的此类驱动程序必须准备好处理即插即用[ **IRP\_MN\_设备\_用法\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841)请求。
+-   [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程休眠和/或分页路径中的驱动程序可以调用在 IRQL = 调度\_级别。 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程的此类驱动程序必须准备好处理即插即用[ **IRP\_MN\_设备\_用法\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)请求。
 
 -   *DispatchPower*例程需要在启动时的浪涌电源的驱动程序可以调用在 IRQL = 调度\_级别。
 

@@ -5,12 +5,12 @@ ms.assetid: 59e12f8d-02eb-413c-bc04-6b9b6e4adde6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 AF_INET 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5319fe56d72f314708725bc16952a78e11ada74d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eec1c839def23c323d35ad5db581db783cc440c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367752"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382922"
 ---
 # <a name="afinet"></a>AF\_INET
 
@@ -19,7 +19,7 @@ AF\_INET 地址系列是 IPv4 地址族。
 
 ### <a name="socket-address-structure"></a>套接字地址结构
 
-使用指定的 IPv4 传输地址[ **SOCKADDR\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff570823)结构。
+使用指定的 IPv4 传输地址[ **SOCKADDR\_IN** ](https://docs.microsoft.com/windows/desktop/api/ws2def/ns-ws2def-sockaddr_in)结构。
 
 ### <a name="socket-types"></a>套接字类型
 
@@ -34,7 +34,7 @@ IPv4 支持以下的套接字类型：
 <a href="" id="sock-raw"></a>热歌劲\_RAW  
 支持的传输协议对原始访问。
 
-WSK 应用程序指定套接字类型时，它调用[ **WskSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571149)函数或[ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)函数来创建新的套接字。
+WSK 应用程序指定套接字类型时，它调用[ **WskSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)函数或[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建新的套接字。
 
 ### <a name="protocols"></a>协议
 
@@ -105,13 +105,13 @@ Stream 控制传输协议
 
 通过使用原始套接字支持其他协议。
 
-WSK 应用程序指定一种协议时，它调用[ **WskSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571149)函数或[ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)函数来创建新的套接字。
+WSK 应用程序指定一种协议时，它调用[ **WskSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)函数或[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建新的套接字。
 
-WSK 应用程序还指定了一种协议 (作为*级别*参数) 时调用[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)函数来设置或检索传输协议级别或网络协议级别的套接字选项。
+WSK 应用程序还指定了一种协议 (作为*级别*参数) 时调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)函数来设置或检索传输协议级别或网络协议级别的套接字选项。
 
 ### <a name="combinations"></a>组合
 
-IPv4 支持以下的套接字类型和协议组合的每个 WSK[套接字类别](https://msdn.microsoft.com/library/windows/hardware/ff571093):
+IPv4 支持以下的套接字类型和协议组合的每个 WSK[套接字类别](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories):
 
 基本套接字热歌劲\_流 + IPPROTO\_TCP 热歌劲\_DGRAM + IPPROTO\_UDP 热歌劲\_RAW + IPPROTO\_*Xxx*侦听套接字热歌劲\_流 + IPPROTO\_TCP
 

@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) 包括在生成过程中通常使用，但
 ms.assetid: 53A5AAC2-A608-4153-9482-D8EF3D05EF04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c41a5ae6821997fef5d49809758b4105b929236
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0866d245d39c642b4e153e817e60314abf3ac1f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358083"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363754"
 ---
 # <a name="wdk-tasks-for-msbuild"></a>MSBuild 的 WDK 任务
 
@@ -84,7 +84,7 @@ WDK 命令行工具支持大量的选项。 每个选项公开为任务参数。
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="message-compiler-task.md" data-raw-source="[Message compiler task](message-compiler-task.md)">消息编译器任务</a></p></td>
-<td align="left"><p>WDK 提供 MessageCompiler 任务，以便在生成您的驱动程序使用 MSBuild 时，可以运行 MC.exe 的工具。 有关使用 MC.exe 的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/aa385638" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa385638)"><strong>消息编译器 MC.exe</strong></a>。</p></td>
+<td align="left"><p>WDK 提供 MessageCompiler 任务，以便在生成您的驱动程序使用 MSBuild 时，可以运行 MC.exe 的工具。 有关使用 MC.exe 的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)"><strong>消息编译器 MC.exe</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ctrpp-task.md" data-raw-source="[Ctrpp task](ctrpp-task.md)">Ctrpp 任务</a></p></td>
@@ -98,13 +98,13 @@ WDK 命令行工具支持大量的选项。 每个选项公开为任务参数。
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)
+[**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)
 
-[使用 Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)
+[使用 Wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)
 
-[**消息编译器 (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)
+[**消息编译器 (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)
 
-[**mofcomp**](https://msdn.microsoft.com/library/aa392389)
+[**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)
 
 [Stampinf](stampinf.md)
 

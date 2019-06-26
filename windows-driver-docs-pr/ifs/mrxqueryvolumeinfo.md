@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09d3b8389f85c7f140adc2ab86bf9d9e41386b89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21987a9a1ff4cd7c6d3191c7ff9073df4b878ae6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379688"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375662"
 ---
 # <a name="mrxqueryvolumeinfo-routine"></a>MRxQueryVolumeInfo routine
 
 
-*MRxQueryVolumeInfo*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向查询卷的信息。
+*MRxQueryVolumeInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询卷的信息。
 
 <a name="syntax"></a>语法
 ------
@@ -118,7 +118,7 @@ RDBSS 发出调用*MRxQueryVolumeInfo*以下情况之一：
 
 **Info.LengthRemaining**成员设置为**IrpSp-&gt;Parameters.QueryVolume.Length**。
 
-有关 IRP\_MJ\_查询\_卷\_信息请求，如果**PostRequest** RX 成员\_上下文结构**TRUE**返回时从*MRxQueryVolumeInfo*，将调用 RDBSS [ **RxFsdPostRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff554472)将申请发布。 这种情况下，IRP\_MJ\_查询\_卷\_信息请求将传递 RX\_上下文结构到队列 RX\_到辅助队列中进行处理的文件系统的上下文过程 (FSP)。
+有关 IRP\_MJ\_查询\_卷\_信息请求，如果**PostRequest** RX 成员\_上下文结构**TRUE**返回时从*MRxQueryVolumeInfo*，将调用 RDBSS [ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)将申请发布。 这种情况下，IRP\_MJ\_查询\_卷\_信息请求将传递 RX\_上下文结构到队列 RX\_到辅助队列中进行处理的文件系统的上下文过程 (FSP)。
 
 如果**PostRequest** RX 成员\_CONTEXT 结构**FALSE**返回时从*MRxQueryVolumeInfo*，必须设置网络微型重定向**Info.LengthRemaining** RX 成员\_上下文结构到的卷信息长度返回。 RDBSS 集**IoStatus.Information** IRP 到成员**IrpSp-&gt;Parameters.QueryVolume.Length**减去**Info.LengthRemaining**的成员RX\_上下文结构。
 
@@ -175,7 +175,7 @@ RDBSS 发出调用*MRxQueryVolumeInfo*以下情况之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -199,7 +199,7 @@ RDBSS 发出调用*MRxQueryVolumeInfo*以下情况之一：
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://msdn.microsoft.com/library/windows/hardware/ff554472)
+[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
 

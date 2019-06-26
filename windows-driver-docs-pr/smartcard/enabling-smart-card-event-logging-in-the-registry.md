@@ -9,12 +9,12 @@ keywords:
 - 事件 WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a11ff11966b535c33469849eb052b90e1db9a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3d3916d0dfe7527f174ac37b5a54ca1242c6c23
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360141"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356720"
 ---
 # <a name="enabling-smart-card-event-logging-in-the-registry"></a>在注册表中启用智能卡事件日志记录
 
@@ -61,7 +61,7 @@ ms.locfileid: "63360141"
 
  
 
-有关指定这些注册表项的详细信息，请参阅[ **INF AddService 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546326)。
+有关指定这些注册表项的详细信息，请参阅[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)。
 
  
 

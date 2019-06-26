@@ -4,17 +4,17 @@ description: 创建传感器驱动程序
 ms.assetid: 7a1cea3c-d542-47e9-90f9-18bae4969b9f
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aa7669617c8bff697da8f6c07c405ed8abe9c132
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 138949e47b4b517d9aa1028a0f55649c704d5e74
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360689"
 ---
 # <a name="creating-a-sensor-driver"></a>创建传感器驱动程序
 
 
-如果您的传感器使用 HID 建议，而不是创建一个驱动程序，则使用收件箱 HID 类驱动程序。 如果您的传感器使用 HID 以外的传输，应该是以开始[传感器地理位置驱动程序示例](https://msdn.microsoft.com/library/windows/hardware/hh768273)或 SpbAccelerometer 示例。
+如果您的传感器使用 HID 建议，而不是创建一个驱动程序，则使用收件箱 HID 类驱动程序。 如果您的传感器使用 HID 以外的传输，应该是以开始[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)或 SpbAccelerometer 示例。
 
 这些示例提供的类和所需的传感器驱动程序的 COM 接口的基本工作实现。 以下过程显示了应遵循从示例创建一个驱动程序的步骤：
 
@@ -22,7 +22,7 @@ ms.locfileid: "63349173"
 
 2.  添加一个类来处理与你的设备硬件或软件的数据提供程序的通信，如果您的传感器是逻辑传感器。
 
-3.  根据需要添加对事件的支持。 您必须编写代码以创建一个线程以在特定时间间隔引发事件。 您还必须更新的实现[ **ISensorDriver::OnGetSupportedEvents** ](https://msdn.microsoft.com/library/windows/hardware/ff545623) SensorDdi.cpp 报告的驱动程序可以引发的事件列表中。
+3.  根据需要添加对事件的支持。 您必须编写代码以创建一个线程以在特定时间间隔引发事件。 您还必须更新的实现[ **ISensorDriver::OnGetSupportedEvents** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupportedevents) SensorDdi.cpp 报告的驱动程序可以引发的事件列表中。
 
 4.  删除不需要任何代码。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63349173"
 
 2.  将您的驱动程序的 DLL 和 INF 文件复制到单独的文件夹。
 
-3.  查找两个辅助安装程序 DLL 文件 （已检查或免费） 从 redist/wdf/*处理器\_类型*安装 WDK 文件夹。 将这些文件复制到步骤 3 中创建的文件夹。 例如，如果您安装 WDK 驱动器 C 上，您可以复制 WUDFUpdate\_从 c: 01009.dll\\WinDDK\\*生成\#*\\redist\\wdf\\x86。
+3.  查找两个辅助安装程序 DLL 文件 （已检查或免费） 从 redist/wdf/*处理器\_类型*安装 WDK 文件夹。 将这些文件复制到步骤 3 中创建的文件夹。 例如，如果您安装 WDK 驱动器 C 上，您可以复制 WUDFUpdate\_从 c: 01009.dll\\WinDDK\\*生成\#* \\redist\\wdf\\x86。
 
 4.  运行 Devcon.exe。 可以在工具中找到此程序\\安装 WDK devcon 文件夹。 例如，对于名为 WDKExample 传感器，则键入：
 
@@ -53,7 +53,7 @@ ms.locfileid: "63349173"
 
      
 
-如果不能安装您的驱动程序，它可能是在步骤 2 返回了错误代码中的方法之一。 若要调试此问题，你必须在安装过程中附加调试器。 有关如何在加载期间调试 UMDF 驱动程序的信息，请参阅[确定为何 UMDF 驱动程序无法加载或 UMDF 设备故障到开始](https://msdn.microsoft.com/library/windows/hardware/ff554611)。
+如果不能安装您的驱动程序，它可能是在步骤 2 返回了错误代码中的方法之一。 若要调试此问题，你必须在安装过程中附加调试器。 有关如何在加载期间调试 UMDF 驱动程序的信息，请参阅[确定为何 UMDF 驱动程序无法加载或 UMDF 设备故障到开始](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)。
 
 您还应该验证提供在 INF 文件匹配的类 ID，您**GUID**驱动程序的 IDL 文件中使用的组件类。
 
@@ -75,10 +75,10 @@ ms.locfileid: "63349173"
 
 4.  选择**删除此设备的驱动程序软件**。
 
-5.  单击 **“确定”**。
+5.  单击 **“确定”** 。
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://msdn.microsoft.com/library/windows/hardware/hh768273)
+[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
 
 
 

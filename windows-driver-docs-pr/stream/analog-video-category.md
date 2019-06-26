@@ -9,12 +9,12 @@ keywords:
 - 模拟音频 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9ad6ab2064cfc78323eac00ea43d2533310b102
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff6541ffef0bcde4206b441e0d6c685c40955c25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384823"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386772"
 ---
 # <a name="analog-video-category"></a>模拟视频类别
 
@@ -35,17 +35,17 @@ ms.locfileid: "63384823"
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 结构</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567340" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567340)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 结构</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567340" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567340)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>MajorFormat GUID</strong></p></td>
@@ -86,7 +86,7 @@ ms.locfileid: "63384823"
 
 为模拟音频，如电视或广播音频定义没有特殊类别。 以模拟音频插针的值指定的设备类别时**MajorFormat**成员应为 KSDATAFORMAT\_类型\_模拟音频。 值**说明符**成员应为 KSDATAFORMAT\_说明符\_NONE 和**子类型**成员和格式设置块应设置为 KSDATAFORMAT\_子类型\_NONE。 单选音频有关的详细信息，请参阅[视频捕获设备使用广播调谐器](video-capture-devices-with-radio-tuners.md)。
 
-尽管模拟视频流实质上是模仿模拟视频解码器的输入，它将同时充当优化信息的数据传输。 优化数据包，源于电视调谐器的筛选器，通过在的开始和结束的所有优化操作的任何干预纵横制筛选器传递。 数据数据包[ **KS\_TVTUNER\_更改\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567691)结构，其中包含国家/地区代码、 通道、 频率和模拟视频中的标准使用。
+尽管模拟视频流实质上是模仿模拟视频解码器的输入，它将同时充当优化信息的数据传输。 优化数据包，源于电视调谐器的筛选器，通过在的开始和结束的所有优化操作的任何干预纵横制筛选器传递。 数据数据包[ **KS\_TVTUNER\_更改\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_tvtuner_change_info)结构，其中包含国家/地区代码、 通道、 频率和模拟视频中的标准使用。
 
 捕获筛选器必须传播到下游 VBI 编解码器 VBI 输出流的扩展标头中此优化数据包。
 

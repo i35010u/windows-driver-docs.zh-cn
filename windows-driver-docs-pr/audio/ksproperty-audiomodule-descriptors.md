@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42fb8facd76b5bda28a8b8099ff9b5d2ec3c84d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfa2a9be1707fddbeaccd8631c15a64dd5bcf72f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358843"
 ---
 # <a name="kspropertyaudiomoduledescriptors"></a>KSPROPERTY\_AUDIOMODULE\_描述符
 
@@ -57,7 +57,7 @@ ms.locfileid: "63332787"
 
  
 
-属性值是一种结构后, 跟零 (0) 或更多[ **KSAUDIOMODULE\_描述符**](https://msdn.microsoft.com/library/windows/hardware/mt808137)结构。
+属性值是一种结构后, 跟零 (0) 或更多[ **KSAUDIOMODULE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)结构。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -65,7 +65,7 @@ ms.locfileid: "63332787"
 
 如果该驱动程序支持此属性，但它不具有任何音频模块，它将返回 ksmultiple\_具有零个元素计数项。
 
-有关音频模块的详细信息，请参阅[实现音频模块发现](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)。
+有关音频模块的详细信息，请参阅[实现音频模块发现](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)。
 
 <a name="requirements"></a>要求
 ------------
@@ -94,7 +94,7 @@ ms.locfileid: "63332787"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSAUDIOMODULE\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/hardware/mt808137)
+[**KSAUDIOMODULE\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)
 
 [KSPROPSETID\_AudioModule](kspropsetid-audiomodule.md)
 

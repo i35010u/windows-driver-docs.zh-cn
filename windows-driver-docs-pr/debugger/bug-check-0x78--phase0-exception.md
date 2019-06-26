@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 23b604756518a17ec586637e963e8e8bb2df4b8d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: fd61f9bc89601692e8d8c57aee1d866a1fe109ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903737"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367334"
 ---
 # <a name="bug-check-0x78-phase0exception"></a>Bug 检查 0x78：阶段 0\_异常
 
@@ -28,7 +28,7 @@ ms.locfileid: "59903737"
 HAL 初始化过程中遇到意外的中断时，会发生此错误检查。 如果已设置，则可能出现此中断 **/中断**启动设置中的参数，但未启用内核调试。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
  

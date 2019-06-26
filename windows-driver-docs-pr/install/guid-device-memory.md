@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4ef020f21adbbaf01b4b96ba0c3c62b433c7a01c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f16e4bc030dc09e5e0270e14a569b50f5ccc93c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356002"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379349"
 ---
 # <a name="guiddevicememory"></a>GUID_DEVICE_MEMORY
 
 
-GUID_DEVICE_MEMORY[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)的高级配置和电源接口 (ACPI) 内存设备定义。
+GUID_DEVICE_MEMORY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)的高级配置和电源接口 (ACPI) 内存设备定义。
 
 <table>
 <colgroup>
@@ -54,9 +54,9 @@ GUID_DEVICE_MEMORY[设备接口类](https://msdn.microsoft.com/library/windows/h
 <a name="remarks"></a>备注
 -------
 
-系统提供[ACPI 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540493)注册通知的操作系统和应用程序的 ACPI 内存设备是否存在此设备接口类的实例。
+系统提供[ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)注册通知的操作系统和应用程序的 ACPI 内存设备是否存在此设备接口类的实例。
 
-了解如何提供 WDM[函数的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff546516)ACPI 的设备，请参阅[支持 ACPI 设备](https://msdn.microsoft.com/library/windows/hardware/ff536161)。
+了解如何提供 WDM[函数的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)ACPI 的设备，请参阅[支持 ACPI 设备](https://docs.microsoft.com/windows-hardware/drivers/acpi/supporting-acpi-devices)。
 
 <a name="requirements"></a>要求
 ------------

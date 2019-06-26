@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bcee0636cb5c3141c812735c8c8cb4089044732e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 967902313e3bf1678105a58efc4e8c0e91c1bb00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358218"
 ---
 # <a name="deletebinaries-xml-element"></a>deleteBinaries XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
-**DeleteBinaries** XML 元素为空元素，用于设置**deleteBinaries**标志为 ON，将配置从一个系统，已复制到系统时删除二进制文件的DPInst[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)已安装。
+**DeleteBinaries** XML 元素为空元素，用于设置**deleteBinaries**标志为 ON，将配置从一个系统，已复制到系统时删除二进制文件的DPInst[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)已安装。
 
 **元素标记**
 
@@ -79,7 +79,7 @@ ms.locfileid: "63341492"
 </dpinst>
 ```
 
-**请注意**  从 Windows 7 开始，操作系统会忽略设置为 ON **deleteBinaries** XML 元素。 已复制到系统的二进制文件时[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)已安装，不能再使用 DPInst 被删除。
+**请注意**  从 Windows 7 开始，操作系统会忽略设置为 ON **deleteBinaries** XML 元素。 已复制到系统的二进制文件时[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)已安装，不能再使用 DPInst 被删除。
 
  
 

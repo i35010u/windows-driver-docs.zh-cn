@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c4dc9d2818f9d92eccb3527d760acc3b6e155fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2922b44d5bb6a6cea8a8aa3e55aa0fed015403d8
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333150"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391492"
 ---
 # <a name="kspropertyac3languagecode"></a>KSPROPERTY\_AC3\_LANGUAGE\_CODE
 
@@ -53,8 +53,8 @@ KSPROPERTY\_AC3\_语言\_代码属性指定的语言代码的 AC-3 编码流。
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537081" data-raw-source="[&lt;strong&gt;KSAC3_LANGUAGE_CODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537081)"><strong>KSAC3_LANGUAGE_CODE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85)" data-raw-source="[&lt;strong&gt;KSAC3_LANGUAGE_CODE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))"><strong>KSAC3_LANGUAGE_CODE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -86,9 +86,9 @@ KSPROPERTY\_AC3\_语言\_代码属性请求将返回状态\_成功以指示已�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAC3\_语言\_代码**](https://msdn.microsoft.com/library/windows/hardware/ff537081)
+[**KSAC3\_语言\_代码**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))
 
  
 

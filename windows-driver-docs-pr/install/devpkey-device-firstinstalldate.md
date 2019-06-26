@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c8196ea108cccd16758330b6a29cbca59c6b92b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a992ae713e7c04ba205ccbcdf2a872b43ad223f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378234"
 ---
 # <a name="devpkeydevicefirstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
 
@@ -62,7 +62,7 @@ Windows 设置 DEVPKEY_Device_FirstInstallDate 的具有指定首次在系统中
 
  
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_FirstInstallDate 属性的值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_FirstInstallDate 属性的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,7 +87,7 @@ Windows 设置 DEVPKEY_Device_FirstInstallDate 的具有指定首次在系统中
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 标记扩展面 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77cc677189af22b0f734b1f6f965f0c740d282f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 744577721cbcd94a1249daf10b0b6077a083cc9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353515"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381862"
 ---
 # <a name="extended-surface-capability-flags"></a>扩展图面功能标志
 
@@ -22,13 +22,13 @@ ms.locfileid: "63353515"
 ## <span id="ddk_extended_surface_capability_flags_gg"></span><span id="DDK_EXTENDED_SURFACE_CAPABILITY_FLAGS_GG"></span>
 
 
-应用程序设置相应的标记扩展的图面功能添加到最新版本的 DirectDraw 都对驱动程序可见**dwCaps2**的成员[ **DDSCAPS2**](https://msdn.microsoft.com/library/windows/hardware/ff550292)结构。
+应用程序设置相应的标记扩展的图面功能添加到最新版本的 DirectDraw 都对驱动程序可见**dwCaps2**的成员[ **DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))结构。
 
 应用程序可以仅设置 DDSCAPS2\_HARDWAREDEINTERLACE 标志结合 DDSCAPS\_覆盖标志。 如果驱动程序会看到此标志设置为**用于 CreateSurface**时间，这意味着 DirectDraw 需要驱动程序将执行会尽一切努力匹配硬件的视频端口帧速率设备帧速率。
 
 DDSCAPS2\_HINTDYNAMIC、 DDSCAPS2\_HINTSTATIC 和 DDSCAPS2\_不透明的标志是在应用程序设置的提示**用于 CreateSurface**告知驱动程序应用程序的计划的时间执行与图面。 DDSCAPS2\_HINTDYNAMIC 标志意味着应用程序将频繁地更新图面。 DDSCAPS2\_HINTSTATIC 标志意味着应用程序将很少更新图面，但仍需要访问权限。 这意味着该驱动程序必须能够允许锁表面上看，这可能涉及一些隐藏的解压缩和压缩的步骤。 DDSCAPS2\_不透明标志意味着应用程序将永远不会锁定 blt，或更新该图面生命周期的其余部分的图面。 该驱动程序可以自由地压缩或重新排序在图面，而无需不断将其解压缩。
 
-**请注意**  驱动程序不需要设置这些标志以启用它们。 DirectDraw 只是将这些位传递到驱动程序时[ *DdCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549263)调用。
+**请注意**  驱动程序不需要设置这些标志以启用它们。 DirectDraw 只是将这些位传递到驱动程序时[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))调用。
 
  
 

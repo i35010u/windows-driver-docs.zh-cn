@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_TKIP_MIC_FAILURE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 13b6330657672957b1ed7d59f4dea9c82a3f8ced
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76aa968fae4c3be1ce61d052e9bfe83db1a6c7b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357312"
 ---
 # <a name="wditlvtkipmicfailureinfo"></a>WDI\_TLV\_TKIP\_MIC\_FAILURE\_INFO
 
@@ -35,7 +35,7 @@ WDI\_TLV\_TKIP\_MIC\_失败\_信息是包含 TKIP MIC 失败信息 TLV。
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                             | 指定哪个密码密钥类型检测到出现 TKIP MIC 失败。 如果此值为 1，TKIP MIC 故障检测到通过默认的密码密钥。 如果此值为 0，TKIP MIC 故障检测到通过密钥映射密码密钥。 |
 | UINT32                                            | 默认密钥数组中指定密码密钥的索引。 有效的值范围是从 0 到 3。                                                                                                                                                   |
-| [**WDI\_MAC\_ADDRESS**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 指定传输的数据包的 MIC 验证失败的对等方的 MAC 地址。                                                                                                                                                          |
+| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定传输的数据包的 MIC 验证失败的对等方的 MAC 地址。                                                                                                                                                          |
 
  
 

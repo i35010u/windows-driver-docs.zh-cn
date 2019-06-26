@@ -4,12 +4,12 @@ description: IddCx 使用可扩展 UMDF 对象模型来表示图形对象，以�
 ms.assetid: B4D40C6B-DCEF-4661-9DF2-411326870014
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c088586551098a1bf019f883ecf6fbf7a0fde7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67831ae640752456b51bf06d7a248632039dd571
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342952"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380195"
 ---
 # <a name="iddcx-objects"></a>IddCx 对象
 
@@ -19,7 +19,7 @@ IddCx 使用可扩展 UMDF 对象模型来表示图形对象，以下各节中�
 ## <a name="span-ididdcxadapterspanspan-ididdcxadapterspaniddcxadapter"></a><span id="IDDCX_ADAPTER"></span><span id="iddcx_adapter"></span>IDDCX\_适配器
 
 
-此对象表示单个逻辑显示适配器创建的两阶段过程中的驱动程序。 首先，它将调用[ **IddCxAdapterInitAsync** ](https://msdn.microsoft.com/library/windows/hardware/mt761916)回调函数和操作系统调用的驱动程序[EvtIddCxAdapterInitFinished](https://msdn.microsoft.com/library/windows/hardware/mt761860) DDI 无法完成初始化。
+此对象表示单个逻辑显示适配器创建的两阶段过程中的驱动程序。 首先，它将调用[ **IddCxAdapterInitAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iddcx/nf-iddcx-iddcxadapterinitasync)回调函数和操作系统调用的驱动程序[EvtIddCxAdapterInitFinished](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iddcx/nc-iddcx-evt_idd_cx_adapter_init_finished) DDI 无法完成初始化。
 
 在简单的情况下，没有创建附加的间接显示设备的即插子系统的 UMDF 设备对象之间的一对一映射并**IDDCX\_适配器**驱动程序创建。 在单一间接显示硬件保护装置其中包含多个插设备 （例如 2 个 USB 设备函数） 更复杂的情况下，它是驱动程序创建只有一个的责任**IDDCX\_适配器**对象对于多个 UMDF 设备对象创建，另一个用于每个即插即用设备。 该驱动程序必须考虑以下方法在此方案中：
 
@@ -33,7 +33,7 @@ IddCx 使用可扩展 UMDF 对象模型来表示图形对象，以下各节中�
 
 此对象表示特定监视器连接到间接显示适配器上的连接器之一。
 
-该驱动程序在两阶段过程中创建监视对象。 首先，驱动程序调用[ **IddCxMonitorCreate** ](https://msdn.microsoft.com/library/windows/hardware/mt761921)回调创建**IDDCX\_监视器**对象，然后调用[ **IddCxMonitorArrival** ](https://msdn.microsoft.com/library/windows/hardware/mt761920)回调完成监视器到达。 当监视器被拔出，驱动程序将调用[ **IddCxMonitorDeparture** ](https://msdn.microsoft.com/library/windows/hardware/mt761922)回调报告监视器已被拔出，这将导致**IDDCX\_监视器**要销毁对象。 即使相同的监视器是未插入又重新连接， **IddCxMonitorDeparture**/**IddCxMonitorArrival**序列需要再次调用。 **IDDCX\_监视器**的子**IDDCX\_适配器**对象。
+该驱动程序在两阶段过程中创建监视对象。 首先，驱动程序调用[ **IddCxMonitorCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iddcx/nf-iddcx-iddcxmonitorcreate)回调创建**IDDCX\_监视器**对象，然后调用[ **IddCxMonitorArrival** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iddcx/nf-iddcx-iddcxmonitorarrival)回调完成监视器到达。 当监视器被拔出，驱动程序将调用[ **IddCxMonitorDeparture** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iddcx/nf-iddcx-iddcxmonitordeparture)回调报告监视器已被拔出，这将导致**IDDCX\_监视器**要销毁对象。 即使相同的监视器是未插入又重新连接， **IddCxMonitorDeparture**/**IddCxMonitorArrival**序列需要再次调用。 **IDDCX\_监视器**的子**IDDCX\_适配器**对象。
 
 ## <a name="span-ididdcxswapchainspanspan-ididdcxswapchainspaniddcxswapchain"></a><span id="IDDCX_SWAPCHAIN"></span><span id="iddcx_swapchain"></span>IDDCX\_SWAPCHAIN
 

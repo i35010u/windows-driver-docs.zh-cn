@@ -9,25 +9,25 @@ keywords:
 - 显示适配器子设备 WDK 视频存在网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07cb1882314d685b120e308037ce35f0d7e2240d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9a629b06681594fd022295e66c59dd33a6f6684
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354336"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370717"
 ---
 # <a name="child-devices-of-the-display-adapter"></a>显示适配器的子设备
 
 
 显示适配器的子设备是设备上的显示适配器的微型端口驱动程序枚举作为子级。 显示适配器的所有子设备都均载入;监视器和其他外部连接到设备的显示适配器不会考虑子设备。
 
-显示微型端口驱动程序[ **DxgkDdiQueryChildRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff559750)函数负责枚举子设备的显示适配器。 在枚举过程显示微型端口驱动程序将指定的每个子设备类型和热插拔检测 (HPD) 感知值。 类型为之一[ **DXGK\_子\_设备\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff561008)枚举器：
+显示微型端口驱动程序[ **DxgkDdiQueryChildRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_child_relations)函数负责枚举子设备的显示适配器。 在枚举过程显示微型端口驱动程序将指定的每个子设备类型和热插拔检测 (HPD) 感知值。 类型为之一[ **DXGK\_子\_设备\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ne-dispmprt-_dxgk_child_device_type)枚举器：
 
 -   **TypeVideoOutput**
 
 -   **TypeOther**
 
-HPD 感知值是之一[ **DXGK\_子\_设备\_HPD\_感知**](https://msdn.microsoft.com/library/windows/hardware/ff561006)枚举器：
+HPD 感知值是之一[ **DXGK\_子\_设备\_HPD\_感知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgk_child_device_hpd_awareness)枚举器：
 
 -   **HpdAwarenessAlwaysConnected**
 

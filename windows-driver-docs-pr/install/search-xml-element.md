@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 397fba7639374dcad7a28f22a44528674db45c62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 341faceba86aeea5b85aadf63447d2205aaf7653
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348695"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374213"
 ---
 # <a name="search-xml-element"></a>search XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **搜索**XML 元素将定向 DPInst INF 文件往复搜索指定 DPInst 工作目录下的子目录中。 由一个或多个指定子目录[**子目录子元素**](subdirectory-xml-element.md)。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63348695"
 
 ### <a href="" id="comments"></a>备注
 
-下面的代码示例演示**搜索**元素，其中包含一个**子目录**指定的 XML 元素*i386*子目录。 DPInst 将以递归方式搜索[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)中*i386* DPInst 工作目录的子目录。 指定自定义的子目录的文本所示粗体的字体样式。
+下面的代码示例演示**搜索**元素，其中包含一个**子目录**指定的 XML 元素*i386*子目录。 DPInst 将以递归方式搜索[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)中*i386* DPInst 工作目录的子目录。 指定自定义的子目录的文本所示粗体的字体样式。
 
 ```cpp
 <dpinst>

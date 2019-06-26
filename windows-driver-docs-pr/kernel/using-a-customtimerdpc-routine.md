@@ -14,12 +14,12 @@ keywords:
 - 过期的计时器 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a93e78f91adcb769b83b8d75197c982e815b9723
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81dde0f2ffee24e2e0e0bef4cbed206bd3fe2df8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355269"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382934"
 ---
 # <a name="using-a-customtimerdpc-routine"></a>使用 CustomTimerDpc 例程
 
@@ -27,9 +27,9 @@ ms.locfileid: "63355269"
 
 
 
-若要禁用以前设置计时器对象时，驱动程序调用[ **KeCancelTimer**](https://msdn.microsoft.com/library/windows/hardware/ff551970)。 此例程从系统的计时器队列中移除计时器对象。 通常情况下，计时器对象未设置为终止状态并*CustomTimerDpc*例程不排队等待执行。 但是，如果即将过期的计时器时**KeCancelTimer**调用时，可能会发生到期之前**KeCancelTimer**有机会访问队列的时间，在这种情况下将发出信号和 DPC 队列会出现。
+若要禁用以前设置计时器对象时，驱动程序调用[ **KeCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kecanceltimer)。 此例程从系统的计时器队列中移除计时器对象。 通常情况下，计时器对象未设置为终止状态并*CustomTimerDpc*例程不排队等待执行。 但是，如果即将过期的计时器时**KeCancelTimer**调用时，可能会发生到期之前**KeCancelTimer**有机会访问队列的时间，在这种情况下将发出信号和 DPC 队列会出现。
 
-撤回[ **KeSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff553286)或[ **KeSetTimerEx**](https://msdn.microsoft.com/library/windows/hardware/ff553292)，与以前指定*计时器*和*Dpc*指针之前以前指定的时间间隔到期，将产生以下影响：
+撤回[ **KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)或[ **KeSetTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)，与以前指定*计时器*和*Dpc*指针之前以前指定的时间间隔到期，将产生以下影响：
 
 -   在内核中从计时器队列中，而无需将对象设置为终止状态或队列移除计时器对象*CustomTimerDpc*例程。
 
@@ -57,7 +57,7 @@ ms.locfileid: "63355269"
 
 请考虑以下的驱动程序，同时具有一个设计指导原则*CustomDpc*并*CustomTimerDpc*例程：
 
-若要避免出现争用情况，永远不会传递同一*Dpc*指针，指向**KeSetTimer**或**KeSetTimerEx**并[ **KeInsertQueueDpc**](https://msdn.microsoft.com/library/windows/hardware/ff552185).
+若要避免出现争用情况，永远不会传递同一*Dpc*指针，指向**KeSetTimer**或**KeSetTimerEx**并[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc).
 
 换而言之，假设驱动程序的*StartIo*例程调用**KeSetTimer**或**KeSetTimerEx**到队列*CustomTimerDpc*例程，驱动程序的 ISR 调用**KeInsertQueueDpc**同时从具有相同的另一个处理器*Dpc*指针。 处理器上的 IRQL 低于调度时，将运行 DPC 例程\_级别或计时器间隔过期，具体取决于第一个。 准确实首先，一些基本的工作*StartIo*或 DPC 例程将只需删除 ISR。
 

@@ -10,21 +10,21 @@ keywords:
 - 枚举卷 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a60af89126e6cce160d1149a6b168f0ffaea8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76c6ddf0be6f68a379452ce27fe5c5c55538eb6f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350031"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380318"
 ---
 # <a name="understanding-volume-enumerations-with-duplicate-volume-names"></a>了解具有重复卷名称的卷枚举
 
 
 在枚举卷，就可以重复的卷名称显示在生成的卷信息列表中。
 
-为了帮助您了解此问题，请考虑以下方案： 卷枚举例程[ **FltEnumerateVolumeInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff542091)用于枚举所有的系统卷。 这会导致卷信息结构的一个已知的筛选器管理器的每个卷用于填充一个缓冲区。 在此缓冲区中的每个卷的信息结构可以是类型[**筛选器\_卷\_BASIC\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff541631)或[ **筛选器\_卷\_标准\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff541647)，但不可同时使用两者。
+为了帮助您了解此问题，请考虑以下方案： 卷枚举例程[ **FltEnumerateVolumeInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltenumeratevolumeinformation)用于枚举所有的系统卷。 这会导致卷信息结构的一个已知的筛选器管理器的每个卷用于填充一个缓冲区。 在此缓冲区中的每个卷的信息结构可以是类型[**筛选器\_卷\_BASIC\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltuserstructures/ns-fltuserstructures-_filter_volume_basic_information)或[ **筛选器\_卷\_标准\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltuserstructures/ns-fltuserstructures-_filter_volume_standard_information)，但不可同时使用两者。
 
-有了此列表的卷信息结构，就可以为多个列表元素以包含相同的卷名称。 即**FilterVolumeName**两个或多个列表元素的成员可以是完全相同。 这可能是因为所有筛选器管理器枚举例程，如[ **FltEnumerateVolumes**](https://msdn.microsoft.com/library/windows/hardware/ff542092)，枚举卷包括那些已卸载，但尚未数据被破坏列表 (由于打开文件的这一事实仍存在于一个卷）。 因此，卷将成为卸除时，其名称可以出现不止一次在卷的信息列表中的一次其当前已装载的状态和为其前一次卸除但非数据被破坏下状态，最简单的情况。
+有了此列表的卷信息结构，就可以为多个列表元素以包含相同的卷名称。 即**FilterVolumeName**两个或多个列表元素的成员可以是完全相同。 这可能是因为所有筛选器管理器枚举例程，如[ **FltEnumerateVolumes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltenumeratevolumes)，枚举卷包括那些已卸载，但尚未数据被破坏列表 (由于打开文件的这一事实仍存在于一个卷）。 因此，卷将成为卸除时，其名称可以出现不止一次在卷的信息列表中的一次其当前已装载的状态和为其前一次卸除但非数据被破坏下状态，最简单的情况。
 
 如果在卷的信息列表中出现重复的卷名称，是通过上面的说明解释每个组相同的名称。 但是，就可以通过使用以下过程来确认上述情况中：
 
@@ -38,19 +38,19 @@ ms.locfileid: "63350031"
 
 例程和结构受本主题包括：
 
-[**筛选器\_卷\_BASIC\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff541631)
+[**筛选器\_卷\_BASIC\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltuserstructures/ns-fltuserstructures-_filter_volume_basic_information)
 
-[**筛选器\_卷\_标准\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff541647)
+[**筛选器\_卷\_标准\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltuserstructures/ns-fltuserstructures-_filter_volume_standard_information)
 
-[**FilterVolumeFindFirst**](https://msdn.microsoft.com/library/windows/hardware/ff541525)
+[**FilterVolumeFindFirst**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filtervolumefindfirst)
 
-[**FilterVolumeFindNext**](https://msdn.microsoft.com/library/windows/hardware/ff541530)
+[**FilterVolumeFindNext**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filtervolumefindnext)
 
-[**FltEnumerateVolumeInformation**](https://msdn.microsoft.com/library/windows/hardware/ff542091)
+[**FltEnumerateVolumeInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltenumeratevolumeinformation)
 
-[**FltEnumerateVolumes**](https://msdn.microsoft.com/library/windows/hardware/ff542092)
+[**FltEnumerateVolumes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltenumeratevolumes)
 
-[**FltGetVolumeInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543238)
+[**FltGetVolumeInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetvolumeinformation)
 
  
 

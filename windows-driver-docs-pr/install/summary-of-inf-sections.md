@@ -7,12 +7,12 @@ keywords:
 - 部分 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32335accd55ea8f78b088d11a1322773069458db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa0b03aac3d3887d79b4db17c3a31762e4a25caa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339667"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385871"
 ---
 # <a name="summary-of-inf-sections"></a>INF 节摘要
 
@@ -33,7 +33,7 @@ INF 此节定义一组文件要嵌入的签名作为硬件认证的一部分。 
 <a href="" id="sourcedisksnames-section"></a>[**SourceDisksNames 部分**](inf-sourcedisksnames-section.md)  
 本部分是必需的如果 INF 文件具有相应**SourceDisksFiles**部分。 本部分需从分发媒体包含在打包产品中安装 IHV/OEM-提供设备及其驱动程序。 它还需要安装以下任一此类的 INF 文件：
 
-- 辅助安装程序 DLL 以补充系统提供的设备类安装程序或共同安装程序的操作 (另请参阅<em>DDInstall</em>**。共同安装程序**此列表中更高版本)
+- 辅助安装程序 DLL 以补充系统提供的设备类安装程序或共同安装程序的操作 (另请参阅<em>DDInstall</em> **。共同安装程序**此列表中更高版本)
 
 - 新的类安装程序 DLL 来补充 OS 的设备安装程序的操作 (另请参阅**ClassInstall32**)
 
@@ -53,14 +53,14 @@ INF 此节定义一组文件要嵌入的签名作为硬件认证的一部分。 
 <a href="" id="manufacturer-section"></a>[**制造商部分**](inf-manufacturer-section.md)  
 设备和其驱动程序的 INF 文件中需要此部分。
 
-**制造商**因为其项的每个引用 INF-编写器定义的系统设备类 INF 部分有时称为"表的内容，"*模型*部分，其中，反过来，引用其他 INF 编写器定义部分中，如每个模型的输入*DDInstall*部分中， <em>DDInstall</em>**。服务**部分中，等等。
+**制造商**因为其项的每个引用 INF-编写器定义的系统设备类 INF 部分有时称为"表的内容，"*模型*部分，其中，反过来，引用其他 INF 编写器定义部分中，如每个模型的输入*DDInstall*部分中， <em>DDInstall</em> **。服务**部分中，等等。
 
 <a href="" id="models-section--per-manufacturer-entry--"></a>[**模型部分**](inf-models-section.md) (每个**制造商**条目)   
 本部分需确定为其 INF 文件将安装驱动程序的设备。 它指定一组设备、 设备 ID 和名称的通用名称 （字符串） 之间的映射*DDInstall*部分中，包含该设备的安装说明的 INF 文件中的其他位置。
 
 为单个提供程序安装一个或多个设备和驱动程序的 INF 文件必须只有一个*模型*部分中，但系统 INF 文件，查找设备类都可以具有许多 INF 编写器定义*模型*部分。
 
-<a href="" id="ddinstall-section--per-models-entry--"></a>[***DDInstall*一节**](inf-ddinstall-section.md) (每个*模型*条目)   
+<a href="" id="ddinstall-section--per-models-entry--"></a>[ ***DDInstall*一节**](inf-ddinstall-section.md) (每个*模型*条目)   
 实际安装任何设备中列出的所需的此部分*模型*INF 文件，以及每个此类设备的驱动程序中的部分。 一个*DDInstall*可由多个共享部分*模型*部分。
 
 <a href="" id="ddinstall-services-section"></a>[***DDInstall *。服务部分**](inf-ddinstall-services-section.md)  
@@ -90,7 +90,7 @@ INF 此节定义一组文件要嵌入的签名作为硬件认证的一部分。 
 
  
 
-本部分用于创建[重写配置](https://msdn.microsoft.com/library/windows/hardware/ff547012#logical-configuration-types-for-resource-requirements-lists)，这会重写插设备的总线驱动程序报告的硬件资源要求。
+本部分用于创建[重写配置](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#logical-configuration-types-for-resource-requirements-lists)，这会重写插设备的总线驱动程序报告的硬件资源要求。
 
 <a href="" id="ddinstall-interfaces-section"></a>[***DDInstall *。接口部分**](inf-ddinstall-interfaces-section.md)  
 如果驱动程序将导出的设备接口类，因此创建的接口类，如内核流式处理静止图像捕获或数据解压缩，新实例的功能其 INF 文件可以有本部分中。
@@ -105,7 +105,7 @@ INF 文件的**DefaultInstall**将访问部分，如果用户的 INF 文件的�
 本部分等同于[ **INF DDInstall.Services 部分**](inf-ddinstall-services-section.md)，并使用与建立关联[ **INF DefaultInstall 部分**](inf-defaultinstall-section.md).
 
 <a href="" id="strings-section"></a>[**字符串部分**](inf-strings-section.md)  
-本部分中的每个 INF 文件需要定义每个**%** <em>strkey</em> **%** INF 中指定的令牌。 按照约定，**字符串**部分 (或如果 INF 提供了一组特定于区域设置的部分**字符串**部分) 显示在以便于维护和本地化的所有系统提供 INF 文件中最后一个。
+本部分中的每个 INF 文件需要定义每个 **%** <em>strkey</em> **%** INF 中指定的令牌。 按照约定，**字符串**部分 (或如果 INF 提供了一组特定于区域设置的部分**字符串**部分) 显示在以便于维护和本地化的所有系统提供 INF 文件中最后一个。
 
 某些部分在此处列出，尤其是具有*安装*在其名称中可以包含引用 INF 编写器定义的其他部分的指令。 每个指令会导致在安装过程中的相应类型 INF 编写器定义部分的下方列出的项上执行特定操作。
 
@@ -113,7 +113,7 @@ INF 文件的**DefaultInstall**将访问部分，如果用户的 INF 文件的�
 
 括在 unbolded 方括号，例如显示可选条目和每个此类部分中的指令：
 
-**\[版本\]** ...\[**提供程序 = %**<em>INF 创建者</em>**%** \] ...**提供程序**中的条目**\[版本\]** 部分是可选的意义上说，它不是每个 INF 文件中的必需项。
+**\[版本\]** ...\[**提供程序 = %** <em>INF 创建者</em> **%** \] ...**提供程序**中的条目 **\[版本\]** 部分是可选的意义上说，它不是每个 INF 文件中的必需项。
 
  
 

@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_NEXT_ARGUMENT 宏 ACPI 设备
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed7d06635ff22f61562ff5cc406d7030cbeb9f0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 596761fcbc027d1d7f3da5c23ed3b5f2ba3b05f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328841"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355879"
 ---
 # <a name="acpimethodnextargument-macro"></a>ACPI\_方法\_下一步\_参数宏
 
 
-ACPI\_方法\_下一步\_参数结构返回一个指向下一步[ **ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)结构数组的 ACPI\_方法\_参数结构。
+ACPI\_方法\_下一步\_参数结构返回一个指向下一步[ **ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)结构数组的 ACPI\_方法\_参数结构。
 
 <a name="syntax"></a>语法
 ------
@@ -66,4 +66,4 @@ ACPI\_方法\_下一步\_参数结构返回一个指向下一步[ **ACPI\_方法
 ## <a name="see-also"></a>请参阅
 
 
-[**ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)
+[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)

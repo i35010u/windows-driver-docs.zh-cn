@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 356308c97795b12aafb25229098a03c0a29c7027
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb72ad45682efe58273676a9ea936605811ad6d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327239"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387063"
 ---
 # <a name="devpkeydevicedrivercoinstallers"></a>DEVPKEY_Device_DriverCoInstallers
 
@@ -65,11 +65,11 @@ DEVPKEY_Device_DriverCoInstallers 设备属性表示 DLL 名称的列表，并�
 <a name="remarks"></a>备注
 -------
 
-由提供的值 DEVPKEY_Device_DriverCoInstallers [ **INF *DDInstall*。共同安装程序**](https://msdn.microsoft.com/library/windows/hardware/ff547321)安装设备的 INF 文件中的部分。
+由提供的值 DEVPKEY_Device_DriverCoInstallers [ **INF *DDInstall*。共同安装程序**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)安装设备的 INF 文件中的部分。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_DriverCoInstallers 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_DriverCoInstallers 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverCoInstallers 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**CoInstallers32**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff537732)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverCoInstallers 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**CoInstallers32**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -94,9 +94,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF *DDInstall*。共同安装程序部分**](https://msdn.microsoft.com/library/windows/hardware/ff547321)
+[**INF *DDInstall*。共同安装程序部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

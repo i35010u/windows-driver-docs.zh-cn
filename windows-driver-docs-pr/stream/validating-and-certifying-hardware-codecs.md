@@ -8,12 +8,12 @@ keywords:
 - 硬件编解码器支持 WDK AVStream，验证和认证
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 679ba0e2cb5db52f0834cb430bcb1339f0c71c4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0c20a3a7d55db997ac74364c65cacbf34be1648
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337812"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384905"
 ---
 # <a name="validating-and-certifying-hardware-codecs"></a>验证和认证硬件编解码器
 
@@ -66,4 +66,4 @@ typedef enum
 
 用户模式组件访问 KSPROPSETID\_通过 OPMVideoOutput **IKsControl** AVStream 代理 MFT 上的接口。 有关显示 OPMVideoOutput 方法的实现处理程序例程的代码示例，请参阅[编解码器荣誉奖验证](codec-merit-validation.md)。
 
-有关 OPM 特定于驱动程序的信息，请参阅[支持输出保护管理器](https://msdn.microsoft.com/library/windows/hardware/ff569879)。 有关 OPM 特定于应用程序的信息，请参阅[使用输出 Protection Manager](https://go.microsoft.com/fwlink/p/?linkid=155059)。
+有关 OPM 特定于驱动程序的信息，请参阅[支持输出保护管理器](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)。 有关 OPM 特定于应用程序的信息，请参阅[使用输出 Protection Manager](https://go.microsoft.com/fwlink/p/?linkid=155059)。

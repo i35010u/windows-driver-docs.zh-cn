@@ -5,12 +5,12 @@ ms.assetid: 6BF2E800-90A0-48FC-B702-5AD4EC318A35
 keywords: 同步 OID 请求接口，同步 OID 调用，WDK 同步 Oid 同步 OID 请求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 834028856064246b1c74282574cadda65b1b4788
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf8ad7ac8ec26466ffdf977ba2636d6b772e5259
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362590"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377973"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>在 NDIS 6.80 同步 OID 请求接口
 
@@ -26,7 +26,7 @@ Windows 网络驱动程序使用 OID 请求发送控制 NDIS 绑定在堆栈的�
 
 | | 正则 OID | 直接 OID | 同步的 OID |
 | --- | --- | --- | --- |
-| 有效负载 | [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
+| 有效负载 | [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
 | OID 类型 | 统计信息的查询中，集方法 | 统计信息的查询中，集方法 | 统计信息的查询中，集方法 |
 | 可以通过发出 | 协议，筛选器 | 协议，筛选器 | 协议，筛选器 |
 | 可以通过完成 | 微型端口筛选器 | 微型端口筛选器 | 微型端口筛选器 |
@@ -69,7 +69,7 @@ OID 的所有请求都具有此基本流： 更高版本的驱动程序 （一�
 
 如果没有安装足够筛选器，则会强制 NDIS 以分配新的线程堆栈，以使递归更深入。
 
-NDIS 会考虑[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构保持有效的仅单跃点沿堆栈。 如果筛选器驱动程序想要传递到下一个较低驱动程序 （这是大多数 Oid 的这种情况），请求筛选器驱动程序*必须*插入的样板文件代码以克隆 OID 请求多个几十个行。 这一样板具有几个问题：
+NDIS 会考虑[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构保持有效的仅单跃点沿堆栈。 如果筛选器驱动程序想要传递到下一个较低驱动程序 （这是大多数 Oid 的这种情况），请求筛选器驱动程序*必须*插入的样板文件代码以克隆 OID 请求多个几十个行。 这一样板具有几个问题：
 
 1. 它强制要克隆 OID 的内存分配。 达到内存池既缓慢又会导致无法保证 OID 请求的向前推进。
 2. OID 结构设计必须保持不变随着时间的推移因为 all 的筛选器驱动程序硬编码的一个 NDIS_OID_REQUEST 的内容复制到另一种机制。

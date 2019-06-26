@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bac729e35a6f350485237b749f28d409f5fbe19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: efbf4ed153769185f81e58286ce55c0c8f71127b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336016"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364286"
 ---
 # <a name="ndiskdifstacktable"></a>!ndiskd.ifstacktable
 
 
 **！ Ndiskd.ifstacktable**扩展将显示网络接口堆栈表 (ifStackTable)。
 
-有关接口堆栈表的详细信息，请参阅[维护网络界面栈](https://msdn.microsoft.com/windows/hardware/drivers/network/maintaining-a-network-interface-stack)。
+有关接口堆栈表的详细信息，请参阅[维护网络界面栈](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)。
 
 ```console
 !ndiskd.ifstacktable 
@@ -56,7 +56,7 @@ INTERFACE STACK TABLE
     ffffdf801494c010   16                  17                 ffffdf801494ba20
 ```
 
-NDIS 维护 NDIS 微型端口适配器，NDIS 5.x 筛选器中间驱动程序，在堆栈表和 NDIS 筛选器模块，而[NDIS MUX 中间驱动程序](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-mux-intermediate-drivers)驱动程序所需指定的内部接口关系虚拟微型端口接口和协议之间降低接口。 因此，ifStackTable 可能适用于与更复杂 MUX 驱动程序安装在系统中看到的界面堆栈关系。
+NDIS 维护 NDIS 微型端口适配器，NDIS 5.x 筛选器中间驱动程序，在堆栈表和 NDIS 筛选器模块，而[NDIS MUX 中间驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)驱动程序所需指定的内部接口关系虚拟微型端口接口和协议之间降低接口。 因此，ifStackTable 可能适用于与更复杂 MUX 驱动程序安装在系统中看到的界面堆栈关系。
 
 由于未安装在此示例中的系统上的 NDIS 中间 MUX 驱动程序，ifStackTable 仅显示了 NDIS 已提供的堆栈关系。 在以下示例中，单击句柄上的第三行 (句柄 ffffdf801494c010，较低 IfIndex 16) 较低的接口显示接口的 QoS 数据包计划程序。
 
@@ -165,21 +165,21 @@ STATE
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[维护网络接口堆栈](https://msdn.microsoft.com/windows/hardware/drivers/network/maintaining-a-network-interface-stack)
+[维护网络接口堆栈](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)
 
-[NDIS MUX 中间驱动程序](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-mux-intermediate-drivers)
+[NDIS MUX 中间驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)
 
-[**!ndiskd.netreport**](-ndiskd-netreport.md)
+[ **!ndiskd.netreport**](-ndiskd-netreport.md)
 
  
 

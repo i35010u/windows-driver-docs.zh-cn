@@ -14,12 +14,12 @@ keywords:
 - 资源申报 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 468c0144e45f6ee1688e0b231867528615f2d2f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d3dbacd2e761badad7defa649e8088719ce6694
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384954"
 ---
 # <a name="driverentrys-optional-responsibilities"></a>DriverEntry 的可选责任
 
@@ -27,29 +27,29 @@ ms.locfileid: "63359259"
 
 
 
-具体取决于在分层驱动程序，基础设备的性质和驱动程序，设计一个链中的特定驱动程序的位置[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程还可以负责以下：
+具体取决于在分层驱动程序，基础设备的性质和驱动程序，设计一个链中的特定驱动程序的位置[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程还可以负责以下：
 
--   调用[ **IoAllocateDriverObjectExtension** ](https://msdn.microsoft.com/library/windows/hardware/ff548233)来创建和初始化对象扩展名为驱动程序，如果驱动程序需要存储在驱动程序范围的基础上的数据。 驱动程序对象扩展是特定于驱动程序的数据结构。 例如，驱动程序可能会使用其驱动程序对象扩展将存储注册表路径，或者其他全局信息。
+-   调用[ **IoAllocateDriverObjectExtension** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatedriverobjectextension)来创建和初始化对象扩展名为驱动程序，如果驱动程序需要存储在驱动程序范围的基础上的数据。 驱动程序对象扩展是特定于驱动程序的数据结构。 例如，驱动程序可能会使用其驱动程序对象扩展将存储注册表路径，或者其他全局信息。
 
--   调用[ **PsCreateSystemThread** ](https://msdn.microsoft.com/library/windows/hardware/ff559932)创建 executive 工作线程，如果驱动程序 （如文件系统驱动程序） 使用此类线程的最高级别的驱动程序。 在这种情况下，该驱动程序还必须具有类型工作线程的回调例程\_线程\_例程，采用单个输入 PVOID*参数*。
+-   调用[ **PsCreateSystemThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)创建 executive 工作线程，如果驱动程序 （如文件系统驱动程序） 使用此类线程的最高级别的驱动程序。 在这种情况下，该驱动程序还必须具有类型工作线程的回调例程\_线程\_例程，采用单个输入 PVOID*参数*。
 
--   注册[*重新初始化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)例程。 (请参阅[写入的重新初始化例程](writing-a-reinitialize-routine.md)。)
+-   注册[*重新初始化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)例程。 (请参阅[写入的重新初始化例程](writing-a-reinitialize-routine.md)。)
 
 -   处理与讨论，如那些使用端口或类的驱动程序协同工作的特定于设备的微型端口或 miniclass 驱动程序可能具有不同的特定于类的初始化需求。 请参阅设备类型特定文档的详细信息中 Windows Driver Kit (WDK)。
 
 ### <a name="providing-storage-for-system-resources"></a>提供用于系统资源存储空间
 
-应在分配每个设备对象[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程或调度例程中用于处理即插即用[ **IRP\_MN\_开始\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求时，不能在**DriverEntry**。
+应在分配每个设备对象[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程或调度例程中用于处理即插即用[ **IRP\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求时，不能在**DriverEntry**。
 
 但是，驱动程序可能需要为其他驱动程序范围内使用分配额外的系统空间内存。 如果是这样， **DriverEntry**例程可以调用一个 （或多个） 下面的例程：
 
 -   **IoAllocateDriverObjectExtension**，若要创建与驱动程序对象相关联的上下文区域
 
--   [**ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)分页或非分页系统空间内存
+-   [**ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)分页或非分页系统空间内存
 
--   [**MmAllocateNonCachedMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff554479)或[ **MmAllocateContiguousMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff554460)缓存对齐非分页的系统的空间内存 （用于 I/O 缓冲区）
+-   [**MmAllocateNonCachedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)或[ **MmAllocateContiguousMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)缓存对齐非分页的系统的空间内存 （用于 I/O 缓冲区）
 
-每个**DriverEntry**例程在 IRQL 在系统线程的上下文中运行 = 被动\_级别。 因此，与分配任何内存**ExAllocatePoolWithTag**在初始化过程中以独占方式使用可以是从页面缓冲池，只要该驱动程序不会控制保存系统页面文件的设备。 必须具有释放已分配的内存[ **ExFreePool** ](https://msdn.microsoft.com/library/windows/hardware/ff544590)之前**DriverEntry**返回控件。 但是，该设置的驱动程序*重新初始化*例程可以将指针传递到此内存时它将调用[ **IoRegisterDriverReinitialization**](https://msdn.microsoft.com/library/windows/hardware/ff549511)，从而使驱动程序*重新初始化*负责释放的内存分配例程。
+每个**DriverEntry**例程在 IRQL 在系统线程的上下文中运行 = 被动\_级别。 因此，与分配任何内存**ExAllocatePoolWithTag**在初始化过程中以独占方式使用可以是从页面缓冲池，只要该驱动程序不会控制保存系统页面文件的设备。 必须具有释放已分配的内存[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)之前**DriverEntry**返回控件。 但是，该设置的驱动程序*重新初始化*例程可以将指针传递到此内存时它将调用[ **IoRegisterDriverReinitialization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioregisterdriverreinitialization)，从而使驱动程序*重新初始化*负责释放的内存分配例程。
 
 ### <a href="" id="claiming-hardware-resources-"></a>声明的硬件资源
 

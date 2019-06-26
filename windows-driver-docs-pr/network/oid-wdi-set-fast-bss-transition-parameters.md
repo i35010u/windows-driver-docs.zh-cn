@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a0a4099a4aec594c70bebeaca39582a1cfb8e9a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b10d48664ad432f0f0c7255df77f57400389836
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330179"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381205"
 ---
 # <a name="oidwdisetfastbsstransitionparameters"></a>OID\_WDI\_SET\_FAST\_BSS\_TRANSITION\_PARAMETERS
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_快速\_BSS\_转换\_参数发送到响应中[NDIS\_状态\_WD
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 否                       | 1                               |
+| Port  | 否                       | 1                               |
 
  
 
@@ -30,10 +30,10 @@ OID\_WDI\_设置\_快速\_BSS\_转换\_参数发送到响应中[NDIS\_状态\_WD
 
 | TLV                                                  | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                                                    |
 |------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/dn898068)      |                                |          | 此状态为成功，其余字段 RSNIE、 MDE （FTE） 存在。 这表示没有任何问题或错误的身份验证响应 （例如，MIC 检查失败），IHV 可以继续重新关联请求。 |
-| [**WDI\_TLV\_FT\_RSNIE**](https://msdn.microsoft.com/library/windows/hardware/mt269125) |                                | X        | RSN IE 字节 blob。                                                                                                                                                                                                                                          |
-| [**WDI\_TLV\_FT\_MDE**](https://msdn.microsoft.com/library/windows/hardware/mt269120)     |                                | X        | MDE 字节 blob。                                                                                                                                                                                                                                             |
-| [**WDI\_TLV\_FT\_FTE**](https://msdn.microsoft.com/library/windows/hardware/mt269118)     |                                | X        | FTE 字节 blob。                                                                                                                                                                                                                                             |
+| [**WDI\_TLV\_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-status)      |                                |          | 此状态为成功，其余字段 RSNIE、 MDE （FTE） 存在。 这表示没有任何问题或错误的身份验证响应 （例如，MIC 检查失败），IHV 可以继续重新关联请求。 |
+| [**WDI\_TLV\_FT\_RSNIE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-rsnie) |                                | X        | RSN IE 字节 blob。                                                                                                                                                                                                                                          |
+| [**WDI\_TLV\_FT\_MDE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-mde)     |                                | X        | MDE 字节 blob。                                                                                                                                                                                                                                             |
+| [**WDI\_TLV\_FT\_FTE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-fte)     |                                | X        | FTE 字节 blob。                                                                                                                                                                                                                                             |
 
  
 

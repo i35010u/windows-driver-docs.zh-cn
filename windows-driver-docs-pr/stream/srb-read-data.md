@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55e41d5de27e47e28709aadf446c2729b620ce83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb81167225ba568a003db556f408f1264b095426
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351605"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377875"
 ---
 # <a name="srbreaddata"></a>SRB\_READ\_DATA
 
@@ -42,7 +42,7 @@ ms.locfileid: "63351605"
 
 ### <a name="comments"></a>备注
 
-值*pSrb*-&gt;**CommandData**。**DataBufferArray**指向的数组[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构，一起描述了数据缓冲区。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。 *pSrb*-&gt;**CommandData**。**NumberOfBuffers**指定数组的大小。
+值*pSrb*-&gt;**CommandData**。**DataBufferArray**指向的数组[ **KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)结构，一起描述了数据缓冲区。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。 *pSrb*-&gt;**CommandData**。**NumberOfBuffers**指定数组的大小。
 
 **当 SRB\_读取\_微型驱动程序收到数据命令时，响应的微型驱动程序例程应：**
 

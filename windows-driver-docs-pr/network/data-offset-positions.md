@@ -6,27 +6,27 @@ keywords:
 - 数据偏移的位置的网络驱动程序
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 568d5f786aef4c385d5637babf6ff9741284d73a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9077d9cdf35d362af81aeab2529dbcca2bcf948e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330191"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364939"
 ---
 # <a name="data-offset-positions"></a>数据偏移位置
 
-当筛选器引擎调用标注驱动程序[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数，它将指针传递到一个结构*数据*参数。 对于筛选数据包数据层，该指针指向[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。 具体取决于在其中筛选层*classifyFn*标注函数被调用时，筛选器引擎将指针数据 * 参数中传递给以下结构：
+当筛选器引擎调用标注驱动程序[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数，它将指针传递到一个结构*数据*参数。 对于筛选数据包数据层，该指针指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 具体取决于在其中筛选层*classifyFn*标注函数被调用时，筛选器引擎将指针数据 * 参数中传递给以下结构：
 
-- 为流层*数据*参数包含一个指向[FWPS_STREAM_CALLOUT_IO_PACKET0](https://msdn.microsoft.com/library/windows/hardware/ff552417)结构。 此结构的 streamData 成员包含一个指向[FWPS_STREAM_DATA0](https://msdn.microsoft.com/library/windows/hardware/ff552419)结构。 
+- 为流层*数据*参数包含一个指向[FWPS_STREAM_CALLOUT_IO_PACKET0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)结构。 此结构的 streamData 成员包含一个指向[FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_data0_)结构。 
 
-    **NetBufferListChain**的成员[FWPS_STREAM_DATA0](https://msdn.microsoft.com/library/windows/hardware/ff552419)结构包含一个指向[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。 
+    **NetBufferListChain**的成员[FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_data0_)结构包含一个指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 
 
-- 对于所有其他层，*数据*参数包含一个指向[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。
+- 对于所有其他层，*数据*参数包含一个指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
 
 > [!NOTE]
-> *数据*参数可以为 NULL，具体取决于要筛选的层和在其下的条件的驱动程序[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数进行调用。
+> *数据*参数可以为 NULL，具体取决于要筛选的层和在其下的条件的驱动程序[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数进行调用。
  
-[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构中包含的链接的列表[NET_BUFFER](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构。 内[NET_BUFFER_DATA](https://msdn.microsoft.com/library/windows/hardware/ff568381)结构的每个**NET_BUFFER**结构**DataOffset**成员指向的数据包数据中的特定位置。 位置的**DataOffset**成员指向取决于筛选的筛选器引擎将调用标注驱动程序的一层*classifyFn*标注函数。 
+[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构中包含的链接的列表[NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构。 内[NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_data)结构的每个**NET_BUFFER**结构**DataOffset**成员指向的数据包数据中的特定位置。 位置的**DataOffset**成员指向取决于筛选的筛选器引擎将调用标注驱动程序的一层*classifyFn*标注函数。 
 
 对于每个筛选层，由指定的数据包数据中的位置**DataOffset**成员定义，如下所示：
 
@@ -422,7 +422,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
 <p>不适用。</p>
-<div class="alert"><b>请注意</b>筛选层，这些<i><em>数据</em></i>参数包含一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff551231"> <b>FWPS_CONNECT_REQUEST0</b> </a>结构。 此结构不引用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568388"> <b>NET_BUFFER_LIST</b> </a>描述包的数据结构。</div>
+<div class="alert"><b>请注意</b>筛选层，这些<i><em>数据</em></i>参数包含一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0"> <b>FWPS_CONNECT_REQUEST0</b> </a>结构。 此结构不引用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>描述包的数据结构。</div>
 <div> </div>
 </td>
 </tr>
@@ -433,7 +433,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
 <p>不适用。</p>
-<div class="alert"><b>请注意</b>筛选层，这些<i><em>数据</em></i>参数包含一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff551221"> <b>FWPS_BIND_REQUEST0</b> </a>结构。 此结构不引用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568388"> <b>NET_BUFFER_LIST</b> </a>描述包的数据结构。</div>
+<div class="alert"><b>请注意</b>筛选层，这些<i><em>数据</em></i>参数包含一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_bind_request0"> <b>FWPS_BIND_REQUEST0</b> </a>结构。 此结构不引用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>描述包的数据结构。</div>
 <div> </div>
 </td>
 </tr>

@@ -9,12 +9,12 @@ keywords:
 - 注册表项对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 364fbd4055f5399d80f93ea8bfba5c695fe7edd7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8ac1c97d3a207f1d8e5247a3ca2e60ce1d40264
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338454"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373437"
 ---
 # <a name="registry-key-object-routines"></a>注册表项对象例程
 
@@ -65,7 +65,7 @@ Windows 高级管理人员管理的对象管理器 executive 对象作为表示�
 
 2.  执行预期的操作通过调用适当**Zw*Xxx*密钥**例程。 有关如何执行此操作的信息，请参阅[使用注册表项对象的句柄](using-a-handle-to-a-registry-key-object.md)。
 
-3.  通过调用关闭句柄[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)。
+3.  通过调用关闭句柄[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)。
 
  
 

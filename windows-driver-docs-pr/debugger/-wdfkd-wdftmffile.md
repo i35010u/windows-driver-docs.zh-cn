@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 700bbd5720637a79d596cbdd8c44e2bb364b27e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43e964b5f53a774e8e573443cc6d479e5e79a7b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323161"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363087"
 ---
 # <a name="wdfkdwdftmffile"></a>!wdfkd.wdftmffile
 
@@ -49,7 +49,7 @@ KMDF 1，UMDF 2
 <a name="remarks"></a>备注
 -------
 
-如果您的驱动程序使用早于 1.11 KMDF 版本，则必须使用 **！ wdfkd.wdftmffile**扩展可以使用之前[ **！ wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)或[**！ wdfkd.wdfcrashdump** ](-wdfkd-wdfcrashdump.md)扩展。
+如果您的驱动程序使用早于 1.11 KMDF 版本，则必须使用 **！ wdfkd.wdftmffile**扩展可以使用之前[ **！ wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)或[ **！ wdfkd.wdfcrashdump** ](-wdfkd-wdfcrashdump.md)扩展。
 
 框架库的符号文件 (例如 wdf01000.pdb) 从 KMDF 1.11 版开始，包含跟踪消息格式 (TMF) 条目。 在 Windows 8 版本的内核调试程序，启动[内核模式驱动程序框架扩展 (Wdfkd.dll)](kernel-mode-driver-framework-extensions--wdfkd-dll-.md)从.pdb 文件中读取的项。 因此，如果您的驱动程序使用 KMDF 版本 1.11 或更高版本，并且使用内核调试程序从 Windows 8 或更高版本，您不需要使用 **！ wdfkd.wdftmffile**。 需要包括包含在调试器中的符号文件的目录[符号路径](symbol-path.md)。 调试目标计算机可以运行任何操作系统支持 KMDF。
 
@@ -61,7 +61,7 @@ kd> !wdftmffile tools\tracing\<platform>\wdf1005.tmf
 
 请注意，其路径可能为不同的使用 Windows Driver Kit (WDK) 的版本。 此外请注意.tmf 文件的名称，表示使用 KMDF 的版本。 例如，Wdf1005.tmf 是 KMDF 版本 1.5 的.tmf 文件。
 
-有关如何在调试会话期间查看 KMDF 日志的信息，请参阅[使用框架的事件记录器](https://msdn.microsoft.com/library/windows/hardware/ff545531)。
+有关如何在调试会话期间查看 KMDF 日志的信息，请参阅[使用框架的事件记录器](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-s-event-logger)。
 
  
 

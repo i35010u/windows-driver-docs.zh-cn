@@ -7,12 +7,12 @@ keywords:
 - PendingReturned 标志
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 040aae998f8fe74a6abe88c35cec8563bcc7e10f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be4e5e06114cfaaa1a87edc50c19b80bc65e948b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379007"
 ---
 # <a name="checking-the-pendingreturned-flag"></a>检查 PendingReturned 标志
 
@@ -20,7 +20,7 @@ ms.locfileid: "63327907"
 ## <span id="ddk_checking_the_pendingreturned_flag_if"></span><span id="DDK_CHECKING_THE_PENDINGRETURNED_FLAG_IF"></span>
 
 
-如果完成例程不会向事件发送信号，则必须检查**Irp‑&gt;PendingReturned**标志。 如果设置此标志，完成例程必须通过调用标记挂起的 IRP [ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)。
+如果完成例程不会向事件发送信号，则必须检查**Irp‑&gt;PendingReturned**标志。 如果设置此标志，完成例程必须通过调用标记挂起的 IRP [ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)。
 
  
 

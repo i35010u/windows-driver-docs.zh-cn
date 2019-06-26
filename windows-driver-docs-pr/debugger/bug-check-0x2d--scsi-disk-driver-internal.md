@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd65d9ffc9b929673eb0ca52ef3f86600500ae7
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: 538937843bfee600d4b7d4c6b6eb270592822cf5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361923"
 ---
 # <a name="bug-check-0x2d-scsidiskdriverinternal"></a>Bug 检查 0x2D：SCSI\_DISK\_DRIVER\_INTERNAL
 
@@ -28,7 +28,7 @@ SCSI\_磁盘\_驱动程序\_内部 bug 检查的值为 0x0000002D。
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 提供 Shell 和自动播放的供应商图标
-description: 提供 Shell 和自动播放的供应商图标
+title: 为 Shell 和自动播放提供供应商图标
+description: 为 Shell 和自动播放提供供应商图标
 ms.assetid: 2e3afbf6-57f6-4b83-b10a-c33d9b1c1731
 keywords:
 - 自动播放图标 WDK
@@ -14,14 +14,14 @@ keywords:
 - 复制图标文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a418b127b32be34732dc2882f3fbd39a20984794
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 495919e0be8910d3d6aedcddfd28abc65c29e002
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386398"
 ---
-# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>提供 Shell 和自动播放的供应商图标
+# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>为 Shell 和自动播放提供供应商图标
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56520308"
 
 除了指定的单个设备的图标，你还可以指定的所有设备的图标的用户定义的设备组中或[设备安装程序类](device-setup-classes.md)。 有关详细信息，请参阅[准备硬件和软件以用于自动播放](https://go.microsoft.com/fwlink/p/?linkid=12032)网站。
 
-如果更新[驱动程序包](driver-packages.md)包含一个自定义图标上发布[Windows Update](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)，系统会提示用户是否有新的下载。
+如果更新[驱动程序包](driver-packages.md)包含一个自定义图标上发布[Windows Update](https://docs.microsoft.com/windows-hardware/drivers)，系统会提示用户是否有新的下载。
 
 有两个步骤的驱动程序包中包括图标文件：
 
@@ -76,17 +76,17 @@ ms.locfileid: "56520308"
 
 Windows 将保存**图标**并**NoMediaIcons**值下的条目**设备参数**下设备的密钥*硬件密钥*。 下面的示例指定的注册表位置、 值项类型和值**图标**并**NoMediaIcons**值为其设备实例 ID 是 USB 设备的条目\\Vid_0000 & Pid_0000\\059B003112010E93。
 
-**HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\**<em>USB\\Vid_0000&Pid_0000\\059B003112010E93</em>\\**Device Parameters**
+**HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\** <em>USB\\Vid_0000&Pid_0000\\059B003112010E93</em>\\**Device Parameters**
 
-**Icons** \[REG_MULTI_SZ\] = %*SystemRoo*t%*\\system32\\icon.ico*
+**Icons** \[REG_MULTI_SZ\] = %*SystemRoo*t% *\\system32\\icon.ico*
 
-**NoMediaIcons** \[REG_MULTI_SZ\] = %*SystemRoot*%*\\system32\\noicon.ico*
+**NoMediaIcons** \[REG_MULTI_SZ\] = %*SystemRoot*% *\\system32\\noicon.ico*
 
 驱动程序或其他代码应永远不会访问或修改**设备参数**直接密钥。 相反，应使用以下系统函数：
 
--   从用户模式下，使用[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)并[ **SetupDiOpenDevRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552079)。
+-   从用户模式下，使用[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)并[ **SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)。
 
--   从内核模式下，使用[ **IoOpenDeviceRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff549443)。
+-   从内核模式下，使用[ **IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)。
 
  
 

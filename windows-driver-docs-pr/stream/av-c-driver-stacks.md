@@ -9,12 +9,12 @@ keywords:
 - Avc.sys 功能驱动程序 WDK，驱动程序堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e2bb1dbb60b82b71b1f971efc250810cde13899
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 569877f930e40a4269b9196ec2592b49f93fe183
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384822"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386756"
 ---
 # <a name="avc-driver-stacks"></a>AV/C 驱动程序堆栈
 
@@ -22,7 +22,7 @@ ms.locfileid: "63384822"
 
 
 
-添加到和从 IEEE 1394 总线删除 AV/C 的设备时，插管理器加载和卸载相应的子单元驱动程序。 供应商实现 AV/C 子单元的独特功能通过编写一个子单元驱动程序，Windows 将加载到上面的 IEEE 1394 堆栈*Avc.sys*。 *Avc.sys*使用提供的基础的 IEEE 1394 和 IEC 61883 驱动程序功能来控制设备，还可以连接并管理插入。 有关这些基础驱动程序堆栈的详细信息，请参阅[的 IEEE 1394 驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/ff538867)并[IEC 61883 客户端驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537188)。
+添加到和从 IEEE 1394 总线删除 AV/C 的设备时，插管理器加载和卸载相应的子单元驱动程序。 供应商实现 AV/C 子单元的独特功能通过编写一个子单元驱动程序，Windows 将加载到上面的 IEEE 1394 堆栈*Avc.sys*。 *Avc.sys*使用提供的基础的 IEEE 1394 和 IEC 61883 驱动程序功能来控制设备，还可以连接并管理插入。 有关这些基础驱动程序堆栈的详细信息，请参阅[的 IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)并[IEC 61883 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)。
 
 对等方驱动程序堆栈为外部 C AV/设备上的子单元连接。 与此相反，虚拟驱动程序堆栈是公开到其他 AV/C 连接设备的 IEEE 1394 总线上的 AV/C 设备的计算机的单独的驱动程序堆栈。 下图演示了两个不同*Avc.sys*堆栈。
 

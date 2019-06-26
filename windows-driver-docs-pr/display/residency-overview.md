@@ -4,12 +4,12 @@ description: 驻留概述
 ms.assetid: E610C2B8-354C-4DF5-8B25-6472A9313B15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca2d31c9921b88a1c991d6fc22d984d9f22f71a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a0d9f717edf193d8acec81ae3f6111c070d4a4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378435"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385658"
 ---
 # <a name="residency-overview"></a>驻留概述
 
@@ -24,9 +24,9 @@ ms.locfileid: "63378435"
 
 随着新驻留模型的推出，驻留将被移至的显式列表而不是每个命令缓冲区列表在设备上。 视频内存管理器将确保确保之前计划执行的任何上下文属于该设备都是驻留在特定设备驻留要求列表上的所有分配。
 
-若要管理驻留，用户模式驱动程序将有权访问两个新设备驱动程序接口 (DDIs) [ *MakeResident* ](https://msdn.microsoft.com/library/windows/hardware/dn906357)并[*逐出*](https://msdn.microsoft.com/library/windows/hardware/dn906355)，同时也需要实现一个新[ *TrimResidency* ](https://msdn.microsoft.com/library/windows/hardware/dn906364)回调。 *MakeResident*将添加一个或多个分配到的设备驻留要求列表。 *逐出*将从该列表中删除一个更多分配。 *TrimResidency*视频内存管理器将调用回调，当它需要用户模式驱动程序，以减少其驻留要求。
+若要管理驻留，用户模式驱动程序将有权访问两个新设备驱动程序接口 (DDIs) [ *MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)并[*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)，同时也需要实现一个新[ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)回调。 *MakeResident*将添加一个或多个分配到的设备驻留要求列表。 *逐出*将从该列表中删除一个更多分配。 *TrimResidency*视频内存管理器将调用回调，当它需要用户模式驱动程序，以减少其驻留要求。
 
-[*MakeResident* ](https://msdn.microsoft.com/library/windows/hardware/dn906357)并[*逐出*](https://msdn.microsoft.com/library/windows/hardware/dn906355)也已更新保留的内部引用计数，这意味着多次调用*MakeResident*将需要相同数目的*逐出*调用实际上中收回分配。
+[*MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)并[*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)也已更新保留的内部引用计数，这意味着多次调用*MakeResident*将需要相同数目的*逐出*调用实际上中收回分配。
 
 在新驻留模式下，每个命令缓冲区分配和修补程序位置列表是缓慢逐步淘汰。虽然这些列表将存在在某些情况下，它们将不再具有对驻留的任何控制。
 

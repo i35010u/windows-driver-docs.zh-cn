@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 753d8e9a91414b9df2ab136ed81b8d4487748941
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d61462de593da0eba969423d82c218a29164194f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361505"
 ---
 # <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>Bug 检查 0xF1：SCSI\_VERIFIER\_检测到\_冲突
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342082"
 SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所有驱动程序验证程序的 bug 检查代码**SCSI 验证**冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="scsiverifierdetectedviolation-parameters"></a>SCSI\_VERIFIER\_检测到\_冲突参数
@@ -115,21 +115,21 @@ SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所�
 <td align="left"><p>延迟，以微秒为单位</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>Storport 微型端口驱动程序调用<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567508" data-raw-source="[StorPortStallExecution](https://msdn.microsoft.com/library/windows/hardware/ff567508)">StorPortStallExecution</a></strong>和指定的延迟超过 0.1 秒，拖延症的处理器的时间过多的时间。</p></td>
+<td align="left"><p>Storport 微型端口驱动程序调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportstallexecution" data-raw-source="[StorPortStallExecution](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportstallexecution)">StorPortStallExecution</a></strong>和指定的延迟超过 0.1 秒，拖延症的处理器的时间过多的时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2002</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567103" data-raw-source="[StorPortGetUncachedExtension](https://msdn.microsoft.com/library/windows/hardware/ff567103)">StorPortGetUncachedExtension</a></strong> 从微型端口驱动程序未调用<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[HwStorFindAdapter](https://msdn.microsoft.com/library/windows/hardware/ff557390)">HwStorFindAdapter</a></strong>例程。 <strong>StorPortGetUncachedExtension</strong>仅从微型端口驱动程序调用例程<strong>HwStorFindAdapter</strong>例程和仅为主机总线适配器。 Storport 微型端口驱动程序必须设置<strong>SrbExtensionSize</strong>的<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557459" data-raw-source="[HW_INITIALIZATION_DATA](https://msdn.microsoft.com/library/windows/hardware/ff557459)">HW_INITIALIZATION_DATA</a></strong> (Storport) 结构，然后才能调用<strong>StorPortGetUncachedExtension</strong>。</p></td>
+<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetuncachedextension" data-raw-source="[StorPortGetUncachedExtension](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetuncachedextension)">StorPortGetUncachedExtension</a></strong> 从微型端口驱动程序未调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter" data-raw-source="[HwStorFindAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)">HwStorFindAdapter</a></strong>例程。 <strong>StorPortGetUncachedExtension</strong>仅从微型端口驱动程序调用例程<strong>HwStorFindAdapter</strong>例程和仅为主机总线适配器。 Storport 微型端口驱动程序必须设置<strong>SrbExtensionSize</strong>的<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data" data-raw-source="[HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data)">HW_INITIALIZATION_DATA</a></strong> (Storport) 结构，然后才能调用<strong>StorPortGetUncachedExtension</strong>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2003</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>无效的地址传递给<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>例程。 <strong>StorPortGetDeviceBase</strong>例程支持分配给驱动程序的系统插即用 (PnP) 管理器的地址。</p></td>
+<td align="left"><p>无效的地址传递给<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase" data-raw-source="[StorPortGetDeviceBase](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)">StorPortGetDeviceBase</a></strong>例程。 <strong>StorPortGetDeviceBase</strong>例程支持分配给驱动程序的系统插即用 (PnP) 管理器的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2004</p></td>
@@ -143,7 +143,7 @@ SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所�
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>Storport 微型端口驱动程序的其中一个传递了无效的虚拟地址<strong>StorPortRead</strong><em>xxx</em>或<strong>StorPortWrite</strong><em>xxx</em>例程。 这通常意味着提供的地址不会映射到常见的缓冲区区域。 指定<em>注册</em>或<em>端口</em>必须在映射的内存空间范围内返回<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>例程。</p></td>
+<td align="left"><p>Storport 微型端口驱动程序的其中一个传递了无效的虚拟地址<strong>StorPortRead</strong><em>xxx</em>或<strong>StorPortWrite</strong><em>xxx</em>例程。 这通常意味着提供的地址不会映射到常见的缓冲区区域。 指定<em>注册</em>或<em>端口</em>必须在映射的内存空间范围内返回<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase" data-raw-source="[StorPortGetDeviceBase](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)">StorPortGetDeviceBase</a></strong>例程。</p></td>
 </tr>
 </tbody>
 </table>

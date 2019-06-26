@@ -11,19 +11,19 @@ keywords:
 - 交叉证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b506b5c3b44183dc0f203435f7b485905517163f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fafb1af6c37e3e8de4da2566d6089a0a7f58276
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348753"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393408"
 ---
 # <a name="software-publisher-certificate"></a>软件发行者证书
 
 
 若要符合[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)的 64 位版本的 Windows 中，可以通过使用软件发布者证书 (SPC) 签名的内核模式驱动程序。 从 Microsoft 授权颁发此类证书的第三方证书颁发机构 (CA) 获取 SPC。 使用这种类型的 SPC 生成的签名还遵守[即插即用驱动程序签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)64 位和 32 位版本的 Windows。
 
-**请注意**  Windows 10 桌面版 （主页、 专业版、 企业版和教育版） 和 Windows Server 2016 内核模式驱动程序必须进行签名的 Windows 硬件开发人员中心仪表板和 Windows 硬件开发人员中心仪表板需要使用 EV 证书。 有关这些更改的详细信息，请参阅[Windows 10 中的驱动程序签名更改](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)。
+**请注意**  Windows 10 桌面版 （主页、 专业版、 企业版和教育版） 和 Windows Server 2016 内核模式驱动程序必须进行签名的 Windows 硬件开发人员中心仪表板和 Windows 硬件开发人员中心仪表板需要使用 EV 证书。 有关这些更改的详细信息，请参阅[Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。
 
  
 
@@ -37,7 +37,7 @@ ms.locfileid: "63348753"
 
 ## <a name="installing-spc-information-in-the-personal-certificate-store"></a>在个人证书存储中安装 SPC 信息
 
-若要使用一个 SPC 进行签名的驱动程序符合的方式[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)，必须首先中个人信息交换中包含的证书信息 (*.pfx*)文件。 中包含的信息 *.pfx*然后必须将文件添加到驱动程序进行签名的本地计算机的个人证书存储。
+若要使用一个 SPC 进行签名的驱动程序符合的方式[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)，必须首先中个人信息交换中包含的证书信息 ( *.pfx*)文件。 中包含的信息 *.pfx*然后必须将文件添加到驱动程序进行签名的本地计算机的个人证书存储。
 
 CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此，你可以添加。*pfx*中所述的说明的个人证书存储的文件[在个人证书存储中安装.pfx 文件](#installing-a-pfx-file-in-the-personal-certificate-store)。
 
@@ -51,7 +51,7 @@ CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此
 
 若要创建。*pfx*文件由 CA 颁发的对从文件中，按照这些说明进行操作：
 
--   要转换 *.pvk*文件和一个 *.spc*文件发送到 *.pfx*文件，请使用以下[ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)在命令提示符的命令：
+-   要转换 *.pvk*文件和一个 *.spc*文件发送到 *.pfx*文件，请使用以下[ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)在命令提示符的命令：
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
@@ -63,7 +63,7 @@ CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-以下描述中使用的参数[ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)命令：
+以下描述中使用的参数[ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)命令：
 
 -   **-Pvk**  *mypvkfile.pvk*参数指定 *.pvk*文件。
 

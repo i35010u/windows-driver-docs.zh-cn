@@ -10,12 +10,12 @@ keywords:
 - 版本戳 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bea1f186462988c45a2c4eae99cce394e97b00bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3ed821f8a96c0d0f1c674f6990d722084fd6d76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352895"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385163"
 ---
 # <a name="prefix-table-management"></a>前缀表管理
 
@@ -45,11 +45,11 @@ RDBSS 定义数据结构，使用的前缀表到编录 SRV\_调用时，NET\_根
 
 -   通过调用获取共享的锁**RxAcquirePrefixTableLockShared**。
 
--   查找名称通过调用[ **RxPrefixTableLookupName**](https://msdn.microsoft.com/library/windows/hardware/ff554632)。
+-   查找名称通过调用[ **RxPrefixTableLookupName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)。
 
 -   通过调用释放共享的锁**RxReleasePrefixTableLock**。
 
-请注意，仅在 Windows XP 和早期版本的 Windows 上实现某些例程。 [**RxPrefixTableLookupName** ](https://msdn.microsoft.com/library/windows/hardware/ff554632)是所有版本的 Windows 上实现的唯一前缀表管理例程
+请注意，仅在 Windows XP 和早期版本的 Windows 上实现某些例程。 [**RxPrefixTableLookupName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)是所有版本的 Windows 上实现的唯一前缀表管理例程
 
 RDBSS 前缀表管理例程包括：
 
@@ -66,21 +66,21 @@ RDBSS 前缀表管理例程包括：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554595" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockExclusive&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554595)"><strong>RxpAcquirePrefixTableLockExclusive</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockexclusive" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockExclusive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockexclusive)"><strong>RxpAcquirePrefixTableLockExclusive</strong></a></p></td>
 <td align="left"><p>此例程将获取对目录 SRV_CALL 和 NET_ROOT 名称所用的前缀表的排他锁。</p>
 <p>此例程才在 Windows XP 和 Windows 2000 上可用。 此例程 RDBSS 供内部使用和不能由网络微型-重定向程序。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554598" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockShared&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554598)"><strong>RxpAcquirePrefixTableLockShared</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockshared" data-raw-source="[&lt;strong&gt;RxpAcquirePrefixTableLockShared&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpacquireprefixtablelockshared)"><strong>RxpAcquirePrefixTableLockShared</strong></a></p></td>
 <td align="left"><p>此例程将获取对目录 SRV_CALL 和 NET_ROOT 名称所用的前缀表上的共享的锁。</p>
 <p>此例程才在 Windows XP 和 Windows 2000 上可用。 此例程 RDBSS 供内部使用和不能由网络微型-重定向程序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554632" data-raw-source="[&lt;strong&gt;RxPrefixTableLookupName&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554632)"><strong>RxPrefixTableLookupName</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname" data-raw-source="[&lt;strong&gt;RxPrefixTableLookupName&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)"><strong>RxPrefixTableLookupName</strong></a></p></td>
 <td align="left"><p>例程查找到目录 SRV_CALL 所用的前缀表中的名称和 NET_ROOT 名称，并将从基础指针转换为包含结构。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554637" data-raw-source="[&lt;strong&gt;RxpReleasePrefixTableLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554637)"><strong>RxpReleasePrefixTableLock</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpreleaseprefixtablelock" data-raw-source="[&lt;strong&gt;RxpReleasePrefixTableLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxpreleaseprefixtablelock)"><strong>RxpReleasePrefixTableLock</strong></a></p></td>
 <td align="left"><p>此例程释放对目录 SRV_CALL 和 NET_ROOT 名称所用的前缀表上的锁。</p>
 <p>此例程才在 Windows XP 和 Windows 2000 上可用。 此例程 RDBSS 供内部使用和不能由网络微型-重定向程序。</p></td>
 </tr>
@@ -89,7 +89,7 @@ RDBSS 前缀表管理例程包括：
 
  
 
-从 Windows Server 2003 开始上, 表中所述例程除外[ **RxPrefixTableLookupName**](https://msdn.microsoft.com/library/windows/hardware/ff554632)，替换为宏。以下宏的定义，调用表例程参数较少的前缀。
+从 Windows Server 2003 开始上, 表中所述例程除外[ **RxPrefixTableLookupName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prefix/nf-prefix-rxprefixtablelookupname)，替换为宏。以下宏的定义，调用表例程参数较少的前缀。
 
 <table>
 <colgroup>

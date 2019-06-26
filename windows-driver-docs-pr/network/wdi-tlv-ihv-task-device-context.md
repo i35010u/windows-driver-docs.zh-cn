@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_IHV_TASK_DEVICE_CONTEXT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f42ab8d6b3213e04229945447cbd1b28283fd3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a5dcabc0c42b41c273a6378f5fcb3adaa66170d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380803"
 ---
 # <a name="wditlvihvtaskdevicecontext"></a>WDI\_TLV\_IHV\_TASK\_DEVICE\_CONTEXT
 
 
-WDI\_TLV\_IHV\_任务\_设备\_上下文是包含 IHV 提供的设备上下文 TLV [NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求](https://msdn.microsoft.com/library/windows/hardware/dn925637)。
+WDI\_TLV\_IHV\_任务\_设备\_上下文是包含 IHV 提供的设备上下文 TLV [NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-ihv-task-request)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

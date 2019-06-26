@@ -9,12 +9,12 @@ keywords:
 - 下载符号
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c32a3743b44db5299f0becc4f6e80320656bc51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7397b2464a590d30354342e86193a9d6a202317
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368484"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361407"
 ---
 # <a name="windows-symbol-packages"></a>Windows 符号程序包
 
@@ -44,10 +44,10 @@ ms.locfileid: "63368484"
 
 - [下载 Windows 调试工具](debugger-download-tools.md)
 
-- [下载 Windows 驱动程序工具包 (WDK)](https://developer.microsoft.com/windows/hardware/windows-driver-kit)
+- [下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 
-- [下载 Windows 评估和部署工具包 (Windows ADK)](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
+- [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 
-- [下载 Windows HLK、HCK 或徽标工具包](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
+- [下载 Windows HLK、HCK 或徽标工具包](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
 
 - [下载 Windows Insider Preview 版本](https://insider.windows.com/)

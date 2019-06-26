@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d04713f9a99dd388e96faad05af956e25b83c809
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b63992586f5180a9d580016dc2401f86f450922a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387109"
 ---
 # <a name="devpkeydevicebusrelations"></a>DEVPKEY_Device_BusRelations
 
 
-DEVPKEY_Device_BusRelations 设备属性表示[**总线关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)设备实例。
+DEVPKEY_Device_BusRelations 设备属性表示[**总线关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)设备实例。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ DEVPKEY_Device_BusRelations 设备属性表示[**总线关系**](https://msdn.mi
 <a name="remarks"></a>备注
 -------
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_BusRelations 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_BusRelations 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持此属性。 有关如何检索这些早期版本的 Windows 上的设备的关系属性的信息，请参阅[检索设备关系](https://msdn.microsoft.com/library/windows/hardware/ff550630)。
+Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持此属性。 有关如何检索这些早期版本的 Windows 上的设备的关系属性的信息，请参阅[检索设备关系](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-device-relations)。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持此属性。 �
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

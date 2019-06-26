@@ -14,12 +14,12 @@ keywords:
 - 电源管理 WDK NDIS 微型端口，用户输入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abc803dd36329774f3928581555520aa8fa9a108
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d49fb0ddb4e2d08a07fa15410ab9453238702abe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360811"
 ---
 # <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS 如何设置网络适配器的电源策略
 
@@ -27,19 +27,19 @@ ms.locfileid: "63349631"
 
 
 
-NDIS 用作每个网络设备的设备电源策略所有者。 在这种情况下，NDIS 设置和管理每个网络设备的电源策略。 有关管理设备的电源策略的详细信息，请参阅[管理设备的电源策略](https://msdn.microsoft.com/library/windows/hardware/ff554355)。
+NDIS 用作每个网络设备的设备电源策略所有者。 在这种情况下，NDIS 设置和管理每个网络设备的电源策略。 有关管理设备的电源策略的详细信息，请参阅[管理设备的电源策略](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-device-power-policy)。
 
 NDIS 使用以下信息来为 NIC 设置电源策略：
 
--   [**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)总线驱动程序返回响应的结构[ **IRP\_MN\_查询\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551664) NDIS 发出的请求。
+-   [**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)总线驱动程序返回响应的结构[ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities) NDIS 发出的请求。
 
--   微型端口驱动程序的响应[OID\_PNP\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569774)NDIS 发出请求。
+-   微型端口驱动程序的响应[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)NDIS 发出请求。
 
 -   用户输入从用户界面 (UI)。
 
 ### <a href="" id="using-the-device-capabilities-structure"></a>使用设备\_功能结构
 
-NDIS 时枚举 NIC 时，通过发出其他请求，除了查询 NIC 的功能[ **IRP\_MN\_查询\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)请求。 在对此请求的响应，总线驱动程序将返回[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)结构。 NDIS 可将此结构，为 NIC 设置电源策略时使用此结构中的以下信息
+NDIS 时枚举 NIC 时，通过发出其他请求，除了查询 NIC 的功能[ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)请求。 在对此请求的响应，总线驱动程序将返回[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构。 NDIS 可将此结构，为 NIC 设置电源策略时使用此结构中的以下信息
 
 <table>
 <colgroup>
@@ -54,39 +54,39 @@ NDIS 时枚举 NIC 时，通过发出其他请求，除了查询 NIC 的功能[ 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543085" data-raw-source="[DeviceD1 and DeviceD2](https://msdn.microsoft.com/library/windows/hardware/ff543085)">DeviceD1 和 DeviceD2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2)">DeviceD1 和 DeviceD2</a></p></td>
 <td align="left"><p>如果设备支持 D1 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543085" data-raw-source="[DeviceD1 and DeviceD2](https://msdn.microsoft.com/library/windows/hardware/ff543085)">DeviceD1 和 DeviceD2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2)">DeviceD1 和 DeviceD2</a></p></td>
 <td align="left"><p>如果设备支持 D2 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565609" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://msdn.microsoft.com/library/windows/hardware/ff565609)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备可以响应外部唤醒信号中 D0 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565609" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://msdn.microsoft.com/library/windows/hardware/ff565609)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备可以响应外部唤醒信号中的 D1 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565609" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://msdn.microsoft.com/library/windows/hardware/ff565609)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备可以响应外部唤醒信号中 D2 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565609" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://msdn.microsoft.com/library/windows/hardware/ff565609)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3)">WakeFromD0、 WakeFromD1、 WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备可以响应外部唤醒信号中 D3 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543087" data-raw-source="[DeviceState](https://msdn.microsoft.com/library/windows/hardware/ff543087)">DeviceState</a><strong>[PowerSystemMaximum]</strong></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate" data-raw-source="[DeviceState](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate)">DeviceState</a><strong>[PowerSystemMaximum]</strong></p></td>
 <td align="left"><p>指定此设备可以维护的每个系统电源状态，从 highest-powered 设备状态<strong>PowerSystemUnspecified</strong>到<strong>PowerSystemShutdown</strong>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564538" data-raw-source="[SystemWake](https://msdn.microsoft.com/library/windows/hardware/ff564538)">SystemWake</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/systemwake" data-raw-source="[SystemWake](https://docs.microsoft.com/windows-hardware/drivers/kernel/systemwake)">SystemWake</a></p></td>
 <td align="left"><p>指定最低支持系统电源状态 (通过 S4 S0) 从其设备可以发出信号发生唤醒事件。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543091" data-raw-source="[DeviceWake](https://msdn.microsoft.com/library/windows/hardware/ff543091)">DeviceWake</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/devicewake" data-raw-source="[DeviceWake](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicewake)">DeviceWake</a></p></td>
 <td align="left"><p>指定最低功率设备电源状态 (通过 D3 D0) 从其设备可以发出信号发生唤醒事件。</p></td>
 </tr>
 </tbody>
@@ -115,19 +115,19 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 
 如前面的示例值，数组所示，当系统在系统电源状态 S1 中时，NIC 可以是设备电源状态下，D1、 D2 或 D3。 当系统处于系统电源状态 S2 或 S3，NIC 可以是设备电源状态下 D2 或 D3。
 
-若要确定系统和 NIC 是否支持 LAN 唤醒，NDIS 检查这两**SystemWake**并**DeviceWake**成员。 如果这两个**SystemWake**并**DeviceWake**设置为**PowerSystemUnspecified**，NDIS 将视为能使用电源管理的 NIC。 在这种情况下，或如果微型端口驱动程序设置 NDIS\_特性\_否\_暂停\_ON\_挂起标志初始化过程中，随后 NDIS 发出微型端口驱动程序[OID\_PNP\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569774)请求以获取有关 NIC 的唤醒功能的详细信息。
+若要确定系统和 NIC 是否支持 LAN 唤醒，NDIS 检查这两**SystemWake**并**DeviceWake**成员。 如果这两个**SystemWake**并**DeviceWake**设置为**PowerSystemUnspecified**，NDIS 将视为能使用电源管理的 NIC。 在这种情况下，或如果微型端口驱动程序设置 NDIS\_特性\_否\_暂停\_ON\_挂起标志初始化过程中，随后 NDIS 发出微型端口驱动程序[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)请求以获取有关 NIC 的唤醒功能的详细信息。
 
 ### <a href="" id="using-oid-pnp-capabilities"></a>使用 OID\_PNP\_功能
 
-后微型端口驱动程序已成功将返回从其[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，NDIS 发送 OID\_PNP\_对驱动程序如果的功能请求的以下条件为真：
+后微型端口驱动程序已成功将返回从其[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，NDIS 发送 OID\_PNP\_对驱动程序如果的功能请求的以下条件为真：
 
--   这两个**SystemWake**并**DeviceWake**的成员[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)返回的结构总线驱动程序都*不*设置为**PowerSystemUnspecified**。
+-   这两个**SystemWake**并**DeviceWake**的成员[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)返回的结构总线驱动程序都*不*设置为**PowerSystemUnspecified**。
 
--   微型端口驱动程序设置 NDIS\_特性\_否\_暂停\_ON\_挂起标志时调用它[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)在初始化过程中。
+-   微型端口驱动程序设置 NDIS\_特性\_否\_暂停\_ON\_挂起标志时调用它[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)在初始化过程中。
 
 请注意 NDIS 发出 OID\_PNP\_而不考虑用户是否已启用用户界面中对 LAN 唤醒功能请求。
 
-如果微型端口驱动程序返回 NDIS\_状态\_中的查询响应成功[OID\_PNP\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569774)，NDIS 将视为电源管理功能的微型端口驱动程序。 如果微型端口驱动程序返回 NDIS\_状态\_不\_支持，NDIS 视为微型端口驱动程序不是电源管理功能的旧微型端口驱动程序。 有关此类驱动程序的电源管理的详细信息，请参阅[旧微型端口驱动程序的电源管理](power-management-for-old-miniport-drivers.md)。
+如果微型端口驱动程序返回 NDIS\_状态\_中的查询响应成功[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)，NDIS 将视为电源管理功能的微型端口驱动程序。 如果微型端口驱动程序返回 NDIS\_状态\_不\_支持，NDIS 视为微型端口驱动程序不是电源管理功能的旧微型端口驱动程序。 有关此类驱动程序的电源管理的详细信息，请参阅[旧微型端口驱动程序的电源管理](power-management-for-old-miniport-drivers.md)。
 
 成功 OID 的微型端口驱动程序\_PNP\_功能请求到 NDIS 到请求的响应中返回以下信息：
 
@@ -161,7 +161,7 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 
 -   用户选择了第二个选项，若要启用 LAN 唤醒。
 
--   响应中的微型端口驱动程序[OID\_PNP\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569774)，指示 NIC 无法唤醒接收幻数据包上的系统。
+-   响应中的微型端口驱动程序[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)，指示 NIC 无法唤醒接收幻数据包上的系统。
 
 **仅允许管理工作站，从而使计算机脱离待机状态**选项是默认情况下清除。 用户可以选择此选项可指定仅接收幻数据包将导致生成到系统唤醒信号的 NIC。
 

@@ -21,12 +21,12 @@ keywords:
 - 计时器对象 WDK 内核，过期时间
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d328e808a94225536cd8ef31216a86ecf8a477c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cba98337ccf7fc0f17173d0b2ad05b59c890bc5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377091"
 ---
 # <a name="registering-and-queuing-a-customtimerdpc-routine"></a>CustomTimerDpc 例程注册和排队
 
@@ -34,13 +34,13 @@ ms.locfileid: "63352994"
 
 
 
-驱动程序可以注册[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)例程通过调用以下例程通常从其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程：
+驱动程序可以注册[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)例程通过调用以下例程通常从其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程：
 
-1.  [**KeInitializeDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff552130)注册其例程
+1.  [**KeInitializeDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializedpc)注册其例程
 
-2.  [**KeInitializeTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff552168)或[ **KeInitializeTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552173)设置计时器对象
+2.  [**KeInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimer)或[ **KeInitializeTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimerex)设置计时器对象
 
-随后，该驱动程序可以调用[ **KeSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff553286)或[ **KeSetTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff553292)指定到期时间并将添加到计时器对象系统的计时器队列。 系统达到过期时间后，该计时器对象并调用取消排队*CustomTimerDpc*例程。 下图说明了这些调用。
+随后，该驱动程序可以调用[ **KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)或[ **KeSetTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)指定到期时间并将添加到计时器对象系统的计时器队列。 系统达到过期时间后，该计时器对象并调用取消排队*CustomTimerDpc*例程。 下图说明了这些调用。
 
 ![说明 customtimerdpc 例程使用计时器和 dpc 对象的关系图](images/3ketmdpc.png)
 
@@ -64,11 +64,11 @@ ms.locfileid: "63352994"
 
      
 
-可以为指定的最小时间间隔**KeSetTimer**并**KeSetTimerEx**大约为 10 毫秒，因此驱动程序可以使用*CustomTimerDpc*例程当计时比更小的间隔[ *IoTimer* ](https://msdn.microsoft.com/library/windows/hardware/ff550381)例程，每秒一次运行时，可以处理。
+可以为指定的最小时间间隔**KeSetTimer**并**KeSetTimerEx**大约为 10 毫秒，因此驱动程序可以使用*CustomTimerDpc*例程当计时比更小的间隔[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)例程，每秒一次运行时，可以处理。
 
 可以在任意时刻排队的特定计时器对象只有一个实例化。 调用**KeSetTimer**或**KeSetTimerEx**再次具有相同*计时器*对象指针取消排队的计时器对象，并将其重置。
 
-设置[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)例程是完全一样设置[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)例程，与其他步骤，以初始化计时器对象。 事实上，其原型是相同的但*CustomTimerDpc*例程不能使用这两个*SystemArgument*其原型中声明的指针。
+设置[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)例程是完全一样设置[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)例程，与其他步骤，以初始化计时器对象。 事实上，其原型是相同的但*CustomTimerDpc*例程不能使用这两个*SystemArgument*其原型中声明的指针。
 
  
 

@@ -13,12 +13,12 @@ keywords:
 - 转换每像素 8 位半色调索引 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d664d9cc1e4662081bafa86777b8592f347a60b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 123914bda2dd9cb04dc62b8879c5e33532dcb3e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353426"
 ---
 # <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>将每像素 8 位半色调索引转换为墨位
 
@@ -26,7 +26,7 @@ ms.locfileid: "63389797"
 ## <span id="ddk_translating_8_bit_per_pixel_halftone_indexes_to_ink_levels_gg"></span><span id="DDK_TRANSLATING_8_BIT_PER_PIXEL_HALFTONE_INDEXES_TO_INK_LEVELS_GG"></span>
 
 
-**GenerateInkLevels**如下所示的函数提供了如何转换到的墨水量的每像素 8 位半色调索引的一个示例。 这些索引包含在 CMY 模式和 CMY\_反转模式调色板的 GDI [ **HT\_Get8BPPMaskPalette** ](https://msdn.microsoft.com/library/windows/hardware/ff567320)函数以返回其*pPaletteEntry*参数。 **GenerateInkLevels**生成 INKLEVELS 结构的一个 256 元素的数组。
+**GenerateInkLevels**如下所示的函数提供了如何转换到的墨水量的每像素 8 位半色调索引的一个示例。 这些索引包含在 CMY 模式和 CMY\_反转模式调色板的 GDI [ **HT\_Get8BPPMaskPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)函数以返回其*pPaletteEntry*参数。 **GenerateInkLevels**生成 INKLEVELS 结构的一个 256 元素的数组。
 
 此函数可用于生成 Windows 2000 CMY 模式或 post-Windows 2000 CMY\_结模式转换表。 此函数还可用于生成 Windows 2000 CMY 模式 CMY332 反向映射索引表。 （CMY332 使用三位的蓝绿色和洋红和黄色的两位。）当*CMYMask*值为 3 到 255 范围内，该函数的调用方可以使用此表来映射 post-Windows 2000 CMY\_结索引的当前现有的 Windows 2000 CMY 索引到驱动程序。
 

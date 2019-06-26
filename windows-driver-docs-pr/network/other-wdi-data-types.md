@@ -6,16 +6,16 @@ keywords:
 - 其他 WDI 数据类型，WDK 其他 WDI 数据类型的网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7abaa3f717907af12e5f2e09fe47e21f026aea47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 305a19e6e09a8fad9138429d7e50b097d5c8bddf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372491"
 ---
 # <a name="other-wdi-data-types"></a>其他 WDI 数据类型
 
-除了上列出的结构和枚举数据类型[WDI 微型端口驱动程序数据类型](https://msdn.microsoft.com/library/windows/hardware/dn926077)，WDI 微型端口驱动程序还可以使用以下类型：
+除了上列出的结构和枚举数据类型[WDI 微型端口驱动程序数据类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)，WDI 微型端口驱动程序还可以使用以下类型：
 
 [WDI_BAND_ID](wdi-band-id.md)
 

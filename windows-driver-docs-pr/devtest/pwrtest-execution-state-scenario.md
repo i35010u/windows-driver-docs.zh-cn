@@ -4,23 +4,23 @@ description: PwrTest 执行状态的情况 (/ es) 监视器线程当前正在运
 ms.assetid: 5470c99b-5780-486f-b36a-922fb821b7f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6f321396beaddca43406e4c201840a24d5f29cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58a29895573145873df565fbea55affb5efa5142
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345772"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372059"
 ---
 # <a name="pwrtest-execution-state-scenario"></a>PwrTest 执行状态方案
 
 
-PwrTest 执行状态的情况 (**/es**) 监视器线程当前正在运行的进程和服务的执行状态发生更改。
+PwrTest 执行状态的情况 ( **/es**) 监视器线程当前正在运行的进程和服务的执行状态发生更改。
 
-**请注意**  此 PwrTest 执行状态的情况主要用于应用程序使用旧版 power 请求 Api，如[ **SetThreadExecutionState 函数 (Windows)** ](https://msdn.microsoft.com/library/windows/desktop/aa373208)). 若要监视的应用程序使用较新的 power 请求 Api，如[ **PowerSetRequest 函数 (Windows)** ](https://msdn.microsoft.com/library/windows/desktop/dd405534)使用[PwrTest 请求方案](pwrtest-requests-scenario.md)相反。
+**请注意**  此 PwrTest 执行状态的情况主要用于应用程序使用旧版 power 请求 Api，如[ **SetThreadExecutionState 函数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)). 若要监视的应用程序使用较新的 power 请求 Api，如[ **PowerSetRequest 函数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)使用[PwrTest 请求方案](pwrtest-requests-scenario.md)相反。
 
  
 
-应用程序和服务可能会暂时替代监视器之类的电源管理设置和通过更改其线程执行状态睡眠空闲超时。 PwrTest 执行状态方案监视线程的执行状态和系统状态将更改该应用程序和服务使用 Win32 做[ **SetThreadExecutionState 函数 (Windows)** ](https://msdn.microsoft.com/library/windows/desktop/aa373208).
+应用程序和服务可能会暂时替代监视器之类的电源管理设置和通过更改其线程执行状态睡眠空闲超时。 PwrTest 执行状态方案监视线程的执行状态和系统状态将更改该应用程序和服务使用 Win32 做[ **SetThreadExecutionState 函数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate).
 
 可以使用 **/es**一起使用的方案[PwrTest 空闲方案](pwrtest-idle-scenario.md)来帮助确定应用程序和服务，使监视器或系统无法进入空闲状态。
 
@@ -30,28 +30,28 @@ PwrTest 执行状态的情况 (**/es**) 监视器线程当前正在运行的进�
 pwrtest /es  [/t:n] [/stes:{y|n}] [/rss:{y|n}] [/sss:{y|n}] [/all] [/user] [/kernel] [/idle] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**/t:**<em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span> **/t:** <em>n</em>  
 为方案运行指定的总时间 （以分钟为单位） (默认值*n*为 30 分钟)。
 
-<span id="_stes_yn"></span><span id="_STES_YN"></span>**/stes:**{**y**|**n**}  
-指定是否[ **SetThreadExecutionState** ](https://msdn.microsoft.com/library/windows/desktop/aa373208)应记录事件 (**y** (yes) 是默认值)。
+<span id="_stes_yn"></span><span id="_STES_YN"></span> **/stes:** {**y**|**n**}  
+指定是否[ **SetThreadExecutionState** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)应记录事件 (**y** (yes) 是默认值)。
 
-<span id="_rss_yn"></span><span id="_RSS_YN"></span>**/rss:**{**y**|**n**}  
+<span id="_rss_yn"></span><span id="_RSS_YN"></span> **/rss:** {**y**|**n**}  
 指定是否**RegisterSystemState**应记录事件 (**y** (yes) 是默认值)。
 
-<span id="_sss_yn"></span><span id="_SSS_YN"></span>**/sss:**{**y**|**n**}  
+<span id="_sss_yn"></span><span id="_SSS_YN"></span> **/sss:** {**y**|**n**}  
 指定是否**SetSystemState**应记录事件 (**y** (yes) 是默认值)。
 
-<span id="_all"></span><span id="_ALL"></span>**/all**  
-指定应记录所有事件 ([**SetThreadExecutionState**](https://msdn.microsoft.com/library/windows/desktop/aa373208)， **RegisterSystemState**， **SetSystemState**)。
+<span id="_all"></span><span id="_ALL"></span> **/all**  
+指定应记录所有事件 ([**SetThreadExecutionState**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)， **RegisterSystemState**， **SetSystemState**)。
 
-<span id="_user"></span><span id="_USER"></span>**/user**  
-指定应记录所有用户事件 ([**SetThreadExecutionState**](https://msdn.microsoft.com/library/windows/desktop/aa373208))。
+<span id="_user"></span><span id="_USER"></span> **/user**  
+指定应记录所有用户事件 ([**SetThreadExecutionState**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate))。
 
-<span id="_kernel"></span><span id="_KERNEL"></span>**/kernel**  
+<span id="_kernel"></span><span id="_KERNEL"></span> **/kernel**  
 指定应记录仅内核模式事件 (**RegisterSystemState**， **SetSystemState**)。
 
-<span id="_idle"></span><span id="_IDLE"></span>**/idle**  
+<span id="_idle"></span><span id="_IDLE"></span> **/idle**  
 日志空闲状态的统计信息。
 
 **示例**

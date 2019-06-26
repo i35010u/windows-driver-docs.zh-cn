@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e37fc6110a8d7be8f18df53d71c6e28b9caa97d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28f7acd18b4a7727b6bd71935bec346388f6a3ab
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391695"
 ---
 # <a name="kspropertypinconstraineddataranges"></a>KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES
 
@@ -53,8 +53,8 @@ KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES 属性指定的当前支持的插针上 p
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441)"><strong>KSMULTIPLE_ITEM</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff561658" data-raw-source="[&lt;strong&gt;KSDATARANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561658)"> <strong>KSDATARANGE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong> </a>并<a href="https://docs.microsoft.com/previous-versions/ff561658(v=vs.85)" data-raw-source="[&lt;strong&gt;KSDATARANGE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))"> <strong>KSDATARANGE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,15 +64,15 @@ KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES 属性指定的当前支持的插针上 p
 <a name="remarks"></a>备注
 -------
 
-**PinId**的成员[ **KSP\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff566722)结构指定 pin 工厂为其查询。
+**PinId**的成员[ **KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)结构指定 pin 工厂为其查询。
 
-此属性返回[ **KSMULTIPLE\_项**](https://msdn.microsoft.com/library/windows/hardware/ff563441)结构后, 跟一系列 64 位对齐[ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)结构。
+此属性返回[ **KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)结构后, 跟一系列 64 位对齐[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构。
 
 KS 筛选器使用此属性，以报告当前受 pin 实例化此 pin 工厂，基于任何约束的数据范围施加的 KS 筛选器的当前内部状态。 使用[ **KSPROPERTY\_PIN\_DATARANGES** ](ksproperty-pin-dataranges.md)属性来报告 KS 筛选器，而不考虑动态约束支持的所有数据范围的完整列表。
 
 Stream 微型驱动程序不需要直接; 处理此属性stream 类驱动程序处理使用流请求块的详细信息的查询此属性。
 
-有关详细信息，请参阅[KS 数据格式和数据范围](https://msdn.microsoft.com/library/windows/hardware/ff567632)。
+有关详细信息，请参阅[KS 数据格式和数据范围](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)。
 
 <a name="requirements"></a>要求
 ------------
@@ -93,9 +93,9 @@ Stream 微型驱动程序不需要直接; 处理此属性stream 类驱动程序�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSMULTIPLE\_项**](https://msdn.microsoft.com/library/windows/hardware/ff563441)
+[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
-[**KSDATARANGE**](https://msdn.microsoft.com/library/windows/hardware/ff561658)
+[**KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))
 
 [**KSPROPERTY\_PIN\_DATARANGES**](ksproperty-pin-dataranges.md)
 

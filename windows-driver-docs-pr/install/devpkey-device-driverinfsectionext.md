@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 13d93e91e048e29f26cd0568805234906ce284e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 383037f4acc7563f42ba0838dd421b4b6a1e1166
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387056"
 ---
 # <a name="devpkeydevicedriverinfsectionext"></a>DEVPKEY_Device_DriverInfSectionExt
 
 
-DEVPKEY_Device_DriverInfSectionExt 设备驱动程序属性表示的平台扩展[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)用于安装的设备实例的驱动程序。
+DEVPKEY_Device_DriverInfSectionExt 设备驱动程序属性表示的平台扩展[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)用于安装的设备实例的驱动程序。
 
 <table>
 <colgroup>
@@ -63,9 +63,9 @@ DEVPKEY_Device_DriverInfSectionExt 设备驱动程序属性表示的平台扩展
 
 Windows 设置 DEVPKEY_Device_DriverInfSectionExt 的值。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_DriverInfSectionExt 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_DriverInfSectionExt 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverInfSectionExt 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**InfSectionExt**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff537732)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverInfSectionExt 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**InfSectionExt**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,9 +90,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

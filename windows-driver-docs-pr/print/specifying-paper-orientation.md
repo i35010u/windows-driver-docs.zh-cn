@@ -13,12 +13,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 428bfa4c9bd84cd2981e09362e813df5dbb78c99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d5a15e3a3ce843b15e7db1a67749f8e6b6db3bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341304"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355090"
 ---
 # <a name="specifying-paper-orientation"></a>指定纸张方向
 
@@ -66,7 +66,7 @@ ms.locfileid: "63341304"
 }
 ```
 
-**请注意**  适用于 Windows 7， **MxdcGetPDEVAdjustment**函数具有横向旋转的新参数。 有关详细信息，请参阅[ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)。
+**请注意**  适用于 Windows 7， **MxdcGetPDEVAdjustment**函数具有横向旋转的新参数。 有关详细信息，请参阅[ **MxdcXDCGetPDEVAdjustment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mxdc/nf-mxdc-mxdcgetpdevadjustment)。
 
  
 

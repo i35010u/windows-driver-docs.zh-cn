@@ -7,12 +7,12 @@ keywords:
 - 复制保护 WDK 视频的微型端口，查询
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cf18cf5d08535313b9d5bd990595ffb6ae6bb78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62f81405aa63368913528ac8ec5d0e74d957de64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392645"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385046"
 ---
 # <a name="querying-tv-connector-and-copy-protection-hardware"></a>查询电视连接器和复制保护硬件
 
@@ -20,7 +20,7 @@ ms.locfileid: "63392645"
 ## <span id="ddk_querying_tv_connector_and_copy_protection_hardware_gg"></span><span id="DDK_QUERYING_TV_CONNECTOR_AND_COPY_PROTECTION_HARDWARE_GG"></span>
 
 
-有一个电视连接器的适配器的微型端口驱动程序必须处理[ **IOCTL\_视频\_处理\_VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff567805)请求在其[ *HwVidStartIO* ](https://msdn.microsoft.com/library/windows/hardware/ff567367)函数。 IOCTL 请求时 IOCTL\_视频\_处理\_VIDEOPARAMETERS， **InputBuffer**隶属[**视频\_请求\_数据包**](https://msdn.microsoft.com/library/windows/hardware/ff570547)结构，指向[ **VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff570173)结构。 **DwCommand**该 VIDEOPARAMETERS 结构的成员指定微型端口驱动程序是否必须提供有关电视连接器的信息 (副总裁\_命令\_获取) 或将指定的设置应用到电视连接器 (副总裁\_命令\_设置)。
+有一个电视连接器的适配器的微型端口驱动程序必须处理[ **IOCTL\_视频\_处理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)请求在其[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)函数。 IOCTL 请求时 IOCTL\_视频\_处理\_VIDEOPARAMETERS， **InputBuffer**隶属[**视频\_请求\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)结构，指向[ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)结构。 **DwCommand**该 VIDEOPARAMETERS 结构的成员指定微型端口驱动程序是否必须提供有关电视连接器的信息 (副总裁\_命令\_获取) 或将指定的设置应用到电视连接器 (副总裁\_命令\_设置)。
 
 当**dwCommand** VIDEOPARAMETERS 结构中的成员是副总裁\_命令\_GET、 微型端口驱动程序必须执行以下操作：
 
@@ -28,7 +28,7 @@ ms.locfileid: "63392645"
 
 -   电视连接器支持，每个功能中设置相应标志**dwFlags** VIDEOPARAMETERS 结构中的成员。
 
--   对于每个标记设置**dwFlags**成员，以指示功能以及与该标记关联的当前设置的相应 VIDEOPARAMETERS 结构成员分配值。 请参阅[ **VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff570173)对应于给定的标记的结构成员的列表的参考页。
+-   对于每个标记设置**dwFlags**成员，以指示功能以及与该标记关联的当前设置的相应 VIDEOPARAMETERS 结构成员分配值。 请参阅[ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)对应于给定的标记的结构成员的列表的参考页。
 
 **DwMode** VIDEOPARAMETERS 结构中的成员指定电视是否输出进行了优化的视频播放或显示 Windows 桌面。 值为视频\_模式下\_电视\_播放指定电视输出针对视频播放优化 （即，禁用闪烁筛选器和电视机之间启用）。 值为视频\_模式下\_赢取\_图形指定电视输出适用于 Windows 的图形 （也就是说，启用了最大闪烁筛选器和电视机之间已禁用）。
 

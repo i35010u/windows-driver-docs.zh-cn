@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_USSD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 27e7df1c4dc108fa526a45b7f9b3a9c034cf1dab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2875075bc7ac93b700573c80277735bc4e417387
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324877"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372519"
 ---
 # <a name="ndisstatuswwanussd"></a>NDIS\_状态\_WWAN\_USSD
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_USSD 通知来实现与非结构化补充服务数据 (USSD) 操作的事务完成响应[NDIS\_WWAN\_USSD\_请求](https://msdn.microsoft.com/library/windows/hardware/hh439846)结构。
+微型端口驱动程序使用 NDIS\_状态\_WWAN\_USSD 通知来实现与非结构化补充服务数据 (USSD) 操作的事务完成响应[NDIS\_WWAN\_USSD\_请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ussd_request)结构。
 
-微型端口驱动程序还可以发送此通知使用未经请求的事件[NDIS\_WWAN\_USSD\_事件](https://msdn.microsoft.com/library/windows/hardware/hh439844)结构来描述 USSD 事件的性质。
+微型端口驱动程序还可以发送此通知使用未经请求的事件[NDIS\_WWAN\_USSD\_事件](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ussd_event)结构来描述 USSD 事件的性质。
 
 <a name="requirements"></a>要求
 ------------
@@ -43,9 +43,9 @@ ms.locfileid: "63324877"
 ## <a name="see-also"></a>请参阅
 
 
-[NDIS\_WWAN\_USSD\_REQUEST](https://msdn.microsoft.com/library/windows/hardware/hh439846)
+[NDIS\_WWAN\_USSD\_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ussd_request)
 
-[NDIS\_WWAN\_USSD\_EVENT](https://msdn.microsoft.com/library/windows/hardware/hh439844)
+[NDIS\_WWAN\_USSD\_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ussd_event)
 
  
 

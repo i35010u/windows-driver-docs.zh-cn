@@ -10,12 +10,12 @@ keywords:
 description: NFC CX，提供了两种操作以支持不同的实现 NFCEE 管理模式有关的信息。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef73466084e3d016cf644a45c29c6a0ee88a2dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6b532c0ba21ed19bc52285309675407ab80af9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378659"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383557"
 ---
 # <a name="nfcee-discovery-sequence"></a>NFCEE 发现序列
 
@@ -34,5 +34,5 @@ ms.locfileid: "63378659"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC 类扩展 (CX) 引用](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 类扩展 (CX) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

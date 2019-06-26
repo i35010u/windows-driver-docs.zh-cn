@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af681b9ebc97368f2bf6df3038cd6edcd676083
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0661a204e988c1c2eaa89ec53064742d977b0df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370737"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372747"
 ---
 # <a name="wiaipsfeedercontrol"></a>WIA\_IPS\_送纸器\_控件
 
@@ -54,7 +54,7 @@ ms.locfileid: "63370737"
 <tbody>
 <tr class="odd">
 <td><p>WIA_FEEDER_CONTROL_AUTO</p></td>
-<td><p>设备控制送纸器汽车操作。 启动和停止每个扫描作业送纸器 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff543956" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543956)"><strong>IWiaMiniDrv::drvAcquireItemData</strong> </a>调用)。 如果支持该属性，这是所需的默认值。</p></td>
+<td><p>设备控制送纸器汽车操作。 启动和停止每个扫描作业送纸器 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv::drvAcquireItemData</strong> </a>调用)。 如果支持该属性，这是所需的默认值。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_FEEDER_CONTROL_MANUAL</p></td>
@@ -67,9 +67,9 @@ ms.locfileid: "63370737"
 
 如果设备支持此功能，WIA 应用程序可用于执行第一个扫描作业之前启动的送纸器马达 (第一个**IWiaTransfer::Download**调用) 和最后一个扫描作业之后停止送纸器 (上一次**IWiaTransfer::Download**调用当前 WIA 应用程序会话中) 已完成。 单个作业之间 (**IWiaTransfer::Download**调用)，送纸器保留其运行速度，并已准备好继续执行下一步作业，而不会延迟。
 
-如果 WIA 微型驱动程序收到[ **IWiaMiniDrv::drvAcquireItemData** ](https://msdn.microsoft.com/library/windows/hardware/ff543956)请求时 WIA\_送纸器\_控制\_手动是设置和而不会收到 WIA\_命令\_启动\_送纸器命令，WIA 微型驱动程序必须还原到 WIA\_送纸器\_命令\_自动执行扫描作业之前。
+如果 WIA 微型驱动程序收到[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)请求时 WIA\_送纸器\_控制\_手动是设置和而不会收到 WIA\_命令\_启动\_送纸器命令，WIA 微型驱动程序必须还原到 WIA\_送纸器\_命令\_自动执行扫描作业之前。
 
-如果 WIA\_送纸器\_控制\_手动设置和 WIA 微型驱动程序收到[ **IWiaMiniDrv::drvUnInitializeWia** ](https://msdn.microsoft.com/library/windows/hardware/ff545010)请求而不会收到 WIA\_命令\_停止\_送纸器命令，WIA 微型驱动程序必须返回到调用之前停止送纸器。
+如果 WIA\_送纸器\_控制\_手动设置和 WIA 微型驱动程序收到[ **IWiaMiniDrv::drvUnInitializeWia** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia)请求而不会收到 WIA\_命令\_停止\_送纸器命令，WIA 微型驱动程序必须返回到调用之前停止送纸器。
 
 此属性是仅对送纸器项有效 (WIA\_类别\_送纸器) 和是可选的。
 

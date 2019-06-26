@@ -4,17 +4,17 @@ description: 检索设备关系
 ms.assetid: 2b0ead69-1fda-4024-a7c2-d6350060b5fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47f51fbb5d270610e2cbc83ffcdfb36e8ac788de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c8d47874572f24bd181c1952da785a3effb83f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363341"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375248"
 ---
 # <a name="retrieving-device-relations"></a>检索设备关系
 
 
-在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括[设备的关系属性](https://msdn.microsoft.com/library/windows/hardware/ff541498)。 统一的设备属性模型使用[属性键](property-keys.md)来表示这些属性。
+在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括[设备的关系属性](https://docs.microsoft.com/previous-versions/ff541498(v=vs.85))。 统一的设备属性模型使用[属性键](property-keys.md)来表示这些属性。
 
 Windows Server 2003、 Windows XP 和 Windows 2000 不支持属性键的属性的统一的模型，也不支持表示这些属性的相应注册表项值。 但是，您可以通过调用插即用 (PnP) 配置管理器函数来检索相应信息。 为了保持与早期 Windows 版本的兼容性，Windows Vista 和更高版本还支持调用即插即用的配置管理器函数来检索设备的关系属性。 但是，应使用统一的设备属性模型属性键来访问设备的关系属性。
 
@@ -43,19 +43,19 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持属性键的属性�
 -   设置*ulFlags*要检索的相应关系信息的以下标志之一：
     -   CM_GETIDLIST_FILTER_EJECTIONRELATIONS
 
-        CM_GETIDLIST_FILTER_EJECTIONRELATIONS 标记检索[**弹出关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)，这是由提供的相同信息[ **DEVPKEY_Device_EjectionRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff542482) Windows Vista 和更高版本中的设备属性。
+        CM_GETIDLIST_FILTER_EJECTIONRELATIONS 标记检索[**弹出关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)，这是由提供的相同信息[ **DEVPKEY_Device_EjectionRelations** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-ejectionrelations) Windows Vista 和更高版本中的设备属性。
 
     -   CM_GETIDLIST_FILTER_REMOVALRELATIONS
 
-        CM_GETIDLIST_FILTER_REMOVALRELATIONS 标记检索[**删除关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)，这是由提供的相同信息[ **DEVPKEY_Device_RemovalRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff542614) Windows Vista 和更高版本中的设备属性。
+        CM_GETIDLIST_FILTER_REMOVALRELATIONS 标记检索[**删除关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)，这是由提供的相同信息[ **DEVPKEY_Device_RemovalRelations** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-removalrelations) Windows Vista 和更高版本中的设备属性。
 
     -   CM_GETIDLIST_FILTER_POWERRELATIONS
 
-        CM_GETIDLIST_FILTER_POWERRELATIONS 标志检索 power 关系，这是由提供的相同信息[ **DEVPKEY_Device_PowerRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff542588) Windows Vista 中的设备属性和更高版本。
+        CM_GETIDLIST_FILTER_POWERRELATIONS 标志检索 power 关系，这是由提供的相同信息[ **DEVPKEY_Device_PowerRelations** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-powerrelations) Windows Vista 中的设备属性和更高版本。
 
     -   CM_GETIDLIST_FILTER_BUSRELATIONS
 
-        CM_GETIDLIST_FILTER_BUSRELATIONS 标记检索[**总线关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)，这是由提供的相同信息[ **DEVPKEY_Device_BusRelations**](https://msdn.microsoft.com/library/windows/hardware/ff542368) Windows Vista 和更高版本中的设备属性。
+        CM_GETIDLIST_FILTER_BUSRELATIONS 标记检索[**总线关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)，这是由提供的相同信息[ **DEVPKEY_Device_BusRelations**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-busrelations) Windows Vista 和更高版本中的设备属性。
 
 如果在调用**CM_Get_Device_ID_List**成功， **CM_Get_Device_ID_List**检索请求的关系信息，并返回 CR_SUCCESS。 否则为**CM_Get_Device_ID_List**返回一个具有前缀"CR_"中定义的错误代码*Cfgmgr32.h*。
 
@@ -63,9 +63,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持属性键的属性�
 
 若要检索的 Windows Server 2003、 Windows XP 和 Windows 2000 上的父设备的设备实例标识符，请按照下列步骤：
 
-1.  调用[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)函数以检索设备实例的父设备的设备实例句柄。
+1.  调用[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)函数以检索设备实例的父设备的设备实例句柄。
 
-2.  调用[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)可检索与通过以前调用检索到的父设备的设备实例句柄相关联的设备实例标识符**CM_Get_Parent**。
+2.  调用[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)可检索与通过以前调用检索到的父设备的设备实例句柄相关联的设备实例标识符**CM_Get_Parent**。
 
 使用此过程来检索此信息是由 Windows Vista 和更高版本的统一的设备属性模型中的 DEVPKEY_Device_Parent 属性相同。
 
@@ -73,9 +73,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持属性键的属性�
 
 若要检索的 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备实例的子设备的设备实例标识符，请按照下列步骤：
 
-1.  调用[ **CM_Get_Child** ](https://msdn.microsoft.com/library/windows/hardware/ff538074)函数以检索与设备实例相关联的第一个子设备的设备实例句柄。
+1.  调用[ **CM_Get_Child** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_child)函数以检索与设备实例相关联的第一个子设备的设备实例句柄。
 
-2.  调用[ **CM_Get_Sibling** ](https://msdn.microsoft.com/library/windows/hardware/ff538674)多次按需枚举通过调用检索到的第一个子设备的所有同级设备**CM_Get_Child**。
+2.  调用[ **CM_Get_Sibling** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_sibling)多次按需枚举通过调用检索到的第一个子设备的所有同级设备**CM_Get_Child**。
 
 3.  调用**CM_Get_Device_ID**来检索与已返回到调用的设备实例句柄相关联的设备实例标识符**CM_Get_Child**和**CM_Get_同级**。
 
@@ -85,13 +85,13 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持属性键的属性�
 
 若要检索的设备实例在 Windows Server 2003、 Windows XP 和 Windows 2000 的 Abc 的同级设备的设备实例标识符，请按照下列步骤：
 
-1.  调用[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)函数可检索的设备实例句柄的父设备的设备实例*Abc*。
+1.  调用[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)函数可检索的设备实例句柄的父设备的设备实例*Abc*。
 
-2.  调用[ **CM_Get_Child** ](https://msdn.microsoft.com/library/windows/hardware/ff538074)函数可检索的设备实例句柄的父设备的设备实例的第一个子设备*Abc*。
+2.  调用[ **CM_Get_Child** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_child)函数可检索的设备实例句柄的父设备的设备实例的第一个子设备*Abc*。
 
-3.  调用[ **CM_Get_Sibling** ](https://msdn.microsoft.com/library/windows/hardware/ff538674)多次按需枚举父设备的第一个子设备的所有同级设备。 此枚举还将向设备实例返回一个句柄*Abc*。
+3.  调用[ **CM_Get_Sibling** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_sibling)多次按需枚举父设备的第一个子设备的所有同级设备。 此枚举还将向设备实例返回一个句柄*Abc*。
 
-4.  调用[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)来检索与已由以前调用的返回设备实例句柄相关联的设备实例标识符**CM_Get_Sibling**. 删除设备实例的句柄*Abc*从同级的父设备的第一个子设备的设备的列表。
+4.  调用[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)来检索与已由以前调用的返回设备实例句柄相关联的设备实例标识符**CM_Get_Sibling**. 删除设备实例的句柄*Abc*从同级的父设备的第一个子设备的设备的列表。
 
 使用此过程来检索到的信息是由 Windows Vista 和更高版本的统一的设备属性模型中的 DEVPKEY_Device_Siblings 属性相同。 如果**CM_ * Xxx*** 本部分中列出的函数调用成功， **CM_ * Xxx*** 函数检索所需的信息，并返回 CR_SUCCESS。 否则为**CM_ * Xxx*** 函数返回一个具有前缀"CR_"中定义的错误代码*Cfgmgr32.h*。
 

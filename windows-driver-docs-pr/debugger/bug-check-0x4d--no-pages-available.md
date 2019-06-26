@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 062a3525bce8a9a3de5ccbb385760a2b9fc0ccf8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e2ad0c9efa5b8760ee953c6d74050230ef796ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363469"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361853"
 ---
 # <a name="bug-check-0x4d-nopagesavailable"></a>Bug 检查 0x4D：否\_页面\_可用
 
@@ -26,7 +26,7 @@ ms.locfileid: "63363469"
 否\_页面\_可用 bug 检查的值为 0x0000004D。 这表明没有可用的空闲页是可用于继续操作。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="nopagesavailable-parameters"></a>否\_页面\_可用参数

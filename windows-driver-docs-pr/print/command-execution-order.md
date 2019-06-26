@@ -7,12 +7,12 @@ keywords:
 - 序列号 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 950bc0c7bc784778d077f5e298d3901ea8b5754f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5203480878d5c8fac31f2d642276fdad5425dbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392890"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385982"
 ---
 # <a name="command-execution-order"></a>命令执行顺序
 
@@ -31,19 +31,19 @@ ms.locfileid: "63392890"
 命令执行顺序由两个组件--作业部分名称和一个序号顺序组成。 Unidrv 驱动程序将每个打印作业划分为六个部分。 对于每个部分中，Unidrv 发送打印机分配到的部分中，指定序列中的命令。 定义以下各节：
 
 <a href="" id="job-setup"></a>作业\_安装程序  
-分配给作业的命令\_设置部分发送一次每个作业。 它们是发送一个新的作业开始时的第一个命令。 这些命令从发送 Unidrv 的实现的内部[ **DrvStartDoc** ](https://msdn.microsoft.com/library/windows/hardware/ff556296)函数。
+分配给作业的命令\_设置部分发送一次每个作业。 它们是发送一个新的作业开始时的第一个命令。 这些命令从发送 Unidrv 的实现的内部[ **DrvStartDoc** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartdoc)函数。
 
 <a href="" id="doc-setup"></a>DOC\_安装程序  
 命令分配给文档\_发送文档的第一页之前发送设置部分。 将命令发送从 DrvStartDoc 函数 Unidrv 的实现中。 （这些命令也会发送后应用程序调用 Win32 ResetDC 函数。 在本部分中的命令必须不删除下载的信息，例如软字体和模式。）
 
 <a href="" id="page-setup"></a>页\_安装程序  
-命令分配给该页\_设置部分在每个新页的开头发送之前开始绘制。 这些命令从发送 Unidrv 的实现的内部[ **DrvStartPage** ](https://msdn.microsoft.com/library/windows/hardware/ff556298)函数。
+命令分配给该页\_设置部分在每个新页的开头发送之前开始绘制。 这些命令从发送 Unidrv 的实现的内部[ **DrvStartPage** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartpage)函数。
 
 <a href="" id="page-finish"></a>PAGE\_FINISH  
-命令分配给该页\_完成部分绘制完成后发送的每个页上，末尾。 这些命令从发送 Unidrv 的实现的内部[ *DrvSendPage* ](https://msdn.microsoft.com/library/windows/hardware/ff556281)函数。
+命令分配给该页\_完成部分绘制完成后发送的每个页上，末尾。 这些命令从发送 Unidrv 的实现的内部[ *DrvSendPage* ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsendpage)函数。
 
 <a href="" id="doc-finish"></a>DOC\_完成  
-命令分配给文档\_发送文档的最后一页之后发送完成部分。 将命令发送从 Unidrv 的实现的内部[ **DrvEndDoc** ](https://msdn.microsoft.com/library/windows/hardware/ff556215)函数。 （在本部分中的命令必须删除已下载的信息，例如软字体和模式）。
+命令分配给文档\_发送文档的最后一页之后发送完成部分。 将命令发送从 Unidrv 的实现的内部[ **DrvEndDoc** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenddoc)函数。 （在本部分中的命令必须删除已下载的信息，例如软字体和模式）。
 
 <a href="" id="job-finish"></a>作业\_完成  
 分配给作业的命令\_完成部分发送一次每个作业。 它们是在作业结束时发送的最后一个命令。 这些命令从发送 DrvEndDoc 函数 Unidrv 的实现中。

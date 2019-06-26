@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 8210a068c972e38ba8d169a21a2a9d55e2dadcf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 810363c67df37c350560ed1b32b6fbf6253e7071
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351786"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361323"
 ---
 # <a name="hresult-values"></a>HRESULT 值
 
@@ -60,7 +60,7 @@ ms.locfileid: "63351786"
 未实现。
 
 <span id="HRESULT_FROM_WIN32_ERROR_ACCESS_DENIED_"></span><span id="hresult_from_win32_error_access_denied_"></span>HRESULT\_FROM\_WIN32 (错误\_访问\_拒绝)  
-该操作被拒绝，因为调试器处于[安全模式下](https://msdn.microsoft.com/library/windows/hardware/ff554760)。
+该操作被拒绝，因为调试器处于[安全模式下](https://docs.microsoft.com/windows-hardware/drivers/debugger/secure-mode)。
 
 **NT 错误结果。** 其他错误代码，如状态\_控制\_C\_退出和状态\_否\_详细\_条目，有时可以出现。 这些结果传递到 HRESULT\_FROM\_NT 在返回前在 WinError.h 中定义的宏。
 

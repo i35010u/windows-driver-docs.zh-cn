@@ -10,12 +10,12 @@ keywords:
 - 筛选器驱动程序 WDK AV/C 的流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2579916cf89f73d9c57c03877f51363883f3c6c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbf100cd30e67d04b732019bf2abf4b2d66058bf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323532"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386746"
 ---
 # <a name="avc-streaming-overview"></a>AV/C 流式处理概述
 
@@ -37,7 +37,7 @@ ms.locfileid: "63323532"
 
 AV/C Stream 筛选器驱动程序依赖于*是 61883.sys*协议驱动程序。 *Avcstrm.sys*使用提供的 DDIs*是 61883.sys*为了执行同步连接和流式处理同步数据，并且它使用*Avc.sys*发布外部设备控制的 AV/C 命令.
 
-有关 AV/C 协议在其构建 AV/C 流式处理筛选器驱动程序的详细信息，请参阅[AV/C 概述](av-c-overview.md)。 有关 61883 协议的详细信息，请参阅[IEC 61883 客户端驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537188)。
+有关 AV/C 协议在其构建 AV/C 流式处理筛选器驱动程序的详细信息，请参阅[AV/C 概述](av-c-overview.md)。 有关 61883 协议的详细信息，请参阅[IEC 61883 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)。
 
 有关详细信息和资源，请参阅以下链接：
 

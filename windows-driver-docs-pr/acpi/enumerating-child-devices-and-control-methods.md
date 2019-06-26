@@ -9,12 +9,12 @@ keywords:
 - ACPI 控制方法 WDK，枚举
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: be30adb9728de68c69567f18d1f781de404b6f32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13e053c5a360d38fd08e03749d361a0696bf1698
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328832"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355848"
 ---
 # <a name="enumerating-child-devices-and-control-methods"></a>枚举子设备和控制方法
 
@@ -31,7 +31,7 @@ ms.locfileid: "63328832"
  _FOO            control method
 ```
 
-若要使用[ **IOCTL\_ACPI\_EVAL\_方法\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff536149)或[ **IOCTL\_ACPI\_异步\_EVAL\_方法\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff536146)，设备的驱动程序提供的路径和名称在 ACPI 名称空间中的控制方法。 为了获得的路径和名称的设备的设备和子对象，Windows 支持[ **IOCTL\_ACPI\_枚举\_子级**](https://msdn.microsoft.com/library/windows/hardware/ff536147)请求。 在本部分作为示例提供，设备的设备堆栈中的驱动程序的简化 ACPI 命名空间引用 ABCD 可用于此请求执行以下操作：
+若要使用[ **IOCTL\_ACPI\_EVAL\_方法\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)或[ **IOCTL\_ACPI\_异步\_EVAL\_方法\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)，设备的驱动程序提供的路径和名称在 ACPI 名称空间中的控制方法。 为了获得的路径和名称的设备的设备和子对象，Windows 支持[ **IOCTL\_ACPI\_枚举\_子级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求。 在本部分作为示例提供，设备的设备堆栈中的驱动程序的简化 ACPI 命名空间引用 ABCD 可用于此请求执行以下操作：
 
 -   枚举设备 ABCD 和 ABCD。 的直接子设备 例如，请求可用于返回 '\\ABCD，''\\ABCD。CHL1，和\\ABCD。CHL2。
 
@@ -41,7 +41,7 @@ ms.locfileid: "63328832"
 
 驱动程序将获取的路径和名称的一种 control 方法后，它可以提供的路径和名称作为输入 IOCTL\_ACPI\_EVAL\_方法\_EX 或 IOCTL\_ACPI\_异步\_EVAL\_方法\_EX，如中所述[评估 ACPI 控件方法以同步方式](evaluating-acpi-control-methods-synchronously.md)。
 
-[ **IOCTL\_ACPI\_枚举\_子级**](https://msdn.microsoft.com/library/windows/hardware/ff536147)请求的输入驱动程序分配可变长度[ **ACPI\_枚举\_子级\_输入\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff536110)结构，其中包含以下成员：
+[ **IOCTL\_ACPI\_枚举\_子级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求的输入驱动程序分配可变长度[ **ACPI\_枚举\_子级\_输入\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)结构，其中包含以下成员：
 
 <a href="" id="signature"></a>**签名**  
 签名的输入缓冲区，必须设置为 ACPI\_ENUM\_子级\_输入\_缓冲区\_签名。

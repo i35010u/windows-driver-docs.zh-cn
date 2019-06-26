@@ -4,12 +4,12 @@ description: 所有版本的 Windows 中都启用设备在计算机处于睡眠�
 ms.assetid: C2C6166D-8269-4FCE-81A8-B350626052D4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 13ce1874616b11a35323b9acce5b247bdaee4f2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 110c9633e45e1e24da9398df5f1d76e62694f8d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362016"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384946"
 ---
 # <a name="enabling-transitions-to-d3cold"></a>启用到 D3cold 的转换
 
@@ -22,7 +22,7 @@ ms.locfileid: "63362016"
 
 该驱动程序不会启动从 D3hot D3cold 到的设备的转换。 相反，此转换发生时与此设备共享通用电源的所有其他设备 D3hot 中，并准备好输入 D3cold。 当这些设备的最后一个输入 D3hot 时，基础总线驱动程序和系统固件删除电源和设备 D3cold 输入更多信息。
 
-设备 PPO 驱动程序通知操作系统是否启用从 D3hot D3cold 到的设备的转换。 该驱动程序可以提供此信息在安装该设备的 INF 文件或驱动程序可以调用[ *SetD3ColdSupport* ](https://msdn.microsoft.com/library/windows/hardware/hh967716)在运行时动态地启用或禁用设备的例程将转换为 D3cold。 有关详细信息，请参阅[使用的 GUID\_D3COLD\_支持\_界面驱动程序接口](using-guid-d3cold-support-interface.md)。
+设备 PPO 驱动程序通知操作系统是否启用从 D3hot D3cold 到的设备的转换。 该驱动程序可以提供此信息在安装该设备的 INF 文件或驱动程序可以调用[ *SetD3ColdSupport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_d3cold_support)在运行时动态地启用或禁用设备的例程将转换为 D3cold。 有关详细信息，请参阅[使用的 GUID\_D3COLD\_支持\_界面驱动程序接口](using-guid-d3cold-support-interface.md)。
 
 通过启用设备输入 D3cold，驱动程序可保证以下行为：
 
@@ -33,7 +33,7 @@ ms.locfileid: "63362016"
 
 将设备放入 D3cold，已删除的电源与设备的所有源; 并不一定意味着它的意思只允许通过总线设备通信的能力的源都消失了。 设备可能仍将能够绘制足够发出信号将唤醒事件发送到处理器的能力。 例如，删除其主电源源以太网网络接口卡 (NIC) 可能会从以太网电缆消耗电源。
 
-由于 D3cold 是不能用在总线来与设备进行通信的状态，因此驱动程序不能将其设备置于 D3cold 直接。 相反，该驱动程序首先调用[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)例程以请求 D3 power IRP ( [ **IRP\_MN\_设置\_电源**](https://msdn.microsoft.com/library/windows/hardware/ff551744)请求与目标状态 = **PowerDeviceD3**) 将设备从 D0 移至 D3hot。 输入后 D3hot，设备可能会或可能不从转为 D3hot D3cold。 在设备进入 D3cold 删除时才向总线供电，如果父总线驱动程序将关闭总线出现这种情况，或者如果系统固件关闭电源的硬件平台的一部分。
+由于 D3cold 是不能用在总线来与设备进行通信的状态，因此驱动程序不能将其设备置于 D3cold 直接。 相反，该驱动程序首先调用[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)例程以请求 D3 power IRP ( [ **IRP\_MN\_设置\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求与目标状态 = **PowerDeviceD3**) 将设备从 D0 移至 D3hot。 输入后 D3hot，设备可能会或可能不从转为 D3hot D3cold。 在设备进入 D3cold 删除时才向总线供电，如果父总线驱动程序将关闭总线出现这种情况，或者如果系统固件关闭电源的硬件平台的一部分。
 
  
 

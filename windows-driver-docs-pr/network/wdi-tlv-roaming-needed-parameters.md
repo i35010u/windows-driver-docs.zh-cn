@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ROAMING_NEEDED_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d14aa9cf18d423bbdf99dd86ba7a6cc87bd907
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe9a7d94d8a37fc0d208c104400e197fd2b7300a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359366"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376984"
 ---
 # <a name="wditlvroamingneededparameters"></a>WDI\_TLV\_ROAMING\_NEEDED\_PARAMETERS
 
 
-WDI\_TLV\_漫游\_需执行\_参数是包含漫游触发器的原因 TLV。 使用此[NDIS\_状态\_WDI\_指示\_漫游\_需执行](https://msdn.microsoft.com/library/windows/hardware/dn925648)有效负载。
+WDI\_TLV\_漫游\_需执行\_参数是包含漫游触发器的原因 TLV。 使用此[NDIS\_状态\_WDI\_指示\_漫游\_需执行](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)有效负载。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -33,7 +33,7 @@ WDI\_TLV\_漫游\_需执行\_参数是包含漫游触发器的原因 TLV。 使�
 
 | 在任务栏的搜索框中键入                                                | 描述                                                                                                                                      |
 |-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_ASSOC\_状态**](https://msdn.microsoft.com/library/windows/hardware/dn897725) | 指定漫游触发器的原因。 当[OID\_WDI\_任务\_漫游](https://msdn.microsoft.com/library/windows/hardware/dn925958)是触发，因此转发给它。 |
+| [**WDI\_ASSOC\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_assoc_status) | 指定漫游触发器的原因。 当[OID\_WDI\_任务\_漫游](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-roam)是触发，因此转发给它。 |
 
  
 

@@ -4,12 +4,12 @@ description: Windows 调试器可以编写一个日志文件，用于记录调�
 ms.assetid: 6A7588D0-A477-4BE9-874F-3AFB52561903
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d87a58ba5c3cee9b6aa35633a8e578e3bfa0dffa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8582538ca8d533a0d82f136d0a19b76ed339411
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361304"
 ---
 # <a name="keeping-a-log-file-in-visual-studio"></a>在 Visual Studio 中保存日志文件
 
@@ -20,7 +20,7 @@ ms.locfileid: "63367193"
 
 Windows 调试器可以编写一个日志文件，用于记录调试会话。 此日志文件包含所有的您键入的命令以及在调试器中的响应。 在 Microsoft Visual Studio 中，可以打开、 追加，并通过在调试器即时窗口中输入命令关闭日志文件。
 
-本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://msdn.microsoft.com/library/windows/hardware/ff557573)。
+本主题中所示的步骤要求具有集成到 Visual Studio Windows 驱动程序工具包。 要获取的集成的环境，请首先安装 Visual Studio 中，然后再安装 Windows Driver Kit (WDK)。 有关详细信息，请参阅[Windows 驱动程序开发](https://docs.microsoft.com/windows-hardware/drivers/)。
 
 ## <span id="ddk_keeping_a_log_file_dbg"></span><span id="DDK_KEEPING_A_LOG_FILE_DBG"></span>
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c9e585705bf02c00b12a35ddba7f7ef15998b479
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.openlocfilehash: eed7367fc820295939ad750c2bb16c2024a9ddfd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239804"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361754"
 ---
 # <a name="bug-check-0x74-badsystemconfiginfo"></a>Bug 检查 0x74：错误\_系统\_CONFIG\_信息
 
@@ -26,7 +26,7 @@ ms.locfileid: "59239804"
 缺点\_系统\_CONFIG\_信息错误检查的值为 0x00000074。 检查此错误指示在注册表中存在错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="badsystemconfiginfo-parameters"></a>错误\_系统\_CONFIG\_信息参数
@@ -158,7 +158,7 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 -   使用安装媒体还原或重置您的 PC。
 -   使用安装媒体重新安装 Windows。
 
-有关详细信息，请参阅[Windows 10 中的恢复选项](https://windows.microsoft.com/windows-10/windows-10-recovery-options#)。
+有关详细信息，请参阅[Windows 10 中的恢复选项](https://support.microsoft.com/help/12415/windows-10-recovery-options#)。
 
 支持本文讨论了此 bug 检查代码：[错误 0x74:Bad_system_config_info](https://support.microsoft.com/en-us/help/4028653/windows-error-0x74-badsystemconfiginfo)
 

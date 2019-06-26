@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 504dc2d81b4247a535c576c08bf7a3590ede1343
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f62046d30d581dd4d1668d01dce3fcf785051ecc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367332"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361749"
 ---
 # <a name="bug-check-0x76-processhaslockedpages"></a>Bug 检查 0x76：进程\_HAS\_已锁定\_页
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367332"
 进程\_HAS\_已锁定\_页错误检查的值为 0x00000076。 此 bug 检查指示驱动程序无法在 I/O 操作后释放锁定的页或它试图解锁页已经解锁。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="processhaslockedpages-parameters"></a>进程\_HAS\_已锁定\_页参数

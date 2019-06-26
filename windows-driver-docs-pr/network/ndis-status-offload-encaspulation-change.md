@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c0078f342297f19958da8cc173225fcd650b6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f066bb82d5fdbc9fddb8a67772a7195944fbf5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383278"
 ---
 # <a name="ndisstatusoffloadencaspulationchange"></a>NDIS\_状态\_卸载\_ENCASPULATION\_更改
 
@@ -21,9 +21,9 @@ ms.locfileid: "63344231"
 <a name="remarks"></a>备注
 -------
 
-**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构包含[ **NDIS\_卸载\_封装**](https://msdn.microsoft.com/library/windows/hardware/ff566702)结构。 NDIS\_卸载\_封装指定封装设置。
+**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含[ **NDIS\_卸载\_封装**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)结构。 NDIS\_卸载\_封装指定封装设置。
 
-有关封装设置的详细信息，请参阅[OID\_卸载\_封装](https://msdn.microsoft.com/library/windows/hardware/ff569762)。
+有关封装设置的详细信息，请参阅[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)。
 
 <a name="requirements"></a>要求
 ------------
@@ -48,11 +48,11 @@ ms.locfileid: "63344231"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_卸载\_封装**](https://msdn.microsoft.com/library/windows/hardware/ff566702)
+[**NDIS\_卸载\_封装**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_卸载\_封装](https://msdn.microsoft.com/library/windows/hardware/ff569762)
+[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)
 
  
 

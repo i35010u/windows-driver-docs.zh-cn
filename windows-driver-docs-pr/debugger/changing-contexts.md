@@ -11,12 +11,12 @@ keywords:
 - 会话
 ms.date: 08/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6492c81235a35617a06c52dc8d7982d0789b99c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcf6b33d78464be58fc7598febd4aa554f5e2e76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376100"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367033"
 ---
 # <a name="changing-contexts"></a>更改上下文
 
@@ -44,7 +44,7 @@ ms.locfileid: "63376100"
 
 [ **！ 会话**](-session.md)扩展显示所有登录会话或更改当前会话上下文。
 
-通过使用的会话上下文[ **！ sprocess** ](-sprocess.md)并[ **！ spoolused** ](https://msdn.microsoft.com/library/windows/hardware/ff565361)扩展时会话数"-2"作为输入。
+通过使用的会话上下文[ **！ sprocess** ](-sprocess.md)并[ **！ spoolused** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-extensions)扩展时会话数"-2"作为输入。
 
 会话上下文更改时，进程上下文自动更改为活动的进程为该会话。
 
@@ -70,21 +70,21 @@ ms.locfileid: "63376100"
 
 执行用户模式下使用以下命令之一进行调试时，可以为当前线程以外的值更改寄存器上下文：
 
-[**.cxr （显示上下文记录）**](-cxr--display-context-record-.md)
+[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)
 
-[**.ecxr （显示异常上下文记录）**](-ecxr--display-exception-context-record-.md)
+[ **.ecxr （显示异常上下文记录）** ](-ecxr--display-exception-context-record-.md)
 
 在内核模式调试，可以使用各种调试器命令，其中包括以下命令来控制寄存器上下文：
 
-[**.thread （设置寄存器上下文）**](-thread--set-register-context-.md)
+[ **.thread （设置寄存器上下文）** ](-thread--set-register-context-.md)
 
-[**.cxr （显示上下文记录）**](-cxr--display-context-record-.md)
+[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)
 
-[**.trap （显示陷阱帧）**](-trap--display-trap-frame-.md)
+[ **.trap （显示陷阱帧）** ](-trap--display-trap-frame-.md)
 
 这些命令不更改 CPU 寄存器的值。 相反，调试器从其位置在内存中检索指定的寄存器上下文。 实际上，调试程序可以仅检索*保存*注册值。 （其他值动态设置，并且不保存。 已保存的值就足够了重新创建的堆栈跟踪。
 
-设置寄存器上下文后，新的寄存器上下文使用的任何命令，使用注册值，如[ **k （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)并[ **r （注册）**](r--registers-.md).
+设置寄存器上下文后，新的寄存器上下文使用的任何命令，使用注册值，如[ **k （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)并[ **r （注册）** ](r--registers-.md).
 
 但是，当你正在调试多处理器计算机，一些命令，可指定处理器。 (有关此类命令的详细信息，请参阅[包含多个处理器语法](multiprocessor-syntax.md)。)如果指定的命令处理器，该命令使用而不是当前寄存器上下文中，指定的处理器上的活动线程的寄存器上下文，即使在指定的处理器是当前使用的处理器。
 

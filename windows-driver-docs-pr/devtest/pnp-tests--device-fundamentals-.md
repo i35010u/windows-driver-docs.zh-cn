@@ -4,12 +4,12 @@ description: PnP 设备基础测试强制驱动程序来处理几乎所有 PnP I
 ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b170a9b1e0db4666b7afe370e3b23f435e7384
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: f0b8e5dfef06ffa08835cd167b4ae8ee24ff1c28
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405110"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392071"
 ---
 # <a name="pnp-tests-device-fundamentals"></a>PnP 测试（设备基础功能）
 
@@ -19,7 +19,7 @@ PnP 设备基础测试强制驱动程序来处理几乎所有 PnP Irp;但是，�
 ## <a name="pnp-tests"></a>即插即用的测试
 
 
-Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 PnP 相关的代码路径。 即插即用的测试应运行具有[Driver Verifier](driver-verifier.md)测试计算机上启用。 有关启用驱动程序验证程序的信息，请参阅[驱动程序项目的驱动程序验证程序属性](https://msdn.microsoft.com/windows-drivers/develop/driver_verifier_properties_for__driver_projects)。
+Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 PnP 相关的代码路径。 即插即用的测试应运行具有[Driver Verifier](driver-verifier.md)测试计算机上启用。 有关启用驱动程序验证程序的信息，请参阅[驱动程序项目的驱动程序验证程序属性](https://docs.microsoft.com/windows-hardware/drivers)。
 
 <table>
 <colgroup>
@@ -36,7 +36,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <tr class="odd">
 <td align="left"><p><span id="Disable_Enhanced_Device_Testing__EDT__Support_"></span><span id="disable_enhanced_device_testing__edt__support_"></span><span id="DISABLE_ENHANCED_DEVICE_TESTING__EDT__SUPPORT_"></span>禁用增强的设备测试 (EDT) 支持</p></td>
 <td align="left"><p>此测试卸载测试筛选器驱动程序 (msdmfilt.sys) 作为使用 DQ 参数指定的设备上的上限筛选器。 此测试筛选器获取作为此测试类别运行测试的一部分安装</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -49,7 +49,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <td align="left"><p>此测试的系统重启的设备上执行基本的即插即用禁用/启用和 I/O。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PNP_DisableEnable_Reboot_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>测试方法：</strong>PNP_DisableEnable_Reboot_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -59,15 +59,15 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>此测试将执行以下操作：</p>
 <ol>
 <li>验证 reporting 设备问题代码在系统上没有任何设备。</li>
-<li>使用 WDTF 简单 I/O 插件在系统上每个设备上测试 I/O。 请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh781398" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)">提供 WDTF 简单 I/O 插件</a>有关详细信息。</li>
-<li>禁用和启用每台设备使用 WDTF 即插即用操作接口，在系统上的看到<a href="https://msdn.microsoft.com/library/windows/hardware/hh451068" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::DisableDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451068)"> <strong>IWDTFPNPAction2::DisableDevice</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/hh451082" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::EnableDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451082)"> <strong>IWDTFPNPAction2::EnableDevice</strong> </a>方法的详细信息。</li>
+<li>使用 WDTF 简单 I/O 插件在系统上每个设备上测试 I/O。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)">提供 WDTF 简单 I/O 插件</a>有关详细信息。</li>
+<li>禁用和启用每台设备使用 WDTF 即插即用操作接口，在系统上的看到<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::DisableDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice)"> <strong>IWDTFPNPAction2::DisableDevice</strong> </a>并<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::EnableDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice)"> <strong>IWDTFPNPAction2::EnableDevice</strong> </a>方法的详细信息。</li>
 <li>验证 reporting 设备问题代码在系统上没有任何设备。</li>
-<li>使用 WDTF 简单 I/O 插件在系统上每个设备上测试 I/O。 请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh781398" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)">提供 WDTF 简单 I/O 插件</a>有关详细信息。</li>
+<li>使用 WDTF 简单 I/O 插件在系统上每个设备上测试 I/O。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)">提供 WDTF 简单 I/O 插件</a>有关详细信息。</li>
 <li>重复步骤 3-5 几次。</li>
 </ol>
 <p><strong>测试二进制文件：</strong>Devfund_PNP_DisableEnable_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>测试方法：</strong>PNP_DisableEnable_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -77,7 +77,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>有关详细信息，请参阅<a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">有关设备删除测试</a>。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPCancelRemoveDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -90,7 +90,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>有关详细信息，请参阅<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">有关重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPCancelStopDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -99,10 +99,10 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 </tr>
 <tr class="even">
 <td align="left"><p><span id="PNP_DIF_Remove_Device_Test"></span><span id="pnp_dif_remove_device_test"></span><span id="PNP_DIF_REMOVE_DEVICE_TEST"></span>即插即用 DIF 删除设备测试</p></td>
-<td align="left"><p>此测试使用 SetupDi API 来发送<a href="https://msdn.microsoft.com/library/windows/hardware/ff543717" data-raw-source="[&lt;strong&gt;DIF_REMOVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543717)"> <strong>DIF_REMOVE</strong> </a>要删除该设备的安装程序的请求。</p>
+<td align="left"><p>此测试使用 SetupDi API 来发送<a href="https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove" data-raw-source="[&lt;strong&gt;DIF_REMOVE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove)"> <strong>DIF_REMOVE</strong> </a>要删除该设备的安装程序的请求。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPDIFRemoveAndRescanParentDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -114,7 +114,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <td align="left"><p>此测试禁用和启用的目标设备。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPDisableAndEnableDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -128,7 +128,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>有关详细信息，请参阅<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">有关重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPTryStopDeviceAndFailRestart</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -141,7 +141,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>有关详细信息，请参阅<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">有关重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPTryStopDeviceRequestNewResourcesAndRestartDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -154,7 +154,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>有关详细信息，请参阅<a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">有关设备删除测试</a>。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPRemoveAndRestartDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -167,7 +167,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>有关详细信息，请参阅<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">有关重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPTryStopAndRestartDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -180,7 +180,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 <p>有关详细信息，请参阅<a href="#about-the-surprise-removal-test" data-raw-source="[About the Surprise Removal test](#about-the-surprise-removal-test)">有关在意外删除测试</a>。</p>
 <p><strong>测试二进制文件：</strong>Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong>PNPSurpriseRemoveAndRestartDevice</p>
-<p><strong>参数：</strong> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -284,7 +284,7 @@ Plug and Play (PnP) 测试在驱动程序和用户模式组件中执行各种 Pn
 ## <a name="device-error-codes"></a>设备错误代码
 
 
-如果测试显示错误消息，指出设备状态不正常，您可以详细了解设备状态通过设备管理器。 有关的各种设备错误代码，请参阅[设备管理器错误消息](https://msdn.microsoft.com/library/windows/hardware/ff541422)。
+如果测试显示错误消息，指出设备状态不正常，您可以详细了解设备状态通过设备管理器。 有关的各种设备错误代码，请参阅[设备管理器错误消息](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)。
 
 ## <a name="debug-installation-failures-using-the-setup-api-logs"></a>调试使用安装程序 API 日志的安装失败
 
@@ -300,17 +300,17 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 ## <a name="related-topics"></a>相关主题
 
 
-[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[如何在运行时使用 Visual Studio 测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
 [如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers/develop/how-to-select-and-configure-the-device-fundamental-tests)
 
 [设备基础功能测试](device-fundamentals-tests.md)
 
-[设备基础功能测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[设备基础功能测试参数](https://docs.microsoft.com/windows-hardware/drivers)
 
-[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)（提供的 WDTF 简单 I/O 插件）
+[Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)（提供的 WDTF 简单 I/O 插件）
 
-[如何在运行时通过命令提示符测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[如何在运行时通过命令提示符测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

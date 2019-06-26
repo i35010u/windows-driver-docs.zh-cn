@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_DEFAULT_KEY_ID 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bbbfb73d6cf5558266ea4c9edc853545d80ca058
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b92781490f0a7a83d6536a4629f499ae3935d565
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376606"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387247"
 ---
 # <a name="oidwdisetdefaultkeyid"></a>OID\_WDI\_SET\_DEFAULT\_KEY\_ID
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_默认\_密钥\_ID 集的默认密钥 ID 的端口上的数据
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -30,7 +30,7 @@ OID\_WDI\_设置\_默认\_密钥\_ID 集的默认密钥 ID 的端口上的数据
 
 | TLV                                                                                             | 允许多个 TLV 实例 | 可选 | 描述                                             |
 |-------------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------|
-| [**WDI\_TLV\_DEFAULT\_TX\_KEY\_ID\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926281) |                                |          | 默认值为在端口上的数据包传输密钥 ID。 |
+| [**WDI\_TLV\_DEFAULT\_TX\_KEY\_ID\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-default-tx-key-id-parameters) |                                |          | 默认值为在端口上的数据包传输密钥 ID。 |
 
  
 

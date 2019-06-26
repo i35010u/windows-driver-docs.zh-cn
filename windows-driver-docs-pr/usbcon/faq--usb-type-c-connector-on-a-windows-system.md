@@ -3,12 +3,12 @@ Description: 想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 
 title: 常见问题-Windows 系统上的 USB C 型连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fad2532569b47489fc502097aa4991f94a29368
-ms.sourcegitcommit: ead145093395141164ec18a4764b19472ea9ff4b
+ms.openlocfilehash: cf0fe390047cdfb56f12883d905e64b32aac8aa4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65760598"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363911"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
 
@@ -176,4 +176,4 @@ Microsoft 提供了与 Windows，UcmUcsi.sys，实现功能规范所定义的现
 
 ## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>VBus/VConn 控制和角色切换由 UCM 类扩展插件处理的操作
 
-UCM 类扩展可能会从操作系统更改的连接器的数据或电源方向 get 请求。 在收到这些请求，它将调用的客户端驱动程序实现[ *EVT\_UCM\_连接器\_设置\_数据\_角色*](https://msdn.microsoft.com/library/windows/hardware/mt187818)并[ *EVT\_UCM\_连接器\_设置\_POWER\_角色*](https://msdn.microsoft.com/library/windows/hardware/mt187819)回调函数 (如果连接器实现 PD）。 在实现中，客户端驱动程序是预期的控制 VBUS 和 VCONN pin。 有关这些回调函数的详细信息，请参阅[写入 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。
+UCM 类扩展可能会从操作系统更改的连接器的数据或电源方向 get 请求。 在收到这些请求，它将调用的客户端驱动程序实现[ *EVT\_UCM\_连接器\_设置\_数据\_角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)并[ *EVT\_UCM\_连接器\_设置\_POWER\_角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)回调函数 (如果连接器实现 PD）。 在实现中，客户端驱动程序是预期的控制 VBUS 和 VCONN pin。 有关这些回调函数的详细信息，请参阅[写入 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。

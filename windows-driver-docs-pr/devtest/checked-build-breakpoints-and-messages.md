@@ -9,12 +9,12 @@ keywords:
 - 检查生成邮件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ca20234192e1bf0de15352a2883a548e74e129a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e9cf50cc13e9ae0e5f936a9a98b5d1385e8fae3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343979"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360387"
 ---
 # <a name="checked-build-breakpoints-and-messages"></a>已检验版本断点和消息
 
@@ -22,12 +22,12 @@ ms.locfileid: "63343979"
 ## <span id="ddk_checked_build_breakpoints_and_messages_tools"></span><span id="DDK_CHECKED_BUILD_BREAKPOINTS_AND_MESSAGES_TOOLS"></span>
 
 
-本主题包含列表和说明的一些常见的断点并[ **DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)驱动程序可能会遇到调试内部版本中的消息。
+本主题包含列表和说明的一些常见的断点并[ **DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)驱动程序可能会遇到调试内部版本中的消息。
 
-<span id="____DPC_routine___1_sec_---_This_is_not_a_break_in_KeUpdateSystemTime"></span><span id="____dpc_routine___1_sec_---_this_is_not_a_break_in_keupdatesystemtime"></span><span id="____DPC_ROUTINE___1_SEC_---_THIS_IS_NOT_A_BREAK_IN_KEUPDATESYSTEMTIME"></span>**\*\*\* DPC 例程&gt;1 秒---这不是在 KeUpdateSystemTime 中断**  
+<span id="____DPC_routine___1_sec_---_This_is_not_a_break_in_KeUpdateSystemTime"></span><span id="____dpc_routine___1_sec_---_this_is_not_a_break_in_keupdatesystemtime"></span><span id="____DPC_ROUTINE___1_SEC_---_THIS_IS_NOT_A_BREAK_IN_KEUPDATESYSTEMTIME"></span> **\*\*\* DPC 例程&gt;1 秒---这不是在 KeUpdateSystemTime 中断**  
 只需发出断点之前，会出现此消息。 它指示活动的驱动程序所用超过一秒 DPC 的例程中。
 
-<span id="____isr_at_0x_________________nnnnnnnn_________________took_over_.5_second"></span><span id="____ISR_AT_0X_________________NNNNNNNN_________________TOOK_OVER_.5_SECOND"></span>**\*\*\* 在 0xisr** *nnnnnnnn* **花费了超过.5 秒**  
+<span id="____isr_at_0x_________________nnnnnnnn_________________took_over_.5_second"></span><span id="____ISR_AT_0X_________________NNNNNNNN_________________TOOK_OVER_.5_SECOND"></span> **\*\*\* 在 0xisr** *nnnnnnnn* **花费了超过.5 秒**  
 只需发出断点之前，会出现此消息。 它指示中断服务例程的入口点 0x*nnnnnnnn*执行多个 500 毫秒。
 
 <span id="IOINIT__Built-in_driver__________________xxxxxx_________________failed_to_initialize___0xnnnnnnnn"></span><span id="ioinit__built-in_driver__________________xxxxxx_________________failed_to_initialize___0xnnnnnnnn"></span><span id="IOINIT__BUILT-IN_DRIVER__________________XXXXXX_________________FAILED_TO_INITIALIZE___0XNNNNNNNN"></span>**IOINIT:内置的驱动程序** *xxxxxx* **未能初始化 − 0 x * * * nnnnnnnn*引导启动驱动程序命名为*xxxxxx*返回失败状态0x*nnnnnnnn * 从其**DriverEntry**入口点。

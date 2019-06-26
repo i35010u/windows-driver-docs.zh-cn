@@ -7,12 +7,12 @@ keywords:
 - 注册表 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf560b528f01f4c22d04d8933a7e9342446da804
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e7d48ca5bf30b0cf9aa769caa2154efe6a2c89e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360269"
 ---
 # <a name="setting-device-object-registry-properties-during-installation"></a>在安装期间设置设备对象注册表属性
 
@@ -63,7 +63,7 @@ ms.locfileid: "63385531"
 
  
 
-有关使用这些关键字的详细信息，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+有关使用这些关键字的详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 可以将的设置的用户模式组件，使用的设备安装功能。 有关详细信息，请参阅[设置设备对象注册表属性之后安装](setting-device-object-registry-properties-after-installation.md)。
 

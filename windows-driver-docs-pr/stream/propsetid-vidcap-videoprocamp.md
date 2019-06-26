@@ -4,12 +4,12 @@ description: PROPSETID\_VIDCAP\_VIDEOPROCAMP
 ms.assetid: ea1d9c96-b1a5-4849-b607-4c508a526512
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 641f5eaced2a1eed4f49172ef3904cb99519dc55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5373370c0e7ce409577b4c8655466334ea04b4d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385695"
 ---
 # <a name="propsetidvidcapvideoprocamp"></a>PROPSETID\_VIDCAP\_VIDEOPROCAMP
 
@@ -45,7 +45,7 @@ KSPROPERTY\_VIDCAP\_中的 VIDEOPROCAMP 枚举*ksmedia.h*指定此集的属性�
 
 [**KSPROPERTY\_VIDEOPROCAMP\_获得**](ksproperty-videoprocamp-gain.md)
 
-通过引入[USB 视频类驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff568649)，以下属性已添加到 KSPROPERTY\_VIDCAP\_VIDEOPROCAMP 枚举：
+通过引入[USB 视频类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)，以下属性已添加到 KSPROPERTY\_VIDCAP\_VIDEOPROCAMP 枚举：
 
 [**KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数**](ksproperty-videoprocamp-digital-multiplier.md)
 

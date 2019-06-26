@@ -6,12 +6,12 @@ keywords:
 - 在设备元数据创作向导中指定应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6be78ec70a614c626c10509cb463c0c3318b5145
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbd76aa954f2063e228e33e48627207e1ba9bdc1
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391959"
 ---
 # <a name="specify-applications-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中指定应用程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "63387919"
 ## <a name="span-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>指定的 Microsoft Store 设备应用
 
 
-1.  单击“应用程序”选项卡。
+1.  单击“应用程序”  选项卡。
 2.  填写以下字段：
     -   **包名称**。 应用程序清单的包元素中的标识元素中输入名称属性的值。 包名称应获取应用程序提交到 Microsoft Store 创建之后，因为通过 Microsoft Store 提交过程发生了更改包名称。 请参阅[UWP 设备应用程序生命周期](https://go.microsoft.com/fwlink/p/?linkid=246571)有关如何使用 Microsoft Store 将应用程序并将更新后的值复制到应用程序清单的详细信息。
     -   **发布者**。 应用程序清单的包元素中的标识元素中输入将 Publisher 属性的值。 发布者名称应与开发人员中的一个相同用于包和元数据进行签名的证书。
@@ -160,7 +160,7 @@ ms.locfileid: "63387919"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[设备元数据架构参考](https://msdn.microsoft.com/library/windows/hardware/br259102)
+[设备元数据架构参考](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))
 
 
 

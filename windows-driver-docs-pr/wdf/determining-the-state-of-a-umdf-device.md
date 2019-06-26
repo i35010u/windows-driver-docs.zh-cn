@@ -11,12 +11,12 @@ keywords:
 - UMDF WDK，调试方案，UMDF 设备状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca57211ad0850d1e1cc41d92b2bcb2b7b5c1e398
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31efec7ebf074d7c67b153a95c7509bdf36036a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377443"
 ---
 # <a name="determining-the-state-of-a-umdf-device"></a>确定 UMDF 设备的状态
 
@@ -78,14 +78,14 @@ ms.locfileid: "63344954"
             **!thread &lt;thread-addr&gt;**
 
 2.  在调试器中，使用 **.chain**命令来查看加载 wudfext.dll (UMDF 1) 或 wdfkd.dll (UMDF 2) 调试器扩展库。
-3.  如果不存在所需的库，请使用[ **.load** ](https://msdn.microsoft.com/library/windows/hardware/ff563964)命令来扩展 DLL 加载到调试器。 然后输入 **.reload**以重新加载符号信息。
-4.  使用[ **！ wudfext.umdevstacks** ](https://msdn.microsoft.com/library/windows/hardware/ff566191) (UMDF 1) 或[ **！ wdfkd.wdfumdevstacks** ](https://msdn.microsoft.com/library/windows/hardware/dn265380) (UMDF 2) 若要查看所有设备堆栈在主机进程中加载。
+3.  如果不存在所需的库，请使用[ **.load** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-load---loadby--load-extension-dll-)命令来扩展 DLL 加载到调试器。 然后输入 **.reload**以重新加载符号信息。
+4.  使用[ **！ wudfext.umdevstacks** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umdevstacks) (UMDF 1) 或[ **！ wdfkd.wdfumdevstacks** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks) (UMDF 2) 若要查看所有设备堆栈在主机进程中加载。
 
-    然后，使用[ **！ wudfext.umdevstack** ](https://msdn.microsoft.com/library/windows/hardware/ff566189) (UMDF 1) 或[ **！ wdfkd.wdfumdevstack** ](https://msdn.microsoft.com/library/windows/hardware/dn265379) (UMDF 2) 若要获取有关设备的详细的信息堆栈。
+    然后，使用[ **！ wudfext.umdevstack** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umdevstack) (UMDF 1) 或[ **！ wdfkd.wdfumdevstack** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack) (UMDF 2) 若要获取有关设备的详细的信息堆栈。
 
-5.  使用[ **！ wudfext.wudfdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff566199) (UMDF 1) 或[ **！ wdfkd.wdfdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff565703) (UMDF 2) 若要获取有关 Plug and Play (PnP) 的信息和电源管理的设备的状态。
+5.  使用[ **！ wudfext.wudfdevice** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdevice) (UMDF 1) 或[ **！ wdfkd.wdfdevice** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevice) (UMDF 2) 若要获取有关 Plug and Play (PnP) 的信息和电源管理的设备的状态。
 
-6.  使用[ **！ wudfext.wudfdriverinfo** ](https://msdn.microsoft.com/library/windows/hardware/ff566207) (UMDF 1) 或[ **！ wdfkd.wdfdriverinfo** ](https://msdn.microsoft.com/library/windows/hardware/ff565724) (UMDF 2)，以显示有关其他信息驱动程序，包括其设备树。
+6.  使用[ **！ wudfext.wudfdriverinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdriverinfo) (UMDF 1) 或[ **！ wdfkd.wdfdriverinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo) (UMDF 2)，以显示有关其他信息驱动程序，包括其设备树。
 
  
 

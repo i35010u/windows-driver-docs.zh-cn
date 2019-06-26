@@ -4,12 +4,12 @@ description: OID 请求的 Hyper-V 可扩展交换机控制路径
 ms.assetid: 69ABBD54-F794-4A0A-8F50-915CA1EDD95C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9795b9d7167f923722434b34fe76a46950f03c04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7c17da023d8e4373fe6b21dbc55c60c649e8e0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383720"
 ---
 # <a name="hyper-v-extensible-switch-control-path-for-oid-requests"></a>OID 请求的 Hyper-V 可扩展交换机控制路径
 
@@ -38,13 +38,13 @@ ms.locfileid: "63349620"
 
 可扩展交换机接口通知有关的组件配置更改的基础扩展，并通过发出可扩展的策略参数切换 OID 集请求。 这些请求颁发的可扩展的交换机，以通知有关这些更改的基础扩展的协议边缘。 这些 OID 请求将通过可扩展交换机驱动程序堆栈移到可扩展交换机的基础的微型端口边缘。
 
-可扩展交换机的微型端口边缘负责完成 OID 请求。 但是，某些可扩展交换机 OID 请求，与基础扩展可能失败 OID 请求，以便能阻止通知。 例如，当可扩展交换机的协议边缘通知时将创建新端口有关的扩展，它发出的 OID 集请求[OID\_切换\_端口\_创建](https://msdn.microsoft.com/library/windows/hardware/hh598272)。 基础筛选或转发扩展可通过完成状态为 OID 请求否决端口创建\_数据\_不\_已接受。 此过程的详细信息，请参阅[有关的 HYPER-V 可扩展交换机配置更改接收 OID 请求](receiving-oid-requests-about-hyper-v-extensible-switch-configuration-changes.md)。
+可扩展交换机的微型端口边缘负责完成 OID 请求。 但是，某些可扩展交换机 OID 请求，与基础扩展可能失败 OID 请求，以便能阻止通知。 例如，当可扩展交换机的协议边缘通知时将创建新端口有关的扩展，它发出的 OID 集请求[OID\_切换\_端口\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)。 基础筛选或转发扩展可通过完成状态为 OID 请求否决端口创建\_数据\_不\_已接受。 此过程的详细信息，请参阅[有关的 HYPER-V 可扩展交换机配置更改接收 OID 请求](receiving-oid-requests-about-hyper-v-extensible-switch-configuration-changes.md)。
 
 **请注意**  如果扩展不能阻止可扩展交换机 OID 请求，请求完成时，它应监视状态。 该扩展应这样做可以确定 OID 请求已被否决的可扩展交换机控制路径中的基础扩展或可扩展交换机接口。
 
  
 
-**请注意**  堆栈重新启动使用请求[ **NdisFRestartFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff562611)可扩展交换机 OID 请求挂起时，将不会完成。 出于此原因，正在等待堆栈重新启动的扩展必须完成任何正在进行的 OID 请求。
+**请注意**  堆栈重新启动使用请求[ **NdisFRestartFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfrestartfilter)可扩展交换机 OID 请求挂起时，将不会完成。 出于此原因，正在等待堆栈重新启动的扩展必须完成任何正在进行的 OID 请求。
 
  
 

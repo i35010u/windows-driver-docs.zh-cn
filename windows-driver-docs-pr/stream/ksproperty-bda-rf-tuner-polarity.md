@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edc0960b74e48a1d4428250ed87754950a8a1d37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8c10687b1c5af174760e38d5b9778c327edd7a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389313"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358429"
 ---
 # <a name="kspropertybdarftunerpolarity"></a>KSPROPERTY\_BDA\_RF\_调谐器\_极性
 
@@ -89,9 +89,9 @@ ms.locfileid: "63389313"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
-[**极化**](https://msdn.microsoft.com/library/windows/hardware/ff567780)
+[**极化**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567780(v=vs.85))
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - 自定义块 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 808fe8aeb00c8b711885285ee2f7c1b3f021ae78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33a290819ab6e47154ae1b19b55162b2b3a72864
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365357"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365815"
 ---
 # <a name="implementing-custom-wmi-blocks"></a>实现自定义 WMI 块
 
@@ -52,13 +52,13 @@ ms.locfileid: "63365357"
 
 -   限制事件块的最大大小为 1k 字节。
 
-    应为较小的数据类型时，定义事件项目，因为注册表定义的大小限制 (最初，1 K) 的整个[ **WNODE\_事件\_项**](https://msdn.microsoft.com/library/windows/hardware/ff566373)结构包含生成的事件。 对于大型的通知，驱动程序可以发送[ **WNODE\_事件\_引用**](https://msdn.microsoft.com/library/windows/hardware/ff566374)结构，它指定 WMI 然后查询以获取一个数据块的单个实例实际事件。 但是，这会增加之间的匹配项的事件和通知的时间间隔。
+    应为较小的数据类型时，定义事件项目，因为注册表定义的大小限制 (最初，1 K) 的整个[ **WNODE\_事件\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_event_item)结构包含生成的事件。 对于大型的通知，驱动程序可以发送[ **WNODE\_事件\_引用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_event_reference)结构，它指定 WMI 然后查询以获取一个数据块的单个实例实际事件。 但是，这会增加之间的匹配项的事件和通知的时间间隔。
 
 -   将固定大小的数据项目放置在数据块，然后对任何大小可变的数据项开头。
 
     例如，数据块，有三个 DWORD 数据项目，一个可变长度字符串应将三个 dword 值第一次，跟的字符串。 将固定大小的数据的项放在块的开头允许 WMI 客户端能够更轻松地将其提取。
 
--   请考虑哪些类型的系统用户想要访问您的驱动程序的数据块。 系统提供的默认安全描述符的所有 WMI 类的 Guid。 如有必要，可以提供备用的安全描述符中设备的 INF 文件。 有关详细信息，请参阅[创建安全的设备安装](https://msdn.microsoft.com/library/windows/hardware/ff540212)。
+-   请考虑哪些类型的系统用户想要访问您的驱动程序的数据块。 系统提供的默认安全描述符的所有 WMI 类的 Guid。 如有必要，可以提供备用的安全描述符中设备的 INF 文件。 有关详细信息，请参阅[创建安全的设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)。
 
 WMI 不支持此功能，因此驱动程序编写器必须定义一个新的 MOF 类，并生成新的 GUID，若要修改现有的自定义块。
 

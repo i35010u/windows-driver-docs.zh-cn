@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6567bbb3032dbcea06789b507221ad555f2b418
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc9569206a346f5b1025e77295cb7a3c0a10e073
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361429"
 ---
 # <a name="debugrequestgetcapturedeventcodeoffset"></a>调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量
 
@@ -40,7 +40,7 @@ ms.locfileid: "63369787"
 <span id="E_NOINTERFACE"></span><span id="e_nointerface"></span>E\_NOINTERFACE  
 在当前事件的指令指针的内存不是有效的。
 
-此方法还可能返回错误值。 请参阅[**返回值**](https://msdn.microsoft.com/library/windows/hardware/ff549771)的更多详细信息。
+此方法还可能返回错误值。 请参阅[**返回值**](https://docs.microsoft.com/windows-hardware/drivers/debugger/hresult-values)的更多详细信息。
 
 <a name="remarks"></a>备注
 -------

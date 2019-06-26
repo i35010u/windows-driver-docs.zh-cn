@@ -9,12 +9,12 @@ keywords:
 - 刷新缓存的数据
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca5160347d97edd817c43e2df691acf9491420d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cee326a8f5df5ed787a0e1e55be193b010c77b9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359981"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386594"
 ---
 # <a name="flushing-cached-data-during-dma-operations"></a>执行 DMA 操作期间刷新缓存数据
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359981"
 
 
 
-在某些平台的处理器和系统 DMA 控制器 （或总线 master DMA 适配器） 表现出缓存协调性异常。 以下指导原则启用使用版本 1 或 2 的 DMA 操作接口的驱动程序 (请参阅[ **DMA\_OPERATIONS**](https://msdn.microsoft.com/library/windows/hardware/ff544071)) 以跨所有受支持的处理器维护一致的缓存状态体系结构，包括体系结构不包含硬件自动强制实施缓存一致性。
+在某些平台的处理器和系统 DMA 控制器 （或总线 master DMA 适配器） 表现出缓存协调性异常。 以下指导原则启用使用版本 1 或 2 的 DMA 操作接口的驱动程序 (请参阅[ **DMA\_OPERATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_operations)) 以跨所有受支持的处理器维护一致的缓存状态体系结构，包括体系结构不包含硬件自动强制实施缓存一致性。
 
 **请注意**  本主题中的指导原则仅适用于使用版本 1 和 2 DMA 操作接口的驱动程序。 使用此接口的版本 3 的驱动程序必须遵循一组不同的指导原则。 有关详细信息，请参阅[DMA 操作接口的版本 3](version-3-of-the-dma-operations-interface.md)。
 
@@ -30,11 +30,11 @@ ms.locfileid: "63359981"
 
 **若要在 DMA 操作期间保持数据完整性，最低级别的驱动程序必须遵循这些指导原则**
 
-1.  调用[ **KeFlushIoBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff552041)之前开始传输操作中可能缓存在处理器中的数据和内存中的数据之间保持一致。
+1.  调用[ **KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers)之前开始传输操作中可能缓存在处理器中的数据和内存中的数据之间保持一致。
 
-    如果驱动程序调用[ **AllocateCommonBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff540575)与*CacheEnabled*参数设置为**TRUE**，驱动程序必须调用**KeFlushIoBuffers**开始传输操作中的向/从其缓冲区之前。
+    如果驱动程序调用[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)与*CacheEnabled*参数设置为**TRUE**，驱动程序必须调用**KeFlushIoBuffers**开始传输操作中的向/从其缓冲区之前。
 
-2.  调用[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)末尾的每个设备传输操作以确保系统 DMA 控制器的缓冲区中的任何其余部分字节都已写入到内存或从属的设备。
+2.  调用[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)末尾的每个设备传输操作以确保系统 DMA 控制器的缓冲区中的任何其余部分字节都已写入到内存或从属的设备。
 
     或者，致电**FlushAdapterBuffers**给定 IRP 每个传输操作的末尾以确保所有数据已读取到系统内存或写出到总线 master DMA 设备。
 

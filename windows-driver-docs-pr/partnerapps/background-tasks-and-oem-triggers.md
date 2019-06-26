@@ -4,12 +4,12 @@ description: 后台任务和自定义触发器
 ms.assetid: 672d3501-da84-495b-b70e-f07de32aff53
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a34d6920032d824cd151bd55114f9eb1db89ea4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3b944e4b402de69be1e60fcb0c9ce1f5a8f0d3b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353569"
 ---
 # <a name="background-tasks-and-custom-triggers"></a>后台任务和自定义触发器
 
@@ -109,7 +109,7 @@ NTSTATUS status = RtlRaiseCustomSystemEventTrigger(&triggerConfig);
     }
     ```
 
-有关其他指南有关创建、 配置和使用后台任务和触发器，请参阅[快速入门：创建并注册后台任务](https://msdn.microsoft.com/library/windows/apps/hh977055.aspx)。
+有关其他指南有关创建、 配置和使用后台任务和触发器，请参阅[快速入门：创建并注册后台任务](https://docs.microsoft.com/previous-versions/windows/apps/hh977055(v=win.10))。
 
  
 

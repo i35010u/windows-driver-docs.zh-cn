@@ -5,12 +5,12 @@ ms.assetid: 0481f225-869f-4313-9bc5-7af1de0b7d2d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RCV_ERROR 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5718f66189768fcb9ff929955ad9c52b30a162ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cdded96c483e6b4ab9bf2cdaed354a34644f017e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386224"
 ---
 # <a name="oidgenrcverror"></a>OID\_GEN\_RCV\_ERROR
 
@@ -37,7 +37,7 @@ ms.locfileid: "56563426"
 <a name="remarks"></a>备注
 -------
 
-有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)。
+有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
 
 <a name="requirements"></a>要求
 ------------

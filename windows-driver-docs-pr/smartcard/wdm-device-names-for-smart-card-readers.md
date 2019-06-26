@@ -11,12 +11,12 @@ keywords:
 - WDM 设备名称 WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d6ceba9efb6422a631671bb2e65b7b7d6788fa5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 72f1c2047a591f714daaebf00c7b11760d7ad895
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540379"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369609"
 ---
 # <a name="wdm-device-names-for-smart-card-readers"></a>智能卡读卡器的 WDM 设备名称
 
@@ -36,7 +36,7 @@ ms.locfileid: "56540379"
 
 *\\DosDevices\\SCReader\[Unit\]*
 
-Win32 命名空间中的设备的单元号不必是用来构成的内核设备名称相同。 它应该是第一个可用的单元数。 使用[ **SmartcardCreateLink (WDM)** ](https://msdn.microsoft.com/library/windows/hardware/ff548935)自动生成符号链接的名称。
+Win32 命名空间中的设备的单元号不必是用来构成的内核设备名称相同。 它应该是第一个可用的单元数。 使用[ **SmartcardCreateLink (WDM)** ](https://docs.microsoft.com/previous-versions/ff548935(v=vs.85))自动生成符号链接的名称。
 
  
 

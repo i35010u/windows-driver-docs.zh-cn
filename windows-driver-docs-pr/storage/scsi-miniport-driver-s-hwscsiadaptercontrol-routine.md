@@ -7,12 +7,12 @@ keywords:
 - HwScsiAdapterControl
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2034a3919e09ecbfb462c801a25ade9aa47220cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58bc3c42b2ef854b7b466f4dad207398dbdba861
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341883"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384328"
 ---
 # <a name="scsi-miniport-drivers-hwscsiadaptercontrol-routine"></a>SCSI 微型端口驱动程序的 HwScsiAdapterControl 例程
 
@@ -20,7 +20,7 @@ ms.locfileid: "63341883"
 ## <span id="ddk_scsi_miniport_drivers_hwscsiadaptercontrol_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIADAPTERCONTROL_ROUTINE_KG"></span>
 
 
-在基于 NT 的操作系统，微型端口驱动程序应将此入口点设置为**NULL**中[ **HW\_初始化\_数据 (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456) (请参阅[必需和可选 SCSI 微型端口驱动程序例程](required-and-optional-scsi-miniport-driver-routines.md)) 如果微型端口驱动程序不支持即插。 否则，微型端口驱动程序必须具有[ **HwScsiAdapterControl**](https://msdn.microsoft.com/library/windows/hardware/ff557274)例程以支持其 HBA 的 PnP 和电源管理操作。
+在基于 NT 的操作系统，微型端口驱动程序应将此入口点设置为**NULL**中[ **HW\_初始化\_数据 (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data) (请参阅[必需和可选 SCSI 微型端口驱动程序例程](required-and-optional-scsi-miniport-driver-routines.md)) 如果微型端口驱动程序不支持即插。 否则，微型端口驱动程序必须具有[ **HwScsiAdapterControl**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))例程以支持其 HBA 的 PnP 和电源管理操作。
 
 微型端口驱动程序*HwScsiAdapterControl*端口驱动程序与第一次调用例程**ScsiQuerySupportedControlTypes** HBA 初始化后但在第一次 I/O，以确定之前微型端口驱动程序支持的其他操作。 微型端口驱动程序设置支持中受支持的操作数\_控制\_类型\_分配的端口驱动程序的列表。 之后*HwScsiAdapterControl*端口驱动程序仅为指示的微型端口驱动程序调用例程再次从该初始调用时，返回。
 
@@ -36,11 +36,11 @@ ms.locfileid: "63341883"
 
 -   **ScsiSetBootConfig**还原 BIOS 可能需要启动系统的 HBA 上的任何设置。
 
-    微型端口驱动程序应支持**ScsiSetBootConfig**如果它需要调用[ **ScsiPortGetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff564624)或者[ **ScsiPortSetBusDataByOffset** ](https://msdn.microsoft.com/library/windows/hardware/ff564751)还原此类设置。 端口驱动程序调用微型端口驱动程序*HwScsiAdapterControl*与**ScsiSetBootConfig**后调用的例程来停止 HBA。
+    微型端口驱动程序应支持**ScsiSetBootConfig**如果它需要调用[ **ScsiPortGetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetbusdata)或者[ **ScsiPortSetBusDataByOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)还原此类设置。 端口驱动程序调用微型端口驱动程序*HwScsiAdapterControl*与**ScsiSetBootConfig**后调用的例程来停止 HBA。
 
 -   **ScsiSetRunningConfig**还原微型端口驱动程序可能需要在系统运行时控制 HBA 的 HBA 上的任何设置。
 
-    微型端口驱动程序应支持**ScsiSetRunningConfig**如果它需要调用**ScsiPortGetBusData**或[ **ScsiPortSetBusDataByOffset** ](https://msdn.microsoft.com/library/windows/hardware/ff564751)若要还原此类设置。 端口驱动程序调用微型端口驱动程序*HwScsiAdapterControl*与**ScsiSetRunningConfig**之前调用重启 HBA 的例程。
+    微型端口驱动程序应支持**ScsiSetRunningConfig**如果它需要调用**ScsiPortGetBusData**或[ **ScsiPortSetBusDataByOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)若要还原此类设置。 端口驱动程序调用微型端口驱动程序*HwScsiAdapterControl*与**ScsiSetRunningConfig**之前调用重启 HBA 的例程。
 
 -   **ScsiRestartAdapter**重新启动已关闭电源管理的 HBA。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63341883"
 
     如果微型端口驱动程序不支持**ScsiRestartAdapter**，端口驱动程序调用微型端口驱动程序*HwScsiFindAdapter*并*HwScsiInitialize*例程重新启动 HBA。 但是，此类例程可能会执行的是不必要时重新启动，因此这样的微型端口驱动程序将不会接通其 HBA 作为支持的微型端口驱动程序快速检测工作**ScsiRestartAdapter**。
 
-请参阅[ **HwScsiAdapterControl** ](https://msdn.microsoft.com/library/windows/hardware/ff557274)有关详细信息。
+请参阅[ **HwScsiAdapterControl** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))有关详细信息。
 
  
 

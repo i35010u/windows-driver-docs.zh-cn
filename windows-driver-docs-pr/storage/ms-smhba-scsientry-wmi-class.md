@@ -4,12 +4,12 @@ description: MS\_SMHBA\_SCSIENTRY WMI 类
 ms.assetid: 8ac7a979-b3fe-4da6-a8e7-301c64b27e46
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3273d333ff381fcdd00e2a4788face80c29dcb52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1e2d9bb44b382e421905625b8450c09282f4ba6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386122"
 ---
 # <a name="mssmhbascsientry-wmi-class"></a>MS\_SMHBA\_SCSIENTRY WMI 类
 
@@ -34,7 +34,7 @@ class MS_SMHBA_SCSIENTRY
 
 此类定义编译时通过 WMI 工具套件，它会生成以下数据结构：
 
-[**MS\_SMHBA\_SCSIENTRY**](https://msdn.microsoft.com/library/windows/hardware/ff563191)
+[**MS\_SMHBA\_SCSIENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_scsientry)
 
 没有与此 WMI 类相关联的方法。
 

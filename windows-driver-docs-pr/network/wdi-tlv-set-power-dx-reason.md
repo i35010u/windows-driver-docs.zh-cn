@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_POWER_DX_REASON 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc4a0e25ae474c0fa3be35debba07661b91ed09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4bb49dc065fd0c2b26fff71e54e99bf9a1407f7
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391753"
 ---
 # <a name="wditlvsetpowerdxreason"></a>WDI\_TLV\_SET\_POWER\_DX\_REASON
 
@@ -49,7 +49,7 @@ UINT32 大小 （以字节为单位）。
 <p>有效值包括：</p>
 <ul>
 <li><p>WDI_SET_POWER_DX_REASON_SELETIVE_SUSPEND (1)</p>
-<p>当设置此值时，则意味着唤醒上任何有趣的外部事件，而无需显式<a href="wdi-tlv-enable-wake-events.md" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](wdi-tlv-enable-wake-events.md)"> <strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a>。 这是空闲的低能耗其中设备函数以透明方式向最终用户，就好像 D0 中一样。 请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/mt269159" data-raw-source="[WDI USB remote wake sequence](https://msdn.microsoft.com/library/windows/hardware/mt269159)">WDI USB 远程唤醒序列</a>有关详细信息。</p></li>
+<p>当设置此值时，则意味着唤醒上任何有趣的外部事件，而无需显式<a href="wdi-tlv-enable-wake-events.md" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](wdi-tlv-enable-wake-events.md)"> <strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a>。 这是空闲的低能耗其中设备函数以透明方式向最终用户，就好像 D0 中一样。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-usb-remote-wake-sequence" data-raw-source="[WDI USB remote wake sequence](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-usb-remote-wake-sequence)">WDI USB 远程唤醒序列</a>有关详细信息。</p></li>
 </ul></td>
 </tr>
 </tbody>

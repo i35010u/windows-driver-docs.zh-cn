@@ -4,12 +4,12 @@ description: 设备基本覆盖率测试监视和报告的各种 I/O 请求数�
 ms.assetid: 950B124B-8B2D-4A54-AFC3-E90BBDD8D1AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08e5da67ea719cc004a8414e224532bc597daa04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 495eea96cb5233b59235d5f99e02889763c1cc28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371575"
 ---
 # <a name="coverage-tests-device-fundamentals"></a>覆盖范围测试（设备基础功能）
 
@@ -43,7 +43,7 @@ ms.locfileid: "63343107"
 <p><strong>测试二进制文件：</strong>DriverCoverageDisableSupport.dll</p>
 <p><strong>测试方法：</strong>DisableCoverageDataCollection</p>
 <p><strong>参数：</strong></p>
-<p><em>DQ</em> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p></td>
+<p><em>DQ</em> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Display_collected_IRP_coverage_data._"></span><span id="display_collected_irp_coverage_data._"></span><span id="DISPLAY_COLLECTED_IRP_COVERAGE_DATA._"></span>显示收集的 IRP 覆盖率数据。</p></td>
@@ -65,7 +65,7 @@ ms.locfileid: "63343107"
 <p><strong>测试二进制文件：</strong>DriverCoverageEnableSupport.dll</p>
 <p><strong>测试方法：</strong>EnableCoverageDataCollection</p>
 <p><strong>参数：</strong>无</p>
-<p><em>DQ</em> -请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">设备基础测试参数</a></p></td>
+<p><em>DQ</em> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,17 +79,17 @@ ms.locfileid: "63343107"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[如何在运行时使用 Visual Studio 测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
-[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)
 
 [设备基础功能测试](device-fundamentals-tests.md)
 
-[设备基础功能测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[设备基础功能测试参数](https://docs.microsoft.com/windows-hardware/drivers)
 
-[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)（提供的 WDTF 简单 I/O 插件）
+[Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)（提供的 WDTF 简单 I/O 插件）
 
-[如何在运行时通过命令提示符测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[如何在运行时通过命令提示符测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

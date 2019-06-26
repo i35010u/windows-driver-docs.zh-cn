@@ -5,12 +5,12 @@ ms.assetid: 8A504A81-6DC8-415C-9FDC-F03657A0EB87
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PD_CLOSE_PROVIDER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cb89d22693c13b4fa2aa8ee966c6edf0a46acf2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f321b3903fe5b21e8ba453db847c6d18f6c3e32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346789"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383244"
 ---
 # <a name="oidpdcloseprovider"></a>OID\_PD\_关闭\_提供程序
 
@@ -48,11 +48,11 @@ NDIS 协议或筛选器驱动程序必须调用此 OID，当它收到取消绑�
 ## <a name="see-also"></a>请参阅
 
 
-[*MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)
+[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
 
-[**NDIS\_PD\_关闭\_提供程序\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn931834)
+[**NDIS\_PD\_关闭\_提供程序\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_pd_close_provider_parameters)
 
-[NDIS\_状态\_PD\_当前\_配置](https://msdn.microsoft.com/library/windows/hardware/dn931850)
+[NDIS\_状态\_PD\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pd-current-config)
 
 [OID\_PD\_打开\_提供程序](oid-pd-open-provider.md)
 

@@ -9,12 +9,12 @@ keywords:
 - 模拟 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 329f57369e88186a9dcc750ed11fac48b4003a98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86d6a0f03b75345989b5b8ad5ee01b52a7e9ec56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378119"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382856"
 ---
 # <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>处理 UMDF 1.x 驱动程序中的客户端模拟
 
@@ -39,7 +39,7 @@ UMDF 驱动程序的安装包和客户端应用程序必须按如下所示启用
 
 UMDF 驱动程序和框架处理以下序列中的 I/O 请求的模拟：
 
-1.  驱动程序调用[ **IWDFIoRequest::Impersonate** ](https://msdn.microsoft.com/library/windows/hardware/ff559136)方法，以指定所需的模拟级别和一个[ **IImpersonateCallback::OnImpersonate**](https://msdn.microsoft.com/library/windows/hardware/ff554916)回调函数。
+1.  驱动程序调用[ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)方法，以指定所需的模拟级别和一个[ **IImpersonateCallback::OnImpersonate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iimpersonatecallback-onimpersonate)回调函数。
 
 2.  该框架会将请求的模拟级别。 如果所请求的级别大于 UMDF 驱动程序的安装包和客户端应用程序允许的级别，模拟请求失败。 否则为该框架模拟客户端并立即调用**OnImpersonate**回调函数。
 
@@ -47,15 +47,15 @@ UMDF 驱动程序和框架处理以下序列中的 I/O 请求的模拟：
 
 UMDF 不允许的驱动程序**OnImpersonate**要调用的任何框架的对象方法的回调函数。 这可确保该驱动程序不会公开给其他驱动程序回调函数或其他驱动程序的模拟级别。
 
-**请注意**  在版本 1.0 到 UMDF，1.7 [ **IWDFIoRequest::Impersonate** ](https://msdn.microsoft.com/library/windows/hardware/ff559136)授予的最高的模拟级别，客户端应用程序和 INF 文件允许，甚至如果该驱动程序请求的模拟级别较低。 在 UMFD 版本 1.9 及更高版本， **Impersonate**方法授予仅模拟级别，则该驱动程序请求。
+**请注意**  在版本 1.0 到 UMDF，1.7 [ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)授予的最高的模拟级别，客户端应用程序和 INF 文件允许，甚至如果该驱动程序请求的模拟级别较低。 在 UMFD 版本 1.9 及更高版本， **Impersonate**方法授予仅模拟级别，则该驱动程序请求。
 
  
 
 ### <a name="passing-credentials-down-the-driver-stack"></a>将驱动程序堆栈的下层的凭据传递
 
-当您的驱动程序收到[ **WdfRequestCreate**](https://msdn.microsoft.com/library/windows/hardware/ff561467)-类型化的 I/O 请求，该驱动程序可能会转发到内核模式驱动程序在驱动程序堆栈的下层的 I/O 请求。 内核模式驱动程序不具有模拟功能， **IWDFIoRequest::Impersonate**提供对基于 UMDF 驱动程序。
+当您的驱动程序收到[ **WdfRequestCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi_types/ne-wudfddi_types-_wdf_request_type)-类型化的 I/O 请求，该驱动程序可能会转发到内核模式驱动程序在驱动程序堆栈的下层的 I/O 请求。 内核模式驱动程序不具有模拟功能， **IWDFIoRequest::Impersonate**提供对基于 UMDF 驱动程序。
 
-因此，如果你想要接收客户端的用户凭据的内核模式驱动程序 (而不是凭据[驱动程序主机进程](umdf-driver-host-process.md))，该驱动程序必须设置[ **WDF\_请求\_发送\_选项\_IMPERSONATE\_客户端**](https://msdn.microsoft.com/library/windows/hardware/ff561462)标志时，它调用[ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)发送创建对 I/O 目标请求。 **发送**方法将返回错误代码如果模拟尝试失败，除非该驱动程序还会设置**WDF\_请求\_发送\_选项\_模拟\_忽略\_失败**标志。
+因此，如果你想要接收客户端的用户凭据的内核模式驱动程序 (而不是凭据[驱动程序主机进程](umdf-driver-host-process.md))，该驱动程序必须设置[ **WDF\_请求\_发送\_选项\_IMPERSONATE\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)标志时，它调用[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)发送创建对 I/O 目标请求。 **发送**方法将返回错误代码如果模拟尝试失败，除非该驱动程序还会设置**WDF\_请求\_发送\_选项\_模拟\_忽略\_失败**标志。
 
 该驱动程序不需要调用**IWDFIoRequest::Impersonate**它将请求发送到 I/O 目标之前。
 

@@ -21,12 +21,12 @@ keywords:
 - 扬声器 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 072fd3aba8cabda67cc203c4ef198f1680d6d244
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ab54296ef1f8441f908b3314121d6dda4531824
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333389"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359852"
 ---
 # <a name="introduction-to-wdm-audio-drivers"></a>WDM 音频驱动程序简介
 
@@ -52,7 +52,7 @@ KS 筛选器作为封装一定数量的相关流处理功能的内核模式驱�
 
 KS 筛选器公开一系列*固定工厂*到音频系统。 每个 pin 工厂都能够实例化特定类型的 pin。 如果筛选器可以提供相似或相同在函数中，筛选器组的一个或多个 pin 组合在一起这些引脚到相同的 pin 工厂。 例如，可以实例化单个输出插针的一个 pin 工厂和第二个 pin 工厂可以实例化多个输入插针，可能必须执行音频混合的筛选器。
 
-Windows 驱动程序模型为基础构建 KS 服务。 请注意，术语*KS 筛选器*必须是从一词可分辨*筛选器驱动程序*，这是另一个 WDM 概念。 筛选器驱动程序位于 WDM 驱动程序堆栈，并可以截获和修改通过堆栈传播的 I/O 请求数据包 (Irp)。 大写和较低级别筛选器驱动程序分别位于上方和下方函数驱动程序。 在本部分中，术语*筛选器*指 KS 筛选器而不是筛选器驱动程序，除非另有说明。 有关筛选器驱动程序的详细信息，请参阅[WDM 驱动程序类型](https://msdn.microsoft.com/library/windows/hardware/ff564862)。
+Windows 驱动程序模型为基础构建 KS 服务。 请注意，术语*KS 筛选器*必须是从一词可分辨*筛选器驱动程序*，这是另一个 WDM 概念。 筛选器驱动程序位于 WDM 驱动程序堆栈，并可以截获和修改通过堆栈传播的 I/O 请求数据包 (Irp)。 大写和较低级别筛选器驱动程序分别位于上方和下方函数驱动程序。 在本部分中，术语*筛选器*指 KS 筛选器而不是筛选器驱动程序，除非另有说明。 有关筛选器驱动程序的详细信息，请参阅[WDM 驱动程序类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/types-of-wdm-drivers)。
 
 本部分包含以下主题：
 

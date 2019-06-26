@@ -9,12 +9,12 @@ keywords:
 - 用户模式显示驱动程序 WDK Windows Vista 中，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f0d6774937d17cbf1939807252a6086cc392c19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbf217677d6e3ba7479943d5c4ce6978e77df48e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386234"
 ---
 # <a name="windows-display-driver-model-wddm-architecture"></a>Windows 显示驱动程序模型 (WDDM) 体系结构
 
@@ -26,7 +26,7 @@ ms.locfileid: "63391135"
 
 ![说明 wddm 体系结构的关系图](images/dx10arch.png)
 
-图形硬件供应商必须提供用户模式显示驱动程序和显示微型端口驱动程序。 用户模式显示驱动程序是 Microsoft Direct3D 运行时加载的动态链接库 (DLL)。 显示*微型端口驱动程序*与 Microsoft DirectX 图形内核子系统进行通信。 有关用户模式显示驱动程序和显示微型端口驱动程序的详细信息，请参阅[Windows 显示驱动程序模型 (WDDM) 引用](https://msdn.microsoft.com/library/windows/hardware/ff570595)。
+图形硬件供应商必须提供用户模式显示驱动程序和显示微型端口驱动程序。 用户模式显示驱动程序是 Microsoft Direct3D 运行时加载的动态链接库 (DLL)。 显示*微型端口驱动程序*与 Microsoft DirectX 图形内核子系统进行通信。 有关用户模式显示驱动程序和显示微型端口驱动程序的详细信息，请参阅[Windows 显示驱动程序模型 (WDDM) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_display/)。
 
  
 

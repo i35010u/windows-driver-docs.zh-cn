@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e1f5489727054e3d2703bf0f829deca217a73a89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec42343beab0836d833526b813b67adf3a1f596b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354847"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363028"
 ---
 # <a name="devpkeydevicedriverrank"></a>DEVPKEY_Device_DriverRank
 
@@ -58,11 +58,11 @@ DEVPKEY_Device_DriverRank 设备属性表示为设备实例安装的驱动程序
 
 Windows 设置 DEVPKEY_Device_DriverRank 的值。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_DriverRank 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_DriverRank 值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverRank 属性键。 有关如何访问这些早期版本的 Windows 上的此属性的信息，请参阅[访问设备驱动程序属性](https://msdn.microsoft.com/library/windows/hardware/ff537732)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_DriverRank 属性键。 有关如何访问这些早期版本的 Windows 上的此属性的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
-有关驱动程序级别的信息，请参阅[如何 Windows Ranks Drivers](https://msdn.microsoft.com/library/windows/hardware/ff686700) 。
+有关驱动程序级别的信息，请参阅[如何 Windows Ranks Drivers](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,11 +87,11 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiGetDriverInstallParams**](https://msdn.microsoft.com/library/windows/hardware/ff551978)
+[**SetupDiGetDriverInstallParams**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)
 
-[**SP_DRVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553290)
+[**SP_DRVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)
 
  
 

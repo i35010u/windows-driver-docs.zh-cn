@@ -7,12 +7,12 @@ keywords:
 - SCSI 端口驱动程序 WDK 存储、 Storport 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09711e8b3ca0bba7c2b2c40db8b1042b5c0e5977
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63624e3036fea54a4755cfb8ecd7ff70ab47810c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355575"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386181"
 ---
 # <a name="making-scsi-port-miniport-drivers-work-with-storport"></a>使 SCSI 端口微型端口驱动程序适用于 Storport
 
@@ -30,7 +30,7 @@ Storport 微型端口驱动程序接口旨在为类似于 SCSI 端口微型端�
 
 3.  请确保已正确初始化扩展的所有结构。
 
-    这两者的大小[ **HW\_初始化\_数据 (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)结构和[**端口\_配置\_信息 (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff563900)结构已更改，因此请确保已正确初始化的新成员。
+    这两者的大小[ **HW\_初始化\_数据 (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)结构和[**端口\_配置\_信息 (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)结构已更改，因此请确保已正确初始化的新成员。
 
 Storport 标头文件， *storport.h，* 目前所保持的 SCSI 端口作为前缀的命令和 StorPort 前缀命令以便从 SCSI 端口移植。
 

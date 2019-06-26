@@ -4,12 +4,12 @@ description: KSMETHODSETID\_BdaDeviceConfiguration
 ms.assetid: a0014869-2ea0-4f55-be3a-da1e624ad61c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ada463b308805a22d8fe4b6fdc28dfce4ff695e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f1f54f083881bc8dc856ce2a2909240b33aea99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362631"
 ---
 # <a name="ksmethodsetidbdadeviceconfiguration"></a>KSMETHODSETID\_BdaDeviceConfiguration
 
@@ -38,7 +38,7 @@ KSMETHODSETID\_BdaDeviceConfiguration 是 BDA 设备配置方法集。 它用于
 
 ### <a name="see-also"></a>请参阅
 
-[**BdaInitFilter**](https://msdn.microsoft.com/library/windows/hardware/ff556464)
+[**BdaInitFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdainitfilter)
 
  
 

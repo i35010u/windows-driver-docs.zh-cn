@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CHANGE_OPERATION_MODE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7134b0e75af214a3a3d78cd9f406d295c84142ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f31cc86fe32c2a65f85c8b0abe8a3f45feb357e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348504"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386528"
 ---
 # <a name="oidwditaskchangeoperationmode"></a>OID\_WDI\_任务\_更改\_操作\_模式
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_更改\_操作\_模式配置的端口的操作模式。
 
 | Object | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------|---------------------------------------|---------------------------------|
-| 端口   | 否            | 4                                     | 1                               |
+| Port   | 否            | 4                                     | 1                               |
 
  
 
@@ -30,7 +30,7 @@ OID\_WDI\_任务\_更改\_操作\_模式配置的端口的操作模式。
 
 | TLV                                                              | 允许多个 TLV 实例 | 可选 | 描述                 |
 |------------------------------------------------------------------|--------------------------------|----------|-----------------------------|
-| [**WDI\_TLV\_操作\_模式**](https://msdn.microsoft.com/library/windows/hardware/dn897856) |                                |          | 所需的操作模式。 |
+| [**WDI\_TLV\_操作\_模式**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-operation-mode) |                                |          | 所需的操作模式。 |
 
  
 

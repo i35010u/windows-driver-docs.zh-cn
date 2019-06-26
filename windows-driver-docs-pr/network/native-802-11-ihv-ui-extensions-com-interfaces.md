@@ -7,12 +7,12 @@ keywords:
 - COM 接口 WDK 本机 802.11 IHV UI 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a44c0b76244ba7d05efbcbdcbe1912549096686b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc40bc2ff7a3fcf4a12eb8be0711dd88199e3eca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383618"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387283"
 ---
 # <a name="native-80211-ihv-ui-extensions-com-interfaces"></a>本机 802.11 IHV UI 扩展 COM 接口
 
@@ -28,7 +28,7 @@ ms.locfileid: "63383618"
 
 本机 802.11 IHV UI 扩展 DLL 必须提供的实现**IDot11ExtUI** COM 接口。
 
-有关此 COM 接口的详细信息，请参阅[IDot11ExtUI COM 接口](https://msdn.microsoft.com/library/windows/hardware/ff553769)。
+有关此 COM 接口的详细信息，请参阅[IDot11ExtUI COM 接口](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553769(v=vs.85))。
 
 <a href="" id="idot11extuiproperty"></a>**IDot11ExtUIProperty**  
 通过**IDot11ExtUIProperty** COM 接口，本机 802.11 IHV UI 扩展 DLL 可以扩展本机 802.11 网络配置 UI 显示的连接和安全属性。
@@ -37,7 +37,7 @@ ms.locfileid: "63383618"
 
 本机 802.11 IHV UI 扩展 DLL 可以提供的一个或多个实现**IDot11ExtUIProperty** COM 接口，与每个实现，后者表示 IHV 定义扩展到本机 802.11 属性。 该 DLL 可以提供一个或多个属性扩展的安全设置。 适用于 Windows Vista DLL 可以添加多个属性扩展中的连接设置。
 
-有关此 COM 接口的详细信息，请参阅[IDot11ExtUIProperty COM 接口](https://msdn.microsoft.com/library/windows/hardware/ff553746)。
+有关此 COM 接口的详细信息，请参阅[IDot11ExtUIProperty COM 接口](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553746(v=vs.85))。
 
 <a href="" id="iwizardextension"></a>**IWizardExtension**  
 本机 802.11 IHV UI 扩展 DLL 可以提供的一个或多个实现**IWizardExtension** COM 接口。 每个实现都支持一个或多个自定义 UI 页的显示。 这些 UI 页将显示通过以下项之一：

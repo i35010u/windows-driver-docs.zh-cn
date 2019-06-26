@@ -4,17 +4,17 @@ description: 若要指示是否从非分页缓冲池分配的内存应为无执�
 ms.assetid: 954AC53F-270D-4149-AE5D-6BEA7EFAA761
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 80005e402a39364e216abc304da1c6d90a8ec0ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a0841f6e3bf648b81ce27e24dd953830badeb1c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365421"
 ---
 # <a name="nx-and-execute-pool-types"></a>NX 和执行池类型
 
 
-若要指示是否从非分页缓冲池分配的内存应为无执行 (NX)，可以使用从 Windows 8 开始的两个新池类型。 这些池类型指定由以下[**池\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)枚举值：
+若要指示是否从非分页缓冲池分配的内存应为无执行 (NX)，可以使用从 Windows 8 开始的两个新池类型。 这些池类型指定由以下[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)枚举值：
 
 <a href="" id="nonpagedpoolnx"></a>**NonPagedPoolNx**  
 NX 非分页缓冲的池。 不能从这个池分配的内存中执行的说明。

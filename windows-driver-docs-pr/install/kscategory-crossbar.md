@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f2d0da83456ef4219aa579fc8b79f2a09b82e5f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa5ce0a7f5e56a8db1d573b4192ffb949c0b221d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385906"
 ---
 # <a name="kscategorycrossbar"></a>KSCATEGORY_CROSSBAR
 
 
-KSCATEGORY_CROSSBAR[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 功能将路由视频和音频流的横线设备类别。
+KSCATEGORY_CROSSBAR[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能将路由视频和音频流的横线设备类别。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS 设备的驱动程序注册 KSCATEGORY_CROSSBAR 向操作系统指示设备�
 
 有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src\\swtuner\\algtuner* WDK 的目录。
 
-有关音频和视频的纵横制设备的信息，请参阅[使用视频捕获设备使用的筛选器](https://msdn.microsoft.com/library/windows/hardware/ff559598)并[模拟视频类别](https://msdn.microsoft.com/library/windows/hardware/ff554095)。
+有关音频和视频的纵横制设备的信息，请参阅[使用视频捕获设备使用的筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/filters-used-with-the-video-capture-devices)并[模拟视频类别](https://docs.microsoft.com/windows-hardware/drivers/stream/analog-video-category)。
 
 <a name="requirements"></a>要求
 ------------

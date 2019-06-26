@@ -6,12 +6,12 @@ keywords:
 - 内核流式处理代理 WDK AVStream 插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e291b4ff1da8cbf70d69c1c29457e00b8fb3b23b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48f6ef7ea9e17ef2fd6462597454e5c97336552f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341207"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360645"
 ---
 # <a name="kernel-streaming-proxy-plug-ins-design-guide"></a>内核流式处理代理插件设计指南
 
@@ -32,7 +32,7 @@ ms.locfileid: "63341207"
 
 [插件的属性页](property-page-plug-in.md)
 
-有关 KS 代理 COM 接口、 导出的帮助器函数和由应用程序和插件的结构的详细信息，请参阅[内核流式处理代理](https://msdn.microsoft.com/library/windows/hardware/ff560877)。
+有关 KS 代理 COM 接口、 导出的帮助器函数和由应用程序和插件的结构的详细信息，请参阅[内核流式处理代理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)。
 
  
 

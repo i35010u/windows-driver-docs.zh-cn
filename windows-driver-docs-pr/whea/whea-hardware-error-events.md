@@ -12,17 +12,17 @@ keywords:
 - WDK WHEA 事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4113478be650c3c8cccd820b1cbbc123b10677b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b8226243c435e6aede57631301886e50151a7fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376378"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387142"
 ---
 # <a name="whea-hardware-error-events"></a>WHEA 硬件错误事件
 
 
-Windows 硬件错误体系结构 (WHEA) 引发一个事件跟踪 Windows (ETW) 事件，每当硬件错误发生时。 系统事件日志中记录这些硬件错误事件。 WHEA 会出现的各种硬件错误事件的说明，请参阅[硬件错误事件](https://msdn.microsoft.com/library/windows/hardware/ff559387)。
+Windows 硬件错误体系结构 (WHEA) 引发一个事件跟踪 Windows (ETW) 事件，每当硬件错误发生时。 系统事件日志中记录这些硬件错误事件。 WHEA 会出现的各种硬件错误事件的说明，请参阅[硬件错误事件](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)。
 
 通过查询 WHEA 未记录任何事件，应用程序可以从系统事件日志检索硬件错误事件。 有关如何从系统事件日志中检索 WHEA 硬件错误事件的示例，请参阅[查询硬件错误事件的系统事件日志](querying-the-system-event-log-for-hardware-error-events.md)。
 

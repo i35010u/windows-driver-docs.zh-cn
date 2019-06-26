@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c3f94e81fc2036cca1b359d211764f33b9f8f2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65b21b0bbfe7d4e933510564abbe16154483bc0c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355363"
 ---
 # <a name="kspropertycameracontrolextendedphotoconfirmation"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn917962)枚举用于设置和驱动程序中获取照片确认设置。
+**KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举用于设置和驱动程序中获取照片确认设置。
 
 ## <a name="usage-summary-table"></a>使用率摘要表
 
@@ -56,7 +56,7 @@ ms.locfileid: "63327134"
 #define KSCAMERA_EXTENDEDPROP_PHOTOCONFIRMATION_ON      0x0000000000000001
 ```
 
-如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_OFF**，不能生成照片帧或生成驱动程序预览针[ **KSCAMERA\_元数据\_PHOTOCONFIRMATION** ](https://msdn.microsoft.com/library/windows/hardware/dn925187)结构，其中包含照片确认元数据。 如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_ON**，驱动程序预览针必须生成照片帧并生成**KSCAMERA\_元数据\_PHOTOCONFIRMATION**结构，其中包含照片确认元数据。
+如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_OFF**，不能生成照片帧或生成驱动程序预览针[ **KSCAMERA\_元数据\_PHOTOCONFIRMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation)结构，其中包含照片确认元数据。 如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_ON**，驱动程序预览针必须生成照片帧并生成**KSCAMERA\_元数据\_PHOTOCONFIRMATION**结构，其中包含照片确认元数据。
 
 下表包含的说明和要求**KSCAMERA\_EXTENDEDPROP\_标头**结构字段时使用**KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION**属性。
 

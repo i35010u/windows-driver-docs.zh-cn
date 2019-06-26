@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 209ed77f0fbe7dc6f9193a5a4a64e3caa3dfe465
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 624b55141bcb68b2e54a7b1276b5a4444fe4490b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376793"
 ---
 # <a name="devpropmasktypemod"></a>DEVPROP_MASK_TYPEMOD
 
 
-可以在 Windows Vista 和更高版本的 Windows 中，在使用按位 AND 中组合 DEVPROP_MASK_TYPEMOD 掩码[属性数据类型标识符](https://msdn.microsoft.com/library/windows/hardware/ff541476)提取 DEVPROP_TYPEMOD_*Xxx*  [**属性数据类型修饰符**](https://msdn.microsoft.com/library/windows/hardware/ff549770)从属性数据类型标识符。
+可以在 Windows Vista 和更高版本的 Windows 中，在使用按位 AND 中组合 DEVPROP_MASK_TYPEMOD 掩码[属性数据类型标识符](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))提取 DEVPROP_TYPEMOD_*Xxx*  [**属性数据类型修饰符**](https://docs.microsoft.com/previous-versions/ff549770(v=vs.85))从属性数据类型标识符。
 
 <a name="remarks"></a>备注
 -------
 
 此掩码不能用作基本数据类型标识符、 属性数据类型修饰符或属性数据类型标识符。
 
-了解如何提取[**基本数据类型标识符**](https://msdn.microsoft.com/library/windows/hardware/ff537793)从属性数据类型标识符，请参阅[ **DEVPROP_MASK_TYPE** ](devprop-mask-type.md).
+了解如何提取[**基本数据类型标识符**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))从属性数据类型标识符，请参阅[ **DEVPROP_MASK_TYPE** ](devprop-mask-type.md).
 
 <a name="requirements"></a>要求
 ------------

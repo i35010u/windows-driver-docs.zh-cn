@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2dbf56eebfa51b66db806433fdb10a94722ec8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe73c50d0928ed50945170bec349956c0e23b433
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334518"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364327"
 ---
 # <a name="endsrv-end-debugging-server"></a>.endsrv（结束调试服务器）
 
@@ -72,7 +72,7 @@ ms.locfileid: "63334518"
 
 若要确定调试服务器的 ID，请使用[ **.servers （列表调试服务器）** ](-servers--list-debugging-servers-.md)命令。
 
-**.Endsrv**命令可以终止调试服务器，但它不能终止的进程服务器或 KD 连接服务器。 有关如何结束这些服务器的信息，请参阅[控制进程服务器会话](controlling-a-process-server-session.md)并[控制 KD 连接服务器会话](controlling-a-kd-connection-server-session.md)。 (还有，但是，一个异常情况 **.endsrv**可以结束的进程服务器，以编程方式启动; 有关详细信息，请参阅[ **IDebugClient::StartProcessServer** ](https://msdn.microsoft.com/library/windows/hardware/ff558810).)
+**.Endsrv**命令可以终止调试服务器，但它不能终止的进程服务器或 KD 连接服务器。 有关如何结束这些服务器的信息，请参阅[控制进程服务器会话](controlling-a-process-server-session.md)并[控制 KD 连接服务器会话](controlling-a-kd-connection-server-session.md)。 (还有，但是，一个异常情况 **.endsrv**可以结束的进程服务器，以编程方式启动; 有关详细信息，请参阅[ **IDebugClient::StartProcessServer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-startprocessserver).)
 
 如果取消调试服务器，可以防止任何将来的调试客户端将附加到服务器。 但是，如果取消调试服务器，则不分离当前附加到服务器的任何客户端。
 

@@ -4,12 +4,12 @@ description: ACL 和设备堆栈
 ms.assetid: DAFC851D-E808-4588-86D2-E608584FD05B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6567b89243c3f685217e250e0a7678c89110cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cac1865e8eeb6e488eb75d46fb8701a9a34bcd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386293"
 ---
 # <a name="acls-and-the-device-stack"></a>ACL 和设备堆栈
 
@@ -32,7 +32,7 @@ ms.locfileid: "63382750"
 
 -   应用程序首次打开的句柄驱动器接口，用于读取和写入访问。
 
--   已成功打开句柄后，可以使用该应用程序[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)函数将 SCSI 请求发送到设备。
+-   已成功打开句柄后，可以使用该应用程序[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数将 SCSI 请求发送到设备。
 
 当驱动程序堆栈创建的设备接口时，该设备上应用 ACL。 ACL 的访问控制元素 (ACE) 描述的用户组和相关访问权限。 例如，管理员组的 ACE 可能描述了管理员可以为该设备接口的读取和写入访问权限。
 
@@ -80,7 +80,7 @@ ms.locfileid: "63382750"
 ## <a name="span-idsecuritycheckprocessspanspan-idsecuritycheckprocessspanspan-idsecuritycheckprocessspansecurity-check-process"></a><span id="Security_Check_Process"></span><span id="security_check_process"></span><span id="SECURITY_CHECK_PROCESS"></span>安全检查过程
 
 
-当应用程序尝试打开设备接口的句柄时，I/O 管理器检查用户是否已被授予中请求的访问权限[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)调用。 如果是，打开句柄;否则，调用将失败错误访问\_被拒绝。
+当应用程序尝试打开设备接口的句柄时，I/O 管理器检查用户是否已被授予中请求的访问权限[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)调用。 如果是，打开句柄;否则，调用将失败错误访问\_被拒绝。
 
 打开句柄后，应用程序可以将命令发送到设备，直接通常通过使用 IOCTL。 例如，若要发送 SCSI 传递命令，应用程序将使用**IOCTL\_SCSI\_传递\_THROUGH**或**IOCTL\_SCSI\_传递\_通过\_直接**。
 
@@ -90,7 +90,7 @@ ms.locfileid: "63382750"
 
 SCSI 传递请求中提供了命令描述符块 (CDB) 中的操作码不检查以确定是否需要读取、 写入、，或读取和写入访问。 这是 Windows 始终需要设备要打开以进行读取和写入，传递请求的句柄，即使应用程序仅执行读取、 写入或无数据传输根本原因。
 
-**IOCTL\_磁盘\_验证**可以不考虑中请求了的访问权限的情况下发送[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)调用。 当 I/O 管理器收到 IOCTL 时，它会检查该 IOCTL 所需的访问权限，并将其与在调用方授予访问权限进行比较**CreateFile**调用。 如果没有匹配项，IOCTL 发送到目标设备;否则，IOCTL 调用失败，错误访问\_被拒绝。
+**IOCTL\_磁盘\_验证**可以不考虑中请求了的访问权限的情况下发送[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)调用。 当 I/O 管理器收到 IOCTL 时，它会检查该 IOCTL 所需的访问权限，并将其与在调用方授予访问权限进行比较**CreateFile**调用。 如果没有匹配项，IOCTL 发送到目标设备;否则，IOCTL 调用失败，错误访问\_被拒绝。
 
 例如，如果调用方已打开的句柄的只读访问权限，如下所示。
 

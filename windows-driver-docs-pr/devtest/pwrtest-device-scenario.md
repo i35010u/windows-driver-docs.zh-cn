@@ -4,12 +4,12 @@ description: PwrTest 设备方案监视设备空闲统计信息。
 ms.assetid: 75C53B6E-3D1F-4E9D-A99E-3060A9CC37BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 043c1ee4dc230dd9c075e48356cc15a4c391d64c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ba13206cebbddda0cf7dcc8109685988e622796
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345789"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393507"
 ---
 # <a name="pwrtest-device-scenario"></a>PwrTest 设备方案
 
@@ -25,7 +25,7 @@ PwrTest 设备方案监视设备空闲统计信息。
 pwrtest /device  [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**/t:**<em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span> **/t:** <em>n</em>  
 为方案运行指定的总时间 （以分钟为单位） (默认值*n*为 30 分钟)。
 
 **示例**
@@ -128,11 +128,11 @@ pwrtest /device
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;BusyCount&gt;</strong></td>
-<td align="left"><p>设备驱动程序调用的次数<a href="https://msdn.microsoft.com/library/windows/hardware/ff559755" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559755)"> <strong>PoSetDeviceBusy</strong> </a>期间。</p></td>
+<td align="left"><p>设备驱动程序调用的次数<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong> </a>期间。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AccruedBusyCount&gt;</strong></td>
-<td align="left"><p>设备驱动程序调用的次数总数<a href="https://msdn.microsoft.com/library/windows/hardware/ff559755" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559755)"> <strong>PoSetDeviceBusy</strong></a>。</p></td>
+<td align="left"><p>设备驱动程序调用的次数总数<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;IdlePowerState&gt;</strong></td>

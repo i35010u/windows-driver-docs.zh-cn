@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_CIPHER_KEY_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b589762b6c8f098e5e2ff2b5b264e97d4baa490c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ac92b441083f133307f09eafbbe81d14409a9d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362817"
 ---
 # <a name="wditlvsetcipherkeyinfo"></a>WDI\_TLV\_SET\_CIPHER\_KEY\_INFO
 
 
-WDI\_TLV\_设置\_密码\_密钥\_信息是包含密码的密钥映射键信息 TLV [OID\_WDI\_设置\_添加\_密码\_密钥](https://msdn.microsoft.com/library/windows/hardware/dn925855)。
+WDI\_TLV\_设置\_密码\_密钥\_信息是包含密码的密钥映射键信息 TLV [OID\_WDI\_设置\_添加\_密码\_密钥](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

@@ -4,12 +4,12 @@ description: ISCSI\_DiscoveredTargetPortal WMI 类
 ms.assetid: 0283bd12-2f14-48d6-8229-916208ae9fec
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c9996e526911c1407261399ccd88ad0fee64b351
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 483d7e50dda5e1439ece927626b343a0b2f43502
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378560"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378451"
 ---
 # <a name="iscsidiscoveredtargetportal-wmi-class"></a>ISCSI\_DiscoveredTargetPortal WMI 类
 
@@ -23,7 +23,7 @@ ISCSI\_DiscoveredTargetPortal 是由提供的信息的超集[ISCSI\_TargetPortal
 
 ISCSI\_DiscoveredTargetPortal 类中定义，则不发布*Discover.mof*。
 
-当 WMI 工具套件编译此类定义时，它会生成[ **ISCSI\_DiscoveredTargetPortal** ](https://msdn.microsoft.com/library/windows/hardware/ff561509)数据结构。
+当 WMI 工具套件编译此类定义时，它会生成[ **ISCSI\_DiscoveredTargetPortal** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsifnd/ns-iscsifnd-_iscsi_discoveredtargetportal)数据结构。
 
  
 

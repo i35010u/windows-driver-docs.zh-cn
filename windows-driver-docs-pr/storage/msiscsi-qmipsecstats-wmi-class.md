@@ -4,12 +4,12 @@ description: MSiSCSI\_QMIPSECStats WMI 类
 ms.assetid: 81a21c25-5f03-4ad0-a892-3947d65975d2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7be262ea6356a7fc96bddb51bf8ac0060624dfb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 948bb4c083888326d574c060c919811e2935b1e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384678"
 ---
 # <a name="msiscsiqmipsecstats-wmi-class"></a>MSiSCSI\_QMIPSECStats WMI 类
 
@@ -171,7 +171,7 @@ class MSiSCSI_QMIPSECStats : Win32_PerfRawData {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_QMIPSECStats** ](https://msdn.microsoft.com/library/windows/hardware/ff563102)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_QMIPSECStats** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_qmipsecstats)数据结构。
 
  
 

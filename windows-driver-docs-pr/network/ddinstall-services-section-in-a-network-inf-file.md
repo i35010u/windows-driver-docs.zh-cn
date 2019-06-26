@@ -8,12 +8,12 @@ keywords:
 - DDInstall.Services 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dea6eebe720c0ed9ee78d4d28c4b9fc4a9d426a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fcd4f1039b3698db0430704d21dcd90017f4c20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354616"
 ---
 # <a name="ddinstallservices-section-in-a-network-inf-file"></a>网络 INF 文件中的 DDInstall.Services 节
 
@@ -21,7 +21,7 @@ ms.locfileid: "63370652"
 
 
 
-一个*DDInstall*。**服务**网络 INF 文件中的部分基于泛型[ **INF DDInstall.Services 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547349)。
+一个*DDInstall*。**服务**网络 INF 文件中的部分基于泛型[ **INF DDInstall.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)。
 
 一个*DDInstall*。**服务**部分包含一个或多个**AddService**指令，其中每个引用 INF 编写器的定义*服务安装部分*，它指定如何以及何时服务的特定组件驱动程序已被加载。
 
@@ -33,7 +33,7 @@ ms.locfileid: "63370652"
 
 **AddService**指令*DDInstall*。**服务**部分中还可以引用*错误日志-安装部分*用于安装组件的错误日志。 错误日志是可选的所有网络组件。
 
-有关详细信息，请参阅[ **INF AddService 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546326)。
+有关详细信息，请参阅[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)。
 
 以下是一种*DDInstall*。**服务**部分中，*服务安装部分*，则*错误日志-安装部分*，和一个*添加注册表部分*引用**AddReg**指令*错误日志-安装部分*:
 

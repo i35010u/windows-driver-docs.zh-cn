@@ -7,12 +7,12 @@ keywords:
 - 多子设备 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a29cbc670af5291fea42627f6725ace3ec5a23b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a22d039208e639ea72cadfccb9f88b94c3c91459
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332297"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363208"
 ---
 # <a name="multiple-audio-subdevices"></a>多个音频子设备
 
@@ -45,7 +45,7 @@ INF 文件应添加包含这些名称的接口：
   AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave2%,Test.Interface.Wave2
 ```
 
-INF 文件应创建**AddReg**部分 (请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)) 以便将有关这些接口的信息添加到注册表：
+INF 文件应创建**AddReg**部分 (请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)) 以便将有关这些接口的信息添加到注册表：
 
 ```inf
   [Test.Interface.Wave1]

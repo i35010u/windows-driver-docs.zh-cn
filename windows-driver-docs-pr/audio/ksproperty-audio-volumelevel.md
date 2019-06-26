@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af23b51c9564f0ca63bc4a2e3fb9701d683b9f72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af8692cb56f2183520638869f377bb65b0fe1597
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358879"
 ---
 # <a name="kspropertyaudiovolumelevel"></a>KSPROPERTY\_音频\_VOLUMELEVEL
 
@@ -53,7 +53,7 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性卷节点中指定的通道的卷级别 ([
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>通过筛选器或 Pin 实例的节点</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537145" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537145)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
 <td align="left"><p>长</p></td>
 </tr>
 </tbody>
@@ -82,7 +82,7 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性请求将返回状态\_成功以指示已�
 <a name="remarks"></a>备注
 -------
 
-此属性的属性描述符指定频道号。 如果通过卷节点流中所包含*n*通道，通道是编号从的 0 到*n*-1。 有关详细信息，请参阅[公开多通道节点](https://msdn.microsoft.com/library/windows/hardware/ff536380)。
+此属性的属性描述符指定频道号。 如果通过卷节点流中所包含*n*通道，通道是编号从的 0 到*n*-1。 有关详细信息，请参阅[公开多通道节点](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-multichannel-nodes)。
 
 <a name="requirements"></a>要求
 ------------
@@ -103,11 +103,11 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性请求将返回状态\_成功以指示已�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[自定义默认音频音量设置](https://msdn.microsoft.com/library/windows/hardware/jj870738)
+[自定义默认音频音量设置](https://docs.microsoft.com/windows-hardware/drivers/audio/customizing-default-audio-volume-settings)
 
-[默认音频的音量设置](https://msdn.microsoft.com/library/windows/hardware/ff536251)
+[默认音频的音量设置](https://docs.microsoft.com/windows-hardware/drivers/audio/default-audio-volume-settings)
 
-[**KSNODEPROPERTY\_AUDIO\_CHANNEL**](https://msdn.microsoft.com/library/windows/hardware/ff537145)
+[**KSNODEPROPERTY\_AUDIO\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
 [**KSNODETYPE\_卷**](ksnodetype-volume.md)
 

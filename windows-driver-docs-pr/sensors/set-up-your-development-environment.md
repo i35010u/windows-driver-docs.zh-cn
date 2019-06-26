@@ -4,12 +4,12 @@ description: 本主题演示如何设置开发环境中，为使用 Shark Cove �
 ms.assetid: 0CB6F5C9-4AA8-4745-A5FE-28440ADB0F11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c90fe2b6d2bcf681e8b5f6ebe7fe83ba0e1cb528
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0704e51a2162957bcde2646e1703c260a5ee8e99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355205"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387176"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
@@ -30,7 +30,7 @@ Shark Cove 是开发板的设计和配置为基于 x86 的 tablet 平台的核�
 -   USB 网络适配器
 -   监视器和 HDMI 电缆 （也许加上 HDMI 电缆适配器）
 
-有关如何连接和将上述列表中的硬件设置的详细说明，请参阅[Shark Cove 硬件开发板](https://msdn.microsoft.com/library/windows/hardware/dn745910.aspx)，并执行所有任务最多，并包括第 4 步。
+有关如何连接和将上述列表中的硬件设置的详细说明，请参阅[Shark Cove 硬件开发板](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)，并执行所有任务最多，并包括第 4 步。
 
 如果您已成功完成上一段中建议的步骤，然后在开发环境现在，应有以下：
 

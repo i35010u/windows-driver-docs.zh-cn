@@ -11,12 +11,12 @@ keywords:
 - SRV_OPEN 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3042dc6dd1a967db8b6fad3f7b4b6c050a687f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c44aa59b0b2ba409dfc57d334bbfc0a7c7f40db0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364356"
 ---
 # <a name="buffering-state-control"></a>缓冲状态控件
 
@@ -42,13 +42,13 @@ RDBSS 提供缓冲管理器，用于提供各种网络的最小重定向结合�
 
 有两个例程 RDBSS 中提供的该值指示缓冲状态更改为 SRV\_打开结构：
 
--   [**RxIndicateChangeOfBufferingState** ](https://msdn.microsoft.com/library/windows/hardware/ff554485)注册请求
+-   [**RxIndicateChangeOfBufferingState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)注册请求
 
--   [**RxIndicateChangeOfBufferingStateForSrvOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff554490)为关联的 SRV\_与键打开结构
+-   [**RxIndicateChangeOfBufferingStateForSrvOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)为关联的 SRV\_与键打开结构
 
 请注意，键的关联是不可逆的并且将持续的生存期相关联的 SRV\_打开结构。
 
-网络微型-重定向程序需要辅助机制用于建立从多路复用 Id 映射到 SRV\_打开结构可以使用[ **RxIndicateChangeOfBufferingState**](https://msdn.microsoft.com/library/windows/hardware/ff554485)，尽管可以使用网络微型-重定向程序不需要这种辅助[ **RxIndicateChangeOfBufferingStateForSrvOpen**](https://msdn.microsoft.com/library/windows/hardware/ff554490)。
+网络微型-重定向程序需要辅助机制用于建立从多路复用 Id 映射到 SRV\_打开结构可以使用[ **RxIndicateChangeOfBufferingState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)，尽管可以使用网络微型-重定向程序不需要这种辅助[ **RxIndicateChangeOfBufferingStateForSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)。
 
 RDBSS 中的缓冲管理器在不同阶段中处理这些请求。 它维护从各种基础网络微型-重定向程序在多个列表之一中接收的请求。
 
@@ -75,15 +75,15 @@ RDBSS 提供了以下例程来管理网络微型重定向程序驱动程序可�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554335" data-raw-source="[&lt;strong&gt;RxChangeBufferingState&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554335)"><strong>RxChangeBufferingState</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxchangebufferingstate" data-raw-source="[&lt;strong&gt;RxChangeBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxchangebufferingstate)"><strong>RxChangeBufferingState</strong></a></p></td>
 <td align="left"><p>此例程调用以处理缓冲的状态更改请求。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554485" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingState&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554485)"><strong>RxIndicateChangeOfBufferingState</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)"><strong>RxIndicateChangeOfBufferingState</strong></a></p></td>
 <td align="left"><p>此例程称为注册以供将来处理缓冲状态更改请求 （oplock 中断指示）。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554490" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingStateForSrvOpen&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554490)"><strong>RxIndicateChangeOfBufferingStateForSrvOpen</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingStateForSrvOpen&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)"><strong>RxIndicateChangeOfBufferingStateForSrvOpen</strong></a></p></td>
 <td align="left"><p>此例程称为注册以供将来处理缓冲状态更改请求 （oplock 中断指示）。</p></td>
 </tr>
 </tbody>

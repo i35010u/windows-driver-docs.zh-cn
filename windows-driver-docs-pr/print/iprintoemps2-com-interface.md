@@ -6,12 +6,12 @@ keywords:
 - IPrintOemPS2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 673ff5fe1a0ea45c20fcfdb7a18466971e8ae436
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64fe0c66d523ed99d412a64537aafb239e687eab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386947"
 ---
 # <a name="iprintoemps2-com-interface"></a>IPrintOemPS2 COM 接口
 
@@ -36,11 +36,11 @@ ms.locfileid: "63341328"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553189" data-raw-source="[&lt;strong&gt;IPrintOemPS2::GetPDEVAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553189)"><strong>IPrintOemPS2::GetPDEVAdjustment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-getpdevadjustment" data-raw-source="[&lt;strong&gt;IPrintOemPS2::GetPDEVAdjustment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-getpdevadjustment)"><strong>IPrintOemPS2::GetPDEVAdjustment</strong></a></p></td>
 <td><p>允许插件重写特定 PDEV 设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553196" data-raw-source="[&lt;strong&gt;IPrintOemPS2::WritePrinter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553196)"><strong>IPrintOemPS2::WritePrinter</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemPS2::WritePrinter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps2-writeprinter)"><strong>IPrintOemPS2::WritePrinter</strong></a></p></td>
 <td><p>允许插件来捕获生成的 Postscript 驱动程序的所有输出数据。</p></td>
 </tr>
 </tbody>

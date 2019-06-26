@@ -4,12 +4,12 @@ description: Mgmt.mof 中的 WMI 属性限定符定义
 ms.assetid: 2d8e7e83-6304-459f-b9d8-b40365834bb7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82a2ab76b3ad2623b17851a9d094c5ef3870b7dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6c75e3e393ee55064d50fef6c052aff041f43f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357224"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386783"
 ---
 # <a name="wmi-property-qualifier-definitions-in-mgmtmof"></a>Mgmt.mof 中的 WMI 属性限定符定义
 
@@ -41,7 +41,7 @@ ms.locfileid: "63357224"
 
 因此，WMI 属性限定符类似于一个枚举，因为限定符表示一组整数值。 但 WMI 工具套件不会生成在枚举声明*Iscsimgt.h*对应于中的限定符*Mgmt.mof*，它既不会生成一组符号常量定义的对应于限定符值。
 
-有关 WMI 属性限定符的一般讨论，请参阅[WMI 属性限定符](https://msdn.microsoft.com/library/windows/hardware/ff566365)。
+有关 WMI 属性限定符的一般讨论，请参阅[WMI 属性限定符](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-property-qualifiers)。
 
  
 

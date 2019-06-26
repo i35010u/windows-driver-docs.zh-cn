@@ -7,12 +7,12 @@ keywords:
 - 标准和非标准模式 WDK DirectX 9.0 之间切换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd007ce8d8298fe85907c80bb7005e1147e26681
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e67f4986a584530d1e6eb7176e0cf69b6824d910
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354206"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361192"
 ---
 # <a name="switching-between-standard-and-nonstandard-modes"></a>在标准与非标准模式之间切换
 
@@ -28,11 +28,11 @@ DirectX 9.0 驱动程序创建为标准显示模式的标准主面和用于使�
 
 2.  驱动程序创建标准主图面。
 
-    运行时调用的驱动程序[ *DdCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549263)函数来请求主表面的创建。 此主面使用标准的显示格式 (例如，D3DFMT\_A8B8G8R8) 和有无后的缓冲区。
+    运行时调用的驱动程序[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))函数来请求主表面的创建。 此主面使用标准的显示格式 (例如，D3DFMT\_A8B8G8R8) 和有无后的缓冲区。
 
 3.  该驱动程序创建虚拟主图面上链。
 
-    运行时调用的驱动程序*DdCreateSurface*函数来请求虚拟主表面的创建。 在运行时指定 DDSCAPS2\_EXTENDEDFORMATPRIMARY (0x40000000) 功能位**dwCaps2**的成员[ **DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292)结构此图面，以指示在图面，使用非标准的显示模式 (例如，D3DFMT\_A2R10G10B10)。 在运行时还指定 DDSCAPS\_OFFSCREENPLAIN 功能位**dwCaps** DDSCAPS2 以指示面具有显式的像素格式的成员。
+    运行时调用的驱动程序*DdCreateSurface*函数来请求虚拟主表面的创建。 在运行时指定 DDSCAPS2\_EXTENDEDFORMATPRIMARY (0x40000000) 功能位**dwCaps2**的成员[ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))结构此图面，以指示在图面，使用非标准的显示模式 (例如，D3DFMT\_A2R10G10B10)。 在运行时还指定 DDSCAPS\_OFFSCREENPLAIN 功能位**dwCaps** DDSCAPS2 以指示面具有显式的像素格式的成员。
 
     因为此图面用于现有的主面的只是另一个名称，该驱动程序不应分配更多视频内存到图面。
 
@@ -40,11 +40,11 @@ DirectX 9.0 驱动程序创建为标准显示模式的标准主面和用于使�
 
 4.  驱动程序才切换到使用了非标准格式图面。
 
-    显示设备输出的标准格式，而该应用程序组合在一个这些后台缓冲区的非标准映像。 此图像显示为准备就绪后，运行时指定的一种使用了非标准的图面作为驱动程序的调用中的目标[ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306)函数。 该驱动程序然后 reprograms 输出使用了非标准格式的显示设备。
+    显示设备输出的标准格式，而该应用程序组合在一个这些后台缓冲区的非标准映像。 此图像显示为准备就绪后，运行时指定的一种使用了非标准的图面作为驱动程序的调用中的目标[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)函数。 该驱动程序然后 reprograms 输出使用了非标准格式的显示设备。
 
 5.  在应用程序运行。
 
-    应用程序生成的驱动程序的进一步调用*DdFlip*函数之间使用了非标准的缓冲区和驱动程序将继续显示使用了非标准格式。 应用程序还可以生成对驱动程序的调用[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)函数使用 D3DDP2OP\_BLT 操作代码，以将后台缓冲区复制到前台缓冲区，但这些调用始终是两个非标准的图面上对象之间。 驱动程序支持在窗口模式下使用了非标准格式，除非该驱动程序不会处理非标准和标准的图面上格式之间 blts。 有关窗口模式用例的详细信息，请参阅[支持 Two-Dimensional 操作](supporting-two-dimensional-operations.md)。
+    应用程序生成的驱动程序的进一步调用*DdFlip*函数之间使用了非标准的缓冲区和驱动程序将继续显示使用了非标准格式。 应用程序还可以生成对驱动程序的调用[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数使用 D3DDP2OP\_BLT 操作代码，以将后台缓冲区复制到前台缓冲区，但这些调用始终是两个非标准的图面上对象之间。 驱动程序支持在窗口模式下使用了非标准格式，除非该驱动程序不会处理非标准和标准的图面上格式之间 blts。 有关窗口模式用例的详细信息，请参阅[支持 Two-Dimensional 操作](supporting-two-dimensional-operations.md)。
 
 6.  该驱动程序翻转图面上的后为标准格式。
 

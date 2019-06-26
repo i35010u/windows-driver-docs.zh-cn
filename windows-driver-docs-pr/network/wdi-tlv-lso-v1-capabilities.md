@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_LSO_V1_CAPABILITIES (0xCC) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 366fde51f9f3cea9fec6b4c97e0ba14b4164715c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f9a814f2db63dd713f8f50dd8750bf95a79e0eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354466"
 ---
 # <a name="wditlvlsov1capabilities-0xcc"></a>WDI\_TLV\_LSO\_V1\_功能 (0xCC)
 
 
 WDI\_TLV\_LSO\_V1\_功能是包含大量发送卸载 V1 功能 TLV。
 
-将报告功能值，如中所述[ **NDIS\_TCP\_IP\_校验和\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff567878)。 使用 NDIS\_卸载\_不\_支持和 NDIS\_卸载\_时，该值指示通过功能支持[OID\_WDI\_GET\_适配器\_功能](https://msdn.microsoft.com/library/windows/hardware/dn925838)。
+将报告功能值，如中所述[ **NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)。 使用 NDIS\_卸载\_不\_支持和 NDIS\_卸载\_时，该值指示通过功能支持[OID\_WDI\_GET\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

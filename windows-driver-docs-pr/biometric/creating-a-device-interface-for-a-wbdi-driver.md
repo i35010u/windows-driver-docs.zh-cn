@@ -7,25 +7,25 @@ keywords:
 - 设备接口 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f67ae29b232a0d3f688a3e347badfd6bb40aec01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f97f28706dcf44367d4679ee9c80b033c9dcd008
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328409"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355236"
 ---
 # <a name="creating-a-device-interface-for-a-wbdi-driver"></a>为 WBDI 驱动程序创建设备接口
 
 
 初始化设备回调对象并将其返回到该驱动程序，在队列设置的时间后，驱动程序应创建生物识别设备的设备接口实例。
 
-具体而言，WBDI 驱动程序必须公开 GUID\_DEVINTERFACE\_生物识别\_读取器设备接口通过调用[ **IWDFDevice::CreateDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff557016):
+具体而言，WBDI 驱动程序必须公开 GUID\_DEVINTERFACE\_生物识别\_读取器设备接口通过调用[ **IWDFDevice::CreateDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createdeviceinterface):
 
 ```cpp
 hr = m_FxDevice->CreateDeviceInterface(&GUID_DEVINTERFACE_BIOMETRIC_READER, NULL);
 ```
 
-此调用对的调用后面[ **IWDFDevice::AssignDeviceInterfaceState**](https://msdn.microsoft.com/library/windows/hardware/ff557006):
+此调用对的调用后面[ **IWDFDevice::AssignDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-assigndeviceinterfacestate):
 
 ```cpp
 hr = m_FxDevice->AssignDeviceInterfaceState(&GUID_DEVINTERFACE_BIOMETRIC_READER,

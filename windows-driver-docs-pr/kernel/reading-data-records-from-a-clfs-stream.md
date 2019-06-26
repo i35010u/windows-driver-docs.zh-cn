@@ -15,12 +15,12 @@ keywords:
 - 撤消的下一步 Lsn WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c5f095ea49fc39b62bee5a87f7006a0aec1ba0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02a83d13ff1d5dfac77e0dd5e9430f0510124a1c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378754"
 ---
 # <a name="reading-data-records-from-a-clfs-stream"></a>从 CLFS 流读取数据记录
 
@@ -31,9 +31,9 @@ ms.locfileid: "63382648"
 
 对于阅读一系列数据记录的所有变体，完成以下步骤。
 
-1.  调用[ **ClfsReadLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541682)获取读取的上下文和序列中的第一个数据记录。
+1.  调用[ **ClfsReadLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadlogrecord)获取读取的上下文和序列中的第一个数据记录。
 
-2.  传递到步骤 1 中获取的读取的上下文[ **ClfsReadNextLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541690)重复以获取序列中的剩余数据记录。
+2.  传递到步骤 1 中获取的读取的上下文[ **ClfsReadNextLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadnextlogrecord)重复以获取序列中的剩余数据记录。
 
 **谨慎**  读取上下文不是线程安全。 客户端负责序列化上下文的读取权限。
 
@@ -108,7 +108,7 @@ ms.locfileid: "63382648"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -214,7 +214,7 @@ CLFS 流中写入的数据记录，可以将数据记录的上一个 LSN 设为�
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -261,13 +261,13 @@ CLFS 流中写入的数据记录，可以将数据记录的上一个 LSN 设为�
 
 CLFS 流中写入的数据记录，可以将数据记录的撤消的下一步 LSN 设为以前向流写入任何记录的 LSN。 通过设置撤消的下一步 LSN，可以创建一系列可以按相反的顺序遍历的相关记录。 有关创建和解释撤消的下一步链的详细信息，请参阅[CLFS 日志序列号](clfs-log-sequence-numbers.md)。
 
-假设您编写的数据记录，其中由其撤消的下一步 Lsn 链接链。 若要读取的记录链，必须调用[ **ClfsReadLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541682)若要创建具有模式的读取的上下文设置为**ClfsContextUndoNext**。 之后，该过程是相同的读取链接的上一个 Lsn （在本主题前面介绍） 的链。
+假设您编写的数据记录，其中由其撤消的下一步 Lsn 链接链。 若要读取的记录链，必须调用[ **ClfsReadLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadlogrecord)若要创建具有模式的读取的上下文设置为**ClfsContextUndoNext**。 之后，该过程是相同的读取链接的上一个 Lsn （在本主题前面介绍） 的链。
 
 ### <a name="reading-a-chain-of-data-records-linked-by-the-user-lsn"></a>由用户 LSN 读取的数据记录的链链接
 
 除了由上一个 Lsn 和撤消的下一步 Lsn 链接链，可以创建链接的记录数据中嵌入自己 Lsn 的链。
 
-假设您编写的链的链接的 Lsn 已在自身的记录数据中存储的数据记录。 若要读取的记录链，必须创建具有其模式设置为的读取的上下文**ClfsContextPrevious**或**ClfsContextUndoNext**。 创建读取的上下文并通过调用获取链中的最近写入的记录[ **ClfsReadLogRecord**](https://msdn.microsoft.com/library/windows/hardware/ff541682)。 然后调用[ **ClfsReadNextLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541690)重复以获取链中以前的记录。 每次调用**ClfsReadNextLogRecord**，请设置*plsnUser*到链中的上一记录的 LSN 的参数。 在中提供的 LSN *plsnUser*替代当前记录的上一个 LSN 或撤消的下一步 LSN 字段中存储任何值。
+假设您编写的链的链接的 Lsn 已在自身的记录数据中存储的数据记录。 若要读取的记录链，必须创建具有其模式设置为的读取的上下文**ClfsContextPrevious**或**ClfsContextUndoNext**。 创建读取的上下文并通过调用获取链中的最近写入的记录[ **ClfsReadLogRecord**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadlogrecord)。 然后调用[ **ClfsReadNextLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadnextlogrecord)重复以获取链中以前的记录。 每次调用**ClfsReadNextLogRecord**，请设置*plsnUser*到链中的上一记录的 LSN 的参数。 在中提供的 LSN *plsnUser*替代当前记录的上一个 LSN 或撤消的下一步 LSN 字段中存储任何值。
 
 请注意，您可以仅向后移动在流中调用时**ClfsReadNextLogRecord**读取记录链。 在中提供的 LSN *plsnUser*必须早于链中的当前记录的 LSN。
 

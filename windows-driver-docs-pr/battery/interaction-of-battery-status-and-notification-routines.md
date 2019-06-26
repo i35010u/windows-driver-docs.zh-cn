@@ -9,12 +9,12 @@ keywords:
 - 电池类驱动程序 WDK，通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 025342d0733b5cbfd5b76cc0b8bfaa476664c6d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d12ac75e3f1de5695eae4bd79b43866f2c7e001
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354060"
 ---
 # <a name="interaction-of-battery-status-and-notification-routines"></a>电池状态和通知例程的交互
 
@@ -24,9 +24,9 @@ ms.locfileid: "63335344"
 
 在类驱动程序可以请求并接收电池状态-和 miniclass 驱动程序可以提供电池状态-几种方式。
 
-如果 miniclass 驱动程序提供了[ *BatteryMiniSetStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536277)例程，类驱动程序可以注册或时，电池容量超过或低于指定的范围，通知其电源状态更改。 当发生任何已注册的情况时，miniclass 驱动程序会调用[ **BatteryClassStatusNotify**](https://msdn.microsoft.com/library/windows/hardware/ff536269)。
+如果 miniclass 驱动程序提供了[ *BatteryMiniSetStatusNotify* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback)例程，类驱动程序可以注册或时，电池容量超过或低于指定的范围，通知其电源状态更改。 当发生任何已注册的情况时，miniclass 驱动程序会调用[ **BatteryClassStatusNotify**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassstatusnotify)。
 
-请注意， **BatteryClassStatusNotify**不提供状态信息; 其唯一的参数是触发通知的电池的上下文。 它只是通知电池的状态已更改的类驱动程序。 反过来，在类驱动程序调用[ *BatteryMiniQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff536274)是否需要详细信息。
+请注意， **BatteryClassStatusNotify**不提供状态信息; 其唯一的参数是触发通知的电池的上下文。 它只是通知电池的状态已更改的类驱动程序。 反过来，在类驱动程序调用[ *BatteryMiniQueryStatus* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_status_callback)是否需要详细信息。
 
 如果 miniclass 驱动程序不支持*BatteryMiniSetStatusNotify*，在类驱动程序通过调用对状态轮询*BatteryMiniQueryStatus*例程在正则但很少发生的时间间隔。
 

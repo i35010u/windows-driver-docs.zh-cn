@@ -6,12 +6,12 @@ keywords:
 - WSK_CLIENT，WDK WSK_CLIENT 网络驱动程序
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66f179ebd5bb092ff30a0d83b0588607fca157dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 808516d580816214b854fa43878d07d195ec750a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362481"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379371"
 ---
 # <a name="wskclient"></a>WSK_CLIENT
 
@@ -26,7 +26,7 @@ typedef PVOID PWSK_CLIENT;
 
 ## <a name="remarks"></a>备注
 
-当 WSK 程序调用[WskCaptureProviderNPI](https://msdn.microsoft.com/library/windows/hardware/ff571122)函数，WSK 子系统返回一个指针为 WSK 应用程序通过 WSK_CLIENT 结构*WskProviderNpi*参数。 WSK 子系统使用此结构来跟踪 WSK 应用程序和 WSK 子系统之间的绑定的状态。 WSK 应用程序将此指针作为参数传递给所有函数中[WSK_PROVIDER_DISPATCH](https://msdn.microsoft.com/library/windows/hardware/ff571175) ([WskControlClient](https://msdn.microsoft.com/library/windows/hardware/ff571126)， [WskSocket](https://msdn.microsoft.com/library/windows/hardware/ff571149)，和[WskSocketConnect](https://msdn.microsoft.com/library/windows/hardware/ff571150))。
+当 WSK 程序调用[WskCaptureProviderNPI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskcaptureprovidernpi)函数，WSK 子系统返回一个指针为 WSK 应用程序通过 WSK_CLIENT 结构*WskProviderNpi*参数。 WSK 子系统使用此结构来跟踪 WSK 应用程序和 WSK 子系统之间的绑定的状态。 WSK 应用程序将此指针作为参数传递给所有函数中[WSK_PROVIDER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch) ([WskControlClient](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)， [WskSocket](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)，和[WskSocketConnect](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect))。
 
 有关详细信息，请参阅[Winsock 内核应用程序注册](registering-a-winsock-kernel-application.md)。
 
@@ -39,9 +39,9 @@ typedef PVOID PWSK_CLIENT;
 
 ## <a name="see-also"></a>请参阅
 
-[WskCaptureProviderNPI](https://msdn.microsoft.com/library/windows/hardware/ff571122)  
-[WskControlClient](https://msdn.microsoft.com/library/windows/hardware/ff571126)  
-[WskSocket](https://msdn.microsoft.com/library/windows/hardware/ff571149)  
-[WskSocketConnect](https://msdn.microsoft.com/library/windows/hardware/ff571150)  
-[WSK_PROVIDER_DISPATCH](https://msdn.microsoft.com/library/windows/hardware/ff571175)
+[WskCaptureProviderNPI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskcaptureprovidernpi)  
+[WskControlClient](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)  
+[WskSocket](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)  
+[WskSocketConnect](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)  
+[WSK_PROVIDER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)
 

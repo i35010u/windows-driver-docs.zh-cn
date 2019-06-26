@@ -3,12 +3,12 @@ Description: Microsoft 提供了符合 USB 类型 C 连接器系统软件接口 
 title: USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 623a0fddd4f04d1d82a554924edc8354f15b9719
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0be6ee091146807d11c417b80c4f6645702eac6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355200"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368786"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 
@@ -49,13 +49,13 @@ Microsoft 为 ACPI 传输提供符合 USB 类型 C 连接器系统软件接口 (
 
 -   **USB 设备端驱动程序**
 
-    [USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)服务函数/设备/外设。 USB 函数控制器类扩展支持 MTP （媒体传输协议） 和充电使用 BC 1.2 充电器。 Microsoft 为 Synopsys USB 3.0 和 ChipIdea USB 2.0 控制器提供内置客户端驱动程序。 你可以通过使用为函数控制器编写自定义客户端驱动程序[USB 函数控制器客户端驱动程序的编程接口](https://msdn.microsoft.com/library/windows/hardware/mt188010)。 有关详细信息，请参阅[开发的 Windows USB 驱动程序函数控制器](developing-windows-drivers-for-usb-function-controllers.md)。
+    [USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)服务函数/设备/外设。 USB 函数控制器类扩展支持 MTP （媒体传输协议） 和充电使用 BC 1.2 充电器。 Microsoft 为 Synopsys USB 3.0 和 ChipIdea USB 2.0 控制器提供内置客户端驱动程序。 你可以通过使用为函数控制器编写自定义客户端驱动程序[USB 函数控制器客户端驱动程序的编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))。 有关详细信息，请参阅[开发的 Windows USB 驱动程序函数控制器](developing-windows-drivers-for-usb-function-controllers.md)。
 
     SoC 供应商可能会为您提供 USB 函数较低筛选器驱动程序的充电器检测。 如果您使用现成 Synopsys USB 3.0 或 ChipIdea USB 2.0 客户端驱动程序，则可以实现你自己的筛选器驱动程序。
 
 -   **USB 宿主端驱动程序**
 
-    USB 宿主端驱动程序是一组使用 EHCI 或 XHCI 符合 USB 主控制器的驱动程序。 如果在角色切换驱动程序枚举主机角色，将加载的驱动程序。 如果您的主控制器不符合规范，则可以通过编写自定义驱动程序[USB 主机控制器扩展 (UCX) 编程接口](https://msdn.microsoft.com/library/windows/hardware/mt188009)。 有关信息，请参阅[开发的 Windows USB 驱动程序托管控制器](developing-windows-drivers-for-usb-host-controllers.md)。
+    USB 宿主端驱动程序是一组使用 EHCI 或 XHCI 符合 USB 主控制器的驱动程序。 如果在角色切换驱动程序枚举主机角色，将加载的驱动程序。 如果您的主控制器不符合规范，则可以通过编写自定义驱动程序[USB 主机控制器扩展 (UCX) 编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))。 有关信息，请参阅[开发的 Windows USB 驱动程序托管控制器](developing-windows-drivers-for-usb-host-controllers.md)。
 
     **请注意**  不[USB 设备的所有类](supported-usb-classes.md)在 Windows 10 移动版上受支持。
 
@@ -114,7 +114,7 @@ Microsoft 为 ACPI 传输提供符合 USB 类型 C 连接器系统软件接口 (
 ## <a name="how-to-test-ucsi"></a>如何测试 UCSI
 
 
-有多种方法来测试 UCSI 实现。 若要测试单个命令在 UCSI BIOS/EC 实现中，使用 UCSIControl.exe 中, 提供[MUTT 软件 Pack](mutt-software-package.md)。 若要测试完整的 UCSI 实现，使用这两个 UCSI 测试可以在 Windows 硬件 Lab Kit (HLK) 和中的步骤中找到[互操作的类型-C 手动过程](https://msdn.microsoft.com/library/windows/hardware/mt422725)。
+有多种方法来测试 UCSI 实现。 若要测试单个命令在 UCSI BIOS/EC 实现中，使用 UCSIControl.exe 中, 提供[MUTT 软件 Pack](mutt-software-package.md)。 若要测试完整的 UCSI 实现，使用这两个 UCSI 测试可以在 Windows 硬件 Lab Kit (HLK) 和中的步骤中找到[互操作的类型-C 手动过程](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。
 
 **UCSIControl.exe**
 
@@ -131,7 +131,7 @@ Microsoft 为 ACPI 传输提供符合 USB 类型 C 连接器系统软件接口 (
 6.  创建一个名为**TestInterfaceEnabled**并将值设置为 0x1。
 7.  通过选择重启设备**禁用**选项在设备管理器中，在设备节点上，然后选择**启用**。 或者，您可以只需重新启动 PC。
 
-可以通过运行查看的帮助**UcsiControl.exe /？**。
+可以通过运行查看的帮助**UcsiControl.exe /？** 。
 
 下面是常用的命令：
 

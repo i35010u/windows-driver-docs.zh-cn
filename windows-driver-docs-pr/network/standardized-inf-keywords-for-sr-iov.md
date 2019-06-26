@@ -4,12 +4,12 @@ description: SR-IOV 的标准化 INF 关键字
 ms.assetid: 5CA33B4F-E43A-4EB6-BCAB-365CA1FD3EF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d672152a3d05be03d22b4bee5635aa24a6dfacb
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 0303e33adecd3531c462474bd891a1f7885651b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378620"
 ---
 # <a name="standardized-inf-keywords-for-sr-iov"></a>SR-IOV 的标准化 INF 关键字
 
@@ -27,16 +27,16 @@ ms.locfileid: "65405274"
 
 标准化的 INF 关键字定义来启用或禁用网络适配器的 SR-IOV 功能的支持。
 
-<a href="" id="-sriov"></a>**\*SRIOV**  
+<a href="" id="-sriov"></a> **\*SRIOV**  
 一个描述该设备是否已启用或禁用 SR-IOV 功能的值。
 
 安装该驱动程序后，管理员可以更新 **\*SRIOV**中的关键字值**高级**网络适配器的属性页。 有关高级属性的详细信息，请参阅[的高级属性页指定配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-**请注意**  中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
+**请注意**   中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
 
  
 
-<a href="" id="-sriovpreferred"></a>**\*SriovPreferred**  
+<a href="" id="-sriovpreferred"></a> **\*SriovPreferred**  
 一个值，定义 SR-IOV 功能而不是虚拟机队列 (VMQ)，应启用还是接收方缩放 (RSS) 功能。
 
 这是一个隐藏的关键字值不得指定 INF 文件中并不会显示在**高级**网络适配器的属性页。
@@ -46,12 +46,12 @@ ms.locfileid: "65405274"
 SR-IOV 标准化的 INF 关键字是枚举的关键字和以下表所述。 此表中的列描述枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表**NDI\\params\\** 关键网络适配器。
+必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表 **NDI\\params\\** 关键网络适配器。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 与之关联的显示文本**SubkeyName**关键字。
 
-**请注意**  独立硬件供应商 (IHV) 可以为 SubkeyName 定义描述性文本。
+**请注意**   独立硬件供应商 (IHV) 可以为 SubkeyName 定义描述性文本。
 
  
 
@@ -72,7 +72,7 @@ SR-IOV 标准化的 INF 关键字是枚举的关键字和以下表所述。 此�
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -175,7 +175,7 @@ PF 微型端口驱动程序的 INF 文件必须指定 NIC 切换的默认配置�
 <td align="left"><p>REG_DWORD</p></td>
 <td align="left"><p><em>n</em>是 PCIe 虚函数 (VFs) 的 SR-IOV 网络适配器所支持的最大数目。</p>
 <div class="alert">
-<strong>请注意</strong>此注册表项定义的网络适配器支持的 VFs 的最大数目。 当微型端口驱动程序调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff563672" data-raw-source="[&lt;strong&gt;NdisMSetMiniportAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563672)"> <strong>NdisMSetMiniportAttributes</strong></a>，它可以播发小于此值具体取决于网络适配器上的可用硬件资源。 有关详细信息，请参阅<a href="determining-nic-switch-capabilities.md" data-raw-source="[Determining NIC Switch Capabilities](determining-nic-switch-capabilities.md)">确定 NIC 交换机功能</a>。
+<strong>请注意</strong>此注册表项定义的网络适配器支持的 VFs 的最大数目。 当微型端口驱动程序调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes" data-raw-source="[&lt;strong&gt;NdisMSetMiniportAttributes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)"> <strong>NdisMSetMiniportAttributes</strong></a>，它可以播发小于此值具体取决于网络适配器上的可用硬件资源。 有关详细信息，请参阅<a href="determining-nic-switch-capabilities.md" data-raw-source="[Determining NIC Switch Capabilities](determining-nic-switch-capabilities.md)">确定 NIC 交换机功能</a>。
 </div>
 <div>
  
@@ -193,7 +193,7 @@ HKR, NicSwitches\0, *SwitchId,   0x00010001, 0
 HKR, NicSwitches\0, *SwitchName, 0x00000000, “Default Switch”
 ```
 
-有关语法的详细信息**AddReg**指令，请参阅[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+有关语法的详细信息**AddReg**指令，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 有关默认 NIC 开关的详细信息，请参阅[NIC 开关](nic-switches.md)。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a39a0dd120a647f9c6329b1e30b31a7d329e5e34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3f4986473e7b3a335072957f839d36ec25c4614
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333288"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360644"
 ---
 # <a name="ksnodetypeacousticechocancel"></a>KSNODETYPE\_声学\_ECHO\_取消
 
@@ -62,9 +62,9 @@ AEC 节点应号其逻辑插针，具有 pin Id 标头文件 Ksmedia.h，从下�
 
  
 
-请注意上, 表中的针逻辑引脚的节点上，这些信息仅用于指定连接到筛选器内部，而不是外部的插针上筛选器，用于连接到其他筛选器。 有关详细信息，请参阅[ **PCCONNECTION\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537688)。
+请注意上, 表中的针逻辑引脚的节点上，这些信息仅用于指定连接到筛选器内部，而不是外部的插针上筛选器，用于连接到其他筛选器。 有关详细信息，请参阅[ **PCCONNECTION\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
 
-有关如何筛选器包含 AEC 节点可以为全双工 DirectSound 应用程序提供支持的信息，请参阅[DirectSound 捕获效果](https://msdn.microsoft.com/library/windows/hardware/ff536327)。
+有关如何筛选器包含 AEC 节点可以为全双工 DirectSound 应用程序提供支持的信息，请参阅[DirectSound 捕获效果](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-capture-effects)。
 
 当创建筛选器包含 AEC 节点或节点重置时，节点最初配置为在直通模式下操作。
 

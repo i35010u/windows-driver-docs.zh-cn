@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9407a23995113b7fde4e7d613607621d334c01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4cbd90ffa71764c3ae82d53d2a882cef1eaa5e9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363146"
 ---
 # <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
 
 
 **！ Ndiskd.interfaces**扩展显示有关网络接口的信息。 如果不带任何参数运行此扩展 ！ ndiskd 将显示所有网络接口的列表。
 
-有关网络接口的详细信息，请参阅[NDIS 网络接口](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)。
+有关网络接口的详细信息，请参阅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)。
 
 ```console
 !ndiskd.interfaces [-handle <x>] [-luid <x>] 
@@ -37,7 +37,7 @@ ms.locfileid: "63336066"
 网络接口的句柄。
 
 <span id="_______-luid______"></span><span id="_______-LUID______"></span> *-luid*   
-[NetLuid](https://msdn.microsoft.com/windows/hardware/drivers/network/net-luid-value) （Net 本地唯一标识符） 的网络接口。
+[NetLuid](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value) （Net 本地唯一标识符） 的网络接口。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -123,19 +123,19 @@ STATE
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[NDIS 网络接口](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)
+[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)
 
-[NET\_LUID 值](https://msdn.microsoft.com/windows/hardware/drivers/network/net-luid-value)
+[NET\_LUID 值](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value)
 
  
 

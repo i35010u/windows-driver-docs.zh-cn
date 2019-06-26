@@ -4,19 +4,19 @@ description: 将移动宽带应用与其他 Windows 组件集成
 ms.assetid: 70469f6b-70a8-4ebc-b315-08ddeffbdc0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c08f251204697d34a24ac41650c92fc168af22a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cad659cb3c38a81b3134cc539e278305dc1c9dc0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387207"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359259"
 ---
 # <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>将移动宽带应用与其他 Windows 组件集成
 
 
 可以使用 Windows 10 用户界面 (UI) 图面以增强你的移动宽带应用的整体体验。
 
-布局、 导航、 命令、 动画、 触摸交互、 对齐和缩放、 协定和功能、 磁贴和通知的其他用户体验设计指南，UI 控件，应用程序漫游到云以及基础知识，请参阅[适用于 UWP 应用的索引的用户体验指南](https://msdn.microsoft.com/library/windows/apps/hh465424)。
+布局、 导航、 命令、 动画、 触摸交互、 对齐和缩放、 协定和功能、 磁贴和通知的其他用户体验设计指南，UI 控件，应用程序漫游到云以及基础知识，请参阅[适用于 UWP 应用的索引的用户体验指南](https://developer.microsoft.com/windows/apps/design)。
 
 本主题包含以下各节：
 
@@ -39,7 +39,7 @@ ms.locfileid: "63387207"
 ## <a name="app-settings"></a>应用设置
 
 
-可以使用[应用设置](https://msdn.microsoft.com/library/windows/apps/hh770544)以包括你的应用程序配置的设置。 其中的一些示例如下所示：
+可以使用[应用设置](https://docs.microsoft.com/windows/uwp/app-settings/guidelines-for-app-settings)以包括你的应用程序配置的设置。 其中的一些示例如下所示：
 
 -   登录和注销
 
@@ -68,7 +68,7 @@ ms.locfileid: "63387207"
 
 -   **窗体字段验证错误**时用户的表单中输入的信息不正确显示。 验证错误应内联显示，以便让用户知道该错误与之关联的字段。
 
-有关如何存在错误的指导，请参阅[布置 UI](https://msdn.microsoft.com/library/windows/apps/hh465304)。 在下面的示例中，通知栏显示在页面的顶部。
+有关如何存在错误的指导，请参阅[布置 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))。 在下面的示例中，通知栏显示在页面的顶部。
 
 ![通知栏会显示错误](images/mb-fig1-notificationbarerrors.png)
 
@@ -109,7 +109,7 @@ ms.locfileid: "63387207"
 
 ![与另一个应用程序并行服务页](images/mb-fig3-snappedview-servicespage.png)
 
-请确保您的应用程序可通过应用程序视图，包括高对比度模式和屏幕读取器准备访问。 有关如何使您的应用程序可访问的详细信息，请参阅[中使用 JavaScript 的 UWP 应用的辅助功能](https://msdn.microsoft.com/library/windows/apps/hh452681)。
+请确保您的应用程序可通过应用程序视图，包括高对比度模式和屏幕读取器准备访问。 有关如何使您的应用程序可访问的详细信息，请参阅[中使用 JavaScript 的 UWP 应用的辅助功能](https://docs.microsoft.com/previous-versions/windows/apps/hh452681(v=win.10))。
 
 ## <a name="span-idlaunchptsspanspan-idlaunchptsspanlaunch-points"></a><span id="launchpts"></span><span id="LAUNCHPTS"></span>启动点
 
@@ -150,7 +150,7 @@ Toast 通知应仅用于高用户所需的信息，并且通常涉及某种形�
 
 ### <a name="span-idsplashspanspan-idsplashspansplash-screen"></a><span id="splash"></span><span id="SPLASH"></span>初始屏幕
 
-初始屏幕可用于提升品牌。 有关初始屏幕的详细信息，请参阅[添加初始屏幕](https://msdn.microsoft.com/library/windows/apps/hh465332)。
+初始屏幕可用于提升品牌。 有关初始屏幕的详细信息，请参阅[添加初始屏幕](https://docs.microsoft.com/previous-versions/windows/apps/hh465332(v=win.10))。
 
 ![初始屏幕](images/mb-fig4-splash-screen.png)
 
@@ -172,9 +172,9 @@ Toast 通知应仅用于高用户所需的信息，并且通常涉及某种形�
 
 ### <a name="span-idresourcesspanspan-idresourcesspanadditional-resources"></a><span id="resources"></span><span id="RESOURCES"></span>其他资源
 
--   [使用磁贴、 锁屏提醒和 toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)
+-   [使用磁贴、 锁屏提醒和 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10))
 
--   [指南和 toast 通知的核对清单](https://msdn.microsoft.com/library/windows/apps/hh465391)
+-   [指南和 toast 通知的核对清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

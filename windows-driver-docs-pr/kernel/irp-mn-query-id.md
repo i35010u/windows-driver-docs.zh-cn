@@ -6,12 +6,12 @@ ms.assetid: 3135cb30-a696-4201-8dfc-cdc1a29fe52b
 keywords:
 - IRP_MN_QUERY_ID 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: a219da899a672f471652e3f6a215b18c8369db10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fa130fb052422e49dbde20411d8de42fe31c34b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381435"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383281"
 ---
 # <a name="irpmnqueryid"></a>IRP\_MN\_查询\_ID
 
@@ -20,7 +20,7 @@ ms.locfileid: "63381435"
 
 从 Windows 7 开始，总线驱动程序必须还处理请求的 BusQueryContainerID 及其子 PDOs。
 
-有关这些标识符 (Id) 的详细信息，请参阅[设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)。
+有关这些标识符 (Id) 的详细信息，请参阅[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
 
 **请注意**  函数驱动程序和筛选器驱动程序不处理此 IRP。
 
@@ -39,7 +39,7 @@ PnP 管理器和驱动程序在 IRQL 被动发送此 IRP\_级别在任意线程�
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.QueryId.IdType**的成员[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构指定号请求的类型。 可能值包括 BusQueryDeviceID、 BusQueryHardwareIDs、 BusQueryCompatibleIDs、 BusQueryInstanceID 和 BusQueryContainerID。 保留以下 ID 类型：BusQueryDeviceSerialNumber。
+**Parameters.QueryId.IdType**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构指定号请求的类型。 可能值包括 BusQueryDeviceID、 BusQueryHardwareIDs、 BusQueryCompatibleIDs、 BusQueryInstanceID 和 BusQueryContainerID。 保留以下 ID 类型：BusQueryDeviceSerialNumber。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -78,7 +78,7 @@ PnP 管理器和驱动程序在 IRQL 被动发送此 IRP\_级别在任意线程�
 
 -   驱动程序将返回在此 IRP 的容器 ID 的格式必须为全局唯一标识符 (GUID)，并且必须是最大\_GUID\_字符串\_LEN 字符，其中包括 null 终止符。
 
--   如果总线驱动程序提供其子设备的全局唯一实例 Id (即，驱动程序设置[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)**。UniqueID**的设备)，则设备 ID 与实例 ID 的组合必须是小于 (最大\_设备\_ID\_LEN-1) 个字符。 操作系统要求的其他字符的路径分隔符。
+-   如果总线驱动程序提供其子设备的全局唯一实例 Id (即，驱动程序设置[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities) **。UniqueID**的设备)，则设备 ID 与实例 ID 的组合必须是小于 (最大\_设备\_ID\_LEN-1) 个字符。 操作系统要求的其他字符的路径分隔符。
 
 -   如果总线驱动程序不提供全局唯一的实例 Id 对于其子设备，则设备 ID 和实例 ID 的组合必须是小于 (最大\_设备\_ID\_LEN-28)。 此公式的值目前 172。
 
@@ -106,15 +106,15 @@ BusQueryDeviceID 和 BusQueryInstanceID 总线驱动程序提供的值允许操�
 
 安装程序会检查针对 INF 文件中列出可能的匹配项的 Id 的 Id。 安装程序首先会扫描硬件 Id 列表，然后兼容 Id 列表。 早期的项将被视为更具体的设备，以及更高版本设备的更多常规 （并因此非最佳） 匹配项的说明。 如果未找到匹配的硬件 Id 列表中，安装程序可能会移动到的兼容 Id 列表之前提示用户提供安装介质。
 
-请参阅[插](https://msdn.microsoft.com/library/windows/hardware/ff547125)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
 
 **指定 BusQueryContainerIDs**
 
-从 Windows 7 开始，总线驱动程序应提供一个字符串，包含 BusQueryContainerID[容器 ID](https://msdn.microsoft.com/library/windows/hardware/ff540024)设备。 容器 ID 允许操作系统进行分组从单个可移动的物理设备的所有功能的设备。 例如，可移动的多功能设备中的所有功能的设备具有相同的容器 id。 有关报告在特殊情况下，如卷设备可能跨多个容器中的多个磁盘，但不属于任何容器，容器 Id 详细信息请参阅[概述的容器 Id](https://msdn.microsoft.com/library/windows/hardware/ff549447)。
+从 Windows 7 开始，总线驱动程序应提供一个字符串，包含 BusQueryContainerID[容器 ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)设备。 容器 ID 允许操作系统进行分组从单个可移动的物理设备的所有功能的设备。 例如，可移动的多功能设备中的所有功能的设备具有相同的容器 id。 有关报告在特殊情况下，如卷设备可能跨多个容器中的多个磁盘，但不属于任何容器，容器 Id 详细信息请参阅[概述的容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)。
 
-可移动的物理设备指总线驱动程序指定的子设备**可移动**的功能**TRUE**响应[ **IRP\_MN\_查询\_功能**](irp-mn-query-capabilities.md)请求。 有关详细信息**可移动**值，请参阅[**设备\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)。
+可移动的物理设备指总线驱动程序指定的子设备**可移动**的功能**TRUE**响应[ **IRP\_MN\_查询\_功能**](irp-mn-query-capabilities.md)请求。 有关详细信息**可移动**值，请参阅[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)。
 
-总线驱动程序创建基于设备提供的特定于总线的唯一 ID 的容器 ID。 有关详细信息，请参阅[生成如何容器 Id](https://msdn.microsoft.com/library/windows/hardware/ff546193)。
+总线驱动程序创建基于设备提供的特定于总线的唯一 ID 的容器 ID。 有关详细信息，请参阅[生成如何容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)。
 
 该驱动程序必须使该 IRP 请求失败，并将**IoStatus.Status**于状态\_不\_支持如果以下任何条件成立：
 
@@ -126,17 +126,17 @@ BusQueryDeviceID 和 BusQueryInstanceID 总线驱动程序提供的值允许操�
 
 通常情况下，仅 PnP 管理器将发送此 IRP。
 
-若要获取的设备硬件 Id 或兼容 Id，请调用[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)而不是发送此 IRP。
+若要获取的设备硬件 Id 或兼容 Id，请调用[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)而不是发送此 IRP。
 
-驱动程序可能会发送此 IRP，若要检索其设备之一的实例 ID。 例如，考虑其函数执行不会独立运行多功能 ISA 即插即用设备。 PnP 管理器可枚举函数作为单独的设备，但是此类设备的驱动程序可能需要将一个或多个函数相关联。 即插即用 ISA 保证唯一实例 ID，因为这样的多功能设备的驱动程序可以使用实例 Id 来查找驻留在同一设备的函数。 此类设备的驱动程序还必须通过调用获取设备的枚举器名称[ **IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)来确认该设备是即插即用 ISA 设备。
+驱动程序可能会发送此 IRP，若要检索其设备之一的实例 ID。 例如，考虑其函数执行不会独立运行多功能 ISA 即插即用设备。 PnP 管理器可枚举函数作为单独的设备，但是此类设备的驱动程序可能需要将一个或多个函数相关联。 即插即用 ISA 保证唯一实例 ID，因为这样的多功能设备的驱动程序可以使用实例 Id 来查找驻留在同一设备的函数。 此类设备的驱动程序还必须通过调用获取设备的枚举器名称[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)来确认该设备是即插即用 ISA 设备。
 
-请参阅[处理 Irp](https://msdn.microsoft.com/library/windows/hardware/ff546847)有关发送 Irp 信息。 专门针对此 IRP 可以采用以下步骤：
+请参阅[处理 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)有关发送 Irp 信息。 专门针对此 IRP 可以采用以下步骤：
 
 -   IRP 的下一步 I/O 堆栈位置中设置的值： 设置**MajorFunction**到[ **IRP\_MJ\_PNP**](irp-mj-pnp.md)，将**MinorFunction**到 IRP\_MN\_查询\_ID，并设置**Parameters.QueryId.IdType**到**BusQueryInstanceID**。
 
 -   设置**IoStatus.Status**于状态\_不\_受支持。
 
-除了发送查询 ID IRP，驱动程序必须调用[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)若要获取**DevicePropertyEnumeratorName**设备。
+除了发送查询 ID IRP，驱动程序必须调用[ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)若要获取**DevicePropertyEnumeratorName**设备。
 
 IRP 完成，该驱动程序完成了 ID 后，该驱动程序必须释放处理查询 IRP 驱动程序返回的 ID 结构。
 
@@ -159,9 +159,9 @@ IRP 完成，该驱动程序完成了 ID 后，该驱动程序必须释放处理
 ## <a name="see-also"></a>请参阅
 
 
-[设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)
+[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)
 
-[**IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)
+[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)
 
  
 

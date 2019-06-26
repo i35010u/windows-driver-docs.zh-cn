@@ -7,12 +7,12 @@ keywords:
 - NDIS 筛选器驱动程序 WDK，特征
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca033e85a792987c76b134426d66f7172fb5fec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a861c19269826723cf4f3c70340b3f5b07c6d649
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382643"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353738"
 ---
 # <a name="filter-driver-characteristics"></a>筛选器驱动程序的特征
 
@@ -34,7 +34,7 @@ ms.locfileid: "63382643"
 
 -   NDIS 重新启动驱动程序堆栈时，协议驱动程序可以获取驱动程序堆栈中的筛选器模块的列表。
 
-    有关筛选器模块的列表的详细信息，请参阅[ **NDIS\_协议\_重新启动\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566844)。
+    有关筛选器模块的列表的详细信息，请参阅[ **NDIS\_协议\_重新启动\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_protocol_restart_parameters)。
 
 -   筛选器驱动程序可以筛选基础的微型端口适配器的大多数通信。 筛选器模块不与任何基础协议驱动程序微型端口适配器之间的特定绑定相关联。 有关筛选的筛选器驱动程序可以提供服务的类型的详细信息，请参阅[筛选器驱动程序服务](filter-driver-services.md)。
 

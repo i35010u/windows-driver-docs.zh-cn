@@ -4,12 +4,12 @@ description: Hbaapi.mof 中的 WMI 类限定符定义
 ms.assetid: 9db543f1-f6ad-4735-8ba0-21476aa229ba
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a03a93846b33159ceabe2760e093927dae4d8393
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c4ddf93ac8f53357fdc09180e9b8f3b9aae8b2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386794"
 ---
 # <a name="wmi-class-qualifier-definitions-in-hbaapimof"></a>Hbaapi.mof 中的 WMI 类限定符定义
 
@@ -29,7 +29,7 @@ ms.locfileid: "63330301"
 
 但是，通过包括*Hbaapi.h*驱动程序或应用程序可以使用一系列以期提供易于记忆的名称与定义的 WMI 类限定符关联的每个值定义的符号常量在中*Hbaapi.mof*。
 
-有关 WMI 类限定符的一般讨论，请参阅[WMI 类限定符](https://msdn.microsoft.com/library/windows/hardware/ff566348)。
+有关 WMI 类限定符的一般讨论，请参阅[WMI 类限定符](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-class-qualifiers)。
 
  
 

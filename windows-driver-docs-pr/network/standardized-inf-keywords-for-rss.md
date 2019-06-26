@@ -9,12 +9,12 @@ keywords:
 - INF 条目 WDK RSS
 ms.date: 02/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 595dda1f86ca1a69a9cd40f9dab06b2f1e7b25a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2678acbbcda42f5afd9dc6a80f8e936ec15fd421
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390659"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378625"
 ---
 # <a name="standardized-inf-keywords-for-rss"></a>RSS 的标准化 INF 关键字
 
@@ -127,7 +127,7 @@ NDIS 6.30 添加了对 **\*RSSProfile**。
 
 PCI 扩展卡的驱动程序不应指定 ID 以静态方式在其 INF，因为在最近的节点依赖于哪些 PCI 槽卡插入到 NUMA 节点。  仅指定 **\*NumaNodeId**如果网络适配器集成到系统，NUMA 节点事先已知的并不能通过查询 ACPI 在运行时确定的节点。
 
-**请注意**  NDIS 如果存在此关键字，并且其值小于中计算机的 NUMA 节点数，使用中的此值**PreferredNumaNode**中的成员[ **NDIS\_RSS\_处理器\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567274)结构。
+**请注意**  NDIS 如果存在此关键字，并且其值小于中计算机的 NUMA 节点数，使用中的此值**PreferredNumaNode**中的成员[ **NDIS\_RSS\_处理器\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)结构。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 返回值 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c883b19f878fd37a636282eb1d512eb98c3972
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c57ca71fa3d99344c13d99d7330f5518c748c58e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364648"
 ---
 # <a name="building-and-sending-a-brb"></a>生成和发送 BRB
 
@@ -24,15 +24,15 @@ ms.locfileid: "63328248"
 
 ### <a name="span-idtobuildandsendabrbspanspan-idtobuildandsendabrbspanto-build-and-send-a-brb"></a><span id="to_build_and_send_a_brb"></span><span id="TO_BUILD_AND_SEND_A_BRB"></span>若要生成并发送 BRB
 
-1.  分配 IRP。 有关如何使用 Irp 的详细信息，请参阅[处理 Irp](https://msdn.microsoft.com/library/windows/hardware/ff546847)。
+1.  分配 IRP。 有关如何使用 Irp 的详细信息，请参阅[处理 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)。
 
-2.  分配 BRB。 若要分配 BRBs，调用[ **BthAllocateBrb** ](https://msdn.microsoft.com/library/windows/hardware/ff536634)按配置文件驱动程序用于将导出的蓝牙驱动程序堆栈的函数。 若要获取的指针*BthAllocateBrb*函数中，请参阅[蓝牙接口查询](querying-for-bluetooth-interfaces.md)。
+2.  分配 BRB。 若要分配 BRBs，调用[ **BthAllocateBrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_allocate_brb)按配置文件驱动程序用于将导出的蓝牙驱动程序堆栈的函数。 若要获取的指针*BthAllocateBrb*函数中，请参阅[蓝牙接口查询](querying-for-bluetooth-interfaces.md)。
 
 3.  初始化 BRB 参数。 每个 BRB 使用相应的结构。 设置根据预期用途结构的成员。 BRBs 和其相应结构的列表，请参阅[使用蓝牙驱动程序堆栈](using-the-bluetooth-driver-stack.md)。
 
 4.  初始化 IRP 的参数。 设置**MajorFunction** IRP 到 IRP 的成员\_MJ\_内部\_设备\_控件。 设置**Parameters.DeviceIoControl.IoControlCode**成员添加到 IOCTL\_内部\_同时为\_提交\_BRB。 设置**Parameters.Others.Argument1**成员以指向 BRB。
 
-5.  将驱动程序堆栈的下层 IRP 传递。 调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)以将 IRP 发送到下一步低驱动程序。
+5.  将驱动程序堆栈的下层 IRP 传递。 调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)以将 IRP 发送到下一步低驱动程序。
 
 下面的伪代码示例演示如何设置要处理的蓝牙驱动程序堆栈 L2CAP Ping BRB。
 

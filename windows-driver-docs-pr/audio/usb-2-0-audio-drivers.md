@@ -3,16 +3,16 @@ title: USB 音频 2.0 驱动程序
 description: 从 Windows 10 版本 1703年，USB 音频 2.0 驱动程序随 Windows。 此驱动程序提供基本功能。
 ms.date: 10/23/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fcdf5f1a141a94257ded52be6616ba068164912f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86d2800a322c15562ffbac9413e74b0e33e1e0b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335387"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354162"
 ---
 # <a name="usb-audio-20-drivers"></a>USB 音频 2.0 驱动程序
 
-从 Windows 10 版本 1703年，USB 音频 2.0 驱动程序随 Windows。 它旨在支持 USB 音频 2.0 设备类。 WaveRT 音频端口类微型端口驱动程序。 有关 USB 音频 2.0 设备类的详细信息，请参阅[ https://www.usb.org/developers/docs/devclass_docs/ ](https://www.usb.org/developers/docs/devclass_docs/)。 
+从 Windows 10 版本 1703年，USB 音频 2.0 驱动程序随 Windows。 它旨在支持 USB 音频 2.0 设备类。 WaveRT 音频端口类微型端口驱动程序。 有关 USB 音频 2.0 设备类的详细信息，请参阅[ https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50 ](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)。 
 
 该驱动程序名为： _usbaudio2.sys_以及关联的 inf 文件是否_usbaudio2.inf_。
 
@@ -35,7 +35,7 @@ USBAudio.Sys 适合更广泛的 Windows USB 音频体系结构所示。
 -   ADC 2 是指 USB 设备类定义的音频设备，版本 2.0。
 -   FMT 2 是指 2.0 版中的音频数据格式规范。
 
-U-如果是特别兴趣组维护[官方 USB 规范](https://www.usb.org/developers/docs/)，测试规范和工具。 
+U-如果是特别兴趣组维护[官方 USB 规范](https://www.usb.org/documents)，测试规范和工具。 
 
 
 ## <a name="audio-formats"></a>音频格式
@@ -351,7 +351,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
 
 ### <a name="see-also"></a>请参阅
 
-[Windows Driver Model (WDM)](https://msdn.microsoft.com/library/windows/hardware/ff565698)
+[Windows Driver Model (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)
 
 [音频驱动程序概述](https://docs.microsoft.com/windows-hardware/drivers/audio/getting-started-with-wdm-audio-drivers)
 

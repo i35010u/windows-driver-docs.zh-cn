@@ -4,12 +4,12 @@ description: 创建和配置 Internet 共享体验
 ms.assetid: 11906ee4-68f5-4be6-a3ab-6af3253c8a11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a02012ea3e6f7b39908a02d6a35df8adc099c3c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7f77f55511a78c87334fa1e26cf1021e4306f1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383774"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359232"
 ---
 # <a name="creating-and-configuring-internet-sharing-experiences"></a>创建和配置 Internet 共享体验
 
@@ -91,18 +91,18 @@ Internet 共享可以打开在移动宽带支持的设备上使用设置超级�
 
 若要执行此操作在 Windows 10，版本 1803年和更高版本，必须设置[**热点**COSA 数据库中设置](desktop-cosa-apn-database-settings.md#desktop-cosa-only-settings)为适当的值。
 
-如果你决定不需要权利检查，不需要任何其他信息或功能。 如果需要权利检查，则还必须提供背景通知事件处理程序 UWP 移动宽带应用的一部分。 在 Windows 10，版本 1803年和更高版本，使用中的方法[TetheringEntitlementCheckTriggerDetails](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.tetheringentitlementchecktriggerdetails)类来处理 Windows 通知事件，用于检查 tethering 权利。 对于早期版本的 Windows，使用[ **NetworkOperatorNotificationEventDetails** ](https://msdn.microsoft.com/library/windows/apps/br207377)类。 有关创建背景通知事件处理程序的详细信息，请参阅[启用移动运营商通知和系统事件](enabling-mobile-operator-notifications-and-system-events.md)。
+如果你决定不需要权利检查，不需要任何其他信息或功能。 如果需要权利检查，则还必须提供背景通知事件处理程序 UWP 移动宽带应用的一部分。 在 Windows 10，版本 1803年和更高版本，使用中的方法[TetheringEntitlementCheckTriggerDetails](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.tetheringentitlementchecktriggerdetails)类来处理 Windows 通知事件，用于检查 tethering 权利。 对于早期版本的 Windows，使用[ **NetworkOperatorNotificationEventDetails** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)类。 有关创建背景通知事件处理程序的详细信息，请参阅[启用移动运营商通知和系统事件](enabling-mobile-operator-notifications-and-system-events.md)。
 
-MOs 和 Mvno 具有不同的要求 PDP 上下文应进行 Internet 共享。 Windows 已更新的现有[预配的 XML 架构](https://msdn.microsoft.com/library/windows/apps/hh868398)以允许用户预配系统使用正确的 Internet 共享 PDP 上下文信息。 有关多个 PDP 上下文的详细信息，请参阅[开发应用程序使用多个 PDP 上下文](developing-apps-using-multiple-pdp-contexts.md)。
+MOs 和 Mvno 具有不同的要求 PDP 上下文应进行 Internet 共享。 Windows 已更新的现有[预配的 XML 架构](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/schema-for-mobile-broadband-portal)以允许用户预配系统使用正确的 Internet 共享 PDP 上下文信息。 有关多个 PDP 上下文的详细信息，请参阅[开发应用程序使用多个 PDP 上下文](developing-apps-using-multiple-pdp-contexts.md)。
 
 你还可以配置最大并发连接的客户端设备数量为 10。 您可以更改此数字为任何值介于 3 到 10 之间通过使用[帐户预配](account-provisioning.md)。
 
-为了帮助确保你的用户不会意外地运行对其数据，可以显示数据使用情况统计信息为共享和非共享流量客户移动宽带应用程序中使用[ **GetNetworkUsageAsync**](https://msdn.microsoft.com/library/windows/apps/dn266073)的方法[ **ConnectionProfile** ](https://msdn.microsoft.com/library/windows/apps/br207249)类。
+为了帮助确保你的用户不会意外地运行对其数据，可以显示数据使用情况统计信息为共享和非共享流量客户移动宽带应用程序中使用[ **GetNetworkUsageAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile#Windows_Networking_Connectivity_ConnectionProfile_GetNetworkUsageAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_DataUsageGranularity_Windows_Networking_Connectivity_NetworkUsageStates_)的方法[ **ConnectionProfile** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile)类。
 
 ## <a name="span-idcreateacustominternetsharingappspanspan-idcreateacustominternetsharingappspanspan-idcreateacustominternetsharingappspancreate-a-custom-internet-sharing-app"></a><span id="Create_a_custom_Internet_Sharing_app"></span><span id="create_a_custom_internet_sharing_app"></span><span id="CREATE_A_CUSTOM_INTERNET_SHARING_APP"></span>创建自定义的 Internet 共享应用
 
 
-对于大多数运算符，Windows 用户界面将提供最佳体验的 Internet 共享。 但是，若要在其所有设备和硬件之间创建一致的体验，可以选择要包含在你的移动宽带应用或其他应用程序，它已被授予的特权的访问移动宽带的自己 Internet 共享的用户体验设备。 Windows 提供了几个新 Api 中的[ **Windows.Networking.NetworkOperators 命名空间**](https://msdn.microsoft.com/library/windows/apps/br241148)若要启用您的应用程序执行以下操作：
+对于大多数运算符，Windows 用户界面将提供最佳体验的 Internet 共享。 但是，若要在其所有设备和硬件之间创建一致的体验，可以选择要包含在你的移动宽带应用或其他应用程序，它已被授予的特权的访问移动宽带的自己 Internet 共享的用户体验设备。 Windows 提供了几个新 Api 中的[ **Windows.Networking.NetworkOperators 命名空间**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)若要启用您的应用程序执行以下操作：
 
 -   确保系统能够 Internet 共享
 

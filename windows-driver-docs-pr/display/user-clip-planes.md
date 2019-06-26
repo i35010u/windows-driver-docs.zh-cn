@@ -7,12 +7,12 @@ keywords:
 - 用户定义的剪辑平面 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbc27498278c10ddee4d32d1930caf5421fc6b5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef90b1ca0ee195d96df5b8cf3268a165cd43673d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389756"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373613"
 ---
 # <a name="user-clip-planes"></a>用户裁剪平面
 
@@ -20,7 +20,7 @@ ms.locfileid: "63389756"
 ## <span id="ddk_user_clip_planes_gg"></span><span id="DDK_USER_CLIP_PLANES_GG"></span>
 
 
-用户定义的剪辑平面启用最新版本的 DirectX 版本。 这些工作原理与其他剪辑平面，但它们是可由应用程序设置。 该驱动程序必须处理这些平面回应 D3DDP2OP\_SETCLIPPLANE 操作代码中[ **D3dDrawPrimitives2**](https://msdn.microsoft.com/library/windows/hardware/ff544704)。
+用户定义的剪辑平面启用最新版本的 DirectX 版本。 这些工作原理与其他剪辑平面，但它们是可由应用程序设置。 该驱动程序必须处理这些平面回应 D3DDP2OP\_SETCLIPPLANE 操作代码中[ **D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)。
 
  
 

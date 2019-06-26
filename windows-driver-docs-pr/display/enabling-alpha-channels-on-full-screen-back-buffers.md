@@ -10,12 +10,12 @@ keywords:
 - alpha 通道 WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9829939051617356f0c62cd2eda516c4808b7f9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd06402e11b1e90d78297882c220ae407da938c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355349"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385612"
 ---
 # <a name="enabling-alpha-channels-on-full-screen-back-buffers"></a>在全屏后端缓冲区中启用 Alpha 通道
 
@@ -29,7 +29,7 @@ DirectDraw DDI 中，在主翻转链创建具有任何内部函数的像素格�
 
 若要指示此功能的支持，该驱动程序必须设置 D3DCAPS3\_ALPHA\_全屏\_翻转\_或者\_丢弃位 (在中定义*d3d8caps.h*文件) 中**Caps3** D3DCAPS8 结构中的成员。 该驱动程序在响应中返回 D3DCAPS8 结构**GetDriverInfo2**查询中所述[报告 DirectX 8.0 样式 Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)。 此查询的支持中所述[支持 GetDriverInfo2](supporting-getdriverinfo2.md)。
 
-确定支持此功能后，该驱动程序可以接收[ *DdCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549263)调用 DDSCAPS2\_ENABLEALPHACHANNEL (中定义*ddraw.h*文件) 中设置位**dwCaps2**的成员[ **DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292)结构。 此位仅设置以创建主翻转链的一部分或独立的后台缓冲区上的图面。
+确定支持此功能后，该驱动程序可以接收[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))调用 DDSCAPS2\_ENABLEALPHACHANNEL (中定义*ddraw.h*文件) 中设置位**dwCaps2**的成员[ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))结构。 此位仅设置以创建主翻转链的一部分或独立的后台缓冲区上的图面。
 
 如果该驱动程序检测到此位，该驱动程序确定图面采用不显示模式的格式，但在显示模式下的格式和 alpha。 例如，在 32bpp 模式下，此类面应授予 D3DFMT\_A8R8G8B8 格式。
 

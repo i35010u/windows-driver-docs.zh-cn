@@ -8,12 +8,12 @@ keywords:
 - I/O 请求数据包 WDK 即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ec33ac2180319cab05bcd7cafddf1d0cfec627
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b42219126bd11733e3854e33b17980a7ef8230e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334048"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353791"
 ---
 # <a name="handling-stop-irps-windows-98me"></a>处理停止 IRP (Windows 98/Me)
 
@@ -27,7 +27,7 @@ ms.locfileid: "63334048"
 
 -   当设备管理器禁用它时停用设备
 
--   若要在失败后停止设备[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求
+-   若要在失败后停止设备[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求
 
 驱动程序无法确定从 IRP 发送的原因。 因此，在 Windows 98 上，运行 WDM 驱动程序/我必须处理所有停止 Irp，因为如果设备已被禁用。 简单地说，这意味着此类驱动程序失败传入 I/O 请求，而不是队列 （作为 Windows 2000 及更高版本）。
 

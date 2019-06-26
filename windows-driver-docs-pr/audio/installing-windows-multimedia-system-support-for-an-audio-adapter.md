@@ -10,12 +10,12 @@ keywords:
 - Windows 多媒体支持 WDK 音频
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a01293d8d5ab3e25fc2f25abb68fdc28eda9729
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a94a890ba4b6c6ee43787fd880e16caa3940b331
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359868"
 ---
 # <a name="installing-windows-multimedia-system-support-for-an-audio-adapter"></a>为音频适配器安装 Windows 多媒体系统支持
 
@@ -25,7 +25,7 @@ ms.locfileid: "63333432"
 
 INF 添加注册表部分创建或修改系统注册表中的特定于驱动程序的信息。 PortCls 音频适配器的添加注册表部分包含允许适配器访问的 Windows 多媒体系统组件的信息。
 
-以下示例显示了添加注册表部分中，x y Z-音频-Device.AddReg，在名为[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)上一示例中 (请参阅[安装端口类音频适配器](installing-a-port-class-audio-adapter.md)):
+以下示例显示了添加注册表部分中，x y Z-音频-Device.AddReg，在名为[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)上一示例中 (请参阅[安装端口类音频适配器](installing-a-port-class-audio-adapter.md)):
 
 ```cpp
   [XYZ-Audio-Device.AddReg]

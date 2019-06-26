@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eade89a5ee63a7148921a15397a2e507ded645e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 439c293357ae150db5c40810ee2a49fde318a78f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364253"
 ---
 # <a name="ndiskdndisrwlock"></a>!ndiskd.ndisrwlock
 
 
-**！ Ndiskd.ndisrwlock**扩展显示有关的信息[ **NDIS\_RW\_锁\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff567279)锁定结构。
+**！ Ndiskd.ndisrwlock**扩展显示有关的信息[ **NDIS\_RW\_锁\_EX** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁定结构。
 
 ```console
 !ndiskd.ndisrwlock [-handle <x>] 
@@ -84,17 +84,17 @@ NDIS READ-WRITE LOCK
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**NDIS\_RW\_LOCK\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff567279)
+[**NDIS\_RW\_LOCK\_EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))
 
  
 

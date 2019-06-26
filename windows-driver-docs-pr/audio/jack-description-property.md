@@ -4,17 +4,17 @@ description: 插孔说明属性
 ms.assetid: 6398efc9-4435-4234-bd72-1ed0f96c9f9f
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f579dab6541c820f0cc1af2be276b4801c2cd5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52bb2060bc5915883e7b37e382be5088ee02730b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333382"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359848"
 ---
 # <a name="jack-description-property"></a>插孔说明属性
 
 
-在 Windows Vista 及更高版本， [ **KSPROPERTY\_JACK\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)属性描述音频适配器上的音频插孔或其他物理连接器。 属性值描述 jack 的颜色、 jack、 连接器类型和其他 jack 功能的物理位置。 此信息旨在帮助用户查找有关等麦克风、 耳机或扬声器音频终结点设备中插入正确的插孔。 有关详细信息，请参阅[音频终结点设备](https://go.microsoft.com/fwlink/p/?linkid=130876)。
+在 Windows Vista 及更高版本， [ **KSPROPERTY\_JACK\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)属性描述音频适配器上的音频插孔或其他物理连接器。 属性值描述 jack 的颜色、 jack、 连接器类型和其他 jack 功能的物理位置。 此信息旨在帮助用户查找有关等麦克风、 耳机或扬声器音频终结点设备中插入正确的插孔。 有关详细信息，请参阅[音频终结点设备](https://go.microsoft.com/fwlink/p/?linkid=130876)。
 
 音频的适配器上 KS 筛选器是否支持 KSPROPERTY\_JACK\_DESCRIPTION 属性，Windows 多媒体控件面板中，Mmsys.cpl，显示器筛选器的桥的插孔信息插针。 桥 pin 表示音频的终结点设备的连接 （通常情况下，插孔）。 尽管属性值包含一个 pin （或相反，则插孔与 pin 关联） 有关的信息，该属性是属性的筛选器，而不是 pin。 有关桥的 pin 的详细信息，请参阅[音频筛选器关系图](audio-filter-graphs.md)。 有关筛选器属性和 pin 属性的详细信息，请参阅[筛选器、 Pin 和节点属性](filter--pin--and-node-properties.md)。
 
@@ -24,7 +24,7 @@ Microsoft HD Audio 类驱动程序自动构造 KSPROPERTY\_JACK\_说明属性值
 
 通过一个或多个插孔，音频终结点设备可以连接到桥 pin。 例如，一组 （两个通道） 立体扬声器需要有一个插孔，但 5.1 环绕声扬声器的集需要三个插孔 （假定每个插座处理两个六个声道）。
 
-中包含的说明每个插座[ **KSJACK\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff537136)结构。 例如，KSPROPERTY\_JACK\_有一个 jack 的音频端点设备的说明属性值包含一个 KSJACK\_描述结构，但有三个插座的终结点设备的属性值包含三个 KSJACK\_描述结构。 在任一情况下，KSJACK\_描述结构或结构中的属性值的前面有[ **KSMULTIPLE\_项**](https://msdn.microsoft.com/library/windows/hardware/ff563441)结构，它指定的大小属性值。 有关详细信息，请参阅[ **KSPROPERTY\_JACK\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)。
+中包含的说明每个插座[ **KSJACK\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)结构。 例如，KSPROPERTY\_JACK\_有一个 jack 的音频端点设备的说明属性值包含一个 KSJACK\_描述结构，但有三个插座的终结点设备的属性值包含三个 KSJACK\_描述结构。 在任一情况下，KSJACK\_描述结构或结构中的属性值的前面有[ **KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)结构，它指定的大小属性值。 有关详细信息，请参阅[ **KSPROPERTY\_JACK\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)。
 
 Jack 信息是特别有用，可帮助用户来区分连接到多渠道扬声器配置的插孔。 下面的代码示例显示了一个数组 KSJACK\_音频驱动程序使用来描述一套 5.1 环绕扬声器的三个插孔的描述结构：
 
@@ -64,9 +64,9 @@ KSJACK_DESCRIPTION ar_5dot1_Jacks[] =
 };
 ```
 
-如果音频硬件可以检测是否在插入设备，该驱动程序会动态更新以指示是否在当前插入设备此成员的值 (**，则返回 TRUE**) 或拔出 (**FALSE**)
+如果音频硬件可以检测是否在插入设备，该驱动程序会动态更新以指示是否在当前插入设备此成员的值 ( **，则返回 TRUE**) 或拔出 (**FALSE**)
 
-在前面的代码示例中， **IsConnected**每个数组元素中的成员设置为**TRUE**来指示终结点设备是否已插入插孔。 但是，如果硬件缺少 jack 存在检测**IsConnected**必须始终设置为**TRUE**、 是否有设备插入到的插孔。 若要删除此双的含义而得出的多义性 **，则返回 TRUE**返回值，客户端应用程序可以调用[IKsJackDescription2::GetJackDescription2](https://go.microsoft.com/fwlink/p/?linkid=143698)读取的 JackCapabilities 标志[ **KSJACK\_DESCRIPTION2** ](https://msdn.microsoft.com/library/windows/hardware/ff537138)结构。 如果此标志有 JACKDESC2\_是否存在\_检测\_功能位集，它指示终结点，实际上支持 jack 在场检测。 在这种情况下，值**IsConnected**成员可以解释为应用的插孔插入状态的准确映像。
+在前面的代码示例中， **IsConnected**每个数组元素中的成员设置为**TRUE**来指示终结点设备是否已插入插孔。 但是，如果硬件缺少 jack 存在检测**IsConnected**必须始终设置为**TRUE**、 是否有设备插入到的插孔。 若要删除此双的含义而得出的多义性 **，则返回 TRUE**返回值，客户端应用程序可以调用[IKsJackDescription2::GetJackDescription2](https://go.microsoft.com/fwlink/p/?linkid=143698)读取的 JackCapabilities 标志[ **KSJACK\_DESCRIPTION2** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)结构。 如果此标志有 JACKDESC2\_是否存在\_检测\_功能位集，它指示终结点，实际上支持 jack 在场检测。 在这种情况下，值**IsConnected**成员可以解释为应用的插孔插入状态的准确映像。
 
 标头文件 Wingdi.h 在 Windows SDK 中定义的 RGB 宏，将出现在前面的结构。
 
@@ -100,7 +100,7 @@ KSJACK_DESCRIPTION ar_SPDIF_Jacks[] =
 
 在前面的代码示例的值**ChannelMapping**成员中两个 KSJACK\_描述结构是否相同。
 
-WDK 中的"简单"MSVAD 示例驱动程序 (在示例目录 Src\\音频\\Msvad\\简单) 可以进行适配化以便支持 KSPROPERTY\_JACK\_DESCRIPTION 属性。 此示例驱动程序是方便演示如何使用该属性，因为它不需要实际的硬件。 因此，它可以安装在运行 Windows 的任何计算机上。 (但是，只有 Windows Vista 和更高版本操作系统提供完全支持 KSPROPERTY\_JACK\_DESCRIPTION 属性。)有关此示例的详细信息，请参阅[Windows 驱动程序工具包示例](https://msdn.microsoft.com/library/windows/hardware/ff554118)。
+WDK 中的"简单"MSVAD 示例驱动程序 (在示例目录 Src\\音频\\Msvad\\简单) 可以进行适配化以便支持 KSPROPERTY\_JACK\_DESCRIPTION 属性。 此示例驱动程序是方便演示如何使用该属性，因为它不需要实际的硬件。 因此，它可以安装在运行 Windows 的任何计算机上。 (但是，只有 Windows Vista 和更高版本操作系统提供完全支持 KSPROPERTY\_JACK\_DESCRIPTION 属性。)有关此示例的详细信息，请参阅[Windows 驱动程序工具包示例](https://docs.microsoft.com/windows-hardware/drivers/samples/index)。
 
 简单 MSVAD 示例拓扑筛选器定义三个桥 pin。 下表列出了这些引脚。
 
@@ -304,7 +304,7 @@ PropertyHandler_TopoFilter(IN PPCPROPERTY_REQUEST PropertyRequest)
 
 -   添加的声明**PropertyHandlerJackDescription**向标头文件 Mintopo.h 中 CMiniportTopology 类定义前面的代码示例中的方法。
 
--   实现用于拓扑筛选器的自动化表并加载到此表的地址**AutomationTable**的成员[ **PCFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537694)标头文件 Toptable.h 中的结构。 此结构的命名**MiniportFilterDescriptor**。
+-   实现用于拓扑筛选器的自动化表并加载到此表的地址**AutomationTable**的成员[ **PCFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)标头文件 Toptable.h 中的结构。 此结构的命名**MiniportFilterDescriptor**。
 
 若要实现自动化的筛选器表，插入以下代码到标头文件 Toptable.h (的定义前面**MiniportFilterDescriptor**):
 
@@ -322,7 +322,7 @@ static PCPROPERTY_ITEM PropertiesTopoFilter[] =
 DEFINE_PCAUTOMATION_TABLE_PROP(AutomationTopoFilter, PropertiesTopoFilter);
 ```
 
-在前面的代码示例中，**处理程序**的成员[ **PCPROPERTY\_项**](https://msdn.microsoft.com/library/windows/hardware/ff537722)结构包含了的属性处理程序的函数指针上一步中添加到 Mintopo.cpp。 若要使属性处理程序可访问标头文件中，插入**extern**函数声明为 PropertyHandler\_TopoFilter 开头的标头文件。
+在前面的代码示例中，**处理程序**的成员[ **PCPROPERTY\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcproperty_item)结构包含了的属性处理程序的函数指针上一步中添加到 Mintopo.cpp。 若要使属性处理程序可访问标头文件中，插入**extern**函数声明为 PropertyHandler\_TopoFilter 开头的标头文件。
 
 Jack description 属性的详细信息，请参阅[Jack 说明动态音频子设备](jack-descriptions-for-dynamic-audio-subdevices.md)。
 

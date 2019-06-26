@@ -3,21 +3,21 @@ Description: 了解如何应用程序可以调用 WinUSB 函数与 USB 设备进
 title: USB 设备的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 557ae71709675dc25facc322c8d9a752fbd2c73f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 114a672ed3ad7678e629ccb38eb577eb52bd721b
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393827"
 ---
 # <a name="windows-desktop-app-for-a-usb-device"></a>USB 设备的 Windows 桌面应用
 
 
-将本主题中了解有关应用程序可以调用[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)与 USB 设备进行通信。 有关此类应用程序[WinUSB](winusb.md) (Winusb.sys) 必须作为设备的功能驱动程序安装。 在设备的内核模式堆栈 WinUSB。 此驱动程序包含在 Windows 中\\Windows\\System32\\驱动程序文件夹。
+将本主题中了解有关应用程序可以调用[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)与 USB 设备进行通信。 有关此类应用程序[WinUSB](winusb.md) (Winusb.sys) 必须作为设备的功能驱动程序安装。 在设备的内核模式堆栈 WinUSB。 此驱动程序包含在 Windows 中\\Windows\\System32\\驱动程序文件夹。
 
-如果使用的 Winusb.sys 作为 USB 设备的功能驱动程序，则可以调用[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)从应用程序以与设备通信。 这些函数中，公开的用户模式 DLL Winusb.dll，简化通信过程。 而不是构造设备 I/O 控制请求以执行标准 USB 操作 （如配置设备、 发送控制请求以及将数据传输到或从设备），应用程序调用等效 WinUSB 函数。
+如果使用的 Winusb.sys 作为 USB 设备的功能驱动程序，则可以调用[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)从应用程序以与设备通信。 这些函数中，公开的用户模式 DLL Winusb.dll，简化通信过程。 而不是构造设备 I/O 控制请求以执行标准 USB 操作 （如配置设备、 发送控制请求以及将数据传输到或从设备），应用程序调用等效 WinUSB 函数。
 
-Winusb.dll 使用的应用程序提供的数据来构造相应的设备的 I/O 控制请求，然后将请求发送到 Winusb.sys 进行处理。 若要与 USB 堆栈进行通信，WinUSB 函数调用[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)与相应 IOCTL 的与应用程序的请求相关联的函数。 请求完成后，WinUSB 函数将传递回调用进程 （如来自的读取请求的数据） 的 Winusb.sys 返回任何信息。 如果在调用**DeviceIoControl**是成功，它将返回一个非零值。 如果调用失败或被挂起 （不立即处理）， **DeviceIoControl**返回零值。 如果出现错误，应用程序可以调用[ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)的更详细的错误消息。
+Winusb.dll 使用的应用程序提供的数据来构造相应的设备的 I/O 控制请求，然后将请求发送到 Winusb.sys 进行处理。 若要与 USB 堆栈进行通信，WinUSB 函数调用[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)与相应 IOCTL 的与应用程序的请求相关联的函数。 请求完成后，WinUSB 函数将传递回调用进程 （如来自的读取请求的数据） 的 Winusb.sys 返回任何信息。 如果在调用**DeviceIoControl**是成功，它将返回一个非零值。 如果调用失败或被挂起 （不立即处理）， **DeviceIoControl**返回零值。 如果出现错误，应用程序可以调用[ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)的更详细的错误消息。
 
 更为简单使用 WinUSB 函数不是它是实现一个驱动程序与设备通信。 但请注意以下限制：
 
@@ -69,7 +69,7 @@ Winusb.dll 使用的应用程序提供的数据来构造相应的设备的 I/O �
 <td><p>可以在以下两种方式编写第一个应用：</p>
 <ul>
 <li><p>编写基于 WinUSB 模板包含在 Visual Studio 应用程序。 有关详细信息，请参阅<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">编写基于 WinUSB 模板的 Windows 桌面应用</a>。</p></li>
-<li><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff550855" data-raw-source="[SetupAPI](https://msdn.microsoft.com/library/windows/hardware/ff550855)">SetupAPI</a>例程，从而获取你的设备的句柄并将其打开通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff540277" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540277)"> <strong>WinUsb_Initialize</strong></a>。 有关详细信息，请参阅<a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">如何访问由使用 WinUSB 函数 USB 设备</a>。</p></li>
+<li><p>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)">SetupAPI</a>例程，从而获取你的设备的句柄并将其打开通过调用<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)"> <strong>WinUsb_Initialize</strong></a>。 有关详细信息，请参阅<a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">如何访问由使用 WinUSB 函数 USB 设备</a>。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -104,7 +104,7 @@ Winusb.dll 使用的应用程序提供的数据来构造相应的设备的 I/O �
 
 ## <a name="related-topics"></a>相关主题
 [USB 设备的 Windows 应用程序开发](developing-windows-applications-that-communicate-with-a-usb-device.md)  
-[通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

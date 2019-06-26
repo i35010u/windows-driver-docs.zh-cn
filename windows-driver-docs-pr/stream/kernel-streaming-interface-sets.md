@@ -4,12 +4,12 @@ description: 内核流式处理接口集
 ms.assetid: 7fb6b137-0e28-4034-8e89-7301f3d2bbba
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02fbcfd4a759388e362cfb95bd863c42bd983fe0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7193eb0416d13c3e535280c1a2f2d226dd300ce8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360651"
 ---
 # <a name="kernel-streaming-interface-sets"></a>内核流式处理接口集
 
@@ -23,9 +23,9 @@ ms.locfileid: "63334044"
 
 [KSINTERFACESETID\_标准](ksinterfacesetid-standard.md)
 
-这些集对应于定义中的 Guid *ks.h*并*ksmedia.h*，并可以在中指定[ **KSPIN\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff563537)结构。
+这些集对应于定义中的 Guid *ks.h*并*ksmedia.h*，并可以在中指定[ **KSPIN\_接口**](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))结构。
 
-有关如何在你的微型驱动程序中指定接口的信息，请参阅[KS 接口](https://msdn.microsoft.com/library/windows/hardware/ff567652)。
+有关如何在你的微型驱动程序中指定接口的信息，请参阅[KS 接口](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-interfaces)。
 
  
 

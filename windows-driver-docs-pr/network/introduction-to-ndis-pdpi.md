@@ -4,12 +4,12 @@ description: 本部分介绍到 NDIS PacketDirect 提供程序接口 (PDPI)
 ms.assetid: E85ED51E-BDE5-43BE-93BA-19F214670B8F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca37eb13e3ef06867136802fbe44d5a7c1d74270
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3fa27ab5d48fa244f36c6dfd19cea1b3643cd98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386344"
 ---
 # <a name="introduction-to-the-ndis-packetdirect-provider-interface"></a>NDIS PacketDirect 提供程序界面简介
 
@@ -46,7 +46,7 @@ PD 客户端可以控制分配给 PD 系统中的资源。 在的网络流量很
 
 **PacketDirect 提供程序接口 (PDPI)**
 
-PDPI 允许 NIC 驱动程序来公开其高性能发送和接收的 Windows 操作系统的功能。 实现的函数是完整的微型端口功能的子集，并且是通用的实现 PD 的所有 Nic。 PDPI 的参考文档，请参阅[PacketDirect 提供程序接口 (PDPI) 引用](https://msdn.microsoft.com/library/windows/hardware/dn931858)。
+PDPI 允许 NIC 驱动程序来公开其高性能发送和接收的 Windows 操作系统的功能。 实现的函数是完整的微型端口功能的子集，并且是通用的实现 PD 的所有 Nic。 PDPI 的参考文档，请参阅[PacketDirect 提供程序接口 (PDPI) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
 **PacketDirect 客户端接口 (PDCI)**
 
@@ -55,7 +55,7 @@ PDCI 允许第一方 Windows 服务/应用程序 （例如，负载均衡器、 
 ## <a name="related-topics"></a>相关主题
 
 
-[PacketDirect 提供程序接口 (PDPI) 参考](https://msdn.microsoft.com/library/windows/hardware/dn931858)
+[PacketDirect 提供程序接口 (PDPI) 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_SET_HOME_PROVIDER_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 32502335abc79f9deaa56095d7d0dc8d46e1320a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 192e947ed740f325b8bccd33e547780d4baaa2a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386866"
 ---
 # <a name="ndisstatuswwansethomeprovidercomplete"></a>NDIS\_状态\_WWAN\_设置\_主页\_提供程序\_完成
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_设置\_主页\_提供程序\_完成通知的完成情况通知给 MB 服务[OID\_WWAN\_主页\_提供程序](https://msdn.microsoft.com/library/windows/hardware/ff569826)设置请求。
+微型端口驱动程序使用 NDIS\_状态\_WWAN\_设置\_主页\_提供程序\_完成通知的完成情况通知给 MB 服务[OID\_WWAN\_主页\_提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-home-provider)设置请求。
 
-使用此通知[ **NDIS\_WWAN\_设置\_主页\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh439841)结构。
+使用此通知[ **NDIS\_WWAN\_设置\_主页\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_home_provider)结构。
 
 <a name="requirements"></a>要求
 ------------

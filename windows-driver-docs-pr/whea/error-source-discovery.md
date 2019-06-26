@@ -12,17 +12,17 @@ keywords:
 - 错误源发现 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3bc3c4e90efb599b74768a0df920c874141239
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ceb3b06a3e412ff43516f75dc7d07ca436d75d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340871"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386473"
 ---
 # <a name="error-source-discovery"></a>错误源发现
 
 
-在初始化期间的操作系统，Windows 内核查询有关的所有列表 PSHED[错误源](hardware-errors-and-error-sources.md)实现的硬件平台。 PSHED 返回一系列[ **WHEA\_错误\_源\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff560505)描述了每个硬件平台支持的错误源的结构. 操作系统使用此信息来启用负责处理从硬件平台的错误通知的必要低级别的硬件错误处理程序 (LLHEHs)。
+在初始化期间的操作系统，Windows 内核查询有关的所有列表 PSHED[错误源](hardware-errors-and-error-sources.md)实现的硬件平台。 PSHED 返回一系列[ **WHEA\_错误\_源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)描述了每个硬件平台支持的错误源的结构. 操作系统使用此信息来启用负责处理从硬件平台的错误通知的必要低级别的硬件错误处理程序 (LLHEHs)。
 
 下面是发现的 PSHED 错误源的最小集。
 

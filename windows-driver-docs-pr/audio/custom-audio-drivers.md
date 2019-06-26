@@ -10,12 +10,12 @@ keywords:
 - PortCls WDK 音频、 自定义音频驱动程序
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 25539abfe183dc1090abebb04b5ce5ca16499d29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19bc9a0027326fb44a2b1aa56708849f58471e9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333844"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359108"
 ---
 # <a name="custom-audio-drivers"></a>自定义音频驱动程序
 
@@ -32,7 +32,7 @@ ms.locfileid: "63333844"
 
 AVStream 类系统驱动程序 (Ks.sys) 缺少大部分 PortCls 中存在的特定于音频的支持函数。
 
-有关 PortCls 详细信息，请参阅[简介端口类](introduction-to-port-class.md)。 有关 AVStream 详细信息，请参阅[AVStream 概述](https://msdn.microsoft.com/library/windows/hardware/ff554240)。
+有关 PortCls 详细信息，请参阅[简介端口类](introduction-to-port-class.md)。 有关 AVStream 详细信息，请参阅[AVStream 概述](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - 编写回调例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06d29454c4f456bace594ecb11a55d83cc008731
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c063b80c9236421a56043ab1cb704825b9395033
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377650"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385639"
 ---
 # <a name="writing-preoperation-callback-routines"></a>编写预操作回调例程
 
@@ -20,11 +20,11 @@ ms.locfileid: "63377650"
 ## <span id="ddk_writing_preoperation_callback_routines_if"></span><span id="DDK_WRITING_PREOPERATION_CALLBACK_ROUTINES_IF"></span>
 
 
-文件系统微筛选器驱动程序使用一个或多个*preoperation 回调例程*到筛选器 I/O 的操作。 [**Preoperation 回调例程**](https://msdn.microsoft.com/library/windows/hardware/ff551109)类似于传统的文件系统筛选器驱动程序中使用的调度例程。
+文件系统微筛选器驱动程序使用一个或多个*preoperation 回调例程*到筛选器 I/O 的操作。 [**Preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)类似于传统的文件系统筛选器驱动程序中使用的调度例程。
 
-微筛选器驱动程序通过将存储中的回调例程的入口点注册特定类型的 I/O 操作的 preoperation 回调例程**OperationRegistration**的成员[ **FLT\_注册**](https://msdn.microsoft.com/library/windows/hardware/ff544811)结构。 微筛选器驱动程序将此成员作为参数传递[ **FltRegisterFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff544305)中其**DriverEntry**例程。
+微筛选器驱动程序通过将存储中的回调例程的入口点注册特定类型的 I/O 操作的 preoperation 回调例程**OperationRegistration**的成员[ **FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)结构。 微筛选器驱动程序将此成员作为参数传递[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)中其**DriverEntry**例程。
 
-微筛选器驱动程序收到只有这些类型的 I/O 操作，它们具有为其注册 preoperation 或 postoperation 回调例程。 微筛选器驱动程序可以注册的情况下注册给定类型的 I/O 操作的 preoperation 回调例程[ **postoperation 回调例程**](https://msdn.microsoft.com/library/windows/hardware/ff551107)，反之亦然。
+微筛选器驱动程序收到只有这些类型的 I/O 操作，它们具有为其注册 preoperation 或 postoperation 回调例程。 微筛选器驱动程序可以注册的情况下注册给定类型的 I/O 操作的 preoperation 回调例程[ **postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)，反之亦然。
 
 下表显示了一个特定的使用方案和它的返回值的 preoperation 回调例程实现。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63377650"
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | 例程不相关的操作和不需要操作的最终状态或具有不 postoperation 执行回调。                                             | 而不会在完成调用微筛选器的 postoperation 回调传递通过 I/O 操作。                                                | FLT\_PREOP\_成功\_否\_回调   |
 | 例程需要操作的最终状态。                                                                                                                               | 将传递通过要求微筛选器来调用 postoperation 回调例程进行的操作。                                                     | FLT\_PREOP\_成功\_WITH\_回调 |
-| 微筛选器必须完成或继续处理此操作在将来。                                                                                                     | 将置于挂起状态的操作。 使用[ **FltCompletePendedPreOperation** ](https://msdn.microsoft.com/library/windows/hardware/ff541913)完成此操作更高版本。 请注意，可能返回的预操作例程之间可接受争用**FLT_PREOP_PENDING**，并**FltCompletePendingOperation**被调用。 筛选器管理器处理这种情况下，而无需从驱动程序的输入。 | FLT\_PREOP\_PENDING                 |
+| 微筛选器必须完成或继续处理此操作在将来。                                                                                                     | 将置于挂起状态的操作。 使用[ **FltCompletePendedPreOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation)完成此操作更高版本。 请注意，可能返回的预操作例程之间可接受争用**FLT_PREOP_PENDING**，并**FltCompletePendingOperation**被调用。 筛选器管理器处理这种情况下，而无需从驱动程序的输入。 | FLT\_PREOP\_PENDING                 |
 | Postoperation 处理必须出现在同一线程的上下文中调用的调度例程。 这可确保一致的 IRQL 和维护您的本地变量状态。 | 与 postoperation 同步操作。                                                                                                    | FLT\_PREOP\_SYNCHRONIZE             |
 | Preoperation 回调例程需要完成该操作。                                                                                                                    | 停止处理操作，并将分配 NTSTATUS 的最终值。                                                                                   | FLT\_PREOP\_完成                |
 
@@ -56,7 +56,7 @@ typedef FLT_PREOP_CALLBACK_STATUS
 
 -   返回的状态值不 FLT\_PREOP\_PENDING preoperation 回调例程。
 
--   调用[ **FltCompletePendedPreOperation** ](https://msdn.microsoft.com/library/windows/hardware/ff541913)从已处理被 preoperation 回调例程中的挂起的操作的工作例程。
+-   调用[ **FltCompletePendedPreOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation)从已处理被 preoperation 回调例程中的挂起的操作的工作例程。
 
 本部分包括：
 

@@ -8,12 +8,12 @@ keywords:
 - 级别 2 I/O 验证 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f13e54f873ecdc89622a0298bc258f6709a994b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4235a98c84aade321da760c374e6d1985e5ba49
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358266"
 ---
 # <a name="io-verification"></a>I/O 验证
 
@@ -55,7 +55,7 @@ ms.locfileid: "63330646"
 
 由于特殊的 IRP 池大小有限制，I/O 验证是最有效，它是仅在一个驱动程序上一次使用时。
 
-1 级的 I/O 验证失败导致 bug 检查 0xC9 要颁发。 此 bug 检查的第一个参数指示发生了哪些冲突。 请参阅[ **Bug 检查 0xC9** ](https://msdn.microsoft.com/library/windows/hardware/ff560205) (驱动程序\_VERIFIER\_IOMANAGER\_冲突) 有关的完整参数列表。
+1 级的 I/O 验证失败导致 bug 检查 0xC9 要颁发。 此 bug 检查的第一个参数指示发生了哪些冲突。 请参阅[ **Bug 检查 0xC9** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation) (驱动程序\_VERIFIER\_IOMANAGER\_冲突) 有关的完整参数列表。
 
 ### <a name="span-idlevel2ioverificationspanspan-idlevel2ioverificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>级别 2 I/O 验证
 
@@ -67,7 +67,7 @@ I/O 验证第 2 级错误都显示在不同的方式： 在蓝色屏幕上，在
 
 在内核调试器 （KD 或 WinDbg） 中，这些错误记录的消息**WDM 驱动程序错误**和说明性文本字符串。 当内核调试程序处于活动状态时，则可以忽略第 2 级错误并继续执行系统操作。 （这是不可能与任何其他 bug 检查。）
 
-蓝色的屏幕、 故障转储文件和内核调试程序每个显示其他信息。 大多数的 I/O 验证第 2 级错误消息的完整说明，请参阅[ **Bug 检查 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)。 其余部分中，请参阅[ **Bug 检查 0xC4**](https://msdn.microsoft.com/library/windows/hardware/ff560187)。
+蓝色的屏幕、 故障转储文件和内核调试程序每个显示其他信息。 大多数的 I/O 验证第 2 级错误消息的完整说明，请参阅[ **Bug 检查 0xC9**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation)。 其余部分中，请参阅[ **Bug 检查 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)。
 
 I/O 验证选项启动 Window Vista 中，检查以下驱动程序错误：
 
@@ -75,27 +75,27 @@ I/O 验证选项启动 Window Vista 中，检查以下驱动程序错误：
 
 -   释放尚未获取删除锁。
 
--   调用[ **IoReleaseRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549560)或[ **IoReleaseRemoveLockAndWait** ](https://msdn.microsoft.com/library/windows/hardware/ff549567)使用不同于 tag 参数的标记参数使用在相应[ **IoAcquireRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff548204)调用。
+-   调用[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)或[ **IoReleaseRemoveLockAndWait** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelockandwait)使用不同于 tag 参数的标记参数使用在相应[ **IoAcquireRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)调用。
 
--   调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)都会在禁用。
+-   调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)都会在禁用。
 
--   调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)在 IRQL 大于调度\_级别。
+-   调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)在 IRQL 大于调度\_级别。
 
 -   从驱动程序调度例程返回都会在禁用。
 
 -   从与更改的 IRQL 的驱动程序调度例程中返回。
 
--   从驱动程序调度例程返回与禁用的 Apc。 在这种情况下，该驱动程序可能具有名为[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)多次[ **KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)，这是主要原因[ **Bug 检查 0x20** ](https://msdn.microsoft.com/library/windows/hardware/ff557421) (内核\_APC\_PENDING\_在\_退出) 和[ **Bug 检查 0x1** ](https://msdn.microsoft.com/library/windows/hardware/ff557419) (APC\_索引\_不匹配)。
+-   从驱动程序调度例程返回与禁用的 Apc。 在这种情况下，该驱动程序可能具有名为[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)多次[ **KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)，这是主要原因[ **Bug 检查 0x20** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x20--kernel-apc-pending-during-exit) (内核\_APC\_PENDING\_在\_退出) 和[ **Bug 检查 0x1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1--apc-index-mismatch) (APC\_索引\_不匹配)。
 
 I/O 验证选项启动 Windows 7 中，检查以下驱动程序错误：
 
--   尝试通过调用释放 Irp [ **ExFreePool**](https://msdn.microsoft.com/library/windows/hardware/ff544590)。 必须用释放 Irp [ **IoFreeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549113)。
+-   尝试通过调用释放 Irp [ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)。 必须用释放 Irp [ **IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)。
 
 此外，可以使用此选项来检测另一个常见的驱动程序错误，重新初始化删除锁。 删除数据结构应分配内部设备扩展的锁定。 这可确保在 I/O 管理器释放包含 IO 的内存\_删除\_锁结构仅当已删除的设备对象。 如果该驱动程序将执行以下三个步骤，就可以，在步骤 2 中之后, 的应用程序或驱动程序仍保留设备 1 的引用：
 
 -   分配 IO\_删除\_锁结构，它对应于设备 1，但不分配外部设备 1 的扩展。
--   调用[ **IoReleaseRemoveLockAndWait** ](https://msdn.microsoft.com/library/windows/hardware/ff549567) Device1 中要删除的时间。
--   调用[ **IoInitializeRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549324)同一个锁来重复使用它作为删除锁定的设备 2。
+-   调用[ **IoReleaseRemoveLockAndWait** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelockandwait) Device1 中要删除的时间。
+-   调用[ **IoInitializeRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeremovelock)同一个锁来重复使用它作为删除锁定的设备 2。
 
 很可能是，在步骤 2 的应用程序或驱动程序仍保留对设备 1 的引用。 应用程序或驱动程序仍可发送请求到 Device1，即使已删除此设备。 因此，不安全地重复使用作为新的删除锁定的相同内存，直到 I/O 管理器会删除设备 1。 重新初始化同一个锁，而另一个线程尝试获取它可能会导致损坏的锁，该驱动程序和整个系统的结果不可预知。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PORT_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b27ceec7371a06e5270b45071dcfa809274532c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d2bace5b512b2daae506f60443335fd95fee0a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362877"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368533"
 ---
 # <a name="ndisstatusportstate"></a>NDIS\_状态\_端口\_状态
 
@@ -21,7 +21,7 @@ ms.locfileid: "63362877"
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序必须在中设置的端口号**PortNumber**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构。 **StatusBuffer**此结构的成员包含一个指向[ **NDIS\_端口\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff566800)结构。
+微型端口驱动程序必须在中设置的端口号**PortNumber**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构。 **StatusBuffer**此结构的成员包含一个指向[ **NDIS\_端口\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -46,9 +46,9 @@ ms.locfileid: "63362877"
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_端口\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff566800)
+[**NDIS\_端口\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_state)
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
  
 

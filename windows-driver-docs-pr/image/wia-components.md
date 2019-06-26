@@ -4,12 +4,12 @@ description: WIA 组件
 ms.assetid: e75b8929-c16a-4c7a-9064-4fcb104bfa41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b07e5da2591790aefa18a8665e5c1766a9da75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30d6d474c1b2109f7fb7ba064e5fe60a8862ee35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375367"
 ---
 # <a name="wia-components"></a>WIA 组件
 
@@ -104,9 +104,9 @@ WIA 服务是与图像处理应用程序和 WIA 微型驱动程序进行通信�
 
 ### <a name="wia-minidrivers"></a>WIA 微型驱动程序
 
-[WIA 微型驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff545027)供应商提供的是，将 WIA 属性更改和命令指向图像处理设备的用户模式组件。 微型驱动程序实现 WIA DDI WIA 服务调用与微型驱动程序进行通信。
+[WIA 微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)供应商提供的是，将 WIA 属性更改和命令指向图像处理设备的用户模式组件。 微型驱动程序实现 WIA DDI WIA 服务调用与微型驱动程序进行通信。
 
-WIA 微型驱动程序提供了为内核模式下仍映像驱动程序，从而推动了图像处理设备的驱动程序，如 USB 驱动程序通过提供特定于设备的用户模式接口。 微型驱动程序与内核模式驱动程序通过调用[ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)， **ReadFile**， **WriteFile**，和[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) Microsoft Win32 函数 （它们 Microsoft Windows SDK 文档中所述）。
+WIA 微型驱动程序提供了为内核模式下仍映像驱动程序，从而推动了图像处理设备的驱动程序，如 USB 驱动程序通过提供特定于设备的用户模式接口。 微型驱动程序与内核模式驱动程序通过调用[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)， **ReadFile**， **WriteFile**，和[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) Microsoft Win32 函数 （它们 Microsoft Windows SDK 文档中所述）。
 
 图像处理应用程序不能直接调用 WIA 微型驱动程序。 只有 WIA 服务可以直接调用该驱动程序。
 
@@ -118,7 +118,7 @@ Microsoft 提供了基于 Microsoft Windows 驱动程序模型 WDM 的内核模�
 
 仅当其成像设备不符合 Microsoft 提供的内核模式 I/O 驱动程序供应商必须提供内核模式下仍映像驱动程序。
 
-**请注意**  上 Windows XP 和更高版本，可以从该驱动程序检索版本信息。 [ **WIA\_DIP\_WIA\_版本**](https://msdn.microsoft.com/library/windows/hardware/ff550296)属性包含 WIA 版本，并且[ **WIA\_DIP\_驱动程序\_版本**](https://msdn.microsoft.com/library/windows/hardware/ff550263)属性包含的驱动程序 DLL 版本。 WIA 服务创建和维护这些属性;则会自动添加 WIA 服务加载驱动程序。 Windows Me 不包括这些属性。
+**请注意**  上 Windows XP 和更高版本，可以从该驱动程序检索版本信息。 [ **WIA\_DIP\_WIA\_版本**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dip-wia-version)属性包含 WIA 版本，并且[ **WIA\_DIP\_驱动程序\_版本**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dip-driver-version)属性包含的驱动程序 DLL 版本。 WIA 服务创建和维护这些属性;则会自动添加 WIA 服务加载驱动程序。 Windows Me 不包括这些属性。
 
  
 

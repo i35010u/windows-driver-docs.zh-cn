@@ -4,12 +4,12 @@ description: DSM\_QueryUniqueId WMI 类
 ms.assetid: 576e208d-972c-47ba-ab30-a05bf3d0943d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a747abe604f7c7030e82e5ff1ecd9a2a3fd2bff9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3140d6937469eb4f68bd827a3d8f49ea5e7bdad5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380663"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373223"
 ---
 # <a name="dsmqueryuniqueid-wmi-class"></a>DSM\_QueryUniqueId WMI 类
 
@@ -41,7 +41,7 @@ class DSM_QueryUniqueId
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_QueryUniqueId** ](https://msdn.microsoft.com/library/windows/hardware/ff552742)数据结构。 没有与此 WMI 类相关联的方法。
+此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_QueryUniqueId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_queryuniqueid)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

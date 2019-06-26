@@ -13,12 +13,12 @@ keywords:
 - 传输数据 WDK 内核 ad
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6df4d17b02b6f10b60ceed8489fbdf0e7d0688b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 209d357253520095280d35bd229008f690cb53e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339098"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387022"
 ---
 # <a name="adapter-objects-and-dma"></a>适配器对象和 DMA
 
@@ -26,7 +26,7 @@ ms.locfileid: "63339098"
 
 
 
-本部分介绍适配器对象和[ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)例程，以及如何使用它们来控制 DMA 操作。 部分包含以下主题：
+本部分介绍适配器对象和[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程，以及如何使用它们来控制 DMA 操作。 部分包含以下主题：
 
 [适配器对象简介](introduction-to-adapter-objects.md)
 

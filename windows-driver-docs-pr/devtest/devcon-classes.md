@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76725660621ec94910d8931cfce7e5ab6446b7ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 147a0e029dadaa26f7d8438845ccf5cc2089a62c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371527"
 ---
 # <a name="devcon-classes"></a>DevCon Classes
 
 
-列出所有[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)，包括在系统上的设备不使用的类。 在本地和远程计算机上有效。
+列出所有[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)，包括在系统上的设备不使用的类。 在本地和远程计算机上有效。
 
 ```
     devcon [/m:\\computer] classes 

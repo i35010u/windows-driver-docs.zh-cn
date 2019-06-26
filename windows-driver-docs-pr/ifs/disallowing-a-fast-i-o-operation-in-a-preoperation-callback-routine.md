@@ -8,12 +8,12 @@ keywords:
 - 快速的 i/o 操作不允许使用 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5746d9e9e187441a5798a4ceab9fdb65615f51f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afc61f1f77cee583691f97684d1dce45da0859d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359543"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385558"
 ---
 # <a name="disallow-a-fast-io-operation-in-a-preoperation-callback-routine"></a>不允许 Preoperation 回调例程中的快速 I/O 操作
 
@@ -25,11 +25,11 @@ ms.locfileid: "63359543"
 
 与类似完成某个 I/O 操作，不允许快速 I/O 操作意味着若要暂停上它的处理，并将其返回到筛选器管理器。 但是，不允许快速 I/O 操作是不同于完成它。 如果微筛选器驱动程序不允许的快速 I/O 操作中，已颁发的 I/O 管理器，I/O 管理器可能会重新发出相同的操作的等效基于 IRP 的操作。
 
-当微筛选器驱动程序[ **preoperation 回调例程**](https://msdn.microsoft.com/library/windows/hardware/ff551109)不允许快速 I/O 操作，筛选器管理器执行以下操作：
+当微筛选器驱动程序[ **preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)不允许快速 I/O 操作，筛选器管理器执行以下操作：
 
 -   下面当前微筛选器驱动程序的微筛选器驱动程序、 旧筛选器，或文件系统，则不发送该操作。
 
--   调用[ **postoperation 回调例程**](https://msdn.microsoft.com/library/windows/hardware/ff551107)上面微筛选器驱动程序实例堆栈中的当前微筛选器驱动程序的微筛选器驱动程序。
+-   调用[ **postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)上面微筛选器驱动程序实例堆栈中的当前微筛选器驱动程序的微筛选器驱动程序。
 
 -   如果存在，不会为该操作，调用当前微筛选器驱动程序的 postoperation 回调例程。
 
@@ -37,7 +37,7 @@ ms.locfileid: "63359543"
 
 Preoperation 回调例程不应设置的回调数据结构**IoStatus.Status**字段，因为筛选器管理器会自动将此字段设置为状态\_FLT\_禁止\_快速\_IO。
 
-FLT\_PREOP\_禁止\_FASTIO 才会返回用于快速 I/O 操作。 若要确定操作是否是一个快速的 I/O 操作，请参阅[ **FLT\_IS\_FASTIO\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544645)。
+FLT\_PREOP\_禁止\_FASTIO 才会返回用于快速 I/O 操作。 若要确定操作是否是一个快速的 I/O 操作，请参阅[ **FLT\_IS\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 微筛选器驱动程序不能返回 FLT\_PREOP\_禁止\_IRP 的 FASTIO\_MJ\_关闭、 IRP\_MJ\_卷\_装载点或 IRP\_MJ\_卷\_卸除操作。
 

@@ -10,17 +10,17 @@ keywords:
 - WSD 法规遵从性 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd20426087a054acc693411e02c4fa5c9e9f831
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af40e6f9317e808f6bcc85dcc7aee74c5f3379f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356970"
 ---
 # <a name="wsdmon-port-monitor"></a>WSDMON 端口监视器
 
 
-WSDMON 端口监视器是支持打印到符合的网络打印机的打印机端口监视器[Web Services for Devices (WSD) 技术](https://msdn.microsoft.com/library/windows/hardware/ff563758)。 WSDMON 端口监视器侦听的 WSD 事件，并相应地更新打印机状态。 此端口监视器是 Windows Vista 的新增功能。
+WSDMON 端口监视器是支持打印到符合的网络打印机的打印机端口监视器[Web Services for Devices (WSD) 技术](https://docs.microsoft.com/windows-hardware/drivers/print/web-services-for-devices-print-service-schema)。 WSDMON 端口监视器侦听的 WSD 事件，并相应地更新打印机状态。 此端口监视器是 Windows Vista 的新增功能。
 
 WSDMON 端口监视器可以：
 

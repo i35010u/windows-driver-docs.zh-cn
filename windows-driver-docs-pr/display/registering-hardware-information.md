@@ -7,23 +7,23 @@ keywords:
 - 在注册表 WDK 显示的硬件信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8910e3aafbbc0532a6694a9f7db9ea3405cd00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2396c65a93cbe8ef8a52b3f7aff5b20c22a4aca3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386446"
 ---
 # <a name="registering-hardware-information"></a>注册硬件信息
 
 
-若要显示有用的信息，向用户和有关中调试的帮助，请显示微型端口驱动程序必须在注册表中设置特定硬件的信息。 显示微型端口驱动程序必须设置芯片类型、 数字模拟转换器 (DAC) 类型、 内存大小 （的适配器） 和一个字符串来标识该适配器。 情况下显示此信息**显示**控制面板中的应用程序。 通常情况下，驱动程序设置此信息其[ **DxgkDdiAddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff559586)函数。
+若要显示有用的信息，向用户和有关中调试的帮助，请显示微型端口驱动程序必须在注册表中设置特定硬件的信息。 显示微型端口驱动程序必须设置芯片类型、 数字模拟转换器 (DAC) 类型、 内存大小 （的适配器） 和一个字符串来标识该适配器。 情况下显示此信息**显示**控制面板中的应用程序。 通常情况下，驱动程序设置此信息其[ **DxgkDdiAddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_add_device)函数。
 
 若要设置此信息，该驱动程序：
 
 1.  调用**IoOpenDeviceRegistryKey**用于存储特定于驱动程序的信息。 在此调用中，该驱动程序指定 PLUGPLAY\_REGKEY\_中的驱动程序标志*DevInstKeyType*参数和该键\_设置\_值、 密钥\_写入或密钥\_所有\_中的访问值*DesiredAccess*参数。
 
-2.  调用[ **ZwSetValueKey** ](https://msdn.microsoft.com/library/windows/hardware/ff567109)函数多次以设置每种类型的硬件信息。 在每个调用中，该驱动程序指定，在*KeyHandle*参数，请从已获取的软件密钥句柄**IoOpenDeviceRegistryKey**。
+2.  调用[ **ZwSetValueKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwsetvaluekey)函数多次以设置每种类型的硬件信息。 在每个调用中，该驱动程序指定，在*KeyHandle*参数，请从已获取的软件密钥句柄**IoOpenDeviceRegistryKey**。
 
     下表描述的信息，该驱动程序必须注册，并提供详细信息*ValueName*并*数据*的参数**ZwSetValueKey**:
 

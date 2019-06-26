@@ -4,12 +4,12 @@ description: 使用 IStiUSD 转义方法
 ms.assetid: f9b1ede6-8311-4cc9-8bf7-20018cb35a3d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 963accfe0d2908aab78faabd35d778ac49f128ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 480aff9db018cbd4dcc131e5132ae1430ae7a9de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383694"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375383"
 ---
 # <a name="using-the-istiusd-escape-method"></a>使用 IStiUSD 转义方法
 
@@ -17,9 +17,9 @@ ms.locfileid: "63383694"
 
 
 
-[ **IStiUSD::Escape** ](https://msdn.microsoft.com/library/windows/hardware/ff543815)调用方法将信息传递给硬件直接。 仅在 Windows XP 和更高版本操作系统上支持此方法。
+[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)调用方法将信息传递给硬件直接。 仅在 Windows XP 和更高版本操作系统上支持此方法。
 
-TWAIN 兼容的应用程序和 WIA 驱动程序之间的所有通信将首先都转到数据源管理器 (*twain\_32.dll*)，这反过来调用 TWAIN 兼容性层 (*wiadss.dll*). TWAIN 兼容性层然后调用 WIA 驱动[ **IStiUSD::Escape** ](https://msdn.microsoft.com/library/windows/hardware/ff543815)方法，并传递一个以下两个转义代码的方法：
+TWAIN 兼容的应用程序和 WIA 驱动程序之间的所有通信将首先都转到数据源管理器 (*twain\_32.dll*)，这反过来调用 TWAIN 兼容性层 (*wiadss.dll*). TWAIN 兼容性层然后调用 WIA 驱动[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)方法，并传递一个以下两个转义代码的方法：
 
 [ESC\_TWAIN\_功能转义码](esc-twain-capability-escape-code.md)
 

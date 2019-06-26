@@ -12,12 +12,12 @@ keywords:
 - INF DriverVer 指令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 545ce33436a4870432329a2c2394cc2197bab446
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 120261d0e57c1ef5bafea0a641367081e8b43589
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333544"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359902"
 ---
 # <a name="inf-driver-version-entry"></a>INF Driver-Version 条目
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333544"
 
 驱动程序包中的 INF 文件指定的驱动程序的情况下 INF 安装的驱动程序版本信息。 在文件中的版本信息标识驱动程序包作为一个整体，相反[内部和外部版本号](internal-and-external-version-numbers.md)包内的单独的驱动程序文件。
 
-该文件指定每个驱动程序中的日期和版本编号[ **INF DriverVer 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547394)具有以下格式：
+该文件指定每个驱动程序中的日期和版本编号[ **INF DriverVer 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)具有以下格式：
 
 **DriverVer**= *mm* / *dd* / *yyyy*\[,*x*.*y*.*v*.*z*\]
 

@@ -4,12 +4,12 @@ description: 本部分提供有关 MB 接口模型 (MBIM) 的补充信息
 ms.assetid: 577BCF39-868B-44F5-A5C0-75E28689C2B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdbc2f5019b71faefb9b29343e41bb00ac7eaeac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b0888b65daaf7a27efdd6ba7115400f9bf47061
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343345"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378000"
 ---
 # <a name="mb-interface-model-supplement"></a>MB 接口模型补充
 
@@ -48,7 +48,7 @@ Microsoft 操作系统字符串描述符用于实现以下目标
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">长度 （字节）</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -200,7 +200,7 @@ Microsoft 操作系统字符串描述符的结构固定版本 1.00 之间的数�
 
 **BRequest**字段用于指示请求的格式。 若要检索 Microsoft 操作系统功能描述符**bRequest**字段中应填充使用特殊 GET\_MS\_描述符字节。 此字节的值将由**bMS\_VendorCode**，这从 Microsoft 字符串描述符。 有关 Microsoft 操作系统字符串描述符检索的详细信息，请参阅**检索 OS 字符串描述符**。
 
-**WValue**字段放到特殊用途和分解成高字节和低字节。 高字节用于存储接口数量。 这是必需的存储功能描述符基于每个接口，尤其是对于复合设备，或使用的设备[多个接口](https://msdn.microsoft.com/library/windows/hardware/ff537102)。 在大多数情况下，将使用接口 0。 低字节用于存储页面数量。 此功能可防止描述符具有大小为 64 KB 边界 (设置的大小的限制**并将 wLength**字段)。 描述符将提取与页面值最初设置为零。 如果完整描述符 （大小为 64 KB） 是接收页值将递增 1 并将再次发送描述符请求 （这与递增一次页面值）。 此过程将重复，直到收到大小小于 64 KB 的描述符。 请注意最大页面数为 255，这将描述符大小限制为 16 MB。
+**WValue**字段放到特殊用途和分解成高字节和低字节。 高字节用于存储接口数量。 这是必需的存储功能描述符基于每个接口，尤其是对于复合设备，或使用的设备[多个接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 在大多数情况下，将使用接口 0。 低字节用于存储页面数量。 此功能可防止描述符具有大小为 64 KB 边界 (设置的大小的限制**并将 wLength**字段)。 描述符将提取与页面值最初设置为零。 如果完整描述符 （大小为 64 KB） 是接收页值将递增 1 并将再次发送描述符请求 （这与递增一次页面值）。 此过程将重复，直到收到大小小于 64 KB 的描述符。 请注意最大页面数为 255，这将描述符大小限制为 16 MB。
 
 **WIndex**字段存储中要检索的 Microsoft 操作系统功能描述符功能索引号。 Microsoft 将维护此列表的 Microsoft 操作系统功能描述符和索引。 若要了解有关 Microsoft 操作系统功能描述符的详细信息，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=308932)。
 
@@ -240,7 +240,7 @@ Microsoft 操作系统字符串描述符的结构固定版本 1.00 之间的数�
 <th align="left">偏移量</th>
 <th align="left">字段</th>
 <th align="left">大小</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -306,7 +306,7 @@ Microsoft 操作系统字符串描述符的结构固定版本 1.00 之间的数�
 <th align="left">Offset¹</th>
 <th align="left">字段</th>
 <th align="left">大小</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">Description</th>
 </tr>
 </thead>

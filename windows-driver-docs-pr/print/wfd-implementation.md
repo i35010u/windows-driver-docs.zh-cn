@@ -4,12 +4,12 @@ description: 提供有关 Wi-Fi Direct 打印实现设备要求的信息。
 ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9acae4bdd2577d02567bd9feb027ae9a18def63c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16381bee107e988684373adb4b147d27634f98cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326035"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387185"
 ---
 # <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi Direct 打印实现
 
@@ -22,7 +22,7 @@ WFD WSD 设备以获取无缝连接体验，如中所述[Wi-Fi Direct 打印概�
 -   设备必须支持垂直配对并发送相关 DPWS (WSD) 数据中的 WPS 消息 （"实现垂直配对的数据 Blob"下面所述的格式）
 -   物理设备中的所有逻辑设备必须在其 PNP-X 的扩展中使用相同的 PNP-X 的容器 ID
     -   有关为网络连接的设备实现 PNP-X 的容器 Id 的详细信息，请参阅[概述的容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)。
-    -   PNP-X 的扩展的常规信息，请参阅[PnP x:Plug and Play for Windows 规范的扩展](https://msdn.microsoft.com/windows/hardware/gg463082)。
+    -   PNP-X 的扩展的常规信息，请参阅[PnP x:Plug and Play for Windows 规范的扩展](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))。
 
 由于 WFD 容器 ID 将与匹配的打印机的 UUID，设备元数据中将不需要 PNP-X 的容器 ID。 但是，仍建议设备支持 PNP-X 的元数据中的设备元数据和设备元数据中的 PNP-X 的元数据的一部分播发 PNP-X 的容器 ID。 此容器 ID 应匹配 WFD 容器的 id。
 
@@ -227,7 +227,7 @@ VPI 一来，设备使用 WPS 协议来预配设备的服务。 在这种情况�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>描述</th>
 </tr>
 </thead>

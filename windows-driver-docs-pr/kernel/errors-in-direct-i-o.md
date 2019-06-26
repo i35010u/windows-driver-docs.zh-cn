@@ -1,6 +1,6 @@
 ---
-title: 在直接 I/O 错误
-description: 在直接 I/O 错误
+title: 直接 I/O 出错
+description: 直接 I/O 出错
 ms.assetid: 9efc2875-3402-4e2e-871b-3cc1d8f45360
 keywords:
 - 可靠性 WDK 内核，直接 I/O
@@ -9,14 +9,14 @@ keywords:
 - 长度为零的缓冲区 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c46e461f458cbd2e805c69cfc04a0288c09c97e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 84ed8c1e26df36f609ddabb8d1b2e94853ba31ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524206"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385127"
 ---
-# <a name="errors-in-direct-io"></a>在直接 I/O 错误
+# <a name="errors-in-direct-io"></a>直接 I/O 出错
 
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "56524206"
 
 最常见的直接 I/O 问题无法正确处理的缓冲区长度为零。 因为 I/O 管理器不会为长度为零的传输创建 MDLs，长度为零的缓冲区会导致**NULL**时的值**Irp-&gt;MdlAddress**。
 
-若要映射的地址空间，驱动程序应使用[ **MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)，它将返回**NULL**如果映射失败，因为它将驱动程序通过了如果**NULL** **MdlAddress**。 驱动程序应始终检查**NULL**返回之前尝试使用返回的地址。
+若要映射的地址空间，驱动程序应使用[ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)，它将返回**NULL**如果映射失败，因为它将驱动程序通过了如果**NULL** **MdlAddress**。 驱动程序应始终检查**NULL**返回之前尝试使用返回的地址。
 
 直接 I/O 涉及双映射到系统地址缓冲区，用户的地址空间，以便两个不同的虚拟地址具有相同的物理地址。 双映射会产生以下影响，有时会导致驱动程序的问题：
 
@@ -56,7 +56,7 @@ ms.locfileid: "56524206"
 
     相反，如果**NULL**不存在，则调用**RtlInitUnicodeString**可以超过缓冲区的范围，并且如果它在外部系统映射可能会导致的 bug 检查。
 
-如果驱动程序创建并映射其自身 MDL，应确保它仅使用方法，它具有为其探测访问 MDL。 也就是说，当驱动程序调用[ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)，它指定访问方法 (**IoReadAccess**， **IoWriteAccess**，或**IoModifyAccess**)。 如果指定了该驱动程序**IoReadAccess**，它必须稍后尝试写入到可通过系统缓冲区[ **MmGetSystemAddressForMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554556)或[**MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)。
+如果驱动程序创建并映射其自身 MDL，应确保它仅使用方法，它具有为其探测访问 MDL。 也就是说，当驱动程序调用[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)，它指定访问方法 (**IoReadAccess**， **IoWriteAccess**，或**IoModifyAccess**)。 如果指定了该驱动程序**IoReadAccess**，它必须稍后尝试写入到可通过系统缓冲区[ **MmGetSystemAddressForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemaddressformdl)或[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)。
 
  
 

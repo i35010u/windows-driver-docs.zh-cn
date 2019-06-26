@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CONNECT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8526e4ea1afb6b5db683ff0dc669d55116cb4a82
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ede38b990875831813d6e5931dd7ff6a0fc473e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348849"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387244"
 ---
 # <a name="oidwditaskconnect"></a>OID\_WDI\_TASK\_CONNECT
 
@@ -21,7 +21,7 @@ OID\_WDI\_任务\_IHV 组件连接到一个访问点或 Wi-Fi Direct 转的 CONN
 
 | Object | 中止支持                                     | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 中止后面必须跟 dot11 重置。 | 4                                     | 10                              |
+| Port   | 是。 中止后面必须跟 dot11 重置。 | 4                                     | 10                              |
 
  
 
@@ -41,7 +41,7 @@ IHV 组件不需要执行扫描以查找 BSS 条目的候选者。 它可以使�
 
 802.11 工作站使用 PMKID 缓存进行预身份验证来访问已启用可靠安全网络关联 (RSNA) 身份验证算法的点。 如果将关联或重新关联到具有提供的 PMKID BSSID 802.11 工作站，802.11 工作站必须使用 PMKID 数据及其关联或重新关联的帧的 RSN 信息元素 (RSN IE) 中。
 
-如果端口声明中的主机 FIPS 模式的支持[ **WDI\_TLV\_工作站\_特性**](https://msdn.microsoft.com/library/windows/hardware/dn898066)，HostFIPSModeEnabled 可能设置为 1 的连接参数。
+如果端口声明中的主机 FIPS 模式的支持[ **WDI\_TLV\_工作站\_特性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-station-attributes)，HostFIPSModeEnabled 可能设置为 1 的连接参数。
 
 如果 HostFIPSModeEnabled 设置为 1，以下规则适用。
 
@@ -57,8 +57,8 @@ IHV 组件不需要执行扫描以查找 BSS 条目的候选者。 它可以使�
 
 | TLV                                                                      | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                                                                                                                                                                                                  |
 |--------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_CONNECT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926266) |                                |          | 连接参数。                                                                                                                                                                                                                                                                                                                                                                                   |
-| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | X                              |          | 首选的候选项列表连接 BSS 条目。 端口应尝试连接到任何这些 BSS 条目，直到列表用完或已成功完成的连接。 如果需要该端口可以重新调整条目。 如果适配器设置连接 BSS 选择重写位，它可以选择不在此列表中，只要遵循允许/不允许列表 BSS。 |
+| [**WDI\_TLV\_CONNECT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-parameters) |                                |          | 连接参数。                                                                                                                                                                                                                                                                                                                                                                                   |
+| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-bss-entry)  | X                              |          | 首选的候选项列表连接 BSS 条目。 端口应尝试连接到任何这些 BSS 条目，直到列表用完或已成功完成的连接。 如果需要该端口可以重新调整条目。 如果适配器设置连接 BSS 选择重写位，它可以选择不在此列表中，只要遵循允许/不允许列表 BSS。 |
 
  
 

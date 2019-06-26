@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 588f05f697edd108f607e4f80dd3385d6a55755d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07c8e60f5f872b51a7135fc44e429a146363f288
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376790"
 ---
 # <a name="devpropmasktype"></a>DEVPROP_MASK_TYPE
 
 
-可以在 Windows Vista 和更高版本的 Windows 中，在使用按位 AND 中组合 DEVPROP_MASK_TYPE 掩码[属性数据类型标识符](https://msdn.microsoft.com/library/windows/hardware/ff541476)提取[**基本数据类型标识符**](https://msdn.microsoft.com/library/windows/hardware/ff537793)从属性数据类型标识符。
+可以在 Windows Vista 和更高版本的 Windows 中，在使用按位 AND 中组合 DEVPROP_MASK_TYPE 掩码[属性数据类型标识符](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))提取[**基本数据类型标识符**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))从属性数据类型标识符。
 
 <a name="remarks"></a>备注
 -------
 
 此掩码不能用作基本数据类型标识符、 属性数据类型修饰符或属性数据类型标识符。
 
-了解如何提取 DEVPROP_TYPEMOD_Xxx [**属性数据类型修饰符**](https://msdn.microsoft.com/library/windows/hardware/ff549770)从属性数据类型标识符，请参阅[ **DEVPROP_MASK_TYPEMOD**](devprop-mask-typemod.md).
+了解如何提取 DEVPROP_TYPEMOD_Xxx [**属性数据类型修饰符**](https://docs.microsoft.com/previous-versions/ff549770(v=vs.85))从属性数据类型标识符，请参阅[ **DEVPROP_MASK_TYPEMOD**](devprop-mask-typemod.md).
 
 <a name="requirements"></a>要求
 ------------

@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 839226d603c273f23fa76d29c73fea927ea23d57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26bc88907e058772072f87d6d23c73f359bb9d83
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364309"
 ---
 # <a name="irql"></a>!irql
 
@@ -72,7 +72,7 @@ ms.locfileid: "63336371"
 
 当目标计算机会中断到调试器，IRQL 更改，但保存在调试器中断之前的有效期 IRQL。 **！ Irql**扩展将显示已保存的 IRQL。
 
-同样时出现的 bug 检查和故障转储文件的创建，, 故障转储文件中保存 IRQL 是之前的错误检查，不从该处 IRQL [ **KeBugCheckEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551961)例程执行。
+同样时出现的 bug 检查和故障转储文件的创建，, 故障转储文件中保存 IRQL 是之前的错误检查，不从该处 IRQL [ **KeBugCheckEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex)例程执行。
 
 在这两种情况下，当前 IRQL 引发到调度\_级别，除非在 x86 体系结构。 因此，如果发生多个此类事件时，显示 IRQL 也将调度\_级别，使其用处出于调试目的。
 

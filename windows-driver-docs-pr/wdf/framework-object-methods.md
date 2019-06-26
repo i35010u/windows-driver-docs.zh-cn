@@ -6,12 +6,12 @@ keywords:
 - framework 对象 WDK KMDF，方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9954c646788651ed1045fa64c60193adf82c53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0dd19a2818854f2bd820c59e480463d651881283
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370979"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384460"
 ---
 # <a name="framework-object-methods"></a>框架对象方法
 
@@ -23,13 +23,13 @@ ms.locfileid: "63370979"
 
 -   它执行与对象相关联的操作。
 
-    例如， [ **WdfIoQueueCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547401)方法创建设备的 I/O 队列。
+    例如， [ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)方法创建设备的 I/O 队列。
 
-    通常执行的操作的方法将返回[NTSTATUS 值](https://msdn.microsoft.com/library/windows/hardware/ff557697)。
+    通常执行的操作的方法将返回[NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/ntstatus-values)。
 
 -   它检索或修改[属性](framework-object-properties.md)与对象相关联。
 
-    例如， [ **WdfRequestGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff549965)方法返回的 I/O 请求的完成状态有关的信息。
+    例如， [ **WdfRequestGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)方法返回的 I/O 请求的完成状态有关的信息。
 
     检索一个属性通常的方法返回属性的值，而通常修改属性的方法不返回值。
 

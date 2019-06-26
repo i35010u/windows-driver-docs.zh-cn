@@ -9,12 +9,12 @@ keywords:
 - 时钟的 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f11e19af62d483e943fae8ef1f6d41a91e09b159
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73dfe7ab923b05866060743b1abfd4f2df49d0e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363827"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384146"
 ---
 # <a name="dvd-related-clock-functions"></a>与 DVD 相关的时钟函数
 
@@ -37,15 +37,15 @@ ms.locfileid: "63363827"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568190" data-raw-source="[&lt;strong&gt;SRB_OPEN_MASTER_CLOCK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568190)"><strong>SRB_OPEN_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-master-clock" data-raw-source="[&lt;strong&gt;SRB_OPEN_MASTER_CLOCK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-master-clock)"><strong>SRB_OPEN_MASTER_CLOCK</strong></a></p></td>
 <td><p>表示到 DVD 解码器微型驱动程序指定的流正在打开作为主时钟，并且提供用于访问该时钟的所有调入 DVD 解码器微型驱动程序主时钟例程上的主时钟句柄。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568163" data-raw-source="[&lt;strong&gt;SRB_CLOSE_MASTER_CLOCK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568163)"><strong>SRB_CLOSE_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-master-clock" data-raw-source="[&lt;strong&gt;SRB_CLOSE_MASTER_CLOCK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-master-clock)"><strong>SRB_CLOSE_MASTER_CLOCK</strong></a></p></td>
 <td><p>指示指定的主时钟句柄不再处于活动状态。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568179" data-raw-source="[&lt;strong&gt;SRB_INDICATE_MASTER_CLOCK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568179)"><strong>SRB_INDICATE_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-indicate-master-clock" data-raw-source="[&lt;strong&gt;SRB_INDICATE_MASTER_CLOCK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-indicate-master-clock)"><strong>SRB_INDICATE_MASTER_CLOCK</strong></a></p></td>
 <td><p>指示要调用的时间戳时使用的句柄提供给所有流。</p></td>
 </tr>
 </tbody>

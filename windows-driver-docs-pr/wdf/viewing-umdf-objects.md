@@ -8,12 +8,12 @@ keywords:
 - UMDF WDK，查看 UMDF 对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc429e4394d8a4fb946627c2b3019aad9065f6bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08f723e30d418385b7f51bb8fdf3c619ce3507d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372157"
 ---
 # <a name="viewing-umdf-objects"></a>查看 UMDF 对象
 
@@ -21,7 +21,7 @@ ms.locfileid: "63347953"
 
 本主题介绍如何使用 Wudfext.dll 调试器扩展，若要查看有关用户模式驱动程序框架 (UMDF) 版本 1 驱动程序使用的对象的信息。
 
-从 UMDF 版本 2 开始，应改为使用 Wdfkd.dll 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)。
+从 UMDF 版本 2 开始，应改为使用 Wdfkd.dll 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展 (Wdfkd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
 
 您可以执行以下步骤来查看有关 UMDF 版本 1 对象的信息：
 
@@ -62,15 +62,15 @@ ms.locfileid: "63347953"
 
 7.  使用以下 UMDF 调试器扩展查看文件对象的信息：
 
-    <a href="" id="-wudfext-wudfrequest-or--wudfext-umirp"></a>**！ wudfext.wudfrequest**或 **！ wudfext.umirp**  
+    <a href="" id="-wudfext-wudfrequest-or--wudfext-umirp"></a> **！ wudfext.wudfrequest**或 **！ wudfext.umirp**  
     使用 **！ wudfext.wudfrequest**或 **！ wudfext.umirp** UMDF 调试器扩展是设备对象的子对象的视图文件。
 
-    <a href="" id="-wudfext-wudffile"></a>**!wudfext.wudffile**  
+    <a href="" id="-wudfext-wudffile"></a> **!wudfext.wudffile**  
     使用 **！ wudfext.wudffile** UMDF 调试器扩展，若要查看有关 framework 文件的信息在下面的示例所示：
 
     **!wudfext.wudffile &lt;IWDFFile\*&gt;**
 
-    <a href="" id="-wudfext-umfile"></a>**!wudfext.umfile**  
+    <a href="" id="-wudfext-umfile"></a> **!wudfext.umfile**  
     使用 **！ wudfext.umfile** UMDF 调试器扩展，如下面的示例中所示若要查看有关 UMDF 内部堆栈文件 （即文件堆栈中的驱动程序创建对象而不是由创建的文件对象的信息应用程序或由另一个堆栈中的驱动程序):
 
     **!wudfext.umfile &lt;addr&gt;**
@@ -79,7 +79,7 @@ ms.locfileid: "63347953"
 
     信息的 **！ wudfext.umfile**显示包括要排队发送至 UMDF 内部堆栈文件任何 Irp。 仅驱动程序创建的文件，跟踪对这些文件会排入队列的用户模式下 Irp。 对于应用程序创建的文件 I/O 管理器跟踪内核模式 Irp。
 
-    <a href="" id="-wudfext-umdevstacks-and--wudfext-umdevstack"></a>**！ wudfext.umdevstacks**和 **！ wudfext.umdevstack**  
+    <a href="" id="-wudfext-umdevstacks-and--wudfext-umdevstack"></a> **！ wudfext.umdevstacks**和 **！ wudfext.umdevstack**  
     使用的输出 **！ wudfext.umdevstacks**并 **！ wudfext.umdevstack** UMDF 调试器扩展，若要查看与驱动程序创建文件相对应的未完成 UMDF 内部堆栈文件。
 
  

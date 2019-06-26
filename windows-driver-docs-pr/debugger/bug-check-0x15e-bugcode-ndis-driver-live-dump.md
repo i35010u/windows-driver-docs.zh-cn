@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e98fcf1099ed5daaf66c261fd9f27a899dabb74e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f17c10a2034b88a4052d05867cf80c8a2b3806f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362170"
 ---
 # <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>Bug 检查 0x15E：BUGCODE\_NDIS\_驱动程序\_LIVE\_转储
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358114"
 BUGCODE\_NDIS\_驱动程序\_LIVE\_转储错误代码的值为 0x0000015E。 此错误代码指示 NDIS 已捕获的实时内核转储。 NDIS 不在此情况下生成的 bug 检查。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_驱动程序参数
@@ -61,11 +61,11 @@ BUGCODE\_NDIS\_驱动程序\_LIVE\_转储错误代码的值为 0x0000015E。 此
 <td align="left"><p>导致要执行此实时转储的致命错误。 可能值：</p>
 <ol>
 <li>70:引起用户模式</li>
-<li>71:引起 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff563661" data-raw-source="[NdisMRemoveMiniport](https://msdn.microsoft.com/library/windows/hardware/ff563661)">NdisMRemoveMiniport</a></strong></li>
-<li>72:引起<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562727" data-raw-source="[NdisIMInitializeDeviceInstanceEx](https://msdn.microsoft.com/library/windows/hardware/ff562727)">NdisIMInitializeDeviceInstanceEx</a></strong>失败</li>
-<li>73:引起<em><a href="https://msdn.microsoft.com/library/windows/hardware/ff559435" data-raw-source="[MiniportRestart](https://msdn.microsoft.com/library/windows/hardware/ff559435)">MiniportRestart</a></em>失败</li>
-<li>74:引起的失败<a href="https://msdn.microsoft.com/library/windows/hardware/ff569780" data-raw-source="[OID_PNP_SET_POWER (D0)](https://msdn.microsoft.com/library/windows/hardware/ff569780)">OID_PNP_SET_POWER (D0)</a>请求</li>
-<li>75:引起的失败<a href="https://msdn.microsoft.com/library/windows/hardware/ff569780" data-raw-source="[OID_PNP_SET_POWER (Dx)](https://msdn.microsoft.com/library/windows/hardware/ff569780)">OID_PNP_SET_POWER (Dx)</a>请求</li>
+<li>71:引起 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismremoveminiport)">NdisMRemoveMiniport</a></strong></li>
+<li>72:引起<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiminitializedeviceinstanceex" data-raw-source="[NdisIMInitializeDeviceInstanceEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiminitializedeviceinstanceex)">NdisIMInitializeDeviceInstanceEx</a></strong>失败</li>
+<li>73:引起<em><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart" data-raw-source="[MiniportRestart](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)">MiniportRestart</a></em>失败</li>
+<li>74:引起的失败<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER (D0)</a>请求</li>
+<li>75:引起的失败<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (Dx)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER (Dx)</a>请求</li>
 </ol></td>
 </tr>
 <tr class="even">
@@ -115,7 +115,7 @@ BUGCODE\_NDIS\_驱动程序\_LIVE\_转储错误代码的值为 0x0000015E。 此
 <td align="left"><p>参数 4 的值取决于参数 2 的值。 此列表中的每个数字对应于参数 2 中的相同编号。</p>
 <ul>
 <li>0x01:0</li>
-<li>0x02:卡滞事件 NET_PNP_EVENT_CODE。 有关这些代码的详细信息，请参阅 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568751" data-raw-source="[NET_PNP_EVENT](https://msdn.microsoft.com/library/windows/hardware/ff568751)">NET_PNP_EVENT</a></strong>...</li>
+<li>0x02:卡滞事件 NET_PNP_EVENT_CODE。 有关这些代码的详细信息，请参阅 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>...</li>
 <li>0x03:卡滞指示 NDIS_STATUS 代码。 使用<strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">！ ndiskd.help</a></strong>若要对其进行解码。</li>
 <li>0x04:0</li>
 <li>0x11:0</li>

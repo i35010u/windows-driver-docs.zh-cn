@@ -4,12 +4,12 @@ description: 增强的存储证书管理工具概述
 ms.assetid: 963e6510-d62f-421f-9c3d-781092f98969
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89869f3ae2d630381283bcb63f13915e0ff7de92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d498a3be935663bfc1467b5ff5e167cb654ebf7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356330"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361265"
 ---
 # <a name="overview-of-the-enhanced-storage-certificate-management-tool"></a>增强的存储证书管理工具概述
 
@@ -52,7 +52,7 @@ ms.locfileid: "63356330"
 
 其中：
 
--   *USB\_硬件\_ID* ，它是硬件或兼容的 USB 存储设备的标识符 (ID)。 有关这些 Id 的详细信息，请参阅[USB 设备的标识符](https://msdn.microsoft.com/library/windows/hardware/ff546284)。
+-   *USB\_硬件\_ID* ，它是硬件或兼容的 USB 存储设备的标识符 (ID)。 有关这些 Id 的详细信息，请参阅[USB 设备的标识符](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-usb-devices)。
 
 -   表示设备实例的 GUID。
 

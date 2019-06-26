@@ -4,12 +4,12 @@ description: AV/C 流式处理格式 GUID
 ms.assetid: 60f1fd59-e760-4be4-8990-e49628b76d15
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0244c82c232fd6d4f20b0b1973b7a7b3f1ffc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49bcce8badc19047464f7f1269b2d432c90c490c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323517"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386760"
 ---
 # <a name="avc-streaming-format-guids"></a>AV/C 流式处理格式 GUID
 
@@ -17,9 +17,9 @@ ms.locfileid: "63323517"
 ## <span id="ddk_av_c_streaming_format_guids_ks"></span><span id="DDK_AV_C_STREAMING_FORMAT_GUIDS_KS"></span>
 
 
-任何流式处理驱动程序的内核，如 AV/C 流式处理子单元驱动程序指定的每个 pin 支持通过使用 Guid 格式的数据格式的范围。 内核流式处理应用程序然后使用这些格式的 Guid 来执行数据范围交集为特定的数据格式。 结果是一个填充接[ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)结构。 中进一步介绍了数据交集[AVStream 中的数据范围交集](https://msdn.microsoft.com/library/windows/hardware/ff558680)。
+任何流式处理驱动程序的内核，如 AV/C 流式处理子单元驱动程序指定的每个 pin 支持通过使用 Guid 格式的数据格式的范围。 内核流式处理应用程序然后使用这些格式的 Guid 来执行数据范围交集为特定的数据格式。 结果是一个填充接[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构。 中进一步介绍了数据交集[AVStream 中的数据范围交集](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)。
 
-KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 说明符指定遵循 KSDATAFORMAT 结构在内存中的扩展数据结构。 例如，假设数据格式有的主要格式为 KSDATAFORMAT\_类型\_交叉存取 KSDATAFORMAT 的子格式类型\_子类型\_DVSD，和 KSDATAFORMAT 说明符\_说明符\_DVINFO。 在这种情况下，则扩展数据结构[ **DVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff559517)结构。
+KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 说明符指定遵循 KSDATAFORMAT 结构在内存中的扩展数据结构。 例如，假设数据格式有的主要格式为 KSDATAFORMAT\_类型\_交叉存取 KSDATAFORMAT 的子格式类型\_子类型\_DVSD，和 KSDATAFORMAT 说明符\_说明符\_DVINFO。 在这种情况下，则扩展数据结构[ **DVINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_dvinfo)结构。
 
 *Avcstrm.h*标头文件定义以下流式处理格式的 Guid:
 
@@ -27,7 +27,7 @@ KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 
 将指定的交错的音频和视频信号。 任何包含音频的视频流应指定此 GUID 作为流的类型。
 
 <span id="KSDATAFORMAT_TYPE_MPEG2_TRANSPORT_STRIDE"></span><span id="ksdataformat_type_mpeg2_transport_stride"></span>KSDATAFORMAT\_TYPE\_MPEG2\_TRANSPORT\_STRIDE  
-将指定偏离正常 188 字节 MPEG2 数据包大小 MPEG2 流类型。 KSDATAFORMAT\_类型\_MPEG2\_传输\_STRIDE 类型用于符合 IEC 61883 4 规范的流。 这些流使用[ **MPEG2\_传输\_STRIDE** ](https://msdn.microsoft.com/library/windows/hardware/ff567742)结构，它允许将流来描述不同于典型 188 字节数据包的格式。 例如，MPEG2 dwOffset 成员\_传输\_STRIDE 将设置为 4，到 188，dwPacketLength 成员和 192 dwStride 成员。
+将指定偏离正常 188 字节 MPEG2 数据包大小 MPEG2 流类型。 KSDATAFORMAT\_类型\_MPEG2\_传输\_STRIDE 类型用于符合 IEC 61883 4 规范的流。 这些流使用[ **MPEG2\_传输\_STRIDE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_mpeg2_transport_stride)结构，它允许将流来描述不同于典型 188 字节数据包的格式。 例如，MPEG2 dwOffset 成员\_传输\_STRIDE 将设置为 4，到 188，dwPacketLength 成员和 192 dwStride 成员。
 
 <span id="KSDATAFORMAT_SUBTYPE_DVSD"></span><span id="ksdataformat_subtype_dvsd"></span>KSDATAFORMAT\_SUBTYPE\_DVSD  
 指定 IEC 61883 2 标准定义 25 Mbps DV 信号，使用 4:1:1 个采样结构 NTSC 信号或，使用 4:2:0 PAL 采样结构发出信号。 此格式的子类型作为数据格式的扩展数据结构使用 DVINFO 结构。
@@ -67,7 +67,7 @@ KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 
 
 子单元驱动程序通过其格式的子类型和其扩展数据结构的组合指示的帧大小 （示例大小）。 例如，KSDATAFORMAT 的组合\_子类型\_DVSD 格式子类型和 DVINFO 扩展数据结构中设置的 NTSC 位指示的 DV 帧大小为 120 KB。
 
-[ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)结构包含**FormatSize**用于验证的扩展数据结构大小的成员。 它是有效的扩展数据结构大小 FormatSize 等于 sizeof(KSDATAFORMAT) + sizeof (扩展数据 structure(s))。
+[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构包含**FormatSize**用于验证的扩展数据结构大小的成员。 它是有效的扩展数据结构大小 FormatSize 等于 sizeof(KSDATAFORMAT) + sizeof (扩展数据 structure(s))。
 
 下表介绍 KS 数据的格式说明符 Guid 和其对应的扩展数据结构。
 
@@ -85,11 +85,11 @@ KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 
 <tbody>
 <tr class="odd">
 <td><p>KSDATAFORMAT_SPECIFIER_DVINFO</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559517" data-raw-source="[&lt;strong&gt;DVINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559517)"><strong>DVINFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_dvinfo" data-raw-source="[&lt;strong&gt;DVINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_dvinfo)"><strong>DVINFO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>KSDATAFORMAT_SPECIFIER_DV_AVC</p></td>
-<td><p>DVINFO 并<a href="https://msdn.microsoft.com/library/windows/hardware/ff554101" data-raw-source="[&lt;strong&gt;AVCCONNECTINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554101)"> <strong>AVCCONNECTINFO</strong></a></p></td>
+<td><p>DVINFO 并<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo" data-raw-source="[&lt;strong&gt;AVCCONNECTINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)"> <strong>AVCCONNECTINFO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>KSDATAFORMAT_SPECIFIER_AVC</p></td>

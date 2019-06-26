@@ -9,12 +9,12 @@ keywords:
 - 用户模式显示驱动程序 WDK Windows Vista 中，线程处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f003c0fbcf0b516873157b75cf6afd1fa3fd773b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8b00faec1048361c6d2fd305ffa94dc6628dfdd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354677"
 ---
 # <a name="threading-model-of-user-mode-display-driver"></a>用户模式显示驱动程序的线程模型
 
@@ -22,7 +22,7 @@ ms.locfileid: "63389807"
 ## <span id="ddk_thread_model_of_user_mode_display_driver_gg"></span><span id="DDK_THREAD_MODEL_OF_USER_MODE_DISPLAY_DRIVER_GG"></span>
 
 
-用户模式显示驱动程序未加载到多个进程同时-用户模式显示驱动程序 DLL 单独加载到每个进程的地址空间。 尽管如此，多个线程可以运行在用户模式显示驱动程序在同一时间。 但是，在用户模式显示驱动程序中运行每个线程必须访问不同的显示设备，创建的用户模式显示驱动程序的调用[ **CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540634)函数。 例如：
+用户模式显示驱动程序未加载到多个进程同时-用户模式显示驱动程序 DLL 单独加载到每个进程的地址空间。 尽管如此，多个线程可以运行在用户模式显示驱动程序在同一时间。 但是，在用户模式显示驱动程序中运行每个线程必须访问不同的显示设备，创建的用户模式显示驱动程序的调用[ **CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)函数。 例如：
 
 -   创建两个 Microsoft Direct3D 设备的应用程序可以独立地访问这些设备的两个线程。
 

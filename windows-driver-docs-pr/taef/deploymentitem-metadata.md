@@ -4,19 +4,19 @@ description: DeploymentItem 元数据
 ms.assetid: 7F18CD71-F000-4231-9093-82980EB7584D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eade6e024352f6b6eb881863534e470c75b8ebf8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e80be6a1d97a4670de74360db4fa351a21b4e611
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373030"
 ---
 # <a name="deploymentitem-metadata"></a>DeploymentItem 元数据
 
 
 **DeploymentItem**元数据标识为的文件和文件夹使用的测试在测试所在的执行过程，以便 Taef 者将能够识别这些内容，并将其适当地复制文件和文件夹的依赖项 (例如，在[跨计算机执行方案](cross-machine-execution.md)，由标识的文件将部署 Taef **DeploymentItem**属性设置为指定的测试计算机)。
 
-Taef DeploymentItem 实现是非常类似于[类似的功能的 VSTS](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.deploymentitemattribute(VS.80).aspx)。
+Taef DeploymentItem 实现是非常类似于[类似的功能的 VSTS](https://docs.microsoft.com/en-US/dotnet/api/microsoft.visualstudio.testtools.unittesting.deploymentitemattribute?redirectedfrom=MSDN&view=mstest-net-1.2.0)。
 
 DeploymentItem 元数据可应用于程序集、 类或测试级别。 响应方返回 （程序集、 测试类或测试） 安装程序运行时，将部署 DeploymentItem 元数据指定的项。 如果 DeploymentItem 元数据指定的依赖项 （例如，文件） 和目标中已存在该依赖关系，TAEF 执行 CRC 比较，并仅将文件复制已更改。 如果 DeploymentItem 元数据指定无法找到依赖关系和依赖项，则记录错误，则测试将失败 （或所有相应地测试类或程序集测试）。 每个程序集、 类或测试-即，部署不会发生这种情况在每个程序集，类，或如果这些是数据驱动测试扩展后，TAEF 仅会部署文件。
 

@@ -11,12 +11,12 @@ keywords:
 description: 提供在智能卡资源管理器，包括启动、 连接和断开连接的 Ioctl 序列的示例。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d1f41aa55de7081873932d581dc6532a060c37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6d85138dfb1fe9ee298d72c85d8788709ac55888
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566874"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370523"
 ---
 # <a name="example-sequence"></a>示例序列
 
@@ -84,5 +84,5 @@ ms.locfileid: "56566874"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[智能卡 DDI 和命令参考](https://msdn.microsoft.com/library/windows/hardware/dn905601)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[智能卡 DDI 和命令参考](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  

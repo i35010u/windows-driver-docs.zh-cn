@@ -10,12 +10,12 @@ keywords:
 - 验证程序实用工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73737850d38bc3ddfb5e0f6fb38581e40d43fe10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91e295dea65a5b3742a2ac9c5483479b21fd6b81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359316"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386101"
 ---
 # <a name="development-and-testing-tools"></a>开发和测试工具
 
@@ -30,7 +30,7 @@ Fltmc.exe 控件程序是用于常见微筛选器驱动程序管理操作的命�
 
 ### <a name="span-idfltkddebuggerextensionspanspan-idfltkddebuggerextensionspanspan-idfltkddebuggerextensionspanfltkd-debugger-extension"></a><span id="_fltkd_Debugger_Extension"></span><span id="_fltkd_debugger_extension"></span><span id="_FLTKD_DEBUGGER_EXTENSION"></span>！ fltkd 调试器扩展
 
-！ 中提供 fltkd 调试器扩展[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)工具。 常用的命令如下所示：
+！ 中提供 fltkd 调试器扩展[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)工具。 常用的命令如下所示：
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Fltmc.exe 控件程序是用于常见微筛选器驱动程序管理操作的命�
 
 ### <a name="span-idfilterverifierspanspan-idfilterverifierspanspan-idfilterverifierspanfilter-verifier"></a><span id="Filter_Verifier"></span><span id="filter_verifier"></span><span id="FILTER_VERIFIER"></span>筛选器验证工具
 
-筛选器验证工具是[I/O 验证](https://msdn.microsoft.com/library/windows/hardware/ff548045)选项[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)验证微筛选器驱动程序使用的筛选器管理器函数。 使用筛选器管理器安装筛选器验证程序。 开发人员应始终开发微筛选器驱动程序与 Driver Verifier 和筛选器验证程序已启用。
+筛选器验证工具是[I/O 验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/i-o-verification)选项[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)验证微筛选器驱动程序使用的筛选器管理器函数。 使用筛选器管理器安装筛选器验证程序。 开发人员应始终开发微筛选器驱动程序与 Driver Verifier 和筛选器验证程序已启用。
 
 若要使用筛选器验证器，指定微筛选器驱动程序的名称，并启用驱动程序验证程序 (Verifier.exe) 中的 I/O 验证选项。 验证开始时向筛选器管理器注册微筛选器驱动程序。
 

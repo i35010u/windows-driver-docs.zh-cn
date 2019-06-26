@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6edcc43a6644c853cd43170ea4858a6a95ccee6b
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: d5cd06b99e01e03e897aac2982e01418cb9eb251
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161575"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386076"
 ---
 # <a name="fltparameters-for-irpmjacquireforsectionsynchronization-union"></a>FLT_PARAMETERS IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合
 
@@ -51,7 +51,7 @@ typedef union _FLT_PARAMETERS {
 
 为部分中请求的页保护类型。 必须为零**SyncType**是 SyncTypeOther。 否则，此参数可以是下列标志，可能需要合并使用 PAGE_NOCACHE 之一：
 
-| 值 | 含义 |
+| ReplTest1 | 含义 |
 | ----- | ------- |
 | PAGE_READONLY | 为只读或写入时复制的访问。 |
 | PAGE_READWRITE | 为只读的副本上写入或读/写访问。 |
@@ -70,7 +70,7 @@ IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 是文件系统 (FSFilter) 回调操�
 
 如果的枚举的值**SyncType**成员设置为**SyncTypeOther**，文件系统微筛选器或旧版的筛选器驱动程序不能使此操作失败。 如果**SyncType**设置为**SyncTypeCreateSection**，允许文件系统微筛选器或旧版筛选器驱动程序如果不存在内存不足，无法创建 STATUS_INSUFFICIENT_RESOURCES 错误而失败部分。
 
-有关 FSFilter 回调操作的详细信息，请参阅引用条目[ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)。
+有关 FSFilter 回调操作的详细信息，请参阅引用条目[ **FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)。
 
 ## <a name="requirements"></a>要求
 

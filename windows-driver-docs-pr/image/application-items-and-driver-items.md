@@ -4,12 +4,12 @@ description: 应用程序项和驱动程序项
 ms.assetid: 33b602dc-4a0b-47e1-90e2-b77ecc05f66d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4135db29b33359919bd2e911384bad9d852ce3d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17f2e83816dd4d51f1ad7cc6b3073942a8ef6e81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372606"
 ---
 # <a name="application-items-and-driver-items"></a>应用程序项和驱动程序项
 
@@ -21,7 +21,7 @@ WIA 项表示设备属性和设备数据。 图像处理应用程序显示 WIA �
 
 多个图像的应用程序可以在同一时间使用单一的图像处理设备。 因此，设备树中的项对象的每个应用程序的视图必须独立于另一个应用程序的视图。 实现这一点，如下所示：
 
-1.  微型驱动程序创建的一个项树[IWiaDrvItem 接口](https://msdn.microsoft.com/library/windows/hardware/ff543896)对象使用[IWiaMiniDrv 接口](https://msdn.microsoft.com/library/windows/hardware/ff545027)并[WIA 驱动程序服务库函数](https://msdn.microsoft.com/library/windows/hardware/ff551473)。 此驱动程序项树中的项是微型驱动程序使用来表示设备的项的全局对象。
+1.  微型驱动程序创建的一个项树[IWiaDrvItem 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)对象使用[IWiaMiniDrv 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)并[WIA 驱动程序服务库函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/index)。 此驱动程序项树中的项是微型驱动程序使用来表示设备的项的全局对象。
 
 2.  当在树中的项图像处理应用程序请求访问时，WIA 服务将返回项对象的驱动程序项的副本。 当应用程序获取应用程序**IWiaItem** （Microsoft Windows SDK 文档中所述） 项对象 （应用程序项目），此对象与微型驱动程序的相应的 WIA 服务链接**IWiaDrvItem**中的对象*驱动程序项树*。
 

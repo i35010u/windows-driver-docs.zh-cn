@@ -4,12 +4,12 @@ description: MSiSCSI\_InitiatorInstanceStatistics WMI 类
 ms.assetid: 5cb20302-e3f9-40fe-b501-7c23d284c120
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: beb2f871a80429c2b209356a6b4849216698c8bc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45066bed27cbbd47e7523380f3769ecddbdfe663
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330051"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384335"
 ---
 # <a name="msiscsiinitiatorinstancestatistics-wmi-class"></a>MSiSCSI\_InitiatorInstanceStatistics WMI 类
 
@@ -63,7 +63,7 @@ class MSiSCSI_InitiatorInstanceStatistics : Win32_PerfRawData {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_InitiatorInstanceStatistics** ](https://msdn.microsoft.com/library/windows/hardware/ff563035)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_InitiatorInstanceStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_initiatorinstancestatistics)数据结构。
 
  
 

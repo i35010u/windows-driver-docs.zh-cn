@@ -9,18 +9,18 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: b08d08a3f8e935575be9c496ca38cfac7571aaaf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0066539556c05b2863c5b3f5eedf3a7ccef96bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385578"
 ---
 # <a name="performing-deinterlacing-with-substream-compositing-operations"></a>执行反交错与子流复合操作
 
 **本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。**
 
-下面的示例代码用于执行合并去隔行视频流和合成视频子流之上的视频流的操作。 代码示例实现了[ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)回调函数。 **RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)结构指向回调函数。 该示例代码仅演示如何*DdMoCompRender*用于去隔行子流组合的情况下操作。 实现*DdMoCompRender*执行 ProcAmp 控件和去隔行操作，请参阅[执行 ProcAmp 控制和去隔行操作](performing-procamp-control-and-deinterlacing-operations.md)。
+下面的示例代码用于执行合并去隔行视频流和合成视频子流之上的视频流的操作。 代码示例实现了[ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调函数。 **RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构指向回调函数。 该示例代码仅演示如何*DdMoCompRender*用于去隔行子流组合的情况下操作。 实现*DdMoCompRender*执行 ProcAmp 控件和去隔行操作，请参阅[执行 ProcAmp 控制和去隔行操作](performing-procamp-control-and-deinterlacing-operations.md)。
 
 ```cpp
 DWORD APIENTRY

@@ -4,12 +4,12 @@ description: Static Driver Verifier (SDV) 使用一组接口规则和操作系�
 ms.assetid: 94D4104C-66ED-4C1E-8EE1-4C669EB4EAAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf17c5836dd28eb12f398a4fb11bbf9c342a960
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71a9611cab2d6e43ab818510abb4bfbe88ebf118
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371558"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363780"
 ---
 # <a name="using-static-driver-verifier-to-find-defects-in-windows-drivers"></a>使用静态驱动程序验证程序查找 Windows 驱动程序中的缺陷
 
@@ -28,7 +28,7 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
 
 1.  **使用函数角色类型声明驱动程序提供的函数**
 
-    SDV 要求通过使用函数角色类型声明，声明函数。 例如， [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程必须使用驱动程序声明\_INITIALIZE 函数角色类型：
+    SDV 要求通过使用函数角色类型声明，声明函数。 例如， [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程必须使用驱动程序声明\_INITIALIZE 函数角色类型：
 
     ```
     DRIVER_INITIALIZE DriverEntry;
@@ -98,7 +98,7 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
 |--------------------------------|
 |                                |
 
-1.  在 Visual Studio 中打开驱动程序项目 (.vcxProj) 文件。 从**驱动程序**菜单上，单击**启动 Static Driver Verifier...**.
+1.  在 Visual Studio 中打开驱动程序项目 (.vcxProj) 文件。 从**驱动程序**菜单上，单击**启动 Static Driver Verifier...** .
 
     这将打开 Static Driver Verifier 应用程序，其中可以控制、 配置和计划时 Static Driver Verifier 执行分析。
 
@@ -122,7 +122,7 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
 
     Static Driver Verifier 检测到类型的驱动程序 （WDF、 WDM、 NDIS 或 Storport） 分析和选择的驱动程序类型的默认规则集。 如果这是首次在您的驱动程序运行 SDV，应运行的默认规则集。
 
-    有关规则的信息，请参阅[DDI 符合性规则](https://msdn.microsoft.com/library/windows/hardware/ff552840)。
+    有关规则的信息，请参阅[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 5.  启动的静态分析。 单击**Main**选项卡，然后单击**启动**。 当您单击**启动**、 显示一条消息，告知你此计划静态分析和分析可能需要很长时间才能运行。 单击“确定”  继续。 在你计划的时间开始分析。
 
@@ -155,7 +155,7 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
 
 [使用函数角色类型声明](using-function-role-type-declarations.md)
 
-[Static Driver Verifier 规则](https://msdn.microsoft.com/library/windows/hardware/ff552840)
+[Static Driver Verifier 规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 [代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)
 

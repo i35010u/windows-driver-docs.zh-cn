@@ -7,12 +7,12 @@ keywords:
 - 访问注册表密钥安全地 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62b7e171d77620bdd977ed66e48a66a9cf36f96d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c096e156a2432fb372de612248605991926047d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358529"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386050"
 ---
 # <a name="accessing-registry-keys-safely"></a>安全地访问注册表项
 
@@ -23,7 +23,7 @@ ms.locfileid: "63358529"
 
 -   修改关键注册表项的访问权限。
 
-很多与外部组件出现的问题而引起的注册表项使用 KEY_ALL_ACCESS 访问权限。 从 Windows Server 2003 [ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)授予访问权限和不 KEY_ALL_ACCESS 唯一 KEY_READ 和 KEY_WRITE。 从 Windows Vista 开始，都会强制执行其他 KEY_ALL_ACCESS 限制。
+很多与外部组件出现的问题而引起的注册表项使用 KEY_ALL_ACCESS 访问权限。 从 Windows Server 2003 [ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)授予访问权限和不 KEY_ALL_ACCESS 唯一 KEY_READ 和 KEY_WRITE。 从 Windows Vista 开始，都会强制执行其他 KEY_ALL_ACCESS 限制。
 
 请遵循以下准则可以安全地访问注册表项：
 
@@ -51,13 +51,13 @@ ms.locfileid: "63358529"
 
     若要安全地打开设备安装程序类密钥，请遵循以下准则：
 
-    -   使用[ **SetupDiOpenClassRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552065)。
+    -   使用[ **SetupDiOpenClassRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)。
 
-    -   使用[ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)并设置 DIOCR_INSTALLER*标志*参数。
+    -   使用[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)并设置 DIOCR_INSTALLER*标志*参数。
 
 -   不要直接打开设备接口的类密钥在注册表中。 与任何注册表项，可能会更改的 Windows 不同版本之间的位置和设备接口的类密钥的名称。
 
-    若要安全地打开设备接口的类密钥，请使用[ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)并设置 DIOCR_INSTALLER*标志*参数。
+    若要安全地打开设备接口的类密钥，请使用[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)并设置 DIOCR_INSTALLER*标志*参数。
 
 -   使用仅 INF 指令来修改由操作系统使用的保留的注册表项。 有关详细信息，请参阅[INF 指令摘要](summary-of-inf-directives.md)。
 

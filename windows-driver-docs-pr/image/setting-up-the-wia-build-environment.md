@@ -4,12 +4,12 @@ description: 设置 WIA 生成环境
 ms.assetid: 0e961aca-1b0c-483c-9269-e656daee3e5e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce4350d2b6305bdbd53e68032fae6947ed64557
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fb63098f4f8e228a17254f97fcddeda579361a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386058"
 ---
 # <a name="setting-up-the-wia-build-environment"></a>设置 WIA 生成环境
 
@@ -23,7 +23,7 @@ ms.locfileid: "63366997"
 
 [构建 WIA Microdriver](building-a-wia-microdriver.md)
 
-有关如何生成 WDK 环境中的驱动程序的详细信息，请参阅[构建的驱动程序的工具](https://msdn.microsoft.com/library/windows/hardware/ff552950)。
+有关如何生成 WDK 环境中的驱动程序的详细信息，请参阅[构建的驱动程序的工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-building-drivers)。
 
  
 
