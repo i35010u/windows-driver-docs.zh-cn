@@ -4,18 +4,18 @@ description: Te.exe 命令选项
 ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12df0d233443b93d0c7628995a89670836092571
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: 0d71cb48a3e99edfaba7a03abc0704f544d3d5ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711969"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372985"
 ---
 # <a name="teexe-command-options"></a>Te.exe 命令选项
 
 ## <a name="usage"></a>用法
 
-**te.exe** \<[test\_binaries](#test_binaries)> \[[/appendWttLogging](#appendwttlogging)\] \[[/breakOnCreate](#breakoncreate)\] \[[/breakOnError](#breakonerror)\] \[[/breakOnInvoke](#breakoninvoke)\] \[[/coloredConsoleOutput](#coloredconsoleoutputtruefalse)\] \[ [/console:flushWrites](#consoleflushwrites)\] \[[/console:position=\[x,y | current\]](#consolepositionxy--current-) \[[/console:size=&lt;x,y&gt;\]](#consolesize-xy--current-) \[ [/console:topmost \]](#consoletopmost) [\[/defaultAppDomain\]](#defaultappdomain) \[[/disableConsoleLogging](#disableconsolelogging)\] \[[/disableTimeouts](#disabletimeouts)\] \[[/dpiaware](#dpiaware) \] \[[/enableWttLogging](#enablewttlogging)\] \[[/inproc](#inproc)\] \[[/isolationLevel](#isolationlevellevel)\] \[[/labMode](#labmode)\] \[[/list](#list)\] \[[/listProperties](#listproperties)\] \[[/logFile:&lt;name&gt;](#logfilename)\] \[[/logOutput:&lt;mode&gt;](#logoutputmode)\] \[[/miniDumpOnCrash](#minidumponcrash)\] \[[/miniDumpOnError](#minidumponerror)\] \[[/name:&lt;testname&gt;](#nametestname)\] \[[/outputFolder:&lt;folderName&gt;](#outputfolderfoldername)\] \[[/p:&lt;ParamName&gt;=&lt;ParamValue&gt;](#pparamnameparamvalue)\] \[[/parallel](#parallel)\] \[[/persistPictResults](#persistpictresults)\] \[[/pict:&lt;OptionName&gt;=&lt;OptionValue&gt;](#pictoptionnameoptionvalue)\] [\[/rebootStateFile\]](#rebootstatefile) \[[/reportLoadingIssue](#reportloadingissue)\] \[[/runas:&lt;RunAsType&gt;](#runasrunastype)\] \[[/runIgnoredTests](#runignoredtests)\] \[[/runon:&lt;MachineName&gt;](#runonmachinename)\] \[[/screenCaptureOnError](#screencaptureonerror)\] \[[/select:&lt;query&gt;](#selectquery)\] \[[/sessionTimeout:&lt;value&gt;](#sessiontimeoutvalue)\] \[[/stackFrameCount:&lt;value&gt;](#stackframecountvalue)\] \[[/stackTraceOnError](#stacktraceonerror)\] \[[/terminateOnFirstFailure](#terminateonfirstfailure)\] \[[/testDependencies:&lt;files&gt;](#testdependenciesfiles)\] \[[/testmode:Loop](#testmodeloop)\] \[[/testmode:Stress](#testmodestress)\] \[[/testTimeout:&lt;value&gt;](#testtimeoutvalue)\] \[[/unicodeOutput:&lt;true/false&gt;](#unicodeoutputtruefalse)\] [\[/version\]](#version) \[[/wttDeviceString:&lt;value&gt;](#wttdevicestringvalue)\] \[[/wttDeviceStringSuffix:&lt;value&gt;](#wttdevicestringsuffixvalue)\]
+**te.exe** \<[测试\_二进制文件](#test_binaries)> \[[/appendWttLogging](#appendwttlogging) \] \[ [/breakOnCreate](#breakoncreate) \] \[ [/breakOnError](#breakonerror) \] \[ [/breakOnInvoke](#breakoninvoke) \] \[ [/coloredConsoleOutput](#coloredconsoleoutputtruefalse) \] \[ [/console:flushWrites](#consoleflushwrites) \] \[ [/console:position =\[x，y |当前\]](#consolepositionxy--current-) \[ [/console:size =&lt;x，y&gt; \] ](#consolesize-xy--current-) \[ [/console： 最顶层\] ](#consoletopmost) [ \[/defaultAppDomain\] ](#defaultappdomain) \[ [/disableConsoleLogging](#disableconsolelogging) \] \[ [/disableTimeouts](#disabletimeouts) \] \[ [/dpiaware](#dpiaware) \] \[ [/enableWttLogging](#enablewttlogging) \] \[ [/inproc](#inproc) \] \[ [/isolationLevel](#isolationlevellevel) \]\[ [/labMode](#labmode) \] \[ [/list](#list) \] \[ [/listProperties](#listproperties) \] \[ [/logFile:&lt;名称&gt;](#logfilename) \] \[ [/logOutput:&lt;模式&gt;](#logoutputmode) \] \[ [/miniDumpOnCrash](#minidumponcrash) \] \[ [/miniDumpOnError](#minidumponerror) \] \[ [/名称：&lt;testname&gt; ](#nametestname) \] \[[/outputFolder:&lt;folderName&gt; ](#outputfolderfoldername) \] \[ [/p:&lt;ParamName&gt;=<span class="notra class=""></span class="notra>&gt;](#wttdevicestringsuffixvalue)\]
 
 ## <a name="selectionexecution-commands"></a>选择/执行命令
 
@@ -63,7 +63,7 @@ ms.locfileid: "65711969"
 
 ### <a name="dpiaware"></a>/dpiaware
 
-在进程中执行的测试标记为 DPI 感知，请参阅[高 DPI](https://msdn.microsoft.com/library/windows/desktop/dd464646)。 这也可以设置通过元数据 ("DpiAware")。
+在进程中执行的测试标记为 DPI 感知，请参阅[高 DPI](https://docs.microsoft.com/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)。 这也可以设置通过元数据 ("DpiAware")。
 
 ### <a name="inproc"></a>/inproc
 
@@ -264,7 +264,7 @@ te.exe \*.dll /runas:LowIL
 
 te.exe \*.dll /runon:TestMachine1
 
-**解释：**"TestMachine1"上远程运行所有测试。
+**解释：** "TestMachine1"上远程运行所有测试。
 
 ### <a name="selectquery"></a>/select:\<query>
 
