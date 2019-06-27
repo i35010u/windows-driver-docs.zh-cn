@@ -1,15 +1,17 @@
 ---
 title: IFS 引用
-description: 包含 IFS 参考页。
-ms.date: 01/10/2018
+description: 包含其他文件系统相关的参考页。
+ms.date: 05/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00969e9292c57c95dbecf6c13ec9ef675424d82e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b7fb3affa49cc05ee1b709a1ff449445f2b0797
+ms.sourcegitcommit: 95e3fd15d9c00a341e774d58a927856d750a35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351149"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410018"
 ---
-# <a name="reference"></a>参考
+# <a name="additional-reference"></a>其他参考
 
-本部分包含 IFS 参考页。
+与文件系统相关开发相关的大多数参考页找到下[文件系统](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_ifsk/)中[编程参考 Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/)。
+
+本部分包含其他参考页。 它最终将迁移到文件系统部分上述链接下进行。

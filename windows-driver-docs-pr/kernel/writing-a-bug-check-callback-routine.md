@@ -1,5 +1,5 @@
 ---
-title: 编写 Bug 检查回调例程
+title: 编写 Bug 检查原因回调例程
 description: 编写 Bug 检查回调例程
 ms.assetid: 62aefe67-e197-4c45-b994-19bd7369dbc1
 keywords:
@@ -10,30 +10,33 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 98e5e77bf01984311b0c96d6f2a768cd274c00bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b19f4e48fddc4f9550290dedd3776feb422c77f7
+ms.sourcegitcommit: 95e3fd15d9c00a341e774d58a927856d750a35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374162"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410011"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>编写 Bug 检查原因回调例程
 
-驱动程序可以注册时它会发出错误检查，则系统将执行的回调例程。 驱动程序可以使用 bug 检查回调例程其设备重置到已知状态。
+可以根据需要提供一个驱动程序[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)回调函数，该系统调用后的故障转储函数写入文件。
 
-在 Windows 系统调用[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)写入崩溃转储文件后的回调函数。
+> [!NOTE]
+> 本指南介绍了 bug 检查*原因*回调例程，而不[ *KBUGCHECK_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_callback_routine)回调函数。
 
-KBUGCHECK_REASON_CALLBACK_ROUTINE 可用来将辅助数据写入到崩溃转储文件。
- 
-驱动程序可以实现 KBUGCHECK_REASON_CALLBACK_ROUTINE 将特定于驱动程序的数据页添加到故障转储文件。 若要注册和删除回调，驱动程序，请使用下面的例程：
+在此回调中，该驱动程序可以：
 
-* [**KeRegisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)
-* [**KeDeregisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckcallback)
+* 将特定于驱动程序的数据添加到故障转储文件
+* 将设备重置到已知状态
 
-[ *KBUGCHECK_CALLBACK_REASON 枚举*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_kbugcheck_callback_reason)指定类型的回调例程。
+使用下面的例程来注册和删除回调：
+
+* [**KeRegisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback)
+* [**KeDeregisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback)
+
+此回调类型负载过重，行为更改基于[ **KBUGCHECK_CALLBACK_REASON** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_kbugcheck_callback_reason)注册时提供的常量值。  本指南介绍了不同的使用方案。
 
 有关 bug 检查数据的常规信息，请参阅[读取 Bug 检查回调数据](https://docs.microsoft.com/windows-hardware/drivers/debugger/reading-bug-check-callback-data)。
-
 
 ## <a name="bug-check-callback-routine-restrictions"></a>Bug 检查回调例程限制
 
@@ -41,19 +44,16 @@ Bug 检查回调例程执行在 IRQL = 高\_级别，这会强制执行强限制
 
 Bug 检查回调例程不能：
 
-- 分配内存
-
-- 访问可分页内存
-
-- 使用任何同步机制
-
-- 调用在 IRQL 必须执行的任何例程 = 调度\_级别或更低
+* 分配内存
+* 访问可分页内存
+* 使用任何同步机制
+* 调用在 IRQL 必须执行的任何例程 = 调度\_级别或更低
 
 Bug 检查回调例程保证运行而不发生中断，因此不需要进行同步。 （如果 bug 检查例程使用的任何同步机制，系统将发生死锁。）
 
 可以安全地使用驱动程序的 bug 检查回调例程**读取\_端口\_<em>XXX</em>** ，**读取\_注册\_<em>XXX</em>** ，**编写\_端口\_<em>XXX</em>** ，以及**编写\_注册\_ <em>XXX</em>** 例程与驱动程序的设备进行通信。 (有关这些例程的信息，请参阅[硬件抽象层例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))。)
 
-## <a name="implementing-kbcallbackaddpages-callback-routine"></a>实现 KbCallbackAddPages 回调例程
+## <a name="implementing-a-kbcallbackaddpages-callback-routine"></a>实现 KbCallbackAddPages 回调例程
 
 内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数<i>KbCallbackAddPages</i>若要添加的数据的一个或多个页崩溃转储文件时出现的 bug 检查。 若要向操作系统注册此例程，该驱动程序调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckreasoncallback">KeRegisterBugCheckReasonCallback</a>例程。 该驱动程序卸载之前，必须调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckreasoncallback">KeDeregisterBugCheckReasonCallback</a>例程，以删除注册。
 
@@ -83,7 +83,7 @@ Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例
 
 一个<i>KbCallbackDumpIo</i>例程强限制了可执行的操作。 有关详细信息，请参阅本主题中的"Bug 检查回调例程限制"。
 
-## <a name="implementing-kbcallbacksecondarydumpdata"></a>实现 KbCallbackSecondaryDumpData
+## <a name="implementing-a-kbcallbacksecondarydumpdata-routine"></a>实现 KbCallbackSecondaryDumpData 例程
 
 内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数<i>KbCallbackSecondaryDumpData</i>提供要追加到数据故障转储文件。
 
@@ -106,7 +106,71 @@ Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例
 
 一个<i>KbCallbackSecondaryDumpData</i>例程受到严格限制在可执行的操作。 有关详细信息，请参阅本主题中的"Bug 检查回调例程限制"。
 
+## <a name="implementing-a-kbcallbacktriagedumpdata-routine"></a>实现 KbCallbackTriageDumpData 例程
 
+从 Windows 10，版本 1809年和 Windows Server 2019，内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数*KbCallbackTriageDumpData*将虚拟内存范围添加到划分的小型转储文件。  转储数据所述[ **KBUGCHECK_TRIAGE_DUMP_DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_kbugcheck_triage_dump_data)结构。
 
+在以下示例中，该驱动程序配置会审转储数组，然后注册回调的最小实现：
+
+```cpp
+// Globals 
+ 
+KBUGCHECK_REASON_CALLBACK_RECORD ExampleBugcheckCallbackRecord; 
+PKTRIAGE_DUMP_DATA_ARRAY gTriageDumpDataArray; 
+ 
+//  call this register function from DriverInit, etc.
+ 
+VOID ExampleRegisterTriageDataCallbacks() 
+{ 
+ 
+    // 
+    // Allocate a triage dump array in the non-paged pool. 
+    // 
+ 
+gTriageDumpDataArray = 
+    (PKTRIAGE_DUMP_DATA_ARRAY)ExAllocatePoolWithTag(NonPagedPoolNx, 2*PAGE_SIZE, "Xmpl"); 
+ 
+    // 
+    // Initialize the dump data block array. 
+    // 
+ 
+    KeInitializeTriageDumpDataArray( gTriageDumpDataArray, 2*PAGE_SIZE, "Example"); 
+ 
+    KeInitializeCallbackRecord( &ExampleBugcheckCallbackRecord ); 
+ 
+    KeRegisterBugCheckReasonCallback( 
+        &ExampleBugCheckCallbackRecord, 
+        ExampleBugCheckCallbackRoutine, 
+        KbCallbackTriageDumpData, 
+        "Example" 
+        ); 
+} 
+ 
+// Callback function 
+ 
+VOID 
+ExampleBugCheckCallbackRoutine( 
+    KBUGCHECK_CALLBACK_REASON Reason, 
+    PKBUGCHECK_REASON_CALLBACK_RECORD Record, 
+    PVOID Data, 
+    ULONG Length 
+    ) 
+{ 
+    PKBUGCHECK_TRIAGE_DUMP_DATA DumpData; 
+    NTSTATUS Status; 
+ 
+    DumpData = (PKBUGCHECK_TRIAGE_DUMP_DATA) Data; 
+ 
+    Status = KeAddTriageDumpDataBlock(gTriageDumpDataArray, gImportant, SizeofGImportant); 
+ 
+    // Pass our arrays back 
+ 
+    if (NT_SUCCESS(Status)) { 
+        DumpData->RequiredDataArray = gTriageDumpDataArray; 
+    } 
+ 
+    return; 
+}
+```
 
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f071d84fa553899823c22d463db4ad51cd984d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 516c16fd216e3e39759848a6138a49e53bdf3d7d
+ms.sourcegitcommit: 16cd0355b36a6bf61d9b6685c4ea62acb98ed70d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338918"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67406178"
 ---
 # <a name="reg"></a>!reg
 
