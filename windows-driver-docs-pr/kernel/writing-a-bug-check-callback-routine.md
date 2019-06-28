@@ -10,12 +10,12 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b19f4e48fddc4f9550290dedd3776feb422c77f7
-ms.sourcegitcommit: 95e3fd15d9c00a341e774d58a927856d750a35e8
+ms.openlocfilehash: 0f53d6edc01d0bead99faaccc518c6d17d2e6eaa
+ms.sourcegitcommit: 61d5dccad989614313be2e59df6e08cd46364e76
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410011"
+ms.locfileid: "67412220"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>编写 Bug 检查原因回调例程
 
@@ -83,7 +83,7 @@ Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例
 
 一个<i>KbCallbackDumpIo</i>例程强限制了可执行的操作。 有关详细信息，请参阅本主题中的"Bug 检查回调例程限制"。
 
-## <a name="implementing-a-kbcallbacksecondarydumpdata-routine"></a>实现 KbCallbackSecondaryDumpData 例程
+## <a name="implementing-a-kbcallbacksecondarydumpdata-callback-routine"></a>实现 KbCallbackSecondaryDumpData 回调例程
 
 内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数<i>KbCallbackSecondaryDumpData</i>提供要追加到数据故障转储文件。
 
@@ -106,7 +106,7 @@ Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例
 
 一个<i>KbCallbackSecondaryDumpData</i>例程受到严格限制在可执行的操作。 有关详细信息，请参阅本主题中的"Bug 检查回调例程限制"。
 
-## <a name="implementing-a-kbcallbacktriagedumpdata-routine"></a>实现 KbCallbackTriageDumpData 例程
+## <a name="implementing-a-kbcallbacktriagedumpdata-callback-routine"></a>实现 KbCallbackTriageDumpData 回调例程
 
 从 Windows 10，版本 1809年和 Windows Server 2019，内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数*KbCallbackTriageDumpData*将虚拟内存范围添加到划分的小型转储文件。  转储数据所述[ **KBUGCHECK_TRIAGE_DUMP_DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_kbugcheck_triage_dump_data)结构。
 

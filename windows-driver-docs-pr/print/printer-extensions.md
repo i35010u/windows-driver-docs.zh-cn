@@ -4,12 +4,12 @@ description: 当用户在 Windows 桌面上运行现有应用程序时，打印�
 ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ed731846692f7a79cb69c256a396918be138f0
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 3a478fab0b2e59d575012a5a07974e75ae176aca
+ms.sourcegitcommit: 241983a8f5cbdb4f27914278d5e166727edecf3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393081"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67420003"
 ---
 # <a name="printer-extensions"></a>打印机扩展
 
@@ -145,7 +145,7 @@ mgr.EnableEvents(new Guid(PrinterDriverID1));
 
 - 使用 ngen 安装期间生成的本机映像。 有关详细信息，请参阅[本机映像生成器](https://docs.microsoft.com/dotnet/framework/tools/ngen-exe-native-image-generator)。
 
-- 使用性能度量工具上加载的查找性能问题。 有关详细信息，请参阅[Windows 性能分析工具](https://msdn.microsoft.com/)。
+- 使用性能度量工具上加载的查找性能问题。 有关详细信息，请参阅[Windows 性能分析工具](https://docs.microsoft.com/windows-hardware/test/wpt/)。
 
 ### <a name="driverevent-handler"></a>DriverEvent 处理程序
 
@@ -338,4 +338,4 @@ Microsoft 还建议打印机扩展推迟初始化任务，例如在调用方法 
 
 [打印机扩展插件示例](https://go.microsoft.com/fwlink/p/?LinkId=617945)
 
-[Windows 性能分析工具](https://msdn.microsoft.com/)
+[Windows 性能分析工具](https://docs.microsoft.com/windows-hardware/test/wpt/)

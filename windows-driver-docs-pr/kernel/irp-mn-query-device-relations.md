@@ -6,12 +6,12 @@ ms.assetid: 32437c5a-ad92-433c-8255-83775751a44d
 keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 6157d5924730f24258b1d989e6136d3c57794a89
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e655cbf8e96102d7a3b388eb7c0990ab0863d41
+ms.sourcegitcommit: 46654c090f937923d9712de114fdebe7deffeaaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383300"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67427693"
 ---
 # <a name="irpmnquerydevicerelations"></a>IRP\_MN\_查询\_设备\_关系
 
@@ -149,7 +149,7 @@ PnP 管理器将发送[ **IRP\_MN\_弹出**](irp-mn-eject.md) IRP 正在弹出�
 
 此查询的响应，目标设备 （即查询的目标设备） 的驱动程序提供**设备\_关系**结构，其中包含指向的必须是任何其他设备 PDOs通过电源管理器之前打开目标设备已打开。 相反，这些其他设备必须关闭状态只有在目标设备处于关闭状态后。 电源管理器使用查询中的信息以保证，这些设备开启和关闭以正确的顺序。
 
-这种顺序保证仅适用于全局系统睡眠状态转换，其中包括转换到和从 S1、 S2、 S3 (*睡眠*)，S4 (*休眠*)，和 S5 (*关闭*)系统电源状态。 **PowerRelations**排序保证不适用于如果目标设备或任何其他设备为提供其 PDO **PowerRelations**查询执行从低功耗 Dx 设备之间的转换时系统将保留在 S0 电源状态 (*运行*) 系统状态。
+这种顺序保证仅适用于全局系统睡眠状态转换，其中包括转换到和从 S1、 S2、 S3 (*睡眠*)，S4 (*休眠*)，和 S5 (*关闭*)系统电源状态。 **PowerRelations**排序保证不适应于 Dx 设备电源状态转换时系统将保留在 S0 (*运行*) 系统状态，除的情况下[定向运行时的电源管理 (DFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)转换。
 
 如果目标设备上的特殊文件的设备路径 （如页面文件、 休眠文件或崩溃转储文件），当它处理时，目标设备的驱动程序必须执行附加步骤[ **IRP\_MN\_设备\_使用情况\_通知**](irp-mn-device-usage-notification.md)所在的 IRP **InPath**是**TRUE**。 此驱动程序必须确保的设备为提供其 PDOs **PowerRelations**查询还可以支持在特殊的文件的设备路径。 若要确认是否提供此支持，目标设备的驱动程序必须首先发送**IRP\_MN\_设备\_用法\_通知**IRP 到每个这些设备，且此 IRP 必须指定相同**UsageNotification.Type**作为目标设备。 仅当接收此 IRP 的所有设备都完成 IRP，成功状态代码可以都完成的目标设备的驱动程序及其**IRP\_MN\_设备\_用法\_通知**IRP 成功。 否则，此驱动程序必须完成此 IRP，失败状态代码。
 
