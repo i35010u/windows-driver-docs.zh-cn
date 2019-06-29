@@ -11,12 +11,12 @@ keywords:
 - 事件日志 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1788b6db8a6e6af67f789f582fb5a21a7fe77322
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af9ba4cbe7d86f10285c774ddbe00a887d483d78
+ms.sourcegitcommit: cffd3bab903ac0a2412cc7df91584278e4fef179
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340697"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467826"
 ---
 # <a name="querying-the-system-event-log-for-hardware-error-events"></a>查询系统事件日志中的硬件错误事件
 
@@ -121,7 +121,7 @@ VOID QueryHwErrorEvents(VOID) {
 }
 ```
 
-**请注意**  的所有**Evt * Xxx*** 函数和 EVT\_*XXX*上一示例中使用的数据类型均记录在[Windows 事件日志](https://go.microsoft.com/fwlink/p/?linkid=81187)Microsoft Windows SDK 文档中的部分。
+**请注意**  的所有**Evt_Xxx_** 函数和 EVT\_*XXX*上一示例中使用的数据类型均记录在[Windows 事件日志](https://go.microsoft.com/fwlink/p/?linkid=81187)Microsoft Windows SDK 文档中的部分。
 
  
 
