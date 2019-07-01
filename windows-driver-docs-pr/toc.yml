@@ -3,13 +3,11 @@
 - name: 驱动程序开发中的新增功能
   href: what-s-new-in-driver-development.md
 - name: 下载 Windows 驱动程序工具包 (WDK)
-  items:
-    - name: 下载 Windows 驱动程序工具包 (WDK)
-      href: download-the-wdk.md
-    - name: 安装预览版 WDK
-      href: installing-preview-versions-wdk.md
-    - name: 其他 WDK 下载
-      href: other-wdk-downloads.md
+  href: download-the-wdk.md
+- name: 安装预览版 WDK
+  href: installing-preview-versions-wdk.md
+- name: 其他 WDK 下载
+  href: other-wdk-downloads.md
 - name: “引入”指南
   href: bringup/index.md
 - name: 开发、测试以及部署驱动程序
@@ -28,7 +26,7 @@
   href: debugger/index.md
 - name: Windows 应用商店设备应用
   href: devapps/index.md
-- name: 设备和驱动程序技术
+- name: 驱动程序技术
   items:
     - name: 设备和驱动程序技术
       href: device-and-driver-technologies.md

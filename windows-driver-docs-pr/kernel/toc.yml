@@ -1356,7 +1356,7 @@
       href: defining-custom-error-types.md
     - name: 注册为错误消息的源
       href: registering-as-a-source-of-error-messages.md
-    - name: 编写 Bug 检查回调例程
+    - name: 编写 Bug 检查原因回调例程
       href: writing-a-bug-check-callback-routine.md
     - name: 使用安全字符串函数
       href: using-safe-string-functions.md

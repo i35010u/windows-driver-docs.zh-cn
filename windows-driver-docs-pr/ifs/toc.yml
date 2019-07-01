@@ -1,6 +1,6 @@
-- name: 可安装的文件系统驱动程序设计指南
+- name: 文件系统驱动程序设计指南
   items:
-    - name: 可安装的文件系统驱动程序设计指南
+    - name: 文件系统驱动程序设计指南
       href: index.md
     - name: 文件系统驱动程序
       items:
@@ -664,7 +664,7 @@
           href: understanding-volume-enumerations-with-duplicate-volume-names.md
     - name: 参考
       items:
-        - name: 参考
+        - name: 其他参考
           href: ifs-reference.md
         - name: CcIsThereDirtyLoggedPages
           href: ccistheredirtyloggedpages.md

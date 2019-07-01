@@ -52,7 +52,7 @@
           href: using-chids.md
         - name: 使用扩展 INF 文件
           href: submit-dashboard-extension-inf-files.md
-        - name: 按 Windows 版本限制驱动程序分发
+        - name: 如何基于 Windows 版本限制或扩展驱动程序的分发
           href: limit-driver-distribution.md
         - name: 发布测试分发
           href: publishing-for-test-distribution.md

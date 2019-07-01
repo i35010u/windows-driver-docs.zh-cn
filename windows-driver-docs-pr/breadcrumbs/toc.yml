@@ -28,7 +28,7 @@
             - name: Windows 调试工具
               tocHref: /windows-hardware/drivers/debugger/
               topicHref: /windows-hardware/drivers/debugger/index
-            - name: 设备和驱动程序技术
+            - name: 驱动程序技术
               tocHref: /windows-hardware/drivers/device-and-driver-technologies/
               topicHref: /windows-hardware/drivers/device-and-driver-technologies
               items:
