@@ -10,12 +10,12 @@ keywords:
 - 设备控制方案 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a23a22ab9de5580998f1bb990c479716dff1a7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7b65200abae6c0a230bc3333e8d37b8105aa7bf
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341671"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492517"
 ---
 # <a name="device-control-scenarios"></a>设备控制方案
 
@@ -32,9 +32,9 @@ ms.locfileid: "63341671"
 
 调用**OneWay**与 SimpleService 方法：
 
--   **wsa:Action = = http://schemas.example.org/SimpleService/OneWay**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/OneWay**
 
--   http://testdevice.interop/SimpleService1将使用服务。
+-   Http:\//testdevice.interop/SimpleService1 服务将使用。
 
 -   提供整数输入。
 
@@ -50,15 +50,15 @@ ms.locfileid: "63341671"
 
 调用**TwoWay**与 SimpleService 方法：
 
--   **wsa:Action = = http://schemas.example.org/SimpleService/TwoWayRequest**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TwoWayRequest**
 
--   http://testdevice.interop/SimpleService1将使用服务。
+-   Http:\//testdevice.interop/SimpleService1 服务将使用。
 
 -   提供两个整数输入。
 
 通过响应客户端**TwoWayResponse**方法：
 
--   **wsa:Action = = http://schemas.example.org/SimpleService/TwoWayResponse**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TwoWayResponse**
 
 -   Sum 参数会计算从两个输入参数的总和。
 
@@ -72,15 +72,15 @@ ms.locfileid: "63341671"
 
 调用**一次**与 SimpleService 方法：
 
--   **wsa:Action = = http://schemas.example.org/SimpleService/TypeCheckRequest**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TypeCheckRequest**
 
--   http://testdevice.interop/SimpleService1将使用服务。
+-   Http:\//testdevice.interop/SimpleService1 服务将使用。
 
 -   一个布尔值，decimal、 float、 和的列表**xs: anyuri**提供参数。
 
 通过响应客户端**TypeCheckResponse**方法：
 
--   **wsa:Action = = http://schemas.example.org/SimpleService/TypeCheckResponse**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/TypeCheckResponse**
 
 -   一个布尔值，decimal、 float、 和的列表**xs: anyuri**参数返回并回显给客户端。
 
@@ -94,15 +94,15 @@ ms.locfileid: "63341671"
 
 调用**AnyCheck**与 SimpleService 方法：
 
--   **wsa:Action = = http://schemas.example.org/SimpleService/AnyCheckRequest**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/AnyCheckRequest**
 
--   http://testdevice.interop/SimpleService1将使用服务
+-   Http:\//testdevice.interop/SimpleService1 服务将使用
 
 -   任意 XML 片段用作参数。
 
 通过响应客户端**TypeCheckResponse**方法：
 
--   **wsa:Action = = http://schemas.example.org/SimpleService/AnyCheckResponse**
+-   **wsa:Action == http:\//schemas.example.org/SimpleService/AnyCheckResponse**
 
 -   返回任意 XML 片断并将其发送回客户端。
 

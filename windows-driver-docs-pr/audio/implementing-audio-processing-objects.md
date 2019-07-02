@@ -4,12 +4,12 @@ description: 本主题介绍如何实现音频处理对象 (APO)。 有关 a p o
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bf23da3cc25371f67ef39b62b7243f1dd819eb5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a34bf6b46e8420aa95d638c7a374abdf434fa8f1
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359926"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499799"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
@@ -48,23 +48,23 @@ ms.locfileid: "67359926"
 -   APO 可以修改仅音频数据传递给它通过其[ **IAudioProcessingObjectRT::APOProcess** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)例程。 APO 不能更改基础的逻辑设备，包括其 KS 拓扑的设置。
 -   除 IUnknown，不必须公开以下接口：
 
-    • [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 处理安装程序任务，例如初始化和格式协商一个接口。
+    - [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 处理安装程序任务，例如初始化和格式协商一个接口。
 
-    • [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)。 配置界面。
+    - [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)。 配置界面。
 
-    • [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)。 处理音频处理实时接口。 它可从实时处理线程调用。
+    - [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)。 处理音频处理实时接口。 它可从实时处理线程调用。
 
-    • [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)。 使音频引擎的接口将 DLL 识别为系统效果 APO。
+    - [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)。 使音频引擎的接口将 DLL 识别为系统效果 APO。
 
--   所有未必须都具有实时系统的兼容性。 这表示：
+- 所有未必须都具有实时系统的兼容性。 这表示：
 
-    • 必须作为非阻止性成员实现实时的接口的成员的所有方法。 它们必须不能阻止、 使用分页的内存，或调用任何阻止系统例程。
+  - 必须为非阻止性成员实现实时接口的成员的所有方法。 它们必须不能阻止、 使用分页的内存，或调用任何阻止系统例程。
 
-    • APO 处理的所有缓冲区必须都是不可分页。 所有代码和进程路径中的数据必须都是不可分页。
+  - 由 APO 处理的所有缓冲区都必须不可分页。 所有代码和进程路径中的数据必须都是不可分页。
 
-    • 2 不应引入到音频处理链的明显的延迟。
+  - 不应引入到音频处理链明显的延迟。
 
--   自定义未必须公开 IAudioProcessingObjectVBR 接口。
+- 自定义未必须公开 IAudioProcessingObjectVBR 接口。
 
 **请注意**  有关所需的接口的详细信息，请参阅 Windows 工具包中的 Audioenginebaseapo.h 和 Audioenginebaseapo.idl 文件\\&lt;内部版本号&gt;\\包括\\um 文件夹。
 

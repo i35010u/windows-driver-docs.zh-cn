@@ -4,12 +4,12 @@ description: 本主题提供信息以帮助工程师使用移动宽带类驱动�
 ms.assetid: 9742BFCA-CC22-497A-B11F-D3E89F0B4FE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c54fd625e34cba642b3bd6f2288e36f33c13c510
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ae7127def90ec16e3e87dd6c7765affb1cc86cb
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375764"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499809"
 ---
 # <a name="mobile-broadband-class-driver-logs-event-trace-log-tracing"></a>移动宽带类驱动程序日志：事件跟踪日志跟踪
 
@@ -64,14 +64,14 @@ ms.locfileid: "63375764"
 
 如果你有与 IP 地址配置的问题，请执行以下：
 
-1.  1. **netsh 跟踪启动 wwan\_dbg**
-2.  2. &lt;执行将导致意外行为的系统的任务
-3.  3。**netsh trace stop**
-4.  4. 上传以下信息：
+1. **netsh 跟踪启动 wwan\_dbg**
+2. &lt;执行将导致意外行为的系统的任务
+3. **netsh trace stop**
+4. 上传以下信息：
 
-    • 下的所有文件 `%localappdata%\temp\nettraces\`
+    - 下的所有文件 `%localappdata%\temp\nettraces\`
 
-    • 输出**ipconfig /all**
+    - 输出**ipconfig /all**
 
 **数据路径**
 

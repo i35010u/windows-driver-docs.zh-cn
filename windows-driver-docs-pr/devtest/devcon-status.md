@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a587fe8c7de5344a1f16d8323c3b4c8ec54371c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c2a852f740770cdee6239907455a16aef54e54a
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371399"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492510"
 ---
 # <a name="devcon-status"></a>DevCon Status
 
@@ -72,7 +72,7 @@ ms.locfileid: "67371399"
 <td align="left"><p>按原义的字符串匹配 （严格按其显示）。 使用单引号以指示星号是 ID 名称的一部分，不是通配符，例如，字符串前加上 <strong>'*PNP0600</strong>，其中 *PNP0600 （包括星号） 是硬件 id。</p></td>
 </tr>
 </tbody>
-</table>
+</table>  
 
 
 

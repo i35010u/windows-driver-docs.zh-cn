@@ -11,52 +11,44 @@ keywords:
 - USB 键盘和系统故障
 - Ps/2 键盘和系统故障
 - 从键盘强制系统崩溃
-ms.date: 05/23/2017
+ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 728380861030e3add4703505836eeb7ecbd807be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48279ae6fcf2cb74371abd44a4beeb41db7116fc
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371701"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499805"
 ---
 # <a name="forcing-a-system-crash-from-the-keyboard"></a>通过键盘强制系统崩溃
 
-
 ## <span id="ddk_forcing_a_system_crash_from_the_keyboard_dbg"></span><span id="DDK_FORCING_A_SYSTEM_CRASH_FROM_THE_KEYBOARD_DBG"></span>
 
+以下类型的键盘可以直接导致系统崩溃：
 
-大部分以下键盘可以直接导致系统崩溃：
+<span id="________PS_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________ps_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________PS_2_KEYBOARDS_CONNECTED_ON_I8042PRT_PORTS_______"></span> **Ps/2 键盘 i8042prt 端口上连接**
 
-<span id="________PS_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________ps_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________PS_2_KEYBOARDS_CONNECTED_ON_I8042PRT_PORTS_______"></span> Ps/2 键盘 i8042prt 端口上连接   
 此功能是在 Windows 2000 和更高版本的 Windows 操作系统中可用。
 
-<span id="________USB_keyboards_______"></span><span id="________usb_keyboards_______"></span><span id="________USB_KEYBOARDS_______"></span> USB 键盘   
-此功能现已推出：
+<span id="________USB_keyboards_______"></span><span id="________usb_keyboards_______"></span><span id="________USB_KEYBOARDS_______"></span> **USB 键盘**
 
--   Windows Server 2003 Service Pack 1 如果随附的修补程序[KB 244139](https://go.microsoft.com/fwlink/p/?linkid=106065)安装。
+此功能是在 Windows Vista 和更高版本的 Windows 操作系统中可用。
 
--   Windows Server 2003 （带有 Service Pack 2 或更高版本）。
+<span id="hyper_v_keyboards_______"></span> **HYPER-V 键盘**
 
--   Windows Vista Service Pack 1 如果随附的修补程序[KB 971284](https://go.microsoft.com/fwlink/p/?LinkId=241349)安装。
+此功能是在 Windows 10 版本 1903年和更高版本的 Windows 操作系统中可用。
 
--   Windows Vista Service Pack 2。
+<span id="Configuration"></span> **配置**
 
--   Windows Server 2008 Service Pack 1 如果随附的修补程序[KB 971284](https://go.microsoft.com/fwlink/p/?LinkId=241349)安装。
--   Windows Server 2008 （带 Service Pack 2 或更高版本）。
--   Windows 7 和更高版本的 Windows 操作系统。
+配置以下设置以启用使用键盘在系统发生崩溃：
 
-**请注意**  此功能不是 Windows XP 中可用。
+1. 如果你想要写入的崩溃转储文件，必须启用此类转储文件，选择的路径和文件名称，然后选择转储文件的大小。 有关详细信息，请参阅[启用内核模式转储文件](enabling-a-kernel-mode-dump-file.md)。
 
- 
+2. 使用 ps/2 键盘，必须启用注册表中的键盘启动故障。 注册表项中**HKEY\_本地\_机\\系统\\CurrentControlSet\\Services\\i8042prt\\参数**，创建一个名为值**CrashOnCtrlScroll**，并将其设置为等于 REG\_0x01 的 DWORD 值。
 
-键盘可能会导致系统崩溃之前，必须确保以下三个设置：
+3. 使用 USB 键盘，必须启用注册表中的键盘启动故障。 注册表项中**HKEY\_本地\_机\\系统\\CurrentControlSet\\Services\\kbdhid\\参数，** 创建名为值**CrashOnCtrlScroll**，并将其设置为等于 REG\_0x01 的 DWORD 值。
 
-1.  如果你想要写入的崩溃转储文件，必须启用此类转储文件，选择的路径和文件名称，然后选择转储文件的大小。 有关详细信息，请参阅[启用内核模式转储文件](enabling-a-kernel-mode-dump-file.md)。
-
-2.  使用 ps/2 键盘，必须启用注册表中的键盘启动故障。 注册表项中**HKEY\_本地\_机\\系统\\CurrentControlSet\\Services\\i8042prt\\参数**，创建一个名为值**CrashOnCtrlScroll**，并将其设置为等于 REG\_0x01 的 DWORD 值。
-
-3.  使用 USB 键盘，必须启用注册表中的键盘启动故障。 注册表项中**HKEY\_本地\_机\\系统\\CurrentControlSet\\Services\\kbdhid\\参数，** 创建名为值**CrashOnCtrlScroll**，并将其设置为等于 REG\_0x01 的 DWORD 值。
+4. 使用 HYPER-V 键盘，必须启用注册表中的键盘启动故障。 注册表项中**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\hyperkbd\Parameters**，创建一个名为值**CrashOnCtrlScroll**，并将其设置为等于 0x01 的 REG_DWORD 值。
 
 必须重新启动到系统的这些设置才会生效。
 
@@ -72,13 +64,17 @@ ms.locfileid: "63371701"
 
 你可以配置不同的键盘快捷方式序列，以生成内存转储文件的以下注册表子项中的值：
 
--   为 ps/2 键盘：
+- 为 ps/2 键盘：
 
     **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\i8042prt\\crashdump**
 
--   有关 USB 键盘：
+- 有关 USB 键盘：
 
     **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\kbdhid\\crashdump**
+
+- 有关 HYPER-V 键盘：
+
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\hyperkbd\crashdump**
 
 必须创建以下注册表 REG\_这些子项下的 DWORD 值：
 
@@ -126,11 +122,7 @@ ms.locfileid: "63371701"
 </tbody>
 </table>
 
- 
-
 **请注意**  可以分配**Dump1Keys**作为使用键盘快捷方式序列中的第一个密钥启用一个或多个键的值。 例如，将分配**Dump1Keys** 0x11 将定义这两个最右边和最左侧 SHIFT 键为键盘快捷方式序列中的第一个键的值。
-
- 
 
 <span id="Dump2Key"></span><span id="dump2key"></span><span id="DUMP2KEY"></span>**Dump2Key**  
 **Dump2Key**注册表值是目标计算机的键盘布局的 scancode 表中的索引。 下面是驱动程序中的实际表。
@@ -155,8 +147,6 @@ const UCHAR keyToScanTbl[134] = {
 
 **请注意**  索引 124 (sysreq) 是一种特殊情况，因为 84 键键盘具有不同的扫描代码。
 
- 
-
 如果定义了备用键盘快捷方式以从 USB 或 PS/2 键盘强制在系统发生崩溃，必须设置**CrashOnCtrlScroll**注册表值为 0，或将其从注册表中删除。
 
 ### <a name="span-idlimitationsspanspan-idlimitationsspanlimitations"></a><span id="limitations"></span><span id="LIMITATIONS"></span>限制
@@ -164,12 +154,3 @@ const UCHAR keyToScanTbl[134] = {
 很可能要冻结的方式的键盘快捷方式序列化将不工作的系统。 但是，这应该是非常少见。 使用键盘快捷方式序列启动崩溃将适用甚至在许多情况下，CTRL + ALT + DELETE 不起作用。
 
 从键盘强制系统崩溃不的工作原理，如果在计算机停止响应在高中断请求级别 (IRQL)。 存在此限制，因为 Kbdhid.sys 驱动程序，它允许运行的内存转储进程，在较低的 IRQL 比 i8042prt.sys 驱动程序进行操作。
-
- 
-
- 
-
-
-
-
-

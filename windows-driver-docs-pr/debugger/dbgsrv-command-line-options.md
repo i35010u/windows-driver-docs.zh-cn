@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe270ca2f7e6fd79e87f418914becf893ec2c94d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05933662a84f82ad7229fd85fbe718ba43683be4
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376092"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492528"
 ---
 # <a name="dbgsrv-command-line-options"></a>DbgSrv 命令行选项
 
@@ -54,9 +54,9 @@ dbgsrv -?
 导致要忽略的命令行的其余部分。 此选项非常有用，如果从应用程序可能不需要的文本追加到其命令行启动 DbgSrv。
 
 <span id="_______-pc______"></span><span id="_______-PC______"></span> **-pc**   
-导致要忽略的命令行的其余部分。 此选项非常有用，如果从应用程序可能不需要的文本追加到其命令行启动 DbgSrv。 如果 pc DbgSrv 命令行上的最后一个元素会产生语法错误。 除了此限制，pc 是相同的 x。
+导致要用作"隐式命令行"的命令行的其余部分作为挂起的进程创建。 如果调试器已连接到与该进程服务器，则使用此命令行"-cimp"。 例如，运行```dbgsrv -t <ServerTransport> -pc notepad.exe```，然后运行```ntsd -premote <Transport> -cimp```将导致 ntsd 来连接到 dbgsrv 并启动 notepad.exe
 
-<span id="_______-_______"></span> **-?**   
+<span id="_______-_______"></span> **-?**    
 显示具有 DbgSrv 命令行帮助文本的消息框。
 
 有关使用 DbgSrv 信息，请参阅[的进程服务器 （用户模式）](process-servers--user-mode-.md)。

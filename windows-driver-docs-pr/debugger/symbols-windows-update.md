@@ -7,12 +7,12 @@ keywords:
 - 符号，安装程序
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e861b78408f3a1fb5ef19c9e46d58fe09865c29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f861efa47e89d5d855609589ae6b025a9c044ae
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368039"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499801"
 ---
 # <a name="offline-symbols-for-windows-update"></a>Windows 更新的脱机符号
 
@@ -26,9 +26,9 @@ ms.locfileid: "63368039"
  
 如果你有权访问的联机计算机脱机的计算机相同的确切的补丁级别，您有两个选项：
 
-•[选项 1:将 ETL 事件日志复制到联机状态的计算机](#ETL)
+- [选项 1：将 ETL 事件日志复制到联机状态的计算机](#ETL)
 
-•[选项 2:将符号复制到脱机计算机](#OFFLINE)
+- [选项 2：将符号复制到脱机计算机](#OFFLINE)
 
 通过运行相同的版本级别验证联机和脱机电脑`winver`或`ver`两台计算机上。
 

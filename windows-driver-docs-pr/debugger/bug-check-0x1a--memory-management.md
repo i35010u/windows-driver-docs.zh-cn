@@ -5,7 +5,7 @@ ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - Bug 检查 0x1A MEMORY_MANAGEMENT
 - MEMORY_MANAGEMENT
-ms.date: 03/29/2019
+ms.date: 06/29/2019
 topic_type:
 - apiref
 api_name:
@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0926afdd49debe941ddc86f575fb11459b871b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d779e543662bf815ebfd73b68c17f5058151ab7
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362029"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492529"
 ---
 # <a name="bug-check-0x1a-memorymanagement"></a>Bug 检查 0x1A：内存\_管理
 
@@ -60,6 +60,10 @@ ms.locfileid: "67362029"
 <tr class="odd">
 <td align="left"><p>0x403</p></td>
 <td align="left"><p>页表和 PFNs 不同步。 这可能是硬件错误，尤其是当参数 3 和 4 上仅有一个位存在差异。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x404</p></td>
+<td align="left"><p>正在删除系统页时页帧数 (PFN) 和当前的页表项 (PTE) 指针之间的不一致。 参数 2 是预期的 PTE。 参数 3 为 PTE 内容且参数 4 为 PFN PTE。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x411</p></td>
@@ -103,6 +107,10 @@ ms.locfileid: "67362029"
 <td align="left"><p>调用方指定 MDL 包含未锁定 （或无效） 的物理页。 参数 2 包含 MDL 的指针。 参数 3 包含无效的 PFN 的指针。 参数 4 包含 PFN 值无效。</p></td>
 </tr>
 <tr class="odd">
+<td align="left"><p>0x3300</p></td>
+<td align="left"><p>过程中执行写入，被引用的虚拟地址被错误地标记为副本在写入。 参数 2 是 FaultingAddress。  参数 3 是 PTE 内容。 参数 4 表示虚拟地址空间类型。</p></td>
+</tr>
+<tr class="odd">
 <td align="left"><p>0x3451</p></td>
 <td align="left"><p>已被换出了内核线程堆栈的 Pte 已损坏。</p></td>
 </tr>
@@ -126,6 +134,10 @@ ms.locfileid: "67362029"
 <td align="left"><p>0x5200</p></td>
 <td align="left"><p>可用池 SLIST 的页面已损坏。 这可以是驱动程序或从上一页面溢出中写入后无 bug 的结果。 参数 2 包含可用池块的地址。 参数 4 包含应为在该地址的值。 参数 3 包含找到的实际值。</p></td>
 </tr>
+<tr class="odd">
+<td align="left"><p>0x6001</p></td>
+<td align="left"><p>内存存储组件的专用内存范围已损坏，使其变得不可访问。 参数 2 是返回的状态。  参数 3 是在应用商店的专用内存范围内的虚拟地址。 参数 4 是 MemoryDescriptorList。</p></td>
+</tr>
 <tr class="even">
 <td align="left"><p>0x8884</p></td>
 <td align="left"><p>(仅在 Windows 7 中)。 已假定具有相同的页面优先级值的两个页面在待机列表不是，实际上，有相同的页面优先级值。 在参数 4 中捕获的不同值。</p></td>
@@ -146,6 +158,10 @@ ms.locfileid: "67362029"
 <tr class="even">
 <td align="left"><p>0x15001</p></td>
 <td align="left"><p>以前受保护的未保护内存的过程中出错。  这可以调用方会错误地调用 MmUnsecureVirtualMemory 错误进程上下文中。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x41201</p></td>
+<td align="left"><p>查询的虚拟地址的过程中出现页框架 Number(PFN) 和当前的页表项 (PTE) 指针之间的不一致。 参数 2 是相应 PTE。 参数 3 是 PTE 内容和参数 4 是虚拟地址描述符。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41283</p></td>
@@ -190,6 +206,10 @@ ms.locfileid: "67362029"
 <tr class="odd">
 <td align="left"><p>0x61946</p></td>
 <td align="left"><p>正在创建 MDL 有缺陷。 这几乎总是意味着存在驱动程序调用<strong>MmProbeAndLockPages</strong>出现故障。 通常，驱动程序正在尝试创建编写 MDL 时要求它处理分页读取。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x61948</p></td>
+<td align="left"><p>在 I/O 空间区域的引用计数的递减，过程中无法找到其记帐节点。  通常，这意味着自变量范围永远不会锁定或已经解锁。  参数 2 为基础的 I/O 帧。 参数 3 是在区域中的页数，参数 4 是找不到的节点的特定 I/O 帧。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x61949</p></td>

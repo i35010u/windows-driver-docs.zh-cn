@@ -4,12 +4,12 @@ description: 本主题提供了特定实现指南，以帮助为 Windows 生成�
 ms.assetid: 1E8CBBCC-9E35-49AA-85A7-DFAD6772B164
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fb0abb5cbfcf18ab80041096989d0b2532cbdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4b62c9d062d559c17366b3fec9d7e0d5f6d06dd
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393010"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499803"
 ---
 # <a name="mobile-broadband-implementation-guidelines-for-usb-devices"></a>USB 设备的移动宽带实施指南
 
@@ -85,9 +85,9 @@ MBIM 设备必须响应时请遵循以下准则**MBIMPinOperationEnter**请求�
 
 支持自动数据包服务将附加的 MBIM 设备从移动网络自行管理附件和数据包服务分离。 主机仍可能会将附加请求发送到此类设备上用户请求。 当设备收到附加请求时从主机它应处理，如下所示：
 
--   • 如果设备未附加和不是在附加操作的中间，并且能够然后将其附加应启动新的附加过程与移动网络。
--   • 如果使用的未附加设备，但中间自动附加操作，则应等待自动附加操作完成，完成附加请求从具有自动附加操作的状态的主机。
--   • 如果然后它应已成功完成附加请求从该主机已连接设备。
+- 如果设备未附加和不是在附加操作的中间，并且能够将附加它应启动新的附加过程与移动网络。
+- 如果未附加设备，但正在自动附加操作然后它应等待自动附加操作完成，完成附加请求从具有自动附加操作的状态的主机。
+- 如果已连接设备然后它应从主机附加请求成功完成。
 
 ## <a name="signal-strength-loss-and-data-connection-loss"></a>数据连接丢失和信号强度丢失
 

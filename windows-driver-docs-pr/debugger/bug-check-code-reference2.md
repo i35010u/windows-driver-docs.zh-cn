@@ -4,12 +4,12 @@ description: 本部分包含常见错误检查，其中包括参数传递到蓝�
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e97477c9d3f29db52840f9d6ed849b8f9a3975e
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: e4740460c0eb4af27c3ffde685204b9a8dad23c9
+ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743446"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492540"
 ---
 # <a name="bug-check-code-reference"></a>Bug 检查代码参考
 
@@ -352,11 +352,11 @@ ms.locfileid: "56743446"
 | 0x00000168 | [**群集\_CSV\_状态\_过渡\_超时\_LIVEDUMP**](bug-check-0x168--cluster-csv-state-transition-timeout-livedump.md)                       |   
 | 0x00000169 | [**群集\_CSV\_卷\_到达\_LIVEDUMP**](bug-check-0x169--cluster-csv-volume-arival-livedump.md)                                             |      
 | 0x0000016A | [**群集\_CSV\_卷\_删除\_LIVEDUMP**](bug-check-0x16a--cluster-csv-volume-removal-livedump.md)                                            |    
-| 0x0000016B | [**CLUSTER\_CSV_\_CLUSTER\_WATCHDOG_\LIVEDUMP**](bug-check-0x16b--cluster-csv-cluster-watchdog-livedump.md)                                       |   
+| 0x0000016B | [**群集\_CSV\_群集\_监视器\_LIVEDUMP**](bug-check-0x16b--cluster-csv-cluster-watchdog-livedump.md)                                       |   
 | 0x0000016C | [**INVALID\_RUNDOWN\_PROTECTION\_FLAGS**](bug-check-0x16c--invalid-rundown-protection-flags.md)                                                   |
 | 0x0000016D | [**INVALID\_SLOT\_ALLOCATOR\_FLAGS**](bug-check-0x16d--invalid-slot-allocator-flags.md)                                                           |
 | 0x0000016E | [**ERESOURCE\_无效\_版本**](bug-check-0x16e--eresource-invalid-release.md)                                                                  |
-| 0x0000016F | [**CLUSTER\_CSV_\STATE\_TRANSITION\_INTERVAL\_TIMEOUT\_LIVEDUMP**](bug-check-0x16f--cluster-csv-state-transistion-interval-livedump.md)           |
+| 0x0000016F | [**群集\_CSV\_状态\_过渡\_间隔\_超时\_LIVEDUMP**](bug-check-0x16f--cluster-csv-state-transistion-interval-livedump.md)           |
 | 0x00000170 | [**CRYPTO\_LIBRARY\_INTERNAL\_ERROR**](bug-check-0x170--crypto-library-internal-error.md)                                                         |
 | 0x00000171 | [**群集\_CSV\_CLUSSVC\_断开连接\_监视器**](bug-check-0x171--cluster-csv-clussvc-disconnect-watchdog.md)                                    |
 | 0x00000173 | [**COREMSGCALL\_INTERNAL\_ERROR**](bug-check-0x173--coremsgcall-internal-error.md)                                                                |
@@ -393,7 +393,7 @@ ms.locfileid: "56743446"
 | 0x000001A4 | [**DRIPS\_SW\_HW\_DIVERGENCE\_LIVEDUMP**](bug-check-0x1a4--drips-sw-hw-divergence-livedump.md)                                                    |
 | 0x000001A5 | [**USB\_DRIPS\_BLOCKER\_SURPRISE\_REMOVAL\_LIVEDUMP**](bug-check-0x1a5--usb-drips-blocker-surprise-removal-livedump.md)                           |
 | 0x000001A6 | [**蓝牙\_错误\_恢复\_LIVEDUMP**](bug-check-0x1a6--bluetooth-error-recovery-livedump.md)                                                 |
-| 0x000001A7 | [**SMB\_REDIRECTOR\_LIVEDUMP**]bug-check-0x1A7--smb-redirector-livedump.md)                                                                       |
+| 0x000001A7 | [**SMB\_重定向程序\_LIVEDUMP**](bug-check-0x1A7--smb-redirector-livedump.md)                                                                       |
 | 0x000001A8 | [**VIDEO\_DXGKRNL\_BLACK\_SCREEN\_LIVEDUMP**](bug-check-0x1a8--video-dxgkrnl-black-screen-livedump.md)                                            |
 | 0x000001B0 | [**VIDEO_MINIPORT_FAILED_LIVEDUMP**](bug-check-0x1b0--video-miniport-failed-livedump.md)                                                          |
 | 0x000001C4 | [**驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP**](bug-check-0x1c4--driver-verifier-detected-violation-livedump.md)                            |

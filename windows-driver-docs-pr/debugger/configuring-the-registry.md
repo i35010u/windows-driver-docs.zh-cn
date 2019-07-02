@@ -8,12 +8,12 @@ keywords:
 - Netsh 和 SymProxy
 ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e47fd16f420e3464a6cc1420aab93b94f8e8534a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5c64a2a261410d16b1cec0395b68a46d2f3843c
+ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375583"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499808"
 ---
 # <a name="configuring-the-registry"></a>配置注册表
 
@@ -78,9 +78,9 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 
 **若要编辑符号存储区的虚拟目录的注册表项**
 
--   编辑的内容**SymbolPath**将包含所有 SymProxy 符号存储区使用的符号存储。 如果正在使用的多个符号存储区，请用分号分隔它们。 最多 10 个存储支持的每个值。 HTTP 路径必须包括**https:// 前缀**，并且必须包含 UNC 路径**\\ \\**前缀。
+-   编辑的内容**SymbolPath**将包含所有 SymProxy 符号存储区使用的符号存储。 如果正在使用的多个符号存储区，请用分号分隔它们。 最多 10 个存储支持的每个值。 HTTP 路径必须包括**https:// 前缀**，并且必须包含 UNC 路径 **\\ \\** 前缀。
 
-例如，如果其中一个虚拟目录称为符号，它访问符号存储区位于 UNC 应用商店\\\\符号\\符号和 HTTP 存储区 https://msdl.microsoft.com/download/symbols，创建以下注册表键。
+例如，如果其中一个虚拟目录称为符号，它访问符号存储区位于 UNC 应用商店\\\\符号\\符号和 HTTP 存储区 https://msdl.microsoft.com/download/symbols ，创建以下注册表键。
 
 ```reg
 HKLM/Software/Microsoft/Symbol Server Proxy/Web Directories/Symbols
@@ -247,17 +247,23 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 <p>如果成功，返回的符号文件，并删除未命中。</p>
 <p>在失败时，未命中向前移动到当前时间 （采用 UTC) 以启动新的超时时间。</p>
 <p>使用"未命中缓存<em>"用于监视未命中数的计数器。</p>
-<p>• 未指定-（默认值） 300 秒/5 分钟</p>
-<p>• 0 – 功能已禁用</p>
-<p>• N – 超时持续时间 N 秒</p></td>
+<p><ul>
+    <li>未指定-（默认值） 300 秒/5 分钟</li>
+    <li>0 – 禁用功能</li>
+    <li>N-超时持续时间 N 秒</li>
+   </ul>
+</td>
 </tr>
 <tr class="even">
 <td align="left">MissAgeCheck</td>
 <td align="left"><p>未命中年龄检查之间的时间段。 扫描未命中缓存并删除早于 MissAgeTimeout 秒的记录。</p>
 <p>当前统计信息将保存到事件日志使用事件 ID 4。</p>
-<p>• 未指定-（默认值） 3600 秒/1 小时</p>
-<p>• 0 – 功能已禁用</p>
-<p>• N – 检查在 N 秒之间的段</p></td>
+<p><ul>
+    <li>未指定-（默认值） 3600 秒/1 小时</li>
+    <li>0 – 禁用功能</li>
+    <li>N-N 秒检查期</li>
+   </ul>
+</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FailureTimeout</p>
