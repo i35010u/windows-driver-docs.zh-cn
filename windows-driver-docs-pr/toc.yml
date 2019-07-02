@@ -28,7 +28,7 @@
   href: devapps/index.md
 - name: 驱动程序技术
   items:
-    - name: 设备和驱动程序技术
+    - name: 驱动程序技术概述
       href: device-and-driver-technologies.md
     - name: 3D 打印设备
       href: 3dprint/index.md
