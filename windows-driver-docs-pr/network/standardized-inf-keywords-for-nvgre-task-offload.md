@@ -14,7 +14,7 @@ ms.locfileid: "63345967"
 # <a name="standardized-inf-keywords-for-nvgre-task-offload"></a>NVGRE 任务卸载的标准化 INF 关键字
 
 
- **\*EncapsulatedPacketTaskOffload**标准化的枚举关键字定义来启用或禁用对支持[使用通用路由封装 (NVGRE) 任务卸载的网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)微型端口适配器中。
+**\*EncapsulatedPacketTaskOffload** 标准化的枚举关键字定义来启用或禁用对支持[使用通用路由封装 (NVGRE) 任务卸载的网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)微型端口适配器中。
 
 下表说明了此关键字可能 INF 条目。
 
