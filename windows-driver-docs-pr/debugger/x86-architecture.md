@@ -194,7 +194,7 @@ X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵
 
 以下是一系列调用约定使用 x86 体系结构：
 
--   Win32 (**\_\_stdcall**)
+-   Win32 ( **\_\_stdcall**)
 
     直接推送到左侧，在堆栈上传递的函数参数和被调用方清理堆栈。
 
@@ -202,7 +202,7 @@ X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵
 
     从左到右推送到堆栈上传递的函数参数，"this"指针传入**ecx**和被调用方清理堆栈。
 
--   COM (**\_\_stdcall**为C++方法调用)
+-   COM ( **\_\_stdcall**为C++方法调用)
 
     函数参数传递到堆栈上，推送右到左，然后"this"指针推送到堆栈上，然后调用该函数。 被调用方清理堆栈。
 
@@ -212,7 +212,7 @@ X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵
 
 -   **\_\_cdecl**
 
-    直接推送到左侧，在堆栈上传递的函数参数和调用方清理堆栈。  **\_ \_Cdecl**调用约定用于使用长度可变的参数的所有功能。
+    直接推送到左侧，在堆栈上传递的函数参数和调用方清理堆栈。 **\_\_Cdecl**调用约定用于使用长度可变的参数的所有功能。
 
 ### <a name="span-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>调试器显示的寄存器和标志
 
@@ -536,7 +536,7 @@ jz equal
 
 ### <a name="span-idaddressingmodesspanspan-idaddressingmodesspanspan-idaddressingmodesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
 
-有几个不同的寻址模式，但它们都需要在窗体**T ptr \[expr\]**，其中**T**是一些数据类型 （请参阅前面的数据类型部分） 和**expr**是涉及常量和寄存器一些表达式。
+有几个不同的寻址模式，但它们都需要在窗体**T ptr \[expr\]** ，其中**T**是一些数据类型 （请参阅前面的数据类型部分） 和**expr**是涉及常量和寄存器一些表达式。
 
 大多数模式下的表示法可以推导内容。 例如，**字节 PTR \[esi + edx\*8 + 3\]** 意味着"采用的值**esi**注册、 向其添加值的八倍**edx**注册，添加三个，然后访问生成的地址处的字节。"
 

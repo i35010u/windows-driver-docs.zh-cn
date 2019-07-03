@@ -42,7 +42,7 @@ SignTool sign /v /s TestCertStoreName /n TestCertName /t http://timestamp.verisi
 
 -   **/N** *TestCertName*选项提供名为的证书存储中安装的测试证书的名称*TestCertStoreName*。 MakeCert 测试证书或商业测试证书，可以是测试证书。
 
--   **/T**  * http://timestamp.verisign.com/scripts/timstamp.dll *选项提供 VeriSign 提供的公开可用的时间戳服务器的 URL。
+-   **/T**  *http://timestamp.verisign.com/scripts/timstamp.dll* 选项提供 VeriSign 提供的公开可用的时间戳服务器的 URL。
 
 -   *CatalogFileName.cat*的名称[编录文件](catalog-files.md)。
 
