@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: abe419cbe598169320dcdd6de2b877af8b05d785
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa61c47419f457a091fbd2659442aa285664c38f
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367226"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519040"
 ---
 # <a name="bug-check-0xa7-badexhandle"></a>Bug 检查 0xA7：错误\_EXHANDLE
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367226"
 错误\_EXHANDLE bug 检查的值为 0x000000A7。 此 bug 检查表示内核模式句柄表检测到不一致的句柄表项状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="badexhandle-parameters"></a>错误\_EXHANDLE 参数

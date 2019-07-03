@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6740e1b442cb6a56a6275a753d50e03b40dbc5cf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 797a07786dd5f57ef1abc34f8a77c1e3a685a1ff
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367397"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519359"
 ---
 # <a name="bug-check-0x55-datacoherencyexception"></a>Bug 检查 0x55：数据\_协调性\_异常
 
@@ -28,7 +28,7 @@ ms.locfileid: "67367397"
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  

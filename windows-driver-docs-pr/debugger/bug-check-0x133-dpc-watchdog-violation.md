@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b6573e5debe3eb5da8b994c1fe49f4aa713814dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e8e905484999f5dc9e4a188a7a5657c71bf64c6d
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362249"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520442"
 ---
 # <a name="bug-check-0x133-dpcwatchdogviolation"></a>Bug 检查 0x133 DPC\_监视器\_冲突
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362249"
 DPC\_监视器\_冲突错误检查的值为 0x00000133。 此 bug 检查指示 DPC 监视程序执行，因为它检测到的单个运行时间较长延迟的过程调用 (DPC) 或系统在中断请求级别 (IRQL) 花费很长时间的时间的调度\_级别或更高版本。 参数 1 的值指示单个 DPC 是否超出了超时或系统是否累积所用的 IRQL 调度时间长\_级别或更高版本。 Dpc 不应运行时间超过 100 微秒和 Isr 不应运行时间超过 25 微秒为单位，但是将实际超时值在系统上设置高得多。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="dpcwatchdogviolation-parameters"></a>DPC\_监视器\_冲突参数

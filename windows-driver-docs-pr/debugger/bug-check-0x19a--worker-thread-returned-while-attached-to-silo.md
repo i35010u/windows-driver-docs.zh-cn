@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a1d83804980e78c8f749fef3787df9e27032806a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cfb14d551f99ba293e9b2427f2076124d8e8c871
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367649"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519794"
 ---
 # <a name="bug-check-0x19a-workerthreadreturnedwhileattachedtosilo"></a>Bug 检查 0x19A：辅助角色\_线程\_返回\_虽然\_附加\_TO\_接收器
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367649"
 辅助角色\_线程\_返回\_虽然\_附加\_TO\_接收器 bug 检查的值为 0x0000019A。 这表示一个工作线程附加到接收器，并返回之前未分离。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="workerthreadreturnedwhileattachedtosilo-parameters"></a>辅助角色\_线程\_返回\_虽然\_附加\_TO\_接收器参数

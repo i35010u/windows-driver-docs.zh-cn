@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bd5f32c0abebe0f084c8a3cf9b90eb8eba968a6d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2cf67cc182f7cea20fcd77df3832b6255e34acbb
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367680"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519844"
 ---
 # <a name="bug-check-0x18d-securefaultunhandled"></a>Bug 检查 0x18D：安全\_容错\_未处理
 
@@ -26,7 +26,7 @@ SECURE\_容错\_未经处理的错误检查的值为 0x0000018D。
 无法处理此 bug 检查 indidates 安全错误由安全内核发起的。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  ## <a name="securefaultunhandled-parameters"></a>安全\_容错\_未经处理的参数

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0862bd59433415bf0cecde2d1665b7b25c3c8bc5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1d09a235a5f9b3290418280efe445e4d0439ef52
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361650"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519010"
 ---
 # <a name="bug-check-0xb8-attemptedswitchfromdpc"></a>Bug 检查 0xB8：尝试\_交换机\_FROM\_DPC
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361650"
 已尝试\_交换机\_FROM\_DPC bug 检查的值为 0x000000B8。 这表示延迟的过程调用 (DPC) 例程尝试进行非法操作。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="attemptedswitchfromdpc-parameters"></a>尝试\_交换机\_FROM\_DPC 参数

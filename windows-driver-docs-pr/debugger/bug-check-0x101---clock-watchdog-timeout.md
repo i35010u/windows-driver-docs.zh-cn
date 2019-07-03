@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 395fa20dddaca311c791b6ab4194517427770368
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a223757bbef0685baf1a66f24749467ec8d0b36
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367947"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521734"
 ---
 # <a name="bug-check-0x101-clockwatchdogtimeout"></a>Bug 检查 0x101：时钟\_监视器\_超时
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367947"
 时钟\_监视器\_超时错误检查的值为 0x00000101。 这表示在分配的时间间隔内未收到预期的时钟中断辅助处理器，在多处理器系统中上。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="clockwatchdogtimeout-parameters"></a>时钟\_监视器\_超时参数

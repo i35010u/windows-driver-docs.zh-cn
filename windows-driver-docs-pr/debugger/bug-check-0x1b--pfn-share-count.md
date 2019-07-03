@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b211232ccd2f2c69b1071a8079b287fa907e77e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 384f223471e33391778b9f0a4398b8336646f112
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367613"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519739"
 ---
 # <a name="bug-check-0x1b-pfnsharecount"></a>Bug 检查 0x1B：PFN\_共享\_计数
 
@@ -28,7 +28,7 @@ PFN\_共享\_计数错误检查的值为 0x0000001B。
 Windows 操作系统不能再使用此 bug 检查代码。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  

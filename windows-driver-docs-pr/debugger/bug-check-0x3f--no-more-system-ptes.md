@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5efcfcccf46469af2dc73c43615b69d1c9d180c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b1f59518adf71538f46351cecb1dc3b85d31aaef
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361873"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519468"
 ---
 # <a name="bug-check-0x3f-nomoresystemptes"></a>Bug 检查 0x3F：否\_更多\_系统\_PTE
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361873"
 否\_更多\_系统\_PTE bug 检查的值为 0x0000003F。 这是系统的执行了过多的 I/O 操作的结果。 这会导致零碎的系统页表项 (PTE)。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="nomoresystemptes-parameters"></a>否\_更多\_系统\_PTE 参数

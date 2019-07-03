@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 11b17c362dbd443b7cf601ffb85398f3e9e40aed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 11748f2d0fffef755d1d4eea2758f423a0fa4688
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362032"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519752"
 ---
 # <a name="bug-check-0x1a5-usbdripsblockersurpriseremovallivedump"></a>Bug 检查 0x1A5：USB\_DRIPS\_BLOCKER\_SURPRISE\_REMOVAL\_LIVEDUMP
 
 USB\_DRIPS\_BLOCKER\_惊讶\_删除\_LIVEDUMP bug 检查的值为 0x000001A5。 它指示 USB 设备会删除，因为它阻止 DRIPS 惊讶。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="usbdripsblockersurpriseremovallivedump-parameters"></a>USB\_DRIPS\_BLOCKER\_惊讶\_删除\_LIVEDUMP 参数

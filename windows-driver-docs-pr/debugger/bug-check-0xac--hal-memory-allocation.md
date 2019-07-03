@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 725e9e0a84da198bc979894d70c29bfb94b89cab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 666c0ea32607dcf7ab6d4576212bb2f828ae9782
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367217"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519037"
 ---
 # <a name="bug-check-0xac-halmemoryallocation"></a>Bug 检查 0xAC：HAL\_内存\_分配
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367217"
 HAL\_内存\_分配错误检查的值为 0x000000AC。 此 bug 检查指示硬件抽象层 (HAL) 无法获取足够的内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="halmemoryallocation-parameters"></a>HAL\_内存\_分配参数

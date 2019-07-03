@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 06362901f3b9ed4217448fc41697df338eb69954
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: abedcab42ac95183cc62ac15566c2eef3565ca89
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361751"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519190"
 ---
 # <a name="bug-check-0x7b-inaccessiblebootdevice"></a>Bug 检查 0x7B：无法访问\_启动\_设备
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361751"
 无法访问\_启动\_设备错误检查的值为 0x0000007B。 此 bug 检查指示 Microsoft Windows 操作系统将无法在启动期间的对系统分区的访问。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="inaccessiblebootdevice-parameters"></a>无法访问\_启动\_设备参数

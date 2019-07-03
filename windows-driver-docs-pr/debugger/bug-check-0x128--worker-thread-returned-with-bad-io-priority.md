@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5998b03c5b981337c47b4faedf1c7285742c457b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f0d852cdef58edbe655535fef4cb0f46477b120
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362285"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520705"
 ---
 # <a name="bug-check-0x128-workerthreadreturnedwithbadiopriority"></a>Bug 检查 0x128：辅助角色\_线程\_返回\_WITH\_错误\_IO\_优先级
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362285"
 辅助角色\_线程\_返回\_WITH\_错误\_IO\_优先级 bug 检查的值为 0x00000128。 这指示工作线程 IOPriority 已错误地修改由被调用的辅助角色例程。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="workerthreadreturnedwithbadiopriority-parameters"></a>辅助角色\_线程\_返回\_WITH\_错误\_IO\_优先级参数

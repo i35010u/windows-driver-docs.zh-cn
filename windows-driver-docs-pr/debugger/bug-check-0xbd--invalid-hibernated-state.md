@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 29ab99549ee3b167e0c0b06bfae4a36382343793
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 12e2743bf42e9c928065623e17d743cf9fbea02b
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367211"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518998"
 ---
 # <a name="bug-check-0xbd-invalidhibernatedstate"></a>Bug 检查 0xBD：INVALID\_HIBERNATED\_STATE
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367211"
 无效\_HIBERNATED\_状态 bug 检查的值为 0x000000BD。 这表示休眠的内存映像与当前的硬件配置不匹配。 当系统从休眠状态恢复，并且发现硬件时系统已休眠已发生更改，将发生此错误检查。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="invalidhibernatedstate-parameters"></a>无效\_HIBERNATED\_状态参数

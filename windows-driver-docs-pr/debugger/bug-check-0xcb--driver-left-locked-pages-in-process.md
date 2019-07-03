@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc9d6b0cceefa5f6cf0797b7d71050ee53e98c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5885aa1b0269e87304ca7c534958e30ecf4dba00
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367176"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518906"
 ---
 # <a name="bug-check-0xcb-driverleftlockedpagesinprocess"></a>Bug 检查 0xCB：驱动程序\_左侧\_已锁定\_页面\_IN\_过程
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367176"
 该驱动程序\_左侧\_已锁定\_页面\_IN\_进程错误检查的值为 0x000000CB。 这表示，驱动程序或 I/O 管理器无法释放锁定的页执行 I/O 操作后。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="driverleftlockedpagesinprocess-parameters"></a>驱动程序\_左侧\_已锁定\_页面\_IN\_过程参数

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ac44c34a1fd418b86e7a851b469bc6ec23ff29
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a85a3d7d7e255034b798494971b280cc1be1a52
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361703"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519121"
 ---
 # <a name="bug-check-0x93-invalidkernelhandle"></a>Bug 检查 0x93：无效\_内核\_处理
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361703"
 无效\_内核\_句柄 bug 检查的值为 0x00000093。 此 bug 检查指示无效或受保护的句柄传递给**NtClose**。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="invalidkernelhandle-parameters"></a>无效\_内核\_句柄参数

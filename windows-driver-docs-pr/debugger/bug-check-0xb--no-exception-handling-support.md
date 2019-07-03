@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a8a0f61a8e0b556bb4d8194ecaab5b9706b3d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55908c7d49db419b5bfed4ef562e7aca2ad6b4f3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367220"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519022"
 ---
 # <a name="bug-check-0xb-noexceptionhandlingsupport"></a>Bug 检查 0xB：否\_异常\_处理\_支持
 
@@ -28,7 +28,7 @@ ms.locfileid: "67367220"
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  

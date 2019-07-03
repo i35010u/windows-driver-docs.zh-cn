@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 76257b28f2c941f830d37d389fd1ddf9d30b20ed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e82703ef72b3bbad2d029efcab3eb01d3371d28a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367847"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520524"
 ---
 # <a name="bug-check-0x12d-volsnapoverlappedtableaccess"></a>Bug 检查 0x12D：VOLSNAP\_OVERLAPPED\_表\_访问
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367847"
 VOLSNAP\_OVERLAPPED\_表\_访问错误检查的值为 0x0000012D。 这表示该 volsnap 尝试访问常见表从两个不同的线程，这可能会导致表损坏并最终损坏的表。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="volsnapoverlappedtableaccess-parameters"></a>VOLSNAP\_OVERLAPPED\_表\_访问参数

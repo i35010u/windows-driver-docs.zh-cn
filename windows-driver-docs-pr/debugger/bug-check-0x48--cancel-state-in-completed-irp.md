@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c970e2c4b9a5a24fe6be2dc08a33740371085418
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd70dba42c02a83a87836f7053299dc29d90864a
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367443"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519420"
 ---
 # <a name="bug-check-0x48-cancelstateincompletedirp"></a>Bug 检查 0x48：取消\_状态\_IN\_COMPLETED\_IRP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367443"
 取消\_状态\_IN\_COMPLETED\_IRP bug 检查的值为 0x00000048。 这表示 I/O 请求数据包 (IRP) 已完成，且然后随后被取消。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="cancelstateincompletedirp-parameters"></a>取消\_状态\_IN\_COMPLETED\_IRP 参数

@@ -2,14 +2,14 @@
 title: 语音激活
 description: Cortana，Cortana 和听写等 Windows 10 中的语音平台用于支持语音的所有 Windows 体验。
 ms.assetid: 0684EF32-AA76-418B-9027-1C067A8140E3
-ms.date: 12/21/2018
+ms.date: 07/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a0f64019f7a1a14e438624154df53d56d4b6c62
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 22a1d0ac36df21b55fddd10b42f662533ee94eb9
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364827"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518735"
 ---
 # <a name="voice-activation"></a>语音激活
 
@@ -384,7 +384,6 @@ WaveRT 微型端口根据需要实现此接口可以收到通知的 OS 从写入
 音频堆栈负责通信唤醒数据 （演讲者 ID、 关键字触发器，置信度级别） 以及通知相关客户端检测到关键字。
 
 
+## <a name="span-idwovvalidationspanspan-idwovvalidationspanspan-idwovvalidationspan-validation-on-modern-standby-systems"></a><span id="WOV_Validation"></span><span id="wov_validation"></span><span id="WOV_VALIDATION"></span> 新式的备用系统上的验证
 
-
-
-
+从系统空闲状态的 WoV 可以验证上[现代待机](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)使用的系统[待机状态唤醒语音交流电源源上的基本测试的现代](https://docs.microsoft.com/windows-hardware/test/hlk/testref/69df7cf2-6024-4eee-92ee-1506480614ee)和[待机状态唤醒语音基本测试的现代在 DC 电源](https://docs.microsoft.com/windows-hardware/test/hlk/testref/614ffb93-eced-45ab-bf7b-e09291a97fd2)中[HLK](https://docs.microsoft.com/windows-hardware/test/hlk/)。 这些测试检查系统具有硬件关键字 spotter (HW KWS)，可以输入最深的运行时空闲平台状态 (DRIPS) 以及能够从现代待机状态唤醒语音命令，且系统恢复滞后时间为小于或等于 1 秒。 

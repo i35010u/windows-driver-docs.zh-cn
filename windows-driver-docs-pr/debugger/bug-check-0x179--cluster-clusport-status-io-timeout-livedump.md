@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ee343020f1b5dfdceab4e9f22d8dc41bbf438abb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa1d96f00ba7ac61a9b63208be9a20bd3a1e04e6
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362101"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519888"
 ---
 # <a name="bug-check-0x179-clusterclusportstatusiotimeoutlivedump"></a>Bug 检查 0x179：群集\_CLUSPORT\_状态\_IO\_超时\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362101"
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 

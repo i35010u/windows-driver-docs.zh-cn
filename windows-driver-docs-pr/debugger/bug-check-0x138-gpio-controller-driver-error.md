@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bef9442e3142a7aba536dbf65e4c4d690c109cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e14b85ca504733db76930daae3c615ac9cb1a5d8
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367836"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520324"
 ---
 # <a name="bug-check-0x138-gpiocontrollerdrivererror"></a>Bug 检查 0x138：GPIO\_控制器\_驱动程序\_错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367836"
 GPIO\_控制器\_驱动程序\_错误 bug 检查的值为 0x00000138。 此 bug 检查指示 GPIO 类扩展驱动程序遇到错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="gpiocontrollerdrivererror-parameters"></a>GPIO\_控制器\_驱动程序\_错误参数

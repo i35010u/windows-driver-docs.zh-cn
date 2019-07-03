@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ecf8cc070103d06c53c73cff9376ca34dacdcc0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f0d87d85eebaf414ce7e6a4aa25afde823baf81c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367149"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518888"
 ---
 # <a name="bug-check-0xd0-drivercorruptedmmpool"></a>Bug 检查 0xD0：驱动程序\_损坏\_MMPOOL
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367149"
 该驱动程序\_损坏\_MMPOOL bug 检查的值为 0x000000D0。 这表示系统尝试访问无效内存过高的 IRQL 的进程时。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="drivercorruptedmmpool-parameters"></a>驱动程序\_损坏\_MMPOOL 参数

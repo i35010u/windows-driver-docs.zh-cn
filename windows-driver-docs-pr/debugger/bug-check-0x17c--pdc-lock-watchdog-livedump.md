@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1630401cd7c5562c7faadc25c650b67eade9fd10
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 347800b208638a960a48cd8741e5273cf231055c
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391975"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519884"
 ---
 # <a name="bug-check-17c-pdclockwatchdoglivedump"></a>Bug 检查 17 C:PDC\_锁\_监视器\_LIVEDUMP
 
 PDC\_锁\_监视器\_LIVEDUMP bug 检查的值为 0x0000017C。 这表示线程具有已持有 PDC 锁的时间太长。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  ## <a name="pdclockwatchdoglivedump-parameters"></a>PDC\_锁\_监视器\_LIVEDUMP 参数

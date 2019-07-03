@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 159f18d2ed9b6037102b6f20108d964cc7475918
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9b61fd1dd0cf756e3487c316acfad55fc892e957
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367872"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520694"
 ---
 # <a name="bug-check-0x129-workerthreadreturnedwithbadpagingiopriority"></a>Bug 检查 0x129：辅助角色\_线程\_返回\_WITH\_错误\_分页\_IO\_优先级
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367872"
 辅助角色\_线程\_返回\_WITH\_错误\_分页\_IO\_优先级 bug 检查的值为 0x00000129。 这指示工作线程分页 IOPriority 已错误地修改由被调用的辅助角色例程。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="workerthreadreturnedwithbadpagingiopriority-parameters"></a>辅助角色\_线程\_返回\_WITH\_错误\_分页\_IO\_优先级参数

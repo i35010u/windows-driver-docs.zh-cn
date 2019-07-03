@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bccaaa2df817815f7441fe63314256567b7d4c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a88b31f777242b8d44a8c28f88c271c5993f0443
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361936"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519582"
 ---
 # <a name="bug-check-0x25-npfsfilesystem"></a>Bug 检查 0x25：NPFS\_文件\_系统
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361936"
 NPFS\_文件\_检查系统错误的值为 0x00000025。 这表示 NPFS 文件系统中出现问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="npfsfilesystem-parameters"></a>NPFS\_文件\_系统参数

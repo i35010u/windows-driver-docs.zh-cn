@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a8abaaeb0e6d82416d453a04f840cab7a8918967
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d5c424768f52f97bf8f7401ebe0dc858fb5e637
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362163"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520018"
 ---
 # <a name="bug-check-0x15c-pdcwatchdogtimeoutlivedump"></a>Bug 检查 0x15C：PDC\_监视器\_超时\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362163"
 PDC\_监视器\_超时\_LIVEDUMP bug 检查的值为 0x0000015C。 这表示系统组件无法阻止从进入或退出连接的待机系统分配的时间内响应。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="pdcwatchdogtimeoutlivedump-parameters"></a>PDC\_监视器\_超时\_LIVEDUMP 参数

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a9539ae4dc7c8b7a00db21b38c793c4f5555bf1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7b210e5b3fb873a80927bace07b9cbd6862c4dc
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362371"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521698"
 ---
 # <a name="bug-check-0x100000ea-threadstuckindevicedriverm"></a>Bug 检查 0x100000EA：THREAD\_STUCK\_IN\_DEVICE\_DRIVER\_M
 
@@ -28,7 +28,7 @@ ms.locfileid: "67362371"
 Bug 检查 0x100000EA 具有相同的含义和作为参数[ **bug 检查 0xEA** ](bug-check-0xea--thread-stuck-in-device-driver.md) (线程\_STUCK\_IN\_设备\_驱动程序)。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  

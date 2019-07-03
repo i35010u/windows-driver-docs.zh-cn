@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d43c02617e9f0d3fba3d7f26aef613b5f94920c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8730780c9e57099402ecbaab58b1d5c1492d291
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362157"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519998"
 ---
 # <a name="bug-check-0x16-cidhandlecreation"></a>Bug 检查 0x16：CID\_处理\_创建
 
@@ -28,7 +28,7 @@ CID\_处理\_创建 bug 检查的值为 0x00000016。
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  

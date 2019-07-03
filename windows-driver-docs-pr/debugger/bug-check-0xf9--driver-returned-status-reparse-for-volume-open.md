@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ecd5c3465982a6715b7ce02328fb061654d72452
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f296cf6db3b21b88d272196c472822925216e6b8
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361487"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518716"
 ---
 # <a name="bug-check-0xf9-driverreturnedstatusreparseforvolumeopen"></a>Bug 检查 0xF9：驱动程序\_退回\_状态\_重新分析\_有关\_卷\_打开
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361487"
 驱动程序\_退回\_状态\_重新分析\_有关\_卷\_打开 bug 检查的值为 0x000000F9。 这指示一个驱动程序返回状态\_重新分析到 IRP\_MJ\_没有尾随名称创建请求。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="driverreturnedstatusreparseforvolumeopen-parameters"></a>驱动程序\_退回\_状态\_重新分析\_有关\_卷\_打开参数

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 23b8390a7049f7a8b8e702ca427f392735f22e33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5813b2a9b5b3a77f14730d8f5fda32b3dc82441
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367669"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519837"
 ---
 # <a name="developer-content-bug-check-0x19-badpoolheader"></a>（开发人员内容）Bug 检查 0x19:错误\_池\_标头
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367669"
 缺点\_池\_标头错误检查的值为 0x00000019。 这表示池标头已损坏。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="badpoolheader-parameters"></a>错误\_池\_标头参数

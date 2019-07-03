@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e7bda7dbcaef6921fa0957003c7b18873c4401
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e508079b7ffddb18cf38b832465d9d9aab851ed7
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367148"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518885"
 ---
 # <a name="bug-check-0xd2-bugcodeiddriver"></a>Bug 检查 0xD2：BUGCODE\_ID\_驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367148"
 BUGCODE\_ID\_驱动程序 bug 检查的值为 0x000000D2。 这表示与的 NDIS 驱动程序出现问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="bugcodeiddriver-parameters"></a>BUGCODE\_ID\_驱动程序参数

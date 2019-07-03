@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cddadfd0919b5a0885abf451e129a9aeeb88aa4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd1e964675f7ec5972c66c4ce4f8cf1aca4fd129
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367731"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519945"
 ---
 # <a name="bug-check-0x16c-invalidrundownprotectionflags"></a>Bug 检查 0x16C：INVALID\_RUNDOWN\_PROTECTION\_FLAGS
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367731"
 无效\_断开\_保护\_标志 bug 检查的值为 0x0000016C。 这表示提供给一个断开保护 Api 的标志无效。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="invalidrundownprotectionflags-parameters"></a>无效\_断开\_保护\_标志参数

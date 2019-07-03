@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 936f3140544c16a2d417d2ee21b0f333fa7d84dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5a6372ca4f4375845790bfbcfda9ab63311f1d7
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367060"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518742"
 ---
 # <a name="bug-check-0xf4-criticalobjecttermination"></a>Bug 检查 0xF4：关键\_对象\_终止
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367060"
 严重\_对象\_终止 bug 检查的值为 0x000000F4。 这表示，进程或线程至关重要的系统操作已意外退出或已终止。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="criticalobjecttermination-parameters"></a>关键\_对象\_终止参数

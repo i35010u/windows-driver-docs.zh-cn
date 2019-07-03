@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd31b79d2f895ee914eb4d016acd0559b62615a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6862462fd78c9f584d8feb7f0d6326ce31568e08
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362210"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520090"
 ---
 # <a name="bug-check-0x14c-fatalabnormalreseterror"></a>Bug 检查 0x14C：致命\_异常\_重置\_错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362210"
 严重\_异常\_重置\_错误 bug 检查的值为 0x0000014C。 这表示出现不可恢复的系统错误或系统异常已重置。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="fatalabnormalreseterror-parameters"></a>致命\_异常\_重置\_错误参数

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e434a0297d380e27116d604efd58f79d1b5ad3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fb96356b7096d0291c0da35285d7d89cddf4518
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367793"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520094"
 ---
 # <a name="bug-check-0x14b-socsubsystemfailure"></a>Bug 检查 0x14B：SOC\_子系统\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367793"
 SOC\_子系统\_故障错误检查的值为 0x0000014B。 这表示芯片 (SoC) 子系统上的系统中遇到不可恢复的错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>Bug 检查 0x14B SOC\_子系统\_失败参数

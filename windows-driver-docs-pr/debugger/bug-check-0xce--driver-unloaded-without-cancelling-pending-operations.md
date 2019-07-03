@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 258b8c3d03638b7fbe200e093223bcde615364c7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cfec3ac9064e527a3bcda5a3d659966a5bf57aeb
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361584"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518901"
 ---
 # <a name="bug-check-0xce-driverunloadedwithoutcancellingpendingoperations"></a>Bug 检查 0xCE：驱动程序\_UNLOADED\_WITHOUT\_正在取消\_PENDING\_操作
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361584"
 该驱动程序\_UNLOADED\_WITHOUT\_正在取消\_PENDING\_操作 bug 检查是否具有值为 0x000000CE。 这表示一个驱动程序无法在卸载之前取消挂起的操作。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="driverunloadedwithoutcancellingpendingoperations-parameters"></a>驱动程序\_UNLOADED\_WITHOUT\_正在取消\_PENDING\_操作参数

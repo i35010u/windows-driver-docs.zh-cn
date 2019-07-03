@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 46927af0f08f37c77a264ac0bdeec0e0bf68fd9b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c373211e83e83c92bac016c7127312ae5c0e71c2
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367949"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521480"
 ---
 # <a name="bug-check-0x108-thirdpartyfilesystemfailure"></a>Bug 检查 0x108：第三个\_参与方\_文件\_系统\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367949"
 第三个\_参与方\_文件\_系统\_故障错误检查的值为 0x00000108。 这表示第三方文件系统或文件系统筛选器中出现不可恢复的问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="thirdpartyfilesystemfailure-parameters"></a>第三个\_参与方\_文件\_系统\_失败参数

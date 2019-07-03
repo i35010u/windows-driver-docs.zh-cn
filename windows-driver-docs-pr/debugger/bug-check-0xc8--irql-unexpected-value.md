@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 72565cc92582d9bbd7329a7d16a014aae5729893
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a52a8a047cd55e36daafa2bf6046a95779773809
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361607"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518931"
 ---
 # <a name="bug-check-0xc8-irqlunexpectedvalue"></a>Bug 检查 0xC8：IRQL\_UNEXPECTED\_VALUE
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361607"
 IRQL\_意外的\_值 bug 检查的值为 0x000000C8。 这表示处理器的 IRQL 不应在此时间。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="irqlunexpectedvalue-parameters"></a>IRQL\_意外的\_值参数

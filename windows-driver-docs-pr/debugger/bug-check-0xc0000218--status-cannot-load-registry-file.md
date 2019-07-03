@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e92f03592c50e3728504a0e5b731f86279df00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 616532997cb9e2a95e7846f2d4736fb9a0ec5848
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367184"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518968"
 ---
 # <a name="bug-check-0xc0000218-statuscannotloadregistryfile"></a>Bug 检查 0xC0000218：状态\_无法\_负载\_注册表\_文件
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367184"
 状态\_无法\_负载\_注册表\_文件错误检查的值为 0xC0000218。 这表示无法加载注册表文件。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="statuscannotloadregistryfile-parameters"></a>状态\_无法\_负载\_注册表\_文件参数

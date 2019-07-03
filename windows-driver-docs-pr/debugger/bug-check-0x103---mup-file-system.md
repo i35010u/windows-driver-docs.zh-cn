@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc6a4086271bc45e92e4e604dd390d2bf8b97af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 21184e1db60bcefefcc4cdd3fee816724fe81584
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367951"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521585"
 ---
 # <a name="bug-check-0x103-mupfilesystem"></a>Bug 检查 0x103：MUP\_文件\_系统
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367951"
 MUP\_文件\_检查系统错误的值为 0x00000103。 此 bug 检查指示多个 UNC provider (MUP) 遇到了无效或意外数据。 因此，MUP 无法通道对网络重定向器，通用命名约定 (UNC) 提供程序的远程文件系统请求。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="mupfilesystem-parameters"></a>MUP\_文件\_系统参数

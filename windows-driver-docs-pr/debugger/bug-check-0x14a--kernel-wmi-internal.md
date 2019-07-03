@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f7d80b108caeb7273f42733b05cadfa7f74aed8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8eb230d02b9b46269c851883ca6c8e4f64434936
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362211"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520097"
 ---
 # <a name="bug-check-0x14a-kernelwmiinternal"></a>Bug 检查 0x14A：KERNEL\_WMI\_INTERNAL
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362211"
 内核\_WMI\_内部 bug 检查的值为 0x0000014A。 这表示内部内核 WMI 子系统遇到致命错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="kernelwmiinternal-parameters"></a>内核\_WMI\_内部参数

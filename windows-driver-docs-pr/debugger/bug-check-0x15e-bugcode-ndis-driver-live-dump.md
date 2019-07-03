@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f17c10a2034b88a4052d05867cf80c8a2b3806f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 844d65b5cc033dc6b03ba4028078461f774dbf1e
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362170"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520001"
 ---
 # <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>Bug 检查 0x15E：BUGCODE\_NDIS\_驱动程序\_LIVE\_转储
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362170"
 BUGCODE\_NDIS\_驱动程序\_LIVE\_转储错误代码的值为 0x0000015E。 此错误代码指示 NDIS 已捕获的实时内核转储。 NDIS 不在此情况下生成的 bug 检查。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_驱动程序参数

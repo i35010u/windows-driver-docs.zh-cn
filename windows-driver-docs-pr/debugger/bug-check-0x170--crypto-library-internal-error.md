@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc9ddefac7a09d384ebfe199da2e03da04a0361
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca19aa7abdebfc5fccba7424dbd6458d48d9d7d6
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362111"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519920"
 ---
 # <a name="bug-check-0x170-cryptolibraryinternalerror"></a>Bug 检查 0x170：CRYPTO\_LIBRARY\_INTERNAL\_ERROR 
 
 CRYPTO\_库\_内部\_错误 bug 检查的值为 0x00000170。 它指示发生了内部错误中的加密库。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 

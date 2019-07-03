@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8563c60b6333b26de9bc3814919cb429567785c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d42dacf787d53a3550a5d3c8767770f491246f98
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367509"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519528"
 ---
 # <a name="bug-check-0x31-phase0initializationfailed"></a>Bug 检查 0x31：阶段 0\_初始化\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367509"
 阶段 0\_初始化\_失败错误检查的值为 0x00000031。 这表示该系统初始化失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="phase0initializationfailed-parameters"></a>阶段 0\_初始化\_失败参数

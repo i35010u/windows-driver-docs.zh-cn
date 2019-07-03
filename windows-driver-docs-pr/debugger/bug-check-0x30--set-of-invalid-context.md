@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58133814f458f8d530153dda3f2065e582d8aefb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6e89759e48f404134f9bed870c0fdbe46e3223f2
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361911"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519531"
 ---
 # <a name="bug-check-0x30-setofinvalidcontext"></a>Bug 检查 0x30：设置\_OF\_无效\_上下文
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361911"
 在集中\_OF\_无效\_上下文错误检查的值为 0x00000030。 这表示在陷阱帧的堆栈指针具有无效值。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="setofinvalidcontext-parameters"></a>设置\_OF\_无效\_上下文参数

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e47093d4ea9c485fc3b3857384eb03ec470afd0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0871907f914c5869c26c516dc867909194177c0b
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361865"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519418"
 ---
 # <a name="bug-check-0x49-pagefaultwithinterruptsoff"></a>Bug 检查 0x49：页\_容错\_WITH\_中断\_OFF
 
@@ -28,7 +28,7 @@ ms.locfileid: "67361865"
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  

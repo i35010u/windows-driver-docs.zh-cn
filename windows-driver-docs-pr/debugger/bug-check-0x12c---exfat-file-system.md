@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f13dce35d487c5aebf6ccdc7a6e041cbbda04e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9125cfe867d2898903fde5928764f158148d1ad6
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362274"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520645"
 ---
 # <a name="bug-check-0x12c-exfatfilesystem"></a>Bug 检查 0x12C：EXFAT\_FILE\_SYSTEM
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362274"
 EXFAT\_文件\_检查系统错误的值为 0x0000012C。 此 bug 检查指示扩展文件分配表 (exFAT) 文件系统中出现问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="exfatfilesystem-parameters"></a>EXFAT\_文件\_系统参数

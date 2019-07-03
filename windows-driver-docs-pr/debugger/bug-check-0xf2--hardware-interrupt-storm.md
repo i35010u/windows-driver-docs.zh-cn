@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea024e561b37c5a175f609759f66e6aabc5bda80
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b0b810cecb88c29640f70ad7869e0cbf232c2a7
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367063"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518752"
 ---
 # <a name="bug-check-0xf2-hardwareinterruptstorm"></a>Bug 检查 0xF2：硬件\_中断\_STORM
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367063"
 硬件\_中断\_STORM bug 检查的值为 0x000000F2。 这表示在内核检测到中断 storm。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="hardwareinterruptstorm-parameters"></a>硬件\_中断\_STORM 参数

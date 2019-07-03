@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: deac160416738fceba842b4cd880d0e20d68233e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f8ddf984a18d9cfcf75e1e10a3628e85f7552c68
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367112"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518807"
 ---
 # <a name="bug-check-0xe6-driververifierdmaviolation"></a>Bug 检查 0xE6：驱动程序\_VERIFIER\_DMA\_冲突
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367112"
 该驱动程序\_VERIFIER\_DMA\_冲突错误检查的值为 0x000000E6。 这是所有驱动程序验证程序的 bug 检查代码**DMA 验证**冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="driververifierdmaviolation-parameters"></a>驱动程序\_VERIFIER\_DMA\_冲突参数

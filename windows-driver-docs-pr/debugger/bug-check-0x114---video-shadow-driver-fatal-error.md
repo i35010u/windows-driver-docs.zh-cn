@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a5cd7251af2aaec3257a6bcfc98a65216687312
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 682379ccdad88832e83f79ffc4bc5f2b52a38ae0
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362328"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67521099"
 ---
 # <a name="bug-check-0x114-videoshadowdriverfatalerror"></a>Bug 检查 0x114：视频\_卷影\_驱动程序\_致命错误\_错误
 
@@ -28,7 +28,7 @@ ms.locfileid: "67362328"
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
  

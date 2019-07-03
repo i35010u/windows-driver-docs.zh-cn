@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a653de117ab5069e8894ba2020e30d3010ee0f32
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4c8f36004a3022b0a9dccd9b1446d1cee9f2d0e
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367163"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518894"
 ---
 # <a name="bug-check-0xcf-terminalserverdrivermadeincorrectmemoryreference"></a>Bug 检查 0xCF：终端\_服务器\_驱动程序\_所做\_不正确\_内存\_引用
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367163"
 在终端\_服务器\_驱动程序\_所做\_不正确\_内存\_引用 bug 检查的值为 0x000000CF。 这表示一个驱动程序被错误地移植到终端服务器。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="terminalserverdrivermadeincorrectmemoryreference-parameters"></a>终端\_服务器\_驱动程序\_所做\_不正确\_内存\_引用参数

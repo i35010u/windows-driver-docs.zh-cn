@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f8d34efb8a30fedc598d0ba6a0c9a18f48ad1ec0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9ec4361b127f068b7be532282a25c182929d145
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361596"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518902"
 ---
 # <a name="bug-check-0xcc-pagefaultinfreedspecialpool"></a>Bug 检查 0xCC：页\_容错\_IN\_FREED\_特殊\_池
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361596"
 页面\_容错\_IN\_FREED\_特殊\_池 bug 检查的值为 0x000000CC。 这表明系统已引用先前释放的内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="pagefaultinfreedspecialpool-parameters"></a>页\_容错\_IN\_FREED\_特殊\_池参数

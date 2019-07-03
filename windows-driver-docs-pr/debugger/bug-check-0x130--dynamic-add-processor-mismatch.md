@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8f1e9d62b574c628c79d2a7ef7e53963d92e1b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2dbeceb2cda25f30b3b8f58c422bf13d475b4713
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367851"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520482"
 ---
 # <a name="bug-check-0x130-dynamicaddprocessormismatch"></a>Bug 检查 0x130：DYNAMIC\_ADD\_PROCESSOR\_MISMATCH
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367851"
 动态\_添加\_处理器\_不匹配错误检查的值为 0x00000130。 此检测错误指示添加到系统的新处理器使用当前配置不兼容。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="dynamicaddprocessormismatch-parameters"></a>动态\_添加\_处理器\_不匹配参数

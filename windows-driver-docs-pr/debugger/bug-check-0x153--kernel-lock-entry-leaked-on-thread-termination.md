@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cc98f51163dee3db710e17313be08539be64b147
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf418808a92609b1a6f79646b9979cf90595d466
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362197"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67520056"
 ---
 # <a name="bug-check-0x153-kernellockentryleakedonthreadtermination"></a>Bug 检查 0x153：内核\_锁\_条目\_已泄漏\_ON\_线程\_终止
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362197"
 内核\_锁\_条目\_已泄漏\_ON\_线程\_终止 bug 检查的值为 0x00000153。 这表示它已释放其所有 AutoBoost 锁定项之前，已终止线程。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="kernellockentryleakedonthreadtermination-parameters"></a>内核\_锁\_条目\_已泄漏\_ON\_线程\_终止参数

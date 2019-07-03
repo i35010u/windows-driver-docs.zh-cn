@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f62846d50ce3a5f194247601c8268450e71f56e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fa5cd04d7c83ec572a7876a9c993fb5b2a85a9f
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367109"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518817"
 ---
 # <a name="bug-check-0xe3-resourcenotowned"></a>Bug 检查 0xE3：资源\_不\_拥有的
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367109"
 资源\_不\_拥有的 bug 检查的值为 0x000000E3。 这表示一个线程尝试释放未拥有的资源。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="resourcenotowned-parameters"></a>资源\_不\_拥有的参数

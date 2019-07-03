@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bb7091276ab45feaf6716287c87c512a03ca95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b76c5ee853ebf3d443cd7c9dafcd7ee2b021c75
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361520"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518804"
 ---
 # <a name="bug-check-0xe4-workerinvalid"></a>Bug 检查 0xE4：辅助角色\_无效
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361520"
 工作线程\_无效错误检查的值为 0x000000E4。 这指示该内存，不应包含一个执行的工作项包含一个项，或当前处于活动状态的工作项已排入队列。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="workerinvalid-parameters"></a>辅助角色\_无效的参数

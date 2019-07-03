@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5866f09657b880050eaf720737c3322eba34dd98
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93a96aed1f545cfcf98d4e224ec18a0c5abba6bd
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362003"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519711"
 ---
 # <a name="bug-check-0x1c8-manuallyinitiatedpowerbuttonhold"></a>Bug 检查 0x1C8：手动\_INITIATED\_电源\_按钮\_保存
 
@@ -26,7 +26,7 @@ ms.locfileid: "67362003"
 系统已配置为当用户指定的时间长度的电源按钮时启动出现 bugcheck。  这是用来捕获转储时系统之后，将为与长时间的电源按钮保持硬重置诊断出现 bugcheck。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 请注意，而不是标准"蓝屏"显示此 bug 检查时，则有以下文本的黑色背景以及 %进度指示器显示：

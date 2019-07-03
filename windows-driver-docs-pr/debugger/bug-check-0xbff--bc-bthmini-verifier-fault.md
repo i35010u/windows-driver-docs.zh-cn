@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 57acbd51bc217150054c6cc8b013648c0ceb986d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c41bc7ecb9b1f81bbcaf3486d40e3a3804907727
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367185"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518971"
 ---
 # <a name="bug-check-0xbff-bcbthminiverifierfault"></a>Bug 检查 0xBFF：业务连续性\_BTHMINI\_VERIFIER\_容错
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367185"
 业务连续性\_BTHMINI\_VERIFIER\_故障错误检查的值为 0x00000BFF。 这指示蓝牙微型端口可扩展驱动程序验证程序已捕获了冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="bcbthminiverifierfault-parameters"></a>业务连续性\_BTHMINI\_VERIFIER\_错误参数

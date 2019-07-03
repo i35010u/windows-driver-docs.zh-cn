@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b84b28bd51eacb03e7d782a0a4b264ade0108d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6dd3cda96f7fef8a76791edab8b825adad05f2f6
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367081"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518761"
 ---
 # <a name="bug-check-0xf0-storageminiporterror"></a>Bug 检查 0xF0：存储\_微型端口\_错误
 
@@ -25,7 +25,7 @@ ms.locfileid: "67367081"
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58d4047ae3bef223726c21326d6f4bab29cd65bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05f093807c9d59dd7a34e07888160790edb09ab3
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361629"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518997"
 ---
 # <a name="bug-check-0xbc-networkbootduplicateaddress"></a>Bug 检查 0xBC：网络\_引导\_重复\_地址
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361629"
 网络\_引导\_重复\_地址错误检查的值为 0x000000BC。 这指示关闭网络启动时重复的 IP 地址已分配给此计算机。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="networkbootduplicateaddress-parameters"></a>网络\_引导\_重复\_地址参数

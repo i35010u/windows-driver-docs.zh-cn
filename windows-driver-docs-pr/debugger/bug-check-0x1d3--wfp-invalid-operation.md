@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf0381bc2a4925b6e48c7d4f59bc2e34c1fce5c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3695721b4260957408313cbf1f7460755b8a4371
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361975"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67519658"
 ---
 # <a name="bug-check-bug-check-0x1d3-wfpinvalidoperation"></a>Bug 检查 Bug 检查 0x1D3:WFP_INVALID_OPERATION 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 WFP_INVALID_OPERATION bug 检查具有 0x000001D3 值。 这指示 Windows 筛选平台标注执行无效操作。

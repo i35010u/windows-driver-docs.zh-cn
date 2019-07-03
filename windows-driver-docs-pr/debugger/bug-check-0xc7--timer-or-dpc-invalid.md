@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 38bb1e52ca075e84b628ee7a361f3faf0cd80bb0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 30b8213461342573b17f6ec308bcc13e7eefd8ff
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367179"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518928"
 ---
 # <a name="bug-check-0xc7-timerordpcinvalid"></a>Bug 检查 0xC7：计时器\_或者\_DPC\_无效
 
@@ -26,7 +26,7 @@ ms.locfileid: "67367179"
 计时器\_或者\_DPC\_无效错误检查的值为 0x000000C7。 这发出如果内核计时器或延迟的过程调用 (DPC) 在其中不允许的内存中的某处找到。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="timerordpcinvalid-parameters"></a>计时器\_或者\_DPC\_无效的参数

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bfba3cf3ec72d27b8eb38ab3e06ccb2158d0b9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 21761e4ab4de109b4186a0d6448d24f27ad004cb
+ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361609"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67518946"
 ---
 # <a name="bug-check-0xc4-driververifierdetectedviolation"></a>Bug 检查 0xC4：驱动程序\_VERIFIER\_检测到\_冲突
 
@@ -26,7 +26,7 @@ ms.locfileid: "67361609"
 该驱动程序\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000C4。 这是发现的驱动程序验证程序的致命错误常规错误检查代码。 有关详细信息，请参阅[处理 Bug 检查时驱动程序验证程序已启用](handling-a-bug-check-when-driver-verifier-is-enabled.md)。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="driververifierdetectedviolation-parameters"></a>驱动程序\_VERIFIER\_检测到\_冲突参数
