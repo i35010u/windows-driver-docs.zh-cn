@@ -4,12 +4,12 @@ description: 了解和配置 Windows 连接管理器
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 676d85427b41d04a3cea25356d41e233a354d8f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6efd957c8fa5ef67b45c50bf0547486e29808480
+ms.sourcegitcommit: 5423dca49d1038105aca2da7adddb6e358a21899
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357939"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67560202"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>了解和配置 Windows 连接管理器
 
@@ -69,7 +69,7 @@ Windows 8、 Windows 8.1 和 Windows 10 包括许多控制连接管理的策略�
 
 连接后，将始终首选以太网。 用户可以仍手动连接到任何网络。 这是以前*已启用*Windows 10，版本 1809，生成 17763.404 之前的 Windows 版本中的此策略设置的状态。 此选项是第一家 Windows 8 中提供。
 
-如果此策略设置设置为**2**，则行为是类似于当该它设置为**1**。 但是，如果移动电话网络数据连接不可用，该连接将始终保持连接的服务，需要移动电话网络连接。 当用户连接到 VLAN 或以太网连接时，没有任何 Internet 流量是通过移动电话网络连接路由。 此选项也是首次在 Windows 10，版本 1703年中提供。
+如果此策略设置设置为**2**，则行为是类似于当该它设置为**1**。 但是，如果移动电话网络数据连接不可用，该连接将始终保持连接的服务，需要移动电话网络连接。 当用户连接到 WLAN 或以太网连接时，没有任何 Internet 流量是通过移动电话网络连接路由。 此选项也是首次在 Windows 10，版本 1703年中提供。
 
 如果此策略设置设置为**3**，则行为是类似于当设置为**2**。 但是，如果没有以太网连接，Windows 不允许用户手动连接到 WLAN。 WLAN 只能连接 （自动或手动） 时没有以太网连接。
 
