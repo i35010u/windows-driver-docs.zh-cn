@@ -74,7 +74,7 @@ ms.locfileid: "67369218"
 
 当 Windows 首次连接到网络，以确定 Internet 连接时，它将执行各种网络测试。 这些测试的目标站点是 msftncsi.com，它是专门用于连接测试保留的域。
 
-若要避免误报或假负，你的网络必须允许访问 www.msftncsi.com，仅当用户具有常规 Internet 访问。 无活动的数据计划连接到网络的用户不能对 www.msftncsi.com 的访问。
+若要避免误报或假负，你的网络必须允许访问 www.msftncsi.com ，仅当用户具有常规 Internet 访问。 无活动的数据计划连接到网络的用户不能对 www.msftncsi.com 的访问。
 
 ### <a name="span-idwebaccessspanspan-idwebaccessspanweb-site-access"></a><span id="webaccess"></span><span id="WEBACCESS"></span>网站的访问
 

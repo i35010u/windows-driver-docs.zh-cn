@@ -92,7 +92,7 @@ ms.locfileid: "63351099"
 <tr class="even">
 <td><p>WIA_PRINT_HOUR_12H</p></td>
 <td><p>L"$HOUR_12H$"</p></td>
-<td><p>当前的 a.m./p.m.。 小时 (0-11)。</p></td>
+<td><p>当前的 a.m./p.m. 小时 (0-11)。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_PRINT_AM_PM</p></td>
