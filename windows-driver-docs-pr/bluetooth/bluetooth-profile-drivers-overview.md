@@ -1,21 +1,21 @@
 ---
-title: 蓝牙配置文件驱动程序概述
-description: 蓝牙配置文件驱动程序概述
+title: 蓝牙配置文件驱动程序简介
+description: 蓝牙配置文件驱动程序简介
 ms.assetid: 86806113-28b6-470c-883c-506ac1205f85
 keywords:
 - 蓝牙 WDK，有关蓝牙
 - 远程连接 WDK 蓝牙
 - 连接 WDK 蓝牙
-ms.date: 04/20/2017
+ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 811734c706f25cedaddd03e929ad398456a83cc6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d52734dcd9977df5fe165252b220a3d42ebffed9
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328261"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608468"
 ---
-# <a name="bluetooth-profile-drivers-overview"></a>蓝牙配置文件驱动程序概述
+# <a name="introduction-to-bluetooth-profile-drivers"></a>蓝牙配置文件驱动程序简介
 
 
 本部分介绍 Microsoft 提供的用于无线蓝牙协议的支持。 蓝牙是可实现各种设备，包括计算机、 手机、 手持设备、 鼠标设备、 键盘和打印机的无线连接的行业标准协议。 本部分还提供有关如何开发蓝牙已启用蓝牙的设备配置文件的驱动程序的指导原则。 蓝牙协议的详细信息位于[蓝牙](https://go.microsoft.com/fwlink/p/?linkid=26268)网站。

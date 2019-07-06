@@ -1,24 +1,24 @@
 ---
-title: APN 元素
-description: APN 元素
+title: APN 元素概述
+description: APN 元素概述
 ms.assetid: 551e713e-7ac9-477f-966e-214b63f94507
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f398fa42009d373677c1d56590acc3625113687e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa0c7feda5dfd923c2d80ccefe84b3cff36ce9fd
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351337"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608519"
 ---
-# <a name="apn-elements"></a>APN 元素
+# <a name="apn-elements-overview"></a>APN 元素概述
 
 
 本部分介绍了定义的 XML 元素[APN XML 架构](apn-xml-schema.md)。 下面是这些元素的 XML 架构中定义的顺序的列表。
 
 -   [OperatorList](operatorlist.md)
 
-    -   [Operator](operator.md)
+    -   [“运算符”](operator.md)
 
         -   [HardwareIdList](hardwareidlist-apnxml.md)
 

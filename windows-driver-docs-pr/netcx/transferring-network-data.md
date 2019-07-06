@@ -1,20 +1,20 @@
 ---
-title: 传输网络数据
-description: 传输网络数据
+title: 简介 NetAdapterCx 数据路径
+description: 简介 NetAdapterCx 数据路径
 ms.assetid: D2AC8269-F2D5-4FDC-A59E-6A35DBB18FF0
 keywords:
 - 传输网络数据、 网络数据传输的 NetCx NetAdapterCx
-ms.date: 06/05/2017
+ms.date: 07/01/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1dab2b55fa2da0917c440d1c3a073b2c88793f9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b78bafb63c16758a9efdc3f109520363d0eebe32
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369907"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608473"
 ---
-# <a name="transferring-network-data"></a>传输网络数据
+# <a name="introduction-to-the-netadaptercx-data-path"></a>简介 NetAdapterCx 数据路径
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
@@ -26,5 +26,5 @@ ms.locfileid: "63369907"
 
 - [数据包描述符和扩展](packet-descriptors-and-extensions.md)
 - [传输和接收队列](transmit-and-receive-queues.md)
-- [Net 环和 net 环迭代器](net-rings-and-net-ring-iterators.md)
+- [网环和网环迭代器](net-rings-and-net-ring-iterators.md)
 - [网络数据缓冲区管理](network-data-buffer-management.md)

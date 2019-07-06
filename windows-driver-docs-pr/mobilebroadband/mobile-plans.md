@@ -1,22 +1,22 @@
 ---
-title: 移动套餐
-description: 移动套餐
+title: 移动计划概述
+description: 移动计划概述
 ms.assetid: AA432EAE-A89B-4C4C-9539-BC2763091055
 keywords:
 - Windows Mobile 计划移动运营商
 ms.author: windowsdriverdev
-ms.date: 03/25/2019
+ms.date: 07/05/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 7b8ba7e497ee9ede100e110fbfe0b76a299c4093
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f67b41b18cbd12b7583261fc4307f2dbeffeb257
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355969"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608504"
 ---
-# <a name="mobile-plans"></a>移动套餐
+# <a name="mobile-plans-overview"></a>移动计划概述
 
 ## <a name="introduction"></a>简介
 

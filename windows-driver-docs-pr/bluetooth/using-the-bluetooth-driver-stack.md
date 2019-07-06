@@ -1,6 +1,6 @@
 ---
-title: 使用蓝牙驱动程序堆栈
-description: 使用蓝牙驱动程序堆栈
+title: 如何使用蓝牙驱动程序堆栈
+description: 如何使用蓝牙驱动程序堆栈
 ms.assetid: c8a68c30-4cd6-4ee2-a653-7e0c1a28f4cf
 keywords:
 - 蓝牙 WDK，驱动程序堆栈
@@ -20,16 +20,16 @@ keywords:
 - Ioctl WDK 蓝牙
 - 远程连接 WDK 蓝牙
 - 连接 WDK 蓝牙
-ms.date: 04/20/2017
+ms.date: 07/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af7365ef4d46da5dd6313a98efecbed179441988
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 014f124e75494acaf58f53a87ee7f20608545632
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364603"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608454"
 ---
-# <a name="using-the-bluetooth-driver-stack"></a>使用蓝牙驱动程序堆栈
+# <a name="how-to-use-the-bluetooth-driver-stack"></a>如何使用蓝牙驱动程序堆栈
 
 
 Windows 将加载并初始化蓝牙驱动程序堆栈后，驱动程序堆栈可发现活动已配对的蓝牙设备。 然后，驱动程序堆栈生成所有配对的设备的设备的标识符 （设备 Id）。 接下来，驱动程序堆栈使用标准和插即用 (PnP) 机制来加载每个设备的相应的配置文件驱动程序。 要加载的配置文件驱动程序已选择基于 INF 文件，用于安装配置文件驱动程序和设备标识符，如生成的蓝牙驱动程序堆栈和中所述[安装蓝牙设备](installing-a-bluetooth-device.md)。

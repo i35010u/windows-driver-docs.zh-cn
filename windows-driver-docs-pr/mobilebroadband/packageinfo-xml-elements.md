@@ -1,17 +1,17 @@
 ---
-title: PackageInfo XML 元素
-description: PackageInfo XML 元素
+title: PackageInfo XML 元素列表
+description: PackageInfo XML 元素列表
 ms.assetid: eb08c164-d901-4806-a9f1-f538f3ff00e3
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 49beaa3ede9e6b1ba3e462f1bd2e0e8e7b4d944b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ee07d53025cd96accfe5c1ddaa7d9d627eff0119
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562676"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608537"
 ---
-# <a name="packageinfo-xml-elements"></a>PackageInfo XML 元素
+# <a name="packageinfo-xml-elements-list"></a>PackageInfo XML 元素列表
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

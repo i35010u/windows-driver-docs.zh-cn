@@ -1,17 +1,17 @@
 ---
-title: 移动宽带 Windows 运行时 API 的列表
-description: 移动宽带 Windows 运行时 API 的列表
+title: 移动宽带 Windows 运行时 Api 概述
+description: 移动宽带 Windows 运行时 Api 概述
 ms.assetid: 45ec97c4-1a58-48a8-ad50-1cd8fcc4763f
-ms.date: 04/20/2017
+ms.date: 07/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 012b3c123212d25212154fa7dc338f06f7281273
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60b08de5f4f34871de5eda659fdafb6c54d4a4fa
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364975"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608544"
 ---
-# <a name="list-of-mobile-broadband-windows-runtime-apis"></a>移动宽带 Windows 运行时 API 的列表
+# <a name="overview-of-mobile-broadband-windows-runtime-apis"></a>移动宽带 Windows 运行时 Api 概述
 
 
 下表列出了用于创作移动宽带应用的 Api。

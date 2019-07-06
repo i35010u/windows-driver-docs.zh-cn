@@ -1,17 +1,17 @@
 ---
-title: 通信通道
-description: 通信通道
+title: 个人热点通信通道
+description: 个人热点通信通道
 ms.assetid: e26e22a2-4cc2-46a2-9d6c-02ab5df35041
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9311b6c7ad9710f31b62b2e9fed2792dda6cf3f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0b1a03effd7924eb1cc5eb1fadf66dd8cf8f37f
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344321"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608536"
 ---
-# <a name="communication-channels"></a>通信通道
+# <a name="peronal-hotspot-communication-channels"></a>个人热点通信通道
 
 
 移动宽带接口不直接连接到计算机，因为我们必须在下图中所示通过使用个人热点设备中，交换运算符中的信息：

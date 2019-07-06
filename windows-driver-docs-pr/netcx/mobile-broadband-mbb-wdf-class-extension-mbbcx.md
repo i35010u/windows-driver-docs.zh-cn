@@ -1,19 +1,19 @@
 ---
-title: 移动宽带 (MBB) WDF 类扩展 (MBBCx)
+title: 移动宽带 (MBB) WDF 类扩展 (MBBCx) 简介
 description: 移动宽带 (MBB) WDF 类扩展 (MBBCx) 的概述。
 ms.assetid: FA4D1C2D-270B-40C4-A922-8ABDDE4D8444
 keywords:
 - 移动宽带 (MBB) WDF 类扩展，MBBCx，移动宽带 NetAdapterCx
-ms.date: 03/19/2018
+ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 851489e28a5a2928260c6d73958583c71be2cfde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea4a8ca46e3d004cc7b07acc707163357fa4b240
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384544"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608542"
 ---
-# <a name="mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>移动宽带 (MBB) WDF 类扩展 (MBBCx)
+# <a name="introduction-to-the-mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>移动宽带 (MBB) WDF 类扩展 (MBBCx) 简介
 
 [!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 

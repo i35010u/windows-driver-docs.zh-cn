@@ -1,17 +1,17 @@
 ---
-title: ServiceInfo XML 元素
-description: ServiceInfo XML 元素
+title: ServiceInfo XML 元素列表
+description: ServiceInfo XML 元素列表
 ms.assetid: 807a2741-a515-468f-9188-0cc4e43b4485
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d57d9f86381e92c9f5830f3b15a3aab58d2ebab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6790dd2f7e70b5961819dbc7973bae4a3d5a42b5
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543575"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608496"
 ---
-# <a name="serviceinfo-xml-elements"></a>ServiceInfo XML 元素
+# <a name="serviceinfo-xml-elements-list"></a>ServiceInfo XML 元素列表
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

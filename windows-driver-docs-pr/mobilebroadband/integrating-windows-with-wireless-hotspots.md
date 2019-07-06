@@ -1,17 +1,17 @@
 ---
-title: 将 Windows 与无线热点集成
-description: 将 Windows 与无线热点集成
+title: 将 Windows 与无线热点集成简介
+description: 将 Windows 与无线热点集成简介
 ms.assetid: 948660a2-7ecf-4860-9092-1cfb332cfd04
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 43ecb4fc711d7d5f519b68244a25015c1f6c2fc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91a4315bbd856c82929133e14339f3eb0863f5ef
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387170"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608508"
 ---
-# <a name="integrating-windows-with-wireless-hotspots"></a>将 Windows 与无线热点集成
+# <a name="introduction-to-integrating-windows-with-wireless-hotspots"></a>将 Windows 与无线热点集成简介
 
 
 在机场、 咖啡厅和酒店等公共区域中已扩展的 Wi-fi 热点。 此类网络的运营商通常提供 Internet 访问权限，作为其由地点所有者投资的客户端的免费服务或付费产品/服务。

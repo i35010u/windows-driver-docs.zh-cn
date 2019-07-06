@@ -1,17 +1,17 @@
 ---
-title: 启用移动运营商通知和系统事件
-description: 启用移动运营商通知和系统事件
+title: 启用移动运营商通知和系统事件的简介
+description: 启用移动运营商通知和系统事件的简介
 ms.assetid: 988bafcc-ad8e-446d-9336-85c19cf05577
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e16f59242649b95b7eb19ca129babf43569b7bd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feb3916fd3eec644c5cde10ae94c67df42141d54
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380224"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608540"
 ---
-# <a name="enabling-mobile-operator-notifications-and-system-events"></a>启用移动运营商通知和系统事件
+# <a name="introduction-to-enabling-mobile-operator-notifications-and-system-events"></a>启用移动运营商通知和系统事件的简介
 
 
 本主题提供有关移动操作员通知系统事件的信息。 它提供了指导原则，以便用于开发 UWP 移动宽带应用程序用于处理传入短信或基于 USSD 的移动运营商通知和相关移动宽带系统事件。

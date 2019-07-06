@@ -1,17 +1,17 @@
 ---
-title: PackageInfo XML 架构
-description: PackageInfo XML 架构
+title: PackageInfo XML 架构概述
+description: PackageInfo XML 架构概述
 ms.assetid: 5873604e-564e-4c8e-bfc7-526aac5767fa
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 51a25d4050c8deb49359e75c0dc9f986dd1e6095
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 89eb8164b90efef3945aed24f5d4108b67749ff3
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576209"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608451"
 ---
-# <a name="packageinfo-xml-schema"></a>PackageInfo XML 架构
+# <a name="packageinfo-xml-schema-overview"></a>PackageInfo XML 架构概述
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

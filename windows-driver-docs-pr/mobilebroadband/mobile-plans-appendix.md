@@ -1,19 +1,19 @@
 ---
-title: 移动计划附录
+title: 移动计划常规附录
 description: 本主题介绍附录移动计划程序的信息。
 ms.assetid: B3B478DB-78F4-4031-B041-DCBAACC15D6F
 keywords:
 - Windows Mobile 计划附录，移动计划附录移动运算符
-ms.date: 03/25/2019
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0451a6ad8243ed59e7209edfcdf09d8c5d042471
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a1af5c5101a1493efedce5339a32495e632aa50
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357833"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608549"
 ---
-# <a name="mobile-plans-appendix"></a>移动计划附录
+# <a name="mobile-plans-general-appendix"></a>移动计划常规附录
 
 ## <a name="web-portal-flow-and-reference-design"></a>Web 门户的流和引用设计
 
@@ -106,7 +106,7 @@ ms.locfileid: "63357833"
 
 下表提供了高级概述*移动计划*项目集成计划。
 
-| 阶段 | 活动 | 所有者 | 估计时间 |
+| 阶段 | activities | 所有者 | 估计时间 |
 | --- | --- | --- | --- |
 | 实现 | esim 卡配置文件可在 Windows 设备上安装。 使用 SMDP + 用于暂存环境与生产环境进行测试。 | MO |  |
 |                | 提供载入清单文档，包括过渡环境服务配置 | MO |  |

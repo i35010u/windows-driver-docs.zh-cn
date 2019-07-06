@@ -1,20 +1,20 @@
 ---
-title: 网环和网环迭代器
+title: Net 环和 net 环迭代器简介
 description: 本主题介绍 net 环和 net 环迭代器。
 ms.assetid: 8A56AA21-264C-4C1A-887E-92C9071E8AB8
 keywords:
-- NetAdapterCx Net 环和 net 环迭代器、 NetCx Net 环和 net 环迭代器，NetAdapterCx PCI 设备 net 环 NetAdapterCx 异步 I/O
-ms.date: 03/21/2019
+- Net 环和 net 环迭代器，NetCx 简介 net 环和 net 环迭代器，NetAdapterCx PCI 设备 net 环，NetAdapterCx 异步 I/O NetAdapterCx 简介
+ms.date: 07/01/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 09a8b659455e676e46b1c8ca3d5f3daa36b534ca
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: e67eaf4d6e21b4ad7e291e8a627b25f696fd1035
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148531"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608513"
 ---
-# <a name="net-rings-and-net-ring-iterators"></a>网环和网环迭代器
+# <a name="introduction-to-net-rings-and-net-ring-iterators"></a>Net 环和 net 环迭代器简介
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

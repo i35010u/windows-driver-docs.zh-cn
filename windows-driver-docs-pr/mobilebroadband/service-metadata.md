@@ -1,17 +1,17 @@
 ---
-title: 服务元数据
-description: 服务元数据
+title: 服务元数据概述
+description: 服务元数据概述
 ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 830702aef8be738d8adc1a050a26dbbaefd1f27b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40b3982d992a1ddc03fbbcfecb696656b77b9ec6
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369210"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608506"
 ---
-# <a name="service-metadata"></a>服务元数据
+# <a name="service-metadata-overview"></a>服务元数据概述
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

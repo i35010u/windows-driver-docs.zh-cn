@@ -1,17 +1,17 @@
 ---
-title: WindowsInfo XML 元素
-description: WindowsInfo XML 元素
+title: WindowsInfo XML 元素列表
+description: WindowsInfo XML 元素列表
 ms.assetid: 045f149a-4bd5-4f33-a18f-39953f2e5e19
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 25a28803fe6b8066d0675e039ed9aded96ace0e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c45b196782747c7ff44fe1a2dbba67bf993f7671
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520786"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608548"
 ---
-# <a name="windowsinfo-xml-elements"></a>WindowsInfo XML 元素
+# <a name="windowsinfo-xml-elements-list"></a>WindowsInfo XML 元素列表
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

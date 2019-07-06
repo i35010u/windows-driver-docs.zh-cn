@@ -1,17 +1,17 @@
 ---
-title: COSA/APN 数据库
-description: COSA/APN 数据库
+title: COSA/APN 数据库简介
+description: COSA/APN 数据库简介
 ms.assetid: 0E3DA610-090D-4D1E-B67E-A4747252E8BE
-ms.date: 06/23/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: daefc0dc81c7a5bace87cf02704b62925890a301
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa180797e13e7b649ba33d1a4363474bb2437322
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383796"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608532"
 ---
-# <a name="cosaapn-database"></a>COSA/APN 数据库
+# <a name="introduction-to-cosaapn-database"></a>COSA/APN 数据库简介
 
 本部分包含有关 COSA 和 apndatabase.xml （APN 数据库） 的信息。 COSA 是使用 Windows 10，版本 1703年及更高版本，而对于 Windows 8，Windows 8.1 使用 APN 数据库和版本的 Windows 10，版本 1703年之前的 Windows 10 中的较新格式。
 

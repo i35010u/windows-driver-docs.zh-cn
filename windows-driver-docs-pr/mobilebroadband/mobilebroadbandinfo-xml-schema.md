@@ -1,17 +1,17 @@
 ---
-title: MobileBroadbandInfo XML 架构
-description: MobileBroadbandInfo XML 架构
+title: MobileBroadbandInfo XML 架构概述
+description: MobileBroadbandInfo XML 架构概述
 ms.assetid: fdbc340c-8fed-4a25-96c4-ec185af04de9
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 05cf5758726e1a38c36397f9e342f451e244ff45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6a74746169056b5709253d25b17e394fd10d83b3
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567865"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608500"
 ---
-# <a name="mobilebroadbandinfo-xml-schema"></a>MobileBroadbandInfo XML 架构
+# <a name="mobilebroadbandinfo-xml-schema-overview"></a>MobileBroadbandInfo XML 架构概述
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

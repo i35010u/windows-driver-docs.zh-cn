@@ -1,17 +1,17 @@
 ---
-title: SoftwareInfo XML 元素
-description: SoftwareInfo XML 元素
+title: SoftwareInfo XML 元素列表
+description: SoftwareInfo XML 元素列表
 ms.assetid: a8e8401d-456a-4c0a-976c-3802061a2bf6
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d529b1851c29550844f576695c62db64524de46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddbb8578c0eaa41e28e9f082e131779c00b02a97
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323677"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608440"
 ---
-# <a name="softwareinfo-xml-elements"></a>SoftwareInfo XML 元素
+# <a name="softwareinfo-xml-elements-list"></a>SoftwareInfo XML 元素列表
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
@@ -21,7 +21,7 @@ ms.locfileid: "63323677"
 
     -   [DeviceCompanionApplications](devicecompanionapplications.md)
 
-        -   [包](package.md)
+        -   [Package](package.md)
 
             -   [标识](identity.md)
 
@@ -35,7 +35,7 @@ ms.locfileid: "63323677"
 
     -   [PrivilegedApplications](privilegedapplications.md)
 
-        -   [包](package-privapps.md)
+        -   [Package](package-privapps.md)
 
             -   [标识](identity-privapps.md)
 

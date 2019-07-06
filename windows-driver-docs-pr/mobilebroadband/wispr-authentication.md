@@ -1,17 +1,17 @@
 ---
-title: WISPr 身份验证
-description: WISPr 身份验证
+title: WISPr 身份验证概述
+description: WISPr 身份验证概述
 ms.assetid: 49782d7f-c2f9-408d-971c-1af4d93d4d8d
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfb2f603b0691beb2d80c7f0468832f432d78fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c88a20513570bbe0b87407bd43961785ca70fc45
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323659"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608546"
 ---
-# <a name="wispr-authentication"></a>WISPr 身份验证
+# <a name="wispr-authentication-overview"></a>WISPr 身份验证概述
 
 
 漫游 (WISPr) 无线 Internet 服务提供商的支持热点包括在其类似于以下的强制网络门户页面中的有效负载：

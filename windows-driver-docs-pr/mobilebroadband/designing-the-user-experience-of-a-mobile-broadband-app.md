@@ -1,17 +1,17 @@
 ---
-title: 设计移动宽带应用的用户体验
-description: 设计移动宽带应用的用户体验
+title: 设计用户体验的移动宽带应用程序的简介
+description: 设计用户体验的移动宽带应用程序的简介
 ms.assetid: c84e2814-69ba-4cd0-ba11-1b035ccdfbde
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e2494c1684b42ef518e366ce29c388cc6fdf14
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a973fa7edaf12911bb6348300b1c0993917a4539
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381529"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608534"
 ---
-# <a name="designing-the-user-experience-of-a-mobile-broadband-app"></a>设计移动宽带应用的用户体验
+# <a name="introduction-to-designing-the-user-experience-of-a-mobile-broadband-app"></a>设计用户体验的移动宽带应用程序的简介
 
 
 本主题提供有关如何设计适用于 Windows 10 UWP 移动宽带应用程序的信息。 它提供了用户体验设计指南来设计适用于用户管理其移动宽带帐户和服务应用程序。 它假定你熟悉移动宽带技术、 Windows 移动宽带网络和 Microsoft Store 应用程序平台。

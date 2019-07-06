@@ -1,17 +1,17 @@
 ---
-title: SoftwareInfo XML 架构
-description: SoftwareInfo XML 架构
+title: SoftwareInfo XML 架构概述
+description: SoftwareInfo XML 架构概述
 ms.assetid: 6e2e2b5a-c04e-4dfd-adbd-158b391aea3e
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5d354a4aad5b415dc692a92294e960bc9f853f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfcc8f5eae8d0e4ff96d5bc2bc842391e360673c
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323671"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608512"
 ---
-# <a name="softwareinfo-xml-schema"></a>SoftwareInfo XML 架构
+# <a name="softwareinfo-xml-schema-overview"></a>SoftwareInfo XML 架构概述
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

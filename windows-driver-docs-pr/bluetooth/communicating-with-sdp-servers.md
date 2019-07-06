@@ -1,6 +1,6 @@
 ---
-title: 与 SDP 服务器进行通信
-description: 与 SDP 服务器进行通信
+title: SDP 服务器概述与通信
+description: SDP 服务器概述与通信
 ms.assetid: 833f2eea-d7e6-4f19-979e-3bb4db47fa43
 keywords:
 - 蓝牙 WDK，SDP 服务器通信
@@ -14,14 +14,14 @@ keywords:
 - 播发 WDK 蓝牙的服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f6cb1e2dc116b8d06e565e28b0646e24e0b560
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40c08eb94e5f354f13533b875a2f3f5bf9326d56
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364643"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608469"
 ---
-# <a name="communicating-with-sdp-servers"></a>与 SDP 服务器进行通信
+# <a name="communicating-with-sdp-servers-overview"></a>SDP 服务器概述与通信
 
 
 蓝牙驱动程序堆栈支持服务发现协议 (SDP)。 此协议允许配置文件驱动程序搜索或浏览提供的范围内的本地无线电收发器的蓝牙设备的服务。 SDP 作为其传输协议使用的逻辑链接控件和自适应协议 (L2CAP)，并遵循客户端-服务器模型。

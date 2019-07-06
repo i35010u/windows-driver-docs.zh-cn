@@ -1,17 +1,17 @@
 ---
-title: MobileBroadbandInfo XML 元素
-description: MobileBroadbandInfo XML 元素
+title: MobileBroadbandInfo XML 元素列表
+description: MobileBroadbandInfo XML 元素列表
 ms.assetid: 399a0d58-5464-49b2-a6da-8c645016cc1e
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dbbf138d4d912ec94ad8bc5f619e881ba7e668
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 14868e615da77dba7ceffc8945811b10ef7132a5
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541390"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608502"
 ---
-# <a name="mobilebroadbandinfo-xml-elements"></a>MobileBroadbandInfo XML 元素
+# <a name="mobilebroadbandinfo-xml-elements-list"></a>MobileBroadbandInfo XML 元素列表
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

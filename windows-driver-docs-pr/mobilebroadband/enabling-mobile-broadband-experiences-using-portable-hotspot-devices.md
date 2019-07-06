@@ -1,17 +1,17 @@
 ---
-title: 启用 MB 体验使用便携式热点设备
-description: 使用便携式热点设备启用移动宽带 (MB) 体验
+title: 介绍启用 MB 体验使用便携式热点设备
+description: 介绍如何启用移动宽带 (MB) 体验使用便携式热点设备
 ms.assetid: bfd53d0d-d9cb-4b6a-bbad-549139c5a1ae
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ef429b8c0075126d8e3d6759f75442e50534bbf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1803478b675a12c8641d6f168be4a009081af80
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380384"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608464"
 ---
-# <a name="enabling-mobile-broadband-mb-experiences-using-portable-hotspot-devices"></a>使用便携式热点设备启用移动宽带 (MB) 体验
+# <a name="introduction-to-enabling-mobile-broadband-mb-experiences-using-portable-hotspot-devices"></a>介绍如何启用移动宽带 (MB) 体验使用便携式热点设备
 
 在本部分中的主题提供 Windows 8、 Windows 8.1 和 Windows 10 可移植的 Wi-fi 热点相关信息。 它提供面向设备制造商提供的体验的 Wi-fi 热点所支持的移动宽带 （包括移动电话），类似于 Windows 本机移动宽带连接提供的体验的指南。
 

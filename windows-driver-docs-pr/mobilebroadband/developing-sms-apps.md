@@ -1,17 +1,17 @@
 ---
-title: 开发短信应用
-description: 开发短信应用
+title: 开发 SMS 应用程序的简介
+description: 开发 SMS 应用程序的简介
 ms.assetid: 052eb3cc-4a39-4667-8678-b18650f3b5c9
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dd269574dfc7fdf6e8f19d0fd0b3a033c9fcb3b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 56d28fce90ee9b456f2e3ca6a90b013af6aae63b
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381473"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608530"
 ---
-# <a name="developing-sms-apps"></a>开发短信应用
+# <a name="introduction-to-developing-sms-apps"></a>开发 SMS 应用程序的简介
 
 
 Windows 8、 Windows 8.1 和 Windows 10 UWP 应用到为移动网络运营商，移动宽带卡 Ihv、 Oem 和其合作的软件供应商的应用程序短信访问提供短消息服务 (SMS) 文本消息传递平台。

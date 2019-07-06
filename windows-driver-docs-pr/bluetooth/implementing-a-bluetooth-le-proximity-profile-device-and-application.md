@@ -1,17 +1,17 @@
 ---
-title: 蓝牙 LE 邻近配置文件设备和应用
+title: 蓝牙 LE 邻近配置文件概述
 description: 邻近检测是一个常见用途的蓝牙低能耗 (LE)。
 ms.assetid: 4BF27CBE-C89A-48DC-8536-1A5111CDB0C4
-ms.date: 04/20/2017
+ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 888c6afe2d510db4141a923a989e8678db75ceab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 355aaf293adae94bdbb2e0850c34a5857307261c
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328216"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608472"
 ---
-# <a name="bluetooth-le-proximity-profile-devices-and-apps"></a>蓝牙 LE 邻近配置文件设备和应用
+# <a name="bluetooth-le-proximity-profile-overview"></a>蓝牙 LE 邻近配置文件概述
 
 
 邻近检测是一个常见用途的蓝牙低能耗 (LE)。 Windows 8.1 扩展了 Windows 8 中引入的蓝牙 LE 支持。 本部分提供了准则来创建可用于开发与 Windows 8.1 兼容的 UWP 设备应用程序的邻近性配置文件的设备实现。

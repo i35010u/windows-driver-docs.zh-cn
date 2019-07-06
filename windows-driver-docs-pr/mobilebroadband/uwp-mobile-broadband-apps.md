@@ -1,17 +1,17 @@
 ---
-title: UWP 移动宽带应用
-description: UWP 移动宽带应用
+title: UWP 移动宽带应用程序概述
+description: UWP 移动宽带应用程序概述
 ms.assetid: bb02397b-0da5-4e09-be1c-8812abec6fd5
-ms.date: 04/20/2017
+ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f027fb0345820982bb5ec4c4cb9b55f9c6f4b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eeee111f72524da72685883471b124dcb79664b9
+ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353777"
+ms.lasthandoff: 07/06/2019
+ms.locfileid: "67608552"
 ---
-# <a name="uwp-mobile-broadband-apps"></a>UWP 移动宽带应用
+# <a name="uwp-mobile-broadband-apps-overview"></a>UWP 移动宽带应用程序概述
 
 本主题中提供了以下各节：
 
