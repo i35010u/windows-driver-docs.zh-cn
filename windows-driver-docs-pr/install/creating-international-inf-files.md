@@ -25,13 +25,13 @@ ms.locfileid: "63346201"
 
 创建适用于国际市场的安装要求提供特定于区域设置的 INF 文件以及可能的区域设置特定于驱动程序文件。
 
-将国际市场中使用的 INF 文件应使用**%** <em>strkey</em> **%** 用户可查看的所有文本的令牌。 INF 中定义的字符串**字符串**部分中，这通常是 INF 文件末尾。
+将国际市场中使用的 INF 文件应使用 **%** <em>strkey</em> **%** 用户可查看的所有文本的令牌。 INF 中定义的字符串**字符串**部分中，这通常是 INF 文件末尾。
 
 ### <a name="locale-specific-inf-files"></a>特定于区域设置的 INF 文件
 
 可以创建一个 INF 文件支持多个区域设置中，也可以创建一个单独的 INF 文件为每个区域设置，根据下列准则：
 
-- 若要创建一个国际 INF 文件，应包括特定于区域设置的一组**字符串。**<em>LanguageID</em>节中的参考页所述[ **INF 字符串部分**](inf-strings-section.md)。 如果你想要提供所有的国际市场的单独的安装媒体，请使用此方法。
+- 若要创建一个国际 INF 文件，应包括特定于区域设置的一组**字符串。** <em>LanguageID</em>节中的参考页所述[ **INF 字符串部分**](inf-strings-section.md)。 如果你想要提供所有的国际市场的单独的安装媒体，请使用此方法。
 
   对于 Windows 2000 和更高版本的 Windows 上的安装，这是支持国际市场的建议的方法。
 
@@ -61,7 +61,7 @@ ms.locfileid: "63346201"
 
 如将特定于区域设置的文件放入单独的、 特定于区域设置子目录分发介质的 /*英语*和 /*德语*。 在 INF 文件中，执行以下步骤：
 
--   内[ **INF SourceDisksFiles 部分**](inf-sourcedisksfiles-section.md)，如使用的字符串标记来指定特定于区域设置子目录 **%localesubdir%**。
+-   内[ **INF SourceDisksFiles 部分**](inf-sourcedisksfiles-section.md)，如使用的字符串标记来指定特定于区域设置子目录 **%localesubdir%** 。
 
 -   提供单独[ **INF 字符串部分**](inf-strings-section.md)为每种语言，并在每个部分中定义的相应子目录名称字符串。
 

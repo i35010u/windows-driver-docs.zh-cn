@@ -46,16 +46,16 @@ diskid = disk-description[,[tag-or-cab-file],[unused],[path],[flags][,tag-file]]
 指定以十进制格式，用于标识源磁盘的非负整数。 此值不能要求超过 4 个字节的存储。 如果有多个源磁盘对于分发中，每个*diskid*在本部分中的条目必须具有唯一的值，如**1**， **2**， **3**，依次类推。
 
 <a href="" id="disk-description"></a>*disk-description*  
-指定 %*strkey*%令牌或 **"**<em>带引号的字符串</em>**"** 描述的内容和/或由标识磁盘的用途*diskid*。 安装程序可以显示此字符串的值向最终用户在安装期间，例如，若要确定源磁盘，在安装过程的某个特定阶段要插入到驱动器。
+指定 %*strkey*%令牌或 **"** <em>带引号的字符串</em> **"** 描述的内容和/或由标识磁盘的用途*diskid*。 安装程序可以显示此字符串的值向最终用户在安装期间，例如，若要确定源磁盘，在安装过程的某个特定阶段要插入到驱动器。
 
-每个 %*strkey*必须在 INF 中定义在本部分中的 %规范**字符串**部分。 任何*磁盘描述*，它是不是 %*strkey*%令牌是必须由两个双引号字符分隔的用户可见字符串 (**"**) 如果它具有任何前导或尾随空格。
+每个 %*strkey*必须在 INF 中定义在本部分中的 %规范**字符串**部分。 任何*磁盘描述*，它是不是 %*strkey*%令牌是必须由两个双引号字符分隔的用户可见字符串 ( **"** ) 如果它具有任何前导或尾随空格。
 
 <a href="" id="tag-or-cab-file"></a>*tag-or-cab-file*  
 此可选值指定的名称*标记文件*或*cabinet (.cab) 文件*分发在磁盘上，在提供*安装根目录*或子目录中通过指定*路径*(如果有）。 该值应指定的文件名和扩展名，没有任何目录或子目录。
 
 Windows 使用的标记文件来验证用户插入正确的安装磁盘。 标记文件所需的可移动媒体，而对于固定媒体是可选的。
 
-如果 Windows 找不到安装文件的安装介质上的名称，并且*标记或 cab 文件*具有扩展名 **。**<em>cab</em>，Windows 将它作为包含安装文件的 cab 文件的名称。
+如果 Windows 找不到安装文件的安装介质上的名称，并且*标记或 cab 文件*具有扩展名 **。** <em>cab</em>，Windows 将它作为包含安装文件的 cab 文件的名称。
 
 如果。*cab*指定为扩展时，Windows 将该文件视为标记文件和 cab 文件，如以下所述**备注**部分。
 
@@ -65,7 +65,7 @@ Windows 使用的标记文件来验证用户插入正确的安装磁盘。 标�
 此项不再支持 Windows 2000 和更高版本的 Windows。
 
 <a href="" id="path"></a>*path*  
-此可选值指定包含源文件的分发磁盘上的目录路径。 *路径*相对于*安装根目录*，表示为**\\** <em>dirname1</em>  **\\** <em>dirname2</em>...等等。 如果此值从条目中省略，假定文件分发磁盘的安装根目录中。
+此可选值指定包含源文件的分发磁盘上的目录路径。 *路径*相对于*安装根目录*，表示为 **\\** <em>dirname1</em>  **\\** <em>dirname2</em>...等等。 如果此值从条目中省略，假定文件分发磁盘的安装根目录中。
 
 可以使用**INF SourceDisksFiles 部分**必须位于给定的路径目录中或安装根路径中。
 
@@ -106,12 +106,12 @@ Windows 使用的标记文件来验证用户插入正确的安装磁盘。 标�
 
 在安装期间，安装程序 Api 函数查找特定于体系结构**SourceDisksNames**部分之前使用的泛型部分。 例如，如果在安装期间的基于 x86 的平台上，一个 INF 文件引用磁盘"2"，则[SetupAPI](setupapi.md)函数将查找磁盘"2"的条目**SourceDisksNames.x86**中查找之前**SourceDisksNames**。
 
-安装程序 Api 函数使用**SourceDisksNames**并**SourceDisksNames。**<em>体系结构</em>部分中相同的 INF 文件作为相关[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)部分。
+安装程序 Api 函数使用**SourceDisksNames**并**SourceDisksNames。** <em>体系结构</em>部分中相同的 INF 文件作为相关[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)部分。
 
 <a name="examples"></a>示例
 --------
 
-在以下示例中， *write.exe*文件是相同的所有 Windows 平台，它位于*\\常见*CD-ROM 分发光盘上安装根下的子目录，.*Cmd.exe*文件是仅在基于 x86 的平台使用一个特定于平台的文件。
+在以下示例中， *write.exe*文件是相同的所有 Windows 平台，它位于 *\\常见* CD-ROM 分发光盘上安装根下的子目录，.*Cmd.exe*文件是仅在基于 x86 的平台使用一个特定于平台的文件。
 
 ```ini
 [SourceDisksNames]

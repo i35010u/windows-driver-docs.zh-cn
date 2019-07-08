@@ -29,7 +29,7 @@ ms.locfileid: "63388116"
 
 -   \*PFeature 可以具有任何实例的名称。
 
--   \*PFeature 成员是名为的属性**\*名称**并 **\*DefaultOption**。
+-   \*PFeature 成员是名为的属性 **\*名称** 并 **\*DefaultOption**。
 
 -   \*PFeature 具有一个名为构造成员 **\*Poption** ，应声明为虚拟的。
 

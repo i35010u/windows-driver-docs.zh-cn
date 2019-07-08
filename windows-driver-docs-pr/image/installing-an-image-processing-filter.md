@@ -40,7 +40,7 @@ Myimgfilter.dll=1
 ...
 ```
 
-*&lt;UiClassId&gt;* 值是类 ID，以驱动程序返回的 WIA\_DIP\_UI\_CLSID 属性，并且*&lt;FilterClassId&gt;* 是图像处理筛选器实现的类 ID。 在此示例中， *Myimgfilter.dll*包含图像处理筛选器的实现。
+*&lt;UiClassId&gt;* 值是类 ID，以驱动程序返回的 WIA\_DIP\_UI\_CLSID 属性，并且 *&lt;FilterClassId&gt;* 是图像处理筛选器实现的类 ID。 在此示例中， *Myimgfilter.dll*包含图像处理筛选器的实现。
 
 中的第一个条目**AddReg**部分是作为扩展的驱动程序，注册图像处理筛选器和以下三项注册为 COM 组件的图像处理筛选器。
 

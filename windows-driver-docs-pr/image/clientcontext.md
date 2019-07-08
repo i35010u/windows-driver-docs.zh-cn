@@ -78,11 +78,11 @@ ms.locfileid: "63373187"
 
 当父元素的**ClientContext**元素是[ **ScanDestination**](scandestination.md)， **ClientContext**指定的字符串值客户端提供期间 **&lt;wse： 订阅&gt;** 接收请求[ **ScanAvailableEvent** ](scanavailableevent.md)事件。
 
-当父元素是[ **DestinationResponse**](destinationresponse.md)， **ClientContext**是客户端订阅操作中发送的数据的副本。 WSD 扫描服务将返回在此副本**&lt;wse:SubscribeResponse&gt;** 时响应客户端的订阅请求。
+当父元素是[ **DestinationResponse**](destinationresponse.md)， **ClientContext**是客户端订阅操作中发送的数据的副本。 WSD 扫描服务将返回在此副本 **&lt;wse:SubscribeResponse&gt;** 时响应客户端的订阅请求。
 
 当父元素是[ **ScanAvailableEvent**](scanavailableevent.md)， **ClientContext**包含字符串值作为的一部分收到的扫描程序**ScanAvailableEvent**订阅请求。 此字符串，客户端可以将相关联**ScanAvailableEvent**使用正确的扫描仪设备和服务。
 
- **&lt;Wse： 订阅&gt;** 并**&lt;wse:SubscribeResponse&gt;** 在规范中描述的元素。
+**&lt;Wse： 订阅&gt;** 并 **&lt;wse:SubscribeResponse&gt;** 在规范中描述的元素。
 
 ## <a name="see-also"></a>请参阅
 

@@ -48,7 +48,7 @@ tracelog -start MyTrace -guid MyProvider.ctl -rt -kd
 
 有关示例，请参阅[示例 16:在调试器中查看跟踪消息](example-16--viewing-trace-messages-in-a-debugger.md)。
 
-跟踪日志工具位于\\跟踪\\*&lt;平台&gt;* 子目录 WDK，其中*&lt;平台&gt;* 是 i386、 amd64 或 ia64。
+跟踪日志工具位于\\跟踪\\ *&lt;平台&gt;* 子目录 WDK，其中 *&lt;平台&gt;* 是 i386、 amd64 或 ia64。
 
 ### <a name="span-idtraceviewspanspan-idtraceviewspantraceview"></a><span id="traceview"></span><span id="TRACEVIEW"></span>TraceView
 
@@ -56,7 +56,7 @@ tracelog -start MyTrace -guid MyProvider.ctl -rt -kd
 
 可以将跟踪消息重定向到内核调试程序，创建跟踪会话时。 上**日志会话选项**页上，单击**高级日志会话选项**，单击**日志会话参数选项**选项卡，然后更改的值**Windbg**选项设置为 **，则返回 TRUE**。 运行跟踪会话时，不能更改此选项。
 
-工具中位于 TraceView\\跟踪\\*&lt;平台&gt;* 子目录 WDK，其中*&lt;平台&gt;* 是 i386、 amd64 或 ia64。
+工具中位于 TraceView\\跟踪\\ *&lt;平台&gt;* 子目录 WDK，其中 *&lt;平台&gt;* 是 i386、 amd64 或 ia64。
 
  
 

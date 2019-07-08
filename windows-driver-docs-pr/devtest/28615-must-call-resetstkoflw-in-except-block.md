@@ -24,7 +24,7 @@ ms.locfileid: "63384128"
 
 必须调用 **\_resetstkoflw**时当前堆栈指针指向高于在堆栈上的第三页的地址。 这是因为它没有任何意义，以使超出当前堆栈指针所指向的页保护页 （或在稍后将指向）。
 
- **\_Resetstkoflw**从结构化的异常处理程序筛选器表达式，或从结构化的异常处理程序筛选器表达式调用的函数，不应调用函数。
+**\_Resetstkoflw**从结构化的异常处理程序筛选器表达式，或从结构化的异常处理程序筛选器表达式调用的函数，不应调用函数。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 

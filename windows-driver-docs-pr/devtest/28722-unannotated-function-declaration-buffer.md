@@ -31,7 +31,7 @@ ms.locfileid: "63363861"
 int foo( LPTSTR buffer, size_t cch );  
 ```
 
-下面的代码示例使用 SAL 批注，因此可避免此警告**\_出\_写入\_** 指定所调用的函数将写入缓冲区和缓冲区不能为 NULL。 该批注指示缓冲区是否属于*cch*元素。
+下面的代码示例使用 SAL 批注，因此可避免此警告 **\_出\_写入\_** 指定所调用的函数将写入缓冲区和缓冲区不能为 NULL。 该批注指示缓冲区是否属于*cch*元素。
 
 ```
 int foo( _Out_writes_(cch) LPTSTR buffer, size_t cch );

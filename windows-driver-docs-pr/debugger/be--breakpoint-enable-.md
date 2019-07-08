@@ -32,7 +32,7 @@ be Breakpoints
 
 
 <span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span> *断点*   
-指定要启用的断点的 ID 号。 可以指定任意数量的断点。 您必须将多个 Id 用空格或逗号。 可以使用连字符指定断点 Id 的范围 （-）。 可以使用星号 (**\\* * *) 以指示所有断点。如果你想要使用[数值表达式](numerical-expression-syntax.md)id，请将其括在方括号中 (*<em>\[\]</em><em>)。如果你想要使用[带有通配符字符的字符串](string-wildcard-syntax.md)若要匹配断点的符号名称，请将其括在引号 (**""</em>*  )。
+指定要启用的断点的 ID 号。 可以指定任意数量的断点。 您必须将多个 Id 用空格或逗号。 可以使用连字符指定断点 Id 的范围 （-）。 可以使用星号 (* *\\* * *) 以指示所有断点。如果你想要使用[数值表达式](numerical-expression-syntax.md)id，请将其括在方括号中 (* <em>\[\]</em><em>)。如果你想要使用[带有通配符字符的字符串](string-wildcard-syntax.md)若要匹配断点的符号名称，请将其括在引号 (* *""</em>*  )。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 

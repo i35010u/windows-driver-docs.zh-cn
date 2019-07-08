@@ -25,9 +25,9 @@ ms.locfileid: "63375607"
 
 修改构造\*从 PFeature[练习 3](gdl-exercise-3--creating-root-level-constructs.md)通过定义两种变体：\*PFeature:PaperSize 和\*PFeature InputTray。
 
-中包含 POption \*PFeature:PaperSize 具有以下属性：**\*名称**， **\*命令**，  **\*Papersize**。
+中包含 POption \*PFeature:PaperSize 具有以下属性： **\*名称**， **\*命令**，  **\*Papersize**。
 
-中包含 POption \*PFeature:InputTray 具有以下属性：**\*名称**， **\*命令**，并**\*容量：**  *\#表的*。
+中包含 POption \*PFeature:InputTray 具有以下属性： **\*名称**， **\*命令**，并 **\*容量：** *\#表的*。
 
 创建模板以抽象的这两种类型的通用属性\*POptions。
 

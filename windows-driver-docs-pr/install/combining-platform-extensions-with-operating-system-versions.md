@@ -22,11 +22,11 @@ ms.locfileid: "63357027"
 
 下面的示例显示了正确的格式*TargetOSVersion*适用于 Windows XP 到 Windows 10，版本 1511年的修饰：
 
-**nt**\[*体系结构*\]\[**。**\[ *OSMajorVersion*\]\[**。**\[ *OSMinorVersion*\]\[**。**\[ *ProductType*\]\[**。**\[ *SuiteMask*\]\]\]\]\]
+**nt**\[*体系结构*\]\[ **。** \[ *OSMajorVersion*\]\[ **。** \[ *OSMinorVersion*\]\[ **。** \[ *ProductType*\]\[ **。** \[ *SuiteMask*\]\]\]\]\]
 
 从 Windows 10，版本 1607 （内部 14310 及更高版本） 的正确格式的开始*TargetOSVersion*修饰包括*BuildNumber*:
 
-**nt**\[*体系结构*\]\[**。**\[ *OSMajorVersion*\]\[**。**\[ *OSMinorVersion*\]\[**。**\[ *ProductType*\]\[**。**\[ *SuiteMask*\]\]\[**。**\[ *BuildNumber*\]\]\]\]\]
+**nt**\[*体系结构*\]\[ **。** \[ *OSMajorVersion*\]\[ **。** \[ *OSMinorVersion*\]\[ **。** \[ *ProductType*\]\[ **。** \[ *SuiteMask*\]\]\[ **。** \[ *BuildNumber*\]\]\]\]\]
 
 每个字段定义，如下所示：
 

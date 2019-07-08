@@ -58,24 +58,24 @@ NetAdapterCx 中的 RSS 的设计可确保系统将不调用客户端的 RSS 回
 
 NetAdapterCx 通过调用您的驱动程序启用了 RSS *[EvtNetAdapterReceiveScalingEnable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_enable)* 回调。 在此回调的上下文中，通常在您的硬件中启用控制位。 
 
-有关启用 RSS 的代码示例，请参阅 *[EvtNetAdapterReceiveScalingEnable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_enable)*。
+有关启用 RSS 的代码示例，请参阅 *[EvtNetAdapterReceiveScalingEnable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_enable)* 。
 
 ### <a name="disabling-rss"></a>禁用 RSS
 
 NetAdapterCx 通过调用您的驱动程序禁用 RSS *[EvtNetAdapterReceiveScalingDisable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_disable)* 回调。 在这里，你通常控制位中禁用你之前设置中的硬件*EvtNetAdapterReceiveScalingEnable*。 
 
-禁用 RSS 的代码示例，请参阅 *[EvtNetAdapterReceiveScalingDisable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_disable)*。
+禁用 RSS 的代码示例，请参阅 *[EvtNetAdapterReceiveScalingDisable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_disable)* 。
 
 ## <a name="setting-the-hash-secret-key"></a>设置哈希密钥
 
 一旦启用了 RSS，调用 NetAdapterCx *[EvtNetAdapterReceiveScalingSetHashSecretKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_hash_secret_key)* 回调 NIC 与哈希密钥提供您的驱动程序应使用验证哈希计算。 可以在任何时候如果哈希密钥更改 RSS 的运行时调用此回调。 
 
-设置哈希机密密钥的代码示例，请参阅 *[EvtNetAdapterReceiveScalingSetHashSecretKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_hash_secret_key)*。
+设置哈希机密密钥的代码示例，请参阅 *[EvtNetAdapterReceiveScalingSetHashSecretKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_hash_secret_key)* 。
 
 ## <a name="moving-indirection-table-entries"></a>移动间接表条目
 
-RSS 在系统上运行时，上层协议驱动程序将监视处理器工作负荷和维护映射的间接寻址表接收队列到处理器。 当需要重新平衡 RSS 在处理器工作负荷协议驱动程序时，它首先计算新处理器到每个间接表条目的新映射。 然后该协议将此信息传递到 NetAdapterCx，映射的复杂性接收的处理队列和到正确的处理器的硬件中断向量代表 NIC 客户端驱动程序。 NetAdapterCx 将新的间接寻址表，存储映射，以接收队列 Id 中的条目[NET_ADAPTER_RECEIVE_SCALING_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/ns-netreceivescaling-_net_adapter_receive_scaling_indirection_entries)结构，并将其传递到您的驱动程序时它将调用*[EvtNetAdapterReceiveScalingSetIndirectionEntries](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_indirection_entries)* 回调函数。 
+RSS 在系统上运行时，上层协议驱动程序将监视处理器工作负荷和维护映射的间接寻址表接收队列到处理器。 当需要重新平衡 RSS 在处理器工作负荷协议驱动程序时，它首先计算新处理器到每个间接表条目的新映射。 然后该协议将此信息传递到 NetAdapterCx，映射的复杂性接收的处理队列和到正确的处理器的硬件中断向量代表 NIC 客户端驱动程序。 NetAdapterCx 将新的间接寻址表，存储映射，以接收队列 Id 中的条目[NET_ADAPTER_RECEIVE_SCALING_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/ns-netreceivescaling-_net_adapter_receive_scaling_indirection_entries)结构，并将其传递到您的驱动程序时它将调用 *[EvtNetAdapterReceiveScalingSetIndirectionEntries](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_indirection_entries)* 回调函数。 
 
 在此回调中，你将移动的每个条目 NIC 的间接寻址表中到指定的接收队列。 每个[NET_ADAPTER_RECEIVE_SCALING_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/ns-netreceivescaling-_net_adapter_receive_scaling_indirection_entry)结构**NET_ADAPTER_RECEIVE_SCALING_INDIRECTION_ENTRIES**数组包含在表中，该条目的哈希索引的新接收队列要向其分配项，而状态字段指示单个移动已成功与否。 
 
-将索引项分配给硬件的方法接收队列在取决于您的 NIC 和它具有接收队列数目的设计。 有关详细信息和代码示例，请参阅 *[EvtNetAdapterReceiveScalingSetIndirectionEntries](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_indirection_entries)*。
+将索引项分配给硬件的方法接收队列在取决于您的 NIC 和它具有接收队列数目的设计。 有关详细信息和代码示例，请参阅 *[EvtNetAdapterReceiveScalingSetIndirectionEntries](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_indirection_entries)* 。

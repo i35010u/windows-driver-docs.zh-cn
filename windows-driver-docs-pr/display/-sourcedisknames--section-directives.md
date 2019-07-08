@@ -16,7 +16,7 @@ ms.locfileid: "63346293"
 
 Windows Vista 及更高版本，内置使用 Inf *\[SourceDisksXxx\]* 指令。 但是，这些部分的值已从内容具有先前通常已记下独立硬件供应商 (IHV) 生产驱动程序包中更改。
 
-## <a name="span-idsourcedisksnamesandsourcedisksfilessectiondirectivesspanspan-idsourcedisksnamesandsourcedisksfilessectiondirectivesspanspan-idsourcedisksnamesandsourcedisksfilessectiondirectivesspansourcedisksnames-and-sourcedisksfiles-section-directives"></a><span id="_SourceDisksNames__and__SourceDisksFiles__section_directives"></span><span id="_sourcedisksnames__and__sourcedisksfiles__section_directives"></span><span id="_SOURCEDISKSNAMES__AND__SOURCEDISKSFILES__SECTION_DIRECTIVES"></span>*\[SourceDisksNames\]* 并*\[SourceDisksFiles\]* 部分指令
+## <a name="span-idsourcedisksnamesandsourcedisksfilessectiondirectivesspanspan-idsourcedisksnamesandsourcedisksfilessectiondirectivesspanspan-idsourcedisksnamesandsourcedisksfilessectiondirectivesspansourcedisksnames-and-sourcedisksfiles-section-directives"></a><span id="_SourceDisksNames__and__SourceDisksFiles__section_directives"></span><span id="_sourcedisksnames__and__sourcedisksfiles__section_directives"></span><span id="_SOURCEDISKSNAMES__AND__SOURCEDISKSFILES__SECTION_DIRECTIVES"></span> *\[SourceDisksNames\]* 并 *\[SourceDisksFiles\]* 部分指令
 
 
 例如，对于 IHV 生产驱动程序：
@@ -43,7 +43,7 @@ IHVUMD.dll      = 3426
 IHVVID.dll      = 3426
 ```
 
-## <a name="span-idsignatureattributessectiondirectivesspanspan-idsignatureattributessectiondirectivesspanspan-idsignatureattributessectiondirectivesspansignatureattributes-section-directives"></a><span id="_SignatureAttributes__section_directives"></span><span id="_signatureattributes__section_directives"></span><span id="_SIGNATUREATTRIBUTES__SECTION_DIRECTIVES"></span>*\[SignatureAttributes\]* 部分指令
+## <a name="span-idsignatureattributessectiondirectivesspanspan-idsignatureattributessectiondirectivesspanspan-idsignatureattributessectiondirectivesspansignatureattributes-section-directives"></a><span id="_SignatureAttributes__section_directives"></span><span id="_signatureattributes__section_directives"></span><span id="_SIGNATUREATTRIBUTES__SECTION_DIRECTIVES"></span> *\[SignatureAttributes\]* 部分指令
 
 
 Windows Vista 及更高版本，使用收件箱 Inf *\[SignatureAttributes\]* 指令。

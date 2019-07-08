@@ -26,7 +26,7 @@ ms.locfileid: "63346114"
 
  
 
-从 Windows Vista 开始，发现新硬件向导和硬件更新向导支持 INF **HardwareId**中的指令**\[DeviceInstall\]** 部分*Autorun.inf*文件。 一书的作者*Autorun.inf*可以使用这些**HardwareId**指令来指定为其启用了自动运行的应用程序提供的设备的即插即用 (PnP) 的 and Play 硬件标识符 (Id) 和安装驱动程序。
+从 Windows Vista 开始，发现新硬件向导和硬件更新向导支持 INF **HardwareId**中的指令 **\[DeviceInstall\]** 部分*Autorun.inf*文件。 一书的作者*Autorun.inf*可以使用这些**HardwareId**指令来指定为其启用了自动运行的应用程序提供的设备的即插即用 (PnP) 的 and Play 硬件标识符 (Id) 和安装驱动程序。
 
 ```ini
 [DeviceInstall] 
@@ -54,7 +54,7 @@ HardwareId="pnp-hardware-id"
 
 发现新硬件向导不会确定应用程序是否安装了设备的驱动程序。 在这种情况下，应用程序必须安装设备的驱动程序。 如果*Autorun.inf*文件不包括**HardwareId**安装时，该向导将设备标识的指令不会启动该应用程序和设备安装将继续。
 
-虽然可能有多个**HardwareId**中的指令**\[DeviceInstall\]** 一部分*Autorun.inf*文件中，每个指令应指定一个唯一的即插即用硬件 id。
+虽然可能有多个**HardwareId**中的指令 **\[DeviceInstall\]** 一部分*Autorun.inf*文件中，每个指令应指定一个唯一的即插即用硬件 id。
 
  
 

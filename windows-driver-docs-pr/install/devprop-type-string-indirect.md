@@ -31,10 +31,10 @@ DEVPROP_TYPE_STRING_INDIRECT 标识符表示包含间接字符串引用的以 NU
 
 间接字符串引用描述包含实际的字符串的字符串资源。 间接字符串引用可以出现在以下格式之一：
 
-<a href="" id="--path--filename--resourceid"></a>**@**\[<em>path</em>**\\**\]<em>FileName</em>**,-***ResourceID*  
+<a href="" id="--path--filename--resourceid"></a> **@** \[<em>path</em> **\\** \]<em>FileName</em>* *,-***ResourceID*  
 Windows 从指定的模块中提取字符串*路径*并*FileName*条目和字符串的资源标识符由提供*ResourceID*条目 （不包括所需的负号）。 从最适合与调用方的首选的 UI 语言之一相匹配的模块资源部分加载字符串资源。 *路径*项是可选的。 如果指定*路径*条目，该模块必须位于系统定义的搜索路径中的目录。
 
-<a href="" id="-infname--strkey-"></a>**@**<em>InfName</em>**，%**<em>strkey</em>**%**  
+<a href="" id="-infname--strkey-"></a> **@** <em>InfName</em> **，%** <em>strkey</em> **%**  
 Windows 将从 INF 提取字符串**字符串**INF 文件在 %systemroot%部分\\*inf* directory 通过提供其名称*InfName*项。 *Strkey*令牌标识符应与中的行的键匹配**字符串**部分与一个调用方的最匹配的首选的 UI 语言。 如果没有特定于语言的**字符串**部分存在，则 Windows 将使用默认**字符串**部分。
 
 您不能与属性数据类型修饰符的任何组合 DEVPROP_TYPE_STRING_INDIRECT。

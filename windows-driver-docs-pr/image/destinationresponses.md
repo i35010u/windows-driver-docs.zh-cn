@@ -79,7 +79,7 @@ ms.locfileid: "63373178"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须指定一个[ **DestinationResponse** ](destinationresponse.md)中的子元素**DestinationResponses**元素为每个[ **ScanDestination** ](scandestination.md)客户端在指定的元素 **&lt;wse： 订阅&gt;** 请求。  **&lt;Wse： 订阅&gt;** 元素规范中所述。
+WSD 扫描服务必须指定一个[ **DestinationResponse** ](destinationresponse.md)中的子元素**DestinationResponses**元素为每个[ **ScanDestination** ](scandestination.md)客户端在指定的元素 **&lt;wse： 订阅&gt;** 请求。 **&lt;Wse： 订阅&gt;** 元素规范中所述。
 
 ## <a name="see-also"></a>请参阅
 

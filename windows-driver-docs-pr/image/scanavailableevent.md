@@ -74,9 +74,9 @@ WSD 扫描服务发送**ScanAvailableEvent**到已注册客户端，当用户已
 
 订阅请求包含的一个或多个目的地[ **ScanDestinations** ](scandestinations.md)扩展元素。 扫描服务将使用这些目标以筛选出单个客户端每次发送**ScanAvailableEvent**通知。 此筛选器可防止在用户按扫描按钮时通知每个客户端扫描服务。 扩展元素是 WSD 扫描服务命名空间中定义，然后添加到 **&lt;wse： 订阅&gt;** 请求正文。
 
-如果 WSD 扫描服务接受客户端的请求来创建订阅，服务必须使用响应**&lt;wse:SubscribeResponse&gt;** 响应操作元素。 订阅响应包含中的一个或多个目标响应[ **DestinationResponses** ](destinationresponses.md)扩展元素，可帮助连接到接受它扫描设备的订阅。
+如果 WSD 扫描服务接受客户端的请求来创建订阅，服务必须使用响应 **&lt;wse:SubscribeResponse&gt;** 响应操作元素。 订阅响应包含中的一个或多个目标响应 [**DestinationResponses**](destinationresponses.md) 扩展元素，可帮助连接到接受它扫描设备的订阅。
 
- **&lt;Wse： 订阅&gt;** 并**&lt;wse:SubscribeResponse&gt;** 在规范中描述的元素。
+**&lt;Wse： 订阅&gt;** 并 **&lt;wse:SubscribeResponse&gt;** 在规范中描述的元素。
 
 <a name="examples"></a>示例
 --------

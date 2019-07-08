@@ -34,7 +34,7 @@ SignTool sign /v /s CertificateStore /n CertificateName /t http://timestamp.veri
 
 -   **/N** *CertificateName*选项指定在证书的名称*CertificateStore*证书存储区。
 
--   **/T**   * http://timestamp.verisign.com/scripts/timstamp.dll *选项提供 VeriSign 提供的公开可用的时间戳服务器的 URL。
+-   **/T**   *http://timestamp.verisign.com/scripts/timstamp.dll* 选项提供 VeriSign 提供的公开可用的时间戳服务器的 URL。
 
 -   *CatalogFileName.cat*目录文件的名称。
 

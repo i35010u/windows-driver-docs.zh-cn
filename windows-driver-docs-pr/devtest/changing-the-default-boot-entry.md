@@ -37,13 +37,13 @@ ms.locfileid: "63344053"
 bcdedit /default <ID>
 ```
 
-*&lt;ID&gt;* 是与你想要将指定为默认值的操作系统相关联的 Windows 启动加载程序启动项目的 GUID。 必须包括大括号 (**{}**) 周围的 GUID，例如：
+*&lt;ID&gt;* 是与你想要将指定为默认值的操作系统相关联的 Windows 启动加载程序启动项目的 GUID。 必须包括大括号 ( **{}** ) 周围的 GUID，例如：
 
 ```
 bcdedit /default {cbd971bf-b7b8-4885-951a-fa03044f5d71}
 ```
 
-若要将默认启动项目更改为多重引导计算机上早期 Windows 操作系统加载程序，设置*&lt;ID&gt;* 到 **{ntldr}**，这是 GUID 的保留的名称这是与 Ntldr 相关联。 这可能会根据 Boot.ini 文件中的条目的另一个菜单。
+若要将默认启动项目更改为多重引导计算机上早期 Windows 操作系统加载程序，设置 *&lt;ID&gt;* 到 **{ntldr}** ，这是 GUID 的保留的名称这是与 Ntldr 相关联。 这可能会根据 Boot.ini 文件中的条目的另一个菜单。
 
 ```
 bcdedit /default {ntldr}

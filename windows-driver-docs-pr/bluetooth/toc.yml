@@ -1,94 +1,92 @@
 - name: 蓝牙设计指南
+  href: index.md
+- name: Windows 10 的蓝牙通用 Windows 驱动程序模型
+  href: universal-bluetooth-driver-model-for-windows-10.md
+- name: 蓝牙配置文件驱动程序概述
   items:
-    - name: 蓝牙设计指南
-      href: index.md
-    - name: Windows 10 的蓝牙通用 Windows 驱动程序模型
-      href: universal-bluetooth-driver-model-for-windows-10.md
-    - name: 蓝牙配置文件驱动程序概述
+    - name: 蓝牙配置文件驱动程序简介
+      href: bluetooth-profile-drivers-overview.md
+    - name: 蓝牙驱动程序堆栈
+      href: bluetooth-driver-stack.md
+    - name: 安装蓝牙设备
+      href: installing-a-bluetooth-device.md
+    - name: 蓝牙注册表项
+      href: bluetooth-registry-entries.md
+- name: 低耗电蓝牙概述
+  href: bluetooth-low-energy-overview.md
+- name: 使用蓝牙驱动程序堆栈
+  items:
+    - name: 如何使用蓝牙驱动程序堆栈
+      href: using-the-bluetooth-driver-stack.md
+    - name: 蓝牙 IOCTL
+      href: bluetooth-ioctls2.md
+    - name: 查询蓝牙接口
+      href: querying-for-bluetooth-interfaces.md
+    - name: 生成和发送 BRB
+      href: building-and-sending-a-brb.md
+    - name: 创建到远程设备的 SCO 客户端连接
+      href: creating-a-sco-client-connection-to-a-remote-device.md
+    - name: 在蓝牙配置文件驱动程序中接受 SCO 连接
+      href: accepting-sco-connections-in-a-bluetooth-profile-driver.md
+    - name: 创建到远程设备的 L2CAP 客户端连接
+      href: creating-a-l2cap-client-connection-to-a-remote-device.md
+    - name: 在蓝牙配置文件驱动程序中接受 L2CAP 连接
+      href: accepting-l2cap-connections-in-a-bluetooth-profile-driver.md
+    - name: 与 SDP 服务器进行通信
       items:
-        - name: 蓝牙配置文件驱动程序概述
-          href: bluetooth-profile-drivers-overview.md
-        - name: 蓝牙驱动程序堆栈
-          href: bluetooth-driver-stack.md
-        - name: 安装蓝牙设备
-          href: installing-a-bluetooth-device.md
-        - name: 蓝牙注册表项
-          href: bluetooth-registry-entries.md
-    - name: 低耗电蓝牙概述
-      href: bluetooth-low-energy-overview.md
-    - name: 使用蓝牙驱动程序堆栈
-      items:
-        - name: 使用蓝牙驱动程序堆栈
-          href: using-the-bluetooth-driver-stack.md
-        - name: 蓝牙 IOCTL
-          href: bluetooth-ioctls2.md
-        - name: 查询蓝牙接口
-          href: querying-for-bluetooth-interfaces.md
-        - name: 生成和发送 BRB
-          href: building-and-sending-a-brb.md
-        - name: 创建到远程设备的 SCO 客户端连接
-          href: creating-a-sco-client-connection-to-a-remote-device.md
-        - name: 在蓝牙配置文件驱动程序中接受 SCO 连接
-          href: accepting-sco-connections-in-a-bluetooth-profile-driver.md
-        - name: 创建到远程设备的 L2CAP 客户端连接
-          href: creating-a-l2cap-client-connection-to-a-remote-device.md
-        - name: 在蓝牙配置文件驱动程序中接受 L2CAP 连接
-          href: accepting-l2cap-connections-in-a-bluetooth-profile-driver.md
-        - name: 与 SDP 服务器进行通信
-          items:
-            - name: 与 SDP 服务器进行通信
-              href: communicating-with-sdp-servers.md
-            - name: 访问 SDP 服务信息
-              href: accessing-sdp-service-information.md
-            - name: 将 SDP 记录转换为树状结构
-              href: converting-sdp-records-to-a-tree-structure.md
-            - name: 生成 SDP 记录
-              href: building-sdp-records.md
-        - name: 支持蓝牙事件通知
-          href: supporting-bluetooth-event-notifications.md
-    - name: 调试蓝牙配置文件驱动程序
-      href: debugging-bluetooth-profile-drivers.md
-    - name: Microsoft 定义的蓝牙 HCI 命令和事件
-      href: microsoft-defined-bluetooth-hci-commands-and-events.md
+        - name: “与 SDP 服务器进行通信”概述
+          href: communicating-with-sdp-servers.md
+        - name: 访问 SDP 服务信息
+          href: accessing-sdp-service-information.md
+        - name: 将 SDP 记录转换为树状结构
+          href: converting-sdp-records-to-a-tree-structure.md
+        - name: 生成 SDP 记录
+          href: building-sdp-records.md
+    - name: 支持蓝牙事件通知
+      href: supporting-bluetooth-event-notifications.md
+- name: 调试蓝牙配置文件驱动程序
+  href: debugging-bluetooth-profile-drivers.md
+- name: Microsoft 定义的蓝牙 HCI 命令和事件
+  href: microsoft-defined-bluetooth-hci-commands-and-events.md
+- name: 蓝牙常见问题
+  items:
     - name: 蓝牙常见问题解答
-      items:
-        - name: 蓝牙常见问题解答
-          href: bluetooth-faq.md
-        - name: Windows 10 中的蓝牙版本和配置文件支持
-          href: general-bluetooth-support-in-windows.md
-        - name: 以前的 Windows 版本中的蓝牙版本和配置文件支持
-          href: bluetooth-support-in-previous-windows-versions.md
-        - name: 蓝牙主机无线电支持
-          href: bluetooth-host-radio-support.md
-        - name: 蓝牙软件无线电开关函数原型
-          href: bluetooth-software-radio-switch-function-prototypes.md
-        - name: 蓝牙用户界面
-          href: bluetooth-user-interface.md
-        - name: 蓝牙认证
-          href: bluetooth-certification.md
-        - name: 附录 A：如何在 Windows Vista 中的新硬件上安装内置的蓝牙驱动程序
-          href: bluetooth-faq--appendix-a.md
-        - name: 附录 B：在 Windows Vista 中使用的供应商提供的 INF 文件示例
-          href: bluetooth-faq--appendix-b.md
-        - name: 蓝牙附录
-          href: bluetooth-faq--appendix-c.md
+      href: bluetooth-faq.md
+    - name: Windows 10 中的蓝牙版本和配置文件支持
+      href: general-bluetooth-support-in-windows.md
+    - name: 以前的 Windows 版本中的蓝牙版本和配置文件支持
+      href: bluetooth-support-in-previous-windows-versions.md
+    - name: 蓝牙主机无线电支持
+      href: bluetooth-host-radio-support.md
+    - name: 蓝牙软件无线电开关函数原型
+      href: bluetooth-software-radio-switch-function-prototypes.md
+    - name: 蓝牙用户界面
+      href: bluetooth-user-interface.md
+    - name: 蓝牙认证
+      href: bluetooth-certification.md
+    - name: 附录 A：如何在 Windows Vista 中的新硬件上安装内置的蓝牙驱动程序
+      href: bluetooth-faq--appendix-a.md
+    - name: 附录 B：在 Windows Vista 中使用的供应商提供的 INF 文件示例
+      href: bluetooth-faq--appendix-b.md
+    - name: 蓝牙附录
+      href: bluetooth-faq--appendix-c.md
+- name: 用于蓝牙功率控制处理的传输总线驱动程序
+  items:
     - name: 用于蓝牙功率控制处理的传输总线驱动程序指南
-      items:
-        - name: 用于蓝牙功率控制处理的传输总线驱动程序指南
-          href: transport-bus-driver-for-bluetooth-power-control-handling-guidelines.md
-        - name: 蓝牙的传输总线驱动程序
-          href: transport-bus-driver-for-bluetooth.md
-        - name: 蓝牙核心驱动程序层和支持的功率转换
-          href: bluetooth-core-driver-layer-and-supported-power-transitions.md
-        - name: 串行总线驱动程序层
-          href: serial-bus-driver-layer.md
-        - name: 传输总线驱动程序常见问题解答
-          href: transport-bus-driver-faq.md
-    - name: 蓝牙 LE 邻近感应配置文件设备和应用
-      items:
-        - name: 蓝牙 LE 邻近感应配置文件设备和应用
-          href: implementing-a-bluetooth-le-proximity-profile-device-and-application.md
-        - name: 蓝牙邻近感应配置文件
-          href: bluetooth-proximity-profile.md
-        - name: 邻近感应配置文件实现详细信息
-          href: proximity-profile-implementation-details.md
+      href: transport-bus-driver-for-bluetooth-power-control-handling-guidelines.md
+    - name: 蓝牙的传输总线驱动程序
+      href: transport-bus-driver-for-bluetooth.md
+    - name: 蓝牙核心驱动程序层和支持的功率转换
+      href: bluetooth-core-driver-layer-and-supported-power-transitions.md
+    - name: 串行总线驱动程序层
+      href: serial-bus-driver-layer.md
+    - name: 传输总线驱动程序常见问题解答
+      href: transport-bus-driver-faq.md
+- name: 蓝牙 LE 邻近感应配置文件设备和应用
+  items:
+    - name: 蓝牙 LE 邻近感应配置文件概述
+      href: implementing-a-bluetooth-le-proximity-profile-device-and-application.md
+    - name: 蓝牙邻近感应配置文件
+      href: bluetooth-proximity-profile.md
+    - name: 邻近感应配置文件实现详细信息
+      href: proximity-profile-implementation-details.md

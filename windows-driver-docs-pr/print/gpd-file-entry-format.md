@@ -22,7 +22,7 @@ ms.locfileid: "63385196"
 
 所有 GPD 文件条目都符合以下格式：
 
-**\\*** <em>EntryName</em>**:***EntryValue* **{**<em>GPD\_FileEntry, GPD\_FileEntry, ...</em>**}**
+**\\** * <em>EntryName</em> **:** *EntryValue* **{** <em>GPD\_FileEntry, GPD\_FileEntry, ...</em> **}**
 
 *EntryName*始终 Unidrv 的 GPD 分析器识别，一个预定义的关键字前面标有星号。
 

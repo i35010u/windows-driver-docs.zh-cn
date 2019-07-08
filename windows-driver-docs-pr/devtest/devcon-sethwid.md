@@ -31,18 +31,18 @@ ms.locfileid: "63347027"
 ## <a name="span-idddkdevconsethwidtoolsspanspan-idddkdevconsethwidtoolsspanparameters"></a><span id="ddk_devcon_sethwid_tools"></span><span id="DDK_DEVCON_SETHWID_TOOLS"></span>参数
 
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\**<em>computer</em>   
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>computer</em>   
 指定远程计算机上运行该命令。 需要反斜杠。
 
 **请注意**若要在远程计算机上运行 DevCon 命令，组策略设置必须允许 Plug and Play 服务在远程计算机上运行。 运行 Windows Vista 和 Windows 7 的计算机上，组策略默认情况下禁用远程访问服务。 运行 WDK 8.1 和 WDK 8 的计算机上，远程访问将不可用。
 
 
 
-<span id="______________"></span> **\\***   
+<span id="______________"></span> **\\** *   
 表示在计算机上的所有设备。
 
 <span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-指定全部或部分硬件 ID、 兼容 ID 或设备的设备实例 ID。 在指定多个 Id 时，键入一个空格之间每个 id。 包含一个 & 字符的 Id (**&**) 必须括在引号中。
+指定全部或部分硬件 ID、 兼容 ID 或设备的设备实例 ID。 在指定多个 Id 时，键入一个空格之间每个 id。 包含一个 & 字符的 Id ( **&** ) 必须括在引号中。
 
 以下特殊字符修改 ID 参数。
 
@@ -76,25 +76,25 @@ ms.locfileid: "63347027"
 
 
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>类</em>指定根枚举设备的设备安装程序类。 等号 (**=**) 标识作为类名称的字符串。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>类</em>指定根枚举设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
 
 此外可以指定硬件 Id、 兼容 Id、 设备实例 Id 或类名称后面的 ID 模式。 键入每个 ID 或模式之间有空格。 DevCon 匹配指定的 Id 的类中查找设备。
 
 <span id="_______HardwareIDs______"></span><span id="_______hardwareids______"></span><span id="_______HARDWAREIDS______"></span> *HardwareIDs*   
 指定一个或多个硬件 Id。
 
-如果硬件 Id 前面没有符号参数 (**+**， **-**， **=**， **！**)DevCon 添加或移动到指定的顺序中的设备硬件 Id 的列表的末尾指定的硬件 Id。 这相当于-参数。
+如果硬件 Id 前面没有符号参数 ( **+** ， **-** ， **=** ， **！** )DevCon 添加或移动到指定的顺序中的设备硬件 Id 的列表的末尾指定的硬件 Id。 这相当于-参数。
 
 <span id="_"></span>=  
 替换指定的顺序指定的硬件 Id 的设备的硬件 Id 列表。
 
-<span id="______________"></span> **+**   
+<span id="______________"></span> **+**    
 添加或移动到的设备的硬件 Id 列表的开头指定的硬件 Id。
 
-<span id="_______-______"></span> **-**   
+<span id="_______-______"></span> **-**    
 添加或移动到的设备硬件 Id 列表的末尾指定的硬件 Id。
 
-<span id="______________"></span> **!**   
+<span id="______________"></span> **!**    
 从设备的硬件 Id 的列表中删除指定的硬件 Id。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
