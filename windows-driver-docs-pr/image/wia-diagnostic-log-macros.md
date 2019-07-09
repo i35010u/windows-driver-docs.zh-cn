@@ -4,76 +4,25 @@ description: WIA 诊断日志宏
 ms.assetid: 8b544045-e9d7-422b-825c-f1a5531e0e11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa90d67d296435908d948a624fe79d4602ef77f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a47699622edd7b2cb5116fc338796a8189efd641
+ms.sourcegitcommit: 67aadd2adef4c338b703464c377ae8c910f1f5f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375359"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67622668"
 ---
 # <a name="wia-diagnostic-log-macros"></a>WIA 诊断日志宏
 
+> [!NOTE]
+> WIA 的错误处理更现代的 Windows 操作系统上，请参阅[WIA 驱动程序错误恢复](wia-driver-error-recovery-for-windows-vista.md)。
 
+诊断日志宏启用为日志跟踪、 错误和警告消息的微型驱动程序*Wiaservc.log*诊断日志文件。
 
-
-
-在 Windows Vista 和更高版本操作系统上处理的错误，请参阅[WIA 驱动程序错误恢复适用于 Windows Vista 的](wia-driver-error-recovery-for-windows-vista.md)。
-
-[诊断日志宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)启用为日志跟踪、 错误和警告消息的微型驱动程序*Wiaservc.log*诊断日志文件。
-
-在 Windows Vista 和更高版本操作系统上的错误处理的详细信息，请参阅[WIA 驱动程序错误恢复适用于 Windows Vista 的](wia-driver-error-recovery-for-windows-vista.md)。
-
-前三个宏可以用于分别写入具有指定类型的错误、 跟踪、 或警告的日志记录语句。 第四个宏可以用于将 HRESULT 转换为的描述性字符串。
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>宏</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lerror" data-raw-source="[&lt;strong&gt;WIAS_LERROR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lerror)"><strong>WIAS_LERROR</strong></a></p></td>
-<td><p>写入的日志语句的键入错误<em>Wiaservc.log</em>诊断日志文件...</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lhresult" data-raw-source="[&lt;strong&gt;WIAS_LHRESULT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lhresult)"><strong>WIAS_LHRESULT</strong></a></p></td>
-<td><p>HRESULT 值转换为一个字符串，并写入到字符串<em>Wiaservc.log</em>诊断日志文件。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_ltrace" data-raw-source="[&lt;strong&gt;WIAS_LTRACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_ltrace)"><strong>WIAS_LTRACE</strong></a></p></td>
-<td><p>写入到跟踪类型的日志语句<em>Wiaservc.log</em>诊断日志文件...</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lwarning" data-raw-source="[&lt;strong&gt;WIAS_LWARNING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lwarning)"><strong>WIAS_LWARNING</strong></a></p></td>
-<td><p>写入警告的类型的日志语句<em>Wiaservc.log</em>诊断日志文件...</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>WIAS_ERROR</strong></p></td>
-<td><p>此宏是在 Windows Vista 和更高版本操作系统中可用。</p>
-<p>写入的日志语句的键入错误<em>Wiatrace.log</em>诊断日志文件。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>WIAS_TRACE</strong></p></td>
-<td><p>此宏是在 Windows Vista 和更高版本操作系统中可用。</p>
-<p>写入到跟踪类型的日志语句<em>Wiatrace.log</em>诊断日志文件。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-有关这些宏的详细信息，请参阅[IWiaLog 界面和诊断日志宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)。
-
- 
-
- 
-
-
-
-
+| 宏 | 描述 |
+| --- | --- |
+|[WIAS_LERROR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lerror) | 类型错误的日志语句写入 Wiaservc.log 诊断日志文件。 |
+| [WIAS_LHRESULT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lhresult) | HRESULT 值转换为一个字符串，并将字符串写入到 Wiaservc.log 诊断日志文件。 |
+| [WIAS_LTRACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_ltrace) | Wiaservc.log 诊断日志文件中写入跟踪类型的日志语句。 |
+| [WIAS_LWARNING](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_lwarning) | 写入警告 Wiaservc.log 诊断日志文件的类型的日志语句。 |
+| [WIAS_ERROR](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_error) | 类型错误的日志语句写入 Wiatrace.log 诊断日志文件。 |
+| [WIAS_TRACE](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wias_trace) | Wiatrace.log 诊断日志文件中写入跟踪类型的日志语句。 |
