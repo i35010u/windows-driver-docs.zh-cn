@@ -1,16 +1,16 @@
 ---
 Description: Microsoft USB 测试工具 (MUTT) 是用于测试您的 USB 硬件与 Microsoft USB 驱动程序堆栈的互操作性的设备的集合。
-title: Microsoft USB 测试工具 (MUTT) 设备
+title: Microsoft USB 测试工具 (MUTT) 设备的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8cabb6d20a401825b247b2157314a5ad343d22c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ce3a2d372588aa0682e79e0e20fd0ed1fe93459
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379095"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717006"
 ---
-# <a name="microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB 测试工具 (MUTT) 设备
+# <a name="overview-of-microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB 测试工具 (MUTT) 设备的概述
 
 
 **摘要**

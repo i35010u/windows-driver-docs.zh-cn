@@ -10,12 +10,12 @@ keywords:
 - CDROM_EXCLUSIVE_LOCK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d0bb6dea4075890839ed5fb7da243e52f8eb3ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f20c34d951b64b28b29aa7f8ede5f3f9bbbbf1b
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368340"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717010"
 ---
 # <a name="cd-rom-exclusive-access-mode"></a>CD-ROM 独占访问模式
 
@@ -34,7 +34,7 @@ ms.locfileid: "67368340"
 
 应用程序应尝试将其锁定之前查询设备的当前状态。 如果设备已被锁定，在类驱动程序返回的当前所有者的设备的标识字符串。 在之前锁定设备，调用方必须打开它以读/写访问模式。 因此，调用方必须具有管理员权限或权限才能在写访问权限模式下打开 CD-ROM 设备。
 
-因为保证 CD-ROM 类驱动程序将接收该请求，请求独占访问权限的调用方不应通过只需将创建请求发送到文件系统驱动程序，打开 CD-ROM 设备。 相反，应用程序应使用 **SetupDi * * * Xxx*例程枚举系统中的 CD-ROM 的所有设备的接口，然后打开相应的设备接口。
+因为保证 CD-ROM 类驱动程序将接收该请求，请求独占访问权限的调用方不应通过只需将创建请求发送到文件系统驱动程序，打开 CD-ROM 设备。 相反，应用程序应使用**SetupDi**_Xxx_例程枚举系统中的 CD-ROM 的所有设备的接口，然后打开相应的设备接口。
 
 当调用方使用的驱动器号的打开设备或类似*CdRom0*保证文件系统驱动程序与设置为 0 的访问模式，将创建请求传递到 CD-ROM 类驱动程序。 但这种保证并仍足够，因为通过此过程来获取应用程序的句柄并未授予调用方读/写访问设备。
 

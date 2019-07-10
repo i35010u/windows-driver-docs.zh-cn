@@ -7,12 +7,12 @@ keywords:
 - 呈现插件 WDK 打印，非基于 COM 的
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18835d4badc8de344162799df9ee0e5af6439783
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cc8f0c019f5ea6951d76a0c6f8c55b7344aab901
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384520"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716980"
 ---
 # <a name="non-com-based-rendering-plug-ins"></a>不是基于 COM 的渲染插件
 
@@ -20,7 +20,7 @@ ms.locfileid: "67384520"
 
 
 
-打印机微型驱动程序通过实现通知其功能的核心驱动[ **OEMEnableDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nf-printoem-oemenabledriver)函数中的成员填充[ **DRVENABLEDATA** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)结构。 **Pdrvfn**应设置此结构的成员的数组地址[ **DRVFN** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_drvfn)结构。 应使用一个函数的索引和的其中一个的地址初始化此数组的每个元素 **OEM * * * Xxx*实现 IHV，分别的函数。 (有关详细说明的每个 **OEM * * * Xxx*函数，请参阅[非基于 COM 的 DDI 挂钩-函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)。)
+打印机微型驱动程序通过实现通知其功能的核心驱动[ **OEMEnableDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nf-printoem-oemenabledriver)函数中的成员填充[ **DRVENABLEDATA** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)结构。 **Pdrvfn**应设置此结构的成员的数组地址[ **DRVFN** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_drvfn)结构。 应使用一个函数的索引和的其中一个的地址初始化此数组的每个元素**OEM**_Xxx_实现 IHV，分别的函数。 (有关详细说明的每个**OEM**_Xxx_函数，请参阅[非基于 COM 的 DDI 挂钩-函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)。)
 
 当应用程序调用 Microsoft Win32 GDI，又执行渲染任务，Win32 GDI 调入 Unidrv 或 Pscript5 核心驱动程序，它通常处理任务。 但是，如果打印机微型驱动程序已指明能够特定呈现的操作，挂接，核心驱动程序将呈现任务传递给 IHV 呈现插件。
 
@@ -70,7 +70,7 @@ poempdev->pfnUnidrv[UD_DrvLineTo]
 
 计算结果为核心驱动程序的地址**DrvLineTo** DDI。 (**PFN\_DrvLineTo**) 它前面的表达式将转换为适当的类型的函数指针。 在本部分中列出的挂钩扩展函数的每个都具有其自己的函数指针相关联。
 
-请注意，当 **OEM * * * Xxx*回 Unidrv 核心驱动程序和图面 DDI 调用所涉及的是设备管理面，Unidrv 可以只需通过返回忽略调用**FALSE**。
+请注意，当**OEM**_Xxx_回 Unidrv 核心驱动程序和图面 DDI 调用所涉及的是设备管理面，Unidrv 可以只需通过返回忽略调用**FALSE**.
 
  
 

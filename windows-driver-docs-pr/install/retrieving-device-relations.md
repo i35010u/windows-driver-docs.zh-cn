@@ -4,12 +4,12 @@ description: 检索设备关系
 ms.assetid: 2b0ead69-1fda-4024-a7c2-d6350060b5fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8d47874572f24bd181c1952da785a3effb83f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2bccb6d4fe33f2543255ec7bb220c24732aabb58
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375248"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716857"
 ---
 # <a name="retrieving-device-relations"></a>检索设备关系
 
@@ -93,7 +93,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持属性键的属性�
 
 4.  调用[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)来检索与已由以前调用的返回设备实例句柄相关联的设备实例标识符**CM_Get_Sibling**. 删除设备实例的句柄*Abc*从同级的父设备的第一个子设备的设备的列表。
 
-使用此过程来检索到的信息是由 Windows Vista 和更高版本的统一的设备属性模型中的 DEVPKEY_Device_Siblings 属性相同。 如果**CM_ * Xxx*** 本部分中列出的函数调用成功， **CM_ * Xxx*** 函数检索所需的信息，并返回 CR_SUCCESS。 否则为**CM_ * Xxx*** 函数返回一个具有前缀"CR_"中定义的错误代码*Cfgmgr32.h*。
+使用此过程来检索到的信息是由 Windows Vista 和更高版本的统一的设备属性模型中的 DEVPKEY_Device_Siblings 属性相同。 如果**CM_<em>Xxx</em>** 本部分中列出的函数调用成功， **CM_<em>Xxx</em>** 函数检索所需的信息和返回 CR_SUCCESS。 否则为**CM_<em>Xxx</em>** 函数将返回一个具有前缀"CR_"中定义的错误代码*Cfgmgr32.h*。
 
  
 

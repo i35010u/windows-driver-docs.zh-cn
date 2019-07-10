@@ -1,16 +1,16 @@
 ---
 Description: 在本部分中的主题介绍客户端驱动程序必须配置其设备的方式。
-title: 选择 USB 驱动程序中的 USB 配置
+title: USB 驱动程序概述中选择 USB 配置概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5036268bf3b8472b75c98ac59a5330c34246bab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 395cbcf02cecc65194073f52b6cb8248c6d26133
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356627"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716959"
 ---
-# <a name="selecting-a-usb-configuration-in-usb-drivers"></a>选择 USB 驱动程序中的 USB 配置
+# <a name="overview-of-selecting-a-usb-configuration-in-usb-drivers"></a>在 USB 驱动程序选择 USB 配置的概述
 
 
 在本部分中的主题介绍客户端驱动程序必须配置其设备的方式。

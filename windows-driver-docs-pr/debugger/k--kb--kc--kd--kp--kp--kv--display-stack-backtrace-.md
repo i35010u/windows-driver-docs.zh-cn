@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fad326f48550d25c1e91a806e787b9da703e811d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e16ac38e3bd4adcc77d7d9e0fe9205ac1b34023b
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367231"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716873"
 ---
 # <a name="k-kb-kc-kd-kp-kp-kv-display-stack-backtrace"></a>k、kb、kc、kd、kp、kP、kv（显示堆栈回溯）
 
 
-<strong>K *\\</strong>* * 命令将显示给定线程，以及相关信息的堆栈帧...
+**K\*** 命令显示以及相关的信息，在给定线程的堆栈帧...
 
 用户模式下，x86 处理器
 
@@ -216,7 +216,7 @@ ms.locfileid: "63367231"
 
  
 
-**Kd**命令显示原始堆栈的数据。 单独的行上显示每个 DWORD 值。 为这些行与相关联的符号一起显示符号信息。 此格式创建比另一个更详细的列表 **k * * *\** 命令。 **Kd**命令等效于[ **dds （显示内存）** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)使用堆栈地址作为其参数的命令。
+**Kd**命令显示原始堆栈的数据。 单独的行上显示每个 DWORD 值。 为这些行与相关联的符号一起显示符号信息。 此格式创建更详细的列表比另**k** _\*_ 命令。 **Kd**命令等效于[ **dds （显示内存）** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)使用堆栈地址作为其参数的命令。
 
 如果您使用**k**命令函数 （之前已执行函数 prolog） 的开始处收到不正确的结果。 调试器使用帧寄存器来计算当前反向跟踪，并且此寄存器才会设置正确的函数执行其 prolog。
 

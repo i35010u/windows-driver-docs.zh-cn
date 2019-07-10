@@ -6,19 +6,19 @@ keywords:
 - 流式处理调试的内核，视频流停滞，日志记录
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8b7ee79e43c7e50043218a41f278cc51753eb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de084788008845a03de3b2db7ff99a07b386c570
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376363"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716879"
 ---
 # <a name="using-logging-to-track-important-events"></a>使用日志记录跟踪重要事件
 
 
 一般情况下，仅通过触发事件、 微型驱动程序的处理和缓冲区完成下游移动数据。 若要找出了挂起的原因或停滞的程序：
 
-- 检查是否有不匹配**KsGate * Xxx*** 调用。
+- 检查是否有不匹配**KsGate<em>Xxx</em>** 调用。
 
 - 检查省略**Ks*Xxx*AttemptProcessing**调用。
 

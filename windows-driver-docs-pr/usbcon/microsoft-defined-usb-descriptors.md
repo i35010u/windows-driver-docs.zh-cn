@@ -3,20 +3,20 @@ Description: Microsoft 提供了一套专有设备类和 USB 描述符，它称�
 title: 针对 USB 设备的 Microsoft OS 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d08d4c9850338fc9e23ca57c2f61d3864fd513e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e575f2617d25a48a488785363d05dd8e9a88420
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379933"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716946"
 ---
 # <a name="microsoft-os-descriptors-for-usb-devices"></a>针对 USB 设备的 Microsoft OS 描述符
 
 
 **摘要**
 
--   [1.0 的 Microsoft 操作系统描述符规范](https://go.microsoft.com/fwlink/p/?linkid=617154)
--   [2.0 的 Microsoft 操作系统描述符规范](https://go.microsoft.com/fwlink/p/?linkid=306681)
+-   [1.0 的 Microsoft 操作系统描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)
+-   [2.0 的 Microsoft 操作系统描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)
 
 Microsoft 提供了一套专有设备类和 USB 描述符，它称为 Microsoft OS 描述符 （模式）。
 
@@ -70,7 +70,7 @@ Microsoft OS 描述符具有不支持的专有设备类的重要用途。 具体
 
 有关该注册表项下的注册表项，请参阅[USB 设备注册表条目](usb-device-specific-registry-settings.md)。
 
-有关其他信息，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=617154)。
+有关其他信息，请参阅[Microsoft OS 描述符](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)。
 
 ## <a name="what-types-of-os-feature-descriptors-are-supported-by-windows"></a>Windows 支持哪些类型的操作系统功能描述符？
 
@@ -81,8 +81,8 @@ Microsoft OS 描述符具有不支持的专有设备类的重要用途。 具体
 -   **扩展属性**。 目前，有两个级别的属性可以声明为 USB 设备： 类级别或 devnode 级别。 操作系统功能描述符允许存储其他属性-如一位供应商的扩展的属性帮助页、 Url 和图标中设备固件。
 
 ## <a name="related-topics"></a>相关主题
-[1.0 的 Microsoft 操作系统描述符规范](https://go.microsoft.com/fwlink/p/?linkid=617154)  
-[2.0 的 Microsoft 操作系统描述符规范](https://go.microsoft.com/fwlink/p/?linkid=306681)  
+[1.0 的 Microsoft 操作系统描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)  
+[2.0 的 Microsoft 操作系统描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)  
 [针对 Windows 构建的 USB 设备](building-usb-devices-for-windows.md)  
 
 

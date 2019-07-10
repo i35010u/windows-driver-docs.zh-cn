@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b8ede4595f1fc36689231c4979cbf12f8070f5
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 2ce3e13240f76ca688c60ea0ecc0589a3a72cb98
+ms.sourcegitcommit: 844841c21dd9961311cba589782e73bac4de5dbd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519382"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67693344"
 ---
 # <a name="bug-check-0x50-pagefaultinnonpagedarea"></a>Bug 检查 0x50：页\_容错\_IN\_未分页\_区域
 

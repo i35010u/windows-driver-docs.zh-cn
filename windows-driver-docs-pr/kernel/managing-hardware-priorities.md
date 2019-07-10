@@ -14,12 +14,12 @@ keywords:
 - Isr WDK 内核，硬件优先级
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d7a0488091277d33270acd4726c75b98f3b871
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a2b9f120722c0917b198bfb99f0d7bcf26b5283
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386018"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716961"
 ---
 # <a name="managing-hardware-priorities"></a>管理硬件优先级
 
@@ -99,7 +99,7 @@ APC 的唯一区别\_级别和被动\_级别是，在 APC 进程执行\_级别�
 
   驱动程序不能调用**KeAcquireSpinLockAtDpcLevel**， **KeReleaseSpinLockFromDpcLevel**， **KeAcquireSpinLock**，或**KeReleaseSpinLock** IRQL 在运行时&gt;调度\_级别。
 
-- 调用支持例程使用旋转锁，如**ExInterlocked * Xxx*** 例程中，将引发 IRQL 当前处理器上调度到\_层，或如果调用方未已运行引发 IRQL 在 DIRQL 到。
+- 调用支持例程使用旋转锁，如**ExInterlocked<em>Xxx</em>** 例程中，将引发 IRQL 当前处理器上调度到\_层，或如果调用方不是 DIRQL 到已运行引发 IRQL。
 
 - 驱动程序代码运行在 IRQL&gt;被动\_级别应尽可能快地执行。 从该处例程运行，更重要的是很好的整体性能来优化该例程，以尽可能快地执行越高 IRQL。 例如，调用任何驱动程序**KeRaiseIrql**应进行相互调用**KeLowerIrql**就立即可以。
 

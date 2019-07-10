@@ -11,12 +11,12 @@ keywords:
 - 正在停止适配器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 926b25fa616fb48dc7082f2f9eecbbfc1781194a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a9a5d26255b8ec8a9ee8863376cf0a1b5a05d031
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374074"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716941"
 ---
 # <a name="halting-a-miniport-adapter"></a>停止微型端口适配器
 
@@ -26,7 +26,7 @@ ms.locfileid: "67374074"
 
 NDIS 调用 NDIS 微型端口驱动程序的[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数从系统中删除适配器时释放资源并停止硬件。 可以调用 NDIS *MiniportHaltEx*驱动程序的后[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数将返回成功。 有关详细信息*MiniportInitializeEx*，请参阅[初始化微型端口适配器](initializing-a-miniport-adapter.md)。
 
-[*MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)必须释放该驱动程序分配给设备的任何资源。 该驱动程序必须调用的倒数**Ndis * Xxx*** 函数与它最初分配的资源。 作为一般规则*MiniportHaltEx*函数应调用倒数**Ndis * Xxx*** 在初始化期间使用的相反顺序的函数。
+[*MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)必须释放该驱动程序分配给设备的任何资源。 该驱动程序必须调用的倒数**Ndis<em>Xxx</em>** 函数与它最初分配的资源。 作为一般规则*MiniportHaltEx*函数应调用倒数**Ndis<em>Xxx</em>** 在初始化期间使用的相反顺序的函数。
 
 如果适配器生成中断，微型端口驱动程序[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数可由驱动程序的抢占[ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)函数之前*MiniportHaltEx*禁用中断。
 

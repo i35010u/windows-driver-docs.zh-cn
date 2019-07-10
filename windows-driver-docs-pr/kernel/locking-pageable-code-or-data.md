@@ -11,12 +11,12 @@ keywords:
 - 页关键字 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5760dc4474e3c01c422af72e2f1a74fc7d22f17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 56313f85fa62f3e6aa160b609db56316af01e9fc
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384223"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716958"
 ---
 # <a name="locking-pageable-code-or-data"></a>锁定可分页代码或数据
 
@@ -34,7 +34,7 @@ ms.locfileid: "67384223"
 
 **\#pragma alloc\_text(PAGE*Xxx**<em>, *RoutineName</em>**)* *
 
-可分页的代码节的名称必须以"PAGE"由四个字母开头，并且可以后跟最多四个字符 (表示为此处***Xxx***) 来唯一地标识部分。 节名称 （即，"页"） 的前四个字母必须采用大写形式。 *RoutineName*标识包含的可分页的部分中的入口点。
+可分页的代码节的名称必须以"PAGE"由四个字母开头，并且可以后跟最多四个字符 (表示为此处 **_Xxx_** ) 来唯一地标识部分。 节名称 （即，"页"） 的前四个字母必须采用大写形式。 *RoutineName*标识包含的可分页的部分中的入口点。
 
 驱动程序文件中的可分页的代码部分的最短有效名称只是页。 例如，下面的代码示例中的杂注指令标识`RdrCreateConnection`作为入口点在一个名为页的可分页的代码部分中。
 
@@ -82,11 +82,11 @@ CHAR Array2[64*1024];
 
 句柄传递给**MmLockPagableSectionByHandle**是对的早期调用返回的句柄**MmLockPagableCodeSection**或**MmLockPagableDataSection**。
 
-内存管理器维护的每个部分句柄计数和驱动程序调用每次将递增此计数**MmLockPagable * Xxx*** 该节。 调用**MmUnlockPagableImageSection**递减计数。 在任一部分句柄的计数器为非零值，该部分会保持锁定在内存中。
+内存管理器维护的每个部分句柄计数和驱动程序调用每次将递增此计数**MmLockPagable<em>Xxx</em>** 该节。 调用**MmUnlockPagableImageSection**递减计数。 在任一部分句柄的计数器为非零值，该部分会保持锁定在内存中。
 
 只要加载其驱动程序部分的句柄无效。 因此，驱动程序应调用**MmLockPagable*Xxx*部分**仅一次。 如果驱动程序需要其他锁定调用，则应使用**MmLockPagableSectionByHandle**。
 
-如果驱动程序调用任意**MmLockPagable * Xxx*** 例程的一个部分，其中已被锁定，内存管理器递增引用计数的部分。 如果部分换出时锁定例程调用时，内存管理器页的部分中和其引用计数设置为 1。
+如果驱动程序调用任意**MmLockPagable<em>Xxx</em>** 例程的一个部分，其中已被锁定，内存管理器递增引用计数的部分。 如果部分换出时锁定例程调用时，内存管理器页的部分中和其引用计数设置为 1。
 
 使用此方法对系统资源的驱动程序的影响降至最低。 该驱动程序运行时，它可以锁定到内存中，代码和数据，以便为驻留。 当其设备，（即，打开或关闭设备时在设备处于永远不会） 没有未完成 I/O 请求，该驱动程序可以解锁的相同代码或数据，使其可用于调出。
 
@@ -94,7 +94,7 @@ CHAR Array2[64*1024];
 
 请考虑对锁定的代码或数据部分的以下实现准则。
 
-- 主要用途**Mm (Un) 锁 * Xxx*** 例程是启用通常非分页的代码或数据进行分页和的情况下通过非分页的代码或数据。 如串行驱动程序和并行驱动程序的驱动程序是很好的示例： 如果设备没有打开的句柄这样的驱动程序管理、 代码的部分不需要可以保留出分页。重定向程序和服务器也是可以使用此技术的驱动程序的很好的示例。 如果没有活动连接，这两个这些组件可以调出。
+- 主要用途**Mm (Un) 锁<em>Xxx</em>** 例程是启用通常非分页的代码或数据进行分页和的情况下通过非分页的代码或数据。 如串行驱动程序和并行驱动程序的驱动程序是很好的示例： 如果设备没有打开的句柄这样的驱动程序管理、 代码的部分不需要可以保留出分页。重定向程序和服务器也是可以使用此技术的驱动程序的很好的示例。 如果没有活动连接，这两个这些组件可以调出。
 
 - 整个可分页的节被锁定到内存中。
 

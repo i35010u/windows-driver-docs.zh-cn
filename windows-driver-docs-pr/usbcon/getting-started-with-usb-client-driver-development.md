@@ -1,16 +1,16 @@
 ---
 Description: 本部分介绍 USB 驱动程序开发。
-title: USB 客户端驱动程序开发入门
+title: USB 客户端驱动程序开发的第一个步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 247073421b5cee2f198e8aa578af19d27849ca38
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 2fdd6588651943e01b3215d26b89ac564a475655
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391773"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716967"
 ---
-# <a name="getting-started-with-usb-client-driver-development"></a>USB 客户端驱动程序开发入门
+# <a name="first-steps-for-usb-client-driver-development"></a>USB 客户端驱动程序开发的第一个步骤
 
 
 本部分介绍 USB 驱动程序开发。 如果您不熟悉驱动程序开发; 部分适用于您想要实现 USB 设备，Microsoft 不提供现成驱动程序的驱动程序。 此类驱动程序称为*USB 客户端驱动程序*本文档中设置。 在本部分中的主题介绍高级 USB 概念并提供有关执行常见任务的 USB 客户端驱动程序的分步说明。 有关这些概念的详细信息，请参阅上的 USB 规范[USB 文档](https://go.microsoft.com/fwlink/p/?linkid=617552)。

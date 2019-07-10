@@ -1,16 +1,16 @@
 ---
-Description: 为 USB 功能控制器开发 Windows 驱动程序
-title: 为 USB 功能控制器开发 Windows 驱动程序
+Description: 开发的 USB 函数控制器的 Windows 驱动程序的概述
+title: 开发的 USB 函数控制器的 Windows 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b59d338829ef2a1d1f2984ea7d05872b25756f
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1f58909f940a6f69a77ec98301db9330f426f947
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394028"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716993"
 ---
-# <a name="developing-windows-drivers-for-usb-function-controllers"></a>为 USB 功能控制器开发 Windows 驱动程序
+# <a name="overview-of-developing-windows-drivers-for-usb-function-controllers"></a>开发的 USB 函数控制器的 Windows 驱动程序的概述
 
 
 <table>

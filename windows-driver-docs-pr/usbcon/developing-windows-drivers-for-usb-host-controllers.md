@@ -1,16 +1,16 @@
 ---
 Description: 为 USB 主控制器开发 Windows 驱动程序
-title: 为 USB 主控制器开发 Windows 驱动程序
+title: 开发 USB 主控制器的 Windows 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cbad6ab61187126394408a596dcfb1116c6c226
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 8d41cdee288732e14500fc17b74e653ebb42da31
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394033"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716947"
 ---
-# <a name="developing-windows-drivers-for-usb-host-controllers"></a>为 USB 主控制器开发 Windows 驱动程序
+# <a name="overview-of-developing-windows-drivers-for-usb-host-controllers"></a>开发 USB 主控制器的 Windows 驱动程序的概述
 
 
 <table>

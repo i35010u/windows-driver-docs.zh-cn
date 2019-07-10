@@ -8,12 +8,12 @@ keywords:
 - GFlags、 特殊的池
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0e21ba07f3506996d5ab113a70b32c6a949c813
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3529b5d318fb7883c0b1374cb746d2eafa082a35
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368093"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716885"
 ---
 # <a name="special-pool"></a>特殊池
 
@@ -140,7 +140,7 @@ ms.locfileid: "63368093"
 
  
 
-在具有任何处理器的计算机，可以使用星号 ( **\\** *) 或 0x2A (十进制 42) 若要在系统上配置的所有内存分配的特殊池功能。
+在具有任何处理器的计算机，可以使用星号 ( **\*** ) 或 0x2A (十进制 42) 若要在系统上配置的所有内存分配的特殊池功能。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 

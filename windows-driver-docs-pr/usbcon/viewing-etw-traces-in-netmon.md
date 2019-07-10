@@ -1,16 +1,16 @@
 ---
 Description: 您可以查看使用 Microsoft 网络监视器，也称为 Netmon USB ETW 事件跟踪。
-title: Netmon 中的 USB ETW 跟踪
+title: 网络监视器中的 USB ETW 跟踪的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb3a346ae91e7fdc2013564592a12546024e58d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75f450f6d9ce74275554cd812f0c2f184fffe16f
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389198"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717013"
 ---
-# <a name="usb-etw-traces-in-netmon"></a>Netmon 中的 USB ETW 跟踪
+# <a name="overview-of-usb-etw-traces-in-netmon"></a>网络监视器中的 USB ETW 跟踪的概述
 
 
 您可以查看使用 Microsoft 网络监视器，也称为 Netmon USB ETW 事件跟踪。 网络监视器不会自动分析跟踪。 它需要 USB ETW 分析程序。 USB ETW 分析器是文本文件，编写在网络监视器分析器语言 (NPL)，用于描述 USB ETW 事件跟踪的结构。 分析器还定义特定于 USB 的列和筛选器。 这些分析器进行 Netmon 分析 USB ETW 跟踪的最佳工具。

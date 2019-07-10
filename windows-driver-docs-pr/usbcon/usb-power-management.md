@@ -1,16 +1,16 @@
 ---
 Description: 在本部分中的主题检查 WDM 电源模型与 USB 设备的电源管理属性交互的方式。
-title: 在 USB 客户端驱动程序中实施电源管理
+title: 在 USB 客户端驱动程序中实施电源管理的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baa5df03cbffcf5e42e9c4623e2df9ef2fc10d12
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bec2d1b76c409434542eb19d1d80c65c3ef8dc0c
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356581"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717017"
 ---
-# <a name="implementing-power-management-in-usb-client-drivers"></a>在 USB 客户端驱动程序中实施电源管理
+# <a name="overview-of-implementing-power-management-in-usb-client-drivers"></a>在 USB 客户端驱动程序中实施电源管理的概述
 
 
 在本部分中的主题检查 WDM 电源模型与 USB 设备的电源管理属性交互的方式。

@@ -7,12 +7,12 @@ keywords:
 - DispatchPnP 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3febbe9c9cc26542bcf4216038b93eef9802a28a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7bb956681e48579ca6d2b4a973c0cd1c5c41f05
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373417"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716919"
 ---
 # <a name="removing-a-device-in-a-function-driver"></a>在函数驱动程序中删除设备
 
@@ -44,7 +44,7 @@ ms.locfileid: "67373417"
 
    如果设备还不是处于非活动状态以响应前面**IRP\_MN\_查询\_删除\_设备**，驱动程序必须将设备标记为不接受新请求，并且必须完成在此驱动程序中对排队的任何请求。 该驱动程序时不能要求设备的访问权限的任何未完成请求。
 
-   驱动程序可以使用**Io*Xxx*RemoveLock * Xxx*** 计数未完成 i/o 操作并设置一个事件，指示该删除处理例程可以继续。
+   驱动程序可以使用**Io*Xxx*RemoveLock<em>Xxx</em>** 计数未完成 i/o 操作并设置一个事件，指示该删除处理例程可以继续。
 
 5. 执行任何电源关闭操作。
 

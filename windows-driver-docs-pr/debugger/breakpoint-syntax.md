@@ -5,12 +5,12 @@ ms.assetid: 86228b87-9ca3-4d0c-be9e-63446ac6ce31
 keywords: 调试器，断点在方法、 断点、 命令、 b （断点标识符）、 文字 MASM 标识符和模板化函数的语法规则
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b714acd984506f36205285f0c61cd90e43c839b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8003785706f0f3e2b552f9e03fd09b3d8ddf255c
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347860"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716853"
 ---
 # <a name="breakpoint-syntax"></a>断点语法
 
@@ -85,7 +85,7 @@ b?[@$t0]
 
 ### <a name="span-idbreakpointpseudoregistersspanspan-idbreakpointpseudoregistersspanbreakpoint-pseudo-registers"></a><span id="breakpoint_pseudo_registers"></span><span id="BREAKPOINT_PSEUDO_REGISTERS"></span>断点伪寄存器
 
-如果你想要在表达式中的断点地址是指，则可以使用[伪寄存器](pseudo-register-syntax.md)使用 * *$bp *** 数*语法，其中*数*是断点 id。 有关此语法的详细信息，请参阅伪寄存器语法。
+如果你想要在表达式中的断点地址是指，则可以使用[伪寄存器](pseudo-register-syntax.md)与 **$bp**_数_语法，其中*数*断点 id。 有关此语法的详细信息，请参阅伪寄存器语法。
 
  
 

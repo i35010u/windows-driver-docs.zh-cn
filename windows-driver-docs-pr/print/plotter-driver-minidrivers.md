@@ -10,12 +10,12 @@ keywords:
 - .pcd 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c38dbc5d532a603fc524c6ca7b8313c3813c88f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f02db0c5ac05f93a9ccdc18d921e210a03d31401
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388070"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717007"
 ---
 # <a name="plotter-driver-minidrivers"></a>绘图仪驱动程序微型驱动程序
 
@@ -29,7 +29,7 @@ Microsoft 绘图器驱动程序的特定于模型的微型驱动程序是创建�
 
 若要生成。*pcd*文件中，您必须首先创建文本文件使用[PCD 源文件格式](pcd-source-file-format.md)。 您必须运行 plotgpc.exe，包括使用 Windows Driver Kit (WDK)。 此程序将文本文件转换成二进制.pcd 文件。 使用以下命令语法：
 
-**plotgpc***source-file-path* .txt *target-file-path* .pcd
+**plotgpc**_source-file-path_ .txt *target-file-path* .pcd
 
 对于源和目标文件，则必须显式指定文件扩展名;不支持默认值。
 

@@ -1,16 +1,17 @@
 ---
 Description: 您需要编写用于连接器的驱动程序如果 USB C 类型系统不包含嵌入式的控制器，否则可加载由 Microsoft 提供 UCSI 驱动程序。
-title: 为 USB 类型 C 连接器开发 Windows 驱动程序
+title: 开发 Windows 驱动程序的 USB 类型 C 连接器的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32306d25f53c5cdccf58211f9a6e985704b7952c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4bcee7d92a050eff44e096df6d79c341a369d9ba
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378362"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716983"
 ---
-# <a name="developing-windows-drivers-for-usb-type-c-connectors"></a>为 USB 类型 C 连接器开发 Windows 驱动程序
+# <a name="overview-of-developing-windows-drivers-for-usb-type-c-connectors"></a>开发 Windows 驱动程序的 USB 类型 C 连接器的概述
+
 您需要为连接器编写驱动程序，如果您的 USB C 类型系统不实现 PD 状态机，或实现状态机，但不支持通过非 ACPI 传输 UCSI。 如果是这样，您可以加载 Microsoft 提供[UCSI 驱动程序](ucsi.md)。
 
 **目标的受众**

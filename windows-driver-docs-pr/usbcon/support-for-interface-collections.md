@@ -1,16 +1,16 @@
 ---
 Description: 可以在集合中分组复合的 USB 设备上的接口。 USB 通用父驱动程序 (Usbccgp.sys) 可以枚举中四种方法的接口集合。
-title: 枚举 USB 复合设备上的接口集合
+title: 复合的 USB 设备上的接口集合的枚举的概述
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 41055a870798467ce78ad35d780ea70e33832451
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5801509b07079ac9a99335994fb52515df52c5b3
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358336"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716915"
 ---
-# <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口集合
+# <a name="overview-of-enumeration-of-interface-collections-on-usb-composite-devices"></a>复合的 USB 设备上的接口集合的枚举的概述
 
 
 可以在集合中分组复合的 USB 设备上的接口。 [USB 通用父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)可以枚举中四种方法的接口集合。

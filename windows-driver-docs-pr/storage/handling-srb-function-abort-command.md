@@ -8,12 +8,12 @@ keywords:
 - SRB_FUNCTION_ABORT_COMMAND
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26dd6dfd4c4e8fdb68b6049acc53c7a02397204b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 61d4d49db615e763ddba21653fe9612e6aebeea3
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372347"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716937"
 ---
 # <a name="handling-srbfunctionabortcommand"></a>处理 SRB\_函数\_中止\_命令
 
@@ -27,9 +27,9 @@ ms.locfileid: "67372347"
 
 1.  设置输入 SRB 的**SrbStatus**到 SRB\_状态\_中止\_失败。
 
-2.  调用[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)与*NotificationType * * * RequestComplete** 和 SRB 中的输入。
+2.  调用[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)与_NotificationType_**RequestComplete**和 SRB 中的输入。
 
-3.  调用**ScsiPortNotification**再次使用 * NotificationType ***NextRequest**，或与**NextLuRequest**如果 HBA 支持有标记的队列或多个请求每个逻辑单元。
+3.  调用**ScsiPortNotification**再次_NotificationType_**NextRequest**，或与**NextLuRequest**如果 HBA 支持有标记的队列或每个逻辑单元的多个请求。
 
 否则为*HwScsiStartIo*例程执行以下操作：
 

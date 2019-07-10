@@ -1,16 +1,16 @@
 ---
 Description: 本部分中的本主题描述的类驱动程序、 常规客户端驱动程序和由 Microsoft 提供的父复合驱动程序。
-title: Microsoft 提供的 USB 驱动程序
+title: Microsoft 提供的 USB 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04cb5e5ba904b5c738b7bffbec6e30e2c6a2a79c
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 2968cc1679b7768723d73366307a97e0d53e1377
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393121"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716899"
 ---
-# <a name="microsoft-provided-usb-drivers"></a>Microsoft 提供的 USB 驱动程序
+# <a name="overview-of-microsoft-provided-usb-drivers"></a>Microsoft 提供的 USB 驱动程序的概述
 
 
 本部分中的本主题描述的类驱动程序、 常规客户端驱动程序和由 Microsoft 提供的父复合驱动程序。

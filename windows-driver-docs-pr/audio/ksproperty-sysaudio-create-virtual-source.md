@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be154fb762023e50902139712d9416ff233f9d2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a311819918c751758b70694759d140e3ea2e98b
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358718"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716818"
 ---
 # <a name="kspropertysysaudiocreatevirtualsource"></a>KSPROPERTY\_SYSAUDIO\_CREATE\_VIRTUAL\_SOURCE
 
@@ -78,9 +78,9 @@ KSPROPERTY\_SYSAUDIO\_创建\_虚拟\_源属性请求将返回状态\_成功以�
 
 SysAudio 已分配给虚拟源的索引后[ **KSPROPERTY\_SYSAUDIO\_附加\_虚拟\_源**](ksproperty-sysaudio-attach-virtual-source.md)设置属性请求可用于将该虚拟源附加到虚拟的音频设备上的 pin 实例。
 
-用户控制通过 SndVol32 应用程序的各种音频源的卷级别。 这些源包括 wave 输出设备、 MIDI 合成器、 CD 播放机和线路输入插孔。 SndVol32 使用 Windows 多媒体 **waveOut * * * Xxx*，**midiOut * * * Xxx*，和 **aux * * * Xxx*函数，以控制这些源的卷级别。 有关 Windows 多媒体函数的详细信息，请参阅 Microsoft Windows SDK 文档。
+用户控制通过 SndVol32 应用程序的各种音频源的卷级别。 这些源包括 wave 输出设备、 MIDI 合成器、 CD 播放机和线路输入插孔。 SndVol32 使用 Windows 多媒体**waveOut**_Xxx_， **midiOut**_Xxx_，并**aux** _Xxx_函数，以控制这些源的卷级别。 有关 Windows 多媒体函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-SysAudio 截获卷对这些设备所做的更改，并将其应用到其虚拟源。 例如，如果将一个 MIDI 文件转换为批数据的软件 MIDI 合成器连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 midiOut*Xxx*卷更改为固定 (而不是 **waveOut * * * Xxx*批量更改)。 同样，如果[Redbook 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#redbook-system-driver)，它将数字音频 CD 播放机从转换波形数据，为连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 AUXCAPS\_CDAUDIO 卷对 pin 的更改。 详细了解 AUXCAPS\_CDAUDIO 结构，请参阅 Windows SDK 文档。
+SysAudio 截获卷对这些设备所做的更改，并将其应用到其虚拟源。 例如，如果将一个 MIDI 文件转换为批数据的软件 MIDI 合成器连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 midiOut*Xxx*卷更改为固定 (而不是**waveOut**_Xxx_批量更改)。 同样，如果[Redbook 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#redbook-system-driver)，它将数字音频 CD 播放机从转换波形数据，为连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 AUXCAPS\_CDAUDIO 卷对 pin 的更改。 详细了解 AUXCAPS\_CDAUDIO 结构，请参阅 Windows SDK 文档。
 
 <a name="requirements"></a>要求
 ------------

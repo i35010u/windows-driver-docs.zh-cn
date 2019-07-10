@@ -1,22 +1,20 @@
 ---
 Description: 通用串行总线 (USB) 设备定义其功能和通过配置、 接口、 替代设置和终结点的功能。
-title: 适用于所有 USB 开发人员的概念
+title: USB 开发入门
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9fa4669b9961feb10e3da824f5dd14155fdc503
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d6565dcbc385eb9d7ecee79be053abf7d716e62
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369524"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716901"
 ---
-#  <a name="concepts-for-all-usb-developers"></a>适用于所有 USB 开发人员的概念
-
+# <a name="getting-started-with-usb-development"></a>USB 开发入门
 
 通用串行总线 (USB) 设备定义其功能和通过配置、 接口、 替代设置和终结点的功能。 本主题提供了这些概念的高级概述。 有关详细信息，请参阅上的 USB 规范[通用串行总线文档]( https://go.microsoft.com/fwlink/p/?linkid=224892)。
 
 ## <a name="in-this-section"></a>本节内容
-
 
 <table>
 <colgroup>
@@ -51,7 +49,7 @@ ms.locfileid: "67369524"
 
  
 
-## <a name="common-usb-scenarios"></a>**常见的 USB 方案**
+## <a name="common-usb-scenarios"></a>常见的 USB 方案
 
 
 **1-获取设备句柄**通信并使用检索到的处理或对象以将数据发送传输。

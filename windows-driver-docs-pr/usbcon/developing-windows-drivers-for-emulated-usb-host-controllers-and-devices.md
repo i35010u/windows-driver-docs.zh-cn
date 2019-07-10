@@ -1,16 +1,16 @@
 ---
-Description: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序
-title: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序
+Description: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序的概述
+title: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b2aa2f380795f1abb2e69afca54b5573bcb730
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 6ff159c506e3c4b87d4d2708e31b182adca17656
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394039"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716995"
 ---
-# <a name="developing-windows-drivers-for-emulated-usb-devices-ude"></a>开发模拟 USB 设备 (UDE) 的 Windows 驱动程序
+# <a name="overview-of-developing-windows-drivers-for-emulated-usb-devices-ude"></a>开发模拟 USB 设备 (UDE) 的 Windows 驱动程序的概述
 
 
 <table>

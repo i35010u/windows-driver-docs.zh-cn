@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b774ea44405fe0208fc293369f48ff56f2a370fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f50bbfd206f9c1426650220ed09c0cb351d675f
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335866"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716849"
 ---
 # <a name="poolfind"></a>!poolfind
 
@@ -83,7 +83,7 @@ ms.locfileid: "63335866"
 
 此命令可能需要大量的时间来执行，具体取决于必须要搜索的池内存大小。 若要加快此执行，增加使用的 COM 端口速度[ **CTRL + A （切换波特率）** ](ctrl-a--toggle-baud-rate-.md)密钥，或使用[ **.cache （设置缓存大小）** ](-cache--set-cache-size-.md)命令来增加缓存大小 （为约为 10 MB)。
 
-池标记是相同的标记传递给 **ExAllocate * * * Xxx*系列的例程。
+池标记是相同的标记传递给**ExAllocate**_Xxx_系列的例程。
 
 下面是一个示例。 搜索整个非分页缓冲的池，然后搜索页面缓冲的池，但命令终止之前完成 （后一小时的操作）：
 

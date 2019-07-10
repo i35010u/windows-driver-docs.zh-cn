@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f07412691c910f5bffc3790b7f53726eea10462f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7aadec258bf1b81ba3799d9d0a6a8082ae16482
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383852"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716819"
 ---
 # <a name="devproptypentstatus"></a>DEVPROP_TYPE_NTSTATUS
 
@@ -35,7 +35,7 @@ DEVPROP_TYPE_NTSTATUS 标识符表示在 Ntstatus.h 中定义的 NTSTATUS 状态
 
 ### <a name="setting-a-property-of-this-type"></a>设置此类型的属性
 
-若要设置其基本数据类型为 DEVPROP_TYPE_NTSTATUS 的属性，调用对应 **SetupDiSet * * * Xxx*属性函数和集函数的输入参数，如下所示：
+若要设置其基本数据类型为 DEVPROP_TYPE_NTSTATUS 的属性，调用对应**SetupDiSet**_Xxx_属性函数和集函数的输入参数，如下所示：
 
 - 设置*PropertyType* DEVPROP_TYPE_NTSTATUS 参数。
 

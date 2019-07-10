@@ -9,12 +9,12 @@ keywords:
 - 同步 WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4e5d5dfcb5c2145dda59c1c1621bb8418cd334
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d34fc1022c8f673e39d887b99be211950218eb5b
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377743"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716943"
 ---
 # <a name="synchronization-examples"></a>同步示例
 
@@ -42,7 +42,7 @@ ms.locfileid: "67377743"
 
     如果开启流类同步，微型驱动程序的入口点所有在调用调度\_级别。 微型驱动程序可以执行操作的最多处理围绕 1/2 到 1 毫秒持续时间而无需调整优先级。 如果微型驱动程序只是偶尔需要运行代码，需要使用多个 1/2 毫秒或偶尔需要调用服务在被动\_级别 (如在初始化时)，然后[ **StreamClassCallAtNewPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclasscallatnewpriority)与低优先级可用于获取一种被动\_级别工作线程。 请注意，低优先级回调不与任何内容同步，微型驱动程序可能会收到新的请求 (假设**ReadyForNextRequest** NotificationType 参数处于挂起状态) 时运行的低优先级回调。
 
--   **Stream 类同步应在何时*****不*****是使用**
+-   **Stream 类同步应在何时** **_不_** **是使用**
 
     以下是其中流类同步不应使用的情况的示例。 这些问题包括：
 

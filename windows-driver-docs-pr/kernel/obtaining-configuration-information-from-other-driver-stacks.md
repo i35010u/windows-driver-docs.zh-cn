@@ -11,12 +11,12 @@ keywords:
 - BUS_INTERFACE_STANDARD
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be7a62b87faeeb5d15eb9614b66a8e44db9a8615
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f669fab6b62f25ceeb82143c60d3aa6d54834b86
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384934"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716975"
 ---
 # <a name="obtaining-configuration-information-from-other-driver-stacks"></a>从其他驱动程序堆栈获取配置信息
 
@@ -30,7 +30,7 @@ ms.locfileid: "67384934"
 
 Windows 2000 和更高版本的 Windows 不允许访问属于其他驱动程序堆栈的硬件的驱动程序。 可以编写筛选器驱动程序来提供所需的功能。 如果你想要访问桥硬件，例如，必须设计实现在桥的配置空间所需的操作筛选器驱动程序。 此外必须提供指定桥硬件可能存在的硬件 Id，因此检测到桥的设备 ID 时，即插即用管理器可以加载到桥的驱动程序堆栈上的筛选器驱动程序的 INF 文件。
 
-或者，可以安装以编程方式使用的筛选器**SetupDi * Xxx*** 你的设备的共同安装程序中的函数。
+或者，可以安装以编程方式使用的筛选器**SetupDi<em>Xxx</em>** 你的设备的共同安装程序中的函数。
 
 然后，筛选器驱动程序可以访问桥使用[**总线\_界面\_标准**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)接口。
 

@@ -9,12 +9,12 @@ keywords:
 - NDIS 微型端口驱动程序 WDK，查询信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d2cfdc51bdd32b7362723d181347175866e632
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc0fd8f294dd6678ddec8fd2703139b39fc78398
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360960"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717011"
 ---
 # <a name="querying-miniport-driver-information"></a>查询微型端口驱动程序信息
 
@@ -22,7 +22,7 @@ ms.locfileid: "63360960"
 
 
 
-**Ndis * Xxx*** 协议驱动程序调用查询微型端口驱动程序信息的函数和*MiniportXxx*取决微型端口驱动程序是用于满足此类查询的函数无连接或面向连接的。
+**Ndis<em>Xxx</em>** 协议驱动程序调用查询微型端口驱动程序信息的函数和*MiniportXxx*取决于用于满足此类查询的函数是否微型端口驱动程序是无连接或面向连接的。
 
 可以直接从用户模式下查询微型端口驱动程序。
 

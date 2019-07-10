@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c3d8ab2909ed84c4bbb438712c3efb837421489a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2349d001dcb57d30b7721df143f96d5835b9814
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331273"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716928"
 ---
 # <a name="devproptypeuint32"></a>DEVPROP_TYPE_UINT32
 
@@ -33,7 +33,7 @@ ms.locfileid: "63331273"
 
 **设置此属性类型**
 
-若要设置其基本数据类型为 DEVPROP_TYPE_UINT32 的属性，调用对应**SetupDiSet * Xxx*** 属性函数和集函数的输入参数，如下所示：
+若要设置其基本数据类型为 DEVPROP_TYPE_UINT32 的属性，调用对应**SetupDiSet<em>Xxx</em>** 属性函数和集函数的输入参数，如下所示：
 
 - 设置*PropertyType* DEVPROP_TYPE_UINT32，参数设置*PropertyBuffer*参数指向的缓冲区可包含至少一个 ULONG 值，并设置*PropertyBufferSize*参数<strong>sizeof (</strong>ULONG<strong>)</strong>。
 

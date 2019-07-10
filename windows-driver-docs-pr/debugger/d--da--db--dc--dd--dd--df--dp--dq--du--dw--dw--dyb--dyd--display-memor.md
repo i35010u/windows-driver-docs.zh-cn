@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fa50f4a4698824200407038302c1b916ae12fd15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f716dad8dc05fffcebc36e961ce7dfbeae815ee2
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374937"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716847"
 ---
 # <a name="d-da-db-dc-dd-dd-df-dp-dq-du-dw-display-memory"></a>d、 da、 db、 dc、 dd、 dD、 df、 dp、 dq、 du，dw （显示内存）
 
 
-**D\\** * 命令将显示在给定范围内的内存内容。
+**D\*** 命令显示给定范围中的内存内容。
 
 ```dbgcmd
 d{a|b|c|d|D|f|p|q|u|w|W} [Options] [Range] 
@@ -36,7 +36,7 @@ d [Options] [Range]
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
 指定一个或多个显示选项。 任何下列选项可以包含，只不过最多只有一个 **/p** \*选项，可以指定：
 
-<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span>* */c***Width*  
+<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span> **/c**_Width_  
 指定要在显示中使用列的数。 如果省略，默认列数取决于显示类型。
 
 <span id="_p"></span><span id="_P"></span> **/p**  

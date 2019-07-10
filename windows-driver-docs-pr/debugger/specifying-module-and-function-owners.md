@@ -11,12 +11,12 @@ keywords:
 - 分析扩展，triage.ini 文件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f27077d9553a11a96755abf3eb6897496bad6040
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 649b6ea022935354fa9b13e60465e00ba1d89251
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368080"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716882"
 ---
 # <a name="specifying-module-and-function-owners"></a>指定模块和函数所有者
 
@@ -73,7 +73,7 @@ mod*!functionC=Person7
 Followup:  Person3
 ```
 
-根据该文件，"Person3"拥有**module2 ！ functionB**，并"Person4"拥有**module2 ！ funct\\** <em>。这两个这些字符串匹配的参数传递给 * *！ 所有者</em>* ，因此使用更完整的匹配项。
+根据该文件，"Person3"拥有**module2 ！ functionB**，并"Person4"拥有**module2 ！ funct\\** <em>。 这两个这些字符串匹配的参数传递给 **！ 所有者**，因此使用更完整的匹配项。
 
 ### <a name="span-idtriageiniandanalyzespanspan-idtriageiniandanalyzespan-triageini-and-analyze"></a><span id="triage_ini_and__analyze"></span><span id="TRIAGE_INI_AND__ANALYZE"></span> Triage.ini 和 ！ 分析
 
@@ -115,7 +115,7 @@ Followup: Person4
 
 如果省略了感叹号和函数名称或添加 **！\\** * 后的模块名称，该模块中的所有函数来都指示。 如果还分别指定此模块内的某个函数，则更精确的规范优先。
 
-如果"default"用作模块名称或函数名称，它相当于通配符字符。 例如， **nt ！\\** * 相同**nt ！ 默认**，和**默认**等同于 * *\*！\\***.
+如果"default"用作模块名称或函数名称，它相当于通配符字符。 例如， **nt ！\\** * 相同**nt ！ 默认**，和**默认**等同于 **\*！\\\*** .
 
 如果进行了匹配项，但该单词**忽略**显示右侧的等号 （=），调试器会继续到堆栈中的下一帧。
 

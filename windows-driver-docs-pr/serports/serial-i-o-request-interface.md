@@ -4,18 +4,18 @@ description: 若要控制外围设备连接到串行控制器，客户端上的�
 ms.assetid: D536A0EC-2B8B-491B-8A14-656F4B5A3843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e793aa4f33d9f2ee60dc2d5a7f73daa9070d5ab1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3f851a66f751f073e19127d8439cffb2f42a841
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356744"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717003"
 ---
 # <a name="serial-io-request-interface"></a>串行 I/O 请求接口
 
 若要控制外围设备连接到串行控制器，客户端上的端口的应用程序或外围设备驱动程序将发送到端口的输入/输出请求。 客户端用[ **IRP\_MJ\_编写**](https://docs.microsoft.com/previous-versions/ff546904(v=vs.85))并[ **IRP\_MJ\_读取**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))若要将数据传输到和从串行端口接收数据的请求。 此外，Windows 定义一组串行 I/O 控制 (Ioctl) 的请求客户端可以使用配置的串行端口。
 
-Serial **IRP\_MJ\_* XXX*** 请求和串行 Ioctl 共同构成支持在系列串行控制器设备的串行 I/O 请求接口。 由 Serial.sys 驱动程序和 SerCx2 或 SerCx 和扩展基于串行控制器驱动程序的组合来支持此接口。
+Serial **IRP\_MJ\_<em>XXX</em>** 请求和串行 Ioctl 共同构成支持在系列串行控制器设备的串行 I/O 请求接口。 由 Serial.sys 驱动程序和 SerCx2 或 SerCx 和扩展基于串行控制器驱动程序的组合来支持此接口。
 
 SerCx2、 SerCx 和 Serial.sys 支持许多相同的串行 Ioctl。 但是，SerCx2、 SerCx 和 Serial.sys 支持 Ioctl 中指定的不同子集*串行设备控制请求*。 下表汇总了支持的 SerCx2、 SerCx 和 Serial.sys Ioctl 的子集。 一个**是**表中的条目指示串行 framework 扩展插件或驱动程序支持相应 IOCTL，和一个**否**条目指示它没有。
 
@@ -279,4 +279,4 @@ SerCx2、 SerCx 和 Serial.sys 支持许多相同的串行 Ioctl。 但是，Ser
 
 5. Serial.sys 驱动程序始终完成**IOCTL\_串行\_重置\_设备**状态请求\_成功，但不执行任何操作以响应此请求。 不支持 SerCx2 和 SerCx **IOCTL\_串行\_重置\_设备**请求，并始终完成这些请求的状态\_不\_实现。
 
-有关详细信息**IOCTL\_串行\_* XXX*** 请求和读取和写入请求为串行控制器，请参阅[ntddser.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddser/)标头。
+有关详细信息**IOCTL\_串行\_<em>XXX</em>** 请求和读取和写入请求为串行控制器，请参阅[ntddser.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddser/)标头。

@@ -6,12 +6,12 @@ keywords:
 - 调试器命令程序中示例
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 161cd14ede3f952e299631ca29ee252963066230
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c96157f368350ec2beb55a86f6bbab787e3a67a9
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368150"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716856"
 ---
 # <a name="debugger-command-program-examples"></a>调试器命令程序示例
 
@@ -106,7 +106,7 @@ $$  Iterate over all processes in list.
 
 - 此程序使用 MASM 表达式计算器。 但是，在两个位置 **@@c+ + （)** 标记将出现。 此令牌会导致程序能够使用C++表达式计算器分析表达式的括号中。 这种用法使程序能够使用C++直接结构令牌。
 
-- **？** 与使用标志[ **r （寄存器）** ](r--registers-.md)命令。 此标志将类型化的值分配给伪寄存器**美元 t0**并 **$t1**。 中的循环，正文 **$t1**具有类型 * * ntdll ！\_LDR\_数据\_表\_条目\\* * *，因此程序可以创建直接成员的引用。
+- **？** 与使用标志[ **r （寄存器）** ](r--registers-.md)命令。 此标志将类型化的值分配给伪寄存器**美元 t0**并 **$t1**。 中的循环，正文 **$t1**具有类型**ntdll ！\_LDR\_数据\_表\_条目\\\*** ，因此程序可以创建直接成员的引用。
 
 - 用户命名别名 **$Base**并 **$Mod**此程序中使用。 美元符号降低当前的调试器会话中以前使用这些别名的可能性。 不需要美元符号的。 [ **${/ V 部分:}** ](-------alias-interpreter-.md)令牌解释别名按字面意思，阻止它被替换，如果运行该脚本之前定义它。 此令牌以及任何块还可用于防止使用别名定义块的前面。
 

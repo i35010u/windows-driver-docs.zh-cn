@@ -3,12 +3,12 @@ Description: 在本主题中，您将学习有关如何选择一种配置中的�
 title: 如何选择 USB 设备的配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 420990332c34a6a54c5b5331c3a712f8d54ef318
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 786df71b3cca8920ff39f3c0609209ee5ae41491
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363885"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716964"
 ---
 # <a name="how-to-select-a-configuration-for-a-usb-device"></a>如何选择 USB 设备的配置
 
@@ -84,7 +84,7 @@ ms.locfileid: "67363885"
 
 下面的代码示例演示如何创建一个数组[ **USBD\_界面\_列表\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)结构和调用[ **USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)。 该示例通过调用 SubmitUrbSync 以同步方式发送请求。 若要查看 SubmitUrbSync 代码示例，请参阅[如何提交 URB](send-requests-to-the-usb-driver-stack.md)。
 
-```ManagedCPlusPlus
+```C++
 /*++
 
 Routine Description:
@@ -274,11 +274,11 @@ NTSTATUS CompletionRoutine ( PDEVICE_OBJECT DeviceObject,
 <a name="remarks"></a>备注
 -------
 
-**禁用的 USB 设备的配置：  **
+**禁用的 USB 设备的配置：**
 
 若要禁用的 USB 设备，创建和提交包含 NULL 配置描述符的选择配置请求。 对于该类型的请求，可以重复使用你针对设备中选择一个配置的请求创建 URB。 或者，你可以通过调用来分配新 URB [ **USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)。 然后再提交请求，必须通过使用格式 URB [ **UsbBuildSelectConfigurationRequest** ](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))宏，如下面的代码示例中所示。
 
-```ManagedCPlusPlus
+```C++
 URB Urb;
 UsbBuildSelectConfigurationRequest(
   &Urb,

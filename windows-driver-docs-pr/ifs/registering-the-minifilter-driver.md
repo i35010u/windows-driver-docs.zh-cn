@@ -6,12 +6,12 @@ keywords:
 - 注册微筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98dd4d84b6ae510c77de6b4a6645d9e08c2a064a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c0dcfc9e79596faee7fc47775c8d8279c8c9b05f
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366781"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716817"
 ---
 # <a name="registering-the-minifilter-driver"></a>注册微筛选器驱动程序
 
@@ -33,7 +33,7 @@ status = FltRegisterFilter(
 
 **FltRegisterFilter**具有两个输入参数。 第一种*驱动程序*，是作为接收微筛选器驱动程序的驱动程序对象指针*DriverObject*输入的参数及其**DriverEntry**例程。 第二类是*注册*，指向的指针[ **FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)结构，其中包含条目指向微筛选器驱动程序的回调例程。
 
-此外， **FltRegisterFilter**具有输出参数*RetFilter*，用于接收微筛选器驱动程序的不透明的筛选器指针。 此筛选器指针是必需的输入的参数为许多 **Flt * * * Xxx*支持例程，其中包括[ **FltStartFiltering** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltstartfiltering)并[ **FltUnregisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltunregisterfilter)。
+此外， **FltRegisterFilter**具有输出参数*RetFilter*，用于接收微筛选器驱动程序的不透明的筛选器指针。 此筛选器指针是必需的输入的参数为许多**Flt**_Xxx_支持例程，其中包括[ **FltStartFiltering** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltstartfiltering)和[ **FltUnregisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltunregisterfilter)。
 
  
 

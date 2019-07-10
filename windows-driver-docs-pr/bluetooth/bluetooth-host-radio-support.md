@@ -4,12 +4,12 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: 提供有关 Windows 中的蓝牙主机单选支持问题和解答的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ccf6d42cd0738171c8b53a7f2dcecb6888003be
-ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
+ms.openlocfilehash: 8bb7186d8d86e0ec85c310427359b7ed100cdf4d
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "66840861"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716813"
 ---
 # <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持
 
@@ -39,7 +39,7 @@ ms.locfileid: "66840861"
 
 Ihv 应执行以下步骤，确保在 Windows 上其 Bluetooth 无线电收发器拥有在 box 支持部门：
 
-* 请确保单选支持扩展的兼容 ID 操作系统功能描述符。 有关详细信息，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=617154)。
+* 请确保单选支持扩展的兼容 ID 操作系统功能描述符。 有关详细信息，请参阅[Microsoft OS 描述符](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)。
 * 获得 Windows 认证计划批准 Bluetooth 无线电硬件和关联的 INF 文件。 蓝牙无线的特定于供应商的 INF 文件的示例，请参阅[附录 b:在 Windows Vista 中使用的 INF 文件供应商提供的示例](bluetooth-faq--appendix-b.md)。
 * 使用合作伙伴中心可通过 Windows Update 提供的 INF 文件
 
@@ -126,9 +126,9 @@ Windows 还会发布本地的设备 ID 记录到远程的蓝牙设备 Windows �
 <thead>
 <tr class="odd">
 <th align="left"><p>ValueName</p></th>
-<th align="left"><p>在任务栏的搜索框中键入</p></th>
+<th align="left"><p>type</p></th>
 <th align="left"><p>描述</p></th>
-<th align="left"><p>默认值</p></th>
+<th align="left"><p>Default Value</p></th>
 </tr>
 </thead>
 <tbody>

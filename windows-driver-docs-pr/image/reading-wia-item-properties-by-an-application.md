@@ -4,12 +4,12 @@ description: 通过应用程序读取 WIA 项属性
 ms.assetid: e09f604e-451e-40dc-bc12-a077d4d263ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa01d064efeb26541fef14cfff387a9efb8a8eb9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4354291206d0996660b9103cd83949b521f7200
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374297"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716831"
 ---
 # <a name="reading-wia-item-properties-by-an-application"></a>通过应用程序读取 WIA 项属性
 
@@ -23,7 +23,7 @@ ms.locfileid: "67374297"
 
 1.  确定所读取的属性是否需要运行更新。 若要确定哪些 WIA 属性在读取，WIA 微型驱动程序可以使用 PROPSPEC 数组 （在 Microsoft Windows SDK 文档中定义）。 建议 WIA 微型驱动程序处理 PROPSPEC 数组之前确定的项类型。 这减少了需要在遍历该数组每个**IWiaMiniDrv::drvReadItemProperties**调用。 如果必须在此设备的子项目上没有运行时属性，只有根项属性读取将处理请求。
 
-2.  通过调用更新当前值[ **wiasWriteMultiple** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritemultiple)或 **wiasWriteProp * * * Xxx*服务函数，请使用 WIA 属性 id。 这会更新存储在驱动程序项，WIA 属性集和 WIA 服务返回应用程序的新值。
+2.  通过调用更新当前值[ **wiasWriteMultiple** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiaswritemultiple)或**wiasWriteProp**_Xxx_服务函数，请使用 WIA属性的 id。 这会更新存储在驱动程序项，WIA 属性集和 WIA 服务返回应用程序的新值。
 
 如果 WIA 微型驱动程序不会执行此函数中的任何运行时调整到 WIA 属性，WIA 服务自动仅当前 WIA 属性值返回到应用程序。 此函数仅应该用于属性，例如设备的时钟或需要特定于硬件的检查，如文档送纸器状态的 WIA 属性使用。
 

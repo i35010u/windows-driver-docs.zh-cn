@@ -1,16 +1,16 @@
 ---
 Description: 本主题提供信息的客户端驱动程序开发人员的跟踪和日志记录功能的通用串行总线 (USB)。
-title: Windows 的 USB 事件跟踪
+title: USB Windows 事件跟踪的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 680a65744992420a7e333e4c6341ffff15f8d02d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85c6795629d109de370357a23f2d0e971b9669a6
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356589"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717019"
 ---
-# <a name="usb-event-tracing-for-windows"></a>Windows 的 USB 事件跟踪
+# <a name="overview-of-usb-event-tracing-for-windows"></a>USB Windows 事件跟踪的概述
 
 
 本主题提供信息的客户端驱动程序开发人员的跟踪和日志记录功能的通用串行总线 (USB)。 为了方便开发和调试 USB 设备的人员提供此信息。 它包括有关如何安装工具、 创建跟踪文件和分析 USB 跟踪文件中的事件的信息。 本主题假定你已成功使用 USB 跟踪和日志记录功能所需的硬件的 USB 生态系统的全面了解。

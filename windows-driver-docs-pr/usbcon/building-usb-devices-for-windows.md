@@ -1,16 +1,16 @@
 ---
 Description: 此部分提供的 USB 外围设备制造商的链接。
-title: 为 Windows 构建 USB 设备
+title: 为 Windows 生成的 USB 设备的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90da4770af8bfd5b97524870ee50b8b636d8b82d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 101328caae866c005b48f9340c463760f5c9f161
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384482"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716805"
 ---
-# <a name="building-usb-devices-for-windows"></a>为 Windows 构建 USB 设备
+# <a name="overview-of-building-usb-devices-for-windows"></a>为 Windows 生成的 USB 设备的概述
 
 ## <a name="summary"></a>总结
 
@@ -35,7 +35,7 @@ IHV 可以使用 Microsoft OS 描述符来而不是单独提供的固件中存�
 [1.0 的 Microsoft 操作系统描述符规范](https://go.microsoft.com/fwlink/p/?linkid=617519)  
 本文档介绍 Microsoft 操作系统描述符。 它包括 OS 字符串描述符，扩展属性操作系统功能描述符和 OS 功能描述符格式规范。
 
-[2.0 的 Microsoft 操作系统描述符规范](https://go.microsoft.com/fwlink/p/?linkid=306681)  
+[2.0 的 Microsoft 操作系统描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)  
 本文档定义，并描述了版本 2.0 的 Microsoft 操作系统描述符的实现。 Microsoft OS 2.0 描述符旨在解决的限制和可靠性问题的 1.0 版的操作系统描述符，并启用新的 USB 设备的特定于 Windows 的功能。
 
 [加载 Winusb.sys 为功能驱动程序通过使用 Microsoft OS 描述符](automatic-installation-of-winusb.md)  

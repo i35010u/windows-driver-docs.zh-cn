@@ -1,16 +1,16 @@
 ---
 Description: 在本部分中的主题提供 USB 管道 URBs 的 I/O 请求，并介绍客户端驱动程序如何使用设备驱动程序接口 (DDIs) 将数据传入和传出的 USB 设备。
-title: 在 USB 客户端驱动程序中发送 USB 数据传输
+title: USB 客户端驱动程序中发送 USB 数据传输概述
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8837b45d8fe3df907abb13097f924a8371a800a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16f177971a8453f7cc7e080cc850d4d3d51c5366
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356623"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717023"
 ---
-# <a name="sending-usb-data-transfers-in-usb-client-drivers"></a>在 USB 客户端驱动程序中发送 USB 数据传输
+# <a name="overview-of-sending-usb-data-transfers-in-usb-client-drivers"></a>USB 客户端驱动程序中发送 USB 数据传输概述
 
 
 在本部分中的主题提供有关 USB 管道和 URBs I/O 请求的信息，并介绍客户端驱动程序如何使用设备驱动程序接口 (DDIs) 来传输数据传入和传出的 USB 设备。

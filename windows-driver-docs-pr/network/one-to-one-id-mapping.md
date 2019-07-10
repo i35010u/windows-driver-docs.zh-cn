@@ -9,12 +9,12 @@ keywords:
 - 升级前 Id WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b8d21a386c3af1bbca48b3f51cc2c33531a395
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57c0b24ca1112cbd06866e56caa01c96d015f02c
+ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384226"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67716821"
 ---
 # <a name="one-to-one-id-mapping"></a>一对一 ID 映射
 
@@ -26,7 +26,7 @@ ms.locfileid: "63384226"
 
  
 
-中的条目**Oem * Xxx*** 部分中的指定 ID 的一对一映射的 netmap.inf 文件采用以下格式：
+中的条目**Oem<em>Xxx</em>**  netmap.inf 文件中指定 ID 的一对一映射部分具有以下格式：
 
 *preupgrade-ID* = *postupgrade-ID*
 
