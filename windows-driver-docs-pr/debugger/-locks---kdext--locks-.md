@@ -39,13 +39,13 @@ ms.locfileid: "63336162"
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
 指定要显示的信息。 可以使用以下选项的任意组合：
 
-<span id="-v"></span><span id="-V"></span>**-v**  
+<span id="-v"></span><span id="-V"></span> **-v**  
 显示有关每个锁的详细的信息。
 
-<span id="-p"></span><span id="-P"></span>**-p**  
+<span id="-p"></span><span id="-P"></span> **-p**  
 显示有关包括性能统计信息的锁的所有可用信息。
 
-<span id="-d"></span><span id="-D"></span>**-d**  
+<span id="-d"></span><span id="-D"></span> **-d**  
 显示有关所有锁的信息。 否则，仅锁争用将显示。）
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
@@ -101,7 +101,7 @@ Resource @ 0x80d8b0b0    Shared 1 owning threads
 
 请注意，每个线程的地址显示后跟其线程计数 (例如，"-01")。 如果一个线程后跟"&lt;\*&gt;"，线程是某个锁的所有者。 在某些情况下，初始线程地址包含某一偏移量。 在这种情况下，还显示的实际线程地址。
 
-如果你想要找到其中某个资源对象的详细信息，使用下面的地址"资源 @"为后续命令的参数。 若要调查中前面的示例中所示的第二个资源，可以使用[ **dt ERESOURCE 80d8b0b0** ](dt--display-type-.md)或[ **！ 线程 80ed0020** ](-thread.md). 或者，可以使用 **！ 锁**再次扩展 **-v**选项：
+如果你想要找到其中某个资源对象的详细信息，使用下面的地址"资源 @"为后续命令的参数。 若要调查中前面的示例中所示的第二个资源，可以使用[**dt ERESOURCE 80d8b0b0**](dt--display-type-.md)或[ **！ 线程 80ed0020**](-thread.md). 或者，可以使用 **！ 锁**再次扩展 **-v**选项：
 
 ```dbgcmd
 kd> !locks -v 80d8b0b0

@@ -452,7 +452,7 @@ TypeArray | 一个数组。 一个模型对象，它具有一个其类型为 Typ
 TypeFunction | 一个函数。
 TypeTypedef | Typedef。 模型对象具有其类型应 TypeTypedef 本机类型具有相同的最终基础 typedef 的类型的规范表示形式的规范表示形式。 这将显示对对象和类型信息的最终用户完全透明的除非 IDebugHostType2 的显式 typedef 方法利用查询 typedef 信息或针对 typedef 注册一个显式数据模型。 请注意，GetTypeKind 方法永远不会返回 TypeTypedef。 每个方法将返回最终基础 typedef 的类型将返回。 可用于获取 typedef 特定信息的 IDebugHostType2 上有 typedef 特定方法。
 TypeEnum | 一个枚举。 一个模型对象，它具有一个其类型为 TypeEnum 的本机类型具有的 ObjectIntrinsic 值和类型的内部函数是相同类型的枚举值的规范表示形式。 
-TypeIntrinsic | 内部 （基类型）。 一个模型对象，它具有一个其类型为 TypeIntrinsic 的本机类型具有 ObjectIntrinsic 的规范表示形式。 类型信息可能会或可能不保留-尤其是当基础类型完整描述了由变量数据类型 （| VT_ *） 的内部数据存储在 IModelObject
+TypeIntrinsic | 内部 （基类型）。 一个模型对象，它具有一个其类型为 TypeIntrinsic 的本机类型具有 ObjectIntrinsic 的规范表示形式。 类型信息可能会或可能不保留-尤其是当基础类型完整描述了由变量数据类型 （VT_*） 的内部数据存储在 IModelObject
 
 总体 IDebugHostType2 / IDebugHostType 接口 （不包括 IDebugHostSymbol 方法） 定义，如下所示： 
 
