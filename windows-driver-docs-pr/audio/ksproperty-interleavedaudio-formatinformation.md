@@ -11,14 +11,14 @@ api_location:
 - ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 02/15/2019
+ms.date: 07/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 37618d62b8ffb1ec8a26dee90b75b8ede4239b9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58aa4738f6e6bab6c8a7f511470403cac2adb4d3
+ms.sourcegitcommit: 68544e8bc6f236758a5b74d46d69a4c1402bea42
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361005"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828365"
 ---
 # <a name="kspropertyinterleavedaudioformatinformation"></a>KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION 
 
@@ -28,11 +28,11 @@ ms.locfileid: "67361005"
 
  |Get|设置|目标|属性描述符类型|属性值类型|
 |--- |--- |--- |--- |--- |
-|是|否|Pin|[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-interleaved-audio-format-information)|
+|是|否|Pin|[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information)|
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
- Get **KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**返回[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-interleaved-audio-format-information)结构，其中包含有关其他信息交错的环回音频和音频流中的捕获音频。 
+ Get **KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**返回[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information)结构，其中包含有关其他信息交错的环回音频和音频流中的捕获音频。 
 
 Windows 10 中启动 19 H 1，设置 KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION 属性键是成一个流，支持的硬件关键字 Spotter (HW KWS) 该组合麦克风和环回音频的系统的要求若要使用 AEC APO 关键字迸发输出。 有关详细信息，请参阅[语音激活](voice-activation.md)。
 
@@ -59,7 +59,4 @@ Windows 10 中启动 19 H 1，设置 KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMAT
 
 [KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-
-
-
-
+[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_interleaved_audio_format_information) 
