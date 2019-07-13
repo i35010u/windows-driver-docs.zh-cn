@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce3ed6ab4ad9d0e405732a342d71707cc16b485
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: bb88f819aba66830ae6e6b3e3f6fe11d6b1080e5
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519712"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866510"
 ---
 # <a name="bug-check-0x1c7-storedatastructurecorruption"></a>Bug 检查 0x1C7：应用商店\_数据\_结构\_损坏
 
@@ -73,7 +73,7 @@ ms.locfileid: "67519712"
 2.  驱动程序或设备不当地修改通过 DMA 操作不正确或关联的 MDL 物理页。
 3.  硬件设备或固件损坏内存，例如固件非法跨电源转换修改物理页引起的损坏。
 
-Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部结构第七版](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals)通过 Pavel Yosifovich、 Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
+Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部结构第七版](https://docs.microsoft.com/sysinternals/learn/windows-internals)通过 Pavel Yosifovich、 Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
 
 ## <a name="resolution"></a>分辨率
 -----
@@ -87,4 +87,4 @@ Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部�
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)

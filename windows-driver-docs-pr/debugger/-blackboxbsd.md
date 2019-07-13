@@ -14,12 +14,12 @@ api_name:
 - blackboxbsd
 api_type:
 - NA
-ms.openlocfilehash: c3942865d8bbc88aa48fd69b74a929616d1d219d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e877e718858133e836b2408cd38d31c68fb264a
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336991"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866516"
 ---
 # <a name="blackboxbsd"></a>!blackboxbsd
 
@@ -42,7 +42,7 @@ ext.dll
 
 ## <a name="span-idremarksspanremarks"></a><span id="Remarks"></span>备注
 
-驱动程序开发人员可以调用[BugCheckSecondaryDumpDataCallback 例程](https://msdn.microsoft.com/library/windows/hardware/ff540679)将第二个启动信息添加到转储文件。 驱动程序开发人员 （和操作系统） 可以决定何时将此信息添加到转储文件。 这意味着不是所有内核模式转储文件将都包含第二个启动信息。
+驱动程序开发人员可以将第二个启动信息添加到转储文件。 驱动程序开发人员 （和操作系统） 可以决定何时将此信息添加到转储文件。 这意味着不是所有内核模式转储文件将都包含第二个启动信息。 有关详细信息，请参阅[编写 Bug 检查原因回调例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-a-bug-check-callback-routine)。
 
 ### <a name="example-command-output"></a>示例命令输出
 

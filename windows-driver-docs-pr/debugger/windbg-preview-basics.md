@@ -3,12 +3,12 @@ title: WinDbg 预览基础知识
 description: 本部分介绍 WinDbg 预览调试器的基本功能。
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ef9e0d741c43caf08109d6e3fa21e2507a0599d7
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 98986a36c9094322e60a9f0436182ecbce654217
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65135252"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866494"
 ---
 ![Windbg preview 上的小徽标](images/windbgx-preview-logo.png) 
 
@@ -33,7 +33,7 @@ ms.locfileid: "65135252"
 | [JavaScript 调试器脚本](https://docs.microsoft.com/windows-hardware/drivers/debugger/javascript-debugger-scripting) | 如何使用 JavaScript 创建了解调试器对象的脚本  |
 | [WinDbg 预览版-脚本](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-scripting-preview) |在脚本中使用 WinDbg 预览生成  |
 | https://github.com/Microsoft/WinDbg-Samples |它们在其中共享最新的 JavaScript 调试器团队 GitHub 站点 (和C++) 的示例代码。 |
-|[中 JavaScript 扩展本机调试器对象](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/native-objects-in-javascript-extensions) | 介绍如何使用常见对象和其属性和行为上提供的参考信息。|
+|[中 JavaScript 扩展本机调试器对象](https://docs.microsoft.com/windows-hardware/drivers/debugger/native-objects-in-javascript-extensions) | 介绍如何使用常见对象和其属性和行为上提供的参考信息。|
 
 
 ## <a name="ttd-basics"></a>TTD 基础知识
@@ -46,7 +46,7 @@ ms.locfileid: "65135252"
 ## <a name="ttd-queries"></a>TTD 查询
 | 标题               | 描述        |
 | ------------------- | -------------------|
-| [时间旅行调试对象简介](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/time-travel-debugging-object-model)。 |可以使用将数据模型与查询时传输跟踪。  
+| [时间旅行调试对象简介](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-object-model)。 |可以使用将数据模型与查询时传输跟踪。  
 |  https://github.com/Microsoft/WinDbg-Samples/blob/master/TTDQueries/tutorial-instructions.md |有关如何调试教程C++代码使用 TTD 查询来查找有问题的代码 |
 | https://github.com/Microsoft/WinDbg-Samples/tree/master/TTDQueries/app-sample | 所有在实验室中使用的代码就可用。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f93b4456bb1d768526bdca891d02c925c1e25ef
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f5a414b0aa9bec8934caa83784be04c41b8fb838
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520648"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866529"
 ---
 # <a name="bug-check-0x12b-faultyhardwarecorruptedpage"></a>Bug 检查 0x12B：发生故障\_硬件\_损坏\_页
 
@@ -114,14 +114,13 @@ ms.locfileid: "67520648"
 
 由于物理内存访问的内存损坏，才会发生此错误检查。 物理内存损坏的原因包括：
 
-1.  出现故障的 RAM 硬件
-2.  驱动程序或设备不当地修改通过 DMA 操作不正确或关联的 MDL 物理页。
-3.  硬件设备或固件损坏内存，例如固件非法跨电源转换修改物理页引起的损坏。
+1. 出现故障的 RAM 硬件
+2. 驱动程序或设备不当地修改通过 DMA 操作不正确或关联的 MDL 物理页。
+3. 硬件设备或固件损坏内存，例如固件非法跨电源转换修改物理页引起的损坏。
 
 注意：如果单一位错误，导致的损坏，并且会自动更正这种情况不会生成错误检查，可以检测到压缩的存储管理器。 如果损坏不由单个位错误，压缩的存储管理器会报告此错误检查。
 
-Windows 内存管理器和内存压缩的详细信息，请参阅[第 1 部分 Windows 内部结构第七版](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals)通过 Pavel Yosifovich、 Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
-
+Windows 内存管理器和内存压缩的详细信息，请参阅[第 1 部分 Windows 内部结构第七版](https://docs.microsoft.com/sysinternals/learn/windows-internals)通过 Pavel Yosifovich、 Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
 
 ## <a name="resolution"></a>分辨率
 -----
@@ -130,20 +129,11 @@ Windows 内存管理器和内存压缩的详细信息，请参阅[第 1 部分 W
 
 若要调查如果此 bug 检查由有故障 RAM 的硬件，运行 Windows 内存诊断工具。 在控件面板的搜索框中，键入内存，然后单击*诊断您的计算机的内存问题*。在测试运行后，使用事件查看器查看系统日志下的结果。 寻找*MemoryDiagnostics 结果*条目以查看结果。
 
-
 ## <a name="see-also"></a>请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
 
 [第 9 频道视频内存压缩](https://channel9.msdn.com/Blogs/Seth-Juarez/Memory-Compression-in-Windows-10-RTM)
-
- 
-
- 
-
-
-
-

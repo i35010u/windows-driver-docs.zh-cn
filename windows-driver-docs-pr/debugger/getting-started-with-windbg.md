@@ -4,12 +4,12 @@ description: WinDbg 是一个内核模式和用户模式下的调试器所包含
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 10/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaf86b6636fdc336f50ec547c37e529e0d9b7691
-ms.sourcegitcommit: 61157d026b517a86c37def552a2ab28b6c32e7b4
+ms.openlocfilehash: 09ff070bc8b49a8851b17c25988435b03866e37b
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67196426"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866531"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
 
@@ -234,11 +234,11 @@ void main ()
 2.  上**文件**菜单中，选择**打开可执行文件**。 在打开可执行文件对话框中，导航到 c:\\MyApp\\x64\\调试。 有关**文件名**，输入 MyApp.exe。 单击“打开”  。
 3.  输入以下命令：
 
-    [.symfix](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
+    [.symfix](https://docs.microsoft.com/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
 
-    [.sympath](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ c:\\MyApp\\x64\\调试
+    [.sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ c:\\MyApp\\x64\\调试
 
-    现在 WinDbg 知道在哪里可以找到你的应用程序的符号和源代码。 在这种情况下，源代码位置不需要用来设置[.srcpath](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-)因为符号具有完全限定的源代码文件的路径。
+    现在 WinDbg 知道在哪里可以找到你的应用程序的符号和源代码。 在这种情况下，源代码位置不需要用来设置[.srcpath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-)因为符号具有完全限定的源代码文件的路径。
 
 4.  输入以下命令：
 

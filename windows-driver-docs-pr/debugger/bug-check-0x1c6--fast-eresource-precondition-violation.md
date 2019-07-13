@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 45817670968dfbff98efedee18661dc2a79bfdf2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8dd793f18c7a592bd14a8490bb0399d605bb741
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362009"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866505"
 ---
 # <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>Bug 检查 0x1C6：快速\_ERESOURCE\_不满足前提条件\_冲突
 
 快速\_ERESOURCE\_不满足前提条件\_冲突错误检查的值为 0x000001C6。 它指示当前线程正在执行对快速资源例程的无效调用。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
  
 
@@ -39,7 +39,7 @@ ms.locfileid: "67362009"
 
 **冲突类型**
 
-```
+```text
             0x0 : The Irql of the caller was greater than the maximum allowed
                   Irql for the routine.
                 2 - Irql of the caller.

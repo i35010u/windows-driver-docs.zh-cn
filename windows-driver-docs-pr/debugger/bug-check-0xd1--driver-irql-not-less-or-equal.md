@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 735c9a5e36c12ac4b9ff14f1f5872d315970960c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: c13dd820784cd03a995d42c235fd9074c7d065d9
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518886"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866524"
 ---
 # <a name="bug-check-0xd1-driverirqlnotlessorequal"></a>Bug 检查 0xD1：DRIVER\_IRQL\_NOT\_LESS\_OR\_EQUAL
 
@@ -67,8 +67,6 @@ ms.locfileid: "67518886"
 </tbody>
 </table>
 
- 
-
 <a name="cause"></a>原因
 -----
 
@@ -99,7 +97,7 @@ ms.locfileid: "67518886"
 
 [ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
-```
+```dbgcmd
 DRIVER_IRQL_NOT_LESS_OR_EQUAL (d1)
 An attempt was made to access a pageable (or completely invalid) address at an
 interrupt request level (IRQL) that is too high.  This is usually
@@ -118,7 +116,7 @@ Arg4: fffff808adc386a6, address which referenced memory
 
 使用`!IRQL`命令以显示有关中断请求级别 (IRQL) 的信息在调试器中断之前对目标计算机上的处理器。
 
-```
+```dbgcmd
 0: kd> !irql
 Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 ```

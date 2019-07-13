@@ -7,12 +7,12 @@ keywords:
 - 远程过程调用 (RPC)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9632cb274dcc8b2658c111e31e883f30dce57c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2106b1eff5fcfcbc93884d7f61b513e8329dad1
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355789"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866502"
 ---
 # <a name="overview-of-rpc-debugging"></a>RPC 调试概述
 
@@ -33,8 +33,6 @@ Microsoft 远程过程调用 (RPC) 轻松跨进程和计算机边界和实施周
 在许多情况下，可以通过使用中所述的技术排查问题[常见 RPC 调试技术](common-rpc-debugging-techniques.md)。
 
 如果你想要浏览此信息的存储方式的机制，或如果你想要设计您自己的状态信息分析的技术，请参阅[RPC 状态信息内部](rpc-state-information-internals.md)。
-
-这些工具和技术不适用于 Windows 2000。
 
  
 

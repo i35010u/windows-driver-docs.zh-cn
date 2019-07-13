@@ -6,12 +6,12 @@ keywords:
 - 流式处理调试的内核，视频流停滞，日志记录
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de084788008845a03de3b2db7ff99a07b386c570
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 8bb20d0d2880a08f635c67882b71761d52f65cc6
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716879"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866519"
 ---
 # <a name="using-logging-to-track-important-events"></a>使用日志记录跟踪重要事件
 
@@ -49,11 +49,11 @@ LOGENTRY g_Log [LOGSIZE];
     g_Log [i].Arg [1] = (ULONG)(arg2); \
     g_Log [i].Arg [2] = (ULONG)(arg3); \
 } while (0)
-```dbgcmd
+```
 
-Then, use a simple "dc g\_Log" to view the contents of the **g\_Log** array in the debugger.
+然后，使用一个简单"dc g\_日志"若要查看的内容**g\_日志**在调试器中的数组。
 
-The following example uses the above memory-based scheme to determine the cause of a processing stall. Output is from an AVStream streaming scenario in graphedt. The following minidriver events were logged:
+以下示例使用上述基于内存的方案来确定处理停滞的原因。 输出是从在 graphedt AVStream 流式处理方案。 以下的微型驱动程序事件记录：
 
 <table>
 <colgroup>
@@ -62,41 +62,41 @@ The following example uses the above memory-based scheme to determine the cause 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Abbreviation</th>
-<th align="left">Description</th>
+<th align="left">缩写</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>Strt</em></p></td>
-<td align="left"><p>This event occurs when the minidriver first queues buffers for the device from within the minidriver's <em>Start</em> dispatch.</p></td>
+<td align="left"><p>此事件发生时微型驱动程序第一次队列内微型驱动程序的从设备的缓冲区<em>启动</em>调度。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>Prc&lt;</em></p></td>
-<td align="left"><p>This event occurs at the start of the minidriver's <em>Process</em> dispatch.</p></td>
+<td align="left"><p>此事件发生的微型驱动程序的开头<em>进程</em>调度。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>AddB</em></p></td>
-<td align="left"><p>This event occurs when the minidriver queues buffers to the device from within its <em>Process</em> dispatch.</p></td>
+<td align="left"><p>微型驱动程序队列到设备中的缓冲区时发生此事件及其<em>进程</em>调度。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>DPC&lt;</em></p></td>
-<td align="left"><p>This event occurs at the start of the minidriver's <em>CallOnDPC</em>. It indicates buffer completion.</p></td>
+<td align="left"><p>此事件发生的微型驱动程序的开头<em>CallOnDPC</em>。 它指示缓冲区完成。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>Atmp</em></p></td>
-<td align="left"><p>This event occurs when the minidriver calls from within the DPC to <strong>KsPinAttemptProcessing</strong>.</p></td>
+<td align="left"><p>此事件发生时从内到 DPC 调用微型驱动程序<strong>KsPinAttemptProcessing</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>Dele</em></p></td>
-<td align="left"><p>This event occurs when the minidriver calls from within the DPC to delete a clone stream pointer.</p></td>
+<td align="left"><p>微型驱动程序的调用中 DPC 删除克隆流指针时发生此事件。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Log excerpts are as follows:
+日志摘录内容如下所示：
 
 ```text
 f9494b80  3c435044 816e2c90 00000000 00000000  DPC<.,n.........

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b877ca7fe24f313bf8b93ec1d849c7cf028135d0
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d08ff98749d22d66a9ed60e98f503fc089986452
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519775"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866508"
 ---
 # <a name="bug-check-0x1a7-smbredirectorlivedump"></a>Bug 检查 0x1A7：SMB\_重定向程序\_LIVEDUMP
 
@@ -56,7 +56,7 @@ SMB 重定向程序检测到问题，并已捕获核心转储收集调试信息�
 
 仅当设置以下注册表值，将生成此错误检查代码的实时转储。
 
-```
+```registry
 HKLM\System\CurrentControlSet\Services\Lanmanworkstation\Parameters [DWORD] LiveDumpFilter = 1
 ```
 

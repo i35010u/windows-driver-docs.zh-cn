@@ -13,15 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ec2098ba377f1bf3b54e56cf08c214da3faac8
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 837a976c122fc1f49a06186b47b80c8cd9724b20
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519224"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866526"
 ---
 # <a name="bug-check-0x74-badsystemconfiginfo"></a>Bug 检查 0x74：错误\_系统\_CONFIG\_信息
-
 
 缺点\_系统\_CONFIG\_信息错误检查的值为 0x00000074。 检查此错误指示在注册表中存在错误。
 
@@ -81,7 +80,7 @@ ms.locfileid: "67519224"
 
 [ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
-```
+```dbgcmd
 BAD_SYSTEM_CONFIG_INFO (74)
 Can indicate that the SYSTEM hive loaded by the osloader/NTLDR
 was corrupt.  This is unlikely, since the osloader will check
@@ -104,14 +103,14 @@ Arg4: ffffffffc000014c, usually the NT status code.
 
 使用[！ 错误](-error.md)扩展名，即可显示参数 4 中的 NTSTATUS 值有关的信息。
 
-```
+```dbgcmd
 2: kd> !ERROR ffffffffc000014c
 Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The structure of one of the files that contains Registry data is corrupt, or the image of the file in memory is corrupt, or the file could not be recovered because the alternate copy or log was absent or corrupt.
 ```
 
 使用[！ reg](-reg.md)扩展名以显示有关注册表配置单元提供示例，在注册表中的信息。
 
-```
+```dbgcmd
 !reg hivelist
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,7 +126,7 @@ Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The 
 
 使用 ！ reg openkeys 命令以查看哪个注册表项已打开。
 
-```
+```dbgcmd
 2: kd> !reg openkeys
 
 Hive: \REGISTRY\MACHINE\SYSTEM
@@ -147,25 +146,16 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 
 如果可以按要求重现 bug 检查，调查花些时间旅行跟踪使用 WinDbg 预览的可能性。 有关详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
 
-
 <a name="remarks"></a>备注
 ----------
 
 尝试进入安全模式启动，然后正常重新启动操作系统。 如果在重新启动无法解决问题，是太多，注册表损坏。 请尝试以下步骤。
 
--   如果您的系统还原点，请尝试还原到早期的还原点。
--   重置您的 PC。
--   使用安装媒体还原或重置您的 PC。
--   使用安装媒体重新安装 Windows。
+- 如果您的系统还原点，请尝试还原到早期的还原点。
+- 重置您的 PC。
+- 使用安装媒体还原或重置您的 PC。
+- 使用安装媒体重新安装 Windows。
 
 有关详细信息，请参阅[Windows 10 中的恢复选项](https://support.microsoft.com/help/12415/windows-10-recovery-options#)。
 
-支持本文讨论了此 bug 检查代码：[错误 0x74:Bad_system_config_info](https://support.microsoft.com/en-us/help/4028653/windows-error-0x74-badsystemconfiginfo)
-
- 
-
- 
-
-
-
-
+支持本文讨论了此 bug 检查代码：[错误 0x74:Bad_system_config_info](https://support.microsoft.com/help/4028653/windows-error-0x74-badsystemconfiginfo)

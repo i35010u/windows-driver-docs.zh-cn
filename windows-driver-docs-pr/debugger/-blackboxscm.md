@@ -14,12 +14,12 @@ api_name:
 - blackboxscm
 api_type:
 - NA
-ms.openlocfilehash: ccd8d70b2c02a57c6a280fa0bd7c61cb406cfc83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d2a99ce3a08828104582a8604e709653b26f336
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334681"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866498"
 ---
 # <a name="blackboxscm"></a>!blackboxscm
 
@@ -70,7 +70,7 @@ ext.dll
 
 列出了多个服务，只列出的第一个服务时通常要进行失败分析感兴趣。  这是因为 SCM （服务控制管理器） 等待按顺序完成这些请求，因此，只有第一个服务实际接收到控制请求。
 
-有关 SCM 详细信息，请参阅[服务控制管理器](https://docs.microsoft.com/en-us/windows/desktop/Services/service-control-manager)。
+有关 SCM 详细信息，请参阅[服务控制管理器](https://docs.microsoft.com/windows/desktop/Services/service-control-manager)。
 
 
 ### <a name="span-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span>其他信息

@@ -5,21 +5,20 @@ ms.assetid: 803f4326-32ce-44b4-a2fb-6c6f245c3728
 keywords:
 - 生物识别驱动程序 WDK，windows 你好
 - 签名生物识别驱动程序
-ms.author: dawnwood
 ms.date: 07/19/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2ad4afc2031afb34057ad75f053c9065ff830c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dceaa81cf14ba7087ca2f263904a9aedecf2125a
+ms.sourcegitcommit: 7945fbc5b2c6b41e653cc2eea02cd53bec8abc02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328352"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860756"
 ---
 # <a name="windows-hello-steps-to-submit-a-fingerprint-driver"></a>Windows Hello：提交指纹驱动程序的步骤
 
 
 ## <a name="submitting-a-fingerprint-driver-for-windows-hello-compatibility"></a>正在提交用于 Windows Hello 兼容性的指纹驱动程序 
-Microsoft 引入了新的要求，在生物识别传感器以符合 Windows Hello 质量准则。 新的手动审核过程将需要获得批准才能与 Windows Hello 进行互操作。 该过程将使用 OS 强制实施通过 Windows 开发人员中心获取的特定签名的检查 (此处： https://developer.microsoft.com/)仅可以通过反映经受该流程本文档中的获取的。 已创建并前 6/1/17 通过 WHQL 签名的驱动程序被 grandfathered。 在此日期之后未获得此签名的新的和更新驱动程序不会使用 Windows Hello 在 Window 10，版本 1703年或更高版本之后强制日期。
+Microsoft 引入了新的要求，在生物识别传感器以符合 Windows Hello 质量准则。 新的手动审核过程将需要获得批准才能与 Windows Hello 进行互操作。 该过程将使用 OS 强制实施通过 Windows 开发人员中心获取的特定签名的检查 (此处： https://developer.microsoft.com/) 仅可以通过反映经受该流程本文档中的获取的。 已创建并前 6/1/17 通过 WHQL 签名的驱动程序被 grandfathered。 在此日期之后未获得此签名的新的和更新驱动程序不会使用 Windows Hello 在 Window 10，版本 1703年或更高版本之后强制日期。
 
 驱动程序将始终进行手动批准，若要获取 Windows Hello 签名。 已批准的驱动程序的更新可以引用以前提交的速度更快的批准。 如果它适用于新的传感器，或者该远的影响、 FRR 或演示文稿攻击检测发生了更改到匹配的引擎，驱动程序必须经历新评审。 
 

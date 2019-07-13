@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69821c0fd2ba60a64abaf9734395ce7fab749b44
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 74be7142755155a4112c7fc40355f1c6452b13b1
+ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519480"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866528"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 
@@ -74,25 +74,25 @@ ms.locfileid: "67519480"
 
 常见的异常代码包括：
 
--   0x80000003:状态\_断点
+- 0x80000003:状态\_断点
 
-    没有内核调试器已附加到系统时出现断点或断言。
+没有内核调试器已附加到系统时出现断点或断言。
 
--   0xC0000005:状态\_访问\_冲突
+- 0xC0000005:状态\_访问\_冲突
 
-    出现内存访问冲突。 （检查错误的参数 4 是驱动程序尝试访问的地址。）
+出现内存访问冲突。 （检查错误的参数 4 是驱动程序尝试访问的地址。）
 
 <a name="resolution"></a>分辨率
 ----------
 
 **若要调试此问题：** 
 
-使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。 此外可以导致此停止代码在代码中设置断点并单步前进到出错的代码尝试。 使用[u，ub，uu （反汇编）]()命令来查看程序集的程序代码。
+使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。 此外可以导致此停止代码在代码中设置断点并单步前进到出错的代码尝试。 使用[u，ub，uu （反汇编）](u--unassemble-.md)命令来查看程序集的程序代码。
 
 
 [ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
-```
+```dbgcmd
 SYSTEM_SERVICE_EXCEPTION (3b)
 An exception happened while executing a system service routine.
 Arguments:
@@ -113,7 +113,7 @@ Arg4: 0000000000000000, zero.
 
 使用[！ 错误](-error.md)扩展名，即可在参数 1 中显示有关异常代码的信息。
 
-```
+```dbgcmd
 2: kd> !error 00000000c0000005
 Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
 ```
