@@ -1,17 +1,17 @@
 ---
-title: 2\.0 的 Microsoft 操作系统描述符规范
-description: 2\.0 的 Microsoft 操作系统描述符规范
+title: Microsoft OS 2.0 描述符规范
+description: Microsoft OS 2.0 描述符规范
 ms.assetid: C5C5B14A-F39E-4A15-B8BC-615BD11FB630
 ms.date: 07/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db94578187f59bde663d0ebff9b947e29c3c5f2c
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: c99417b1aa82035efbaef515de5ba7dac46a09a9
+ms.sourcegitcommit: 707739250ebdcd74a26d85d8b4217fa81c9c9e95
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717025"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68181284"
 ---
-# <a name="microsoft-os-20-descriptors-specification"></a>2\.0 的 Microsoft 操作系统描述符规范
+# <a name="microsoft-os-20-descriptors-specification"></a>Microsoft OS 2.0 描述符规范
 
 本文档定义，并描述了版本 2.0 的 Microsoft 操作系统描述符的实现。 Microsoft OS 2.0 描述符旨在解决的限制和可靠性问题的 1.0 版的操作系统描述符，并启用新的 USB 设备的特定于 Windows 的功能。
 
@@ -48,7 +48,7 @@ Microsoft 操作系统描述符规范</strong><br />
 <p>（a） 您的许可证规范的权限取决于你不创建、 修改或分发您获得许可的实现，此类创建、 修改或分发可能采用了 (a) 创建，或声称创建，Microsoft 的义务遵照规范 (或知识产权其中) 或 (b) 授予或 purport，向授予任何第三方的任何权限或 immunities 到 Microsoft 的知识产权或规范中的专有权利。</p>
 <p>（b） 在不损害任何其他权利，Microsoft 可能会终止本协议，如果您未遵守本协议的条款。 在这种情况必须销毁规范的所有副本，不得进一步分发公司实现。</p>
 <p><strong>第 4 节担保免责声明。</strong></p>
-<p>提供规范&quot;原样&quot;无任何形式的保证。 到适用法律允许的最大范围内，Microsoft 进一步拒绝所有担保，包括但不限于任何暗示的适销性或适用于某种特定用途，以及标题和不侵权的担保。 与你保持因使用或执行本规范而产生的全部风险。</p>
+<p>规范"按原样"提供，无任何种类的担保。 到适用法律允许的最大范围内，Microsoft 进一步拒绝所有担保，包括但不限于任何暗示的适销性或适用于某种特定用途，以及标题和不侵权的担保。 与你保持因使用或执行本规范而产生的全部风险。</p>
 <p><strong>第 5 节偶发、 继发排除和其他一些损害赔偿。</strong></p>
 <p><strong>适用法律允许的最大范围内，在任何 Microsoft 或其供应商应承担责任的任何后果性损害、 附带性、 直接、 间接、 特殊、 惩罚性或其他损害 （包括但不限于，损失业务利润损失、 业务中断、 业务信息丢失或其他 pecuniary 丢失） 因使用或不能使用规范，即使 Microsoft 已被告知此类损害的可能性。由于某些州/法律辖区不允许排除或限制对后果性损害或意外损害的责任，上述限制可能对您不适用。</strong></p>
 <p><strong>第 6 节责任和补偿的限制。</strong></p>

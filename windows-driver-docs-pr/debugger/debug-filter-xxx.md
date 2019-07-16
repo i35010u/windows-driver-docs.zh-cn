@@ -1,6 +1,6 @@
 ---
-title: DEBUG\_FILTER\_XXX
-description: DEBUG\_FILTER\_XXX
+title: 调试\_筛选器\_XXX
+description: 调试\_筛选器\_XXX
 ms.assetid: 1f8f738b-7b2b-419a-949e-b71f937de02d
 ms.date: 12/07/2017
 keywords:
@@ -14,14 +14,14 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 6de3951916319eb4afbeb8a2166bc9a38f2f27a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9df8e3b120f5524ee29e376c0a691f5f0e297cfe
+ms.sourcegitcommit: a39a3f4c9f26968e00317574c0d8530ee8ab6f8b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367005"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67894237"
 ---
-# <a name="debugfilterxxx"></a>DEBUG\_FILTER\_XXX
+# <a name="debugfilterxxx"></a>调试\_筛选器\_XXX
 
 
 调试\_筛选器\_*XXX*常量来针对三个不同的用途： 指定单个特定的事件筛选器，以指定的中断状态的事件筛选器，并指定的处理状态异常筛选器。
@@ -98,7 +98,7 @@ ms.locfileid: "67367005"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -144,7 +144,7 @@ ms.locfileid: "67367005"
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_FILTER_GO_HANDLED</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-exception" data-raw-source="&lt;em&gt;exception&lt;/em&gt;"><em>异常</em></a>已得到处理。</p></td>
+<td align="left"><p>已处理了异常。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_FILTER_GO_NOT_HANDLED</p></td>

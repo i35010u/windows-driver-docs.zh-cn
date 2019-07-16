@@ -3,12 +3,12 @@ title: 如何使用 _OSI 识别 ACPI 中的 Windows 版本
 description: 提供了用来识别主机操作系统的 ACPI 源语言 (ASL) 操作系统接口级别 (\_OSI) 方法的信息。
 ms.date: 11/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c25144a88437574a1aae4b762e7a459b09637c88
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7211993eb8c4a889a3350414fc1dd6afadd76791
+ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355797"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223988"
 ---
 # <a name="how-to-identify-the-windows-version-in-acpi-by-using-osi"></a>如何使用 _OSI 识别 ACPI 中的 Windows 版本
 
@@ -16,6 +16,7 @@ ms.locfileid: "67355797"
 
 此信息适用于以下操作系统：
 
+- Windows 10 版本 1903
 - Windows 10 版本 1809
 - Windows 10 版本 1803
 - Windows 10 版本 1709
@@ -85,9 +86,9 @@ ACPI 规范的最新版本已扩展的用例\_OSI 超出主机操作系统版本
 | Windows 2001.1 SP1  | Windows Server 2003 SP1       |
 | Windows 2006        | Windows Vista                 |
 | Windows 2006 SP1    | Windows Vista SP1             |
-| Windows 2006.1      | Windows Server 2008           |
-| Windows 2009        | Windows 7, Win Server 2008 R2 |
-| Windows 2012        | Windows 8, Win Server 2012    |
+| Windows 对      | Windows Server 2008           |
+| Windows 2009        | Windows 7，Win Server 2008 R2 |
+| Windows 2012        | Windows 8，Win Server 2012    |
 | Windows 2013        | Windows 8.1                   |
 | Windows 2015        | Windows 10                    |
 | Windows 2016        | Windows 10 版本 1607      |
@@ -95,6 +96,7 @@ ACPI 规范的最新版本已扩展的用例\_OSI 超出主机操作系统版本
 | Windows 2017.2      | Windows 10 版本 1709      |
 | Windows 2018        | Windows 10 版本 1803      |
 | Windows 2018.2      | Windows 10 版本 1809      |
+| Windows 2019        | Windows 10 版本 1903      |
 
 ### <a name="implementation-note"></a>实现说明
 
