@@ -1,6 +1,6 @@
 ---
-title: 在 UMDF PnP 和电源管理方案
-description: 在 UMDF PnP 和电源管理方案
+title: UMDF 中的 PnP 和电源管理方案
+description: UMDF 中的 PnP 和电源管理方案
 ms.assetid: ca36eee5-482c-4cfe-a515-be9d3743e241
 keywords:
 - 插 WDK UMDF，UMDF 中电源管理方案
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08ef3168ab7683cd6e38fee7abf7f00947f3b612
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "68229644"
 ---
-# <a name="pnp-and-power-management-scenarios-in-umdf"></a>在 UMDF PnP 和电源管理方案
+# <a name="pnp-and-power-management-scenarios-in-umdf"></a>UMDF 中的 PnP 和电源管理方案
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

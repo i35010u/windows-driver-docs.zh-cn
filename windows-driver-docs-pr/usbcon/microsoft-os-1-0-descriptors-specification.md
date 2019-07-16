@@ -1,17 +1,17 @@
 ---
-title: 1\.0 的 Microsoft 操作系统描述符规范
-description: 1\.0 的 Microsoft 操作系统描述符规范
+title: Microsoft OS 1.0 描述符规范
+description: Microsoft OS 1.0 描述符规范
 ms.assetid: A2B00584-DDD5-42D2-BDBF-116637ABD192
 ms.date: 07/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ba94eb0baf03f07e3ecc1acdacfdffd984f0abfa
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 10dbb8cc465684b78adb90c37c7090e97599bf1b
+ms.sourcegitcommit: 707739250ebdcd74a26d85d8b4217fa81c9c9e95
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717029"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68181288"
 ---
-# <a name="microsoft-os-10-descriptors-specification"></a>1\.0 的 Microsoft 操作系统描述符规范
+# <a name="microsoft-os-10-descriptors-specification"></a>Microsoft OS 1.0 描述符规范
 
 
 USB 设备的设备，其接口和终结点的固件中存储标准描述符。 独立硬件供应商 (Ihv) 还可以存储类和特定于供应商的描述符。 但是，这些描述符可以包含的类型是信息的有限的。 Ihv 通常必须使用 Windows Update 或 CD 之类的介质要为其用户提供的各种特定于设备的信息，如图片、 图标、 自定义驱动程序，等等。
@@ -74,7 +74,7 @@ USB 设备的设备，其接口和终结点的固件中存储标准描述符。 
 <td>符合版本 1.2 规范且与 Microsoft 驱动程序堆栈兼容的蓝牙无线</td>
 </tr>
 <tr align="left" valign="top">
-<td>"EDR"<br>(0x45 0x44 0x52 0x00 0x00 0x00 0x00 0x00)</td>
+<td>"EDR 规范"<br>(0x45 0x44 0x52 0x00 0x00 0x00 0x00 0x00)</td>
 <td>符合 2.0 + edr 规范且与 Microsoft 驱动程序堆栈兼容的蓝牙无线</td>
 </tr>
 </tbody>
@@ -133,7 +133,7 @@ Microsoft 操作系统描述符规范</strong><br />
 <p>（a） 您的许可证规范的权限取决于你不创建、 修改或分发您获得许可的实现，此类创建、 修改或分发可能采用了 (a) 创建，或声称创建，Microsoft 的义务遵照规范 (或知识产权其中) 或 (b) 授予或 purport，向授予任何第三方的任何权限或 immunities 到 Microsoft 的知识产权或规范中的专有权利。</p>
 <p>（b） 在不损害任何其他权利，Microsoft 可能会终止本协议，如果您未遵守本协议的条款。 在这种情况必须销毁规范的所有副本，不得进一步分发公司实现。</p>
 <p><strong>第 4 节担保免责声明。</strong></p>
-<p>提供规范&quot;原样&quot;无任何形式的保证。 到适用法律允许的最大范围内，Microsoft 进一步拒绝所有担保，包括但不限于任何暗示的适销性或适用于某种特定用途，以及标题和不侵权的担保。 与你保持因使用或执行本规范而产生的全部风险。</p>
+<p>规范"按原样"提供，无任何种类的担保。 到适用法律允许的最大范围内，Microsoft 进一步拒绝所有担保，包括但不限于任何暗示的适销性或适用于某种特定用途，以及标题和不侵权的担保。 与你保持因使用或执行本规范而产生的全部风险。</p>
 <p><strong>第 5 节偶发、 继发排除和其他一些损害赔偿。</strong></p>
 <p><strong>适用法律允许的最大范围内，在任何 Microsoft 或其供应商应承担责任的任何后果性损害、 附带性、 直接、 间接、 特殊、 惩罚性或其他损害 （包括但不限于，损失业务利润损失、 业务中断、 业务信息丢失或其他 pecuniary 丢失） 因使用或不能使用规范，即使 Microsoft 已被告知此类损害的可能性。由于某些州/法律辖区不允许排除或限制对后果性损害或意外损害的责任，上述限制可能对您不适用。</strong></p>
 <p><strong>第 6 节责任和补偿的限制。</strong></p>

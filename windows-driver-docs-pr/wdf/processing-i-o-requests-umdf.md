@@ -12,18 +12,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 652f286939567c69d9b416152acb9acfd0020a42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "68229681"
 ---
 # <a name="processing-io-requests"></a>处理 I/O 请求
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [I/O 请求处理操作流](i-o-request-processing-operation-flow.md)

@@ -8,12 +8,12 @@ keywords:
 - 预加载的驱动程序包 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70c02af27baab235d5f4d857d4be127a855b8371
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79ca37a6f43c195f4bd501709e536096b3dd7f07
+ms.sourcegitcommit: 707739250ebdcd74a26d85d8b4217fa81c9c9e95
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369444"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68181282"
 ---
 # <a name="preloading-driver-packages"></a>预加载驱动程序包
 
@@ -46,6 +46,8 @@ ms.locfileid: "63369444"
 %SystemRoot%\inf;...;\\DriverPackageServer\ShareName\Drivers\NIC
 ```
 
+> [!NOTE]
+> 指定在 DevicePath 中具有指向和打印客户端连接的计算机的网络共享可能会导致过多的网络共享的访问和打印延迟。 这是因为每个时间 printerdata 更改服务器中，客户端将循环 DevicePath 目录检查的较新的打印驱动程序的可用性。
  
 
  
