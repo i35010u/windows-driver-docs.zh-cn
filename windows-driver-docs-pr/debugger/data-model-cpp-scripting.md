@@ -270,7 +270,7 @@ IsInvocable 方法返回指示在脚本为 invocable-即，指示它还有一个
 如果脚本具有一个"主函数"其目的是从 UI 调用执行，则表示此类通过从 IsInvocable 方法返回时，则返回 true。 然后，用户界面可以调用 InvokeMain 方法来实际"调用"的脚本。 请注意，这不同于*Execute*运行所有根代码和桥脚本到基础主机的命名空间。 
 
 
-* * 脚本客户端：IDataModelScriptClient * *
+\* * 脚本客户端：IDataModelScriptClient * *
 
 应用程序承载想要管理脚本和具有用户界面的数据模型 (是否图形或控制台) 围绕这一概念实现 IDataModelScriptClient 接口。 此接口被传递给任何脚本提供程序期间执行或调用或脚本以将错误和事件信息传递到用户界面。 
 
@@ -290,7 +290,7 @@ DECLARE_INTERFACE_(IDataModelScriptClient, IUnknown)
 
 **主机上下文的脚本：IDataModelScriptHostContext**
 
-调试主机都有一些影响它方式和位置投影数据模型的脚本内容。 预计每个脚本要求宿主，为要在其中放置上下文桥接的脚本 (例如： 函数对象，可以调用，等等。...)。通过调用 IDebugHostScriptHost CreateContext 方法和获取 IDataModelScriptHostContext 检索此上下文。 
+调试主机都有一些影响它方式和位置投影数据模型的脚本内容。 预计每个脚本要求宿主，为要在其中放置上下文桥接的脚本 (例如： 函数对象，可以调用，等等...)。通过调用 IDebugHostScriptHost CreateContext 方法和获取 IDataModelScriptHostContext 检索此上下文。 
 
 IDataModelScriptHostContext 接口定义，如下所示。 
 
