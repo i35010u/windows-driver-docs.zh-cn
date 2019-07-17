@@ -254,7 +254,7 @@ DECLARE_INTERFACE_(IPreferredRuntimeTypeConcept, IUnknown)
 
 [CastToPreferredRuntimeType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ipreferredruntimetypeconcept-casttopreferredruntimetype)
 
-只要客户端想要尝试从静态类型实例转换为该实例的运行时类型，则会调用 CastToPreferredRuntimeType 方法。 如果相关对象 （通过一个及其附加的父模型） 支持首选的运行时类型概念，将调用此方法来执行此转换。 此方法可能会返回原始对象 （不存在转换或未能分析），则返回的运行时类型的新实例，非语义的原因而失败 (例如： 内存不足)，或返回 E_NOT_SET。 E_NOT_SET 错误代码是一个非常特殊的错误代码，它表示到数据模型的实现不想重写默认行为和数据模型应回退到任何分析由调试主机 （例如执行:RTTI 分析、 检查形状的虚函数表，等等。...) 
+只要客户端想要尝试从静态类型实例转换为该实例的运行时类型，则会调用 CastToPreferredRuntimeType 方法。 如果相关对象 （通过一个及其附加的父模型） 支持首选的运行时类型概念，将调用此方法来执行此转换。 此方法可能会返回原始对象 （不存在转换或未能分析），则返回的运行时类型的新实例，非语义的原因而失败 (例如： 内存不足)，或返回 E_NOT_SET。 E_NOT_SET 错误代码是一个非常特殊的错误代码，它表示到数据模型的实现不想重写默认行为和数据模型应回退到任何分析由调试主机 （例如执行:RTTI 分析、 检查形状的虚函数表，等等...) 
 
 
 **动态提供程序的概念：IDynamicKeyProviderConcept 和 IDynamicConceptProviderConcept**
