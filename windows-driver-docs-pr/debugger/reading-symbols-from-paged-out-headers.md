@@ -6,18 +6,14 @@ keywords:
 - 符号，调出标头的问题
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 267b6ef8d4ad4a9286e8601146cd056277cd12c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 959cafc3fd876175da5268c0a77c6e3ff484ff5a
+ms.sourcegitcommit: d4ade685d5401960be55f9b44861547fbd222d35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350547"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68246944"
 ---
 # <a name="reading-symbols-from-paged-out-headers"></a>读取移出页面的标头中的符号
-
-
-## <span id="ddk_reading_symbols_from_paged_out_headers_dbg"></span><span id="DDK_READING_SYMBOLS_FROM_PAGED_OUT_HEADERS_DBG"></span>
-
 
 内核调试程序必须读取每个已加载的模块的映像的标的头，这样才能知道哪些符号对应于该模块。
 
@@ -25,15 +21,15 @@ ms.locfileid: "63350547"
 
 可以使用以下过程来解决此问题。
 
-**若要获取用于调出标头的符号**
+## <a name="to-acquire-symbols-for-paged-out-headers"></a>若要获取用于调出标头的符号
 
-1.  第二个复制一份内核本身。 它是可能最简单的方法将此代码放在网络共享上。
+1. 第二个复制一份内核本身。 它是可能最简单的方法将此代码放在网络共享上。
 
-2.  将此共享的根目录到符号路径。 请参阅[符号路径](symbol-path.md)更改符号路径的方法。
+2. 将此共享的根目录到符号路径。 请参阅[符号路径](symbol-path.md)更改符号路径的方法。
 
-3.  使用[ **.reload （重新加载模块）** ](-reload--reload-module-.md)命令。
+3. 使用[ **.reload （重新加载模块）** ](-reload--reload-module-.md)命令。
 
-4.  使用[ **！ 符号干扰**](-sym.md)扩展命令以查看更详细的输出。 如果使用，你将能够查看哪些符号加载从目标计算机上的模块映像和从内核模块的副本中加载的。
+4. 使用[ **！ 符号干扰**](-sym.md)扩展命令以查看更详细的输出。 如果使用，你将能够查看哪些符号加载从目标计算机上的模块映像和从内核模块的副本中加载的。
 
 此方法必须使用时要小心，因为调试器具有无法验证是否实际文件副本与匹配的原始文件。 因此，重要的网络共享上使用的 Windows 版本与目标计算机上使用的版本相匹配。
 
@@ -109,12 +105,3 @@ fe0c8360  Fs_Rec!ntoskrnl_NULL_THUNK_DATA
 fe0c832c  Fs_Rec!_imp__KeSetEvent
 fe0c9570  Fs_Rec!_NULL_IMPORT_DESCRIPTOR
 ```
-
- 
-
- 
-
-
-
-
-

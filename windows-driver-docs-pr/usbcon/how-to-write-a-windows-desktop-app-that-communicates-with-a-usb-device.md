@@ -1,14 +1,14 @@
 ---
 Description: 若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C /C++ WinUSB 模板。
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
-ms.date: 04/20/2017
+ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 131dfe9091b70673b7eedaed314397bc52afb6de
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 881c47a571a8a03ee1bf6b6418c7bf69c39db68f
+ms.sourcegitcommit: ef6d15e2f4a8ce75a0ee726432574f2e25f061eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393415"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293221"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -20,51 +20,74 @@ ms.locfileid: "67393415"
 
 若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C /C++ WinUSB 模板。 对于此模板中，您需要使用 Windows Driver Kit (WDK) （包含有关 Windows 调试工具) 和 Microsoft Visual Studio （专业版或旗舰版） 的集成的环境。 该模板可以用作起始点。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 
--   若要设置集成的开发环境，首先安装 Microsoft Visual Studio Ultimate 2012 或 Microsoft Visual Studio Professional 2012，然后安装 WDK。 有关如何获取 Visual Studio 和 WDK 的信息，你可以在[此处](https://go.microsoft.com/fwlink/p/?linkid=239721)找到。
--   在安装 WDK 时，调试工具的 Windows 是包含。 有关详细信息，请参阅[下载和为 Windows 中安装调试的工具](https://go.microsoft.com/fwlink/p/?linkid=235427)。
+-   若要设置集成的开发环境，首先安装 Microsoft Visual Studio Ultimate 2019 或 Microsoft Visual Studio Professional 2019，然后安装 WDK。 有关如何获取 Visual Studio 和 WDK 的信息，你可以在[此处](https://go.microsoft.com/fwlink/p/?linkid=239721)找到。
+-   安装 WDK 时，Windows 的调试工具将包括在内。 有关详细信息，请参阅[下载和为 Windows 中安装调试的工具](https://go.microsoft.com/fwlink/p/?linkid=235427)。
 
 ## <a name="creating-a-winusb-application"></a>创建 WinUSB 应用程序
 
-
 若要从模板创建应用程序：
 
-1.  打开 Microsoft Visual Studio。 上**文件**菜单中，选择**新建** &gt; **项目**。 **新的项目**对话框将打开，如以下屏幕截图中所示。
-2.  在中**新的项目**对话框中，在左窗格中，找到并选择**USB**。
-3.  在中间窗格中，选择**WinUSB 应用程序。**
-4.  在中**名称**字段中，如果你想要更改项目名称。 在本主题中，我们将使用默认名称。
-5.  在**位置**字段中，输入要在其中创建新项目的目录。
-6.  选中“创建解决方案的目录”  。 单击 **“确定”** 。
+1.  在中**新的项目**对话框中，在搜索框中，在顶部，类型**USB。**
+2.  在中间窗格中，选择**WinUSB 应用程序 （通用）** 。
+3.  单击“下一步”  。
+4.  输入项目名称，选择保存位置，然后单击**创建**。
 
-    ![visual studio 中的 winusb 模板](images/winusb-template.png)
+    下面的屏幕截图演示**新的项目**对话框**WinUSB 应用程序 （通用）** 模板。
 
-    Visual Studio 将创建两个项目和解决方案。 您可以看到解决方案、 两个项目，以及属于每个项目中的文件**解决方案资源管理器**窗口中，如以下屏幕截图中所示。 （如果未显示“解决方案资源管理器”  窗口，请从“视图”   菜单中选择“解决方案资源管理器”。）该解决方案包含C++应用程序项目中名为 USB Application1 和驱动程序程序包项目名为 USB Application1 包。 如果你想要查看应用程序源代码，你可以打开任何下显示的文件**源文件**。
+    ![winusb 模板新项目创建第一个屏幕](images/winusb-template-creation-1.png)
 
-    ![winusb 模板解决方案资源管理器](images/winusb-template1.png)
+    ![winusb 模板新项目创建第二个屏幕](images/winusb-template-creation-2.png)
 
-    USB Application1 项目具有该应用程序的源代码文件。
+    本主题假定 Visual Studio 项目的名称为*USB Application1*。
+
+    Visual Studio 创建了一个项目和一个解决方案。 您可以看到解决方案、 项目和文件中的项目属于**解决方案资源管理器**窗口中，如以下屏幕截图中所示。 （如果未显示“解决方案资源管理器”  窗口，请从“视图”   菜单中选择“解决方案资源管理器”。）该解决方案包含C++应用程序项目名为 USB Application1。
+
+    ![winusb 模板解决方案资源管理器 1](images/winusb-template-solution-explorer-1.png)
+
+    USB Application1 项目具有该应用程序的源代码文件。 如果你想要查看应用程序源代码，你可以打开任何下显示的文件**源文件**。  
+    
+5. 向解决方案添加一个驱动程序程序包项目。 右键单击该解决方案 （解决方案"USB 应用程序 1"），然后单击**外** \> **新项目**如以下屏幕截图中所示。
+
+    ![winusb 模板创建第二个项目添加](images/winusb-template-creation-3.png)
+
+6. 在中**新的项目**对话框中的，在顶部，在搜索框中再次键入**USB。**
+7.  在中间窗格中，选择**WinUSB INF 驱动程序包**。
+8.  单击“下一步”  。
+9.  输入项目名称，然后单击**创建**。
+
+    下面的屏幕截图演示**新的项目**对话框**WinUSB INF 驱动程序包**模板。
+
+    ![winusb 模板第二个项目创建第一个屏幕](images/winusb-template-creation-4.png)
+
+    ![winusb 模板第二个项目创建第二个屏幕](images/winusb-template-creation-5.png)
+
+    本主题假定 Visual Studio 项目的名称为*USB Application1 包*。        
 
     USB Application1 包项目包含用于安装设备驱动程序作为由 Microsoft 提供 Winusb.sys 驱动程序的 INF 文件。
 
-7.  INF 文件，USBApplication1.inf 中, 找到这些行：
+    你**解决方案资源管理器**现在应包含这两个项目，如以下屏幕截图中所示。
+
+    ![winusb 模板解决方案资源管理器 2](images/winusb-template-solution-explorer-2.png)
+
+10.  INF 文件，USBApplication1.inf 中, 找到这些行：
 
     `%DeviceName% =USB_Install, USB\VID_vvvv&PID_pppp`
 
-8.  替换为 VID\_vvvv & PID\_pppp 与你的设备的硬件 ID。 从设备管理器中获取的硬件 ID。 在设备管理器中，查看设备属性。 上**详细信息**选项卡上，查看**硬件 Id**属性值。
-9.  在**解决方案资源管理器**窗口中，右键单击**解决方案"USB 应用程序 1"（2 个项目）** ，然后选择**Configuration Manager**。 选择的配置和平台，用于应用程序项目和包项目。 在此练习中，我们选择 Win8.1 调试和 x64 上，如以下屏幕截图中所示。
+11.  替换为 VID\_vvvv & PID\_pppp 与你的设备的硬件 ID。 从设备管理器中获取的硬件 ID。 在设备管理器中，查看设备属性。 上**详细信息**选项卡上，查看**硬件 Id**属性值。
+12.  中**解决方案资源管理器**窗口中，右键单击**解决方案"USB 应用程序 1"(2 的 2 个项目)** ，然后选择**Configuration Manager**。 选择的配置和平台，用于应用程序项目和包项目。 在此练习中，我们选择调试和 x64 上，如以下屏幕截图中所示。
 
-    ![winusb 应用程序模板](images/winusb-template2.png)
+![winusb 应用程序模板](images/winusb-template-configuration-manager.png)
 
 ## <a name="building-deploying-and-debugging-the-project"></a>构建、 部署和调试项目
 
-
-到目前为止本练习中，您用过 Visual Studio 来生成项目。 接下来需要配置设备连接到设备。 该模板要求 Winusb 驱动程序作为你的设备的驱动程序安装。
+到目前为止本练习中，您用过 Visual Studio 创建你的项目。 接下来需要配置设备连接到设备。 该模板要求 Winusb 驱动程序作为你的设备的驱动程序安装。
 
 你的测试和调试环境可以有：
 
--   两个计算机设置： 主机计算机和目标计算机。 在开发和主机计算机上生成 Visual Studio 中的项目。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试应用程序，该驱动程序在目标计算机上运行。
+-   两个计算机设置： 主机计算机和目标计算机。 在开发和主机计算机上生成 Visual Studio 中的项目。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试应用程序时，驱动程序运行在目标计算机上。
 
 -   单个计算机设置：您的目标和一台计算机上运行的主机。 开发和生成你的项目在 Visual Studio 中，并运行调试器和应用程序。
 
@@ -73,8 +96,7 @@ ms.locfileid: "67393415"
 -   **两个计算机设置**
 
     1.  按照中的说明预配目标计算机[预配的计算机的驱动程序部署和测试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
-        **注意**  
-        预配名为，在目标计算机 WDKRemoteUser 上创建的用户。 完成预配后将看到切换到 WDKRemoteUser 的用户。 
+        **注意：** 预配名为，在目标计算机 WDKRemoteUser 上创建的用户。 完成预配后将看到切换到 WDKRemoteUser 的用户。 
     2.  在主计算机上，在 Visual Studio 中打开你的解决方案。
     3.  Main.cpp 中添加此行 OpenDevice 调用之前。
 
@@ -86,21 +108,22 @@ ms.locfileid: "67393415"
 
         `#include <cstdlib>`
 
-        这包括语句是所必需的上一步中 system （） 调用。
+        这包括语句是所必需的`system()`前一步骤中调用。
 
     5.  在中**解决方案资源管理器**窗口中，右键单击 USB Application1 包，然后选择**属性**。
     6.  在中**USB Application1 包属性页**窗口中的，在左窗格中，导航到**配置属性&gt;驱动程序安装&gt;部署**，如中所示下面的屏幕截图。
-    7.  检查**启用部署**，并检查**删除以前的驱动程序版本部署前**。
+    7.  选中**部署前删除以前的驱动程序版本**。
     8.  对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在此练习中，我们使用名为 dbg 目标的计算机。
-    9.  选择**安装并验证**。 单击 **“确定”** 。
+    9.  选择**安装/重新安装，并验证**。 单击 **“应用”** 。
 
-        ![winusb 模板](images/winusb-template4.png)
+        ![winusb 模板部署](images/winusb-template-deployment.png)
 
     10. 在属性页中，导航到**配置属性&gt;调试**，然后选择**调试工具的 Windows-远程调试器**，如以下屏幕截图中所示。
 
-        ![winusb 模板调试设置](images/winusb-template5.png)
+        ![winusb 模板远程调试器](images/winusb-template-remote-debugger.png)
 
-    11. 选择**生成解决方案**从**生成**菜单。 Visual Studio 显示生成进度**输出**窗口。 （如果**输出**窗口不可见，则从**视图**菜单中选择**输出**。）在此练习中，我们已构建运行 Windows 8.1 的 x-64 系统的项目。
+    11. 选择**生成解决方案**从**生成**菜单。 Visual Studio 显示生成进度**输出**窗口。 （如果**输出**窗口不可见，则从**视图**菜单中选择**输出**。）在此练习中，我们已构建用于 x64 项目运行 Windows 10 的系统。
+    12. 选择**部署解决方案**从**生成**菜单。 
 
 在目标计算机上，你将看到运行驱动程序安装脚本。 驱动程序文件复制到 %systemdrive%\\drivertest\\目标计算机上的驱动程序文件夹。 请确认 .inf、.cat、测试证书和 .sys 文件以及其他任何必要的文件均位于 %systemdrive%\\drivertest\\drivers 文件夹下。 设备必须出现在设备管理器中未出现错误。
 
@@ -108,7 +131,7 @@ ms.locfileid: "67393415"
 
 ```syntax
 Deploying driver files for project 
-"<path>\visual studio 12\Projects\USB Application1\USB Application1 Package\USB Application1 Package.vcxproj".  
+"<path>\visual studio 14\Projects\USB Application1\USB Application1 Package\USB Application1 Package.vcxproj".  
 Deployment may take a few minutes...
 ========== Build: 1 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========
 ```
@@ -139,8 +162,8 @@ Deployment may take a few minutes...
 
 -   **单个计算机设置：**
 
-    1.  若要生成你的应用程序和驱动程序安装包，请选择**生成解决方案**从**生成**菜单。 Visual Studio 显示生成进度**输出**窗口中，如以下屏幕截图中所示。 （如果**输出**窗口不可见，则从**视图**菜单中选择**输出**。）在此练习中，我们已构建运行 Windows 8.1 的 x-64 系统的项目。
-    2.  若要查看包中，导航到 USB Application1 文件夹，在 Windows 资源管理器，然后导航到生成的驱动程序**x64 &gt; Win8.1Debug &gt; USB Application1 包**。 驱动程序包包含多个文件：USBApplication1.inf 信息使用的文件，Windows 安装驱动程序时，usbapplication1.cat 是安装程序使用来验证测试签名驱动程序包的目录文件。 另一个文件是为 Windows 驱动程序框架 (WDF) 共同安装程序。 以下屏幕截图中显示这些文件。
+    1.  若要生成你的应用程序和驱动程序安装包，请选择**生成解决方案**从**生成**菜单。 Visual Studio 显示生成进度**输出**窗口。 （如果**输出**窗口不可见，则从**视图**菜单中选择**输出**。）在此练习中，我们已构建用于 x64 项目运行 Windows 10 的系统。
+    2.  若要查看包中，导航到 USB Application1 文件夹，在 Windows 资源管理器，然后导航到生成的驱动程序**x64\>调试\>USB Application1 包**。 驱动程序包包含多个文件：MyDriver.inf 信息使用的文件，Windows 安装驱动程序时，mydriver.cat 是安装程序使用来验证测试签名驱动程序包的目录文件。 以下屏幕截图中显示这些文件。
 
         ![winusb 应用程序模板](images/winusb-template3.png)
 
