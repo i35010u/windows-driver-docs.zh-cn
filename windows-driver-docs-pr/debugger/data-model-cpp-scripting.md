@@ -155,7 +155,7 @@ DECLARE_INTERFACE_(IDebugHostScriptHost, IUnknown)
 - NatVis 提供程序。 允许的本机/语言数据类型的可视化效果中 DbgEng.dll 和 NatVis XML 和数据模型之间的桥梁，嵌入此提供程序。
 - JavaScript 提供程序。 此提供程序包含在传统的调试器扩展：JsProvider.dll。 它可以弥补之间 JavaScript 语言和数据模型中，对任意形式的调试器控制和可扩展性允许编写的脚本。
 
-可以这桥接其他语言编写新的提供程序 (例如：Python，等等。...)到数据模型。 此类将当前封装在用于加载目的的传统调试器扩展。 脚本提供程序本身应尽量减少旧引擎接口对象的依赖项，并应仅使用数据模型 Api，在可能的情况。 这将允许的提供程序，使其可移植到其他环境，明显更容易。
+可以这桥接其他语言编写新的提供程序 (例如：Python，等等...)到数据模型。 此类将当前封装在用于加载目的的传统调试器扩展。 脚本提供程序本身应尽量减少旧引擎接口对象的依赖项，并应仅使用数据模型 Api，在可能的情况。 这将允许的提供程序，使其可移植到其他环境，明显更容易。
 
 有两个类与脚本提供程序相关的接口。 接口的第一个类是为脚本提供商和他们管理的脚本的常规管理。 第二个类的接口是用于支持的脚本调试。 第一组是必需的尽管支持对第二个是可选的可能没有意义的每个提供程序的支持。 
 
@@ -177,7 +177,7 @@ IDataModelNameBinder | 名称联编程序-可以将在上下文中的名称与�
 接口 | 描述
 |---------|------------|
 IDataModelScriptDebug | 脚本提供程序必须提供才能使脚本可调试性核心接口。 如果该脚本可调试，IDataModelScript 接口的实现类必须为 IDataModelScriptDebug QueryInterface。
-IDataModelScriptDebugClient | 其想要提供的脚本调试功能的用户界面实现 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等。...)
+IDataModelScriptDebugClient | 其想要提供的脚本调试功能的用户界面实现 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等...)
 IDataModelScriptDebugStack | 脚本提供程序实现此接口以提供给脚本调试器调用堆栈这一概念。
 IDataModelScriptDebugStackFrame | 脚本提供程序实现此接口公开特定堆栈帧调用堆栈中的概念。
 IDataModelScriptDebugVariableSetEnumerator | 脚本提供程序实现此接口以公开一组变量。 此组可能为函数、 本地变量、 组或组在特定范围内的变量表示参数的集。 确切含义是取决于如何获取该接口。
@@ -407,7 +407,7 @@ EnumerateReferences 方法枚举一组的名称和对其的引用将绑定针对
 接口 | 描述
 |---------|------------|
 IDataModelScriptDebug | 脚本提供程序必须提供才能使脚本可调试性核心接口。 如果该脚本可调试，IDataModelScript 接口的实现类必须为 IDataModelScriptDebug QueryInterface。
-IDataModelScriptDebugClient | 其想要提供的脚本调试功能的用户界面实现 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等。...)
+IDataModelScriptDebugClient | 其想要提供的脚本调试功能的用户界面实现 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等...)
 IDataModelScriptDebugStack | 脚本提供程序实现此接口以提供给脚本调试器调用堆栈这一概念。
 IDataModelScriptDebugStackFrame | 脚本提供程序实现此接口公开特定堆栈帧调用堆栈中的概念。
 IDataModelScriptDebugVariableSetEnumerator | 脚本提供程序实现此接口以公开一组变量。 此组可能为函数、 本地变量、 组或组在特定范围内的变量表示参数的集。 确切含义是取决于如何获取该接口。
@@ -487,7 +487,7 @@ StartDebugging 方法"开启"的某个特定脚本的调试器。 启动调试�
 
 [StopDebugging](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-stopdebugging)
 
-StopDebugging 方法称为客户端想要停止调试。 此方法调用可能会在任何时候，StartDebugging 进行成功后 (例如： 期间中断，在执行脚本时，等等。...)。在调用立即停止所有调试活动和状态返回到调用 StartDebugging 之前重置。 
+StopDebugging 方法称为客户端想要停止调试。 此方法调用可能会在任何时候，StartDebugging 进行成功后 (例如： 期间中断，在执行脚本时，等等...)。在调用立即停止所有调试活动和状态返回到调用 StartDebugging 之前重置。 
 
 
 **调试接口：IDataModelScriptDebugClient**
