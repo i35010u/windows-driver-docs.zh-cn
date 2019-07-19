@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_ACQUIRE_FOR_MOD_WRITE 联合
-description: 使用以下联合组件时 FLT MajorFunction 字段\_IO\_参数\_操作的块结构是 IRP\_MJ\_ACQUIRE\_有关\_MOD\_编写。
+title: FLT_PARAMETERS for IRP_MJ_ACQUIRE_FOR_MOD_WRITE union
+description: 当操作的 FLT_IO_PARAMETER_BLOCK 结构的 MajorFunction 字段为 IRP_MJ_ACQUIRE_FOR_MOD_WRITE 时, 使用以下联合组件。
 ms.assetid: f950f8df-fcaa-4af7-9227-eb069f289176
 keywords:
-- FLT_PARAMETERS IRP_MJ_ACQUIRE_FOR_MOD_WRITE 联合可安装文件系统驱动程序
-- FLT_PARAMETERS 联合可安装文件系统驱动程序
-- PFLT_PARAMETERS 联合指针可安装文件系统驱动程序
+- FLT_PARAMETERS for IRP_MJ_ACQUIRE_FOR_MOD_WRITE union 可安装的文件系统驱动程序
+- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,20 @@ api_location:
 - fltkernel.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2067934d72234368d1b48b8f30cc1afef5916d85
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d858766c0077e99e988dd3296d8b81c05176d597
+ms.sourcegitcommit: b9a65cb309bea3d35048968bdc708e0067276e68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370595"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68313212"
 ---
-# <a name="fltparameters-for-irpmjacquireformodwrite-union"></a>FLT\_IRP 的参数\_MJ\_ACQUIRE\_有关\_MOD\_写入联合
+# <a name="fltparameters-for-irpmjacquireformodwrite-union"></a>FLT_PARAMETERS for IRP_MJ_ACQUIRE_FOR_MOD_WRITE union
 
+当操作的[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MAJORFUNCTION**字段为 IRP_MJ_ACQUIRE_FOR_MOD_WRITE 时, 使用以下联合组件。
 
-使用以下联合组件时**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构，该操作是 IRP\_MJ\_ACQUIRE\_有关\_MOD\_编写。
-
-<a name="syntax"></a>语法
-------
+## <a name="syntax"></a>语法
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
@@ -42,66 +40,46 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>成员
--------
+## <a name="members"></a>Members
 
-**AcquireForModifiedPageWriter**  
-结构，它包含以下成员。
+```AcquireForModifiedPageWriter```
 
-**EndingOffset**  
-指向包含要写入加一的最后一个字节的偏移量的变量的指针。
+包含以下成员的结构。
 
-**ResourceToRelease**  
-指向要释放的资源。
+```EndingOffset```
 
-<a name="remarks"></a>备注
--------
+指向一个变量的指针, 该变量包含要写入的最后一个字节的偏移量加1。
 
-[ **FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构 IRP\_MJ\_采集\_为\_MOD\_写入操作包含参数**AcquireForModifiedPageWriter**表示的回调数据操作 ([**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data))结构。 包含在[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
+```ResourceToRelease```
 
-IRP\_MJ\_ACQUIRE\_有关\_MOD\_写为文件系统 (FSFilter) 回调操作。
+指向要获取的资源 ([ERESOURCE](https://docs.microsoft.com/windows-hardware/drivers/kernel/eresource-structures)) 的指针的指针。
 
-有关 FSFilter 回调操作的详细信息，请参阅引用条目[ **FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)。
+## <a name="remarks"></a>备注
 
-<a name="requirements"></a>要求
-------------
+IRP_MJ_ACQUIRE_FOR_MOD_WRITE 操作的[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构包含回调数据 ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 结构所表示的**AcquireForModifiedPageWriter**操作的参数。 它包含在[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构中。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
-</tr>
-</tbody>
-</table>
+IRP_MJ_ACQUIRE_FOR_MOD_WRITE 是一个文件系统 (FSFilter) 回调操作。 在此操作中, *ResourceToRelease*是指向要获取的资源的指针的指针 (操作前) 或获取的 (操作后)。 资源将在 IRP_MJ_RELEASE_FOR_MOD_WRITE 回调操作中释放。
+
+有关 FSFilter 回调操作的详细信息, 请参阅[**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)的参考条目。
+
+## <a name="requirements"></a>要求
+
+|   |   |
+| - | - |
+| Header | *Fltkernel* (包括*Fltkernel*) |
 
 ## <a name="see-also"></a>请参阅
 
+[FLT_CALLBACK_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[FLT_IO_PARAMETER_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT_IS_FASTIO_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT_IS_FS_FILTER_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT_IS_IRP_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_IS\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
-
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[FLT_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
 [**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)
-
- 
-
- 
-
-
-
-
-
-

@@ -3,18 +3,18 @@ title: 查找进程 ID
 description: 查找进程 ID
 ms.assetid: 963e9b5b-2b88-41b5-a103-dc4611ff41ea
 keywords:
-- 进程的进程 ID (PID)
+- 进程, 进程 ID (PID)
 - PID (进程 ID)
-- TList，相关技术
+- Tlist.exe, 相关技术
 - 任务管理器
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2add0a5362e6f9bbadf0fdddbc464c7cda144d02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a1adf48b784948e13a3e962fa96e0c08993d77a
+ms.sourcegitcommit: b9a65cb309bea3d35048968bdc708e0067276e68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371667"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68313217"
 ---
 # <a name="finding-the-process-id"></a>查找进程 ID
 
@@ -22,37 +22,37 @@ ms.locfileid: "63371667"
 ## <span id="ddk_finding_the_process_id_dbg"></span><span id="DDK_FINDING_THE_PROCESS_ID_DBG"></span>
 
 
-在 Microsoft Windows 中运行每个进程分配唯一的十进制数字，称为*进程 ID*，或*PID*。 此数值用于指定的进程时将调试器附加到它。
+为 Microsoft Windows 中运行的每个进程分配一个唯一的十进制数, 称为进程 ID (PID)。 此数字用于指定在将调试器附加到进程时的进程。
 
-有几种方法来确定给定应用程序的 PID： 使用任务管理器，并使用**tasklist**使用 TList 实用程序，或使用调试器命令。
+您可以使用任务管理器、 **tasklist**命令、tlist.exe 实用工具或调试器来确定给定应用程序的 PID。
 
-### <a name="span-idtaskmanagerspanspan-idtaskmanagerspantask-manager"></a><span id="task_manager"></span><span id="TASK_MANAGER"></span>任务管理器
+## <a name="span-idtaskmanagerspanspan-idtaskmanagerspantask-manager"></a><span id="task_manager"></span><span id="TASK_MANAGER"></span>任务管理器
 
-*任务管理器*可能激活中通过多种方式，但最简单的是，若要按 CTRL + ALT + DELETE，然后单击**任务管理器**。
+可以通过多种方法打开任务管理器, 但最简单的方法是选择 Ctrl + Alt + Delete, 然后选择 "**任务管理器**"。
 
-从**进程**选项卡上，单击**详细信息**选项卡以查看该 PID，以及其他有用信息。
+在 "**进程**" 选项卡上, 选择 "**详细信息**" 以查看 PID 以及其他有用的信息。
 
-在任务管理器的图形界面中，某些内核错误可能会导致延迟。
+某些内核错误可能会导致任务管理器的图形界面发生延迟。
 
-### <a name="span-idthetasklistcommandspanspan-idthetasklistcommandspanthe-tasklist-command"></a><span id="the_tasklist_command"></span><span id="THE_TASKLIST_COMMAND"></span>Tasklist 命令
+## <a name="span-idthetasklistcommandspanspan-idthetasklistcommandspanthe-tasklist-command"></a><span id="the_tasklist_command"></span><span id="THE_TASKLIST_COMMAND"></span>**Tasklist**命令
 
-使用**tasklist**命令从命令提示符窗口以显示所有进程、 Pid 和各种其他详细信息。
+在命令提示符下使用**tasklist**命令显示所有进程、其 pid 以及各种其他详细信息。
 
-### <a name="span-idtlistspanspan-idtlistspantlist"></a><span id="tlist"></span><span id="TLIST"></span>TList
+## <a name="span-idtlistspanspan-idtlistspantlist-utility"></a><span id="tlist"></span><span id="TLIST"></span>Tlist.exe 实用程序
 
-TList （任务列表查看器，tlist.exe） 是一个命令行实用工具，显示的任务或在本地计算机上当前运行的用户模式进程列表。 TList 是有关 Windows 调试工具软件包中包含的。
+任务列表查看器 (Tlist.exe) 或 tlist.exe 是一个命令行实用工具, 用于显示当前在本地计算机上运行的任务列表或用户模式进程。 Tlist.exe 包含在 Windows 的调试工具包中。
 
-当从命令提示符处运行 TList 时，它将以与唯一进程标识号 (PID) 的内存中显示的所有用户模式进程的列表。 对于每个进程，它显示 PID 的进程名称，并且该过程有一个窗口，该窗口的标题。
+当你从命令提示符运行 Tlist.exe 时, 它将在内存中显示具有唯一 PID 号的所有用户模式进程的列表。 对于每个进程, 它将显示 PID、进程名称和, 如果进程具有窗口, 则显示该窗口的标题。
 
-有关详细信息，请参阅[TList](tlist.md)。
+有关详细信息, 请参阅[tlist.exe](tlist.md)。
 
-### <a name="span-idthetlistdebuggercommandspanspan-idthetlistdebuggercommandspanthe-tlist-debugger-command"></a><span id="the__tlist_debugger_command"></span><span id="THE__TLIST_DEBUGGER_COMMAND"></span>.Tlist 调试器命令
+## <a name="span-idthetlistdebuggercommandspanspan-idthetlistdebuggercommandspanthe-tlist-debugger-command"></a><span id="the__tlist_debugger_command"></span><span id="THE__TLIST_DEBUGGER_COMMAND"></span>**Tlist.exe**调试器命令
 
-如果已存在，系统上运行的用户模式下调试程序[ **.tlist (列表进程 Id)** ](-tlist--list-process-ids-.md)命令将显示该系统上的所有 Pid 的列表。
+如果在相关系统上已经有一个用户模式调试器在运行, 则[**tlist.exe (列出进程 id)** ](-tlist--list-process-ids-.md)命令将显示该系统上所有 pid 的列表。
 
-### <a name="span-idcsrssandusermodedriversspanspan-idcsrssandusermodedriversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS 和用户模式驱动程序
+## <a name="span-idcsrssandusermodedriversspanspan-idcsrssandusermodedriversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS 和用户模式驱动程序
 
-若要调试在另一台计算机上运行的用户模式驱动程序，调试客户端服务器运行时子系统 (CSRSS) 进程。 有关详细信息，请参阅[调试 CSRSS](debugging-csrss.md)。
+若要调试在另一台计算机上运行的用户模式驱动程序, 请调试客户端服务器运行时子系统 (CSRSS) 进程。 有关详细信息, 请参阅[调试 CSRSS](debugging-csrss.md)。
 
  
 
