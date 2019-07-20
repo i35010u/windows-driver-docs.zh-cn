@@ -12,12 +12,12 @@ keywords:
 - 报告设备故障 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf23244c8fbc1bc2170417ad64edbfac6ed19d91
-ms.sourcegitcommit: 01291840c4d82eb8f60a723a9a8ee52dbc33a926
-ms.translationtype: HT
+ms.openlocfilehash: 6e6d5d26f604216490df23f9455c2fd9446ea669
+ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328899"
+ms.locfileid: "68341190"
 ---
 # <a name="reporting-device-failures"></a>报告设备故障
 
@@ -37,8 +37,6 @@ ms.locfileid: "68328899"
 如果驱动程序调用[**WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed), 则它会提供一个输入参数, 该参数确定是否将重新启动设备。 参数值为**WdfDeviceFailedAttemptRestart**和**WdfDeviceFailedNoRestart**。
 
 **UMDF**在 UMDF 2.15 之前, UMDF 驱动程序必须将此值设置为**WdfDeviceFailedNoRestart**。 从 UMDF 版本2.15 开始, UMDF 驱动程序可以通过调用[**WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed) , 并将*FailedAction*设置为**WdfDeviceFailedAttemptRestart**, 请求基础总线驱动程序重新枚举该驱动程序。 有关详细信息, 请参阅[**WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)。 
-
-UMDF 驱动程序必须将此值设置为**WdfDeviceFailedNoRestart**。
 
 有关这些参数值的详细信息, 请[**参阅\_WDF\_设备\_失败操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ne-wdfdevice-_wdf_device_failed_action)。
 在驱动程序的设备对象回调函数返回的值\_为其 NT SUCCESS (*状态*) 等于**FALSE**的情况下, 回调函数可以通过调用[**WdfDeviceSetFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)的输入参数来阻止重新启动。**WdfDeviceFailedNoRestart**。 否则, 这些回调函数不必调用**WdfDeviceSetFailed**。
