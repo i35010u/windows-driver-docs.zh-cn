@@ -4,89 +4,89 @@ description: Te.exe 命令选项
 ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d71cb48a3e99edfaba7a03abc0704f544d3d5ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 502964d420b44ff3a1e89960930ef4d565c0e53b
+ms.sourcegitcommit: 69261fa09a48b70a681bec0b4cf7afa8b84c73b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372985"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68415095"
 ---
 # <a name="teexe-command-options"></a>Te.exe 命令选项
 
 ## <a name="usage"></a>用法
 
-**te.exe** \<[测试\_二进制文件](#test_binaries)> \[[/appendWttLogging](#appendwttlogging) \] \[ [/breakOnCreate](#breakoncreate) \] \[ [/breakOnError](#breakonerror) \] \[ [/breakOnInvoke](#breakoninvoke) \] \[ [/coloredConsoleOutput](#coloredconsoleoutputtruefalse) \] \[ [/console:flushWrites](#consoleflushwrites) \] \[ [/console:position =\[x，y |当前\]](#consolepositionxy--current-) \[ [/console:size =&lt;x，y&gt; \] ](#consolesize-xy--current-) \[ [/console： 最顶层\] ](#consoletopmost) [ \[/defaultAppDomain\] ](#defaultappdomain) \[ [/disableConsoleLogging](#disableconsolelogging) \] \[ [/disableTimeouts](#disabletimeouts) \] \[ [/dpiaware](#dpiaware) \] \[ [/enableWttLogging](#enablewttlogging) \] \[ [/inproc](#inproc) \] \[ [/isolationLevel](#isolationlevellevel) \]\[ [/labMode](#labmode) \] \[ [/list](#list) \] \[ [/listProperties](#listproperties) \] \[ [/logFile:&lt;名称&gt;](#logfilename) \] \[ [/logOutput:&lt;模式&gt;](#logoutputmode) \] \[ [/miniDumpOnCrash](#minidumponcrash) \] \[ [/miniDumpOnError](#minidumponerror) \] \[ [/名称：&lt;testname&gt; ](#nametestname) \] \[[/outputFolder:&lt;folderName&gt; ](#outputfolderfoldername) \] \[ [/p:&lt;ParamName&gt;=<span class="notra class=""></span class="notra>&gt;](#wttdevicestringsuffixvalue)\]
+**:::no-loc text="te.exe":::** \<[:::no-loc text="test\_binaries":::](#test_binaries)> \[[:::no-loc text="/appendWttLogging":::](#appendwttlogging)\] \[[:::no-loc text="/breakOnCreate":::](#breakoncreate)\] \[[:::no-loc text="/breakOnError":::](#breakonerror)\] \[[:::no-loc text="/breakOnInvoke":::](#breakoninvoke)\] \[[:::no-loc text="/coloredConsoleOutput":::](#coloredconsoleoutputtruefalse) \] \[ [:::no-loc text="/console:flushWrites":::](#consoleflushwrites) \] \[ [ :::no-loc text="/console:position=\[x,y | current"::: \] ](#consolepositionxy--current-) \[ [ :::no-loc text="/console:size=&lt;x,y&gt;"::: \] ](#consolesize-xy--current-) \[ [ :::no-loc text="/console:topmost":::\]](#consoletopmost) [\[:::no-loc text="/defaultAppDomain":::\]](#defaultappdomain) \[[:::no-loc text="/disableConsoleLogging":::](#disableconsolelogging)\] \[[:::no-loc text="/disableTimeouts":::](#disabletimeouts)\] \[[:::no-loc text="/dpiaware":::](#dpiaware) \] \[[:::no-loc text="/enableWttLogging":::](#enablewttlogging) \] \[ [:::no-loc text="/inproc":::](#inproc) \] \[ [:::no-loc text="/isolationLevel":::](#isolationlevellevel) \] \[ [:::no-loc text="/labMode":::](#labmode) \] \[[:::no-loc text="/list":::](#list)\] \[[:::no-loc text="/listProperties":::](#listproperties)\] \[[:::no-loc text="/logFile:&lt;name&gt;":::](#logfilename)\] \[[:::no-loc text="/logOutput:&lt;mode&gt;":::](#logoutputmode)\] \[[:::no-loc text="/miniDumpOnCrash":::](#minidumponcrash)\] \[[:::no-loc text="/miniDumpOnError":::](#minidumponerror)\] \[[:::no-loc text="/name:&lt;testname&gt;":::](#nametestname)\] \[[:::no-loc text="/outputFolder:&lt;folderName&gt;":::](#outputfolderfoldername)\] \[[:::no-loc text="/p:&lt;ParamName&gt;=&lt;ParamValue&gt;":::](#pparamnameparamvalue) \] \[ [:::no-loc text="/parallel":::](#parallel) \] \[ [:::no-loc text="/persistPictResults":::](#persistpictresults) \] \[ [:::no-loc text="/pict:&lt;OptionName&gt;=&lt;OptionValue&gt;":::](#pictoptionnameoptionvalue) \] [ \[:::no-loc text="/rebootStateFile":::\]](#rebootstatefile) \[[:::no-loc text="/reportLoadingIssue":::](#reportloadingissue)\] \[[:::no-loc text="/runas:&lt;RunAsType&gt;":::](#runasrunastype)\] \[[:::no-loc text="/runIgnoredTests":::](#runignoredtests)\]<s></s>
 
 ## <a name="selectionexecution-commands"></a>选择/执行命令
 
 ### <a name="testbinaries"></a>test_binaries
 
-指定要执行的一个或多个测试文件 （由空格分隔）。 支持使用通配符。
+指定要执行的一个或多个测试文件 (用空格分隔)。 支持使用通配符。
 
-#### <a name="teexe-test1dll"></a>te.exe test1.dll
+#### <a name="teexe-test1dll"></a>te test1
 
-**解释：** Test1.dll 中运行所有测试。
+**破解**运行 test1 中的所有测试。
 
-#### <a name="teexe-test1dll-test2dll-test3dll"></a>te.exe test1.dll test2.dll test3.dll
+#### <a name="teexe-test1dll-test2dll-test3dll"></a>te test1 test2 test3. .dll
 
-**解释：** Test1.dll、 test2.dll 和 test3.dll 中运行所有测试。
+**破解**运行 test1、test2 和 test3 中的所有测试。
 
-#### <a name="teexe-dll"></a>te.exe \*.dll
+#### <a name="teexe-dll"></a>\*te .dll
 
-**解释：** 在当前目录中的所有 dll 中运行所有测试。
+**破解**运行当前目录中所有 dll 中的所有测试。
 
-### <a name="coloredconsoleoutputtruefalse"></a>/coloredConsoleOutput:\<true/false>
+### <a name="coloredconsoleoutputtruefalse"></a>/coloredConsoleOutput:\<true/false >
 
-指定 TAEF 应输出彩色的控制台文本。 默认值为 true。 如果设置为 false，TAEF 将输出与默认控制台颜色的所有文本。
+指定 TAEF 是否应输出彩色的控制台文本。 默认值为 true。 如果设置为 false, 则 TAEF 将输出默认控制台颜色的所有文本。
 
 `te.exe test1.dll /coloredConsoleOutput:false`
 
-### <a name="consoleoptionnamevalue"></a>/console:\<optionName>=\<value>
+### <a name="consoleoptionnamevalue"></a>/console:\<optionName > =\<value >
 
-提供用于配置 TE 的使用控制台的选项。 你可使用以下选项：
+提供用于配置 TE 使用控制台的选项。 你可使用以下选项：
 
-#### <a name="consoleflushwrites"></a>/console:flushWrites
+#### <a name="consoleflushwrites"></a>/console: flushWrites
 
-会导致刷新后的每个行是编写-有用时 TE.exe 的输出已被重定向的控制台输出。
+导致在写入每个行后刷新控制台输出-在已重定向 TE 的输出时非常有用。
 
-#### <a name="consolepositionxy--current-"></a>/console:position =\[x，y | 当前 \]
+#### <a name="consolepositionxy--current-"></a>/console: position =\[x, y | current\]
 
-设置控制台窗口相对于主监视器的角 （以像素为单位） 的位置。 使用值**当前**指定应存储和从重新启动恢复时使用当前控制台的位置。
+设置控制台窗口相对于主监视器角的位置 (以像素为单位)。 使用 "**当前**的值" 指定在从重新启动恢复时, 应存储并使用当前控制台位置。
 
-#### <a name="consolesize-ltxygt--current-"></a>/console:size=\[ &lt;x,y&gt; | current \]
+#### <a name="consolesize-ltxygt--current-"></a>/console: size =\[ &lt;x, y&gt; | 当前\]
 
-设置 （在字符维度） 的控制台窗口的大小。 将增加屏幕缓冲区大小，以匹配窗口如有必要的大小。 使用值**当前**指定应存储和从重新启动恢复时使用当前控制台大小。
+设置控制台窗口的大小 (以字符为维度)。 如有必要, 屏幕缓冲区大小将增加以匹配窗口的大小。 使用 "**当前**的值" 指定在从重新启动恢复时, 应存储并使用当前控制台大小。
 
-#### <a name="consoletopmost"></a>/console:topmost
+#### <a name="consoletopmost"></a>/console: 最顶端
 
-保留的执行持续时间内运行 te.exe 最顶端桌面的 z 顺序中的控制台。
+在执行期间, 使控制台在桌面 z 顺序中运行 "最顶层"。
 
 ### <a name="dpiaware"></a>/dpiaware
 
-在进程中执行的测试标记为 DPI 感知，请参阅[高 DPI](https://docs.microsoft.com/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)。 这也可以设置通过元数据 ("DpiAware")。
+在标记为 DPI 感知的进程中执行测试, 请参阅[高 DPI](https://docs.microsoft.com/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)。 还可以通过元数据 ("DpiAware") 设置此设置。
 
 ### <a name="inproc"></a>/inproc
 
-执行在 TE.exe 进程本身而不是测试内的所有测试。ProcessHost.exe。
+执行 TE 进程本身中的所有测试, 而不是在 TE 内执行。ProcessHost。
 
-te.exe test1.dll /inproc
+te test1/inproc
 
 > [!NOTE]
-> TE 仅支持一次执行一个测试 dll 时使用 */inproc*设置。
+> TE 仅支持在使用 */inproc*设置时一次执行一个测试 dll。
 
 ### <a name="isolationlevellevel"></a>/isolationLevel:\<级别 >
 
-指定的最小执行 TAEF 测试时要使用的隔离级别。 如果此值与指定为元数据的隔离级别冲突，值将成为具有紧密的作用域的隔离级别。 请参阅[测试隔离](test-isolation.md)的更多详细信息。
+指定执行 TAEF 测试时要使用的最低隔离级别。 如果此值与指定为元数据的 IsolationLevel 冲突, 该值将成为具有紧密范围的隔离级别。 有关更多详细信息, 请参阅[测试隔离](test-isolation.md)。
 
 `te.exe test1.dll /isolationLevel:Class`
 
 ### <a name="labmode"></a>/labMode
 
-执行测试，并删除潜在阻止的用户界面 （例如，Windows 错误报告对话框上崩溃测试）。
+执行测试并删除可能的阻止 UI (例如, 对崩溃测试 Windows 错误报告对话框)。
 
 ### <a name="list"></a>/list
 
-列出所有的名称[测试\_二进制文件](#test_binaries)、 类和其中的方法。 如果指定选择条件，则会列出那些符合条件的的名称。
+列出所有[\_测试二进制文件](#test_binaries)的名称以及其中的类和方法。 如果指定了选择条件, 则仅列出满足条件的那些名称。
 
 ```cpp
  te.exe test1.dll test2.dll /list
@@ -114,7 +114,7 @@ te.exe test1.dll /inproc
 
 ### <a name="listproperties"></a>/listProperties
 
-列出了名称和属性的所有测试\_二进制文件的类和方法中的以及设置和清除函数名，如果可用。 如果指定选择条件，则会列出那些符合条件的的名称。
+列出所有测试\_二进制文件的名称和属性以及其中的类和方法, 以及安装和拆卸函数名称 (如果可用)。 如果指定了选择条件, 则仅列出满足条件的那些名称。
 
 ```cpp
  te.exe test1.dll test2.dll /listProperties
@@ -156,31 +156,31 @@ te.exe test1.dll /inproc
    Property[ThreadingModel] = STA
 ```
 
-### <a name="nametestname"></a>/name:\<测试名称 >
+### <a name="nametestname"></a>/name:\<testname >
 
-测试名称基于所选内容是为轻松的替代方法"/select:@Name='&lt;testname&gt;'"。 &lt;Testname&gt;仍可以包含通配符 ("\*"和"？")，但不是能包含单引号内。 如果 /select 和 /name 同时指定在命令提示符处，则/选择查询优先和 /name 将被忽略。
+基于测试名称的选择是 "/select:@Name= '&lt;testname&gt;'" 的简单替代方法。 Testname 仍可以包含通配符 ("\*" 和 "？"), 但不能包含在单引号内。&gt; &lt; 如果在命令提示符处同时指定了/select 和/name, 则将优先使用/select 查询, 并忽略/name。
 
-te.exe test1.dll /name:\*TestToLower  
+te test1/name:\*TestToLower  
 
-**解释：** 运行所有测试方法名称与 TestToLower 的结束位置 test1.dll。 可以使用作为选择条件表示相同/select:@Name=\*TestToLower。
+**破解**运行 test1 中的所有测试, 其中方法名称以 "TestToLower" 结尾。 可以使用 "TestToLower" 作为/select:@Name"\*选择条件" 来表示相同的。
 
-te.exe test1.dll /name:\*StringTest\*  
+te test1/name:\*StringTest\*  
 
-**解释：** 运行 test1.dll 中的所有测试，其中包含短语 StringTest 命名空间、 类或方法名称中。
+**破解**在命名空间、类或方法名称中包含短语 "StringTest" 的 test1 中运行所有测试。
 
-### <a name="outputfolderfoldername"></a>/outputFolder:\<folderName>
+### <a name="outputfolderfoldername"></a>/outputFolder:\<文件夹名 >
 
-指定用于放置生成的所有文件的文件夹。 默认值为当前目录。 可以使用环境变量，例如：
+指定放置所有生成的文件的文件夹。 默认值为当前目录。 可以使用环境变量, 例如:
 
 `te.exe test1.dll /outputFolder:%TEMP%\\MyOutput`
 
-### <a name="pparamnameparamvalue"></a>/p:\<ParamName>=\<ParamValue>
+### <a name="pparamnameparamvalue"></a>/p:\<ParamName > =\<ParamValue >
 
-定义与参数名称的运行时参数 = ParamName 和参数值 = 参数值。 这些参数是可从测试方法或安装程序/清理方法访问。
+用参数 name = ParamName 和参数 value = ParamValue 定义一个运行时参数。 可以通过测试方法或安装/清理方法访问这些参数。
 
 `te.exe test1.dll /p:x=5 /p:myParm=cool`
 
-您可以获取 x 作为一个多个测试代码中支持的类型。 例如，这里您可以看到我们为 int 和 WEX::Common::String 检索：
+你可以在测试代码中将 x 作为多种受支持的类型之一。 例如, 你可以看到, 我们将它作为 int 和 WEX:: Common:: String 进行检索:
 
 ```cpp
                 int x = 0;
@@ -189,197 +189,197 @@ te.exe test1.dll /name:\*StringTest\*
                 RuntimeParameters::TryGetValue(L"x", xString);
 ```
 
-有关详细信息，请访问[TAEF。运行时参数](runtime-parameters.md)帮助页。
+有关详细信息, 请访问[TAEF。运行时参数](runtime-parameters.md)帮助页。
 
 ### <a name="parallel"></a>/parallel
 
-在多个处理器上并行执行测试。 测试必须参加并行执行到由标记为 Parallel 元数据。
+并行执行多个处理器上的测试。 通过使用 "Parallel" 元数据进行标记, 测试必须选择并行执行。
 
 `te.exe test1.dll /parallel`
 
-有关详细信息，请访问[并行](parallel.md)帮助页。
+有关详细信息, 请访问[并行](parallel.md)帮助页。
 
 ### <a name="persistpictresults"></a>/persistPictResults
 
-缓存通过 PICT.exe 生成使用为测试结果[PICT DataSource](pict-data-source.md)中当前的执行。 后续的测试执行将尝试使用缓存的结果与针对相同的模型和种子文件运行 PICT.exe 相对。
+缓存由 PICT 生成的结果, 以便在当前执行中使用[Pict 数据源](pict-data-source.md)进行测试。 后续的测试执行将尝试使用缓存的结果, 因为对相同的模型和 seed 文件运行 PICT。
 
-### <a name="pictoptionnameoptionvalue"></a>/pict:\<OptionName>=\<OptionValue>
+### <a name="pictoptionnameoptionvalue"></a>/pict:\<OptionName > =\<OptionValue >
 
-提供了选项，用于控制 PICT.exe 时调用它的测试使用[PICT DataSource](pict-data-source.md)。 当前设置以下选项之一时，会重写代码中的所有关联元数据。 你可使用以下选项：
+提供使用[Pict 数据源](pict-data-source.md)为测试调用 pict 时用于控制 pict 的选项。 设置其中一个选项当前会覆盖代码中所有关联的元数据。 你可使用以下选项：
 
-/Pict:Order=3  
-通过将值传递通过 PICT.exe /o 命令选项设置的组合的顺序。
+/Pict: Order = 3  
+通过使用 PICT 的/o 命令选项传递值, 设置组合的顺序。
 
-/Pict:ValueSeparator=;  
-通过将值传递通过 PICT.exe /d 命令选项设置值分隔符。
+/Pict: ValueSeparator =;  
+通过将值传递给 PICT 的/d 命令选项来设置值分隔符。
 
-/Pict:AliasSeparator=+  
-通过将值传递通过 PICT.exe / a 命令选项设置别名分隔符。
+/Pict: AliasSeparator = +  
+通过使用 PICT 的/a 命令选项传递值来设置别名分隔符。
 
-Pict:NegativeValuePrefix=!  
-通过将值传递通过 PICT.exe /n 命令选项中设置的负值前缀。
+Pict: NegativeValuePrefix =!  
+通过使用 PICT 的/n 命令选项传递值, 设置负值前缀。
 
-/Pict:SeedingFile=test.seed  
-通过将值传递通过 PICT.exe /e 命令选项设置种子设定的文件的路径。
+/Pict: SeedingFile = test. seed  
+通过使用 PICT 的/e 命令选项传递值, 设置播种文件的路径。
 
-/Pict:Random=true  
-打开或关闭 PICT 结果中的随机性，并使日志已使用的随机种子 PICT 数据源。
+/Pict: Random = true  
+开启或关闭 PICT 结果中的随机性, 并使 PICT 数据源日志中使用的随机种子。
 
-/Pict:RandomSeed=33  
-通过将值传递通过 PICT.exe /r 命令选项设置随机种子。 将此项设置将开启 Pict： 随机除非 Pict： 随机显式设置为 false。
+/Pict: RandomSeed = 33  
+通过 PICT 的/r 命令选项传递值, 设置随机种子。 如果设置此选项, 则会启用 Pict: 随机, 除非将 Pict: Random 显式设置为 false。
 
-/Pict:CaseSensitive=true  
-如果设置为 true，将在通过将 /c 命令选项传递到 PICT.exe 是否区分大小写。
+/Pict: CaseSensitive = true  
+如果设置为 true, 则通过将/c 命令选项传递给 PICT 来启用区分大小写。
 
-/Pict:Timeout=00:01:30  
-设置等待 PICT.exe 终止其进程之前完成的时间。 值的格式\[天。\]小时\[： 分钟\[： 第二个\[。秒的小数部分\]\]\]。
+/Pict: Timeout = 00:01:30  
+设置在终止其进程之前等待 PICT 完成的时间。 值的格式\[为 Day。\]小时\[: 分钟\[: 秒\[。FractionalSeconds\]。\]\]
 
 ### <a name="runasrunastype"></a>/runas:\<RunAsType >
 
-在指定的环境中执行测试。 请参阅[RunAs](runas.md)文档，以详细使用情况信息。
+在指定的环境中执行测试。 有关详细的使用情况信息, 请参阅[RunAs](runas.md)文档。
 
-te.exe \*.dll /runas:System  
+\*te .dll/runas: System  
 
-**解释：** 作为系统运行所有测试。
+**破解**将所有测试作为系统运行。
 
-te.exe \*.dll /runas:Elevated  
+\*te/runas: 提升  
 
-**解释：** 作为权限提升的用户运行所有测试。
+**破解**以提升的用户身份运行所有测试。
 
-te.exe \*.dll /runas:Restricted  
+\*te/runas: 受限  
 
-**解释：** 以非提升用户身份运行所有测试。
+**破解**以非提升用户身份运行所有测试。
 
-te.exe \*.dll /runas:LowIL  
+\*/runas: LowIL  
 
-**解释：** 在低完整性进程中运行所有测试。
+**破解**在完整性较低的进程中运行所有测试。
 
 ### <a name="runignoredtests"></a>/runIgnoredTests
 
-执行或列出 (如果结合[/list](#list)或[/listProperties](#listproperties)) 所有测试，包括测试类和测试方法使用"忽略"元数据设置为"true"。 由默认测试类和测试执行期间，可以在列表时跳过"忽略"元数据设置为"true"的方法。
+执行或列出 (如果与[/list](#list)或[/listProperties](#listproperties)一起) 所有测试, 包括将 "Ignore" 元数据设置为 "true" 的测试类和测试方法。 默认情况下, 在执行期间和列出时, 将跳过 "忽略" 设置为 "true" 的测试类和测试方法。
 
-### <a name="runonmachinename"></a>/runon:\<计算机名 >
+### <a name="runonmachinename"></a>/runon:\<MachineName >
 
-指定的计算机上远程执行测试。 TAEF 进行身份验证、 授权和部署的必要二进制文件执行的测试，并返回到原始控制台日志的所有信息。 请参阅[跨机器测试执行](cross-machine-execution.md)文档，以详细使用情况信息。
+在指定的计算机上远程执行测试。 TAEF 对所需的二进制文件进行身份验证、授权和部署, 以执行测试, 并将所有信息记录回原始控制台。 有关使用情况的详细信息, 请参阅[跨计算机测试执行](cross-machine-execution.md)文档。
 
-te.exe \*.dll /runon:TestMachine1
+\*/runon: TestMachine1
 
-**解释：** "TestMachine1"上远程运行所有测试。
+**破解**在 "TestMachine1" 上远程运行所有测试。
 
-### <a name="selectquery"></a>/select:\<query>
+### <a name="selectquery"></a>/select:\<查询 >
 
-选择从每个测试时要使用的选择条件测试二进制文件。 选择条件组成一个或多个以下：
+从每个测试二进制文件选择测试时要使用的选择条件。 选择条件由以下一项或多项组成:
 
-@\[属性名称\] = \[值作为字符串\]
-@\[属性名称\] &gt; = \[值作为 float 或 integer\] 
-@\[属性名称\] &gt; \[为 float 或 integer 值\]
-@\[属性名称\] &lt;= \[值为 float 或 integer\]
-@\[属性名称\] &lt; \[为 float 或 integer 值\]
+@\[作为 float\]或 integer\[的字符串
+@ = \]属性\]名称值的属性名称值\[\[ &gt; = \]\[\] 作为float&lt;或 integer属性名称&gt;的属性名称值\] 
+@ \[
+@\[\] = \]\[
+@作为float\]或 integer 属性名称值的&lt;值\[ \[\]
 
-* *以字符串形式的属性值必须是单引号内。*
-* *你可以指定使用复合选择条件"和"，"和"not"（不区分大小写）。*
-* *属性的字符串值支持通过通配符字符"\*"和"？"字符。*
-* *对于 float 和 integer 值，"\*"字符也可以使用存在，但不能用于部分匹配。* 例如： **/选择:"@Priority=\*"** 有效，但 **/选择:"@Priority= 4\*"** 不是。
+* *字符串形式的属性值必须用单引号括起来。*
+* *您可以使用 "and"、"or" 和 "not" (不区分大小写) 来指定组合选择条件。*
+* *属性字符串值通过 "\*" 和 "？" 字符支持通配符。*
+* *对于 float 和 integer 值, "\*" 字符也可以用作 "exists", 但不能用于部分匹配。* 例如: **/select: "@Priority\*="** 有效, 但 **/select: "@Priority= 4\*"** 不是。
 
-te.exe test1.dll /select:"(@Name='\*TestToLower 或@Owner= C2)，而不 (@Priority &lt; 3)"
+te test1@Name/select: "(= '\*TestToLower ' or @Owner= ' c2 '), not (@Priority &lt; 3)"
 
-**解释：** 在 TestToLower 或其中的 owner 是 C2; 方法名称的结束位置的 test1.dll 中运行所有测试优先级别不小于 3。
+**破解**运行 test1 中的所有测试, 其中方法名称以 "TestToLower" 结尾或所有者为 "C2";, 其中优先级不小于3。
 
-te.exe test1.dll test2.dll /select:@Priority=\*
+te test1 test2 /select:@Priority=\*
 
-**解释：** 在尚未在其测试元数据指定优先级的 test1.dll 和 test2.dll 中运行所有测试。
+**破解**运行 test1 和 test2 中的所有测试, 其中已在其测试元数据中指定了优先级。
 
-te.exe test1.dll /select:@Name='\*StringTest\*  
+te test1 /select:@Name= '\*StringTest\*'  
 
-**解释：** 运行 test1.dll 中的所有测试，其中包含短语 StringTest 命名空间、 类或方法名称中。
+**破解**在命名空间、类或方法名称中包含短语 "StringTest" 的 test1 中运行所有测试。
 
-### <a name="sessiontimeoutvalue"></a>/sessionTimeout:\<value>
+### <a name="sessiontimeoutvalue"></a>/sessionTimeout:\<值 >
 
-设置 Te.exe 整个执行的会话超时值。 如果在超时到期，将适当地中止测试会话，并在进程退出代码将表示出现超时。
+为 Te 的整个执行设置会话超时。 如果超时时间已到, 则测试会话将正常中止, 进程退出代码将表示发生了超时。
 
 > [!NOTE]
-> 必须采用以下格式指定的超时值：
+> 必须按以下格式指定超时值:
 
 ```cpp
 [Day.]Hour[:Minute[:Second[.FractionalSeconds]]]
 ```
 
 > [!NOTE]
-> 如果 WTT 下运行，此值可以用于确保即使 TAEF 会话超时时 Wtt 日志文件保持不变。
+> 如果在 WTT 下运行, 则可以使用此值来确保即使 TAEF 会话超时, Wtt 日志文件仍保持不变。
 
-te.exe test1.dll /sessionTimeout:0:0:0.5  
+te test1/sessionTimeout: 0: 0: 0。5  
 
-在整个测试会话会在.5 秒后超时。
+整个测试会话将在5秒后超时。
 
-te.exe test1.dll /sessionTimeout:0:0:45  
+te test1/sessionTimeout: 0: 0:45  
 
-在整个测试会话将在 45 秒后超时。
+整个测试会话将在45秒后超时。
 
-te.exe test1.dll /sessionTimeout:0:20  
+te test1/sessionTimeout: 0:20  
 
-在整个测试会话会在 20 分钟后超时。
+整个测试会话将在20分钟后超时。
 
-te.exe test1.dll /sessionTimeout:5  
+te test1/sessionTimeout: 5  
 
-在整个测试会话将在 5 个小时后超时。
+整个测试会话将在5小时后超时。
 
-te.exe test1.dll /sessionTimeout:1.2  
+te test1/sessionTimeout: 1。2  
 
-在整个测试会话会在 1 天 2 小时后超时。
+整个测试会话将在1天到2小时后超时。
 
 ### <a name="terminateonfirstfailure"></a>/terminateOnFirstFailure
 
-终止测试运行第一次遇到测试失败。 调用该测试的所有拆解操作，但所有后续的测试被标记为已忽略。 由于的已知问题，测试可能会继续运行时使用测试模式。
+第一次遇到测试失败时终止测试运行。 该测试的所有拆卸操作都将被调用, 但所有后续测试都标记为已忽略。 由于已知问题, 在使用测试模式时, 测试可能会继续运行。
 
 `te.exe test1.dll /terminateOnFirstFailure`
 
-### <a name="testdependenciesfiles"></a>/testDependencies:\<files>
+### <a name="testdependenciesfiles"></a>/testDependencies:\<文件 >
 
-指定部署时使用的其他测试依赖项[跨机器测试执行](cross-machine-execution.md)。 除非提供的完整路径，则将相对于当前目录，不测试目录中搜索 TAEF。
+指定使用[跨计算机测试执行](cross-machine-execution.md)时要部署的其他测试依赖项。 如果未提供完整路径, TAEF 将搜索相对于当前目录而不是测试目录。
 
-te.exe \*.dll /runon:TestMachine1 /TestDependencies:test\*.jpg;file1.doc  
+te/runon: TestMachine1/TestDependencies\*:; file1 \*  
 
-**解释：** 在"TestMachine1"，并复制上远程运行所有测试测试\*.jpg 和 file1.doc 转移到远程计算机之前执行任何测试。 每个文件规范可包含通配符字符 (test.txt; 测试\*.dll; 等) 以匹配一个或多个文件。
+**破解**在 "TestMachine1" 上远程运行所有测试, 并在执行\*任何测试之前, 将 "test.txt" 和 "file1" 复制到远程计算机。 每个文件规范都可以包含通配符 (test.txt;\*test.txt; 等等) 以匹配一个或多个文件。
 
-### <a name="testtimeoutvalue"></a>/testTimeout:\<value>
+### <a name="testtimeoutvalue"></a>/testTimeout:\<值 >
 
-设置 Te.exe 整个执行的全球化测试超时值。 此值将覆盖任何[测试超时](standard-test-metadata.md)设置给定测试正在执行的元数据。
+为 Te 的整个执行设置全局测试超时。 此值将覆盖可能已为正在执行的给定测试设置的任何[测试](standard-test-metadata.md)超时元数据。
 
 > [!NOTE]
-> 必须采用以下格式指定的超时值：
+> 必须按以下格式指定超时值:
 
 ```cpp
 [Day.]Hour[:Minute[:Second[.FractionalSeconds]]]
 ```
 
 > [!NOTE]
-> 结合使用时，将忽略[/inproc](#inproc)。
+> 与[/inproc](#inproc)一起使用时, 将被忽略。
 
-te.exe test1.dll /testTimeout:0:0:0.5  
+te test1/testTimeout: 0: 0: 0。5  
 
-测试和安装程序/清理的每个方法会在.5 秒后超时。
+每个测试和安装/清理方法将在5秒后超时。
 
-te.exe test1.dll /testTimeout:0:0:45  
+te test1/testTimeout: 0: 0:45  
 
-每个测试和安装程序/清理方法将在 45 秒后超时。
+每个测试和安装/清理方法将在45秒后超时。
 
-te.exe test1.dll /testTimeout:0:20  
+te test1/testTimeout: 0:20  
 
-测试和安装程序/清理的每个方法会在 20 分钟后超时。
+每个测试和安装/清理方法将在20分钟后超时。
 
-te.exe test1.dll /testTimeout:5  
+te test1/testTimeout: 5  
 
-测试和安装程序/清理的每个方法会在 5 个小时后超时。
+每个测试和安装/清理方法将在5小时后超时。
 
-te.exe test1.dll /testTimeout:1.2  
+te test1/testTimeout: 1。2  
 
-测试和安装程序/清理的每个方法会在 1 天 2 小时后超时。
+每个测试和安装/清理方法将在1天和2小时后超时。
 
-### <a name="unicodeoutputtruefalse"></a>/unicodeOutput:\<true/false>
+### <a name="unicodeoutputtruefalse"></a>/unicodeOutput:\<true/false >
 
-TE 通过管道输送到一个文本文件，它默认情况下输出 unicode。 一个例外是如果你已请求将添加到现有 ANSII 文件 (通过&gt;&gt;)。
+当 TE 传输到文本文件时, 它会默认输出 unicode。 这种情况的一个例外是, 如果你已请求追加到现有的 ANSII 文件 (通过&gt;"&gt;")。
 
-若要重写此行为，可以指定 /unicodeOutput:false。 这将强制 TE 始终输出 ANSII 到该文件。
+若要重写此行为, 可以指定/unicodeOutput: false。 这将强制 TE 始终将 ANSII 输出到该文件。
 
 `te.exe test1.dll /unicodeOutput:false > output.txt`
 
@@ -387,62 +387,62 @@ TE 通过管道输送到一个文本文件，它默认情况下输出 unicode。
 
 ### <a name="appendwttlogging"></a>/appendWttLogging
 
-启用 WTT 日志记录时，将追加到日志文件，而不是将其重写。 必须与结合使用[/enableWttLogging](#enablewttlogging)。
+启用 WTT 日志记录时, 会将追加到日志文件, 而不是覆盖它。 必须与[/enableWttLogging](#enablewttlogging)结合使用。
 
-te.exe test1.dll /enableWttLogging /appendWttLogging  
+te test1/enableWttLogging/appendWttLogging  
 
-将创建或附加到名为日志文件*TE.wtl*测试执行完成后。
+完成测试执行时, 将创建或追加到名为*wtl*的日志文件。
 
 ### <a name="enablewttlogging"></a>/enableWttLogging
 
-启用日志记录; WTTWttlog.dll 必须在你的路径中可用。
+启用 WTT 日志记录;Wttlog 必须在你的路径中可用。
 
-te.exe test1.dll /enableWttLogging
+te test1/enableWttLogging
 
-将生成一个名为的日志文件*TE.wtl*测试执行完成后。
+完成测试执行时, 将生成一个名为*wtl*的日志文件。
 
 ### <a name="defaultappdomain"></a>/defaultAppDomain
 
-在默认应用程序域中执行托管的测试。
+在默认应用程序域中执行托管测试。
 
-te.exe managed.test1.dll /defaultAppDomain  
+te 管理的/defaultAppDomain  
 
 ### <a name="disableconsolelogging"></a>/disableConsoleLogging
 
-禁用控制台日志输出;必须与结合使用[/enableWttLogging](#enablewttlogging)。
+禁用控制台日志输出;必须与[/enableWttLogging](#enablewttlogging)结合使用。
 
 `te.exe test1.dll /disableConsoleLogging /enableWttLogging`
 
-### <a name="logfilename"></a>/logFile:\<name>
+### <a name="logfilename"></a>/logFile:\<name >
 
-指定要作为 wtt 日志文件，则使用的名称必须与结合使用[/enableWttLogging](#enablewttlogging)。
+指定要用作 wtt 日志文件的名称;必须与[/enableWttLogging](#enablewttlogging)结合使用。
 
-te.exe test1.dll /logFile:myCustomLogFile.xml /enableWttLogging  
+te test1/logFile: myCustomLogFile/enableWttLogging  
 
-将生成一个名为的日志文件*myCustomeLogFile.xml*测试执行完成后。
+完成测试执行时, 将生成一个名为*myCustomeLogFile*的日志文件。
 
-### <a name="logoutputmode"></a>/logOutput:\<mode>
+### <a name="logoutputmode"></a>/logOutput:\<mode >
 
 设置记录器的输出级别。 有效值包括：
 
-* *高*:启用某些其他控制台输出，例如打印每个跟踪旁边的时间戳。
-* *低*:发出唯一 （开始、 结束组等） 的核心事件和错误。 日志文件包含较低优先级的详细信息前面为故障提供上下文的任何错误。
-* *LowWithConsoleBuffering*:与相同*低*，但包括失败的上下文中的日志文件和控制台输出。
-* *最低*:与相同*低*，但控制台输出包括仅错误、 测试失败和执行的摘要。
+* *高*:启用其他一些控制台输出, 例如打印每个跟踪旁边的时间戳。
+* *低*:仅发出核心事件 (开始、结束组等) 和错误。 该日志文件包含之前的优先级较低的详细信息, 以提供失败的上下文。
+* *LowWithConsoleBuffering*:与*Low*相同, 但包含日志文件和控制台输出中的失败的上下文。
+* *最低*:与*Low*相同, 但控制台输出只包含错误、测试失败和执行摘要。
 
 ### <a name="version"></a>/version
 
 输出详细的版本信息。
 
-### <a name="wttdevicestringvalue"></a>/wttDeviceString:\<value>
+### <a name="wttdevicestringvalue"></a>/wttDeviceString:\<值 >
 
-完全重写时初始化 WttLogger 使用 WexLogger WttDeviceString。
+初始化 WttLogger 时, 完全重写 WexLogger 使用的 WttDeviceString。
 
 `te.exe test1.dll /wttDeviceString:$Console`
 
-### <a name="wttdevicestringsuffixvalue"></a>/wttDeviceStringSuffix:\<value>
+### <a name="wttdevicestringsuffixvalue"></a>/wttDeviceStringSuffix:\<值 >
 
-为默认值时初始化 WttLogger 使用 WexLogger WttDeviceString 追加指定的值。 如果忽略[wttDeviceString](#wttdevicestringvalue)还指定了。
+当初始化 WttLogger 时, 将指定的值追加到 WexLogger 使用的默认 WttDeviceString。 如果同时指定了[wttDeviceString](#wttdevicestringvalue) , 则忽略。
 
 `te.exe test1.dll /wttDeviceStringSuffix:$Console`
 
@@ -450,91 +450,91 @@ te.exe test1.dll /logFile:myCustomLogFile.xml /enableWttLogging
 
 ### <a name="breakoncreate"></a>/breakOnCreate
 
-中断到调试器之前实例化每个测试类。
+在实例化每个测试类之前中断到调试器。
 
 `te.exe test1.dll /breakOnCreate`
 
 ### <a name="breakonerror"></a>/breakOnError
 
-如果记录错误或测试失败，则会中断到调试器。
+如果记录错误或测试错误, 则中断调试器。
 
 `te.exe test1.dll /breakOnError`
 
 ### <a name="breakoninvoke"></a>/breakOnInvoke
 
-中断到调试器之前调用每个测试方法。
+在调用每个测试方法之前中断调试器。
 
 `te.exe test1.dll /breakOnInvoke`
 
 ### <a name="disabletimeouts"></a>/disableTimeouts
 
-在执行过程中禁用所有的超时值。 这在调试时，可避免超时 TAEF 等待正在调试的程序部分时很有用。
+在执行过程中禁用所有超时。 当 TAEF 等待正在调试的程序的部分时, 这会在调试时非常有用。
 
 `te.exe test1.dll /disableTimeouts`
 
 ### <a name="minidumponerror"></a>/miniDumpOnError
 
-采用，并在出现测试错误或失败时记录微型转储。
+如果发生测试错误或失败, 则使用并记录小型转储。
 
 `te.exe test1.dll /miniDumpOnError`
 
 ### <a name="minidumponcrash"></a>/miniDumpOnCrash
 
-采用和日志小型转储，如果测试故障发生。
+如果发生测试崩溃, 则使用并记录小型转储。
 
 `te.exe test1.dll /miniDumpOnCrash`
 
 ### <a name="rebootstatefile"></a>/rebootStateFile
 
-显式允许执行[重新启动](reboot.md)测试。
+显式启用[重新启动](reboot.md)测试的执行。
 
 `te.exe test1.dll /rebootStateFile:myFile.xml`
 
 ### <a name="reportloadingissue"></a>/reportLoadingIssue
 
-TAEF 无法加载测试 dll 时将显示一个对话框，错误说明。 必须仅用于本机单元测试 dll 加载问题的调查。
+当 TAEF 无法加载测试 dll 时, 将显示 "错误说明" 对话框。 必须仅用于调查本机测试 dll 加载问题。
 
 `te.exe test1.dll /reportLoadingIssue`
 
 ### <a name="screencaptureonerror"></a>/screenCaptureOnError
 
-采用，并在出现测试错误或失败时记录屏幕捕获。
+如果发生测试错误或失败, 则将使用并记录屏幕捕获。
 
 `te.exe test1.dll /screenCaptureOnError`
 
-### <a name="stackframecountvalue"></a>/stackFrameCount:\<value>
+### <a name="stackframecountvalue"></a>/stackFrameCount:\<值 >
 
-指定要显示获取调用堆栈时的堆栈帧数。 默认值为 50。
+指定在获取调用堆栈时要显示的堆栈帧的数目。 默认值为50。
 
 `te.exe test1.dll /stackFrameCount:100`
 
 ### <a name="stacktraceonerror"></a>/stackTraceOnError
 
-采用，并在出现测试错误或失败时记录的堆栈跟踪。
+如果发生测试错误或失败, 则使用并记录堆栈跟踪。
 
 `te.exe test1.dll /stackTraceOnError`
 
 ## <a name="test-modes"></a>测试模式
 
-### <a name="testmodeloop"></a>/testmode:Loop
+### <a name="testmodeloop"></a>/testmode: 循环
 
-允许控制执行使用两个变量*循环*并*LoopTest*。
+允许使用两个变量*循环*和*LoopTest*控制执行。
 
-* *循环*:执行控件的整个运行的次数。 默认为 1。
-* *LoopTest*:控制在执行各个测试的次数。 默认值 10。
+* *循环*:控制执行整个运行的次数。 默认值为1。
+* *LoopTest*:控制执行单个测试的次数。 默认值为10。
 
-te.exe test1.dll /testmode:Loop  
+te test1/testmode: Loop  
 
-**解释：** 执行每个测试中 test1.dll 10 次 (默认值为*LoopTest*)。 整个执行运行一次 (默认值为*循环*)。
+**破解**运行 test1 10 次中的每个测试 ( *LoopTest*的默认值)。 整个执行只运行一次 (*循环*的默认值)。
 
-te.exe test1.dll test2.dll /testmode:Loop /Loop:3 /LoopTest:1  
+te test1 test2/testmode: 循环/Loop: 3/LoopTest: 1  
 
-**解释：** 每个测试运行 test1.dll 和 test2.dll 中一次 (由*LoopTest*)。 （test1.dll 和 test2.dll 中的所有组合测试） 的整个执行运行 3 次的由*循环*。
+**破解**运行 test1 和 test2 中的每个测试一次 (由*LoopTest*决定)。 整个执行 (test1 和 test2 中的所有组合测试) 运行3次, 这是由*循环*确定的。
 
-### <a name="testmodestress"></a>/testmode:Stress
+### <a name="testmodestress"></a>/testmode: 压力
 
-在压力测试模式下，TAEF 测试无限期运行，直到输入 Ctrl + C，或直到 WM\_到 TAEF 的隐藏的窗口发送关闭消息。 必须与结合使用运行 /testmode:stress [/inproc](#inproc)。
+在 "压力" 测试模式下, TAEF 会无限期地运行测试, 直到输入 Ctrl + C 或将\_WM CLOSE 消息发送到 TAEF 的隐藏窗口。 /testmode: 压力必须与[/inproc](#inproc)一起运行。
 
 `te.exe test1.dll /testmode:Stress /inproc`
 
-有关详细的信息和在此模式下支持其他参数，请参阅[测试模式](test-modes.md)。
+有关此模式下支持的详细信息和其他参数, 请参阅[测试模式](test-modes.md)。
