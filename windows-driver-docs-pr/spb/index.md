@@ -6,15 +6,15 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 0de317de929ef507d68410941c61cb5c0838bdbf
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+author: EliotSeattle
+ms.openlocfilehash: 0efa5dae2495ee47b777d509950207f7ffe06c06
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394105"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473561"
 ---
 # <a name="simple-peripheral-bus-spb-driver-design-guide"></a>简单外设总线 (SPB) 驱动程序设计指南
-
 
 此部分介绍如何为[简单外设总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)) (SPB) 控制器设备或连接到 SPB 的外围设备编写驱动程序。 SPB 类别包含总线，如 I²C 和 SPI。 SPB 控制器设备的硬件供应商会提供 SPB 控制器驱动程序来管理控制器中的硬件功能。 该驱动程序可能支持一系列类似的控制器设备。 SPB 连接的外围设备的硬件供应商会提供 SPB 外设驱动程序来管理外围设备中的硬件功能。 该驱动程序可能支持一系列的外围设备，这些设备跨各种提供兼容 SPB 的硬件平台。
 
@@ -32,40 +32,8 @@ SPB 不是即插即用总线。 外为设备通常有到 SPB 的固定连接，�
 
 ## <a name="in-this-section"></a>本部分内容
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>主题</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-controller-drivers" data-raw-source="[SPB controller drivers](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-controller-drivers)">SPB controller drivers</a>（SPB 控制器驱动程序）</p></td>
-<td><p>SPB 控制器是一个设备，该设备控制<a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))">简单外设总线</a> (SPB) 并可向连接到 SPB 的外围设备传输数据以及从其传输数据。 SPB 控制器的硬件供应商会提供 SPB 控制器驱动程序来管理控制器中的硬件功能。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-peripheral-device-drivers" data-raw-source="[SPB peripheral device drivers](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-peripheral-device-drivers)">SPB 外围设备驱动程序</a></p></td>
-<td><p>SPB 外围设备驱动程序控制连接到<a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))">简单外设总线</a> (SPB) 的外围设备。 此设备的硬件寄存器只能通过 SPB 使用。 若要从设备读取数据或向其写入数据，驱动程序必须将 I/O 请求发送到 SPB 控制器。 只有该控制器可以通过 SPB 启动将数据传输到设备或从设备传输数据的过程。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-" data-raw-source="[Test with Multi Interface Test Tool (MITT)](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)">Test with Multi Interface Test Tool (MITT)</a>（使用多接口测试工具 (MITT) 进行测试）</p></td>
-<td><p>多接口测试工具 (MITT) 是一项测试工具，用于验证简单外设总线（例如 UART、I2C、SPI 和 GPIO）的硬件和软件。 MITT 使用 FPGA 开发板并提供一个软件包，其中包含固件、测试二进制文件和驱动程序，是一个成本较低的测试解决方案。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+|主题|描述|
+|----|----|
+|[SPB controller drivers](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-controller-drivers)（SPB 控制器驱动程序）|SPB 控制器是一个设备，该设备控制[简单外设总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)) (SPB) 并可向连接到 SPB 的外围设备传输数据以及从其传输数据。 SPB 控制器的硬件供应商会提供 SPB 控制器驱动程序来管理控制器中的硬件功能。|
+|[SPB 外围设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-peripheral-device-drivers)|SPB 外围设备驱动程序控制连接到[简单外设总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)) (SPB) 的外围设备。 此设备的硬件寄存器只能通过 SPB 使用。 若要从设备读取数据或向其写入数据，驱动程序必须将 I/O 请求发送到 SPB 控制器。 只有该控制器可以通过 SPB 启动将数据传输到设备或从设备传输数据的过程。|
+|[Test with Multi Interface Test Tool (MITT)](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)（使用多接口测试工具 (MITT) 进行测试）|多接口测试工具 (MITT) 是一项测试工具，用于验证简单外设总线（例如 UART、I2C、SPI 和 GPIO）的硬件和软件。 MITT 使用 FPGA 开发板并提供一个软件包，其中包含固件、测试二进制文件和驱动程序，是一个成本较低的测试解决方案。|

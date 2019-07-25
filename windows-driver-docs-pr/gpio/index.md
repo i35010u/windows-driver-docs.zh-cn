@@ -6,12 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 48ec0635c4fc9ea71145550e63cc9012f3efe8db
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+author: EliotSeattle
+ms.openlocfilehash: 981885720f0fece50163158d6b94fbf6f431f293
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393105"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473474"
 ---
 # <a name="general-purpose-io-gpio-driver-design-guide"></a>通用 I/O (GPIO) 驱动程序设计指南
 

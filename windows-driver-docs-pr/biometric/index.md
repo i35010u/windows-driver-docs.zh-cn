@@ -6,12 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 0259a5fd1e5098d00156f341406f246b18c31536
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+author: EliotSeattle
+ms.openlocfilehash: 32b3fefefc3c90ae1269fc0e20fb29f83db9c81d
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328379"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473448"
 ---
 # <a name="biometric-devices-design-guide"></a>生物识别设备设计指南
 

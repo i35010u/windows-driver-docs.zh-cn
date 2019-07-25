@@ -17,18 +17,15 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e1f9558b563fcadcb3ade7461de2b88daf2f0882
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+author: EliotSeattle
+ms.openlocfilehash: dde045c85fac221b0118cae05046ab40d99b0443
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393378"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473514"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI 驱动程序编程指南
-
-
-## <a name="supported-pcie-features-in-windows"></a>Windows 中支持的 PCIe 功能
-
 
 下表汇总了不同版本的 Windows 支持的 PCIe 功能。 有关详细信息，请参阅[官方 PCIe 规范](http://pcisig.com/specifications/review-zone)中的指定部分。
 
@@ -104,28 +101,15 @@ ms.locfileid: "67393378"
 </tbody>
 </table>
 
-
-
-
-
 ## <a name="in-this-section"></a>本部分内容
 
-
--   [PCI 电源管理和设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
--   [访问 PCI 设备配置空间](https://docs.microsoft.com/windows-hardware/drivers/pci/accessing-pci-device-configuration-space)
--   [减少 I/O 资源使用](https://docs.microsoft.com/windows-hardware/drivers/pci/i-o-resource-usage-reduction)
--   [启动设备 IRP 中的资源顺序](https://docs.microsoft.com/windows-hardware/drivers/pci/order-of-resources-in-start-device-irp)
--   [有关图形的 PCI Express 常见问题解答](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-express-faq-for-graphics)
--   [PCI 示例](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-sample)
-
+- [PCI 电源管理和设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
+- [访问 PCI 设备配置空间](https://docs.microsoft.com/windows-hardware/drivers/pci/accessing-pci-device-configuration-space)
+- [减少 I/O 资源使用](https://docs.microsoft.com/windows-hardware/drivers/pci/i-o-resource-usage-reduction)
+- [启动设备 IRP 中的资源顺序](https://docs.microsoft.com/windows-hardware/drivers/pci/order-of-resources-in-start-device-irp)
+- [有关图形的 PCI Express 常见问题解答](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-express-faq-for-graphics)
+- [PCI 示例](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-sample)
 
 ## <a name="see-also"></a>另请参阅
--   [官方 PCIe 规范](http://pcisig.com/specifications/review-zone)
 
- 
-
- 
-
-
-
-
+- [官方 PCIe 规范](http://pcisig.com/specifications/review-zone)

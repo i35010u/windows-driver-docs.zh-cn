@@ -12,18 +12,15 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 2c769143685283a998ce078b9e96e0a975b93cea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+author: EliotSeattle
+ms.openlocfilehash: 4efb5ac44aa1212f764f6d76a8123b0674f96fd0
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386202"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473507"
 ---
 # <a name="pcmcia-bus-driver-design-guide"></a>PCMCIA 总线驱动程序设计指南
-
-
-
-
 
 本部分包括：
 
@@ -32,12 +29,3 @@ ms.locfileid: "67386202"
 [内存卡的 PCMCIA\_INTERFACE\_STANDARD 接口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/pcmcia-interface-standard-interface-for-memory-cards)
 
 [Windows XP 上的 PCMCIA IRQ 路由](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/pcmcia-irq-routing-on-windows-xp)
-
- 
-
- 
-
-
-
-
-

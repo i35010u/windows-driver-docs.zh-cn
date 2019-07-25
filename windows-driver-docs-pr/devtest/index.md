@@ -12,12 +12,13 @@ ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 35eb1449cc09ac664bbfba5eab0801e294d1b765
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+author: EliotSeattle
+ms.openlocfilehash: b8cd56c60d940b3f24ed2fef37cbbd850e7e18f2
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372982"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473388"
 ---
 # <a name="driver-development-tools"></a>驱动程序开发工具
 
