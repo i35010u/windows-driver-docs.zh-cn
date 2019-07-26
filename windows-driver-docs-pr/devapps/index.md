@@ -6,12 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: d03be44449997123f360af63887e4d5165d6bd06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+author: EliotSeattle
+ms.openlocfilehash: aa75bc9fa6c263a98b89714098cda26a295d10f4
+ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350546"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473395"
 ---
 # <a name="uwp-device-apps"></a>UWP 设备应用
 
