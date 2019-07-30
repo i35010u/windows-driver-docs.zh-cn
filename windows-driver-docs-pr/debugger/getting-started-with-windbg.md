@@ -1,96 +1,101 @@
 ---
 title: WinDbg 入门（用户模式）
-description: WinDbg 是一个内核模式和用户模式下的调试器所包含的 Windows 调试工具。 此处我们提供了实际操作相关的练习，将帮助你开始使用 WinDbg 作为用户模式下调试程序。
+description: WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器。 在这里, 我们将提供练习, 帮助你开始使用 WinDbg 作为用户模式调试器。
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 10/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09ff070bc8b49a8851b17c25988435b03866e37b
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 7b9d140c4eddf12fce29b7eba6b1c7df3c70df03
+ms.sourcegitcommit: b3167f0d423713bee9561fabbdb3d581aea449f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866531"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68616812"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
 
-WinDbg 是一个内核模式和用户模式下的调试器所包含的 Windows 调试工具。 此处我们提供了实际操作相关的练习，将帮助你开始使用 WinDbg 作为用户模式下调试程序。
+WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器。 在这里, 我们将提供练习, 帮助你开始使用 WinDbg 作为用户模式调试器。
 
-有关如何获取有关 Windows 调试工具的信息，请参阅[调试工具的 Windows （WinDbg、 KD、 CDB、 NTSD）](https://go.microsoft.com/fwlink/p?linkid=223405)。 
+有关如何获取 Windows 调试工具的信息, 请参阅[适用于 windows 的调试工具 (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)。 
 
-已安装调试工具后，找到 (x64) 64 位和 32 位 (x86) 版本的工具的安装目录。 例如：
+安装调试工具后, 找到64位 (x64) 和32位 (x86) 版本的工具的安装目录。 例如：
 
--   C:\\程序文件 (x86)\\Windows 工具包\\8.1\\调试器\\x64
--   C:\\程序文件 (x86)\\Windows 工具包\\8.1\\调试器\\x86
+-   C:\\Program Files (x86)\\Windows 工具包\\8.1\\调试器\\x64
+-   C:\\Program Files (x86)\\Windows 工具包\\8.1\\调试器\\x86
 
-## <a name="span-idlaunchnotepadandattachwindbgspanspan-idlaunchnotepadandattachwindbgspanspan-idlaunchnotepadandattachwindbgspanlaunch-notepad-and-attach-windbg"></a><span id="Launch_Notepad_and_attach_WinDbg"></span><span id="launch_notepad_and_attach_windbg"></span><span id="LAUNCH_NOTEPAD_AND_ATTACH_WINDBG"></span>启动记事本并将 WinDbg 附加
+## <a name="span-idlaunchnotepadandattachwindbgspanspan-idlaunchnotepadandattachwindbgspanspan-idlaunchnotepadandattachwindbgspanlaunch-notepad-and-attach-windbg"></a><span id="Launch_Notepad_and_attach_WinDbg"></span><span id="launch_notepad_and_attach_windbg"></span><span id="LAUNCH_NOTEPAD_AND_ATTACH_WINDBG"></span>启动记事本并附加 WinDbg
 
-1.  导航到安装目录，并打开 WinDbg.exe。
+1.  导航到您的安装目录, 然后打开 WinDbg。
 
-2.  调试程序文档，还可以在行[此处](https://go.microsoft.com/fwlink/p?linkid=223405)。
+2.  [此处](https://go.microsoft.com/fwlink/p?linkid=223405)还提供了调试器文档。
 
-3.  上**文件**菜单中，选择**打开可执行文件**。 在打开可执行文件对话框中，导航到包含 notepad.exe 的文件夹 (例如，c:\\Windows\\System32)。 有关**文件名**，输入 notepad.exe。 单击“打开”  。
+3.  在 "**文件**" 菜单上, 选择 "**打开可执行**文件"。 在 "打开可执行文件" 对话框中, 导航到包含 notepad.exe 的文件夹 (例如, C:\\Windows\\System32)。 对于 "**文件名**", 请输入 notepad.exe。 单击“打开” 。
 
-    ![启动记事本后的 windbg 的屏幕截图](images/windbggetstart01.png)
+    ![启动记事本后的 windbg 屏幕截图](images/windbggetstart01.png)
 
-4.  靠近底部 WinDbg 窗口中，在命令行中，输入以下命令：
+4.  在 "WinDbg" 窗口底部附近的命令行中, 输入以下命令:
 
-    [.sympath srv\*](https://go.microsoft.com/fwlink/p?linkid=399238)
+    [。 sympath srv\*](https://go.microsoft.com/fwlink/p?linkid=399238)
 
-    输出结果类似于此：
+    输出类似于以下内容:
 
     ```dbgcmd
     Symbol search path is: srv*
     Expanded Symbol search path is: cache*;SRV
     ```
 
-    符号搜索路径告知 WinDbg 查找符号 (PDB) 文件的位置。 调试器需要符号文件，以了解有关代码模块 （函数名称、 变量名称等） 的信息。
+    符号搜索路径指示 WinDbg 查找符号 (PDB) 文件的位置。 调试器需要符号文件来获取有关代码模块的信息 (函数名、变量名和 like)。
 
-    请输入以下命令，它会告知 WinDbg，执行其初始查找和加载的符号文件：
+    输入此命令, 该命令会告诉 WinDbg 完成符号文件的初始查找和加载:
 
     [.reload](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-5.  若要查看 Notepad.exe 模块的符号，输入以下命令：
+5.  若要查看 Notepad.exe 模块的符号, 请输入以下命令:
 
-    [x 记事本 ！ *](https://go.microsoft.com/fwlink/p?linkid=399240)
+    [x 记事本! *](https://go.microsoft.com/fwlink/p?linkid=399240)
 
-    **请注意**  如果你看不到任何输出，请输入[ **.reload** ](https://go.microsoft.com/fwlink/p?linkid=399239)试。
+    **注意如果看**不到任何输出, 请输入[ **。重新加载**](https://go.microsoft.com/fwlink/p?linkid=399239)。  
 
-    若要查看包含主 Notepad.exe 模块中的符号，输入以下命令：
+    若要查看 Notepad.exe 模块中包含 main 的符号, 请输入以下命令:
 
-    [x 记事本 ！\*主要\*](https://go.microsoft.com/fwlink/p?linkid=399240)
+    [x 记事本!\*main\*](https://go.microsoft.com/fwlink/p?linkid=399240)
  
-    输出结果类似于此：
+    输出类似于以下内容:
 
     ```dbgcmd
     000000d0`428ff7e8 00007ff6`3282122f notepad!WinMain
     ...
     ```
 
-6.  若要将断点放在记事本 ！WinMain，输入以下命令：
+6.  在记事本中放置断点!WinMain, 请输入以下命令:
 
-    [bu notepad!WinMain](https://go.microsoft.com/fwlink/p?linkid=399390)
+    [bu 记事本!WinMain](https://go.microsoft.com/fwlink/p?linkid=399390)
 
-    若要验证已设置了断点，请输入以下命令：
+    若要验证是否已设置断点, 请输入以下命令:
 
     [bl](https://go.microsoft.com/fwlink/p?linkid=399391)
 
-    输出结果类似于此：
+    输出类似于以下内容:
 
     ```dbgcmd
     0 e 00007ff6`32825f64     0001 (0001)  0:**** notepad!WinMain
     ```
 
-7.  若要开始运行记事本，输入以下命令：
+7.  若要启动记事本运行, 请输入以下命令:
 
     [g](https://go.microsoft.com/fwlink/p?linkid=399388)
 
-    记事本一直运行，直到进入**WinMain**函数，并且到调试器中的然后中断。
+    记事本运行到**WinMain**函数之前, 然后将其中断到调试器。
+    ```dbgcmd
+    Breakpoint 0 hit
+    notepad!WinMain:
+    00007ff6`32825f64 488bc4          mov     rax,rsp
+    ```
 
-    若要查看的记事本进程中加载的代码模块的列表，请输入以下命令：
+    若要查看记事本进程中加载的代码模块列表, 请输入以下命令:
 
     [lm](https://go.microsoft.com/fwlink/p?linkid=399237)
 
-    输出结果类似于此：
+    输出类似于以下内容:
 
     ```dbgcmd
     0:000> lm
@@ -118,16 +123,13 @@ WinDbg 是一个内核模式和用户模式下的调试器所包含的 Windows �
     00007ffc`b1f50000 00007ffc`b20fa000   ntdll      (private pdb symbols)  C:\...\ntdll.pdb
     ```
 
-    若要查看堆栈跟踪，请输入以下命令：
+    若要查看堆栈跟踪, 请输入以下命令:
 
-    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [温度](https://go.microsoft.com/fwlink/p?linkid=399389)
 
-    输出结果类似于此：
+    输出类似于以下内容:
 
     ```dbgcmd
-    Breakpoint 0 hit
-    notepad!WinMain:
-    00007ff6`32825f64 488bc4          mov     rax,rsp
     0:000> k
     Child-SP          RetAddr           Call Site
     00000048`4e0cf6a8 00007ff6`3282122f notepad!WinMain
@@ -136,29 +138,29 @@ WinDbg 是一个内核模式和用户模式下的调试器所包含的 Windows �
     00000048`4e0cf7a0 00000000`00000000 ntdll!RtlUserThreadStart+0x1d ...
     ```
 
-8.  若要开始再次运行记事本，输入以下命令：
+8.  若要重新启动记事本, 请输入以下命令:
 
     [g](https://go.microsoft.com/fwlink/p?linkid=399388)
 
-9.  若要中断到记事本，请选择**中断**从**调试**菜单。
+9.  若要中断记事本, 请从 "**调试**" 菜单中选择 "**中断**"。
 
-10. 若要设置并验证在断点**ZwWriteFile**，输入以下命令：
+10. 若要在**ZwWriteFile**上设置和验证断点, 请输入以下命令:
 
-    [bu ntdll!ZwWriteFile](https://go.microsoft.com/fwlink/p?linkid=399390)
+    [bu ntdll.dll!ZwWriteFile](https://go.microsoft.com/fwlink/p?linkid=399390)
 
     [bl](https://go.microsoft.com/fwlink/p?linkid=399391)
 
-11. 输入[g](https://go.microsoft.com/fwlink/p?linkid=399388)以启动记事本再次运行。 在记事本窗口中，输入一些文本，然后选择**保存**从**文件**菜单。 在涉及到正在运行的代码分隔线**zwcreatefile 转换**。 输入[k](https://go.microsoft.com/fwlink/p?linkid=399389)以查看堆栈跟踪。
+11. 输入[g](https://go.microsoft.com/fwlink/p?linkid=399388) , 再次开始运行记事本。 在记事本窗口中输入一些文本, 然后从 "**文件**" 菜单中选择 "**保存**"。 当涉及**ZwCreateFile**时, 正在运行的代码会中断。 输入[k](https://go.microsoft.com/fwlink/p?linkid=399389)以查看堆栈跟踪。
 
-    ![在 windbg 中的堆栈跟踪的屏幕截图](images/windbggetstart02.png)
+    ![windbg 中堆栈跟踪的屏幕截图](images/windbggetstart02.png)
 
-    在 WinDbg 窗口中的命令行的左侧，可以看到的处理器和线程的编号。 在此示例中当前的处理器数为 0，并且当前的线程数为 11。 因此，我们正在查看堆栈跟踪的线程 11 （它碰巧在处理器 0 上运行）。
+    在 WinDbg 窗口中, 在命令行的左侧, 请注意处理器和线程号。 在此示例中, 当前处理器编号为 0, 当前线程号为11。 我们正在查看线程11的堆栈跟踪 (发生在处理器0上的运行)。
 
-12. 若要查看 Notepad 进程中所有线程的列表，请输入此命令 （波形符）：
+12. 若要查看记事本进程中的所有线程列表, 请输入以下命令 (波形符):
 
     [~](https://go.microsoft.com/fwlink/p?linkid=399392)
 
-    输出结果类似于此：
+    输出类似于以下内容:
 
     ```dbgcmd
     0:011> ~
@@ -176,15 +178,15 @@ WinDbg 是一个内核模式和用户模式下的调试器所包含的 Windows �
     . 11  Id: 10c8.8bc Suspend: 1 Teb: 00007ff6`31ba4000 Unfrozen
     ```
 
-    在此示例中，有 12 个线程索引为 0 到 11。
+    在此示例中, 有12个索引为0到11的线程。
 
-13. 若要查看线程的堆栈跟踪，请输入以下命令：
+13. 若要查看线程0的堆栈跟踪, 请输入以下命令:
 
-    [~0s](https://go.microsoft.com/fwlink/p?linkid=399393)
+    [~ 0](https://go.microsoft.com/fwlink/p?linkid=399393)
 
-    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [温度](https://go.microsoft.com/fwlink/p?linkid=399389)
 
-    输出结果类似于此：
+    输出类似于以下内容:
 
     ```dbgcmd
     0:011> ~0s
@@ -201,14 +203,14 @@ WinDbg 是一个内核模式和用户模式下的调试器所包含的 Windows �
     00000033`d1e9f900 00000000`00000000 ntdll!RtlUserThreadStart+0x1d
     ```
 
-14. 若要退出调试，并从记事本的进程分离，输入以下命令：
+14. 若要退出调试并从记事本进程分离, 请输入以下命令:
 
     [qd](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idlaunchyourownapplicationandattachwindbgspanspan-idlaunchyourownapplicationandattachwindbgspanspan-idlaunchyourownapplicationandattachwindbgspanlaunch-your-own-application-and-attach-windbg"></a><span id="Launch_your_own_application_and_attach_WinDbg"></span><span id="launch_your_own_application_and_attach_windbg"></span><span id="LAUNCH_YOUR_OWN_APPLICATION_AND_ATTACH_WINDBG"></span>启动自己的应用程序和附加 WinDbg
+## <a name="span-idlaunchyourownapplicationandattachwindbgspanspan-idlaunchyourownapplicationandattachwindbgspanspan-idlaunchyourownapplicationandattachwindbgspanlaunch-your-own-application-and-attach-windbg"></a><span id="Launch_your_own_application_and_attach_WinDbg"></span><span id="launch_your_own_application_and_attach_windbg"></span><span id="LAUNCH_YOUR_OWN_APPLICATION_AND_ATTACH_WINDBG"></span>启动自己的应用程序并附加 WinDbg
 
 
-假设你已编写和构建此小型控制台应用程序。
+假设你已编写并生成此小型控制台应用程序。
 
 ```dbgcmd
 ...
@@ -227,34 +229,34 @@ void main ()
 }
 ```
 
-对于此练习中，我们将假定生成的应用程序 (MyApp.exe) 和符号文件 (MyApp.pdb) 位于 c:\\MyApp\\x64\\调试。 我们还假设 c： 驱动器中为应用程序源代码\\MyApp\\MyApp 和目标计算机编译 MyApp.exe。
+对于本练习, 我们假定生成的应用程序 (myapp) 和符号文件 (myapp) 在 C:\\MyApp\\x64\\调试中。 我们还会假定应用程序源代码在 C:\\myapp\\myapp 中, 并且目标计算机编译了 MyApp。
 
 1.  打开 WinDbg。
 
-2.  上**文件**菜单中，选择**打开可执行文件**。 在打开可执行文件对话框中，导航到 c:\\MyApp\\x64\\调试。 有关**文件名**，输入 MyApp.exe。 单击“打开”  。
-3.  输入以下命令：
+2.  在 "**文件**" 菜单上, 选择 "**打开可执行**文件"。 在 "打开可执行文件" 对话框中, 导航\\到\\C\\: MyApp x64 调试。 对于 "**文件名**", 请输入 myapp.exe。 单击“打开” 。
+3.  输入以下命令:
 
     [.symfix](https://docs.microsoft.com/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
 
-    [.sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ c:\\MyApp\\x64\\调试
+    [. sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ C:\\MyApp\\x64\\调试
 
-    现在 WinDbg 知道在哪里可以找到你的应用程序的符号和源代码。 在这种情况下，源代码位置不需要用来设置[.srcpath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-)因为符号具有完全限定的源代码文件的路径。
+    现在, WinDbg 知道在何处查找应用程序的符号和源代码。 在这种情况下, 不需要将源代码位置设置为[srcpath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-) , 因为符号具有指向源文件的完全限定路径。
 
-4.  输入以下命令：
+4.  输入以下命令:
 
     [.reload](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-    [bu MyApp!main](https://go.microsoft.com/fwlink/p?linkid=399390)
+    [bu MyApp! main](https://go.microsoft.com/fwlink/p?linkid=399390)
 
     [g](https://go.microsoft.com/fwlink/p?linkid=399388)
 
-    你的应用程序在中中断到调试器时涉及到其**主要**函数。
+    当应用程序进入**主**函数时, 应用程序会中断到调试器。
 
     WinDbg 显示你的源代码和命令窗口。
 
-    ![在 windbg 中的源代码的屏幕截图](images/windbggetstart03.png)
+    ![windbg 中源代码的屏幕截图](images/windbggetstart03.png)
 
-5.  上**调试**菜单中，选择**单步执行**(或按**F11**)。 继续单步执行之前已单步执行**MyFunction**。 当单步执行该行`y = x / p2`，应用程序崩溃和中断到调试器。 输出结果类似于此：
+5.  在 "**调试**" 菜单上, 选择 "**单步执行**" (或按**F11**)。 继续单步执行, 直到你逐步进入**MyFunction**。 单步执行此行`y = x / p2`时, 应用程序将崩溃并中断调试器。 输出类似于以下内容:
 
     ```dbgcmd
     (1450.1424): Integer divide-by-zero - code c0000094 (first chance)
@@ -266,9 +268,9 @@ void main ()
 
 6.  输入此命令：
 
-    [!analyze -v](https://go.microsoft.com/fwlink/p?linkid=399396)
+    [! 分析-v](https://go.microsoft.com/fwlink/p?linkid=399396)
 
-    WinDbg 显示分析的问题 （被 0 除在此情况下）。
+    WinDbg 显示问题的分析 (在本例中为 0)。
 
     ```dbgcmd
     FAULTING_IP: 
@@ -318,23 +320,23 @@ void main ()
 ## <a name="span-idsummaryofcommandsspanspan-idsummaryofcommandsspanspan-idsummaryofcommandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>命令摘要
 
 
--   **内容**命令**帮助**菜单
--   [.sympath （设置符号路径）](https://go.microsoft.com/fwlink/p?linkid=399238)
--   [.reload （重新加载模块）](https://go.microsoft.com/fwlink/p?linkid=399239)
--   [x （检查符号）](https://go.microsoft.com/fwlink/p?linkid=399240)
--   [g (Go)](https://go.microsoft.com/fwlink/p?linkid=399388)
--   **中断**命令**调试**菜单
--   [lm （列出已加载的模块）](https://go.microsoft.com/fwlink/p?linkid=399237)
--   [k （显示堆栈回溯）](https://go.microsoft.com/fwlink/p?linkid=399389)
--   [bu (Set Breakpoint)](https://go.microsoft.com/fwlink/p?linkid=399390)
--   [bl （断点列表）](https://go.microsoft.com/fwlink/p?linkid=399390)
--   [~ （线程状态）](https://go.microsoft.com/fwlink/p?linkid=399392)
--   [~ s （设置当前线程）](https://go.microsoft.com/fwlink/p?linkid=399393)
--   [.sympath + （设置符号路径） 追加到现有的符号路径](https://go.microsoft.com/fwlink/p?linkid=399238)
--   [.srcpath (Set Source Path)](https://go.microsoft.com/fwlink/p?linkid=399395)
--   **单步执行**命令**调试**菜单 (**F11**)
--   [!analyze -v](https://go.microsoft.com/fwlink/p?linkid=399396)
--   [qd （Quit 和分离）](https://go.microsoft.com/fwlink/p?linkid=399394)
+-   "**帮助**" 菜单上的 "**内容**" 命令
+-   [. sympath (设置符号路径)](https://go.microsoft.com/fwlink/p?linkid=399238)
+-   [。重载 (重载模块)](https://go.microsoft.com/fwlink/p?linkid=399239)
+-   [x (检查符号)](https://go.microsoft.com/fwlink/p?linkid=399240)
+-   [g (走)](https://go.microsoft.com/fwlink/p?linkid=399388)
+-   "**调试**" 菜单上的 "**中断**" 命令
+-   [lm (列出加载的模块)](https://go.microsoft.com/fwlink/p?linkid=399237)
+-   [k (显示 Stack Backtrace)](https://go.microsoft.com/fwlink/p?linkid=399389)
+-   [bu (设置断点)](https://go.microsoft.com/fwlink/p?linkid=399390)
+-   [bl (断点列表)](https://go.microsoft.com/fwlink/p?linkid=399390)
+-   [~ (线程状态)](https://go.microsoft.com/fwlink/p?linkid=399392)
+-   [~ s (设置当前线程)](https://go.microsoft.com/fwlink/p?linkid=399393)
+-   [. sympath + (设置符号路径) 追加到现有符号路径](https://go.microsoft.com/fwlink/p?linkid=399238)
+-   [srcpath (设置源路径)](https://go.microsoft.com/fwlink/p?linkid=399395)
+-   "**调试**" 菜单上的 "**单步**执行" 命令 (**F11**)
+-   [! 分析-v](https://go.microsoft.com/fwlink/p?linkid=399396)
+-   [qd (退出并分离)](https://go.microsoft.com/fwlink/p?linkid=399394)
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
@@ -345,7 +347,7 @@ void main ()
 
 [调试方法](https://go.microsoft.com/fwlink/p?linkid=399248)
 
-[（WinDbg、 KD、 CDB、 NTSD） 的 Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)
+[适用于 Windows 的调试工具 (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)
 
  
 
