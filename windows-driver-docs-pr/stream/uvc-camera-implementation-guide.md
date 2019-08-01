@@ -1,56 +1,56 @@
 ---
-title: Windows 10 UVC 相机实施指南
-description: 概述了如何公开 USB 视频类符合照相机传送到收件箱驱动程序通过应用程序某些功能。
+title: Windows 10 UVC 相机实现指南
+description: 概述如何通过收件箱驱动程序向应用程序公开 USB 视频类兼容相机的某些功能。
 ms.date: 11/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8cc222509880498f2c4a78bfa9492a563c00b34
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: adf4a34ee7657e20f9d905082b134db7be0e45fd
+ms.sourcegitcommit: 3aee55397dda48607258697da14e11c183557603
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363267"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702182"
 ---
-# <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC 相机实施指南
+# <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC 相机实现指南
 
-Windows 10 设备符合 USB 视频类规范 （版本 1.0 到 1.5） 提供的收件箱 USB 视频类 (UVC) 驱动程序。 此驱动程序支持颜色和传感器类型照相机。 本文档概述了如何公开 UVC 符合照相机传送到收件箱驱动程序通过应用程序某些功能。
+Windows 10 为符合 USB 视频类规范的设备提供了一个收件箱 USB 视频类 (UVC) 驱动程序 (版本1.0 到 1.5)。 此驱动程序支持颜色和传感器类型相机。 本文档概述了如何通过收件箱驱动程序向应用程序公开 UVC 兼容相机的某些功能。
 
 ## <a name="terminology"></a>术语
 
 | 关键字              | 描述                                                                  |
 |----------------------|------------------------------------------------------------------------------|
 | UVC                  | USB 视频类                                                              |
-| UVC 驱动程序           | 附带了操作系统的 USBVideo.sys 驱动程序                                   |
+| UVC 驱动程序           | 操作系统附带的 USBVideo 驱动程序                                   |
 | IR                   | 红外线                                                                     |
-| 颜色照相机         | 照相机输出颜色流 （例如，RGB 或 YUV 照相机）      |
-| 传感器照相机        | 照相机输出非颜色流 （例如，红外线 （ir） 或深度照相机） |
-| BOS                  | 二进制对象存储设备                                                   |
-| MS 操作系统 2.0 描述符 | Microsoft 平台特定 BOS 设备功能描述符                 |
+| 彩色照相机         | 输出彩色流的照相机 (例如 RGB 或 YUV 相机)      |
+| 传感器相机        | 输出非颜色流的照相机 (例如, IR 或深度相机) |
+| BOS                  | 二进制设备对象存储                                                   |
+| MS OS 2.0 描述符 | Microsoft 平台特定 BOS 设备功能描述符                 |
 
-## <a name="sensor-cameras"></a>传感器照相机
+## <a name="sensor-cameras"></a>传感器相机
 
-Windows 支持两种类别的照相机。 一个颜色照相机，另一个是一种非颜色传感器照相机。 RGB 或 YUV 照相机归类为颜色照相机和非颜色相机灰度等，红外线 （ir） 和深度照相机归类为传感器照相机。 UVC 驱动程序支持这两种类型的照相机。 我们建议照相机固件指定一个值，基于 UVC 驱动程序将在其上注册一个帐户下的照相机或支持这两种类别。
+Windows 支持两种类型的相机。 一个是彩色相机, 另一个是非彩色传感器相机。 RGB 或 YUV 相机被分类为彩色相机和非彩色相机, 如灰色刻度、IR 和深度相机分类为传感器相机。 UVC 驱动程序支持这两种类型的相机。 建议照相机固件指定一个值, 该值基于 UVC 驱动程序在一个或两个受支持的类别下注册照相机的值。
 
-照相机支持颜色唯一的格式类型应注册下 KSCATEGORY\_视频\_照相机。 支持红外线 （ir） 的照相机或仅限深度的格式类型应注册下 KSCATEGORY\_传感器\_照相机。 照相机支持颜色和非颜色格式类型应注册下 KSCATEGORY\_视频\_照相机和 KSCATEGORY\_传感器\_照相机。 这种分类可帮助应用程序可以选择他们想要使用的照相机。
+支持仅颜色格式类型的照相机应在 KSCATEGORY\_视频\_相机下进行注册。 支持 IR 或仅深度格式类型的照相机应在 KSCATEGORY\_传感器\_照相机下进行注册。 支持颜色和非颜色格式类型的照相机应在\_KSCATEGORY 视频\_摄像机和 KSCATEGORY\_传感器\_相机下进行注册。 此分类可帮助应用程序选择他们想要使用的相机。
 
-UVC 照相机可以指定通过属性，其类别首**SensorCameraMode**和**SkipCameraEnumeration**，在其 BOS [MS 操作系统 2.0 描述符](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)中的详细说明以下各节。
+UVC 照相机可以通过属性**SensorCameraMode**和**SkipCameraEnumeration**指定其类别首选项, 其 BOS [MS OS 2.0 描述符](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)在以下各节中详细说明。
 
-该属性**SensorCameraMode**采用值 1 或 2。
+属性**SensorCameraMode**的值为1或2。
 
-值为 1，将注册该设备下 KSCATEGORY\_传感器\_照相机。 除了此指定为 1 的值**SkipCameraEnumeration**以使照相机可用于应用程序只寻找传感器照相机。 公开仅传感器照相机媒体类型的照相机应使用此值。
+值为 1, 将在 KSCATEGORY\_传感器\_相机下注册设备。 除了将**SkipCameraEnumeration**的值指定为1外, 还可以使相机仅适用于查看传感器相机的应用程序。 仅限显示传感器相机媒体类型的相机应使用此值。
 
-值为 2， **SensorCameraMode**，将注册的设备在 KSCATEGORY\_传感器\_照相机和 KSCATEGORY\_视频\_照相机。 这将使照相机适用于应用程序寻找传感器和颜色照相机。 公开这两个传感器照相机和颜色照相机媒体类型的照相机应使用此值。
+如果**SensorCameraMode**的\_值为 2, 则将在 KSCATEGORY 传感器\_相机 & KSCATEGORY\_视频\_相机下注册设备。 这会使相机适用于查找传感器和彩色照相机的应用程序。 同时公开传感器相机和彩色相机介质类型的相机应使用此值。
 
-我们建议指定使用 BOS 描述符的上面提到的注册表值。 请参阅[示例复合设备](#example-composite-device)节具有平台特定 MS OS 2.0 描述符的示例 BOS 描述符。
+建议使用 BOS 描述符指定上面提到的注册表值。 请参阅下面的[示例复合设备](#example-composite-device)部分, 获取带有特定于平台的 MS OS 2.0 描述符的示例 BOS 描述符。
 
-如果按上文所述，无法更新设备固件，可以使用自定义 INF 并指定您的照相机需要通过指定的值注册为传感器照相机**SensorCameraMode**和**SkipCameraEnumeration** ，如下所示：
+如以上所述, 如果无法更新设备固件, 则可以使用自定义 INF, 并通过指定**SensorCameraMode**和**SkipCameraEnumeration**的值, 指定照相机需要注册为传感器相机, 如下所示:
 
-自定义的 INF 文件 （基于收件箱 UVC 驱动程序） 必须包含以下 AddReg 条目：
+自定义 INF 文件 (基于收件箱 UVC 驱动程序) 必须包含以下 AddReg 条目:
 
-**SensorCameraMode**:REG\_DWORD:1 （若要注册为传感器照相机）
+**SensorCameraMode**:REG\_DWORD:1 (注册为传感器相机)
 
-**SkipCameraEnumeration**:REG\_DWORD:1 （使其仅可用于红外线 （ir） 应用程序）
+**SkipCameraEnumeration**:REG\_DWORD:1 (仅适用于 IR 应用程序)
 
-自定义的 INF 部分的示例如下所示：
+自定义 INF 部分的示例如下所示:
 
 ```INF
 [USBVideo.NT.HW]
@@ -65,23 +65,23 @@ HKR,, SkipCameraEnumeration, 0x00010001,1 ; This makes the camera available
                                           ; IR cameras
 ```
 
-如果**SensorCameraMode**并**SkipCameraEnumeration**固件或 INF 中未指定属性，照相机将注册为一个彩色相机并将仅对颜色照相机注意可见应用程序。
+如果固件或 INF 中未指定**SensorCameraMode**和**SkipCameraEnumeration**属性, 照相机将被注册为彩色相机, 并且仅对已识别相机的应用程序可见。
 
-## <a name="ir-stream"></a>红外线 （ir） 流
+## <a name="ir-stream"></a>IR 流
 
-Windows 收件箱 USB 视频类 (UVC) 驱动程序支持捕获 YUV 格式中的场景，并通过 USB 作为未压缩的 YUV 或压缩 MJPEG 帧传输此像素数据的照相机。
+Windows 收件箱 USB 视频类 (UVC) 驱动程序支持以 YUV 格式捕获场景的相机, 并通过 USB 以未压缩的 YUV 或压缩的 MJPEG 帧形式传输像素数据。
 
-应在流视频格式描述符中，指定以下格式类型的 Guid，WDK ksmedia.h 标头文件中定义：
+以下格式类型 Guid 应在流视频格式描述符中指定, 如 WDK ksmedia 头文件中定义的那样:
 
-| 在任务栏的搜索框中键入 | 描述 |
+| type | 描述 |
 | --- | --- |
-| KSDATAFORMAT\_子类型\_L8\_红外线 （IR) |  未压缩 8 位亮度平面。 此类型映射到[MFVideoFormat\_L8](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
-| KSDATAFORMAT\_SUBTYPE\_L16\_IR | 未压缩的 16 位亮度平面。 此类型映射到[MFVideoFormat\_L16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
-| KSDATAFORMAT\_SUBTYPE\_MJPG\_IR | 压缩的 MJPEG 帧数。 Media Foundation 这转换为未压缩的 NV12 帧，并使用仅亮度平面。 |
+| KSDATAFORMAT\_子\_类型L8\_IR |  未压缩的8位亮度平面。 此类型映射到[MFVideoFormat\_L8](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
+| KSDATAFORMAT\_子\_类型L16\_IR | 未压缩的16位亮度平面。 此类型映射到[MFVideoFormat\_L16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
+| KSDATAFORMAT\_子\_类型MJPG\_IR | 压缩的 MJPEG 帧。 媒体基础将其转换为 NV12 未压缩的帧并仅使用亮度平面。 |
 
-如果帧描述符 guidFormat 字段中指定了这些格式类型的 Guid，Media Foundation 捕获管道会将流标记为红外线 （ir） 流。 使用 Media Foundation FrameReader API 编写应用程序将无法使用红外线 （ir） 流。 不缩放或转换的红外线 （ir） 帧支持通过红外线 （ir） 流的管道。
+当在帧描述符的 guidFormat 字段中指定这些格式类型 Guid 时, 媒体基础捕获管道会将流标记为 IR 流。 使用媒体基础 FrameReader API 编写的应用程序将能够使用 IR 流。 对于 IR 流, 管道不支持 IR 帧的缩放或转换。
 
-流公开红外线 （ir） 格式的类型必须公开 RGB 或深度格式类型。
+公开 IR 格式类型的流不能公开 RGB 或深度格式类型。
 
 ```cpp
 // Example Format Descriptor for UVC 1.1 frame based format
@@ -105,19 +105,19 @@ typedef struct _VIDEO_FORMAT_FRAME
 ```
 
 > [!NOTE]
-> 红外线 （ir） 流将显示为 DShow 中的正则捕获流。
+> IR 流将显示为 DShow 中的常规捕获流。
 
 ## <a name="depth-stream"></a>深度流
 
-Windows 收件箱 USB 视频类驱动程序支持生成深度流的摄像头。 这些相机捕获场景的深度信息 （例如，航班时间），并通过 USB 为未压缩的 YUV 帧传输深度映射。 应在流视频格式描述符中，指定以下格式类型 GUID，WDK ksmedia.h 标头文件中定义：
+Windows 收件箱 USB 视频类驱动程序支持生成深度流的相机。 这些相机捕获场景的详细信息 (例如航班时间), 并通过 USB 以未压缩的 YUV 帧形式传输深度地图。 应在流视频格式描述符中指定以下格式类型 GUID, 如 WDK ksmedia 头文件中定义的那样:
 
-| 在任务栏的搜索框中键入 | 描述 |
+| type | 描述 |
 | --- | --- |
-| KSDATAFORMAT\_SUBTYPE\_D16 |  16 位深度的值映射。 此类型等同于[MFVideoFormat\_D16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 值是以毫米为单位。 |
+| KSDATAFORMAT\_子\_类型 D16 |  16位深度映射值。 此类型与[MFVideoFormat\_D16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)相同。 值为毫米。 |
 
-当帧描述符 guidFormat 成员中指定 GUID 的格式类型时，Media Foundation 捕获管道会将流标记为深度流。 使用 FrameReader API 编写的应用程序将无法使用深度流。 不缩放或转换的深度帧受深度流的管道。
+当在帧描述符的 guidFormat 成员中指定格式类型 GUID 时, 媒体基础捕获管道会将流标记为深度流。 使用 FrameReader API 编写的应用程序将能够使用深度流。 对于深度流, 管道不支持深度帧的缩放或转换。
 
-流提供深度格式类型必须公开 RGB 或红外线 （ir） 格式类型。
+流公开深度格式类型不得公开 RGB 或 IR 格式类型。
 
 ```cpp
 // Example Format Descriptor for UVC 1.1 frame based format
@@ -140,27 +140,27 @@ typedef struct _VIDEO_FORMAT_FRAME
 ```
 
 > [!NOTE]
-> 深度流显示为 DShow 中的正则捕获流。
+> 深度流在 DShow 中显示为常规捕获流。
 
-## <a name="grouping-cameras"></a>对相机进行分组
+## <a name="grouping-cameras"></a>分组相机
 
-Windows 支持基于其容器 ID，以帮助应用程序的工作相关的照相机的相机的分组。 例如，IR 照相机和颜色照相机存在于同一个物理设备上可以公开到 OS 为相关的照相机。 这将使等 Windows Hello 应用程序以使其方案相关的相机的使用。
+Windows 支持根据其容器 ID 对照相机分组, 以帮助应用程序使用相关相机。 例如, 在同一物理设备上出现 IR 相机和彩色照相机时, 可以将其作为相关相机公开给操作系统。 这会使应用程序 (如 Windows Hello) 在应用场景中使用相关相机。
 
-无法在固件中的照相机的 BOS 描述符中指定照相机函数之间的关系。 UVC 驱动程序将此信息的使用和公开这些相关的照相机函数。 这将使操作系统照相机堆栈公开其作为一组相关的应用程序的照相机。
+相机功能之间的关系可以在固件中照相机的 BOS 描述符中指定。 UVC 驱动程序将利用此信息, 并将这些相机功能公开为相关。 这会使 OS 相机堆栈将它们作为一组相关的摄像机公开给应用程序。
 
-必须指定照相机固件*UVC FSSensorGroupID*，这是与大括号的字符串形式的 GUID。 具有相同照相机*UVC FSSensorGroupID*将组合在一起。
+照相机固件必须指定*UVC-FSSensorGroupID*, 它是带有大括号的字符串格式的 GUID。 具有相同*UVC-FSSensorGroupID*的相机将组合在一起。
 
-传感器组可以通过指定给定名称*UVC FSSensorGroupName*，Unicode 字符串，在固件中的。
+可以通过在固件中指定*UVC-FSSensorGroupName*(一个 Unicode 字符串) 来指定传感器组的名称。
 
-请参阅示例复合设备下面的部分，用于演示的示例指定 BOS *UVC FSSensorGroupID*并*UVC FSSensorGroupName*。
+请参阅下面的示例复合设备部分, 了解用于指定*UVC-FSSensorGroupID*和*UVC-FSSensorGroupName*的演示示例 BOS。
 
-如果您不能更新设备固件，上文所述，可以使用自定义 INF 和指定您的相机通过传感器组 ID 指定为传感器组的一部分并命名，如下所示。 自定义的 INF 文件 （基于收件箱 UVC 驱动程序） 必须包含以下 AddReg 条目：
+如以上所述, 如果你无法更新设备固件, 则可以使用自定义 INF, 并通过指定传感器组 ID 和名称来指定你的相机属于传感器组, 如下所示。 自定义 INF 文件 (基于收件箱 UVC 驱动程序) 必须包含以下 AddReg 条目:
 
-**FSSensorGroupID**:REG_SZ:"{您的传感器 group ID GUID}"
+**FSSensorGroupID**:REG_SZ: "{你的传感器组 ID GUID}"
 
-**FSSensorGroupName**:REG_SZ:"您传感器组的友好名称"
+**FSSensorGroupName**:REG_SZ: "你的传感器组友好名称"
 
-自定义的 INF 部分的示例将如下所示：
+自定义 INF 部分的示例如下所示:
 
 ```INF
 [USBVideo.NT.Interfaces]
@@ -182,23 +182,23 @@ HKR,, FSSensorGroupName,0x00000000,%FSSensorGroupName%
 ```
 
 > [!NOTE]
-> 在 DShow 捕获管道中不支持传感器组。
+> DShow 捕获管道不支持传感器组。
 
-## <a name="method-2-or-method-3-still-capture-support"></a>方法 2 或 3 方法仍然捕获支持
+## <a name="method-2-or-method-3-still-capture-support"></a>方法2或方法3仍捕获支持
 
-UVC 规范提供一种机制来指定是否视频流式处理接口支持方法 1/2/3 仍类型捕获映像。 若要使 OS 充分利用设备的方法 2/3 静止图像捕获支持功能，通过 UVC 驱动程序，设备固件可能 BOS 描述符中指定的值。
+UVC 规范提供一种机制, 用于指定视频流接口是否支持方法1/2/3 类型静止图像捕获。 为了使 OS 利用设备的方法2/3 静止图像捕获支持, 通过 UVC 驱动程序, 设备固件可以在 BOS 描述符中指定一个值。
 
-要指定以启用方法 2/3 静止图像捕获的值是名为 DWORD *UVC EnableDependentStillPinCapture*。 指定使用 BOS 描述符其值。 [示例复合设备](#example-composite-device)下面说明了启用仍与示例 BOS 描述符的映像捕获。
+为启用方法2/3 仍为映像捕获指定的值为名为*UVC-EnableDependentStillPinCapture*的 DWORD。 使用 BOS 说明符指定其值。 下面的[示例复合设备](#example-composite-device)演示如何使用示例 BOS 描述符启用静态图像捕获。
 
-如果无法更新设备固件，如上文所述，可以使用自定义 INF 指定您的照相机支持方法 2 或 3 方法仍然捕获方法。
+如以上所述, 如果无法更新设备固件, 则可以使用自定义 INF 来指定相机支持方法2或方法3仍捕获方法。
 
-自定义的 INF 文件 （基于自定义 UVC 驱动程序或收件箱 UVC 驱动程序） 必须包含以下 AddReg 条目：
+自定义 INF 文件 (基于自定义 UVC 驱动程序或收件箱 UVC 驱动程序) 必须包含以下 AddReg 项:
 
-**EnableDependentStillPinCapture**:REG_DWORD:0x0 （禁用） 为 0x1 （启用）
+**EnableDependentStillPinCapture**:REG_DWORD:0x0 (禁用) 到 0x1 (已启用)
 
-当此项设置为已启用 (0x1) 时，捕获管道将利用方法 2/3 （假设固件还公布方法 2/3 UVC 规范由指定的支持） 仍然映像捕获。
+如果此项设置为 "已启用 (0x1)", 捕获管道将利用方法2/3 进行静止映像捕获 (假设该固件还公布对 UVC spec 指定的方法2/3 的支持)。
 
-自定义的 INF 部分示例如下所示：
+自定义 INF 部分的示例如下所示:
 
 ```INF
 [USBVideo.NT.Interfaces]
@@ -220,66 +220,66 @@ HKR,,EnableDependentStillPinCapture,0x00010001,0x00000001
 
 ## <a name="device-mft-chaining"></a>设备 MFT 链接
 
-设备 MFT 是 Ihv 和 Oem 来扩展在 Windows 上的相机功能的建议的用户模式下插件机制。 在 Windows 10，版本 1703 之前, 照相机管道支持只有一个 DMFT 扩展插件。 从 Windows 10，版本 1703，Windows 照相机管道支持最多包含三个 DMFTs DMFTs 的可选链。 这提供了更大的灵活性，oem 和 Ihv 提供增值的后期处理相机流的形式。 例如，设备可以使用以及 IHV DMFT 和 OEM DMFT PDMFT。 下图说明了涉及 DMFTs 链的体系结构。
+设备 MFT 是推荐用于 Ihv 和 Oem 的用户模式插件机制, 用于在 Windows 上扩展相机功能。 在 Windows 10 版本1703之前, 照相机管道仅支持一个 DMFT 扩展插件。 从 Windows 10 版本1703开始, Windows 相机管道支持可选的 DMFTs 链, 最多包含三个 DMFTs。 这为 Oem 和 Ihv 提供了更大的灵活性, 以便以 post 处理相机流的形式提供增值。 例如, 设备可以将 PDMFT 与 IHV DMFT 和 OEM DMFT 一起使用。 下图说明了涉及一系列 DMFTs 的体系结构。
 
 ![DMFT 链](images/dmft-chain.png)
 
-捕获到 DevProxy，从相机驱动程序的示例流，然后通过 DMFT 链。 链中的每个 DMFT 有机会处理示例。 如果 DMFT 不想要处理的示例，它可以充当直通只需传递到下一步 DMFT 示例。
+捕获示例从相机驱动程序流式传输到 DevProxy, 然后浏览 DMFT 链。 链中的每个 DMFT 都有机会处理该示例。 如果 DMFT 不想处理该示例, 则可以直接将该示例传递到下一个 DMFT。
 
-对于控件，如 KsProperty，调用将会增加流 – 链中的最后一个 DMFT 将获得第一个调用，调用可以在这里得到处理，或获取传递给链中的上一个 DMFT。
+对于 KsProperty 之类的控件, 调用将会进入流–链中的最后一个 DMFT 将首先获取调用, 可以在那里处理调用, 或将其传递给链中的上一个 DMFT。
 
-错误将从传播 DMFT 到 DTM 然后对应用程序。 IHV/OEM DMFTs DMFT 无法实例化的任何一个将 DTM 的致命错误。
+错误将从 DMFT 传播到应用程序。 对于 IHV/OEM DMFTs, DMFT 中的任何一个实例都无法实例化, 这将是 DTM 的严重错误。
 
-DMFTs 的要求：
+对 DMFTs 的要求:
 
-- DMFT 输入插针计数必须与上一 DMFT 输出 pin 数匹配，否则 DTM 会在初始化期间失败。 但是，同一 DMFT 的输入和输出插针计数不需要匹配。
+- DMFT 的输入插针计数必须与之前 DMFT 的输出插针计数匹配, 否则, DTM 会在初始化时失败。 但是, 相同 DMFT 的输入和输出插针计数不需要匹配。
 
-- DMFT 需要支持接口-IMFDeviceTransform、 IMFShutdown、 IMFRealTimeClientEx、 IKsControl 和 IMFMediaEventGenerator;IMFTransform 可能需要 MFT0 配置是否支持或链中的下一步 DMFT 需要 IMFTransform 支持。
+- DMFT 需要支持接口-IMFDeviceTransform、IMFShutdown、IMFRealTimeClientEx、IKsControl 和 IMFMediaEventGenerator;如果配置了 MFT0, 或者链中的下一个 DMFT 需要 IMFTransform 支持, 则可能需要支持 IMFTransform。
 
-- 在 64 位系统上，请不要使用帧，32 位和 64 位 DMFTs 必须要注册的服务器。 考虑到可能获取 USB 照相机插入到任意系统，用于"external"（或非收件箱） USB 摄像机，USB 摄像机供应商应提供 32 位和 64 位 DMFTs。
+- 在不使用框架服务器的64位系统上, 必须注册32位和64位的 DMFTs。 如果 USB 摄像机可能会插入任意系统, 对于 "外部" (或非收件箱) USB 摄像机, USB 照相机供应商应同时提供32位和64位的 DMFTs。
 
 ## <a name="configuring-the-dmft-chain"></a>配置 DMFT 链
 
-照相机设备可以根据需要提供 DMFT COM 对象使用自定义的 INF 文件所使用的收件箱 USBVideo.INF 部分的 DLL 中。
+照相机设备可以选择使用使用收件箱 USBVideo 部分的自定义 INF 文件来提供 DLL 中的 DMFT COM 对象。
 
-在自定义。AddReg INF 文件的"接口"部分中，通过添加以下注册表项指定 DMFT Clsid:
+在 "自定义"。INF 文件的 "Interface AddReg" 部分, 通过添加以下注册表项来指定 DMFT Clsid:
 
-**CameraDeviceMftCLSIDChain** (REG\_多\_SZ) %dmft0。CLSID %、 %dmft。CLSID %、 %dmft2。CLSID %
+**CameraDeviceMftCLSIDChain**(REG\_多\_SZ)% Dmft0。CLSID%,% Dmft。CLSID%,% Dmft2。CLSID
 
-示例 INF 以下设置 （将为 %dmft0 中所示。CLSID %和 %dmft1.clsid%使用实际的 CLSID 字符串要用于你 DMFTs)、 有 2 个 Clsid 中 Windows 10，版本 1703，允许的最大值和第一个参数是靠近 DevProxy 和最后一个是链中的最后一个 DMFT。
+如下面的示例 INF 设置中所示 (替换% Dmft0。CLSID% 和% Dmft1% with 用于 DMFTs 的实际 CLSID 字符串), Windows 10 中最多允许有2个 Clsid, 版本 1703, 第一个 Clsid 最接近 DevProxy, 最后一项是链中的最后一个 DMFT。
 
 平台 DMFT CLSID 为 {3D096DDE-8971-4AD5-98F9-C74F56492630}。
 
-一些示例**CameraDeviceMftCLSIDChain**设置：
+示例**CameraDeviceMftCLSIDChain**设置:
 
-- *没有 IHV/OEM DMFT 或平台 DMFT*
+- *无 IHV/OEM DMFT 或平台 DMFT*
 
-  - CameraDeviceMftCLSIDChain =""（或无需指定此注册表项）
+  - CameraDeviceMftCLSIDChain = "" (或者无需指定此注册表项)
 
 - *IHV/OEM DMFT*
 
-  - CameraDeviceMftCLSIDChain = %dmft。CLSID %
+  - CameraDeviceMftCLSIDChain =% Dmft。CLSID
 
-- *平台 DMFT &lt; - &gt; IHV/OEM DMFT*
+- *Platform DMFT &lt; - IHV/OEM&gt; DMFT*
 
-  - CameraDeviceMftCLSIDChain = "{3D096DDE-8971-4AD5-98F9-C74F56492630}",%Dmft.CLSID%
+  - CameraDeviceMftCLSIDChain = "{3D096DDE-8971-4AD5-98F9-C74F56492630}",% Dmft。CLSID
 
-  - 下面是使用平台 DMFT 和链中的 （使用 GUID {D671BE6C-FDB8-424F-81D7-03F5B1CE2CC7}) DMFT USB 摄像头的结果注册表项的屏幕截图。
+  - 下面是一个屏幕截图, 其中包含平台 DMFT 的 USB 摄像机的结果注册表项, 以及链中的 DMFT (GUID 为 {D671BE6C-FDB8-424F-81D7-03F5B1CE2CC7})。
 
 ![注册表编辑器 DMFT 链](images/dmft-registry-editor.png)
 
-- *IHV/OEM DMFT0 &lt;-&gt; IHV/OEM DMFT1*
+- *IHV/OEM DMFT0 &lt; - &gt; IHV/OEM DMFT1*
 
-  - CameraDeviceMftCLSIDChain = %Dmft0.CLSID%,%Dmft1.CLSID%,
+  - CameraDeviceMftCLSIDChain =% Dmft0。CLSID%,% Dmft1。CLSID%,
 
 > [!NOTE]
-> **CameraDeviceMftCLSIDChain**可以具有最多 2 个的 Clsid。
+> **CameraDeviceMftCLSIDChain**最多可以有两个 clsid。
 
-如果**CameraDeviceMftCLSIDChain**是配置，旧 CameraDeviceMftCLSID 设置将被跳过通过 DTM。
+如果配置了**CameraDeviceMftCLSIDChain** , 则 DTM 将跳过旧的 CameraDeviceMftCLSID 设置。
 
-如果**CameraDeviceMftCLSIDChain**未配置，并且配置旧 CameraDeviceMftCLSID，则链将如下所示 (如果其 USB 摄像头和支持的平台 DMFT 并且启用平台 DMFT) DevProxy &lt;–&gt;平台 DMFT &lt;–&gt; OEM/IHV DMFT 或 （如果相机不受平台 DMFT 或禁用平台 DMFT） DevProxy &lt; - &gt; OEM/IHV DMFT。
+如果未配置**CameraDeviceMftCLSIDChain** , 并且配置了旧版 CameraDeviceMftCLSID, 则该链将如下所示 (如果其 USB 摄像机, 并已启用平台 DMFT 和平台 DMFT 的支持) &lt;DevProxy&gt; –平台 DMFT &lt;–&gt; oem/ihv DMFT 或 (如果已禁用平台 DMFT 或平台 DMFT 不支持相机) DevProxy &lt; - &gt; OEM/ihv DMFT。
 
-示例 INF 文件设置：
+示例 INF 文件设置:
 
 ```INF
 [USBVideo.Interface.AddReg]
@@ -293,26 +293,26 @@ HKR,,CameraDeviceMftCLSIDChain, 0x00010000,%Dmft0.CLSID%,%Dmft1.CLSID%
 
 ## <a name="platform-device-mft"></a>平台设备 MFT
 
-从 Windows 10，版本 1703，开始 Windows 提供的收件箱设备 MFT 用于 UVC 相机作为平台 DMFT (PDMFT) 已知上选择的基础。 此 DMFT 允许 Ihv 和 Oem 以利用 Windows 提供 post 处理算法。
+从 Windows 10 1703 版开始, Windows 提供了一个收件箱设备 MFT, 适用于 UVC 照相机 (称为平台 DMFT (PDMFT))。 此 DMFT 允许 Ihv 和 Oem 利用 Windows 提供的后处理算法。
 
-| 支持的平台 DMFT 功能 | Windows 版本 |
+| 平台 DMFT 支持的功能 | Windows 版本 |
 |-------------------------------------|-----------------|
-| 使基于人脸的区域的感兴趣 (ROI) 中支持的投资回报率的 USB 摄像机 3A 调整。 | Windows 10 版本 1703 |
+| 启用基于人脸的感兴趣区域 (ROI), 以便在支持 ROI 的 USB 摄像机中进行3A 调整。 | Windows 10 版本 1703 |
 
 > [!NOTE]
-> 如果相机不支持基于投资回报率，然后 PDMFT 将不会加载即使设备选择中使用 PDMFT UVC 1.5。
+> 如果相机不支持基于 UVC 1.5 的 ROI, 则即使设备选择使用 PDMFT, PDMFT 也不会加载。
 
-UVC 照相机可以参加以通过指定通过 BOS 描述符 EnablePlatformDmft 使用平台 DMFT。
+UVC 照相机可以通过指定 EnablePlatformDmft 到 BOS 描述符来选择使用平台 DMFT。
 
-要指定以启用平台 DMFT 的值是按名称 DWORD *UVC EnablePlatformDmft*并指定使用 BOS 描述符其值。 [示例复合设备](#example-composite-device)以下部分说明了使用示例 BOS 描述符启用平台 DMFT。
+要指定启用平台 DMFT 的值是使用*UVC-EnablePlatformDmft*的 DWORD, 并使用 BOS 说明符指定其值。 下面的[示例复合设备](#example-composite-device)部分演示如何启用平台 DMFT, 并提供示例 BOS 描述符。
 
-如果无法更新设备固件上文所述，可以使用自定义的 INF 文件来为设备启用平台 DMFT。
+如以上所述, 如果无法更新设备固件, 则可以使用自定义 INF 文件为设备启用平台 DMFT。
 
-自定义的 INF 文件 （基于自定义 UVC 驱动程序或收件箱 UVC 驱动程序） 必须包含以下 AddReg 条目：
+自定义 INF 文件 (基于自定义 UVC 驱动程序或收件箱 UVC 驱动程序) 必须包含以下 AddReg 项:
 
-**EnablePlatformDmft**:REG_DWORD:0x0 （禁用） 为 0x1 （启用）
+**EnablePlatformDmft**:REG_DWORD:0x0 (禁用) 到 0x1 (已启用)
 
-当此项设置为已启用 (0x1) 时，则捕获管道将对设备使用收件箱平台 DMFT。 下面显示了此自定义的 INF 部分的示例：
+如果此项设置为 "已启用 (0x1)", 捕获管道将使用收件箱平台 DMFT 作为设备。 下面显示了此自定义 INF 部分的示例:
 
 ```INF
 [USBVideo.NT.Interfaces]
@@ -332,54 +332,505 @@ HKR,,RTCFlags,0x00010001,0x00000010
 HKR,,EnablePlatformDmft,0x00010001,0x00000001
 ```
 
-在 Windows 10，版本 1703，如果设备选择中使用 PDMFT 然后 PDMFT 支持会启用所有功能 （基于设备功能）。 不支持粒度配置 PDMFT 功能。
+在 Windows 10 版本1703中, 如果设备使用 PDMFT, 则会启用 PDMFT 支持的所有功能 (基于设备功能)。 不支持精细配置 PDMFT 功能。
+
+## <a name="face-auth-profile-via-ms-os-descriptors"></a>通过 MS OS 描述符的人脸身份验证配置文件
+
+Windows 10 RS5 现对具有 Windows Hello 支持的任何照相机强制执行人脸身份验证配置文件 V2 要求。 对于使用自定义相机驱动程序堆栈的基于 MIPI 的系统, 可以通过 INF (或扩展 INF) 或者通过用户模式插件 (设备 MFT) 发布此支持。
+
+但对于 USB 视频设备, 使用基于 UVC 的相机的约束是, 对于 Windows 10 19H1, 不允许使用自定义相机驱动程序。 所有基于 UVC 的相机必须使用收件箱 USB 视频类驱动程序, 并且必须以设备 MFT 的形式实现任何供应商扩展。
+
+对于许多 OEM/Odm, 照相机模块的首选方法是实现模块固件中的大部分功能, 即通过 Microsoft OS 描述符。
+
+通过 MSO 描述符 (也称为 BOS 描述符) 发布人脸身份验证配置文件支持以下照相机:
+
+- 仅 RGB 使用单独的 IR 相机在传感器组中使用的相机。
+- 要在具有单独的 RGB 相机的传感器组中使用的 IR 仅限相机。
+- 带有单独 IR 和 RGB pin 的 RGB + IR 相机。
+
+> **注意：** 如果照相机固件无法满足上述三个要求之一, 则 ODM/OEM 必须使用扩展 INF 声明照相机配置文件 V2。
+
+### <a name="example-microsoft-os-descriptor-layout"></a>Microsoft OS 描述符布局示例
+
+下面的示例包含以下规范:
+
+- Microsoft OS 扩展描述符规范1。0
+- Microsoft 操作系统2.0 描述符规范
+
+### <a name="microsoft-os-extended-descriptor-10-specification"></a>Microsoft OS 扩展描述符1.0 规范
+
+扩展属性 OS 描述符包含两个组件
+
+- 固定长度标头部分
+- 标头部分后面的一个或多个可变长度自定义属性部分
+
+#### <a name="microsoft-os-10-descriptor-header-section"></a>Microsoft 操作系统1.0 描述符标头部分
+
+标头部分描述单个自定义属性 (人脸身份验证配置文件)。
+
+| 偏移量 | 字段      | 大小 (字节) | ReplTest1  | Description                     |
+| ------ | ---------- | ------------ | ------ | ------------------------------- |
+| 0      | dwLength   | 4            | \<\>   |                                 |
+| 4      | bcdVersion | 2            | 0x0100 | 版本 1.0                     |
+| 6      | wIndex     | 2            | 0x0005 | 扩展属性 OS 描述符 |
+| 8      | wCount     | 2            | 0x0001 | 一个自定义属性             |
+
+#### <a name="microsoft-os-10-descriptor-custom-property-section"></a>Microsoft OS 1.0 描述符自定义属性部分
+
+| 偏移量 | 字段                | 大小 (字节) | ReplTest1                 | Description                                |
+| ------ | -------------------- | ------------ | --------------------- | ------------------------------------------ |
+| 0      | dwSize               | 4            | 0x00000036 (54)       | 此属性的总大小 (以字节为单位)。   |
+| 4      | dwPropertyDataType   | 4            | 0x00000004            | REG\_DWORD\_小\_字节序                 |
+| 8      | wPropertyNameLength  | 2            | 0x00000024 (36)       | 属性名称的大小 (以字节为单位)。      |
+| 10     | bPropertyName        | 36           | UVC-CPV2FaceAuth      | Unicode 中的 "UVC-CPV2FaceAuth" 字符串。      |
+| 46     | dwPropertyDataLength | 4            | 0x00000004            | 对于属性数据 (sizeof (DWORD)), 4 个字节。 |
+| 50     | bPropertyData        | 4            | 请参阅下面的数据架构 | 请参阅下面的数据架构。                     |
+
+##### <a name="payload-schema"></a>负载架构
+
+UVC-CPV2FaceAuth 数据负载为32位无符号整数。 高阶16位表示由 RGB pin 公开的媒体类型列表的索引 (从0开始)。 低序位16位表示由 IR pin 公开的媒体类型列表的索引 (从0开始)。
+
+例如, 按从 RGB pin 声明的顺序公开以下媒体类型的类型3照相机:
+
+- YUY2640x480@30fps
+- MJPG,1280x720@30fps
+- MJPG,800x600@30fps
+- MJPG,1920x1080@30fps
+
+对于 IR:
+
+- L8480x480@30fps
+- L8480x480@15fps
+- L8480x480@10fps
+
+负载值为0x00010000 将导致发布以下面部身份验证配置文件:
+
+Pin0: (RES = = 1280, 720;FRT = = 30, 1;SUT = = MJPG)//第二种媒体类型 (0x0001)  
+Pin1: (RES = = 480480;FRT = = 30, 1;SUT = = L8)//第一种媒体类型 (0x0000)
+
+> **注意**：撰写本文时, Windows Hello 对 RGB 流和480x480@7.5fps 340x340@15fps IR 流的要求最低。 启用面部身份验证配置文件时, 需要将 IHV/Oem 选为满足此要求的媒体类型。
+
+##### <a name="type-1-camera-sample"></a>键入1相机示例
+
+对于类型1相机, 由于没有 IR pin (假定类型1相机将与传感器组中计算机上的类型2照相机配对), 只会发布 RGB 媒体类型索引。 对于 IR 媒体类型索引, 有效负载的低序位16位值必须设置为0xFFFF。
+
+例如, 如果类型1相机公开以下媒体类型列表:
+
+- YUY2640x480@30fps
+- MJPG,1280x720@30fps
+- MJPG,800x600@30fps
+- MJPG,1920x1080@30fps
+
+若要使用 MJPG 和1280x720@30fps media type 发布 CPV2FaceAuth, 必须将负载设置为0x0001FFFF。
+
+##### <a name="type-2-camera-sample"></a>类型2相机示例
+
+对于类型2相机, 高序位16位必须设置为 0xFFFF, 低序位16位指示要使用的 IR 媒体类型。
+
+例如, 对于具有以下介质类型的类型2相机:
+
+- L8480x480@30fps
+- L8480x480@15fps
+- L8480x480@10fps
+
+如果第一种媒体类型用于面部身份验证, 则值必须为:0xFFFF0000.
+
+### <a name="microsoft-os-extended-descriptor-20-specification"></a>Microsoft OS 扩展描述符2.0 规范
+
+MSO 扩展描述符2.0 可用于定义注册表值, 以添加人脸身份验证配置文件支持。 这是使用[MICROSOFT OS 2.0 注册表属性描述符](#microsoft-os-20-registry-property-descriptor)实现的。
+
+对于 UVC CPV2FaceAuth 注册表项, 以下示例显示了一个示例 MSO 2.0 描述符集:
+
+```cpp
+UCHAR Example2_MSOS20DescriptorSet_UVCFaceAuthForFutureWindows[0x3C] =
+{
+    //
+    // Microsoft OS 2.0 Descriptor Set Header
+    //
+    0x0A, 0x00,               // wLength - 10 bytes
+    0x00, 0x00,               // MSOS20_SET_HEADER_DESCRIPTOR
+    0x00, 0x00, 0x0?, 0x06,   // dwWindowsVersion – 0x060?0000 for future Windows version
+    0x3C, 0x00,               // wTotalLength – 60 bytes
+
+    //
+    // Microsoft OS 2.0 Registry Value Feature Descriptor
+    //
+    0x32, 0x00,               // wLength - 50 bytes
+    0x04, 0x00,               // wDescriptorType – 4 for Registry Property
+    0x04, 0x00,               // wPropertyDataType - 4 for REG_DWORD_LITTLE_ENDIAN
+    0x30, 0x00,               // wPropertyNameLength – 36 bytes
+    0x55, 0x00, 0x56, 0x00,   // Property Name - "UVC-CPV2FaceAuth"
+    0x43, 0x00, 0x2D, 0x00,
+    0x43, 0x00, 0x50, 0x00,
+    0x56, 0x00, 0x32, 0x00,
+    0x46, 0x00, 0x61, 0x00,
+    0x63, 0x00, 0x65, 0x00,
+    0x41, 0x00, 0x75, 0x00,
+    0x74, 0x00, 0x68, 0x00,
+    0x00, 0x00, 0x00, 0x00,
+    0x04, 0x00,               // wPropertyDataLength – 4 bytes
+    0x00, 0x00, 0x01, 0x00    // PropertyData – 0x00010000 (see Payload Schema)
+}
+```
+
+添加 UVC-CPV2FaceAuth 注册表项时, 设备不需要发布 EnableDshowRedirection 注册表项, 如本文档中所述: https://docs.microsoft.com/en-us/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices 。
+
+但是, 如果设备供应商必须支持较旧版本的 Windows 和/或需要在框架服务器中启用 MJPEG 解压缩, 则必须添加 EnableDshowRedirection 注册表项。
+
+### <a name="sensor-group-generation"></a>传感器组生成
+
+当 Oem 使用类型1和类型2照相机来提供适用于 Windows Hello 支持的 RGB 和 IR 流时, Oem 必须将两个照相机声明为合成传感器组的一部分。
+
+为此, 可在每个照相机的设备接口属性下, 通过在扩展 INF 中声明 FSSensorGroupId 和 FSSensorGroupName 标记。
+
+但是, 如果未提供扩展 INF, Odm 可能使用相同的 MSO 描述符发布 FSSensorGroupId 和 FSSensorGroupName 值。 收件箱 Windows 10 USB 视频类驱动程序将自动获取其负载名称为 "UVC" 的任何 MSO 描述符, 并将标记迁移到设备接口属性存储中 (删除 "UVC-" 前缀)。
+
+这样一来, 类型1和类型2照相机会发布以下内容, 以使 OS 能够将相机合成为多设备传感器组, 以便与 Windows Hello 一起使用:
+
+> UVC-FSSensorGroupId  
+> UVC-FSSensorGroupName
+
+每个标记的有效负载必须是 Unicode 字符串。 UVC-FSSensorGroupId 负载必须是以下格式的 GUID 字符串:
+
+> {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX} 个。
+
+在类型1和类型2相机之间, GUID 的值必须相同, 并且必须将两个照相机添加到相同的物理机箱。 对于内置相机, 物理机箱就是计算机本身。 对于外部照相机, 必须将类型1和类型2相机模块内置于连接到计算机的同一物理设备中。 
+
+## <a name="custom-device-interface-categories-for-sensor-groups"></a>传感器组的自定义设备接口类别
+
+从19H1 开始, Windows 提供了一个 IHV/OEM 指定的扩展机制, 以允许将合成的传感器组发布到任何自定义或预定义的类别。 生成的传感器组由在自定义 INF 中提供传感器组 ID 密钥的 IHV/Oem 定义:
+
+> FSSensorGroupId: {Custom GUID}  
+> FSSensorGroupName:\<用于传感器组的友好名称\>
+
+除了 INF 中的两个 AddReg 条目, 还为自定义类别定义了一个新的 AddReg 条目:
+
+> FSSensorGroupCategoryList: {GUID};{GUID}; ...;GUID.EMPTY
+
+使用分号 (;) 来定义多个类别分隔的 GUID 列表。
+
+声明匹配 FSSensorGroupId 的每个设备必须声明相同的 FSSensorGroupCategoryList。 如果该列表不匹配, 则将忽略所有列表, 默认情况下, 该传感器组将发布到 KSCATEGORY\_传感器\_组, 就像未定义任何自定义类别一样。
+
+## <a name="camera-rotation"></a>相机旋转
+
+随着各种外形因素的计算设备的引入, 某些物理约束导致相机传感器以非传统方向装入。 因此, 有必要正确地描述 OS 和应用程序, 如何装载传感器, 以便能够正确呈现/记录所生成的视频。
+
+### <a name="architectural-overview"></a>体系结构概述
+
+从 Redstone 开始, 无论是否按照*Windows 机箱要求*装入照相机, 所有相机驱动程序都需要显式指定相机方向。 具体而言, 照相机驱动程序必须在与捕获设备接口  相关联的 ACPI \_PLD 结构中设置新引入的字段旋转:
+
+```cpp
+typedef struct _ACPI_PLD_V2_BUFFER {
+
+    UINT32 Revision:7;
+    UINT32 IgnoreColor:1;
+    UINT32 Color:24;
+    // …
+    UINT32 Panel:3;         // Already supported by camera.
+    // …
+    UINT32 CardCageNumber:8;
+    UINT32 Reference:1;
+    UINT32 Rotation:4;      // New field, enum values:
+                            // 0 – Rotate by 0° clockwise
+                            // 1 – Rotate by 45° clockwise (N/A to camera)
+                            // 2 – Rotate by 90° clockwise
+                            // 3 – Rotate by 135° clockwise (N/A to camera)
+                            // 4 – Rotate by 180° clockwise
+                            // 5 – Rotate by 225° clockwise (N/A to camera)
+                            // 6 – Rotate by 270° clockwise
+    UINT32 Order:5;
+    UINT32 Reserved:4;
+
+    //
+    // _PLD v2 definition fields.
+    //
+
+    USHORT VerticalOffset;
+    USHORT HorizontalOffset;
+} ACPI_PLD_V2_BUFFER, *PACPI_PLD_V2_BUFFER;
+```
+
+旋转字段定义如下所示:
+
+对于照相机, ACPI \_PLD 结构中的 "旋转" 字段指定了度数 ("0" 表示0度, "2" 表示 "90", "4" 表示180度, "6" 表示 "6" 270 表示), 而显示处于其本机方向。
+
+### <a name="rotation-values"></a>旋转值
+
+使用 ACPI 的 PLD 数据结构, 下面介绍了旋转角度的定义。
+
+对于相机和显示器共享同一机架 (或*机箱*/*大小写*) 的那些设备, 可以将这些外设装载到不同的表面上, 每个外围设备旋转时仍为任意角度其各自的平面。 因此, 应用程序需要一种机制来描述两个外围设备之间的空间关系, 以便能够以正确的方向将捕获的帧转到呈现图面上。
+
+解决此问题的一种方法是使用 ACPI \_PLD 结构, 此结构已定义了*表面*和*旋转度*的概念。 例如, " \_PLD" 结构已有 *"面板"* 字段, 该字段指定外围设备所在的图面:
+
+![ACPI \_PLD 面板字段定义](./images/acpi-pld-panel.png)
+
+![Desktop PLD 面板定义](./images/pld-panel-definitions-desktop.png)
+![折叠 PLD 面板定义](./images/pld-panel-definitions-foldable.png)
+
+事实上, Windows 已采用 ACPI "面板" 的概念, 其中:
+
+如果在固定位置静态装载了捕获\_设备, 则照相机设备接口与 PLD 结构相关联, 并相应地设置面板字段。
+
+应用程序可以通过调用[DeviceInformation. EnclosureLocation](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.enclosurelocation.panel.aspx)属性, 来检索捕获设备所在的面板。
+
+ACPI \_PLD 结构还定义了一个旋转字段, 如下所示:
+
+![ACPI \_PLD 旋转字段定义](./images/acpi-pld-rotation.png)
+
+我们会进一步优化它以避免多义性, 而不是使用以上 "按原样" 定义:
+
+对于照相机, ACPI \_PLD 结构中的 "旋转" 字段指定了度数 ("0" 表示0度, "2" 表示 "90", "4" 表示180度, "6" 表示 "6" 270 表示), 而显示处于其本机方向。
+
+在 Windows 中, 可以通过调用[DisplayInformation. NativeOrientation](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.nativeorientation.aspx)(返回**横向**或**纵向**) 来查询本机显示方向:
+
+![显示本机方向扫描模式](./images/native-scanning-pattern.png)
+
+无论**NativeOrientation**返回哪个值, 逻辑显示扫描模式都从显示的左上角开始, 从左到右移动 (参见图 5)。 对于默认物理方向为 "显式" 的那些设备, 此属性不仅表示 ACPI*顶部*面板的位置, 还提供照相机输出缓冲区与呈现图面之间的空间关系。
+
+请注意, 与相机不同, **NativeOrientation**属性不基于 ACPI, 因此\_没有 PLD 结构。 即使将显示静态装载到设备也是如此。
+
+如上所述, 下图说明了\_每个硬件配置的 PLD 旋转字段的值:
+
+#### <a name="rotation-0-degree-clockwise"></a>围绕0度顺时针
+
+![0度旋转图](./images/rotation-0-degrees.png)
+
+如上图所示:
+
+- 左侧的图片说明了要捕获的场景。
+- 下图描绘了一个 CMOS 传感器的场景的查看方式, 该感应器的物理读出顺序从左下角开始从左到右移动。
+- 右边的图片表示照相机驱动程序的输出。 在此示例中, 可以在显示为其本机方向时直接呈现媒体缓冲区的内容, 而无需额外旋转。 因此, ACPI \_PLD 循环字段的值为0。
+
+#### <a name="rotation-90-degrees-clockwise"></a>围绕顺时针90度
+
+![90度旋转图](./images/rotation-90-degrees.png)
+
+在这种情况下, 与原始场景相比, 媒体缓冲区的内容会顺时针旋转90度。 因此, ACPI \_PLD 循环字段的值为2。
+
+#### <a name="rotation-180-degrees-clockwise"></a>围绕顺时针180度
+
+![180度旋转图](./images/rotation-180-degrees.png)
+
+在这种情况下, 与原始场景相比, 媒体缓冲区的内容会顺时针旋转180度。 因此, ACPI \_PLD 循环字段的值为4。
+
+#### <a name="rotation-270-degrees-clockwise"></a>围绕顺时针270度
+
+![270度旋转图](./images/rotation-270-degrees.png)
+
+在这种情况下, 与原始场景相比, 媒体缓冲区的内容会顺时针旋转270度。 因此, ACPI \_PLD 循环字段的值为6。
+
+### <a name="offset-mounting"></a>偏移量装入
+
+强烈建议使用 IHV/Oem 以非0度偏移量来维护应用程序兼容性。 许多现有的和旧的应用程序不知道要查找 ACPI 的 PLD 表, 也不会尝试更正非0度偏移量。 因此, 对于此类应用, 生成的视频将不会正确呈现。
+
+如果在上述情况下, IHV/Oem 无法按0度方向装载传感器, 则建议使用以下缓解步骤:
+
+1. 纠正照相机驱动程序中的非0度方向 (在带有 AV 流微型端口驱动程序的内核模式下, 或在用户模式下使用插即设备 MFT 或 MFT0), 使生成的输出帧处于0度方向。
+2. 通过 FSSensorOrientation 标记声明非0度方向, 使相机管道可以更正捕获的映像。
+3. 如上所述, 在 ACPI 的 PLD 表中声明非0度方向。
+
+### <a name="av-stream-miniportdevice-mftmft0"></a>AV 流微型端口/设备 MFT/MFT0
+
+理想情况下, 如果无法以0度偏移量装入传感器, 则会将 AV 流微型端口驱动程序 (或用户模式插入的 DMFT 或 MFT0 的模式插入) 更正生成的捕获帧, 使其在0度偏移量上向管道公开。
+
+从 AV 流微型端口和/或设备 MFT/MFT0 插件更正视频帧时, 生成的媒体类型声明必须基于更正后的帧。 如果传感器按90度的偏移量装入, 使生成的视频比传感器9:16 的高宽比, 但更正后的视频为 16:9, 则媒体类型必须声明16:9 纵横比。
+
+这包括生成的步幅信息。 这是必需的, 因为由 IHV/OEM 控制负责执行更正的组件, 并且相机管道不具有视频帧的可见性, 但更正后除外。
+
+强烈建议在用户模式下执行更正, 并且必须遵循管道和用户模式插件之间的 API 协定。 具体而言, 使用 DMFT 或 MFT0 时, 在使用\_MFT 消息\_集\_D3D\_管理器消息调用 IMFDeviceTransform::P rocessmessage 或 IMFTransform::P rocessmessage 时, 用户模式插件必须遵循以下准则:
+
+- 如果未提供 D3D 管理器 (消息的 ulParam 为 0), 则用户模式插件不得调用任何 GPU 操作来处理旋转更正。 并且必须在系统内存中提供生成的帧。
+- 如果提供了 D3D 管理器 (消息的 ulParam 是 DXGI 管理器的 IUnknown), 则必须使用 DXGI 管理器进行旋转更正, 并且生成的帧必须为 GPU 内存。
+- 用户模式插件还必须在运行时处理 D3D 管理器消息。 发出 MFT\_消息\_集\_D3DMANAGER消息后,该插件生成的下一个帧必须与请求的内存类型(即,如果提供了DXGI管理器,则为GPU)对应。\_
+- 当 AV 流驱动程序 (或用户模式插件) 处理旋转更正时, ACPI 的 PLD 结构的旋转字段必须设置为0。
+
+### <a name="fssensororientation"></a>FSSensorOrientation
+
+```INF
+; Defines the sensor mounting orientation offset angle in
+; degrees clockwise.
+FSSensorOrientation: REG_DWORD: 90, 180, 270
+```
+
+通过 FSSensorOrientation 注册表标记声明传感器的非0度方向, 照相机管道可以在将捕获的帧呈现给应用程序之前对其进行更正。
+
+管道将根据用例和应用请求/方案利用 GPU 或 CPU 资源来优化旋转逻辑。
+
+#### <a name="acpi-pld-rotation"></a>ACPI PLD 轮换
+
+ACPI PLD 结构的旋转字段必须为0。 这是为了避免混淆可能使用 PLD 信息来更正帧的应用程序。
+
+#### <a name="media-type-information"></a>媒体类型信息
+
+驱动程序提供的媒体类型必须是无法更正的媒体类型。 当使用 FSSensorOrientation 项通知非0度偏移量的相机管道时, 该传感器提供的媒体类型信息必须是未更正的媒体类型。 例如, 如果传感器装入了90度16:9 的顺时针偏移量, 因此, 生成的视频为 9:16, 则必须向照相机管道提供9:16 纵横比。
+
+这是确保管道可正确配置计数器旋转进程所必需的:管道需要输入媒体类型和应用程序的所需输出媒体类型。
+
+这包括步幅信息。 对于未更正的媒体类型, 必须为相机管道提供 stride 信息。
+
+#### <a name="registry-subkey"></a>注册表子项
+
+必须在 "设备接口" 节点上发布 "FSSensorOrientation" 注册表项。 推荐的方法是在照相机驱动程序的 INF 中, 将此方法声明为 AddReg 指令。
+
+FSSensorOrientation 中显示的数据必须为 REG\_DWORD, 而接受的有效值为90、180和270。 其他任何值将被视为0度偏移量 (即忽略)。
+
+每个值都以顺时针度为单位表示传感器方向。 照相机管道将通过计数器以顺时针方向逆时针旋转视频来更正生成的视频帧: 也就是说, 90 度顺时针声明会导致90度逆时针旋转, 使生成的视频帧返回到0度偏移量。
+
+#### <a name="ms-os-descriptor-10"></a>MS OS 描述符1。0
+
+对于基于 USB 的相机, 还可以通过 MSO 描述符发布 FSSensorOrientation。
+
+<!-- FIXME: Overview of OS descriptor could be removed -->
+MS OS 描述符1.0 有两个组件:
+
+- 固定长度标头部分
+- 标头部分后面的一个或多个可变长度自定义属性部分
+
+##### <a name="ms-os-descriptor-10-header-section"></a>MS OS 描述符1.0 标头部分
+
+标头部分描述单个自定义属性 (人脸身份验证配置文件)。
+
+| 偏移量 | 字段      | 大小 (字节) | ReplTest1  | Description                     |
+| ------ | ---------- | ------------ | ------ | ------------------------------- |
+| 0      | dwLength   | 4            | \<\>   |                                 |
+| 4      | bcdVersion | 2            | 0x0100 | 版本 1.0                     |
+| 6      | wIndex     | 2            | 0x0005 | 扩展属性 OS 描述符 |
+| 8      | wCount     | 2            | 0x0001 | 一个自定义属性             |
+
+##### <a name="custom-ms-os-descriptor-10-property-section"></a>自定义 MS OS 描述符1.0 属性部分
+
+| 偏移量 | 字段                | 大小 (字节) | ReplTest1                              | Description                                  |
+| ------ | -------------------- | ------------ | ---------------------------------- | -------------------------------------------- |
+| 0      | dwSize               | 4            | 0x00000036 (54)                    | 此属性的总大小 (以字节为单位)。     |
+| 4      | dwPropertyDataType   | 4            | 0x00000004                         | REG\_DWORD\_小\_字节序                   |
+| 8      | wPropertyNameLength  | 2            | 0x00000024 (36)                    | 属性名称的大小 (以字节为单位)。        |
+| 10     | bPropertyName        | 50           | UVC-FSSensorOrientation            | Unicode 中的 "UVC-FSSensorOrientation" 字符串。 |
+| 60     | dwPropertyDataLength | 4            | 0x00000004                         | 对于属性数据 (sizeof (DWORD)), 4 个字节。   |
+| 64     | bPropertyData        | 4            | 顺时针角度 (以度为单位)。 | 有效值为90、180和270。           |
+
+#### <a name="ms-os-descriptor-20"></a>MS OS 描述符2。0
+
+MSO 扩展描述符2.0 可用于定义注册表值以添加 FSSensorOrientation 支持。 这是使用[MICROSOFT OS 2.0 注册表属性描述符](#microsoft-os-20-registry-property-descriptor)实现的。
+
+对于 UVC FSSensorOrientation 注册表项, 以下示例显示了一个示例 MSO 2.0 描述符集:
+
+```cpp
+UCHAR Example2_MSOS20DescriptorSet_UVCFSSensorOrientationForFutureWindows[0x3C] =
+{
+    //
+    // Microsoft OS 2.0 Descriptor Set Header
+    //
+    0x0A, 0x00,                 // wLength - 10 bytes
+    0x00, 0x00,                 // MSOS20_SET_HEADER_DESCRIPTOR
+    0x00, 0x00, 0x0?, 0x06,     // dwWindowsVersion – 0x060?0000 for future Windows version
+    0x4A, 0x00,                 // wTotalLength – 74 bytes
+
+    //
+    // Microsoft OS 2.0 Registry Value Feature Descriptor
+    //
+    0x40, 0x00,                 // wLength - 64 bytes
+    0x04, 0x00,                 // wDescriptorType – 4 for Registry Property
+    0x04, 0x00,                 // wPropertyDataType - 4 for REG_DWORD_LITTLE_ENDIAN
+    0x32, 0x00,                 // wPropertyNameLength – 50 bytes
+    0x55, 0x00, 0x56, 0x00,     // Property Name - "UVC-FSSensorOrientation"
+    0x43, 0x00, 0x2D, 0x00,
+    0x46, 0x00, 0x53, 0x00,
+    0x53, 0x00, 0x65, 0x00,
+    0x6E, 0x00, 0x73, 0x00,
+    0x6F, 0x00, 0x72, 0x00,
+    0x4F, 0x00, 0x72, 0x00,
+    0x69, 0x00, 0x65, 0x00,
+    0x6E, 0x00, 0x74, 0x00,
+    0x61, 0x00, 0x74, 0x00,
+    0x69, 0x00, 0x6F, 0x00,
+    0x6E, 0x00, 0x00, 0x00,
+    0x00, 0x00,
+    0x04, 0x00,                 // wPropertyDataLength – 4 bytes
+    0x5A, 0x00, 0x00, 0x00      // PropertyData – 0x0000005A (90 degrees offset)
+}
+```
+
+### <a name="acpi-pld-information"></a>ACPI PLD 信息
+
+作为最后手段的一项选择, 可以按上述方式利用 PLD 信息, 以向应用程序指示必须先更正视频帧, 然后才能呈现/编码。 但正如前文所述, 许多现有应用程序不使用 PLD 信息, 也不处理帧旋转, 因此, 在某些情况下, 应用程序可能无法正确呈现结果视频。
+
+### <a name="compressedencoded-media-types"></a>压缩/编码的媒体类型
+
+对于压缩的和/或编码的媒体类型 (例如 MJPG、JPEG、H264、HEVC), 无法使用正确的管道。 因此, 如果 FSSensorOrientation 设置为非零值, 压缩/编码的媒体类型将被筛选掉。
+
+对于 MJPG 媒体类型 (例如 UVC 相机中的媒体类型), 框架服务器管道提供自动解码的媒体类型 (NV12 或 YUY2 用于基于 DShow 的应用程序)。 将显示自动解码和更正后的媒体类型, 但原始 MJPG 格式不会显示。
+
+如果必须向应用程序公开压缩/编码的媒体类型, 则 IHV/Odm 不得使用 FSSensorOrientation 更正。 相反, 必须由相机驱动程序 (在内核模式下通过 AV 流驱动程序或在用户模式下通过 DMFT/MFT0) 进行更正。
 
 ## <a name="bos-and-ms-os-20-descriptor"></a>BOS 和 MS OS 2.0 描述符
 
-UVC 符合照相机可以指定在其固件中的平台功能 BOS 描述符中的 Windows 特定的设备配置值。 有关，请参阅文档[MS OS 2.0 描述符](https://docs.microsoft.com/previous-versions/dn385747(v=msdn.10))若要了解如何指定一个有效的 BOS 描述符，它传达了对操作系统的设备配置。 当在固件中指定有效的 MS OS 2.0 描述符时，USB 堆栈将配置值复制到设备硬件注册表键下面显示：
+UVC 兼容相机可以使用[MICROSOFT OS 2.0 描述符](https://msdn.microsoft.com/en-us/library/windows/hardware/dn385747.aspx)在其固件中指定平台功能 BOS 描述符中的 Windows 特定设备配置值。 请参阅有关 MS OS 2.0 描述符的文档, 以了解如何指定有效的 BOS 描述符, 以将设备配置传递到 OS。
+
+### <a name="microsoft-os-20-descriptor-set-header"></a>Microsoft 操作系统2.0 描述符集标头
+
+| 偏移量 | 字段            | 大小 (字节) | 描述                                                                  |
+| ------ | ---------------- | ------------ | ---------------------------------------------------------------------------- |
+| 0      | wLength          | 2            | 此标头的长度 (以字节为单位) 必须为10。                                  |
+| 2      | wDescriptorType  | 2            | MSOS20\_集\_标头\_描述符                                              |
+| 4      | dwWindowsVersion | 4            | Windows 版本。                                                             |
+| 8      | wTotalLength     | 2            | 整个 MS OS 2.0 descrioptor 集的大小, 包括此标头大小。 |
+
+### <a name="microsoft-os-20-registry-property-descriptor"></a>Microsoft OS 2.0 注册表属性描述符
+
+| 偏移量 | 字段               | 大小 (字节) | 描述                        |
+| ------ | ------------------- | ------------ | ---------------------------------- |
+| 0      | wLength             | 2            | 此描述符的长度 (以字节为单位) |
+| 2      | wDescriptorType     | 2            | MS\_OS\_20\_功能注册属性\_\_ |
+| 4      | wPropertyDataType   | 2            | 0x04 (REG\_DWORD\_小\_字节序)  |
+| 6      | wPropertyNameLength | 2            | 属性名称的长度。   |
+| 8      | PropertyName        | 变量     | 注册表属性的名称。 |
+| 8 + M    | wPropertyDataLength | 2            | 属性数据的长度。   |
+| 10 + M   | PropertyData        | 变量     | 属性数据                      |
+
+在固件中指定有效的 MS OS 2.0 描述符后, USB stack 会将配置值复制到下面显示的设备 HW 注册表项中:
 
 ```Registry
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\<Device ID>\<Instance ID>\Device Parameters
 ```
 
-UVC 驱动程序从设备 HW 注册表项读取配置值并相应地在 OS 中配置该设备。 例如，如果固件指定设备要注册为使用配置值的传感器摄像机，UVC 驱动程序注册的类别下只是设备。
+UVC 驱动程序从设备 HW 注册表项读取配置值, 并相应地在操作系统上配置设备。 例如, 如果固件使用配置值指定要注册为传感器相机的设备, 则 UVC 驱动程序将仅在该类别下注册设备。
 
-配置通过平台 BOS 描述符 UVC 设备是在 Windows 10，版本 1703 帮助 UVC 设备供应商来配置设备而无需在 Windows OS 上的 INF 文件中启用了一种机制。
+通过平台 BOS 描述符配置 UVC 设备是在 Windows 10 版本1703中启用的一种机制, 可帮助 UVC 设备供应商配置设备, 而无需在 Windows 操作系统上使用 INF 文件。
 
-配置通过自定义 INF UVC 设备仍受支持，将优先于 BOS 描述符基于机制。 指定通过 INF 的设备属性，而不需要添加前缀"UVC-"。 此前缀仅需用于通过 BOS 描述符指定的并且每个接口实例特定的设备属性。 如果你的设备需要如 DMFT 用户模式下的插件，然后您需要安装 DMFT 提供 INF。 不能使用固件配置它。
+仍支持通过自定义 INF 配置 UVC 设备, 并优先于基于 BOS 描述符的机制。 通过 INF 指定设备属性时, 无需添加前缀 "UVC-"。 仅在通过 BOS 描述符指定的设备属性和每个接口实例特定的设备属性中需要此前缀。 如果设备需要用户模式插件 (如 DMFT), 则需要提供一个 INF 用于安装 DMFT。 不能使用固件来配置它。
 
-## <a name="currently-supported-configuration-values-through-bos-descriptor"></a>当前支持的配置值通过 BOS 描述符
+## <a name="currently-supported-configuration-values-through-bos-descriptor"></a>当前通过 BOS 描述符支持的配置值
 
-| 配置名称 | 在任务栏的搜索框中键入 | 描述 |
+| 配置名称 | type | 描述 |
 | --- | --- | --- |
-| SensorCameraMode                              | REG\_DWORD | 注册特定类别下的照相机。  |
-| UVC-FSSensorGroupID<br>UVC-FSSensorGroupName  | REG\_SZ    | 使用相同的 UVC FSSensorGroupID 组照相机 |
-| UVC-EnableDependentStillPinCapture            | REG\_DWORD | 若要启用仍捕获方法 2/3              |
-| UVC-EnablePlatformDmft                        | REG\_DWORD | 若要启用平台 DMFT                         |
+| SensorCameraMode                              | REG\_DWORD | 将照相机注册到特定类别下。  |
+| UVC-FSSensorGroupID<br>UVC-FSSensorGroupName  | REG\_SZ    | 具有相同 UVC 的组照相机-FSSensorGroupID |
+| UVC-EnableDependentStillPinCapture            | REG\_DWORD | 启用仍捕获方法2/3              |
+| UVC-EnablePlatformDmft                        | REG\_DWORD | 启用平台 DMFT                         |
 
-当 UVC 驱动程序发现具有前缀"UVC-"的注册表值时，它将填充设备的类别接口实例注册表项，使用不带前缀相同的值。 该驱动程序将执行此操作指定固件的任何变量，而不仅仅是上面所列。
+当 UVC 驱动程序看到带有前缀 "UVC-" 的注册表值时, 它将用相同的值 (没有前缀) 填充设备的类别接口实例注册表项。 驱动程序将针对固件指定的任何变量 (而不只是上面列出的变量) 执行此操作。
 
 ```Registry
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{e5323777-f976-4f5b-9b55-b94699c46e44}\<Device Symbolic Link>\Device Parameters
 ```
 
-对于操作系统，使利用 BOS 平台的设备功能和 MS OS 2.0 描述符，设备描述符必须指定要 0x0210 bcdUSB 版本或更高版本。
+要使 OS 使用 BOS 平台设备功能和 MS OS 2.0 描述符, 设备描述符必须指定要0x0210 或更高版本的 bcdUSB 版本。
 
-## <a name="example-composite-device"></a>示例复合设备
+## <a name="example-composite-device"></a>复合设备示例
 
-本部分提供有关两个相机功能的示例复合设备 BOS 描述符和 MS OS 2.0 描述符。 一个函数是 UVC 颜色照相机和第二个函数是一种 UVC IR 照相机。
+本部分提供了一个包含两个照相机功能的示例复合设备的 BOS 描述符和 MS OS 2.0 描述符。 一个函数是 UVC 的彩色相机, 第二个函数是 UVC IR 相机。
 
-示例描述符如下所示：
+示例描述符如下所示:
 
-1. 注册颜色照相机函数下 KSCATEGORY\_视频\_照相机
+1. 在 KSCATEGORY\_视频\_相机下注册彩色相机函数
 
-1. 注册 IR 照相机函数下 KSCATEGORY\_传感器\_照相机
+1. 在 KSCATEGORY\_传感器\_相机下注册 IR 相机功能
 
-1. 启用颜色照相机函数静止图像捕获
+1. 启用彩色相机函数仍图像捕获
 
-1. 将作为一个组相关联的颜色和 IR 照相机函数
+1. 将颜色和 IR 相机功能与组相关联
 
-在设备枚举时 USB 堆栈从设备检索 BOS 描述符。 后面的 BOS 描述符是平台特定的设备功能。
+在设备枚举时, USB stack 将从设备中检索 BOS 描述符。 以下 BOS 描述符是特定于平台的设备功能。
 
 ```cpp
 #include <usbspec.h>
@@ -409,73 +860,73 @@ const BYTE USBVideoBOSDescriptor[0x21] =
 };
 ```
 
-指定 BOS 平台功能描述符：
+BOS 平台功能描述符指定:
 
-1. MS OS 2.0 描述符平台功能的 GUID
+1. MS OS 2.0 描述符平台功能 GUID
 
-1. 供应商控件代码 bMS\_VendorCode （此处是设置为 1。 它可以使用供应商更适合于创建任何值） 来检索 MS OS 2.0 描述符。
+1. 供应商控制代码 bMS\_VendorCode (此处设置为1。 它可以采用供应商首选的任何值) 来检索 MS OS 2.0 描述符。
 
-1. 此 BOS 描述符是适用于 OS 版本为 Windows 10 及更高版本。
+1. 此 BOS 描述符适用于 Windows 10 及更高版本的操作系统版本。
 
-将看到 BOS 描述符后, 发出 USB 堆栈供应商特定的控件请求来检索 MS OS 2.0 描述符。
+查看 BOS 描述符后, USB stack 将发出特定于供应商的控制请求来检索 MS OS 2.0 描述符。
 
-控制请求检索 MS OS 2.0 供应商特定的描述符的格式：
+用于检索 MS OS 2.0 供应商特定描述符的控制请求的格式:
 
-| bmRequestType | bRequest            | wValue | wIndex | wLength | 数据                                   |
+| bmRequestType | BRequest            | wValue | WIndex | wLength | Data                                   |
 |---------------|---------------------|--------|--------|---------|----------------------------------------|
-| 1100 0000B    | **bMS\_VendorCode** | 0x00   | 0x07   | 长度  | 返回的 MS OS 2.0 描述符设置 blob |
+| 1100 0000B    | **bMS\_VendorCode** | 0x00   | 0x07   | 长度  | 返回的 MS OS 2.0 描述符集 blob |
 
 _**bmRequestType**_
 
-- 数据传输方向 – 主机到设备
+- 数据传输方向–设备到主机
 
 - 类型-供应商
 
-- 接收方的设备
+- 收件人-设备
 
 _**bRequest**_
 
-**BMS\_VendorCode**描述符集信息结构中返回的值。
+描述符集信息结构中返回的**bMS\_VendorCode**值。
 
 _**wValue**_
 
-设置为 0x00。
+设置为0x00。
 
 _**wIndex**_
 
-为 MS 0x7\_OS\_20\_描述符\_索引。
+MS\_OS\_20\_描述符索引的0x7。\_
 
 _**wLength**_
 
-MS OS 2.0 描述符集，如 BOS 描述符中返回的长度。 在此示例中 0x25C (604)。
+MS OS 2.0 描述符集的长度, 在 BOS 描述符中返回。 0x25C (604)。
 
-设备应返回类似于 USBVideoMSOS20DescriptorSet 中指定的 MS OS 2.0 描述符。
+设备应返回 MS OS 2.0 描述符, 如 USBVideoMSOS20DescriptorSet 中所指定的。
 
-USBVideoMSOS20DescriptorSet 描述颜色和红外线 （ir） 函数。 它指定以下 MS 操作系统 2.0 描述符值：
+USBVideoMSOS20DescriptorSet 描述了颜色和 IR 函数。 它指定以下 MS OS 2.0 描述符值:
 
-1. 将标头设置
+1. 设置标头
 
 1. 配置子集标头
 
-1. 颜色照相机函数子集标头
+1. 彩色相机函数子集标题
 
 1. 传感器组 ID 的注册表值功能描述符
 
 1. 传感器组名称的注册表值功能描述符
 
-1. 仍然启用捕获映像的注册表值功能描述符
+1. 用于启用静态映像捕获的注册表值功能描述符
 
-1. 启用平台 DMFT 的注册表值功能描述符
+1. 用于启用平台 DMFT 的注册表值功能描述符
 
-1. IR 照相机函数子集标头
+1. IR 相机函数子集标题
 
 1. 传感器组 ID 的注册表值功能描述符
 
 1. 传感器组名称的注册表值功能描述符
 
-1. 有关注册为传感器照相机的照相机的注册表值功能描述符
+1. 用于将照相机注册为传感器相机的注册表值功能描述符
 
-固件必须将返回虚部设备在此部分开头所述的以下 MS OS 2.0 描述符的供应商请求的处理程序。
+该固件将具有供应商请求的处理程序, 该处理程序将为本部分开头所述的虚部设备返回以下 MS OS 2.0 描述符。
 
 ```cpp
 UCHAR USBVideoMSOS20DescriptorSet[0x2C8] =
