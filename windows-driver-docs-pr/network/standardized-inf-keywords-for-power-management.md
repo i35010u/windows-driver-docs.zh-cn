@@ -2,61 +2,63 @@
 title: 电源管理的标准化 INF 关键字
 description: 电源管理的标准化 INF 关键字
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
-ms.date: 04/20/2017
+ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af3d8209a96dbbe03acaa089831d33809b4d5ae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6f3f1e59367acbfc2dfb18e1087831c97d2f088
+ms.sourcegitcommit: 97cb327e20b899d386abb412af2de7e08c5aff87
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377569"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68730411"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>电源管理的标准化 INF 关键字
 
+电源管理标准化关键字在设备驱动程序 INF 文件中定义。 操作系统将读取这些标准化关键字, 并调整设备的当前电源管理功能。 设备驱动程序应始终在[**ndis\_微型端口\_适配器\_的 "\_常规属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)" 结构中指出设备的硬件电源管理功能。
 
-
-
-
-设备驱动程序 INF 文件中定义的电源管理进行了标准化关键字。 操作系统读取这些标准化的关键字并调整设备的当前电源管理功能。 设备驱动程序应始终指示到 NDIS 中设备的硬件电源管理功能[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。
-
-以下的标准化的 INF 关键字定义来启用或禁用对电源管理功能的网络适配器的支持。
+定义了以下标准化 INF 关键字, 以启用或禁用对网络适配器电源管理功能的支持。
 
 <a href="" id="-wakeonpattern"></a> **\*WakeOnPattern**  
-描述是否应启用设备唤醒计算机时的网络数据包与指定的模式匹配的值。
+一个值, 该值描述当网络数据包与指定的模式匹配时是否应启用设备来唤醒计算机。
 
 <a href="" id="-wakeonmagicpacket"></a> **\*WakeOnMagicPacket**  
-一个值，描述是否应启用设备唤醒计算机时，设备收到*幻数据包*。 (A*幻数据包*是包含 16 个连续副本接收的网络适配器的以太网地址的数据包)
+一个值, 用于描述在设备接收到*幻数据包*时是否应启用设备来唤醒计算机。 (*幻数据包*是包含接收网络适配器的以太网地址的16个连续副本的数据包)
+
+<a href="" id="-modernstandbywolmagicpacket"></a> **\*ModernStandyWoLMagicPacket**  
+一个值, 用于描述在设备接收到*幻 paket*并且系统处于*S0ix*电源状态时是否应启用设备唤醒计算机。 当系统处于*S4*电源状态时, 此功能不适用。
+
+> [!NOTE]
+> 在 NDIS 6.60 和更高版本, 或者 Windows 10 版本1607及更高版本中支持 ModernStandyWoLMagicPacket。  **\***
 
 <a href="" id="-devicesleepondisconnect"></a> **\*DeviceSleepOnDisconnect**  
-描述是否应启用该设备将设备置于低功耗状态 （睡眠状态） 的值在媒体是断开连接并且返回到全功率状态 （唤醒状态） 媒体时重新连接。
+一个值, 该值描述当媒体断开连接时是否应启用设备使设备进入低功耗状态 (睡眠状态), 并在媒体再次连接时返回到完全电源状态 (唤醒状态)。
 
 <a href="" id="-pmarpoffload"></a> **\*PMARPOffload**  
-一个值，描述是否应启用设备卸载地址解析协议 (ARP)，当系统进入睡眠状态。
+一个值, 该值描述当系统进入睡眠状态时是否应启用设备来卸载地址解析协议 (ARP)。
 
 <a href="" id="-pmnsoffload"></a> **\*PMNSOffload**  
-一个值，描述是否应启用设备卸载邻居请求 (NS)，当系统进入睡眠状态。
+一个值, 该值描述当系统进入睡眠状态时是否应启用设备来卸载邻居请求 (NS)。
 
 <a href="" id="-pmwifirekeyoffload"></a> **\*PMWiFiRekeyOffload**  
-一个值，描述是否应启用设备卸载组临时键 (GTK) 上无线的 LAN 唤醒 (WOL) 的计算机进入睡眠状态时重新生成的密钥。
+一个值, 该值描述在计算机进入睡眠状态时, 是否应启用设备来为唤醒 LAN (WOL) 重新生成的组临时密钥 (GTK) 重新生成密钥。
 
 <a href="" id="-eee"></a> **\*EEE**  
-一个值，描述该设备是否应启用 IEEE 802.3az 能效较高的以太网。
+一个值, 该值描述设备是否应启用 IEEE 802.3 az 节能以太网。
 
-本主题末尾处表中的列描述枚举关键字的以下属性：
+本主题末尾的表中的列描述了用于枚举关键字的以下属性:
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须指定 INF 文件中的关键字的名称显示在注册表中。
+必须在 INF 文件中指定并且出现在注册表中的关键字的名称。
 
 <a href="" id="paramdesc"></a>ParamDesc  
-显示文本与 SubkeyName 相关联。
+与 SubkeyName 关联的显示文本。
 
-<a href="" id="value"></a>值  
-在列表中每个选项与关联枚举的整数值。 此值存储在**NDI\\params\\** <em>SubkeyName\\值。</em>
+<a href="" id="value"></a>负值  
+与列表中的每个选项关联的枚举整数值。 此值存储在**NDI\\params\\** <em>SubkeyName\\值中。</em>
 
 <a href="" id="enumdesc"></a>EnumDesc  
-与每个菜单中显示的值相关联的显示文本。
+与菜单中显示的每个值相关联的显示文本。
 
-下表描述了可能的电源管理关键字的 INF 项。
+下表描述了电源管理关键字的可能 INF 条目。
 
 <table>
 <colgroup>
@@ -76,38 +78,50 @@ ms.locfileid: "67377569"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em>WakeOnPattern</strong></p></td>
-<td align="left"><p>唤醒模式匹配</p></td>
+<td align="left"><p>模式匹配时唤醒</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
+<td align="left"><p>1 (默认值)</p></td>
 <td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>WakeOnMagicPacket</strong></p></td>
-<td align="left"><p>项的幻数据包唤醒</p></td>
+<td align="left"><p>幻数据包唤醒</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
+<td align="left"><p>1 (默认值)</p></td>
+<td align="left"><p>Enabled</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><strong></em>ModernStandyWoLMagicPacket</strong></p></td>
+<td align="left"><p>当系统处于<i>S0ix</i>电源状态时唤醒幻数据包</p></td>
+<td align="left"><p>0 (默认值)</p></td>
+<td align="left"><p>Disabled</p></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><p>1</p></td>
 <td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>DeviceSleepOnDisconnect</strong></p></td>
-<td align="left"><p>设备上的睡眠断开连接</p></td>
+<td align="left"><p>断开连接时设备睡眠</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
+<td align="left"><p>1 (默认值)</p></td>
 <td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
@@ -119,7 +133,7 @@ ms.locfileid: "67377569"
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
+<td align="left"><p>1 (默认值)</p></td>
 <td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
@@ -131,7 +145,7 @@ ms.locfileid: "67377569"
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
+<td align="left"><p>1 (默认值)</p></td>
 <td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
@@ -143,19 +157,19 @@ ms.locfileid: "67377569"
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
+<td align="left"><p>1 (默认值)</p></td>
 <td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*EEE</strong></p></td>
-<td align="left"><p>能效较高的以太网</p></td>
+<td align="left"><p>高能效以太网</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
+<td align="left"><p>1 (默认值)</p></td>
 <td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
@@ -163,7 +177,7 @@ ms.locfileid: "67377569"
 
  
 
-有关标准化 INF 关键字的详细信息，请参阅[为网络设备的标准化 INF 关键字](standardized-inf-keywords-for-network-devices.md)。
+有关标准化 INF 关键字的详细信息, 请参阅[网络设备的标准化 Inf 关键字](standardized-inf-keywords-for-network-devices.md)。
 
  
 
