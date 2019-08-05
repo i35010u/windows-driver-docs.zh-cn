@@ -184,7 +184,7 @@ X86 体系结构包括以下无特权整数寄存器。
 
 标志注册是一个位标志的集合。 许多指令更改的标志来描述指令的结果。 然后可以按条件跳转指令测试这些标志。 请参阅[x86 标志](#x86-flags)有关详细信息。
 
-### <a name="span-idcallingconventionsspanspan-idcallingconventionsspanspan-idcallingconventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>调用约定
+### <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>调用约定
 
 X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵循相同的注册保留和函数返回规则：
 
@@ -214,7 +214,7 @@ X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵
 
     直接推送到左侧，在堆栈上传递的函数参数和调用方清理堆栈。 **\_\_Cdecl**调用约定用于使用长度可变的参数的所有功能。
 
-### <a name="span-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspanspan-iddebuggerdisplayofregistersandflagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>调试器显示的寄存器和标志
+### <a name="span-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>调试器显示的寄存器和标志
 
 下面是示例调试器注册显示：
 
@@ -226,7 +226,7 @@ cs=001b  ss=0023  ds=0023  es=0023  fs=0038  gs=0000             efl=00000286
 
 在用户模式调试中，您可以忽略**iopl**和调试器显示的整个最后一行。
 
-### <a name="span-idx86-flagsspanspan-idx86flagsspanx86-flags"></a><span id="x86-flags"></span><span id="X86_FLAGS"></span>x86 标志
+### <a name="span-idx86-flagsspanspan-idx86_flagsspanx86-flags"></a><span id="x86-flags"></span><span id="X86_FLAGS"></span>x86 标志
 
 在上述示例中，在第二行末尾的双字母代码都*标志*。 这是单一位寄存器，有多种用途。
 
@@ -463,7 +463,7 @@ jz equal
 
 比较**eax**通过计算该表达式针对数字 5 注册 (**eax** -5) 和设置根据结果的标志。 如果该减法运算的结果为零，则**zr**将设置标志，并**jz**条件将为 true，因此不会采取跳转。
 
-### <a name="span-iddatatypesspanspan-iddatatypesspanspan-iddatatypesspandata-types"></a><span id="Data_Types"></span><span id="data_types"></span><span id="DATA_TYPES"></span>数据类型
+### <a name="span-iddata_typesspanspan-iddata_typesspanspan-iddata_typesspandata-types"></a><span id="Data_Types"></span><span id="data_types"></span><span id="DATA_TYPES"></span>数据类型
 
 -   字节：8 位
 
@@ -534,7 +534,7 @@ jz equal
 
  
 
-### <a name="span-idaddressingmodesspanspan-idaddressingmodesspanspan-idaddressingmodesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
+### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
 
 有几个不同的寻址模式，但它们都需要在窗体**T ptr \[expr\]** ，其中**T**是一些数据类型 （请参阅前面的数据类型部分） 和**expr**是涉及常量和寄存器一些表达式。
 
@@ -546,7 +546,7 @@ Pentium 是双重的问题，这意味着它可以在一个时钟计时周期中
 
 X86 是 CISC 处理器，因为您无需担心跳转延迟槽。
 
-### <a name="span-idsynchronizedmemoryaccessspanspan-idsynchronizedmemoryaccessspanspan-idsynchronizedmemoryaccessspansynchronized-memory-access"></a><span id="Synchronized_Memory_Access"></span><span id="synchronized_memory_access"></span><span id="SYNCHRONIZED_MEMORY_ACCESS"></span>同步的内存访问
+### <a name="span-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspansynchronized-memory-access"></a><span id="Synchronized_Memory_Access"></span><span id="synchronized_memory_access"></span><span id="SYNCHRONIZED_MEMORY_ACCESS"></span>同步的内存访问
 
 加载、 修改和存储的说明可以接收**锁**前缀，这会修改指令，如下所示：
 
@@ -558,7 +558,7 @@ X86 是 CISC 处理器，因为您无需担心跳转延迟槽。
 
 所有其他说明默认为 nonlocking。
 
-### <a name="span-idjumppredictionspanspan-idjumppredictionspanspan-idjumppredictionspanjump-prediction"></a><span id="Jump_Prediction"></span><span id="jump_prediction"></span><span id="JUMP_PREDICTION"></span>跳转预测
+### <a name="span-idjump_predictionspanspan-idjump_predictionspanspan-idjump_predictionspanjump-prediction"></a><span id="Jump_Prediction"></span><span id="jump_prediction"></span><span id="JUMP_PREDICTION"></span>跳转预测
 
 预测采取无条件跳转。
 

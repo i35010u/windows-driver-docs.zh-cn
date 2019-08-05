@@ -19,7 +19,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67392295"
 ---
-# <a name="irqlmiscellaneousfunction-rule-ndis"></a>Irql\_杂项\_函数规则 (ndis)
+# <a name="irql_miscellaneous_function-rule-ndis"></a>Irql\_杂项\_函数规则 (ndis)
 
 
 Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别上名为 NDIS 函数。
@@ -64,17 +64,17 @@ Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别上名为 NDIS 函
  **NdisQueryAdapterInstanceName**
 **NdisQueryDepthSList** 
  **NdisQueueIoWorkItem**** 
- **** 
- **** 
- **** 
- **** 
- **** 
- **** 
- **** 
- **** 
- **** 
- **** 
- **** 
+
+
+
+
+
+
+
+
+
+
+
 **
 
 |              |      |

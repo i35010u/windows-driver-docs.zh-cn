@@ -41,20 +41,20 @@ strkey2 = "    string-with-leading-or-trailing-whitespace     "  |
 
 
 <a href="" id="strkey1--strkey2-----"></a>*strkey1*, *strkey2*, ...  
-INF 文件中的每个字符串密钥必须指定包含字母、 数字，和/或其他显式可见的字符的唯一名称。 此类中的 %字符*strkey*令牌必须表示为**%%**。
+INF 文件中的每个字符串密钥必须指定包含字母、 数字，和/或其他显式可见的字符的唯一名称。 此类中的 %字符*strkey*令牌必须表示为 **%%** 。
 
-<a href="" id="some-string----some-string-"></a>*某些字符串* | **"**<em>一些字符串</em>**"**  
+<a href="" id="some-string----some-string-"></a>*某些字符串* |  **"** <em>一些字符串</em> **"**  
 指定的字符串，可以选择使用两个双引号字符 （"），包含字母、 数字、 标点符号和甚至某些隐式可见的字符，具体而言，内部的空间和/或制表符分隔。 但是，不带引号的字符串不能包含内部双引号引起来 （'）、 分号 （;）、 换行符、 返回时或任何不可见控件字符，而且不能包含反斜杠 (\)作为其最后一个字符。
 
-<a href="" id="------string-with-leading-or-trailing-whitespace-----------"></a>**"***     string-with-leading-or-trailing-whitespace*     **"** |   
+<a href="" id="------string-with-leading-or-trailing-whitespace-----------"></a> **"** *     string-with-leading-or-trailing-whitespace*     **"** |   
 
-<a href="" id="-very-long-multiline-string----"></a>**"**<em>very-long-multiline-string</em>**"** |   
+<a href="" id="-very-long-multiline-string----"></a> **"** <em>very-long-multiline-string</em> **"**  |   
 
-<a href="" id="-string-with-semicolon----"></a>**"**<em>string-with-semicolon</em>**"** |   
+<a href="" id="-string-with-semicolon----"></a> **"** <em>string-with-semicolon</em> **"**  |   
 
-<a href="" id="-string-ending-in-backslash---"></a>**"**<em>string-ending-in-backslash</em>**"** |  
+<a href="" id="-string-ending-in-backslash---"></a> **"** <em>string-ending-in-backslash</em> **"**  |  
 
-<a href="" id="--double-quoted-string-value--"></a>**"***"double-quoted-string-value"***"**  
+<a href="" id="--double-quoted-string-value--"></a> **"***"double-quoted-string-value"***"**  
 %为指定的值*strkey*%令牌*必须*括在双引号 （"） 中，如果它满足以下条件的任何：
 
 -   如果指定的字符串具有前导或尾随空格，必须保留其值的一部分，该字符串必须括在双引号字符以防止其前导和/或尾随空格被放弃 INF 分析器中。
@@ -79,16 +79,16 @@ INF 文件中的每个字符串密钥必须指定包含字母、 数字，和/�
 <a name="remarks"></a>备注
 -------
 
-由于系统 INF 分析器会剥离最外面的封闭从任何两个双引号对因此 **"**<em>带引号的字符串</em>**"** 定义 %*strkey*%令牌，许多系统 INF 文件定义所有 %*strkey*%令牌作为 **"**<em>带引号的字符串</em><strong>"</strong>秒以避免前导空格和尾随空格 INF 分析期间的意外的丢失。 利用 **"**<em>带引号的字符串</em><strong>"</strong>s 还确保该特别长字符串包装在行之间的值不能被截断，并且该字符串末尾有反斜杠无法连接到 INF 文件中的下一行。
+由于系统 INF 分析器会剥离最外面的封闭从任何两个双引号对因此 **"** <em>带引号的字符串</em> **"** 定义 %*strkey*%令牌，许多系统 INF 文件定义所有 %*strkey*%令牌作为 **"** <em>带引号的字符串</em><strong>"</strong>秒以避免前导空格和尾随空格 INF 分析期间的意外的丢失。 利用 **"** <em>带引号的字符串</em><strong>"</strong>s 还确保该特别长字符串包装在行之间的值不能被截断，并且该字符串末尾有反斜杠无法连接到 INF 文件中的下一行。
 
-若要创建一个国际 INF 文件，INF 可以具有一组特定于区域设置**字符串。**<em>LanguageID</em>节，如正式语法语句中所示。 *LanguageID*扩展是一个十六进制值，如下所示定义：
+若要创建一个国际 INF 文件，INF 可以具有一组特定于区域设置**字符串。** <em>LanguageID</em>节，如正式语法语句中所示。 *LanguageID*扩展是一个十六进制值，如下所示定义：
 
 -   较低的 10 位包含主语言 ID，接下来的 6 位包含子语言 ID，如果指定由中定义的 MAKELANGID 宏*Winnt.h*。
 -   语言和子语言 Id 必须匹配系统定义的值的 Win32 LANG_*XXX*和 SUBLANG_*XXX*中定义的常量*Winnt.h 中的。*
 
 例如， *LanguageID* 0x0407 值表示主语言 ID LANG_GERMAN (07) 与子语言 ID SUBLANG_GERMAN (01)。
 
-INF 文件只能包含一个**字符串**部分中的，以及一个**字符串。**<em>LanguageID</em>部分，了解每个*LanguageID*值。
+INF 文件只能包含一个**字符串**部分中的，以及一个**字符串。** <em>LanguageID</em>部分，了解每个*LanguageID*值。
 
 Windows 选择单个**字符串**节，用来转换所有 %*strkey*%令牌进行安装。 具体取决于特定计算机的当前区域设置，选择 Windows**字符串**部分如下所示：
 
@@ -103,7 +103,7 @@ Windows 选择单个**字符串**节，用来转换所有 %*strkey*%令牌进行
 
 使用 %*strkey*INF 文件内的 %令牌并不局限于用户可见的字符串值。 只要中定义的每个标记，可以方便 INF 编写器，以任何方式使用这些令牌**字符串**部分。 例如，当您编写需要多个 Guid 指定的 INF 文件，可能会方便地创建 %*strkey*%令牌为每个 GUID，通过为每个此类的 GUID 值的替代使用有意义的名称。
 
-指定一组**%** <em>strkey</em>**%="{**<em>GUID</em>**}"** INF 文件中的值**字符串**部分要求仅一次键入每个显式的 GUID 值。 这可以帮助提供更具可读性内部的 INF 文件比通过在整个 INF 文件中使用显式的 GUID 值。
+指定一组 **%** <em>strkey</em> **%="{** <em>GUID</em> **}"** INF 文件中的值**字符串**部分要求仅一次键入每个显式的 GUID 值。 这可以帮助提供更具可读性内部的 INF 文件比通过在整个 INF 文件中使用显式的 GUID 值。
 
 所有 %*strkey*%令牌必须引用这些 INF 文件内定义。 因此，对于具有任何 INF 文件**Include**并**需要**项，包括 INF 必须具有其自己**字符串**部分，以定义所有 %*strkey*该 INF 中引用的 %令牌。
 

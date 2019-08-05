@@ -89,7 +89,7 @@ reg-root-string,subkey[,value-entry-name][,flags][,value]
 有关详细信息存储在下的驱动程序信息**HKEY_LOCAL_MACHINE**根，请参阅[注册表树和设备和驱动程序的密钥](registry-trees-and-keys.md)。
 
 <a href="" id="subkey"></a>*subkey*  
-此可选值，格式为 %*strkey*中定义的 %令牌[**字符串**](inf-strings-section.md)部分的 INF 或注册表路径下给定*reg 根*(<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...)，指定以下值之一：
+此可选值，格式为 %*strkey*中定义的 %令牌[**字符串**](inf-strings-section.md)部分的 INF 或注册表路径下给定*reg 根*(<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...)，指定以下值之一：
 
 -   若要从注册表中的给定的注册表路径的末尾删除一个子项
 -   从该给定的值的项名称是要删除一个现有子项

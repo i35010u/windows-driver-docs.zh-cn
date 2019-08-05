@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67371155"
 ---
-# <a name="handling-unsupported-srbfunctionxxx"></a>处理不受支持的 SRB\_函数\_XXX
+# <a name="handling-unsupported-srb_function_xxx"></a>处理不受支持的 SRB\_函数\_XXX
 
 
 ## <span id="ddk_handling_unsupported_srb_function_xxx_kg"></span><span id="DDK_HANDLING_UNSUPPORTED_SRB_FUNCTION_XXX_KG"></span>

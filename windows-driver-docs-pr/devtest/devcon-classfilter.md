@@ -28,7 +28,7 @@ ms.locfileid: "67360368"
     devcon classfilter class {upper | lower} [ = | @driver | -driver | +driver | !driver ]...
 ```
 
-## <a name="span-idddkdevconclassfiltertoolsspanspan-idddkdevconclassfiltertoolsspanparameters"></a><span id="ddk_devcon_classfilter_tools"></span><span id="DDK_DEVCON_CLASSFILTER_TOOLS"></span>参数
+## <a name="span-idddk_devcon_classfilter_toolsspanspan-idddk_devcon_classfilter_toolsspanparameters"></a><span id="ddk_devcon_classfilter_tools"></span><span id="DDK_DEVCON_CLASSFILTER_TOOLS"></span>参数
 
 
 <span id="_______class______"></span><span id="_______CLASS______"></span> *class*   
@@ -73,7 +73,7 @@ ms.locfileid: "67360368"
 
 由于筛选器驱动程序更改需要重新启动设备，使用[ **DevCon 重启**](devcon-restart.md)命令，或包括 **/r** 中的（条件重启）参数**DevCon ClassFilter**命令。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```
 devcon classfilter mouse upper

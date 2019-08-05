@@ -23,7 +23,7 @@ Storport 验证功能监视 Storport 微型端口驱动程序和端口驱动程�
 
  
 
-### <a name="span-idviolationsdetectedbystorportverificationspanspan-idviolationsdetectedbystorportverificationspanviolations-detected-by-storport-verification"></a><span id="violations_detected_by_storport_verification"></span><span id="VIOLATIONS_DETECTED_BY_STORPORT_VERIFICATION"></span>Storport 验证检测到冲突
+### <a name="span-idviolations_detected_by_storport_verificationspanspan-idviolations_detected_by_storport_verificationspanviolations-detected-by-storport-verification"></a><span id="violations_detected_by_storport_verification"></span><span id="VIOLATIONS_DETECTED_BY_STORPORT_VERIFICATION"></span>Storport 验证检测到冲突
 
 Storport 验证功能可以检测到多个误用了 Storport 例程。 还有可能要单独禁用其中一些检查。
 
@@ -47,7 +47,7 @@ Storport 验证使用的 bug 检查参数的列表，请参阅[ **Bug 检查 0xF
 
  
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
 激活 Storport 验证选项的过程是不同于激活其他驱动程序验证程序选项的过程。
 
@@ -61,7 +61,7 @@ Storport 验证使用的 bug 检查参数的列表，请参阅[ **Bug 检查 0xF
 
 如果**VerifyLevel**值不存在，或等于 0xFFFFFFFF，Storport 验证将被禁用。
 
-### <a name="span-idactivatingwithoutrebootingspanspan-idactivatingwithoutrebootingspanactivating-without-rebooting"></a><span id="activating_without_rebooting"></span><span id="ACTIVATING_WITHOUT_REBOOTING"></span>激活时避免重新启动
+### <a name="span-idactivating_without_rebootingspanspan-idactivating_without_rebootingspanactivating-without-rebooting"></a><span id="activating_without_rebooting"></span><span id="ACTIVATING_WITHOUT_REBOOTING"></span>激活时避免重新启动
 
 一般情况下，您不能激活或停 Storport 验证用无需重新启动 （重新启动） 在任何 Windows 操作系统上的计算机。 *StorPort.sys*驱动程序读取**VerifyLevel**注册表项仅当它加载时，这通常是在启动时。 但是，如果*StorPort.sys*添加注册表项，或如果它是卸载并重新加载，可以自己启用 Storport 验证在 Windows Vista 和更高版本的 Windows 上，而无需重新启动计算机时不加载驱动程序。
 

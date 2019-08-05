@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67358186"
 ---
-# <a name="using-the-connectlinebased-version-of-ioconnectinterruptex"></a>使用 CONNECT\_行\_IoConnectInterruptEx 基于版本
+# <a name="using-the-connect_line_based-version-of-ioconnectinterruptex"></a>使用 CONNECT\_行\_IoConnectInterruptEx 基于版本
 
 
 对于 Windows Vista 和更高版本操作系统中，驱动程序可以使用 CONNECT\_行\_基于版本[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)例程的驱动程序的基于线条的中断。 (早期版本操作系统的驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版**IoConnectInterruptEx**。)

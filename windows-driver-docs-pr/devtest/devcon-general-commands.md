@@ -28,7 +28,7 @@ DevCon (DevCon.exe) 是一个命令行工具，可以运行 Windows 的计算机
 devcon [/m:\\computer] [/r] command [arguments] 
 ```
 
-## <a name="span-idddkdevcongeneralcommandstoolsspanspan-idddkdevcongeneralcommandstoolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>参数
+## <a name="span-idddk_devcon_general_commands_toolsspanspan-idddk_devcon_general_commands_toolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>参数
 
 
 **请注意**  若要更改的状态或设备的配置，必须是计算机上 Administrators 组的成员。
@@ -116,7 +116,7 @@ DevCon 命令中的参数必须出现在语法中所示的顺序。 如果参数
 
 许多 DevCon 操作需要的设备硬件 ID。 若要在后续 DevCon 操作中使用计算机上创建的所有设备 Id 的硬件的列表，以开头[ **DevCon HwIDs** ](devcon-hwids.md)命令。 有关详细信息，请参阅[硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)并[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
 
-### <a name="span-idddkdevconsearchlogictoolsspanspan-idddkdevconsearchlogictoolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon 搜索设备的方式
+### <a name="span-idddk_devcon_search_logic_toolsspanspan-idddk_devcon_search_logic_toolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon 搜索设备的方式
 
 DevCon 标识其计算机名称、 硬件 ID、 兼容 ID、 设备实例 ID 和/或设备安装程序类的设备。
 
@@ -142,7 +142,7 @@ DevCon 提供两种方法来重新启动操作系统和重启设备的一种方�
 
 -   **DevCon 重启**操作重新启动指定的设备。 它仅在本地计算机上有效且不能结合其他操作。
 
-### <a name="span-idddkdevconreturncodestoolsspanspan-idddkdevconreturncodestoolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon 返回代码
+### <a name="span-idddk_devcon_return_codes_toolsspanspan-idddk_devcon_return_codes_toolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon 返回代码
 
 DevCon 程序和脚本以确定是否成功 DevCon 命令中返回一个整数，可使用 (例如，* * 返回 = devcon hwids \\* * *)。
 

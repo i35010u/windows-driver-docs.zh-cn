@@ -33,13 +33,13 @@ HTTP 符号服务器不能为符号路径链由于其只读特性中的下游存
 
  
 
-### <a name="span-idconfiguringthedirectoriesspanspan-idconfiguringthedirectoriesspancreating-the-symbol-directory"></a><span id="configuring_the_directories"></span><span id="CONFIGURING_THE_DIRECTORIES"></span>创建符号目录
+### <a name="span-idconfiguring_the_directoriesspanspan-idconfiguring_the_directoriesspancreating-the-symbol-directory"></a><span id="configuring_the_directories"></span><span id="CONFIGURING_THE_DIRECTORIES"></span>创建符号目录
 
 选择将用作符号存储区的目录开始。 在示例中，我们调用此目录 c:\\symstore 和在网络上的服务器的名称是\\SymMachineName。
 
 有关如何填充符号存储区的详细信息，请参阅[SymStore](symstore.md)并[符号存储文件夹树](symbol-store-folder-tree.md)。
 
-### <a name="span-idconfiguringiisspanspan-idconfiguringiisspanconfiguring-iis"></a><span id="configuring_iis"></span><span id="CONFIGURING_IIS"></span>配置 IIS
+### <a name="span-idconfiguring_iisspanspan-idconfiguring_iisspanconfiguring-iis"></a><span id="configuring_iis"></span><span id="CONFIGURING_IIS"></span>配置 IIS
 
 必须配置 Internet 信息服务 (IIS) 为通过创建虚拟目录和配置 MIME 类型提供符号。 这样做后，可以选择的身份验证方法。
 
@@ -49,7 +49,7 @@ HTTP 符号服务器不能为符号路径链由于其只读特性中的下游存
 
 2.  导航到**网站**。
 
-3.  右键单击**Default Web Site**或正在使用的站点的名称，然后选择**添加虚拟目录...**.
+3.  右键单击**Default Web Site**或正在使用的站点的名称，然后选择**添加虚拟目录...** .
 
 4.  类型**符号**有关**别名**然后单击**下一步**。
 
@@ -63,7 +63,7 @@ HTTP 符号服务器不能为符号路径链由于其只读特性中的下游存
 
 **子目录配置**
 
-1.  导航到**\[计算机\]**。
+1.  导航到 **\[计算机\]** 。
 
 2.  打开**配置编辑器**。
 
@@ -77,7 +77,7 @@ HTTP 符号服务器不能为符号路径链由于其只读特性中的下游存
 
 **选择性地使符号文件可浏览**
 
-1.  导航到**\[计算机\]|站点 |\[网站\]|符号**。
+1.  导航到 **\[计算机\]|站点 |\[网站\]|符号**。
 
 2.  双击**目录浏览**的中心窗格中。
 
@@ -127,7 +127,7 @@ HTTP 符号服务器不能为符号路径链由于其只读特性中的下游存
 
 IIS 现在已准备好提供符号存储区中的所有类型的符号文件。
 
-## <a name="span-idconfiguringauthenticationspanspan-idconfiguringauthenticationspanspan-idconfiguringauthenticationspanconfiguring-authentication"></a><span id="Configuring_Authentication"></span><span id="configuring_authentication"></span><span id="CONFIGURING_AUTHENTICATION"></span>配置身份验证
+## <a name="span-idconfiguring_authenticationspanspan-idconfiguring_authenticationspanspan-idconfiguring_authenticationspanconfiguring-authentication"></a><span id="Configuring_Authentication"></span><span id="configuring_authentication"></span><span id="CONFIGURING_AUTHENTICATION"></span>配置身份验证
 
 
 就可以将 IIS 配置为使用"集成 Windows 身份验证"，以便客户端 (例如 windbg.exe) 可以自动进行身份验证对 IIS 而不会提示最终用户的凭据。
@@ -140,7 +140,7 @@ IIS 现在已准备好提供符号存储区中的所有类型的符号文件。
 
 1.  启动**Internet Information Services (IIS) 管理器**。
 
-2.  导航到**\[计算机\]|站点 |\[网站\]|符号**。
+2.  导航到 **\[计算机\]|站点 |\[网站\]|符号**。
 
 3.  双击**身份验证**的中心窗格中。
 
@@ -154,7 +154,7 @@ IIS 现在已准备好提供符号存储区中的所有类型的符号文件。
 
 如果未列出 Window 身份验证，请使用**打开或关闭打开的 Windows 功能**以启用该功能。 在每个版本的 Windows 中不同的功能的位置。 在 Windows 8.1 / Windows 2012 R2，它位于 Internet 信息服务 |World Wide Web 服务 |安全性。
 
-## <a name="span-iddisablekerberossupportspanspan-iddisablekerberossupportspanspan-iddisablekerberossupportspandisable-kerberos-support"></a><span id="Disable_Kerberos_Support"></span><span id="disable_kerberos_support"></span><span id="DISABLE_KERBEROS_SUPPORT"></span>禁用 Kerberos 支持
+## <a name="span-iddisable_kerberos_supportspanspan-iddisable_kerberos_supportspanspan-iddisable_kerberos_supportspandisable-kerberos-support"></a><span id="Disable_Kerberos_Support"></span><span id="disable_kerberos_support"></span><span id="DISABLE_KERBEROS_SUPPORT"></span>禁用 Kerberos 支持
 
 
 连接到 IIS 时，SymSrv.dll 不支持 Kerberos 身份验证。 在这种情况下，必须在 IIS 和 NTLM 需要将其设置为唯一的 Windows 身份验证协议中禁用 Kerberos 身份验证。
@@ -179,7 +179,7 @@ IIS 现在已准备好提供符号存储区中的所有类型的符号文件。
     appcmd.exe set config -section:system.webServer/security/authentication/windowsAuthentication /+"providers.[value='Negotiate,NTLM']" /commit:apphost
     ```
 
-## <a name="span-idconfiguringsymsrvclientauthenticationpromptsspanspan-idconfiguringsymsrvclientauthenticationpromptsspanspan-idconfiguringsymsrvclientauthenticationpromptsspanconfiguring-symsrv-client-authentication-prompts"></a><span id="Configuring_SymSrv_Client_Authentication_Prompts"></span><span id="configuring_symsrv_client_authentication_prompts"></span><span id="CONFIGURING_SYMSRV_CLIENT_AUTHENTICATION_PROMPTS"></span>配置 SymSrv 客户端身份验证提示
+## <a name="span-idconfiguring_symsrv_client_authentication_promptsspanspan-idconfiguring_symsrv_client_authentication_promptsspanspan-idconfiguring_symsrv_client_authentication_promptsspanconfiguring-symsrv-client-authentication-prompts"></a><span id="Configuring_SymSrv_Client_Authentication_Prompts"></span><span id="configuring_symsrv_client_authentication_prompts"></span><span id="CONFIGURING_SYMSRV_CLIENT_AUTHENTICATION_PROMPTS"></span>配置 SymSrv 客户端身份验证提示
 
 
 当 SymSrv 收到身份验证请求时，调试器可以显示身份验证对话框中，也可以自动拒绝该请求，具体取决于配置的方式。 可以配置此行为使用 ！ 上的符号提示 | 关闭。 若要开启提示，请使用此命令的示例。

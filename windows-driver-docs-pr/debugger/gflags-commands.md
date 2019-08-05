@@ -90,7 +90,7 @@ gflags /p [/disable ImageFile] [/?]
 glags /?
 ```
 
-## <a name="span-idddkgflagscommandsdtoolsspanspan-idddkgflagscommandsdtoolsspanparameters"></a><span id="ddk_gflags_commands_dtools"></span><span id="DDK_GFLAGS_COMMANDS_DTOOLS"></span>参数
+## <a name="span-idddk_gflags_commands_dtoolsspanspan-idddk_gflags_commands_dtoolsspanparameters"></a><span id="ddk_gflags_commands_dtools"></span><span id="DDK_GFLAGS_COMMANDS_DTOOLS"></span>参数
 
 
 <span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span> *Flag*   
@@ -152,7 +152,7 @@ glags /?
 <span id="_______PoolTag______"></span><span id="_______pooltag______"></span><span id="_______POOLTAG______"></span> *PoolTag*   
 (Windows Vista 及更高版本。)指定的池标记[特殊池](special-pool.md)功能。 只能用于**spp**标志。
 
-输入的四个字符模式*PoolTag*，例如，标记 1。 它可以包括 **？** （替换为任何单个字符） 和**\\*** （替换为多个字符） 通配符字符。 例如，Fat\*或 Av？ 4。 池标记始终是区分大小写的。
+输入的四个字符模式*PoolTag*，例如，标记 1。 它可以包括 **？** （替换为任何单个字符） 和 **\\** * （替换为多个字符） 通配符字符。 例如，Fat\*或 Av？ 4。 池标记始终是区分大小写的。
 
 <span id="0xSize______"></span><span id="0xsize______"></span><span id="0XSIZE______"></span>**0 x * * * 大小*   
 (Windows Vista 及更高版本。)指定特殊池功能的大小范围。 只能用于**spp**标志。 选择大小值的指导，请参阅"选择分配大小"中[特殊池](special-pool.md)。
@@ -162,7 +162,7 @@ glags /?
 
 不使用其他参数 **/ro**在注册表中显示的对象引用跟踪设置。
 
-若要启用对象引用跟踪，必须包含至少一个池标记 (**/t** *PoolTag*) 或一个图像文件 (**/i** ImageFile) 命令中。 有关详细信息，请参阅[示例 15:使用对象引用跟踪](example-15--using-object-reference-tracing.md)。
+若要启用对象引用跟踪，必须包含至少一个池标记 ( **/t** *PoolTag*) 或一个图像文件 ( **/i** ImageFile) 命令中。 有关详细信息，请参阅[示例 15:使用对象引用跟踪](example-15--using-object-reference-tracing.md)。
 
 下表列出了使用有效的子参数均 **/ro**。
 
@@ -203,7 +203,7 @@ glags /?
 
 不使用其他参数 **/ko**显示内核标志 （运行时间） 对象引用跟踪设置。
 
-若要启用对象引用跟踪，必须包含至少一个池标记 (**/t** *PoolTag*) 或一个图像文件 (**/i** *ImageFile*) 中该命令。
+若要启用对象引用跟踪，必须包含至少一个池标记 ( **/t** *PoolTag*) 或一个图像文件 ( **/i** *ImageFile*) 中该命令。
 
 下表列出了使用有效的子参数均 **/ko**。
 
@@ -283,7 +283,7 @@ glags /?
 
 在 Windows Server 2003 和早期系统上 **/地址**参数是仅对有效*x*86 基于计算机。 在 Windows Vista： 上是有效的所有受支持的体系结构上。
 
-<span id="________dlls_DLL___DLL...__"></span><span id="________dlls_dll___dll...__"></span><span id="________DLLS_DLL___DLL...__"></span> **/dlls** *DLL*\[**,** *DLL*...\]   
+<span id="________dlls_DLL___DLL...__"></span><span id="________dlls_dll___dll...__"></span><span id="________DLLS_DLL___DLL...__"></span> **/dlls** *DLL*\[ **,** *DLL*...\]   
 启用整页堆验证用于分配请求指定的 Dll 和进程的所有其他分配的标准页面堆验证。
 
 *DLL*是二进制文件，包括其文件扩展名的名称。 指定的文件必须是该进程在执行期间加载的函数库。
@@ -297,7 +297,7 @@ NTSD 有关的信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-
 
 此选项可用于很难从命令提示符并启动其他进程启动的程序。
 
-<span id="_DebuggerCommand_______"></span><span id="_debuggercommand_______"></span><span id="_DEBUGGERCOMMAND_______"></span>**"**<em>DebuggerCommand</em>**"**   
+<span id="_DebuggerCommand_______"></span><span id="_debuggercommand_______"></span><span id="_DEBUGGERCOMMAND_______"></span> **"** <em>DebuggerCommand</em> **"**    
 指定调试程序和发送到调试器的命令。 带引号的字符串这可能包括调试器，调试程序名称和调试器将解释的命令参数的完全限定的路径。 需要引号。
 
 如果该命令包含在调试器的路径，路径不能包含其他任何引号。 如果其他引号出现，命令行界面 (*cmd.exe*) 将解释该命令。
@@ -363,7 +363,7 @@ NTSD 有关的信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-
 <span id="________no_lock_checks______"></span><span id="________NO_LOCK_CHECKS______"></span> **/no\_lock\_checks**   
 禁用关键部分验证程序。
 
-<span id="_______________"></span> **/?**   
+<span id="_______________"></span> **/?**    
 显示有关 GFlags 帮助。 与 **/p**， **/？** 显示在 GFlags 页面堆验证选项的帮助。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
@@ -378,7 +378,7 @@ NTSD 有关的信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-
 
 **/Full**， **/ 随机**， **/大小**， **/地址**，并 **/dlls**页堆参数 **/ 启用**操作确定哪些分配可能会有所页堆验证和使用的验证方法。 可以在每个命令使用以下参数之一。 默认为标准页的过程的所有分配的堆验证。 剩余的参数设置页堆验证选项。
 
-GFlags 中的页堆功能只监视使用标准 Windows 堆管理器函数的堆内存分配 (**HeapAlloc**， **GlobalAlloc**， **LocalAlloc**，**malloc**，**新**，**新\[\]**，或解除分配的函数及其相应)，或使用自定义操作调用标准堆管理器函数。
+GFlags 中的页堆功能只监视使用标准 Windows 堆管理器函数的堆内存分配 (**HeapAlloc**， **GlobalAlloc**， **LocalAlloc**，**malloc**，**新**，**新\[\]** ，或解除分配的函数及其相应)，或使用自定义操作调用标准堆管理器函数。
 
 若要确定是否启用了完整或标准页堆验证程序，在命令行中，键入**gflags/p**。 在生成的显示中，**跟踪**指示标准页面堆验证已启用程序和**完整跟踪**指示为程序启用了整页堆验证。
 

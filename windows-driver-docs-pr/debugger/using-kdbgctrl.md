@@ -27,7 +27,7 @@ KDbgCtrl 可以控制五个不同的设置：完整的内核调试、 自动内�
 
 若要使用 KDbgCtrl，您必须已启用的上一次启动之前对目标计算机的启动设置中的内核调试。 KDbgCtrl 不能用于启用内核调试，如果没有这样做。 请参阅[启用调试的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-debugging)的详细信息请参阅启动设置。
 
-### <a name="span-idfullkerneldebuggingspanspan-idfullkerneldebuggingspanfull-kernel-debugging"></a><span id="full_kernel_debugging"></span><span id="FULL_KERNEL_DEBUGGING"></span>完整的内核调试
+### <a name="span-idfull_kernel_debuggingspanspan-idfull_kernel_debuggingspanfull-kernel-debugging"></a><span id="full_kernel_debugging"></span><span id="FULL_KERNEL_DEBUGGING"></span>完整的内核调试
 
 启用完整的内核调试后，在主计算机上运行的内核调试程序可以分解为目标计算机。 目标计算机将进入内核调试器是否命中内核模式异常。 将消息从目标到主机，如**DbgPrint**还允许输出、 符号加载消息和重定向的用户模式下调试程序。
 
@@ -37,7 +37,7 @@ KDbgCtrl 可以控制五个不同的设置：完整的内核调试、 自动内�
 
 如果你想要检查的当前设置并使用它来控制批处理文件中的执行，则可以使用**kdbgctrl cx**命令。 此命令的详细信息，请参阅[ **KDbgCtrl 命令行选项**](kdbgctrl-command-line-options.md)。
 
-### <a name="span-idautomatickerneldebuggingspanspan-idautomatickerneldebuggingspanautomatic-kernel-debugging"></a><span id="automatic_kernel_debugging"></span><span id="AUTOMATIC_KERNEL_DEBUGGING"></span>自动内核调试
+### <a name="span-idautomatic_kernel_debuggingspanspan-idautomatic_kernel_debuggingspanautomatic-kernel-debugging"></a><span id="automatic_kernel_debugging"></span><span id="AUTOMATIC_KERNEL_DEBUGGING"></span>自动内核调试
 
 如果启用了完整的内核调试，自动内核调试的当前设置并不重要--允许的所有通信。
 
@@ -49,7 +49,7 @@ KDbgCtrl 可以控制五个不同的设置：完整的内核调试、 自动内�
 
 自动内核调试默认处于禁用状态 （尽管这是重要的除非完全内核调试已禁用）。 若要检查当前的设置值，请使用**kdbgctrl ca**。 若要禁用此设置，请使用**kdbgctrl-da**。 若要启用此设置，请使用**kdbgctrl ea**。
 
-### <a name="span-idusermodeerrorhandlingspanspan-idusermodeerrorhandlingspanuser-mode-error-handling"></a><span id="user_mode_error_handling"></span><span id="USER_MODE_ERROR_HANDLING"></span>用户模式下的错误处理
+### <a name="span-iduser_mode_error_handlingspanspan-iduser_mode_error_handlingspanuser-mode-error-handling"></a><span id="user_mode_error_handling"></span><span id="USER_MODE_ERROR_HANDLING"></span>用户模式下的错误处理
 
 启用用户模式下的错误处理后，某些用户模式事件将导致进入内核调试器在目标计算机。
 
@@ -61,7 +61,7 @@ KDbgCtrl 可以控制五个不同的设置：完整的内核调试、 自动内�
 
 默认情况下启用用户模式下的错误处理。 若要检查当前的设置值，请使用**kdbgctrl-cu**。 若要禁用此设置，请使用**kdbgctrl-du**。 若要启用此设置，请使用**kdbgctrl 欧洲**。
 
-### <a name="span-idblockingkerneldebuggingspanspan-idblockingkerneldebuggingspanblocking-kernel-debugging"></a><span id="blocking_kernel_debugging"></span><span id="BLOCKING_KERNEL_DEBUGGING"></span>阻止内核调试
+### <a name="span-idblocking_kernel_debuggingspanspan-idblocking_kernel_debuggingspanblocking-kernel-debugging"></a><span id="blocking_kernel_debugging"></span><span id="BLOCKING_KERNEL_DEBUGGING"></span>阻止内核调试
 
 在某些情况下可能想要设置目标计算机以进行内核调试，但启用内核调试之前启动目标计算机后。 通过阻止内核调试，可以执行的操作。
 
@@ -94,7 +94,7 @@ kdbgctrl -eb
 
 可以使用**kdbgctrl cb**以检查是否阻止内核调试。
 
-### <a name="span-idthedbgprintbuffersizespanspan-idthedbgprintbuffersizespanthe-dbgprint-buffer-size"></a><span id="the_dbgprint_buffer_size"></span><span id="THE_DBGPRINT_BUFFER_SIZE"></span>DbgPrint 缓冲区大小
+### <a name="span-idthe_dbgprint_buffer_sizespanspan-idthe_dbgprint_buffer_sizespanthe-dbgprint-buffer-size"></a><span id="the_dbgprint_buffer_size"></span><span id="THE_DBGPRINT_BUFFER_SIZE"></span>DbgPrint 缓冲区大小
 
 DbgPrint 缓冲区存储目标计算机将发送到内核调试程序的消息。
 

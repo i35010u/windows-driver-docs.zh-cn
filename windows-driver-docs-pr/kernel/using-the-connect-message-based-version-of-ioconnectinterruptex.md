@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67365784"
 ---
-# <a name="using-the-connectmessagebased-version-of-ioconnectinterruptex"></a>使用 CONNECT\_消息\_IoConnectInterruptEx 基于版本
+# <a name="using-the-connect_message_based-version-of-ioconnectinterruptex"></a>使用 CONNECT\_消息\_IoConnectInterruptEx 基于版本
 
 
 对于 Windows Vista 和更高版本操作系统中，驱动程序可以使用 CONNECT\_消息\_基于版本[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册 ISR 的驱动程序消息信号中断。 该驱动程序指定的连接值\_消息\_基于 for*参数*-&gt;**版本**，并使用的成员*参数*-&gt;**MessageBased**来指定该操作的其他参数。

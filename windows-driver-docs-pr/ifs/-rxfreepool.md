@@ -21,7 +21,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63323307"
 ---
-# <a name="rxfreepool-function"></a>\_RxFreePool 函数
+# <a name="_rxfreepool-function"></a>\_RxFreePool 函数
 
 
 **\_RxFreePool**释放以前分配使用的内存 **\_RxAllocatePoolWithTag**。
@@ -61,7 +61,7 @@ VOID _RxFreePool(
 
 使用分配的内存[  **\_RxAllocatePoolWithTag** ](-rxallocatepoolwithtag.md)应释放通过调用 **\_RxFreePool**。
 
- **\_RxFreePool**例程调用**ExFreePool**。
+**\_RxFreePool**例程调用**ExFreePool**。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,9 +90,9 @@ VOID _RxFreePool(
 ## <a name="see-also"></a>请参阅
 
 
-[**\_RxAllocatePoolWithTag**](-rxallocatepoolwithtag.md)
+[ **\_RxAllocatePoolWithTag**](-rxallocatepoolwithtag.md)
 
-[**\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
+[ **\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
 
  
 

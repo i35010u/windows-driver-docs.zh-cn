@@ -212,10 +212,10 @@ Windows Server 2003 在 SP1 之前，如果*体系结构*未指定，则关联�
 
 Windows 安装过程中，选择[ **INF*模型*部分**](inf-models-section.md)如下所示：
 
-1.  如果在基于 x86 的版本包括数据中心产品套件的操作系统 （Windows XP 或更高版本） 中正在运行 Windows，Windows 将选择**\[FooMfg.NTx86...0x80\]** ***模型***部分。
-2.  如果 Windows 正在运行的操作系统 （Windows XP 或更高版本） 的任何产品套件基于 x64 的版本中，Windows 将选择**\[FooMfg.NTamd64\]** ***模型***部分。
+1.  如果在基于 x86 的版本包括数据中心产品套件的操作系统 （Windows XP 或更高版本） 中正在运行 Windows，Windows 将选择 **\[FooMfg.NTx86...0x80\]** ***模型***部分。
+2.  如果 Windows 正在运行的操作系统 （Windows XP 或更高版本） 的任何产品套件基于 x64 的版本中，Windows 将选择 **\[FooMfg.NTamd64\]** ***模型***部分。
 
-如果 INF 旨在用于使用操作系统版本早于 Windows XP，则必须还包含未修饰***模型***名为部分 **\[FooMfg\]**。
+如果 INF 旨在用于使用操作系统版本早于 Windows XP，则必须还包含未修饰***模型***名为部分 **\[FooMfg\]** 。
 
 如果 INF 支持多个制造商生产，每个制造商必须遵循这些规则。
 
@@ -223,11 +223,11 @@ Windows 安装过程中，选择[ **INF*模型*部分**](inf-models-section.md)�
 
 -   **%FooCorp% = FooMfg, NTx86**
 
-    在此示例中，结果 INF***模型***节的名称是 **\[FooMfg.NTx86\]**，并适用于任何 x86 版本的操作系统 (Windows XP 或更高版本)。
+    在此示例中，结果 INF***模型***节的名称是 **\[FooMfg.NTx86\]** ，并适用于任何 x86 版本的操作系统 (Windows XP 或更高版本)。
 
 -   **%FooCorp% = FooMfg, NT.7.8**
 
-    在此示例中，对于版本 7.8 和更高版本的操作系统生成 INF***模型***节的名称是 **\[FooMfg.NT.7.8\]**。 对于早期版本的操作系统，例如，Windows XP **\[FooMfg.NT\]** 使用。
+    在此示例中，对于版本 7.8 和更高版本的操作系统生成 INF***模型***节的名称是 **\[FooMfg.NT.7.8\]** 。 对于早期版本的操作系统，例如，Windows XP **\[FooMfg.NT\]** 使用。
 
 安装程序的所选内容的哪些 INF***模型***要使用的部分根据以下规则：
 
@@ -238,9 +238,9 @@ Windows 安装过程中，选择[ **INF*模型*部分**](inf-models-section.md)�
 
 **%FooCorp%=FooMfg, NT, NT.5, NT.5.5, NT....0x80**
 
-在这种情况下，Windows 将查找[ **INF*模型*部分**](inf-models-section.md)名为 **\[FooMfg.NT.5\]**。 Windows 还使用**\[FooMfg.NT.5\]** 部分中的特定版本号将优先于产品类型和套件掩码因为如果数据中心版本的 Windows XP 上执行。
+在这种情况下，Windows 将查找[ **INF*模型*部分**](inf-models-section.md)名为 **\[FooMfg.NT.5\]** 。 Windows 还使用 **\[FooMfg.NT.5\]** 部分中的特定版本号将优先于产品类型和套件掩码因为如果数据中心版本的 Windows XP 上执行。
 
-如果你想要显式排除的特定操作系统版本、 产品类型或套件 INF，创建一个空[ **INF*模型*部分**](inf-models-section.md)。 例如，名为一个空部分**\[FooMfg.NTx86.6.0\]** 禁止在基于 x86 的操作系统版本 6.0 和更高版本上安装。
+如果你想要显式排除的特定操作系统版本、 产品类型或套件 INF，创建一个空[ **INF*模型*部分**](inf-models-section.md)。 例如，名为一个空部分 **\[FooMfg.NTx86.6.0\]** 禁止在基于 x86 的操作系统版本 6.0 和更高版本上安装。
 
 <a name="examples"></a>示例
 --------

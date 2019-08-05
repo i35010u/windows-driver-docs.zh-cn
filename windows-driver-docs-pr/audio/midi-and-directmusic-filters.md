@@ -42,7 +42,7 @@ MIDI 或 DirectMusic*捕获*筛选器将作为输入一系列的原始 MIDI 消�
 
 单个 MIDI 或 DirectMusic 筛选器可以执行三个函数-合成、 输出和捕获-具体取决于筛选器表示设备的功能的组合。 例如，纯 MPU 401 设备执行输出和捕获，但不是合成。
 
-### <a name="span-idmidifilterspanspan-idmidifilterspanspan-idmidifilterspanmidi-filter"></a><span id="MIDI_Filter"></span><span id="midi_filter"></span><span id="MIDI_FILTER"></span>MIDI 筛选器
+### <a name="span-idmidi_filterspanspan-idmidi_filterspanspan-idmidi_filterspanmidi-filter"></a><span id="MIDI_Filter"></span><span id="midi_filter"></span><span id="MIDI_FILTER"></span>MIDI 筛选器
 
 作为端口/微型端口驱动程序对实现的 MIDI 筛选器。 MIDI 筛选器工厂创建 MIDI 筛选器，如下所示：
 
@@ -56,7 +56,7 @@ MIDI 或 DirectMusic*捕获*筛选器将作为输入一系列的原始 MIDI 消�
 
 若要支持 MIDI 输出和合成器的设备，MIDI 端口驱动程序包含原始 MIDI 消息输出到与为一毫秒的计时器分辨率的微型端口驱动程序软件 sequencer。
 
-### <a name="span-iddirectmusicfilterspanspan-iddirectmusicfilterspanspan-iddirectmusicfilterspandirectmusic-filter"></a><span id="DirectMusic_Filter"></span><span id="directmusic_filter"></span><span id="DIRECTMUSIC_FILTER"></span>DirectMusic 筛选器
+### <a name="span-iddirectmusic_filterspanspan-iddirectmusic_filterspanspan-iddirectmusic_filterspandirectmusic-filter"></a><span id="DirectMusic_Filter"></span><span id="directmusic_filter"></span><span id="DIRECTMUSIC_FILTER"></span>DirectMusic 筛选器
 
 DirectMusic 筛选器提供 MIDI 筛选器的功能的超集。 超集包括这些附加功能：
 
@@ -80,7 +80,7 @@ DirectMusic 筛选器提供 MIDI 筛选器的功能的超集。 超集包括这�
 
 若要支持 DirectMusic 合成器设备，Dmu 端口驱动程序包含可以输出带时间戳之前它们计划要播放的硬件排序器的缓冲区的 MIDI 事件较低分辨率 （1 毫秒） 软件 sequencer。 若要支持 DirectMusic 输出设备，端口驱动程序软件 sequencer 可以还将配置为原始 MIDI 消息输出在它们是要播放的时间。
 
-### <a name="span-idenumeratingmidianddirectmusicdevicesspanspan-idenumeratingmidianddirectmusicdevicesspanspan-idenumeratingmidianddirectmusicdevicesspanenumerating-midi-and-directmusic-devices"></a><span id="Enumerating_MIDI_and_DirectMusic_Devices"></span><span id="enumerating_midi_and_directmusic_devices"></span><span id="ENUMERATING_MIDI_AND_DIRECTMUSIC_DEVICES"></span>枚举 MIDI 和 DirectMusic 设备
+### <a name="span-idenumerating_midi_and_directmusic_devicesspanspan-idenumerating_midi_and_directmusic_devicesspanspan-idenumerating_midi_and_directmusic_devicesspanenumerating-midi-and-directmusic-devices"></a><span id="Enumerating_MIDI_and_DirectMusic_Devices"></span><span id="enumerating_midi_and_directmusic_devices"></span><span id="ENUMERATING_MIDI_AND_DIRECTMUSIC_DEVICES"></span>枚举 MIDI 和 DirectMusic 设备
 
 当枚举输入或输出的 MIDI 设备的整个 Windows 多媒体**midiInXxx**或**midiOutXxx**函数中，应用程序能够看到其微型端口驱动程序公开仅WDM设备*MIDI pin*。 这些是管理但缺少支持高级功能，例如 DLS 和通道的组的原始 MIDI 流的 pin。 但是，枚举通过 DirectMusic 设备时，应用程序可以看到以这两个 MIDI 插针 WDM 设备和*DirectMusic pin*。 DirectMusic pin 管理加盖时间戳 MIDI 流，并支持 DLS 和通道的组。
 
@@ -106,7 +106,7 @@ MIDI 筛选器上的 MIDI pin 实例公开[IMiniportMidiStream](https://docs.mic
 
 MIDI 合成器，它显示位于 Windows 多媒体控制面板 (Mmsys.cpl) 将具有与 WDM 设备相同的名称。
 
-### <a name="span-idsystem-suppliedportandminiportdriversspanspan-idsystem-suppliedportandminiportdriversspanspan-idsystem-suppliedportandminiportdriversspansystem-supplied-port-and-miniport-drivers"></a><span id="System-Supplied_Port_and_Miniport_Drivers"></span><span id="system-supplied_port_and_miniport_drivers"></span><span id="SYSTEM-SUPPLIED_PORT_AND_MINIPORT_DRIVERS"></span>系统提供的端口和微型端口驱动程序
+### <a name="span-idsystem-supplied_port_and_miniport_driversspanspan-idsystem-supplied_port_and_miniport_driversspanspan-idsystem-supplied_port_and_miniport_driversspansystem-supplied-port-and-miniport-drivers"></a><span id="System-Supplied_Port_and_Miniport_Drivers"></span><span id="system-supplied_port_and_miniport_drivers"></span><span id="SYSTEM-SUPPLIED_PORT_AND_MINIPORT_DRIVERS"></span>系统提供的端口和微型端口驱动程序
 
 多个系统提供 MIDI 和 Dmu 微型端口驱动程序已内置到 PortCls 系统驱动程序：
 

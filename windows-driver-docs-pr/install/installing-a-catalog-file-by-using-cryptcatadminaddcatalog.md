@@ -18,7 +18,7 @@ ms.locfileid: "63325285"
 
 安装程序必须适用于 Windows 7 和.NET Framework 4.0 中使用 Microsoft Windows 软件开发工具包 (SDK)，如下所示：
 
-- 安装程序的源文件必须包含以下标头 (*.h*) 文件：
+- 安装程序的源文件必须包含以下标头 ( *.h*) 文件：
   - *Mscat.h*，用于定义原型和结构有关的各种**CryptCATAdmin * Xxx*** 函数。
   - *Softpub.h*，用于定义的各种数据结构和使用的 Guid **CryptCATAdmin * Xxx*** 函数。
 

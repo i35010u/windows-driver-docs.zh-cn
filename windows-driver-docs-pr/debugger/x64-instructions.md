@@ -31,7 +31,7 @@ ms.locfileid: "63381917"
 
 X64 指令集包括最近添加到 x86，如 SSE 2 的项目。 针对 x64 编译的程序可以自由地使用这些说明。
 
-### <a name="span-iddatatransferspanspan-iddatatransferspanspan-iddatatransferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>数据传输
+### <a name="span-iddata_transferspanspan-iddata_transferspanspan-iddata_transferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>数据传输
 
 X64 提供 MOV 指令可处理 64 位即时常量或内存地址的新变体。
 
@@ -107,7 +107,7 @@ X64 还提供了新的说明，以符号扩展为 64 位的 32 位操作数。
 
  
 
-### <a name="span-iddataconversionspanspan-iddataconversionspanspan-iddataconversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>数据转换
+### <a name="span-iddata_conversionspanspan-iddata_conversionspanspan-iddata_conversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>数据转换
 
 <table>
 <colgroup>
@@ -128,7 +128,7 @@ X64 还提供了新的说明，以符号扩展为 64 位的 32 位操作数。
 
  
 
-### <a name="span-idstringmanipulationspanspan-idstringmanipulationspanspan-idstringmanipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>字符串操作
+### <a name="span-idstring_manipulationspanspan-idstring_manipulationspanspan-idstring_manipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>字符串操作
 
 <table>
 <colgroup>

@@ -19,7 +19,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67386758"
 ---
-# <a name="avcfunctioncommand"></a>AVC\_函数\_命令
+# <a name="avc_function_command"></a>AVC\_函数\_命令
 
 
 ## <span id="ddk_avc_function_command_ks"></span><span id="DDK_AVC_FUNCTION_COMMAND_KS"></span>
@@ -97,7 +97,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 **标头：** 在中声明*avc.h*。 包括*avc.h*。
 
-### <a name="span-idavccommandirbinputspanspan-idavccommandirbinputspanavccommandirb-input"></a><span id="avc_command_irb_input"></span><span id="AVC_COMMAND_IRB_INPUT"></span>AVC\_命令\_IRB 输入
+### <a name="span-idavc_command_irb_inputspanspan-idavc_command_irb_inputspanavc_command_irb-input"></a><span id="avc_command_irb_input"></span><span id="AVC_COMMAND_IRB_INPUT"></span>AVC\_命令\_IRB 输入
 
 **Common**  
 **函数**必须设置为此成员的子**AVC\_函数\_命令**从 AVC\_函数枚举。

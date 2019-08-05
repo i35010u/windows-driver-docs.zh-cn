@@ -21,7 +21,7 @@ ms.locfileid: "67161413"
 
 地址是始终*虚拟地址*，只是当文档专门指示另一个类型的地址。 在用户模式下，调试器将解释虚拟地址的页面目录根据[当前进程](controlling-processes-and-threads.md)。 在内核模式下，调试器将解释根据进程的页面目录的虚拟地址的[进程上下文](changing-contexts.md#process-context)指定。 您还可以直接设置*用户模式地址上下文*。 有关用户模式地址上下文的详细信息，请参阅[ **.context （设置用户模式地址上下文）** ](-context--set-user-mode-address-context-.md)。
 
-### <a name="span-idaddressmodesandsegmentsupportspanspan-idaddressmodesandsegmentsupportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>地址模式和线段支持
+### <a name="span-idaddress_modes_and_segment_supportspanspan-idaddress_modes_and_segment_supportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>地址模式和线段支持
 
 在基于 x86 的平台上 CDB 和 KD 支持以下寻址模式。 这些模式的区别的及其前缀。
 
@@ -63,7 +63,7 @@ ms.locfileid: "67161413"
 
 如果通过不是当前的默认模式的寻址模式访问内存，可以使用的地址模式前缀来重写当前的地址模式。
 
-### <a name="span-idaddressargumentsspanspan-idaddressargumentsspanaddress-arguments"></a><span id="address_arguments"></span><span id="ADDRESS_ARGUMENTS"></span>地址参数
+### <a name="span-idaddress_argumentsspanspan-idaddress_argumentsspanaddress-arguments"></a><span id="address_arguments"></span><span id="ADDRESS_ARGUMENTS"></span>地址参数
 
 地址参数指定的变量和函数的位置。 下表说明的语法和可以在 CDB 和 KD 中使用的各种地址的含义。
 
@@ -123,7 +123,7 @@ ms.locfileid: "67161413"
 
 您还可以通过指定的原始源文件名和行号来指示应用程序中的地址。 有关如何指定此信息的详细信息，请参阅[源行语法](source-line-syntax.md)。
 
-### <a name="span-idaddressrangesspanspan-idaddressrangesspanaddress-ranges"></a><span id="address_ranges"></span><span id="ADDRESS_RANGES"></span>地址范围
+### <a name="span-idaddress_rangesspanspan-idaddress_rangesspanaddress-ranges"></a><span id="address_ranges"></span><span id="ADDRESS_RANGES"></span>地址范围
 
 一对地址或地址和对象计数，可以指定的地址范围。
 

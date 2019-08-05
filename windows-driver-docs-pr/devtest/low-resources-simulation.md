@@ -49,7 +49,7 @@ ms.locfileid: "67354779"
 -   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)
 -   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
-### <a name="span-idcustomsettingsforlowresourcessimulationspanspan-idcustomsettingsforlowresourcessimulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>资源不足模拟的自定义设置
+### <a name="span-idcustom_settings_for_low_resources_simulationspanspan-idcustom_settings_for_low_resources_simulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>资源不足模拟的自定义设置
 
 在 Windows Vista 和更高版本的 Windows 中，可以指定以下自定义设置。
 
@@ -63,13 +63,13 @@ ms.locfileid: "67354779"
 
 在 Windows Vista 之前的操作系统，不能自定义这些设置。 操作系统使用的默认值。
 
-### <a name="span-idlowresourcessimulationwithoutrebootingspanspan-idlowresourcessimulationwithoutrebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>资源不足而不必重新启动模拟
+### <a name="span-idlow_resources_simulation_without_rebootingspanspan-idlow_resources_simulation_without_rebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>资源不足而不必重新启动模拟
 
 可以激活 Windows 2000 和更高版本的 Windows 上的低资源模拟，无需重新启动计算机，通过使用 **/volatile**参数。 设置将立即生效，但如果你关闭或重新启动计算机都将丢失。
 
 您还可以将存储的低资源模拟设置注册表通过省略 **/volatile**参数。 仅当重新启动计算机，但它们保持有效，直到更改它们时，这些设置是有效的。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
 可以使用驱动程序验证程序管理器或 Verifier.exe 命令行来激活一个或多个驱动程序的低资源模拟选项。 有关详细信息，请参阅[选择 Driver Verifier 选项](selecting-driver-verifier-options.md)。
 
@@ -117,7 +117,7 @@ ms.locfileid: "67354779"
     3.  选择**从完整的列表中选择单个设置**。
     4.  选择**较低的资源模拟**。
 
-### <a name="span-idcustomizingthesettingswindowsvistaandlaterspanspan-idcustomizingthesettingswindowsvistaandlaterspancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>自定义设置 (Windows Vista 及更高版本)
+### <a name="span-idcustomizing_the_settings__windows_vista_and_later_spanspan-idcustomizing_the_settings__windows_vista_and_later_spancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>自定义设置 (Windows Vista 及更高版本)
 
 从 Windows Vista 开始，你可以延迟、 概率、 应用程序的默认设置和池标记低资源模拟选项的属性。 可以使用驱动程序验证程序管理器或 Verifier.exe 命令行来更改这些设置。 有关详细信息，请参阅[选择 Driver Verifier 选项](selecting-driver-verifier-options.md)。
 
@@ -174,7 +174,7 @@ verifier /faults "" "" "" 0xa
 
 5.  更改延迟、 概率、 应用程序的设置和池标记为所需的属性。
 
-### <a name="span-idviewingtheresultsspanspan-idviewingtheresultsspanviewing-the-results"></a><span id="viewing_the_results"></span><span id="VIEWING_THE_RESULTS"></span>查看结果
+### <a name="span-idviewing_the_resultsspanspan-idviewing_the_resultsspanviewing-the-results"></a><span id="viewing_the_results"></span><span id="VIEWING_THE_RESULTS"></span>查看结果
 
 你可以监视的 Driver Verifier 有意失败的资源分配通过显示驱动程序验证程序的次数*注入错误*全局计数器。 此计数器显示自上次启动以来有意失败，驱动程序验证程序的资源分配的总数。
 

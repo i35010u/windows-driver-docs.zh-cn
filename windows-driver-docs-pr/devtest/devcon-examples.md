@@ -28,7 +28,7 @@ ms.locfileid: "63347699"
 
 本部分提供了以下设备控制台 (DevCon.exe) 命令的示例：
 
-### <a name="span-iddevconhwidsspanspan-iddevconhwidsspandevcon-hwids"></a><span id="devcon_hwids"></span><span id="DEVCON_HWIDS"></span>DevCon HwIDs
+### <a name="span-iddevcon_hwidsspanspan-iddevcon_hwidsspandevcon-hwids"></a><span id="devcon_hwids"></span><span id="DEVCON_HWIDS"></span>DevCon HwIDs
 
 [示例 1:查找所有硬件 Id](#ddk_example_1_find_all_hardware_ids_tools)
 
@@ -36,37 +36,37 @@ ms.locfileid: "63347699"
 
 [示例 3:通过使用类找到硬件 Id](#ddk_example_3_find_hardware_ids_by_using_a_class_tools)
 
-### <a name="span-iddevconclassesspanspan-iddevconclassesspandevcon-classes"></a><span id="devcon_classes"></span><span id="DEVCON_CLASSES"></span>DevCon 类
+### <a name="span-iddevcon_classesspanspan-iddevcon_classesspandevcon-classes"></a><span id="devcon_classes"></span><span id="DEVCON_CLASSES"></span>DevCon 类
 
 [示例 4:在本地计算机上的列表类](#ddk_example_4_list_classes_on_the_local_computer_tools)
 
 [示例 5:在远程计算机上的列表类](#ddk_example_5_list_classes_on_the_remote_computer_tools)
 
-### <a name="span-iddevconlistclassspanspan-iddevconlistclassspandevcon-listclass"></a><span id="devcon_listclass"></span><span id="DEVCON_LISTCLASS"></span>DevCon ListClass
+### <a name="span-iddevcon_listclassspanspan-iddevcon_listclassspandevcon-listclass"></a><span id="devcon_listclass"></span><span id="DEVCON_LISTCLASS"></span>DevCon ListClass
 
 [示例 6:设备安装程序类中的设备列表](#ddk_example_6_list_the_devices_in_a_device_setup_class_tools)
 
 [示例 7:在远程计算机上的多个类的设备列表](#ddk_example_7_list_the_devices_in_multiple_classes_on_a_remote_compute)
 
-### <a name="span-iddevcondriverfilesspanspan-iddevcondriverfilesspandevcon-driverfiles"></a><span id="devcon_driverfiles"></span><span id="DEVCON_DRIVERFILES"></span>DevCon DriverFiles
+### <a name="span-iddevcon_driverfilesspanspan-iddevcon_driverfilesspandevcon-driverfiles"></a><span id="devcon_driverfiles"></span><span id="DEVCON_DRIVERFILES"></span>DevCon DriverFiles
 
 [示例 8:列出所有驱动程序文件](#ddk_example_8_list_all_driver_files_tools)
 
 [示例 9:列出特定设备的驱动程序文件](#ddk_example_9_list_the_driver_files_of_a_particular_device_tools)
 
-### <a name="span-iddevcondrivernodesspanspan-iddevcondrivernodesspandevcon-drivernodes"></a><span id="devcon_drivernodes"></span><span id="DEVCON_DRIVERNODES"></span>DevCon DriverNodes
+### <a name="span-iddevcon_drivernodesspanspan-iddevcon_drivernodesspandevcon-drivernodes"></a><span id="devcon_drivernodes"></span><span id="DEVCON_DRIVERNODES"></span>DevCon DriverNodes
 
 [示例 10:列表由硬件 ID 模式的驱动程序包](#ddk_example_10_list_driver_packages_by_hardware_id_pattern_tools)
 
 [示例 11:通过设备实例 ID 模式列表驱动程序包](#ddk_example_11_list_driver_packages_by_device_instance_id_pattern_tool)
 
-### <a name="span-iddevconresourcesspanspan-iddevconresourcesspandevcon-resources"></a><span id="devcon_resources"></span><span id="DEVCON_RESOURCES"></span>DevCon 资源
+### <a name="span-iddevcon_resourcesspanspan-iddevcon_resourcesspandevcon-resources"></a><span id="devcon_resources"></span><span id="DEVCON_RESOURCES"></span>DevCon 资源
 
 [示例 12:列出资源的类的设备](#ddk_example_12_list_resources_of_a_class_of_devices_tools)
 
 [示例 13:列出资源的 ID 的远程计算机上的设备](#ddk_example_13_list_resources_of_device_on_a_remote_computer_by_id_too)
 
-### <a name="span-iddevconstackspanspan-iddevconstackspandevcon-stack"></a><span id="devcon_stack"></span><span id="DEVCON_STACK"></span>DevCon Stack
+### <a name="span-iddevcon_stackspanspan-iddevcon_stackspandevcon-stack"></a><span id="devcon_stack"></span><span id="DEVCON_STACK"></span>DevCon Stack
 
 [示例 14:显示存储设备驱动程序堆栈](#ddk_example_14_display_the_driver_stack_for_storage_devices_tools)
 
@@ -74,7 +74,7 @@ ms.locfileid: "63347699"
 
 [示例 16:在远程计算机上显示相关设备的堆栈](#ddk_example_16_display_the_stack_for_related_devices_on_a_remote_compu)
 
-### <a name="span-iddevconstatusspanspan-iddevconstatusspandevcon-status"></a><span id="devcon_status"></span><span id="DEVCON_STATUS"></span>DevCon 状态
+### <a name="span-iddevcon_statusspanspan-iddevcon_statusspandevcon-status"></a><span id="devcon_status"></span><span id="DEVCON_STATUS"></span>DevCon 状态
 
 [示例 17:在本地计算机上显示的所有设备的状态](#ddk_example_17_display_the_status_of_all_devices_on_the_local_computer)
 
@@ -82,17 +82,17 @@ ms.locfileid: "63347699"
 
 [示例 19:在远程计算机上显示相关设备的状态](#ddk_example_19_display_the_status_of_related_devices_on_a_remote_compu)
 
-### <a name="span-iddevconfindspanspan-iddevconfindspandevcon-find"></a><span id="devcon_find"></span><span id="DEVCON_FIND"></span>DevCon 查找
+### <a name="span-iddevcon_findspanspan-iddevcon_findspandevcon-find"></a><span id="devcon_find"></span><span id="DEVCON_FIND"></span>DevCon 查找
 
 [示例 20:查找设备硬件 ID 模式](#ddk_example_20_find_devices_by_hardware_id_pattern_tools)
 
 [示例 21:查找设备通过设备实例 ID 或类](#ddk_example_21_find_devices_by_device_instance_id_or_class_tools)
 
-### <a name="span-iddevconfindallspanspan-iddevconfindallspandevcon-findall"></a><span id="devcon_findall"></span><span id="DEVCON_FINDALL"></span>DevCon FindAll
+### <a name="span-iddevcon_findallspanspan-iddevcon_findallspandevcon-findall"></a><span id="devcon_findall"></span><span id="DEVCON_FINDALL"></span>DevCon FindAll
 
 [示例 22:查找 （并查找所有） 安装程序类中的设备](#ddk_example_22_find_and_find_all_devices_in_a_setup_class_tools)
 
-### <a name="span-iddevconclassfilterspanspan-iddevconclassfilterspandevcon-classfilter"></a><span id="devcon_classfilter"></span><span id="DEVCON_CLASSFILTER"></span>DevCon ClassFilter
+### <a name="span-iddevcon_classfilterspanspan-iddevcon_classfilterspandevcon-classfilter"></a><span id="devcon_classfilter"></span><span id="DEVCON_CLASSFILTER"></span>DevCon ClassFilter
 
 [示例 23:显示安装程序类的筛选器驱动程序](#ddk_example_23_display_the_filter_drivers_for_a_setup_class_tools)
 
@@ -104,49 +104,49 @@ ms.locfileid: "63347699"
 
 [示例 27:更改筛选器驱动程序的顺序](#ddk_example_27_change_the_order_of_filter_drivers_tools)
 
-### <a name="span-iddevconenablespanspan-iddevconenablespandevcon-enable"></a><span id="devcon_enable"></span><span id="DEVCON_ENABLE"></span>DevCon 启用
+### <a name="span-iddevcon_enablespanspan-iddevcon_enablespandevcon-enable"></a><span id="devcon_enable"></span><span id="DEVCON_ENABLE"></span>DevCon 启用
 
 [示例 28:启用特定设备](#ddk_example_28_enable_a_particular_device_tools)
 
 [示例 29:使设备由类](#ddk_example_29_enable_devices_by_class_tools)
 
-### <a name="span-iddevcondisablespanspan-iddevcondisablespandevcon-disable"></a><span id="devcon_disable"></span><span id="DEVCON_DISABLE"></span>DevCon 禁用
+### <a name="span-iddevcon_disablespanspan-iddevcon_disablespandevcon-disable"></a><span id="devcon_disable"></span><span id="DEVCON_DISABLE"></span>DevCon 禁用
 
 [示例 30:通过 ID 模式来禁用设备](#ddk_example_30_disable_devices_by_an_id_pattern_tools)
 
 [示例 31:禁用设备通过设备实例 ID](#ddk_example_31_disable_devices_by_device_instance_id_tools)
 
-### <a name="span-iddevconupdateandupdatenispanspan-iddevconupdateandupdatenispandevcon-update-and-updateni"></a><span id="devcon_update_and_updateni"></span><span id="DEVCON_UPDATE_AND_UPDATENI"></span>DevCon 更新和 UpdateNI
+### <a name="span-iddevcon_update_and_updatenispanspan-iddevcon_update_and_updatenispandevcon-update-and-updateni"></a><span id="devcon_update_and_updateni"></span><span id="DEVCON_UPDATE_AND_UPDATENI"></span>DevCon 更新和 UpdateNI
 
 [示例 32:通信端口的驱动程序更新](#ddk_example_32_update_the_driver_for_communication_ports_tools)
 
 [示例 44:强制更新 HAL](#ddk_example_44_forcibly_update_the_hal_tools)
 
-### <a name="span-iddevconinstallspanspan-iddevconinstallspandevcon-install"></a><span id="devcon_install"></span><span id="DEVCON_INSTALL"></span>DevCon 安装
+### <a name="span-iddevcon_installspanspan-iddevcon_installspandevcon-install"></a><span id="devcon_install"></span><span id="DEVCON_INSTALL"></span>DevCon 安装
 
 [示例 33:安装设备](#ddk_example_33_install_a_device_tools)
 
 [示例 34:安装使用无人参与的安装的设备](#ddk_example_34_install_a_device_using_unattended_setup_tools)
 
-### <a name="span-iddevconremovespanspan-iddevconremovespandevcon-remove"></a><span id="devcon_remove"></span><span id="DEVCON_REMOVE"></span>DevCon 删除
+### <a name="span-iddevcon_removespanspan-iddevcon_removespandevcon-remove"></a><span id="devcon_remove"></span><span id="DEVCON_REMOVE"></span>DevCon 删除
 
 [示例 35:通过设备实例 ID 模式中删除的设备](#ddk_example_35_remove_devices_by_device_instance_id_pattern_tools)
 
 [示例 36:删除特定网络设备](#ddk_example_36_remove_a_particular_network_device_tools)
 
-### <a name="span-iddevconrescanspanspan-iddevconrescanspandevcon-rescan"></a><span id="devcon_rescan"></span><span id="DEVCON_RESCAN"></span>DevCon 重新扫描
+### <a name="span-iddevcon_rescanspanspan-iddevcon_rescanspandevcon-rescan"></a><span id="devcon_rescan"></span><span id="DEVCON_RESCAN"></span>DevCon 重新扫描
 
 [示例 37:扫描计算机以查找新设备](#ddk_example_37_scan_the_computer_for_new_devices_tools)
 
-### <a name="span-iddevconrestartspanspan-iddevconrestartspandevcon-restart"></a><span id="devcon_restart"></span><span id="DEVCON_RESTART"></span>DevCon 重新启动
+### <a name="span-iddevcon_restartspanspan-iddevcon_restartspandevcon-restart"></a><span id="devcon_restart"></span><span id="DEVCON_RESTART"></span>DevCon 重新启动
 
 [示例 38:重启设备](#ddk_example_38_restart_a_device_tools)
 
-### <a name="span-iddevconstatus2spanspan-iddevconstatus2spandevcon-status"></a><span id="devcon_status2"></span><span id="DEVCON_STATUS2"></span>DevCon 状态
+### <a name="span-iddevcon_status2spanspan-iddevcon_status2spandevcon-status"></a><span id="devcon_status2"></span><span id="DEVCON_STATUS2"></span>DevCon 状态
 
 [示例 39:重新启动本地计算机](#ddk_example_39_reboot_the_local_computer_tools)
 
-### <a name="span-iddevconsethwidspanspan-iddevconsethwidspandevcon-sethwid"></a><span id="devcon_sethwid"></span><span id="DEVCON_SETHWID"></span>DevCon SetHwID
+### <a name="span-iddevcon_sethwidspanspan-iddevcon_sethwidspandevcon-sethwid"></a><span id="devcon_sethwid"></span><span id="DEVCON_SETHWID"></span>DevCon SetHwID
 
 [示例 40:将硬件 ID 分配给旧的设备](#ddk_example_40_assign_a_hardware_id_to_a_legacy_device_tools)
 
@@ -158,7 +158,7 @@ ms.locfileid: "63347699"
 
 [示例 44:强制更新 HAL](#ddk_example_44_forcibly_update_the_hal_tools)
 
-### <a name="span-iddevcondpadddpdeleteddpenumspanspan-iddevcondpadddpdeleteddpenumspandevcon-dpadd-dpdeleted-dpenum"></a><span id="devcon_dp_add__dp_deleted__dp_enum"></span><span id="DEVCON_DP_ADD__DP_DELETED__DP_ENUM"></span>DevCon dp\_添加，dp\_删除 dp\_枚举
+### <a name="span-iddevcon_dp_add__dp_deleted__dp_enumspanspan-iddevcon_dp_add__dp_deleted__dp_enumspandevcon-dp_add-dp_deleted-dp_enum"></a><span id="devcon_dp_add__dp_deleted__dp_enum"></span><span id="DEVCON_DP_ADD__DP_DELETED__DP_ENUM"></span>DevCon dp\_添加，dp\_删除 dp\_枚举
 
 [示例 45:添加和删除驱动程序包](example-45--add-and-remove-driver-packages.md)
 
@@ -1072,7 +1072,7 @@ Class filters changed. Class devices must be restarted for changes to take effec
 
 ### <span id="ddk_example_28_enable_a_particular_device_tools"></span><span id="DDK_EXAMPLE_28_ENABLE_A_PARTICULAR_DEVICE_TOOLS"></span><a name="ddk_example_28_enable_a_particular_device_tools"></a>示例 28:启用特定设备
 
-下面的命令使用[ **DevCon 启用**](devcon-enable.md)启用已被禁用，以解决系统问题的可编程中断控制器操作。 因为控制器硬件 ID \*PNP0000 包括星号，该命令使用单引号字符 (  ) 若要指示 DevCon 命令中指定一样准确查找的硬件 ID。 否则，星号将解释为通配符字符。
+下面的命令使用[ **DevCon 启用**](devcon-enable.md)启用已被禁用，以解决系统问题的可编程中断控制器操作。 因为控制器硬件 ID \*PNP0000 包括星号，该命令使用单引号字符 () 若要指示 DevCon 命令中指定一样准确查找的硬件 ID。 否则，星号将解释为通配符字符。
 
 ```
 devcon enable '*PNP0000
@@ -1296,7 +1296,7 @@ devcon /m:\\server01 rescan
 
 ### <span id="ddk_example_38_restart_a_device_tools"></span><span id="DDK_EXAMPLE_38_RESTART_A_DEVICE_TOOLS"></span><a name="ddk_example_38_restart_a_device_tools"></a>示例 38:重启设备
 
-下面的命令使用[ **DevCon 重启**](devcon-restart.md)操作以重新启动本地计算机上的环回适配器。 该命令限制搜索的净安装程序类，并使该类中指定的设备实例 ID 环回适配器**根\\\*MSLOOP\\0000**。 在字符 ( **@** ) 标识字符串作为设备实例 id。 单引号字符 (  )，该请求文本搜索，可防止 DevCon 解释为通配符字符的 ID 中的星号。
+下面的命令使用[ **DevCon 重启**](devcon-restart.md)操作以重新启动本地计算机上的环回适配器。 该命令限制搜索的净安装程序类，并使该类中指定的设备实例 ID 环回适配器**根\\\*MSLOOP\\0000**。 在字符 ( **@** ) 标识字符串作为设备实例 id。 单引号字符 ()，该请求文本搜索，可防止 DevCon 解释为通配符字符的 ID 中的星号。
 
 ```
 devcon restart =net @'ROOT\*MSLOOP\0000

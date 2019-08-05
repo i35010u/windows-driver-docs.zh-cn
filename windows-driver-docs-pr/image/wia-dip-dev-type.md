@@ -21,7 +21,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67375361"
 ---
-# <a name="wiadipdevtype"></a>WIA\_DIP\_开发人员\_类型
+# <a name="wia_dip_dev_type"></a>WIA\_DIP\_开发人员\_类型
 
 
 WIA\_DIP\_开发人员\_类型属性包含设备类型和设备子类型。 WIA 服务创建和维护此属性

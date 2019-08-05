@@ -44,7 +44,7 @@ ms.locfileid: "63356593"
 
 若要安装部分已检验的版本的步骤如下所示：
 
-### <a name="span-idstep1identifyingthefilestoinstallspanspan-idstep1identifyingthefilestoinstallspanstep-1-identifying-the-files-to-install"></a><span id="step_1__identifying_the_files_to_install"></span><span id="STEP_1__IDENTIFYING_THE_FILES_TO_INSTALL"></span>步骤 1:确定要安装的文件
+### <a name="span-idstep_1__identifying_the_files_to_installspanspan-idstep_1__identifying_the_files_to_installspanstep-1-identifying-the-files-to-install"></a><span id="step_1__identifying_the_files_to_install"></span><span id="STEP_1__IDENTIFYING_THE_FILES_TO_INSTALL"></span>步骤 1:确定要安装的文件
 
 安装部分已检验的版本的第一步是确定的操作系统映像和 HAL 文件用于在系统上安装免费的生成版本。
 
@@ -117,7 +117,7 @@ arcldr.exe = "arcldr.exe","2eca9"
 
  
 
-### <a name="span-idstep2copyingthecheckedfilesspanspan-idstep2copyingthecheckedfilesspanstep-2-copying-the-checked-files"></a><span id="step_2__copying_the_checked_files"></span><span id="STEP_2__COPYING_THE_CHECKED_FILES"></span>步骤 2:复制所选的文件
+### <a name="span-idstep_2__copying_the_checked_filesspanspan-idstep_2__copying_the_checked_filesspanstep-2-copying-the-checked-files"></a><span id="step_2__copying_the_checked_files"></span><span id="STEP_2__COPYING_THE_CHECKED_FILES"></span>步骤 2:复制所选的文件
 
 现在，在系统安装过程中了解所使用的文件的名称，您可以将这些文件的付费版本复制到您的系统。 选中的分发工具包中找到具有标识的文件。 然后将这些文件复制到 %systemroot%\\system32 目录的系统，为他们提供新的、 唯一的文件的名称。 这些文件的副本必须遵循 8.3 命名约定。 若要确保唯一且符合 8.3 文件名称的一种方法是重命名从其原始的文件类型 （.dll 或.exe） 文件类型.chk 复制时。 因此，在步骤 1 中使用的示例，你会将文件复制选中的分发工具包中，如下所示：
 
@@ -158,7 +158,7 @@ arcldr.exe = "arcldr.exe","2eca9"
 > expand halapic.dl_ halapic.chk
 ```
 
-### <a name="span-idstep3editingbootinispanspan-idstep3editingbootinispanstep-3-editing-bootini"></a><span id="step_3__editing_boot_ini"></span><span id="STEP_3__EDITING_BOOT_INI"></span>步骤 3:编辑 boot.ini
+### <a name="span-idstep_3__editing_boot_inispanspan-idstep_3__editing_boot_inispanstep-3-editing-bootini"></a><span id="step_3__editing_boot_ini"></span><span id="STEP_3__EDITING_BOOT_INI"></span>步骤 3:编辑 boot.ini
 
 选中的文件复制到 %systemroot%后\\system32 目录中，您必须创建一个允许系统以开始使用这些已检查的文件的启动时间选项。 若要执行此操作，编辑 boot.ini 文件。
 
@@ -193,7 +193,7 @@ multi(0)disk(0)rdisk(0)partition(1)\WINNT="Windows 2000 Checked" /fastdetect /ke
 
 所做的更改之后，保存所做的更改并退出编辑器。 下一次启动此系统中，将显示，可选择选中的操作系统映像和 HAL 的新的操作系统启动选项。
 
-### <a name="span-idinstallingadditionalcheckedfilesspanspan-idinstallingadditionalcheckedfilesspaninstalling-additional-checked-files"></a><span id="installing_additional_checked_files"></span><span id="INSTALLING_ADDITIONAL_CHECKED_FILES"></span>安装已检查的其他文件
+### <a name="span-idinstalling_additional_checked_filesspanspan-idinstalling_additional_checked_filesspaninstalling-additional-checked-files"></a><span id="installing_additional_checked_files"></span><span id="INSTALLING_ADDITIONAL_CHECKED_FILES"></span>安装已检查的其他文件
 
 检查的操作系统和 HAL 安装后，您可以通过安装其他选中的组件。 可以使用从选中的分发介质选中对应替换几个关键组件的已安装的免费版本。 这可以是很有用，例如，你编写在其他设备的堆栈中存在的驱动程序时。 通过将替换为所上方和下方您的驱动程序堆栈中的驱动程序的免费版本，将启用检查这些组件中的其他错误。 这可以帮助您更快速、 轻松地识别您的驱动程序中的问题。
 

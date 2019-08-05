@@ -28,7 +28,7 @@ BinPlace 在命令行使用以下语法：
     binplace [Options] File [ [Options] [@PlaceFile] File [...] ]
 ```
 
-## <a name="span-idddkbinplacecommandlinesyntaxtoolsspanspan-idddkbinplacecommandlinesyntaxtoolsspanparameters"></a><span id="ddk_binplace_command_line_syntax_tools"></span><span id="DDK_BINPLACE_COMMAND_LINE_SYNTAX_TOOLS"></span>参数
+## <a name="span-idddk_binplace_command_line_syntax_toolsspanspan-idddk_binplace_command_line_syntax_toolsspanparameters"></a><span id="ddk_binplace_command_line_syntax_tools"></span><span id="DDK_BINPLACE_COMMAND_LINE_SYNTAX_TOOLS"></span>参数
 
 
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
@@ -140,11 +140,11 @@ binplace -qkg LCFile -vs SymbolRoot File
 <span id="________PlaceFile______"></span><span id="________placefile______"></span><span id="________PLACEFILE______"></span> **@** <em>PlaceFile</em>   
 如果任何文件名前面的 at 符号 ( **@** )，该文件名表示位置文件的名称。 有关详细信息，请参阅下面文件部分中提供的参数。
 
-### <a name="span-idparsingorderspanspan-idparsingorderspanparsing-order"></a><span id="parsing_order"></span><span id="PARSING_ORDER"></span>分析顺序
+### <a name="span-idparsing_orderspanspan-idparsing_orderspanparsing-order"></a><span id="parsing_order"></span><span id="PARSING_ORDER"></span>分析顺序
 
 BinPlace 分析命令行从左到右。 可以指定多个选项，则*文件*参数，则新的选项，则另一个*文件*参数，等等。 每当 BinPlace 遇到新的选项，它将被采用，重写任何先前已见到清楚的选项。 每当遇到*文件*说明符，它将处理命令行上使用的累计的选项已经遇到了该文件。
 
-### <a name="span-idsupplyingparametersinafilespanspan-idsupplyingparametersinafilespansupplying-parameters-in-a-file"></a><span id="supplying_parameters_in_a_file"></span><span id="SUPPLYING_PARAMETERS_IN_A_FILE"></span>提供的文件中的参数
+### <a name="span-idsupplying_parameters_in_a_filespanspan-idsupplying_parameters_in_a_filespansupplying-parameters-in-a-file"></a><span id="supplying_parameters_in_a_file"></span><span id="SUPPLYING_PARAMETERS_IN_A_FILE"></span>提供的文件中的参数
 
 就可以从文本文件将参数传递给 BinPlace。 有两种方法来执行此操作：
 

@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63341653"
 ---
-# <a name="using-sdvsaveadaptercontext-to-track-adapter-context-fields"></a>使用\_ \_sdv\_保存\_适配器\_跟踪适配器上下文字段的上下文
+# <a name="using-__sdv_save_adapter_context-to-track-adapter-context-fields"></a>使用\_ \_sdv\_保存\_适配器\_跟踪适配器上下文字段的上下文
 
 
 当 NDIS 调用微型端口驱动程序*MiniportInitializeEx*回调函数来初始化的微型端口适配器，该驱动程序将创建其自己的内部数据结构来表示微型端口适配器。 驱动程序将使用此结构称为*微型端口适配器上下文*、 维护驱动程序需要以管理微型端口适配器的特定于设备的状态信息。 该驱动程序将一个句柄传递给到 NDIS 此结构。

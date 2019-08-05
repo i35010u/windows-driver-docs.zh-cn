@@ -28,7 +28,7 @@ ms.locfileid: "63347027"
     devcon [/m:\\computer] sethwid {* | ID [ID ...] | =class [ID [ID ...]]} := [ = | + | - | ! ]HardwareIDs ...
 ```
 
-## <a name="span-idddkdevconsethwidtoolsspanspan-idddkdevconsethwidtoolsspanparameters"></a><span id="ddk_devcon_sethwid_tools"></span><span id="DDK_DEVCON_SETHWID_TOOLS"></span>参数
+## <a name="span-idddk_devcon_sethwid_toolsspanspan-idddk_devcon_sethwid_toolsspanparameters"></a><span id="ddk_devcon_sethwid_tools"></span><span id="DDK_DEVCON_SETHWID_TOOLS"></span>参数
 
 
 <span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m:\\\\** <em>computer</em>   
@@ -107,7 +107,7 @@ DevCon 移动，而不是增加了，如果已指定的硬件 ID 的硬件 ID �
 
 为成功消息**DevCon SetHwIDs**命令报告的设备 （或设备列表），它在其中后修改的硬件 Id，不是修改后的硬件 Id 的数目数。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```
 devcon sethwid @ROOT\LEGACY* := legacy

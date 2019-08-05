@@ -32,7 +32,7 @@ ms.locfileid: "63336614"
 .fpo Address 
 ```
 
-## <a name="span-idddkmetacontrolfpooverridesdbgspanspan-idddkmetacontrolfpooverridesdbgspanparameters"></a><span id="ddk_meta_control_fpo_overrides_dbg"></span><span id="DDK_META_CONTROL_FPO_OVERRIDES_DBG"></span>参数
+## <a name="span-idddk_meta_control_fpo_overrides_dbgspanspan-idddk_meta_control_fpo_overrides_dbgspanparameters"></a><span id="ddk_meta_control_fpo_overrides_dbg"></span><span id="DDK_META_CONTROL_FPO_OVERRIDES_DBG"></span>参数
 
 
 <span id="_______-s______"></span><span id="_______-S______"></span> **-s**   

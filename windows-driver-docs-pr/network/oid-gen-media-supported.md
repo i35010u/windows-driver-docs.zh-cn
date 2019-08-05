@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67369025"
 ---
-# <a name="oidgenmediasupported"></a>OID\_GEN\_媒体\_支持
+# <a name="oid_gen_media_supported"></a>OID\_GEN\_媒体\_支持
 
 
 为查询，OID\_GEN\_媒体\_支持 OID 指定 NIC 可以支持的媒体类型，但不是一定 NIC 当前使用的媒体类型。

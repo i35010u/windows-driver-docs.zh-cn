@@ -40,7 +40,7 @@ dt [-DisplayOpts] Address [-l List]
 dt -h 
 ```
 
-## <a name="span-idddkcmddisplaytypedbgspanspan-idddkcmddisplaytypedbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>参数
+## <a name="span-idddk_cmd_display_type_dbgspanspan-idddk_cmd_display_type_dbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>参数
 
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
@@ -146,12 +146,12 @@ dt -h
 可选参数，指定定义此结构的模块。 如果没有本地变量或具有全局变量或类型的名称相同的类型，则应包含*模块*来指定是指全局变量。 否则为**dt**命令将显示本地变量，即使本地变量是不区分大小写的匹配项和全局变量是区分大小写的匹配项。
 
 <span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span> *名称*   
-指定类型或全局变量的名称。 如果*名称*有一个星号 (**\\* * *)，将显示所有匹配项的列表。因此， **dt A\\***  将列出所有数据类型、 全局函数和静态变量"A"开头，但将不会显示这些类型的实际实例。 (如果 **-v**在同一时间使用显示选项，将显示所有符号，而不仅仅是那些具有关联的类型信息。)也可以替换*名称*期 (**。**) 来表示你想要最新重复使用了值*名称*。
+指定类型或全局变量的名称。 如果*名称*有一个星号 (* *\\* * *)，将显示所有匹配项的列表。因此， **dt A\\***  将列出所有数据类型、 全局函数和静态变量"A"开头，但将不会显示这些类型的实际实例。 (如果 **-v**在同一时间使用显示选项，将显示所有符号，而不仅仅是那些具有关联的类型信息。)也可以替换*名称*期 ( **。** ) 来表示你想要最新重复使用了值*名称*。
 
 如果*名称*包含空格，它应括在括号中。
 
 <span id="_______Field______"></span><span id="_______field______"></span><span id="_______FIELD______"></span> *字段*   
-指定要显示的字段。 如果*字段*是省略，将显示所有字段。 如果*字段*跟一个句点 (**。**)，也将显示此字段的第一级子文件夹。 如果*字段*后接一系列的段，子字段会显示深度等于周期数。 跟一个句点任何字段名称将被视为前缀匹配项，如同 **-y**使用搜索选项。 如果*字段*后跟一个星号 (\*)，它将被视为字段中，不一定是整个字段开始并将显示所有匹配的字段。
+指定要显示的字段。 如果*字段*是省略，将显示所有字段。 如果*字段*跟一个句点 ( **。** )，也将显示此字段的第一级子文件夹。 如果*字段*后接一系列的段，子字段会显示深度等于周期数。 跟一个句点任何字段名称将被视为前缀匹配项，如同 **-y**使用搜索选项。 如果*字段*后跟一个星号 (\*)，它将被视为字段中，不一定是整个字段开始并将显示所有匹配的字段。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
 指定要显示的结构的地址。 如果*名称*省略，则*地址*必须包括，并且必须指定一个全局变量的地址。 *地址*用作虚拟地址，除非另行指定。 使用 **-p**选项来指定物理地址。 使用"at"符号 ( **@** ) 来指定寄存器 (例如， <strong>@eax</strong>)。
@@ -184,7 +184,7 @@ dt -h
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
 内存操作的概述和其他与内存相关的命令的说明，请参阅[读取和写入内存](reading-and-writing-memory.md)。
 

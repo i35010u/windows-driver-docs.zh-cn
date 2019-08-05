@@ -28,7 +28,7 @@ ms.locfileid: "63347741"
     devcon driverfiles {* | ID [ID ...] | =class [ID [ID ...]]} 
 ```
 
-## <a name="span-idddkdevcondriverfilestoolsspanspan-idddkdevcondriverfilestoolsspanparameters"></a><span id="ddk_devcon_driverfiles_tools"></span><span id="DDK_DEVCON_DRIVERFILES_TOOLS"></span>参数
+## <a name="span-idddk_devcon_driverfiles_toolsspanspan-idddk_devcon_driverfiles_toolsspanparameters"></a><span id="ddk_devcon_driverfiles_tools"></span><span id="DDK_DEVCON_DRIVERFILES_TOOLS"></span>参数
 
 
 <span id="______________"></span> **\\** *   
@@ -77,7 +77,7 @@ ms.locfileid: "63347741"
 
 **DevCon DriverFiles**操作仅在本地计算机上运行。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```
 devcon driverfiles *

@@ -34,7 +34,7 @@ ms.locfileid: "67378290"
 
 引用计数器值达到 0 的值后，该对象将成为以便释放。 对象管理器可能会立即释放它或更高版本可能会释放。 驱动程序验证工具以便后续调用将检查[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)并[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)为同一对象。 这些调用将引用计数器从 0 更改为 1，这意味着该驱动程序时已释放对象的引用计数器递增。 这是始终不正确，因为它可能会破坏其他内存分配。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
 可以使用驱动程序验证程序管理器或 Verifier.exe 命令行来激活一个或多个驱动程序的安全检查选项。 有关详细信息，请参阅[选择 Driver Verifier 选项](selecting-driver-verifier-options.md)。
 

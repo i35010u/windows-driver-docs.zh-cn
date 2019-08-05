@@ -28,7 +28,7 @@ ms.locfileid: "67371401"
     devcon drivernodes {* | ID [ID ...] | =class [ID [ID ...]]} 
 ```
 
-## <a name="span-idddkdevcondrivernodestoolsspanspan-idddkdevcondrivernodestoolsspanparameters"></a><span id="ddk_devcon_drivernodes_tools"></span><span id="DDK_DEVCON_DRIVERNODES_TOOLS"></span>参数
+## <a name="span-idddk_devcon_drivernodes_toolsspanspan-idddk_devcon_drivernodes_toolsspanparameters"></a><span id="ddk_devcon_drivernodes_tools"></span><span id="DDK_DEVCON_DRIVERNODES_TOOLS"></span>参数
 
 
 <span id="______________"></span> **\\** *   
@@ -79,7 +79,7 @@ ms.locfileid: "67371401"
 
 **DevCon DriverNodes**操作是特别是一些有助于解决安装问题。 例如，您可以使用它来确定是否 Windows INF 文件或自定义的第三方 INF 文件使用的设备。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```
 devcon drivernodes *

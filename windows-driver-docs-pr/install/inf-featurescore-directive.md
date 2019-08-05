@@ -32,7 +32,7 @@ FeatureScore=featurescore
 
 **FeatureScore**指令支持 Windows Vista 和更高版本的 Windows 中。
 
-**警告**   **FeatureScore**中直接指定时，只处理指令**\[DDInstall\]** 部分。
+**警告**   **FeatureScore**中直接指定时，只处理指令 **\[DDInstall\]** 部分。
 
  
 

@@ -72,27 +72,27 @@ ms.locfileid: "63362389"
 
 换而言之，公共符号数据可以认为的两种方式中的私有符号数据的子集： 它包含一个较短列表的项，并且它也包含有关每个项更少信息。 例如，公共符号数据不完全包括本地变量。 每个本地变量包含仅在私有符号数据中，使用其地址、 数据类型和作用域。 函数，但是，将包含私有符号数据和公共符号表中，但私有符号数据包括函数名称、 地址、 FPO 记录、 输入的参数名称和类型和输出类型，包括公共符号表只是函数名称、 地址和 FPO 记录。
 
-没有私有符号数据和公共符号表之间的另一个差异。 许多公共符号表中的项具有的名称*修饰*与前缀、 后缀，或两者。 这些修饰添加由 C 编译器，C++编译器和 MASM 组装器。 典型的前缀包含下划线或字符串的一系列**\_ \_imp\_** （指定导入的函数）。 典型的后缀包含一个或多个 at 符号 ( **@** ) 后接地址或其他标识字符串。 链接器使用这些修饰来消除歧义符号，因为很可能是该函数名称或全局变量名无法重复多个不同的模块。 这些修饰是公共符号表是专用的符号数据的子集的一般规则的例外。
+没有私有符号数据和公共符号表之间的另一个差异。 许多公共符号表中的项具有的名称*修饰*与前缀、 后缀，或两者。 这些修饰添加由 C 编译器，C++编译器和 MASM 组装器。 典型的前缀包含下划线或字符串的一系列 **\_ \_imp\_** （指定导入的函数）。 典型的后缀包含一个或多个 at 符号 ( **@** ) 后接地址或其他标识字符串。 链接器使用这些修饰来消除歧义符号，因为很可能是该函数名称或全局变量名无法重复多个不同的模块。 这些修饰是公共符号表是专用的符号数据的子集的一般规则的例外。
 
-### <a name="span-idfullsymbolfilesandstrippedsymbolfilesspanspan-idfullsymbolfilesandstrippedsymbolfilesspanfull-symbol-files-and-stripped-symbol-files"></a><span id="full_symbol_files_and_stripped_symbol_files"></span><span id="FULL_SYMBOL_FILES_AND_STRIPPED_SYMBOL_FILES"></span>完整的符号文件和去除的符号文件
+### <a name="span-idfull_symbol_files_and_stripped_symbol_filesspanspan-idfull_symbol_files_and_stripped_symbol_filesspanfull-symbol-files-and-stripped-symbol-files"></a><span id="full_symbol_files_and_stripped_symbol_files"></span><span id="FULL_SYMBOL_FILES_AND_STRIPPED_SYMBOL_FILES"></span>完整的符号文件和去除的符号文件
 
 一个*完整符号文件*包含私有符号数据和公共符号表。 这种文件有时称为*私有符号文件*，但此名称是具有误导性，此类文件包含专用和公共符号。
 
 一个*符号文件中去除*是只包含公共符号表的较小的文件或在某些情况下，只有公共符号表的子集。 此文件有时称为*公共符号文件*。
 
-### <a name="span-idcreatingfullandstrippedsymbolfilesspanspan-idcreatingfullandstrippedsymbolfilesspancreating-full-and-stripped-symbol-files"></a><span id="creating_full_and_stripped_symbol_files"></span><span id="CREATING_FULL_AND_STRIPPED_SYMBOL_FILES"></span>创建完整和去除符号文件
+### <a name="span-idcreating_full_and_stripped_symbol_filesspanspan-idcreating_full_and_stripped_symbol_filesspancreating-full-and-stripped-symbol-files"></a><span id="creating_full_and_stripped_symbol_files"></span><span id="CREATING_FULL_AND_STRIPPED_SYMBOL_FILES"></span>创建完整和去除符号文件
 
 如果您使用 Visual Studio 的二进制文件生成时，可以创建任一完整或去除符号文件。 在生成时二进制文件的"调试版本"，Visual Studio 通常会创建完整符号文件。 当构建"零售版本"，Visual Studio 通常创建没有符号文件，但完整或去除设置了适当的选项会创建符号文件。
 
 如果生成二进制文件的位置与生成实用工具，它将创建完整的符号文件。
 
-使用 BinPlace 工具，可以从完整符号文件创建去除的符号文件。 使用最常用的 BinPlace 选项时 (**-a-x-s-n**)，去除的符号文件后列出的目录中放置 **-s**开关，并且完整的符号文件放在目录中列出后 **-n**切换。 当 BinPlace 去除的符号文件时，去除和完整版本的文件有完全相同的签名和其他标识信息。 这可以使用任一版本进行调试。
+使用 BinPlace 工具，可以从完整符号文件创建去除的符号文件。 使用最常用的 BinPlace 选项时 ( **-a-x-s-n**)，去除的符号文件后列出的目录中放置 **-s**开关，并且完整的符号文件放在目录中列出后 **-n**切换。 当 BinPlace 去除的符号文件时，去除和完整版本的文件有完全相同的签名和其他标识信息。 这可以使用任一版本进行调试。
 
 使用 PDBCopy 工具，您可以创建去除的符号文件从完整符号文件通过删除私有符号数据。 PDBCopy 还可以删除指定的公共符号表的子集。 有关详细信息，请参阅[PDBCopy](pdbcopy.md)。
 
 使用 SymChk 工具，可以确定的符号文件是否包含私有符号。 有关详细信息，请参阅[SymChk](symchk.md)。
 
-### <a name="span-idviewingpublicandprivatesymbolsinthedebuggerspanspan-idviewingpublicandprivatesymbolsinthedebuggerspanviewing-public-and-private-symbols-in-the-debugger"></a><span id="viewing_public_and_private_symbols_in_the_debugger"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_IN_THE_DEBUGGER"></span>查看调试器中的公共和私有符号
+### <a name="span-idviewing_public_and_private_symbols_in_the_debuggerspanspan-idviewing_public_and_private_symbols_in_the_debuggerspanviewing-public-and-private-symbols-in-the-debugger"></a><span id="viewing_public_and_private_symbols_in_the_debugger"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_IN_THE_DEBUGGER"></span>查看调试器中的公共和私有符号
 
 可以使用 WinDbg、 KD 或 CDB 来查看的符号。 当以下这些调试器之一有权访问完整的符号文件时，它具有专用的符号数据中所列的信息和公共符号表中列出的信息。 更多详细的私有符号数据，而公共符号数据包含符号修饰。
 
@@ -127,7 +127,7 @@ ms.locfileid: "63362389"
 00434420 <NoType> TimeTest!_typingString = <no type information> 
 ```
 
-### <a name="span-idviewingpublicandprivatesymbolswiththedbhtoolspanspan-idviewingpublicandprivatesymbolswiththedbhtoolspanviewing-public-and-private-symbols-with-the-dbh-tool"></a><span id="viewing_public_and_private_symbols_with_the_dbh_tool"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_WITH_THE_DBH_TOOL"></span>查看公共和私有符号使用 DBH 工具
+### <a name="span-idviewing_public_and_private_symbols_with_the_dbh_toolspanspan-idviewing_public_and_private_symbols_with_the_dbh_toolspanviewing-public-and-private-symbols-with-the-dbh-tool"></a><span id="viewing_public_and_private_symbols_with_the_dbh_tool"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_WITH_THE_DBH_TOOL"></span>查看公共和私有符号使用 DBH 工具
 
 若要查看的符号的另一种方法是使用[DBH 工具](dbh.md)。 DBH 使用相同的符号选项作为调试器。 调试程序，如 DBH 离开[SYMOPT\_PUBLICS\_仅](symbol-options.md#symopt-publics-only)并[SYMOPT\_否\_PUBLICS](symbol-options.md#symopt-no-publics)是关闭的默认值，并关闭[SYMOPT\_UNDNAME](symbol-options.md#symopt-undname)并[SYMOPT\_自动\_PUBLICS](symbol-options.md#symopt-auto-publics)在默认情况下。 通过命令行选项或通过 DBH 命令，可以重写这些默认值。
 

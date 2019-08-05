@@ -34,7 +34,7 @@ sx- [-c "Cmd1"] [-c2 "Cmd2"] {Exception|Event|*}
 sxr
 ```
 
-## <a name="span-idddkcmdsetexceptionsdbgspanspan-idddkcmdsetexceptionsdbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>参数
+## <a name="span-idddk_cmd_set_exceptions_dbgspanspan-idddk_cmd_set_exceptions_dbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>参数
 
 
 <span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span> **-c "** <em>Cmd1</em> **"**  
@@ -80,7 +80,7 @@ sxr
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
 有关中断状态和处理状态、 所有事件代码的说明、 所有事件的默认状态的列表，以及控制此状态的其他方法的详细信息，请参阅[控制异常和事件](controlling-exceptions-and-events.md)。
 

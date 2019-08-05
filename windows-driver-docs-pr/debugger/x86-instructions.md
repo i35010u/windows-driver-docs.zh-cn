@@ -26,7 +26,7 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 
 有关格式打包**切换**语句，则编译器将发出数据直接到代码流中，因此通过拆装**切换**语句将通常找进行任何有意义 （的说明因为它们是真正的数据）。 查找数据的末尾，并存在继续拆装。
 
-### <a name="span-idinstructionnotationspanspan-idinstructionnotationspanspan-idinstructionnotationspaninstruction-notation"></a><span id="Instruction_Notation"></span><span id="instruction_notation"></span><span id="INSTRUCTION_NOTATION"></span>指令表示法
+### <a name="span-idinstruction_notationspanspan-idinstruction_notationspanspan-idinstruction_notationspaninstruction-notation"></a><span id="Instruction_Notation"></span><span id="instruction_notation"></span><span id="INSTRUCTION_NOTATION"></span>指令表示法
 
 有关说明常规的表示法是放入目标寄存器左侧和右侧的源。 但是，可以是此规则的一些例外情况。
 
@@ -84,11 +84,11 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 
 此外，位大小后缀 （8、 16、 32） 可以追加到源或目标，以指示该参数必须是该大小。 例如，r8 表示一个 8 位寄存器。
 
-### <a name="span-idmemorydatatransferanddataconversionspanspan-idmemorydatatransferanddataconversionspanspan-idmemorydatatransferanddataconversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>内存、 数据传输和数据转换
+### <a name="span-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>内存、 数据传输和数据转换
 
 内存和数据传输指令不影响标志。
 
-### <a name="span-ideffectiveaddressspanspan-ideffectiveaddressspanspan-ideffectiveaddressspaneffective-address"></a><span id="Effective_Address"></span><span id="effective_address"></span><span id="EFFECTIVE_ADDRESS"></span>有效地址
+### <a name="span-ideffective_addressspanspan-ideffective_addressspanspan-ideffective_addressspaneffective-address"></a><span id="Effective_Address"></span><span id="effective_address"></span><span id="EFFECTIVE_ADDRESS"></span>有效地址
 
 <table>
 <colgroup>
@@ -112,7 +112,7 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 
 例如，**逆转 eax \[esi + 4\]** 意味着**eax** = **esi** + 4。 此指令通常用于执行算术运算。
 
-### <a name="span-iddatatransferspanspan-iddatatransferspanspan-iddatatransferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>数据传输
+### <a name="span-iddata_transferspanspan-iddata_transferspanspan-iddata_transferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>数据传输
 
 <table>
 <colgroup>
@@ -147,7 +147,7 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 
 **MOVSX**并**MOVZX**特殊版本的**mov**从源到目标执行符号扩展或零个扩展的指令。 这是唯一允许的源和目标为不同大小的说明。 （并且实际上，它们必须是不同的大小。
 
-### <a name="span-idstackmanipulationspanspan-idstackmanipulationspanspan-idstackmanipulationspanstack-manipulation"></a><span id="Stack_Manipulation"></span><span id="stack_manipulation"></span><span id="STACK_MANIPULATION"></span>堆栈操作
+### <a name="span-idstack_manipulationspanspan-idstack_manipulationspanspan-idstack_manipulationspanstack-manipulation"></a><span id="Stack_Manipulation"></span><span id="stack_manipulation"></span><span id="STACK_MANIPULATION"></span>堆栈操作
 
 指向堆栈**esp**注册。 处的值**esp**是 （最近推入堆栈，首先弹出）; 堆栈顶部的较旧堆栈元素驻留在较高的地址。
 
@@ -221,7 +221,7 @@ mov esp, ebp
 pop ebp
 ```
 
-### <a name="span-iddataconversionspanspan-iddataconversionspanspan-iddataconversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>数据转换
+### <a name="span-iddata_conversionspanspan-iddata_conversionspanspan-iddata_conversionspandata-conversion"></a><span id="Data_Conversion"></span><span id="data_conversion"></span><span id="DATA_CONVERSION"></span>数据转换
 
 <table>
 <colgroup>
@@ -252,7 +252,7 @@ pop ebp
 
 所有转换都执行符号扩展。
 
-### <a name="span-idarithmeticandbitmanipulationspanspan-idarithmeticandbitmanipulationspanspan-idarithmeticandbitmanipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算术运算符和位操作
+### <a name="span-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算术运算符和位操作
 
 所有算术和位操作说明修改标志。
 
@@ -458,7 +458,7 @@ pop ebp
 
 如果条件*cc*为 true，则 8 位值设置为 1。 否则，8 位值设置为零。
 
-### <a name="span-idbinary-codeddecimalspanspan-idbinary-codeddecimalspanspan-idbinary-codeddecimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>二进制编码小数
+### <a name="span-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>二进制编码小数
 
 除非正在调试以 COBOL 编写的代码，不会看到这些说明。
 
@@ -709,7 +709,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 
  
 
-### <a name="span-idcontrolflowspanspan-idcontrolflowspanspan-idcontrolflowspancontrol-flow"></a><span id="Control_Flow"></span><span id="control_flow"></span><span id="CONTROL_FLOW"></span>控制流
+### <a name="span-idcontrol_flowspanspan-idcontrol_flowspanspan-idcontrol_flowspancontrol-flow"></a><span id="Control_Flow"></span><span id="control_flow"></span><span id="CONTROL_FLOW"></span>控制流
 
 <table>
 <colgroup>
@@ -806,7 +806,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 
 这些说明是残留的 x86 的 CISC 遗产和最新的处理器中是写出这样的等效说明与实际速度较慢。
 
-### <a name="span-idstringmanipulationspanspan-idstringmanipulationspanspan-idstringmanipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>字符串操作
+### <a name="span-idstring_manipulationspanspan-idstring_manipulationspanspan-idstring_manipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>字符串操作
 
 <table>
 <colgroup>
@@ -902,7 +902,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 
  
 
-### <a name="span-idinterlockedinstructionsspanspan-idinterlockedinstructionsspanspan-idinterlockedinstructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>互锁的说明
+### <a name="span-idinterlocked_instructionsspanspan-idinterlocked_instructionsspanspan-idinterlocked_instructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>互锁的说明
 
 <table>
 <colgroup>

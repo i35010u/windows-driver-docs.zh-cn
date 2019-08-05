@@ -31,10 +31,10 @@ ms.locfileid: "63329957"
 -   兼容的标识符
 
 <a href="" id="vavc-subunittype-subunitid"></a>**VAVC\\*SubunitType*&*SubunitID***  
-虽然*Avc.sys*不提供这种类型的对等子单元连接兼容标识符，它提供这种兼容的标识符的虚拟子单元连接。
+虽然 *Avc.sys*不提供这种类型的对等子单元连接兼容标识符，它提供这种兼容的标识符的虚拟子单元连接。
 
 <a href="" id="vavc-subunittype"></a>**VAVC\\*SubunitType***  
-虽然*Avc.sys*不提供这种类型的对等子单元连接兼容标识符，它提供这种兼容的标识符的虚拟子单元连接。
+虽然 *Avc.sys*不提供这种类型的对等子单元连接兼容标识符，它提供这种兼容的标识符的虚拟子单元连接。
 
 <a href="" id="vavc-generic"></a>**VAVC\\GENERIC**  
 "通用"的设备驱动程序在其 INF 文件中包括此项。

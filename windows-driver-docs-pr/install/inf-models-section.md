@@ -38,7 +38,7 @@ device-description=install-section-name[,hw-id][,compatible-id...]
 
 
 <a href="" id="device-description"></a>*device-description*  
-标识设备安装，表示为可见的字符或作为任何唯一组合**%** <em>strkey</em> **%** 定义标记在中[ **INF 字符串部分**](inf-strings-section.md)。 以字符为单位的设备描述的最大长度是 LINE_LEN。
+标识设备安装，表示为可见的字符或作为任何唯一组合 **%** <em>strkey</em> **%** 定义标记在中[ **INF 字符串部分**](inf-strings-section.md)。 以字符为单位的设备描述的最大长度是 LINE_LEN。
 
 <a href="" id="install-section-name"></a>*install-section-name*  
 指定要用于设备 （和兼容型号的设备，如果有） 的 INF 安装部分的未修饰的名。 有关详细信息，请参阅[ **INF *DDInstall*部分**](inf-ddinstall-section.md)。
@@ -49,7 +49,7 @@ device-description=install-section-name[,hw-id][,compatible-id...]
 <a href="" id="enumerator-enumerator-specific-device-id"></a>*enumerator\\enumerator-specific-device-id*  
 是单个报告到 PnP 管理器的单个枚举器的即插即用设备的典型格式。 例如，`USB\VID_045E&PID_00B`标识 USB 总线上的 Microsoft HID 键盘设备。 不同的枚举器，此类规范甚至可以包括设备的硬件修订号为，例如， `PCI\VEN_1011&DEV_002&SUBSYS_00000000&REV_02`。
 
-<a href="" id="-enumerator-specific-device-id"></a>*\*enumerator-specific-device-id*  
+<a href="" id="-enumerator-specific-device-id"></a> *\*enumerator-specific-device-id*  
 指示用星号 (\*) 设备支持的多个枚举器。 例如，`*PNP0F01`标识 Microsoft 串行老鼠，它还具有兼容 id 规范的`SERENUM\PNP0F01`。
 
 <a href="" id="device-class-specific-id"></a>*device-class-specific-ID*  
@@ -58,7 +58,7 @@ device-description=install-section-name[,hw-id][,compatible-id...]
 注意，单个设备可以有多个*hw id*值。 PnP 管理器使用每个此类*hw id*值，该值通常提供基础的总线时枚举其子设备，若要在注册表中创建一个用于每个此类设备的子项**枚举**分支。 对于手动安装的设备，系统的安装程序代码使用其*hw id*在其各自的 INF 文件，若要创建每个此类注册表子项中根据指定的值。
 
 <a href="" id="compatible-id"></a>*compatible-id*  
-指定供应商定义[兼容 ID](compatible-ids.md)兼容的设备标识字符串。 任意数量的*兼容 id*中的条目，可以指定值*模型*部分中，每个与下一个逗号分隔 (**，**)。 为指定的初始设备相同的驱动程序控制所有此类兼容的设备和/或设备型号*hw id*。
+指定供应商定义[兼容 ID](compatible-ids.md)兼容的设备标识字符串。 任意数量的*兼容 id*中的条目，可以指定值*模型*部分中，每个与下一个逗号分隔 ( **，** )。 为指定的初始设备相同的驱动程序控制所有此类兼容的设备和/或设备型号*hw id*。
 
 <a name="remarks"></a>备注
 -------

@@ -18,7 +18,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67355454"
 ---
-# <a name="using-the-connectfullyspecified-version-of-ioconnectinterruptex"></a>使用 CONNECT\_完全\_IoConnectInterruptEx 指定版本
+# <a name="using-the-connect_fully_specified-version-of-ioconnectinterruptex"></a>使用 CONNECT\_完全\_IoConnectInterruptEx 指定版本
 
 
 驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册[ *InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)特定中断例程。 驱动程序可以使用 CONNECT\_完全\_从 Windows Vista 开始的指定版本。 通过将链接到 Iointex.lib 库，该驱动程序可以使用 CONNECT\_完全\_Windows 2000，Windows XP 和 Windows Server 2003 中的指定版本。 有关详细信息，请参阅[使用之前为 Windows Vista 的 IoConnectInterruptEx](using-ioconnectinterruptex-prior-to-windows-vista.md)。

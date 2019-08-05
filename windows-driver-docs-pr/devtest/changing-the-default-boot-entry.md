@@ -29,7 +29,7 @@ ms.locfileid: "63344053"
 
 对于 Windows，可以使用 BCDEdit 更改默认启动项目。
 
-### <a name="span-idusingbcdeditspanspan-idusingbcdeditspanusing-bcdedit"></a><span id="using_bcdedit"></span><span id="USING_BCDEDIT"></span>使用 BCDEdit
+### <a name="span-idusing_bcdeditspanspan-idusing_bcdeditspanusing-bcdedit"></a><span id="using_bcdedit"></span><span id="USING_BCDEDIT"></span>使用 BCDEdit
 
 您可以指定默认引导条目使用 **/默认**选项。 若要指定默认的操作系统的语法如下所示：
 

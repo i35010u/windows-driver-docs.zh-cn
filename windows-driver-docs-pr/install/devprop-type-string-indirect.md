@@ -21,7 +21,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63391705"
 ---
-# <a name="devproptypestringindirect"></a>DEVPROP_TYPE_STRING_INDIRECT
+# <a name="devprop_type_string_indirect"></a>DEVPROP_TYPE_STRING_INDIRECT
 
 
 DEVPROP_TYPE_STRING_INDIRECT 标识符表示包含间接字符串引用的以 NULL 结尾的 Unicode 字符串的基本数据类型标识符。

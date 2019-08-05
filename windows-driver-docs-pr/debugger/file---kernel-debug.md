@@ -24,13 +24,13 @@ ms.locfileid: "63369773"
 
 此命令相当于按下 CTRL + K。 仅当 WinDbg 处于休眠模式时，可以使用此命令。
 
-### <a name="span-iddialogboxspanspan-iddialogboxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
+### <a name="span-iddialog_boxspanspan-iddialog_boxspandialog-box"></a><span id="dialog_box"></span><span id="DIALOG_BOX"></span>对话框
 
 当您单击**内核调试**，则**内核调试**对话框将显示与这些选项卡：
 
 - **COM**选项卡指示连接将使用的 COM 端口。 在中**波特率**框中，输入的波特率。 在中**端口**框中，输入的 COM 端口的名称。 有关详细信息，请参阅[设置启动串行连接手动](setting-up-a-null-modem-cable-connection.md)。
 
-  COM 选项卡还可用于连接到虚拟机通过命名管道。 在中**端口**框中，输入**\\ \\** <em>VMHost</em>**\\管道\\** <em>PipeName</em>。 *VMHost*指定在其运行虚拟机的物理计算机的名称。 如果内核调试器本身相同的计算机上运行虚拟机，使用单个句点 （.） 进行*VMHost*。 有关详细信息，请参阅[设置连接到虚拟机](attaching-to-a-virtual-machine--kernel-mode-.md)。
+  COM 选项卡还可用于连接到虚拟机通过命名管道。 在中**端口**框中，输入 **\\ \\** <em>VMHost</em> **\\管道\\** <em>PipeName</em>。 *VMHost*指定在其运行虚拟机的物理计算机的名称。 如果内核调试器本身相同的计算机上运行虚拟机，使用单个句点 （.） 进行*VMHost*。 有关详细信息，请参阅[设置连接到虚拟机](attaching-to-a-virtual-machine--kernel-mode-.md)。
 
 - **1394年**选项卡指示连接将使用 1394年。 在中**通道**框中，输入 1394年频道号。 仅当主计算机和目标计算机运行 Windows XP 或更高版本的 Windows 操作系统支持 1394年调试。 有关详细信息，请参阅[设置 1394年连接手动](setting-up-a-1394-cable-connection.md)。
 

@@ -108,7 +108,7 @@ GPD 文件可以包含预处理器指令，可用于控制 GPD 文件中节的�
 *SetPPPrefix: #SpecialPrefix#
 ```
 
-然后预处理器就停止搜索以开头的预处理器指令**\\***，并改为查找指令开头**\#SpecialPrefix\#**. 以下序列暂时更改的预处理器前缀 **\#SpecialPrefix\#**，然后还原到 * *\\* * *。
+然后预处理器就停止搜索以开头的预处理器指令 **\\** *，并改为查找指令开头 **\#SpecialPrefix\#** . 以下序列暂时更改的预处理器前缀 **\#SpecialPrefix\#** ，然后还原到 * *\\* * *。
 
 ```cpp
 *SetPPPrefix: #SpecialPrefix#

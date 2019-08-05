@@ -52,7 +52,7 @@ symchk [/v | /q ] /om Manifest /ip ProcessFile
 symchk [/v | /q ] /om Manifest /it TextFileList
 ```
 
-## <a name="span-idddksymchkcommandlineoptionsdtoolqspanspan-idddksymchkcommandlineoptionsdtoolqspanparameters"></a><span id="ddk_symchk_command_line_options_dtoolq"></span><span id="DDK_SYMCHK_COMMAND_LINE_OPTIONS_DTOOLQ"></span>参数
+## <a name="span-idddk_symchk_command_line_options_dtoolqspanspan-idddk_symchk_command_line_options_dtoolqspanparameters"></a><span id="ddk_symchk_command_line_options_dtoolq"></span><span id="DDK_SYMCHK_COMMAND_LINE_OPTIONS_DTOOLQ"></span>参数
 
 
 <span id="________r______"></span><span id="________R______"></span> **/r**   
@@ -65,10 +65,10 @@ symchk [/v | /q ] /om Manifest /it TextFileList
 启用安静模式。 将取消所有输出 (除非 **/ot**已包含选项)。
 
 <span id="_______FileNames______"></span><span id="_______filenames______"></span><span id="_______FILENAMES______"></span> *FileNames*   
-指定的符号都要检查的程序文件。 允许使用绝对路径、 相对路径和 UNC 路径。 一个星号 (**\\**<em>) 允许使用通配符。如果 * 文件名</em>以斜杠结尾，则会将其为目录名称，并检查该目录中的所有文件中。 如果*文件名*包含空格，则必须用引号引起来。
+指定的符号都要检查的程序文件。 允许使用绝对路径、 相对路径和 UNC 路径。 一个星号 ( **\\** <em>) 允许使用通配符。如果 * 文件名</em>以斜杠结尾，则会将其为目录名称，并检查该目录中的所有文件中。 如果*文件名*包含空格，则必须用引号引起来。
 
 <span id="________ie_______ExeFile______"></span><span id="________ie_______exefile______"></span><span id="________IE_______EXEFILE______"></span> **/ie** *ExeFile*   
-指定当前正在执行的程序的名称。 将检查此程序的符号。 *ExeFile*必须包含名称的文件和文件扩展名 (通常为.exe)，但没有路径信息。 如果有两个不同的可执行文件相同的名称，不建议此选项。 *ExeFile*可以指定任何其他程序，包括内核模式驱动程序。 如果*ExeFile*是一个星号 ( **\\***)，SymChk 将检查所有正在运行的进程，包括驱动程序的符号。
+指定当前正在执行的程序的名称。 将检查此程序的符号。 *ExeFile*必须包含名称的文件和文件扩展名 (通常为.exe)，但没有路径信息。 如果有两个不同的可执行文件相同的名称，不建议此选项。 *ExeFile*可以指定任何其他程序，包括内核模式驱动程序。 如果*ExeFile*是一个星号 ( **\\** *)，SymChk 将检查所有正在运行的进程，包括驱动程序的符号。
 
 <span id="________id_______DumpFile______"></span><span id="________id_______dumpfile______"></span><span id="________ID_______DUMPFILE______"></span> **/id** *DumpFile*   
 指定的内存转储文件。 此转储文件的符号将进行检查。
@@ -81,7 +81,7 @@ symchk [/v | /q ] /om Manifest /it TextFileList
 
 - 如果*ProcessID*为零 ( **0** )，SymChk 会检查正在运行的所有驱动程序的符号。
 
-- 如果*ProcessID*是一个星号 ( **\\***)，SymChk 将检查所有正在运行的进程，包括驱动程序的符号。
+- 如果*ProcessID*是一个星号 ( **\\** *)，SymChk 将检查所有正在运行的进程，包括驱动程序的符号。
 
 <span id="________it_______TextFileList______"></span><span id="________it_______textfilelist______"></span><span id="________IT_______TEXTFILELIST______"></span> **/it** *TextFileList*   
 指定包含程序文件的列表的文本文件。 将检查所有这些程序的符号。 *TextFileList*必须指定一个文件 （通过相对、 绝对路径或 UNC 路径，但不带通配符）; 如果它包含它应括在引号中的空格。 在此文件中，每个行指示 （通过相对、 绝对路径或 UNC 路径），一个程序文件和一个星号通配符 (* *\\* * *) 允许。 但是，任何行，使用此通配符必须使用相对路径。
@@ -308,7 +308,7 @@ SymChk 将检查每个路径，而在一次检查所有路径不是单独。
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
 有关 SymChk 详细信息，请参阅[使用 SymChk](using-symchk.md)。
 

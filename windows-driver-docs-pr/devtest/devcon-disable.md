@@ -30,7 +30,7 @@ ms.locfileid: "63341685"
     devcon [/r] disable {* | ID [ID ...] | =class [ID [ID ...]]} 
 ```
 
-## <a name="span-idddkdevcondisabletoolsspanspan-idddkdevcondisabletoolsspanparameters"></a><span id="ddk_devcon_disable_tools"></span><span id="DDK_DEVCON_DISABLE_TOOLS"></span>参数
+## <a name="span-idddk_devcon_disable_toolsspanspan-idddk_devcon_disable_toolsspanparameters"></a><span id="ddk_devcon_disable_tools"></span><span id="DDK_DEVCON_DISABLE_TOOLS"></span>参数
 
 
 <span id="________r______"></span><span id="________R______"></span> **/r**   
@@ -86,7 +86,7 @@ DevCon 禁用的设备，即使设备已被禁用。 之前和之后禁用设备
 
 系统可能需要重新启动才能使此更改生效。 若要让 DevCon 重新启动系统，添加条件的重新启动参数 (/ r) 命令。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```
 devcon disable * (not recommended)

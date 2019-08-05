@@ -29,7 +29,7 @@ ms.locfileid: "67358266"
 
 **另请参阅：** [增强的 I/O 验证](enhanced-i-o-verification.md)在 Windows 7 和更高版本的 Windows 操作系统中，增强的 I/O 验证时，将自动激活选择的 I/O 验证。 它不可用或有必要以选择它作为单独的选项。
 
-### <a name="span-idlevel1ioverificationspanspan-idlevel1ioverificationspanlevel-1-io-verification"></a><span id="level_1_i_o_verification"></span><span id="LEVEL_1_I_O_VERIFICATION"></span>级别 1 I/O 验证
+### <a name="span-idlevel_1_i_o_verificationspanspan-idlevel_1_i_o_verificationspanlevel-1-io-verification"></a><span id="level_1_i_o_verification"></span><span id="LEVEL_1_I_O_VERIFICATION"></span>级别 1 I/O 验证
 
 通过启用级别 1 的 I/O 验证后，获取所有 Irp **IoAllocateIrp**从特殊池分配和跟踪其使用。
 
@@ -57,7 +57,7 @@ ms.locfileid: "67358266"
 
 1 级的 I/O 验证失败导致 bug 检查 0xC9 要颁发。 此 bug 检查的第一个参数指示发生了哪些冲突。 请参阅[ **Bug 检查 0xC9** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation) (驱动程序\_VERIFIER\_IOMANAGER\_冲突) 有关的完整参数列表。
 
-### <a name="span-idlevel2ioverificationspanspan-idlevel2ioverificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>级别 2 I/O 验证
+### <a name="span-idlevel_2_i_o_verificationspanspan-idlevel_2_i_o_verificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>级别 2 I/O 验证
 
 I/O 验证第 2 级错误都显示在不同的方式： 在蓝色屏幕上，在崩溃转储文件，并在内核调试器中。
 
@@ -101,7 +101,7 @@ I/O 验证选项启动 Windows 7 中，检查以下驱动程序错误：
 
 在 Windows 7 和更高版本的 Windows 操作系统，[增强的 I/O 验证](enhanced-i-o-verification.md)时选择的 I/O 验证自动激活。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
 可以使用驱动程序验证程序管理器或 Verifier.exe 命令行来激活一个或多个驱动程序的 I/O 验证功能。 有关详细信息，请参阅[选择 Driver Verifier 选项](selecting-driver-verifier-options.md)。
 

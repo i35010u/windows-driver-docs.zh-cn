@@ -33,17 +33,17 @@ ms.locfileid: "63340493"
 
 本主题中的下列部分描述的功能以及如何使用帮助文档。
 
-### <a name="span-idcontentstabspanspan-idcontentstabspancontents-tab"></a><span id="contents_tab"></span><span id="CONTENTS_TAB"></span>内容选项卡
+### <a name="span-idcontents_tabspanspan-idcontents_tabspancontents-tab"></a><span id="contents_tab"></span><span id="CONTENTS_TAB"></span>内容选项卡
 
 **内容**选项卡提供了内容的文档的表的可展开视图。
 
 单击加号 ( **+** ) 的节点旁边或双击要展开或折叠该节点下的目录中的节点的标题。
 
-### <a name="span-idindextabspanspan-idindextabspanindex-tab"></a><span id="index_tab"></span><span id="INDEX_TAB"></span>索引选项卡
+### <a name="span-idindex_tabspanspan-idindex_tabspanindex-tab"></a><span id="index_tab"></span><span id="INDEX_TAB"></span>索引选项卡
 
 **索引**选项卡显示在本文档中使用的术语的完整索引。 可以输入一个词的开头，也可以使用滚动条来浏览此索引。
 
-### <a name="span-idsearchtabspanspan-idsearchtabspansearch-tab"></a><span id="search_tab"></span><span id="SEARCH_TAB"></span>搜索选项卡
+### <a name="span-idsearch_tabspanspan-idsearch_tabspansearch-tab"></a><span id="search_tab"></span><span id="SEARCH_TAB"></span>搜索选项卡
 
 在中**搜索**任何单词或短语的文档中包含的选项卡上，可以搜索。 可以搜索所有文本，也可以限制对主题标题进行都搜索。
 
@@ -57,23 +57,23 @@ ms.locfileid: "63340493"
 
 搜索返回与指定的条件匹配的所有主题的列表。 如果选择**搜索以前的结果**框中，然后搜索更多条款这些结果。
 
-### <a name="span-idfavoritestabspanspan-idfavoritestabspanfavorites-tab"></a><span id="favorites_tab"></span><span id="FAVORITES_TAB"></span>收藏夹选项卡
+### <a name="span-idfavorites_tabspanspan-idfavorites_tabspanfavorites-tab"></a><span id="favorites_tab"></span><span id="FAVORITES_TAB"></span>收藏夹选项卡
 
 在中**收藏夹**选项卡上，您可以保存经常访问的主题的标题。 在你查看主题，请单击**收藏夹**选项卡，然后单击**添加**按钮。
 
 若要重命名您的收藏夹列表上的页面，速度慢，两次单击其名称并重新键入名称。 若要查看的收藏夹列表上的主题，请双击其名称或一次单击，然后单击**显示**。 若要从收藏夹列表中删除一个主题，请单击它一次，然后单击**删除**。
 
-### <a name="span-idprintingtopicsspanspan-idprintingtopicsspanprinting-topics"></a><span id="printing_topics"></span><span id="PRINTING_TOPICS"></span>打印主题
+### <a name="span-idprinting_topicsspanspan-idprinting_topicsspanprinting-topics"></a><span id="printing_topics"></span><span id="PRINTING_TOPICS"></span>打印主题
 
 若要打印一个或多个主题，请单击中的主题**内容**选项卡，然后依次**打印**工具栏上的按钮。 系统将询问是否想要打印仅所选的主题或该主题及其所有及其子主题。
 
 此外可以打印正在查看内视图窗口中，右键单击，单击主题**打印**快捷菜单上。 但是，此方法不能让您打印子主题。
 
-### <a name="span-idsearchingwithinatopicspanspan-idsearchingwithinatopicspansearching-within-a-topic"></a><span id="searching_within_a_topic"></span><span id="SEARCHING_WITHIN_A_TOPIC"></span>在本主题中搜索
+### <a name="span-idsearching_within_a_topicspanspan-idsearching_within_a_topicspansearching-within-a-topic"></a><span id="searching_within_a_topic"></span><span id="SEARCHING_WITHIN_A_TOPIC"></span>在本主题中搜索
 
 若要搜索你正在查看的主题内的文本字符串，请按 CTRL + F，或单击**本主题中查找**上**编辑**菜单。
 
-### <a name="span-idaccessingthehelpdocumentationspanspan-idaccessingthehelpdocumentationspanaccessing-the-help-documentation"></a><span id="accessing_the_help_documentation"></span><span id="ACCESSING_THE_HELP_DOCUMENTATION"></span>访问帮助文档
+### <a name="span-idaccessing_the_help_documentationspanspan-idaccessing_the_help_documentationspanaccessing-the-help-documentation"></a><span id="accessing_the_help_documentation"></span><span id="ACCESSING_THE_HELP_DOCUMENTATION"></span>访问帮助文档
 
 若要打开此帮助文档，请执行以下操作：
 

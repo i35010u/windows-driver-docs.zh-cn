@@ -40,7 +40,7 @@ ms.locfileid: "67380221"
 
 *Punting*到 GDI 回调意味着将放入相应的 GDI 模拟调用中。 一般情况下，为每个*DrvXxx*图形调用没有对应的 GDI **Eng * * * Xxx*模拟调用使用相同的参数。 只要该驱动程序进行了位图 nonopaque，可以将所有参数而无需更改都传递到 GDI 模拟。 对于每个调用回 GDI punts 驱动程序，驱动程序的大小被减少 （因为该功能的代码，则可以省略）。 但是，因为该引擎负责调用，该驱动程序不具有控制的执行速度。 对于某些复杂的情况下，可能没有真正的优势提供的驱动程序支持。
 
-### <a name="span-idhookablegdigraphicsoutputfunctionsspanspan-idhookablegdigraphicsoutputfunctionsspanspan-idhookablegdigraphicsoutputfunctionsspanhookable-gdi-graphics-output-functions"></a><span id="Hookable_GDI_Graphics_Output_Functions"></span><span id="hookable_gdi_graphics_output_functions"></span><span id="HOOKABLE_GDI_GRAPHICS_OUTPUT_FUNCTIONS"></span>可钩进 GDI 图形输出函数
+### <a name="span-idhookable_gdi_graphics_output_functionsspanspan-idhookable_gdi_graphics_output_functionsspanspan-idhookable_gdi_graphics_output_functionsspanhookable-gdi-graphics-output-functions"></a><span id="Hookable_GDI_Graphics_Output_Functions"></span><span id="hookable_gdi_graphics_output_functions"></span><span id="HOOKABLE_GDI_GRAPHICS_OUTPUT_FUNCTIONS"></span>可钩进 GDI 图形输出函数
 
 图形输出函数，该驱动程序可以挂接和下表中列出了相应的 GDI 模拟。
 

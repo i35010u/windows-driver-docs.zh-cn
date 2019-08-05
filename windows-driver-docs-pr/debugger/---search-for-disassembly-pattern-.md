@@ -28,7 +28,7 @@ ms.locfileid: "63337058"
      # [Pattern] [Address [ L Size ]] 
 ```
 
-## <a name="span-idddkcmdsearchfordisassemblypatterndbgspanspan-idddkcmdsearchfordisassemblypatterndbgspanparameters"></a><span id="ddk_cmd_search_for_disassembly_pattern_dbg"></span><span id="DDK_CMD_SEARCH_FOR_DISASSEMBLY_PATTERN_DBG"></span>参数
+## <a name="span-idddk_cmd_search_for_disassembly_pattern_dbgspanspan-idddk_cmd_search_for_disassembly_pattern_dbgspanparameters"></a><span id="ddk_cmd_search_for_disassembly_pattern_dbg"></span><span id="DDK_CMD_SEARCH_FOR_DISASSEMBLY_PATTERN_DBG"></span>参数
 
 
 <span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *Pattern*   
@@ -65,7 +65,7 @@ ms.locfileid: "63337058"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
 调试和相关命令，请参阅有关程序集的详细信息[在程序集模式下调试](debugging-in-assembly-mode.md)。
 
