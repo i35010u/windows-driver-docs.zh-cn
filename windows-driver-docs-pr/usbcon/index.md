@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 2909ebe474011590da8323b811d37f3709c297ba
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 91f347830cc454fb5849a15893136f796d6f7091
+ms.sourcegitcommit: a289bc7df691d7f870fa894e7c42b2f7299c8559
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393265"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68787228"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
@@ -215,7 +215,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p><a href="https://github.com/Microsoft/Windows-universal-samples" data-raw-source="[UWP app samples for USB](https://github.com/Microsoft/Windows-universal-samples)">USB 的 UWP 应用示例</a></p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=618021" data-raw-source="[Windows driver samples for USB](https://go.microsoft.com/fwlink/p/?linkid=618021)">USB 的 Windows 驱动程序示例</a></p>
 <p><strong>开发工具</strong></p>
-<a href="https://go.microsoft.com/fwlink/p/?linkid=619491" data-raw-source="[Download kits and tools for Windows]( https://go.microsoft.com/fwlink/p/?linkid=619491)">下载适用于 Windows 的工具包和工具</a></td>
+<a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Download kits and tools for Windows]( https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)">下载适用于 Windows 的工具包和工具</a></td>
 </tr>
 </tbody>
 </table>
