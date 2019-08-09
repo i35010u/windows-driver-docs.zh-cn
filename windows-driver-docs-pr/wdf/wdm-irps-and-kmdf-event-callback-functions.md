@@ -142,7 +142,7 @@ ms.locfileid: "67395215"
 
  
 
-## <a name="kmdf-callbacks-for-irpmjpnp"></a>KMDF IRP 的回调\_MJ\_PNP
+## <a name="kmdf-callbacks-for-irp_mj_pnp"></a>KMDF IRP 的回调\_MJ\_PNP
 
 
 下表列出了，按顺序执行，对应的次要 IRP 代码 KMDF 回调[ **IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)。 箭头表示传输时堆栈上下 WDM FDO 是否处理 IRP。
@@ -311,7 +311,7 @@ ms.locfileid: "67395215"
 
  
 
-## <a name="kmdf-callbacks-for-irpmjpower"></a>KMDF IRP 的回调\_MJ\_电源
+## <a name="kmdf-callbacks-for-irp_mj_power"></a>KMDF IRP 的回调\_MJ\_电源
 
 
 下表列出了，按顺序执行，对应的次要 IRP 代码 KMDF 回调[ **IRP\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)。 箭头表示传输时堆栈上下 WDM FDO 是否处理 IRP。

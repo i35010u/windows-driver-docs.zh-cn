@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/25/2019
 ms.locfileid: "67386875"
 ---
-# <a name="handling-an-irpmnsurpriseremoval-request"></a>处理 IRP\_MN\_惊讶\_删除请求
+# <a name="handling-an-irp_mn_surprise_removal-request"></a>处理 IRP\_MN\_惊讶\_删除请求
 
 
 
@@ -108,14 +108,14 @@ PnP 管理器通知用户模式应用程序和其他内核模式组件之前将�
 
 在 Windows 98 上 / 我，即插即用管理器不会发送此 IRP。 如果用户删除设备时无需先使用相应的用户界面，即插即用管理器仅发送**IRP\_MN\_删除\_设备**到设备的驱动程序的请求。 所有 WDM 驱动程序必须都处理两者**IRP\_MN\_惊讶\_删除**并**IRP\_MN\_删除\_设备**。 代码**IRP\_MN\_删除\_设备**应检查是否该驱动程序收到先前的意外删除 IRP，应处理这两种情况。
 
- ## <a name="using-guidreenumerateselfinterfacestandard"></a>使用 GUID_REENUMERATE_SELF_INTERFACE_STANDARD
+ ## <a name="using-guid_reenumerate_self_interface_standard"></a>使用 GUID_REENUMERATE_SELF_INTERFACE_STANDARD
 
 GUID_REENUMERATE_SELF_INTERFACE_STANDARD 接口，请求重新枚举其设备的驱动程序。
 
 若要使用此接口，请将 IRP_MN_QUERY_INTERFACE IRP 发送到总线驱动程序与 InterfaceType = GUID_REENUMERATE_SELF_INTERFACE_STANDARD。 总线驱动程序提供了指向包含该接口的单个例程的指针的 REENUMERATE_SELF_INTERFACE_STANDARD 结构的指针。 一个[ReenumerateSelf 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-preenumerate_self)总线驱动程序 reenumerate 子设备的请求。
 
 
-## <a name="about-pnpdevicestate"></a>有关 PNP_DEVICE_STATE
+## <a name="about-pnp_device_state"></a>有关 PNP_DEVICE_STATE
 
 PNP\_设备\_状态类型是一个位掩码，说明设备的即插即用状态。 驱动程序将在响应中返回此类型的值**IRP\_MN\_查询\_PNP\_设备\_状态**请求。
 

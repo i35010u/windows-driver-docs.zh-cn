@@ -19,7 +19,7 @@ ms.locfileid: "68415095"
 
 ## <a name="selectionexecution-commands"></a>选择/执行命令
 
-### <a name="testbinaries"></a>test_binaries
+### <a name="test_binaries"></a>test_binaries
 
 指定要执行的一个或多个测试文件 (用空格分隔)。 支持使用通配符。
 
