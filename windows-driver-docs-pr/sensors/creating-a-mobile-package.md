@@ -1,24 +1,23 @@
 ---
 title: 创建移动包
-description: 本主题提供有关创建移动设备上安装的示例驱动程序的包的信息。
+description: 本主题提供有关创建用于在移动设备上安装示例驱动程序的包的信息。
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e21c33ad075d64279643e85b292ff5056bc29fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b3918ee4680eca84c7ad5a9b0e70ff3d22e892f
+ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382891"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68866768"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
+本主题提供有关创建用于在移动设备上安装示例驱动程序的包的信息。
 
-本主题提供有关创建移动设备上安装的示例驱动程序的包的信息。
+执行以下任务来为示例驱动程序创建包。
 
-执行以下任务来创建的示例驱动程序的包。
-
-1. 将以下代码复制并粘贴到记事本。
+1. 复制以下代码并将其粘贴到记事本中。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -62,27 +61,25 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 ```
 
 >[!NOTE]
-> 值**安全 InfSectionName**元素必须完全相同的值**AddReg**本主题中讨论的字段：[查看 INX 文件](review-and-revise-the-inf-file.md)。
+> **Security InfSectionName**元素的值必须与本主题中讨论的**AddReg**字段的值完全相同:[查看 INX 文件](review-and-revise-the-inf-file.md)。
 
- 
+2. 在记事本的主菜单中, 单击 "**文件** &gt; **另存为**", 然后在 "**另存为**" 对话框窗口中, 使用下拉框将 "**保存类型**" 字段设置为 "**所有文件**"。 * * * *
 
-2. 在记事本中主菜单中，单击**文件** &gt; **另存为**，然后在**另存为**对话框窗口中，使用下拉列表框设置**另存为类型**字段**的所有文件**。 * * *
+3. 在 "**文件名**" 文本框中, 键入以下内容:
 
-3. 在中**文件名**文字框中，键入以下内容：
+*adxl345acc. .pkg*
+4. 使用 "**另存为**" 对话框窗口顶部的 "目标" 框导航到 Microsoft Visual Studio 中的项目文件夹。 然后单击 "**保存**"。
 
-*adxl345acc.pkg.xml*
-4. 使用目标框的顶部**另存为**对话框窗口中导航到 Microsoft Visual Studio 中的项目文件夹。 然后单击**保存**。
+如前面的步骤中所示创建*adxl345acc*文件后, 还可以使用 Windows 驱动程序工具包 (WDK) 随附的**pkggen**工具打包该文件。
 
-在创建后*adxl345acc.pkg.xml*文件中前面所示的步骤，还可以使用**pkggen.exe**已包含使用 Windows Driver Kit (WDK)，若要打包该文件的工具。
+如果已将 WDK 安装到默认位置, 则可以在以下位置找到**pkggen** : *%WPDKCONTENTROOT%\Tools\bin\i386*
 
-如果您安装 WDK 到默认位置，则可以找到**pkggen.exe**在以下位置：
-
-*%Systemroot%\\Program Files (x86)\\Windows 工具包\\10\\工具\\bin\\i386*指[运行 pkggen.exe 工具](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)#run-pkg)，为若要了解如何创建你的移动设备的包。 并查看[创建移动包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))有关的更全面介绍。
+有关如何为移动设备创建包的说明, 请参阅[包生成器的命令行参数](https://docs.microsoft.com/en-us/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)。 有关更全面的介绍, 请参阅[创建 Mobile Pacakages](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)) 。
 
 ## <a name="related-topics"></a>相关主题
+
 [创建移动包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))
+
 [查看 INX 文件](review-and-revise-the-inf-file.md)
-[运行 pkggen.exe 工具](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)#run-pkg)
 
-
-
+[包生成器的命令行参数](https://docs.microsoft.com/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)

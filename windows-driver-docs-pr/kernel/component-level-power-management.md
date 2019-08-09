@@ -1,59 +1,59 @@
 ---
 title: 组件级电源管理
-description: 从开始 Windows 8 中，电源管理框架 (PoFx) 允许驱动程序来管理设备中的各个组件的电源状态。 组件级电源管理存在与设备级电源管理并行。
+description: 从 Windows 8 开始, 电源管理框架 (PoFx) 使驱动程序能够管理设备中单个组件的电源状态。 组件级电源管理与设备级电源管理并行存在。
 ms.assetid: 77866143-FB10-4623-9923-368B23808715
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82dbc4d022ec8372b5d218406ce22ca948c7245d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4912cc47399751fa3d0e9a4a330baefd65dc018
+ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377215"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68866773"
 ---
 # <a name="component-level-power-management"></a>组件级电源管理
 
 
-从开始 Windows 8 中，电源管理框架 (PoFx) 允许驱动程序来管理设备中的各个组件的电源状态。 组件级电源管理存在与设备级电源管理并行。
+从 Windows 8 开始, 电源管理框架 (PoFx) 使驱动程序能够管理设备中单个组件的电源状态。 组件级电源管理与设备级电源管理并行存在。
 
 ## <a name="overview-of-component-level-power-management"></a>组件级电源管理概述
 
 
-Windows 7 及更早版本的操作系统仅为设备级电源管理，从而使支持 D 状态中设备的驱动程序提供支持。 高级配置和电源接口 (ACPI) 规范定义了[设备的电源状态](device-power-states.md)D0 （完全启用） 通过 D3 （完全关闭），并定义[系统电源状态](system-power-states.md)S0 （完全启用） 到 S5 （完全关闭）。 这些版本的 Windows 不提供机制来独立地管理设备中的各个组件的电源。 在这些版本的 Windows 中，某些驱动程序可以实现自定义电源控制的组件，但这些控件通常将复杂性添加到驱动程序，并可能是设备控制组件电源设置，才可行。
+Windows 7 和更早版本的操作系统仅为设备级别电源管理提供支持, 使驱动程序能够在设备中支持 D 状态。 高级配置和电源接口 (ACPI) 规范通过 D3 (完全关闭) 定义[设备电源状态](device-power-states.md)D0 (完全打开), 并通过 S5 (完全关闭) 定义[系统电源状态](system-power-states.md)S0 (完全启用)。 这些版本的 Windows 不提供单独管理提供给设备中各个组件的电源的机制。 在这些版本的 Windows 中, 某些驱动程序可以实现组件的自定义电源控制, 但这些控制通常增加了驱动程序的复杂性, 并且仅当组件电源设置在设备内受控时才可行。
 
-从 Windows 8 开始，PoFx 添加了对组件级别电源管理支持。 这使驱动程序以支持一定数量的组件的电源状态、 F0，F1，等，其中 F0 是完全开启状态。 所有组件都支持 F0 状态。 设备中的组件的电源策略所有者 (PPO) 的驱动程序负责定义的任何其他、 低 Fx 电源状态可能具有一个组件。 （通常情况下，设备功能驱动程序是 PPO。）此驱动程序确定的每个分量的低功率 Fx 状态数和每个 Fx 状态的属性。 此驱动程序定义的 Fx 状态可能在同一设备中不同组件之间。
+从 Windows 8 开始, PoFx 添加了对组件级电源管理的支持。 这使得驱动程序能够支持一定数量的组件电源状态、F0、F1 等, 其中 F0 是完全打开状态。 所有组件都支持 F0 状态。 作为设备中组件的电源策略所有者 (PPO) 的驱动程序负责定义组件可能具有的任何其他低功率 Fx 电源状态。 (通常, 设备的函数驱动程序是 PPO。)此驱动程序确定每个组件的低功率 Fx 状态数和每个 Fx 状态的属性数。 此驱动程序定义的 Fx 状态可能因组件而异。
 
-PoFx 提供设备驱动程序接口 (DDI) 驱动程序可以通过它提供有关设备中的组件的状态和功能的信息。 此信息包括每个组件的当前活动级别更改到另一个电源状态和组件从低功耗状态中唤醒时，设备的客户端可以容忍的滞后时间量由组件所需的时间. 此外，PoFx 获取有关该组件所属的强大功能和时钟域的系统级信息。 （特定电源域中的设备共享公共电源导轨; 特定时钟域中的设备共享常见的时钟信号。）
+PoFx 提供了设备驱动程序接口 (DDI), 驱动程序通过它可以提供有关设备中组件的状态和功能信息。 此信息包括每个组件的当前活动级别、组件从一个电源状态更改为另一个电源状态所需的时间, 以及当组件从低功耗状态唤醒时, 设备客户端可以承受的延迟量. 此外, PoFx 还获得系统范围内组件所属的电源和时钟域的信息。 (特定 power 域中的设备共享通用电源线; 特定时钟域中的设备共享常见时钟信号。)
 
-根据此信息，PoFx 使时组件应进入低功耗状态和要输入哪些低功耗状态做出明智的决策。 决策过程涉及到从其他组件和其他设备的信息，并将考虑设备和各种电源和时钟域中的组件之间的依赖关系。
+基于此信息, PoFx 可以明智地决定组件何时进入低功耗状态以及进入哪种低功耗状态。 决策过程涉及其他组件和其他设备中的信息, 并考虑各种电源和时钟域中设备和组件之间的依赖关系。
 
-## <a name="introduction-to-the-pofx-api-for-component-level-power-management"></a>用于组件级电源管理简介 PoFX API
+## <a name="introduction-to-the-pofx-api-for-component-level-power-management"></a>用于组件级电源管理的 PoFx API 简介
 
 
-若要注册设备以便由 PoFx，驱动程序调用[ **PoFxRegisterDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregisterdevice)例程。 驱动程序通过此例程[ **PO\_FX\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)结构，其中，在其他数据之间包含的数组[ **PO\_FX\_组件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_v1)结构。 此数组中的每个元素说明设备中的组件的 Fx 电源状态和每个 Fx 状态的属性。 （最小值，不支持组件级别电源管理的组件实现仅 F0 状态。）某个特定组件中的特定 Fx 电源状态的属性的说明通过[ **PO\_FX\_组件\_空闲\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_idle_state)结构，其中包含以下值：
+若要注册由 PoFx 管理的设备, 驱动程序将调用[**PoFxRegisterDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregisterdevice)例程。 该驱动程序将此例程[**传递\_到\_po fx 设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)结构, 其中其他数据包含[ **\_po fx\_组件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_v1)结构的数组。 此数组中的每个元素都描述设备中组件的 Fx 电源状态以及每个 Fx 状态的属性。 (至少, 组件不支持组件级电源管理仅实现 F0 状态。)特定组件中特定 Fx 电源状态的属性由[**PO\_Fx\_\_组件\_空闲状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_idle_state)结构描述, 其中包含以下值:
 
--   过渡延迟，这是在此状态下 Fx 对 F0 （完全启用） 状态进行转换所需的时间。
--   驻留需求，即一个组件必须在这种 Fx 状态以使转换到状态值得花费的时间。
--   名义上电源，就是力量，以供此 Fx 状态中的组件。
+-   转换延迟, 这是将此 Fx 状态转换为 F0 (完全打开) 状态所需的时间。
+-   驻留要求, 这是组件必须在此 Fx 状态中花费的时间, 以将转换为值得的状态。
+-   额定功率, 这是组件在此 Fx 状态中使用的功率。
 
-PoFx 使用此信息 （以及其他系统范围内输入和依赖项） 做出明智决策的 Fx 电源状态组件应采用在任何特定的时间。 PoFx 必须平衡两个相互竞争的目标。 首先，处于空闲状态的组件应配置为作为尽可能少的功率消耗。 第二，必须准备一个组件将从切换低功耗 Fx 状态到 F0 足够快的速度来维护始终处于打开和始终连接的设备的外观。
+PoFx 使用此信息 (除了其他系统范围内的输入和依赖项), 以明智地决定组件应在哪个特定时间内处于哪个 Fx 电源状态。 PoFx 必须平衡两个竞争性目标。 首先, 应将处于空闲状态的组件配置为使用尽可能少的电量。 其次, 必须准备好一个组件, 使其能够从低功耗 Fx 状态切换到 F0, 以便保持始终开机和始终连接的设备的外观。
 
-仅当设备处于 D0 （完全启用） 电源状态时，可以执行组件级别电源管理。 当设备 D1 （几乎启用）、 D2 （几乎关闭） 或 D3 电源状态中，该设备不可访问。 D0 状态设备时，主动使用该驱动程序的组件都需要以维持在 F0 状态。 空闲组件可能可以切换到低功耗 Fx 状态，以降低功率消耗。
+仅当设备处于 D0 (完全打开) 电源状态时, 才能执行组件级电源管理。 如果设备处于 D1 (几乎打开)、D2 (几乎处于关闭状态) 或 D3 电源状态, 则设备不可访问。 如果设备处于 D0 状态, 则只有驱动程序主动使用的组件需要保持 F0 状态。 空闲组件可能会切换到低功率 Fx 状态, 以降低能耗。
 
-当设备处于 D0 电源状态时，该驱动程序都遵循简单协议以启用组件级别电源管理。 当驱动程序需要访问一个组件时，该驱动程序调用[ **PoFxActivateComponent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxactivatecomponent)例程组件请求访问。 此调用发生时，组件是在低功耗 Fx 状态中，PoFx 启动到 F0 状态的转换，这一转换完成时通知该驱动程序。 该驱动程序可以访问该组件。 当驱动程序不再需要时访问组件时，该驱动程序调用[ **PoFxIdleComponent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxidlecomponent)例程，以通知 PoFx。 此调用的响应，PoFx 到低功耗 Fx 状态可能可以切换该组件。
+当设备处于 D0 电源状态时, 驱动程序将遵循简单的协议来启用组件级电源管理。 当驱动程序需要访问组件时, 驱动程序将调用[**PoFxActivateComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxactivatecomponent)例程以请求对组件的访问。 如果此调用发生时组件处于低功耗 Fx 状态, PoFx 将启动到 F0 状态的转换, 并在此转换完成时通知驱动程序。 然后, 该驱动程序可以访问该组件。 当驱动程序不再需要访问组件时, 驱动程序将调用[**PoFxIdleComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxidlecomponent)例程来通知 PoFx。 为了响应此调用, PoFx 可能会将组件切换为低功率 Fx 状态。
 
-可访问的组件处于*活动条件*。 无法访问的组件处于*空闲条件*。 若要跟踪的设备中的组件可访问性，PoFx 维护每个组件上的激活引用计数。 一个**PoFxActivateComponent**调用递增 1，在指定组件的计数和一个**PoFxIdleComponent**逐个调用递减计数。
+可访问的组件处于*活动状态*。 不可访问的组件处于*空闲状态*。 为了跟踪设备中组件的可访问性, PoFx 在每个组件上维护激活引用计数。 **PoFxActivateComponent**调用将指定组件上的计数递增一, **PoFxIdleComponent**调用会将计数递减1。
 
-如果**PoFxActivateComponent**调用增加在 0 到 1 计数，PoFx 启动空闲条件从转换到活动的条件，并在这种转换完成时通知驱动程序。 如果**PoFxActivateComponent**组件已处于活动状态、 组件处于活动状态的条件和驱动程序收到任何通知时发生。
+如果**PoFxActivateComponent**调用将计数从零递增到 1, 则 PoFx 将启动从空闲条件到活动条件的转换, 并在此转换完成时通知驱动程序。 如果在组件已经处于活动状态时出现**PoFxActivateComponent** , 该组件将保持活动状态, 驱动程序不会收到通知。
 
-如果**PoFxIdleComponent**调用递减计数从 1 到零，PoFx 启动活动条件从转换到空闲的条件，而这一转换完成时通知该驱动程序。 如果**PoFxIdleComponent**调用递减计数，但计数保持非零值、 组件处于活动状态的条件和驱动程序收到任何通知。
+如果**PoFxIdleComponent**调用将计数从一个减少到零, 则 PoFx 将启动从活动条件到空闲状态的转换, 并在此转换完成时通知驱动程序。 如果**PoFxIdleComponent**调用递减计数但计数保持非零, 则组件将保持活动状态, 并且驱动程序不会收到通知。
 
-激活引用计数方便地处理相同的驱动程序中的两个或多个代码路径可能需要同时访问同一组件中设备的情况。 通过维护此计数，PoFx 使驱动程序独立维护而不需要的驱动程序进行集中管理组件的访问权访问该组件的各个部分。
+激活引用计数可方便地处理同一驱动程序中的两个或两个以上的代码路径需要同时访问设备中同一组件的情况。 通过维护此计数, PoFx 使驱动程序的各个部分独立维护对组件的访问, 而无需驱动程序集中管理对组件的访问。
 
-组件的活动/空闲条件是用于确定组件是否可访问的驱动程序的唯一可靠方法。 正处于 F0 电源状态，但处于空闲状态的组件可能要切换到低功耗 Fx 状态。
+组件的活动/空闲条件是驱动程序确定是否可访问组件的唯一可靠方法。 处于 F0 电源状态但处于空闲状态的组件可能会切换为低功率 Fx 状态。
 
-在 F0 状态始终是处于活动状态的组件。 该组件不能离开 F0，直到进入空闲状态的条件。 处于空闲状态的组件可能是 F0 中或低功耗 Fx 状态中。 如果组件是低功耗 Fx 中运行时**PoFxActivateComponent**调用启动的空闲条件从转换到活动的条件、 PoFx 必须首先组件之前切换到 F0 组件可以输入活动条件。
+处于活动状态的组件始终处于 F0 状态。 该组件在进入空闲状态之前无法退出 F0。 处于空闲状态的组件可能处于 F0 或低能耗 Fx 状态。 如果当**PoFxActivateComponent**调用启动从空闲条件到活动条件的转换时, 组件处于低功率 Fx 状态, 则 PoFx 必须先将该组件切换到 F0, 然后才能进入活动状态。
 
 ## <a name="related-topics"></a>相关主题
 
-[设备电源管理的参考](device-power-management-reference.md)  
+[设备电源管理参考](device-power-management-reference.md)  
