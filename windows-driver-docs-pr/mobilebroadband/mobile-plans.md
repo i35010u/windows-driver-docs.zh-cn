@@ -1,90 +1,95 @@
 ---
-title: 移动计划概述
-description: 移动计划概述
+title: 移动套餐概述
+description: 移动套餐概述
 ms.assetid: AA432EAE-A89B-4C4C-9539-BC2763091055
 keywords:
 - Windows Mobile 计划移动运营商
 ms.author: windowsdriverdev
-ms.date: 07/05/2019
+ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: f67b41b18cbd12b7583261fc4307f2dbeffeb257
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.openlocfilehash: e581d9f71db56904f04b3756113488a66a6774dd
+ms.sourcegitcommit: f89a978ee23b9d2f925b13ea56b2c6cd48b4603a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608504"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68948088"
 ---
-# <a name="mobile-plans-overview"></a>移动计划概述
+# <a name="mobile-plans-overview"></a>移动套餐概述
 
-## <a name="introduction"></a>简介
+## <a name="purpose"></a>用途
 
-移动计划是在 Windows 10，版本 1803年中的程序和更高版本，可使移动运营商 (MOs) 和其他服务提供商向最终用户销售计划。
+移动计划是 Windows 10 中的一个应用程序, 可帮助最终用户通过移动运营商将其 Windows 设备连接到移动电话网络。 移动计划的目的是:
 
-移动计划使最终用户能够执行以下操作：
+- 为启用手机网络的 Pc 激活提供一致和简化的用户体验。
+- 通过使用 eSIM, 启用用于移动电话激活的新渠道
+- 通过客户和移动运营商之间的直接关系, 提高 Windows 电脑上的移动服务的采用
 
-- 安装并激活 esim 卡配置文件。
-- 激活的设备上具有预付 (PAYG) 或流失的计划的移动运营商订阅。
-- 顶级的订阅时从数据和唯一可用的连接是移动连接。
+Windows 10 版本1803及更高版本支持移动计划。
 
-## <a name="definition-of-terms"></a>术语的定义
+## <a name="customer-journey"></a>客户旅程
 
-| 术语 | 描述 |
-| --- | --- |
-| Contoso 移动电话 | 为了说明与解释这些主题中使用虚构移动运算符。 |
-| COSA 数据库 | 国家/地区和运算符设置资产。 这是包含在 Windows 设备中使用的移动运营商的连接设置的数据库。 有关 COSA 的详细信息，请参阅[COSA 概述](cosa-overview.md)。 |
-| 移动套餐 | 此项目的名称。 |
-| 计划移动应用 | 若要启用 Windows 10 设备上的移动计划的 Microsoft 应用。 |
-| 计划移动服务 | 云服务，使移动计划解决方案。 |
-| RPS | 每秒请求数。 |
+典型的移动计划客户旅程由以下步骤组成:
 
-## <a name="project-overview"></a>项目概述
+![移动计划客户旅程](images/mobile_plans_customer_journey.png)
 
-移动计划项目集成组成四个阶段，其中每个[高级别任务](mobile-plans-appendix.md#high-level-integration-schedule)。 其中一些高级任务适用于移动运营商，而有些则是联合的任务与移动运算符结合使用 Microsoft 适用的位置。
+步骤 | 描述
+------|------------
+发现 | 用户在 Windows UI 中看到若干入口点之一, 并启动移动计划应用。 Windows Shell 中提供了多个可用于各种方案的入口点。
+浏览 & 欢迎 | 启动移动计划应用后, 用户会选择其移动运营商, 并看到 "操作员网关" 页。 "网关" 页调用用于承载下一步的移动运营商 web 门户。 请注意, 某些入口点将用户直接转到操作员网关页。
+激活 & 结帐 | 移动运营商 web 门户会指导用户完成登录、激活和签出
+合同 | 激活步骤完成后, 用户将被是否了数据。 此步骤可能包括下载和激活 eSIM 配置文件。
+用法 | 用户喜欢一个始终连接的 PC 的优点, 并且能够直接在 Windows UI 中查看可用余额。 他们可以轻松返回到移动运营商 web 门户来管理其帐户, 并根据需要购买额外的数据。
 
-| 阶段 | 描述 |
-| --- | --- |
-| **Feasiblity** | 移动运营商评估计划移动解决方案、 摘要本文档中，并访问其 Microsoft 代表的问题提供根据需要。 |
-| **实现** | 移动运营商开发他们根据其用户用例和请求移动计划配置和所需的 Windows 配置的解决方案。 |
-| **集成** | 中移动计划以运行端到端验证启用了移动运营商。 |
-| **启动** | 通过移动计划上市商业上启动移动运营商。 |
+## <a name="user-experience"></a>用户体验
 
-## <a name="functional-overview"></a>功能概述
+以下部分说明了移动计划用户体验。
 
-下图显示了 Windows 10 设备如何使用移动计划与不同的服务和解决方案，以成功激活订阅并安装 esim 卡配置文件进行交互的高级视图。
+### <a name="launching-the-app"></a>启动应用程序
 
-下表描述关系图的每个组件。
+可以从多个不同的入口点启动移动计划应用。 最常见的入口点是网络飞出, 因为用户通常在 Windows 10 中管理其活动网络接口。 可以展开蜂窝接口以显示移动电话网络的状态。 在下面的示例中, 设备未激活 SIM 配置文件, 因此用户看到对操作的调用以 "与数据计划进行连接"。 单击此链接将启动移动计划应用。
 
-| 组件 | 描述 |
-| --- | --- |
-| Windows 10 设备 | 支持 esim 卡的"始终连接 PC"运行 Windows 10 的最新版本。 |
-| Microsoft Mobile 计划服务 | 服务终结点负责提供移动运营商的信息，如月 web 门户 URL 和视觉对象资产，到 Windows 10 设备。 |
-| 移动计划 Web API 和 Web 门户 | 负责托管的 web 服务 API 和 web 门户，允许 Windows 10 设备访问移动计划移动运营商网络中的终结点体验。 |
-| SM-DP + 服务器 | 负责创建、 生成，以及管理属于移动运营商的 esim 卡配置文件。 |
+有关网络飞出的行为的详细信息, 请参阅[移动计划帐户管理](mobile-plans-account-management.md)主题。
 
-<img src="images/mobile_plans_functional_overview.png" alt="Mobile Plans functional overview" title="移动计划功能概述" width="400" />
+![网络飞出已连接](images/network_flyout_get_connected.png)
 
-上面的关系图的典型功能流如下所示：
+还可以从 toast 通知启动该应用。 单击 "连接" 按钮将启动移动计划应用。
 
-1. 计划移动应用在 Windows 10 设备上启动，并从移动计划服务检索基本功能的信息。
-   - 计划移动应用访问计划移动服务以检索月特定的信息。
-2. 计划移动应用启动 MO Web 门户，并将相关参数传递到 MO 门户。
-3. 移动运营商的 esim 卡配置文件请求从 SM-DP + 服务器。 Esim 卡激活代码返回到移动计划移动运营商 web 门户。
-4. 控件返回之后移动计划应用到 Windows 10 设备上，向 Windows 设备提供 esim 卡激活代码。
-5. 在 Windows 10 设备使用的激活代码，并联系 SM-DP + 服务器检索的 esim 卡配置文件。 Esim 卡配置文件现在安装和激活 Windows 10 设备上。
-6. 在 Windows 10 设备连接到移动运营商网络。
+有关 toast 通知行为的详细信息, 请参阅[移动计划 toast 通知](mobile-plans-notifications.md)主题。
 
-Windows 作为客户端使用计划移动应用，以使用移动计划的整体体验。 此应用程序联系 MO Web 门户，并会处理所有与之交互。 此外，一旦已返回的激活代码，计划移动应用程序负责进行下载、 安装和激活 esim 卡配置文件。
+![Toast 通知升级](images/toast_notification_promotion.png)
 
-## <a name="get-started"></a>立即开始行动
+也可以从 "设置" 应用程序或 "开始" 菜单中启动移动计划应用程序。
 
-若要开始使用移动计划体验，请联系 Microsoft 代表联系以讨论项目实现。 请按照下列步骤以了解技术详细信息中的解决方案的指南。
+### <a name="select-provider-page"></a>选择提供程序页
 
-1. [移动运营商用例](mobile-plans-use-cases.md)
-2. [集成](mobile-plans-integration.md)
-3. [启动](mobile-plans-launch.md)
+启动应用后, 用户可以选择其移动运营商。 应用显示基于用户当前位置的可用移动运营商的列表。
 
-请参阅以下主题，获取有关移动计划的其他信息：
+有关此页面的详细信息, 请参阅[Mobile plan 操作员目录](mobile-plans-catalog.md)主题。
 
-- [附录](mobile-plans-appendix.md)
+![选择提供程序页](images/select_provider_page.png)
+
+### <a name="mobile-operator-gateway-page"></a>移动运营商网关页
+
+如果用户选择了移动运营商, 则应用会显示该操作员的 "网关" 页。 此页面由移动计划应用托管。 用户可以单击按钮以继续。
+
+有关 "网关" 页的行为和自定义的详细信息, 请参阅 "[移动计划网关" 页](mobile-plans-gateway.md)主题。
+
+![移动运营商网关页](images/mobile_operator_gateway_page.png)
+
+### <a name="mobile-operator-web-portal"></a>移动运营商 Web 门户
+
+用户单击该按钮继续后, 应用程序将加载移动运营商的 web 门户。 Web 内容显示在应用程序承载的浏览器控件中, 用户可以使用 web 导航来浏览门户。
+
+有关移动运营商 web 门户的详细说明, 请参阅[移动运营商 web 门户](mobile-plans-web-portal.md)主题。
+
+![移动运营商 Web 门户](images/mobile_operator_web_portal.png)
+
+### <a name="fulfillment"></a>合同
+
+在 web 门户上完成注册流后, 移动运营商可以根据注册类型的类型触发履单。 这可能包括下载和安装新的 eSIM 配置文件, 或者将新的余额添加到活动帐户。 完成执行步骤后, web 门户可以调用弹出窗口, 让用户了解该过程已完成。
+
+有关此步骤的详细信息, 请参阅[移动计划回叫通知](mobile-plans-callback-notifications.md)主题。
+
+![移动运营商履行](images/mobile_operator_activation.png)

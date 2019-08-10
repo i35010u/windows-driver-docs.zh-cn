@@ -1,27 +1,27 @@
 ---
-title: 移动计划 esim 卡下载错误处理
-description: 本主题介绍在移动计划 esim 卡下载错误处理。
+title: 移动计划 eSIM 配置文件下载错误处理
+description: 本主题介绍移动计划中的 eSIM 下载错误处理。
 ms.assetid: ADBE885A-76E9-4C1E-A729-40ABE58B77E1
 keywords:
-- Windows Mobile 计划 esim 卡的错误处理，移动计划实现的移动运营商
+- Windows Mobile 计划 eSIM 错误处理, 移动计划实现移动运营商
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f79b394aa64da93fdf4dba0e0fc9fb62cd20cbc6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ef0cd91d646f0ca468fdd2f8b30c071c5b1d0fc
+ms.sourcegitcommit: f89a978ee23b9d2f925b13ea56b2c6cd48b4603a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357701"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68948052"
 ---
-# <a name="mobile-plans-esim-download-error-handling"></a>移动计划 esim 卡下载错误处理
+# <a name="mobile-plans-esim-profile-download-error-handling"></a>移动计划 eSIM 配置文件下载错误处理
 
 ## <a name="overview"></a>概述
 
-计划移动应用都尝试修复其中 esim 卡配置文件下载未成功完成的情况下的内置重试解决方案。 但是，在某些情况下，移动运营商干预有必要确保 esim 卡安装在设备上。 移动运营商可以支持 esim 卡中的错误处理其 web 门户以其客户提供愉悦。
+移动计划应用包含一个内置重试解决方案, 该解决方案将尝试修复 eSIM 配置文件下载未成功完成的情况。 但是, 在某些情况下, 需要移动运营商的干预才能确保设备上已安装 eSIM 卡。 移动运营商可以支持在其 web 门户中使用 eSIM 错误处理来感到满意其使用者。
 
-## <a name="handling-esim-download-errors"></a>Esim 卡下载错误处理
+## <a name="handling-esim-download-errors"></a>处理 eSIM 下载错误
 
-计划移动应用具有一项功能，用户重新进入门户后，错误代码将传递到 MO 门户。 下面的示例演示应用程序如何通过相关参数。
+移动计划应用包含一项功能, 该功能在用户重新进入门户后将错误代码传递到 MO 门户。 下面的示例演示应用如何传递相关 azuredeploy-paremeters.json。
 
 ```HTTP
 GET https://moportal.com/?market=US&location=US&transactionId=HADRdRhKI0S5bN4n.1&eid=89033023422130000000000199272786&imei=001102000224082 HTTP/1.1
@@ -30,16 +30,16 @@ X-MP-LPAError-TimeStamps: 5/18/2018 11:17:23 PM,5/18/2018 11:27:33 PM
 X-MP-LPAError-ICCIDs: 8988247000101997790
 ```
 
-计划移动应用添加三个标头，如下表中所述。
+移动计划应用添加三个标头, 下表对此进行了说明。
 
 | 标头名称              | 描述                                                                                                                                                                                                                                                                                                                          | 示例                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| X-MP-LPAError-Codes      | 此字段提供 LPA 内捕获的错误代码。 如果有多个错误，错误代码传递以逗号分隔的列表。 <p>有关可能的错误代码的列表，请参阅[ESimOperationStatus 枚举](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.esimoperationstatus)。</p> | X-MP-LPAError 的代码：ServerFailure,ServerNotReachable                 |
-| X-MP-LPAError-TimeStamps | 此字段提供了在发生错误时的时间戳。 时间戳的格式*日期时间 UTC 偏移量*。 如果有多个错误，以逗号分隔列表的形式传递时间戳。                                                                                                                                 | X-MP-LPAError-时间戳：2018 年 5 月 18 日晚上 11:17:23，2018 年 5 月 18 日晚上 11:27:33 |
-| X-MP-LPAError-ICCIDs     | 此字段提供的 esim 卡配置文件的用户尝试下载并安装 ICCID。 返回到计划移动应用传递此 ICCID 控件切换过程中出现。 只有一个 ICCID 被传递。                                                                                                                       | X-MP-LPAError-ICCIDs:8988247000101997790                             |
+| LPAError-      | 此字段提供 LPA 中捕获的错误代码。 如果存在多个错误, 则以逗号分隔的列表形式传递错误代码。 <p>有关可能的错误代码的列表, 请参阅[ESimOperationStatus 枚举](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.esimoperationstatus)。</p> | LPAError 代码:ServerFailure,ServerNotReachable                 |
+| LPAError-时间戳 | 此字段提供发生错误时的时间戳。 时间戳的格式为*日期时间 UTC 偏移量*。 如果存在多个错误, 则时间戳将作为以逗号分隔的列表进行传递。                                                                                                                                 | LPAError-时间戳:5/18/2018 11:17:23 PM, 5/18/2018 11:27:33 PM |
+| LPAError-Iccid     | 此字段提供用户尝试下载和安装的 eSIM 配置文件的 ICCID。 发生控制切换时, 此 ICCID 被传递回移动计划应用。 只传递了一个 ICCID。                                                                                                                       | LPAError-Iccid:8988247000101997790                             |
 
-移动运营商可能选择不支持处理通过计划移动应用程序中，传递的错误，但我们建议执行此操作，因为它可以增强用户体验。
+移动运营商可能选择不支持处理移动计划应用传递的错误, 但建议这样做, 因为这样可以增强用户体验。
 
-下图显示了向用户显示错误消息的示例：
+下图显示了向用户显示的错误消息的示例:
 
-<img src="images/mobile_plans_implementation_error_message.png" alt="Example of Mobile Plans app eSIM download error" title="示例中的计划移动应用 esim 卡下载错误" width="600" />
+<img src="images/mobile_plans_implementation_error_message.png" alt="Example of Mobile Plans app eSIM download error" title="移动计划应用卡下载错误示例" width="600" />
