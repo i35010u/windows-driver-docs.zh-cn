@@ -329,26 +329,42 @@
   items:
     - name: 移动套餐
       items:
-        - name: 移动套餐概述
-          href: mobile-plans.md
-        - name: 移动套餐方案
+        - name: 移动套餐说明
           items:
-            - name: 移动套餐用例
-              href: mobile-plans-use-cases.md
+            - name: 移动套餐概述
+              href: mobile-plans.md
+            - name: 移动套餐系统体系结构
+              href: mobile-plans-system-architecture.md
+            - name: 移动套餐方案
+              href: mobile-plans-scenarios.md
+        - name: 移动套餐功能
+          items:
+            - name: 移动套餐目录
+              href: mobile-plans-catalog.md
+            - name: 移动运营商网关页
+              href: mobile-plans-gateway.md
             - name: 移动运营商 Web 门户
               href: mobile-plans-web-portal.md
             - name: 回调通知
               href: mobile-plans-callback-notifications.md
-            - name: 服务配置
-              href: mobile-plans-service-configuration.md
             - name: eSIM 卡下载错误处理
               href: mobile-plans-eSIM-error-handling.md
-            - name: Windows 10 设备体验
-              href: mobile-plans-device-experience.md
-        - name: 集成
-          href: mobile-plans-integration.md
-        - name: 启动
-          href: mobile-plans-launch.md
+            - name: 帐户管理
+              href: mobile-plans-account-management.md
+            - name: 围墙花园
+              href: mobile-plans-walled-garden.md
+            - name: Toast 通知
+              href: mobile-plans-notifications.md
+        - name: 移动套餐载入
+          items:
+            - name: “载入”概述
+              href: mobile-plans-onboarding-overview.md
+            - name: 开发
+              href: mobile-plans-service-configuration.md
+            - name: 集成
+              href: mobile-plans-integration.md
+            - name: 启动
+              href: mobile-plans-launch.md
         - name: 附录
           items:
             - name: 常规附录
