@@ -3,87 +3,88 @@ title: 软件发行者证书
 description: 软件发行者证书
 ms.assetid: eb06c630-9a3d-4f53-b00b-b1254c8bbaec
 keywords:
-- 目录文件 WDK 驱动程序签名，SPC
-- 软件发布者证书 WDK 驱动程序签名
+- 目录文件 WDK 驱动程序签名, SPC
+- 软件发行者证书 WDK 驱动程序签名
 - SPC WDK 驱动程序签名
-- 公开发布的版本驱动程序签名 WDK，SPC
-- 释放签名 WDK，SPC
-- 交叉证书 WDK
+- 公共版本驱动程序签名 WDK、SPC
+- release 签名 WDK, SPC
+- 跨证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fafb1af6c37e3e8de4da2566d6089a0a7f58276
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 8b351415e43f1bbfb007153a90ee89e8d0428a11
+ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393408"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995440"
 ---
 # <a name="software-publisher-certificate"></a>软件发行者证书
 
 
-若要符合[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)的 64 位版本的 Windows 中，可以通过使用软件发布者证书 (SPC) 签名的内核模式驱动程序。 从 Microsoft 授权颁发此类证书的第三方证书颁发机构 (CA) 获取 SPC。 使用这种类型的 SPC 生成的签名还遵守[即插即用驱动程序签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)64 位和 32 位版本的 Windows。
+若要符合64位版本的 Windows 的[内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md), 可以使用软件发行者证书 (SPC) 对内核模式驱动程序进行签名。 SPC 是从 Microsoft 授权的第三方证书颁发机构 (CA) 获取的, 用于颁发此类证书。 用这种类型的 SPC 生成的签名也符合 Windows 64 位和32位版本的[PnP 驱动程序签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
-**请注意**  Windows 10 桌面版 （主页、 专业版、 企业版和教育版） 和 Windows Server 2016 内核模式驱动程序必须进行签名的 Windows 硬件开发人员中心仪表板和 Windows 硬件开发人员中心仪表板需要使用 EV 证书。 有关这些更改的详细信息，请参阅[Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。
+**注意:**   适用于桌面版的 windows 10 (家庭版、专业版、企业版和教育版) 和 windows Server 2016 内核模式驱动程序必须由 windows 硬件开发人员中心仪表板签名, 并且 windows 硬件开发人员中心仪表板需要 EV证书. 有关这些更改的详细信息, 请参阅[Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。
 
- 
+ > [!CAUTION] 
+ > 从2021开始, 大多数交叉证书都将开始过期。 这些交叉证书过期后, 链接到这些交叉证书的代码签名证书将无法再创建新的内核模式数字签名。 这会影响 Windows 的所有版本。 有关详细信息, 请参阅[弃用软件发行者证书和商业发布证书](deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md)。
 
-## <a name="cross-certificates"></a>Cross-Certificates
+## <a name="cross-certificates"></a>交叉证书
 
-除了获取一个 SPC，必须获取由 Microsoft 颁发交叉证书。 交叉证书用于验证颁发一个 SPC 的 CA 受信任的根颁发机构。 交叉证书是由另一个 CA 的根证书的公钥进行签名的 CA 颁发的 X.509 证书。 交叉证书允许系统在具有单个受信任的 Microsoft 的根颁发机构，但也提供灵活地扩展到商业 Ca 颁发 SPCs 的信任链。
+除了获取 SPC 外, 还必须获取 Microsoft 颁发的交叉证书。 使用交叉证书来验证颁发 SPC 的 CA 是否为受信任的根证书颁发机构。 交叉证书是由 CA 颁发的 x.509 证书, 用于对另一 CA 的根证书的公钥进行签名。 跨证书允许系统拥有单个受信任的 Microsoft 根证书颁发机构, 还可以灵活地将信任链扩展到颁发 SPCs 的商业 Ca。
 
-发布服务器不需要分发与交叉证书[驱动程序包](driver-packages.md)。 交叉证书随数字签名的驱动程序包[编录文件](catalog-files.md)或驱动程序文件中嵌入的签名。 安装驱动程序包的用户无需执行引起的交叉证书的使用任何其他配置步骤。
+发布者不必使用[驱动程序包](driver-packages.md)分发交叉证书。 交叉证书包含在驱动程序包的[目录文件](catalog-files.md)的数字签名或嵌入到驱动程序文件中的签名。 安装驱动程序包的用户无需执行任何其他配置步骤, 因为使用了交叉证书。
 
-提供 SPCs 的证书颁发机构的列表以及有关交叉证书的详细信息，请参阅[内核模式代码签名的交叉证书](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。 有关如何获取并将登录驱动程序的计算机上安装的 SPC 和相应的交叉证书的证书颁发机构的网站上按照的说明。 此外，您必须将 SPC 信息添加到对进行签名的驱动程序在本地计算机的个人证书存储。 有关此要求的信息，请参阅[个人证书存储中安装 SPC 信息](#installing-spc-information-in-the-personal-certificate-store)。
+有关提供 SPCs 的证书颁发机构的列表, 以及有关交叉证书的详细信息, 请参阅用于[内核模式代码签名的交叉证书](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。 按照证书颁发机构的网站上的说明, 了解如何在要签署驱动程序的计算机上获取和安装 SPC 及相应的交叉证书。 此外, 还必须将 SPC 信息添加到对驱动程序进行签名的本地计算机的 "个人" 证书存储中。 有关此要求的信息, 请参阅在[个人证书存储中安装 SPC 信息](#installing-spc-information-in-the-personal-certificate-store)。
 
 ## <a name="installing-spc-information-in-the-personal-certificate-store"></a>在个人证书存储中安装 SPC 信息
 
-若要使用一个 SPC 进行签名的驱动程序符合的方式[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)，必须首先中个人信息交换中包含的证书信息 ( *.pfx*)文件。 中包含的信息 *.pfx*然后必须将文件添加到驱动程序进行签名的本地计算机的个人证书存储。
+为了使用 SPC 对驱动程序进行签名的方式符合[内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md), 必须首先将证书信息包含在个人信息交换 ( *.pfx*) 文件中。 然后, 必须将 *.pfx*文件中包含的信息添加到对驱动程序进行签名的本地计算机的 "个人" 证书存储中。
 
-CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此，你可以添加。*pfx*中所述的说明的个人证书存储的文件[在个人证书存储中安装.pfx 文件](#installing-a-pfx-file-in-the-personal-certificate-store)。
+CA 可能会颁发包含所需证书信息的 *.pfx*文件。 如果是这样, 您可以添加。*pfx*文件保存到个人证书存储中, 请按照在[个人证书存储中安装 .pfx 文件](#installing-a-pfx-file-in-the-personal-certificate-store)中所述的说明进行操作。
 
-但是，CA 可能会发出对以下文件：
+但是, CA 可能会发出下列文件对:
 
--   一个 *.pvk*文件，其中包含私钥信息。
+-   一个包含私钥信息的*pvk*文件。
 
--   *.Spc*或 *.cer*文件，其中包含公钥信息。
+-   包含公钥信息的 *.spc*或 *.cer*文件。
 
-在此情况下，对文件 ( *.pvk*和一个 *.spc，* 或 *.pvk*和一个 *.cer*) 必须转换为 *.pfx*若要将证书信息添加到个人证书存储的文件。
+在这种情况下, 必须将一对文件 ( *pvk*和 *.spc,* 或*pvk*和 *.cer*) 转换为 *.Pfx*文件, 才能将证书信息添加到个人证书存储区。
 
-若要创建。*pfx*文件由 CA 颁发的对从文件中，按照这些说明进行操作：
+来创建。*pfx*文件, 请按照以下说明进行操作:
 
--   要转换 *.pvk*文件和一个 *.spc*文件发送到 *.pfx*文件，请使用以下[ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)在命令提示符的命令：
+-   若要将*pvk*文件和 *.spc*文件转换为 *.pfx*文件, 请在命令提示符处使用以下[**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)命令:
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
--   要转换 *.pvk*文件和一个 *.cer*文件中，为 *.pfx*文件，请在命令提示符处使用以下 Pvk2Pfx 命令：
+-   若要将*pvk*文件和 *.cer*文件转换为 *.pfx*文件, 请在命令提示符处使用以下 Pvk2Pfx 命令:
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-以下描述中使用的参数[ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)命令：
+下面介绍了[**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)命令中使用的参数:
 
--   **-Pvk**  *mypvkfile.pvk*参数指定 *.pvk*文件。
+-   **-Pvk**  *mypvkfile. pvk*参数指定*pvk*文件。
 
 -   **-Pi**  *mypvkpassword*选项指定的密码。*pvk*文件。
 
--   **-Spc** *myspcfile.spc*参数指定 *.spc*文件或 **-spc**  *mycerfile.cer*参数指定 *.cer*文件。
+-   **-Spc** *myspcfile*参数指定一个 *.spc*文件或 **-spc**  *mycerfile*参数指定 *.cer*文件。
 
--   **-Pfx** *mypfxfile.pfx*选项指定的名称 *.pfx*文件。
+-   **-Pfx** *mypfxfile*选项指定 *.pfx*文件的名称。
 
--   **Po** *pfxpassword*选项指定的密码 *.pfx*文件。
+-   **-Po** *pfxpassword*选项指定 *.pfx*文件的密码。
 
--   **-F**选项配置 Pvk2Pfx 替换现有 *.pfx*文件如果存在。
+-   **-F**选项将 Pvk2Pfx 配置为替换现有*的 .pfx*文件 (如果存在)。
 
-## <a name="installing-a-pfx-file-in-the-personal-certificate-store"></a>在个人证书存储中安装一个.pfx 文件
+## <a name="installing-a-pfx-file-in-the-personal-certificate-store"></a>在个人证书存储中安装 .pfx 文件
 
-获取后 *.pfx* CA，从文件或创建 *.pfx*从文件 *.pvk*并且。*spc*或 *.cer*文件中，添加中的信息 *.pfx*对进行签名的驱动程序在本地计算机的个人证书存储的文件。 您可以使用证书导入向导导入中的信息 *.pfx*文件到个人证书存储中，按如下所示：
+从 CA 获取 *.pfx*文件或从*pvk*创建 *.pfx*文件后, 也可以从。*spc*或 *.cer*文件, 请将 *.pfx*文件中的信息添加到对驱动程序进行签名的本地计算机的 "个人" 证书存储中。 您可以使用证书导入向导将 *.pfx*文件中的信息导入到个人证书存储, 如下所示:
 
-1.  找到 *.pfx*文件位于 Windows 资源管理器，并双击要打开证书导入向导的文件。
+1.  在 Windows 资源管理器中找到 *.pfx*文件, 然后双击该文件以打开证书导入向导。
 
-2.  按照证书导入向导导入个人证书存储的代码签名证书中的过程。
+2.  按照证书导入向导中的步骤将代码签名证书导入到个人证书存储区中。
 
 
  

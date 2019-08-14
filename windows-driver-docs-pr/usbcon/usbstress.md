@@ -1,46 +1,46 @@
 ---
-Description: USBStress 是用户模式应用程序 (usbstress.exe) 和内核模式驱动程序的驱动程序安装包的组合 usbstress.sys。
+Description: USBStress 是用于内核模式驱动程序 USBStress 的用户模式应用程序 (USBStress) 和驱动程序安装包的组合。
 title: USBStress
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a321240256a9550d82e9b72ef96eaf8d0cd33cfa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb6c07c9e5ea4b366b783136f20b5126958fecaa
+ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342136"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995437"
 ---
 # <a name="usbstress"></a>USBStress
 
 
-USBStress 是用户模式应用程序 (usbstress.exe) 和内核模式驱动程序的驱动程序安装包的组合 usbstress.sys。
+USBStress 是用于内核模式驱动程序 USBStress 的用户模式应用程序 (USBStress) 和驱动程序安装包的组合。
 
-这些文件包括在[MUTT 软件包](https://msdn.microsoft.com/windows/hardware/jj590752)。
+这些文件包含在[MUTT](https://docs.microsoft.com/windows-hardware/drivers/usbcon/mutt-software-package)软件包中。
 
 ## <a name="usbstress"></a>USBStress
 
 
-USBStress 是一组测试侧重于整个 USB 驱动程序堆栈和 USB 通用父驱动程序 (Usbccgp.sys) 和控制器和其上游的中心。 USBStress 随机选择测试，并配置附加的测试设备。 由于测试的随机特性，我们建议您应运行 USBStress 24 小时时间段内以允许更多的测试组合。
+USBStress 是一组集中在整个 USB 驱动程序堆栈和 USB 通用父驱动程序 (Usbccgp) 以及控制器及其上游集线器上的测试。 USBStress 随机选择测试并配置附加的测试设备。 由于测试的随机性质, 建议你应在24小时内运行 USBStress, 以允许更多的测试组合。
 
-此工具将执行控制，大容量、 等时，数据传输的各种传输长度与测试设备。 对于 SuperMUTT 设备，USBTCD 将数据传输到流支持的大容量终结点。
+该工具可对测试设备进行各种传输长度的控制、大容量、同步的数据传输。 对于 SuperMUTT 设备, USBTCD 将数据传输到大容量终结点支持的流。
 
-USBStress 驱动程序是很大程度上自驱动，也就是说，大多数 I/O 请求都由驱动程序并不是应用程序。 驱动程序使用计时器和工作项来生成 I/O 以及执行其他操作。 该驱动程序会检查注册表，以确定是否应运行其测试。 外部程序设置该注册表项。 此驱动程序的目标是尽可能以彻底的争用条件和同步问题的各种操作之间创建太多并发。
+USBStress 驱动程序在很大程度上是自驱动的, 也就是说, 大多数 i/o 请求由驱动程序生成, 而不是由应用程序生成。 驱动程序使用计时器和工作项来生成 i/o 和执行其他操作。 驱动程序检查注册表以确定是否应该运行其测试。 外部程序设置该注册表项。 此驱动程序的目标是在各种操作中创建尽可能多的并发性, 以清理争用情况和同步问题。
 
-此表总结了 USBStress 执行的测试：
+此列表总结了 USBStress 执行的测试:
 
--   选择性挂起远程唤醒。
--   在大容量、 中断，并同步终结点和取消的并发读/写请求。
+-   选择 "挂起" (带远程唤醒)。
+-   大容量、中断和同步终结点上的并发读取/写入请求和取消。
 -   并发字符串传输请求和取消。
--   在大容量终结点和取消的并发中止管道。
--   意外删除和重新枚举的随机重置。
--   意外删除和重新枚举和失败重新枚举的随机重置。
--   随机选择一个可用的备用接口。
--   随机指示设备操作计划的每个第 n 个控制传输。
--   随机指示 MUTT 包 （如果已连接） 以断开 VBUS 与公开的下游端口的连接。
--   随机指示 MUTT 包 （如果已连接），以模拟过流公开下游端口上的情况。
--   随机指示 MUTT 包 （如果已连接） 来执行硬件集线器上重置。
+-   批量终结点和取消的并发中止管道。
+-   随机重置为意外-删除并重新枚举。
+-   随机重置为意外-删除并重新枚举, 并使重新枚举失败。
+-   随机选择可用的备用接口。
+-   随机指示设备卡住每个第 n 个控制传输。
+-   随机指示 MUTT Pack (如果已连接) 将 VBUS 从公开的下游端口断开连接。
+-   随机指示 MUTT Pack (如果已连接), 以模拟已公开的下游端口上的过度电流条件。
+-   随机指示 MUTT Pack (如果已连接) 在集线器上执行硬件重置。
 
-若要安装 MUTT 设备 usbstress.sys 驱动程序，请使用与 MuttUtil`-UpdateDriver `选项：
+若要为 MUTT 设备安装 usbstress 驱动程序, 请将 MuttUtil 与`-UpdateDriver `选项一起使用:
 
 ``` syntax
 c:\Program Files (x86)\USBTest\x64>MuttUtil.exe -UpdateDriver usbstress.inf

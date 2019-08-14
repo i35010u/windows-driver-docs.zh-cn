@@ -274,6 +274,8 @@
           href: software-publisher-certificate.md
         - name: 商业发布证书
           href: commercial-release-certificate.md
+        - name: 弃用软件发行者证书、商业发布证书和商业测试证书
+          href: deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md
         - name: 对驱动程序包进行发布签名
           href: release-signing-driver-packages.md
         - name: 对驱动程序文件进行发布签名

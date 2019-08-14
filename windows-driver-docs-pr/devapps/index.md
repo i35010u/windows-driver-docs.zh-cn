@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: aa75bc9fa6c263a98b89714098cda26a295d10f4
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: 0e212c0b156b0ec25e87ccb52e3eebacec6d0a58
+ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473395"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995408"
 ---
 # <a name="uwp-device-apps"></a>UWP 设备应用
 
@@ -26,17 +26,14 @@ ms.locfileid: "68473395"
 
 若要了解 UWP 移动宽带应用，请参阅 [Mobile Broadband](https://go.microsoft.com/fwlink/p/?LinkID=301754)（移动宽带）。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">主题</th>
+<table>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<thead>  
+<tr class="header">  
+<th align="left">主题</th>  
 <th align="left">描述</th>
 </tr>
 </thead>
