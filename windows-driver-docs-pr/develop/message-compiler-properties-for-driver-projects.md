@@ -4,20 +4,20 @@ title: 驱动程序项目的消息编译器属性
 description: 设置消息编译器 (MC.exe) 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a125df236bbb43ecf4a73bb2b4861ba290b505f
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1f5cbea73bb79d260dc703c226a5898c2784ecf5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364257"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>驱动程序项目的消息编译器属性
 
-设置[**消息编译器 (MC.exe)** ](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
+设置[**消息编译器 (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
 
-例如，如果你使用 [Windows 事件跟踪 (ETW)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545699) 内核模式 API 来为内核模式驱动程序添加事件跟踪，则可使用消息编译器来创建一个包含事件提供程序、事件属性、通道和事件的定义的头文件。 你必须在源代码中包括此头文件。 消息编译器将创建一个资源编译器脚本 (\*.rc)，你可以将其添加到项目文件中。
+例如，如果你使用 [Windows 事件跟踪 (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) 内核模式 API 来为内核模式驱动程序添加事件跟踪，则可使用消息编译器来创建一个包含事件提供程序、事件属性、通道和事件的定义的头文件。 你必须在源代码中包括此头文件。 消息编译器将创建一个资源编译器脚本 (\*.rc)，你可以将其添加到项目文件中。
 
-## <a name="span-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的消息编译器属性
+## <a name="span-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的消息编译器属性
 
 
 1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
@@ -40,7 +40,7 @@ ms.locfileid: "63344131"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span><strong>其他选项</strong></p></td>
-<td align="left"><p>指定要传递至<a href="https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638)"><strong>消息编译器 (MC.exe)</strong></a> 工具的其他选项。</p></td>
+<td align="left"><p>指定要传递至<a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)"><strong>消息编译器 (MC.exe)</strong></a> 工具的其他选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Ansi_Input_File"></span><span id="ansi_input_file"></span><span id="ANSI_INPUT_FILE"></span><strong>Ansi 输入文件</strong></p></td>
@@ -173,12 +173,12 @@ ms.locfileid: "63344131"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [消息编译器 (MC.exe)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454227)
-* [WDK 和 Visual Studio 生成环境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)消息编译器任务
-* [Windows 事件跟踪 (ETW)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545699)
+* [消息编译器 (MC.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/message-compiler-task)
+* [WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)消息编译器任务
+* [Windows 事件跟踪 (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)
  
 
  
