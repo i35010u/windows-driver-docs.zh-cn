@@ -5,12 +5,12 @@ ms.assetid: 120AA970-D981-4E7D-A9BD-68125D90A0EE
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d35f1f576671440568259c0f0c42a886dd4f20
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9e1878f3283ecdb3877c80299906370818b09c47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364397"
 ---
 # <a name="add-or-update-a-code-signing-certificate"></a>添加或更新代码签名证书
 
@@ -18,20 +18,20 @@ ms.locfileid: "63337093"
 
 合作伙伴中心支持将多个证书与单个帐户相关联。  如果要添加其他证书，请使用这个相同的过程。
 
-如果你首次在仪表板上注册公司，请参阅[建立新公司](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/establish-a-new-company)。
+如果你首次在仪表板上注册公司，请参阅[建立新公司](https://docs.microsoft.com/windows-hardware/drivers/dashboard/establish-a-new-company)。
 
 > [!IMPORTANT]
 > 已上传并用于所有合作伙伴中心提交包的证书已更改：
 >
 > * **所有**提交都需要扩展验证 (EV) 代码签名证书。  
 > * 所有证书都必须采用 SHA2 算法，并使用 **/fd sha256** signtool 命令行开关进行签名
-> * （有关详细信息，请参阅此 [HLK 博客文章](https://blogs.msdn.microsoft.com/windows_hardware_certification/2017/11/13/starting-in-february-2018-packages-signed-using-a-sha-1-digest-algorithm-and-certificate-chain-will-no-longer-be-accepted/)）。
+> * （有关详细信息，请参阅此 [HLK 博客文章](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)）。
 
 ## <a name="to-add-or-update-a-code-signing-certificate"></a>添加或更新代码签名证书
 
 ### <a name="step-1-renew-your-code-signing-certificate-if-needed"></a>第 1 步：续订代码签名证书（如果需要）  
 
-1. 确定所需的代码签名证书类型（有关详细信息，请参阅[获取代码签名证书](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-a-code-signing-certificate)）。
+1. 确定所需的代码签名证书类型（有关详细信息，请参阅[获取代码签名证书](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate)）。
 
 2. 获取新证书或重新使用现有的证书。
 
@@ -53,10 +53,10 @@ ms.locfileid: "63337093"
 
 ## <a name="related-topics"></a>相关主题
 
-* [在登录之前](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/before-you-sign-in)
+* [在登录之前](https://docs.microsoft.com/windows-hardware/drivers/dashboard/before-you-sign-in)
 
-* [建立新公司](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/establish-a-new-company)
+* [建立新公司](https://docs.microsoft.com/windows-hardware/drivers/dashboard/establish-a-new-company)
 
-* [硬件认证提交](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/hardware-certification-submissions)
+* [硬件认证提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/hardware-certification-submissions)
 
-* [应用认证提交](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/app-certification-submissions)
+* [应用认证提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/app-certification-submissions)

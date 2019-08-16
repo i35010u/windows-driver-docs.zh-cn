@@ -6,16 +6,16 @@ keywords:
 - 编写 KMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4afffd32b35b77560354b56e88d2a997394cbe9d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 93b1d7ec9576a9ec817ef6f7aa1f64797a5fa1f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66840862"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359296"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
 
-本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写[通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装你的驱动程序。
+本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装你的驱动程序。
 
 若要开始操作，请确保你已安装 [Microsoft Visual Studio 2015](https://go.microsoft.com/fwlink/p/?LinkId=698539) 和 [Windows 驱动程序工具包 (WDK) 10](https://go.microsoft.com/fwlink/p/?LinkId=733614)。
 

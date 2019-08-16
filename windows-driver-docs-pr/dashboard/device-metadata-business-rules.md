@@ -5,12 +5,12 @@ ms.assetid: 19a0ced7-bb31-4899-abb4-2de803f179a6
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fd3cefa63d4bb457dec2c6330d9998eb38db0ed
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: da04406434d834d2daf2a7528ec1557152e50703
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335038"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364474"
 ---
 # <a name="device-metadata-business-rules"></a>设备元数据业务规则
 
@@ -23,7 +23,7 @@ ms.locfileid: "63335038"
 
 -   不会将预览包下载为发行的包。
 
-## <a name="span-idinthistopicspanspan-idinthistopicspanspan-idinthistopicspanin-this-topic"></a><span id="In_this_topic"></span><span id="in_this_topic"></span><span id="IN_THIS_TOPIC"></span>本主题内容
+## <a name="span-idin_this_topicspanspan-idin_this_topicspanspan-idin_this_topicspanin-this-topic"></a><span id="In_this_topic"></span><span id="in_this_topic"></span><span id="IN_THIS_TOPIC"></span>本主题内容
 
 
 [提交设备元数据的一般规则](#devicemetadatabusrules-submission)
@@ -171,13 +171,13 @@ ms.locfileid: "63335038"
 
 ### <a name="span-idbkmk-uniquespanunique-device-stage-metadata-submissions"></a><span id="bkmk-unique"></span>唯一 Device Stage 元数据提交
 
-要提交电脑元数据包，请参阅[提交电脑设备清单包](https://msdn.microsoft.com/library/windows/hardware/hh801890.aspx)。
+要提交电脑元数据包，请参阅[提交电脑设备清单包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
-要提交移动宽带元数据包，请参阅[提交移动宽带设备清单包](https://msdn.microsoft.com/library/windows/hardware/hh801891.aspx)。
+要提交移动宽带元数据包，请参阅[提交移动宽带设备清单包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
-要提交多区域设置元数据包，请参阅[提交多区域设置设备清单包](https://msdn.microsoft.com/library/windows/hardware/hh801889.aspx)。
+要提交多区域设置元数据包，请参阅[提交多区域设置设备清单包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
-### <a name="span-idwindowsstoredeviceapplimitsspanspan-idwindowsstoredeviceapplimitsspanspan-idwindowsstoredeviceapplimitsspanuwp-device-app-limits"></a><span id="Windows_Store_device_app_limits"></span><span id="windows_store_device_app_limits"></span><span id="WINDOWS_STORE_DEVICE_APP_LIMITS"></span>UWP 设备应用的限制
+### <a name="span-idwindows_store_device_app_limitsspanspan-idwindows_store_device_app_limitsspanspan-idwindows_store_device_app_limitsspanuwp-device-app-limits"></a><span id="Windows_Store_device_app_limits"></span><span id="windows_store_device_app_limits"></span><span id="WINDOWS_STORE_DEVICE_APP_LIMITS"></span>UWP 设备应用的限制
 
 设备制造商在可以在设备元数据中指定用于自动安装和应用特权的 UWP 应用的数量方面受到限制。 例如，每个外围设备生产商 (IHV) 可以最多提交配置为自动安装的一个应用，以及最多一个指定为特权应用的应用。 IHV 可以提交满足这两个限制条件的一个应用，或者提交两个应用，每一个仅满足一个限制条件。
 
@@ -223,14 +223,14 @@ ms.locfileid: "63335038"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-- [创建设备元数据体验](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)
+- [创建设备元数据体验](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-- [管理设备元数据体验](https://msdn.microsoft.com/library/windows/hardware/br230797.aspx)
+- [管理设备元数据体验](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-- [提交设备元数据包（仪表板帮助）](https://msdn.microsoft.com/library/windows/hardware/br230807.aspx)
+- [提交设备元数据包（仪表板帮助）](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
  
 

@@ -4,12 +4,12 @@ description: 虚拟地址空间
 ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4d528c5f4cdf622221a79efcccc4c03b7c88c5b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 778e9a60127f2dfc852aca940cd5faf153fa6f1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358666"
 ---
 # <a name="virtual-address-spaces"></a>虚拟地址空间
 
@@ -30,7 +30,7 @@ ms.locfileid: "63371178"
 
 该图显示了两个 64 位进程的虚拟地址空间：Notepad.exe 和 MyApp.exe。 每个进程都有其各自的虚拟地址空间，范围从 0x000'0000000 至 0x7FF'FFFFFFFF。 每个阴影块都表示虚拟内存或物理内存的一个页（大小为 4 KB）。 注意，Notepad 进程使用从 0x7F7'93950000 开始的虚拟地址的三个连续页面。 但虚拟地址的这三个连续页面会映射到物理内存中的非连续页面。 另请注意，两个进程都使用从 0x7F7'93950000 开始的虚拟内存页面，但这些虚拟页面映射到物理内存的不同页面。
 
-## <a name="span-iduserspaceandsystemspacespanspan-iduserspaceandsystemspacespanspan-iduserspaceandsystemspacespanuser-space-and-system-space"></a><span id="User_space_and_system_space"></span><span id="user_space_and_system_space"></span><span id="USER_SPACE_AND_SYSTEM_SPACE"></span>用户空间和系统空间
+## <a name="span-iduser_space_and_system_spacespanspan-iduser_space_and_system_spacespanspan-iduser_space_and_system_spacespanuser-space-and-system-space"></a><span id="User_space_and_system_space"></span><span id="user_space_and_system_space"></span><span id="USER_SPACE_AND_SYSTEM_SPACE"></span>用户空间和系统空间
 
 
 诸如 Notepad.exe 和 MyApp.exe 的进程在用户模式下运行。 核心操作系统组件和多个驱动程序在更有特权的内核模式下运行。 有关处理器模式的详细信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。 每个用户模式进程都有其各自的专用虚拟地址空间，但在内核模式下运行的所有代码都共享称为“系统空间”  的单个虚拟地址空间。 用户模式进程的虚拟地址空间称为“用户空间”  。
@@ -39,7 +39,7 @@ ms.locfileid: "63371178"
 
 ![图：系统空间](images/virtualaddressspace02.png)
 
-在 32 位 Windows 中，可以选择指定（在启动时）超过 2 GB 可用于用户空间。 其结果是系统空间可用的虚拟地址更少。 可以将用户空间的大小增加到 3 GB，在这种情况下，系统空间只有1 GB 可用。 若要增大用户空间的大小，请使用 [**BCDEdit /set increaseuserva**](https://msdn.microsoft.com/library/windows/hardware/ff542202)。
+在 32 位 Windows 中，可以选择指定（在启动时）超过 2 GB 可用于用户空间。 其结果是系统空间可用的虚拟地址更少。 可以将用户空间的大小增加到 3 GB，在这种情况下，系统空间只有1 GB 可用。 若要增大用户空间的大小，请使用 [**BCDEdit /set increaseuserva**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)。
 
 在 64 位 Windows 中，虚拟地址空间的理论大小为 2^64 字节（16 艾字节），但实际上仅使用 16 艾字节范围的一小部分。 范围从 0x000'00000000 至 0x7FF'FFFFFFFF 的 8 TB 用于用户空间，范围从 0xFFFF0800'00000000 至 0xFFFFFFFF'FFFFFFFF 的 248 TB 的部分用于系统空间。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63371178"
 3.  稍后，设备中断了当前正在运行的任何线程以显示读取操作完成。 中断由此任意线程（属于任意进程）上运行的内核模式驱动程序例程进行处理。
 4.  此时，驱动程序不得将数据写入用户模式程序在步骤 1 中提供的开始地址。 此地址位于发起请求的进程的虚拟地址空间中，该进程很可能与当前进程不同。
 
-## <a name="span-idpagedpoolandnonpagedpoolspanspan-idpagedpoolandnonpagedpoolspanspan-idpagedpoolandnonpagedpoolspanpaged-pool-and-nonpaged-pool"></a><span id="Paged_pool_and_Nonpaged_pool"></span><span id="paged_pool_and_nonpaged_pool"></span><span id="PAGED_POOL_AND_NONPAGED_POOL"></span>分页缓冲池和非分页缓冲池
+## <a name="span-idpaged_pool_and_nonpaged_poolspanspan-idpaged_pool_and_nonpaged_poolspanspan-idpaged_pool_and_nonpaged_poolspanpaged-pool-and-nonpaged-pool"></a><span id="Paged_pool_and_Nonpaged_pool"></span><span id="paged_pool_and_nonpaged_pool"></span><span id="PAGED_POOL_AND_NONPAGED_POOL"></span>分页缓冲池和非分页缓冲池
 
 
 在用户空间中，所有物理内存页面都可以根据需要调出到磁盘文件。 在系统空间中，某些物理页面可以调出，而其他物理页面则不能。 系统空间具有用于动态分配内存的两个区域：分页缓冲池和非分页缓冲池。 
@@ -65,7 +65,7 @@ ms.locfileid: "63371178"
 
 ![图：比较分页缓冲池中的内存分配与非分页缓冲池中的内存分配](images/virtualaddressspace04.png)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [用户模式和内核模式](user-mode-and-kernel-mode.md)

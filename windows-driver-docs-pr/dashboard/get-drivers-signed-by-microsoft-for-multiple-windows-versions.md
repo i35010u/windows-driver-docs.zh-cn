@@ -5,12 +5,12 @@ ms.assetid: 519384F5-986C-4109-8C91-4352DEFF46F9
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d1b2c8e08ee33c672b45cb49f5fd46be7d999a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 2c6d70012306391ab0b95550962673213e43d1d3
+ms.sourcegitcommit: cdb75f4fae5b4da47c860205e407c5a7a44b89b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335159"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68446391"
 ---
 # <a name="get-drivers-signed-by-microsoft-for-multiple-windows-versions"></a>获取由 Microsoft 签名的适用于多个 Windows 版本的驱动程序
 
@@ -20,14 +20,14 @@ ms.locfileid: "63335159"
 
 有两种方法可以将仪表板提交应用到 Windows 10 和较早版本的 Windows：
 
-1. 使用 Hardware Lab Kit (HLK) 针对 Windows 10 测试你的提交，而使用硬件认证工具包 (HCK) 针对较早版本的 Windows 测试提交。 然后，创建一个包含所有[合并 HLK/HCK 测试结果](https://msdn.microsoft.com/library/windows/hardware/dn939938.aspx)的仪表板提交。 在提交过程中，可以选择加入以获取适用于 Windows Vista 和 Windows XP 的免费签名，如本主题的后面部分所示。 若要选择加入 Windows Server 2008，请提供来自 [Windows 徽标工具包 (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 提交的提交 ID。 这是使提交适用于所有 Windows 版本的唯一方法。
-2. 作为 HLK 和 HCK 测试的替代方法，可以自行[交叉签名](https://msdn.microsoft.com/library/windows/hardware/dn170454.aspx)你的驱动程序，并将它提交到仪表板以供[验证签名](attestation-signing-a-kernel-driver-for-public-release.md)，以便它还可以在 Windows 10 上运行。 这个方法更复杂，但仍是一个有效选项。 但请务必注意，通过此方法签名的提交在 Windows Server 2016 上不可用。 有关如何对驱动程序进行证明签名的详细信息，请参阅[对内核驱动程序进行证明签名以便公开发布](attestation-signing-a-kernel-driver-for-public-release.md)。
+1. 使用 Hardware Lab Kit (HLK) 针对 Windows 10 测试你的提交，而使用硬件认证工具包 (HCK) 针对较早版本的 Windows 测试提交。 然后，创建一个包含所有[合并 HLK/HCK 测试结果](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)的仪表板提交。 在提交过程中，可以选择加入以获取适用于 Windows Vista 和 Windows XP 的免费签名，如本主题的后面部分所示。 若要选择加入 Windows Server 2008，请提供来自 [Windows 徽标工具包 (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 提交的提交 ID。 这是使提交适用于所有 Windows 版本的唯一方法。
+2. 作为 HLK 和 HCK 测试的替代方法，可以自行[交叉签名](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)你的驱动程序，并将它提交到仪表板以供[验证签名](attestation-signing-a-kernel-driver-for-public-release.md)，以便它还可以在 Windows 10 上运行。 这个方法更复杂，但仍是一个有效选项。 有关如何对驱动程序进行证明签名的详细信息，请参阅[对内核驱动程序进行证明签名以便公开发布](attestation-signing-a-kernel-driver-for-public-release.md)。
     > [!IMPORTANT]
     > 除非可通过合作伙伴中心对驱动程序签名，否则仍必须使用[硬件开发人员中心 (Sysdev)](dashboard-services.md) 对驱动程序进行证明签名。
 
 本主题会提供有关用于上下文的仪表板的一些背景信息，然后演练使用 HLK/HCK 的过程。
 
-在仪表板中，有两个与签名提交有相关的选项 – 你可以使用任一方法获取 Microsoft 签名的驱动程序。 硬件兼容性选项意味着你已走了额外的距离，并满足 [Windows 硬件兼容性计划](https://msdn.microsoft.com/library/windows/hardware/dn922588.aspx)要求。 这将给予你 Microsoft SmartScreen 附带的信誉、经认证的产品列表的可见性和其他业务好处。
+在仪表板中，有两个与签名提交有相关的选项 – 你可以使用任一方法获取 Microsoft 签名的驱动程序。 硬件兼容性选项意味着你已走了额外的距离，并满足 [Windows 硬件兼容性计划](https://docs.microsoft.com/windows-hardware/design/compatibility/index)要求。 这将给予你 Microsoft SmartScreen 附带的信誉、经认证的产品列表的可见性和其他业务好处。
 
 对于背景，存在两种需要考虑的代码签名操作：
 
@@ -38,11 +38,11 @@ ms.locfileid: "63335159"
 
 若要在[硬件开发人员中心 (Sysdev)](dashboard-services.md) 中确认用于标识组织的证书，需要以组织帐户的管理员身份登录。 然后，依次选择“管理”  &gt;“上传新的数字证书”  。
 
-若要在合作伙伴中心确认用于标识组织的证书，请参阅[更新代码签名证书](https://msdn.microsoft.com/library/windows/hardware/mt786467)。
+若要在合作伙伴中心确认用于标识组织的证书，请参阅[更新代码签名证书](https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-code-signing-certificate)。
 
 登录到合作伙伴中心并准备好对你的提交签名后，可以使用标准代码签名证书或 EV 代码签名证书。这适用于所有操作系统版本，不只适用于 Windows 10。
 
-这是[策略的最新更改](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/10/20/update-on-sysdev-ev-certificate-requirement.aspx)。 如果你有绑定到你组织帐户的 EV 证书，可以放心开始安装 - 即，当你提交你的程序包时，可以继续使用标准 SHA-2 证书。
+这是[策略的最新更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。 如果你有绑定到你组织帐户的 EV 证书，可以放心开始安装 - 即，当你提交你的程序包时，可以继续使用标准 SHA-2 证书。
 
 ## <a name="how-to-submit-hlk-test-results"></a>如何提交 HLK 测试结果
 

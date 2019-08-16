@@ -4,12 +4,12 @@ description: 可以在 Windows 硬件开发人员中心为扩展 INF 文件创�
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: de83c5c7582af5633ace0273748e6663f93b4d55
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6803f0632e501678688a48a50fc457dfa58fb359
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334927"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364415"
 ---
 # <a name="working-with-extension-infs-in-the-partner-center"></a>在合作伙伴中心使用扩展 INF
 
@@ -67,7 +67,7 @@ ms.locfileid: "63334927"
 
 #### <a name="extensionid"></a>ExtensionID
 
-ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID。 它描述硬件设备部件或部件系列，并且会向已提交它的 SellerID [自动注册](https://blogs.msdn.microsoft.com/windows_hardware_certification/2017/11/08/hardware-dev-center-now-automatically-registers-extension-ids/)。 此 SellerID 的所有者负责跟踪 ExtensionID 的使用和映射，类似于 CHID 管理。 
+ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID。 它描述硬件设备部件或部件系列，并且会向已提交它的 SellerID [自动注册](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。 此 SellerID 的所有者负责跟踪 ExtensionID 的使用和映射，类似于 CHID 管理。 
 
 例如，为新系统部件创建 ExtensionID 时：
 

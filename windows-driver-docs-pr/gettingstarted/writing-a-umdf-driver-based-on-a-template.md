@@ -6,16 +6,16 @@ keywords:
 - 编写 UMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 604ad2a871eb0b341cc23c11660e10e7e9264f24
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 22d87ddd88af414359d0f792cb4bc21987db7e4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66840864"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359294"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (UMDF 2)
 
-本主题介绍了如何使用用户模式驱动程序框架 (UMDF) 2 编写[通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
+本主题介绍了如何使用用户模式驱动程序框架 (UMDF) 2 编写[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
 
 若要开始操作，请确保已安装最新版本的 Microsoft Visual Studio 和 Windows 驱动程序工具包 (WDK)。 有关下载链接，请参阅[下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
 

@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2b8512d6eecdafe700d710356ca221acaa2b6815
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9b5474cc1f29ed61568ff616ca941252008da284
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66686949"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372009"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -91,7 +91,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 * [下载 WDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 * [下载以前版本的 WDK](other-wdk-downloads.md)
-* [下载 Windows 评估和部署工具包 (Windows ADK)](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
-* [下载 Windows HLK、HCK 或徽标工具包](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
-* [下载 Windows 调试工具 (WinDbg)](https://developer.microsoft.com/windows/hardware/download-windbg)
-* [下载 Windows 符号程序包](https://developer.microsoft.com/windows/hardware/download-symbols)
+* [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+* [下载 Windows HLK、HCK 或徽标工具包](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
+* [下载 Windows 调试工具 (WinDbg)](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
+* [下载 Windows 符号程序包](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)

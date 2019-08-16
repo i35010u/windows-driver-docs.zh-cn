@@ -4,12 +4,12 @@ description: Windows 合作伙伴中心 ID 定义
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e176d4a0e6238885e1659df95b75c7d54fca60
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1cb44f0d544f52e7025949b95d0f2ef7756d9638
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334980"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353884"
 ---
 # <a name="dashboard-id-definitions"></a>仪表板 ID 定义
 
@@ -46,7 +46,7 @@ ms.locfileid: "63334980"
 </tr>
 <tr class="odd">
 <td><p>提交 ID</p></td>
-<td><p>此标识符表示你上传到产品的各个程序包。 初始提交以及所有提交更新都具有唯一标识符。 此 ID 最常用于通过产品内的驱动程序更新可接受 (DUA) 进程跟踪更新。 请参阅<a href="https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-your-hardware-submissions)">管理硬件提交</a>，了解更多详细信息。 </p></td>
+<td><p>此标识符表示你上传到产品的各个程序包。 初始提交以及所有提交更新都具有唯一标识符。 此 ID 最常用于通过产品内的驱动程序更新可接受 (DUA) 进程跟踪更新。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions)">管理硬件提交</a>，了解更多详细信息。 </p></td>
 </tr>
 </tbody>
 </table>
@@ -60,6 +60,6 @@ ms.locfileid: "63334980"
 
 ## <a name="related-topics"></a>相关主题
 
-* [管理硬件提交](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-your-hardware-submissions)
+* [管理硬件提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions)
 
-* [使用发货标签管理驱动程序分发](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/manage-driver-distribution-by-submission)
+* [使用发货标签管理驱动程序分发](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)

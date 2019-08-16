@@ -4,12 +4,12 @@ description: Sharks Cove 是硬件开发板，可用于开发 Windows 硬件和�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f4305c71debf567516b5d5e6680214371a9eb2
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: c6d8f91d435020e2314a071c71f959df24c6e8e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385172"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 
@@ -24,14 +24,14 @@ Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967
 
 如需详细规范，请参阅 [Sharks Cove 技术规范](https://go.microsoft.com/fwlink/p?linkid=403169)。
 
-## <a name="span-idbeforeyoustartspanspan-idbeforeyoustartspanspan-idbeforeyoustartspanbefore-you-start"></a><span id="Before_you_start"></span><span id="before_you_start"></span><span id="BEFORE_YOU_START"></span>准备工作
+## <a name="span-idbefore_you_startspanspan-idbefore_you_startspanspan-idbefore_you_startspanbefore-you-start"></a><span id="Before_you_start"></span><span id="before_you_start"></span><span id="BEFORE_YOU_START"></span>准备工作
 
 
 此处提供的说明要求你运行 Windows 10、Windows 8.1 或 Windows 7。 如果运行的是 Windows 8，则这些说明不适用。
 
 如果运行的是 Windows 7，则需要安装 [PowerShell 4.0](https://go.microsoft.com/fwlink/p?linkid=507377) 和 [Windows 8.1 更新的 Windows 评估和部署工具包 (ADK)](https://go.microsoft.com/fwlink/p/?linkid=239721)。 然后，在“开始”  菜单上，转到“所有程序”  &gt;“Windows 工具包”&gt;“Windows ADK”&gt;“部署和映像工具环境”。 以管理员身份打开此命令提示符窗口。 在输入这些说明中给出的命令时，请使用此命令提示符窗口。
 
-## <a name="span-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanstep-1-get-the-board-and-related-hardware"></a><span id="Step_1__Get_the_board_and_related_hardware"></span><span id="step_1__get_the_board_and_related_hardware"></span><span id="STEP_1__GET_THE_BOARD_AND_RELATED_HARDWARE"></span>步骤 1：获取开发板和相关硬件
+## <a name="span-idstep_1__get_the_board_and_related_hardwarespanspan-idstep_1__get_the_board_and_related_hardwarespanspan-idstep_1__get_the_board_and_related_hardwarespanstep-1-get-the-board-and-related-hardware"></a><span id="Step_1__Get_the_board_and_related_hardware"></span><span id="step_1__get_the_board_and_related_hardware"></span><span id="STEP_1__GET_THE_BOARD_AND_RELATED_HARDWARE"></span>步骤 1：获取开发板和相关硬件
 
 
 将需要此硬件：
@@ -45,7 +45,7 @@ Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967
 
 可以从 [Mouser Electronics](https://go.microsoft.com/fwlink/p?linkid=403172) 获取 Sharks Cove 板。
 
-## <a name="span-idstep2downloadkitsandtoolsspanspan-idstep2downloadkitsandtoolsspanspan-idstep2downloadkitsandtoolsspanstep-2-download-kits-and-tools"></a><span id="Step_2__Download_kits_and_tools"></span><span id="step_2__download_kits_and_tools"></span><span id="STEP_2__DOWNLOAD_KITS_AND_TOOLS"></span>步骤 2：下载工具包和工具
+## <a name="span-idstep_2__download_kits_and_toolsspanspan-idstep_2__download_kits_and_toolsspanspan-idstep_2__download_kits_and_toolsspanstep-2-download-kits-and-tools"></a><span id="Step_2__Download_kits_and_tools"></span><span id="step_2__download_kits_and_tools"></span><span id="STEP_2__DOWNLOAD_KITS_AND_TOOLS"></span>步骤 2：下载工具包和工具
 
 
 一个驱动程序开发环境有两台计算机：主计算机  和目标计算机  。 目标计算机也称为“测试计算机”  。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
@@ -65,7 +65,7 @@ Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967
 
 Windows 调试工具的文档还作为安装目录中的 CHM 文件提供。 示例：C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm。
 
-## <a name="span-idstep3installwindowsonthesharkscoveboardspanspan-idstep3installwindowsonthesharkscoveboardspanspan-idstep3installwindowsonthesharkscoveboardspanstep-3-install-windows-on-the-sharks-cove-board"></a><span id="Step_3__Install_Windows_on_the_Sharks_Cove_board"></span><span id="step_3__install_windows_on_the_sharks_cove_board"></span><span id="STEP_3__INSTALL_WINDOWS_ON_THE_SHARKS_COVE_BOARD"></span>步骤 3：在 Sharks Cove 板上安装 Windows
+## <a name="span-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanstep-3-install-windows-on-the-sharks-cove-board"></a><span id="Step_3__Install_Windows_on_the_Sharks_Cove_board"></span><span id="step_3__install_windows_on_the_sharks_cove_board"></span><span id="STEP_3__INSTALL_WINDOWS_ON_THE_SHARKS_COVE_BOARD"></span>步骤 3：在 Sharks Cove 板上安装 Windows
 
 
 可以在 Sharks Cove 板上安装以下 Windows 版本之一：
@@ -196,7 +196,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 **bootia32.efi** 按照屏幕上的 Windows 设置说明进行操作。
 
-## <a name="span-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanspan-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanspan-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanstep-4-provision-the-sharks-cove-board-for-driver-deployment-and-testing"></a><span id="Step_4__Provision_the_Sharks_Cove_board_for_driver_deployment_and_testing"></span><span id="step_4__provision_the_sharks_cove_board_for_driver_deployment_and_testing"></span><span id="STEP_4__PROVISION_THE_SHARKS_COVE_BOARD_FOR_DRIVER_DEPLOYMENT_AND_TESTING"></span>步骤 4：预配 Sharks Cove 板，以便进行驱动程序部署和测试
+## <a name="span-idstep_4__provision_the_sharks_cove_board_for_driver_deployment_and_testingspanspan-idstep_4__provision_the_sharks_cove_board_for_driver_deployment_and_testingspanspan-idstep_4__provision_the_sharks_cove_board_for_driver_deployment_and_testingspanstep-4-provision-the-sharks-cove-board-for-driver-deployment-and-testing"></a><span id="Step_4__Provision_the_Sharks_Cove_board_for_driver_deployment_and_testing"></span><span id="step_4__provision_the_sharks_cove_board_for_driver_deployment_and_testing"></span><span id="STEP_4__PROVISION_THE_SHARKS_COVE_BOARD_FOR_DRIVER_DEPLOYMENT_AND_TESTING"></span>步骤 4：预配 Sharks Cove 板，以便进行驱动程序部署和测试
 
 
 预配  是配置计算机以便进行自动驱动程序部署、测试和调试的过程。
@@ -217,21 +217,21 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 
 
-## <a name="span-idstep5writeasoftwaredriverforthesharkscoveboardspanspan-idstep5writeasoftwaredriverforthesharkscoveboardspanspan-idstep5writeasoftwaredriverforthesharkscoveboardspanstep-5-write-a-software-driver-for-the-sharks-cove-board"></a><span id="Step_5__Write_a_software_driver_for_the_Sharks_Cove_board"></span><span id="step_5__write_a_software_driver_for_the_sharks_cove_board"></span><span id="STEP_5__WRITE_A_SOFTWARE_DRIVER_FOR_THE_SHARKS_COVE_BOARD"></span>步骤 5：编写 Sharks Cove 板的软件驱动程序
+## <a name="span-idstep_5__write_a_software_driver_for_the_sharks_cove_boardspanspan-idstep_5__write_a_software_driver_for_the_sharks_cove_boardspanspan-idstep_5__write_a_software_driver_for_the_sharks_cove_boardspanstep-5-write-a-software-driver-for-the-sharks-cove-board"></a><span id="Step_5__Write_a_software_driver_for_the_Sharks_Cove_board"></span><span id="step_5__write_a_software_driver_for_the_sharks_cove_board"></span><span id="STEP_5__WRITE_A_SOFTWARE_DRIVER_FOR_THE_SHARKS_COVE_BOARD"></span>步骤 5：编写 Sharks Cove 板的软件驱动程序
 
 
 编写 Sharks Cove 板的设备驱动程序之前，最好先通过编写软件驱动程序自行熟悉驱动程序开发工具。 该过程类似于编写任何其他目标计算机的软件驱动程序。 开始时，请按照此处的实例练习进行操作：
 
 -   [编写第一个驱动程序](writing-your-first-driver.md)
 
-## <a name="span-idstep6alterthesecondarysystemdescriptiontablessdtspanspan-idstep6alterthesecondarysystemdescriptiontablessdtspanspan-idstep6alterthesecondarysystemdescriptiontablessdtspanstep-6-alter-the-secondary-system-description-table-ssdt"></a><span id="Step_6__Alter_the_Secondary_System_Description_Table__SSDT_"></span><span id="step_6__alter_the_secondary_system_description_table__ssdt_"></span><span id="STEP_6__ALTER_THE_SECONDARY_SYSTEM_DESCRIPTION_TABLE__SSDT_"></span>步骤 6：更改辅助系统描述表 (SSDT)
+## <a name="span-idstep_6__alter_the_secondary_system_description_table__ssdt_spanspan-idstep_6__alter_the_secondary_system_description_table__ssdt_spanspan-idstep_6__alter_the_secondary_system_description_table__ssdt_spanstep-6-alter-the-secondary-system-description-table-ssdt"></a><span id="Step_6__Alter_the_Secondary_System_Description_Table__SSDT_"></span><span id="step_6__alter_the_secondary_system_description_table__ssdt_"></span><span id="STEP_6__ALTER_THE_SECONDARY_SYSTEM_DESCRIPTION_TABLE__SSDT_"></span>步骤 6：更改辅助系统描述表 (SSDT)
 
 
 若要为连接到 Sharks Cove 板上的简单外设总线 (SPB) 的设备编写驱动程序，需更新 Sharks Cove 固件中的辅助系统描述表 (SSDT)。 相关示例是为通过 I2C 总线传输数据并通过通用 I/O (GPIO) 引脚生成中断的加速计编写驱动程序。 有关详细信息，请参阅 [Simple Peripheral Buses](https://go.microsoft.com/fwlink/p?linkid=399232)（简单外设总线）。
 
 下面是更改 SSDT 的示例。 我们将为 [ADXL345](https://go.microsoft.com/fwlink/p?linkid=401463) 加速计添加一个表条目。
 
-**注意**  有关 [SpbAccelerometer 示例驱动程序](https://go.microsoft.com/fwlink/p?linkid=506965)和 ADXL345 加速计的分步指南，请参阅 [SpbAccelerometer driver cookbook](https://msdn.microsoft.com/library/windows/hardware/dn760712)（SpbAccelerometer 驱动程序指南）。
+**注意**  有关 [SpbAccelerometer 示例驱动程序](https://go.microsoft.com/fwlink/p?linkid=506965)和 ADXL345 加速计的分步指南，请参阅 [SpbAccelerometer driver cookbook](https://docs.microsoft.com/windows-hardware/drivers/sensors/spbaccelerometer-driver-cookbook)（SpbAccelerometer 驱动程序指南）。
 
 
 
@@ -391,7 +391,7 @@ testsigning             Yes
 
     重启 Sharks Cove 板。
 
-## <a name="span-idstep7connectyourdevicetothesharkscoveboardspanspan-idstep7connectyourdevicetothesharkscoveboardspanspan-idstep7connectyourdevicetothesharkscoveboardspanstep-7-connect-your-device-to-the-sharks-cove-board"></a><span id="Step_7__Connect_your_device_to_the_Sharks_Cove_board"></span><span id="step_7__connect_your_device_to_the_sharks_cove_board"></span><span id="STEP_7__CONNECT_YOUR_DEVICE_TO_THE_SHARKS_COVE_BOARD"></span>步骤 7：将设备连接到 Sharks Cove 板
+## <a name="span-idstep_7__connect_your_device_to_the_sharks_cove_boardspanspan-idstep_7__connect_your_device_to_the_sharks_cove_boardspanspan-idstep_7__connect_your_device_to_the_sharks_cove_boardspanstep-7-connect-your-device-to-the-sharks-cove-board"></a><span id="Step_7__Connect_your_device_to_the_Sharks_Cove_board"></span><span id="step_7__connect_your_device_to_the_sharks_cove_board"></span><span id="STEP_7__CONNECT_YOUR_DEVICE_TO_THE_SHARKS_COVE_BOARD"></span>步骤 7：将设备连接到 Sharks Cove 板
 
 
 在[此处](https://go.microsoft.com/fwlink/p?linkid=506966)获取 Sharks Cove 端头和引脚的规格。
@@ -413,7 +413,7 @@ I2CSerialBus(... "\\_SB.I2C3", , )
 GpioInt(... "\\_SB.GPO2") {0x17}
 ```
 
-## <a name="span-idstep8writebuildanddeployadriverforyourdevicespanspan-idstep8writebuildanddeployadriverforyourdevicespanspan-idstep8writebuildanddeployadriverforyourdevicespanstep-8-write-build-and-deploy-a-driver-for-your-device"></a><span id="Step_8__Write__build__and_deploy_a_driver_for_your_device"></span><span id="step_8__write__build__and_deploy_a_driver_for_your_device"></span><span id="STEP_8__WRITE__BUILD__AND_DEPLOY_A_DRIVER_FOR_YOUR_DEVICE"></span>步骤 8：为设备编写、构建和部署驱动程序
+## <a name="span-idstep_8__write__build__and_deploy_a_driver_for_your_devicespanspan-idstep_8__write__build__and_deploy_a_driver_for_your_devicespanspan-idstep_8__write__build__and_deploy_a_driver_for_your_devicespanstep-8-write-build-and-deploy-a-driver-for-your-device"></a><span id="Step_8__Write__build__and_deploy_a_driver_for_your_device"></span><span id="step_8__write__build__and_deploy_a_driver_for_your_device"></span><span id="STEP_8__WRITE__BUILD__AND_DEPLOY_A_DRIVER_FOR_YOUR_DEVICE"></span>步骤 8：为设备编写、构建和部署驱动程序
 
 
 为 Sharks Cove 板编写设备驱动程序类似于为任何其他计算机编写设备驱动程序。 在 Visual Studio 中，可以从驱动程序模板开始，也可以从驱动程序示例开始。
@@ -447,7 +447,7 @@ GpioInt(... "\\_SB.GPO2") {0x17}
 
 7.  若要查看已加载的模块，请输入 **lm**。 验证驱动程序是否出现在已加载模块的列表中。
 
-## <a name="span-idusingwindbgtodebugthesharkscoveboardspanspan-idusingwindbgtodebugthesharkscoveboardspanspan-idusingwindbgtodebugthesharkscoveboardspanusing-windbg-to-debug-the-sharks-cove-board"></a><span id="Using_WinDbg_to_debug_the_Sharks_Cove_board"></span><span id="using_windbg_to_debug_the_sharks_cove_board"></span><span id="USING_WINDBG_TO_DEBUG_THE_SHARKS_COVE_BOARD"></span>使用 WinDbg 调试 Sharks Cove 板
+## <a name="span-idusing_windbg_to_debug_the_sharks_cove_boardspanspan-idusing_windbg_to_debug_the_sharks_cove_boardspanspan-idusing_windbg_to_debug_the_sharks_cove_boardspanusing-windbg-to-debug-the-sharks-cove-board"></a><span id="Using_WinDbg_to_debug_the_Sharks_Cove_board"></span><span id="using_windbg_to_debug_the_sharks_cove_board"></span><span id="USING_WINDBG_TO_DEBUG_THE_SHARKS_COVE_BOARD"></span>使用 WinDbg 调试 Sharks Cove 板
 
 
 作为使用 Visual Studio 设置内核模式调试的替代方法，你还可以手动完成设置。 将在线提供或在 debugger.chm 中提供该主题。
@@ -458,20 +458,20 @@ GpioInt(... "\\_SB.GPO2") {0x17}
 
 无论使用的是 Visual Studio 还是 WinDbg，以下实例指南都有助于学习调试程序命令：
 
--   [Getting Started with WinDbg (User-Mode)](https://msdn.microsoft.com/library/windows/hardware/dn745911)（WinDbg 入门（用户模式））
--   [Getting Started with WinDbg (Kernel-Mode)](https://msdn.microsoft.com/library/windows/hardware/dn745912)（WinDbg 入门（内核模式））
+-   [Getting Started with WinDbg (User-Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg)（WinDbg 入门（用户模式））
+-   [Getting Started with WinDbg (Kernel-Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-)（WinDbg 入门（内核模式））
 
-## <a name="span-idsampledrivercodespanspan-idsampledrivercodespanspan-idsampledrivercodespansample-driver-code"></a><span id="Sample_driver_code"></span><span id="sample_driver_code"></span><span id="SAMPLE_DRIVER_CODE"></span>示例驱动程序代码
+## <a name="span-idsample_driver_codespanspan-idsample_driver_codespanspan-idsample_driver_codespansample-driver-code"></a><span id="Sample_driver_code"></span><span id="sample_driver_code"></span><span id="SAMPLE_DRIVER_CODE"></span>示例驱动程序代码
 
 
 -   [SpbAccelerometer 示例驱动程序（UMDF 版本 1）](https://go.microsoft.com/fwlink/p?linkid=506965)
 
-## <a name="span-idunderstandingsimpleperipheralbusesspanspan-idunderstandingsimpleperipheralbusesspanspan-idunderstandingsimpleperipheralbusesspanunderstanding-simple-peripheral-buses"></a><span id="Understanding_simple_peripheral_buses"></span><span id="understanding_simple_peripheral_buses"></span><span id="UNDERSTANDING_SIMPLE_PERIPHERAL_BUSES"></span>了解简单外设总线
+## <a name="span-idunderstanding_simple_peripheral_busesspanspan-idunderstanding_simple_peripheral_busesspanspan-idunderstanding_simple_peripheral_busesspanunderstanding-simple-peripheral-buses"></a><span id="Understanding_simple_peripheral_buses"></span><span id="understanding_simple_peripheral_buses"></span><span id="UNDERSTANDING_SIMPLE_PERIPHERAL_BUSES"></span>了解简单外设总线
 
 
 若要了解 Windows 驱动程序如何与简单外设总线协同工作，请参阅 [Simple Peripheral Buses](https://go.microsoft.com/fwlink/p?linkid=399232)（简单外设总线）。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [SharksCove.org](https://go.microsoft.com/fwlink/p?linkid=403167)

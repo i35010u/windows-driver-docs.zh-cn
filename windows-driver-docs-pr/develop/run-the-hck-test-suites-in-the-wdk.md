@@ -4,12 +4,12 @@ title: 如何在 WDK 8.1 中运行 HCK 测试套件
 description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d235dc838ee3edc0d164e51f502ac1a806fb0ac
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 90fa4555a0c1a09756b617cecb8143499b494e29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63378491"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364249"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件
 
@@ -20,10 +20,10 @@ ms.locfileid: "63378491"
 -   [在测试计算机上使用 Visual Studio 运行 HCK 测试套件](#run_hck_from_vs)
 -   [通过命令提示符窗口运行 HCK 测试套件](#run_hck_script)
 
-## <a name="span-idrunhckfromvsspanspan-idrunhckfromvsspanrunning-the-hck-test-suites-on-a-test-computer-using-visual-studio"></a><span id="run_hck_from_vs"></span><span id="RUN_HCK_FROM_VS"></span>在测试计算机上使用 Visual Studio 运行 HCK 测试套件
+## <a name="span-idrun_hck_from_vsspanspan-idrun_hck_from_vsspanrunning-the-hck-test-suites-on-a-test-computer-using-visual-studio"></a><span id="run_hck_from_vs"></span><span id="RUN_HCK_FROM_VS"></span>在测试计算机上使用 Visual Studio 运行 HCK 测试套件
 
 
-按照[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909) 中的说明进行操作（如果尚未这样做）。 配置完测试计算机后，测试计算机的名称将显示在工具栏中。 请务必选择为使用 HCK 测试套件进行测试的设备配置的测试计算机。
+按照[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1) 中的说明进行操作（如果尚未这样做）。 配置完测试计算机后，测试计算机的名称将显示在工具栏中。 请务必选择为使用 HCK 测试套件进行测试的设备配置的测试计算机。
 
 安装设备和驱动程序以及任何其他测试拓扑要求（请参阅测试设备的 HCK 测试先决条件），视需要准备测试计算机。 你将使用 Visual Studio 和 WDK 8.1 运行测试，而不是 HCK Studio 和 HCK 控制器。
 
@@ -47,7 +47,7 @@ ms.locfileid: "63378491"
 2.  选择测试套件的目标文件夹。 你可以将测试套件导出至网络共享或 U 盘。
 3.  若要运行 HCK 测试套件，请在测试计算机上使用提升的权限打开命令提示符窗口。 导航至目标目录并运行 **RunMe.cmd** 脚本。 有关详细信息，请参阅[通过命令提示符窗口运行 HCK 测试套件](#RunMe)。
 
-## <a name="span-idrunhckscriptspanspan-idrunhckscriptspanrunning-the-hck-test-suites-from-a-command-prompt-window"></a><span id="run_hck_script"></span><span id="RUN_HCK_SCRIPT"></span>通过命令提示符窗口运行 HCK 测试套件
+## <a name="span-idrun_hck_scriptspanspan-idrun_hck_scriptspanrunning-the-hck-test-suites-from-a-command-prompt-window"></a><span id="run_hck_script"></span><span id="RUN_HCK_SCRIPT"></span>通过命令提示符窗口运行 HCK 测试套件
 
 
 **复制 HCK 测试套件**
@@ -117,7 +117,7 @@ ms.locfileid: "63378491"
 
      
 
-## <a name="span-idhcktestsuitesspanspan-idhcktestsuitesspanspan-idhcktestsuitesspanhct-test-suites"></a><span id="HCK_test_suites"></span><span id="hck_test_suites"></span><span id="HCK_TEST_SUITES"></span>HCT 测试套件
+## <a name="span-idhck_test_suitesspanspan-idhck_test_suitesspanspan-idhck_test_suitesspanhct-test-suites"></a><span id="HCK_test_suites"></span><span id="hck_test_suites"></span><span id="HCK_TEST_SUITES"></span>HCT 测试套件
 
 
 -   [HCK Tests.Basic.Device.Device Fundamentals 测试套件](#HCK_devfund)
@@ -129,7 +129,7 @@ ms.locfileid: "63378491"
 
 有关指定测试参数的信息，请参阅[设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)。 如果进行测试的设备或其子设备之一为 WLAN 适配器或网络设备，则你可能需要设置 *Wpa2PskAesSsid*、*Wpa2PskPassword* 或 *WDTFREMOTESYSTEM* 参数。
 
-### <a name="span-idhckdevfundspanspan-idhckdevfundspanspan-idhckdevfundspanhck-testsbasicdevicedevice-fundamentals-test-suite"></a><span id="HCK_devfund"></span><span id="hck_devfund"></span><span id="HCK_DEVFUND"></span>HCK Tests.Basic.Device.Device Fundamentals 测试套件
+### <a name="span-idhck_devfundspanspan-idhck_devfundspanspan-idhck_devfundspanhck-testsbasicdevicedevice-fundamentals-test-suite"></a><span id="HCK_devfund"></span><span id="hck_devfund"></span><span id="HCK_DEVFUND"></span>HCK Tests.Basic.Device.Device Fundamentals 测试套件
 
 使用此套件进行所有设备类型的常规可靠性测试。 你必须遵循 [Device.Fundamentals 可靠性测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309665)中所述的 HCK 测试的硬件、软件和测试要求。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
@@ -159,7 +159,7 @@ ms.locfileid: "63378491"
 
  
 
-### <a name="span-idhckgraphicsspanspan-idhckgraphicsspanspan-idhckgraphicsspanhck-testsbasicdevicegraphics-test-suite"></a><span id="HCK_graphics"></span><span id="hck_graphics"></span><span id="HCK_GRAPHICS"></span>HCK Tests.Basic.Device.Graphics 测试套件
+### <a name="span-idhck_graphicsspanspan-idhck_graphicsspanspan-idhck_graphicsspanhck-testsbasicdevicegraphics-test-suite"></a><span id="HCK_graphics"></span><span id="hck_graphics"></span><span id="HCK_GRAPHICS"></span>HCK Tests.Basic.Device.Graphics 测试套件
 
 使用此测试套件测试图形适配器或芯片集。 你必须遵循[图形适配器或芯片集测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309671)中所述的 HCK 测试的硬件、软件和测试要求。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
@@ -188,7 +188,7 @@ ms.locfileid: "63378491"
 
  
 
-### <a name="span-idhckimagingspanspan-idhckimagingspanspan-idhckimagingspanhck-testsbasicdeviceimaging-test-suite"></a><span id="HCK_imaging"></span><span id="hck_imaging"></span><span id="HCK_IMAGING"></span>HCK Tests.Basic.Device.Imaging 测试套件
+### <a name="span-idhck_imagingspanspan-idhck_imagingspanspan-idhck_imagingspanhck-testsbasicdeviceimaging-test-suite"></a><span id="HCK_imaging"></span><span id="hck_imaging"></span><span id="HCK_IMAGING"></span>HCK Tests.Basic.Device.Imaging 测试套件
 
 使用此测试套件测试打印机。 此测试套件使用 HCK [Device.Imaging 测试](https://go.microsoft.com/fwlink/p/?linkid=309673)中的测试。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
@@ -217,7 +217,7 @@ ms.locfileid: "63378491"
 
  
 
-### <a name="span-idhckcdmaspanspan-idhckcdmaspanhck-testsbasicdevicenetworkmobilebroadbandcdma-test-suite"></a><span id="HCK_CDMA"></span><span id="hck_cdma"></span>HCK Tests.Basic.Device.Network.MobileBroadband.CDMA 测试套件
+### <a name="span-idhck_cdmaspanspan-idhck_cdmaspanhck-testsbasicdevicenetworkmobilebroadbandcdma-test-suite"></a><span id="HCK_CDMA"></span><span id="hck_cdma"></span>HCK Tests.Basic.Device.Network.MobileBroadband.CDMA 测试套件
 
 使用此测试套件测试移动宽带 CDMA 设备。 请遵循[移动宽带测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309676)中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
@@ -246,7 +246,7 @@ ms.locfileid: "63378491"
 
  
 
-### <a name="span-idhckgsmspanspan-idhckgsmspanhck-testsbasicdevicenetworkmobilebroadbandgsm-test-suite"></a><span id="HCK_GSM"></span><span id="hck_gsm"></span>HCK Tests.Basic.Device.Network.MobileBroadband.GSM 测试套件
+### <a name="span-idhck_gsmspanspan-idhck_gsmspanhck-testsbasicdevicenetworkmobilebroadbandgsm-test-suite"></a><span id="HCK_GSM"></span><span id="hck_gsm"></span>HCK Tests.Basic.Device.Network.MobileBroadband.GSM 测试套件
 
 使用此测试套件测试移动宽带 GSM 设备。 请遵循[移动宽带测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309676)中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
@@ -275,7 +275,7 @@ ms.locfileid: "63378491"
 
  
 
-### <a name="span-idhckwlanspanspan-idhckwlanspanhck-testsbasicdevicenetworkwlan-test-suite"></a><span id="HCK_WLAN"></span><span id="hck_wlan"></span>HCK Tests.Basic.Device.Network.WLAN 测试套件
+### <a name="span-idhck_wlanspanspan-idhck_wlanspanhck-testsbasicdevicenetworkwlan-test-suite"></a><span id="HCK_WLAN"></span><span id="hck_wlan"></span>HCK Tests.Basic.Device.Network.WLAN 测试套件
 
 使用此测试套件测试无线 LAN (802.11) 设备。 请遵循 HCK 的[无线 LAN (802.11) 测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309679)中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
@@ -304,13 +304,13 @@ ms.locfileid: "63378491"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [如何使用 Visual Studio 测试驱动程序运行时](testing-a-driver-at-runtime.md)
 * [如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
-* [在 Visual Studio 中设置内核模式调试](https://msdn.microsoft.com/windows/hardware/hh439376)
+* [在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
 * [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
 * [如何在运行时通过命令提示符测试驱动程序](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)

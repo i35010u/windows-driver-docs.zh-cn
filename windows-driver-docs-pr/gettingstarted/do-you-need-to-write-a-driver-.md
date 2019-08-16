@@ -4,24 +4,24 @@ description: Microsoft Windows 包含适用于许多设备类型的内置驱动�
 ms.assetid: B08994F9-9E60-4C49-BD5C-F5C128075D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6adf04958f07f0ed460c07a0c9c71091f23f54b4
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: cebfaae84f8fe6e9a3e37691786e9c79230a8ff9
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394127"
 ---
 # <a name="do-you-need-to-write-a-driver"></a>是否需要编写驱动程序？
 
 
 Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如果有适用于你的设备类型的内置驱动程序，则不必自行编写驱动程序。 你的设备可以使用内置的驱动程序。
 
-## <a name="span-idbuilt-indriversforusbdevicesspanspan-idbuilt-indriversforusbdevicesspanspan-idbuilt-indriversforusbdevicesspanbuilt-in-drivers-for-usb-devices"></a><span id="Built-in_drivers_for_USB_devices"></span><span id="built-in_drivers_for_usb_devices"></span><span id="BUILT-IN_DRIVERS_FOR_USB_DEVICES"></span>适用于 USB 设备的内置驱动程序
+## <a name="span-idbuilt-in_drivers_for_usb_devicesspanspan-idbuilt-in_drivers_for_usb_devicesspanspan-idbuilt-in_drivers_for_usb_devicesspanbuilt-in-drivers-for-usb-devices"></a><span id="Built-in_drivers_for_USB_devices"></span><span id="built-in_drivers_for_usb_devices"></span><span id="BUILT-IN_DRIVERS_FOR_USB_DEVICES"></span>适用于 USB 设备的内置驱动程序
 
 
-如果你的设备属于由 USB 设备工作组 (DWG) 定义的设备类，则可能已经存在适用于该设备的 Windows USB 类驱动程序。 有关详细信息，请参阅[支持的 USB 设备类的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff538820)。
+如果你的设备属于由 USB 设备工作组 (DWG) 定义的设备类，则可能已经存在适用于该设备的 Windows USB 类驱动程序。 有关详细信息，请参阅[支持的 USB 设备类的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
-## <a name="span-idbuilt-indriversforotherdevicesspanspan-idbuilt-indriversforotherdevicesspanspan-idbuilt-indriversforotherdevicesspanbuilt-in-drivers-for-other-devices"></a><span id="Built-in_drivers_for_other_devices"></span><span id="built-in_drivers_for_other_devices"></span><span id="BUILT-IN_DRIVERS_FOR_OTHER_DEVICES"></span>适用于其他设备的内置驱动程序
+## <a name="span-idbuilt-in_drivers_for_other_devicesspanspan-idbuilt-in_drivers_for_other_devicesspanspan-idbuilt-in_drivers_for_other_devicesspanbuilt-in-drivers-for-other-devices"></a><span id="Built-in_drivers_for_other_devices"></span><span id="built-in_drivers_for_other_devices"></span><span id="BUILT-IN_DRIVERS_FOR_OTHER_DEVICES"></span>适用于其他设备的内置驱动程序
 
 
 目前，Microsoft 为以下其他类型的设备提供了内置驱动程序：
@@ -46,13 +46,13 @@ Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如�
 <td align="left"><p>ACPI：ACPI 驱动程序</p></td>
 <td align="left"><p>Acpi.sys</p></td>
 <td align="left"><p>Windows XP 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过 Acpi.sys 驱动程序和 ACPI BIOS 为基本的 ACPI 设备功能提供支持。 为增强 ACPI 设备的功能，供应商可以提供 WDM 功能驱动程序。 有关 Windows ACPI 支持的详细信息，请参阅 ACPI 设计指南中的<a href="https://msdn.microsoft.com/library/windows/hardware/ff536161" data-raw-source="[Supporting ACPI Devices](https://msdn.microsoft.com/library/windows/hardware/ff536161)">支持 ACPI 设备</a>。</p></td>
+<td align="left"><p>Microsoft 通过 Acpi.sys 驱动程序和 ACPI BIOS 为基本的 ACPI 设备功能提供支持。 为增强 ACPI 设备的功能，供应商可以提供 WDM 功能驱动程序。 有关 Windows ACPI 支持的详细信息，请参阅 ACPI 设计指南中的<a href="https://docs.microsoft.com/windows-hardware/drivers/acpi/supporting-acpi-devices" data-raw-source="[Supporting ACPI Devices](https://docs.microsoft.com/windows-hardware/drivers/acpi/supporting-acpi-devices)">支持 ACPI 设备</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>音频：Microsoft 音频类驱动程序</p></td>
 <td align="left"><p>PortCls.sys</p></td>
 <td align="left"><p>Windows XP 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过自身的端口类驱动程序 (PortCl) 为基本的音频渲染和音频捕捉提供支持。 音频设备的硬件供应商有责任提供兼容 PortCl 的适配器驱动程序。 适配器驱动程序包括初始化代码、驱动程序管理代码（包括 DriverEntry 功能）和音频微型端口驱动程序的集合。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff536829" data-raw-source="[Introduction to Port Class](https://msdn.microsoft.com/library/windows/hardware/ff536829)">端口类简介</a>。</p></td>
+<td align="left"><p>Microsoft 通过自身的端口类驱动程序 (PortCl) 为基本的音频渲染和音频捕捉提供支持。 音频设备的硬件供应商有责任提供兼容 PortCl 的适配器驱动程序。 适配器驱动程序包括初始化代码、驱动程序管理代码（包括 DriverEntry 功能）和音频微型端口驱动程序的集合。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/audio/introduction-to-port-class" data-raw-source="[Introduction to Port Class](https://docs.microsoft.com/windows-hardware/drivers/audio/introduction-to-port-class)">端口类简介</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>总线：本机 SD 总线驱动程序、本机 SD 存储类驱动程序和存储微型端口驱动程序</p></td>
@@ -64,7 +64,7 @@ Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如�
 <td align="left"><p>HID：HID I2C 驱动程序</p></td>
 <td align="left"><p>HIDI2C.sys</p></td>
 <td align="left"><p>Windows 8 及更高版本</p></td>
-<td align="left"><p>Microsoft 为支持简单外设总线 (SPB) 和通用 I/O (GPIO) 的 SoC 系统上的 HID over I2C 设备提供支持。 它通过 HIDI2C.sys 驱动程序实现此支持。 有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/jj127208" data-raw-source="[HID over I2C](https://msdn.microsoft.com/library/windows/hardware/jj127208)">HID over I2C</a>。</p></td>
+<td align="left"><p>Microsoft 为支持简单外设总线 (SPB) 和通用 I/O (GPIO) 的 SoC 系统上的 HID over I2C 设备提供支持。 它通过 HIDI2C.sys 驱动程序实现此支持。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/hid/hid-over-i2c-guide" data-raw-source="[HID over I2C](https://docs.microsoft.com/windows-hardware/drivers/hid/hid-over-i2c-guide)">HID over I2C</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HID：传统游戏端口驱动程序</p></td>
@@ -72,7 +72,7 @@ Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如�
 <td align="left"><p>Windows Vista</p>
 <p>Windows Server 2003</p>
 <p>Windows XP</p></td>
-<td align="left"><p>在 Windows Vista 及更早版本中，Microsoft 通过 HidGame.sys 和 Gameenum.sys 驱动程序为传统（非 USB、非蓝牙、非 I2C）游戏端口提供支持。 有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/jj126201" data-raw-source="[HID Transports Supported in Windows](https://msdn.microsoft.com/library/windows/hardware/jj126201)">Windows 中支持的 HID 传输</a>。</p></td>
+<td align="left"><p>在 Windows Vista 及更早版本中，Microsoft 通过 HidGame.sys 和 Gameenum.sys 驱动程序为传统（非 USB、非蓝牙、非 I2C）游戏端口提供支持。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/jj126201(v=vs.85)" data-raw-source="[HID Transports Supported in Windows](https://docs.microsoft.com/previous-versions/jj126201(v=vs.85))">Windows 中支持的 HID 传输</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HID：传统键盘类驱动程序</p></td>
@@ -96,37 +96,37 @@ Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如�
 <td align="left"><p>图像处理：设备的 Web 服务 (WSD) 扫描类驱动程序</p></td>
 <td align="left"><p>WSDScan.sys</p></td>
 <td align="left"><p>Windows Vista 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过 WSD 扫描驱动程序 (wsdscan.sys) 为 Web 服务扫描程序（即在 Web 上使用的扫描程序）提供支持。 但是，支持 WSD 分布式扫描管理的 Web 服务扫描程序设备必须实现两个 Web 服务协议。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff553313" data-raw-source="[WIA with Web Services for Devices](https://msdn.microsoft.com/library/windows/hardware/ff553313)">使用设备 Web 服务的 WIA</a>。</p></td>
+<td align="left"><p>Microsoft 通过 WSD 扫描驱动程序 (wsdscan.sys) 为 Web 服务扫描程序（即在 Web 上使用的扫描程序）提供支持。 但是，支持 WSD 分布式扫描管理的 Web 服务扫描程序设备必须实现两个 Web 服务协议。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-with-web-services-for-devices" data-raw-source="[WIA with Web Services for Devices](https://docs.microsoft.com/windows-hardware/drivers/image/wia-with-web-services-for-devices)">使用设备 Web 服务的 WIA</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>打印：Microsoft 绘图仪驱动程序</p></td>
 <td align="left"><p>Msplot</p></td>
 <td align="left"><p>Windows XP 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过 Microsoft 绘图仪驱动程序 (Msplot) 为支持惠普图形语言的绘图仪提供支持。 为增强绘图仪的功能，你可以创建由一个或多个绘图仪特性数据 (PCD) 文件组成的微型驱动程序。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff559833" data-raw-source="[Plotter Driver Minidrivers](https://msdn.microsoft.com/library/windows/hardware/ff559833)">绘图仪驱动程序微型驱动程序</a>。</p></td>
+<td align="left"><p>Microsoft 通过 Microsoft 绘图仪驱动程序 (Msplot) 为支持惠普图形语言的绘图仪提供支持。 为增强绘图仪的功能，你可以创建由一个或多个绘图仪特性数据 (PCD) 文件组成的微型驱动程序。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/print/plotter-driver-minidrivers" data-raw-source="[Plotter Driver Minidrivers](https://docs.microsoft.com/windows-hardware/drivers/print/plotter-driver-minidrivers)">绘图仪驱动程序微型驱动程序</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>打印：Microsoft PostScript 打印机驱动程序</p></td>
 <td align="left"><p>Pscript</p></td>
 <td align="left"><p>Windows XP 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过 PostScript 打印机驱动程序 (Pscript) 为 PostScript 打印机提供支持。 为增强 PostScript 打印机的功能，你可以创建由一个或多个 PostScript 打印机描述 (PPD) 文件和字体 (NTF) 文件组成的微型驱动程序。 有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/ff561810" data-raw-source="[Pscript Minidrivers](https://msdn.microsoft.com/library/windows/hardware/ff561810)">Pscript 微型驱动程序</a>。</p></td>
+<td align="left"><p>Microsoft 通过 PostScript 打印机驱动程序 (Pscript) 为 PostScript 打印机提供支持。 为增强 PostScript 打印机的功能，你可以创建由一个或多个 PostScript 打印机描述 (PPD) 文件和字体 (NTF) 文件组成的微型驱动程序。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/print/pscript-minidrivers" data-raw-source="[Pscript Minidrivers](https://docs.microsoft.com/windows-hardware/drivers/print/pscript-minidrivers)">Pscript 微型驱动程序</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>打印：Microsoft 通用打印机驱动程序</p></td>
 <td align="left"><p>Unidrv</p></td>
 <td align="left"><p>Windows XP 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过通用打印机驱动程序 (Unidrv) 为非 PostScript 打印机提供支持。 为增强非 PostScript 打印机的功能，你可以创建由一个或多个通用打印机描述 (GPD) 文件组成的微型驱动程序。 有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556567" data-raw-source="[Microsoft Universal Printer Driver](https://msdn.microsoft.com/library/windows/hardware/ff556567)">Microsoft 通用打印机驱动程序</a>。</p></td>
+<td align="left"><p>Microsoft 通过通用打印机驱动程序 (Unidrv) 为非 PostScript 打印机提供支持。 为增强非 PostScript 打印机的功能，你可以创建由一个或多个通用打印机描述 (GPD) 文件组成的微型驱动程序。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/print/microsoft-universal-printer-driver" data-raw-source="[Microsoft Universal Printer Driver](https://docs.microsoft.com/windows-hardware/drivers/print/microsoft-universal-printer-driver)">Microsoft 通用打印机驱动程序</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>打印：Microsoft 第 4 版打印机驱动程序</p></td>
 <td align="left"></td>
 <td align="left"><p>Windows 8 及更高版本</p></td>
-<td align="left"><p>从 Windows 8 开始，Microsoft 提供了支持 PostScript 和非 PostScript 打印机以及绘图仪的单个内置类驱动程序。 该驱动程序可取代 Microsoft 绘图仪驱动程序、Microsoft 通用打印机驱动程序和 Microsoft PostScript 打印机驱动程序。 该打印机驱动程序可通过自身提供基本的打印支持，无需任何修改。 有关更多信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/hh706306" data-raw-source="[V4 Printer Driver](https://msdn.microsoft.com/library/windows/hardware/hh706306)">V4 打印机驱动程序</a>。</p></td>
+<td align="left"><p>从 Windows 8 开始，Microsoft 提供了支持 PostScript 和非 PostScript 打印机以及绘图仪的单个内置类驱动程序。 该驱动程序可取代 Microsoft 绘图仪驱动程序、Microsoft 通用打印机驱动程序和 Microsoft PostScript 打印机驱动程序。 该打印机驱动程序可通过自身提供基本的打印支持，无需任何修改。 有关更多信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver" data-raw-source="[V4 Printer Driver](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver)">V4 打印机驱动程序</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>打印：Microsoft XPS 打印机驱动程序</p></td>
 <td align="left"><p>XPSDrv</p></td>
 <td align="left"><p>Windows Vista 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过 XPS 打印机驱动程序 (XPSDrv) 为打印 XPS 文档格式提供支持。 该驱动程序扩展了 Microsoft 基于 GDI 的第 3 版打印机驱动程序体系结构，支持使用 XML 纸张规范 (XPS) 文档。 通过 XPSDrv 打印机驱动程序，XPS 文档格式可用作后台打印文件格式和文档文件格式。 该 XPSDrv 打印机驱动程序可通过自身提供基本的 XPS 打印支持，无需任何修改。 有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/ff564289" data-raw-source="[XPSDrv Printer Drivers](https://msdn.microsoft.com/library/windows/hardware/ff564289)">XPSDrv 打印机驱动程序</a>。</p></td>
+<td align="left"><p>Microsoft 通过 XPS 打印机驱动程序 (XPSDrv) 为打印 XPS 文档格式提供支持。 该驱动程序扩展了 Microsoft 基于 GDI 的第 3 版打印机驱动程序体系结构，支持使用 XML 纸张规范 (XPS) 文档。 通过 XPSDrv 打印机驱动程序，XPS 文档格式可用作后台打印文件格式和文档文件格式。 该 XPSDrv 打印机驱动程序可通过自身提供基本的 XPS 打印支持，无需任何修改。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/print/xpsdrv-printer-drivers" data-raw-source="[XPSDrv Printer Drivers](https://docs.microsoft.com/windows-hardware/drivers/print/xpsdrv-printer-drivers)">XPSDrv 打印机驱动程序</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>传感器：传感器 HID 类驱动程序</p></td>
@@ -144,7 +144,7 @@ Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如�
 <td align="left"><p>WPD：媒体传输协议类驱动程序</p></td>
 <td align="left"><p>WpdMtpDr.dll、WpdMtp.dll、WpdMtpUs.dll、WpdConns.dll 和 WpdUsb.sys</p></td>
 <td align="left"><p>Windows Vista 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过媒体传输协议类驱动程序为需要连接 Windows 的便携设备（例如，音乐播放器、数字相机、手机和健康监控设备）提供支持。 使用该类驱动程序的供应商必须在设备上实现 MTP 类协议。 （对于数码相机，MTP 实现应当向后兼容 PTP。）有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff597573" data-raw-source="[Guidance for the Hardware Vendor](https://msdn.microsoft.com/library/windows/hardware/ff597573)">硬件供应商指南</a>。</p></td>
+<td align="left"><p>Microsoft 通过媒体传输协议类驱动程序为需要连接 Windows 的便携设备（例如，音乐播放器、数字相机、手机和健康监控设备）提供支持。 使用该类驱动程序的供应商必须在设备上实现 MTP 类协议。 （对于数码相机，MTP 实现应当向后兼容 PTP。）有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/ff597573(v=vs.85)" data-raw-source="[Guidance for the Hardware Vendor](https://docs.microsoft.com/previous-versions/ff597573(v=vs.85))">硬件供应商指南</a>。</p></td>
 </tr>
 </tbody>
 </table>

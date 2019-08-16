@@ -3,12 +3,12 @@ title: 生成通用 Windows 驱动程序
 description: 生成通用驱动程序指南
 ms.date: 10/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db9d50ede319af9640b5b53ef03e018846464969
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 555cdead7ae3e80fc5835e9c724ad0552825da86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63327537"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370372"
 ---
 # <a name="building-a-universal-windows-driver"></a>生成通用 Windows 驱动程序
 
@@ -36,7 +36,7 @@ ms.locfileid: "63327537"
     若要手动更改驱动程序模型，请右键单击驱动程序项目，然后选择“属性”。 在“配置属性”-&gt;“驱动程序设置”-&gt;“常规”  下，找到“目标平台”  条目。 选择“通用”  、“桌面”  或“移动”  。 Microsoft Visual Studio 使用此设置确定要链接的库。
 
     **注意**  无法为 Windows 10 之前的 Windows 版本生成通用 Windows 驱动程序。
-3.  可能需要修改 .inf 文件以指定提供程序，指定为 %*ManufacturerName*% 令牌，该令牌稍后将在 INF 文件的 [**Strings**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547485) 节中展开。 例如：
+3.  可能需要修改 .inf 文件以指定提供程序，指定为 %*ManufacturerName*% 令牌，该令牌稍后将在 INF 文件的 [**Strings**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section) 节中展开。 例如：
 
     ```cpp
     Provider="Contoso"

@@ -4,22 +4,22 @@ title: 驱动程序包项目的 UMDF 验证程序属性
 description: 设置测试计算机上的 UMDF 验证程序的属性。 为测试计算机生成和部署驱动程序时，可以使用这些设置。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9708097e195c7c8da785ae49e45008c20ed0d201
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4a35afe6236b5018df0cf51f4384d9d81cf8fc6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364203"
 ---
 # <a name="umdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 UMDF 验证程序属性
 
 设置测试计算机上的 UMDF 验证程序的属性。 为测试计算机生成和部署驱动程序时，可以使用这些设置。
 
-有关部署的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909) 和[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
+有关部署的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1) 和[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
 
-有关调试 UMDF 驱动程序的信息，请参阅[如何启用 UMDF 驱动程序的调试](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554716)和 [WDF 验证程序控制器应用程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff556129)。
+有关调试 UMDF 驱动程序的信息，请参阅[如何启用 UMDF 驱动程序的调试](https://docs.microsoft.com/windows-hardware/drivers/wdf/enabling-a-debugger)和 [WDF 验证程序控制器应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)。
 
-## <a name="span-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspansetting-umdf-verifier-properties-for-driver-projects"></a><span id="Setting_UMDF_Verifier_properties_for_driver_projects"></span><span id="setting_umdf_verifier_properties_for_driver_projects"></span><span id="SETTING_UMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的 UMDF 验证程序属性
+## <a name="span-idsetting_umdf_verifier_properties_for_driver_projectsspanspan-idsetting_umdf_verifier_properties_for_driver_projectsspanspan-idsetting_umdf_verifier_properties_for_driver_projectsspansetting-umdf-verifier-properties-for-driver-projects"></a><span id="Setting_UMDF_Verifier_properties_for_driver_projects"></span><span id="setting_umdf_verifier_properties_for_driver_projects"></span><span id="SETTING_UMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的 UMDF 验证程序属性
 
 
 1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”  。
@@ -96,11 +96,11 @@ ms.locfileid: "63344107"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
-* [驱动程序验证程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)
+* [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
  
 

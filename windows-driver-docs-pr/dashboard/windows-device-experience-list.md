@@ -5,12 +5,12 @@ ms.assetid: 6325401e-4c8d-4b24-b910-ee3652470e31
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b121e43059f5737188905125a807f9966c56441
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: a4e5d2989bc5ce0e6aeb73d473c9d70d2df7a72b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364383"
 ---
 # <a name="windows-device-experience-list"></a>Windows 设备体验列表
 
@@ -19,7 +19,7 @@ Windows 设备体验列表是具有通过仪表板提交的支持 Windows 7 设�
 
 Windows 设备体验列表兼容 Internet Explorer 6 和更高版本。
 
-## <a name="span-idsearchingforadeviceinthewindowsdeviceexperiencelistspanspan-idsearchingforadeviceinthewindowsdeviceexperiencelistspanspan-idsearchingforadeviceinthewindowsdeviceexperiencelistspansearching-for-a-device-in-the-windows-device-experience-list"></a><span id="Searching_for_a_device_in_the_Windows_Device_Experience_List"></span><span id="searching_for_a_device_in_the_windows_device_experience_list"></span><span id="SEARCHING_FOR_A_DEVICE_IN_THE_WINDOWS_DEVICE_EXPERIENCE_LIST"></span>在 Windows 设备体验列表中搜索设备
+## <a name="span-idsearching_for_a_device_in_the_windows_device_experience_listspanspan-idsearching_for_a_device_in_the_windows_device_experience_listspanspan-idsearching_for_a_device_in_the_windows_device_experience_listspansearching-for-a-device-in-the-windows-device-experience-list"></a><span id="Searching_for_a_device_in_the_Windows_Device_Experience_List"></span><span id="searching_for_a_device_in_the_windows_device_experience_list"></span><span id="SEARCHING_FOR_A_DEVICE_IN_THE_WINDOWS_DEVICE_EXPERIENCE_LIST"></span>在 Windows 设备体验列表中搜索设备
 
 
 若要搜索 Windows 设备体验列表中的设备（在本例中是一台笔记本电脑），请按照下列步骤进行操作：
@@ -32,7 +32,7 @@ Windows 设备体验列表兼容 Internet Explorer 6 和更高版本。
 
 “Device Stage”  列中的绿色复选标记指示“Device Stage”体验。 无复选标记指示“设备和打印机”体验。
 
-### <a name="span-idtofilteryourresultsspanspan-idtofilteryourresultsspanspan-idtofilteryourresultsspanto-filter-your-results"></a><span id="To_filter_your_results"></span><span id="to_filter_your_results"></span><span id="TO_FILTER_YOUR_RESULTS"></span>筛选结果
+### <a name="span-idto_filter_your_resultsspanspan-idto_filter_your_resultsspanspan-idto_filter_your_resultsspanto-filter-your-results"></a><span id="To_filter_your_results"></span><span id="to_filter_your_results"></span><span id="TO_FILTER_YOUR_RESULTS"></span>筛选结果
 
 你可以使用列表顶部的下拉菜单筛选任何结果集。
 
@@ -46,7 +46,7 @@ Windows 设备体验列表兼容 Internet Explorer 6 和更高版本。
 
 若要重新展开某个筛选器，请选择筛选器中的“全部”  ，然后单击“开始”  。
 
-## <a name="span-idtosortyourresultsspanspan-idtosortyourresultsspanspan-idtosortyourresultsspanto-sort-your-results"></a><span id="To_sort_your_results"></span><span id="to_sort_your_results"></span><span id="TO_SORT_YOUR_RESULTS"></span>对结果进行排序
+## <a name="span-idto_sort_your_resultsspanspan-idto_sort_your_resultsspanspan-idto_sort_your_resultsspanto-sort-your-results"></a><span id="To_sort_your_results"></span><span id="to_sort_your_results"></span><span id="TO_SORT_YOUR_RESULTS"></span>对结果进行排序
 
 
 你可以按“型号名”  、“公司”  、“区域设置”  、“类别”  或“Device Stage”  对任何结果集进行排序。
@@ -55,10 +55,10 @@ Windows 设备体验列表兼容 Internet Explorer 6 和更高版本。
 
 -   再次单击该标题可按该属性的降序排列结果。
 
-## <a name="span-idtolistonthewindowsdeviceexperiencelistspanspan-idtolistonthewindowsdeviceexperiencelistspanspan-idtolistonthewindowsdeviceexperiencelistspanto-list-on-the-windows-device-experience-list"></a><span id="To_list_on_the_Windows_Device_Experience_List"></span><span id="to_list_on_the_windows_device_experience_list"></span><span id="TO_LIST_ON_THE_WINDOWS_DEVICE_EXPERIENCE_LIST"></span>在 Windows 设备体验列表中列出
+## <a name="span-idto_list_on_the_windows_device_experience_listspanspan-idto_list_on_the_windows_device_experience_listspanspan-idto_list_on_the_windows_device_experience_listspanto-list-on-the-windows-device-experience-list"></a><span id="To_list_on_the_Windows_Device_Experience_List"></span><span id="to_list_on_the_windows_device_experience_list"></span><span id="TO_LIST_ON_THE_WINDOWS_DEVICE_EXPERIENCE_LIST"></span>在 Windows 设备体验列表中列出
 
 
-若要在 Windows 设备体验列表上获得列出，请阅读并遵循[设备元数据](https://msdn.microsoft.com/library/windows/hardware/br230800.aspx)中的说明。
+若要在 Windows 设备体验列表上获得列出，请阅读并遵循[设备元数据](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)中的说明。
 
  
 

@@ -6,12 +6,12 @@ ms.date: 08/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: 672b085f6f02f096a01994d9fe598e21afba68d1
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4dbe3066f1b43eb8394f11a6edb887bbc48a8f67
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364469"
 ---
 # <a name="download-the-cab-file-for-a-windows-7-or-windows-8x-driver-error"></a>下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件
 
@@ -31,7 +31,7 @@ ms.locfileid: "63337252"
 可以使用 Microsoft Store 分析 API 中的[获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)和[获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)方法来获取与 Windows 7/Windows 8.x 驱动程序错误相关的其他信息。
 
 > [!NOTE]
-> 此方法仅可供属于[合作伙伴中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
+> 此方法仅可供属于[合作伙伴中心计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
 
 ## <a name="prerequisites"></a>必备条件
 

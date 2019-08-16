@@ -4,12 +4,12 @@ description: 参与 I/O 请求的驱动程序序列称为“请求的驱动程�
 ms.assetid: EA1C36F4-B9BD-4A9E-A6D4-6B4EC5455030
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ea0ac828ce26598c847b125aa1686145415a188
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f050749d4d784809238816968c1f79dc0fd76247
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385173"
 ---
 # <a name="upper-and-lower-edges-of-drivers"></a>驱动程序的上沿和下沿
 
@@ -24,7 +24,7 @@ I/O 请求首先由驱动程序堆栈中的顶层驱动程序处理，然后由�
 
 当驱动程序实现一组低层驱动程序可以调用的函数时，该组函数称为“驱动程序的下沿”  ，或者“驱动程序的下沿接口”  。
 
-### <a name="span-idaudioexamplespanspan-idaudioexamplespanspan-idaudioexamplespanaudio-example"></a><span id="Audio_example"></span><span id="audio_example"></span><span id="AUDIO_EXAMPLE"></span>音频示例
+### <a name="span-idaudio_examplespanspan-idaudio_examplespanspan-idaudio_examplespanaudio-example"></a><span id="Audio_example"></span><span id="audio_example"></span><span id="AUDIO_EXAMPLE"></span>音频示例
 
 我们可以想象一个音频微型端口驱动程序位于驱动程序堆栈中音频端口驱动程序的下面。 该端口驱动程序调用微型端口驱动程序的上沿。 微型端口驱动程序调用端口驱动程序的下沿。
 
@@ -44,9 +44,9 @@ I/O 请求首先由驱动程序堆栈中的顶层驱动程序处理，然后由�
 
 关键点在于，当端口驱动程序调用微型端口驱动程序的上沿接口时，这不同于将 I/O 请求向下传递到设备堆栈。 在驱动程序堆栈（不是设备堆栈）中，可以选择在微型端口驱动程序的上面绘制端口驱动程序，但这并非意味着该端口驱动程序位于设备堆栈中微型驱动程序的上面。
 
-### <a name="span-idndisexamplespanspan-idndisexamplespanspan-idndisexamplespanndis-example"></a><span id="NDIS_example"></span><span id="ndis_example"></span><span id="NDIS_EXAMPLE"></span>NDIS 示例
+### <a name="span-idndis_examplespanspan-idndis_examplespanspan-idndis_examplespanndis-example"></a><span id="NDIS_example"></span><span id="ndis_example"></span><span id="NDIS_EXAMPLE"></span>NDIS 示例
 
-有时，驱动程序直接调用低层驱动程序的上沿。 例如，假设 [TCP/IP 协议驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff556929)在驱动程序堆栈中位于 [NDIS](https://msdn.microsoft.com/library/windows/hardware/ff565448) 微型端口驱动程序的上面。 该微型端口驱动程序将实现一组 *MiniportXxx* 函数，它们形成微型端口驱动程序的上沿。 我们称之为 TCP/IP 协议驱动程序绑定  到 NDIS 微型端口驱动程序的上沿。 但 TCP/IP 驱动程序不直接调用 MiniportXxx  函数。 而是调用 NDIS 库中的函数，然后这些函数再调用 MiniportXxx  函数。
+有时，驱动程序直接调用低层驱动程序的上沿。 例如，假设 [TCP/IP 协议驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-ndis-protocol-drivers)在驱动程序堆栈中位于 [NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-drivers) 微型端口驱动程序的上面。 该微型端口驱动程序将实现一组 *MiniportXxx* 函数，它们形成微型端口驱动程序的上沿。 我们称之为 TCP/IP 协议驱动程序绑定  到 NDIS 微型端口驱动程序的上沿。 但 TCP/IP 驱动程序不直接调用 MiniportXxx  函数。 而是调用 NDIS 库中的函数，然后这些函数再调用 MiniportXxx  函数。
 
 ![TCP/IP 和 NDIS 微型端口堆栈图](images/upperloweredge03.png)
 
@@ -63,7 +63,7 @@ I/O 请求首先由驱动程序堆栈中的顶层驱动程序处理，然后由�
 
 术语“上沿”  和“下沿”  用于描述堆栈中的驱动程序用来相互通信的接口。 [*驱动程序堆栈*](driver-stacks.md)不同于[*设备堆栈*](device-nodes-and-device-stacks.md)。 在驱动程序堆栈中垂直显示的两个驱动程序可能形成位于设备堆栈中单层上的驱动程序对。 某些驱动程序不是 PnP 设备树的一部分。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [适用于所有驱动程序开发人员的概念](concepts-and-knowledge-for-all-driver-developers.md)
@@ -72,9 +72,9 @@ I/O 请求首先由驱动程序堆栈中的顶层驱动程序处理，然后由�
 
 [驱动程序堆栈](driver-stacks.md)
 
-[音频设备](https://msdn.microsoft.com/library/windows/hardware/ff537760)
+[音频设备](https://docs.microsoft.com/windows-hardware/drivers/audio/portal-audio-ref)
 
-[从 Windows Vista 开始的网络驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff570021)
+[从 Windows Vista 开始的网络驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570021(v=vs.85))
 
  
 

@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe34a75d166e8e03999c93c9588233e94fb9801c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: db4c7aa1e3616e65f7ab6245e63bcb6aca8cae79
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335051"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391969"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -61,8 +61,8 @@ ms.locfileid: "63335051"
 
 本部分提供有关 Windows 10 代码签名的常见问题的答案。 其他代码签名信息在 Windows 硬件认证博客上提供。
 
-- [Windows 10 中的驱动程序签名更改](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)
-- [Sysdev EV 证书要求更新](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/10/20/update-on-sysdev-ev-certificate-requirement.aspx)
+- [Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+- [Sysdev EV 证书要求更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 
 ### <a name="hlk-tested-and-dashboard-signed-drivers"></a>HLK 测试和仪表板签名的驱动程序
 
@@ -88,14 +88,14 @@ ms.locfileid: "63335051"
 - 修补后的 Windows 7 支持 SHA-256。 如果需要支持运行 Windows 7 的未修补的设备，则需要使用 SHA-1 证书进行交叉签名，或提交到仪表板以进行签名。 否则，可以使用 SHA-1 或 SHA-2 证书进行交叉签名，或创建 HLK/HCK 提交以进行签名。
 - 因为 Windows Vista 不支持 SHA-256，所以需要使用 SHA-1 证书进行交叉签名，或创建 HLK/HCK 提交以进行 Windows Vista 驱动程序签名。
 - 在 2015 年 7 月 29 日之前颁发的使用 SHA-256 证书（包括 EV 证书）进行交叉签名的驱动程序将在 Windows 8 和更高版本上运行。 它不会在 Windows Vista 或 Windows Server 2008 上运行。
-- 在 2015 年 7 月 29 日之前颁发的使用 SHA-256 证书（包括 EV 证书）进行交叉签名的驱动程序将在 Windows 7 或 Server 2008 R2 上运行，前提是已应用在今年较早时候通过 Windows 更新颁发的修补程序。 有关详细信息，请参阅[适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 哈希算法的可用性](https://technet.microsoft.com/library/security/2949927.aspx)和 [Microsoft 安全公告：适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 代码签名支持的可用性：2015 年 3 月 10 日](https://support.microsoft.com/kb/3033929)。
+- 在 2015 年 7 月 29 日之前颁发的使用 SHA-256 证书（包括 EV 证书）进行交叉签名的驱动程序将在 Windows 7 或 Server 2008 R2 上运行，前提是已应用在今年较早时候通过 Windows 更新颁发的修补程序。 有关详细信息，请参阅[适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 哈希算法的可用性](https://docs.microsoft.com/security-updates/SecurityAdvisories/2014/2949927)和 [Microsoft 安全公告：适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 代码签名支持的可用性：2015 年 3 月 10 日](https://support.microsoft.com/help/3033929/microsoft-security-advisory-availability-of-sha-2-code-signing-support)。
 - 使用在 2015 年 7 月 29 日前颁发的 SHA-1 证书进行交叉签名的驱动程序可以在从 Windows Vista 到 Windows 10 的所有平台上运行。
 - 不推荐将使用在 2015 年 7 月 29 日后颁发的 SHA-1 或 SHA-256 证书进行交叉签名的驱动程序用于 Windows 10。
-- 有关移动到 SHA-256 证书的工作的详细信息，请参阅[验证码签名和时间戳的 Windows 强制](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)
+- 有关移动到 SHA-256 证书的工作的详细信息，请参阅[验证码签名和时间戳的 Windows 强制](https://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)
 
 ### <a name="device-guard"></a>Device Guard
 
-- 企业可以实现某项设备保护策略，以使用 Windows 10 企业版修改驱动程序签名要求。 Device Guard 提供企业定义的代码完整性策略，该策略可配置为要求至少一个证明签名的驱动程序。 有关 Device Guard 的详细信息，请参阅 [Device Guard 认证和合规性](https://technet.microsoft.com/library/mt219733.aspx)。
+- 企业可以实现某项设备保护策略，以使用 Windows 10 企业版修改驱动程序签名要求。 Device Guard 提供企业定义的代码完整性策略，该策略可配置为要求至少一个证明签名的驱动程序。 有关 Device Guard 的详细信息，请参阅 [Device Guard 认证和合规性](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)。
 
 ### <a name="windows-server"></a>Windows Server
 
@@ -128,6 +128,6 @@ ms.locfileid: "63335051"
 | Windows IoT 企业版 - DG 已启用 | \*配置相关      | \*配置相关          | \*配置相关                                                      |
 | Windows IoT 核心版(1)                | 是（不需要）             | 是（不需要）                 | 是（交叉签名也适用于 2015 年 7 月 29 日后颁发的证书） |
 
-\*配置相关 - 通过 Windows 10 企业版，组织可以使用 Device Guard 来定义自定义驱动程序签名要求。 有关 Device Guard 的详细信息，请参阅 [Device Guard 认证和合规性](https://technet.microsoft.com/library/mt219733.aspx)。
+\*配置相关 - 通过 Windows 10 企业版，组织可以使用 Device Guard 来定义自定义驱动程序签名要求。 有关 Device Guard 的详细信息，请参阅 [Device Guard 认证和合规性](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)。
 
 (1) 制造商生成装有 IoT 核心版的零售产品（即不用于开发用途）需要驱动程序签名。 有关批准的证书颁发机构 (CA) 列表，请参阅[适用于内核模式代码签名的交叉证书](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。 请注意，如果 UEFI 安全启动已启用，则必须对驱动程序进行签名。

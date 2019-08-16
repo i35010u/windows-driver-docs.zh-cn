@@ -2,16 +2,15 @@
 title: 创建新的 WLK 设备认证提交
 description: 创建新的 WLK 设备认证提交
 ms.assetid: e812eee1-768d-42d6-918e-c716b5c29ea2
-ms.author: EliotSeattle
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9a195461504d55aad971d02e00283d7a0b7ff4ac
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 2523592e3201a9d006d5b458ee4c3c8bea624cc2
+ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337287"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223995"
 ---
 # <a name="create-a-new-wlk-device-certification-submission"></a>创建新的 WLK 设备认证提交
 

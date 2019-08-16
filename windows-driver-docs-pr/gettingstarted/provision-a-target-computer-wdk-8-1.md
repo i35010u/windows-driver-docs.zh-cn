@@ -4,12 +4,12 @@ description: 预配目标计算机或测试计算机是配置计算机以自动�
 ms.assetid: A2615EE9-316E-4AE2-BBAA-B9E153090016
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 672f1eba11799e6b110d7c6e898551e9576cb3f4
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 87235f26ee0edc594e6c4aa6a0566cddc79870b2
+ms.sourcegitcommit: 46654c090f937923d9712de114fdebe7deffeaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371347"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67427689"
 ---
 # <a name="provision-a-computer-for-driver-deployment-and-testing-wdk-10"></a>预配计算机以便进行驱动程序部署和测试 (WDK 10)
 
@@ -23,7 +23,7 @@ ms.locfileid: "63371347"
 > [!TIP]
 > 不支持通过 WDK 的自动预配过程来预配虚拟机。 但是，可以通过手动设置目标 VM 来测试 VM 上的驱动程序，如[分步回显实验室](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)中所述。
 
-## <a name="span-idpreparingthetargetcomputerforprovisioningspanspan-idpreparingthetargetcomputerforprovisioningspanprepare-the-target-computer-for-provisioning"></a><span id="preparing_the_target_computer_for_provisioning"></span><span id="PREPARING_THE_TARGET_COMPUTER_FOR_PROVISIONING"></span>准备要预配的目标计算机
+## <a name="span-idpreparing_the_target_computer_for_provisioningspanspan-idpreparing_the_target_computer_for_provisioningspanprepare-the-target-computer-for-provisioning"></a><span id="preparing_the_target_computer_for_provisioning"></span><span id="PREPARING_THE_TARGET_COMPUTER_FOR_PROVISIONING"></span>准备要预配的目标计算机
 
 
 1.  在目标计算机上，安装将用于运行和测试驱动程序的操作系统。
@@ -53,7 +53,7 @@ ms.locfileid: "63371347"
 3.  在入站规则列表中，查找用于活动网络的所有网络发现规则。 （例如，查找具有**专用** **配置文件**的所有网络发现规则。）双击每个规则，并打开“作用域”  选项卡。在“远程 IP 地址”  下，选择“任何 IP 地址”  。
 4.  在入站规则列表中，查找用于活动网络的所有“文件和打印机共享”规则。 对于其中每个规则，双击该规则，并打开“作用域”  选项卡。在“远程 IP 地址”  下，选择“任何 IP 地址”  。
 
-## <a name="span-idprovisionthetargetcomputerspanspan-idprovisionthetargetcomputerspanspan-idprovisionthetargetcomputerspanprovision-the-target-computer"></a><span id="Provision_the_target_computer"></span><span id="provision_the_target_computer"></span><span id="PROVISION_THE_TARGET_COMPUTER"></span>预配目标计算机
+## <a name="span-idprovision_the_target_computerspanspan-idprovision_the_target_computerspanspan-idprovision_the_target_computerspanprovision-the-target-computer"></a><span id="Provision_the_target_computer"></span><span id="provision_the_target_computer"></span><span id="PROVISION_THE_TARGET_COMPUTER"></span>预配目标计算机
 
 
 现在，可以随时在 Visual Studio 中通过主计算机预配目标计算机。
@@ -75,7 +75,9 @@ ms.locfileid: "63371347"
 4.  预配过程将需要几分钟时间，并且可能会自动重新启动目标计算机一到两次。 预配完成后，单击“完成”  。
 
  
+## <a name="see-also"></a>另请参阅
 
+[将驱动程序部署到测试计算机](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)
  
 
 

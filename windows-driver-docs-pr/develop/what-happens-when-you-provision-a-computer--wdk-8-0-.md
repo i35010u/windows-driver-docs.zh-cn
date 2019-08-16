@@ -4,22 +4,22 @@ title: 预配计算机时会出现什么情况 (WDK 8.0)
 description: 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4effdc9c3609072ea8f82aab32987889bd2b5a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 7cdf440bc787828d3d5bda4db778d6a08a843a79
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364173"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-80"></a>预配计算机时会出现什么情况 (WDK 8.0)
 
-使用 Microsoft Visual Studio 配置和设置驱动程序部署和驱动程序测试称为“预配目标计算机”  或“预配测试计算机”  。 有关使用 Windows 驱动程序工具包 (WDK) 8 预配的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh698272)。 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
+使用 Microsoft Visual Studio 配置和设置驱动程序部署和驱动程序测试称为“预配目标计算机”  或“预配测试计算机”  。 有关使用 Windows 驱动程序工具包 (WDK) 8 预配的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))。 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
 
-**注意**  WDK 8 不是 WDK 的最新版本。 我们建议你获取当前版本的 WDK，并根据[此处的预配说明](https://msdn.microsoft.com/Library/Windows/Hardware/Hh698272)预配目标计算机。
+**注意**  WDK 8 不是 WDK 的最新版本。 我们建议你获取当前版本的 WDK，并根据[此处的预配说明](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))预配目标计算机。
 
  
 
-## <a name="span-idwhenyouprovisionacomputerwdk80spanspan-idwhenyouprovisionacomputerwdk80spanwhen-you-provision-a-computer-wdk-80"></a><span id="when_you_provision_a_computer_wdk_8_0"></span><span id="WHEN_YOU_PROVISION_A_COMPUTER_WDK_8_0"></span>预配计算机时 (WDK 8.0)
+## <a name="span-idwhen_you_provision_a_computer_wdk_8_0spanspan-idwhen_you_provision_a_computer_wdk_8_0spanwhen-you-provision-a-computer-wdk-80"></a><span id="when_you_provision_a_computer_wdk_8_0"></span><span id="WHEN_YOU_PROVISION_A_COMPUTER_WDK_8_0"></span>预配计算机时 (WDK 8.0)
 
 
 预配计算机将执行以下任务：
@@ -28,9 +28,9 @@ ms.locfileid: "63344095"
 -   创建名为 WDKRemoteUser 的用户，并切换到该用户
 -   安装 .NET 4.0（如果未安装）
 -   安装 Microsoft Visual C++ Redistributable
--   安装[测试创作和执行框架 (TAEF)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725)（WDK 客户端）
+-   安装[测试创作和执行框架 (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index)（WDK 客户端）
 -   安装调试程序
--   安装 [Windows 设备测试框架](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547) (WDTF)
+-   安装 [Windows 设备测试框架](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) (WDTF)
 -   关闭 AutoReboot
 -   启用内核内存故障转储
 -   禁用屏幕保护程序
@@ -43,7 +43,7 @@ ms.locfileid: "63344095"
 -   如有必要，重新启动目标计算机
 -   创建系统还原点
 
-## <a name="span-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanremoving-provisioning-from-the-target-computer"></a><span id="Removing_provisioning_from_the_target_computer"></span><span id="removing_provisioning_from_the_target_computer"></span><span id="REMOVING_PROVISIONING_FROM_THE_TARGET_COMPUTER"></span>从目标计算机中删除预配
+## <a name="span-idremoving_provisioning_from_the_target_computerspanspan-idremoving_provisioning_from_the_target_computerspanspan-idremoving_provisioning_from_the_target_computerspanremoving-provisioning-from-the-target-computer"></a><span id="Removing_provisioning_from_the_target_computer"></span><span id="removing_provisioning_from_the_target_computer"></span><span id="REMOVING_PROVISIONING_FROM_THE_TARGET_COMPUTER"></span>从目标计算机中删除预配
 
 
 预配目标计算机后，将无法完全删除预配。 但是，可以使用主计算机上的 Visual Studio 从目标计算机上删除大部分预配。 以下是操作步骤。
@@ -53,7 +53,7 @@ ms.locfileid: "63344095"
 3.  选择“删除预配并删除计算机”  。 单击“下一步”  。
 4.  完成删除过程后，单击“完成”  。
 
-## <a name="span-idwhenyouremoveprovisioningwdk80spanspan-idwhenyouremoveprovisioningwdk80spanwhen-you-remove-provisioning-wdk-80"></a><span id="when_you_remove_provisioning__wdk_8.0_"></span><span id="WHEN_YOU_REMOVE_PROVISIONING__WDK_8.0_"></span>删除预配时 (WDK 8.0)
+## <a name="span-idwhen_you_remove_provisioning__wdk_80_spanspan-idwhen_you_remove_provisioning__wdk_80_spanwhen-you-remove-provisioning-wdk-80"></a><span id="when_you_remove_provisioning__wdk_8.0_"></span><span id="WHEN_YOU_REMOVE_PROVISIONING__WDK_8.0_"></span>删除预配时 (WDK 8.0)
 
 
 从目标计算机中删除预配时，会删除以下项目：

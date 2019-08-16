@@ -4,12 +4,12 @@ description: LSA 插件和 UEFI 固件签名
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
-ms.openlocfilehash: 10235b66c1578e56c70f106b2d1bec592764d512
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: cafdaa3a12a23d36c1174c64f1367c70eb80fecf
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337181"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393063"
 ---
 # <a name="file-signing-lsa-plugins-and-uefi-firmware"></a>文件签名 LSA 插件和 UEFI 固件
 
@@ -23,7 +23,7 @@ ms.locfileid: "63337181"
 > * 所有 LSA 和 UEFI 提交均必须是已签名的单个 CAB 二进制文件，并包含签名所需的所有文件。
 >   * 此文件不应包含任何文件夹，而只应包含要签名的二进制文件或 .efi 文件。
 > * **仅 UEFI 固件** - CAB 文件签名必须与组织的[验证码证书](https://docs.microsoft.com/windows-hardware/drivers/install/authenticode)匹配。
->   * 视证书提供者而定，可能需要使用 [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764) 或外部进程。
+>   * 视证书提供者而定，可能需要使用 [SignTool](https://docs.microsoft.com/windows/desktop/SecCrypto/signtool) 或外部进程。
 >   * EFI ByteCode (EBC) 文件必须使用 /ALIGN:32 标志进行编译才能成功处理。
 > * **仅 UEFI 固件** - 如果提交的是垫片，则必须向垫片审查委员会提交完整的模板以供审查。 垫片审查过程请参见 [https://github.com/rhboot/shim-review/](https://github.com/rhboot/shim-review/)。
 > **仅 LSA 插件** - CAB 文件签名必须与组织的 EV 代码签名证书匹配。
@@ -46,6 +46,6 @@ ms.locfileid: "63337181"
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft UEFI CA 签名策略更新](http://blogs.msdn.com/b/windows_hardware_certification/archive/2013/12/03/microsoft-uefi-ca-signing-policy-updates.aspx)
+* [Microsoft UEFI CA 签名策略更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 
-* [UEFI 提交的预提交测试](http://blogs.msdn.com/b/windows_hardware_certification/archive/2013/12/03/pre-submission-testing-for-uefi-submissions.aspx)
+* [UEFI 提交的预提交测试](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)

@@ -5,25 +5,25 @@ description: 在本主题中，我们将介绍如何使用 Visual Studio 开始�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 35193495b1b556bf16f6c14a3ca153bf146b88f5
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: bcaf5c2e7e27eb5d4791f6825f9a7412768123e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382417"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370774"
 ---
 # <a name="creating-a-new-software-driver"></a>创建新的软件驱动程序
 
-在本主题中，我们将介绍如何使用 Visual Studio 开始编写新的软件驱动程序。 软件驱动程序不同于设备功能驱动程序、筛选器驱动程序和文件系统驱动程序，这些驱动程序我们将在其他主题中加以介绍。 有关软件驱动程序以及它们与其他类型的驱动程序有何不同的详细信息，请参阅[什么是驱动程序？](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554678)和[选择驱动程序模型](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554652)。
+在本主题中，我们将介绍如何使用 Visual Studio 开始编写新的软件驱动程序。 软件驱动程序不同于设备功能驱动程序、筛选器驱动程序和文件系统驱动程序，这些驱动程序我们将在其他主题中加以介绍。 有关软件驱动程序以及它们与其他类型的驱动程序有何不同的详细信息，请参阅[什么是驱动程序？](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-)和[选择驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)。
 
-开始之前，请先确定哪个驱动程序模型适用于你的软件驱动程序。 三个选项分别是内核模式驱动程序框架 (KMDF)、旧 NT 驱动程序模型和 Windows 驱动程序模型 (WDM)。 如果在确定最适合的模型时需要帮助，请参阅[选择驱动程序模型](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554652)。
+开始之前，请先确定哪个驱动程序模型适用于你的软件驱动程序。 三个选项分别是内核模式驱动程序框架 (KMDF)、旧 NT 驱动程序模型和 Windows 驱动程序模型 (WDM)。 如果在确定最适合的模型时需要帮助，请参阅[选择驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)。
 
 ## <a name="case-1-you-want-to-use-kmdf"></a>案例 1：你想要使用 KMDF
 
 1. 在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
 2. 在“新建项目”对话框的左侧窗格中，找到并选择“WDF”  。
 3. 在中间窗格中，选择“内核模式驱动程序(KMDF)”  。
-4. 填写“名称”  和“位置”  框，然后单击“确定”  。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439654)。
+4. 填写“名称”  和“位置”  框，然后单击“确定”  。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-kmdf-driver-based-on-a-template)。
     > [!NOTE]
     > 在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5. 此时，你的驱动程序项目可以实现大多数 KMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的软件驱动程序的代码。

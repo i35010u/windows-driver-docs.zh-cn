@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 97ebdb06db555331f2a41700acddf4e76b0ad9d7
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 44158f2c619b4ede0cb4edfccdfe01e4669aa861
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63373554"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385992"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -30,7 +30,7 @@ Windows 驱动程序工具包 (WDK) 可用于开发、测试和部署 Windows �
 
 | Windows 目标版本      | Visual Studio 版本            |
 |--------------------------|----------------------------------------|
-| Windows 10 版本 1809 <br/>Windows 10 版本 1803 <br/>Windows 10 版本 1709 | [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
+| Windows 10 版本 1809 <br/>Windows 10 版本 1803 <br/>Windows 10 版本 1709 | [Visual Studio Community 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
 | Windows 10 版本 1703 <br/>Windows 10 版本 1607 | [Visual Studio Express 2015 桌面版](https://go.microsoft.com/fwlink/?linkid=875331) <br/>[Visual Studio Community 2015](https://go.microsoft.com/fwlink/p/?LinkId=534599) <br/>[Visual Studio Professional 2015](https://go.microsoft.com/fwlink/p/?LinkId=619628) <br/>[Visual Studio Enterprise 2015](https://go.microsoft.com/fwlink/p/?LinkId=619629) |
 | Windows 8.1 更新 <br/>Windows 8.1 | [Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=875331) |
 | Windows 8                | [Visual Studio Professional 2012](https://go.microsoft.com/fwlink/p/?LinkID=255976) <br/>[Visual Studio Ultimate 2012](https://go.microsoft.com/fwlink/p/?LinkID=255982) |
@@ -92,8 +92,8 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 |-----------------------------------|-----------------------------------|
 | Windows 10 版本 1809          | [适用于 Windows 10 版本 1809 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
 | Windows 10 版本 1803          | [适用于 Windows 10 版本 1803 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 版本 1709          | [适用于 Visual Studio 与生成工具 15.6 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-6)（推荐） <br/>[适用于 Visual Studio 与生成工具 15.4 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-4) <br/>[适用于 Visual Studio 与生成工具 15.2 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709) |
-| Windows 10 版本 1703          | [适用于 Windows 10 版本 1703 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1703) |
+| Windows 10 版本 1709          | [适用于 Visual Studio 与生成工具 15.6 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK)（推荐） <br/>[适用于 Visual Studio 与生成工具 15.4 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) <br/>[适用于 Visual Studio 与生成工具 15.2 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
+| Windows 10 版本 1703          | [适用于 Windows 10 版本 1703 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk) |
 
 > [!Note]
 > 从 Windows 10 版本 1709 开始，EWDK 基于 ISO。 若要开始使用，请下载并装载 ISO，然后运行 **LaunchBuildEnv**。
@@ -102,7 +102,7 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 若要使用 HAL 扩展，请准备好运行 Windows 10 版本 1709 或更高版本的 Windows 10 的开发系统。 另请安装 WDK 或 EWDK，然后安装可以作为 ZIP 文件下载的更新版 **Windows OEM HAL 扩展测试证书 2017（仅测试）** ：[HAL_Extension_Test_Cert_2017.zip](https://go.microsoft.com/fwlink/?linkid=872294)。
 
-若要详细了解如何使用此更新的证书，请参阅 Windows 支持上的[“Windows OEM HAL 扩展测试证书 2017（仅测试）”测试证书更新](https://support.microsoft.com/help/4131991)。
+若要详细了解如何使用此更新的证书，请参阅 Windows 支持上的[“Windows OEM HAL 扩展测试证书 2017（仅测试）”测试证书更新](https://support.microsoft.com/help/4131991/update-for-windows-oem-hal-extension-test-cert-2017-test-only-test-cer)。
 
 ## <a name="optional-install-windbg-preview"></a>可选：安装 WinDbg Preview
 
@@ -122,8 +122,8 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 若要将 Windows 调试工具作为单独组件进行安装，请启动 SDK 安装程序，在安装向导中选择“Windows 调试工具”  ，然后清除其他所有组件。
 
 ### <a name="related-downloads"></a>相关下载
-* [下载 Windows 评估和部署工具包 (Windows ADK)](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
-* [下载 Windows HLK、HCK 或徽标工具包](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
-* [下载 Windows 调试工具 (WinDbg)](https://developer.microsoft.com/windows/hardware/download-windbg)
-* [下载 Windows 符号程序包](https://developer.microsoft.com/windows/hardware/download-symbols)
+* [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+* [下载 Windows HLK、HCK 或徽标工具包](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
+* [下载 Windows 调试工具 (WinDbg)](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
+* [下载 Windows 符号程序包](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)
 * [下载 WDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)

@@ -5,12 +5,12 @@ ms.assetid: 964ad06e-0f29-441d-b184-61f80a614914
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaa44cd33141f2c57e83d430d87a73435d61a3ac
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 47ae6c7fdeeb735b1a2c827804cd147527206d36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337278"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364465"
 ---
 # <a name="create-a-device-metadata-experience"></a>创建设备元数据体验
 
@@ -19,7 +19,7 @@ ms.locfileid: "63337278"
 
 devicemanifest-ms 文件是一个 .cab 文件，其中包含 devicemetadata-ms 文件及多区域设置包、计算机包和移动宽带帐户体验包等其他信息。 对于所有 devicemanifest-ms 包，其他信息必须包含在 LocaleInfo.xml 文件中。 有关详细信息，请参阅 PcMetadataSubmission.xml MobileBroadbandMetadataSubmission.xml 创建页。
 
-## <a name="span-idcreatingadevicemetadataexperiencepackagespanspan-idcreatingadevicemetadataexperiencepackagespanspan-idcreatingadevicemetadataexperiencepackagespancreating-a-device-metadata-experience-package"></a><span id="Creating_a_device_metadata_experience_package"></span><span id="creating_a_device_metadata_experience_package"></span><span id="CREATING_A_DEVICE_METADATA_EXPERIENCE_PACKAGE"></span>创建设备元数据体验包
+## <a name="span-idcreating_a_device_metadata_experience_packagespanspan-idcreating_a_device_metadata_experience_packagespanspan-idcreating_a_device_metadata_experience_packagespancreating-a-device-metadata-experience-package"></a><span id="Creating_a_device_metadata_experience_package"></span><span id="creating_a_device_metadata_experience_package"></span><span id="CREATING_A_DEVICE_METADATA_EXPERIENCE_PACKAGE"></span>创建设备元数据体验包
 
 
 在你可以提交文件进行徽标认证之前，你必须将这些文件打包到一个体验中。 此体验也是将具有完全相同的硬件 ID 和型号 ID 集但具有不同区域设置的设备的设备元数据包编组到一起的一种方法。
@@ -58,7 +58,7 @@ devicemanifest-ms 文件是一个 .cab 文件，其中包含 devicemetadata-ms �
    </tr>
    <tr class="even">
    <td><p>预览包</p></td>
-   <td><p>如果你要将你选择的所有程序包提交为预览包，请选择此项。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/br230780.aspx" data-raw-source="[Creating a Preview Package](https://msdn.microsoft.com/library/windows/hardware/br230780.aspx)">创建预览包</a>。</p></td>
+   <td><p>如果你要将你选择的所有程序包提交为预览包，请选择此项。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/" data-raw-source="[Creating a Preview Package](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)">创建预览包</a>。</p></td>
    </tr>
    <tr class="odd">
    <td><p>绑定到徽标提交</p></td>
@@ -76,16 +76,16 @@ devicemanifest-ms 文件是一个 .cab 文件，其中包含 devicemetadata-ms �
 
 4. 单击“提交”  。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[管理设备元数据体验](https://msdn.microsoft.com/library/windows/hardware/br230797.aspx)
+[管理设备元数据体验](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[提交批量元数据包](https://msdn.microsoft.com/library/windows/hardware/hh801895.aspx)
+[提交批量元数据包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[提交设备元数据体验时的错误和解决方案](https://msdn.microsoft.com/library/windows/hardware/br230786.aspx)
+[提交设备元数据体验时的错误和解决方案](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[设备元数据业务规则](https://msdn.microsoft.com/library/windows/hardware/br230767.aspx)
+[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
  
 

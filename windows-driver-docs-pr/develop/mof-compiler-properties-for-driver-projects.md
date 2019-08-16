@@ -4,18 +4,18 @@ title: 驱动程序项目的 MOF 编译器属性
 description: 托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF 文件并将文件中定义的类和类实例添加到 WMI 存储库中。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0309c49ef2cadd6015957af10c9c98cb13b9ee66
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: c5fe74aba3fe87b75c37285202bd714eb7e64784
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344109"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364251"
 ---
 # <a name="mof-compiler-properties-for-driver-projects"></a>驱动程序项目的 MOF 编译器属性
 
-托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF 文件并将文件中定义的类和类实例添加到 WMI 存储库中。 使用 Mofcomp 属性页来编译驱动程序的 MOF 文件。 有关 Mofcomp.exe 和 WMI 的详细信息，请参阅 [**mofcomp**](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)、[编译 MOF 文件](https://msdn.microsoft.com/Library/Windows/Hardware/Aa389240)和[编译驱动程序的 MOF 文件](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542012)。
+托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF 文件并将文件中定义的类和类实例添加到 WMI 存储库中。 使用 Mofcomp 属性页来编译驱动程序的 MOF 文件。 有关 Mofcomp.exe 和 WMI 的详细信息，请参阅 [**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)、[编译 MOF 文件](https://docs.microsoft.com/windows/desktop/WmiSdk/compiling-mof-files)和[编译驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)。
 
-## <a name="span-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspanspan-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspanspan-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspansetting-managed-object-format-mof-compiler-properties-for-driver-projects"></a><span id="Setting_Managed_Object_Format__MOF__Compiler_properties_for_driver_projects"></span><span id="setting_managed_object_format__mof__compiler_properties_for_driver_projects"></span><span id="SETTING_MANAGED_OBJECT_FORMAT__MOF__COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的托管对象格式 (MOF) 编译器属性
+## <a name="span-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspansetting-managed-object-format-mof-compiler-properties-for-driver-projects"></a><span id="Setting_Managed_Object_Format__MOF__Compiler_properties_for_driver_projects"></span><span id="setting_managed_object_format__mof__compiler_properties_for_driver_projects"></span><span id="SETTING_MANAGED_OBJECT_FORMAT__MOF__COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的托管对象格式 (MOF) 编译器属性
 
 
 1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
@@ -38,7 +38,7 @@ ms.locfileid: "63344109"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span><strong>其他选项</strong></p></td>
-<td align="left"><p>指定要传递给 <a href="https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)"><strong>mofcomp</strong></a> 工具的其他选项。</p></td>
+<td align="left"><p>指定要传递给 <a href="https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a> 工具的其他选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Amendement"></span><span id="amendement"></span><span id="AMENDEMENT"></span><strong>修订</strong></p></td>
@@ -72,7 +72,7 @@ ms.locfileid: "63344109"
 <p><strong>安全更新 (-class:safeupdate)</strong> 即使存在子类，也允许更新类，只要更改不会导致与子类冲突。</p>
 <p><strong>仅更新 (-class:updateonly)</strong> 请求编译器不创建任何新类。</p>
 <p></p>
-<p>有关详细信息，请参阅 <a href="https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)"><strong>mofcomp</strong></a>。</p></td>
+<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="NamespacePath"></span><span id="namespacepath"></span><span id="NAMESPACEPATH"></span><strong>NamespacePath</strong></p></td>
@@ -99,12 +99,12 @@ ms.locfileid: "63344109"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [编译 MOF 文件](https://msdn.microsoft.com/Library/Windows/Hardware/Aa389240)
-* [编译驱动程序 MOF 文件](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542012)
-* [**mofcomp**](https://msdn.microsoft.com/Library/Windows/Hardware/Aa392389)
+* [编译 MOF 文件](https://docs.microsoft.com/windows/desktop/WmiSdk/compiling-mof-files)
+* [编译驱动程序 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)
+* [**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)
  
 
  

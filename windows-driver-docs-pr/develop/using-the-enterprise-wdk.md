@@ -4,12 +4,12 @@ description: 介绍如何设置基于命令行的环境，以便组织使用 WDK
 author: Dansimp
 ms.date: 08/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e22cf1f7bd128c0a60cd49fe1144b404c71b63
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 3ff60bb0abbb7107fe94bff95aa5923f8e3f8bba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344071"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364183"
 ---
 # <a name="using-the-enterprise-wdk-10"></a>使用企业版 WDK 10
 
@@ -46,4 +46,4 @@ ms.locfileid: "63344071"
 
 ## <a name="see-also"></a>另请参阅
 
-[MSBuild 参考](https://msdn.microsoft.com/library/0k6kkbsd.aspx)
+[MSBuild 参考](https://docs.microsoft.com/visualstudio/msbuild/msbuild-reference?view=vs-2015)

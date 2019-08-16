@@ -5,12 +5,12 @@ ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f991824cba8ebda7fdd053c89776b6f2cd2458db
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6684c1ca80719a6f2ab7de13b678ea0f32b21bfe
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65996961"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392031"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>将驱动程序发布到 Windows 更新
 
@@ -51,7 +51,7 @@ ms.locfileid: "65996961"
    </tr>
    <tr class="even">
    <td><p><strong>指定合作伙伴（如果有），使其获得对此请求的可见性</strong></p></td>
-   <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/mt786462" data-raw-source="[Publish a driver on behalf of a partner](https://msdn.microsoft.com/library/windows/hardware/mt786462)">代表合作伙伴发布驱动程序</a>。</p></td>
+   <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/mt786462(v=vs.85)" data-raw-source="[Publish a driver on behalf of a partner](https://docs.microsoft.com/previous-versions/mt786462(v=vs.85))">代表合作伙伴发布驱动程序</a>。</p></td>
    </tr>
    <tr class="odd">
    <td><p><strong>驱动程序推广</strong></p></td>

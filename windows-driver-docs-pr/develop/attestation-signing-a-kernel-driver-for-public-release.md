@@ -4,12 +4,12 @@ author: DOMARS
 redirect_url: https://msdn.microsoft.com/library/windows/hardware/mt786448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4cd26934d8e9a77cec307504b66f986b460794
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 030e3a006ed1170004c28fae84836c5172b81b86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63353039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369897"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -24,7 +24,7 @@ ms.locfileid: "63353039"
 
 
 
-## <a name="span-idattestationsigningakernelmodedriverspanspan-idattestationsigningakernelmodedriverspanspan-idattestationsigningakernelmodedriverspanattestation-signing-a-kernel-mode-driver"></a><span id="Attestation_Signing_a_Kernel_Mode_Driver"></span><span id="attestation_signing_a_kernel_mode_driver"></span><span id="ATTESTATION_SIGNING_A_KERNEL_MODE_DRIVER"></span>对内核模式驱动程序进行证明签名
+## <a name="span-idattestation_signing_a_kernel_mode_driverspanspan-idattestation_signing_a_kernel_mode_driverspanspan-idattestation_signing_a_kernel_mode_driverspanattestation-signing-a-kernel-mode-driver"></a><span id="Attestation_Signing_a_Kernel_Mode_Driver"></span><span id="attestation_signing_a_kernel_mode_driver"></span><span id="ATTESTATION_SIGNING_A_KERNEL_MODE_DRIVER"></span>对内核模式驱动程序进行证明签名
 
 
 若要对内核模式驱动程序进行证明签名，请完成以下步骤：
@@ -41,23 +41,23 @@ ms.locfileid: "63353039"
 
 在可以使用要进行签名的仪表板提交二进制文件前，需要获取扩展验证 (EV) 代码签名证书，才能确保数字信息安全。 此证书是用于建立你的公司对你所提交代码的所有权的接受标准。 它让你可以用数字形式签署 PE 二进制文件，例如 .exe、.cab、.dll、.ocx、.msi、.xpi 和 .xap 文件。
 
-按照[获取代码签名证书](https://msdn.microsoft.com/library/windows/hardware/hh801887.aspx)中描述的过程获取所需的 EV 代码签名证书。
+按照[获取代码签名证书](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)中描述的过程获取所需的 EV 代码签名证书。
 
-## <a name="span-idregisteryourcompanyforwindowshardwaredashboardservicesspanspan-idregisteryourcompanyforwindowshardwaredashboardservicesspanspan-idregisteryourcompanyforwindowshardwaredashboardservicesspanregister-your-company-for-windows-hardware-dashboard-services"></a><span id="Register_your_company_for_Windows_Hardware_Dashboard_Services"></span><span id="register_your_company_for_windows_hardware_dashboard_services"></span><span id="REGISTER_YOUR_COMPANY_FOR_WINDOWS_HARDWARE_DASHBOARD_SERVICES"></span>为 Windows 硬件仪表板服务注册你的公司
+## <a name="span-idregister_your_company_for_windows_hardware_dashboard_servicesspanspan-idregister_your_company_for_windows_hardware_dashboard_servicesspanspan-idregister_your_company_for_windows_hardware_dashboard_servicesspanregister-your-company-for-windows-hardware-dashboard-services"></a><span id="Register_your_company_for_Windows_Hardware_Dashboard_Services"></span><span id="register_your_company_for_windows_hardware_dashboard_services"></span><span id="REGISTER_YOUR_COMPANY_FOR_WINDOWS_HARDWARE_DASHBOARD_SERVICES"></span>为 Windows 硬件仪表板服务注册你的公司
 
 
 可以使用硬件开发人员中心仪表板对你的设备和应用进行硬件认证。 若要访问硬件开发人员中心仪表板，需要注册自己的公司并获取代码签名证书。
 
-按照[登录之前](https://msdn.microsoft.com/library/windows/hardware/br230782)中描述的过程设置仪表板上所需的帐户。
+按照[登录之前](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)中描述的过程设置仪表板上所需的帐户。
 
-## <a name="span-iddownloadandinstallthewindowsdriverkitspanspan-iddownloadandinstallthewindowsdriverkitspanspan-iddownloadandinstallthewindowsdriverkitspan-download-and-install-the-windows-driver-kit"></a><span id="_Download_and_install_the_Windows_Driver_Kit"></span><span id="_download_and_install_the_windows_driver_kit"></span><span id="_DOWNLOAD_AND_INSTALL_THE_WINDOWS_DRIVER_KIT"></span>下载并安装 Windows 驱动程序工具包
+## <a name="span-id_download_and_install_the_windows_driver_kitspanspan-id_download_and_install_the_windows_driver_kitspanspan-id_download_and_install_the_windows_driver_kitspan-download-and-install-the-windows-driver-kit"></a><span id="_Download_and_install_the_Windows_Driver_Kit"></span><span id="_download_and_install_the_windows_driver_kit"></span><span id="_DOWNLOAD_AND_INSTALL_THE_WINDOWS_DRIVER_KIT"></span>下载并安装 Windows 驱动程序工具包
 
 
 你将需要下载并安装 Windows 驱动程序工具包 (WDK)，才能获得对用于签署二进制文件的工具的访问权限。
 
 按照[下载适用于 Windows 10 的工具包和工具](https://msdn.microsoft.com/windows/hardware/dn913721.aspx)中描述的过程下载并安装 WDK。
 
-## <a name="span-idcreateacabfilessubmissionspanspan-idcreateacabfilessubmissionspanspan-idcreateacabfilessubmissionspancreate-a-cab-files-submission"></a><span id="Create_a_CAB_Files_Submission"></span><span id="create_a_cab_files_submission"></span><span id="CREATE_A_CAB_FILES_SUBMISSION"></span>创建 CAB 文件提交
+## <a name="span-idcreate_a_cab_files_submissionspanspan-idcreate_a_cab_files_submissionspanspan-idcreate_a_cab_files_submissionspancreate-a-cab-files-submission"></a><span id="Create_a_CAB_Files_Submission"></span><span id="create_a_cab_files_submission"></span><span id="CREATE_A_CAB_FILES_SUBMISSION"></span>创建 CAB 文件提交
 
 
 若要创建适用于仪表板的 CAB 文件提交，请完成以下步骤。
@@ -179,7 +179,7 @@ ms.locfileid: "63353039"
 
 5. 在 Disk1 子目录中找到 cab 文件。 可以在文件资源管理器中单击 cab 文件，以验证它是否包含预期的文件。
 
-## <a name="span-idsignthesubmissioncabfilewithyourevcertspanspan-idsignthesubmissioncabfilewithyourevcertspanspan-idsignthesubmissioncabfilewithyourevcertspansign-the-submission-cab-file-with-your-ev-cert"></a><span id="Sign_the_Submission_Cab_File__with_your_EV_Cert"></span><span id="sign_the_submission_cab_file__with_your_ev_cert"></span><span id="SIGN_THE_SUBMISSION_CAB_FILE__WITH_YOUR_EV_CERT"></span>使用 EV 证书对提交 Cab 文件签名
+## <a name="span-idsign_the_submission_cab_file__with_your_ev_certspanspan-idsign_the_submission_cab_file__with_your_ev_certspanspan-idsign_the_submission_cab_file__with_your_ev_certspansign-the-submission-cab-file-with-your-ev-cert"></a><span id="Sign_the_Submission_Cab_File__with_your_EV_Cert"></span><span id="sign_the_submission_cab_file__with_your_ev_cert"></span><span id="SIGN_THE_SUBMISSION_CAB_FILE__WITH_YOUR_EV_CERT"></span>使用 EV 证书对提交 Cab 文件签名
 
 
 1. 使用 EV 证书提供商推荐的过程通过 EV 证书对 cab 文件进行签名。例如，可以使用 signtool，如果使用的是 Verisign，则可以指定其时间戳服务器。
@@ -200,10 +200,10 @@ ms.locfileid: "63353039"
 
 
 
-## <a name="span-idsubmittheevsignedcabfileusingthewindowshardwaredevelopercenterdashboardspanspan-idsubmittheevsignedcabfileusingthewindowshardwaredevelopercenterdashboardspanspan-idsubmittheevsignedcabfileusingthewindowshardwaredevelopercenterdashboardspansubmit-the-ev-signed-cab-file-using-the-hardware-dev-center-dashboard"></a><span id="Submit_the_EV_signed_Cab_file_using_the__Windows_Hardware_Developer_Center_Dashboard"></span><span id="submit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboard"></span><span id="SUBMIT_THE_EV_SIGNED_CAB_FILE_USING_THE__WINDOWS_HARDWARE_DEVELOPER_CENTER_DASHBOARD"></span>使用硬件开发人员中心仪表板提交 EV 签名的 Cab 文件
+## <a name="span-idsubmit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboardspanspan-idsubmit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboardspanspan-idsubmit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboardspansubmit-the-ev-signed-cab-file-using-the-hardware-dev-center-dashboard"></a><span id="Submit_the_EV_signed_Cab_file_using_the__Windows_Hardware_Developer_Center_Dashboard"></span><span id="submit_the_ev_signed_cab_file_using_the__windows_hardware_developer_center_dashboard"></span><span id="SUBMIT_THE_EV_SIGNED_CAB_FILE_USING_THE__WINDOWS_HARDWARE_DEVELOPER_CENTER_DASHBOARD"></span>使用硬件开发人员中心仪表板提交 EV 签名的 Cab 文件
 
 
-1. 使用硬件开发人员中心仪表板提交 EV 签名的 Cab 文件。 有关详细信息，请参阅[驱动程序签名属性](driver-signing-properties.md)和[文件签名服务](https://msdn.microsoft.com/Library/Windows/Hardware/Dn771767.aspx)。
+1. 使用硬件开发人员中心仪表板提交 EV 签名的 Cab 文件。 有关详细信息，请参阅[驱动程序签名属性](driver-signing-properties.md)和[文件签名服务](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
 作为提交过程的一部分，你将指出提交中的所有驱动程序支持哪些体系结构。 使用复选框提供了三个选项。
 
@@ -220,7 +220,7 @@ CAB 中的所有驱动程序文件夹必须支持同一组体系结构，例如�
 ![驱动程序签名提交选项](images/attestation-driver-signing-submission-dashboard.png)
 
 2. 签名过程完成后，请从硬件开发人员中心仪表板下载已签名的驱动程序。
-   ## <a name="span-idvalidatethatthedriverwasproperlysignedspanspan-idvalidatethatthedriverwasproperlysignedspanspan-idvalidatethatthedriverwasproperlysignedspanvalidate-that-the-driver-was-properly-signed"></a><span id="Validate_that_the_driver_was_properly_signed"></span><span id="validate_that_the_driver_was_properly_signed"></span><span id="VALIDATE_THAT_THE_DRIVER_WAS_PROPERLY_SIGNED"></span>验证驱动程序是否已正确签名
+   ## <a name="span-idvalidate_that_the_driver_was_properly_signedspanspan-idvalidate_that_the_driver_was_properly_signedspanspan-idvalidate_that_the_driver_was_properly_signedspanvalidate-that-the-driver-was-properly-signed"></a><span id="Validate_that_the_driver_was_properly_signed"></span><span id="validate_that_the_driver_was_properly_signed"></span><span id="VALIDATE_THAT_THE_DRIVER_WAS_PROPERLY_SIGNED"></span>验证驱动程序是否已正确签名
 
 
 完成以下步骤以验证驱动程序是否已正确签名
@@ -271,7 +271,7 @@ CAB 中的所有驱动程序文件夹必须支持同一组体系结构，例如�
 -   如果客户使用自己的证书对驱动程序二进制文件进行嵌入式签名，将不会覆盖这些签名。
 -   创建新的目录文件并使用 SHA2 Microsoft 证书对该目录文件签名。 该目录会替换客户提供的任何现有目录。
 
-## <a name="span-idtestyourdriveronwindows10fordesktopspanspan-idtestyourdriveronwindows10fordesktopspanspan-idtestyourdriveronwindows10fordesktopspantest-your-driver-on-windows-10-for-desktop"></a><span id="Test_your_driver_on_Windows_10_for_Desktop"></span><span id="test_your_driver_on_windows_10_for_desktop"></span><span id="TEST_YOUR_DRIVER_ON_WINDOWS_10_FOR_DESKTOP"></span>在 Windows 10 桌面版上测试驱动程序
+## <a name="span-idtest_your_driver_on_windows_10_for_desktopspanspan-idtest_your_driver_on_windows_10_for_desktopspanspan-idtest_your_driver_on_windows_10_for_desktopspantest-your-driver-on-windows-10-for-desktop"></a><span id="Test_your_driver_on_Windows_10_for_Desktop"></span><span id="test_your_driver_on_windows_10_for_desktop"></span><span id="TEST_YOUR_DRIVER_ON_WINDOWS_10_FOR_DESKTOP"></span>在 Windows 10 桌面版上测试驱动程序
 
 
 使用以下说明安装示例驱动程序。
@@ -294,7 +294,7 @@ CAB 中的所有驱动程序文件夹必须支持同一组体系结构，例如�
 
 3. 确认驱动程序安装过程不会显示“Windows 无法验证该驱动程序软件的发布者。” “Windows 安全”对话框。
 
-## <a name="span-idcreateamultipledriversubmissionspanspan-idcreateamultipledriversubmissionspanspan-idcreateamultipledriversubmissionspancreate-a-multiple-driver-submission"></a><span id="Create_a_Multiple_Driver_Submission"></span><span id="create_a_multiple_driver_submission"></span><span id="CREATE_A_MULTIPLE_DRIVER_SUBMISSION"></span>创建多个驱动程序提交
+## <a name="span-idcreate_a_multiple_driver_submissionspanspan-idcreate_a_multiple_driver_submissionspanspan-idcreate_a_multiple_driver_submissionspancreate-a-multiple-driver-submission"></a><span id="Create_a_Multiple_Driver_Submission"></span><span id="create_a_multiple_driver_submission"></span><span id="CREATE_A_MULTIPLE_DRIVER_SUBMISSION"></span>创建多个驱动程序提交
 
 
 若要同时提交多个驱动程序，请为每个驱动程序创建一个子目录，如下所示。
@@ -334,7 +334,7 @@ C:\DriverFiles\DriverPackage2\Driver2.inf
 
 
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [签署驱动程序](signing-a-driver.md)

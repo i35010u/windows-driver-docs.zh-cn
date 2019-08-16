@@ -5,17 +5,17 @@ ms.assetid: c8e248d4-a419-48e1-839d-1bbb9adda382
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 234f587de393dad428b14041e3d25a55e56979cf
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 04c789f0b204b1752d652073e463989eb4575a7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334920"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364431"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>提交批量元数据包
 
 
-## <a name="span-idsubmittingabulkmetadatapackagespanspan-idsubmittingabulkmetadatapackagespanspan-idsubmittingabulkmetadatapackagespansubmitting-a-bulk-metadata-package"></a><span id="Submitting_a_bulk_metadata_package"></span><span id="submitting_a_bulk_metadata_package"></span><span id="SUBMITTING_A_BULK_METADATA_PACKAGE"></span>提交批量元数据包
+## <a name="span-idsubmitting_a_bulk_metadata_packagespanspan-idsubmitting_a_bulk_metadata_packagespanspan-idsubmitting_a_bulk_metadata_packagespansubmitting-a-bulk-metadata-package"></a><span id="Submitting_a_bulk_metadata_package"></span><span id="submitting_a_bulk_metadata_package"></span><span id="SUBMITTING_A_BULK_METADATA_PACKAGE"></span>提交批量元数据包
 
 
 **提交批量元数据包**
@@ -28,7 +28,7 @@ ms.locfileid: "63334920"
 
 4.  浏览并选择你的新批量元数据包，然后单击“提交”  。
 
-## <a name="span-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespancreating-a-bulk-submission-package"></a><span id="Creating_a_Bulk_Submission_Package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>创建批量提交程序包
+## <a name="span-idcreating_a_bulk_submission_packagespanspan-idcreating_a_bulk_submission_packagespanspan-idcreating_a_bulk_submission_packagespancreating-a-bulk-submission-package"></a><span id="Creating_a_Bulk_Submission_Package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>创建批量提交程序包
 
 
 批量元数据提交包是可以将多个设备元数据包提交到仪表板的包格式。
@@ -39,7 +39,7 @@ ms.locfileid: "63334920"
 
 有关如何使用“设备元数据提交向导”创建批量元数据包的信息，请参阅[在 Visual Studio 中创建设备元数据提交程序包](https://go.microsoft.com/fwlink/p/?LinkId=251705)。
 
-### <a name="span-idbulkmetadatasubmissionpackagecontentsspanspan-idbulkmetadatasubmissionpackagecontentsspanspan-idbulkmetadatasubmissionpackagecontentsspanbulk-metadata-submission-package-contents"></a><span id="Bulk_Metadata_Submission_Package_Contents"></span><span id="bulk_metadata_submission_package_contents"></span><span id="BULK_METADATA_SUBMISSION_PACKAGE_CONTENTS"></span>批量元数据提交程序包内容
+### <a name="span-idbulk_metadata_submission_package_contentsspanspan-idbulk_metadata_submission_package_contentsspanspan-idbulk_metadata_submission_package_contentsspanbulk-metadata-submission-package-contents"></a><span id="Bulk_Metadata_Submission_Package_Contents"></span><span id="bulk_metadata_submission_package_contents"></span><span id="BULK_METADATA_SUBMISSION_PACKAGE_CONTENTS"></span>批量元数据提交程序包内容
 
 每个批量元数据提交包都包含以下组成部分：
 
@@ -61,7 +61,7 @@ ms.locfileid: "63334920"
 
  
 
-### <a name="span-idstructureofabulkmetadatasubmissionpackagespanspan-idstructureofabulkmetadatasubmissionpackagespanspan-idstructureofabulkmetadatasubmissionpackagespanstructure-of-a-bulk-metadata-submission-package"></a><span id="Structure_of_a_Bulk_Metadata_Submission_Package"></span><span id="structure_of_a_bulk_metadata_submission_package"></span><span id="STRUCTURE_OF_A_BULK_METADATA_SUBMISSION_PACKAGE"></span>批量元数据提交程序包的结构
+### <a name="span-idstructure_of_a_bulk_metadata_submission_packagespanspan-idstructure_of_a_bulk_metadata_submission_packagespanspan-idstructure_of_a_bulk_metadata_submission_packagespanstructure-of-a-bulk-metadata-submission-package"></a><span id="Structure_of_a_Bulk_Metadata_Submission_Package"></span><span id="structure_of_a_bulk_metadata_submission_package"></span><span id="STRUCTURE_OF_A_BULK_METADATA_SUBMISSION_PACKAGE"></span>批量元数据提交程序包的结构
 
 批量元数据提交包的组成部分存储在压缩的 Cab 文件中。 该文件名必须具有后缀 .bulkmetadata-ms。
 
@@ -84,7 +84,7 @@ Filename1、Filename2、Filename3、Filename4 等必须是 GUID。
 
 若要开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](https://go.microsoft.com/fwlink/p/?LinkId=226753)。
 
-若要开发设备清单包 \*.devicemanifest-ms，请参阅[提交电脑设备清单包](https://msdn.microsoft.com/library/windows/hardware/hh801890.aspx)。
+若要开发设备清单包 \*.devicemanifest-ms，请参阅[提交电脑设备清单包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
 你可以使用 Cabarc 工具创建这些 CAB 程序包。 若要了解有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
 
@@ -127,10 +127,10 @@ N .\BulkFiles\ DDMMYYYY.bulkmetadata-ms
 
  
 
-## <a name="span-idcreatingbulkmetadatasubmissionxmlspanspan-idcreatingbulkmetadatasubmissionxmlspancreating-bulkmetadatasubmissionxml"></a><span id="creating_bulkmetadatasubmission.xml"></span><span id="CREATING_BULKMETADATASUBMISSION.XML"></span>创建 BulkMetadataSubmission.xml
+## <a name="span-idcreating_bulkmetadatasubmissionxmlspanspan-idcreating_bulkmetadatasubmissionxmlspancreating-bulkmetadatasubmissionxml"></a><span id="creating_bulkmetadatasubmission.xml"></span><span id="CREATING_BULKMETADATASUBMISSION.XML"></span>创建 BulkMetadataSubmission.xml
 
 
-### <a name="span-idbulkmetadatasubmissionxmlschemaspanspan-idbulkmetadatasubmissionxmlschemaspanspan-idbulkmetadatasubmissionxmlschemaspanbulkmetadatasubmission-xml-schema"></a><span id="BulkMetadataSubmission_XML_Schema"></span><span id="bulkmetadatasubmission_xml_schema"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA"></span>BulkMetadataSubmission XML 架构
+### <a name="span-idbulkmetadatasubmission_xml_schemaspanspan-idbulkmetadatasubmission_xml_schemaspanspan-idbulkmetadatasubmission_xml_schemaspanbulkmetadatasubmission-xml-schema"></a><span id="BulkMetadataSubmission_XML_Schema"></span><span id="bulkmetadatasubmission_xml_schema"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA"></span>BulkMetadataSubmission XML 架构
 
 批量元数据提交包包含一个 BulkMetadataSubmission.xml 文档，其中包含仪表板用于创建具有友好名称的体验，将包组织到体验中，更新体验以及将各个包标记为预览的信息。
 
@@ -301,7 +301,7 @@ BulkMetadataSubmission.xml 文档中的数据基于 BulkMetadataSubmission XML �
 </xs:schema>
 ```
 
-### <a name="span-idbulkmetadatasubmissionxmlschemareferencespanspan-idbulkmetadatasubmissionxmlschemareferencespanspan-idbulkmetadatasubmissionxmlschemareferencespanbulkmetadatasubmission-xml-schema-reference"></a><span id="BulkMetadataSubmission_XML_Schema_Reference"></span><span id="bulkmetadatasubmission_xml_schema_reference"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>BulkMetadataSubmission XML 架构参考
+### <a name="span-idbulkmetadatasubmission_xml_schema_referencespanspan-idbulkmetadatasubmission_xml_schema_referencespanspan-idbulkmetadatasubmission_xml_schema_referencespanbulkmetadatasubmission-xml-schema-reference"></a><span id="BulkMetadataSubmission_XML_Schema_Reference"></span><span id="bulkmetadatasubmission_xml_schema_reference"></span><span id="BULKMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>BulkMetadataSubmission XML 架构参考
 
 BulkMetadataSubmission XML 架构定义以下元素和属性：
 
@@ -563,7 +563,7 @@ update 属性指定是否更新某个体验。 仪表板使用此值来更新体
 <xs:attribute name="update" type="xs:boolean" use="required"/>
 ```
 
-### <a name="span-idbulkmetadatasubmissionxmlexamplespanspan-idbulkmetadatasubmissionxmlexamplespanspan-idbulkmetadatasubmissionxmlexamplespanbulkmetadatasubmission-xml-example"></a><span id="BulkMetadataSubmission_XML_Example"></span><span id="bulkmetadatasubmission_xml_example"></span><span id="BULKMETADATASUBMISSION_XML_EXAMPLE"></span>BulkMetadataSubmission XML 示例
+### <a name="span-idbulkmetadatasubmission_xml_examplespanspan-idbulkmetadatasubmission_xml_examplespanspan-idbulkmetadatasubmission_xml_examplespanbulkmetadatasubmission-xml-example"></a><span id="BulkMetadataSubmission_XML_Example"></span><span id="bulkmetadatasubmission_xml_example"></span><span id="BULKMETADATASUBMISSION_XML_EXAMPLE"></span>BulkMetadataSubmission XML 示例
 
 以下 XML 文档使用 BulkMetadataSubmission XML 架构来指定 BulkMetadataSubmission XML 文档的组成部分。
 

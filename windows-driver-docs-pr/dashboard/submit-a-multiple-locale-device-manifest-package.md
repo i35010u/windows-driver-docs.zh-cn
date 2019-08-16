@@ -5,12 +5,12 @@ ms.assetid: b6748bff-d730-434e-9316-dc7b7222b727
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37375718767a55e5c71061965f6bbb0092dc8b13
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 619f566be357fd74d462213ff6d05f69bf8b94bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364403"
 ---
 # <a name="submit-a-multiple-locale-device-manifest-package"></a>提交多区域设置设备清单包
 
@@ -113,4 +113,4 @@ N .\ManifestFiles\ GUID.devicemanifest-ms
 
 ## <a name="creating-localeinfoxml"></a>创建 LocaleInfo.xml
 
-有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](https://msdn.microsoft.com/library/windows/hardware/hh801885.aspx)。
+有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。

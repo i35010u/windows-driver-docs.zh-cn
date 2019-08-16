@@ -4,12 +4,12 @@ title: 驱动程序项目的驱动程序模型设置属性
 description: 为内核模式或用户模式驱动程序设置基本属性，包括 WDF 库版本和预处理器定义。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 544dc763cc9dde3335928125f4d1850e90ceda17
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: e0dcb1641d50051d2d743e313fe09bf601857237
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63391517"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370749"
 ---
 # <a name="driver-model-settings-properties-for-driver-projects"></a>驱动程序项目的驱动程序模型设置属性
 
@@ -29,18 +29,18 @@ ms.locfileid: "63391517"
 
 * **WDM**（包括所有微型端口/端口驱动程序，如 NDIS 或 StorPort）。
 * **KMDF** 一个 KMDF 驱动程序。
-* **导出驱动程序 (WDM)** 导出其他驱动程序可调用的函数的 WDM 驱动程序。 有关详细信息，请参阅[创建导出驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542891)。
+* **导出驱动程序 (WDM)** 导出其他驱动程序可调用的函数的 WDM 驱动程序。 有关详细信息，请参阅[创建导出驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-export-drivers)。
 
 **KMDF 主要版本**  
 当驱动程序类型为 KMDF 时，此选项指定编译驱动程序时将使用的 KMDF 的主要版本。
 
 KMDF\_VERSION\_MAJOR 条目通知 MSBuild 实用工具必须将驱动程序链接到 KMDF 库。
 
-有关详细信息，请参阅[框架库版本控制](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542842)。
+有关详细信息，请参阅[框架库版本控制](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-library-versioning)。
 
 **KMDF 次要版本(目标版本)** （为 Windows 10 版本 1803 之前的 **KMDF 次要版本**）当驱动程序类型为 KMDF 时，此选项指定编译驱动程序时将使用的 KMDF 次要版本。
 
-有关详细信息，请参阅[框架库版本控制](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542842)。 如果你没有指定“KMDF 次要版本(目标版本)”  ，则 Visual Studio 将使用以下默认值：
+有关详细信息，请参阅[框架库版本控制](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-library-versioning)。 如果你没有指定“KMDF 次要版本(目标版本)”  ，则 Visual Studio 将使用以下默认值：
 * Windows 10：1.15
 * Windows 8/Windows 8.1：1.11
 * Windows 7：1.9
@@ -50,7 +50,7 @@ KMDF\_VERSION\_MAJOR 条目通知 MSBuild 实用工具必须将驱动程序链�
 有关详细信息，请参阅[针对多个 Windows 版本构建 WDF 驱动程序](../wdf/building-a-wdf-driver-for-multiple-versions-of-windows.md)。
 
 **UMDF 主要版本**  
-当你有 UMDF 驱动程序时，此选项指定编译驱动程序时将使用的 UMDF 的主要版本。 请参阅 [UMDF 版本历史记录](https://msdn.microsoft.com/Library/Windows/Hardware/Ff561356)。 当你有 UMDF 驱动程序时，**配置类型**为“动态库(.dll)”  。
+当你有 UMDF 驱动程序时，此选项指定编译驱动程序时将使用的 UMDF 的主要版本。 请参阅 [UMDF 版本历史记录](https://docs.microsoft.com/windows-hardware/drivers/wdf/umdf-version-history)。 当你有 UMDF 驱动程序时，**配置类型**为“动态库(.dll)”  。
 
 **UMDF 次要版本(目标版本)** （为 Windows 10 版本 1803 之前的 **UMDF 次要版本**）当你有 UMDF 驱动程序时，此选项指定编译驱动程序时将使用的 UMDF 次要版本。 如果你没有指定“UMDF 次要版本(目标版本)”  ，则 Visual Studio 将使用以下默认值：
 
@@ -77,11 +77,11 @@ KMDF\_VERSION\_MAJOR 条目通知 MSBuild 实用工具必须将驱动程序链�
 ## <a name="related-topics"></a>相关主题
 
 
-* [框架库版本控制](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542842)
-* [生成并加载基于框架的驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff540730)
-* [UMDF 版本历史记录](https://msdn.microsoft.com/Library/Windows/Hardware/Ff561356)
-* [生成 UMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff540730)
-* [创建导出驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff542891)
+* [框架库版本控制](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-library-versioning)
+* [生成并加载基于框架的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-and-loading-a-kmdf-driver)
+* [UMDF 版本历史记录](https://docs.microsoft.com/windows-hardware/drivers/wdf/umdf-version-history)
+* [生成 UMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-and-loading-a-kmdf-driver)
+* [创建导出驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-export-drivers)
  
 
  

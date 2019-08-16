@@ -4,12 +4,12 @@ title: 为代码分析工具创建日志文件
 description: Windows Server 2012 硬件认证计划需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d2db498a7bb404435c02cdeb035ac7975b2c88
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6e21d7f99c4c8c27402e0624152e79c8151bc8df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382418"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370792"
 ---
 # <a name="creating-a-log-file-for-the-code-analysis-tool"></a>为代码分析工具创建日志文件
 
@@ -19,7 +19,7 @@ Windows Server 2012 [硬件认证计划](https://go.microsoft.com/fwlink/p/?link
 
 1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后右键单击以打开项目属性。 选择“Windows 8 版本”  作为“配置”  ，并选择“x64”  作为“平台”  。
 2.  从“分析”  或“生成”  菜单中，单击“对解决方案运行代码分析”  。
-3.  如果发现错误或警告，请使用“代码分析报告”  窗口调查错误产生的原因。 使用警告消息解决这些问题。 有关代码分析工具的详细信息，请参阅[如何为驱动程序运行代码分析](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454219)和[使用“代码分析”分析 C/C++ 代码质量](https://go.microsoft.com/fwlink/p/?linkid=226836)。
+3.  如果发现错误或警告，请使用“代码分析报告”  窗口调查错误产生的原因。 使用警告消息解决这些问题。 有关代码分析工具的详细信息，请参阅[如何为驱动程序运行代码分析](https://docs.microsoft.com/windows-hardware/drivers/devtest/how-to-run-code-analysis-for-drivers)和[使用“代码分析”分析 C/C++ 代码质量](https://go.microsoft.com/fwlink/p/?linkid=226836)。
 
 驱动程序的代码分析工具会将结果写入项目的生成配置和平台子目录中的文件 vc.nativecodeanalysis.all.xml，例如，\\Windows 8Release\\x64。
 
@@ -49,15 +49,15 @@ msbuild.exe <vcxprojectfile> /p:Configuration="Win8 Release" /P:Platform=x64 /P:
 
 有关驱动程序验证日志的要求的最新信息，请参阅“WDK 发行说明”。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [创建驱动程序验证日志](creating-a-driver-verification-log.md)
 * [为静态驱动程序验证程序创建日志文件](creating-a-log-file-for-static-driver-verifier.md)
-* [驱动程序的代码分析](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454182)
+* [驱动程序的代码分析](https://docs.microsoft.com/windows-hardware/drivers/devtest/code-analysis-for-drivers)
 * [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [使用“代码分析”分析 C/C++ 代码质量](https://go.microsoft.com/fwlink/p/?linkid=226836)
-* [如何为驱动程序运行“代码分析”](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454219)
+* [如何为驱动程序运行“代码分析”](https://docs.microsoft.com/windows-hardware/drivers/devtest/how-to-run-code-analysis-for-drivers)
  
 
  

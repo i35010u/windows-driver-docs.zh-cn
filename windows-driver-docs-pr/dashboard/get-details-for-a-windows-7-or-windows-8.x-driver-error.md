@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 08/28/2018
 keywords: windows 10, uwp, Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 5adb0a9c729c45d898c6491d82e20d28cd949eeb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: ddffc08713817810a7570caca90fb79091923785
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364451"
 ---
 # <a name="get-details-for-a-windows-7-or-windows-8x-driver-error"></a>获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息
 
@@ -29,7 +29,7 @@ ms.locfileid: "63335072"
 在 Microsoft Store 分析 API 中使用此方法，可以 JSON 格式获取特定 Windows 7/Windows 8.x 驱动程序错误的详细数据。 可以使用此方法之前，必须先使用[获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)方法来检索想要获取其详细信息的错误的 ID。
 
 > [!NOTE]
-> 此方法仅可供属于 [Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
+> 此方法仅可供属于 [Windows 硬件开发人员中心计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
 
 ## <a name="prerequisites"></a>必备条件
 

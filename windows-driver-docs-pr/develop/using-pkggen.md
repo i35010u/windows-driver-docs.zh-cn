@@ -3,12 +3,12 @@ title: 在 Windows 10 移动版上安装驱动程序
 description: 描述在 Windows 10 移动版上安装驱动程序的过程。
 ms.date: 06/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a4910567ed8a23df6b4218341e28cd9243d2e1
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 34d19520e79745f3f0833010abac96767709dae9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344043"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364186"
 ---
 # <a name="installing-a-driver-on-windows-10-mobile"></a>在 Windows 10 移动版上安装驱动程序
 
@@ -26,7 +26,7 @@ WDK 10 包括 PkgGen，后者是一个生成包文件的工具。 使用以下�
 
 若要查看包文件的内容，将 .cab 后缀追加到文件名后面，然后在 Windows 资源管理器中打开此 cab 文件。
 
-若要了解有关在 Visual Studio 外部运行 PkgGen 的信息，请参阅[创建移动程序包](https://msdn.microsoft.com/Library/Windows/Hardware/Dn756642)。
+若要了解有关在 Visual Studio 外部运行 PkgGen 的信息，请参阅[创建移动程序包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))。
 
 若要安装移动驱动程序包（.spkg 文件），你有两个选择。
 
@@ -43,12 +43,12 @@ WDK 10 包括 PkgGen，后者是一个生成包文件的工具。 使用以下�
        IUTool -p MyKmdfDriver.spkg
        ```
 
-2.  有关详细信息，请参阅[将驱动程序添加到测试映像](https://msdn.microsoft.com/Library/Windows/Hardware/Mt131832)。
+2.  有关详细信息，请参阅[将驱动程序添加到测试映像](https://docs.microsoft.com/previous-versions/mt131832(v=vs.85))。
 
 **使用 ImgGen 将移动驱动程序包 (.spkg) 添加到移动 OS 映像 (.ffu)**
 
 1.  安装 Visual Studio 后，在“开始”屏幕上，单击“Visual Studio 2015”文件夹。 右键单击“适用于 VS2015 的开发人员命令提示”  ，然后选择“以管理员身份运行”  。
 
-## <a name="span-idflashingamobileosimageffuspanspan-idflashingamobileosimageffuspanflashing-a-mobile-os-image-ffu"></a><span id="flashing_a_mobile_os_image__.ffu_"></span><span id="FLASHING_A_MOBILE_OS_IMAGE__.FFU_"></span>刷写移动 OS 映像 (.ffu)
+## <a name="span-idflashing_a_mobile_os_image__ffu_spanspan-idflashing_a_mobile_os_image__ffu_spanflashing-a-mobile-os-image-ffu"></a><span id="flashing_a_mobile_os_image__.ffu_"></span><span id="FLASHING_A_MOBILE_OS_IMAGE__.FFU_"></span>刷写移动 OS 映像 (.ffu)
 
 若要将映像刷入设备，请使用 Microsoft 提供的 FFUTool，或开发自定义的 OEM 刷写工具。

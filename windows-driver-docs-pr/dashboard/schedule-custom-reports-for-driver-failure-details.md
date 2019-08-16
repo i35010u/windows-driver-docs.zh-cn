@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: shganesh
 ms.date: 09/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c6eb348b8213a2b17617ecf413afca9c57aaf6
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 975be663e70872404d842e0729775f316679b609
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334922"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364435"
 ---
 # <a name="schedule-custom-reports-for-your-driver-failure-details"></a>计划自定义报告来提供驱动程序失败详细信息
 
@@ -18,7 +18,7 @@ ms.locfileid: "63334922"
 
 >[!NOTE]
 >
-> - 这些方法仅可供属于 [Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发人员帐户使用。
+> - 这些方法仅可供属于 [Windows 硬件开发人员中心计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发人员帐户使用。
 > - 可以使用这些方法替代现有方法来确定 [Windows 10 驱动程序错误](https://docs.microsoft.com/windows/uwp/monetize/get-error-reporting-data-for-windows-10-drivers)、[Windows 7 和 Windows 8.x 驱动程序错误](https://docs.microsoft.com/windows/uwp/monetize/get-error-reporting-data-for-windows-7-and-windows-8.x-drivers)（对于 IHV）和[硬件错误](https://docs.microsoft.com/windows/uwp/monetize/get-oem-hardware-error-reporting-data)（对于 OEM）。
 > - 这些方法公开了一组丰富的新维度，并支持回顾过去 90 天的数据。
 > - [Swagger](https://apidocs.microsoft.com/services/analyticsreportingapis) 中也提供了 API 文档

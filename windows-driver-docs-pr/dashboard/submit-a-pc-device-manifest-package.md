@@ -5,17 +5,17 @@ ms.assetid: b96b02b8-8804-403e-9513-7a5d1b730fcd
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe5d3951ff1d8cc17020dab8ae9a52ad0558c98
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1424706a511a53ad2167966ac4c1fa6af9078a58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363828"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>提交电脑设备清单包
 
 
-## <a name="span-idsubmittingapcdevicemanifestpackagespanspan-idsubmittingapcdevicemanifestpackagespanspan-idsubmittingapcdevicemanifestpackagespansubmitting-a-pc-device-manifest-package"></a><span id="Submitting_a_PC_device_manifest_package"></span><span id="submitting_a_pc_device_manifest_package"></span><span id="SUBMITTING_A_PC_DEVICE_MANIFEST_PACKAGE"></span>提交电脑设备清单包
+## <a name="span-idsubmitting_a_pc_device_manifest_packagespanspan-idsubmitting_a_pc_device_manifest_packagespanspan-idsubmitting_a_pc_device_manifest_packagespansubmitting-a-pc-device-manifest-package"></a><span id="Submitting_a_PC_device_manifest_package"></span><span id="submitting_a_pc_device_manifest_package"></span><span id="SUBMITTING_A_PC_DEVICE_MANIFEST_PACKAGE"></span>提交电脑设备清单包
 
 
 你可以使用相同的方法提交用于预览或发布的包。
@@ -30,7 +30,7 @@ ms.locfileid: "63334904"
 
 4.  浏览并选择你的新 devicemanifest-ms 程序包，然后单击“提交”  。
 
-## <a name="span-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespancreating-a-device-manifest-submission-package"></a><span id="Creating_a_Device_Manifest_Submission_Package"></span><span id="creating_a_device_manifest_submission_package"></span><span id="CREATING_A_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>创建设备清单提交程序包
+## <a name="span-idcreating_a_device_manifest_submission_packagespanspan-idcreating_a_device_manifest_submission_packagespanspan-idcreating_a_device_manifest_submission_packagespancreating-a-device-manifest-submission-package"></a><span id="Creating_a_Device_Manifest_Submission_Package"></span><span id="creating_a_device_manifest_submission_package"></span><span id="CREATING_A_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>创建设备清单提交程序包
 
 
 设备清单提交程序包是所有电脑设备元数据包提交到硬件开发人员中心时必须采用的格式。
@@ -41,7 +41,7 @@ ms.locfileid: "63334904"
 
 硬件开发人员中心用户界面上批量上载以外的所有文件上载框都将接受设备清单提交程序包。
 
-### <a name="span-iddevicemanifestsubmissionpackagecontentsspanspan-iddevicemanifestsubmissionpackagecontentsspanspan-iddevicemanifestsubmissionpackagecontentsspandevice-manifest-submission-package-contents"></a><span id="Device_Manifest_Submission_Package_Contents"></span><span id="device_manifest_submission_package_contents"></span><span id="DEVICE_MANIFEST_SUBMISSION_PACKAGE_CONTENTS"></span>设备清单提交程序包内容
+### <a name="span-iddevice_manifest_submission_package_contentsspanspan-iddevice_manifest_submission_package_contentsspanspan-iddevice_manifest_submission_package_contentsspandevice-manifest-submission-package-contents"></a><span id="Device_Manifest_Submission_Package_Contents"></span><span id="device_manifest_submission_package_contents"></span><span id="DEVICE_MANIFEST_SUBMISSION_PACKAGE_CONTENTS"></span>设备清单提交程序包内容
 
 每个设备清单提交包都包含以下组成部分：
 
@@ -67,7 +67,7 @@ ms.locfileid: "63334904"
 
  
 
-### <a name="span-idstructureofapcdevicemanifestsubmissionpackagespanspan-idstructureofapcdevicemanifestsubmissionpackagespanspan-idstructureofapcdevicemanifestsubmissionpackagespanstructure-of-a-pc-device-manifest-submission-package"></a><span id="Structure_of_a_PC_Device_Manifest_Submission_Package"></span><span id="structure_of_a_pc_device_manifest_submission_package"></span><span id="STRUCTURE_OF_A_PC_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>电脑设备清单提交包的结构
+### <a name="span-idstructure_of_a_pc_device_manifest_submission_packagespanspan-idstructure_of_a_pc_device_manifest_submission_packagespanspan-idstructure_of_a_pc_device_manifest_submission_packagespanstructure-of-a-pc-device-manifest-submission-package"></a><span id="Structure_of_a_PC_Device_Manifest_Submission_Package"></span><span id="structure_of_a_pc_device_manifest_submission_package"></span><span id="STRUCTURE_OF_A_PC_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>电脑设备清单提交包的结构
 
 设备清单包的结构取决于包含的设备元数据用于电脑、用于移动宽带还是包含对多个区域设置的支持。
 
@@ -124,10 +124,10 @@ N .\PCFiles\ GUID.devicemanifest-ms
 
 有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
 
-## <a name="span-idcreatingpcmetadatasubmissionxmlspanspan-idcreatingpcmetadatasubmissionxmlspancreating-pcmetadatasubmissionxml"></a><span id="creating_pcmetadatasubmission.xml"></span><span id="CREATING_PCMETADATASUBMISSION.XML"></span>创建 PcMetadataSubmission.xml
+## <a name="span-idcreating_pcmetadatasubmissionxmlspanspan-idcreating_pcmetadatasubmissionxmlspancreating-pcmetadatasubmissionxml"></a><span id="creating_pcmetadatasubmission.xml"></span><span id="CREATING_PCMETADATASUBMISSION.XML"></span>创建 PcMetadataSubmission.xml
 
 
-### <a name="span-idpcmetadatasubmissionxmlschemaspanspan-idpcmetadatasubmissionxmlschemaspanspan-idpcmetadatasubmissionxmlschemaspanpcmetadatasubmission-xml-schema"></a><span id="PcMetadataSubmission_XML_Schema"></span><span id="pcmetadatasubmission_xml_schema"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA"></span>PcMetadataSubmission XML 架构
+### <a name="span-idpcmetadatasubmission_xml_schemaspanspan-idpcmetadatasubmission_xml_schemaspanspan-idpcmetadatasubmission_xml_schemaspanpcmetadatasubmission-xml-schema"></a><span id="PcMetadataSubmission_XML_Schema"></span><span id="pcmetadatasubmission_xml_schema"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA"></span>PcMetadataSubmission XML 架构
 
 设备清单提交程序包可包含一个 PcMetadataSubmission.xml 文档，其中包含硬件开发人员中心站点用于验证 PackageInfo.xml 中的计算机硬件 ID 的信息。
 
@@ -308,7 +308,7 @@ PcMetadataSubmission.xml 文档中的数据基于 PcMetadataSubmission XML 架�
 </xs:schema>
 ```
 
-### <a name="span-idpcmetadatasubmissionxmlschemareferencespanspan-idpcmetadatasubmissionxmlschemareferencespanspan-idpcmetadatasubmissionxmlschemareferencespanpcmetadatasubmission-xml-schema-reference"></a><span id="PcMetadataSubmission_XML_Schema_Reference"></span><span id="pcmetadatasubmission_xml_schema_reference"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>PcMetadataSubmission XML 架构参考
+### <a name="span-idpcmetadatasubmission_xml_schema_referencespanspan-idpcmetadatasubmission_xml_schema_referencespanspan-idpcmetadatasubmission_xml_schema_referencespanpcmetadatasubmission-xml-schema-reference"></a><span id="PcMetadataSubmission_XML_Schema_Reference"></span><span id="pcmetadatasubmission_xml_schema_reference"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>PcMetadataSubmission XML 架构参考
 
 PcMetadataSubmission XML 架构定义以下元素和属性：
 
@@ -886,7 +886,7 @@ SKUNumber 元素指定的值必须与目标电脑 SMBIOS 表中“SKU 号”字�
 
 有关 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-### <a name="span-idpcmetadatasubmissionxmlexamplespanspan-idpcmetadatasubmissionxmlexamplespanspan-idpcmetadatasubmissionxmlexamplespanpcmetadatasubmission-xml-example"></a><span id="PcMetadataSubmission_XML_Example"></span><span id="pcmetadatasubmission_xml_example"></span><span id="PCMETADATASUBMISSION_XML_EXAMPLE"></span>PcMetadataSubmission XML 示例
+### <a name="span-idpcmetadatasubmission_xml_examplespanspan-idpcmetadatasubmission_xml_examplespanspan-idpcmetadatasubmission_xml_examplespanpcmetadatasubmission-xml-example"></a><span id="PcMetadataSubmission_XML_Example"></span><span id="pcmetadatasubmission_xml_example"></span><span id="PCMETADATASUBMISSION_XML_EXAMPLE"></span>PcMetadataSubmission XML 示例
 
 以下 XML 文档使用 PcMetadataSubmission XML 架构来指定目标计算机的 PcMetadataSubmission 信息的组成部分。
 
@@ -909,10 +909,10 @@ SKUNumber 元素指定的值必须与目标电脑 SMBIOS 表中“SKU 号”字�
 </PcMetadataSubmission>
 ```
 
-## <a name="span-idcreatinglocaleinfoxmlspanspan-idcreatinglocaleinfoxmlspancreating-localeinfoxml"></a><span id="creating_localeinfo.xml"></span><span id="CREATING_LOCALEINFO.XML"></span>创建 LocaleInfo.xml
+## <a name="span-idcreating_localeinfoxmlspanspan-idcreating_localeinfoxmlspancreating-localeinfoxml"></a><span id="creating_localeinfo.xml"></span><span id="CREATING_LOCALEINFO.XML"></span>创建 LocaleInfo.xml
 
 
-有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](https://msdn.microsoft.com/library/windows/hardware/hh801885.aspx)。
+有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
  
 

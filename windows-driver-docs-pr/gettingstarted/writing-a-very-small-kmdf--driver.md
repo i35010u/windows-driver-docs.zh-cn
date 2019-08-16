@@ -6,17 +6,17 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 899a17605bdc0f2200b95c3a9c6c6889c33fda74
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: d41c513bf9ad3a7ae05b15c59028c85af430e77e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359287"
 ---
 # <a name="write-a-universal-hello-world-driver-kmdf"></a>编写通用 Hello World 驱动程序 (KMDF)
 
 
-本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写非常小的[通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)，然后在单独的计算机上部署并安装驱动程序。 
+本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写非常小的[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)，然后在单独的计算机上部署并安装驱动程序。 
 
 若要开始操作，请确保已安装 [Microsoft Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=698539)、[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) 和 [Windows 驱动程序工具包 (WDK)](https://go.microsoft.com/fwlink/p/?LinkId=733614)。
 
@@ -240,7 +240,7 @@ ms.locfileid: "63371187"
 > [!TIP]
 > 如果在生成驱动程序时看到 `DriverVer set to a date in the future`，则请更改驱动程序项目设置，让 Inf2Cat 设置 `/uselocaltime`。 为此，请使用  “配置属性”->“Inf2Cat”->“常规”->“使用本地时间”。 现在，[Stampinf](../devtest/stampinf-command-options.md) 和 Inf2Cat 都使用本地时间。
 
-## <a name="span-iddeploythedriverspanspan-iddeploythedriverspanspan-iddeploythedriverspandeploy-the-driver"></a><span id="Deploy_the_driver"></span><span id="deploy_the_driver"></span><span id="DEPLOY_THE_DRIVER"></span>部署驱动程序
+## <a name="span-iddeploy_the_driverspanspan-iddeploy_the_driverspanspan-iddeploy_the_driverspandeploy-the-driver"></a><span id="Deploy_the_driver"></span><span id="deploy_the_driver"></span><span id="DEPLOY_THE_DRIVER"></span>部署驱动程序
 
 通常，在测试和调试驱动程序时，调试程序和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”  ，运行驱动程序的计算机称为“目标计算机”  。 目标计算机也称为“测试计算机”  。
 
@@ -335,7 +335,7 @@ ms.locfileid: "63371187"
 
 有关远程调试的详细信息，请参阅[使用 WinDbg 远程调试](../debugger/remode-debugging-using-windbg.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 [开发、测试以及部署驱动程序](https://go.microsoft.com/fwlink/p?linkid=399234)
 

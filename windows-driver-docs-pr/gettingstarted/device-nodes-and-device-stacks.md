@@ -7,19 +7,19 @@ keywords:
 - 设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 693337e45cc83ba7443a1e0f1910aaa24c605591
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 99befc5f4c2bc04430dbdcbc164c3681d5d95621
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371508"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371976"
 ---
 # <a name="device-nodes-and-device-stacks"></a>设备节点和设备堆栈
 
 
 在 Windows 中，设备由即插即用 (PnP) 设备树中的设备节点来表示。 通常，向设备发送 I/O 请求时，一些驱动程序会帮助处理该请求。 这些驱动程序中的每一个都与一个设备对象相关联，这些设备对象在堆栈中进行排列。 设备对象的顺序与它们的关联驱动程序一起被称为设备堆栈。 每个设备节点都有自己的设备堆栈。
 
-## <a name="span-iddevicenodesandtheplugandplaydevicetreespanspan-iddevicenodesandtheplugandplaydevicetreespanspan-iddevicenodesandtheplugandplaydevicetreespandevice-nodes-and-the-plug-and-play-device-tree"></a><span id="Device_nodes_and_the_Plug_and_Play_device_tree"></span><span id="device_nodes_and_the_plug_and_play_device_tree"></span><span id="DEVICE_NODES_AND_THE_PLUG_AND_PLAY_DEVICE_TREE"></span>设备节点和即插即用设备树
+## <a name="span-iddevice_nodes_and_the_plug_and_play_device_treespanspan-iddevice_nodes_and_the_plug_and_play_device_treespanspan-iddevice_nodes_and_the_plug_and_play_device_treespandevice-nodes-and-the-plug-and-play-device-tree"></a><span id="Device_nodes_and_the_Plug_and_Play_device_tree"></span><span id="device_nodes_and_the_plug_and_play_device_tree"></span><span id="DEVICE_NODES_AND_THE_PLUG_AND_PLAY_DEVICE_TREE"></span>设备节点和即插即用设备树
 
 
 Windows 在称为*即插即用设备树*或简称为*设备树*的树结构中整理设备。 通常，设备树中的节点表示复合设备上的某个设备或单个函数。 但是，某些节点表示与物理设备无关联的软件组件。
@@ -34,10 +34,10 @@ Windows 在称为*即插即用设备树*或简称为*设备树*的树结构中�
 
 将节点视为表示设备还是总线取决于你的观点。 例如，你可以将显示适配器视为在准备将帧显示在屏幕上时扮演重要角色的设备。 但是，你也可以将显示适配器视为可以检测和枚举所连接监视器的总线。
 
-## <a name="span-iddeviceobjectsanddevicestacksspanspan-iddeviceobjectsanddevicestacksspanspan-iddeviceobjectsanddevicestacksspandevice-objects-and-device-stacks"></a><span id="Device_objects_and_device_stacks"></span><span id="device_objects_and_device_stacks"></span><span id="DEVICE_OBJECTS_AND_DEVICE_STACKS"></span>设备对象和设备堆栈
+## <a name="span-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspandevice-objects-and-device-stacks"></a><span id="Device_objects_and_device_stacks"></span><span id="device_objects_and_device_stacks"></span><span id="DEVICE_OBJECTS_AND_DEVICE_STACKS"></span>设备对象和设备堆栈
 
 
-“设备对象”  是 [**DEVICE\_OBJECT**](https://msdn.microsoft.com/library/windows/hardware/ff543147) 结构的实例。 PnP 设备树中的每个设备节点都有设备对象的有序列表，这些设备对象中的每一个都与一个驱动程序相关联。 设备对象的有序列表与它们的关联驱动程序一起被称为设备节点的“设备堆栈”  。
+“设备对象”  是 [**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object) 结构的实例。 PnP 设备树中的每个设备节点都有设备对象的有序列表，这些设备对象中的每一个都与一个驱动程序相关联。 设备对象的有序列表与它们的关联驱动程序一起被称为设备节点的“设备堆栈”  。
 
 你可以采用多种方式考虑设备堆栈。 就最正式的意义而言，设备堆栈为（设备对象、驱动程序）对的有序列表。 但是，在某些上下文中，将设备堆栈视为设备对象的有序列表可能会有用。 在其他上下文中，将设备堆栈视为驱动程序的有序列表可能会有用。
 
@@ -47,7 +47,7 @@ Windows 在称为*即插即用设备树*或简称为*设备树*的树结构中�
 
 ![一个示意图，其中显示了 proseware gizmo 和 pci 设备节点的设备堆栈中有序设备对象](images/prosewaredevicenode01.png)
 
-## <a name="span-idhowdoesadevicestackgetconstructedspanspan-idhowdoesadevicestackgetconstructedspanspan-idhowdoesadevicestackgetconstructedspanhow-does-a-device-stack-get-constructed"></a><span id="How_does_a_device_stack_get_constructed_"></span><span id="how_does_a_device_stack_get_constructed_"></span><span id="HOW_DOES_A_DEVICE_STACK_GET_CONSTRUCTED_"></span>如何构建设备堆栈？
+## <a name="span-idhow_does_a_device_stack_get_constructed_spanspan-idhow_does_a_device_stack_get_constructed_spanspan-idhow_does_a_device_stack_get_constructed_spanhow-does-a-device-stack-get-constructed"></a><span id="How_does_a_device_stack_get_constructed_"></span><span id="how_does_a_device_stack_get_constructed_"></span><span id="HOW_DOES_A_DEVICE_STACK_GET_CONSTRUCTED_"></span>如何构建设备堆栈？
 
 
 在启动过程中，PnP 管理器请求每个总线的驱动程序枚举连接到该总线的子设备。 例如，PnP 管理器请求 PCI 总线驱动程序 (Pci.sys) 枚举连接到该 PCI 总线的设备。 为了响应此请求，Pci.sys 会为连接到 PCI 总线的每个设备创建一个设备对象。 这些设备对象中的每一个都被称为“物理设备对象”  (PDO)。 在 Pci.sys 创建该组 PDO 不久之后，设备树类似于下图中的一个设备树。
@@ -66,14 +66,14 @@ PDO 始终为设备堆栈中的底部设备对象。 这缘于设备堆栈的构
 
  
 
-## <a name="span-idbusdriversspanspan-idbusdriversspanspan-idbusdriversspanbus-drivers"></a><span id="Bus_drivers"></span><span id="bus_drivers"></span><span id="BUS_DRIVERS"></span>总线驱动程序
+## <a name="span-idbus_driversspanspan-idbus_driversspanspan-idbus_driversspanbus-drivers"></a><span id="Bus_drivers"></span><span id="bus_drivers"></span><span id="BUS_DRIVERS"></span>总线驱动程序
 
 
 在上图中，你可以看到驱动程序 Pci.sys 扮演两个角色。 第一，Pci.sys 与 PCI 总线设备节点中的 FDO 关联。 事实上，Pci.sys 已在 PCI 总线设备节点中创建 FDO。 因此，Pci.sys 为 PCI 总线的函数驱动程序。 第二，Pci.sys 与 PCI 总线节点的每个子节点中的 PDO 关联。 谨记 Pci.sys 已为子设备创建 PDO。 为设备节点创建 PDO 的驱动程序称为该节点的“总线驱动程序”  。
 
 如果你的参考点为 PCI 总线，则 Pci.sys 为函数驱动程序。 但如果你的参考点为 Proseware Gizmo 设备，则 Pci.sys 为总线驱动程序。 此双重角色为 PnP 设备树中的典型角色。 作为总线的函数驱动程序的驱动程序也是总线子设备的总线驱动程序。
 
-## <a name="span-iduser-modedevicestacksspanspan-iduser-modedevicestacksspanspan-iduser-modedevicestacksspanuser-mode-device-stacks"></a><span id="User-mode_device_stacks"></span><span id="user-mode_device_stacks"></span><span id="USER-MODE_DEVICE_STACKS"></span>用户模式设备堆栈
+## <a name="span-iduser-mode_device_stacksspanspan-iduser-mode_device_stacksspanspan-iduser-mode_device_stacksspanuser-mode-device-stacks"></a><span id="User-mode_device_stacks"></span><span id="user-mode_device_stacks"></span><span id="USER-MODE_DEVICE_STACKS"></span>用户模式设备堆栈
 
 
 到目前为止，我们已介绍了内核模式设备堆栈。 即，堆栈中的驱动程序在内核模式下运行，设备对象映射到系统空间，该空间是唯一一个以内核模式运行的代码能够使用的地址空间。 有关内核模式与用户模式之间差异的信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。
@@ -84,7 +84,7 @@ PDO 始终为设备堆栈中的底部设备对象。 这缘于设备堆栈的构
 
 ![一个示意图，其中显示了用户模式和内核模式设备堆栈](images/userandkerneldevicestacks01.png)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [适用于所有驱动程序开发人员的概念](concepts-and-knowledge-for-all-driver-developers.md)

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/17/2017
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f48fcef5294e075858c62288c287a451f95fff0
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: c618fd5e8b87e211dbb97985539661a576522ccb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335045"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353908"
 ---
 # <a name="download-the-cab-file-for-an-oem-hardware-error"></a>下载 OEM 硬件错误的 CAB 文件
 
@@ -31,7 +31,7 @@ ms.locfileid: "63335045"
 可以在 Microsoft Store 分析 API 中使用[获取 OEM 硬件错误报告数据](get-oem-hardware-error-reporting-data.md)和[获取 OEM 硬件错误的详细信息](get-details-for-an-oem-hardware-error.md)方法来获取与 OEM 硬件错误有关的其他信息。
 
 > [!NOTE]
-> 此方法仅可供属于[合作伙伴中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
+> 此方法仅可供属于[合作伙伴中心计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
 
 ## <a name="prerequisites"></a>必备条件
 

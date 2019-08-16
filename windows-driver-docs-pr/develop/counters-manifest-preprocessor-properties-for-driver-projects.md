@@ -4,25 +4,25 @@ title: 驱动程序项目的计数器清单预处理器属性
 description: 设置分析和验证计数器清单的 CTRPP 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e66c284106594c31d6499f929abb42f1129c5ca
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f33684b24b51557b594f9153c82048a3e396cae3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382540"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370820"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>驱动程序项目的计数器清单预处理器属性
 
-设置分析和验证计数器清单的 [CTRPP](https://msdn.microsoft.com/library/windows/desktop/aa372128) 工具的属性。 有关使用性能计数器的信息，请参阅[性能计数器](https://msdn.microsoft.com/Library/Windows/Desktop/aa373083)。 有关在内核模式 Windows 驱动程序中使用性能计数器的信息，请参阅[内核模式性能监视](https://msdn.microsoft.com/Library/Windows/Hardware/Ff548159)。
+设置分析和验证计数器清单的 [CTRPP](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp) 工具的属性。 有关使用性能计数器的信息，请参阅[性能计数器](https://docs.microsoft.com/windows/desktop/PerfCtrs/performance-counters-portal)。 有关在内核模式 Windows 驱动程序中使用性能计数器的信息，请参阅[内核模式性能监视](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-mode-performance-monitoring)。
 
-## <a name="span-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspansetting-the-counters-manifest-preprocessor-properties-for-driver-projects"></a><span id="Setting_the_Counters_Manifest_Preprocessor_properties_for_driver_projects"></span><span id="setting_the_counters_manifest_preprocessor_properties_for_driver_projects"></span><span id="SETTING_THE_COUNTERS_MANIFEST_PREPROCESSOR_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的计数器清单预处理器属性
+## <a name="span-idsetting_the_counters_manifest_preprocessor_properties_for_driver_projectsspanspan-idsetting_the_counters_manifest_preprocessor_properties_for_driver_projectsspanspan-idsetting_the_counters_manifest_preprocessor_properties_for_driver_projectsspansetting-the-counters-manifest-preprocessor-properties-for-driver-projects"></a><span id="Setting_the_Counters_Manifest_Preprocessor_properties_for_driver_projects"></span><span id="setting_the_counters_manifest_preprocessor_properties_for_driver_projects"></span><span id="SETTING_THE_COUNTERS_MANIFEST_PREPROCESSOR_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的计数器清单预处理器属性
 
 
 1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
 2.  在驱动程序项目的属性页中，依次单击“配置属性”  和“计数器清单预处理器属性”  。
 3.  设置项目属性。
 
-如果你想要将此属性页添加到你的项目，以便可以在生成过程中运行 CTRPP 工具，请参阅 [WDK 和 Visual Studio 生成环境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)和 [Ctrpp 任务](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454206)。
+如果你想要将此属性页添加到你的项目，以便可以在生成过程中运行 CTRPP 工具，请参阅 [WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)和 [Ctrpp 任务](https://docs.microsoft.com/windows-hardware/drivers/devtest/ctrpp-task)。
 
 <table>
 <colgroup>
@@ -42,7 +42,7 @@ ms.locfileid: "63382540"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span>其他选项</p></td>
-<td align="left"><p>向 <a href="https://msdn.microsoft.com/Library/Windows/Desktop/aa372128" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128)"><strong>CTRPP</strong></a> 工具指定其他选项。</p></td>
+<td align="left"><p>向 <a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> 工具指定其他选项。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Backward_Compatibility"></span><span id="backward_compatibility"></span><span id="BACKWARD_COMPATIBILITY"></span>向后兼容</p></td>
@@ -50,7 +50,7 @@ ms.locfileid: "63382540"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Enable_Legacy"></span><span id="enable_legacy"></span><span id="ENABLE_LEGACY"></span>启用旧版</p></td>
-<td align="left"><p>还原为使用 Windows Vista 代码模板生成代码。 此选项会让 <a href="https://msdn.microsoft.com/Library/Windows/Desktop/aa372128" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128)"><strong>CTRPP</strong></a> 生成四个输出文件：两个头文件（.h、_r.h）、一个资源文件 (.rc) 和一个源代码文件 (c)。 (<strong>-legacy</strong>)</p></td>
+<td align="left"><p>还原为使用 Windows Vista 代码模板生成代码。 此选项会让 <a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> 生成四个输出文件：两个头文件（.h、_r.h）、一个资源文件 (.rc) 和一个源代码文件 (c)。 (<strong>-legacy</strong>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Generate_header_file_for_containing_counter_names_and_GUIDs"></span><span id="generate_header_file_for_containing_counter_names_and_guids"></span><span id="GENERATE_HEADER_FILE_FOR_CONTAINING_COUNTER_NAMES_AND_GUIDS"></span>生成包含计数器名称和 GUID 的头文件</p></td>
@@ -102,14 +102,14 @@ ms.locfileid: "63382540"
 ## <a name="span-idcommentspanspan-idcommentspanspan-idcommentspancomment"></a><span id="Comment"></span><span id="comment"></span><span id="COMMENT"></span>备注
 
 
-工具所生成文件的默认名称基于你传递到 [**CTRPP**](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128) 工具的清单文件的名称。
+工具所生成文件的默认名称基于你传递到 [**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp) 工具的清单文件的名称。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [**CTRPP**](https://msdn.microsoft.com/Library/Windows/Desktop/aa372128)
-* [性能计数器](https://msdn.microsoft.com/Library/Windows/Desktop/aa373083)
-* [内核模式性能监视](https://msdn.microsoft.com/Library/Windows/Hardware/Ff548159)
+* [**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)
+* [性能计数器](https://docs.microsoft.com/windows/desktop/PerfCtrs/performance-counters-portal)
+* [内核模式性能监视](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-mode-performance-monitoring)
  
 
  

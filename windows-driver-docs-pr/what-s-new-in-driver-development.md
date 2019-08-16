@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f60441488e80443a78e6114285601c6cfe1c096b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4c8f9325984b275a24087811991074b7212ea6a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368029"
 ---
 # <a name="top"></a>驱动程序开发中的新增功能
 
@@ -456,7 +456,7 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 
 Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
-* **光线跟踪**：为了支持硬件加速的光线跟踪，我们在开发 Direct3D API 的同时开发了新的 Direct3D DDI。 示例 DDI 包括：[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 有关光线跟踪的详细信息，请参阅[宣布推出 Microsoft DirectX 光线跟踪](https://blogs.msdn.microsoft.com/directx/2018/03/19/announcing-microsoft-directx-raytracing/)。
+* **光线跟踪**：为了支持硬件加速的光线跟踪，我们在开发 Direct3D API 的同时开发了新的 Direct3D DDI。 示例 DDI 包括：[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 有关光线跟踪的详细信息，请参阅[宣布推出 Microsoft DirectX 光线跟踪](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)。
 
 * **通用驱动程序要求**：WDDM 2.5 驱动程序需要确保其 DirectX11 UMD、DirectX12 UMD、KMD 以及这些组件加载的其他任何 DLL 遵守通用 API。
 
@@ -575,7 +575,7 @@ MBBCx 电源管理方法已简化。
 
 例如，根据热量状况控制设备的充电，使设备不会过热。
 
-* [编写 USB 类型 C 策略管理器客户端驱动程序](https://microsoft.com/windows-hardware/drivers/usbcon/policy-manager-client)
+* [编写 USB 类型 C 策略管理器客户端驱动程序](https://www.microsoft.com/windows-hardware/drivers/usbcon/policy-manager-client)
 * [Usbpmapi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbpmapi/) 中提供了新的 API
 
 **适用于模拟 USB 设备 (UDE) - 1.1 和 USB 主控制器 (Ucx) 1.5 的新版类扩展：**
@@ -946,7 +946,7 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 * [USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_stop_tracking_for_time_sync_information)
 * [USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_frame_number_and_qpc_for_time_sync_information)
 
-#### <a name="ioctlucmtcpciportcontrollerdisplayportdisplayoutstatuschanged"></a>IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED
+#### <a name="ioctl_ucmtcpci_port_controller_displayport_display_out_status_changed"></a>IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED
 
 [IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmtcpciportcontrollerrequests/ni-ucmtcpciportcontrollerrequests-ioctl_ucmtcpci_port_controller_displayport_display_out_status_changed) 请求是 USB 类型 C 端口控制器接口框架扩展中的新请求。 此请求向客户端驱动程序告知 DisplayPort 连接的显示输出状态已更改。
 
@@ -1023,7 +1023,7 @@ Windows 10 版本 1703 中的网络驱动程序开发更新包括名为“流套
 
 ### <a name="usb-1703"></a>USB
 
-Windows 10 版本 1703 提供新的类扩展 (UcmTcpciCx.sys) 用于支持通用串行总线类型 C 端口控制器接口规范。 USB 类型 C 连接器驱动程序不需要保留任何内部的 PD/类型 C 状态。 管理 USB C 型连接器和 USB 电源输送 (PD) 状态机时存在的复杂性由系统处理。 你只需编写一个客户端驱动程序，以便通过该类扩展将硬件事件传送给系统即可。 有关详细信息，请参阅 [USB 类型 C 控制器接口驱动程序类扩展参考](https://msdn.microsoft.com/library/windows/hardware/mt805826)。
+Windows 10 版本 1703 提供新的类扩展 (UcmTcpciCx.sys) 用于支持通用串行总线类型 C 端口控制器接口规范。 USB 类型 C 连接器驱动程序不需要保留任何内部的 PD/类型 C 状态。 管理 USB C 型连接器和 USB 电源输送 (PD) 状态机时存在的复杂性由系统处理。 你只需编写一个客户端驱动程序，以便通过该类扩展将硬件事件传送给系统即可。 有关详细信息，请参阅 [USB 类型 C 控制器接口驱动程序类扩展参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))。
 
 ## <a name="whats-new-in-windows-10-version-1607"></a>Windows 10 版本 1607 中的新增功能
 
@@ -1146,8 +1146,8 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 
 在 Windows 10 中，新的类扩展模块 Wudfsmcclassext.dll 可以处理复杂的驱动程序操作。 特定于智能卡硬件的任务将由客户端驱动程序处理。 客户端驱动程序可以使用新的编程接口将有关智能卡的信息发送到该类扩展，使它可以处理请求。 这些驱动程序编程接口包含在 Windows 的基于 OneCoreUAP 的版本中。
 
-* [智能卡客户端驱动程序事件回调函数](https://msdn.microsoft.com/library/windows/hardware/dn946583)
-* [智能卡客户端驱动程序支持方法](https://msdn.microsoft.com/library/windows/hardware/dn946584)
+* [智能卡客户端驱动程序事件回调函数](https://docs.microsoft.com/previous-versions/dn946583(v=vs.85))
+* [智能卡客户端驱动程序支持方法](https://docs.microsoft.com/previous-versions/dn946584(v=vs.85))
 
 ### <a name="storage-1507"></a>存储
 

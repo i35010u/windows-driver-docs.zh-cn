@@ -5,12 +5,12 @@ ms.assetid: 30D23457-6BE1-4A4C-B69A-3C8C0A8E093A
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ed716cdc15cfabf29d78a815ed220fa657ba4e
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 7caa3024c1a7f57b5d96ef3b82aa1afaf60f59b1
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334944"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161353"
 ---
 # <a name="publishing-restrictions"></a>发布限制
 
@@ -63,7 +63,7 @@ ms.locfileid: "63334944"
 <td><p>类代码声明</p></td>
 <td><p>\CLASS</p>
 <p>\CC</p>
-<p>&amp;</p></td>
+<p>&</p></td>
 </tr>
 <tr class="even">
 <td><p>分为两部分的 HWID</p></td>

@@ -3,12 +3,12 @@ title: 通用驱动程序方案
 description: 介绍了 DCHU 通用驱动程序示例如何应用 DCHU 设计原则（声明性、组件化、硬件支持应用 [HSA]，以及通用 API 合规性）。
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 55ab2413f70f424fff93a4e4967c6b1063087f4c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: da943cd371aeb509cb346afd13ab78cae06f9280
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364181"
 ---
 # <a name="universal-driver-scenarios"></a>通用驱动程序方案
 
@@ -122,7 +122,7 @@ osrfx2_DCHU_componentsoftware.exe
 
 [Win32 应用的源代码](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_extension_loose/osrfx2_DCHU_componentsoftware) 包含在 DCHU 示例中。
 
-请注意，由于 [Windows 硬件开发人员中心仪表板](https://developer.microsoft.com/dashboard/Registration/Hardware)的目标设置，该组件驱动程序包仅可在桌面 SKU 上分发。  有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
+请注意，由于 [Windows 硬件开发人员中心仪表板](https://partner.microsoft.com/dashboard/Registration/Hardware)的目标设置，该组件驱动程序包仅可在桌面 SKU 上分发。  有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
 
 ## <a name="allow-communication-with-a-hardware-support-app"></a>允许与硬件支持应用进行通信
 
@@ -246,7 +246,7 @@ AddReg = Example_Add_Interface_Section.AddReg
 [Example_Add_Interface_Section.AddReg]
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
-以上示例使用空的标志值，该值会生成 REG_SZ 注册表值。 这样就会将 **%13%** 转换成完全限定的用户模式文件路径。 在许多情况下，最好是将路径设置为某个环境变量的相对值。 如果使用标志值 **0x20000**，则注册表值为类型 REG_EXPAND_SZ，而 **%13%** 则会转换为一个包含相应环境变量的路径，该变量用于抽象路径的位置。 检索此注册表值时，请调用 [**ExpandEnvironmentStrings**](https://msdn.microsoft.com/library/windows/desktop/ms724265) 来解析路径中的环境变量。 
+以上示例使用空的标志值，该值会生成 REG_SZ 注册表值。 这样就会将 **%13%** 转换成完全限定的用户模式文件路径。 在许多情况下，最好是将路径设置为某个环境变量的相对值。 如果使用标志值 **0x20000**，则注册表值为类型 REG_EXPAND_SZ，而 **%13%** 则会转换为一个包含相应环境变量的路径，该变量用于抽象路径的位置。 检索此注册表值时，请调用 [**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) 来解析路径中的环境变量。 
 
 如果此值需由内核模式组件读取，则此值应该是 REG_SZ 值。 内核模式组件在读取该值时应该在其前面预置 `\??\`，然后再将其传递给 [**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenfile) 之类的 API。 
 
@@ -260,7 +260,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 另外，可以使用 [**CM_Register_Notification**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) 来获取设备接口的到达和删除通知，这样就可以在启用接口时通知代码，让代码随后检索状态。 在设备接口类（在上述 API 中使用）中可能有多个设备接口。  检查这些接口，确定哪个接口是适合读取设置的接口。
 
-找到正确的设备接口以后，调用 [**CM_Open_Device_Interface_Key**](https://msdn.microsoft.com/library/windows/hardware/hh780223(v=vs.85).aspx)。
+找到正确的设备接口以后，调用 [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)。
 
 内核模式代码可以检索从其获取状态的设备接口的符号链接名称。 为此，请调用 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)，以便注册获取相应设备接口类的设备接口通知。  也可调用 [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces)，获取系统中当前设备接口的列表。  在设备接口类（在上述 API 中使用）中可能有多个设备接口。  检查这些接口，确定哪个接口是应该读取设置的正确接口。
 
@@ -271,7 +271,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 ## <a name="summary"></a>摘要
 
-下图显示了 Fabrikam 和 Contoso 为其通用 Windows 驱动程序创建的驱动程序包。  在松散耦合的示例中，他们将在 [Windows 硬件开发人员中心仪表板](https://developer.microsoft.com/dashboard/Registration/Hardware)上分别提交三个包：一个是基准驱动程序包，一个是扩展驱动程序包，还有一个是组件驱动程序包。  在紧密耦合的示例中，他们将提交两个包：基准驱动程序包和扩展/组件驱动程序包。
+下图显示了 Fabrikam 和 Contoso 为其通用 Windows 驱动程序创建的驱动程序包。  在松散耦合的示例中，他们将在 [Windows 硬件开发人员中心仪表板](https://partner.microsoft.com/dashboard/Registration/Hardware)上分别提交三个包：一个是基准驱动程序包，一个是扩展驱动程序包，还有一个是组件驱动程序包。  在紧密耦合的示例中，他们将提交两个包：基准驱动程序包和扩展/组件驱动程序包。
 
 ![扩展、基准和组件驱动程序包](images/universal-scenarios.png)
 

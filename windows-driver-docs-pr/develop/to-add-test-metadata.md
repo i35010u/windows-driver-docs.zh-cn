@@ -4,22 +4,22 @@ title: 如何添加测试元数据
 description: 使用 Windows 驱动程序工具包 (WDK) 以及测试创作和执行框架 (TAEF) 来创建适用于 Windows 8 的测试内容。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff7f628c3c325724fbd9c433a04bb450ddac8eb8
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: d28281ed52474270cdd340d9bd9cf7e03db7e4a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63344119"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364207"
 ---
 # <a name="how-to-add-test-metadata"></a>如何添加测试元数据
 
-对于 Windows 8，Windows 驱动程序工具包 (WDK) 使用[测试创作和执行框架 (TAEF)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725) 来创建测试内容。 TAEF 测试是以包含多个方法的动态链接库 (DLL) 形式实现的对象，其中的每个方法均映射到特定的测试方案。 TAEF 对象将相关方法合并为一个测试组。 对于每个测试，均有一组描述该测试的元数据。 为了提高测试可移植性和封装，TAEF 将测试元数据存储在测试对象本身中。 在使用驱动程序测试模板创建自己的驱动程序测试时，你需要添加该元数据，以便驱动程序测试可用，并可以使用 Visual Studio 部署。
+对于 Windows 8，Windows 驱动程序工具包 (WDK) 使用[测试创作和执行框架 (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index) 来创建测试内容。 TAEF 测试是以包含多个方法的动态链接库 (DLL) 形式实现的对象，其中的每个方法均映射到特定的测试方案。 TAEF 对象将相关方法合并为一个测试组。 对于每个测试，均有一组描述该测试的元数据。 为了提高测试可移植性和封装，TAEF 将测试元数据存储在测试对象本身中。 在使用驱动程序测试模板创建自己的驱动程序测试时，你需要添加该元数据，以便驱动程序测试可用，并可以使用 Visual Studio 部署。
 
 ### <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 -   使用其中一个驱动程序测试模板编写的驱动程序测试的源代码。 有关信息，请参阅[如何使用驱动程序测试模板编写驱动程序测试](how-to-write-a-driver-test-.md)。
 
-### <a name="span-idtoaddtestmetadataattributesspanspan-idtoaddtestmetadataattributesspanspan-idtoaddtestmetadataattributesspanto-add-test-metadata-attributes"></a><span id="To_add_test_metadata_attributes"></span><span id="to_add_test_metadata_attributes"></span><span id="TO_ADD_TEST_METADATA_ATTRIBUTES"></span>添加测试元数据属性
+### <a name="span-idto_add_test_metadata_attributesspanspan-idto_add_test_metadata_attributesspanspan-idto_add_test_metadata_attributesspanto-add-test-metadata-attributes"></a><span id="To_add_test_metadata_attributes"></span><span id="to_add_test_metadata_attributes"></span><span id="TO_ADD_TEST_METADATA_ATTRIBUTES"></span>添加测试元数据属性
 
 1.  将所需的测试属性元数据添加到测试的源文件。
 2.  例如，如果你使用“驱动程序测试”模板创建 SurpriseRemove 测试的版本，则添加以下元数据。 编辑测试说明、显示名称、类别和结果文件属性。
@@ -375,9 +375,9 @@ ms.locfileid: "63344119"
     </table>
 
     <span id="Deploymentitem"></span><span id="deploymentitem"></span><span id="DEPLOYMENTITEM"></span>**Deploymentitem**  
-    将文件和/或文件夹标识为测试依赖项。 这些可能包含运行测试所需的任何资源。 有关使用此元数据的详细信息，请参阅 [DeploymentItem 元数据](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439604)。
+    将文件和/或文件夹标识为测试依赖项。 这些可能包含运行测试所需的任何资源。 有关使用此元数据的详细信息，请参阅 [DeploymentItem 元数据](https://docs.microsoft.com/windows-hardware/drivers/taef/deploymentitem-metadata)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [如何使用“驱动程序测试”模板编写驱动程序测试](how-to-write-a-driver-test-.md)

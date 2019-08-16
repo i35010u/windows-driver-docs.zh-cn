@@ -4,19 +4,19 @@ description: 发送到设备驱动程序的大部分请求都打包在 I/O 请�
 ms.assetid: 8D55CB83-C50A-48B8-9379-ECF2CF30AEE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41d50497c8343d8ae5f7a54b77d97a86f06f0d2a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 0813e3d13bc4a74b2331dbd4965ab4fd60ea31e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63371330"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371987"
 ---
 # <a name="driver-stacks"></a>驱动程序堆栈
 
 
 发送到设备驱动程序的大部分请求都打包在 [I/O 请求数据包](i-o-request-packets.md) (IRP) 中。 每个设备都用设备节点表示，每个设备节点都有一个设备堆栈。 有关详细信息，请参阅[设备节点和设备堆栈](device-nodes-and-device-stacks.md)。 若要将读、写或控制请求发送至某个设备，I/O 管理器会查找设备的设备节点，然后将 IRP 发送至该节点的设备堆栈。 有时，处理 I/O 请求的过程中会涉及到多个设备堆栈。 无论涉及了多少个设备堆栈，参与 I/O 请求的驱动程序整体序列称为请求的“驱动程序堆栈”  。 我们还使用术语“驱动程序堆栈”  来引用特定技术的分层驱动程序组。
 
-## <a name="span-idiorequeststhatareprocessedbyseveraldevicestacksspanspan-idiorequeststhatareprocessedbyseveraldevicestacksspanspan-idiorequeststhatareprocessedbyseveraldevicestacksspanio-requests-that-are-processed-by-several-device-stacks"></a><span id="I_O_requests_that_are_processed_by_several_device_stacks"></span><span id="i_o_requests_that_are_processed_by_several_device_stacks"></span><span id="I_O_REQUESTS_THAT_ARE_PROCESSED_BY_SEVERAL_DEVICE_STACKS"></span>由多个设备堆栈处理的 I/O 请求
+## <a name="span-idi_o_requests_that_are_processed_by_several_device_stacksspanspan-idi_o_requests_that_are_processed_by_several_device_stacksspanspan-idi_o_requests_that_are_processed_by_several_device_stacksspanio-requests-that-are-processed-by-several-device-stacks"></a><span id="I_O_requests_that_are_processed_by_several_device_stacks"></span><span id="i_o_requests_that_are_processed_by_several_device_stacks"></span><span id="I_O_REQUESTS_THAT_ARE_PROCESSED_BY_SEVERAL_DEVICE_STACKS"></span>由多个设备堆栈处理的 I/O 请求
 
 
 在某些情形下，处理 IRP 的过程中会涉及到多个设备堆栈。 下图说明了处理单个 IRP 的过程中涉及到四个设备堆栈的情形。
@@ -34,7 +34,7 @@ ms.locfileid: "63371330"
 
     Usbuhci.sys 为微型端口驱动程序，Usbport.sys 为端口驱动程序。 （微型端口、端口）对扮演单个驱动程序的角色。 在此情形下，微型端口驱动程序和端口驱动程序都由 Microsoft 编写。 （Usbuhci.sys、Usbport.sys）对为“USB 根集线器”节点的 PDO 驱动程序，（Usbuhci.sys、Usbport.sys）对也为“USB 主控制器”节点的 FDO 驱动程序。 （Usbuhci.sys、Usbport.sys）对执行与主控制器硬件的实际通信，该硬件反过来与物理 USB 存储设备通信。
 
-## <a name="span-idthedriverstackforaniorequestspanspan-idthedriverstackforaniorequestspanspan-idthedriverstackforaniorequestspanthe-driver-stack-for-an-io-request"></a><span id="The_driver_stack_for_an_I_O_request"></span><span id="the_driver_stack_for_an_i_o_request"></span><span id="THE_DRIVER_STACK_FOR_AN_I_O_REQUEST"></span>I/O 请求的驱动程序堆栈
+## <a name="span-idthe_driver_stack_for_an_i_o_requestspanspan-idthe_driver_stack_for_an_i_o_requestspanspan-idthe_driver_stack_for_an_i_o_requestspanthe-driver-stack-for-an-io-request"></a><span id="The_driver_stack_for_an_I_O_request"></span><span id="the_driver_stack_for_an_i_o_request"></span><span id="THE_DRIVER_STACK_FOR_AN_I_O_REQUEST"></span>I/O 请求的驱动程序堆栈
 
 
 考虑参与上图中所说明 I/O 请求的四个驱动程序的序列。 我们可以通过关注驱动程序而非设备节点及其单个设备堆栈来获取该序列的其他视图。 下图采用从上到下的顺序说明驱动程序。 注意，Disk.sys 与一个设备对象关联，但其他三个驱动程序中的每个都与两个设备对象关联。
@@ -45,7 +45,7 @@ ms.locfileid: "63371330"
 
 注意，I/O 请求的驱动程序堆栈与设备节点的设备堆栈完全不同。 还注意，I/O 请求的驱动程序堆栈不必要留在设备树的某一分支中。
 
-## <a name="span-idtechnologydriverstacksspanspan-idtechnologydriverstacksspanspan-idtechnologydriverstacksspantechnology-driver-stacks"></a><span id="Technology_driver_stacks"></span><span id="technology_driver_stacks"></span><span id="TECHNOLOGY_DRIVER_STACKS"></span>技术驱动程序堆栈
+## <a name="span-idtechnology_driver_stacksspanspan-idtechnology_driver_stacksspanspan-idtechnology_driver_stacksspantechnology-driver-stacks"></a><span id="Technology_driver_stacks"></span><span id="technology_driver_stacks"></span><span id="TECHNOLOGY_DRIVER_STACKS"></span>技术驱动程序堆栈
 
 
 考虑上图中显示的 I/O 请求的驱动程序堆栈。 如果我们为每个驱动程序提供友好名称并对该图做一些细小更改，则会有一个框图与 Windows 驱动程序工具包 (WDK) 文档中出现的多个框图类似。
@@ -60,11 +60,11 @@ ms.locfileid: "63371330"
 
 显示特定技术或操作系统的特定组件或一部分的所有驱动程序的框图称为“技术驱动程序堆栈”  。 通常，会为技术驱动程序堆栈命名，如 USB 核心驱动程序堆栈、存储堆栈、1394 驱动程序堆栈以及音频驱动程序堆栈。
 
-**注意**  本主题中的 USB 核心框图显示了说明 USB 1.0 和 2.0 技术驱动程序堆栈的几种可能方法之一。 有关 USB 1.0、2.0 以及 3.0 驱动程序堆栈的正式图，请参阅 [USB 驱动程序堆栈体系结构](https://msdn.microsoft.com/library/windows/hardware/hh406256)。
+**注意**  本主题中的 USB 核心框图显示了说明 USB 1.0 和 2.0 技术驱动程序堆栈的几种可能方法之一。 有关 USB 1.0、2.0 以及 3.0 驱动程序堆栈的正式图，请参阅 [USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设备节点和设备堆栈](device-nodes-and-device-stacks.md)

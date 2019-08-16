@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/04/2018
 keywords: windows 10, uwp, Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 181733bd82bcfd1684e7b89b2dafff01feb4cb4d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: e1fbd6444a70d54344e2c4b6602abc99e72c6c60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335074"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353886"
 ---
 # <a name="get-details-for-an-oem-hardware-error"></a>获取 OEM 硬件错误的详细信息
 
@@ -30,7 +30,7 @@ ms.locfileid: "63335074"
 在 Microsoft Store 分析 API 中使用此方法，可以 JSON 格式获取特定 OEM 硬件错误的详细数据。 可以使用此方法之前，必须首先使用[获取 OEM 硬件错误报告数据](get-oem-hardware-error-reporting-data.md)方法来检索希望获取其详细信息的错误的 ID。
 
 > [!NOTE]
-> 此方法仅可供属于 [Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
+> 此方法仅可供属于 [Windows 硬件开发人员中心计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
 
 ## <a name="prerequisites"></a>必备条件
 

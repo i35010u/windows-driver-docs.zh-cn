@@ -5,12 +5,12 @@ ms.assetid: 3F433F0A-422C-46E5-B59E-8DB4AC537F01
 ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 577e467d1248a0b8e734136e63c65b6645792e2c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 84d0d90055be8c79438ff4985119678c66f46235
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337318"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353940"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
 
@@ -67,7 +67,7 @@ ms.locfileid: "63337318"
    <tr class="odd">
    <td><p>设备元数据类别</p></td>
    <td><p>基于设备类别从默认图标列表中为你的设备选择图标。 这确定哪个图标显示在“设备和打印机”中。 如果你的设备不应出现，请选择“内部设备”。</p>
-   <p>有关使用 Windows Device Stage 提供丰富体验的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/br230800.aspx" data-raw-source="[Device Metadata](https://msdn.microsoft.com/library/windows/hardware/br230800.aspx)">设备元数据</a>。</p></td>
+   <p>有关使用 Windows Device Stage 提供丰富体验的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/" data-raw-source="[Device Metadata](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)">设备元数据</a>。</p></td>
    </tr>
    <tr class="even">
    <td><p>设备元数据型号 ID</p></td>
