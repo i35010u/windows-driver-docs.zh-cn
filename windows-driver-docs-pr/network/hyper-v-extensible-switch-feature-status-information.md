@@ -1,26 +1,26 @@
 ---
-title: Hyper-V 可扩展交换机功能状态信息
-description: Hyper-V 可扩展交换机功能状态信息
+title: Hyper-v 可扩展交换机功能状态信息概述
+description: Hyper-v 可扩展交换机功能状态信息概述
 ms.assetid: FB10029B-2887-4C8E-A428-B979442B52F7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c22a7dfa50920dcc4d18bebcb2ba8757b93ee73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02aa29d0bdfd3adcdbdc5c661fbfeeffa8ce7c5f
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341889"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565677"
 ---
-# <a name="hyper-v-extensible-switch-feature-status-information"></a>Hyper-V 可扩展交换机功能状态信息
+# <a name="hyper-v-extensible-switch-feature-status-information-overview"></a>Hyper-v 可扩展交换机功能状态信息概述
 
 
-HYPER-V 可扩展交换机接口支持的功能，以获取为可扩展的交换机或其中一个及其端口的自定义状态信息。 此状态信息被称为*功能状态*信息。
+Hyper-v 可扩展交换机接口支持获取可扩展交换机或其某个端口的自定义状态信息。 此状态信息称为*功能状态*信息。
 
-本部分包括介绍功能的状态信息的支持的以下主题：
+本部分包含以下主题, 其中介绍了对功能状态信息的支持:
 
 [自定义端口功能状态](custom-port-feature-status.md)
 
-[自定义开关功能状态](custom-switch-feature-status.md)
+[自定义交换机功能状态](custom-switch-feature-status.md)
 
  
 

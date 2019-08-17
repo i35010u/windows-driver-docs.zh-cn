@@ -1,14 +1,14 @@
 ---
 title: Windows 10 UVC 相机实现指南
 description: 概述如何通过收件箱驱动程序向应用程序公开 USB 视频类兼容相机的某些功能。
-ms.date: 11/15/2018
+ms.date: 08/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: adf4a34ee7657e20f9d905082b134db7be0e45fd
-ms.sourcegitcommit: 3aee55397dda48607258697da14e11c183557603
+ms.openlocfilehash: 59f52355422699cff5cc7a7797ab6f75bb380baf
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702182"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565589"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC 相机实现指南
 
@@ -73,7 +73,7 @@ Windows 收件箱 USB 视频类 (UVC) 驱动程序支持以 YUV 格式捕获场�
 
 以下格式类型 Guid 应在流视频格式描述符中指定, 如 WDK ksmedia 头文件中定义的那样:
 
-| type | 描述 |
+| 类型 | 描述 |
 | --- | --- |
 | KSDATAFORMAT\_子\_类型L8\_IR |  未压缩的8位亮度平面。 此类型映射到[MFVideoFormat\_L8](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
 | KSDATAFORMAT\_子\_类型L16\_IR | 未压缩的16位亮度平面。 此类型映射到[MFVideoFormat\_L16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
@@ -111,7 +111,7 @@ typedef struct _VIDEO_FORMAT_FRAME
 
 Windows 收件箱 USB 视频类驱动程序支持生成深度流的相机。 这些相机捕获场景的详细信息 (例如航班时间), 并通过 USB 以未压缩的 YUV 帧形式传输深度地图。 应在流视频格式描述符中指定以下格式类型 GUID, 如 WDK ksmedia 头文件中定义的那样:
 
-| type | 描述 |
+| 类型 | 描述 |
 | --- | --- |
 | KSDATAFORMAT\_子\_类型 D16 |  16位深度映射值。 此类型与[MFVideoFormat\_D16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)相同。 值为毫米。 |
 
@@ -513,254 +513,7 @@ UCHAR Example2_MSOS20DescriptorSet_UVCFaceAuthForFutureWindows[0x3C] =
 
 ## <a name="camera-rotation"></a>相机旋转
 
-随着各种外形因素的计算设备的引入, 某些物理约束导致相机传感器以非传统方向装入。 因此, 有必要正确地描述 OS 和应用程序, 如何装载传感器, 以便能够正确呈现/记录所生成的视频。
-
-### <a name="architectural-overview"></a>体系结构概述
-
-从 Redstone 开始, 无论是否按照*Windows 机箱要求*装入照相机, 所有相机驱动程序都需要显式指定相机方向。 具体而言, 照相机驱动程序必须在与捕获设备接口  相关联的 ACPI \_PLD 结构中设置新引入的字段旋转:
-
-```cpp
-typedef struct _ACPI_PLD_V2_BUFFER {
-
-    UINT32 Revision:7;
-    UINT32 IgnoreColor:1;
-    UINT32 Color:24;
-    // …
-    UINT32 Panel:3;         // Already supported by camera.
-    // …
-    UINT32 CardCageNumber:8;
-    UINT32 Reference:1;
-    UINT32 Rotation:4;      // New field, enum values:
-                            // 0 – Rotate by 0° clockwise
-                            // 1 – Rotate by 45° clockwise (N/A to camera)
-                            // 2 – Rotate by 90° clockwise
-                            // 3 – Rotate by 135° clockwise (N/A to camera)
-                            // 4 – Rotate by 180° clockwise
-                            // 5 – Rotate by 225° clockwise (N/A to camera)
-                            // 6 – Rotate by 270° clockwise
-    UINT32 Order:5;
-    UINT32 Reserved:4;
-
-    //
-    // _PLD v2 definition fields.
-    //
-
-    USHORT VerticalOffset;
-    USHORT HorizontalOffset;
-} ACPI_PLD_V2_BUFFER, *PACPI_PLD_V2_BUFFER;
-```
-
-旋转字段定义如下所示:
-
-对于照相机, ACPI \_PLD 结构中的 "旋转" 字段指定了度数 ("0" 表示0度, "2" 表示 "90", "4" 表示180度, "6" 表示 "6" 270 表示), 而显示处于其本机方向。
-
-### <a name="rotation-values"></a>旋转值
-
-使用 ACPI 的 PLD 数据结构, 下面介绍了旋转角度的定义。
-
-对于相机和显示器共享同一机架 (或*机箱*/*大小写*) 的那些设备, 可以将这些外设装载到不同的表面上, 每个外围设备旋转时仍为任意角度其各自的平面。 因此, 应用程序需要一种机制来描述两个外围设备之间的空间关系, 以便能够以正确的方向将捕获的帧转到呈现图面上。
-
-解决此问题的一种方法是使用 ACPI \_PLD 结构, 此结构已定义了*表面*和*旋转度*的概念。 例如, " \_PLD" 结构已有 *"面板"* 字段, 该字段指定外围设备所在的图面:
-
-![ACPI \_PLD 面板字段定义](./images/acpi-pld-panel.png)
-
-![Desktop PLD 面板定义](./images/pld-panel-definitions-desktop.png)
-![折叠 PLD 面板定义](./images/pld-panel-definitions-foldable.png)
-
-事实上, Windows 已采用 ACPI "面板" 的概念, 其中:
-
-如果在固定位置静态装载了捕获\_设备, 则照相机设备接口与 PLD 结构相关联, 并相应地设置面板字段。
-
-应用程序可以通过调用[DeviceInformation. EnclosureLocation](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.enclosurelocation.panel.aspx)属性, 来检索捕获设备所在的面板。
-
-ACPI \_PLD 结构还定义了一个旋转字段, 如下所示:
-
-![ACPI \_PLD 旋转字段定义](./images/acpi-pld-rotation.png)
-
-我们会进一步优化它以避免多义性, 而不是使用以上 "按原样" 定义:
-
-对于照相机, ACPI \_PLD 结构中的 "旋转" 字段指定了度数 ("0" 表示0度, "2" 表示 "90", "4" 表示180度, "6" 表示 "6" 270 表示), 而显示处于其本机方向。
-
-在 Windows 中, 可以通过调用[DisplayInformation. NativeOrientation](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.nativeorientation.aspx)(返回**横向**或**纵向**) 来查询本机显示方向:
-
-![显示本机方向扫描模式](./images/native-scanning-pattern.png)
-
-无论**NativeOrientation**返回哪个值, 逻辑显示扫描模式都从显示的左上角开始, 从左到右移动 (参见图 5)。 对于默认物理方向为 "显式" 的那些设备, 此属性不仅表示 ACPI*顶部*面板的位置, 还提供照相机输出缓冲区与呈现图面之间的空间关系。
-
-请注意, 与相机不同, **NativeOrientation**属性不基于 ACPI, 因此\_没有 PLD 结构。 即使将显示静态装载到设备也是如此。
-
-如上所述, 下图说明了\_每个硬件配置的 PLD 旋转字段的值:
-
-#### <a name="rotation-0-degree-clockwise"></a>围绕0度顺时针
-
-![0度旋转图](./images/rotation-0-degrees.png)
-
-如上图所示:
-
-- 左侧的图片说明了要捕获的场景。
-- 下图描绘了一个 CMOS 传感器的场景的查看方式, 该感应器的物理读出顺序从左下角开始从左到右移动。
-- 右边的图片表示照相机驱动程序的输出。 在此示例中, 可以在显示为其本机方向时直接呈现媒体缓冲区的内容, 而无需额外旋转。 因此, ACPI \_PLD 循环字段的值为0。
-
-#### <a name="rotation-90-degrees-clockwise"></a>围绕顺时针90度
-
-![90度旋转图](./images/rotation-90-degrees.png)
-
-在这种情况下, 与原始场景相比, 媒体缓冲区的内容会顺时针旋转90度。 因此, ACPI \_PLD 循环字段的值为2。
-
-#### <a name="rotation-180-degrees-clockwise"></a>围绕顺时针180度
-
-![180度旋转图](./images/rotation-180-degrees.png)
-
-在这种情况下, 与原始场景相比, 媒体缓冲区的内容会顺时针旋转180度。 因此, ACPI \_PLD 循环字段的值为4。
-
-#### <a name="rotation-270-degrees-clockwise"></a>围绕顺时针270度
-
-![270度旋转图](./images/rotation-270-degrees.png)
-
-在这种情况下, 与原始场景相比, 媒体缓冲区的内容会顺时针旋转270度。 因此, ACPI \_PLD 循环字段的值为6。
-
-### <a name="offset-mounting"></a>偏移量装入
-
-强烈建议使用 IHV/Oem 以非0度偏移量来维护应用程序兼容性。 许多现有的和旧的应用程序不知道要查找 ACPI 的 PLD 表, 也不会尝试更正非0度偏移量。 因此, 对于此类应用, 生成的视频将不会正确呈现。
-
-如果在上述情况下, IHV/Oem 无法按0度方向装载传感器, 则建议使用以下缓解步骤:
-
-1. 纠正照相机驱动程序中的非0度方向 (在带有 AV 流微型端口驱动程序的内核模式下, 或在用户模式下使用插即设备 MFT 或 MFT0), 使生成的输出帧处于0度方向。
-2. 通过 FSSensorOrientation 标记声明非0度方向, 使相机管道可以更正捕获的映像。
-3. 如上所述, 在 ACPI 的 PLD 表中声明非0度方向。
-
-### <a name="av-stream-miniportdevice-mftmft0"></a>AV 流微型端口/设备 MFT/MFT0
-
-理想情况下, 如果无法以0度偏移量装入传感器, 则会将 AV 流微型端口驱动程序 (或用户模式插入的 DMFT 或 MFT0 的模式插入) 更正生成的捕获帧, 使其在0度偏移量上向管道公开。
-
-从 AV 流微型端口和/或设备 MFT/MFT0 插件更正视频帧时, 生成的媒体类型声明必须基于更正后的帧。 如果传感器按90度的偏移量装入, 使生成的视频比传感器9:16 的高宽比, 但更正后的视频为 16:9, 则媒体类型必须声明16:9 纵横比。
-
-这包括生成的步幅信息。 这是必需的, 因为由 IHV/OEM 控制负责执行更正的组件, 并且相机管道不具有视频帧的可见性, 但更正后除外。
-
-强烈建议在用户模式下执行更正, 并且必须遵循管道和用户模式插件之间的 API 协定。 具体而言, 使用 DMFT 或 MFT0 时, 在使用\_MFT 消息\_集\_D3D\_管理器消息调用 IMFDeviceTransform::P rocessmessage 或 IMFTransform::P rocessmessage 时, 用户模式插件必须遵循以下准则:
-
-- 如果未提供 D3D 管理器 (消息的 ulParam 为 0), 则用户模式插件不得调用任何 GPU 操作来处理旋转更正。 并且必须在系统内存中提供生成的帧。
-- 如果提供了 D3D 管理器 (消息的 ulParam 是 DXGI 管理器的 IUnknown), 则必须使用 DXGI 管理器进行旋转更正, 并且生成的帧必须为 GPU 内存。
-- 用户模式插件还必须在运行时处理 D3D 管理器消息。 发出 MFT\_消息\_集\_D3DMANAGER消息后,该插件生成的下一个帧必须与请求的内存类型(即,如果提供了DXGI管理器,则为GPU)对应。\_
-- 当 AV 流驱动程序 (或用户模式插件) 处理旋转更正时, ACPI 的 PLD 结构的旋转字段必须设置为0。
-
-### <a name="fssensororientation"></a>FSSensorOrientation
-
-```INF
-; Defines the sensor mounting orientation offset angle in
-; degrees clockwise.
-FSSensorOrientation: REG_DWORD: 90, 180, 270
-```
-
-通过 FSSensorOrientation 注册表标记声明传感器的非0度方向, 照相机管道可以在将捕获的帧呈现给应用程序之前对其进行更正。
-
-管道将根据用例和应用请求/方案利用 GPU 或 CPU 资源来优化旋转逻辑。
-
-#### <a name="acpi-pld-rotation"></a>ACPI PLD 轮换
-
-ACPI PLD 结构的旋转字段必须为0。 这是为了避免混淆可能使用 PLD 信息来更正帧的应用程序。
-
-#### <a name="media-type-information"></a>媒体类型信息
-
-驱动程序提供的媒体类型必须是无法更正的媒体类型。 当使用 FSSensorOrientation 项通知非0度偏移量的相机管道时, 该传感器提供的媒体类型信息必须是未更正的媒体类型。 例如, 如果传感器装入了90度16:9 的顺时针偏移量, 因此, 生成的视频为 9:16, 则必须向照相机管道提供9:16 纵横比。
-
-这是确保管道可正确配置计数器旋转进程所必需的:管道需要输入媒体类型和应用程序的所需输出媒体类型。
-
-这包括步幅信息。 对于未更正的媒体类型, 必须为相机管道提供 stride 信息。
-
-#### <a name="registry-subkey"></a>注册表子项
-
-必须在 "设备接口" 节点上发布 "FSSensorOrientation" 注册表项。 推荐的方法是在照相机驱动程序的 INF 中, 将此方法声明为 AddReg 指令。
-
-FSSensorOrientation 中显示的数据必须为 REG\_DWORD, 而接受的有效值为90、180和270。 其他任何值将被视为0度偏移量 (即忽略)。
-
-每个值都以顺时针度为单位表示传感器方向。 照相机管道将通过计数器以顺时针方向逆时针旋转视频来更正生成的视频帧: 也就是说, 90 度顺时针声明会导致90度逆时针旋转, 使生成的视频帧返回到0度偏移量。
-
-#### <a name="ms-os-descriptor-10"></a>MS OS 描述符1。0
-
-对于基于 USB 的相机, 还可以通过 MSO 描述符发布 FSSensorOrientation。
-
-<!-- FIXME: Overview of OS descriptor could be removed -->
-MS OS 描述符1.0 有两个组件:
-
-- 固定长度标头部分
-- 标头部分后面的一个或多个可变长度自定义属性部分
-
-##### <a name="ms-os-descriptor-10-header-section"></a>MS OS 描述符1.0 标头部分
-
-标头部分描述单个自定义属性 (人脸身份验证配置文件)。
-
-| 偏移量 | 字段      | 大小 (字节) | ReplTest1  | Description                     |
-| ------ | ---------- | ------------ | ------ | ------------------------------- |
-| 0      | dwLength   | 4            | \<\>   |                                 |
-| 4      | bcdVersion | 2            | 0x0100 | 版本 1.0                     |
-| 6      | wIndex     | 2            | 0x0005 | 扩展属性 OS 描述符 |
-| 8      | wCount     | 2            | 0x0001 | 一个自定义属性             |
-
-##### <a name="custom-ms-os-descriptor-10-property-section"></a>自定义 MS OS 描述符1.0 属性部分
-
-| 偏移量 | 字段                | 大小 (字节) | ReplTest1                              | Description                                  |
-| ------ | -------------------- | ------------ | ---------------------------------- | -------------------------------------------- |
-| 0      | dwSize               | 4            | 0x00000036 (54)                    | 此属性的总大小 (以字节为单位)。     |
-| 4      | dwPropertyDataType   | 4            | 0x00000004                         | REG\_DWORD\_小\_字节序                   |
-| 8      | wPropertyNameLength  | 2            | 0x00000024 (36)                    | 属性名称的大小 (以字节为单位)。        |
-| 10     | bPropertyName        | 50           | UVC-FSSensorOrientation            | Unicode 中的 "UVC-FSSensorOrientation" 字符串。 |
-| 60     | dwPropertyDataLength | 4            | 0x00000004                         | 对于属性数据 (sizeof (DWORD)), 4 个字节。   |
-| 64     | bPropertyData        | 4            | 顺时针角度 (以度为单位)。 | 有效值为90、180和270。           |
-
-#### <a name="ms-os-descriptor-20"></a>MS OS 描述符2。0
-
-MSO 扩展描述符2.0 可用于定义注册表值以添加 FSSensorOrientation 支持。 这是使用[MICROSOFT OS 2.0 注册表属性描述符](#microsoft-os-20-registry-property-descriptor)实现的。
-
-对于 UVC FSSensorOrientation 注册表项, 以下示例显示了一个示例 MSO 2.0 描述符集:
-
-```cpp
-UCHAR Example2_MSOS20DescriptorSet_UVCFSSensorOrientationForFutureWindows[0x3C] =
-{
-    //
-    // Microsoft OS 2.0 Descriptor Set Header
-    //
-    0x0A, 0x00,                 // wLength - 10 bytes
-    0x00, 0x00,                 // MSOS20_SET_HEADER_DESCRIPTOR
-    0x00, 0x00, 0x0?, 0x06,     // dwWindowsVersion – 0x060?0000 for future Windows version
-    0x4A, 0x00,                 // wTotalLength – 74 bytes
-
-    //
-    // Microsoft OS 2.0 Registry Value Feature Descriptor
-    //
-    0x40, 0x00,                 // wLength - 64 bytes
-    0x04, 0x00,                 // wDescriptorType – 4 for Registry Property
-    0x04, 0x00,                 // wPropertyDataType - 4 for REG_DWORD_LITTLE_ENDIAN
-    0x32, 0x00,                 // wPropertyNameLength – 50 bytes
-    0x55, 0x00, 0x56, 0x00,     // Property Name - "UVC-FSSensorOrientation"
-    0x43, 0x00, 0x2D, 0x00,
-    0x46, 0x00, 0x53, 0x00,
-    0x53, 0x00, 0x65, 0x00,
-    0x6E, 0x00, 0x73, 0x00,
-    0x6F, 0x00, 0x72, 0x00,
-    0x4F, 0x00, 0x72, 0x00,
-    0x69, 0x00, 0x65, 0x00,
-    0x6E, 0x00, 0x74, 0x00,
-    0x61, 0x00, 0x74, 0x00,
-    0x69, 0x00, 0x6F, 0x00,
-    0x6E, 0x00, 0x00, 0x00,
-    0x00, 0x00,
-    0x04, 0x00,                 // wPropertyDataLength – 4 bytes
-    0x5A, 0x00, 0x00, 0x00      // PropertyData – 0x0000005A (90 degrees offset)
-}
-```
-
-### <a name="acpi-pld-information"></a>ACPI PLD 信息
-
-作为最后手段的一项选择, 可以按上述方式利用 PLD 信息, 以向应用程序指示必须先更正视频帧, 然后才能呈现/编码。 但正如前文所述, 许多现有应用程序不使用 PLD 信息, 也不处理帧旋转, 因此, 在某些情况下, 应用程序可能无法正确呈现结果视频。
-
-### <a name="compressedencoded-media-types"></a>压缩/编码的媒体类型
-
-对于压缩的和/或编码的媒体类型 (例如 MJPG、JPEG、H264、HEVC), 无法使用正确的管道。 因此, 如果 FSSensorOrientation 设置为非零值, 压缩/编码的媒体类型将被筛选掉。
-
-对于 MJPG 媒体类型 (例如 UVC 相机中的媒体类型), 框架服务器管道提供自动解码的媒体类型 (NV12 或 YUY2 用于基于 DShow 的应用程序)。 将显示自动解码和更正后的媒体类型, 但原始 MJPG 格式不会显示。
-
-如果必须向应用程序公开压缩/编码的媒体类型, 则 IHV/Odm 不得使用 FSSensorOrientation 更正。 相反, 必须由相机驱动程序 (在内核模式下通过 AV 流驱动程序或在用户模式下通过 DMFT/MFT0) 进行更正。
+查看[照相机设备方向](camera-device-orientation.md)
 
 ## <a name="bos-and-ms-os-20-descriptor"></a>BOS 和 MS OS 2.0 描述符
 
@@ -801,7 +554,7 @@ UVC 驱动程序从设备 HW 注册表项读取配置值, 并相应地在操作�
 
 ## <a name="currently-supported-configuration-values-through-bos-descriptor"></a>当前通过 BOS 描述符支持的配置值
 
-| 配置名称 | type | 描述 |
+| 配置名称 | 类型 | 描述 |
 | --- | --- | --- |
 | SensorCameraMode                              | REG\_DWORD | 将照相机注册到特定类别下。  |
 | UVC-FSSensorGroupID<br>UVC-FSSensorGroupName  | REG\_SZ    | 具有相同 UVC 的组照相机-FSSensorGroupID |
@@ -823,11 +576,8 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{e5323777-f976
 示例描述符如下所示:
 
 1. 在 KSCATEGORY\_视频\_相机下注册彩色相机函数
-
 1. 在 KSCATEGORY\_传感器\_相机下注册 IR 相机功能
-
 1. 启用彩色相机函数仍图像捕获
-
 1. 将颜色和 IR 相机功能与组相关联
 
 在设备枚举时, USB stack 将从设备中检索 BOS 描述符。 以下 BOS 描述符是特定于平台的设备功能。
@@ -863,9 +613,7 @@ const BYTE USBVideoBOSDescriptor[0x21] =
 BOS 平台功能描述符指定:
 
 1. MS OS 2.0 描述符平台功能 GUID
-
 1. 供应商控制代码 bMS\_VendorCode (此处设置为1。 它可以采用供应商首选的任何值) 来检索 MS OS 2.0 描述符。
-
 1. 此 BOS 描述符适用于 Windows 10 及更高版本的操作系统版本。
 
 查看 BOS 描述符后, USB stack 将发出特定于供应商的控制请求来检索 MS OS 2.0 描述符。
@@ -879,9 +627,7 @@ BOS 平台功能描述符指定:
 _**bmRequestType**_
 
 - 数据传输方向–设备到主机
-
 - 类型-供应商
-
 - 收件人-设备
 
 _**bRequest**_
@@ -905,25 +651,15 @@ MS OS 2.0 描述符集的长度, 在 BOS 描述符中返回。 0x25C (604)。
 USBVideoMSOS20DescriptorSet 描述了颜色和 IR 函数。 它指定以下 MS OS 2.0 描述符值:
 
 1. 设置标头
-
 1. 配置子集标头
-
 1. 彩色相机函数子集标题
-
 1. 传感器组 ID 的注册表值功能描述符
-
 1. 传感器组名称的注册表值功能描述符
-
 1. 用于启用静态映像捕获的注册表值功能描述符
-
 1. 用于启用平台 DMFT 的注册表值功能描述符
-
 1. IR 相机函数子集标题
-
 1. 传感器组 ID 的注册表值功能描述符
-
 1. 传感器组名称的注册表值功能描述符
-
 1. 用于将照相机注册为传感器相机的注册表值功能描述符
 
 该固件将具有供应商请求的处理程序, 该处理程序将为本部分开头所述的虚部设备返回以下 MS OS 2.0 描述符。

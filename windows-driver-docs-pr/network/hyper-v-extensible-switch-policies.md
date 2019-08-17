@@ -1,24 +1,24 @@
 ---
-title: Hyper-V 可扩展交换机策略
-description: Hyper-V 可扩展交换机策略
+title: Hyper-v 可扩展交换机策略主题
+description: Hyper-v 可扩展交换机策略主题
 ms.assetid: 8AB85E48-EF37-4D42-873B-34D4835AF22E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da844a370e2ca2a376449fa0644cd09a3b684c4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a2900c9d638bd792557451c6449d2ee250105c3
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349521"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565673"
 ---
-# <a name="hyper-v-extensible-switch-policies"></a>Hyper-V 可扩展交换机策略
+# <a name="hyper-v-extensible-switch-policies-topics"></a>Hyper-v 可扩展交换机策略主题
 
 
-HYPER-V 平台和可扩展交换机接口提供了一个基础结构来管理通过 PowerShell cmdlet 和 WMI 的可扩展交换机的交换机和端口策略。 HYPER-V 还提供了基础结构来存储和迁移策略。
+Hyper-v 平台和可扩展交换机接口提供了一种基础结构, 可通过 PowerShell cmdlet 和 WMI 为可扩展交换机管理交换机和端口策略。 Hyper-v 还提供了用于存储和迁移策略的基础结构。
 
-本节包含介绍各种可扩展交换机策略的以下主题：
+本部分包含以下主题, 其中介绍了各种可扩展交换机策略:
 
-[HYPER-V 可扩展交换机策略概述](overview-of-hyper-v-extensible-switch-policies.md)
+[Hyper-v 可扩展交换机策略概述](overview-of-hyper-v-extensible-switch-policies.md)
 
 [端口策略](port-policies.md)
 

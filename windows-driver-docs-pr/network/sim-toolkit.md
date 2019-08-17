@@ -1,33 +1,33 @@
 ---
-title: SIM 工具包
-description: SIM 工具包
+title: SIM 工具包概述
+description: SIM 工具包概述
 ms.assetid: 39869948-d61c-438c-a90c-05dcb099acad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c3199bf2d87d413af845b308c11c2c36cb8c84f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e7eedc74a4bd6a9651ddc5c478eac63bdf0a4b0a
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380815"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565639"
 ---
-# <a name="sim-toolkit"></a>SIM 工具包
+# <a name="sim-toolkit-overview"></a>SIM 工具包概述
 
 
-SIM 工具包是一组可由用户操作或网络事件激活 SIM 上的应用程序。 SIM 工具包应用程序都是主动通过 3GPP 和 ETSI 规范所定义的命令。 Windows 10 移动版支持一小部分 SIM 工具包命令。 有关受支持的命令的列表，请参阅[SIM 工具包命令](sim-toolkit-commands.md)。
+SIM 工具包是 SIM 中的一组应用程序, 可以通过网络事件或用户操作来激活。 SIM 工具包应用程序由3GPP 和 ETSI 规范定义的主动命令表示。 Windows 10 移动版支持 SIM 工具包的一个子集。 有关支持的命令的列表, 请参阅[SIM 工具包命令](sim-toolkit-commands.md)。
 
 ## <a name="sim-toolkit-components"></a>SIM 工具包组件
 
 
-SIM 工具包的三个主要组件包括：
+SIM 工具包的三个主要组件是:
 
--   调制解调器和单选接口层 (RIL) 软件硅供应商提供的。
+-   硅供应商提供的调制解调器和无线电接口层 (RIL) 软件。
 
--   服务，它是本机代码的 DLL。
+-   服务, 它是本机代码的 DLL。
 
--   用户界面 (UI) 中。
+-   用户界面 (UI)。
 
-这两种 SIM 工具包服务和用户界面是由 Microsoft 提供的。
+SIM 套件服务和用户界面都由 Microsoft 提供。
 
 下图说明了 SIM 工具包的主要组件。
 
@@ -35,81 +35,81 @@ SIM 工具包的三个主要组件包括：
 
 ### <a name="sim-toolkit-service"></a>SIM 工具包服务
 
-SIM 工具包服务是 Windows 10 移动操作系统的一部分。 它在运行作为后台任务，并充当 SIM 和 SIM 工具包 UI 应用程序之间的命令解释器。
+SIM 工具包服务是 Windows 10 移动版操作系统的一部分。 它作为后台任务运行, 并充当 SIM 和 SIM 工具包 UI 应用程序之间的命令解释器。
 
 ### <a name="sim-toolkit-ui-application"></a>SIM 工具包 UI 应用程序
 
-SIM 工具包 UI 显示文本的 SIM 工具包服务的指导。
+SIM 工具包 UI 按 SIM 工具包服务的指示显示文本。
 
-SIM 工具包 UI 应用程序将显示两种类型的文本字符串：
+SIM 工具包 UI 应用程序显示两种类型的文本字符串:
 
--   应用程序管理字符串是 UI 的 SIM 工具包的一部分。 Microsoft 为 Windows 所支持的语言本地化这些字符串。
+-   应用程序管理字符串是 SIM 工具包 UI 的一部分。 Microsoft 将这些字符串本地化为 Windows 支持的语言。
 
--   移动运营商提供与 SIM 的消息交互的一部分显示的文本字符串。 Microsoft 不会本地化这些文本字符串。
+-   移动运营商提供作为与 SIM 交互的消息一部分显示的文本字符串。 Microsoft 不对这些文本字符串进行本地化。
 
-SIM 工具包 UI 应用程序还可以播放声音，并启动浏览器。
+SIM 工具包 UI 应用程序还可以播放声音并启动浏览器。
 
-### <a name="sim-toolkit-customizations"></a>SIM 工具包自定义项
+### <a name="sim-toolkit-customizations"></a>SIM 工具包自定义
 
-如果默认值不符合移动运营商的要求，Oem 可以修改某些对话框或消息的显示时间。 这些自定义设置是在 MCSF 和预配，因此您可以选择要使用的方法的 Windows 中可用。 默认显示时间如下所示：
+如果默认值不满足移动运营商的要求, Oem 可以修改某些对话框或消息的显示时间。 MCSF 和 Windows 预配中提供了这些自定义设置, 因此你可以选择要使用的方法。 默认显示时间如下所示:
 
--   GETINPUT:120 秒
+-   GETINPUT T>120 秒
 
--   显示文本：60 秒
+-   文字60秒
 
--   SELECTITEM:60 秒
+-   SELECTITEM60秒
 
--   GETINKEY:60 秒
+-   GETINKEY:60秒
 
-有关这些自定义的信息，请参阅[自定义 SIM 工具包](https://docs.microsoft.com/windows-hardware/customize/mobile/mcsf/customize-the-sim-toolkit)。
+有关这些自定义的信息, 请参阅[自定义 SIM 工具包](https://docs.microsoft.com/windows-hardware/customize/mobile/mcsf/customize-the-sim-toolkit)。
 
-### <a name="example-of-processing-a-sim-toolkit-command"></a>正在处理 SIM 工具包命令的示例
+### <a name="example-of-processing-a-sim-toolkit-command"></a>处理 SIM 工具包命令的示例
 
-以下是处理 SIM 工具包的显示文本命令的示例：
+下面是一个处理 SIM 工具包显示文本命令的示例:
 
--   Sim 卡发送的显示文本命令。
+-   SIM 发送显示文本命令。
 
--   SIM 工具包服务接收的显示文本，并将该命令传递给 SIM 工具包 UI。
+-   SIM 工具包服务接收显示文本, 并将该命令传递给 SIM 工具包 UI。
 
--   SIM 工具包 UI 显示的文本字符串。
+-   SIM 工具包 UI 显示文本字符串。
 
 ## <a name="starting-the-sim-toolkit-ui-application"></a>启动 SIM 工具包 UI 应用程序
 
 
-安装 SIM 工具包 UI 应用程序时， **SIM 应用程序**按钮将出现在**设置** &gt; **网络和无线** &gt;**移动电话和 SIM** &gt; **高级选项**屏幕。 若要启动该应用程序，请点击的按钮。
+安装 sim 工具包 UI 应用程序时, "**设置** &gt; " 网络上将显示 " **sim 应用程序**" 按钮, **& 无线** &gt; **手机网络 & SIM** &gt; **高级选项**联机. 若要启动应用程序, 请点击 "" 按钮。
 
-**SIM 应用程序**按钮处于隐藏状态，如果任何满足以下条件：
+如果满足以下任一条件, 则将隐藏 " **SIM 应用程序**" 按钮:
 
--   Sim 卡 PIN 锁定 （用于 2 G SIM)
+-   已锁定 SIM 卡 PIN (适用于 2G SIM)
 
--   PUK （个人解锁密钥） （适用于 2 G SIM) 锁定
+-   PUK (个人解锁密钥) 已锁定 (适用于 2G SIM)
 
--   Sim 卡上没有 sim 卡的应用程序
+-   SIM 中无 SIM 应用程序
 
--   存在没有 SIM
+-   无 SIM
 
-已成功启动 SIM 工具包 UI 应用程序时，SIM 工具包用户界面显示供用户选择的选项。 Sim 卡上的应用程序由确定选项。
+当 SIM 工具包 UI 应用程序成功启动时, SIM 工具箱 UI 会显示用户要选择的选项。 这些选项由 SIM 上的应用程序确定。
 
-## <a name="launching-the-sim-toolkit-using-another-app"></a>启动使用另一个应用程序的 SIM 工具包
+## <a name="launching-the-sim-toolkit-using-another-app"></a>使用其他应用启动 SIM 工具包
 
 
-若要使 SIM 工具包更容易地发现，合作伙伴可以使用保留的 URI 方案启用 UWP 应用以启动 SIM 应用程序 CPL。 有关如何执行此操作的详细信息，请参阅[保留的 URI，以启动 SIM 工具包](reserved-uri-to-launch-sim-toolkit.md)。
+为了更容易地发现 SIM 工具包, 合作伙伴可以使用保留 URI 方案来启用 UWP 应用程序以启动 SIM 应用程序 CPL。 有关如何执行此操作的详细信息, 请参阅[用于启动 SIM 工具包的保留 URI](reserved-uri-to-launch-sim-toolkit.md)。
 
 ## <a name="sim-toolkit-ui-notifications"></a>SIM 工具包 UI 通知
 
 
-如果 SIM 命令收到电话拨号程序屏幕中，不会显示 SIM 应用程序 UI。 在这种情况下，通知 toast 通知显示在屏幕的顶部。 点击 toast 启动 SIM 应用程序 UI。 在所有其他情况下，SIM 工具包 UI 应用程序启动，并且整个屏幕上显示。
+如果在电话拨号器屏幕中收到 SIM 命令, 则不会显示 SIM 应用程序 UI。 在这种情况下, 屏幕顶部将显示一个通知 toast。 点击 toast 即可启动 SIM 应用程序 UI。 在所有其他情况下, 将启动 SIM 工具包 UI 应用程序并将其显示在整个屏幕上。
 
 ## <a name="additional-reference"></a>其他参考
 
 
-建议使用以下设置：
+建议使用以下设置:
 
--   运行测试，以便在锁定屏幕不会干扰测试时，锁定屏幕超时设置为从不。 默认情况下，它是设置为 1 分钟。
+-   在运行测试时将锁定屏幕超时设置为 "从不", 以使锁定屏幕不会干扰测试。 默认情况下, 它设置为1分钟。
 
--   对于 CDMA 的设备，请确保在设备上设置此 APN。
+-   对于 CDMA 设备, 请确保设备上已设置了 APN。
 
--   某些测试套件有默认计时器值为 90 秒。 如果适用，请确保相应地设置超时自定义注册表值。
+-   某些测试套件的默认计时器值为90秒。 如果适用, 请确保相应地设置超时自定义注册表值。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -1,30 +1,25 @@
 ---
-title: 本机 802.11 IHV 扩展 DLL
-description: 本机 802.11 IHV 扩展 DLL
+title: 本机 802.11 IHV 扩展 DLL 主题
+description: 本机 802.11 IHV 扩展 DLL 主题
 ms.assetid: b49ae93e-8d1a-4b8a-b17b-b3a875fe819a
 keywords:
-- IHV 扩展 WDK 本机 802.11 DLL
-- IHV 扩展 DLL WDK 本机 802.11
+- IHV 扩展 WDK 本机802.11、DLL
+- IHV 扩展 DLL WDK 本机802.11
 - 本机 802.11 IHV 扩展 DLL WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01044766685afacdb67aaafe547c8605482aa13a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20fd7b6bd1710926878afaa130f14cada821df9c
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382622"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565751"
 ---
-# <a name="native-80211-ihv-extensions-dll"></a>本机 802.11 IHV 扩展 DLL
+# <a name="native-80211-ihv-extensions-dll-topics"></a>本机 802.11 IHV 扩展 DLL 主题 
 
+本部分讨论 IHV 扩展 DLL, 并提供以下主题:
 
-
-
- 
-
-本部分讨论 IHV 扩展 DLL，并包含下列主题：
-
-[本机 802.11 IHV 扩展 DLL 概述](native-802-11-ihv-extensions-dll-overview.md)
+[Native 802.11 IHV 扩展 DLL 概述](native-802-11-ihv-extensions-dll-overview.md)
 
 [本机 802.11 IHV 扩展性函数](native-802-11-ihv-extensibility-functions.md)
 
@@ -42,7 +37,7 @@ ms.locfileid: "63382622"
 
 [预关联操作](pre-association-operations.md)
 
-[后关联的操作](post-association-operations.md)
+[后关联操作](post-association-operations.md)
 
 [发送和接收操作](send-and-receive-operations3.md)
 

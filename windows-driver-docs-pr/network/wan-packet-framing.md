@@ -1,43 +1,43 @@
 ---
-title: WAN 数据包分帧
-description: WAN 数据包分帧
+title: WAN 数据包帧概述
+description: WAN 数据包帧概述
 ms.assetid: 11a6fbf5-c7a9-474b-811e-c77a36e834f3
 keywords:
-- WAN 微型端口驱动程序 WDK 网络数据包
-- WAN 的 CoNDIS 驱动程序 WDK 网络数据包
-- 数据包分帧 WDK WAN
+- WAN 微型端口驱动程序 WDK 网络, 数据包
+- CoNDIS WAN 驱动程序 WDK 网络, 数据包
+- 数据包帧 WDK WAN
 - NDISWAN WDK 网络
-- WAN 数据包分帧 WDK 网络
-- 数据包分帧 WDK WAN 有关 WAN 数据包分帧
-- WAN 数据包分帧 WDK 网络，WAN 数据包分帧有关
+- WAN 数据包帧 WDK 网络
+- 数据包帧 WDK WAN, 关于 WAN 数据包组帧
+- Wan packet 组帧 WDK 网络, 关于 WAN 数据包组帧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b47073f18d34134dab135939bab30f46d7fc81ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 33b1490e986bd03a1a8a33eb2e5581458a332aad
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384350"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565626"
 ---
-# <a name="wan-packet-framing"></a>WAN 数据包分帧
+# <a name="wan-packet-framing-overview"></a>WAN 数据包帧概述
 
 
 
 
 
-本部分提供有关 WAN 数据包分帧的信息。
+本部分提供有关 WAN 数据包帧的信息。
 
-NDISWAN 中间驱动程序检索信息由从微型端口驱动程序的响应的 WAN 微型端口驱动程序执行 WAN 数据包分帧[OID\_WAN\_MEDIUM\_子类型](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561216(v=vs.85))查询的信息请求。
+NDISWAN 中间驱动程序检索有关 wan 微型端口驱动程序执行的 wan 数据包组帧的信息, 从微型端口驱动程序的响应到[\_OID\_WAN\_中型子类型](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561216(v=vs.85))查询信息需要.
 
-NDISWAN 将 LAN 从传出数据包转换为 PPP 格式。 NDISWAN 使用简单 HDLC 组帧。 必须由微型端口驱动程序完成大部分特定于媒体的帧。
+NDISWAN 将传出数据包从 LAN 转换为 PPP 格式。 NDISWAN 使用简单的 HDLC 组帧。 大多数特定于介质的帧必须由微型端口驱动程序完成。
 
-将数据包发送到 WAN 的微型端口驱动程序的 send 函数之前, NDISWAN 执行简单的 PPP HDLC 组帧。 简单的 PPP HDLC 组帧是不含 FCS、 位或字节堆砌和任何开头或结尾标志的 PPP 的 HDLC 组帧。
+在将数据包发送到 WAN 微型端口驱动程序的 send 函数之前, NDISWAN 执行简单的 PPP HDLC 组帧。 简单的 PPP HDLC 组帧是 PPP 的 HDLC 组帧, 没有 FCS、位或字节堆砌以及任何开始或结束标志。
 
-以下主题提供有关 WAN 数据包分帧的其他信息：
+以下主题提供有关 WAN 数据包组帧的其他信息:
 
-[异步帧](asynchronous-framing.md)
+[异步组帧](asynchronous-framing.md)
 
-[ISDN 和切换-56 K 摄影](isdn-and-switched-56k-framing.md)
+[ISDN 和交换网-56K 帧](isdn-and-switched-56k-framing.md)
 
  
 

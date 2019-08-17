@@ -1,43 +1,43 @@
 ---
-title: 游戏杆支持
-description: 游戏杆支持
+title: 游戏杆支持概述
+description: 游戏杆支持概述
 ms.assetid: 09fcbdf0-4e70-4144-9afc-4b085a2b4ba7
 keywords:
 - 游戏杆 WDK HID
-- 游戏杆 WDK HID，有关游戏杆
-- 微型驱动程序 WDK 游戏杆
+- 操纵杆 WDK HID, 关于操纵杆
+- 微型驱动程序 WDK 操纵杆
 - 虚拟游戏杆驱动程序 WDK HID
 - VJoyD WDK HID
-- 有关 VJoyD WDK HID 虚拟游戏杆驱动程序
-- VJoyD WDK HID，有关 VJoyD
+- 虚拟游戏杆驱动程序 WDK HID, 关于 VJoyD
+- VJoyD WDK HID, 关于 VJoyD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66ecf1c1d9a58ff6cde5ea4d60d2ade175e4dee8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97d120a66c2f0f2c57442e538923535e0572850e
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372974"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565584"
 ---
-# <a name="joystick-support"></a>游戏杆支持
+# <a name="joystick-support-overview"></a>游戏杆支持概述
 
 
 
 
 
-有差异从一个版本到另一个版本中提供了 Microsoft DirectX 的游戏杆支持的类型。 在 Windows 95/98/我，DirectX 支持用于自定义游戏杆功能两种方法： 通过 Windows 注册表中的自定义项和虚拟设备驱动程序 (VxD) 创建，这作为调用*游戏杆微型驱动程序*。 DirectX 版本 1.0、 2.0 和 3.0 中使用微型驱动程序支持的原始的微型驱动程序接口，在 DirectX 3.0 接口有细微差别。 除了原始的微型驱动程序模型中，DirectX 版本 5.0 及更高版本，包括单独通常描述的可选驱动程序接口。
+Microsoft DirectX 提供的游戏杆支持类型与版本之间存在差异。 在 Windows 95/98/Me 中, DirectX 支持以下两种方法来自定义游戏杆功能: 通过 Windows 注册表中的自定义项和通过虚拟设备驱动程序 (VxD) 创建 (称为*操纵杆微型驱动程序*)。 DirectX 版本1.0、2.0 和3.0 中使用的微型驱动程序支持原始的微型驱动程序接口, 在 DirectX 3.0 接口中有细微差别。 除了原始微型驱动程序模型之外, DirectX 版本5.0 及更高版本还包括一个通常单独描述的备用驱动程序接口。
 
-Windows 95/98/我游戏杆驱动程序和配置程序支持插入到 IBM 标准游戏端口的模拟游戏杆。 游戏杆制造商可以使游戏杆配置程序可自定义，并向最终用户如何自定义游戏杆提供显式说明。 游戏杆，Windows 95/98/我可以发出及其相关功能通过注册表。 这些功能可以包括使用限制、 的角度 (POV) 尖角符号、 舵和游戏杆按钮的数目。
+Windows 95/98/Me 游戏杆驱动程序和配置程序支持插入 IBM 标准游戏端口的模拟操纵杆。 游戏杆制造商可以使操纵杆配置程序可自定义, 并向最终用户提供有关如何自定义游戏杆的明确指导。 游戏杆可以通过注册表向 Windows 95/98/Me 发送相关功能。 这些功能可能包括: 使用限制、视图点 (POV) 帽子、rudders 以及游戏杆按钮数。
 
-所有非 IBM 标准游戏杆，如数字游戏杆、 MIDI 游戏杆和模拟游戏杆驱动的游戏杆加速器必须提供自定义注册表信息的补充游戏杆微型驱动程序。 游戏杆 OEM 可以编写能够使用非标准游戏杆硬件的微型驱动程序。 这提供了一种数字游戏杆以使用任何基于 Windows 的游戏，使用游戏杆应用程序编程接口 (API) 的机制。
+所有非 IBM 标准游戏杆, 如 "游戏杆" 加速器驱动的 "游戏操纵杆" 和 "模拟游戏操纵杆" 除了自定义注册表信息外, 还必须提供操纵杆微型驱动程序。 游戏杆 OEM 可以编写微型驱动程序, 它提供对非标准操纵杆硬件的访问。 这为数字游戏杆提供了一种机制, 用于处理使用操纵杆应用程序编程接口 (API) 的任何基于 Windows 的游戏。
 
-驱动程序模型可以处理最多六个轴、 POV hat 和双字的按钮，以便可以轻松地创建 OEM 允许使用微型驱动程序的使用比当前游戏端口的更高自由度的新硬件。 游戏杆微型驱动程序与硬件供应商提供完全的灵活性，并允许游戏创建者可以使用自己的书名使用安装的基数。 在 DirectX 5.0 及更高版本，模拟游戏杆支持还被分成微型驱动程序使用新接口。 仅当配置一个模拟游戏端口时加载此新接口。 轮询扩展具有三个额外 POV 帽，三个包含按钮数据和方法来指定它返回的速度，加速和/或强制数据的每个轴的详细双字。
+驱动程序模型最多可以处理六个轴、一个 POV hat 和一个双字的按钮, 使 OEM 可以轻松地为新硬件创建微型驱动程序, 而不是使用当前游戏端口所允许的更高的自由度。 操纵杆微型驱动程序可为硬件供应商提供完全的灵活性, 并使游戏创建者能够将安装的基础与标题结合使用。 在 DirectX 5.0 和更高版本中, 模拟游戏杆支持还被分隔到使用新接口的微型驱动程序。 仅当配置了模拟游戏端口时, 才会加载此新接口。 轮询是使用三个额外的 POV 头衔来扩展的, 另外还有三个包含按钮数据的双引号, 另外还提供了一个方法, 用于指定它返回每个轴的速度、加速度和/或强制数据。
 
-当前虚拟游戏杆驱动程序 (VJoyD) 允许的最多 16 个设备，微型驱动程序可由任意数量的配置。 微型驱动程序到设备的配置可以是一对一或一对多。
+当前虚拟游戏杆驱动程序 (VJoyD) 允许配置最多16个设备, 可由微型驱动程序驱动的任意数量的设备。 微型驱动程序到设备的配置可以是一对一或一对多。
 
 本部分包括：
 
-[Joystick Driver Model](joystick-driver-model.md)
+[游戏杆驱动程序型号](joystick-driver-model.md)
 
 [微型驱动程序提供的回调](minidriver-supplied-callbacks.md)
 
@@ -49,7 +49,7 @@ Windows 95/98/我游戏杆驱动程序和配置程序支持插入到 IBM 标准�
 
 [注册表设置](registry-settings2.md)
 
-[VJoyD Minidriver Override](vjoyd-minidriver-override.md)
+[VJoyD 微型驱动程序 Override](vjoyd-minidriver-override.md)
 
 [轴选择](axis-selection.md)
 

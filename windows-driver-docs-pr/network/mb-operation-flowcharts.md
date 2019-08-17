@@ -1,34 +1,34 @@
 ---
-title: MB 操作流程图
-description: MB 操作流程图
+title: MB 操作流程图主题
+description: MB 操作流程图主题
 ms.assetid: 0d450af1-6e39-4492-b112-9db7b6597539
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d03cb7818483b912d942c3f09613e0d3e52cbeb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d695e3ec61bb675a0255b4e2c67e222f8aa61909
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343271"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565135"
 ---
-# <a name="mb-operation-flowcharts"></a>MB 操作流程图
+# <a name="mb-operation-flowchart-topics"></a>MB 操作流程图主题
 
 
-在本部分中所述的所有方案都假设的微型端口驱动程序和 MB 服务已完成初始化中所述[MB 微型端口驱动程序初始化](mb-miniport-driver-initialization.md)。
+本部分中所述的所有方案都假定微型端口驱动程序和 MB 服务已完成初始化, 在[MB 微型端口驱动程序初始化](mb-miniport-driver-initialization.md)中进行了说明。
 
-下面的主题介绍各种配置和方案的操作流处理 Oid 时：
+以下主题介绍处理 Oid 时各种配置和方案的操作流程:
 
-[非 SIM-Locked GPRS 设备预配的上下文的初始化](initialization-of-a-non-sim-locked-gprs-device-with-a-provisioned-cont.md)
+[用预配的上下文初始化非 SIM 锁定的 GPRS 设备](initialization-of-a-non-sim-locked-gprs-device-with-a-provisioned-cont.md)
 
-[初始化 SIM 锁定 GPRS 设备与用户定义的上下文](initialization-of-sim-locked-gprs-device-with-a-user-defined-context.md)
+[用用户定义的上下文初始化 SIM 锁定的 GPRS 设备](initialization-of-sim-locked-gprs-device-with-a-user-defined-context.md)
 
-[CDMA 数据包设备预配的上下文使用的初始化](initialization-of-a-cdma-packet-device-with-a-provisioned-context.md)
+[用预配的上下文初始化 CDMA 数据包设备](initialization-of-a-cdma-packet-device-with-a-provisioned-context.md)
 
-[丢失和重新获取数据包数据服务](losing-and-regaining-packet-data-service.md)
+[丢失和放弃数据包数据服务](losing-and-regaining-packet-data-service.md)
 
 [数据包数据服务移交](packet-data-service-handoffs.md)
 
-[语音呼叫期间数据包数据服务连接](voice-calls-during-packet-data-service-connections.md)
+[数据包数据服务连接期间的语音呼叫](voice-calls-during-packet-data-service-connections.md)
 
 [信号强度指示语义](signal-strength-indication-semantics.md)
 

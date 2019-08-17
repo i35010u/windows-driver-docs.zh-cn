@@ -1,57 +1,57 @@
 ---
-title: 选择 WAN 驱动程序模型
-description: 选择 WAN 驱动程序模型
+title: 选择 WAN 驱动程序模型简介
+description: 选择 WAN 驱动程序模型简介
 ms.assetid: 63976cfa-6f7b-44d0-a4c5-de82254bedbd
 keywords:
-- WAN 微型端口驱动程序 WDK 网络驱动程序模型
-- WAN 微型端口驱动程序 WDK 网络 NDIS WAN vs 的 CoNDIS WAN 驱动程序
-- 驱动程序模型 WDK WAN
-- CoNDIS 驱动程序 WDK 网络连接、 WAN 驱动程序
-- WAN 的 CoNDIS 驱动程序 WDK 网络
+- WAN 微型端口驱动程序 WDK 网络, 驱动程序型号
+- WAN 微型端口驱动程序 WDK 网络, NDIS WAN 与 CoNDIS WAN 驱动程序
+- 驱动程序型号 WDK WAN
+- CoNDIS 驱动程序 WDK 网络, WAN 驱动程序
+- CoNDIS WAN 驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee4578db0bbfc142fde6664de4afb52238e4d6da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78cbcba80d7da682faa446fdba7b10bb88dc3d9e
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353474"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565688"
 ---
-# <a name="choosing-a-wan-driver-model"></a>选择 WAN 驱动程序模型
+# <a name="introduction-to-choosing-a-wan-driver-model"></a>选择 WAN 驱动程序模型简介
 
 
 
 
 
-Microsoft Windows 2000 和更高版本操作系统支持两种 WAN 驱动程序模型：NDIS WAN 和 CoNDIS WAN。
+Microsoft Windows 2000 及更高版本的操作系统支持两个 WAN 驱动程序模型:NDIS WAN 和 CoNDIS WAN。
 
-NDIS WAN 微型端口驱动程序是无连接的微型端口驱动程序在 NDIS 模型上生成的。 NDIS 版本 5.0 和更高版本的驱动程序不支持 NDIS WAN 的微型端口驱动程序。 新的驱动程序应基于的 CoNDIS WAN 驱动程序体系结构。
+NDIS WAN 微型端口驱动程序在 NDIS 模型上构建, 用于连接的微型端口驱动程序。 对于 NDIS 版本5.0 和更高版本的驱动程序, 不支持 NDIS WAN 微型端口驱动程序。 新驱动程序应基于 CoNDIS WAN 驱动程序体系结构。
 
-WAN 的 CoNDIS 驱动程序是基于面向连接的 NDIS (CoNDIS) 驱动程序模型。
+CoNDIS WAN 驱动程序建立在面向连接的 NDIS (CoNDIS) 驱动程序模型之上。
 
-WAN 的 CoNDIS 微型端口驱动程序和微型端口调用管理器 (MCMs) 可以：
+CoNDIS WAN 微型端口驱动程序和微型端口呼叫管理器 (MCMs) 可以:
 
--   调用非 WAN 面向连接的微型端口驱动程序调用的相同 NDIS 函数。
+-   调用与面向非 WAN 连接的小型端口驱动程序调用的相同 NDIS 函数。
 
--   导出属于同一套*MiniportXxx*非 WAN 面向连接的微型端口驱动程序导出的函数。
+-   导出非 WAN 连接面向的小型小型端口驱动程序导出的一组相同的*MiniportXxx*函数。
 
--   提供其他特定于 WAN 的功能。
+-   提供其他 WAN 特定功能。
 
-有关的 CoNDIS 驱动程序的详细信息，请参阅[Connection-Oriented NDIS](connection-oriented-ndis.md)。
+有关 CoNDIS 驱动程序的详细信息, 请参阅[面向连接的 NDIS](connection-oriented-ndis.md)。
 
-如果你正在编写新的 WAN 驱动程序，我们建议你使用的 CoNDIS WAN 模型。
+如果你正在编写新的 WAN 驱动程序, 我们建议你使用 CoNDIS WAN 模型。
 
-Microsoft 将继续支持现有 NDIS WAN 的微型端口驱动程序。 不需要编写的 CoNDIS 旧硬件的驱动程序。
+Microsoft 将继续支持现有的 NDIS WAN 微型端口驱动程序。 不需要为旧硬件编写 CoNDIS 驱动程序。
 
-下面的主题介绍使用 WAN 的 CoNDIS 模型的主要优点：
+以下主题介绍使用 CoNDIS WAN 模型的主要优点:
 
-[WAN 的 CoNDIS 是更加灵活](condis-wan-is-more-flexible.md)
+[CoNDIS WAN 更灵活](condis-wan-is-more-flexible.md)
 
-[WAN 的 CoNDIS 是不太复杂](condis-wan-is-less-complex.md)
+[CoNDIS WAN 不太复杂](condis-wan-is-less-complex.md)
 
-[其他权益的 CoNDIS WAN](other-benefits-of-condis-wan.md)
+[CoNDIS WAN 的其他优势](other-benefits-of-condis-wan.md)
 
-[提供的 CoNDIS WAN 驱动程序的其他 NDIS 功能](other-ndis-features-available-to-condis-wan-drivers.md)
+[可用于 CoNDIS WAN 驱动程序的其他 NDIS 功能](other-ndis-features-available-to-condis-wan-drivers.md)
 
  
 

@@ -1,28 +1,28 @@
 ---
-title: SR-IOV PF/VF 反向通道通信
-description: SR-IOV PF/VF 反向通道通信
+title: SR-IOV PF/VF Backchannel 通信概述
+description: SR-IOV PF/VF Backchannel 通信概述
 ms.assetid: 66D40452-1286-449E-BD6B-AFAD466E03A1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1416a113c4563a2c54963b5fc4930d9175cc88c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 973626fc5f4a19a39892412b1c0797bba06d5dd1
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346037"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565635"
 ---
-# <a name="sr-iov-pfvf-backchannel-communication"></a>SR-IOV PF/VF 反向通道通信
+# <a name="sr-iov-pfvf-backchannel-communication-overview"></a>SR-IOV PF/VF Backchannel 通信概述
 
 
-单根 I/O 虚拟化 (SR-IOV) 接口提供通信通道，或*backchannel*，PCI Express (PCIe) 虚拟函数 (VF) 和 PCIe 物理函数 (PF) 的微型端口驱动程序之间。 每个 VF 微型端口驱动程序可以通过反向通道向 PF 微型端口驱动程序发出请求。 PF 微型端口驱动程序可以向单个 VF 微型端口驱动程序通过反向通道发出状态通知。
+单个根 i/o 虚拟化 (SR-IOV) 接口在 PCI Express (PCIe) 虚拟功能 (VF) 的微型端口驱动程序与 PCIe 物理功能 (PF) 之间提供通信通道或*backchannel*。 每个 VF 微型端口驱动程序都可以通过 backchannel 将请求发送到 PF 微型端口驱动程序。 PF 小型端口驱动程序可以通过 backchannel 将状态通知发送到单个 VF 微型端口驱动程序。
 
-对 backchannel 界面 PF 和 VF 微型端口驱动程序之间交换数据涉及到使用*VF 配置块*。 每个 VF 配置块是在概念上类似于进程间通信 (IPC) 消息，其中每个块都有一种专有格式，长度，并阻止标识符。 独立硬件供应商 (IHV) 可以定义一个或多个 VF 配置块 PF 和 VF 微型端口驱动程序。
+通过 backchannel 接口在 PF 和 VF 微型端口驱动程序之间交换的数据涉及使用*VF 配置块*。 每个 VF 配置块在概念上类似于进程间通信 (IPC) 消息, 其中每个块都有一个专用的格式、长度和块标识符。 独立硬件供应商 (IHV) 可以为 PF 和 VF 微型端口驱动程序定义一个或多个 VF 配置块。
 
 本部分包括以下主题：
 
-[Backchannel 通信从 VF 微型端口驱动程序](backchannel-communication-from-a-vf-miniport-driver.md)
+[来自 VF 微型端口驱动程序的 Backchannel 通信](backchannel-communication-from-a-vf-miniport-driver.md)
 
-[PF 微型端口驱动程序从 Backchannel 通信](backchannel-communication-from-the-pf-miniport-driver.md)
+[来自 PF 微型端口驱动程序的 Backchannel 通信](backchannel-communication-from-the-pf-miniport-driver.md)
 
  
 

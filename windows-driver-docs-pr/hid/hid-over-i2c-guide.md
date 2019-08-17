@@ -1,46 +1,46 @@
 ---
-title: 基于 I2C 的 HID
-description: 对于 Windows 8 中，Microsoft 创建新的 HID 微型端口驱动程序允许设备通过 Inter-Integrated 线路 (I²C) 总线进行通信。
+title: 通过 I2C 的 HID 简介
+description: 对于 Windows 8, Microsoft 创建了一个新的 HID 微型端口驱动程序, 该驱动程序允许设备通过集成线路 (I i2c) 总线进行通信。
 ms.assetid: E8A056C0-B10F-48E2-B8E3-67B00AAC87D8
 keywords:
 - HID 微型端口驱动程序
-- 间集成的线路
+- 集成线路
 - I2C 总线
 - HIDI2C.sys
-- 简单的外围总线
+- 简单外围总线
 - SPB
 - GPIO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06a6a6e5869eb5c95eff5bb6f5449e31d07ac975
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af265af5a99022b0472d5429f5c2e35d49c3c84d
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388809"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565621"
 ---
-# <a name="hid-over-i2c"></a>基于 I2C 的 HID
+# <a name="introduction-to-hid-over-i2c"></a>通过 I2C 的 HID 简介
 
 
-对于 Windows 8 中，Microsoft 创建新的 HID 微型端口驱动程序允许设备通过 Inter-Integrated 线路 (I²C) 总线进行通信。
+对于 Windows 8, Microsoft 创建了一个新的 HID 微型端口驱动程序, 该驱动程序允许设备通过集成线路 (I i2c) 总线进行通信。
 
-新的 HID 微型端口解决方案将扩展的 HID 协议，超出 USB 和蓝牙，以支持 I²C 设备。 I²C 是一种简单但有效的协议和过去的十年电话和嵌入式的平台中使用的。 此协议名为 HIDI2C.sys 现成 KMDF 驱动程序支持在 Windows 8 中。
+新的 HID 微型端口解决方案扩展了除 USB 和蓝牙之外的 HID 协议, 以支持 i2c 设备。 I i2c 是一个简单而有效的协议, 在手机和嵌入式平台上过去十多年使用。 Windows 8 通过名为 HIDI2C 的内置 KMDF 驱动程序支持此协议。
 
-通过 HID I²C 收件箱驱动程序，在此组合的支持实现硬件制造商以获取其运行的设备快速在 windows 上不需要创建一个驱动程序。
+这是对收件箱驱动程序中的对 I-I 以上组合的支持, 允许硬件制造商使其设备在 windows 上快速运行, 而无需创建驱动程序。
 
-为了确保在 ACPI 的多个资源的系统上的正确行为，以下两个资源必须首先出现：
+为了确保具有多个 ACPI 资源的系统上的行为正确, 必须首先显示以下两个资源:
 
--   HID 的 I²C 连接
+-   HID I i2c 连接
 -   设备中断
 
-这些资源定义后，可能会按照 ACPI 中的其他资源，其他类型。
+定义这些资源后, 可以遵循其他类型的其他 ACPI 资源。
 
-*重要说明：*
+*重要说明:*
 
--   今天，HID I²C 驱动程序以目标支持简单外围总线 （存储） 和 GPIO 的 SoC 系统。 将来，Microsoft 可能会在非 SoC 系统上支持此驱动程序。
--   HID I²C 驱动程序经过优化，可支持所有隐藏客户端。
--   HID I²C 驱动程序，设备和系统制造商可以减少总的驱动程序开发以支持常见设备类型，如键盘、 触摸板，它们具有触摸屏幕、 传感器和等等。
--   HID I²C 驱动程序可在所有客户端 Sku 的 Windows 上，并包含在 WinPE 中。
+-   目前, HID I i2c 驱动程序针对支持简单外围总线 (SPB) 和 GPIO 的 SoC 系统。 将来, Microsoft 可能会在非 SoC 系统上支持此驱动程序。
+-   HID I i2c 驱动程序经过优化, 可支持所有 HID 客户端。
+-   使用 HID I i2c 驱动程序, 设备和系统制造商可以减少他们为了支持常见设备类型 (例如键盘、触摸板、触摸屏、传感器等) 而要开发的驱动程序总数。
+-   HID I i2c 驱动程序在 Windows 的所有客户端 Sku 上都可用, 并包含在 WinPE 中。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: Winsock 内核
-description: Winsock 内核
+title: Winsock 内核主题
+description: Winsock 内核主题
 ms.assetid: 89d389ff-1a5e-4889-8009-c0fe3b6273f9
 keywords:
 - Winsock 内核 WDK 网络
@@ -10,19 +10,19 @@ keywords:
 - 套接字 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebcdf392e9063330793ce8c470088197d06416e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92d75c5fefa21aac35801020bb1ce91ec591fb41
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379793"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565605"
 ---
-# <a name="winsock-kernel"></a>Winsock 内核
+# <a name="winsock-kernel-topics"></a>Winsock 内核主题
 
 
-本部分讨论了 Winsock Kernel (WSK)，并且包括以下主题：
+本部分介绍 Winsock 内核 (WSK), 并包括以下主题:
 
--   [有关开发网络驱动程序与 Winsock 内核的路线图](roadmap-for-developing-network-drivers-with-winsock-kernel.md)
+-   [利用 Winsock 内核开发网络驱动程序的路线图](roadmap-for-developing-network-drivers-with-winsock-kernel.md)
 -   [Winsock 内核简介](introduction-to-winsock-kernel.md)
 -   [Winsock 内核概述](winsock-kernel-overview.md)
 -   [Winsock 内核操作](winsock-kernel-operations.md)

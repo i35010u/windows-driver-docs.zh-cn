@@ -1,28 +1,28 @@
 ---
-title: 虚拟化网络
-description: 虚拟化网络
+title: 虚拟化网络主题
+description: 虚拟化网络主题
 ms.assetid: 5CDB7E42-BCD6-4385-AC99-6659261C2B2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f2faa86eb6daac6185ca7f6aa48afce189b2660
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2aaed5a80b61ca8c8c9fc465da2c6263eba06e5b
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338324"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565723"
 ---
-# <a name="virtualized-networking"></a>虚拟化网络
+# <a name="virtualized-networking-topics"></a>虚拟化网络主题
 
 
-*虚拟化网络*指数据包传输和 HYPER-V 虚拟环境中的管理的 NDIS 技术。
+*虚拟化网络*是指在 hyper-v 虚拟环境中进行数据包传输和管理的 NDIS 技术。
 
-本部分介绍虚拟化网络的以下组件：
+本部分介绍虚拟化网络的以下组件:
 
-[虚拟化网络概念和术语](virtualized-networking-concepts-and-terms.md)
+[虚拟化网络的概念和术语](virtualized-networking-concepts-and-terms.md)
 
-[虚拟化网络的概述](overview-of-virtualized-networking.md)
+[虚拟化网络概述](overview-of-virtualized-networking.md)
 
-[单根 I/O 虚拟化 (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)
+[单个根 i/o 虚拟化 (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)
 
 [虚拟机队列 (VMQ)](virtual-machine-queue--vmq-.md)
 

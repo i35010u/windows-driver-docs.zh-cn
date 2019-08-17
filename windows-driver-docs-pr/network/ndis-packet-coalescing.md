@@ -1,20 +1,20 @@
 ---
-title: NDIS 数据包合并
-description: NDIS 数据包合并
+title: NDIS 数据包合并简介
+description: NDIS 数据包合并简介
 ms.assetid: 500FBF0F-54D9-4675-8E2D-447387DA8798
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 849c6d8e911be28efbbe8f65272e23df5586132e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1a006b6abd83fa1ccb688794fb1ceb11adebeb8
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378291"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565647"
 ---
-# <a name="ndis-packet-coalescing"></a>NDIS 数据包合并
+# <a name="introduction-to-ndis-packet-coalescing"></a>NDIS 数据包合并简介
 
 
-从 NDIS 6.30，网络适配器可以支持 NDIS 数据包合并。 此功能可以减少处理由于接收的随机广播或多播的数据包的主机系统上的开销和电源消耗。
+从 NDIS 6.30 开始, 网络适配器可支持 NDIS 数据包合并。 由于收到随机广播或多播数据包, 此功能可减少主机系统上的处理开销和能耗。
 
 本部分包括以下主题：
 
@@ -26,7 +26,7 @@ ms.locfileid: "63378291"
 
 [管理数据包合并接收筛选器](managing-packet-coalescing-receive-filters.md)
 
-[数据包合并的标准化的 INF 关键字](standardized-inf-keywords-for-packet-coalescing.md)
+[用于数据包合并的标准化 INF 关键字](standardized-inf-keywords-for-packet-coalescing.md)
 
  
 

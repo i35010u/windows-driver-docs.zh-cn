@@ -1,36 +1,36 @@
 ---
-title: 基于 USB 的 HID
-description: USB 是 Windows 操作系统中支持的第一个 HID 传输。
+title: 基于 USB 的 HID 概述
+description: USB 是 Windows 操作系统中第一个受支持的 HID 传输。
 ms.assetid: F892C910-BA33-4795-A803-9D3FD55782BC
 keywords:
 - HID 微型端口驱动程序
 - USB
-- USB 1.1
+- USB 1。1
 - USB 2.0
 - USB 3.0
-- USB、 HID
+- USB, HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bcebf453540dceeb8d32217a17490373dbbf20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff088091329327f6063bba24c7f9c92d4827661b
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388806"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565576"
 ---
-# <a name="hid-over-usb"></a>基于 USB 的 HID
+# <a name="hid-over-usb-overview"></a>基于 USB 的 HID 概述
 
 
-USB 是 Windows 操作系统中支持的第一个 HID 传输。 相应的收件箱驱动程序在 Windows 2000 中引入，并且已从那时起所有操作系统中可用。
+USB 是 Windows 操作系统中第一个受支持的 HID 传输。 Windows 2000 中引入了相应的收件箱驱动程序, 并且自那时起已在所有操作系统中提供。
 
-Windows 8 仍支持通过 USB HID 和已经过增强，包括从触摸板和键盘到传感器和供应商特定的设备类型的 HID 设备的新类。
+Windows 8 在 USB 上继续支持 HID, 并已进行了增强, 包括触摸板和键盘到传感器和供应商特定设备类型的新类。
 
-HID over USB 还优化为利用的选择性挂起。 （此功能要求的供应商提供的 INF 或通过 Microsoft 操作系统描述符的支持。）
+USB 上的 HID 还经过优化, 可以利用选择性挂起。 (此功能要求供应商通过 Microsoft 操作系统描述符提供 INF 或支持。)
 
-此外包括通过 USB 的 HID 到新的更新：
+通过 USB 进行的最新 HID 更新还包括:
 
--   对 USB 1.1，USB 2.0 和 USB 3.0 支持。
--   HID USB 驱动程序通过可在所有客户端 Sku 的 Windows 上，并且包含在 WinPE 中。
+-   支持 USB 1.1、USB 2.0 和 USB 3.0。
+-   Windows 的所有客户端 Sku 上都提供了一个基于 USB 驱动程序的 HID, 它包含在 WinPE 中。
 
  
 

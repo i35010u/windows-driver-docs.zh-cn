@@ -1,41 +1,41 @@
 ---
-title: 连接卸载
-description: 连接卸载
+title: 连接卸载概述
+description: 连接卸载概述
 ms.assetid: 4c1b1a98-6ad3-4817-9e3d-d6112c887352
 keywords:
-- 连接将卸载 WDK TCP/IP 传输
-- TCP/IP 卸载 WDK 网络连接卸载
-- 卸载 WDK TCP/IP 传输，连接卸载
-- 连接卸载 WDK TCP/IP 传输，有关连接卸载
-- 卸载功能 WDK TCP/IP
+- 连接卸载 WDK TCP/IP 传输
+- TCP/IP 卸载 WDK 网络, 连接卸载
+- 卸载 WDK TCP/IP 传输, 连接卸载
+- 连接卸载 WDK TCP/IP 传输, 关于连接卸载
+- 功能 WDK TCP/IP 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf445931229909edb60544d2ac2a785a5e3ce914
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5f850b8785ec0ccc4537026bd58c95d4c269c96
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357444"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565761"
 ---
-# <a name="connection-offload"></a>连接卸载
+# <a name="connection-offload-overview"></a>连接卸载概述
 
 
 
 
 
-为了提高其性能，Microsoft TCP/IP 传输可以卸载到 NIC 具有相应 TCP/IP-连接卸载功能的连接。
+为了提高性能, Microsoft TCP/IP 传输可将连接卸载到具有适当 TCP/IP 连接卸载功能的 NIC。
 
-NDIS 连接卸载接口提供挂钩，以启用连接的配置将卸载服务，例如 TCP 烟囱卸载。 在 NDIS 连接卸载服务的详细信息，请参阅[卸载 TCP/IP 连接](offloading-tcp-ip-connections.md)。
+NDIS 连接卸载接口提供挂钩来启用连接卸载服务 (如 TCP 烟囱卸载) 的配置。 有关 NDIS 中的连接卸载服务的详细信息, 请参阅[卸载 Tcp/ip 连接](offloading-tcp-ip-connections.md)。
 
-NDIS 6.0 及更高版本支持 TCP 烟囱卸载服务。
+在 NDIS 6.0 和更高版本中支持 TCP 烟囱卸载服务。
 
 本部分包括：
 
 -   [确定连接卸载功能](determining-connection-offload-capabilities.md)
--   [报告一个 NIC 连接卸载功能](reporting-a-nic-s-connection-offload-capabilities.md)
+-   [报告 NIC 的连接卸载功能](reporting-a-nic-s-connection-offload-capabilities.md)
 -   [启用和禁用连接卸载服务](enabling-and-disabling-connection-offload-services.md)
 -   [确定当前的连接卸载设置](determining-the-current-connection-offload-settings.md)
--   [使用注册表值来启用和禁用连接卸载](using-registry-values-to-enable-and-disable-connection-offloading.md)
+-   [使用注册表值启用和禁用连接卸载](using-registry-values-to-enable-and-disable-connection-offloading.md)
 -   [卸载 TCP/IP 连接](offloading-tcp-ip-connections.md)
 
  

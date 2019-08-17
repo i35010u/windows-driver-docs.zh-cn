@@ -1,24 +1,24 @@
 ---
-title: 移动宽带 (MB) 设计指南
-description: 移动宽带 (MB) 设计指南
+title: 移动宽带 (MB) 设计指南主题
+description: 移动宽带 (MB) 设计指南主题
 ms.assetid: d5db6b69-c5a9-41d5-88c9-7c4d1e7c9c03
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 40f3ccab856da710cae1b7480bf97fbdeb41c83e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17a15a0f45f6cf77d0a4fd93a4cdb76e24736ff8
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380879"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565655"
 ---
-# <a name="mobile-broadband-mb-design-guide"></a>移动宽带 (MB) 设计指南
+# <a name="mobile-broadband-mb-design-guide-topics"></a>移动宽带 (MB) 设计指南主题
 
 
-移动宽带 (MB) 设计指南部分介绍的操作和移动宽带的微型端口驱动程序必须执行的任务。
+移动宽带 (MB) 设计指南部分介绍了移动宽带微型端口驱动程序必须执行的操作和任务。
 
 本部分包括以下主题：
 
-[路线图开发 MB 微型端口驱动程序](roadmap-to-develop-mb-miniport-drivers.md)
+[开发 MB 微型驱动程序的路线图](roadmap-to-develop-mb-miniport-drivers.md)
 
 [MB 接口模型](mb-interface-model.md)
 
@@ -26,13 +26,13 @@ ms.locfileid: "67380879"
 
 [MB 操作流程图](mb-operation-flowcharts.md)
 
-[MB 设备的准备情况](mb-device-readiness.md)
+[MB 设备准备情况](mb-device-readiness.md)
 
 [MB 服务检测和激活](mb-service-detection-and-activation.md)
 
-[MB 单选电源状态操作](mb-radio-power-state-operations.md)
+[MB 无线电电源状态操作](mb-radio-power-state-operations.md)
 
-[MB 固定操作](mb-pin-operations.md)
+[MB PIN 操作](mb-pin-operations.md)
 
 [MB 提供程序操作](mb-provider-operations.md)
 
@@ -48,19 +48,19 @@ ms.locfileid: "67380879"
 
 [MB SMS 操作](mb-sms-operations.md)
 
-[MB 供应商特定的操作](mb-vendor-specific-operations.md)
+[MB 供应商特定操作](mb-vendor-specific-operations.md)
 
 [MB USSD 操作](mb-ussd-operations.md)
 
 [MB 设备服务](mb-device-services.md)
 
-[可以将多模式多运营商的 MB](mb-multimode-multicarrier.md)
+[MB 多模式多](mb-multimode-multicarrier.md)
 
 [MB 多 SIM 操作](mb-multi-sim-operations.md)
 
-[MB 预配的上下文操作](mb-provisioned-context-operations.md)
+[MB 预配上下文操作](mb-provisioned-context-operations.md)
 
-[MB 网络方块列表操作](mb-network-blacklist-operations.md)
+[MB 网络黑名单操作](mb-network-blacklist-operations.md)
 
 [MB LTE 附加操作](mb-lte-attach-operations.md)
 
@@ -74,11 +74,11 @@ ms.locfileid: "67380879"
 
 [MB 调制解调器重置操作](mb-modem-reset-operations.md)
 
-[MB 特别行政区平台支持](mb-sar-platform-support.md)
+[MB SAR 平台支持](mb-sar-platform-support.md)
 
 [MB 基站信息查询支持](mb-base-stations-information-query-support.md)
 
-[MB esim 卡 MBIM 就绪指南](mb-esim-mbim-ready-state-guidance.md)
+[MB eSIM MBIM 就绪状态指南](mb-esim-mbim-ready-state-guidance.md)
 
 [MB NDIS 状态通知](mb-ndis-status-notifications.md)
 
@@ -87,7 +87,7 @@ ms.locfileid: "67380879"
 ## <a name="related-topics"></a>相关主题
 
 
-[移动宽带的引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[移动宽带参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

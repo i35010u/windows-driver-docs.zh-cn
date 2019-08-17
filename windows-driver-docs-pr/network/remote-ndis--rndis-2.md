@@ -1,35 +1,35 @@
 ---
-title: 远程 NDIS (RNDIS)
-description: 远程 NDIS (RNDIS)
+title: 远程 NDIS 简介 (RNDIS)
+description: 远程 NDIS 简介 (RNDIS)
 ms.assetid: 857cec9c-6098-4fd3-9528-fa592da997f4
 keywords:
 - 远程 NDIS WDK 网络
-- 远程 NDIS 网络驱动程序 WDK，
+- 网络驱动程序 WDK, 远程 NDIS
 - RNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc549cad806a7863478d06a1c728d0c580912bbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ad9a4499897ed2b382e450b6c1dee4f71bdc4fd4
+ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565818"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565701"
 ---
-# <a name="remote-ndis-rndis"></a>远程 NDIS (RNDIS)
+# <a name="introduction-to-remote-ndis-rndis"></a>远程 NDIS 简介 (RNDIS)
 
 
 
 
 
-远程 NDIS (RNDIS) 是 USB，如动态插 (PnP) 总线上的以太网 (802.3) 网络设备的总线无关的类规范 1394、 蓝牙和 InfiniBand。 远程 NDIS 定义抽象的控制和数据通道通过主计算机和远程 NDIS 设备之间独立于总线的消息协议。 远程 NDIS 是不够精确，以允许对远程 NDIS 设备的供应商无关的类驱动程序支持在主计算机上。
+远程 NDIS (RNDIS) 是一种与总线无关的类规范, 适用于动态即插即用 (PnP) 总线上的以太网 (802.3) 网络设备, 如 USB、1394、蓝牙和自动限制。 远程 NDIS 通过抽象控件和数据通道定义主机计算机和远程 NDIS 设备之间与总线无关的消息协议。 远程 NDIS 的精确度足以允许主机计算机上的远程 NDIS 设备具有与供应商无关的类驱动程序支持。
 
-从 Windows XP 的 Microsoft Windows 版本包括 USB 设备的远程 NDIS 驱动程序。 若要使用 USB 设备使用此驱动程序，IHV 必须提供遵循中的模板的 INF 文件[远程 NDIS INF 模板](remote-ndis-inf-template.md)。
+Windows XP 中的 Microsoft Windows 版本包括用于 USB 设备的远程 NDIS 驱动程序。 若要将此驱动程序与 USB 设备一起使用, IHV 必须提供遵循[远程 NDIS INF 模板](remote-ndis-inf-template.md)中的模板的 INF 文件。
 
-从主机中，远程 NDIS 消息发送到远程 NDIS 设备和远程 NDIS 设备会使用相应的完成消息进行响应。 消息还会在未经请求的方式从远程 NDIS 设备到主机。
+远程 NDIS 消息从主机发送到远程 NDIS 设备, 远程 NDIS 设备使用适当的完成消息进行响应。 消息也将以未经请求的方式从远程 NDIS 设备发送到主机。
 
 本部分包括：
 
-[远程 NDIS (RNDIS) 的概述](overview-of-remote-ndis--rndis-.md)
+[远程 NDIS 概述 (RNDIS)](overview-of-remote-ndis--rndis-.md)
 
 [远程 NDIS 通信](remote-ndis-communication.md)
 
