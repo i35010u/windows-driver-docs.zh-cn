@@ -3,29 +3,61 @@
 - name: 在不使用共同安装程序的情况下为 USB 设备更新设备固件
   href: device-firmware-update-for-usb-devices-without-using-a-co-installer.md
 - name: USB 视频类 (UVC) 相机实现指南
-  href: uvc-camera-implementation-guide.md
-- name: Frame Server 自定义媒体源
-  href: frame-server-custom-media-source.md
-- name: 360 相机视频捕获
-  href: 360-camera-video-capture.md
-- name: 相机内部函数
-  href: camera-intrinsics.md
-- name: 适用于 UVC 设备的 DShow 桥实现指南
-  href: dshow-bridge-implementation-guidance-for-usb-video-class-devices.md
-- name: 通用相机驱动程序的相机类 INF 文件设置
-  href: camera-driver-inf-file-class-setting.md
-- name: USB 视频类 (UVC) 驱动程序实现清单
   items:
+    - name: USB 视频类 (UVC) 相机实现指南
+      href: uvc-camera-implementation-guide.md
+    - name: 相机内部函数
+      href: camera-intrinsics.md
+    - name: 相机捕获元数据
+      href: mf-capture-metadata.md
+    - name: 相机设备方向
+      href: camera-device-orientation.md
+    - name: 相机配置文件
+      href: camera-profiles.md
+    - name: 适用于 UVC 设备的 DShow 桥实现指南
+      href: dshow-bridge-implementation-guidance-for-usb-video-class-devices.md
     - name: USB 视频类 (UVC) 驱动程序实现清单
       href: uvc-driver-implementation-checklist.md
     - name: 设备 MFT 设计指南
       href: dmft-design.md
     - name: UVC 中的红外流支持
       href: infrared-stream-support-in-uvc.md
+    - name: 通用相机驱动程序的相机类 INF 文件设置
+      href: camera-driver-inf-file-class-setting.md
     - name: USB 视频类 1.5 规范的 Microsoft 扩展
       href: uvc-extensions-1-5.md
-- name: 相机设备方向
-  href: camera-device-orientation.md
+- name: Windows Hello 相机驱动程序启动指南
+  href: windows-hello-camera-driver-bring-up-guide.md
+- name: 扩展的相机控制
+  href: standardized-extended-controls-.md
+- name: Frame Server 自定义媒体源
+  href: frame-server-custom-media-source.md
+- name: 360 相机视频捕获
+  href: 360-camera-video-capture.md
+- name: 闪光灯（灯）支持
+  href: flashlight-support.md
+- name: 流媒体示例
+  href: streaming-media-samples.md
+- name: 适用于 OEM 的 Windows 10 内置相机应用设置指南
+  href: oem-guidance-on-settings-for-the-windows-10-in-box-camera-app.md
+- name: 视频防抖动注册表设置
+  href: oem-guidance-on-registry-keys-for-video-stabilization.md
+- name: 适用于 Windows 10 的通用相机驱动程序模型
+  items:
+    - name: 适用于 Windows 10 的通用相机驱动程序模型
+      href: windows-10-technical-preview-camera-drivers-design-guide.md
+    - name: 适用于 Windows 10 的全新相机驱动程序接口
+      items:
+        - name: 适用于 Windows 10 的全新相机驱动程序接口
+          href: windows-10-technical-preview-camera-drivers-reference.md
+        - name: 适用于 Windows 10 的全新相机驱动程序控件
+          href: camera-driver-controls.md
+        - name: 适用于 Windows 10 的全新相机驱动程序枚举
+          href: camera-driver-enumerations.md
+        - name: 适用于 Windows 10 的全新相机驱动程序函数
+          href: camera-driver-functions.md
+        - name: 适用于 Windows 10 的全新相机驱动程序结构
+          href: camera-driver-structures.md
 - name: AVStream 微型驱动程序设计指南
   items:
     - name: AVStream 微型驱动程序设计指南
@@ -708,32 +740,6 @@
       href: interface-handler-plug-in.md
     - name: 属性页插件
       href: property-page-plug-in.md
-- name: 流媒体示例
-  href: streaming-media-samples.md
-- name: 适用于 OEM 的 Windows 10 内置相机应用设置指南
-  href: oem-guidance-on-settings-for-the-windows-10-in-box-camera-app.md
-- name: 视频防抖动注册表设置
-  href: oem-guidance-on-registry-keys-for-video-stabilization.md
-- name: 扩展的相机控制
-  href: standardized-extended-controls-.md
-- name: 相机驱动程序启动指南
-  href: windows-hello-camera-driver-bring-up-guide.md
-- name: 适用于 Windows 10 的通用相机驱动程序模型
-  items:
-    - name: 适用于 Windows 10 的通用相机驱动程序模型
-      href: windows-10-technical-preview-camera-drivers-design-guide.md
-    - name: 适用于 Windows 10 的全新相机驱动程序接口
-      items:
-        - name: 适用于 Windows 10 的全新相机驱动程序接口
-          href: windows-10-technical-preview-camera-drivers-reference.md
-        - name: 适用于 Windows 10 的全新相机驱动程序控件
-          href: camera-driver-controls.md
-        - name: 适用于 Windows 10 的全新相机驱动程序枚举
-          href: camera-driver-enumerations.md
-        - name: 适用于 Windows 10 的全新相机驱动程序函数
-          href: camera-driver-functions.md
-        - name: 适用于 Windows 10 的全新相机驱动程序结构
-          href: camera-driver-structures.md
 - name: AVStream 属性集
   items:
     - name: AVStream 属性集

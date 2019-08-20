@@ -1,184 +1,182 @@
 - name: HID 驱动程序
+  href: index.md
+- name: HID 中的新增功能
+  href: what-s-new-in-hid.md
+- name: HID 概念简介
+  href: introduction-to-hid-concepts.md
+- name: HID 体系结构
+  href: hid-architecture.md
+- name: Windows 中支持的 HID 客户端
+  href: hid-clients-supported-in-windows.md
+- name: Windows 中支持的 HID 传输方式
+  href: hid-transports-supported-in-windows.md
+- name: HID 客户端
   items:
-    - name: HID 驱动程序
-      href: index.md
-    - name: HID 中的新增功能
-      href: what-s-new-in-hid.md
-    - name: HID 概念简介
-      href: introduction-to-hid-concepts.md
-    - name: HID 体系结构
-      href: hid-architecture.md
-    - name: Windows 中支持的 HID 客户端
-      href: hid-clients-supported-in-windows.md
-    - name: Windows 中支持的 HID 传输方式
-      href: hid-transports-supported-in-windows.md
-    - name: HID 客户端
+    - name: HID 客户端概述
+      href: hid-clients.md
+    - name: HID 用法
+      href: hid-usages.md
+    - name: HID 集合
       items:
-        - name: HID 客户端
-          href: hid-clients.md
-        - name: HID 用法
-          href: hid-usages.md
-        - name: HID 集合
-          items:
-            - name: HID 集合
-              href: hid-collections.md
-            - name: 顶级集合
-              href: top-level-collections.md
-            - name: Windows 打开的供系统使用的顶级集合
-              href: top-level-collections-opened-by-windows-for-system-use.md
-            - name: 预分析的数据
-              href: preparsed-data.md
-            - name: 链接集合
-              href: link-collections.md
-            - name: 集合功能
-              href: collection-capability.md
-            - name: 按钮功能数组
-              href: button-capability-arrays.md
-            - name: 值功能数组
-              href: value-capability-arrays.md
-            - name: 数据索引
-              href: data-indices.md
+        - name: HID 集合概述
+          href: hid-collections.md
+        - name: 顶级集合
+          href: top-level-collections.md
+        - name: Windows 打开的供系统使用的顶级集合
+          href: top-level-collections-opened-by-windows-for-system-use.md
+        - name: 预分析的数据
+          href: preparsed-data.md
+        - name: 链接集合
+          href: link-collections.md
+        - name: 集合功能
+          href: collection-capability.md
+        - name: 按钮功能数组
+          href: button-capability-arrays.md
+        - name: 值功能数组
+          href: value-capability-arrays.md
+        - name: 数据索引
+          href: data-indices.md
+    - name: 打开和读取 HID 集合
+      items:
         - name: 打开 HID 集合
-          items:
-            - name: 打开 HID 集合
-              href: opening-hid-collections.md
-            - name: 找到并打开 HID 集合
-              href: finding-and-opening-a-hid-collection.md
-            - name: HID 客户端驱动程序
-              href: hid-client-drivers.md
-            - name: 强制实施适用于 HID 集合的安全读取
-              href: enforcing-a-secure-read-for-a-hid-collection.md
-            - name: 获取预分析的数据
-              href: obtaining-preparsed-data.md
-            - name: 获取集合信息
-              href: obtaining-collection-information.md
-        - name: 处理 HID 报告
-          items:
-            - name: 处理 HID 报告
-              href: handling-hid-reports.md
-            - name: 初始化 HID 报告
-              href: initializing-hid-reports.md
-            - name: 获取 HID 报告
-              href: obtaining-hid-reports.md
-            - name: 发送 HID 报告
-              href: sending-hid-reports.md
-            - name: 解释 HID 报告
-              href: interpreting-hid-reports.md
-            - name: 排查 HID 报告问题
-              href: troubleshooting-hid-reports.md
-        - name: 释放资源
-          href: freeing-resources.md
-        - name: 安装 HID 客户端
-          href: installing-hid-clients.md
-        - name: 顶级集合的 HIDClass 硬件 ID
-          href: hidclass-hardware-ids-for-top-level-collections.md
-        - name: 键盘和鼠标 HID 客户端驱动程序
-          href: keyboard-and-mouse-hid-client-drivers.md
-        - name: 传感器 HID 类驱动程序
-          href: sensor-hid-class-driver.md
-        - name: 飞行模式无线管理
-          href: airplane-mode-radio-management.md
-        - name: 显示器亮度控制
-          href: display-brightness-control.md
-    - name: HID 传输
+          href: opening-hid-collections.md
+        - name: 找到并打开 HID 集合
+          href: finding-and-opening-a-hid-collection.md
+        - name: HID 客户端驱动程序
+          href: hid-client-drivers.md
+        - name: 强制实施适用于 HID 集合的安全读取
+          href: enforcing-a-secure-read-for-a-hid-collection.md
+        - name: 获取预分析的数据
+          href: obtaining-preparsed-data.md
+        - name: 获取集合信息
+          href: obtaining-collection-information.md
+    - name: 处理 HID 报告
       items:
-        - name: HID 传输
-          href: hid-transports.md
-        - name: ACPI 按钮设备
-          href: acpi-button-device.md
-        - name: HID 按钮驱动程序
-          href: buttons.md
-        - name: 虚拟 HID 框架 (VHF)
-          href: virtual-hid-framework--vhf-.md
-        - name: 传输微型驱动程序
-          items:
-            - name: 传输微型驱动程序
-              href: transport-minidrivers.md
-            - name: 将微型驱动程序绑定到 HID 类
-              href: binding-minidrivers-to-the-hid-class.md
-            - name: 微型驱动程序和 HID 类驱动程序
-              href: minidriver-operations.md
-            - name: 平板电脑的微型驱动程序要求
-              href: minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows.md
-        - name: 基于 USB 的 HID
-          items:
-            - name: 基于 USB 的 HID
-              href: hid-over-usb.md
-            - name: 基于 USB 的 HID 的体系结构
-              href: architecture-and-overview-for-usb.md
-            - name: 即插即用支持
-              href: plug-and-play-support.md
-            - name: 电源管理
-              href: power-management.md
-            - name: 基于 USB 的 HID 设备的选择性挂起
-              href: selective-suspend-for-hid-over-usb-devices.md
-            - name: 基于 USB 的 HID 的资源
-              href: reference-and-additional-details.md
-        - name: 基于 I2C 的 HID
-          items:
-            - name: 基于 I2C 的 HID
-              href: hid-over-i2c-guide.md
-            - name: 体系结构和概述
-              href: architecture-and-overview.md
-            - name: 即插即用支持和电源管理
-              href: plug-and-play-support-and-power-management.md
-            - name: I²C 传输的电源管理
-              href: power-management-over-i2c.md
-            - name: 排查常见错误
-              href: troubleshooting-common-errors.md
-            - name: 事件跟踪
-              href: event-tracing.md
-            - name: 基于 I2C 的 HID 的资源
-              href: reference-and-additional-details2.md
+        - name: “处理 HID 报告”主题
+          href: handling-hid-reports.md
+        - name: 初始化 HID 报告
+          href: initializing-hid-reports.md
+        - name: 获取 HID 报告
+          href: obtaining-hid-reports.md
+        - name: 发送 HID 报告
+          href: sending-hid-reports.md
+        - name: 解释 HID 报告
+          href: interpreting-hid-reports.md
+        - name: 排查 HID 报告问题
+          href: troubleshooting-hid-reports.md
+    - name: 释放资源
+      href: freeing-resources.md
+    - name: 安装 HID 客户端
+      href: installing-hid-clients.md
+    - name: 顶级集合的 HIDClass 硬件 ID
+      href: hidclass-hardware-ids-for-top-level-collections.md
+    - name: 键盘和鼠标 HID 客户端驱动程序
+      href: keyboard-and-mouse-hid-client-drivers.md
+    - name: 传感器 HID 类驱动程序
+      href: sensor-hid-class-driver.md
+    - name: 飞行模式无线管理
+      href: airplane-mode-radio-management.md
+    - name: 显示器亮度控制
+      href: display-brightness-control.md
+- name: HID 传输
+  items:
+    - name: HID 传输概述
+      href: hid-transports.md
+    - name: ACPI 按钮设备
+      href: acpi-button-device.md
+    - name: HID 按钮驱动程序
+      href: buttons.md
+    - name: 虚拟 HID 框架 (VHF)
+      href: virtual-hid-framework--vhf-.md
+    - name: 传输微型驱动程序
+      items:
+        - name: “传输微型驱动程序”概述
+          href: transport-minidrivers.md
+        - name: 将微型驱动程序绑定到 HID 类
+          href: binding-minidrivers-to-the-hid-class.md
+        - name: 微型驱动程序和 HID 类驱动程序
+          href: minidriver-operations.md
+        - name: 平板电脑的微型驱动程序要求
+          href: minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows.md
+    - name: 基于 USB 的 HID
+      items:
+        - name: 基于 USB 的 HID 概述
+          href: hid-over-usb.md
+        - name: 基于 USB 的 HID 的体系结构
+          href: architecture-and-overview-for-usb.md
+        - name: 即插即用支持
+          href: plug-and-play-support.md
+        - name: 电源管理
+          href: power-management.md
+        - name: 基于 USB 的 HID 设备的选择性挂起
+          href: selective-suspend-for-hid-over-usb-devices.md
+        - name: 基于 USB 的 HID 的资源
+          href: reference-and-additional-details.md
+    - name: 基于 I2C 的 HID
+      items:
+        - name: 基于 I2C 的 HID 简介
+          href: hid-over-i2c-guide.md
+        - name: 体系结构和概述
+          href: architecture-and-overview.md
+        - name: 即插即用支持和电源管理
+          href: plug-and-play-support-and-power-management.md
+        - name: I²C 传输的电源管理
+          href: power-management-over-i2c.md
+        - name: 排查常见错误
+          href: troubleshooting-common-errors.md
+        - name: 事件跟踪
+          href: event-tracing.md
+        - name: 基于 I2C 的 HID 的资源
+          href: reference-and-additional-details2.md
+- name: 非 HID 旧设备和驱动程序
+  items:
     - name: 非 HID 旧设备
+      href: non-hid-legacy-devices.md
+    - name: 键盘和鼠标类驱动程序
+      href: keyboard-and-mouse-class-drivers.md
+    - name: PS/2 (i8042prt) 驱动程序
+      href: ps-2--i8042prt--driver.md
+    - name: 第三方筛选器驱动程序
+      href: 3rd-party-filter-drivers.md
+    - name: 安装 OS 驱动程序
       items:
-        - name: 非 HID 旧设备
-          href: non-hid-legacy-devices.md
-        - name: 键盘和鼠标类驱动程序
-          href: keyboard-and-mouse-class-drivers.md
-        - name: PS/2 (i8042prt) 驱动程序
-          href: ps-2--i8042prt--driver.md
-        - name: 第三方筛选器驱动程序
-          href: 3rd-party-filter-drivers.md
         - name: OS 驱动程序安装
+          href: os-driver-installation.md
+        - name: INF DDInstall.MigrateToDevNode 节
+          href: inf-ddinstall-migratetodevnode-section.md
+        - name: INF SharedDriver 条目
+          href: inf-shareddriver-entry.md
+        - name: INF PS2_Inst.NoInterruptInit.Bioses 节
+          href: inf-ps2-inst-nointerruptinit-bioses-section.md
+        - name: INF PS2_Inst.NoInterruptInit 节
+          href: inf-ps2-inst-nointerruptinit-section.md
+    - name: DirectInput
+      items:
+        - name: DirectInput 概述
+          href: directinput.md
+        - name: 游戏杆支持
           items:
-            - name: OS 驱动程序安装
-              href: os-driver-installation.md
-            - name: INF DDInstall.MigrateToDevNode 节
-              href: inf-ddinstall-migratetodevnode-section.md
-            - name: INF SharedDriver 条目
-              href: inf-shareddriver-entry.md
-            - name: INF PS2_Inst.NoInterruptInit.Bioses 节
-              href: inf-ps2-inst-nointerruptinit-bioses-section.md
-            - name: INF PS2_Inst.NoInterruptInit 节
-              href: inf-ps2-inst-nointerruptinit-section.md
-        - name: DirectInput
-          items:
-            - name: DirectInput
-              href: directinput.md
-            - name: 游戏杆支持
-              items:
-                - name: 游戏杆支持
-                  href: joystick-support.md
-                - name: 游戏杆驱动程序模型
-                  href: joystick-driver-model.md
-                - name: 微型驱动程序提供的回调
-                  href: minidriver-supplied-callbacks.md
-                - name: ' 原始接口'
-                  href: original-interface.md
-                - name: ' DirectX 5.0 接口'
-                  href: directx-5-0-interface.md
-                - name: 创建 INF 文件
-                  href: creating-an-inf-file.md
-                - name: 注册表设置
-                  href: registry-settings2.md
-                - name: VJoyD 微型驱动程序重写
-                  href: vjoyd-minidriver-override.md
-                - name: 轴选择
-                  href: axis-selection.md
-            - name: 强制反馈设备驱动程序接口
-              href: force-feedback-device-driver-interface.md
-            - name: 扩展 DirectInput 游戏控制器控制面板
-              href: extending-the-directinput-game-controller-control-panel.md
-    - name: Hdpi.h 宏
-      href: hdpi-h-macros.md
+            - name: “游戏杆支持”概述
+              href: joystick-support.md
+            - name: 游戏杆驱动程序模型
+              href: joystick-driver-model.md
+            - name: 微型驱动程序提供的回调
+              href: minidriver-supplied-callbacks.md
+            - name: ' 原始接口'
+              href: original-interface.md
+            - name: ' DirectX 5.0 接口'
+              href: directx-5-0-interface.md
+            - name: 创建 INF 文件
+              href: creating-an-inf-file.md
+            - name: 注册表设置
+              href: registry-settings2.md
+            - name: VJoyD 微型驱动程序重写
+              href: vjoyd-minidriver-override.md
+            - name: 轴选择
+              href: axis-selection.md
+        - name: 强制反馈设备驱动程序接口
+          href: force-feedback-device-driver-interface.md
+        - name: 扩展 DirectInput 游戏控制器控制面板
+          href: extending-the-directinput-game-controller-control-panel.md
+- name: Hdpi.h 宏
+  href: hdpi-h-macros.md
