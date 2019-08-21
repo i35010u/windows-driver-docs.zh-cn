@@ -4,52 +4,52 @@ title: 如何选择和配置设备基础功能测试
 description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20842ec8fd3dd48672fe9ea1f7301739c36d00aa
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1ea15e3628e9de1a3171bb0bb24428218135e2bc
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "57349144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393535"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
 
 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。 设备基础功能测试是在 Microsoft 内部用于测试 Windows 和 WDK 随附的驱动程序和驱动程序样本以及在外部作为 [Windows 硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=8705)一部分的一系列测试。 可以在开发环境中运行测试。 运行测试时，可以使用与 Windows 认证测试所使用的相同参数，或者可以根据测试和调试需要配置和自定义运行时参数。
 
-## <a name="span-idgettingthemostfromthedevicefundamentalstestsspanspan-idgettingthemostfromthedevicefundamentalstestsspanspan-idgettingthemostfromthedevicefundamentalstestsspangetting-the-most-from-the-device-fundamentals-tests"></a><span id="Getting_the_most_from_the_Device_Fundamentals_tests"></span><span id="getting_the_most_from_the_device_fundamentals_tests"></span><span id="GETTING_THE_MOST_FROM_THE_DEVICE_FUNDAMENTALS_TESTS"></span>充分利用设备基础功能测试
+## <a name="span-idgetting_the_most_from_the_device_fundamentals_testsspanspan-idgetting_the_most_from_the_device_fundamentals_testsspanspan-idgetting_the_most_from_the_device_fundamentals_testsspangetting-the-most-from-the-device-fundamentals-tests"></a><span id="Getting_the_most_from_the_Device_Fundamentals_tests"></span><span id="getting_the_most_from_the_device_fundamentals_tests"></span><span id="GETTING_THE_MOST_FROM_THE_DEVICE_FUNDAMENTALS_TESTS"></span>充分利用设备基础功能测试
 
 
-若要充分利用设备基础功能测试，设备必须受默认的 I/O 插件支持。若要了解设备类型是否受支持以及确定是否有特定的测试要求，请参阅 [Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/Library/Windows/Hardware/Hh781398)（提供的 WDTF 简单 I/O 插件）。设备基础功能测试还包括一个实用程序，可以用其测试设备是否受支持。 如果设备不受支持，则可以在 Visual Studio 中 创建一个 WDTF 简单 I/O 插件。 有关详细信息，请参阅 [How to customize I/O for your device using the WDTF Simple I/O Action Plug-in](https://msdn.microsoft.com/Library/Windows/Hardware/Hh706277)（如何使用 WDTF 简单 I/O 操作插件为你的设备自定义 I/O）。
+若要充分利用设备基础功能测试，设备必须受默认的 I/O 插件支持。若要了解设备类型是否受支持以及确定是否有特定的测试要求，请参阅 [Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)（提供的 WDTF 简单 I/O 插件）。设备基础功能测试还包括一个实用程序，可以用其测试设备是否受支持。 如果设备不受支持，则可以在 Visual Studio 中 创建一个 WDTF 简单 I/O 插件。 有关详细信息，请参阅 [How to customize I/O for your device using the WDTF Simple I/O Action Plug-in](https://docs.microsoft.com/windows-hardware/drivers/wdtf/to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in)（如何使用 WDTF 简单 I/O 操作插件为你的设备自定义 I/O）。
 
-## <a name="span-idaboutthedevicefundamentalstestsspanspan-idaboutthedevicefundamentalstestsspanspan-idaboutthedevicefundamentalstestsspanabout-the-device-fundamentals-tests"></a><span id="About_the_Device_Fundamentals_Tests"></span><span id="about_the_device_fundamentals_tests"></span><span id="ABOUT_THE_DEVICE_FUNDAMENTALS_TESTS"></span>关于设备基础功能测试
+## <a name="span-idabout_the_device_fundamentals_testsspanspan-idabout_the_device_fundamentals_testsspanspan-idabout_the_device_fundamentals_testsspanabout-the-device-fundamentals-tests"></a><span id="About_the_Device_Fundamentals_Tests"></span><span id="about_the_device_fundamentals_tests"></span><span id="ABOUT_THE_DEVICE_FUNDAMENTALS_TESTS"></span>关于设备基础功能测试
 
 
 WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两种配置下，都可以通过编辑测试参数来调整测试长度、要执行的测试周期数以及其他测试参数，具体取决于需要测试的目标设备或驱动程序。 基本配置适用于通用驱动程序和设备的测试和调试。 在开发周期早期及整个过程中均可使用基本配置。 基本配置下的测试所使用的设置与 Windows 认证测试使用的设置相同，但前者的运行时更短。 在认证配置下，测试使用的设置与 Windows 认证测试使用的设置完全相同。 使用认证配置来验证设备或驱动程序是否做好 [Windows 硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=8705)的准备。
 
-[设备基础功能测试](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)包括以下类别的测试。
+[设备基础功能测试](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)包括以下类别的测试。
 
--   [混沌测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673008)
--   [覆盖范围测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673009)
--   [CPU 压力测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673010)
--   [驱动程序安装测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673012)
--   [I/O 测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673013)
--   [渗透压力测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673014)
--   [PNP 测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673015)
--   [重新启动测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673016)
--   [睡眠测试（设备基础功能）](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673017)
+-   [混沌测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/chaos-tests--device-fundamentals-)
+-   [覆盖范围测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/coverage-tests--device-fundamentals-)
+-   [CPU 压力测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/cpustress-tests--device-fundamentals-)
+-   [驱动程序安装测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/driverinstall-tests--device-fundamentals-)
+-   [I/O 测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/i-o-tests--device-fundamentals-)
+-   [渗透压力测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)
+-   [PNP 测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnp-tests--device-fundamentals-)
+-   [重新启动测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/reboot-tests--device-fundamentals-)
+-   [睡眠测试（设备基础功能）](https://docs.microsoft.com/windows-hardware/drivers/devtest/sleep-tests--device-fundamentals-)
 -   [实用程序](#utility_tests)
 -   [驱动程序验证程序](#utility_tests)
 
-### <a name="span-idsettingtherun-timetestparametersspanspan-idsettingtherun-timetestparametersspanspan-idsettingtherun-timetestparametersspansetting-the-run-time-test-parameters"></a><span id="Setting_the_run-time_test_parameters"></span><span id="setting_the_run-time_test_parameters"></span><span id="SETTING_THE_RUN-TIME_TEST_PARAMETERS"></span>设置运行时测试参数
+### <a name="span-idsetting_the_run-time_test_parametersspanspan-idsetting_the_run-time_test_parametersspanspan-idsetting_the_run-time_test_parametersspansetting-the-run-time-test-parameters"></a><span id="Setting_the_run-time_test_parameters"></span><span id="setting_the_run-time_test_parameters"></span><span id="SETTING_THE_RUN-TIME_TEST_PARAMETERS"></span>设置运行时测试参数
 
 可以编辑多个设备基础功能测试的运行时参数。 在“驱动程序测试组”窗口中，测试名称旁边的箭头 (») 指示你可以更改此测试参数。 单击箭头 (») 即可显示运行时参数。
 
-其中一个最常用的参数是 *DQ*，用于指定要测试的目标设备。 默认值 (**IsDevice**) 将测试目标计算机上的所有设备。 *DQ* 参数将通过 [**WDTF**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547) [SDEL](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539571) 查询来确定目标设备。 可以指定特定测试设备，如：
+其中一个最常用的参数是 *DQ*，用于指定要测试的目标设备。 默认值 (**IsDevice**) 将测试目标计算机上的所有设备。 *DQ* 参数将通过 [**WDTF**](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) [SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) 查询来确定目标设备。 可以指定特定测试设备，如：
 
 **DeviceID=’USB\\ROOT\_HUB\\4&1CD5D022&0’** 仅选择具有指定 **DeviceID** 的测试设备。
 
 有关 *DQ* 及其他运行时参数的详细信息，请参阅[设备基础功能测试参数](#DevFund_Params)。
 
-## <a name="span-iddevfundparamsspanspan-iddevfundparamsspanspan-iddevfundparamsspandevice-fundamentals-test-parameters"></a><span id="DevFund_Params"></span><span id="devfund_params"></span><span id="DEVFUND_PARAMS"></span>设备基础功能测试参数
+## <a name="span-iddevfund_paramsspanspan-iddevfund_paramsspanspan-iddevfund_paramsspandevice-fundamentals-test-parameters"></a><span id="DevFund_Params"></span><span id="devfund_params"></span><span id="DEVFUND_PARAMS"></span>设备基础功能测试参数
 
 
 <table>
@@ -66,7 +66,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="DQ"></span><span id="dq"></span><em>DQ</em></p></td>
-<td align="left"><p>确定应当用于测试的设备。 <em>DQ</em> 参数将通过 <a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547)"><strong>WDTF</strong></a><a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff539571" data-raw-source="[SDEL](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539571)">SDEL</a> 查询来确定目标设备。 此查询非常灵活，可用于表示任何数量的设备，从单个设备到系统中的所有设备。</p>
+<td align="left"><p>确定应当用于测试的设备。 <em>DQ</em> 参数将通过 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)"><strong>WDTF</strong></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">SDEL</a> 查询来确定目标设备。 此查询非常灵活，可用于表示任何数量的设备，从单个设备到系统中的所有设备。</p>
 <p>常见示例：</p>
 <p></p>
 <dl>
@@ -77,7 +77,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_Device_Id__"></span><span id="to_test_a_device_with_a_specific_device_id__"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DEVICE_ID__"></span>若要测试具有特定设备 ID 的设备：</dt>
 <dd><p><strong>DeviceId=’</strong><em>DeviceId</em><strong>’</strong></p>
-<p>例如，<strong>DeviceID=’USB\ROOT_HUB\4&amp;1CD5D022&amp;0’</strong></p>
+<p>例如，<strong>DeviceID=’USB\ROOT_HUB\4&1CD5D022&0’</strong></p>
 </dd>
 <dt><span id="_To_test_a_device_with_a_specific_interface_"></span><span id="_to_test_a_device_with_a_specific_interface_"></span><span id="_TO_TEST_A_DEVICE_WITH_A_SPECIFIC_INTERFACE_"></span> 若要测试具有特定接口的设备：</dt>
 <dd><p><strong>Interfaces::</strong><em>InterfaceGUID</em></p>
@@ -109,7 +109,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="DoConcurrentIO"></span><span id="doconcurrentio"></span><span id="DOCONCURRENTIO"></span><em>DoConcurrentIO</em></p></td>
-<td align="left"><p>True 或 False。 执行 PnP 操作时，使用 <a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547" data-raw-source="[WDTF](https://msdn.microsoft.com/Library/Windows/Hardware/Ff539547)">WDTF</a> 并发 I/O 接口向目标设备堆栈发送 I/O 请求。</p></td>
+<td align="left"><p>True 或 False。 执行 PnP 操作时，使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[WDTF](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)">WDTF</a> 并发 I/O 接口向目标设备堆栈发送 I/O 请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="FillZeroPageWithNull"></span><span id="fillzeropagewithnull"></span><span id="FILLZEROPAGEWITHNULL"></span><em>FillZeroPageWithNull</em></p></td>
@@ -215,7 +215,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 
  
 
-## <a name="span-idutilitytestsspanspan-idutilitytestsspanutility-tests"></a><span id="utility_tests"></span><span id="UTILITY_TESTS"></span>实用程序测试
+## <a name="span-idutility_testsspanspan-idutility_testsspanutility-tests"></a><span id="utility_tests"></span><span id="UTILITY_TESTS"></span>实用程序测试
 
 
 <table>
@@ -247,7 +247,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 
  
 
-## <a name="span-iddvrftestsspanspan-iddvrftestsspandriver-verifier"></a><span id="dvrf_tests"></span><span id="DVRF_TESTS"></span>驱动程序验证程序
+## <a name="span-iddvrf_testsspanspan-iddvrf_testsspandriver-verifier"></a><span id="dvrf_tests"></span><span id="DVRF_TESTS"></span>驱动程序验证程序
 
 
 <table>
@@ -264,26 +264,26 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Disable_Driver_Verifier"></span><span id="disable_driver_verifier"></span><span id="DISABLE_DRIVER_VERIFIER"></span>禁用驱动程序验证程序</p></td>
-<td align="left"><p>禁用测试计算机上的<a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)">驱动程序验证程序</a>。</p>
+<td align="left"><p>禁用测试计算机上的<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">驱动程序验证程序</a>。</p>
 <p><strong>参数：</strong>无</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Enable_Driver_Verifier"></span><span id="enable_driver_verifier"></span><span id="ENABLE_DRIVER_VERIFIER"></span>启用驱动程序验证程序</p></td>
-<td align="left"><p>可以使用此测试在测试计算机上为设备的所有驱动程序启用<a href="https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)">驱动程序验证程序</a>。</p>
-<p><strong>参数：</strong>-请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff545470" data-raw-source="[Driver Verifier Options](https://msdn.microsoft.com/library/windows/hardware/ff545470)">驱动程序验证程序选项</a>。</p></td>
+<td align="left"><p>可以使用此测试在测试计算机上为设备的所有驱动程序启用<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">驱动程序验证程序</a>。</p>
+<p><strong>参数：</strong>-请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-options" data-raw-source="[Driver Verifier Options](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-options)">驱动程序验证程序选项</a>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [如何在运行时使用 Visual Studio 测试驱动程序](testing-a-driver-at-runtime.md)
-* [设备基础功能测试](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)
-* [Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/Library/Windows/Hardware/Hh781398)（提供的 WDTF 简单 I/O 插件）
-* [How to customize I/O for your device using the WDTF Simple I/O Action Plug-in](https://msdn.microsoft.com/Library/Windows/Hardware/Hh706277)（如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O）
+* [设备基础功能测试](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)
+* [Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)（提供的 WDTF 简单 I/O 插件）
+* [How to customize I/O for your device using the WDTF Simple I/O Action Plug-in](https://docs.microsoft.com/windows-hardware/drivers/wdtf/to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in)（如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O）
  
 
  

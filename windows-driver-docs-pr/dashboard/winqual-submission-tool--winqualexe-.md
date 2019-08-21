@@ -5,12 +5,12 @@ ms.assetid: f7a34ee3-0532-465b-acb0-1ff80e2d4cb8
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62203365b81b3cfd73864d5d1f00b07ccb4b475f
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 7273640dd6d764bd79efbdf39d6584ae62dad092
+ms.sourcegitcommit: ebf7371cb1b70330b9251bc2d2703d2b6de6fad1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334874"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68917854"
 ---
 # <a name="winqual-submission-tool-winqualexe"></a>Winqual 提交工具 (winqual.exe)
 
@@ -24,7 +24,7 @@ Winqual 提交工具 (Winqual.exe) 可帮助你创建一个提交程序包以进
 
 1.  使用你的 Microsoft 帐户登录到仪表板。
 
-2.  在左侧导航菜单上，单击“驱动程序”  。 在“获取软件包”  部分中，单击“Winqual 提交工具(WST)”  。
+2.  在左侧导航菜单上，单击“驱动程序”  。 在页面底部的“获取软件包”  部分，单击“Winqual 提交工具(WST)”  。
 
 3.  在“文件下载 - 安全警告”  对话框中，单击“运行”  。
 
@@ -40,7 +40,7 @@ Winqual 提交工具 (Winqual.exe) 可帮助你创建一个提交程序包以进
 
 9.  单击“关闭”  退出安装过程。
 
-## <a name="span-idhowtousewstspanspan-idhowtousewstspanspan-idhowtousewstspanhow-to-use-wst"></a><span id="How_to_use_WST"></span><span id="how_to_use_wst"></span><span id="HOW_TO_USE_WST"></span>如何使用 WST
+## <a name="span-idhow_to_use_wstspanspan-idhow_to_use_wstspanspan-idhow_to_use_wstspanhow-to-use-wst"></a><span id="How_to_use_WST"></span><span id="how_to_use_wst"></span><span id="HOW_TO_USE_WST"></span>如何使用 WST
 
 
 若要使用 Windows 提交工具 (WST)：
@@ -73,7 +73,7 @@ Winqual 提交工具 (Winqual.exe) 可帮助你创建一个提交程序包以进
 
 -   可以在提交程序包中放置一个可选的自述文件（ **.docx**、 **.doc** 或 **.txt**）。
 
-## <a name="span-idhowtocreateasystemssubmissionpackagespanspan-idhowtocreateasystemssubmissionpackagespanspan-idhowtocreateasystemssubmissionpackagespanhow-to-create-a-systems-submission-package"></a><span id="How_to_create_a_systems_submission_package"></span><span id="how_to_create_a_systems_submission_package"></span><span id="HOW_TO_CREATE_A_SYSTEMS_SUBMISSION_PACKAGE"></span>如何创建系统提交程序包
+## <a name="span-idhow_to_create_a_systems_submission_packagespanspan-idhow_to_create_a_systems_submission_packagespanspan-idhow_to_create_a_systems_submission_packagespanhow-to-create-a-systems-submission-package"></a><span id="How_to_create_a_systems_submission_package"></span><span id="how_to_create_a_systems_submission_package"></span><span id="HOW_TO_CREATE_A_SYSTEMS_SUBMISSION_PACKAGE"></span>如何创建系统提交程序包
 
 
 1.  在主屏幕上，单击“添加”  按钮。
@@ -90,7 +90,7 @@ Winqual 提交工具 (Winqual.exe) 可帮助你创建一个提交程序包以进
 
 7.  在修复所有错误后，便可以创建提交包。 将使用与 .xml 文件相同的名称，在相同位置创建提交包。
 
-## <a name="span-idhowtocreateadevicesubmissionpackagespanspan-idhowtocreateadevicesubmissionpackagespanspan-idhowtocreateadevicesubmissionpackagespanhow-to-create-a-device-submission-package"></a><span id="How_to_create_a_device_submission_package"></span><span id="how_to_create_a_device_submission_package"></span><span id="HOW_TO_CREATE_A_DEVICE_SUBMISSION_PACKAGE"></span>如何创建设备提交程序包
+## <a name="span-idhow_to_create_a_device_submission_packagespanspan-idhow_to_create_a_device_submission_packagespanspan-idhow_to_create_a_device_submission_packagespanhow-to-create-a-device-submission-package"></a><span id="How_to_create_a_device_submission_package"></span><span id="how_to_create_a_device_submission_package"></span><span id="HOW_TO_CREATE_A_DEVICE_SUBMISSION_PACKAGE"></span>如何创建设备提交程序包
 
 
 1.  在主屏幕上，单击“添加”  按钮。

@@ -4,12 +4,12 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8681d5544a66298e9e51bb35ffb57f6de68bae48
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f6414d39670cb29c5561df3459a2ef8852b95f92
+ms.sourcegitcommit: 62729233228955089d872d8010c99d48ad50f01e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813566"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570820"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
@@ -395,6 +395,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 | Windows_v100Server_RS5 | Windows Server 2019 |
 | Windows_v100_RS5 | Windows 10 RS5 x86 |
 | Windows_v100_RS5 | Windows 10 RS5 x64 |
+| Windows_v100_19H1 | Windows 10 19H1 更新 |
 
 ### <a name="list-of-operating-system-codes"></a>操作系统代码列表
 
@@ -449,9 +450,12 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 |WINDOWS_v100_RS4_FULL|Windows 10 RS4 客户端|
 |WINDOWS_v100_X64_RS4_FULL|Windows 10 RS4 客户端 x64|
 |WINDOWS_v100_ARM64_RS4_FULL|Windows 10 RS4 客户端 ARM64|
-| WINDOWS_v100_SERVER_X64_RS5_FULL | Windows Server 2019 |
-| WINDOWS_v100_RS5_FULL | Windows 10 RS5 x86 |
-| WINDOWS_v100_X64_RS5_FULL | Windows 10 RS5 x64 |
+|WINDOWS_v100_SERVER_X64_RS5_FULL | Windows Server 2019 |
+|WINDOWS_v100_RS5_FULL | Windows 10 RS5 x86 |
+|WINDOWS_v100_X64_RS5_FULL | Windows 10 RS5 客户端 x64 |
+|WINDOWS_v100_19H1_FULL |Windows 19H1 客户端 x86 |
+|WINDOWS_v100_X64_19H1_FULL |Windows 19H1 客户端 x64 |
+|WINDOWS_v100_ARM64_19H1_FULL | Windows 19H1 客户端 ARM64 |
 
 ## <a name="error-codes"></a>错误代码
 

@@ -5,12 +5,12 @@ ms.assetid: 7EFA9617-CF1D-4259-B0C4-A9DDCF5C3A1F
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1920cbd7bbec599f6d50679a8d994af5bd64bb1
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: b26a9cdea2a31f4a04486ed09b5bcb694c128509
+ms.sourcegitcommit: 7773f6edfc981865c8b0255f858e0f6c0cff5213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334985"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68483075"
 ---
 # <a name="hardware-submissions"></a>硬件提交
 
@@ -23,7 +23,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 在开发并测试你的产品后，可以通过硬件提交的方式提交结果。
 
 > [!NOTE]
-> 我们强烈建议你将公共驱动程序符号作为 HLK 程序包的一部分包括在内。 包括符号可改善[驱动程序可靠性报告](driver-failure-reporting.md)中返回的数据且绝不与外部共享。  请参阅[公共符号和私有符号](../devtest/public-symbols-and-private-symbols.md)，了解如何创建公共符号。  请参阅[步骤 8：创建提交包](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/step-8-create-a-submission-package)，了解如何将符号包括在程序包中。 请注意，提交中的任何 .pdb 文件都将在发布前被删除。
+> 我们强烈建议你将公共驱动程序符号作为 HLK 程序包的一部分包括在内。 请参阅[公共符号和私有符号](../devtest/public-symbols-and-private-symbols.md)，了解如何创建公共符号。  请参阅[步骤 8：创建提交包](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/step-8-create-a-submission-package)，了解如何将符号包括在程序包中。 请注意，提交中的任何 .pdb 文件都将在发布前被删除。
 
 - 若要提交 HLK 或 HCK 包，请参阅[创建新的硬件提交](create-a-new-hardware-submission.md)。
 
@@ -135,7 +135,10 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr class="even">
+<td><p>已进行 Retpoline 编译</p></td>
+<td><p>指示驱动程序是否已使用 Retpoline 标记进行编译。  勾号为 True，叉号为 False。  有关此变更的详细信息，请查看我们的<a href="https://techcommunity.microsoft.com/t5/Hardware-Dev-Center/Upcoming-Hardware-Dev-Center-changes-that-enable-support-for/ba-p/504574">博客文章</a>。 </p></td>
+</tr><tr class="even">
 <td><p>这是一个通用 Windows 驱动程序吗？</p></td>
 <td><p>指示你的驱动程序是否满足通用 Windows 平台要求。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)">通用 Windows 驱动程序入门</a>。</p></td>
 </tr>
@@ -164,7 +167,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 </tbody>
 </table>
 
-系统会根据整个提交内容为提交自动分配 Declarative 和 Universal 属性。  如果你想要将提交标记为 `Declarative=True` 和/或 `Universal=True`，则提交中的所有文件和 INF 都必须与相应的属性兼容。  例如，合并的 HLK 程序包可能包含用于不同 OS 认证的两个驱动程序集。 如果一个集是 Declarative，另一个集不是，则整个提交将标记为 `Declarative=False`。 每个集都应分入到两个提交中以确保适当地标记提交。 
+系统会根据整个提交内容为提交自动分配 Declarative 和 Universal 属性。  如果你想要将提交标记为 `Declarative=True` 和/或 `Universal=True`，则提交中的所有文件和 INF 都必须与相应的属性兼容。  例如，合并的 HLK 程序包可能包含用于不同 OS 认证的两个驱动程序集。 如果一个集是 Declarative，另一个集不是，则整个提交将标记为 `Declarative=False`。 只包含 INF 的包会普遍灰显，因为没有可验证的二进制文件。  每个集都应分入到两个提交中以确保适当地标记提交。 
 
 如果想要添加或更新公布日期，请使用“公布日期 (UTC)”  字段并选择“提交”  。
 

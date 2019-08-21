@@ -1,19 +1,17 @@
 ---
-title: ''
-description: ''
-author: balapv
-ms.author: balapv
+title: 获取一个提交
+description: 检索产品的特定提交的数据，该提交在 Microsoft 合作伙伴中心的硬件仪表板中进行。
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d65e4bae3389d86051a2ee9f80c5043716ddac9
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 71e94fc186e6302964e147b8c3232457ce411702
+ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813569"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223984"
 ---
-# <a name="get-a-submission"></a>获取提交
+# <a name="get-a-submission"></a>获取一个提交
 
 使用 Microsoft 硬件 API 中的此方法可检索产品的特定提交的数据。
 

@@ -5,12 +5,12 @@ ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 911a3dc086bb07f691ca1fd9bc41548952d22bbb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: a5428bfce09d725cd1bd781d393054faa0f0de2c
+ms.sourcegitcommit: c466ccb35634d7b57a97326764db6d7bff232cf2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65106398"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68533206"
 ---
 # <a name="hardware-dashboard-faq"></a>硬件仪表板常见问题
 
@@ -18,7 +18,11 @@ ms.locfileid: "65106398"
 
 ## <a name="how-do-i-contact-partner-center-support"></a>如何联系合作伙伴中心支持部门？
 
-如果你在访问仪表板时遇到问题或需要仪表板支持，请在此处开具支持票证： https://developer.microsoft.com/windows/support 。  依次选择“联系我们”  、“仪表板问题”  ，然后从下拉列表中选择“硬件提交和签名(所有 OS 版本)”  。  实时聊天和电子邮件支持时间为星期一至星期五上午 8 点到晚上 8 点（中部标准时间）。  电子邮件支持的初始响应 SLA 为 24-48 小时。
+如果你在访问仪表板时遇到问题或需要仪表板支持，请在此处开具支持票证： https://developer.microsoft.com/windows/support 。  
+
+如果有特定于帐户或提交的问题，则必须使用合作伙伴中心硬件仪表板用户名和密码登录。
+
+依次选择“联系我们”  、“仪表板问题”  ，然后从下拉列表中选择“硬件提交和签名(所有 OS 版本)”  。  实时聊天和电子邮件支持时间为星期一至星期五上午 8 点到晚上 8 点（中部标准时间）。  电子邮件支持的初始响应 SLA 为 24-48 小时。
 
 ## <a name="can-i-associate-multiple-certificates-with-a-dashboard-account"></a>是否可以将多个证书与一个仪表板帐户关联在一起？
 
@@ -31,15 +35,19 @@ ms.locfileid: "65106398"
 在注册过程中，可能会签署以下协议。
 
 > [!NOTE]
-> 所有注册都必须签署 Windows 硬件兼容性计划测试协议。 其他所有协议都是可选的，除非你使用其他关联协议中所述的功能或资产。 
+> 所有注册都必须签署 Windows 兼容性计划和驱动程序质量证明测试协议。 其他所有协议都是可选的，除非你使用其他关联协议中所述的功能或资产。 
 
-* Windows 硬件兼容性计划测试协议（2.0 版）
+* Windows 兼容性计划和驱动程序质量证明测试协议（2.0 版）
 
-* 硬件徽标许可协议（2017 版）
+* Windows 徽标许可协议（2018 版）
 
-* UEFI 附录
+* UEFI（统一可扩展固件接口）固件协议（1.0 版）
 
-* Windows 错误报告 (WER) 协议（1.3 版）
+* Windows Analytics 协议（2.0 版）
+
+* Microsoft 协作计划协议（1.0 版）
+
+* Windows 桌面应用程序计划协议（1.0 版）
 
 ## <a name="how-do-i-add-additional-users-or-grant-additional-roles-to-users-in-my-company"></a>如何添加其他用户或对公司中的用户授予其他角色？
 
@@ -101,4 +109,4 @@ ms.locfileid: "65106398"
 
 ### <a name="the-dua-package-error-shows-failed-to-open-package-with-the-error-not-compatible-with-a-version-3200-with-this-instance-package-manager"></a>DUA 程序包错误显示“无法打开程序包”，带有错误“与包含此实例程序包管理器的版本 (3.2.0.0) 不兼容”
 
-* 使用 [HLK Studio](https://msdn.microsoft.com/library/windows/hardware/dn939927) 来打开下载的 DUA shell 程序包，并创建 DUA 提交。
+* 使用 [HLK Studio](https://docs.microsoft.com/windows-hardware/test/hlk/user/install-standalone-hlk-studio) 来打开下载的 DUA shell 程序包，并创建 DUA 提交。
