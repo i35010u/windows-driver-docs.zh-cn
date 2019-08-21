@@ -24,6 +24,8 @@
       href: supporting-asynchronous-i-o.md
     - name: 示例内核模式驱动程序
       href: sample-kernel-mode-drivers.md
+    - name: Surface 团队驱动程序开发最佳实践
+      href: surface-team-driver-development-best-practices.md
 - name: 组件数
   items:
     - name: Windows 内核模式对象管理器
