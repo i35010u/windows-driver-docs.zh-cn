@@ -20,7 +20,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 07/02/2019
 ms.locfileid: "67521427"
 ---
-# <a name="bug-check-0x10d-wdfviolation"></a>Bug 检查 0x10D：WDF\_冲突
+# <a name="bug-check-0x10d-wdf_violation"></a>Bug 检查 0x10D：WDF\_冲突
 
 
 WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序框架 (KMDF) 检测到 Windows 基于 framework 的驱动程序中发现错误。
@@ -29,7 +29,7 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 > 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="wdfviolation-parameters"></a>WDF\_冲突参数
+## <a name="wdf_violation-parameters"></a>WDF\_冲突参数
 
 
 参数 1 指示错误检查的特定错误代码。 保留参数 4。
@@ -243,7 +243,7 @@ kd> !wdfkd.wdflogdump <WDF_Driver_Name>
 
 如果参数 1 等于**0x4**，使用[ **ln 调试器**](ln--list-nearest-symbols-.md)命令的值与*参数 3*作为其参数来确定函数需要一个非**NULL**参数。
 
-如果参数 1 等于**0x7**，使用 * *！ wdfkd.wdfhandle***Parameter 2*扩展命令，以确定句柄类型。
+如果参数 1 等于**0x7**，使用 * *！wdfkd.wdfhandle** *Parameter 2*扩展命令，以确定句柄类型。
 
 如果参数 1 等于**0xA**，然后 WDF\_队列\_致命错误\_错误\_数据结构将指示有问题的请求或队列句柄。 它还指示 NTSTATUS，如果不是状态\_成功后，可用时。
 
