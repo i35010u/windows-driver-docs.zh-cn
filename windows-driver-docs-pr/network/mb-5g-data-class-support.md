@@ -3,105 +3,105 @@ title: MB 5G 数据类支持
 description: MB 5G 数据类支持
 ms.assetid: 16531A63-76EC-4722-8817-FA8DB3B2B82F
 keywords:
-- MB 5g 数据类支持，移动宽带的 5 个 G 数据类的支持
+- MB 5G 数据类支持, Mobile 宽带5G 数据类支持
 ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: b22b2b62bb837e690ddd8105dd4fe1a3dfb3e80f
-ms.sourcegitcommit: a5b9d47e8c063732ed5ca80f29d8132451a97831
+ms.sourcegitcommit: 340fffb04a0a36fe951e78cbfdfb814cf58383aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
+ms.lasthandoff: 08/21/2019
 ms.locfileid: "67866145"
 ---
 # <a name="mb-5g-data-class-support"></a>MB 5G 数据类支持
 
 ## <a name="terminology"></a>术语
 
-本主题使用以下术语：
+本主题使用以下术语:
 
 | 术语 | 定义 |
 | --- | --- |
-| NR | 新单选。 NR 是指 5g 时在 3GPP 中使用的术语。 |
+| NR | 新增收音机。 NR 是引用5G 时在3GPP 中使用的术语。 |
 | MBB | 移动宽带。 |
-| EPC | 增强的数据包核心。 引用 LTE 核心网络时在 3GPP 中使用的术语。 |
-| NGC | 下一代核心。 引用 5g 核心网络时在 3GPP 中使用的术语。 EPC NR 等效。 |
-| DC | 双建立连接。 网络可以支持 LTE 和 5g NR，包括双与其设备具有 LTE 和 NR 同时连接的连接。 |
-| SA | 独立 5g。 引用的任何基于 NGC NR 网络。 |
-| NSA | 非独立 5g。 引用的任何基于 EPC 的 NR 网络。 |
-| gNB | 支持 NR 无线接口以及连接到 NGC NR 单选基站。 |
-| RAT | 单选访问技术。 |
+| EPC | 增强的数据包核心。 引用 LTE core 网络时在3GPP 中使用的术语。 |
+| NGC | 下一代核心。 引用5G 核心网络时在3GPP 中使用的术语。 NR 等效于 EPC。 |
+| DC | 双重连接。 网络可以支持 LTE 和 5G NR, 包括与设备同时连接到 LTE 和 NR 的双重连接。 |
+| SA | 独立5G。 引用任何基于 NGC 的 NR 网络。 |
+| NSA | 非独立5G。 引用任何基于 EPC 的 NR 网络。 |
+| gNB | 支持 NR 无线接口以及与 NGC 的连接的 NR 收音机基站。 |
+| RAT | 无线电访问技术。 |
 
 ## <a name="overview"></a>概述
 
-Windows 10，版本 1903年是 Windows，以支持由 IHV 合作伙伴 5g 移动宽带的驱动程序开发的预览版本的第一个版本。 名称*5g*是友好名称，为新单选 (NR)，在引入[3GPP 版本 15 规范](https://www.3gpp.org/release-15)。 NR 是提供一组全面的标准，设想提供 true 长期发展到现有的第四代 LTE 介绍的技术，可能会从窄带到超宽带和到名义上的所有移动电话通信需求关键的延迟要求。 作为一种技术，5g 应开发一段长达十年时间。 
+Windows 10 1903 版是 Windows 的第一个版本, 它支持由 IHV 合作伙伴开发的 5G mobile 宽带驱动程序开发的预览版本。 Name *5G*是[3GPP 版本15规范](https://www.3gpp.org/release-15)中引入的新收音机 (NR) 的友好名称。 NR 是一套全面的标准, 旨在提供到现有的第四代 LTE 技术的真正长期发展, 可能涵盖从窄带到超高宽带的所有手机通信需求, 以及标称到关键任务延迟要求。 作为一项技术, 5G 预计会在十年时间内发展。 
 
-本主题介绍 MBIM 扩展首次发布于 Windows 10 版本 1903，哪个启用硬件合作伙伴开发数据类的 MBB 驱动程序支持的增强移动宽带 (eMBB) 超过 5g"非独立版"EPC 基于 NR 网络。 数据平面支持和 5 G 吞吐量和商业化要求启用不属于此 Windows 版本并不在本主题中所述。 
+本主题介绍 Windows 10 版本1903中首次发布的 MBIM 扩展, 这使硬件合作伙伴能够开发 MBB 驱动程序, 该驱动程序具有针对 5G "非独立" 基于 EPC 的 NR 网络的数据类支持。 5G 吞吐量和产品/服务的数据平面支持和支持不属于此 Windows 版本, 本主题未对此进行介绍。 
 
-## <a name="windows-5g-mbim-interface-extension"></a>Windows 5g MBIM 接口扩展
+## <a name="windows-5g-mbim-interface-extension"></a>Windows 5G MBIM interface extension
 
 ### <a name="mbim-interface"></a>MBIM 接口
 
-Windows 10，版本 1903，截至 5g 总的来说仍在开发。 从网络部署角度来看，5g 应部署在两个主要阶段： 
+从 Windows 10 版本 1903, 整个中的5G 仍在开发中。 从网络部署的角度来看, 5G 应分两个阶段进行部署: 
 
-* 在阶段 1 中，大多数移动网络运营商需要通过添加对现有的 LTE 无线电和 EPC core 部署，通常称为"nonstandalone 5g"网络 5g 单选部署 5g。  
+* 在阶段1中, 大多数移动网络操作员都应该部署 5G, 并将5G 广播添加到现有的 LTE 广播和 EPC 核心部署 (通常称为 "nonstandalone 5G" 网络)。  
 
-* 在阶段 2 中，移动网络运营商需要替换 Epc 和 NGCs 和 densify 5g 单选若要启用，则返回 true"独立"或 5g NR NGC 基于网络的并行部署。 阶段 2 接口扩展不在此主题或 Windows 版本中的范围内。 
+* 在阶段2中, 移动网络操作员应并行替换 Epc 和 NGCs, 并 densify 5G 无线电部署, 以启用真正的 "独立" 或基于 NR 的5G 网络。 阶段2接口扩展不在本主题或 Windows 版本的范围内。 
 
-接口扩展插件以支持基本阶段 1 的网络要求或"nonstandalone"EPC based5G 网络时，在 Windows 10，版本 1903年中引入。 为了可扩展性和完全向后兼容旧调制解调器，新的 Microsoft MBIM 扩展版本 (2.0) 被引入。 
+Windows 10 版本1903中引入了支持基本阶段1网络要求或 "nonstandalone" EPC based5G 网络的接口扩展。 为了能够实现与旧的调制解调器的可扩展且完全向后兼容, 引入了新的 Microsoft MBIM 扩展版本 (2.0)。 
 
-新的 Microsoft MBIM extesnion 版本是必需的因为[MBIM 1.0 勘误表规范](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)有一种机制来添加并公布可选 Cid，但它缺少一种机制来更改现有 Cid （新的负载或已修改的有效负载）或引入中可选 Cid 无法满足任何方面的更改。 每个有效负载可能包含固定大小的成员或动态调整其大小 （偏移量/大小对） 成员。 如果一个或多个动态调整大小的成员存在，最后一个成员具有可变大小的缓冲区。  
+新的 Microsoft MBIM extesnion 版本是必需的, 因为[MBIM 1.0 勘误表规范](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)包含用于添加和播发可选 cid 的机制, 但它缺少用于更改现有 cid (新负载或已修改有效负载) 或引入可选 Cid 无法容纳的任何方面的更改。 每个有效负载可能由固定大小的成员或动态大小 (偏移/大小对) 成员组成。 如果存在一个或多个动态大小的成员, 则最后一个成员的大小为 variable。  
 
-此规范还添加了新主机播发其 MBIM 发行版本和扩展发布版本到 MBIM 设备的 CID。 对于已在该字段中的旧驱动程序，此 CID 是可选的这是因此完全保持向后兼容性。  有关更多详细信息，请参阅[MBIM 扩展版本 2.0](#mbim-extensions-release-20---5g-nonstandalone-epc-based-option-3-network-support)网络支持)。 
+此规范还为主机添加了一个额外的 CID, 以将其 MBIM 发行版和扩展发行版播发到 MBIM 设备。 对于字段中已存在的旧驱动程序, 此 CID 是可选的, 因此完全维护向后兼容性。  有关更多详细信息, 请参阅[MBIM Extension Release 2.0](#mbim-extensions-release-20---5g-nonstandalone-epc-based-option-3-network-support)网络支持。 
 
 ### <a name="ndis-interface"></a>NDIS 接口
 
-NDIS 支持 NDIS_HEADER 中的修订号。 这允许将新成员添加到 NDIS 使用中的可选服务 caps 表 OID 消息[OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)。
+NDIS 支持 NDIS_HEADER 中的修订号。 这允许向 OID 消息添加新成员, NDIS 在[OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)中使用可选的服务 cap 表。
 
-已为 5g 数据类支持更新以下 NDIS Oid 和他们的数据结构。
+以下 NDIS Oid 及其数据结构已针对5G 数据类支持进行了更新。
 
 - [OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)
 - [OID_WWAN_REGISTER_STATE](oid-wwan-register-state.md)
 - [OID_WWAN_PACKET_SERVICE](oid-wwan-packet-service.md)
 - [OID_WWAN_SIGNAL_STATE](oid-wwan-signal-state.md)
 
-这些 Oid 的等效 MBIM CID 消息本主题的以下各节所述。
+本主题的以下部分介绍了这些 Oid 的等效 MBIM CID 消息。
 
-## <a name="mbim-extensions-release-20---5g-nonstandalone-epc-based-option-3-network-support"></a>MBIM 扩展版本 2.0-5 G nonstandalone (基于 EPC 的选项 3) 网络支持
+## <a name="mbim-extensions-release-20---5g-nonstandalone-epc-based-option-3-network-support"></a>MBIM 扩展版本 2.0-5G nonstandalone (基于 EPC 的选项 3) 网络支持
 
-因为[MBIM 1.0 勘误表规范](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)缺少一种机制来更改现有的新的或修改有效负载，Windows 10 中，Cid 1903 引入了 MBIM 1.0 Extension 2.0 扩展接口以支持 5 个 G 的版本。
+由于[MBIM 1.0 勘误表规范](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)缺少使用新的或已修改的有效负载更改现有 cid 的机制, 因此, Windows 10 版本1903引入了 MBIM 1.0 扩展2.0 来扩展接口以支持5G。
 
 ### <a name="versioning-scheme"></a>版本控制方案
 
 > [!NOTE]
-> 在本部分中，术语*MBIMEx 版本*指 MBIM 扩展发行版号。
+> 在本部分中, 术语 " *MBIMEx 版本*" 是指 MBIM 扩展发布号。
 
-主机得知通过两种方法的设备的 MBIMEx 版本：
+该主机通过两种方式学习设备的 MBIMEx 版本:
 
-1. MBIM 扩展功能描述符。
-2. 可选 MBM_CID_VERSION 的消息，如果设备支持它并且声明对它的支持。
+1. MBIM 扩展功能说明符。
+2. 可选的 MBM_CID_VERSION 消息 (如果设备支持) 并声明对它的支持。
 
-如果这两个不同，更高版本的设备仍保持枚举到主机的持续时间指示 MBIMEx 版本。 更高版本的 MBIMEx 版本设备的方式被称为*宣布 MBIMEx 版本*。 设备的宣布 MBIMEx 版本可以是低于其本机 MBIMEx 版本，它是设备支持的最高 MBIMEx 版本。 设备可以显式了解主机的 MBIMEx 版本，只能通过 MBIM_CID_VERSION 消息。
+如果这两个版本不同, 则更高版本会在设备保持为主机的持续时间内提供 MBIMEx 版本。 较高的 MBIMEx 版本称为设备的已*发布 MBIMEx 版本*。 设备的已发布 MBIMEx 版本可以低于其本机 MBIMEx 版本, 该版本是设备支持的最高 MBIMEx 版本。 设备只能通过 MBIM_CID_VERSION 消息显式了解主机的 MBIMEx 版本。
 
-在任何版本中，主机始终查询设备中受支持的服务和设备初始化序列开头位置使用 MBIM_CID_DEVICE_SERVICES 的 Cid。 如果设备支持 MBIM_CID_VERSION，并且将公布其支持 MBIM_CID_DEVICE_SERVICE 查询响应中的，然后不理解 MBIM_CID_VERSION 或具有 MBIMEx 版本低于 2.0 的主机将其忽略。 同时，能理解 MBIM_CID_VERSION 并具有本机 MBIMEx 版本 2.0 或更高版本的主机将 MBIM_CID_VERSION 消息发送到主机的本机 MBIMEx 版本中，设备和 CID 是第一个收到 MBIM 后发送到设备的 CID_CID_DEVICE_SERVICES 响应。
+在任何版本中, 主机总是在设备初始化序列的开头使用 MBIM_CID_DEVICE_SERVICES 在设备上查询支持的服务和 Cid。 如果设备支持 MBIM_CID_VERSION 并在 MBIM_CID_DEVICE_SERVICE 查询响应中公布其支持, 则不了解 MBIM_CID_VERSION 或 MBIMEx 版本低于2.0 的主机将忽略它。 同时, 主机会了解 MBIM_CID_VERSION, 并具有2.0 或更高版本的本机 MBIMEx 版本, 使用主机的本机 MBIMEx 版本将 MBIM_CID_VERSION 消息发送到设备, 并且 CID 是接收到设备后发送到设备的第一个 CID_CID_DEVICE_SERVICES 响应。
 
-如果第一个收到 CID MBIM_CID_DEVICE_SERVICES 查询响应后，设备从主机接收 MBIM_CID_VERSION，设备就会知道主机的 MBIMEx 版本。 如果第一个收到 CID MBIM_CID_DEVICE_SERVICES 查询响应后，设备从主机接收任何其他 CID，则设备会假定主机的本机 MBIMEx 版本为 1.0。
+如果设备在响应 MBIM_CID_DEVICE_SERVICES 查询后接收到来自主机的 MBIM_CID_VERSION 作为首次接收的 CID, 则设备将知道主机的 MBIMEx 版本。 如果设备在响应 MBIM_CID_DEVICE_SERVICES 查询后收到主机中的任何其他 CID 作为首次接收的 CID, 则设备假定主机的本机 MBIMEx 版本为1.0。
 
-，更高版本的 MBIMEx 版本是所有较低的 MBIMEx 版本的超集。 主机支持我们已经发出通告的 MBIMEx 版或以下主机的本机 MBIMEx 版本的所有设备。 如果设备的宣布 MBIMEx 版本高于主机的本机 MBIMEx 版本，主机不应支持的设备，并在此情况下主机的具体行为是不确定。
+功能更高的 MBIMEx 版本是所有较低 MBIMEx 版本的超集。 主机支持在主机的本机 MBIMEx 版本下或之下已公告 MBIMEx 版本的所有设备。 如果设备的已发布 MBIMEx 版本高于主机的本机 MBIMEx 版本, 则该主机不需要支持该设备, 并且在此情况下, 主机的确切行为是未定义的。
 
-想要使用较旧主机的设备最初应播发 MBIMEx 版本 1.0 或与设备用于工作的在扩展功能描述符 MBIM 的最低主机 MBIMEx 版本。 如果主机发送 MBIM_CID_VERSION，并且主机具有更高版本的 MBIMEx 版本不是设备最初播发，则在 MBIM_CID_VERSION 响应中，设备应指示最多的主机的本机 MBIMEx 版本较小者的更高版本 MBIMEx 版本和设备的本机 MBIMEx 版本。
+打算使用较旧主机的设备最初应播发 MBIMEx 版本 1.0, 或在 MBIM 扩展功能描述符中使用设备的最低主机 MBIMEx 版本。 如果主机发送 MBIM_CID_VERSION, 而主机的 MBIMEx 版本高于设备最初公布的版本, 则设备应在 MBIM_CID_VERSION 响应中指出较高的 MBIMEx 版本, 最高可达主机的本机 MBIMEx 版本和设备的本机 MBIMEx 版本。
 
 > [!NOTE]
-> 例如，设备支持 MBIMEx 版本 2.0 中，只用于使用较旧版本的操作系统不支持 MBIMEx 2.0。 设备最初播发 MBIMEx 1.0 版中的 USB 描述符并播发对可选 MBIM_CID_VERSION 的支持。 插入到运行 Windows 10，版本 1803 的主机时主机并不了解 MBIM_CID_VERSION 并不向设备发送 MBIM_CID_VERSION。 到主机，设备的 MBIMEx 版本为 1.0。 主机仍会继续发送初始化序列中的其他 Cid。 收到非 MBIM_CID_VERSION Cid 时，设备识别主机支持 MBIMEx 1.0 版。 双方继续符合 MBIMEx 1.0 版。 更高版本，在同一设备插入到运行 Windows 10，版本 1903年 2.0 中，本机 MBIMEx 版本的主机时主机将 MBIM_CID_VERSION 发送到设备，以通知其主机的本机 MBIMEx 版本是 2.0。 设备发送与设备的响应中 MBIM_CID_VERSION 宣布 MBIMEx 2.0 版。 在这里，双方继续符合 MBIMEx 2.0 版。
+> 例如, 设备支持 MBIMEx 版本 2.0, 但适用于不支持 MBIMEx 2.0 的较早版本的操作系统。 设备最初会公布 MBIMEx 版本 1.0, 并公布对可选 MBIM_CID_VERSION 的支持。 当插入运行 Windows 10 版本1803的主机时, 主机不会理解 MBIM_CID_VERSION 并且不会将 MBIM_CID_VERSION 发送到设备。 对于主机, 设备的 MBIMEx 版本为1.0。 主机继续以初始化序列发送其他 Cid。 收到除 MBIM_CID_VERSION 以外的 Cid 时, 设备知道主机支持 MBIMEx 版本1.0。 双方继续符合 MBIMEx 版本1.0。 稍后, 在将同一设备插入运行 Windows 10 版本 1903 (版本, 版本, 版本为 2.0) 的主机时, 主机会将 MBIM_CID_VERSION 发送到设备, 通知其主机的本机 MBIMEx 版本为2.0。 设备会发回 MBIM_CID_VERSION, 以响应设备的已公布 MBIMEx 版本2.0。 从这里开始, 这两个端都继续符合 MBIMEx 版本2.0。
 
-下表显示了具有三个假设主机和三个假设设备，每个都具有声明其本机 MBIMEx 版本的兼容性矩阵。 设备播发 MBIMEx 版本 1.0 最初在 USB 描述符。 该矩阵显示每个设备使用每个主机的行为方式。
+下表显示了一个兼容性矩阵, 其中包含三个假设主机和三个假设的设备, 每个都具有所述的本机 MBIMEx 版本。 设备在最初在 USB 描述符中公布 MBIMEx 版本1.0。 该矩阵显示每个设备在每个主机上的行为方式。
 
-| （下面） 的设备 / 主机 （右） | Windows 10，版本 1809年或更早 (本机 MBIMEx 1.0 版) | Windows 10，版本 1903年和更高版本 (MBIMEx 版本 2.0) |
+| 设备 (见下)/主机 (正确) | Windows 10 版本1809或更低版本 (native MBIMEx 版本 1.0) | Windows 10 版本1903及更高版本 (MBIMEx 版本 2.0) |
 | --- | --- | --- |
-| 4g 设备 <p>本机 MBIMEx 版本 1.0</p> | 设备最初会通告 MBIMEx 1.0。 没有 MBIM_CID_VERSION exchange。 兼容的设备和主机。 默认情况下使用 MBIMEx 1.0 版。 | 设备最初会通告 MBIMEx 1.0。 没有 MBIM_CID_VERSION exchange。 主机可用于使用 MBIMEx 1.0 的设备。 |
-| 5g NSA 设备 <p>本机 MBIMEx 2.0 版</p> | 设备最初会通告 MBIMEx 1.0。 没有 MBIM_CID_VERSION exchange。 设备识别主机具有 MBIMEx 1.0，并继续使用 MBIMEx 1.0。 | 设备最初会通告 MBIMEx 1.0。 主机发送 MBIM_CID_VERSION 以通知设备主机支持 MBIMEx 2.0。 设备使用 MBIMEx 2.0 进行响应。 双方继续 MBIMEx 2.0。 |
+| 4G 设备 <p>Native MBIMEx 版本1。0</p> | 设备最初公布 MBIMEx 1.0。 无 MBIM_CID_VERSION 交换。 兼容的设备和主机。 默认情况下, MBIMEx 版本1.0 运行。 | 设备最初公布 MBIMEx 1.0。 无 MBIM_CID_VERSION 交换。 主机使用 MBIMEx 1.0 与设备一起工作。 |
+| 5G NSA 设备 <p>Native MBIMEx 版本2。0</p> | 设备最初公布 MBIMEx 1.0。 无 MBIM_CID_VERSION 交换。 设备知道主机已 MBIMEx 1.0, 并继续 MBIMEx 1.0。 | 设备最初公布 MBIMEx 1.0。 主机发送 MBIM_CID_VERSION 以通知设备主机支持 MBIMEx 2.0。 设备响应 MBIMEx 2.0。 两端均继续 MBIMEx 2.0。 |
 
-下表列出了在 MBIMEx 版本 2.0 中，并且其已修改的有效负载中修改的所有现有 Cid。 在这些 Cid 所有 unmentioned 的负载和所有其他 Cid 不表执行进位通过从 MBIMEx 版本 1.0 中所述，保持不变。 
+下表列出了在 MBIMEx 版本2.0 中修改的所有现有 Cid 及其修改后的负载。 这些 Cid 中的所有 unmentioned 有效负载和表中未提及的所有其他 Cid 将从 MBIMEx 版本1.0 中继续运行, 并且保持不变。 
 
 | CID | 有效负载 |
 | --- | --- |
@@ -113,17 +113,17 @@ NDIS 支持 NDIS_HEADER 中的修订号。 这允许将新成员添加到 NDIS �
 
 | 服务名称 | UUID | UUID 值 |
 | --- | --- | --- |
-| Microsoft Basic IP 连接扩展 | UUID_BASIC_CONNECT_EXTENSIONS | 3D01DCC5-FEF5-4D05-9D3A-BEF7058E9AAF |
+| Microsoft 基本 IP 连接扩展插件 | UUID_BASIC_CONNECT_EXTENSIONS | 3D01DCC5-FEF5-4D05-9D3A-BEF7058E9AAF |
 
-## <a name="mbimcidversion"></a>MBIM_CID_VERSION
+## <a name="mbim_cid_version"></a>MBIM_CID_VERSION
 
-MBB 驱动程序支持 MBIM Microsoft 扩展 2.0 或更高，MBIM_CID_VERSION 是交换 MBIM 版本信息在主机和设备之间的强制性命令。 对于市场中设备与驱动程序不能识别此 CID，主机将假设，并提供向后兼容性。
+对于支持 MBIM Microsoft extension 2.0 或更高版本的 MBB 驱动程序, MBIM_CID_VERSION 是在主机和设备之间交换 MBIM 版本信息的强制性命令。 对于包含不能识别此 CID 的驱动程序的市场内设备, 主机将假定并提供向后兼容性。
 
-如果设备支持，该主机以查询形式发送此命令。 查询包含 MBIM 发行版号和 MBIM 扩展发行版号的主机目前支持。
+主机以查询形式发送此命令 (如果设备支持)。 查询包含主机当前支持的 MBIM 发布号和 MBIM 扩展发布号。
 
-设备在设备端，调整其公布的 MBIM 发行版号和基于中定义的规则 MBIM 扩展版本号[版本控制方案](#versioning-scheme)，然后将其发送到主机在响应中。
+在设备端, 设备根据[版本控制方案](#versioning-scheme)中定义的规则调整其公布的 MBIM 版本号和 MBIM 扩展发行版号, 然后在对主机的响应中发送它们。
 
-此命令定义下**基本连接扩展**服务。
+此命令在 "**基本连接扩展**" 服务下定义。
 
 | CID | 命令代码 | UUID |
 | --- | --- | --- |
@@ -138,12 +138,12 @@ MBB 驱动程序支持 MBIM Microsoft 扩展 2.0 或更高，MBIM_CID_VERSION �
 
 ### <a name="query"></a>查询
 
-通知主机的本机 MBIM 发行版号以及 MBIM 扩展发行版号的设备。 InformationBuffer 包含以下 MBIM_VERSION_INFO 结构。
+通知设备主机的本机 MBIM 发行版号和 MBIM 扩展发布号。 InformationBuffer 包含以下 MBIM_VERSION_INFO 结构。
 
 | 偏移量 | Size | 字段 | type | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 2 | bcdMBIMVersion | UINT16 | 带有隐含小数点位 7 和 8 之间 BCD 时，在发送方 MBIM 发行版号。 例如，`0x0100 == 1.00 == 1.0` 。 这是一个小字节序常量，因此字节是 0x00，然后 0x01。 |
-| 2 | 2 | bcdMBIMExtendedVersion | UINT16 | MBIM 扩展发布带有隐含小数点位 7 和 8 之间 BCD 时，在发送方的数目。 例如，`0x0100 == 1.00 == 1.0` 。 这是一个小字节序常量，因此字节是 0x00，然后 0x01。 |
+| 0 | 2 | bcdMBIMVersion | UINT16 | BCD 中发送方的 MBIM 发布号, 在位7和8之间具有隐含的小数点。 例如， `0x0100 == 1.00 == 1.0` 。 这是一个小 endian 常量, 因此字节数为 0x00, then 为0x01。 |
+| 2 | 2 | bcdMBIMExtendedVersion | UINT16 | BCD 中发送方的 MBIM 扩展发布号, 在位7和8之间具有隐含的小数点。 例如， `0x0100 == 1.00 == 1.0` 。 这是一个小 endian 常量, 因此字节数为 0x00, then 为0x01。 |
 
 ### <a name="set"></a>设置
 
@@ -151,7 +151,7 @@ MBB 驱动程序支持 MBIM Microsoft 扩展 2.0 或更高，MBIM_CID_VERSION �
 
 ### <a name="response"></a>响应
 
-在 MBIM_COMMAND_DONE InformationBuffer 包含 MBIM_VERSION_INFO 结构。
+MBIM_COMMAND_DONE 中的 InformationBuffer 包含 MBIM_VERSION_INFO 结构。
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -159,41 +159,41 @@ MBB 驱动程序支持 MBIM Microsoft 扩展 2.0 或更高，MBIM_CID_VERSION �
 
 ### <a name="status-codes"></a>状态代码
 
-此 CID 仅使用 9.4.5 节中定义的泛型状态代码[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+此 CID 仅使用[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的9.4.5 部分中定义的通用状态代码。
 
-## <a name="mbimcidmsdevicecapsv2"></a>MBIM_CID_MS_DEVICE_CAPS_V2
+## <a name="mbim_cid_ms_device_caps_v2"></a>MBIM_CID_MS_DEVICE_CAPS_V2
 
-此 CID 是上定义的相同[MB 多 SIM operations](mb-multi-sim-operations.md#mbim-interface-update-for-multi-sim-operations)，其本身是 MBIM_CID_MS_DEVICE_CAPS 的扩展，如 10.5.1 节中定义[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 MBIM 扩展的 2.0 版，有新数据类 MBIM_DATA_CLASS 表中定义，使设备能够报告其 5g 功能。 MBIMDataClass5G_NSA 表示设备是否支持 5 个 G 非-独立 (NSA) 中定义[3GPP TS 37.340](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3198)，MBIMDataClass5G_SA 表示设备是否支持 5 个 G 独立 (SA)，也在 3GPP TS 37.340 中定义。
+此 CID 与在[MB 多 SIM 操作](mb-multi-sim-operations.md#mbim-interface-update-for-multi-sim-operations)上定义的相同, 后者本身就是 MBIM_CID_MS_DEVICE_CAPS 的扩展, 如[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)部分10.5.1 中所定义。 对于 MBIM 扩展版本 2.0, 在 MBIM_DATA_CLASS 表中定义了新的数据类, 使设备能够报告其5G 功能。 MBIMDataClass5G_NSA 表示设备支持[3GPP TS 37.340](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3198)中定义的5G 非独立 (NSA), MBIMDataClass5G_SA 表示设备支持5G 独立 (SA), 也在 3GPP TS 37.340 中定义。
 
-如果设备支持这两个新的数据类，则应设置两个位。
+如果设备同时支持两个新数据类, 则应设置这两个位。
 
-## <a name="mbimdataclass"></a>MBIM_DATA_CLASS
+## <a name="mbim_data_class"></a>MBIM_DATA_CLASS
 
 | 类型 | 掩码 |
 | --- | --- |
 | MBIMDataClassNone | 0h |
-| MBIMDataClassGPRS | 1h |
-| MBIMDataClassEDGE | 2h |
+| MBIMDataClassGPRS | 1小时 |
+| MBIMDataClassEDGE | 下半年 |
 | MBIMDataClassUMTS | 4h |
 | MBIMDataClassHSDPA | 8h |
 | MBIMDataClassHSUPA | 10h |
 | MBIMDataClassLTE | 20h |
 | **MBIMDataClass5G_NSA** | **40h** |
-| **MBIMDataClass5G_SA** | **80 h** |
-| 保留 | 100h-8000 h |
-| MBIMDataClass1XRTT | 10000 h |
-| MBIMDataClass1XEVDO | 20000 h |
-| MBIMDataClass1XEVDORevA | 40000 h |
-| MBIMDataClass1XEVDV | 支持 80000 h |
-| MBIMDataClass3XRTT | 100000 h |
-| MBIMDataClass1XEVDORevB | 200000 h |
-| MBIMDataClassUMB | 400000 h |
-| 保留 | 800000 40000000 h |
-| MBIMDataClassCustom | 80000000 h |
+| **MBIMDataClass5G_SA** | **80h** |
+| 保留 | 100h-8000h |
+| MBIMDataClass1XRTT | 10000h |
+| MBIMDataClass1XEVDO | 20000h |
+| MBIMDataClass1XEVDORevA | 40000h |
+| MBIMDataClass1XEVDV | 80000h |
+| MBIMDataClass3XRTT | 100000h |
+| MBIMDataClass1XEVDORevB | 200000h |
+| MBIMDataClassUMB | 400000h |
+| 保留 | 800000-40000000h |
+| MBIMDataClassCustom | 80000000h |
 
-## <a name="mbimcidregisterstate"></a>MBIM_CID_REGISTER_STATE
+## <a name="mbim_cid_register_state"></a>MBIM_CID_REGISTER_STATE
 
-此命令是扩展中已定义 MBIM_CID_REGISTER_STATE CID [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 此扩展添加一个名为的新成员**PreferredDataClasses**响应结构。
+此命令是已在[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中定义的 MBIM_CID_REGISTER_STATE CID 的扩展。 此扩展插件为响应结构添加一个名为**PreferredDataClasses**的新成员。
 
 ### <a name="parameters"></a>Parameters
 
@@ -204,34 +204,34 @@ MBB 驱动程序支持 MBIM Microsoft 扩展 2.0 或更高，MBIM_CID_VERSION �
 
 ### <a name="query"></a>查询
 
-InformationBuffer 为 null，InformationBufferLength 为零。
+InformationBuffer 为 null, 而 InformationBufferLength 为零。
 
 ### <a name="set"></a>设置
 
-设置注册状态。 信息是相同的中所述[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+设置注册状态。 该信息与[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中所述的信息相同。
 
 ### <a name="response"></a>响应
 
-在 MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_REGISTRATION_STATE_INFO_V2 结构。 与 10.5.10.6 节中定义的 MBIM_REGISTRATION_STATE_INFO 结构相比[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)，以下结构有一个新的**PreferredDataClasses**字段。 除非另有说明，字段说明中的表 10-55 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)应用于此结构。
+MBIM_COMMAND_DONE 中的 InformationBuffer 包含以下 MBIM_REGISTRATION_STATE_INFO_V2 结构。 与[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的节10.5.10.6 中定义的 MBIM_REGISTRATION_STATE_INFO 结构相比, 以下结构包含新的**PreferredDataClasses**字段。 除非在此注明, 否则[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的表10-55 中的字段说明适用于此结构。
 
-#### <a name="mbimregistrationstateinfov2"></a>MBIM_REGISTRATION_STATE_INFO_V2
+#### <a name="mbim_registration_state_info_v2"></a>MBIM_REGISTRATION_STATE_INFO_V2
 
 | 偏移量 | Size | 字段 | type | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | NwError | UINT32 | 一个特定于网络错误。 表 10-44 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)介绍用于 NwError 的原因代码。 |
-| 4 | 4 | RegisterState | MBIM_REGISTER_STATE | 请参阅表 10-46 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 |
-| 8 | 4 | RegisterMode | MBIM_REGISTER_MODE | 请参阅表 10-47 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 |
-| 12 | 4 | AvailableDataClass | UINT32 | 中的值的位图[MBIM_DATA_CLASS](#mbim_data_class) ，表示已注册的网络，单元格注册该设备上的受支持的数据类。 <p>如果此值设置为 MBIMDataClassNone **RegisterState**不是**MBIMRegisterStateHome**， **MBIMRegisterStateRoaming**，或**MBIMRegisterStatePartner**。 </p> |
-| 16 | 4 | CurrentCellularClass | MBIM_CELLULAR_CLASS | 指示当前的移动电话类使用的多模式函数。 请参阅表 10-8 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)有关详细信息。 <p>对于单模式函数，这是与移动电话 MBIM_CID_DEVICE_CAPS 中报告的类相同。 对于多模式函数，指示从 CDMA 转换到 GSM 或从外部使用的已更新**CurrentCellularClass**。 </p> |
-| 20 | 4 | ProviderIdOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到名为的数字 (0-9) 字符串**ProviderId**表示网络提供程序标识。 <p>为基于 GSM 的网络，此字符串是三位移动国家/地区代码 (MCC) 和两个或三位移动网络代码 （mnc) 的串联。 基于 GSM 的运营商可能具有多个 mnc 是否，并因此多台**ProviderId**。</p><p>为基于 CDMA 的网络，此字符串是一个 5 位数字系统 ID (SID)。 通常情况下，基于 CDMA 的承运人具有多个 SID。 通常情况下，承运人具有通常除以地理位置内的国家/地区法规，如都市统计区域 (MSA) 在美国每个市场为一个 SID。 如果此信息不可用，则基于 CDMA 的设备必须指定 MBIM_CDMA_DEFAULT_PROVIDER_ID。</p><p>在自动注册模式下处理查询请求和注册状态时，此成员包含与该设备是当前关联 （如果适用） 的提供程序 ID。 在手动注册模式下的注册状态时，此成员包含向其请求设备注册 （即使该提供程序不可用） 的提供程序 ID。</p><p>在手动模式下处理 set 请求和注册状态时，这包含用来注册设备的主机选择的提供程序 ID。 自动注册模式下的注册状态时，将忽略此参数。</p><p>如果提供程序 ID 不可用，CDMA 1xRTT 提供程序必须设置为 MBIM_CDMA_DEFAULT_PROVIDER_ID。</p> |
-| 24 | 4 | ProviderIdSize | SIZE(0..12) | 大小 （字节），对于**ProviderId**。 |
-| 28 | 4 | ProviderNameOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到一个字符串称为**ProviderName**表示网络提供商的名称。 此成员仅限于最多 MBIM_PROVIDERNAME_LEN 字符。 <p>为基于 GSM 的网络，如果首选的演示文稿的国家/地区首字母缩写和移动网络名称 (PCCI & N) 的长度超过 20 个字符，设备应使用缩写的网络名称。</p><p>主机设置首选提供程序列表时，将忽略此成员。 设备应指定不具有此信息的设备的一个 NULL 字符串。</p> |
-| 32 | 4 | ProviderNameSize | SIZE(0..40) | 大小 （字节），对于**ProviderName**。 |
-| 36 | 4 | RoamingTextOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到一个字符串称为**RoamingText**以通知用户设备漫游。 此成员仅限于最多 63 个字符。 注册状态为 MBIMRegisterStatePartner 或 MBIMRegisterStateRoaming 时，此文本应该向用户提供的其他信息。 此成员是可选的。 |
-| 40 | 4 | RoamingTextSize | SIZE(0..126) | 大小 （字节），对于**RoamingText**。 |
-| 44 | 4 | RegistrationFlag | MBIM_REGISTRATION_FLAGS | 标志设置每个表 10-48 中[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 |
-| 48 | 4 | PreferredDataClass | UINT32 | 中的值的位图[MBIM_DATA_CLASS](#mbim_data_class)在设备上的已启用的数据类。 设备只可使用已启用的数据类。 |
-| 动态 | 4 | DataBuffer | DATABUFFER | 包含的数据缓冲区**ProviderId**， **ProviderName**，并**RoamingText**。 |
+| 0 | 4 | NwError | UINT32 | 网络特定的错误。 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10-44 记录了 NwError 的原因代码。 |
+| 4 | 4 | RegisterState | MBIM_REGISTER_STATE | 请参阅[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10-46。 |
+| 8 | 4 | RegisterMode | MBIM_REGISTER_MODE | 请参阅[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10-47。 |
+| 12 | 4 | AvailableDataClass | UINT32 | [MBIM_DATA_CLASS](#mbim_data_class)中的值的位图, 表示注册的网络上受支持的数据类, 这些类用于注册设备的单元。 <p>如果**RegisterState**不是**MBIMRegisterStateHome**、 **MBIMRegisterStateRoaming**或**MBIMRegisterStatePartner**, 则此值设置为 MBIMDataClassNone。 </p> |
+| 16 | 4 | CurrentCellularClass | MBIM_CELLULAR_CLASS | 指示当前用于多模式功能的手机网络类。 有关详细信息, 请参阅[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10-8。 <p>对于单模式功能, 这与 MBIM_CID_DEVICE_CAPS 中报告的手机网络类相同。 对于多模式函数, 使用更新的**CurrentCellularClass**来指示从 CDMA 到 GSM 的转换, 反之亦然。 </p> |
+| 20 | 4 | ProviderIdOffset | 抵销 | 从该结构的开头算起的偏移量 (以字节为单位), 它是一个名为**ProviderId**的数值 (0-9) 字符串, 表示网络提供程序标识。 <p>对于基于 GSM 的网络, 此字符串是三位数 Mobile 国家/地区代码 (MCC) 和两位数或三位数移动网络代码 (MNC) 的串联。 基于 GSM 的运营商可能有多个 MNC, 因此有多个**ProviderId**。</p><p>对于基于 CDMA 的网络, 此字符串是一个五位数的系统 ID (SID)。 通常, 基于 CDMA 的运营商有多个 SID。 通常, 一个运营商对于每个市场都有一个 SID, 通常按国家/地区 (如美国中的大都市统计区域 (MSA)) 划分。 如果此信息不可用, 则基于 CDMA 的设备必须指定 MBIM_CDMA_DEFAULT_PROVIDER_ID。</p><p>当处理查询请求并且注册状态处于自动注册模式时, 此成员包含设备当前关联的提供程序 ID (如果适用)。 当注册状态处于手动注册模式时, 此成员包含向其请求注册设备的提供程序 ID (即使提供程序不可用)。</p><p>当处理集请求并且注册状态处于手动模式时, 这将包含用于注册设备的主机所选的提供程序 ID。 如果注册状态为自动注册模式, 则忽略此参数。</p><p>如果提供程序 ID 不可用, 则必须将 CDMA 1xRTT 提供程序设置为 MBIM_CDMA_DEFAULT_PROVIDER_ID。</p> |
+| 24 | 4 | ProviderIdSize | 大小 (0 到 12) | **ProviderId**的大小 (以字节为单位)。 |
+| 28 | 4 | ProviderNameOffset | 抵销 | 从该结构的开头算起的偏移量 (以字节为单位), 该偏移量是一个名为**ProviderName**的字符串, 用于表示网络提供程序的名称。 此成员最多只能有 MBIM_PROVIDERNAME_LEN 个字符。 <p>对于基于 GSM 的网络, 如果首选的国家/地区缩写和移动网络名称 (PCCI & N) 的表示形式超过20个字符, 则设备应缩写网络名称。</p><p>当主机设置首选提供程序列表时, 将忽略此成员。 设备应为不具有此信息的设备指定一个空字符串。</p> |
+| 32 | 4 | ProviderNameSize | 大小 (0-40) | **ProviderName**的大小 (以字节为单位)。 |
+| 36 | 4 | RoamingTextOffset | 抵销 | 从该结构的开头算起的偏移量 (以字节为单位), 该偏移量是一个名为**RoamingText**的字符串, 用于通知用户设备正在漫游。 此成员最多只能为63个字符。 当注册状态为 "MBIMRegisterStatePartner" 或 "MBIMRegisterStateRoaming" 时, 此文本应为用户提供附加信息。 此成员是可选的。 |
+| 40 | 4 | RoamingTextSize | 大小 (0 ... 126) | **RoamingText**的大小 (以字节为单位)。 |
+| 44 | 4 | RegistrationFlag | MBIM_REGISTRATION_FLAGS | [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中每个表10-48 的标志集。 |
+| 48 | 4 | PreferredDataClass | UINT32 | [MBIM_DATA_CLASS](#mbim_data_class)中表示设备上已启用数据类的值的位图。 设备只能使用已启用的数据类进行操作。 |
+| 动态 | 4 | DataBuffer | DATABUFFER | 包含**ProviderId**、 **ProviderName**和**RoamingText**的数据缓冲区。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -239,17 +239,17 @@ InformationBuffer 为 null，InformationBufferLength 为零。
 
 ### <a name="status-codes"></a>状态代码
 
-此 CID 仅使用 9.4.5 节中定义的泛型状态代码[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+此 CID 仅使用[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的9.4.5 部分中定义的通用状态代码。
 
-## <a name="mbimcidpacketservice"></a>MBIM_CID_PACKET_SERVICE
+## <a name="mbim_cid_packet_service"></a>MBIM_CID_PACKET_SERVICE
 
-此命令是扩展中定义的现有 MBIM_CID_PACKET_SERVICE [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+此命令是[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中定义的现有 MBIM_CID_PACKET_SERVICE 的扩展。
 
-此扩展添加一个名为的新成员**FrequencyRange**响应结构，重命名**HighestAvailableDataClass**成员添加到**CurrentDataClass**到说明其用途。
+此扩展为响应结构添加了名为**FrequencyRange**的新成员, 并将**HighestAvailableDataClass**成员重命名为**CurrentDataClass** , 以明确其目的。
 
-**CurrentDataClass**指示单选访问技术 (RAT) 与其当前注册该设备。 它包含的单个值[MBIM_DATA_CLASS](#mbim_data_class)。
+**CurrentDataClass**指示设备当前注册到的无线电访问技术 (RAT)。 它包含来自[MBIM_DATA_CLASS](#mbim_data_class)的单个值。
 
-**FrequencyRange**指示设备当前使用的频率范围。 这会有效。 仅当**CurrentDataClass**字段指示 MBIMDataClass5G_NSA 或 MBIMDataClass5G_SA 位是否设置。
+**FrequencyRange**指示设备当前正在使用的频率范围。 仅当**CurrentDataClass**字段指示设置了 MBIMDataClass5G_NSA 或 MBIMDataClass5G_SA 位时, 此设置才有效。
 
 ### <a name="parameters"></a>Parameters
 
@@ -260,37 +260,37 @@ InformationBuffer 为 null，InformationBufferLength 为零。
 
 ### <a name="query"></a>查询
 
-InformationBuffer 为 null，InformationBufferLength 为零。
+InformationBuffer 为 null, 而 InformationBufferLength 为零。
 
 ### <a name="set"></a>设置
 
-Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中介绍了 set 命令的信息。
 
 ### <a name="response"></a>响应
 
-在 MBIM_COMMAND_DONE InformationBuffer 包含 MBIM_PACKET_SERVICE_INFO_V2 结构。 与 10.5.10.6 节中定义的 MBIM_PACKET_SERVICE_INFO 结构相比[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)，但这个新结构具有**CurrentDataClass**和**FrequencyRange**字段。 除非另行说明，字段说明在表 10-55 的[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)在此处适用。
+MBIM_COMMAND_DONE 中的 InformationBuffer 包含 MBIM_PACKET_SERVICE_INFO_V2 结构。 与[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的节10.5.10.6 中定义的 MBIM_PACKET_SERVICE_INFO 结构相比, 此新结构包含**CurrentDataClass**和**FrequencyRange**字段。 除非在此处说明, 否则在[MBIM 规范修订版 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的表10-55 中的字段说明适用于此处。
 
-#### <a name="mbimpacketserviceinfov2"></a>MBIM_PACKET_SERVICE_INFO_V2
+#### <a name="mbim_packet_service_info_v2"></a>MBIM_PACKET_SERVICE_INFO_V2
 
 | 偏移量 | Size | 字段 | type | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | NwError | UINT32 | 一个特定于网络错误。 表 10-44 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)介绍用于 NwError 的原因代码。 |
-| 4 | 4 | PacketServiceState | MBIM_PACKET_SERVICE_STATE | 请参阅表 10-53 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 | 
-| 8 | 4 | CurrentDataClass | MBIM_DATA_CLASS | 当前数据中的类的当前单元格，指定根据[MBIM_DATA_CLASS](#mbim_data_class)。 如果该函数不在附加的数据包服务状态，函数必须将此成员设置为 MBIMDataClassNone。 除了 HSPA （换而言之，HSUPA 和 HSDPA） 和 5 G DC，函数将此成员设置为单个 MBIM_DATA_CLASS 值。 对于 HSPA 数据服务，函数指定的按位或的 MBIMDataClass HSDPA 和 MBIMDataClassHSUPA。 对于支持 HSDPA 但不是 HSUPA 的单元格，仅 HSDPA 被指示 （这意味着 UMTS 上行数据的数据类）。 函数每当当前数据类的更改时发送通知的新值，该值指示**CurrentDataClass**。 |
-| 12 | 8 | UplinkSpeed | UINT64 | 包含比特 / 秒上行比特率。 |
-| 20 | 8 | DownlinkSpeed | UINT64 | 包含下行链路比特率，比特 / 秒。 |
-| 38 | 4 | FrequencyRange | MBIM_FREQUENCY_RANGE | 中的值的位掩码[MBIM_FREQUENCY_RANGE](#mbim_frequency_range) ，表示当前使用设备的频率范围。 此值仅有效如果**CurrentDataClass** MBIMDataClass5G_NSA 或 MBIMDataClass5G_SA。 |
+| 0 | 4 | NwError | UINT32 | 网络特定的错误。 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10-44 记录了 NwError 的原因代码。 |
+| 4 | 4 | PacketServiceState | MBIM_PACKET_SERVICE_STATE | 请参阅[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10-53。 | 
+| 8 | 4 | CurrentDataClass | MBIM_DATA_CLASS | 当前单元中的当前数据类, 根据[MBIM_DATA_CLASS](#mbim_data_class)指定。 如果函数未处于附加的数据包服务状态, 则函数必须将此成员设置为 MBIMDataClassNone。 除了 HSPA (即 HSUPA 和 HSDPA) 和 5G DC 外, 函数会将此成员设置为单个 MBIM_DATA_CLASS 值。 对于 HSPA 数据服务, 函数指定 MBIMDataClass HSDPA 和 MBIMDataClassHSUPA 的按位 "或"。 对于支持 HSDPA 而不是 HSUPA 的单元格, 只指示 HSDPA (表示上行数据的 UMTS 数据类)。 每当当前数据类发生更改时, 函数都将发送通知, 指示**CurrentDataClass**的新值。 |
+| 12 | 8 | UplinkSpeed | UINT64 | 包含上行比特率 (以每秒位数为单位)。 |
+| 20 | 8 | DownlinkSpeed | UINT64 | 包含下行比特率 (以每秒位数为单位)。 |
+| 38 | 4 | FrequencyRange | MBIM_FREQUENCY_RANGE | [MBIM_FREQUENCY_RANGE](#mbim_frequency_range)中的值的位掩码, 表示设备当前正在使用的频率范围。 仅当**CurrentDataClass**为 MBIMDataClass5G_NSA 或 MBIMDataClass5G_SA 时, 此方法才有效。 |
 
-#### <a name="mbimfrequencyrange"></a>MBIM_FREQUENCY_RANGE
+#### <a name="mbim_frequency_range"></a>MBIM_FREQUENCY_RANGE
 
-以下枚举用作上述 MBIM_PACKET_SERVICE_INFO_V2 结构中的值。
+下面的枚举用作前面 MBIM_PACKET_SERVICE_INFO_V2 结构中的值。
 
-| type | 值 | 描述|
+| type | ReplTest1 | 描述|
 | --- | --- | --- |
-| MBIMFrequencyRangeUnknown | 0 | 如果系统类型不 5g。 |
-| MBIMFrequencyRange1 | 1 | 中的频率范围 1 (FR1) [3GPP TS 38.101 1](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3283) (Sub-6 G)。 |
-| MBIMFrequencyRange2 | 2 | 在 FR2 [3GPP TS 38.101 2](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3284) (mmWave)。 |
-| MBIMFrequencyRange1AndRange2 | 3 | 如果连接 FR1 和 FR2 运营商。 |
+| MBIMFrequencyRangeUnknown | 0 | 如果系统类型不是5G。 |
+| MBIMFrequencyRange1 | 1 | [3GPP TS 38.101](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3283)中的 Frequency 范围 1 (FR1)-1 (6G)。 |
+| MBIMFrequencyRange2 | 2 | [3GPP TS 38.101-2](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3284) (mmWave) 中的 FR2。 |
+| MBIMFrequencyRange1AndRange2 | 3 | 如果 "FR1" 和 "FR2" 载波都已连接。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -298,15 +298,15 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
 
 ### <a name="status-codes"></a>状态代码
 
-此 CID 仅使用 9.4.5 节中定义的泛型状态代码[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+此 CID 仅使用[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的9.4.5 部分中定义的通用状态代码。
 
-## <a name="mbimcidsignalstate"></a>MBIM_CID_SIGNAL_STATE
+## <a name="mbim_cid_signal_state"></a>MBIM_CID_SIGNAL_STATE
 
-此 CID 是 MBIM_CID_SIGNAL_STATE，RSRP 和 SNR 简介信号状态条件的扩展。 此新扩展才有效设备将指示 MBIM 扩展版本 2.0 的支持。 此扩展是如果调制解调器支持 MBIMDataClass5G_ (N) SA 数据类必需的。
+此 CID 是 MBIM_CID_SIGNAL_STATE 的扩展, 为信号状态标准引入 RSRP 和 SNR。 仅当设备指示支持 MBIM 扩展版本2.0 时, 此新扩展插件才有效。 如果调制解调器支持 MBIMDataClass5G_ (N) SA 数据类, 则此扩展是必需的。
 
-RSRP 和 SNR 字段的有效前提是相应 SystemType 是 MGBIMDataClassLTE 或 MBIMDataClass5G_ (N) SA。 如果调制解调器报告 RSRP 和/或 SNR，则 RSSI 字段应设置为值**99**。
+仅当相应的 SystemType 是 MGBIMDataClassLTE 或 MBIMDataClass5G_ (N) SA 时, RSRP 和 SNR 字段才有效。 如果调制解调器报告 RSRP 和/或 SNR, 则 RSSI 字段应设置为**99**的值。
 
-如果相应 SystemType MBIMDataClass5G_ (N) SA，RSRP 字段是必需的 SNR 字段是可选的。 如果相应 SystemType，MBIMDataClassLTE RSRP 和 SNR 字段是可选的可以改为使用 RSSI 字段。 在这种情况下，可以通过设置零省略 RSRP 和 SNR 字段 (**0**) 值均**RsrpSnrOffset**并**RsrpSnrSize**成员。
+如果相应的 SystemType 为 MBIMDataClass5G_ (N) SA, 则 RSRP 字段是必需的, 并且 SNR 字段是可选的。 如果相应的 SystemType 为 MBIMDataClassLTE, 则 RSRP 和 SNR 字段是可选的, 可以改为使用 RSSI 字段。 在这种情况下, 可以通过为**RsrpSnrOffset**和**RsrpSnrSize**成员设置零 (**0**) 值来省略 RSRP 和 SNR 字段。
 
 ### <a name="parameters"></a>Parameters
 
@@ -317,41 +317,41 @@ RSRP 和 SNR 字段的有效前提是相应 SystemType 是 MGBIMDataClassLTE 或
 
 ### <a name="query"></a>查询
 
-InformationBuffer 为 null，InformationBufferLength 为零。
+InformationBuffer 为 null, 而 InformationBufferLength 为零。
 
 ### <a name="set"></a>设置
 
-Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中介绍了 set 命令的信息。
 
 ### <a name="response"></a>响应
 
-在 MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_SIGNAL_STATE_INFO_V2 结构。
+MBIM_COMMAND_DONE 中的 InformationBuffer 包含以下 MBIM_SIGNAL_STATE_INFO_V2 结构。
 
-#### <a name="mbimsignalstateinfov2"></a>MBIM_SIGNAL_STATE_INFO_V2
-
-| 偏移量 | Size | 字段 | type | 描述 |
-| --- | --- | --- | --- | --- |
-| 0 | 4 | Rssi | UINT32 | 请参阅中的表 10.58 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 |
-| 4 | 4 | ErrorRate | UINT32 | 请参阅中的表 10.58 [MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。 |
-| 8 | 4 | SignalStrengthInterval | UINT32 | 报告间隔，以秒为单位。 |
-| 12 | 4 | RssiThreshold | UINT32 | RSSI 的区别编码触发报表的值。 如果这并不重要，请使用 0xFFFFFFFF。 |
-| 16 | 4 | ErrorRateThreshold | UINT32 | 在 ErrorRate 区别编码触发报表的值。 如果这并不重要，请使用 0xFFFFFFFF。 |
-| 20 | 4 | RsrpSnrOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到包含 RSRP 和 SNR 信号信息的缓冲区。 此成员可以是**NULL**时没有 RSRP 和 SNR 信号信息，请访问。 |
-| 24 | 4 | RsrpSnrSize | 大小 | 以字节为单位，包含 RSRP 和 SNR 信号 MBIM_RSRP_SNR_INFO 结构的格式中的信息的缓冲区的大小。 |
-|   | 4 | DataBuffer | DATABUFFER | 一种 MBIM_RSRP_SNR 结构。 |
-
-#### <a name="mbimrsrpsnr"></a>MBIM_RSRP_SNR
-
-中使用以下 MBIM_RSRP_SNR 结构**DataBuffer** MBIM_SIGNAL_STATE_INFO_V2 结构。
+#### <a name="mbim_signal_state_info_v2"></a>MBIM_SIGNAL_STATE_INFO_V2
 
 | 偏移量 | Size | 字段 | type | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | ElementCount | UINT32 | 请按照此元素的 RSRP_SNR 条目的计数。 |
-| 4 | 4 | DataBuffer | DATABUFFER | 每个指定为 MBIM_RSRP_SNR_INFO 结构 RSRP_SNR 记录的数组。 |
+| 0 | 4 | Rssi | UINT32 | 请参阅[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10.58。 |
+| 4 | 4 | ErrorRate | UINT32 | 请参阅[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)中的表10.58。 |
+| 8 | 4 | SignalStrengthInterval | UINT32 | 报告间隔 (秒)。 |
+| 12 | 4 | RssiThreshold | UINT32 | 触发报表的 RSSI 编码值的不同之处。 如果这并不重要, 则使用0xFFFFFFFF。 |
+| 16 | 4 | ErrorRateThreshold | UINT32 | 触发报表的 ErrorRate 编码值的不同之处。 如果这并不重要, 则使用0xFFFFFFFF。 |
+| 20 | 4 | RsrpSnrOffset | 抵销 | 从该结构的开头计算的偏移量 (以字节为单位), 该偏移量为包含 RSRP 和 SNR 信号信息的缓冲区。 当没有可用的 RSRP 和 SNR 信号信息时, 此成员可为**NULL** 。 |
+| 24 | 4 | RsrpSnrSize | 规格 | 缓冲区的大小 (以字节为单位), 包含 RSRP 和 SNR 信号信息, 格式为 MBIM_RSRP_SNR_INFO 结构。 |
+|   | 4 | DataBuffer | DATABUFFER | MBIM_RSRP_SNR 结构。 |
 
-#### <a name="mbimrsrpsnrinfo"></a>MBIM_RSRP_SNR_INFO
+#### <a name="mbim_rsrp_snr"></a>MBIM_RSRP_SNR
 
-中使用以下 MBIM_RSRP_SNR_INFO 结构的数组**DataBuffer** MBIM_RSRP_SNR 结构。
+以下 MBIM_RSRP_SNR 结构用于 MBIM_SIGNAL_STATE_INFO_V2 结构的**DataBuffer**中。
+
+| 偏移量 | Size | 字段 | type | 描述 |
+| --- | --- | --- | --- | --- |
+| 0 | 4 | Elementcount 多于 | UINT32 | 跟随此元素的 RSRP_SNR 项的计数。 |
+| 4 | 4 | DataBuffer | DATABUFFER | RSRP_SNR 记录的数组, 每个记录都指定为 MBIM_RSRP_SNR_INFO 结构。 |
+
+#### <a name="mbim_rsrp_snr_info"></a>MBIM_RSRP_SNR_INFO
+
+在 MBIM_RSRP_SNR 结构的**DataBuffer**中使用以下 MBIM_RSRP_SNR_INFO 结构的数组。
 
 <table>
     <tr>
@@ -369,8 +369,8 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
         <td>
             <table>
                 <tr>
-                    <th>在 dBm RSRP 值</th>
-                    <th>编码的值 (最小值 = 0，最大 = 126)</th>
+                    <th>RSRP 值 (dBm)</th>
+                    <th>编码值 (最小 = 0, 最大 = 126)</th>
                 </tr>
                 <tr>
                     <td>小于-156</td>
@@ -405,11 +405,11 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
                     <td>125</td>
                 </tr>
                 <tr>
-                    <td>-31 或更高版本</td>
+                    <td>-31 或更大</td>
                     <td>126</td>
                 </tr>
                 <tr>
-                    <td>未知或未找到</td>
+                    <td>未知或无法检测</td>
                     <td>127</td>
                 </tr>
             </table>
@@ -423,15 +423,15 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
         <td>
             <table>
                 <tr>
-                    <th>在 dB 中的 SNR 值</th>
-                    <th>编码的值 (最小值 = 0，最大 = 127)</th>
+                    <th>数据库中的 SNR 值</th>
+                    <th>编码值 (最小 = 0, 最大 = 127)</th>
                 </tr>
                 <tr>
                     <td>小于-23</td>
                     <td>0</td>
                 </tr>
                 <tr>
-                    <td>小于-22.5</td>
+                    <td>小于-22。5</td>
                     <td>1</td>
                 </tr>
                 <tr>
@@ -439,7 +439,7 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
                     <td>2</td>
                 </tr>
                 <tr>
-                    <td>小于-21.5</td>
+                    <td>小于-21。5</td>
                     <td>3</td>
                 </tr>
                 <tr>
@@ -447,19 +447,19 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
                     <td>...</td>
                 </tr>
                 <tr>
-                    <td>小于 39.5</td>
+                    <td>小于39。5</td>
                     <td>125</td>
                 </tr>
                 <tr>
-                    <td>小于 40</td>
+                    <td>小于40</td>
                     <td>126</td>
                 </tr>
                 <tr>
-                    <td>40 或更高版本</td>
+                    <td>40或更高版本</td>
                     <td>127</td>
                 </tr>
                 <tr>
-                    <td>未知或未找到</td>
+                    <td>未知或无法检测</td>
                     <td>128</td>
                 </tr>
             </table>
@@ -470,21 +470,21 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
         <td>4</td>
         <td>RSRPThreshold</td>
         <td>UINT32</td>
-        <td>定义在旧的 （缓存） RSRP 值和新计算的 RSRP 值之间的阈值。 如果绝对差异大于阈值的值，设备会触发一个未经请求的事件。 单位为 1 dBm。 如果设置为零，则在设备函数中使用的默认行为。 如果设置为 0xFFFFFFFF，不要使用此触发的事件。 如果设备不支持给定的阈值，则返回它所支持的最大阈值。</td>
+        <td>定义旧 (已缓存) RSRP 值与新计算的 RSRP 值之间的阈值。 如果绝对差异大于阈值, 则设备会触发一个未经请求的事件。 单位为 1 dBm。 如果设置为零, 则使用设备函数中的默认行为。 如果设置为 0xFFFFFFFF, 请不要使用它来触发事件。 如果设备不支持给定的阈值, 则它将返回它所支持的最大阈值。</td>
     </tr>
     <tr>
         <td>12</td>
         <td>4</td>
         <td>SNRThreshold</td>
         <td>UINT32</td>
-        <td>定义在旧的 （缓存） SNR 值和新计算的 SNR 值之间的阈值。 如果绝对差异大于阈值的值，设备会触发一个未经请求的事件。 单位为 1 个 dB。 如果设置为零，则在设备函数中使用的默认行为。 如果设置为 0xFFFFFFFF，不要使用此触发的事件。 如果设备不支持给定的阈值，则返回它所支持的最大阈值。</td>
+        <td>定义旧 (已缓存) SNR 值与新计算的 SNR 值之间的阈值。 如果绝对差异大于阈值, 则设备会触发一个未经请求的事件。 单位为 1 dB。 如果设置为零, 则使用设备函数中的默认行为。 如果设置为 0xFFFFFFFF, 请不要使用它来触发事件。 如果设备不支持给定的阈值, 则它将返回它所支持的最大阈值。</td>
     </tr>
     <tr>
         <td>16</td>
         <td>4</td>
         <td>SystemType</td>
         <td>MBIM_DATA_CLASS</td>
-        <td>指示信号的状态信息的有效的系统类型。 此成员是一种类型的位掩码中定义<a href="#mbim_data_class">MBIM_DATA_CLASS</a>。</td>
+        <td>指示信号状态信息有效的系统类型。 此成员是<a href="#mbim_data_class">MBIM_DATA_CLASS</a>中定义的一种类型的位掩码。</td>
     </tr>
 </table>
 
@@ -494,4 +494,4 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
 
 ### <a name="status-codes"></a>状态代码
 
-此 CID 仅使用 9.4.5 节中定义的泛型状态代码[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)。
+此 CID 仅使用[MBIM 规范修订版本 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)的9.4.5 部分中定义的通用状态代码。
