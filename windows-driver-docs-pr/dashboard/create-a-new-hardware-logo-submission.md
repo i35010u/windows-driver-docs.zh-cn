@@ -5,19 +5,19 @@ ms.assetid: e812eee1-768d-42d6-918e-c716b5c29ea2
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2523592e3201a9d006d5b458ee4c3c8bea624cc2
-ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
+ms.openlocfilehash: 3543b86f5c1ceed26137740c85331c97206423e0
+ms.sourcegitcommit: 9e91fcdfcc0b4d05ca2f1f8a30b627adc607f7af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68223995"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621142"
 ---
 # <a name="create-a-new-wlk-device-certification-submission"></a>创建新的 WLK 设备认证提交
 
 
 若要准备要认证的 Windows Server 2008（及更低版本）硬件，必须创建并提交 **WQReady.xml** 文件。 提交此文件，即表示允许仪表板测试你的设备并返回有关其性能的报告。 该报告包含设备与 Windows 标准进行比较的方式的详细列表。
 
-# <a name="creating-a-wqreadyxml-file"></a>创建 WQReady.xml 文件
+## <a name="creating-a-wqreadyxml-file"></a>创建 WQReady.xml 文件
 
 1.  下载 [Windows 徽标工具包 (WLK)](https://go.microsoft.com/fwlink/p/?LinkId=219237)。 请确保在要认证的每个操作系统上，使用相应认证工具包测试驱动程序。
 
@@ -25,7 +25,7 @@ ms.locfileid: "68223995"
 
 3.  浏览到 **.cpk** 文件（WLK 测试结果）并单击“加载”  。
 
-4.  如果设备不是内置设备，请输入“驱动程序包”  、“驱动程序区域设置”  和“符号(可选)”  。
+4.  如果设备不是内置设备，请输入“驱动程序包”  、“驱动程序区域设置”  和“符号(可选)”  。 **注意**：驱动程序包的相对路径加上文件名必须少于 160 个字符。 如果超过此限制，将无法处理提交操作。
 
 5.  关闭“添加 DTM 结果”  对话框。
 

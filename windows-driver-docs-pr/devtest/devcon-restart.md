@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a548b51b4e75110585da4d15367adf70a6d11e2d
-ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
+ms.openlocfilehash: 17e14f3be992eec2cd92cbc21856900600331dec
+ms.sourcegitcommit: 1ca0637648ea03c0dc0b3daf0c5c4025d1406c70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68995402"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976076"
 ---
 # <a name="devcon-restart"></a>DevCon Restart
 
@@ -42,13 +42,10 @@ ms.locfileid: "68995402"
 
 以下特殊字符修改 ID 参数。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">字符</th>
 <th align="left">描述</th>
 </tr>

@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db4c7aa1e3616e65f7ab6245e63bcb6aca8cae79
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 707d055d55d43bac288758c6ff3c1ff4e9ffb9a7
+ms.sourcegitcommit: 7fc38dedccceadccfbf493f4c66aa6def436f1d5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391969"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896280"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -25,6 +25,8 @@ ms.locfileid: "67391969"
 如果没有批准的 EV 代码签名证书，可以从下列某个证书颁发机构购买证书。
 
 ### <a name="extended-validation-code-signing-certificates"></a>扩展验证代码签名证书。
+
+- [购买 SSL.com EV 代码签名证书](https://www.ssl.com/certificates/ev-code-signing/)
 
 - [购买 Symantec EV 代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393248)
 
