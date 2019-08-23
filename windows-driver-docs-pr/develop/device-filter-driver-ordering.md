@@ -4,12 +4,12 @@ description: Microsoft 开发了一种以声明方式添加筛选器的方法，
 ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6b4ef5aa285ffc0e91cb6654f87edc387f39258b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: c146762cf55ceb51c081c0852fa966424e6df221
+ms.sourcegitcommit: 459c7928a7917609afb68bafb65c2fcc1d9040ff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63356658"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887200"
 ---
 # <a name="device-filter-driver-ordering"></a>设备筛选器驱动程序排序
 
@@ -140,7 +140,7 @@ FilterPosition=Upper/Lower
 [DDInstall.HW]
 AddReg = FilterLevel_Definition
 
-[FilterLevel\_Definition]
+[FilterLevel_Definition]
 HKR,,UpperFilterLevels,%REG_MULTI_SZ%,"LevelA","LevelB","LevelC"
 HKR,,UpperFilterDefaultLevel,,"LevelC"
 
@@ -153,8 +153,8 @@ HKR,,LowerFilterDefaultLevel,,"LevelE"
 查询以下属性可以检索特定设备的完整筛选器声明列表：
 
 ```INF
-DEVPKEY\_Device\_CompoundUpperFilters
-DEVPKEY\_Device\_CompoundLowerFilters
+DEVPKEY_Device_CompoundUpperFilters
+DEVPKEY_Device_CompoundLowerFilters
 ```
 
 ### <a name="legacy-equivalent-filter-registration"></a>传统的等效筛选器注册
