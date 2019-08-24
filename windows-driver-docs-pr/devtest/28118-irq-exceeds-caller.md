@@ -1,26 +1,24 @@
 ---
 title: C28118
-description: irq-exceeds-caller
+description: irq-超过-调用方
 ms.assetid: ''
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28118
-ms.openlocfilehash: cbd3d7b47e1ec7c78d78b8f974d55d4e47551329
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e92343225daba43c7d38bbe29d77e56cb37f61b
+ms.sourcegitcommit: 4a3e5c2c6f9d1b6ea03e81e4da641a48122b2307
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361446"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70014871"
 ---
 # <a name="c28118"></a>C28118
 
-警告：C28118:复制整个 IRP 堆栈条目离开初始化，应清除或更新某些字段。
-
-当前函数允许在上面的 %func%（级别 %%） 允许的最大的 IRQ 级别运行。 以前的函数调用或批注不一致并使用该函数
+出现C28118:允许当前函数在 IRQ 级别运行, 超过% func% (% level%) 允许的最大值。 以前的函数调用或批注不一致, 不能使用该函数。
 
 <table>
 <colgroup>
@@ -29,12 +27,12 @@ ms.locfileid: "63361446"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>当前功能时，可能需要<em>IRQL_requires_max</em>，也可能是由一些以前调用设置的限制。</p></td>
+<td align="left"><p><strong>附加信息</strong></p></td>
+<td align="left"><p>当前函数可能需要<em>IRQL_requires_max</em>, 也可能是由某些先前调用设置的限制。</p></td>
 </tr>
 </tbody>
 </table>
 
-要调用的函数仅限于或以下某些 IRQL 被调用。  调用 （当前） 函数允许在某些更高版本的 IRQL 运行，进行该调用会导致被调用的函数，它不能在运行的 IRQL 在运行。
+被调用的函数限制为在某些 IRQL 下调用。  允许调用 (当前) 函数在一些更高的 IRQL 下运行, 并且进行该调用可能会导致调用的函数在其无法运行的 IRQL 下运行。
 
-请注意，PREfast 将尝试推断其有关当前 IRQ 级别，可以仅当它具有推断充足信息来检测错误的 IRQ 级别时，会生成此警告。  推理可能来自所分析函数的签名或在当前路径上的之前调用。
+请注意, PREfast 将尝试推断出当前 IRQ 级别的相关信息, 并且仅当它已推断出足够的 IRQ 级别来检测错误时, 才会生成此警告。  推理可能来自正在分析的函数的签名或当前路径中的之前调用。
