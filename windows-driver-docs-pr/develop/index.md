@@ -4,25 +4,22 @@ title: 开发、测试以及部署驱动程序
 description: 从 Windows 驱动程序工具包 (WDK) 8 开始，Windows 驱动程序开发环境和调试器已集成到 Microsoft Visual Studio 中。
 keywords:
 - 开发驱动程序
-- 调试驱动程序
 - 测试驱动程序
 - 部署驱动程序
-ms.date: 04/20/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 4b721253df53581f92797717d7cb2474da6e8e15
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 354c836b5a358b9acbef34933d80434f0a4021cd
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370728"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020665"
 ---
 # <a name="developing-testing-and-deploying-drivers"></a>开发、测试以及部署驱动程序
 
-Windows 驱动程序开发环境和 Windows 调试器已集成到 Microsoft Visual Studio 中。 在此集成的驱动程序开发环境中，Visual Studio 界面中提供有编码、构建、打包、部署、调试和测试驱动程序所需的大部分工具。
-
->[!VIDEO https://www.microsoft.com/videoplayer/embed/9673727b-89ef-4a54-8228-dad41dbd8201]
+Windows 驱动程序开发环境和 Windows 调试器已集成到 Microsoft Visual Studio 中。 在此集成的驱动程序开发环境中，Visual Studio 界面中提供有编码、构建、打包、部署和测试驱动程序所需的大部分工具。
 
 若要设置集成开发环境，请先安装 Visual Studio，然后再安装 WDK。 可以在[此处](https://go.microsoft.com/fwlink/p/?linkid=239721)找到有关如何获取 Visual Studio 和 WDK 的信息。 安装 WDK 时，需要包括 [Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
@@ -30,26 +27,24 @@ WDK 使用 MSBuild.exe，Visual Studio 用户界面中提供有此程序，并�
 
 Visual Studio 环境提供适用于以下项的模板：
 
--   新驱动程序
--   驱动程序包
--   新测试
--   现有测试的增强功能
--   自定义驱动程序部署脚本
+- 新驱动程序
+- 驱动程序包
+- 新测试
+- 现有测试的增强功能
+- 自定义驱动程序部署脚本
 
-在 Visual Studio 环境中，你可以配置构建流程，使其自动创建和签署驱动程序包。 Visual Studio 中提供了静态和实时分析工具。 你可以配置用于测试驱动程序的目标计算机，并在每次重建时将你的驱动程序自动部署到目标计算机。 在 Visual Studio 中，你可以与目标计算机建立内核模式调试会话。 你可以从多个运行时测试中进行选择，也可以编写自己的测试。
+在 Visual Studio 环境中，你可以配置构建流程，使其自动创建和签署驱动程序包。 Visual Studio 中提供了静态和实时分析工具。 你可以配置用于测试驱动程序的目标计算机，并在每次重建时将你的驱动程序自动部署到目标计算机。 你可以从多个运行时测试中进行选择，也可以编写自己的测试。
 
 本部分的主题介绍了如何使用 Visual Studio 执行驱动程序开发、部署和测试中涉及的各任务。
 
 ## <a name="additional-videos"></a>其他视频
 
-除了上面的视频之外，你还将在 Windows 驱动程序文档中的以下页面上找到视频：
+你将在 Windows 驱动程序文档中的以下页面上找到视频：
 
-* [调试驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/debugging-a-driver)
 * [HID 中的新增功能](https://docs.microsoft.com/windows-hardware/drivers/hid/what-s-new-in-hid)
 * [使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪](https://docs.microsoft.com/windows-hardware/drivers/usbcon/capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-)
 * [将 Windows Performance Toolkit (WPT) 与 WDF 配合使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-windows-performance-toolkit--wpt--with-wdf)
 * [视频：在没有调试程序的情况下访问驱动程序 IFR 日志](https://docs.microsoft.com/windows-hardware/drivers/wdf/video--accessing-driver-ifr-logs-without-a-debugger)
 * [视频：使用 WDF 源代码调试驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/video--debugging-your-driver-with-wdf-source-code)
 * [视频：调试 UMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/videos--debugging-umdf-drivers)
-
 
