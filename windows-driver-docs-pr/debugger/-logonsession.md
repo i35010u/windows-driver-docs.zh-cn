@@ -1,6 +1,6 @@
 ---
 title: logonsession
-description: Logonsession 扩展显示有关指定的登录会话的信息。
+description: Logonsession 扩展显示有关指定登录会话的信息。
 ms.assetid: 95746bc0-ab36-43a7-83ad-9f6fdbb15b39
 keywords:
 - 登录会话
@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b45551a4bf8fb778878793b428dd53e69703e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 706f6931b69b29ffa645bfeafe3cee4347ff1318
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336128"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025229"
 ---
 # <a name="logonsession"></a>!logonsession
 
 
-**！ Logonsession**扩展显示有关指定的登录会话的信息。
+**! Logonsession**扩展显示有关指定登录会话的信息。
 
 免费生成语法
 
@@ -31,24 +31,24 @@ ms.locfileid: "63336128"
 !logonsession LUID
 ```
 
-已检验的版本语法
+Checked Build 语法
 
 ```dbgcmd
 !logonsession LUID [InfoLevel]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______LUID______"></span><span id="_______luid______"></span> *LUID*   
-指定要显示一个登录会话的本地唯一标识符 (LUID)。 如果*LUID*为 0，则显示有关所有登录会话的信息。
+<span id="_______LUID______"></span><span id="_______luid______"></span>*LUID*   
+指定要显示的登录会话的本地唯一标识符 (LUID)。 如果*LUID*为 0, 则显示有关所有登录会话的信息。
 
-若要在调试内部版本中显示有关系统会话和系统的所有令牌的信息，请输入 **！ logonsession 3e7 1**。
+若要显示有关已检查生成中的系统会话和所有系统令牌的信息, 请输入 **! logonsession 3e7 1**。
 
-<span id="_______InfoLevel______"></span><span id="_______infolevel______"></span><span id="_______INFOLEVEL______"></span> *InfoLevel*   
-（仅已检验的版本）指定显示多少令牌信息。 *InfoLevel*参数可以采用值从 0 到 4，其中 0 表示最少信息和 4 代表大部分信息。
+<span id="_______InfoLevel______"></span><span id="_______infolevel______"></span><span id="_______INFOLEVEL______"></span>*InfoLevel*   
+(仅限检查的生成)指定显示多少标记信息。 *InfoLevel*参数可采用0到4之间的值, 0 表示最小信息, 4 表示最多信息。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -61,22 +61,22 @@ ms.locfileid: "63336128"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关登录会话的信息，请参阅 Microsoft Windows SDK 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关登录会话的信息, Microsoft Windows SDK 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*, 并标记和 David 所罗门群岛。 
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的从上免费生成此扩展示例：
+下面是一个免费版本中此扩展的输出示例:
 
 ```dbgcmd
 kd> !logonsession 0
@@ -128,7 +128,7 @@ Dumping all logon sessions.
 14 sessions in the system.
 ```
 
-可以通过按 CTRL + BREAK （在 WinDbg) 或 CTRL + C （中 KD) 来停止执行任何时候。
+您可以通过按 CTRL + BREAK (在 WinDbg 中) 或按 CTRL + C (在 KD 中) 随时停止执行。
 
  
 

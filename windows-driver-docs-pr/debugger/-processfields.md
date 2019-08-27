@@ -1,6 +1,6 @@
 ---
 title: processfields
-description: Processfields 扩展显示名称和 executive 进程 (EPROCESS) 块中的字段的偏移量。
+description: Processfields 扩展在执行进程 (EPROCESS) 块中显示字段的名称和偏移量。
 ms.assetid: d1d4c49e-3566-4cf6-8b08-656668c92d6c
 keywords:
 - processfields Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 18230025e28ce931b958583c0c2add0b70440b84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0745a8c1e9abe4fefff1007fb084a6d1b86f3145
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335744"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025165"
 ---
 # <a name="processfields"></a>!processfields
 
 
-**！ Processfields**扩展显示名称和 executive 进程 (EPROCESS) 块中的字段的偏移量。
+**! Processfields** extension 显示执行进程 (EPROCESS) 块内字段的名称和偏移量。
 
 ```dbgcmd
 !processfields
@@ -31,7 +31,7 @@ ms.locfileid: "63335744"
 ## <span id="ddk__processfields_dbg"></span><span id="DDK__PROCESSFIELDS_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -41,31 +41,31 @@ ms.locfileid: "63335744"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>不可用 （请参阅备注部分）</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>不可用 (请参阅 "备注" 部分)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-EPROCESS 块有关的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关 EPROCESS 块的信息, 请参阅*Microsoft Windows 内部机制*, 并将 Russinovich 和 David 所罗门群岛标记为。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展命令不可在 Windows XP 或更高版本的 Windows 中可用。 请改用[ **dt （显示类型）** ](dt--display-type-.md)命令直接显示 EPROCESS 结构：
+此扩展命令在 Windows XP 或更高版本的 Windows 中不可用。 请改用[**dt (Display Type)** ](dt--display-type-.md)命令直接显示 EPROCESS 结构:
 
 ```dbgcmd
 kd> dt nt!_EPROCESS 
 ```
 
-下面是举例 **！ processfields**从 Windows 2000 系统：
+下面是 Windows 2000 系统中 **! processfields**的示例:
 
 ```dbgcmd
 kd> !processfields

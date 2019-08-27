@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d87c8396c45ba7537e288cdd6c845fd7c3e089
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b43026e988abdcd6cb5f9d5b2358a2f42cb5baf
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338731"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025158"
 ---
 # <a name="threadtoken"></a>!threadtoken
 
 
-**！ Threadtoken**扩展显示当前线程的模拟状态。
+**! Threadtoken**扩展显示当前线程的模拟状态。
 
 ```dbgcmd
 !threadtoken
@@ -31,7 +31,7 @@ ms.locfileid: "63338731"
 ## <span id="ddk__threadtoken_dbg"></span><span id="DDK__THREADTOKEN_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -41,10 +41,10 @@ ms.locfileid: "63338731"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Ntsdexts.dll</p></td>
+<td align="left"><p>Ntsdexts</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
 <td align="left"><p>不可用</p></td>
 </tr>
 </tbody>
@@ -52,20 +52,20 @@ ms.locfileid: "63338731"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关线程和模拟的信息，请参阅 Microsoft Windows SDK 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关线程和模拟的信息, 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*, 并标记 Microsoft Windows SDK 为和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Threadtoken**扩展是在 Windows XP 和更高版本的 Windows 中已过时。 使用[ **！ 令牌**](-token.md)相反。
+在 Windows XP 和更高版本的 Windows 中, **! threadtoken**扩展已过时。 请改用[ **! 标记**](-token.md)。
 
-如果当前线程正在模拟时，将显示此线程使用的令牌。
+如果当前线程正在模拟, 将显示此线程正在使用的令牌。
 
-否则，会显示一条消息，读取"线程未模拟"。 将显示进程令牌。
+否则, 将显示 "线程未模拟" 消息。 然后, 将显示进程令牌。
 
-令牌将显示在相同的格式， [ **！ 处理**](-handle.md)显示时使用令牌句柄。
+令牌的显示格式与[ **! 句柄**](-handle.md)在显示标记句柄时使用的格式相同。
 
 下面是一个示例：
 

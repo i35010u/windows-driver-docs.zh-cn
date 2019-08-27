@@ -1,6 +1,6 @@
 ---
 title: obja
-description: Obja 扩展对象管理器中显示的对象的属性。
+description: Obja 扩展在对象管理器中显示对象的属性。
 ms.assetid: dc263ec2-72bf-4cb1-8583-4e9142d0bbdb
 keywords:
 - 对象管理器
@@ -13,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca660e5a95b68af9766bb8c9c1e2e9ddb484161f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56afcda226e8e242a5b61aa96df777ecd1815f91
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335828"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025203"
 ---
 # <a name="obja"></a>!obja
 
 
-**！ Obja**扩展对象管理器中显示的对象的属性。
+**! Obja**扩展在对象管理器中显示对象的属性。
 
 ```dbgcmd
 !obja Address
 ```
 
-## <a name="span-idddkobjadbgspanspan-idddkobjadbgspanparameters"></a><span id="ddk__obja_dbg"></span><span id="DDK__OBJA_DBG"></span>参数
+## <a name="span-idddk__obja_dbgspanspan-idddk__obja_dbgspanparameters"></a><span id="ddk__obja_dbg"></span><span id="DDK__OBJA_DBG"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定你想要检查的对象标头的十六进制地址。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定要检查的对象标头的十六进制地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -46,25 +46,25 @@ ms.locfileid: "63335828"
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
 <td align="left"><p></p>
-Ext.dll Kdextx86.dll</td>
+Ext .dll Kdextx86</td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Ext.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Ext .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关对象和对象管理器的信息，请参阅 Microsoft Windows SDK 文档，Windows Driver Kit (WDK) 文档，并*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关对象和对象管理器的信息, 请参阅 "Microsoft Windows SDK 文档"、"Windows 驱动程序工具包 (WDK)" 文档, 以及 " *Microsoft Windows 内部*" (Russinovich) 和 "David 所罗门群岛"。
 
 <a name="remarks"></a>备注
 -------
 
-列出与指定的对象相关的属性。 有效的属性是：
+列出了与指定的对象相关的属性。 有效的属性包括:
 
 ```cpp
 #define OBJ_INHERIT             0x00000002L

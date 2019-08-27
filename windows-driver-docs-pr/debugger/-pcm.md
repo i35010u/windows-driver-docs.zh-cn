@@ -1,6 +1,6 @@
 ---
 title: pcm
-description: Pcm 扩展将显示指定的专用缓存地图。 此扩展才可用在 Windows 2000 中。
+description: Pcm 扩展显示指定的专用缓存映射。 此扩展仅在 Windows 2000 中提供。
 ms.assetid: a6880ad0-5326-4bea-ac84-3311a2ec01da
 keywords:
 - 专用缓存映射
@@ -14,29 +14,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ede535bc8316dc8e5cb0e4c2ad37a5dcf3b9631
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1c151f67bfdc65d9e8e3abc2f08939b8f745b9a
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334414"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025199"
 ---
 # <a name="pcm"></a>!pcm
 
 
-**！ Pcm**扩展显示指定的专用缓存映射。 此扩展才可用在 Windows 2000 中。
+**! Pcm**扩展显示指定的专用缓存映射。 此扩展仅在 Windows 2000 中提供。
 
 ```dbgcmd
 !pcm Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定专用缓存映射的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -46,27 +46,27 @@ ms.locfileid: "63334414"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>不可用 (请参阅备注部分)</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>不可用 (请参阅 "备注" 部分)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-缓存管理有关的信息，请参阅 Microsoft Windows SDK 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关缓存管理的信息, Microsoft Windows SDK 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*, 并标记和 David 所罗门群岛。
 
-有关其他缓存管理扩展的信息，请参阅[ **！ cchelp** ](-cchelp.md)扩展引用。
+有关其他缓存管理扩展的信息, 请参阅[ **! cchelp**](-cchelp.md) extension reference。
 
 <a name="remarks"></a>备注
 -------
 
-仅在 Windows 2000 中支持此扩展。 在 Windows XP 和更高版本的 Windows 中，使用[ **dt nt ！\_私有\_缓存\_映射地址**](dt--display-type-.md)命令。
+只有 Windows 2000 支持此扩展。 在 Windows XP 和更高版本的 Windows 中, 使用[**dt nt\_ !专用\_缓存\_映射地址**](dt--display-type-.md)命令。
 
  
 

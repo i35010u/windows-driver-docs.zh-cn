@@ -1,10 +1,10 @@
 ---
 title: idt
-description: Idt 扩展显示为指定的中断调度表 (IDT) 中断服务例程 (Isr)。
+description: Idt 扩展显示指定中断调度表 (IDT) 的中断服务例程 (Isr)。
 ms.assetid: 6b289fde-85a3-4a40-8354-db6861ca8cb2
 keywords:
-- ISR （中断服务例程）
-- IDT （中断调度表）
+- ISR (中断服务例程)
+- IDT (中断调度表)
 - idt Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -14,17 +14,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c65570198a00701ea15c301c1afeb15ed535525b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 667bfdf8cb59d41bea4b7795d5f0c6c5c3985747
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336466"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025235"
 ---
 # <a name="idt"></a>!idt
 
 
-**！ Idt**扩展显示为指定的中断调度表 (IDT) 中断服务例程 (Isr)。
+**! Idt** extension 显示指定中断调度表 (idt) 的中断服务例程 (isr)。
 
 ```dbgcmd
 !idt IDT 
@@ -32,19 +32,19 @@ ms.locfileid: "63336466"
 !idt -? 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______IDT______"></span><span id="_______idt______"></span> *IDT*   
-指定要显示 IDT。
+<span id="_______IDT______"></span><span id="_______idt______"></span>*IDT*   
+指定要显示的 IDT。
 
 <span id="_______-a______"></span><span id="_______-A______"></span> **-a**   
-当*IDT*未指定，则调试器将显示所有处理器的 IDTs 以缩写格式在目标计算机上。 如果 **-a**指定，则为每个 IDT Isr 也会显示。
+如果未指定*IDT* , 则调试器将以缩写格式显示目标计算机上的所有处理器的 IDTs。 如果指定 **-a** , 则还会显示每个 IDT 的 isr。
 
-<span id="_______-_______"></span> **-?**   
-显示此扩展在调试器命令窗口中的帮助。
+<span id="_______-_______"></span> **-?**    
+在调试器中显示此扩展的帮助命令窗口。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -57,26 +57,26 @@ ms.locfileid: "63336466"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-此扩展命令仅用于基于 x64 或基于 x86 的目标计算机。
+此扩展命令只能与基于 x64 或基于 x86 的目标计算机一起使用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 Isr 和 IDTs 的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关 Isr 和 IDTs 的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部*: Mark Russinovich 和 David 所罗门群岛。
 
-有关如何在 Itanium 的目标计算机上显示中断向量表的详细信息，请参阅[ **！ 程序**](-ivt.md)。
+有关如何在 Itanium 目标计算机上显示中断向量表的详细信息, 请参阅[ **! ivt**](-ivt.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例:
 
 ```dbgcmd
 0: kd> !idt

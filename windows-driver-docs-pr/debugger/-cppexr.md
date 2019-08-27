@@ -1,6 +1,6 @@
 ---
 title: cppexr
-description: Cppexr 扩展显示的内容C++异常记录。
+description: Cppexr 扩展显示C++异常记录的内容。
 ms.assetid: 568c98e9-31d9-4c49-9b7a-bc8eccfed24a
 keywords:
 - 异常记录
@@ -13,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 327c2e2ab4bfde70b0363f6d66e48fdf1d1e9820
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff22aa889368d13e27baa86891df6b2f32e298a1
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336882"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025273"
 ---
 # <a name="cppexr"></a>!cppexr
 
 
-**！ Cppexr**扩展显示的内容C++异常记录。
+**! Cppexr**扩展显示C++异常记录的内容。
 
 ```dbgsyntax
     !cppexr Address 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的地址的C++若要显示的异常记录。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定要显示的C++异常记录的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -45,29 +45,29 @@ ms.locfileid: "63336882"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Ext.dll</p></td>
+<td align="left"><p>Ext .dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Ext.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Ext .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关异常的详细信息，请参阅[控制异常和事件](controlling-exceptions-and-events.md)，Windows Driver Kit (WDK) 文档、 Windows SDK 文档中，并*Microsoft Windows Internals*标记Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）使用[ **.exr** ](-exr--display-exception-record-.md)命令以显示其他异常记录。
+有关异常的详细信息, 请参阅 Russinovich 和 David 所罗门群岛:[控制异常和事件](controlling-exceptions-and-events.md)、Windows 驱动程序工具包 (WDK) 文档、Windows SDK 文档和*Microsoft Windows 内部机制*。 使用[ **.exr**](-exr--display-exception-record-.md)命令可以显示其他异常记录。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Cppexr**扩展插件都会显示为相关的信息，C++目标遇到，包括异常代码、 异常和异常标志的地址的异常。 此异常必须是一个标准C++在 Msvcrt.dll 中定义的异常。
+**! Cppexr**扩展显示与目标遇到的C++异常有关的信息, 其中包括异常代码、异常的地址和异常标志。 此异常必须是 Msvcrt.lib 中定义的C++标准异常之一。
 
-通常可以获得*地址*使用的参数[ **！ 分析-v** ](-analyze.md)命令。
+通常可以使用[ **! 分析-v**](-analyze.md)命令获取*Address*参数。
 
-**！ Cppexr**扩展插件可用于确定的类型C++异常。
+**! Cppexr**扩展适用于确定C++异常类型。
 
  
 

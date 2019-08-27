@@ -1,6 +1,6 @@
 ---
 title: poolused
-description: Poolused 扩展显示基于标记用于每个池分配的内存使用汇总。
+description: Poolused 扩展会根据用于每个池分配的标记显示内存使用摘要。
 ms.assetid: e801342d-2536-43a3-992b-99942eb3c5ae
 keywords:
 - poolused Windows 调试
@@ -12,48 +12,48 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 52af1d34c077699dc9401fb163a0008f8c947be9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef77fb5afa09c0669db9fa72ce8583453208897d
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334376"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025193"
 ---
 # <a name="poolused"></a>!poolused
 
 
-**！ Poolused**扩展显示基于标记用于每个池分配的内存使用汇总。
+**! Poolused** extension 根据用于每个池分配的标记显示内存使用摘要。
 
 ```dbgcmd
 !poolused [Flags [TagString]] 
 ```
 
-## <a name="span-idddkpooluseddbgspanspan-idddkpooluseddbgspanparameters"></a><span id="ddk__poolused_dbg"></span><span id="DDK__POOLUSED_DBG"></span>参数
+## <a name="span-idddk__poolused_dbgspanspan-idddk__poolused_dbgspanparameters"></a><span id="ddk__poolused_dbg"></span><span id="DDK__POOLUSED_DBG"></span>Parameters
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定要显示的输出量和排序输出的方法。 这可以是以下位值的任意组合，只不过位 1 (0x2) 和 2 (0x4) 不能一起使用。 默认值为 0x0，生成按池标记的摘要信息。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定要显示的输出量和输出的排序方法。 这可以是以下位值的任意组合, 只不过不能将位 1 (0x2) 和 2 (0x4) 一起使用。 默认值为 0x0, 这会生成摘要信息, 按池标记排序。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-显示更详细的详细信息。
+显示更详细的信息 (详细)。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-使用排序的非分页内存量的显示。
+按非分页内存使用量排序显示。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)  
-对显示排序的分页的内存使用。
+按分页内存使用量排序显示。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>位 3 (0x8)  
-(Windows Server 2003 及更高版本)显示会话池而不是标准的池。
+(Windows Server 2003 及更高版本)显示会话池, 而不是标准池。
 
-**请注意**  可以使用[ **！ 会话**](-session.md)命令会话之间切换。
+**请注意**  , 可以使用[ **!! session**](-session.md)命令在会话之间切换。
 
  
 
-<span id="_______TagString______"></span><span id="_______tagstring______"></span><span id="_______TAGSTRING______"></span> *TagString*   
-指定的池标记。 *TagString*是区分大小写的 ASCII 字符串。 星号 (\*) 可以用于表示任意数量的字符; 问号 （？） 可以用于表示一个字符。 除非使用一个星号，否则*TagString*必须是长度为四个字符。
+<span id="_______TagString______"></span><span id="_______tagstring______"></span><span id="_______TAGSTRING______"></span>*TagString*   
+指定池标记。 *TagString*是一个区分大小写的 ASCII 字符串。 星号 (\*) 可用于表示任意数量的字符; 问号 (？) 可以用来精确表示一个字符。 除非使用星号, 否则*TagString*的长度必须正好为四个字符。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -63,31 +63,31 @@ ms.locfileid: "63334376"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-内存池和池标记有关的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关内存池和池标记的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部机制*, 标记 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Poolused**扩展从标记的 Windows 功能的池中收集数据。 Windows Server 2003 和更高版本的 Windows 上永久启用池标记。 在 Windows XP 和 Windows 的早期版本中，必须启用池通过使用标记[Gflags](gflags.md)。
+**! Poolused**扩展从 Windows 的池标记功能收集数据。 在 Windows Server 2003 和更高版本的 Windows 上永久启用池标记。 在 Windows XP 和更早版本的 Windows 上, 必须使用[Gflags](gflags.md)启用池标记。
 
-如果停止执行扩展，在完成之前，调试器将显示部分结果。
+如果停止执行扩展, 则调试器会显示部分结果。
 
-此命令显示在页面缓冲的池和非分页缓冲的池显示为每个标记的内存使用。 在这两种情况下，显示内容包括有关给定标记当前未释放分配数和使用的那些分配量的字节数。
+此命令的显示显示分页池和非分页池中每个标记的内存使用情况。 在这两种情况下, 显示屏都包含给定标记当前未完成的分配数以及这些分配所使用的字节数。
 
-下面是输出的此扩展中的一个部分示例：
+下面是此扩展的输出的部分示例:
 
 ```dbgcmd
 0: kd> !poolused

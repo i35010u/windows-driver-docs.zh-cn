@@ -1,9 +1,9 @@
 ---
 title: dma
-description: Dma 扩展显示有关直接内存访问 (DMA) 子系统和驱动程序验证程序的 DMA Verifier 选项的信息。
+description: Dma 扩展显示有关直接内存访问 (DMA) 子系统和驱动程序验证程序的 DMA 验证程序选项的信息。
 ms.assetid: 4ccf679f-5804-4644-935a-18ff8711ae9a
 keywords:
-- DMA 验证 （驱动程序验证程序）
+- DMA 验证 (驱动程序验证程序)
 - dma Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,51 +13,51 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d2e51a4c4170d2d4a22b91b52d3802270b4546
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1d4a83031e8d8b568f93c92d8b8cdd95b741187
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334568"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025275"
 ---
 # <a name="dma"></a>!dma
 
 
-**！ Dma**扩展显示信息的直接内存访问 (DMA) 子系统，并**DMA Verifier** Driver Verifier 选项。
+**! Dma**扩展显示有关直接内存访问 (dma) 子系统和驱动程序验证程序的**dma 验证**程序选项的信息。
 
 ```dbgcmd
 !dma 
 !dma Adapter [Flags]
 ```
 
-## <a name="span-idddkdmapgspanspan-idddkdmapgspanparameters"></a><span id="ddk__dma_pg"></span><span id="DDK__DMA_PG"></span>参数
+## <a name="span-idddk__dma_pgspanspan-idddk__dma_pgspanparameters"></a><span id="ddk__dma_pg"></span><span id="DDK__DMA_PG"></span>Parameters
 
 
-<span id="_______Adapter______"></span><span id="_______adapter______"></span><span id="_______ADAPTER______"></span> *Adapter*   
-指定要显示的 DMA 适配器的十六进制地址。 如果这是零，将显示所有 DMA 适配器。
+<span id="_______Adapter______"></span><span id="_______adapter______"></span><span id="_______ADAPTER______"></span>*适配器*   
+指定要显示的 DMA 适配器的十六进制地址。 如果此值为零, 则将显示所有 DMA 适配器。
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定要包括在显示的信息。 这可以是以下位的任意组合。 默认值为 0x1。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定要包含在显示中的信息。 这可以是以下位的任意组合。 默认值为0x1。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-将导致显示以包括泛型适配器的信息。
+使显示内容包括一般适配器信息。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-将导致显示以包括映射注册信息。 （仅当 DMA 验证处于活动状态。）
+使显示内容包括映射寄存器信息。 (仅当 DMA 验证处于活动状态时)。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)  
-将导致显示以包括常见的缓冲区信息。 （仅当 DMA 验证处于活动状态。）
+使显示内容包括常见的缓冲区信息。 (仅当 DMA 验证处于活动状态时)。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>位 3 (0x8)  
-将导致显示以包括散播-聚集列表信息。 （仅当 DMA 验证处于活动状态。）
+使显示内容包括散播/聚集列表信息。 (仅当 DMA 验证处于活动状态时)。
 
-<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>4 位 (0x10)  
-将导致显示以包括硬件设备的设备说明。 （仅当 DMA 验证处于活动状态。）
+<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>位 4 (0x10)  
+使显示包含硬件设备的设备说明。 (仅当 DMA 验证处于活动状态时)。
 
-<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>5 位 (0x20)  
-将导致显示以包括等待上下文块信息。
+<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>位 5 (0x20)  
+使显示包括等待上下文块信息。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -70,26 +70,26 @@ ms.locfileid: "63334568"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关驱动程序验证程序的信息，请参阅 Windows Driver Kit (WDK) 文档。 DMA 有关的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*由 Mark Russinovich David Solomon。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关驱动程序验证程序的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档。 有关 DMA 的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部*内容, 标记 Russinovich David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-参数无效 (例如， **！ dma 1**) 生成简要的帮助文本。
+参数无效 (例如, **! dma 1**) 生成简短的帮助文本。
 
-当 **！ dma**扩展使用不带任何参数，则会显示所有 DMA 适配器及其地址的简明列表。 这可以用于获取在此命令的更长的版本中使用的适配器的地址。
+如果 **! dma**扩展与 no 参数一起使用, 则它将显示所有 dma 适配器及其地址的简洁列表。 这可用于获取适配器的地址, 以便在此命令的较长版本中使用。
 
-下面是此扩展可以是如何的示例时使用 Driver Verifier **DMA 验证**选项处于活动状态：
+下面的示例演示了驱动程序验证程序的**DMA 验证**选项处于活动状态时, 如何使用此扩展:
 
 ```dbgcmd
 0:kd> !dma
@@ -102,7 +102,7 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters
 Master adapter: 80076800
 ```
 
-在此输出中，可以看到系统中有三个 DMA 适配器。 SCSIPORT 拥有两个，NDIS 拥有第三个。 若要检查的 NDIS 适配器中详细信息，请使用 **！ dma**用其地址的扩展：
+在此输出中, 可以看到系统中有三个 DMA 适配器。 SCSIPORT 拥有两个, NDIS 拥有第三个。 若要详细检查 NDIS 适配器, 请使用 **! dma**扩展, 其地址为:
 
 ```dbgcmd
 0:kd> !dma  82f06cd0
@@ -122,7 +122,7 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters (0x9fe24351)
    Bytes mapped since last flush: 000000f2
 ```
 
-第一个数据块是 HAL 开发人员可用于调试问题的特定信息。 对您而言，"Dma verifier 其他信息"下面的数据是我们的兴趣。 在此示例中，可以看到 NDIS 已经分配了 0x840 映射寄存器。 这是很多，尤其是因为 NDIS 有指示其计划使用的最大的两个映射寄存器。 此适配器显然不使用散播-聚集列表，并已将消失及其所有适配器频道。 查看更多详细信息中的地图寄存器内容：
+第一个数据块是 HAL 开发人员可用于调试问题的特定信息。 出于您的目的, "Dma 验证程序附加信息" 下面的数据是很有趣的。 在此示例中, 将看到 NDIS 已分配0x840 映射寄存器。 这是一个非常大的数字, 尤其是因为 NDIS 指出它计划最多使用两个映射寄存器。 此适配器明显不使用散点/收集列表, 并已将其置于所有适配器通道。 更详细地查看地图注册:
 
 ```dbgcmd
 0:kd> !dma  82f06cd0 2
@@ -149,13 +149,13 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters
 ...
 ```
 
-在此示例中，可以看到某些映射寄存器已映射。 每个*映射注册文件*的驱动程序映射寄存器分配。 换而言之，它表示调用一次**AllocateAdapterChannel**。 NDIS 收集大量的这些映射的注册文件，而某些驱动程序创建一个在时间和处置它们将完成。
+在此示例中, 你将看到某些映射寄存器已映射。 每个*映射注册文件*都是由驱动程序分配的映射寄存器。 换言之, 它代表对**AllocateAdapterChannel**的单一调用。 NDIS 收集大量这些映射寄存器文件, 而某些驱动程序一次创建一个, 并在它们完成时释放它们。
 
-映射注册文件也是返回给设备名称"MapRegisterBase"下的地址。 请注意 DMA 验证工具仅挂钩每个驱动程序的前 64 映射寄存器。 其余部分会忽略的空间 （每个映射注册表示三个物理页） 的原因。
+Map register 文件也是返回到名称为 "MapRegisterBase" 的设备的地址。 请注意, DMA 验证器仅挂接每个驱动程序的前64映射寄存器。 由于空间的原因 (每个地图寄存器表示三个物理页面), 其余部分将被忽略。
 
-在此示例中，两个映射文件正在使用的寄存器。 这意味着该驱动程序已映射的缓冲区，使其可见的硬件。 在第一种情况下，0xBC 字节映射到系统虚拟地址 0xF83C003C。
+在此示例中, 两个地图注册文件正在使用中。 这意味着该驱动程序已映射缓冲区, 因此它对硬件可见。 在第一种情况下, 0xBC 字节映射到系统虚拟地址0xF83C003C。
 
-常见的缓冲区检查就会发现：
+常见缓冲区的检查将显示:
 
 ```dbgcmd
 0:kd> !dma  82f06cd0 4
@@ -182,7 +182,7 @@ Adapter: 82f06cd0     Owner: NDIS!NdisMAllocateMapRegisters
       Physical address: 2a9d400
 ```
 
-这是非常简单;有四个常见缓冲区长度不同。 所有指定的物理和虚拟地址。
+这相当简单;存在四个不同长度的常见缓冲区。 同时提供物理和虚拟地址。
 
  
 

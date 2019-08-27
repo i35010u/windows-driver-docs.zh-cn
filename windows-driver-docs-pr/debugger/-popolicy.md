@@ -12,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f54b19ac1001c3adab38195f033986d92b297f52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03be5afb3b2b22e3de89b76a045157e2f5c091ff
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335780"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025185"
 ---
 # <a name="popolicy"></a>!popolicy
 
 
-**！ Popolicy**扩展显示目标计算机的电源策略。
+**! Popolicy** extension 显示目标计算机的电源策略。
 
 ```dbgcmd
 !popolicy [Address]
 ```
 
-## <a name="span-idddkpopolicydbgspanspan-idddkpopolicydbgspanparameters"></a><span id="ddk__popolicy_dbg"></span><span id="DDK__POPOLICY_DBG"></span>参数
+## <a name="span-idddk__popolicy_dbgspanspan-idddk__popolicy_dbgspanparameters"></a><span id="ddk__popolicy_dbg"></span><span id="DDK__POPOLICY_DBG"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定要显示的电源策略结构的地址。 如果省略此属性，然后 nt ！显示 PopPolicy。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定要显示的电源策略结构的地址。 如果省略, 则 nt!将显示 PopPolicy。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -44,25 +44,25 @@ ms.locfileid: "63335780"
 <tbody>
 <tr class="odd">
 <td align="left"><p>Windows 2000</p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Windows XP 及更高版本</p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-若要查看系统的电源功能，请使用[ **！ pocaps** ](-pocaps.md)扩展命令。 有关电源功能和电源策略的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 （这些资源可能不可用在某些语言和国家/地区中。）
+若要查看系统的电源功能, 请使用[ **! pocaps**](-pocaps.md) extension 命令。 有关电源功能和电源策略的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部机制*, 标记 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的此命令的示例：
+下面是此命令的输出示例:
 
 ```dbgcmd
 kd> !popolicy
@@ -82,10 +82,10 @@ SYSTEM_POWER_POLICY (R.1) @ 0x80164d58
   MinThrottle:             0%
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[Plug and Play 和电源调试器命令](plug-and-play-and-power-debugger-commands.md)
+[即插即用和 Power 调试器命令](plug-and-play-and-power-debugger-commands.md)
 
  
 

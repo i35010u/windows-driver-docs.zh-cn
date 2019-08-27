@@ -3,63 +3,63 @@ title: 对目录文件进行测试签名
 description: 对目录文件进行测试签名
 ms.assetid: a6397f8f-e5f1-4ce2-af7b-a7846fa30bc8
 keywords:
-- 目录文件 WDK 驱动程序签名，测试签名
+- 目录文件 WDK 驱动程序签名, 测试签名
 - 测试签名目录文件 WDK
-- 测试签名驱动程序包 WDK，目录文件
+- 测试签名驱动程序包 WDK, 编录文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b235ab765e83ccbb2ac4b8e991efc7b87ead6a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 70caf48f50cadf12d53ebc642c77e01ad8f60923
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377235"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025347"
 ---
 # <a name="test-signing-a-catalog-file"></a>对目录文件进行测试签名
 
 
-创建并验证后[驱动程序包](driver-packages.md) [编录文件](catalog-files.md)，使用[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)测试签名目录文件中所述以下主题：
+创建并验证[驱动程序包的](driver-packages.md) [目录文件](catalog-files.md)后, 请按照以下主题中所述, 使用[**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)对编录文件进行测试签名:
 
-[使用 MakeCert 测试证书或商业测试证书，对测试签名驱动程序包的目录文件](#using-a-makecert-test-certificate-or-commercial-test-certificate-to-te)
+[使用 MakeCert 测试证书或商业测试证书对驱动程序包的目录文件进行测试签名](#using-a-makecert-test-certificate-or-commercial-test-certificate-to-te)
 
-[使用企业 CA 测试证书对测试签名驱动程序包的目录文件](#using-an-enterprise-ca-test-certificate-to-test-sign-a-driver-package-)
+[使用企业 CA 测试证书对驱动程序包的目录文件进行测试签名](#using-an-enterprise-ca-test-certificate-to-test-sign-a-driver-package-)
 
-### <a href="" id="using-a-makecert-test-certificate-or-commercial-test-certificate-to-te"></a> 使用 MakeCert 测试证书或商用测试证书对测试签名驱动程序包的目录文件
+### <a href="" id="using-a-makecert-test-certificate-or-commercial-test-certificate-to-te"></a>使用 MakeCert 测试证书或商业测试证书对驱动程序包的目录文件进行测试签名
 
-使用以下 SignTool 命令进行签名[编录文件](catalog-files.md)通过使用[MakeCert 测试证书](makecert-test-certificate.md)或[商业测试证书](commercial-test-certificate.md):
+使用以下 SignTool 命令通过[MakeCert 测试证书](makecert-test-certificate.md)或[商业测试证书](commercial-test-certificate.md)对[编录文件](catalog-files.md)进行签名:
 
 ```cpp
-SignTool sign /v /s TestCertStoreName /n TestCertName /t http://timestamp.verisign.com/scripts/timstamp.dll CatalogFileName.cat
+SignTool sign /v /s TestCertStoreName /n TestCertName /t http://timestamp.digicert.com CatalogFileName.cat
 ```
 
 其中：
 
--   **符号**命令将配置进行签名的 SignTool[编录文件](catalog-files.md)命名为*CatalogFileName.cat*。
+-   **Sign**命令将 SignTool 配置为对名为*CatalogFileName.cat*的[目录文件](catalog-files.md)进行签名。
 
--   **/V**详细选项配置 SignTool 打印执行消息和警告消息。
+-   **/V** verbose 选项将 SignTool 配置为打印执行和警告消息。
 
--   **/S** *TestCertStoreName*选项提供包含名为的测试证书的测试证书存储区的名称*TestCertName*。
+-   **/S** *TestCertStoreName*选项提供包含名为*TestCertName*的测试证书的测试证书存储的名称。
 
--   **/N** *TestCertName*选项提供名为的证书存储中安装的测试证书的名称*TestCertStoreName*。 MakeCert 测试证书或商业测试证书，可以是测试证书。
+-   **/N** *TestCertName*选项提供在名为*TestCertStoreName*的证书存储中安装的测试证书的名称。 测试证书可以是 MakeCert 测试证书, 也可以是商业测试证书。
 
--   **/T**  *http://timestamp.verisign.com/scripts/timstamp.dll* 选项提供 VeriSign 提供的公开可用的时间戳服务器的 URL。
+-    */T http://timestamp.digicert.com* 选项提供 DigiCert 提供的公开可用的时间戳服务器的 URL。
 
--   *CatalogFileName.cat*的名称[编录文件](catalog-files.md)。
+-   *CatalogFileName.cat*是[目录文件](catalog-files.md)的名称。
 
-下面的命令演示如何对测试签名使用 SignTool[驱动程序包的](driver-packages.md)目录文件。 此示例对编录文件进行签名*Tstamd64.cat*，这是在其中运行该命令的相同目录中。 测试证书的名称为"contoso.com(test)，"安装名为"PrivateCertStore。"的证书存储中
+以下命令演示如何使用 SignTool 对[驱动程序包的](driver-packages.md)目录文件进行测试签名。 此示例对目录文件*Tstamd64.cat*进行签名, 该文件位于运行命令的同一目录中。 测试证书名为 "contoso .com (test)", 该证书安装在名为 "PrivateCertStore" 的证书存储中。
 
 ```cpp
-SignTool sign /v /s PrivateCertStore /n contoso.com(test) /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
+SignTool sign /v /s PrivateCertStore /n contoso.com(test) /t http://timestamp.digicert.com tstamd64.cat
 ```
 
-### <a href="" id="using-an-enterprise-ca-test-certificate-to-test-sign-a-driver-package-"></a> 使用企业 CA 测试证书对测试签名驱动程序包的目录文件
+### <a href="" id="using-an-enterprise-ca-test-certificate-to-test-sign-a-driver-package-"></a>使用企业 CA 测试证书对驱动程序包的目录文件进行测试签名
 
-以下 SignTool 命令假定，企业 CA 颁发测试登录到在你使用的测试证书[驱动程序包](driver-packages.md)。 如果[企业 CA 测试证书](enterprise-ca-test-certificate.md)是唯一的测试证书位于你的证书存储，可以使用以下命令仅指定其中 **/a**选项以及的名称[编录文件](catalog-files.md)。 在这种情况下，SignTool 将找到并默认情况下使用企业 CA 的测试证书。
+下面的 SignTool 命令假设企业 CA 颁发了测试证书, 用于对[驱动程序包](driver-packages.md)进行签名。 如果[企业 CA 测试证书](enterprise-ca-test-certificate.md)是证书存储中提供的唯一测试证书, 则可以使用以下命令, 其中仅指定 **/a**选项和[编录文件](catalog-files.md)的名称。 在这种情况下, 默认情况下, SignTool 将查找并使用企业 CA 测试证书。
 
-如果已创建或获取除了企业 CA 测试证书的其他测试证书，则必须使用 SignTool 选项 **/s**并 **/n**指定测试证书存储区的名称和安装测试证书存储区中的测试证书的名称。
+如果除了企业 CA 测试证书外, 还创建或获取了其他测试证书, 则必须使用 SignTool 选项 **/s**和 **/n**指定测试证书存储的名称和测试证书的名称。安装在测试证书存储区中。
 
 ```cpp
-SignTool sign /v /a /t http://timestamp.verisign.com/scripts/timstamp.dll CatalogFileName.cat
+SignTool sign /v /a /t http://timestamp.digicert.com CatalogFileName.cat
 ```
 
  

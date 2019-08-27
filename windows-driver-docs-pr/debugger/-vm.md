@@ -1,9 +1,9 @@
 ---
-title: vm
-description: Vm 扩展在目标系统上显示有关虚拟内存使用统计信息的摘要信息。
+title: vmnetwork
+description: Vm 扩展显示有关目标系统上的虚拟内存使用统计信息的摘要信息。
 ms.assetid: 25e4f80c-d4ca-407c-991d-e8ee5dfbb309
 keywords:
-- 调试 Windows vm
+- vm Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,55 +12,55 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4ae55dd673f84744b856e7154b9e8b2b1158c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eaaa9cf742780e9f186c9eded8a13a777d7899f1
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342106"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025161"
 ---
 # <a name="vm"></a>!vm
 
 
-**！ Vm**扩展目标系统上显示有关虚拟内存使用统计信息的摘要信息。
+**! Vm**扩展显示有关目标系统上的虚拟内存使用统计信息的摘要信息。
 
 ```dbgcmd
 !vm [Flags]
 ```
 
-## <a name="span-idddkvmdbgspanspan-idddkvmdbgspanparameters"></a><span id="ddk__vm_dbg"></span><span id="DDK__VM_DBG"></span>参数
+## <a name="span-idddk__vm_dbgspanspan-idddk__vm_dbgspanparameters"></a><span id="ddk__vm_dbg"></span><span id="DDK__VM_DBG"></span>Parameters
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定将在此命令的输出中显示哪些信息。 这可以是以下位任何之和。 默认值为 0，这会导致显示以包括系统范围虚拟内存统计信息，以及每个进程的内存统计信息。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定将在此命令的输出中显示的信息。 这可以是以下位的任意总和。 默认值为 0, 这将导致显示包含系统范围内的虚拟内存统计信息, 以及每个进程的内存统计信息。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-将导致显示效果以省略了特定于进程的统计信息。
+使显示忽略特定于进程的统计信息。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-将导致显示以包括内存管理线程堆栈。
+使显示包含内存管理线程堆栈。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>位 2 (0x4)  
-将导致显示以包括终端服务器内存使用情况。
+使显示包含终端服务器内存使用量。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>位 3 (0x8)  
-将导致显示以包括页面文件写入日志。
+导致显示包含页面文件写入日志。
 
-<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>4 位 (0x10)  
-将导致显示以包括工作集所有者线程堆栈。
+<span id="Bit_4__0x10_"></span><span id="bit_4__0x10_"></span><span id="BIT_4__0X10_"></span>位 4 (0x10)  
+使显示包含工作集所有者线程堆栈。
 
-<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>5 位 (0x20)  
-(Windows Vista 及更高版本)将导致显示以包括内核虚拟地址使用情况。
+<span id="Bit_5__0x20_"></span><span id="bit_5__0x20_"></span><span id="BIT_5__0X20_"></span>位 5 (0x20)  
+(Windows Vista 和更高版本)导致显示包含内核虚拟地址使用情况。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
 |       |                  |
 |-------|------------------|
-| 模式 | 内核模式下 |
+| 交货 | 仅限内核模式 |
 
  
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -70,25 +70,25 @@ ms.locfileid: "63342106"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[ **！ Memusage** ](-memusage.md)扩展命令可用于分析的物理内存使用情况。 有关内存管理的详细信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 （这些资源可能不可用在某些语言和国家/地区中。）
+[ **! Memusage**](-memusage.md) extension 命令可用于分析物理内存使用情况。 有关内存管理的详细信息, 请参阅 Russinovich 和 David 所罗门群岛的*Microsoft Windows 内部机制*。
 
 <a name="remarks"></a>备注
 -------
 
-下面是短时，生成的输出的示例*标志*为 1:
+下面是在*Flags*为1时生成的短输出的示例:
 
 ```dbgcmd
 kd> !vm 1
@@ -121,7 +121,7 @@ kd> !vm 1
       Commit limit:        36256   (  145024 Kb)
 ```
 
-使用在页与千字节为单位中列出的所有内存。 以下是在此显示中最有用的信息：
+所有内存使用情况都在页中列出, 以 kb 为单位。 此显示中最有用的信息如下所示:
 
 <table>
 <colgroup>
@@ -137,15 +137,15 @@ kd> !vm 1
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>物理内存</strong></p></td>
-<td align="left"><p>在系统中的总物理内存。</p></td>
+<td align="left"><p>系统中的总物理内存。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>可用的页面</strong></p></td>
-<td align="left"><p>可在虚拟和物理系统上的内存页的数目。</p></td>
+<td align="left"><p><strong>可用页面</strong></p></td>
+<td align="left"><p>系统上可用的内存页数 (虚拟机和物理内存)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>非分页缓冲的池使用情况</strong></p></td>
-<td align="left"><p>分配给非分页缓冲池的页的量。 非分页的池是内存无法换出到分页文件中，因此它必须始终占用的物理内存。 如果此数字过大，这通常是指示存在为内存泄漏某个位置在系统中。</p></td>
+<td align="left"><p><strong>非分页池使用情况</strong></p></td>
+<td align="left"><p>分配给非分页池的页数。 非分页池是无法换出到页面文件的内存, 因此它必须始终占用物理内存。 如果此数字过大, 则这通常表示系统中某个位置存在内存泄漏。</p></td>
 </tr>
 </tbody>
 </table>

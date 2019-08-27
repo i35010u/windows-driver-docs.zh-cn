@@ -1,12 +1,12 @@
 ---
-title: 堆
-description: 堆扩展显示堆使用情况信息、 控制堆管理器中的断点，检测到泄漏的堆阻止搜索堆的块，或显示页堆信息。
+title: 堆栈
+description: 堆扩展显示堆使用情况信息, 控制堆管理器中的断点, 检测泄漏的堆块, 搜索堆块, 或显示页堆信息。
 ms.assetid: 70947b56-1a8c-4e78-85d0-d5df87f3150c
 keywords:
 - 堆使用情况
-- GFlags、 启用页堆
-- Windows 调试堆
-ms.date: 05/23/2017
+- GFlags, 启用页堆
+- 堆窗口调试
+ms.date: 08/23/2019
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5551b7ee85e5b7cd7f01635e76a7f87bad472c87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ffc629793b5dba6561f6b6dfda7af6b68558141
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336530"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025239"
 ---
 # <a name="heap"></a>!heap
 
 
-**！ 堆**扩展显示堆使用情况信息、 控制堆管理器中的断点，检测到泄漏的堆阻止搜索堆的块，或显示页堆信息。
+**! 堆**扩展显示堆使用情况信息, 控制堆管理器中的断点, 检测泄漏的堆块, 搜索堆块, 或显示页堆信息。
 
-此扩展插件支持段堆和 NT 堆。 使用 ！ 堆不使用任何参数，以列出所有堆和它们的类型。
+此扩展插件支持段堆和 NT 堆。 Use! 没有参数的堆来列出所有堆及其类型。
 
 ```dbgcmd
 !heap [HeapOptions] [ValidationOptions] [Heap] 
@@ -44,16 +44,16 @@ ms.locfileid: "63336530"
 !heap -triage [Handle | Address] 
 ```
 
-## <a name="span-idsegmentandntheapparametersspanspan-idsegmentandntheapparametersspanspan-idsegmentandntheapparametersspansegment-and-nt-heap-parameters"></a><span id="Segment_and_NT_Heap_Parameters"></span><span id="segment_and_nt_heap_parameters"></span><span id="SEGMENT_AND_NT_HEAP_PARAMETERS"></span>段和 NT 堆参数
+## <a name="span-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspanspan-idsegment_and_nt_heap_parametersspansegment-and-nt-heap-parameters"></a><span id="Segment_and_NT_Heap_Parameters"></span><span id="segment_and_nt_heap_parameters"></span><span id="SEGMENT_AND_NT_HEAP_PARAMETERS"></span>段和 NT 堆参数
 
 
 这些参数适用于段和 NT 堆。
 
 <span id="_______-s______"></span><span id="_______-S______"></span> **-s**   
-指定正在请求的摘要信息。 如果*SummaryOptions*并*StatHeapAddress*省略，则为当前进程与堆关联的所有显示的摘要信息。
+指定正在请求摘要信息。 如果省略了*SummaryOptions*和*StatHeapAddress* , 则将显示与当前进程关联的所有堆的摘要信息。
 
-<span id="_______SummaryOptions______"></span><span id="_______summaryoptions______"></span><span id="_______SUMMARYOPTIONS______"></span> *SummaryOptions*   
-可以是下列选项中的任意组合。 *SummaryOptions*不区分大小写。 类型 ！ 堆-s-？ 有关其他信息。
+<span id="_______SummaryOptions______"></span><span id="_______summaryoptions______"></span><span id="_______SUMMARYOPTIONS______"></span>*SummaryOptions*   
+可以是下列选项的任意组合。 *SummaryOptions*不区分大小写。 类型! 堆-？ 获取其他信息。
 
 <table>
 <colgroup>
@@ -62,7 +62,7 @@ ms.locfileid: "63336530"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -72,16 +72,16 @@ ms.locfileid: "63336530"
 <td align="left"><p>验证所有数据块。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-b</strong>  <em>BucketSize</em></p></td>
-<td align="left"><p>指定存储桶大小。 默认值为 1024 位。</p></td>
+<td align="left"><p><strong>-b</strong> <em>BucketSize</em></p></td>
+<td align="left"><p>指定存储桶大小。 默认值为1024位。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-d</strong>  <em>DumpBlockSize</em></p></td>
+<td align="left"><p><strong>-d</strong> <em>DumpBlockSize</em></p></td>
 <td align="left"><p>指定存储桶大小。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-a</strong></p></td>
-<td align="left"><p>转储堆的所有块。</p></td>
+<td align="left"><p>转储所有堆块。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-c</strong></p></td>
@@ -92,31 +92,31 @@ ms.locfileid: "63336530"
 
  
 
-<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-会审\[** <em>处理</em> **|** <em>地址</em>**\]**   
-使调试器能够自动搜索中的进程的堆中的失败。 如果堆处理指定为参数，检查该堆;否则为所有堆中都搜索包含给定的地址，并且如果找到一个对象，对其进行检查。 使用 **-会审**是验证低分片堆 (LFH) 损坏的唯一方法。
+<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-会审\[** <em>句柄</em>**地址|** **\]**    
+使调试器自动搜索进程堆中的失败。 如果将堆句柄指定为参数, 则将检查该堆;否则, 会搜索包含给定地址的所有堆, 如果找到, 将检查该地址。 使用 **-会审**是验证低碎片堆 (LFH) 损坏的唯一方法。
 
-<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** **** \[**-v**\]   
-使调试器要搜索包含指定的地址的堆块。 如果添加-v，则此命令会搜索当前过程对于指向此堆块的整个虚拟内存空间。
+<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** **** -v \[\]   
+使调试器搜索包含指定地址的堆块。 如果添加了-v, 则该命令将在当前进程的整个虚拟内存空间中搜索指向此堆块的指针。
 
 <span id="_______-l______"></span><span id="_______-L______"></span> **-l**   
-调试器以检测泄漏的原因堆块。
+使调试器检测泄漏的堆块。
 
-<span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i** **** *Address* **-h** *HeapAddress*   
-显示有关指定的信息*堆*。
+<span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i**Address- **h** *HeapAddress*  ****    
+显示有关指定*堆*的信息。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定要搜索的地址。
 
-<span id="_______-_______"></span> **-?**   
-在调试器命令窗口中显示此扩展的一些简要帮助文本。 使用 **！ 堆的？** 有关泛型的帮助，和 **！ 堆-p-？** 有关页面堆帮助。
+<span id="_______-_______"></span> **-?**    
+在调试器命令窗口中显示此扩展的一些简短帮助文本。 使用 **! 堆-？** 对于常规帮助和 **! 堆-p-？** 用于页堆帮助。
 
-## <a name="span-idddkheapdbgspanspan-idddkheapdbgspannt-heap-parameters"></a><span id="ddk__heap_dbg"></span><span id="DDK__HEAP_DBG"></span>NT 堆参数
+## <a name="span-idddk__heap_dbgspanspan-idddk__heap_dbgspannt-heap-parameters"></a><span id="ddk__heap_dbg"></span><span id="DDK__HEAP_DBG"></span>NT 堆参数
 
 
-这些参数只使用 NT 堆。
+这些参数仅适用于 NT 堆。
 
-<span id="_______HeapOptions______"></span><span id="_______heapoptions______"></span><span id="_______HEAPOPTIONS______"></span> *HeapOptions*   
-可以是下列选项中的任意组合。 *HeapOptions*值是区分大小写。
+<span id="_______HeapOptions______"></span><span id="_______heapoptions______"></span><span id="_______HEAPOPTIONS______"></span>*HeapOptions*   
+可以是下列选项的任意组合。 *HeapOptions*值区分大小写。
 
 <table>
 <colgroup>
@@ -125,16 +125,16 @@ ms.locfileid: "63336530"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选</th>
 <th align="left">效果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-v</strong></p></td>
-<td align="left"><p>使调试器来验证指定的堆。</p>
+<td align="left"><p>使调试器验证指定的堆。</p>
 <div class="alert">
-<strong>请注意</strong>  此选项不会检测低碎片堆 (LFH) 损坏。 使用<strong>-会审</strong>相反。
+<strong>请</strong>注意  , 此选项不检测低碎片堆 (LFH) 损坏。 改用<strong>-会审</strong>。
 </div>
 <div>
  
@@ -142,51 +142,51 @@ ms.locfileid: "63336530"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-a</strong></p></td>
-<td align="left"><p>将导致显示以包括指定堆的所有信息。 大小，在这种情况下，舍入为堆粒度。 (运行<strong>！ 堆</strong>与<strong>-a</strong>选项相当于使用三个选项运行它<strong>-h f-m</strong>，这可能需要长时间。)</p></td>
+<td align="left"><p>使显示包含指定堆的所有信息。 大小, 在本例中, 将向上舍入到堆粒度。 (运行<strong>!</strong>具有<strong>-a</strong>选项的堆等效于使用三个选项<strong>-h-f-m</strong>运行它, 这可能需要很长时间。)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-h</strong></p></td>
-<td align="left"><p>将导致显示以包括指定堆的所有非 LFH 条目。</p></td>
+<td align="left"><p>使显示包含指定堆的所有非 LFH 条目。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-hl</strong></p></td>
-<td align="left"><p>将导致显示效果以包括指定堆，包括 LFH 条目的所有条目。</p></td>
+<td align="left"><p>使显示包含指定堆的所有条目, 包括 LFH 条目。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-f</strong></p></td>
-<td align="left"><p>将导致显示以包括指定堆的所有可用的列表项。</p></td>
+<td align="left"><p>使显示包含指定堆的所有可用列表项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-m</strong></p></td>
-<td align="left"><p>将导致显示效果以包括指定堆的所有段条目。</p></td>
+<td align="left"><p>使显示内容包括指定堆的所有段条目。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-t</strong></p></td>
-<td align="left"><p>将导致显示以包括指定堆的标记信息。</p></td>
+<td align="left"><p>使显示包含指定堆的标记信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-T</strong></p></td>
-<td align="left"><p>将导致显示以包括指定堆的伪标记项。</p></td>
+<td align="left"><p>使显示包含指定堆的伪标记条目。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-g</strong></p></td>
-<td align="left"><p>将导致显示以包括全局标记信息。 全局标记是与每个未标记分配相关联。</p></td>
+<td align="left"><p>使显示内容包含全局标记信息。 全局标记与每个未标记的分配相关联。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-s</strong></p></td>
-<td align="left"><p>将导致显示以包括指定堆的摘要信息。</p></td>
+<td align="left"><p>使显示内容包括指定堆的摘要信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-k</strong></p></td>
-<td align="left"><p>（仅基于 x86 的目标）将导致显示以包括与每个条目相关联的堆栈反向跟踪。</p></td>
+<td align="left"><p>(仅限基于 x86 的目标)使显示内容包括与每个条目关联的 stack backtrace。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______ValidationOptions______"></span><span id="_______validationoptions______"></span><span id="_______VALIDATIONOPTIONS______"></span> *ValidationOptions*   
-可以是任何单个的以下选项之一。 *ValidationOptions*区分大小写。
+<span id="_______ValidationOptions______"></span><span id="_______validationoptions______"></span><span id="_______VALIDATIONOPTIONS______"></span>*ValidationOptions*   
+可以是以下选项中的任何一个。 *ValidationOptions*区分大小写。
 
 <table>
 <colgroup>
@@ -195,55 +195,55 @@ ms.locfileid: "63336530"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选</th>
 <th align="left">效果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-D</strong></p></td>
-<td align="left"><p>禁用验证的电话技术支持为指定的堆。</p></td>
+<td align="left"><p>对指定的堆禁用调用验证。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-E</strong></p></td>
-<td align="left"><p>允许验证-上的调用为指定的堆。</p></td>
+<td align="left"><p>为指定的堆启用调用时验证。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-d</strong></p></td>
-<td align="left"><p>禁用堆检查指定的堆。</p></td>
+<td align="left"><p>为指定的堆禁用堆检查。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-e</strong></p></td>
-<td align="left"><p>可以检查指定的堆的堆。</p></td>
+<td align="left"><p>为指定的堆启用堆检查。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i** **** *Heap* **** *Address* **or** *HeapAddress*   
-显示有关指定的信息*堆*。
+<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i**堆地址或 **** HeapAddress  ****    
+显示有关指定*堆*的信息。
 
-<span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span> *BreakAddress*   
-指定要设置或删除断点的位置的块的地址。
+<span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span>*BreakAddress*   
+指定要在其中设置或删除断点的块的地址。
 
 <span id="_______-b______"></span><span id="_______-B______"></span> **-b**   
-使调试器在堆管理器中创建条件断点。 **-B**选项可以后跟**alloc**， **realloc**，或**免费**; 这会指定是否将通过激活断点分配、 重新分配，或释放内存。 如果*BreakAddress*是用来指定块的地址，就可以省略的断点类型。 如果*堆*是用来指定堆地址或堆索引，该类型必须包含在内，并将*标记*参数。
+使调试器在堆管理器中创建条件断点。 **-B**选项后可以后跟**分配**、 **realloc**或**可用**;这指定是否将通过分配、重新分配或释放内存来激活断点。 如果使用*BreakAddress*来指定块的地址, 则可以省略断点类型。 如果使用*堆*指定堆地址或堆索引, 则必须包含类型以及*标记*参数。
 
-<span id="_______Tag______"></span><span id="_______tag______"></span><span id="_______TAG______"></span> *标记*   
-指定在堆中的标记名。
+<span id="_______Tag______"></span><span id="_______tag______"></span><span id="_______TAG______"></span>*标记*   
+指定堆中的标记名称。
 
 <span id="_______-B______"></span><span id="_______-b______"></span> **-B**   
-使调试器从堆管理器中删除条件断点。 断点类型 (**alloc**， **realloc**，或**免费**)，则必须指定并且必须与用于相同 **-b**选项。
+使调试器从堆管理器中删除条件断点。 必须指定断点类型 (**分配**、 **realloc**或**free**), 并且必须与与 **-b**选项一起使用。
 
-<span id="_______StatHeapAddress______"></span><span id="_______statheapaddress______"></span><span id="_______STATHEAPADDRESS______"></span> *StatHeapAddress*   
-指定在堆的地址。 如果这是 0 或被省略，将显示所有当前进程与堆关联。
+<span id="_______StatHeapAddress______"></span><span id="_______statheapaddress______"></span><span id="_______STATHEAPADDRESS______"></span>*StatHeapAddress*   
+指定堆的地址。 如果此为0或省略, 则显示与当前进程关联的所有堆。
 
 <span id="_______-p______"></span><span id="_______-P______"></span> **-p**   
-指定为其请求页堆信息。 如果这使用不带任何*PageHeapOptions*，将显示堆的所有页面。
+指定正在请求页堆信息。 如果在没有任何*PageHeapOptions*的情况下使用, 则将显示所有页堆。
 
-<span id="_______PageHeapOptions______"></span><span id="_______pageheapoptions______"></span><span id="_______PAGEHEAPOPTIONS______"></span> *PageHeapOptions*   
-可以是任何单个的以下选项之一。 *PageHeapOptions*区分大小写。 如果未不指定任何选项，则将显示所有可能的页堆句柄。
+<span id="_______PageHeapOptions______"></span><span id="_______pageheapoptions______"></span><span id="_______PAGEHEAPOPTIONS______"></span>*PageHeapOptions*   
+可以是以下选项中的任何一个。 *PageHeapOptions*区分大小写。 如果未指定任何选项, 则将显示所有可能的页堆句柄。
 
 <table>
 <colgroup>
@@ -252,50 +252,50 @@ ms.locfileid: "63336530"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选</th>
 <th align="left">效果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>-h</strong>  <em>Handle</em></p></td>
-<td align="left"><p>使调试器显示详细的信息页堆句柄<em>处理</em>。</p></td>
+<td align="left"><p><strong>-h</strong> <em>句柄</em></p></td>
+<td align="left"><p>使调试器显示有关带有句柄<em>句柄</em>的页堆的详细信息。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-a</strong>  <em>Address</em></p></td>
-<td align="left"><p>导致调试器来查找其块包含在页堆<em>地址</em>。 如何与此地址关联到整页堆块的完整详细信息将包括在内，例如此地址是否为页堆，它在块内的偏移量的一部分，以及是否在块被分配或已释放。 可用时，将包含堆栈跟踪。 使用此选项时，会显示大小的倍数堆分配粒度。</p></td>
+<td align="left"><p><strong>-a</strong> <em>地址</em></p></td>
+<td align="left"><p>使调试器查找其块包含<em>地址</em>的页堆。 将包括此地址如何包含到整页堆块的完整详细信息, 如此地址是否是页面堆的一部分、其在块内的偏移量, 以及是分配块还是释放块。 每次提供堆栈跟踪。 使用此选项时, 大小以堆分配粒度的倍数显示。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-t</strong>[<strong>c</strong>|<strong>s</strong>]  [<em>Traces</em>]</p></td>
-<td align="left"><p>使调试器要显示的大量堆用户收集的跟踪。 <em>跟踪</em>指定要显示; 的跟踪号默认值为 4。 如果有超过指定的详细跟踪，会显示最早的跟踪。 如果<strong>-t</strong>或<strong>-tc</strong>是使用，跟踪将按计数使用情况。 如果<strong>-ts</strong>是使用，按大小排序的跟踪。 ( <strong>-Tc</strong>并<strong>-ts</strong>选项; 仅支持在 Windows XP <strong>-t</strong>仅在 Windows XP 和 Windows 的早期版本中支持选项。)</p></td>
+<td align="left"><p><strong>-t</strong>[<strong>c</strong>|<strong>s</strong>] [<em>跟踪</em>]</p></td>
+<td align="left"><p>使调试器显示大量堆用户的已收集跟踪。 <em>跟踪</em>指定要显示的跟踪数;默认值为四。 如果跟踪超过指定的数量, 则显示最早的跟踪。 如果使用<strong>-t</strong>或<strong>-tc</strong> , 则跟踪按计数使用情况进行排序。 如果使用<strong>-ts</strong> , 则跟踪按大小排序。 (仅 Windows XP 支持<strong>-tc</strong>和<strong>-ts</strong>选项; 仅在 windows xp 和更早版本的 windows 中支持<strong>-t</strong>选项。)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-fi</strong>  [<em>Traces</em>]</p></td>
-<td align="left"><p>使调试器用于显示最新的故障注入跟踪。 <em>跟踪</em>指定数量来显示; 默认值为 4。</p></td>
+<td align="left"><p><strong>-fi</strong> [<em>跟踪</em>]</p></td>
+<td align="left"><p>使调试器显示最新的错误注入跟踪。 <em>跟踪</em>指定要显示的数量;默认值为4。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-all</strong></p></td>
-<td align="left"><p>使调试器，堆显示有关所有页面的详细的信息。</p></td>
+<td align="left"><p><strong>-所有</strong></p></td>
+<td align="left"><p>使调试器显示有关所有页堆的详细信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-?</strong></p></td>
-<td align="left"><p>使调试器显示页堆帮助，包括堆块的关系图。 （这些关系图，也会看到以下备注部分中。）</p></td>
+<td align="left"><p>使调试器显示页堆帮助, 包括堆块的关系图。 (也可以在下面的 "备注" 部分中查看这些关系图。)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-你可以使用任何之前 **！ 堆-p**扩展命令时，必须为目标进程启用页堆。 请参阅以下备注部分中的详细信息。
+在可以使用 any **! 堆-p** extension 命令之前, 必须为目标进程启用页堆。 请参阅以下 "备注" 部分中的详细信息。
 
 <span id="_______-srch______"></span><span id="_______-SRCH______"></span> **-srch**   
-扫描所有堆给定模式。
+扫描给定模式的所有堆。
 
-<span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *Pattern*   
+<span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span>*模式*   
 指定要查找的模式。
 
-<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span> *大小*   
-可以是任何单个的以下选项之一。 这用于指定模式的大小。 -是必需的。
+<span id="_______Size______"></span><span id="_______size______"></span><span id="_______SIZE______"></span>*大小*   
+可以是以下选项中的任何一个。 这将指定模式的大小。 "-" 是必需的。
 
 <table>
 <colgroup>
@@ -304,39 +304,39 @@ ms.locfileid: "63336530"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选</th>
 <th align="left">效果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-b</strong></p></td>
-<td align="left"><p>模式是一个字节的大小。</p></td>
+<td align="left"><p>模式大小为1个字节。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-w</strong></p></td>
-<td align="left"><p>模式是一个单词的大小。</p></td>
+<td align="left"><p>模式为一个大小的单词。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-d</strong></p></td>
-<td align="left"><p>模式是一个 DWORD 的大小。</p></td>
+<td align="left"><p>模式为一个 DWORD 大小。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-q</strong></p></td>
-<td align="left"><p>模式是一个 QWORD 的大小。</p></td>
+<td align="left"><p>模式为大小为1个 QWORD。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果指定了上述任何订阅，然后被假定该模式可作为机指针大小相同。
+如果未指定上述任何一个, 则假设模式的大小与计算机指针的大小相同。
 
 <span id="_______-flt______"></span><span id="_______-FLT______"></span> **-flt**   
-限制显示以包括仅与指定的大小或大小范围的堆。
+将显示范围限制为仅包含具有指定大小或大小范围的堆。
 
-<span id="_______FilterOptions______"></span><span id="_______filteroptions______"></span><span id="_______FILTEROPTIONS______"></span> *FilterOptions*   
-可以是任何单个的以下选项之一。 *FilterOptions*区分大小写。
+<span id="_______FilterOptions______"></span><span id="_______filteroptions______"></span><span id="_______FILTEROPTIONS______"></span>*FilterOptions*   
+可以是以下选项中的任何一个。 *FilterOptions*区分大小写。
 
 <table>
 <colgroup>
@@ -345,18 +345,18 @@ ms.locfileid: "63336530"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选</th>
 <th align="left">效果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>s</strong>  <em>Size</em></p></td>
-<td align="left"><p>限制显示以包括仅指定大小的堆。</p></td>
+<td align="left"><p><strong>s</strong> <em>大小</em></p></td>
+<td align="left"><p>将显示范围限制为仅包含指定大小的堆。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>r</strong>  <em>SizeMin</em>  <em>SizeMax</em></p></td>
-<td align="left"><p>限制显示以包括仅在指定的大小范围内的堆。</p></td>
+<td align="left"><p><strong>r</strong> SizeMin <em>SizeMax</em></p></td>
+<td align="left"><p>将显示范围限制为仅包含指定大小范围内的堆。</p></td>
 </tr>
 </tbody>
 </table>
@@ -366,11 +366,11 @@ ms.locfileid: "63336530"
 <span id="_______-stat______"></span><span id="_______-STAT______"></span> **-stat**   
 显示指定堆的使用情况统计信息。
 
-<span id="_______-h________Handle______"></span><span id="_______-h________handle______"></span><span id="_______-H________HANDLE______"></span> **-h** *Handle*   
-导致仅在堆的使用情况统计*处理*显示。 如果*处理*为 0 或省略，则对于所有堆使用情况统计信息会显示。
+<span id="_______-h________Handle______"></span><span id="_______-h________handle______"></span><span id="_______-H________HANDLE______"></span> **-h***句柄*   
+导致显示仅显示在*句柄*上的堆的使用情况统计信息。 如果*Handle*为0或省略, 则显示所有堆的使用情况统计信息。
 
-<span id="_______-grp________GroupBy______"></span><span id="_______-grp________groupby______"></span><span id="_______-GRP________GROUPBY______"></span> **-grp** **** *GroupBy*   
-对显示为指定的重新排序*GroupBy*。 选项*GroupBy*可发现下表中。
+<span id="_______-grp________GroupBy______"></span><span id="_______-grp________groupby______"></span><span id="_______-GRP________GROUPBY______"></span> **-grp** ****  *GroupBy*   
+按*GroupBy*指定的重新排序显示。 可以在下表中找到*GroupBy*的选项。
 
 <table>
 <colgroup>
@@ -379,32 +379,32 @@ ms.locfileid: "63336530"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选</th>
 <th align="left">效果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>A</strong></p></td>
-<td align="left"><p>显示分配的大小根据使用情况统计信息。</p></td>
+<td align="left"><p>根据分配大小显示使用情况统计信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>B</strong></p></td>
-<td align="left"><p>显示根据块计数使用情况统计信息。</p></td>
+<td align="left"><p>根据块计数显示使用情况统计信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>S</strong></p></td>
-<td align="left"><p>显示每个分配的总大小根据使用情况统计信息。</p></td>
+<td align="left"><p>根据每个分配的总大小显示使用量统计信息。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______MaxDisplay______"></span><span id="_______maxdisplay______"></span><span id="_______MAXDISPLAY______"></span> *MaxDisplay*   
+<span id="_______MaxDisplay______"></span><span id="_______maxdisplay______"></span><span id="_______MAXDISPLAY______"></span>*MaxDisplay*   
 将输出限制为仅*MaxDisplay*的行数。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -413,43 +413,49 @@ ms.locfileid: "63336530"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
 <td align="left"><p></p>
-Ext.dll Exts.dll</td>
+Ext .dll Exts</td>
 </tr>
 </tbody>
 </table>
 
- 
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+有关堆的信息, 请参阅以下资源:
 
-有关堆的信息，请参阅 Microsoft Windows SDK 文档，Windows Driver Kit (WDK) 文档，并*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）
+通讯*Microsoft Windows 内部*的 Russinovich 和 David 所罗门群岛。
+
+[示例 11:启用页堆验证](example-11---enabling-page-heap-verification.md)
+
+[示例 12:使用页堆验证查找 Bug](example-12---using-page-heap-verification-to-find-a-bug.md)
+
+有关使用堆内存处理记录器的信息, 请参阅[示例 11:启动专用跟踪会话](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-11--starting-a-private-trace-session)
 
 <a name="remarks"></a>备注
 -------
 
-此扩展命令可以用于执行各种任务。
+此扩展命令可用于执行各种任务。
 
-标准 **！ 堆**命令用于显示当前进程堆信息。 （这应该是仅用于用户模式进程。 [ **！ 池**](-pool.md)扩展命令应该用于系统进程。)
+标准 **! 堆**命令用于显示当前进程的堆信息。 (这应该只用于用户模式进程。 [ **! Pool**](-pool.md) extension 命令应用于系统进程。)
 
-**！ 堆-b**并 **！ 堆-B**命令用于创建和删除堆管理器中的条件断点。
+**! 堆-b**和 **! 堆-b**命令用于在堆管理器中创建和删除条件断点。
 
-**！ 堆-l**命令检测泄漏的堆块。 它使用垃圾回收器算法来检测所有忙块与未在进程地址空间中任何位置引用的堆。 对于大型应用程序，可能需要几分钟才能完成。 此命令才在 Windows XP 和更高版本的 Windows 中可用。
+**! 堆-l**命令检测泄漏的堆块。 它使用垃圾回收器算法来检测未在进程地址空间中的任何位置引用的堆中的所有繁忙块。 对于大型应用程序, 可能需要几分钟才能完成。 此命令仅在 Windows XP 和更高版本的 Windows 中可用。
 
-**！ 堆-x**命令搜索包含给定的地址的堆块。 如果 **-v**选项，则此命令将此外搜索当前过程对于指向此堆块的整个虚拟内存空间。 此命令才在 Windows XP 和更高版本的 Windows 中可用。
+**! 堆-x**命令搜索包含给定地址的堆块。 如果使用了 **-v**选项, 则此命令将另外在当前进程的整个虚拟内存空间中搜索指向此堆块的指针。 此命令仅在 Windows XP 和更高版本的 Windows 中可用。
 
-**！ 堆-p**命令显示各种形式的页面堆信息。 使用之前 **！ 堆-p**，必须启用目标进程在页堆。 这是通过全局标志 (gflags.exe) 实用程序。 若要执行此操作，启动该实用程序，填写名称中的目标应用程序**图像文件名**文本框中，选择**图像文件选项**并**启用页堆**，然后单击**应用**。 或者，通过键入，在命令提示符窗口中启动的全局标志实用工具**gflags /i** *xxx.exe* **+ hpa**，其中*xxx.exe*是目标应用程序的名称。
+**! 堆-p**命令显示了各种形式的页堆信息。 使用 **! 堆-p**之前, 必须为目标进程启用页堆。 这是通过全局标志 (gflags) 实用程序来完成的。 为此, 请启动实用工具, 在 "**映像文件**" 文本框中填写目标应用程序的名称, 选择 "**图像文件选项**" 并**启用页堆**, 并单击 "**应用**"。 或者, 你可以通过键入**gflags/i** *xxx* **+ hpa**(其中, *xxx*是目标应用程序的名称) 从命令提示符窗口启动全局标志实用程序。
 
-**！ 堆-p-t\[c | s\]** 超出了 Windows XP 不支持命令。 使用[UMDH](umdh.md)调试器包来获取类似的结果中随附的工具。
+Windows XP 外不支持 **! 堆\[-p-\] t c | s**命令。 使用随调试器包一起提供的[UMDH](umdh.md)工具来获取类似的结果。
 
-**！ 堆-srch**命令显示包含某些指定的模式的堆条目。
+**! Srch**命令显示包含某个指定模式的堆条目。
 
-**！ 堆-flt**命令将显示以仅堆分配指定大小的限制。
+**! Flt**命令会将显示范围限制为仅指定大小的堆分配。
 
-**！ 堆-stat**命令显示堆使用情况统计信息。
+**! 堆-stat**命令显示堆使用情况统计信息。
 
-下面是标准的示例 **！ 堆**命令：
+下面是标准 **! 堆**命令的示例:
 
 ```dbgcmd
 0:000> !ntsdexts.heap -a
@@ -568,7 +574,7 @@ Address   Size    Size  flags       (Bytes used)    (Tag name)
 002a6000:      000aa000      - uncommitted bytes.
 ```
 
-下面是举例 **！ 堆-l**命令：
+下面是 **! 堆-l**命令的示例:
 
 ```dbgcmd
 1:0:011> !heap -l
@@ -609,9 +615,9 @@ Scanning VM ...
 21 leaks detected.
 ```
 
-此示例中的表包含找到的所有 21 泄漏。
+此示例中的表包含发现的所有21个泄漏。
 
-下面是举例 **！ 堆-x**命令：
+下面是 **! 堆 x**命令的示例:
 
 ```dbgcmd
 0:011> !heap 002057b8 -x
@@ -620,7 +626,7 @@ Scanning VM ...
 002057a8  002057b0  00170000  00170640        58        58  busy extra
 ```
 
-下面是举例 **！ 堆-x-v**命令：
+下面是 **! 堆-x v**命令的示例:
 
 ```dbgcmd
 1:0:011> !heap 002057b8 -x -v
@@ -631,25 +637,25 @@ Scanning VM ...
 Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
 ```
 
-在此示例中，没有在地址 0x00205990 此堆块的指针。
+在此示例中, 有一个指向地址0x00205990 的堆块的指针。
 
-下面是举例 **！ 堆-flt s**命令：
+下面是 **! flt s**命令的示例:
 
 ```dbgcmd
 0:001>!heap -flt s 0x50
 ```
 
-这将显示所有的分配大小 0x50。
+这会显示大小0x50 的所有分配。
 
-下面是举例 **！ 堆-flt r**命令：
+下面是 **! flt r**命令的示例:
 
 ```dbgcmd
 0:001>!heap -flt r 0x50 0x80
 ```
 
-这将显示每个分配，其大小是 0x50 和 0x7F 之间。
+这会显示大小介于0x50 和0x7F 之间的每个分配。
 
-下面是举例 **！ 堆-srch**命令。
+下面是 **! srch**命令的示例。
 
 ```dbgcmd
 0:001> !heap -srch 77176934
@@ -663,9 +669,9 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
           ole32!CALLFRAME_CACHE<INTERFACE_HELPER_CLSID>::`vftable'
 ```
 
-下图显示堆块的排列方式。
+下图显示了堆块的排列方式。
 
-浅页堆块-分配：
+浅页堆块--已分配:
 
 ```dbgcmd
  +-----+---------------+---+                                  
@@ -677,7 +683,7 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDAAAA and ends with 0xDCBAAAAA) 
 ```
 
-浅页堆块-释放：
+浅页堆块--已释放:
 
 ```dbgcmd
  +-----+---------------+---+                                  
@@ -689,7 +695,7 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDAAA9 and ends with 0xDCBAAA9) 
 ```
 
-整页堆块-分配：
+整页堆块--已分配:
 
 ```dbgcmd
  +-----+---------+---+-------                                 
@@ -702,7 +708,7 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDBBBB and ends with 0xDCBABBBB) 
 ```
 
-整页堆块-释放：
+整页堆块--已释放:
 
 ```dbgcmd
  +-----+---------+---+-------                                 
@@ -714,13 +720,4 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDBBA and ends with 0xDCBABBBA) 
 ```
 
-若要查看堆栈跟踪的分配或释放堆块或页填满堆块，请使用[ **dt DPH\_块\_信息**](dt--display-type-.md)标头地址后, 跟[**dds** ](dds--dps--dqs--display-words-and-symbols-.md)使用的块**StackTrace**字段。
-
- 
-
- 
-
-
-
-
-
+若要查看分配的堆栈跟踪或释放堆块或完整页面堆块, 请使用带有标头地址的[**dt\_DPH\_块信息**](dt--display-type-.md), 然后将[**dds**](dds--dps--dqs--display-words-and-symbols-.md)与块的**StackTrace**字段结合使用。

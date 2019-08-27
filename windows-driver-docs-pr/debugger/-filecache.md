@@ -1,6 +1,6 @@
 ---
 title: filecache
-description: Filecache 扩展显示有关系统文件缓存内存和 PTE 使用的信息。
+description: Filecache 扩展显示有关系统文件缓存的内存和 PTE 使用情况的信息。
 ms.assetid: 38dbff14-5144-455c-a9b8-1ac6292f4200
 keywords:
 - 文件缓存
@@ -13,45 +13,45 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 494d76d1cb348f9018dd75b693306d2e63b8e5ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb47cb3021a3072143f8197125e9dd32403fb527
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336742"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025245"
 ---
 # <a name="filecache"></a>!filecache
 
 
-**！ Filecache**扩展显示有关系统文件缓存内存的信息，并使用 PTE。
+**! Filecache**扩展显示有关系统文件缓存的内存和 PTE 使用情况的信息。
 
 ```dbgcmd
 !filecache [Flags]
 ```
 
-## <a name="span-idddkfilelockdbgspanspan-idddkfilelockdbgspanparameters"></a><span id="ddk__filelock_dbg"></span><span id="DDK__FILELOCK_DBG"></span>参数
+## <a name="span-idddk__filelock_dbgspanspan-idddk__filelock_dbgspanparameters"></a><span id="ddk__filelock_dbg"></span><span id="DDK__FILELOCK_DBG"></span>Parameters
 
 
-<span id="_______Flags"></span><span id="_______flags"></span><span id="_______FLAGS"></span> *标志*  
-可选。 默认值为 0x0。 设置*标志*为 0x1 的输出进行排序由共享的缓存映射。 这种方式可以找到给定的控件区域的所有系统缓存视图。
+<span id="_______Flags"></span><span id="_______flags"></span><span id="_______FLAGS"></span>*标志*  
+可选。 默认值为0x0。 将*标志*设置为0x1 以便按共享缓存映射对输出进行排序。 这样, 就可以查找给定控件区域的所有系统缓存视图。
 
 ## <span id="ddk__filecache_dbg"></span><span id="DDK__FILECACHE_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Kdexts.dll
+Kdexts
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-文件系统驱动程序有关的信息，请参阅 Windows Driver Kit (WDK) 文档和*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这些资源可能不可用在某些语言和国家/地区中。）
+有关文件系统驱动程序的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部*内容, 标记 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-此扩展的输出的每一行表示虚拟地址控制块 (VACB)。 当命名的文件映射到 VACB 时，显示这些文件的名称。 如果指定"没有的文件名称"，这意味着此 VACB 使用缓存元数据。
+此扩展的输出中的每一行都表示一个虚拟地址控制块 (VACB)。 命名文件被映射到 VACB 中时, 将显示这些文件的名称。 如果未指定 "文件的名称", 这意味着将使用此 VACB 来缓存元数据。
 
-下面是输出的从 Windows XP 系统中此扩展示例：
+下面是来自 Windows XP 系统的此扩展的输出示例:
 
 ```dbgcmd
 kd> !filecache
