@@ -64,7 +64,7 @@ Microsoft OS 描述符具有不支持的专有设备类的重要用途。 具体
 
 操作系统从设备请求 Microsoft 操作系统字符串描述符后，将创建以下注册表项：
 
-**HLKM\\SYSTEM\\CurrentControlSet\\Control\\UsbFlags\\*vvvvpppprrrrr***
+**HLKM\\SYSTEM\\CurrentControlSet\\Control\\UsbFlags\\ *vvvvpppprrrrr***
 
 操作系统会创建一个名为的注册表项**osvc**，指示设备是否支持 Microsoft 操作系统描述符此注册表项下。 如果设备不提供有效响应第一个时间，操作系统查询其用于 Microsoft 操作系统字符串描述符，操作系统将使该描述符没有更多请求。
 
