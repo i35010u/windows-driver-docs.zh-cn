@@ -34,6 +34,12 @@
           href: device-unique-identifiers--duids--for-storage-devices.md
         - name: 常规存储 I/O 控制代码
           href: general-storage-io-control-codes.md
+        - name: 存储数据集管理 (DSM)
+          items:
+            - name: 数据集管理概述
+              href: data-set-management-overview.md
+            - name: DEVICE_DSM_ACTION 说明
+              href: device-dsm-action-descriptions.md
         - name: LSI_U3 设备的示例 Storport 微型端口驱动程序
           items:
             - name: LSI_U3 设备的示例 Storport 微型端口驱动程序
@@ -240,8 +246,6 @@
                   href: hardware-initialization-with-storport.md
                 - name: 使用 Storport 设置端口配置信息
                   href: setting-port-configuration-information-with-storport.md
-            - name: DEVICE_DATA_MANAGEMENT_SET_ACTION
-              href: device-data-management-set-action.md
         - name: ATA 端口驱动程序
           items:
             - name: ATA 端口驱动程序
