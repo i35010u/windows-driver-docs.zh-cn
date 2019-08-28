@@ -14,12 +14,12 @@ keywords:
 - 企业 CA 测试证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e0da346b0c5152439711585f23d372a0b7e0138
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: c5f789336df1cb15930f150e8911710a99f38792
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025123"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063930"
 ---
 # <a name="test-signing-a-driver-file"></a>对驱动程序文件进行测试签名
 
@@ -48,7 +48,7 @@ SignTool sign /v /s TestCertStoreName /n TestCertName /t http://timestamp.digice
 
 -   **/N** *TestCertName*选项提供在名为*TestCertStoreName*的证书存储中安装的测试证书的名称。 测试证书可以是 MakeCert 测试证书, 也可以是商业测试证书。
 
--   **/T**  *http://timestamp.digicert.com* 选项提供 VeriSign 提供的公开可用的时间戳服务器的 URL。
+-    */T http://timestamp.digicert.com* 选项提供 DigiCert 提供的公开可用的时间戳服务器的 URL。
 
 -   *DriverFileName*是驱动程序文件的名称。
 

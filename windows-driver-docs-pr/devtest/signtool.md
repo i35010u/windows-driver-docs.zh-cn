@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fff3d493a9c6d2dfdc9470015206318b51f6c79
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: baef109a7cd61805247c469596adb258804effc1
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025337"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063945"
 ---
 # <a name="signtool"></a>SignTool
 
@@ -265,7 +265,7 @@ SignTool 的32位版本位于 WDK 的 "bin\\" 文件夹中。 此工具的64位�
 
 下面的示例演示如何使用软件发行者证书 (SPC) 和相应的交叉证书对[驱动程序包的](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)目录文件进行签名。 此示例适用于对64位版本的 Windows Vista 和更高版本的 Windows 的驱动程序包进行签名, 这将强制实施内核模式代码签名策略。 该示例对驱动程序包的目录文件 AbcCatFileName.cat 进行签名。 若要对编录文件进行签名, 该示例使用了交叉证书 AbcCrossCertificate 和 AbcSPCCertificate 证书。 AbcSPCCertificate 证书位于 AbcCertificateStore 证书存储区中。
 
-该示例还使用公开提供的时间戳服务器对目录文件进行签名。 该时间戳服务器由 VeriSign 提供, 其 URL 为 http://timestamp.digicert.com 。
+该示例还使用公开提供的时间戳服务器对目录文件进行签名。 时间戳服务器由 DigiCert 提供, 其 URL 为 http://timestamp.digicert.com 。
 
 ```
 SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertificate /t http://timestamp.digicert.com AbcCatFileName.cat

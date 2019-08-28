@@ -12,16 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 294aaee6a23057eecfe6afc3767e397b33f22f88
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 20701b8f00bda2228900a43d425fc422f99d69e1
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025264"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063902"
 ---
 # <a name="drivers"></a>!drivers
 
-在 Windows XP 和更高版本的 Windows 中, **! 驱动程序**扩展已过时。 若要显示有关已加载的驱动程序和其他模块的信息, 请使用[**lm**](lm--list-loaded-modules-.md)命令。 命令 lm t n 以与旧 **! 驱动程序**扩展非常相似的格式显示信息。 但是, 此命令不会显示驱动程序的内存使用量, 因为 **! 驱动程序**扩展已完成。 它将仅显示驱动程序的开始和结束地址、映像名称和时间戳。 [ **! Vm**](-vm.md)和[ **! memusage**](-memusage.md)扩展可用于显示内存使用情况统计信息。
+>[!NOTE] 
+> 在 Windows XP 和更高版本的 Windows 中, **! 驱动程序**扩展已过时。 若要显示有关已加载的驱动程序和其他模块的信息, 请使用[**lm**](lm--list-loaded-modules-.md)命令。 
+>
+
+命令 lm t n 以与旧 **! 驱动程序**扩展非常相似的格式显示信息。 但是, 此命令不会显示驱动程序的内存使用量, 因为 **! 驱动程序**扩展已完成。 它将仅显示驱动程序的开始和结束地址、映像名称和时间戳。 [ **! Vm**](-vm.md)和[ **! memusage**](-memusage.md)扩展可用于显示内存使用情况统计信息。
 
 ```dbgcmd
 !drivers [Flags]

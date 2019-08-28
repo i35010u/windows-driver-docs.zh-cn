@@ -4,12 +4,12 @@ description: 电源管理的标准化 INF 关键字
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f3f1e59367acbfc2dfb18e1087831c97d2f088
-ms.sourcegitcommit: 97cb327e20b899d386abb412af2de7e08c5aff87
+ms.openlocfilehash: 204e218590a8a6706f9dba7a2d004d8b0fcf62c2
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68730411"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063903"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>电源管理的标准化 INF 关键字
 
@@ -60,15 +60,10 @@ ms.locfileid: "68730411"
 
 下表描述了电源管理关键字的可能 INF 条目。
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup><col width="25%" /> <col width="25%" /> <col width="25%" /> <col width="25%" /></colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
 <th align="left">ReplTest1</th>

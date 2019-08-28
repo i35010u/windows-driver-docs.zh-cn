@@ -8,12 +8,12 @@ keywords:
 - 网络驱动程序 WDK, IP 帮助程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaefca54c87eda5ec5b8aec6806cd7939b91b546
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 6f9818a47e89a1c42a362b6c4466a33a5fd04fbe
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565663"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063917"
 ---
 # <a name="ip-helper-overview"></a>IP 帮助程序概述
 
@@ -33,13 +33,10 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 
 ### <a name="interface-conversion-functions"></a>接口转换函数
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">才能</th>
 <th align="left">描述</th>
 </tr>

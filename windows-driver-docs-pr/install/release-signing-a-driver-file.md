@@ -7,12 +7,12 @@ keywords:
 - 驱动程序文件版本签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 086bae5bf2b76aca3bc3031f88a131087ab340d2
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: 2de976dd3d536522d755c28da416340c584185d2
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020636"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063935"
 ---
 # <a name="release-signing-a-driver-file"></a>对驱动程序文件进行发布签名
 
@@ -35,7 +35,7 @@ SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertifica
 
 -   **/N** *SPCCertificateName*选项指定*SPCCertificateStore*证书存储区中的证书名称。
 
--   **/T**  *http://timestamp.digicert.com 选项提供 VeriSign 提供的公开可用的时间戳服务器的 URL。
+-   **/T**   选项提供* DigiCert 提供的公开可用的时间戳服务器的 URL。 http://timestamp.digicert.com
 
 -   *DriverFileName*是驱动程序文件的名称。
 

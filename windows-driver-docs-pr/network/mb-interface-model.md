@@ -4,12 +4,12 @@ description: 本部分提供基于移动宽带接口模型 (MBIM) 规范实现�
 ms.assetid: B1C6D5F4-63E2-4C46-8038-71B8144AB474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f30383a002d8cc2cfb4d32ca4f647e8dff72565a
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: abfa4ee22a47361168ff3822cef2ee662838b6bf
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565658"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063911"
 ---
 # <a name="mb-interface-model-overview"></a>MB 接口模型概述
 
@@ -28,14 +28,10 @@ ms.locfileid: "69565658"
 
 *Microsoft 操作系统兼容 Id*
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup> <col width="33%" /> <col width="33%" /> <col width="33%" /> </colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">Microsoft OS 兼容 ID</th>
 <th align="left">Microsoft 操作系统子兼容 ID</th>
 <th align="left">对于方案是必需的</th>

@@ -1,19 +1,19 @@
 ---
-title: 导航网络驱动程序设计指南
-description: 导航网络驱动程序设计指南
+title: 在网络驱动程序设计指南中导航
+description: 在网络驱动程序设计指南中导航
 ms.assetid: 8d9cbf3c-5eec-4409-ab4c-595bb921832d
 keywords:
 - 网络驱动程序 WDK, 文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44fb55295a26f5565c1bf0d9c20e533ea6126aa8
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 4832be8f00942e6d0682de8febaf6368fc963d2c
+ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565725"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063876"
 ---
-# <a name="navigating-the-network-driver-design-guide"></a>导航网络驱动程序设计指南
+# <a name="navigating-the-network-driver-design-guide"></a>在网络驱动程序设计指南中导航
 
 
 
@@ -69,13 +69,10 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 
 可以使用以下附加的驱动程序模型来使用特定的硬件技术和体系结构。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
+<table>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<thead>  
+<tr class="header">  
 <th align="left">技术</th>
 <th align="left">描述</th>
 </tr>
