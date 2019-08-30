@@ -4,12 +4,12 @@ title: 如何使用 Visual Studio 在运行时测试驱动程序
 description: 你可以在 Visual Studio 中使用 WDK 扩展，在网络中的测试计算机上方便地生成、部署、安装和测试驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94636f9b606187f41771218439641922f23a2350
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d6cad70926d45baf1d07436d86a26448ec1b1db5
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364216"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020628"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>如何使用 Visual Studio 在运行时测试驱动程序
 
@@ -98,7 +98,7 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 * [如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)
 * [如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
-* [在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
+* [Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
 * [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
 * [如何在运行时通过命令提示符测试驱动程序](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)

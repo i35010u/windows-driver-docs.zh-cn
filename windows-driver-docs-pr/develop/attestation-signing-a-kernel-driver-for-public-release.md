@@ -4,12 +4,12 @@ author: DOMARS
 redirect_url: https://msdn.microsoft.com/library/windows/hardware/mt786448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 030e3a006ed1170004c28fae84836c5172b81b86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b22ffc8bdcdf93783c2e7b68f2ff2845027bbaf5
+ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369897"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025146"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -191,7 +191,7 @@ ms.locfileid: "67369897"
    </colgroup>
    <tbody>
    <tr class="odd">
-   <td align="left"><pre><code>C:\Echo&gt; SignTool sign /v /s MY /n "Subject Name of the Signing Certificate" /t http://timestamp.verisign.com/scripts/timstamp.dll "C:\Echo\Disk1\Echo.cab"</code></pre></td>
+   <td align="left"><pre><code>C:\Echo&gt; SignTool sign /v /s MY /n "Subject Name of the Signing Certificate" /t http://timestamp.digicert.com "C:\Echo\Disk1\Echo.cab"</code></pre></td>
    </tr>
    </tbody>
    </table>
