@@ -1,15 +1,15 @@
 ---
 ms.assetid: 328404BD-E888-4AAA-AA24-B57FD01E9E54
 title: 将驱动程序部署到测试计算机
-description: 在 Visual Studio 中，WDK 提供可让你在测试计算机上生成、部署和调试驱动程序的测试功能。
+description: 在 Visual Studio 中，WDK 提供了一个可让你在测试计算机上生成、部署驱动程序的测试功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 613870a14b456ec66946a628f0ef1785a0202009
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0f336f87cdc4e6151c9026d5695f9a316936afd
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370767"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020676"
 ---
 # <a name="deploying-a-driver-to-a-test-computer"></a>将驱动程序部署到测试计算机
 

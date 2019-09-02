@@ -4,12 +4,12 @@ title: 测试驱动程序代码和驱动程序包的相关建议。
 description: 应在何时开始测试？ 了解驱动程序的要求后，便可以立即开始设计测试用例来测试是否已实现了这些关键要求。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d7df260a28c7469baa60a2144109adc226eca29
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2273cafe071233a29c0af92a2728a78c2be8c7f9
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364222"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020633"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>开发期间测试驱动程序的相关技巧
 
@@ -48,7 +48,8 @@ ms.locfileid: "67364222"
 
 -   运行 WDK 中包括的设备基础功能测试。 请参阅[如何使用 Visual Studio 在运行时测试驱动程序](testing-a-driver-at-runtime.md)和[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。
 
--   设置调试程序，以便可以排查和调试测试结果显示的问题。 有关详细信息，请参阅[在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)。
+-   设置调试程序，以便可以排查和调试测试结果显示的问题。 有关详细信息，请参阅 [Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)。
+ 
 -   在用于部署的测试计算机上启用驱动程序验证程序，请参阅[驱动程序项目的驱动程序验证程序属性](driver-verifier-properties-for--driver-projects.md)。 选择 [DDI 符合性检查](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)选项。 如果你的驱动程序未通过 DDI 符合性检查，请运行[静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)，并指定导致失败的规则。 静态驱动程序验证程序可以帮助你找到源文件中存在的 Bug 的原因。
 -   在尽可能多的不同硬件配置上测试你的驱动程序和设备。 改变硬件可以帮助你找到设备交互中出现的设备错误与其他错误之间的冲突。 例如，你应该在具有不同处理器体系结构的计算机以及运行 32 位和 64 位 Windows 版本的计算机上测试驱动程序和设备。
 
@@ -56,12 +57,3 @@ ms.locfileid: "67364222"
 -   在多处理器系统上测试驱动程序和设备。 以其他方式无法找到的争用条件及其他计时问题会出现在多处理器系统中。 请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)和[用于测试驱动程序的多处理器组支持的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)。
 
 -   测试驱动程序的特定系统和硬件条件，特别是边界条件。 例如，这些条件可能包括“D3 hot”和“D3 cold”。 确保你的驱动程序和设备可以从设备电源状态“D3 hot”（不消耗功率）和“D3 cold”（从设备中移除电源时）正确返回。 有关详细信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。
-
- 
-
- 
-
-
-
-
-

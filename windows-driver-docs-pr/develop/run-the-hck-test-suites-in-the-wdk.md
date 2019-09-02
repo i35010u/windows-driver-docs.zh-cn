@@ -4,12 +4,12 @@ title: 如何在 WDK 8.1 中运行 HCK 测试套件
 description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90fa4555a0c1a09756b617cecb8143499b494e29
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 186461bfda62753dd3e9e5998e8dd257d476df1e
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364249"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020670"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件
 
@@ -140,7 +140,7 @@ ms.locfileid: "67364249"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">HCK Tests.Basic.Device.Device Fundamentals 测试套件</th>
+<th align="left">HCK Tests.Basic.Device.Device Fundamentals Test Suite</th>
 <th align="left"></th>
 </tr>
 </thead>
@@ -177,7 +177,7 @@ ms.locfileid: "67364249"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309671" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309671)">图形适配器或芯片集测试先决条件</a></td>
+<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309671" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309671)">图形适配器或芯片组测试先决条件</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
@@ -302,24 +302,12 @@ ms.locfileid: "67364249"
 </tbody>
 </table>
 
- 
-
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
 
 * [如何使用 Visual Studio 测试驱动程序运行时](testing-a-driver-at-runtime.md)
 * [如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
-* [在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
+* [Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
 * [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
 * [如何在运行时通过命令提示符测试驱动程序](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)
- 
-
- 
-
-
-
-
-
-

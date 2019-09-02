@@ -4,12 +4,12 @@ title: 驱动程序包项目的部署属性
 description: 你可以在项目的每个配置中配置远程测试计算机上驱动程序包的自动部署。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1580a9c8d54c9e2064bf1069a9926ba3dc9a544a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8670f7bb647998ee7cc7b88e636034b5256b86e
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370753"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020659"
 ---
 # <a name="deployment-properties-for-driver-package-projects"></a>驱动程序包项目的部署属性
 
@@ -39,7 +39,9 @@ ms.locfileid: "67370753"
 ## <a name="span-idtarget_computer_namespanspan-idtarget_computer_namespanspan-idtarget_computer_namespantarget-computer-name"></a><span id="Target_computer_name"></span><span id="target_computer_name"></span><span id="TARGET_COMPUTER_NAME"></span>目标计算机名称
 
 
-你可以选择要用于部署和测试的目标计算机。 如果你已经配置了测试计算机，则可以从此列表中选择。 如果你尚未配置测试计算机，则可以使用“浏览”  按钮配置一个。 有关配置测试计算机的详细信息，请参阅[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)。 请确保项目配置和平台与测试系统的目标体系结构匹配。 尝试在运行 x64 版本 Windows 的系统上安装 x86 (Win32) 驱动程序时发生常见部署错误。 在配置测试计算机时，也可以运行内核模式调试程序。 有关详细信息，请参阅[在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)。
+你可以选择要用于部署和测试的目标计算机。 如果你已经配置了测试计算机，则可以从此列表中选择。 如果你尚未配置测试计算机，则可以使用“浏览”  按钮配置一个。 有关配置测试计算机的详细信息，请参阅[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)。 请确保项目配置和平台与测试系统的目标体系结构匹配。 尝试在运行 x64 版本 Windows 的系统上安装 x86 (Win32) 驱动程序时发生常见部署错误。 
+
+有关使用调试程序的信息，请参阅 [Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)。
 
 ## <a name="span-iddriver_installation_optionsspanspan-iddriver_installation_optionsspanspan-iddriver_installation_optionsspandriver-installation-options"></a><span id="Driver_installation_options"></span><span id="driver_installation_options"></span><span id="DRIVER_INSTALLATION_OPTIONS"></span>驱动程序安装选项
 
@@ -64,7 +66,7 @@ ms.locfileid: "67370753"
 
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
 * [如何使用 Visual Studio 在运行时测试驱动程序](testing-a-driver-at-runtime.md)
-* [在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
+* [Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
  
 
  

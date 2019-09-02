@@ -4,18 +4,18 @@ title: 驱动程序包项目的驱动程序验证程序属性
 description: 驱动程序验证程序是一款运行时验证工具，用于提高驱动程序测试的有效性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1f628118afd80607076e94d3d8ba15915b95de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b3537290ee321df517088dd181c556960f3d643
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370742"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020648"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的驱动程序验证程序属性
 
 [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)是一款运行时验证工具，用于提高驱动程序测试的有效性。 当你部署用于测试的驱动程序时，可以启用驱动程序验证程序并将其配置为在所有测试计算机上运行。
 
-当你启用远程测试计算机上的驱动程序验证程序时，应始终设置与测试计算机的内核模式调试连接。 有关配置目标计算机和设置调试电缆的信息，请参阅[在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)。
+当你启用远程测试计算机上的驱动程序验证程序时，应始终设置与测试计算机的内核模式调试连接。 有关配置目标计算机和设置调试电缆的信息，请参阅 [ Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)。
 
 ## <a name="span-idsetting_driver_verifier_properties_for_driver_package_projectsspanspan-idsetting_driver_verifier_properties_for_driver_package_projectsspanspan-idsetting_driver_verifier_properties_for_driver_package_projectsspansetting-driver-verifier-properties-for-driver-package-projects"></a><span id="Setting_Driver_Verifier_properties_for_driver_package_projects"></span><span id="setting_driver_verifier_properties_for_driver_package_projects"></span><span id="SETTING_DRIVER_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>设置驱动程序包项目的驱动程序验证程序属性
 
@@ -139,8 +139,8 @@ ms.locfileid: "67370742"
 
 * [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 * [如何使用 Visual Studio 在运行时测试驱动程序](testing-a-driver-at-runtime.md)
-* [在 Visual Studio 中设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-visual-studio)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
+* [Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
  
 
  

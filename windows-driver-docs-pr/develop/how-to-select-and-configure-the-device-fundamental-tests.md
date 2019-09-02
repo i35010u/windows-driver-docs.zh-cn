@@ -4,12 +4,12 @@ title: 如何选择和配置设备基础功能测试
 description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ea15e3628e9de1a3171bb0bb24428218135e2bc
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: d711a7140ce1c284d80122efa70adf8f739efeac
+ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393535"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020647"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
 
@@ -72,8 +72,9 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <dl>
 <dt><span id="To_test_all_devices_that_were_installed_with_a_specific_INF_File_"></span><span id="to_test_all_devices_that_were_installed_with_a_specific_inf_file_"></span><span id="TO_TEST_ALL_DEVICES_THAT_WERE_INSTALLED_WITH_A_SPECIFIC_INF_FILE_"></span>若要测试安装有特定 INF 文件的所有设备：</dt>
 <dd><p><strong>INF::FileName=</strong><em>INF_File_Name</em></p>
-<p>例如，<strong>INF::OriginalInfFileName='%InfFileName%'</strong></p>
-<p>这是默认值。</p>
+<p>例如，<strong>INF::OriginalInfFileName='KMDFTest.inf'</strong></p>
+ <p><strong>Inf::OriginalInFileName 可与任何 INF 一起使用。</strong></p>
+
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_Device_Id__"></span><span id="to_test_a_device_with_a_specific_device_id__"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DEVICE_ID__"></span>若要测试具有特定设备 ID 的设备：</dt>
 <dd><p><strong>DeviceId=’</strong><em>DeviceId</em><strong>’</strong></p>
@@ -82,13 +83,31 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <dt><span id="_To_test_a_device_with_a_specific_interface_"></span><span id="_to_test_a_device_with_a_specific_interface_"></span><span id="_TO_TEST_A_DEVICE_WITH_A_SPECIFIC_INTERFACE_"></span> 若要测试具有特定接口的设备：</dt>
 <dd><p><strong>Interfaces::</strong><em>InterfaceGUID</em></p>
 </dd>
+ 
 <dt><span id="To_test_a_device_with_a_specific_driver_letter_"></span><span id="to_test_a_device_with_a_specific_driver_letter_"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DRIVER_LETTER_"></span>若要测试具有特定驱动器号的设备：</dt>
 <dd><p><strong>Volume::DriverLetter=’</strong><em>DriveLetter</em><strong>’</strong></p>
 <p>例如，<strong>Volume::DriverLetter=’c:\’</strong></p>
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_driver____"></span><span id="to_test_a_device_with_a_specific_driver____"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DRIVER____"></span>若要测试具有特定驱动程序的设备：</dt>
 <dd><p><strong>DriverBinaryNames=</strong><em>mydriver.sys</em></p>
+
+其中 <strong>KMDFTest.inf</strong> 是用于安装驱动程序的 inf。 还可以使用以下语句将使用 <strong>KMDFTest.sys</strong> 驱动程序的设备作为目标。</p>
+(<strong>DriverBinaryNames</strong>='<strong>KMDFTest.sys</strong>') 起作用。
+
+正确设置 SDEL 后，在运行测试时，控制台上应会显示以下输出。
+
+WDTF_TARGETS              :INFO  :  - Query("IsDevice AND ((Inf::OriginalInfFileName='KMDFTest.inf'))") WDTF_TARGETS              :INFO  :        目标：KMDFTest Device ROOT\SAMPLE\0000 WDTF_TEST                 :INFO  :警告：The test is not enforcing that Driver Verifier is enabled.
+WDTF_TEST                 :INFO  :DV is enabled with Flag:=0x209bb WDTF_TEST                 :INFO  :DV is successfully enabled for all drivers of this devnode(UniqueTargetName):=KMDFTest Device ROOT\SAMPLE\0000 WDTF_TARGET               :INFO  :  - GetInterface("Support") WDTF_TARGET               :INFO  :        目标：DESKTOP-2OVFH3G WDTF_TARGETS              :INFO  :  - Query("IsDevice") WDTF_TARGETS              :INFO  :        目标：KMDFTest Device ROOT\SAMPLE\0000 WDTF_TARGETS              :INFO  :  - GetRelations("below-or-self/","IsDevice") WDTF_TARGETS              :INFO  :        目标：KMDFTest Device ROOT\SAMPLE\0000 WDTF_TARGETS              :INFO  :  - GetInterfacesIfExist("SimpleIOStressProc") WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  no Simple IO Interface was found.
+WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  WDTF will use the ANY Simple IO Interface.
+
+有关更多详细信息，请参阅附加的文件配置和日志文件。 WDTF_TARGETS              :INFO  :        目标：KMDFTest Device ROOT\SAMPLE\0000 WDTF_TEST                 :INFO  :Perform 1 cycle(s) of I/O termination test WDTF_TEST                 :INFO  :I/O termination cycle #1 WDTF_SIMPLEIO_STRESS_PROC :INFO  :  - StartAsync(KMDFTest Device ROOT\SAMPLE\0000 ) WDTF_SIMPLEIO_STRESS_PROC :INFO  :  - WaitAsyncCompletion(KMDFTest Device ROOT\SAMPLE\0000 ) WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  no Simple IO Interface was found.
+WDTF_SIMPLE_IO            :INFO  :  - For Target:KMDFTest Device ROOT\SAMPLE\0000  WDTF will use the ANY Simple IO Interface.
+WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Try count 1 WDTF_SUPPORT              :INFO  :  - WaitForMinutes :1 WDTF_SIMPLE_IO            :INFO  :  - PerformIO(KMDFTest Device ROOT\SAMPLE\0000 ) Count 1 WDTF_SIMPLEIO_STRESS_PROC :INFO  :  - Terminate(KMDFTest Device ROOT\SAMPLE\0000 ) process
+
+
 </dd>
+ 
+ 
 <dt><span id="____To_test_all_device_of_a_specific_device_Class___________________"></span><span id="____to_test_all_device_of_a_specific_device_class___________________"></span><span id="____TO_TEST_ALL_DEVICE_OF_A_SPECIFIC_DEVICE_CLASS___________________"></span> 若要测试特定设备类的所有设备：</dt>
 <dd><p>例如，<strong>Class=CDROM</strong> 将测试类为 CDROM 的所有设备。</p>
 <p>例如，<strong>ClassGUID= {36fc9e60-c465-11cf-8056-444553540000}</strong> 将测试类 GUID 与指定 GUID 匹配的所有设备。 在本示例中，GUID 为 USB 类。</p>
