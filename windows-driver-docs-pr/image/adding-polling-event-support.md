@@ -4,12 +4,12 @@ description: 添加轮询事件支持
 ms.assetid: 7c7617d4-22d6-48a8-b69c-dd0347f078dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49cadc544658f1279c73dae86f47ef620d76a25a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7c537f62660a010ed4f5be585c02d7466d1e7cf1
+ms.sourcegitcommit: 06f357860a18d28ee875f33f89a5a0ac2ff02b3f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383410"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225337"
 ---
 # <a name="adding-polling-event-support"></a>添加轮询事件支持
 
@@ -17,42 +17,42 @@ ms.locfileid: "67383410"
 
 
 
-若要正确设置您 WIA 的驱动程序报告轮询事件，请执行以下操作：
+若要正确设置 WIA 驱动程序以报告轮询事件，请执行以下操作：
 
-1.  设置**功能 = 0x33**设备的 INF 文件中。 (请参阅[WIA 设备 INF 文件](inf-files-for-wia-devices.md)有关详细信息。)
+1.  设置设备 INF 文件中的**功能 = 0x33** 。 （有关详细信息，请参阅[用于 WIA 设备的 INF 文件](inf-files-for-wia-devices.md)。）
 
-2.  报告 STI\_GENCAP\_通知和 STI\_美元\_GENCAP\_本机\_PUSHSUPPORT 中的[ **IStiUSD::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)方法。
+2.  在[**PUSHSUPPORT：： IStiUSD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)方法\_中报表\_STI\_GENCAP\_通知和 STI USD\_GENCAP NATIVE\_GetCapabilities。
 
-3.  中的所有报表支持事件[ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法。
+3.  报告[**IWiaMiniDrv：:D rvgetcapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法中所有受支持的事件。
 
-4.  响应对的调用[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法。 WIA 服务调用此方法在预设的间隔的 INF 文件中进行配置。 默认设置为 1 秒时间间隔。
+4.  响应对[**IStiUSD：： GetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法的调用。 WIA 服务按在 INF 文件中可配置的预设间隔调用此方法。 默认设置为1秒的间隔。
 
-5.  报告中的相应的事件信息响应[ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)方法。
+5.  在[**IStiUSD：： GetNotificationData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)方法中报告正确的事件信息响应。
 
-WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
+WIA 服务调用**IStiUSD：： GetStatus**方法执行两个主要操作：
 
-1.  正在检查设备的联机状态。
+1.  检查设备的联机状态。
 
-2.  轮询设备事件，例如已下压按钮的事件。
+2.  轮询设备事件，例如推送按钮事件。
 
-确定操作请求可以通过检查**StatusMask**的成员[ **STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)结构。 **StatusMask**成员可以是以下请求：
+可以通过检查[**STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)结构的**StatusMask**成员来确定操作请求。 **StatusMask**成员可以是以下请求之一：
 
-<a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_ONLINE\_状态  
-此操作请求检查设备是否处于联机状态，并且应设置来填充**dwOnlinesState** STI 成员\_设备\_状态结构。
+<a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_ONLINE状态\_  
+此操作请求检查设备是否处于联机状态，是否应通过设置 STI\_设备\_状态结构的**dwOnlinesState**成员来填充设备。
 
-<a href="" id="sti-devstatus-events-state"></a>STI\_DEVSTATUS\_事件\_状态  
-此操作请求检查设备事件。 它应通过设置填充**dwEventHandlingState** STI 成员\_设备\_状态结构。 应使用的值是 STI\_EVENTHANDLING\_PENDING。 （该设备具有挂起的事件并且正在等待其报告给 WIA 服务）
+<a href="" id="sti-devstatus-events-state"></a>STI\_DEVSTATUS\_事件状态\_  
+此操作请求检查设备事件。 应通过设置 STI\_设备\_状态结构的**dwEventHandlingState**成员来填充它。 应使用的值为 STI\_EVENTHANDLING\_PENDING。 （设备的事件处于挂起状态，正在等待向 WIA 服务报告该事件。）
 
-当 STI\_EVENTHANDLING\_设置 PENDING、 WIA 服务发出信号事件发生 WIA 驱动程序中。 WIA 服务调用**IStiUSD::GetNotificationData**方法以获取有关事件的详细信息。
+设置 STI\_EVENTHANDLING\_PENDING 后，wia 服务将收到有关 wia 驱动程序中发生的事件的信号。 WIA 服务调用**IStiUSD：： GetNotificationData**方法来获取有关事件的详细信息。
 
-**IStiUSD::GetNotificationData**轮询的事件和中断事件的调用方法。 它是在此方法中，您应填写相应的事件信息以返回到 WIA 服务。
+对于轮询事件和中断事件，将调用**IStiUSD：： GetNotificationData**方法。 在此方法中，你应填写适当的事件信息以返回到 WIA 服务。
 
-**请注意**  * * * 始终清除 STI\_EVENTHANDLING\_挂起中标志**dwEventHandlingState**成员以确保它正确设置设备事件发生时。
-此 WIA 驱动程序应设置*m\_guidLastEvent*到相应的事件 GUID 时检测到事件的类成员变量。 *M\_guidLastEvent* WIA 的服务的调用时更高版本同时选中**IStiUSD::GetNotificationData**方法。 *M\_guidLastEvent*中定义成员变量**CWIADevice**类 （在下面的代码段），用于缓存的最后一个事件发出信号。 此成员变量已 WIA 服务请求后，始终设置为 GUID\_NULL。
+**注意：请**  始终清除\_ **dwEventHandlingState**成员中的 STI EVENTHANDLING\_挂起标志，以确保在发生设备事件时正确设置该标志。
+检测到事件时，此 WIA 驱动程序应将*m\_guidLastEvent*类成员变量设置为正确的事件 GUID。 当 WIA 服务调用**IStiUSD：： GetNotificationData**方法时，将检查 *\_m guidLastEvent* 。 *M\_guidLastEvent*成员变量在**CWIADevice**类（在以下代码片段中）中定义，用于缓存最后一个发出信号的事件。 WIA 服务请求此成员变量后，它始终设置为 GUID\_NULL。
 
  
 
-下面的示例演示的实现[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法。
+下面的示例演示[**IStiUSD：： GetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法的实现。
 
 ```cpp
 STDMETHODIMP CWIADevice::GetStatus(PSTI_DEVICE_STATUS pDevStatus)
