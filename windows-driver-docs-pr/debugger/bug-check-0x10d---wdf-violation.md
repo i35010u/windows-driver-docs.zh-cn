@@ -243,7 +243,7 @@ kd> !wdfkd.wdflogdump <WDF_Driver_Name>
 
 如果参数 1 等于**0x4**，使用[ **ln 调试器**](ln--list-nearest-symbols-.md)命令的值与*参数 3*作为其参数来确定函数需要一个非**NULL**参数。
 
-如果参数 1 等于**0x7**，使用 * *！wdfkd.wdfhandle** *Parameter 2*扩展命令，以确定句柄类型。
+如果参数 1 等于**0x7**，使用 **!wdfkd.wdfhandle** *Parameter 2* 扩展命令，以确定句柄类型。
 
 如果参数 1 等于**0xA**，然后 WDF\_队列\_致命错误\_错误\_数据结构将指示有问题的请求或队列句柄。 它还指示 NTSTATUS，如果不是状态\_成功后，可用时。
 
