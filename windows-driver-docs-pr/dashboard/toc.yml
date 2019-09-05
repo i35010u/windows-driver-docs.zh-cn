@@ -6,7 +6,7 @@
       href: hardware-dashboard-faq.md
     - name: 硬件提交
       items:
-        - name: 硬件提交
+        - name: 硬件提交概述
           href: hardware-certification-submissions.md
         - name: 创建新硬件提交
           href: create-a-new-hardware-submission.md
@@ -14,11 +14,11 @@
           href: manage-your-hardware-submissions.md
         - name: 查找硬件提交
           href: find-hardware-submission.md
-        - name: 创建新的 WLK 设备认证提交
+        - name: 提交 WLK 设备认证
           items:
             - name: 创建新的 WLK 设备认证提交
               href: create-a-new-hardware-logo-submission.md
-            - name: Winqual 提交工具 (winqual.exe)
+            - name: 使用 Winqual 提交工具 (winqual.exe)
               href: winqual-submission-tool--winqualexe-.md
         - name: ID 定义
           href: id-definitions.md
@@ -27,12 +27,132 @@
         - name: 如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序
           href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
         - name: 驱动程序外部测试
-          href: driver-flighting.md
+          items:
+            - name: 概述
+              href: driver-flighting.md
+            - name: Microsoft 驱动程序度量
+              href: overview-of-microsoft-driver-measure-dictionary.md
+            - name: 驱动程序度量属性
+              href: measure-attributes.md
+            - name: 系统度量
+              items:
+                - name: 驱动程序安装度量
+                  items:
+                    - name: 驱动程序安装过程成功完成的计算机的百分比
+                      href: pct-machines-where-driver-install-completes-successfully.md
+                    - name: 安装了驱动程序更新并在安装后两天内报告 PnP 错误代码的计算机的百分比
+                      href: pct-machines-installed-driver-update-and-reported-pnp-error-within-2-days.md
+                - name: 可靠性度量
+                  items:
+                    - name: 没有内核模式崩溃的计算机的百分比
+                      href: pct-machines-without-kernel-mode-crash.md
+                    - name: 没有实时内核转储的计算机的百分比
+                      href: pct-machines-without-live-kernel-dump.md
+            - name: 设备类度量
+              items:
+                - name: Audio
+                  items:
+                    - name: 音频度量
+                      href: audio-measures.md
+                    - name: 至少有一次音频流初始化失败的计算机的百分比
+                      href: pct-machines-with-at-least-one-audio-stream-initialization-failure.md
+                    - name: 流初始化成功率低于标准成功率的计算机的百分比
+                      href: pct-machines-with-subpar-stream-initialization-success-rate.md
+                    - name: 至少有一次音频崩溃的计算机的百分比
+                      href: percent-machines-with-at-least-one-audio-crash.md
+                    - name: 至少有一次音频挂起的计算机的百分比
+                      href: pct-machines-with-at-least-one-audio-hang.md
+                - name: 蓝牙
+                  items:
+                    - name: 蓝牙度量
+                      href: bluetooth-measures.md
+                    - name: 蓝牙配对失败次数百分比
+                      href: bluetooth-pairing-failure-rate-per-machine.md
+                    - name: 蓝牙连接失败次数百分比
+                      href: bluetooth-connect-failure-rate-for-machines-with-the-driver.md
+                - name: 相机
+                  items:
+                    - name: 相机度量
+                      href: camera-measures.md
+                    - name: 相机初始化失败次数百分比
+                      href: camera-initialization-failure-rate.md
+                    - name: 相机预览失败次数百分比
+                      href: camera-preview-failure-rate.md
+                    - name: 相机照片捕获失败次数百分比
+                      href: camera-photo-failure-rate.md
+                    - name: 相机视频和流故障次数百分比
+                      href: camera-video-and-stream-failure-rate.md
+                - name: 显卡
+                  items:
+                    - name: 显卡度量
+                      href: graphics-measures.md
+                    - name: 标准和扩展的受众度量
+                      items:
+                        - name: 显卡驱动程序二进制文件中的崩溃导致出现蓝屏的计算机数
+                          href: number-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-expanded.md
+                        - name: 显卡内核中的崩溃导致出现蓝屏的计算机数
+                          href: number-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-kernel.md
+                        - name: 显卡驱动程序二进制文件中的崩溃导致发生了 TDR 的计算机数
+                          href: number-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-expanded.md
+                        - name: 显卡驱动程序二进制文件中的崩溃导致发生了 LKE 的计算机数
+                          href: number-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-expanded.md
+                        - name: Microsoft 照片应用中的用户模式崩溃次数
+                          href: user-mode-reliability-for-crashes-in-microsoft-photos-app-expanded.md
+                        - name: 创意应用程序中的用户模式崩溃次数
+                          href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps-expanded.md
+                        - name: 热门 Microsoft 应用中的用户模式崩溃次数
+                          href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale-expanded.md
+                        - name: Microsoft Edge 中的用户模式崩溃次数
+                          href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale-expanded.md
+                        - name: Windows 组件中的用户模式崩溃次数
+                          href: user-mode-reliability-for-crashes-in-windows-components.md
+                        - name: Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次数百分比
+                          href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
+                    - name: 生态系统受众度量
+                      items:
+                        - name: 显卡驱动程序二进制文件中的崩溃导致出现蓝屏的计算机数
+                          href: number-of-machines-with-bluescreen-caused-by-crash-in-graphics-driver-binary-ecosystem.md
+                        - name: 显卡驱动程序二进制文件中的崩溃导致发生了 LKE 的计算机数
+                          href: number-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-ecosystem.md
+                        - name: Microsoft Edge 中的用户模式崩溃次数
+                          href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale.md
+                        - name: 热门 Microsoft 应用中的用户模式崩溃次数
+                          href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale.md
+                        - name: 创意应用程序中的用户模式崩溃次数
+                          href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps.md
+                        - name: Microsoft 照片应用中的用户模式崩溃次数
+                          href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
+                        - name: Windows 组件中的用户模式崩溃次数
+                          href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
+                        - name: UWP 游戏中的崩溃和挂起次数
+                          href: number-crashes-and-hangs-in-uwp-games.md
+                        - name: Win32 游戏中的崩溃和挂起次数
+                          href: number-crashes-and-hangs-in-win32-games.md
+                        - name: Netflix 上的 SWDRM 播放失败次数百分比
+                          href: pct-swdrm-playback-failures-on-netflix.md
+                        - name: 从低功率状态恢复时出现显示问题的计算机的百分比
+                          href: graphics-display-health-percent-devices-with-display-issues-resume-from-low-power.md
+                        - name: 生态系统 Netflix HWDRM 质量比较
+                          href: ecosystem-netflix-hwdrm-quality-comparison.md
+                - name: WLAN
+                  items:
+                    - name: WLAN 度量
+                      href: wi-fi-measures.md
+                    - name: 'WLAN 连接失败次数百分比（来自前 95% 的设备和接入点对） '
+                      href: percent-of-wifi-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
+                    - name: Internet 连接失败次数百分比（来自信号质量大于 50% 的前 95% 的设备和接入点对）
+                      href: percent-of-internet-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
+                    - name: 在意外断开连接的情况下结束的 WLAN 会话百分比
+                      href: pct-wi-fi-sessions-ending-in-unexpected-disconnect.md
+            - name: 附录
+              href: measure-appendix.md
+            - name: 术语表
+              href: measures-glossary.md
         - name: 使用扩展 INF 文件
           href: submit-dashboard-extension-inf-files.md
         - name: Bug 管理
           href: bug-management.md
-    - name: 使用发货标签管理驱动程序分发
+    - name: 发货标签
       items:
         - name: 使用发货标签管理驱动程序分发
           href: manage-driver-distribution-by-submission.md
@@ -60,9 +180,9 @@
           href: gradual-rollout.md
     - name: 硬件仪表板 API
       items:
-        - name: 硬件仪表板 API
+        - name: 硬件仪表板 API 入门
           href: dashboard-api.md
-        - name: 获取产品数据
+        - name: 产品数据 API
           items:
             - name: 获取产品数据
               href: get-product-data.md
@@ -74,7 +194,7 @@
               href: get-all-submissions.md
             - name: 获取一个提交
               href: get-a-submission.md
-        - name: 管理产品提交
+        - name: 产品提交 API
           items:
             - name: 管理产品提交
               href: manage-product-submissions.md
@@ -88,7 +208,7 @@
               href: update-submission-data.md
             - name: 更新产品数据
               href: update-product-data.md
-        - name: 获取发货标签数据
+        - name: 用于获取发货标签数据的 API
           items:
             - name: 获取发货标签数据
               href: get-shipping-labels.md
@@ -96,7 +216,7 @@
               href: get-all-shipping-labels.md
             - name: 获取发货标签
               href: get-a-shipping-label.md
-        - name: 管理发货标签
+        - name: 用于管理发货标签的 API
           items:
             - name: 管理发货标签
               href: manage-shipping-labels.md
@@ -108,58 +228,10 @@
           href: get-audience-data.md
         - name: 驱动程序包元数据
           href: driver-package-metadata.md
-        - name: 计划自定义报告来提供驱动程序失败详细信息
-          items:
-            - name: 计划自定义报告来提供驱动程序失败详细信息
-              href: schedule-custom-reports-for-driver-failure-details.md
-            - name: 启用安全数据共享
-              href: enable-secure-data-sharing.md
-            - name: 创建新的报告模板
-              href: create-a-new-report-template.md
-            - name: 计划新报告
-              href: schedule-a-new-report.md
-            - name: 获取报告数据
-              href: get-report-data.md
-            - name: 下载失败的 Cab
-              href: download-failure-cabs.md
-        - name: 管理报告模板和计划报告
-          href: manage-report-templates-and-scheduled-reports.md
-        - name: 示例报告模板
-          href: sample-report-templates.md
-        - name: 旧的错误报告数据过程
-          items:
-            - name: 旧的错误报告数据过程
-              href: legacy-error-reporting-data-process.md
-            - name: 获取 Windows 10 驱动程序的错误报告数据
-              items:
-                - name: 获取 Windows 10 驱动程序的错误报告数据
-                  href: get-error-reporting-data-for-windows-10-drivers.md
-                - name: 获取 Windows 10 驱动程序错误的详细信息
-                  href: get-details-for-a-windows-10-driver-error.md
-                - name: 下载 Windows 10 驱动程序错误的 CAB 文件
-                  href: download-the-cab-file-for-a-windows-10-driver-error.md
-            - name: 获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据
-              items:
-                - name: 获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据
-                  href: get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md
-                - name: 获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息
-                  href: get-details-for-a-windows-7-or-windows-8.x-driver-error.md
-                - name: 下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件
-                  href: download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md
-            - name: 获取 OEM 硬件错误报告数据
-              items:
-                - name: 获取 OEM 硬件错误报告数据
-                  href: get-oem-hardware-error-reporting-data.md
-                - name: 获取 OEM 硬件错误的详细信息
-                  href: get-details-for-an-oem-hardware-error.md
-                - name: 下载 OEM 硬件错误的 CAB 文件
-                  href: download-the-cab-file-for-an-oem-hardware-error.md
     - name: 文件签名 LSA 插件和 UEFI 固件
       href: lsa-and-uefi-file-signing.md
     - name: 仪表板管理
       items:
-        - name: 仪表板管理
-          href: dashboard-administration.md
         - name: 硬件计划入门
           href: get-started-with-the-hardware-dashboard.md
         - name: 注册硬件计划
@@ -174,9 +246,7 @@
           href: update-a-code-signing-certificate.md
     - name: 设备元数据
       items:
-        - name: 设备元数据
-          href: device-metadata.md
-        - name: 创建设备元数据体验
+        - name: 设备元数据体验
           items:
             - name: 创建设备元数据体验
               href: create-a-device-metadata-experience.md
@@ -184,9 +254,9 @@
               href: creating-a-preview-package.md
         - name: 管理设备元数据体验
           href: manage-device-metadata-experiences.md
-        - name: 提交设备元数据包（仪表板帮助）
+        - name: 提交设备元数据包
           items:
-            - name: 提交设备元数据包（仪表板帮助）
+            - name: 提交和验证
               href: submit-a-device-metadata-package--dashboard-help-.md
             - name: 创建 LocaleInfo.xml 提交文件
               href: create-the-localeinfoxml-submission-file.md
@@ -202,7 +272,7 @@
               href: errors-and-solutions-when-submitting-device-metadata-experiences.md
         - name: 设备元数据业务规则
           href: device-metadata-business-rules.md
-        - name: 创建移动宽带体验
+        - name: 移动宽带体验
           items:
             - name: 创建移动宽带体验
               href: create-a-mobile-broadband-experience.md
