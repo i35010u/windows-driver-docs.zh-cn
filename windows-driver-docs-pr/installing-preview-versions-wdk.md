@@ -10,16 +10,16 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c034286186c88f231f032c2de031c2780ff04eb3
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: aa0665e141954bb04e37335657e0bee9f731d4a0
+ms.sourcegitcommit: 2c3b8e0ea0e75b72067d2e22dc530390bc19b11e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63339149"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70174697"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 
-此页包含 Windows 驱动程序工具包 (WDK) 的 Insider Preview（预发行）版本的安装说明。 最新预发行版本的 WDK 和 EWDK 的下载链接位于 [https://www.microsoft.com/software-download/windowsinsiderpreviewWDK](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)。  
+此页包含 Windows 驱动程序工具包 (WDK) 的 Insider Preview（预发行）版本的安装说明。 最新预发行版本的 WDK 和 EWDK 的下载链接位于 [https://www.microsoft.com/software-download/windowsinsiderpreviewWDK](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)。  
 
 有关最新**发布**版本的 WDK 的信息，请参阅[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md)。 若要下载早期版本的 WDK，请参阅[其他 WDK 下载](other-wdk-downloads.md)。  
 
