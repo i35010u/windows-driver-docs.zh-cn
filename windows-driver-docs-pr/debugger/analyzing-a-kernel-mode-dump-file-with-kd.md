@@ -26,7 +26,7 @@ ms.locfileid: "70063900"
 
 若要分析转储文件, 请使用 **-z**命令行选项启动 KD:
 
-**kd-y***SymbolPath* **-i***ImagePath* **-z***DumpFileName*
+**kd-y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
 **-V**选项 (详细模式) 也很有用。 有关选项的完整列表, 请参阅[**KD 命令行选项**](kd-command-line-options.md)。
 
