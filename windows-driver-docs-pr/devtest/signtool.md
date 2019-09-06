@@ -244,7 +244,7 @@ SignTool (Signtool) 是一种命令行[CryptoAPI](https://go.microsoft.com/fwlin
 <span id="__"></span> **/?**  
 配置 SignTool 以在命令窗口中显示帮助信息。
 
-<span id="FileName_..."></span><span id="filename_..."></span><span id="FILENAME_..."></span>*FileName .。。*  
+<span id="FileName_..."></span><span id="filename_..."></span><span id="FILENAME_..."></span>*FileName ...*  
 指定一个或多个文件名的列表。 根据命令, SignTool 将对指定的文件进行签名、时间戳或验证。 如果使用**catdb**命令, SignTool 将在目录数据库中添加或删除指定的文件。
 
 对于**sign**、 **timestamp**和**verify**命令, 文件可以是[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)或驱动程序文件的目录文件。

@@ -151,7 +151,7 @@ certutil -user -p pfxpassword -importPFX abc.pfx
 
 **基于**[对驱动程序包的目录文件进行发布签名](release-signing-a-driver-package-s-catalog-file.md):
 
-运行以下命令对对驱动程序包进行签名的 cat 文件进行签名。 /N 命令应使用前面步骤4中的 "使用者" 中所示的带引号的证书名称作为 CN = MyCompany Inc.。
+运行以下命令对对驱动程序包进行签名的 cat 文件进行签名。 /N 命令应使用前面步骤4中的 "使用者" 中所示的带引号的证书名称作为 CN = MyCompany Inc。
 
 ```cpp
 signtool sign /v /ac MSCV-VSClass3.cer /s My /n “MyCompany Inc.“ /t http://timestamp.digicert.com toaster.cat
