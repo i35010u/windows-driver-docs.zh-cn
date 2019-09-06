@@ -1,30 +1,29 @@
 ---
 title: F （Windows 调试器词汇表）
-description: 术语表页-F
-Robots: noindex, nofollow
+description: 词汇表页-F
 ms.assetid: 9e5917b2-0f7d-4d6c-8e92-249b29b546ca
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f609010155859e96d201c0132d5b0ba2038584a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3684975f203fa0ea5732f9cf60f1017b96fcd4d2
+ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377189"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387077"
 ---
 # <a name="f"></a>F
 
 
 <span id="free_build"></span><span id="FREE_BUILD"></span>**免费生成**  
-存在两个不同版本的每个基于 NT 的操作系统：
+每个基于 NT 的操作系统存在两个不同的版本：
 
--   （或） 的 Windows 操作系统的最终用户版本。 系统和驱动程序利用完整的优化，调试断言将被禁用，并且调试信息从二进制文件中去除。 可用系统和驱动程序是更小更快，并使用较少的内存。
--   （或） 的 Windows 可作为测试和调试方面的帮助。 有关详细信息，请参阅调试内部版本。
+-   Windows 的（或）是操作系统的最终用户版本。 系统和驱动程序以完全优化的方式生成，禁用调试断言，并从二进制文件中去除调试信息。 可用的系统和驱动程序更小且更快，且使用的内存更少。
+-   Windows （或）是测试和调试辅助工具。 有关详细信息，请参阅检查的生成。
 
-分发媒体包含操作系统的免费版本不具有任何特殊标签--换而言之，CD 包含免费生成将只是标记为 Windows 版本名称和生成的类型不引用。
+包含操作系统的免费版本的分发媒体没有任何特殊标签，换言之，包含免费版本的 CD 只使用 Windows 版本名称进行标记，而不引用版本类型。
 
-<span id="first_chance_exception"></span><span id="FIRST_CHANCE_EXCEPTION"></span>**首次异常**  
-第一个机会处理异常。 如果第一次机会上的任何处理程序未处理异常，处理程序提供第二次机会。
+<span id="first_chance_exception"></span><span id="FIRST_CHANCE_EXCEPTION"></span>**第一次异常**  
+处理异常的第一次机会。 如果第一次机会上的任何处理程序均未处理异常，则会给出处理程序的第二次机会。
 
  
 

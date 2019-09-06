@@ -9,30 +9,30 @@ keywords:
 - 示例代码 WDK USB 视频类，UVC INF 文件
 ms.date: 09/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 71390fdf0e8d8247d8367547e5dccb022f5635c3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: daee1d82ff9f64741fcb92a843e3bc900c2f8ae4
+ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385688"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387068"
 ---
 # <a name="providing-a-uvc-inf-file"></a>提供 UVC INF 文件
 
-本部分说明了特定于设备的 INF 文件的各个部分。
+本部分说明设备特定 INF 文件的各个部分。
 
-若要提供特定于设备的名称或注册插件扩展单元，可以使用类似如下的 INF 文件。
+此类 INF 文件可用于提供设备特定的名称或注册扩展插件单元。
 
-一般情况下，供应商提供一个安装程序包，可以使用安装包，用例供应商不提供 INF 文件注册插件 DLL。 对于驱动程序签名，它可能更轻松地提供一个安装程序包，而不是特定于设备的 INF 文件。
+通常，提供安装包的供应商可以使用安装包注册插件 DLL，在这种情况下，供应商不提供 INF 文件。 对于驱动程序签名，提供安装包（而不是特定于设备的 INF 文件）可能更容易。
 
-但应注意，您必须通过使用 INF 文件安装此特定示例。
+但请注意，必须使用 INF 文件安装此特定示例。
 
-若要执行此操作，包括下面的代码在 INF 文件中，此处任意名为*Xuplgin.inf*:
+为此，请将以下代码包含在 INF 文件中，并将其任意命名为*Xuplgin*：
 
 ```INF
 ; Copyright (c) CompanyName. All rights reserved.
 
 [Version]
-Signature="$CHICAGO$"
+Signature="$Windows NT$"
 Class=Image
 ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
 Provider=%CompanyName%
@@ -40,35 +40,39 @@ Provider=%CompanyName%
 [SourceDisksNames]
 1=%Package%
 
-[SourceDisksFiles.x86]
+[SourceDisksFiles]
 MyPlugin.ax=1
 
 [ControlFlags]
 ExcludeFromSelect=*
 
 [DestinationDirs]
-MyDevice.CopyList=11    ; %systemroot%\system32 on 
-   NT-based systems
+MyDevice.CopyList=11    ; %systemroot%\system32 on NT-based systems
 
 [Manufacturer]
-%CompanyName%=CompanyName
+%CompanyName%=CompanyName,NT$ARCH$
 ```
 
-设备基于 VID/PID 标识符匹配的特定于设备的 INF 文件。 在这种情况下，特定于设备的 INF 文件将优先于*Usbvideo.inf*。
+设备特定的 INF 文件与基于 VID/PID 标识符的设备匹配。 在这种情况下，特定于设备的 INF 文件优先于*Usbvideo*。
 
 ```INF
-[CompanyName]
+[CompanyName.NT$ARCH$]
 %MyDevice.DeviceDesc%=MyDevice,USB\Vid_XXXX&Pid_XXXX&MI_XX
 
-[MyDevice.NT]
+[MyDevice]
 Include=usbvideo.inf, ks.inf, kscaptur.inf, dshowext.inf
-Needs=USBVideo.NT, KS.Registration, KSCAPTUR.Registration.NT,
-DSHOWEXT.Registration
+Needs=USBVideo.NT, KS.Registration, KSCAPTUR.Registration.NT, DSHOWEXT.Registration
 AddReg=MyDevice.Plugins
 CopyFiles=MyDevice.CopyList
 ```
 
-INF 文件的以下部分显示基于节点的扩展单元的注册表条目插件。 请参阅*Usbvideo.inf*为相似的示例。
+INF 还需要 CopyFiles 部分，将插件复制到系统文件夹。
+```INF
+[MyDevice.CopyList]
+MyPlugin.ax
+```
+
+以下 INF AddReg 部分的第一部分将注册该插件。  此部分的剩余部分显示基于节点的扩展单元插件的注册表项。 有关类似示例，请参阅*Usbvideo。*
 
 ```INF
 [MyDevice.PlugIns]
@@ -87,8 +91,10 @@ HKLM,System\CurrentControlSet\Control\NodeInterfaces\%XU_GUID%,
    CLSID,1,zz,zz,zz,zz,zz,zz,zz,zz,zz,zz,zz,zz,zz,zz,zz,zz
 ```
 
+以下 INF 部分显示了如何填充特定于接口的注册表项。
+
 ```INF
-[MyDevice.NT.Interfaces]
+[MyDevice.Interfaces]
 AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,MyDevice.Interface
 AddInterface=%KSCATEGORY_RENDER%,GLOBAL,MyDevice.Interface
 AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,MyDevice.Interface
@@ -102,9 +108,13 @@ HKR,,FriendlyName,,%MyDevice.DeviceDesc%
 HKR,,RTCFlags,0x00010001,0x00000010
 ```
 
-用于 USB 摄像机，如果设备接口注册表项位置中包含的 DWORD 注册表项**EnableDependentStillPinCapture**具有非零值，这种照相机上的依赖 pin 将使用照片拍摄的。 如果注册表项不存在，或者设置为零，将不使用依赖的 pin。 相反，将完成照片拍摄使用从预览针拍摄的帧。
+对于 USB 摄像机，如果设备接口注册表项的位置包含的 DWORD 注册表项**EnableDependentStillPinCapture**的值为非零值，则会将此类相机上的相关 pin 用于照片捕获。 如果注册表项不存在或设置为零，则不会使用该依赖 pin。 相反，照片捕获将使用从预览 pin 拍摄的帧完成。  以下内容启用依赖静止 pin 捕获：
 
-您还可以定义一个可选的注册表值称为**UvcFlags**。 **UvcFlags**应为 DWORD 值。 当在插入设备时，UVC 驱动程序将接收插即用 (PnP) 启动请求。 然后，该驱动程序搜索的**UvcFlags**设备注册表项中。 将 DWORD 值是一个位掩码，并且可以包含下表中的值。
+```INF
+HKR,,EnableDependentStillPinCapture,0x00010001,1
+```
+
+还可以定义一个名为**UvcFlags**的可选注册表值。 **UvcFlags**应为 DWORD 值。 设备接通电源时，UVC 驱动程序将收到即插即用（PnP）启动请求。 然后，驱动程序会在设备注册表项中搜索**UvcFlags** 。 DWORD 值是一个位掩码，可以包含下表中的值。
 
 <table>
 <colgroup>
@@ -121,7 +131,7 @@ HKR,,RTCFlags,0x00010001,0x00000010
 <tr class="even">
 <td><p>WORKAROUNDS_DV_INTERLEAVED_DEFAULT_MASK</p></td>
 <td><p>0x00000001</p></td>
-<td><p>UVC 支持仅限视频的数据范围和交错的 DV 数据范围。 为交错 DV 设置此位掩码。</p></td>
+<td><p>UVC 支持仅视频数据范围和交错 DV 数据范围。 为交错 DV 设置此位掩码。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WORKAROUNDS_SUPPRESS_CLOCK_MASK</p></td>
@@ -131,49 +141,36 @@ HKR,,RTCFlags,0x00010001,0x00000010
 <tr class="even">
 <td><p>WORKAROUNDS_MPEG2TS_SUPPORT_FID</p></td>
 <td><p>0x00000004</p></td>
-<td><p>FID 屏蔽，指示流标头包含 FID 位。</p></td>
+<td><p>FID 掩码指示 stream 标头包含 FID 位。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WORKAROUNDS_MPEG2TS_SUPPORT_EOF</p></td>
 <td><p>0x00000008</p></td>
-<td><p>EOF 屏蔽，指示负载标头包含结束帧位。</p></td>
+<td><p>EOF 掩码指示负载标头包含帧尾位。</p></td>
 </tr>
 <tr class="even">
 <td><p>WORKAROUNDS_VARIABLE_FRAME_RATE_MASK</p></td>
 <td><p>0x00000010</p></td>
-<td><p>如果你的设备可能会不同帧速率，请设置此掩码。 固定速率 DV 设备不应设置此掩码。</p></td>
+<td><p>如果设备可能会改变帧速率，请设置此掩码。 固定速率 DV 设备不应设置此掩码。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-包括类似于下面的示例来指定要应用的位掩码的行：
+包括类似于以下示例的行，以指定要应用的位掩码：
 
 ```INF
 HKR,,UvcFlags,0x00010001,0x00000010
 ```
 
-如果在 Windows Server 2003 和 Windows Vista 或更高版本的操作系统上使用 UVC 驱动程序，可以与基于流的格式，如 mpeg-2 TS 使用 FID 和 EOF 掩码。
+如果在 Windows Server 2003 和 Windows Vista 或更高版本的操作系统上使用 UVC 驱动程序，则可以将 FID 和 EOF 掩码与基于流的格式（如 MPEG-2 TS）结合使用。
 
-在较低的帧速率情况下，EOF 位可能会比以下框架的 FID 位更快地报告完成。 EOF 位可用来减少延迟的 mpeg-2 帧传递。
+在较低的帧速率条件下，EOF 位的报告完成速度可能比下帧的 FID 位更快。 EOF 位可用于减少在传递 MPEG-2 帧时的延迟。
 
-AddReg 指令的位置的语法的详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+有关 AddReg 指令的位置语法的详细信息，请参阅[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
-```INF
-[MyDevice.NT.Services]
-AddService = usbvideo,0x00000002,MyDevice.ServiceInstall
-
-[MyDevice.ServiceInstall]
-DisplayName   = %USBVideo.SvcDesc%
-ServiceType   = %SERVICE_KERNEL_DRIVER%
-StartType     = %SERVICE_DEMAND_START%
-ErrorControl  = %SERVICE_ERROR_NORMAL%
-ServiceBinary = %10%\System32\Drivers\usbvideo.sys
-
-[MyDevice.CopyList]
-MyPlugin.ax
-```
+最后一节提供缺少 INF 的定义。
 
 ```INF
 [Strings]
@@ -184,15 +181,11 @@ XU_GUID="{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}"
 KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
 KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
 KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
-SERVICE_KERNEL_DRIVER=1
-SERVICE_DEMAND_START=3
-SERVICE_ERROR_NORMAL=1
 
 ; Localizable
 CompanyName="CompanyName"
 Package="Installation Package"
 MyDevice.DeviceDesc="CompanyName Camera"
-USBVideo.SvcDesc="USB Video Device (WDM)"
 
 PlugIn_IMyExtensionUnit="CompanyName Extension Unit Interface"
 ```
