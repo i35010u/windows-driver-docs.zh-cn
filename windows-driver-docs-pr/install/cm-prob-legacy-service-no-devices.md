@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 215af1fc2dbaa24f4ee94348e3258628f3959490
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562774"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70750014"
 ---
-# <a name="cmproblegacyservicenodevices"></a>CM_PROB_LEGACY_SERVICE_NO_DEVICES
+# <a name="cm_prob_legacy_service_no_devices"></a>CM_PROB_LEGACY_SERVICE_NO_DEVICES
 
 此函数保留供系统使用。
 
@@ -25,10 +25,10 @@ ms.locfileid: "56562774"
 
 ### <a name="display-message"></a>显示消息
 
-"Windows 成功地加载这个硬件设备驱动程序但找不到硬件设备。 （代码 41）"
+"Windows 已成功加载此硬件的设备驱动程序，但找不到硬件设备。 （代码41） "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
 重新安装该设备。
 
-这是一种旧根服务，未创建设备对象。
+这是不创建设备对象的旧根服务。

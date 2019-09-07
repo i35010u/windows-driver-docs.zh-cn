@@ -5,19 +5,19 @@ ms.assetid: 6873f5b6-453e-4f8e-b534-0bc805865905
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66dace2065e2d9ee6c87c6720e028c2dd89f5dec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564680"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70750042"
 ---
 # <a name="modelid"></a>ModelID
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-ModelID 元素指定的物理设备的 GUID。
+ModelID 元素指定物理设备的 GUID。
 
-**谨慎**   [ModelIDList](modelidlist.md)和 ModelID 元素不支持的服务元数据包。 必须使用[HardwareIDList](hardwareidlist.md)并[HardwareID](hardwareid.md)元素相反。
+**请注意**   ，服务元数据包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用[HardwareIDList](hardwareidlist.md)和[HardwareID](hardwareid.md)元素。
 
  
 
@@ -35,17 +35,17 @@ ModelID 元素指定的物理设备的 GUID。
 
 没有特性。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-一个值，格式为[GUIDType](guidtype-packageinfo.md) XML 的简单类型。
+格式为[GUIDType](guidtype-packageinfo.md) XML 简单类型的值。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 没有子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -62,36 +62,36 @@ ModelID 元素指定的物理设备的 GUID。
 <tbody>
 <tr class="odd">
 <td><p><a href="modelidlist.md" data-raw-source="[ModelIDList](modelidlist.md)">ModelIDList</a></p></td>
-<td><p><a href="modelidlist.md" data-raw-source="[ModelIDList](modelidlist.md)">ModelIDList</a>元素指定每个支持的设备元数据包中指定的设备的硬件模型的 GUID。</p></td>
+<td><p><a href="modelidlist.md" data-raw-source="[ModelIDList](modelidlist.md)">ModelIDList</a>元素指定设备元数据包中指定的设备所支持的每个硬件型号的 GUID。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-ModelID 元素指定支持的设备的硬件模型的模型 ID。 通过 GUID 指定每个模型 ID。
+ModelID 元素指定设备支持的硬件型号的模型 ID。 每个模型 ID 都通过 GUID 来指定。
 
-**谨慎**   [ModelIDList](modelidlist.md)和 ModelID 元素不支持的服务元数据包。 必须使用[HardwareIDList](hardwareidlist.md)并[HardwareID](hardwareid.md)元素相反。
+**请注意**   ，服务元数据包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用[HardwareIDList](hardwareidlist.md)和[HardwareID](hardwareid.md)元素。
 
  
 
-模型 Id 基于业务定义或 SKU 的物理设备。 每个模型 ID 必须是唯一的所有品牌和型号的物理设备。
+模型 Id 基于物理设备的业务定义或 SKU。 每个模型 ID 对于物理设备的所有构成和型号都必须是唯一的。
 
-以下列表描述了硬件和模型 Id。 对于物理设备之间的差异：
+以下列表描述了物理设备的硬件和型号 Id 之间的差异：
 
--   通过指定硬件 Id [HardwareID](hardwareid.md)元素，标识硬件函数基于特定于总线的值。 硬件 Id 可以将设备驱动程序映射到设备实例。 例如，具有相同的硬件 ID 的两个设备共享相同的驱动程序使用的功能接口。
+-   硬件 Id，通过[HardwareID](hardwareid.md)元素指定，基于特定于总线的值识别硬件功能。 硬件 Id 可能会将设备驱动程序映射到设备实例。 例如，两个具有相同硬件 ID 的设备共享同一驱动程序使用的功能接口。
 
--   通过 ModelID 元素指定的模型 Id 启用来唯一标识物理设备的总线或接口技术独立的 OEM 或独立硬件供应商 (IHV)。 例如，具有不同的模型 Id 的两个设备可能具有其组件的相同硬件 Id。
+-   模型 Id，通过 ModelID 元素指定，使 OEM 或独立硬件供应商（IHV）能够唯一识别独立于总线或接口技术的物理设备。 例如，两个具有不同模型 Id 的设备可能为其组件具有相同的硬件 Id。
 
--   硬件 Id 将映射到特定的总线或接口上的设备实例的设备元数据包。
+-   硬件 Id 将设备元数据包映射到特定总线或接口上的设备实例。
 
--   模型 Id 映射到物理设备，而不考虑如何将设备连接到计算机的设备元数据包。
+-   无论设备连接到计算机的方式如何，模型 Id 都将设备元数据包映射到物理设备。
 
  
 
