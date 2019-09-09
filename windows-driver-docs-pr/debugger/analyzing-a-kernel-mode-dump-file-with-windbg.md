@@ -26,7 +26,7 @@ WinDbg 可以分析内核模式内存转储文件。 创建转储文件的处理
 
 若要分析转储文件, 请使用 **-z**命令行选项启动 WinDbg:
 
-**windbg-y***SymbolPath* **-i***ImagePath* **-z***DumpFileName*
+**windbg-y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
 **-V**选项 (详细模式) 也很有用。 有关选项的完整列表, 请参阅[**WinDbg 命令行选项**](windbg-command-line-options.md)。
 
