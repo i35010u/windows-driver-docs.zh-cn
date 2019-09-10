@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 12de66c44cafd8e06ceb3277510b447f94052a6a
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/09/2019
 ms.locfileid: "70025333"
 ---
 # <a name="bug-check-0x1e-kmode_exception_not_handled"></a>Bug 检查 0x1E：\_未\_处理KMODE\_异常
@@ -26,7 +26,7 @@ ms.locfileid: "70025333"
 未\_\_处理的KMODE异常bug检查的值为0x0000001e。\_ 这表示内核模式程序生成了错误处理程序未捕获的异常。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户, 请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="kmode_exception_not_handled-parameters"></a>KMODE\_异常\_未\_处理的参数
@@ -68,9 +68,9 @@ ms.locfileid: "70025333"
 <a name="cause"></a>原因
 -----
 
-若要解释此 bug 检查, 必须确定生成的异常。
+若要解释此 bug 检查，必须确定生成的异常。
 
-常见的异常代码包括:
+常见的异常代码包括：
 
 -   数0x80000002状态\_数据\_类型不一致
 
@@ -82,47 +82,47 @@ ms.locfileid: "70025333"
 
 -   0XC0000005状态\_访问\_冲突
 
-    发生了内存访问冲突。 (Bug 检查的参数4是驱动程序尝试访问的地址。)
+    发生了内存访问冲突。 （Bug 检查的参数4是驱动程序尝试访问的地址。）
 
-有关异常代码的完整列表, 请参阅[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 异常代码还会在[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/)的 "inc" 目录中的 ntstatus 文件中列出。
+有关异常代码的完整列表，请参阅[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 异常代码还会在[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/)的 "inc" 目录中的 ntstatus 文件中列出。
 
 
 <a name="remarks"></a>备注
 ----------
 
-**如果你不打算调试此问题**, 则可以使用[**蓝色屏幕数据**](blue-screen-data.md)中所述的一些基本故障排除技术。 如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
+**如果你不打算调试此问题**，则可以使用[**蓝色屏幕数据**](blue-screen-data.md)中所述的一些基本故障排除技术。 如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
 
 **硬件不兼容**
 
-确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如, 可以在[Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
+确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如，可以在[Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
 
 **设备驱动程序或系统服务错误**
 
-此外, 错误的设备驱动程序或系统服务可能会导致此错误。 硬件问题 (例如 BIOS 不兼容、内存冲突和 IRQ 冲突) 也可能生成此错误。
+此外，错误的设备驱动程序或系统服务可能会导致此错误。 硬件问题（例如 BIOS 不兼容、内存冲突和 IRQ 冲突）也可能生成此错误。
 
-如果在 bug 检查消息中按名称列出了驱动程序, 请禁用或删除该驱动程序。 禁用或删除最近添加的任何驱动程序或服务。 如果在启动序列过程中出现错误, 并且使用 NTFS 文件系统格式化系统分区, 则可以使用安全模式禁用设备管理器中的驱动程序。
+如果在 bug 检查消息中按名称列出了驱动程序，请禁用或删除该驱动程序。 禁用或删除最近添加的任何驱动程序或服务。 如果在启动序列过程中出现错误，并且使用 NTFS 文件系统格式化系统分区，则可以使用安全模式禁用设备管理器中的驱动程序。
 
-检查中的系统日志事件查看器是否有其他错误消息, 这些错误消息可能有助于找出导致 bug 检查0x1E 的设备或驱动程序。 还应运行硬件诊断, 尤其是系统制造商提供的内存扫描器。 有关这些过程的详细信息, 请参阅计算机所有者手册。
+检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致 bug 检查0x1E 的设备或驱动程序。 还应运行硬件诊断，尤其是系统制造商提供的内存扫描器。 有关这些过程的详细信息，请参阅计算机所有者手册。
 
-在 Windows 安装程序期间或安装完成后, 可能会在首次重新启动之后出现生成此消息的错误。 此错误的可能原因是系统 BIOS 不兼容。 可以通过升级系统 BIOS 版本来解决 BIOS 问题。
+在 Windows 安装程序期间或安装完成后，可能会在首次重新启动之后出现生成此消息的错误。 此错误的可能原因是系统 BIOS 不兼容。 可以通过升级系统 BIOS 版本来解决 BIOS 问题。
 
 <a name="resolution"></a>分辨率
 ----------
 
-**如果打算调试此问题**, 您可能会发现很难获得堆栈跟踪。 参数 2 (异常地址) 应查明导致此问题的驱动程序或函数。
+**如果打算调试此问题**，您可能会发现很难获得堆栈跟踪。 参数2（异常地址）应查明导致此问题的驱动程序或函数。
 
-如果发生异常代码 0x80000003, 则表示已命中硬编码断点或断言, 但系统是使用 **/NODEBUG**开关启动的。 此问题很少发生。 如果它重复发生, 请确保已连接内核调试器, 并使用 **/debug**开关启动系统。
+如果发生异常代码0x80000003，则表示已命中硬编码断点或断言，但系统是使用 **/NODEBUG**开关启动的。 此问题很少发生。 如果它重复发生，请确保已连接内核调试器，并使用 **/debug**开关启动系统。
 
-如果发生异常代码数 0x80000002, 陷阱帧会提供其他信息。
+如果发生异常代码数0x80000002，陷阱帧会提供其他信息。
 
-如果异常的特定原因未知, 应考虑以下事项:
+如果异常的特定原因未知，应考虑以下事项：
 
 
-**如果正常堆栈跟踪过程失败, 则获取堆栈跟踪**
+**如果正常堆栈跟踪过程失败，则获取堆栈跟踪**
 
-1.  使用[**kb (显示 Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令可在堆栈跟踪中显示参数。 查找对**NT!PspUnhandledExceptionInSystemThread**。 (如果未列出此函数, 请参阅下面的说明。)
+1.  使用[**kb （显示 Stack Backtrace）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令可在堆栈跟踪中显示参数。 查找对**NT！PspUnhandledExceptionInSystemThread**。 （如果未列出此函数，请参阅下面的说明。）
 
-2.  NT! 的第一个参数**PspUnhandledExceptionInSystemThread**是指向结构的指针, 该结构包含指向**except**语句的指针:
+2.  NT！的第一个参数**PspUnhandledExceptionInSystemThread**是指向结构的指针，该结构包含指向**except**语句的指针：
 
     ```cpp
     typedef struct _EXCEPTION_POINTERS {
@@ -135,17 +135,17 @@ ms.locfileid: "70025333"
         )
     ```
 
-    使用该地址上的[**dd (显示内存)** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令显示所需数据。
+    使用该地址上的[**dd （显示内存）** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令显示所需数据。
 
-3.  第一个检索到的值是异常记录, 第二个值是上下文记录。 分别使用[ **.exr (显示异常记录)** ](-exr--display-exception-record-.md)命令和[ **.Cxr (显示上下文记录)** ](-cxr--display-context-record-.md)命令, 并将这两个值作为其参数。
+3.  第一个检索到的值是异常记录，第二个值是上下文记录。 分别使用[ **.exr （显示异常记录）** ](-exr--display-exception-record-.md)命令和[ **.Cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令，并将这两个值作为其参数。
 
-4.  执行 **.cxr**命令后, 使用**kb**命令显示基于上下文记录信息的堆栈跟踪。 此堆栈跟踪指示出现未处理异常的调用堆栈。
+4.  执行 **.cxr**命令后，使用**kb**命令显示基于上下文记录信息的堆栈跟踪。 此堆栈跟踪指示出现未处理异常的调用堆栈。
 
-**请注意**  , 此过程假定您可以找到**NT!PspUnhandledExceptionInSystemThread**。 但是, 在某些情况下 (如访问冲突崩溃), 将无法执行此操作。 在这种情况下, 请查找**ntoskrnl.exe!KiDispatchException**。 传递给此函数的第三个参数是一个陷阱帧地址。 使用带有此地址的 "[**陷阱 (显示陷印帧)** ](-trap--display-trap-frame-.md) " 命令可将寄存器上下文设置为合适的值。 然后, 你可以执行堆栈跟踪并发出其他命令。
+**请注意**  ，此过程假定您可以找到**NT！PspUnhandledExceptionInSystemThread**。 但是，在某些情况下（如访问冲突崩溃），将无法执行此操作。 在这种情况下，请查找**ntoskrnl.exe！KiDispatchException**。 传递给此函数的第三个参数是一个陷阱帧地址。 使用带有此地址的 "[**陷阱（显示陷印帧）** ](-trap--display-trap-frame-.md) " 命令可将寄存器上下文设置为合适的值。 然后，你可以执行堆栈跟踪并发出其他命令。
 
  
 
-以下是 x86 处理器上的 bug 检查0x1E 的示例:
+以下是 x86 处理器上的 bug 检查0x1E 的示例：
 
 ```dbgcmd
 kd> .bugcheck                 get the bug check data
