@@ -18,4 +18,4 @@ ms.locfileid: "70839647"
 
 有关联锁操作的详细信息，请参阅[联锁变量访问](https://docs.microsoft.com/windows/desktop/Sync/interlocked-variable-access)。
 
-**注意** **联锁 * Xxx*** 函数在基于*小型端口 .h*中声明，对于32位（x86）驱动程序，则在*storport. h*中声明。
+**注意** **联锁 *Xxx*** 函数在基于*小型端口 .h*中声明，对于32位（x86）驱动程序，则在*storport. h*中声明。
