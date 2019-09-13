@@ -834,6 +834,10 @@
           href: javascript-debugger-example-scripts.md
         - name: JavaScript 扩展中的本机调试器对象
           href: native-objects-in-javascript-extensions.md
+        - name: JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
+          href: native-objects-in-javascript-extensions-debugger-objects.md
+        - name: JavaScript 扩展中的本机调试器对象 - 设计注意事项
+          href: native-objects-in-javascript-extensions-design-considerations.md
     - name: NatVis 中的本机调试器对象
       href: native-debugger-objects-in-natvis.md
     - name: 将 LINQ 与调试器对象配合使用
