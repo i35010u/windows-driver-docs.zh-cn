@@ -1,74 +1,46 @@
 ---
 title: 调试器数据模型 C++ 的其他接口
-description: 本主题介绍与调试器相关联的其他接口C++数据模型，如元数据、 概念和对象的枚举。
-ms.date: 10/05/2018
-ms.openlocfilehash: 3c0a9f9f11accd8d78a90b110cfae38d77257412
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+description: 本主题介绍与调试器C++数据模型（如元数据、概念和对象枚举）关联的其他接口。
+ms.date: 09/12/2018
+ms.openlocfilehash: 9821136cbe22c8791a2dde379ccb149775c4ee9d
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374963"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930387"
 ---
 # <a name="debugger-data-model-c-additional-interfaces"></a>调试器数据模型 C++ 的其他接口
 
-本主题介绍一些与调试器相关联的其他接口C++数据模型，如元数据、 概念和对象的枚举。
+本主题介绍与调试器C++数据模型关联的一些附加接口，如元数据、概念和对象枚举。
 
-本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
+## <a name="span-idmetadatainterfacesspan-debugger-data-model-metadata-interfaces"></a><span id="metadatainterfaces"></span>调试器数据模型元数据接口
 
----
+数据模型中的核心观念之一是，对象（特别是合成一个）是键/值/元组的字典。 每个密钥都可以有与之关联的元数据的整个存储区，该存储区描述密钥及其潜在值周围的各种情况。 请注意，元数据不会以任何方式更改密钥的值。 它只是与键及其值相关联的辅助信息，这可能会影响该项的表示形式或其他关联特性及其值。 
 
-[调试器数据模型C++概述](data-model-cpp-overview.md)
+在某些情况下，元数据存储区并不是与数据模型中的对象实质上的键/值元元组不同。 不过，它在此视图中进行了简化。 元数据存储区由 IKeyStore 接口表示。 同时还包含键/值/元数据元组的集合，但可以对元数据密钥存储和模型对象执行的操作有限制： 
 
-[调试器数据模型C++接口](data-model-cpp-interfaces.md)
+- 一个密钥存储只能有一个父存储，而不能具有父模型的任意链。
+- 密钥存储没有任何概念。 它只能包含键/值/元组的字典。 这意味着密钥存储中的密钥是静态的。 动态语言系统不能按需创建它们。
+- 根据约定，元数据定义的密钥存储中的值仅限于基本值（内部函数和属性访问器）
 
-[调试器数据模型C++对象](data-model-cpp-objects.md)
-
-[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
-
-[调试器数据模型C++概念](data-model-cpp-concepts.md)
-
-[调试器数据模型C++脚本](data-model-cpp-scripting.md)
-
----
-
-## <a name="topic-sections"></a>主题部分
-
-本主题包含以下部分：
-
-[调试器数据模型元数据接口](#metadatainterfaces)
-
-[数据模型中的对象枚举](#object)
-
----
-
-## <a name="span-idmetadatainterfacesspan-debugger-data-model-metadata-interfaces"></a><span id="metadatainterfaces"></span> 调试器数据模型元数据接口
-
-核心概念数据模型中的一个是对象 （尤其是合成一个） 是元数据键/值元组的字典。 每个密钥可以有与之关联的介绍有很多事情周围的键和其可能值的元数据的整个存储库。 请注意，元数据不会以任何方式更改密钥的值。 它是仅辅助信息关联的键和其值，该值可能会影响此演示文稿或其他关联的特性的键和其值。 
-
-在某种意义上，元数据存储区不是数据模型中的对象的本质的元数据键/值元组的差异。 它，但是，从简化此视图。 元数据存储区由 IKeyStore 接口表示。 同时还元数据键/值元组的集合，有什么可以完成与模型对象的元数据密钥存储限制： 
-
-- 密钥存储只能有单个父存储区--它不能有一种任意的父模型链。
-- 密钥存储中有没有概念。 它只能有元数据键/值元组的字典。 这意味着，密钥存储中存在的键是静态的。 它们可以创建按需动态语言系统。
-- 仅显示约定中定义的元数据密钥存储的值被限制为基本值 （内部函数和属性访问器）
-
-虽然密钥存储的密钥可以具有任意数量 （和任意命名），但在某些定义了语义值的名称。 目前，这些名称是： 
+密钥存储区可以具有任意数量的密钥（以及任意命名），而某些名称有一些定义了语义值的名称。 目前，这些名称为： 
 
 项名称 | 值类型 | 描述
 |--------------|------------------|--------------|
-PreferredRadix | 整数：2、 8、 10 或 16 | 指示一个序号值，应显示在哪个基数
-PreferredFormat | 整数： 定义由 PreferredFormat 枚举 | 指示值的显示的首选格式设置类型
-PreferredLength | 整型 | 有关数组和其他容器，指示应默认情况下显示的元素数量
-FindDerivation | 布尔 | 指示是否调试主机应执行派生的类型分析的值在使用之前 (例如： 显示)
-Help | 字符串 | 通过适当地有用的方法中的用户界面的键可以显示的工具提示样式的帮助文本。
-ActionName | 字符串 | 指示给定的方法 （其中一个不采用任何参数，并不返回任何值） 操作。 在元数据中指定的操作的名称。 用户界面可使用此名称以显示上下文菜单或其他适当的接口中的选项
-ActionIsDefault | 布尔 | 仅指定键，则的 ActionName 指示这是该对象的默认操作才有效。
-ActionDescription | 字符串 | 唯一有效如果指定 ActionName 密钥，这样，该操作的工具提示样式说明。 可通过用户界面以相应地有帮助的方式展示此类文本。
+PreferredRadix | 整数2、8、10或16 | 指示应在其中显示序数值的基数
+PreferredFormat | Integer： PreferredFormat 枚举定义的 | 指示用于显示值的首选格式设置类型
+PreferredLength | 整型 | 对于数组和其他容器，指示默认情况下应显示的元素数
+FindDerivation | Boolean | 指示在使用之前，调试宿主是否应对值执行派生类型分析（例如：显示）
+Help | 字符串 | 用于密钥的工具提示文本，用户界面可以提供相应的有用方式。
+ActionName | 字符串 | 指示给定方法（不带任何参数且不返回任何值）是操作。 在元数据中指定操作的名称。 用户界面可以利用此名称来显示上下文菜单或其他相应接口中的选项
+ActionIsDefault | Boolean | 仅在指定 ActionName 键时有效，指示这是对象的默认操作。
+ActionDescription | String | 仅当指定了 ActionName 键时，这将提供操作的工具提示样式说明。 用户界面可以以适当的方式提供此类文本。
 
-请注意，虽然元数据存储区中的键可以有自己的元数据 (ad infiniteum)，目前尚无需使用此类。 大多数调用方将指定 IKeyStore 接口上的方法中的任何元数据参数为 null。 
+请注意，元数据存储区中的密钥可以有自己的元数据（ad infiniteum），因此目前不会使用此类元数据。 大多数调用方将为 IKeyStore 接口上的方法中的任何元数据参数指定 null。 
 
 **核心元数据接口：IKeyStore**
 
-IKeyStore 接口定义，如下所示： 
+IKeyStore 接口定义如下： 
 
 ```cpp
 DECLARE_INTERFACE_(IKeyStore, IUnknown)
@@ -83,40 +55,40 @@ DECLARE_INTERFACE_(IKeyStore, IUnknown)
 
 [GetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-getkey)
 
-GetKey 方法相当于 IModelObject GetKey 方法。 如果它存在于密钥存储或密钥存储父存储区中，它将返回指定键的值。 请注意，是否键的值属性访问器，GetValue 方法不会调用在属性访问器上。 将返回实际 IModelPropertyAccessor 到 IModelObject 装箱。 它是典型客户端将出于此原因调用 GetKeyValue。 
+GetKey 方法类似于 IModelObject 上的 GetKey 方法。 它将返回指定键的值（如果它存在于密钥存储区或密钥存储的父存储区中）。 请注意，如果键的值为属性访问器，则不会在属性访问器上调用 GetValue 方法。 将返回装箱到 IModelObject 中的实际 IModelPropertyAccessor。 通常，出于此原因，客户端将调用 GetKeyValue。 
 
 [SetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-setkey)
 
-Setkey 权限方法相当于 IModelObject 的 setkey 权限方法。 它是能够创建密钥并将元数据与它关联的密钥存储内的唯一方法。 
+SetKey 方法类似于 IModelObject 上的 SetKey 方法。 这是唯一一种可在密钥存储中创建密钥并将其与之相关联的方法。 
 
 [GetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-getkeyvalue)
 
-GetKeyValue 方法是为了在元数据存储区中查找特定项的值，客户端将转到第一种方法。 如果指定的密钥参数的键存在，则将在应用商店 （或它的父存储区） 中，返回该注册表项和与之关联的任何元数据的值。 如果键的值属性访问器 (装箱到 IModelObject IModelPropertyAccessor)，自动将 GetKeyValue 和返回的属性的基础值由调用属性访问器的 GetValue 方法。 
+GetKeyValue 方法是客户端将进行的第一种方法，以便在元数据存储中查找特定键的值。 如果存储区（或它的父存储区）中存在由密钥参数指定的密钥，则将返回该密钥的值以及与其关联的所有元数据。 如果该注册表项的值是属性访问器（装箱到 IModelObject 中的 IModelPropertyAccessor），则 GetKeyValue 将自动调用属性访问器的 GetValue 方法，并返回该属性的基础值。 
 
 [SetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-setkeyvalue)
 
-SetKeyValue 方法相当于 IModelObject SetKeyValue 方法。 此方法不能创建新的密钥元数据存储区中。 如果没有现有的密钥由键参数，则其值将设置所示。 如果对密钥进行属性访问器，SetValue 方法将调用在属性访问器上要设置的基础值。 请注意，元数据通常都是静态一次创建。 使用元数据密钥存储在此方法应很少。 
+SetKeyValue 方法类似于 IModelObject 上的 SetKeyValue 方法。 此方法无法在元数据存储区中创建新密钥。 如果有密钥参数所指示的现有密钥，则会按指示设置其值。 如果该键是属性访问器，则将对属性访问器调用 SetValue 方法，以便设置基础值。 请注意，元数据在创建后通常是静态的。 在元数据密钥存储上使用此方法应很少发生。 
 
 [ClearKeys](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeystore-clearkeys)
 
-ClearKeys 方法相当于 IModelObject ClearKeys 方法。 它将从给定的元数据存储中删除每个键。 此方法不起任何父存储区上。 
+ClearKeys 方法类似于 IModelObject 上的 ClearKeys 方法。 它将从给定的元数据存储区中移除每个键。 此方法对任何父存储区不起作用。 
 
 
-## <a name="span-idobjectspan-object-enumeration-in-the-data-model"></a><span id="object"></span> 数据模型中的对象枚举
+## <a name="span-idobjectspan-object-enumeration-in-the-data-model"></a><span id="object"></span>数据模型中的对象枚举
 
 **枚举数据模型中的对象**
 
-数据模型中有两个核心键的枚举接口：IKeyEnumerator 和 IRawEnumerator。 虽然这些都是两个核心接口，它们可用于枚举中一个三种样式的对象： 
+数据模型中有两个核心密钥枚举接口：IKeyEnumerator 和 IRawEnumerator。 虽然这两个核心接口都是两个核心接口，但它们可用于使用以下三种样式之一枚举对象： 
 
-*密钥*-IKeyEnumerator 接口才能获取通过调用 EnumerateKeys 以便枚举的键的对象并将其值/元数据，而不解决任何基础属性访问器。 这种样式的枚举可以返回到 IModelObjects 装箱的原始 IModelPropertyAccessor 值。
+*键*-可以通过调用 EnumerateKeys 来获取 IKeyEnumerator 接口，以便枚举对象的键及其值/元数据，而无需解析任何基础属性访问器。 这种类型的枚举可以返回装箱到 IModelObjects 中的原始 IModelPropertyAccessor 值。
 
-*值*-可以通过调用以便枚举对象并将其值/元数据中的原始键/值 EnumerateKeyValues 或 EnumerateRawValues 获取 IKeyEnumerator 和 IRawEnumerator 接口。 在此类枚举过程中，枚举中存在任何属性访问器通过调用基础的 GetValue 方法自动解决。
+*值*-可通过调用 EnumerateKeyValues 或 EnumerateRawValues 来获取 IKeyEnumerator 和 IRawEnumerator 接口，以便枚举对象上的键/原始值及其值/元数据。 枚举中提供的任何属性访问器都将在此类枚举过程中通过调用基础 GetValue 方法自动解析。
 
-*引用*-IKeyEnumerator 和 IRawEnumerator 接口才能获取通过调用 EnumerateKeyReferences 或 EnumerateRawReferences 以便枚举对某个对象的原始键/值对的引用。 可以保存此类引用，并在以后使用要获取或设置基础密钥或原始值。
+*引用*-可以通过调用 EnumerateKeyReferences 或 EnumerateRawReferences 来获取 IKeyEnumerator 和 IRawEnumerator 接口，以便枚举对对象上的键/原始值的引用。 可以保存此类引用，并在以后使用此类引用获取或设置基础键或原始值。
 
-**KeyEnumerator:综合键的枚举**
+**KeyEnumerator:合成密钥的枚举**
 
-IKeyEnumerator 接口的实例对象和其父模型链中的所有相关联的父模型中是 （通过键、 值或引用） 的所有键的枚举的单个接口。 接口定义，如下所示： 
+IKeyEnumerator 接口是一个单一接口，用于枚举实例对象中的所有键（按键、值或引用）以及父模型链中所有关联的父模型。 接口定义如下： 
 
 ```cpp
 DECLARE_INTERFACE_(IKeyEnumerator, IUnknown)
@@ -128,16 +100,16 @@ DECLARE_INTERFACE_(IKeyEnumerator, IUnknown)
 
 [重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeyenumerator-reset)
 
-重置方法将枚举数重置为它所处时首次获取的位置 (例如： 枚举中的第一个元素之前)。 GetNext 的后续调用将返回第一个枚举的键。 
+Reset 方法将枚举数重置为首次获取时的位置（例如：在枚举中的第一个元素之前）。 对 GetNext 的后续调用将返回第一个枚举密钥。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-ikeyenumerator-getnext)
 
-GetNext 方法都将枚举数向前移动，并返回该枚举中的位置处的键。
+GetNext 方法都向前移动枚举器并在枚举中返回该位置处的键。
 
 
-**IRawEnumerator:本机或基础语言的枚举 (C /C++) 构造**
+**IRawEnumerator:本机或基础语言（C/C++）构造的枚举**
 
-IRawEnumerator 接口是 （通过值或引用） 对象的表示的调试目标的地址空间中的本机结构中的所有本机/语言构造的枚举的单个接口。 接口定义，如下所示： 
+IRawEnumerator 接口是对象内所有本机/语言构造（通过值或引用）的枚举的单一接口，该接口表示调试目标的地址空间中的本机构造。 接口定义如下： 
 
 ```cpp
 DECLARE_INTERFACE_(IRawEnumerator, IUnknown)
@@ -149,16 +121,17 @@ DECLARE_INTERFACE_(IRawEnumerator, IUnknown)
 
 [重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-irawenumerator-reset)
 
-重置方法将枚举数重置为它所处时首次获取的位置 (例如： 枚举中的第一个元素之前)。 GetNext 的后续调用将返回第一个枚举的本机/语言构造。 
+Reset 方法将枚举数重置为首次获取时的位置（例如：在枚举中的第一个元素之前）。 对 GetNext 的后续调用将返回第一个枚举的本机/语言构造。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-irawenumerator-getnext)
 
-GetNext 方法都将枚举数向前移动，并返回该位置的枚举中的本机/语言构造。 
-
+GetNext 方法都向前移动枚举器，并在枚举中的该位置返回本机/语言构造。 
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+
+本主题是一系列文章的一部分，其中描述了可C++从访问的接口，如何使用它们C++来生成基于的调试器扩展，以及如何使用其他数据模型构造（例如：JavaScript 或 NatVis） C++ 。
 
 [调试器数据模型C++概述](data-model-cpp-overview.md)
 
@@ -166,9 +139,8 @@ GetNext 方法都将枚举数向前移动，并返回该位置的枚举中的本
 
 [调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++附加接口](data-model-cpp-additional-interfaces.md)
 
 [调试器数据模型C++概念](data-model-cpp-concepts.md)
 
 [调试器数据模型C++脚本](data-model-cpp-scripting.md)
-

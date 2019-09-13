@@ -1,58 +1,27 @@
 ---
 title: 调试器数据模型 C++ 脚本
-description: 本主题介绍如何使用调试器数据模型C++脚本来支持自动化与调试器引擎。
-ms.date: 10/08/2018
-ms.openlocfilehash: 7860ee5a0f36c9f03eadc028f0c92cc10fc99e16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+description: 本主题介绍如何使用调试器数据模型C++脚本来通过调试器引擎来支持自动化。
+ms.date: 09/12/2019
+ms.openlocfilehash: 23858fd2d8bb688dcc5a617b6d09acb31aaf6dce
+ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376089"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930382"
 ---
 # <a name="debugger-data-model-c-scripting"></a>调试器数据模型 C++ 脚本
 
-本主题介绍如何使用调试器数据模型C++调试器的数据模型C++脚本来支持自动化与调试器引擎使用脚本。
+本主题介绍如何使用调试器数据模型C++调试器数据模型C++脚本来通过使用脚本编写的调试器引擎来支持自动化。
 
-本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
+## <a name="span-idscriptmanangement-script-management-in-the-debugger-data-model"></a><span id="scriptmanangement">调试器数据模型中的脚本管理 
 
-[调试器数据模型C++概述](data-model-cpp-overview.md)
+除了作为对象创建和扩展性的中心权威的数据模型管理器角色以外，它还负责管理脚本的抽象概念。 从数据模型管理器的脚本管理器部分的角度来看，脚本是指可以动态加载、卸载并可能由提供程序调试的内容，以便扩展或向数据模型提供新的功能。 
 
-[调试器数据模型C++接口](data-model-cpp-interfaces.md)
-
-[调试器数据模型C++对象](data-model-cpp-objects.md)
-
-[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
-
-[调试器数据模型C++概念](data-model-cpp-concepts.md)
-
-[调试器数据模型C++脚本](data-model-cpp-scripting.md)
-
----
-
-## <a name="topic-sections"></a>主题部分
-
-本主题包含以下部分：
-
-[调试器数据模型中的脚本管理](#scriptmanangement)
-
-[调试器数据模型C++用于脚本编写承载接口](#hostinterfacesscript)
-
-[调试器数据模型C++脚本接口](#scriptinterface)
-
-[调试器数据模型C++编写的脚本调试接口](#debugscript)
-
----
-
-## <a name="span-idscriptmanangement-script-management-in-the-debugger-data-model"></a><span id="scriptmanangement"> 调试器数据模型中的脚本管理 
-
-除了上对象的创建和可扩展性的中央机构作为数据模型管理器的角色时，它也是概念的负责管理脚本的一个抽象。 从脚本管理器部分的数据模型管理器的角度来看，脚本是后者可以动态加载、 卸载，并可能通过以扩展或提供的数据模型的新功能的提供程序进行调试的某些内容。 
-
-脚本提供程序是一个组件用于桥接一种语言 (例如：NatVis、 JavaScript 等...)到数据模型。 它会注册一个或多个文件扩展名 (例如:"。NatVis"，".js") 的步骤将由允许调试器客户端或用户界面与该特定扩展名的脚本文件的加载，从而实现委派给提供程序的提供程序。 
-
+脚本提供程序是一种桥接语言的组件（例如：NatVis、 JavaScript 等...)到数据模型。 它注册一个或多个文件扩展名（例如： "）。NatVis "，" .js "），由提供程序处理，使调试器客户端或用户接口允许通过委托将脚本文件委托给提供程序来加载该特定扩展。 
 
 **核心脚本管理器：IDataModelScriptManager**
 
-核心脚本管理器接口定义，如下所示。 
+核心脚本管理器接口的定义如下。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptManager, IUnknown)
@@ -68,33 +37,33 @@ DECLARE_INTERFACE_(IDataModelScriptManager, IUnknown)
 
 [GetDefaultNameBinder](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptmanager-getdefaultnamebinder)
 
-GetDefaultNameBinder 方法返回的数据模型的默认脚本名称联编程序。 名称联编程序是对象的一个组件可解析上下文中的名称。 例如，给定表达式"foo.bar"，名称联编程序被调用来解析对象 foo 的上下文中的名称栏。 此处返回的 binder 中遵循一组数据模型的默认规则。 脚本提供程序可以使用此联编程序提供程序之间提供名称解析的一致性。 
+GetDefaultNameBinder 方法返回数据模型的默认脚本名称联编程序。 名称联编程序是一个在对象的上下文中解析名称的组件。 例如，在给定表达式 "foo. bar" 的情况下，将调用名称联编程序解析对象 foo 上下文中的名称栏。 此处返回的联编程序遵循一组默认的数据模型规则。 脚本提供程序可以使用此联编程序跨提供程序提供名称解析的一致性。 
 
 
 [RegisterScriptProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptmanager-registerscriptprovider)
 
-RegisterScriptProvider 方法将通知数据模型的新的脚本提供程序存在适合的桥接一种新语言到数据模型。 调用此方法时，脚本管理器将立即返回调用给定的脚本提供程序并查询它所管理的脚本的属性。 如果已存在名称或文件的扩展，用于指示给定的脚本提供程序下注册的提供程序，此方法将失败。 可以为特定的名称或文件扩展名的处理程序注册只能由单个脚本提供商。 
+RegisterScriptProvider 方法通知数据模型存在一个新的脚本提供程序，该提供程序能够将新语言桥接到数据模型。 调用此方法时，脚本管理器会立即回叫给定的脚本提供程序，并查询它所管理的脚本的属性。 如果已在给定的脚本提供程序所指示的名称或文件扩展名下面注册了某个提供程序，则此方法将失败。 只有单个脚本提供程序可注册为特定名称或文件扩展名的处理程序。 
 
 
 [UnregisterScriptProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptmanager-unregisterscriptprovider)
 
-UnregisterScriptProvider 方法撤消对 RegisterScriptProvider 方法的调用。 提供由 inpassed 的脚本提供程序的名称和文件扩展名将不再与之相关联。 请务必注意，可能有大量的脚本提供程序未完成的 COM 引用甚至后注销。 此方法只会加载/创建的类型的给定的脚本提供商管理的脚本。 如果由该提供程序加载的脚本仍处于加载状态或已操作的调试程序 （或数据模型） 的对象模型，这些操作可能仍具有恢复到该脚本的引用。 可能的数据模型、 方法或直接引用在脚本中的构造的对象。 脚本提供程序必须准备好解决这一问题。 
+UnregisterScriptProvider 方法撤消对 RegisterScriptProvider 方法的调用。 Inpassed 脚本提供程序提供的名称和文件扩展名将不再与其关联。 需要注意的是，即使在注销后，也可能对脚本提供程序有大量未完成的 COM 引用。 此方法仅阻止加载/创建给定脚本提供程序所管理的类型的脚本。 如果该提供程序加载的脚本仍在加载，或者已经操作了调试器（或数据模型）的对象模型，则这些操作可能仍具有返回到脚本的引用。 可能存在直接引用脚本中的构造的数据模型、方法或对象。 脚本提供程序必须准备好处理该提供程序。 
 
 
 [FindProviderForScriptType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptmanager-findproviderforscripttype)
 
-FindProviderForScriptType 方法搜索提供程序具有此方法中所示的脚本类型字符串的脚本管理器。 如果无法找到，此方法将失败;否则，此类脚本提供程序将返回给调用方。 
+FindProviderForScriptType 方法会在脚本管理器中搜索包含脚本类型字符串的提供程序，如此方法中所示。 如果找不到，则此方法将失败;否则，此类脚本提供程序将返回到调用方。 
 
 
 [EnumerateScriptProviders](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptmanager-enumeratescriptproviders)
 
-EnumerateScriptProviders 方法将返回一个枚举器这样枚举速度将通过 RegisterScriptProvider 方法调用之前在脚本管理器已注册的每个脚本提供程序。 
+EnumerateScriptProviders 方法将返回一个枚举器，该枚举器将枚举通过先前对 RegisterScriptProvider 方法的调用向脚本管理器注册的每个脚本提供程序。 
 
 
 
 **脚本提供程序枚举：IDataModelScriptProviderEnumerator**
 
-EnumerateScriptProviders 方法将返回以下形式的枚举器：
+EnumerateScriptProviders 方法将返回以下格式的枚举器：
 
 ```cpp 
 DECLARE_INTERFACE_(IDataModelScriptProviderEnumerator, IUnknown)
@@ -106,31 +75,31 @@ DECLARE_INTERFACE_(IDataModelScriptProviderEnumerator, IUnknown)
 
 [重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptproviderenumerator-reset)
 
-重置方法将移动到它在返回的第一个元素之前所处的位置的枚举器。 
+Reset 方法会将枚举器移动到在返回第一个元素之前的位置。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptproviderenumerator-getnext)
 
-GetNext 方法将移动枚举数前移一个元素，并返回位于该元素的脚本提供程序。 当枚举器遇到枚举结束时，将返回 E_BOUNDS。 调用 GetNext 方法后收到此错误将继续无限期地返回 E_BOUNDS。 
+GetNext 方法将枚举器向前移动一个元素，并返回该元素处的脚本提供程序。 枚举器到达枚举的末尾时，将返回 E_BOUNDS。 收到此错误后，调用 GetNext 方法将继续无限期地返回 E_BOUNDS。 
 
 
 
-## <a name="span-idhostinterfacesscript-debugger-data-model-c-host-interfaces-for-scripting"></a><span id="hostinterfacesscript"> 调试器数据模型C++用于脚本编写承载接口
+## <a name="span-idhostinterfacesscript-debugger-data-model-c-host-interfaces-for-scripting"></a><span id="hostinterfacesscript">用于脚本编写C++的调试器数据模型主机接口
 
-**在脚本中的主机的角色**
+**宿主在脚本中的角色**
 
-调试主机公开一系列非常较低级别接口对于了解其调试目标的类型系统在本质上计算表达式语言中的其调试目标，等等...通常情况下，它是关心类似脚本等更高级构造。 此类是从左到整体调试器应用程序或提供这些功能的扩展。 没有，但是，一种例外。 想要参与的数据模型提供整体的脚本编写体验中的任何调试主机需要实现的几个简单接口以提供对脚本上下文。 实际上，调试主机是的它希望脚本环境，以将函数和提供的数据模型的命名空间中的功能的其他脚本的控件中。 此过程中所涉及允许主机以允许 （或不） 使用，例如，其表达式计算器中此类函数。 涉及到从以下主机的角度来看接口是： 
+调试主机公开了一系列非常低的级别接口，用于了解其调试目标的类型系统的性质，用其调试目标的语言来计算表达式，等等 。通常情况下，它与脚本编写的更高级别构造不关心。 这种情况留给了整个调试器应用程序或提供这些功能的扩展。 但有一个例外。 任何想要参与数据模型提供的总体脚本编写体验的调试宿主都需要实现一些简单的接口，以便向脚本提供上下文。 实际上，调试宿主会控制它希望脚本环境在数据模型的命名空间中放置函数和其他脚本提供的功能的位置。 在此过程中，允许主机允许（或不）使用此类函数（例如）的表达式计算器。 此处所涉及的接口如下所示： 
 
 接口 | 描述
 |---------|------------|
-IDebugHostScriptHost | 一个接口，这指示调试主机能够参加脚本编写环境。 此接口允许通知的放置位置对象的脚本引擎的上下文创建。
-IDataModelScriptHostContext | 主机接口，用来通过脚本提供程序作为容器的脚本的内容。 如何脚本图面以外的操作，对其执行到调试器应用程序的对象模型的内容是由特定的调试主机。 此接口允许脚本提供程序，以获取有关在何处放置其内容的信息。 请参阅[数据模型C++脚本接口](#scriptinterface)本主题中的详细信息的更高版本。
+IDebugHostScriptHost | 指示调试宿主要在脚本环境中参与的功能的接口。 此接口可用于创建上下文，用于通知脚本引擎放置对象的位置。
+IDataModelScriptHostContext | 由脚本提供程序用作脚本内容的容器的宿主接口。 除了其对调试器应用程序的对象模型执行的操作之外，脚本表面的内容如何取决于特定的调试宿主。 此接口允许脚本提供程序获取有关内容放置位置的信息。 有关详细信息，请参阅本主题后面的[数据模型C++脚本接口](#scriptinterface)。
 
 
-**调试主机的脚本主机：IDebugHostScriptHost**
+**调试宿主的脚本宿主：IDebugHostScriptHost**
 
-IDebugHostScriptHost 接口是脚本提供程序用于为新创建的脚本从调试主机获取上下文的接口。 此上下文包括 （提供调试主机） 的对象的脚本提供程序可以放置任何数据模型和脚本编写环境之间的桥梁。 此类桥，可能的数据模型方法调用脚本函数。 执行此操作允许数据模型端使用量 IModelMethod 接口上调用方法调用脚本的方法的调用方。 
+IDebugHostScriptHost 接口是脚本提供程序为新创建的脚本从调试宿主获取上下文时使用的接口。 此上下文包含一个对象（由调试宿主提供），脚本提供程序可在其中将任何桥放到数据模型和脚本环境之间。 例如，此类桥可能是调用脚本函数的数据模型方法。 这样一来，数据模型端的调用方可以通过 IModelMethod 接口上的调用方法来调用脚本方法。 
 
-IDebugHostScriptHost 接口定义，如下所示。 
+IDebugHostScriptHost 接口的定义如下。 
 
 ```cpp
 DECLARE_INTERFACE_(IDebugHostScriptHost, IUnknown)
@@ -141,52 +110,52 @@ DECLARE_INTERFACE_(IDebugHostScriptHost, IUnknown)
 
 [CreateContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostscripthost-createcontext)
 
-要创建新的上下文要在其中放置脚本的内容的脚本提供程序被调用 CreateContext 方法。 此类上下文表示由 IDataModelScriptHostContext 接口在数据模型上进行了详细说明C++编写脚本的接口页。 
+脚本提供程序调用 CreateContext 方法来创建新的上下文，以便在其中放置脚本的内容。 此类上下文由 "数据模型C++脚本接口" 页上详细描述的 IDataModelScriptHostContext 接口表示。 
 
 
-## <a name="span-idscriptinterface-debugger-data-model-c-scripting-interfaces"></a><span id="scriptinterface"> 调试器数据模型C++脚本接口
+## <a name="span-idscriptinterface-debugger-data-model-c-scripting-interfaces"></a><span id="scriptinterface">调试器数据模型C++脚本接口
 
 **脚本和脚本接口**
 
-数据模型的整体体系结构允许第三方来定义一些语言和数据模型的对象模型之间的桥梁。 通常情况下，被桥接的语言是一种脚本语言，因为是非常动态的数据模型的环境。 定义和实现一种语言和数据模型的对象模型之间的此桥的组件是名为脚本提供程序。 在初始化时，向数据模型管理器的脚本管理器部分的脚本提供程序注册自身和任何接口，该管理可扩展性接口将随后允许进行编辑，加载、 卸载和潜在的脚本调试写入到脚本提供商管理的语言。 
+数据模型的总体体系结构允许第三方定义数据模型的某些语言和对象模型之间的桥梁。 通常，要桥接的语言是一种脚本语言，因为数据模型的环境是非常动态的。 在语言和数据模型的对象模型之间定义并实现此桥梁的组件称为脚本提供程序。 初始化后，脚本提供程序会向数据模型管理器的脚本管理器部分注册自身，管理扩展性的任何接口将随后允许编辑、加载、卸载和可能调试脚本写入脚本提供程序管理的语言。 
 
-请注意，对于 Windows 调试工具目前定义两个脚本提供程序。
+请注意，适用于 Windows 的调试工具目前定义了两个脚本提供程序。
 
-- NatVis 提供程序。 允许的本机/语言数据类型的可视化效果中 DbgEng.dll 和 NatVis XML 和数据模型之间的桥梁，嵌入此提供程序。
-- JavaScript 提供程序。 此提供程序包含在传统的调试器扩展：JsProvider.dll。 它可以弥补之间 JavaScript 语言和数据模型中，对任意形式的调试器控制和可扩展性允许编写的脚本。
+- NatVis 提供程序。 此提供程序嵌入在 DbgEng 和 NatVis XML 和数据模型之间，允许对本机/语言数据类型进行可视化。
+- JavaScript 提供程序。 此提供程序包含在旧版调试器扩展中：JsProvider。 它在用 JavaScript 语言和数据模型编写的脚本之间进行桥梁，允许任意形式的调试器控制和扩展性。
 
-可以这桥接其他语言编写新的提供程序 (例如：Python，等等...)到数据模型。 此类将当前封装在用于加载目的的传统调试器扩展。 脚本提供程序本身应尽量减少旧引擎接口对象的依赖项，并应仅使用数据模型 Api，在可能的情况。 这将允许的提供程序，使其可移植到其他环境，明显更容易。
+可以编写新的提供程序桥接其他语言（例如：Python，等等...)到数据模型。 这种方法目前封装在旧版调试器扩展中用于加载。 脚本提供程序本身应该尽量减少与旧引擎接口的依赖关系，并且应尽可能地使用数据模型 Api。 这样，就可以轻松地将提供程序迁移到其他环境。
 
-有两个类与脚本提供程序相关的接口。 接口的第一个类是为脚本提供商和他们管理的脚本的常规管理。 第二个类的接口是用于支持的脚本调试。 第一组是必需的尽管支持对第二个是可选的可能没有意义的每个提供程序的支持。 
+有两类与脚本提供程序相关的接口。 接口的第一类用于常规管理脚本提供程序及其管理的脚本。 第二类接口用于支持脚本调试。 虽然对第一个集的支持是必需的，但第二个支持是可选的，并且对于每个提供程序可能没有意义。 
 
 
-常规管理接口是： 
-
-接口 | 描述
-|---------|------------|
-IDataModelScriptProvider | 脚本提供程序必须实现的核心接口。 这是脚本的注册到数据模型管理器以便播发的特定类型的提供程序的支持并注册针对特定文件扩展名的脚本管理器部分接口
-IDataModelScript | 特定脚本正在管理提供程序的抽象。 每个脚本，它将被加载或正在编辑具有单独的 IDataModelScript 实例
-IDataModelScriptClient | 一个客户端接口，将使用脚本提供程序的信息传递给一个用户界面。 脚本提供程序不实现此接口。 承载想要进行数据模型的应用程序的脚本提供程序使用 does。 脚本提供程序将调用方法的脚本客户端报告状态、 错误等...
-IDataModelScriptHostContext | 主机接口，用来通过脚本提供程序作为容器的脚本的内容。 如何脚本图面以外的操作，对其执行到调试器应用程序的对象模型的内容是由特定的调试主机。 此接口允许脚本提供程序，以获取有关在何处放置其内容的信息。
-IDataModelScriptTemplate | 脚本提供程序可以提供一个或多个模板以用作编写脚本的用户的起点。 提供了内置编辑器的调试器应用程序可以是预先填充其模板内容如播发由通过此接口提供程序的新脚本。
-IDataModelScriptTemplateEnumerator | 它支持脚本提供程序实现以播发所有各种模板的枚举器接口。
-IDataModelNameBinder | 名称联编程序-可以将在上下文中的名称与值关联的对象。 对于给定的表达式，例如"foo.bar"，名称联编程序是能够将对象"foo"的上下文中的绑定名称"bar"，并生成一个值或对它的引用。 名称绑定器通常未实现的脚本的提供程序;相反，获取从数据模型和脚本提供程序使用默认联编程序
-
-调试接口是： 
+常规管理接口包括： 
 
 接口 | 描述
 |---------|------------|
-IDataModelScriptDebug | 脚本提供程序必须提供才能使脚本可调试性核心接口。 如果该脚本可调试，IDataModelScript 接口的实现类必须为 IDataModelScriptDebug QueryInterface。
-IDataModelScriptDebugClient | 其想要提供的脚本调试功能的用户界面实现 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等...)
-IDataModelScriptDebugStack | 脚本提供程序实现此接口以提供给脚本调试器调用堆栈这一概念。
-IDataModelScriptDebugStackFrame | 脚本提供程序实现此接口公开特定堆栈帧调用堆栈中的概念。
-IDataModelScriptDebugVariableSetEnumerator | 脚本提供程序实现此接口以公开一组变量。 此组可能为函数、 本地变量、 组或组在特定范围内的变量表示参数的集。 确切含义是取决于如何获取该接口。
-IDataModelScriptDebugBreakpoint | 脚本提供程序实现此接口，以公开的概念和特定断点的脚本中的控件。
-IDataModelScriptDebugBreakpointEnumerator | 脚本提供程序实现此枚举的所有断点 （无论启用） 当前存在的脚本中。
+IDataModelScriptProvider | 脚本提供程序必须实现的核心接口。 这是向数据模型管理器的脚本管理器部分注册的接口，以便播发提供程序对特定类型脚本的支持并针对特定文件扩展名进行注册
+IDataModelScript | 由提供程序管理的特定脚本的抽象。 加载或编辑的每个脚本都有单独的 IDataModelScript 实例
+IDataModelScriptClient | 脚本提供程序用于向用户界面传递信息的客户端接口。 脚本提供程序不实现此接口。 承载需要使用脚本提供程序的数据模型的应用程序。 脚本提供程序将调用脚本客户端的方法来报告状态、错误，等等 。
+IDataModelScriptHostContext | 由脚本提供程序用作脚本内容的容器的宿主接口。 除了其对调试器应用程序的对象模型执行的操作之外，脚本表面的内容如何取决于特定的调试宿主。 此接口允许脚本提供程序获取有关内容放置位置的信息。
+IDataModelScriptTemplate | 脚本提供程序可以提供一个或多个模板，用作用户编写脚本的起点。 提供内置编辑器的调试器应用程序可以 prefill 通过此接口提供的提供程序公布的模板内容的新脚本。
+IDataModelScriptTemplateEnumerator | 脚本提供程序实现的一个枚举器接口，用于公布它所支持的所有各种模板。
+IDataModelNameBinder | 名称联编程序-一个对象，可将上下文中的名称与值相关联。 对于给定的表达式（如 "foo"），名称联编程序能够在对象 "foo" 的上下文中绑定名称 "bar"，并生成一个值或对它的引用。 名称联编程序通常不由脚本提供程序实现;相反，可以从数据模型中获取默认联编程序，并使用脚本提供程序
+
+调试接口包括： 
+
+接口 | 描述
+|---------|------------|
+IDataModelScriptDebug | 为了使脚本可调试，脚本提供程序必须提供的核心接口。 如果脚本是可调试的，则 IDataModelScript 接口的实现类必须用于 IDataModelScriptDebug 的 QueryInterface。
+IDataModelScriptDebugClient | 希望提供脚本调试功能的用户界面实现了 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等...)
+IDataModelScriptDebugStack | 脚本提供程序实现此接口，以便向脚本调试器公开调用堆栈的概念。
+IDataModelScriptDebugStackFrame | 脚本提供程序实现此接口，以公开调用堆栈中特定堆栈帧的概念。
+IDataModelScriptDebugVariableSetEnumerator | 脚本提供程序实现此接口以公开一组变量。 此集可以表示函数的参数集、本地变量集或特定范围内的变量集。 具体含义取决于获取接口的方式。
+IDataModelScriptDebugBreakpoint | 脚本提供程序实现此接口，以公开脚本中特定断点的概念和控制。
+IDataModelScriptDebugBreakpointEnumerator | 脚本提供程序实现此以枚举脚本中当前存在的所有断点（无论是否已启用）。
 
 **核心脚本提供程序：IDataModelScriptProvider**
 
-想要将脚本提供程序的任何扩展必须提供 IDataModelScriptProvider 接口的实现，并注册此类使用的数据模型管理器通过 RegisterScriptProvider 方法的脚本管理器部分。 它必须实现此核心接口定义，如下所示。
+任何希望作为脚本提供程序的扩展都必须提供 IDataModelScriptProvider 接口的实现，并通过 RegisterScriptProvider 方法将其注册到数据模型管理器的脚本管理器部分。 必须实现的核心接口定义如下。
 
 ```cpp 
 DECLARE_INTERFACE_(IDataModelScriptProvider, IUnknown)
@@ -201,32 +170,32 @@ DECLARE_INTERFACE_(IDataModelScriptProvider, IUnknown)
 
 [GetName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptprovider-getname)
 
-GetName 方法返回的类型 （或语言） 的名称的脚本通过 SysAllocString 方法分配的字符串为管理提供程序。 调用方负责释放 SysFreeString 通过返回的字符串。 这可能会返回此方法从字符串的示例为"JavaScript"或"NatVis"。 返回的字符串是可能出现在调试器应用程序在托管数据模型的用户界面中。 没有两个脚本提供程序可能会返回相同的名称 （不区分大小写）。 
+GetName 方法返回提供程序管理的脚本类型（或语言）的名称，该脚本通过 SysAllocString 方法进行分配。 调用方负责通过 SysFreeString 释放返回的字符串。 此方法可能返回的字符串的示例有 "JavaScript" 或 "NatVis"。 返回的字符串可能出现在承载数据模型的调试器应用程序的用户界面中。 不能有两个脚本提供程序返回相同的名称（不区分大小写）。 
 
-[GetExtension](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptprovider-getextension)
+[Path.getextension 对](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptprovider-getextension)
 
-GetExtension 方法通过 SysAllocString 方法分配的字符串的形式返回的文件扩展名为受此提供程序 （不带点） 的脚本。 调试器应用程序宿主 （使用脚本支持） 的数据模型将委托与此扩展到脚本提供程序的脚本文件打开。 调用方负责释放 SysFreeString 通过返回的字符串。 这可能会返回此方法从字符串的示例包括"js"或"NatVis"。 
+Path.getextension 对方法返回此提供程序管理的脚本的文件扩展名（不带点）作为通过 SysAllocString 方法分配的字符串。 承载数据模型（具有脚本支持）的调试器应用程序将通过此扩展将脚本文件打开委托给脚本提供程序。 调用方负责通过 SysFreeString 释放返回的字符串。 此方法可能返回的字符串示例为 "js" 或 "NatVis"。 
 
 [CreateScript](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptprovider-createscript)
 
-CreateScript 方法调用以创建新的脚本。 脚本提供程序必须返回每次调用此方法时，返回的 IDataModelScript 接口所表示的新的和空脚本。 请注意，而不考虑用户界面是否创建用于编辑用户的新空白脚本或调试器应用程序是否从磁盘加载脚本调用此方法。 提供程序不会涉及到在文件 I/O。 它只是处理来自托管应用程序通过流传递到方法 IDataModelScript 上的请求。 
+调用 CreateScript 方法来创建新脚本。 每当调用此方法时，脚本提供程序都必须返回返回的 IDataModelScript 接口所表示的新的空脚本。 请注意，无论用户界面是创建新的空白脚本以供用户编辑，还是调试器应用程序从磁盘加载脚本，都将调用此方法。 提供程序不涉及文件 i/o。 它仅通过传递给 IDataModelScript 上方法的流处理来自宿主应用程序的请求。 
 
 [GetDefaultTemplateContent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptprovider-getdefaulttemplatecontent)
 
-GetDefaultTemplateContent 方法返回提供程序的默认模板内容的接口。 这是希望脚本提供程序已经预填充新创建的脚本的编辑窗口的内容。 如果脚本提供程序没有模板 （或不包含任何模板内容，其指定为默认内容），脚本提供程序可能从该方法返回 E_NOTIMPL。 
+GetDefaultTemplateContent 方法返回提供程序的默认模板内容的接口。 这是脚本提供程序要在编辑窗口中为新创建的脚本预先填充的内容。 如果脚本提供程序没有模板（或者没有指定为默认内容的模板内容），则脚本提供程序可能会从此方法返回 E_NOTIMPL。 
 
 [EnumerateTemplates](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptprovider-enumeratetemplates)
 
-EnumerateTemplates 方法返回一个枚举器，这是可以枚举各种脚本提供程序提供的模板。 模板内容为脚本提供程序想要创建新的脚本时为"已预先"到编辑窗口。 如果有多个不同的模板支持，这些模板可以进行命名 (例如："命令性脚本"、"扩展脚本"） 和承载的数据模型的调试器应用程序可以选择如何向用户显示"模板"。 
+EnumerateTemplates 方法返回一个枚举器，该枚举器能够枚举脚本提供程序提供的各种模板。 模板内容是在创建新脚本时，脚本提供程序要 "预先填充" 到编辑窗口中的内容。 如果支持多个不同的模板，则可以命名这些模板（例如："命令性脚本"、"扩展脚本"）和宿主数据模型的调试器应用程序可以选择如何向用户显示 "模板"。 
 
 
-**核心脚本界面：IDataModelScript**
+**核心脚本接口：IDataModelScript**
 
-用于管理由提供程序实现的单个脚本的主接口是 IDataModelScript 接口。 实现此接口的组件客户端希望创建一个新的空白脚本时，将返回并对 IDataModelScriptProvider 调用 CreateScript 方法。 
+管理提供程序所实现的单个脚本的主接口是 IDataModelScript 接口。 当客户端希望创建新的空白脚本并对 IDataModelScriptProvider 调用 CreateScript 方法时，将返回实现此接口的组件。 
 
-每个脚本，该提供程序创建脚本应在独立的接收器。 一个脚本不应能够影响除通过与通过数据模型的外部对象的显式交互的另一个脚本。 两个脚本，可以对实例，同时扩展某些类型或概念 (例如： 调试器的这一概念的进程)。 其中一个脚本可以访问彼此的字段通过外部进程对象。 
+由提供程序创建的每个脚本都应在独立的接收器中。 除了通过数据模型与外部对象进行显式交互外，一个脚本应该不能影响另一个脚本。 例如，两个脚本都可以扩展某些类型或概念（例如：调试器对进程的概念）。 然后，这两个脚本都可以通过外部进程对象访问每个字段的字段。 
 
-接口定义，如下所示。 
+接口按如下方式定义。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScript, IUnknown)
@@ -243,38 +212,38 @@ DECLARE_INTERFACE_(IDataModelScript, IUnknown)
 
 [GetName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-getname)
 
-GetName 方法通过 SysAllocString 函数返回已分配的字符串形式的脚本的名称。 如果该脚本还没有一个名称，该方法应返回 null BSTR。 在此情况下，这应该不会失败。 如果该脚本通过调用 Rename 方法显式重命名，GetName 方法应返回新分配的名称。 
+GetName 方法通过 SysAllocString 函数将脚本的名称作为分配的字符串返回。 如果脚本尚不具有名称，则该方法应返回 null BSTR。 在这种情况下，它不会失败。 如果脚本通过调用 Rename 方法进行显式重命名，则 GetName 方法应返回新分配的名称。 
 
 [重命名](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-rename)
 
-重命名方法将新的名称分配给该脚本。 它负责要保存此名称并返回在任何 GetName 方法调用的脚本实现。 这通常称为用户界面选择另存为脚本保存到一个新名称。 请注意，重命名该脚本可能会影响在其中托管应用程序选择项目脚本的内容。 
+Rename 方法为脚本分配新名称。 脚本实现负责保存此名称，并在调用 GetName 方法时将其返回。 当用户界面选择将作为脚本保存到新名称时，通常会调用此。 请注意，重命名该脚本可能会影响宿主应用程序选择用于投影脚本内容的位置。 
 
-[填充](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-populate)
+[放置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-populate)
 
-填充方法称为客户端以更改或同步脚本的"内容"。 这是对脚本的代码已更改的脚本提供程序的通知。 请务必注意此方法不会导致执行脚本或对任何脚本操作的对象的更改。 这是只是到脚本的内容已更改，以便它可以同步其自己的内部状态的脚本提供程序的通知。 
+填充方法由客户端调用，以更改或同步脚本的 "内容"。 这是对脚本提供程序发出的、脚本代码已更改的通知。 需要注意的是，此方法不会导致脚本的执行或对脚本操作的任何对象进行更改。 这只是一个向脚本提供程序发出的通知，指出脚本的内容已更改，以便它可以同步自己的内部状态。 
 
-[执行](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-execute)
+[运行](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-execute)
 
-Execute 方法规定的最后一次成功的填充调用执行脚本的内容，并修改该内容根据调试器的对象模型。 如果语言 （或脚本提供程序） 定义了"主要"-一个作者想时调用的函数后单击用户界面中的虚"执行脚本"按钮-在执行操作期间不调用此类"主函数"。 可以考虑执行操作以执行初始化和对象模型操作 (例如： 执行根代码和设置的扩展点)。 
+Execute 方法执行最后一次成功填充调用时所指示的脚本内容，并根据该内容修改调试器的对象模型。 如果语言（或脚本提供程序）定义了一个 "main function"，则在执行操作过程中，如果在用户界面中单击虚部 "执行脚本" 按钮，则会调用该作者。 执行操作可视为只执行初始化和对象模型操作（例如：执行根代码和设置扩展点）。 
 
-[取消链接](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-unlink)
+[Unlink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-unlink)
 
-取消链接方法撤消执行操作。 对象模型的任何操作或脚本的执行期间建立的扩展点都将撤销。 操作完成后取消链接，该脚本可能会重新执行通过 Execute 调用，或可以释放。 
+取消链接方法会撤消执行操作。 在脚本执行过程中建立的任何对象模型操作或扩展点都将撤消。 取消链接操作后，该脚本可以通过调用 Execute 重新执行，也可以被释放。 
 
 [IsInvocable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-isinvocable)
 
-IsInvocable 方法返回指示在脚本为 invocable-即，指示它还有一个"主函数"，因为其语言或提供程序定义。 此类"主函数"从概念上讲是脚本作者希望在用户界面中调用如果虚"执行脚本"按钮按下的内容。 
+IsInvocable 方法将返回脚本是否为 invocable，即它是否有 "main 函数" （由其语言或提供程序定义）。 如果在用户界面中按了虚部 "执行脚本" 按钮，此类 "main 函数" 将从概念上讲是要调用的脚本作者。 
 
 [InvokeMain](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-invokemain)
 
-如果脚本具有一个"主函数"其目的是从 UI 调用执行，则表示此类通过从 IsInvocable 方法返回时，则返回 true。 然后，用户界面可以调用 InvokeMain 方法来实际"调用"的脚本。 请注意，这不同于*Execute*运行所有根代码和桥脚本到基础主机的命名空间。 
+如果脚本的 "main 函数" 旨在通过 UI 调用执行，则它会通过 IsInvocable 方法的真正返回来指示这种情况。 然后，用户界面可以调用 InvokeMain 方法来实际 "调用" 该脚本。 请注意，这不同于*执行*，后者运行所有根代码，并将脚本桥接到基础主机的命名空间。 
 
 
-\* * 脚本客户端：IDataModelScriptClient * *
+\* * 脚本客户端：IDataModelScriptClient **
 
-应用程序承载想要管理脚本和具有用户界面的数据模型 (是否图形或控制台) 围绕这一概念实现 IDataModelScriptClient 接口。 此接口被传递给任何脚本提供程序期间执行或调用或脚本以将错误和事件信息传递到用户界面。 
+一种应用程序，该应用程序承载的数据模型需要管理脚本，并具有围绕此概念的用户界面（无论是图形还是控制台）来实现 IDataModelScriptClient 接口。 此接口将在执行或调用期间传递给任何脚本提供程序，或通过脚本传递回用户界面。 
 
-IDataModelScriptClient 接口定义，如下所示。 
+IDataModelScriptClient 接口的定义如下。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptClient, IUnknown)
@@ -285,14 +254,14 @@ DECLARE_INTERFACE_(IDataModelScriptClient, IUnknown)
 
 [ReportError](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptclient-reporterror)
 
-如果在执行或脚本调用期间发生错误，脚本提供程序调用 ReportError 方法以通知的用户界面的错误。 
+如果在执行或调用脚本的过程中出现错误，则脚本提供程序将调用 ReportError 方法以通知用户界面错误。 
 
 
-**主机上下文的脚本：IDataModelScriptHostContext**
+**脚本的宿主上下文：IDataModelScriptHostContext**
 
-调试主机都有一些影响它方式和位置投影数据模型的脚本内容。 预计每个脚本要求宿主，为要在其中放置上下文桥接的脚本 (例如： 函数对象，可以调用，等等...)。通过调用 IDebugHostScriptHost CreateContext 方法和获取 IDataModelScriptHostContext 检索此上下文。 
+调试宿主对数据模型脚本内容的投影方式和位置有一定的影响。 预计每个脚本要求宿主，为要在其中放置上下文桥接的脚本 (例如： 函数对象，可以调用，等等...)。通过调用 IDebugHostScriptHost 上的 CreateContext 方法并获取 IDataModelScriptHostContext 来检索此上下文。 
 
-IDataModelScriptHostContext 接口定义，如下所示。 
+IDataModelScriptHostContext 接口的定义如下。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptHostContext, IUnknown)
@@ -304,18 +273,18 @@ DECLARE_INTERFACE_(IDataModelScriptHostContext, IUnknown)
 
 [NotifyScriptChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscripthostcontext-notifyscriptchange)
 
-这是必需的脚本提供程序通知调试宿主后发生的对关联的上下文中的 NotifyScriptChange 方法的方法调用某些操作。 此类操作定义为 ScriptChangeKind 枚举的成员
+需要脚本提供程序在对关联上下文调用 NotifyScriptChange 方法时，通知调试宿主发生的某些操作。 此类操作定义为 ScriptChangeKind 枚举的成员
 
 [GetNamespaceObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscripthostcontext-getnamespaceobject)
 
-GetNamespaceObject 方法返回的对象的脚本提供程序可以放置任何数据模型和脚本之间的桥梁。 就在这里，例如，脚本提供程序可能放置数据模型方法对象 （装箱到 IModelObject IModelMethod 接口） 的实现将对相应地命名为脚本中的函数。 
+GetNamespaceObject 方法返回一个对象，在该对象中，脚本提供程序可以在数据模型和脚本之间放置任何桥梁。 例如，在此示例中，脚本提供程序可能会将数据模型方法对象（装箱到 IModelObject 中的 IModelMethod 接口）放入其实现在脚本中相应命名的函数。 
 
 
-**用于新创建的脚本模板：IDataModelScriptTemplate**
+**新创建脚本的模板：IDataModelScriptTemplate**
 
-脚本需要显示的对新脚本的预先填充的内容的提供程序 (例如： 若要使用户的用户界面在调试器中编写脚本) 可以通过提供一个或多个脚本模板来实现。 此类模板是其实现 IDataModelScriptTemplate 接口和脚本提供程序上通过 GetDefaultTemplate 方法或 EnumerateTemplates 方法返回的组件。 
+需要提供一个或多个脚本模板的脚本提供程序（例如：为了帮助用户在调试器用户界面中编写脚本，从而帮助用户在调试器用户界面中编写脚本）。 此类模板是实现 IDataModelScriptTemplate 接口的组件，可通过脚本提供程序上的 GetDefaultTemplate 方法或 EnumerateTemplates 方法返回。 
 
-IDataModelScriptTemplate 接口定义，如下所示。 
+IDataModelScriptTemplate 接口的定义如下。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptTemplate, IUnknown)
@@ -329,22 +298,22 @@ DECLARE_INTERFACE_(IDataModelScriptTemplate, IUnknown)
 
 [GetName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscripttemplate-getname)
 
-GetName 方法返回的模板的名称。 如果模板不具有一个名称，则可能会因 E_NOTIMPL。 一个默认模板 （如果存在此类） 不需要具有的名称。 所有其他模板。 这些名称可能要选择哪个模板中的菜单的一部分是创建时，用户界面中显示。 
+GetName 方法返回模板的名称。 如果模板没有名称，这可能会失败，并出现 E_NOTIMPL。 单个默认模板（如果存在）不需要具有名称。 所有其他模板为。 这些名称可以作为菜单的一部分显示在用户界面中，以选择要创建的模板。 
 
 
 [GetDescription](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscripttemplate-getdescription)
 
-GetDescription 方法返回模板的说明。 此类说明会提供给更具描述性的接口中的用户，以帮助用户了解该模板是用于执行操作。 如果它没有说明，模板可能会从此方法返回 E_NOTIMPL。 
+GetDescription 方法将返回该模板的说明。 此类描述将在更具描述性的界面中向用户显示，以帮助用户了解模板的设计内容。 如果模板没有说明，则该模板可能会从该方法返回 E_NOTIMPL。 
 
 [GetContent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscripttemplate-getcontent)
 
-GetContent 方法返回模板的内容 （或代码）。 这是如果用户选择从该模板创建新的脚本将预先填充到编辑窗口。 该模板是负责创建 （并返回） 对客户端可以请求的内容的标准流。 
+GetContent 方法返回模板的内容（或代码）。 如果用户选择从该模板创建新的脚本，则会将其预填充到 "编辑" 窗口中。 该模板负责创建（并返回）客户端可以请求的内容的标准流。 
 
-**枚举的提供程序的模板内容：IDataModelScriptTemplateEnumerator**
+**枚举提供程序的模板内容：IDataModelScriptTemplateEnumerator**
 
-脚本提供程序可以提供一个或多个模板内容的预填充到某些用户界面中新创建的脚本。 如果提供了任何这些模板，脚本提供程序必须实现，这对 EnumerateTemplates 方法的调用时会返回一个枚举器。 
+脚本提供程序可以提供一个或多个模板，用于在某些用户界面中将内容预先填充到新创建的脚本中。 如果提供了这些模板中的任何一个，则脚本提供程序必须对其实现枚举器，以便在调用 EnumerateTemplates 方法时返回这些模板。 
 
-此类枚举器是 IDataModelScriptTemplateEnumerator 接口的实现，并按如下所示定义。 
+此类枚举器是 IDataModelScriptTemplateEnumerator 接口的实现，按如下所示定义。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptTemplateEnumerator, IUnknown)
@@ -356,18 +325,18 @@ DECLARE_INTERFACE_(IDataModelScriptTemplateEnumerator, IUnknown)
 
 [重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscripttemplateenumerator-reset)
 
-重置方法将枚举数重置为它所处时它首次创建-之前的第一个模板生成的位置。 
+Reset 方法会将枚举数重置为第一次创建时所处的位置（在生成第一个模板之前）。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscripttemplateenumerator-getnext)
 
-GetNext 方法将枚举数移到下一个模板，并将其返回。 在枚举结束时，枚举器返回 E_BOUNDS。 一旦达到了 E_BOUNDS 标记，枚举器将继续无限期重置调用直到产生 E_BOUNDS 错误。 
+GetNext 方法将枚举器移动到下一个模板并返回它。 枚举结束时，枚举器返回 E_BOUNDS。 命中 E_BOUNDS 标记后，枚举器将持续产生 E_BOUNDS 错误，直到进行重置调用。 
 
 
-**解析的名称的含义：IDataModelNameBinder**
+**解析名称的含义：IDataModelNameBinder**
 
-数据模型提供脚本提供程序用来确定在给定上下文中具有给定名称的含义的标准方法 (例如： 确定哪些栏用于 foo.bar)，将运行跨多个脚本提供程序。 此机制称为名称绑定器，并由 IDataModelNameBinder 接口表示。 此类联编程序封装一组名称的解析方式以及如何处理其中一个名称在对象定义多个时间的冲突解决方法有关的规则。 这些规则的一部分包括投影的名称 （一个添加的数据模型） 如何解决与本机名 （一个正在调试的语言类型系统中） 等内容。 
+数据模型为脚本提供程序提供了一种标准方式，用于在给定的上下文（例如：确定将跨各种脚本提供程序操作的 bar）中确定给定名称的含义。 此机制称为 "名称" 联编程序，由 IDataModelNameBinder 接口表示。 此类联编程序封装了有关名称解析方式的一组规则，以及如何处理在对象上多次定义了名称的冲突解决方法。 这些规则中的一部分包括诸如如何根据本地名称（在要调试的语言的类型系统中为一个名称）解析投影名称（由数据模型添加的名称）。 
 
-为脚本提供程序在提供一定程度的一致性，数据模型的脚本管理器提供的默认名称联编程序。 可以通过调用 IDataModelScriptManager 接口上的 GetDefaultNameBinder 方法获取此默认名称联编程序。 名称绑定器接口定义，如下所示。 
+为了在脚本提供程序之间提供一定程度的一致性，数据模型的脚本管理器提供了一个默认名称联编程序。 可以通过调用 IDataModelScriptManager 接口上的 GetDefaultNameBinder 方法获取此默认名称联编程序。 名称联编程序接口的定义如下。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelNameBinder, IUnknown)
@@ -381,57 +350,57 @@ DECLARE_INTERFACE_(IDataModelNameBinder, IUnknown)
 
 [BindValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelnamebinder-bindvalue)
 
-BindValue 方法根据绑定规则的一组给定对象上执行 contextObject.name 的等效项。 此绑定的结果是一个值。 一个值，作为基础脚本提供程序不能使用值执行回名称分配。
+BindValue 方法根据一组绑定规则，对给定的对象执行等效的 contextObject.name。 此绑定的结果是一个值。 作为值，基础脚本提供程序不能使用值来将赋值返回到名称。
 
 [BindReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelnamebinder-bindreference)
 
-BindReference 方法的类似于 BindValue 在于，还将根据绑定规则的一组给定对象上执行 contextObject.name 的等效项。 但是，此方法从绑定的结果是而不是值的引用。 作为参考，脚本提供程序可以利用执行分配回名称的引用。 
+BindReference 方法类似于 BindValue，因为它还会根据一组绑定规则对给定的对象执行等效的操作。 但是，从此方法进行绑定的结果是引用而不是值。 作为参考，脚本提供程序可以利用该引用将赋值回给名称。 
 
 [EnumerateValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelnamebinder-enumeratevalues)
 
-EnumerateValues 方法枚举名称和值将绑定针对根据 BindValue 方法的规则的对象的集。 与不同 EnumerateKeys、 EnumerateValues 和 IModelObject 后者可能会返回多个名称使用相同的值 （适用于基类、 父模型等） 上的类似方法，此枚举器将仅返回特定的一组与将绑定的名称BindValue 和 BindReference。 不允许有重复的名称。 请注意，枚举通过比调用 IModelObject 方法的名称联编程序对象的明显更高成本。 
+EnumerateValues 方法根据 BindValue 方法的规则枚举名称和值的集合，这些名称和值将根据对象进行绑定。 不同于 IModelObject 上的 EnumerateKeys、EnumerateValues 和类似方法，这些方法可能返回具有相同值的多个名称（对于基类、父模型和类似），此枚举器将仅返回将绑定到的特定名称集BindValue 和 BindReference。 名称永远不会重复。 请注意，通过名称联编程序枚举对象比调用 IModelObject 方法要高得多。 
 
 [EnumerateReferences](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelnamebinder-enumeratereferences)
 
-EnumerateReferences 方法枚举一组的名称和对其的引用将绑定针对根据 BindReference 方法的规则的对象。 与不同 EnumerateKeys、 EnumerateValues 和 IModelObject 后者可能会返回多个名称使用相同的值 （适用于基类、 父模型等） 上的类似方法，此枚举器将仅返回特定的一组与将绑定的名称BindValue 和 BindReference。 不允许有重复的名称。 请注意，枚举通过比调用 IModelObject 方法的名称联编程序对象的明显更高成本。 
+EnumerateReferences 方法枚举名称和对它们的引用集，这些名称和引用将根据 BindReference 方法的规则绑定到对象。 不同于 IModelObject 上的 EnumerateKeys、EnumerateValues 和类似方法，这些方法可能返回具有相同值的多个名称（对于基类、父模型和类似），此枚举器将仅返回将绑定到的特定名称集BindValue 和 BindReference。 名称永远不会重复。 请注意，通过名称联编程序枚举对象比调用 IModelObject 方法要高得多。 
 
 
-## <a name="span-iddebugscript-debugger-data-model-c-script-debugging-interfaces"></a><span id="debugscript"> 调试器数据模型C++编写的脚本调试接口
+## <a name="span-iddebugscript-debugger-data-model-c-script-debugging-interfaces"></a><span id="debugscript">调试器数据模型C++脚本调试接口
 
-数据模型中的脚本提供程序的基础结构还提供了有关调试脚本的概念。 任何想要公开与调试主机承载的数据模型的调试器应用程序的调试功能的脚本可以通过让实现除了 IDataModelScript 界面 IDataModelScriptDebug 接口的可调试脚本来实现。 该脚本此接口存在对基础结构指示它是可调试。 
+数据模型中脚本提供程序的基础结构还提供了有关调试脚本的概念。 任何想要向调试宿主和宿主数据模型的调试器应用程序公开调试功能的脚本都可以通过使用 IDataModelScript 接口来实现 IDataModelScriptDebug 接口，来实现此目的。 此脚本在脚本中的状态向基础结构指出它是可调试的。 
 
-若要获取访问脚本提供程序的调试功能的起始点 IDataModelScriptDebug 接口时，它所加入由一组中提供整体的调试功能的其他接口。 
+尽管 IDataModelScriptDebug 接口是获取对脚本提供程序的调试功能的访问权限，但它是通过提供整体调试功能的一组其他接口加入的。 
 
-调试接口是： 
-
-接口 | 描述
-|---------|------------|
-IDataModelScriptDebug | 脚本提供程序必须提供才能使脚本可调试性核心接口。 如果该脚本可调试，IDataModelScript 接口的实现类必须为 IDataModelScriptDebug QueryInterface。
-IDataModelScriptDebugClient | 其想要提供的脚本调试功能的用户界面实现 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等...)
-IDataModelScriptDebugStack | 脚本提供程序实现此接口以提供给脚本调试器调用堆栈这一概念。
-IDataModelScriptDebugStackFrame | 脚本提供程序实现此接口公开特定堆栈帧调用堆栈中的概念。
-IDataModelScriptDebugVariableSetEnumerator | 脚本提供程序实现此接口以公开一组变量。 此组可能为函数、 本地变量、 组或组在特定范围内的变量表示参数的集。 确切含义是取决于如何获取该接口。
-IDataModelScriptDebugBreakpoint | 脚本提供程序实现此接口，以公开的概念和特定断点的脚本中的控件。
-IDataModelScriptDebugBreakpointEnumerator | 脚本提供程序实现此枚举的所有断点 （无论启用） 当前存在的脚本中。
-
-常规管理接口是： 
+调试接口包括： 
 
 接口 | 描述
 |---------|------------|
-IDataModelScriptProvider | 脚本提供程序必须实现的核心接口。 这是脚本的注册到数据模型管理器以便播发的特定类型的提供程序的支持并注册针对特定文件扩展名的脚本管理器部分接口
-IDataModelScript | 特定脚本正在管理提供程序的抽象。 每个脚本，它将被加载或正在编辑具有单独的 IDataModelScript 实例
-IDataModelScriptClient | 一个客户端接口，将使用脚本提供程序的信息传递给一个用户界面。 脚本提供程序不实现此接口。 承载想要进行数据模型的应用程序的脚本提供程序使用 does。 脚本提供程序将调用方法的脚本客户端报告状态、 错误等...
-IDataModelScriptHostContext | 主机接口，用来通过脚本提供程序作为容器的脚本的内容。 如何脚本图面以外的操作，对其执行到调试器应用程序的对象模型的内容是由特定的调试主机。 此接口允许脚本提供程序，以获取有关在何处放置其内容的信息。
-IDataModelScriptTemplate | 脚本提供程序可以提供一个或多个模板以用作编写脚本的用户的起点。 提供了内置编辑器的调试器应用程序可以是预先填充其模板内容如播发由通过此接口提供程序的新脚本。
-IDataModelScriptTemplateEnumerator | 它支持脚本提供程序实现以播发所有各种模板的枚举器接口。
-IDataModelNameBinder | 名称联编程序-可以将在上下文中的名称与值关联的对象。 对于给定的表达式，例如"foo.bar"，名称联编程序是能够将对象"foo"的上下文中的绑定名称"bar"，并生成一个值或对它的引用。 名称绑定器通常未实现的脚本的提供程序;相反，可以获取从数据模型和脚本提供程序使用默认联编程序。
+IDataModelScriptDebug | 为了使脚本可调试，脚本提供程序必须提供的核心接口。 如果脚本是可调试的，则 IDataModelScript 接口的实现类必须用于 IDataModelScriptDebug 的 QueryInterface。
+IDataModelScriptDebugClient | 希望提供脚本调试功能的用户界面实现了 IDataModelScriptDebugClient 接口。 该脚本提供程序使用此接口可来回传递的调试信息 (例如： 事件出现、 断点，等等...)
+IDataModelScriptDebugStack | 脚本提供程序实现此接口，以便向脚本调试器公开调用堆栈的概念。
+IDataModelScriptDebugStackFrame | 脚本提供程序实现此接口，以公开调用堆栈中特定堆栈帧的概念。
+IDataModelScriptDebugVariableSetEnumerator | 脚本提供程序实现此接口以公开一组变量。 此集可以表示函数的参数集、本地变量集或特定范围内的变量集。 具体含义取决于获取接口的方式。
+IDataModelScriptDebugBreakpoint | 脚本提供程序实现此接口，以公开脚本中特定断点的概念和控制。
+IDataModelScriptDebugBreakpointEnumerator | 脚本提供程序实现此以枚举脚本中当前存在的所有断点（无论是否已启用）。
+
+常规管理接口包括： 
+
+接口 | 描述
+|---------|------------|
+IDataModelScriptProvider | 脚本提供程序必须实现的核心接口。 这是向数据模型管理器的脚本管理器部分注册的接口，以便播发提供程序对特定类型脚本的支持并针对特定文件扩展名进行注册
+IDataModelScript | 由提供程序管理的特定脚本的抽象。 加载或编辑的每个脚本都有单独的 IDataModelScript 实例
+IDataModelScriptClient | 脚本提供程序用于向用户界面传递信息的客户端接口。 脚本提供程序不实现此接口。 承载需要使用脚本提供程序的数据模型的应用程序。 脚本提供程序将调用脚本客户端的方法来报告状态、错误，等等 。
+IDataModelScriptHostContext | 由脚本提供程序用作脚本内容的容器的宿主接口。 除了其对调试器应用程序的对象模型执行的操作之外，脚本表面的内容如何取决于特定的调试宿主。 此接口允许脚本提供程序获取有关内容放置位置的信息。
+IDataModelScriptTemplate | 脚本提供程序可以提供一个或多个模板，用作用户编写脚本的起点。 提供内置编辑器的调试器应用程序可以 prefill 通过此接口提供的提供程序公布的模板内容的新脚本。
+IDataModelScriptTemplateEnumerator | 脚本提供程序实现的一个枚举器接口，用于公布它所支持的所有各种模板。
+IDataModelNameBinder | 名称联编程序-一个对象，可将上下文中的名称与值相关联。 对于给定的表达式（如 "foo"），名称联编程序能够在对象 "foo" 的上下文中绑定名称 "bar"，并生成一个值或对它的引用。 名称联编程序通常不由脚本提供程序实现;相反，可以从数据模型中获取默认联编程序，并由脚本提供程序使用。
 
 
 **使脚本可调试：IDataModelScriptDebug**
 
-这是可调试任何脚本指示通过实现 IDataModelScript 的同一个组件上的 IDataModelScriptDebug 接口存在此功能。 此接口由调试主机或承载数据模型的调试器应用程序的查询是什么指示调试功能存在。 
+任何可调试的脚本通过在实现 IDataModelScript 的同一组件上存在 IDataModelScriptDebug 接口来指示此功能。 调试宿主或宿主数据模型的调试器应用程序对此接口的查询是指调试功能的状态。 
 
-IDataModelScriptDebug 接口定义，如下所示。 
+IDataModelScriptDebug 接口的定义如下。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptDebug, IUnknown)
@@ -451,50 +420,50 @@ DECLARE_INTERFACE_(IDataModelScriptDebug, IUnknown)
 
 [GetDebugState](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-getdebugstate)
 
-GetDebugState 方法返回该脚本的当前状态 (例如： 是否执行或不)。 状态是由 ScriptDebugState 枚举中的值定义。
+GetDebugState 方法返回脚本的当前状态（例如：是否正在执行）。 状态由 ScriptDebugState 枚举中的值定义。
 
 [GetCurrentPosition](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-getcurrentposition)
 
-GetCurrentPosition 方法返回该脚本中的当前位置。 这只能调用如果脚本中断到调试器 GetScriptState 调用返回 ScriptDebugBreak 的位置。 任何其他调用此方法无效，将会失败。 
+GetCurrentPosition "方法返回脚本内的当前位置。 只有在将脚本分解到调试器中时，才会调用此方法，在这种情况下，对 GetScriptState 的调用将返回 ScriptDebugBreak。 对此方法的任何其他调用都无效，将失败。 
 
 [GetStack](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-getstack)
 
-GetStack 方法获取中断位置处的当前调用堆栈。 如果脚本中断到调试器，可能仅调用此方法。 
+GetStack 方法获取中断位置的当前调用堆栈。 只有在将脚本分解到调试器时，才能调用此方法。 
 
 [SetBreakpoint](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-setbreakpoint)
 
-SetBreakpoint 方法设置断点的脚本中。 请注意，实现随意调整 inpassed 的行和列位置向前移动到相应的代码位置。 可通过方法调用返回 IDataModelScriptDebugBreakpoint 接口上的实际行和列号放置断点的位置。 
+SetBreakpoint 方法在脚本中设置断点。 请注意，实现可自由调整 inpassed 行和列位置，使其前进到适当的代码位置。 在返回的 IDataModelScriptDebugBreakpoint 接口上，方法调用可以检索放置断点的实际行号和列号。 
 
 [FindBreakpointById](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-findbreakpointbyid)
 
-在脚本中通过 SetBreakpoint 方法创建的每个断点是由实现分配的唯一标识符 （64 位无符号整数）。 FindBreakpointById 方法用于获取到断点的一个接口，从给定的标识符。 
+通过 SetBreakpoint 方法在脚本内创建的每个断点都是由实现指定的唯一标识符（64位无符号整数）。 FindBreakpointById 方法用于从给定标识符获取断点接口。 
 
 [EnumerateBreakpoints](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-enumeratebreakpoints)
 
-EnumerateBreakpoints 方法返回一个枚举器可以枚举每个特定脚本中设置断点。 
+EnumerateBreakpoints 方法返回一个枚举器，该枚举器可枚举在特定脚本中设置的每个断点。 
 
 [GetEventFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-geteventfilter)
 
-GetEventFilter 方法将返回针对特定事件已启用"中断事件"。 这可能导致"中断事件"事件介绍 ScriptDebugEventFilter 枚举的成员。 
+GetEventFilter 方法返回是否对特定事件启用 "事件中断"。 可能导致 "事件中断" 的事件由 ScriptDebugEventFilter 枚举的成员描述。 
 
 [SetEventFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-seteventfilter)
 
-SetEventFilter 方法更改为特定事件的"中断事件"行为由 ScriptDebugEventFilter 枚举的成员定义。 可以为 GetEventFilter 方法的文档中找到可用的事件 （和此枚举的说明） 的完整列表。 
+SetEventFilter 方法为 ScriptDebugEventFilter 枚举的成员定义的特定事件更改 "事件中断" 行为。 可在 GetEventFilter 方法的文档中找到可用事件（以及此枚举的说明）的完整列表。 
 
 [StartDebugging](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-startdebugging)
 
-StartDebugging 方法"开启"的某个特定脚本的调试器。 启动调试的 act 不主动会导致任何执行中断或单步执行。 它只是可使脚本可调试，并提供了一组客户端与调试接口进行通信的接口。 
+StartDebugging 方法 "打开" 特定脚本的调试器。 启动调试的操作不会主动导致执行中断或单步执行。 它只是使脚本可调试，并为客户端提供一组用于与调试接口进行通信的接口。 
 
-[StopDebugging](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-stopdebugging)
+["](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebug-stopdebugging)
 
-StopDebugging 方法称为客户端想要停止调试。 此方法调用可能会在任何时候，StartDebugging 进行成功后 (例如： 期间中断，在执行脚本时，等等...)。在调用立即停止所有调试活动和状态返回到调用 StartDebugging 之前重置。 
+"方法由要停止调试的客户端调用。 此方法调用可能会在任何时候，StartDebugging 进行成功后 (例如： 期间中断，在执行脚本时，等等...)。调用会立即停止所有调试活动，并在调用 StartDebugging 之前将状态重置回。 
 
 
 **调试接口：IDataModelScriptDebugClient**
 
-其想要提供围绕脚本调试接口的调试主机或调试器应用程序必须向脚本调试器为调试接口上的 StartDebugging 方法通过提供 IDataModelScriptDebugClient 接口的实现脚本。 
+需要为脚本调试提供接口的调试宿主或调试器应用程序必须通过的调试接口上的 StartDebugging 方法为脚本调试器提供 IDataModelScriptDebugClient 接口的实现脚本. 
 
-IDataModelScriptDebugClient 是在其中调试事件传递和控制转到调试器界面从脚本执行引擎的通信通道。 它定义，如下所示。 
+IDataModelScriptDebugClient 是通过其传递调试事件的通信通道，控制从脚本执行引擎到调试器接口。 定义方式如下： 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptDebugClient, IUnknown)
@@ -505,15 +474,15 @@ DECLARE_INTERFACE_(IDataModelScriptDebugClient, IUnknown)
 
 [NotifyDebugEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugclient-notifydebugevent)
 
-每次任何事件发生时分解为多个脚本调试程序，调试代码本身可以通过 NotifyDebugEvent 方法接口的调用。 此方法是同步的。 没有执行该脚本将继续进行，直到接口返回的事件。 脚本调试程序的定义用于简单： 有嵌套绝对不需要处理的事件。 调试事件是由称为 ScriptDebugEventInformation 的变体记录定义的。 DebugEvent 成员很大程度上定义的信息是有效的事件中的哪些字段。 它定义事件发生所描述的 ScriptDebugEvent 枚举的成员的类型。
+每当发生中断脚本调试器的事件时，调试代码本身就会通过 NotifyDebugEvent 方法调用接口。 此方法是同步的。 在接口从事件返回之前，不会继续执行脚本。 脚本调试器的定义非常简单：绝对不需要处理的嵌套事件。 调试事件由称为 ScriptDebugEventInformation 的变量记录定义。 事件信息中的哪些字段有效很大程度上由 DebugEvent 成员定义。 它定义发生的事件类型，如 ScriptDebugEvent 枚举的成员所述。
 
 **调用堆栈：IDataModelScriptDebugStack**
 
-事件时发生的分解为多个脚本调试器，调试接口将想要检索的中断位置的调用堆栈。 这是通过 GetStack 方法。 此类堆栈表示通过 IDataModelScriptDebugStack 定义，如下所示。 
+当发生会中断到脚本调试器中的事件时，调试接口将需要检索中断位置的调用堆栈。 这是通过 GetStack 方法完成的。 此类堆栈通过 IDataModelScriptDebugStack 定义，如下所示。 
 
-请注意，整个堆栈可能跨多个脚本和/或多个脚本提供程序。 调用堆栈某个特定脚本调试接口返回通过 GetStack 方法一次调用应仅返回该脚本的边界内的调用堆栈段。 它是完全有可能脚本调试引擎可以检索调用堆栈，如跨多个脚本上下文，如果两个脚本的相同的提供程序进行交互。 GetStack 方法不应返回堆栈中的另一个脚本的一部分。 相反，如果可以检测到这种情况下，这是到脚本的边界帧的堆栈帧应将标记本身为通过该堆栈帧上的 IsTransitionPoint 和 GetTransition 方法的实现的过渡帧。 应，调试器界面将整合从多个堆栈段存在的在整个堆栈。 
+请注意，整个堆栈可能跨越多个脚本和/或多个脚本提供程序。 在特定脚本的调试接口上对 GetStack 方法的单个调用返回的调用堆栈只应在该脚本的边界内返回调用堆栈的段。 如果同一个提供程序的两个脚本交互，则脚本调试引擎可以将调用堆栈检索为跨越多个脚本上下文。 GetStack 方法不应返回堆栈中位于另一个脚本中的部分。 相反，如果可以检测到这种情况，则将堆栈帧作为脚本的边界框架应通过在该堆栈帧上的 IsTransitionPoint 和 GetTransition 方法的实现将其标记为转换框架。 调试器接口应将整个堆栈与存在的多个堆栈段组合在一起。 
 
-非常有必要，在这种方式实现转换或调试接口会将有关局部变量、 参数、 断点、 查询和其他脚本特定构造到错误的脚本上下文 ！ 这将导致调试器界面中未定义的行为。 
+转换是以这种方式实现的，调试接口可能会将有关本地变量、参数、断点和其他脚本特定构造的查询定向到错误的脚本上下文！ 这将导致调试器界面中出现未定义的行为。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptDebugStack, IUnknown)
@@ -525,16 +494,16 @@ DECLARE_INTERFACE_(IDataModelScriptDebugStack, IUnknown)
 
 [GetFrameCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstack-getframecount)
 
-GetFrameCount 方法返回在此段中的调用堆栈的堆栈帧数。 如果在不同的脚本上下文中或不同的提供程序，提供程序可以检测到的帧，它应此信息指示给调用方通过此堆栈段上的入口帧的 IsTransitionPoint 和 GetTransition 方法的实现。 
+GetFrameCount 方法返回调用堆栈的此段中堆栈帧的数目。 如果提供程序可以在不同的脚本上下文或不同的提供程序中检测帧，则它应通过将进入帧上的 IsTransitionPoint 和 GetTransition 方法实现到此堆栈段来向调用方指示这一点。 
 
 [GetStackFrame](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstack-getstackframe)
 
-GetStackFrame 堆栈段中获取特定堆栈帧。 调用堆栈有零个基于索引的系统： 中断事件的发生位置的当前堆栈帧是帧 0。 当前方法的调用方是第 1 帧 （依此类推）。 
+GetStackFrame 从堆栈段获取特定堆栈帧。 调用堆栈具有从零开始的索引系统：发生 break 事件的当前堆栈帧为帧0。 当前方法的调用方为帧1（等等）。 
 
 
-**如果中断正在检查状态：IDataModelScriptDebugStackFrame**
+**中断时检查状态：IDataModelScriptDebugStackFrame**
 
-如果脚本调试器中中断的调用堆栈的特定帧可以检索通过发生中断 IDataModelScriptDebugStack 接口表示堆栈段上的 GetStackFrame 方法调用。 返回表示此帧的 IDataModelScriptDebugStackFrame 接口定义，如下所示。
+可以通过调用 IDataModelScriptDebugStack 接口上的 GetStackFrame 方法（表示发生中断的堆栈段）来检索进入脚本调试程序时调用堆栈的特定帧。 返回以表示此帧的 IDataModelScriptDebugStackFrame 接口的定义如下。
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptDebugStackFrame, IUnknown)
@@ -551,36 +520,36 @@ DECLARE_INTERFACE_(IDataModelScriptDebugStackFrame, IUnknown)
 
 [GetName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-getname)
 
-GetName 方法返回的显示名称 (例如： 函数名称) 的此帧。 此类名称将显示在调试器界面中向用户显示堆栈回溯。 
+GetName 方法返回此帧的显示名称（例如：函数名称）。 此类名称将在堆栈 backtrace 中显示，并显示给用户。 
 
 [GetPosition](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-getposition)
 
-GetPosition 方法返回代表堆栈帧的脚本中的位置。 如果脚本是一个分行符，由其中包含此帧的堆栈中，可能仅调用此方法。 始终返回此范围内的行和列位置。 如果调试器能够返回的脚本中的"执行位置"的范围，可以 positionSpanEnd 参数中返回的结束位置。 如果不支持此调试器，则 s p a n 端 （如果请求） 中的行和列的值应设置为零。 
+GetPosition 方法返回脚本内堆栈帧所表示的位置。 仅当脚本位于包含此帧的堆栈所表示的断点内时，才能调用此方法。 始终返回此帧中的行和列位置。 如果调试器能够返回脚本内的 "执行位置" 范围，则可以在 positionSpanEnd 参数中返回结束位置。 如果调试器无法做到这一点，则跨度结束（如果需要）中的行和列值应设置为零。 
 
 [IsTransitionPoint](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-istransitionpoint)
 
-IDataModelScriptDebugStack 接口表示调用堆栈-调用堆栈包含在一个脚本的上下文内的该部分的段。 如果调试器能够检测到另一个脚本 （或到另一个脚本提供程序） 中的转换，它可以通过实现 IsTransitionPoint 方法并返回 true 或 false，根据需要来进行指示。 转换点，应考虑输入脚本段其中适用的调用堆栈帧。 不是所有其他帧。 
+IDataModelScriptDebugStack 接口表示调用堆栈的一段，这部分调用堆栈包含在一个脚本的上下文中。 如果调试器能够检测从一个脚本到另一个脚本（或一个脚本提供程序）的转换，则可以通过实现 IsTransitionPoint 方法并根据需要返回 true 或 false 来指示这一点。 输入应用段的脚本的调用堆栈帧应视为转换点。 不是所有其他帧。 
 
 [GetTransition](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-gettransition)
 
-如果给定的堆栈帧转换点由 IsTransition 方法 （请参阅的文档有关的转换点定义），GetTransition 方法返回有关转换的信息。 具体而言，此方法将返回上一个脚本--这使得调用堆栈段，其中包含此 IDataModelScriptDebugStackFrame 代表的脚本的一个。 
+如果给定堆栈帧是由 IsTransition 方法确定的转换点（有关转换点的定义，请参阅此处的文档），GetTransition 方法将返回有关该转换的信息。 具体而言，此方法返回上一个脚本，即调用包含此 IDataModelScriptDebugStackFrame 的堆栈段所代表的脚本。 
 
-[评估](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-evaluate)
+[诂](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-evaluate)
 
-Evaluate 方法由 IDataModelScriptDebugStackFrame 接口在其调用此方法表示堆栈帧的上下文中计算 （的脚本提供程序的语言） 表达式。 表达式计算结果必须作为 IModelObject 封送出脚本提供程序。 属性和生成 IModelObject 的其他构造所有必须能够在调试器处于中断状态时获取。 
+求值方法在调用此方法的 IDataModelScriptDebugStackFrame 接口所表示的堆栈帧的上下文中计算表达式（这是脚本提供程序的语言）。 表达式求值的结果必须以 IModelObject 的形式从脚本提供程序中封送出。 在调试程序处于中断状态时，所生成的 IModelObject 上的属性和其他构造必须能够获得。 
 
 [EnumerateLocals](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-enumeratelocals)
 
-EnumerateLocals 方法返回的所有本地变量由 IDataModelScriptDebugStackFrame 表示堆栈帧的上下文中的作用域中的设置变量 （由 IDataModelScriptDebugVariableSetEnumerator 接口）在其调用此方法的接口。 
+EnumerateLocals 方法返回一个变量集（由 IDataModelScriptDebugVariableSetEnumerator 接口表示），该变量集位于由 IDataModelScriptDebugStackFrame 表示的堆栈帧上下文的范围内的所有局部变量中。在其上调用此方法的接口。 
 
 [EnumerateArguments](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-enumeratearguments)
 
-EnumerateArguments 方法返回由 IDataModelScriptDebugStackFrame 表示堆栈帧中调用的函数的所有函数参数设置变量 （由 IDataModelScriptDebugVariableSetEnumerator 接口）在其调用此方法的接口。 
+EnumerateArguments 方法返回由 IDataModelScriptDebugStackFrame 表示的堆栈帧中调用的函数的所有函数参数的变量集（由 IDataModelScriptDebugVariableSetEnumerator 接口表示）。在其上调用此方法的接口。 
 
 
 **查看变量：IDataModelScriptDebugVariableSetEnumerator**
 
-一组在正在调试的脚本中的变量 (是否中特定作用域、 一个函数的局部变量、 参数的函数等...) 由通过 IDataModelScriptDebugVariableSetEnumerator 接口定义的变量集：
+要调试的脚本中的变量集（无论是特定作用域中的变量、函数的局部变量、函数的参数等）由通过 IDataModelScriptDebugVariableSetEnumerator 接口定义的变量集表示：
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptDebugVariableSetEnumerator, IUnknown)
@@ -592,16 +561,16 @@ DECLARE_INTERFACE_(IDataModelScriptDebugVariableSetEnumerator, IUnknown)
 
 [重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugvariablesetenumerator-reset)
 
-重置方法将枚举器的位置重置为了创建-后立即，即在集中的第一个元素之前。 
+Reset 方法将枚举器的位置重置为在创建后立即开始的位置（即，在该集的第一个元素之前）。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugvariablesetenumerator-getnext)
 
-GetNext 方法将枚举数移到集中的下一个变量，并返回变量的名称、 值和与之关联的任何元数据。 如果枚举数已达到集的末尾，E_BOUNDS 会返回错误。 一旦从 GetNext 方法返回后 E_BOUNDS 标记，它将继续生成 E_BOUNDS 时再次调用，除非进行干预调用重置。 
+GetNext 方法将枚举器移动到集内的下一个变量，并返回变量的名称、值以及与之关联的任何元数据。 如果枚举器已到达集的末尾，则返回错误 E_BOUNDS。 从 GetNext 方法返回 E_BOUNDS 标记后，它将在再次调用时继续生成 E_BOUNDS，除非进行了干预重置调用。 
 
 
-**断点：IDataModelScriptDebugBreakpoint**
+**处IDataModelScriptDebugBreakpoint**
 
-在给定的脚本的调试接口上，通过 SetBreakpoint 方法设置脚本断点。 此类断点表示的唯一 id 和 IDataModelScriptDebugBreakpoint 接口定义，如下所示的实现。 
+脚本断点在给定脚本的调试接口上通过 SetBreakpoint 方法设置。 此类断点由唯一 id 和定义为以下的 IDataModelScriptDebugBreakpoint 接口的实现来表示。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptDebugBreakpoint, IUnknown)
@@ -617,32 +586,32 @@ DECLARE_INTERFACE_(IDataModelScriptDebugBreakpoint, IUnknown)
 
 [GetId](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-getid)
 
-GetId 方法将返回分配到该断点的脚本提供程序的调试引擎的唯一标识符。 此标识符必须是包含脚本的上下文中是唯一的。 断点标识符可能是唯一的该提供程序;但是，不需要。 
+GetId 方法返回由脚本提供程序的调试引擎分配给断点的唯一标识符。 此标识符在包含脚本的上下文中必须是唯一的。 断点标识符对于提供程序可能是唯一的;但这不是必需的。 
 
 [IsEnabled](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-isenabled)
 
-IsEnabled 方法返回指示启用断点。 已禁用的断点仍然存在并且仍在脚本的断点的列表，它只是"关闭"暂时。 应在已启用状态中创建的所有断点。 
+IsEnabled 方法返回是否启用断点。 禁用的断点仍然存在，并且仍在脚本的断点列表中，只是暂时处于 "关闭" 状态。 所有断点都应在 "已启用" 状态创建。 
 
 [Enable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-enable)
 
-Enable 方法用于启用断点。 如果已禁用断点，调用此方法后的"命中断点"会中断到调试器。 
+Enable 方法启用断点。 如果断点已禁用，则在调用此方法后 "命中断点" 将导致调试器中断。 
 
 [禁用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-disable)
 
-Disable 方法禁用断点。 此调用后，调用此方法后的"命中断点"不会中断到调试器。 所需断点，尽管仍然存在，被视为"关闭"。 
+Disable 方法将禁用该断点。 在此调用之后，调用此方法后 "命中断点" 不会中断调试器。 断点仍存在，被视为 "关闭"。 
 
 [删除](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-remove)
 
-Remove 方法从其包含列表中删除断点。 断点在语义上不再存在此方法返回后。 孤立的调用后，属于 IDataModelScriptDebugBreakpoint 接口将表示该断点。 其他任何内容 （合法） 可以与之之外释放此调用后。 
+Remove 方法从其包含列表中删除断点。 此方法返回后，断点不再出现在语义上。 调用后，表示断点的 IDataModelScriptDebugBreakpoint 接口被视为孤立。 除发布其他内容外，不能在此调用后对其执行任何其他操作。 
 
 [GetPosition](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-getposition)
 
-GetPosition 方法返回的脚本中的断点的位置。 脚本调试程序必须返回的行和列源代码中的的断点所在的位置。 如果能够执行此操作，它还可以返回由该断点表示通过填写结束位置的方式的 positionSpanEnd 参数定义的源跨度。 如果调试器能够生成此跨度，并且调用方请求它，应不能提供的值为零，表明填充范围的结束位置的行和列字段。 
+GetPosition 方法返回该断点在脚本中的位置。 脚本调试器必须返回断点所在的源代码中的行和列。 如果它能够执行此操作，它还可以通过填充由 positionSpanEnd 参数定义的结束位置，来返回由断点表示的源的跨度。 如果调试器不能生成此跨度并且调用方请求，则应将跨距结束位置的行和列字段填充为零，以指示无法提供这些值。 
 
 
 **断点枚举：IDataModelScriptDebugBreakpointEnumerator**
 
-如果脚本访问接口支持调试，它必须还跟踪的与每个脚本相关联的所有断点并可以枚举这些断点到调试接口。 断点的枚举器通过给定脚本调试接口上的 EnumerateBreakpoints 方法获取，并按如下所示定义。 
+如果脚本提供程序支持调试，还必须跟踪与每个脚本相关联的所有断点，并能够将这些断点枚举到调试接口。 断点的枚举器在给定脚本的调试接口上通过 EnumerateBreakpoints 方法获取，并按如下所示定义。 
 
 ```cpp
 DECLARE_INTERFACE_(IDataModelScriptDebugBreakpointEnumerator, IUnknown)
@@ -654,19 +623,17 @@ DECLARE_INTERFACE_(IDataModelScriptDebugBreakpointEnumerator, IUnknown)
 
 [重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpointenumerator-reset)
 
-重置方法重置到了枚举器-即之前创建的第一个枚举断点后的枚举器的位置。 
+Reset 方法将枚举器的位置重置为创建枚举器后的位置（即在第一个枚举断点之前）。 
 
 [GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpointenumerator-getnext)
 
-GetNext 方法将枚举数向前移动到下一个要枚举的断点，并返回该断点的 IDataModelScriptDebugBreakpoint 接口。 如果枚举数已经到达枚举末尾，则返回 E_BOUNDS。 一旦已生成 E_BOUNDS 错误，对 GetNext 方法的后续调用将继续生成 E_BOUNDS，除非重置方法对的干预调用。 
-
-
-
-
+GetNext 方法将枚举器向前移动到要枚举的下一个断点，并返回该断点的 IDataModelScriptDebugBreakpoint 接口。 如果枚举器已到达枚举的末尾，则返回 E_BOUNDS。 生成 E_BOUNDS 错误后，对 GetNext 方法的后续调用将继续生成 E_BOUNDS，除非对 Reset 方法进行了干预调用。 
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+
+本主题是一系列文章的一部分，其中描述了可C++从访问的接口，如何使用它们C++来生成基于的调试器扩展，以及如何使用其他数据模型构造（例如：JavaScript 或 NatVis） C++ 。
 
 [调试器数据模型C++概述](data-model-cpp-overview.md)
 
@@ -674,8 +641,6 @@ GetNext 方法将枚举数向前移动到下一个要枚举的断点，并返回
 
 [调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++附加接口](data-model-cpp-additional-interfaces.md)
 
 [调试器数据模型C++概念](data-model-cpp-concepts.md)
-
-[调试器数据模型C++脚本](data-model-cpp-scripting.md)
