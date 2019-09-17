@@ -1,11 +1,11 @@
 ---
 title: Bug 检查 0xA5 ACPI_BIOS_ERROR
-description: ACPI_BIOS_ERROR bug 检查具有值，该值指示在 ACPI BIOS 的计算机不是完全符合 ACPI 规范 0x000000A5。
+description: ACPI_BIOS_ERROR bug 检查的值为0x000000A5，指示计算机的 ACPI BIOS 与 ACPI 规范不完全兼容。
 ms.assetid: f0366a3c-a2c4-4fc8-a722-52fdda59eb2b
 keywords:
 - Bug 检查 0xA5 ACPI_BIOS_ERROR
 - ACPI_BIOS_ERROR
-ms.date: 05/23/2017
+ms.date: 09/12/2019
 topic_type:
 - apiref
 api_name:
@@ -13,28 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e77a40267f9cc37324f891eed057792aba4eece5
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4975f922f3c347f58a596010a2b5fd91b3649401
+ms.sourcegitcommit: f91a0fd22f46be44839d2a22a21f59fad900ce90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519050"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71020990"
 ---
-# <a name="bug-check-0xa5-acpibioserror"></a>Bug 检查 0xA5：ACPI\_BIOS\_ERROR
+# <a name="bug-check-0xa5-acpi_bios_error"></a>Bug 检查 0xA5：ACPI\_BIOS\_错误
 
-
-ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级配置和电源接口 (ACPI) BIOS 的计算机不是完全符合 ACPI 规范。
+ACPI\_BIOS\_错误检查的值为0x000000A5。 此错误检查表明计算机的高级配置和电源接口（ACPI） BIOS 与 ACPI 规范不完全兼容。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户, 请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="acpibioserror-parameters"></a>ACPI\_BIOS\_错误参数
+## <a name="acpi_bios_error-parameters"></a>ACPI\_BIOS\_错误参数
 
+参数1指示不兼容的类型。 其他参数的意义取决于参数1的值。
 
-参数 1 表示不兼容的类型。 其他参数的含义取决于参数 1 的值。
-
-如果与插即用 (PnP) 或电源管理相关的 BIOS 不兼容，则使用以下参数。
+如果 BIOS 不兼容性与即插即用（PnP）或电源管理相关，则使用以下参数。
 
 <table>
 <colgroup>
@@ -46,10 +44,10 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 1</th>
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
-<th align="left">参数 4</th>
+<th align="left">参数1</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
+<th align="left">参数4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
@@ -58,108 +56,108 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 <td align="left"><p>0x01</p></td>
 <td align="left"><p>ACPI 的<strong>deviceExtension</strong></p></td>
 <td align="left"><p>ACPI 的<strong>ResourceList</strong></p></td>
-<td align="left"><p><strong>0:</strong>没有找到任何资源的列表</p>
-<p><strong>1:</strong>在列表中不找到任何 IRQ 资源</p></td>
-<td align="left"><p>ACPI 找不到 ACPI 启动时传递给它的资源中的系统管理中断 (SCI) 向量。</p></td>
+<td align="left"><p><strong>0</strong>找不到资源列表</p>
+<p><strong>2</strong>列表中找不到任何 IRQ 资源</p></td>
+<td align="left"><p>ACPI 在启动 ACPI 时，无法在传递给它的资源中找到系统控制中断（科幻）矢量。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x02</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>（请参阅表更高版本在此页）</p></td>
+<td align="left"><p>（请参阅本页后面的表）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x03</p></td>
-<td align="left"><p>正在运行 ACPI 对象</p></td>
-<td align="left"><p>从解释器返回的值</p></td>
-<td align="left"><p>控制方法 （在 ULONG 格式） 的名称</p></td>
-<td align="left"><p>ACPI 尝试运行控制方法，同时创建设备扩展来表示 ACPI 名称空间，但此控件方法失败。</p></td>
+<td align="left"><p>正在运行的 ACPI 对象</p></td>
+<td align="left"><p>来自解释器的返回值</p></td>
+<td align="left"><p>控制方法的名称（以 ULONG 格式）</p></td>
+<td align="left"><p>ACPI 在创建用于表示 ACPI 命名空间的设备扩展时尝试运行控制方法，但此控制方法失败。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x04</p></td>
-<td align="left"><p>ACPI 扩展该 _PRW 属于</p></td>
-<td align="left"><p>指向方法</p></td>
-<td align="left"><p><strong>数据类型</strong>返回 （请参阅 Amli.h）</p></td>
-<td align="left"><p>ACPI 计算 _PRW 并在需要查找 package 元素作为一个整数。</p></td>
+<td align="left"><p>_PRW 所属的 ACPI 扩展</p></td>
+<td align="left"><p>指向方法的指针。</p></td>
+<td align="left"><p>返回的<strong>数据类型</strong>（请参见 Amli）</p></td>
+<td align="left"><p>ACPI 评估了一个 _PRW，并期望找到一个整数作为包元素。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x05</p></td>
-<td align="left"><p>ACPI 扩展该 _PRW 属于</p></td>
-<td align="left"><p>到 _PRW Aointer</p></td>
+<td align="left"><p>_PRW 所属的 ACPI 扩展</p></td>
+<td align="left"><p>Aointer 到 _PRW</p></td>
 <td align="left"><p>_PRW 中的元素数</p></td>
-<td align="left"><p>ACPI 评估 _PRW 和包返回了无法包含至少两个元素。 ACPI 规范要求两个元素始终为 _PRW 中存在。</p></td>
+<td align="left"><p>ACPI 评估了 _PRW，而返回的包未能包含至少两个元素。 ACPI 规范要求 _PRW 中始终存在两个元素。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x06</p></td>
-<td align="left"><p>ACPI 扩展该 _PRx 属于</p></td>
-<td align="left"><p>指向 _PRx</p></td>
-<td align="left"><p>指向要查找的对象的名称</p></td>
-<td align="left"><p>ACPI 曾尝试找不到命名的对象，但它找不到对象。</p></td>
+<td align="left"><p>_PRx 所属的 ACPI 扩展</p></td>
+<td align="left"><p>指向 _PRx 的指针</p></td>
+<td align="left"><p>一个指针，指向要查找的对象的名称。</p></td>
+<td align="left"><p>ACPI 尝试查找命名对象，但找不到该对象。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x07</p></td>
-<td align="left"><p>该方法所属的 ACPI 扩展</p></td>
-<td align="left"><p>指向方法</p></td>
-<td align="left"><p><strong>数据类型</strong>返回 （请参阅 Amli.h）</p></td>
-<td align="left"><p>ACPI 计算方法，并应接收缓冲区中返回。 但是，该方法返回某些其他数据类型。</p></td>
+<td align="left"><p>此方法所属的 ACPI 扩展</p></td>
+<td align="left"><p>指向方法的指针。</p></td>
+<td align="left"><p>返回的<strong>数据类型</strong>（请参见 Amli）</p></td>
+<td align="left"><p>ACPI 评估了一个方法，并期望接收返回的缓冲区。 但是，该方法返回了一些其他数据类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x08</p></td>
-<td align="left"><p>该方法所属的 ACPI 扩展</p></td>
-<td align="left"><p>指向方法</p></td>
-<td align="left"><p><strong>数据类型</strong>返回 （请参阅 Amli.h）</p></td>
-<td align="left"><p>ACPI 计算方法，并应接收一个整数返回。 但是，该方法返回某些其他数据类型。</p></td>
+<td align="left"><p>此方法所属的 ACPI 扩展</p></td>
+<td align="left"><p>指向方法的指针。</p></td>
+<td align="left"><p>返回的<strong>数据类型</strong>（请参见 Amli）</p></td>
+<td align="left"><p>ACPI 评估了一个方法，并期望接收返回的整数。 但是，该方法返回了一些其他数据类型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x09</p></td>
-<td align="left"><p>该方法所属的 ACPI 扩展</p></td>
-<td align="left"><p>指向方法</p></td>
-<td align="left"><p><strong>数据类型</strong>返回 （请参阅 Amli.h）</p></td>
-<td align="left"><p>ACPI 计算方法，并应接收包返回的。 但是，该方法返回某些其他数据类型。</p></td>
+<td align="left"><p>此方法所属的 ACPI 扩展</p></td>
+<td align="left"><p>指向方法的指针。</p></td>
+<td align="left"><p>返回的<strong>数据类型</strong>（请参见 Amli）</p></td>
+<td align="left"><p>ACPI 计算方法，并期望接收返回的包。 但是，该方法返回了一些其他数据类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0A</p></td>
-<td align="left"><p>该方法所属的 ACPI 扩展</p></td>
-<td align="left"><p>指向方法</p></td>
-<td align="left"><p><strong>数据类型</strong>返回 （请参阅 Amli.h）</p></td>
-<td align="left"><p>ACPI 计算方法，并应接收一个字符串返回。 但是，该方法返回某些其他数据类型。</p></td>
+<td align="left"><p>此方法所属的 ACPI 扩展</p></td>
+<td align="left"><p>指向方法的指针。</p></td>
+<td align="left"><p>返回的<strong>数据类型</strong>（请参见 Amli）</p></td>
+<td align="left"><p>ACPI 计算方法，并期望接收返回的字符串。 但是，该方法返回了一些其他数据类型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0B</p></td>
-<td align="left"><p>ACPI 扩展该 _EJD 属于</p></td>
+<td align="left"><p>_EJD 所属的 ACPI 扩展</p></td>
 <td align="left"><p>解释器返回的状态</p></td>
 <td align="left"><p>ACPI 尝试查找的对象的名称</p></td>
 <td align="left"><p>ACPI 找不到 _EJD 字符串引用的对象。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0C</p></td>
-<td align="left"><p>ACPI 找到停靠设备的 ACPI 扩展</p></td>
-<td align="left"><p>指向 _EJD 方法</p></td>
-<td align="left"><p><strong>0:</strong>BIOS 不会声称系统是 dockage</p>
-<p><strong>1:</strong>重复的设备的扩展停靠设备</p></td>
-<td align="left"><p>ACPI 提供停靠支持的问题或者没有足够信息。</p></td>
+<td align="left"><p>ACPI 扩展，ACPI 扩展用于</p></td>
+<td align="left"><p>指向 _EJD 方法的指针</p></td>
+<td align="left"><p><strong>0</strong>BIOS 未声明系统为 dockage</p>
+<p><strong>2</strong>停靠设备的重复设备扩展</p></td>
+<td align="left"><p>ACPI 提供了错误或不足的信息，无法提供停靠支持。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0D</p></td>
-<td align="left"><p>ACPI 扩展 ACPI 所需的对象</p></td>
-<td align="left"><p>ACPI 查找的方法 (ULONG) 名称</p></td>
-<td align="left"><p><strong>0:</strong>基本用例</p>
-<p><strong>1:</strong>冲突</p></td>
-<td align="left"><p>ACPI 找不到所需的方法或对象中的命名空间，如果没有 _HID 或 _ADR 存在，则使用此 bug 检查代码。</p></td>
+<td align="left"><p>ACPI 需要此对象的 ACPI 扩展</p></td>
+<td align="left"><p>ACPI 查找的方法的（ULONG）名称</p></td>
+<td align="left"><p><strong>0</strong>基本情况</p>
+<p><strong>2</strong>冲突</p></td>
+<td align="left"><p>ACPI 在命名空间中找不到所需的方法或对象。如果不存在 _HID 或 _ADR，则使用此错误检查代码。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0E</p></td>
-<td align="left"><p>NS <strong>PowerResource</strong> ACPI 需要的对象</p></td>
-<td align="left"><p>ACPI 查找的方法 (ULONG) 名称</p></td>
-<td align="left"><p>0:基本用例</p></td>
-<td align="left"><p>ACPI 找不到所需的方法或对象的命名空间中的 power 资源 （或"设备"之外的实体）。 如果没有 _ON，_OFF 或 _STA power 资源存在，则使用此 bug 检查代码。</p></td>
+<td align="left"><p>ACPI 需要此对象的 NS <strong>PowerResource</strong></p></td>
+<td align="left"><p>ACPI 查找的方法的（ULONG）名称</p></td>
+<td align="left"><p>0基本情况</p></td>
+<td align="left"><p>ACPI 在电源资源（或 "设备" 之外的实体）的命名空间中找不到所需的方法或对象。 如果没有适用于电源资源的 _ON、_OFF 或 _STA，则使用此 bug 检查代码。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0F</p></td>
-<td align="left"><p>ACPI 分析当前缓冲区</p></td>
+<td align="left"><p>ACPI 正在分析的当前缓冲区</p></td>
 <td align="left"><p>缓冲区的标记</p></td>
-<td align="left"><p>指定的长度的缓冲区</p></td>
+<td align="left"><p>缓冲区的指定长度</p></td>
 <td align="left"><p>ACPI 无法分析资源描述符。</p></td>
 </tr>
 <tr class="even">
@@ -167,45 +165,45 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>（请参阅表更高版本在此页）</p></td>
+<td align="left"><p>（请参阅本页后面的表）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x11</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>（请参阅表更高版本在此页）</p></td>
+<td align="left"><p>（请参阅本页后面的表）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x14</p></td>
-<td align="left"><p>ACPI 分析当前缓冲区</p></td>
+<td align="left"><p>ACPI 正在分析的当前缓冲区</p></td>
 <td align="left"><p>缓冲区的标记</p></td>
-<td align="left"><p>指向包含缓冲区的 ULONGLONG 长度的变量的指针</p></td>
-<td align="left"><p>ACPI 无法分析资源描述符。 长度超过 MAXULONG。</p></td>
+<td align="left"><p>指向一个变量的指针，该变量包含缓冲区的 ULONGLONG 长度</p></td>
+<td align="left"><p>ACPI 无法分析资源描述符。 长度超过了 MAXULONG。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x15</p></td>
-<td align="left"><p>ACPI 机器语言 (AML) 上下文</p></td>
-<td align="left"><p><strong>1:</strong>无法加载表</p>
-<p><strong>2:</strong>找不到参数路径字符串对象</p>
-<p><strong>3:</strong>无法将参数数据插入到 ParameterPath 字符串对象</p>
-<p><strong>4:</strong>系统内存不足</p></td>
+<td align="left"><p>ACPI 计算机语言（AML）上下文</p></td>
+<td align="left"><p><strong>2</strong>未能加载表</p>
+<p><strong>2：10</strong>找不到参数路径字符串对象</p>
+<p><strong>3：20</strong>未能将参数数据插入 ParameterPath 字符串对象</p>
+<p><strong>4：30</strong>系统内存不足</p></td>
 <td align="left"><p>NT 状态代码</p></td>
-<td align="left"><p>尝试加载的表时，ACPI 发生了严重错误。</p></td>
+<td align="left"><p>尝试加载表时，ACPI 出现严重错误。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x16</p></td>
-<td align="left"><p>指向父 NSOBJ</p></td>
+<td align="left"><p>指向父 NSOBJ 的指针</p></td>
 <td align="left"><p>指向非法子 ACPI 命名空间对象的指针</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>ACPI 处理 xsdt 表已有一个致命错误。 对象声明为不能具有子级的父级的子级。</p></td>
+<td align="left"><p>在处理 xSDT 时，ACPI 出现严重错误。 对象被声明为不能有子级的父级的子级。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果发生中断路由故障或不兼容，则使用以下参数。
+如果中断路由故障或发生不兼容，则使用以下参数。
 
 <table>
 <colgroup>
@@ -217,79 +215,79 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 1</th>
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
-<th align="left">参数 4</th>
+<th align="left">参数1</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
+<th align="left">参数4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x2001</p></td>
-<td align="left"><p><strong>InterruptModel</strong> （整数）</p></td>
-<td align="left"><p>从解释器返回的值</p></td>
-<td align="left"><p>指向 PIC 控制方法的指针</p></td>
-<td align="left"><p>ACPI 尝试评估 PIC 控制方法，但失败。</p></td>
+<td align="left"><p><strong>InterruptModel</strong>整数</p></td>
+<td align="left"><p>来自解释器的返回值</p></td>
+<td align="left"><p>指向 PIC 控件方法的指针</p></td>
+<td align="left"><p>ACPI 试图计算 PIC 控制方法但失败。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10001</p></td>
 <td align="left"><p>指向设备对象的指针</p></td>
-<td align="left"><p>指向设备对象的父对象的指针</p></td>
+<td align="left"><p>指向设备对象的父级的指针</p></td>
 <td align="left"><p>指向 _PRT 对象的指针</p>
-<p>（请参阅以下评论部分）</p></td>
-<td align="left"><p>ACPI 尝试执行中断路由，但失败。</p></td>
+<p>（请参阅以下注释部分）</p></td>
+<td align="left"><p>ACPI 尝试进行中断路由，但失败了。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10002</p></td>
 <td align="left"><p>指向设备对象的指针</p></td>
-<td align="left"><p>指向 ACPI 查找，但找不到的字符串名称</p></td>
+<td align="left"><p>指向 ACPI 正在查找但找不到的字符串名称的指针</p></td>
 <td align="left"><p>指向 _PRT 对象的指针</p>
-<p>（请参阅以下评论部分）</p></td>
+<p>（请参阅以下注释部分）</p></td>
 <td align="left"><p>ACPI 找不到 _PRT 中引用的链接节点。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10003</p></td>
 <td align="left"><p>指向设备对象的指针</p></td>
-<td align="left"><p>设备 ID 或函数数。</p>
-<p>按如下所示编码此 DWORD: 5:0 位均为 PCI 设备号，和 bits 8:6 PCI 函数多</p></td>
+<td align="left"><p>设备 ID 或功能号。</p>
+<p>此 DWORD 编码如下： bits 5:0 是 PCI 设备号，而 bits 8:6 是 PCI 函数号</p></td>
 <td align="left"><p>指向 _PRT 对象的指针</p>
-<p>（请参阅以下评论部分）</p></td>
-<td align="left"><p>ACPI 找不到映射 _PRT 包中的设备。</p></td>
+<p>（请参阅以下注释部分）</p></td>
+<td align="left"><p>ACPI 找不到设备的 _PRT 包中的映射。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10005</p></td>
 <td align="left"><p>指向 _PRT 对象的指针</p>
-<p>（请参阅以下评论部分）</p></td>
+<p>（请参阅以下注释部分）</p></td>
 <td align="left"><p>指向当前 _PRT 元素的指针。</p>
-<p>（此指针是 _PRT 的索引。）</p></td>
-<td align="left"><p>设备 ID 或函数数。</p>
-<p>按如下所示编码此 DWORD: bits 15:0 PCI 函数号，且位 31:16 PCI 设备数</p></td>
-<td align="left"><p>ACPI 函数 ID 不是全部为 F 的 _PRT 中找到一个条目。</p>
-<p>（_PRT 条目的一般格式是指定设备号，但不是函数号）。</p></td>
+<p>（此指针是 _PRT 中的索引。）</p></td>
+<td align="left"><p>设备 ID 或功能号。</p>
+<p>此 DWORD 编码如下： bits 15:0 是 PCI 函数号，位31:16 是 PCI 设备号</p></td>
+<td align="left"><p>ACPI 在 _PRT 中找到了一个条目，而函数 ID 并不是全部 F 的。</p>
+<p>（_PRT 项的一般格式是指定了设备号，但函数号不是。）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10006</p></td>
 <td align="left"><p>指向链接节点的指针。</p>
-<p>（此设备缺少 _DIS 方法）。</p></td>
+<p>（此设备缺少 _DIS 方法。）</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ACPI 找到链接节点，但它不能禁用节点。</p>
-<p>（链接节点必须禁用以允许重新编程。）</p></td>
+<td align="left"><p>ACPI 找到了一个链接节点，但无法禁用该节点。</p>
+<p>（必须禁用链接节点以允许 reprogramming。）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10007</p></td>
-<td align="left"><p>未找到向量</p></td>
+<td align="left"><p>找不到的矢量</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>_PRT 包含对 I/O APIC 条目 MAPIC 表中未描述的矢量的引用。</p></td>
+<td align="left"><p>_PRT 包含对某个向量的引用，该引用未在 i/o APIC 项的 MAPIC 表中描述。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10008</p></td>
-<td align="left"><p>无效的中断级别中。</p></td>
+<td align="left"><p>无效的中断级别。</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ACPI 名工商管理学博士中断级别无效。</p>
+<td align="left"><p>ACPI 科幻中断级别无效。</p>
 <p></p></td>
 </tr>
 <tr class="odd">
@@ -297,36 +295,48 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>找不到固定 ACPI 描述表 (FADT)。</p></td>
+<td align="left"><p>找不到固定 ACPI 说明表（FADT）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1000A</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>未能找到根系统说明指针 (RSDP) 或扩展系统说明表 （xsdt 表）</p>
+<td align="left"><p>找不到根系统说明指针（RSDP）或扩展系统说明表（XSDT）</p>
 <p></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1000B</p></td>
 <td align="left"><p>ACPI 表签名</p></td>
-<td align="left"><p>指向 ACPI 表</p></td>
+<td align="left"><p>指向 ACPI 表的指针</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ACPI 表的长度不是与表修订版本一致的。</p></td>
+<td align="left"><p>ACPI 表的长度与表修订版本不一致。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0x20000</p></td>
-<td align="left"><p>固定表中的 I/O 端口</p></td>
+<td align="left"><p>0x1000C</p></td>
+<td align="left"><p>修订 ID</p></td>
+<td align="left"><p>函数索引</p></td>
 <td align="left"><p>0</p></td>
+<td align="left"><p>中断的 _DSM 方法返回了格式不正确的数据。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x1000D</p></td>
+<td align="left"><p>设备的 ACPI 扩展</p></td>
+<td align="left"><p>值0：指定的 _PRW 没有唤醒功能，并且至少有一个 GPIO 中断值1：由于存在具有唤醒功能的中断，_PRW 应将 GpeInfo 值指定为0xffffffff</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>固定的 ACPI 描述表中的 PM_TMR_BLK 条目未指向工作 ACPI 计时器块。</p></td>
+<td align="left"><p>设备使用了 GPE 和 GPIO 中断，这是不受支持的。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x1000E</p></td>
+<td align="left"><p></p>验证函数返回的状态。</td>
+<td align="left"><p> 指向 ACPI 命名空间路径 UNICODE_STRING 的指针。</p></td>
+<td align="left"><p>与 SDEV 进行比较的资源列表指针。</p></td>
+<td align="left"><p>安全设备的 SDEV 资源与相应的 _CRS 或 _PRS 条目不匹配。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
-如果发生其他故障或不兼容，则使用以下参数。
+如果发生了其他故障或不兼容性，则使用以下参数。
 
 <table>
 <colgroup>
@@ -338,27 +348,56 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 1</th>
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
-<th align="left">参数 4</th>
+<th align="left">参数1</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
+<th align="left">参数4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x20000</p></td>
-<td align="left"><p>固定表中的 I/O 端口</p></td>
+<td align="left"><p>固定表中的 i/o 端口</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>固定的 ACPI 描述表中的 PM_TMR_BLK 条目没有指向工作 ACPI 计时器块。</p></td>
+<td align="left"><p>固定 ACPI 说明表中的 PM_TMR_BLK 条目不指向工作 ACPI 计时器块。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+此表描述了使用以下参数的内存使用情况问题。
 
-如果参数 1 等于**0x02**，ACPI BIOS 无法处理 PCI 根总线的资源列表。 在这种情况下，参数 3 指定确切的问题，以及剩余参数具有以下定义。
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">参数1</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
+<th align="left">参数4</th>
+<th align="left">原因</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>0x1000</p></td>
+<td align="left"><p>内存区域物理地址的高部分。</p></td>
+<td align="left"><p>内存区域物理地址的低部分。</p></td>
+<td align="left"><p>要映射的内存长度。</p></td>
+<td align="left"><p>在处理内存操作区域时，ACPI 出现严重错误。 内存操作区域尝试映射已分配给 OS 使用的内存。</p></td>
+</tr>
+</tbody>
+</table>
+
+
+如果参数1等于**0x02**，则 ACPI BIOS 无法处理 PCI 根总线的资源列表。 在这种情况下，参数3指定了确切的问题，其余的参数具有以下定义。
 
 <table>
 <colgroup>
@@ -369,49 +408,49 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
-<th align="left">参数 4</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
+<th align="left">参数4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>适用于 PCI 总线的 ACPI 扩展</p></td>
+<td align="left"><p>PCI 总线的 ACPI 扩展</p></td>
 <td align="left"><p>0x0</p></td>
 <td align="left"><p>指向 QUERY_RESOURCES IRP 的指针</p></td>
-<td align="left"><p>ACPI 不能将 BIOS' 资源列表转换为正确格式。 这可能表示在编码过程的 BIOS 的列表中的错误。</p></td>
+<td align="left"><p>ACPI 无法将 BIOS 的资源列表转换为正确的格式。 这可能表示 BIOS "列表编码过程中出现错误。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>适用于 PCI 总线的 ACPI 扩展</p></td>
+<td align="left"><p>PCI 总线的 ACPI 扩展</p></td>
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>指向 QUERY_RESOURCE_REQUIREMENTS IRP 的指针</p></td>
-<td align="left"><p>ACPI 不能将 BIOS' 资源列表转换为正确格式。 这可能表示在编码过程的 BIOS 的列表中的错误。</p></td>
+<td align="left"><p>ACPI 无法将 BIOS 的资源列表转换为正确的格式。 这可能表示 BIOS "列表编码过程中出现错误。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>适用于 PCI 总线的 ACPI 扩展</p></td>
+<td align="left"><p>PCI 总线的 ACPI 扩展</p></td>
 <td align="left"><p>0x2</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>ACPI 找到空的资源列表。</p></td>
+<td align="left"><p>ACPI 发现空的资源列表。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>适用于 PCI 总线的 ACPI 扩展</p></td>
+<td align="left"><p>PCI 总线的 ACPI 扩展</p></td>
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>指向的即插即用 CRS 描述符的指针</p></td>
-<td align="left"><p>ACPI 中 CRS 中找不到当前的总线数。</p></td>
+<td align="left"><p>指向 PNP CRS 描述符的指针</p></td>
+<td align="left"><p>ACPI 在 CRS 中找不到当前总线号。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>适用于 PCI 总线的 ACPI 扩展</p></td>
-<td align="left"><p>一个指向 PCI 资源列表</p></td>
-<td align="left"><p>指向 E820 内存表</p></td>
-<td align="left"><p>E820 BIOS 接口报告的内存区域的列表与重叠的 PCI 声明要解码的资源的列表。 （这种冲突，则永远不会允许。）</p></td>
+<td align="left"><p>PCI 总线的 ACPI 扩展</p></td>
+<td align="left"><p>指向 PCI 的资源列表的指针</p></td>
+<td align="left"><p>指向 E820 内存表的指针</p></td>
+<td align="left"><p>PCI 声明要解码的资源的列表与 E820 BIOS 接口报告的内存区域列表重叠。 （永远不允许这种冲突。）</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果参数 1 等于**0x10**，ACPI BIOS 无法确定系统-到-设备的状态正确映射。 在此情况下，参数 3 指定确切的问题，以及剩余参数具有以下定义。
+如果参数1等于**0x10**，则 ACPI BIOS 无法正确确定系统到设备的映射。 在这种情况下，参数3指定了确切的问题，其余的参数具有以下定义。
 
 <table>
 <colgroup>
@@ -422,37 +461,37 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
-<th align="left">参数 4</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
+<th align="left">参数4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ACPI 扩展所需的映射</p></td>
+<td align="left"><p>需要其映射的 ACPI 扩展</p></td>
 <td align="left"><p>0x0</p></td>
-<td align="left"><p>DEVICE_POWER_STATE (这是"x + 1")</p></td>
-<td align="left"><p>_PRx 恢复到不受支持 S 状态映射。</p></td>
+<td align="left"><p>DEVICE_POWER_STATE （这是 "x + 1"）</p></td>
+<td align="left"><p>_PRx 已映射回不支持的 S 状态。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ACPI 扩展所需的映射</p></td>
+<td align="left"><p>需要其映射的 ACPI 扩展</p></td>
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>不能映射 SYSTEM_POWER_STATE</p></td>
-<td align="left"><p>ACPI 找不到可将与 S 状态相关联的 D 状态。</p></td>
+<td align="left"><p>无法映射的 SYSTEM_POWER_STATE</p></td>
+<td align="left"><p>ACPI 找不到要与 S 状态关联的 D 状态。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ACPI 扩展所需的映射</p></td>
+<td align="left"><p>需要其映射的 ACPI 扩展</p></td>
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>不能映射 SYSTEM_POWER_STATE</p></td>
-<td align="left"><p>设备声明，以便能够将系统唤醒时系统处于此 S 状态，但系统实际上并不支持此 S 状态。</p></td>
+<td align="left"><p>无法映射的 SYSTEM_POWER_STATE</p></td>
+<td align="left"><p>设备声称当系统处于这种状态时，可以唤醒系统，但系统并不真正支持这种状态。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果参数 1 等于**0x11**，系统可能会进入 ACPI 模式。 在此情况下，参数 2 指定确切的问题，以及剩余参数具有以下定义。
+如果参数1等于**0x11**，则系统无法进入 ACPI 模式。 在这种情况下，参数2指定了确切的问题，其余的参数具有以下定义。
 
 <table>
 <colgroup>
@@ -463,9 +502,9 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数 2</th>
-<th align="left">参数 3</th>
-<th align="left">参数 4</th>
+<th align="left">参数2</th>
+<th align="left">参数3</th>
+<th align="left">参数4</th>
 <th align="left">原因</th>
 </tr>
 </thead>
@@ -486,7 +525,7 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 <td align="left"><p>0x2</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>系统无法分配必需的驱动程序结构。</p></td>
+<td align="left"><p>系统无法分配关键驱动程序结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
@@ -498,37 +537,37 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>系统无法加载 Ddb。</p></td>
+<td align="left"><p>系统无法加载 DDBs。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x5</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>系统无法连接中断矢量。</p></td>
+<td align="left"><p>系统无法连接中断向量。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>SCI_EN 永远不会变得 PM1 控制寄存器中设置。</p></td>
+<td align="left"><p>SCI_EN 绝不会成为 PM1 控制寄存器中的设置。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x7</p></td>
-<td align="left"><p>指向具有错误的校验和的表</p></td>
-<td align="left"><p>创建者修订</p></td>
+<td align="left"><p>指向具有错误校验和的表的指针</p></td>
+<td align="left"><p>创建者修订版</p></td>
 <td align="left"><p>表校验和不正确。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>指向 ACPI 未能加载表</p></td>
-<td align="left"><p>创建者修订</p></td>
-<td align="left"><p>ACPI 加载 DDB 失败。</p></td>
+<td align="left"><p>指向无法加载 ACPI 的表的指针</p></td>
+<td align="left"><p>创建者修订版</p></td>
+<td align="left"><p>ACPI 无法加载 DDB。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x9</p></td>
 <td align="left"><p>FADT 版本</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>不受支持的固件版本。</p></td>
+<td align="left"><p>固件版本不受支持。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xA</p></td>
@@ -540,7 +579,7 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 <td align="left"><p>0xB</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>在系统中未找到任何有效的本地 SAPIC 结构 MADT。</p></td>
+<td align="left"><p>系统在 MADT 中找不到任何有效的本地 SAPIC 结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -550,23 +589,23 @@ ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级�
 <a name="cause"></a>原因
 -----
 
-参数 1 的值指示的错误。
+参数1的值指示错误。
 
 <a name="resolution"></a>分辨率
 ----------
 
-如果要调试此错误，使用[ **！ 分析-v** ](-analyze.md)扩展。 此扩展将显示所有相关的数据 （设备扩展、 nsobjects，或任何适合于特定的错误）。
+如果正在调试此错误，请使用[ **！分析-v**](-analyze.md)扩展。 此扩展显示所有相关数据（设备扩展、nsobjects 或适合特定错误的任何数据）。
 
-如果您执行的不调试，此错误表示，您必须获取新的 BIOS。 请联系你的供应商或访问 internet 来获取新的 BIOS。
+如果未执行调试，此错误表示必须获取新的 BIOS。 联系你的供应商或访问 internet 以获取新的 BIOS。
 
-如果无法获取更新的 BIOS 或最新的 BIOS 仍不符合 ACPI，可以关闭 ACPI 模式在文本模式下安装过程。 若要禁用 ACPI 模式，请按 F7 键时系统会提示您安装存储驱动程序。 F7 键已按下，但它以无提示方式禁用 ACPI 并使你能够继续您的安装，系统不会通知您。
+如果无法获取更新的 BIOS，或最新的 BIOS 仍不符合 ACPI 标准，你可以在文本模式安装过程中关闭 ACPI 模式。 若要关闭 ACPI 模式，请在系统提示你安装存储驱动程序时按 F7 键。 系统不会通知你按下了 F7 键，但它会以静默方式禁用 ACPI，并使你能够继续安装。
 
 <a name="remarks"></a>备注
 -------
 
-PCI 路由表 (\_PRT) 是 ACPI BIOS 对象，指定如何所有 PCI 设备都连接到中断控制器。 具有多个 PCI 总线的计算机可能有多个\_Prt。
+Pci 路由表（\_PRT）是一个 ACPI BIOS 对象，指定如何将所有 PCI 设备连接到中断控制器。 具有多个 PCI 总线的计算机可能具有\_多个 prt。
 
-可以显示\_通过使用在调试器中的 PRT **！ acpikd.nsobj**扩展的地址以及\_PRT 对象作为其参数。
+可以在调试器中\_显示 PRT，方法是结合使用 **！ acpikd**和\_PRT 对象的地址作为其参数。
 
  
 
