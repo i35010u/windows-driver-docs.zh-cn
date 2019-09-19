@@ -1,29 +1,21 @@
 ---
 title: 基于 USB 的 HID 的资源
 ms.assetid: 17BC5293-1D60-41BC-8A23-1F2FAF29C577
-description: 通过 USB hid 标准的其他参考。
+description: USB 上的其他 HID 引用。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a18dc1172ca3eec69a6aa5fa73eb455a4ee23c6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4d44c0b6aea5b6cc733d018ce261f21a8dc35cb
+ms.sourcegitcommit: 3246a166d5454c68f77c15267f3f0b347359f505
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360347"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71108103"
 ---
 # <a name="resources-for-hid-over-usb"></a>基于 USB 的 HID 的资源
 
 
-创建你的 HID 设备时可能会有所帮助的以下引用：
+创建 HID 设备时，下列引用可能会有所帮助：
 
--   [HID USB 规范](https://go.microsoft.com/fwlink/p/?LinkId=620757)
--   [HID USB 主页]( https://go.microsoft.com/fwlink/p/?LinkId=620758)
--   [HID 使用情况页面](https://go.microsoft.com/fwlink/p/?LinkId=620759)
-
- 
-
- 
-
-
-
-
+-   [HID USB 主页](https://www.usb.org/hid)
+-   [HID USB 规范](https://www.usb.org/sites/default/files/documents/hid1_11.pdf)
+-   [HID 使用情况表](https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf)

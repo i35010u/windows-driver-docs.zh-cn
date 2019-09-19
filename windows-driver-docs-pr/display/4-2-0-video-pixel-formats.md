@@ -1,41 +1,39 @@
 ---
-title: 4 2 0 视频的像素格式
-description: 4 2 0 视频的像素格式
+title: 4 2 0 视频像素格式
+description: 4 2 0 视频像素格式
 ms.assetid: fb83336b-ff71-4f54-b833-324da60e7f9e
 keywords:
-- 未压缩视频的像素格式 WDK DirectX VA
+- 未压缩的视频像素格式 WDK DirectX VA
 - 未压缩的视频 WDK DirectX VA 的像素格式
-- 解码 WDK DirectX va，因此未压缩的视频的像素格式的压缩的图片
-- 图片解码 WDK DirectX VA，压缩
+- 压缩的图片解码 WDK DirectX VA，未压缩视频的像素格式
+- 图片解码 WDK DirectX VA，已压缩
 - 4 2 0 视频 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ff6831ff4fdba483c4d811096068c4be140aa72
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 752a3a73fbeaba703cb0246d1855efeb10472e78
+ms.sourcegitcommit: 54a4480353ed7d80b55860f274c79fd1625c3f1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384271"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71099900"
 ---
 # <a name="420-video-pixel-formats"></a>4:2:0 视频像素格式
 
-
 ## <span id="ddk_4_2_0_video_pixel_formats_gg"></span><span id="DDK_4_2_0_VIDEO_PIXEL_FORMATS_GG"></span>
 
+若要解码压缩的4:2:0 视频，请使用以下未压缩的像素格式之一。
 
-要解码压缩的 4:2:0 视频，请使用其中一个的以下未压缩的像素格式。
+| 像素格式 | 描述 |
+| ------------ | ----------- |
+| YUY2 | 如[4:2:2 视频像素格式](4-2-2-video-pixel-formats.md)中所述，例外情况除外，只为每个实际 4:2:0 Cb 和 cr 示例行生成两行输出 Cb 和 cr 示例。 每对输出行中的第二行通常是第一行的副本，或使用下一对的第一行的样本对第一行中的样本求平均值来生成。 |
+| UYVY | 如[4:2:2 视频像素格式](4-2-2-video-pixel-formats.md)中所述，例外情况除外，只为每个实际 4:2:0 Cb 和 cr 示例行生成两行输出 Cb 和 cr 示例。 每对输出行中的第二行通常是第一行的副本，或使用下一对的第一行的样本对第一行中的样本求平均值来生成。 |
+| YV12 | 所有 Y 示例首先在内存中找到，作为无符号字符数组（可能具有更大的内存对齐方式），后跟所有 Cr 样本（包含 Y 行的半个跨距和一半的行数），然后立即通过所有 Cb采用类似方式的示例。 |
+| IYUV | 与 YV12 相同，不同之处在于交换 Cb 和 Cr 平面的顺序。 |
+| NV12 | 一种格式，其中，所有 Y 样本首先在内存中找到，作为带有偶数行数的无符号 char 数组（可能有较大的内存对齐跨距）。 紧跟在包含交错的 Cb 和 Cr 示例的无符号 char 数组之后。 如果将这些示例作为小 endian 字类型进行寻址，则 Cb 将处于最小有效位，而 Cr 与 Y 样本具有相同的总步幅。 NV12 是首选的4:2:0 像素格式。 |
+| NV21 | 与 NV12 相同，不同之处在于，将交换和 Cr 示例，使无符号 char 的色度数组对于每个示例都有 Cr 后跟 Cb （这是因为，如果作为小 endian 字类型处理，Cr 将处于最小有效位，ificant bits）。 |
+| IMC1 | 与 YV12 相同，不同之处在于 Cb 和 Cr 平面的跨距与 Y 平面中的跨距相同。 此外，Cb 和 Cr 平面必须位于16行的倍数的内存边界上。 下面的代码示例显示了 Cb 和 Cr 平面的计算。<br/>`BYTE* pCr = pY + (((Height + 15) & ~15) * Stride);`<br/>`BYTE* pCb = pY + (((((Height * 3) / 2) + 15) & ~15) * Stride);`<br/>在前面的示例中，pY 是一个字节指针，指向内存数组的开头，高度必须是16的倍数。 |
+| IMC2 | 与 IMC1 相同，只不过 Cb 和 Cr 行以半步幅边界交错。 换句话说，色度区域中的每个全步幅行将以 Cr 开头，后跟一个从下半个跨距边界开始的 Cb 行。 （这是一个比 IMC1 更多的地址空间高效格式，因为它将色度的地址空间剪切为半部分，因此，将总地址空间按 25% 进行剪切。）与 NV12 相比，这是一个可选的首选格式，但 NV12 看起来更受欢迎。 |
+| IMC3 | 与 IMC1 相同，但交换 Cb 和 Cr 除外。 |
+| IMC4 | 与 IMC2 相同，但交换 Cb 和 Cr 除外。 |
 
-| **像素格式** | **说明** | 
-|:--|:--|
-| YUY2 | 如中所述[4:2:2 视频像素格式](vscode-resource://c:/drivers/drivers/windows-driver-docs-pr/display/4-2-2-video-pixel-formats.md)，不同之处在于两个行的输出 Cb 和 Cr 示例生成每个实际行，共 4 步： 2:0 Cb 和 Cr 示例。 每个对输出行的第二行是通常在第一行的重复或求平均值对的第一行中的第一个行的下一步对示例的示例生成。 | 
-| UYVY | 如中所述[4:2:2 视频像素格式](vscode-resource://c:/drivers/drivers/windows-driver-docs-pr/display/4-2-2-video-pixel-formats.md)，不同之处在于两个行的输出 Cb 和 Cr 示例生成每个实际行，共 4 步： 2:0 Cb 和 Cr 示例。 每个对输出行的第二行是通常在第一行的重复或求平均值对的第一行中的第一个行的下一步对示例的示例生成。 | 
-| YV12 | Y 的所有示例都是在内存中首次发现作为数组的无符号 char （可能具有更大的步幅内存对齐方式），后面紧随所有 Cr 示例 （带一半的步幅 Y 线条和一半数目的行），则都紧跟所有 Cb以类似的方式的示例。 | 
-| IYUV | 与 YV12，除了交换 Cb 和 Cr 平面的顺序相同。 | 
-| NV12 | 一种格式中的所有 Y 找到示例首先在内存中为无符号 char 数组具有偶数数目的行 （也许加上内存对齐方式的更大跨距）。 这被紧跟包含交错的 Cb 和 Cr 示例的无符号 char 类型的数组。 如果这些示例都作为小字节序 WORD 类型，Cb 是以最低有效位为单位，Cr 将是在使用相同的总 stride 作为 Y 示例的最高有效位。 NV12 为首选的 4:2:0 像素格式。 | 
-| NV21 | NV12，除非该 Cb 和 Cr 示例相同，以便无符号 char 色度数组必须跟 Cb 为每个示例 （以便以小字节序 WORD 类型寻址，如果 Cr 将能够以最低有效位为单位，并 Cb 会采用最登录 Cr 交换ificant 位）。 | 
-| IMC1 | YV12，相同，只不过 Cb 和 Cr 的步幅平面等同于 Y 平面的跨距。 此外，Cb 和 Cr 平面必须位于在 16 行的多个内存边界上。 下面的代码示例显示为 Cb 的计算和 Cr 平面。<br/>`BYTE* pCr = pY + (((Height + 15) & ~15) * Stride);`<br/>`BYTE* pCb = pY + (((((Height * 3) / 2) + 15) & ~15) * Stride);`<br/>在上述示例中上, 一年度是一个字节的指针，指向内存数组的开头和高度必须是 16 的倍数。 | 
-| IMC2 | 在后半部分 stride 边界交错 IMC1，除非该 Cb 和 Cr 行相同。 换而言之，色度区域中的每个完整 stride 行开头 Cr，跟 Cb 在下一步的后半部分 stride 边界处开始的行的行。 （这是更多地址空间-高效格式比 IMC1，因为它会减少了一半，色度地址空间，并因此降低总地址空间的 25%。）这是相对于 NV12，可以选择首选的格式，但 NV12 似乎更受欢迎。 | 
-| IMC3 | 与 IMC1，除了交换 Cb 和 Cr 相同。 | 
-| IMC4 | 与 IMC2，除了交换 Cb 和 Cr 相同。 | 
-
-有关这些格式的详细信息，请参阅[建议的 8 位 YUV 格式的视频呈现](https://docs.microsoft.com/windows/desktop/medfound/recommended-8-bit-yuv-formats-for-video-rendering)Microsoft Media Foundation 文档中。
+有关这些格式的详细信息，请参阅 Microsoft 媒体基础文档中[的视频呈现的建议8位 YUV 格式](https://docs.microsoft.com/windows/desktop/medfound/recommended-8-bit-yuv-formats-for-video-rendering)。
