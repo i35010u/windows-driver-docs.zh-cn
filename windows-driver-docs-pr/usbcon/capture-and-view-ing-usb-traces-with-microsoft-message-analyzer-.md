@@ -1,56 +1,56 @@
 ---
-Description: 可以使用 Microsoft 消息分析器 (MMA) 来捕获和查看实时 USB 跟踪，或查看现有跟踪。
+Description: 可以使用 Microsoft Message Analyzer （MMA）来捕获和查看实时 USB 跟踪，或查看现有跟踪。
 Search.SourceType: Video
 title: 使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪
-ms.date: 04/20/2017
+ms.date: 08/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 417d26c54f265fd541272b7eb170f29d6abc4b33
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.openlocfilehash: ddb1c47d35a5c7b3e58427d8e9e77e0514110b18
+ms.sourcegitcommit: 4943143e8395db70beda5a98ad734fe1bb7068dd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554051"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71080185"
 ---
 # <a name="capture-and-view-usb-traces-with-microsoft-message-analyzer"></a>使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪
-
 
 **摘要**
 
 -   Microsoft Message Analyzer 安装和设置
 -   捕获和查看实时 USB 跟踪
 
-可以使用 Microsoft 消息分析器 (MMA) 来捕获和查看实时 USB 跟踪，或查看现有跟踪。
+可以使用 Microsoft Message Analyzer （MMA）来捕获和查看实时 USB 跟踪，或查看现有跟踪。
 
-而不是通过使用命令行工具，logman，，然后将它们解析 Netmon 3.4 中捕获跟踪，可以从单个 GUI 执行所有这些任务。
+无需使用命令行工具（logman）来捕获跟踪，然后在 Netmon 3.4 中对其进行分析，只需从一个 GUI 即可执行所有这些任务。
 
-## <a name="install-and-launch-microsoft-message-analyzer"></a>安装并启动 Microsoft Message Analyzer
+## <a name="install-and-launch-microsoft-message-analyzer"></a>安装和启动 Microsoft Message Analyzer
 
+1.  [下载 Microsoft Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226)并按照 "下载" 页上的**安装说明**安装该工具。 下载后，请按照安装提示进行操作并选择 "**更新项目**"。
 
-1.  [下载 Microsoft Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226)并按照安装工具**安装说明**下载页上。 下载后，遵照安装提示并选择**更新项**。
+2.  安装完成后，将启动工具并显示起始页。
 
-2.  安装完成后，该工具将启动并显示起始页。
+## <a name="set-up-a-trace-session-and-capture-usb-events"></a>设置跟踪会话并捕获 USB 事件
 
-## <a name="set-up-a-trace-session-and-capture-usb-events"></a>设置跟踪会话，并捕获 USB 事件
+此视频演示如何通过添加特定列为 USB 跟踪设置 Microsoft Message Analyzer。 它还演示了如何通过启动和停止会话来捕获实时跟踪。
 
-
-此视频演示如何通过添加特定列中设置的 USB 跟踪 Microsoft Message Analyzer。 它还演示如何以实时跟踪捕获开始和停止会话。
-
-**请注意**  下**设备**，USB 2 或 USB 3 跟踪方案之间进行选择。 请注意，USB 3 跟踪选项仅适用于 Windows 8 和更高版本。 请选择基于主机控制器连接到设备，不是设备的速度。 例如，如果具有较高的速度设备连接到 xHCI 控制器中，选择 USB 3 跟踪方案。
+> [!NOTE]
+> 在 "**设备**" 下，选择 "usb 2" 或 "usb 3" 跟踪方案。 请注意，USB 3 跟踪仅适用于 Windows 8 及更高版本。 根据设备连接到的主机控制器进行选择，而不是设备的速度。 例如，如果已将高速设备连接到 xHCI 控制器，请选择 "USB 3" 跟踪方案。
 
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/e5300401-351e-4dcc-bcc2-edd07079d7fa]
+
+
 
 ## <a name="analyze-a-usb-trace"></a>分析 USB 跟踪
 
 
-Microsoft Message Analyzer 动态分析信息，因为它捕获，并在用户可读的窗体中显示它们。 所示的大部分信息都会**摘要**列。 该列将显示有关该事件，例如，请求将发送到设备的 USB 驱动程序堆栈的详细的信息。 通过添加所需的筛选器可以查看这些请求的结果。
+Microsoft Message Analyzer 会在捕获信息时动态分析该信息并以用户可读的形式显示信息。 其中的大多数信息都显示在 "**摘要**" 列中。 此列显示有关事件的详细信息，例如，请求将 USB 驱动程序堆栈发送到设备。 通过添加所需的筛选器，您可以查看这些请求的结果。
 
-此视频演示如何确定设备枚举故障的根本原因。
+此视频演示如何确定设备枚举失败的根本原因。
 
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/29cb1d44-a38a-4105-9513-256e69e9f6a0]
 
 ## <a name="related-topics"></a>相关主题
-[博客：捕获 USB ETW 跟踪与 Microsoft 消息分析器 (MMA)](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/11/09/capturing-usb-etw-traces-with-microsoft-message-analyzer-mma.aspx)  
-[USB Windows 事件跟踪](usb-event-tracing-for-windows.md)  
+[发布利用 Microsoft Message Analyzer 捕获 USB ETW 跟踪（MMA）](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/11/09/capturing-usb-etw-traces-with-microsoft-message-analyzer-mma.aspx)  
+[适用于 Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)  
 
 
 

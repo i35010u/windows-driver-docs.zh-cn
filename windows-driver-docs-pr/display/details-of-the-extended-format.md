@@ -5,14 +5,14 @@ ms.assetid: e9cd2bc7-99c1-4aca-91b0-9faefa4a856d
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，扩展格式
 - 扩展格式 WDK Windows 7 显示
-ms.date: 04/20/2017
+ms.date: 09/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 137f4763413bcd2c3ba555ca2c9da76b21d4460b
-ms.sourcegitcommit: 9b0ddcdba8c56987b45e538948b2ac8c60ef1287
+ms.openlocfilehash: 7d7f6160b022c95b03bac0d0cc5ce04ddd4dc7df
+ms.sourcegitcommit: c2ffefe997a6d028864704c41d3d8e001e9622fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876925"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077226"
 ---
 # <a name="details-of-the-extended-format"></a>扩展格式的详细信息
 
@@ -22,45 +22,19 @@ ms.locfileid: "70876925"
 
 ## <a name="table-of-extended-formats"></a>扩展格式表
 
-下表显示了在硬件为具有这些属性的资源支持这些扩展格式，或者这些资源的扩展格式为可选时，具有使用扩展格式的特定属性的资源。
+下表显示了使用扩展格式（DXGI_FORMAT_ *）的特定属性的资源（如果硬件为具有这些属性的资源支持这些扩展格式，或者这些资源的扩展格式为可选）。 有关每种格式的说明，请参阅[DXGI_FORMAT](https://docs.microsoft.com/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format) 。
 
 <table>
 <head>
     <tr>
-        <th colspan="9">Formats （DXGI_FORMAT_ *）</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th>B8G8R8A8</th>
-        <th>B8G8R8A8</th>
-        <th></th>
-        <th>B8G8R8X8</th>
-        <th>B8G8R8X8</th>
-        <th></th>
-        <th>R10G10B10</th>
-    </tr>
-    <tr>
-        <th>Resource</th>
-        <th>B8G8R8A8</th>
-        <th>_UNORM</th>
-        <th>_UNORM</th>
-        <th>B8G8R8X8</th>
-        <th>_UNORM</th>
-        <th>_UNORM</th>
-        <th>R10G10B10A2</th>
-        <th>_XR_BIAS</th>
-    </tr>
-    <tr>
-        <th>属性</th>
-        <th>_TYPELESS</th>
-        <th>现存</th>
-        <th>_SRGB</th>
-        <th>_TYPELESS</th>
-        <th>现存</th>
-        <th>_SRGB</th>
-        <th>_TYPELESS</th>
-        <th>_A2_UNORM</th>
+        <th>资源属性</th>
+        <th>B8G8R8A8_TYPELESS</th>
+        <th>B8G8R8A8_UNORM （现有）</th>
+        <th>B8G8R8A8_UNORM_SRGB</th>
+        <th>B8G8R8X8_TYPELESS</th>
+        <th>B8G8R8X8_UNORM （现有）</th>
+        <th>B8G8R8X8_UNORM_SRGB</th>
+        <th>R10G10B10_XR_BIAS_A2_UNORM</th>
     </tr>
 </head>
 <body>
