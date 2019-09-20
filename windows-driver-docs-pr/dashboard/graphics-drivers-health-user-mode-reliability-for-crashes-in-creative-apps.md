@@ -3,15 +3,13 @@ title: 创意应用程序中的用户模式可靠性的崩溃次数
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为创意应用程序在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d963c3a02eca7b910774845d27af15cb60002a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 66ea4d3d894e8abbd57432e096034954b260e79f
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224009"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017065"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-creative-applications-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>创意应用程序中用户模式可靠性的崩溃次数（按使用时间规范化）小于或等于基线目标
 

@@ -3,15 +3,13 @@ title: 在意外断开连接的情况下结束的 WLAN 会话百分比
 description: 该度量来自将 7 天滑动窗口的遥测数据聚合为设备意外断开 Wi-Fi 连接的实例所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7969e056e963c531e8d70a6a32c7ff1913b3957a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 7034bdbaa669ba0d4e5de6386a7969f23769559e
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223907"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017013"
 ---
 # <a name="percent-of-wi-fi-sessions-ending-in-an-unexpected-disconnect"></a>在意外断开连接的情况下结束的 WLAN 会话百分比 
 
@@ -46,4 +44,4 @@ ms.locfileid: "70223907"
 
 ### <a name="final-calculation"></a>最终计算
 
-在意外断开连接的情况下结束的 Wi-Fi 会话百分比 = 平均值（所有实例） 
+在意外断开连接的情况下结束的 WLAN 会话百分比 = 平均值（所有实例） 
