@@ -3,15 +3,13 @@ title: 相机初始化失败次数百分比
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为相机设备未能初始化的实例所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: d35a4bcbbe35fa8b29863a336c3f18aff2c60381
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 4410cd826e6735d7b5ad57033f5d06e3a3d3d83c
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224053"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017083"
 ---
 # <a name="percent-of-camera-initialization-failures"></a>相机初始化失败次数百分比
 

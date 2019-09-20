@@ -3,15 +3,13 @@ title: 从低功率状态恢复时出现显示问题的计算机的百分比
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为从低功率状态恢复时出现显示问题的计算机的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: afff2ace99951da7649aa8037b98fe7434fd17eb
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: faa827ff80942ed5acfbde3c84e7eda5f77bf1fb
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224021"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017069"
 ---
 # <a name="percent-of-machines-with-display-issues-when-resume-from-low-power-state"></a>从低功率状态恢复时出现显示问题的计算机的百分比
 

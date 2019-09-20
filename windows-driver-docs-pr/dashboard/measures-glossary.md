@@ -3,15 +3,13 @@ title: 驱动程序外部测试度量术语表
 description: 包含对驱动程序外部测试度量重要术语的定义。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ebbef6aed580aced2cd10ac98ecb7797ca6f15
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 86951a0d950c1709df4136c33178b2e641f97d88
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223985"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016983"
 ---
 # <a name="glossary-for-driver-flighting-measures"></a>驱动程序外部测试度量术语表
 

@@ -3,15 +3,13 @@ title: 相机度量
 description: 相机度量在蓝牙驱动程序外部测试过程中筛选出良性初始化错误
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acb116ac751bf4bc132c327273b3fa37feb834a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: aaa0c85b6aa7e8531135eddf1c5499f2a2f79ac9
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224033"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017081"
 ---
 # <a name="camera-measures"></a>相机度量
 

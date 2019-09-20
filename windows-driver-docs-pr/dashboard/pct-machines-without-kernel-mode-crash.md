@@ -3,15 +3,13 @@ title: 没有内核模式崩溃的计算机所占的百分比
 description: 该度量将 14 天滑动窗口中的遥测数据聚合为未经历内核模式崩溃的计算机所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: e2dd357e9ee419460480b99267e89ee32a4ebc65
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 49540d0393a8423721ce9255c636c0f6c0ce29fa
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223917"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016946"
 ---
 # <a name="percent-of-machines-without-a-kernel-mode-crash"></a>没有内核模式崩溃的计算机所占的百分比
 

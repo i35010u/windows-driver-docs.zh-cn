@@ -1,20 +1,20 @@
 ---
 title: 设备 MFT 设计指南
-description: 本主题概述了可用于执行所有流的后续处理共同点的用户模式下运行的设备级扩展的设计。
+description: 本主题概述了在用户模式下运行的设备范围扩展的设计，该扩展可用于执行所有流通用的后期处理。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1ed6d0adf5043cd87c3be4902510c66ff0401a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00931f0f4fdf9033e1d5d9c710d177fcb84fd18c
+ms.sourcegitcommit: c1d02055c131d99f5c26943b527ca84f067afbab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358456"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71135776"
 ---
 # <a name="device-mft-design-guide"></a>设备 MFT 设计指南
 
-在 Windows 中的视频捕获堆栈 MFT0 形式支持用户模式下扩展。 这是 Ihv 提供，并捕获管道将作为第一个转换后捕获插入的每个流扩展组件。 MFT0 来源设备处理后的帧。 可以在 MFT0 内部完成进一步处理操作，在帧上的文章。 
+Windows 中的视频捕获堆栈支持用户模式扩展，格式为 DMFT。 这是 Ihv 提供的每个设备的扩展组件，捕获管道作为首次转换捕获后的内容插入。 DMFT 从设备接收后处理的帧。 可以在 DMFT 中完成对帧的后续处理操作。 DMFT 可以从设备的所有流接收帧，并且可以根据要求公开任意数量的输出流。
 
-本主题概述了可用于执行所有流的后续处理共同点的用户模式下运行的设备级扩展的设计。
+本主题概述了在用户模式下运行的设备范围扩展的设计，该扩展可用于执行所有流通用的后期处理。
 
 ## <a name="terminology"></a>术语
 
@@ -22,34 +22,34 @@ ms.locfileid: "67358456"
 |------------|-----------------------------------------------------------------------------------------------------|
 | KS         | 内核流式处理驱动程序                                                                             |
 | AvStream   | 音频视频流式处理驱动程序模型                                                                  |
-| Filter     | 对象，表示设备实例                                                            |
-| 设备 MFT | Ihv 提供的用户模式下捕获驱动程序扩展                                                 |
-| Devproxy   | MF <>-AvStream 封送处理程序                                                                           |
-| DTM        | 设备转换管理器，用于管理 devproxy 和设备 MFT。 表示 MF 管道中的设备。|
+| Filter     | 表示设备实例的对象                                                            |
+| 设备 MFT | Ihv 提供的用户模式捕获驱动程序扩展                                                 |
+| Devproxy   | MF < > AvStream 封送拆收器                                                                           |
+| DTM        | 管理 devproxy 和设备 MFT 的设备转换管理器。 表示 MF 管道中的设备。|
 
 ## <a name="design-goals"></a>设计目标
 
-- 具有相同的生存期设备筛选器的设备筛选器范围的用户模式下扩展
-- 支持任意数量的输入来自设备
-- 支持任意数量的输出 (当前要求是三个流： 预览、 记录和照片)
-- 将设备的所有控件都路由到设备 MFT （其中可以选择处理或将其传递到设备）
-- 并行后续捕获的流的处理
-- 允许在 3A 处理帧速率无关
-- 允许从一个流，在其他流之间共享的元数据
-- GPU 资源的访问权限
-- MF MMCSS 工作队列的访问权限
-- MF 分配器的访问
-- 简单的界面 （类似于 MFT）
-- IHV/OEM 扩展性的灵活的内部体系结构
+- 与设备筛选器生存期相同的设备筛选器范围内用户模式扩展
+- 支持来自设备的任意数量的输入
+- 支持任意数量的输出（当前需求为三个流：预览、录制和照片）
+- 将所有设备控件路由到设备 MFT （可选择处理或将其传递到设备）
+- 捕获流的并行后处理
+- 允许独立于帧速率的3A 处理
+- 允许在其他流之间共享一个流中的元数据
+- 访问 GPU 资源
+- 对 MF MMCSS 工作队列的访问权限
+- 访问 MF 分配器
+- 简单界面（类似于 MFT）
+- 适用于 IHV/OEM 扩展性的灵活内部体系结构
 
-## <a name="design-constraints"></a>设计的限制
+## <a name="design-constraints"></a>设计约束
 
-- 捕获 API 图面中的任何更改
-- 完成向后兼容性。 例如，无回归时使用的传统应用程序和方案。
+- 捕获 API 图面上无更改
+- 完全向后兼容。 例如，在使用旧的应用和方案时没有回归。
 
 ## <a name="capture-stack-architecture"></a>捕获堆栈体系结构
 
-本主题介绍对捕获驱动程序的筛选器范围的用户模式下扩展的支持。 此组件有权访问 MF Api，线程池、 GPU 和 ISP 资源。 筛选器宽扩展提供的具有任意数量的流本身和设备 Ks 之间灵活筛选器。 这种灵活性允许带外通信的用户模式下扩展插件和驱动程序可以用于专用元数据和 3A 处理流之间进行无缝。
+本主题介绍对捕获驱动程序的筛选器范围内用户模式扩展的支持。 此组件可以访问 MF Api、线程池、GPU 和 ISP 资源。 筛选器宽扩展提供了在其自身与 device Ks 筛选器之间具有任意数量的流的灵活性。 这种灵活性允许用户模式扩展与驱动程序之间的无缝带外通信，可用于专用元数据和3A 处理流。
 
 ![捕获堆栈体系结构](images/capture-stack-architecture.png)
 
@@ -58,145 +58,145 @@ ms.locfileid: "67358456"
 
 ![设备 mft 体系结构](images/device-mft-architecture.png)
 
-### <a name="device-transform-manager-dtm"></a>设备转换管理器 (DTM)
+### <a name="device-transform-manager-dtm"></a>设备转换管理器（DTM）
 
-捕获堆栈引入了新系统提供的组件，设备转换管理器 (DTM)。 这位于 DeviceSource、 管理 Devproxy MFT 和设备 MFT。 DTM 执行 MediaType 协商、 示例传播和所有 MFT 事件处理。 它还公开到 DeviceSource IMFTransform 接口和其他必要的专用接口 DeviceSource 需要管理设备流。 此组件将 Devproxy 和设备 MFT 从管道抽离。 管道只需将 DTM 视为设备和 DTM 超出流作为设备的数据流。
+捕获堆栈引入了一个系统提供的新组件，即设备转换管理器（DTM）。 它位于 DeviceSource 内，并管理 Devproxy MFT 和设备 MFT。 DTM 执行媒体的协商、示例传播和所有 MFT 事件处理。 它还向 DeviceSource 和 DeviceSource 需要管理设备流的其他必需专用接口公开 IMFTransform 接口。 此组件从管道中提取 Devproxy 和设备 MFT。 管道只是将 DTM 看作设备，并将其作为设备流的流出。
 
 ### <a name="devproxy"></a>Devproxy
 
-Devproxy 是异步 MFT 封送的命令和 AvStream 照相机驱动程序和媒体基础的视频帧。 这由 Windows 和支持提供*n*数从照相机驱动程序的输出。 此外，此拥有由设备公开的所有球瓶的分配器。
+Devproxy 是一个异步 MFT，用于封送 AvStream 相机驱动程序和媒体基础之间的命令和视频帧。 这是由 Windows 提供的，并支持来自照相机驱动程序的*n*个输出。 此外，这还拥有设备公开的所有 pin 的分配器。
 
 ### <a name="device-mft"></a>设备 MFT
 
-设备 MFT 是捕获驱动程序的用户模式下扩展。 它是*m x n*异步 MFT。 它捕获驱动程序在系统上安装并捕获驱动程序供应商提供。
+设备 MFT 是捕获驱动程序的用户模式扩展。 它是一个*m x n*异步 MFT。 它使用捕获驱动程序安装在系统上，由捕获驱动程序供应商提供。
 
-输入流的设备 MFT 数必须为相同的 Ks pin 由设备公开的数量。 支持的设备 MFT 输入流 mediatypes 必须与公开的 KS pin mediatypes 相同。
+设备 MFT 的输入流数量必须与设备公开的 Ks pin 的数目相同。 设备 MFT 的输入流支持的 mediatypes 必须与 KS pin 公开的 mediatypes 相同。
 
-公开设备 MFT 的输出流的数量是看到 DeviceSource 和捕获堆栈的数据流、 捕获 API 和应用程序和可以是一个、 两个或三个流。 不需要设备 MFT 的输入和输出流计数相同。 此外，输入和输出流无需具有相同 mediatypes，并且通常将具有不同 mediatypes。 Mediatypes 数不需要与匹配任何一个。
+由设备 MFT 公开的输出流的数量是 DeviceSource 和捕获堆栈捕获的流、捕获 API 和应用程序，可以是一个、两个或三个流。 设备 MFT 的输入和输出流计数不必相同。 此外，输入流和输出流不需要具有相同的 mediatypes，并且通常具有不同的 mediatypes。 Mediatypes 数不需要匹配。
 
-第一个 Ks Pin 由 Devproxy 表示在用户模式下的输出流获取的第一个输入流的设备 MFT，表示用户模式下使用的第二个输入流的设备 MFT，Devproxy 的输出流和等的第二个 Ks Pin 与相关联。
+Devproxy 的输出流以用户模式表示的第一个 Ks Pin 与设备 MFT 的第一个输入流相关联，第二个 Ks Pin 通过 Devproxy 的输出流以用户模式表示，第二个输入流的设备 MFT 为，依此类推。
 
-设备 MFT 提供一个指向 Devproxy，DX 设备和 MF 工作队列 id。 来自设备的帧 MF 示例作为反馈直接插入相应设备 MFT 的输入。 与所有这些设备 MFT post 处理捕获的示例以及提供示例预览、 记录和照片的 pin。
+为设备 MFT 提供指向 Devproxy、DX 设备和 MF WorkQueue ID 的指针。 设备传出的帧会直接作为 MF 示例送到相应的设备 MFT 输入中。 在所有这些情况下，设备 MFT 都可以对捕获的示例进行 post 处理，并向预览、记录和照片 pin 提供示例。
 
-所有命令和控件转到设备会重新都路由到设备 MFT。 设备 MFT 处理控件，或将它们传递到通过 Devproxy 驱动程序。 这会简化命令处理了由捕获驱动程序堆栈。
+转到设备的所有命令和控件都将重路由到设备 MFT。 设备 MFT 通过 Devproxy 处理控件或将其传递给驱动程序。 这简化了捕获驱动程序堆栈的命令处理。
 
 ## <a name="functional-overview"></a>功能概述
 
-在捕获管道的初始化，如果该设备，设备 MFT DeviceSource 实例化 DTM。 它将传递到 DTM 的初始化例程表示设备的 Devproxy 的实例。 DTM 共同创建设备 MFT 并执行基本验证，例如，可输出插针的 Devproxy 数相同数量的设备 MFT 输入插针必需接口的支持等。
+捕获管道初始化时，如果设备有设备 MFT，DeviceSource 会实例化 DTM。 它将表示设备的 Devproxy 的实例传递给 DTM 的初始化例程。 DTM 共同创建设备 MFT 并执行基本验证，例如，verifes Devproxy 的输出插针数量与设备 MFT 的输入插针数量相同，支持强制接口，等等。
 
-DeviceSource querys DTM 以获取支持的输出 mediatypes。 DTM 获取这些设备 MFT 输出插针。 Stream 描述符根据此信息来捕获管道和 DeviceSource 公开演示文稿描述符。
+DeviceSource querys DTM 以获取支持的输出 mediatypes。 DTM 从设备 MFT 的输出插针获取这些端口。 DeviceSource 根据此信息向捕获管道公开显示描述符和流描述符。
 
-SourceReader 使用 DeviceSource 公开的 mediatypes，并在每个流上设置默认 mediatypes。 反过来，DeviceSource DTM 的输出流上设置默认 mediatypes。 DTM 设置上的输出流的设备 MFT 使用 mediatype [SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)方法。
+SourceReader 使用 DeviceSource 的公开 mediatypes，并在每个流上设置默认的 mediatypes。 反过来，DeviceSource 将在 DTM 的输出流上设置默认的 mediatypes。 DTM 使用[SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)方法在设备 MFT 的输出流上设置媒体组。
 
-当**SetOutputStreamState**调用时，若要更改其输入的流的媒体类型到 DTM 消息基于所选的输出媒体类型的设备 MFT 帖子并等待。 响应此消息，DTM querys 的输入流的设备 MFT 使用首选输入 mediatype [GetPreferredInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)。 这对相应的输出流的 Devproxy 设置媒体类型。 如果成功，DTM 对到使用 SetInputStreamState 设备 MFT 输入流设置该相同的媒体类型。 收到此调用后, 完成设备 MFT **SetOutputStreamState**。
+调用**SetOutputStreamState**时，设备 MFT 会将消息发布到 DTM，以根据所选的输出媒体媒体和等待更改其输入流的媒体名称。 为响应此消息，DTM 使用[GetPreferredInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)QUERYS 设备 MFT 输入流的首选输入媒体。 这将在 Devproxy 的相应输出流上设置媒体媒体。 如果成功，则 DTM 使用 SetInputStreamState 将相同的媒体组设置到设备 MFT 的输入流。 收到此调用后，设备 MFT 完成**SetOutputStreamState**。
 
-CaptureEngine DeviceSource 上的特定流，从而选择各个流。 这将传播到设备 MFT 由通过 DTM **SetOutputStreamState**调用。 设备 MFT 置于请求的状态中特定的输出流。 如上所述，设备 MFT 也会 DTM 通知有关需要启用的必需输入流。 这会导致 DTM 传播 Devproxy 将流选择的内容。 在此过程结束时，所有必要的流，Devproxy 和设备 MFT 中已准备好流式传输。
+CaptureEngine 通过启用 DeviceSource 上的特定流来选择单个流。 这将通过**SetOutputStreamState**调用传播到设备 MFT。 设备 MFT 会将特定输出流置于请求状态。 如上所述，设备 MFT 还通知 DTM 有关需要启用的必要输入流。 这会导致 DTM 将选择的流传播到 Devproxy。 在此过程结束时，Devproxy 和设备 MFT 中所有必要的流都已准备好进行流式传输。
 
-SourceReader 启动 DeviceSource CaptureEngine 调用 ReadSample 时。 反过来，DeviceSource 将首先发送 MFT_MESSAGE_NOTIFY_BEGIN_STREAMING 和 MFT_MESSAGE_NOTIFY_START_OF_STREAM 消息，指示管道的起始 DTM。 DTM 首先 Devproxy 和设备 MFT 传播 MFT_MESSAGE_NOTIFY_BEGIN_STREAMING 和 MFT_MESSAAGE_NOTIFY_START_OF_STREAM 消息。 
+SourceReader 在 CaptureEngine 调用 ReadSample 时启动 DeviceSource。 反过来，DeviceSource 通过发送 MFT_MESSAGE_NOTIFY_BEGIN_STREAMING 和 MFT_MESSAGE_NOTIFY_START_OF_STREAM 消息来启动 DTM，指示管道的开头。 DTM 通过传播 MFT_MESSAGE_NOTIFY_BEGIN_STREAMING 和 MFT_MESSAAGE_NOTIFY_START_OF_STREAM 消息来启动 Devproxy 和设备 MFT。 
 
-**请注意**分配在启动流式处理而不设备 MFT 初始化所需的资源。
+**注意**在开始流式处理而不是设备 MFT 初始化时分配所需的资源。
 
-DTM 调用**SetOutputStreamState**上设备 MFT 包含流式处理的状态参数的输出结果。 设备 MFT 开始流式处理在这些输出流中。 DTM 启动流式处理上有有效媒体类型设置 Devproxy 输出流。 Devproxy 分配示例，并从设备提取它们。 这些示例被提供给设备 MFT 中相关的输入插针。 设备 MFT 处理这些示例，并提供 DeviceSource 输出。 从 DeviceSource，这些示例流动到 CaptureEngine SourceReader。
+DTM 在带有流式处理状态参数的设备 MFT 输出上调用**SetOutputStreamState** 。 设备 MFT 开始在这些输出流中进行流式处理。 DTM 在设置了有效媒体类型的 Devproxy 输出流上启动流式处理。 Devproxy 分配示例并从设备获取它们。 这些示例将送进相关输入插针的设备 MFT。 设备 MFT 处理这些示例，并将输出提供给 DeviceSource。 从 DeviceSource 开始，示例通过 SourceReader 流向 CaptureEngine。
 
-CaptureEngine 停止通过禁用 DeviceSource 上的内部接口通过单个流的各个流。 它将转换为特定的输出流禁用上通过设备 MFT **SetOutputStreamState**。 反过来，设备 MFT 可能会请求禁用特定的输入的流，通过**METransformInputStreamStateChanged**事件。 DTM 将此传播到相应 Devproxy 流。
+CaptureEngine 通过 DeviceSource 上的内部接口禁用各个流来停止单个流。 这将通过**SetOutputStreamState**转换为设备 MFT 上禁用的特定输出流。 反过来，设备 MFT 可能会通过**METransformInputStreamStateChanged**事件请求禁用特定输入流。 DTM 将此传播到相应的 Devproxy 流。
 
-只要设备 MFT 本身中流式处理状态，则它可以请求的任何输入流转换为任何有效 DeviceStreamState。 例如，它可以将其发送到 DeviceStreamState_Stop 或 DeviceStreamState_Run 或 DeviceStreamState_Pause，以此类推，而不会影响其他流。
+只要设备 MFT 本身处于流式处理状态，它就可以请求将任何输入流转换到任何有效的 DeviceStreamState。 例如，它可以将其发送到 DeviceStreamState_Stop 或 DeviceStreamState_Run 或 DeviceStreamState_Pause 等，而不会影响其他流。
 
-但是，由捕获管道控制输出流转换。 例如，预览、 记录和照片流是启用或禁用捕获管道。 输出将被禁用，即使输入的流可能仍流，只要设备 MFT 本身处于流式处理的状态。
+但是，输出流转换由捕获管道控制。 例如，预览版、记录和照片流由捕获管道启用或禁用。 即使输出处于禁用状态，只要设备 MFT 本身处于流式传输状态，输入流仍可进行流式处理。
 
 ![设备 mft 管道预览序列](images/device-mft-pipeline-preview-sequence.png)
 
 <br>
 <br>
 
-![设备 mft 采取照片序列](images/device-mft-take-photo-sequence.png)
+![设备 mft 拍摄照片序列](images/device-mft-take-photo-sequence.png)
 
 
 ### <a name="lifetime-of-device-mft"></a>设备 MFT 的生存期
 
-获取创建 KS 筛选器后加载设备 MFT。 获取关闭 KS 筛选器之前，它将被卸载。
+创建 KS 筛选器后，将加载设备 MFT。 在 KS 筛选器关闭之前，将会将其卸载。
 
-从管道的角度，创建 DeviceSource 后，设备 MFT 创建，并且关闭 DeviceSource 时，设备 MFT 关闭同步。
+从管道的角度来看，创建 DeviceSource 时，会创建设备 MFT，DeviceSource 关闭后，设备 MFT 会同步关闭。
 
-若要支持关机，设备 MFT 必须支持**IMFShutdown**接口。 之后**设备 MFT-> 关闭**调用时，任何其他接口调入设备 MFT 必须返回 MF_E_SHUTDOWN 错误。
+若要支持关闭，设备 MFT 必须支持**IMFShutdown**接口。 在**设备 mft > 关闭**后，对设备 MFT 的任何其他接口调用都必须返回 MF_E_SHUTDOWN 错误。
 
 ### <a name="memory-type"></a>内存类型
 
-可以将帧捕获到系统内存缓冲区或 DX 内存缓冲区，每个照相机的驱动程序的首选项。 任何缓冲区不再是相机驱动程序会直接提供给设备 MFT 进行进一步处理。
+根据相机驱动程序的首选项，可以将帧捕获到系统内存缓冲区或 DX 内存缓冲区。 从照相机驱动程序中取出的任何缓冲区会直接送入设备 MFT 进行进一步处理。
 
-Devproxy 将分配基于驱动程序的首选项的缓冲区。 我们需要设备 MFT MF 使用分配器 Api 来分配非就地转换为其输出插针所需的示例。
+Devproxy 将根据驱动程序的首选项分配缓冲区。 需要设备 MFT 才能利用 MF 分配器 Api 为非就地转换分配其输出插针所需的示例。
 
-### <a name="mediatype-change-while-streaming"></a>流式处理时的媒体类型更改
+### <a name="mediatype-change-while-streaming"></a>流式处理时媒体媒体更改
 
-可以看到为本机公开设备 MFT 输出流的 mediatypes 支持 mediatypes SourceReader 的客户端。 本机 mediatype 更改时，SourceReader 将发送到通过 DeviceSource 设备 MFT mediatype 通知调用。 它负责的设备 MFT 以刷新所有挂起的示例从该流的队列并及时地切换到该流上新的媒体类型。 如果必须要更改输入媒体类型，然后它应更改当前的输入媒体类型为一个。 DTM 从设备 MFT 的输入流中获取当前的媒体类型，并将其上 Devproxy 的输出流和设备 MFT 输入设置每个本机媒体类型更改后。
+SourceReader 的客户端可以查看由设备 MFT 的输出流公开的 mediatypes 作为本机支持的 mediatypes。 更改本机媒体的媒体时，SourceReader 通过 DeviceSource 将媒体通知调用发送到设备 MFT。 设备 MFT 负责刷新该流的队列中所有挂起的示例并及时切换到该流上的新媒体类型。 如果需要更改输入媒体类型，则应将当前输入类型更改为该输入类型。 DTM 获取设备 MFT 的输入流中的当前媒体数量，并在 Devproxy 的输出流中设置它，并在每个本机媒体的媒体更改后设置设备 MFT 的输入。
 
-### <a name="input-mediatype-change-in-device-mft"></a>输入设备 MFT 中的媒体类型更改
+### <a name="input-mediatype-change-in-device-mft"></a>设备 MFT 中的输入媒体的更改
 
-由于这是*m x n* MFT，可能有负面影响在流式处理的 pin 的 mediatypes 的输入和输出插针的流式处理 mediatypes 时的状态更改或状态更改。 特别是当发生下列变化：
+由于这是一个*m x n* MFT，因此在输出流式处理 pin 的 mediatypes 或状态更改时，输入流 pin 的 mediatypes 和状态更改可能会有影响。 具体情况如下：
 
-- 输出媒体类型更改
+- 输出媒体的更改
 
-    - 应用程序更改本机媒体类型，它通过级联捕获堆栈到设备 MFT 作为输出媒体类型更改的 pin。
+    - 当应用程序更改本机媒体模式时，它会通过捕获堆栈合并到设备 MFT，作为输出插针媒体的媒体更改。
 
-    - 当输出媒体类型的更改，则可能会触发一个输入媒体类型的更改。 例如，假定所有输出插针流式都处理 720p。 这会导致流式处理 720p 照相机中。 接下来，假定记录流更改到 1080p 其本机媒体类型。 在这种情况下，一个到记录流提取数据的设备 MFT 输入流将必须更改其媒体类型。
+    - 输出媒体的更改时，可能会触发输入媒体的更改。 例如，假定所有输出插针都在720p 流式传输。 这会导致从每个720p 的视频流进行流式处理。 接下来，假定记录流将其本机媒体更改为1080p。 在这种情况下，将数据提取到记录流的设备 MFT 输入流之一必须更改其媒体类型。
 
-- 禁用输出插针
+- 输出 pin 已禁用
 
-    - 当应用程序禁用设备 MFT 输出之一时由多个输出，为了进行优化，共享相同的输入时可能必须输入更改媒体类型。 例如，如果 1080p 输出流停止，并且所有其他流，共享一个输入进行流式处理 720p，则输入的流应将其媒体类型更改为 720p 来节约能源并提高性能。
+    - 当某个应用程序在多个输出共享同一输入时禁用其中某个设备 MFT 的输出时，为进行优化，输入可能必须更改媒体的媒体。 例如，如果某个1080p 输出流停止，并且所有其他流（共享一个输入）都在720p 进行流式处理，则输入流应将其媒体状态更改为720p，以节省电源和提高性能。
 
-DTM 句柄[METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)通知从设备 MFT，若要更改的媒体类型和设备 MFT 输入以及在这些情况下的 Devproxy 输出的状态。
+DTM 处理来自设备 MFT 的[METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)通知，以便在这些情况下更改设备 mft 输入和 Devproxy 输出上的媒体状态和状态。
 
 ### <a name="flush-device-mft"></a>刷新设备 MFT
 
-两种类型的刷新需要同时管理设备 MFT:
+管理设备 MFT 时需要两种类型的刷新：
 
 - 全局刷新
 
-    - 设备 MFT 范围内刷新。 这通常发生在 DTM 将要发送停止流式传输到设备 MFT 的消息。
+    - 设备 MFT 范围刷新。 这通常发生在 DTM 即将发送到设备 MFT 的停止流式处理消息时。
 
     - 设备 MFT 应从其输入和输出队列中删除所有示例，并以同步方式返回。
 
-    - 设备 MFT 不应寻求新的输入，或在新的可用输出时发送通知。
+    - 设备 MFT 不应要求提供新的输入或发送新的可用输出通知。
 
 - 本地刷新
 
-    - 输出特定于 pin 的刷新。 这通常发生时停止流。
+    - 输出插针特定的刷新。 当流停止时，通常会发生这种情况。
 
-通过设备 MFT 管理器将删除发布之前将刷新的所有事件。 后刷新，设备 MFT 重置其内部[METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)跟踪计数。
+在刷新之前发布的所有事件都将被设备 MFT 管理器丢弃。 刷新后，设备 MFT 将重置其内部[METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)跟踪计数。
 
-### <a name="drain-of-device-mft"></a>设备 MFT 会被清空
+### <a name="drain-of-device-mft"></a>设备 MFT 排出
 
-设备 MFT 不会收到 s 单独漏消息由于没有漏实时捕获源中不需要。
+设备 MFT 不会收到单独的排出消息，因为无需排出实时捕获源。
 
 ### <a name="photo-trigger"></a>照片触发器
 
-在此模型中，而不是发送的照片触发器和照片顺序启动和停止触发器直接向该驱动程序，它们将重新路由到设备 MFT。 设备 MFT 将处理该触发器，或将其转发到根据需要照相机驱动程序。
+在此模型中，不会将照片触发器和照片序列直接启动和停止触发器发送到驱动程序，而是将其重新路由到设备 MFT。 设备 MFT 将处理触发器，或根据需要将其转发到相机驱动程序。
 
 ### <a name="warm-start"></a>热启动
 
-DeviceSource 尝试热启动特定的输出流，通过转换要暂停状态的流。 反过来，调用 DTM [IMFDeviceTransform::SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)上设备 MFT 转换一个特定的输出流以暂停状态的方法。 这将导致相应的输入流将置于暂停。 这通过设备 MFT 实现通过请求**METransformInputStreamStateChanged** DTM 和处理[IMFDeviceTransform::SetInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setinputstreamstate)方法。
+DeviceSource 尝试通过将流转换为暂停状态来尝试热启动特定的输出流。 接下来，DTM 调用设备 MFT 上的[IMFDeviceTransform：： SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)方法，以将特定的输出流转换为暂停状态。 这会导致将相应的输入流置于暂停。 这是通过将**METransformInputStreamStateChanged**请求到 DTM 并处理[IMFDeviceTransform：： SetInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setinputstreamstate)方法的设备 MFT 实现的。
 
 ### <a name="variable-photo-sequence"></a>可变照片序列
 
-这种体系结构，照片序列是使用摄像机设备驱动程序和设备 MFT，极大地降低了复杂性照相机设备驱动程序实现的。 启动和停止照片序列触发器发送到设备 MFT 并更轻松地处理照片序列。
+利用此体系结构，照片序列是通过相机设备驱动程序和设备 MFT 实现的，这大大降低了照相机设备驱动程序的复杂性。 开始和停止照片序列触发器发送到设备 MFT 并更轻松地处理照片序列。
 
 ### <a name="photo-confirmation"></a>照片确认
 
-设备 MFT 支持通过照片确认**IMFCapturePhotoConfirmation**接口。 管道检索通过此接口[IMFGetService::GetService](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfgetservice-getservice)方法。
+设备 MFT 通过**IMFCapturePhotoConfirmation**接口支持照片确认。 管道通过[IMFGetService：： GetService](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfgetservice-getservice)方法检索此接口。
 
 ### <a name="metadata"></a>元数据
 
-Devproxy 查询元数据的缓冲区大小的驱动程序，并为元数据分配内存。 来自驱动程序的元数据仍由 Devproxy 设置示例。 MFT 设备使用的示例的元数据。 元数据可以通过其输出流示例一起传递或仅用于其后续处理。
+Devproxy 查询驱动程序的元数据缓冲区大小并为元数据分配内存。 来自驱动程序的元数据仍由示例上的 Devproxy 设置。 设备 MFT 使用示例的元数据。 可以通过示例通过其输出流传递元数据，也可以只将元数据用于其后处理。
 
-支持任意数量的输入设备 MFT，与专用输入插针可以用于只是元数据或带的元数据。 此 pin 的媒体类型是自定义和驱动程序决定的大小和缓冲区的数目。
+使用支持任意数量输入的设备 MFT，专用输入 pin 仅可用于元数据或带外元数据。 此 pin 的媒体大小是自定义的，驱动程序将决定缓冲区的大小和数量。
 
-超出 DTM 公开此元数据的流。 流可以放入设备 MFT 启动流式处理时，流式处理状态。 例如，在流式处理选择输出流，设备 MFT 可以请求 DTM 启动一个或多个视频流和元数据流，使用**METransformInputStreamStateChanged**事件。 
+此元数据流公开了 DTM 以上。 当设备 MFT 开始流式传输时，可以将流置于流式处理状态。 例如，当选择输出流进行流式处理时，设备 MFT 可以通过使用**METransformInputStreamStateChanged**事件来请求 DTM 启动一个或多个视频流和元数据流。 
 
-注意：没有任何要求输入 pin 的数量，以匹配输出插针，在此模型中的数。 可以有一个单独的 pin 只是专用于元数据或 3A。
+注意:输入插针数量不一定要与此模型中的输出插针数量相匹配。 可以有单独的 pin 专用于元数据或3A。
 
-## <a name="device-transform-manager-dtm-event-handling"></a>设备转换管理器 (DTM) 事件处理
+## <a name="device-transform-manager-dtm-event-handling"></a>设备转换管理器（DTM）事件处理
 
-[设备转换管理器事件](https://docs.microsoft.com/windows-hardware/drivers/stream/device-mft-events)以下参考主题中定义：
+以下参考主题中定义了[设备转换管理器事件](https://docs.microsoft.com/windows-hardware/drivers/stream/device-mft-events)：
 
 - [METransformFlushInputStream](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformflushinputstream)
 - [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
@@ -206,31 +206,31 @@ Devproxy 查询元数据的缓冲区大小的驱动程序，并为元数据分�
 
 ## <a name="imfdevicetransform-interface"></a>IMFDeviceTransform 接口
 
-[IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)接口定义与设备 MFT 进行交互。 此接口简化的管理*m*输入并*n*输出设备 MFT。 其他接口，以及设备 MFT 必须实现此接口。
+定义[IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)接口以与设备 MFT 交互。 此接口有助于管理*m*输入和*n*输出设备 MFT。 除了其他接口，设备 MFT 还必须实现此接口。
 
 ### <a name="general-event-propagation"></a>常规事件传播
 
-事件发生在 Devproxy （或在设备内） 时，我们需要向设备 MFT 和 DeviceSource 传播的。
+当 Devproxy （或内部设备）中发生事件时，需要将其传播到设备 MFT 和 DeviceSource。
 
 ## <a name="device-mft-requirements"></a>设备 MFT 要求
 
 ### <a name="interface-requirements"></a>接口要求
 
-设备 Mft 必须支持以下接口：
+设备 MFTs 必须支持以下接口：
 
 - [IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)
 
 - [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
 
-    - 这允许所有 ksproperties、 事件和方法为通过设备 MFT。 这使设备 MFT 能够处理设备 MFT 这些函数调用或只需将其转发到该驱动程序。 情况下，它将处理 KsEvent 方法，然后设备 MFT 必须执行以下操作：
+    - 这允许所有 ksproperties、事件和方法通过设备 MFT。 这使设备 MFT 能够处理这些函数在设备 MFT 内的调用，或者只是将它们转发给驱动程序。 如果它处理 KsEvent 方法，则设备 MFT 必须执行以下操作：
 
-        - 如果设备 MFT 处理任何**KSEVENT_TYPE_ONESHOT**事件，然后它会在接收时复制句柄**KSEVENT_TYPE_ENABLE**。
+        - 如果设备 MFT 处理任何**KSEVENT_TYPE_ONESHOT**事件，则它会在收到**KSEVENT_TYPE_ENABLE**时复制句柄。
 
-        - 当它为已完成的设置或引发事件时，它将调用**CloseHandle**重复句柄。
+        - 完成设置或引发事件时，它会对重复的句柄调用**CloseHandle** 。
 
-        - 如果设备 MFT 处理非 KSEVENT_TYPE_ONESHOT 事件，则它应复制句柄，当它收到**KSEVENT_TYPE_ENABLE** ，并调用**CloseHandle**上重复处理当 ks 事件时禁用通过调用 KsEvent 函数中的第一个参数 (ks 事件 id) 和第二个参数 （事件长度） 设置为零。 事件数据和长度才有效。 事件数据中唯一标识特定 ks 事件。
+        - 如果设备 MFT 处理非 KSEVENT_TYPE_ONESHOT 事件，则它应在收到**KSEVENT_TYPE_ENABLE**时复制句柄，并在通过调用 KSEVENT 函数调用函数时对重复的句柄调用**CloseHandle**第一个参数（ks 事件 id）和第二个参数（事件长度）设置为零。 事件数据和长度将有效。 事件数据用于唯一标识特定的 ks 事件。
 
-        - 如果设备 MFT 处理非 KSEVENT_TYPE_ONESHOT 事件，则它应复制句柄，当它收到**KSEVENT_TYPE_ENABLE** ，然后应调用**CloseHandle**上重复处理时 ks通过使用设置为零的所有参数调用 KsEvent 函数禁用事件。
+        - 如果设备 MFT 处理非 KSEVENT_TYPE_ONESHOT 事件，则它应在收到**KSEVENT_TYPE_ENABLE**时复制句柄，并应在通过调用 KSEVENT 禁用 ks 事件时对重复的句柄调用**CloseHandle** 。将所有参数设置为零的函数。
 
 - [IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)
 
@@ -240,7 +240,7 @@ Devproxy 查询元数据的缓冲区大小的驱动程序，并为元数据分�
 
 ### <a name="notification-requirements"></a>通知要求
 
-设备 Mft 必须使用以下消息来通知 DTM 的可用性的示例中，任何输入的流状态更改一样，依次类推。
+设备 MFTs 必须使用以下消息来通知 DTM 有关示例的可用性、任何输入流状态更改等。
 
 - [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
 
@@ -250,25 +250,25 @@ Devproxy 查询元数据的缓冲区大小的驱动程序，并为元数据分�
 
 ### <a name="thread-requirements"></a>线程要求
 
-设备 MFT 必须创建自己的线程。 它必须改用 MF 工作队列，其 ID 传递[IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)接口。 这是为了确保在设备 MFT 中运行的所有线程都获取正确的捕获管道运行的优先级。 否则它可能会导致线程优先级倒置。
+设备 MFT 不得创建它自己的线程。 相反，它必须使用 MF 工作队列，其 ID 是通过[IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)接口传递的。 这是为了确保在设备 MFT 中运行的所有线程获取捕获管道运行时的正确优先级。 否则，可能会导致线程优先级倒置。
 
 ### <a name="inputstream-requirements"></a>InputStream 要求
 
-#### <a name="stream-count"></a>Stream 计数
+#### <a name="stream-count"></a>流计数
 
-- 输入流中设备 MFT 数必须为相同的驱动程序支持的流数。
+- 设备 MFT 中的输入流数量必须与驱动程序支持的流数量相同。
 
 #### <a name="mediatypes"></a>MediaTypes
 
-- Mediatypes 和支持的设备 MFT 输入实际的媒体类型的数量必须匹配的数量和类型的 mediatypes 驱动程序支持。
+- 设备 MFT 输入支持的 mediatypes 数和实际媒体类型必须与该驱动程序支持的 mediatypes 数量和类型匹配。
 
-- 数可能不同，仅当支持的输入设备 MFT mediatypes 是驱动程序支持 mediatypes 的子集。
+- 仅当设备 MFT 的输入支持的 mediatypes 是驱动程序支持的 mediatypes 的子集时，此数字才可能不同。
 
-- 支持的驱动程序和输入设备 MFT mediatypes 可能是标准或自定义 mediatypes。
+- 驱动程序和设备 MFT 的输入支持的 mediatypes 可以是标准或自定义 mediatypes。
 
-### <a name="to-register-device-mft"></a>若要注册设备 MFT
+### <a name="to-register-device-mft"></a>注册设备 MFT
 
-照相机设备 INF 必须具有以下指定的设备 MFT 组件类的 CLSID 的设备接口条目。
+照相机设备 INF 必须具有以下设备接口条目，该条目指定设备 MFT 的 CoClass 的 CLSID。
 
 ```INF
 [CaptureAvstrm.Device.NTarm.Interfaces]
@@ -282,9 +282,9 @@ HKR,,FriendlyName,,%Capture.FilterDescBack%
 HKR,,CameraDeviceMftClsid,,%CameraDeviceMFT.Clsid%
 ```
 
-上述 INF 条目会导致以下输入的注册表项：
+上述 INF 条目将导致输入以下注册表项：
     
-**请注意**这只是一个示例 (不实际 regkey)
+**注意**这只是一个示例，而不是实际的 regkey
 
 ```console
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{E5323777-F976-4f5b-9B55-B94699C46E44}\##?#USB#VID_045E&PID_075D&MI_00#8&23C3DB65&0&0000#{E5323777-F976-4f5b-9B55-B94699C46E44}\#GLOBAL\Device Parameters]

@@ -3,15 +3,13 @@ title: 驱动程序度量属性
 description: 用于驱动程序外部测试的度量通常会共享属性，这些属性可进行度量：从遥测数据到聚合过程，再到 Microsoft 评估度量的方式。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 461f3d4960df662ae70cb612a2ef42c2a414986f
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 63d01e2caa11fb0729d7e2f35d7d54b9336f473f
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223987"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017061"
 ---
 # <a name="driver-measure-attributes"></a>驱动程序度量属性
 

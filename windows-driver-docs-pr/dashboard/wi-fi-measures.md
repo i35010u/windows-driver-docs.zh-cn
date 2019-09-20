@@ -3,15 +3,13 @@ title: Wi-Fi 度量
 description: 相机度量在蓝牙驱动程序外部测试过程中筛选出良性初始化错误
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 63fad9902c000ff3af5b6dbc56ea9fdbccdb7ce2
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: c2db79496dc7ffb4355efa9d0eb9e73481b244e0
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223885"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016989"
 ---
 # <a name="wi-fi-measures"></a>Wi-Fi 度量
 

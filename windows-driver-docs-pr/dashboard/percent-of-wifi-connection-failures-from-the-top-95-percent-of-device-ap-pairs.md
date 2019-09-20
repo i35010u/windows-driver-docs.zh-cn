@@ -3,15 +3,13 @@ title: WLAN 连接失败次数百分比（来自前 95% 的设备和接入点对
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为设备无法连接到接入点的实例所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 718ef5850f42c123a4161fc1182bb67803f9dae9
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: e8ac44992816693a18b1e8ae3d265949d74b2d5f
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223921"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016949"
 ---
 # <a name="percent-of-wi-fi-connection-failures-from-the-top-95-percent-of-device-and-access-point-pairs"></a>WLAN 连接失败次数百分比（来自前 95% 的设备和接入点对） 
 

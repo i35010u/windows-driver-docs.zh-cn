@@ -3,15 +3,13 @@ title: 显卡驱动程序二进制文件中的崩溃导致出现蓝屏的计算�
 description: 该度量将 14 天滑动窗口中的遥测数据聚合为未经历内核模式崩溃的计算机所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: c4984b42b97928d8ae0c3038f34c63ad54d7b1be
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 489e65fbc31506ffa0f40b2392d9dde50b2ee737
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223997"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017050"
 ---
 # <a name="number-of-machines-experiencing-a-blue-screen-caused-by-a-crash-in-the-graphics-driver-binary"></a>显卡驱动程序二进制文件中的崩溃导致出现蓝屏的计算机数
 

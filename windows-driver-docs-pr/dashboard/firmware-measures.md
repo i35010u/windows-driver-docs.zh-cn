@@ -3,15 +3,13 @@ title: 固件度量
 description: 固件度量在固件驱动程序外部测试过程中筛选出良性初始化错误
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: db5188e72ef73559714a579ae98b2a304046d71c
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 1e4bbe42d603b3b95b2c0f58ed4c9f8deeffdfb0
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224023"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017071"
 ---
 # <a name="firmware-measures"></a>固件度量
 

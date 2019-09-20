@@ -3,15 +3,13 @@ title: 生态系统 Netflix HWDRM 质量比较
 description: 该度量将来自 28 天滑动窗口的遥测数据聚合为二进制值（0 或 1），用于指示驱动程序性能是否在零售市场中来自相同 IHV 的所有驱动程序的聚合性能的 2 个标准差内
 ms.topic: article
 ms.date: 08/19/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: bfc790868587877e4ed0fa29a40705a219adb0be
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: c50393db7a49987136ea5bc4366c79c3d4954925
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224025"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017073"
 ---
 # <a name="ecosystem-netflix-hwdrm-quality-comparison"></a>生态系统 Netflix HWDRM 质量比较
 

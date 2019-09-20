@@ -3,15 +3,13 @@ title: 音频度量
 description: 音频度量在音频驱动程序外部测试过程中筛选出良性初始化错误
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 50de16eb2608b21c923671413f0e5ca335698a39
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 79e13ea531c50935902b0724d105bb3575506250
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224057"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017090"
 ---
 # <a name="audio-measures"></a>音频度量
 

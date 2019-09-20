@@ -3,15 +3,13 @@ title: 蓝牙度量
 description: 蓝牙度量在蓝牙驱动程序外部测试过程中筛选出良性初始化错误
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cfc7697cd45bf624f519136277545f0578462a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 77288a6a95e0df582c011403ab0c148cc7b1576b
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224055"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017087"
 ---
 # <a name="bluetooth-measures"></a>蓝牙度量
 

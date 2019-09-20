@@ -3,15 +3,13 @@ title: 相机视频和流故障次数百分比
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为相机设备无法使用视频和流式处理功能的实例所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 996ab915b7ea098622275f1762dfaf353b14d945
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 1365dc8641cb6a5b4d7d0bd8f9856c281c368174
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224029"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017074"
 ---
 # <a name="percent-of-camera-video-and-stream-failures"></a>相机视频和流故障次数百分比
 

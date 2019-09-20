@@ -3,15 +3,13 @@ title: 蓝牙配对失败次数百分比
 description: ''
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d750be8c913847da949057558592d0a198818b
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 85ec8300e547130bdd9b665175e41a1a12022ac8
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224043"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017085"
 ---
 # <a name="percent-of-bluetooth-pairing-failures"></a>蓝牙配对失败次数百分比
 

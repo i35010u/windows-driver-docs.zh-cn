@@ -3,15 +3,13 @@ title: Microsoft 驱动程序度量
 description: 发布者和作者使用 Microsoft 驱动程序度量的说明来更好地了解 Microsoft 在驱动程序外部测试过程中用于评估驱动程序质量的标准
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d54b8d026533c5513901accc0c0800eecf89094
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 2963c128edce3c0df1b546aa057b5c3edc6e4bb1
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223949"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017029"
 ---
 # <a name="overview-of-the-microsoft-driver-measures"></a>Microsoft 驱动程序度量概述
 

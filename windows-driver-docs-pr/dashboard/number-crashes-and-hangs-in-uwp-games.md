@@ -3,15 +3,13 @@ title: 按使用时间规范化的 UWP 游戏中的崩溃和挂起次数（以�
 description: 该度量将 14 天滑动窗口中的遥测数据聚合为未经历内核模式崩溃的计算机所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7430f33ab859d7685c2479fd8f4af12d9d9de044
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 8a7bc23a5b3191d48942a2ea13a6917ac9e55a89
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223981"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017056"
 ---
 # <a name="number-of-crashes-and-hangs-in-uwp-games-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>UWP 游戏中的崩溃和挂起次数（按使用时间规范化）小于或等于基线目标
 

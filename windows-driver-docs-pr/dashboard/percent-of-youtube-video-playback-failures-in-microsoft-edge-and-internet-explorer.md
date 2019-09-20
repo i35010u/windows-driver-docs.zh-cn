@@ -3,15 +3,13 @@ title: Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为 Microsoft Edge 或 Internet Explorer 中的 YouTube 播放错误百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 128f9b6bca0bd35fd2e2666c3cba3209ee413617
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 74a0af946d837fe120dd6dc7fe34086b661cadab
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223915"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016943"
 ---
 # <a name="percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer"></a>Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次数百分比
 

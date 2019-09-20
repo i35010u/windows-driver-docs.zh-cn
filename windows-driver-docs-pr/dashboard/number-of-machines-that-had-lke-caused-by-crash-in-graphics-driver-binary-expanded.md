@@ -3,15 +3,13 @@ title: 显卡驱动程序二进制文件中的崩溃导致发生了 LKE 的计�
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了 LKE
 ms.topic: article
 ms.date: 08/08/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 57e3c9699f08b9f86c2dff156b58ca0d4ea4e1f5
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 4bd41b90640d026d4ea4c93a5e51058f85916890
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223977"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016976"
 ---
 # <a name="number-of-machines-that-had-an-lke-caused-by-a-crash-in-the-graphics-driver-binary"></a>显卡驱动程序二进制文件中的崩溃导致发生了 LKE 的计算机数
 

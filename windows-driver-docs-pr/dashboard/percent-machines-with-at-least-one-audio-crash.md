@@ -3,15 +3,13 @@ title: 至少有一次音频崩溃的计算机的百分比
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为在 AudioSrv.dll 或 AudioDG.exe 中至少有一次音频崩溃的计算机所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 28e28f97afcb58fa73eeddd2237e90b20651bb3a
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 430e618fa9c75d9b5e56480b4cf4c2283d540513
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223919"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016939"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-crash"></a>至少有一次音频崩溃的计算机的百分比
 

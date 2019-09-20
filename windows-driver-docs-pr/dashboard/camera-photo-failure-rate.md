@@ -3,15 +3,13 @@ title: 相机照片捕获失败次数百分比
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为相机设备无法使用照片功能的实例所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1af1a14248b6c3b96372cd8c0221ebe129791b
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 605ab114189e5a34e665dd3441ca4ad1ff10dcbf
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70224051"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017079"
 ---
 # <a name="percent-of-camera-photo-capture-failures"></a>相机照片捕获失败次数百分比
 

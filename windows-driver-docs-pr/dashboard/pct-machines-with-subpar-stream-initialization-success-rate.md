@@ -3,15 +3,13 @@ title: 流初始化成功率低于标准成功率的计算机的百分比
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为其初始化率低于标准的计算机所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dde8d724e9a34a772941f00fced39901688b1ca
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 5c2d0ea92efe7473bc0aee6686180158e624b387
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223905"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017021"
 ---
 # <a name="percent-of-machines-with-subpar-stream-initialization-success-rate"></a>流初始化成功率低于标准成功率的计算机的百分比
 

@@ -3,15 +3,13 @@ title: Microsoft Edge 中的用户模式崩溃次数
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为 Microsoft Edge 在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: aee8c2b7387c0aeead4faee7c17c80829f2e94c2
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 2bb786d87571ef4dc7446b2a1b0bb6066e866fd7
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223881"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016940"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-microsoft-edge-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Microsoft Edge 中用户模式可靠性的崩溃次数（按使用时间规范化）小于或等于基线目标
 

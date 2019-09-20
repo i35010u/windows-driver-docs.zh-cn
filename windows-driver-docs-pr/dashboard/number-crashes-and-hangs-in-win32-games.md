@@ -3,15 +3,13 @@ title: Win32 游戏中的崩溃和挂起次数
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为 Win32 游戏在运行时内的崩溃和挂起比率。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: c02dfc84bd908fc32950383cce2788b93cefc2c4
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 4abe4352bf55da2b31992bf3ba87563185185761
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223979"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016981"
 ---
 # <a name="number-of-crashes-and-hangs-in-win32-games-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Win32 游戏中的崩溃和挂起次数（按使用时间规范化）小于或等于基线目标
 

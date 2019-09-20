@@ -3,15 +3,13 @@ title: Windows 组件中用户模式可靠性的崩溃次数（按总体规范�
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为 Microsoft 组件在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率
 ms.topic: article
 ms.date: 08/08/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 50cb1ea0ec201003d53c368c1c3a4a9429144330
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 262992b6bac8533b5f0ace871a0916744d4ee14d
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223889"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016986"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-windows-components-photos-app-normalized-by-population-is-less-than-or-equal-to-the-baseline-goal"></a>Windows 组件照片应用中用户模式可靠性的崩溃次数（按总体规范化）小于或等于基线目标
 

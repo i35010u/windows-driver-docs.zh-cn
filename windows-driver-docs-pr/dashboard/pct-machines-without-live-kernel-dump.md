@@ -3,15 +3,13 @@ title: 没有实时内核转储的计算机所占的百分比
 description: 该度量将 14 天滑动窗口中的遥测数据聚合为未经历实时内核转储的计算机所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 81fe0c48ef97a00bc3419f8a9cbfcf301fee5eba
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 0d02ee5456656e9d39f5c49cb93301f3a9958e4c
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223909"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017016"
 ---
 # <a name="percent-of-machines-without-a-live-kernel-dump"></a>没有实时内核转储的计算机所占的百分比
 

@@ -3,15 +3,13 @@ title: Internet 连接失败率（来自信号质量大于 50% 的前 95% 的设
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为设备无法通过 Wi-Fi 连接到 Internet 的实例所占的百分比。
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: c564cef2d80c8a55f768471f7855f18e7603e483
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: e9926776d8e700eadd0a1ab1fe0511e645a3e231
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223911"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016951"
 ---
 # <a name="percent-of-internet-connection-failures-from-the-top-95-percent-of-device-and-access-point-pairs-that-have-greater-than-50-percent-signal-quality"></a>Internet 连接失败次数百分比（来自信号质量大于 50% 的前 95% 的设备和接入点对）
 

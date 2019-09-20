@@ -3,15 +3,13 @@ title: 显卡度量
 description: 显卡度量在显卡驱动程序外部测试过程中筛选出良性初始化错误
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aca54633e6ebb4610f0e1d1a8a40cd8708b6f4b
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: 6754d8f26d06aa29793bf6162ef57f3662917749
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223991"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017063"
 ---
 # <a name="graphics-measures"></a>显卡度量
 

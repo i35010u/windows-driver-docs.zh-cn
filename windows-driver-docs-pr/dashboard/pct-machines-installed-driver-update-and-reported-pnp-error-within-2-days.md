@@ -3,15 +3,13 @@ title: 安装了驱动程序更新并在安装后两天内报告 PnP 错误代�
 description: 度量将 30 天滑动窗口中的遥测数据聚合为成功安装驱动程序并在安装两天内遇到 PNP 错误的计算机所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: paslote
-author: parkeratmicrosoft
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a50355f267fa223151b8ca8e357f170bcc9ab8
-ms.sourcegitcommit: 04da1962e34908adeca54fcf5bbfbaa456efca5f
+ms.openlocfilehash: d49a8e9dbb66ab74f98a945cd7b22fe7eaa91910
+ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70223943"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71016945"
 ---
 # <a name="percent-of-machines-that-installed-a-driver-update-and-reported-a-pnp-error-code-within-two-days-of-install"></a>安装了驱动程序更新并在安装后两天内报告 PnP 错误代码的计算机的百分比
 
