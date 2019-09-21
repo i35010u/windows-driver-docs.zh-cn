@@ -1,6 +1,6 @@
 ---
-title: Buttons 元素
-description: 必需的按钮元素指定一个或多个按钮，在事件通知消息框上显示客户端计算机。
+title: 按钮元素
+description: 必需的按钮元素指定客户端计算机上的事件通知消息框中显示的一个或多个按钮。
 ms.assetid: bf3718c0-37d9-4b73-a015-8a5a95535381
 keywords:
 - 按钮元素打印设备
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e40fb775bd3f68c4de1e5d5821f1610981483d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 109dbaff5b4ed89287c4370378fa004ed3fb89fb
+ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330452"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164797"
 ---
-# <a name="buttons-element"></a>Buttons 元素
+# <a name="buttons-element"></a>按钮元素
 
 
-所需**按钮**元素指定一个或多个按钮，在事件通知消息框上显示客户端计算机。
+必需的**按钮**元素指定客户端计算机上的事件通知消息框中显示的一个或多个按钮。
 
-**按钮**中定义元素*asyncui*此 URI 处的命名空间： http://schemas.microsoft.com/2003/print/asyncui/v1/request。 （此资源可能不会在某些语言和国家/地区中可用。）
+在*asyncui*命名空间中的此 URI 处定义了**按钮**元素 http://schemas.microsoft.com/2003/print/asyncui/v1/request ：。 （此资源可能在某些语言和国家/地区不可用。）
 
 <a name="usage"></a>用法
 -----
@@ -56,9 +56,9 @@ ms.locfileid: "63330452"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="button.md" data-raw-source="[&lt;strong&gt;button&lt;/strong&gt;](button.md)"><strong>button</strong></a></p></td>
+<td><p><a href="button.md" data-raw-source="[&lt;strong&gt;button&lt;/strong&gt;](button.md)"><strong>鼠标</strong></a></p></td>
 <td><p></p>
-<p>在客户端计算机显示一个消息框中指定的一个按钮特性所必需的元素。</p></td>
+<p>一个必需的元素，它指定在客户端计算机上显示的消息框中的按钮特性。</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@ ms.locfileid: "63330452"
 <tr class="odd">
 <td><p><a href="messageboxui.md" data-raw-source="[&lt;strong&gt;messageBoxUI&lt;/strong&gt;](messageboxui.md)"><strong>messageBoxUI</strong></a></p></td>
 <td><p></p>
-<p>可选元素，它用于在客户端计算机上显示一个消息框。</p></td>
+<p>一个可选元素，用于在客户端计算机上显示消息框。</p></td>
 </tr>
 </tbody>
 </table>
@@ -89,10 +89,10 @@ ms.locfileid: "63330452"
 <a name="remarks"></a>备注
 -------
 
-请参阅[**按钮**](button.md)用于演示如何使用代码如示例**按钮**元素需要包含两个**按钮**显示的元素**确定**和一个**取消**按钮。
+有关演示如何使用 button 元素将显示 **"确定" 和 "** **取消**" 按钮的两个**按钮**元素括**起来的代码**示例，请参阅[**按钮**](button.md)。
 
 ## <a name="see-also"></a>请参阅
 
-[button](button.md)
+[鼠标](button.md)
 
 [messageBoxUI](messageboxui.md)
