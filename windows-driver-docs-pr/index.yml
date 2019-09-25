@@ -1,0 +1,97 @@
+### YamlMime:Landing
+title: Windows 驱动程序工具包文档
+summary: Windows 驱动程序工具包 (WDK) 10 与 Microsoft Visual Studio 和 Windows 调试工具集成在一起。 此集成环境提供了开发、生成、打包、部署、测试和调试驱动程序所需的工具。 可以在此集成环境中运行许多基本认证测试。 WDK 针对多种技术和驱动程序模型都提供了模板，这包括 Windows 驱动程序框架 (WDF)、通用串行总线 (USB)、打印、网络和文件系统筛选器。
+metadata:
+  author: tedhudek
+  description: 本部分介绍了如何获取 WDK 和示例，以及如何开始构建 Windows 驱动程序。
+  ms.author: tedhudek
+  ms.date: 09/18/2019
+  ms.topic: landing-page
+  ms.prod: windows-hardware
+  ms.technology: windows-devices
+  services: wdk
+  ms.openlocfilehash: 54e79f09cbf83072b877e39aa965fea46a5bae2c
+  ms.sourcegitcommit: e55573a618549c703683ace2983757df2adcfbeb
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 09/25/2019
+  ms.locfileid: "71256641"
+landingContent:
+- title: 关于该工具包
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 新功能和更新
+      url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
+    - text: WDF 驱动程序新增功能
+      url: https://docs.microsoft.com/windows-hardware/drivers/wdf/
+  - linkListType: reference
+    links:
+    - text: Windows 驱动程序 API 参考
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/content/
+- title: 获取工具
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Windows 驱动程序工具包 (WDK)
+      url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+    - text: Visual Studio 2019
+      url: https://go.microsoft.com/fwlink/p/?LinkId=698539
+    - text: Windows 调试工具
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/
+    - text: Windows 驱动程序示例
+      url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+    - text: 安装预览版 WDK
+      url: https://docs.microsoft.com/windows-hardware/drivers/installing-preview-versions-wdk
+- title: 立即开始行动
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 什么是驱动程序？
+      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-
+    - text: 通用 Windows 驱动程序入门
+      url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
+  - linkListType: tutorial
+    links:
+    - text: 编写通用 Hello World 驱动程序
+      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
+- title: 安装
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 设备和驱动程序安装
+      url: https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation
+    - text: 添加启动项
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-boot-entries
+    - text: 编辑启动选项
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/editing-boot-options
+    - text: 使用设备管理器卸载设备和驱动程序包
+      url: https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager-to-uninstall-devices-and-driver-packages
+- title: 调试
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: WinDbg 入门
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg
+    - text: 设置 KDNET 调试
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically
+    - text: Windows 符号程序包
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
+  - linkListType: tutorial
+    links:
+    - text: 调试通用驱动程序
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-
+- title: 为驱动程序签名
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 硬件合作伙伴中心
+      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
+    - text: 创建新的发货标签
+      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-new-shipping-label
+    - text: 管理发货标签
+      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-shipping-labels
+    - text: 更新发货标签
+      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-shipping-label
+    - text: 获取代码签名证书
+      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate

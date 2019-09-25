@@ -302,6 +302,8 @@
           href: configure-and-query-audiodevicemodules.md
     - name: 低延迟音频
       href: low-latency-audio.md
+    - name: 多语音助手
+      href: voice-activation-mva.md
     - name: 语音激活
       href: voice-activation.md
     - name: USB 音频 2.0 驱动程序
