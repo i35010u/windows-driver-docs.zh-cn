@@ -4,51 +4,51 @@ description: IP 帮助程序概述
 ms.assetid: c7cf1f47-ee0d-4c89-883b-717b719fcc2a
 keywords:
 - IP 帮助程序 WDK 网络
-- IP 帮助程序 WDK 网络, 关于
-- 网络驱动程序 WDK, IP 帮助程序
+- IP 帮助程序 WDK 网络，关于
+- 网络驱动程序 WDK，IP 帮助程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9818a47e89a1c42a362b6c4466a33a5fd04fbe
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "70063917"
 ---
 # <a name="ip-helper-overview"></a>IP 帮助程序概述
 
-Internet 协议帮助程序 (IP 帮助程序) 使驱动程序可以检索有关本地计算机的网络配置的信息并修改该配置。 IP 帮助程序还提供了通知机制, 以确保在本地计算机网络配置的某些方面发生更改时通知驱动程序。 IP 帮助程序在 Windows Vista 和更高版本的 Microsoft Windows 操作系统中可用。
+Internet 协议帮助程序（IP 帮助程序）使驱动程序可以检索有关本地计算机的网络配置的信息并修改该配置。 IP 帮助程序还提供了通知机制，以确保在本地计算机网络配置的某些方面发生更改时通知驱动程序。 IP 帮助程序在 Windows Vista 和更高版本的 Microsoft Windows 操作系统中可用。
 
-许多 IP Helper 函数传递结构参数, 这些参数表示与管理信息基础 (MIB) 技术关联的数据类型。 IP Helper 函数使用这些 MIB 结构来表示不同的网络信息。
+许多 IP Helper 函数传递结构参数，这些参数表示与管理信息基础（MIB）技术关联的数据类型。 IP Helper 函数使用这些 MIB 结构来表示不同的网络信息。
 
-IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*是一种传统的术语, 它是*网络适配器*的缩写形式, 最初称为某种形式的网络硬件。 适配器是一个数据链接级别抽象。
+IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*是一种传统的术语，它是*网络适配器*的缩写形式，最初称为某种形式的网络硬件。 适配器是一个数据链接级别抽象。
 
-作为抽象概念, 在 IETF RFC 文档中描述了一个*接口*, 表示某个节点与链接的连接。 接口是 IP 级抽象。
+作为抽象概念，在 IETF RFC 文档中描述了一个*接口*，表示某个节点与链接的连接。 接口是 IP 级抽象。
 
-你的驱动程序可以使用以下内核模式函数、MIB 结构和 MIB 和网络层 (NL) 枚举来检索和修改本地计算机上传输控制协议/internet 协议 (TCP/IP) 传输的配置设置。
+你的驱动程序可以使用以下内核模式函数、MIB 结构和 MIB 和网络层（NL）枚举来检索和修改本地计算机上传输控制协议/internet 协议（TCP/IP）传输的配置设置。
 
-**请注意**  , 在开发驱动程序代码时, 请按照[包括头文件](including-header-files-for-ip-helper.md)的说明进行操作。
+**请注意**  ，在开发驱动程序代码时，请按照[包括头文件](including-header-files-for-ip-helper.md)的说明进行操作。
 
  
 
 ### <a name="interface-conversion-functions"></a>接口转换函数
 
 <table>  
-<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
+<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
 <thead>  
 <tr class="header">  
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546130(v=vs.85)" data-raw-source="[&lt;strong&gt;ConvertInterfaceAliasToLuid&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546130(v=vs.85))"><strong>ConvertInterfaceAliasToLuid</strong></a></p></td>
-<td align="left"><p>将网络接口的本地唯一标识符 (LUID) 转换为 Unicode 接口名称。</p></td>
+<td align="left"><p>将网络接口的本地唯一标识符（LUID）转换为 Unicode 接口名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546137(v=vs.85)" data-raw-source="[&lt;strong&gt;ConvertInterfaceGuidToLuid&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546137(v=vs.85))"><strong>ConvertInterfaceGuidToLuid</strong></a></p></td>
-<td align="left"><p>将网络接口的全局唯一标识符 (GUID) 转换为接口的 LUID。</p></td>
+<td align="left"><p>将网络接口的全局唯一标识符（GUID）转换为接口的 LUID。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546141(v=vs.85)" data-raw-source="[&lt;strong&gt;ConvertInterfaceIndexToLuid&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546141(v=vs.85))"><strong>ConvertInterfaceIndexToLuid</strong></a></p></td>
@@ -104,7 +104,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -115,7 +115,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552521(v=vs.85)" data-raw-source="[&lt;strong&gt;GetIfStackTable&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552521(v=vs.85))"><strong>GetIfStackTable</strong></a></p></td>
-<td align="left"><p>检索网络接口堆栈行条目的表, 这些行条目指定接口堆栈上的网络接口的关系。</p></td>
+<td align="left"><p>检索网络接口堆栈行条目的表，这些行条目指定接口堆栈上的网络接口的关系。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552524(v=vs.85)" data-raw-source="[&lt;strong&gt;GetIfTable2&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552524(v=vs.85))"><strong>GetIfTable2</strong></a></p></td>
@@ -123,11 +123,11 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552528(v=vs.85)" data-raw-source="[&lt;strong&gt;GetIfTable2Ex&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552528(v=vs.85))"><strong>GetIfTable2Ex</strong></a></p></td>
-<td align="left"><p>检索 MIB-II 接口表, 提供要检索的接口信息级别。</p></td>
+<td align="left"><p>检索 MIB-II 接口表，提供要检索的接口信息级别。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552531(v=vs.85)" data-raw-source="[&lt;strong&gt;GetInvertedIfStackTable&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552531(v=vs.85))"><strong>GetInvertedIfStackTable</strong></a></p></td>
-<td align="left"><p>检索反向网络接口堆栈行条目的表, 这些行条目指定接口堆栈上的网络接口的关系。</p></td>
+<td align="left"><p>检索反向网络接口堆栈行条目的表，这些行条目指定接口堆栈上的网络接口的关系。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552540(v=vs.85)" data-raw-source="[&lt;strong&gt;GetIpInterfaceEntry&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552540(v=vs.85))"><strong>GetIpInterfaceEntry</strong></a></p></td>
@@ -159,7 +159,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -170,7 +170,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546219(v=vs.85)" data-raw-source="[&lt;strong&gt;CreateSortedAddressPairs&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546219(v=vs.85))"><strong>CreateSortedAddressPairs</strong></a></p></td>
-<td align="left"><p>将提供的目标地址列表与主机的本地 IP 地址配对, 并根据首选的通信顺序对对进行排序。</p></td>
+<td align="left"><p>将提供的目标地址列表与主机的本地 IP 地址配对，并根据首选的通信顺序对对进行排序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546227(v=vs.85)" data-raw-source="[&lt;strong&gt;CreateUnicastIpAddressEntry&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546227(v=vs.85))"><strong>CreateUnicastIpAddressEntry</strong></a></p></td>
@@ -234,7 +234,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -281,7 +281,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -312,7 +312,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -327,7 +327,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552511(v=vs.85)" data-raw-source="[&lt;strong&gt;GetBestRoute2&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552511(v=vs.85))"><strong>GetBestRoute2</strong></a></p></td>
-<td align="left"><p>检索本地计算机上的 IP 路由条目, 以获得到指定目标 IP 地址的最佳路由。</p></td>
+<td align="left"><p>检索本地计算机上的 IP 路由条目，以获得到指定目标 IP 地址的最佳路由。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552535(v=vs.85)" data-raw-source="[&lt;strong&gt;GetIpForwardEntry2&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552535(v=vs.85))"><strong>GetIpForwardEntry2</strong></a></p></td>
@@ -359,14 +359,14 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550045(v=vs.85)" data-raw-source="[&lt;strong&gt;FreeMibTable&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550045(v=vs.85))"><strong>FreeMibTable</strong></a></p></td>
-<td align="left"><p>释放返回网络接口、地址和路由 (例如, <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552524(v=vs.85)" data-raw-source="[&lt;strong&gt;GetIfTable2&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552524(v=vs.85))"><strong>GetIfTable2</strong></a>和<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552508(v=vs.85)" data-raw-source="[&lt;strong&gt;GetAnycastIpAddressTable&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552508(v=vs.85))"><strong>GetAnycastIpAddressTable</strong></a>) 的表的函数所分配的缓冲区。</p></td>
+<td align="left"><p>释放返回网络接口、地址和路由（例如， <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552524(v=vs.85)" data-raw-source="[&lt;strong&gt;GetIfTable2&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552524(v=vs.85))"><strong>GetIfTable2</strong></a>和<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552508(v=vs.85)" data-raw-source="[&lt;strong&gt;GetAnycastIpAddressTable&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552508(v=vs.85))"><strong>GetAnycastIpAddressTable</strong></a>）的表的函数所分配的缓冲区。</p></td>
 </tr>
 </tbody>
 </table>
@@ -382,22 +382,22 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544864(v=vs.85)" data-raw-source="[&lt;strong&gt;CancelMibChangeNotify2&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544864(v=vs.85))"><strong>CancelMibChangeNotify2</strong></a></p></td>
-<td align="left"><p>注销用于更改通知的驱动程序, 以便进行 IP 接口更改、IP 地址更改、IP 路由更改和检索稳定的单播 IP 地址表的请求。</p></td>
+<td align="left"><p>注销用于更改通知的驱动程序，以便进行 IP 接口更改、IP 地址更改、IP 路由更改和检索稳定的单播 IP 地址表的请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568805(v=vs.85)" data-raw-source="[&lt;strong&gt;NotifyIpInterfaceChange&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568805(v=vs.85))"><strong>NotifyIpInterfaceChange</strong></a></p></td>
-<td align="left"><p>注册驱动程序, 以便在本地计算机上的所有 IP 接口、IPv4 接口或 IPv6 接口发生更改时获得通知。</p></td>
+<td align="left"><p>注册驱动程序，以便在本地计算机上的所有 IP 接口、IPv4 接口或 IPv6 接口发生更改时获得通知。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568806(v=vs.85)" data-raw-source="[&lt;strong&gt;NotifyRouteChange2&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568806(v=vs.85))"><strong>NotifyRouteChange2</strong></a></p></td>
-<td align="left"><p>注册, 通知本地计算机上 IP 路由项的更改。</p></td>
+<td align="left"><p>注册，通知本地计算机上 IP 路由项的更改。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568809(v=vs.85)" data-raw-source="[&lt;strong&gt;NotifyUnicastIpAddressChange&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568809(v=vs.85))"><strong>NotifyUnicastIpAddressChange</strong></a></p></td>
@@ -417,7 +417,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">才能</th>
+<th align="left">Functions</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -428,7 +428,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568808(v=vs.85)" data-raw-source="[&lt;strong&gt;NotifyTeredoPortChange&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568808(v=vs.85))"><strong>NotifyTeredoPortChange</strong></a></p></td>
-<td align="left"><p>注册, 通知对 Teredo 客户端为本地计算机上的 Teredo 服务端口所使用的 UDP 端口号进行了更改。</p></td>
+<td align="left"><p>注册，通知对 Teredo 客户端为本地计算机上的 Teredo 服务端口所使用的 UDP 端口号进行了更改。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568807(v=vs.85)" data-raw-source="[&lt;strong&gt;NotifyStableUnicastIpAddressTable&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568807(v=vs.85))"><strong>NotifyStableUnicastIpAddressTable</strong></a></p></td>
@@ -448,7 +448,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">构造</th>
+<th align="left">结构</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -589,7 +589,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568758(v=vs.85)" data-raw-source="[&lt;strong&gt;NL_DAD_STATE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568758(v=vs.85))"><strong>NL_DAD_STATE</strong></a></p></td>
-<td align="left"><p>定义重复地址检测 (DAD) 状态。</p></td>
+<td align="left"><p>定义重复地址检测（DAD）状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-_nl_link_local_address_behavior" data-raw-source="[&lt;strong&gt;NL_LINK_LOCAL_ADDRESS_BEHAVIOR&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-_nl_link_local_address_behavior)"><strong>NL_LINK_LOCAL_ADDRESS_BEHAVIOR</strong></a></p></td>
@@ -597,7 +597,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-_nl_neighbor_state" data-raw-source="[&lt;strong&gt;NL_NEIGHBOR_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-_nl_neighbor_state)"><strong>NL_NEIGHBOR_STATE</strong></a></p></td>
-<td align="left"><p>定义网络层邻域 IP 地址的状态, 如 RFC 2461 中所述的7.3.2 部分中所述。</p></td>
+<td align="left"><p>定义网络层邻域 IP 地址的状态，如 RFC 2461 中所述的7.3.2 部分中所述。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568762(v=vs.85)" data-raw-source="[&lt;strong&gt;NL_PREFIX_ORIGIN&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568762(v=vs.85))"><strong>NL_PREFIX_ORIGIN</strong></a></p></td>
@@ -609,11 +609,11 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-nl_route_protocol" data-raw-source="[&lt;strong&gt;NL_ROUTE_PROTOCOL&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-nl_route_protocol)"><strong>NL_ROUTE_PROTOCOL</strong></a></p></td>
-<td align="left"><p>定义将 IP 路由添加到的路由机制, 如 RFC 4292 中所述。</p></td>
+<td align="left"><p>定义将 IP 路由添加到的路由机制，如 RFC 4292 中所述。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-_nl_router_discovery_behavior" data-raw-source="[&lt;strong&gt;NL_ROUTER_DISCOVERY_BEHAVIOR&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/nldef/ne-nldef-_nl_router_discovery_behavior)"><strong>NL_ROUTER_DISCOVERY_BEHAVIOR</strong></a></p></td>
-<td align="left"><p>定义路由器发现行为, 如 RFC 2461 中所述。</p></td>
+<td align="left"><p>定义路由器发现行为，如 RFC 2461 中所述。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568768(v=vs.85)" data-raw-source="[&lt;strong&gt;NL_SUFFIX_ORIGIN&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568768(v=vs.85))"><strong>NL_SUFFIX_ORIGIN</strong></a></p></td>

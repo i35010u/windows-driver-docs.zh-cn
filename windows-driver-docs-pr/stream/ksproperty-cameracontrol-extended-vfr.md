@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_扩展\_VFR
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_VFR 是将用于指定变量的帧速率是否所需的驱动程序上的属性 ID。
+title: KSPROPERTY\_CAMERACONTROL\_扩展VFR\_
+description: KSPROPERTY\_CAMERACONTROL\_EXTENDED\_VFR 是一个属性 ID，用于指定是否需要在驱动程序上使用可变的帧速率。
 ms.assetid: 9B528421-B5AA-4092-9F7B-71A18732ABA8
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_VFR 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXTENDED_VFR 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,18 +14,18 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b4ea75cb9f6f30a1202724ca249790bea0594d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 726865d7e1ffb492026bf1f55172ca39b038d49d
+ms.sourcegitcommit: 96592088b276de87fc88dea3bb037654c9b31b11
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341879"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248410"
 ---
-# <a name="kspropertycameracontrolextendedvfr"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_VFR
+# <a name="ksproperty_cameracontrol_extended_vfr"></a>KSPROPERTY\_CAMERACONTROL\_扩展VFR\_
 
-KSPROPERTY\_CAMERACONTROL\_扩展\_VFR 是将用于指定变量的帧速率是否所需的驱动程序上的属性 ID。 这是视频的 pin 的 pin 级别控制。 有关预览版和照片，帧速率可变性完全取决于驱动程序并不是由客户端可以控制。
+KSPROPERTY\_CAMERACONTROL\_EXTENDED\_VFR 是一个属性 ID，用于指定是否需要在驱动程序上使用可变的帧速率。 这是仅用于视频 pin 的 pin 级别控制。 对于预览和照片，帧速率可变性完全取决于驱动程序，并且不能由客户端控制。
 
-## <a name="usage-summary-table"></a>使用率摘要表
+## <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -37,7 +37,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_VFR 是将用于指定变量的帧速率是�
 <tr class="header">
 <th>范围</th>
 <th>控件</th>
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 </tr>
 </thead>
 <tbody>
@@ -49,23 +49,23 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_VFR 是将用于指定变量的帧速率是�
 </tbody>
 </table>
 
-以下标志可以置于**KSCAMERA\_EXTENDEDPROP\_标头。标志**字段，用于打开和关闭视频的变量的帧速率。 默认值为最多驱动程序。
+以下标志可以放置在**KSCAMERA\_EXTENDEDPROP\_标头中。Flags**字段，用于打开和关闭视频的可变帧速率。 默认值为 "驱动程序"。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_VFR_OFF   0x0000000000000000  
 #define KSCAMERA_EXTENDEDPROP_VFR_ON    0x0000000000000001
 ```
-如果设置为 VFR\_，驱动程序应提供固定的帧速率视频的 pin。
+如果设置为 VFR\_，则驱动程序应提供视频 pin 的固定帧速率。
 
-如果设置为 VFR\_，帧速率由驱动程序自动确定，并且可以差异取决于捕获条件和视频的 pin 的方案。 当 VFR\_ON 设置，但允许的最大帧速率进一步由嵌入视频录制为选定的媒体类型的固定的帧速率。
+如果设置为 VFR\_，则驱动程序将自动确定帧速率，并根据视频 pin 的捕获条件和方案而有所不同。 如果设置\_了 VFR ON，则所允许的最大帧速率将由嵌入到视频录制的媒体类型中嵌入的固定帧速率进一步决定。
 
-如果驱动程序不支持可变帧率的视频，该驱动程序不应实现此控件，并将隐式固定的帧速率。
+如果驱动程序不支持视频的可变帧速率，则驱动程序不应实现此控制，并且将暗示可变的帧速率。
 
-此控件在视频录制不支持动态切换 VFR 设置上的驱动程序没有任何影响。 该驱动程序应忽略期间活动的视频录制在这种情况下接收到的控件。
+对于不支持动态切换 VFR 设置的驱动程序，此控件在视频录制过程中不起作用。 在这种情况下，驱动程序应忽略在活动视频录制过程中收到的控件。
 
-这是一个同步控件并不可取消。 没有为此控件定义功能。
+这是一个同步控件，不可取消。 没有为此控件定义任何功能。
 
-下表包含的说明和要求[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段时使用的控件。
+下表包含使用控件时[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -81,27 +81,27 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_VFR 是将用于指定变量的帧速率是�
 <tbody>
 <tr class="odd">
 <td><p>Version</p></td>
-<td><p>这必须是 1。</p></td>
+<td><p>这必须为1。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
 <td><p>这必须是与视频 pin 关联的 Pin ID。</p></td>
 </tr>
 <tr class="odd">
-<td><p>大小</p></td>
-<td><p>这必须是 sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE)。</p></td>
+<td><p>Size</p></td>
+<td><p>这必须是 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_VALUE）。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
-<td><p>指示最后一个设置操作的错误结果。 如果未设置操作发生，这必须为 0。</p></td>
+<td><p>指示上一次设置操作的错误结果。 如果未执行任何设置操作，则此必须为0。</p></td>
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>这必须是 0。</p></td>
+<td><p>这必须是0。</p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>这是读/写字段。 这可以是上面定义的任何的标志一个。</p></td>
+<td><p>这是一个读/写字段。 这可以是上面定义的任何一个标志。</p></td>
 </tr>
 </tbody>
 </table>

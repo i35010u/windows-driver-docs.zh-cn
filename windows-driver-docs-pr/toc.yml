@@ -1,5 +1,5 @@
 - name: Windows 驱动程序工具包入门
-  href: index.md
+  href: index.yml
 - name: 驱动程序开发中的新增功能
   href: what-s-new-in-driver-development.md
 - name: 下载 Windows 驱动程序工具包 (WDK)
