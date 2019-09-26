@@ -4,15 +4,15 @@ description: GPD 文件项格式
 ms.assetid: 44057b4d-5ea1-426f-ae87-047b650cbf65
 keywords:
 - GPD 文件条目 WDK Unidrv，格式
-- WDK GPD 文件格式
+- 格式化 WDK GPD 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 053581ba1a6e0ca48a780e3d82b8ffab649b2bc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a47b967392c63bde1b8d476a1003168e592219d6
+ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385196"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71285088"
 ---
 # <a name="gpd-file-entry-format"></a>GPD 文件项格式
 
@@ -20,29 +20,29 @@ ms.locfileid: "63385196"
 
 
 
-所有 GPD 文件条目都符合以下格式：
+所有 GPD 文件项都符合以下格式：
 
-**\\** * <em>EntryName</em> **:** *EntryValue* **{** <em>GPD\_FileEntry, GPD\_FileEntry, ...</em> **}**
+\***EntryName:EntryValue** {*GPD\_FileEntry，GPD\_FileEntry，...* }
 
-*EntryName*始终 Unidrv 的 GPD 分析器识别，一个预定义的关键字前面标有星号。
+*EntryName*始终是 UNIDRV 的 GPD parser 识别的预定义关键字，前面加上星号。
 
-*EntryValue*必须是一个[GPD 值类型](gpd-value-types.md)。
+*EntryValue*必须是[GPD 值类型](gpd-value-types.md)之一。
 
-每个*GPD\_FileEntry*是另一个 GPD 文件条目，符合上面所示的格式。 每个这些子项必须是有效的指定*EntryName*的包含它的条目。
+每*个\_GPD FileEntry*都是另一个 GPD 文件条目，它符合上面所示的格式。 对于包含它的项的指定*EntryName* ，每个项都必须有效。
 
 某些*EntryName*关键字不接受大括号或包含的子项。
 
-每个 GPD 条目终止行尾或右大括号 ( **}** )。
+每个 GPD 条目都按行尾或右大括号（ **}** ）结束。
 
-不接受子项，一个简单 GPD 文件条目的一个示例是以下属性条目：
+下面的属性项是一个简单的 GPD 文件项（不接受子项）的示例：
 
 ```cpp
 *MaxCopies: 99
 ```
 
-此项指定打印机可以处理的副本的最大数目为 99。
+此条目指定打印机可处理的最大副本数为99。
 
-下面是更复杂的示例中，描述打印机可以打印页面中的两个页面方向 （纵向或横向）。 该示例还指定驱动程序必须发送以选择每个方向的命令。
+下面是一个更复杂的示例，描述了可以在两个页面方向（纵向或横向）中打印页面的打印机。 该示例还指定了驱动程序必须发送以选择每个方向的命令。
 
 ```cpp
 *Feature: Orientation

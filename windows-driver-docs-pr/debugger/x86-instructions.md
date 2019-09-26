@@ -7,12 +7,12 @@ keywords:
 - x86 处理器，算术
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2310fd4e39c0c1072df7099c58c35bdc808cf2be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5f900c371825dcf7996b6e72bd15c1ad42f7a59
+ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381897"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71284925"
 ---
 # <a name="x86-instructions"></a>x86 指令
 
@@ -20,21 +20,21 @@ ms.locfileid: "63381897"
 ## <span id="ddk_x86_instructions_dbg"></span><span id="DDK_X86_INSTRUCTIONS_DBG"></span>
 
 
-在本部分中的列表，说明标有星号 (* *\\* * *) 尤为重要。 说明不因此标记为不重要。
+在此部分的列表中，用星号（ **\*** ）标记的指令尤为重要。 未标记的说明并不重要。
 
-X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中的过程。 若要拆装发件人地址的向后，应启动拆装点进一步返回比真正想要转，并期待直到说明开始十分有意义。 第一个几条指令可能未利用任何有意义，因为您可能已启动反汇编指令的中间。 没有一种可能，遗憾的是，反汇编将永远不会将与指令流同步，您将必须尝试拆装，在不同的起始点，直到找到适用的起始点。
+在 x86 处理器上，指令的大小是可变的，因此，向后反汇编是模式匹配中的练习。 若要从某一地址向后拆装，你应在以后开始反汇编，而不是真正想要转到的位置，然后继续进行，直到说明开始生效。 前几个说明可能并没有任何意义，因为你可能已在指令的中间开始反汇编。 遗憾的是，反汇编将永远不会与指令流同步，您必须在不同的起点尝试反汇编，直到找到起作用的起点。
 
-有关格式打包**切换**语句，则编译器将发出数据直接到代码流中，因此通过拆装**切换**语句将通常找进行任何有意义 （的说明因为它们是真正的数据）。 查找数据的末尾，并存在继续拆装。
+对于打包良好的**switch**语句，编译器会直接将数据发送到代码流中，因此通过**switch**语句进行的反汇编通常会在无意义的指令上碰到（因为它们实际上是数据）。 查找数据的末尾并继续反汇编。
 
 ### <a name="span-idinstruction_notationspanspan-idinstruction_notationspanspan-idinstruction_notationspaninstruction-notation"></a><span id="Instruction_Notation"></span><span id="instruction_notation"></span><span id="INSTRUCTION_NOTATION"></span>指令表示法
 
-有关说明常规的表示法是放入目标寄存器左侧和右侧的源。 但是，可以是此规则的一些例外情况。
+说明的一般表示法是将目标寄存器放在左侧，源位于右侧。 但是，此规则可能有一些例外情况。
 
-算术说明分别通常两个注册的源和目标寄存器组合。 将结果存储到目标。
+通常，算术指令与源和目标寄存器组合在一起。 结果存储在目标中。
 
-某些指令具有 16 位和 32 位版本，但此处列出了仅 32 位版本。 不在下面列出了浮点指令、 特权的指令和使用仅在分段模型 （这可不使用 Microsoft Win32） 中的说明。
+部分说明包含16位和32位版本，但此处仅列出了32位版本。 此处未列出的是浮点指令、特权指令和仅用于分段模型（Microsoft Win32 不使用）的指令。
 
-为节省空间，许多说明表示形式的组合，如下面的示例中所示。
+为了节省空间，许多指令以组合形式表示，如下面的示例中所示。
 
 <table>
 <colgroup>
@@ -47,17 +47,17 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>MOV</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong> = <strong>r</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>， <strong>r</strong>/m/#n</p></td>
+<td align="left"><p>r1 = <strong>r</strong>/m/#n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-表示第一个参数必须是寄存器中，但第二个可以是寄存器、 内存的参考信息或即时值。
+表示第一个参数必须是寄存器，但第二个参数可以是寄存器、内存引用或直接值。
 
-若要保存更多的空间，说明还可以表示为如下所示。
+为了节省更多的空间，说明还可以表示，如下所示。
 
 <table>
 <colgroup>
@@ -70,7 +70,7 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>MOV</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r</strong>/m/ #n</p></td>
+<td align="left"><p><strong>r1</strong>/m， <strong>r</strong>/m/#n</p></td>
 <td align="left"><p><strong>r1</strong>/m = <strong>r</strong>/m/#n</p></td>
 </tr>
 </tbody>
@@ -78,15 +78,15 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 
  
 
-这意味着第一个参数可以是寄存器或内存的引用，第二个可以注册、 内存引用或即时值。
+这意味着第一个参数可以是寄存器或内存引用，第二个参数可以是寄存器、内存引用或即时值。
 
-除非另行说明，使用此缩写词时，不能选择内存可用于源和目标。
+除非另有说明，否则在使用此缩写时，不能为源和目标选择内存。
 
-此外，位大小后缀 （8、 16、 32） 可以追加到源或目标，以指示该参数必须是该大小。 例如，r8 表示一个 8 位寄存器。
+而且，可以将位大小的后缀（8，16，32）追加到源或目标，以指示参数必须为该大小。 例如，r8 表示8位寄存器。
 
-### <a name="span-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>内存、 数据传输和数据转换
+### <a name="span-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanspan-idmemory__data_transfer__and_data_conversionspanmemory-data-transfer-and-data-conversion"></a><span id="Memory__Data_Transfer__and_Data_Conversion"></span><span id="memory__data_transfer__and_data_conversion"></span><span id="MEMORY__DATA_TRANSFER__AND_DATA_CONVERSION"></span>内存、数据传输和数据转换
 
-内存和数据传输指令不影响标志。
+内存和数据传输说明不会影响标志。
 
 ### <a name="span-ideffective_addressspanspan-ideffective_addressspanspan-ideffective_addressspaneffective-address"></a><span id="Effective_Address"></span><span id="effective_address"></span><span id="EFFECTIVE_ADDRESS"></span>有效地址
 
@@ -100,17 +100,17 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>LEA</p></td>
-<td align="left"><p><strong>r</strong>，m</p></td>
+<td align="left"><p>逆转</p></td>
+<td align="left"><p><strong>r</strong>、m</p></td>
 <td align="left"><p>加载有效地址。</p>
-<p>(r = m 的地址)</p></td>
+<p>（r = m 的地址）</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-例如，**逆转 eax \[esi + 4\]** 意味着**eax** = **esi** + 4。 此指令通常用于执行算术运算。
+例如，**逆转 eax， \[\] esi + 4**表示**eax** = **esi** + 4。 此指令通常用于执行算术运算。
 
 ### <a name="span-iddata_transferspanspan-iddata_transferspanspan-iddata_transferspandata-transfer"></a><span id="Data_Transfer"></span><span id="data_transfer"></span><span id="DATA_TRANSFER"></span>数据传输
 
@@ -125,31 +125,31 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>MOV</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
 <td align="left"><p><strong>r1</strong>/m = <strong>r</strong>/m/#n</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>MOVSX</p></td>
 <td align="left"><p><strong>r1</strong>， <strong>r</strong>/m</p></td>
-<td align="left"><p>移动使用符号扩展。</p></td>
+<td align="left"><p>移动到符号扩展。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>MOVZX</p></td>
 <td align="left"><p><strong>r1</strong>， <strong>r</strong>/m</p></td>
-<td align="left"><p>移动通过零扩展。</p></td>
+<td align="left"><p>移动零扩展。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**MOVSX**并**MOVZX**特殊版本的**mov**从源到目标执行符号扩展或零个扩展的指令。 这是唯一允许的源和目标为不同大小的说明。 （并且实际上，它们必须是不同的大小。
+**MOVSX**和**MOVZX**是对源到目标执行签名扩展或零扩展的**mov**指令的特殊版本。 这是允许源和目标不同大小的唯一说明。 （事实上，它们的大小必须不同。
 
 ### <a name="span-idstack_manipulationspanspan-idstack_manipulationspanspan-idstack_manipulationspanstack-manipulation"></a><span id="Stack_Manipulation"></span><span id="stack_manipulation"></span><span id="STACK_MANIPULATION"></span>堆栈操作
 
-指向堆栈**esp**注册。 处的值**esp**是 （最近推入堆栈，首先弹出）; 堆栈顶部的较旧堆栈元素驻留在较高的地址。
+由**esp**寄存器指向堆栈。 位于**esp**的值是堆栈的顶部（最近按下了推送）;较旧的堆栈元素驻留在更高的地址上。
 
 <table>
 <colgroup>
@@ -161,27 +161,27 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>推送</p></td>
+<td align="left"><p>请求</p></td>
 <td align="left"><p><strong>r</strong>/m/#n</p></td>
-<td align="left"><p>推送到堆栈上的值。</p></td>
+<td align="left"><p>将值推送到堆栈上。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>POP</p></td>
+<td align="left"><p>弹出</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p>将值从堆栈中弹出。</p></td>
+<td align="left"><p>堆栈中的 Pop 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>PUSHFD</p></td>
 <td align="left"></td>
-<td align="left"><p>推送到堆栈上的标志。</p></td>
+<td align="left"><p>将标志推送到堆栈上。</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>POPFD</p></td>
 <td align="left"></td>
-<td align="left"><p>弹出堆栈中的标志。</p></td>
+<td align="left"><p>从堆栈中弹出标志。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -203,18 +203,18 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>将保留</p></td>
+<td align="left"><p>遗留</p></td>
 <td align="left"></td>
-<td align="left"><p>关闭堆栈帧</p></td>
+<td align="left"><p>撕下堆栈帧</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-C /C++编译器不使用**输入**指令。 (**输入**指令用于在 Algol 或 Pascal 等语言中实现嵌套的过程。)
+C/C++编译器不使用**enter**指令。 （ **Enter**指令用于实现 Algol 或 Pascal 等语言的嵌套过程。）
 
-**离开**指令是等效于：
+**Leave**指令等效于：
 
 ```asm
 mov esp, ebp
@@ -231,19 +231,19 @@ pop ebp
 <tbody>
 <tr class="odd">
 <td align="left"><p>CBW</p></td>
-<td align="left"><p>转换字节 (<strong>al</strong>) 到 word (<strong>ax</strong>)。</p></td>
+<td align="left"><p>将 byte （<strong>al</strong>）转换为 word （<strong>ax</strong>）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CWD</p></td>
-<td align="left"><p>转换单词 (<strong>ax</strong>) 为 dword (<strong>dx</strong>:<strong>ax</strong>)。</p></td>
+<td align="left"><p>将 word （<strong>ax</strong>）转换为 dword （<strong>dx</strong>：<strong>ax</strong>）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CWDE</p></td>
-<td align="left"><p>转换单词 (<strong>ax</strong>) 为 dword (<strong>eax</strong>)。</p></td>
+<td align="left"><p>将 word （<strong>ax</strong>）转换为 dword （<strong>eax</strong>）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CDQ</p></td>
-<td align="left"><p>转换 dword (<strong>eax</strong>) 到 qword (<strong>edx</strong>:<strong>eax</strong>)。</p></td>
+<td align="left"><p>将 dword （<strong>eax</strong>）转换为 qword （<strong>edx</strong>：<strong>eax</strong>）。</p></td>
 </tr>
 </tbody>
 </table>
@@ -252,11 +252,11 @@ pop ebp
 
 所有转换都执行符号扩展。
 
-### <a name="span-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算术运算符和位操作
+### <a name="span-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanspan-idarithmetic_and_bit_manipulationspanarithmetic-and-bit-manipulation"></a><span id="Arithmetic_and_Bit_Manipulation"></span><span id="arithmetic_and_bit_manipulation"></span><span id="ARITHMETIC_AND_BIT_MANIPULATION"></span>算术和位操作
 
-所有算术和位操作说明修改标志。
+所有算术和位操作指令修改标志。
 
-### <a name="span-idarithmeticspanspan-idarithmeticspanspan-idarithmeticspanarithmetic"></a><span id="Arithmetic"></span><span id="arithmetic"></span><span id="ARITHMETIC"></span>算术运算
+### <a name="span-idarithmeticspanspan-idarithmeticspanspan-idarithmeticspanarithmetic"></a><span id="Arithmetic"></span><span id="arithmetic"></span><span id="ARITHMETIC"></span>算术
 
 <table>
 <colgroup>
@@ -269,57 +269,57 @@ pop ebp
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>添加</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong>/m + = <strong>r2</strong>/m/ #n</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m + = <strong>r2</strong>/m/#n</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>ADC</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong>/m + = <strong>r2</strong>/m/ #n + 携带</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m + = <strong>r2</strong>/m/#n + 执行</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>SUB</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong>/m -= <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p>该子</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m-= <strong>r2</strong>/m/#n</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>SBB</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong>/m -= <strong>r2</strong>/m/#n + carry</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m-= <strong>r2</strong>/m/#n + 执行</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>NEG</p></td>
 <td align="left"><p><strong>r1</strong>/m</p></td>
-<td align="left"><p><strong>r1</strong>/m = -<strong>r1</strong>/m</p></td>
+<td align="left"><p><strong>r1</strong>/m =-<strong>r1</strong>/m</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>INC</p></td>
+<td align="left"><p>增量</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
 <td align="left"><p><strong>r</strong>/m + = 1</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>年 12 月</p></td>
+<td align="left"><p>十进制</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p><strong>r</strong>/m -= 1</p></td>
+<td align="left"><p><strong>r</strong>/m-= 1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>CMP</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p>计算<strong>r1</strong>/m- <strong>r2</strong>/m/ #n</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p>计算<strong>r1</strong>/m- <strong>r2</strong>/m/#n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**Cmp**指令计算该减法运算和设置标志根据结果，但会抛弃结果。 通常跟条件**跳转**指令，用于测试该减法运算的结果。
+**Cmp**指令计算减法，并根据结果设置标志，但会引发结果。 它通常后跟一个测试减法结果的条件**跳转**指令。
 
 <table>
 <colgroup>
@@ -339,13 +339,13 @@ pop ebp
 <td align="left"></td>
 <td align="left"><p>MUL</p></td>
 <td align="left"><p><strong>r</strong>/m16</p></td>
-<td align="left"><p><strong>dx</strong>:<strong>ax</strong> = <strong>ax</strong> * <strong>r</strong>/m16</p></td>
+<td align="left"><p><strong>dx</strong>：<strong>ax</strong> = <strong>ax</strong> * <strong>r</strong>/m16</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>MUL</p></td>
 <td align="left"><p><strong>r</strong>/m32</p></td>
-<td align="left"><p><strong>edx</strong>:<strong>eax</strong> = <strong>eax</strong> * <strong>r</strong>/m32</p></td>
+<td align="left"><p><strong>edx</strong>：<strong>eax</strong> = <strong>eax</strong> * <strong>r</strong>/m32</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -357,32 +357,32 @@ pop ebp
 <td align="left"></td>
 <td align="left"><p>IMUL</p></td>
 <td align="left"><p><strong>r</strong>/m16</p></td>
-<td align="left"><p><strong>dx</strong>:<strong>ax</strong> = <strong>ax</strong> * <strong>r</strong>/m16</p></td>
+<td align="left"><p><strong>dx</strong>：<strong>ax</strong> = <strong>ax</strong> * <strong>r</strong>/m16</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>IMUL</p></td>
 <td align="left"><p><strong>r</strong>/m32</p></td>
-<td align="left"><p><strong>edx</strong>:<strong>eax</strong> = <strong>eax</strong> * <strong>r</strong>/m32</p></td>
+<td align="left"><p><strong>edx</strong>：<strong>eax</strong> = <strong>eax</strong> * <strong>r</strong>/m32</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>IMUL</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r2</strong>/m</p></td>
-<td align="left"><p><strong>r1</strong> *= <strong>r2</strong>/m</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m</p></td>
+<td align="left"><p>r1 *= <strong>r2</strong>/m</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>IMUL</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r2</strong>/m、 #n</p></td>
-<td align="left"><p><strong>r1</strong> = <strong>r2</strong>/m * #n</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m #n</p></td>
+<td align="left"><p>r1 = <strong>r2</strong>/m * #n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-未签名和签名乘法。 标志后乘法是不确定状态。
+无符号和符号的乘法。 乘法后标志的状态未定义。
 
 <table>
 <colgroup>
@@ -394,48 +394,48 @@ pop ebp
 <tbody>
 <tr class="odd">
 <td align="left"></td>
-<td align="left"><p>DIV</p></td>
+<td align="left"><p>V</p></td>
 <td align="left"><p><strong>r</strong>/m8</p></td>
-<td align="left"><p>(<strong>ah</strong>， <strong>al</strong>) = (<strong>ax</strong> % <strong>r</strong>/m8， <strong>ax</strong> / <strong>r</strong>/m8)</p></td>
+<td align="left"><p>（<strong>ah</strong>， <strong>al</strong>） = （<strong>ax</strong> % <strong>r</strong>/m8， <strong>ax</strong> / <strong>r</strong>/m8）</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>DIV</p></td>
+<td align="left"><p>V</p></td>
 <td align="left"><p><strong>r</strong>/m16</p></td>
-<td align="left"><p>(<strong>dx</strong>, <strong>ax</strong>) = <strong>dx</strong>:<strong>ax</strong> / <strong>r</strong>/m16</p></td>
+<td align="left"><p>（<strong>dx</strong>， <strong>ax</strong>） = <strong>dx</strong>：<strong>ax</strong> / <strong>r</strong>/m16</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>DIV</p></td>
+<td align="left"><p>V</p></td>
 <td align="left"><p><strong>r</strong>/m32</p></td>
-<td align="left"><p>(<strong>edx</strong>, <strong>eax</strong>) = <strong>edx</strong>:<strong>eax</strong> / <strong>r</strong>/m32</p></td>
+<td align="left"><p>（<strong>edx</strong>， <strong>eax</strong>） = <strong>edx</strong>：<strong>eax</strong> / <strong>r</strong>/m32</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>IDIV</p></td>
 <td align="left"><p><strong>r</strong>/m8</p></td>
-<td align="left"><p>(<strong>ah</strong>， <strong>al</strong>) = <strong>ax</strong> / <strong>r</strong>/m8</p></td>
+<td align="left"><p>（<strong>ah</strong>， <strong>al</strong>） = <strong>ax</strong> / <strong>r</strong>/m8</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>IDIV</p></td>
 <td align="left"><p><strong>r</strong>/m16</p></td>
-<td align="left"><p>(<strong>dx</strong>, <strong>ax</strong>) = <strong>dx</strong>:<strong>ax</strong> / <strong>r</strong>/m16</p></td>
+<td align="left"><p>（<strong>dx</strong>， <strong>ax</strong>） = <strong>dx</strong>：<strong>ax</strong> / <strong>r</strong>/m16</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>IDIV</p></td>
 <td align="left"><p><strong>r</strong>/m32</p></td>
-<td align="left"><p>(<strong>edx</strong>, <strong>eax</strong>) = <strong>edx</strong>:<strong>eax</strong> / <strong>r</strong>/m32</p></td>
+<td align="left"><p>（<strong>edx</strong>， <strong>eax</strong>） = <strong>edx</strong>：<strong>eax</strong> / <strong>r</strong>/m32</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-未签名和签名除。 在伪代码说明中的第一个寄存器接收其余部分，而第二个接收商。 如果结果溢出目标，则生成除法溢出异常。
+无符号和有符号分割。 伪代码说明中的第一个寄存器会接收余数，第二个寄存器接收商。 如果结果溢出了目标，则会生成除法溢出异常。
 
-除法后的标志的状态为未定义。
+除法后标志的状态为 undefined。
 
 <table>
 <colgroup>
@@ -447,20 +447,20 @@ pop ebp
 <tbody>
 <tr class="odd">
 <td align="left"><p>*</p></td>
-<td align="left"><p>SET<em>cc</em></p></td>
+<td align="left"><p>设置<em>cc</em></p></td>
 <td align="left"><p><strong>r</strong>/m8</p></td>
-<td align="left"><p>设置<strong>r</strong>/m8 为 0 或 1</p></td>
+<td align="left"><p>将<strong>r</strong>/m8 设置为0或1</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果条件*cc*为 true，则 8 位值设置为 1。 否则，8 位值设置为零。
+如果条件*cc*为 true，则8位值设置为1。 否则，8位值将设置为零。
 
-### <a name="span-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>二进制编码小数
+### <a name="span-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanspan-idbinary-coded_decimalspanbinary-coded-decimal"></a><span id="Binary-coded_Decimal"></span><span id="binary-coded_decimal"></span><span id="BINARY-CODED_DECIMAL"></span>二进制编码的十进制
 
-除非正在调试以 COBOL 编写的代码，不会看到这些说明。
+除非调试用 COBOL 编写的代码，否则不会看到这些说明。
 
 <table>
 <colgroup>
@@ -472,19 +472,19 @@ pop ebp
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>DAA</p></td>
-<td align="left"><p>添加后调整小数。</p></td>
+<td align="left"><p>加法后进行小数点调整。</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>DAS</p></td>
-<td align="left"><p>小数调整后减法。</p></td>
+<td align="left"><p>转移</p></td>
+<td align="left"><p>在减法后调整小数。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-这些说明调整**al**执行已打包的二进制编码十进制操作后注册。
+这些说明在执行打包的二进制编码的十进制运算后调整**al**寄存器。
 
 <table>
 <colgroup>
@@ -494,18 +494,18 @@ pop ebp
 <tbody>
 <tr class="odd">
 <td align="left"><p>AAA</p></td>
-<td align="left"><p>ASCII 调整后添加。</p></td>
+<td align="left"><p>添加 ASCII 后进行调整。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>AAS</p></td>
-<td align="left"><p>ASCII 调整后减法。</p></td>
+<td align="left"><p>.AAS</p></td>
+<td align="left"><p>在减法后调整 ASCII。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-这些说明调整**al**执行解压缩的二进制编码的十进制操作后注册。
+这些说明在执行解压缩的二进制编码的十进制运算后调整**al**寄存器。
 
 <table>
 <colgroup>
@@ -515,20 +515,20 @@ pop ebp
 <tbody>
 <tr class="odd">
 <td align="left"><p>AAM</p></td>
-<td align="left"><p>ASCII 调整后乘法。</p></td>
+<td align="left"><p>乘法后的 ASCII 调整。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>AAD</p></td>
-<td align="left"><p>相除后调整 ASCII。</p></td>
+<td align="left"><p>ADD</p></td>
+<td align="left"><p>划分后的 ASCII 调整。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-这些说明调整**al**并**ah**执行解压缩的二进制编码的十进制操作后注册。
+这些说明将在执行解压缩的二进制编码的十进制运算后调整**al**和**ah**寄存器。
 
-### <a name="span-idbitsspanspan-idbitsspanspan-idbitsspanbits"></a><span id="Bits"></span><span id="bits"></span><span id="BITS"></span>Bits
+### <a name="span-idbitsspanspan-idbitsspanspan-idbitsspanbits"></a><span id="Bits"></span><span id="bits"></span><span id="BITS"></span>带宽
 
 <table>
 <colgroup>
@@ -541,39 +541,39 @@ pop ebp
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>和</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m 和<strong>r2</strong>/m/ #n</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m 和<strong>r2</strong>/m/#n</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>或者</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m 或<strong>r2</strong>/m/ #n</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m 或<strong>r2</strong>/m/#n</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>异或</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m xor <strong>r2</strong>/m/ #n</p></td>
+<td align="left"><p>运算</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m = <strong>r1</strong>/m xor <strong>r2</strong>/m/#n</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>NOT</p></td>
 <td align="left"><p><strong>r1</strong>/m</p></td>
-<td align="left"><p><strong>r1</strong>/m = 按位 not <strong>r1</strong>/m</p></td>
+<td align="left"><p><strong>r1</strong>/m = 位非<strong>r1</strong>/m</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>测试</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>r2</strong>/m/ #n</p></td>
-<td align="left"><p>计算<strong>r1</strong>/m 和<strong>r2</strong>/m/ #n</p></td>
+<td align="left"><p>考试</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>r2</strong>/m/#n</p></td>
+<td align="left"><p>计算<strong>r1</strong>/m 和<strong>r2</strong>/m/#n</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**测试**指令计算逻辑 AND 运算符和设置标志根据结果，但会抛弃结果。 通常跟测试的逻辑 and。 结果的条件跳转指令
+**测试**指令计算逻辑 "与" 运算符，并根据结果设置标志，但会引发结果。 它通常后跟一个测试逻辑 AND 的结果的条件跳转指令。
 
 <table>
 <colgroup>
@@ -586,27 +586,27 @@ pop ebp
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>SHL</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>cl</strong>/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m &lt;&lt;= <strong>cl</strong>/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m &lt; cl&lt;/#n = </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>SHR</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>cl</strong>/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m &gt;&gt;= <strong>cl</strong>/#n zero-fill</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m &gt; cl&gt;/#n 零填充= </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>SAR</p></td>
-<td align="left"><p><strong>r1</strong>/m， <strong>cl</strong>/#n</p></td>
-<td align="left"><p><strong>r1</strong>/m &gt; &gt; =  <strong>cl</strong>/#n 符号填充</p></td>
+<td align="left"><p>香港</p></td>
+<td align="left"><p><strong>r1</strong>/m、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p><strong>r1</strong>/m &gt; cl&gt;/#n 符号-填充 = </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-执行进位放置中移出的最后一个位。
+上移出的最后一个位将放置在 "执行" 中。
 
 <table>
 <colgroup>
@@ -619,15 +619,15 @@ pop ebp
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>SHLD</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r2</strong>/m， <strong>cl</strong>/#n</p></td>
-<td align="left"><p>Shift 左双引号。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p>左移一倍。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Shift **r1**向左**cl**/\#n，使用的最高位填充**r2**/m。 执行进位放置中移出的最后一个位。
+按 **cl**/n向左移动 r1，用 r2/m。的顶层填充\# 上移出的最后一个位将放置在 "执行" 中。
 
 <table>
 <colgroup>
@@ -638,15 +638,15 @@ Shift **r1**向左**cl**/\#n，使用的最高位填充**r2**/m。 执行进位�
 <tbody>
 <tr class="odd">
 <td align="left"><p>SHRD</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r2</strong>/m， <strong>cl</strong>/#n</p></td>
-<td align="left"><p>切换右两倍。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/m、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p>右移 double。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置中移出的最后一个位。
+按 **cl**/n向下移位 r1，用 r2/m。的下半位数填充\# 上移出的最后一个位将放置在 "执行" 中。
 
 <table>
 <colgroup>
@@ -656,31 +656,31 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ROL</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>cl</strong>/#n</p></td>
-<td align="left"><p>旋转<strong>r1</strong>向左<strong>cl</strong>/#n。</p></td>
+<td align="left"><p>角色</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p>按<strong>cl</strong>/#n 向左旋转<strong>r1</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ROR</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>cl</strong>/#n</p></td>
-<td align="left"><p>旋转<strong>r1</strong>向右<strong>cl</strong>/#n。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p>按<strong>cl</strong>/#n 将<strong>r1</strong>向右旋转。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>RCL</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>cl</strong>/#n</p></td>
-<td align="left"><p>旋转<strong>r1</strong>/C 左<strong>cl</strong>/#n。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p>按<strong>cl</strong>/#n 向左旋转<strong>r1</strong>/c。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RCR</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>cl</strong>/#n</p></td>
-<td align="left"><p>旋转<strong>r1</strong>/C 右旋转<strong>cl</strong>/#n。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>cl</strong>/#n</p></td>
+<td align="left"><p>按<strong>cl</strong>/#n 向右旋转<strong>r1</strong>/c。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-旋转是如移位，不同之处在于都被移出的位重新显示为传入填充位。 C 语言版本的旋转说明将携带位合并到旋转。
+旋转类似于移位，只不过移出的位将重新出现为传入的填充位。 旋转指令的 C 语言版本将携带位合并到旋转中。
 
 <table>
 <colgroup>
@@ -691,18 +691,18 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 <tbody>
 <tr class="odd">
 <td align="left"><p>BT</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r2</strong>/#n</p></td>
-<td align="left"><p>复制位<strong>r2</strong>的 /#n <strong>r1</strong>携带到。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/#n</p></td>
+<td align="left"><p>将<strong>r1</strong>的位<strong>r2</strong>/#n 复制到 "" 中。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>BTS</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r2</strong>/#n</p></td>
-<td align="left"><p>设置位<strong>r2</strong>的 /#n <strong>r1</strong>，将以前的值复制到携带。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/#n</p></td>
+<td align="left"><p>设置<strong>r1</strong>的位<strong>r2</strong>/#n，将上一个值复制到 "中"。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>BTC</p></td>
-<td align="left"><p><strong>r1</strong>， <strong>r2</strong>/#n</p></td>
-<td align="left"><p>清除位<strong>r2</strong>的 /#n <strong>r1</strong>，将以前的值复制到携带。</p></td>
+<td align="left"><p><strong>r1</strong>、 <strong>r2</strong>/#n</p></td>
+<td align="left"><p>清除 " <strong>r1</strong> <strong>r2</strong>/#n"，将上一个值复制到 "携带"。</p></td>
 </tr>
 </tbody>
 </table>
@@ -722,30 +722,30 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>J<em>cc</em></p></td>
-<td align="left"><p>dest</p></td>
-<td align="left"><p>分支条件。</p></td>
+<td align="left"><p>目的</p></td>
+<td align="left"><p>Branch 条件。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>JMP</p></td>
-<td align="left"><p>dest</p></td>
+<td align="left"><p>跳转</p></td>
+<td align="left"><p>目的</p></td>
 <td align="left"><p>直接跳转。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>JMP</p></td>
+<td align="left"><p>跳转</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p>间接跳转。</p></td>
+<td align="left"><p>间接跳过。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>调用</p></td>
-<td align="left"><p>dest</p></td>
-<td align="left"><p>调用直接。</p></td>
+<td align="left"><p>拨</p></td>
+<td align="left"><p>目的</p></td>
+<td align="left"><p>直接调用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>调用</p></td>
+<td align="left"><p>拨</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
 <td align="left"><p>间接调用。</p></td>
 </tr>
@@ -754,7 +754,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 
  
 
-**调用**指令将推送到堆栈上的寄信人地址，然后跳转到目标。
+**Call**指令将返回地址推送到堆栈上，然后跳转到目标。
 
 <table>
 <colgroup>
@@ -767,7 +767,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>RET</p></td>
-<td align="left"><p><em>#n</em></p></td>
+<td align="left"><p><em>#北</em></p></td>
 <td align="left"><p>返回</p></td>
 </tr>
 </tbody>
@@ -775,7 +775,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 
  
 
-**Ret**指令弹出并跳转到回邮地址在堆栈上。 非零 *\#n*中**RET**指令指示弹出返回地址值后 *\#n*应添加到堆栈指针。
+**Ret**指令将会弹出，并跳到堆栈上的返回地址。 **RET**指令中的非零 *\#n*指示在弹出返回地址后，应将值 *\#n*添加到堆栈指针。
 
 <table>
 <colgroup>
@@ -784,27 +784,27 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>循环</p></td>
-<td align="left"><p>递减<strong>ecx</strong>和跳转如果结果为非零值。</p></td>
+<td align="left"><p>圈</p></td>
+<td align="left"><p>如果结果为非零，则递减<strong>ecx</strong>并跳转。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>LOOPZ</p></td>
-<td align="left"><p>递减<strong>ecx</strong> ，并跳转如果结果为非零值和<strong>zr</strong>设置。</p></td>
+<td align="left"><p>如果结果为非零且设置了<strong>zr</strong> ，则递减<strong>ecx</strong>和跳出。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>LOOPNZ</p></td>
-<td align="left"><p>递减<strong>ecx</strong> ，并跳转如果结果为非零值和<strong>zr</strong>已清除。</p></td>
+<td align="left"><p>如果结果为非零值，则递减<strong>ecx</strong> ，跳转，并清除<strong>zr</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>JECXZ</p></td>
-<td align="left"><p>如果跳转<strong>ecx</strong>为零。</p></td>
+<td align="left"><p>当<strong>ecx</strong>为零时跳转。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-这些说明是残留的 x86 的 CISC 遗产和最新的处理器中是写出这样的等效说明与实际速度较慢。
+这些说明是 x86's CISC 遗产的残留项，在最近的处理器中，其速度远低于以较长的方式编写的等效说明。
 
 ### <a name="span-idstring_manipulationspanspan-idstring_manipulationspanspan-idstring_manipulationspanstring-manipulation"></a><span id="String_Manipulation"></span><span id="string_manipulation"></span><span id="STRING_MANIPULATION"></span>字符串操作
 
@@ -818,42 +818,42 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
 <td align="left"><p>MOVS<em>T</em></p></td>
-<td align="left"><p>移动<em>T</em>从<strong>esi</strong>到<strong>edi。</strong></p></td>
+<td align="left"><p>将<em>T</em>从<strong>esi</strong>移到<strong>edi。</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>CMPS<em>T</em></p></td>
-<td align="left"><p>比较<em>T</em>从<strong>esi</strong>与<strong>edi。</strong></p></td>
+<td align="left"><p>将来自<strong>esi</strong>的<em>T</em>与 edi 进行比较<strong>。</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"><p>SCAS<em>T</em></p></td>
-<td align="left"><p>扫描<em>T</em>从<strong>edi</strong>为访问排序<em>t。</em></p></td>
+<td align="left"><p>Acc t 的<strong>edi</strong>扫描<em>。</em></p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left"><p>LOD<em>T</em></p></td>
-<td align="left"><p>负载<em>T</em>从<strong>esi</strong>到 acc<em>t。</em></p></td>
+<td align="left"><p>LODS<em>T</em></p></td>
+<td align="left"><p>从<strong>esi</strong>将<em>t</em>加载到 acc<em>T 中。</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em></strong></p></td>
 <td align="left"><p>STOS<em>T</em></p></td>
-<td align="left"><p>应用商店<em>T</em>到<strong>edi</strong>从 acc<em>t。</em></p></td>
+<td align="left"><p>从 acc t 将<em>t</em>存储到<strong>edi</strong> <em>。</em></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-在执行操作之后, 的源和目标寄存器是递增或递减的 sizeof (*T*)，根据方向标志 （增加或减少） 的设置。
+执行操作后，根据方向标志（向上或向下）的设置，sizeof （*T*）将源和目标寄存器递增或递减。
 
-指令可以加**REP**重复执行该操作指定的次数**ecx**注册。
+指令可以作为 "**代表**" 的前缀，以将操作重复由**ecx** register 指定的次数。
 
-**Rep mov**指令用于复制的内存块。
+使用**代表 mov**指令来复制内存块。
 
-**Rep stos**指令用于填充访问排序的内存块*T*。
+**Rep stos**指令用于使用 acc*T*填充内存块。
 
-### <a name="span-idflagsspanspan-idflagsspanspan-idflagsspanflags"></a><span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>标志
+### <a name="span-idflagsspanspan-idflagsspanspan-idflagsspanflags"></a><span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>随意
 
 <table>
 <colgroup>
@@ -863,27 +863,27 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 <tbody>
 <tr class="odd">
 <td align="left"><p>LAHF</p></td>
-<td align="left"><p>负载<strong>ah</strong>从标志。</p></td>
+<td align="left"><p>从标志加载<strong>ah</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SAHF</p></td>
-<td align="left"><p>应用商店<strong>ah</strong>到标志。</p></td>
+<td align="left"><p>将<strong>ah</strong>存储到标志。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>STC</p></td>
-<td align="left"><p>设置执行。</p></td>
+<td align="left"><p>设置 "执行"。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>CLC</p></td>
-<td align="left"><p>清除执行。</p></td>
+<td align="left"><p>简称</p></td>
+<td align="left"><p>清除 "执行"。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CMC</p></td>
-<td align="left"><p>补充携带。</p></td>
+<td align="left"><p>求补。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STD</p></td>
-<td align="left"><p>将方向设置为<em>下。</em></p></td>
+<td align="left"><p>将方向设置为<em>向下。</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CLD</p></td>
@@ -891,7 +891,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 </tr>
 <tr class="even">
 <td align="left"><p>STI</p></td>
-<td align="left"><p>启用的中断。</p></td>
+<td align="left"><p>启用中断。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CLI</p></td>
@@ -902,7 +902,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 
  
 
-### <a name="span-idinterlocked_instructionsspanspan-idinterlocked_instructionsspanspan-idinterlocked_instructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>互锁的说明
+### <a name="span-idinterlocked_instructionsspanspan-idinterlocked_instructionsspanspan-idinterlocked_instructionsspaninterlocked-instructions"></a><span id="Interlocked_Instructions"></span><span id="interlocked_instructions"></span><span id="INTERLOCKED_INSTRUCTIONS"></span>联锁说明
 
 <table>
 <colgroup>
@@ -914,12 +914,12 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 <tr class="odd">
 <td align="left"><p>XCHG</p></td>
 <td align="left"><p><strong>r1</strong>， <strong>r</strong>/m</p></td>
-<td align="left"><p>交换<strong>r1</strong>并<strong>r</strong>/m。</p></td>
+<td align="left"><p>交换<strong>r1</strong>和<strong>r</strong>/m。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>XADD</p></td>
 <td align="left"><p><strong>r1</strong>， <strong>r</strong>/m</p></td>
-<td align="left"><p>添加<strong>r1</strong>到<strong>r</strong>/m，将原始值放在<strong>r1。</strong></p></td>
+<td align="left"><p>将<strong>r1</strong>添加到<strong>r</strong>/m，并将原始值放入<strong>r1。</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CMPXCHG</p></td>
@@ -931,7 +931,7 @@ Shift **r1**向右**cl**/\#n，填充的底部位**r2**/m。 执行进位放置�
 
  
 
-**Cmpxchg**指令是原子的以下版本：
+**Cmpxchg**指令是以下的原子版本：
 
 ```asm
    cmp     accT, r/m
@@ -943,7 +943,7 @@ match:
 done:
 ```
 
-### <a name="span-idmiscellaneousspanspan-idmiscellaneousspanspan-idmiscellaneousspanmiscellaneous"></a><span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>杂项
+### <a name="span-idmiscellaneousspanspan-idmiscellaneousspanspan-idmiscellaneousspanmiscellaneous"></a><span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>杂
 
 <table>
 <colgroup>
@@ -955,15 +955,15 @@ done:
 <tbody>
 <tr class="odd">
 <td align="left"></td>
-<td align="left"><p>INT</p></td>
-<td align="left"><p>#n</p></td>
+<td align="left"><p>整形</p></td>
+<td align="left"><p>#北</p></td>
 <td align="left"><p>捕获到内核。</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"><p>绑定</p></td>
-<td align="left"><p><strong>r</strong>，m</p></td>
-<td align="left"><p>如果捕获<strong>r</strong>不在范围内。</p></td>
+<td align="left"><p><strong>r</strong>、m</p></td>
+<td align="left"><p>如果<strong>r</strong>不在范围内，则陷阱。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
@@ -981,14 +981,14 @@ done:
 <td align="left"></td>
 <td align="left"><p>BSWAP</p></td>
 <td align="left"><p><strong>r</strong></p></td>
-<td align="left"><p>交换在寄存器中的字节顺序。</p></td>
+<td align="left"><p>在 register 中交换字节顺序。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下面是一种特殊的情况**int**指令。
+下面是**int**指令的特例。
 
 <table>
 <colgroup>
@@ -998,20 +998,20 @@ done:
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>INT</p></td>
+<td align="left"><p>整形</p></td>
 <td align="left"><p>3</p></td>
-<td align="left"><p>调试器断点陷阱。</p></td>
+<td align="left"><p>调试器断点捕获。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关操作码**INT 3**是 0xCC。 有关操作码**NOP**是 0x90。
+**INT 3**的操作码为0xCC。 **NOP**的操作码为0x90。
 
-调试代码时，可能需要一些代码修补程序。 可以通过将有问题的字节替换 0x90 来执行此操作。
+调试代码时，可能需要修补某些代码。 为此，可以将有问题的字节替换为0x90。
 
-### <a name="span-ididiomsspanspan-ididiomsspanspan-ididiomsspanidioms"></a><span id="Idioms"></span><span id="idioms"></span><span id="IDIOMS"></span>Idioms
+### <a name="span-ididiomsspanspan-ididiomsspanspan-ididiomsspanidioms"></a><span id="Idioms"></span><span id="idioms"></span><span id="IDIOMS"></span>惯例
 
 <table>
 <colgroup>
@@ -1023,21 +1023,21 @@ done:
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>异或</p></td>
-<td align="left"><p><strong>r</strong>， <strong>r</strong></p></td>
+<td align="left"><p>运算</p></td>
+<td align="left"><p><strong>r</strong>、 <strong>r</strong></p></td>
 <td align="left"><p><strong>r</strong> = 0</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>测试</p></td>
-<td align="left"><p><strong>r</strong>， <strong>r</strong></p></td>
-<td align="left"><p>如果选中<strong>r</strong> = 0。</p></td>
+<td align="left"><p>考试</p></td>
+<td align="left"><p><strong>r</strong>、 <strong>r</strong></p></td>
+<td align="left"><p>检查<strong>r</strong> = 0。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
 <td align="left"><p>添加</p></td>
-<td align="left"><p><strong>r</strong>， <strong>r</strong></p></td>
-<td align="left"><p>Shift <strong>r</strong> 1 保留。</p></td>
+<td align="left"><p><strong>r</strong>、 <strong>r</strong></p></td>
+<td align="left"><p>将<strong>r</strong>向左移动1。</p></td>
 </tr>
 </tbody>
 </table>

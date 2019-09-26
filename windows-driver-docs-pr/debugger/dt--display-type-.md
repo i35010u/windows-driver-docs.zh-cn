@@ -1,6 +1,6 @@
 ---
 title: dt（显示类型）
-description: Dt 命令显示有关本地变量、 全局变量或数据类型的信息。 这可以显示关于简单数据类型，以及结构和联合的信息。
+description: Dt 命令显示有关局部变量、全局变量或数据类型的信息。 这会显示有关简单数据类型以及结构和联合的信息。
 ms.assetid: 82aba13e-6604-46ca-b3e5-bb865ecf3f1f
 keywords:
 - dt （显示类型） Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ee88b52ddfe5a3d843d7c82d89cf69afc795bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa4ac5a62cd92c108b1c33725dbdc35b0c883f75
+ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370873"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71284969"
 ---
 # <a name="dt-display-type"></a>dt（显示类型）
 
 
-**Dt**命令显示有关本地变量、 全局变量或数据类型的信息。 这可以显示关于简单数据类型，以及结构和联合的信息。
+**Dt**命令显示有关局部变量、全局变量或数据类型的信息。 这会显示有关简单数据类型以及结构和联合的信息。
 
 用户模式语法
 
@@ -40,14 +40,14 @@ dt [-DisplayOpts] Address [-l List]
 dt -h 
 ```
 
-## <a name="span-idddk_cmd_display_type_dbgspanspan-idddk_cmd_display_type_dbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>参数
+## <a name="span-idddk_cmd_display_type_dbgspanspan-idddk_cmd_display_type_dbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>Parameters
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
-指定包含所需的信息在进程运行的处理器。 有关详细信息，请参阅[包含多个处理器语法](multiprocessor-syntax.md)。 只能在内核模式下指定处理器。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
+指定运行包含所需信息的进程的处理器。 有关详细信息，请参阅[多处理器语法](multiprocessor-syntax.md)。 只能在内核模式下指定处理器。
 
-<span id="_______DisplayOpts______"></span><span id="_______displayopts______"></span><span id="_______DISPLAYOPTS______"></span> *DisplayOpts*   
-指定一个或多个以下表中给定的选项。 这些选项都以连字符。
+<span id="_______DisplayOpts______"></span><span id="_______displayopts______"></span><span id="_______DISPLAYOPTS______"></span>*DisplayOpts*   
+指定下表中提供的一个或多个选项。 这些选项前面带有连字符。
 
 <table>
 <colgroup>
@@ -56,66 +56,66 @@ dt -h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选项</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>-a</strong>[<em>quantity</em>]</p></td>
-<td align="left"><p>带有其索引的新行上显示每个数组元素。 总共<em>数量</em>将显示元素。 必须有之间没有空格并<em>quantity</em>。 如果<strong>-a</strong>后面不接数字，该数组中的所有项所都示。 <strong>-A</strong>[<em>quantity</em>] 开关应出现立即每个类型名称或字段名称的前您想在这种方式中显示。</p></td>
+<td align="left"><p><strong>-a</strong>[<em>数量</em>]</p></td>
+<td align="left"><p>在新行上显示每个数组元素及其索引。 将显示 "<em>数量</em>" 元素总数。 介于和<em>数量</em>之间不得有空格 。 如果<strong>-a</strong>后面不是一个数字，则显示数组中的所有项。 <strong>-A</strong>[<em>数量</em>] 开关应紧靠要以这种方式显示的每个类型名称或字段名称之前。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-b</strong></p></td>
-<td align="left"><p>显示基块以递归方式。 如果显示的结构包含子结构，它是以递归方式展开到任意深度和完整显示。 仅当它们是不在子结构的原始结构中，指针会展开。</p></td>
+<td align="left"><p>以递归方式显示块。 如果显示的结构包含子结构，则它将以递归方式展开为任意深度，并显示为完整。 仅当指针在原始结构中而不是在子结构中时才会展开。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-c</strong></p></td>
-<td align="left"><p>压缩输出。 如有可能在同一行显示所有字段。 (与一起使用时<strong>-a</strong>交换机，每个数组元素都占用一行，而不是格式为多个行块。)</p></td>
+<td align="left"><p>精简输出。 所有字段在一行上显示（如果可能）。 （与<strong>-a</strong>开关一起使用时，每个数组元素都采用一个行，而不是格式化为多行块。）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-d</strong></p></td>
-<td align="left"><p>与一起使用时<em>名称</em>的已结束，但一个星号，显示以开头的所有类型的详细输出<em>名称</em>。 如果<em>名称</em>不以星号结尾，则显示详细输出。</p></td>
+<td align="left"><p>当与以星号结尾的<em>名称</em>一起使用时，将显示以<em>name</em>开头的所有类型的详细输出。 如果<em>名称</em>不以星号结尾，则显示详细输出。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-e</strong></p></td>
-<td align="left"><p>强制<strong>dt</strong>枚举类型。 如果仅需要此选项<strong>dt</strong>错误地解释<em>名称</em>实例而不是一种类型的值。</p></td>
+<td align="left"><p>强制执行<strong>dt</strong>来枚举类型。 仅当<strong>dt</strong>错误地将<em>Name</em>值解释为实例而不是类型时，才需要此选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-i</strong></p></td>
-<td align="left"><p>不缩进子类型。</p></td>
+<td align="left"><p>不要缩进子类型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-o</strong></p></td>
-<td align="left"><p>省略结构字段的偏移量的值。</p></td>
+<td align="left"><p>省略结构字段的偏移量值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-p</strong></p></td>
-<td align="left"><p><em>地址</em>是一个物理地址，而不是虚拟的地址。</p></td>
+<td align="left"><p><em>Address</em>是物理地址，而不是虚拟地址。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>-r</strong>[<em>depth</em>]</p></td>
-<td align="left"><p>以递归方式转储的子类型字段。 如果<em>深度</em>是，此递归将停止后<em>深度</em>级别。 <em>深度</em>都必须是介于 1 和 9 之间的数字和必须之间没有空格<strong>r</strong>并<em>深度</em>。 <strong>-R</strong>[<em>深度</em>] 交换机应出现在立即之前地址。</p></td>
+<td align="left"><p><strong>-r</strong>[<em>深度</em>]</p></td>
+<td align="left"><p>以递归方式转储子类型字段。 如果给出了<em>深度</em>，此递归将停止<em>深度</em>级别。 <em>深度</em>必须为1到9之间的数字，并且在<strong>r</strong>和<em>深度</em>之间一定不能有空格。 <strong>-R</strong>[<em>depth</em>] 开关应紧靠在地址之前。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-s</strong> <em>size</em></p></td>
-<td align="left"><p>仅这些中的类型的大小字节数等于的值枚举<em>大小</em>。 <strong>-S</strong>正在枚举类型时，选项才有用。 当<strong>-s</strong>指定，则<strong>-e</strong>始终也暗示。</p></td>
+<td align="left"><p><strong>-s</strong><em>大小</em></p></td>
+<td align="left"><p>仅枚举大小以字节为单位的类型等于<em>大小</em>的值。 <strong>-S</strong>选项仅在枚举类型时才有用。 如果指定<strong>-s</strong> ，则也始终隐含<strong>-e</strong> 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-t</strong></p></td>
-<td align="left"><p>枚举仅适用于类型。</p></td>
+<td align="left"><p>仅枚举类型。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-v</strong></p></td>
-<td align="left"><p>详细输出。 这样，例如总大小的结构和它的元素数的其他信息。 这用于时沿<strong>-y</strong>搜索选项，将显示所有符号，甚至包括那些没有关联的类型信息。</p></td>
+<td align="left"><p>详细输出。 这会提供其他信息，例如结构的总大小及其元素的数目。 当与<strong>-y</strong>搜索选项一起使用时，将显示所有符号，甚至包括没有关联类型信息的符号。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______SearchOpts______"></span><span id="_______searchopts______"></span><span id="_______SEARCHOPTS______"></span> *SearchOpts*   
-指定一个或多个以下表中给定的选项。 这些选项都以连字符。
+<span id="_______SearchOpts______"></span><span id="_______searchopts______"></span><span id="_______SEARCHOPTS______"></span>*SearchOpts*   
+指定下表中提供的一个或多个选项。 这些选项前面带有连字符。
 
 <table>
 <colgroup>
@@ -124,40 +124,40 @@ dt -h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选项</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>-n</strong></p></td>
-<td align="left"><p>这表示下一个参数是一个名称。 这应在下一项完全十六进制字符组成，因为它否则将执行作为一个地址。</p></td>
+<td align="left"><p>这表明下一个参数是一个名称。 如果下一项完全包含十六进制字符，则应使用此方法，因为它将被视为地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-y</strong></p></td>
-<td align="left"><p>这指示下一个参数的名称，不一定是整个名称开头。 当<strong>-y</strong>是包含，所有列出了匹配项，然后上列表中的第一个匹配项的详细信息。 如果<strong>-y</strong>是未包含，就会显示仅完全匹配项。</p></td>
+<td align="left"><p>这指示下一个参数是名称的开头，而不是整个名称。 包括<strong>-y</strong>时，将列出所有匹配项，后跟列表中第一个匹配项的详细信息。 如果不包含<strong>-y</strong> ，则只显示完全匹配项。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="_______module______"></span><span id="_______MODULE______"></span> *module*   
-可选参数，指定定义此结构的模块。 如果没有本地变量或具有全局变量或类型的名称相同的类型，则应包含*模块*来指定是指全局变量。 否则为**dt**命令将显示本地变量，即使本地变量是不区分大小写的匹配项和全局变量是区分大小写的匹配项。
+<span id="_______module______"></span><span id="_______MODULE______"></span>*模块*   
+指定定义此结构的模块的可选参数。 如果存在与全局变量或类型同名的局部变量或类型，则应包含*module*来指定全局变量。 否则， **dt**命令将显示局部变量，即使本地变量是不区分大小写的匹配并且全局变量是区分大小写的匹配项。
 
-<span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span> *名称*   
-指定类型或全局变量的名称。 如果*名称*有一个星号 (* *\\* * *)，将显示所有匹配项的列表。因此， **dt A\\***  将列出所有数据类型、 全局函数和静态变量"A"开头，但将不会显示这些类型的实际实例。 (如果 **-v**在同一时间使用显示选项，将显示所有符号，而不仅仅是那些具有关联的类型信息。)也可以替换*名称*期 ( **。** ) 来表示你想要最新重复使用了值*名称*。
+<span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span>*名称*   
+指定类型或全局变量的名称。 如果*名称*以星号（\*）结尾，则显示所有匹配项的列表。 因此， **dt A\\** * 会列出所有数据类型、globals 和静态值（以 "A" 开头），但不会显示这些类型的实际实例。 （如果同时使用了 **-v**显示选项，则将显示所有符号，而不仅仅是具有关联类型信息的符号。）你还可以使用句点（ **.** ）替换*name* ，以表示你要重复最近使用的*name*值。
 
-如果*名称*包含空格，它应括在括号中。
+如果*名称*包含空格，则应将其括在括号中。
 
-<span id="_______Field______"></span><span id="_______field______"></span><span id="_______FIELD______"></span> *字段*   
-指定要显示的字段。 如果*字段*是省略，将显示所有字段。 如果*字段*跟一个句点 ( **。** )，也将显示此字段的第一级子文件夹。 如果*字段*后接一系列的段，子字段会显示深度等于周期数。 跟一个句点任何字段名称将被视为前缀匹配项，如同 **-y**使用搜索选项。 如果*字段*后跟一个星号 (\*)，它将被视为字段中，不一定是整个字段开始并将显示所有匹配的字段。
+<span id="_______Field______"></span><span id="_______field______"></span><span id="_______FIELD______"></span>*字段*   
+指定要显示的字段。 如果省略*字段*，将显示所有字段。 如果*字段*后跟一个句点（ **.** ），则此字段的第一级子字段也将显示。 如果*字段*后跟一系列期间，子字段将显示为与周期数相等的深度。 如果使用了 **-y**搜索选项，则后面跟一个句点的任何字段名称将被视为前缀匹配。 如果*字段*后跟星号（\*），则将其视为只是字段的开头，而不一定是整个字段，并显示所有匹配字段。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定要显示的结构的地址。 如果*名称*省略，则*地址*必须包括，并且必须指定一个全局变量的地址。 *地址*用作虚拟地址，除非另行指定。 使用 **-p**选项来指定物理地址。 使用"at"符号 ( **@** ) 来指定寄存器 (例如， <strong>@eax</strong>)。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定要显示的结构的地址。 如果省略*Name* ，则必须包含*address*并且必须指定全局变量的地址。 除非另行指定，否则*地址*被视为虚拟地址。 使用 **-p**选项来指定物理地址。 使用 "at" 符号（ **@** ）来指定寄存器（ <strong>@eax</strong>例如）。
 
-<span id="_______List______"></span><span id="_______list______"></span><span id="_______LIST______"></span> *列表*   
-指定链接的链接的列表的字段名称。 *地址*参数必须包含。
+<span id="_______List______"></span><span id="_______list______"></span><span id="_______LIST______"></span>*列表*   
+指定链接列表链接的字段名称。 *Address*参数必须包括在内。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -168,15 +168,15 @@ dt -h
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>平台</strong></p></td>
+<td align="left"><p><strong>适用</strong></p></td>
 <td align="left"><p>全部</p></td>
 </tr>
 </tbody>
@@ -184,28 +184,28 @@ dt -h
 
  
 
-### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-内存操作的概述和其他与内存相关的命令的说明，请参阅[读取和写入内存](reading-and-writing-memory.md)。
+有关内存操作的概述以及其他与内存相关的命令的说明，请参阅[读取和写入内存](reading-and-writing-memory.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**Dt**命令输出将始终在基数为 10，并以十六进制格式的无符号的数字中显示有符号的数字。
+**Dt**命令输出将始终以10为基数显示有符号数字，并以十六进制形式表示无符号数字。
 
-所有参数**dt**的允许的符号值还允许字符串使用通配符。 请参阅[字符串通配符语法](string-wildcard-syntax.md)有关详细信息。
+允许符号值的**dt**的所有参数也允许字符串通配符。 有关详细信息，请参阅[字符串通配符语法](string-wildcard-syntax.md)。
 
-**-Y**并 **-n**选项可以位于任何*名称*或者*字段*。 **-Y**选项允许您指定的类型或结构名称的开头。 例如， **dt y ALLEN**将显示有关类型的数据**ALLENTOWN**。 但是，您无法显示类型**ALLENTOWN**与**dt y A**。相反，您必须使用**dt-ny A**，因为**A**是有效的十六进制值，将被解释为地址，无需 **-n**选项。
+**-Y**和 **-n**选项可以位于任何*名称*或*字段*之前。 **-Y**选项允许指定类型或结构名称的开头。 例如， **dt-y ALLEN**将显示有关**ALLENTOWN**类型的数据。 但是，不能使用**dt-y**显示类型**ALLENTOWN** 。相反，您必须使用**dt-Ny a** **，因为是有效的十六进制**值，并且将被解释为不带 **-n**选项的地址。
 
-如果*名称*指示一个结构，将显示所有字段 (例如， **dt myStruct**)。 如果只想一个特定字段，则可以执行**dt myStruct myField**。 这将显示调用 C 的成员**myStruct.myField**。 但请注意，该命令**dt myStruct myField1 myField2**显示**myStruct.myField1**并**myStruct.myField2**。 它不会显示**myStruct.myField1.myField2**。
+如果*Name*表示结构，则将显示所有字段（例如， **dt mystruct>)** ）。 如果只需要一个特定字段，可以执行**Dt Mystruct>) myField**。 这将显示 C 调用**myField**的成员。 但请注意，命令**Dt Mystruct>) MyField1 myField2**显示**mystruct>). myField1**和**mystruct>)** 。 它不显示**mystruct>). myField1. myField2**。
 
-如果结构名称或字段后跟下标，这将指定数组的单个实例。 例如， **dt myStruct myFieldArray\[3\]** 将显示有问题的数组的第四个元素。 但如果类型名称后跟下标，此参数指定整个数组。 例如， **dt CHAR\[8\] myPtr**将显示 8 个字符字符串。 下标总是采用为十进制而不考虑当前基数;**0x**前缀会导致错误。
+如果结构名称或字段后跟下标，则它指定数组的单个实例。 例如， **dt mystruct>) myFieldArray\[3\]** 将显示相关数组的第四个元素。 但如果类型名称后跟下标，则会指定整个数组。 例如， **dt CHAR\[8\] myPtr**将显示八个字符的字符串。 无论当前基数如何，下标始终采用 decimal 形式;**0x**前缀将导致错误。
 
-由于该命令使用的类型信息。*pdb*文件，自由地可用于调试任何 CPU 平台。
+由于该命令使用中的类型信息。*pdb*文件，可以自由地用于调试任何 CPU 平台。
 
-使用的类型信息**dt**包括与创建的所有类型名称**typedef**，包括所有 Windows 定义的类型。 例如，**无符号长**并**char**不是有效的类型名称，但**ULONG**并**CHAR**是。 请参阅 Microsoft Windows SDK 的所有 Windows 的完整列表的类型名称。
+**Dt**使用的类型信息包括使用**typedef**创建的所有类型名称，包括所有 Windows 定义的类型。 例如，**无符号长**字符**和字符**不是有效的类型名称，但**ULONG**和**char**是。 有关所有 Windows 类型名称的完整列表，请参阅 Microsoft Windows SDK。
 
-创建的所有类型**typedef**中你自己的代码将会显示，只要它们实际已使用在程序中。 但是，在标头中定义但永远不会实际使用的类型不能.pdb 符号文件中存储并且将无法访问到调试器。 若要使这种类型可供调试器使用，将其用作*输入*的**typedef**语句。 例如，如果在代码中，结构 MY 显示以下\_数据将存储在.pdb 符号文件也可以显示**dt**命令：
+只要你的程序中实际使用了这些类型，则你自己的代码中的**typedef**所创建的所有类型都将存在。 但是，在标头中定义但从不实际使用的类型不会存储在 .pdb 符号文件中，并且调试器将无法访问这些类型。 若要使此类类型可用于调试器，请将其用作**typedef**语句的*输入*。 例如，如果代码中显示以下内容，则我\_的数据的结构将存储在 .pdb 符号文件中，并且可以通过**dt**命令显示：
 
 ```dbgcmd
 typedef struct _MY_DATA {
@@ -214,7 +214,7 @@ typedef struct _MY_DATA {
 typedef  MY_DATA *PMY_DATA; 
 ```
 
-但是，下面的代码将无法满足需要因为这两个 MY\_数据和 PMY\_数据定义的初始**typedef** ，因此，MY\_数据本身尚未使用作为的输入任何**typedef**语句：
+另一方面，以下代码将无法满足需要\_，因为我的数据和 PMY\_数据都是由初始**typedef**定义的，因此，我\_的数据本身并不是用作任何**typedef**的输入损益
 
 ```dbgcmd
 typedef struct _MY_DATA {
@@ -222,11 +222,11 @@ typedef struct _MY_DATA {
     } MY_DATA, *PMY_DATA; 
 ```
 
-在任何情况下，只能在完整符号文件，而不是已去除私有符号的所有信息的符号文件中包括类型信息。 有关详细信息，请参阅[公共和私有符号](public-and-private-symbols.md)。
+在任何情况下，类型信息仅包含在完整的符号文件中，而不是已去除所有私有符号信息的符号文件中。 有关详细信息，请参阅[公共和私有符号](public-and-private-symbols.md)。
 
-如果你想要显示的 unicode 字符串，您必须使用[ **.enable\_（启用 Unicode 显示） 的 unicode** ](-enable-unicode--enable-unicode-display-.md)首先命令。 您可以控制长整数的显示[ **.enable\_长\_状态 （启用长整数显示）** ](-enable-long-status--enable-long-integer-display-.md)命令。
+如果要显示 unicode 字符串，则需要使用[ **。先启用\_unicode （启用 unicode 显示）** ](-enable-unicode--enable-unicode-display-.md)命令。 您可以使用来控制长整数的显示[ **。 "启用\_长\_状态（启用长整数显示）** ](-enable-long-status--enable-long-integer-display-.md) " 命令。
 
-在以下示例中， **dt**显示全局变量：
+在下面的示例中， **dt**显示了一个全局变量：
 
 ```dbgcmd
 0:000> dt mt1 
@@ -238,7 +238,7 @@ typedef struct _MY_DATA {
    +0x024 ex               : 0x0 
 ```
 
-在以下示例中， **dt**显示数组字段**gn**:
+在下面的示例中， **dt**显示数组字段**gn**：
 
 ```dbgcmd
 0:000> dt mt1 -a gn 
@@ -251,7 +251,7 @@ typedef struct _MY_DATA {
     [05] 0x6 
 ```
 
-以下命令将显示变量的某些子字段：
+以下命令显示变量的一些子字段：
 
 ```dbgcmd
 0:000> dt mcl1 m_t1 dpo 
@@ -259,7 +259,7 @@ typedef struct _MY_DATA {
    +0x070 m_t1 : MYTYPE1 
 ```
 
-下面的命令显示的字段的子字段**m\_t1**。 因为段会自动导致前缀匹配，这将显示子字段开头的任何字段的"m\_t1":
+以下命令显示字段**m\_t1**的子字段。 由于句点会自动导致前缀匹配，因此还会显示以 "m\_t1" 开头的任何字段的子字段：
 
 ```dbgcmd
 0:000> dt mcl1 m_t1. 
@@ -272,16 +272,16 @@ typedef struct _MY_DATA {
       +0x024 ex    : 0x0 
 ```
 
-无法为任何深度重复此步骤。 例如，命令**dt mcl1...c。** 将显示所有字段深度四个，以便第一个字段名称开头和第三个字段名称开头**c**。
+您可以对任何深度重复此操作。 例如，命令**dt mcl1c.** 将显示深度为四的所有字段，以便第一个字段名称以开头 **，第**三个字段名称以**c**开头。
 
-下面是可以显示子字段的方式的更详细的示例。 首先，显示**Ldr**字段：
+下面是有关如何显示子字段的更详细示例。 首先，显示 " **Ldr** " 字段：
 
 ```dbgcmd
 0:000> dt nt!_PEB Ldr 7ffdf000 
    +0x00c Ldr : 0x00191ea0 
 ```
 
-现在请展开指针类型字段：
+现在，展开 "指针类型" 字段：
 
 ```dbgcmd
 0:000> dt nt!_PEB Ldr Ldr. 7ffdf000 
@@ -295,14 +295,14 @@ typedef struct _MY_DATA {
       +0x024 EntryInProgress : (null) 
 ```
 
-现在，显示**CriticalSectionTimeout**字段：
+现在显示 " **CriticalSectionTimeout** " 字段：
 
 ```dbgcmd
 0:000> dt nt!_PEB CriticalSectionTimeout 7ffdf000 
    +0x070 CriticalSectionTimeout : _LARGE_INTEGER 0xffffe86d`079b8000 
 ```
 
-现在展开**CriticalSectionTimeout**结构子字段一个层次深度：
+现在，展开深度为一级的**CriticalSectionTimeout**结构子字段：
 
 ```dbgcmd
 0:000> dt nt!_PEB CriticalSectionTimeout. 7ffdf000 
@@ -313,7 +313,7 @@ typedef struct _MY_DATA {
       +0x000 QuadPart                : -25920000000000 
 ```
 
-现在展开**CriticalSectionTimeout**结构深度的子字段两个级别：
+现在，展开 " **CriticalSectionTimeout**结构" 子字段 "深度" 级别：
 
 ```dbgcmd
 0:000> dt nt!_PEB CriticalSectionTimeout.. 7ffdf000 
@@ -326,7 +326,7 @@ typedef struct _MY_DATA {
       +0x000 QuadPart                 : -25920000000000 
 ```
 
-下面的命令显示数据类型位于地址 0x0100297C MYTYPE1 的实例：
+以下命令显示位于地址0x0100297C 的数据类型 MYTYPE1 的实例：
 
 ```dbgcmd
 0:000> dt 0x0100297c MYTYPE1 
@@ -338,7 +338,7 @@ typedef struct _MY_DATA {
    +0x024 ex               : 0x0 
 ```
 
-下面的命令显示在地址 0x01002BE0 10 ULONGs 数组：
+以下命令在地址0x01002BE0 显示 10 ULONGs 的数组：
 
 ```dbgcmd
 0:000> dt -ca10 ULONG 01002be0 
@@ -354,7 +354,7 @@ typedef struct _MY_DATA {
 [9] 0x0 
 ```
 
-以下命令在不同的地址处继续以前的显示。 请注意"ULONG"不需要重新输入：
+以下命令将继续在不同的地址上显示。 请注意，不需要重新输入 "ULONG"：
 
 ```dbgcmd
 0:000> dt -ca4 . 01002d00 
@@ -365,7 +365,7 @@ Using sym ULONG
 [3] 0x2 
 ```
 
-下面是类型显示的一些示例。 下面的命令的模块中显示所有类型和字符串"MY"开头的全局*thismodule*。 这些带有地址前缀是实际的实例;地址不是类型定义：
+下面是类型显示的一些示例。 以下命令将显示模块*thismodule*中以字符串 "MY" 开头的所有类型和全局。 带有地址的前缀是实际实例;没有地址的那些类型为类型定义：
 
 ```dbgcmd
 0:000> dt thismodule!MY* 
@@ -381,7 +381,7 @@ Using sym ULONG
           thismodule!MYFLAGS 
 ```
 
-执行类型显示时 **-v**选项可用于显示每个项的大小。 **-S** *大小*选项可用于仅枚举具有特定大小的项。 同样，这些前缀的地址是实际的实例;地址不是类型定义：
+执行类型显示时，可以使用 **-v**选项来显示每个项目的大小。 **-S** *size*选项仅可用于枚举特定大小的项目。 同样，带有地址的前缀是实际实例;没有地址的那些类型为类型定义：
 
 ```dbgcmd
 0:001> dt -s 2 -v thismodule!* 
@@ -398,7 +398,7 @@ Address   Size Symbol
 00427a30   002 thismodule!totalNumberOfItems 
 ```
 
-下面是举例 **-b**选项。 展开结构和**OwnerThreads**展开数组结构中的，但**Flink**并**闪烁**未遵循列表的指针：
+下面是 **-b**选项的示例。 该结构已展开，并扩展了结构中的**OwnerThreads**数组，但未遵循**Flink**和**闪烁**列表指针：
 
 ```dbgcmd
 kd> dt nt!_ERESOURCE -b 0x8154f040 
@@ -427,7 +427,7 @@ kd> dt nt!_ERESOURCE -b 0x8154f040
    +0x034 SpinLock         : 0
 ```
 
-下面是举例**dt**在内核模式下。 以下命令将生成输出结果类似于[ **！ process 0 0**](-process.md):
+下面是内核模式下的**dt**的示例。 以下命令生成类似于[ **！ process 0 0**](-process.md)的结果：
 
 ```dbgcmd
 kd> dt nt!_EPROCESS -l ActiveProcessLinks.Flink -y Ima -yoi Uni 814856f0 
@@ -454,9 +454,9 @@ ImageFileName : [16] "winlogon.exe"
 .... 
 ```
 
-如果你想要执行的每个元素的列表的命令，使用[ **！ 列表**](-list.md)扩展。
+如果要对列表中的每个元素执行命令，请使用[ **！ list**](-list.md)扩展。
 
-最后， **dt-h**命令将显示简短帮助文本汇总**dt**语法。
+最后， **dt-h**命令将显示简短的帮助文本，以概述**dt**语法。
 
  
 
