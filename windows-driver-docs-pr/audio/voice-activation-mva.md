@@ -1,17 +1,17 @@
 ---
-title: 多个语音助手
+title: 多语音助手
 description: 多个语音助手平台为除 Cortana 以外的其他语音助手提供支持。
 ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
-ms.date: 09/23/2019
+ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ac8ab7ddea8c8b271bf3673d5d373d01981ab3
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: 264fc00e3c7ccde536037cf06f69c57b9cc31d1e
+ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71215777"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319919"
 ---
-# <a name="multiple-voice-assistant"></a>多个语音助手
+# <a name="multiple-voice-assistant"></a>多语音助手
 
 多个语音助手平台为除 Cortana 以外的其他语音助手提供支持。 这允许在 Windows 设备（如电脑和可穿戴设备（如 HoloLens）上提供其他助手。 使用一组受支持的关键字模式，多个语音助手可以在同一设备上处于活动状态。
 
@@ -93,7 +93,7 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 
 **检查**
 
-通过[语音激活管理器2测试](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)来验证 KSPROPSETID_SoundDetector2 属性的硬件支持。
+通过[语音激活管理器2测试](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)来验证[KSPROPSETID_SOUNDDETECTOR2](kspropsetid-sounddetector2.md)属性的硬件支持。
 
 ## <a name="span-idsample_code_overviewspansample-code-overview"></a><span id="sample_code_overview"></span>示例代码概述
 
@@ -119,23 +119,33 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 
 驱动程序会像往常一样为其捕获设备公开 KS 筛选器。 此筛选器支持多个 KS 属性和一个 KS 事件来配置、启用和发出检测事件信号。 此筛选器还包括一个标识为关键字 spotter （KWS） pin 的附加 pin 工厂。 此 pin 用于从关键字 spotter 流式传输音频。
 
-属性为：**KSPROPSETID_SoundDetector2**
+属性为：[**KSPROPSETID_SoundDetector2**](kspropsetid-sounddetector2.md)
 
-使用 KSSOUNDDETECTORPROPERTY 数据结构调用所有 KSPROPSETID_SoundDetector2 属性。 此数据结构包含 KSPROPERTY 以及要识别、重置、检测到的关键字的事件 id。
+使用[KSSOUNDDETECTORPROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty)数据结构调用所有[**KSPROPSETID_SoundDetector2**](kspropsetid-sounddetector2.md)属性。 此数据结构包含 KSPROPERTY 以及要识别、重置、检测到的关键字的事件 id。
 
 - 支持的关键字类型[ **-\_KSPROPERTY\_SOUNDDETECTOR 模式**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此属性由操作系统设置，用于配置要检测的关键字。
 -   关键字模式 guid 列表- [ **\_KSPROPERTY SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此属性用于获取 Guid 列表，这些 Guid 用于标识支持模式的类型。
 - [**KSPROPERTY\_SOUNDDETECTOR\_** ](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。 （操作系统必须进行重置。）
-- 匹配结果- **KSPROPERTY\_SOUNDDETECTOR\_reset**用于在启动时重置声音检测程序。
+- 匹配结果- [**KSPROPERTY\_SOUNDDETECTOR\_reset**](ksproperty-sounddetector-reset.md)用于在启动时重置声音检测程序。
 
 在关键字检测时，会发送包含 KSNOTIFICATIONID_SoundDetector 的 PNP 通知。 注意：这不是 KSEvent，而是使用负载通过 IoReportTargetDeviceChangeAsynchronous 发送的 PNP 事件。
+
+KSNOTIFICATIONID_SoundDetector 在 ksmedia 中定义，如下所示。
+
+```
+// The payload of this notification is a SOUNDDETECTOR_DETECTIONHEADER
+#define STATIC_KSNOTIFICATIONID_SoundDetector\
+    0x6389d844, 0xbb32, 0x4c4c, 0xa8, 0x2, 0xf4, 0xb4, 0xb7, 0x7a, 0xfe, 0xad
+DEFINE_GUIDSTRUCT("6389D844-BB32-4C4C-A802-F4B4B77AFEAD", KSNOTIFICATIONID_SoundDetector);
+#define KSNOTIFICATIONID_SoundDetector DEFINE_GUIDNAMED(KSNOTIFICATIONID_SoundDetector)
+```
 
 **操作顺序**
 
 *系统启动*
 
-1. OS 将发送 KSPROPERTY_SOUNDDETECTOR_RESET 以清除任何以前的检测状态，将所有检测程序重置为已卸下并清除以前的模式集。
-2. OS 将查询 KSPROPERTY_SOUNDDETECTOR_PATTERNS，以检索事件检测器 OEM 适配器的 clsid。
+1. OS 将发送[ **\_KSPROPERTY SOUNDDETECTOR\_RESET**](ksproperty-sounddetector-reset.md)以清除任何以前的检测状态，将所有检测程序重置为已卸下并清除以前的模式集。
+2. OS 查询[ **\_KSPROPERTY SOUNDDETECTOR\_模式**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)以检索事件检测器 OEM 适配器的 clsid。
 3. 操作系统使用事件检测到 oem 适配器来检索支持的关键字和语言的列表。
 4. 操作系统注册驱动程序发送的自定义 PNP 通知
 5. OS 设置必需的关键字模式。

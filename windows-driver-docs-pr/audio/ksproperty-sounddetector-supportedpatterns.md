@@ -1,6 +1,6 @@
 ---
 title: KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS
-description: KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS 属性用于获取标识的受支持的模式的类型的 Guid 的列表。
+description: KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS 属性用于获取 guid 列表，这些 guid 用于标识支持模式的类型。
 ms.assetid: 8D840204-ADE8-4146-B88C-C0750B8FC33A
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS 音频设备
@@ -12,21 +12,22 @@ api_location:
 - ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8fc2de9003a48f774512657b08d6de94efbef26
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: a66699736e788844a1becfa2b6e5d5a938ad0360
+ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391621"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319916"
 ---
-# <a name="kspropertysounddetectorsupportedpatterns"></a>KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS
+# <a name="ksproperty_sounddetector_supportedpatterns"></a>KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS
 
+**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**属性用于获取 guid 列表，这些 guid 用于标识支持模式的类型。
 
-**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**属性用于获取标识的受支持的模式的类型的 Guid 的列表。
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表-KSPROPSETID_SoundDetector
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+此使用情况表汇总了\_使用\_ [KSPROPSETID_SoundDetector](kspropsetid-sounddetector.md)调用 KSPROPERTY SOUNDDETECTOR 时的情况
 
 <table>
 <colgroup>
@@ -56,24 +57,54 @@ ms.locfileid: "67391621"
 </tbody>
 </table>
 
- 
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector2"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表-KSPROPSETID_SoundDetector2
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+此使用情况表汇总了\_使用\_ [KSPROPSETID_SoundDetector2](kspropsetid-sounddetector2.md)调用 KSPROPERTY SOUNDDETECTOR 时的情况
 
-属性值是[ **KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)结构后跟一系列 Guid。
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Get</th>
+<th align="left">设置</th>
+<th align="left">目标</th>
+<th align="left">属性描述符类型</th>
+<th align="left">属性值类型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>Filter</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a></p></td>
+</tr>
+</tbody>
+</table>
+
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+
+属性值是[**KSMULTIPLE\_的项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)结构，后跟一系列 guid。
 
 <a name="remarks"></a>备注
 -------
 
-GUID 的模式具有以下特征：
+模式 GUID 具有以下特征：
 
--   它是由 OEM 进行生成。
+- 它由 OEM 生成。
 
--   操作系统使用它的类标识符 (CLSID) 作为要实例化与 OEM DLL COM 类，用于与该驱动程序进行交互。
+- 操作系统使用它作为类标识符（CLSID）来实例化用于与驱动程序进行交互的对应 OEM DLL COM 类。
 
--   它意味着由 OEM 定义的模式数据的格式。
+- 它表示 OEM 定义的模式数据的格式。
 
--   它意味着由 OEM 定义的结果数据的格式。
+- 它表示 OEM 定义的结果数据的格式。
 
 <a name="requirements"></a>要求
 ------------
@@ -99,19 +130,9 @@ GUID 的模式具有以下特征：
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
 [**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
-
- 
-
- 
-
-
-
-
-
-

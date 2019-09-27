@@ -5,14 +5,14 @@ ms.assetid: e9cd2bc7-99c1-4aca-91b0-9faefa4a856d
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，扩展格式
 - 扩展格式 WDK Windows 7 显示
-ms.date: 09/10/2017
+ms.date: 09/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d7f6160b022c95b03bac0d0cc5ce04ddd4dc7df
-ms.sourcegitcommit: c2ffefe997a6d028864704c41d3d8e001e9622fa
+ms.openlocfilehash: 8d541aed1f35894a3cd71779babb17cf038a02fa
+ms.sourcegitcommit: 14a1868c1009fcbac5cf6dfeb844f4c712212f23
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077226"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317532"
 ---
 # <a name="details-of-the-extended-format"></a>扩展格式的详细信息
 
@@ -24,17 +24,29 @@ ms.locfileid: "71077226"
 
 下表显示了使用扩展格式（DXGI_FORMAT_ *）的特定属性的资源（如果硬件为具有这些属性的资源支持这些扩展格式，或者这些资源的扩展格式为可选）。 有关每种格式的说明，请参阅[DXGI_FORMAT](https://docs.microsoft.com/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format) 。
 
+下表的列键：
+
+- **答**:DXGI_FORMAT_B8G8R8A8_TYPELESS
+- **B**：DXGI_FORMAT_B8G8R8A8_UNORM （现有）
+- **C**:DXGI_FORMAT_B8G8R8A8_UNORM_SRGB
+- **D**：DXGI_FORMAT_B8G8R8X8_TYPELESS
+- **E**：DXGI_FORMAT_B8G8R8X8_UNORM （现有）
+- **F**：DXGI_FORMAT_B8G8R8X8_UNORM_SRGB
+- **G**：DXGI_FORMAT_R10G10B10A2_TYPELESS
+- **H**：DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM
+
 <table>
 <head>
     <tr>
         <th>资源属性</th>
-        <th>B8G8R8A8_TYPELESS</th>
-        <th>B8G8R8A8_UNORM （现有）</th>
-        <th>B8G8R8A8_UNORM_SRGB</th>
-        <th>B8G8R8X8_TYPELESS</th>
-        <th>B8G8R8X8_UNORM （现有）</th>
-        <th>B8G8R8X8_UNORM_SRGB</th>
-        <th>R10G10B10_XR_BIAS_A2_UNORM</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+        <th>G</th>
+        <th>H</th>
     </tr>
 </head>
 <body>
