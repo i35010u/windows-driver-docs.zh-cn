@@ -9,17 +9,18 @@ keywords:
 - Microsoft 符号存储区
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e531ab32fe23132492a7434996c2801a818dcf2
-ms.sourcegitcommit: 61dab29131b38e636093523133042451fe387ab3
+ms.openlocfilehash: 621cfe78438051ad08856e70dca1ec1f9e2a3cb1
+ms.sourcegitcommit: d5adc4f20ecdf94d3940eb09427b29774e9c1e78
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433191"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71344627"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft 公共符号服务器
 
 
-**服务器状态:** 服务器状态:MSDL 服务中断 <br> 符号服务器当前不可访问。 团队正在积极调查并处理解决方法。 <br>
+**服务器状态:** MSDL 服务中断 <br> 
+ 我们收到了某些区域中有关存储问题的报告。 客户可能无法解析公共符号。 团队正在积极调查并处理解决方法。 <br>
 请向[windbgfb@microsoft.com](mailto:windbgfb@microsoft.com)报告任何已知问题。 
 
 ---
