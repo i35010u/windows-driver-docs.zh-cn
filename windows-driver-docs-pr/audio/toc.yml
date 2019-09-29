@@ -254,12 +254,15 @@
               href: uaa-class-drivers.md
             - name: 将谓词与 HD 音频编解码器通信
               href: communicating-verbs-with-the-hd-audio-codec.md
-        - name: 编程指南
+        - name: HD 音频 DDI 编程指南
+          href: programming-guidelines.md
           items:
             - name: 编程指南
               href: programming-guidelines.md
             - name: HD 音频 DDI 版本之间的差异
               href: differences-between-the-hd-audio-ddi-versions.md
+            - name: 在音频资源重新平衡和意外删除操作期间管理内存缓冲区
+              href: managing-memory-buffers-rebalance.md
             - name: 同步和异步编解码器命令
               href: synchronous-and-asynchronous-codec-commands.md
             - name: 时钟和链接位置寄存器
@@ -862,6 +865,8 @@
           href: kspropsetid-rtaudio.md
         - name: KSPROPSETID_SoundDetector
           href: kspropsetid-sounddetector.md
+        - name: KSPROPSETID_SoundDetector2
+          href: kspropsetid-sounddetector2.md
         - name: KSPROPSETID_Synth
           href: kspropsetid-synth.md
         - name: KSPROPSETID_SynthClock
@@ -1386,6 +1391,10 @@
           href: ksproperty-sounddetector-matchresult.md
         - name: KSPROPERTY_SOUNDDETECTOR_PATTERNS
           href: ksproperty-sounddetector-patterns.md
+        - name: KSPROPERTY_SOUNDDETECTOR_RESET
+          href: ksproperty-sounddetector-reset.md
+        - name: KSPROPERTY_SOUNDDETECTOR_STREAMINGSUPPORT
+          href: ksproperty-sounddetector-streamingsupport.md
         - name: KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS
           href: ksproperty-sounddetector-supportedpatterns.md
         - name: KSPROPERTY_SYSAUDIO_ATTACH_VIRTUAL_SOURCE

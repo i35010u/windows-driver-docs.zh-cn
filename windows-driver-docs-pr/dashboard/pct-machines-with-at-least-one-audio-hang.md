@@ -4,18 +4,18 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为在 Aud
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f8cd5ab85577f712b70c5e94bc56417e83e7d040
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.openlocfilehash: a9d5f541d94cef56203f0080513258cbe9aba7e0
+ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017025"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71195756"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-hang"></a>至少有一次音频挂起的计算机的百分比
 
 ## <a name="description"></a>描述
 
-此度量监视两个服务，即 Windows 音频服务 (AudioSrv.dll) 和音频设备关系图 (AudioDG.exe)，用于检查任一服务是否发生了挂起   。 音频挂起会导致音频平台对用户应用程序无响应。
+请参阅[音频度量](audio-measures.md)中的“音频用户模式可靠性”
 
 ## <a name="measure-attributes"></a>度量属性
 

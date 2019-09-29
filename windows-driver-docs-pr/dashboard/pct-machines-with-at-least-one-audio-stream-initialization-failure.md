@@ -4,18 +4,18 @@ description: 该度量将 7 天滑动窗口中的遥测数据聚合为至少有�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db9677894f98ff32778f79ff78307f61940dfaf3
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.openlocfilehash: 1c67e56efcc044c7aebe7840a450581a233daa7f
+ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017018"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71195762"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-stream-initialization-failure"></a>至少有一次音频流初始化失败的计算机的百分比
 
 ## <a name="description"></a>描述
 
-如果设备无法初始化音频流，用户将无法访问应用程序的音频体验。 此度量计算具有无法初始化流的音频设备的计算机所占的百分比。
+请参阅[音频度量](audio-measures.md)中的“音频流初始化”部分
 
 ## <a name="measure-attributes"></a>度量属性
 

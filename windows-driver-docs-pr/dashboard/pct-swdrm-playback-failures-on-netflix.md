@@ -4,12 +4,12 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为 Netfli
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ba21858cb369ffb8e783618476aa1be5bd0c7053
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.openlocfilehash: 0b234dfbf3a5cbe813ad9864ed789b859d7bc99c
+ms.sourcegitcommit: 21266a7f34b8ec1e250a5a3288c4f121b024c11f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71016937"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71180006"
 ---
 # <a name="percent-of-swdrm-playback-failures-on-netflix"></a>Netflix 上的 SWDRM 播放失败次数百分比
 
@@ -39,4 +39,4 @@ ms.locfileid: "71016937"
 
 ### <a name="final-calculation"></a>最终计算
 
-SWDRM Netflix 播放错误百分比 = Netflix HWDRM 播放失败次数/总 Netflix 视频数 
+SWDRM Netflix 播放错误百分比 = Netflix SWDRM 播放失败次数/总 Netflix 视频数 

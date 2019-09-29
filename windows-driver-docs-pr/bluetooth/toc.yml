@@ -90,3 +90,5 @@
       href: bluetooth-proximity-profile.md
     - name: 邻近感应配置文件实现详细信息
       href: proximity-profile-implementation-details.md
+- name: 蓝牙无线收发器重置和恢复
+  href: bluetooth-radio-error-recovery.md
