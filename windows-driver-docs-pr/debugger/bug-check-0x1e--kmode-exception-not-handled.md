@@ -14,22 +14,22 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 12de66c44cafd8e06ceb3277510b447f94052a6a
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025333"
 ---
-# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>Bug 检查 0x1E：\_未\_处理KMODE\_异常
+# <a name="bug-check-0x1e-kmode_exception_not_handled"></a>Bug 检查 0x1E：KMODE\_EXCEPTION\_NOT\_HANDLED
 
 
-未\_\_处理的KMODE异常bug检查的值为0x0000001e。\_ 这表示内核模式程序生成了错误处理程序未捕获的异常。
+KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED bug 检查的值为0x0000001E。 这表示内核模式程序生成了错误处理程序未捕获的异常。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户, 请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="kmode_exception_not_handled-parameters"></a>KMODE\_异常\_未\_处理的参数
+## <a name="kmode_exception_not_handled-parameters"></a>KMODE @ no__t-0EXCEPTION @ no__t-1NOT @ no__t-2HANDLED 参数
 
 
 <table>
@@ -72,15 +72,15 @@ ms.locfileid: "70025333"
 
 常见的异常代码包括：
 
--   数0x80000002状态\_数据\_类型不一致
+-   数0x80000002STATUS @ NO__T-0DATATYPE @ NO__T-1MISALIGNMENT
 
     遇到未对齐的数据引用。
 
--   0x80000003:状态\_断点
+-   0x80000003:STATUS @ NO__T-0BREAKPOINT
 
     当没有内核调试器附加到系统时遇到断点或断言。
 
--   0XC0000005状态\_访问\_冲突
+-   0XC0000005STATUS @ NO__T-0ACCESS @ NO__T-1VIOLATION
 
     发生了内存访问冲突。 （Bug 检查的参数4是驱动程序尝试访问的地址。）
 
@@ -141,7 +141,7 @@ ms.locfileid: "70025333"
 
 4.  执行 **.cxr**命令后，使用**kb**命令显示基于上下文记录信息的堆栈跟踪。 此堆栈跟踪指示出现未处理异常的调用堆栈。
 
-**请注意**  ，此过程假定您可以找到**NT！PspUnhandledExceptionInSystemThread**。 但是，在某些情况下（如访问冲突崩溃），将无法执行此操作。 在这种情况下，请查找**ntoskrnl.exe！KiDispatchException**。 传递给此函数的第三个参数是一个陷阱帧地址。 使用带有此地址的 "[**陷阱（显示陷印帧）** ](-trap--display-trap-frame-.md) " 命令可将寄存器上下文设置为合适的值。 然后，你可以执行堆栈跟踪并发出其他命令。
+**请注意**  This 过程假设您可以找到**NT！PspUnhandledExceptionInSystemThread**。 但是，在某些情况下（如访问冲突崩溃），将无法执行此操作。 在这种情况下，请查找**ntoskrnl.exe！KiDispatchException**。 传递给此函数的第三个参数是一个陷阱帧地址。 使用带有此地址的 "[**陷阱（显示陷印帧）** ](-trap--display-trap-frame-.md) " 命令可将寄存器上下文设置为合适的值。 然后，你可以执行堆栈跟踪并发出其他命令。
 
  
 

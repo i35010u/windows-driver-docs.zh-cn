@@ -14,20 +14,20 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9754dd7117a745e3d290a29fb54246db49390a
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025314"
 ---
-# <a name="developer-content-bug-check-0x9f-driver_power_state_failure"></a>（开发人员内容）Bug 检查0x9F：驱动\_程序\_电源状态\_故障
+# <a name="developer-content-bug-check-0x9f-driver_power_state_failure"></a>（开发人员内容）Bug 检查0x9F：DRIVER @ NO__T-0POWER @ NO__T-1STATE @ NO__T-2FAILURE
 
-驱动程序\_电源\_状态\_错误检查的值为0x0000009F。 此 bug 检查表明驱动程序处于不一致或处于无效状态。
+DRIVER @ no__t-0POWER @ no__t-1STATE @ no__t-2FAILURE bug 检查的值为0x0000009F。 此 bug 检查表明驱动程序处于不一致或处于无效状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户, 请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="driver_power_state_failure-parameters"></a>驱动\_程序\_电源状态\_故障参数
+## <a name="driver_power_state_failure-parameters"></a>DRIVER @ no__t-0POWER @ no__t-1STATE @ no__t-2FAILURE 参数
 
 参数1指示违规类型。
 
@@ -41,7 +41,7 @@ ms.locfileid: "70025314"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数1</th>
+<th align="left">参数 1</th>
 <th align="left">参数2</th>
 <th align="left">参数3</th>
 <th align="left">参数4</th>
@@ -97,7 +97,7 @@ ms.locfileid: "70025314"
 
 **当参数1等于0x3 时，调试 bug 检查0x9F**
 
-- 在内核调试器中，使用[ **！分析-v**](-analyze.md)命令执行初始 bug 检查分析。 详细分析显示 nt 的地址 **！会审\_9f\_POWER** structure，它位于 Arg3 中。
+- 在内核调试器中，使用[ **！分析-v**](-analyze.md)命令执行初始 bug 检查分析。 详细分析显示 nt 的地址 **！会审 @ no__t-19F @ no__t-2POWER**结构，它在 Arg3 中。
 
 ```dbgcmd
 kd>!analyze -v
@@ -116,9 +116,9 @@ kd>!analyze -v
     Arg4: fffffa800ab61bd0, The blocked IRP
 ```
 
-Nt！会审\_9f\_POWER structure 提供其他 bug 检查信息，这些信息可能会帮助你确定此错误检查的原因。 此结构可以提供所有未完成的电源 Irp 的列表、所有电源 IRP 工作线程的列表以及指向延迟的系统工作线程队列的指针。
+Nt！会审 @ no__t-09F @ no__t-1POWER 结构提供其他 bug 检查信息，这些信息可能会帮助你确定此错误检查的原因。 此结构可以提供所有未完成的电源 Irp 的列表、所有电源 IRP 工作线程的列表以及指向延迟的系统工作线程队列的指针。
 
-- 使用[**dt （显示类型）** ](dt--display-type-.md)命令，并指定 nt！使用\_Arg3\_中的地址会审 9f POWER structure。
+- 使用[**dt （显示类型）** ](dt--display-type-.md)命令，并指定 nt！会审 @ no__t-29F @ no__t-3POWER structure （使用来自 Arg3 的地址）。
 
 ```dbgcmd
     0: kd> dt nt!TRIAGE_9F_POWER fffff8000386c3d8
@@ -129,7 +129,7 @@ Nt！会审\_9f\_POWER structure 提供其他 bug 检查信息，这些信息可
        +0x018 DelayedWorkQueue : 0xfffff800`01c6d2d8 _TRIAGE_EX_WORK_QUEUE
 ```
 
-[**Dt （显示类型）** ](dt--display-type-.md)命令显示结构。 你可以使用各种调试器命令按照列表\_项字段来检查未完成的 irp 和 power IRP 工作线程的列表。
+[**Dt （显示类型）** ](dt--display-type-.md)命令显示结构。 你可以使用各种调试器命令来跟随 LIST @ no__t-0ENTRY 字段，以检查未完成的 Irp 和 power IRP 工作线程的列表。
 
 - 使用[ **！ irp**](-irp.md)命令检查已阻止的 irp。 此 IRP 的地址位于 Arg4 中。
 
@@ -233,9 +233,9 @@ Nt！会审\_9f\_POWER structure 提供其他 bug 检查信息，这些信息可
 
 - 如果使用的是 KMDF 驱动程序，请使用[Windows 驱动程序框架扩展](kernel-mode-driver-framework-extensions--wdfkd-dll-.md)（！ wdfkd）来收集其他信息。
 
-  使用[ **！ wdfkd. wdflogdump**](-wdfkd-wdflogdump.md) &lt;驱动程序名称&gt;，查看 KMDF 是否正在等待确认任何挂起的请求。
+  使用[ **！ wdfkd. wdflogdump**](-wdfkd-wdflogdump.md) &lt;your driver name @ no__t，查看 KMDF 是否正在等待确认任何挂起的请求。
 
-  使用[ **！ wdfkd. wdfdevicequeues**](-wdfkd-wdfdevicequeues.md) &lt;WDFDEVICE&gt;来检查所有未完成的请求及其所处状态。
+  使用[ **！ wdfkd. wdfdevicequeues**](-wdfkd-wdfdevicequeues.md) &lt;your WDFDEVICE @ no__t-3 检查所有未完成的请求及其所处状态。
 
 - 使用[ **！** ](-stacks.md) stack 扩展来检查每个线程的状态，并查找可能会保持电源状态转换的线程。
 
@@ -249,7 +249,7 @@ Nt！会审\_9f\_POWER structure 提供其他 bug 检查信息，这些信息可
 
 **当参数1等于0x4 时调试 bug 检查0x9F**
 
-- 在内核调试器中，使用[ **！分析-v**](-analyze.md)命令执行初始 bug 检查分析。 详细分析显示 nt 的地址 **！会审\_9f\_PNP**结构，它位于参数4（arg4）中。
+- 在内核调试器中，使用[ **！分析-v**](-analyze.md)命令执行初始 bug 检查分析。 详细分析显示 nt 的地址 **！会审 @ no__t-19F @ no__t-2PNP**结构，它位于参数4（arg4）中。
 
 ```dbgcmd
     kd> !analyze -v
@@ -270,9 +270,9 @@ Nt！会审\_9f\_POWER structure 提供其他 bug 检查信息，这些信息可
 
 ```
 
-Nt！会审\_9f\_PNP 结构提供可帮助您确定错误原因的其他 bug 检查信息。 Nt！会审\_9f\_PNP 结构提供指向结构的指针，该结构包含已调度（但未完成） PNP irp 的列表，并提供指向延迟的系统工作队列的指针。
+Nt！会审 @ no__t-09F @ no__t-1PNP 结构提供可帮助您确定错误原因的其他 bug 检查信息。 Nt！会审 @ no__t-09F @ no__t-1PNP 结构提供一个指向结构的指针，该结构包含已调度（但未完成） PnP Irp 的列表，并提供指向延迟的系统工作队列的指针。
 
-- 使用[**dt （显示类型）** ](dt--display-type-.md)命令，并指定**nt！会审\_9f\_PNP**结构和在 Arg4 中找到的地址。
+- 使用[**dt （显示类型）** ](dt--display-type-.md)命令，并指定**nt！会审 @ no__t-39F @ no__t-4PNP**结构和您在 Arg4 中找到的地址。
 
 ```dbgcmd
     kd> dt nt!TRIAGE_9F_PNP 82931b24
@@ -283,7 +283,7 @@ Nt！会审\_9f\_PNP 结构提供可帮助您确定错误原因的其他 bug 检
 
 ```
 
-[**Dt （显示类型）** ](dt--display-type-.md)命令显示结构。 您可以使用调试器命令按照列表\_项字段来检查未完成的 PnP irp 的列表。
+[**Dt （显示类型）** ](dt--display-type-.md)命令显示结构。 您可以使用调试程序命令通过 LIST @ no__t-0ENTRY 字段来检查未完成的 PnP Irp 的列表。
 
 为了帮助你确定错误的原因，请考虑以下问题：
 

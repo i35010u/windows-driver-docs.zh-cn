@@ -14,21 +14,21 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ea373249c79876070cc58c569e9a66295707e01d
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025325"
 ---
-# <a name="bug-check-0x74-bad_system_config_info"></a>Bug 检查 0x74：系统\_配置\_信息\_错误
+# <a name="bug-check-0x74-bad_system_config_info"></a>Bug 检查 0x74：错误 @ NO__T-0SYSTEM @ NO__T-1CONFIG @ NO__T-2INFO
 
-错误\_的系统\_配置\_信息错误检查的值为0x00000074。 此错误检查表示注册表中存在错误。
+错误的 @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO bug 检查的值为0x00000074。 此错误检查表示注册表中存在错误。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户, 请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="bad_system_config_info-parameters"></a>错误\_的\_系统配置\_信息参数
+## <a name="bad_system_config_info-parameters"></a>错误 @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO 参数
 
 
 <table>
@@ -57,7 +57,7 @@ ms.locfileid: "70025325"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>NT 状态值/代码 (如果可用)</p></td>
+<td align="left"><p>NT 状态值/代码（如果可用）</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,18 +67,18 @@ ms.locfileid: "70025325"
 <a name="cause"></a>原因
 -----
 
-如果系统\_配置\_单元\_已损坏, 则会发生错误的系统配置信息 bug 检查。 但是, 这种损坏的可能性不大, 因为启动加载程序会在加载 hive 时检查 hive 是否损坏。
+如果系统配置单元已损坏，则会发生错误的 @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO bug 检查。 但是，这种损坏的可能性不大，因为启动加载程序会在加载 hive 时检查 hive 是否损坏。
 
-如果缺少某些关键的注册表项和值, 也会发生此 bug 检查。 如果用户手动编辑了注册表, 或者应用程序或服务损坏了注册表, 则可能缺少键和值。
+如果缺少某些关键的注册表项和值，也会发生此 bug 检查。 如果用户手动编辑了注册表，或者应用程序或服务损坏了注册表，则可能缺少键和值。
 
-查找参数4中返回的 NT status 值可提供其他信息, 有关列表, 请参阅[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 
+查找参数4中返回的 NT status 值可提供其他信息，有关列表，请参阅[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 
 
 <a name="resolution"></a>分辨率
 ----------
 
-检查 Windows 系统事件日志, 以查看是否存在任何与注册表相关的错误事件。 如果事件列出了该错误发生在中的 hive 或特定键, 则为。
+检查 Windows 系统事件日志，以查看是否存在任何与注册表相关的错误事件。 如果事件列出了该错误发生在中的 hive 或特定键，则为。
 
-[ **! 分析**](-analyze.md)调试扩展显示有关 bug 检查的信息, 可帮助确定根本原因。
+[ **！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 ```dbgcmd
 BAD_SYSTEM_CONFIG_INFO (74)
@@ -99,16 +99,16 @@ Arg4: ffffffffc000014c, usually the NT status code.
 
 ```
 
-查看由! 分析返回的所有信息, 以了解有关失败的信息。
+查看由！分析返回的所有信息，以了解有关失败的信息。
 
-使用[! error](-error.md)扩展显示有关参数4中的 NTSTATUS 值的信息。
+使用[！ error](-error.md)扩展显示有关参数4中的 NTSTATUS 值的信息。
 
 ```dbgcmd
 2: kd> !ERROR ffffffffc000014c
 Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The structure of one of the files that contains Registry data is corrupt, or the image of the file in memory is corrupt, or the file could not be recovered because the alternate copy or log was absent or corrupt.
 ```
 
-使用[! reg](-reg.md) extenstion 显示有关注册表的信息, 例如注册表中存在的配置单元。
+使用[！ reg](-reg.md) extenstion 显示有关注册表的信息，例如注册表中存在的配置单元。
 
 ```dbgcmd
 !reg hivelist
@@ -124,7 +124,7 @@ Error code: (NTSTATUS) 0xc000014c (3221225804) - {The Registry Is Corrupt}  The 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
-使用! reg sys.openkeys 命令查看打开了哪些注册表项。
+使用！ reg sys.openkeys 命令查看打开了哪些注册表项。
 
 ```dbgcmd
 2: kd> !reg openkeys
@@ -144,13 +144,13 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 <a name="remarks"></a>备注
 ----------
 
-尝试启动进入安全模式, 然后正常重新启动操作系统。 如果重新启动不能解决问题, 则注册表损坏情况太大。 请尝试执行以下步骤。
+尝试启动进入安全模式，然后正常重新启动操作系统。 如果重新启动不能解决问题，则注册表损坏情况太大。 请尝试执行以下步骤。
 
-- 如果你有系统还原点, 请尝试还原到较早的还原点。
+- 如果你有系统还原点，请尝试还原到较早的还原点。
 - 重置你的电脑。
 - 使用安装媒体还原或重置你的电脑。
 - 使用安装媒体重新安装 Windows。
 
-有关详细信息, 请参阅[Windows 10 中的恢复选项](https://support.microsoft.com/help/12415/windows-10-recovery-options#)。
+有关详细信息，请参阅[Windows 10 中的恢复选项](https://support.microsoft.com/help/12415/windows-10-recovery-options#)。
 
-此支持文章讨论了此错误检查代码:[错误 0x74:Bad_system_config_info](https://support.microsoft.com/help/4028653/windows-error-0x74-badsystemconfiginfo)
+此支持文章讨论了此错误检查代码：[Error 0x74：Bad_system_config_info @ no__t-0
