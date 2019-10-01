@@ -4,12 +4,12 @@ description: Te.exe 命令选项
 ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d71cb48a3e99edfaba7a03abc0704f544d3d5ff
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: ffa356f4be919e6615888f064b727de299c74a36
+ms.sourcegitcommit: 645e42f3d8c59e249247d101d63681093f6522ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "68415095"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705404"
 ---
 # <a name="teexe-command-options"></a>Te.exe 命令选项
 
@@ -53,7 +53,7 @@ te.exe** \<[测试\_二进制文件](#test_binaries)> \[[/appendWttLogging](#app
 
 设置控制台窗口相对于主监视器角的位置 (以像素为单位)。 使用 "**当前**的值" 指定在从重新启动恢复时, 应存储并使用当前控制台位置。
 
-#### <a name="consolesize-ltxygt--current-"></a>/console: size =\[ &lt;x, y&gt; | 当前\]
+#### <a name="consolesize-xy--current-"></a>/console: size =\[ \<x, y\> | 当前\]
 
 设置控制台窗口的大小 (以字符为维度)。 如有必要, 屏幕缓冲区大小将增加以匹配窗口的大小。 使用 "**当前**的值" 指定在从重新启动恢复时, 应存储并使用当前控制台大小。
 
@@ -270,11 +270,7 @@ Pict: NegativeValuePrefix =!
 
 从每个测试二进制文件选择测试时要使用的选择条件。 选择条件由以下一项或多项组成:
 
-@\[作为 float\]或 integer\[的字符串
-@ = \]属性\]名称值的属性名称值\[\[ &gt; = \]\[\] 作为float&lt;或 integer属性名称&gt;的属性名称值\] 
-@ \[
-@\[\] = \]\[
-@作为float\]或 integer 属性名称值的&lt;值\[ \[\]
+@ @ no__t-1property name @ no__t-2 @ no__t-3 @ no__t-4value as string @ no__t-5 @ no__t-6 @ no__t-7property name @ no__t-8 &gt; @ no__t-10 @ no__t-11value as float 或 integer @ no__t-no__t name @ no__t-15 \[6 7value 作为 float 或 integer @ no__t-18 @ no__t-19 @ no__t-20property name @ no__t-21 \]2 @ no__t-23 @ no__t-24value as float 或 integer @ no__t-25 @ no__t-26 @ no__t-27property name @ no__t-28 9  = 0value 作为 float 或 integer @ no__t-31
 
 * *字符串形式的属性值必须用单引号括起来。*
 * *您可以使用 "and"、"or" 和 "not" (不区分大小写) 来指定组合选择条件。*
