@@ -4,12 +4,12 @@ description: 电源管理的标准化 INF 关键字
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 204e218590a8a6706f9dba7a2d004d8b0fcf62c2
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: ec32cac72955b92fecc9db9cd96c5306a4826e4c
+ms.sourcegitcommit: e2e4746c0efe082296c18de7ab14a1901e2eda9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70063903"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71716939"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>电源管理的标准化 INF 关键字
 
@@ -23,11 +23,11 @@ ms.locfileid: "70063903"
 <a href="" id="-wakeonmagicpacket"></a> **\*WakeOnMagicPacket**  
 一个值，用于描述在设备接收到*幻数据包*时是否应启用设备来唤醒计算机。 （*幻数据包*是包含接收网络适配器的以太网地址的16个连续副本的数据包）
 
-<a href="" id="-modernstandbywolmagicpacket"></a> **\*ModernStandyWoLMagicPacket**  
+<a href="" id="-modernstandbywolmagicpacket"></a> **\*ModernStandbyWoLMagicPacket**  
 一个值，用于描述在设备接收到*幻 paket*并且系统处于*S0ix*电源状态时是否应启用设备唤醒计算机。 当系统处于*S4*电源状态时，此功能不适用。
 
 > [!NOTE]
-> 在 NDIS 6.60 和更高版本，或者 Windows 10 版本1607及更高版本中支持 ModernStandyWoLMagicPacket。  **\***
+> 在 NDIS 6.60 和更高版本，或者 Windows 10 版本1607及更高版本中支持**1ModernStandbyWoLMagicPacket。 @no__t**
 
 <a href="" id="-devicesleepondisconnect"></a> **\*DeviceSleepOnDisconnect**  
 一个值，该值描述当媒体断开连接时是否应启用设备使设备进入低功耗状态（睡眠状态），并在媒体再次连接时返回到完全电源状态（唤醒状态）。
@@ -96,7 +96,7 @@ ms.locfileid: "70063903"
 <td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong></em>ModernStandyWoLMagicPacket</strong></p></td>
+<td align="left"><p><strong></em>ModernStandbyWoLMagicPacket</strong></p></td>
 <td align="left"><p>当系统处于<i>S0ix</i>电源状态时唤醒幻数据包</p></td>
 <td align="left"><p>0（默认值）</p></td>
 <td align="left"><p>Disabled</p></td>
