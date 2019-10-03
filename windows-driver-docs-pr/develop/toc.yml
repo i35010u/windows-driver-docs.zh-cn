@@ -4,6 +4,8 @@
   items:
     - name: 通用驱动程序入门
       href: getting-started-with-universal-drivers.md
+    - name: 驱动程序包隔离
+      href: driver-isolation.md
     - name: 生成通用 Windows 驱动程序
       href: building-a-universal-driver.md
     - name: 验证通用驱动程序
