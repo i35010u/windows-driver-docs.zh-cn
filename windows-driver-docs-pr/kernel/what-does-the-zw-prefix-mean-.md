@@ -69,7 +69,7 @@ Windows 本机系统服务例程具有以前缀开头的名称**Nt**并**Zw**。
 </tr>
 <tr class="even">
 <td><p><strong>采购订单</strong></p></td>
-<td><p>电源管理器</p></td>
+<td><p>采购订单 电源管理器</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate" data-raw-source="[&lt;strong&gt;PoSetPowerState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)"><strong>PoSetPowerState</strong></a></p></td>
 </tr>
 <tr class="odd">
