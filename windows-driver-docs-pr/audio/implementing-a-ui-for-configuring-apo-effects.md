@@ -1,71 +1,71 @@
 ---
 title: 实现用于配置 APO 效果的 UI
-description: 本主题介绍如何实现用户可以配置效果的用户界面 (UI)。
+description: 本主题介绍如何实现允许用户配置效果的用户界面（UI）。
 ms.assetid: C8D1CB20-2E77-430A-9933-4BDFFB997158
-ms.date: 11/08/2017
+ms.date: 10/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5e67efffcf1228841b3bb454571d33c85d2c04
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5fef103f27a884bb808e99878e8a511b3b17617
+ms.sourcegitcommit: bff7fdcac628f8b62bd9df2658ca56301d1f8b07
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359932"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030804"
 ---
 # <a name="implementing-a-ui-for-configuring-apo-effects"></a>实现用于配置 APO 效果的 UI
 
-
-本主题介绍如何实现用户可以配置效果的用户界面 (UI)。 有关 a p o s 的常规信息，请参阅[音频处理对象体系结构](audio-processing-object-architecture.md)。
+本主题介绍如何实现允许用户配置效果的用户界面（UI）。 有关的一般信息，请参阅[音频处理对象体系结构](audio-processing-object-architecture.md)。
 
 ## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概述
 
+> [!NOTE]
+> Windows 10 版本1809和 PropPageExtensions 项目不再出现在 Sysvad 示例中后，不再支持此自定义项。 对于更高版本的 Windows，推荐的方法是创建硬件支持应用。 有关详细信息，请参阅[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](https://docs.microsoft.com/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers)。
+>
 
-APO 通常提供一个 UI，用户可以配置效果。 例如，此 UI 可以允许用户从多个不同的信号处理算法中进行选择。 Microsoft 为标准的 Windows 不提供配置 UI。 如果自定义 APO 有用户可访问的设置，开发人员必须提供相应的配置 UI。 配置 UI 安装设备驱动程序和关联的 APO 注册过程。
+APO 通常提供允许用户配置效果的 UI。 例如，可以通过此 UI 从几个不同的信号处理算法中进行选择。 Microsoft 为标准 Windows 用户提供了一个配置 UI。 如果自定义 APO 具有用户可访问的设置，则开发人员必须提供相应的配置 UI。 配置 UI 与设备驱动程序一起安装，并由注册过程与 APO 关联。
 
-**请注意**  制造商可以使用自定义属性页，旨在支持其不替换此属性页。 制造商也可以选择为不具有任何用户界面，如果其自定义 APO 不具有可访问用户的设置。
+**请注意**   制造商可以将此属性页替换为设计用于支持其所在用户的自定义属性页。 如果自定义 APO 没有用户可访问的设置，则制造商也可以选择不包含任何 UI。
 
- 
+"标准增强功能" 选项卡如下所示。
 
-标准的增强功能选项卡如下所示。
+![显示四个效果（如低音增强）的 "扬声器属性" 显示 "增强" 选项卡](images/audio-apo-enhancements-properties.png)
 
-![演讲者属性显示的增强功能选项卡的产品/服务的四个效果，例如低音增强](images/audio-apo-enhancements-properties.png)
+有三个选项可用于配置增强 UI：
 
-有三个选项可用于配置用户界面的增强功能：
+1. 指定 no PKEY @ no__t-0SYSFX @ no__t-1UiClsid all –不会显示任何增强选项卡。
+2. 指定 PKEY @ no__t-0SYSFX @ no__t-1UiClsid 等于标准内置增强属性页 UI 的已知 CLSID-将显示内置的增强功能选项卡。
+3. 创建自己的属性页，并将其设置为自定义 CLSID，并将 PKEY @ no__t-0SYSFX @ no__t-1UiClsid 设置为等于自定义 CLSID-将显示自定义选项卡。
+此屏幕截图显示了 SYSVAD Swap APO 示例的自定义属性页。
 
-1. 指定没有主键\_SYSFX\_UiClsid 根本 – 没有增强功能选项卡将显示。
-2. 指定主键\_SYSFX\_UiClsid 等于为标准的内置增强功能属性页 UI-已知的 CLSID 的情况下将显示内置的增强功能选项卡。
-3. 使用您自己自定义的 CLSID 创建属性页并设置主键\_SYSFX\_UiClsid 等于您自定义的 CLSID-的情况下将显示自定义选项卡。
-此屏幕截图显示了 SYSVAD 交换 APO 示例的自定义属性页。
+![显示系统效果的扬声器属性示例选项卡提供系统效果配置](images/audio-apo-speaker-properties.png)
 
-![演讲者属性显示系统效果示例提供了系统配置的效果的选项卡](images/audio-apo-speaker-properties.png)
+此屏幕截图显示控制面板中的 "声音" 小程序。
 
-此屏幕截图显示在控制面板中的声音小程序。
+![显示耳机虚拟音频设备的声音属性](images/audio-apo-sound-properties.png)
 
-![声音属性显示耳机虚拟音频设备](images/audio-apo-sound-properties.png)
+将新属性页添加到控制面板中的 "声音" 小程序，这涉及到向系统提供的声音小程序添加新的选项卡。 这意味着，当注册并初始化自定义的时，它们的属性页将与系统提供的增强功能页面一起使用。 跨两个不同的属性页实现通信是非常困难且复杂的。 "增强" 页上的某些默认设置可能会与新属性页上的功能设置发生冲突。
 
-将新的属性页添加到控制面板中的声音小程序，涉及到系统提供的声音小程序中添加一个新选项卡。 这意味着，当自定义未注册和初始化，其属性页将可用以及系统提供的增强功能页。 很困难，而且复杂而无法在两个不同未的属性页之间实现通信。 就可以增强功能页上的某些默认设置将与新的属性页上的功能设置冲突。
+因此，最实用的方法是实现单独的 UI，用于配置为替换系统提供的中所开发的自定义。
 
-因此此处的最实用方法是用于配置开发要替换系统提供的未自定义未实现单独的 UI。
-
-## <a name="span-idhowtoimplementauiforconfiguringtheeffectsspanspan-idhowtoimplementauiforconfiguringtheeffectsspanspan-idhowtoimplementauiforconfiguringtheeffectsspanhow-to-implement-a-ui-for-configuring-the-effects"></a><span id="How_to_Implement_a_UI_for_Configuring_the_Effects"></span><span id="how_to_implement_a_ui_for_configuring_the_effects"></span><span id="HOW_TO_IMPLEMENT_A_UI_FOR_CONFIGURING_THE_EFFECTS"></span>如何配置效果实现用户界面
+## <a name="span-idhow_to_implement_a_ui_for_configuring_the_effectsspanspan-idhow_to_implement_a_ui_for_configuring_the_effectsspanspan-idhow_to_implement_a_ui_for_configuring_the_effectsspanhow-to-implement-a-ui-for-configuring-the-effects"></a><span id="How_to_Implement_a_UI_for_Configuring_the_Effects"></span><span id="how_to_implement_a_ui_for_configuring_the_effects"></span><span id="HOW_TO_IMPLEMENT_A_UI_FOR_CONFIGURING_THE_EFFECTS"></span>如何实现用于配置效果的 UI
 
 
-音频终结点的属性存储提供了系统效果的 UI APO 的 CLSID。 音频的控制面板项从的音频的终结点的当前上下文中获取此 CLSID。 当音频控制面板项启动相应的自定义系统影响 UI 时，它将其传递的音频的终结点。 用户界面可以访问终结点属性存储读取和调整属性的设置。 属性存储通知也注册 UI 应在其他程序中修改的设置的情况下。
+系统效果的 UI APO 的 CLSID 可从音频终结点的属性存储中获取。 "音频控制面板" 项从当前位于上下文的音频终结点获取此 CLSID。 当 "音频控制面板" 项启动适当的自定义系统效果 UI 时，它会将它传递给音频终结点。 然后，UI 可以访问终结点属性存储区来读取和调整属性设置。 UI 还应注册属性存储通知，以防其他某个程序修改设置。
 
-如果您使用自定义 APO 设计**CBaseAudioProcessingObject**基本类和包含系统提供不，您可以替换默认属性页。
+如果使用**CBaseAudioProcessingObject**基类设计自定义 APO 并包装系统提供的 "中"，则可以替换默认属性页。
 
-Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 这是与系统提供的系统效果 APO 相关联的默认属性页。 供应商可以通过实现和注册自定义属性页提供程序使用自定义页替换此默认属性页。
+Microsoft 为控制面板上的 "声音" 小程序提供了增强属性页。 这是与系统提供的系统效果 APO 关联的默认属性页。 供应商可以通过实现和注册自定义属性页提供程序，将此默认属性页替换为自定义页。
 
-请参阅[有关属性表](https://go.microsoft.com/fwlink/p/?linkid=106006)有关如何替换增强功能的属性页的信息。
+有关如何替换增强属性页面的信息，请参阅[关于属性表](https://go.microsoft.com/fwlink/p/?linkid=106006)。
 
-若要设计和实现自定义属性页提供程序时，执行以下步骤。
+若要设计和实现自定义属性页提供程序，请执行以下步骤。
 
-1.  创建自定义属性页。 请参阅[创建属性表](https://go.microsoft.com/fwlink/p/?linkid=106006)有关详细信息。
+1. 创建自定义属性页。 有关详细信息，请参阅[创建属性表](https://go.microsoft.com/fwlink/p/?linkid=106006)。
 
-2.  打包为 DLL 的属性页。 请参阅[创建和使用 DLL](https://go.microsoft.com/fwlink/p/?linkid=106014)打包为 DLL 自定义页面的详细信息的主题。
+2. 将你的属性页打包为一个 DLL。 有关将自定义页打包为 DLL 的详细信息，请参阅[创建和使用 dll](https://go.microsoft.com/fwlink/p/?linkid=106014)主题。
 
-3.  修改你[INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)以安装并注册属性页的 DLL。
+3. 修改[INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)，为属性页安装和注册 DLL。
 
-    下面的 INF 文件片段演示如何修改 INF 文件以注册自定义属性页。
+    以下 INF 文件片段显示了如何修改 INF 文件来注册自定义属性页。
 
     ```inf
     [SysFx.AddReg]
@@ -77,7 +77,7 @@ Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 
     SYSFX_UI_CLSID     = "{YOUR GUID GOES HERE}"
     ```
 
-    并且由于前面的 INF 文件说明，安装过程修改相应的注册表项，如下所示。
+    作为上述 INF 文件说明的结果，安装过程将修改相应的注册表项，如下所示。
 
     ```text
     HKLM
@@ -95,11 +95,11 @@ Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 
                          "{YOUR CLSID GOES HERE}"
     ```
 
-    默认属性页的 CLSID 将被替换为自定义属性页的 CLSID。
+    默认属性页的 CLSID 将替换为自定义属性页的 CLSID。
 
-4.  在全局 AddReg 部分 INF 文件中，com 注册 CLSID
+4. 在 INF 文件的全局 AddReg 部分中，将 CLSID 注册到 COM。
 
-    示例 INF 文件部分，摘自 SYSVAD tabletaudiosample.inf 文件，演示如何执行此操作。 \[SWAPAPO。AddReg\]部分位于全局 AddReg 部分。 \[SWAPAPO。I.Association0.AddReg\] AddReg 部分的一部分为特定 KSCATEGORY\_音频接口。
+    从 SYSVAD tabletaudiosample 文件中获取的示例 INF 文件部分显示了如何执行此操作。 0SWAPAPO. AddReg @ no__t 节位于 global AddReg 部分中。 @no__t 对于特定 ADDREG @ KSCATEGORY-NO__T 接口，\[SWAPAPO. Association0. AddReg @ no__t 是2AUDIO 节的一部分。
 
     ```inf
     [SWAPAPO.AddReg]
@@ -122,13 +122,13 @@ Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 
      
     ```
 
-**使用或包装 windows 效果**
+**使用或环绕 windows 效果**
 
-如果要直接使用 Windows 提供效果，或将它们封装，，完成以下步骤：
+如果直接使用 Windows 提供的效果或将其换行，请完成以下步骤：
 
-1.  按照上面的步骤 3，效果属性存储区中注册您的 CLSID。
+1. 按照上面的步骤3操作，在 "效果" 属性存储中注册 CLSID。
 
-2.  按照以上步骤 4，以向 COM 注册 CLSID 此外，您将需要调用通过提供的 wdmaudio.inf *Include*并*需要*语句中将 INF 文件如下所示。
+2. 按照上述步骤4，将 CLSID 注册到 COM。 此外，还需要通过 INF 文件中的*Include 和 Include*语句来调用提供的*wdmaudio，如下*所示。
 
     ```cpp
     [YourGlobalSection]
@@ -136,55 +136,12 @@ Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 
     Needs=mssysfx.CopyFilesAndRegister
     ```
 
-## <a name="span-idsysvadswapapouisamplecodespanspan-idsysvadswapapouisamplecodespanspan-idsysvadswapapouisamplecodespansysvad-swapapo-ui-sample-code"></a><span id="SYSVAD_SwapAPO_UI_Sample_Code"></span><span id="sysvad_swapapo_ui_sample_code"></span><span id="SYSVAD_SWAPAPO_UI_SAMPLE_CODE"></span>SYSVAD SwapAPO UI 示例代码
+## <a name="span-idsysvad_swapapo_ui_sample_codespanspan-idsysvad_swapapo_ui_sample_codespanspan-idsysvad_swapapo_ui_sample_codespansysvad-swapapo-ui-sample-code"></a><span id="SYSVAD_SwapAPO_UI_Sample_Code"></span><span id="sysvad_swapapo_ui_sample_code"></span><span id="SYSVAD_SWAPAPO_UI_SAMPLE_CODE"></span>SYSVAD SwapAPO UI 示例代码
 
 
-使用 SYVAD 交换 APO 代码示例作为模板可加速自定义 APO 开发过程。 有关交换 APO 示例的常规信息，请参阅[实现音频处理对象](implementing-audio-processing-objects.md)。
+使用 SYVAD Swap APO 代码示例作为模板，可以加快自定义 APO 开发过程。 有关 SWAP APO 示例的常规信息，请参阅[实现音频处理对象](implementing-audio-processing-objects.md)。
 
-**示例代码**
-
-有六个项目 SYSVAD 示例 PropPageExtensions 项目中的包含一个示例 APO 属性页的示例代码。
-
-|                    |                                                            |
-|--------------------|------------------------------------------------------------|
-| **Project**        | **说明**                                            |
-| PropPageExtensions | 例如自定义属性页 UI 扩展插件示例的代码 |
-
- 
-
-下面的代码示例可查看在开发自定义 UI。
-
-|                         |                                                                                                      |
-|-------------------------|------------------------------------------------------------------------------------------------------|
-| **名称**                | **说明**                                                                                      |
-| SwapPropPage.cpp        | CSwapPropPage 类的实现                                                            |
-| CplExt.cpp              | 控制面板扩展 DLL 导出的实现                                       |
-| UIWidgets.cpp           | CUIWidget 和派生的类的实现                                                      |
-| AdvEndpointPropPage.cpp | CAdvEndpointPropPage 的实现                                                               |
-| Parts.cpp               | CPart 和派生的类的实现。                                                         |
-| TopologyExaminers.cpp   | 用于支持检查音频拓扑中的，例如连接器和终结点的方法的实现。 |
-
- 
-
-属性页扩展示例中使用以下标头文件。
-
-|                       |
-|-----------------------|
-| **名称**              |
-| swapproppage.h        |
-| uiwidgets.h           |
-| advendpointproppage.h |
-| parts.h               |
-| topologyexaminers.h   |
-
- 
-
-若要熟悉 PropPageExtensions 示例，可能想要查看标头，然后检查与属性页上定义文本相关的源代码。 如果您的要求是类似于示例代码提供，你可能能够重复使用很多代码创建和更新的自定义 UI 页。
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [音频处理对象体系结构](audio-processing-object-architecture.md)  
 [Windows 音频处理对象](windows-audio-processing-objects.md)  
 [实现音频处理对象](implementing-audio-processing-objects.md)  
-
-
-

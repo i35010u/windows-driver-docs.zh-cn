@@ -1,11 +1,11 @@
 ---
 title: pcr
-description: Pcr 扩展特定处理器上显示的当前状态的处理器控件区域 (PCR)。
+description: Pcr 扩展显示特定处理器上的处理器控制区域（PCR）的当前状态。
 ms.assetid: a9d82aa4-57de-4170-80fd-b7cd5b82f1e5
 keywords:
-- 处理器控件区域 (PCR)
+- 处理器控制区域（PCR）
 - pcr Windows 调试
-ms.date: 05/23/2017
+ms.date: 10/07/2019
 topic_type:
 - apiref
 api_name:
@@ -13,29 +13,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 018741ae2a8f28b7b29c55ca10b00f6564a5c5f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fefa5fa4d1d96ead2184c517e89d564535bc2388
+ms.sourcegitcommit: bff7fdcac628f8b62bd9df2658ca56301d1f8b07
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334408"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030800"
 ---
 # <a name="pcr"></a>!pcr
 
 
-**！ Pcr**扩展特定处理器上显示的当前状态的处理器控件区域 (PCR)。
+**！ Pcr**扩展显示特定处理器上的处理器控制区域（pcr）的当前状态。
 
 ```dbgcmd
 !pcr [Processor]
 ```
 
-## <a name="span-idddkpcrdbgspanspan-idddkpcrdbgspanparameters"></a><span id="ddk__pcr_dbg"></span><span id="DDK__PCR_DBG"></span>参数
+## <a name="span-idddk__pcr_dbgspanspan-idddk__pcr_dbgspanparameters"></a><span id="ddk__pcr_dbg"></span><span id="DDK__PCR_DBG"></span>Parameters
 
 
-<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *Processor*   
-指定要检索的 PCR 信息的处理器。 如果*处理器*是省略，使用当前的处理器。
+<span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
+指定要从中检索 PCR 信息的处理器。 如果省略了*processor* ，则使用当前处理器。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+> [!NOTE]
+> 此命令目前不受支持，可能会显示不正确的输出。
+>
+
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -45,27 +49,27 @@ ms.locfileid: "63334408"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86.dll</p></td>
+<td align="left"><p>Kdextx86</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-PCR 和 PRCB 有关的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。
+有关 PCR 和 PRCB 的信息，请参阅*Microsoft Windows 内部机制*，标记为 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-处理器控制块 (PRCB) 是 PCR 的扩展。 可以使用显示[ **！ prcb** ](-prcb.md)扩展。
+处理器控制块（PRCB）是 PCR 的扩展。 它可以与[ **！ prcb**](-prcb.md)扩展名一起显示。
 
-下面是举例 **！ pcr**扩展 x86 目标计算机：
+以下是 x86 目标计算机上的 " **！ pcr** " 扩展的示例：
 
 ```dbgcmd
 kd> !pcr 0
@@ -96,7 +100,7 @@ KPCR for Processor 0 at ffdff000:
                 DpcQueue:  0x80168ee0 0x80100d04 ntoskrnl!KiTimerExpiration
 ```
 
-在此显示中的条目之一显示中断请求级别 (IRQL)。 **！ Pcr**扩展会显示当前 IRQL，但当前 IRQL 通常并不是更感兴趣。 已存在的 bug 检查或调试器连接之前，只需 IRQL 是更有趣。 此情况下将显示[ **！ irql**](-irql.md)，这只是运行 Windows Server 2003 或更高版本的 Windows 计算机上可用。
+此显示中的其中一项显示中断请求级别（IRQL）。 **！ Pcr**扩展显示当前的 irql，但当前的 irql 通常不太重要。 与 bug 检查或调试器连接相同的 IRQL 更有趣。 这由[ **！ irql**](-irql.md)显示，后者仅在运行 windows Server 2003 或更高版本的 windows 的计算机上可用。
 
 
 
