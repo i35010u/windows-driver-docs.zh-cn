@@ -3,17 +3,17 @@ title: 设备和驱动程序安装概述
 description: 设备和驱动程序安装概述
 ms.assetid: 5f29635b-c41b-40d1-8b83-b7f5bc71413b
 keywords:
-- 设备安装程序 WDK 设备安装，有关设备安装
-- 有关设备安装的设备安装 WDK，
-- 安装设备 WDK，有关设备安装
+- 设备安装程序 WDK 设备安装，关于设备安装
+- 设备安装 WDK，关于设备安装
+- 安装设备 WDK，关于设备安装
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: e26f6c7dff3d9577cc15c13f2c35c65cec549ba1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: cd853d1644253043b01273b5533523785bec5d72
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379450"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007590"
 ---
 # <a name="overview-of-device-and-driver-installation"></a>设备和驱动程序安装概述
 
@@ -21,19 +21,19 @@ ms.locfileid: "67379450"
 
 
 
-Windows 提供了要安装的设备和驱动程序组件。 [系统提供的设备安装组件](system-provided-device-installation-components.md)适用于[供应商提供组件](vendor-provided-device-installation-components.md)安装设备。
+Windows 提供了用于安装设备和驱动程序的组件。 [系统提供的设备安装组件](system-provided-device-installation-components.md)使用[供应商提供的组件](vendor-provided-device-installation-components.md)来安装设备。
 
-Windows 安装设备时在系统重新启动和系统重新启动后的任何时候用户插入插 (PnP) 设备 （或手动安装非 PnP 设备） 时。 支持的即插即用，Windows 将继续基于在系统中，而不是用于结构化围绕驱动程序安装的设备的设备安装。 例如，而不是加载驱动程序的一组，并使这些驱动程序检测到它们支持的设备，Windows 确定系统和负载中存在的设备，并调用每个设备驱动程序。 驱动程序，如 ACPI 驱动程序和其他 PnP[总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)帮助 Windows 确定哪些设备是否存在。
+当用户插入即插即用（PnP）设备（或手动安装非 PnP 设备）后，Windows 将在系统重新启动时和在系统重新启动之后的任何时间安装设备。 为支持 PnP，Windows 将继续安装基于系统中设备的设备，而不是围绕驱动程序构建安装。 例如，Windows 会确定系统中存在的设备，并为每个设备加载并调用驱动程序，而不是加载一组驱动程序并使这些驱动程序检测到它们支持的设备。 诸如 ACPI 驱动程序和其他 PnP[总线驱动](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)程序之类的驱动程序有助于 Windows 确定哪些设备存在。
 
 ## <a name="in-this-section"></a>本节内容
 
 
--   [如何将 Windows 安装的设备](how-windows-installs-devices.md)
+-   [Windows 如何安装设备](how-windows-installs-devices.md)
 -   [系统提供的设备安装组件](system-provided-device-installation-components.md)
 -   [供应商提供的设备安装组件](vendor-provided-device-installation-components.md)
 -   [设备安装文件](device-installation-files.md)
 -   [设备安装类型](device-installation-types.md)
--   [Windows 中如何选择驱动程序](how-setup-selects-drivers.md)
+-   [Windows 如何选择驱动程序](how-setup-selects-drivers.md)
 
 有关设备管理和安装的详细信息，请参阅[驱动程序安装](https://go.microsoft.com/fwlink/p/?linkid=70230)网站。
 

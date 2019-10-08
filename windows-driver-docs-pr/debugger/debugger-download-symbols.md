@@ -1,50 +1,50 @@
 ---
 title: 下载用于调试的 Windows 符号包
-description: 此页提供有关用于调试 Windows 符号包下载。
+description: 本页提供用于调试的 Windows 符号包的下载。
 keywords:
-- 下载 Windows 调试
+- Windows 调试下载
 - WinDbg
 - 下载
 - Symbols
 - 下载符号
 ms.date: 04/26/2018
-ms.localizationpriority: medium
-ms.openlocfilehash: e7397b2464a590d30354342e86193a9d6a202317
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: High
+ms.openlocfilehash: cdda072873ead99d1636352092146eec94fea3fb
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361407"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007558"
 ---
 # <a name="windows-symbol-packages"></a>Windows 符号程序包
 
-符号文件使调试代码更加容易。 若要获取 Windows 符号的最简单方法是使用[Microsoft 公共符号服务器](microsoft-public-symbols.md)。 符号服务器根据需要为调试工具提供符号。 从符号服务器下载符号文件后，该文件将缓存在本地计算机上，以供快速访问。 
+符号文件使调试代码更加容易。 若要获取 Windows 符号，最简单的方法是使用[Microsoft 公共符号服务器](microsoft-public-symbols.md)。 符号服务器根据需要为调试工具提供符号。 从符号服务器下载符号文件后，该文件将缓存在本地计算机上，以供快速访问。 
 
 
-## <a name="symbol-package-deprecation"></a>符号包不推荐使用
+## <a name="symbol-package-deprecation"></a>符号包弃用
 
 > [!IMPORTANT]
-> 我们不能再为 Windows 发布脱机符号包。
+> 我们不再发布 Windows 的脱机符号包。
 >
-> 我们为 Windows 发布的更新的频率，使用调试的符号我们通过此页上的包发布 Windows 会快速进行过期。 
-> 我们已显著改进的联机[Microsoft 符号服务器](microsoft-public-symbols.md)通过移动这是基于 Azure 的符号存储区中和符号的所有 Windows 版本和更新有可用。 
-> 您可以找到更多有关这在此[博客文章](https://blogs.msdn.microsoft.com/windbg/2017/10/18/update-on-microsofts-symbol-server/)。 
+> 随着我们发布 Windows 更新的步调，通过此页上的包发布的 Windows 调试符号很快就会过时。 
+> 我们已将此项转换为基于 Azure 的符号存储，对联机[Microsoft 符号服务器](microsoft-public-symbols.md)进行了重大改进，其中提供了所有 Windows 版本和更新的符号。 
+> 可在此[博客文章](https://blogs.msdn.microsoft.com/windbg/2017/10/18/update-on-microsofts-symbol-server/)中找到有关此内容的详细信息。 
 >
 > 有关如何为未连接到 Internet 的计算机检索符号的信息，请参阅[通过 SymChk 使用清单文件](using-a-manifest-file-with-symchk.md)。
 
-## <a name="symbol-resources-and-feedback"></a>符号的资源和反馈
+## <a name="symbol-resources-and-feedback"></a>符号资源和反馈
 
 若要了解有关使用符号和调试的详细信息，请参阅[符号和符号文件](symbols-and-symbol-files.md)。
 
 有关调试问题的帮助，请参阅[调试资源](debugging-resources.md)。 
 
-我们感兴趣有关符号的反馈。 请邮件建议或 bug 报告给[ windbgfb@microsoft.com ](mailto:windbgfb@microsoft.com)。 我们不会通过此地址提供技术支持，但是你的反馈将帮助我们规划以后对符号的更改，并使它们以后对你更有用。 
+我们对有关符号的反馈感兴趣。 [@No__t-1 的](mailto:windbgfb@microsoft.com)邮件建议或 bug 报告。 我们不会通过此地址提供技术支持，但是你的反馈将帮助我们规划以后对符号的更改，并使它们以后对你更有用。 
 
 ## <a name="looking-for-related-downloads"></a>查找相关下载？
 
 - [下载 Windows 调试工具](debugger-download-tools.md)
 
-- [下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
+- [下载 Windows 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 
 - [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 

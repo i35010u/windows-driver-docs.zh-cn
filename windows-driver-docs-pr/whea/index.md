@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 9614a4c05281277c7e3611338c320935f7b55f8b
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: af2d98f959ee24bb734a898cf52075b898b7cf5b
+ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473539"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72021051"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows 硬件错误体系结构 (WHEA) 设计指南
 
@@ -32,10 +32,7 @@ ms.locfileid: "68473539"
 
 - 用户模式应用程序如何与 WHEA 平台通信。 有关详细信息，请参阅 [Windows 硬件错误体系结构感知型用户模式应用程序](windows-hardware-error-architecture-aware-user-mode-applications.md)。
 
-若要更详细地了解 WHEA 以及如何在硬件平台上实现 WHEA，请参阅“WHEA 平台设计指南”。 平台供应商可以通过向 <wheafb@microsoft.com> 发送电子邮件获取此设计指南。
-
-> [!NOTE]
-> Windows Vista、Windows Server 2008 以及更高版本的 Windows 操作系统支持 WHEA。 有关硬件错误报告（在 Windows Vista 之前的 Microsoft Windows 版本上支持），请参阅[计算机检查体系结构 (MCA)](https://docs.microsoft.com/previous-versions/windows/hardware/mca/ff540685(v=vs.85))。
+若要更详细地了解 WHEA 以及如何在硬件平台上实现 WHEA，请参阅 **WHEA 平台设计指南**。 平台供应商可以通过向 <wheafb@microsoft.com> 发送电子邮件获取此设计指南。
 
 ## <a name="in-this-section"></a>本部分内容
 

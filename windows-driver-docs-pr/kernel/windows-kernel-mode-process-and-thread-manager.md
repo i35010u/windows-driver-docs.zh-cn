@@ -2,29 +2,29 @@
 title: Windows 内核模式进程和线程管理器
 description: Windows 内核模式进程和线程管理器
 ms.assetid: 4053c73e-190d-4ffe-8db2-f531d120ba81
-ms.localizationpriority: medium
+ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 64647f57032067673862efca79ca2c594c0617b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.openlocfilehash: e494f2d3021733363fd9bea8b8a312798473e53f
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386874"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007580"
 ---
 # <a name="windows-kernel-mode-process-and-thread-manager"></a>Windows 内核模式进程和线程管理器
 
 
-一个*进程*是当前在 Windows 中运行的软件程序。 每个进程有一个 ID，用于标识它的数字。 一个*线程*是一个对象，标识哪些计划的一部分运行。 每个线程有一个 ID，用于标识它的数字。
+*进程*是当前在 Windows 中运行的软件程序。 每个进程都有一个 ID 和一个标识该 ID 的数字。 *线程*是标识程序中正在运行的部分的对象。 每个线程都有一个 ID 和一个标识该 ID 的数字。
 
-一个进程可以包含多个线程。 线程的目的是要分配处理器时间百分比。 在具有一个处理器的计算机，可以分配多个线程，但只有一个线程可以运行一次。 每个线程仅在短时间运行，然后执行将传递给下一个线程，为用户提供多个一件事同时发生动作的视觉效果。 在具有多个处理器的计算机，真正的多线程处理可能会发生。 如果应用程序具有多个线程，线程可以同时在不同的处理器上运行。
+一个进程可以有多个线程。 线程的用途是分配处理器时间。 在具有一个处理器的计算机上，可以分配多个线程，但是一次只能运行一个线程。 每个线程仅运行一小段时间，然后将执行传递到下一个线程，为用户提供一次发生多项事情的假象。 在具有多个处理器的计算机上，可以进行真正的多线程处理。 如果应用程序具有多个线程，则线程可以在不同的处理器上同时运行。
 
-Windows 内核模式进程和线程管理器处理的过程中的所有线程的执行。 是否有一个处理器或更多，但是必须谨慎驱动程序以确保所有线程过程的经过专门都设计，因此，无论何种顺序处理线程的编程中，您的驱动程序将正常运行。
+Windows 内核模式进程和线程管理器处理进程中的所有线程的执行。 无论您有一个处理器还是更多，都必须在驱动程序编程中进行小心，以确保进程的所有线程都被设计为无论处理线程的顺序如何，您的驱动程序都将正常运行。
 
-如果来自不同进程的线程尝试在同一时间使用同一资源，可能出现问题。 Windows 提供了多种方法来避免此问题。 确保来自不同进程的线程不会接触相同资源的方法称为*同步*。 有关同步的详细信息，请参阅[同步技术](synchronization-techniques.md)。
+如果来自不同进程的线程尝试同时使用同一资源，则可能会出现问题。 Windows 提供了几种方法来避免此问题。 确保不同进程中的线程不触及同一资源的方法称为*同步*。 有关同步的详细信息，请参阅[同步技术](synchronization-techniques.md)。
 
-向进程和线程管理器提供直接接口的例程都通常带有前缀字母"**Ps**"; 例如， **PsCreateSystemThread**。 有关内核 DDIs 的列表，请参阅[Windows 内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/)。
+为进程和线程管理器提供直接接口的例程通常以字母 "**Ps**" 为前缀;例如， **PsCreateSystemThread**。 有关内核 DDIs 的列表，请参阅[Windows 内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/)。
 
-此组的指导原则适用于这些回调例程：
+这组指导原则适用于以下回调例程：
 
 [_PCREATE_PROCESS_NOTIFY_ROUTINE_](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pcreate_process_notify_routine)
 
@@ -34,29 +34,29 @@ Windows 内核模式进程和线程管理器处理的过程中的所有线程的
 
 [_PLOAD_IMAGE_NOTIFY_ROUTINE_](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pload_image_notify_routine)
 
--    保持通知例程简短和简单。
--    不执行到用户模式服务的调用来验证进程、 线程或图像。 
--    不执行注册表调用。 
--    不进行阻止和/或进程间通信 (IPC) 函数调用。 
--    不要同步与其他线程，因为它可能会导致重新进入死锁。 
--    使用[系统工作线程数](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-worker-threads)尤其是工作涉及将工作排队到： 
-        -    API 或 API 的调用到其他进程降低速度。
-        -    任何阻塞行为，这可能中断核心服务中的线程。 
--    周密的内核模式堆栈使用情况的最佳做法。 有关示例，请参阅[如何使我的驱动程序的内核模式堆栈不足？](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613940(v=vs.85))并[重要驱动程序的概念和提示](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614604(v=vs.85))。
+-    将通知例程保持简短且简单。
+-    请勿调用用户模式服务来验证进程、线程或映像。 
+-    请勿调用注册表。 
+-    不要发出阻塞和/或进程间通信（IPC）函数调用。 
+-    不要与其他线程同步，因为这可能会导致重入死锁。 
+-    使用[系统工作线程](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-worker-threads)来排队工作，尤其是涉及的工作： 
+        -    调入其他进程的慢速 API 或 API。
+        -    可能会中断核心服务中的线程的任何阻止行为。 
+-    深思熟虑后得出内核模式堆栈使用的最佳实践。 有关示例，请参阅[如何实现使我的驱动程序不会在内核模式堆栈外运行？](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613940(v=vs.85))和[关键驱动程序的概念和提示](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614604(v=vs.85))。
 
 
 ## <a name="subsystem-processes"></a>子系统进程
 
 
-从 Windows 10 开始，Windows 子系统用于 Linux (WSL) 使用户能够与其他 Windows 应用程序一同上 Windows，运行本机 Linux ELF64 二进制文件。 有关 WSL 体系结构和运行的二进制文件所需的用户模式和内核模式组件的信息，请参阅文章在[适用于 Linux 的 Windows 子系统](https://go.microsoft.com/fwlink/p/?linkid=838012)博客。
+从 Windows 10 开始，适用于 Linux 的 Windows 子系统（WSL）使用户能够在 Windows 上以及其他 Windows 应用程序上运行本机 Linux ELF64 二进制文件。 有关运行二进制文件所需的 WSL 体系结构和用户模式和内核模式组件的信息，请参阅[适用于 Linux 的 Windows 子系统](https://go.microsoft.com/fwlink/p/?linkid=838012)博客上的文章。
 
-一个组件是*子系统过程*承载未修改的用户模式 Linux 二进制文件，例如/bin/bash。 子系统进程不包含与 Win32 进程，如进程环境块 (PEB) 和线程环境块 (TEB) 相关联的数据结构。 对于的子系统进程，系统调用和用户模式异常将被分派给配对的驱动程序。
+其中一个组件是承载未修改的用户模式 Linux 二进制文件（如/bin/bash。）的*子系统进程*。 子系统进程不包含与 Win32 进程关联的数据结构，例如进程环境块（PEB）和线程环境块（TEB）。 对于子系统进程，系统调用和用户模式异常将被调度到配对的驱动程序中。
 
-以下是对的更改[进程和线程管理器例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)为了支持子系统进程：
+下面是对[进程和线程管理器例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)的更改，以便支持子系统进程：
 
--   WSL 类型为由**SubsystemInformationTypeWSL**中的值[**子系统\_信息\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_subsystem_information_type)枚举。 驱动程序可以调用[ **NtQueryInformationProcess** ](https://docs.microsoft.com/windows/desktop/api/winternl/nf-winternl-ntqueryinformationprocess)并[ **NtQueryInformationThread** ](https://docs.microsoft.com/windows/desktop/api/winternl/nf-winternl-ntqueryinformationthread)以确定基本子系统。 这些调用将返回**SubsystemInformationTypeWSL** WSL 的。
--   其他内核模式驱动程序可以获取有关的通知子系统进程创建/删除通过注册通过其回调例程[ **PsSetCreateProcessNotifyRoutineEx2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreateprocessnotifyroutineex2)调用。 若要获取有关线程创建/删除的通知，驱动程序可以调用[ **PsSetCreateThreadNotifyRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreatethreadnotifyroutineex)，并指定**PsCreateThreadNotifySubsystems**作为通知的类型。
--   [ **PS\_创建\_通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_ps_create_notify_info)结构已扩展为包括**IsSubsystemProcess**成员，指示非 Win32 子系统。 其他成员，如**的文件对象**，**映像文件名**， **CommandLine**指示子系统过程有关的其他信息。 有关这些成员的行为的信息，请参阅[**子系统\_信息\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_subsystem_information_type)。
+-   WSL 类型由[**子系统 @ no__t-3INFORMATION @ no__t-4TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_subsystem_information_type)枚举中的**SubsystemInformationTypeWSL**值指示。 驱动程序可以调用[**NtQueryInformationProcess**](https://docs.microsoft.com/windows/desktop/api/winternl/nf-winternl-ntqueryinformationprocess)和[**NtQueryInformationThread**](https://docs.microsoft.com/windows/desktop/api/winternl/nf-winternl-ntqueryinformationthread)来确定基础子系统。 这些调用返回 WSL 的**SubsystemInformationTypeWSL** 。
+-   其他内核模式驱动程序可以通过[**PsSetCreateProcessNotifyRoutineEx2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreateprocessnotifyroutineex2)调用注册其回调例程来接收有关子系统进程创建/删除的通知。 若要获取有关线程创建/删除的通知，驱动程序可以调用[**PsSetCreateThreadNotifyRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetcreatethreadnotifyroutineex)，并将**PsCreateThreadNotifySubsystems**指定为通知的类型。
+-   [**PS @ no__t-2CREATE @ no__t-3NOTIFY @ no__t-4INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_ps_create_notify_info)结构已扩展为包含一个**IsSubsystemProcess**成员，该成员指示除 Win32 以外的子系统。 其他成员（如**FileObject**、 **ImageFileName**、**命令行**）指示有关子系统进程的其他信息。 有关这些成员的行为的信息，请参阅[**no__t-2INFORMATION @ no__t-3TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ne-ntddk-_subsystem_information_type)。
 
  
 

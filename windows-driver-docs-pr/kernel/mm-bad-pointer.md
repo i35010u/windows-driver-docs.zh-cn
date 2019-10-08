@@ -2,14 +2,14 @@
 title: Windows 内核宏
 description: Windows 内核宏
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
-ms.localizationpriority: medium
+ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 7acea88bbee2cd0b39680f536fc207d14faec3fe
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
-ms.translationtype: MT
+ms.openlocfilehash: f6a7a5cd82a9c832e5edf30726ceae4958fbe146
+ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164788"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72007626"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 
@@ -197,15 +197,15 @@ IRQL任何级别
 
 与此相反，值**MM_BAD_POINTER**保证在运行驱动程序的每个平台上都是无效地址。
 
-在地址0为无效地址的平台上，以 IRQL < DISPATCH_LEVEL 访问地址0的驱动程序会导致`try/except`语句无意中捕获到异常（访问冲突）。 因此，驱动程序的异常处理代码可能会掩盖无效访问权限，并防止在调试过程中检测到该访问代码。 但是，对**MM_BAD_POINTER**地址的访问保证会导致错误检查，异常处理程序无法屏蔽该检查。
+在地址0为无效地址的平台上，以 IRQL < DISPATCH_LEVEL 访问 address 0 的驱动程序将导致 `try/except` 语句不小心捕获到异常（访问冲突）。 因此，驱动程序的异常处理代码可能会掩盖无效访问权限，并防止在调试过程中检测到该访问代码。 但是，对**MM_BAD_POINTER**地址的访问保证会导致错误检查，异常处理程序无法屏蔽该检查。
 
-下面的代码示例演示如何将值**MM_BAD_POINTER**分配给名`ptr`为的指针变量。 Ntdef 头文件将 PUCHAR 类型定义为指向的指针`unsigned char`。
+下面的代码示例演示如何将值**MM_BAD_POINTER**分配给名为 `ptr` 的指针变量。 Ntdef 头文件将 PUCHAR 类型定义为指向 @no__t 的指针。
 
 `PUCHAR ptr = (PUCHAR)MM_BAD_POINTER; // Now _ptr is guaranteed to fault._`
 
-设置`ptr`为**MM_BAD_POINTER**后，尝试访问指向的`ptr`内存位置将导致 bug 检查。
+@No__t 设置为**MM_BAD_POINTER**后，尝试访问 `ptr` 指向的内存位置将导致 bug 检查。
 
-事实上， **MM_BAD_POINTER**是无效地址的整个页面的基址。 因此， **MM_BAD_POINTER**到（**MM_BAD_POINTER** + **PAGE_SIZE** -1）范围内的地址的任何访问都将导致 bug 检查。
+事实上， **MM_BAD_POINTER**是无效地址的整个页面的基址。 因此， **MM_BAD_POINTER**到（**MM_BAD_POINTER** + **PAGE_SIZE** ）范围内的地址的任何访问都将导致 bug 检查。
 
 从 Windows 8.1 开始， **MM_BAD_POINTER**宏是在 Wdm 头文件中定义的。 但是，使用此宏定义的驱动程序代码可以在 Windows Vista 以前版本的 Windows 中运行。
 

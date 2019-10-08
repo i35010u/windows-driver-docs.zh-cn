@@ -6,20 +6,18 @@ ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 103ede5b9929de69855e4c530240dcc5ef13f48b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c155a273d7a602bb164d7b5ba44de39efbc7074
+ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328821"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72021052"
 ---
 # <a name="acpi-design-guide"></a>ACPI 设计指南
-
 
 本部分介绍了设备驱动程序如何与高级配置和电源接口 (ACPI) 设备进行交互。 ACPI 设备是由[高级配置和电源接口 (ACPI) 规范](https://go.microsoft.com/fwlink/p/?linkid=866846)定义的。
 
 ## <a name="in-this-section"></a>本部分内容
-
 
 | 部分 | 描述 |
 | --- | --- |
@@ -27,12 +25,6 @@ ms.locfileid: "63328821"
 | [评估 ACPI 控制方法](evaluating-acpi-control-methods.md) | 介绍了符合[内核模式驱动程序框架 (KMDF)](https://docs.microsoft.com/windows-hardware/drivers/kernel)、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2) 或 [Windows 驱动模型 (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) 的要求的设备驱动程序如何评估 ACPI 控制方法。 |
 | [如何使用 _OSI 识别 ACPI 中的 Windows 版本](winacpi-osi.md) | 提供了用来识别主机操作系统的 ACPI 源语言 (ASL) 操作系统接口级别 (\_OSI) 方法的信息。 |
 
+## <a name="related-sections"></a>相关章节
 
-## <a name="related-sctions"></a>相关章节
-
--   [ACPI DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi)
-
- 
-
-
-
+- [ACPI DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi)
