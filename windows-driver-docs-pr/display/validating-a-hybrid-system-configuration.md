@@ -1,7 +1,7 @@
 ---
 title: 验证混合系统配置
 ms.assetid: 9DB53DAB-0A3D-48A4-84C0-8D60F56B64E8
-description: 要验证的混合系统的过程的 decription。
+description: 要验证的混合系统的过程的 description。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89920a5759876e703358a0a271006c022a357e54
