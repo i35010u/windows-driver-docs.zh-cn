@@ -122,10 +122,12 @@
           href: storage-port-drivers.md
         - name: SCSI 端口驱动程序
           items:
-            - name: SCSI 端口驱动程序
-              href: scsi-port-driver.md
+            - name: SCSI 端口驱动程序概述
+              href: scsi-port-driver-overview.md
             - name: SCSI 端口提供的功能
               href: capabilities-provided-by-scsi-port.md
+            - name: SCSI 端口驱动程序支持例程
+              href: scsi-port-driver-support-routines.md
             - name: SCSI 端口的可以与存储类驱动程序交互的接口
               items:
                 - name: SCSI 端口的可以与存储类驱动程序交互的接口
@@ -156,8 +158,8 @@
                   href: flushing-port-driver-s-internal-queue.md
         - name: Storport 驱动程序
           items:
-            - name: Storport 驱动程序
-              href: storport-driver.md
+            - name: Storport 驱动程序概述
+              href: storport-driver-overview.md
             - name: Storport 驱动程序的生命周期
               href: life-cycle-of-a-storport-driver.md
             - name: Storport 的历史记录
@@ -168,8 +170,8 @@
                   href: capabilities-provided-by-storport.md
                 - name: Storport 驱动程序支持例程
                   href: storport-driver-support-routines.md
-                - name: Storport 驱动程序微型端口例程
-                  href: storport-driver-miniport-routines.md
+                - name: Storport 微型端口驱动程序例程
+                  href: storport-miniport-driver-routines.md
             - name: Storport 的可以与存储类驱动程序交互的接口
               items:
                 - name: Storport 的可以与存储类驱动程序交互的接口
@@ -248,12 +250,14 @@
                   href: setting-port-configuration-information-with-storport.md
         - name: ATA 端口驱动程序
           items:
-            - name: ATA 端口驱动程序
-              href: ata-port-driver.md
+            - name: ATA 端口驱动程序概述
+              href: ata-port-driver-overview.md
             - name: ATA 端口的可以与存储类驱动程序交互的接口
               href: ata-port-s-interface-with-the-storage-class-driver.md
             - name: ATA 端口的可以与 ATA 微型端口驱动程序交互的接口
               href: ata-port-s-interface-with-ata-miniport-drivers.md
+            - name: ATA 端口驱动程序支持例程
+              href: ata-port-driver-support-routines.md
             - name: ATA 端口 I/O 模型
               items:
                 - name: ATA 端口 I/O 模型
@@ -308,10 +312,10 @@
               href: restrictions-on-scsi-miniport-drivers-that-manage-the-boot-drive.md
             - name: SCSI 微型端口驱动程序中的错误处理
               href: error-handling-in-scsi-miniport-drivers.md
-            - name: 必需的和可选的 SCSI 微型端口驱动程序例程
+            - name: SCSI 微型端口驱动程序例程
               items:
-                - name: 必需的和可选的 SCSI 微型端口驱动程序例程
-                  href: required-and-optional-scsi-miniport-driver-routines.md
+                - name: SCSI 微型端口驱动程序例程
+                  href: scsi-miniport-driver-routines.md
                 - name: SCSI 微型端口驱动程序的 DriverEntry 例程
                   href: scsi-miniport-driver-s-driverentry-routine.md
                 - name: SCSI 微型端口驱动程序的 DriverEntry
@@ -510,12 +514,14 @@
           href: cd-rom-io-control-codes.md
     - name: 磁带驱动程序
       items:
-        - name: 磁带驱动程序
-          href: tape-drivers.md
+        - name: 磁带驱动程序概述
+          href: tape-drivers-overview.md
         - name: 使用磁带类驱动程序
           href: using-the-tape-class-driver.md
-        - name: 必需的和可选的磁带微型类例程
-          href: required-and-optional-tape-miniclass-routines.md
+        - name: 磁带类驱动程序例程
+          href: tape-class-driver-routines.md
+        - name: 磁带微型类驱动程序例程
+          href: tape-miniclass-driver-routines.md
         - name: 磁带微型类驱动程序的 DriverEntry
           href: driverentry-of-tape-miniclass-driver.md
         - name: 将磁带微型类上下文存储在可选扩展中

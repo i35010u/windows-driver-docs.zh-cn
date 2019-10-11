@@ -2,86 +2,70 @@
 title: SCSI 端口提供的功能
 description: SCSI 端口提供的功能
 ms.assetid: 549dc3f1-b62f-4047-bdc0-7e24d5bc6ad5
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e5f7714f7c41045a4fcf165b0a1d64f7465fc3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af6d7be4a08eb9293da3853d3d9802fa0c5a5c8f
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368361"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252443"
 ---
 # <a name="capabilities-provided-by-scsi-port"></a>SCSI 端口提供的功能
 
+SCSI 端口驱动程序提供以下功能：
 
-## <span id="ddk_capabilities_provided_by_scsi_port_kg"></span><span id="DDK_CAPABILITIES_PROVIDED_BY_SCSI_PORT_KG"></span>
+- Microsoft Windows 支持包含不同类型的 i/o 总线和/或多个相同类型的 i/o 总线的系统。 需要使用常见的寻址方案来处理这种情况。
 
+- PCI 设备可以有 i/o 端口和内存注册资源。 逻辑地址有助于使此区分对端口驱动程序透明。
 
-SCSI 端口驱动程序提供了以下功能：
+- 某些系统包含连接到多个总线的 Hba;此类 HBA 可能需要几组地址转换。
 
--   Microsoft Windows 支持包含不同类型的 I/O 总线和/或相同类型的多个 I/O 总线的系统。 常见的寻址方案需要处理这样的多样性。
+- 逻辑地址是对基于 CISC 的计算机和基于 RISC 的计算机之间的可移植性所需的。
 
--   PCI 设备可以有 I/O 端口和注册的资源的内存。 逻辑地址有助于使这一区别对端口驱动程序透明。
+- 正在重试 Irp，因为设备太忙而无法处理它们。
 
--   某些系统包含连接到多个总线; 的 Hba此类 HBA 可能需要多个地址转换的集。
+    当设备太忙而无法处理时，存储类驱动程序不必实现重试 Irp 的算法。 SCSI 端口驱动程序实现此功能。
 
--   逻辑地址需要跨 CISC 基于和 RISC 基于计算机的可移植性。
+- 强制执行请求的超时值。
 
-<!-- -->
+    类驱动程序为请求设置超时值，SCSI 端口负责强制执行。 但是，SCSI 端口驱动程序可以灵活地强制执行类驱动程序的超时值，从而考虑总线的状态。 例如，如果由 SCSI 端口管理的光纤通道链路降低了20秒，则 SCSI 端口可能会在停机期间挂起超时计数器，因此，在此链接返回10秒后，具有10秒时间的请求将不会失败。 SCSI 端口会增加分配给请求的超时值，以响应 i/o 流量的增加，因为使用较大的 i/o 流量，所以设备需要更多的时间来完成请求。
 
--   正在重试 Irp，当设备太忙而无法处理它们。
+- 处理目标和控制器繁忙错误，以及传输错误条件（换言之，与总线上实际传输数据相关的错误）。 例如：
 
-    存储类驱动程序不需要实现当设备太忙而无法处理它们时重试 Irp 的算法。 SCSI 端口驱动程序实现此功能。
+  - 总线-奇偶校验错误
+  - 选择超时
 
--   强制执行请求的超时值。
+- 为类驱动程序提供主机适配器限制的相关信息。
 
-    在类驱动程序设置的请求的超时值和 SCSI 端口负责强制执行它。 但是，SCSI 端口驱动程序可以强制执行的类驱动程序的超时值功能，灵活地，采用纳入考虑范围的总线的状态。 例如，如果由 SCSI 端口管理的光纤通道链接降至 20 秒，SCSI 端口可能期间的挂起超时计数器停机时间，以便例如，10 秒的超时请求之前，将不失败后链接恢复正常后 10 秒。 SCSI 端口会增加分配给请求以增加的 I/O 流量，响应的超时值，因为设备将使用更大的 I/O 流量，需要更多时间来完成请求。
+    类驱动程序负责控制数据传输的大小，以适应主机总线适配器（HBA）的限制。 不过，SCSI 端口为类驱动程序提供了完成此任务所需的信息。 SCSI 端口将此信息 furnishes 适配器描述符（[STORAGE_ADAPTER_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)）中，以响应[**IOCTL_STORAGE_QUERY_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property) IOCTL 请求。 类驱动程序负责根据此描述符中报告的信息将请求分解为适当大小的块。
 
--   处理目标和控制器忙的错误，以及传输错误条件 （即，与实际总线上的数据传输相关的错误）。 例如：
+- 将总线相对地址转换为逻辑地址。
 
--   1.  总线奇偶校验错误
-    2.  所选内容的超时
+    查询时，适配器会为 i/o 端口、命令寄存器和控制状态寄存器提供与总线相关的地址。 但是，微型端口驱动程序无法使用与总线相关的地址与其主机总线适配器（HBA）进行通信。 SCSI 端口会将总线相对地址转换为逻辑地址，使微型端口驱动程序可以透明方式访问总线地址。 出现此情况的原因有以下几个：
 
-<!-- -->
+- 在设备启动之前，确保设备及其所有基础设备已通电（处于 D0 设备电源状态）。
 
--   提供有关主机适配器限制的信息的类驱动程序。
+    当设备尚未准备好开机时，SCSI 端口会将对该设备的 D0 请求排队，直到设备准备就绪。
 
-    它负责的类驱动程序来控制数据传输，以满足主机总线适配器 (HBA) 的限制的大小。 但是，SCSI 端口提供的类驱动程序使用它来完成此任务所需的信息。 SCSI 端口提供此适配器描述符中的信息 ([**存储\_适配器\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) 以响应[ **IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property) IOCTL 请求。 在类驱动程序负责请求分解为多个块的基于此描述符中报告的信息的适当大小。
+- 将来自类驱动程序的异步请求排队，并将它们同步转发到目标设备。
 
--   正在转换到逻辑地址总线相对地址。
+    类驱动程序不必等待请求完成，然后再发送下一个请求。 SCSI 端口假定对这些请求进行排队，以避免对基础硬件的处理能力产生巨大的处理能力。
 
-    查询时，适配器提供 I/O 端口、 命令寄存器和控件状态寄存器总线相对的地址。 但是，微型端口驱动程序不能使用总线相对地址与其主机总线适配器 (HBA) 进行通信。 SCSI 端口转换到逻辑地址，总线相对地址，以便微型端口驱动程序可以透明方式访问总线地址。 有几个原因：
+- 支持内部 i/o 请求队列的内部和外部管理。
 
--   确保，在设备和其基础的所有设备都已打开 （在 D0 设备电源状态） 之前启动设备。
+    大多数队列管理操作都是由 SCSI 端口本身启动的。 例如，当发生错误时，SCSI 端口会冻结其队列，并向类驱动程序报告错误条件，以便在处理更多请求之前类驱动程序可以响应。 但是，SCSI 端口还会响应来自类驱动程序或其他较高级别的驱动程序的请求，以便锁定、解除锁定、冻结或解冻其内部请求队列。 较高级别的驱动程序可以使用 SRB_FUNCTION_RELEASE_QUEUE 请求强制 SCSI 端口解冻其内部队列。 有关 "冻结"、"锁定" 或 "解除锁定" 队列的含义的说明，请参阅[SCSI 端口驱动程序的队列管理](scsi-port-driver-s-queue-management.md)。
 
-    当设备未准备好打开设备电源时，SCSI 端口队列 D0 请求为该设备之前设备已准备就绪。
+- 将设备报告的错误转换为 SCSI-3 方法数据格式，以供类驱动程序进行处理。
 
--   队列类驱动程序的异步请求并将它们转发到目标设备的同步。
+SCSI 端口通过 SCSI 端口库例程向微型端口驱动程序提供服务。 微型端口驱动程序编写器可调用这些例程，而不是将其提供的功能编码为单一单一端口驱动程序。 使用这些例程的一些最重要的服务如下所示：
 
-    类驱动程序无需等待发送的下一个请求之前完成的请求。 SCSI 端口有责任队列这些请求以避免庞大的基础硬件的处理能力。
+- SCSI 端口微型端口驱动程序可以将许多与操作系统相关的初始化操作委托给 SCSI 端口的[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)库例程。 这使得 SCSI 端口微型驱动器驱动程序在不同版本的操作系统之间更易于移植。 有关 SCSI 端口微型端口驱动程序的初始化任务的说明，请参阅[Scsi 微型端口驱动程序的 DriverEntry 例程](scsi-miniport-driver-s-driverentry-routine.md)。
 
--   支持内部 I/O 请求队列的内部和外部的管理。
+- 非 PnP 设备的 SCSI 端口微型端口驱动程序可代替查找适配器并向 PnP 管理器报告其资源的任务。 这是在[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)中完成的。
 
-    大多数队列管理操作是由 SCSI 端口本身启动的。 例如，SCSI 端口时，会冻结其队列错误发生，向类驱动程序，报告错误条件，以便进一步处理请求之前，可以响应的类驱动程序。 但是，SCSI 端口也响应来自请求的类驱动程序或其他更高级别的驱动程序锁定、 解锁、 冻结或解冻其内部请求队列。 更高级别的驱动程序可以强制 SCSI 端口取消其内部队列使用 SRB\_函数\_发行\_排队请求。 这意味着"冻结"的说明，为"锁定"或"解锁"队列，请参阅[SCSI 端口驱动程序的队列管理](scsi-port-driver-s-queue-management.md)。
+- SCSI 端口微型端口驱动程序不初始化驱动程序对象中的调度入口点。 当微型端口驱动程序调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)时，SCSI 端口驱动程序代表微型端口驱动程序执行此功能。
 
--   正在转换报告的错误是由设备为 SCSI 2 检测数据格式，以便处理类驱动程序。
+- SCSI 端口微型端口驱动程序不使用[**HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))将与总线相关的地址转换为逻辑地址。 SCSI 端口微型端口驱动程序通过调用[**ScsiPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetdevicebase)来实现此目的。
 
-SCSI 端口通过 SCSI 端口库例程提供给微型端口驱动程序的服务。 微型端口驱动程序编写人员可以调用这些例程，而不是无需编码到单个整体式端口驱动程序提供的功能。 一些最重要的服务使用这些例程提供如下所示：
-
--   SCSI 端口微型端口驱动程序可以很多依赖于 OS 的初始化将操作委托给 SCSI 端口[ **ScsiPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)库例程。 这使 SCSI 端口微型端口驱动程序更易于移植跨不同版本的操作系统。 SCSI 端口微型端口驱动程序初始化任务的说明，请参阅[SCSI 微型端口驱动程序 DriverEntry 例程](scsi-miniport-driver-s-driverentry-routine.md)。
-
--   SCSI 端口微型端口驱动程序适用于非 PnP 设备空闲下来，查找适配器并向即插即用管理器报告其资源的任务。 这是在[ **ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)。
-
--   SCSI 端口微型端口驱动程序未初始化的驱动程序对象中的调度入口点。 SCSI 端口驱动程序执行此代表微型端口驱动程序微型端口驱动程序调用时[ **ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)。
-
--   SCSI 端口微型端口驱动程序不会转换为使用的逻辑地址总线相对地址[ **HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))。 SCSI 端口微型端口驱动程序执行此操作通过调用[ **ScsiPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetdevicebase)。
-
-SCSI 端口使其可供 SCSI 端口微型端口驱动程序的库例程的完整列表，请参阅[SCSI 端口库例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
-
- 
-
- 
-
-
-
-
+有关 SCSI 端口可用于 SCSI 端口微型端口驱动程序的库例程的摘要，请参阅[Scsi 端口驱动程序支持例程](scsi-port-driver-support-routines.md)。

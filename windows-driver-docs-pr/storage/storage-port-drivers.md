@@ -4,49 +4,41 @@ description: 存储端口驱动程序
 ms.assetid: 5ff4916c-7d1f-4b61-a332-6ed89df9db56
 keywords:
 - 存储端口驱动程序 WDK
-- 存储端口驱动程序 WDK，有关存储端口驱动程序
+- 存储端口驱动程序 WDK，关于存储端口驱动程序
 - 端口驱动程序 WDK 存储
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fcdb83e6478b72a3d6592f638ecaaf34de6ed3d7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 83a1a645d650a588e223f4e885dadc227de4add2
+ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368183"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72262174"
 ---
 # <a name="storage-port-drivers"></a>存储端口驱动程序
 
-
-## <span id="ddk_storage_port_drivers_kg"></span><span id="DDK_STORAGE_PORT_DRIVERS_KG"></span>
-
-
 Microsoft Windows 包含三个系统提供的存储端口驱动程序：
 
--   [SCSI 端口驱动程序](scsi-port-driver.md)(*Scsiport.sys*)
+- [Storport 驱动程序](storport-driver-overview.md)（*storport*），在 Windows Server 2003 和更高版本的操作系统中可用（建议）
 
--   [Storport 驱动程序](storport-driver.md)(*Storport.sys*)、 Windows Server 2003 和更高版本的操作系统中可用
+- [SCSI 端口驱动程序](scsi-port-driver-overview.md)（*Scsiport*）
 
--   [ATA 端口驱动程序](ata-port-driver.md)(*Ataport.sys*)、 Windows Vista 和更高版本的操作系统中可用
+- [ATA 端口驱动程序](ata-port-driver-overview.md)（*Ataport*），在 Windows Vista 和更高版本的操作系统中可用
 
-Storport 驱动程序是比 SCSI 端口的更高效、 更高的性能驱动程序。 因此应该开发能够与 Storport 驱动程序应尽可能的微型端口驱动程序。 它是对高性能的设备，如基于主机的 RAID 和光纤通道适配器使用 Storport 尤其重要。 Storport 不能用于适配器或不支持即插即用 (PnP) 或必须使用系统 DMA 的设备。 Storport 驱动程序的使用限制的详细列表，请参阅[要求与适配器使用 Storport](requirements-for-using-storport-with-an-adapter.md)。
+Storport 驱动程序比 SCSI 端口更有效、性能更高。 因此，应尽可能地开发与 Storport 驱动程序配合使用的微型端口驱动程序。 尤其重要的是，将 Storport 用于高性能设备，例如基于主机的 RAID 和光纤通道适配器。 Storport 不能与不支持即插即用（PnP）或必须使用系统 DMA 的适配器或设备一起使用。 有关使用 Storport 驱动程序的详细限制列表，请参阅对[适配器使用 storport 的要求](requirements-for-using-storport-with-an-adapter.md)。
 
-ATA 端口驱动程序为屏蔽的 ATA 微型端口驱动程序从端口驱动程序使用与更高级别的驱动程序，例如存储类驱动程序进行通信的基于 SCSI 的协议。 例如，附加到 SCSI 端口或 Storport 微型端口驱动程序必须提供 SCSI 端口驱动程序的检测数据。 这不是所需的 ATA 微型端口驱动程序。 ATA 端口驱动程序从 ATA 微型端口驱动程序通过使用 ATA 命令收集所需的数据，组织数据，以便符合为 SCSI 的检测数据格式，并将传递到更高级别的驱动程序的数据，就好像它是 SCSI 检测数据。 ATA 端口驱动程序还将为每个[ **SCSI\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)它接收从更高级别的驱动程序为基于 ATA 的等效调用[**IDE\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/ns-irb-_ide_request_block)。
+ATA 端口驱动程序从基于 SCSI 的协议中防护 ATA 微型端口驱动程序，端口驱动程序使用该协议与较高级别的驱动程序（如存储类驱动程序）进行通信。 例如，连接到 SCSI 端口或 Storport 的微型端口驱动程序必须向端口驱动程序提供 SCSI 识别数据。 这不是 ATA 微型端口驱动程序所必需的。 ATA 端口驱动程序使用 ATA 命令从 ATA 微型端口驱动程序收集必要的数据，对数据进行组织，使其符合 SCSI 感知数据格式，并将数据传递到更高级别的驱动程序，就像它是 SCSI 感知数据一样。 ATA 端口驱动程序还会将其从更高级别的驱动程序接收的每个[SCSI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)转换为基于 ATA 的等效项（称为[IDE_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/ns-irb-_ide_request_block)）。
 
-每个端口驱动程序供应商提供的存储微型端口驱动程序的一组与通信并向一组要调用的微型端口驱动程序的支持例程。 SCSI 端口驱动程序提供的支持例程中所述[SCSI 端口库例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 Storport 驱动程序提供的支持例程中所述[Storport 驱动程序支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 由 ATA 端口驱动程序提供的支持例程中所述[ATA 端口库例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+每个端口驱动程序与一组供应商提供的存储微型端口驱动程序通信，并为微型端口驱动程序调用提供一组支持例程。 每个端口驱动程序通过调用每个存储微型端口驱动程序必须实现的一组标准例程，与其微型端口驱动程序通信。 SCSI 端口驱动程序、Storport 驱动程序和 ATA 端口驱动程序调用的微型端口驱动程序例程非常类似。 可在以下部分中找到端口驱动程序支持例程和微型端口驱动程序例程的列表：
 
-每个端口驱动程序通过调用的例程的每个存储微型端口驱动程序必须实现一组标准的微型端口驱动程序与进行通信。 SCSI 端口驱动程序、 Storport 驱动程序，以及 ATA 端口驱动程序由调用的微型端口驱动程序例程都非常类似于另一个。 这些例程的说明可在[SCSI 微型端口驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)， [Storport 驱动程序微型端口例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)，并[ATA 微型端口驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)分别.
+| 端口驱动程序 | 支持例程 | 微型端口驱动程序例程 |
+| ----------- | ---------------- | ------------------------ |
+| Storport 驱动程序 | [Storport 驱动程序支持例程](storport-driver-support-routines.md) | [Storport 驱动程序微型端口例程](storport-miniport-driver-routines.md) |
+| SCSI 端口驱动程序 | [SCSI 端口驱动程序支持例程](scsi-port-driver-support-routines.md) | [SCSI 微型端口驱动程序例程](scsi-miniport-driver-routines.md) |
+| ATA 端口驱动程序 | [ATA 端口驱动程序支持例程](ata-miniport-drivers.md) | [ATA 微型端口驱动程序例程](ata-miniport-drivers.md) |
 
-如果你想存储设备必须早于 Windows Server 2003 支持客户端 Windows 产品，或服务器产品，您必须提供 SCSI 端口微型端口驱动程序。
+如果希望在客户端 Windows 产品上或在早于 Windows Server 2003 的服务器产品上支持存储设备，则必须提供 SCSI 端口微型端口驱动程序。
 
-如果你想存储设备，以支持在 Windows Server 2003 和更高版本的服务器产品系列，可以提供 SCSI 端口微型端口驱动程序或 Storport 微型端口驱动程序。 如果你想要在 Windows Vista 和更高版本的操作系统中安装 ATA 存储设备，则必须提供 ATA 端口微型端口驱动程序。
+如果希望在 Windows Server 2003 和更高版本的服务器产品系列上支持存储设备，可以提供 Storport 微型端口驱动程序或 SCSI 微型端口驱动程序。 如果要在 Windows Vista 和更高版本的操作系统中安装 ATA 存储设备，则必须提供 ATA 端口微型端口驱动程序。
 
-以下各节介绍 SCSI 端口、 Storport 和 ATA 端口驱动程序和它们之间的区别。
-
- 
-
- 
-
-
-
-
+以下各节介绍了 Storport、SCSI 端口和 ATA 端口驱动程序以及它们之间的区别。

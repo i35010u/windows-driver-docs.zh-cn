@@ -3,75 +3,63 @@ title: 处理 SRB_FUNCTION_WMI
 description: 处理 SRB_FUNCTION_WMI
 ms.assetid: df20b9dc-1b67-4044-8abe-3cf5714076b3
 keywords:
-- SCSI 微型端口驱动程序 WDK 存储 HwScsiStartIo
+- SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
 - SRB_FUNCTION_WMI
 - WMI WDK SCSI
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 463045b6073e923293fee74d3edc22093114789d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 96d490a71d205ef19bb0f89a73c777228cd082aa
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372331"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252406"
 ---
-# <a name="handling-srbfunctionwmi"></a>处理 SRB\_函数\_WMI
+# <a name="handling-srb_function_wmi"></a>处理 SRB_FUNCTION_WMI
 
+如果主机总线适配器（HBA）支持[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) （WMI），则端口驱动程序会将 WMI 请求发送到微型端口驱动程序。 HBA 通过将[*PORT_CONFIGURATION_INFORMATION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)结构的 WmiDataProvider 字段设置为其[**DriverEntry**](driverentry-of-scsi-miniport-driver.md)例程中的**TRUE**来指示它支持 WMI。
 
-## <span id="ddk_handling_srb_function_wmi_kg"></span><span id="DDK_HANDLING_SRB_FUNCTION_WMI_KG"></span>
+小型小型驱动程序的编写器准备用来处理 WMI 请求的小型端口，如下所示：
 
+- 如果微型端口公开自定义数据块或事件块，则它应在 MOF 文件中定义此类块，并将其编译为微型端口的二进制图像中的二进制资源。 有关详细信息，请参阅[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)。
 
-如果支持 HBA [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI) 端口驱动程序将 WMI 将请求发送到微型端口驱动程序。 HBA 指示它通过设置的 WmiDataProvider 字段支持 WMI [**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)结构**TRUE**在其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)例程。
+- 如[SCSI 微型端口驱动程序例程](scsi-miniport-driver-routines.md)中所述，实现必需的和可选的*HwScsiWmiXxx*回调例程。
 
-微型端口驱动程序的编写器准备微型端口，以便处理 WMI 请求，如下所示：
+- 处理 SRB_FUNCTION_WMI。
 
--   如果微型端口公开自定义数据的块或事件块，它应在 MOF 文件中定义此类块并将其编译为二进制资源微型端口的二进制映像中。 有关详细信息，请参阅[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)。
+如果微型端口驱动程序可能挂起了 WMI 请求，则其**DriverEntry**例程应该请求为 SRB 扩展分配内存，以便微型端口驱动程序可以在整个 SRB 处理过程中维护请求上下文。
 
--   实现必需和可选*HwScsiWmiXxx*回调例程，如中所述[SCSI 微型端口驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+在微型端口驱动程序处理其第一个 WMI 请求之前，必须在其设备扩展中分配 SCSI_WMILIB_CONTEXT 结构，并使用以下内容初始化结构：
 
--   处理 SRB\_函数\_WMI。
+- 微型端口驱动程序支持的数据和事件块的数量，包括系统在*wmicore*中定义的标准块以及微型端口驱动程序的自定义块（如果有）。
 
-如果微型端口驱动程序可能会挂起 WMI 请求，其**DriverEntry**例程应请求的内存分配为 SRB 扩展以便微型端口驱动程序可以维护请求整个 SRB 处理过程的上下文。
+- 指向 SCSIWMIGUIDREGINFO 结构的数组的指针，每个支持的块各有一个。
 
-微型端口驱动程序将处理其第一个 WMI 请求之前，必须分配 SCSI\_WMILIB\_上下文结构在其设备扩展并初始化与以下结构：
+- 入口点到微型端口驱动程序的*HwScsiWmiXxx*回调例程。 微型端口驱动程序必须至少提供[*HwScsiWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo)例程和[*HwScsiWmiQueryDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock)例程的入口点。
 
--   支持的微型端口驱动程序，包括标准块中的系统定义的数据和事件块的数目*wmicore.mof*以及微型端口驱动程序的自定义块，如果有的话。
+除了将 PORT_CONFIGURATION_INFO 结构的 WmiDataProvider 字段设置为**TRUE**并实现所需的*HwScsiWmiQueryReginfo*例程以外，无需执行任何操作来注册其数据和事件块. 端口驱动程序负责向 WMI 内核组件注册微型端口驱动程序的块。
 
--   指向数组 SCSIWMIGUIDREGINFO 结构，一个用于支持每个块的指针。
+收到 SRB，其中**函数**成员设置为 SRB_FUNCTION_WMI 时，微型端口驱动程序的[*HwScsiStartIo*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))例程会执行以下操作：
 
--   到微型端口驱动程序的入口点*HwScsiWmiXxx*回调例程。 微型端口驱动程序必须至少提供入口点[ **HwScsiWmiQueryReginfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo)例程和一个[ **HwScsiWmiQueryDataBlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock)例程。
+- 如果请求可能挂起，则从 SRB 扩展分配 SCSIWMI_REQUEST_CONTEXT 结构; 如果请求永远无法挂起，则从堆栈中分配。
 
-微型端口驱动程序无需执行任何操作即可注册其数据和事件阻止设置端口 WmiDataProvider 字段以外\_配置\_信息结构**TRUE**和实现所需*HwScsiWmiQueryReginfo*例程。 端口驱动程序负责注册与 WMI 内核组件的微型端口驱动程序的块。
+- 检查**Srb-> WMIFlags**以确定请求是用于适配器还是逻辑单元。
 
-在收到在其中 SRB**函数**成员设置为 SRB\_函数\_WMI，微型端口驱动程序[ **HwScsiStartIo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))例程 does以下内容：
+- 通过指向微型端口驱动程序的 SCSI_WMILIB_CONTEXT 的指针、其设备扩展和请求上下文以及 SRB 中的以下参数调用[**ScsiPortWmiDispatchFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction) ：
 
--   分配 SCSIWMI\_请求\_上下文结构从 SRB 扩展，如果该请求可能会挂起，或如果该请求可能永远不会等待，最终的堆栈。
+    **Srb-> WMISubFunction**
 
--   检查**Srb**- **&gt;WMIFlags**以确定请求是否为该适配器或逻辑单元。
+    **Srb-> 数据路径**
 
--   调用[ **ScsiPortWmiDispatchFunction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)并指出了微型端口驱动程序的 SCSI\_WMILIB\_上下文、 其设备扩展，并请求上下文和以下从 SRB 参数：
+    **Srb-> DataTransferLength**
 
-    **Srb**- **&gt;WMISubFunction**
+    **Srb-> DataBuffer**
 
-    **Srb**- **&gt;DataPath**
+- 当驱动程序完成处理请求时，将调用[**ScsiPortWmiPostProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess) 。 如果驱动程序没有挂起请求，则可能会在回调中调用**ScsiPortWmiPostProcess** 。 如果驱动程序 pends 请求，则在请求完成时应调用**ScsiPortWmiPostProcess** 。
 
-    **Srb**- **&gt;DataTransferLength**
+- 将**Srb-> DataTransferLength**和**Srb > SrbStatus**分别设置为[**ScsiPortWmiGetReturnSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnsize)和[**ScsiPortWmiGetReturnStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnstatus)返回的值。
 
-    **Srb**- **&gt;DataBuffer**
-
--   调用[ **ScsiPortWmiPostProcess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmipostprocess)时驱动程序已完成处理请求。 如果该驱动程序不会挂起请求，然后**ScsiPortWmiPostProcess**很可能会在回调中调用。 如果驱动程序等待请求然后**ScsiPortWmiPostProcess**应在请求完成时调用。
-
--   集**Srb**- **&gt;DataTransferLength**并**Srb**- **&gt;SrbStatus**返回的值为[ **ScsiPortWmiGetReturnSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnsize)并[ **ScsiPortWmiGetReturnStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmigetreturnstatus)，分别
-
--   调用[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)与**RequestComplete**并再次与**NextRequest**或 (**NextLuRequest**).
+- 通过**RequestComplete**和**NextRequest**或（**NextLuRequest**）再次调用[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification) 。
 
 有关 WMI 的详细信息，请参阅[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)。
-
- 
-
- 
-
-
-
-

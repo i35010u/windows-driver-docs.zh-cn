@@ -14,14 +14,14 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09474b3c39115c2098619039658e32d15a95c3f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7f36716c221755204745b626ce7cc203f1f455d9
+ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387087"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72262180"
 ---
-# <a name="devpkeydeviceconfigflags"></a>DEVPKEY_Device_ConfigFlags
+# <a name="devpkey_device_configflags"></a>DEVPKEY_Device_ConfigFlags
 
 
 DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标志。
@@ -42,14 +42,14 @@ DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>读取和写入访问权限通过安装应用程序和安装程序</p></td>
+<td align="left"><p>安装应用程序和安装程序的读取和写入访问权限</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>相应 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
+<td align="left"><p><strong>对应的 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
 <td align="left"><p>SPDRP_CONFIGFLAGS</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -60,13 +60,12 @@ DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标�
 <a name="remarks"></a>备注
 -------
 
-在设备安装过程中设置的 DEVPKEY_Device_ConfigFlags 值以指示设备的当前配置。
+在设备安装过程中设置 DEVPKEY_Device_ConfigFlags 的值，以指示设备的当前配置。
 
-配置标志由 CONFIGFLAG_*Xxx* Regstr.h 中定义的位屏蔽。
+配置标志仅供内部使用。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)若要检索值 DEVPKEY_Device_ConfigFlags 并调用[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)若要设置 DEVPKEY_Device_ConfigFlags。
+可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_ConfigFlags 的值，并调用[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置 DEVPKEY_Device_ConfigFlags。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_ConfigFlags 属性键。 相反，相应的 SPDRP_CONFIGFLAGS 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +82,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>

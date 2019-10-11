@@ -1,16 +1,14 @@
 ---
 title: 获取发货标签数据
 description: Microsoft 硬件 API 中的这些方法可获取注册到开发人员中心帐户的硬件产品的发货标签。
-author: balapv
-ms.author: balapv
 ms.topic: article
-ms.date: 08/21/2018
-ms.openlocfilehash: eb126c73e1943540af6551a842ea34cf15a615ff
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.date: 10/03/2019
+ms.openlocfilehash: 07c0205b5bcfb6718979ce7597e0bb53c3471090
+ms.sourcegitcommit: 566219e815a670e4345ff259a030445af1e5fb20
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337195"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71923784"
 ---
 # <a name="get-shipping-label-data"></a>获取发货标签数据
 
@@ -297,16 +295,17 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 
 创建新的发货标签时，硬件 ID 对象应包含捆绑 ID、PNP ID、OS 代码和 INF 名称的有效组合。 若要获取提交内容（包）的这些属性的允许/有效组合，可以在获取提交内容的详细信息时，下载以链接形式提供的驱动程序元数据文件。 有关详细信息，请参阅[驱动程序包元数据](driver-package-metadata.md)。
 
-
 ### <a name="chids-object"></a>CHIDs 对象
 
 此对象表示发货标签需要针对的 CHID（计算机硬件 ID）。 有关更多详细信息，请参阅[使用 CHID](https://docs.microsoft.com/windows-hardware/drivers/dashboard/using-chids)。
+
 ```json
 {
     "chid": "346511cf-ccee-5c6d-8ee9-3c70fc7aae83",
     "distributionState": "pendingAdd"
 }
 ```
+
 此对象具有以下值
 
 | 值 | 在任务栏的搜索框中键入 | 描述 |
@@ -329,8 +328,8 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-|flooring|字符串|希望驱动程序只在列出的 Windows 10 操作系统或更高版本的操作系统上提供时，请使用此选项。 例如，选择 RS4 下限意味着只在运行 Windows 10 1803 (RS4) 和更高版本的系统提供此驱动程序。 可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS（在编写本文档时为 RS5）|
-|ceiling|字符串|对此功能的访问受到限制。  希望只为列出的操作系统或更低版本的系统提供某个驱动程序时，请使用此选项。 例如，在 Windows 10 1607 RS1 认证的驱动程序中选择 RS3 上限意味着，永远不会将驱动程序提供给运行 Windows 10 1803 (RS4) 或更高版本的系统。可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS（在编写本文档时为 RS5）|
+|flooring|字符串|希望驱动程序只在列出的 Windows 10 操作系统或更高版本的操作系统上提供时，请使用此选项。 例如，选择 RS4 下限意味着只在运行 Windows 10 1803 (RS4) 和更高版本的系统提供此驱动程序。 可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS。 |
+|ceiling|字符串|对此功能的访问受到限制。  希望只为列出的操作系统或更低版本的系统提供某个驱动程序时，请使用此选项。 例如，在 Windows 10 1607 RS1 认证的驱动程序中选择 RS3 上限意味着，永远不会将驱动程序提供给运行 Windows 10 1803 (RS4) 或更高版本的系统。可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS。 |
 
 有关这些值的详细信息，请参阅[按 Windows 版本限制驱动程序分发](https://docs.microsoft.com/windows-hardware/drivers/dashboard/limit-driver-distribution)。
 

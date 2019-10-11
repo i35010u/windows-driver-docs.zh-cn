@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0xDC DRIVER_INVALID_STACK_ACCESS
-description: DRIVER_INVALID_STACK_ACCESS bug 检查具有 0x000000DC 值。 这指示一个驱动程序访问位于堆栈的线程的堆栈指针下方的堆栈地址。
+description: DRIVER_INVALID_STACK_ACCESS bug 检查的值为0x000000DC。 这表明驱动程序已访问堆栈地址，堆栈地址位于堆栈线程的堆栈指针的下方。
 ms.assetid: efc2201f-b2e5-458b-a2b0-26abaa46f1a4
 keywords:
 - Bug 检查 0xDC DRIVER_INVALID_STACK_ACCESS
@@ -13,29 +13,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a4eda0f5e5ecab02f0f120fa7b7681c3620650f1
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d402f6c24d4374b9d6ac934e4ad7401ae7732fab
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518842"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038002"
 ---
-# <a name="bug-check-0xdc-driverinvalidstackaccess"></a>Bug 检查 0xDC：驱动程序\_无效\_堆栈\_访问
+# <a name="bug-check-0xdc-driver_invalid_stack_access"></a>Bug 检查 0xDC：DRIVER @ NO__T-0INVALID @ NO__T-1STACK @ NO__T-2ACCESS
 
 
-该驱动程序\_无效\_堆栈\_访问错误检查的值为 0x000000DC。 这指示一个驱动程序访问位于堆栈的线程的堆栈指针下方的堆栈地址。
+DRIVER @ no__t-0INVALID @ no__t-1STACK @ no__t-2ACCESS bug 检查的值为0x000000DC。 这表明驱动程序已访问堆栈地址，堆栈地址位于堆栈线程的堆栈指针的下方。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driverinvalidstackaccess-parameters"></a>驱动程序\_无效\_堆栈\_访问参数
+## <a name="driver_invalid_stack_access-parameters"></a>DRIVER @ no__t-0INVALID @ no__t-1STACK @ no__t-2ACCESS 参数
 
 
 无
 
  
-
+## <a name="remarks"></a>备注
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
 

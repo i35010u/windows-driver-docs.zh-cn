@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED
-description: VIDEO_ENGINE_TIMEOUT_DETECTED bug 检查具有 0x00000141 值。 这表示引擎未能及时响应的显示其中一个。
+title: Bug 检查 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED
+description: VIDEO_ENGINE_TIMEOUT_DETECTED bug 检查的值为0x00000141。 这表明其中一个显示引擎无法及时响应。
 ms.assetid: 0912495D-DE6D-4064-BD66-DA6145889821
 keywords:
-- Bug Check 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED
+- Bug 检查 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED
 - VIDEO_ENGINE_TIMEOUT_DETECTED
 ms.date: 05/23/2017
 topic_type:
@@ -13,38 +13,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: efe9757dfc06a12978dadcf5041d3c7d8f9961b7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d5bc5812549e86480da6d905d8364601c03b7133
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520198"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038101"
 ---
-# <a name="bug-check-0x141-videoenginetimeoutdetected"></a>Bug 检查 0x141：视频\_引擎\_超时\_检测到
+# <a name="bug-check-0x141-video_engine_timeout_detected"></a>Bug 检查 0x141：VIDEO @ NO__T-0ENGINE @ NO__T-1TIMEOUT @ NO__T-2DETECTED
 
 
-视频\_引擎\_超时\_检测到错误检查的值为 0x00000141。 这表示引擎未能及时响应的显示其中一个。
+视频 @ no__t-0ENGINE @ no__t-1TIMEOUT @ no__t-2DETECTED bug 检查的值为0x00000141。 这表明其中一个显示引擎无法及时响应。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="videoenginetimeoutdetected-parameters"></a>视频\_引擎\_超时\_检测到参数
+## <a name="video_engine_timeout_detected-parameters"></a>VIDEO @ no__t-0ENGINE @ no__t-1TIMEOUT @ no__t-2DETECTED 参数
 
 
 | 参数 | 描述                                                                 |
 |-----------|-----------------------------------------------------------------------------|
-| 1         | 指向内部 TDR 恢复上下文的可选 (TDR\_恢复\_上下文)。 |
-| 2         | 负责的设备驱动程序模块 （例如所有者标记） 到指针。          |
-| 3         | 辅助驱动程序特定存储桶键。                                |
-| 4         | 可选的内部上下文相关的数据。                                   |
+| 1         | 指向内部 TDR 恢复上下文的可选指针（TDR @ no__t-0RECOVERY @ no__t-1CONTEXT）。 |
+| 2         | 指向 "负责的设备驱动程序" 模块（例如 "所有者" 标记）的指针。          |
+| 3         | 辅助驱动程序特定的存储桶键。                                |
+| 4         | 可选的内部上下文相关数据。                                   |
 
  
 
 <a name="remarks"></a>备注
 -------
 
-辅助标记 {270A33FD-3DA6-460D-BA89-3C1BAE21E39B} 的数据包含其他 TDR 相关数据。 使用.enumtag 若要查看的数据。
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+Tag {270A33FD-3DA6-460D-BA89-3C1BAE21E39B} 的辅助数据包含其他 TDR 相关数据。 使用[**enumtag**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-enumtag--enumerate-secondary-callback-data-)查看数据。
 
  
 

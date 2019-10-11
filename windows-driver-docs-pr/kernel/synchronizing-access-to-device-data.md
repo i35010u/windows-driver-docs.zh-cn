@@ -3,26 +3,26 @@ title: 同步对设备数据的访问
 description: 同步对设备数据的访问
 ms.assetid: aaed8006-6773-4d20-b3a0-b48131f728c6
 keywords:
-- 中断服务例程 WDK 内核同步
-- Isr WDK 内核同步
-- 中断对象 WDK 内核同步
-- 同步 WDK 内核中断
+- 中断服务例程 WDK 内核，同步
+- Isr WDK 内核，同步
+- 中断对象 WDK 内核，同步
+- 同步 WDK 内核，中断
 - 单个中断向量 WDK 内核
-- 关键节例程 WDK 内核
-- 中断自旋锁 WDK 内核
-- 数值调节钮锁 WDK 内核
-- 同步 WDK 内核设备数据访问
+- 关键部分例程 WDK 内核
+- 中断自旋锁定 WDK 内核
+- 旋转锁定 WDK 内核
+- 同步 WDK 内核，设备数据访问
 - SynchCritSection
 - SynchronizeIrql
 - 旋转锁参数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bc4866e79f5b08720ceb7d664cd51580b0fd91
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 500a77927113793733bdef46f947ffb5bb3f1d6a
+ms.sourcegitcommit: 8fdbd7d16dd2393e5df0a87388aed91d2898cd71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355492"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165026"
 ---
 # <a name="synchronizing-access-to-device-data"></a>同步对设备数据的访问
 
@@ -30,23 +30,24 @@ ms.locfileid: "67355492"
 
 
 
-通常情况下，驱动程序的[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)或[ *InterruptMessageService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)例程 (Isr) 必须共享到驱动程序数据的访问权限和与其他驱动程序例程的硬件资源。 因为 Isr 在提升的 IRQL，中断上下文中执行，因为系统可能有多个处理器，很重要，以便可以保证每个例程来暂时具有独占访问此同步对共享的数据和资源的访问共享的信息，而不发生中断。
+通常，驱动程序的[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)或[*InterruptMessageService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kmessage_service_routine)例程（isr）必须与其他驱动程序例程共享对驱动程序数据和硬件资源的访问权限。 由于 Isr 在中断上下文中以提升的 IRQL 执行，并且系统可能具有多个处理器，因此必须同步对共享数据和资源的访问，以便可以保证每个例程暂时具有对此的独占访问权限共享信息，无需中断。
 
-系统支持此同步通过执行在 ISR*中断关键节*。 中断已分配数值调节钮锁定*中断自旋锁*，和 irql，因此*中断同步 IRQL*。 系统可以保证此中的代码执行的关键部分独占访问权共享信息，通过引发处理器的 IRQL 与中断同步 IRQL 并执行代码之前获取中断自旋锁。 系统始终执行其 ISR.之前进入中断的关键部分 不同的中断可以通过共享其中断自旋锁和同步 IRQL 共享相同的关键部分。
+系统通过在*中断关键部分*中执行 ISR 来支持此同步。 中断具有分配的自旋锁、*中断自旋锁*和 irql （*中断同步的 irql*）。 系统保证在关键部分中执行此代码，以独占方式访问共享信息，方法是：将处理器的 IRQL 提升为中断同步 IRQL，并在执行代码前获取中断自旋锁。 在执行其 ISR 之前，系统始终会输入中断的关键部分。 不同的中断可通过共享其中断自旋锁和同步 IRQL 来共享同一关键部分。
 
-驱动程序可以实现运行中断的关键部分中，通过提供的代码[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程。 当使用该驱动程序[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)调用*SynchCritSection*例程，系统会自动进入关键节中断通过指定*中断*参数。
+驱动程序可以通过提供[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程来实现在中断的关键部分中运行的代码。 当驱动程序使用[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)调用*SynchCritSection*例程时，系统将自动为*中断*参数指定的中断输入临界区。
 
-引发到中断的同步 IRQL 防止被中断当前处理器的处理器的 IRQL，除非通过使用更高版本的同步 IRQL 中断。 获取数值调节钮锁会阻止其他处理器执行任何与该数值调节钮锁相关的关键部分代码。
+将处理器的 IRQL 提高到中断的同步 IRQL 会阻止当前处理器被中断，但具有更高同步 IRQL 的中断除外。 获取旋转锁可防止其他处理器执行与该旋转锁关联的任何关键部分代码。
 
-当驱动程序调用时，系统将分配中断自旋锁和同步 IRQL 中断[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)。 在大多数情况下，该驱动程序可以允许系统以确定这两个值：
+当驱动程序调用[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)时，系统会为中断分配中断自旋锁和同步 IRQL。 在大多数情况下，驱动程序可以允许系统确定这两个值：
 
--   如果驱动程序使用 CONNECT\_行\_基于或 CONNECT\_消息\_基于版本的**IoConnectInterruptEx**，并指定**NULL**旋转锁，系统将分配旋转锁以在所有设备的中断之间都共享。 系统还确定同步 IRQL 值 （驱动程序可以选择指定较高的值）。 所有驱动程序的中断将共享相同的关键部分。
+-   如果驱动程序使用连接 @ no__t-0LINE @ no__t-1BASED 版本的**IoConnectInterruptEx**，并指定**NULL**旋转锁定，系统将为中断行分配一个自旋锁。 系统还会确定同步 IRQL 的值（驱动程序可以选择指定较大的值）。
 
--   如果驱动程序使用 CONNECT\_完全\_的指定版本**IoConnectInterruptEx**并且具有仅单个中断矢量，可以指定驱动程序**NULL**旋转锁。 系统将为仅该特定的中断，将具有其自己的临界区的分配自旋锁。
+-   如果驱动程序使用 CONNECT @ no__t-0MESSAGE @ no__t-1BASED 版本的**IoConnectInterruptEx**，并指定**NULL**旋转锁定，系统将为每个中断消息分配一个自旋锁。 系统还会确定每个消息的同步 IRQL 值（驱动程序可以选择指定较高的值，这对于所有消息都是通用的）。
 
-仅当使用连接时，驱动程序必须分配数值调节钮锁定\_完全\_的指定版本**IoConnectInterruptEx**和时，它具有多个必须共享同一个严重的中断向量部分。 驱动程序可以通过使用指定其自己的自旋锁和同步 IRQL **SpinLock**并**SynchronizeIrql**的成员**IO\_CONNECT\_中断\_参数**。 有关详细信息，请参阅[ **IO\_CONNECT\_中断\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_connect_interrupt_parameters)。
 
-有关编写和进入临界区的信息，请参阅[使用临界区](using-critical-sections.md)。
+当驱动程序具有多个必须共享同一关键部分的中断向量时，驱动程序必须仅在使用 CONNECT @ no__t-0FULLY @ no__t-1SPECIFIED 版本的**IoConnectInterruptEx**时分配其自己的自旋锁。 驱动程序可以通过使用**IO @ no__t-3CONNECT @ no__t-4INTERRUPT @ no__t-5PARAMETERS**的**旋转锁**和**SynchronizeIrql**成员指定其自己的旋转锁定和同步 IRQL。 有关详细信息，请参阅[**IO @ no__t-2CONNECT @ no__t-3INTERRUPT @ no__t-4PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_connect_interrupt_parameters)。
+
+有关编写和输入关键部分的信息，请参阅[使用关键部分](using-critical-sections.md)。
 
  
 

@@ -4,56 +4,45 @@ description: 按池标记请求特殊池
 ms.assetid: 201eb8a5-b38b-4625-853d-448488214e52
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc71c56b19d726ab0d558f8fad0b413bd039e95a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5316f3a78ad947bd65f779cfaa3c503507e80d7
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382121"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038079"
 ---
 # <a name="requesting-special-pool-by-pool-tag"></a>按池标记请求特殊池
 
-
 ## <span id="ddk_requesting_special_pool_for_allocations_with_a_specified_pool_tag_"></span><span id="DDK_REQUESTING_SPECIAL_POOL_FOR_ALLOCATIONS_WITH_A_SPECIFIED_POOL_TAG_"></span>
 
+你可以为使用指定池标记的所有分配请求特殊池。 一次只能有一个系统上的一个池标记与内核特殊池请求相关联。
 
-你可以请求特殊池使用指定的池标记的所有分配。 在系统上的只有一个池标记可以一次是与内核特殊池请求相关联。
+在 Windows Vista 和更高版本的 Windows 中，还可以使用命令行来请求按池标记的特殊池。 有关信息，请参阅[**GFlags 命令**](gflags-commands.md)。
 
-在 Windows Vista 和更高版本的 Windows 中，还可以使用命令行来请求特殊标记，池的池。 有关信息，请参阅[ **GFlags 命令**](gflags-commands.md)。
+**请求按池标记的特殊池**
 
-**若要请求特殊标记，池的池**
+1. 选择 "**系统注册表**" 选项卡或 "**内核标志**" 选项卡。
 
-1. 选择**系统注册表**选项卡或**内核标志**选项卡。
+   在 Windows Vista 和更高版本的 Windows 上，此选项在两个选项卡上都可用。 在早期版本的 Windows 上，它仅在 "**系统注册表**" 选项卡上可用。
 
-   在 Windows Vista 和更高版本的 Windows 上，此选项才可用两个选项卡。 在早期版本的 Windows，它是仅适用于**系统注册表**选项卡。
+2. 在 "**内核特殊池标记**" 部分中，单击 "**文本**"，然后为标记键入四字符模式。
 
-2. 在中**内核特殊池标记**部分中，单击**文本**，然后键入标记的四个字符模式。
+   标记可以包含 **？** （单字符）和 **\*** （多个字符）通配符。 例如，Fat @ no__t-0 或 Av？4。
 
-   标记可以包含 **？** （单个字符） 和 **\\** * （多个字符） 通配符字符。 例如，Fat\*或 Av？ 4。
+3. 以下屏幕截图显示了在 "系统注册表" 选项卡上以文本形式输入的标记。
 
-3. 下面的屏幕截图显示以文本形式输入系统注册表选项卡上的标记。
-
-   ![以文本形式输入系统注册表选项卡上的标记的屏幕截图](images/gflags-specialpool-text.png)
+   !["系统注册表" 选项卡上作为文本输入的标记的屏幕截图](images/gflags-specialpool-text.png)
 
 4. 单击 **“应用”** 。
 
-   当您单击**应用**，GFlags 更改从所选**文本**到**十六进制**并将 ASCII 字符显示为十六进制值反向 （较低字节序） 顺序。 例如，如果键入**标记 1**，显示为标记 GFlags **0x31676154** (1gaT)。 这是它是存储在注册表中并显示调试器和其他工具的方法。
+   单击 "**应用**" 时，GFlags 会将所选内容从**文本**更改为**Hex** ，并将 ASCII 字符显示为十六进制值（较低字节序）的顺序。 例如，如果键入**Tag1**，则 GFlags 会将标记显示为**0x31676154** （1gaT）。 这就是将其存储在注册表中并由调试器和其他工具显示的方式。
 
-   下图显示单击的效果**应用**。
+   下图显示了单击 "**应用**" 的效果。
 
-   ![屏幕截图的显示单击的效果应用](images/gflags-specialpool-hex.png)
+   ![显示单击 "应用" 效果的屏幕截图](images/gflags-specialpool-hex.png)
 
-### <a name="span-idcommentsspanspan-idcommentsspanremarks"></a><span id="comments"></span><span id="COMMENTS"></span>备注
+### <a name="span-idcommentsspanspan-idcommentsspanremarks"></a><span id="comments"></span><span id="COMMENTS"></span>标记
 
-若要有效地使用此功能，请确保您的驱动程序或其他内核模式程序使用的唯一池标记。 如果您怀疑您的驱动程序使用所有特殊的池，请考虑在代码中使用多个池标记。 你随后可以测试您的驱动程序多次，将特殊的池分配给每个测试中的一个池标记。
+若要有效地使用此功能，请确保您的驱动程序或其他内核模式程序使用唯一的池标记。 如果您怀疑您的驱动程序正在使用所有特殊池，请考虑在您的代码中使用多个池标记。 然后，可以多次测试您的驱动程序，并在每个测试中为一个池标记分配特殊的池。
 
-此外，选择具有大于系统页面大小的十六进制值的池标记。 有关内核模式代码，如果输入池标记的值小于页面\_大小，Gflags 请求其大小在相应范围内，并请求特殊池分配，则使用等效的池标记的所有分配的特殊池。 例如，如果您选择的大小**30**，对于大小，为 17 到 32 个字节之间的所有分配和分配，则使用池标记 0x0030，将使用特殊的池。
-
- 
-
- 
-
-
-
-
-
+另外，请选择一个具有大于系统页面大小的十六进制值的池标记。 对于内核模式代码，如果输入的池标记的值小于 PAGE @ no__t-0SIZE，则 Gflags 将为其大小在相应范围内的所有分配请求特殊池，并请求具有等效池标记的分配的特殊池。 例如，如果选择的大小为**30**，则会将特殊池用于大小介于17到32字节之间的所有分配，并用于使用池标记0x0030 的分配。

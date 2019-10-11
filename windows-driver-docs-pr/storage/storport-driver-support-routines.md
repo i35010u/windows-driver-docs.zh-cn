@@ -1,47 +1,230 @@
 ---
 title: Storport 驱动程序支持例程
-description: 介绍了 Storport 微型端口驱动程序例程和 SCSI 端口驱动程序的设计和 Storport 驱动程序之间的差异。
-ms.assetid: ''
+description: 介绍了 Storport 微型端口驱动程序例程，以及 SCSI 端口驱动程序的设计和 Storport 驱动程序的设计之间的差异。
+ms.assetid: 15f20a83-43cc-40d4-8fa6-031affca5ee2
 keywords:
 - Storport 驱动程序支持例程
 - 存储 WDK
 - 存储支持例程
-ms.date: 06/11/2018
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd96a9cbdc562474ea758901e1ec2391ebb9a1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e50cb088b585af1eb4ec1eb9f523388aeb6e26e
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322147"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252393"
 ---
 # <a name="storport-driver-support-routines"></a>Storport 驱动程序支持例程
 
-适用于 Storport 驱动程序微型端口驱动程序必须包含在本部分中列出的常规说明实现，并且必须公开是通过[HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data)结构期间微型端口驱动程序的初始化阶段。 
+此页列出系统提供的 Storport 驱动程序提供的支持例程。
 
-Storport 微型端口驱动程序例程位于等效于其 SCSI 端口对应项的大多数方面 (请参阅[SCSI 微型端口驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/storage/required-and-optional-scsi-miniport-driver-routines)有关详细信息)。 但是，有重要区别 SCSI 端口驱动程序的设计和 Storport 驱动程序，并且这些例程必须适应这些区别。 
+有关 Storport 驱动程序微型端口例程的列表，请参阅[Storport 微型端口驱动程序例程](storport-miniport-driver-routines.md)。
 
-例如，微型端口驱动程序，使用 Storport 驱动程序必须始终准备好接收另一 I/O 请求后[HwStorStartIo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)已完成例程。 适用于 SCSI 端口的微型端口驱动程序不需要执行此操作。 SCSI 端口版本不会接收新的 I/O 请求，直到显式发出信号端口驱动程序，使用[StorPortNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportnotification)函数，它已准备好处理另一个请求。 
+## <a name="direct-memory-access-support-routines"></a>直接内存访问支持例程
 
-如果 Storport 微型端口驱动程序的版本不能在提交，它具有一组的队列管理功能，到 SCSI 端口版本，不可用的时间处理请求，允许其处理的重载。 Storport 微型端口驱动程序的版本类似于 SCSI 端口版本，完成的请求[SRB_STATUS_BUSY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdevicebusy)，但与不同的 SCSI 端口版本，它还可以将标记为忙使用 StorPortDeviceBusy 例程设备队列。 相似的功能允许为暂停和恢复处理适配器范围的基础上的微型端口驱动程序。
+Storport 驱动程序提供以下直接内存访问（DMA）支持例程。
 
-Storport 驱动程序提供的支持例程的详细信息，请参阅 [Storport 驱动程序支持例程]。
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortBuildScatterGatherList** | 为指定的数据缓冲区创建散点/集合列表。 |
+| **StorPortGetScatterGatherList** | 检索指定 SCSI 请求块（SRB）的关联分散/收集列表。 |
+| **StorPortPutScatterGatherList** | 释放与某个散点/集合列表关联的任何资源，该列表以前通过调用**StorPortBuildScatterGatherList**例程创建。 |
 
-Storport 驱动程序有关的详细信息，请参阅[存储端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-port-drivers)。 
+## <a name="general-support-routines"></a>常规支持例程
 
-Storport 驱动程序支持例程如下：
+Storport 提供以下常规支持例程。
 
-| 例程  |描述   |
-|---|---|
-|[HW_MESSAGE_SIGNALED_INTERRUPT_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_message_signaled_interrupt_routine)| 一条消息的句柄发出信号中断 (MSI)。 |
-|[HW_ADAPTER_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_adapter_control)|微型端口驱动程序**HwStorAdapterControl**例程调用来执行同步操作，从而控制的状态或行为的适配器，如停止或重新启动电源管理的 HBA。|
-|[HW_BUILDIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio)|**HwStorBuildIo**例程会在将其传递给之前处理不同步访问共享的系统的数据结构 SRB [HwStorStartIo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)。|
-|[HW_DPC_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_dpc_routine)|**HwStorDpcRoutine**例程是通过延迟的过程调用 (DPC) 机制在调度 IRQL 执行延迟的例程。|
-|[HW_FIND_ADAPTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)|**HwStorFindAdapter**例程使用提供的配置来确定是否支持特定的 HBA，如果是，则返回有关该适配器的配置信息。|
-|[HW_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_initialize)|HwStorInitialize 例程在系统重新启动后初始化微型端口驱动程序或发生电源故障。|
-|[HW_INTERRUPT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_interrupt)|Storport 驱动程序调用**HwStorInterrupt**例程后 HBA 生成中断请求。|
-|[HW_PASSIVE_INITIALIZE_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_passive_initialize_routine)|**HwStorPassiveInitializeRoutine**后，会调用回调例程**HwStorInitialize**例程在 passive_level 调用当前 IRQL 时。|
-|[HW_RESET_BUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus)|**HwStorResetBus**端口驱动程序，以清除错误条件调用例程。|
-|[HW_STARTIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)|Storport 驱动程序调用**HwStorStartIo**例程的每个传入的 I/O 请求一次。|
-|[HW_TIMER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_timer)|**HwStorTimer**间隔，它指定何时调用微型端口驱动程序之后调用例程[StorPortNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportnotification)与 *[RequestTimerCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportnotification)* NotificationType 值。|
-|[]()||
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortDebugPrint** | 如果附加了调试器，则向内核调试器打印调试字符串。 |
+| **StorPortEtwEvent2** | 将 Windows 事件跟踪（ETW）事件发布到存储跟踪通道。 小型端口可以记录两个常规用途的 ETW 参数。 ETW 参数以两个名称-值对的形式表示。 |
+| **StorPortEtwEvent4** | 将 ETW 事件发布到存储跟踪通道。 小型端口可以记录四个常规用途的 ETW 参数。 ETW 参数以四个名称-值对的形式表示。 |
+| **StorPortEtwEvent8** | 将 ETW 事件发布到存储跟踪通道。 小型端口可以记录8个常规用途 ETW 参数。 ETW 参数以8个名称-值对的形式表示。 |
+| **StorPortGetActivityIdSrb** | 检索与请求块关联的 ETW 活动 ID。 |
+| **StorPortGetDeviceObjects** | 返回与适配器设备堆栈关联的设备对象。 将返回的设备对象是适配器的功能和物理设备对象，以及功能设备对象附加到的设备对象。 |
+| **StorPortGetSystemPortNumber** | 检索存储适配器的系统分配的端口号。 |
+| **StorPortInitializeSListHead** | 初始化 Storport 管理的单向链接列表的头。 |
+| **StorPortInterlockedFlushSList** | 从 Storport 管理的单向链接列表中移除所有项。 在多处理器系统上对列表的访问是同步的 |
+| **StorPortInterlockedPopEntrySList** | 从 Storport 管理的单向链接列表的前面移除项。 在多处理器系统上，对列表的访问是同步的。  |
+| **StorPortInterlockedPushEntrySList** | 将项插入到 Storport 托管的单链接列表前面。 在多处理器系统上，对列表的访问是同步的。 |
+| **StorPortInvokeAcpiMethod** | 为存储设备执行 ACPI 方法。 |
+| **StorPortIsCurrentOsInstallationUpgrade** | 检查 Windows 的当前安装是否从以前的版本升级。 |
+| **StorPortIsDeviceOperationAllowed** | 允许微型端口确定是否允许对某个设备管理类执行操作。 |
+| **StorPortLogError** | 通知端口驱动程序出现错误。 |
+| **StorPortLogSystemEvent** | 授予微型端口驱动程序对 Windows 内核事件设施功能的完全访问权限，从而使微型端口驱动程序可以创建真正用于排查存储问题的事件日志条目。 它为**StorPortLogError**提供了更好的替代方法。 |
+| **StorPortQueryDepthSList** | 检索 Storport 管理的单向链接列表中的条目数。 |
+| **StorPortQueryPerformanceCounter** | 查询并返回当前系统性能计数器的值。 |
+| **StorPortQuerySystemTime** | 获取当前系统时间。 |
+| **StorPortRegistryRead** | 读取指示的设备和值的注册表数据。 |
+| **StorPortRegistryReadAdapterKey** | 读取注册表中位于 HKLM/CurrentControlSet/Enum/\<Instance 路径 >/DeviceParameters/.... 的硬件或设备注册表适配器项|
+| **StorPortRegistryWriteAdapterKey** | 写入注册表中位于 HKLM/CurrentControlSet/Enum/\<Instance 路径的硬件或设备注册表适配器密钥 >/DeviceParameters/... |
+| **StorPortRegistryWrite** | 将指定缓冲区中包含的注册表数据从 ASCII 转换为 Unicode，然后将数据写入微型端口驱动程序的每 HBA 存储区。 |
+
+## <a name="io-request-processing-support-routines"></a>I/o 请求处理支持例程
+
+Storport 提供以下 i/o 请求处理支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortBusy** | 通知端口驱动程序适配器当前正忙，处理未处理的请求。 |
+| **StorPortCompleteRequest** | 完成所有未完成的请求，将 SRB 状态值设置为 SrbStatus。 |
+| **StorPortCompleteServiceIrp** | 当需要完成在其 HwStorProcessServiceRequest 回调例程中收到的请求时，由 Storport 虚拟微型端口驱动程序调用。 |
+| **StorPortDeviceBusy** | 通知端口驱动程序指定的逻辑单元当前正忙，处理未处理的请求。 |
+| **StorPortDeviceReady** | 通知端口驱动程序指示的逻辑单元已准备好处理新请求。 |
+| **StorPortFreeWorker** | 释放先前由**StorPortInitializeWorker**例程分配的 Storport 工作项。 |
+| **StorPortGetRequestInfo** | 检索与 SCSI 请求块（SRB）关联的 IO 请求信息，并以 STOR_REQUEST_INFO 结构返回该信息。 |
+| **StorPortInitializeWorker** | 创建在系统工作线程中运行的新的 Storport 工作项。 |
+| **StorPortQueueWorkItem** | 计划在系统工作线程的上下文中执行的 Storport 工作项。 |
+| **StorPortPause** | 暂停指定时间段内的适配器。 |
+| **StorPortPauseDevice** | 在指定的时间段内暂停特定的逻辑单元设备。 |
+| **StorPortReady** | 通知端口驱动程序适配器不再忙。 |
+| **StorPortResume** | 恢复暂停的适配器。 |
+| **StorPortResumeDevice** | 恢复先前暂停的逻辑单元。 |
+
+## <a name="initialization-support-routines"></a>初始化支持例程
+
+Storport 驱动程序提供以下初始化支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortEnablePassiveInitialization** | 启用微型端口初始化期间在 PASSIVE_LEVEL 执行微型端口的 HwStorPassiveInitializeRoutine 回调例程。 |
+| **StorPortGetActiveGroupCount** | 返回系统中存在的处理器组的数目。 |
+| **StorPortGetActiveNodeCount** | 返回系统中存在的节点数。 |
+| **StorPortGetBusData** | 检索初始化 HBA 所需的特定于总线的配置信息。 |
+| **StorPortGetCurrentProcessorNumber** | 检索内核中的当前处理器编号。 |
+| **StorPortGetGroupAffinity** | 在请求的组中构造活动处理器的掩码。 |
+| **StorPortGetHighestNodeNumber** | 返回系统上可能的最大节点数。 |
+| **StorPortGetLogicalProcessorRelationship** | 返回一个或多个指定类型的关系信息。 这些类型包括主机系统中的组、物理包和节点。 返回的信息包括由主机系统中的逻辑处理器组成的处理器关联掩码。 这些逻辑处理器共享指定的关系类型。 |
+| **StorPortGetLogicalUnit** | 返回一个指向微型端口驱动程序的每个逻辑单元存储区域的指针。 |
+| **StorPortGetNodeAffinity** | 在请求的非一致性内存访问（NUMA）节点中构造活动处理器的掩码。 |
+| **StorPortGetStartIoPerfParams** | 在 STARTIO_PERFORMANCE_PARAMETERS 结构中放置给定 i/o 请求的性能参数。 |
+| **StorPortInitialize** | 初始化端口驱动程序参数和扩展数据。 **StorPortInitilize**还保存从微型端口驱动程序中提供的适配器信息。 |
+| **StorPortInitializePerfOpts** | 使用 PERF_CONFIGURATION_DATA 结构初始化微型端口驱动程序和 Storport 驱动程序支持的性能优化。 |
+| **StorPortSetAdapterBusType** | 用于根据适配器的当前配置调整适配器的 BusType。 如果将 BusType 设置为此例程，则可在无需重新安装驱动程序的情况下覆盖微型端口 INF 中的全局属性集。 这对于诸如支持不同总线类型的多个适配器的 RAID 支持或支持等方案非常有用。 |
+| **StorPortSetBusDataByOffset** | 写入特定于总线的配置信息。 |
+| **StorPortSetDeviceQueueDepth** | 设置指定设备的设备队列的最大深度。 |
+| **StorPortSetPowerSettingNotificationGuids** | 启用微型端口来接收电源设置通知。 小型端口将注册一个 Guid 数组，这些 Guid 标识用于接收的电源更改通知的电源设置。 |
+| **StorPortSetUnitAttributes** | 使用 Storport 驱动程序注册存储设备设备的电源属性。 |
+
+## <a name="interrupt-support-routines"></a>中断支持例程
+
+Storport 驱动程序提供以下中断支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortGetMSIInfo** | 检索指定消息的消息信号中断（MSI）信息。 |
+| **StorPortSynchronizeAccess** | 提供对微型端口驱动程序的设备扩展的同步访问。 |
+| **StorPortInitializeDpc** | 初始化 StorPort 延迟的过程调用（DPC） |
+| **StorPortIssueDpc** | 发出 Storport DPC。 |
+| **StorPortStallExecution** | 停止微型端口驱动程序。 |
+
+## <a name="locking-support-routines"></a>锁定支持例程
+
+Storport 驱动程序提供以下锁定支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortAcquireMSISpinLock** | 获取与指定的消息相关联的消息信号中断（MSI）旋转锁。 |
+| **StorPortAcquireSpinLock** | 获取指定的旋转锁。 |
+| **StorPortReleaseMSISpinLock** | 为指定的消息释放以前获取的 MSI 旋转锁。 |
+| **StorPortReleaseSpinLock** | 释放**StorPortAcquireSpinLock**获取的旋转锁。 |
+
+## <a name="memory-management-support-routines"></a>内存管理支持例程
+
+Storport 驱动程序提供了以下内存管理支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortAllocateContiguousMemorySpecifyCacheNode** | 分配一系列物理上不连续的非分页内存。 |
+| **StorPortAllocateMdl** | 分配 MDL 以说明给定的非分页池内存。 |
+| **StorPortAllocatePool** | 分配非连续的非分页池内存块。 |
+| **StorPortAllocateRegistryBuffer** | 分配一个缓冲区，该缓冲区可用于读取和写入注册表数据。 |
+| **StorPortBuildMdlForNonPagedPool** | 更新 MDL 以描述关联的非分页内存。 |
+| **StorPortConvertUlongToPhysicalAddress** | 将无符号长地址转换为物理地址。 |
+| **StorPortConvertPhysicalAddressToULong64** | 将物理地址转换为 ULONG64 值。 |
+| **StorPortFreeMdl** | 释放描述非分页池内存的内存描述符列表（MDL）。 |
+| **StorPortFreeContiguousMemorySpecifyCache** | 释放系统地址空间的非分页部分中的一系列非缓存内存。 |
+| **StorPortFreePool** | 释放以前通过调用**StorPortAllocatePool**例程分配的内存块。 |
+| **StorPortFreeRegistryBuffer** | 释放分配用于存储注册表数据的缓冲区。 |
+| **StorPortGetDataInBufferMdl** | 返回与 SCSI 请求块（SRB）的输入数据缓冲区关联的 MDL。 |
+| **StorPortGetDataInBufferScatterGatherList** | 返回与 SCSI 请求块（SRB）的输入数据缓冲区关联的散播聚集列表。 |
+| **StorPortGetDataInBufferSystemAddress** | 返回 SCSI 请求块（SRB）的输入数据缓冲区的系统地址。 |
+| **StorPortGetOriginalMdl** | 返回与给定 SRB 关联的 MDL。 |
+| **StorPortGetVirtualAddress** | 获取映射到指示的物理地址的虚拟地址。 |
+| **StorPortGetPhysicalAddress** | 将给定的虚拟地址范围转换为 DMA 操作的物理地址范围。 |
+| **StorPortGetSystemAddress** | 返回指定 SCSI 请求块（SRB）的数据缓冲区的系统空间中的虚拟地址。 |
+| **StorPortGetUncachedExtension** | 分配由 CPU 和设备共享的未缓存的公共缓冲区。 |
+| **StorPortMarkDumpMemory** | 微型端口应标记用于转储文件或休眠文件的内存。 已标记的内存将保留，并在从休眠操作恢复后保持有效。 要标记的内存由在对**StorPortMarkDumpMemory**的调用中使用的地址和范围长度来指定。 |
+| **StorPortMoveMemory** | 将内存从一个缓冲区复制到另一个缓冲区。 |
+
+## <a name="notification-support-routines"></a>通知支持例程
+
+Storport 驱动程序提供以下通知支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortAsyncNotificationDetected** | 向 Storport 驱动程序通知存储设备状态更改事件。 |
+| **StorPortNotification** | 向 Storport 驱动程序通知某些事件和条件。 |
+| **StorPortStateChangeDetected** | 向 Storport 端口驱动程序通知逻辑单元号（LUN）、主机总线适配器（HBA）端口或目标设备的状态更改。 |
+
+## <a name="port-and-register-io-support-routines"></a>端口和注册 i/o 支持例程
+
+Storport 驱动程序提供以下端口并注册 i/o 支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortGetDeviceBase** | 将 i/o 地址映射到系统地址空间。 |
+| **StorPortFreeDeviceBase** | 释放由 StorPortGetDeviceBase 映射的一系列设备 i/o 内存。 |
+| **StorPortReadPortBufferUchar** | 从指定的端口地址读取值 |
+| **StorPortReadPortBufferUlong** | 从指定的端口地址中读取值。 |
+| **StorPortReadPortBufferUshort** | 从指定的端口地址中读取值。 |
+| **StorPortReadPortUchar** | 从指定的端口地址读取值 |
+| **StorPortReadPortUlong** | 从指定的端口地址中读取值。 |
+| **StorPortReadPortUshort** | 从指定的端口地址中读取值。 |
+| **StorPortReadRegisterBufferUchar** | 从指定的寄存器地址中读取值。 |
+| **StorPortReadRegisterBufferUlong** | 从指定的寄存器地址中读取值。 |
+| **StorPortReadRegisterBufferUlong64** | 将来自指定64位寄存器地址的多个 ULONG64 值读取到缓冲区中。 |
+| **StorPortReadRegisterBufferUshort** | 从指定的寄存器地址中读取值。 |
+| **StorPortReadRegisterUchar** | 从指定的寄存器地址中读取值。 |
+| **StorPortReadRegisterUlong** | 从指定的寄存器地址中读取值。 |
+| **StorPortReadRegisterUlong64** | 从指定的64位寄存器地址读取64位值。 |
+| **StorPortReadRegisterUshort** | 从指定的寄存器地址中读取值。 |
+| **StorPortValidateRange** | 确定指定范围的 i/o 地址是否正在由另一个适配器使用。 此例程在 Windows NT 4.0 及更高版本的操作系统中已过时。 |
+| **StorPortWritePortBufferUchar** | 将值写入指定的寄存器地址。 |
+| **StorPortWritePortBufferUlong** | 将值写入指定的寄存器地址。 |
+| **StorPortWritePortBufferUshort** | 将值写入指定的寄存器地址。 |
+| **StorPortWritePortUchar** | 将值写入指定的寄存器地址。 |
+| **StorPortWritePortUlong** | 将值写入指定的寄存器地址。 |
+| **StorPortWritePortUshort** | 将值写入指定的寄存器地址。 |
+| **StorPortWriteRegisterBufferUchar** | 将给定数量的无符号字节从缓冲区传输到 HBA。 |
+| **StorPortWriteRegisterBufferUlong** | 将给定数目的 ULONG 值从缓冲区传输到 HBA。 |
+| **StorPortWriteRegisterBufferUlong64** | 从指定的64位寄存器地址写入多个 ULONG64 值。 |
+| **StorPortWriteRegisterBufferUshort** | 将给定数量的 USHORT 值从缓冲区传输到 HBA。 |
+| **StorPortWriteRegisterUchar** | 将给定数量的字符值从缓冲区传输到指示的 HBA 注册地址。 |
+| **StorPortWriteRegisterUlong** | 将 ULONG 值传输到指示的 HBA 注册地址。 |
+| **StorPortWriteRegisterUlong64** | 将 ULONG64 值写入指定的寄存器地址。 |
+| **StorPortWriteRegisterUshort** | 将 ULONG 值传输到指示的 HBA 注册地址。|
+
+## <a name="runtime-power-management-support-routines"></a>运行时电源管理支持例程
+
+Storport 驱动程序提供以下运行时电源管理支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortInitializePoFxPower** | 使用电源管理框架（PoFx）注册存储设备。 |
+| **StorPortPoFxActivateComponent** | 递增存储设备上指定组件的激活引用计数。 |
+| **StorPortPoFxIdleComponent** | 减少存储设备的指定组件的激活引用计数。 |
+| **StorPortPoFxPowerControl** | 将电源控制请求发送到电源管理框架（PoFx）以转发到 power engine 插件（PEP）。 |
+| **StorPortPoFxSetComponentLatency** | 指定在从空闲条件转换为指定的存储设备组件中的活动条件时可接受的最大延迟。 |
+| **StorPortPoFxSetComponentResidency** | 设置在组件进入空闲状态后，存储设备组件可能保持空闲状态的估计时间。 |
+
+## <a name="timer-support-routines"></a>计时器支持例程
+
+Storport 驱动程序提供以下计时器支持例程。
+
+| 例程 | 描述 |
+| ------- | ----------- |
+| **StorPortFreeTimer** | 释放先前由**StorPortInitializeTimer**例程创建的 Storport 计时器上下文对象。 |
+| **StorPortInitializeTimer** | 创建 Storport 计时器上下文对象。 |
+| **StorPortRequestTimer** | 计划 Storport 计时器上下文对象的回调事件。 |

@@ -5,32 +5,43 @@ ms.assetid: 4e5cf0e3-72c5-43df-b61e-0039c3666de4
 keywords:
 - ATA 微型端口驱动程序 WDK
 - 存储 ATA 微型端口驱动程序 WDK
-- 存储微型端口驱动程序 WDK、 ATA 微型端口驱动程序
+- 存储微型端口驱动程序 WDK，ATA 微型端口驱动程序
 - 微型端口驱动程序 WDK 存储，ATA 微型端口驱动程序
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cb52a544a9a3b540f671acf599d44c7e69d4b6c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01d2d82deca974ee69985a054537414b8670589c
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368414"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252440"
 ---
 # <a name="ata-miniport-drivers"></a>ATA 微型端口驱动程序
 
+> [!NOTE]
+> ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用[storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)程序和[storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
 
-## <span id="ddk_ata_miniport_drivers_kg"></span><span id="DDK_ATA_MINIPORT_DRIVERS_KG"></span>
+ATA 微型端口驱动程序适用于 ATA 端口驱动程序。 此页列出 ATA 端口驱动程序调用的 ATA 微型端口驱动程序中实现的例程。 有关 ATA 微型端口驱动程序可调用的系统提供的 ATA 端口驱动程序例程的列表，请参阅[Ata 端口驱动程序支持例程](ata-port-driver-support-routines.md)。
 
-**请注意**ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
+## <a name="ata-controller-interface-routines"></a>ATA 控制器接口例程
 
-ATA 微型端口驱动程序使用 ATA 端口驱动程序。 以下部分介绍由 ATA 端口驱动程序调用的 ATA 微型端口驱动程序中的例程和 ATA 微型端口驱动程序内 ATA 端口驱动程序调用的例程：
+需要每个供应商提供的微型端口驱动程序才能实现一组定义控制器接口的例程。 通过使用这些例程，微型端口驱动程序与系统提供的控制器驱动程序*pciidex*通信。
 
-[ATA 微型端口驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+供应商提供的微型端口驱动程序与控制器驱动程序通信，以便初始化端口和微型端口驱动程序以及配置主机总线适配器（HBA）所需的交换参数。 如果未在此节中将例程显式标识为可选，则它是必需的。 如果选择不实现可选例程，则必须确保微型端口驱动程序将[IDE_CONTROLLER_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/ns-irb-_ide_controller_interface)结构中的相应函数指针设置为 NULL。
 
-[ATA 端口库例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+- DriverEntry
+- AtaAdapterControl
+- AtaControllerChannelEnabled
+- AtaControllerTransferModeSelect
 
- 
+## <a name="ata-channel-interface-routines"></a>ATA 通道接口例程
 
- 
+供应商提供的微型端口驱动程序可以选择实现一组定义通道接口的例程。 通过使用这些例程，微型端口驱动程序可以处理发送到硬件的每个请求。 微型端口驱动程序不得部分实现通道接口。 如果微型端口驱动程序支持[**AtaChannelInitRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/irb/nf-irb-ataportinitializeex)例程，还应实现以下例程：
 
-
+- AtaChannelInitRoutine
+- IdeHwInitialize
+- IdeHwBuildIo
+- IdeHwStartIo
+- IdeHwInterrupt
+- IdeHwReset
+- IdeHwControl

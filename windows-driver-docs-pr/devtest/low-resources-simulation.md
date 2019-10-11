@@ -3,43 +3,41 @@ title: 资源不足模拟
 description: 资源不足模拟
 ms.assetid: 2710fa23-26cd-493b-abb4-3a0969a98eb1
 keywords:
-- 低资源模拟选项 WDK Driver Verifier
-- 内存不足的检查 WDK Driver Verifier
-- 内存不足，无法检查 WDK Driver Verifier
+- 低资源模拟选项 WDK 驱动程序验证程序
+- 低内存检查 WDK 驱动程序验证程序
+- 内存不足检查 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5391d090d5cfa1a1a665e1df34fb914623b0f7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a58e55fc521cdcf75f91794c56e9e2fdf7292230
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354779"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038074"
 ---
 # <a name="low-resources-simulation"></a>资源不足模拟
 
-
 ## <span id="ddk_low_resources_simulation_tools"></span><span id="DDK_LOW_RESOURCES_SIMULATION_TOOLS"></span>
 
+当低资源模拟选项（在 Windows 8.1 中称为 "*随机低资源模拟*"）处于活动状态时，驱动程序验证器会失败驱动程序的内存分配的随机实例，这是因为当驱动程序在运行的计算机上运行了内存不足。 这会测试驱动程序能否正确响应内存不足的问题和其他资源不足的情况。
 
-当低资源模拟选项 (名为*随机化的资源不足模拟*Windows 8.1 中) 是处于活动状态，驱动程序验证程序进行故障的驱动程序的内存分配随机实例，如果该驱动程序上运行可能会出现内存不足的计算机。 这会测试驱动程序的正确响应内存不足和其他资源不足的情况的能力。
+低资源模拟测试无法通过对多个不同函数的调用（包括[**ExAllocatePoolWithXXX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)、 [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、 [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)、 [**MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)和[**MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)。
 
-低资源模拟测试失败请求的多个不同的功能，包括对的调用的分配[ **ExAllocatePoolWithXXX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)， [ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)， [ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)， [ **MmMapLockedPagesSpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)，并[ **MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)。
+从 Windows Vista 开始，低资源模拟测试还将故障注入到[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)、 [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)、 [**IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)、 [**IoAllocateErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)、 [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory) [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**MmAllocatePagesForMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)和[**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)。 此外，从 Windows Vista 开始，当低资源模拟处于启用状态时，对[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)或[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)的调用会将*可报警*参数设置为**TRUE** ，从而返回状态 @ no__t-6ALERTED在非特权进程的上下文中运行时。 这会模拟来自同一非特权应用程序中其他线程的可能的线程警报。
 
-从 Windows Vista 开始，低资源模拟测试还会注入到的错误[ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)， [ **IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)，[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)， [ **IoAllocateErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateerrorlogentry)， [ **MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)， [ **MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)， [ **MmAllocatePagesForMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdl)，并[ **MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)。 此外，Windows vista 中，从开始，启用低资源模拟时，调用[ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)或[ **KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)与*Alertable*参数设置为**TRUE**可以返回状态\_低权限的进程的上下文中运行时向你发出警报。 这模拟的是来自同一非特权应用程序中的另一个线程可能线程警报。
+低资源模拟测试还将错误注入到以下 GDI 函数中：[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)、 [**EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)、 [**EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)、 [**EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)、 [**EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)、 [**EngCreatePalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)、 [**EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)、 [**EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)、 [**EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)、 [**EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)、 [**BRUSHOBJ @ No__t-22pvAllocRbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)和[**CLIPOBJ @ no__t-25ppoGetPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)。
 
-低资源模拟测试还将故障注入到以下的 GDI 函数：[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)， [ **EngAllocUserMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocusermem)， [ **EngCreateBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)， [ **EngCreateDeviceSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)， [ **EngCreateDeviceBitmap**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)， [ **EngCreatePalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)， [ **EngCreateClip**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreateclip)， [ **EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)， [ **EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)， [ **EngCreateDriverObj**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)， [ **BRUSHOBJ\_pvAllocRbrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)，和[**CLIPOBJ\_ppoGetPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)。
-
-在 Windows 7 和更高版本的 Windows 操作系统中，低资源模拟选项支持使用以下内核 Api 分配的内存：
+在 windows 7 和更高版本的 Windows 操作系统中，"低资源" 模拟选项支持使用以下内核 Api 分配的内存：
 
 -   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)和其他例程可以分配 I/O 请求数据包 (IRP) 数据结构
+-   [**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)以及可以分配 i/o 请求数据包（IRP）数据结构的其他例程
 
--   [**RtlAnsiStringToUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)和其他运行时库 (RTL) 的字符串例程
+-   [**RtlAnsiStringToUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)和其他运行时库（RTL）字符串例程
 
 -   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
 
-从 Windows 8.1 开始，低资源模拟选项也会失败分配请求的对 MmAllocateNodePagesForMdlEx 的调用。 此外，对于某些函数，驱动程序验证程序现在将填充具有随机模式已分配的内存。 但仅在函数为其返回未初始化的内存的情况下。 这些功能包括：
+从 Windows 8.1 开始，低资源模拟选项还会使对 MmAllocateNodePagesForMdlEx 的调用所请求的分配失败。 此外，对于某些函数，驱动程序验证程序现在使用随机模式填充分配的内存。 但仅适用于函数返回未初始化的内存的情况。 这些函数包括：
 
 -   [**MmAllocatePagesForMdlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatepagesformdlex)
 -   MmAllocateNodePagesForMdlEx
@@ -49,55 +47,55 @@ ms.locfileid: "67354779"
 -   [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)
 -   [**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
-### <a name="span-idcustom_settings_for_low_resources_simulationspanspan-idcustom_settings_for_low_resources_simulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>资源不足模拟的自定义设置
+### <a name="span-idcustom_settings_for_low_resources_simulationspanspan-idcustom_settings_for_low_resources_simulationspancustom-settings-for-low-resources-simulation"></a><span id="custom_settings_for_low_resources_simulation"></span><span id="CUSTOM_SETTINGS_FOR_LOW_RESOURCES_SIMULATION"></span>低资源模拟的自定义设置
 
-在 Windows Vista 和更高版本的 Windows 中，可以指定以下自定义设置。
+在 Windows Vista 和更高版本的 Windows 上，你可以指定以下自定义设置。
 
--   **概率**，给定的分配会失败。 默认值为 6%。
+-   给定分配失败的**概率**。 默认值为 6%。
 
--   **应用程序**受影响。 此设置限制了插入失败，分配到指定的应用程序。 默认情况下，所有分配会受到都影响。
+-   受影响的**应用程序**。 此设置将插入的失败分配限制到指定的应用程序。 默认情况下，将影响所有分配。
 
--   **池标记**受影响。 此设置将限制到分配，则使用指定的池标记的注入的错误。 默认情况下，所有分配会受到都影响。
+-   受影响的**池标记**。 此设置将插入的故障限制为具有指定池标记的分配。 默认情况下，将影响所有分配。
 
--   **延迟**（以分钟为单位） 之前失败的分配。 此延迟可让系统启动和稳定后再注入错误。 默认值为八分钟。
+-   分配失败之前的**延迟**时间（以分钟为单位）。 此延迟允许系统在错误注入之前启动并稳定。 默认值为8分钟。
 
-在 Windows Vista 之前的操作系统，不能自定义这些设置。 操作系统使用的默认值。
+在 Windows Vista 之前的操作系统上，不能自定义这些设置。 操作系统使用默认值。
 
-### <a name="span-idlow_resources_simulation_without_rebootingspanspan-idlow_resources_simulation_without_rebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>资源不足而不必重新启动模拟
+### <a name="span-idlow_resources_simulation_without_rebootingspanspan-idlow_resources_simulation_without_rebootingspanlow-resources-simulation-without-rebooting"></a><span id="low_resources_simulation_without_rebooting"></span><span id="LOW_RESOURCES_SIMULATION_WITHOUT_REBOOTING"></span>低资源模拟，无需重新启动
 
-可以激活 Windows 2000 和更高版本的 Windows 上的低资源模拟，无需重新启动计算机，通过使用 **/volatile**参数。 设置将立即生效，但如果你关闭或重新启动计算机都将丢失。
+您可以在 Windows 2000 和更高版本的 Windows 上激活低资源模拟，而无需使用 **/volatile**参数重新启动计算机。 设置将立即生效，但如果关闭或重新启动计算机，则会丢失这些设置。
 
-您还可以将存储的低资源模拟设置注册表通过省略 **/volatile**参数。 仅当重新启动计算机，但它们保持有效，直到更改它们时，这些设置是有效的。
+还可以通过省略 **/volatile**参数，将低资源模拟设置存储在注册表中。 仅当重新启动计算机时，这些设置才有效，但在你更改它们之前，这些设置将保持有效。
 
 ### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
-可以使用驱动程序验证程序管理器或 Verifier.exe 命令行来激活一个或多个驱动程序的低资源模拟选项。 有关详细信息，请参阅[选择 Driver Verifier 选项](selecting-driver-verifier-options.md)。
+您可以使用驱动程序验证器管理器或 Verifier 命令行为一个或多个驱动程序激活低资源模拟选项。 有关详细信息，请参阅[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 
--   **在命令行**
+-   **在命令行中**
 
-    在命令行中，由表示低资源模拟选项**位 2 (0x4)** 。 若要激活低资源模拟，请使用 0x4 标志值或将 0x4 添加到标志值。 例如：
+    在命令行中，低资源模拟选项由**Bit 2 （0x4）** 表示。 若要激活低资源模拟，请使用值为0x4 的标志值或将0x4 添加到 flags 值。 例如：
 
     ```
     verifier /flags 0x4 /driver MyDriver.sys
     ```
 
-    在下一次启动后，选项将处于活动状态。
+    选项将在下一次启动后处于活动状态。
 
-    在 Windows Vista 和更高版本的 Windows 上，可以使用 */错误*参数或标志值**0x4**激活低资源模拟。 若要修改的低资源模拟设置，必须使用 **/错误**。 例如：
+    在 Windows Vista 和更高版本的 Windows 上，可以使用 */faults*参数或标志值**0X4**激活低资源模拟。 若要修改低资源模拟的设置，必须使用 **/faults**。 例如：
 
     ```
     verifier /faults /driver MyDriver.sys
     ```
 
-    在 Windows 2000 和更高版本的 Windows，您可以还激活和停低资源模拟用而无需重启计算机，通过添加 **/volatile**命令参数。 例如：
+    在 Windows 2000 和更高版本的 Windows 上，还可以通过将 **/volatile**参数添加到命令，来激活和停用低资源模拟，无需重新启动计算机。 例如：
 
     ```
     verifier /volatile /flags 0x4 /adddriver MyDriver.sys
     ```
 
-    此设置将立即生效，但当你关闭或重新启动计算机时将丢失。 有关详细信息，请参阅[使用易失性设置](using-volatile-settings.md)。
+    此设置将立即生效，但当你关闭或重新启动计算机时，此设置会丢失。 有关详细信息，请参阅[使用可变设置](using-volatile-settings.md)。
 
-    在 Windows Vista 中，可以使用 **/错误**参数以表示与低资源模拟 **/volatile**参数以表示不重启是有效的设置。 将显示设置更改。 例如：
+    在 Windows Vista 上，你可以使用 **/faults**参数来表示使用 **/Volatile**参数的低资源模拟，以表示在不重新启动的情况下有效的设置。 将显示设置更改。 例如：
 
     ```
     0>  verifier /volatile /faults /adddriver MyDriver.sys
@@ -111,21 +109,21 @@ ms.locfileid: "67354779"
     or change them again.
     ```
 
--   **使用驱动程序验证程序管理器**
-    1.  启动驱动程序验证器管理器。 类型**Verifier**在命令提示符窗口中。
-    2.  选择**创建自定义设置 （适用于代码开发人员）** ，然后单击**下一步**。
-    3.  选择**从完整的列表中选择单个设置**。
-    4.  选择**较低的资源模拟**。
+-   **使用驱动程序验证器管理器**
+    1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入**Verifier** 。
+    2.  选择 "**创建自定义设置（适用于代码开发人员）** "，然后单击 "**下一步**"。
+    3.  选择 "**从完整列表中选择单个设置**"。
+    4.  选择**低资源模拟**。
 
-### <a name="span-idcustomizing_the_settings__windows_vista_and_later_spanspan-idcustomizing_the_settings__windows_vista_and_later_spancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>自定义设置 (Windows Vista 及更高版本)
+### <a name="span-idcustomizing_the_settings__windows_vista_and_later_spanspan-idcustomizing_the_settings__windows_vista_and_later_spancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>自定义设置（Windows Vista 和更高版本）
 
-从 Windows Vista 开始，你可以延迟、 概率、 应用程序的默认设置和池标记低资源模拟选项的属性。 可以使用驱动程序验证程序管理器或 Verifier.exe 命令行来更改这些设置。 有关详细信息，请参阅[选择 Driver Verifier 选项](selecting-driver-verifier-options.md)。
+从 Windows Vista 开始，你可以更改 "低资源模拟" 选项的 "延迟"、"概率"、"应用程序" 和 "池标记" 属性的默认设置。 可以通过使用驱动程序验证程序管理器或 Verifier 命令行来更改这些设置。 有关详细信息，请参阅[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 
 在命令行中，这些设置的语法如下所示：
 
-**verifier** \[ **/volatile**\] **/faults**\[*Probability*|*PoolTags*|*Applications*|*DelayMins*\]\[ **/driver**|*DriverList*\]
+**verifier** \[ **/volatile**\] **/faults**@no__t 5*概率*|*PoolTags*|*应用程序*1*DelayMins*3 @ no__t-14 **/driver**6*DriverList*8
 
-**请注意**自定义设置参数必须出现在显示的顺序。 如果省略一个值，键入引号，若要保留它的位置。
+**注意** 自定义设置参数必须按显示的顺序出现。 如果省略某个值，请键入引号以保存其位置。
 
 
 
@@ -133,56 +131,56 @@ ms.locfileid: "67354779"
 
 - **/faults**
 
-  使驱动程序验证程序中的低资源模拟选项。 （您不能使用 /flags 0x4 与自定义设置子参数。）
+  启用驱动程序验证器中的低资源模拟选项。 （不能将/flags 0x4 与自定义设置子参数一起使用。）
 
-- *概率*
+- *发生*
 
-  指定驱动程序验证程序将失败的给定的分配的概率。 键入一个数字 （以十进制或十六进制格式） 的可能性将数量表示在驱动程序验证程序将失败分配 10,000。 默认值为 600，表示 600/10000 或 6%。
+  指定驱动程序验证程序在给定分配中将失败的概率。 键入一个数字（以十进制或十六进制格式表示），以表示10000中的驱动程序验证程序将无法分配的概率。 默认值为600，表示600/10000 或 6%。
 
 - *PoolTags*
 
-  限制驱动程序验证程序可以分配，则使用指定的池标记为失败的分配。 可以使用通配符 (* *\\* * *) 来表示池的多个标记。 若要列出多个池标记，请用空格分隔标记。 默认情况下，所有分配可能会都失败。
+  限制驱动程序验证程序无法通过指定的池标记分配的分配数。 您可以使用通配符（ **\*** ）来表示多个池标记。 若要列出多个池标记，请用空格分隔标记。 默认情况下，所有分配都可能失败。
 
-- *Applications*
+- *应用程序*
 
-  限制驱动程序验证程序可以故障到指定的程序的分配的分配。 键入可执行文件的名称。 若要列出的程序，单独的程序名称以空格。 默认情况下，所有分配可能会都失败。
+  限制驱动程序验证程序可为指定程序分配的分配数。 键入可执行文件的名称。 若要列出程序，请用空格分隔程序名称。 默认情况下，所有分配都可能失败。
 
 - *DelayMins*
 
-  指定在此期间驱动程序验证程序不会有意失败任何分配的启动后的分钟数。 此延迟使用要加载的驱动程序和系统在测试前达到稳定状态开始。 键入一个数字 （以十进制或十六进制格式）。 默认值为 8 （分钟）。
+  指定引导后的分钟数，在此期间，驱动程序验证程序不会有意失败任何分配。 此延迟允许在测试开始之前加载驱动程序并使系统稳定。 键入数字（十进制或十六进制格式）。 默认值为8（分钟）。
 
-例如，以下命令启用低资源模拟有 10%的可能性 (1000年/10000) 和池标记，标记 1 和 Fred，和应用程序，Notepad.exe 的五分钟的延迟。
+例如，下面的命令将实现低资源模拟，其概率为 10% （1000/10000），而池标记、Tag1 和 Fred 的延迟为5分钟，而应用程序为 Notepad.exe。
 
 ```
 verifier /faults 1000 "Tag1 Fred" Notepad.exe 5
 ```
 
-以下命令可同时低资源模拟具有默认值，只不过它扩展到 10 分钟的延迟。
+下面的命令通过默认值启用低资源模拟，只不过它将延迟延长到10分钟。
 
 ```
 verifier /faults "" "" "" 0xa
 ```
 
-**使用驱动程序验证程序管理器**
+**使用驱动程序验证器管理器**
 
-1.  启动驱动程序验证器管理器。 类型**Verifier**在命令提示符窗口中。
-2.  选择**创建自定义设置 （适用于代码开发人员）** ，然后单击**下一步**。
+1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入**Verifier** 。
+2.  选择 "**创建自定义设置（适用于代码开发人员）** "，然后单击 "**下一步**"。
 
-3.  选择**从完整的列表中选择单个设置**。
+3.  选择 "**从完整列表中选择单个设置**"。
 
-4.  选择**较低的资源模拟**，然后单击**下一步。**
+4.  选择**低资源模拟**，并单击 "**下一步"。**
 
-5.  更改延迟、 概率、 应用程序的设置和池标记为所需的属性。
+5.  根据需要更改 "延迟"、"概率"、"应用程序" 和 "池标记" 属性的设置。
 
 ### <a name="span-idviewing_the_resultsspanspan-idviewing_the_resultsspanviewing-the-results"></a><span id="viewing_the_results"></span><span id="VIEWING_THE_RESULTS"></span>查看结果
 
-你可以监视的 Driver Verifier 有意失败的资源分配通过显示驱动程序验证程序的次数*注入错误*全局计数器。 此计数器显示自上次启动以来有意失败，驱动程序验证程序的资源分配的总数。
+可以通过显示驱动程序验证器*错误注入*的全局计数器来监视驱动程序验证程序有意失败资源分配的次数。 此计数器显示自上次启动以来驱动程序验证程序特意失败的资源分配总数。
 
-可以在驱动程序验证程序的日志文件查看此计数器 ( **/log**)，在命令行 ( **/查询**) 或驱动程序验证器管理器中。 在 Windows 2000 中，若要查看全局计数器，请选择**全局计数器**选项卡。在更高版本的 Windows 中，选择**显示有关当前已验证的驱动程序的信息**任务，，然后按**下一步**两次。 有关详细信息请参阅[监视全局计数器](monitoring-global-counters.md)。
+可以在驱动程序验证程序日志文件（ **/log**）中，在命令行（ **/Query**）或驱动程序验证器管理器中查看此计数器。 在 Windows 2000 中，若要查看全局计数器，请选择 "**全局计数器**" 选项卡。在更高版本的 Windows 中，选择 **"显示有关当前已验证的驱动程序任务的信息**"，**然后按两次。** 有关详细信息，请参阅[监视全局计数器](monitoring-global-counters.md)。
 
-您还可以通过使用显示有意失败的分配数和总分配 （若要计算的概率） 数 **！ verifier**调试器扩展。 下面的示例演示的示例 **！ verifier**输出。
+还可以通过使用 **！ verifier**调试器扩展来显示有意失败的分配数和分配的总次数（用于计算概率）。 下面的示例演示了 **！ verifier**输出的示例。
 
-在此示例中，**注入随机资源较少的 API 故障**指示低资源模拟已启用。 **资源分配有意失败**表示有意失败的分配数并**池的分配尝试**表示的总分配数。
+在此示例中，**插入随机低资源 API 故障**表示已启用低资源模拟。 **资源分配故意**表示有意失败的分配数，而**池分配尝试**表示分配总数。
 
 ```
 !verifier
@@ -206,11 +204,11 @@ Pool Allocations Failed                0x34f
 Resource Allocations Failed Deliberately   0x3f5
 ```
 
-若要显示最新驱动程序验证程序失败的分配堆栈跟踪，请使用 **！ verifier 4**内核调试器中。
+若要为驱动程序验证器显示最近失败的分配的堆栈跟踪，请在内核调试器中使用 **！ Verifier 4** 。
 
-下面的示例演示一个示例的输出 **！ verifier 4**。 默认情况下 **！ verifier 4**显示堆栈跟踪从四个最最近失败的分配，但你可以使用其*Quantity*参数以增加堆栈跟踪显示的数量。 例如，！ verifier 0x80 显示 128 最近失败的分配。
+下面的示例演示 **！ verifier 4**的输出示例。 默认情况下， **！ verifier 4**显示来自四个最近失败的分配的堆栈跟踪，但你可以使用其*数量*参数增加显示的堆栈跟踪数。 例如，！ verifier 0x80 显示128最近失败的分配。
 
-在此示例中，请注意验证工具已拦截和替换的驱动程序调用**ExAllocatePoolWithTag**。 驱动程序故障的最常见的原因之一发生时驱动程序将尝试分配内存，然后使用验证不之前返回的分配函数的指针**NULL**。
+在此示例中，请注意，验证程序已截获并替换驱动程序对**ExAllocatePoolWithTag**的调用。 驱动程序崩溃的最常见原因之一是，驱动程序尝试分配内存，然后使用分配函数返回的指针，然后再验证它是否不**为 NULL**。
 
 ```
 kd> !verifier 4
@@ -239,11 +237,11 @@ Entry @ 8354B230 (index 74)
     A4725F94 win32k!StubGdiAlloc+0x10
 ```
 
-与低资源模拟测试体验显示大多数驱动程序崩溃由最近失败的分配。 在上面的示例中，在发生崩溃时的路径中**win32k ！GreEnableEUDC**。 检查以找出在发生崩溃的原因的分配的路径中的代码。
+低资源模拟测试的经验表明，大多数驱动程序崩溃都是由最新失败的分配造成的。 在上面的示例中，崩溃在**win32k.sys！GreEnableEUDC**。 检查分配路径中的代码以找出崩溃的原因。
 
-璝惠 **！ verifier**，请参阅*的 Windows 调试工具*文档。
+有关 **！ verifier**的信息，请参阅*Windows 调试工具*文档。
 
-若要在注册表中的命令行中查看设置，请使用 **/querysettings**选项。 例如：
+若要在命令行中查看注册表中的设置，请使用 **/querysettings**选项。 例如：
 
 ```
 C:\>verifier /querysettings
@@ -272,12 +270,3 @@ Verified drivers:
 
 blah.sys
 ```
-
-
-
-
-
-
-
-
-

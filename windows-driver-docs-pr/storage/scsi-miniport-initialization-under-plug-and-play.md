@@ -3,42 +3,30 @@ title: 在即插即用下进行的 SCSI 微型端口初始化
 description: 在即插即用下进行的 SCSI 微型端口初始化
 ms.assetid: bf2f9809-8271-4f0f-a2c4-25127fe9c4aa
 keywords:
-- SCSI 微型端口驱动程序 WDK 存储，即插即用
+- SCSI 微型端口驱动程序 WDK 存储，PnP
+- PnP WDK SCSI
 - 即插即用 WDK SCSI
-- Plug and Play WDK SCSI
 - 初始化 SCSI 微型端口驱动程序
-- SCSI 微型端口驱动程序 WDK 存储初始化
-ms.date: 04/20/2017
+- SCSI 微型端口驱动程序 WDK 存储，初始化
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 17604ae71fda2cf03e48acad0d344b8e31b5e6c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 675994d06427a396439c3cbc4eff403ec711b00d
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386492"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252451"
 ---
 # <a name="scsi-miniport-initialization-under-plug-and-play"></a>在即插即用下进行的 SCSI 微型端口初始化
 
+对于 Windows 2000 和更高版本，旧的微型端口驱动程序的初始化方式与 Microsoft Windows NT 4.0 完全相同。 当旧式微型端口驱动程序调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)时，端口驱动程序会调用微型端口驱动程序来查找并初始化其 HBA。 这是针对它找到的每个 HBA （如果 HBA 位于可枚举的总线上）或重复执行，直到微型端口驱动程序报告它无法找到其他设备。 控制然后返回到微型端口驱动程序的[**DriverEntry**](driverentry-of-scsi-miniport-driver.md)例程，其中微型端口驱动程序可以对不同类型的 HBA 再次调用**ScsiPortInitialize** （例如，不同的接口或不同的供应商和产品 ID）。 所有初始化调用都在微型端口驱动程序的**DriverEntry**例程的上下文中进行，并按调用**ScsiPortInitialize**的顺序进行。 旧驱动程序的初始化在系统启动时和在其他时间进行。
 
-## <span id="ddk_scsi_miniport_initialization_under_plug_and_play_kg"></span><span id="DDK_SCSI_MINIPORT_INITIALIZATION_UNDER_PLUG_AND_PLAY_KG"></span>
+在即插即用中，无法保留初始化顺序。 当启用的即插即用微型端口驱动程序调用**ScsiPortInitialize**时，端口驱动程序将存储初始化数据以供将来参考，然后返回 STATUS_SUCCESS。 此操作针对微型端口驱动程序的**PnPInterface**注册表项中列出的每个接口类型执行--该密钥中*未*列出的任何接口仍会立即初始化。
 
+稍后，当即插即用 manager 检测到用于微型端口驱动程序的 HBA 时，它会通知端口驱动程序。 端口驱动程序分配所需的系统资源（如微型端口驱动程序的设备扩展的内存），并调用微型端口驱动程序来查找 HBA，然后对其进行初始化。 在系统启动期间通常会发生这种情况，但当系统检测到插接操作或某个 HBA （如 CardBus）被热插拔到系统时也可能会发生这种情况。
 
-Windows 2000 和更高版本，旧的微型端口驱动程序是在完全相同的方式与 Microsoft Windows NT 4.0 中初始化。 当旧的微型端口驱动程序调用[ **ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)，端口驱动程序调用微型端口驱动程序，以查找并初始化其 HBA。 这是其在每个 HBA 找到 （如果 HBA 上的可枚举的总线上） 或重复直到微型端口驱动程序报告它找不到任何更多的设备。 随后控制返回到微型端口驱动程序[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)例程，其中微型端口驱动程序可以调用**ScsiPortInitialize**再次为其他类型的 HBA （适用于示例中，使用不同的接口或不同的供应商和产品 ID）。 微型端口驱动程序的上下文中进行的所有初始化调用**DriverEntry**例程并按顺序进行的**ScsiPortInitialize**调用。 旧式驱动程序的初始化发生在系统启动时以及在任何其他时间。
+即插即用管理器报告设备时，已为该设备分配了总线资源（如 i/o 端口、内存地址和中断）*和该*设备。 将这些资源提供给微型端口驱动程序，该驱动程序必须使用这些资源或报告找不到设备。 特别是，微型端口驱动程序不得尝试访问指定用于查找设备的端口或内存位置。
 
-在插即用设备，不能保留的初始化顺序。 当为插调用启用微型端口驱动程序**ScsiPortInitialize**，端口驱动程序存储初始化数据以供将来参考，则将返回状态\_成功。 这是与微型端口驱动程序中列出的每个接口类型**PnPInterface**注册表项--任何接口*不*该注册表项中列出仍立即初始化。
+可能要求已作为即插即用驱动程序启动的微型端口驱动程序检测 nonenumerable 总线上的设备。 这包括总线，如 ISA，这要求总线上的微型端口驱动程序发出命令来查找 HBA。 此类检测中的设备会记录在注册表中，并在下次启动系统时作为即插即用设备进行初始化。
 
-更高版本，当插管理器检测到的微型端口驱动程序的 HBA，它将通知端口驱动程序。 端口驱动程序分配必要的系统资源 （如为微型端口驱动程序的设备扩展的内存） 并调用要查找 HBA 的微型端口驱动程序，然后对其进行初始化。 这通常发生在系统启动，但它也可能会发生时系统检测到停靠操作或 CardBus 如 HBA 是热的插入到系统中。
-
-插管理器报告设备时，它具有已分配总线资源 （如 I/O 端口、 内存地址和中断） 为该设备*和该设备仅*。 这些资源提供给微型端口驱动程序，它必须使用这些资源或报告，未找到设备。 具体而言，微型端口驱动程序必须尝试访问端口或指定为找到的设备以外的内存位置。
-
-微型端口驱动程序，如插驱动程序可能会需要检测 nonenumerable 总线上的设备已启动。 这包括总线 ISA，如需要，微型端口驱动程序问题的命令总线上查找其 HBA。 设备位于在这种检测过程记录在注册表中，并初始化为插设备在下次启动系统。
-
-有关插的详细信息，请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
-
- 
-
- 
-
-
-
-
+有关即插即用的详细信息，请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。

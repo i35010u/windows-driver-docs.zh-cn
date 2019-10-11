@@ -1,6 +1,6 @@
 ---
 title: 星号字符注释行说明符
-description: 如果星号字符是一个命令的开头，然后在行的其余部分作为处理注释，即使分号后出现。
+description: 如果星号字符位于命令的开头，则该行的其余部分将被视为注释，即使其后出现分号也是如此。
 ms.assetid: 46f68e92-0758-49f2-82bb-bc4d25ddb641
 keywords:
 - 注释行标记
@@ -13,17 +13,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a9a87651019cf4524a81039f36b2a6b0921c10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3572a854051b602196009ec38d74ed1c2d0e0d19
+ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337072"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038042"
 ---
 # <a name="-comment-line-specifier"></a>\* （注释行说明符）
 
-
-如果星号 ( **\\** *) 字符是一个命令，开始时则行的其余内容被视为注释，即使分号后出现。
+如果星号（ **\*** ）字符位于命令开头，则该行的其余部分将被视为注释，即使其后出现分号也是如此。
 
 ```dbgcmd
     * [any text]
@@ -32,23 +31,14 @@ ms.locfileid: "63337072"
 <a name="remarks"></a>备注
 -------
 
-**\\** * 等任何其他调试器命令分析标记。 因此，如果你想要创建另一个命令后的注释，则必须在前面 **\\** * 令牌以分号结尾。
+**@No__t**的令牌与任何其他调试器命令一样进行分析。 因此，如果要在另一个命令后创建注释，则必须在 **\*** 标记前面加上一个分号。
 
-**\\** * 令牌将导致该行被忽略的其余部分，即使分号后出现。 这不同于[ **$$ （注释说明符）** ](-----comment-specifier-.md)，用于创建一条注释，可以由分号终止。
+**@No__t-1**标记将导致行的其余部分被忽略，即使其后出现分号也是如此。 这不同于[ **$ $ （Comment 说明符）** ](-----comment-specifier-.md)，后者创建一个可由分号终止的注释。
 
-例如，以下命令将显示**eax**并**ebx**，但不是**ecx**:
+例如，以下命令将显示**eax**和**ebx**，但不显示**ecx**：
 
 ```console
-0:000> r eax; $$ some text; r ebx; * more text; r ecx 
+0:000> r eax; $$ some text; r ebx; * more text; r ecx
 ```
 
-文本加 **\\** * 或[ **$$** ](-----comment-specifier-.md)令牌不以任何方式处理。 如果您在执行远程调试，在调试服务器中输入的注释将不会显示在调试客户端或进行相反转换。 如果你想要使应使用对所有参与方，可见的方式在调试器命令窗口中显示的注释文本[ **.echo （Echo 注释）** ](-echo--echo-comment-.md)。
-
- 
-
- 
-
-
-
-
-
+不会以任何方式处理 **\*** 或[ **$$** ](-----comment-specifier-.md)标记前面的文本。 如果要执行远程调试，则在调试服务器中输入的注释将在调试客户端中不可见，反之亦然。 如果希望使注释文本在调试器中出现命令窗口以对所有参与方可见的方式显示，则应使用[**echo （回显注释）** ](-echo--echo-comment-.md)。

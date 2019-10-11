@@ -2,85 +2,61 @@
 title: Storport 提供的功能
 description: Storport 提供的功能
 ms.assetid: 30b4d2e4-2004-4d71-8c91-f066e52dd256
-ms.date: 04/20/2017
+ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eeeb27ec4ae887cec0463370f1f5a57ea7f49c6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93e56204734e1acf66a0ab196741dd1d3e85b632
+ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368363"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252441"
 ---
 # <a name="capabilities-provided-by-storport"></a>Storport 提供的功能
 
+Storport 驱动程序提供以下功能：
 
-Storport 驱动程序提供了以下功能：
+- **寻址**
 
-寻址
+  Microsoft Windows 支持包含不同类型的 i/o 总线和/或多个相同类型的 i/o 总线的系统。 需要使用常见的寻址方案来处理这种情况。
 
--   Microsoft Windows 支持包含不同类型的 I/O 总线和/或相同类型的多个 I/O 总线的系统。 常见的寻址方案需要处理这样的多样性。
+  PCI 设备可以有 i/o 端口和内存注册资源。 逻辑地址有助于使此区分对端口驱动程序透明。
 
--   PCI 设备可以有 I/O 端口和注册的资源的内存。 逻辑地址有助于使这一区别对端口驱动程序透明。
+  某些系统包含连接到多个总线的 Hba;此类 HBA 可能需要几组地址转换。
 
--   某些系统包含连接到多个总线; 的 Hba此类 HBA 可能需要多个地址转换的集。
+  逻辑地址是对基于 CISC 的计算机和基于 RISC 的计算机之间的可移植性所需的。
 
--   逻辑地址需要跨 CISC 基于和 RISC 基于计算机的可移植性。
+- **Retrys 和错误处理**
 
-Retrys 和错误处理
+  - 当设备太忙而无法处理时，存储类驱动程序不必实现重试 Irp 的算法。 Storport 驱动程序实现此功能。
 
--   正在重试 Irp，当设备太忙而无法处理它们。
+  - 类驱动程序为请求设置超时值，而 Storport 负责强制执行。 但 Storport 驱动程序可以灵活地强制执行类驱动程序的超时值，从而考虑到总线的状态。 例如，如果由 Storport 管理的光纤通道链接丢弃20秒，则 Storport 可能会在停机时间挂起超时计数器，因此，如果在该链接恢复之后10秒内的时间超过10秒，请求将不会失败。 Storport 增加了分配给请求的超时值，以响应 i/o 流量的增加，因为使用较大的 i/o 流量，设备需要更多的时间来完成请求。
 
-    存储类驱动程序不需要实现当设备太忙而无法处理它们时重试 Irp 的算法。 Storport 驱动程序实现此功能。
+  - Storport 处理目标和控制器繁忙错误，并处理传输错误条件（即，与总线上实际传输数据相关的错误）。 例如：
+    - 总线-奇偶校验错误
+    - 选择超时
 
--   强制执行请求的超时值。
+- **配置、排队和电源状态管理**
 
-    在类驱动程序设置的请求的超时值和 Storport 负责强制执行它。 但是，Storport 驱动程序可以强制执行的类驱动程序的超时值功能，灵活地，采用纳入考虑范围的总线的状态。 例如，如果 Storport 由管理的光纤通道链接降至 20 秒，Storport 可能挂起超时计数器期间的停机时间，以便例如，10 秒的超时请求之前，将不失败后链接恢复正常后 10 秒。 Storport 会增加分配给请求以增加的 I/O 流量，响应的超时值，因为设备将使用更大的 I/O 流量，需要更多时间来完成请求。
+  - 为类驱动程序提供主机适配器限制的相关信息：类驱动程序负责控制数据传输的大小，以适应主机总线适配器（Hba）的限制。 但 Storport 为类驱动程序提供了完成此任务所需的信息。 Storport 在适配器描述符（[STORAGE_ADAPTER_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)）中 furnishes 此信息以响应 IOCTL 请求（[**IOCTL_STORAGE_QUERY_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)）。 类驱动程序负责根据此描述符中报告的信息将请求分解为适当大小的块。
 
--   处理目标和控制器忙的错误，以及传输错误条件 （即，与实际总线上的数据传输相关的错误）。 例如：
+  - 将总线相对地址转换为逻辑地址：查询时，适配器会为 i/o 端口、命令寄存器和控制状态寄存器提供与总线相关的地址。 但是，微型端口驱动程序无法使用与总线相关的地址与其主机总线适配器（HBA）进行通信。 Storport 将与总线相关的地址转换为逻辑地址，使微型端口驱动程序可以透明方式访问总线地址。 出现此情况的原因有以下几个：
 
-    1.  总线奇偶校验错误
-    2.  所选内容的超时
+  - 在设备启动之前，确保设备及其所有基础设备已通电（处于 D0 设备电源状态）：如果设备尚未准备好启动，则在设备准备就绪之前，Storport 会将对该设备的 D0 请求排队。
 
-配置、 队列和电源状态管理
+  - 将来自类驱动程序的异步请求排队，并将其异步转发到目标设备：类驱动程序不必等待请求完成，然后再发送下一个请求。 Storport 假设需要对这些请求进行排队，以避免对基础硬件的处理能力产生巨大的处理能力。
 
--   提供有关主机适配器限制的信息的类驱动程序。
+  - 支持内部 i/o 请求队列的内部和外部管理：大多数队列管理操作都是由 Storport 本身启动的。 例如，Storport 在发生错误时冻结其队列，并向类驱动程序报告错误条件，以便在处理更多请求之前类驱动程序可以响应。 但 Storport 还响应类驱动程序或其他较高级别的驱动程序发出的请求，以锁定、解锁、冻结或解冻其内部请求队列。 较高级别的驱动程序可以使用 SRB_FUNCTION_RELEASE_QUEUE 请求强制 Storport 取消冻结其内部队列。 有关 "冻结"、"锁定" 或 "解除锁定" 队列的含义的说明，请参阅[Storport 队列管理](storport-queue-management.md)。
 
-    它负责的类驱动程序来控制数据传输，以满足主机总线适配器 (Hba) 的限制的大小。 但是，Storport 提供使用它来完成此任务所需的信息的类驱动程序。 Storport 提供此适配器描述符中的信息 ([**存储\_适配器\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) 以响应 IOCTL 请求 ([ **IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property))。 在类驱动程序负责请求分解为多个块的基于此描述符中报告的信息的适当大小。
+  - 将设备报告的错误转换为 SCSI-3 感知数据格式，以供类驱动程序进行处理。
 
--   正在转换到逻辑地址总线相对地址。
+Storport 通过 Storport 库例程向微型端口驱动程序提供服务。 微型端口驱动程序编写器可调用这些例程，而不是将其提供的功能编码为单一单一端口驱动程序。 使用这些例程的一些最重要的服务如下所示：
 
-    查询时，适配器提供 I/O 端口、 命令寄存器和控件状态寄存器总线相对的地址。 但是，微型端口驱动程序不能使用总线相对地址与其主机总线适配器 (HBA) 进行通信。 Storport 转换到逻辑地址，总线相对地址，以便微型端口驱动程序可以透明方式访问总线地址。 有几个原因：
+- Storport 微型端口驱动程序可以将许多与操作系统相关的初始化操作委托给 Storport 的[**StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)库例程。 例如，Storport 驱动程序处理与 PnP 和 DMA 映射相关的详细信息。 这使得在不同版本的操作系统之间更易于移植的 Storport 微型端口驱动程序。 有关 Storport 微型端口驱动程序的初始化任务的说明，请参阅[使用 storport 进行硬件初始化](hardware-initialization-with-storport.md)。
 
--   确保，在设备和其基础的所有设备都已打开 （在 D0 设备电源状态） 之前启动设备。
+- 适用于非 PnP 设备的 Storport 微型端口驱动程序可代替查找适配器并向 PnP 管理器报告其资源的任务。 这是在[**StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)中完成的。
 
-    当设备未准备好打开设备电源时，Storport 排队 D0 请求为该设备之前设备已准备就绪。
+- Storport 微型端口驱动程序不初始化驱动程序对象中的调度入口点。 当微型端口驱动程序调用[**StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)时，Storport 驱动程序会代表微型端口驱动程序执行此功能。
 
--   队列类驱动程序的异步请求并以异步方式将它们转发到目标设备。
+- Storport 微型端口驱动程序不使用**HalTranslateBusAddress**将与总线相关的地址转换为逻辑地址。 Storport 微型端口驱动程序通过调用[**StorPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)来实现此目的。
 
-    类驱动程序无需等待发送的下一个请求之前完成的请求。 Storport 有责任队列这些请求以避免庞大的基础硬件的处理能力。
-
--   支持内部 I/O 请求队列的内部和外部的管理。
-
-    大多数队列管理操作是通过 Storport 本身启动的。 例如，Storport 时，会冻结其队列错误发生，向类驱动程序，报告错误条件，以便进一步处理请求之前，可以响应的类驱动程序。 但是，Storport 还响应来自请求的类驱动程序或其他更高级别的驱动程序锁定、 解锁、 冻结或解冻其内部请求队列。 更高级别的驱动程序可以强制 Storport 取消其内部队列使用 SRB\_函数\_发行\_排队请求。 这意味着"冻结"的说明，为"锁定"或"解锁"队列，请参阅[Storport 队列管理](storport-queue-management.md)。
-
--   正在转换报告的错误是由设备为 scsi-3 检测数据格式，以便处理类驱动程序。
-
-Storport 通过 Storport 库例程提供给微型端口驱动程序的服务。 微型端口驱动程序编写人员可以调用这些例程，而不是无需编码到单个整体式端口驱动程序提供的功能。 一些最重要的服务使用这些例程提供如下所示：
-
--   Storport 微型端口驱动程序可以将委派到 Storport 的很多依赖于 OS 的初始化操作[ **StorPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)库例程。 例如，Storport 驱动程序将处理与即插即用相关的详细信息和 DMA 映射。 这使 Storport 微型端口驱动程序更易于移植跨不同版本的操作系统。 Storport 微型端口驱动程序初始化任务的说明，请参阅[Storport 使用硬件初始化](hardware-initialization-with-storport.md)。
-
--   Storport 微型端口驱动程序适用于非 PnP 设备空闲下来，查找适配器并向即插即用管理器报告其资源的任务。 这是在[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)。
-
--   Storport 微型端口驱动程序未初始化的驱动程序对象中的调度入口点。 Storport 驱动程序执行这代表微型端口驱动程序微型端口驱动程序调用时[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)。
-
--   Storport 微型端口驱动程序不会转换为使用的逻辑地址总线相对地址[ **HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))。 Storport 微型端口驱动程序执行此操作通过调用[ **StorPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)。
-
-Storport 使其可供 Storport 微型端口驱动程序的库例程的完整列表，请参阅[Storport 驱动程序支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
-
- 
-
- 
-
-
-
-
+有关 Storport 可用于 Storport 微型端口驱动程序的库例程的完整列表，请参阅[Storport 驱动程序支持例程](storport-driver-support-routines.md)。
