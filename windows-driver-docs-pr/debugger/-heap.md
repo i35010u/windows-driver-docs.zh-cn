@@ -15,10 +15,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b10538ea1a4de33199b59796deb8d1e9265a452
-ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
+ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 10/11/2019
 ms.locfileid: "72021054"
 ---
 # <a name="heap"></a>!heap
