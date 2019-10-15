@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0xD5 DRIVER_PAGE_FAULT_IN_FREED_SPECIAL_POOL
-description: DRIVER_PAGE_FAULT_IN_FREED_SPECIAL_POOL bug 检查具有 0x000000D5 值。 这指示一个驱动程序具有引用先前释放的内存。
+description: DRIVER_PAGE_FAULT_IN_FREED_SPECIAL_POOL bug 检查的值为0x000000D5。 这表明驱动程序已引用先前释放的内存。
 ms.assetid: b86e55d2-122f-40ac-adb3-092511d3274e
 keywords:
 - Bug 检查 0xD5 DRIVER_PAGE_FAULT_IN_FREED_SPECIAL_POOL
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d46dc53d226c0d22f0307d7f5b36a39e82b3412
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f0f882b4e91ac32d838428b8a81a0fe7d5ada730
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518864"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313784"
 ---
-# <a name="bug-check-0xd5-driverpagefaultinfreedspecialpool"></a>Bug 检查 0xD5：驱动程序\_页上\_容错\_IN\_FREED\_特殊\_池
+# <a name="bug-check-0xd5-driver_page_fault_in_freed_special_pool"></a>Bug 检查 0xD5：DRIVER @ NO__T-0PAGE @ NO__T-1FAULT @ NO__T-2IN @ NO__T-3FREED @ NO__T-4SPECIAL @ NO__T-5POOL
 
 
-该驱动程序\_页上\_容错\_IN\_FREED\_特殊\_池 bug 检查的值为 0x000000D5。 这指示一个驱动程序具有引用先前释放的内存。
+DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2IN @ no__t-3FREED @ no__t-4SPECIAL @ no__t-5POOL bug 检查的值为0x000000D5。 这表明驱动程序已引用先前释放的内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driverpagefaultinfreedspecialpool-parameters"></a>驱动程序\_页上\_容错\_IN\_FREED\_特殊\_池参数
+## <a name="driver_page_fault_in_freed_special_pool-parameters"></a>DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2IN @ no__t-3FREED @ no__t-4SPECIAL @ no__t-5POOL 参数
 
 
 <table>
@@ -50,12 +50,12 @@ ms.locfileid: "67518864"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p><strong>0:</strong>Read</p>
-<p><strong>1:</strong>写入</p></td>
+<td align="left"><p><strong>0</strong>Read</p>
+<p><strong>2</strong>写入</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>（如果已知） 引用内存的地址</p></td>
+<td align="left"><p>确定所引用内存的地址（如果已知）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -65,20 +65,20 @@ ms.locfileid: "67518864"
 </table>
 
  
-
-如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE @ no__t-0STRING） **KiBugCheckDriver**。
 
 <a name="cause"></a>原因
 -----
 
-Driver Verifier**特殊池**选项捕获访问之前释放的内存的驱动程序。
+"驱动程序验证程序**特殊池**" 选项已发现驱动程序访问先前释放的内存。
 
-有关特殊的池的信息，请查阅 Windows 驱动程序工具包的驱动程序验证程序部分。
+有关特殊池的信息，请参阅 Windows 驱动程序工具包的驱动程序验证程序部分。
 
 <a name="remarks"></a>备注
 -------
 
-这不会受到**试用-除**处理程序-通过探测来仅进行保护。
+这不能通过**try-except**处理程序来保护--它只能通过探测进行保护。
 
  
 

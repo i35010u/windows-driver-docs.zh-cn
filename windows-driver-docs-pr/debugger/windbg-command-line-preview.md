@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6ede0f610177f62668402460f7d2dbf65a0f03
-ms.sourcegitcommit: 670763c23cd6940c97834418deade3e7db378f35
+ms.openlocfilehash: 236029136134c27eaa6e00b6d764db09dc99ea19
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71998532"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313788"
 ---
 # <a name="windbg-preview---command-line-startup-options"></a>WinDbg 预览版 - 命令行启动选项
 
@@ -79,7 +79,7 @@ WinDbgX [options]
 |          -z *DumpFile*           |                                                                    指定要调试的故障转储文件的名称。 如果路径和文件名包含空格，则必须用引号将其引起来。                                                                    |
 | -openPrivateDumpByHandle*句柄* |                                                                                             *仅限 Microsoft 内部使用*。 指定要调试的故障转储文件的句柄。                                                                                               |
 |    -debugArch x86 或 amd64     |                                                                                                 重写自动检测行为并为调试器设置目标位数。                                                                                                 |
-|            可执行文件            | 指定可执行进程的命令行。 此操作用于启动新进程并对其进行调试。 这必须是命令行上的最后一项。 可执行文件名称后的所有文本都作为其参数字符串传递到可执行文件。
+|            可执行文件            | 指定可执行进程的命令行。 此操作用于启动新进程并对其进行调试。 这必须是命令行上的最后一项。 可执行文件名称后的所有文本都作为其参数字符串传递到可执行文件。                             |
 
 **符号选项**
 
