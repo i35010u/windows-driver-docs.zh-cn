@@ -1,52 +1,52 @@
 ---
-title: 获取在 IRQL DISPATCH_LEVEL 设备配置信息
-description: 获取在 IRQL DISPATCH_LEVEL 设备配置信息
+title: 获取 IRQL DISPATCH_LEVEL 的设备配置信息
+description: 获取 IRQL DISPATCH_LEVEL 的设备配置信息
 ms.assetid: e168a12b-f32e-4b8d-8768-dc622b37b421
 keywords:
-- I/O WDK 内核，设备配置空间
-- 设备配置空间 WDK I/O
-- 配置空间 WDK I/O
-- 空间 WDK I/O
+- I/o WDK 内核，设备配置空间
+- 设备配置空间 WDK i/o
+- 配置空间 WDK i/o
+- 太空 WDK i/o
 - DISPATCH_LEVEL WDK
 - BUS_INTERFACE_STANDARD
 - 驱动程序堆栈 WDK 配置信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c6001a6fbba75975a9d1528abf7e530b67898c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee74ae26e0f2bbb54bfb48e772b2001c00657f30
+ms.sourcegitcommit: faa6d153560d96504216df0609ed7c05d7c39b34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384941"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72427587"
 ---
-# <a name="obtaining-device-configuration-information-at-irql--dispatchlevel"></a>获取设备配置信息在 IRQL = 调度\_级别
+# <a name="obtaining-device-configuration-information-at-irql--dispatch_level"></a>获取 IRQL 为的设备配置信息 = no__t-0LEVEL
 
 
 
 
 
-该方法中所示[获取设备配置信息在 IRQL = 被动\_级别](obtaining-device-configuration-information-at-irql---passive-level.md)部分将使用的 I/O 请求数据包 (Irp)，因此仅对驱动程序运行在 IRQL 有效 = 被动\_级别。 驱动程序运行在 IRQL = 调度\_级别必须使用总线接口获取设备配置的空间数据。 若要获取此数据，可以使用特定于总线的接口或系统提供独立于总线的总线接口**总线\_界面\_标准**。
+[获取设备配置信息的 IRQL = 被动 @ no__t-1LEVEL](obtaining-device-configuration-information-at-irql---passive-level.md)部分中所示的方法使用 i/o 请求数据包（irp），因此仅对在 IRQL = 被动 @ NO__T-2LEVEL 运行的驱动程序有效。 以 IRQL = no__t-0LEVEL 运行的驱动程序必须使用总线接口来获取设备配置空间数据。 若要获取此数据，可以使用特定于总线的接口或系统提供的与总线无关的总线接口，即**bus @ no__t-1INTERFACE @ no__t-2STANDARD**。
 
-GUID_BUS_INTERFACE_STANDARD 接口 (在中定义`wdmguids.h`) 使设备驱动程序，使父总线驱动程序例程，而不是使用 I/O 请求数据包 (IRP) 与总线驱动程序进行通信的直接调用。 具体而言，此接口允许驱动程序来访问总线驱动程序提供了以下函数的例程：
+GUID_BUS_INTERFACE_STANDARD 接口（在 @no__t 中定义）使设备驱动程序能够直接调用父总线驱动程序例程，而不是使用 i/o 请求数据包（IRP）来与总线驱动程序通信。 具体而言，此接口使驱动程序能够访问总线驱动程序为以下函数提供的例程：
 
--    将总线地址转换 
--    检索在其中总线适配器支持 DMA 的情况下的 DMA 适配器结构 
--    读取和设置在总线上的特定设备的总线配置空间 
+-    转换总线地址 
+-    在总线适配器支持 DMA 的情况下检索 DMA 适配器结构 
+-    在总线上读取和设置特定设备的总线配置空间 
 
-若要使用此接口，请将 IRP_MN_QUERY_INTERFACE IRP 发送到总线驱动程序与 InterfaceType = GUID_BUS_INTERFACE_STANDARD。 总线驱动程序提供了指向包含该接口的单个例程的指针的 BUS_INTERFACE_STANDARD 结构的指针。
+若要使用此接口，请使用 InterfaceType = GUID_BUS_INTERFACE_STANDARD 将 IRP_MN_QUERY_INTERFACE IRP 发送到总线驱动程序。 总线驱动程序提供一个指向 BUS_INTERFACE_STANDARD 结构的指针，该结构包含指向接口的各个例程的指针。
 
 
-最好使用**总线\_界面\_标准**如果可能，因为不需要检索配置信息时使用的总线号**总线\_接口\_标准**，而检索总线特定于接口时，驱动程序通常必须标识总线数。 对于某些总线，如 PCI 总线数字可以动态更改。 因此，驱动程序不应依赖于总线编号，以直接访问 PCI 端口。 执行此操作可能会导致系统出现故障。
+最好在可能的情况下使用**bus @ no__t-1INTERFACE @ no__t** ，因为使用**bus @ no__t-4INTERFACE @ no__t-5STANDARD**时，无需使用总线号来检索配置信息，而驱动程序必须经常检索特定于总线的接口时，确定总线号。 某些总线的总线号，如 PCI，可以动态更改。 因此，驱动程序不应依赖于总线号直接访问 PCI 端口。 这样做可能会导致系统故障。
 
-访问在 IRQL PCI 设备的配置空间时，三个步骤所需 = 调度\_级别：
+访问 PCI 设备的配置空间时，需要执行三个步骤： IRQL = no__t-0LEVEL：
 
-1.  发送[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求在 IRQL = 被动\_级别以获取直接调用接口结构 (**总线\_界面\_标准**) 从 PCI 总线驱动程序。 存储在非分页缓冲的池内存 （通常在设备扩展）。
+1.  发送[**IRP @ no__t-2MN @ no__t-3QUERY @ no__t-4INTERFACE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求，以 IRQL = 被动 @ NO__T-5LEVEL 从 PCI 总线驱动程序获取直接调用接口结构（**BUS @ no__t-7INTERFACE @ no__t-8STANDARD**）。 将其存储在非分页缓冲池内存（通常在设备扩展中）。
 
-2.  调用**总线\_界面\_标准**接口例程[ *SetBusData* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/gg604856(v=vs.85))并[ *GetBusData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)，以访问 PCI 配置空间在 IRQL = 调度\_级别。
+2.  调用**BUS @ no__t-1INTERFACE @ no__t-2STANDARD** interface 例程， [*SetBusData*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/gg604856(v=vs.85))和[*GetBusData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)以访问位于 IRQL = 调度 @ no__t-7LEVEL 的 PCI 配置空间。
 
-3.  取消对接口的引用。 PCI 总线驱动程序的引用计数在接口上之前会返回，以便访问接口的驱动程序必须对其取消引用，一旦不再需要。
+3.  取消引用接口。 PCI 总线驱动程序在其返回之前会在接口上使用引用计数，因此，访问接口的驱动程序必须在不再需要该接口时对其取消引用。
 
-下面的代码示例演示如何实现这三个步骤：
+下面的代码示例演示如何实现以下三个步骤：
 
 ```cpp
 NTSTATUS
@@ -108,7 +108,7 @@ End:
 }
 ```
 
-下面的代码段演示如何使用[ *GetBusData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)接口例程来获取配置的空间数据 （步骤 2）。
+下面的代码段演示如何使用[*GetBusData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)接口例程获取配置空间数据（步骤2）。
 
 ```cpp
  bytes = busInterfaceStandard.GetBusData(
@@ -119,16 +119,16 @@ End:
                     Length);
 ```
 
-如果该驱动程序用接口完成的它可以使用类似于以下代码片段的代码若要取消引用接口 （步骤 3）。 取消对接口的引用后，驱动程序必须调用接口例程。
+当使用接口完成驱动程序时，它可以使用类似于以下代码片段的代码取消引用接口（步骤3）。 在取消引用接口后，驱动程序不得调用接口例程。
 
 ```cpp
     (busInterfaceStandard.InterfaceDereference)(
                     (PVOID)busInterfaceStandard.Context);
 ```
 
-该接口与 PCI 总线驱动程序的访问同步总线硬件对调用方的访问。 驱动程序编写器不需要担心如何创建自旋锁以避免争用访问总线硬件的 PCI 总线驱动程序。
+接口使用 PCI 总线驱动程序的访问权限同步调用方对总线硬件的访问。 驱动程序编写器不必担心如何创建自旋锁，以避免与 PCI 总线驱动程序争用以访问总线硬件。
 
-请注意，是否它只需要是总线、 函数和设备号，这是通常不需要求助于总线接口，以获取此信息。 检索此数据可以是间接通过将传递到目标设备的 PDO [ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)函数，如下所示：
+请注意，如果所有需要的都是总线、函数和设备号，则通常不需要使用总线接口来获取此信息。 可以通过将目标设备的 PDO 传递到[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)函数来间接检索此数据，如下所示：
 
 ```cpp
     ULONG   propertyAddress, length;

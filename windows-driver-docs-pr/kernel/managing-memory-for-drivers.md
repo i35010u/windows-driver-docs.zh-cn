@@ -1,49 +1,49 @@
 ---
 title: Windows 驱动程序的内存管理
-description: 内核模式驱动程序为目的，例如将内部数据存储、 I/O 操作过程中将缓存数据和与其他内核模式和用户模式组件共享内存分配内存。
+description: 内核模式驱动程序出于某种目的分配内存，例如存储内部数据、在 i/o 操作过程中缓冲数据，以及与其他内核模式和用户模式组件共享内存。
 ms.assetid: e030a37c-26ab-4177-9980-4336928975e1
 keywords:
 - 内存管理 WDK 内核
 - 可用空间 WDK 内核
 - 可用空间 WDK 内核
-- 请参阅 WDK 内存 WDK 的空间
+- 太空 WDK，请参阅内存 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c54038422ad4c28721434ff80a366fc94ca384e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8caf435ef9954b1759d76591a536440c1ac1d92
+ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386009"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72512071"
 ---
 # <a name="memory-management-for-windows-drivers"></a>Windows 驱动程序的内存管理
 
 
-内核模式驱动程序为目的，例如将内部数据存储、 I/O 操作过程中将缓存数据和与其他内核模式和用户模式组件共享内存分配内存。 驱动程序开发人员应了解在 Windows 中的内存管理，以便他们使用已分配内存，正确而高效地。 Windows 管理虚拟和物理内存，并将内存划分为单独的用户和系统地址空间。 驱动程序可以指定已分配的内存是否支持按需分页、 数据缓存和指令执行等功能。
+内核模式驱动程序出于某种目的分配内存，例如存储内部数据、在 i/o 操作过程中缓冲数据，以及与其他内核模式和用户模式组件共享内存。 驱动程序开发人员应了解 Windows 中的内存管理，以便它们可以正确有效地使用已分配的内存。 Windows 管理虚拟内存和物理内存，并将内存分割为单独的用户和系统地址空间。 驱动程序可以指定分配的内存是否支持需求分页、数据缓存和指令执行等功能。
 
 
 
 
-*内存管理器*是内核组件，它在 Windows 中执行的内存管理操作。 有关详细信息，请参阅[Windows 内核模式内存管理器](windows-kernel-mode-memory-manager.md)。
+*内存管理器*是在 Windows 中执行内存管理操作的内核组件。 有关详细信息，请参阅[Windows 内核模式内存管理器](windows-kernel-mode-memory-manager.md)。
 
-内存管理器实现多个内核模式驱动程序调用来分配和管理内存的支持例程。 有关详细信息，请参阅[内存分配数据和缓冲区管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+内存管理器实现了多个内核模式支持例程，驱动程序调用来分配和管理内存。 有关详细信息，请参阅[内存分配和缓冲区管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#memory-allocation-and-buffer-management)。
 
-内核模式驱动程序的内存管理功能是不同的用户模式应用程序。 有关应用程序的内存管理的详细信息，请参阅[内存管理](https://docs.microsoft.com/windows/desktop/Memory/memory-management)。
+内核模式驱动程序的内存管理功能不同于用户模式应用程序的内存管理功能。 有关应用程序的内存管理的详细信息，请参阅[内存管理](https://docs.microsoft.com/windows/desktop/Memory/memory-management)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 
--   [Windows 内存空间的概述](overview-of-windows-memory-space.md)
+-   [Windows 内存空间概述](overview-of-windows-memory-space.md)
 -   [分配系统空间内存](allocating-system-space-memory.md)
 -   [映射寄存器](map-registers.md)
--   [总线相对地址映射到的虚拟地址](mapping-bus-relative-addresses-to-virtual-addresses.md)
+-   [将总线相对地址映射到虚拟地址](mapping-bus-relative-addresses-to-virtual-addresses.md)
 -   [使用内核堆栈](using-the-kernel-stack.md)
--   [使用后备链列表](using-lookaside-lists.md)
+-   [使用后备链表列表](using-lookaside-lists.md)
 -   [使驱动程序可分页](making-drivers-pageable.md)
--   [访问只读的系统内存](accessing-read-only-system-memory.md)
+-   [访问只读系统内存](accessing-read-only-system-memory.md)
 -   [访问用户空间内存](accessing-user-space-memory.md)
--   [无执行 (NX) 非分页缓冲的池](no-execute-nonpaged-pool.md)
--   [部分对象和视图](section-objects-and-views.md)
+-   [非执行（NX）非分页池](no-execute-nonpaged-pool.md)
+-   [节对象和视图](section-objects-and-views.md)
 -   [使用 MDLs](using-mdls.md)
 
  

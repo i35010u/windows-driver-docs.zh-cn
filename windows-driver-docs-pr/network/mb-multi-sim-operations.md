@@ -1,111 +1,111 @@
 ---
 title: MB 多 SIM 操作
 description: MB 多 SIM 操作
-ms.date: 04/20/2017
+ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f2aed856a93390f8810106e9b049fa43657d8397
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec3f386758f6a241f78f09f4b94f3f8085ab7095
+ms.sourcegitcommit: 899da059b819ace3c4d01043f89459581d2dd322
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357813"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72519203"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
-## <a name="desktop-multi-modem-multi-executor-support"></a>桌面多调制解调器多执行器支持
+## <a name="desktop-multi-modem-multi-executor-support"></a>桌面多调制解调器多执行程序支持
 
-传统上，非 phone Windows 设备尚未配置的多 SIM 调制解调器因为它们具有比手机的较少的物理空间约束。 这使他们能够真正而不是让一个调制解调器具有多个 SIM 卡像手机一样; 同时利用多个活动的无线电收发器但是，由于在企业中的 esim 卡和方案的兴起，增加非 phone 设备上的每个调制多 SIM 支持的需求。
+传统上，尚未为多 SIM 调制解调器配置非电话 Windows 设备，因为它们的物理空间限制少于手机。 这样，他们就可以同时真正地利用多个活动的无线电设备，而不是使用一台具有多个 SIM 卡（如电话）的调制解调器;然而，由于在企业中的 eSIM 和方案增加，对非电话设备上的多 SIM 每个调制解调器支持的需求已增加。
 
-最典型的多 SIM phone 设备有双 SIM 插槽，但仅限于一个主 SIM 卡支持数据时其他仅支持语音功能。 因为所有 SIM 卡都用于数据连接非电话 PC 模型中不存在此类限制。
+大多数典型的多 SIM 电话设备具有双 SIM 插槽，但被限制为一个支持数据的主要 SIM 卡，而另一个则仅支持语音功能。 由于所有 SIM 卡都用于数据连接，因此不存在此类限制。
 
-尽管本规范中定义的框架从理论上来说可以支持不限的数量的调制解调器和 SIM 卡，Windows 10 版本 1703年及更高版本支持仅限双 SIM 单一活动方案端到端。 
+虽然在理论上定义的框架可以支持不限定数量的调制解调器和 SIM 卡，但 Windows 10 版本1703和更高版本仅支持双 SIM/单一活动方案端到端。 
 
 ## <a name="ndis-modem-interface-specification"></a>NDIS 调制解调器接口规范
 
-### <a name="existing-interface-and-feature-gaps"></a>现有的接口和功能差距
+### <a name="existing-interface-and-feature-gaps"></a>现有接口和功能间隙
 
-它是可以支持多个独立调制解调器，其中每个调制解调器是一个单独的设备，都完全独立运行的双 SIM 双活动功能。 但是，这是本文档的作用域，而是关注，并且能够提供多个同时进行的 WWAN 微型端口调制解调器外到主机的移动电话网络堆栈。 本部分中定义的各种对象，并建立与多 SIM 功能相关的所有 MB 文档中使用的术语。
+可以通过多个独立的调制解调器支持双重 SIM/双重活动功能，其中每个调制解调器都是单独的设备，并完全独立运行。 但是，这不在此文档的范围内，而是侧重于一个可向主机提供多个和同时连接堆栈的 WWAN 微型端口调制解调器。 本节定义各种对象，并建立与多 SIM 功能相关的所有 MB 文档中使用的术语。
 
-在硬件中的改进会导致可以维护具有多个移动电话网络的同时进行注册的设备。 在此类设备，存在被假定为"移动电话网络堆栈的多个实例"中无法保持注册每个并行运行，监视信号强度、 执行切换和侦听传入的页面。 此"移动电话网络堆栈"的每个实例将称为*执行器*本文档的其余部分。 例如，在支持的同时维护两个网络具有注册的设备的调制解调器硬件被视为具有两个执行器。
+硬件上的改进导致设备能够同时维护多个手机网络的注册。 在此类设备中，假设是并行运行的 "多个移动电话堆栈实例"，每个实例都可以维护注册、监视信号强度、执行 handovers 和侦听传入页面。 此 "蜂窝堆栈" 的每个实例将被称为本文档其余部分的*执行*程序。 例如，在能够同时维护两个网络的注册的设备中，调制解调器硬件被视为具有两个执行器。
 
-执行器是一个单个硬件收发器正在多路复用实际上是硬件和可能的逻辑表示形式。 确切的硬件具体情况视为供应商实现详细信息和超出此规范的讨论范围。 NDIS 微型端口驱动程序，执行器被称为 WWAN 微型端口适配器的多个实例。 对于 MBIM 调制解调器，由枚举复合设备上的多个 MBIM 函数表示执行器。
+执行器是硬件的逻辑表示形式，实际上，它可能是一个多路复用的单个硬件收发器。 确切的硬件细节被视为供应商实现细节，并超出了本规范的范围。 对于 NDIS 微型端口驱动程序，执行器作为 WWAN 微型端口适配器的多个实例公开。 对于 MBIM 调制解调器，执行器由枚举复合设备上的多个 MBIM 函数表示。
 
-以下两个映像演示了双 SIM 调制解调器的逻辑视图。 每个显示了可能的执行器和 UICC 组合。
+以下两个图像说明了双 SIM 调制解调器的逻辑视图。 每个都显示了执行器和 UICC 的可能组合。
 
 ![双 SIM 调制解调器的逻辑视图](images/multi-SIM_1_dualSimModem.png "双 SIM 调制解调器的逻辑视图")
 
-执行器内的移动电话网络堆栈被视为主要除自包含在其中执行流量 （语音和/或数据） 的执行程序可能会阻止其他维护注册的双待机调制解调器实现的情况下。
+执行器中的移动电话堆栈主要被视为独立的，只不过在双备用调制解调器实现的情况下，执行器执行流量（语音和/或数据）可能会阻止另一个服务的注册。
 
-下图说明了双备用调制解调器的逻辑视图。 执行器 0，电话呼叫上的流量会导致执行器 1 无法继续注册。
+下图说明了双重备用调制解调器的逻辑视图。 执行器0上的流量（电话呼叫）将导致执行程序1失去注册。
 
-![逻辑视图双待机调制解调器](images/multi-SIM_2_dualExecutors.png "双待机调制解调器的逻辑视图")
+![双备用调制解调器的逻辑视图](images/multi-SIM_2_dualExecutors.png "双备用调制解调器的逻辑视图")
 
-NDIS 6.7 中的 Windows 桌面的调制解调器接口模型不会提供这样的体系结构，因为它基于多个隐式假设：
+NDIS 6.7 中的 Windows 桌面调制解调器接口模型不能容纳此类体系结构，因为它基于若干隐式假设：
 
-* 模型假定调制解调器在单个执行器。
-* 模型假定存在单个 UICC 卡直接与调制解调器硬件相关联。
-* UICC 被视为如同它是单个应用程序 SIM 卡。
+* 该模型假定调制解调器内有一个执行器。
+* 该模型假定只有一个 UICC 卡与调制解调器硬件直接关联。
+* UICC 被视为单个应用程序 SIM 卡。
 
-与此相反，Windows 移动设备上的 Microsoft 单选接口层 (RIL) 接口显式公开这些假设的重数。 在 Windows Mobile 中的移动宽带接口公开的功能通过单独的微型端口单独注册，并假定通过 RIL 界面已完成设备的某些基本配置。 若要提供等效的功能，Windows 桌面必须提供机制以发现执行器数目和槽，独立访问执行器、 定义执行器和槽之间的映射和定义内映射的应用程序每个执行器将使用的 UICC 卡。
+与此相反，Windows Mobile 上的 Microsoft 无线接口层（RIL）接口显式公开这些假设的重数。 Windows Mobile 中的移动宽带接口公开通过单独的微型端口进行注册的功能，并假定已通过 RIL 接口完成了设备的某些基本配置。 若要提供等效的功能，Windows Desktop 必须提供机制来发现执行器和槽的数量，单独访问执行器，定义执行器与槽之间的映射，并定义映射的中的应用程序每个执行器将使用的 UICC 卡片。
 
-有关移动电话网络体系结构和 Windows 10 移动版和桌面之间的差异的详细信息，请参阅[移动电话网络体系结构和实现](cellular-architecture-and-driver-model.md)。
+有关手机结构的详细信息以及 Windows 10 移动版和桌面版之间的差异，请参阅[移动设备体系结构和实施](cellular-architecture-and-driver-model.md)。
 
 ### <a name="major-objects-and-operations"></a>主要对象和操作
 
-下图显示了一个调制解调器的抽象模型。
+下图显示了调制解调器的抽象模型。
 
-![调制解调器、 执行器和槽之间的关系](images/multi-SIM_3_majorObjectsAndOperations.png "调制解调器、 执行器和槽之间的关系")
+![调制解调器、执行器和槽之间的关系](images/multi-SIM_3_majorObjectsAndOperations.png "调制解调器、执行器和槽之间的关系")
 
-每个调制解调器由全局唯一标识符 (GUID) 标识，并包含一组的一个或多个执行器，其中每个是能够在移动电话网络上的独立注册。 每个执行器具有关联的执行器索引，一个整数，从 0 开始为第一个执行器。 此外，调制解调器公开可能包含 UICC 卡的一个或多个槽。 假定为的槽数是否大于或等于执行器数。 每个插槽有关联的索引，还开头使用 0，并与槽的电源状态和卡 （如果有） 的槽中的可用性状态相关的当前状态。
+每个调制解调器都由全局唯一标识符（GUID）标识，其中包含一个或多个执行器的集合，其中每个执行器都可以独立注册到移动电话网络。 每个执行器都有一个关联的执行器索引，一个整数，从0开始，为第一个执行器。 此外，该调制解调器还公开了一个或多个可能包含 UICC 卡的插槽。 假定槽的数目大于或等于执行器的数目。 每个槽都具有关联的索引（从0开始）和与槽的电源状态（如果有）相关的当前状态。
 
-为了保持与现有的调制解调器的兼容性，每个执行器操作通过在单个槽中的 UICC 卡提供信息。 通过将每个执行器映射到一个槽的槽映射定义执行器和槽之间的关联。
+为了保持与现有调制解调器的兼容性，每个执行程序都使用 UICC 卡在单个插槽中提供的信息来运行。 执行器和槽之间的关联由槽映射定义，后者将每个执行器映射到恰好一个槽。
 
-在槽可能包含 UICC 卡;每个卡包含一个或多个 UICC 应用程序如 USIM、 CSIM、 ISIM，或可能是其他电话服务和非电话服务应用程序，例如 NFC 安全元素的 PKCS #15 或全球平台应用程序。 寻址和这些单个 UICC 应用程序的使用是未来的规范和带本文档讨论范围的主题。
+槽可能包含 UICC 卡;每个卡都包含一个或多个 UICC 应用程序（例如 USIM、CSIM、ISIM），或可能是其他电话和非电话应用程序，如 PKCS # 15 或适用于 NFC 安全元素的全局平台应用程序。 这些单独的 UICC 应用程序的寻址和使用是一种用于未来规范的主题，并超出了本文档的范围。
 
-调制解调器的 Windows 桌面 NDIS 接口表征的 Oid 和 NDIS 通知的 exchange。 在大多数情况下这些 Oid 定向到单独的执行器;但是，一些命令和通知的作用域到调制解调器。
+到调制解调器的 Windows 桌面 NDIS 接口的特征在于 Oid 和 NDIS 通知的交换。 在大多数情况下，这些 Oid 定向到各个执行器;但是，有几个命令和通知的作用域限定为调制解调器。
 
-对于非 Windows Mobile 操作系统，多执行器调制解调器将显示为一台设备具有多个物理 WWAN 微型端口实例。 每个物理微型端口实例表示执行器可保持与 NDIS 实例注册的。 可能会在运行时管理特定于上下文的数据包数据和设备服务会话创建其他虚拟实例。 特定于执行器的命令和通知通过 WWAN 微型端口 NDIS 物理实例，表示该执行器进行交换。 特定于调制解调器的命令 （即，那些并不特定于执行器的） 和其相应的通知可能会发送到或来自任何物理微型端口实例。
+对于非 Windows Mobile 操作系统，多执行程序的调制解调器显示为一个具有多个物理 WWAN 小型端口实例的设备。 每个物理微型端口实例都表示一个执行程序，该执行器可将注册作为 NDIS 实例进行维护。 可以在运行时创建其他虚拟实例来管理特定于上下文的数据包数据和设备服务会话。 执行器特定的命令和通知通过表示该执行器的 WWAN 微型端口 NDIS 物理实例进行交换。 调制解调器特定的命令（即不是执行程序特定的命令）及其相应的通知可以发送到任何物理微型端口实例，也可以来自任何物理微型端口实例。
 
-以下两个关系图显示在特定于执行器的命令和通知 （第一个关系图中），其中命令和通知经历和来自同一个执行器和特定于调制解调器的命令和通知 （第二个图） 中的差异其中命令可能会经过任何执行器和来自任何执行器。
+下面两个关系图显示了执行器特定的命令和通知（第一个关系图）中的差异，其中的命令和通知经过并来自相同的执行程序，以及特定于调制解调器的命令和通知（第二个关系图），其中的命令可以通过任何执行器并来自任何执行器。
 
-![特定于执行器的命令和通知](images/multi-SIM_4_executorSpecificCommands.png "特定于执行器的命令和通知")
+![执行器特定的命令和通知](images/multi-SIM_4_executorSpecificCommands.png "执行器特定的命令和通知")
 
-![特定于调制解调器的命令和通知](images/multi-SIM_4_modemSpecificCommands.png "特定于调制解调器的命令和通知")
+![调制解调器特定的命令和通知](images/multi-SIM_4_modemSpecificCommands.png "调制解调器特定的命令和通知")
 
-所有 OID 集或查询对调制解调器和微型端口实例与之关联的执行器执行的请求颁发给微型端口实例。 同样，所有未经请求的通知和从微型端口实例发送未经请求的设备服务事件是适用于调制解调器和执行器的微型端口实例与之关联。 例如，从微型端口的未经请求的 NDIS_STATUS_WWAN_REGISTER_STATE 或 NDIS_STATUS_WWAN_PACKET_SERVICE 通知指示关联的调制解调器和执行器仅注册 （或数据包服务状态） 和不相关的状态其他调制解调器或其他 executor(s)。 
+将对与微型端口实例关联的调制解调器和执行程序执行发出到微型端口实例的所有 OID 集或查询请求。 同样，从微型端口实例发送的所有未经请求的通知和未请求的设备服务事件都适用于与该小型应用程序实例关联的调制解调器和执行程序。 例如，来自微型端口的未经请求的 NDIS_STATUS_WWAN_REGISTER_STATE 或 NDIS_STATUS_WWAN_PACKET_SERVICE 通知指示关联的调制解调器的注册（或数据包服务状态）和执行器，并且与的状态无关其他调制解调器或其他执行器。 
 
-如果有多个调制解调器和/或设备中的多个执行器，物理微型端口关联的适配器与调制解调器和执行器的组合问题与特定调制解调器和执行程序相关的非特定于上下文的未经请求的通知组合。 
+如果设备中有多个调制解调器和/或多个执行程序，则与该调制解调器和执行器组合关联的物理微型端口适配器将发出与特定调制解调器和执行器相关的非特定于上下文的未请求通知复合. 
 
-在相同的方式，如果设备具有多个调制解调器和/或多个执行程序，与特定调制解调器和执行器组合关联的物理微型端口适配器实例可以收到与该调制解调器和执行器相关的非特定于上下文的 OID 查询请求。 适配器接收此类查询请求根据 OID 定义对其进行处理。 如果因此选择的微型端口驱动程序，可以与任何其他进程中 OID 集或与该调制解调器和执行器关联的适配器的任何实例中请求查询并发处理此查询请求。 具有相同的调制解调器和执行器关联的微型端口适配器的所有实例都报告该蜂窝调制解调器和执行程序 （如单选电源状态、 注册状态、 数据包服务状态等） 的相同状态信息。  
+同样，如果设备有多个调制解调器和/或多个执行程序，则与特定调制解调器和执行器组合关联的物理微型端口适配器实例可以接收与该调制解调器和执行器相关的非特定于上下文的 OID 查询请求。 接收此类查询请求的适配器根据 OID 定义处理该请求。 如果使用微型端口驱动程序选择此项，则此查询请求可以与该调制解调器和执行器关联的任何适配器实例中的任何其他进程内 OID 集或查询请求同时进行处理。 与同一调制解调器和执行器关联的微型端口适配器的所有实例都报告该移动电话调制解调器和执行器的相同状态信息（如无线电电源状态、注册状态、数据包服务状态等）。  
 
-对于具有多个调制解调器和/或多个执行器的设备，与调制解调器和执行器组合关联的物理微型端口适配器实例可以收到非上下文特定 OID 集请求。 微型端口驱动程序应跟踪的此类请求的进度。 如果一个此类集请求正在进行中的任何适配器，且尚未完成，第二个集 （对任何具有相同的调制解调器和执行器关联的适配器实例） 的请求尝试应进行排队和处理的上一个请求完成后。 
+对于具有多个调制解调器和/或多个执行器的设备，与调制解调器和执行器组合关联的物理微型端口适配器实例可以接收非特定于上下文的 OID 集请求。 微型端口驱动程序应跟踪此类请求的进度。 如果在任何适配器中有一个此类设置请求正在进行，并且尚未完成，则在完成前一个请求后，将对第二个此类请求尝试进行排队并进行处理。 
 
-Windows 10 桌面 WMBCLASS 驱动程序中处理此集请求的争用条件，使上一个段落所述的规范; 但如果争用条件发生在调制解调器层调制解调器应遵循相同的指南进行排队冲突MBIM 函数，如果它仍在处理链接到同一基础设备的另一个函数上的设备级命令。
+Windows 10 desktop WMBCLASS 驱动程序遵循上一段中所述的规范来处理此集请求争用条件，但如果在调制解调器层出现争用情况，则调制解调器应遵循相同的指南来排队冲突MBIM 函数上的设备范围的命令（如果它仍在处理链接到同一基础设备的另一个函数）。
 
-## <a name="oids-for-set-and-query-requests"></a>设置和查询请求的 Oid
+## <a name="oids-for-set-and-query-requests"></a>Set 和 Query 请求的 Oid
 
-若要查询的设备 （执行器） 和调制解调器中的槽数，以及可能会同时处于活动状态的执行器数，则主机将使用[OID_WWAN_SYS_CAPS](https://go.microsoft.com/fwlink/p/?linkid=841265)。
+若要查询调制解调器中的设备（执行器）数和槽数，以及可以同时处于活动状态的执行器数，主机使用[OID_WWAN_SYS_CAPS](https://go.microsoft.com/fwlink/p/?linkid=841265)。
 
-若要查询的执行器的功能，则主机将使用[OID_WWAN_DEVICE_CAPS_EX](https://go.microsoft.com/fwlink/p/?linkid=841266)。
+为了查询执行器的功能，主机使用[OID_WWAN_DEVICE_CAPS_EX](https://go.microsoft.com/fwlink/p/?linkid=841266)。
 
-若要定义绑定到每个执行器或查询当前映射的槽，则主机将使用[OID_WWAN_DEVICE_SLOT_MAPPINGS](https://go.microsoft.com/fwlink/p/?linkid=841267)。
+若要定义绑定到每个执行器或查询当前映射的槽，主机使用[OID_WWAN_DEVICE_SLOT_MAPPINGS](https://go.microsoft.com/fwlink/p/?linkid=841267)。
 
-若要查询的调制解调器上的特定位置的状态，则主机将使用[OID_WWAN_SLOT_INFO_STATUS](https://go.microsoft.com/fwlink/p/?linkid=841268)。
+若要在调制解调器上查询特定插槽的状态，主机使用[OID_WWAN_SLOT_INFO_STATUS](https://go.microsoft.com/fwlink/p/?linkid=841268)。
 
 ## <a name="per-device-and-per-executor-commands"></a>每个设备和每个执行器命令
 
-通过添加到 Windows 10，版本 1703年及更高版本中的非 Windows 移动设备的执行器概念 Oid 现在拆分为两个类别： 每个设备 Oid 和每个执行器 Oid。 下表介绍了其 Oid 属于哪个类别。
+在 Windows 10 版本1703及更高版本中，将执行器概念添加到非 Windows 移动设备后，Oid 现在分为两类：按设备 Oid 和按执行器 Oid。 下表说明哪些 Oid 属于哪个类别。
 
-| 每个设备或每个执行器| OID 名称 |
+| 每设备或按执行器| OID 名称 |
 | --- | --- |
-| 每个设备| OID_WWAN_DRIVER_CAPS |
+| 每设备| OID_WWAN_DRIVER_CAPS |
 |  | OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS |
 |  | OID_WWAN_ENUMERATE_DEVICE_SERVICES |
 |  | OID_WWAN_PRESHUTDOWN |
 |  | OID_WWAN_VENDOR_SPECIFIC |
 |  | OID_WWAN_SYS_CAPS |
 |  | OID_WWAN_DEVICE_SLOT_MAPPINGS |
-| 每个执行器 | OID_WWAN_AUTH_CHALLENGE |
+| 按执行程序 | OID_WWAN_AUTH_CHALLENGE |
 |  | OID_WWAN_CONNECT |
 |  | OID_WWAN_DEVICE_CAPS |
 |  | OID_WWAN_DEVICE_CAPS_EX |
@@ -138,73 +138,73 @@ Windows 10 桌面 WMBCLASS 驱动程序中处理此集请求的争用条件，�
 |  | OID_WWAN_SLOT_INFO_STATUS |
 
 > [!NOTE]
-> [OID_WWAN_RADIO_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-radio-state)适用于 Windows 10，版本 1703年也已更新。 有关详细信息，请参阅 OID_WWAN_RADIO_STATE。
+> [OID_WWAN_RADIO_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-radio-state)已针对 Windows 10 （版本1703）进行了更新。 有关详细信息，请参阅 OID_WWAN_RADIO_STATE。
 
-## <a name="mbim-interface-update-for-multi-sim-operations"></a>对于多 SIM 操作 MBIM 界面更新
+## <a name="mbim-interface-update-for-multi-sim-operations"></a>多 SIM 操作的 MBIM 接口更新
 
-对于非 Windows Mobile 操作系统，多执行器调制解调器将显示为一个 USB 复合设备，多个 MBIM 函数。 每个 MBIM 函数表示可保持注册的执行器。 特定于执行器的命令和通知交换通过 MBIM 函数表示该执行器、 特定于调制解调器的命令 （即，那些并不特定于执行器的） 时和可能会发送到或来自及其相应的通知从属于相同的基础 USB 复合设备任何 MBIM 函数。 
+对于非 Windows Mobile 操作系统，多执行程序的调制解调器显示为具有多个 MBIM 函数的一个 USB 复合设备。 每个 MBIM 函数都表示一个可以维护注册的执行器。 执行器特定的命令和通知通过表示该执行器的 MBIM 函数进行交换，而调制解调器特定的命令（即，不是特定于执行程序的命令）及其相应的通知可以发送到或传入来自属于同一基础 USB 复合设备的任何 MBIM 函数。 
 
-所有 CID 集或查询的调制解调器和执行器的微型端口实例与之关联的; 对执行的请求颁发给 MBIM 函数同样，所有未经请求的通知发送从 MBIM 函数都适用于调制解调器和 MBIM 函数与之关联的执行程序。 同样，从微型端口实例发送的所有未经请求的设备服务事件都适用于调制解调器和 MBIM 函数与之关联的执行程序。 例如，从 MBIM 函数的未经请求的 MBIM_CID_REGISTER_STATE 或 MBIM_CID_PACKET_SERVICE 通知表示的关联调制解调器/执行程序的仅注册或数据包服务状态，它是无关的其他调制解调器状态或其他executor(s)。 
+向 MBIM 函数发出的所有 CID 集或查询请求均针对与该微型端口实例关联的调制解调器和执行器执行;同样，通过 MBIM 函数发送的所有未经请求的通知都适用于与 MBIM 函数关联的调制解调器和执行程序。 同样，从微型端口实例发送的所有未请求的设备服务事件都适用于与 MBIM 函数关联的调制解调器和执行程序。 例如，来自 MBIM 函数的未经请求的 MBIM_CID_REGISTER_STATE 或 MBIM_CID_PACKET_SERVICE 通知仅指示关联的调制解调器/执行器的注册或数据包服务状态，并且与其他调制解调器或其他调制解调器的状态无关执行器。 
 
-当有多个调制解调器和/或设备中的多个执行器与特定调制解调器相关的非特定于上下文的未经请求的通知和执行器组合应发出从 MBIM 函数与前面提到的调制解调器和执行器。 
+如果设备中有多个调制解调器和/或多个执行程序，则与特定调制解调器和执行器组合相关的非上下文特定的未请求通知应从与上述调制解调器关联的 MBIM 函数发出，器. 
 
-在具有多个调制解调器和/或多个执行器的设备，与特定调制解调器和执行程序相关的非特定于上下文的 CID 查询请求可能会颁发给该调制解调器和执行器组合与关联的 MBIM 函数。 接收此类查询请求的函数应处理它根据 CID 定义。 如果因此可能会与任何其他并发处理的调制解调器的固件，此类查询请求的 CID 设置或与该调制解调器和执行器关联的任何 MBIM 函数正在处理查询请求。 与相同的调制解调器相关联的所有 MBIM 函数应都报告它们所表示的执行器除了该蜂窝调制解调器相同的状态信息。  
+在具有多个调制解调器和/或多个执行器的设备中，与特定调制解调器相关的非特定于上下文的 CID 查询请求和执行器可能会颁发给与该调制解调器和执行器组合关联的 MBIM 函数。 接收此类查询请求的函数应根据 CID 定义进行处理。 如果调制解调器固件选择了此类连接，则可能会与任何其他 CID 集或与该调制解调器和执行器关联的任何 MBIM 函数正在处理的查询请求同时处理此类查询请求。 除了所表示的执行器外，与同一调制解调器关联的所有 MBIM 函数应报告该移动电话调制解调器的相同状态信息。  
 
-如果有多个调制解调器和/或设备中的多个执行器，非特定于执行器的 CID 集请求可能发出到与该调制解调器和执行器关联的 MBIM 函数。 调制解调器应跟踪的此类请求作为一个整体的进度。 如果一个此类集请求正在进行中的任何适配器，且尚未完成，第二个集 （对任何具有相同的调制解调器和执行器关联的适配器实例） 的请求尝试应进行排队和处理后已完成上一请求。
+如果设备中有多个调制解调器和/或多个执行程序，则可能会向与该调制解调器和执行器关联的 MBIM 函数发出非执行程序特定的 CID 集请求。 调制解调器应始终跟踪此类请求的进度。 如果在任何适配器中有一个此类设置请求正在进行，并且尚未完成，则在完成前一个请求后，将对第二个此类设置请求尝试进行排队并进行处理。
 
-下图说明了在两个不同的调制解调器 WWANSVC 和 MBIM 函数之间的信息流。
+下图说明了两个不同的调制解调器中的 WWANSVC 和 MBIM 函数之间的信息流。
 
-![调制解调器具有 MBIM 功能结构](images/multi-SIM_10_MBIMspecification.png "调制解调器具有 MBIM 功能结构")
+![包含 MBIM 函数的调制解调器结构](images/multi-SIM_10_MBIMspecification.png "包含 MBIM 函数的调制解调器结构")
 
-本部分包含定义的设备服务的详细的调制解调器范围和每个执行器 CID 说明。 返回到现有公共 MBIM1.0 规范定义引用。 MBIM 合规的设备实现，并报告以下设备服务 CID_MBIM_DEVICE_SERVICES 进行查询时。 10.1 一部分 USB NCM MBIM 1.0 规范中定义现有的已知服务。 Microsoft 扩展，以便定义以下服务。
+本部分包含定义的设备服务的详细的调制解调器范围和每个执行器 CID CID 说明。 定义引用现有公有 MBIM 1.0 规范。 MBIM 兼容设备在由 CID_MBIM_DEVICE_SERVICES 查询时实现并报告以下设备服务。 在 USB NCM MBIM 1.0 规范的第10.1 节中定义了现有的已知服务。 Microsoft 对此进行了扩展，定义了以下服务。
 
-服务名称 = **Basic 连接扩展**
+服务名称 =**基本连接扩展**
 
 UUID = **UUID_BASIC_CONNECT_EXTENSIONS**
 
-UUID Value = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
+UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
-为定义以下 Cid **UUID_MS_BasicConnect**:
+以下 Cid 是为**UUID_MS_BasicConnect**定义的：
 
-| CID | 命令代码 | 最低 OS 版本 |
+| CID | 命令代码 | 最低操作系统版本 |
 | --- | --- | --- |
 | MBIM_CID_MS_SYS_CAPS | 5 | Windows 10 版本 1703 |
 | MBIM_CID_MS_DEVICE_CAPS_V2 | 6 | Windows 10 版本 1703 |
 | MBIM_CID_MS_DEVICE_SLOT_MAPPINGS | 7 | Windows 10 版本 1703 |
 | MBIM_CID_MS_SLOT_INFO_STATUS | 8 | Windows 10 版本 1703 |
 
-InformationBuffer MBIM_COMMAND_MSG 从头计算以下 CID 部分中的所有偏移量。
+以下 CID 部分中的所有偏移均从 InformationBuffer MBIM_COMMAND_MSG 的开头进行计算。
 
-### <a name="mbimcidmssyscaps"></a>MBIM_CID_MS_SYS_CAPS
+### <a name="mbim_cid_ms_sys_caps"></a>MBIM_CID_MS_SYS_CAPS
 
 #### <a name="description"></a>描述
 
-此 CID 检索有关调制解调器的信息。 这可以在任何 MB 实例公开为 USB 函数发送。
+此 CID 检索有关调制解调器的信息。 这可以在作为 USB 函数公开的任何 MB 实例上发送。
 
 ##### <a name="query"></a>查询
 
-在 MBIM_COMMAND_MSG InformationBuffer MBIM_MS_SYS_CAPS_INFO 作为包含的响应数据。
+MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SYS_CAPS_INFO 的响应数据。
 
 ##### <a name="set"></a>设置
 
 不适用。
 
-##### <a name="unsolicited-event"></a>未经请求的事件
+##### <a name="unsolicited-event"></a>主动事件
 
 不适用。
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SYS_CAPS_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
 
 ##### <a name="query"></a>查询
 
-InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
+InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ##### <a name="set"></a>设置
 
@@ -214,45 +214,45 @@ InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
 
 应在 InformationBuffer 中使用以下 MBIM_SYS_CAPS_INFO 结构。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | Size | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | NumberOfExecutors | UINT32 | 报告该调制解调器的 MBB 实例数 |
-| 4 | 4 | NumberOfSlots | UINT32 | 可在该调制解调器上的物理 UICC 槽数 |
-| 8 | 4 | 并发 | UINT32 | MBB 可以同时处于活动状态的实例数 |
-| 12 | 8 | ModemId | UINT64 | 每个调制解调器的唯一 64 位标识符 |
+| 0 | 4 | NumberOfExecutors | UINT32 | 此调制解调器报告的 MBB 实例数 |
+| 4 | 4 | NumberOfSlots | UINT32 | 此调制解调器上可用的物理 UICC 槽数 |
+| 8 | 4 | 能力 | UINT32 | 可以同时处于活动状态的 MBB 实例的数目 |
+| 12 | 8 | ModemId | UINT64 | 每个调制解调器唯一的64位标识符 |
 
-*NumberOfExecutors*字段表示数*执行器*受其当前配置中的调制解调器。 这直接映射到子电话堆栈调制解调器支持数。 
+*NumberOfExecutors*字段表示调制解调器在其当前配置中*支持的执行*器的数目。 这会直接映射到调制解调器支持的 "子电话" 堆栈数。 
 
-*NumberofSlots*字段表示的是实实在在存在调制解调器上的槽数。 报告每个插槽必须能够接收 UICC 卡 （槽本身可以是异类混合必要 – 微型 SIM，micro SIM 中，nano SIM 或 ETSI 由定义的任何标准）。 槽数量必须等于或大于支持的执行器数。 大于预配允许使用的非电话 UICC 这样的安全，NFC，等等。
+*NumberofSlots*字段表示在调制解调器上物理存在的槽数。 报告的每个插槽都必须能够接收 UICC 卡（如果需要，槽本身可以是异类混合，即微型 SIM、微 SIM、nano SIM 或 ETSI 定义的任何标准）。 槽数必须等于或大于支持的执行器数量。 "大于" 预配允许使用非电话 UICC，例如用于安全性、NFC 等。
 
-*并发*字段表示同一时间可能会处于活动状态的执行器 （MBB 实例） 数。 其范围必须是*1 ≤ 并发 ≤ NumberOfExecutors*。 例如，双待机调制解调器将具有并发度为 1，而双活动调制解调器将具有 2 的并发
+*并发*字段表示可以同时处于活动状态的执行器（MBB 实例）的数目。 它必须为*1 ≤ Concurrency ≤ NumberOfExecutors*。 例如，双备用调制解调器的并发性为1，而双主动调制解调器的并发性为2
 
-*ModemId*字段表示给定的调制解调器硬件的唯一 64 位标识符。 IHV 可以实现其自己的逻辑来生成每个调制解调器; 的唯一 64 位值例如，哈希的一个 IMEI 号码，随机生成 64 位数字，等等。后生成的 64 位 ID，它应在重新启动和 SIM 卡删除/插入操作中保持原样。
+*ModemId*字段表示给定调制解调器硬件的唯一64位标识符。 IHV 可以实现自己的逻辑，为每个调制解调器生成唯一的64位值;例如，对其中一个 IMEI 号码进行哈希处理，随机生成64位数字等。生成64位 ID 后，它应在重新启动和 SIM 卡删除/插入之间保持不变。
 
 #### <a name="status-codes"></a>状态代码
 
-此 CID 使用泛型状态代码 (请参阅使用的状态代码中的部分 9.4.5[公共标准，USB MBIM](https://go.microsoft.com/fwlink/p/?linkid=842064))。
+此 CID 使用一般状态代码（请参阅[公共 USB MBIM 标准](https://go.microsoft.com/fwlink/p/?linkid=842064)的9.4.5 节中的状态代码使用情况）。
 
-### <a name="mbimcidmsdevicecapsv2"></a>MBIM_CID_MS_DEVICE_CAPS_V2
+### <a name="mbim_cid_ms_device_caps_v2"></a>MBIM_CID_MS_DEVICE_CAPS_V2
 
 #### <a name="description"></a>描述
 
-此 CID 检索与执行器相关的功能信息。 由于此 CID 是 MBIM_CID_DEVICE_CAPS 的扩展，此处介绍 MBIM_CID_DEVICE_CAPS 中的公共标准 USB MBIM 10.5.1 部分所述的更改。
+此 CID 检索与执行器相关的功能信息。 由于此 CID 是 MBIM_CID_DEVICE_CAPS 的扩展，因此这里仅介绍了公共 USB MBIM 标准的 MBIM_CID_DEVICE_CAPS 部分中所述的更改。
 
-此 CID 仍是仅限查询的将返回 MBIM_MS_DEVICE_CAPS_INFO_V2 MSUUID_BASIC_CONNECT 和 CID MBIM_CID_MS_DEVICE_CAPS_V2 响应与 MBIM MBIM_COMMAND_MSG 结构提供服务。
+此 CID 继续作为查询，并将返回 MBIM_MS_DEVICE_CAPS_INFO_V2 结构，以响应 MBIM_COMMAND_MSG 与 MBIM service MSUUID_BASIC_CONNECT and CID MBIM_CID_MS_DEVICE_CAPS_V2。
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_DEVICE_CAPS_INFO_V2 | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
 
 ##### <a name="query"></a>查询
 
-与公共 USB MBIM 标准 10.5.1.4 部分相同。
+与公共 USB MBIM 标准的10.5.1.4 节相同。
 
 ##### <a name="set"></a>设置
 
@@ -260,96 +260,96 @@ InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
 
 ##### <a name="response"></a>响应
 
-应在 InformationBuffer 中使用以下 MBIM_DEVICE_CAPS_INFO_V2 结构。 与公共 USB MBIM 标准 10.5.1 节中定义的 MBIM_CID_DEVICE_CAPS 结构相比，以下结构有一个名为的新字段*DeviceIndex*。 除非另有说明，字段说明表 10-14 中的公共标准 USB MBIM 在此处适用。
+应在 InformationBuffer 中使用以下 MBIM_DEVICE_CAPS_INFO_V2 结构。 与公共 USB MBIM 标准的10.5.1 节中定义的 MBIM_CID_DEVICE_CAPS 结构相比，以下结构包含一个名为*DeviceIndex*的新字段。 除非在此处说明，否则此处将应用公共 USB MBIM standard 的表10-14 中的字段说明。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | Size | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | DeviceType | MBIM_DEVICE_TYPE |  |
 | 4 | 4 | CellularClass | MBIM_CELLULAR_CLASS |  |
 | 8 | 4 | VoiceClass | MBIM_VOICE_CLASS |  |
-| 12 | 4 | SimClass | MBIM_SIM_CLASS | MBIM 调制解调器支持此 CID，SimClass 将始终报告为 MBIMSimClassSimRemovable。 |
-| 16 | 4 | DataClass | MBIM_DATA_CLASS |  |
+| 12 | 4 | SimClass | MBIM_SIM_CLASS | 对于支持此 CID 的 MBIM 调制解调器，SimClass 将始终报告为 MBIMSimClassSimRemovable。 |
+| 16 | 4 | Microsoft.visualstudio.ordesigner.dataclass. | MBIM_DATA_CLASS |  |
 | 20 | 4 | SmsCaps | MBIM_SMS_CAPS |  |
 | 24 | 4 | ControlCaps | MBIM_CTRL_CAPS |  |
 | 28 | 4 | MaxSessions | UINT32 |  |
-| 32 | 4 | CustomDataClassOffset | 偏移量 |  |
-| 36 | 4 | CustomDataClassSize | SIZE(0..22) |  |
-| 40 | 4 | DeviceIdOffset | 偏移量 |  |
-| 44 | 4 | DeviceIdSize | SIZE(0..26) |  |
-| 48 | 4 | FirmwareInfoOffset | 偏移量 |  |
-| 52 | 4 | FirmwareInfoSize | SIZE(0..60) |  |
-| 56 | 4 | HardwareInfoOffset | 偏移量 |  |
-| 60 | 4 | HardwareInfoSize | SIZE(0..60) |  |
-| 64| 4 | ExecutorIndex | UINT32 | 执行器的索引。 它的范围介于*0*到*n-1*其中*n*是包含在 MBIM 调制解调器 MBB 实例数。 其值始终为常量，并独立于枚举顺序。 |
-| 68 |  | DataBuffer | DATABUFFER | 包含的数据缓冲区*CustomDataClass*， *DeviceId*， *FirmwareInfo*，以及*HardwareInfo*成员。 |
+| 32 | 4 | CustomDataClassOffset | 抵销 |  |
+| 36 | 4 | CustomDataClassSize | 大小（0到22） |  |
+| 40 | 4 | DeviceIdOffset | 抵销 |  |
+| 44 | 4 | DeviceIdSize | 大小（0到26） |  |
+| 48 | 4 | FirmwareInfoOffset | 抵销 |  |
+| 52 | 4 | FirmwareInfoSize | 大小（0-60） |  |
+| 56 | 4 | HardwareInfoOffset | 抵销 |  |
+| 60 | 4 | HardwareInfoSize | 大小（0-60） |  |
+| 64| 4 | ExecutorIndex | UINT32 | 执行器索引。 它的范围为*0*到*n-1* ，其中*n*是 MBIM 调制解调器中包含的 MBB 实例的数目。 它的值始终保持不变，并且与枚举顺序无关。 |
+| 68 |  | DataBuffer | DATABUFFER | 包含*CustomDataClass*、 *DeviceId*、 *FirmwareInfo*和*HardwareInfo*成员的数据缓冲区。 |
 
 #### <a name="status-codes"></a>状态代码
 
-此 CID 使用泛型 （请参阅使用的状态代码的公共标准的 USB MBIM 9.4.5 部分中） 的状态代码。
+此 CID 使用一般状态代码（请参阅公共 USB MBIM 标准的9.4.5 节中的状态代码使用情况）。
 
-### <a name="mbimcidmsdeviceslotmappings"></a>MBIM_CID_MS_DEVICE_SLOT_MAPPINGS
+### <a name="mbim_cid_ms_device_slot_mappings"></a>MBIM_CID_MS_DEVICE_SLOT_MAPPINGS
 
 #### <a name="description"></a>描述
 
-此 CID 设置或返回设备槽映射 （即执行器-slot 映射）。
+此 CID 设置或返回设备槽映射（换言之，执行器槽映射）。
 
 ##### <a name="query"></a>查询
 
-不使用上 MBIM_COMMAND_MSG InformationBuffer。 MBIM_MS_DEVICE_SLOT_MAPPING_INFO MBIM_COMMAND_DONE InformationBuffer 中返回。
+不使用 MBIM_COMMAND_MSG 上的 InformationBuffer。 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 在 MBIM_COMMAND_DONE 的 InformationBuffer 中返回。
 
 ##### <a name="set"></a>设置
 
-MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_DEVICE_SLOT_MAPPING_INFO。 MBIM_MS_DEVICE_SLOT_MAPPING_INFO MBIM_COMMAND_DONE InformationBuffer 中返回。 无论设置 CID 成功或失败，响应中包含 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 表示当前的设备-slot 映射。
+MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_DEVICE_SLOT_MAPPING_INFO。 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 在 MBIM_COMMAND_DONE 的 InformationBuffer 中返回。 不管集 CID 是成功还是失败，响应中包含的 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 表示当前设备槽映射。
 
 ##### <a name="unsolicited-events"></a>未经请求的事件
 
 不适用。
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
+| 命令 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
 
 ##### <a name="query"></a>查询
 
-InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
+InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ##### <a name="set"></a>设置
 
 应在 InformationBuffer 中使用以下 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 结构。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | Size | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | MapCount (MC) | UINT32 | 数映射，也始终等于的设备/执行程序数量。 |
-| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | *第 i 个*对此列表中，其中 (0 < = i < = (MC-1)) 记录的当前映射到的槽索引*第 i 个*设备/执行程序。 对中的第一个元素是与 DataBuffer，计算从 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 此结构的开头 （偏移量为 0） 到 UINT32 中的偏移量的 4 字节字段。 该对的第二个元素是记录元素的一个 4 字节大小。 因为槽索引的类型为 UINT32，对中的第二个元素始终为 4。 |
-| 4 + (8 * MC) | 4 * MC | DataBuffer | DATABUFFER | 包含的数据缓冲区*SlotMapList*。 由于槽的大小为 4 个字节，MC 相当于槽索引的数目，DataBuffer 的总大小为 4 * MC。 |
+| 0 | 4 | MapCount （MC） | UINT32 | 映射的数量，始终等于设备/执行器的数目。 |
+| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | 此列表的*第 i*对，其中（0 < = i < = （MC 1））记录当前映射到*第 i 个*设备/执行器的槽的索引。 该对中的第一个元素是一个4字节字段，其偏移量为 DataBuffer，计算方式为此 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 结构的开始（偏移量为0）到 UINT32。 对的第二个元素是 record 元素的4字节大小。 由于槽索引的类型为 UINT32，因此对中的第二个元素始终为4。 |
+| 4 + （8 * MC） | 4 * MC | DataBuffer | DATABUFFER | 包含*SlotMapList*的数据缓冲区。 由于槽的大小为4个字节，并且 MC 等于槽索引的数目，因此 DataBuffer 的总大小为 4 * MC。 |
 
 ##### <a name="response"></a>响应
 
-在组中使用 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 还用于在 InformationBuffer 响应。
+在 InformationBuffer 中使用的 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 也用于响应。
 
 #### <a name="status-codes"></a>状态代码
 
 | 状态代码 | 描述 |
 | --- | --- |
-| MBIM_STATUS_BUSY | 操作失败，因为设备正忙。 在没有要清除这种情况的函数的任何显式信息的情况下，主机可用于后续操作由函数 （例如，通知或命令完成） 作为提示重试失败的操作。 |
-| MBIM_STATUS_FAILURE | 操作失败 （一般性失败）。 |
+| MBIM_STATUS_BUSY | 操作失败，因为设备正忙。 如果没有来自函数的任何显式信息来清除此条件，则主机可以使用函数的后续操作（例如，通知或命令完成）作为重试失败操作的提示。 |
+| MBIM_STATUS_FAILURE | 操作失败（一般错误）。 |
 | MBIM_STATUS_VOICE_CALL_IN_PROGRESS | 操作失败，因为正在进行语音呼叫。 |
-| MBIM_STATUS_INVALID_PARAMETERS | 由于无效的参数 （例如槽号超出范围或映射中的重复的值） 操作失败。 |
+| MBIM_STATUS_INVALID_PARAMETERS | 由于参数无效（例如，槽号超出范围或映射中的重复值），操作失败。 |
 
-### <a name="mbimcidmsslotinfostatus"></a>MBIM_CID_MS_SLOT_INFO_STATUS
+### <a name="mbim_cid_ms_slot_info_status"></a>MBIM_CID_MS_SLOT_INFO_STATUS
 
 #### <a name="description"></a>描述
 
-此 CID 检索指定的 UICC 槽中，在其中 （如果有） 卡的高级聚合的状态。 它还可能用于一个槽的状态发生更改时提供的未经请求的通知。
+此 CID 检索指定 UICC 槽及其内的卡（如果有）的高级别聚合状态。 当某个槽的状态发生更改时，也可以使用它来传递未经请求的通知。
 
 ##### <a name="query"></a>查询
 
-MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_COMMAND_DONE 消息的 InformationBuffer 包含 MBIM_MS_SLOT_INFO 结构。
+MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_COMMAND_DONE 消息的 InformationBuffer 包含 MBIM_MS_SLOT_INFO 结构。
 
 ##### <a name="set"></a>设置
 
@@ -357,13 +357,13 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_C
 
 ##### <a name="unsolicited-events"></a>未经请求的事件
 
-事件 InformationBuffer 包含 MBIM_MS_SLOT_INFO 结构。 该函数发送该事件的事件中复合槽/卡状态更改。
+事件 InformationBuffer 包含 MBIM_MS_SLOT_INFO 结构。 如果复合槽/卡片状态发生变化，则函数将发送此事件。
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
+| 命令 | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SLOT_INFO | MBIM_MS_SLOT_INFO |
 
 #### <a name="data-structures"></a>数据结构
@@ -372,7 +372,7 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_C
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SLOT_INFO_REQ 结构。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | Size | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 要查询的槽的索引。 |
 
@@ -384,38 +384,56 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_C
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SLOT_INFO 结构。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | Size | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 槽的索引。 |
-| 4 | 4 | 状态 | MBIM_MS_UICC_SLOT_STATE | 此槽和数据卡 （如果适用） 的状态。 |
+| 4 | 4 | 省/市/自治区 | MBIM_MS_UICC_SLOT_STATE | 槽和卡的状态（如果适用）。 |
 
-以下 MBIM_MS_UICCSLOT_STATE 结构描述槽的可能的状态。
+以下 MBIM_MS_UICCSLOT_STATE 结构描述了槽的可能状态。
 
-| 状态 | ReplTest1 | 描述 |
+| 状态 | Value | 描述 |
 | --- | --- | --- |
-| UICCSlotStateUnknown | 0 | 调制解调器仍正在进行初始化以便 SIM 槽状态具有不确定性。 |
-| UICCSlotStateOffEmpty | 1 | UICC 槽已关机，不则存在任何卡。 无法确定存在已关机的槽中的卡的实现作为 UICCSlotStateOff 报告其状态。 |
-| UICCSlotStateOff | 2 | UICC 槽处于关闭状态。 |
-| UICCSlotStateEmpty | 3 | UICC 槽为空 （在其中没有任何卡）。 |
-| UICCSlotStateNotReady | 4 | 占用且已打开电源 UICC 槽，但尚未准备好在其中的卡。 |
-| UICCSlotStateActive | 5 | UICC 槽已被占用，可以在其中的卡。 |
-| UICCSlotStateError | 6 | 占用且已打开电源 UICC 槽但卡处于错误状态，直到下一步重置不能使用。 |
-| UICCSlotStateActiveEsim | 7 | 在槽中的卡是活动配置文件与 esim 卡，并已准备好接受命令。 |
-| UICCSlotStateActiveEsimNoProfiles | 8 | 在槽中的卡是 esim 卡与任何配置文件 （或没有活动的配置文件），并已准备好接受命令。 |
+| UICCSlotStateUnknown | 0 | 调制解调器仍处于初始化过程中，因此 SIM 插槽状态不是确定性的。 |
+| UICCSlotStateOffEmpty | 1 | UICC 槽已关闭并且无卡。 无法确定已关闭的插槽中是否存在卡的实现将其状态报告为 UICCSlotStateOff。 |
+| UICCSlotStateOff | 2 | UICC 槽已关机。 |
+| UICCSlotStateEmpty | 3 | UICC 槽为空（其中没有卡）。 |
+| UICCSlotStateNotReady | 4 | UICC 槽已占用并已打开，但其中的卡尚未就绪。 |
+| UICCSlotStateActive | 5 | UICC 槽已被占用，其中卡已准备就绪。 |
+| UICCSlotStateError | 6 | UICC 槽已占用并已打开，但该卡处于错误状态，因此在下一次重置之前无法使用。 |
+| UICCSlotStateActiveEsim | 7 | 槽中的卡是一个具有活动配置文件的 eSIM 卡，并已准备好接受命令。 |
+| UICCSlotStateActiveEsimNoProfiles | 8 | 槽中的卡是一个 eSIM 卡，其中没有任何配置文件（或没有活动的配置文件）并且已准备好接受命令。 |
+
+##### <a name="mbim_ms_uiccslot_state-transition-guidance-for-multi-sim-devices"></a>多 sim 设备的 MBIM_MS_UICCSLOT_STATE 转换指南
+
+符合正确的 UICC 槽状态转换可确保 OS 正确处理所有更改并向用户显示正确的 toast 通知。
+
+对于*插入*的 toast 通知，操作系统需要选择嵌入的槽（SIM2/插槽1），并在物理槽（SIM1/插槽0）中插入一个 SIM 后发生以下状态转换。
+
+| SIM 插入前插槽0的可能值 | SIM 插入后插槽0的可能值 |
+| --- | --- |
+| UICCSlotStateEmpty | UICCSlotStateActive |
+| UICCSlotStateOffEmpty | <ul><li>UICCSlotStateActiveEsim</li><li>UICCSlotStateActiveEsimNoProfile</li></ul> |
+
+对于删除了 toast 通知的*sim* ，操作系统期望在插入了 sim 的情况下选择物理插槽（SIM1/插槽0），并在从物理槽（SIM1/插槽0）中删除 sim 后发生以下状态转换。
+
+| 删除 SIM 之前插槽0的可能值 | 删除 SIM 后插槽0的可能值 |
+| --- | --- |
+| UICCSlotStateActive | UICCSlotStateEmpty |
+| <ul><li>UICCSlotStateActiveEsim</li><li>UICCSlotStateActiveEsimNoProfile</li></ul> | UICCSlotStateOffEmpty |
 
 #### <a name="status-codes"></a>状态代码
 
-此 CID 使用泛型 （请参阅使用的状态代码的公共标准的 USB MBIM 9.4.5 部分中） 的状态代码。
+此 CID 使用一般状态代码（请参阅公共 USB MBIM 标准的9.4.5 节中的状态代码使用情况）。
 
-### <a name="non-ndis-mapping-of-per-executor-and-per-modem-mbim-cids"></a>每个执行器和每个调制解调器 MBIM Cid 非 NDIS 映射
+### <a name="non-ndis-mapping-of-per-executor-and-per-modem-mbim-cids"></a>每个执行器和每个调制解调器 MBIM Cid 的非 NDIS 映射
 
-大部分 MBIM Cid 映射或与 NDIS Oid，但有几个 Windows WMB 类驱动程序使用而没有 NDIS 对应的命令。  本部分提供有关这些命令的每个调制解调器或每个执行器的清晰度。  
+大多数 MBIM Cid 映射或与 NDIS Oid 相关，但 Windows WMB 类驱动程序使用的一些命令没有 NDIS 对应项。  本部分清楚地说明这些命令是每个调制解调器还是按执行器。  
 
-| 每个设备或每个执行器 | CID 名称 |
+| 每设备或按执行器 | CID 名称 |
 | --- | --- |
-| 每个设备 | CID_MBIM_MSEMERGENCYMODE |
+| 每设备 | CID_MBIM_MSEMERGENCYMODE |
 |  | CID_MBIM_MSHOSTSHUTDOWN |
-| 每个执行器 | CID_MBIM_MSIPADDRESSINFO |
+| 按执行程序 | CID_MBIM_MSIPADDRESSINFO |
 |  | CID_MBIM_MSNETWORKIDLEHINT |
 |  | CID_MBIM_MULTICARRIER_CURRENT_CID_LIST |
 
