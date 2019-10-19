@@ -1,27 +1,27 @@
 ---
 title: ACPI 通知
-description: PEP AcceptAcpiNotification 回调例程接收每个 ACPI 通知均附带一个通知参数，指示通知的类型和数据参数。
+description: PEP 的 AcceptAcpiNotification 回调例程收到的每个 ACPI 通知都附带一个通知参数，该参数指示通知的类型和数据参数。
 ms.assetid: E4DD4386-8008-463B-B048-DE8E559A7456
 keywords:
 - AcceptAcpiNotification
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 654f80a38ba4ff0a2b4edc60521e3be188185c8f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e81a13f8e055292cbbcb1ad98df1b7dacf6116d8
+ms.sourcegitcommit: 87975bf11f43410ae113b57a34131778fb9677a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339107"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72549760"
 ---
 # <a name="acpi-notifications"></a>ACPI 通知
 
-每个 ACPI 通知回调例程接收 PEP AcceptAcpiNotification 伴随通知参数指示类型的通知，和一个数据参数，它指向的数据结构包含的信息指定的通知类型。
+PEP 的[*AcceptAcpiNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyacpi)回调例程收到的每个 ACPI 通知都附带一个通知参数，该参数指示通知的类型，以及指向包含有关指定通知类型的信息。
 
-在此调用，通知参数设置为 PEP_NOTIFY_ACPI_XXX 常量值，该值指示通知类型。 数据参数指向与此通知类型相关联的 PEP_ACPI_XXX 结构类型。
+在此调用中，通知参数设置为指示通知类型的 PEP_NOTIFY_ACPI_XXX 常量值。 数据参数指向与此通知类型相关联的 PEP_ACPI_XXX 结构类型。
 
-使用以下 ACPI 通知 Id AcceptAcpiNotification 回调例程。
+AcceptAcpiNotification 回调例程使用以下 ACPI 通知 Id。
 
-|通知 ID |ReplTest1 |关联的结构|
+|通知 ID |Value |关联的结构|
 |---|---|---| 
 |PEP_NOTIFY_ACPI_PREPARE_DEVICE| 0x01 |PEP_ACPI_PREPARE_DEVICE| 
 |PEP_NOTIFY_ACPI_ABANDON_DEVICE |0x02 |PEP_ACPI_ABANDON_DEVICE |
@@ -34,159 +34,159 @@ ms.locfileid: "63339107"
 |PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES |0x09 |PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES |
 
 
-## <a name="pepnotifyacpipreparedevice"></a>PEP_NOTIFY_ACPI_PREPARE_DEVICE 
+## <a name="pep_notify_acpi_prepare_device"></a>PEP_NOTIFY_ACPI_PREPARE_DEVICE 
 
-通知：PEP_NOTIFY_ACPI_PREPARE_DEVICE 值。
-数据：指向由名称标识设备的 PEP_ACPI_PREPARE_DEVICE 结构的指针。
+通知：值 PEP_NOTIFY_ACPI_PREPARE_DEVICE。
+数据：指向按名称标识设备的 PEP_ACPI_PREPARE_DEVICE 结构的指针。
  
-允许 PEP 选择是否提供 ACPI 服务的设备。
+允许 PEP 选择是否为设备提供 ACPI 服务。
 
-当 Windows ACPI 驱动程序设备枚举过程中发现在 ACPI 名称空间中的新设备时，Windows 电源管理框架 (PoFx) 将发送此通知。 此通知发送到 Pep 实现 AcceptAcpiNotification 回调例程。
+当 Windows ACPI 驱动程序在设备枚举过程中发现 ACPI 命名空间中的新设备时，Windows 电源管理框架（PoFx）将发送此通知。 此通知将发送到实现 AcceptAcpiNotification 回调例程的 PEPs。
 
-若要发送 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知，PoFx 调用 PEP AcceptAcpiNotification 例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_PREPARE_DEVICE，且数据参数指向 PEP_ACPI_PREPARE_DEVICE 结构，其中包含的设备的名称。 如果提供此设备的 ACPI 服务已准备好 PEP，PEP 会将此结构的 DeviceAccepted 成员设置为 TRUE。 若要拒绝提供此类服务，PEP 此成员设置为 FALSE。
+若要发送 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_PREPARE_DEVICE，Data 参数指向包含设备名称的 PEP_ACPI_PREPARE_DEVICE 结构。 如果 PEP 准备为此设备提供 ACPI 服务，则 PEP 将此结构的 DeviceAccepted 成员设置为 TRUE。 要拒绝提供此类服务，PEP 将此成员设置为 FALSE。
 
-如果 PEP 指示 （通过设置 DeviceAccepted = TRUE），它已准备好提供设备的 ACPI 服务，PoFx 将响应发送 PEP PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知注册 PEP 是唯一的 ACPI 服务提供程序设备。 PoFx 预期只有一个 PEP 来声明 ACPI 设备服务提供程序的角色。
+如果 PEP 指示（通过设置 DeviceAccepted = TRUE）准备为设备提供 ACPI 服务，PoFx 将通过向 PEP 发送 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知来做出响应，以将 PEP 注册为的 ACPI 服务的唯一提供程序设备。 PoFx 只需要一个 PEP 来声明设备的 ACPI 服务提供程序的角色。
 
-最佳做法是，不执行任何设备初始化 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知响应。 相反，直到收到设备 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知时，或对设备调用 ACPI 控制方法 (例如，_INI) 将推迟此初始化。
+作为最佳做法，请不要执行任何设备初始化来响应 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知。 相反，请推迟此初始化，直至接收到设备的 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知，或为设备调用了 ACPI 控制方法（例如 _INI）。
 
-对于 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpiabandondevice"></a>PEP_NOTIFY_ACPI_ABANDON_DEVICE 
+## <a name="pep_notify_acpi_abandon_device"></a>PEP_NOTIFY_ACPI_ABANDON_DEVICE 
 
-通知：PEP_NOTIFY_ACPI_ABANDON_DEVICE 值。
+通知：值 PEP_NOTIFY_ACPI_ABANDON_DEVICE。
 
-数据：指向标识已放弃的设备的 PEP_ACPI_ABANDON_DEVICE 结构的指针。
+数据：指向用于标识放弃的设备的 PEP_ACPI_ABANDON_DEVICE 结构的指针。
  
-指定的设备已被放弃，且不再需要来自 PEP ACPI 服务通知 PEP。
+通知 PEP：指定的设备已被放弃，不再需要 PEP 的 ACPI 服务。
 
-Windows 电源管理框架 (PoFx) 将发送此通知来通知设备不再由操作系统使用 PEP。 PEP 可以使用此通知以清理它已经分配了跟踪设备状态的任何内部存储。
+Windows 电源管理框架（PoFx）发送此通知以通知 PEP，操作系统不再使用该设备。 PEP 可以使用此通知来清理为跟踪设备状态而分配的任何内部存储。
 
-若要发送 PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知，PoFx 调用 PEP AcceptAcpiNotification 回调例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_ABANDON_DEVICE，且数据参数指向 PEP_ACPI_ABANDON_DEVICE 结构。
+若要发送 PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 回调例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_ABANDON_DEVICE，Data 参数指向 PEP_ACPI_ABANDON_DEVICE 结构。
 
-PoFx 仅向已选择加入以提供前一次 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知中的设备的 ACPI 服务 PEP 发送此通知。 PoFx PEP 已注册为提供这些服务在前一次 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知中的，如果将发送 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 设备发送通知之前，PEP_NOTIFY_ACPI_ABANDON_DEVICE通知。
+PoFx 仅向已选择在上一个 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知中为设备提供 ACPI 服务的 PEP 发送此通知。 如果 PEP 注册了在以前的 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知中提供这些服务，则 PoFx 将在发送 PEP_NOTIFY_ACPI_ABANDON_DEVICE 之前为设备发送 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知。提醒.
 
-对于 PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_ABANDON_DEVICE 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpiregisterdevice"></a>PEP_NOTIFY_ACPI_REGISTER_DEVICE
-通知：PEP_NOTIFY_ACPI_REGISTER_DEVICE 值。
+## <a name="pep_notify_acpi_register_device"></a>PEP_NOTIFY_ACPI_REGISTER_DEVICE
+通知：值 PEP_NOTIFY_ACPI_REGISTER_DEVICE。
 
-数据：指向标识设备的 PEP_ACPI_REGISTER_DEVICE 结构的指针。 在响应此通知，PEP 被应创建有效的 PEPHANDLE 值标识设备，并将此句柄值写入结构。
+数据：指向标识设备的 PEP_ACPI_REGISTER_DEVICE 结构的指针。 为响应此通知，PEP 应创建一个有效的 PEPHANDLE 值以标识设备，并将此句柄值写入结构。
  
-注册 PEP 是指定的设备的 ACPI 服务仅仅是提供程序。
+将 PEP 注册为指定设备的 ACPI 服务的唯一提供程序。
 
-Windows 电源管理框架 (PoFx) 将此通知发送到已指明 PEP — 在前一次 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知 — 它已准备好提供指定的设备的 ACPI 服务。
+Windows 电源管理框架（PoFx）将此通知发送到在以前的 PEP_NOTIFY_ACPI_PREPARE_DEVICE 通知中指出的 PEP，并准备为指定的设备提供 ACPI 服务。
 
-若要发送 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知，PoFx 调用 PEP AcceptAcpiNotification 例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_REGISTER_DEVICE，且数据参数指向标识为其提供 ACPI 服务 PEP 的设备的 PEP_ACPI_REGISTER_DEVICE 结构。
+若要发送 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_REGISTER_DEVICE，Data 参数指向 PEP_ACPI_REGISTER_DEVICE 结构，该结构标识 PEP 为其提供 ACPI 服务的设备。
 
-对于 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpiunregisterdevice"></a>PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 
+## <a name="pep_notify_acpi_unregister_device"></a>PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 
 
-通知：PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 值。
+通知：值 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE。
 
-数据：指向包含设备 PEPHANDLE PEP_ACPI_UNREGISTER_DEVICE 结构的指针。
+数据：指向 PEP_ACPI_UNREGISTER_DEVICE 结构的指针，该结构包含设备的 PEPHANDLE。
  
-取消从 PEP ACPI 服务指定的设备的注册。
+取消从 PEP 注册 ACPI 服务的指定设备。
 
-在响应此通知，PEP 可能会破坏 PEP 中前一次 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知此设备创建 PEPHANDLE。
+对于此通知，PEP 可能会销毁此设备在以前的 PEP_NOTIFY_ACPI_REGISTER_DEVICE 通知中为此设备创建的 PEPHANDLE。
 
-若要发送 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知，PoFx 调用 PEP AcceptAcpiNotification 回调例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE，且数据参数指向 PEP_ACPI_UNREGISTER_DEVICE 结构。
+若要发送 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 回调例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE，Data 参数指向 PEP_ACPI_UNREGISTER_DEVICE 结构。
 
-对于 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_UNREGISTER_DEVICE 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpienumeratedevicenamespace"></a>PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 
+## <a name="pep_notify_acpi_enumerate_device_namespace"></a>PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 
 
-通知：PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 值。
+通知：值 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE。
 
-数据：指向包含的设备的 ACPI 命名空间中对象的枚举的 PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 结构的指针。
+数据：指向 PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 结构的指针，该结构包含设备的 ACPI 命名空间中的对象的枚举。
  
-查询有关支持在 ACPI 名称空间中指定的设备 PEP 的 ACPI 对象 （本机方法） 的列表 PEP。
+在 ACPI 命名空间中的指定设备下，查询 pep 支持的 ACPI 对象（本机方法）列表的 PEP。
 
-Windows ACPI 驱动程序使用此通知枚举的对象生成指定的设备的命名空间。 此后，如果引用到此设备，ACPI 驱动程序将查询仅适用于这些对象 PEP。
+Windows ACPI 驱动程序使用此通知所枚举的对象为指定的设备生成命名空间。 此后，当提到此设备时，ACPI 驱动程序只会为这些对象查询 PEP。
 
-发现设备和 PEP 注册以提供设备的 ACPI 服务后不久，Windows 电源管理框架 (PoFx) 将发送 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知。 有关此注册的详细信息，请参阅 PEP_NOTIFY_ACPI_REGISTER_DEVICE。
+Windows 电源管理框架（PoFx）将在发现设备后不久发送 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知，并且 PEP 注册为设备提供 ACPI 服务。 有关此注册的详细信息，请参阅 PEP_NOTIFY_ACPI_REGISTER_DEVICE。
 
-若要发送 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知，PoFx 调用 PEP AcceptAcpiNotification 回调例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE，且数据参数指向 PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 结构。
+若要发送 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 回调例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE，Data 参数指向 PEP_ACPI_ENUMERATE_DEVICE_NAMESPACE 结构。
 
-AcceptAcpiNotification 例程应以处理 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知，并返回 TRUE。 如果不这样做会导致的 bug 检查。
+AcceptAcpiNotification 例程应处理 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知并返回 TRUE。 如果不这样做，会导致 bug 检查。
 
-对于 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpiqueryobjectinformation"></a>PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 
+## <a name="pep_notify_acpi_query_object_information"></a>PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 
 
-通知：PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 值。
+通知：值 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION。
 
-数据：指向 PEP_ACPI_QUERY_OBJECT_INFORMATION 结构，它指定 ACPI 对象的属性的指针。
+数据：指向 PEP_ACPI_QUERY_OBJECT_INFORMATION 结构的指针，该结构指定 ACPI 对象的特性。
 
-查询有关以前枚举 ACPI 对象信息 PEP。
+查询 PEP 以获取有关以前枚举的 ACPI 对象的信息。
 
-Windows 电源管理框架 (PoFx) 将发送此通知以查询的前一次 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知在处理期间枚举的对象属性 PEP。 目前，唯一枚举的对象是控制方法。
+Windows 电源管理框架（PoFx）发送此通知，以便在处理以前的 PEP_NOTIFY_ACPI_ENUMERATE_DEVICE_NAMESPACE 通知期间枚举的对象的属性中查询 PEP。 目前，列举的对象只有控制方法。
 
-若要发送 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知，PoFx 调用 PEP AcceptAcpiNotification 回调例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION，且数据参数指向 PEP_ACPI_QUERY_OBJECT_INFORMATION 结构。
+若要发送 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 回调例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION，Data 参数指向 PEP_ACPI_QUERY_OBJECT_INFORMATION 结构。
 
-对于 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_QUERY_OBJECT_INFORMATION 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpievaluatecontrolmethod"></a>PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 
+## <a name="pep_notify_acpi_evaluate_control_method"></a>PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 
 
-通知：PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 值。
+通知：值 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD。
 
-数据：指向 PEP_ACPI_EVALUATE_CONTROL_METHOD 结构，它指定要评估，要提供给此方法，并将结果输出缓冲区的输入的参数的 ACPI 控制方法的指针。
+数据：指向 PEP_ACPI_EVALUATE_CONTROL_METHOD 结构的指针，该结构指定要评估的 ACPI 控制方法、提供给此方法的输入参数和结果的输出缓冲区。
 
-用于计算其 PEP 是已注册处理程序的 ACPI 控制方法。
+用于计算一个 ACPI 控制方法，其中 PEP 是注册的处理程序。
 
-当 Windows ACPI 驱动程序需要对由 PEP 实现 ACPI 控件方法求值时，Windows 电源管理框架 (PoFx) 会将此通知发送到 PEP。
+Windows ACPI 驱动程序需要评估由 PEP 实现的 ACPI 控制方法时，Windows 电源管理框架（PoFx）会将此通知发送到 PEP。
 
-若要发送 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知，PoFx 调用 PEP AcceptAcpiNotification 回调例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD，且数据参数指向 PEP_ACPI_EVALUATE_CONTROL_METHOD 结构。
+若要发送 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 回调例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD，Data 参数指向 PEP_ACPI_EVALUATE_CONTROL_METHOD 结构。
 
-平台设计器可以选择是否让 PEP 或 ACPI 固件句柄特定的 ACPI 控制方法。 PEP 是 ACPI 控制方法的已注册处理程序，如果 PoFx 响应的请求来自 Windows ACPI 驱动程序，用于评估此方法通过将 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知发送到 PEP。
+平台设计器可以选择是否让 PEP 或 ACPI 固件处理特定的 ACPI 控制方法。 如果 PEP 是 ACPI 控制方法的注册处理程序，PoFx 将响应来自 Windows ACPI 驱动程序的请求，通过将 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知发送到 PEP 来评估此方法。
 
-下面是一组设备 PEP 可以处理的 ACPI 控制方法的示例：
+下面列出了 PEP 可为设备处理的 ACPI 控制方法示例：
 
-设备标识和配置： _HID，_CID，_UID，_ADR，_CLS，_SUB，_CRS，_PRS，依次类推。 设备电源管理和唤醒： _PS0 通过 _PS3、 _PR0 通过 _PR3、 _DSW，等等。 特定于设备的方法： _DSM 和任何堆栈的特定于设备的控制方法。 对于特殊的设备，如 ACPI 时间和警报的设备，此通知用于评估时间和警报 （_GCP、 _GRT、 _SRT，等） 的方法。 
+设备标识和配置： _HID、_CID、_UID、_ADR、_CLS、_SUB、_CRS、_PRS 等。 设备电源管理和唤醒： _PS0 到 _PS3、_PR0 到 _PR3、_DSW 等。 特定于设备的方法： _DSM 和任何特定于设备堆栈的控制方法。 对于特殊设备，如 ACPI 时间和警报设备，此通知用于评估时间和警报方法（_GCP、_GRT、_SRT 等）。 
 
-对于 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_EVALUATE_CONTROL_METHOD 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpiquerydevicecontrolresources"></a>PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 
+## <a name="pep_notify_acpi_query_device_control_resources"></a>PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 
 
-通知：PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 值。
+通知：值 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES。
 
-数据：指向包含 power 资源列表的 PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 结构的指针。
+数据：指向 PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 结构的指针，该结构包含电源资源的列表。
  
-查询有关控制电源与设备所需的原始资源的列表 PEP。
+查询 PEP 以获得控制设备电源所需的原始资源的列表。
 
-在响应此通知，PEP 提供的原始资源所需控制电源与设备的列表。 Windows ACPI 驱动程序需要此列表，以便它可保留电源资源所需的设备，并提供相应的已翻译资源列表到 PEP （通过发送 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知）. 有关详细信息，请参阅 Raw 和转换资源。
+为响应此通知，PEP 提供控制设备电源所需的原始资源的列表。 Windows ACPI 驱动程序需要此列表，以便它可以保留设备所需的电源资源，并向 PEP 提供相应的已翻译资源列表（通过发送 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知）. 有关详细信息，请参阅原始资源和已翻译资源。
 
-若要发送 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知，Windows 电源管理框架 (PoFx) 调用 PEP AcceptAcpiNotification 回调例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES，且数据参数指向 PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 结构。
+为了发送 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知，Windows 电源管理框架（PoFx）将调用 PEP 的 AcceptAcpiNotification 回调例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES，Data 参数指向 PEP_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 结构。
 
-对于 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpitranslateddevicecontrolresources"></a>PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 
+## <a name="pep_notify_acpi_translated_device_control_resources"></a>PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 
 
-通知：PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 值。
+通知：值 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES。
 
-数据：指向包含翻译后的资源的列表的 PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 结构的指针。
+数据：指向 PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 结构的指针，该结构包含已转换资源的列表。
  
-为任何所需的设备的电源控制资源 PEP 提供翻译后的资源的列表。
+为 PEP 提供设备所需的任何电源控制资源的已翻译资源列表。
 
-Windows 电源管理框架 (PoFx) 将发送此通知，如果 PEP 列出对前一次 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知响应中的任何原始资源。 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知提供了与相应的已翻译资源列表 PEP。 有关详细信息，请参阅 Raw 和转换资源。
+如果 PEP 列出了任何原始资源来响应以前的 PEP_NOTIFY_ACPI_QUERY_DEVICE_CONTROL_RESOURCES 通知，则 Windows 电源管理框架（PoFx）将发送此通知。 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知向 PEP 提供相应的已翻译资源列表。 有关详细信息，请参阅原始资源和已翻译资源。
 
-若要发送 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知，PoFx 调用 PEP AcceptAcpiNotification 回调例程。 在此调用，通知参数值为 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES，且数据参数指向 PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 结构。
+若要发送 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知，PoFx 将调用 PEP 的 AcceptAcpiNotification 回调例程。 在此调用中，通知参数值为 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES，Data 参数指向 PEP_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 结构。
 
-对于 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_TRANSLATED_DEVICE_CONTROL_RESOURCES 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
-## <a name="pepnotifyacpiwork"></a>PEP_NOTIFY_ACPI_WORK 
+## <a name="pep_notify_acpi_work"></a>PEP_NOTIFY_ACPI_WORK 
 
-通知：PEP_NOTIFY_ACPI_WORK 值。
+通知：值 PEP_NOTIFY_ACPI_WORK。
 
 数据：指向 PEP_WORK 结构的指针。
  
-每次 PEP 调用 RequestWorker 例程以请求从 Windows 电源管理框架 (PoFx) 的工作项后，发送到 PEP。 此通知用于仅限 ACPI 的工作。
+每次 PEP 调用 RequestWorker 例程来请求 Windows 电源管理框架（PoFx）中的工作项时，都会发送到 PEP。 此通知仅用于 ACPI 工作。
 
-PEP 调用 RequestWorker 例程以请求工作项后，通过发送 PEP PEP_NOTIFY_ACPI_WORK 通知进行响应 PoFx。 但是，不发送此通知，直到有足够处理工作项所需的资源 （即，工作线程）。 这样一来，PoFx 保证，PEP 在通知期间将传递给 PoFx 工作请求可能永远不会失败由于资源不足。
+在 PEP 调用 RequestWorker 例程来请求工作项后，PoFx 通过向 PEP 发送 PEP_NOTIFY_ACPI_WORK 通知来做出响应。 但是，在处理工作项所需的资源（即工作线程）可用之前，不会发送此通知。 通过这种方式，PoFx 保证在通知过程中，PEP 传递到 PoFx 的工作请求永远不会因资源不足而失败。
 
-在进入时，PEP 应假定 PEP_WORK 结构未初始化。 若要处理此通知，PEP 应设置为指向描述所请求的工作的 PEP 分配 PEP_WORK_INFORMATION 结构 WorkInformation 成员。 此外，PEP 应设置为 TRUE 以确认 PEP 已处理 PEP_NOTIFY_ACPI_WORK 通知并且 WorkInformation 成员指向有效的 PEP_WORK_INFORMATION 结构 PEP_WORK 结构的 NeedWork 成员。 如果 PEP 失败以处理通知，或无法分配 PEP_WORK_INFORMATION 结构，PEP 应 WorkInformation 成员设置为 NULL，并将 NeedWork 成员设置为 FALSE。
+输入时，PEP 应假设 PEP_WORK 结构未初始化。 为了处理此通知，PEP 应将 WorkInformation 成员设置为指向用于描述正在请求的工作的 PEP 分配的 PEP_WORK_INFORMATION 结构。 此外，PEP 应将 PEP_WORK 结构的 NeedWork 成员设置为 TRUE，以确认 PEP 已处理 PEP_NOTIFY_ACPI_WORK 通知，并且 WorkInformation 成员指向有效的 PEP_WORK_INFORMATION 结构。 如果 PEP 无法处理通知或无法分配 PEP_WORK_INFORMATION 结构，则 PEP 应将 WorkInformation 成员设置为 NULL，并将 NeedWork 成员设置为 FALSE。
 
-对于 PEP_NOTIFY_ACPI_WORK 通知，AcceptAcpiNotification 例程始终在调用 IRQL = passive_level 调用。
+对于 PEP_NOTIFY_ACPI_WORK 通知，AcceptAcpiNotification 例程始终调用 IRQL = PASSIVE_LEVEL。
  
 
 

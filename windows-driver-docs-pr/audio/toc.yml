@@ -441,8 +441,6 @@
       href: audio-processing-object-architecture.md
     - name: 实现音频处理对象
       href: implementing-audio-processing-objects.md
-    - name: 实现用于配置 APO 效果的 UI
-      href: implementing-a-ui-for-configuring-apo-effects.md
     - name: 实现硬件卸载的 APO 效果
       href: implementing-hardware-offloaded-apo-effects.md
     - name: Windows 默认 APO
