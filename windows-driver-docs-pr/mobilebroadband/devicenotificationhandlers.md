@@ -5,11 +5,11 @@ ms.assetid: 94661e6a-97ed-4dbf-ab09-b39545ee2e40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6e20cb59754fdb97a725a5ccaa9e42e01ff174a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546905"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323618"
 ---
 # <a name="devicenotificationhandlers"></a>DeviceNotificationHandlers
 
@@ -31,7 +31,7 @@ DeviceNotificationHandlers 元素指定设备通知处理程序。
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -55,7 +55,7 @@ DeviceNotificationHandlers 元素指定设备通知处理程序。
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -72,14 +72,14 @@ DeviceNotificationHandlers 元素指定设备通知处理程序。
 <tbody>
 <tr class="odd">
 <td><p><a href="application-softwareinfo-schema.md" data-raw-source="[Application](application-softwareinfo-schema.md)">应用程序</a></p></td>
-<td><p>指定在 PC 上检测到操作员的移动宽带硬件时将下载的应用。</p></td>
+<td><p>指定在计算机上检测到操作员的移动宽带硬件时要下载的应用。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

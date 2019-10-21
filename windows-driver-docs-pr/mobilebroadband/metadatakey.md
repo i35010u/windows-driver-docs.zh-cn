@@ -5,21 +5,21 @@ ms.assetid: 1915db47-98bb-40f5-be3b-75e9af80f506
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8946fa983c1568129fe3dd9b2b082b444543c8d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534049"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323625"
 ---
 # <a name="metadatakey"></a>MetadataKey
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-MetadataKey 元素指定服务元数据包的属性。 例如：
+MetadataKey 元素指定服务元数据包的属性。 这包括：
 
--   每个设备支持的硬件函数的标识符。
+-   设备支持的每个硬件功能的标识符。
 
--   特定于语言的区域设置的包中的文本字符串。
+-   包中的文本字符串的语言特定区域设置。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -35,7 +35,7 @@ MetadataKey 元素指定服务元数据包的属性。 例如：
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -56,15 +56,15 @@ MetadataKey 元素指定服务元数据包的属性。 例如：
 </tr>
 <tr class="even">
 <td><p><a href="lastmodifieddate.md" data-raw-source="[LastModifiedDate](lastmodifieddate.md)">LastModifiedDate</a></p></td>
-<td><p><a href="lastmodifieddate.md" data-raw-source="[LastModifiedDate](lastmodifieddate.md)">LastModifiedDate</a>元素指定服务元数据包的上次更改的时间戳。</p></td>
+<td><p><a href="lastmodifieddate.md" data-raw-source="[LastModifiedDate](lastmodifieddate.md)">LastModifiedDate</a>元素指定服务元数据包的上次更改时间戳。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="locale.md" data-raw-source="[Locale](locale.md)">区域设置</a></p></td>
-<td><p><a href="locale.md" data-raw-source="[Locale](locale.md)">区域设置</a>元素指定服务元数据包的本地化的版本。</p></td>
+<td><p><a href="locale.md" data-raw-source="[Locale](locale.md)">本地</a></p></td>
+<td><p><a href="locale.md" data-raw-source="[Locale](locale.md)">Locale</a>元素指定服务元数据包的本地化版本。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="modelidlist.md" data-raw-source="[ModelIDList](modelidlist.md)">ModelIDList</a></p></td>
-<td><p><a href="modelidlist.md" data-raw-source="[ModelIDList](modelidlist.md)">ModelIDList</a>元素指定每个设备类型或模型的服务元数据包中指定的 GUID。</p></td>
+<td><p><a href="modelidlist.md" data-raw-source="[ModelIDList](modelidlist.md)">ModelIDList</a>元素指定在服务元数据包中指定的每个设备类型或模型的 GUID。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="multiplelocale.md" data-raw-source="[MultipleLocale](multiplelocale.md)">MultipleLocale</a></p></td>
@@ -75,7 +75,7 @@ MetadataKey 元素指定服务元数据包的属性。 例如：
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -92,14 +92,14 @@ MetadataKey 元素指定服务元数据包的属性。 例如：
 <tbody>
 <tr class="odd">
 <td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a></p></td>
-<td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a>元素是父元素<a href="packageinfo-xml-schema.md" data-raw-source="[PackageInfo XML schema](packageinfo-xml-schema.md)">PackageInfo XML 架构</a>。 PackageInfo 元素的子元素指定设备元数据包的属性。</p></td>
+<td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a>元素是<a href="packageinfo-xml-schema.md" data-raw-source="[PackageInfo XML schema](packageinfo-xml-schema.md)">PackageInfo XML 架构</a>的父元素。 PackageInfo 元素的子元素指定设备元数据包的属性。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -141,17 +141,17 @@ MetadataKey 元素指定服务元数据包的属性。 例如：
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-MetadataKey 元素的子元素指定操作系统使用来执行以下操作的元数据：
+MetadataKey 元素的子元素指定操作系统用于执行以下操作的元数据：
 
--   搜索设备元数据存储区的设备上基于服务元数据包[ModelID](modelid.md)或[HardwareID](hardwareid.md)值。 如果多个元数据包匹配设备的模型或硬件 ID，操作系统也会比较[区域设置](locale.md)到用户的计算机上的当前语言设置的元数据包中的值。
+-   基于设备的[ModelID](modelid.md)或[HardwareID](hardwareid.md)值搜索服务元数据包的设备元数据存储。 如果有多个元数据包与设备的型号或硬件 ID 匹配，操作系统还会将元数据包内的[区域设置](locale.md)值与用户计算机上的当前语言设置进行比较。
 
--   使用服务元数据包更新设备元数据存储区，如果某个包包含较新[LastModifiedDate](lastmodifieddate.md)比设备元数据存储区中的现有程序包的值。
+-   如果包的[LastModifiedDate](lastmodifieddate.md)值比设备元数据存储中现有的包新，则使用服务元数据包更新设备元数据存储。
 
 MetadataKey 元素必须包含：
 
--   一个实例[区域设置](locale.md)并[LastModifiedDate](lastmodifieddate.md)元素。
+-   [Locale](locale.md)和[LastModifiedDate](lastmodifieddate.md)元素的一个实例。
 
--   其中任何一个实例[HardwareIDList](hardwareidlist.md)或[ModelIDList](modelidlist.md)元素。 MetadataKey 元素可以包含这两个元素的一个实例。
+-   [HardwareIDList](hardwareidlist.md)或[ModelIDList](modelidlist.md)元素的一个实例。 MetadataKey 元素可以包含两个元素的一个实例。
 
 MetadataKey 元素是必需的。
 

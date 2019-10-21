@@ -5,17 +5,17 @@ ms.assetid: fcec93ad-54d4-466e-8fac-888377115689
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dddaf836fc6e9ded93788195890aa697500206f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463989"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323708"
 ---
 # <a name="identity-softwareinfo"></a>标识 (SoftwareInfo)
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-标识元素指定的发布服务器标识和应用程序清单的应用的名称。
+标识元素指定应用程序的发布服务器标识和应用程序清单名称。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -36,7 +36,7 @@ ms.locfileid: "57463989"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
+<th>属性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -45,27 +45,27 @@ ms.locfileid: "57463989"
 <tbody>
 <tr class="odd">
 <td><p>名称</p></td>
-<td><p>tns:AsciiIdentifierType</p></td>
-<td><p>是</p></td>
-<td><p>应用程序中指定应用程序清单文件。</p></td>
+<td><p>tns： AsciiIdentifierType</p></td>
+<td><p>“是”</p></td>
+<td><p>应用程序清单文件中指定的应用程序的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p>发布者</p></td>
-<td><p>tns:DistinguishedNameType</p></td>
-<td><p>是</p></td>
-<td><p>应用的发布服务器标识。</p></td>
+<td><p>Publisher</p></td>
+<td><p>tns： DistinguishedNameType</p></td>
+<td><p>“是”</p></td>
+<td><p>应用程序的发布者标识。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 没有子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -82,14 +82,14 @@ ms.locfileid: "57463989"
 <tbody>
 <tr class="odd">
 <td><p><a href="devicecompanionapplications.md" data-raw-source="[DeviceCompanionApplications](devicecompanionapplications.md)">DeviceCompanionApplications</a></p></td>
-<td><p>指定在 PC 上检测到操作员的移动宽带硬件时将下载的应用。</p></td>
+<td><p>指定在计算机上检测到操作员的移动宽带硬件时要下载的应用。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -143,7 +143,7 @@ ms.locfileid: "57463989"
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-标识元素是可选的。
+Identity 元素是可选的。
 
  
 

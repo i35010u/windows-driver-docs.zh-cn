@@ -5,17 +5,17 @@ ms.assetid: b74bfc2a-6779-4f53-9e46-71ca8ae26fda
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab8f1afddc41fd561a0baa09ac9a69d08a814019
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569215"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323612"
 ---
 # <a name="packageinfo"></a>PackageInfo
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-PackageInfo 元素是父元素[PackageInfo XML 架构](packageinfo-xml-schema.md)。 PackageInfo 元素的子元素指定服务元数据包的属性。
+PackageInfo 元素是[PACKAGEINFO XML 架构](packageinfo-xml-schema.md)的父元素。 PackageInfo 元素的子元素指定服务元数据包的属性。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -31,7 +31,7 @@ PackageInfo 元素是父元素[PackageInfo XML 架构](packageinfo-xml-schema.md
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -52,31 +52,31 @@ PackageInfo 元素是父元素[PackageInfo XML 架构](packageinfo-xml-schema.md
 </tr>
 <tr class="even">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定服务元数据包的特性。 例如：</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定服务元数据包的属性。 这包括：</p>
 <ul>
-<li><p>每个设备支持的硬件函数的标识符。</p></li>
-<li><p>特定于语言的区域设置的包中的文本字符串。</p></li>
+<li><p>设备支持的每个硬件功能的标识符。</p></li>
+<li><p>包中的文本字符串的语言特定区域设置。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p><a href="packagestructure.md" data-raw-source="[PackageStructure](packagestructure.md)">PackageStructure</a></p></td>
-<td><p><a href="packagestructure.md" data-raw-source="[PackageStructure](packagestructure.md)">PackageStructure</a>元素指定的 XML 架构的引用的服务元数据包。</p></td>
+<td><p><a href="packagestructure.md" data-raw-source="[PackageStructure](packagestructure.md)">PackageStructure</a>元素指定服务元数据包引用的 XML 架构。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="relationships.md" data-raw-source="[Relationships](relationships.md)">关系</a></p></td>
-<td><p><a href="relationships.md" data-raw-source="[Relationships](relationships.md)">关系</a>元素及其子元素，通过指定用来跟踪服务元数据包设备元数据缓存中的数据。</p></td>
+<td><p><a href="relationships.md" data-raw-source="[Relationships](relationships.md)">关系</a>元素通过其子元素，指定用于在设备元数据缓存中跟踪服务元数据包的数据。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 没有父元素。
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -97,7 +97,7 @@ PackageInfo 元素是父元素[PackageInfo XML 架构](packageinfo-xml-schema.md
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-PackageInfo 元素必须包含的一个实例[MetadataKey](metadatakey.md)， [PackageStructure](packagestructure.md)，并[关系](relationships.md)元素。
+PackageInfo 元素必须包含[MetadataKey](metadatakey.md)、 [PackageStructure](packagestructure.md)和[关系](relationships.md)元素的一个实例。
 
  
 

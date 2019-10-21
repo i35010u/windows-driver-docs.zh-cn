@@ -1,21 +1,21 @@
 ---
-title: GUIDType (PackageInfo)
-description: GUIDType (PackageInfo)
+title: GUIDType （PackageInfo）
+description: GUIDType （PackageInfo）
 ms.assetid: 3f88df5a-2a17-4006-ad3b-aab9a12cbcb9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56c027f7cbf898c7ff6035974eba89d08d0a0ea0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520869"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323691"
 ---
-# <a name="guidtype-packageinfo"></a>GUIDType (PackageInfo)
+# <a name="guidtype-packageinfo"></a>GUIDType （PackageInfo）
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-GUIDType XML 简单类型指定的 GUID。
+GUIDType XML 简单类型指定一个 GUID。
 
 ``` syntax
 <xs:simpleType name="GUIDType">
@@ -28,14 +28,14 @@ GUIDType XML 简单类型指定的 GUID。
 ## <a name="span-idpatternsspanspan-idpatternsspanspan-idpatternsspanpatterns"></a><span id="Patterns"></span><span id="patterns"></span><span id="PATTERNS"></span>模式
 
 
-GUIDType 简单类型是**xs: string**受以下模式：
+GUIDType 简单类型为**xs： string** ，受以下模式的限制：
 
--   \[0-9a-fA-F\]{8}-\[0-9a-fA-F\]{4}-\[0-9a-fA-F\]{4}-\[0-9a-fA-F\]{4}-\[0-9a-fA-F\]{12}
+-   \[0-9a-z-9a-z-F \] {8}-\[0--F \] {4} \[0 \]-9a-z--f {4} \[0 0-9a-z--f 1 20 3 4
 
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-GUIDType XML 简单类型指定唯一标识设备元数据包，如设备中的组件的 GUID [ExperienceID](experienceid.md)， [LanguageNeutralIdentifier](languageneutralidentifier.md)，并且[ModelID](modelid.md)值。
+GUIDType XML 简单类型指定一个 GUID，用于唯一标识设备元数据包内的组件，例如设备的[ExperienceID](experienceid.md)、 [LanguageNeutralIdentifier](languageneutralidentifier.md)和[ModelID](modelid.md)值。
 
  
 

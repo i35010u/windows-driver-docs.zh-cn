@@ -5,17 +5,17 @@ ms.assetid: 736040e9-76cd-4f59-b16a-1e8fc3b687fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae6df337514213881f0e73f4b7e109fadb9bb9db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576769"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323682"
 ---
 # <a name="softwareinfo"></a>SoftwareInfo
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-SoftwareInfo 元素是父元素[SoftwareInfo XML 架构](softwareinfo-xml-schema.md)。
+SoftwareInfo 元素是[SOFTWAREINFO XML 架构](softwareinfo-xml-schema.md)的父元素。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -31,7 +31,7 @@ SoftwareInfo 元素是父元素[SoftwareInfo XML 架构](softwareinfo-xml-schema
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -48,23 +48,23 @@ SoftwareInfo 元素是父元素[SoftwareInfo XML 架构](softwareinfo-xml-schema
 <tbody>
 <tr class="odd">
 <td><p><a href="devicecompanionapplications.md" data-raw-source="[DeviceCompanionApplications](devicecompanionapplications.md)">DeviceCompanionApplications</a></p></td>
-<td><p>指定在 PC 上检测到操作员的移动宽带硬件时将下载的应用。</p></td>
+<td><p>指定在计算机上检测到操作员的移动宽带硬件时要下载的应用。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="privilegedapplications.md" data-raw-source="[PrivilegedApplications](privilegedapplications.md)">PrivilegedApplications</a></p></td>
-<td><p>指定的应用程序有权访问特权的移动宽带接口。</p></td>
+<td><p>指定将允许访问特权移动宽带接口的应用。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 没有父元素。
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

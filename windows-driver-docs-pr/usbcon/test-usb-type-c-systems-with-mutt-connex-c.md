@@ -1,131 +1,131 @@
 ---
-Description: MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino 开发板的自定义防护罩。
+Description: MUTT 连接试验类型 C （USB 类型 C ConnEx）硬件板是 Arduino 板的自定义盾牌。
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7f79121f9f6e8ff04c1dd632b6eb09670b6f0e
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 05d948bdfabe342bd941ab77a7c595c64198cadc
+ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405091"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390726"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
 
 **摘要**
 
--   自动测试通过使用 USB 类型 C ConnEx
--   在 Windows 10 USB 类型 C 互操作性测试过程： 功能测试 (FT) 和压力测试 (ST)。
--   诊断过程和提示以确认方案，例如设备添加和删除。
+-   使用 USB 类型进行自动测试-C ConnEx
+-   Windows 10 中的 USB 类型 C 互操作性测试过程：功能测试（FT）和压力测试（ST）。
+-   用于确认方案（如设备添加和删除）的诊断过程和提示。
 
 **适用于**
 
--   Windows 10
+-   Windows 10
 
-**正式规范和过程**
+**官方规范和过程**
 
--   [USB 3.1 和 USB 类型 C 规范]( https://go.microsoft.com/fwlink/p/?LinkId=620208)
+-   [USB 3.1 和 USB 类型-C 规范]( https://go.microsoft.com/fwlink/p/?LinkId=620208)
 -   [xHCI 互操作性测试过程](https://go.microsoft.com/fwlink/p/?LinkId=623257)
 
 **上次更新时间**
 
 -   2016 年 2 月
 
-\[有些信息与预发布产品的商业发布之前可能有大幅度修改。 Microsoft 不做任何明示或暗示的担保，此处提供的信息。\]
+\[Some 的信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 对于此处提供的信息，Microsoft 不做任何明示或默示的担保。\]
 
-MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino 开发板的自定义防护罩。 防护罩提供四个开关来自动执行 USB 类型 C 方案的互操作性测试。
+MUTT 连接试验类型 C （USB 类型 C ConnEx）硬件板是 Arduino 板的自定义盾牌。 盾牌提供了一个四对一交换机，用于自动执行 USB 类型 C 方案的互操作性测试。
 
-本主题提供了自动测试系统、 设备、 USB 类型 C 连接器使用停靠和与 Windows 操作系统及其互操作性的指导原则。 你可以测试硬件属于以下类别之一：
+本主题提供了一些指导原则，用于自动执行以下操作：自动测试系统、设备、与 USB C # 连接器一起停靠，以及与 Windows 操作系统的互操作性。 可以测试属于以下类别之一的硬件：
 
--   系统：台式计算机、 便携式计算机、 平板电脑、 服务器或与公开 USB 类型 C 端口运行的 Windows 操作系统版本的 SKU 的手机。
--   停靠：公开多个端口的任何 USB 类型 C 设备。
--   设备：与可以附加到系统或停靠类型 C 端口的任何 USB 设备。 此类别包括传统的 USB 设备以及设备支持 USB 类型 C 规范中定义的附件和备用模式。
+-   系统：台式机、便携式计算机、平板电脑、服务器或电话，运行具有公开的 USB 类型 C 端口的 Windows 操作系统版本的 SKU。
+-   Dock：任何 USB 类型为 C 的设备，该设备公开多个端口。
+-   设备：任何 USB 设备，都可以连接到系统或插接的类型为 C 的端口。 此类别包括传统 USB 设备以及支持 USB 类型 C 规范中定义的附件和备用模式的设备。
 
 ## <a name="hardware-requirements"></a>硬件要求
 
 
 若要使用 USB 类型 C ConnEx 执行 USB 类型 C 互操作性测试过程，需要：
 
--   **待测系统 (SUT)**
+-   **正在测试的系统（SUT）**
 
-    台式计算机、 便携式计算机、 平板电脑、 服务器或与至少一个公开类型 C USB 端口的电话。
+    台式机、便携式计算机、平板电脑、服务器或手机，其中至少有一个公开的类型 C USB 端口。
 
--   **Arduino Mega 2560 R3**
+-   **Arduino 万像素 2560 R3**
 
-    [Arduino 庞大 2560 R3](https://go.microsoft.com/fwlink/p/?LinkId=733526)用作测试安装微型控制器。 可以从购买此板[Arduino 应用商店](https://go.microsoft.com/fwlink/p/?LinkId=733526)。
+    [Arduino 兆位 2560 R3](https://go.microsoft.com/fwlink/p/?LinkId=733526)用作测试设置的微控制器。 可以从[Arduino 商店](https://go.microsoft.com/fwlink/p/?LinkId=733526)购买此板。
 
-    ![arduino 开发](images/arduino.png)
+    ![arduino](images/arduino.png)
 
--   **微型控制器的电源适配器**。
+-   **适用于微控制器的电源适配器**。
 
-    有关兼容适配器为 Arduino 庞大 2560 R3 电路板[请参阅此站点](https://go.microsoft.com/fwlink/p/?LinkID=733660)。
+    有关 Arduino 万像素 2560 R3 板的兼容适配器的信息，[请参阅此站点](https://go.microsoft.com/fwlink/p/?LinkID=733660)。
 
--   **USB 类型 C ConnEx**
+-   **USB 类型-C ConnEx**
 
-    防护罩有一个男性 USB 类型 C 端口 (标有**J1**) 连接到的 SUT 是。 防护罩还具有其他四个 USB 端口 (标有**J2**， **J3**， **J4**， **J6**) 到哪些设备可以是到外围设备作为附加该 actSUT。 防护罩监视电流与电压来自 SUT。 您可以购买此板从[MCCI](https://go.microsoft.com/fwlink/p/?LinkId=733488)或[JJG 技术]( https://go.microsoft.com/fwlink/p/?linkid=618287)。
+    防护板有一个连接到 SUT 的男 USB 类型 C 端口（标记为**J1**）。 此防护板还具有四个其他 USB 端口（标记为**J2**、 **J3**、 **J4**、 **J6**），可以将这些端口作为设备连接到 SUT。 盾牌监视从 SUT 提取的 amperage 和电压。 可以从[MCCI](https://go.microsoft.com/fwlink/p/?LinkId=733488)或[JJG 技术]( https://go.microsoft.com/fwlink/p/?linkid=618287)购买此板。
 
-    ![USB 类型 C ConnEx](images/connexc-top.png)
+    ![USB 类型-C ConnEx](images/connexc-top.png)
 
 -   **USB A 到 B 电缆**
 
-    将使用此电缆连接到微型控制器以微控制器运行测试上的固件更新的电脑。
+    你将使用此电缆将电脑连接到微控制器，以便将微控制器上的固件更新为运行测试。
 
--   **外围 USB 设备**
+-   **外围设备 USB 设备**
 
-    可以附加到 SUT 的 USB 类型 C 端口使用任何 USB 设备。 此类别包括传统的 USB 设备和其他设备的支持 USB 类型 C 规范中定义的附件和备用模式。
+    任何 USB 设备，其中包含可附加到 SUT 的 USB 类型 C 端口。 此类别包括传统 USB 设备以及支持 USB 类型 C 规范中定义的备用模式的其他设备。
 
--   **USB 充电**
+-   **USB 充电器**
 
-    USB 类型 C 支持 USB 类型 C 当前要求和 （可选） [USB 供电](https://go.microsoft.com/fwlink/p/?LinkID=623310)。 您还需要为 USB Micro B 充电器**J6**。
+    USB 类型 C，支持 USB 类型 C 当前要求，并选择性地[提供 Usb 电源](https://go.microsoft.com/fwlink/p/?LinkID=623310)。 还需要**J6**的 USB 微 B 充电器。
 
 -   **代理控制器**
 
-    USB 类型 C ConnEx 可通过使用代理运行测试的控制。 代理控制器可以为这些实体之一：
+    可以通过使用代理运行测试来控制 USB 类型 C ConnEx。 代理控制器可以是以下实体之一：
 
-    -   辅助台式 PC 或便携式计算机。
+    -   辅助台式计算机或便携式计算机。
 
-        与移动的 SUT; 代理控制器通信若要加载固件微控制器。
+        代理控制器与移动 SUT 通信;用于加载固件的微控制器。
 
-    -   通过使用辅助 USB 端口的 SUT。
-    -   通过使用 3.5mm 音频插孔 SUT。
+    -   使用辅助 USB 端口的 SUT。
+    -   使用 3.5 mm 音频插孔的 SUT。
 
-        在此设置，您需要：
+        在此设置中，你需要：
 
-        -   若要使用单个 USB 类型 C 端口 Sut 上运行测试的 DTMF 防护罩。 DTMF 提供的功能来控制防护罩从单端口设备使用的音频插孔，固件初始立刻正式投入工作完成后。
+        -   使用单个 USB 类型 C 端口在 SUTs 上运行测试的 DTMF 防护板。 在完成固件初始闪存后，可以使用 DTMF 从单端口设备控制盾牌，并提供音频插孔。
 
-            ![dtmf 防护罩](images/dtmf.png)
+            ![dtmf 盾牌](images/dtmf.png)
 
-        -   用于连接到 SUT 的 DTMF 防护罩 4 pin 男性男性音频电缆。 这样，以控制着测试期间 USB 类型 C 防护罩 SUT。
+        -   4针用于将 DTMF 盾牌连接到 SUT 的插头到插头音频电缆。 这允许 SUT 在测试期间控制 USB 类型 C 防护板。
 
-            ![3.5mm 音频插孔](images/audio-jack.png)
+            ![3.5 mm 音频插孔](images/audio-jack.png)
 
 ## <a name="software-requirements"></a>软件要求
 
 
-请确保满足这些要求：
+请确保满足以下要求：
 
--   你 SUT 必须有想要测试互操作性的 Windows 操作系统版本。
+-   你的 SUT 必须具有要用于测试互操作性的 Windows 操作系统的版本。
 -   代理控制器必须运行 Windows 10。
--   [![下载 mutt 软件包](images/download.png)](https://go.microsoft.com/fwlink/p/?LinkId=786621)和代理控制器上安装最新的 MUTT 软件包。
--   包是一套用于使用 USB 类型 C ConnEx 运行测试的工具。
+-   [![download mutt](images/download.png)](https://go.microsoft.com/fwlink/p/?LinkId=786621)软件包并在代理控制器上安装最新的 mutt 软件包。 
+ 包是一套工具，用于使用 USB 类型-C ConnEx 运行测试。 它包含用于更新固件、在外围端口之间切换以及发送请求以模拟测试用例的实用程序。 它还包含测试驱动程序包，用于测试总线、其控制器和连接到总线的设备的功能。
 
-    它包括实用程序来更新固件、 切换在外围设备的端口，并发送请求，以模拟测试用例。 它还包含测试的总线、 其控制器和设备连接到该总线功能的测试驱动程序包。
+-   对于基于 UCSI 的系统，我们强烈建议使用一些其他设置进行测试，以帮助发现 UCSI 固件错误。 此设置将导致 UCSI 固件出现问题，并且强烈建议仅用于测试目的。 请参阅此博客文章中的["转换固件无法检查错误"](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/Debugging-UCSI-firmware-failures/ba-p/283226) 。
 
--   测试工具的安装需要提升的命令窗口。
+-   安装测试工具需要提升的命令窗口。
 
-    若要打开提升的命令窗口，用户必须属于**管理员**代理控制器组。 若要打开提升的命令提示符窗口，创建到 Cmd.exe 的桌面快捷方式，右键单击 Cmd.exe 快捷方式，然后选择**以管理员身份运行**。
+    若要打开提升的命令窗口，用户必须是代理控制器上**Administrators**组的成员。 若要打开提升的命令提示符窗口，请创建 Cmd.exe 的桌面快捷方式，右键单击 Cmd.exe 快捷方式，然后选择 "**以管理员身份运行**"。
 
-### <a name="usb-type-c-connex-tools"></a>USB 类型 C ConnEx 工具
+### <a name="usb-type-c-connex-tools"></a>USB 类型-C ConnEx 工具
 
-以下是特定于 USB 类型 C ConnEx 中 MUTT 软件包的工具
+下面是 MUTT 软件包中特定于 USB 类型-C ConnEx 的工具。
 
-| Tool                          | 描述                                                                                          |
+| 工具                          | 描述                                                                                          |
 |-------------------------------|------------------------------------------------------------------------------------------------------|
-| [ConnExUtil.exe](#connexutilexe) | 命令行工具来执行 USB 类型 C ConnEx 功能。                                             |
-| [CxLoop.cmd](#cxloop)         | 连接和断开连接的每个端口一次。                                                             |
-| [CxStress.cmd](#cxstress)     | 随机的压力脚本。                                                                            |
-| [CxPower.cmd](#cxpower)       | 一段时间内捕获 power 数据 （电压和电流），并将输出发送到 CSV 文件。 |
+| [ConnExUtil](#connexutilexe) | 用于执行 USB 类型 C ConnEx 功能的命令行工具。                                             |
+| [CxLoop](#cxloop)         | 连接每个端口一次并断开连接。                                                             |
+| [CxStress](#cxstress)     | 随机压力脚本。                                                                            |
+| [CxPower](#cxpower)       | 捕获一段时间内的电源数据（电压和 amperage），并将输出发送到 CSV 文件。 |
 
 
 
@@ -134,82 +134,82 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 ## <a name="get-started"></a>入门...
 
 
-按照以下过程来设置测试环境。
+按照此过程设置测试环境。
 
-![USB 类型 C ConnEx 配置](images/connexc.png)
+![USB 类型-C ConnEx 配置](images/connexc.png)
 
-配置应类似于此映像。 请注意微型控制器上的 USB 类型 C 端口提供了对 USB 类型 C ConnEx 时连接到电脑的控制。
+配置应类似于此图像。 请注意，在连接到电脑时，微控制器上的 USB 类型 C 端口可提供对 USB 类型 C ConnEx 的控制。
 
-在这些步骤中，将连接的硬件部分、 微型控制器上的固件更新并验证安装。 DTMF 防护罩提供对 USB 类型 C ConnEx 连接到手机或平板电脑的音频端口时控制。
+在这些步骤中，你将连接硬件部分，更新微控制器上的固件并验证安装。 连接到手机或平板电脑的音频端口时，DTMF 防护板提供对 USB 类型 C ConnEx 的控制。
 
-1.  连接到 USB 类型 C 防护罩微型控制器。
+1.  将微控制器连接到 USB 类型 C 防护板。
 
-    如果 USB 类型 C ConnEx 而未进入已组装，然后继续步骤 1。 如果你 USB 类型 C ConnEx 经过组装，然后转到步骤 2。
+    如果 USB 类型 C ConnEx 未汇编，则继续执行步骤1。 如果 USB 类型 C ConnEx 已汇编，则继续执行步骤2。
 
-    **谨慎**![警告：](images/caution.png)因为球瓶轻松弯曲必须谨慎地执行此步骤。
+    **警告**  ![caution 必须小心执行此步骤 ](images/caution.png)，因为 pin 非常弯曲。
 
 
 
-    1.  通过确保委员会为每个其他级别对齐微型控制器上接收器使用的 USB 类型 C 防护的 pin。
+    1.  通过确保两个板彼此之间的水平，将 USB 类型 C 防护板的 pin 与微控制器上的 receptors 对齐。
 
-        ![对齐 USB 类型 C ConnEx 的 pin](images/connexc-align.png)
+        ![对齐 USB 类型的 pin-C ConnEx](images/connexc-align.png)
 
-    2.  轻轻一起按这两种主板。 要小心不要弄弯防护罩上的球瓶。
+    2.  轻轻按两个板。 请注意不要在盾牌上弯曲针脚。
 
-        ![组装 USB 类型 C ConnEx](images/connexc-connect.png)
+        ![组装 USB 类型-C ConnEx](images/connexc-connect.png)
 
-        你已组装的单元应类似于此图像：
+        组装设备应类似于此图：
 
-        ![连接 connex c 板](images/connexc-connect1.png)
+        ![已连接的 connex-c 板](images/connexc-connect1.png)
 
-2.  Power USB 类型 C ConnEx 从附加的微型控制器通过使用任一 USB 类型-B （连接到代理控制器） 或从外部电源适配器。 LCD 显示器是类似于此图像：
+2.  使用 USB 类型 B （连接到代理控制器）或外部电源适配器，从附加的微控制器中打开 USB 类型 C ConnEx。 液晶屏显示类似于此图：
 
-    在 5 秒后 LCD 屏幕将显示的电流与电压。
+    5秒钟后，LCD 显示屏显示当前和电压。
 
-    ![USB 类型 C ConnEx 固件启动之前](images/connexc-connect2.png)![USB 类型 C ConnEx 固件启动之前](images/connexc-connect3.png)
+    ![固件启动前的 USB 类型-C ConnEx](images/connexc-connect2.png)![固件启动前的 USB 类型-C ConnEx](images/connexc-connect3.png)
 
-    如果这样做不，请参阅显示上一图中所示，请确保你已正确收集了单元。
+    如果你没有看到如上图所示的显示，请确保已正确装配设备。
 
-3.  使用 USB 类型 C ConnEx 固件更新微型控制器。
+3.  用 USB 类型-C ConnEx 固件更新微控制器。
     -   打开提升的命令提示符窗口。
-    -   导航到 MUTT 软件包，如 c： 的位置\\Program Files (x86)\\USBTest\\*&lt;arch&gt;*。
-    -   运行下面的命令：
+    -   导航到 MUTT 软件包的位置，如 C： \\Program Files （x86） \\USBTest \\ *&lt;arch &gt;* 。
+    -   运行以下命令：
 
-        **MuttUtil.exe – UpdateTabFirmware**
+        **MuttUtil – UpdateTabFirmware**
 
-4.  插入到男性 USB 类型 C 端口 SUT (标有**J1**) 上防护罩。
+4.  将 SUT 插入到盾牌上的男 USB 类型 C 端口（标记为**J1**）。
 
-    **谨慎** **J1**连接器连接 SUT 时需要其他支持。 连接器不足够稳定，可承受的设备或单独的权重。
+    **警告** 连接 SUT 时， **J1**连接器需要额外的支持。 连接器不足以维持设备或自身的权重。
 
-    ![附加待测系统 (sut)](images/connexc-connect4.png)
+    ![附加受测系统（sut）](images/connexc-connect4.png)
 
-5.  将外围设备连接到标有的 USB 端口**J2**， **J3**， **J4**， **J6**。
+5.  将外围设备连接到标记为**J2**、 **J3**、 **J4**、 **J6**的 USB 端口。
 
-    ![将外围设备连接到 USB 类型 C ConnEx](images/connexc-connect7.png)
+    ![将外围设备连接到 USB 类型-C ConnEx](images/connexc-connect7.png)
 
-6.  将代理控制器附加到微型控制器。
-    -   如果代理控制器是台式计算机或便携式计算机，请通过 USB 建立连接。 上图中所示，微控制器上的 USB 类型 B 端口连接到代理控制器上的 USB 端口。
-    -   如果代理控制器移动 SUT，通过使用音频端口建立连接。 对于此连接，您需要 DTMF 防护罩。
-        1.  连接到已组装单元 DTMF 防护罩，此图中所示：
+6.  将代理控制器连接到微控制器。
+    -   如果代理控制器是台式计算机或便携式计算机，则通过 USB 建立连接。 如前面的图像中所示，将微控制器上的 USB 类型 B 端口连接到代理控制器上的 USB 端口。
+    -   如果代理控制器是移动 SUT，请使用音频端口建立连接。 对于此连接，需要 DTMF 盾牌。
+        1.  如下图所示，将 DTMF 屏蔽连接到组装的单元：
 
             ![dtmf 附件](images/connexc-connect6.png)
 
-        2.  使用 4 pin 男性男性音频电缆防护罩的音频端口连接到 SUT 上的音频端口。
+        2.  使用4针插头到插孔音频电缆将盾牌的音频端口连接到 SUT 上的音频端口。
 
-            你的设置应类似于此图像：
+            设置应类似于此图像：
 
-            ![附加待测系统 (sut 与 dtmf)](images/connexc-connect5.png)
+            ![通过 dtmf 附加测试系统（sut）](images/connexc-connect5.png)
 
-7.  请确保 USB 类型 C ConnEx 识别代理控制器上的设备管理器。
-    1.  右键单击任务栏中的开始按钮并选择**设备管理器**。
-    2.  展开**端口 （COM 和 LPT）** 节点并记下 COM 端口由微型控制器。 在此示例中，它被连接到 COM 4。
+7.  请确保在代理控制器上设备管理器识别 USB 类型 C ConnEx。
+    1.  右键单击任务栏中的 "启动" 按钮，然后选择 "**设备管理器**"。
+    2.  展开 "**端口" （com & LPT）** 节点，并记下微控制器使用的 COM 端口。 在此示例中，它已连接到 COM 4。
 
-        ![USB 设备管理器中的类型 C ConnEx](images/connexc-connect8.png)
+        ![设备管理器中的 USB 类型-C ConnEx](images/connexc-connect8.png)
 
-## <a name="connexutilexe"></a>ConnExUtil.exe
+## <a name="connexutilexe"></a>ConnExUtil
 
 
-以下是用于控制 USB 类型 C ConnEx 板 ConnExUtil.exe 支持的命令行选项。
+下面是 ConnExUtil 支持的命令行选项，用于控制 USB 类型-C ConnEx 板。
 
 <table>
 <colgroup>
@@ -220,103 +220,103 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 <thead>
 <tr class="header">
 <th>用例</th>
-<th>Option</th>
+<th>选项</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>设备发现
-<p>列出所有设备连接到 USB 类型 C ConnEx</p></td>
+<p>列出连接到 USB 类型的所有设备-C ConnEx</p></td>
 <td><strong>/list</strong></td>
-<td>对于连接的 USB 设备，此选项可列出设备实例路径。 显示了对于音频连接的设备<strong>音频</strong>。
-<p>若要查看音频设备，请使用以下结合<strong>/all</strong>参数。 使用从 1 开始的索引，它可用于输入列表<strong>/#</strong>参数。</p></td>
+<td>对于 USB 连接的设备，此选项列出设备实例路径。 对于音频连接设备，它会显示<strong>音频</strong>。
+<p>若要查看音频设备，请将其与<strong>/all</strong>参数一起使用。 具有从1开始的索引的列表，可用于输入到<strong>/#</strong>参数。</p></td>
 </tr>
 <tr class="even">
-<td>选择设备
-<p>选择所有设备连接到 USB 类型 C ConnEx，包括音频。</p></td>
+<td>设备选择
+<p>选择连接到 USB 类型 C ConnEx 的所有设备，包括音频。</p></td>
 <td><strong>/all</strong></td>
 <td>可选。
-<p>如果没有此参数的实用程序地址 USB 连接的设备。 使用此参数仅当连接的音频设备正在使用中。 音频发现非常耗时且默认情况下禁用。</p></td>
+<p>如果没有此参数，实用工具将处理 USB 连接的设备。 仅当使用音频连接的设备正在使用时，才使用此参数。 音频发现非常耗时且默认情况下处于禁用状态。</p></td>
 </tr>
 <tr class="odd">
-<td>选择设备
-<p>选择特定的设备连接到 USB 类型 C ConnEx ' n '。</p></td>
+<td>设备选择
+<p>选择连接到 USB 类型-C ConnEx "n" 的特定设备。</p></td>
 <td><strong>/#</strong> <em>n</em></td>
 <td>（可选）
-<p>输入<em>n</em>可用设备的基于 1 的索引连接到可通过查看 USB 类型 C ConnEx <strong>/list</strong>参数。 如果没有此参数，默认行为是所有 USB 类型 C ConnEx 板上运行每个命令。</p></td>
+<p>输入<em>n</em>是一个从1开始的索引，该索引连接到 USB 类型 C ConnEx，可以使用<strong>/list</strong>参数查看这些设备。 如果没有此参数，则默认行为是在所有 USB ConnEx 板上运行每个命令。</p></td>
 </tr>
 <tr class="even">
-<td>设备命令</td>
+<td>Device 命令</td>
 <td><strong>/setPort</strong> <em>p</em></td>
 <td>切换到指定的端口<em>p</em>。
-<p>通过指定数量 (1-4) 或按名称连接端口 (<strong>J2</strong>， <strong>J3</strong>， <strong>J4</strong>， <strong>J6</strong>)。</p>
-<p>0 断开连接的所有端口。</p></td>
+<p>通过指定数字（1-4）或按名称（<strong>J2</strong>、 <strong>J3</strong>、 <strong>J4</strong>、 <strong>J6</strong>）来连接端口。</p>
+<p>0断开所有端口的连接。</p></td>
 </tr>
 <tr class="odd">
-<td>设备命令</td>
+<td>Device 命令</td>
 <td><strong>/getPort</strong></td>
 <td>读取当前连接的端口。</td>
 </tr>
 <tr class="even">
-<td>设备命令
-<p>读取电流/电压信息</p></td>
+<td>Device 命令
+<p>读取 amperage/电压信息</p></td>
 <td><p><strong>/volts</strong></p>
 <p><strong>/amps</strong></p>
 <p><strong>/version</strong></p></td>
 <td><p>读取当前电压。</p>
-<p>读取当前电流。</p>
-<p>读取设备版本。</p></td>
+<p>阅读当前 amperage。</p>
+<p>阅读设备版本。</p></td>
 </tr>
 <tr class="odd">
-<td>设备命令
+<td>Device 命令
 <p>启用 SuperSpeed</p></td>
 <td><strong>/SuperSpeedOn</strong></td>
-<td>为当前和未来连接之前全局允许 SuperSpeed <strong>/SuperSpeedOff</strong>发送命令。
-<p>默认情况下启用 superSpeed。</p>
-<p>如果 SuperSpeed 处于禁用状态，并且已连接端口 1 或 2，此命令会触发 SuperSpeed 登录时重新连接。</p></td>
+<td>在发送<strong>/SuperSpeedOff</strong>命令之前，为当前和未来的连接全局启用 SuperSpeed。
+<p>默认情况下，启用 SuperSpeed。</p>
+<p>如果 SuperSpeed 处于禁用状态，并且端口1或2处于连接状态，则此命令将在 SuperSpeed 触发重新连接。</p></td>
 </tr>
 <tr class="even">
-<td>设备命令
+<td>Device 命令
 <p>禁用 SuperSpeed</p></td>
 <td><strong>/SuperSpeedOff</strong></td>
-<td>为当前和未来连接之前全局禁用 SuperSpeed <strong>/SuperSpeedOn</strong>发送命令或重置设备。
-<p>如果启用了 SuperSpeed 且端口 1 或 2 已连接，此命令禁用 SuperSpeed 行触发重新连接。</p></td>
+<td>在发送<strong>/SuperSpeedOn</strong>命令或重置设备之前，为当前和未来的连接禁用全局 SuperSpeed。
+<p>如果启用了 SuperSpeed 并连接了端口1或2，则此命令会触发重新连接，并禁用 SuperSpeed 线路。</p></td>
 </tr>
 <tr class="odd">
-<td><p>集的命令延迟</p></td>
+<td><p>设置命令延迟</p></td>
 <td><strong>/setDelay</strong> <em>t</em></td>
-<td>设置命令延迟<em>t</em>以秒为单位。
-<p>设置命令延迟将导致下一步<strong>/setPort</strong>或<strong>/SuperSpeed {打开/关闭}</strong>命令以通过延迟<em>t</em>秒 where <strong>t</strong>范围是从 0 到 99 之间。 这是一次性的设置，仅在下一个命令延迟。 不支持延迟计时器过期前发送多个命令。</p></td>
+<td>设置<em>命令延迟，以秒为单位</em>。
+<p>设置命令延迟将导致下一个<strong>/setPort</strong>或<strong>/SuperSpeed{On/Off}</strong>命令延迟为<em>t</em>秒，其中<strong>t</strong>的范围介于0到99之间。 这是一次性设置，只延迟下一个命令。 不支持在延迟计时器过期之前发送多个命令。</p></td>
 </tr>
 <tr class="even">
-<td><p>设置断开连接超时以毫秒为单位</p></td>
+<td><p>设置断开连接超时值（毫秒）</p></td>
 <td><strong>/setDisconnectTimeout</strong> <em>t</em></td>
-<td>将断开连接超时设置为下一个非零<strong>/setPort</strong>命令。 在下一个连接事件，该端口将仅保持连接状态为<em>t</em>之前断开连接的毫秒。 这是一次性设置，仅下一个连接事件会自动断开连接。 允许的范围是从 0 到 9999 ms。</td>
+<td>为下一个非零<strong>/setPort</strong>命令设置 "断开连接超时"。 在下一个连接事件上，端口将只在断开连接前保持连接状态的<em>t</em>毫秒。 这是一次性设置，只会自动断开下一个连接事件。 允许的范围为0到9999毫秒。</td>
 </tr>
 <tr class="odd">
 <td><p>批处理命令：</p>
-<p>输出到.csv 文件 power 度量值。</p></td>
+<p>将功率度量输出到 .csv 文件。</p></td>
 <td><strong>/powercsv</strong></td>
-<td>追加的当前电源度量单位，并为 power.csv 首次运行的时间戳创建 power.csv。 在后续运行将数据追加到此文件。
-<p>重命名或删除文件以启动新的数据捕获。 每次运行将追加行采用以下格式： <em>&lt;索引&gt;，&lt;时间&gt;，&lt;伏&gt;，&lt;安培&gt;</em>。</p>
-<p><em>索引</em>由给定设备索引<strong>/list</strong>，因此可以同时监视多个设备。</p>
-<p><em>时间</em>原始时间戳以秒为单位。</p>
-<p><em>伏</em>并<em>安培</em>记录到两个小数位。</p>
-<p>此数据可能很长的时间段捕获和绘制在电子表格应用程序，请参阅 cxpower.cmd 脚本。</p></td>
+<td>将当前功率度量和时间戳追加到 .csv 中第一次运行创建了 power .csv。 后续运行时，会将数据追加到此文件。
+<p>重命名或删除该文件以启动全新数据捕获。 每次运行都追加以下格式的行： <em>&lt;index &gt;，&lt;time &gt; &lt;volts</em>&gt; &lt;amps &gt;。</p>
+<p><em>index</em>是<strong>/list</strong>给定的设备索引，因此可以同时监视多个设备。</p>
+<p><em>时间</em>是原始时间戳，以秒为单位。</p>
+<p><em>伏特</em>和<em>安培</em>记录到两个小数位。</p>
+<p>此数据可能会在很长一段时间内捕获并在电子表格应用程序中绘制，请参阅 cxpower 脚本。</p></td>
 </tr>
 <tr class="even">
 <td><p>批处理命令：</p>
-运行单元测试的主要功能</td>
+运行主要功能的单元测试</td>
 <td><strong>/test</strong></td>
-<td>测试设备的所有主要功能。 用于基本验证设备的功能。 如果此命令会失败，请电源周期的设备，并更新固件。</td>
+<td>测试设备的所有主要功能。 用于对设备功能的基本验证。 如果此命令失败，请重启设备并更新固件。</td>
 </tr>
 <tr class="odd">
 <td><p>批处理命令：</p>
-切换序列端口的基本功能演示。</td>
+端口切换序列的基本演示。</td>
 <td><strong>/demo d</strong></td>
-<td>循环访问所有端口一次，与<em>d</em>秒的每个端口上的延迟
-<p>将端口号、 伏和每个端口上的安培写入到 demoresult.txt。</p></td>
+<td>循环遍历所有端口一次，每个端口上有<em>d</em>秒的延迟
+<p>将每个端口的端口号、伏特和安培写入 demoresult。</p></td>
 </tr>
 </tbody>
 </table>
@@ -331,19 +331,19 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 connexutil.exe /setport 1
 ```
 
-或者使用的端口名称，如打印在板上：
+或者使用板上打印的端口名称：
 
 ``` syntax
 connexutil.exe /setport J3
 ```
 
-断开连接的所有端口
+断开所有端口的连接
 
 ``` syntax
 connexutil.exe /setport 0
 ```
 
-循环访问所有端口
+遍历所有端口
 
 ``` syntax
 for %p in (1 2 3 4) 
@@ -354,304 +354,304 @@ do (
 )
 ```
 
-## <a name="scripts-for-controlling-the-usb-type-c-connex-board"></a>用于控制 USB 类型 C ConnEx 板脚本
+## <a name="scripts-for-controlling-the-usb-type-c-connex-board"></a>用于控制 USB Type-C ConnEx 板的脚本
 
 
-这些脚本执行 ConnExUtil.exe 运行顺序，并强调使用 USB 类型 C ConnEx 通过命令行类型测试支持的控件接口。 所有这些脚本支持的可选命令行参数**音频**以指示通过 3.5mm 音频接口已连接 USB 类型 C ConnEx 板。 默认情况下它们只会尝试使用 USB 连接板。
+这些脚本执行 ConnExUtil 支持的控件接口，以通过命令行使用 USB 类型-C ConnEx 运行顺序测试和压力类型测试。 所有这些脚本都支持可选的命令行参数**音频**，以指示 USB 类型 C ConnEx 板通过 3.5 mm 音频接口连接。 默认情况下，他们只会尝试使用 USB 连接板。
 
-### <a href="" id="cxloop"></a>简单的连接/断开连接序列：CXLOOP.CMD
+### <a href="" id="cxloop"></a>简单连接/断开序列： CXLOOP。PORT
 
-连接和断开连接 SUT 与每个端口 (1-4)，并提示测试人员将验证该端口上的连接每个端口上暂停。
+连接每个端口并将其与每个端口（1-4）断开连接，并在每个端口上暂停，提示测试人员验证该端口上的连接。
 
-### <a href="" id="cxstress"></a>随机连接/断开连接循环：CXSTRESS。CMD
+### <a href="" id="cxstress"></a>随机连接/断开连接循环： CXSTRESS。PORT
 
-连接和断开与每个端口 SUT 随机连接 0.0 5.0 的随机间隔无限循环的秒数。 当它连接的 USB 类型 C 端口随机将启用或禁用 SuperSpeed 连接该端口，并随机将指示要按某些随机间隔 0 到 999 ms 该端口上快速断开连接的看板。
+在无限循环中，随机连接并从每个端口断开与每个端口的随机连接，以 0.0-5.0 秒为单位。 当连接到 USB 类型 C 端口时，它会在该端口上随机启用或禁用 SuperSpeed 连接，并将在某个随机时间间隔0– 999 ms 内随机指示该面板在该端口上快速断开连接。
 
-命令行参数**C**将使脚本只能在 USB 类型 C 端口和断开连接的状态之间切换。 数字的命令行参数将重置为以秒为单位输入的值从默认值为 5.0 秒交换机之间的最大随机间隔。 可按任意顺序传递参数。
+命令行参数**C**使脚本仅在 USB 类型 C 端口和断开连接状态之间切换。 数值命令行参数将开关的最大随机间隔从默认值5.0 秒重置为输入值（秒）。 可以按任意顺序传递参数。
 
-### <a href="" id="cxpower"></a>长时间运行的功率测量：CXPOWER.CMD
+### <a href="" id="cxpower"></a>长时间运行的电源测量： CXPOWER。PORT
 
-将保存电流和电压 USB 类型 C ConnEx 报告输出文件 power.csv 按 2 的第二个时间间隔。 数据将格式化为逗号分隔的变量，如下所示：
+保存 USB Type-C ConnEx 报告的 amperage 和电压，以2秒为间隔输出文件。 数据的格式为逗号分隔的变量，如下所示：
 
-<em>index</em>**,**<em>time</em>**,**<em>volts</em>**,**<em>amps</em>
+<em>索引</em> **，** <em>时间</em> **，** <em>伏特</em> **，** <em>安培</em>
 
-*索引*由给定设备索引**ConnExUtil.exe /list**命令以便可以同时监视多个设备。
+*index*是**ConnExUtil/list**命令给定的设备索引，因此可以同时监视多个设备。
 
-*时间*原始时间戳以秒为单位。
+*时间*是原始时间戳，以秒为单位。
 
-*伏*并*安培*记录到 2 个小数位。
+*伏特*和*安培*记录到2个小数位。
 
-捕获完成后，此数据可能会处理到图表来显示随时间推移的功率消耗的文章，例如电池电量的持续时间的功率消耗周期。 数字的命令行参数重置为默认度量间隔为 2 秒的输入值以秒为单位。
+捕获完成后，这些数据可能会被发布到显示一段时间内电源消耗的图表中，例如，电池电量周期的持续时间。 数值命令行参数将默认的度量间隔2秒重置为输入值（秒）。
 
-##  <a name="about-test-cases"></a>有关测试用例
+##  <a name="about-test-cases"></a>关于测试用例
 
 
-USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和压力测试 (ST)。 每个测试部分描述了测试用例，并标识适用于测试的类别。 产品必须来测试整个相应的类别。 某些测试用例包含指向相关提示和技巧的其他信息。 本部分侧重于 USB 类型 C 功能和体验。 USB 类型-C 解决方案可能会包含其他 USB 组件，如 USB 集线器或 USB 控制器。 这两个 USB 中介绍了详细的测试信息的 USB 集线器和控制器-如果的[xHCI 互操作性测试过程](https://go.microsoft.com/fwlink/p/?LinkId=623257)和 Windows 硬件认证工具包。
+USB 类型 C 互操作性测试过程分为两部分：功能测试（FT）和压力测试（ST）。 每个测试部分介绍了测试用例并标识了应用于测试的类别。 必须针对整个适用的类别对产品进行测试。 某些测试用例包含指向相关提示的链接和有关其他信息的提示。 本部分重点介绍 USB 类型 C 功能和体验。 USB 类型 C 解决方案可能包含其他 USB 组件，如 USB 集线器或 USB 控制器。 USB [xHCI 互操作性测试过程](https://go.microsoft.com/fwlink/p/?LinkId=623257)和 Windows 硬件认证工具包中介绍了 usb 集线器和控制器的详细测试。
 
-这些测试用例基于 ConnExUtil 命令和示例脚本[脚本，用于控制 USB 类型 C ConnEx 板](#scripts-for-controlling-the-usb-type-c-connex-board)。 测试用例的脚本，请参阅。 自定义所需的测试方案的脚本。
+这些测试用例基于 ConnExUtil 命令和[用于控制 USB Type-C ConnEx 板](#scripts-for-controlling-the-usb-type-c-connex-board)的示例脚本脚本。 测试用例引用脚本。 根据测试方案的需要自定义脚本。
 
 <a href="" id="device-enumeration"></a>[设备枚举](#ft-case-1-device-enumeration)  
-确认设备枚举的核心方面都是功能。
+确定设备枚举的核心方面是否正常工作。
 
 <a href="" id="alternate-mode-negotiation"></a>[备用模式协商](#ft-case-2-alternate-mode-negotiation)  
-确认受支持的其他模式。
+确认支持的备用模式。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[计费和电源传递 (PD)](#ft-case-3-charging-and-power-delivery-pd)  
-确认充电与 USB 类型。
+<a href="" id="charging-and-power-delivery--pd-"></a>[充电和电源交付（PD）](#ft-case-3-charging-and-power-delivery-pd)  
+确认用 USB 类型 C 进行收费。
 
-<a href="" id="role-swap"></a>[角色切换](#ft-case-4-role-swap)  
+<a href="" id="role-swap"></a>[角色交换](#ft-case-4-role-swap)  
 确认角色交换。
 
-压力测试部分说明压力和边缘的情况下，这段时间内测试设备稳定性的过程。 压力测试，则需要自定义设备 (该 SuperMUTT) 旧 USB 验证 (非 USB 类型 C)。 可以使用即将发布的 USB 类型 C 测试设备实现进一步的测试和自动化。
+压力测试部分介绍了用于在一段时间内测试设备稳定性的压力和边缘案例方案的过程。 压力测试需要使用自定义设备（SuperMUTT）进行传统 USB 验证（非 USB 类型 C）。 可以通过即将出现的 USB 类型 C 测试设备实现其他测试和自动化。
 
 <a href="" id="device-enumeration"></a>[设备枚举](#st-case-1-device-enumeration)  
-确认设备枚举的核心方面都是功能。
+确定设备枚举的核心方面是否正常工作。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[计费和电源传递 (PD)](#st-case-2-charging-and-power-delivery-pd)  
-确认充电与 USB 类型。
+<a href="" id="charging-and-power-delivery--pd-"></a>[充电和电源交付（PD）](#st-case-2-charging-and-power-delivery-pd)  
+确认用 USB 类型 C 进行收费。
 
-## <a name="ft-case-1-device-enumeration"></a>FT 案例 1:设备枚举
+## <a name="ft-case-1-device-enumeration"></a>FT 案例1：设备枚举
 
 
-![ft 案例 1： 设备枚举](images/ft1.png)
+![ft 案例1：设备枚举](images/ft1.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
-| **J1** | SUT。                                                                                |
-| **J2** | 通过使用 USB 类型 C 电缆连接的 USB 类型 C 端口的 PC。              |
-| **J3** | USB 类型 C 充电器。                                                                 |
-| **J4** | 下游连接用鼠标的 USB 集线器 （SuperSpeed 或高速度）。               |
-| **J6** | 通过使用 USB 类型 A 到 B USB 微电缆连接的 USB 端口键入一个线与 PC。 |
+| **J1** | SUT.                                                                                |
+| **J2** | 使用 usb 类型 c 端口连接的 PC，使用 USB 类型 C 电缆进行连接。              |
+| **J3** | USB 类型-C 充电器。                                                                 |
+| **J4** | USB 集线器（SuperSpeed 或高速），其中鼠标连接到下游。               |
+| **J6** | 使用 USB 类型的 PC-使用 USB 类型进行连接的端口电缆-A 到 USB 微 B 电缆。 |
 
 
 
-1.  关闭 SUT 的电源。
-2.  连接到端口标记为 SUT **J1** USB 类型 C ConnEx 上。
+1.  关闭 SUT 电源。
+2.  将 SUT 连接到 USB 类型-C ConnEx 上标记为**J1**的端口。
 3.  将代理控制器连接到 USB 类型 C ConnEx。
-4.  连接到 USB 类型 C ConnEx 外围设备。
-5.  SUT 并登录到 Windows 上的电源。
-6.  在提升的命令提示符处，运行 CXLOOP。CMD 脚本。 脚本暂停时，确认新激活的外围设备可正常运行。
-7.  反向 USB 类型 C 电缆的方向，并重复步骤 5-7。
+4.  将外围设备连接到 USB 类型-C ConnEx。
+5.  打开并登录到 Windows。
+6.  在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
+7.  反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
+有关与步骤 2-4 相关的配置映像，请参阅[入门 ...](#get-started)。
 
-## <a name="ft-case-2-alternate-mode-negotiation"></a>FT 案例 2:备用模式协商
+## <a name="ft-case-2-alternate-mode-negotiation"></a>FT 案例2：备用模式协商
 
 
-![ft 案例 2： 备用模式协商](images/ft2.png)
+![ft 案例2：备用模式协商](images/ft2.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
-| **J1** | SUT。                                                                                |
-| **J2** | DisplayPort 到 USB 类型 C 硬件保护装置。                                                   |
-| **J3** | USB 类型 C 充电器。                                                                 |
-| **J4** | 下游连接使用闪存驱动器的 USB 集线器 （SuperSpeed 或高速度）。         |
-| **J6** | 通过使用 USB 类型 A 到 B USB 微电缆连接的 USB 端口键入一个线与 PC。 |
+| **J1** | SUT.                                                                                |
+| **J2** | DisplayPort 到 USB 类型-C 转换器。                                                   |
+| **J3** | USB 类型-C 充电器。                                                                 |
+| **J4** | USB 集线器（SuperSpeed 或高速），闪存驱动器连接到下游。         |
+| **J6** | 使用 USB 类型的 PC-使用 USB 类型进行连接的端口电缆-A 到 USB 微 B 电缆。 |
 
 
 
-1.  关闭 SUT 的电源。
-2.  连接到端口标记为 SUT **J1** USB 类型 C ConnEx 上。
+1.  关闭 SUT 电源。
+2.  将 SUT 连接到 USB 类型-C ConnEx 上标记为**J1**的端口。
 3.  将代理控制器连接到 USB 类型 C ConnEx。
-4.  连接到 USB 类型 C ConnEx 外围设备。
-5.  SUT 并登录到 Windows 上的电源。
-6.  在提升的命令提示符处，运行 CXLOOP。CMD 脚本。 脚本暂停时，确认新激活的外围设备可正常运行。
-7.  反向 USB 类型 C 电缆的方向，并重复步骤 5-7。
+4.  将外围设备连接到 USB 类型-C ConnEx。
+5.  打开并登录到 Windows。
+6.  在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
+7.  反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
+有关与步骤 2-4 相关的配置映像，请参阅[入门 ...](#get-started)。
 
-## <a name="ft-case-3-charging-and-power-delivery-pd"></a>FT 案例 3:计费和电源传递 (PD)
+## <a name="ft-case-3-charging-and-power-delivery-pd"></a>FT 案例3：充电和电源交付（PD）
 
 
-![ft 案例 3： 充电和电源传递 (pd)](images/ft3.png)
+![ft 案例3：充电和电源交付（pd）](images/ft3.png)
 
-| Port   | 设备               |
+| 端口   | 设备               |
 |--------|----------------------|
-| **J1** | SUT。                 |
+| **J1** | SUT.                 |
 | **J2** | 无。                |
-| **J3** | USB 类型 C 充电器。  |
+| **J3** | USB 类型-C 充电器。  |
 | **J4** | USB 鼠标。           |
-| **J6** | USB Micro B 充电器。 |
+| **J6** | USB 微 B 充电器。 |
 
 
 
-1.  关闭 SUT 的电源。
-2.  连接到端口标记为 SUT **J1** USB 类型 C ConnEx 上。
+1.  关闭 SUT 电源。
+2.  将 SUT 连接到 USB 类型-C ConnEx 上标记为**J1**的端口。
 3.  将代理控制器连接到 USB 类型 C ConnEx。
-4.  连接到 USB 类型 C ConnEx 外围设备。
-5.  SUT 并登录到 Windows 上的电源。
-6.  在提升的命令提示符处，运行 CXLOOP。CMD 脚本。 脚本暂停时，确认新激活的外围设备可正常运行。
-7.  反向 USB 类型 C 电缆的方向，并重复步骤 5-7。
-8.  连接到端口 USB 类型 C ConnEx **J2**。
+4.  将外围设备连接到 USB 类型-C ConnEx。
+5.  打开并登录到 Windows。
+6.  在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
+7.  反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
+8.  将 USB 类型-C ConnEx 连接到端口**J2**。
 
-    **ConnExUtil.exe /setPort 2**
+    **ConnExUtil/setPort 2**
 
-9.  如果 SUT 包含多个 USB 类型 C 端口，使用 USB 类型 C 电缆连接同一系统上的两个 USB 类型 C 端口。
+9.  如果 SUT 包含多个 USB 类型 C 端口，请使用 USB 类型 C 电缆连接同一系统上的两个 USB 类型 C 端口。
 
-    确认，SUT 未在充电 （自身）。
+    确认 SUT 不会充电（本身）。
 
-    确认 power LCD 读取与墙上的适配器的预期要求匹配。
+    确认电源的液晶屏读数是否与墙壁适配器的预期相符。
 
-10. 替换为连接到 USB 类型 C 充电器**J3**使用不同制造商提供的另一个 USB 类型 C 充电器。
+10. 将连接到**J3**的 Usb 类型 c 充电器替换为其他制造商提供的另一个 Usb 类型 c 充电器。
 
-    确认设备接收当前。
+    确认设备正在接收当前设备。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
+有关与步骤 2-4 相关的配置映像，请参阅[入门 ...](#get-started)。
 
-## <a name="ft-case-4-role-swap"></a>FT 情况 4:角色切换
+## <a name="ft-case-4-role-swap"></a>FT 案例4：角色交换
 
 
-![ft 用例 4： 角色交换](images/ft4.png)
+![ft 案例4：角色交换](images/ft4.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
-| **J1** | SUT。                                                                                |
-| **J2** | 通过使用 USB 类型 C 电缆连接的 USB 类型 C 端口的 PC。              |
+| **J1** | SUT.                                                                                |
+| **J2** | 使用 usb 类型 c 端口连接的 PC，使用 USB 类型 C 电缆进行连接。              |
 | **J3** | 无。                                                                               |
 | **J4** | USB 闪存驱动器。                                                                    |
-| **J6** | 通过使用 USB 类型 A 到 B USB 微电缆连接的 USB 端口键入一个线与 PC。 |
+| **J6** | 使用 USB 类型的 PC-使用 USB 类型进行连接的端口电缆-A 到 USB 微 B 电缆。 |
 
 
 
-1.  关闭 SUT 的电源。
-2.  连接到端口标记为 SUT **J1** USB 类型 C ConnEx 上。
+1.  关闭 SUT 电源。
+2.  将 SUT 连接到 USB 类型-C ConnEx 上标记为**J1**的端口。
 3.  将代理控制器连接到 USB 类型 C ConnEx。
-4.  连接到 USB 类型 C ConnEx 外围设备。
-5.  SUT 并登录到 Windows 上的电源。
-6.  在提升的命令提示符处，运行 CXLOOP。CMD 脚本。 脚本暂停时，确认新激活的外围设备可正常运行。
-7.  反向 USB 类型 C 电缆的方向，并重复步骤 5-7。
-8.  连接到端口 USB 类型 C ConnEx **J2**。
+4.  将外围设备连接到 USB 类型-C ConnEx。
+5.  打开并登录到 Windows。
+6.  在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
+7.  反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
+8.  将 USB 类型-C ConnEx 连接到端口**J2**。
 
-    确认角色交换。 LCD 屏幕上显示电流指示 power 角色。 **+ ve**如果**J1**是电源的接收器;**-ve**如果**J1**是电源。
+    确认角色交换。 液晶屏屏幕上显示的 Amperage 指示电源角色。 如果**J1**是 power 接收器，则 **+ ve** ;如果**J1**是电源，则为 **-ve** 。
 
 9.  执行必要的步骤来交换数据角色并确认每个系统的当前角色已更改。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
+有关与步骤 2-4 相关的配置映像，请参阅[入门 ...](#get-started)。
 
-## <a name="st-case-1-device-enumeration"></a>ST 案例 1:设备枚举
+## <a name="st-case-1-device-enumeration"></a>ST 案例1：设备枚举
 
 
-![st 案例 1： 设备枚举](images/ft1.png)
+![st 案例1：设备枚举](images/ft1.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
-| **J1** | SUT。                                                                                |
-| **J2** | 通过使用 USB 类型 C 电缆连接的 USB 类型 C 端口的 PC。              |
-| **J3** | USB 类型 C 充电器。                                                                 |
-| **J4** | 下游连接用鼠标的 USB 集线器 （SuperSpeed 或高速度）。               |
-| **J6** | 通过使用 USB 类型 A 到 B USB 微电缆连接的 USB 端口键入一个线与 PC。 |
+| **J1** | SUT.                                                                                |
+| **J2** | 使用 usb 类型 c 端口连接的 PC，使用 USB 类型 C 电缆进行连接。              |
+| **J3** | USB 类型-C 充电器。                                                                 |
+| **J4** | USB 集线器（SuperSpeed 或高速），其中鼠标连接到下游。               |
+| **J6** | 使用 USB 类型的 PC-使用 USB 类型进行连接的端口电缆-A 到 USB 微 B 电缆。 |
 
 
 
-1.  关闭 SUT 的电源。
-2.  连接到端口标记为 SUT **J1** USB 类型 C ConnEx 上。
+1.  关闭 SUT 电源。
+2.  将 SUT 连接到 USB 类型-C ConnEx 上标记为**J1**的端口。
 3.  将代理控制器连接到 USB 类型 C ConnEx。
-4.  连接到 USB 类型 C ConnEx 外围设备。
-5.  SUT 并登录到 Windows 上的电源。
-6.  在提升的命令提示符处，运行 CXSTRESS。12 个小时内的 CMD。
+4.  将外围设备连接到 USB 类型-C ConnEx。
+5.  打开并登录到 Windows。
+6.  在提升的命令提示符下，运行 CXSTRESS。CMD 长达12小时。
 
-    通过按 Ctrl-c。 终止脚本
+    按 Ctrl-c 终止脚本。
 
-7.  执行步骤中所述[FT 案例 1:设备枚举](#ft-case-1-device-enumeration)。
+7.  执行[FT Case 1： Device 枚举](#ft-case-1-device-enumeration)中所述的步骤。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
+有关与步骤 2-4 相关的配置映像，请参阅[入门 ...](#get-started)。
 
-## <a name="st-case-2-charging-and-power-delivery-pd"></a>ST 案例 2:计费和电源传递 (PD)
+## <a name="st-case-2-charging-and-power-delivery-pd"></a>ST 案例2：充电和电源传递（PD）
 
 
-![st 案例 2： 充电和电源传递 (pd)](images/ft3.png)
+![st 案例2：充电和电源传递（pd）](images/ft3.png)
 
-| Port   | 设备               |
+| 端口   | 设备               |
 |--------|----------------------|
-| **J1** | SUT。                 |
+| **J1** | SUT.                 |
 | **J2** | 无。                |
-| **J3** | USB 类型 C 充电器。  |
+| **J3** | USB 类型-C 充电器。  |
 | **J4** | USB 鼠标。           |
-| **J6** | USB Micro B 充电器。 |
+| **J6** | USB 微 B 充电器。 |
 
 
 
-1.  关闭 SUT 的电源。
-2.  连接到端口标记为 SUT **J1** USB 类型 C ConnEx 上。
+1.  关闭 SUT 电源。
+2.  将 SUT 连接到 USB 类型-C ConnEx 上标记为**J1**的端口。
 3.  将代理控制器连接到 USB 类型 C ConnEx。
-4.  连接到 USB 类型 C ConnEx 外围设备。
-5.  SUT 并登录到 Windows 上的电源。
-6.  在提升的命令提示符处，运行 CXSTRESS。12 个小时内的 CMD。 .
+4.  将外围设备连接到 USB 类型-C ConnEx。
+5.  打开并登录到 Windows。
+6.  在提升的命令提示符下，运行 CXSTRESS。CMD 长达12小时。 。
 
-    通过按 Ctrl-c。 终止脚本
+    按 Ctrl-c 终止脚本。
 
-7.  执行步骤中所述[FT 案例 3:计费和电源传递 (PD)](#ft-case-3-charging-and-power-delivery-pd)。
+7.  执行[FT 案例3：充电和电源交付（PD）](#ft-case-3-charging-and-power-delivery-pd)中所述的步骤。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
+有关与步骤 2-4 相关的配置映像，请参阅[入门 ...](#get-started)。
 
 ## <a name="additional-test-resources"></a>其他测试资源
 
 
-以下功能测试可适用的 USB 类型-C 来提高传统 USB 方案。
+可对 USB 类型 C 进行以下功能测试，以改善传统的 USB 方案。
 
-| 测试用例                                | 描述                                                                                                                  | Category             |
+| 测试用例                                | 描述                                                                                                                  | 类别             |
 |------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------------------|
-| [系统启动](type.md#ft2)              | 确认该产品未影响正常的系统启动。                                                               | 系统，停靠，设备 |
-| [系统电源转换](type.md#ft3) | 测试是否转换系统的能力，从低功率状态唤醒功能不受影响的产品。 | 系统，停靠，设备 |
-| [选择性挂起](type.md#ft4)        | 确认的选择性挂起转换。                                                                                  | 停靠设备         |
+| [系统启动](type.md#ft2)              | 确认产品不会阻止正常的系统引导。                                                               | 系统、停靠、设备 |
+| [系统电源转换](type.md#ft3) | 测试系统的电源转换和唤醒功能是否不受低于此产品的影响。 | 系统、停靠、设备 |
+| [选择性挂起](type.md#ft4)        | 确认选择性挂起转换。                                                                                  | 停靠、设备         |
 
 
 
-以下的压力测试可以改编自 SuperMUTT 测试文档，以展开 USB 方案。
+可以通过 SuperMUTT 测试文档调整以下压力测试，以扩展 USB 方案。
 
-| 测试用例                                | 描述                                                     | Category             |
+| 测试用例                                | 描述                                                     | 类别             |
 |------------------------------------------|-----------------------------------------------------------------|----------------------|
-| [系统电源转换](type.md#st1) | 测试产品后执行重复的系统电源事件的可靠性。 | 系统，停靠，设备 |
-| [传输事件](type.md#st2)          | 生成多个传输和连接事件。              | 系统，停靠，设备 |
-| [Plug and Play （即插即用）](type.md#st3)      | 生成各种即插即用的序列。                                | 系统，停靠，设备 |
-| [设备拓扑](type.md#st4)          | 测试一系列设备和该产品的拓扑。       | 系统，停靠，设备 |
+| [系统电源转换](type.md#st1) | 在重复系统电源事件之后测试产品可靠性。 | 系统、停靠、设备 |
+| [传输事件](type.md#st2)          | 生成多个传输和连接事件。              | 系统、停靠、设备 |
+| [即插即用（PnP）](type.md#st3)      | 生成各种 PnP 序列。                                | 系统、停靠、设备 |
+| [设备拓扑](type.md#st4)          | 使用产品测试一系列设备和拓扑。       | 系统、停靠、设备 |
 
 
 
-## <a name="validating-success-or-failure-of-the-tests"></a>验证成功或失败的测试
+## <a name="validating-success-or-failure-of-the-tests"></a>验证测试是否成功或失败
 
 
 ### <a name="confirming-charging-and-power"></a>确认充电和电源
 
-在 USB 类型 C ConnEx 载入 LCD 显示 power （伏、 安培和方向）。 确认它符合从电源接通电源并主动启用了 USB 类型 C ConnEx 预期。
+USB 类型 C ConnEx 上的板载 LCD 显示电源（伏特、安培和方向）。 确认它与接通电源并主动启用 USB 类型 C ConnEx 的电源匹配。
 
 ![确认充电和电源](images/connexc-connect9.png)
 
-### <a name="confirming-device-addition-on-desktops"></a>确认在台式机上的设备添加
+### <a name="confirming-device-addition-on-desktops"></a>确认台式机上的设备添加
 
-1.  标识你的设备连接到 USB 主控制器。
-2.  确保新设备出现在设备管理器中的正确节点之下。
-3.  有关 USB 3.0 集线器连接到 USB 3.0 端口，会看到两个 hub 设备： 一个 SuperSpeed 以及高速的另一个枚举。
+1.  确定设备连接到的 USB 主机控制器。
+2.  请确保新设备显示在设备管理器中正确的节点下。
+3.  对于连接到 USB 3.0 端口的 USB 3.0 集线器，应会看到两个集线器设备：一个在 SuperSpeed 上枚举，另一个以高速连接。
 
-### <a name="confirm-device-removal-on-desktops"></a>确认设备删除台式机上
+### <a name="confirm-device-removal-on-desktops"></a>确认台式机上的设备删除
 
-1.  标识设备在设备管理器。
-2.  执行测试步骤，以从系统删除该设备。
-3.  确认设备不再存在于设备管理器。
-4.  USB 3.0 集线器，请删除这两种设备 （SuperSpeed 和伴随中心）。 未能删除设备在此情况下可能是设备故障，应进行调查的会审的适当的根本原因，所涉及的所有组件。
+1.  在设备管理器中标识设备。
+2.  执行测试步骤，从系统中删除设备。
+3.  确认设备不再存在于设备管理器中。
+4.  对于 USB 3.0 集线器，请检查是否已删除这两个设备（SuperSpeed 和配套集线器）。 在这种情况下，删除设备失败可能是设备故障，并应通过与会审适当根本原因所涉及的所有组件进行调查。
 
 ### <a name="confirm-device-functionality"></a>确认设备功能
 
--   如果该设备是 USB 集线器，请确保在中心的下一级的设备功能。 验证其他设备，可以连接到中心上的可用端口。
--   如果设备处于 HID 设备，测试其功能。 请确保 USB 键盘类型、 USB 鼠标将光标，移动和游戏设备将游戏控制器的控制面板中正常运行。
--   USB 音频设备必须播放和/或录音。
--   存储设备必须是可访问，并且应该能够将复制的文件有 200 MB 或更大。
--   如果设备具有多个函数，例如扫描和打印，请确保测试扫描和打印功能。
--   如果设备是 USB 类型 C 设备，确认适用 USB 和其他模式是功能。
+-   如果设备是 USB 集线器，请确保该集线器的下游设备正常运行。 验证其他设备是否可以连接到集线器上的可用端口。
+-   如果设备是一个 HID 设备，请测试其功能。 请确保 USB 键盘类型、USB 鼠标在游戏控制器的控制面板上移动光标和游戏设备正常运行。
+-   USB 音频设备必须播放和/或录制声音。
+-   存储设备必须是可访问的，并且应能够复制200MB 或更大的文件。
+-   如果设备具有多个功能，例如扫描 & 打印，请确保测试扫描和打印功能。
+-   如果设备是 USB 类型 C 设备，请确认适用的 USB 和备用模式是否正常工作。
 
-## <a name="using-etw-to-log-issues"></a>使用 ETW 来记录问题
+## <a name="using-etw-to-log-issues"></a>使用 ETW 记录问题
 
 
-转到 https://aka.ms/usbtrace有关说明和下载用于捕获从 USB 驱动程序的 ETW 跟踪的脚本。
+请参阅 https://aka.ms/usbtrace 获取说明，并下载用于从 USB 驱动程序捕获 ETW 跟踪的脚本。
 
 ## <a name="reporting-test-results"></a>报告测试结果
 
 
-提供这些详细信息：
+提供以下详细信息：
 
--   在未通过的测试之前执行的测试 （按顺序） 的列表。
--   该列表必须指定已失败或传递的测试。
--   系统、 设备、 停靠或用于测试的中心。 包括品牌、 型号和 Web 站点，以便我们可以获取其他信息，如有需要。
+-   在失败测试之前执行的测试的列表（按顺序）。
+-   此列表必须指定失败或通过的测试。
+-   用于测试的系统、设备、停靠或集线器。 包含品牌、型号和网站，以便我们可以根据需要获取其他信息。
 
 
 

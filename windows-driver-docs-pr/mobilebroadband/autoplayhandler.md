@@ -5,17 +5,17 @@ ms.assetid: 0ee7ac9b-7c1a-4267-b718-ba110ef5b12d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53a0041d692a7208998922bef0bc32ffaabacfc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546289"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323635"
 ---
 # <a name="autoplayhandler"></a>AutoplayHandler
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-AutoplayHandler 元素指定当用户插入设备时应显示为建议的自动播放操作的 UWP 设备应用程序。
+AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动播放操作的 UWP 设备应用。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -31,7 +31,7 @@ AutoplayHandler 元素指定当用户插入设备时应显示为建议的自动�
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -48,30 +48,30 @@ AutoplayHandler 元素指定当用户插入设备时应显示为建议的自动�
 <tbody>
 <tr class="odd">
 <td><p><a href="packageidentity.md" data-raw-source="[PackageIdentity](packageidentity.md)">PackageIdentity</a></p></td>
-<td><p>为应用指定程序包标识 （名称和发布服务器）。</p></td>
+<td><p>指定应用的包标识（名称和发布者）。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="application-windowsinfo-v2.md" data-raw-source="[Application](application-windowsinfo-v2.md)">应用程序</a></p></td>
 <td><p>指定应用程序的应用程序 ID。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="verb.md" data-raw-source="[Verb](verb.md)">Verb</a></p></td>
-<td><p>指定该应用将注册的谓词。</p></td>
+<td><p><a href="verb.md" data-raw-source="[Verb](verb.md)">谓词</a></p></td>
+<td><p>指定应用注册的谓词。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="autoplaytype.md" data-raw-source="[AutoplayType](autoplaytype.md)">AutoplayType</a></p></td>
-<td><p>指定是否自动播放事件内容事件或的设备事件。 自动播放确定设备的类型，并引发卷设备的内容事件或非卷设备的设备事件。</p></td>
+<td><p>指定自动播放事件是否为设备事件或内容事件。 自动播放会确定设备类型，并为非卷设备引发设备事件，或为卷设备引发内容事件。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="enableautoplayforregisteredapps.md" data-raw-source="[EnableAutoPlayForRegisteredApps](enableautoplayforregisteredapps.md)">EnableAutoPlayForRegisteredApps</a></p></td>
-<td><p>指定是否为已注册的应用程序启用自动播放。</p></td>
+<td><p>指定是否为已注册的应用启用自动播放。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -95,7 +95,7 @@ AutoplayHandler 元素指定当用户插入设备时应显示为建议的自动�
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -116,13 +116,13 @@ AutoplayHandler 元素指定当用户插入设备时应显示为建议的自动�
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
--   结构[PackageIdentity](packageidentity.md)并[应用程序](application-windowsinfo-v2.md)元素与应用程序清单结构完全相同，因此应用程序的清单中的元素进行复制。
+-   [PackageIdentity](packageidentity.md)和[应用](application-windowsinfo-v2.md)程序元素的结构与应用程序清单结构相同，因此请复制应用程序清单中的元素。
 
--   除了设备元数据中包含 AutoplayHandler 元素，指定的 UWP 设备应用还必须注册自动播放事件通过事件及其应用程序清单中添加一个声明。 自动播放识别应用程序的声明，并包括在用户可以用来响应该事件的可能操作的列表。
+-   除了在设备元数据中包含 AutoplayHandler 元素外，指定的 UWP 设备应用还必须通过在事件的应用程序清单中添加声明来注册自动播放事件。 自动播放识别应用程序的声明，然后将其包含在用户可以执行以响应该事件的可能操作列表中。
 
--   只有包中列出[DeviceCompanionApplications](devicecompanionapplications.md) SoftwareInfo.xml 文件中的值将作为设备安装的一部分下载。 如果[LaunchApplicationOnDeviceConnect](launchapplicationondeviceconnect.md)元素的值是从不同的包，Windows 不知道它将实际上是在用户设备上。 如果建议的应用程序不在用户的设备上，用户不可以看到与选择的选项。
+-   只有在 SoftwareInfo 文件的[DeviceCompanionApplications](devicecompanionapplications.md)值中列出的包将作为设备安装的一部分进行下载。 如果[LaunchApplicationOnDeviceConnect](launchapplicationondeviceconnect.md)元素的值来自于不同的包，则 Windows 不知道它是否将实际位于用户的设备上。 如果建议的应用程序不在用户的设备上，则将不会向用户显示所选的。
 
--   即使应用程序是与相同[DeviceCompanionApplications](devicecompanionapplications.md)条目，它可能始终出现在自动播放列表。 如果用户未连接到 Internet 或无法下载的配套应用程序，则不会在列表中。 但是，当用户获取应用程序时，他们将看到"新选项可用"自动播放对话框的下次连接其设备。
+-   即使应用程序与[DeviceCompanionApplications](devicecompanionapplications.md)项相同，它也不会始终出现在 "自动播放" 列表中。 如果用户未连接到 Internet 或无法下载伴生应用程序，则它将不会出现在列表中。 但是，当用户获取应用程序时，将在下次连接其设备时，显示 "新选项可用" 的 "自动播放" 对话框。
 
 AutoplayHandler 元素是可选的。
 

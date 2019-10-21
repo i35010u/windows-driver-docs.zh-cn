@@ -1,29 +1,31 @@
 ---
 title: IRP_MJ_SHUTDOWN
-description: 具有内部缓存中对数据的大容量存储设备的驱动程序必须处理此请求 DispatchShutdown 例程中。
+description: 具有数据内部缓存的大容量存储设备的驱动程序必须在 DispatchShutdown 例程中处理此请求。
 ms.date: 08/12/2017
 ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
 - IRP_MJ_SHUTDOWN 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 20459241f40f4000dc16933a0d3e562424847af8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5f6036e30fc3dbef2423e2a4e1b254a25e4ddbb
+ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382254"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390723"
 ---
-# <a name="irpmjshutdown"></a>IRP\_MJ\_SHUTDOWN
+# <a name="irp_mj_shutdown"></a>IRP \_MJ \_SHUTDOWN
 
 
-数据必须处理此请求中的有内部缓存的大容量存储设备的驱动程序[ *DispatchShutdown* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 大容量存储设备的驱动程序和它们的上层的中间驱动程序还如果基础驱动程序维护的数据的内部缓冲区必须处理此请求。
+具有数据内部缓存的大容量存储设备的驱动程序必须在[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程中处理此请求。 如果基础驱动程序维护数据的内部缓冲区，则还必须处理此请求，同时分层的大容量存储设备和中间驱动程序的驱动程序也必须处理此请求。
 
 <a name="when-sent"></a>发送时间
 ---------
 
-收到关闭请求指示的文件系统驱动程序发送请注意，系统正在关闭。
+接收到关闭请求指示正在发送文件系统驱动程序通知系统正在关闭。
 
-一个或多个文件系统驱动程序可以在用户注销或某些其他原因正在关闭系统时发送这样的较低级驱动程序多个关闭请求。
+当用户注销时，一个或多个文件系统驱动程序可以向此类低级驱动程序发送多个关闭请求，或者当系统出于其他原因而关闭时。
+
+PnP 管理器以 IRQL < = APC_LEVEL 在任意线程上下文中发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
@@ -38,9 +40,9 @@ ms.locfileid: "67382254"
 <a name="operation"></a>操作
 ---------
 
-该驱动程序必须完成当前缓存在设备中或在完成关闭请求之前保存在驱动程序的内部缓冲区中的任何数据的传输。
+驱动程序必须完成对设备中当前缓存的任何数据的传输，或在完成关闭请求之前保存在驱动程序的内部缓冲区中。
 
-驱动程序不会收到**IRP\_MJ\_关闭**请求的设备对象，除非它注册为此，通过[ **IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)或[ **IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)。
+对于设备对象，驱动程序不会接收**IRP \_MJ \_SHUTDOWN**请求，除非它使用[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)或[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)注册来执行此操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,13 +54,13 @@ ms.locfileid: "67382254"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)

@@ -5,17 +5,17 @@ ms.assetid: 7e02557a-34e5-41f2-9a27-122a144c2ab9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc89b599bf9bc0cd4a70d1945e6178f14011e399
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520418"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323686"
 ---
 # <a name="servicenumber"></a>ServiceNumber
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-ServiceNumber 元素指定表示移动运营商的唯一自行生成的 GUID。 此 GUID 必须存在，并且帐户预配的元数据应用于的 PC 以确保通过在该文件中标识的运营商 ID 中声明的 GUID 值的匹配项时进行检查。 帐户预配的元数据是由移动宽带应用或运算符网站生成。 帐户预配的元数据中所述[帐户预配](account-provisioning.md)。
+ServiceNumber 元素指定代表移动运营商的唯一自行生成的 GUID。 如果将帐户预配元数据应用于电脑以确保与该文件中标识的运营商 ID 中声明的 GUID 值匹配，则此 GUID 必须存在并选中。 帐户预配元数据是由移动宽带应用或操作员网站生成的。 帐户预配元数据在[帐户设置](account-provisioning.md)中进行了介绍。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -31,17 +31,17 @@ ServiceNumber 元素指定表示移动运营商的唯一自行生成的 GUID。 
 
 没有特性。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-一串[GUIDType](guidtype-serviceinfo.md)。
+[GUIDType](guidtype-serviceinfo.md)的字符串。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 没有子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -58,14 +58,14 @@ ServiceNumber 元素指定表示移动运营商的唯一自行生成的 GUID。 
 <tbody>
 <tr class="odd">
 <td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a></p></td>
-<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a>元素是父元素<a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">ServiceInfo XML 架构</a>。</p></td>
+<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a>元素是<a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">ServiceInfo XML 架构</a>的父元素。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

@@ -5,17 +5,17 @@ ms.assetid: 251ece1e-67ec-48d3-977a-f033f1bff8c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74e9375244be6c6acf2beaf099960118687f6218
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520147"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323666"
 ---
 # <a name="mobilebroadbandprofiles"></a>MobileBroadbandProfiles
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-MobileBroadbandProfiles 元素指定的采购和 Internet 移动宽带的配置文件使用的文件。
+MobileBroadbandProfiles 元素指定要使用的购买和 Internet 移动宽带配置文件。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -31,7 +31,7 @@ MobileBroadbandProfiles 元素指定的采购和 Internet 移动宽带的配置�
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -48,18 +48,18 @@ MobileBroadbandProfiles 元素指定的采购和 Internet 移动宽带的配置�
 <tbody>
 <tr class="odd">
 <td><p><a href="purchase.md" data-raw-source="[Purchase](purchase.md)">购买</a></p></td>
-<td><p>指定要使用的购买移动宽带的配置文件的文件。</p></td>
+<td><p>指定要使用的购买移动宽带配置文件。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="internet.md" data-raw-source="[Internet](internet.md)">Internet</a></p></td>
-<td><p>指定要使用的 Internet 移动宽带的配置文件的文件。</p></td>
+<td><p><a href="internet.md" data-raw-source="[Internet](internet.md)">互联</a></p></td>
+<td><p>指定要使用的 Internet 移动宽带配置文件。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -76,14 +76,14 @@ MobileBroadbandProfiles 元素指定的采购和 Internet 移动宽带的配置�
 <tbody>
 <tr class="odd">
 <td><p><a href="networkconfiguration.md" data-raw-source="[NetworkConfiguration](networkconfiguration.md)">NetworkConfiguration</a></p></td>
-<td><p>指定的采购和 Internet 移动宽带的配置文件，以使用或标准用户是否可以执行 PIN 解锁操作。</p></td>
+<td><p>指定要使用的购买和 Internet 移动宽带配置文件，或者标准用户是否可以执行 PIN 解锁操作。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

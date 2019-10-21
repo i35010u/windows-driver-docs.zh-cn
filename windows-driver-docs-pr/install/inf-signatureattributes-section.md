@@ -1,6 +1,6 @@
 ---
 title: INF SignatureAttributes 节
-description: 此部分允许用户请求所需的某些证书方案的其他签名。
+description: 此部分允许用户根据某些认证方案的要求请求其他签名。
 ms.assetid: 8169686B-C45B-4D67-8B09-CD5F9977898D
 keywords:
 - INF SignatureAttributes 部分设备和驱动程序安装
@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02883650cb3b47982d07f5f76b52b90432a621da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9fb6ae4da095e1a830f4e0318d9d738de9bd026d
+ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370035"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390720"
 ---
 # <a name="inf-signatureattributes-section"></a>INF SignatureAttributes 节
 
 
-此部分允许用户请求所需的某些证书方案的其他签名。 例如，下面的方案需要此部分：受保护的环境媒体播放[早期启动反恶意软件](https://docs.microsoft.com/windows-hardware/drivers/install/elam-driver-submission)，和第三方 HAL 扩展。 如果您的硬件认证工具包程序包包含正确的功能，通过测试，将只应用这些附加的签名。
+此部分允许用户根据某些认证方案的要求请求其他签名。 例如，以下方案需要此部分：受保护的环境媒体播放、[初期启动反恶意软件](https://docs.microsoft.com/windows-hardware/drivers/install/elam-driver-submission)和第三方 HAL 扩展。 仅当硬件认证工具包包包含正确的功能并通过测试时才会应用这些附加签名。
 
 ```inf
 [SignatureAttributes]
@@ -35,8 +35,8 @@ Attribute = Value
 ## <a name="entries"></a>条目
 
 
-<a href="" id="sigtype-signature-type"></a>**SigType=** <em>signature-type</em>  
-定义要应用于该文件的签名或目录属性需求。 应为以下值之一：
+<a href="" id="sigtype-signature-type"></a>**SigType =** <em>签名类型</em>  
+定义需要将哪些签名或目录属性应用于文件。 应为以下各项之一：
 
 -   Elam
 -   HalExt
@@ -44,26 +44,26 @@ Attribute = Value
 -   DRM
 -   WindowsHello
 
-<a href="" id="attribute-attribute-name"></a>**Attribute=** <em>attribute-name</em>  
-每个签名类型都有相应的属性和值，如下所示。 使用这些定义 SignatureAttributes 各小节：
+<a href="" id="attribute-attribute-name"></a>**Attribute =** <em>属性名称</em>  
+每个签名类型都有相应的属性和值，如下所示。 将以下定义用于 SignatureAttributes 子节：
 
--   **SignatureAttributes.Elam**:Elam = true
--   **SignatureAttributes.HalExt**:HalExt = true
--   **SignatureAttributes.DRM**:DRMLevel = {1300年 | 1200年}
--   **SignatureAttributes.PETrust**:PETrust = true
--   **SignatureAttributes.WindowsHello**:WindowsHello = true
+-   **SignatureAttributes. Elam**： Elam = true
+-   **SignatureAttributes. HalExt**： HalExt = true
+-   **SignatureAttributes**： DRMLevel = {1300 | 1200}
+-   **SignatureAttributes. PETrust**： PETrust = true
+-   **SignatureAttributes. WindowsHello**： WindowsHello = true
 
 <a name="remarks"></a>备注
 -------
 
-如果您的硬件认证工具包程序包包含正确的功能，通过测试，将只应用这些附加的签名。 这些是正常行为的硬件认证和 Elam、 HalExt、 PETrust，相应的证书要求的添加项，详情请参阅 DRM[此处](https://go.microsoft.com/fwlink/p/?linkid=239763)。
+仅当硬件认证工具包包包含正确的功能并通过测试时才会应用这些附加签名。 这些是硬件认证的正常行为以及 Elam、HalExt、PETrust 和 DRM 的相应认证要求的补充。 有关详细信息，请参阅[Windows 硬件实验室工具包](https://docs.microsoft.com/windows-hardware/test/hlk/)。
 
-请求而不考虑目标操作系统的附加签名时，应使用这些 INF 部分。
+当请求其他签名时，应使用这些 INF 部分，而不考虑目标操作系统。
 
 <a name="examples"></a>示例
 --------
 
-以下示例演示如何枚举和请求附加签名音频：
+下面的示例演示如何枚举和请求音频的其他签名：
 
 ```inf
 [SignatureAttributes]
@@ -77,7 +77,7 @@ DRMLevel=1300
 PETrust=true
 ```
 
-以下示例演示如何枚举和请求视频附加签名：
+下面的示例演示如何枚举和请求视频的其他签名：
 
 ```inf
 [SignatureAttributes]
@@ -87,7 +87,7 @@ ExampleFile1.dll=SignatureAttributes.PETrust
 PETrust=true
 ```
 
-以下示例演示如何枚举和为 HAL 请求附加签名：
+以下示例演示了如何枚举和请求 HAL 的其他签名：
 
 ```inf
 [SignatureAttributes]
@@ -97,7 +97,7 @@ HALFILE.dll=SignatureAttributes.HalExt
 HalExt=true
 ```
 
-以下示例演示如何枚举和请求的 ELAM 附加签名：
+下面的示例演示如何枚举和请求 ELAM 的其他签名：
 
 ```inf
 [SignatureAttributes]
@@ -107,7 +107,7 @@ ELAMFILE.dll=SignatureAttributes.Elam
 Elam=true
 ```
 
-以下示例演示如何枚举和 Windows hello 企业请求附加签名：
+以下示例演示了如何枚举和请求 Windows Hello 的其他签名：
 
 ```inf
 [SignatureAttributes]
@@ -118,7 +118,7 @@ WindowsHello=true
 ```
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [仪表板帮助](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)

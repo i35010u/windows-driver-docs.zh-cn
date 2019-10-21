@@ -5,17 +5,17 @@ ms.assetid: 49c8e902-d943-4884-96e4-c5472a82b568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13b97efcd7d5104a68d7b4c7eef7a6b89602b62c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568314"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323688"
 ---
 # <a name="servicespecificextension"></a>ServiceSpecificExtension
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-ServiceSpecificExtension 元素指定 MobileBroadbandInfo.xml 文件的相对位置。
+ServiceSpecificExtension 元素指定 MobileBroadbandInfo 文件的相对位置。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -39,7 +39,7 @@ ServiceSpecificExtension 元素指定 MobileBroadbandInfo.xml 文件的相对位
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
+<th>属性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -48,26 +48,26 @@ ServiceSpecificExtension 元素指定 MobileBroadbandInfo.xml 文件的相对位
 <tbody>
 <tr class="odd">
 <td><p>命名空间</p></td>
-<td><p>xs: anyuri</p></td>
-<td><p>是</p></td>
-<td><p>用于 MobileBroadbandInfo.xml 文件的命名空间的 URI。</p></td>
+<td><p>xs： anyURI</p></td>
+<td><p>“是”</p></td>
+<td><p>用于 MobileBroadbandInfo 文件的命名空间的 URI。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
 包含 MobileBroadbandInfo 架构的 XML 文件的名称。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 没有子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -84,14 +84,14 @@ ServiceSpecificExtension 元素指定 MobileBroadbandInfo.xml 文件的相对位
 <tbody>
 <tr class="odd">
 <td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a></p></td>
-<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a>元素是父元素<a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">ServiceInfo XML 架构</a>。</p></td>
+<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a>元素是<a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">ServiceInfo XML 架构</a>的父元素。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

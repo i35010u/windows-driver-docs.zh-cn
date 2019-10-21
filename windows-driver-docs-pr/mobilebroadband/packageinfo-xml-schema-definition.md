@@ -5,11 +5,11 @@ ms.assetid: b0e4f800-816a-4d8b-a68b-56dc468caf52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36abf2dce152e816551fc8ea9c6d95ca9a41c0be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562668"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323606"
 ---
 # <a name="packageinfo-xml-schema-definition"></a>PackageInfo XML 架构定义
 
@@ -144,7 +144,7 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/PackageInfov2
 </xs:schema>
 ```
 
-下面是 PackageInfo v2 XML 架构元数据 (packageinfov2.xsd):
+下面是 PackageInfo v2 XML 架构元数据（packageinfov2）：
 
 ``` syntax
 <?xml version="1.0" encoding="UTF-8"?>

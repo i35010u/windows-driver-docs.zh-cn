@@ -5,17 +5,17 @@ ms.assetid: 69ea35aa-c658-49ed-86bd-815392d157f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b49386c37c64f7064f9a072061682d78aa3d39a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521256"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72323648"
 ---
 # <a name="servicecategorylist"></a>ServiceCategoryList
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-ServiceCategoryList 元素指定适用于服务的一个或多个功能类别。 通过指定每个功能类别[ServiceCategory](servicecategory.md)元素。
+ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。 每个功能类别均通过[ServiceCategory](servicecategory.md)元素指定。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -31,12 +31,12 @@ ServiceCategoryList 元素指定适用于服务的一个或多个功能类别。
 
 没有特性。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
 必须包含一个[ServiceCategory](servicecategory.md)元素。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -53,14 +53,14 @@ ServiceCategoryList 元素指定适用于服务的一个或多个功能类别。
 <tbody>
 <tr class="odd">
 <td><p><a href="servicecategory.md" data-raw-source="[ServiceCategory](servicecategory.md)">ServiceCategory</a></p></td>
-<td><p>指定适用于服务的一个或多个功能类别。</p></td>
+<td><p>指定应用于服务的一个或多个功能类别。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -77,14 +77,14 @@ ServiceCategoryList 元素指定适用于服务的一个或多个功能类别。
 <tbody>
 <tr class="odd">
 <td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a></p></td>
-<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a>元素是父元素<a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">ServiceInfo XML 架构</a>。</p></td>
+<td><p><a href="serviceinfo.md" data-raw-source="[ServiceInfo](serviceinfo.md)">ServiceInfo</a>元素是<a href="serviceinfo-xml-schema.md" data-raw-source="[ServiceInfo XML schema](serviceinfo-xml-schema.md)">ServiceInfo XML 架构</a>的父元素。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -101,19 +101,19 @@ ServiceCategoryList 元素指定适用于服务的一个或多个功能类别。
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-以下介绍如何使用服务元数据包中的 ServiceCategoryList 元素：
+下面讨论了如何在服务元数据包中使用 ServiceCategoryList 元素：
 
--   第一个[ServiceCategory](servicecategory.md) ServiceCategoryList 元素中的元素指定服务的主要功能类别。 如何服务是播发、 打包、 出售，并最终由标识用户，则应与匹配的主要功能类别。
+-   ServiceCategoryList 元素中的第一个[ServiceCategory](servicecategory.md)元素指定服务的主要功能类别。 主要功能类别应该与服务的播发、打包、销售和最终标识方式匹配。
 
--   由于仅通过其主功能类别定义了服务，应指定的一个实例[ServiceCategory](servicecategory.md) ServiceCategoryList 元素中的元素。
+-   由于服务只能由其主要功能类别定义，因此，只应在 ServiceCategoryList 元素中指定[ServiceCategory](servicecategory.md)元素的一个实例。
 
--   [ServiceCategory](servicecategory.md)服务元数据的包必须是以下值之一：
+-   服务元数据包的[ServiceCategory](servicecategory.md)必须是以下各项之一：
 
     -   Network.MobileBroadband
 
-    -   Network.MobileBroadband.CDMA
+    -   MobileBroadband. CDMA
 
-    -   Network.MobileBroadband.GSM
+    -   MobileBroadband
 
 ServiceCategoryList 元素是必需的。
 
