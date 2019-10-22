@@ -1,95 +1,96 @@
 ---
-title: Shark Cove 板上安装的示例设备和驱动程序
-description: 请按照下列步骤安装示例驱动程序并将 ADXL345 加速感应器附加到 Shark Cove 板上的 J1C1 标头。
+title: 在带 Cove 板上安装示例设备和驱动程序
+description: 按照以下步骤安装示例驱动程序，并将 ADXL345 加速感应连接到带 Cove 板上的 J1C1 标头。
 ms.assetid: A67EBD9C-9C5A-49D3-9205-37FC4396DF56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be6def79b02e6ae72d48ef8908dbfdfb537d25b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a9012ca8c4543a94397e89da9a2eaec48205974
+ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377940"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681937"
 ---
-# <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>Shark Cove 板上安装的示例设备和驱动程序
+# <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>在带 Cove 板上安装示例设备和驱动程序
 
 
-请按照下列步骤安装示例驱动程序并将 ADXL345 加速感应器附加到 Shark Cove 板上的 J1C1 标头。
+按照以下步骤安装示例驱动程序，并将 ADXL345 加速感应连接到带 Cove 板上的 J1C1 标头。
+
+> [!WARNING]
+> 不再支持带 Cove 硬件开发板。 如需目前支持的开发板的列表，请参阅 [SoCs and custom boards](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/socsandcustomboards)（SoC 和自定义板）。
 
 ## <a name="install-windows-on-the-sharks-cove-board"></a>在 Sharks Cove 板上安装 Windows
 
-
-有关如何获取 Shark Cove 看板以及如何在看板上安装 Windows 的信息，请参阅[Shark Cove 硬件开发板](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)并[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)。
-
-## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>修改用于 Shark Cove ADXL345
+有关如何获取带 Cove 板以及如何在板上安装 Windows 的信息，请参阅[带 Cove 硬件开发委员会](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)和 SharksCove.org。
+## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>将 ADXL345 修改为与带 Cove 一起使用
 
 
-若要设置 ADXL345 I2C 模式中，连接到 CS 信号，输出 VDD 如下所示：
+若要在 I2C 模式下设置 ADXL345，请将 VDD 输出连接到 CS 信号，如下所示：
 
-![adxl345 专题板](images/adxl-breakout-board.png)
+![adxl345 专题讨论板](images/adxl-breakout-board.png)
 
-## <a name="attach-the-modified-adxl345-to-the-sharks-cove"></a>将修改后的 ADXL345 附加到 Shark Cove
+## <a name="attach-the-modified-adxl345-to-the-sharks-cove"></a>将修改的 ADXL345 附加到带 Cove
 
 
-当 ADXL345 I2C 模式下运行时，将其附加到 Shark Cove 板上的 J1C1 标头。 如果电源连接器显示在左上角中，将看到在右下角中的此标头：
+当 ADXL345 在 I2C 模式下操作时，将其附加到带 Cove 板上的 J1C1 标头。 如果电源连接器出现在左上角，你将在右下角看到此标头：
 
 ![j1c1 标头](images/j1c1-header.png)
 
-将 ADXL345 pin 附加到 J1C1 标头插针，如下所示：
+将 ADXL345 pin 附加到 J1C1 标头 pin，如下所示：
 
-![j1c1 pin](images/pin-outs.png)
+![j1c1 针](images/pin-outs.png)
 
 ## <a name="install-kits-and-tools"></a>安装工具包和工具
 
 
-一个驱动程序开发环境具有两台计算机：*主计算机*和*目标计算机*。 目标计算机也称为“测试计算机”  。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
+一个驱动程序开发环境有两台计算机：主计算机和目标计算机。 目标计算机也称为“测试计算机”。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主计算机上运行，并在 Visual Studio 用户界面中可用。 测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
 
-在主计算机上安装工具包和工具中所述[Shark Cove 硬件开发板](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)。
+在主计算机上安装工具包和工具（如[带 Cove 硬件开发板](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)中所述）。
 
 ## <a name="download-and-extract-the-spbaccelerometer-sample"></a>下载并提取 SpbAccelerometer 示例
 
 
-在主计算机上转到[本页](https://go.microsoft.com/fwlink/p?linkid=506965)并单击下载按钮。 单击**保存**，然后单击**打开文件夹**。 右键单击 SpbAccelerometer 示例驱动程序 (UMDF 版本 1).zip，然后选择**全部提取**。 指定或浏览到为提取的文件的文件夹。 例如，无法提取到 c:\\SpbAccelerometer。
+在主计算机[上，单击](https://go.microsoft.com/fwlink/p?linkid=506965)"下载" 按钮。 单击 "**保存**"，然后单击 "**打开文件夹**"。 右键单击 SpbAccelerometer 示例驱动程序（UMDF 版本1） .zip，然后选择 "**全部提取**"。 为提取的文件指定或浏览到文件夹。 例如，可以提取到 c： \\SpbAccelerometer。
 
 ## <a name="open-the-driver-solution-in-visual-studio"></a>在 Visual Studio 中打开驱动程序解决方案
 
 
-在主计算机上转到已提取的示例的文件夹。 双击解决方案文件，SpbAccelerometer.sln。 在 Visual Studio 中，找到解决方案资源管理器。 (如果尚未打开，请将此选择**解决方案资源管理器**从**视图**菜单。)在解决方案资源管理器，可以看到有两个项目的一种解决方案。 还有一个名为的驱动程序项目**SpbAccelerometer**和一个名为的包项目**包**（小写）。
+在主计算机上，中转到包含提取的示例的文件夹。 双击解决方案文件 SpbAccelerometer。 在 Visual Studio 中，找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，可以看到一个包含两个项目的解决方案。 有一个名为 " **SpbAccelerometer** " 的驱动程序项目和一个名为 "**包**（小写）" 的包项目。
 
-## <a name="set-the-configuration-and-platform-in-visual-studio"></a>在 Visual Studio 中设置的配置和平台
+## <a name="set-the-configuration-and-platform-in-visual-studio"></a>在 Visual Studio 中设置配置和平台
 
 
-在 Visual Studio 中，在解决方案资源管理器，右键单击**解决方案 SpbAccelerometer （2 个项目）** ，然后选择**Configuration Manager**。 设置配置和平台。 请确保配置**Win8.1 调试**，并将平台设置为**Win32**。 为驱动程序项目和包项目执行此操作。 不会检查**部署**框。
+在 Visual Studio 的解决方案资源管理器中，右键单击 "**解决方案 ' SpbAccelerometer ' （2个项目）"** ，然后选择 " **Configuration Manager**"。 设置配置和平台。 请确保配置**win 8.1 进行调试**，并将平台设置为**Win32**。 对驱动程序项目和包项目执行此操作。 不要选中 "**部署**" 框。
 
 ## <a name="build-the-sample-using-visual-studio"></a>使用 Visual Studio 生成示例
 
 
-在 Visual Studio 中，在**构建**菜单中，选择**生成解决方案**。
+在 Visual Studio 中的 "**生成**" 菜单上，选择 "**生成解决方案**"。
 
 ## <a name="locate-the-built-driver-package"></a>找到生成的驱动程序包
 
 
-在文件资源管理器，导航到包含内置的驱动程序包的文件夹。 例如，c:\\SpbAccelerometer\\Win8.1Debug\\包。
+在文件资源管理器中，导航到包含您生成的驱动程序包的文件夹。 例如，C： \\SpbAccelerometer \\Win8 1Debug \\Packge。
 
-该包将包含这些文件：
+包中包含以下文件：
 
 | 文件                  | 描述                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------|
-| SpbSamples.cat        | 签名的编录文件，可作为整个程序包的签名。      |
-| SpbAccelerometer.inf  | 一个包含安装驱动程序所需信息的信息 (INF) 文件。 |
-| WudfUpdate\_01011.dll | Wdf 共同安装程序。                                                          |
-| SpbAccelerometer.dll  | 驱动程序文件中。                                                                  |
+| SpbSamples.cat        | 签名目录文件，用作整个包的签名。      |
+| SpbAccelerometer .inf  | 一个信息（INF）文件，其中包含安装驱动程序所需的信息。 |
+| WudfUpdate \_01011 .dll | WDF 的 coinstaller。                                                          |
+| SpbAccelerometer  | 驱动程序文件。                                                                  |
 
 
 
 ## <a name="alter-the-secondary-system-description-table-ssdt"></a>更改辅助系统描述表 (SSDT)
 
 
-1.  将 x86 版本的 ASL.exe 复制到 Sharks Cove 板。 ASL.exe 包括 Windows Driver Kit (WDK) 中。
+1.  将 x86 版本的 ASL.exe 复制到 Sharks Cove 板。 ASL 包含在 Windows 驱动程序工具包（WDK）中。
 
-    例如：C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
+    示例： C： \\Program 文件（x86） \\Windows 套件 \\8 .1 \\Tools \\x86 \\ACPIVerify \\ASL
 
-2.  Shark Cove 板上以管理员身份打开命令提示符窗口。 通过输入以下命令反编译 SSDT：
+2.  在带 Cove 板上，以管理员身份打开命令提示符窗口。 通过输入以下命令反编译 SSDT：
 
     **asl /tab=ssdt**
 
@@ -133,7 +134,7 @@ ms.locfileid: "67377940"
     }
     ```
 
-4.  插入 Scope(\_SB\_) 条目。 在 Scope 条目内，插入你自己的 Device 条目。 下面是一个作用域 (\_SB\_) 条目和 ADXL345 加速感应器设备条目。
+4.  插入 Scope(\_SB\_) 条目。 在 Scope 条目内，插入你自己的 Device 条目。 下面是 ADXL345 加速感应的作用域（\_SB \_）条目和设备条目。
 
     ``` syntax
     Scope(_SB_)
@@ -231,7 +232,7 @@ testsigning             Yes
 
     **bcdedit /set TESTSIGNING ON**
 
-2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到  “设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”  设置为“禁用”  。
+2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到“设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”设置为“禁用”。
 3.  保存更改并继续启动到 Windows。
 
 
@@ -241,12 +242,12 @@ testsigning             Yes
 
     重启 Sharks Cove 板。
 
-## <a name="install-and-run-the-sample-driver"></a>安装和运行示例驱动程序
+## <a name="install-and-run-the-sample-driver"></a>安装并运行示例驱动程序
 
 
-1.  在主计算机上 Visual Studio 中打开 SpbAccelerometer 解决方案。
-2.  在解决方案资源管理器，双击**包**（小写），然后选择**属性**。 转到**驱动程序安装 &gt; 部署**。 检查**启用部署**。 选中**部署前删除以前的驱动程序版本**。 有关**目标计算机名称**，输入以前预配你 Shark Cove 看板的名称。 选择**安装并验证**。 单击 **“确定”** 。
-3.  上**调试**菜单中，选择**开始调试**。 驱动程序包会自动复制到 Shark Cove 板。 您的驱动程序将自动安装和加载。 Windows 用户模式下调试程序 （在 Visual Studio 中的主机计算机上运行） 会自动将附加到承载您的驱动程序的 Wudfhost.exe （Shark Cove 板上运行） 的实例。
+1.  在主计算机上，在 Visual Studio 中打开 SpbAccelerometer 解决方案。
+2.  在解决方案资源管理器中，双击 "**包**（小写）"，然后选择 "**属性**"。 转到“驱动程序安装”&gt;“部署”。 选中 "**启用部署**"。 选中“部署前删除以前的驱动程序版本”。 对于 "**目标计算机名称**"，请输入以前预配的带 Cove 板的名称。 选择“安装并验证”。 单击**确定**。
+3.  在 "**调试**" 菜单上，选择 "**启动调试**"。 你的驱动程序包将自动复制到带 Cove 板。 你的驱动程序将自动安装并加载。 Windows 用户模式调试器（在 Visual Studio 中的主计算机上运行）自动附加到托管驱动程序的 Wudfhost （在带 Cove 板上运行）的实例。
 
 
 
