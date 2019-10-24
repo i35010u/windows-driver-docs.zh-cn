@@ -1,147 +1,147 @@
 ---
 title: Windows 调试器的符号路径
-description: 符号路径指定的 Windows 调试器 （WinDbg、 KD、 CDB、 NTST） 查找符号文件的位置。
+description: 符号路径指定 Windows 调试器（WinDbg，KD，CDB，NTST）查找符号文件的位置。
 ms.assetid: 705df98f-717f-40ad-a424-101826970691
-keywords: 符号文件和路径，符号，延迟符号加载、 延迟的符号加载、 符号路径
+keywords: 符号文件和路径，符号，延迟符号加载，延迟符号加载，符号路径
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b9b2751df0473c1ddf8f840aa6b705b4de435f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ad6cc4da1f7006dab7deb6cdb3a7c3cd7529e10
+ms.sourcegitcommit: 61cc420c90e1eaeab95d1ff293ec2b1ec5eb78f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335487"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72780056"
 ---
 # <a name="symbol-path-for-windows-debuggers"></a>Windows 调试器的符号路径
 
 
-符号路径指定的 Windows 调试器 （WinDbg、 KD、 CDB、 NTST） 查找符号文件的位置。 有关符号和符号文件的详细信息，请参阅[符号](symbols.md)。
+符号路径指定 Windows 调试器（WinDbg，KD，CDB，NTST）查找符号文件的位置。 有关符号和符号文件的详细信息，请参阅[符号](symbols.md)。
 
-一些编译器 （如 Microsoft Visual Studio) 将符号文件放入二进制文件所在的目录。 符号文件和检查二进制文件包含路径和文件名称信息。 此信息经常使调试器能够自动找到符号文件。 如果你正在调试可执行文件生成计算机上的用户模式进程和符号文件仍处于其原始位置，调试器可以找到符号文件，而无需您设置符号路径。
+一些编译器（如 Microsoft Visual Studio）将符号文件放在二进制文件所在的同一目录中。 符号文件和检查后的二进制文件包含路径和文件名信息。 此信息通常使调试器能够自动找到符号文件。 如果要在生成可执行文件的计算机上调试用户模式进程，并且符号文件仍在其原始位置，则调试器可以在不设置符号路径的情况下找到符号文件。
 
-在大多数其他情况下，必须设置符号路径以指向你的符号文件位置。
+在大多数其他情况下，必须将符号路径设置为指向符号文件位置。
 
-## <a name="span-idsymbolpathsyntaxspanspan-idsymbolpathsyntaxspanspan-idsymbolpathsyntaxspansymbol-path-syntax"></a><span id="Symbol_Path_Syntax"></span><span id="symbol_path_syntax"></span><span id="SYMBOL_PATH_SYNTAX"></span>符号路径语法
-
-
-调试器的符号路径是包含多个目录路径，之间用分号分隔的字符串。
-
-支持相对路径。 但是，除非您始终从相同的目录启动调试器，您应添加驱动器号或网络共享每个路径之前。 此外支持网络共享。
-
-符号路径中每个目录，调试器在三个目录中查找。 例如，如果符号路径中包含`c:\MyDir`目录中，并使调试器寻找 DLL 的符号信息、 调试器首先查看`c:\MyDir\symbols\dll`，然后在`c:\MyDir\dll`，最后在`c:\MyDir`。 然后，调试器符号路径中每个目录重复此过程。 最后，调试器查找当前目录中，然后使用在当前目录中`..\dll`追加到它。 (调试器追加`..\dll`， `..\exe` ，或`..\sys`，取决于正在调试的二进制文件。)
-
-符号文件具有日期和时间戳。 无需担心调试器将使用第一次可能会发现此序列中的错误符号。 它始终会查找与正在调试的二进制文件的时间戳匹配的符号。 有关详细信息的响应时符号文件不可用，请参阅[补偿的符号匹配问题](matching-symbol-names.md)。
-
-设置符号路径的一种方法是通过输入[ **.sympath** ](-sympath--set-symbol-path-.md)命令。 有关其他方式来设置符号路径，请参阅[控制符号路径](#controlling-the-symbol-path)本主题中更高版本。
-
-## <a name="span-idcachingsymbolslocallyspanspan-idcachingsymbolslocallyspanspan-idcachingsymbolslocallyspancaching-symbols-locally"></a><span id="Caching_Symbols_Locally"></span><span id="caching_symbols_locally"></span><span id="CACHING_SYMBOLS_LOCALLY"></span>本地缓存符号
+## <a name="span-idsymbol_path_syntaxspanspan-idsymbol_path_syntaxspanspan-idsymbol_path_syntaxspansymbol-path-syntax"></a><span id="Symbol_Path_Syntax"></span><span id="symbol_path_syntax"></span><span id="SYMBOL_PATH_SYNTAX"></span>符号路径语法
 
 
-我们强烈建议你始终缓存您的本地符号。 一种方法符号缓存到本地是包括`cache*;`或`cache*localsymbolcache;*`符号路径中。
+调试器的符号路径是由多个目录路径组成的字符串，由分号分隔。
 
-如果包含字符串`cache*;`在你的符号路径，此字符串的右侧会显示任何元素中加载符号存储在本地计算机上的默认符号缓存目录中。 例如，以下命令将指示调试器从网络共享获取符号`\\someshare`并缓存在本地计算机上的默认位置中的符号。
+支持相对路径。 但是，除非始终从同一目录启动调试器，否则应在每个路径之前添加驱动器号或网络共享。 还支持网络共享。
+
+对于符号路径中的每个目录，调试器都将查找三个目录。 例如，如果符号路径包含 `c:\MyDir` 目录，并且调试器正在查找 DLL 的符号信息，则调试器首先查找 `c:\MyDir\symbols\dll`，然后在 `c:\MyDir\dll`，最后在 `c:\MyDir` 中查找。 然后，调试器为符号路径中的每个目录重复此进程。 最后，调试程序将在当前目录中查找，然后在当前目录中的后面追加 `..\dll`。 （调试器将追加 `..\dll`、`..\exe` 或 `..\sys`，具体取决于正在调试的二进制文件。）
+
+符号文件具有日期和时间戳。 您不必担心调试器将使用在此序列中首先可能会找到的错误符号。 它始终查找与正在调试的二进制文件上的时间戳匹配的符号。 有关符号文件不可用时的响应的详细信息，请参阅[补偿符号匹配问题](matching-symbol-names.md)。
+
+设置符号路径的一种方法是输入[**sympath**](-sympath--set-symbol-path-.md)命令。 有关设置符号路径的其他方式，请参阅本主题后面的[控制符号路径](#controlling-the-symbol-path)。
+
+## <a name="span-idcaching_symbols_locallyspanspan-idcaching_symbols_locallyspanspan-idcaching_symbols_locallyspancaching-symbols-locally"></a><span id="Caching_Symbols_Locally"></span><span id="caching_symbols_locally"></span><span id="CACHING_SYMBOLS_LOCALLY"></span>在本地缓存符号
+
+
+强烈建议您始终在本地缓存符号。 在本地缓存符号的一种方法是在符号路径中包含 `cache*;` 或 `cache*localsymbolcache;*`。
+
+如果在符号路径中包含字符串 `cache*;`，则从出现在此字符串右侧的任何元素加载的符号将存储在本地计算机上的默认符号缓存目录中。 例如，以下命令通知调试器从网络共享获取符号 `\\someshare` 并缓存本地计算机上默认位置中的符号。
 
 ```dbgcmd
 .sympath cache*;\\someshare
 ```
 
-如果包含字符串`cache*localsymbolcache;`在您的符号路径，此字符串的右侧会显示任何元素中加载符号存储在*localsymbolcache*目录。
+如果在符号路径中包含字符串 `cache*localsymbolcache;`，则从出现在此字符串右侧的任何元素加载的符号将存储在*localsymbolcache*目录中。
 
-例如，以下命令将指示调试器从网络共享获取符号`\\someshare`缓存中的符号和`c:\MySymbols`目录。
+例如，以下命令通知调试器从网络共享获取符号 `\\someshare` 并缓存 `c:\MySymbols` 目录中的符号。
 
 ```dbgcmd
 .sympath cache*c:\MySymbols;\\someshare
 ```
 
-## <a name="span-idusingasymbolserverspanspan-idusingasymbolserverspanspan-idusingasymbolserverspanusing-a-symbol-server"></a><span id="Using_a_Symbol_Server"></span><span id="using_a_symbol_server"></span><span id="USING_A_SYMBOL_SERVER"></span>使用符号服务器
+## <a name="span-idusing_a_symbol_serverspanspan-idusing_a_symbol_serverspanspan-idusing_a_symbol_serverspanusing-a-symbol-server"></a><span id="Using_a_Symbol_Server"></span><span id="using_a_symbol_server"></span><span id="USING_A_SYMBOL_SERVER"></span>使用符号服务器
 
 
-如果连接到 Internet 或公司网络，访问符号的最有效方法是使用符号服务器。 还可以通过使用符号服务器`srv*`， `srv*symbolstore`，或`srv*localsymbolcache*symbolstore`符号路径中的字符串。
+如果已连接到 Internet 或企业网络，则访问符号的最有效方法是使用符号服务器。 您可以通过使用符号路径中的 `srv*`、`srv*symbolstore` 或 `srv*localsymbolcache*symbolstore` 字符串来使用符号服务器。
 
-如果包含字符串`srv*`在符号路径中，调试器使用符号服务器获取符号从默认符号存储区。 例如，以下命令指示调试器使用符号服务器从默认符号存储区获取的符号。 这些符号不会缓存在本地计算机上。
+如果在符号路径中包含字符串 `srv*`，则调试器将使用符号服务器从默认符号存储区中获取符号。 例如，以下命令通知调试器使用符号服务器从默认符号存储区中获取符号。 这些符号不会缓存在本地计算机上。
 
 ```dbgcmd
 .sympath srv*
 ```
 
-如果包含字符串`srv*symbolstore`在您的符号路径，调试器使用符号服务器获取已从符号*symbolstore*存储。 例如，以下命令将指示调试器使用符号服务器获取符号从符号存储 https://msdl.microsoft.com/download/symbols。 这些符号不会缓存在本地计算机上。
+如果在符号路径中包含字符串 `srv*symbolstore`，则调试器将使用符号服务器从*symbolstore*存储区中获取符号。 例如，以下命令通知调试器使用符号服务器从符号存储区中的 https://msdl.microsoft.com/download/symbols 获取符号。 这些符号不会缓存在本地计算机上。
 
 ```dbgcmd
 .sympath srv*https://msdl.microsoft.com/download/symbols
 ```
 
-如果包含字符串`srv*localcache*symbolstore`在您的符号路径，调试器使用符号服务器获取已从符号*symbolstore*存储，并将其在缓存*localcache*目录。 例如，以下命令将指示调试器使用符号服务器获取符号从符号存储 https://msdl.microsoft.com/download/symbols缓存中的符号和`c:\MyServerSymbols`。
+如果在符号路径中包含字符串 `srv*localcache*symbolstore`，则调试器使用符号服务器从*symbolstore*存储区中获取符号，并将它们缓存在*localcache*目录中。 例如，下面的命令通知调试器使用符号服务器从符号存储区中获取符号，并在 `c:\MyServerSymbols` 中缓存符号 https://msdl.microsoft.com/download/symbols 。
 
 ```dbgcmd
 .sympath srv*c:\MyServerSymbols*https://msdl.microsoft.com/download/symbols
 ```
 
-如果您手动设置符号的计算机上有一个目录，不要使用该目录作为缓存符号从符号服务器获取。 相反，使用两个不同的目录。 例如，可以手动设置中的符号`c:\MyRegularSymbols`并指定`c:\MyServerSymbols`作为从服务器获取的符号的缓存。 下面的示例演示如何在您的符号路径中指定这两个目录。
+如果计算机上的某个目录手动放置符号，则不要将该目录用作从符号服务器获取的符号的缓存。 相反，请使用两个不同的目录。 例如，你可以将符号手动置于 `c:\MyRegularSymbols` 中，然后将 `c:\MyServerSymbols` 指定为从服务器获取的符号的缓存。 下面的示例演示如何在符号路径中指定两个目录。
 
 ```dbgcmd
 .sympath c:\MyRegularSymbols;srv*c:\MyServerSymbols*https://msdl.microsoft.com/download/symbols
 ```
 
-符号服务器的详细信息，请参阅[符号存储区和符号服务器](symbol-stores-and-symbol-servers.md)。
+有关符号服务器的详细信息，请参阅[符号存储和符号服务器](symbol-stores-and-symbol-servers.md)。
 
-## <a name="span-idcombiningcacheandsrvspanspan-idcombiningcacheandsrvspanspan-idcombiningcacheandsrvspancombining-cache-and-srv"></a><span id="Combining_cache__and_srv_"></span><span id="combining_cache__and_srv_"></span><span id="COMBINING_CACHE__AND_SRV_"></span>合并缓存\*和 srv\*
+## <a name="span-idcombining_cache__and_srv_spanspan-idcombining_cache__and_srv_spanspan-idcombining_cache__and_srv_spancombining-cache-and-srv"></a><span id="Combining_cache__and_srv_"></span><span id="combining_cache__and_srv_"></span><span id="COMBINING_CACHE__AND_SRV_"></span>合并缓存 \* 和 srv \*
 
 
-如果包含字符串`cache*;`在你的符号路径，此字符串的右侧会显示任何元素中加载符号存储在本地计算机上的默认符号缓存目录中。 例如，以下命令将指示调试器使用符号服务器获取从存储在符号 https://msdl.microsoft.com/download/symbols并缓存在默认符号缓存目录中。
+如果在符号路径中包含字符串 `cache*;`，则从出现在此字符串右侧的任何元素加载的符号将存储在本地计算机上的默认符号缓存目录中。 例如，下面的命令通知调试器使用符号服务器从存储 https://msdl.microsoft.com/download/symbols 区获取符号，并将它们缓存在默认的符号缓存目录中。
 
 ```dbgcmd
 .sympath cache*;srv*https://msdl.microsoft.com/download/symbols
 ```
 
-如果包含字符串`cache*localsymbolcache;`在您的符号路径，此字符串的右侧会显示任何元素中加载符号存储在*localsymbolcache*目录。
+如果在符号路径中包含字符串 `cache*localsymbolcache;`，则从出现在此字符串右侧的任何元素加载的符号将存储在*localsymbolcache*目录中。
 
-例如，以下命令将指示调试器使用符号服务器获取从存储在符号 https://msdl.microsoft.com/download/symbols缓存中的符号和`c:\MySymbols`目录。
+例如，下面的命令通知调试器使用符号服务器从存储区获取符号 https://msdl.microsoft.com/download/symbols 并缓存 `c:\MySymbols` 目录中的符号。
 
 ```dbgcmd
 .sympath cache*c:\MySymbols;srv*https://msdl.microsoft.com/download/symbols
 ```
 
-## <a name="span-idusingagestoretoreducethecachesizespanspan-idusingagestoretoreducethecachesizespanusing-agestore-to-reduce-the-cache-size"></a><span id="using_agestore_to_reduce_the_cache_size"></span><span id="USING_AGESTORE_TO_REDUCE_THE_CACHE_SIZE"></span>使用 AgeStore 减少缓存大小
+## <a name="span-idusing_agestore_to_reduce_the_cache_sizespanspan-idusing_agestore_to_reduce_the_cache_sizespanusing-agestore-to-reduce-the-cache-size"></a><span id="using_agestore_to_reduce_the_cache_size"></span><span id="USING_AGESTORE_TO_REDUCE_THE_CACHE_SIZE"></span>使用 AgeStore 减少缓存大小
 
 
-若要删除早于指定日期的缓存的文件，或若要删除生成缓存的大小小于指定的量足够旧文件，您可以使用 AgeStore 工具。 这很有用，如果你的下游存储太大。 有关详细信息，请参阅[AgeStore](agestore.md)。
+你可以使用 AgeStore 工具删除早于指定日期的缓存文件，或删除足够的旧文件，使缓存的大小小于指定的数量。 如果下游存储太大，这可能很有用。 有关详细信息，请参阅[AgeStore](agestore.md)。
 
-有关符号服务器和符号存储区的详细信息，请参阅[符号存储区和符号服务器](symbol-stores-and-symbol-servers.md)。
+有关符号服务器和符号存储的详细信息，请参阅[符号存储和符号服务器](symbol-stores-and-symbol-servers.md)。
 
-## <a name="span-idlazysymbolloadingspanspan-idlazysymbolloadingspanlazy-symbol-loading"></a><span id="lazy_symbol_loading"></span><span id="LAZY_SYMBOL_LOADING"></span>延迟的符号加载
+## <a name="span-idlazy_symbol_loadingspanspan-idlazy_symbol_loadingspanlazy-symbol-loading"></a><span id="lazy_symbol_loading"></span><span id="LAZY_SYMBOL_LOADING"></span>延迟符号加载
 
 
-调试器的默认行为是使用*延迟符号加载*(也称为*延迟的符号加载*)。 这种加载意味着除非需要，还未加载符号。
+调试器的默认行为是使用*延迟符号加载*（也称为*延迟符号加载*）。 这种类型的加载意味着符号只有在需要时才会加载。
 
-如果更改符号路径，例如通过使用[ `.sympath` ](-sympath--set-symbol-path-.md)命令、 所有已加载模块导出的符号与延迟重新加载。
+当符号路径发生更改时（例如，通过使用[`.sympath`](-sympath--set-symbol-path-.md)命令），将会惰式重载包含导出符号的所有加载的模块。
 
-使用完整的 PDB 符号的模块的符号将延迟重新加载新的路径不能再包含用于加载 PDB 符号的原始路径。 如果新路径仍包含 PDB 符号文件的原始路径，这些符号将不会延迟重新加载。
+如果新路径不再包含用于加载 PDB 符号的原始路径，则将会惰式重载包含完整 PDB 符号的模块的符号。 如果新路径仍包含 PDB 符号文件的原始路径，则不会惰式重载这些符号。
 
-有关延迟符号加载详细信息，请参阅[延迟的符号加载](deferred-symbol-loading.md)。
+有关延迟符号加载的详细信息，请参阅[延迟符号加载](deferred-symbol-loading.md)。
 
-你可以关闭延迟符号加载 CDB 和 KD 中通过使用`-s`[命令行选项](command-line-options.md)。 您也可以使用强制符号加载`ld` [ **（加载符号）** ](ld--load-symbols-.md)命令或通过使用`.reload` [ **（重新加载模块）**](-reload--reload-module-.md)命令和`/f`选项。
+可以通过使用 `-s`[命令行选项](command-line-options.md)来关闭 CDB 和 KD 中的延迟符号加载。 还可以通过使用 `ld` [ **（加载符号）** ](ld--load-symbols-.md)命令或使用 `.reload` [ **（重新加载模块）** ](-reload--reload-module-.md)命令以及 `/f` 选项来强制执行符号加载。
 
 ## <span id="ddk_symbol_path_dbg"></span><span id="DDK_SYMBOL_PATH_DBG"></span>
 
 
 ### <a name="span-idcontrolling-the-symbol-pathspanspan-idcontrolling-the-symbol-pathspancontrolling-the-symbol-path"></a><span id="controlling-the-symbol-path"></span><span id="CONTROLLING-THE-SYMBOL-PATH"></span>控制符号路径
 
-若要控制的符号路径，可以执行下列任一操作：
+若要控制符号路径，可以执行以下操作之一：
 
--   使用[ `.sympath` ](-sympath--set-symbol-path-.md)命令以显示、 设置、 更改或追加到路径。 `.symfix` [ **（设置符号存储区路径）** ](-symfix--set-symbol-store-path-.md)命令是类似于`.sympath`，但会将你键入一些内容。
+-   使用[`.sympath`](-sympath--set-symbol-path-.md)命令来显示、设置、更改或附加到路径。 @No__t_0 [ **（设置符号存储路径）** ](-symfix--set-symbol-store-path-.md)命令类似于 `.sympath` 但会保存某些键入内容。
 
--   启动调试器之前，请使用`_NT_SYMBOL_PATH`并`_NT_ALT_SYMBOL_PATH`[环境变量](environment-variables.md)设置的路径。 符号路径创建通过追加`_NT_SYMBOL_PATH`后`_NT_ALT_SYMBOL_PATH`。 (通常情况下，将路径设置通过`_NT_SYMBOL_PATH`。 但是，你可能想要使用`_NT_ALT_SYMBOL_PATH`重写这些设置，在特殊情况下，此类像具有共享的符号文件的专用版本。)如果尝试添加无效目录通过这些环境变量，调试器将忽略此目录。
+-   在启动调试器之前，请使用 `_NT_SYMBOL_PATH` 和 `_NT_ALT_SYMBOL_PATH`[环境变量](environment-variables.md)来设置路径。 符号路径是通过在 `_NT_ALT_SYMBOL_PATH` 后面追加 `_NT_SYMBOL_PATH` 来创建的。 （通常，路径通过 `_NT_SYMBOL_PATH` 设置。 但是，在特殊情况下，你可能想要使用 `_NT_ALT_SYMBOL_PATH` 重写这些设置，如共享符号文件的私有版本。）如果尝试通过这些环境变量添加无效目录，调试器将忽略此目录。
 
--   当您启动调试器时，使用`-y`[命令行选项](command-line-options.md)设置的路径。
+-   启动调试器时，使用 `-y`[命令行选项](command-line-options.md)来设置路径。
 
--   (仅 WinDbg)使用[文件 |符号文件路径](file---symbol-file-path.md)命令或按`CTRL+S`显示，请设置、 更改或追加到路径。
+-   （仅限 WinDbg）使用[文件 |符号文件路径](file---symbol-file-path.md)命令或按 `CTRL+S` 显示、设置、更改或附加到路径。
 
-如果您使用`-sins`[命令行选项](command-line-options.md)，调试程序忽略符号路径环境变量。
+如果使用 `-sins`[命令行选项](command-line-options.md)，调试器将忽略符号路径环境变量。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[高级的 SymSrv 用途](advanced-symsrv-use.md)
+[高级 SymSrv 使用](advanced-symsrv-use.md)
 
  
 
