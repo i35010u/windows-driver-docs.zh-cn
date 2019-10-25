@@ -6,12 +6,12 @@ keywords:
 - 命令缓冲区 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f37252c5cfc51bd6d728f1858bc6f2a988f1a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb0bfd9ac620280c54475d1f0f4091996f3b8d78
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375788"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825612"
 ---
 # <a name="supporting-kernel-mode-command-buffers"></a>支持内核模式命令缓冲区
 
@@ -19,9 +19,9 @@ ms.locfileid: "67375788"
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>
 
 
-显示微型端口驱动程序应在提交中的调用的响应的命令缓冲区[ **DxgkDdiRenderKm** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)函数中所述[提交命令缓冲区](submitting-a-command-buffer.md)。
+如[提交命令缓冲区](submitting-a-command-buffer.md)中所述，显示微型端口驱动程序应提交一个命令缓冲区来响应对[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)函数的调用。
 
-可以使用该驱动程序**MultipassOffset**的成员[ **DXGKARG\_呈现**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_render)结构来跟踪输入的命令缓冲区处理的进度。 例如，显示微型端口驱动程序可以使用高 16 位为最后一个处理的命令和低 16 位的偏移量来跟踪命令的处理。
+驱动程序可以使用[**DXGKARG\_呈现**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_render)结构的**MultipassOffset**成员跟踪输入命令缓冲区处理的进度。 例如，显示微型端口驱动程序可以使用高16位作为上次处理的命令的偏移量，使用低16位来跟踪命令的处理。
 
  
 

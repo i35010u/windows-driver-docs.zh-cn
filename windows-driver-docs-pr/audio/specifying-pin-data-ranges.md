@@ -3,36 +3,36 @@ title: 指定引脚数据范围
 description: 指定引脚数据范围
 ms.assetid: bef74cd1-d2be-402d-be7f-acc7d8cbf392
 keywords:
-- pin WDK 音频，数据范围
-- WDM 音频驱动程序 WDK，pin 数据范围
-- 音频驱动程序 WDK，pin 数据范围
-- 数据范围 WDK 音频 pin
-- 可配置 pin WDK 音频驱动程序
-- 格式 WDK 音频，pin 数据范围
-- 交集 WDK 音频驱动程序
+- 锁定 WDK 音频，数据范围
+- WDM 音频驱动程序 WDK，固定数据范围
+- 音频驱动程序 WDK，固定数据范围
+- 数据范围 WDK 音频、pin
+- 可配置的 pin 音频驱动程序
+- 格式化 WDK 音频，固定数据范围
+- 与 WDK 音频驱动程序的交集
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ea12a4605b07a398695d1048bc2f6006164ef2f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8df808e25dd63b9fd399abeb357371e9c5ba9027
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354282"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830113"
 ---
 # <a name="specifying-pin-data-ranges"></a>指定引脚数据范围
 
 
-定义表示数据路径和控制你的设备中的节点的拓扑之后, 的下一步是定义[数据范围](audio-data-ranges.md)对于每个可配置的插针。 可以创建、 配置和连接到的批或软件控制下的 MIDI 流可配置的 pin。 与此相反，物理连接或桥 pin 存在隐式和既不能创建也不能在软件控制下配置。
+定义拓扑以表示设备中的数据路径和控制节点后，下一步就是为每个可配置的 pin 定义[数据范围](audio-data-ranges.md)。 可以在软件控制下创建和配置可配置的 pin，并将其连接到波形或 MIDI 流。 相反，物理连接或桥接 pin 是隐式存在的，不能在软件控制下创建或配置。
 
-连接之前可配置 pin 作为接收器或批或 MIDI 流源，必须配置 pin 来处理流的数据格式。 通常情况下，pin 可以配置为接受多个流格式之一。 例如，PCM wave 输出插针可能会接受 PCM 流参数的以下范围：
+在将可配置的 pin 连接为波形或 MIDI 流的接收器或源之前，必须将 pin 配置为处理流的数据格式。 通常，可以将 pin 配置为接受多种流格式之一。 例如，PCM 波形输出 pin 可能会接受以下范围的 PCM 流参数：
 
--   11.025 kHz、 22.05 kHz、 44.1 kHz 和 48khz 的采样速率
+-   采样速率为 11.025 kHz，22.05 kHz，44.1 kHz，48 kHz
 
--   8、 16、 24 和 32 位的示例大小
+-   8、16、24和32位的示例大小
 
--   任意数目的 1 到 8 之间的信道
+-   任意数量的通道，从1到8
 
-对于每种类型的可配置的 pin，微型端口驱动程序描述 pin 可以处理各种流数据格式。 可以为数组的数据范围说明符指定这些参数范围，如下面的代码示例中所示。
+对于每种类型的可配置 pin，微型端口驱动程序描述了 pin 可处理的各种流数据格式。 可以将这些参数范围指定为数据范围说明符的数组，如下面的代码示例中所示。
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesPcm[] =
@@ -56,11 +56,11 @@ static KSDATARANGE_AUDIO PinDataRangesPcm[] =
 };
 ```
 
-请注意，`PinDataRangesPcm`前面的示例中的数组包含类型的单个数据范围描述符[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)。 一般来说，数据范围数组可以包含任意数量的描述符。 例如，AC-3-over-S/PDIF 和 WMA Pro-反复-S/PDIF 格式可能支持非 PCM wave 输出插针。 这两种格式的每个单独的数据范围说明符指定。 因此，固定的数据范围数组将包含至少两个 KSDATARANGE\_音频结构。
+请注意，前面的示例中的 `PinDataRangesPcm` 数组包含类型为[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)的单个数据范围说明符。 通常，数据范围数组可以包含任意数量的描述符。 例如，非 PCM 波形输出 pin 可能同时支持 AC-3 over S/PDIF 和 WMA Pro/PDIF 格式。 这两种格式中的每一种都是通过单独的数据范围说明符来指定的。 因此，pin 的数据范围数组包含至少两个 KSDATARANGE\_音频结构。
 
-支持使用 DirectMusic 或 Windows 多媒体 midiIn 的应用程序中的音乐流格式的可配置 pin*Xxx*和 midiOut*Xxx*函数使用类型的数据范围描述符[ **KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music)。
+一种可配置的 pin，它支持从使用 DirectMusic 的应用程序或 Windows 多媒体 midiIn*xxx*和 midiOut*Xxx*函数使用的音乐流格式使用[**KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)类型的数据范围说明符。
 
-端口驱动程序从微型端口驱动程序中获得的数据范围信息，并使用此信息，如有可能，用于处理请求的每个 pin 可以支持的数据格式的信息。 对于简单的 PCM 数据范围的 pin，端口驱动程序是能够处理该 pin 的交集请求。 在交集请求中，客户端提供一的组表示流的可能的数据格式的数据范围。 如果可能，端口驱动程序的交集处理程序还会在其 pin 的数据范围内的请求中提取来自数据区域的特定数据格式。 这种格式表示数据区域的两个集的交集。 因此，客户端和 pin 可以处理此格式的流。 对于更复杂的数据范围，微型端口驱动程序可以提供自己的交集处理程序，它将端口驱动程序然后使用其自身的、 默认处理程序。 微型端口驱动程序的交集处理程序可允许可能很难到端口驱动程序将表示为一组数据区域的任何格式要求。 有关详细信息，请参阅[交集数据处理程序](data-intersection-handlers.md)。 在标题为的白皮书提供了其他信息*多声道音频数据和 WAVE 文件*处[音频技术](https://go.microsoft.com/fwlink/p/?linkid=8751)网站。
+端口驱动程序从微型端口驱动程序获取数据范围信息，并使用此信息来处理请求，以获取有关每个 pin 所能支持的数据格式的信息。 对于具有简单 PCM 数据范围的 pin，端口驱动程序能够处理该 pin 的交集请求。 在交集请求中，客户端提供一组表示流的可能数据格式的数据范围。 如果可能，端口驱动程序的交集处理程序将从请求中的数据范围中选择特定的数据格式，该数据范围也位于其 pin 的数据范围内。 此格式表示两组数据范围的交集。 因此，客户端和 pin 都可以使用此格式处理流。 对于更复杂的数据范围，微型端口驱动程序可以提供自己的交集处理程序，端口驱动程序将使用该处理程序而不是自己的默认处理程序。 微型端口驱动程序的交集处理程序可允许任何格式要求，这些要求可能难于将端口驱动程序表示为数据范围的数组。 有关详细信息，请参阅[数据交集处理程序](data-intersection-handlers.md)。 有关其他信息，请参阅[音频技术](https://go.microsoft.com/fwlink/p/?linkid=8751)网站上标题为*多声道音频数据和波形文件*的白皮书。
 
  
 

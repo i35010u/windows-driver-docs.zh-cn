@@ -3,17 +3,17 @@ title: 请求和使用图面内存
 description: 请求和使用图面内存
 ms.assetid: 7913acc6-ff30-4f2a-8389-37a79940ae8b
 keywords:
-- 图面上的内存 WDK 显示
-- 列出 WDK 显示的图面
-- 资源对象图面上内存 WDK 显示
+- surface memory WDK 显示
+- 列出了 WDK 显示的表面
+- 资源对象表面内存 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37d574d5e4cb5789751a02bb3407c69807553fe4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85d6f6eee6e9b11d6b8bdf5c5634738e25f097c6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356354"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825928"
 ---
 # <a name="requesting-and-using-surface-memory"></a>请求和使用图面内存
 
@@ -21,19 +21,19 @@ ms.locfileid: "67356354"
 ## <span id="ddk_requesting_and_using_surface_memory_gg"></span><span id="DDK_REQUESTING_AND_USING_SURFACE_MEMORY_GG"></span>
 
 
-用户模式显示驱动程序接收到调用其[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)时需要的图面列表创建一个 Microsoft Direct3D 运行时的功能。 Direct3D 运行时指定的资源句柄的图面，用户模式显示驱动程序用来回调到运行时列表。 用户模式显示驱动程序创建的资源对象来表示应用层协议的列表，生成此对象的唯一句柄并返回到 Direct3D 运行时返回的句柄。 运行时使用此唯一的句柄在后续的驱动程序调用中标识的图面列表。 运行时通过指定中包含的数组中的图面的索引来标识特定的面**pSurfList**的成员[ **D3DDDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)结构。
+当 Microsoft Direct3D 运行时需要创建一个图面列表时，用户模式显示驱动程序将接收对其[**CreateResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)函数的调用。 Direct3D 运行时为用户模式显示驱动程序用于回调到运行时的图面列表指定资源句柄。 用户模式显示驱动程序创建一个资源对象以表示图面列表，为此对象生成一个唯一的句柄，并将该句柄返回到 Direct3D 运行时。 运行时在后续的驱动程序调用中使用这个唯一的句柄来标识图面列表。 运行时通过在[**D3DDDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)结构的**pSurfList**成员中包含的数组中指定图面的索引来标识特定图面。
 
-因为用户模式显示驱动程序，请参阅资源的调用中接收的驱动程序定义的资源句柄，该驱动程序不需要执行成本高昂的句柄查找以查找驱动程序定义的资源对象。 同样，以便在运行时也不需要执行句柄查找，用户模式驱动程序使用 Direct3D 的运行时定义的资源句柄时显示用户模式显示驱动程序返回到运行时调用。
+由于用户模式显示驱动程序在引用资源的调用中接收驱动程序定义的资源句柄，因此，驱动程序不需要执行开销较高的句柄查找来查找驱动程序定义的资源对象。 同样，如果运行时也无需执行句柄查找，则用户模式显示驱动程序会在用户模式显示驱动程序调用运行时时使用 Direct3D 运行时定义的资源句柄。
 
-用户模式显示驱动程序调用[ **pfnAllocateCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数分配内存来存放图面。 在中**pfnAllocateCb**调用中，用户模式显示驱动程序可以将传递私有数据的图面列表和在每个单个面**pPrivateDriverData**的成员[ **D3DDDICB\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)并[ **D3DDDI\_ALLOCATIONINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构，分别。 但是，用户模式显示驱动程序不能接收从专用数据**pPrivateDriverData**成员。 用户模式显示驱动程序可以为此专用数据分配内存并可以释放内存后的**pfnAllocateCb**调用返回时，也可以使用堆栈内存传递此专用数据。 **PfnAllocateCb**函数返回到用户模式显示驱动程序的每个已分配的图面每个分配的句柄。
+用户模式显示驱动程序调用[**pfnAllocateCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数为曲面分配内存。 在**pfnAllocateCb**调用中，用户模式显示驱动程序可以为[**D3DDDICB\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)和 D3DDDI 的**pPrivateDriverData**成员中的图面列表和每个单独表面传递专用数据[ **\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构。 但是，用户模式显示驱动程序无法接收来自**pPrivateDriverData**成员的私有数据。 用户模式显示驱动程序可以为此私有数据分配内存，并且可以在**pfnAllocateCb**调用返回后释放内存，也可以使用堆栈内存传递此私有数据。 **PfnAllocateCb**函数将向用户模式显示驱动程序返回每个分配的图面的每个分配的句柄。
 
-**请注意**  用户模式显示驱动程序必须调用**pfnAllocateCb**函数一次为每个设备每个共享图面。 例如，如果设备 1 创建 2、 3 和 4 的设备也使用共享图面，然后设备 2、 3 和 4 还必须调用**pfnAllocateCb**一次针对共享表面，以检索分配句柄。
+**请注意**   用户模式显示驱动程序必须为每个设备的每个共享表面调用一次**pfnAllocateCb**函数。 例如，如果设备1创建一个同时由设备2、3和4使用的共享图面，则设备2、3和4还必须为共享表面调用**pfnAllocateCb**一次，以便检索分配句柄。
 
  
 
-用户模式显示驱动程序必须跟踪每个面对每个分配句柄，通常情况下，通过维护面分配句柄表。 用户模式显示驱动程序应存储在驱动程序定义的资源对象中每个分配句柄。
+用户模式显示驱动程序必须为每个分配句柄跟踪每个图面，通常情况下，可通过维护 surface to 分配控点表。 用户模式显示驱动程序应将每个分配句柄存储在驱动程序定义的资源对象中。
 
-当 Direct3D 运行时执行以前分配的图面上的操作 (例如，对用户模式下的调用中显示器驱动程序的[ **Blt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)函数)，用户模式显示驱动程序将收到句柄的资源，也可能包含一个图面上的索引。 用户模式显示驱动程序使用此资源句柄来检索驱动程序定义的资源对象。 该驱动程序获取的资源对象中存储的分配句柄，并将它们汇编命令缓冲区中。 用户模式显示驱动程序将使用对应于表面时调用的分配句柄[ **pfnRenderCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)函数以提交到显示微型端口驱动程序的命令缓冲区。 显示微型端口驱动程序可以调用[ **DxgkCbGetHandleData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_gethandledata)函数来确定哪些图面上分配引用用户模式显示驱动程序。
+当 Direct3D 运行时在先前分配的表面上执行操作（例如，在对用户模式显示驱动程序的[**Blt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)函数的调用中）时，用户模式显示驱动程序将接收资源的句柄，可能带有 surface 索引。 用户模式显示驱动程序使用此资源句柄检索驱动程序定义的资源对象。 驱动程序获取存储在资源对象中的分配句柄，并将它们汇编在命令缓冲区中。 用户模式显示驱动程序在调用[**pfnRenderCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)函数时使用对应于图面的分配句柄，将命令缓冲区提交给显示微型端口驱动程序。 显示微型端口驱动程序可以调用[**DxgkCbGetHandleData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_gethandledata)函数来确定用户模式显示驱动程序所引用的 surface 分配。
 
  
 

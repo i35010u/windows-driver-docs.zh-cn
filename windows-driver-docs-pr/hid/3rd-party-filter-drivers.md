@@ -1,122 +1,122 @@
 ---
 title: 第三方筛选器驱动程序
 ms.assetid: 2EAFE726-2266-4E40-AC51-0025BF6069B6
-description: 示例筛选器驱动程序中 Microsoft Windows Driver Kit (WDK)。
+description: Microsoft Windows 驱动程序工具包（WDK）中的示例筛选器驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16836495398cd5fce20a84f3abd75a2de32b7ac0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 044843853336f840c598371c5fd156c63be0288e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360325"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824883"
 ---
 # <a name="3rd-party-filter-drivers"></a>第三方筛选器驱动程序
 
 
-本主题介绍以下示例筛选器驱动程序中 Microsoft Windows Driver Kit (WDK) 的功能：
+本主题介绍 Microsoft Windows 驱动程序工具包（WDK）中的以下示例筛选器驱动程序的功能：
 
--   **Kbfiltr**，插 PS/2-样式键盘设备的可选较高级别筛选器驱动程序
+-   **Kbfiltr**，一种可选的顶层筛选器驱动程序，适用于即插即用 PS/2 样式键盘设备
 
--   **Moufiltr**，插 PS/2-样式鼠标设备的可选较高级别筛选器驱动程序
+-   **Moufiltr**，适用于即插即用 PS/2 样式的鼠标设备的可选一级筛选器驱动程序
 
-Kbfiltr 和 Moufiltr 演示如何筛选 I/O 请求并添加修改类服务的操作和 I8042prt 操作的回调例程。
+Kbfiltr 和 Moufiltr 演示了如何筛选 i/o 请求并添加回调例程，用于修改类服务和 I8042prt 操作的操作。
 
-**请注意**  设计的终端服务器的 Windows 2000 及更高版本不支持使用示例键盘和鼠标筛选器驱动程序来进行筛选来自远程客户端上以物理方式安装的设备的输入。 在终端服务器上安装了筛选器驱动程序仅用于筛选以物理方式安装在终端服务器上的设备的输入。 这是方式的终端服务器的 TermDD.sys 驱动程序处理来自远程客户端输入的结果。
+**请注意**   适用于 Windows 2000 和更高版本的终端服务器的设计不支持使用示例键盘和鼠标筛选器驱动程序来筛选远程客户端上物理安装的设备的输入。 安装在终端服务器上的筛选器驱动程序只能用于筛选终端服务器上物理安装的设备中的输入。 这是终端服务器的 Termdd.sys 驱动程序处理来自远程客户端的输入的一种结果。
 
  
 
-Kbfiltr 和 Moufiltr 支持插和电源管理。
+Kbfiltr 和 Moufiltr 支持即插即用和电源管理。
 
-Kbfiltr 提供了以下回调例程：
+Kbfiltr 提供以下回调例程：
 
 <a href="" id="kbfilter-servicecallback"></a>[**KbFilter\_ServiceCallback**](https://docs.microsoft.com/previous-versions/ff542297(v=vs.85))  
-键盘筛选器服务回调添加到键盘类服务回调。 筛选器服务回调可以进行配置以修改键盘输入的数据保存在类驱动程序的数据队列中。
+键盘筛选器服务回调添加到键盘类服务回调中。 可以配置筛选器服务回调来修改在类驱动程序的数据队列中保存的键盘输入数据。
 
 <a href="" id="kbfilter-isrhook"></a>[**KbFilter\_IsrHook**](https://docs.microsoft.com/previous-versions/ff542294(v=vs.85))  
-键盘筛选器 ISR 挂钩例程是一个模板，用于**IsrRoutine** I8042prt 支持键盘的设备的回调。 回调可以配置为自定义键盘 ISR 的操作。
+键盘筛选器 ISR 挂钩例程是 I8042prt 为键盘设备支持的**IsrRoutine**回调的模板。 可将回调配置为自定义键盘 ISR 的操作。
 
 <a href="" id="kbfilter-initializationroutine"></a>[**KbFilter\_InitializationRoutine**](https://docs.microsoft.com/previous-versions/ff542293(v=vs.85))  
-键盘筛选器初始化例程是一个模板，用于**InitializationRoutine** I8042prt 支持键盘的设备的回调。 此回调可以配置为自定义的键盘设备初始化。
+键盘筛选器初始化例程是 I8042prt 为键盘设备支持的**InitializationRoutine**回调的模板。 此回调可配置为自定义键盘设备的初始化。
 
-Moufiltr 提供了以下回调例程：
+Moufiltr 提供以下回调例程：
 
 <a href="" id="moufilter-servicecallback"></a>[**MouFilter\_ServiceCallback**](https://docs.microsoft.com/previous-versions/ff542380(v=vs.85))  
-鼠标筛选器服务回调添加到鼠标类服务回调。 筛选器服务回调可以配置为修改的类驱动程序的数据队列中保存的鼠标输入的数据。
+鼠标筛选器服务回调将添加到鼠标类服务回调。 可以配置筛选器服务回调来修改在类驱动程序的数据队列中保存的鼠标输入数据。
 
 <a href="" id="moufilter-isrhook"></a>[**MouFilter\_IsrHook**](https://docs.microsoft.com/previous-versions/ff542379(v=vs.85))  
-鼠标筛选器 ISR 挂钩例程是一个模板，用于**IsrRoutine** I8042prt 鼠标的设备支持的回调。 回调可以配置为自定义该鼠标 ISR.操作
+鼠标筛选器 ISR 挂钩例程是**IsrRoutine**回调的模板，I8042prt 支持鼠标设备。 可将回调配置为自定义该鼠标 ISR 的操作。
 
-## <a name="customize-the-initialization-and-isr-of-a-device"></a>自定义初始化和 ISR 的设备
-
-
-供应商可以提供可选的较高级别设备筛选器驱动程序，可将以下可选回调添加到 I8042prt 操作：
-
-<a href="" id="pi8042-keyboard-isr"></a>[**PI8042\_键盘\_ISR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_isr)  
-键盘中断服务例程 (ISR) 自定义 I8042prt 键盘 ISR.的操作 如果 I8042prt 的默认操作是足够，则不需要键盘 ISR 回调。 I8042prt 键盘 ISR 验证键盘中断后，它会调用键盘 ISR 回调。
-
-<a href="" id="pi8042-mouse-isr"></a>[**PI8042\_MOUSE\_ISR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_mouse_isr)  
-鼠标 ISR 自定义 I8042prt 鼠标 ISR.的操作 如果 I8042prt 的默认操作是足够，则不需要鼠标 ISR 回调。 I8042prt 鼠标 ISR 验证鼠标中断后，它会调用鼠标 ISR 回调。
-
-<a href="" id="pi8042-keyboard-initialization-routine"></a>[**PI8042\_键盘\_初始化\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)  
-键盘初始化回调补充由 I8042prt 键盘设备的默认初始化。 I8042prt 调用此例程时初始化键盘设备。
-
-I8042prt 添加通过使用由较高级别设备筛选器驱动程序提供的回叫[ **IOCTL\_内部\_I8042\_挂钩\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)键盘设备的请求和一个[ **IOCTL\_内部\_I8042\_挂钩\_鼠标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_mouse)鼠标设备的请求。 I8042prt 从设备类驱动程序收到连接请求后，I8042prt 以同步方式将特定于设备的挂钩请求发送到设备堆栈的顶部。
-
-筛选器驱动程序收到挂钩请求后，执行以下操作：
-
--   如果任何传递给筛选器驱动程序会保存别的驱动程序挂钩信息。
-
-    挂钩信息包括到上下文的指针、 ISR 回调指针和指向的初始化回调 （键盘仅初始化回调） 的指针。
-
--   使用筛选器驱动程序的挂钩信息替换较高级别驱动程序挂钩信息。
-
--   将上下文 I8042prt 和指针保存到可以使用筛选器驱动程序回调的回调。
-
-示例筛选器驱动程序，Kbfiltr 和 Moufiltr，提供以下回调例程：
-
--   [**KbFilter\_IsrHook** ](https://docs.microsoft.com/previous-versions/ff542294(v=vs.85))是一个模板用于 PI8042\_键盘\_ISR 回调。
-
--   [**KbFilter\_InitializationRoutine** ](https://docs.microsoft.com/previous-versions/ff542293(v=vs.85))是一个模板用于 PI8042\_键盘\_初始化\_例程回调。
-
--   [**MouFilter\_IsrHook** ](https://docs.microsoft.com/previous-versions/ff542379(v=vs.85))是一个模板用于 PI8042\_鼠标\_ISR 回调。
-
-## <a name="synchronize-the-operation-of-a-filter-driver-with-a-devices-isr"></a>与设备的 ISR 同步筛选器驱动程序的操作
+## <a name="customize-the-initialization-and-isr-of-a-device"></a>自定义设备的初始化和 ISR
 
 
-I8042prt 使用启动信息请求将指针传递到设备的中断对象及其设备堆栈中的较高级别驱动程序。 启动设备后，筛选器驱动程序可用于中断对象同步其操作与中断服务例程。 筛选器驱动程序应仅对的调用中使用的中断对象[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)。
+供应商可以提供可选的高级设备筛选器驱动程序，可将以下可选回调添加到 I8042prt 的操作：
 
-I8042prt 将中断对象指针通过使用设备堆栈的顶部[ **IOCTL\_内部\_I8042\_键盘\_启动\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_start_information)键盘设备的请求和一个[ **IOCTL\_内部\_I8042\_鼠标\_启动\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_start_information)鼠标设备的请求。 I8042prt 以同步方式将设备的硬件初始化后启动信息请求发送到设备堆栈的顶部。 筛选器驱动程序收到一个开始信息请求后，它将保存启动信息，并将传递设备堆栈请求。 I8042prt 完成请求。
+<a href="" id="pi8042-keyboard-isr"></a>[**PI8042\_键盘\_ISR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_keyboard_isr)  
+键盘中断服务例程（ISR）自定义 I8042prt 键盘 ISR 的操作。 如果 I8042prt 的默认操作已足够，则不需要键盘 ISR 回调。 I8042prt 键盘 ISR 验证键盘中断后，它将调用键盘 ISR 回调。
 
-## <a name="synchronize-writes-by-a-filter-driver-to-a-device"></a>同步写入到设备的筛选器驱动程序
+<a href="" id="pi8042-mouse-isr"></a>[**PI8042\_鼠标\_ISR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_mouse_isr)  
+鼠标 ISR 自定义 I8042prt 鼠标 ISR 的操作。 如果 I8042prt 的默认操作已足够，则不需要鼠标 ISR 回叫。 I8042prt 鼠标 ISR 验证鼠标中断后，它将调用鼠标 ISR 回调。
+
+<a href="" id="pi8042-keyboard-initialization-routine"></a>[**PI8042\_键盘\_初始化\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)  
+键盘初始化回调通过 I8042prt 对键盘设备的默认初始化进行了补充。 I8042prt 在初始化键盘设备时调用此例程。
+
+I8042prt 通过使用[**IOCTL\_内部\_I8042\_挂钩\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)设备的键盘请求和[**ioctl\_内部\_I8042，来添加由上层设备筛选器驱动程序提供的回调\_挂钩\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_mouse)鼠标设备的鼠标请求。 I8042prt 从设备类驱动程序接收到连接请求后，I8042prt 会将特定于设备的挂钩请求同步发送到设备堆栈的顶部。
+
+筛选器驱动程序接收到挂钩请求后，它将执行以下操作：
+
+-   保存传递给筛选器驱动程序的顶层驱动程序挂钩信息（如果有）。
+
+    挂钩信息包括指向上下文的指针、指向 ISR 回调的指针和指向初始化回调（仅针对键盘的初始化回叫）的指针。
+
+-   用筛选器驱动程序的挂钩信息替换上层驱动程序挂钩信息。
+
+-   保存 I8042prt 的上下文和筛选器驱动程序回调可以使用的回调指针。
+
+示例筛选器驱动程序（Kbfiltr 和 Moufiltr）提供以下回调例程：
+
+-   [**KbFilter\_IsrHook**](https://docs.microsoft.com/previous-versions/ff542294(v=vs.85))是 PI8042\_键盘\_ISR 回叫的模板。
+
+-   [**KbFilter\_InitializationRoutine**](https://docs.microsoft.com/previous-versions/ff542293(v=vs.85))是 PI8042\_键盘的一个模板，\_初始化\_例程回调。
+
+-   [**MouFilter\_IsrHook**](https://docs.microsoft.com/previous-versions/ff542379(v=vs.85))是 PI8042\_鼠标\_ISR 回叫的模板。
+
+## <a name="synchronize-the-operation-of-a-filter-driver-with-a-devices-isr"></a>将筛选器驱动程序的操作与设备的 ISR 同步
 
 
-若要自定义设备的操作，筛选器驱动程序需要将控件数据写入到设备。 筛选器驱动程序必须与设备的中断服务例程同步到设备的写入和其他异步读取或写入设备 （例如，由集字符重复请求或 set 键盘指示器请求启动的写入） 上。
+I8042prt 使用 "启动信息请求" 将指向设备中断对象的指针传递到其设备堆栈中的顶层驱动程序。 设备启动后，筛选器驱动程序可以使用中断对象将其操作与中断服务例程同步。 筛选器驱动程序只应在对[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)的调用中使用中断对象。
 
-支持 I8042prt [ **IOCTL\_内部\_I8042\_键盘\_编写\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_write_buffer)请求和[**IOCTL\_内部\_I8042\_鼠标\_编写\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_write_buffer)实现此目的的请求。 写入缓冲区请求与设备的 ISR 和其他请求的读取或写入该设备进行同步。
+I8042prt 通过使用[**IOCTL\_内部\_I8042\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_start_information)，将中断对象指针传递到设备堆栈的顶部\_启动键盘设备\_信息请求和[**ioctl\_内部\_I8042\_鼠标\_开始\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_start_information)请求鼠标设备。 在设备的硬件初始化之后，I8042prt 将启动信息请求同步发送到设备堆栈的顶部。 筛选器驱动程序接收到开始信息请求后，它将保存启动信息并将请求向下传递到设备堆栈中。 I8042prt 完成该请求。
 
-## <a name="i8042prt-callbacks-that-filter-drivers-can-use"></a>可以使用筛选器驱动程序的 I8042prt 回调
+## <a name="synchronize-writes-by-a-filter-driver-to-a-device"></a>将筛选器驱动程序写入同步到设备
 
 
-I8042prt 支持其 ISR 回调中较高级别设备筛选器驱动程序可以使用以下回调：
+若要自定义设备的操作，筛选器驱动程序需要向设备写入控件数据。 筛选器驱动程序必须将对设备的写入与设备的中断服务例程以及设备上的其他异步读取或写入（例如，由 set 按键请求或设置的键盘指示器请求启动的写入）进行同步。
 
-<a href="" id="pi8042-isr-write-port"></a>[**PI8042\_ISR\_WRITE\_PORT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_isr_write_port)  
-设备的写入端口回调将写入到的设备的 ISR.IRQL i8042 端口
+I8042prt 支持[**IOCTL\_内部\_I8042\_键盘\_编写\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_keyboard_write_buffer)请求和[**ioctl\_内部\_I8042\_鼠标\_写入\_的缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_mouse_write_buffer)请求此目的。 写入缓冲区请求与设备的 ISR 以及读取或写入设备的其他请求同步。
 
-<a href="" id="pi8042-queue-packet"></a>[**PI8042\_QUEUE\_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_queue_packet)  
-设备的队列数据包回调排队供设备的 ISR 处理的输入的数据数据包*DPC*。
+## <a name="i8042prt-callbacks-that-filter-drivers-can-use"></a>筛选器驱动程序可以使用的 I8042prt 回调
 
-<a href="" id="pi8042-synch-read-port"></a>[**PI8042\_SYNCH\_READ\_PORT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_synch_read_port)  
-可以在使用此回叫[ **PI8042\_键盘\_初始化\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)回调。 I8042prt 指定在读取的端口回调*ReadPort*参数该 I8042prt 输入到键盘初始化例程。
 
-<a href="" id="pi8042-synch-write-port"></a>[**PI8042\_SYNCH\_WRITE\_PORT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_synch_write_port)  
-可以在使用此回叫[ **PI8042\_键盘\_初始化\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)回调。 I8042prt 指定中的写入端口回调*WritePort*参数该 I8042prt 输入到键盘初始化例程。
+I8042prt 支持上层设备筛选器驱动程序可在其 ISR 回调中使用的以下回调：
 
-I8042prt 将指针传递给键盘设备回调[**内部\_I8042\_挂钩\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ns-ntdd8042-_internal_i8042_hook_keyboard) I8042prt 用于输入信息的结构与[ **IOCTL\_内部\_I8042\_挂钩\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)请求。
+<a href="" id="pi8042-isr-write-port"></a>[**PI8042\_ISR\_写入\_端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_isr_write_port)  
+设备的写入端口回拨将写入设备 ISR 的 i8042 端口。
 
-I8042prt 将指针传递给鼠标设备回调[**内部\_I8042\_挂钩\_鼠标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ns-ntdd8042-_internal_i8042_hook_mouse) I8042prt 用于输入信息的结构[ **IOCTL\_内部\_I8042\_挂钩\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)请求。
+<a href="" id="pi8042-queue-packet"></a>[**PI8042\_队列\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_queue_packet)  
+设备的队列数据包回叫将输入数据包的队列排队，以便由设备的 ISR *DPC*进行处理。
 
-筛选器驱动程序收到挂钩设备请求后，它将使用 I8042prt 回调指针保存在筛选器驱动程序的 ISR 回调。
+<a href="" id="pi8042-synch-read-port"></a>[**PI8042\_同步\_读取\_端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_synch_read_port)  
+此回调可用于[**PI8042\_键盘\_初始化\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)回调。 I8042prt 指定*ReadPort*参数中用于 I8042prt 输入到键盘初始化例程的读取端口回调。
+
+<a href="" id="pi8042-synch-write-port"></a>[**PI8042\_同步\_写入\_端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_synch_write_port)  
+此回调可用于[**PI8042\_键盘\_初始化\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/nc-ntdd8042-pi8042_keyboard_initialization_routine)回调。 I8042prt 指定*WritePort*参数中用于 I8042prt 输入到键盘初始化例程的写入端口回调。
+
+I8042prt 在[**内部\_I8042\_挂钩\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ns-ntdd8042-_internal_i8042_hook_keyboard)结构中传递指向键盘设备回调的指针，I8042prt 使用该指针通过[**IOCTL\_内部\_I8042\_挂钩来输入信息\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)请求。
+
+I8042prt 将指针传递到[**内部\_I8042\_挂钩\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ns-ntdd8042-_internal_i8042_hook_mouse)鼠标结构中的鼠标设备回调鼠标结构，I8042prt 使用该指针通过[**IOCTL\_内部\_I8042\_挂钩来输入信息\_键盘**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntdd8042/ni-ntdd8042-ioctl_internal_i8042_hook_keyboard)请求。
+
+筛选器驱动程序接收到挂钩设备请求后，它会保存用于筛选器驱动程序的 ISR 回调中的 I8042prt 回调指针。
 
  
 

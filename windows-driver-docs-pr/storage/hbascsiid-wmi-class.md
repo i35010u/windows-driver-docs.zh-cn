@@ -4,12 +4,12 @@ description: HBAScsiID WMI 类
 ms.assetid: ca2ebe3f-bc0b-4723-8dff-00478d9baac3
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 781e5e91d9b470e463c55de93078bf62f5e20f93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 194af2ea0d3d7297fb7d74933ed3813c74d384f0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385221"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823799"
 ---
 # <a name="hbascsiid-wmi-class"></a>HBAScsiID WMI 类
 
@@ -17,9 +17,9 @@ ms.locfileid: "67385221"
 ## <span id="ddk_hbascsiid_wmi_class_kr"></span><span id="DDK_HBASCSIID_WMI_CLASS_KR"></span>
 
 
-HBA 微型端口驱动程序支持 T11 委员会*光纤通道 HBA API*规范使用 HBAScsiID 类通过设备的名称标识的逻辑单元中的操作系统和其 SCSI 信息。
+支持 T11 委员会*光纤通道 HBA API*规范的 hba 微型端口驱动程序使用 HBAScsiID 类，通过操作系统中设备的名称及其 SCSI 信息来识别逻辑单元。
 
-HBAScsiID 类 Hbaapi.mof 中定义，如下所示：
+HBAScsiID 类在 Hbaapi 中定义如下：
 
 ```cpp
 class HBAScsiID { 
@@ -30,9 +30,9 @@ class HBAScsiID {
 };
 ```
 
-通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
+由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-[**HBAScsiID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid)
+[**HBAScsiID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbascsiid)
 
 没有与此 WMI 类相关联的方法。
 

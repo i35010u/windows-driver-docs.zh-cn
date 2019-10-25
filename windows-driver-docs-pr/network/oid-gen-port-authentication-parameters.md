@@ -1,21 +1,21 @@
 ---
 title: OID_GEN_PORT_AUTHENTICATION_PARAMETERS
-description: 作为一组 NDIS 和基础驱动程序使用 OID_GEN_PORT_AUTHENTICATION_PARAMETERS OID 来设置 NDIS 端口的当前状态。
+description: 作为集，NDIS 和过量驱动程序使用 OID_GEN_PORT_AUTHENTICATION_PARAMETERS OID 设置 NDIS 端口的当前状态。
 ms.assetid: 676601c1-2647-4341-9a5c-cee895d2dbf7
 ms.date: 08/08/2017
-keywords: -OID_GEN_PORT_AUTHENTICATION_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_PORT_AUTHENTICATION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b2230aee48474c366ff83bceec56be8b535b084
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 193e189fbfd9ac0081f87b864852b7896932d3c7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380862"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824383"
 ---
-# <a name="oidgenportauthenticationparameters"></a>OID\_GEN\_端口\_身份验证\_参数
+# <a name="oid_gen_port_authentication_parameters"></a>OID\_代\_端口\_AUTHENTICATION\_参数
 
 
-作为一组 NDIS 和基础驱动程序使用 OID\_GEN\_端口\_身份验证\_参数 OID 以设置 NDIS 端口的当前状态。
+作为集，NDIS 和过量驱动程序使用 OID\_代\_端口\_AUTHENTICATION\_参数 OID 设置 NDIS 端口的当前状态。
 
 **版本信息**
 
@@ -23,16 +23,16 @@ ms.locfileid: "67380862"
 支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
-可选。 对于 NDIS 端口是必需的。 (请参阅备注部分)
+可选。 对于 NDIS 端口是必需的。 （请参见 "备注" 部分）
 
 <a name="remarks"></a>备注
 -------
 
 支持 NDIS 端口的微型端口驱动程序必须支持此 OID。
 
-如果微型端口驱动程序不支持此 OID，微型端口驱动程序应返回 NDIS\_状态\_不\_受支持。
+如果微型端口驱动程序不支持此 OID，微型端口驱动程序应返回 NDIS\_状态\_不\_支持。
 
-如果微型端口驱动程序支持此 OID，驱动程序将返回 NDIS\_状态\_成功并提供接收端口方向、 端口控件状态，并进行身份验证中的状态[ **NDIS\_端口\_身份验证\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)结构。
+如果微型端口驱动程序支持此 OID，则驱动程序将\_状态返回 NDIS\_状态，并在[**NDIS\_端口\_AUTHENTICATION\_参数中提供接收端口方向、端口控制状态和身份验证状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,16 +44,16 @@ ms.locfileid: "67380862"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_端口\_身份验证\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)
+[**NDIS\_端口\_身份验证\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_authentication_parameters)
 
  
 

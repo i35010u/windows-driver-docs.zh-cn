@@ -3,18 +3,18 @@ title: 创建可靠的内核模式驱动程序
 description: 创建可靠的内核模式驱动程序
 ms.assetid: 31bbf1fe-dc90-43e0-a53e-eca902ec343e
 keywords:
-- 内核模式驱动程序 WDK，可靠性
+- 内核模式驱动程序 WDK、可靠性
 - 可靠性 WDK 内核
-- 可靠性 WDK 内核，有关可靠的驱动程序
+- 可靠性 WDK 内核，关于可靠驱动程序
 - Irp WDK 内核，可靠性问题
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdadc1d5641945bc44b14807faa90fd3a07303ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29416bf9729329149b4ea280ec49f001c43b25c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377149"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828440"
 ---
 # <a name="creating-reliable-kernel-mode-drivers"></a>创建可靠的内核模式驱动程序
 
@@ -22,87 +22,87 @@ ms.locfileid: "67377149"
 
 
 
-驱动程序构成了所有在内核模式下执行的代码的显著百分比。 实际上，内核模式驱动程序是操作系统的组件。 因此，可靠且安全的驱动程序会导致显著的操作系统整体可信度。 若要创建可靠的内核模式驱动程序，请遵循以下准则：
+驱动程序占内核模式下执行的总代码的百分比。 内核模式驱动程序实际上是操作系统的一个组件。 因此，可靠和安全的驱动程序会极大地影响操作系统的总体可信任性。 若要创建可靠的内核模式驱动程序，请遵循以下准则：
 
 -   正确保护设备对象。
 
-    由系统分配给设备对象的安全描述符控制用户对系统的驱动程序和设备访问权限。 大多数情况下，系统将在设备安装时设置设备安全参数。 有关详细信息，请参阅[创建安全的设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)。 有时很适合的驱动程序播放中控制到其设备的访问权限的部件。 有关详细信息，请参阅[保护设备对象](securing-device-objects.md)。
+    用户对系统驱动程序和设备的访问权限由系统分配给设备对象的安全描述符控制。 最常见的情况是，系统会在安装设备时设置设备安全参数。 有关详细信息，请参阅[创建安全设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)。 有时，驱动程序可以在控制其设备的访问权限的过程中发挥作用。 有关详细信息，请参阅[保护设备对象](securing-device-objects.md)。
 
--   正确验证设备的对象。
+-   正确验证设备对象。
 
-    如果驱动程序创建多种类型的设备对象，它必须检查每个 IRP 中收到哪种类型。 有关详细信息，请参阅[验证设备对象与失败](failure-to-validate-device-objects.md)。
+    如果驱动程序创建多种类型的设备对象，则必须检查每个 IRP 中接收的类型。 有关详细信息，请参阅[无法验证设备对象](failure-to-validate-device-objects.md)。
 
--   使用"安全字符串"函数。
+-   使用 "safe string" 函数。
 
-    操作字符串，驱动程序应使用安全的字符串函数而不是字符串函数提供了 C /C++的语言运行时库。 有关详细信息，请参阅[使用安全字符串函数](using-safe-string-functions.md)。
+    在操作字符串时，驱动程序应使用安全字符串函数，而不是与 C/C++语言运行库一起提供的字符串函数。 有关详细信息，请参阅[使用安全字符串函数](using-safe-string-functions.md)。
 
 -   验证对象句柄。
 
-    输入必须验证句柄有效，因为接收对象句柄的驱动程序可访问，以及为预期的类型。 有关使用对象句柄的详细信息，请参阅以下主题：
+    接收对象句柄作为输入的驱动程序必须验证这些句柄是否有效、是否可访问以及是否是预期类型。 有关使用对象句柄的详细信息，请参阅以下主题：
 
     [对象管理](managing-kernel-objects.md)
 
     [验证对象句柄失败](failure-to-validate-object-handles.md)
 
--   正确地支持多处理器系统。
+-   正确支持处理器。
 
-    绝不能假定您的驱动程序将仅在单处理器系统上运行。 有关编程可用于确保您的驱动程序在多处理器系统上的函数将正确的技术信息，请参阅以下主题：
+    永远不会假设您的驱动程序将仅在单处理器系统上运行。 有关可用于确保驱动程序在多处理器系统上正常运行的编程技术的信息，请参阅以下主题：
 
     [同步技术](synchronization-techniques.md)
 
-    [在多处理器环境中的错误](errors-in-a-multiprocessor-environment.md)
+    [多处理器环境中的错误](errors-in-a-multiprocessor-environment.md)
 
 -   正确处理驱动程序状态。
 
-    请务必始终确认您的驱动程序是在假定它是在状态中。 例如，如果该驱动程序接收 IRP，它已经在为服务相同的类型的 IRP？ 如果该驱动程序不会检查这种情况下，第一个 IRP 可能会丢失。 有关详细信息，请参阅[未能检查驱动程序的状态](failure-to-check-a-driver-s-state.md)。
+    务必要始终验证驱动程序是否处于您所采用的状态。 例如，如果驱动程序收到 IRP，是否已为相同类型的 IRP 提供服务？ 如果驱动程序没有检查这种情况，则第一个 IRP 可能会丢失。 有关详细信息，请参阅[检查驱动程序状态失败](failure-to-check-a-driver-s-state.md)。
 
--   验证 IRP 输入的值。
+-   验证 IRP 输入值。
 
-    很重要，可靠性和安全性的角度，来验证与 IRP，如缓冲区地址和长度相关联的所有值。 以下主题提供有关验证 IRP 输入的值的信息：
+    从可靠性和安全性的角度来看，验证与 IRP 关联的所有值（如缓冲区地址和长度）是必不可少的。 以下主题提供有关验证 IRP 输入值的信息：
 
-    [DispatchReadWrite 使用缓冲的 I/O](dispatchreadwrite-using-buffered-i-o.md)
+    [使用缓冲 i/o 的 DispatchReadWrite](dispatchreadwrite-using-buffered-i-o.md)
 
-    [中缓冲的 I/O 错误](errors-in-buffered-i-o.md)
+    [缓冲 i/o 中的错误](errors-in-buffered-i-o.md)
 
-    [使用直接 I/O DispatchReadWrite](dispatchreadwrite-using-direct-i-o.md)
+    [使用直接 i/o 的 DispatchReadWrite](dispatchreadwrite-using-direct-i-o.md)
 
-    [在直接 I/O 错误](errors-in-direct-i-o.md)
+    [直接 i/o 中的错误](errors-in-direct-i-o.md)
 
-    [I/O 控制代码的安全问题](security-issues-for-i-o-control-codes.md)
+    [I/o 控制代码的安全问题](security-issues-for-i-o-control-codes.md)
 
-    [引用用户空间地址中的错误](errors-in-referencing-user-space-addresses.md)
+    [引用用户空间地址时出错](errors-in-referencing-user-space-addresses.md)
 
--   正确处理 I/O 堆栈。
+-   正确处理 i/o 堆栈。
 
-    当[将 Irp 传递驱动程序堆栈的下层](passing-irps-down-the-driver-stack.md)，务必要调用的驱动程序[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)或[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)设置下一步驱动程序的 I/O 堆栈位置。 不编写代码，直接将一个 I/O 堆栈位置复制到下一步。
+    将[irp 沿驱动程序堆栈向下传递](passing-irps-down-the-driver-stack.md)时，驱动程序必须调用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)或[**IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)来设置下一个驱动程序的 i/o 堆栈位置，这一点非常重要。 不要编写直接将一个 i/o 堆栈位置复制到下一个 i/o 堆栈位置的代码。
 
 -   正确处理 IRP 完成操作。
 
-    驱动程序必须永远不会完成状态将 status 值 IRP\_成功除非实际上支持，且处理 IRP。 有关处理 IRP 完成操作的正确方法的信息，请参阅[完成 Irp](completing-irps.md)。
+    驱动程序永远不能完成状态值为 STATUS 的 IRP\_SUCCESS，除非它实际支持和处理 IRP。 有关处理 IRP 完成操作的正确方法的信息，请参阅[完成 irp](completing-irps.md)。
 
 -   正确处理 IRP 取消操作。
 
-    取消操作可能会对代码很难正确因为它们通常以异步方式执行。 处理取消操作的代码中的问题可被忽略，长时间，因为执行此代码通常不经常在正在运行的系统中。
+    取消操作很难正确编码，因为它们通常以异步方式执行。 处理取消操作的代码中的问题可能会很长时间被忽略，因为通常不会在运行的系统中频繁执行此代码。
 
-    请务必阅读并理解所有下提供的信息[取消 Irp](canceling-irps.md)。 特别注意[同步 IRP 取消](synchronizing-irp-cancellation.md)并[指向考虑时取消 Irp](points-to-consider-when-canceling-irps.md)。
+    务必阅读并了解[取消 irp](canceling-irps.md)下提供的所有信息。 [在取消 Irp 时，请](points-to-consider-when-canceling-irps.md)特别注意[同步 IRP 取消](synchronizing-irp-cancellation.md)和要考虑的事项。
 
-    避免相关联的同步问题的一种方法与取消操作是实现[取消安全 IRP 队列](cancel-safe-irp-queues.md)。 取消安全 IRP 队列是引入了针对 Windows XP 和更高版本的操作系统版本，但也是向后兼容早期版本的驱动程序管理队列。
+    避免与取消操作关联的同步问题的一种方法是实现[取消安全 IRP 队列](cancel-safe-irp-queues.md)。 取消安全 IRP 队列是为 Windows XP 和更高版本的操作系统版本引入的驱动程序托管队列，但也向后兼容早期版本。
 
--   处理 IRP 清理并正确关闭操作。
+-   正确处理 IRP 清理并关闭操作。
 
-    请务必了解之间的区别[ **IRP\_MJ\_清理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)并[ **IRP\_MJ\_关闭** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)请求。 清理请求到达后关闭的应用程序的所有句柄上的文件对象，但有时在所有 I/O 之前请求已完成。 关闭请求到达后的文件对象的所有 I/O 请求已完成或已取消。 有关详细信息，请参阅下列主题：
+    请确保了解[**IRP\_mj\_清理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)和[**irp\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅以下主题：
 
-    [DispatchCreate、 DispatchClose 和 DispatchCreateClose 例程](dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
+    [DispatchCreate、DispatchClose 和 DispatchCreateClose 例程](dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
 
     [DispatchCleanup 例程](dispatchcleanup-routines.md)
 
-    [处理清除和关闭操作中的错误](errors-in-handling-cleanup-and-close-operations.md)
+    [处理清理和关闭操作时出错](errors-in-handling-cleanup-and-close-operations.md)
 
-了解如何正确处理 Irp 的详细信息，请参阅[还有其他错误处理 Irp](additional-errors-in-handling-irps.md)。
+有关正确处理 Irp 的详细信息，请参阅[处理 irp 中的其他错误](additional-errors-in-handling-irps.md)。
 
 ### <a name="using-driver-verifier"></a>使用驱动程序验证程序
 
-[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)是最重要的工具可用来确保您的驱动程序的可靠性。 各种常见驱动程序问题，包括在本部分中讨论了其中一些可以检查驱动程序验证程序。 但是，使用驱动程序验证程序不会替换仔细考虑周全的软件设计。
+[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)是最重要的工具，可用于确保驱动程序的可靠性。 驱动程序验证程序可以检查各种常见的驱动程序问题，包括本节中讨论的一些问题。 但是，使用驱动程序验证器并不能替代谨慎的精心软件设计。
 
  
 

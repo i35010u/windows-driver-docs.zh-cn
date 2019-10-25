@@ -10,15 +10,15 @@ keywords:
 - IRP_MN_WAIT_WAKE
 - IRP_MJ_POWER
 - DEVICE_CAPABILITIES 结构
-- 还原 power WDK 内核
+- 正在还原电源 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b48d4dfe950e7909bff5ec52ed259f3027241325
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8a4e488c13fc3705d9b83cc8fa98e31714648fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384948"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836788"
 ---
 # <a name="enabling-device-wake-up"></a>启用设备唤醒
 
@@ -26,11 +26,11 @@ ms.locfileid: "67384948"
 
 
 
-如果设备支持唤醒，其电源策略所有者必须能够启用和禁用唤醒设备。 驱动程序，会通过将发送的唤醒[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)次要功能代码请求[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) ，并禁用通过取消先前发送的唤醒**IRP\_MN\_等待\_唤醒**。 设备只能有一个**IRP\_MN\_等待\_唤醒**一次请求挂起。
+如果设备支持唤醒，则其电源策略所有者必须能够启用和禁用设备唤醒。 驱动程序通过将[**irp\_MJ 发送\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)具有次要函数代码 IRP 的 POWER REQUEST [ **\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)并禁用唤醒，方法是通过取消以前发送的**IRP\_MN\_等待\_唤醒**。 一台设备只能有一个**IRP\_MN\_等待\_唤醒**请求一次挂起。
 
-若要确定是否在其设备支持唤醒，设备电源状态从它可以发出信号唤醒，并从该设备可以唤醒系统的系统电源状态，驱动程序将检查**SystemWake**， **DeviceWake**，和 **WakeFromD * * * x*中的成员[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构。
+若要确定设备是否支持唤醒、设备电源状态（它可以通过这些状态进行唤醒，以及设备可以从其唤醒系统的系统电源状态），驱动程序将检查**SystemWake**、 **DeviceWake**和 **WakeFromD * * ** 设备中的 x 成员[ **\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构。
 
-有关启用的详细信息，禁用和响应唤醒信号中驱动程序，请参阅[支持设备的已唤醒功能](supporting-devices-that-have-wake-up-capabilities.md)。
+有关在驱动程序中启用、禁用和响应唤醒信号的详细信息，请参阅[支持具有唤醒功能的设备](supporting-devices-that-have-wake-up-capabilities.md)。
 
  
 

@@ -4,42 +4,42 @@ description: Hyper-V 可扩展交换机保存操作
 ms.assetid: 7148B094-2551-4035-A6BE-141DD01BEA14
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b480581ad55b75f0b9ae6f37cd989e132aabd6d2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c92171a843685c950d157fe3472741fdd273a8a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386540"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823829"
 ---
 # <a name="hyper-v-extensible-switch-save-operations"></a>Hyper-V 可扩展交换机保存操作
 
 
-当 HYPER-V 子分区已停止、 已保存，或实时迁移时，保存该分区的运行时状态。 在保存操作，HYPER-V 可扩展交换机扩展可以保存有关可扩展交换机网络适配器 (NIC) 的运行时数据。
+当 Hyper-v 子分区停止、保存或实时迁移时，将保存该分区的运行时状态。 在保存操作期间，Hyper-v 可扩展交换机扩展可以保存有关可扩展交换机网络适配器（NIC）的运行时数据。
 
-保存时正在执行操作上的 HYPER-V 子分区，可扩展交换机接口通知有关操作的扩展。 通过以下对象标识符 (OID) 请求通知扩展：
+在 Hyper-v 子分区上执行保存操作时，可扩展交换机接口会通知扩展操作。 将通过以下对象标识符（OID）请求通知扩展：
 
 <a href="" id="oid-switch-nic-save"></a>[OID\_交换机\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)  
-可扩展交换机接口指示在保存期间发出此 OID 的可扩展交换机的协议边缘操作可扩展的交换机 nic。 它处理此 OID 请求，该扩展返回运行时数据 nic。 运行时数据将保存之后，它通过 OID 的集请求还原[OID\_交换机\_NIC\_还原](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)。
+可扩展交换机接口向可扩展交换机的协议边缘发出信号，以便在可扩展交换机 NIC 的保存操作期间发出此 OID。 它在处理此 OID 请求时，将返回 NIC 的运行时数据。 保存运行时数据后，将通过 oid [\_交换机\_NIC\_还原](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)将其还原。
 
-当它收到[OID\_交换机\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)方法请求，该扩展可以执行以下项之一：
+当接收到[OID\_交换机\_NIC\_SAVE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)方法请求时，扩展可以执行下列操作之一：
 
--   如果扩展具有要保存的运行时数据，则会初始化[ **NDIS\_交换机\_NIC\_保存\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构并设置各种成员，如**ExtensionId**成员，若要标识本身和它正在保存数据。 扩展还节省了中的数据**NDIS\_交换机\_NIC\_保存\_状态**结构从结构开始的起始 SaveDataOffset 字节，然后完成OID 方法请求使用 NDIS\_状态\_成功。
+-   如果扩展具有要保存的运行时数据，则它会初始化[**NDIS\_交换机\_NIC\_保存\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构，并设置各个成员（例如**ExtensionId**成员），以标识自身及其数据保存. 该扩展还会将 Ndis\_交换机中的数据保存 **\_NIC\_SAVE\_状态**结构，从结构的开头开始 SaveDataOffset 字节，然后通过 NDIS\_状态完成 OID 方法请求\_成功。
 
--   如果[ **NDIS\_交换机\_NIC\_保存\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构不提供足够的缓冲区大小，NDIS中枚举\_对象\_标头**大小**成员以保存运行时状态，该扩展设置方法结构*BytesNeeded*字段到 NDIS\_SIZEOF\_NDIS\_交换机\_NIC\_保存\_状态\_修订\_1 加上保存在保存所需的缓冲区的数据，并完成用 NDIS OID\_状态\_缓冲区\_过\_短。 使用所需的大小，将重新颁发 OID。
--   如果该扩展没有要保存的运行时数据，它必须调用[ **NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)。 这 OID 方法将请求转发到可扩展交换机驱动程序堆栈中的基础扩展。 有关此过程的详细信息，请参阅[NDIS 筛选器驱动程序中筛选 OID 请求](filtering-oid-requests-in-an-ndis-filter-driver.md)。
+-   如果[**ndis\_交换机\_NIC\_SAVE\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构没有提供足够的缓冲区大小，在 NDIS\_对象\_标头**大小**成员中枚举以保存运行时状态，扩展会将方法结构的*BytesNeeded*字段设置为 NDIS\_SIZEOF\_NDIS\_交换机\_NIC\_将\_状态\_1 加上保存所需的缓冲区数量保存数据，并通过 NDIS\_状态\_缓冲区来完成 OID，\_\_太短。 将重新颁发具有所需大小的 OID。
+-   如果扩展没有要保存的运行时数据，则必须调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)。 这会将 OID 方法请求转发到可扩展交换机驱动程序堆栈中的基础扩展。 有关此过程的详细信息，请参阅[在 NDIS 筛选器驱动程序中筛选 OID 请求](filtering-oid-requests-in-an-ndis-filter-driver.md)。
 
-有关此 OID 请求的详细信息，请参阅[处理 OID\_交换机\_NIC\_保存请求](handling-the-oid-switch-nic-save-request.md)。
+有关此 OID 请求的详细信息，请参阅[处理 oid\_交换机\_NIC\_保存请求](handling-the-oid-switch-nic-save-request.md)。
 
 <a href="" id="oid-switch-nic-save-complete"></a>[OID\_交换机\_NIC\_保存\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)  
-可扩展交换机接口发出信号发出在保存完成时此 OID 的可扩展交换机的协议边缘操作的运行时数据的可扩展的交换机 nic。
+可扩展交换机接口向可扩展交换机的协议边缘发出信号，以便在可扩展交换机 NIC 的运行时数据完成保存操作时发出此 OID。
 
-此 OID 请求向扩展通知的保存操作已完成仅对指定可扩展交换机 nic。
+此 OID 请求通知扩展：保存操作仅针对指定的可扩展交换机 NIC 完成。
 
-有关此 OID 请求的详细信息，请参阅[处理 OID\_交换机\_NIC\_保存\_完整的请求](handling-the-oid-switch-nic-save-complete-request.md)。
+有关此 OID 请求的详细信息，请参阅[处理 oid\_交换机\_NIC\_保存\_完成请求](handling-the-oid-switch-nic-save-complete-request.md)。
 
-在保存运行时数据的操作，可扩展交换机的协议边缘发出的 OID 请求[OID\_切换\_NIC\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)和 OID\_切换\_NIC\_保存\_完成连接 HYPER-V 子分区的网络接口。 如果多个 HYPER-V 子分区是已停止或实时迁移，协议边缘问题分隔集 OID\_交换机\_NIC\_保存和 OID\_交换机\_NIC\_保存\_完成请求的每个网络接口连接。
+在保存运行时数据的操作期间，可扩展交换机的协议边缘[\_交换机\_nic](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)上发出 oid 请求\_SAVE 和 OID\_SWITCH\_nic\_为网络完成保存\_Hyper-v 子分区的接口已连接。 如果已停止或实时迁移多个 Hyper-v 子分区，则协议边缘会发出不同的 OID 集\_交换机\_NIC\_SAVE 和 OID\_交换机\_NIC\_保存每个网络的\_完成请求接口连接。
 
-**请注意**  可扩展交换机的协议边缘会交替执行保存操作的运行时数据的同一 nic。 协议边缘将启动保存操作 NIC 的运行时数据才以前保存操作已完成在同一 nic。 但是，协议边缘可能会启动一个保存 nic 时保存操作的另一个操作正在进行的另一个 nic。 因此，我们强烈建议扩展执行保存操作以非交错的方式。 例如，扩展应假定，新的保存操作无法启动另一个 NIC 上之前持续保存操作已完成的不同 nic。
+**请注意**  可扩展交换机的协议边缘不会交错保存同一 NIC 的运行时数据的操作。 只有在同一 NIC 上完成了上一个保存操作后，协议边缘才会为 NIC 启动运行时数据保存操作。 但是，如果另一个 NIC 正在进行另一个保存操作，协议边缘可能会为 NIC 启动保存操作。 因此，我们强烈建议扩展以非交错方式执行保存操作。 例如，扩展不应假定新的 save 操作无法在另一个 NIC 上启动，然后才能在其他 NIC 上完成正在进行的保存操作。
 
  
 

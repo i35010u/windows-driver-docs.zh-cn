@@ -3,7 +3,7 @@ title: 确定设备是否可以唤醒系统
 description: 确定设备是否可以唤醒系统
 ms.assetid: 59f23035-4169-4dd4-ac60-882c32efda2c
 keywords:
-- 等待/唤醒 Irp WDK 电源管理具有唤醒功能的设备
+- 等待/唤醒 Irp WDK 电源管理，具有唤醒功能的设备
 - 电源管理 WDK 内核，唤醒功能
 - 外部唤醒信号 WDK
 - 唤醒设备
@@ -11,12 +11,12 @@ keywords:
 - 设备唤醒 ups WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f73513baa10a47e6bacbbd8ba5bc2e83251f696a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78e0836de1816ec7516f8479d17f58ee03e39b2d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378019"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828363"
 ---
 # <a name="determining-whether-a-device-can-wake-the-system"></a>确定设备是否可以唤醒系统
 
@@ -24,13 +24,13 @@ ms.locfileid: "67378019"
 
 
 
-在设备进入睡眠状态中的外部信号可以响应某些设备，例如键盘、 调制解调器和网络卡。 作为其电源管理技术的一部分，操作系统提供了一种方法对于此类设备唤醒处于睡眠状态的系统，然后还原其以前的上下文。 软件唤醒机制使系统能够唤醒从 S5 以外的所有状态 (**PowerSystemShutdown**)，取决于系统和设备的硬件和 BIOS 中的支持。 处于状态 S5 必须始终重新启动系统。
+某些设备（例如键盘、调制解调器和网卡）可以在设备睡眠状态下响应外部信号。 作为其电源管理技术的一部分，操作系统为此类设备提供了一种唤醒睡眠系统的方式，该系统可以还原其以前的上下文。 软件唤醒机制允许系统从除 S5 （**PowerSystemShutdown**）之外的任何状态唤醒，具体取决于系统和设备硬件和 BIOS 中的支持。 处于 S5 状态的系统必须始终重启。
 
-尽管 operating system 旨在从任何中间睡眠状态唤醒，但确切唤醒功能在不同计算机到计算机和设备。 并非所有计算机都支持所有系统睡眠状态;因此，可以从某些状态唤醒的功能是在某些计算机上没有任何意义。
+尽管操作系统旨在从任何中间睡眠状态唤醒，但具体的唤醒功能在不同的计算机和设备之间有所不同。 并非所有计算机都支持所有系统睡眠状态;因此，从某些状态唤醒的能力在某些计算机上无意义。
 
-同样，大多数设备都不支持所有设备的电源状态 (通过 D3 D0)，也不都支持唤醒从所有设备电源它们都支持的状态。
+同样，大多数设备既不支持所有设备电源状态（D0 到 D3），也不支持从其支持的所有设备电源状态中唤醒。
 
-睡眠状态，设备可以输入，以及从其最多可支持唤醒，描述在枚举总线驱动程序并存储在状态[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构。 下表列出了相关来等待/唤醒支持此结构的成员。
+设备可以输入的睡眠状态以及支持唤醒的状态在总线驱动程序的枚举中进行了描述，并存储在[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中。 下表列出了与等待/唤醒支持相关的此结构的成员。
 
 <table>
 <colgroup>
@@ -46,52 +46,52 @@ ms.locfileid: "67378019"
 <tbody>
 <tr class="odd">
 <td><p><a href="deviced1-and-deviced2.md" data-raw-source="[&lt;strong&gt;DeviceD1&lt;/strong&gt;](deviced1-and-deviced2.md)"><strong>DeviceD1</strong></a></p></td>
-<td><p>如果设备支持 PowerDeviceD1 状态，则为 true。</p></td>
+<td><p>如果设备支持状态 PowerDeviceD1，则为 True。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="deviced1-and-deviced2.md" data-raw-source="[&lt;strong&gt;DeviceD2&lt;/strong&gt;](deviced1-and-deviced2.md)"><strong>DeviceD2</strong></a></p></td>
-<td><p>如果设备支持 PowerDeviceD2 状态，则为 true。</p></td>
+<td><p>如果设备支持状态 PowerDeviceD2，则为 True。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD0&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD0</strong></a></p></td>
-<td><p>如果设备可以从 PowerDeviceD0 唤醒，则为 true。</p></td>
+<td><p>如果设备可以从 PowerDeviceD0 唤醒，则为 True。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD1&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD1</strong></a></p></td>
-<td><p>如果设备可以从 PowerDeviceD1 唤醒，则为 true。</p></td>
+<td><p>如果设备可以从 PowerDeviceD1 唤醒，则为 True。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD2&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD2</strong></a></p></td>
-<td><p>如果设备可以从 PowerDeviceD2 唤醒，则为 true。</p></td>
+<td><p>如果设备可以从 PowerDeviceD2 唤醒，则为 True。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md" data-raw-source="[&lt;strong&gt;WakeFromD3&lt;/strong&gt;](wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)"><strong>WakeFromD3</strong></a></p></td>
-<td><p>如果设备可以从 PowerDeviceD3 唤醒，则为 true。</p></td>
+<td><p>如果设备可以从 PowerDeviceD3 唤醒，则为 True。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="devicestate.md" data-raw-source="[&lt;strong&gt;DeviceState&lt;/strong&gt;](devicestate.md)"><strong>DeviceState</strong></a> [PowerSystemMaximum]</p></td>
-<td><p>指定此设备可为每个系统电源状态，从 PowerSystemUnspecified PowerSystemShutdown 到支持的最高设备电源状态。</p></td>
+<td><p>指定此设备可支持的每个系统电源状态的最高设备电源状态，从 PowerSystemUnspecified 到 PowerSystemShutdown。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="systemwake.md" data-raw-source="[&lt;strong&gt;SystemWake&lt;/strong&gt;](systemwake.md)"><strong>SystemWake</strong></a></p></td>
-<td><p>指定最低系统电源状态 (通过 S4 S0) 从被唤醒系统。</p></td>
+<td><p>指定可从中唤醒系统的最低系统电源状态（S0 到 S4）。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="devicewake.md" data-raw-source="[&lt;strong&gt;DeviceWake&lt;/strong&gt;](devicewake.md)"><strong>DeviceWake</strong></a></p></td>
-<td><p>指定最低设备电源状态中唤醒设备可以 (通过 D3 D0)。</p></td>
+<td><p>指定设备可唤醒的最小设备电源状态（D0 到 D3）。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**DeviceWake**项列出了从该设备可以响应唤醒信号的最低设备电源状态。 值 PowerDeviceUnspecified 指示该设备不能将系统唤醒。 **SystemWake**项列出了可从中唤醒系统的最低系统电源状态。 这些值基于父 devnode 的功能和驱动程序不应更改它们。 有关详细信息，请参阅[报告设备电源功能](reporting-device-power-capabilities.md)。
+**DeviceWake**条目列出了设备可用于响应唤醒信号的最小设备电源状态。 值 PowerDeviceUnspecified 指示设备无法唤醒系统。 **SystemWake**条目列出了可从中唤醒系统的最低系统电源状态。 这些值基于父 devnode 的功能，驱动程序不应更改这些值。 有关详细信息，请参阅[报表设备功能](reporting-device-power-capabilities.md)。
 
-一般情况下，设备可以将系统唤醒如果满足以下条件：
+通常，如果满足以下条件，设备可以唤醒系统：
 
--   设备处于相同或比提供更多支持的电源状态**DeviceWake**值。
+-   设备处于电源状态等于或大于**DeviceWake**值。
 
--   系统处于相同或比更驱动的电源状态**SystemWake**值。
+-   系统处于电源状态等于或大于**SystemWake**值。
 
  
 

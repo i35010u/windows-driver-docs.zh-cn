@@ -3,32 +3,32 @@ title: 麦克风阵列几何属性
 description: 麦克风阵列几何属性
 ms.assetid: 7f280677-f86d-4687-b992-e2580046bd57
 keywords:
-- mic 数组 WDK 音频
-- geometry 描述符 WDK 音频
+- 麦克风阵列 WDK 音频
+- 几何描述符 WDK 音频
 - 麦克风阵列 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 187d66850be8f88f728efcd2026633174b37ba16
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e792335f5b5029cfa9398bf00ba6b4988f41b02
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362585"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830387"
 ---
 # <a name="microphone-array-geometry-property"></a>麦克风阵列几何属性
 
 
-在 Windows Vista 及更高版本，提供的麦克风阵列支持。 在大多数情况下，单个麦克风嵌入在便携式计算机或监视器不会捕获声音很好。 麦克风的数组执行更好地找出声音源并拒绝避免环境噪音和混响。 [ **KSPROPERTY\_音频\_MIC\_数组\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry)属性指定几何图形的麦克风阵列。 属性值， [ **KSAUDIO\_MIC\_数组\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)，描述的数组类型 （线性、 平面，等等），数组中的麦克风的数量和其他功能。
+在 Windows Vista 和更高版本中，为麦克风阵列提供了支持。 在大多数情况下，在便携式计算机或监视器中嵌入的单个麦克风无法很好地捕获声音。 麦克风数组更好地用于隔离声源，并拒绝环境噪音和 reverberation。 [**KSPROPERTY\_音频\_MIC\_ARRAY\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry)属性指定麦克风阵列的几何。 属性值[**KSAUDIO\_MIC\_数组\_几何**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)）描述数组类型（线性、平面等）、数组中麦克风的数目以及其他功能。
 
-本主题介绍如何外部 USB 麦克风阵列可以使用麦克风阵列支持随附于 Windows Vista。 外部 USB 麦克风数组必须提供用于描述几何和其他功能以响应其数组所需的参数**获取\_内存优化**请求。
+本主题介绍外部 USB 麦克风阵列如何使用随 Windows Vista 提供的麦克风阵列支持。 外部 USB 麦克风阵列必须提供描述其数组的几何和其他功能所需的参数，以响应**GET\_MEM**请求。
 
-USB 麦克风阵列使用标准格式提供几何信息。 读取的几何信息时，Windows Vista USB 音频类驱动程序必须使用相同的格式。 有关标准格式的详细信息，请参阅[麦克风阵列 Geometry 描述符格式](microphone-array-geometry-descriptor-format.md)。
+USB 麦克风阵列使用标准格式来提供几何信息。 Windows Vista USB 音频类驱动程序在读取几何信息时必须使用相同的格式。 有关标准格式的详细信息，请参阅[麦克风数组几何描述符格式](microphone-array-geometry-descriptor-format.md)。
 
-应用程序可以调用[IPart::GetSubType](https://go.microsoft.com/fwlink/p/?linkid=143726)来检索有关一个插孔，若要确定是否已插入插孔设备麦克风阵列的信息。 **IPart::GetSubType**返回 pin 类别 GUID，表示输入的插孔类型。 如果已接通电源的设备为麦克风数组，返回的 GUID 是否等于 KSNODETYPE\_麦克风\_数组。 应用程序还有助于您确定是否插入您的麦克风阵列插入错误插孔。 在后一种方案中，返回的 pin 类别 GUID 是为不同的设备或它指示没有插入麦克风的插孔的设备。 有关 pin 类别 Guid 的详细信息，请参阅[Pin Category 属性](pin-category-property.md)。
+应用程序可以调用[IPart：： GetSubType](https://go.microsoft.com/fwlink/p/?linkid=143726)来检索有关插孔的信息，以确定插入插孔的设备是否为麦克风阵列。 **IPart：： GetSubType**返回表示输入插孔类型的 PIN 类别 GUID。 如果插入的设备是麦克风阵列，则返回的 GUID 等于 KSNODETYPE\_麦克风\_阵列。 该应用程序还可以帮助你确定是否已将麦克风阵列插入错误的插孔。 在后一种情况下，返回的 pin 类别 GUID 可用于其他设备，也可能表示没有设备插入麦克风插孔。 有关 pin 类别 Guid 的详细信息，请参阅[固定类别属性](pin-category-property.md)。
 
-应用程序发现已插入正确的输入插孔麦克风阵列后下, 一步是确定数组的几何图形。 有三个基本几何：*线性*，*平面*，并*三个三维 (3-D)* 。 几何信息还提供了详细信息，例如频率范围和每个麦克风的 x y z 坐标。
+在应用程序发现插入正确输入插孔的麦克风阵列后，下一步是确定该阵列的几何。 有三种基本的几何图形：*线性*、*平面*和三维 *（3-d）* 。 几何信息还提供了每个麦克风的频率范围和 x y z 坐标等详细信息。
 
-下面的代码示例显示了 KSAUDIO\_MIC\_数组\_音频驱动程序使用来描述一个外部 USB 麦克风阵列的几何结构：
+下面的代码示例演示了一个 KSAUDIO\_MIC\_阵列\_几何结构，音频驱动程序使用它来描述外部 USB 麦克风阵列：
 
 ```cpp
 KSAUDIO_MIC_ARRAY_GEOMETRY mic_Array =
@@ -46,9 +46,9 @@ KSAUDIO_MIC_ARRAY_GEOMETRY mic_Array =
 };
 ```
 
-在前面的代码示例，ar\_mic\_坐标变量为数组 KSAUDIO\_麦克风\_坐标结构，它包含麦克风麦克风数组中的坐标。
+在上面的代码示例中，ar\_mic\_坐标变量是 KSAUDIO\_麦克风\_坐标结构的数组，它包含麦克风阵列中麦克风的坐标。
 
-下面的代码示例演示如何 ar\_mic\_坐标数组用于描述几何麦克风麦克风数组中的位置，如前面的代码示例中所述：
+下面的代码示例演示了 ar\_mic\_坐标数组如何用于描述麦克风阵列中麦克风的几何位置，如前面的代码示例中所述：
 
 ```cpp
 KsMicCoord ar_mic_Coordinates[] =
@@ -74,11 +74,11 @@ KsMicCoord ar_mic_Coordinates[] =
 };
 ```
 
-在前面的代码示例中，针对每个麦克风中麦克风阵列，以及描述其有效的工作区的垂直和水平角度提供 x y z 坐标。
+在上面的代码示例中，为麦克风阵列中的每个麦克风指定了 x y z 坐标，同时还为了描述其有效工作区的垂直和水平角。
 
-若要修改 Micarray MSVAD 示例驱动程序提供虚拟麦克风阵列的阵列几何信息，必须执行以下任务。
+若要修改 Micarray MSVAD 示例驱动程序以提供虚拟麦克风阵列的阵列几何信息，必须执行以下任务。
 
-首先，导航到 Src\\音频\\Msvad\\Micarray 并找到 Mintopo.cpp 文件。 编辑 Mintopo.cpp 中的属性处理程序部分，以便 KSAUDIO\_MIC\_数组\_几何结构包含关于麦克风阵列的信息。 必须修改的代码的特定部分下面的代码示例所示：
+首先，导航到 Src\\音频\\Msvad\\Micarray 并找到 Mintopo 文件。 编辑 Mintopo 中的属性处理程序部分，以便 KSAUDIO\_MIC\_数组\_GEOMETRY 结构包含有关麦克风数组的信息。 下面的代码示例演示了必须修改的代码的特定部分：
 
 ```cpp
 // Modify this portion of PropertyHandlerMicArrayGeometry
@@ -111,29 +111,29 @@ pMAG->KsMicCoord[1].wVerticalAngle = 0;
 pMAG->KsMicCoord[1].wHorizontalAngle = 0;
 ```
 
-前面的代码示例显示了具有两个麦克风元素，其中每个是 cardioid 类型，位于从数组的中心 100 mm 为线性的麦克风阵列提供信息。
+前面的代码示例显示了为具有两个麦克风元素的线性麦克风数组提供的信息，其中每个元素都是一个 cardioid 类型，并从该数组的中心找到 100 mm。
 
-对于第二处修改，编辑 Msvad.inf 文件中所示[MSVAD Micarray 用于修改 INF](modified-inf-for-msvad-micarray.md)。
+对于第二个修改，请编辑 Msvad 文件，如[Msvad Micarray 的修改 inf](modified-inf-for-msvad-micarray.md)中所示。
 
-完成文件的修改后，完成以下过程来生成和安装麦克风阵列的示例驱动程序。
+完成文件修改后，请完成以下过程，为麦克风阵列构建并安装示例驱动程序。
 
-1.  启动 WDK 构建环境，你想要在其中。 例如，x86 Free Build Environment。
+1.  启动要在其中工作的 WDK 生成环境。 例如，x86 免费生成环境。
 
 2.  导航到 Src\\音频\\Msvad 文件夹。
 
-3.  类型**生成**命令，，然后按 Enter。
+3.  键入 "**生成**" 命令，然后按 "enter"。
 
-4.  将修改后的 Msvad.inf 文件复制到生成过程创建的以下文件夹：
+4.  将修改后的 Msvad 文件复制到生成过程创建的以下文件夹中：
 
-    Src\\Audio\\Msvad\\Micarray\\objfre\_wlh\_x86\\i386
+    Src\\音频\\Msvad\\Micarray\\objfre\_wlh\_x86\\i386
 
-5.  验证在步骤 4 中的文件夹包含一个名为 Vadarray.sys 文件。
+5.  验证步骤4中的文件夹是否包含名为 Vadarray 的文件。
 
-6.  打开控制面板，然后使用**添加硬件**手动安装的示例驱动程序。
+6.  打开 "控制面板"，并使用 "**添加硬件**" 手动安装示例驱动程序。
 
-7.  打开**声音**小程序在控制面板中单击**录制**选项卡上验证是否可以看到虚拟数组您刚安装的麦克风。
+7.  在 "控制面板" 中打开 "**声音**小程序"，然后单击 "**录制**" 选项卡，验证是否可以看到刚刚安装的虚拟麦克风阵列。
 
-有关如何开发应用程序能够发现麦克风阵列的信息，请参阅的附录 C[如何与生成和使用麦克风阵列适用于 Windows Vista 的](https://go.microsoft.com/fwlink/p/?linkid=306613)。
+有关如何开发应用程序来发现麦克风阵列的信息，请参阅[如何构建和使用适用于 Windows Vista 的麦克风阵列](https://go.microsoft.com/fwlink/p/?linkid=306613)的附录 C。
 
  
 

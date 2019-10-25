@@ -1,6 +1,6 @@
 ---
 title: KSEVENT\_LOOPEDSTREAMING\_位置
-description: KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中的指定的位置。使用情况摘要 TableTargetEvent 描述符 TypeEvent 值 TypePinKSEVENTLOOPEDSTREAMING\_位置\_事件\_数据的事件值类型 （操作数据） 是 LOOPEDSTREAMING\_位置\_事件\_数据结构，其中包含以下信息的位置事件发生时，系统将向客户端发送的通知类型。触发事件缓冲区位置。
+description: KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中的指定位置。使用情况摘要 TableTargetEvent 描述符 TypeEvent 值 TypePinKSEVENTLOOPEDSTREAMING\_位置\_事件\_数据事件值类型（操作数据）是 LOOPEDSTREAMING\_位置\_事件\_数据结构，其中包含以下信息：当位置事件发生时系统将发送到客户端的通知的类型。触发事件的缓冲区位置。
 ms.assetid: 6609ddac-e506-4fab-b580-0def30be2e9c
 keywords:
 - KSEVENT_LOOPEDSTREAMING_POSITION 音频设备
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b99906618a060df0626c319e91652b672c1fadcc
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 941c651f54369090bf05892cda10465056f51fe7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391537"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833140"
 ---
-# <a name="kseventloopedstreamingposition"></a>KSEVENT\_LOOPEDSTREAMING\_位置
+# <a name="ksevent_loopedstreaming_position"></a>KSEVENT\_LOOPEDSTREAMING\_位置
 
 
-KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中的指定的位置。
+KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中的指定位置。
 
-**使用率摘要表**
+**使用情况摘要表**
 
 <table>
 <colgroup>
@@ -43,33 +43,33 @@ KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Pin</p></td>
+<td align="left"><p>大头针</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-loopedstreaming_position_event_data" data-raw-source="[&lt;strong&gt;LOOPEDSTREAMING_POSITION_EVENT_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)"><strong>LOOPEDSTREAMING_POSITION_EVENT_DATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-事件值类型 （操作数据） 是 LOOPEDSTREAMING\_位置\_事件\_数据结构，其中包含以下信息：
+事件值类型（操作数据）是 LOOPEDSTREAMING\_位置\_事件\_数据结构，其中包含以下信息：
 
--   位置事件发生时，系统将向客户端发送的通知的类型。
+-   出现位置事件时系统将发送到客户端的通知的类型。
 
--   触发事件缓冲区位置。
+-   触发事件的缓冲区位置。
 
-此事件旨在由系统仅供内部使用。
+此事件仅供系统内部使用。
 
 <a name="remarks"></a>备注
 -------
 
-在 Windows Server 2003、 Windows XP、 Windows 2000、 Windows Me 和 Windows 98，WavePci 和 WaveCyclic 端口驱动程序包含自己的内置处理程序为 KSEVENT\_LOOPEDSTREAMING\_位置事件。 WavePci 和 WaveCyclic 微型端口驱动程序不应实现这些事件处理程序。
+在 Windows Server 2003、Windows XP、windows 2000、Windows Me 和 Windows 98 中，WavePci 和 WaveCyclic 端口驱动程序包含它们自己的用于 KSEVENT\_LOOPEDSTREAMING\_位置事件的内置处理程序。 WavePci 和 WaveCyclic 微型端口驱动程序不应为这些事件实现处理程序。
 
-在 Windows Vista 中，没有任何批*Xxx*端口驱动程序实现事件处理程序或其他支持 KSEVENT\_LOOPEDSTREAMING\_位置事件。
+在 Windows Vista 中，无 Wave*Xxx*端口驱动程序实现事件处理程序或其他对 KSEVENT\_LOOPEDSTREAMING\_位置事件的支持。
 
-一个循环的缓冲区就是类型的音频流的数据缓冲区[ **KSINTERFACE\_标准\_LOOPED\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)。 当播放或录制光标达到循环缓冲区的末尾时，光标回绕到缓冲区的开头。
+循环缓冲区是类型为[**KSINTERFACE\_标准\_循环\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)的音频流的数据缓冲区。 当播放或记录光标到达循环缓冲区的末尾时，游标将环绕到缓冲区的开头。
 
-有关循环的缓冲区、 缓冲区位置，并播放和记录游标的详细信息，请参阅[音频 Position 属性](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)。
+有关循环缓冲区、缓冲区位置以及播放和记录游标的详细信息，请参阅[音频位置属性](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,20 +81,20 @@ KSEVENT\_LOOPEDSTREAMING\_位置事件指示音频流已到达循环缓冲区中
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 
-[**KSINTERFACE\_标准\_LOOPED\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)
+[**KSINTERFACE\_标准\_循环\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)
 
-[**LOOPEDSTREAMING\_POSITION\_EVENT\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)
+[**LOOPEDSTREAMING\_位置\_事件\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)
 
  
 

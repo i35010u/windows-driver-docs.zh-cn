@@ -1,34 +1,34 @@
 ---
-title: 电视连接器和视频微型端口驱动程序中的复制保护
+title: 视频微型端口驱动程序中的电视连接器和复制保护
 description: 视频微型端口驱动程序中的电视连接器和复制保护支持
 ms.assetid: 7d7d44b5-3248-4bee-bc4d-e02fd3c606a7
 keywords:
-- 微型端口驱动程序 WDK Windows 2000，电视连接器
-- 微型端口驱动程序 WDK Windows 2000 中，复制保护支持
-- 电视连接器 WDK 微型端口
+- 视频微型端口驱动程序 WDK Windows 2000、电视连接器
+- 视频微型端口驱动程序 WDK Windows 2000，复制保护支持
+- 电视连接器 WDK 视频微型端口
 - 复制保护 WDK 视频微型端口
 - IOCTL_VIDEO_HANDLE_VIDEOPARAMETERS
-- 复制保护 WDK 微型端口，有关复制保护的支持
+- 复制保护 WDK 视频微型端口，关于复制保护支持
 - 硬件 WDK 复制保护
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 2bccf34cb12d65df26af09b845e80d39693c6abb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 419d42bd08e3625da76dbea68fdd3d88f47dd984
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353398"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825421"
 ---
 # <a name="tv-connector-and-copy-protection-support-in-video-miniport-drivers"></a>视频微型端口驱动程序中的电视连接器和复制保护支持
 
-有一个电视连接器的适配器的微型端口驱动程序必须处理[ **VRPs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)与[ **IOCTL\_视频\_句柄\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) I/O 控制代码。 此 IOCTL 发送到要查询的功能和电视连接器和复制保护硬件的当前设置，或者设置的电视连接器和复制保护的硬件功能的微型端口驱动程序。 微型端口驱动程序确定要通过检查来执行的操作**dwCommand**字段[ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters) VRP 的中传递的结构**InputBuffer**。 系统将不允许微型端口驱动程序不处理此 VRP 如果 Rovi (以前称为 Macrovision) 播放受保护的 Dvd。
+具有电视连接器的适配器的视频微型端口驱动程序[**必须使用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet) [**IOCTL\_视频\_处理\_VIDEOPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) i/o 控制代码。 此 IOCTL 将发送到微型端口驱动程序，以查询 TV 连接器的功能和当前设置，并复制保护硬件或设置电视连接器和复制保护硬件的功能。 微型端口驱动程序通过检查[**VIDEOPARAMETERS**](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)结构的**dwCommand**字段来确定要执行的操作，该字段传递在 VRP 的**InputBuffer**中。 如果微型端口驱动程序未处理此 VRP，则系统将不允许播放 Rovi （以前称为 Macrovision）受保护的 Dvd。
 
-如果**dwCommand**设置为副总裁\_命令\_GET，以及设备*不*支持电视输出，然后微型端口驱动程序不应返回任何\_中的错误**状态**隶属 VRP **StatusBlock**。 它还应设置**信息**VRP 成员**StatusBlock**大小，以字节为单位，VIDEOPARAMETERS 的结构。 应设置**dwFlags**为零，设置**dwTVStandard**到副总裁\_电视\_标准\_赢取\_VGA，并设置**dwAvailableTVStandard**到副总裁\_电视\_标准\_赢取\_VGA。
+如果**dwCommand**设置为副总裁\_命令\_GET，并且设备*不*支持电视输出，则微型端口驱动程序应在 VRP 的**STATUSBLOCK**的**Status**成员中不返回\_错误。 它还应将 VRP 的**StatusBlock**的**信息**成员设置为 VIDEOPARAMETERS 结构的大小（以字节为单位）。 它应将 " **dwFlags** " 设置为零，将 " **dwTVStandard** " 设置为 "副总裁"\_TV\_STANDARD\_WIN\_VGA，并将**dwAvailableTVStandard**设置为 "副总裁\_\_\_STANDARD\_
 
-如果**dwCommand**设置为副总裁\_命令\_GET，以及设备*does*支持电视扩展微型端口驱动程序应指示这一点 VIDEOPARAMETERS 结构中设置相应的标志**dwFlags**成员并通过将值分配给其他设置标志与对应的结构成员。
+如果**dwCommand**设置为 VP\_命令\_GET，*并且设备支持*TV 输出，则微型端口驱动程序应通过在**dwFlags**成员中设置相应的标志并通过为与集标志相对应的其他结构成员赋值。
 
-以下各节提供了电视连接器的设备的微型端口驱动程序的实现详细信息：
+以下部分提供了具有 TV 连接器的设备的微型端口驱动程序的实现细节：
 
 [查询电视连接器和复制保护硬件](querying-tv-connector-and-copy-protection-hardware.md)
 

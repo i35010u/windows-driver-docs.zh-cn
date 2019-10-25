@@ -3,24 +3,24 @@ title: 支持暂用多监视器管理器
 description: 支持暂用多监视器管理器
 ms.assetid: 5091fe00-76d9-4585-9ef0-4b5b7ab8bc06
 keywords:
-- 暂时多监视器 Manager WDK 显示
+- 暂时性的多监视器管理器 WDK 显示
 - TMM WDK 显示
-- 克隆的视图 WDK 显示
-- WDK 的移动设备、 TMM 支持
-- 监视器配置 WDK 显示区域，TMM 支持
+- 克隆视图 WDK 显示
+- 移动设备 WDK，TMM 支持
+- 监视配置 WDK 显示，TMM 支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35d3ce0e1463f832fa04b3a5dbd9d24d83d69202
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6d2f0f92b0b6481c66c717d8e4da6956e91dbcc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361216"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825578"
 ---
 # <a name="supporting-transient-multi-monitor-manager"></a>支持暂用多监视器管理器
 
 
-暂时多监视器管理器是一种 Windows Vista 功能，简化了移动计算机上显示配置的设置。 TMM 可以放置到克隆视图移动计算机显示 （例如，便携式计算机显示器） 时检测到新的监视器。 TMM 桌面计算机上禁用。 对于 Windows Vista 中，应用程序可以调用输入克隆视图没有 GDI 函数。 硬件供应商必须继续使用他们自己专有的方法输入的台式计算机上克隆视图。 但是，硬件供应商应实现并提供[IViewHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)将允许 TMM 移动计算机上克隆视图模式设置的 COM 接口对象。
+暂时性的多监视器管理器是一项 Windows Vista 功能，可简化在移动计算机上的显示配置的设置。 检测到新的监视器时，TMM 可以将移动计算机的显示（例如，便携式计算机显示）放置在克隆视图中。 在台式计算机上禁用 TMM。 对于 Windows Vista，不存在应用程序可以调用来输入克隆视图的 GDI 函数。 硬件供应商必须继续使用自己的专有方法在台式计算机上输入克隆视图。 但是，硬件供应商应该实现并提供[IViewHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) COM 接口对象，以允许 TMM 在移动计算机上设置克隆-查看模式。
 
 本部分包括：
 
@@ -32,7 +32,7 @@ ms.locfileid: "67361216"
 
 [处理监视器配置](handling-monitor-configurations.md)
 
-[确定是否平台为移动或桌面](determining-whether-a-platform-is-mobile-or-desktop.md)
+[确定平台是移动版还是桌面版](determining-whether-a-platform-is-mobile-or-desktop.md)
 
  
 

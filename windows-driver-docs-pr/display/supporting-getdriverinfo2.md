@@ -7,12 +7,12 @@ keywords:
 - GetDriverInfo2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee6ac0c875f2f2b3dff1084cbe137c85a781d240
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7aa383699431b8a625772de198ffef7d94325ee1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386443"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825623"
 ---
 # <a name="supporting-getdriverinfo2"></a>支持 GetDriverInfo2
 
@@ -20,23 +20,23 @@ ms.locfileid: "67386443"
 ## <span id="ddk_supporting_getdriverinfo2_gg"></span><span id="DDK_SUPPORTING_GETDRIVERINFO2_GG"></span>
 
 
-DirectX 8.0 DDI 引入了一种新机制用于查询的信息的驱动程序。 此机制扩展了现有[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)驱动程序的入口点以查询有关其他信息。 目前，此机制仅用于实现查询 DX8 样式 D3D cap。
+DirectX 8.0 DDI 引入了一种新的机制，用于查询驱动程序的信息。 此机制扩展现有的[**DdGetDriverInfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)入口点，以查询来自驱动程序的其他信息。 目前，此机制仅用于查询 DX8 样式 D3D cap。
 
-**请注意**  读取以下可能会问为什么**GetDriverInfo2**机制是有必要。 这看起来更可取的方法只需定义一个新**GetDriverInfo**驱动程序将处理通过返回 D3DCAP8 结构的 GUID。 **GetDriverInfo2**（在以下各段中引入) 是一种机制来最大程度减少到了 Windows 操作系统，系统以启用 DirectX 8.0 级别功能，从而可以重新分发 DirectX 8.0 运行时实际所需的更改。
+**请   注意**，在阅读下面的 GetDriverInfo2 时，可能会问到为什么需要机制。 只需定义一个新的**GetDriverInfo** GUID，驱动程序就会通过返回 D3DCAP8 结构来处理该 GUID。 以下各段中引入的**GetDriverInfo2**是一种机制，用于最大程度地减少对 Windows 操作系统所需的更改，以启用 directx 8.0 级别功能，从而使 directx 8.0 运行时切实可行。
 
  
 
-此扩展**GetDriverInfo**采用的形式*DdGetDriverInfo*调用使用 GUID\_GetDriverInfo2。 当*DdGetDriverInfo*驱动程序接收到使用该 GUID 的调用，它必须检查传入的数据结构**lpvData**字段[ **DD\_GETDRIVERINFODATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)数据结构，以查看为其请求哪些信息。 如下所述**lpvData**可以是指向[ **DD\_GETDRIVERINFO2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getdriverinfo2data)或[ **DD\_STEREOMODE** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_stereomode)结构。
+此扩展到**GetDriverInfo**采用 GUID\_GetDriverInfo2 形式的*DdGetDriverInfo*调用。 当驱动程序收到具有该 GUID 的*DdGetDriverInfo*调用时，它必须检查在[**DD\_GETDRIVERINFODATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)数据结构的**lpvData**字段中传递的数据结构，以查看所请求的信息。 如下所述， **lpvData**可以指向[**dd\_GETDRIVERINFO2DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getdriverinfo2data)或[**dd\_STEREOMODE**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_stereomode)结构。
 
-GUID\_GetDriverInfo2 是相同 GUID 的 GUID 值\_DDStereoMode。 如果您的驱动程序不会处理 GUID\_DDStereoMode，这不是一个问题。 但是，如果您的 DirectX 8.0 驱动程序处理 GUID\_DDStereoMode，请注意，当调用*DdGetDriverInfo*具有 GUID\_GetDriverInfo2 (GUID\_DDStereoMode) 进行时，运行时设置**dwHeight**字段的 DD\_STEREOMODE 结构为特殊值 D3DGDI2\_MAGIC。 此字段对应于**dwMagic** DD 字段\_GETDRIVERINFO2DATA 结构。 因此，通过强制转换**lpvData**指向 DD 指针\_STEREOMODE 结构或指向 DD\_GETDRIVERINFO2DATA 结构和检查相应的值字段 (**dwHeight**或**dwMagic**) 的值 D3DGDI2\_的神奇功能，你可以区分调用，以确定立体声模式功能或 Direct3D 8.0 功能的请求。
+GUID\_GetDriverInfo2 的 guid 值与 GUID\_DDStereoMode 相同。 如果驱动程序未处理 GUID\_DDStereoMode，则不会出现问题。 但是，如果 DirectX 8.0 驱动程序处理 GUID\_DDStereoMode，请注意，当使用 GUID\_GetDriverInfo2 （GUID\_DDStereoMode）调用*DdGetDriverInfo*时，运行时将设置 DD 的**dwHeight**字段\_STEREOMODE 结构到特殊值 D3DGDI2\_幻数。 此字段对应于 DD\_GETDRIVERINFO2DATA 结构的**dwMagic**字段。 因此，通过将**lpvData**指针转换为指向 DD\_STEREOMODE 结构的指针或指向 DD\_GETDRIVERINFO2DATA 结构的指针，并检查相应字段的值（**dwHeight**或**dwMagic**）对于 D3DGDI2\_幻数的值，可以区分调用来确定立体声模式功能或 Direct3D 8.0 功能的请求。
 
-该驱动程序已确定这是对的调用后**GetDriverInfo2**它然后必须确定运行时所请求的信息的类型。 此类型包含在**dwType** DD 字段\_GETDRIVERINFO2DATA 数据结构。
+一旦驱动程序确定这是对**GetDriverInfo2**的调用，就必须确定运行时请求的信息类型。 此类型包含在 DD\_GETDRIVERINFO2DATA 数据结构的**dwType**字段中。
 
-最后，该驱动程序将请求的数据复制到所提供的缓冲区。 务必要注意**lpvData** DD 字段\_GETDRIVERINFODATA 数据结构指向要将所请求的数据复制到缓冲区。 **lpvData**还指向 DD\_GETDRIVERINFO2DATA 结构。 这意味着该驱动程序返回的数据将覆盖 DD\_GETDRIVERINFO2DATA 结构 (，因此，DD\_GETDRIVERINFO2DATA 结构占用的缓冲区的第几个 dword 值)。
+最后，驱动程序将请求的数据复制到提供的缓冲区中。 需要注意的一点是，DD\_GETDRIVERINFODATA 的**lpvData**字段指向要将请求的数据复制到的缓冲区。 **lpvData**还指向 DD\_GETDRIVERINFO2DATA 结构。 这意味着，驱动程序返回的数据将覆盖 DD\_GETDRIVERINFO2DATA 结构（因此，DD\_GETDRIVERINFO2DATA 结构占据缓冲区的前几个 Dword）。
 
-若要使用调用**GetDriverInfo2**，和 DirectX 8.0 报表功能，它是所必需的驱动程序以设置新标志 DDHALINFO\_中的 GETDRIVERINFO2 **dwFlags**字段[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)驱动程序返回的结构。 如果未设置此标志，在运行时不会发送**GetDriverInfo2**对驱动程序和驱动程序的调用未被识别为 DirectX 8.0 级别驱动程序。
+若要通过**GetDriverInfo2**进行调用并报告 DirectX 8.0 功能，驱动程序必须将新的标志 DDHALINFO\_GetDriverInfo2 设置为所返回[**DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**dwFlags**字段由驱动程序使用。 如果未设置此标志，则运行时不会将**GetDriverInfo2**调用发送给驱动程序，并且不会将驱动程序识别为 DirectX 8.0 级别驱动程序。
 
-运行时使用**GetDriverInfo2**与类型 D3DGDI2\_类型\_DXVERSION 以通知应用程序正在使用的当前 DX 运行时版本的驱动程序。 在运行时提供一个指针指向[ **DD\_DXVERSION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_dxversion)结构**lpvData** DD 字段\_GETDRIVERINFODATA。
+运行时使用类型为 D3DGDI2 的**GetDriverInfo2**\_类型\_DXVERSION 通知应用程序正在使用的当前 DX 运行时版本的驱动程序。 运行时在 DD\_GETDRIVERINFODATA 的**lpvData**字段中提供了一个指向[**dd\_DXVERSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_dxversion)结构的指针。
 
  
 

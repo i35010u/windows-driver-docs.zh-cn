@@ -9,15 +9,15 @@ keywords:
 - 音频数据范围 WDK
 - KSDATARANGE 结构
 - WDM 音频数据范围 WDK
-- 数据范围 WDK 音频，有关音频数据范围
+- 数据范围 WDK 音频，关于音频数据范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60eb376ca10b72d32f4ba01ff14e53dd2d01f7c3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 32dfe3d7465975568c5dc7f94ca92696c986191c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355732"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831403"
 ---
 # <a name="audio-data-ranges"></a>音频数据范围
 
@@ -25,23 +25,23 @@ ms.locfileid: "67355732"
 ## <span id="audio_data_ranges"></span><span id="AUDIO_DATA_RANGES"></span>
 
 
-每个 pin KS 筛选器上的声明的数据进行格式设置支持。 Pin 工厂公开此数组形式的数据范围的信息。 与前面所述的格式说明符，不同数据范围描述一系列数据格式。 例如，批 pin 的数据范围指定样本大小、 频率和 pin 支持的通道的范围。
+KS 筛选器上的每个 pin 都声明它支持的数据格式。 Pin 工厂将此信息作为数据范围的数组公开。 不同于前面所述的格式说明符，数据范围介绍了一系列数据格式。 例如，波形 pin 的数据范围指定 pin 支持的样本大小、频率和通道的范围。
 
-微型端口驱动程序实例化 pin，它将配置 pin 来处理它从 pin 的数据区域中选择的特定数据格式的流。 这项工作是通过微型端口驱动程序的数据交叉处理程序，它选择音频数据格式，以便可以将它们连接起来共有两个 pin。 有关详细信息，请参阅[交集数据处理程序](data-intersection-handlers.md)。
+当微型端口驱动程序实例化 pin 时，它会将 pin 配置为使用它从 pin 的数据范围选择的特定数据格式处理流。 此工作是通过微型端口驱动程序的数据交集处理程序来完成的，该处理程序选择两个 pin 共用的音频数据格式，以便可以进行连接。 有关详细信息，请参阅[数据交集处理程序](data-intersection-handlers.md)。
 
-有关使用属性请求来查询其数据范围和选择数据交集的音频 pin 信息，请参阅[Pin 数据范围和交集属性](pin-data-range-and-intersection-properties.md)。
+有关使用属性请求来查询音频 pin 的数据范围并选择数据交集的信息，请参阅[固定数据范围和交集属性](pin-data-range-and-intersection-properties.md)。
 
-若要指定批 pin，数据范围[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构后跟描述的一系列示例大小、 频率和 pin 支持的通道的信息。 此信息，包括 KSDATARANGE 结构本身，封装在[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构。
+为了指定波形 pin 的数据范围， [**KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构后跟信息，该信息描述了 pin 支持的样本大小、频率和通道的范围。 此信息（包括 KSDATARANGE 结构本身）封装在[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)结构中。
 
-若要指定 MIDI 或 DirectMusic pin 的数据范围，KSDATARANGE 结构后跟其他信息，包括通道和可以在同一时间播放的说明的最大数目。 此信息，以及 KSDATARANGE 结构本身，封装在[ **KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music)结构。
+若要为 MIDI 或 DirectMusic pin 指定数据范围，KSDATARANGE 结构后跟附加信息，包括可同时播放的通道和最大数目。 此信息与 KSDATARANGE 结构本身一起封装在[**KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)结构中。
 
-本文档提供了几个示例的数据范围的使用 KSDATARANGE\_音频和 KSDATARANGE\_音乐结构：
+本文档介绍了几个使用 KSDATARANGE\_音频和 KSDATARANGE\_音乐结构的数据范围示例：
 
--   有关示例声明的批和 DirectSound 数据范围，请参阅[PCM Stream 数据范围](pcm-stream-data-range.md)并[DirectSound Stream 数据范围](directsound-stream-data-range.md)。
+-   有关 wave 和 DirectSound 数据范围的示例声明，请参阅[PCM 流数据范围](pcm-stream-data-range.md)和[DirectSound 流数据范围](directsound-stream-data-range.md)。
 
--   有关示例声明的 MIDI 和 DirectMusic 数据范围，请参阅[MIDI Stream 数据范围](midi-stream-data-range.md)并[DirectMusic Stream 数据范围](directmusic-stream-data-range.md)。
+-   有关 MIDI 和 DirectMusic 数据范围的示例声明，请参阅[Midi 流数据范围](midi-stream-data-range.md)和[DirectMusic 流数据范围](directmusic-stream-data-range.md)。
 
--   有关示例声明的数据范围，对于非 PCM 格式，请参阅[指定 ac-3 数据范围](specifying-ac-3-data-ranges.md)并[并且指定 WMA Pro 数据范围](specifying-wma-pro-data-ranges.md)。
+-   有关非 PCM 格式的数据范围的示例声明，请参阅[指定 AC 3 数据范围](specifying-ac-3-data-ranges.md)和[指定 WMA Pro 数据范围](specifying-wma-pro-data-ranges.md)。
 
  
 

@@ -1,122 +1,122 @@
 ---
 title: IRP_MN_REGINFO
-description: 支持 Microsoft Windows 98 和 Microsoft Windows 2000 的 WMI 的驱动程序必须处理此 IRP。
+description: 支持 Microsoft Windows 98 和 Microsoft Windows 2000 上的 WMI 的驱动程序必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: db93b64b-a2e4-429d-850e-921fb438467c
 keywords:
 - IRP_MN_REGINFO 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a50e6b4bb3555aa71ea2efd2476a93112cf28d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 79701eaf6adf655a6a7704111527bdc5c84bc0a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370821"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827974"
 ---
-# <a name="irpmnreginfo"></a>IRP\_MN\_REGINFO
+# <a name="irp_mn_reginfo"></a>IRP\_MN\_REGINFO
 
 
-支持 Microsoft Windows 98 和 Microsoft Windows 2000 的 WMI 的驱动程序必须处理此 IRP。 (也支持 Windows XP 的驱动程序还必须处理[ **IRP\_MN\_REGINFO\_EX** ](irp-mn-reginfo-ex.md) IRP。)驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
+支持 Microsoft Windows 98 和 Microsoft Windows 2000 上的 WMI 的驱动程序必须处理此 IRP。 （同时支持 Windows XP 的驱动程序还必须处理[**irp\_MN\_REGINFO\_EX**](irp-mn-reginfo-ex.md) irp。）驱动程序可以通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)或处理 IRP 本身来处理 wmi irp，如[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)中所述。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_系统\_控件**](irp-mj-system-control.md)时发送
+[**IRP\_MJ\_系统\_控件**](irp-mj-system-control.md)发送时间
 ---------
 
-在 Windows 98 和 Windows 2000 中，WMI 将发送查询或更新驱动程序的注册信息后，驱动程序已调用此 IRP [ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)。 Windows XP 及更高版本，WMI 将发送**IRP\_MN\_REGINFO\_EX**改为请求。
+在 Windows 98 和 Windows 2000 上，WMI 会发送此 IRP 来在驱动程序调用[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)之后查询或更新驱动程序的注册信息。 在 Windows XP 和更高版本中，WMI 会发送**IRP\_MN\_REGINFO\_EX**请求。
 
-WMI 将此 IRP 发送在 IRQL = 被动\_级别在系统线程的上下文中。
+WMI 在系统线程的上下文中以 IRQL = 被动\_级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.WMI.ProviderId**指向应该对请求进行响应的驱动程序的设备对象。 此指针位于 IRP 中的驱动程序的 I/O 堆栈位置。
+**Parameters。 ProviderId**指向应响应请求的驱动程序的设备对象。 此指针位于 IRP 中驱动程序的 i/o 堆栈位置。
 
-**Parameters.WMI.DataPath**设置为**WMIREGISTER**查询注册信息或**WMIUPDATE**进行更新。
+**数据路径**设置为**WMIREGISTER** ，以查询注册信息或**WMIUPDATE**进行更新。
 
-**Parameters.WMI.BufferSize**指示在非分页缓冲区的最大大小**Parameters.WMI.Buffer**。 大小必须大于或等于的总和 (**sizeof**(**WMIREGINFO**) + (*GuidCount* \* **sizeof**(**WMIREGGUID**))，其中*GuidCount*是数据块的数量和事件阻止注册的驱动程序，以及空间的静态实例名称，如果有的话。
+**Parameters。 BufferSize**指示非分页缓冲区的最大大小 **（以.** 大小必须大于或等于总计（**sizeof**（**WMIREGINFO**） + （*GuidCount* \* **Sizeof**（**WMIREGGUID**）），其中*GuidCount*是所注册的数据块和事件块的数量。驱动程序，外加静态实例名称的空间（如果有）。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-如果该驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，WMI 获取驱动程序的数据块的注册信息通过调用其[ *DpWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)例程。
+如果驱动程序通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 WMI irp，wmi 会通过调用其[*DpWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)例程获取驱动程序数据块的注册信息。
 
-否则，该驱动程序会填写[ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)结构，在**Parameters.WMI.Buffer** ，如下所示：
+否则，驱动程序将在[**WMIREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构中填充**参数. Buffer** ，如下所示：
 
--   集**BufferSize**以字节为单位的大小**WMIREGINFO**结构加上关联的注册数据。
+-   将**BufferSize**设置为**WMIREGINFO**结构的大小（以字节为单位）以及关联的注册数据。
 
--   如果该驱动程序处理 WMI 请求代表另一个驱动程序，设置**NextWmiRegInfo**以字节为单位的偏移量，从这开始**WMIREGINFO**到另一个开头**WMIREGINFO**结构，其中包含来自其他驱动程序的注册信息。
+-   如果驱动程序代表另一个驱动程序处理 WMI 请求，则将**NextWmiRegInfo**设置为以字节为单位的偏移量，此偏移量从此**WMIREGINFO**的开头到包含注册信息的另一**WMIREGINFO**结构的开头。从另一个驱动程序。
 
--   集**RegistryPath**到传递给驱动程序的注册表路径[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。
+-   将**RegistryPath**设置为传递给驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程的注册表路径。
 
--   如果**Parameters.WMI.Datapath**设置为**WMIREGISTER**，设置**MofResourceName**从开头的偏移量到**WMIREGINFO**为计数的 Unicode 字符串，包含其图像文件中的驱动程序的 MOF 资源的名称。
+-   如果将**数据路径**设置为**WMIREGISTER**，则将**MofResourceName**设置为与此**WMIREGINFO**的开头之间的偏移量，并将其设置为包含其映像文件中驱动程序的 MOF 资源名称的计数 Unicode 字符串。
 
--   集**GuidCount**对数据块事件块以注册或更新的数目。
+-   将**GuidCount**设置为要注册或更新的数据块和事件块的数量。
 
--   写入的数组[ **WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)结构，一个用于每个数据块或驱动程序，在公开的事件块**WmiRegGuid**。
+-   为驱动程序公开的每个数据块或事件块写入一个[**WMIREGGUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)结构数组，在**WMIREGGUID**。
 
-在每个驱动程序填充**WMIREGGUID**结构，如下所示：
+该驱动程序将填充每个**WMIREGGUID**结构，如下所示：
 
--   集**Guid**到用于标识块的 GUID。
+-   将**guid**设置为标识块的 guid。
 
--   集**标志**提供实例名称和其他特性块的有关信息。 例如，如果正在使用静态实例名称注册一个块，该驱动程序设置**标志**与相应 WMIREG\_标志\_实例\_*XXX*标志.
+-   设置**标志**以提供有关块的实例名称和其他特性的信息。 例如，如果使用静态实例名称注册块，驱动程序将使用适当的 WMIREG\_标志来设置**标志**，\_实例\_*XXX*标志。
 
-如果正在使用静态实例名称，该驱动程序注册了块：
+如果正在向静态实例名称注册块，则驱动程序：
 
--   集**InstanceCount**为的实例数。
+-   将**InstanceCount**设置为实例数。
 
--   将以下成员之一设置为静态实例命名数据块的字节偏移量：
-    -   如果驱动程序设置**标志**与 WMIREG\_标志\_实例\_列表中，设置**InstanceNameList**到一组静态实例名称字符串的偏移量。 WMI 实例在后续请求中通过指定索引到此列表中。
-    -   如果驱动程序设置**标志**与 WMIREG\_标志\_实例\_基本名称，它会设置**BaseNameOffset**为偏移量为基名称字符串。 WMI 使用此字符串来生成块的静态实例名称。
-    -   如果驱动程序设置**标志**与 WMIREG\_标志\_实例\_PDO，它会设置**Pdo**为指向 PDO 的偏移量传递给驱动程序的[*AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 WMI 使用 PDO 的设备实例路径来生成块的静态实例名称。
--   实例名称字符串、 基名称字符串或指针写入所指示的偏移量处的 PDO **InstanceNameList**， **BaseName**，或**Pdo**分别。
+-   将以下成员之一设置为块的静态实例名称数据的偏移量（以字节为单位）：
+    -   如果驱动程序使用 WMIREG\_标志设置**标志**\_实例\_列表，则它会将**InstanceNameList**设置为静态实例名称字符串列表的偏移量。 WMI 通过索引向此列表指定后续请求中的实例。
+    -   如果驱动程序使用 WMIREG\_标志设置**标志**\_实例\_BASENAME，则它会将**BaseNameOffset**设置为基名称字符串的偏移量。 WMI 使用此字符串生成块的静态实例名称。
+    -   如果驱动程序使用 WMIREG\_PDO\_\_标志设置**标志**，则会将**pdo**设置为指向传递给驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的 PDO 的指针偏移量。 WMI 使用 PDO 的设备实例路径为块生成静态实例名称。
+-   在**InstanceNameList**、 **BaseName**或**PDO**分别指示的偏移位置写入实例名称字符串、基名称字符串或指向 PDO 的指针。
 
-如果该驱动程序处理 WMI 注册代表另一个驱动程序 （如 miniclass 或微型端口驱动程序），它使用其他驱动程序的注册信息的另一个 WMIREGINFO 结构中填充，并将其在写入**NextWmiRegInfo**在以前的结构。
+如果驱动程序代表其他驱动程序（如 miniclass 或微型端口驱动程序）处理 WMI 注册，它将使用其他驱动程序的注册信息填充另一 WMIREGINFO 结构，并将其写入到前面构造.
 
-如果在缓冲区**Parameters.WMI.Buffer**太小，若要接收的所有数据，驱动程序所需的大小以字节为单位的形式写入到 ULONG **Parameters.WMI.Buffer**和 IRP 将失败并返回状态\_缓冲区\_过\_小。
+如果位于**参数. buffer**的缓冲区太小，无法接收所有数据，则驱动程序会将所需的大小以字节为单位写入到**参数. buffer** ，并使 IRP 失败，并返回\_缓冲区\_的状态（\_小）。
 
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-如果该驱动程序通过调用来处理 IRP [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，WMI 集**Irp-&gt;IoStatus.Status**并**Irp-&gt;IoStatus.Information** I/O 状态块中。
+如果驱动程序通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置**irp&gt;IoStatus**和**irp-&gt;IoStatus** 。
 
-否则，该驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态，如下所示：
+否则，驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS 或适当的错误状态，如下所示：
 
-状态\_缓冲区\_过\_小
+状态\_缓冲区\_太小\_
 
-如果成功，驱动程序设置**Irp-&gt;IoStatus.Information**写入的缓冲区的字节数**Parameters.WMI.Buffer**。
+成功时，驱动程序将**Irp&gt;IoStatus**设置为写入**缓冲区中的字节数。**
 
 <a name="operation"></a>操作
 ---------
 
-驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
+驱动程序可以通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)或处理 IRP 本身来处理 wmi irp，如[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)中所述。
 
-如果驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，例程调用的驱动程序[ *DpWmiQueryReginfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)例程。
+如果驱动程序通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 WMI irp，则该例程将调用驱动程序的[*DpWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)例程。
 
-如果驱动程序处理**IRP\_MN\_REGINFO**请求本身，才应该这样做**Parameters.WMI.ProviderId**指向同一个设备对象与指针，驱动程序传递给[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)。 否则，该驱动程序必须将请求转发到下一步低驱动程序。
+如果驱动程序处理**IRP\_MN\_REGINFO**请求本身，则仅当请求与驱动程序传递给[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)的**指针指向同一**设备对象时，才应执行此操作。 否则，驱动程序必须将请求转发到下一个较低版本的驱动程序。
 
-在处理请求之前, 驱动程序必须检查**Parameters.WMI.DataPath**以确定是否 WMI 查询注册信息 (**WMIREGISTER**) 或请求更新 (**WMIUPDATE**)。
+在处理请求之前，驱动程序必须检查**数据路径**以确定 WMI 是否正在查询注册信息（**WMIREGISTER**）或请求更新（**WMIUPDATE**）。
 
-WMI 驱动程序调用后，会发送与 WMIREGISTER 此 IRP **IoWMIRegistrationControl**与 WMIREG\_操作\_注册或 WMIREG\_操作\_重新注册。 在响应中，驱动程序应在缓冲区中填充**Parameters.WMI.Buffer**以下：
+驱动程序使用 WMIREG\_操作调用**IoWMIRegistrationControl**后，WMI 将使用 WMIREGISTER 发送此 IRP，\_REGISTER 或 WMIREG\_操作\_重新注册。 在响应中，驱动程序应使用以下内容在**参数.**
 
--   一个[ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)结构，指示驱动程序的注册表路径、 其 MOF 资源和块数，若要注册的名称。
+-   [**WMIREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构，指示驱动程序的注册表路径、其 MOF 资源的名称以及要注册的块的数量。
 
--   一个[**WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)注册每个块的结构。 如果块是要注册与静态实例名称，该驱动程序设置相应 WMIREG\_标志\_实例\_*XXX*标志中**WMIREGGUID**该块的结构。
+-   要注册的每个块都有一个[**WMIREGGUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)结构。 如果要向静态实例名称注册块，驱动程序会在该块的**WMIREGGUID**结构中设置相应的 WMIREG\_标志\_Instance\_*XXX*标志。
 
--   任何字符串 WMI 需要生成静态实例名称。
+-   WMI 需要生成静态实例名称的任何字符串。
 
-WMI 将发送具有此 IRP **WMIUPDATE**驱动程序调用后**IoWmiRegistrationControl**与 WMIREG\_操作\_更新\_GUID。 在响应中，驱动程序应在缓冲区中填充**Parameters.WMI.Buffer**与 WMIREGINFO 结构，如下所示：
+在驱动程序使用 WMIREG\_操作调用**IoWmiRegistrationControl**后，WMI 将使用**WMIUPDATE**发送此 IRP\_更新\_guid。 在响应中，驱动程序**应使用 WMIREGINFO 结构在缓冲区**中填写，如下所示：
 
--   若要删除一个块，驱动程序设置 WMIREG\_标志\_删除\_中的 GUID 其**WMIREGGUID**结构。
+-   若要删除块，驱动程序将\_标志设置为 WMIREG\_\_删除其**WMIREGGUID**结构中的 GUID。
 
--   若要添加或更新 （例如，若要更改其静态实例名称） 的块，驱动程序将清除 WMIREG\_标志\_删除\_GUID，并为块提供新的或更新的注册值。
+-   若要添加或更新块（例如，要更改其静态实例名称），驱动程序将清除 WMIREG\_标志，\_删除\_GUID 并为块提供新的或更新的注册值。
 
--   若要注册新的或现有块与静态实例名称，该驱动程序设置相应 WMIREG\_标志\_实例\_*XXX*并提供 WMI 生成静态实例所需的任何字符串名称。
+-   若要将新的或现有的块注册为静态实例名称，驱动程序会将相应的 WMIREG\_标记设置\_实例\_*XXX* ，并提供 WMI 生成静态实例名称所需的任何字符串。
 
-驱动程序可以使用相同**WMIREGINFO**结构以删除，请添加或更新为其最初用于注册的所有更改的标志和数据块来更新其块的块。 如果**WMIREGGUID**在此类**WMIREGINFO**结构完全匹配**WMIREGGUID**时它首次注册该块，则传递由驱动程序，WMI 将跳过处理参与更新块。
+驱动程序可以使用相同的**WMIREGINFO**结构来删除、添加或更新块，因为它最初用于注册其所有块，只更改要更新的块的标志和数据。 如果此类**WMIREGINFO**结构中的**WMIREGGUID**与驱动程序首次注册该块时所传递的**WMIREGGUID**完全匹配，则 WMI 将跳过更新块所涉及的处理过程。
 
-WMI 不会发送**IRP\_MN\_REGINFO**请求后一个驱动程序调用[ **IoWMIRegistrationControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)与 WMIREG\_操作\_取消注册，因为 WMI 不要求驱动程序从任何进一步的信息。 驱动程序通常注销响应其块[ **IRP\_MN\_删除\_设备**](irp-mn-remove-device.md)请求。
+当驱动程序调用[**IOWMIREGISTRATIONCONTROL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol) WMIREG\_操作\_取消注册后，wmi 不会发送**IRP\_MN\_REGINFO**请求，因为 wmi 不需要驱动程序提供进一步的信息。 驱动程序通常会注销其块响应[**IRP\_MN\_删除\_设备**](irp-mn-remove-device.md)请求。
 
 <a name="requirements"></a>要求
 ------------
@@ -128,26 +128,26 @@ WMI 不会发送**IRP\_MN\_REGINFO**请求后一个驱动程序调用[ **IoWMIRe
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[*DpWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)
+[*DpWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)
 
-[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
+[**WMILIB\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)
 
-[**WMIREGGUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)
+[**WMIREGGUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)
 
-[**WMIREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)
+[**WMIREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)
 
-[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
+[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)
 
 [**IRP\_MN\_REGINFO\_EX**](irp-mn-reginfo-ex.md)
 

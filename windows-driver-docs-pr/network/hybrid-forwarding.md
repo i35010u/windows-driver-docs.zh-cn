@@ -1,60 +1,60 @@
 ---
-title: HYPER-V 可扩展交换机混合转发
-description: 本部分介绍 HYPER-V 可扩展交换机使用的混合转发
+title: Hyper-v 可扩展交换机混合转发
+description: 本部分介绍如何使用 Hyper-v 可扩展交换机进行混合转发
 ms.assetid: 135CA734-1C92-4EEA-81DC-96A6A68ABBE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4a3b1d2f49e6d3ec2e4717ffe2085e74eb66b68
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 919163be546e9ead02ae862bc2d9f040bf579799
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383703"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823921"
 ---
 # <a name="hybrid-forwarding"></a>混合转发
 
 
-从 NDIS 6.40 （Windows Server 2012 R2 的 HYPER-V 可扩展交换机体系结构支持混合转发可扩展交换机的 HYPER-V 网络虚拟化 (HNV) 组件和转发扩展。
+从 NDIS 6.40 （Windows Server 2012 R2）开始，Hyper-v 可扩展交换机体系结构支持通过可扩展交换机的 Hyper-v 网络虚拟化（HNV）组件和转发扩展来进行混合转发。
 
-**请注意**  此页面假定您熟悉[使用通用路由封装 (NVGRE) 任务卸载的网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)和[的 HYPER-V 可扩展交换机概述](overview-of-the-hyper-v-extensible-switch.md).
+**请注意**  本页假设你熟悉[使用通用路由封装（NVGRE）任务卸载的网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)和[hyper-v 可扩展交换机概述](overview-of-the-hyper-v-extensible-switch.md)。
 
  
 
 ## <a name="nvgre-and-non-nvgre-packets"></a>NVGRE 和非 NVGRE 数据包
 
 
-在混合转发环境中，有两种类型的进入和离开的 HYPER-V 可扩展交换机的数据包：NVGRE 数据包和非 NVGRE 数据包：
+在混合转发环境中，有两种类型的数据包用于输入和保留 Hyper-v 可扩展交换机： NVGRE 数据包和非 NVGRE 数据包：
 
--   NVGRE 数据包将封装中指定的格式[NVGRE:使用通用路由封装网络虚拟化](http://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)Internet 草稿。 NVGRE 数据包由 HNV 组件的 HYPER-V 可扩展交换机的转发。
--   非 NVGRE 数据包是只是正常的网络数据包。 非 NVGRE 数据包都将由转发扩展转发 （或者，如果没有转发扩展，可扩展切换本身）。
+-   NVGRE 数据包具有在[NVGRE：使用通用路由封装的网络虚拟化](http://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)Internet 草稿中指定的封装格式。 NVGRE 数据包由 Hyper-v 可扩展交换机的 HNV 组件转发。
+-   非 NVGRE 数据包只是普通的网络数据包。 非 NVGRE 数据包由转发扩展转发（或者，如果没有转发扩展，则为可扩展交换机本身）。
 
-## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>通过交换机的 NVGRE 和非 NVGRE 数据包的流
+## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>通过交换机的 NVGRE 和非 NVGRE 数据包流
 
 
-在入口数据路径中，捕获和筛选扩展之后、 之前转发扩展，如果数据包是 NVGRE 数据包，可扩展交换机设置**NativeForwardingRequired**标记中[ **NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)数据包的结构。 此结构包含在**NetBufferListInfo**的数据包的成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
+在入口数据路径中，在捕获和筛选扩展之后但在转发扩展之前，如果数据包为 NVGRE 数据包，则可扩展交换机会在 NDIS\_交换机中设置**NativeForwardingRequired**标志[ **\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。 此结构包含在数据包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NetBufferListInfo**成员中。
 
-**请注意**   **NetBufferListInfo**的成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)通常称为数据包的"带外 (OOB) 数据。"
+**请注意**  [**NET\_缓冲器\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的**NetBufferListInfo**成员通常称为数据包的 "带外（OOB）数据"。
 
  
 
-如果**NativeForwardingRequired**数据包的 OOB 数据中设置标志，该数据包是 NVGRE 数据包。 如果未设置，该数据包是非 NVGRE 数据包。
+如果在数据包的 OOB 数据中设置了**NativeForwardingRequired**标志，则数据包为 NVGRE 数据包。 如果未设置，则数据包为非 NVGRE 数据包。
 
-扩展均应使用[ **NET\_缓冲区\_列表\_开关\_转发\_详细**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏，以检查值**NativeForwardingRequired**标志。
+扩展应使用[**NET\_BUFFER\_LIST\_开关\_转发\_详细信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏来检查**NativeForwardingRequired**标志的值。
 
-NVGRE 和非 NVGRE 数据包将被视为，如下所示：
+NVGRE 和非 NVGRE 数据包的处理方式如下：
 
--   HYPER-V 可扩展交换机的 HNV 组件将转发 （即，确定的目标表） 所有 NVGRE 数据包
--   HNV 组件执行 NVGRE 封装并根据需要解封。
--   转发扩展转发所有非 NVGRE 数据包。
--   转发扩展不能转发 NVGRE 数据包，但它可以执行与筛选的扩展，包括添加或删除目标端口或者甚至丢弃数据包相同的筛选操作。
--   如果没有转发扩展，HYPER-V 可扩展交换机将转发的所有数据包。
+-   Hyper-v 可扩展交换机的 HNV 组件转发（即，确定的目标表）所有 NVGRE 数据包
+-   HNV 组件根据需要执行 NVGRE 封装和和解。
+-   转发扩展插件转发所有非 NVGRE 数据包。
+-   转发扩展无法转发 NVGRE 数据包，但它可以执行与筛选扩展相同的筛选操作，包括添加或排除目标端口，甚至丢弃数据包。
+-   如果没有转发扩展，Hyper-v 可扩展交换机会转发所有数据包。
 
-有关详细信息，请参阅[数据包流通过可扩展的交换机数据路径](packet-flow-through-the-extensible-switch-data-path.md)。
+有关详细信息，请参阅[通过可扩展交换机数据路径的数据包流](packet-flow-through-the-extensible-switch-data-path.md)。
 
-## <a name="support-for-third-party-network-virtualization"></a>第三方网络虚拟化支持
+## <a name="support-for-third-party-network-virtualization"></a>支持第三方网络虚拟化
 
 
-一个**VirtualSubnetId**可以作为外部的虚拟子网的虚拟机网络适配器端口上配置。 添加了此功能，以启用转发扩展，以提供第三方网络虚拟化解决方案。 传入时，不会设置的 HYPER-V 可扩展交换机**NativeForwardingRequired**中的标志[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)这些数据包的结构。 然后，转发扩展可能修改数据包标头，根据需要，在转发期间。 要修改的数据包必须克隆和他们**ParentNetBufferList**指针设置为原始**NET\_缓冲区\_列表**。 (请参阅[克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。)
+可以在 VM 网络适配器端口上将**VirtualSubnetId**配置为外部虚拟子网。 此功能已添加到启用转发扩展以提供第三方网络虚拟化解决方案。 在入口中，Hyper-v 可扩展交换机不会将[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中的**NativeForwardingRequired**标志设置为这些数据包\_列表结构。 转发扩展之后，可以根据需要修改数据包标头。 必须克隆正在修改的数据包，并将其**ParentNetBufferList**指针设置为原始**网络\_缓冲区\_列表**。 （请参阅[克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。）
 
 ## <a name="related-topics"></a>相关主题
 
@@ -67,9 +67,9 @@ NVGRE 和非 NVGRE 数据包将被视为，如下所示：
 
 [通过可扩展交换机数据路径的数据包流](packet-flow-through-the-extensible-switch-data-path.md)
 
-[**NET\_缓冲区\_列表\_交换机\_转发\_详细信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)
+[**NET\_BUFFER\_列表\_切换\_转发\_详细信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)
 
-[**NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)
+[**NDIS\_交换机\_转发\_详细信息\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)
 
  
 

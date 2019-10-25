@@ -3,23 +3,23 @@ title: 创建安全的设备安装
 description: 创建安全的设备安装
 ms.assetid: e92488c4-1383-4493-b229-61c646546c82
 keywords:
-- 设备安装程序 WDK 设备安装安全性
+- 设备设置 WDK 设备安装，安全性
 - 设备安装 WDK，安全性
-- 安装 WDK，安全设备
-- security WDK 设备安装
-- 安全描述符 WDK 设备安装
+- 安装设备 WDK，安全性
+- 安全 WDK 设备安装
+- 安全描述符中的 WDK 设备安装
 - INF 文件 WDK 设备安装
 - 测试安全设置 WDK 设备安装
 - 注册表 WDK 设备安装
 - WMI 安全 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f463a8a57e5a83b32fa5aa9908ec82c9ab7488ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad84714187d0b0dce14f2c23f8b1243e317f10c2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356292"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828915"
 ---
 # <a name="creating-secure-device-installations"></a>创建安全的设备安装
 
@@ -27,73 +27,73 @@ ms.locfileid: "67356292"
 
 
 
-当您创建[驱动程序包](driver-packages.md)，您必须确保以安全的方式将始终执行你的设备的安装。 安全设备安装是指执行以下任务：
+当你创建[驱动程序包](driver-packages.md)时，你必须确保始终以安全的方式执行你的设备安装。 安全设备安装是指执行以下操作的设备：
 
--   限制对设备和其设备接口类的访问
+-   限制对设备及其设备接口类的访问
 
--   设备创建的驱动程序服务的限制访问
+-   限制对为设备创建的驱动程序服务的访问权限
 
--   驱动程序文件可防止修改或删除操作
+-   保护驱动程序文件不被修改或删除
 
 -   限制对设备的注册表项的访问
 
 -   限制对设备的 WMI 类的访问
 
--   正确使用安装程序 Api 函数
+-   正确使用 Setupapi.log 函数
 
-控制设备安装的安全性*安全描述符*。 主要的介质的指定安全描述符是 INF 文件。 系统提供了默认的安全描述符，并在大多数情况下，您就不必重写这些描述符。
+设备安装安全性由*安全描述符*控制。 用于指定安全描述符的主要媒体是 INF 文件。 系统提供默认安全描述符，在大多数情况下，您不必重写这些描述符。
 
 ### <a name="security-settings-for-devices-and-interfaces"></a>设备和接口的安全设置
 
-系统提供的所有默认安全描述符[系统提供的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。 通常情况下，这些描述符允许系统管理员的完全访问权限和读取/写入/执行访问权限的用户。 (控制对设备的访问也控制对设备的访问的安全描述符[设备接口类](device-interface-classes.md)(如果有）。)
+系统为所有[系统提供的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))提供默认安全描述符。 通常，这些描述符允许对系统管理员具有完全访问权限，并为用户提供读取/写入/执行访问权限。 （控制对设备的访问权限的安全描述符还控制对设备的[设备接口类](device-interface-classes.md)的访问（如果有）。
 
-用于 WDM 驱动程序的 INF 文件可以指定安全设置，每个类或每个设备，系统的默认设置会重写的。 供应商创建一个新的设备安装程序类应指定类的安全描述符。 通常情况下，指定特定于设备的安全描述符不是必需的。 它可能很有用，如果不同类型的属于同一类的设备具有明显不同类型的用户提供特定于设备的安全描述符。
+WDM 驱动程序的 INF 文件可以指定每个类或每个设备的安全设置，这些设置会覆盖系统的默认设置。 创建新设备安装程序类的供应商应为类指定安全描述符。 通常，指定设备特定的安全描述符不是必需的。 如果属于同一类的不同类型设备具有明显不同类型的用户，则提供设备特定的安全描述符可能会很有用。
 
-若要指定属于 WDM 设备安装程序类的所有设备的安全描述符，请使用[ **INF AddReg 指令**](inf-addreg-directive.md)内[ **INF ClassInstall32 部分**](inf-classinstall32-section.md)的类安装程序的 INF 文件。 **AddReg**指令必须指向*添加注册表部分*设置的值**DeviceType**并**安全**注册表项. 这些注册表值指定指定的设备类型的所有设备的安全描述符。
+若要为属于 WDM 设备安装程序类的所有设备指定安全描述符，请在类安装程序的 INF 文件的[**Inf ClassInstall32 部分**](inf-classinstall32-section.md)中使用[**inf AddReg 指令**](inf-addreg-directive.md)。 **AddReg**指令必须指向为**DeviceType**和**Security**注册表项设置值的 "*添加注册表" 部分*。 这些注册表值为指定设备类型的所有设备指定安全描述符。
 
-若要指定属于 WDM 设备安装程序类的单个设备的安全描述符，请使用[ **INF AddReg 指令**](inf-addreg-directive.md)内[ **INF DDInstall.HW 部分**](inf-ddinstall-hw-section.md)的设备的 INF 文件。 **AddReg**指令必须指向*添加注册表部分*设置的值**DeviceType**并**安全**注册表项. 这些注册表值指定匹配的所有设备的安全描述符[硬件 ID](hardware-ids.md)或[兼容 Id](compatible-ids.md)指定由关联[ **INF 模型部分**](inf-models-section.md).
+若要为属于 WDM 设备安装程序类的单个设备指定安全描述符，请在设备 INF 文件的[**Inf DDInstall 部分**](inf-ddinstall-hw-section.md)中使用[**inf AddReg 指令**](inf-addreg-directive.md)。 **AddReg**指令必须指向为**DeviceType**和**Security**注册表项设置值的 "*添加注册表" 部分*。 这些注册表值指定与相关[**INF 模型部分**](inf-models-section.md)指定的[硬件 ID](hardware-ids.md)或[兼容 id](compatible-ids.md)匹配的所有设备的安全描述符。
 
-默认情况下，系统将应用的设备设置为打开表示设备的设备对象的请求的安全描述符 (例如，若要打开其 NT 设备名称是该设备的请求 *\\设备\\DeviceName*)。
+默认情况下，系统会将设备的安全描述符集应用到请求，以打开代表该设备的设备对象（例如，打开其 NT 设备名 *\\设备\\DeviceName*）的设备对象的请求。
 
-但是，系统不会不默认情况下应用设置的设备对打开的设备，命名空间中的某个对象的请求的设备命名空间，包括其名称采用以下形式的所有对象的安全描述符 *\\设备\\DeviceName\\ObjectName*。 若要确保相同的安全设置应用以打开设备的命名空间中的对象的请求，设置设备的 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全的设备访问的详细信息，请参阅[控制设备 Namespace 访问 （Windows 驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅[指定设备特征 （Windows 驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)。
+但是，系统不会默认情况下将设备的安全描述符集应用于请求以打开设备命名空间中的对象，其中设备命名空间包括名称格式 *\\设备\\DeviceName 的所有对象\\ObjectName*。 若要确保对设备的命名空间中的对象的打开请求应用相同的安全设置，请为设备设置 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全设备访问的详细信息，请参阅[控制设备命名空间访问（Windows 驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅[指定设备特征（Windows 驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)。
 
-PnP 管理器在后它会调用驱动程序的设备对象上设置安全值[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 通过调用创建一个物理设备对象 (PDO) 时，某些 WDM 驱动程序可以指定特定于设备的安全描述符[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。 有关详细信息，请参阅[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
+PnP 管理器在调用驱动程序的[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程后设置设备对象上的安全值。 某些 WDM 驱动程序可以在通过调用[**IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)创建物理设备对象（PDO）时指定设备特定的安全描述符。 有关详细信息，请参阅[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
 
 ### <a name="security-settings-for-driver-files"></a>驱动程序文件的安全设置
 
-通过使用复制文件时[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)，则可以指定*文件列表部分*。**安全**部分。 本部分中指定的复制的所有文件的安全描述符**CopyFiles**指令。 但是，供应商无需指定驱动程序文件的安全描述符如果安装的目标是一个系统的子目录 *%systemroot%* 。 (有关这些子目录的详细信息，请参阅[使用 Dirids](using-dirids.md)。)系统提供了默认安全描述符的这些子目录，并默认描述符不应被替代。
+使用[**INF CopyFiles 指令**](inf-copyfiles-directive.md)复制文件时，可以指定*文件列表部分*。**安全性**部分。 此部分指定**CopyFiles**指令复制的所有文件的安全描述符。 但是，如果安装目标是 *% SystemRoot%* 的系统子目录之一，则供应商永远无需为驱动程序文件指定安全描述符。 （有关这些子目录的详细信息，请参阅[使用 Dirids](using-dirids.md)。）系统为这些子目录提供默认的安全描述符，不应重写默认说明符。
 
 ### <a name="security-settings-for-driver-services"></a>驱动程序服务的安全设置
 
-驱动程序 INF 文件内*服务安装部分*(请参阅[ **INF AddService 指令**](inf-addservice-directive.md))，可以包括**安全**条目。 此项指定执行诸如启动、 停止和配置与你的设备相关联的驱动程序服务所需的权限。 但是，系统对驱动程序服务提供的默认安全描述符和此默认描述符通常不需要重写。
+在驱动程序 INF 文件的*服务-安装部分*中（请参阅[**INF AddService 指令**](inf-addservice-directive.md)），可以包括**安全**条目。 此条目指定执行此类操作所需的权限，这些操作包括启动、停止和配置与设备关联的驱动程序服务。 但是，系统为驱动程序服务提供了一个默认的安全描述符，并且通常不需要重写此默认说明符。
 
 ### <a name="security-settings-for-device-and-driver-registry-entries"></a>设备和驱动程序注册表项的安全设置
 
-通过使用在 INF 文件中指定的注册表项时[ **INF AddReg 指令**](inf-addreg-directive.md)，可以包括*添加注册表部分*。**安全**部分，了解每个*添加注册表部分*。 *添加注册表部分*。**安全**节指定对创建创建的注册表项的访问权限由关联*添加注册表部分*部分。 系统提供的所有注册表项下创建的默认安全描述符**HKR**相对的根。 因此，无需创建相对根目录下的注册表项时指定的安全描述符。
+使用[**Inf AddReg 指令**](inf-addreg-directive.md)在 INF 文件中指定注册表项时，可以包含 "*添加注册表" 部分*。每个*添加注册表部分*的**安全性**部分。 "*添加注册表" 部分*。**安全**部分指定由关联的 "*添加注册表*" 部分创建的注册表项的访问权限。 系统为在**HKR**相对根下创建的所有注册表项提供默认安全描述符。 因此，在相对根下创建注册表项时，无需指定安全描述符。
 
 ### <a name="security-settings-for-wmi-classes"></a>WMI 类的安全设置
 
-系统将默认安全描述符分配给标识 WMI 类的 Guid。 对于 Windows XP 和早期操作系统版本，WMI Guid 的默认安全描述符允许完全访问权限的所有用户。 从 Windows Server 2003 开始，默认安全描述符允许仅对管理员的访问。
+系统会将默认安全描述符分配给标识 WMI 类的 Guid。 对于 Windows XP 和早期版本的操作系统版本，WMI Guid 的默认安全描述符允许所有用户完全访问。 从 Windows Server 2003 开始，默认的安全描述符仅允许管理员访问。
 
-如果您的驱动程序定义的 WMI 类，并且您不希望使用这些类系统的默认安全描述符，则可以通过使用提供安全描述符[ **INF DDInstall.WMI 部分**](inf-ddinstall-wmi-section.md)在设备的 INF 文件。
+如果你的驱动程序定义 WMI 类，并且你不希望将系统的默认安全描述符用于这些类，则可以通过使用设备 INF 文件中的[**Inf DDInstall 部分**](inf-ddinstall-wmi-section.md)来提供安全描述符。
 
-### <a name="using-setupapi-functions-correctly"></a>正确使用安装程序 Api 函数
+### <a name="using-setupapi-functions-correctly"></a>正确使用 Setupapi.log 函数
 
-如果你[驱动程序包](driver-packages.md)包括安装程序、 共同安装程序或调用安装程序 Api 函数的其他安装应用程序必须遵循[使用 SetupAPI 指南](guidelines-for-using-setupapi.md)。
+如果你的[驱动程序包](driver-packages.md)包括安装程序、共同安装程序或调用 setupapi.log 函数的其他安装应用程序，则必须遵循[使用 setupapi.log 的指导原则](guidelines-for-using-setupapi.md)。
 
 ### <a href="" id="testing-installation-security-settings-"></a>测试安装安全设置
 
-使用[SetupAPI 日志记录](setupapi-logging--windows-server-2003--windows-xp--and-windows-2000-.md)以验证该安全设置与安装你的设备关联的正确指定。 日志记录级别设置为 verbose (0x0000FFFF)，然后尝试不同安装方案。
+使用[setupapi.log 日志记录](setupapi-logging--windows-server-2003--windows-xp--and-windows-2000-.md)来验证是否已正确指定与安装设备关联的安全设置。 将日志记录级别设置为 "详细" （0x0000FFFF），然后尝试各种安装方案。
 
-这种情况下应包括初始安装和重新安装，从用户帐户和系统管理员帐户。 请尝试之前安装软件，将在你的设备，反之亦然。
+此类方案应同时包括用户帐户和系统管理员帐户中的初始安装和 reinstallations。 在安装软件之前，请尝试插入设备，反之亦然。
 
-如果安装成功，请查看日志以确认未发生错误。 如果应用安装失败，请查看日志以确定失败的原因。
+如果安装成功，请查看日志以确认未发生错误。 如果安装失败，请查看日志以确定失败的原因。
 
-此外，安装完成后可以执行以下操作：
+此外，在安装完成后，可以执行以下操作：
 
--   使用注册表编辑器中查看分配到注册表项的安全设置。
+-   使用注册表编辑器查看分配给注册表项的安全设置。
 
--   使用**我的电脑**若要查看分配给文件的安全设置。
+-   使用**我的电脑**查看分配给文件的安全设置。
 
  
 

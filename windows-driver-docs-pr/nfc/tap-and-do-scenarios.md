@@ -5,45 +5,45 @@ ms.assetid: EBBDBC58-236A-4020-92C9-69406362097F
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe437c10ca3edec64db575bb13cf739cecd33cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e7ab1d3397b2b11494a795eb3649bcc34bd71afe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386820"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827339"
 ---
 # <a name="tap-and-do-scenarios"></a>点击和执行方案
 
 
-有两种用户方案的支持区域*点击，然后执行*在 Windows 中。
+在 Windows 中 *，点击和操作*都支持两个用户方案区。
 
-### <a name="peripheral-wireless-device-setup"></a>外围无线设备安装程序
+### <a name="peripheral-wireless-device-setup"></a>外设无线设备设置
 
-用户可以使用 Windows 外围设备之前，必须以逻辑方式连接，对，并安装在计算机上的设备。 使用电缆或无线网络，它们可以执行此操作。
+在用户可以将外围设备用于 Windows 之前，必须在计算机上以逻辑方式连接、配对和设置设备。 它们可以通过电缆或无线网络来实现此目的。
 
-尽管使用电缆是直观和有效，这通常提供糟糕的用户体验因为人通常不携带电缆与他们保持联系。 同时，配对使用 Windows 外围无线设备可以是需要设备发现和身份验证的多步骤任务。
+虽然使用电缆是直观而有效的，但这通常会导致用户体验不佳，因为用户通常不会使用电缆来保持连接。 同时，将外设无线设备与 Windows 配对可能需要执行设备发现和身份验证。
 
-通过点击和执行操作，用户只需点击外围无线设备连接到计算机。 该单个操作可用于触发无需任何其他步骤设备的自动无线设置。 这种体验的简单性消除了与设备安装程序相关联的常见用户问题。
+通过点击，用户只需将外围无线设备点击到计算机即可。 此单一操作可用于触发设备的自动无线设置，而无需执行任何其他步骤。 此体验的简单性消除了与设备设置相关的常见用户困难。
 
-### <a name="ad-hoc-interaction-in-the-real-world"></a>在现实世界中的即席交互
+### <a name="ad-hoc-interaction-in-the-real-world"></a>现实世界中的即席交互
 
-Windows 不提供用户通过其设备与其他用户或物理环境交互的常用方法。 用于发现立即附近，另一个用户并与她和她的作用进行交互的一位用户，这两个用户通常必须具有通过 Internet 的专有 rendezvous 机制的应用程序通过连接。 此方法通常需要通过应用程序或服务，每个用户将预先存在的关系，并通常还要求用户以支持 rendezvous 交换某种类型的与每个其他的标识符。
+Windows 不能为用户提供通过其设备与其他用户或物理环境交互的常用方法。 若要让一个用户直接发现附近的另一个用户，并与她和她的操作进行交互，这两个用户通常都必须通过 Internet 通过具有专有汇集机制的应用进行连接。 这种方法通常需要与应用或服务相关的每个用户都具有预先存在的关系，并且通常还要求用户彼此交换某些标识符，以便支持集合。
 
-与*点击，然后执行*，用户只需点击其计算机连接在一起创建的关系并将触发更多操作相应的用户正在执行的操作上下文。 这个简单的操作可以启动的计算机之间的复杂交互。 它可以用于交换简单信息，例如 URL。 它可以用于触发的一种备选无线传输上的更复杂信息共享。 一个示例是通过 Wi-fi exchange 图片或文档。 此外，它可由应用 exchange 特定于应用的信息，例如，标识和对触发器活动之间的计算机以及 Internet 上的服务上运行的应用所需的地址信息。
+通过*点击和执行*操作，用户只需将计算机组合在一起即可创建关系，并触发与用户正在执行的操作上下文相对应的其他操作。 这一简单的操作可以启动计算机之间的复杂交互。 它可用于交换简单信息，如 URL。 它可用于触发有关备用无线传输的更复杂信息的共享。 一个例子就是 exchange 图片或 Wi-fi 上的文档。 此外，应用程序还可以使用它来交换应用程序特定的信息，例如，在运行在这两台计算机上的应用程序和 Internet 上的服务之间触发活动所需的标识和地址信息。
 
-用户还可以使用此笔势与用户自己的环境内的其他设备进行通信。 例如，他的电话或进行相反转换到读取从他的计算机的海报或传递信息的一个标记。
+用户还可以使用此手势与自己的环境中的其他设备进行通信。 例如，在海报上读取标记，或将信息从计算机传递到手机，反之亦然。
 
-请参阅[点击，然后执行用例](tap-and-do-use-cases.md)的并说明了使用各种设备交互*点击，然后执行*手势。
+请参阅[点击和执行用例](tap-and-do-use-cases.md)，并使用*分流和 do*手势解释各种设备交互。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
- [NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+ [NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

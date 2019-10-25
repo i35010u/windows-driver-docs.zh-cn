@@ -1,9 +1,9 @@
 ---
 title: ndiskd.ndisrwlock
-description: Ndiskd.ndisrwlock 扩展显示 NDIS_RW_LOCK_EX 锁结构的信息。
+description: Ndiskd. ndisrwlock 扩展显示有关 NDIS_RW_LOCK_EX 锁结构的信息。
 ms.assetid: 853CBAFE-3899-4983-BFC7-933D3BC7ADA1
 keywords:
-- ndiskd.ndisrwlock Windows 调试
+- ndiskd ndisrwlock Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,36 +12,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 439c293357ae150db5c40810ee2a49fde318a78f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 303af191bdb062bdc89c906065723757df47d4fc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364253"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837582"
 ---
 # <a name="ndiskdndisrwlock"></a>!ndiskd.ndisrwlock
 
 
-**！ Ndiskd.ndisrwlock**扩展显示有关的信息[ **NDIS\_RW\_锁\_EX** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁定结构。
+**！ Ndiskd ndisrwlock**扩展显示有关[**NDIS\_RW\_锁\_EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁结构的信息。
 
 ```console
 !ndiskd.ndisrwlock [-handle <x>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 必需。 锁结构的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-使用 **！ ndiskd.ndisrwlock**扩展，如果创建自己的读写锁，并且想对其进行检查。 若要获取的读写锁的句柄，请使用*poi*命令来取消引用的驱动程序的锁的地址。 以下代码片段演示如何查看 TCIPIP 协议已在该示例时使用的锁。
+如果创建自己的 RW 锁并想要对其进行检查，请使用 **！ ndiskd。** 若要获取 RW 锁的句柄，请使用*poi*命令取消引用驱动程序的锁定地址。 以下代码片段演示了如何在示例中查看 TCIPIP 协议使用的锁定。
 
 ```console
 0: kd> !ndiskd.ndisrwlock poi(tcpip!gAleHashtableLock)
@@ -56,7 +56,7 @@ NDIS READ-WRITE LOCK
     Set a breakpoint on acquire/release
 ```
 
-若要发现使用此 RW 锁的驱动程序，请单击底部的读写锁的详细信息的"获取/释放上设置断点"链接。 设置断点后, 输入**g**命令，以使调试对象机器运行并命中断点。
+若要使用此 RW 锁观察驱动程序，请单击 RW 锁详细信息底部的 "获取/释放时设置断点" 链接。 设置断点后，输入**g**命令，让调试对象计算机运行并命中断点。
 
 ```console
 0: kd> ba r4 ffffe00bc3fc22f8
@@ -66,7 +66,7 @@ nt!KeTestSpinLock+0x3:
 fffff802`0d69eb53 4885c0          test    rax,rax
 ```
 
-现在可以重新运行相同 **！ ndiskd.ndisrwlock**命令以查看此 RW 锁具有只读访问权限的一个引用。
+现在，你可以重新运行同一 **！ ndiskd**命令，以查看此 RW 锁定是否有一个只读访问引用。
 
 ```console
 0: kd> !ndiskd.ndisrwlock poi(tcpip!gAleHashtableLock)
@@ -81,20 +81,20 @@ NDIS READ-WRITE LOCK
     Set a breakpoint on acquire/release
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
-[**NDIS\_RW\_LOCK\_EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))
+[**NDIS\_RW\_锁\_EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))
 
  
 

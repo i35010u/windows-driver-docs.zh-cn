@@ -3,18 +3,18 @@ title: 分页视频内存资源
 description: 分页视频内存资源
 ms.assetid: e9734db6-3ad0-4c64-a9c6-15ba956b2dce
 keywords:
-- DMA 缓冲区 WDK 显示分页视频内存资源
-- 分页显示 WDK 的视频内存资源
-- 分页 WDK 显示的视频内存资源
+- DMA 缓冲 WDK 显示，寻呼视频内存资源
+- 分页视频内存资源 WDK 显示
+- 视频内存资源分页 WDK 显示
 - 分页缓冲区 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aef9f641abacceea0526c8ec03a7ed5c7e950d00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d48be7e68def75aec05dd45884454bc871f2d0c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377358"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826063"
 ---
 # <a name="paging-video-memory-resources"></a>分页视频内存资源
 
@@ -22,11 +22,11 @@ ms.locfileid: "67377358"
 ## <span id="ddk_paging_video_memory_resources_gg"></span><span id="DDK_PAGING_VIDEO_MEMORY_RESOURCES_GG"></span>
 
 
-与 Microsoft 不同[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)，Windows Vista 显示器驱动程序模型允许更多视频内存资源来创建比可用，物理视频内存的总量这然后入和签出分页根据需要的视频内存。 换而言之，并非所有视频内存资源是在视频内存中同时。
+与 Microsoft [windows 2000 显示器](windows-2000-display-driver-model-design-guide.md)驱动程序模型不同，Windows Vista 显示器驱动程序模型允许创建更多的视频内存资源，而不是可用的物理视频内存总量，然后将其进入和移出视频内存。如. 换句话说，并不是所有的视频内存资源同时在视频内存中进行。
 
-GPU 可以在其管道中有多个 DMA 缓冲区。 这些活动的 DMA 缓冲区引用的视频内存资源必须在视频内存中。 其他空闲的视频内存资源可以出分页到系统内存。
+GPU 在其管道中可以有多个 DMA 缓冲区。 这些活动 DMA 缓冲区引用的视频内存资源必须位于视频内存中。 其他空闲视频内存资源可分页到系统内存。
 
-在 GPU 之前，计划程序可以调用显示微型端口驱动程序[ **DxgkDdiSubmitCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)函数提交 DMA 缓冲区到 GPU 计划程序必须确保使用的所有视频内存资源DMA 缓冲区实际上是在视频内存中。 如果某些资源不是在视频内存，它们必须从系统内存分页中。 GPU 计划程序必须在要在视频内存将从系统内存的必需的视频内存资源数据传输到视频内存中留出空间的视频内存管理器时调用。 如果视频内存需求较高，GPU 计划程序必须调用时的视频内存管理器将空闲的视频内存资源数据传输到系统内存，无法为所需的视频内存资源数据留出空间。 包含用于将数据传输视频和系统的内存之间的命令的特殊用途 DMA 缓冲区被称为分页缓冲区。 视频内存管理器会调用显示微型端口驱动程序[ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数来创建驱动程序将特定于硬件的数据传输命令写入到的分页缓冲区。
+在 GPU 计划程序可以调用显示微型端口驱动程序的[**DxgkDdiSubmitCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)函数以将 dma 缓冲区提交到 GPU 之前，计划程序必须确保 DMA 缓冲区使用的所有视频内存资源实际上位于视频内存中。 如果某些资源不在视频内存中，则必须将其从系统内存中分页。 GPU 计划程序必须在视频内存管理器中调用，以便在视频内存中查找空间，以将所需的视频内存资源数据从系统内存传输到视频内存。 当视频内存需求较高时，GPU 计划程序必须在视频内存管理器中调用，以将空闲视频内存资源数据传输到系统内存，从而为所需的视频内存资源数据腾出空间。 包含用于在视频和系统内存之间传输数据的命令的特殊目的 DMA 缓冲区称为分页缓冲区。 视频内存管理器调用显示微型端口驱动程序的[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数来创建分页缓冲区，驱动程序会将其写入特定于硬件的数据传输命令。
 
  
 

@@ -1,23 +1,23 @@
 ---
 title: OID_GEN_CO_SUPPORTED_GUIDS
-description: 本主题介绍 OID_GEN_CO_SUPPORTED_GUIDS 对象标识符 (OID)。
+description: 本主题介绍 OID_GEN_CO_SUPPORTED_GUIDS 对象标识符（OID）。
 ms.assetid: d82d6ecb-f70b-4fc2-97eb-331aafe1fe57
 keywords:
 - OID_GEN_CO_SUPPORTED_GUIDS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 813dfe7c1cec85160b7b8a4c2284247a2ee62d0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 06beebe83ccdb92a24ba5a004cdc90aee170f7ad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369139"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824390"
 ---
-# <a name="oidgencosupportedguids"></a>OID_GEN_CO_SUPPORTED_GUIDS
+# <a name="oid_gen_co_supported_guids"></a>OID_GEN_CO_SUPPORTED_GUIDS
 
-OID_GEN_CO_SUPPORTED_GUIDS OID 请求微型端口驱动程序，以返回类型 NDIS_GUID 的结构数组。 数组中的每个结构指定的映射的自定义 GUID （全局唯一标识符） 是一个自定义的 OID 或微型端口驱动程序将通过发送 NDIS_STATUS [NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)。
+OID_GEN_CO_SUPPORTED_GUIDS OID 请求微型端口驱动程序返回 NDIS_GUID 类型的结构的数组。 数组中的每个结构指定自定义 GUID （全局唯一标识符）到自定义 OID 的映射，或指定给微型端口驱动程序通过[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)发送的 NDIS_STATUS 的映射。
 
-NDIS_GUID 结构定义，如下所示：
+NDIS_GUID 结构的定义如下所示：
 
 ```c++
 typedef struct _NDIS_GUID {
@@ -31,52 +31,52 @@ typedef struct _NDIS_GUID {
 } NDIS_GUID, *PNDIS_GUID;
 ```
 
-此结构的成员包含下列信息：
+此结构的成员包含以下信息：
 
-**guid**  
-为微型端口驱动程序定义自定义 GUID。
+**Guid.empty**  
+为微型端口驱动程序定义的自定义 GUID。
 
-**oid**  
-向其自定义 OID **Guid**映射。
+**Oid**  
+**Guid**映射到的自定义 OID。
 
 **状态**  
-向其 NDIS_STATUS **Guid**映射。
+**Guid**映射到的 NDIS_STATUS。
 
 **大小**  
-设置 fNDIS_GUID_ARRAY 标志后，**大小**以字节为单位的微型端口驱动程序返回的数组中每个数据项中指定的大小。 如果设置了 fNDIS_GUID_ANSI_STRING 或 fNDIS_GUID_NDIS_STRING 标志，**大小**设置为-1。 否则为**大小**以字节为单位的 GUID 表示的数据项中指定的大小。
+设置 fNDIS_GUID_ARRAY 标志后，**大小**指定微型端口驱动程序返回的数组中每个数据项的大小（以字节为单位）。 如果设置了 fNDIS_GUID_ANSI_STRING 或 fNDIS_GUID_NDIS_STRING 标志，则**Size**设置为-1。 否则， **size**指定 GUID 表示的数据项的大小（以字节为单位）。
 
-**标志**  
-以下标志可以是或运算到一起以指示 GUID 映射到 OID 或 NDIS_STATUS 字符串，还可以指示提供的 guid 的数据类型： 
+**随意**  
+以下标志可以运算在一起，以指示 GUID 是映射到 OID 还是映射到 NDIS_STATUS 字符串，并指示为 GUID 提供的数据类型： 
 
 fNDIS_GUID_TO_OID  
-设置时，指示 NDIS_GUID 结构映射到一个 OID 为 GUID。
+如果设置，则指示 NDIS_GUID 结构将 GUID 映射到 OID。
 
 fNDIS_GUID_TO_STATUS  
-设置时，指示 NDIS_GUID 结构映射到 NDIS_STATUS 字符串 GUID。
+如果设置，则指示 NDIS_GUID 结构将 GUID 映射到 NDIS_STATUS 字符串。
 
 fNDIS_GUID_ANSI_STRING  
-设置时，指示以 null 结尾的 ANSI 字符串提供的 guid。
+如果设置，则指示为 GUID 提供了以 null 结尾的 ANSI 字符串。
 
 fNDIS_GUID_UNICODE_STRING  
-设置时，指示 Unicode 字符串，提供的 guid。
+如果设置，则表示为 GUID 提供了 Unicode 字符串。
 
 fNDIS_GUID_ARRAY  
-设置时，指示这些 guid 提供数据项的数组。 指定的大小指示数组中每个数据项的长度。
+如果设置，则指示为 GUID 提供数据项的数组。 指定的大小指示数组中每个数据项的长度。
 
 fNDIS_GUID_ALLOW_READ  
-设置时，指示允许所有用户来查询此 GUID。
+如果设置，则表示允许所有用户查询此 GUID。
 
 fNDIS_GUID_ALLOW_WRITE  
-设置时，指示将允许所有用户设置此 GUID。
+如果设置，则表示允许所有用户设置此 GUID。
 
 ## <a name="remarks"></a>备注
 
 > [!NOTE]
-> 默认情况下，仅具有管理员权限的用户可以访问由微型端口驱动程序提供的自定义 WMI Guid。 具有管理员权限的用户始终可以读取或写入一个自定义 GUID，如果微型端口驱动程序支持读取或写入该 GUID 的操作。 设置 fNDIS_GUID_ALLOW_READ 和 fNDIS_GUID_ALLOW_WRITE 标志，以允许所有用户访问自定义 GUID。
+> 默认情况下，只有具有管理员权限的用户才能访问微型端口驱动程序提供的自定义 WMI Guid。 如果微型端口驱动程序支持该 GUID 的读取或写入操作，则具有管理员权限的用户始终可以读取或写入自定义 GUID。 设置 fNDIS_GUID_ALLOW_READ 和 fNDIS_GUID_ALLOW_WRITE 标志，以允许所有用户访问自定义 GUID。
 
-请注意，所有自定义 Guid 注册的微型端口驱动程序必须设置 fNDIS_GUID_TO_OID 或 fNDIS_GUID_TO_STATUS （永远不会同时设置）。 所有其他标志可能会根据使用 OR 运算符组合。
+请注意，微型端口驱动程序注册的所有自定义 Guid 必须设置 fNDIS_GUID_TO_OID 或 fNDIS_GUID_TO_STATUS （绝不能设置两者）。 所有其他标志可以通过使用 OR 运算符（如果适用）组合在一起。
 
-在以下示例中，NDIS_GUID 结构将 GUID 映射到 OID_GEN_CO_RCV_PDUS_NO_BUFFER:
+在下面的示例中，NDIS_GUID 结构将 GUID 映射到 OID_GEN_CO_RCV_PDUS_NO_BUFFER：
 
 ```cpp 
 NDIS_GUID NdisGuid =  {{0x0a214809, 0xe35f, 0x11d0, 0x96, 0x92, 0x00,
@@ -86,16 +86,16 @@ NDIS_GUID NdisGuid =  {{0x0a214809, 0xe35f, 0x11d0, 0x96, 0x92, 0x00,
  4,
  fNDIS_GUID_TO_OID};
 ```
-GUID 是通过 Windows Management Instrumentation (WMI) 用于获取或设置信息的标识符。 NDIS 截获由 WMI 发送到 NDIS 驱动程序的 GUID，将 GUID 映射到 OID，并向驱动程序发送 OID。 驱动程序将返回到 NDIS，然后将数据返回到 WMI 数据项目。
+GUID 是 Windows Management Instrumentation （WMI）用于获取或设置信息的标识符。 NDIS 截获 WMI 发送到 NDIS 驱动程序的 GUID，将 GUID 映射到 OID，并将 OID 发送到该驱动程序。 驱动程序将数据项返回到 NDIS，然后将数据返回到 WMI。
 
-NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 当微型端口驱动程序报告了与 NIC 状态中的更改[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)，NDIS 转换为由到 NDIS 将发送到 WMI 的 GUID 的微型端口驱动程序 NDIS_STATUS。
+NDIS 还会将 NIC 状态的更改转换为 WMI 识别的 Guid。 当微型端口驱动程序报告 NIC 状态与[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)的更改时，ndis 会将微型端口驱动程序指示的 NDIS_STATUS 转换为 NDIS 发送到 WMI 的 GUID。
 
-如果有面向连接的微型端口驱动程序支持海关 Guid，它必须支持 OID_GEN_CO_SUPPORTED_GUIDS，返回到 NDIS 映射到自定义 Oid 或 NDIS_STATUS 字符串的自定义 Guid。 查询与 OID_GEN_CO_SUPPORTED_GUIDS 微型端口驱动程序后, NDIS 向 WMI 注册微型端口驱动程序的自定义 Guid。
+如果面向连接的微型端口驱动程序支持海关 Guid，则它必须支持 OID_GEN_CO_SUPPORTED_GUIDS，它返回到 NDIS，以将自定义 Guid 映射到自定义 Oid 或 NDIS_STATUS 字符串。 在通过 OID_GEN_CO_SUPPORTED_GUIDS 查询微型端口驱动程序之后，NDIS 会将微型端口驱动程序的自定义 Guid 注册到 WMI。
 
 ## <a name="requirements"></a>要求
 
 | | |
 | --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows Vista 及更高版本 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 

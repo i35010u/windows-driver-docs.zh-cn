@@ -3,19 +3,19 @@ title: 预提取偏移量
 description: 预提取偏移量
 ms.assetid: 92a0163f-29b1-4e15-88ab-67e1097d015e
 keywords:
-- 硬件加速 WDK DirectSound，预提取的偏移量
-- 预提取的偏移量 WDK 音频
-- 写入光标的偏移量 WDK 音频
-- 游标偏移量 WDK 音频播放
-- 偏移量 WDK 音频
+- 硬件加速 WDK DirectSound，预提取偏移量
+- 预提取偏移 WDK 音频
+- 写入光标偏移 WDK 音频
+- 播放光标偏移 WDK 音频
+- 偏移 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9271059269d2a1b476e16b4498eb23303fe8311
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d34d23a8348617dc93fdcfef6e8a39253eac6614
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362537"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830228"
 ---
 # <a name="prefetch-offsets"></a>预提取偏移量
 
@@ -23,27 +23,27 @@ ms.locfileid: "67362537"
 ## <span id="prefetch_offsets"></span><span id="PREFETCH_OFFSETS"></span>
 
 
-WavePci 微型端口驱动程序调用[ **IPreFetchOffset::SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)方法，以指定的预提取偏移量的硬件加速 DirectSound 输出流。 此偏移量是将写入光标从 play 光标音频设备的硬件缓冲区中分离出来的数据的字节数。 写入光标指定在其中 DirectSound 应用程序可以安全地编写的下一步的声音样本的缓冲区位置。 Play 游标指定当前正在播放的音频设备的声音样本的缓冲区位置。
+WavePci 微型端口驱动程序调用[**IPreFetchOffset：： SetPreFetchOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)方法，以指定硬件加速 DirectSound 输出流的预提取偏移量。 此偏移量是在音频设备硬件缓冲区中将写入游标与播放光标分隔的数据字节数。 写入游标指定 DirectSound 应用程序可在其中安全写入下一个声音示例的缓冲区位置。 播放光标指定音频设备当前正在播放的声音示例的缓冲区位置。
 
-DirectSound 查询 WavePci 端口驱动程序当前播放的位置，并通过发送写入光标[ **KSPROPERTY\_音频\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)属性请求。 此请求的响应，端口驱动程序将获取当前播放位置从微型端口驱动程序通过调用[ **IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)。 端口驱动程序如何确定写入位置取决于是否[ **SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)已调用。
+DirectSound 通过发送[**KSPROPERTY\_音频\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)属性请求，在 WavePci 端口驱动程序中查询播放和写入光标的当前位置。 为响应此请求，端口驱动程序通过调用[**IMiniportWavePciStream：： GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-getposition)从微型端口驱动程序获取当前播放位置。 端口驱动程序如何确定写入位置取决于是否调用了[**SetPreFetchOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset) 。
 
-默认情况下，端口驱动程序会以请求微型端口驱动程序的最后一个映射定位写入光标。 每次调用[ **IPortWavePciStream::GetMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping)，默认预提取偏移量的增长。 如果 WavePci 微型端口驱动程序获取了大量的映射，则默认偏移量可以变得很大。
+默认情况下，端口驱动程序将写入光标置于微型端口驱动程序请求的最后一个映射中。 每次调用[**IPortWavePciStream：： GetMapping**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-getmapping)时，默认的预提取偏移量会增大。 如果 WavePci 微型端口驱动程序获取大量映射，则默认偏移量可能会变得非常大。
 
-调用[ **SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)重写默认值。 在此调用，端口驱动程序通过将指定的预提取偏移量添加到播放位置 （考虑 DirectSound 缓冲区末尾自动换行） 计算的写入位置。
+调用[**SetPreFetchOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)将重写默认值。 在此调用之后，端口驱动程序通过向播放位置添加指定的预取偏移量（在 DirectSound 缓冲区的末尾考虑环绕）来计算写入位置。
 
-微型端口驱动程序可能为几个原因分配大量的映射。 一个是减少系统处理器上的音频操作的开销。 使用多个映射，该驱动程序需要更少的中断保护音频设备持续提供数据。 另一个原因是，分配多个映射减少可能性音频播放将发生故障时的运转情况极差的设备驱动程序占用系统短时间内。
+小型端口驱动程序可能会出于以下几个原因分配大量映射。 一种是降低系统处理器上音频操作的开销。 对于更多映射，驱动程序需要较少的中断以使音频设备持续与数据一起提供。 另一个原因是，如果在很短的时间内设备驱动程序的设备驱动程序不正常，则分配更多的映射会降低音频播放面临的难题。
 
-具有较大的预提取的偏移量的一个问题是某些 DirectSound 应用程序可以播放的相对位置有关困惑并写入光标。 在 Windows 95/98 中，音频 Vxd 维护相对较小的预提取的偏移量，和如果偏移量大于他们期望，DirectSound 为这些操作系统编写的应用程序可能无法正常运行。
+较大的预提取偏移量存在一个问题，即一些 DirectSound 应用程序可能会对播放和写入游标的相对位置感到困惑。 在 Windows 95/98 中，音频 Vxd 保持相对较小的预取偏移量，如果偏移量大于预期大小，则为这些操作系统编写的 DirectSound 应用程序可能无法正常运行。
 
-例如，应用程序可能会划分为 DirectSound 缓冲区上半部分和下半部分，然后"ping pong"应用程序和设备之间的两个部分。 当写入光标首次进入缓冲区的上限或下限的一半时，它将一半缓冲区的积累的数据写入到缓冲区的一半。 此方案假定 play 游标将始终置于另一半的缓冲区，不会被写入到的一半。 请注意，此假设不正确，是否预提取偏移量超出了缓冲区大小的一半。 这种情况下，当写入光标达到 DirectSound 缓冲区的末尾，并包装到缓冲区的开头，它将为 play 游标缓冲区的相同部分。 当应用程序将一半缓冲区的积累的数据写入新的写入光标位置时，它最终覆盖 play 光标位置，然后再销毁未尚未播放的数据。
+例如，应用程序可能将 DirectSound 缓冲区分为上半部分和下半部分，然后在应用程序和设备之间进行两次 "ping"。 当写入游标第一次进入缓冲区的上半或后半部分时，它会将一半缓冲区的数据写入到缓冲区的一半。 此方案假定播放光标始终定位于缓冲区的另一半（即未写入的一半）。 请注意，如果预提取偏移量超过缓冲区大小的一半，则此假设不正确。 在这种情况下，当写入光标到达 DirectSound 缓冲区的末尾并环绕缓冲区的开头时，它将与播放光标处于缓冲区的一半。 当应用程序将一半缓冲区的数据写入新的写入游标位置时，最终将覆盖播放光标位置并销毁尚未播放的数据。
 
-尽管此类故障可以肯定怪应用程序本身，WavePci 微型端口驱动程序可以消除故障模式，只需通过调用[ **SetPreFetchOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)设置预提取为较小值的偏移量。
+尽管应用程序本身对于这种类型的故障是怪的，但 WavePci 微型端口驱动程序只需调用[**SetPreFetchOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iprefetchoffset-setprefetchoffset)将预提取偏移设置为较小的值即可消除故障模式。
 
-将预提取偏移量设置为较小的值将生成的写入光标更接近移到 play 游标。 您应设置为您的硬件的先进先出大小的预提取偏移量。 典型的预提取偏移量是大约 64 示例，具体取决于 DMA 引擎的硬件设计。
+将预提取偏移量设置为较小的值会使生成的写入光标接近于播放光标。 应将预提取偏移量设置为硬件的 FIFO 大小。 典型的预提取偏移量大约为64示例，具体取决于 DMA 引擎的硬件设计。
 
-为了保持某些较旧的 DirectSound 应用程序兼容，DirectSound 将当前由 10 毫秒补充硬件加速的 pin 的写入游标。 请注意，可能会在将来更改的填充量。
+为了保持与某些较旧的 DirectSound 应用程序的兼容性，DirectSound 当前将硬件加速 pin 的写入游标填充10毫秒。 请注意，填充量将来可能会更改。
 
-有关管理写入游标和 play 游标在驱动程序级别的其他信息，请参阅[音频 Position 属性](audio-position-property.md)。
+有关在驱动程序级别管理写入游标和播放游标的其他信息，请参阅[音频位置属性](audio-position-property.md)。
 
  
 

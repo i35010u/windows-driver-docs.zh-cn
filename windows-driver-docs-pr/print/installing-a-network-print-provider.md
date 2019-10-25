@@ -4,16 +4,16 @@ description: 安装网络打印提供程序
 ms.assetid: 448101f8-cb26-4a6f-807d-f110978321da
 keywords:
 - 打印提供程序 WDK，安装
-- 网络打印提供商 WDK，安装
-- 安装 WDK 的打印提供程序
+- 网络打印提供程序 WDK，安装
+- 安装打印提供程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dffd766a2ab27bd678d675dee9a5e949ce5a91e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aa1291646a5c139ef4b0f5e1a31fc234b44c0504
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385976"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832103"
 ---
 # <a name="installing-a-network-print-provider"></a>安装网络打印提供程序
 
@@ -21,9 +21,9 @@ ms.locfileid: "67385976"
 
 
 
-若要安装新的网络打印提供程序，必须提供将提供程序 DLL 复制到目标系统的安装程序\\System32 子目录，然后调用**AddPrintProvidor** （在 Microsoft Windows 中所述SDK 文档）。 此函数的提供程序创建注册表项，并将该提供程序添加到已安装的提供程序的后台处理程序的列表的末尾。 然后，该函数将加载提供程序 DLL，调用提供程序的[ **InitializePrintProvidor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor)函数。
+若要安装新的网络打印提供程序，您必须提供一个安装程序，该安装程序将提供程序 DLL 复制到目标系统的 \\System32 子目录中，然后调用**AddPrintProvidor** （如 Microsoft Windows SDK 文档中所述）。 此函数创建提供程序的注册表项，并将该提供程序添加到已安装的提供程序的后台处理程序列表的末尾。 然后，该函数加载提供程序 DLL 并调用提供程序的[**InitializePrintProvidor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor)函数。
 
-若要创建与网络打印提供程序支持的打印机的连接，用户调用添加打印机向导，选择"网络打印机服务器"选项。 用户指定打印队列使用\\ \\*服务器*\\*打印机*格式和提供程序的**OpenPrinter**函数必须能够识别的打印队列名称。
+若要创建与网络打印提供程序支持的打印机的连接，用户需要调用 "添加打印机向导" 并选择 "网络打印机服务器" 选项。 用户使用 \\\\*Server*\\*打印机*格式指定打印队列，提供程序的**OpenPrinter**函数必须识别该打印队列名称。
 
  
 

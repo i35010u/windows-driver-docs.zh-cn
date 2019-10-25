@@ -7,27 +7,27 @@ keywords:
 - 双向通信架构 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c80df6ad72475dd04ba62c9a68ba729bde778309
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d51b0188dbdf1e064d831e006c1942f909589a96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374663"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831822"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>构造双向通信架构查询
 
 
-有三个点，在构造 bidi 通信架构查询时要记住：
+构造双向通信架构查询时，请记住以下三个要点：
 
-1.  查询必须开头`Printer`属性，它必须前面加反斜杠字符 (`\`)。
+1.  查询必须以 `Printer` 属性开始，该属性前面必须有一个反斜杠字符（`\`）。
 
-2.  在查询中的任何属性必须分隔句点字符 (`.`)。
+2.  查询中的所有属性必须用句点字符（`.`）分隔。
 
-3.  如果查询包含一个值，必须用冒号分隔从其父属性值 (`:`)。
+3.  如果查询包含一个值，则该值必须通过冒号（`:`）与其父属性隔开。
 
-### <a href="" id="example-request-and-response"></a> 示例请求和响应
+### <a href="" id="example-request-and-response"></a>示例请求和响应
 
-下面的示例所需的 XML 查询和响应格式[bidi 通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)，并专门通过 IBidiSpl2 COM 接口。 第一个示例是包含两个架构的请求。 第一个架构确定是否安装了双面打印单元。 第二个架构确定其硬盘相关联的值。
+下面是[双向通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)所需的 XML 查询和响应格式的示例，尤其是 IBidiSpl2 COM 接口。 第一个示例是包含两个架构的请求。 第一个架构确定是否安装了双面打印单元。 第二个架构确定与硬盘相关联的值。
 
 ```cpp
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -36,7 +36,7 @@ ms.locfileid: "67374663"
 </bidi:Get>
 ```
 
-下一个示例是从第一个示例中的架构的典型响应的一组。 第一个响应指示安装了双面打印单元。 剩余响应指示已安装硬盘，而其容量为 20 MB，其中有 10 MB 是未使用。
+下一个示例是第一个示例中的架构的一组典型响应。 第一个响应表明已安装双面打印单元。 剩余的响应表示硬盘已安装，其容量为 20 MB，其中未使用 10 MB。
 
 ```cpp
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -59,36 +59,36 @@ ms.locfileid: "67374663"
 </bidi:Get>
 ```
 
-### <a href="" id="additional-query-examples"></a> 其他查询示例
+### <a href="" id="additional-query-examples"></a>其他查询示例
 
-以下是典型的任务和关联的查询的列表：
+下面是典型任务和关联查询的列表：
 
 <a href="" id="determine-whether-a-duplex-unit-is-installed-"></a>确定是否安装了双面打印单元。  
 ```cpp
 \Printer.Configuration.DuplexUnit:Installed
 ```
 
-<a href="" id="determine-which-input-bins-are-present-"></a>确定哪些输入的箱存在。  
+<a href="" id="determine-which-input-bins-are-present-"></a>确定存在的输入箱。  
 ```cpp
 \Printer.Layout.InputBins
 ```
 
-<a href="" id="determine-all-information-about-the-tray1-input-bin-"></a>确定纸盒 1 送纸器有关的所有信息。  
+<a href="" id="determine-all-information-about-the-tray1-input-bin-"></a>确定有关 Tray1 输入箱的所有信息。  
 ```cpp
 \Printer.Layout.InputBins.Tray1
 ```
 
-<a href="" id="determine-whether-the-tray1-input-bin-is-installed-"></a>确定是否安装了纸盒 1 送的纸盒。  
+<a href="" id="determine-whether-the-tray1-input-bin-is-installed-"></a>确定是否安装了 Tray1 输入 bin。  
 ```cpp
 \Printer.Layout.InputBins.Tray1:Installed
 ```
 
-<a href="" id="determine-the-level-of-black-toner-identified-by--name--blk3e-"></a>确定由黑色墨粉别的\[名称\]Blk3E。  
+<a href="" id="determine-the-level-of-black-toner-identified-by--name--blk3e-"></a>确定 \[名称\] Blk3E 标识的黑色碳粉水平。  
 ```cpp
 \Printer.Consumables.Blk3E:Level
 ```
 
-<a href="" id="determine-the-level-of-fuser-oil-"></a>确定杂醇油级别。  
+<a href="" id="determine-the-level-of-fuser-oil-"></a>确定热熔器油的级别。  
 ```cpp
 \Printer.Consumables.FuserOil:Level
 ```

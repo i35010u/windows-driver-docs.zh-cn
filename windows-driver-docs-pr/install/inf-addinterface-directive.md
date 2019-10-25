@@ -1,6 +1,6 @@
 ---
 title: INF AddInterface 指令
-description: INF DDInstall.Interfaces 部分中，可以指定一个或多个 AddInterface 指令。
+description: 可在 INF DDInstall 部分中指定一个或多个 AddInterface 指令。
 ms.assetid: 9bd3e051-51f9-4624-802b-b841b25d6616
 keywords:
 - INF AddInterface 指令设备和驱动程序安装
@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9edcdba0c1ee776f8613b3c151f6b79337957ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ecef85a4d1dac6a692f107019710cac26c603d4b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385924"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828803"
 ---
 # <a name="inf-addinterface-directive"></a>INF AddInterface 指令
 
 
-一个或多个**AddInterface**内，可以指定指令[ **INF DDInstall.Interfaces 部分**](inf-ddinstall-interfaces-section.md)。 此指令将安装对特定于设备的支持[设备接口类](device-interface-classes.md)导出到更高级的组件，如其他驱动程序或应用程序。 通常，该指令引用*添加接口部分*，这将设置设备接口类的特定于设备的实例的注册表信息。
+可在[**INF DDInstall 部分**](inf-ddinstall-interfaces-section.md)中指定一个或多个**AddInterface**指令。 此指令将为导出到更高级别的组件（如其他驱动程序或应用程序）的[设备接口类](device-interface-classes.md)安装特定于设备的支持。 指令通常引用*添加接口部分*，该部分用于设置设备接口类的设备特定实例的注册表信息。
 
 ```ini
 [DDInstall.Interfaces]
@@ -30,37 +30,37 @@ ms.locfileid: "67385924"
 AddInterface={InterfaceClassGUID} [,[reference-string] [,[add-interface-section][,flags]]] 
 ```
 
-导出的设备接口类可以是一个系统定义的设备接口类，例如那些由内核流式处理，或通过指定了一个新的设备接口类[ **INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md).
+导出的设备接口类可以是系统定义的设备接口类之一（如内核流定义的接口类），也可以是由[**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)指定的新设备接口类。
 
 ## <a name="entries"></a>条目
 
 
 <a href="" id="interfaceclassguid"></a>*InterfaceClassGUID*  
-指定标识设备接口类的 GUID 值。 这可以表示为一个显式的 GUID 值的窗体 **{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}** 或作为 %*strkey*%令牌到定义 **"{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}"** 中[**字符串**](inf-strings-section.md) INF 文件部分。
+指定标识设备接口类的 GUID 值。 这可以表示为 **{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}** 形式的显式 GUID 值或%*strkey*% 令牌在 INF 文件的[**字符串**](inf-strings-section.md)部分定义为 **"{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}"** 。
 
-有关如何创建 GUID 的详细信息，请参阅[驱动程序中使用 Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)。 有关系统定义的接口类 GUID，请参阅相应的标头，诸如*Ks.h*内核流接口的 Guid。
+有关如何创建 GUID 的详细信息，请参阅[在驱动程序中使用 guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)。 对于系统定义的接口类 GUID，请参阅相应的标头，如用于内核流式处理接口 Guid 的*Ks。*
 
 <a href="" id="reference-string"></a>*reference-string*  
-此可选值，与特定于设备的类的实例指定的接口，关联可以表示为 **"** <em>带引号的字符串</em> **"** 或作为 %*strkey*中定义的 %令牌[ **INF 字符串部分**](inf-strings-section.md)。
+与指定接口类的特定于设备的实例关联的此可选值可以表示为 **"** <em>带引号的字符串</em> **"** 或作为[**INF 字符串部分**](inf-strings-section.md)中定义的%*strkey*% 令牌。
 
-即插即用的函数和筛选器驱动程序通常省略此值从**AddInterface =** 其 INF 文件中的条目。 一个*引用字符串*由*swenum*驱动程序，因为软件通过使用单个接口类的多个实例创建按需的设备的占位符。 相同*InterfaceClassGUID*值可以是具有两个 INF 条目中指定或多个唯一*引用字符串*s。 因为 I/O 管理器将传递*引用字符串*作为路径组件的接口实例的名称，只要打开它的值，已安装的驱动程序可以区分的同一个类的一个接口实例设备。
+PnP 函数和筛选器驱动程序通常会在其 INF 文件中的**AddInterface =** 条目中省略此值。 *Swenum*驱动程序使用*引用字符串*作为通过使用单个接口类的多个实例按需创建的软件设备的占位符。 可以在具有两个或多个唯一*引用字符串*s 的 INF 条目中指定相同的*InterfaceClassGUID*值。 由于在打开时，i/o 管理器会将*引用字符串*值作为接口实例的名称的路径部分进行传递，因此，已安装的驱动程序可以区分单个设备相同类的接口实例。
 
-<a href="" id="add-interface-section"></a>*add-interface-section*  
-引用其他位置中的 INF 文件节的名称。 这通常包含[ **INF AddReg 指令**](inf-addreg-directive.md)若要将导出的驱动程序支持的注册表项设置[设备接口类](device-interface-classes.md)。 有关详细信息，请参阅以下**备注**部分。
+<a href="" id="add-interface-section"></a>*添加接口部分*  
+引用 INF 文件中其他位置的节的名称。 这通常包含一个[**INF AddReg 指令**](inf-addreg-directive.md)，用于设置用于导出驱动程序对此[设备接口类](device-interface-classes.md)的支持的注册表项。 有关详细信息，请参阅下面的 "**备注**" 部分。
 
-<a href="" id="flags"></a>*flags*  
-如果指定，则此项必须为零。
+<a href="" id="flags"></a>*随意*  
+如果指定此项，则此项必须为零。
 
 <a name="remarks"></a>备注
 -------
 
-如果[设备接口类](device-interface-classes.md)通过指定标识 **{** <em>InterfaceClassGUID</em> **}** 是未安装，请在系统设置代码在系统中安装此类。 任何 INF 文件来安装一个新类还具有[ **INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。 本部分包含指定 **{** <em>InterfaceClassGUID</em> **}** 并引用*接口安装部分*的设置此类的特定于接口的安装操作。
+如果尚未安装由指定的 **{** <em>InterfaceClassGUID</em> **}** 标识的[设备接口类](device-interface-classes.md)，系统安装代码会在系统中安装该类。 安装新类的任何 INF 文件还具有一个[**Inf InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。 本部分包含指定的 **{** <em>InterfaceClassGUID</em> **}** 并引用*接口安装部分*，该部分将为该类设置接口特定的安装操作。
 
-若要启用更高级的组件运行时使用的设备接口类的实例，请将设备驱动程序必须先调用[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)要检索的符号链接名称若要启用的设备接口实例。  通常情况下，即插即用的函数或筛选器驱动程序，可以从此调用其[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。  若要启用 INF 中预配的设备接口的实例，该设备驱动程序必须提供 **{** <em>InterfaceClassGUID</em> **}** 和*引用字符串*时，它调用 INF 中指定[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)。  然后，该驱动程序调用[ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)若要启用使用返回的符号链接名称的接口[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface). 
+若要启用设备接口类的实例以供更高级组件的运行时使用，则设备驱动程序必须首先调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)以检索要启用的设备接口实例的符号链接名称。  通常，PnP 函数或筛选器驱动程序从其[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程进行此调用。  若要启用在 inf 中预配的设备接口的实例，设备驱动程序必须在调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)时提供 InterfaceClassGUID 中指定的 **{** **}** 和*引用字符串*。  然后，驱动程序调用[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate) ，以使用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)返回的符号链接名称启用接口。 
 
-每个**AddInterface**指令[ **INF DDInstall.Interfaces 部分**](inf-ddinstall-interfaces-section.md) INF 编写器的定义可以引用*添加-接口-部分* INF 文件中的其他位置。 每个 INF 编写器定义的节名称必须是唯一的 INF 文件中的和必须遵从常规规则，用于定义的节名称。 有关这些规则的详细信息，请参阅[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
+[**Inf DDInstall 部分**](inf-ddinstall-interfaces-section.md)中的每个**AddInterface**指令都可以引用 inf 文件中其他位置的 inf 写入器定义的*添加接口部分*。 每个 INF 写入方定义的部分名称在 INF 文件中必须唯一，并且必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅[INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
 
-*添加接口部分*所引用的**AddInterface**指令具有以下形式：
+**AddInterface**指令引用的*添加接口部分*具有以下格式：
 
 ```ini
 [add-interface-section]
@@ -78,18 +78,18 @@ AddReg=add-registry-section[, add-registry-section]...
 [Ini2Reg=ini-to-registry-section[, ini-to-registry-section] ...]
 ```
 
-从 Windows Vista 开始，你可以通过包含设置设备接口的属性[ **INF AddProperty 指令**](inf-addproperty-directive.md)添加接口部分中。 此外可以通过包括删除设备接口属性[ **INF DelProperty 指令**](inf-delproperty-directive.md)中*添加接口部分*。 但是，应使用**AddProperty**或**DelProperty**指令仅以修改设备接口属性的新 Windows Vista 或更高版本的 Windows 操作系统。 对于设备接口属性中引入的 Windows Server 2003、 Windows XP 或 Windows 2000 上且具有相应的注册表值项，应继续使用[ **INF AddReg 指令**](inf-addreg-directive.md)并[ **INF DelReg 指令**](inf-delreg-directive.md)设置和删除设备接口属性。 这些准则适用于系统定义的属性和自定义属性。 有关如何使用详细信息**AddProperty**指令并**DelProperty**指令，请参阅[INF AddProperty 指令和 INF DelProperty 指令](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md).
+从 Windows Vista 开始，可以通过在添加接口部分中包括[**INF AddProperty 指令**](inf-addproperty-directive.md)来设置设备接口属性。 还可以通过在*添加接口部分*中包括[**INF DelProperty 指令**](inf-delproperty-directive.md)来删除设备接口属性。 但是，只应使用**AddProperty**或**DelProperty**指令来修改对 windows Vista 或更高版本的 windows 操作系统不熟悉的设备接口属性。 对于在 Windows Server 2003、Windows XP 或 Windows 2000 上引入的设备接口属性以及具有相应注册表值条目的设备接口属性，应继续使用[**Inf AddReg 指令**](inf-addreg-directive.md)和[**inf DelReg 指令**](inf-delreg-directive.md)来设置和删除设备接口属性。 这些准则适用于系统定义的属性和自定义属性。 有关如何使用**AddProperty**指令和**DelProperty**指令的详细信息，请参阅[使用 Inf AddProperty 指令和 inf DelProperty 指令](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)。
 
-通常情况下，*添加接口部分*仅包含[ **INF AddReg 指令**](inf-addreg-directive.md) ，反过来，引用单个*将添加的注册表-部分*. *添加注册表部分*用于存储有关设备驱动程序供后续使用的主管更高级别驱动程序和应用程序支持的接口注册表中的信息。
+通常，*添加接口部分*只包含一个[**INF AddReg 指令**](inf-addreg-directive.md)，而后者又引用单个*添加注册表部分*。 "*外接*程序" 部分用于在注册表中存储有关设备驱动程序支持的接口的信息，以便以后仍更高级别的驱动程序和应用程序使用。
 
-*添加注册表部分*内引用*添加接口部分*是特定于设备、 驱动程序和接口的实例。 它可能具有值项定义导出的设备接口实例的友好名称，以便仍然更高级的组件可以引用该接口由其用户界面中的友好名称。
+在*添加接口部分*中引用的*添加注册表部分*特定于设备、驱动程序和接口的实例。 它可能具有定义导出设备接口实例的友好名称的值输入，以便仍更高级的组件可以通过其在用户界面中的友好名称引用该接口。
 
-**HKR**中此类指定*添加注册表部分*部分指定设备接口的运行时可访问状态注册表项。  该驱动程序可以访问存储在此注册表项在运行时通过调用状态[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)要检索的句柄状态注册表项。  用户模式组件可以通过调用查询的状态[ **CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)。
+在此类 "*外接*程序" 部分中指定的**HKR**为设备接口指定运行时可访问状态注册表项。  在运行时，驱动程序可以通过调用[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)来检索状态注册表项的句柄，来访问此注册表项中存储的状态。  用户模式组件可以通过调用[**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)来查询状态。
 
 <a name="examples"></a>示例
 --------
 
-此示例显示了一些扩展*DDInstall*。**接口**支持系统定义内核流式处理接口的特定音频设备的部分。
+此示例演示了*DDInstall*的一些扩展。支持系统定义的内核流接口的特定音频设备的**接口**部分。
 
 ```ini
 ; ...
@@ -134,7 +134,7 @@ ESSAud.Wave.szPname="ESS AudioDrive"
 ; ... 
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**AddProperty**](inf-addproperty-directive.md)
@@ -157,9 +157,9 @@ ESSAud.Wave.szPname="ESS AudioDrive"
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 
-[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)
+[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)
 
-[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)
+[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)
 
 [**RenFiles**](inf-renfiles-directive.md)
 

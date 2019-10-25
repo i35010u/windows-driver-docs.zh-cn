@@ -1,22 +1,22 @@
 ---
 title: 必需的 Direct3D 9 功能
 ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
-description: 为用户模式驱动程序以访问 Direct3D 9 功能所需的功能。
+description: 用户模式驱动程序访问 Direct3D 9 功能所需的功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eef9102eef5761f7f71fa2bccb8c5385002dccc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9586d4678596660a15ca356eab52914056064f32
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376613"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825924"
 ---
 # <a name="required-direct3d-9-capabilities"></a>必需的 Direct3D 9 功能
 
 
-应用程序完全访问 Microsoft Direct3D 版本 9 的功能\_1，9\_2 和 9\_3，用户模式驱动程序必须公开某些硬件功能。 这些功能都表示方面[ **D3DCAPS9** ](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)返回的用户模式驱动程序的结构[ *GetCaps* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数。 若要指示支持的功能，该驱动程序必须设置的这些成员**D3DCAPS9**到按位 OR，所有相应的标志值：
+要使应用程序完全访问 Microsoft Direct3D 版本 9\_1、9\_2 和 9\_3 的功能，用户模式驱动程序必须公开某些硬件功能。 这些功能用用户模式驱动程序的[*GetCaps*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数返回的[**D3DCAPS9**](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)结构来表示。 若要指示对功能的支持，驱动程序必须将**D3DCAPS9**的这些成员设置为所有各自标志值的按位或。
 
-## <a name="span-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanspan-idminimumcapabilitiesfordirect3dlevel91spanminimum-capabilities-for-direct3d-level-91"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>最小为 Direct3D 功能级别 9\_1
+## <a name="span-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanminimum-capabilities-for-direct3d-level-9_1"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>Direct3D level 9\_1 的最小功能
 
 
 <table>
@@ -26,8 +26,8 @@ ms.locfileid: "67376613"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>成员</th>
-<th align="left">标记值</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a>成员</th>
+<th align="left">标志值</th>
 </tr>
 </thead>
 <tbody>
@@ -61,7 +61,7 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="even">
 <td align="left"><strong>TextureCaps</strong>
-<p>（参见备注。）</p></td>
+<p>（请参阅备注。）</p></td>
 <td align="left"><p>D3DPTEXTURECAPS_ALPHA</p>
 <p>D3DPTEXTURECAPS_CUBEMAP</p>
 <p>D3DPTEXTURECAPS_MIPMAP</p>
@@ -141,7 +141,7 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="even">
 <td align="left"><strong>PixelShaderVersion</strong></td>
-<td align="left"><p>D3DPS_VERSION(2,0)</p></td>
+<td align="left"><p>D3DPS_VERSION （2，0）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxPrimitiveCount</strong></td>
@@ -157,7 +157,7 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxTextureRepeat</strong></td>
-<td align="left"><p>必须是零个或 128 或更高版本。</p></td>
+<td align="left"><p>必须为零、128或更大。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxAnisotropy</strong></td>
@@ -165,23 +165,23 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxVertexW</strong></td>
-<td align="left"><p>0.f</p></td>
+<td align="left"><p>0. f</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**这些要求也适用：
--   该驱动程序还必须设置**TextureCaps**成员添加到值为 D3DPTEXTURECAPS\_NONPOW2CONDITIONAL 和 D3DPTEXTURECAPS\_POW2，或对两者都不。
--   当驱动程序对应的事件，其中[ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType**是 D3DDDIQUERYTYPE\_事件，它必须始终设置事件的**BOOL**值设为**TRUE**响应时。 请参阅[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)并**D3DDDIARG\_CREATEQUERY**。
+**注意** 这些要求也适用：
+-   驱动程序还必须将**TextureCaps**成员设置为 D3DPTEXTURECAPS\_NONPOW2CONDITIONAL 和 D3DPTEXTURECAPS\_POW2 的值，或者设置为这两种。
+-   当驱动程序响应某个事件时，其中[**D3DDDIARG\_servicecontext.createquery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType**是 D3DDDIQUERYTYPE\_事件，响应时，必须始终将事件的**布尔**值设置为**TRUE** 。 请参阅[*servicecontext.createquery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)和**D3DDDIARG\_servicecontext.createquery**。
 
  
 
-## <a name="span-idminimumcapabilitiesfordirect3dlevel92spanspan-idminimumcapabilitiesfordirect3dlevel92spanspan-idminimumcapabilitiesfordirect3dlevel92spanminimum-capabilities-for-direct3d-level-92"></a><span id="Minimum_capabilities_for_Direct3D_level_9_2"></span><span id="minimum_capabilities_for_direct3d_level_9_2"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_2"></span>最小为 Direct3D 功能级别 9\_2
+## <a name="span-idminimum_capabilities_for_direct3d_level_9_2spanspan-idminimum_capabilities_for_direct3d_level_9_2spanspan-idminimum_capabilities_for_direct3d_level_9_2spanminimum-capabilities-for-direct3d-level-9_2"></a><span id="Minimum_capabilities_for_Direct3D_level_9_2"></span><span id="minimum_capabilities_for_direct3d_level_9_2"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_2"></span>Direct3D level 9\_2 的最小功能
 
 
-这些功能必须另外设置为所列级别 Direct3D 9\_1。
+除了为 Direct3D level 9\_1 列出的功能外，这些功能必须设置。
 
 <table>
 <colgroup>
@@ -190,8 +190,8 @@ ms.locfileid: "67376613"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>成员</th>
-<th align="left">标记值</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a>成员</th>
+<th align="left">标志值</th>
 </tr>
 </thead>
 <tbody>
@@ -221,11 +221,11 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxTextureRepeat</strong></td>
-<td align="left"><p>必须为零或 2048，或更高版本。</p></td>
+<td align="left"><p>必须为零、2048或更大。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>VertexShaderVersion</strong></td>
-<td align="left"><p>D3DVS_VERSION(2,0)</p></td>
+<td align="left"><p>D3DVS_VERSION （2，0）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxAnisotropy</strong></td>
@@ -241,22 +241,22 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxVertexW</strong></td>
-<td align="left"><p>10000000000.f</p></td>
+<td align="left"><p>10000000000</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**此要求同样适用：
--   当驱动程序响应*z*-测试查询，其中[ **D3DDDIARG\_CREATEQUERY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType**是 D3DDDIQUERYTYPE\_封闭，它必须始终设置查询的**UINT**为非零值在响应时的值。 请参阅[ *CreateQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)并**D3DDDIARG\_CREATEQUERY**。
+**注意** 此要求也适用：
+-   当驱动程序响应*z*测试查询时，其中[**D3DDDIARG\_servicecontext.createquery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createquery)。**QueryType**是 D3DDDIQUERYTYPE\_封闭，在响应时，必须始终将查询的**UINT**值设置为非零值。 请参阅[*servicecontext.createquery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createquery)和**D3DDDIARG\_servicecontext.createquery**。
 
  
 
-## <a name="span-idminimumcapabilitiesfordirect3dlevel93spanspan-idminimumcapabilitiesfordirect3dlevel93spanspan-idminimumcapabilitiesfordirect3dlevel93spanminimum-capabilities-for-direct3d-level-93"></a><span id="Minimum_capabilities_for_Direct3D_level_9_3"></span><span id="minimum_capabilities_for_direct3d_level_9_3"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_3"></span>最小为 Direct3D 功能级别 9\_3
+## <a name="span-idminimum_capabilities_for_direct3d_level_9_3spanspan-idminimum_capabilities_for_direct3d_level_9_3spanspan-idminimum_capabilities_for_direct3d_level_9_3spanminimum-capabilities-for-direct3d-level-9_3"></a><span id="Minimum_capabilities_for_Direct3D_level_9_3"></span><span id="minimum_capabilities_for_direct3d_level_9_3"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_3"></span>Direct3D level 9\_3 的最小功能
 
 
-这些功能必须另外设置为所列级别 Direct3D 9\_1 和 9\_2。
+除了为 Direct3D 级别 9\_1 和 9\_2 列出的功能外，这些功能必须设置为。
 
 <table>
 <colgroup>
@@ -265,13 +265,13 @@ ms.locfileid: "67376613"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong> </a>成员</th>
-<th align="left">标记值</th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a>成员</th>
+<th align="left">标志值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>PS20Caps</strong>-&gt;<strong>Caps</strong></td>
+<td align="left"><strong>PS20Caps</strong>-&gt;<strong>cap</strong></td>
 <td align="left"><p>D3DPS20CAPS_GRADIENTINSTRUCTIONS</p></td>
 </tr>
 <tr class="even">
@@ -293,7 +293,7 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="even">
 <td align="left"><strong>MaxTextureRepeat</strong></td>
-<td align="left"><p>必须为零或 8192，或更高版本。</p></td>
+<td align="left"><p>必须为零、8192或更大。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>NumSimultaneousRTs</strong></td>
@@ -301,30 +301,30 @@ ms.locfileid: "67376613"
 </tr>
 <tr class="even">
 <td align="left"><strong>PS20Caps</strong>-&gt;<strong>NumInstructionSlots</strong></td>
-<td align="left"><p>512 (像素着色器版本 2b)</p></td>
+<td align="left"><p>512（象素着色器版本2b）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>PS20Caps</strong>-&gt;<strong>NumTemps</strong></td>
-<td align="left"><p>32 (像素着色器版本 2b)</p></td>
+<td align="left"><p>32（象素着色器版本2b）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>VS20Caps</strong>-&gt;<strong>NumTemps</strong></td>
-<td align="left"><p>32 (顶点着色器版本 2a)</p></td>
+<td align="left"><p>32（顶点着色器版本2a）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>MaxVertexShaderConst</strong></td>
-<td align="left"><p>256 (顶点着色器版本 2a)</p></td>
+<td align="left"><p>256（顶点着色器版本2a）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>VertexShaderVersion</strong></td>
-<td align="left"><p>D3DVS_VERSION(3,0) （参见备注。）</p></td>
+<td align="left"><p>D3DVS_VERSION （3，0）（请参阅注释）。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意** **VertexShaderVersion** D3DVS 值\_VERSION(3,0) 保证实例化的支持。 Direct3D 10Level 9 不会公开着色器模型 3.0。
+**注意** D3DVS\_版本（3，0）的**VertexShaderVersion**值可保证实例化支持。 Direct3D 10Level 9 不公开着色器模型3.0。
 
  
 

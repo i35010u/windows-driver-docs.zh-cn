@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 601fcc7aafa24d14c16a14beeaaeccbc9e94f20f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f3655ca89af5103eff28f8c236481b82bc023662
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384260"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828728"
 ---
-# <a name="kscategorybdareceivercomponent"></a>KSCATEGORY_BDA_RECEIVER_COMPONENT
+# <a name="kscategory_bda_receiver_component"></a>KSCATEGORY_BDA_RECEIVER_COMPONENT
 
 
-KSCATEGORY_BDA_RECEIVER_COMPONENT[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 中为接收方的功能类别[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index) (BDA)。
+对于[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)（BDA）中接收方的[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)（KS）功能类别，会定义 KSCATEGORY_BDA_RECEIVER_COMPONENT[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_BDA_RECEIVER_COMPONENT[设备接口类](https://docs.microsoft.com/wi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_BDA_RECEIVER_COMPONENT[设备接口类](https://docs.microsoft.com/wi
 <a name="remarks"></a>备注
 -------
 
-BDA 设备的驱动程序注册 KSCATEGORY_BDA_RECEIVER_COMPONENT 向操作系统指示设备支持 BDA 接收方筛选器的实例。
+用于 BDA 设备的驱动程序注册 KSCATEGORY_BDA_RECEIVER_COMPONENT 的实例，以向操作系统指明设备支持的是 BDA 接收方筛选器。
 
-详细了解 KS 功能类别 BDA 接收方筛选器，请参阅[常见控制节点和筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/common-control-nodes-and-filters)，[启动 BDA 微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/starting-a-bda-minidriver)，和[BDA 筛选器类别 Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids).
+有关 BDA 接收方筛选器的 KS 功能类别的详细信息，请参阅[公共控制节点和筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/common-control-nodes-and-filters)，[启动 Bda 微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/starting-a-bda-minidriver)和[bda 筛选器类别 guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,12 +68,12 @@ BDA 设备的驱动程序注册 KSCATEGORY_BDA_RECEIVER_COMPONENT 向操作系�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows XP、 DirectX 9.0 a 安装，Windows 2000 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Windows XP 中提供，在 windows 2000 中提供，并在 windows 中安装和更高版本的 Windows。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Bdamedia.h （包括 Bdamedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>

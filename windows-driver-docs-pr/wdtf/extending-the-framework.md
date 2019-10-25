@@ -7,37 +7,37 @@ keywords:
 - WDTF WDK，扩展 WDTF
 - Windows 设备测试框架 WDK，操作接口
 - WDTF WDK，操作接口
-- Windows 设备测试框架 WDK 示例
-- WDTF WDK 示例
+- Windows 设备测试框架 WDK，示例
+- WDTF WDK，示例
 - SimpleIO 向导 WDK WDTF
 - 操作接口 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e5e724f617b7f06d1aca970555ebda34460198a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b7bca0282f495659ac169a470225d88d1463e69
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366488"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823497"
 ---
 # <a name="extending-the-framework"></a>扩展框架
 
 
-WDTF 构建为可扩展。 扩展性是三种不同方式，可能的如下图所示。
+WDTF 是为可扩展而构建的。 如下图所示，可以通过三种不同的方式实现扩展性。
 
-![说明 wdtf 方案模型关系图](images/wdtf-scenariomodel.gif)
+![阐释 wdtf 方案模型的关系图](images/wdtf-scenariomodel.gif)
 
-以下列表介绍了三种扩展性方法，按顺序的难度：
+以下列表按难点说明了这三种扩展性方法：
 
--   **修改示例脚本**。 此方法与在上图中的绿色显示。 您可以选择一个提供 WDTF[示例脚本](sample-wdtf-scenarios.md)和修改为你的方案。 此外可以[创建 WDTF 方案](creating-wdtf-scenarios.md)从零开始。
+-   **修改示例脚本**。 此方法在上图中显示为绿色。 你可以获取 WDTF 提供的[示例脚本](sample-wdtf-scenarios.md)之一，并修改它以适合你的方案。 你还可以从头开始[创建 WDTF 方案](creating-wdtf-scenarios.md)。
 
--   **实现的现有** [**操作接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) **，如**SimpleIO。 此方法与在上图中的黄色显示。 您可以实现现有操作接口来扩展接口函数的目标类型。 如果为你的设备类型实现 SimpleIO，所有的现有基于 WDTF 的方案会自动开始执行你的设备的 I/O 验证。
+-   **实现现有的**[**操作接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) **，如**SimpleIO。 此方法在上图中显示为黄色。 您可以实现现有的操作接口，以扩展该接口所运行的目标的类型。 如果为设备类型实现 SimpleIO，则所有基于 WDTF 的现有方案将自动开始对设备执行 i/o 验证。
 
-    WDTF 提供 Microsoft Visual Studio 模板，以帮助实现 SimpleIO。 有关详细信息，请参阅[编写你的设备插件 WDTF SimpleIO](writing-a-wdtf-simpleio-plug-in-for-your-device.md)。
+    WDTF 提供了一个 Microsoft Visual Studio 模板来帮助实现 SimpleIO。 有关详细信息，请参阅[编写设备的 WDTF SimpleIO 插件](writing-a-wdtf-simpleio-plug-in-for-your-device.md)。
 
--   **创建 （，然后实现） 的新** [**操作接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 此方法会显示在上图中的红色。 如果 WDTF 提供的功能不足以构建你的基于组件的方案，可以使用 WDTF 若要创建新的组件。
+-   **创建（然后实现）新的**[**操作接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。 此方法在上图中以红色显示。 如果 WDTF 提供的功能不足以构造基于组件的方案，则可以使用 WDTF 来创建新组件。
 
-    此方法是三种方法最困难的因为它需要[COM 接口的设计技巧](com-interface-design-skills.md)。 您必须能够设计和实现您的功能的简单抽象的使用 COM 自动化接口。
+    此方法最难实现这三种方法，因为它需要[COM 接口设计技巧](com-interface-design-skills.md)。 你必须能够使用 COM 自动化接口设计和实现功能的简单抽象。
 
  
 

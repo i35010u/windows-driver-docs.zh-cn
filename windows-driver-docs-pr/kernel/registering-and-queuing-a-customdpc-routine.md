@@ -5,15 +5,15 @@ ms.assetid: 7c35f8f8-a6dc-43b1-9120-701227d7b4c5
 keywords:
 - CustomDpc
 - 注册 CustomDpc 例程
-- 队列 CustomDpc 例程
+- 排队 CustomDpc 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0870cc3ce45c59bd07c398d7c6b52c20c58db6ca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3aeacfc3b2ae1c8fddcb53e7f31fa55ac56e87ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385859"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827513"
 ---
 # <a name="registering-and-queuing-a-customdpc-routine"></a>CustomDpc 例程注册和排队
 
@@ -21,25 +21,25 @@ ms.locfileid: "67385859"
 
 
 
-驱动程序注册[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)例程对于设备对象通过调用[ **KeInitializeDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializedpc)创建设备后对象。 该驱动程序可以进行此调用从其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程，或从[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)处理代码[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。
+驱动程序在创建设备对象之后，通过调用[**KeInitializeDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc)为设备对象注册[*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程。 驱动程序可以从其[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程或从处理[**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求的[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)代码进行此调用。
 
-驱动程序的 ISR 只返回控件之前，它可以调用[ **KeInsertQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)到队列*CustomDpc*例程的执行。 下图说明了对这些例程的调用。
+紧靠驱动程序的 ISR 返回 control 之前，它可以调用[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)将*CustomDpc*例程排队等待执行。 下图说明了对这些例程的调用。
 
-![关系图说明如何使用 dpc 对象进行 customdpc 例程](images/3cstmdpc.png)
+![说明如何将 dpc 对象用于 customdpc 例程的关系图](images/3cstmdpc.png)
 
-上图所示，驱动程序，包含*CustomDpc*例程必须为 DPC 对象提供存储。 因为该驱动程序必须从其 ISR 将指针传递给 DPC 对象，存储必须位于常驻，系统空间内存中。 与大多数驱动程序*CustomDpc*例程提供存储在设备扩展中，其 DPC 对象，但如果驱动程序使用，存储可在控制器扩展[控制器对象](using-controller-objects.md)或在非分页该驱动程序分配的池。
+如上图所示，具有*CustomDpc*例程的驱动程序必须提供 DPC 对象的存储。 由于驱动程序必须通过其 ISR 传递指向 DPC 对象的指针，因此存储必须位于驻留的系统空间内存中。 大多数包含*CustomDpc*例程的驱动程序在设备扩展中为其 DPC 对象提供存储，但如果驱动程序使用[控制器对象](using-controller-objects.md)或由驱动程序分配的非分页池，则存储可以位于控制器扩展中。
 
-当驱动程序调用**KeInitializeDpc**，它必须传递给入口点及其*CustomDpc*例程，以及到 DPC 对象的驱动程序分配存储和驱动程序定义的上下文的指针区域中，传递给*CustomDpc*例程时调用它。 因为上下文区域必须是可访问在 IRQL = 调度\_级别，它还必须在常驻内存中。
+当驱动程序调用**KeInitializeDpc**时，它必须传递其*CustomDpc*例程的入口点，以及指向 DPC 对象的驱动程序分配的存储以及驱动程序定义的上下文区域（传递到*CustomDpc*调用例程。 由于上下文区域必须可在 IRQL = 调度\_级别访问，因此它还必须位于驻留内存中。
 
-与不同*DpcForIsr*例程*CustomDpc*例程不是与设备对象相关联。 然而，驱动程序通常包括指向目标设备对象的指针，并且当前 IRP 中的上下文信息提供给*CustomDpc*例程。 像*DpcForIsr*例程*CustomDpc*例程使用此信息来完成比 ISR 降低 IRQL 在中断驱动 I/O 操作
+与*DpcForIsr*例程不同， *CustomDpc*例程不与设备对象相关联。 尽管如此，驱动程序通常还包括指向目标设备对象和当前 IRP 的指针（提供给*CustomDpc*例程的上下文信息）。 与*DpcForIsr*例程一样， *CustomDpc*例程使用此信息来完成中断驱动的 I/O 操作，其 IRQL 低于 ISR。
 
-上图所示，ISR 将指针传递到 DPC 对象和两个其他参数，这些驱动程序定义的为参数[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)。 如果在计算机中的所有处理器当前都有代码运行在 IRQL 大于或等于调度\_级别、 DPC 对象会排队，直到 IRQL 低于调度\_级别处理器上。 然后，内核 DPC 对象，并在驱动程序中取消排队*CustomDpc* IRQL 调度在处理器上运行时例程\_级别。
+如上图所示，ISR 向 DPC 对象传递指向 DPC 对象的指针，并向[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)传递另外两个由驱动程序定义的参数。 如果计算机中的所有处理器当前的代码以大于或等于调度\_级别的 IRQL 运行，则 DPC 对象将排队等候，直到 IRQL 降到低于\_对处理器的级别。 然后，核心取消排队 DPC 对象和驱动程序的*CustomDpc*例程在上的 IRQL 调度\_级别运行。
 
-可以在任意给定时刻排队仅 DPC 的任何一个对象的单一实例化。 因此如果 ISR 调用**KeInsertQueueDpc**多个具有相同的一次*Dpc*之前驱动程序的指针*CustomDpc*运行时例程， *CustomDpc*例程只运行一次后 IRQL 低于调度\_级别处理器上。
+在任意给定时刻，只能对任何一个 DPC 对象的单个实例化进行排队。 因此，如果 ISR 在运行驱动程序的*CustomDpc*例程之前使用同一个*Dpc*指针多次调用**KeInsertQueueDpc** ，则*CustomDpc*例程仅在以下情况下运行一次：在对处理器\_级别进行调度之后。
 
-一个*CustomDpc*例程负责执行会尽一切努力完成 I/O 操作导致中断。
+*CustomDpc*例程负责执行完成导致中断的 i/o 操作所需的任何操作。
 
-ISR 和*CustomDpc*例程可以 SMP 计算机上同时运行。 因此，在编写时*CustomDpc*例程，请遵循上一节中规定的准则[注册和队列 DpcForIsr 例程](registering-and-queuing-a-dpcforisr-routine.md)。
+ISR 和*CustomDpc*例程可以在 SMP 计算机上并发运行。 因此，在编写*CustomDpc*例程时，请遵循上一部分中所述的指导原则，[注册和排队 DpcForIsr 例程](registering-and-queuing-a-dpcforisr-routine.md)。
 
  
 

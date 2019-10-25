@@ -4,21 +4,21 @@ description: IEEE 802.1p 优先级
 ms.assetid: C7EB3D85-544E-4898-A456-843621F6488D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52ae6167aaa42d9ef14f82344a22fb09d3f9a3c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa371d0aa3c86aebf8416254adbb34a248ff273e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384547"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823824"
 ---
 # <a name="ieee-8021p-priority-levels"></a>IEEE 802.1p 优先级
 
 
-IEEE 802.1p 由 IEEE 802.1 任务指定的组，以满足服务质量 (QoS) 的通信优先级。 802.1p 不是单独的 IEEE 802.1 标准，但在 IEEE 802.1Q 的附录 G 中定义的标准 2005年。
+Ieee 802.1 p 已由 IEEE 802.1 任务组指定，以解决服务质量（QoS）的流量优先级。 802.1 p 不是单独的 IEEE 802.1 标准，但在 IEEE 802.1 Q-2005 标准的附录 G 中定义。
 
-IEEE 802.1p 定义一个名为 IEEE 802.1Q 中优先级代码点 (PCP) 的 3 位字段标记。 NDIS 数据包的 802.1p PCP 值由指定**UserPriority**的成员[ **NDIS\_NET\_缓冲区\_列表\_8021Q\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)结构，它是与数据包的关联[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
+IEEE 802.1 p 定义了一个名为的3位字段，该字段称为优先级码位（PCP）。 对于 NDIS 数据包，802.1 p PCP 值由[**NDIS\_NET\_缓冲器\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)的**UserPriority**成员指定，与数据包的[**NET\_缓冲区相关联\_8021Q\_INFO 结构\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构。
 
-PCP 值定义 8 的优先级别，7，最高优先级和 1 的最低优先级。 默认值为 0 的优先级别。 每个优先级别定义*的服务类*标识传输数据包的单独通信类。
+PCP 值定义了8个优先级，具有7个最高优先级，1个优先级最低。 默认情况下，优先级为0。 每个优先级别定义一*类服务*，用于标识传输的数据包的单独通信类。
 
  
 

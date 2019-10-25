@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_PIN\_TYPE
-description: 客户端使用 KSPROPERTY\_BDA\_PIN\_类型来检索用于指定 pin 的类型的值。
+title: KSPROPERTY\_BDA\_PIN\_类型
+description: 客户端使用 KSPROPERTY\_BDA\_PIN\_类型来检索指定 PIN 类型的值。
 ms.assetid: 3d2a976b-67ff-4469-aa96-7aa8bd5f229e
 keywords:
-- KSPROPERTY_BDA_PIN_TYPE 流式处理媒体设备
+- KSPROPERTY_BDA_PIN_TYPE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2a06f0bbd9dc88698a61242966e3263c29e8b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8b2db83db07dc62fc1db06d8a65e653852a8759
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368133"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827455"
 ---
-# <a name="kspropertybdapintype"></a>KSPROPERTY\_BDA\_PIN\_TYPE
+# <a name="ksproperty_bda_pin_type"></a>KSPROPERTY\_BDA\_PIN\_类型
 
 
-客户端使用 KSPROPERTY\_BDA\_PIN\_类型来检索用于指定 pin 的类型的值。
+客户端使用 KSPROPERTY\_BDA\_PIN\_类型来检索指定 PIN 类型的值。
 
 ## <span id="ddk_ksproperty_bda_pin_type_ks"></span><span id="DDK_KSPROPERTY_BDA_PIN_TYPE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67368133"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "67368133"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>否</p></td>
-<td><p>Pin</p></td>
+<td><p>“是”</p></td>
+<td><p>无</p></td>
+<td><p>大头针</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>ULONG</p></td>
 </tr>
@@ -66,7 +66,7 @@ ms.locfileid: "67368133"
 
 返回的值指定 pin 类型。
 
-当网络提供商创建筛选器使用 KSMETHOD pin\_BDA\_创建\_PIN\_工厂，它指定筛选器的 BDA 模板拓扑中包含的 pin 类型列表中 pin 类型。 KSPROPERTY\_BDA\_PIN\_类型返回此 pin 类型。 在筛选器的 BDA 模板拓扑中每个 pin 类型可仅出现一次，但它可在实际的拓扑结构中出现多次。 Pin 类型的值对应于 pin 类型的从零开始的数组中元素的索引。 此 pin 类型的数组是一个数组 KSPIN\_描述符\_EX 结构。
+当网络提供程序使用 KSMETHOD 创建用于筛选器的 pin\_BDA\_创建\_PIN\_工厂时，它从包含在筛选器的 "BDA" 模板拓扑中的 pin 类型列表中指定 pin 类型。 KSPROPERTY\_BDA\_PIN\_类型返回此 PIN 类型。 在筛选器的 BDA 模板拓扑中，每个 pin 类型只能出现一次，但它可以在实际拓扑中出现多次。 固定类型的值对应于从零开始的固定类型数组中的元素的索引。 此类型的 pin 类型是 KSPIN\_描述符\_EX 结构的数组。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,20 +78,20 @@ ms.locfileid: "67368133"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Bdamedia.h （包括 Bdamedia.h）</td>
+<td><p>标头</p></td>
+<td>Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSMETHOD\_BDA\_创建\_PIN\_工厂**](ksmethod-bda-create-pin-factory.md)
 
-[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)
+[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

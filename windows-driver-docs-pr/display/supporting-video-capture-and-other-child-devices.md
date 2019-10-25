@@ -6,41 +6,41 @@ keywords:
 - 视频捕获 WDK 显示
 - 捕获视频 WDK 显示
 - 接口 WDK 显示
-- 显示子视频捕获驱动程序 WDK
+- 子视频捕获驱动程序 WDK 显示
 - MDLs WDK 显示
-- 内存描述符列出 WDK 显示
-- 捕获的缓冲区 WDK 显示
-- 显示驱动程序模型 WDK Windows Vista 中，子视频捕获驱动程序
+- 内存描述符列出了 WDK 显示
+- 捕获缓冲区 WDK 显示
+- 显示驱动程序模型 WDK Windows Vista，子视频捕获驱动程序
 - Windows Vista 显示器驱动程序模型 WDK，子视频捕获驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2acc87ecba4885c27d68ce7bec36895288215c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1eefa7fffe1692cdbb2a731e79dd85205a498ee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361201"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825557"
 ---
 # <a name="supporting-video-capture-and-other-child-devices"></a>支持视频捕获和其他子设备
 
 
-显示微型端口驱动程序和视频捕获设备或另一个子设备驱动程序可以相互定义子驱动程序可以使用与父微型端口驱动程序通过其设备进行通信的专用接口。 子视频捕获驱动程序必须紧密耦合到父显示微型端口驱动程序。 实际上，可能无法显示微型端口驱动程序的一部分实现视频捕获。 视频捕获驱动程序可以使用专用接口通过显示微型端口驱动程序访问*I2C*总线和出于其他目的。
+视频捕获设备或其他子设备的显示微型端口驱动程序和驱动程序可以相互定义专用接口，子驱动程序可以使用该接口通过父微型端口驱动程序与其设备通信。 子视频捕获驱动程序必须紧耦合到父显示器微型端口驱动程序。 事实上，视频捕获可能作为显示微型端口驱动程序的一部分实现。 视频捕获驱动程序可以将专用接口与显示微型端口驱动程序一起使用，以访问*I2C*总线和其他目的。
 
-若要初始化的专用接口，视频捕获驱动程序将发送[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)显示端口驱动程序 （的一部分的请求*Dxgkrnl.sys*) 显示微型端口驱动程序。 显示端口驱动程序将收到此类请求后，它会调用微型端口驱动程序[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数，并将传递一个指向[**查询\_界面**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_query_interface)结构，其中包含要初始化的专用接口的信息。
+若要初始化专用接口，视频捕获驱动程序会将[**IRP\_MN\_QUERY\_interface**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求发送到显示微型端口驱动程序的显示端口驱动程序（ *Dxgkrnl*的一部分）。 在显示端口驱动程序收到此类请求后，它将调用微型端口驱动程序的[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数，并传递一个指向[**查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_query_interface)结构的指针，该结构包含用于初始化专用接口的信息.
 
-**请注意**  如果显示微型端口驱动程序的一部分实施视频捕获，则可能会调用视频捕获*DxgkDdiQueryInterface*直接。
+**注意**   如果视频捕获是作为显示微型端口驱动程序的一部分实现的，则视频捕获可能会直接调用*DxgkDdiQueryInterface* 。
 
  
 
-子设备 （包括视频捕获设备） 的每个驱动程序必须返回适配器指示设备是与相关联的硬件的 GUID。 GUID 提供为显示微型端口驱动程序中的适配器**AdapterGuid**的成员[ **DXGK\_启动\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_dxgk_start_info)结构通过指向*DxgkStartInfo*的参数[ **DxgkDdiStartDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)时初始化适配器发送的函数。 用户模式下捕获组件随后可以将此适配器 GUID 映射到显示适配器。
+子设备（包括视频捕获设备）的每个驱动程序都必须返回适配器 GUID，指示与设备关联的硬件。 适配器 GUID 提供给 DXGK\_**的 "显示**小型端口驱动程序" 成员，该驱动程序由[**DxgkDdiStartDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_start_device)的*DxgkStartInfo*参数指向的[**启动\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_start_info)结构初始化适配器时发送的函数。 用户模式捕获组件随后可以将此适配器 GUID 映射到显示适配器。
 
-在 Microsoft Windows 2000 显示器驱动程序模型结构和发送到视频 MDLs 捕获驱动程序。 除了支持捕获到系统内存，Windows Vista 显示器驱动程序模型支持捕获视频内存。 Direct3D 运行时调用 DirectX 视频加速 2.0 类型函数，以直接 GPU 执行后期处理捕获的数据。 而不是发送 MDLs 来描述视频内存缓冲区，用户模式显示驱动程序将发送 D3DKMT\_句柄，以捕获缓冲区分配的句柄类型值。 因此，视频捕获驱动程序和显示微型端口驱动程序组合可以使用现有的回调函数，如[ **DxgkCbGetHandleData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_gethandledata)引用描述捕获的专用数据缓冲区。 此外可以使用驱动程序组合[ **DxgkCbGetCaptureAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_getcaptureaddress)回调函数以返回在捕获缓冲区的物理地址。
+在 Microsoft Windows 2000 中，显示驱动程序模型结构并将 MDLs 发送到视频捕获驱动程序。 除了支持捕获到系统内存之外，Windows Vista 显示器驱动程序模型还支持捕获到视频内存。 Direct3D 运行时调用 DirectX 视频加速2.0 类型的函数，以指示 GPU 对捕获数据执行 post 处理。 用户模式显示驱动程序将发送 D3DKMT\_处理程序类型值来捕获缓冲区分配，而不是发送 MDLs 来描述视频内存缓冲区。 因此，视频捕获驱动程序和显示微型端口驱动程序组合可以使用现有的回调函数（如[**DxgkCbGetHandleData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_gethandledata) ）来引用描述捕获缓冲区的专用数据。 驱动程序组合还可以使用[**DxgkCbGetCaptureAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_getcaptureaddress)回调函数返回捕获缓冲区的物理地址。
 
-视频捕获应用程序调用 Direct3D 运行时创建捕获缓冲区;用户模式显示驱动程序会随后调用运行时。 运行时调用用户模式显示驱动程序[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)函数与**CaptureBuffer**中设置位域标志**标志**的成员[ **D3DDDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)结构，以创建捕获缓冲区。 显示微型端口驱动程序还必须指定**捕获**视频内存管理器时内存管理器调用显示微型端口驱动程序的位域标志[ **DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数来创建用于捕获缓冲区的分配。 当创建捕获缓冲区时，这些立即固定在内存中，直到它们被释放不解除固定。 运行时捕获堆栈必须捕获驱动程序，用于捕获缓冲区发送内核模式分配句柄，因为调用用户模式显示驱动程序[ **GetCaptureAllocationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaptureallocationhandle)若要将每个资源句柄映射到该资源的内核模式分配句柄的函数。
+视频捕获应用程序调入到 Direct3D 运行时以创建捕获缓冲区;运行时随后调用用户模式显示驱动程序。 运行时调用用户模式显示驱动程序的[**CreateResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)函数，并在[**D3DDDIARG\_CreateResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)结构的**Flags**成员中设置**CaptureBuffer**位字段标志来创建捕获缓冲区。 当内存管理器调用显示小型端口驱动程序的[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数来为捕获缓冲区创建分配时，显示微型端口驱动程序还必须为视频内存管理器指定**捕获**位字段标志. 创建捕获缓冲区后，它们会立即固定在内存中，并且在释放之前不会进行取消固定。 因为捕获堆栈必须将捕获缓冲区的内核模式分配句柄发送到捕获驱动程序，所以运行时将调用用户模式显示驱动程序的[**GetCaptureAllocationHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaptureallocationhandle)函数，以将每个资源句柄映射到内核模式该资源的分配句柄。
 
-捕获驱动程序可以报告它是否支持直接捕获到系统内存。 如果捕获驱动程序支持捕获直接到系统内存，MDLs 发送到捕获驱动程序实现此目的。 如果捕获驱动程序不支持直接捕获到系统内存，运行时创建视频内存捕获缓冲区，并捕获驱动程序必须填充它们。 用户模式显示驱动程序[ **CaptureToSysMem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_capturetosysmem)函数调用以将捕获缓冲区的内容复制到系统内存图面。 可以使用运行时*CaptureToSysMem*而不是[ **Blt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)函数以利用的位块传输 (bitblt) 的不需要的特殊硬件用户模式显示驱动程序调用[ **pfnRenderCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)函数。
+捕获驱动程序可以报告它是否支持直接捕获到系统内存。 如果捕获驱动程序支持直接捕获到系统内存，则会将 MDLs 发送到捕获驱动程序以实现此目的。 如果捕获驱动程序不支持直接捕获到系统内存，则运行时将创建视频内存捕获缓冲区，并且捕获驱动程序必须填写它们。 调用用户模式显示驱动程序的[**CaptureToSysMem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_capturetosysmem)函数将捕获缓冲区的内容复制到系统内存图面。 运行时可以使用*CaptureToSysMem*而不是[**Blt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_blt)函数来利用专用于位块传输（bitblt）的硬件，而不要求用户模式显示驱动程序调用[**pfnRenderCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)函数。
 
-因为 AVStream 控制视频捕获，并不知道视频捕获发生时的 DirectX 图形内核子系统。 但是，图形内核子系统可察觉用作捕获缓冲区的分配。 图形内核子系统时捕获缓冲区即将被销毁，调用显示微型端口驱动程序[ **DxgkDdiStopCapture** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_stopcapture)函数来指示捕获操作必须立即停止将用作在捕获缓冲区的分配。 如果已通过捕获堆栈停止捕获操作，该驱动程序可以放心地忽略该调用。
+由于 AVStream 控制视频捕获，因此在发生视频捕获时，DirectX 图形内核子系统并不知道。 但是，图形内核子系统知道用作捕获缓冲区的分配。 当捕获缓冲区即将被销毁时，图形内核子系统将调用显示微型端口驱动程序的[**DxgkDdiStopCapture**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_stopcapture)函数，以指示捕获操作必须立即停止使用分配作为捕获缓冲区。 如果捕获操作已通过捕获堆栈停止，则驱动程序可以放心地忽略调用。
 
  
 

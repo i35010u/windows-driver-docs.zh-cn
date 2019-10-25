@@ -3,30 +3,30 @@ title: 与目标建立连接
 description: 与目标建立连接
 ms.assetid: 1258ee32-3914-4832-b98b-361dace0abaf
 keywords:
-- 网络、 Winsock 内核 WDK 远程传输地址
-- WSK WDK 网络、 远程传输地址
+- Winsock 内核 WDK 网络，远程传输地址
+- WSK WDK 网络，远程传输地址
 - 远程传输地址绑定 WDK Winsock 内核
 - 传输地址 WDK Winsock 内核
-- 已建立套接字连接 WDK Winsock 内核
+- 建立的套接字连接 WDK Winsock 内核
 - 连接 WDK Winsock 内核
 - 目标连接 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1312e98992ba3fd4b2e4c544eff51c06e0b7d553
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 89ec07b3abebc92bdf45914a42de50605c39fa39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384558"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834772"
 ---
 # <a name="establishing-a-connection-with-a-destination"></a>与目标建立连接
 
 
-Winsock Kernel (WSK) 应用程序已绑定到本地传输地址的面向连接的套接字后，它可以连接套接字到远程传输地址来建立与远程系统的连接。 WSK 应用程序必须连接到远程传输地址的面向连接的套接字，然后它可以发送或通过套接字接收数据。
+Winsock 内核（WSK）应用程序已将面向连接的套接字绑定到本地传输地址后，它可以将套接字连接到远程传输地址，以便与远程系统建立连接。 WSK 应用程序必须先将面向连接的套接字连接到远程传输地址，然后才能在套接字上发送或接收数据。
 
-WSK 应用程序连接到远程传输地址通过调用的套接字[ **WskConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_connect)函数。 **WskConnect**函数所指向的**WskConnect**套接字的提供程序调度结构的成员。 一个套接字提供程序调度结构所指向的**调度**套接字对象结构的成员 ( [ **WSK\_套接字**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket)) 返回在创建套接字期间 WSK 子系统。
+WSK 应用程序通过调用[**WskConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_connect)函数将套接字连接到远程传输地址。 **WskConnect**函数由套接字提供程序调度结构的**WskConnect**成员指向。 套接字的提供程序调度结构由 WSK 子系统在创建套接字期间返回的套接字对象结构（ [**WSK\_套接字**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket)）的**调度**成员指向。
 
-下面的代码示例显示了 WSK 应用程序如何可以面向连接的套接字连接到远程传输地址。
+下面的代码示例演示 WSK 应用程序如何将面向连接的套接字连接到远程传输地址。
 
 ```C++
 // Prototype for the connect IoCompletion routine
@@ -127,7 +127,7 @@ NTSTATUS
 }
 ```
 
-WSK 应用程序可以调用[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建、 绑定和连接中的单个函数调用的面向连接的套接字。
+WSK 应用程序可以在单个函数调用中调用[**WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建、绑定和连接面向连接的套接字。
 
  
 

@@ -1,49 +1,49 @@
 ---
-title: 要考虑 StartIo 例程的事项
-description: 要考虑 StartIo 例程的事项
+title: StartIo 例程的注意事项
+description: StartIo 例程的注意事项
 ms.assetid: 389240d0-682f-48b3-940f-c107e9f60155
 keywords:
-- StartIo 例程，有关 StartIo 例程
+- StartIo 例程，关于 StartIo 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d322a35b05940750354b33b42b2970c9e76c066
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f4f585110db8703aed00f198632b5d26eb8b08a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369706"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827669"
 ---
-# <a name="points-to-consider-for-startio-routines"></a>要考虑 StartIo 例程的事项
+# <a name="points-to-consider-for-startio-routines"></a>StartIo 例程的注意事项
 
 
 
 
 
-在实现时记住以下几点[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程：
+实现[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程时，请注意以下几点：
 
--   一个*StartIo*例程必须同步其访问的物理设备和任何共享状态信息或驱动程序保持驱动程序设备扩展插件中的资源的访问同一个设备，内存其他例程位置或资源。
+-   *StartIo*例程必须将其访问权限同步到物理设备，并将其与驱动程序在设备扩展中维护的任何共享状态信息或资源进行同步，以便访问相同的设备、内存位置或中心.
 
-    如果*StartIo*例程与 ISR 共享设备或状态，则必须使用[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)调用驱动程序提供[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程进行编程设备或访问共享的状态。 有关详细信息，请参阅[使用临界区](using-critical-sections.md)。
+    如果*StartIo*例程与 ISR 共享设备或状态，则必须使用[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)调用驱动程序提供的[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程来对设备进行编程，或访问共享状态。 有关详细信息，请参阅[使用关键部分](using-critical-sections.md)。
 
-    如果*StartIo*例程共享状态或具有例程 ISR 以外的资源，它必须保护的共享的状态或具有为其驱动程序提供的存储驱动程序初始化 executive 旋转锁的资源。 有关详细信息，请参阅[旋转锁](spin-locks.md)。
+    如果*StartIo*例程使用不是 ISR 的例程来共享状态或资源，则必须使用驱动程序为其提供存储的驱动程序初始化的执行自旋锁来保护共享状态或资源。 有关详细信息，请参阅[自旋锁](spin-locks.md)。
 
--   如果整体化非 WDM 设备驱动程序设置控制器对象，其*StartIo*例程可以使用控制器对象通过共享物理连接 （类似） 的设备与设备同步操作。
+-   如果单一的非 WDM 设备驱动程序设置控制器对象，则其*StartIo*例程可以使用控制器对象通过共享的物理设备与附加的（类似）设备同步操作。
 
-    请参阅[控制器对象](using-controller-objects.md)有关详细信息。
+    有关详细信息，请参阅[控制器对象](using-controller-objects.md)。
 
--   除非紧密耦合的更高级别的驱动程序 presplits 大型 DMA 传输请求对于其基础的设备驱动程序，基础设备驱动程序*StartIo*例程必须将大型传输请求拆分为分部传输范围和驱动程序必须执行一系列的部分传输设备操作。 每个部分传输必须将其调整为适合的硬件功能： 功能的驱动程序的设备，或从属的 DMA 设备功能的系统的 DMA 控制器，二者具有更严格的约束。
+-   基本设备驱动程序的*StartIo*例程必须将大型传输请求拆分到部分传输范围内，才能将大型传输请求拆分到部分传输范围内，并且驱动程序必须执行部分传输设备操作序列。 必须调整每个部分的大小以适合硬件的功能：驱动程序的设备的功能，或对于从属 DMA 设备，还包括系统 DMA 控制器的功能，两者的限制更严格。
 
-    请参阅[适配器对象和 DMA](adapter-objects-and-dma.md)有关使用系统或总线 master DMA 详细信息。
+    有关使用系统或 bus-主 DMA 的详细信息，请参阅[适配器对象和 DMA](adapter-objects-and-dma.md) 。
 
--   *StartIo*例程使用 DMA 的驱动程序必须同步使用的传输[适配器对象](adapter-objects-and-dma.md)。
+-   使用 DMA 的驱动程序的*StartIo*例程必须使用[适配器对象](adapter-objects-and-dma.md)来同步传输。
 
--   一个*StartIo*例程运行在 IRQL = 调度\_级别，限制可以调用的支持例程集。
+-   *StartIo*例程以 IRQL = 调度\_级别运行，这会限制它可调用的支持例程集。
 
-    例如， *StartIo*例程不能访问或分配可分页内存，并且它不能等待要设置为终止状态的调度程序对象。 但是， *StartIo*例程可以获取和释放使用的驱动程序分配 executive 数值调节钮锁[ **KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)和[**KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel)，它运行速度更快比[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)并[ **KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)。
+    例如， *StartIo*例程既不能访问也不分配可分页内存，也不能等待调度程序对象设置为终止状态。 另一方面， *StartIo*例程可以通过[**KeAcquireSpinLockAtDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel)和[**KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)获取和释放驱动程序分配的 executive 旋转锁，其运行速度比[**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)更快，[**KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)。
 
-    请参阅[管理硬件优先级](managing-hardware-priorities.md)并[旋转锁](spin-locks.md)有关详细信息。
+    有关详细信息，请参阅[管理硬件优先级](managing-hardware-priorities.md)和[旋转锁](spin-locks.md)。
 
--   如果该驱动程序持有 Irp 处于可取消状态，其*StartIo*例程必须检查是否输入的 IRP 已经开始在其设备上请求任何处理之前已取消。 有关详细信息，请参阅[取消 Irp](canceling-irps.md)。
+-   如果驱动程序以可取消的状态保存 Irp，则其*StartIo*例程必须检查输入 IRP 是否已被取消，然后才能在其设备上开始处理该请求。 有关详细信息，请参阅[取消 irp](canceling-irps.md)。
 
  
 

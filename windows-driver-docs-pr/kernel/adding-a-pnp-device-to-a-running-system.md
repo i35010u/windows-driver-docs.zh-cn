@@ -3,26 +3,26 @@ title: 将 PnP 设备添加到正在运行的系统
 description: 将 PnP 设备添加到正在运行的系统
 ms.assetid: 73d14ba1-6cf1-44eb-8a98-8c2fe44c11bb
 keywords:
-- 即插即用 WDK 内核，将设备添加到正在运行的系统
-- 插 WDK 内核，将设备添加到正在运行的系统
-- 添加到正在运行的系统的即插即用设备
-- 枚举即插即用设备 WDK 即插即用
-- 报告的即插即用设备
-- devnodes WDK 即插即用
-- 设备节点 WDK 即插即用
-- 功能的驱动程序 WDK 即插即用
-- 筛选器驱动程序 WDK 即插即用
-- AddDevice 例程 WDK 即插即用
-- WDK PnP Irp
-- I/O 请求数据包 WDK 即插即用
+- PnP WDK 内核，将设备添加到运行系统
+- 即插即用 WDK 内核，将设备添加到运行系统
+- 正在将 PnP 设备添加到运行系统
+- 枚举 PnP 设备 WDK PnP
+- 报告 PnP 设备
+- devnodes WDK PnP
+- 设备节点 WDK PnP
+- 函数驱动程序 WDK PnP
+- 筛选器驱动程序 WDK PnP
+- AddDevice 例程 WDK PnP
+- Irp WDK PnP
+- I/o 请求数据包 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc9ae4fe91b5ccd2b10496c5e367bfee0376cecc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d3356e859528548243123779c35cf828b1704c6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369995"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828673"
 ---
 # <a name="adding-a-pnp-device-to-a-running-system"></a>将 PnP 设备添加到正在运行的系统
 
@@ -30,67 +30,67 @@ ms.locfileid: "67369995"
 
 
 
-本部分介绍的事件发生时系统会在配置的用户已添加到正在运行的计算机的即插即用设备的序列。 此讨论突出显示即插即用管理器、 总线驱动程序和枚举和配置新设备中的函数和筛选器驱动程序的角色。
+本部分介绍当系统配置用户已添加到正在运行的计算机的 PnP 设备时发生的事件的顺序。 本讨论重点介绍在枚举和配置新设备时，PnP 管理器、总线驱动程序以及函数和筛选器驱动程序的角色。
 
-在本文的大部分也是与配置计算机启动时存在的即插即用设备相关的。 具体而言，其驱动程序标记为服务的设备\_需\_INF 文件中的开始配置实质上是相同的方式是否设备动态添加或已在启动时存在。
+此讨论中的大部分还与配置计算机启动时存在的 PnP 设备有关。 具体而言，在 INF 文件中，其驱动程序标记为服务\_需求\_启动的设备在本质上是以动态方式添加设备还是在启动时存在。
 
-下图显示的第一个步骤中配置设备，从开始，当用户插入到计算机的硬件。
+下图显示了配置设备的第一步，从用户将硬件插入计算机起。
 
-![演示如何枚举和报告插设备的关系图](images/hotplug.png)
+![说明如何枚举和报告即插即用设备的示意图](images/hotplug.png)
 
-以下说明与上图中带圆圈的数字相对应：
+以下说明与上图中的带圆圈数字相对应：
 
-1.  用户插入到一个可用的插槽的即插即用总线上的即插即用设备。
+1.  用户将 PnP 设备插入 PnP 总线上的可用槽。
 
-    在此示例中，用户插入 USB 主控制器上的中心即插即用 USB 游戏杆。 USB 集线器是总线即插即用设备，因为子设备可以连接到它。
+    在此示例中，用户将一个 PnP USB 游戏杆插入到 USB 主机控制器的集线器中。 USB 集线器是 PnP 总线设备，因为子设备可以连接到它。
 
-2.  总线设备功能驱动程序确定新的设备为其总线上。
+2.  总线设备的函数驱动程序确定新设备在其总线上。
 
-    该驱动程序如何确定这取决于总线体系结构。 对于某些总线，总线功能驱动程序接收新设备的热即插即用的通知。 如果在总线不支持热插拔通知，用户必须采取相应的措施，会导致要枚举的总线控制面板中。
+    驱动程序如何确定这一点取决于总线体系结构。 对于某些总线，总线函数驱动程序接收新设备的热插拔通知。 如果总线不支持热插拔通知，则用户必须在 "控制面板" 中采取适当的措施来枚举总线。
 
-    在此示例中，USB 总线支持热插拔通知，以便通知 USB 总线功能驱动程序，子项已更改。
+    在此示例中，USB 总线支持热插拔通知，因此 USB 总线的函数驱动程序会通知其子节点已更改。
 
-3.  总线设备功能驱动程序通知即插即用管理器已更改其组子设备。
+3.  总线设备的函数驱动程序将通知 PnP 管理器其子设备集已更改。
 
-    功能驱动程序通过调用通知即插即用管理器[ **IoInvalidateDeviceRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)与*类型*的**BusRelations**。
+    函数驱动程序通过调用*类型*为**BusRelations**的[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)通知 PnP 管理器。
 
-4.  PnP 管理器将查询的总线驱动程序有关的总线上设备的新列表。
+4.  PnP 管理器将在总线的驱动程序上查询总线上当前设备的列表。
 
-    PnP 管理器将发送[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)到总线的设备堆栈的请求。 **Parameters.QueryDeviceRelations.Type**值是**BusRelations**，，该值指示在总线上的即插即用的管理器要求的当前存在的设备的列表 (*总线关系*).
+    PnP 管理器将[**IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)请求发送到总线的设备堆栈。 **QueryDeviceRelations**值为**BusRelations**，指示 PnP 管理器正在请求总线上存在的当前设备列表（*总线关系*）。
 
-    PnP 管理器将 IRP 发送到总线的设备堆栈中的顶部驱动程序。 根据 PnP Irp 的规则，堆栈中的每个驱动程序处理 IRP，如果适用，并将传递到下一步的驱动程序 IRP。
+    PnP 管理器将 IRP 发送到总线的设备堆栈中的顶层驱动程序。 根据 PnP Irp 的规则，堆栈中的每个驱动程序会根据需要处理 IRP，并将 IRP 向下传递到下一个驱动程序。
 
-5.  总线设备功能驱动程序处理 IRP。
+5.  总线设备的函数驱动程序处理 IRP。
 
-    请参阅的参考页[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)有关处理此 IRP 的详细信息。
+    有关处理此 IRP 的详细信息，请参阅[**IRP\_MN\_QUERY\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)的参考页。
 
-    在此示例中，USB 集线器驱动程序处理的中心此 IRP *FDO*。 中心驱动程序创建*PDO*游戏杆设备并在其随 IRP 返回子设备列表中包括指向游戏杆 PDO 的引用。
+    在此示例中，USB 集线器驱动程序为中心*FDO*处理此 IRP。 集线器驱动程序为操纵杆设备创建一个*PDO* ，并在其使用 IRP 返回的子设备列表中包含指向游戏杆 PDO 的引用指针。
 
-    USB 集线器的父总线驱动程序 （USB 主机控制器类/miniclass 驱动程序对） 完成 IRP，IRP 传输到设备堆栈通过任何[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程注册通过中心驱动程序。
+    当 USB 集线器的父总线驱动程序（USB 主机控制器类/miniclass 驱动程序对）完成 IRP 后，IRP 将通过由集线器驱动程序注册的任何[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程来向后移动设备堆栈。
 
-请注意，总线函数驱动程序通过请求的即插即用的管理器查询有关其子设备的列表来报告其的子级列表中的更改。 得到**IRP\_MN\_查询\_设备\_关系**请求被总线设备的所有驱动程序。 通常，总线功能驱动程序是唯一的驱动程序来处理 IRP 和报表子级。 在某些设备的堆栈，总线筛选器驱动程序存在，并参与构造总线关系的列表。 一个示例是 ACPI，ACPI 设备的总线筛选器驱动程序作为附加。 在某些设备堆栈、 nonbus 筛选器驱动程序处理**IRP\_MN\_查询\_设备\_关系**请求中，但这并不常见。
+请注意，总线函数驱动程序通过请求 PnP 管理器查询其子设备列表中的子项列表来报告更改。 总线设备的所有驱动程序都将显示生成的**IRP\_MN\_查询\_设备\_关系**请求。 通常，总线函数驱动程序是处理 IRP 和报表子项的唯一驱动程序。 在某些设备堆栈中，总线筛选器驱动程序存在，并参与构造总线关系的列表。 例如，ACPI 是 ACPI 设备的总线筛选器驱动程序。 在某些设备堆栈中，nonbus 筛选器驱动程序处理**IRP\_MN\_查询\_设备\_关系**请求，但这并不典型。
 
-此时，即插即用 manager 总线上具有设备的当前列表。 PnP 管理器然后确定是否任何设备新到达或已删除。 在此示例中，没有一台新设备。 下图显示了创建的新设备 devnode 和开始配置设备的即插即用管理器。
+此时，PnP 管理器具有总线上设备的当前列表。 然后，PnP 管理器将确定是否有任何设备新近到达或已被删除。 在此示例中，有一个新的设备。 下图显示了为新设备创建 devnode 并开始配置设备的 PnP 管理器。
 
-![说明创建新的即插设备 devnode 的关系图](images/credvnd.png)
+![说明如何为新的即插即用设备创建 devnode 的关系图](images/credvnd.png)
 
-以下说明与上图中带圆圈的数字相对应：
+以下说明与上图中的带圆圈数字相对应：
 
-1.  即插即用 manager devnodes 为创建任何新的子设备在总线上。
+1.  PnP 管理器为总线上的任何新子设备创建 devnodes。
 
-    PnP 管理器将总线关系中返回的列表进行比较**IRP\_MN\_查询\_设备\_关系**中即插即用当前记录到总线的子项列表的 IRP设备目录树。 PnP 管理器创建的每个新设备 devnode 并启动删除处理的任何设备的已删除。
+    PnP 管理器将**irp\_MN\_QUERY\_设备\_关系**IRP "中返回的总线关系的列表与当前在 PnP 设备树中记录的总线的子列表进行比较。 PnP 管理器为每个新设备创建一个 devnode，并为已删除的任何设备启动删除处理。
 
-    在此示例中，没有一台新设备 （游戏杆），因此 PnP 管理器创建的游戏杆 devnode。 此时，已针对游戏杆的唯一驱动程序是在父 USB 集线器总线驱动程序，创建游戏杆的 PDO。 任何可选总线筛选器驱动程序也都会出现在设备堆栈，但总线筛选器驱动程序为简单起见，示例省略了。
+    在此示例中，有一个新设备（操纵杆），因此 PnP 管理器会为操纵杆创建一个 devnode。 此时，为操纵杆配置的唯一驱动程序为父 USB 集线器总线驱动程序，该驱动程序创建了操纵杆的 PDO。 任何可选的总线筛选器驱动程序也会出现在设备堆栈中，但该示例省略了总线筛选器驱动程序以简化。
 
-    在上图中两个 devnodes 之间的宽箭头表示游戏杆 devnode 的 USB 集线器 devnode 子级。
+    上图中两个 devnodes 之间的宽箭头表示操纵杆 devnode 是 USB 集线器 devnode 的子。
 
-2.  PnP 管理器收集有关新设备的信息，并开始配置设备。
+2.  PnP 管理器收集有关新设备的信息并开始配置设备。
 
-    PnP 管理器将一系列 Irp 发送到设备堆栈来收集有关设备的信息。 此时，设备堆栈包含，创建的设备的父总线驱动程序和任何可选总线筛选器驱动程序的筛选器 DOs PDO。 因此，总线驱动程序和总线筛选器驱动程序是应对这些 Irp 的唯一驱动程序。 在此示例中，游戏杆设备堆栈中的唯一驱动程序是父总线驱动程序 USB 集线器驱动程序。
+    PnP 管理器将一系列 Irp 发送到设备堆栈以收集有关设备的信息。 此时，设备堆栈只包含设备的父总线驱动程序和筛选器 DOs （对于任何可选的总线筛选器驱动程序）创建的 PDO。 因此，总线驱动程序和总线筛选器驱动程序是响应这些 Irp 的唯一驱动程序。 在此示例中，游戏杆设备堆栈中唯一的驱动程序为父总线驱动程序，即 USB 集线器驱动程序。
 
-    PnP 管理器通过将 Irp 发送到设备堆栈收集的新设备有关的信息。 这些 Irp 如下所示：
+    PnP 管理器通过将 Irp 发送到设备堆栈来收集有关新设备的信息。 这些 Irp 包括：
 
-    -   [**IRP\_MN\_查询\_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)，以下类型的硬件 Id 的每个单独 IRP:
+    -   [**IRP\_MN\_查询\_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)，为以下每种类型的硬件 id 提供单独的 IRP：
 
         **BusQueryDeviceID**
 
@@ -104,7 +104,7 @@ ms.locfileid: "67369995"
 
     -   [**IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)
 
-    -   [**IRP\_MN\_查询\_设备\_文本**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)，以下各项的每个单独 IRP:
+    -   [**IRP\_MN\_查询\_设备\_文本**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)，为以下各项提供单独的 IRP：
 
         **DeviceTextDescription**
 
@@ -114,124 +114,124 @@ ms.locfileid: "67369995"
     -   [**IRP\_MN\_查询\_资源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resources)
     -   [**IRP\_MN\_查询\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)
 
-    PnP 管理器将发送 Irp 上面列出的处理新的即插即用设备，此阶段，但不是一定是按所列的顺序，因此不应造成会假设在其中发送 Irp 的顺序。 此外，您不应假定 PnP 管理器将发送上述 Irp。
+    PnP 管理器将在处理新的 PnP 设备的这一阶段发送上面列出的 Irp，但不一定按列出的顺序进行操作，因此，不应对 Irp 的发送顺序作出假设。 此外，不应假定 PnP 管理器只发送以上列出的 Irp。
 
-    PnP 管理器会检查注册表，以确定是否在设备已安装在此计算机上以前。 PnP 管理器检查&lt;*枚举器*&gt;\\&lt;*deviceID* &gt;子项下设备**枚举**分支。 在此示例中，设备的新，并且必须配置"从零开始。"
+    PnP 管理器检查注册表以确定此计算机上是否已安装了该设备。 PnP 管理器检查**枚举**分支下的设备的 &lt;*枚举器*&gt;\\&lt;*deviceID*&gt; 子项。 在此示例中，该设备是新设备，必须配置为 "从头开始"。
 
 3.  PnP 管理器将有关设备的信息存储在注册表中。
 
-    在注册表**枚举**分支保留供操作系统组件，其布局会有所更改。 驱动程序编写人员必须使用系统例程来提取与驱动程序相关的信息。 不会访问**枚举**分支直接从驱动程序。 以下**枚举**会列出仅用于进行调试的信息。
+    注册表的**枚举**分支保留供操作系统组件使用，其布局可能会更改。 驱动程序编写器必须使用系统例程来提取与驱动程序相关的信息。 不要直接从驱动程序访问**枚举**分支。 下面列出的**枚举**信息仅用于调试目的。
 
-    -   PnP 管理器为设备的枚举器创建一个用于设备的项下的子项。
+    -   PnP 管理器为设备的枚举器的密钥下的设备创建一个子项。
 
-        PnP 管理器创建名为一个子项**HKLM\\系统\\CurrentControlSet\\枚举\\** &lt;*枚举器*&gt; **\\** &lt; *deviceID*&gt;。 它会创建&lt;*枚举器*&gt;子项如果尚不存在。
+        PnP 管理器会创建一个名为**HKLM\\的子项\\CurrentControlSet\\Enum\\** &lt;&gt;\\*deviceID*&lt; *&gt;。* 如果&gt; 子项不存在，它将创建 &lt;*枚举器*。
 
-        *枚举器*发现即插即用设备的组件基于即插即用硬件标准。 一个枚举器的任务由 PnP 管理器与合作关系中的即插即用总线驱动程序执行。 通常由其父总线驱动程序，如 PCI 或 PCMCIA 枚举设备。 某些设备通过总线筛选器驱动程序，如 ACPI 枚举。
+        *枚举器*是基于 pnp 硬件标准发现 PnP 设备的组件。 枚举器的任务通过与 PnP 管理器合作的 PnP 总线驱动程序执行。 设备通常由其父总线驱动程序（如 PCI 或 PCMCIA）枚举。 某些设备由总线筛选器驱动程序（如 ACPI）枚举。
 
-    -   PnP 管理器创建一个用于设备的此实例的子项。
+    -   PnP 管理器为设备的此实例创建子项。
 
-        如果**Capabilities.UniqueID**作为返回**TRUE**有关**IRP\_MN\_查询\_功能**，设备的唯一 ID 是在系统是唯一的。 如果没有，即插即用管理器修改 ID，以便它是唯一的系统范围。
+        如果**功能**为**IRP\_MN\_QUERY\_功能**，则为 " **TRUE** "，该设备的唯一 ID 在整个系统中是唯一的。 如果不是，则 PnP 管理器会修改 ID，使其在整个系统范围内是唯一的。
 
-        PnP 管理器创建名为一个子项**HKLM\\系统\\CurrentControlSet\\枚举\\** &lt;*枚举器*&gt; **\\** &lt; *deviceID* &gt; **\\** &lt; *instanceID*&gt;。
+        PnP 管理器会创建一个名为 HKLM\\的子项 **\\CurrentControlSet\\Enum\\** &lt;&gt;\\*deviceID*&lt;&gt;&lt;*instanceID*&gt;。
 
-    -   PnP 管理器将有关设备的信息写入到的设备实例的子项。
+    -   PnP 管理器将有关设备的信息写入设备实例的子项。
 
-        PnP 管理器存储信息，包括以下内容，如果它为设备提供：
+        如果为设备提供了以下信息，则 PnP 管理器将存储信息，包括以下信息：
 
-        **DeviceDesc** — 从[ **IRP\_MN\_查询\_设备\_文本**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)
+        **DeviceDesc** -从[ **IRP\_MN\_查询\_设备\_文本**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)
 
-        **位置** — 从**IRP\_MN\_查询\_设备\_文本**
+        **位置** —从**IRP\_MN\_查询\_设备\_文本**
 
-        **功能** — 从标志[ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)
+        **功能** — [ **IRP\_MN\_查询\_功能**的标志](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)
 
-        **UINumber** — 从**IRP\_MN\_查询\_功能**
+        **UINumber** -从**IRP\_MN\_查询\_功能**
 
-        **HardwareID** — 从[ **IRP\_MN\_查询\_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)
+        **HardwareID** -从[ **IRP\_MN\_查询\_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)
 
-        **CompatibleIDs** — 从**IRP\_MN\_查询\_ID**
+        **CompatibleIDs** -从**IRP\_MN\_查询\_ID**
 
-        **ContainerID** — 从**IRP\_MN\_查询\_ID**
+        **ContainerID** -从**IRP\_MN\_查询\_ID**
 
-        **LogConf\\BootConfig** — 从[ **IRP\_MN\_查询\_资源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resources)
+        **LogConf\\BootConfig** -从[ **IRP\_MN\_查询\_资源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resources)
 
-        **LogConf\\BasicConfigVector** — 从[ **IRP\_MN\_查询\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)
+        **LogConf\\BasicConfigVector** -从[ **IRP\_MN\_查询\_资源\_需求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)
 
-此时，即插即用管理器已准备好定位功能驱动程序和筛选这些设备驱动程序，如果有的话。 （请参阅下图。）
+此时，PnP 管理器准备好查找该设备的函数驱动程序和筛选器驱动程序（如果有）。 （请参见下图。）
 
-![关系图演示如何查找函数和筛选器驱动程序](images/finddrv.png)
+![阐释查找函数和筛选器驱动程序的示意图](images/finddrv.png)
 
-以下说明与上图中的带编号圆圈相对应：
+以下说明与上图中的带编号的圆圈相对应：
 
-1.  内核模式即插即用管理器协调与用户模式即插即用管理器和用户模式下安装程序组件，若要查找的函数和筛选器驱动程序设备，如果有的话。
+1.  内核模式 PnP 管理器与用户模式 PnP 管理器和用户模式安装组件协调，以便查找设备的函数和筛选器驱动程序（如果有）。
 
-    内核模式即插即用 manager 队列将事件与用户模式即插即用管理器中，确定需要安装的设备。 特权的用户登录之后，用户模式组件将继续进行查找驱动程序。 请参阅[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)有关安装程序组件中安装设备及其角色的信息。
+    内核模式 PnP 管理器将事件排队到用户模式 PnP 管理器，标识需要安装的设备。 当特权用户登录后，用户模式组件会继续查找驱动程序。 请参阅[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)，了解有关安装组件及其在设备中的角色的信息。
 
-2.  用户模式下安装组件直接内核模式即插即用管理器要加载的函数和筛选器驱动程序。
+2.  用户模式安装组件将内核模式 PnP 管理器定向到加载函数和筛选器驱动程序。
 
-    用户模式组件回调到内核模式以获得驱动程序加载，从而导致他们[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)要调用的例程。
+    用户模式组件会回叫内核模式以获取加载的驱动程序，从而导致调用其[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程。
 
-下图显示了 PnP 管理器加载驱动程序 （如果适用），调用其*AddDevice*例程，并指定要启动设备的驱动程序。
+下图显示了 PnP 管理器加载驱动程序（如果适用），调用其*AddDevice*例程，并定向驱动程序以启动设备。
 
-![关系图演示如何调用 adddevice 例程并启动新的设备](images/addstart.png)
+![说明如何调用 adddevice 例程并启动新设备的关系图](images/addstart.png)
 
-以下说明与上图中的带编号圆圈相对应：
+以下说明与上图中的带编号的圆圈相对应：
 
-1.  较低的筛选器驱动程序
+1.  较低筛选器驱动程序
 
-    功能驱动程序将附加到设备堆栈之前，即插即用管理器将处理任何更低的筛选器驱动程序。 对于每个低筛选器驱动程序，即插即用管理器调用驱动程序的[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程，如果尚未加载该驱动程序。 然后，即插即用管理器调用的驱动程序*AddDevice*例程。 在其*AddDevice*例程，筛选器驱动程序创建一个筛选器设备对象 （筛选器执行操作） 并将其附加到设备堆栈 ([**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack))。 后它会将其设备对象附加到设备堆栈，该驱动程序将执行相应作为驱动程序的设备上。
+    在将函数驱动程序附加到设备堆栈之前，PnP 管理器将处理所有较低级别的驱动程序。 对于每个小写筛选器驱动程序，如果尚未加载驱动程序，则 PnP 管理器会调用驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程。 然后，PnP 管理器调用驱动程序的*AddDevice*例程。 筛选器驱动程序在其*AddDevice*例程中创建筛选器设备对象（筛选器），并将其附加到设备堆栈（[**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)）。 将设备对象附加到设备堆栈后，驱动程序将作为设备的驱动程序。
 
-    在 USB 游戏杆示例中，没有为设备的一个较低的筛选器驱动程序。
+    在 USB 游戏杆示例中，设备有一个较低的筛选器驱动程序。
 
-2.  功能驱动程序
+2.  函数驱动程序
 
-    附加任何较低的筛选器后，即插即用管理器将处理功能驱动程序。 PnP 管理器中调用函数驱动程序**DriverEntry**如果驱动程序还未加载并调用函数驱动程序的例程*AddDevice*例程。 功能驱动程序创建一个函数设备对象 (FDO)，并将其附加到设备堆栈。
+    附加了任何较低级别的筛选器后，PnP 管理器将处理函数驱动程序。 如果尚未加载驱动程序并调用函数驱动程序的*AddDevice*例程，PnP 管理器将调用函数驱动程序的**DriverEntry**例程。 函数驱动程序创建一个函数设备对象（FDO），并将其附加到设备堆栈。
 
-    在此示例中，USB 游戏杆功能驱动程序是实际的驱动程序的一对： HID 类驱动程序和 HID miniclass 驱动程序。 两个驱动程序协同工作来充当功能驱动程序。 驱动程序对创建只有一个 FDO，并将其附加到设备堆栈。
+    在此示例中，USB 游戏杆的函数驱动程序实际上是一对驱动程序： HID 类驱动程序和 HID miniclass 驱动程序。 这两个驱动程序协同工作以充当函数驱动程序。 驱动程序对仅创建一个 FDO，并将其附加到设备堆栈。
 
-3.  Upper 筛选器驱动程序
+3.  上限筛选器驱动程序
 
-    附加功能驱动程序后，即插即用管理器将处理任何大写筛选器驱动程序。
+    附加函数驱动程序后，PnP 管理器将处理任何上层筛选器驱动程序。
 
-    在此示例中，没有为设备的一个上限筛选器驱动程序。
+    在此示例中，设备有一个上层筛选器驱动程序。
 
-4.  将资源分配和启动设备
+4.  分配资源和启动设备
 
-    PnP 管理器将资源分配到设备，如果需要并颁发 IRP 以启动设备。
+    如果需要，PnP 管理器会将资源分配给设备，并发出 IRP 来启动设备。
 
-    -   分配的资源
+    -   分配资源
 
-        前面的配置过程中，即插即用管理器从设备的父总线驱动程序中收集设备的硬件资源要求。 在加载设备驱动程序的完整集后，即插即用管理器将发送[ **IRP\_MN\_筛选器\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)请求为设备堆栈中。 堆栈中的所有驱动程序有机会处理此 IRP 并修改设备的资源要求列表，如有必要。
+        之前在配置过程中，PnP 管理器从设备的父总线驱动程序收集设备的硬件资源需求。 为设备加载完整的驱动程序集后，PnP 管理器会将[**IRP\_MN\_筛选器\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)请求发送到设备堆栈。 如果需要，堆栈中的所有驱动程序都有机会处理此 IRP 并修改设备的资源需求列表。
 
-        PnP 管理器将资源分配给该设备，如果设备需要任何，基于设备的要求和当前可用的资源。
+        PnP 管理器根据设备的要求以及当前可用的资源，将资源分配给设备（如果设备需要）。
 
-        PnP 管理器可能需要重新排列现有设备以满足需求的新设备的资源分配。 此重新分配的资源称为"重新平衡"。 现有设备的驱动程序接收序列的停止和启动 Irp 期间重新平衡，但重新平衡必须对用户透明。
+        PnP 管理器可能需要重新排列现有设备的资源分配，以满足新设备的需求。 资源的这一重新分配称为 "重新平衡"。 现有设备的驱动程序会在重新平衡过程中收到一系列停止和启动 Irp，但重新平衡必须对用户是透明的。
 
-        在 USB 游戏杆的示例中，USB 的设备不需要的硬件资源以便 PnP 管理器设置为资源列表**NULL**。
+        在 USB 游戏杆的示例中，USB 设备不需要硬件资源，因此 PnP 管理器将资源列表设置为**NULL**。
 
-    -   启动设备 (**IRP\_MN\_启动\_设备**)
+    -   启动设备（**IRP\_MN\_START\_设备**）
 
-        一旦 PnP 管理器中向资源分配到设备，会将发送[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)到设备堆栈的 IRP，若要指示要启动的驱动程序设备。
+        一旦 PnP 管理器将资源分配给设备，它会将[**IRP\_MN 发送到设备堆栈\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)IRP，以指示驱动程序启动设备。
 
-    设备启动后，即插即用管理器将三个详细 Irp 发送到设备的驱动程序：
+    设备启动后，PnP 管理器会将3个其他 Irp 发送到设备的驱动程序：
 
     -   [**IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)
 
-        在后开始 IRP 成功完成时，即插即用管理器发送另一个**IRP\_MN\_查询\_功能**IRP 到设备堆栈。 这些设备的所有驱动程序可以处理 IRP 的选择。 PnP 管理器将此 IRP 发送在此时间后附加的所有驱动程序和设备已启动，因为函数或筛选器驱动程序可能需要访问设备收集功能的信息。
+        启动 IRP 成功完成后，PnP 管理器会将另一个**IRP\_MN\_QUERY\_功能**IRP 发送到设备堆栈。 设备的所有驱动程序都具有处理 IRP 的选项。 此时，PnP 管理器会在附加了所有驱动程序并启动了设备后发送此 IRP，因为函数或筛选器驱动程序可能需要访问设备以收集功能信息。
 
-    -   [**IRP\_MN\_QUERY\_PNP\_DEVICE\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state)
+    -   [**IRP\_MN\_QUERY\_PNP\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state)
 
-        此 IRP 到，例如，设备应不显示在设备管理器和热插拔程序等的用户界面中的报表，使驱动程序有机会。 这可用于在系统上存在但不可在的当前配置，如便携式计算机未插接时不可用的便携式计算机上的游戏端口的设备。
+        例如，此 IRP 为驱动程序提供了机会，以报告设备不应在用户界面（如设备管理器和热插拔程序）中显示。 这对于系统上存在但在当前配置中无法使用的设备十分有用，例如便携机断开连接时无法使用的便携式计算机上的游戏端口。
 
-    -   [**IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)总线关系
+    -   [**IRP\_MN\_查询总线关系\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)
 
-        PnP 管理器将发送此 IRP，以确定设备是否具有任何子设备。 如果是这样，即插即用管理器将每个子设备配置。
+        PnP 管理器发送此 IRP 来确定设备是否有任何子设备。 如果是这样，PnP 管理器将配置每个子设备。
 
  
-## <a name="using-guidpnplocationinterface"></a>使用 GUID_PNP_LOCATION_INTERFACE
+## <a name="using-guid_pnp_location_interface"></a>使用 GUID_PNP_LOCATION_INTERFACE
 
-GUID_PNP_LOCATION_INTERFACE 接口提供 SPDRP_LOCATION_PATHS Plug and Play (PnP) 设备的设备属性。
+GUID_PNP_LOCATION_INTERFACE 接口提供设备的 SPDRP_LOCATION_PATHS 即插即用（PnP）设备属性。
 
-若要在您的驱动程序中实现此接口，处理与 InterfaceType IRP_MN_QUERY_INTERFACE IRP = GUID_PNP_LOCATION_INTERFACE。 您的驱动程序提供了指向包含该接口的单个例程的指针的 PNP_LOCATION_INTERFACE 结构的指针。 [PnpGetLocationString 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pget_location_string)提供设备的 SPDRP_LOCATION_PATHS 属性的特定于设备的一部分。
+若要在驱动程序中实现此接口，请用 InterfaceType = GUID_PNP_LOCATION_INTERFACE 处理 IRP_MN_QUERY_INTERFACE IRP。 驱动程序提供一个指向 PNP_LOCATION_INTERFACE 结构的指针，该结构包含指向接口的各个例程的指针。 [PnpGetLocationString 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pget_location_string)提供设备的 SPDRP_LOCATION_PATHS 属性的设备特定部分。
 
 
 

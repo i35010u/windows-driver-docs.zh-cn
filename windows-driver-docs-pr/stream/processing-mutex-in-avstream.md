@@ -3,17 +3,17 @@ title: 在 AVStream 中处理互斥
 description: 在 AVStream 中处理互斥
 ms.assetid: dd84fe3f-352e-4641-99d7-792ccecb0b40
 keywords:
-- AVStream 互斥体 WDK
-- 互斥体，WDK AVStream
-- 处理互斥体 WDK AVStream
+- AVStream mutex WDK
+- mutex WDK AVStream
+- 处理 mutex WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1222e8ba8f8b43a139213f0aeb7acffcfdd810c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a430808e2602c2978caf33d3e892413d8a2fd7cd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379061"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823751"
 ---
 # <a name="processing-mutex-in-avstream"></a>在 AVStream 中处理互斥
 
@@ -21,17 +21,17 @@ ms.locfileid: "67379061"
 
 
 
-第三个互斥体是处理互斥体。 单个筛选器和 pin 必须自己处理互斥体。 AVStream 独立获取处理在筛选器和 pin 级别之前, 处理互斥体以同步对处理相关结构的访问。 AVStream 也将获取处理 mutex 在其他操作，包括绑定到管道部分的插针，期间进入睡眠状态或唤醒电源操作，以及更改描述符。 微型驱动程序可以手动获取互斥体来执行同步操作，例如，处理或描述符修改。 它进行处理时不会发生任何更改之前，微型驱动程序应获取处理互斥体。
+第三个 mutex 是处理互斥体。 单个筛选器和 pin 具有其自己的处理互斥体。 在筛选器和固定级别进行处理之前，AVStream 独立获取处理互斥体，以便同步对与处理相关的结构的访问。 AVStream 还会在其他操作期间获取处理互斥体，包括管道部分的绑定插针、睡眠或唤醒电源操作和更改描述符。 微型驱动程序可以手动获取互斥体来执行同步操作，如处理或描述符修改。 在进行处理时，微型驱动程序应获取处理互斥体，以使其不发生任何更改。
 
-像其他两种类型的 mutex，处理互斥体，不获取以递归方式。 这意味着，如果微型驱动程序尝试获取在处理处理互斥体时，会发生死锁。
+与其他两种类型的 mutex 一样，处理互斥体不会以递归方式获取。 这意味着，如果微型驱动程序尝试在处理时获取处理互斥体，则会发生死锁。
 
-不要使用处理互斥体来暂停处理长一段时间。 而是直接通过使用操作处理控制门**KSGATE * Xxx*** 函数。
+不要使用处理互斥体来在很长一段时间内挂起处理。 改为直接使用**KSGATE * Xxx*** 函数操作处理控制入口。
 
-获取处理 mutex 的线程应随后尝试获取筛选器控件互斥体。
+已获取处理互斥体的线程以后不应尝试获取筛选器控件互斥体。
 
-若要操作处理互斥体，使用以下函数：
+若要操作处理互斥体，请使用以下函数：
 
-[**KsFilterAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilteracquireprocessingmutex)， [ **KsPinAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinacquireprocessingmutex)， [ **KsFilterReleaseProcessingMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksfilterreleaseprocessingmutex)， [ **KsPinReleaseProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinreleaseprocessingmutex)
+[**KsFilterAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilteracquireprocessingmutex)、 [**KsPinAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinacquireprocessingmutex)、 [**KsFilterReleaseProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterreleaseprocessingmutex)、 [**KsPinReleaseProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinreleaseprocessingmutex)
 
  
 

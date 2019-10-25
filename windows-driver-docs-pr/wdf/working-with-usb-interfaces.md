@@ -3,71 +3,71 @@ title: 使用 USB 接口
 description: 使用 USB 接口
 ms.assetid: 6a1801e4-bd46-4a78-8c30-7dc62e41a37a
 keywords:
-- USB I/O 面向 WDK KMDF，USB 接口
+- USB i/o 目标 WDK KMDF，USB 接口
 - USB 接口 WDK KMDF
 - framework 对象 WDK KMDF，USB 接口对象
-- 接口对象 WDK KMDF
+- interface 对象 WDK KMDF
 - 备用 USB 接口设置 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fca0e625f913dace801d250d4ae85d580edc0765
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e03e3a3578167f44d7fb55f97d0c0b5152058d70
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376882"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823503"
 ---
 # <a name="working-with-usb-interfaces"></a>使用 USB 接口
 
 
-框架表示为每个 USB 接口*framework USB 接口对象*。 当驱动程序[创建 framework USB 设备对象](working-with-usb-devices.md#creating-a-framework-usb-device-object)，框架将创建包含设备的第一个 USB 配置每个 USB 接口的 framework USB 接口对象。
+框架将每个 USB 接口表示为*框架 USB 接口对象*。 当驱动程序[创建框架 usb 设备对象](working-with-usb-devices.md#creating-a-framework-usb-device-object)时，框架会为设备的第一个 usb 配置包含的每个 usb 接口创建一个框架 usb 接口对象。
 
-大多数 USB 设备只有一个接口，并且此接口具有只有一个替代设置。 此类设备的驱动程序通常不需要使用框架的 USB 接口对象定义的对象方法。
+大多数 USB 设备只有一个接口，接口只有一个备用设置。 此类设备的驱动程序通常不需要使用框架的 USB 接口对象所定义的对象方法。
 
-如果您的驱动程序支持提供多个接口或替代设置的 USB 设备，接口对象方法启用驱动程序来执行以下操作：
+如果驱动程序支持提供多个接口或备用设置的 USB 设备，则 interface 对象方法使驱动程序能够执行以下操作：
 
--   [获取接口的信息。](#obtaining-interface-information)
+-   [获取接口信息。](#obtaining-interface-information)
 
--   [选择一项备用设置 USB 接口。](#selecting-an-alternate-setting-for-a-usb-interface)
+-   [选择 USB 接口的替代设置。](#selecting-an-alternate-setting-for-a-usb-interface)
 
-### <a href="" id="obtaining-interface-information"></a> 获取接口的信息
+### <a href="" id="obtaining-interface-information"></a>获取接口信息
 
-您的驱动程序已调用后[ **WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)，它可以调用[ **WdfUsbTargetDeviceGetInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetinterface)到获取一个表示设备的 USB 接口之一的 framework USB 接口对象的句柄。 然后您的驱动程序可以调用 USB 接口对象定义的几种方法用于获取有关 USB 接口的信息。
+当你的驱动程序调用[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)后，它可以调用[**WdfUsbTargetDeviceGetInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetinterface)来获取框架 usb 接口对象的句柄，该对象表示设备的一个 usb 接口。 然后，驱动程序可以调用 USB 接口对象定义的几种方法来获取有关 USB 接口的信息。
 
-您的驱动程序可以具有调用后随时调用以下方法[ **WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters):
+驱动程序可以在调用[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)后随时调用以下方法：
 
-<a href="" id="---------wdfusbinterfacegetinterfacenumber--------"></a>[**WdfUsbInterfaceGetInterfaceNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetinterfacenumber)  
-返回与 USB 接口对象相关联的 USB 接口号。
+<a href="" id="---------wdfusbinterfacegetinterfacenumber--------"></a>[**WdfUsbInterfaceGetInterfaceNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetinterfacenumber)  
+返回与 USB 接口对象关联的 USB 接口号。
 
-<a href="" id="---------wdfusbinterfacegetdescriptor--------"></a>[**WdfUsbInterfaceGetDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetdescriptor)  
-检索与 USB 接口的替代设置之一相关联的 USB 接口描述符。
+<a href="" id="---------wdfusbinterfacegetdescriptor--------"></a>[**WdfUsbInterfaceGetDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetdescriptor)  
+检索与 USB 接口的备用设置之一关联的 USB 接口描述符。
 
-<a href="" id="---------wdfusbinterfacegetnumendpoints--------"></a>[**WdfUsbInterfaceGetNumEndpoints**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetnumendpoints)  
-返回与其中一个 USB 接口的替代设置相关联的终结点的数目。
+<a href="" id="---------wdfusbinterfacegetnumendpoints--------"></a>[**WdfUsbInterfaceGetNumEndpoints**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetnumendpoints)  
+返回与 USB 接口的备用设置之一关联的终结点的数目。
 
-<a href="" id="---------wdfusbinterfacegetendpointinformation--------"></a>[**WdfUsbInterfaceGetEndpointInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetendpointinformation)  
-检索有关终结点和其关联的管道信息。
+<a href="" id="---------wdfusbinterfacegetendpointinformation--------"></a>[**WdfUsbInterfaceGetEndpointInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetendpointinformation)  
+检索有关终结点及其关联管道的信息。
 
-您的驱动程序可以调用以下方法之后该维度被称为, [ **WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig):
+在调用[**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)之后，你的驱动程序可以调用以下方法：
 
-<a href="" id="---------wdfusbinterfacegetconfiguredsettingindex--------"></a>[**WdfUsbInterfaceGetConfiguredSettingIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredsettingindex)  
-返回标识为 USB 接口当前所选的备用设置的索引值。
+<a href="" id="---------wdfusbinterfacegetconfiguredsettingindex--------"></a>[**WdfUsbInterfaceGetConfiguredSettingIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredsettingindex)  
+返回一个索引值，该值标识当前为 USB 接口选择的备用设置。
 
-<a href="" id="---------wdfusbinterfacegetnumconfiguredpipes--------"></a>[**WdfUsbInterfaceGetNumConfiguredPipes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetnumconfiguredpipes)  
-返回为指定的 USB 设备接口配置的管道数。
+<a href="" id="---------wdfusbinterfacegetnumconfiguredpipes--------"></a>[**WdfUsbInterfaceGetNumConfiguredPipes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetnumconfiguredpipes)  
+返回为指定 USB 设备接口配置的管道的数目。
 
-<a href="" id="---------wdfusbinterfacegetconfiguredpipe--------"></a>[**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)  
-返回与指定的 USB 设备接口和管道索引相关联的 framework 管道对象的句柄。
+<a href="" id="---------wdfusbinterfacegetconfiguredpipe--------"></a>[**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)  
+返回与指定的 USB 设备接口和管道索引相关联的框架管道对象的句柄。
 
-### <a href="" id="selecting-an-alternate-setting-for-a-usb-interface"></a> 选择一项备用设置为 USB 接口
+### <a href="" id="selecting-an-alternate-setting-for-a-usb-interface"></a>选择 USB 接口的替代设置
 
-驱动程序已调用后[ **WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)，该驱动程序可以调用[ **WdfUsbInterfaceGetNumSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetnumsettings)以获取备用 USB 接口支持的设置的数量。
+驱动程序调用[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)后，该驱动程序可以调用[**WDFUSBINTERFACEGETNUMSETTINGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetnumsettings)来获取 USB 接口支持的备用设置的数目。
 
-驱动程序已调用后[ **WdfUsbTargetDeviceSelectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)若要选择 USB 设备的配置，该驱动程序可以调用[ **WdfUsbInterfaceSelectSetting**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting)选择一项备用设置配置的 USB 接口之一。
+在驱动程序调用[**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)以选择某个 usb 设备的配置后，该驱动程序可以调用[**WdfUsbInterfaceSelectSetting**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting)为配置的一个 usb 接口选择备用设置。
 
-从零开始的消息必须为连续编号在设备的备用设置。
+设备的备用设置必须连续编号（从零开始）。
 
-有关相关信息，请参阅[如何在 USB 界面中选择一项备用设置](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。
+有关相关信息，请参阅[如何在 USB 接口中选择替代设置](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: ndiskd.filterdriver
-description: Ndiskd.filterdriver 扩展显示有关 NDIS 筛选器驱动程序的信息。 如果不带任何参数运行此扩展，ndiskd 将显示所有筛选器驱动程序的列表。
+description: Ndiskd. filterdriver 扩展显示有关 NDIS 筛选器驱动程序的信息。 如果运行不带任何参数的扩展，ndiskd 将显示所有筛选器驱动程序的列表。
 ms.assetid: 9FE3E885-98BC-4FCC-9E1C-DBECD070F92A
 keywords:
-- ndiskd.filterdriver Windows 调试
+- ndiskd filterdriver Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d96bca08f92724ba08f59a32cdf4f93df98a170
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f0588f6c6eb7f17bfd461c3573b4fa125d08be79
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364313"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826663"
 ---
 # <a name="ndiskdfilterdriver"></a>!ndiskd.filterdriver
 
 
-**！ Ndiskd.filterdriver**扩展显示有关 NDIS 筛选器驱动程序的信息。 如果不带任何参数运行此扩展 ！ ndiskd 将显示所有筛选器驱动程序的列表。
+**！ Ndiskd filterdriver**扩展显示有关 NDIS 筛选器驱动程序的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有筛选器驱动程序的列表。
 
 ```console
 !ndiskd.filterdriver [-handle <x>] [-filters] [-handlers] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 NDIS 筛选器驱动程序的句柄。
 
-<span id="_______-filters______"></span><span id="_______-FILTERS______"></span> *-filters*   
-显示此驱动程序筛选器的实例。
+<span id="_______-filters______"></span><span id="_______-FILTERS______"></span> *-筛选器*   
+显示此驱动程序的筛选器的实例。
 
-<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-handlers*   
-显示此驱动程序筛选器处理程序。
+<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-处理程序*   
+显示此驱动程序的筛选器处理程序。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-运行 **！ ndiskd.filterdriver**不带任何参数，以查看在系统上的所有筛选器驱动程序列表。 在下面的示例中，查找虚拟的 WiFi 筛选器驱动程序，其句柄是 ffffbc064cc83be0。
+不带参数的**ndiskd！ filterdriver** ，以查看系统上所有筛选器驱动程序的列表。 在下面的示例中，查找虚拟 WiFi 筛选器驱动程序，该驱动程序的句柄为 ffffbc064cc83be0。
 
 ```console
 0: kd> !ndiskd.filterdriver
@@ -58,7 +58,7 @@ Ndiskd.dll
     ffffbc064cb59b00 - WFP 802.3 MAC Layer LightWeight Filter
 ```
 
-通过单击筛选器驱动程序处理上一示例中或通过使用它输入 **！ ndiskd.filterdriver-处理**命令在命令窗口中，你可以获取请参阅有关该筛选器驱动程序详细信息。 在这种情况下，例如，有此筛选器驱动程序的任何筛选器模块。
+通过单击上一个示例中的筛选器驱动程序句柄，或使用它在命令窗口中输入 **！ ndiskd**命令，你可以获取有关该筛选器驱动程序的更多详细信息。 例如，在这种情况下，此筛选器驱动程序没有筛选器模块。
 
 ```console
 0: kd> !ndiskd.filterdriver ffffbc064cc83be0
@@ -110,18 +110,18 @@ HANDLERS
     StatusHandler                          fffff80787d877c0  bp
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
  
 

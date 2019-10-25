@@ -3,19 +3,19 @@ title: 将图面设为 FOURCC 格式
 description: 将图面设为 FOURCC 格式
 ms.assetid: 947b73c9-3f1d-485e-9966-815b40a06342
 keywords:
-- DirectX 8.0 发行说明 WDK Windows 2000 显示纹理格式的属性列
-- 纹理格式列出了 WDK DirectX 8.0
+- DirectX 8.0 发行说明 WDK Windows 2000 显示，纹理格式列表
+- 纹理格式列出 WDK DirectX 8。0
 - DPIXELFORMAT
-- 图面格式 WDK DirectX 8.0
+- 表面格式 WDK DirectX 8。0
 - Fourcc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f252a8b3d9dbfab3f225f6899e3cbe63df480ded
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3f922ead72668f642f73be91bd0c5b7fff71afb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361199"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825519"
 ---
 # <a name="surface-formats-as-fourccs"></a>将图面设为 FOURCC 格式
 
@@ -23,7 +23,7 @@ ms.locfileid: "67361199"
 ## <span id="ddk_surface_formats_as_fourccs_gg"></span><span id="DDK_SURFACE_FORMATS_AS_FOURCCS_GG"></span>
 
 
-三个新的图面上格式定义的 DirectX 8.0，D3DFMT\_Q8W8V8U8、 D3DFMT\_V16U16 和 D3DFMT\_W11V11U10，传递给驱动程序，因为*Fourcc*。 这意味着各个位深度和掩码字段[ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)未初始化数据结构和它们的值是未定义。 因此，处理这些三种格式的驱动程序必须不依赖于位计数或掩码中像素格式，但必须根据需要这些计算。 例如，在计算的面音调其中一种类型**dwRGBBitCount**的像素格式的字段不能使用。 所有其他格式而不 YUV、 DXT 和 IHV 特定的扩展格式映射到的旧 DDPIXELFORMAT 表示形式传递给驱动程序时，因此，有效像素格式和蒙板中的像素格式的数据结构。
+DirectX 8.0、D3DFMT\_Q8W8V8U8、D3DFMT\_V16U16 和 D3DFMT\_W11V11U10 定义的三个新表面格式将作为*fourcc*传递给驱动程序。 这意味着， [**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)数据结构的各个位深度和掩码字段未初始化且其值未定义。 因此，处理这三个格式的驱动程序不能依赖于像素格式的位计数或掩码，但必须根据需要进行计算。 例如，在计算这些类型之一的图面的螺距时，不得使用像素格式的**dwRGBBitCount**字段。 传递给驱动程序时，除 YUV、DXT 和 IHV 特定扩展格式以外的其他所有格式都将映射到旧的 DDPIXELFORMAT 表示形式，因此，在像素格式数据结构中具有有效的像素格式和掩码。
 
  
 

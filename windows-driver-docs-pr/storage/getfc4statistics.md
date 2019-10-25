@@ -1,6 +1,6 @@
 ---
 title: GetFC4Statistics 函数
-description: GetFC4Statistics WMI 方法报告类型 Nx 的端口上的流量统计数据\_所指示的 FC 4 协议端口。
+description: GetFC4Statistics WMI 方法报告所指示的 FC-SW\_端口的类型为 Nx 的端口上的流量统计信息。
 ms.assetid: f57f11bf-57b8-4ae9-96b3-4191f412c80c
 keywords:
 - GetFC4Statistics 函数存储设备
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b98234d86b502aeda0f5958c623a7f6aaf61e0c8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18f8af9884f1d3735d3638647d69da594220105e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378545"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837966"
 ---
 # <a name="getfc4statistics-function"></a>GetFC4Statistics 函数
 
 
-**GetFC4Statistics** WMI 方法报告类型 Nx 的端口上的流量统计数据\_所指示的 FC 4 协议端口。
+**GetFC4Statistics** WMI 方法报告所指示的 Fc-sw\_端口的类型为 Nx 的端口上的流量统计信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,20 +39,20 @@ void GetFC4Statistics(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFC4Statistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)结构。
+返回时，将包含一个 WMI 限定符值，该值指示操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**GetFC4Statistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)结构的**HBAStatus**成员中返回此信息。
 
 *PortWWN*   
-类型 Nx 的本地端口的全球通用名称\_端口的流量统计信息是报告。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)结构。
+Nx 类型的本地端口的全球名称\_要报告其流量统计信息的端口。 此信息将传送到结构中[**GetFC4Statistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)的**PortWWN**成员中的微型端口驱动程序。
 
 *FC4Type*   
-一个值，指示类型 FC 4 协议。 FC4 类型的说明，请参阅 T11 委员会*光纤通道通用服务-4*规范。 此信息传递到中的微型端口驱动程序**FC4Type**的成员[ **GetFC4Statistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)结构。
+一个值，该值指示类型 FC-4 协议。 有关 FC4 类型的说明，请参阅 T11 委员会*光纤通道通用服务-4*规范。 此信息将传送到结构中[**GetFC4Statistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)的**FC4Type**成员中的微型端口驱动程序。
 
 *FC4Statistics*   
-在返回时包含类型的结构[ **MSFC\_FC4STATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)保存指定的 FC 4 协议的统计信息。 微型端口驱动程序将返回此信息**FC4Statistics**的成员[ **GetFC4Statistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)结构。
+返回时，包含一个类型为[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)的结构，该结构包含指定的 FC-4 协议的统计信息。 微型端口驱动程序在[**GetFC4Statistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)结构的**FC4Statistics**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -62,7 +62,7 @@ void GetFC4Statistics(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于[MSFC\_HBAADAPTERMETHODS WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -75,29 +75,29 @@ void GetFC4Statistics(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Hbaapi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetFC4Statistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)
+[**GetFC4Statistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_in)
 
-[**GetFC4Statistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)
+[**GetFC4Statistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfc4statistics_out)
 
 [HBA\_状态](hba-status.md)
 
-[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
  
 

@@ -3,19 +3,19 @@ title: 提供 CustomTimerDpc 上下文信息
 description: 提供 CustomTimerDpc 上下文信息
 ms.assetid: b4d711fb-63d4-45c6-8054-f934741ce340
 keywords:
-- 计时器对象 WDK 内核，CustomTimerDpc 例程
+- timer 对象 WDK 内核，CustomTimerDpc 例程
 - CustomTimerDpc
 - DeferredContext 例程
-- WDK 同步的上下文信息
+- 上下文信息 WDK 同步
 - 计时器对象 WDK 内核，上下文信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62455533ae42cd13c2660f16f2b47f883bfb13da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e6bfad906f08d3bda0cbb90a1c3ebe4998c2678
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378790"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827583"
 ---
 # <a name="providing-customtimerdpc-context-information"></a>提供 CustomTimerDpc 上下文信息
 
@@ -23,15 +23,15 @@ ms.locfileid: "67378790"
 
 
 
-*DeferredContext*指针传递给[ **KeInitializeDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializedpc)指向上下文区域的其他驱动程序、 例程和*CustomTimerDpc*例程本身，可以维护状态。 内核将传递*DeferredContext* DPC 例程的每个调用中的指针。
+传递给[**KeInitializeDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc)的*DeferredContext*指针指向其他驱动程序例程和*CustomTimerDpc*例程本身可以保持状态的上下文区域。 内核通过每次调用 DPC 例程传递*DeferredContext*指针。
 
-与不同*IoTimer*例程*CustomTimerDpc*具有与驱动程序创建的设备对象没有特定关联。 但是，驱动程序可以将相关联*CustomTimerDpc*例程与驱动程序创建的设备对象通过在其上下文区域内包含指向设备对象的指针。
+与*IoTimer*例程不同， *CustomTimerDpc*与驱动程序创建的设备对象没有特定的关联。 但是，驱动程序可以通过在其上下文区中包含指向设备对象的指针，将*CustomTimerDpc*例程与驱动程序创建的设备对象相关联。
 
-上下文区域必须在内存中驻留时，将驱动程序分配。 通常情况下，此上下文区域是在设备扩展中，但也可以是在非分页缓冲池。 如果该驱动程序使用的控制器对象，它可以是控制器扩展。 上下文区域的内容都由驱动程序确定。
+上下文区域必须位于驻留的、驱动程序分配的内存中。 通常，此上下文区域位于设备扩展中，但也可以位于非分页池中。 如果驱动程序使用控制器对象，则它可以在控制器扩展中。 上下文区域的内容由驱动程序确定。
 
-如果*CustomTimerDpc*例程与驱动程序的 ISR 共享上下文信息*CustomTimerDpc*例程必须使用[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)来调用*SynchCritSection*例程访问的共享的上下文。 有关详细信息，请参阅[使用临界区](using-critical-sections.md)。
+如果*CustomTimerDpc*例程与驱动程序的 ISR 共享上下文信息，则*CustomTimerDpc*例程必须使用[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)调用访问共享上下文的*SynchCritSection*例程。 有关详细信息，请参阅[使用关键部分](using-critical-sections.md)。
 
-如果*CustomTimerDpc*共享上下文信息与其他非 ISR 驱动程序例程位于区域*DeferredContext*必须通过执行旋转锁保护。 有关详细信息，请参阅[旋转锁](spin-locks.md)。
+如果*CustomTimerDpc*与其他非 ISR 驱动程序例程共享上下文信息，则必须通过执行人员旋转锁来保护*DeferredContext*上的区域。 有关详细信息，请参阅[自旋锁](spin-locks.md)。
 
  
 

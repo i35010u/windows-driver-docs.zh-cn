@@ -1,9 +1,9 @@
 ---
 title: ndiskd.ndisslot
-description: '**！ Ndiskd.ndisslot**扩展显示 NDIS 处理器每个变量的内容。'
+description: '**！ Ndiskd ndisslot**扩展显示 NDIS 每处理器变量的内容。'
 ms.assetid: 0EF37FE7-31A1-4A71-9CAC-E2A43F0EEBCF
 keywords:
-- ndiskd.ndisslot Windows 调试
+- ndiskd ndisslot Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,43 +12,43 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b9ff3e98b774209d12f03da700967ce23dc6c6f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f710675efb9df62ab954fed3d7a8aed466729eeb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363134"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826553"
 ---
 # <a name="ndiskdndisslot"></a>!ndiskd.ndisslot
 
 
-**请注意**  第三方网络驱动程序开发人员不应手动使用此扩展命令。 你可以运行它以查看其显示的信息，但不能重复使用它提供了您的驱动程序的详细信息。
+**请注意**  第三方网络驱动程序开发人员不需要手动使用此扩展命令。 您可以运行它来查看它所显示的信息，但不能重复使用它在您的驱动程序中提供的详细信息。
 
  
 
-**！ Ndiskd.ndisslot**扩展显示 NDIS 处理器每个变量的内容。 如果不带任何参数运行此扩展 ！ ndiskd 将显示在系统上的 NDIS 每个处理器的所有变量的列表。
+**！ Ndiskd ndisslot**扩展显示 NDIS 每处理器变量的内容。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上所有 NDIS 每处理器变量的列表。
 
 ```console
 !ndiskd.ndisslot [-handle <x>] [-itemtype <str>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 槽的句柄。
 
 <span id="_______-itemtype______"></span><span id="_______-ITEMTYPE______"></span> *-itemtype*   
-在槽中存储的值的类型。
+存储在槽中的值的类型。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-运行 **！ ndiskd.ndisslot**扩展不带任何参数，以查看每个处理器插槽的所有变量的列表。 以下示例输出已 excised 为简洁起见列表的中间部分。
+运行不带参数的 **！ ndiskd ndisslot**扩展，以查看所有每处理器槽变量的列表。 为了简洁起见，下面的示例输出已 excised 列表的中间部分。
 
 ```console
 1: kd> !ndiskd.ndisslot
@@ -85,7 +85,7 @@ Ndiskd.dll
     Efficiency         46%
 ```
 
-单击每个处理器插槽变量的句柄之一上会显示该变量的详细信息。 下面的示例使用句柄 ffffc804ae060920 tsR 变量，从前面的示例。
+单击每处理器槽变量的一个句柄将显示该变量的详细信息。 下面的示例使用上一示例中的 tsR 变量的 ffffc804ae060920 句柄。
 
 ```console
 1: kd> !ndiskd.ndisslot ffffc804ae060920
@@ -96,18 +96,18 @@ Ndiskd.dll
     03                 00000006
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
  
 

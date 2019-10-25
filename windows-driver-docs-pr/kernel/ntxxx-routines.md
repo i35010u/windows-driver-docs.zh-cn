@@ -4,21 +4,21 @@ description: NtXxx 例程
 ms.assetid: 71db6fa6-d1f8-4aed-9de1-bba1f6cee1ce
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5ca8db16cb9f46700301d320f58d3e13a41645fe
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: bfc645440564173323df5cd1a67f71cfd3e492a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393417"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827820"
 ---
 # <a name="ntxxx-routines"></a>NtXxx 例程
 
 
-本部分介绍**Nt * Xxx*** 版本的 Windows 本机系统服务例程。 大多数自带的系统服务例程有两个版本，其中一个其中有一个名称以前缀开头**Nt**; 另一个版本具有前缀开头的名称**Zw**。 例如，调用[ **NtCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)并[ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)执行类似的操作，并且，事实上，提供由同一个服务内核模式系统例程。
+本部分介绍 Windows Native 系统服务例程的**Nt * Xxx*** 版本。 大多数本机系统服务例程有两个版本，其中一个的名称以前缀**Nt**开头;其他版本的名称以前缀**Zw**开头。 例如，对[**NtCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)和[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)的调用执行类似的操作，事实上，它是由相同的内核模式系统例程提供服务的。
 
-从内核模式驱动程序调用**Nt * Xxx*** 和**Zw * Xxx*** 版本的 Windows 本机系统服务例程在它们处理和解释输入的参数的方式行为可能有所不同。 有关详细信息之间的关系**Nt * Xxx*** 和**Zw * Xxx*** 的例程的版本，请参阅[使用 Nt 和 Zw 版本的本机系统服务例程](using-nt-and-zw-versions-of-the-native-system-services-routines.md).
+对于来自内核模式驱动程序的调用，Windows Native 系统服务例程的**Nt * xxx*** 和**Zw * xxx*** 版本的行为方式与它们处理和解释输入参数的方式不同。 有关例程的**nt * xxx*** 和**Zw * xxx*** 版本之间的关系的详细信息，请参阅[使用本机系统服务例程的 nt 和 Zw 版本](using-nt-and-zw-versions-of-the-native-system-services-routines.md)。
 
-下表总结了**Nt * Xxx*** 和**Zw * Xxx*** 例程的版本：
+下表总结了例程的**Nt * xxx*** 和**Zw * xxx*** 版本：
 
 <table>
 <colgroup>
@@ -34,7 +34,7 @@ ms.locfileid: "67393417"
 <tbody>
 <tr class="odd">
 <td><p>NtAllocateLocallyUniqueId</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwallocatelocallyuniqueid" data-raw-source="[&lt;strong&gt;ZwAllocateLocallyUniqueId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwallocatelocallyuniqueid)"><strong>ZwAllocateLocallyUniqueId</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwallocatelocallyuniqueid" data-raw-source="[&lt;strong&gt;ZwAllocateLocallyUniqueId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwallocatelocallyuniqueid)"><strong>ZwAllocateLocallyUniqueId</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtAllocateVirtualMemory</p></td>
@@ -42,27 +42,27 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtClose</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose" data-raw-source="[&lt;strong&gt;ZwClose&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)"><strong>ZwClose</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose" data-raw-source="[&lt;strong&gt;ZwClose&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)"><strong>ZwClose</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtCommitComplete</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete" data-raw-source="[&lt;strong&gt;ZwCommitComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)"><strong>ZwCommitComplete</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete" data-raw-source="[&lt;strong&gt;ZwCommitComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete)"><strong>ZwCommitComplete</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtCommitEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment" data-raw-source="[&lt;strong&gt;ZwCommitEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)"><strong>ZwCommitEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment" data-raw-source="[&lt;strong&gt;ZwCommitEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitenlistment)"><strong>ZwCommitEnlistment</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtCommitTransaction</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction" data-raw-source="[&lt;strong&gt;ZwCommitTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)"><strong>ZwCommitTransaction</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction" data-raw-source="[&lt;strong&gt;ZwCommitTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)"><strong>ZwCommitTransaction</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtCreateDirectoryObject</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject" data-raw-source="[&lt;strong&gt;ZwCreateDirectoryObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)"><strong>ZwCreateDirectoryObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject" data-raw-source="[&lt;strong&gt;ZwCreateDirectoryObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject)"><strong>ZwCreateDirectoryObject</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtCreateEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment" data-raw-source="[&lt;strong&gt;ZwCreateEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)"><strong>ZwCreateEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment" data-raw-source="[&lt;strong&gt;ZwCreateEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)"><strong>ZwCreateEnlistment</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtCreateEvent</p></td>
@@ -70,27 +70,27 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtCreateFile</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)"><strong>ZwCreateFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)"><strong>ZwCreateFile</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtCreateKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)"><strong>ZwCreateKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)"><strong>ZwCreateKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtCreateResourceManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager" data-raw-source="[&lt;strong&gt;ZwCreateResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager)"><strong>ZwCreateResourceManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager" data-raw-source="[&lt;strong&gt;ZwCreateResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)"><strong>ZwCreateResourceManager</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtCreateSection</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection" data-raw-source="[&lt;strong&gt;ZwCreateSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection)"><strong>ZwCreateSection</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection" data-raw-source="[&lt;strong&gt;ZwCreateSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)"><strong>ZwCreateSection</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtCreateTransaction</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction" data-raw-source="[&lt;strong&gt;ZwCreateTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)"><strong>ZwCreateTransaction</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransaction" data-raw-source="[&lt;strong&gt;ZwCreateTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransaction)"><strong>ZwCreateTransaction</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtCreateTransactionManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager" data-raw-source="[&lt;strong&gt;ZwCreateTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)"><strong>ZwCreateTransactionManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager" data-raw-source="[&lt;strong&gt;ZwCreateTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)"><strong>ZwCreateTransactionManager</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtCurrentProcess</p></td>
@@ -106,11 +106,11 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtDeleteKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtDeleteValueKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletevaluekey" data-raw-source="[&lt;strong&gt;ZwDeleteValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwdeletevaluekey)"><strong>ZwDeleteValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey" data-raw-source="[&lt;strong&gt;ZwDeleteValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey)"><strong>ZwDeleteValueKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtDeviceIoControlFile</p></td>
@@ -126,15 +126,15 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtEnumerateKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratekey" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratekey)"><strong>ZwEnumerateKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey)"><strong>ZwEnumerateKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtEnumerateTransactionObject</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntenumeratetransactionobject" data-raw-source="[&lt;strong&gt;ZwEnumerateTransactionObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntenumeratetransactionobject)"><strong>ZwEnumerateTransactionObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntenumeratetransactionobject" data-raw-source="[&lt;strong&gt;ZwEnumerateTransactionObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntenumeratetransactionobject)"><strong>ZwEnumerateTransactionObject</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtEnumerateValueKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratevaluekey" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwenumeratevaluekey)"><strong>ZwEnumerateValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey)"><strong>ZwEnumerateValueKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtFlushBuffersFile</p></td>
@@ -146,7 +146,7 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtFlushKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwflushkey" data-raw-source="[&lt;strong&gt;ZwFlushKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwflushkey)"><strong>ZwFlushKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwflushkey" data-raw-source="[&lt;strong&gt;ZwFlushKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwflushkey)"><strong>ZwFlushKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtFlushVirtualMemory</p></td>
@@ -162,11 +162,11 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtGetNotificationResourceManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntgetnotificationresourcemanager" data-raw-source="[&lt;strong&gt;ZwGetNotificationResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntgetnotificationresourcemanager)"><strong>ZwGetNotificationResourceManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager" data-raw-source="[&lt;strong&gt;ZwGetNotificationResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager)"><strong>ZwGetNotificationResourceManager</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtLoadDriver</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwloaddriver" data-raw-source="[&lt;strong&gt;ZwLoadDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwloaddriver)"><strong>ZwLoadDriver</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwloaddriver" data-raw-source="[&lt;strong&gt;ZwLoadDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwloaddriver)"><strong>ZwLoadDriver</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtLockFile</p></td>
@@ -174,11 +174,11 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtMakeTemporaryObject</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmaketemporaryobject" data-raw-source="[&lt;strong&gt;ZwMakeTemporaryObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmaketemporaryobject)"><strong>ZwMakeTemporaryObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmaketemporaryobject" data-raw-source="[&lt;strong&gt;ZwMakeTemporaryObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmaketemporaryobject)"><strong>ZwMakeTemporaryObject</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtMapViewOfSection</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection" data-raw-source="[&lt;strong&gt;ZwMapViewOfSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)"><strong>ZwMapViewOfSection</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection" data-raw-source="[&lt;strong&gt;ZwMapViewOfSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)"><strong>ZwMapViewOfSection</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtNotifyChangeKey</p></td>
@@ -190,23 +190,23 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtOpenEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopenenlistment" data-raw-source="[&lt;strong&gt;ZwOpenEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopenenlistment)"><strong>ZwOpenEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopenenlistment" data-raw-source="[&lt;strong&gt;ZwOpenEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopenenlistment)"><strong>ZwOpenEnlistment</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtOpenEvent</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenevent" data-raw-source="[&lt;strong&gt;ZwOpenEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenevent)"><strong>ZwOpenEvent</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenevent" data-raw-source="[&lt;strong&gt;ZwOpenEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenevent)"><strong>ZwOpenEvent</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtOpenFile</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile" data-raw-source="[&lt;strong&gt;ZwOpenFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntopenfile)"><strong>ZwOpenFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile" data-raw-source="[&lt;strong&gt;ZwOpenFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)"><strong>ZwOpenFile</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtOpenKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenkey)"><strong>ZwOpenKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)"><strong>ZwOpenKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtOpenProcess</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ntopenprocess" data-raw-source="[&lt;strong&gt;ZwOpenProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ntopenprocess)"><strong>ZwOpenProcess</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ntopenprocess" data-raw-source="[&lt;strong&gt;ZwOpenProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ntopenprocess)"><strong>ZwOpenProcess</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtOpenProcessTokenEx</p></td>
@@ -214,15 +214,15 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtOpenResourceManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopenresourcemanager" data-raw-source="[&lt;strong&gt;ZwOpenResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopenresourcemanager)"><strong>ZwOpenResourceManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopenresourcemanager" data-raw-source="[&lt;strong&gt;ZwOpenResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopenresourcemanager)"><strong>ZwOpenResourceManager</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtOpenSection</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection" data-raw-source="[&lt;strong&gt;ZwOpenSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)"><strong>ZwOpenSection</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection" data-raw-source="[&lt;strong&gt;ZwOpenSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection)"><strong>ZwOpenSection</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtOpenSymbolicLinkObject</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwOpenSymbolicLinkObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensymboliclinkobject)"><strong>ZwOpenSymbolicLinkObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwOpenSymbolicLinkObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject)"><strong>ZwOpenSymbolicLinkObject</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtOpenThreadTokenEx</p></td>
@@ -230,31 +230,31 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtOpenTransaction</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction" data-raw-source="[&lt;strong&gt;ZwOpenTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)"><strong>ZwOpenTransaction</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction" data-raw-source="[&lt;strong&gt;ZwOpenTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction)"><strong>ZwOpenTransaction</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtOpenTransactionManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransactionmanager" data-raw-source="[&lt;strong&gt;ZwOpenTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransactionmanager)"><strong>ZwOpenTransactionManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransactionmanager" data-raw-source="[&lt;strong&gt;ZwOpenTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransactionmanager)"><strong>ZwOpenTransactionManager</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtPowerInformation</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpowerinformation" data-raw-source="[&lt;strong&gt;ZwPowerInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpowerinformation)"><strong>ZwPowerInformation</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpowerinformation" data-raw-source="[&lt;strong&gt;ZwPowerInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpowerinformation)"><strong>ZwPowerInformation</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtPrepareComplete</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete" data-raw-source="[&lt;strong&gt;ZwPrepareComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)"><strong>ZwPrepareComplete</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreparecomplete" data-raw-source="[&lt;strong&gt;ZwPrepareComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreparecomplete)"><strong>ZwPrepareComplete</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtPrepareEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment" data-raw-source="[&lt;strong&gt;ZwPrepareEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment)"><strong>ZwPrepareEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepareenlistment" data-raw-source="[&lt;strong&gt;ZwPrepareEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepareenlistment)"><strong>ZwPrepareEnlistment</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtPrePrepareComplete</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete" data-raw-source="[&lt;strong&gt;ZwPrePrepareComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete)"><strong>ZwPrePrepareComplete</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepreparecomplete" data-raw-source="[&lt;strong&gt;ZwPrePrepareComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntprepreparecomplete)"><strong>ZwPrePrepareComplete</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtPrePrepareEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment" data-raw-source="[&lt;strong&gt;ZwPrePrepareEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)"><strong>ZwPrePrepareEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreprepareenlistment" data-raw-source="[&lt;strong&gt;ZwPrePrepareEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreprepareenlistment)"><strong>ZwPrePrepareEnlistment</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtQueryDirectoryFile</p></td>
@@ -262,19 +262,19 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtQueryFullAttributesFile</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwqueryfullattributesfile" data-raw-source="[&lt;strong&gt;ZwQueryFullAttributesFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwqueryfullattributesfile)"><strong>ZwQueryFullAttributesFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryfullattributesfile" data-raw-source="[&lt;strong&gt;ZwQueryFullAttributesFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryfullattributesfile)"><strong>ZwQueryFullAttributesFile</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtQueryInformationEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationenlistment" data-raw-source="[&lt;strong&gt;ZwQueryInformationEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationenlistment)"><strong>ZwQueryInformationEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationenlistment" data-raw-source="[&lt;strong&gt;ZwQueryInformationEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationenlistment)"><strong>ZwQueryInformationEnlistment</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtQueryInformationFile</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)"><strong>ZwQueryInformationFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)"><strong>ZwQueryInformationFile</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtQueryInformationResourceManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationresourcemanager" data-raw-source="[&lt;strong&gt;ZwQueryInformationResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationresourcemanager)"><strong>ZwQueryInformationResourceManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationresourcemanager" data-raw-source="[&lt;strong&gt;ZwQueryInformationResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationresourcemanager)"><strong>ZwQueryInformationResourceManager</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtQueryInformationToken</p></td>
@@ -282,15 +282,15 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtQueryInformationTransaction</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction" data-raw-source="[&lt;strong&gt;ZwQueryInformationTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)"><strong>ZwQueryInformationTransaction</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransaction" data-raw-source="[&lt;strong&gt;ZwQueryInformationTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransaction)"><strong>ZwQueryInformationTransaction</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtQueryInformationTransactionManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransactionmanager" data-raw-source="[&lt;strong&gt;ZwQueryInformationTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransactionmanager)"><strong>ZwQueryInformationTransactionManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransactionmanager" data-raw-source="[&lt;strong&gt;ZwQueryInformationTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransactionmanager)"><strong>ZwQueryInformationTransactionManager</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtQueryKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwquerykey" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwquerykey)"><strong>ZwQueryKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey)"><strong>ZwQueryKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtQueryObject</p></td>
@@ -306,11 +306,11 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtQuerySecurityObject</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwquerysymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwQuerySymbolicLinkObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwquerysymboliclinkobject)"><strong>ZwQuerySymbolicLinkObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerysymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwQuerySymbolicLinkObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerysymboliclinkobject)"><strong>ZwQuerySymbolicLinkObject</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtQueryValueKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwqueryvaluekey" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwqueryvaluekey)"><strong>ZwQueryValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey)"><strong>ZwQueryValueKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtQueryVirtualMemory</p></td>
@@ -322,39 +322,39 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtReadFile</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)"><strong>ZwReadFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile)"><strong>ZwReadFile</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtReadOnlyEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment" data-raw-source="[&lt;strong&gt;ZwReadOnlyEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment)"><strong>ZwReadOnlyEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntreadonlyenlistment" data-raw-source="[&lt;strong&gt;ZwReadOnlyEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntreadonlyenlistment)"><strong>ZwReadOnlyEnlistment</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtReadOnlyEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverenlistment" data-raw-source="[&lt;strong&gt;ZwRecoverEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverenlistment)"><strong>ZwRecoverEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverenlistment" data-raw-source="[&lt;strong&gt;ZwRecoverEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverenlistment)"><strong>ZwRecoverEnlistment</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtRecoverResourceManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager" data-raw-source="[&lt;strong&gt;ZwRecoverResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager)"><strong>ZwRecoverResourceManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager" data-raw-source="[&lt;strong&gt;ZwRecoverResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)"><strong>ZwRecoverResourceManager</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtRecoverTransactionManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager" data-raw-source="[&lt;strong&gt;ZwRecoverTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)"><strong>ZwRecoverTransactionManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager" data-raw-source="[&lt;strong&gt;ZwRecoverTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager)"><strong>ZwRecoverTransactionManager</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtRollbackComplete</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackcomplete" data-raw-source="[&lt;strong&gt;ZwRollbackComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackcomplete)"><strong>ZwRollbackComplete</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackcomplete" data-raw-source="[&lt;strong&gt;ZwRollbackComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackcomplete)"><strong>ZwRollbackComplete</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtRollbackEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment" data-raw-source="[&lt;strong&gt;ZwRollbackEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)"><strong>ZwRollbackEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackenlistment" data-raw-source="[&lt;strong&gt;ZwRollbackEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackenlistment)"><strong>ZwRollbackEnlistment</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtRollbackTransaction</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction" data-raw-source="[&lt;strong&gt;ZwRollbackTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)"><strong>ZwRollbackTransaction</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction" data-raw-source="[&lt;strong&gt;ZwRollbackTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction)"><strong>ZwRollbackTransaction</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtRollforwardTransactionManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollforwardtransactionmanager" data-raw-source="[&lt;strong&gt;ZwRollforwardTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollforwardtransactionmanager)"><strong>ZwRollforwardTransactionManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollforwardtransactionmanager" data-raw-source="[&lt;strong&gt;ZwRollforwardTransactionManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollforwardtransactionmanager)"><strong>ZwRollforwardTransactionManager</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtSetEvent</p></td>
@@ -362,19 +362,19 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtSetInformationEnlistment</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationenlistment" data-raw-source="[&lt;strong&gt;ZwSetInformationEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationenlistment)"><strong>ZwSetInformationEnlistment</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationenlistment" data-raw-source="[&lt;strong&gt;ZwSetInformationEnlistment&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationenlistment)"><strong>ZwSetInformationEnlistment</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtSetInformationFile</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile)"><strong>ZwSetInformationFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)"><strong>ZwSetInformationFile</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtSetInformationResourceManager</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationresourcemanager" data-raw-source="[&lt;strong&gt;ZwSetInformationResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationresourcemanager)"><strong>ZwSetInformationResourceManager</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationresourcemanager" data-raw-source="[&lt;strong&gt;ZwSetInformationResourceManager&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationresourcemanager)"><strong>ZwSetInformationResourceManager</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtSetInformationThread</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwsetinformationthread" data-raw-source="[&lt;strong&gt;ZwSetInformationThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwsetinformationthread)"><strong>ZwSetInformationThread</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwsetinformationthread" data-raw-source="[&lt;strong&gt;ZwSetInformationThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwsetinformationthread)"><strong>ZwSetInformationThread</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtSetInformationToken</p></td>
@@ -382,7 +382,7 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="even">
 <td><p>NtSetInformationTransaction</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationtransaction" data-raw-source="[&lt;strong&gt;ZwSetInformationTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationtransaction)"><strong>ZwSetInformationTransaction</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationtransaction" data-raw-source="[&lt;strong&gt;ZwSetInformationTransaction&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationtransaction)"><strong>ZwSetInformationTransaction</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtSetQuotaInformationFile</p></td>
@@ -394,7 +394,7 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtSetValueKey</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwsetvaluekey" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwsetvaluekey)"><strong>ZwSetValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)"><strong>ZwSetValueKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtSetVolumeInformationFile</p></td>
@@ -402,15 +402,15 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtSinglePhaseReject</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject" data-raw-source="[&lt;strong&gt;ZwSinglePhaseReject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)"><strong>ZwSinglePhaseReject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsinglephasereject" data-raw-source="[&lt;strong&gt;ZwSinglePhaseReject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsinglephasereject)"><strong>ZwSinglePhaseReject</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtTerminateProcess</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwterminateprocess" data-raw-source="[&lt;strong&gt;ZwTerminateProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwterminateprocess)"><strong>ZwTerminateProcess</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwterminateprocess" data-raw-source="[&lt;strong&gt;ZwTerminateProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwterminateprocess)"><strong>ZwTerminateProcess</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>NtUnloadDriver</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwunloaddriver" data-raw-source="[&lt;strong&gt;ZwUnloadDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwunloaddriver)"><strong>ZwUnloadDriver</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwunloaddriver" data-raw-source="[&lt;strong&gt;ZwUnloadDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwunloaddriver)"><strong>ZwUnloadDriver</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtUnlockFile</p></td>
@@ -418,7 +418,7 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtUnmapViewOfSection</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwunmapviewofsection" data-raw-source="[&lt;strong&gt;ZwUnmapViewOfSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwunmapviewofsection)"><strong>ZwUnmapViewOfSection</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwunmapviewofsection" data-raw-source="[&lt;strong&gt;ZwUnmapViewOfSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwunmapviewofsection)"><strong>ZwUnmapViewOfSection</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>NtWaitForSingleObject</p></td>
@@ -426,7 +426,7 @@ ms.locfileid: "67393417"
 </tr>
 <tr class="odd">
 <td><p>NtWriteFile</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile)"><strong>ZwWriteFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)"><strong>ZwWriteFile</strong></a></p></td>
 </tr>
 </tbody>
 </table>

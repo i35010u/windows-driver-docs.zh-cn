@@ -1,6 +1,6 @@
 ---
 title: 删除系统分配的计时器对象
-description: 从 Windows 8.1 开始，ExDeleteTimer 例程中删除已通过 ExAllocateTimer 例程的计时器对象。
+description: 从 Windows 8.1 开始，ExDeleteTimer 例程将删除 ExAllocateTimer 例程创建的计时器对象。
 ms.assetid: 7D119448-3890-4E8F-BC79-7FEB3213B693
 keywords:
 - ExXxxTimer 例程
@@ -13,48 +13,48 @@ keywords:
 - EX_TIMER
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7346235a95ed5f5d970f9bcf25ff1922621db2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e7938d1e9568e0636b34e0d0e162a8f21a3401cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377105"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828394"
 ---
 # <a name="deleting-a-system-allocated-timer-object"></a>删除系统分配的计时器对象
 
 
-从 Windows 8.1 [ **ExDeleteTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletetimer)例程中删除已创建的计时器对象[ **ExAllocateTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)例程。 此计时器对象是系统分配[ **EX\_计时器**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构，其成员是不透明的驱动程序。 删除计时器对象之前，请**ExDeleteTimer**进一步禁用计时器对象上的操作和取消或完成任何挂起的操作可能正在进行中的对象。
+从 Windows 8.1 开始， [**ExDeleteTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletetimer)例程将删除[**ExAllocateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer)例程创建的计时器对象。 此计时器对象是系统分配的[**EX\_定时器**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构，其成员对于驱动程序是不透明的。 在删除计时器对象之前， **ExDeleteTimer**将对该对象禁用进一步的计时器操作，并取消或完成可能正在进行的对象上的任何挂起的操作。
 
-驱动程序调用后**ExDeleteTimer**，此例程需要几个步骤以确保它可以安全地删除计时器对象。 首先， **ExDeleteTimer**计时器对象标记为禁用，以防止该驱动程序启动新的计时器操作，使用对象。 禁用计时器对象后，调用[ **ExSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)或[ **ExCancelTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excanceltimer)例程会立即返回**FALSE**和会执行任何操作。 此外，对的第二个调用**ExDeleteTimer**返回**FALSE**和会执行任何操作。
+驱动程序调用**ExDeleteTimer**后，此例程会执行几个步骤，以确保它可以安全删除计时器对象。 首先， **ExDeleteTimer**将 timer 对象标记为禁用，以防止驱动程序启动使用对象的新计时器操作。 禁用计时器对象后，调用[**ExSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer)或[**ExCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excanceltimer)例程会立即返回**FALSE** ，并且不执行任何操作。 另外，对**ExDeleteTimer**的第二次调用返回**FALSE** ，并且不执行任何操作。
 
-下一步， **ExDeleteTimer**检查计时器是否仍处于挂起状态从以前调用**ExDeleteTimer**。 禁用计时器对象不会取消该对象已被禁用之前已设置的计时器。 在上述任一以下两种情况下，禁用该计时器对象后，可能会过期之前已设置的计时器：
+接下来， **ExDeleteTimer**将检查计时器是否仍在以前对**ExDeleteTimer**的调用中挂起。 禁用计时器对象不会取消在禁用对象之前设置的计时器。 在以下两种情况下，在禁用计时器对象之后，先前设置的计时器可能会过期：
 
--   定期计时器。
--   计时器是单步 （或非周期性） 和尚未过期。
+-   计时器为定期计时器。
+-   计时器为一次拍摄（或非周期性），但尚未过期。
 
-禁用计时器对象后，定期计时器将永远不会超过一次过期。
+计时器对象禁用后，定期计时器永不会永不过期。
 
-如果您的驱动程序实现[ *ExTimerCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ext_callback)回调例程*计时器*保证此例程的参数始终是指向该计时器的有效指针对象 （**EX\_计时器**结构)，即使在计时器过期后禁用该计时器对象。
+如果你的驱动程序实现了[*ExTimerCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ext_callback)回调例程，则此例程的*Timer*参数一定会始终是指向 Timer 对象（ **EX\_timer**结构）的有效指针，即使计时器在计时器对象处于禁用状态。
 
-如果没有计时器处于挂起状态， **ExDeleteTimer**删除计时器对象，并返回而不等待。
+如果没有挂起的计时器， **ExDeleteTimer**会删除计时器对象，并返回而不等待。
 
-如果计时器正在等待何时**ExDeleteTimer**调用时，*取消*并*等待*您的驱动程序提供给此例程的参数值控制例程的行为。 *取消*参数将告知**ExDeleteTimer**是否尝试取消挂起的计时器。 *等待*参数将告知**ExDeleteTimer**是否等待返回，直到删除该计时器对象。
+如果调用**ExDeleteTimer**时计时器处于挂起状态，则驱动程序向此例程提供的*Cancel*和*Wait*参数值控制例程的行为。 *Cancel*参数告诉**ExDeleteTimer**是否尝试取消挂起的计时器。 *Wait*参数告诉**ExDeleteTimer**是否等待返回，直到计时器对象被删除。
 
-如果*取消*是**FALSE** (在这种情况下，*等待*必须是**FALSE**) 和一个计时器处于挂起状态， **ExDeleteTimer**可让计时器过期之前删除该计时器对象。 在这种情况下， **ExDeleteTimer**标记的计时器对象，以指示它是要删除挂起的计时器过期后 (和任何最后一个回调*ExTimerCallback*例程完成)。 然后**ExDeleteTimer**返回而不等待完成即将到期的计时器或要删除的对象。
+如果*Cancel*为**false** （在这种情况下， *Wait*必须为**false**）并且计时器处于挂起状态，则在删除 timer 对象之前， **ExDeleteTimer**会让计时器过期。 在这种情况下， **ExDeleteTimer**会标记 timer 对象，以指示该对象将在挂起的计时器过期后被删除（以及对*ExTimerCallback*例程的任何上次回叫完成）。 然后， **ExDeleteTimer**返回，而不等待计时器完成过期或要删除的对象。
 
-如果*取消*是**TRUE**， **ExDeleteTimer**尝试取消挂起的计时器过期之前。 **ExDeleteTimer**将返回**TRUE**如果它已成功取消计时器。 **ExDeleteTimer**将返回**FALSE**如果它不能取消计时器，是一个单步计时器已过期或即将到期的过程中是这种情况。 **ExDeleteTimer**也会返回**FALSE**如果之前已取消 （单步或定期） 计时器**ExDeleteTimer**调用或如果永远不会设置计时器。
+如果*Cancel*为**TRUE**，则**ExDeleteTimer**将在挂起的计时器过期之前尝试取消该计时器。 如果**ExDeleteTimer**成功取消计时器，则返回**TRUE** 。 如果**ExDeleteTimer**不能取消计时器，则返回**FALSE** ，这是已过期或正在过期的一次拍摄计时器的情况。 如果在**ExDeleteTimer**调用之前取消了（一次拍摄或周期性）计时器，或者从未设置过计时器， **ExDeleteTimer**也将返回**FALSE** 。
 
-如果*取消*是**TRUE**并*等待*是**FALSE**， **ExDeleteTimer**永远不会阻止调用线程。 如果不能立即删除计时器对象， **ExDeleteTimer**标记以指示它是即将过期，挂起的计时器完成后要删除的计时器对象并立即返回，而无需等到为到计时器过期或要删除的对象。
+如果*Cancel*为**TRUE**且*Wait*为**FALSE**，则**ExDeleteTimer**绝不会阻止调用线程。 如果无法立即删除 timer 对象， **ExDeleteTimer**会将 timer 对象标记为指示在挂起的计时器完成过期后将其删除，并立即返回，而不等待计时器过期或对象要删除的。
 
-如果*取消*并*等待*都是**TRUE**， **ExDeleteTimer**阻止调用线程，如果不能立即删除计时器对象. **ExDeleteTimer**等待，如有必要，要完成即将到期的计时器以及对驱动程序实现的任何回调*ExTimerCallback*例程完成。 下一步， **ExDeleteTimer**删除该计时器对象并调用[ *ExTimerDeleteCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ext_delete_callback)例程中，如果该驱动程序实现此例程。 最后， **ExDeleteTimer**返回。
+如果*Cancel*和*Wait*均**为 TRUE**，则**ExDeleteTimer**会阻止调用线程（如果无法立即删除计时器对象）。 如有必要， **ExDeleteTimer**将等待计时器完成过期，并等待对驱动程序实现的*ExTimerCallback*例程的任何回调完成。 接下来，如果驱动程序实现此例程， **ExDeleteTimer**将删除计时器对象并调用[*ExTimerDeleteCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ext_delete_callback)例程。 最后， **ExDeleteTimer**返回。
 
-驱动程序可以调用**ExDeleteTimer**来自驱动程序的*ExTimerCallback*例程，运行在 IRQL = 调度\_级别，但该驱动程序必须设置*等待*对此调用中的参数**FALSE**。
+驱动程序可以从驱动程序的*ExTimerCallback*例程调用**ExDeleteTimer** ，后者以 IRQL = 调度\_级别运行，但驱动程序必须在此调用中将*Wait*参数设置为**FALSE**。
 
-作为一个选项，可以实现一个驱动程序*ExTimerDeleteCallback*运行计时器对象删除后的回调例程。 通常情况下， *ExTimerDeleteCallback*例程释放该驱动程序分配以使用计时器对象的任何系统资源。
+作为一个选项，驱动程序可以实现一个在删除计时器对象之后运行的*ExTimerDeleteCallback*回调例程。 通常情况下， *ExTimerDeleteCallback*例程会释放驱动程序分配的用于计时器对象的任何系统资源。
 
-**ExDeleteTimer**计划驱动程序实现*ExTimerDeleteCallback*日常运行计时器对象删除后，此时此对象的指针将不再有效。 如果*等待*参数是**TRUE**中**ExDeleteTimer**调用的回调*ExTimerDeleteCallback*例程完成之前**ExDeleteTimer**返回。 如果*等待*是**FALSE**，则*ExTimerDeleteCallback*例程之前或之后可能会运行**ExDeleteTimer**返回。
+**ExDeleteTimer**计划在删除 timer 对象之后要运行的驱动程序实现的*ExTimerDeleteCallback*例程，此时该对象的指针不再有效。 如果**ExDeleteTimer**调用中的*Wait*参数为**TRUE** ，则*ExTimerDeleteCallback*例程的回调在**ExDeleteTimer**返回前完成。 如果*Wait*为**FALSE**，则*ExTimerDeleteCallback*例程可能会在**ExDeleteTimer**返回之前或之后运行。
 
-有关详细信息，请参阅[Ex*Xxx*计时器例程和 EX\_计时器对象](exxxxtimer-routines-and-ex-timer-objects.md)。
+有关详细信息，请参阅[Ex*Xxx*计时器例程和 Ex\_计时器对象](exxxxtimer-routines-and-ex-timer-objects.md)。
 
  
 

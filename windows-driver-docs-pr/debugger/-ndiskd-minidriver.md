@@ -1,9 +1,9 @@
 ---
-title: ndiskd.minidriver
-description: Ndiskd.minidriver 命令显示有关 NDIS 微型端口驱动程序的信息。
+title: ndiskd. 微型驱动程序
+description: Ndiskd. 微型驱动程序命令显示有关 NDIS 微型端口驱动程序的信息。
 ms.assetid: CD349B10-8363-4D48-A830-CC9EF5EA75BF
 keywords:
-- ndiskd.minidriver Windows 调试
+- ndiskd 微型驱动程序 Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,49 +12,49 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 725517285a9e0ad45933f3b8a070d49f5f561fda
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 344d823f852eb9467e5bf04f6efdea36b990fdb7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365759"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826656"
 ---
 # <a name="ndiskdminidriver"></a>!ndiskd.minidriver
 
 
-**！ Ndiskd.minidriver**命令显示有关 NDIS 微型端口驱动程序的信息。 如果不带任何参数运行此扩展 ！ ndiskd 将显示在系统处于活动状态的 NDIS 微型端口驱动程序的列表。
+**！ Ndiskd. 微型驱动程序**命令显示有关 NDIS 微型端口驱动程序的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上处于活动状态的 NDIS 微型端口驱动程序的列表。
 
 ```console
 !ndiskd.minidriver [-handle <x>] [-basic] [-miniports] [-devices] [-handlers] 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 NDIS 微型端口驱动程序的句柄。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
 显示有关微型端口驱动程序的基本信息。
 
-<span id="_______-miniports______"></span><span id="_______-MINIPORTS______"></span> *-miniports*   
-显示与此微型端口驱动程序相关联的微型端口。
+<span id="_______-miniports______"></span><span id="_______-MINIPORTS______"></span> *-微型端口*   
+显示与此小型端口驱动程序关联的微型端口。
 
-<span id="_______-devices______"></span><span id="_______-DEVICES______"></span> *-devices*   
-显示与此微型端口驱动程序相关联的设备。
+<span id="_______-devices______"></span><span id="_______-DEVICES______"></span> *-设备*   
+显示与此小型端口驱动程序关联的设备。
 
-<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-handlers*   
-显示此驱动程序微型端口处理程序。
+<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-处理程序*   
+显示此驱动程序的小型端口处理程序。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-输入 **！ ndiskd.minidriver**命令不带任何参数来获取所有 NDIS 微型端口驱动程序的列表活动在系统上。 在以下示例中，查找 kdnic 适配器的句柄，ffffd20d12dec020
+输入不带参数的 **！ ndiskd**命令，以获取系统上所有活动的 NDIS 微型端口驱动程序的列表。 在下面的示例中，查找 kdnic 适配器的句柄 ffffd20d12dec020
 
 ```console
 1: kd> !ndiskd.minidriver -basic
@@ -62,7 +62,7 @@ Ndiskd.dll
     ffffd20d12dec020 - kdnic
 ```
 
-为 kdnic 适配器使用句柄，现在可以单击该句柄或输入 **！ ndiskd.minidriver-处理**命令，查看隧道微型端口驱动程序，以及与之关联的微型端口的列表的详细的信息。
+使用 kdnic 适配器的句柄，你现在可以单击该句柄或输入 **！ ndiskd**命令来查看隧道微型端口驱动程序的详细信息，以及与之关联的微型端口列表。
 
 ```console
 1: kd> !ndiskd.minidriver ffffd20d12dec020
@@ -90,18 +90,18 @@ MINIPORTS
     Device objects
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
  
 

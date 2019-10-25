@@ -1,41 +1,41 @@
 ---
 title: IRP_MN_START_DEVICE
-description: 所有即插即用驱动程序必须处理此 IRP。
+description: 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 0aac1346-b5c7-4dcc-ab86-03e8fd151505
 keywords:
-- IRP_MN_START_DEVICE Kernel-Mode Driver Architecture
+- IRP_MN_START_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d182f36599bff8df3a14b308903684a30161184
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 23ca09dabcc2000a75662db4a632a0ffc3908cb9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371847"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827945"
 ---
-# <a name="irpmnstartdevice"></a>IRP\_MN\_START\_DEVICE
+# <a name="irp_mn_start_device"></a>IRP\_MN\_启动\_设备
 
 
-所有即插即用驱动程序必须处理此 IRP。
+所有 PnP 驱动程序都必须处理此 IRP。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md) When Sent
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
 ---------
 
-PnP 管理器将发送此 IRP，如果有，向设备分配硬件资源。 设备可能已被最近枚举和启动第一次，或可能的资源重新平衡正在停止后重新启动设备。
+PnP 管理器会在向设备分配硬件资源（如果有）后发送此 IRP。 设备最近可能已枚举，并且是第一次启动，或者在停止资源重新平衡后，设备可能会重新启动。
 
-PnP 管理器发送有时**IRP\_MN\_启动\_设备**到已启动设备，提供一组不同的资源与当前所用设备。 驱动程序将启动此操作通过调用[ **IoInvalidateDeviceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)和响应的后续[ **IRP\_MN\_查询\_PNP\_设备\_状态**](irp-mn-query-pnp-device-state.md) PNP 请求\_资源\_要求\_CHANGED 标志设置。 总线驱动程序可能会使用此机制，例如，若要打开 PCI PCI 网桥上的新 aperture。
+有时，PnP 管理器会将**IRP\_MN\_启动\_设备**发送到已启动的设备，并提供一组与当前使用的设备不同的资源。 驱动程序通过以下方式启动此操作：调用[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)并响应后续[**IRP\_MN\_QUERY\_pnp\_设备\_状态**](irp-mn-query-pnp-device-state.md)请求与 pnp\_资源\_要求\_更改标志集。 例如，总线驱动程序可以使用这种机制在 PCI 到 PCI bridge 上打开新的口径。
 
-PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文中。
+PnP 管理器以 IRQL 被动\_级别在系统线程的上下文中发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.StartDevice.AllocatedResources**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构指向[ **CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)描述的即插即用的管理器分配给设备的硬件资源。 此列表包含原始窗体中的资源。 使用原始资源的设备。
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**StartDevice. AllocatedResources**成员指向[**CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)，该列表描述 PnP 管理器分配到的硬件资源。装置. 此列表包含原始格式的资源。 使用原始资源对设备进行编程。
 
-**Parameters.StartDevice.AllocatedResourcesTranslated**指向[ **CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_resource_list)描述的硬件资源的即插即用管理器分配给设备。 此列表包含已翻译的窗体中的资源。 使用转换的资源连接中断矢量、 映射 I/O 空间中，并映射内存。
+**StartDevice. AllocatedResourcesTranslated**指向[**CM\_资源\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)，描述 PnP 管理器分配给设备的硬件资源。 此列表包含以翻译形式列出的资源。 使用已翻译的资源连接中断向量、映射 i/o 空间和映射内存。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -45,26 +45,26 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态，例如状态\_未成功或状态\_不足\_资源。
+驱动程序将**Irp&gt;IoStatus**的状态设置为 "状态"\_成功，或设置为适当的错误状态，如状态\_"未成功" 或 "状态"\_"\_资源不足"。
 
-如果驱动程序需要一些时间才能运行设备及其开始操作，它可以将标记挂起的 IRP，并返回状态\_PENDING。
+如果驱动程序需要一段时间才能对设备运行其启动操作，则可以将 IRP 标记为 "挂起" 并返回状态\_"挂起"。
 
 <a name="operation"></a>操作
 ---------
 
-按设备父总线驱动程序，然后按设备堆栈中每个更高版本的驱动程序，必须首先处理此 IRP。
+此 IRP 必须首先由设备的父总线驱动程序处理，然后由设备堆栈中的每个更高的驱动程序处理。
 
-在响应此 IRP，驱动程序第一次启动设备，或重新启动已停止的设备。 若要启动设备所需的确切操作不同设备的但可以包含支持在设备上，执行特定于设备的初始化和连接中断。
+为了响应此 IRP，驱动程序将首次启动设备或重新启动已停止的设备。 启动设备所需的具体操作因设备而异，但可能包括打开设备、执行特定于设备的初始化以及连接中断。
 
-驱动程序可以通常处理此 IRP 相同的方式是否它是第一次启动设备或重新启动后的设备[ **IRP\_MN\_停止\_设备**](irp-mn-stop-device.md)，除非在驱动程序所需设备上还原状态重新启动后停止。
+通常，驱动程序可以采用与在[**irp\_MN\_停止\_设备**](irp-mn-stop-device.md)后第一次启动设备或重新启动设备之后启动设备相同的方式来处理此 IRP，但当驱动程序在停止后重新启动时，驱动程序是否需要还原设备状态。
 
-在 Windows Vista 和更高版本操作系统上，我们建议，驱动程序始终挂起**IRP\_MN\_启动\_设备**IRP 并完成其处理更高版本。 此顺序可让系统以进行异步处理设备重启。 (在 Windows Vista 之前的操作系统、 驱动程序可以返回状态\_PENDING 其调度例程，而即插即用管理器中的不重叠设备重新启动与任何其他操作。)
+在 Windows Vista 和更高版本的操作系统上，建议驱动程序始终挂起**IRP\_MN\_启动\_设备**IRP 并在以后完成其处理。 此顺序使系统可以异步处理设备重新启动。 （在 Windows Vista 之前的操作系统上，驱动程序可能会从其调度例程返回状态\_"挂起"，但 PnP 管理器不会将设备重新启动与任何其他操作重叠。）
 
 有关处理开始 IRP 的详细信息，请参阅[启动设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/starting-a-device)。
 
-**发送此 IRP**
+**正在发送此 IRP**
 
-保留供系统使用。 驱动程序必须发送此 IRP。
+保留供系统使用。 驱动程序不得发送此 IRP。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,16 +76,16 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IRP\_MN\_STOP\_DEVICE**](irp-mn-stop-device.md)
+[**IRP\_MN\_停止\_设备**](irp-mn-stop-device.md)
 
  
 

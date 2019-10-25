@@ -6,51 +6,43 @@ keywords:
 - VidPN WDK 显示，硬件功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88bb6f4c110daa46412ae973c8ca82ebdae27849
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8c9aafe2bb105868b05234a0491697907348aa2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385044"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825957"
 ---
 # <a name="querying-vidpn-hardware-capabilities"></a>查询 VidPN 硬件功能
 
 
-从 Windows 7 开始，显示微型端口驱动程序所需报告的指定功能 VidPN 的所有硬件功能。 驱动程序应支持以下的回调函数和其关联的结构：
+从 Windows 7 开始，需要显示小型端口驱动程序来报告指定功能 VidPN 的所有硬件功能。 驱动程序应支持以下回调函数及其关联的结构：
 
--   [**DxgkDdiQueryVidPnHWCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)函数
+-   [**DxgkDdiQueryVidPnHWCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)函数
 
--   [**DXGKARG\_QUERYVIDPNHWCAPABILITY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryvidpnhwcapability)结构
+-   [**DXGKARG\_QUERYVIDPNHWCAPABILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryvidpnhwcapability)结构
 
--   [**D3DKMDT\_VIDPN\_HW\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)结构
+-   [**D3DKMDT\_VIDPN\_HW\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)结构
 
-当驱动程序报告的硬件功能时，应考虑克隆一个隐式过程，都将作为一部分旋转或缩放转换： 旋转或缩放之前，必须先克隆源。
+当驱动程序报告硬件功能时，它应考虑克隆为隐式过程，该过程是作为旋转或缩放转换的一部分完成的：必须先克隆源，然后才能对其进行旋转或缩放。
 
-如果任何成员 D3DKMDT\_VIDPN\_HW\_功能指定 VidPN 路径上没有任何意义，如果成员设置为非零值，显示模式下管理器 (DMM) 不会报告任何错误。 DMM 将它们报告给用户模式下客户端之前清除所有此类值。 但是，该驱动程序需要的值设置**保留**D3DKMDT 成员\_VIDPN\_HW\_为 0 的功能。
+如果 D3DKMDT 的任何成员\_VIDPN\_HW\_功能在指定的 VidPN 路径上没有意义，则如果成员设置为非零值，则显示模式管理器（CALL CENTER.DMM）不会报告任何错误。 在向用户模式客户端报告这些值之前，CALL CENTER.DMM 将清除所有此类值。 但是，驱动程序需要将 D3DKMDT\_VIDPN\_HW\_功能的**保留**成员的值设置为0。
 
-### <a name="span-idexamplescenariospanspan-idexamplescenariospanexample-scenario"></a><span id="example_scenario"></span><span id="EXAMPLE_SCENARIO"></span>**示例方案**
+### <a name="span-idexample_scenariospanspan-idexample_scenariospanexample-scenario"></a><span id="example_scenario"></span><span id="EXAMPLE_SCENARIO"></span>**示例方案**
 
-若要显示显示微型端口驱动程序报告的硬件功能的方式，请考虑下面的示例将一 P1、 P2 和 P3 的硬件配置：
+若要显示显示微型端口驱动程序应如何报告硬件功能，请考虑下面的示例硬件配置 P1、P2 和 P3：
 
--   **P1:** 图面是从源 S1 克隆、 然后旋转 90 度和缩放以适合目标。
+-   **P1：** 将从源 S1 克隆图面，然后旋转90度并缩放以适合目标。
 
--   **P2:** 图面进行克隆源 S1，与任何应用转换。
+-   **P2：** Surface 从源 S1 克隆，无应用转换。
 
--   **P3:** 源 S2 有任何已应用的转换。
+-   **P3：** 源 S2 没有已应用的转换。
 
-当[ **DxgkDdiQueryVidPnHWCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)是调用，则驱动程序应返回旋转、 缩放和克隆的成员的值[ **D3DKMDT\_VIDPN\_HW\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)根据下表：
+调用[**DxgkDdiQueryVidPnHWCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryvidpnhwcapability)时，驱动程序应根据下表返回[**D3DKMDT\_VIDPN\_HW\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_hw_capability)的旋转、缩放和克隆成员的值：
 
-D3DKMDT 成员的返回值\_VIDPN\_HW\_功能的硬件功能 VidPN 路径 DriverRotation DriverScaling DriverCloning 硬件可以执行所有旋转、 缩放和克隆的转换。
+D3DKMDT 的成员的返回值\_VIDPN\_HW\_功能硬件功能 VidPN 路径 DriverRotation DriverScaling DriverCloning 硬件可以执行所有旋转、缩放和克隆转换。
 
-P₁
-
-0
-
-0
-
-0
-
-P₂
+P ₁
 
 0
 
@@ -58,7 +50,7 @@ P₂
 
 0
 
-P₃
+P ₂
 
 0
 
@@ -66,9 +58,7 @@ P₃
 
 0
 
-硬件可以执行所有转换除外克隆
-
-P₁
+P ₃
 
 0
 
@@ -76,15 +66,9 @@ P₁
 
 0
 
-P₂
+硬件可以执行除克隆以外的所有转换
 
-0
-
-0
-
-1
-
-P₃
+P ₁
 
 0
 
@@ -92,43 +76,7 @@ P₃
 
 0
 
-硬件可以执行克隆和缩放转换，但不是旋转。 驱动程序执行使用中间旋转位块旋转。
-
-P₁
-
-1
-
-0
-
-0
-
-P₂
-
-0
-
-0
-
-0
-
-P₃
-
-0
-
-0
-
-0
-
-硬件不能执行克隆、 缩放或旋转转换。 驱动程序执行这些操作。
-
-P₁
-
-1
-
-1
-
-0
-
-P₂
+P ₂
 
 0
 
@@ -136,7 +84,59 @@ P₂
 
 1
 
-P₃
+P ₃
+
+0
+
+0
+
+0
+
+硬件可以执行克隆和缩放转换，但不能进行旋转。 驱动程序使用中间旋转 array.blit 执行旋转。
+
+P ₁
+
+1
+
+0
+
+0
+
+P ₂
+
+0
+
+0
+
+0
+
+P ₃
+
+0
+
+0
+
+0
+
+硬件无法执行克隆、缩放或旋转转换。 这些操作由驱动程序执行。
+
+P ₁
+
+1
+
+1
+
+0
+
+P ₂
+
+0
+
+0
+
+1
+
+P ₃
 
 0
 

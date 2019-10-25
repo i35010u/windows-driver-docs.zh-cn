@@ -7,25 +7,25 @@ keywords:
 - 属性页 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c375960aaf37350680d99e7a3e9ec1b43fab9247
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6c536c42576e6ae25a6c6b8d7ebf9506bd61f0f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363274"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823729"
 ---
 # <a name="property-page-plug-in"></a>属性页插件
 
 
-可以通过编写为 KS 代理插件的属性页提供设备属性的用户界面。 本主题说明如何编写此类的插件。 首先，注册您的对象，如中所述[注册 KS 代理插件](registering-ks-proxy-plug-ins.md)。
+可以通过将属性页编写为 KS 代理的插件来向设备属性提供用户界面。 本主题说明如何编写此类插件。 首先，按[注册 KS 代理插件](registering-ks-proxy-plug-ins.md)中所述注册对象。
 
-接下来，声明你的筛选器的工厂模板。 工厂模板是C++类，该类包含的类工厂的信息。
+接下来，为筛选器声明工厂模板。 工厂模板是包含类C++工厂信息的类。
 
-在您的 DLL，声明一个全局数组[CFactoryTemplate](https://go.microsoft.com/fwlink/p/?linkid=106450)对象、 一个用于每个筛选器或 DLL 中的 COM 组件。 如果只有一个属性页，创建只有一个对象数组中。
+在 DLL 中，声明[CFactoryTemplate](https://go.microsoft.com/fwlink/p/?linkid=106450)对象的全局数组，每个对象对应于 DLL 中的一个筛选器或 COM 组件。 如果只有一个属性页，请在数组中仅创建一个对象。
 
-每个对象，生成的类标识符 (CLSID) 的 GUID 并提供在声明中的条目。
+对于每个对象，为类标识符（CLSID）生成一个 GUID，并在声明中提供一个条目。
 
-数组必须命名为 g\_模板：
+该数组必须命名为 g\_模板：
 
 ```cpp
 CFactoryTemplate g_Templates[] =
@@ -40,7 +40,7 @@ CFactoryTemplate g_Templates[] =
 };
 ```
 
-属性页应派生自类[CBasePropertyPage](https://go.microsoft.com/fwlink/p/?linkid=106449)和应重写的方法的几个**CBasePropertyPage**:
+属性页应从类[CBasePropertyPage](https://go.microsoft.com/fwlink/p/?linkid=106449)派生，并应重写**CBasePropertyPage**的若干方法：
 
 ```cpp
 class CMyPropPage: public CBasePropertyPage
@@ -61,15 +61,15 @@ private:
 };
 ```
 
-若要初始化的属性页，宿主的属性表调用[IPropertyPage::SetPageSite](https://go.microsoft.com/fwlink/p/?linkid=106442)。 此调用会导致调用即插即用接**OnConnect**方法。 在此调用时，属性页已连接到该筛选器，但尚未显示属性页。
+若要初始化属性页，承载属性表将调用[IPropertyPage：： SetPageSite](https://go.microsoft.com/fwlink/p/?linkid=106442)。 此调用会导致调用插件的**OnConnect**方法。 在进行此调用时，属性页已连接到筛选器，但尚未显示属性页。
 
-对的调用中提供的参数**OnConnect** KS 代理，然后指向指针的查询必须处于**IKsPropertySet**。 然后，可以调用[ **IKsPropertySet::Get** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikspropertyset-get)并[ **IKsPropertySet::Set** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nf-dsound-ikspropertyset-set)来操作的驱动程序公开的属性。
+在对**OnConnect**的调用中提供的参数是指向 KS 代理的接口，然后可以查询该代理以获取指向**IKsPropertySet**的指针。 然后，可以调用[**IKsPropertySet：： Get**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikspropertyset-get)和[**IKsPropertySet：： Set**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dsound/nf-dsound-ikspropertyset-set)以操作驱动程序的公开属性。
 
-你还必须提供**CreateInstance**方法。 系统调用属性页的方法来创建属性页的实例。 此方法应调用其进行实例化类的构造函数。
+还必须提供**CreateInstance**方法。 系统调用属性页的方法来创建属性页的实例。 此方法应调用类的构造函数来对其进行实例化。
 
-构造函数接收指向外部未知接口，在这种情况下是 KS 代理的指针。
+构造函数接收指向外部未知接口的指针，在本例中为 KS 代理。
 
-属性页**OnDisconnect**时的属性页应释放关联的对象调用方法。 此回调应递减到 KS 代理的接口指针的引用计数，通过调用其**版本**方法。
+当属性页应释放关联的对象时，将调用属性页的**OnDisconnect**方法。 此回调应通过调用其**Release**方法将指向该接口的指针的引用计数减少到 KS 代理。
 
  
 

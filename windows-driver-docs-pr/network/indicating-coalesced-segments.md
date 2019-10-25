@@ -1,58 +1,58 @@
 ---
 title: 指示合并段
-description: 本部分介绍如何以指示合并的段
+description: 本部分介绍如何指示合并段
 ms.assetid: 79A37DAB-D9B3-4FA2-8258-05E10BD6E3CB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be13f521a54a65da4942868bb7331321993471f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed232fca02ada29091367011c92376d44f2335d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374827"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824724"
 ---
 # <a name="indicating-coalesced-segments"></a>指示合并段
 
 
-单个合并的单元 (SCU) 是一系列合并到单个 TCP 段根据规则中定义的 TCP 段[规则合并 TCP/IP 段](rules-for-coalescing-tcp-ip-packets.md)。 本部分介绍如何指示生成合并的段。
+单个合并单元（SCU）是一系列 TCP 段，这些段根据用于[合并 Tcp/ip 段的规则](rules-for-coalescing-tcp-ip-packets.md)中定义的规则合并成单个 tcp 段。 本部分介绍如何指示生成的合并段。
 
 SCU 必须：
 
--   通过调用指示[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)。
+-   通过调用[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)来指示。
 
--   如通过网络接收的正常 TCP 段所示。
+-   看起来像是通过线路接收的普通 TCP 段。
 
--   不能大于最大法律 IP 数据报长度，如 3.1 节中定义[RFC 791](http://www.ietf.org/rfc/rfc791.txt)。
+-   不能大于在[RFC 791](http://www.ietf.org/rfc/rfc791.txt)第3.1 节中定义的最大合法 IP 数据报长度。
 
-    **请注意**  因为不能合并使用 IPv6 扩展标头段 (请参阅[异常条件终止合并](exception-conditions-that-terminate-coalescing.md))，为 IPv6 数据报 SCU 的大小也限制了最大法律数据报长度。
+    **请注意**  由于无法合并具有 ipv6 扩展标头的段（请参阅[终止合并的异常条件](exception-conditions-that-terminate-coalescing.md)），IPV6 数据报的 SCU 大小也受最大合法数据报长度的限制。
 
      
 
-NIC 或微型端口驱动程序应重新计算的 TCP 和 IPv4 校验和，如果适用之前，该值指示合并的段。 如果 NIC 或微型端口驱动程序验证 TCP 和 IPv4 校验和，但不会不重新计算这些合并段，它必须设置**TcpChecksumValueInvalid**并**IpChecksumValueInvalid**标记中[ **NDIS\_TCP\_IP\_校验和\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构。 此外，在这种情况下该 NIC 或微型端口驱动程序可能根据需要清零的段中的 TCP 和 IPv4 的标头的校验和值。
+NIC 或微型端口驱动程序应在指示合并段之前重新计算 TCP 和 IPv4 校验和（如果适用）。 如果 NIC 或微型端口驱动程序对 TCP 和 IPv4 校验和进行验证，但不为合并段重新计算，则必须在\_TCP\_IP 的 NDIS 中设置 TcpChecksumValueInvalid 和**IpChecksumValueInvalid**标志[ **\_CHECKSUM\_NET\_缓冲器\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构。 此外，在这种情况下，NIC 或微型端口驱动程序可能会在段中选择性地将 TCP 和 IPv4 标头校验值为零。
 
-NIC 和微型端口驱动程序必须始终设置**IpChecksumSucceeded**并**TcpChecksumSucceeded**标记中[ **NDIS\_TCP\_IP\_CHECKSUM\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构之前，该值指示合并的段。
+NIC 和微型端口驱动程序必须始终在 NDIS 中设置**IpChecksumSucceeded**和**TCPCHECKSUMSUCCEEDED**标志[ **\_TCP\_IP\_校验和\_NET\_BUFFER\_列表\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构，然后再指示合并段。
 
-有关合并的规则的详细信息，请参阅[规则合并 TCP/IP 段](rules-for-coalescing-tcp-ip-packets.md)。
+有关合并规则的详细信息，请参阅[合并 Tcp/ip 段的规则](rules-for-coalescing-tcp-ip-packets.md)。
 
-有关异常的详细信息，请参阅[异常条件终止合并](exception-conditions-that-terminate-coalescing.md)。
+有关异常的详细信息，请参阅[终止合并的异常条件](exception-conditions-that-terminate-coalescing.md)。
 
-合并被应在最大程度上执行。 硬件可能无法再进行合并在某些情况下，例如由于缺乏资源。 要求说明以下主要是以指定何时不 coalesce 和如何合并。
+预期合并会尽力进行。 在某些情况下（例如由于缺少资源），硬件可能无法合并。 此处所述的要求主要用于指定何时进行合并，以及如何合并。
 
-在高级别中，NIC 和微型端口驱动程序必须处理的 TCP 段的接收通过网络，如下所示：
+从较高层次来看，NIC 和微型端口驱动程序必须处理线路上 TCP 段的接收，如下所示：
 
--   检查异常的传入段，如下所示：
+-   检查传入段是否有异常，如下所示：
 
-    1.  如果未遇到异常，请检查是否可为每个规则的同一 TCP 连接接收的最后一个段与合并段。
+    1.  如果没有遇到异常，请检查段是否可以与每个规则的相同 TCP 连接收到的最后一个段相合并。
 
-    2.  如果段触发异常，或者如果不能与以前接收段合并，然后分别指示段。
+    2.  如果段触发了异常，或者如果不能将其与先前接收的段合并，则单独指示段。
 
--   NIC 和微型端口驱动程序必须指示合并的段，直到协议驱动程序中所述启用 RSC[查询和更改 RSC 状态](querying-and-changing-rsc-state.md)。
+-   NIC 和微型端口驱动程序不得指示已合并的段，直到协议驱动程序启用 RSC，如[查询和更改 Rsc 状态](querying-and-changing-rsc-state.md)中所述。
 
--   对于给定的 TCP 连接，从微型端口适配器的主机 TCP/IP 堆栈的数据指示可能会包含一个或多个合并，分隔的段未合并的一个或多个各个段。
+-   对于给定 TCP 连接，从微型端口适配器到主机 TCP/IP 堆栈的数据指示可能包含一个或多个合并段，这些段由一个或多个无法合并的单独段分隔。
 
--   NIC 和微型端口驱动程序不能在是否合并或不延迟的 TCP 段的指示。 具体而言，NIC 和微型端口驱动程序不能延迟中一个延迟的过程调用 (DPC) 到下一步以便尝试 coalesce 段的段的指示。
+-   NIC 和微型端口驱动程序不得延迟 TCP 段（无论是否合并）的指示。 具体而言，NIC 和微型端口驱动程序不得将段从一个延迟的过程调用（DPC）中的指示延迟到下一个延迟，以便尝试合并段。
 
--   NIC 和微型端口驱动程序可能使用计时器来确定的合并末尾。 但是，延迟敏感的工作负荷的处理必须是有效地 DPC 边界要求。
+-   NIC 和微型端口驱动程序可以使用计时器来确定合并结束。 不过，延迟敏感工作负荷的处理必须与 DPC 边界要求一样有效。
 
  
 

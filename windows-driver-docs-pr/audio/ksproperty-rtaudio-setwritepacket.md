@@ -1,6 +1,6 @@
 ---
 title: KSPROPERTY\_RTAUDIO\_SETWRITEPACKET
-description: KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 告知驱动程序 OS 已向 WaveRT 缓冲区写入有效的数据。
+description: KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 通知驱动程序操作系统已将有效数据写入 WaveRT 缓冲区。
 ms.assetid: 2827D6BC-B669-4AAC-967C-99B068DCC29B
 keywords:
 - KSPROPERTY_RTAUDIO_SETWRITEPACKET 音频设备
@@ -14,41 +14,41 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e1692f2ceb2d01781eeb12f85511c5c89eb75a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d514bf69465a7dafd97630c6286c12a3bebc85ee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354380"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830594"
 ---
-# <a name="kspropertyrtaudiosetwritepacket"></a>KSPROPERTY\_RTAUDIO\_SETWRITEPACKET
+# <a name="ksproperty_rtaudio_setwritepacket"></a>KSPROPERTY\_RTAUDIO\_SETWRITEPACKET
 
 
-KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 告知驱动程序 OS 已向 WaveRT 缓冲区写入有效的数据。
+KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 通知驱动程序操作系统已将有效数据写入 WaveRT 缓冲区。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-|Get|设置|目标|属性描述符类型|属性值类型|
+|“获取”|设置|目标|属性描述符类型|属性值类型|
 |--- |--- |--- |--- |--- |
-|否|是|Pin|[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
+|无|“是”|大头针|[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
 
 
-属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 发送请求之前, 在客户端加载值包含数据包编号、 数据包长度和其他信息的结构。
+属性说明符（实例数据）是[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 在发送请求之前，客户端会加载包含数据包编号、数据包长度和其他信息的值的结构。
 
-属性值是类型的结构[ **KSRTAUDIO\_SETWRITEPACKET\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)。
+属性值是类型为[**KSRTAUDIO\_SETWRITEPACKET\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)的结构。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的故障状态代码。
+KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 属性请求返回状态\_SUCCESS，以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-如果支持此 KSPROPERTY，则该驱动程序可能会选择使用所提供的信息来优化硬件传输。 例如，驱动程序可能会优化 DMA 传输或程序硬件 OS 不会调用此例程再次以通知另一个数据包的驱动程序的情况下停止末尾指定数据包的传输。 这可以降低声音效果的下溢，例如引入有声间隙而不是重复一个循环缓冲区。 该驱动程序但是是仍有义务增加其内部的数据包计数器和信号通知事件名义实时的速度。
+如果支持此 KSPROPERTY，则驱动程序可能会选择使用提供的信息来优化硬件传输。 例如，驱动程序可能会优化 DMA 传输，或在指定数据包结束时停止传输，以防操作系统再次调用此例程来通知其他数据包的驱动程序。 这可以减少下溢的声音效果，例如引入可听见的间隙，而不是重复循环缓冲区。 然而，驱动程序仍有义务以额定的实时速率增加其内部数据包计数器和信号通知事件。
 
-除操作系统时指定*KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM*标志，数据包大小是 WaveRT 缓冲区大小除以传递给 NotificationCount [**KSPROPERTY\_RTAUDIO\_缓冲区\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md)。
+当操作系统指定*KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM*标志时，数据包大小为 WaveRT 的缓冲区大小除以传递到 NotificationCount 的 KSPROPERTY [ **\_RTAUDIO\_缓冲区\_与\_通知**](ksproperty-rtaudio-buffer-with-notification.md)。
 
-根据硬件功能，如果*KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM*指定标志，该驱动程序可能会静默填充遵循 EOS WaveRT 缓冲区的一部分用例在硬件中的数据包将传输超出 EOS 位置的数据。
+根据硬件功能，如果指定了*KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM*标志，则驱动程序在硬件传输数据时，可能会将的部分 WaveRT 缓冲区超出 EOS 位置。
 
 <a name="requirements"></a>要求
 ------------
@@ -60,17 +60,17 @@ KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 属性请求将返回状态\_成功以指示
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 10 和更高版本的 Windows 操作系统中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>适用于 Windows 10 及更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**KSPROPERTY\_RTAUDIO\_GETREADPACKET**](ksproperty-rtaudio-getreadpacket.md)

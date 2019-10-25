@@ -4,17 +4,17 @@ description: 指定驱动程序加载顺序
 ms.assetid: 2e06671a-5664-4042-bc7a-e8ab12938cea
 keywords:
 - INF 文件 WDK 设备安装，驱动程序加载顺序
-- 驱动程序加载顺序 WDK INF 文件
-- 加载顺序 WDK INF 文件
-- 服务安装部分 WDK INF 文件
+- 驱动程序加载 WDK INF 文件
+- 负载顺序 WDK INF 文件
+- 服务-安装 WDK INF 文件部分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8e58f4b8ecea3796ec3899fdcb0e88dadcaddb1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 402ee452d5ba77b73b8c85bc46ae4492d232898b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385888"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828699"
 ---
 # <a name="specifying-driver-load-order"></a>指定驱动程序加载顺序
 
@@ -22,88 +22,88 @@ ms.locfileid: "67385888"
 
 
 
-适用于大多数设备的计算机上的设备的物理层次结构确定 Windows 和 PnP 管理器加载驱动程序的顺序。 Windows 和 PnP 管理器配置系统根设备后，启动的设备，然后他们配置根设备 （例如，是 PCI 适配器），这些设备的子级的子设备和其他操作。 PnP 管理器加载每个设备的驱动程序设备是经过配置之后，如果驱动程序以前未加载的另一台设备。
+对于大多数设备，计算机上设备的物理层次结构决定了 Windows 和 PnP 管理器加载驱动程序的顺序。 Windows 和 PnP 管理器配置从系统根设备开始的设备，然后配置根设备的子设备（例如 PCI 适配器）、这些设备的子级等等。 如果先前未为其他设备加载驱动程序，PnP 管理器会在配置设备时加载每个设备的驱动程序。
 
-INF 文件中的设置可以影响驱动程序加载顺序。 本主题介绍相关供应商应该在中指定的值*服务安装部分*由驱动程序的引用[ **INF AddService 指令**](inf-addservice-directive.md)。 具体而言，本主题讨论**StartType**， **BootFlags**， **LoadOrderGroup**，以及**依赖项**条目。
+INF 文件中的设置可能会影响驱动程序的加载顺序。 本主题介绍供应商在驱动程序的[**INF AddService 指令**](inf-addservice-directive.md)引用的*服务安装部分*中应指定的相关值。 具体而言，本主题讨论**StartType**、 **BootFlags**、 **LoadOrderGroup**和**依赖**项条目。
 
-驱动程序应遵循这些规则用于指定**StartType**:
+驱动程序应遵循以下规则来指定**StartType**：
 
--   即插即用驱动程序
+-   PnP 驱动程序
 
-    即插即用驱动程序应具有指定的 PnP 管理器可以加载驱动程序时即插即用管理器查找设备驱动程序服务的 SERVICE_DEMAND_START (0x3) 启动类型。
+    PnP 驱动程序的启动类型应为 SERVICE_DEMAND_START （0x3），指定 PnP 管理器找到驱动程序服务的设备时，PnP 管理器可以加载驱动程序。
 
--   启动计算机所需设备驱动程序
+-   启动计算机所需的设备驱动程序
 
-    如果设备需要来启动计算机，这些设备驱动程序应具有 SERVICE_BOOT_START (0x0) 的启动类型。
+    如果设备需要启动计算机，则设备的驱动程序的启动类型应为 SERVICE_BOOT_START （0x0）。
 
--   非*引导启动驱动程序*，用于检测设备不是可 PnP 枚举
+-   检测非 PnP 可枚举设备的非*启动启动驱动程序*
 
-    对于不是可 PnP 枚举设备，驱动程序报告设备的即插即用的管理器为通过调用[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)。 这样的驱动程序应具有的启动类型 SERVICE_SYSTEM_START (0x01)，因此 Windows 将在系统初始化期间加载的驱动程序。
+    对于非 PnP 可枚举设备，驱动程序通过调用[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)向 pnp 管理器报告设备。 此类驱动程序的启动类型应为 SERVICE_SYSTEM_START （0x01），因此 Windows 将在系统初始化过程中加载驱动程序。
 
-    驱动程序该报告非 PnP 硬件应设置此启动类型。 如果驱动程序服务 （即插即用和非 PnP 设备），它应设置此启动类型。
+    只有报表非 PnP 硬件的驱动程序应设置此启动类型。 如果驱动程序同时服务 PnP 和非 PnP 设备，则应设置此启动类型。
 
--   必须由服务控制管理器启动非 PnP 驱动程序
+-   必须由服务控制管理器启动的非 PnP 驱动程序
 
-    此类驱动程序应具有的启动类型 SERVICE_AUTO_START (0x02)。 即插即用驱动程序不设置此启动类型。
+    此类驱动程序的启动类型应为 SERVICE_AUTO_START （0x02）。 PnP 驱动程序不得设置此启动类型。
 
-应编写的即插即用驱动程序，以便 Windows 会在配置设备时加载的驱动程序服务。 相反，驱动程序应该能够将卸载即插即用管理器确定，不再有任何时间设备提供的驱动程序服务。 即插即用驱动程序应依赖于唯一驱动程序加载顺序如下所示：
+应该写入 PnP 驱动程序，以便可以在 Windows 配置驱动程序服务的设备时加载该驱动程序。 相反，只要 PnP 管理器确定不存在驱动程序服务的设备，就应该能够卸载该驱动程序。 PnP 驱动程序应依赖的唯一驱动程序加载排序如下所示：
 
-1.  子设备的驱动程序可以依赖于父设备的驱动程序加载了这一事实。
+1.  子设备的驱动程序可能取决于父设备的驱动程序的加载情况。
 
-2.  设备堆栈中的驱动程序可以依赖于它下面的任何驱动程序已加载的这一事实。
+2.  设备堆栈中的驱动程序可能取决于其下的所有驱动程序都已加载。
 
-    例如，功能驱动程序可以是某些加载任何更低的筛选器驱动程序。
+    例如，函数驱动程序可以确定是否加载了任何较低筛选器驱动程序。
 
-    但是，请注意设备堆栈中的驱动程序不能依赖于设备的低级驱动程序后按顺序加载，因为该驱动程序可能先前加载配置另一台设备时。
+    但请注意，设备堆栈中的驱动程序不能依赖于在设备的较低驱动器上按顺序加载，因为在配置另一台设备时可能会加载该驱动程序。
 
-筛选器组中的筛选器驱动程序不能预测及其负载排序。 例如，如果设备具有三个已注册的上限筛选器驱动程序，这些三个的驱动程序都将加载功能驱动程序后，但可能是其上限筛选器组中的任何顺序加载。
+筛选器组中的筛选器驱动程序无法预测其负载排序。 例如，如果设备有三个已注册的高级筛选器驱动程序，这三个驱动程序将在函数驱动程序之后加载，但可以在其上限组内按任意顺序加载。
 
-如果驱动程序包含在另一个驱动程序的显式加载顺序依赖关系，该依赖项应实现通过父/子关系。 子设备的驱动程序可以依赖于父设备之前加载子驱动程序加载的驱动程序。
+如果驱动程序在另一个驱动程序上具有显式的加载顺序依赖关系，则应通过父/子关系实现该依赖项。 子设备的驱动程序可能依赖于加载子驱动程序之前加载的父设备的驱动程序。
 
-为了强调设置正确的重要性**StartType**值，以下列表说明了如何使用 Windows 和 PnP 管理器**StartType** INF 文件中的条目：
+为了强调设置正确的**StartType**值的重要性，下表介绍了 Windows 和 PnP 管理器如何在 INF 文件中使用**StartType**条目：
 
-1.  在系统启动时，操作系统加载程序加载驱动程序的类型 SERVICE_BOOT_START 之前它将控制转移到内核。 当内核获取控件时，这些驱动程序是在内存中。
+1.  在系统启动时，操作系统加载程序会加载类型为 SERVICE_BOOT_START 的驱动程序，然后再将控制权移交给内核。 当内核获得控制时，这些驱动程序将在内存中。
 
-    引导启动驱动程序可以使用 INF **LoadOrderGroup**条目进行排序其加载。 （引导启动驱动程序之前加载配置大多数设备，使其加载顺序不能由设备层次结构。）操作系统会忽略 INF**依赖项**引导启动驱动程序的条目。
+    启动驱动程序可以使用 INF **LoadOrderGroup**项对其加载进行排序。 （在配置大多数设备之前加载引导启动驱动程序，因此无法通过设备层次结构确定其加载顺序。）操作系统会忽略引导启动驱动程序的 INF**依赖**项条目。
 
-2.  PnP 管理器调用**DriverEntry**例程 SERVICE_BOOT_START 驱动程序以便将驱动程序可以提供服务的启动设备。
+2.  PnP 管理器调用 SERVICE_BOOT_START 驱动程序的**DriverEntry**例程，以便驱动程序可以为启动设备服务。
 
-    如果启动设备具有子设备，将枚举这些设备。 子设备配置的如果其驱动程序也是引导启动驱动程序的启动。 如果设备的驱动程序不是所有引导启动驱动程序，即插即用管理器创建的设备节点 (*devnode*) 设备，但不会启动设备。
+    如果启动设备具有子设备，则会枚举这些设备。 如果子设备的驱动程序也是启动启动驱动程序，则会配置并启动它们。 如果设备的驱动程序并非所有启动启动驱动程序，则 PnP 管理器会为设备创建设备节点（*devnode*），但不会启动设备。
 
-3.  所有启动驱动程序已都加载并启动设备启动后，即插即用管理器配置的即插即用设备的其余部分，并加载其驱动程序。
+3.  在所有启动驱动程序都已加载并启动启动设备后，PnP 管理器将配置 PnP 设备的其余部分并加载其驱动程序。
 
-    PnP 管理器将沿着尚未开始设备树 (即，从上一步任何 nonstarted 的 devnodes)。 每个设备启动时，即插即用管理器枚举的子级的设备，如果有的话。
+    PnP 管理器会遍历尚未启动的设备树（即，上一步骤中的任何 nonstarted devnodes）。 每个设备启动时，PnP 管理器会枚举设备的子节点（如果有）。
 
-    PnP 管理器配置这些设备，如加载的设备驱动程序*而不考虑*的驱动程序的**StartType**值 (例外**StartType**是服已禁用） 然后才能继续启动设备。 许多这些驱动程序是 SERVICE_DEMAND_START 驱动程序。
+    当它配置这些设备时，PnP 管理器加载设备的驱动程序，*而不考虑*驱动程序的**StartType**值（ **StartType**为 SERVICE_DISABLED 时除外），然后再继续启动设备。 其中的许多驱动程序都是 SERVICE_DEMAND_START 驱动程序。
 
-    PnP 管理器将忽略由于 INF 而创建的注册表条目**依赖项**条目并**LoadOrderGroup**驱动程序，它在此步骤中将加载项。 负载排序根据物理设备层次结构。
+    PnP 管理器会忽略作为 INF**依赖**项的结果创建的注册表项，以及在此步骤中加载的驱动程序的**LoadOrderGroup**项。 负载顺序基于物理设备层次结构。
 
-    在此步骤结束时，所有这些设备配置，不可 PnP 枚举以及后代的那些设备的设备除外。 (后代可能或可能不是可 PnP 枚举。)
+    在此步骤结束时，将配置所有设备，但不是可自行枚举的设备以及这些设备的后代。 （子代可以是，也可以不是 PnP 可枚举的。）
 
-4.  PnP 管理器加载的驱动程序**StartType** SERVICE_SYSTEM_START 尚未加载。
+4.  PnP 管理器加载尚未加载的**StartType** SERVICE_SYSTEM_START 的驱动程序。
 
-    这些驱动程序检测并报告其非 PnP 设备。 PnP 管理器将处理结果的 INF 的注册表项**LoadOrderGroup**这些驱动程序的条目。 它会忽略由于 INF 而创建的注册表项**依赖项**这些驱动程序的条目。
+    这些驱动程序检测并报告其非 PnP 设备。 PnP 管理器处理这些驱动程序的 INF **LoadOrderGroup**条目结果的注册表项。 它将忽略由于这些驱动程序的 INF**依赖**项而创建的注册表项。
 
-5.  服务控制管理器加载的驱动程序**StartType** SERVICE_AUTO_START 尚未加载。
+5.  服务控制管理器加载尚未加载的**StartType** SERVICE_AUTO_START 的驱动程序。
 
-    服务控制管理器处理相对于服务的服务数据库信息**DependOnGroup**并**DependOnServices**。 此信息是从**依赖项**INF 中的条目**AddService**条目。 请注意，**依赖项**因为任何必需的即插即用驱动程序已加载到系统启动的前面步骤中，信息只处理的非 PnP 驱动程序。 服务控制管理器将忽略 INF **LoadOrderGroup**信息。
+    服务控制管理器根据服务的 " **DependOnGroup** " 和 " **DependOnServices**" 处理服务数据库信息。 此信息来自 INF **AddService**条目中的**依赖**项条目。 请注意，仅为非 PnP 驱动程序处理**依赖关系**信息，因为在以前的系统启动步骤中加载了任何必需的 pnp 驱动程序。 服务控制管理器忽略 INF **LoadOrderGroup**信息。
 
-    请参阅有关服务控制管理器的详细信息的 Microsoft Windows SDK 文档。
+    有关服务控制管理器的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-### <a name="using-bootflags-to-promote-a-drivers-starttype-at-boot-depending-on-boot-scenario"></a>使用 BootFlags 将提升在具体取决于引导方案的启动驱动程序的启动类型
+### <a name="using-bootflags-to-promote-a-drivers-starttype-at-boot-depending-on-boot-scenario"></a>使用 BootFlags 在启动时根据启动方案升级驱动程序的 StartType
 
-操作系统可以升级的驱动程序**StartType**成为具体取决于启动开始驱动**BootFlags**驱动程序的 INF 中指定的值。 你可以指定一个或多个 （或运算） 的以下数字值表示为十六进制值的 INF 文件中：
+操作系统可以根据驱动程序 INF 中指定的**BootFlags**值将驱动程序的**StartType**提升为启动启动驱动程序。 可以在 INF 文件中指定以下数值的一个或多个（运算），表示为十六进制值：
 
--   如果驱动程序应将其升级为在网络启动的引导启动驱动程序，指定**0x1** (CM_SERVICE_NETWORK_BOOT_LOAD)。
--   如果应在从 VHD 启动升级驱动程序，指定**0x2** (CM_SERVICE_VIRTUAL_DISK_BOOT_LOAD)
--   如果驱动程序应将其升级从 USB 磁盘启动时，指定**0x4** (CM_SERVICE_USB_DISK_BOOT_LOAD)。
--   如果驱动程序应将其升级从 SD 存储启动时，指定**0x8** (CM_SERVICE_SD_DISK_BOOT_LOAD)
--   如果驱动程序应将其升级从磁盘上的 USB 3.0 控制器启动时，指定**0x10** (CM_SERVICE_USB3_DISK_BOOT_LOAD)。
--   如果驱动程序应将其升级时引导测量启用启动，则指定**0x20** (CM_SERVICE_MEASURED_BOOT_LOAD)。
--   如果驱动程序应将其升级时引导启用验证程序启动，则指定**0x40** (CM_SERVICE_VERIFIER_BOOT_LOAD)。
--   如果应在 WinPE 启动升级驱动程序，指定**0x80** (CM_SERVICE_WINPE_BOOT_LOAD)。
+-   如果在网络启动时应将驱动程序提升为启动启动驱动程序，请指定**0x1** （CM_SERVICE_NETWORK_BOOT_LOAD）。
+-   如果在从 VHD 启动时应升级驱动程序，请指定**0x2** （CM_SERVICE_VIRTUAL_DISK_BOOT_LOAD）
+-   如果从 USB 磁盘启动时应升级驱动程序，请指定**0x4** （CM_SERVICE_USB_DISK_BOOT_LOAD）。
+-   如果从 SD 存储启动时应升级驱动程序，请指定**0x8** （CM_SERVICE_SD_DISK_BOOT_LOAD）
+-   如果从 USB 3.0 控制器上的磁盘启动时应升级驱动程序，请指定**0x10** （CM_SERVICE_USB3_DISK_BOOT_LOAD）。
+-   如果在启用了度量启动的情况下启动时应升级驱动程序，请指定**0x20** （CM_SERVICE_MEASURED_BOOT_LOAD）。
+-   如果在启用了验证程序启动时升级驱动程序，请指定**0x40** （CM_SERVICE_VERIFIER_BOOT_LOAD）。
+-   如果在 WinPE 启动时应升级驱动程序，请指定**0x80** （CM_SERVICE_WINPE_BOOT_LOAD）。
 
-有关升级驱动程序的详细信息**StartType**在启动，具体取决于启动方案中，请参阅[ **INF AddService 指令**](inf-addservice-directive.md)。
+有关在启动时升级驱动程序的**StartType**的详细信息，请参阅[**INF AddService 指令**](inf-addservice-directive.md)。
 
  
 

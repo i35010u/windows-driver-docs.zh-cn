@@ -3,68 +3,68 @@ title: 互斥对象简介
 description: 互斥对象简介
 ms.assetid: c35b4341-09dd-411d-b933-6c762fecd23c
 keywords:
-- 内核调度程序对象 WDK，互斥体对象
-- 调度程序对象 WDK 内核，互斥体对象
-- 互斥体对象 WDK 内核
-- 互斥独占访问 WDK 内核
-- 等待 mutex 对象
+- 内核调度程序对象 WDK，mutex 对象
+- 调度程序对象 WDK 内核，mutex 对象
+- mutex 对象 WDK 内核
+- 互斥访问 WDK 内核
+- 正在等待 mutex 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 703ec6d3250a70826dfc09797d7b2b05d6d0413c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5398f34435f95d797d9d6ef82e76731a52dd8725
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369922"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828188"
 ---
 # <a name="introduction-to-mutex-objects"></a>互斥对象简介
 
 
-顾名思义，互斥体对象是设计用于确保在一组内核模式线程间共享的单个资源相互独占访问的同步机制。 仅最高级别的驱动程序，例如文件系统驱动程序 (FSDs) 使用 executive 工作线程，很可能使用互斥体对象。
+顾名思义，mutex 对象是一种同步机制，旨在确保对在一组内核模式线程之间共享的单个资源进行相互独立的访问。 只有最上层的驱动程序（如使用执行器工作线程的文件系统驱动程序（FSDs））才可能使用 mutex 对象。
 
-可能是最高级别的驱动程序和驱动程序创建的线程或工作线程回调例程可能会使用互斥体对象。 但是，任何驱动程序和使用可分页的线程或工作线程回调例程必须管理收购的等待和它的互斥体对象的版本应非常小心。
+使用驱动程序创建的线程或工作线程回调例程的最高级别的驱动程序可能使用互斥体对象。 但是，具有可分页线程或工作线程回调例程的任何驱动程序都必须仔细管理其 mutex 对象的购置、等待和释放。
 
-互斥体对象具有内置功能可提供系统 （仅内核模式） 线程互相排斥，死锁释放 SMP 计算机中的共享资源的访问。 内核一次将 mutex 的所有权分配给单个线程。
+Mutex 对象具有内置功能，这些功能提供了系统（仅限内核模式）线程互相排斥，无需在 SMP 计算机中访问共享资源。 内核一次将 mutex 的所有权分配给单个线程。
 
-获取 mutex 的所有权阻止交付的正常的内核模式下异步过程调用 (Apc)。 该线程将不会被占用 APC 除非内核发出 APC\_级软件中断运行一个特殊内核 APC，如结果返回到原始请求方的 I/O 操作的 I/O 管理器的 IRP 完成例程
+获取互斥体的所有权会阻止正常内核模式异步过程调用（Apc）的传递。 除非内核发出 APC\_级别软件中断来运行特殊内核 APC （如 i/o 管理器的 IRP 完成例程，该例程会将结果返回给 i/o 操作的原始请求方），否则线程将不被 APC 抢占
 
-一个线程可以获取互斥体对象，它已拥有 （递归所有权），但以递归方式获取互斥体对象未设置为用信号通知状态，直到线程完全释放其所有权的所有权。 此类线程必须显式释放该互斥体无数次，它之前另一个线程可以获取互斥体获取所有权。
+线程可以获取它已拥有的 mutex 对象的所有权（递归所有权），但递归获取的 mutex 对象不会设置为终止状态，直到线程完全释放其所有权。 此类线程必须明确地释放 mutex，因为它获取所有权，而另一个线程可以获取互斥体。
 
-内核永远不会允许拥有互斥体，而无需第一个释放互斥体，然后将其设置为用信号通知状态导致转换为用户模式的线程。 如果拥有互斥体的任何 FSD 创建或驱动程序创建线程尝试在释放 mutex 的所有权之前将控制返回给 I/O 管理器，内核会停止系统。
+内核从不允许拥有互斥体的线程导致转换到用户模式，而无需先释放互斥体，然后将其设置为终止状态。 如果任何 FSD 创建的或驱动程序创建的线程在释放互斥体的所有权之前尝试将控制权返回给 i/o 管理器，内核会关闭系统。
 
-任何驱动程序，它使用互斥体对象必须调用[ **KeInitializeMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializemutex)等待或释放其互斥体对象之前的一次。 下图说明了两个系统线程可能会使用互斥体对象。
+使用 mutex 对象的任何驱动程序在等待或释放其 mutex 对象之前，都必须调用[**KeInitializeMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializemutex)一次。 下图说明两个系统线程可能使用 mutex 对象的方式。
 
-![说明等待 mutex 对象的关系图](images/3mutxobj.png)
+![说明如何等待 mutex 对象的关系图](images/3mutxobj.png)
 
-上图所示，使用互斥体对象的驱动程序必须为 mutex 对象，它必须是常驻提供存储。 可以使用该驱动程序[设备扩展](device-extensions.md)的驱动程序创建的设备对象，如果它使用的控制器扩展[控制器对象](using-controller-objects.md)，或由驱动程序分配的非分页缓冲的池。
+如上图所示，使用 mutex 对象的驱动程序必须为必须驻留的 mutex 对象提供存储。 驱动程序可以使用驱动程序创建的设备对象的[设备扩展](device-extensions.md)，如果控制器扩展使用[控制器对象](using-controller-objects.md)或由驱动程序分配的非分页池，则可以使用控制器扩展。
 
-当驱动程序调用**KeInitializeMutex** (通常是从其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程)，它必须将一个指针传递给该互斥体对象的驱动程序的存储的内核初始化到用信号通知状态。
+当驱动程序调用**KeInitializeMutex** （通常来自其[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程）时，它必须为 mutex 对象传递一个指向该驱动程序存储区的指针，该对象内核初始化为终止状态。
 
-这样的最高级别的驱动程序已初始化后，它可以管理相互独占访问共享资源，如在上图中所示。 例如，驱动程序的本质上的同步操作和线程的调度例程可能会使用互斥体的 Irp 保护驱动程序创建队列。
+此类高级驱动程序初始化完成后，可以按上图所示管理对共享资源的相互独占的访问。 例如，对于原本同步操作和线程，驱动程序的调度例程可能使用互斥体来保护用于 Irp 的驱动程序创建的队列。
 
-因为**KeInitializeMutex**始终 mutex 对象的初始状态设置为用信号通知 （如前面图所示）：
+因为**KeInitializeMutex**始终将互斥体对象的初始状态设置为 "已终止" （如上图所示）：
 
-1.  调度例程的首次调用[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)与*互斥体*指针使当前线程立即进入就绪状态，提供线程互斥体的所有权和互斥体状态重置为未发出信号。 尽快调度例程继续运行，它可以安全地将 IRP 插入 mutex 保护队列。
+1.  调度例程使用*mutex*指针对[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)进行的初始调用会将当前线程立即置于就绪状态，赋予互斥体的线程所有权，并将互斥体状态重置为未发出信号。 一旦派单例程恢复运行，它就可以安全地将 IRP 插入受互斥体保护的队列中。
 
-2.  当第二个线程 （另一个调度例程，驱动程序所提供的工作线程回调例程或驱动程序创建的线程） 调用**KeWaitForSingleObject**与*互斥体*指针，第二个线程将处于等待状态。
+2.  当第二个线程（另一个调度例程、驱动程序*提供的工作*线程回调例程或驱动程序创建的线程）调用**KeWaitForSingleObject**时，会将第二个线程置于等待状态。
 
-3.  当调度例程完成队列中所述的步骤 1 作为 IRP 时，它将调用[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)与*互斥体*指针和一个布尔值*等待*值，该值指示是否打算调用**KeWaitForSingleObject** (或[ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)) 与*Mutex*只要**KeReleaseMutex**返回控件。
+3.  当调度例程按照步骤1中的说明完成对 IRP 的排队时，它将使用*Mutex*指针调用[**KeReleaseMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex) ，并使用布尔*等待*值来指示它是否打算调用**KeWaitForSingleObject** （或[**KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)）， **KeReleaseMutex**返回 control 后，就会出现*互斥体*。
 
-4.  假设的调度例程释放其所有权的步骤 3 中互斥体 (*等待*设置为**FALSE**)，该互斥体设置为通过用信号通知状态**KeReleaseMutex**。 互斥体当前有没有所有者，因此内核确定是否另一个线程正在等待该互斥体。 如果内核，使第二个线程 （请参阅步骤 2） 的互斥体所有者可能提升到实时优先级值最低的线程的优先级以及更改其状态为就绪。
+4.  假设调度例程在步骤3（*等待*设置为**FALSE**）中释放了互斥体的所有权，则会通过**KeReleaseMutex**将互斥体设置为终止状态。 Mutex 当前没有所有者，因此内核确定另一个线程是否正在等待该互斥体。 如果是这样，内核将使第二个线程（请参阅步骤2）成为 mutex 所有者，可能将线程的优先级提升到最低的实时优先级值，并将其状态更改为 "就绪"。
 
-5.  内核为处理器可调度第二个线程中的执行： 即，当具有较高优先级没有其他线程当前处于就绪状态和有要在更高版本的 IRQL 运行没有内核模式例程。 第二个线程 （队列 IRP 的调度例程或驱动程序的工作线程回调例程或出队 IRP 的驱动程序创建的线程） 现在可以安全地访问受保护的互斥体的 Irp 队列之前它将调用**KeReleaseMutex**。
+5.  当处理器可用时，内核会立即调度第二个线程执行：也就是说，如果没有具有较高优先级的其他线程当前处于就绪状态，并且没有要在更高的 IRQL 上运行的内核模式例程，则为。 在调用**KeReleaseMutex**之前，第二个线程（将 irp 或驱动程序的工作线程回调例程或驱动程序创建的线程出列）的第二个线程可以安全地访问 irp 的受 mutex 保护的队列。
 
-如果一个线程获取互斥体对象以递归方式的所有权，必须显式调用该线程**KeReleaseMutex**无数次，互斥体等待以互斥体对象设置为用信号通知状态。 例如，如果某个线程调用**KeWaitForSingleObject** ，然后**KeWaitForMutexObject**具有相同*互斥体*指针，它必须调用**KeReleaseMutex**两次时它将获取互斥体以将该互斥体对象设置为用信号通知状态。
+如果线程以递归方式获取互斥体对象的所有权，则该线程必须多次显式调用**KeReleaseMutex** ，因为它会在互斥体上等待，以将 mutex 对象设置为终止状态。 例如，如果一个线程调用**KeWaitForSingleObject** ，然后使用相同的*Mutex*指针调用**KeWaitForMutexObject** ，则它在获取互斥体时必须调用**KeReleaseMutex**两次，以便将该 mutex 对象设置为发出信号状态.
 
-调用**KeReleaseMutex**与*等待*参数设置为**TRUE**指示调用方的意图立即调用**KeWait * Xxx*** 支持在从返回的例程**KeReleaseMutex**。
+如果调用**KeReleaseMutex** ，并将*Wait*参数设置为**TRUE** ，则指示调用方在从**KeReleaseMutex**返回时立即调用**KeWait * Xxx*** 支持例程。
 
-**请考虑将等待参数设置为 KeReleaseMutex 时遵循以下原则：**
+**请考虑以下将 Wait 参数设置为 KeReleaseMutex 的准则：**
 
-可分页的线程或在被动 IRQL 运行的可分页的驱动程序例程\_级别应永远不会调用**KeReleaseMutex**与*等待*参数设置为**TRUE**. 此类调用会导致严重的页面错误，如果调用方碰巧换出到调用之间**KeReleaseMutex**并**KeWait*Xxx*对象**(s)。
+以 IRQL 被动\_级别运行的可分页线程或可分页的驱动程序例程不应调用**KeReleaseMutex** ，并将*Wait*参数设置为**TRUE**。 如果调用方在对**KeReleaseMutex**和**KeWait*Xxx*对象**的调用之间分页，则此类调用将导致严重的页错误。
 
-在晚于被动的 IRQL 运行任何标准驱动程序例程\_级别不能等待非零值的时间间隔上的所有调度程序对象而不会降低关闭系统。 但是，可以调用此类例程**KeReleaseMutex**如果拥有该互斥体的 IRQL 小于或等于在调度到的运行时\_级别。
+任何以 IRQL 大于被动\_级别运行的标准驱动程序例程都不会在不关闭系统的情况下等待任何调度程序对象上的非零间隔。 但是，如果在其上运行的 mutex 小于或等于调度\_级别，则此类例程可以调用**KeReleaseMutex** 。
 
-在运行的标准驱动程序例程于 Irql 的摘要，请参阅[管理硬件优先级](managing-hardware-priorities.md)。
+有关标准驱动程序例程运行的 IRQLs 的摘要，请参阅[管理硬件优先级](managing-hardware-priorities.md)。
 
  
 

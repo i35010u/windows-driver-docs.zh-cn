@@ -1,58 +1,58 @@
 ---
 title: HFP 设备连接
-description: HFP 设备连接本主题将讨论如何确定音频系统和句柄 Bluetooth 连接状态信息无配置文件 (HFP) 设备。
+description: HFP 设备连接主题讨论音频系统如何确定和处理蓝牙免提配置文件（HFP）设备的连接状态信息。
 ms.assetid: 29B33A3F-63BB-4E1E-B245-E90372A7812F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e258dcc100aae52bb40b8e206ab8406c30592dd5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2feea23c231598f93d69b8c8f2d384e4be31139d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359976"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831187"
 ---
 # <a name="hfp-device-connection"></a>HFP 设备连接
 
 
-HFP 设备连接本主题将讨论如何确定音频系统和句柄 Bluetooth 连接状态信息无配置文件 (HFP) 设备。
+HFP 设备连接主题讨论音频系统如何确定和处理蓝牙免提配置文件（HFP）设备的连接状态信息。
 
-根据需要为所有音频驱动程序，音频驱动程序必须支持[ **KSPROPERTY\_JACK\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)。 音频驱动程序维护*IsConnected*字段筛选器工厂上下文中。 音频驱动程序使用此值时处理**KSPROPERTY\_JACK\_说明**属性。
+根据所有音频驱动程序的需要，音频驱动程序必须支持[**KSPROPERTY\_插孔\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)。 音频驱动程序在筛选器工厂上下文中维护一个*connectionmultiplexer.isconnected*字段。 音频驱动程序在处理**KSPROPERTY\_插孔\_DESCRIPTION**属性时使用该值。
 
-当[ **IOCTL\_BTHHFP\_设备\_获取\_连接\_状态\_更新**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_connection_status_update)成功完成，随后将音频驱动程序更新*IsConnected*使用新的连接状态。 如果状态已更改，音频驱动程序将引发[ **KSEVENT\_PINCAPS\_JACKINFOCHANGE** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-jackinfochange)事件，这会导致音频系统来重新评估的连接状态。 然后，音频驱动程序调用的另一个实例**IOCTL\_BTHHFP\_设备\_获取\_连接\_状态\_更新**以便接收下一步的状态更改。 如果没有更早的状态更改，它是请求仍挂起，请此第二次调用将失败，音频驱动程序不会更新及其连接状态，并不会再发出请求的状态更改信息。
+当[**IOCTL\_BTHHFP\_设备\_获取\_连接\_状态\_更新**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_connection_status_update)成功完成，则音频驱动程序将更新*connectionmultiplexer.isconnected* ，并显示新的连接状态。 如果状态已更改，则音频驱动程序会引发[**KSEVENT\_PINCAPS\_JACKINFOCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-jackinfochange)事件，这将导致音频系统重新计算连接状态。 然后，音频驱动程序调用 **\_BTHHFP\_设备的 IOCTL 的另一个实例\_获取\_连接\_状态\_更新**以接收下一个状态更改。 如果以前的状态更改请求仍处于挂起状态，则第二次调用将失败，并且音频驱动程序不会更新其连接状态，也不会发出对状态更改信息的其他请求。
 
-如中所述[内核流式处理注意事项](kernel-streaming-considerations.md)，音频驱动程序必须支持[ **KSPROPERTY\_ONESHOT\_重新连接**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-reconnect)和[**KSPROPERTY\_ONESHOT\_断开连接**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-disconnect)，并为这些属性的处理程序必须发送 REQUESTCONNECT 和 REQUESTDISCONNECT Ioctl 分别 HFP 驱动程序。 这些 Ioctl 快速完成，并且音频驱动程序需要准备好响应返回的结果。
+如[内核流式处理注意事项](kernel-streaming-considerations.md)中所述，音频驱动程序必须支持[**KSPROPERTY\_ONESHOT\_重新连接**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-reconnect)和[**KSPROPERTY\_ONESHOT\_断开连接**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-disconnect)，并且这些属性的处理程序必须将 REQUESTCONNECT 和 REQUESTDISCONNECT IOCTLs 分别发送到 HFP 驱动程序。 这些 IOCTLs 很快就会完成，并且音频驱动程序需要准备好响应返回的结果。
 
-以下是一些其他蓝牙音频设备与连接相关因素的音频驱动程序开发人员必须了解。
+下面是音频驱动程序开发人员必须知道的一些其他与蓝牙音频设备连接相关的因素。
 
-## <a name="span-idstreamchannelspanspan-idstreamchannelspanspan-idstreamchannelspanstream-channel"></a><span id="Stream_channel"></span><span id="stream_channel"></span><span id="STREAM_CHANNEL"></span>Stream 通道
-
-
-Stream 频道表示无线带宽的音频驱动程序的分配。 大多数情况下，这是 SCO 通道。 但是，某些管理 SCO 通道状态的详细信息进行处理完全在 HFP 驱动程序。 这包括的示例远程断开连接的可能是由于调用方案 HF 其中启动传输音频到可用性组 （其中 PC 充当的角色的可用性组在这种情况下）。
-
-## <a name="span-idaudiofilterpinstatesspanspan-idaudiofilterpinstatesspanspan-idaudiofilterpinstatesspanaudio-filter-pin-states"></a><span id="Audio_filter_pin_states"></span><span id="audio_filter_pin_states"></span><span id="AUDIO_FILTER_PIN_STATES"></span>音频筛选器 pin 状态
+## <a name="span-idstream_channelspanspan-idstream_channelspanspan-idstream_channelspanstream-channel"></a><span id="Stream_channel"></span><span id="stream_channel"></span><span id="STREAM_CHANNEL"></span>流通道
 
 
-音频驱动程序实现 KS pin 状态处理程序 （类似于 AVStrMiniPinSetDeviceState） 的两个 KS pin。 需要为上述这些插针，以将数据传输将以无线方式 SCO 流通道。 当这些引脚之一将转换为 KSSTATE\_ACQUIRE，音频驱动程序打开通道发送[ **IOCTL\_BTHHFP\_流\_打开**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_open)HFP 驱动程序。 这是一个异步调用，可能需要几秒钟才能完成。 音频驱动程序不需要实现自己的超时机制，应等到 IOCTL 完成，然后完成转换到 KSSTATE\_ACQUIRE。
+流通道表示音频驱动程序的无线带宽分配。 大多数情况下，这是 SCO 通道。 但在 HFP 驱动程序中，管理 SCO 通道状态的某些细节将完全处理。 这包括例如远程断开连接，这可能是由于调用 HF 启动了到 AG 的音频传输（在这种情况下，PC 扮演 AG 的角色）的情况。
 
-这两个 KS pin 时转换到 KSSTATE\_停止，音频驱动程序将发送[ **IOCTL\_BTHHFP\_流\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_close) HFP 驱动程序。 这将完成快速。
-
-若要确定何时发送**IOCTL\_BTHHFP\_流\_打开**并**IOCTL\_BTHHFP\_流\_关闭**，音频驱动程序可以使用简单的引用计数机制来跟踪要求 SCO 流通道的 pin 数。 音频驱动程序会打开和关闭 SCO 流通道的引用计数从 0 更改为 1 时。
-
-上**IOCTL\_BTHHFP\_流\_打开**，HFP 驱动程序会请求 SCO 通道，如果未打开，并完成请求的结果与 SCO 请求。 上**IOCTL\_BTHHFP\_流\_关闭**HFP 驱动程序请求 SCO 通道断开连接，如果打开一个。
-
-## <a name="span-idremotescoconnectanddisconnectspanspan-idremotescoconnectanddisconnectspanspan-idremotescoconnectanddisconnectspanremote-sco-connect-and-disconnect"></a><span id="Remote_SCO_connect_and_disconnect"></span><span id="remote_sco_connect_and_disconnect"></span><span id="REMOTE_SCO_CONNECT_AND_DISCONNECT"></span>远程 SCO 连接和断开连接
+## <a name="span-idaudio_filter_pin_statesspanspan-idaudio_filter_pin_statesspanspan-idaudio_filter_pin_statesspanaudio-filter-pin-states"></a><span id="Audio_filter_pin_states"></span><span id="audio_filter_pin_states"></span><span id="AUDIO_FILTER_PIN_STATES"></span>音频筛选器 pin 状态
 
 
-在远程的 SCO 断开连接，如果 Stream 通道已关闭，HFP 驱动程序没有任何影响。 如果打开 Stream 通道 HFP 驱动程序将启动重新连接计时器。 在计时器过期时，如果 SCO 仍断开连接和 Stream 通道仍处于打开状态，该驱动程序将请求 SCO 通道。 请注意 SCO 断开连接，因此在此期间将音频中的存在间隔时，将任何音频数据传输将以无线方式。 如果 SCO 请求失败，则 HFP 驱动程序发出信号，指示 Stream 通道状态更改为音频驱动程序通过完成任何调用[ **IOCTL\_BTHHFP\_流\_获取\_状态\_更新**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_get_status_update)。 这应该很少见，因为远程 SCO 断开连接通常与 HF 设备请求到的传输调用音频的音频的网关相关联。 音频驱动程序应考虑这一中间流错误情况。
+音频驱动程序为两个 KS 引脚实现了一个 KS pin 状态处理程序（类似于 AVStrMiniPinSetDeviceState）。 其中任何一个 pin 都需要 SCO 流通道，才能通过无线传输数据。 当其中任何一个 pin 转换为 KSSTATE\_获取时，音频驱动程序会通过将[**IOCTL 发送\_BTHHFP\_流\_打开**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_open)HFP 驱动程序来打开通道。 这是一个异步调用，可能需要几秒钟才能完成。 音频驱动程序无需实现其自己的超时机制，应等待 IOCTL 完成，然后才能完成到 KSSTATE\_获取的转换。
 
-此过程允许将 VoIP 应用程序从 CallButtons API 接收的音频传输回调，完全释放 HFP 终结点，而不是导致流式处理的错误上其音频资源的时间。
+当两个 KS pin 都转换为 KSSTATE 时\_停止时，音频驱动程序会将[**IOCTL\_BTHHFP\_流\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_close)到 HFP 驱动程序附近。 这会迅速完成。
 
-在远程 SCO 上连接，如果 Stream 通道是打开的驱动程序只需接受连接。 如果 Stream 通道已关闭，HFP 驱动程序接受连接，并且还将启动一个断开连接计时器。 断开连接计时器过期时，如果 SCO 仍处于连接状态和 Stream 通道仍然关闭，则该驱动程序会中断 SCO 连接。
+若要确定何时发送**IOCTL\_BTHHFP\_stream\_打开**和**ioctl\_BTHHFP\_流\_关闭**，则音频驱动程序可以使用简单的引用计数机制跟踪需要 SCO 流通道。 当引用计数从0更改为1时，音频驱动程序会打开并关闭 SCO 流通道。
 
-此过程允许将 VoIP 应用程序从 CallButtons API 接收的音频传输回调，而不会过早地拒绝或 SCO 连接建立 HFP 终结点上的音频资源的时间。
+在**IOCTL\_BTHHFP\_STREAM\_打开**时，HFP 驱动程序会请求 sco 通道（如果尚未打开），并使用 sco 请求的结果完成请求。 在**IOCTL\_BTHHFP\_STREAM\_关闭**HFP 驱动程序请求 SCO 通道断开连接（如果有）。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[理论上的操作](theory-of-operation.md)  
+## <a name="span-idremote_sco_connect_and_disconnectspanspan-idremote_sco_connect_and_disconnectspanspan-idremote_sco_connect_and_disconnectspanremote-sco-connect-and-disconnect"></a><span id="Remote_SCO_connect_and_disconnect"></span><span id="remote_sco_connect_and_disconnect"></span><span id="REMOTE_SCO_CONNECT_AND_DISCONNECT"></span>远程 SCO 连接和断开连接
+
+
+在远程 SCO 断开连接上，如果流通道已关闭，HFP 驱动程序将不执行任何操作。 如果打开流通道，HFP 驱动程序将启动重新连接计时器。 当计时器过期时，如果 SCO 仍断开连接并且流通道仍处于打开状态，则驱动程序将请求 SCO 通道。 请注意，当 SCO 断开连接时，不会通过无线传输音频数据，因此在这段时间内音频会出现间隙。 如果 SCO 请求失败，则 HFP 驱动程序将通过完成任何调用的 IOCTL\_BTHHFP\_STREAM，将流通道状态更改通知给音频驱动程序[ **\_获取\_状态\_更新**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_get_status_update)。 这应该很少见，因为远程 SCO 断开连接通常与请求将电话音频传输到音频网关的 HF 设备相关联。 音频驱动程序应将这种情况视为中间流错误情况。
+
+此过程允许 VoIP 应用程序从 CallButtons API 接收音频传输回拨，并在 HFP 终结点上完全释放其音频资源，而不是导致流式处理错误。
+
+在远程 SCO 连接上，如果流通道为打开状态，则驱动程序只接受连接。 如果流通道已关闭，则 HFP 驱动程序会接受连接，并且还会启动断开连接计时器。 当断开连接计时器过期时，如果 SCO 仍处于连接状态并且流通道仍处于关闭状态，则驱动程序将中断 SCO 连接。
+
+此过程允许 VoIP 应用程序从 CallButtons API 接收音频传输回拨，并在 HFP 终结点上建立音频资源，而无需提前拒绝或关闭 SCO 连接。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[操作理论](theory-of-operation.md)  
 
 
 

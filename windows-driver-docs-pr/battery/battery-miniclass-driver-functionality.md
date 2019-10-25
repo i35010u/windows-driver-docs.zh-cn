@@ -6,12 +6,12 @@ keywords:
 - 电池 miniclass 驱动程序 WDK，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f19d8871482119ef066459b91bf353f3ae87ca26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7081f17614880fc617f0c5a8e44fd5dac4713668
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354089"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832222"
 ---
 # <a name="battery-miniclass-driver-functionality"></a>电池微型类驱动程序功能
 
@@ -19,23 +19,23 @@ ms.locfileid: "67354089"
 ## <span id="ddk_battery_miniclass_driver_functionality_dg"></span><span id="DDK_BATTERY_MINICLASS_DRIVER_FUNCTIONALITY_DG"></span>
 
 
-电池 miniclass 驱动程序负责以下：
+电池 miniclass 驱动程序负责以下操作：
 
--   创建适用于其设备 FDO 并将特定于设备的信息存储在关联的设备扩展
+-   为其设备创建 FDO，并在关联的设备扩展中存储设备特定的信息
 
--   分配和维护当前的电池的电池标记
+-   分配和维护当前电池的电池标记
 
--   跟踪的电池电量、 充电和电源状态
+-   跟踪电池容量、充电和电源状态
 
--   响应来自电池的状态信息的类驱动程序的请求
+-   响应来自类驱动程序的电池状态信息的请求
 
--   电池的电源状态更改时通知电池类驱动程序
+-   在电池电源状态发生变化时通知电池类驱动程序
 
--   在充电还是放电特定电池请求时
+-   请求充电或放电特定电池
 
-电池 miniclass 驱动程序的其他操作，如中所述处理 Ioctl，调用电池类驱动程序支持例程[电池类驱动程序的功能](battery-class-driver-functionality.md)。
+电池 miniclass 驱动程序为其他操作（如处理 IOCTLs）调用电池类驱动程序的支持例程，如[电池类驱动程序功能](battery-class-driver-functionality.md)中所述。
 
-每个电池 miniclass 驱动程序提供了一套[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)例程。 电池类驱动程序调用这些例程以请求 miniclass 驱动程序执行特定于设备的任务。 此外，miniclass 驱动程序必须具有其他例程，如中所述[提供所需电池 Miniclass 驱动程序的功能](supplying-required-battery-miniclass-driver-functionality.md)。
+每个电池 miniclass 驱动程序都提供一组[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_battery/)例程。 电池类驱动程序调用这些例程来请求 miniclass 驱动程序执行特定于设备的任务。 此外，miniclass 驱动程序还必须具有其他例程，如[提供所需的电池 Miniclass 驱动程序功能](supplying-required-battery-miniclass-driver-functionality.md)中所述。
 
  
 

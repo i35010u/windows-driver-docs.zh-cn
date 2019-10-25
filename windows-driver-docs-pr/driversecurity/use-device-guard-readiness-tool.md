@@ -1,123 +1,123 @@
 ---
 title: 使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
-description: 请按照下列步骤以使用设备防护准备工具来评估 HVCI 驱动程序兼容性的驱动程序代码。
+description: 请按照以下步骤使用 Device Guard 准备工具来评估驱动程序代码的要求 HVCI 驱动程序兼容性。
 ms.assetid: ''
 ms.date: 02/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbb25b054068c057e55112d5d91ec3ecb272a015
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: f63b97117a4df00fa2af082e400d9ba23cfc4850
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394128"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825173"
 ---
 # <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
 
 ## <a name="overview"></a>概述
 
-设备防护准备工具用于检查数创建支持不同的安全增强功能的 PC 的要求。 本部分介绍如何使用该工具来评估驱动程序的受保护的虚拟机监控程序代码完整性 (HVCI) 环境中运行的能力。 
+Device Guard 准备工具旨在检查多种需求，以创建支持各种安全增强功能的 PC。 本部分介绍如何使用该工具评估驱动程序在受管理程序保护的代码完整性（要求 HVCI）环境中运行的能力。 
 
-测试 HVCI 驱动程序 Device Guard 兼容性的 OS 和硬件要求：
+用于测试要求 HVCI driver Device Guard 兼容性的操作系统和硬件要求：
 
-1. Windows:在所有版本的 Windows，如 Windows Pro、 Windows 10 企业版、 Windows Server 和 Windows 10 IoT 企业版 （不支持在 S 模式下） 上可用。
+1. Windows：适用于所有版本的 Windows，例如 Windows Pro、Windows 10 企业版、Windows Server 和 Windows 10 IoT Enterprise （在 S 模式下不受支持）。
 
-2. 硬件：支持 SLAT 的虚拟化扩展插件的最新硬件。
+2. 硬件：最新硬件，支持使用 SLAT 的虚拟化扩展。
 
-若要准备工具用于评估的其他要求，如安全启动，请参阅下载的准备情况工具中包含的 readme.txt 文件。
+若要使用准备工具来评估其他要求，例如安全启动，请参阅准备工具下载中包含的 readme.txt 文件。
 
-有关相关的设备基础测试的详细信息，请参阅[Device.DevFund 测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)。
+有关相关设备基础测试的详细信息，请参阅[DevFund 测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)。
 
 ## <a name="implement-device-guard-compatible-code"></a>实现 Device Guard 兼容代码
 
-若要实现 Device Guard 兼容代码，请确保您的驱动程序代码将执行以下操作：
+若要实现 Device Guard 兼容的代码，请确保你的驱动程序代码执行以下操作：
 
-- 选择启用 NX 默认情况下
-- 有关内存分配 (NonPagedPoolNx) 使用 NX Api/标志
-- 不使用是可写和可执行文件的部分
-- 不会尝试直接修改可执行文件系统内存
-- 不在内核中使用动态代码
-- 不会加载为可执行文件的数据文件
-- 节对齐是倍数 0x1000 (页\_大小)。 例如 驱动程序\_对齐方式 = 0x1000
+- 默认情况下，使用 NX
+- 使用 NX Api/标志进行内存分配（NonPagedPoolNx）
+- 不使用可写和可执行的节
+- 不尝试直接修改可执行系统内存
+- 不使用内核中的动态代码
+- 不将数据文件加载为可执行文件
+- 节对齐方式为0x1000 的倍数（页\_大小）。 例如 驱动程序\_对齐 = 0x1000
 
-不保留供系统使用的 DDIs 以下列表可能会受到影响：
+以下 DDIs 列表未保留给系统使用可能会受到影响：
 
 |                                                                                                      |
 |------------------------------------------------------------------------------------------------------|
 | DDI 名称                                                                                             |
-| [**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool)                                                          |
-| [**ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquota)                                        |
-| [**ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)                                  |
-| [**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)                                            |
-| [**ExAllocatePoolWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtagpriority)                            |
-| [**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)                        |
-| [**ExInitializeLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializelookasidelistex)                                |
-| [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)                                  |
-| [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)          |
-| [**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)  |
-| [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)                          |
-| [**MmCopyMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmcopymemory)                                                              |
-| [**MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)                                                              |
-| [**MmMapLockedPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpages)                                                      |
-| [**MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)                              |
-| [**MmProtectMdlSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprotectmdlsystemaddress)                                    |
+| [**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)                                                          |
+| [**ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)                                        |
+| [**ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquotatag)                                  |
+| [**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)                                            |
+| [**ExAllocatePoolWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)                            |
+| [**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)                        |
+| [**ExInitializeLookasideListEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializelookasidelistex)                                |
+| [**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemory)                                  |
+| [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)          |
+| [**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)  |
+| [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousnodememory)                          |
+| [**MmCopyMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmcopymemory)                                                              |
+| [**MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace)                                                              |
+| [**MmMapLockedPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)                                                      |
+| [**MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)                              |
+| [**MmProtectMdlSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprotectmdlsystemaddress)                                    |
 | [**ZwAllocateVirtualMemory**](https://msdn.microsoft.com/library/windows/hardware/ff566416)                                        |
-| [**ZwCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection)                                                        |
-| [**ZwMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)                                                  |
-| [**NtCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection)                                                        |
-| [**NtMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)                                                  |
-| [**ClfsCreateMarshallingArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfscreatemarshallingarea)                                    |
+| [**ZwCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)                                                        |
+| [**ZwMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)                                                  |
+| [**NtCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)                                                        |
+| [**NtMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)                                                  |
+| [**ClfsCreateMarshallingArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatemarshallingarea)                                    |
 | NDIS                                                                                                 |
-| [**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatememorywithtagpriority)                  |
+| [**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatememorywithtagpriority)                  |
 | 存储                                                                                              |
-| [**StorPortGetDataInBufferSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdatainbuffersystemaddress)             |
-| [**StorPortGetSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetsystemaddress)                                     |
-| [**ChangerClassAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassallocatepool)                                     |
-| 显示                                                                                              |
-| [*DxgkCbMapMemory*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_map_memory)                                                         |
-| [**VideoPortAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportallocatepool)                                           |
+| [**StorPortGetDataInBufferSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetdatainbuffersystemaddress)             |
+| [**StorPortGetSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetsystemaddress)                                     |
+| [**ChangerClassAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassallocatepool)                                     |
+| “显示”                                                                                              |
+| [*DxgkCbMapMemory*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_map_memory)                                                         |
+| [**VideoPortAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportallocatepool)                                           |
 | 音频微型端口                                                                                       |
-| [**IMiniportDMus::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)                                        |
-| [**IMiniportMidi::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportmidi-newstream)                                        |
-| [**IMiniportWaveCyclic::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)                            |
-| [**IPortWavePci::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-newmasterdmachannel)                      |
-| [**IMiniportWavePci::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)                                  |
+| [**IMiniportDMus：： Newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iminiportdmus-newstream)                                        |
+| [**IMiniportMidi：： Newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportmidi-newstream)                                        |
+| [**IMiniportWaveCyclic：： Newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-newstream)                            |
+| [**IPortWavePci::NewMasterDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-newmasterdmachannel)                      |
+| [**IMiniportWavePci：： Newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)                                  |
 | 音频端口类                                                                                     |
-| [**PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewdmachannel)                                                         |
-| [**PcNewResourceList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewresourcelist)                                                     |
-| [**PcNewResourceSublist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewresourcesublist)                                               |
+| [**PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)                                                         |
+| [**PcNewResourceList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewresourcelist)                                                     |
+| [**PcNewResourceSublist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewresourcesublist)                                               |
 | IFS                                                                                                  |
-| [**FltAllocatePoolAlignedWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatepoolalignedwithtag)                              |
-| [**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)                                                    |
+| [**FltAllocatePoolAlignedWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatepoolalignedwithtag)                              |
+| [**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)                                                    |
 | WDF                                                                                                  |
-| [**WdfLookasideListCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdflookasidelistcreate)                                             |
-| [**WdfMemoryCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate)                                                           |
-| [**WdfDeviceAllocAndQueryProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryproperty)                             |
-| [**WdfDeviceAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceallocandquerypropertyex)                         |
-| [**WdfFdoInitAllocAndQueryProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitallocandqueryproperty)                           |
-| [**WdfFdoInitAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)                       |
-| [**WdfIoTargetAllocAndQueryTargetProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetallocandquerytargetproperty)             |
-| [**WdfRegistryQueryMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfregistry/nf-wdfregistry-wdfregistryquerymemory)                                             |
+| [**WdfLookasideListCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdflookasidelistcreate)                                             |
+| [**WdfMemoryCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate)                                                           |
+| [**WdfDeviceAllocAndQueryProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryproperty)                             |
+| [**WdfDeviceAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceallocandquerypropertyex)                         |
+| [**WdfFdoInitAllocAndQueryProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitallocandqueryproperty)                           |
+| [**WdfFdoInitAllocAndQueryPropertyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)                       |
+| [**WdfIoTargetAllocAndQueryTargetProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetallocandquerytargetproperty)             |
+| [**WdfRegistryQueryMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistryquerymemory)                                             |
 
 
 ## <a name="using-the-dgr-tool"></a>使用 DGR 工具
 
-若要使用设备防护准备工具，请完成以下步骤：
+若要使用 Device Guard 准备工具，请完成以下步骤：
 
 -   **准备测试 PC**
 
-    *启用基于虚拟化的代码完整性保护*-运行系统信息应用程序 (msinfo32)。 查找以下项："Device Guard 虚拟化基于安全"。 它应显示："Running"。
+    *启用基于虚拟化的代码完整性保护*-运行系统信息应用（msinfo32）。 查找以下项： "Device Guard Virtualization security"。 它应显示： "正在运行"。
 
-    或者，此外还有一个 WMI 界面，用于检查使用的管理工具，可用于在 PowerShell 中显示的信息。
+    另外，还提供了一个 WMI 接口，用于检查如何使用可用于在 PowerShell 中显示信息的管理工具。
 
     ```console
     Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
     ```
 
-    有关如何中断输出显示的信息，请参阅[启用基于虚拟化的代码完整性保护](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)。
+    有关如何中断显示的输出的信息，请参阅[启用基于虚拟化的代码完整性保护](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)。
 
-    *禁用 Device Guard* -请注意，在运行时准备工具，Device Guard 必须禁用测试 PC 上如 Device Guard 可能会阻止加载后，该驱动程序和驱动程序不会将可用于准备工具来测试。
+    *禁用设备防护*-请注意，在运行准备工具时，必须在正在测试的 PC 上禁用 device guard，因为 device guard 可能会阻止驱动程序加载，并且驱动程序将无法用于测试的准备工具。
 
-    *选择性地启用测试签名*-若要允许安装未签名的开发驱动程序，你可能想要启用测试签名使用 BCDEdit。
+    *Optionaly 启用测试签名*-若要允许安装未签名的开发驱动程序，你可能想要使用 BCDEdit 启用测试签名。
 
     ```console
     bcdedit /set TESTSIGNING ON 
@@ -125,46 +125,46 @@ ms.locfileid: "67394128"
 
 -   **安装测试驱动程序**
 
-    在目标测试 PC 上安装所需的测试驱动程序。
+    在目标测试电脑上安装所需的测试驱动程序。
 
-    **重要**已测试开发驱动程序并处理完所有代码问题后，重新测试最终的生产环境驱动程序。 此外，使用 HLK 测试驱动程序。 有关详细信息，请参阅[虚拟机监控程序代码完整性准备情况测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b972fc52-2468-4462-9799-6a1898808c86)。
+    **重要提示** 测试开发驱动程序并完成任何代码问题后，请重新测试最终的生产驱动程序。 此外，使用 HLK 测试驱动程序。 有关详细信息，请参阅[虚拟机监控程序代码完整性准备情况测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b972fc52-2468-4462-9799-6a1898808c86)。
 
 
 
--   **安装设备防护准备工具**
+-   **安装 Device Guard 准备工具**
 
     **警告**  
-    设备防护准备工具更改注册表值，并且可能会影响安全启动等功能，如使用测试不包含任何数据或应用程序的 PC。 在运行测试后，你可能想要重新安装 Windows，才能重新建立所需的安全配置。
+    由于设备保护准备工具会更改注册表值，可能会影响安全启动等功能，因此请使用不包含任何数据或应用程序的测试 PC。 运行测试后，你可能需要重新安装 Windows 以重新建立所需的安全配置。
 
-    1. 从此处下载该工具：[Device Guard 和 Credential Guard 硬件准备情况工具](https://www.microsoft.com/download/details.aspx?id=53337)。
+    1. 从此处下载此工具： [Device Guard 和 Credential Guard 硬件准备工具](https://www.microsoft.com/download/details.aspx?id=53337)。
 
-    2. 解压缩该工具在目标测试计算机上。
+    2. 在目标测试计算机上解压缩工具。
 
--   **配置 PowerShell 以允许执行未签名的脚本。**
+-   **将 PowerShell 配置为允许执行未签名的脚本。**
 
     准备工具是一个 PowerShell 脚本。 若要使用准备工具脚本，请打开管理员 PowerShell 脚本。
 
-    如果执行策略不已设置为允许运行脚本，则应手动设置它，如下所示。
+    如果尚未将执行策略设置为允许运行脚本，则应手动设置该策略，如下所示。
 
     ```powershell
     Set-ExecutionPolicy Unrestricted
     ```
 
--   **运行准备工具来启用 HVCI**
+-   **运行准备工具以启用要求 HVCI**
 
-    1. 在 Powershell 中，找到在其中解压缩准备工具的目录。
+    1. 在 Powershell 中，找到要将准备工具解压缩到的目录。
 
-    2. 运行准备工具以启用 HVCI。
+    2. 运行准备工具以启用要求 HVCI。
 
     ```powershell
     DG_Readiness_Tool.ps1 -Enable HVCI
     ```
 
-    3. 当定向，重启计算机。
+    3. 当定向时，重新启动 PC。
 
--   **运行脚本，以评估 HVCI 功能**
+-   **运行脚本以评估要求 HVCI 功能**
 
-    1. 运行准备工具来评估的驱动程序支持 HVCI 的功能。
+    1. 运行准备工具以评估驱动程序支持要求 HVCI 的能力。
 
     ```powershell
     DG_Readiness_Tool.ps1 -Capable HVCI
@@ -172,25 +172,25 @@ ms.locfileid: "67394128"
 
 -   **计算输出**
 
-    向屏幕输出是颜色编码。
+    屏幕的输出为彩色编码。
 
     |                   |                                                                                                   |
     |-------------------|---------------------------------------------------------------------------------------------------|
-    | 红色-错误      | 元素是缺少或未配置，将阻止启用和使用 DG/CG。                |
-    | 黄色的警告 | 此设备可用于启用和使用 DG/CG，但其他安全优势将不会出现。 |
-    | 绿色-消息  | 此设备已完全符合 DG/CG 要求。                                           |
+    | 红色-错误      | 元素缺失或未配置，将阻止启用和使用 DG/CG。                |
+    | 黄色-警告 | 此设备可用于启用和使用 DG/CG，但不会有更多的安全优势。 |
+    | 绿色-消息  | 此设备完全符合 DG/CG 要求。                                           |
 
-    除了输出到屏幕上，默认情况下，具有详细的输出的日志文件位于 c:\\DGLogs
+    除了屏幕输出之外，默认情况下，具有详细输出的日志文件位于 C：\\DGLogs
 
-    有五个步骤 （或部分） 的设备防护准备工具输出中。 步骤 1 包含驱动程序兼容性信息。
+    Device Guard 准备工具的输出中有5个步骤（或部分）。 步骤1包含驱动程序兼容性信息。
 
     ```text
      ====================== Step 1 Driver Compat ====================== 
     ```
 
-    显示为绿色的驱动程序必须标识的 HVCI 兼容性问题。 如果您有兴趣评估特定的驱动程序，如果驱动程序名称显示为绿色，并且处于活动状态且已加载，它已经通过 HVCI 兼容性测试。
+    绿色显示的驱动程序没有标识要求 HVCI 兼容性问题。 如果你对评估特定驱动程序感兴趣，则如果驱动程序名称显示为绿色并且处于活动状态且已加载，则它已通过要求 HVCI 兼容性测试。
 
-    找到如下所示，在日志末尾的"不兼容的 HVCI 内核驱动程序模块"部分。
+    在日志的末尾找到如下所示的 "不兼容的要求 HVCI 内核驱动程序模块" 一节。
 
     ```text
     InCompatible HVCI Kernel Driver Modules found
@@ -201,9 +201,9 @@ ms.locfileid: "67394128"
         Reason: execute pool type count:                3
     ```
 
-    在上面所示示例中，两个驱动程序标识为不兼容。 TestDriver1.sys 出现内存部分对齐故障和 TestDriver2.sys 已配置为使用可执行文件的内存区域的池。
+    在上面所示的示例中，两个驱动程序被标识为不兼容。 TestDriver1 的内存部分对齐失败，TestDriver2 具有配置为使用可执行内存区域的池。
 
-    设备驱动程序不兼容性的七种类型的统计信息是还可以使用 ！ verifier 调试器扩展。 有关详细信息 ！ verifier 扩展，请参阅[ **！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)。
+    使用！ verifier 调试器扩展时，还可以使用7种类型的设备驱动程序不兼容的统计信息。 有关！ verifier 扩展的详细信息，请参阅[ **！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)。
 
     ```text
             Execute Pool Type Count:                3
@@ -217,7 +217,7 @@ ms.locfileid: "67394128"
 
 
 
-使用下表解释输出，并确定所需驱动程序代码更改以修复不同类型的 HVCI 不兼容问题。
+使用下表来解释输出，并确定需要进行哪些驱动程序代码更改以修复不同类型的要求 HVCI 不兼容。
 
 
 
@@ -230,49 +230,49 @@ ms.locfileid: "67394128"
 
 <tr class="odd">
 <td align="left"><strong>警告</strong></td>
-<td align="left"><strong>兑换</strong></td>
+<td align="left"><strong>清偿</strong></td>
 </tr>
 
 <tr class="even">
-<td align="left"><p>Execute Pool Type（执行池类型）</p></td>
-<td align="left"><p>调用者指定了可执行池类型。 调用请求可执行内存的内存分配函数。</p>
-<p>确保所有池类型都包含不可执行的 NX 标志。</p>
+<td align="left"><p>执行池类型</p></td>
+<td align="left"><p>调用方指定了可执行的池类型。 调用请求可执行内存的内存分配函数。</p>
+<p>请确保所有池类型都包含不可执行的 NX 标志。</p>
 </td>
 </tr>
 
 <tr class="odd">
-<td align="left"><p>Execute Page Protection（执行页保护）</p></td>
-<td align="left"><p>调用者指定了可执行页面保护。</p>
-<p>指定"无执行"页面保护掩码。</p>
+<td align="left"><p>执行页面保护</p></td>
+<td align="left"><p>调用方指定了可执行页保护。</p>
+<p>指定 "无执行" 页保护掩码。</p>
 </td>
 </tr>
 
 <tr class="even">
-<td align="left"><p>Execute Page Mapping（执行页映射）</p></td>
-<td align="left"><p>调用者指定了可执行的内存描述符列表 (MDL) 映射。</p>
-<p> 确保使用的掩码包含 MdlMappingNoExecute。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[MmGetSystemAddressForMdlSafe](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)">MmGetSystemAddressForMdlSafe</a></p>
+<td align="left"><p>执行页面映射</p></td>
+<td align="left"><p>调用方指定了可执行的内存描述符列表（MDL）映射。</p>
+<p> 请确保使用的掩码包含 MdlMappingNoExecute。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[MmGetSystemAddressForMdlSafe](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)">MmGetSystemAddressForMdlSafe</a></p>
 </td>
 </tr>
 
 <tr class="odd">
-<td align="left"><p>Execute-Write Section（执行-写入部分）</p></td>
-<td align="left"><p>该图像包含可执行和可写部分。</p>
+<td align="left"><p>执行写入部分</p></td>
+<td align="left"><p>映像包含可执行文件和可写部分。</p>
 </td>
 </tr>
 
 <tr class="even">
-<td align="left"><p>Section Alignment Failures（节对齐方式失败）</p>
+<td align="left"><p>节对齐失败</p>
 </td>
 <td align="left"><p>图像包含不是页面对齐的部分。</p>
-<p>Section Alignment 必须是 0x1000（PAGE_SIZE）的倍数。 例如 DRIVER_ALIGNMENT=0x1000</p></td>
+<p>节对齐必须是0x1000 （PAGE_SIZE）的倍数。 例如 DRIVER_ALIGNMENT = 0x1000</p></td>
 </tr>
 
 
 <tr class="even">
-<td align="left"><p>IAT 在可执行部分</p></td>
-<td align="left"><p>导入地址表 (IAT) 不应该是内存的可执行部分。</p>
-<p>当 IAT 位于内存中仅允许读取和执行 (RX) 的部分时，会发生此问题。 这意味着操作系统将无法写入 IAT 来为引用的 DLL 设置正确的地址。 </p>
-<p> 发生这种情况的一种方法是使用时<a href="https://docs.microsoft.com/cpp/build/reference/merge-combine-sections" data-raw-source="[/MERGE (Combine Sections)](https://docs.microsoft.com/cpp/build/reference/merge-combine-sections)">/MERGE （合并节）</a>代码链接中的选项。 例如如果.rdata （只读的已初始化的数据） 合并与.text 的数据 （可执行代码），则可以在可执行部分中的内存可能最终会 IAT。  </p>
+<td align="left"><p>可执行部分中的 IAT</p></td>
+<td align="left"><p>导入地址表（IAT）不应为内存的可执行部分。</p>
+<p>当 IAT 位于内存的读取和执行（RX）中时，会出现此问题。 这意味着 OS 将不能写入 IAT 来为所引用的 DLL 设置正确的地址。 </p>
+<p> 出现这种情况的一种方法是在代码链接中使用<a href="https://docs.microsoft.com/cpp/build/reference/merge-combine-sections" data-raw-source="[/MERGE (Combine Sections)](https://docs.microsoft.com/cpp/build/reference/merge-combine-sections)">/merge （合并节）</a>选项。 例如，如果将. rdata （只读初始化数据）与进行合并，则 IAT 可能会在内存的可执行部分中结束。  </p>
 </td>
 </tr>
 
@@ -282,11 +282,11 @@ ms.locfileid: "67394128"
 
 ---------
 
-不支持重定位
+不支持的重定位
 
-<p>在 Windows 10 版本 1507年到 Windows 10 版本 1607 中，由于使用地址空间布局随机化 (ASLR) 出现问题的地址的对齐方式和内存重定位可能出现。  操作系统需要将地址从链接器设置的默认基址位置重定位到 ASLR 分配的实际位置。 此重定位不能跨越页面边界。  例如，考虑从某个页面上偏移量为 0x3FFC 的位置处开始的 64 位地址值。 其地址值重叠到了下一页上偏移量为 0x0003 的位置。 在 Windows 10，版本 1703年之前不支持这种重叠重定位。</p>
+<p>在 Windows 10 中，版本1507到 Windows 10，版本1607，因为使用地址空间布局随机化（ASLR），因此可能会出现地址对齐和内存重定位问题。  操作系统需要将地址从链接器设置其默认基址的位置重定位到 ASLR 分配的实际位置。 此重定位不能跨页面边界。  例如，请考虑在页面中以 offset 0x3FFC 开始的64位地址值。 它的地址值与0x0003 偏移量重叠到下一页。 在 Windows 10 版本1703之前，不支持此类型的重叠重定位。</p>
 
-<p>当全局结构类型变量初始值设定项具有指向另一个全局变量的未对齐指针（其布局方式使链接器无法移动变量以避免跨越重定位）时，可能会发生这种情况。 链接器将尝试移动的变量，但在有些情况下，它可能无法执行此操作 （例如使用大型未对齐的结构或未对齐结构的大型数组）。 在适当的情况下，应使用 <a href="https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking)">/ Gy（COMDAT)</a> 选项组装模块以允许链接器尽可能地对齐模块代码。</p>
+<p>当全局结构类型变量初始值设定项具有指向另一个全局结构的未对齐指针时，可能会出现这种情况，这种情况下，链接器无法移动变量来避免跨越重定位。 链接器将尝试移动变量，但在某些情况下，它可能无法执行此操作（例如，具有较大的结构或不对齐的结构的大型数组）。 在适当的情况下，应使用<a href="https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking)">/gy （COMDAT）</a>选项组装模块，以允许链接器尽可能地对齐模块代码。</p>
 
 
 
@@ -346,16 +346,16 @@ BAD_STRUCT MayHaveStraddleRelocations[4096] = { // as a global variable
 };
 ```
 
-还有其他涉及使用汇编程序代码的情况，也可能发生此问题。
+在其他情况下，也可能会出现此问题。
 
 ---------
 
 
-## <a name="script-customization"></a>脚本自定义项
+## <a name="script-customization"></a>脚本自定义
 
-下面是 Regkeys Device Guard 和 Credential Guard 无 UEFI 锁到脚本的自定义项及其值的列表。
+下面是用于自定义脚本到 Device Guard 和 Credential Guard，无需 UEFI 锁定的 Regkeys 及其值的列表。
 
-若要 HVCI 和 CG 无 UEFI 锁启用：
+若要启用要求 HVCI 和 CG 而不使用 UEFI 锁：
 
 ```reg
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 1 /f' 
@@ -364,14 +364,14 @@ REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "RequirePlatformS
 
 ## <a name="driver-verifier-code-integrity"></a>驱动程序验证程序代码完整性
 
-使用该驱动程序验证程序代码完整性选项标志 (0x02000000) 以启用额外检查，验证符合此功能。 若要从命令行启用此功能，使用以下命令。
+使用驱动程序验证程序代码完整性选项标志（0x02000000）启用验证与此功能的符合性的额外检查。 若要从命令行启用此项，请使用以下命令。
 
 ```console
 verifier.exe /flags 0x02000000 /driver <driver.sys>
 ```
-若要选择此选项，如果使用的验证程序 GUI，请选择*创建自定义设置*（适用于代码开发人员），选择*下一步*，然后选择_的代码完整性检查_。
+若要在使用验证程序 GUI 时选择此选项，请选择 "*创建自定义设置*（对于代码开发人员）"，选择 "*下一步*"，然后选择 "_代码完整性检查_"。
 
-验证程序命令行 /query 选项可用于显示当前驱动程序验证程序的信息。
+可以使用验证器命令行/query 选项显示当前的驱动程序验证程序信息。
 
 ```console
 verifier /query 

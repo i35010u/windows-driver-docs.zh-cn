@@ -5,24 +5,24 @@ ms.assetid: fd4a4afd-2c17-4002-87ae-21501b1d75c1
 keywords:
 - 音频属性 WDK，pin
 - WDM 音频属性 WDK，pin
-- pin WDK 音频，类别
+- 锁定 WDK 音频，类别
 - 输入终端标识符 WDK 音频
 - 输出终端标识符 WDK 音频
 - 双向终端标识符 WDK 音频
 - 电话服务终端标识符 WDK 音频
 - 外部终端标识符 WDK 音频
-- 嵌入的函数终端标识符 WDK 音频
+- 嵌入函数终端标识符 WDK 音频
 - 终端标识符 WDK 音频
 - Guid WDK 音频
 - 类别 Guid WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58974a8e1326659ab4547abad3f5a1c23caa220c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d7d6de7bd67a5fa5cad50a6f9ee13a7beeb5c60
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355310"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830248"
 ---
 # <a name="pin-category-property"></a>引脚类别属性
 
@@ -30,13 +30,13 @@ ms.locfileid: "67355310"
 ## <span id="pin_category_property"></span><span id="PIN_CATEGORY_PROPERTY"></span>
 
 
-Microsoft Windows 驱动程序模型 (WDM) USB 音频设备、 IEEE 1394 音频设备和所有内部总线上的音频设备的音频驱动程序表示 KS 筛选器以插针为其设备。 WDM 音频驱动程序会维护一个[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)它支持每个固定类型的结构。 在此结构中，该驱动程序存储[KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin) pin 类型的属性。 这些属性之一是，即[ **KSPROPERTY\_PIN\_类别**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)属性。 此属性的请求检索 KS pin 类别 GUID 从**KSPIN\_描述符**结构的**类别**成员。 此 GUID 表示 pin 提供的功能的常规类别。 例如，某个特定 pin 类别 GUID，KSNODETYPE\_耳机，标识为耳机输出插孔的 pin。
+用于 USB 音频设备、IEEE 1394 音频设备和内置总线上音频设备的 Microsoft Windows 驱动模型（WDM）音频驱动程序都将其设备表示为带有 pin 的 KS 筛选器。 WDM 音频驱动程序为其支持的每个 pin 类型维护一个[**KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)结构。 在此结构中，驱动程序存储[KSPROPSETID\_固定](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)类型的固定属性。 这些属性中的[**KSPROPERTY\_固定\_CATEGORY**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)属性。 此属性的请求从**KSPIN\_描述符**结构的**类别**成员检索 KS pin 类别 GUID。 此 GUID 指示 pin 提供的常规功能类别。 例如，特定的 pin 类别 GUID KSNODETYPE\_耳机，将 pin 标识为耳机的输出插孔。
 
-波形音频设备内部总线 (例如，PCI) 上，如果 PortCls 微型端口驱动程序包含的 pin 描述符的数组，其中每个描述 pin 类型表示的设备筛选器中。 每个 pin 描述符[ **PCPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcpin_descriptor)结构，它包含一个嵌入[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)具有 pin 类别 GUID 结构。 在接收时[ **KSPROPERTY\_PIN\_类别**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)属性从客户端请求端口驱动程序从微型端口驱动程序的 pin 说明符中检索 pin 类别 GUID对于指定的 pin 类型中。 关于 pin 描述符的详细信息，请参阅[Pin 工厂](pin-factories.md)。
+对于内部总线（例如 PCI）上的波形音频设备，PortCls 微型端口驱动程序包含一组 pin 描述符，其中每个描述符描述了表示设备的筛选器中的 pin 类型。 每个 pin 描述符都是一个[**PCPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcpin_descriptor)结构，其中包含具有 PIN 类别 GUID 的嵌入[**KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)结构。 接收到[**KSPROPERTY\_固定**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)客户端的\_CATEGORY 属性请求时，端口驱动程序将从指定的 pin 类型的微型端口驱动程序的 pin 描述符检索 PIN 类别 GUID。 有关 pin 描述符的详细信息，请参阅[固定工厂](pin-factories.md)。
 
-USB 音频设备有一定数量的终端，通过该数字的流和模拟信号可以进入和退出设备。 构造 KS 筛选器来表示 USB 音频设备时[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)会在设备上的终端将转换为筛选器上的 pin。 标头文件 Ksmedia.h 到 KS pin 类别 GUID 定义为每个 USB 终端类型标识符的映射。 以下六个表显示终端类型标识符和其相应的 pin 类别的 Guid。
+USB 音频设备具有一定数量的终端，其中的数字流和模拟信号可以进入和退出设备。 构造用于表示 USB 音频设备的 KS 筛选器时， [USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)将设备上的终端转换为锁定筛选器上的 pin。 标头文件 Ksmedia 定义了每个 USB 终端类型标识符到 KS pin 类别 GUID 的映射。 以下六个表显示了终端类型标识符及其相应的 pin 类别 Guid。
 
-### <a name="span-idinputterminaltypesspanspan-idinputterminaltypesspan-input-terminal-types"></a><span id="input_terminal_types"></span><span id="INPUT_TERMINAL_TYPES"></span> 输入终端类型
+### <a name="span-idinput_terminal_typesspanspan-idinput_terminal_typesspan-input-terminal-types"></a><span id="input_terminal_types"></span><span id="INPUT_TERMINAL_TYPES"></span>输入终端类型
 
 <table>
 <colgroup>
@@ -79,7 +79,7 @@ USB 音频设备有一定数量的终端，通过该数字的流和模拟信号�
 
  
 
-### <a name="span-idoutputterminaltypesspanspan-idoutputterminaltypesspan-output-terminal-types"></a><span id="output_terminal_types"></span><span id="OUTPUT_TERMINAL_TYPES"></span> 输出终端类型
+### <a name="span-idoutput_terminal_typesspanspan-idoutput_terminal_typesspan-output-terminal-types"></a><span id="output_terminal_types"></span><span id="OUTPUT_TERMINAL_TYPES"></span>输出终端类型
 
 <table>
 <colgroup>
@@ -126,7 +126,7 @@ USB 音频设备有一定数量的终端，通过该数字的流和模拟信号�
 
  
 
-### <a name="span-idbidirectionalterminaltypesspanspan-idbidirectionalterminaltypesspan-bidirectional-terminal-types"></a><span id="bidirectional_terminal_types"></span><span id="BIDIRECTIONAL_TERMINAL_TYPES"></span> 双向终端类型
+### <a name="span-idbidirectional_terminal_typesspanspan-idbidirectional_terminal_typesspan-bidirectional-terminal-types"></a><span id="bidirectional_terminal_types"></span><span id="BIDIRECTIONAL_TERMINAL_TYPES"></span>双向终端类型
 
 <table>
 <colgroup>
@@ -165,7 +165,7 @@ USB 音频设备有一定数量的终端，通过该数字的流和模拟信号�
 
  
 
-### <a name="span-idtelephonyterminaltypesspanspan-idtelephonyterminaltypesspan-telephony-terminal-types"></a><span id="telephony_terminal_types"></span><span id="TELEPHONY_TERMINAL_TYPES"></span> 电话服务终端类型
+### <a name="span-idtelephony_terminal_typesspanspan-idtelephony_terminal_typesspan-telephony-terminal-types"></a><span id="telephony_terminal_types"></span><span id="TELEPHONY_TERMINAL_TYPES"></span>电话服务终端类型
 
 <table>
 <colgroup>
@@ -196,7 +196,7 @@ USB 音频设备有一定数量的终端，通过该数字的流和模拟信号�
 
  
 
-### <a name="span-idexternalterminaltypesspanspan-idexternalterminaltypesspan-external-terminal-types"></a><span id="external_terminal_types"></span><span id="EXTERNAL_TERMINAL_TYPES"></span> 外部终端类型
+### <a name="span-idexternal_terminal_typesspanspan-idexternal_terminal_typesspan-external-terminal-types"></a><span id="external_terminal_types"></span><span id="EXTERNAL_TERMINAL_TYPES"></span>外部终端类型
 
 <table>
 <colgroup>
@@ -243,7 +243,7 @@ USB 音频设备有一定数量的终端，通过该数字的流和模拟信号�
 
  
 
-### <a name="span-idembeddedfunctionterminaltypesspanspan-idembeddedfunctionterminaltypesspan-embedded-function-terminal-types"></a><span id="embedded_function_terminal_types"></span><span id="EMBEDDED_FUNCTION_TERMINAL_TYPES"></span> 嵌入的函数终端类型
+### <a name="span-idembedded_function_terminal_typesspanspan-idembedded_function_terminal_typesspan-embedded-function-terminal-types"></a><span id="embedded_function_terminal_types"></span><span id="EMBEDDED_FUNCTION_TERMINAL_TYPES"></span>嵌入函数终端类型
 
 <table>
 <colgroup>
@@ -338,19 +338,19 @@ USB 音频设备有一定数量的终端，通过该数字的流和模拟信号�
 
  
 
-有关 USB 终端类型标识符的详细信息，请参阅*通用串行总线的设备类定义的终端类型*（版本 1.0），可通过[USB 实现论坛](https://go.microsoft.com/fwlink/p/?linkid=8780)网站。
+有关 USB 终端类型标识符的详细信息，请参阅[Usb 实现论坛](https://go.microsoft.com/fwlink/p/?linkid=8780)网站上提供的终端类型（版本1.0）的*通用串行总线设备类定义*。
 
-上表中的所有 pin 类别 Guid 都具有参数名称的窗体 KSNODETYPE\_*XXX*。 请注意，KS 节点类型的 Guid 还具有 KSNODETYPE\_*XXX*参数名称。 此命名约定创建一些可能出现的混淆 pin 类别 Guid 和节点类型的 Guid。 幸运的是，几乎每个 KSNODETYPE\_*XXX*参数标识 pin 类别或一个节点类型，但不可同时使用两者。 该规则的一个例外是[ **KSNODETYPE\_合成器**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)，可识别 pin 类别或节点类型，具体取决于上下文。 节点类型的 Guid 的列表，请参阅[音频拓扑节点](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)。
+前面的表中的所有 pin 类别 Guid 都具有形式为 KSNODETYPE\_*XXX*的参数名称。 请注意，KS 节点类型 Guid 还具有\_*XXX*参数名称的 KSNODETYPE。 此命名约定会导致在 pin 类别 Guid 与节点类型 Guid 之间产生混淆。 幸运的是，几乎每个 KSNODETYPE\_*XXX*参数都标识了 pin 类别或节点类型，但不能同时标识这两者。 规则的一个例外是[**KSNODETYPE\_合成**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)器，它可以标识 pin 类别或节点类型，具体取决于上下文。 有关节点类型 Guid 的列表，请参阅[音频拓扑节点](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)。
 
-实例化 USB 音频设备，USBAudio 类系统驱动程序会查询其内部的拓扑，包括其终端的设备。 使用此信息，USBAudio 驱动程序构造筛选器来表示设备，并将转换上筛选器对应的插针为每个终端。 在此过程中，该驱动程序将每个 USB 终端类型标识符转换为其相应 KS pin 类别 GUID，它是一个在前面的表中的 Guid。 驱动程序构造[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)结构来描述 pin，并且它将 pin 类别 GUID 写入到结构。
+在实例化 USB 音频设备时，USBAudio 类系统驱动程序会在设备中查询其内部拓扑，包括其终端。 使用此信息，USBAudio 驱动程序将构造一个用于表示设备的筛选器，并将每个终端转换为筛选器上的相应 pin。 在此过程中，驱动程序将每个 USB 终端类型标识符转换为相应的 KS pin 类别 GUID，这是上述表中的 Guid 之一。 驱动程序将构造一个[**KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)结构来描述 pin，并将 PIN 类别 GUID 写入结构中。
 
-PortCls 微型端口驱动程序不一定使用类别显示在前面的 6 个表中的 Guid。 例如，驱动程序可能会定义和使用自定义的 pin 类别 GUID 来描述其功能的类别范围之外的表中的类别的 pin 类型。 正常情况下，自定义的 pin 类别 GUID 可仅对识别 GUID 的客户端。
+PortCls 微型端口驱动程序不一定只使用前面六个表中显示的类别 Guid。 例如，驱动程序可能定义并使用自定义 pin 类别 GUID 来描述其功能类别在表中的类别之外的 pin 类型。 自定义 pin 类别 GUID 当然仅适用于识别 GUID 的客户端。
 
-音频子系统维护 pin 类别 Guid 的列表，以及在系统注册表中其关联的友好名称。 Guid 和友好名称存储在注册表路径 HKLM\\系统\\CurrentControlSet\\控制\\MediaCategories。 媒体类安装程序会将 GUID 名称对复制到从 Ks.inf 文件位于主 Windows 文件夹 Inf 子文件夹中的注册表 (例如，c:\\Windows\\Inf\\Ks.inf)。
+音频子系统在系统注册表中维护 pin 类别 Guid 及其关联的友好名称的列表。 Guid 和友好名称存储在注册表路径 HKLM 中，\\SYSTEM\\CurrentControlSet\\控件\\MediaCategories。 媒体类安装程序将 GUID 名称对从主 Windows 文件夹的 Inf 子文件夹中的 Ks 文件复制到注册表中（例如，C：\\Windows\\Inf\\Ks）。
 
-在 Windows Vista 及更高版本，操作系统使用 pin 类别将友好名称与音频终结点设备相关联。 有关如何将友好名称与音频终结点设备相关联的详细信息，请参阅[终结点的音频设备的友好名称](friendly-names-for-audio-endpoint-devices.md)。
+在 Windows Vista 和更高版本中，操作系统使用 pin 类别将友好名称与音频终结点设备关联起来。 有关如何将友好名称与音频终结点设备关联的详细信息，请参阅[音频终结点设备的友好名称](friendly-names-for-audio-endpoint-devices.md)。
 
-在 Windows XP、 Windows 2000 和 Windows Millennium Edition 中，操作系统能够仅有限的使用 pin 类别。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)混音器 API 将翻译为 MIXERLINE pin 类别 Guid 代表\_COMPONENTTYPE\_*XXX*供客户端应用程序使用的值。 WDMAud 识别 pin 类别显示在前面的 6 个表中的 Guid 的一个子集。 此外，由于历史原因，WDMAud 识别两个 pin 类别 Guid，KSCATEGORY\_音频和 PINNAME\_捕获，并显示在表中。 有关 pin 类别对混音器行的转换的详细信息，请参阅[拓扑 Pin](topology-pins.md)。 有关混音器 API 的信息，请参阅 Windows SDK 文档。
+在 Windows XP、Windows 2000 和 Windows Millennium Edition 中，操作系统仅限制使用 pin 类别。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)代表混音器 API，将 Pin 类别 guid 转换为 MIXERLINE\_COMPONENTTYPE\_*XXX*值，供客户端应用程序使用。 WDMAud 仅识别在前六个表中出现的 pin 类别 Guid 的子集。 此外，由于历史原因，WDMAud 识别出两个 pin 类别 Guid，KSCATEGORY\_音频和 PINNAME\_捕获，它们不会出现在表中。 有关将 pin 类别翻译成混音器的详细信息，请参阅[拓扑 pin](topology-pins.md)。 有关混音器 API 的信息，请参阅 Windows SDK 文档。
 
  
 

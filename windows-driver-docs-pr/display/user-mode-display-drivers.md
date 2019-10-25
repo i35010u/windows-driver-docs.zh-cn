@@ -3,19 +3,19 @@ title: 用户模式显示驱动程序
 description: 用户模式显示驱动程序
 ms.assetid: cb4e8fb9-a2f0-43b2-ae9e-ccffa850ccd7
 keywords:
-- 显示驱动程序模型 WDK Windows Vista 中，用户模式显示驱动程序
+- 显示驱动程序模型 WDK Windows Vista，用户模式显示驱动程序
 - Windows Vista 显示器驱动程序模型 WDK，用户模式显示驱动程序
-- 用户模式显示驱动程序 WDK Windows Vista、 有关用户模式显示驱动程序
+- 用户模式显示驱动程序 WDK Windows Vista，关于用户模式显示驱动程序
 - 用户模式显示驱动程序 WDK Windows Vista
 - Direct3D WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 637bd7e27d01a6a452bdd12c90bc5f4c9878b580
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a302a8dda67e3fb2e9174ee5aed066389baa493
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373611"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829295"
 ---
 # <a name="user-mode-display-drivers"></a>用户模式显示驱动程序
 
@@ -23,17 +23,17 @@ ms.locfileid: "67373611"
 ## <span id="ddk_user_mode_display_drivers_gg"></span><span id="DDK_USER_MODE_DISPLAY_DRIVERS_GG"></span>
 
 
-图形硬件供应商必须为其显示适配器编写用户模式显示驱动程序。 用户模式显示驱动程序是 Microsoft Direct3D 运行时加载的动态链接库 (DLL)。 必须至少支持用户模式显示驱动程序[Direct3D 版本 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/index)。 此外可以支持用户模式显示驱动程序[Direct3D 版本 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 用户模式显示驱动程序可以包含一个支持这两个 Direct3D 9 DDI 和 Direct3D 版本 10 DDI，也可以包含两个单独的 Dll，一个用于版本 9，另一个用于 Direct3D DDI 10 版本的 DLL。 以下主题讨论用户模式显示驱动程序的各个方面：
+图形硬件供应商必须为其显示适配器编写用户模式显示驱动程序。 用户模式显示驱动程序是由 Microsoft Direct3D 运行时加载的动态链接库（DLL）。 用户模式显示驱动程序至少必须支持[Direct3D 版本 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/index)。 用户模式显示驱动程序还可以支持[Direct3D 版本 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。 用户模式显示驱动程序可包含一个 DLL，该 DLL 支持 Direct3D 版本 9 DDI 和 Direct3D 版本 10 DDI，也可以包含两个单独的 Dll，一个用于版本9，另一个用于 Direct3D DDI 的第10版。 以下主题讨论用户模式显示驱动程序的各个方面：
 
-[返回运行时函数从收到的错误代码](returning-error-codes-received-from-runtime-functions.md)
+[返回从运行时函数收到的错误代码](returning-error-codes-received-from-runtime-functions.md)
 
-[处理电子\_INVALIDARG 返回值](handling-the-e-invalidarg-return-value.md)
+[处理 E\_INVALIDARG 返回值](handling-the-e-invalidarg-return-value.md)
 
 [处理着色器代码](processing-shader-codes.md)
 
-[将 Direct3D 固定函数状态转换](converting-the-direct3d-fixed-function-state.md)
+[转换 Direct3D Fixed 函数状态](converting-the-direct3d-fixed-function-state.md)
 
-[将深度模具的值复制](copying-depth-stencil-values.md)
+[复制深度-模具值](copying-depth-stencil-values.md)
 
 [验证索引值](validating-index-values.md)
 
@@ -41,23 +41,23 @@ ms.locfileid: "67373611"
 
 [处理多个锁](handling-multiple-locks.md)
 
-[DirectX 视频加速 2.0](directx-video-acceleration-2-0.md)
+[DirectX 视频加速2。0](directx-video-acceleration-2-0.md)
 
-[支持 Direct3D 版本 10](supporting-direct3d-version-10.md)
+[支持 Direct3D 版本10](supporting-direct3d-version-10.md)
 
-[支持 Direct3D 版本 10.1](supporting-direct3d-version-10-1.md)
+[支持 Direct3D 版本10。1](supporting-direct3d-version-10-1.md)
 
-[支持 Direct3D 版本 11](supporting-direct3d-version-11.md)
+[支持 Direct3D 版本11](supporting-direct3d-version-11.md)
 
 [处理高清晰视频](processing-high-definition-video.md)
 
 [保护视频内容](protecting-video-content.md)
 
-[验证覆盖的支持](verifying-overlay-support.md)
+[验证覆盖支持](verifying-overlay-support.md)
 
-[支持 OpenGL 的增强功能](supporting-opengl-enhancements.md)
+[支持 OpenGL 增强功能](supporting-opengl-enhancements.md)
 
-[管理资源的多个 GPU 方案](managing-resources-for-multiple-gpu-scenarios.md)
+[为多个 GPU 方案管理资源](managing-resources-for-multiple-gpu-scenarios.md)
 
  
 

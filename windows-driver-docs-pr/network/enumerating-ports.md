@@ -4,17 +4,17 @@ description: 枚举端口
 ms.assetid: b38c5556-5124-45ea-af2f-4a4cd9313cc7
 keywords:
 - 枚举 NDIS 端口 WDK NDIS
-- 端口 WDK NDIS OID 请求
+- 端口 WDK NDIS，OID 请求
 - NDIS 端口 WDK，OID 请求
 - OID 请求 WDK NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77dbf3d94129d784993236f661b26e3dbeb42cd8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 95cb831fe209a4b3c6e2979afc57daa7cdc355db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354574"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834770"
 ---
 # <a name="enumerating-ports"></a>枚举端口
 
@@ -22,9 +22,9 @@ ms.locfileid: "67354574"
 
 
 
-协议的 NDIS 驱动程序和筛选器驱动程序可以使用[OID\_代\_ENUMERATE\_端口](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-enumerate-ports)OID 查询请求以确定活动与相关联的 NDIS 端口的特征基础的微型端口适配器。 NDIS 处理此 OID 和微型端口驱动程序不会收到此 OID 查询。
+NDIS 协议驱动程序和筛选器驱动程序可以使用[OID\_代\_枚举\_端口](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-enumerate-ports)OID 查询请求，以确定与基础微型端口适配器关联的活动 NDIS 端口的特征。 NDIS 处理此 OID，微型端口驱动程序不会收到此 OID 查询。
 
-如果查询成功，NDIS 提供了在查询的结果[ **NDIS\_端口\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_array)结构。 **NumberOfPorts**成员的 NDIS\_端口\_数组包含的活动与微型端口适配器关联的端口号。 **端口**成员的 NDIS\_端口\_数组包含指向的指针的列表[ **NDIS\_端口\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_characteristics)结构。 每个 NDIS\_端口\_特征结构定义的单个端口的特征。
+如果查询成功，NDIS\_端口提供查询的结果[ **\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_array)结构。 NDIS\_端口\_阵列的**NumberOfPorts**成员包含与微型端口适配器关联的活动端口数。 NDIS\_端口\_数组的**端口**成员包含指向[**NDIS\_端口\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_port_characteristics)结构的指针的列表。 每个 NDIS\_端口\_特征结构定义单个端口的特征。
 
  
 

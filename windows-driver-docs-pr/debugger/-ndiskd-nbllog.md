@@ -1,9 +1,9 @@
 ---
 title: ndiskd.nbllog
-description: Ndiskd.nbllog 扩展在系统上显示的 NBL (NET_BUFFER_LIST) 的所有活动的日志。
+description: Ndiskd. nbllog 扩展显示系统上所有 NBL （NET_BUFFER_LIST）活动的日志。
 ms.assetid: 59CB6B60-E0B3-435E-A6F6-82A715E87C69
 keywords:
-- ndiskd.nbllog Windows 调试
+- ndiskd nbllog Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e57e8e2e4b78563a0e9a38b1e17f56187774f3a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0898a87ef75f767eecdb38df4bd3c0f99c04f2ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363131"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826620"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**！ Ndiskd.nbllog**扩展插件都会显示所有 NBL 日志 ([**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) 系统中的活动。
+**！ Ndiskd nbllog**扩展显示系统上所有 NBL （[**NET\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）活动的日志。
 
 ```console
 !ndiskd.nbllog [-stacks] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-stacks*   
+<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-堆栈*   
 包括调用堆栈。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="remarks"></a>备注
 -------
 
 **重要**  
- **！ ndiskd.nbllog**需要 NBL 跟踪来调试对象目标计算机上启用。 在所有配置的 Windows 中默认情况下不启用 NBL 跟踪。 如果未启用 NBL 跟踪，！ ndiskd 将向您说明如何启用它，如以下代码片段中所示。
+ **！ nbllog**需要在调试对象目标计算机上启用 NBL 跟踪。 默认情况下，不会在 Windows 的所有配置中启用 NBL 跟踪。 如果未启用 NBL 跟踪，！ ndiskd 将为你提供有关如何启用它的说明，如以下代码片段所示。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -63,12 +63,12 @@ Ndiskd.dll
 
  
 
-NBL 日志显示在系统上的网络流量。 [ **！ ndiskd.netreport** ](-ndiskd-netreport.md)分析 NBL 跟踪日志，以直观地显示此网络流量。 因此，如果跟踪的 NBL 不启用， **！ ndiskd.netreport**将无法再显示此信息。
+NBL 日志显示系统上的网络流量。 [ **！ ndiskd netreport**](-ndiskd-netreport.md)分析 NBL 跟踪日志以直观地显示此网络流量。 因此，如果未启用 NBL 跟踪， **！ ndiskd**会显示此信息。
 
 <a name="examples"></a>示例
 --------
 
-启用跟踪的目标调试对象上的 NBL 之后，输入 **！ ndiskd.nbllog**命令，查看在系统上的所有 NBL 流量日志。 下面的示例中所示，运行 **！ ndiskd.nbllog**不带任何参数将输出限制为 200 个事件，可以通过重新运行该命令使用绕过 *-强制*选项。 具有已在此示例中的输出的中间 excised 为简便起见。
+在目标调试对象计算机上启用 NBL 跟踪后，输入 **！ ndiskd nbllog**命令，查看系统上所有 NBL 流量的日志。 如以下示例中所示，运行不带参数的 **！ ndiskd**会将输出限制为200个事件，通过使用 *-force*选项重新运行命令，可以绕过这些事件。 为了简洁起见，此示例中的输出的中间 excised。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -102,24 +102,24 @@ NBL 日志显示在系统上的网络流量。 [ **！ ndiskd.netreport** ](-ndi
     Rerun with the '-force' option to bypass this limit.
 ```
 
-有关如何解释结果的更多详细说明 **！ ndiskd.nbllog**，请参阅[！ ndiskd.nbl-日志](https://go.microsoft.com/fwlink/p/?linkid=846176)NDIS 博客上。
+有关如何解释 **！ ndiskd. nbllog**的结果的更详细说明，请参阅 "NDIS 博客上的[！ ndiskd。](https://go.microsoft.com/fwlink/p/?linkid=846176)
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
-[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[!ndiskd.nbl -log](https://go.microsoft.com/fwlink/p/?linkid=846176)
+[！ ndiskd nbl-log](https://go.microsoft.com/fwlink/p/?linkid=846176)
 
  
 

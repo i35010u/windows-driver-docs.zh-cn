@@ -13,22 +13,22 @@ keywords:
 - DMusic 系统驱动程序 WDK 音频
 - AEC WDK 音频
 - DRMK 系统驱动程序 WDK 音频
-- 拆分器系统驱动程序 WDK 音频
+- 拆分系统驱动程序 WDK 音频
 - 端口类适配器驱动程序 WDK 音频
 - USBAudio 类系统驱动程序 WDK 音频
 - AVCAudio 类系统驱动程序 WDK 音频
 - 1394 WDK 音频
-- KMixer 系统驱动程序 WDK 音频，有关 KMixer 系统驱动程序
+- KMixer 系统驱动程序 WDK 音频，关于 KMixer 系统驱动程序
 - IEEE 1394 WDK 音频
 - WDM 音频组件 WDK
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d7dbdde7861c3d09da3a6d0eb5af5cef5d57f85d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85056150cd27c1d6c0f9246549c73a5bdd32e812
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359850"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833178"
 ---
 # <a name="kernel-mode-wdm-audio-components"></a>内核模式 WDM 音频组件
 
@@ -36,11 +36,11 @@ ms.locfileid: "67359850"
 ## <span id="kernel_mode_wdm_audio_components"></span><span id="KERNEL_MODE_WDM_AUDIO_COMPONENTS"></span>
 
 
-内核模式下的 Microsoft Windows 驱动程序模型 (WDM) 音频组件包括：
+内核模式 Microsoft Windows 驱动模型（WDM）音频组件如下：
 
 WDMAud 系统驱动程序
 
-SysAudio System Driver
+SysAudio 系统驱动程序
 
 KMixer 系统驱动程序
 
@@ -56,7 +56,7 @@ AEC 系统驱动程序
 
 DRMK 系统驱动程序
 
-拆分器系统驱动程序
+拆分系统驱动程序
 
 端口类适配器驱动程序和 PortCls 系统驱动程序
 
@@ -64,31 +64,31 @@ USB 音频类系统驱动程序 (Usbaudio.sys)
 
 AVCAudio 类系统驱动程序
 
-### <a name="span-idkmwdmaudsystemdriverspanspan-idkmwdmaudsystemdriverspanwdmaud-system-driver"></a><span id="km_wdmaud_system_driver"></span><span id="KM_WDMAUD_SYSTEM_DRIVER"></span>WDMAud 系统驱动程序
+### <a name="span-idkm_wdmaud_system_driverspanspan-idkm_wdmaud_system_driverspanwdmaud-system-driver"></a><span id="km_wdmaud_system_driver"></span><span id="KM_WDMAUD_SYSTEM_DRIVER"></span>WDMAud 系统驱动程序
 
-内核模式 WDMAud 系统驱动程序 (Wdmaud.sys) 与用户模式下 WDMAud 系统驱动程序 (Wdmaud.drv) 配对。 WDMAud 驱动程序对用户模式下 Microsoft Windows 多媒体系统调用和内核流式处理 I/O 请求之间进行转换。 WDMAud 执行 I/O 的以下 Api: **waveIn**， **waveOut**， **midiIn**， **midiOut**， **mixer**，并**aux** （Microsoft Windows SDK 文档中所述）。 内核模式 WDMAud 驱动程序是流式处理 (KS) 筛选器和 SysAudio 系统驱动程序的客户端的内核。
+内核模式 WDMAud 系统驱动程序（Wdmaud）与用户模式 WDMAud 系统驱动程序（Wdmaud. winspool.drv）配对。 在用户模式 Microsoft Windows 多媒体系统调用和内核流式处理 i/o 请求之间转换的 WDMAud 驱动程序对。 WDMAud 为以下 Api 执行 i/o： **waveIn**、 **waveOut**、 **midiIn**、 **midiOut**、**混音**器和**aux** （Microsoft Windows SDK 文档中所述）。 内核模式 WDMAud 驱动程序是内核流式处理（KS）筛选器和 SysAudio 系统驱动程序的客户端。
 
-### <a name="span-idsysaudiosystemdriverspanspan-idsysaudiosystemdriverspansysaudio-system-driver"></a><span id="sysaudio_system_driver"></span><span id="SYSAUDIO_SYSTEM_DRIVER"></span>SysAudio 系统驱动程序
+### <a name="span-idsysaudio_system_driverspanspan-idsysaudio_system_driverspansysaudio-system-driver"></a><span id="sysaudio_system_driver"></span><span id="SYSAUDIO_SYSTEM_DRIVER"></span>SysAudio 系统驱动程序
 
-SysAudio 系统驱动程序 (Sysaudio.sys) 生成筛选器关系图的呈现和捕获音频内容。 SysAudio 驱动程序表示作为音频筛选器图形[音频的虚拟设备](virtual-audio-devices.md)并将每个虚拟的音频设备注册为实例 KSCATEGORY\_音频\_设备设备接口。 （适配器驱动程序不应注册自己以独占方式为 SysAudio 保留此类别中。）例如，虚拟 MIDI 设备可能表示通过连接 SWMidi 驱动程序、 KMixer 驱动程序和端口/微型端口驱动程序创建的筛选器关系图。 客户端通信仅使用虚拟的音频设备而不是使用组成虚拟音频设备的单个设备。 透明的客户端，SysAudio 驱动程序配置所有 KS 筛选器连接在一起以形成虚拟的音频设备的筛选器关系图中。 以下的音频流源使用 SysAudio 生成关系图：
+SysAudio 系统驱动程序（Sysaudio）生成用于呈现和捕获音频内容的筛选器图形。 SysAudio 驱动程序将音频筛选器图形表示为[虚拟音频设备](virtual-audio-devices.md)，并将每个虚拟音频设备注册为 KSCATEGORY\_音频\_设备设备接口的实例。 （适配器驱动程序不应在此类别中注册自身，这种情况下专门为 SysAudio 保留。）例如，虚拟 MIDI 设备可能代表通过连接 SWMidi 驱动程序、KMixer 驱动程序和端口/微型端口驱动程序创建的筛选器图。 客户端仅与虚拟音频设备通信，而不是与构成虚拟音频设备的单个设备通信。 SysAudio 驱动程序对于客户端是透明的，它在连接的筛选器图中配置所有 KS 筛选器，以形成虚拟音频设备。 以下音频流源使用 SysAudio 生成的关系图：
 
 -   DirectSound （请参阅 Microsoft Windows SDK 文档。）
 
--   Windows 多媒体 Api **waveIn**， **waveOut**， **midiIn**， **midiOut**， **mixer**，和**aux** （请参阅 Windows SDK 文档。）
+-   Windows 多媒体 Api **waveIn**、 **waveOut**、 **midiIn**、 **midiOut**、**混音**器和**aux** （请参阅 Windows SDK 文档。）
 
--   Redbook CD 数字音频 （请参阅 Redbook 系统驱动程序。）
+-   Redbook CD 数字音频（请参阅 Redbook 系统驱动程序。）
 
--   听起来 Blaster 仿真程序 （请参阅 SBEmul 系统驱动程序。）
+-   声霸卡模拟器（请参阅 SBEmul 系统驱动程序。）
 
--   内核模式软件合成器 （请参阅 SWMidi 系统驱动程序和 DMusic 系统驱动程序。）
+-   内核模式软件合成程序（请参阅 SWMidi 系统驱动程序和 DMusic 系统驱动程序。）
 
 -   DRMK 系统驱动程序
 
-### <a name="span-idkmixersystemdriverspanspan-idkmixersystemdriverspankmixer-system-driver"></a><span id="kmixer_system_driver"></span><span id="KMIXER_SYSTEM_DRIVER"></span>KMixer 系统驱动程序
+### <a name="span-idkmixer_system_driverspanspan-idkmixer_system_driverspankmixer-system-driver"></a><span id="kmixer_system_driver"></span><span id="KMIXER_SYSTEM_DRIVER"></span>KMixer 系统驱动程序
 
-KMixer 系统驱动程序 (Kmixer.sys) 是 KS 筛选器，执行以下任务：
+KMixer 系统驱动程序（Kmixer）是用于执行以下操作的 KS 筛选器：
 
--   混合的多个 PCM 音频流
+-   混合多个 PCM 音频流
 
 -   高质量格式转换
 
@@ -96,89 +96,89 @@ KMixer 系统驱动程序 (Kmixer.sys) 是 KS 筛选器，执行以下任务：
 
 -   扬声器配置和通道映射
 
-除了简单 8 位和 16 位，mono 和立体声数据格式 KMixer 驱动程序支持：
+除了简单的8位和16位的 mono 和立体声数据格式，KMixer 驱动程序还支持：
 
 -   PCM 和 IEEE 浮点数据
 
--   位深度大于 16 位，且具有两个以上声道的多渠道格式
+-   位深度大于16位，通道格式具有两个以上的通道
 
--   Head 相关传输函数 (HRTF) 三维处理
+-   头相关传输函数（HRTF）三维处理
 
-有关卷范围和各种版本的 Windows 中的默认卷级别的信息，请参阅[默认音频音量设置](default-audio-volume-settings.md)。
+有关各个版本 Windows 中的卷范围和默认卷级别的信息，请参阅[默认音频音量设置](default-audio-volume-settings.md)。
 
-### <a name="span-idredbooksystemdriverspanspan-idredbooksystemdriverspanredbook-system-driver"></a><span id="redbook_system_driver"></span><span id="REDBOOK_SYSTEM_DRIVER"></span>Redbook 系统驱动程序
+### <a name="span-idredbook_system_driverspanspan-idredbook_system_driverspanredbook-system-driver"></a><span id="redbook_system_driver"></span><span id="REDBOOK_SYSTEM_DRIVER"></span>Redbook 系统驱动程序
 
-Redbook 系统驱动程序 (Redbook.sys) 是 KS 筛选器，用于管理数字音频 CD 的呈现。 Redbook 驱动程序是 SysAudio 系统驱动程序的客户端。 系统路由通过文件系统的 CD 数字音频到 Redbook 驱动程序，再到 SysAudio 驱动程序。 CD 数字音频是首选的 wave 输出设备上呈现 （为在控制面板中的多媒体属性页中设置）。
+Redbook 系统驱动程序（Redbook）是管理 CD 数字音频呈现的 KS 筛选器。 Redbook 驱动程序是 SysAudio 系统驱动程序的客户端。 系统通过文件系统将 CD 数字音频路由到 Redbook 驱动程序，然后路由到 SysAudio 驱动程序。 CD 数字音频呈现在首选波形输出设备上（在 "控制面板" 的 "多媒体" 属性页中设置）。
 
-### <a name="span-idsbemulsystemdriverspanspan-idsbemulsystemdriverspansbemul-system-driver"></a><span id="sbemul_system_driver"></span><span id="SBEMUL_SYSTEM_DRIVER"></span>SBEmul 系统驱动程序
+### <a name="span-idsbemul_system_driverspanspan-idsbemul_system_driverspansbemul-system-driver"></a><span id="sbemul_system_driver"></span><span id="SBEMUL_SYSTEM_DRIVER"></span>SBEmul 系统驱动程序
 
-SBEmul 系统驱动程序 (Sbemul.sys) 提供了用于 MS-DOS 应用程序的声音 Blaster 仿真。 SBEmul 驱动程序是 SysAudio 系统驱动程序的客户端。 若要呈现并捕获内容，SysAudio 驱动程序使用的首选的批和 MIDI 设备 （与在控制面板中的多媒体属性页中设置）。
+SBEmul 系统驱动程序（Sbemul）为 MS-DOS 应用程序提供声霸卡声。 SBEmul 驱动程序是 SysAudio 系统驱动程序的客户端。 为了呈现和捕获内容，SysAudio 驱动程序使用首选的 wave 和 MIDI 设备（在 "控制面板" 的多媒体属性页中设置）。
 
-仅在 Windows 98 中支持声音 Blaster 仿真 / me 一起提供。
+只有 Windows 98/Me 支持声霸卡模拟。
 
-### <a name="span-idswmidisystemdriverspanspan-idswmidisystemdriverspanswmidi-system-driver"></a><span id="swmidi_system_driver"></span><span id="SWMIDI_SYSTEM_DRIVER"></span>SWMidi 系统驱动程序
+### <a name="span-idswmidi_system_driverspanspan-idswmidi_system_driverspanswmidi-system-driver"></a><span id="swmidi_system_driver"></span><span id="SWMIDI_SYSTEM_DRIVER"></span>SWMidi 系统驱动程序
 
-SWMidi 系统驱动程序 (Swmidi.sys) 是提供软件模拟常规 MIDI (GM) 和高质量 Roland GS 波表合成 KS 筛选器。 一个 **midiOut * * * Xxx*硬件合成器不可用时，应用程序使用 SWMidi。 SWMidi 筛选器作为输入加盖时间戳 MIDI 从接收流 WDMAud 系统驱动程序，并输出到 KMixer 系统驱动程序的 PCM 批流。 SWMidi 混合使用所有其语音在内部以形成 PCM 声波格式的单个两个通道输出流。
+SWMidi 系统驱动程序（Swmidi）是一个 KS 筛选器，它提供软件模拟的通用 MIDI （GM）和高质量 Roland GS wavetable 合成。 如果硬件合成器不可用，则 **midiOut * * Xxx*应用程序将使用 SWMidi。 SWMidi 筛选器接收来自 WDMAud 系统驱动程序的带有时间戳的 MIDI 流的输入，并将 PCM 波纹流输出到 KMixer 系统驱动程序。 SWMidi 在内部混合其所有声音，形成一个带有 PCM 波纹格式的双通道输出流。
 
-### <a name="span-iddmusicsystemdriverspanspan-iddmusicsystemdriverspandmusic-system-driver"></a><span id="dmusic_system_driver"></span><span id="DMUSIC_SYSTEM_DRIVER"></span>DMusic 系统驱动程序
+### <a name="span-iddmusic_system_driverspanspan-iddmusic_system_driverspandmusic-system-driver"></a><span id="dmusic_system_driver"></span><span id="DMUSIC_SYSTEM_DRIVER"></span>DMusic 系统驱动程序
 
-DMusic 系统驱动程序 (Dmusic.sys) 是支持软件模拟、 高质量、 可下载声音 (DL) 合成 KS 筛选器。 DMusic 驱动程序是一个系统提供的端口类微型端口驱动程序。 它公开单个 DirectMusic 插针，它支持[DirectMusic 流式传输的数据范围](directmusic-stream-data-range.md)。 DMusic 筛选器作为输入加盖时间戳 MIDI 从接收流 DirectMusic 系统组件，并输出到 KMixer 系统驱动程序的 PCM 批流。 DMusic 驱动程序混合使用所有其语音在内部以形成 PCM 声波格式的单个两个通道输出流。 DirectMusic 应用程序必须明确选择内核模式软件合成器 Dmusic.sys，来代替 DirectMusic 的默认情况下，用户模式下合成器。
+DMusic 系统驱动程序（Dmusic）是一个 KS 筛选器，支持软件仿真、高质量、可下载的声音（DLS）合成。 DMusic 驱动程序是系统提供的端口类微型端口驱动程序。 它公开了支持[DirectMusic 流数据范围](directmusic-stream-data-range.md)的单个 DirectMusic pin。 DMusic 筛选器将从 DirectMusic 系统组件接收带时间戳的 MIDI 流的输入，并将 PCM 波纹流输出到 KMixer 系统驱动程序。 DMusic 驱动程序在内部混合其所有声音，以形成一个带有 PCM 波纹格式的双通道输出流。 DirectMusic 应用程序必须明确选择内核模式软件合成程序 Dmusic，以使用它来代替 DirectMusic 默认的用户模式合成。
 
-### <a name="span-idaecsystemdriverspanspan-idaecsystemdriverspanaec-system-driver"></a><span id="aec_system_driver"></span><span id="AEC_SYSTEM_DRIVER"></span>AEC 系统驱动程序
+### <a name="span-idaec_system_driverspanspan-idaec_system_driverspanaec-system-driver"></a><span id="aec_system_driver"></span><span id="AEC_SYSTEM_DRIVER"></span>AEC 系统驱动程序
 
-AEC 系统驱动程序 (Aec.sys) 通过在软件中实现 AEC （回声抵消） 和干扰抑制算法支持全双工 DirectSound 应用程序。 有关详细信息，请参阅[DirectSound 捕获效果](directsound-capture-effects.md)。
+AEC 系统驱动程序（DirectSound）通过在软件中实现 AEC （声音回声取消）和干扰干扰算法，支持全双工的应用程序。 有关详细信息，请参阅[DirectSound 捕获效果](directsound-capture-effects.md)。
 
-### <a name="span-iddrmksystemdriverspanspan-iddrmksystemdriverspandrmk-system-driver"></a><span id="drmk_system_driver"></span><span id="DRMK_SYSTEM_DRIVER"></span>DRMK 系统驱动程序
+### <a name="span-iddrmk_system_driverspanspan-iddrmk_system_driverspandrmk-system-driver"></a><span id="drmk_system_driver"></span><span id="DRMK_SYSTEM_DRIVER"></span>DRMK 系统驱动程序
 
-DRMK 系统驱动程序 (Drmk.sys) 是 KS 筛选器，用于解密包含受 DRM 保护的内容的音频流。 有关详细信息，请参阅[数字权限管理](digital-rights-management.md)。
+DRMK 系统驱动程序（Drmk）是用于解密包含受 DRM 保护的内容的音频流的 KS 筛选器。 有关详细信息，请参阅[数字 Rights Management](digital-rights-management.md)。
 
-### <a name="span-idsplittersystemdriverspanspan-idsplittersystemdriverspansplitter-system-driver"></a><span id="splitter_system_driver"></span><span id="SPLITTER_SYSTEM_DRIVER"></span>拆分器系统驱动程序
+### <a name="span-idsplitter_system_driverspanspan-idsplitter_system_driverspansplitter-system-driver"></a><span id="splitter_system_driver"></span><span id="SPLITTER_SYSTEM_DRIVER"></span>拆分系统驱动程序
 
-拆分器系统驱动程序 (Splitter.sys) 是 KS 筛选器，创建两个或多个输出流的单个输入的捕获流。 拆分器驱动程序以透明方式将输入的流复制到两个独立于的输入流格式的详细输出流。
+拆分器系统驱动程序（node.js）是一个 KS 筛选器，它从单个输入捕获流创建两个或更多个输出流。 拆分器驱动程序以透明方式将输入流复制到与输入流格式无关的两个输出流。
 
-拆分器驱动程序是受 Windows Me 和 Microsoft Windows XP 及更高版本。 有关详细信息，请参阅[AVStream 拆分条](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-splitters)。
+Windows Me 和 Microsoft Windows XP 及更高版本支持拆分器驱动程序。 有关详细信息，请参阅[AVStream 拆分](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-splitters)器。
 
-### <a name="span-idportclassadapterdriverandportclssystemdriverspanspan-idportclassadapterdriverandportclssystemdriverspanport-class-adapter-driver-and-portcls-system-driver"></a><span id="port_class_adapter_driver_and_portcls_system_driver"></span><span id="PORT_CLASS_ADAPTER_DRIVER_AND_PORTCLS_SYSTEM_DRIVER"></span>端口类适配器驱动程序和 PortCls 系统驱动程序
+### <a name="span-idport_class_adapter_driver_and_portcls_system_driverspanspan-idport_class_adapter_driver_and_portcls_system_driverspanport-class-adapter-driver-and-portcls-system-driver"></a><span id="port_class_adapter_driver_and_portcls_system_driver"></span><span id="PORT_CLASS_ADAPTER_DRIVER_AND_PORTCLS_SYSTEM_DRIVER"></span>端口类适配器驱动程序和 PortCls 系统驱动程序
 
-端口类适配器驱动程序使用的端口/微型端口驱动程序体系结构来支持音频设备。 PortCls 驱动程序包括对 ISA 和 PCI 的音频设备的内置驱动程序支持。 尽管 PortCls 系统驱动程序 (Portcls.sys) 还提供了供应商提供端口类适配器驱动程序的框架，但 Microsoft 建议供应商使用系统提供的端口类适配器驱动程序来支持 ISA 和 PCI 的音频设备。 PortCls 框架也可能用于构造驱动程序的仅限软件的设备或其他硬件总线上的音频设备。 有关详细信息，请参阅[端口类简介](introduction-to-port-class.md)。
+端口类适配器驱动程序使用端口/微型端口驱动程序体系结构来支持音频设备。 PortCls 驱动程序包含对 ISA 和 PCI 音频设备的内置驱动程序支持。 尽管 PortCls 系统驱动程序（Portcls）也为供应商提供的端口类适配器驱动程序提供框架，但是 Microsoft 建议供应商使用系统提供的端口类适配器驱动程序来支持 ISA 和 PCI 音频设备。 对于在其他硬件总线上构造音频设备的驱动程序或仅用于软件的设备，PortCls 框架可能也很有用。 有关详细信息，请参阅[端口类简介](introduction-to-port-class.md)。
 
-### <a name="span-idusbaudioclasssystemdriverspanspan-idusbaudioclasssystemdriverspanusb-audio-class-system-driver-usbaudiosys"></a><span id="usbaudio_class_system_driver"></span><span id="USBAUDIO_CLASS_SYSTEM_DRIVER"></span>USB 音频类系统驱动程序 (Usbaudio.sys)
+### <a name="span-idusbaudio_class_system_driverspanspan-idusbaudio_class_system_driverspanusb-audio-class-system-driver-usbaudiosys"></a><span id="usbaudio_class_system_driver"></span><span id="USBAUDIO_CLASS_SYSTEM_DRIVER"></span>USB 音频类系统驱动程序（Usbaudio）
 
-USBAudio 类系统驱动程序 (Usbaudio.sys) 音频设备的通用串行总线设备类定义符合 USB 音频设备提供驱动程序支持。 有关此类系统驱动程序的详细信息，请参阅[USB 音频类系统驱动程序 (Usbaudio.sys)](usb-audio-class-system-driver--usbaudio-sys-.md)。
+USBAudio 类系统驱动程序（Usbaudio）为符合音频设备的通用串行总线设备类定义的 USB 音频设备提供驱动程序支持。 有关此类系统驱动程序的详细信息，请参阅[USB 音频类系统驱动程序（Usbaudio）](usb-audio-class-system-driver--usbaudio-sys-.md)。
 
-### <a name="span-idavcaudioclasssystemdriverspanspan-idavcaudioclasssystemdriverspanavcaudio-class-system-driver"></a><span id="avcaudio_class_system_driver"></span><span id="AVCAUDIO_CLASS_SYSTEM_DRIVER"></span>AVCAudio 类系统驱动程序
+### <a name="span-idavcaudio_class_system_driverspanspan-idavcaudio_class_system_driverspanavcaudio-class-system-driver"></a><span id="avcaudio_class_system_driver"></span><span id="AVCAUDIO_CLASS_SYSTEM_DRIVER"></span>AVCAudio 类系统驱动程序
 
-AVCAudio 类系统驱动程序 (Avcaudio.sys) 是提供驻留在的 IEEE 1394 总线的音频设备驱动程序支持 AVStream 微型驱动程序。 AVCAudio 驱动程序和关联的 IEEE 1394 音频设备的支持均可在 Windows XP 及更高版本。
+AVCAudio 类系统驱动程序（Avcaudio）是一种 AVStream 微型驱动程序，它为驻留在 IEEE 1394 总线上的音频设备提供驱动程序支持。 Windows XP 和更高版本中提供了适用于 IEEE 1394 音频设备的 AVCAudio 驱动程序和关联的支持。
 
-若要使用系统提供的驱动程序，硬件供应商应该设计其音频设备以符合以下规范的相应部分：
+若要使用系统提供的驱动程序，硬件供应商应设计其音频设备，以符合以下规范的相应部分：
 
--   IEC 61883 1 和 IEC 61883-6 (IEC 60958)
+-   IEC 61883-1 和 IEC 61883-6 （IEC 60958）
 
--   AV/C 数字接口命令设置常规规范 ver. 3.0
+-   AV/C 数字接口命令集常规规范版本。 3.0
 
--   AV/C 音频子单元规范 1.0
+-   AV/C 音频子单位规范1。0
 
--   连接和兼容性管理规范 1.0
+-   连接和兼容性管理规范1。0
 
--   AV/C 媒体 Stream 的格式信息和协商
+-   AV/C 媒体流格式信息和协商
 
--   更新过程中当前的 AV/C 音频子单元规范
+-   当前正在处理的 AV/C 音频子单元规范的更新
 
-这些规范是网址[1394年贸易协会](https://go.microsoft.com/fwlink/p/?linkid=8728)网站。 AVCAudio 驱动程序支持在这些规范中所述的功能的子集。
+这些规范可在[1394 商业协会](https://go.microsoft.com/fwlink/p/?linkid=8728)网站上找到。 AVCAudio 驱动程序支持在这些规范中介绍的功能的子集。
 
-当音频设备将自身标识为 IEEE 1394 符合音频设备即插即用设备枚举期间时，系统会自动加载 AVCAudio 驱动程序来驱动设备。 AVCAudio 驱动器在设备直接，而无需专用适配器驱动程序的帮助。 这意味着符合相应的 IEEE 1394 规范的设备需要任何专有适配器驱动程序。
+当音频设备在即插即用设备枚举过程中将自身标识为符合 IEEE 1394 的音频设备时，系统会自动加载 AVCAudio 驱动程序来驱动设备。 AVCAudio 直接驱动设备，无需借助专用适配器驱动程序。 这意味着符合相应 IEEE 1394 规范的设备不需要专用适配器驱动程序。
 
-Microsoft 建议硬件供应商的 IEEE 1394 音频设备而不是编写专有适配器驱动程序使用 AVCAudio 驱动程序。
+Microsoft 建议硬件供应商对其 IEEE 1394 音频设备使用 AVCAudio 驱动程序，而不是编写专用的适配器驱动程序。
 
-下图显示在 Windows XP IEEE 1394 音频设备的驱动程序层次结构。 在 Windows XP 及更高版本，所有在此图中所示的驱动程序组件是由 Microsoft 提供与操作系统。
+下图显示了 Windows XP 中的 IEEE 1394 音频设备的驱动程序层次结构。 在 Windows XP 及更高版本中，此图中所示的所有驱动程序组件都由 Microsoft 提供操作系统。
 
-![说明 1394年音频设备的驱动程序层次结构的关系图](images/avcaudio.png)
+![说明1394音频设备的驱动程序层次结构的示意图](images/avcaudio.png)
 
-在图中的驱动程序组件有关的详细信息，请参阅以下各节：
+有关图中的驱动程序组件的详细信息，请参阅以下部分：
 
 [AVStream 概述](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)
 
-[AV/C 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
+[AV/C 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)
 
 [IEEE 1394 总线](https://developer.microsoft.com/windows/hardware)
 

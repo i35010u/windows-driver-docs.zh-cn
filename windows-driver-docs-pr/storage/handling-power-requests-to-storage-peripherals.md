@@ -3,17 +3,17 @@ title: 处理对存储外设的电源请求
 description: 处理对存储外设的电源请求
 ms.assetid: 3cc7b885-27ad-4384-aeec-4d76f9ad4f1c
 keywords:
-- 外围设备 WDK 存储、 电源请求
-- 存储外围设备 WDK、 电源请求
-- power 请求 WDK 存储
+- 外围设备 WDK 存储，电源请求
+- 存储外围设备 WDK，电源请求
+- power requests WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7230b2a1dd650156495102cd648ac07260b4c17b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b62cf17e23342fb413208bff02cde295f664ba8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378475"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826291"
 ---
 # <a name="handling-power-requests-to-storage-peripherals"></a>处理对存储外设的电源请求
 
@@ -21,23 +21,23 @@ ms.locfileid: "67378475"
 ## <span id="ddk_handling_power_requests_to_storage_peripherals_kg"></span><span id="DDK_HANDLING_POWER_REQUESTS_TO_STORAGE_PERIPHERALS_KG"></span>
 
 
-存储类驱动程序将负责发出特定于设备的命令来处理电源请求。 大多数情况下，存储类驱动程序：
+存储类驱动程序负责发出用于处理电源请求的特定于设备的命令。 最常见的存储类驱动程序：
 
--   到其设备以响应查询能耗请求阻止 I/O (IRP\_MJ\_具有 POWER [ **IRP\_MN\_查询\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)) 如果处理此类 I/O 可能会阻止驱动程序中合理的时间内成功集 power 请求
+-   如果处理此类 i/o 可能会阻止驱动程序在合理的数量中出现 MN 请求，则会阻止其设备响应查询电源请求（IRP\_MJ\_POWER with [**irp\_\_查询\_power**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)）时间
 
--   在对集 power 请求的响应中设置其设备的电源状态 (IRP\_MJ\_具有 POWER [ **IRP\_MN\_设置\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power))
+-   设置设备的电源状态，以响应设置电源请求（IRP\_MJ\_POWER with [**irp\_MN\_集\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)）
 
--   将 I/O 重新启动到其设备以响应集 power 请求，以在设备接通电源
+-   重新启动其设备的 i/o，以响应设置电源请求以打开设备
 
--   Power 将请求转发到下一步低驱动程序。
+-   将电源请求转发到下一个较低的驱动程序。
 
-请注意，驱动程序必须调用[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)并[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)，而不**IoCallDriver**，以发送电源请求。
+请注意，驱动程序必须调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)和[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)，而不是**IoCallDriver**来发送 power 请求。
 
-除非具有存储类驱动程序[ **StartIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程，它应锁定存储端口驱动程序的特定于 LU 的队列 (IRP\_MJ\_SRB 使用 SCSI\_函数\_锁\_队列) 之前设置设备的电源状态 （这可能涉及几个步骤） 电源操作完成之前阻止未同步的操作。 为处理电源操作而发出任何 Srb 应设置 SRB\_标志\_绕过\_锁定\_队列以确保到达端口驱动程序。 该驱动程序完成设置电源状态后，它应解锁队列 (IRP\_MJ\_SRB 使用 SCSI\_函数\_解锁\_队列和 SRB\_标志\_绕过\_锁定\_队列)，以便端口驱动程序可以向设备发送排队的 Irp，一旦启动后恢复。
+除非存储类驱动程序具有[**StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程，否则应在设置设备的电源状态之前，先将存储端口驱动程序的 LU 特定队列（IRP\_MJ\_SCSI 与 SRB\_函数\_锁定\_队列），用于阻止未同步的操作，直到电源操作（可能涉及几个步骤）完成。 发出的用于处理电源操作的任何 SRBs 都应将 SRB\_标志设置\_绕过\_锁定\_队列，以确保它们达到端口驱动程序。 驱动程序完成设置电源状态后，它应解锁队列（IRP\_MJ\_SCSI 与 SRB\_函数\_解锁\_QUEUE 和 SRB\_标志\_绕过\_锁定\_队列）设备启动后，端口驱动程序可以继续将已排队的 Irp 发送到设备。
 
-如果存储类驱动程序具有*StartIo*例程，该例程处理同步因此类驱动程序不需要显式锁定和解锁端口驱动程序的特定于 LU 的队列。
+如果存储类驱动程序具有*StartIo*例程，该例程会处理同步，因此类驱动程序不必显式锁定和解锁端口驱动程序的 LU 特定队列。
 
-类驱动程序不应尝试绕过其他驱动程序被锁定的队列。
+类驱动程序不应尝试绕过其他驱动程序锁定的队列。
 
  
 

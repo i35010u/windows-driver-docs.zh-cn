@@ -5,16 +5,16 @@ ms.assetid: 94f6050d-c47e-4fb2-8b7f-afadcf12e0b8
 keywords:
 - 调度例程 WDK 内核，DispatchDeviceControl 例程
 - 调度 DispatchDeviceControl 例程
-- IRP_MJ_DEVICE_CONTROL I/O 函数代码
+- IRP_MJ_DEVICE_CONTROL i/o 函数代码
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1a5821b34d1195b18ca3c2d80679204b0a5f56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41b28235bd9f84966652ab907744ba746ffb5513
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384994"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828319"
 ---
 # <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>类/端口驱动程序中的 Dispatch(Internal)DeviceControl
 
@@ -22,23 +22,23 @@ ms.locfileid: "67384994"
 
 
 
-类/端口对的更高级别的驱动程序有时可以完成 Irp 中的其[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 例如类驱动程序可以在初始化期间，收集和存储信息的功能的基础设备，可能会在后面的求[ **IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)请求，并因此通过满足请求，而无需将它传递到基础设备驱动程序来节省处理时间。 类驱动程序还可以设计为检查 IRP 的参数，将仅使用有效的参数的请求发送到端口驱动程序。
+类/端口对的较高级别的驱动程序有时可以在其[*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中完成 irp。 例如，类驱动程序在初始化期间可以收集并存储有关基础设备功能的信息，这可能会在后续的[**IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)请求中进行查找，因此保存处理时间：通过满足请求，而不将其传递到基础设备驱动程序。 类驱动程序还可以用于检查 IRP 的参数，并仅向端口驱动程序发送带有有效参数的请求。
 
-紧密耦合的类/端口驱动程序还可以定义一组特定于驱动程序或特定于设备的内部 I/O 控制代码的类驱动程序可用于[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)端口驱动程序的请求。
+紧耦合的类/端口驱动程序还可以定义一组特定于驱动程序的或特定于设备的内部 i/o 控制代码，类驱动程序可将这些代码用于[**IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)向端口发出的请求驱动器.
 
-例如， *DispatchCreateClose*系统键盘和鼠标类驱动程序中的例程发送系统定义的内部的设备控制请求，以启用或禁用基础端口驱动程序的键盘和鼠标中断。 这些系统类驱动程序设置**IRP\_MJ\_内部\_设备\_控制**基础端口驱动程序的请求。 任何新的键盘或鼠标端口驱动程序的互操作使用这些系统类驱动程序还必须支持这些公共内部设备控制请求。
+例如，系统键盘和鼠标类驱动程序中的*DispatchCreateClose*例程发送系统定义的内部设备控制请求，以启用或禁用对基础端口驱动程序的键盘和鼠标中断。 这些系统类驱动程序设置**IRP\_MJ\_内部\_设备\_控制**对基础端口驱动程序的请求。 任何与这些系统类驱动程序互操作的新键盘或鼠标端口驱动程序也必须支持这些公共内部设备控制请求。
 
-系统并行类/端口驱动程序模型具有类似功能。 新 parallel 类驱动程序支持通过可以从获取系统并行端口驱动程序设置为的 Irp **IRP\_MJ\_内部\_设备\_控制**具有公共 IOCTL 的请求\_并行\_端口\_*XXX*控制代码。 可以将系统并行端口驱动程序，但任何新的驱动程序还必须支持此组的公共内部设备控制请求。
+系统并行类/端口驱动程序模型具有相似的功能。 新的并行类驱动程序可以通过为 Irp\_MJ 设置 Irp，为**irp\_内部\_设备\_控制**请求提供公共 IOCTL *，\_* 控制代码。 可以替换系统并行端口驱动程序，但任何新的驱动程序也必须支持这组公共内部设备控制请求。
 
-有关这些公共内部设备控制请求的详细信息，请参阅特定于设备的文档中 Windows Driver Kit (WDK)。 有关如何定义专用的 I/O 控制代码的信息，请参阅[使用的 I/O 控制代码](using-i-o-control-codes.md)。
+有关这些公共内部设备控制请求的详细信息，请参阅 Windows 驱动程序工具包（WDK）中的设备特定文档。 有关如何定义专用 i/o 控制代码的信息，请参阅[使用 I/o 控制代码](using-i-o-control-codes.md)。
 
-端口/类驱动程序的紧密耦合对，类驱动程序可能会处理某些设备控制请求的处理，而无需将它们传递到端口驱动程序。 对中的新类/端口驱动程序，在类驱动程序的*DispatchDeviceControl*例程可以执行以下任一操作：
+对于紧密耦合的端口/类驱动程序，类驱动程序可能会处理某些设备控制请求的处理，而不会将这些请求传递到端口驱动程序。 在新的类/端口驱动程序对中，类驱动程序的*DispatchDeviceControl*例程可以执行以下任一操作：
 
--   检查其自己的 I/O 堆栈位置中的参数的有效性，如果找到任何参数错误，并调用设置 I/O 状态块[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)与*PriorityBoost*的 IO\_否\_递增; 否则，调用[ **IoGetNextIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)将其自己的 I/O 堆栈位置复制到在端口驱动程序，并将传递与上的 IRP [ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
+-   检查其自己的 i/o 堆栈位置中参数的有效性，如果找到任何参数错误，则设置 i/o 状态块，并使用 IO 的*PriorityBoost*调用[**IOCOMPLETEREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) ，\_没有\_递增;否则，请调用[**IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation) ，将其自己的 i/o 堆栈位置复制到端口驱动程序中，并将 IRP 传递到[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)。
 
--   或者，不执行任何操作多个不检查参数的情况下设置端口驱动程序的 I/O 堆栈位置中并将其传递向端口驱动程序进行处理。
+-   或者，不要在 IRP 中设置端口驱动程序的 i/o 堆栈位置，而不检查参数，然后将其传递到端口驱动程序进行处理。
 
-SCSI 类驱动程序必须处理设备控制请求的特殊要求。 有关这些要求的详细信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
+SCSI 类驱动程序具有处理设备控制请求的特殊要求。 有关这些要求的详细信息，请参阅[存储驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
  
 

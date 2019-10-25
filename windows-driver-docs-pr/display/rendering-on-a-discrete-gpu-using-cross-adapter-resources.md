@@ -1,66 +1,66 @@
 ---
 title: 使用跨适配器资源在独立的 GPU 中进行渲染
-description: 从 Windows 8.1，是分立的 GPU 使用跨适配器资源为目标但不支持拉伸或颜色转换的位块传输 (bitblt) 或存在操作。操作系统请求用户模式下的资源显示驱动程序来执行 bitblt 或存在到操作和 from.integrated GPU 纹理作为桌面窗口管理器 (DWM) 组合期间使用跨适配器资源。GDI 硬件加速呈现器目标。主显示器。不是作为呈现器目标的三维操作。
+description: 从 Windows 8.1 开始，离散 GPU 使用跨适配器资源作为位块传输（bitblt）或当前操作的目标，但不使用拉伸或颜色转换。操作系统请求用户模式显示驱动程序对其执行 bitblt 或当前操作的资源。集成 GPU 使用跨适配器资源作为桌面窗口管理器（DWM）组合期间的纹理。GDI 硬件加速的呈现目标。显示主。不作为三维操作的呈现目标。
 ms.assetid: 88CE2D2F-BBD8-4CE4-9183-BBFB0659990E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c2c114c6c4bc7cc00c2f4e5c4889f2947a68fb4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a6fac0db449be83fe2bf7fe0fc8094278e23d2eb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376142"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829624"
 ---
-# <a name="span-iddisplayrenderingonadiscretegpuusingcross-adapterresourcesspanrendering-on-a-discrete-gpu-using-cross-adapter-resources"></a><span id="display.rendering_on_a_discrete_gpu_using_cross-adapter_resources"></span>使用跨适配器资源是分立的 GPU 上呈现
+# <a name="span-iddisplayrendering_on_a_discrete_gpu_using_cross-adapter_resourcesspanrendering-on-a-discrete-gpu-using-cross-adapter-resources"></a><span id="display.rendering_on_a_discrete_gpu_using_cross-adapter_resources"></span>使用跨适配器资源在离散 GPU 上呈现
 
 
-在 Windows 8.1 中启动[分立的 GPU](using-cross-adapter-resources-in-a-hybrid-system.md)使用[跨适配器资源](using-cross-adapter-resources-in-a-hybrid-system.md)作为：
+从 Windows 8.1 开始，[离散 GPU](using-cross-adapter-resources-in-a-hybrid-system.md)使用[跨适配器资源](using-cross-adapter-resources-in-a-hybrid-system.md)，如下所示：
 
--   但不支持拉伸或颜色转换位块传输 (bitblt) 或存在操作的目标。
--   操作系统请求用户模式显示驱动程序来执行 bitblt 或存在操作与该资源。
+-   位块传输（bitblt）或当前操作的目标，但没有拉伸或颜色转换。
+-   操作系统请求用户模式显示驱动程序对其执行 bitblt 或当前操作的资源。
 
-[集成 GPU](using-cross-adapter-resources-in-a-hybrid-system.md)使用[跨适配器资源](using-cross-adapter-resources-in-a-hybrid-system.md)作为：
+[集成 GPU](using-cross-adapter-resources-in-a-hybrid-system.md)使用[跨适配器资源](using-cross-adapter-resources-in-a-hybrid-system.md)，如下所示：
 
--   撰写的桌面窗口管理器 (DWM) 期间纹理。
--   有关呈现器目标[GDI 硬件加速](gdi-hardware-acceleration.md)。
--   主显示器。
--   不是作为呈现器目标的三维操作。
+-   桌面窗口管理器（DWM）组合期间的纹理。
+-   [GDI 硬件加速](gdi-hardware-acceleration.md)的呈现目标。
+-   显示主。
+-   不作为三维操作的呈现目标。
 
-以下部分介绍在混合系统中是分立的 GPU 上的体系结构和应用程序会呈现其中三个可能的方案中所涉及的进程。
+以下各节描述了在混合系统内的独立 GPU 上呈现应用程序的三种可能情况下所涉及的体系结构和过程。
 
-## <a name="span-idredirectedbitbltmodelspanspan-idredirectedbitbltmodelspanredirected-bitblt-presentation-model"></a><span id="redirected_bitblt_model"></span><span id="REDIRECTED_BITBLT_MODEL"></span>重定向的 bitblt 表示模型
-
-
-![混合图形重定向 bitblt 模型应用中使用的分立的 gpu 上呈现。](images/hybrid-graphics-arch-blit.png)
-
-1.  集成在 GPU 上的标准分配内核模式中创建跨适配器资源为顶层窗口。
-2.  Microsoft DirectX 图形内核子系统 (Dxgkrnl.sys) 分立的 GPU 上打开此资源时，调用[ *DxgkDdiGetStandardAllocationDriverData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getstandardallocationdriverdata)函数，并创建一个新分立的 GPU 使用同一个后备存储区 （大容量存储设备） 与集成的 GPU 上的资源。
-3.  Microsoft Direct3D 运行时指示分立的 GPU 用户模式显示驱动程序，以打开跨适配器资源使用专用驱动程序数据。
-4.  DirectX 应用程序中的呈现到后台缓冲区资源分立的 GPU。 请参阅图中的"呈现"操作。
-5.  在 DirectX 应用程序调用**存在**方法中，Direct3D 运行时调用[ *PresentDXGI* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) (或*pfnPresent*) 的函数分立的 GPU 用户模式驱动程序将后台缓冲区复制到跨适配器资源。 请参阅图中的"Present"操作。
-6.  当 Windows 图形设备接口 (GDI) 应用程序呈现到顶级窗口时，调用 DirectX 图形内核子系统[ *DxgkDdiRenderKm* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)集成的 GPU 显示函数微型端口驱动程序，它指示跨适配器资源是呈现器目标。 请参阅 GDI 应用程序和在图中的跨适配器面之间的连接。
-7.  DWM 进程将在集成的 GPU 中打开跨适配器资源，并将其作为源纹理的组合期间。 请参阅图中的"撰写"操作。
-
-## <a name="span-iddirectflipmodelspanspan-iddirectflipmodelspandirect-flip-presentation-model"></a><span id="direct_flip_model"></span><span id="DIRECT_FLIP_MODEL"></span>直接翻转表示模型
+## <a name="span-idredirected_bitblt_modelspanspan-idredirected_bitblt_modelspanredirected-bitblt-presentation-model"></a><span id="redirected_bitblt_model"></span><span id="REDIRECTED_BITBLT_MODEL"></span>重定向的 bitblt 表示模型
 
 
-![混合图形直接应用中使用的分立的 gpu 上呈现的翻转模式。](images/hybrid-graphics-arch-flip.png)
+![应用用于在离散 gpu 上呈现的混合图形重定向 bitblt 模型。](images/hybrid-graphics-arch-blit.png)
 
-1.  Direct3D 运行时指示分立的 GPU 用户模式显示驱动程序创建跨适配器资源的每个交换链图面。
-2.  分立的 GPU，Direct3D 运行时可能设置**主**并**VidPnSourceId**的成员[ **D3DDDI\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构直接翻转模式是否可用。 这些成员值应传递何时[ *pfnAllocateCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)调用函数。
-3.  Direct3D 运行时指示集成的 GPU 的用户模式显示驱动程序，打开要由 DWM 的跨适配器资源。
-4.  应用程序将呈现在分立的 GPU 上呈现器目标纹理用作目标。 请参阅图中的"呈现"操作。
-5.  当应用程序调用**存在**方法中，Direct3D 运行时调用[ *BltDXGI* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) (或*pfnBlt*) 的离散函数GPU 的用户模式驱动程序来执行复制到跨适配器资源。 然后，运行时调用[ *PresentDXGI* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) (或*pfnPresent*) 分立的 GPU 用户模式驱动程序，与源的函数将设置为跨适配器资源和设置为的目标分配**NULL**。 请参阅图中的"复制"操作。
-6.  DWM 执行其组合使用集成的 GPU 的资源。 如果需要直接翻转操作 ([**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)。**DirectFlip**设置)，DWM 指示集成的 GPU 显示微型端口驱动程序可以通过执行翻转操作一个跨适配器分配。 请参阅图中的"DWM 翻转"操作。
+1.  顶层窗口的跨适配器资源以内核模式创建，作为集成 GPU 上的标准分配。
+2.  在离散 GPU 上打开此资源时，Microsoft DirectX 图形内核子系统（Dxgkrnl）调用[*DxgkDdiGetStandardAllocationDriverData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getstandardallocationdriverdata)函数，并使用同一后备存储在离散 GPU 上创建新资源（大容量存储设备）。
+3.  Microsoft Direct3D 运行时指示离散 GPU 的用户模式显示驱动程序使用专用驱动程序数据打开跨适配器资源。
+4.  DirectX 应用程序在离散 GPU 上呈现为后台缓冲区资源。 请参阅图中的 "Render" 操作。
+5.  当 DirectX 应用程序调用**当前**方法时，Direct3D 运行时将调用离散 GPU 的用户模式驱动程序的[*PresentDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) （或*pfnPresent*）功能，将后台缓冲区复制到跨适配器资源。 请参阅图中的 "显示" 操作。
+6.  当 Windows 图形设备接口（GDI）应用程序呈现到顶级窗口时，DirectX 图形内核子系统将调用集成 GPU 的显示微型端口驱动程序的[*DxgkDdiRenderKm*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)函数，并指示跨适配器资源是呈现器目标。 请参阅此图中的 GDI 应用程序和跨适配器图面之间的连接。
+7.  DWM 进程会在集成 GPU 中打开跨适配器资源，并在组合过程中将其用作源纹理。 请参阅图中的 "撰写" 运算。
 
-## <a name="span-idfullscreenmodelspanspan-idfullscreenmodelspanfull-screen-model"></a><span id="fullscreen_model"></span><span id="FULLSCREEN_MODEL"></span>全屏幕模型
+## <a name="span-iddirect_flip_modelspanspan-iddirect_flip_modelspandirect-flip-presentation-model"></a><span id="direct_flip_model"></span><span id="DIRECT_FLIP_MODEL"></span>直接翻转演示模型
 
 
-1.  Direct3D 运行时指示集成的 GPU 的用户模式显示驱动程序创建跨适配器共享主分配的每个交换链图面。
-2.  Direct3D 运行时指示分立的 GPU 用户模式显示驱动程序，以打开跨适配器资源。
-3.  应用程序将呈现在分立的 GPU 上呈现器目标纹理用作目标。
-4.  当应用程序调用**存在**方法，Direct3D 运行时指示分立的 GPU 用户模式显示驱动程序来执行复制到跨适配器资源。
-5.  指示集成的 GPU 的用户模式显示驱动程序和显示微型端口驱动程序对此跨适配器资源翻转。
+![应用用于在离散 gpu 上呈现的混合图形直接翻转模型。](images/hybrid-graphics-arch-flip.png)
+
+1.  Direct3D 运行时指示离散 GPU 的用户模式显示驱动程序为每个交换链图面创建一个跨适配器资源。
+2.  在离散 GPU 上，如果直接翻转模式可用，Direct3D 运行时可能会设置[**D3DDDI\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构的**主**成员和**VidPnSourceId**成员。 调用[*pfnAllocateCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数时，应传递这些成员值。
+3.  Direct3D 运行时指示集成 GPU 的用户模式显示驱动程序打开将由 DWM 管理的跨适配器资源。
+4.  使用呈现目标纹理作为目标，在离散 GPU 上呈现应用程序。 请参阅图中的 "Render" 操作。
+5.  当应用程序调用**当前**方法时，Direct3D 运行时将调用离散 GPU 的用户模式驱动程序的[*BltDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) （或*pfnBlt*）功能，以对跨适配器资源执行复制。 然后，运行时调用离散 GPU 的用户模式驱动程序的[*PresentDXGI*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions) （或*pfnPresent*）函数，并将 source 设置为跨适配器资源，并将目标分配设置为**NULL**。 请参阅图中的 "复制" 操作。
+6.  DWM 使用集成 GPU 中的资源执行其组合。 如果需要直接翻转操作（[**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)。**设置 DirectFlip** ）时，DWM 指示集成 GPU 的显示微型端口驱动程序执行从一个跨适配器分配到另一个跨适配器分配的反向操作。 请参阅图中的 "DWM 翻转" 操作。
+
+## <a name="span-idfullscreen_modelspanspan-idfullscreen_modelspanfull-screen-model"></a><span id="fullscreen_model"></span><span id="FULLSCREEN_MODEL"></span>全屏模型
+
+
+1.  Direct3D 运行时指示集成 GPU 的用户模式显示驱动程序为每个交换链图面创建跨适配器共享主分配。
+2.  Direct3D 运行时指示离散 GPU 的用户模式显示驱动程序打开跨适配器资源。
+3.  应用程序使用呈现目标纹理作为目标，在离散 GPU 上呈现。
+4.  当应用程序调用**当前**方法时，Direct3D 运行时指示离散 GPU 的用户模式显示驱动程序对跨适配器资源执行复制。
+5.  集成 GPU 的用户模式显示驱动程序和显示微型端口驱动程序将指示切换到此跨适配器资源。
 
  
 

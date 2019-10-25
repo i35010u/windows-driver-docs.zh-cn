@@ -3,19 +3,19 @@ title: WMI 事件跟踪
 description: WMI 事件跟踪
 ms.assetid: 72505a9a-830a-4529-ba73-31af0fedfeec
 keywords:
-- WMI WDK 内核事件跟踪
-- WDK WMI 事件
+- WMI WDK 内核，事件跟踪
+- 事件 WDK WMI
 - 跟踪 WDK WMI
 - WMI WDK 内核，WDM 驱动程序
 - WDM 驱动程序 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f936552dc2d07c3728b4f7aaa2dbdfa7f09a0d36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c256fea79a7ac7ee28d7771654a72714edd065aa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386386"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835685"
 ---
 # <a name="wmi-event-tracing"></a>WMI 事件跟踪
 
@@ -23,45 +23,45 @@ ms.locfileid: "67386386"
 
 
 
-本部分介绍的内核模式驱动程序，为信息提供者的 WDM （由 Windows 2000 及更高版本支持） 的 WMI 扩展，可用于提供信息到信息使用者。 驱动程序通常提供使用者用来确定驱动程序的配置和资源使用情况信息。 除了 WDM 的 WMI 扩展，用户模式 API 还支持提供程序或使用者的 WMI 事件的信息，请参阅 Windows SDK 的详细信息。
+本部分介绍了作为信息提供商提供的信息提供商提供的信息，这是内核模式驱动程序（Windows 2000 及更高版本支持）的 WMI 扩展。 驱动程序通常提供使用者用于确定驱动程序的配置和资源使用情况的信息。 除了对 WDM 的 WMI 扩展外，用户模式 API 还支持 WMI 事件信息的提供者或使用者-有关详细信息，请参阅 Windows SDK。
 
-事件跟踪记录器支持最多 32 个实例。 用于跟踪内核保留其中一个实例。 记录器支持跟踪高事件速率。
+事件跟踪记录器最多支持32实例。 其中一个实例保留用于跟踪内核。 记录器支持跟踪高事件率。
 
-跟踪事件中与其他 WMI 事件相同的方式定义。 MOF 文件中描述了 WMI 事件。 WMI 事件说明的详细信息，请参阅[WMI 数据和事件块的 MOF 语法](mof-syntax-for-wmi-data-and-event-blocks.md)。
+跟踪事件的定义方式与其他 WMI 事件的定义方式相同。 MOF 文件中介绍了 WMI 事件。 有关 WMI 事件描述的详细信息，请参阅[Wmi 数据和事件块的 MOF 语法](mof-syntax-for-wmi-data-and-event-blocks.md)。
 
-按其内核模式驱动程序记录信息的过程集成到现有的 WMI 基础结构。 若要记录跟踪事件，驱动程序执行以下任务：
+内核模式驱动程序日志信息集成到现有 WMI 基础结构中所使用的过程。 若要记录跟踪事件，驱动程序需要执行以下操作：
 
-1.  将注册为 WMI 提供程序通过调用[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)。
+1.  通过调用[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)注册为 WMI 提供程序。
 
-2.  将作为可跟踪的事件标记通过设置 WMIREG\_标志\_跟踪\_中的 GUID**标志**隶属[ **WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)当驱动程序通过 WMI 注册事件时传递的结构。
+2.  将事件标记为可[**跟踪，方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)是在驱动程序向 WMI 注册事件时，通过将 WMIREG\_标志设置\_跟踪\_GUID 的**标志**成员中。
 
-3.  指定作为整体启用/禁用的一组跟踪事件的控件事件一个事件，通过设置 WMIREG\_标志\_跟踪\_控件\_中的 GUID**标志**的成员**WMIREGGUID**时驱动程序向 WMI 注册事件传递的结构。
+3.  将一个事件指定为控制事件，以便对一组跟踪事件进行整体启用/禁用，方法是将\_\_\_WMIREG 设置为在**WMIREGGUID**结构的**Flags**成员中\_GUID驱动程序向 WMI 注册事件。
 
-4.  收到请求后从 WMI 启用 GUID 与跟踪控件的 GUID 相匹配的事件，该驱动程序应将存储到记录器的句柄。 编写一个事件时，将需要该值。 有关如何使用此句柄的信息，请参阅步骤 6。 记录器句柄值包含在**HistoricalContext**的成员[ **WNODE\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-_wnode_header)是参数的一部分的 WMI 缓冲区的一部分在启用事件请求。
+4.  接收到 WMI 的请求以启用 GUID 与跟踪控制 GUID 匹配的事件时，驱动程序应将句柄存储在记录器中。 写入事件时将需要该值。 有关如何使用此句柄的信息，请参阅步骤6。 记录器句柄值包含在作为 enable events 请求中的参数的一部分的 WMI 缓冲区的[**WNODE\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-_wnode_header)部分的**HistoricalContext**成员中。
 
-5.  确定是否跟踪事件将发送到 WMI 事件使用者，还是针对 WMI 事件记录器。 这将确定位置的内存[**事件\_跟踪\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff544329)结构应该来自于。 此内存将最终传递给[ **IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)。
+5.  确定跟踪事件是发送到 WMI 事件使用者还是仅针对 WMI 事件记录器。 这将确定[**事件\_跟踪\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff544329)结构应来自的内存。 此内存最终会传递到[**IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)。
 
-    如果该事件是一个日志事件，则内存不会删除由 WMI 中。 在这种情况下，该驱动程序应在堆栈上传递的缓冲区中，或应为实现此目的重复使用的分配的缓冲区。 出于性能原因，该驱动程序应最小化任何不必要的调用来分配或释放内存。 不符合此建议将破坏日志文件中包含的计时信息的完整性。
+    如果事件仅为日志事件，则 WMI 不会删除内存。 在这种情况下，驱动程序应传入堆栈上的缓冲区，或者出于此目的应重用已分配的缓冲区。 出于性能原因，驱动程序应最大程度地减少分配或释放内存的任何不必要的调用。 如果未遵守此建议，将会损害日志文件中包含的计时信息的完整性。
 
-    如果该事件将发送到这两个记录器和 WMI 事件使用者，然后必须从非分页缓冲池分配内存。 在这种情况下将发送到记录器，然后转发到 WMI，以发送到 WMI 事件使用者已请求事件通知的事件。 根据的行为则由 WMI 释放事件内存**IoWMIWriteEvent**。
+    如果要将事件同时发送到记录器和 WMI 事件使用者，则必须从非分页池分配内存。 在这种情况下，会将事件发送到记录器，然后将其转发到 WMI，以发送到已请求事件通知的 WMI 事件使用者。 然后，WMI 会根据**IoWMIWriteEvent**的行为释放该事件的内存。
 
-6.  之后的内存[**事件\_跟踪\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff544329)和任何驱动程序的事件数据，如果有，都已得到保护，应设置以下信息：
+6.  在事件的内存[ **\_TRACE\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff544329)和任何驱动程序事件数据（如果有）受到保护后，应设置以下信息：
 
-    设置**大小**成员与 sizeof (**事件\_跟踪\_标头**) 的任何其他驱动程序事件数据将追加到末尾的大小以及**事件\_跟踪\_标头**。
+    将**size**成员设置为 Sizeof （**事件\_TRACE\_标头**）加上附加的任何驱动程序事件数据的大小，该数据将追加到**事件结束\_TRACE\_标头**。
 
-    设置**标志**成员添加到 WNODE\_标志\_跟踪\_GUID 具有发送到记录器的事件。 如果该事件将发送到 WMI 事件接收器，设置 WNODE\_标志\_日志\_WNODE。 请注意，不需要设置 WNODE\_标志\_跟踪\_GUID 如果设置 WNODE\_标志\_日志\_WNODE。 如果两者都设置的 WNODE\_标志\_跟踪\_GUID 优先，事件将不发送到 WMI 事件使用者。
+    将**Flags**成员设置为 WNODE\_标记\_跟踪\_GUID，以将事件发送到记录器。 如果还将事件发送到 WMI 事件使用者，请将 WNODE\_标志设置\_LOG\_WNODE。 请注意，如果将 WNODE\_标记设置\_日志\_WNODE，则不需要设置 WNODE\_标志\_跟踪\_GUID。 如果同时设置了这两个\_标志，则\_跟踪\_GUID 将优先，并且不会将事件发送到 WMI 事件使用者。
 
-    设置**Guid**或**GuidPtr**成员。 如果使用**GuidPtr**，设置 WNODE\_标志\_使用\_GUID\_中的 PTR**标志**成员。
+    设置**Guid**或**GuidPtr**成员。 如果使用**GuidPtr**，请将 WNODE\_标志设置\_在**FLAGS**成员中使用\_GUID\_PTR。
 
-    （可选） 指定的值**时间戳**。 如果未指定驱动程序**时间戳**值记录器将填充此。 如果该驱动程序不想要设置的时间戳的记录器，则它应设置 WNODE\_标志\_使用\_中的时间戳**标志**成员。
+    还可以指定**时间戳**的值。 如果驱动程序未指定**时间戳**值，则记录器将在中填充此值。 如果驱动程序不希望记录器设置时间戳，则应将 WNODE\_标志设置\_在**Flags**成员中使用\_时间戳。
 
-    设置任何以下**事件\_跟踪\_标头**对驱动程序有含义的成员：**Class.Type**， **Class.Level**，和**Class.Version**。
+    设置以下任何**事件\_跟踪**对驱动程序有意义的\_标头成员：**类**、类、**类**和**类**。
 
-    最后强制转换**事件\_跟踪\_标头**到**WNODE\_标头**并设置**HistoricalContext** 值**Wnode**到记录器句柄时保存在上述步骤 4。
+    最后，将**事件\_TRACE\_标头**强制转换为**WNODE\_标头**，并将**WNODE**的**HistoricalContext**值设置为上面步骤4中保存的记录器句柄。
 
-7.  调用[ **IoWMIWriteEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)用指针指向**事件\_跟踪\_标头**结构。
+7.  调用[**IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent) ，将指针与指向**事件\_TRACE\_标头**结构。
 
-该驱动程序应继续日志记录与控件 GUID，直到该驱动程序收到通知，以禁用通过事件日志记录的跟踪事件**IRP\_MN\_禁用\_事件**请求。
+驱动程序应继续记录与控件 GUID 关联的跟踪事件，直到驱动程序收到通知，以便通过**IRP\_MN\_禁用\_事件**请求来禁用事件日志记录。
 
  
 

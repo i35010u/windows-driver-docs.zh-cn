@@ -5,20 +5,20 @@ ms.assetid: a2abe78b-7755-45fc-ba02-f2809db5da3e
 keywords:
 - Direct3D WDK Windows 2000 显示，模具平面
 - 模具平面 WDK Direct3D
-- 每个像素绘制 WDK Direct3D
+- 每像素绘制 WDK Direct3D
 - 特殊效果 WDK Direct3D
-- WDK Direct3D 呈现的几何图形
-- WDK Direct3D 的大纲显示
+- 几何图形渲染 WDK Direct3D
+- 概述 WDK Direct3D
 - 隐藏 WDK Direct3D
-- 贴花纸 WDK Direct3D
+- decals WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac8697b312d09d160084ae8aa38761c5c5ad1907
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b415fb75187e1ce8ccfdbc49f543d38ba3ca4fb3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376029"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829439"
 ---
 # <a name="stencil-planes"></a>模具平面
 
@@ -26,28 +26,28 @@ ms.locfileid: "67376029"
 ## <span id="ddk_stencil_planes_gg"></span><span id="DDK_STENCIL_PLANES_GG"></span>
 
 
-模具平面启用和禁用绘制每个像素。 它们通常用于在多通道算法中实现特殊效果，如贴花纸、 大纲显示、 阴影和建设性实体几何呈现。
+模具平面启用和禁用每个像素的绘图。 它们通常用于 multipass 算法，以实现特殊效果，如 decals、大纲显示、阴影和建设性的实体几何呈现。
 
-旨在加快 Direct3D 实现模具平面某些硬件。 启用由模具平面特殊效果非常有用的娱乐应用程序。
+旨在加速 Direct3D 实现模具平面的某些硬件。 模具平面启用的特殊效果对于娱乐应用程序很有用。
 
-假定模具平面嵌入在 z 缓冲区数据。
+模具平面假设嵌入在 z 缓冲区数据中。
 
-应用程序在 DirectX 5.0 中，找到可用的 z 缓冲区位深度使用 DDBD\_*Xx*设置标志**dwDeviceZBufferBitDepth**隶属[ **D3DDEVICEDESC\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)结构。 若要支持 z 缓冲区模具和 z 缓冲区位深度不能使用现有 DDBD 表示\_*Xx*标志、 DirectX 6.0 和更高版本中有新的 API 入口点， **IDirect3D7::EnumZBufferFormats** （Direct3D SDK 文档中介绍），这会返回 DDPIXELFORMAT 结构描述可能 z 缓冲区/模具像素格式的数组。 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)结构包括以下新 z 缓冲区相关的成员：
+在 DirectX 5.0 中，应用程序使用[**D3DDEVICEDESC\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)结构的**dwDeviceZBufferBitDepth**成员中设置的 DDBD\_*Xx*标志找到可用的 z 缓冲区位深度。 若要支持使用现有 DDBD\_*Xx*标志无法表示模具和 z 缓冲比特率的 z 缓冲区，DirectX 6.0 和更高版本具有新的 API 入口点， **IDirect3D7：： EnumZBufferFormats** （如Direct3D SDK 文档），它返回一个 DDPIXELFORMAT 结构数组，这些结构描述可能的 z 缓冲区/模具像素格式。 [**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构包含以下与 z 缓冲区相关的新成员：
 
 <span id="dwStencilBitDepth"></span><span id="dwstencilbitdepth"></span><span id="DWSTENCILBITDEPTH"></span>**dwStencilBitDepth**  
-指定模具比特数 (为整数，而不是作为 DDBD\_*Xx*标志值)。
+指定模具位数（作为整数，而不是 DDBD\_*Xx*标志值）。
 
 <span id="dwZBitMask"></span><span id="dwzbitmask"></span><span id="DWZBITMASK"></span>**dwZBitMask**  
-指定 z 值所占的位。 如果非零值，此掩码表示 z 缓冲区是一种标准化的无符号的整数 z 缓冲区格式。
+指定 z 值占用的位数。 如果为非零值，则此掩码意味着 z 缓冲区是标准的无符号整数 z 缓冲区格式。
 
 <span id="dwStencilBitMask"></span><span id="dwstencilbitmask"></span><span id="DWSTENCILBITMASK"></span>**dwStencilBitMask**  
-指定模具值所占的位。
+指定模具值占用的位数。
 
-新的标志，DDPF\_STENCILBUFFER，指示模具位 z 缓冲区中是否存在。 **DwZBufferBitDepth**成员，之前已存在，提供了 z 缓冲区位包括模具位的总数。
+新标志 DDPF\_STENCILBUFFER）指示 z 缓冲区内是否存在模具位。 之前存在的**dwZBufferBitDepth**成员提供包括模具位在内的 z 缓冲区的总数。
 
-DirectX 6.0 和更高版本驱动程序仍应设置相应 DDBD\_*Xx*标记中**dwDeviceZBufferBitDepth**它们支持仅限 z z 缓冲区格式。 如果不支持模具平面和 DDBD\_*Xx*标志可以表示所有可用的 z 缓冲区格式，然后设置这些标志已足够，因为它们将转换为通过 DDPIXELFORMAT **IDirect3D7::EnumZBufferFormats**。 否则，Direct3D 驱动程序必须响应[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)查询使用 GUID\_ZPixelFormats GUID 通过返回的缓冲区中的第一个 dword 值指示的数目有效的 z 缓冲区 DDPIXELFORMAT 结构，跟 DDPIXELFORMAT 结构自身。
+DirectX 6.0 和更高版本的驱动程序仍应在**dwDeviceZBufferBitDepth**中为其支持的仅 z z 缓冲区格式设置相应的 DDBD\_*Xx*标志。 如果不支持模具平面，并且 DDBD\_*Xx*标志可以表示所有可用的 z 缓冲区格式，则设置这些标志就足够了，因为这些标志通过**IDirect3D7：： ENUMZBUFFERFORMATS**转换为 DDPIXELFORMAT。 否则，Direct3D 驱动程序必须响应[**DdGetDriverInfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)查询，该查询使用 Guid\_ZPixelFormats guid，方法是返回一个缓冲区，其中第一个 DWORD 指示有效 z 缓冲区 DDPIXELFORMAT 结构的数目，后跟DDPIXELFORMAT 结构本身。
 
-模具平面与相关联的新呈现状态将显示在下表列出了呈现状态，使用的呈现状态的值和说明关联的类型。 更多详细信息请参阅呈现状态，请参阅 DirectX SDK 文档。
+下表显示了与模具平面关联的新渲染状态，其中列出了渲染状态、与渲染状态的值相关联的类型，以及描述。 有关这些呈现状态的更多详细信息，请参阅 DirectX SDK 文档。
 
 <table>
 <colgroup>
@@ -57,7 +57,7 @@ DirectX 6.0 和更高版本驱动程序仍应设置相应 DDBD\_*Xx*标记中**d
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">呈现器状态</th>
+<th align="left">呈现状态</th>
 <th align="left">在任务栏的搜索框中键入</th>
 <th align="left">描述</th>
 </tr>
@@ -66,13 +66,13 @@ DirectX 6.0 和更高版本驱动程序仍应设置相应 DDBD\_*Xx*标记中**d
 <tr class="odd">
 <td align="left"><p>D3DRENDERSTATE_STENCILFUNC</p></td>
 <td align="left"><p>D3DCMPFUNC</p></td>
-<td align="left"><p>比较函数。 如果下面的表达式为 true，则测试通过：</p>
-<p>（ref 和掩码）操作 （模具和掩码） 其中<em>ref</em>是引用值<em>模具</em>模具缓冲区中的值并<em>掩码</em>是 D3DRENDERSTATE_STENCILMASK 的值。</p></td>
+<td align="left"><p>比较函数。 如果以下表达式为 true，则测试通过：</p>
+<p>（ref & 掩码）操作（模具 & 掩码），其中<em>ref</em>是引用值，<em>模具</em>是模具缓冲区中的值， <em>mask</em>是 D3DRENDERSTATE_STENCILMASK 的值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DRENDERSTATE_STENCILREF</p></td>
 <td align="left"><p>DWORD</p></td>
-<td align="left"><p>引用模具测试中使用的值。</p></td>
+<td align="left"><p>模具测试中使用的引用值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DRENDERSTATE_STENCILMASK</p></td>
@@ -82,14 +82,14 @@ DirectX 6.0 和更高版本驱动程序仍应设置相应 DDBD\_*Xx*标记中**d
 <tr class="even">
 <td align="left"><p>D3DRENDERSTATE_STENCILWRITEMASK</p></td>
 <td align="left"><p>DWORD</p></td>
-<td align="left"><p>写掩码应用于向模具缓冲区写入任何值。</p></td>
+<td align="left"><p>写入掩码，适用于写入到模具缓冲区的任何值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DRENDERSTATE_STENCILFAIL</p>
 <p>D3DRENDERSTATE_STENCILZFAIL</p>
 <p>D3DRENDERSTATE_STENCILPASS</p></td>
 <td align="left"><p>D3DSTENCILOP</p></td>
-<td align="left"><p>这些新的呈现状态，分别以通知有关要执行的操作时模具测试失败，硬件时模具测试通过，但 z 测试失败，和定义的模具和 z 测试时传递。 一种新的呈现状态的值可以设置为 D3DSTENCILOP 枚举类型的枚举器指定要执行的所需的模具操作。 有关 D3DSTENCILOP 详细信息，请参阅 DirectX SDK 文档。</p></td>
+<td align="left"><p>这些新的呈现状态分别定义为：在模具测试失败时，当模具测试通过但 z 测试失败时，以及当模具和 z 测试都通过时，通知硬件应执行的操作。 这些新呈现状态的值可以设置为 D3DSTENCILOP 枚举类型的枚举器，该枚举类型指定要执行的所需模具操作。 有关 D3DSTENCILOP 的详细信息，请参阅 DirectX SDK 文档。</p></td>
 </tr>
 </tbody>
 </table>

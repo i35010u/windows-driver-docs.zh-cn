@@ -3,24 +3,24 @@ title: 提供围栏标识符
 description: 提供围栏标识符
 ms.assetid: 0ec8a4eb-c441-47ae-b5de-d86e6065ffd4
 keywords:
-- fence 标识符 WDK 显示
+- 围栏标识符 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9a60919c4ef9e6e3d1797c4120df0418998dcd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66e618d1a263af6ca22683625ea1fe4662d77fe8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383082"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829416"
 ---
 # <a name="supplying-fence-identifiers"></a>提供围栏标识符
 
 
-Microsoft DirectX 图形内核子系统提供中的相同 fence 标识符**SubmissionFenceId**的成员[ **DXGKARG\_修补**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_patch)并[ **DXGKARG\_SUBMITCOMMAND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_submitcommand)显示微型端口驱动程序的调用中的结构[ **DxgkDdiPatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_patch)并[ **DxgkDdiSubmitCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)函数。 具体取决于图形硬件的实现方式，驱动程序仅使用需要传递到其中任何一个的 fence 标识符*DxgkDdiPatch*或*DxgkDdiSubmitCommand*函数由于以下原因：
+Microsoft DirectX graphics 内核子系统在[**DXGKARG\_PATCH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_patch)和[**DXGKARG\_SUBMITCOMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_submitcommand)结构的**SubmissionFenceId**成员中提供了一个相同的防护标识符，以便调用显示微型端口驱动程序的[**DxgkDdiPatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_patch)和[**DxgkDdiSubmitCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_submitcommand)函数。 根据图形硬件的实现方式，驱动程序只需使用传递给*DxgkDdiPatch*或*DxgkDdiSubmitCommand*函数之一的防护标识符，原因如下：
 
--   驱动程序使用传递给 fence 标识符*DxgkDdiPatch*将写入直接内存访问 (DMA) 缓冲区的末尾。
+-   驱动程序使用传递给*DxgkDdiPatch*的隔离标识符来写入直接内存访问（DMA）缓冲区的末尾。
 
--   驱动程序使用传递给 fence 标识符*DxgkDdiSubmitCommand*将环形缓冲区，即其中 DMA 缓冲区将排队等待执行的图形处理单元 (GPU) （大多数 GPU 类型使用 DMA 缓冲区的缓冲区写入队列的模型）。
+-   驱动程序使用传递给*DxgkDdiSubmitCommand*的防护标识符来写入环形缓冲区，该缓冲区是 DMA 缓冲区排队等候以供图形处理单元（gpu）执行（大多数 GPU 类型使用 DMA 缓冲区队列模型）的缓冲区。
 
  
 

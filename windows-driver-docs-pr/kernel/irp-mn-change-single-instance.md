@@ -1,45 +1,45 @@
 ---
 title: IRP_MN_CHANGE_SINGLE_INSTANCE
-description: 支持 WMI 的所有驱动程序必须处理此 IRP。
+description: 支持 WMI 的所有驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 180d40a4-b300-4801-b9da-9239500ca15f
 keywords:
 - IRP_MN_CHANGE_SINGLE_INSTANCE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: f128b6d1a496b3e9394844c0f0e8e859215af020
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a244cb92457326df4c9ce35af7d8d5495417024f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382246"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828074"
 ---
-# <a name="irpmnchangesingleinstance"></a>IRP\_MN\_更改\_单个\_实例
+# <a name="irp_mn_change_single_instance"></a>IRP\_MN\_更改\_单一\_实例
 
 
-支持 WMI 的所有驱动程序必须处理此 IRP。 驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
+支持 WMI 的所有驱动程序都必须处理此 IRP。 驱动程序可以通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)或处理 IRP 本身来处理 wmi irp，如[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)中所述。
 
-如果驱动程序调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)处理**IRP\_MN\_更改\_单一\_实例**请求 WMI 又会调用该驱动程序[ *DpWmiSetDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_set_datablock_callback)例程。
+如果驱动程序调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理**IRP\_MN\_更改\_单一\_实例**请求，则 WMI 反过来会调用该驱动程序的[*DpWmiSetDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_set_datablock_callback)例程。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_系统\_控件**](irp-mj-system-control.md)时发送
+[**IRP\_MJ\_系统\_控件**](irp-mj-system-control.md)发送时间
 ---------
 
-WMI 将发送此 IRP，若要更改的数据块的单个实例中的所有数据项。
+WMI 发送此 IRP 以更改数据块的单个实例中的所有数据项。
 
-WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
+WMI 在任意线程上下文中以 IRQL = 被动\_级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.WMI.ProviderId**指向应该对请求进行响应的驱动程序的设备对象。 在驱动程序的 I/O 堆栈位置中找到此指针。
+**Parameters。 ProviderId**指向应响应请求的驱动程序的设备对象。 此指针位于 IRP 中驱动程序的 i/o 堆栈位置。
 
-**Parameters.WMI.DataPath**指向标识数据块的 GUID 与要更改的实例相关联。
+**数据路径**指向标识与要更改的实例关联的数据块的 GUID。
 
-**Parameters.WMI.BufferSize**指示在非分页缓冲区的大小**Parameters.WMI.Buffer**。
+**参数. BufferSize**指示非分页缓冲区在**参数. buffer**的大小。
 
-**Parameters.WMI.Buffer**指向[ **WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)结构，它标识的实例并指定新的数据值。
+WNODE**将指向标识**实例的[ **\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)结构，并指定新的数据值。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -49,52 +49,52 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-如果该驱动程序通过调用来处理 IRP [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，WMI 集**Irp-&gt;IoStatus.Status**并**Irp-&gt;IoStatus.Information** I/O 状态块中。
+如果驱动程序通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置**irp&gt;IoStatus**和**irp-&gt;IoStatus** 。
 
-否则，该驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态，如下所示：
+否则，驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS 或适当的错误状态，如下所示：
 
-状态\_WMI\_实例\_不\_找到
+找不到\_WMI\_实例的状态\_\_
 
-状态\_WMI\_GUID\_不\_找到
+找不到\_WMI\_GUID\_的状态\_
 
-状态\_WMI\_读取\_仅
+状态\_WMI\_仅读取\_
 
-状态\_WMI\_设置\_失败
+\_WMI\_集\_故障状态
 
-如果成功，驱动程序设置**Irp-&gt;IoStatus.Information**为零。
+成功时，驱动程序将**Irp&gt;IoStatus**设置为零。
 
 <a name="operation"></a>操作
 ---------
 
-如果驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，例程调用的驱动程序[ *DpWmiSetDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_set_datablock_callback)例程，或返回状态\_WMI\_读取\_仅当驱动程序不会定义该例程。
+如果驱动程序通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 WMI irp，则该例程将调用驱动程序的[*DpWmiSetDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_set_datablock_callback)例程，或仅当驱动程序未定义例程时才\_读取\_的\_状态。
 
-如果驱动程序处理**IRP\_MN\_更改\_单个\_实例**请求本身，它是仅当设备对象指针位于**Parameters.WMI.ProviderId**匹配驱动程序对其调用中传递的指针[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)。 否则，该驱动程序必须将请求转发到下一步低驱动程序。
+如果驱动程序处理**IRP\_MN\_更改\_单一\_实例**请求本身，则只有在**参数. ProviderId**中的设备对象指针与驱动程序在调用[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)。 否则，驱动程序必须将请求转发到下一个较低版本的驱动程序。
 
-如果该驱动程序处理请求，则它必须首先检查在 GUID **Parameters.WMI.DataPath**以确定它是否标识驱动程序支持的数据块。 如果不是，该驱动程序必须失败 IRP，并返回状态\_WMI\_GUID\_不\_找到。
+如果驱动程序处理请求，则必须首先检查**数据路径**中的 GUID，以确定它是否标识驱动程序所支持的数据块。 否则，驱动程序必须失败 IRP 并返回状态\_WMI\_GUID\_找不到\_。
 
-如果该驱动程序支持的数据块，则必须检查接收[ **WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)结构在**Parameters.WMI.Buffer**实例名称，按如下所示：
+如果驱动程序支持数据块，则它必须在 WNODE 实例名称的**参数. Buffer**中检查收到的[ **\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)结构，如下所示：
 
--   如果 WNODE\_标志\_静态\_实例\_中设置的名称**WnodeHeader.Flags**，则驱动程序使用**InstanceIndex**作为中的索引为该块的静态实例名称的驱动程序的列表。 WMI 从注册块时，驱动程序提供的注册数据中获取索引。
+-   如果 WNODE\_标记\_静态\_实例在**WnodeHeader**中设置\_名称，则驱动程序使用**InstanceIndex**作为该块的静态实例名称列表中的索引。 WMI 从驱动程序注册块时提供的注册数据中获取索引。
 
--   如果 WNODE\_标志\_静态\_实例\_名称是明确**WnodeHeader.Flags，** 驱动程序使用的偏移量**OffsetInstanceName**到输入中找到的实例名称字符串[ **WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)。 **OffsetInstanceName**包括终止 null （如果存在） 中从结构开始到 USHORT 大小以字节为单位 （不是字符），实例名称字符串的长度的字节的偏移量后跟以 unicode 格式的实例名称字符串。
+-   如果 WNODE\_标记\_静态\_\_实例在 WnodeHeader 中为空 **，** 则驱动程序将使用**OffsetInstanceName**的偏移量在输入 WNODE 中查找实例名称字符串[ **\_SINGLE\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)。 **OffsetInstanceName**是以字节为单位表示的偏移量（以字节为单位）表示的实例名称字符串的 USHORT 大小长度的偏移量（以字节为单位），包括终止 null （如果存在），后跟 Unicode 中的实例名称字符串。
 
-该驱动程序负责验证所有输入的值。 具体而言，如果处理 IRP 请求本身，则该驱动程序，就必须执行以下操作：
+驱动程序负责验证所有输入值。 具体而言，如果驱动程序处理 IRP 请求本身，则必须执行以下操作：
 
--   对于静态名称，请验证**InstanceIndex**的成员[ **WNODE\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)结构位于范围内支持的数据块的驱动程序的实例索引。
+-   对于静态名称，验证[**WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)结构的**InstanceIndex**成员是否在数据块的驱动程序支持的实例索引范围内。
 
--   有关动态名称，验证实例名称字符串标识驱动程序支持的数据块实例。
+-   对于动态名称，请验证实例名称字符串是否标识了驱动程序支持的数据块实例。
 
--   确认**DataBlockOffset**并**SizeDataBlock**的成员**WNODE\_单一\_实例**结构描述有效大小数据块，包括所有填充的数据之间存在项，且适用于数据块的缓冲区的内容。
+-   验证**WNODE\_单个\_实例**结构的**DataBlockOffset**和**SizeDataBlock**成员是否描述了有效大小的数据块，包括数据项之间存在的任何填充以及缓冲区对数据块有效。
 
--   确保指定的数据块是为其驱动程序允许调用方启动的修改。 换而言之，驱动程序不应允许对数据块的计划是只读的修改。
+-   验证指定的数据块是否为驱动程序允许调用方启动的修改。 换句话说，驱动程序不应允许修改您打算为只读的数据块。
 
-不要假定线程上下文是起始用户模式应用程序 — 更高级别的驱动程序可能已更改它。
+不要假设线程上下文是启动用户模式应用程序的上下文，较高级别的驱动程序可能已更改了该上下文。
 
-如果该驱动程序找不到指定的实例，它必须失败 IRP，并返回状态\_WMI\_实例\_不\_找到。 如果该实例具有一个动态实例名称，此状态指示驱动程序不支持该实例。 因此，WMI 可以继续查询其他数据提供程序，并返回相应的错误数据使用者，如果另一个提供程序的实例，但由于某种原因无法处理该请求。
+如果驱动程序找不到指定的实例，则它必须失败 IRP 并返回状态\_WMI\_实例\_但找不到\_。 如果该实例具有动态实例名称，则此状态指示该驱动程序不支持该实例。 这样，WMI 就可以继续查询其他数据访问接口，如果另一个提供程序找到该实例，但由于其他原因无法处理该请求，则会向数据使用者返回相应的错误。
 
-如果驱动程序查找该实例，并可以处理该请求，它设置为中的值的实例中的可写数据项[ **WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)结构，任何只读项不做任何更改。 如果整个数据块是只读的该驱动程序应失败 IRP，并且返回状态\_WMI\_读取\_仅。
+如果驱动程序找到该实例并可以处理该请求，则会将该实例中的可写数据项设置为[**WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)结构中的值，使所有只读项保持不变。 如果整个数据块为只读，则驱动程序应失败 IRP 并返回状态\_WMI\_只读\_。
 
-如果该实例有效，但该驱动程序无法处理请求，它可以返回任何相应的错误状态。
+如果实例有效但驱动程序无法处理请求，则它可能会返回任何适当的错误状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -106,24 +106,24 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[*DpWmiSetDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_set_datablock_callback)
+[*DpWmiSetDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_set_datablock_callback)
 
-[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
+[**WMILIB\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
+[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)
 
-[**WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_single_instance)
+[**WNODE\_单个\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_single_instance)
 
  
 

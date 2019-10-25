@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7792fd58d77e3d481dba0b27520be4cf835c66a2
-ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
+ms.openlocfilehash: 4ffd33d153c7dd5ca962e39150f82fb09a95a12b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830573"
 ---
 # <a name="ksproperty_sounddetector_streamingsupport"></a>KSPROPERTY\_SOUNDDETECTOR\_STREAMINGSUPPORT
 
@@ -37,7 +37,7 @@ ms.locfileid: "71329455"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -46,11 +46,11 @@ ms.locfileid: "71329455"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>无</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
-<td align="left"><p>BOOL</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p>型</p></td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ ms.locfileid: "71329455"
 <td align="left"><p>Windows 10 版本1903</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
@@ -95,4 +95,4 @@ ms.locfileid: "71329455"
 
 [**KSPROPERTY\_SOUNDDETECTOR\_模式**](ksproperty-sounddetector-patterns.md)
 
-[**KSSOUNDDETECTORPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/)
+[**KSSOUNDDETECTORPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/)

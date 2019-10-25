@@ -3,35 +3,35 @@ title: 中断相关性
 description: 中断相关性
 ms.assetid: e36a52d0-3a94-4017-b4a1-0b41f737523c
 keywords:
-- 中断服务例程 WDK 内核相关性
-- Isr WDK 内核相关性
+- 中断服务例程 WDK 内核，相关性
+- Isr WDK 内核，相关性
 - 关联策略 WDK 中断
 - IRQ_DEVICE_POLICY
 - 处理器关联 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0993e0338afb3d191a755f6b642c4f8cb4762d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a329fba47eb6c5e45eb704ca20b9523e6ee239e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369771"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828287"
 ---
 # <a name="interrupt-affinity"></a>中断相关性
 
 
-*相关性*中断是可以为服务中断的处理器组。 每台设备都*相关性策略*。 操作系统使用的关联策略来计算该设备的中断的关联。 关联策略可以指定设备的 INF 文件或注册表设置。
+中断的*关联*是可以为中断服务的处理器集。 每个设备都有一个*关联策略*。 操作系统使用关联策略来计算该设备中断的相关性。 可以在设备的 INF 文件或注册表设置中指定关联策略。
 
-从 Windows Vista 开始，管理员可以使用注册表设置中断的关联策略。
+从 Windows Vista 开始，管理员可以使用注册表为中断设置关联策略。
 
-管理员可以设置下的以下条目 **\\中断管理\\关联策略**注册表项：
+管理员可以在 " **\\中断管理\\相关性策略**注册表项" 下设置以下各项：
 
--   **DevicePolicy**是 REG\_DWORD 值，该值指定的关联策略。 每个可能的设置对应于[ **IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)值。
+-   **DevicePolicy**是一个指定关联策略的 REG\_DWORD 值。 每个可能的设置对应于[**IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy)值。
 
 
--   **AssignmentSetOverride**是 REG\_二进制值，该值指定[ **KAFFINITY** ](#about-kaffinity)掩码。 如果**DevicePolicy**是 0x04 (**IrqPolicySpecifiedProcessors**)，则此掩码指定一组处理器，若要将分配到设备的中断。
+-   **AssignmentSetOverride**是一个用于指定[**KAFFINITY**](#about-kaffinity)掩码的 REG\_二进制值。 如果**DevicePolicy**为0X04 （**IrqPolicySpecifiedProcessors**），则此掩码指定要向其分配设备中断的一组处理器。
 
-下表列出[ **IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)值和相应的注册表设置为**DevicePolicy**。 每个值的含义的详细信息，请参阅[ **IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)。
+下表列出了[**IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy)值，以及**DevicePolicy**的相应注册表设置。 有关每个值的含义的详细信息，请参阅[**IRQ\_设备\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_irq_device_policy)。
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67369771"
 <thead>
 <tr class="header">
 <th>IRQ_DEVICE_POLICY 值</th>
-<th>在注册表中的数字值</th>
+<th>注册表中的数值</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +74,7 @@ ms.locfileid: "67369771"
 
  
 
-驱动程序的 INF 文件可以提供的注册表值的默认设置。 下面是如何设置的示例**DevicePolicy**值设置为**IrqPolicyOneCloseProcessor** INF 文件中。 有关详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+驱动程序的 INF 文件可以提供注册表值的默认设置。 下面是如何在 INF 文件中将**DevicePolicy**值设置为**IrqPolicyOneCloseProcessor**的示例。 有关详细信息，请参阅[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
 ```cpp
 [install-section-name.HW]
@@ -84,9 +84,9 @@ AddReg=add-registry-section
 HKR, "Interrupt Management\Affinity Policy", DevicePolicy, 0x00010001, 2
 ```
 
-系统提供的注册表设置到设备的驱动程序会在发送时[ **IRP\_MN\_筛选器\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)IRP 到驱动程序。 操作系统提供[ **IO\_资源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_descriptor)结构与每个中断**类型**成员设置为**CmResourceTypeInterrupt**。 消息信号中断，CM\_资源\_中断\_消息位**标志**成员设置; 否则，很明显。 **U.Interrupt**成员描述中断的设置。
+系统在将[**irp\_MN\_FILTER\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)IRP 发送到驱动程序时，使注册表设置可用于设备驱动程序。 操作系统为**类型**成员设置为**CmResourceTypeInterrupt**的每个中断提供[**IO\_资源\_说明符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_descriptor)结构。 对于消息发出信号的中断，设置了**标志**成员的 CM\_资源\_中断\_消息位;否则，这是明确的。 **U. 中断**成员描述中断的设置。
 
-下表提供了注册表设置和成员之间的对应关系**u.Interrupt**。
+下表提供了注册表设置和**u**成员之间的对应关系。
 
 <table>
 <colgroup>
@@ -96,7 +96,7 @@ HKR, "Interrupt Management\Affinity Policy", DevicePolicy, 0x00010001, 2
 <thead>
 <tr class="header">
 <th>注册表值</th>
-<th>You.Interrupt 的成员</th>
+<th>你的成员。中断</th>
 </tr>
 </thead>
 <tbody>
@@ -111,25 +111,25 @@ HKR, "Interrupt Management\Affinity Policy", DevicePolicy, 0x00010001, 2
 </tbody>
 </table>
 
-## <a name="about-kaffinity"></a>有关 KAFFINITY
+## <a name="about-kaffinity"></a>关于 KAFFINITY
 
-KAFFINITY 类型是表示一组在组中的逻辑处理器的关联掩码。
+KAFFINITY 类型是一个关联掩码，它表示组中的一组逻辑处理器。
 
 ```cpp
 typedef ULONG_PTR  KAFFINITY;
 ```
 
-KAFFINITY 类型为 32 位版本的 Windows 上的 32 位和为 64 位版本的 Windows 上的 64 位。
+KAFFINITY 在32位版本的 Windows 上为32位，在 Windows 的64版本上为64位。
 
-如果一个组中包含 n 个逻辑处理器，处理器编号从 0 到 n-1。 中的关联掩码，其中范围 0 到 n-1 是 i 位 i 表示组中的处理器数 i。 不对应于逻辑处理器的关联掩码位将始终为零。
+如果一个组包含 n 个逻辑处理器，则处理器编号从0到 n-1。 组中的处理器编号 i 在关联掩码中用位 i 表示，其中 i 介于0到 n-1 之间。 与逻辑处理器不对应的关联掩码位始终为零。
 
-例如，如果 KAFFINITY 值标识的组中活动的处理器，处理器掩码位是一个处理器处于活动状态，并且如果处理器未处于活动状态为零。
+例如，如果 KAFFINITY 值标识组中的活动处理器，则处理器的掩码位为1，如果处理器处于活动状态，则为零，如果处理器处于非活动状态，则为零。
 
-在关联掩码中比特数确定的最大组中的逻辑处理器数。 有关 Windows 的 64 位版本，每个组的处理器的最大数目为 64。 有关 Windows 的 32 位版本，每个组的处理器的最大数目为 32。 调用[ **KeQueryMaximumProcessorCountEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kequerymaximumprocessorcountex)例程，以获取每个组的处理器的最大数目。 此数字取决于硬件配置的多处理器系统，但永远不会超过 64 位和 32 位版本的 Windows，分别设置的固定的 64 处理器和 32 处理器限制。
+关联掩码中的位数确定组中的逻辑处理器的最大数目。 对于64位版本的 Windows，每个组的最大处理器数为64。 对于32位版本的 Windows，每个组的最大处理器数为32。 调用[**KeQueryMaximumProcessorCountEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kequerymaximumprocessorcountex)例程以获取每个组的最大处理器数。 此数值取决于多处理器系统的硬件配置，但绝不能超过64位32和 Windows 版本的 Windows 的64的固定和32的限制。
 
-[ **GROUP_AFFINITY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/miniport/ns-miniport-_group_affinity)结构包含的关联掩码和组编号。 组号标识的关联掩码应用到的组。
+[**GROUP_AFFINITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/miniport/ns-miniport-_group_affinity)结构包含一个关联掩码和一个组号。 组号用于标识关联掩码应用到的组。
 
-内核例程使用 KAFFINITY 类型包括[ **IoConnectInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)， [ **KeQueryActiveProcessorCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kequeryactiveprocessorcount)，和[**KeQueryActiveProcessors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kequeryactiveprocessors)。 
+使用 KAFFINITY 类型的内核例程包括[**IoConnectInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterrupt)、 [**KeQueryActiveProcessorCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kequeryactiveprocessorcount)和[**KeQueryActiveProcessors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kequeryactiveprocessors)。 
 
  
 

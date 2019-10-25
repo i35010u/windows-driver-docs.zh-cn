@@ -4,33 +4,33 @@ description: 关于 ISensorClassExtension
 ms.assetid: 1f55f28a-796a-40e5-9995-e6a28761b9a4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af3c76e885cb050b4751f598fbe02ed7673105b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49ac14606ed8161e19ad23d7e87b4b6adae8a2c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325955"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824302"
 ---
 # <a name="about-isensorclassextension"></a>关于 ISensorClassExtension
 
 
-传感器驱动程序将使用 ISensorClassExtension 初始化和 unitialize 传感器类扩展，引发事件，过程 WPD 输入/输出控制 (Ioctl) 代码，并正确关闭 UMDF 文件句柄。
+传感器驱动程序使用 ISensorClassExtension 来初始化和 unitialize 传感器类扩展、引发事件、处理 WPD 输入/输出控制代码（IOCTLs），并正确关闭 UMDF 文件句柄。
 
-## <a name="methods-to-manage-object-lifetime"></a>方法，用于管理对象生存期
+## <a name="methods-to-manage-object-lifetime"></a>用于管理对象生存期的方法
 
-若要初始化类扩展，基于 PnP 的硬件传感器驱动程序调用[ **ISensorClassExtension::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-initialize) UMDF 中通过调用时[ **IPnpCallbackHardware::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)。 此步骤提供了具有指针到驱动程序的主类和实现回调接口来处理由类扩展对象引发的事件的类的类扩展对象。 该驱动程序由在 UMDF [ **IPnpCallbackHardware::OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)，则应调用[ **ISensorClassExtension::Uninitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-uninitialize) ，然后释放类扩展对象。 请注意，某些类型的传感器可能需要初始化和取消类扩展初始化在不同的时间。
+若要初始化类扩展，基于 PnP 的硬件传感器驱动程序会调用[**ISensorClassExtension：： initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-initialize) （当[**IPnpCallbackHardware：： ONPREPAREHARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)中由 UMDF 调用时）。 此步骤为类扩展对象提供指向驱动程序的主类的指针，并为实现回调接口的类提供用于处理类扩展对象所引发的事件的类。 当[**IPnpCallbackHardware：： OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)中的 UMDF 调用驱动程序时，它应调用[**ISensorClassExtension：：取消初始化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-uninitialize)，然后释放类扩展对象。 请注意，某些类型的传感器可能需要在不同时间初始化和取消初始化类扩展。
 
 ## <a name="methods-to-raise-events"></a>引发事件的方法
 
-该驱动程序可以引发各种类型的传感器事件 （通常包含传感器数据） 通过调用[ **ISensorClassExtension::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)和状态信息事件，通过调用[ **ISensorClassExtension::PostStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)。 有关事件传感器驱动程序中的工作原理的详细信息，请参阅[有关传感器驱动程序事件](about-sensor-driver-events.md)。
+驱动程序可以通过调用[**ISensorClassExtension：:P oststatechange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)来调用[**ISensorClassExtension：:P ostevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)和 state information 事件，从而引发各种类型的传感器事件（通常包含传感器数据）。 有关传感器驱动程序中事件的工作原理的详细信息，请参阅[关于传感器驱动程序事件](about-sensor-driver-events.md)。
 
-## <a name="methods-to-manage-ioctls-and-handles"></a>方法来管理 Ioctl 和句柄
+## <a name="methods-to-manage-ioctls-and-handles"></a>用于管理 IOCTLs 和句柄的方法
 
-传感器驱动程序将转发至类扩展 UMDF 调用的两种类型：
+传感器驱动程序将两种 UMDF 调用转发到类扩展：
 
--   要处理 I/O 请求控制代码通过接收[ **IQueueCallbackDeviceIoControl::OnDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)。 若要将转发至类扩展以进行处理的 I/O 请求，该驱动程序必须调用[ **ISensorClassExtension::ProcessIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-processiocontrol)。
+-   处理通过[**IQueueCallbackDeviceIoControl：： OnDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)接收到的 i/o 控制代码的请求。 若要将 i/o 请求转发给类扩展以便进行处理，驱动程序必须调用[**ISensorClassExtension：:P rocessiocontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-processiocontrol)。
 
--   有关客户端关闭通知文件通过接收的句柄[ **IFileCallbackCleanup::OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)。 若要将转发 I/O 请求取消，则驱动程序必须调用[ **ISensorClassExtension::CleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-cleanupfile)。
+-   有关关闭通过[**IFileCallbackCleanup：： OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)接收的文件句柄的客户端的通知。 若要转发 i/o 请求取消，驱动程序必须调用[**ISensorClassExtension：： CleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-cleanupfile)。
 
  
 

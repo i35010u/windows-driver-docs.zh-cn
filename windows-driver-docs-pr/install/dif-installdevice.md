@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9d4229684528d2c527dd0567adfef96506f13b93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 285238b8e27db90db58c2bba3169a81c763c6eca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387053"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828851"
 ---
-# <a name="difinstalldevice"></a>DIF_INSTALLDEVICE
+# <a name="dif_installdevice"></a>DIF_INSTALLDEVICE
 
 
-DIF_INSTALLDEVICE 请求可让安装程序之前/之后的设备安装或执行任务。
+DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执行任务。
 
 ### <a name="when-sent"></a>发送时间
 
-选择后，驱动程序，注册任何设备共同安装程序，并注册任何设备接口。
+选择驱动程序后，注册任何设备共同安装程序，并注册任何设备接口。
 
 ### <a name="who-handles"></a>谁处理
 
@@ -58,77 +58,77 @@ DIF_INSTALLDEVICE 请求可让安装程序之前/之后的设备安装或执行�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含要安装的设备。
+提供包含要安装的设备的[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)设备中设备的信息集的结构。
+在设备信息集中提供设备的[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*。
+存在与*DeviceInfoData*关联的设备安装参数（[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)）。
 
-<a href="" id="class-installation-parameters"></a>类的安装参数  
+<a href="" id="class-installation-parameters"></a>类安装参数  
 无
 
 ### <a name="installer-output"></a>安装程序输出
 
 <a href="" id="device-installation-parameters"></a>设备安装参数  
-安装程序可以修改的设备安装参数*DeviceInfoData*。 例如，安装程序可能设置 DI_NEEDREBOOT 标志，或者它可能会设置 DI_DONOTCALLCONFIGMG 标志，以防止 Windows 自带设备联机动态使用其新安装的驱动程序和设置。
+安装程序可以修改*DeviceInfoData*的设备安装参数。 例如，安装程序可能会设置 DI_NEEDREBOOT 标志，或者它可能会设置 DI_DONOTCALLCONFIGMG 标志，以防止 Windows 使用新安装的驱动程序和设置动态地使设备联机。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
-辅助安装程序通常返回 NO_ERROR 或 ERROR_DI_POSTPROCESSING_REQUIRED。 辅助安装程序可能也会返回一个 Win32 错误代码。
+共同安装程序通常返回 NO_ERROR 或 ERROR_DI_POSTPROCESSING_REQUIRED。 共同安装程序也可能返回 Win32 错误代码。
 
-如果类安装程序已成功处理此请求并[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)应随后调用默认处理程序类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，而[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
-类安装程序类安装程序将成功处理此请求，包括直接调用默认处理程序，如果应返回 NO_ERROR 并**SetupDiCallClassInstaller**随后不会调用默认处理程序电子邮件了。
+如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR，并且**SetupDiCallClassInstaller**随后不会再次调用默认处理程序。
 
-**请注意**  类安装程序可以直接调用默认处理程序，但类安装程序应永远不会尝试取代默认处理程序的操作。 调用默认 DIF 代码处理程序的详细信息，请参阅[调用默认 DIF 代码处理程序](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)。
+**请注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。 有关调用默认的 DIF 代码处理程序的详细信息，请参阅[调用默认的 Dif 代码处理程序](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)。
 
  
 
-安装程序类安装程序遇到错误，如果应返回相应的 Win32 错误代码和**SetupDiCallClassInstaller**随后不会调用默认处理程序。
+如果类安装程序遇到错误，则安装程序应返回相应的 Win32 错误代码，并且**SetupDiCallClassInstaller**将不会随后调用默认处理程序。
 
-### <a name="default-dif-code-handler"></a>默认 DIF 代码处理程序
+### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
 [**SetupDiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)
 
 ### <a name="installer-operation"></a>安装程序操作
 
-DIF_INSTALLDEVICE 请求响应中安装程序通常执行的任何最终的安装操作的默认处理程序安装设备之前。 例如，安装程序可以检查，并可能修改的上限筛选器驱动程序和更低的筛选器驱动程序注册表中列出的设备。
+为了响应 DIF_INSTALLDEVICE 请求，安装程序通常会在默认的处理程序安装设备之前执行任何最终安装操作。 例如，安装程序可以检查注册表中所列设备的筛选器驱动程序和筛选器驱动程序和筛选器驱动程序和筛选器的筛选器。
 
-除非设备安装参数中设置了 DI_NOFILECOPY 标志，安装程序以便处理此 DIF 请求应复制所需的设备，如驱动程序文件和控制面板文件的文件。
+除非在设备安装参数中设置 DI_NOFILECOPY 标志，否则处理此 DIF 请求的安装程序应复制设备所需的文件，如驱动程序文件和控制面板文件。
 
-如果 DI_NOFILECOPY 标志已清除，但 DI_NOVCP 标志设置，安装程序必须排入队列到队列提供的文件的所有文件操作，但都必须提交队列。
+如果 DI_NOFILECOPY 标志清晰但设置了 DI_NOVCP 标志，则安装程序必须将任何文件操作排队到提供的文件队列中，但不得提交队列。
 
-辅助安装程序可以处理此 DIF 请求在预处理传递和/或其后续处理阶段中。 在其预处理阶段中，辅助安装程序执行 Windows 加载驱动程序，并使设备开始之前，必须执行任何操作。
+共同安装程序可以在其预处理过程中处理此 DIF 请求，还可以在其后处理传递中处理此请求。 在预处理过程中，共同安装程序将执行 Windows 加载驱动程序和启动设备之前必须发生的所有操作。
 
-在其后续处理阶段中，设备已启动并运行除非 DI_NEEDREBOOT 标志已设置。 如果设置此标志，Windows 不可能动态地将设备联机。
+在其后处理过程中，除非设置了 DI_NEEDREBOOT 标志，否则设备将启动并运行。 如果设置了此标志，Windows 将无法动态使设备联机。
 
-如果安装程序将返回 Win32 错误代码，Windows 将放弃安装。
+如果安装程序返回 Win32 错误代码，Windows 会放弃安装。
 
-如果 Windows 找不到新设备的 INF 文件，它在尝试安装发送 DIF_INSTALLDEVICE*为 null 的驱动程序*。 默认处理程序 (**SetupDiInstallDevice**或为非 PnP 设备 (由报告[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice))，在后一种情况下，Windows 安装的 null 驱动程序设备。
+如果 Windows 无法找到新设备的 INF 文件，它将发送 DIF_INSTALLDEVICE，尝试安装*null 驱动程序*。 默认处理程序（**SetupDiInstallDevice**或为非 PnP 设备（由[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)报告），在后一种情况下，Windows 将为设备安装 null 驱动程序。
 
-如果此尝试失败，Windows 将发送 DIF_INSTALLDEVICE 同样，这次使用 DI_FLAGSEX_SETFAILEDINSTALL 标志中设置[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构。 在这种情况下，默认处理程序只需 FAILEDINSTALL 中的标志设置的设备**配置标志**注册表值。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT 和共同安装程序必须返回 NO_ERROR。
+如果此尝试失败，则 Windows 将再次发送 DIF_INSTALLDEVICE，这次在[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构中设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志。 在这种情况下，默认处理程序只是在设备的**ConfigFlags**注册表值中设置 FAILEDINSTALL 标志。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，则类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT，并且共同安装程序必须返回 NO_ERROR。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
+有关 DIF 代码的详细信息，请参阅[处理 Dif 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
 
 ### <a name="calling-the-default-handler-setupdiinstalldevice"></a>**调用默认处理程序 SetupDiInstallDevice**
 
-有关何时以及如何调用常规信息**SetupDiInstallDevice**，请参阅[调用默认的 DIF 代码处理程序](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)。
+有关何时以及如何调用**SetupDiInstallDevice**的常规信息，请参阅[调用默认的 DIF 代码处理程序](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)。
 
-在类安装程序必须毕竟执行操作的极少数情况下**SetupDiInstallDevice**已完成操作，但从一台设备，除外，类安装程序必须：
+在极少数情况下，如果类安装程序必须在所有**SetupDiInstallDevice**操作（启动设备除外）之后执行操作，则类安装程序必须：
 
-1.  执行之前调用都必须执行的操作**SetupDiInstallDevice**。
+1.  在调用**SetupDiInstallDevice**之前，请执行必须完成的操作。
 
-2.  设置在 SP_DEVINSTALL_PARAMS DI_DONOTCALLCONFIGMGR 标志。**标志**设备的成员。 如果设置此标志， **SetupDiInstallDevice**执行除启动设备的所有默认安装操作。
+2.  在 SP_DEVINSTALL_PARAMS 中设置 DI_DONOTCALLCONFIGMGR 标志。设备的**标志**成员。 如果设置了此标志，则**SetupDiInstallDevice**将执行除启动设备之外的所有默认安装操作。
 
-3.  调用**SetupDiInstallDevice**能够执行除了启动设备的所有默认安装操作。
+3.  调用**SetupDiInstallDevice**以执行除启动设备之外的所有默认安装操作。
 
-4.  执行后完成所有的默认安装操作，除了启动设备，必须执行的操作。
+4.  执行所有默认安装操作（启动设备除外）完成后必须执行的操作。
 
-5.  调用[ **SetupDiRestartDevices** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdirestartdevices)以启动设备。
+5.  调用[**SetupDiRestartDevices**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdirestartdevices)启动设备。
 
-6.  如果类安装程序已成功完成安装操作，则返回 NO_ERROR 或如果安装操作失败，则返回一个 Win32 错误。
+6.  如果类安装程序成功完成安装操作或在安装操作失败时返回 Win32 错误，则返回 NO_ERROR。
 
 <a name="requirements"></a>要求
 ------------
@@ -140,17 +140,17 @@ DIF_INSTALLDEVICE 请求响应中安装程序通常执行的任何最终的安�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中受支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Setupapi.h （包括 Setupapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Setupapi.log （包括 Setupapi.log）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DIF_INSTALLDEVICEFILES**](dif-installdevicefiles.md)

@@ -1,22 +1,22 @@
 ---
-title: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD macro
-description: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏计算的大小，以字节为单位的长度可变的 ACPI_ENUM_CHILD 结构。
+title: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏
+description: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏计算可变长度 ACPI_ENUM_CHILD 结构的大小（以字节为单位）。
 ms.assetid: 62be7cb5-4b71-4b8e-bad5-807623cd812a
 keywords:
 - ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏 ACPI 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c750fe8d6cbcce2c3e8d0b2cb347c143faefc38b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 365671f8c38d1ca707a4dd58b4196d5c72b8f302
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355900"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824128"
 ---
-# <a name="acpienumchildlengthfromchild-macro"></a>ACPI\_ENUM\_子\_长度\_FROM\_子宏
+# <a name="acpi_enum_child_length_from_child-macro"></a>ACPI\_枚举\_子\_长度\_从\_子宏
 
 
-ACPI\_ENUM\_子\_长度\_FROM\_子宏计算大小 （字节） 长度可变[ **ACPI\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)结构。
+\_子宏的 ACPI\_枚举\_子\_长度\_计算可变长度[**ACPI\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)结构的大小（以字节为单位）。
 
 <a name="syntax"></a>语法
 ------
@@ -27,21 +27,21 @@ void ACPI_ENUM_CHILD_LENGTH_FROM_CHILD(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *子*   
-指向一个结构类型 ACPI\_枚举\_子要为其计算大小 （字节） 结构。
+一个指针，指向用于计算结构的大小（以字节为单位）的 ACPI\_枚举\_子类型的结构。
 
 <a name="return-value"></a>返回值
 ------------
 
-大小 （字节） ACPI\_ENUM\_子结构*子*指向。
+ACPI\_枚举 *\_子结构的子*结构的大小（以字节为单位）。
 
 <a name="remarks"></a>备注
 -------
 
-驱动程序可以使用此宏来计算的大小，以字节为单位的 ACPI\_ENUM\_中的子结构[ **ACPI\_枚举\_子级\_输出\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)结构。
+驱动程序可以使用此宏来计算[**acpi\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)结构的 ACPI\_枚举\_子结构的大小（以字节为单位），\_输出\_缓冲结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,21 +54,21 @@ void ACPI_ENUM_CHILD_LENGTH_FROM_CHILD(
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>桌面</td>
 </tr>
 <tr>
-<td><p>Header</p></td>
-<td>Acpiioct.h （包括 Acpiioct.h）</td>
+<td><p>标头</p></td>
+<td>Acpiioct （包括 Acpiioct）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**ACPI\_ENUM\_CHILD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)
+[**ACPI\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)
 
-[**ACPI\_ENUM\_CHILDREN\_OUTPUT\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)
+[**ACPI\_枚举\_子\_输出\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)
 
  
 

@@ -6,38 +6,38 @@ keywords:
 - KSPROPSETID_Itd3d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37fd00ff53ffde7064dd8f447fbcd281b8a0d9a1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd2cb80d8c307059f79d463c1611bf2691ebbf6c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360487"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830470"
 ---
-# <a name="kspropsetiditd3d"></a>KSPROPSETID\_Itd3d
+# <a name="kspropsetid_itd3d"></a>KSPROPSETID\_Itd3d
 
 
 ## <span id="ddk_kspropsetid_itd3d_ks"></span><span id="DDK_KSPROPSETID_ITD3D_KS"></span>
 
 
-`KSPROPSETID_Itd3d`属性设置用于配置使用 3D 节点的 interaural 时间延迟 (ITD) 算法 ([**KSNODETYPE\_3D\_效果**](ksnodetype-3d-effects.md))。
+`KSPROPSETID_Itd3d` 属性集用于配置3D 节点（[**KSNODETYPE\_3d\_效果**](ksnodetype-3d-effects.md)）使用的 interaural 时间延迟（ITD）算法。
 
-达到侦听器的声音左边缘和右耳朵从特定的声音源延迟按不同的量，具体取决于源的位置。 侦听器可以推断出的声音差异延迟量来源的方向。 ITD 算法可控制的差异的延迟，以模拟在 3D 空间中的特定位置的声音源。
+从特定的声音源到达监听器的左侧和右侧的耳会按不同的数量延迟，具体取决于源的位置。 侦听器可以根据差异延迟量推断出声音源的方向。 ITD 算法控制差异延迟，以模拟3D 空间中特定位置处的声音源。
 
-ITD 算法通过控制的量达到每个 ear 声音 muffled 依据提供额外的声音定位的提示。 高频率声音可以 muffled 来模拟声音源位于该侦听器的头。 对于附近右 ear 声音源，例如，达到左的 ear 的声音是更 muffled 比到达正确清除。 将从一些比例中的声音源的原始信号与低通筛选版本相同的信号相结合，可生成 muffled 的声音。 衰减原始信号时增加从低通贡献筛选版本模拟移动的模拟声音源进一步侦听器的 head 后的效果。
+ITD 算法通过控制声音到达每个耳的量来提供附加的声音定位提示（muffled）。 可以 muffled 高频声音来模拟位于侦听器头后面的声音源。 例如，对于位于右耳附近的声音源，到达左耳的声音比到达正确的耳更 muffled。 Muffled 声音是通过将来自 sound 源的原始信号与相同信号的低传筛选版本组合在一起生成的。 Attenuating 原始信号，同时增加低传递筛选版本中的内容模拟将模拟声音源移到侦听器头后面的效果。
 
-声音源的位置更改时，必须更新以下参数：
+当声音源的位置发生更改时，必须更新以下参数：
 
--   达到每个 ear 声音中的延迟量。
+-   声音到达每个耳的延迟量。
 
--   达到每个 ear 声音 muffled 依据量。
+-   声音到达每个耳的量为 muffled。
 
-点击量和其他虚假的噪声，可能会导致对这些参数进行即时更改。 为了筛选出此类噪音的示例在大量这些参数中的 ITD 算法平滑处理，从而转换。
+对这些参数进行即时更改可能导致单击和其他虚假噪音。 ITD 算法通过多个样本对这些参数进行平滑转换，以便筛选出此类噪音。
 
-有关使用 ITD 算法的参数的详细信息，请参阅[ **KSDS3D\_ITD\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_itd_params)。
+有关 ITD 算法使用的参数的详细信息，请参阅[**KSDS3D\_ITD\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_itd_params)。
 
-设置此属性包含一个属性：
+此属性集只包含一个属性：
 
-[**KSPROPERTY\_ITD3D\_PARAMS**](ksproperty-itd3d-params.md)
+[**KSPROPERTY\_ITD3D\_参数**](ksproperty-itd3d-params.md)
 
  
 

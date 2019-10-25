@@ -1,28 +1,28 @@
 ---
 title: OpenGL 可安装客户端驱动程序的内核模式支持
-description: 提供内核模式下支持 OpenGL 可安装的客户端驱动程序
+description: 为 OpenGL 可安装客户端驱动程序提供内核模式支持
 ms.assetid: 1871594a-ca4d-4a3c-bf12-bbf80fecefe9
 keywords:
 - OpenGL ICD WDK 显示
 - 内核模式 OpenGL ICD WDK 显示
 - ICD WDK 显示
-- 可安装的客户端驱动程序 WDK 显示
+- 可安装客户端驱动程序 WDK 显示
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 4bdcd1d595ed3e9d8c506aaac6a6fb7854593f2b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1e0e6ed3a8e1acf684e7233fbb0a5e38cc14de9f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385054"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829672"
 ---
 # <a name="kernel-mode-support-to-the-opengl-installable-client-driver"></a>OpenGL 可安装客户端驱动程序的内核模式支持
 
 
-OpenGL 可安装的客户端驱动程序 (ICD) 可以获得相同级别的调用作为内核模式服务的支持[Direct3D 用户模式显示驱动程序](initializing-communication-with-the-direct3d-user-mode-display-driver.md)。 但是，而获得对回调函数，例如 Microsoft Direct3D 运行时通过内核模式服务访问权限通过提供不是**pAdapterCallbacks**的成员[ **D3DDDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)结构并**pCallbacks**的成员[ **D3DDDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice)结构，OpenGL ICD 必须加载 Gdi32.dll 和初始化使用[OpenGL 的内核的模式下访问函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)如下面的代码示例中所示。 此代码不实现[Windows 8 中 OpenGL 的增强功能](supporting-opengl-enhancements.md)。
+OpenGL 可安装客户端驱动程序（ICD）可以获得与将内核模式服务作为[Direct3D 用户模式显示驱动程序](initializing-communication-with-the-direct3d-user-mode-display-driver.md)调用的相同级别的支持。 但是，不是通过回调函数（如 Microsoft Direct3D 运行时通过[**D3DDDIARG\_OPENADAPTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)结构的**pAdapterCallbacks**成员提供）和**pCallbacks** [**D3DDDIARG\_CREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice)结构的成员，则 opengl ICD 必须加载 Gdi32 并初始化使用[OpenGL 内核模式访问函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，如下面的示例代码所示。 此代码不实现[OpenGL 中的 Windows 8 增强功能](supporting-opengl-enhancements.md)。
 
-**请注意**  若要获取许可证的 OpenGL ICD 开发工具包，请联系[OpenGL 问题](mailto:opengl@microsoft.com)团队。
+**请注意**，   获取 Opengl ICD 开发工具包的许可证，请联系[opengl 问题](mailto:opengl@microsoft.com)团队。
 
  
 

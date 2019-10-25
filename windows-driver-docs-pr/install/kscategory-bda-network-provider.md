@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f461d35f8d7291fea7b0d3eb739414ffdc0b4b12
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: caf066b2379f540fdad0a17bf5e27f4fc7c9e540
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366719"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828740"
 ---
-# <a name="kscategorybdanetworkprovider"></a>KSCATEGORY_BDA_NETWORK_PROVIDER
+# <a name="kscategory_bda_network_provider"></a>KSCATEGORY_BDA_NETWORK_PROVIDER
 
 
-KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 中的网络提供程序的功能类别[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(BDA)。
+KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)是为[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)（BDA）中的网络提供程序的[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)（KS）功能类别定义的。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/wind
 <a name="remarks"></a>备注
 -------
 
-BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_PROVIDER 向操作系统指示设备支持 BDA 网络提供程序筛选器的实例。
+用于 BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_PROVIDER 的实例，以向操作系统指示设备支持的是 BDA 网络提供程序筛选器。
 
-有关详细信息，请参阅[BDA 筛选器类别 Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
+有关详细信息，请参阅[BDA 筛选器类别 guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,12 +68,12 @@ BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_PROVIDER 向操作系统�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows XP 和更高版本的 Windows 中可用。 在使用 DirectX 9.0 a 安装 Windows 2000 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Windows XP 和更高版本的 Windows 中可用。 在已安装 DirectX 9.0 的 Windows 2000 中提供。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Bdamedia.h （包括 Bdamedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>

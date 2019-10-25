@@ -6,40 +6,40 @@ keywords:
 - KSPROPSETID_Hrtf3d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b800a8583d041620ff1ac2382d46cca00189ad7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 210a1002b65c040c4fd4c53f04454867b6383acd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360481"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830473"
 ---
-# <a name="kspropsetidhrtf3d"></a>KSPROPSETID\_Hrtf3d
+# <a name="kspropsetid_hrtf3d"></a>KSPROPSETID\_Hrtf3d
 
 
 ## <span id="ddk_kspropsetid_hrtf3d_ks"></span><span id="DDK_KSPROPSETID_HRTF3D_KS"></span>
 
 
-`KSPROPSETID_Hrtf3d`属性集用于配置 DirectSound 缓冲区的 3D 头相对传输函数 (HRTF)。 本集包含三维节点的可选属性 ([**KSNODETYPE\_3D\_效果**](ksnodetype-3d-effects.md)) DirectSound pin 实例上。
+`KSPROPSETID_Hrtf3d` 属性集用于配置 DirectSound 缓冲区的3D 头相对传输功能（HRTF）。 此集包含 DirectSound pin 实例上3D 节点（[**KSNODETYPE\_3d\_效果**](ksnodetype-3d-effects.md)）的可选属性。
 
-不是所有 3D 节点支持 HRTF 处理。 客户端可以发送到三维的节点，以确定该节点是否能够执行 HRTF 处理 HRTF 属性的基本支持查询。 支持的 3D 节点`KSPROPSETID_Hrtf3d`属性集必须支持所有这三个属性集中。
+并非所有3D 节点都支持 HRTF 处理。 客户端可以将 HRTF 属性的基本支持查询发送到3D 节点，以确定该节点是否能够执行 HRTF 处理。 支持 `KSPROPSETID_Hrtf3d` 属性集的3D 节点必须支持这三个集中的所有三个属性。
 
-此属性集的定义假定 HRTF 算法实现与无限脉冲响应 (IIR) 过滤器，表示音频源中的单个位置的效果。
+此属性集的定义假定 HRTF 算法是使用无限脉冲响应（IIR）筛选器实现的，这些筛选器表示音频源在单个位置的效果。
 
-数字筛选器通常具有暂时性的初始响应。 当将源从一个位置移动到下一步，过滤器系数将更改和 HRTF 算法跨淡化到新位置处的筛选器中的旧位置筛选器的输出。 **FilterTransientMuteLength**的成员[ **KSDS3D\_HRTF\_INIT\_MSG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_hrtf_init_msg)结构指定的数目为了避免呈现新筛选器的初始暂时性淡延迟跨所依据的示例。 在此期间，输出来自旧筛选器。 **FilterOverlapBufferLength**成员 （相同的结构） 指定要对其设为静音的样本总数并交叉淡入淡出该筛选器输出。
+数字筛选器通常具有初始暂时性响应。 在将源从一个位置移到下一个位置时，筛选器系数会发生变化，并且 HRTF 算法会将输出从旧位置的筛选器交叉淡化到新位置的筛选器。 [**KSDS3D\_HRTF\_INIT\_MSG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_init_msg)结构的**FilterTransientMuteLength**成员指定延迟交叉淡入的样本数，以避免呈现新的筛选器初始暂时性。 在此期间，输出仅来自旧筛选器。 **FilterOverlapBufferLength**成员（相同结构）指定要对其进行静音和交叉淡化筛选器输出的样本总数。
 
-当源向左移动右半面中时，切换筛选器。 此开关可能会导致声音 pop。 **SwapChannels**的成员[ **KSDS3D\_HRTF\_PARAMS\_MSG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg)结构指示要交换的 HRTF 算法输出到其他半面反转的源位置。 **CrossFadeOutput**成员 （相同的结构） 会告知要跨的淡入淡出的输出通道后跨方位转换角度零的算法。 **OutputOverlapBufferLength** KSDS3D 成员\_HRTF\_INIT\_消息指定要对其进行交叉淡入此转换发生时的样本数。
+当源从右半平面向左移动时，筛选器将切换。 此开关可能会导致弹出声音。 [**KSDS3D\_HRTF\_PARAMS\_MSG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg)结构的**SWAPCHANNELS**成员通知 HRTF 算法交换输出，以将源位置反向转换为其他半平面。 **CrossFadeOutput**成员（相同结构）指示算法在跨 azimuth 角度零转换后，将输出通道交叉淡化。 KSDS3D\_HRTF\_INIT\_MSG 的**OutputOverlapBufferLength**成员指定发生此转换时要随其进行交叉淡化的样本的数量。
 
-由于对称性，一半的过滤器系数需要下载到 HRTF 算法时的方位角度为零。 **ZeroAzimuth** KSDS3D 成员\_HRTF\_PARAMS\_消息指示当发生这种情况。
+由于进行了对称，当 azimuth 角为零时，只需将部分筛选系数下载到 HRTF 算法。 KSDS3D\_HRTF\_参数的**ZeroAzimuth**成员\_MSG 指示何时发生此条件。
 
-有关配置 HTRF 处理通过 DirectSound API 的信息，请参阅 Microsoft Windows SDK 文档。
+有关通过 DirectSound API 配置 HTRF 处理的信息，请参阅 Microsoft Windows SDK 文档。
 
-`KSPROPSETID_Hrtf3d`属性集包含以下三个成员：
+`KSPROPSETID_Hrtf3d` 属性集包含以下三个成员：
 
-[**KSPROPERTY\_HRTF3D\_FILTER\_FORMAT**](ksproperty-hrtf3d-filter-format.md)
+[**KSPROPERTY\_HRTF3D\_\_格式的筛选器**](ksproperty-hrtf3d-filter-format.md)
 
-[**KSPROPERTY\_HRTF3D\_初始化**](ksproperty-hrtf3d-initialize.md)
+[**KSPROPERTY\_HRTF3D\_INITIALIZE**](ksproperty-hrtf3d-initialize.md)
 
-[**KSPROPERTY\_HRTF3D\_PARAMS**](ksproperty-hrtf3d-params.md)
+[**KSPROPERTY\_HRTF3D\_参数**](ksproperty-hrtf3d-params.md)
 
  
 

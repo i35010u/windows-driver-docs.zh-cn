@@ -1,22 +1,22 @@
 ---
 title: ACPI_METHOD_SET_ARGUMENT_INTEGER 宏
-description: ACPI_METHOD_SET_ARGUMENT_INTEGER 宏设置单个整数值的 ACPI_METHOD_ARGUMENT 结构的成员。
+description: ACPI_METHOD_SET_ARGUMENT_INTEGER 宏为单个整数值设置 ACPI_METHOD_ARGUMENT 结构的成员。
 ms.assetid: a79f9149-0ffe-483f-a45e-427b05ff0a11
 keywords:
 - ACPI_METHOD_SET_ARGUMENT_INTEGER 宏 ACPI 设备
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 92b2b0cdfd3d390e4121f0610d62d27d07615fb9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7107b1678c4f5da1e27fc8af69ed95b06b22ef76
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355868"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824059"
 ---
-# <a name="acpimethodsetargumentinteger-macro"></a>ACPI\_方法\_设置\_自变量\_整数宏
+# <a name="acpi_method_set_argument_integer-macro"></a>ACPI\_方法\_设置\_参数\_整数宏
 
 
-ACPI\_方法\_设置\_自变量\_整数宏设置的成员[ **ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)单个整数值的结构。
+ACPI\_方法\_SET\_参数\_INTEGER 宏为单个整数值设置[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)结构的成员。
 
 <a name="syntax"></a>语法
 ------
@@ -28,24 +28,24 @@ void ACPI_METHOD_SET_ARGUMENT_INTEGER(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *MethodArgument*   
-指向 ACPI\_方法\_参数结构。
+指向 ACPI\_方法\_参数结构的指针。
 
 *IntData*   
-类型为 ULONG 一个整数值。
+类型 ULONG 的整数值。
 
 <a name="return-value"></a>返回值
 ------------
 
-此宏不会返回一个值。
+此宏不返回值。
 
 <a name="remarks"></a>备注
 -------
 
-驱动程序可以使用此宏设置成员的 ACPI\_方法\_参数结构，用于提供类型为 ULONG 单个整数值。
+驱动程序可以使用此宏设置 ACPI\_方法\_参数结构的成员，该参数结构提供类型为 ULONG 的单个整数值。
 
 <a name="requirements"></a>要求
 ------------
@@ -58,16 +58,16 @@ void ACPI_METHOD_SET_ARGUMENT_INTEGER(
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>桌面</td>
 </tr>
 <tr>
-<td><p>Header</p></td>
-<td>Acpiioct.h （包括 Acpiioct.h）</td>
+<td><p>标头</p></td>
+<td>Acpiioct （包括 Acpiioct）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 
+[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 

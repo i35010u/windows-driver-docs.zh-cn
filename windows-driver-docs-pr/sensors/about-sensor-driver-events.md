@@ -4,31 +4,31 @@ description: 关于传感器驱动程序事件
 ms.assetid: 1e747743-f701-4854-92be-7b55c39fee08
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f30b0c6a0d3f7af4e2945df5f2b4e3c944fc627f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6884756957e2ff96e6a51c85617457710e464ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384512"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824296"
 ---
 # <a name="about-sensor-driver-events"></a>关于传感器驱动程序事件
 
 
-应用程序可以从以下两种方式的传感器接收的信息： 通过请求特定的属性或数据字段同步，或以异步方式，通过由传感器驱动程序引发的事件订阅。
+应用程序可以通过两种方式从传感器接收信息：通过请求特定属性或数据字段同步，或通过订阅传感器驱动程序引发的事件以异步方式接收。
 
-传感器驱动程序可以引发**状态更改事件**，通知的设备中转换到新的运行条件，以及其他种类的事件通知的应用程序。 您的驱动程序应引发你的设备提供了每个传感器的单独事件。
+传感器驱动程序可能会引发**状态更改事件**，这些事件会通知应用程序有关设备中的转换的新操作条件以及其他类型的事件通知。 你的驱动程序应为设备提供的每个传感器引发不同的事件。
 
-**请注意**  不要使用[ **IWDFDevice::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-postevent)引发传感器事件。 传感器平台不会将转发到连接的客户端程序的此类事件。
+**请注意**  请勿使用[**IWDFDevice：:P ostevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-postevent)引发传感器事件。 传感器平台不会将此类事件转发到连接的客户端程序。
 
  
 
 ## <a name="state-change-events"></a>状态更改事件
 
-传感器驱动程序通过调用传感器类扩展引发状态更改事件[ **ISensorClassExtension::PostStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)方法。 例如，已完成初始化传感器驱动程序会调用此方法用信号通知的新[ **SensorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)名为传感器值\_状态\_准备就绪。
+传感器驱动程序通过调用传感器类扩展的[**ISensorClassExtension：:P oststatechange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)方法来引发状态更改事件。 例如，已完成传感器初始化的驱动程序将调用此方法，以向名为传感器\_状态的新[**SensorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)值发送\_READY。
 
 ## <a name="event-constants"></a>事件常量
 
-传感器平台定义以下常量的驱动程序的事件。
+传感器平台为驱动程序事件定义以下常量。
 
 **传感器事件类型**
 
@@ -37,45 +37,45 @@ ms.locfileid: "67384512"
 | 名称 | 描述 |
 | --- | --- |
 | SENSOR_EVENT_DATA_UPDATED | 指示新数据可用。
-| SENSOR_EVENT_PROPERTY_CHANGED| 指示属性值更改。|
-| SENSOR_EVENT_STATE_CHANGED| 例如，到 SENSOR_STATE_READY SENSOR_STATE_INITIALIZING 从指示操作状态的更改。|
+| SENSOR_EVENT_PROPERTY_CHANGED| 指示属性值已更改。|
+| SENSOR_EVENT_STATE_CHANGED| 指示操作状态的更改，例如，从 SENSOR_STATE_INITIALIZING 到 SENSOR_STATE_READY。|
 
 
 **传感器事件 PROPERTYKEYs**
 
-传感器平台定义了以下**PROPERTYKEYs**来标识传感器事件参数。
+传感器平台定义了以下**PROPERTYKEYs**来识别传感器事件的参数。
 
 | 名称 | 描述 |
 | --- | --- |
-| SENSOR_EVENT_PARAMETER_EVENT_ID| 指示 IPortableDeviceValues 中的 GUID 值为事件类型 ID，如 SENSOR_EVENT_DATA_UPDATED。|
-| SENSOR_EVENT_PARAMETER_STATE| 指示 IPortableDeviceValues 中的无符号的整数值是传感器状态，例如 SENSOR_STATE_READY。<br>**请注意**以引发状态更改事件，调用[ISensorClass Extension::PostStateChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)。 无需显式指定 SENSOR_EVENT_PARAMETER_STATE 来引发事件。|
+| SENSOR_EVENT_PARAMETER_EVENT_ID| 指示 IPortableDeviceValues 中的 GUID 值是事件类型 ID，如 SENSOR_EVENT_DATA_UPDATED。|
+| SENSOR_EVENT_PARAMETER_STATE| 指示 IPortableDeviceValues 中的无符号整数值为传感器状态，如 SENSOR_STATE_READY。<br>**注意**若要引发状态更改事件，请调用[ISensorClass 扩展：:P oststatechange](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)。 无需显式指定 SENSOR_EVENT_PARAMETER_STATE 来引发事件。|
 
 ## <a name="other-events"></a>其他事件
 
-传感器驱动程序通过调用传感器类扩展引发的事件的所有其他类型[ **ISensorClassExtension::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)方法。 此方法提供了一种泛型可扩展的方式来引发传感器事件不相关的操作状态。 每次调用**得到**包含一个指向[IPortableDeviceValuesCollection](https://go.microsoft.com/fwlink/p/?linkid=131487)。 每个[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)对象在此集合中的包含**GUID**传感器值\_事件\_参数\_事件\_ID属性，用于标识事件类型，并包含事件数据的可选数据字段值。 例如，具有新的城市数据的 GPS 驱动程序将使用传感器\_事件\_数据\_更新事件 ID，并提供一个字符串值，传感器\_数据\_类型\_CITY 属性键。
+传感器驱动程序通过调用传感器类扩展的[**ISensorClassExtension：:P ostevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)方法来引发所有其他类型的事件。 此方法提供了一种通用的可扩展方法，用于引发与操作状态无关的传感器事件。 对**PostEvent**的每次调用都包含指向[IPortableDeviceValuesCollection](https://go.microsoft.com/fwlink/p/?linkid=131487)的指针。 此集合中的每个[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)对象都包含传感器\_事件\_参数的**GUID**值\_事件\_ID 属性，该属性标识事件类型和可选数据字段值，这些值包含事件数据。 例如，具有新城市数据的 GPS 驱动程序将使用传感器\_事件\_数据\_更新事件 ID，并为传感器\_数据\_类型\_CITY 属性键提供一个字符串值。
 
-您的驱动程序会将事件发布后，传感器类扩展将事件和任何关联的数据转发到传感器 API。
+驱动程序发布事件后，传感器类扩展会将事件和任何关联的数据转发到传感器 API。
 
-您可以在名为 Sensors.h 的文件中找到平台定义的常量的定义。 有关平台定义传感器常量的详细信息，请参阅[常量](about-sensor-constants.md)。
+可以在名为 "传感器" 的文件中找到平台定义的常量的定义。 有关平台定义的传感器常量的详细信息，请参阅[常量](about-sensor-constants.md)。
 
 ## <a name="managing-sensor-driver-events"></a>管理传感器驱动程序事件
 
-您的驱动程序接受事件的请求之前，它应创建单独的线程来生成和发布事件。 通过使用一个线程，可以帮助防止频繁事件过程中阻止同步过程，例如数据请求回调。 引发数据更新事件的线程类的示例，请参阅[Raising Data-Updated 事件](raising-events.md)。
+在您的驱动程序接受事件请求之前，它应创建一个单独的线程来生成和发布事件。 通过使用线程，可以帮助防止经常发生的事件过程阻止同步过程，例如数据请求回调。 有关引发数据更新事件的 thread 类的示例，请参阅[引发数据更新事件](raising-events.md)。
 
-仅当至少一个客户端应用程序已请求事件通知，您的传感器应引发事件。 传感器类扩展在应用程序请求事件通知，包括状态更改事件时通知该驱动程序通过[ **ISensorDriver::OnClientSubscribeToEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)。 此方法提供[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)标识应用程序和一个字符串，标识应用程序正在为其请求事件通知的传感器的指针。 可以使用 IWDFFile 指针作为唯一标识符，以帮助跟踪已订阅事件的应用程序。 尽管您的传感器无法引发事件发送到特定的客户端，您可能需要跟踪的哪些应用程序集的特定值的属性，例如传感器\_属性\_当前\_报表\_时间间隔或传感器\_属性\_更改\_敏感度。
+仅当至少一个客户端应用程序请求了事件通知时，传感器才应引发事件。 当应用程序请求事件通知（包括状态更改事件）时，传感器类扩展会通过[**ISensorDriver：： OnClientSubscribeToEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-onclientsubscribetoevents)通知驱动程序。 此方法提供一个[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)指针，该指针标识应用程序和一个字符串，该字符串标识应用程序为其请求事件通知的传感器。 你可以使用 IWDFFile 指针作为唯一标识符，以帮助跟踪已订阅事件的应用程序。 尽管你的传感器无法向特定客户端发出事件，但你可能需要跟踪哪个应用程序设置了哪些特定属性的值，如传感器\_属性\_当前\_报表\_间隔或传感器\_属性\_更改\_敏感度。
 
-例如，如果多个客户端应用程序将不同的值设置为传感器\_属性\_当前\_报表\_间隔，可应用到具有的最短间隔设置的事件频率的规则已请求。 但是，您的传感器可能需要调整每个时间间隔的新客户端订阅的事件或现有的客户端取消订阅。 有关报表的时间间隔，包括代码示例，请参阅[筛选数据](filtering-data.md)。
+例如，如果多个客户端应用程序为传感器\_属性设置不同的值\_当前\_报表\_时间间隔，则可以应用一条规则，将事件频率设置为请求的最短时间间隔。 但是，您的传感器可能需要在每次新客户端订阅事件或取消订阅现有客户端时调整时间间隔。 有关报表间隔的详细信息（包括代码示例），请参阅[筛选数据](filtering-data.md)。
 
 ### <a name="sensor-events-and-data-privacy"></a>传感器事件和数据隐私
 
-等其他数据请求，为事件通知的请求都通过使用传感器类扩展的安全。 类扩展允许仅为用户请求此数据的位置数据。
+与其他数据请求类似，事件通知请求通过使用传感器类扩展来保证安全。 类扩展只允许请求此数据的用户的位置数据。
 
 >[!CAUTION]
-> 请确保使用传感器类扩展来处理所有 I/O 请求的传感器。 通过执行此操作，您不太可能，以显示用户的私人信息。
+> 请确保使用传感器类扩展来处理传感器的所有 i/o 请求。 这样做将不太可能显示用户的隐私信息。
 
  
 
-有关数据隐私的详细信息，请参阅[隐私和安全的传感器和位置平台](https://docs.microsoft.com/windows-hardware/drivers/gnss/privacy-and-security-in-the-sensor-and-location-platform)
+有关数据隐私的详细信息，请参阅[传感器和位置平台中的隐私和安全](https://docs.microsoft.com/windows-hardware/drivers/gnss/privacy-and-security-in-the-sensor-and-location-platform)
 
 ## <a name="related-topics"></a>相关主题
 [**传感器属性**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-properties)

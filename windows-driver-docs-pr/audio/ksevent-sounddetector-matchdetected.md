@@ -1,6 +1,6 @@
 ---
 title: KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED
-description: KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED 事件生成的音频驱动程序以通知操作系统，每当检测到匹配项。
+description: KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED 事件由音频驱动程序生成，每当检测到匹配项时，它都会通知操作系统。
 ms.assetid: 595EBC90-3903-495C-9811-A47B7BC4D98D
 keywords:
 - KSEVENT_SOUNDDETECTOR_MATCHDETECTED 音频设备
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b37ddf2754deaabc87d516aa53e7928b2acd0af1
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 9952f5a13e55eb9049c8e1254ad389b46446bf0f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391520"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833105"
 ---
-# <a name="kseventsounddetectormatchdetected"></a>KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED
+# <a name="ksevent_sounddetector_matchdetected"></a>KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED
 
 
-**KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED**音频驱动程序以通知操作系统，每当检测到匹配项时生成事件。
+**KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED**事件由音频驱动程序生成，每当检测到匹配项时，它都会通知操作系统。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ ms.locfileid: "67391520"
 <tr class="odd">
 <td align="left"><p>Filter</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -55,7 +55,7 @@ ms.locfileid: "67391520"
 <a name="remarks"></a>备注
 -------
 
-触发此事件时，OS 会读取[ **KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT** ](ksproperty-sounddetector-matchresult.md)属性。 已检测到匹配项后，音频驱动程序必须清除声音检测程序。 操作系统准备好再次等待后重装设备。
+触发此事件时，OS 会读取[**KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](ksproperty-sounddetector-matchresult.md)属性。 检测到匹配项后，音频驱动程序必须 disarm 声音检测程序。 操作系统一旦准备好等待，rearms 设备。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,23 +68,23 @@ ms.locfileid: "67391520"
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 10</p></td>
+<td align="left"><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
 <td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)
+[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
 
 [**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
 

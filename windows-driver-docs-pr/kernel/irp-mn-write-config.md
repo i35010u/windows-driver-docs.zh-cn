@@ -1,37 +1,37 @@
 ---
 title: IRP_MN_WRITE_CONFIG
-description: 对于具有配置空间总线总线驱动程序必须处理其子设备 (子 PDOs) 的此请求。 函数和筛选器驱动程序不处理此请求。
+description: 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求（子 PDOs）。 函数和筛选器驱动程序不处理此请求。
 ms.date: 08/12/2017
 ms.assetid: d57c30b8-83bd-41c9-906d-b8c95f8ca54e
 keywords:
 - IRP_MN_WRITE_CONFIG 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: b12c949ad7a4ef2f3c56d242645d1aefb77d7176
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 59a9e2892f134f883f40e720fff41e34de574f32
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376454"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827925"
 ---
-# <a name="irpmnwriteconfig"></a>IRP\_MN\_WRITE\_CONFIG
+# <a name="irp_mn_write_config"></a>IRP\_MN\_写入\_配置
 
 
-对于具有配置空间总线总线驱动程序必须处理其子设备 (子 PDOs) 的此请求。 函数和筛选器驱动程序不处理此请求。
+具有配置空间的总线的总线驱动程序必须为其子设备处理此请求（子 PDOs）。 函数和筛选器驱动程序不处理此请求。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md) When Sent
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
 ---------
 
-驱动程序或其他系统组件发送此 IRP 将数据写入到设备的父总线的配置空间。
+驱动程序或其他系统组件发送此 IRP，以将数据写入设备的父总线的配置空间。
 
-驱动程序或其他系统组件将此 IRP 发送在 IRQL&lt;调度\_级别在任意线程上下文中。
+驱动程序或其他系统组件以 IRQL 发送此 IRP &lt; 调度任意线程上下文中的\_级别。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.ReadWriteConfig**是一种结构包含以下信息：
+**ReadWriteConfig**是包含以下信息的结构：
 
 ```cpp
 ULONG WhichSpace;
@@ -40,62 +40,62 @@ ULONG Offset;
 ULONG Length
 ```
 
-结构的成员可以有不同的解释不同总线驱动程序，但成员通常定义，如下所示：
+不同的总线驱动程序可以采用不同的方式解释结构成员，但成员通常定义如下：
 
 <a href="" id="whichspace"></a>**WhichSpace**  
-指定的配置空间。 有关可以为指定的值信息**WhichSpace**，请参阅[ **IRP\_MN\_读取\_配置**](irp-mn-read-config.md)。
+指定配置空间。 有关可以为**WhichSpace**指定的值的信息，请参阅[**IRP\_MN\_读取\_CONFIG**](irp-mn-read-config.md)。
 
-<a href="" id="buffer"></a>**缓冲区**  
+<a href="" id="buffer"></a>**宽限**  
 指向包含要写入的数据的缓冲区。 缓冲区的格式是特定于总线的。
 
-<a href="" id="offset"></a>**Offset**  
-到配置空间指定偏移量。
+<a href="" id="offset"></a>**抵销**  
+指定配置空间的偏移量。
 
-<a href="" id="length"></a>**长度**  
+<a href="" id="length"></a>**长短**  
 指定要写入的字节数。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-返回在 I/O 状态块中。
+在 i/o 状态块中返回。
 
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-总线驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态，例如状态\_无效\_参数\_*n*，状态\_否\_SUCH\_设备或状态\_设备\_不\_准备就绪。
+总线驱动程序将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS 或适当的错误状态（如状态\_无效的\_参数\_*n*，状态\_\_\_的设备或状态\_设备\_未\_就绪。
 
-如果成功，总线驱动程序设置**Irp-&gt;IoStatus.Information**到写入的字节数。
+成功时，总线驱动程序会将**Irp&gt;IoStatus**设置为写入的字节数。
 
-如果总线驱动程序不能立即完成此请求，它可以将挂起的 IRP 标记，则返回状态\_PENDING，并在以后完成 IRP。
+如果总线驱动程序无法立即完成此请求，它可以将 IRP 标记为 "挂起"，返回状态\_"挂起"，并在以后完成 IRP。
 
 <a name="operation"></a>操作
 ---------
 
-总线驱动程序处理其子设备 (子 PDOs) 此 IRP。
+总线驱动程序为其子设备处理此 IRP （子 PDOs）。
 
-函数和筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus.Status**并且未设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
+函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，并且不会更改**Irp&gt;IoStatus** ，并且不会设置[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程。
 
-请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，了解用于处理[即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
-**发送此 IRP**
+**正在发送此 IRP**
 
-通常情况下，功能驱动程序将此 IRP 发送到设备堆栈向其附加并由父总线驱动程序处理 IRP。
+通常，函数驱动程序将此 IRP 发送到它所附加到的设备堆栈，并且 IRP 由父总线驱动程序进行处理。
 
-请参阅[处理 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)有关发送 Irp 信息。 专门针对此 IRP 可以采用以下步骤：
+有关发送 Irp 的信息，请参阅[处理 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps) 。 以下步骤专门适用于此 IRP：
 
--   分配来自分页池的缓冲区并将其初始化与要写入的数据。
+-   从分页池分配一个缓冲区，并使用要写入的数据对其进行初始化。
 
--   IRP 的下一步 I/O 堆栈位置中设置的值： 设置**MajorFunction**到[ **IRP\_MJ\_PNP**](irp-mj-pnp.md)，将**MinorFunction**到**IRP\_MN\_编写\_CONFIG**，并设置相应的值**Parameters.ReadWriteConfig**。
+-   在 IRP 的下一个 i/o 堆栈位置设置值：将**MajorFunction**设置为[**irp\_MJ\_PNP**](irp-mj-pnp.md)，将**MINORFUNCTION**设置为**irp\_MN\_写入\_配置**，并在**其中设置适当的值ReadWriteConfig**。
 
--   初始化**IoStatus.Status**于状态\_不\_受支持。
+-   将**IoStatus**初始化\_不\_支持的状态。
 
--   在不再需要时，解除分配 IRP 和缓冲区。
+-   如果不再需要 IRP 和缓冲区，请将其解除分配。
 
-驱动程序必须将此 IRP 发送从 IRQL&lt;调度\_级别。
+驱动程序必须从 IRQL 发送此 IRP &lt; 调度\_级别。
 
-驱动程序可以访问在调度的总线配置空间\_级别通过总线接口例程中，如果父总线驱动程序导出此类接口。 若要获取总线接口，驱动程序发送[ **IRP\_MN\_查询\_接口**](irp-mn-query-interface.md)请求到其父总线驱动程序。 然后，驱动程序调用在界面中返回的相应例程。
+如果父总线驱动程序导出此类接口，则驱动程序可以通过总线接口例程在调度\_级别访问总线的配置空间。 为了获取总线接口，驱动程序会将[**IRP\_MN\_QUERY\_interface**](irp-mn-query-interface.md)请求发送到其父总线驱动程序。 然后，驱动程序调用在接口中返回的相应例程。
 
-例如，若要配置空间编写从调度\_驱动程序可以调用的级别**IRP\_MN\_查询\_接口**若要获取的驱动程序初始化期间[**总线\_界面\_标准**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)从父总线驱动程序的接口。 该驱动程序会将查询 IRP 发送从 IRQL 被动\_级别。 更高版本，从代码在 IRQL 调度\_级别，该驱动程序调用相应的例程返回在界面中，如**Interface.SetBusData**例程。
+例如，若要从调度\_级别写入配置空间，驱动程序可以在驱动程序初始化期间调用**IRP\_MN\_查询\_接口** [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard) ，以便从父总线驱动程序。 驱动程序将查询 IRP 从 IRQL 被动\_级别发送。 稍后，从 IRQL 的代码调度\_级别，驱动程序将调用在接口中返回的相应例程，如**SetBusData**例程。
 
 <a name="requirements"></a>要求
 ------------
@@ -107,18 +107,18 @@ ULONG Length
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IRP\_MN\_查询\_接口**](irp-mn-query-interface.md)
+[**IRP\_MN\_QUERY\_接口**](irp-mn-query-interface.md)
 
-[**IRP\_MN\_READ\_CONFIG**](irp-mn-read-config.md)
+[**IRP\_MN\_读取\_配置**](irp-mn-read-config.md)
 
  
 

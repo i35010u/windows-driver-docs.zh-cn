@@ -1,9 +1,9 @@
 ---
-title: ndiskd.help
-description: Ndiskd.help 命令显示其简要描述为每个可用 ndiskd 命令的列表。
+title: ndiskd。帮助
+description: Ndiskd 命令显示可用 ndiskd 命令的列表，其中包含每个命令的简短说明。
 ms.assetid: ba9a1364-173b-4258-9894-09271e47786e
 keywords:
-- ndiskd.help Windows 调试
+- ndiskd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f76408e46839fb5d59740adf6bdd0d7504cac470
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8cfee043624b067ce4094e7d353e1e2f5ed696d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364289"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826659"
 ---
 # <a name="ndiskdhelp"></a>!ndiskd.help
 
 
-**！ Ndiskd.help**命令将显示一系列可用 ！ ndiskd 命令与每个的简短说明。
+**！ Ndiskd**命令显示可用！ ndiskd 命令的列表，其中包含每个命令的简短说明。
 
 ```console
 !ndiskd.help 
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-下面的示例演示使用的帮助命令的列表 **！ ndiskd.help**。
+下面的示例使用 **！ ndiskd**显示帮助命令的列表。
 
 ```console
 3: kd> !ndiskd.help
@@ -57,10 +57,10 @@ NDIS KD EXTENSIONS
     View examples & tutorials online
 ```
 
-通过使用 **！ ndiskd.help-所有**，您将获取更详细的列表，如下面的示例中所示。
+使用 **！ ndiskd**，将获取更详细的列表，如以下示例中所示。
 
 **注意**  
-在此示例中的底部列出了一些备用的命令。 使用过它们之前，这些命令都适用于 NDIS 驱动程序开发人员，但我们建议改为使用的主要命令。
+下面的示例中列出了一些替代命令。 这些命令可用于前面曾使用过这些命令的 NDIS 驱动程序开发人员，但我们建议改为使用主命令。
 
 
 
@@ -124,16 +124,16 @@ NDIS KD EXTENSIONS
     nbpools            Same as !ndiskd.nbpool
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
 
 

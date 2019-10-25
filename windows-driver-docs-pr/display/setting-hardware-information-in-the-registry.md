@@ -3,18 +3,18 @@ title: 在注册表中设置硬件信息
 description: 在注册表中设置硬件信息
 ms.assetid: 82f5d399-58c3-4bed-a3f2-3501f21fa3e8
 keywords:
-- 硬件 WDK 微型端口
-- 注册表 WDK 微型端口
+- 硬件 WDK 视频微型端口
+- 注册表 WDK 视频微型端口
 - VideoPortSetRegistryParameters
 - VideoPortGetRegistryParameters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c454e4972e1174bfe80175bb562e20ae7bf60f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e584229255493126e6e6489493dd838a6fab246a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365587"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829502"
 ---
 # <a name="setting-hardware-information-in-the-registry"></a>在注册表中设置硬件信息
 
@@ -22,13 +22,13 @@ ms.locfileid: "67365587"
 ## <span id="ddk_setting_hardware_information_in_the_registry_gg"></span><span id="DDK_SETTING_HARDWARE_INFORMATION_IN_THE_REGISTRY_GG"></span>
 
 
-[*HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)可以调用[ **VideoPortGetRegistryParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetregistryparameters)并[ **VideoPortSetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsetregistryparameters)函数来获取和设置在注册表中的配置信息。 例如， *HwVidFindAdapter*可能会在调用**VideoPortSetRegistryParameters**注册表中的下一次启动设置非易失性的配置信息。 它可能会调用**VideoPortGetRegistryParameters**若要获取特定于适配器的、 总线相对配置参数由安装程序写入到注册表。
+[*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_find_adapter)可以调用[**VideoPortGetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportgetregistryparameters)和[**VideoPortSetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportsetregistryparameters)函数来获取和设置注册表中的配置信息。 例如， *HwVidFindAdapter*可能会调用**VideoPortSetRegistryParameters** ，为下一次启动设置注册表中的非易失性配置信息。 它可以调用**VideoPortGetRegistryParameters**来获取由安装程序写入到注册表中的特定于适配器的总线相关配置参数。
 
-建议微型端口驱动程序来显示有用的信息，向用户和帮助调试在注册表中设置特定硬件的信息。 芯片类型、 DAC 类型、 内存大小 （的适配器） 和一个字符串来标识该适配器，可以设置微型端口驱动程序。 通过控制面板中显示程序会显示此信息。
+建议微型端口驱动程序将注册表中的某些硬件信息设置为向用户显示有用信息，并帮助进行调试。 微型端口驱动程序可以设置芯片类型、DAC 类型、内存大小（对于适配器）和标识适配器的字符串。 此信息由控制面板中的 "显示" 程序显示。
 
-该驱动程序通过调用来设置此信息**VideoPortSetRegistryParameters**。 通常情况下，驱动程序，可以在调用其*HwVidFindAdapter*例程。
+驱动程序通过调用**VideoPortSetRegistryParameters**来设置此信息。 通常，驱动程序会在其*HwVidFindAdapter*例程中进行调用。
 
-下表描述的信息，该驱动程序可以注册并提供详细信息*ValueName*并*ValueData*参数的**VideoPortSetRegistryParameters**:
+下表描述了驱动程序可以注册的信息，并提供了**VideoPortSetRegistryParameters**的*ValueName*和*ValueData*参数的详细信息：
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "67365587"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">条目的信息</th>
+<th align="left">输入信息</th>
 <th align="left"><em>ValueName</em></th>
 <th align="left"><em>ValueData</em></th>
 </tr>
@@ -47,27 +47,27 @@ ms.locfileid: "67365587"
 <tr class="odd">
 <td align="left"><p>芯片类型</p></td>
 <td align="left"><p>HardwareInformation.ChipType</p></td>
-<td align="left"><p>包含的芯片名称 null 结尾的字符串。</p></td>
+<td align="left"><p>包含芯片名称的以 Null 结尾的字符串。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DAC 类型</p></td>
-<td align="left"><p>HardwareInformation.DacType</p></td>
-<td align="left"><p>Null 结尾的字符串包含 DAC 名称或 id。</p></td>
+<td align="left"><p>HardwareInformation. DacType</p></td>
+<td align="left"><p>以 Null 结尾的字符串，其中包含 DAC 名称或 ID。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>内存大小</p></td>
-<td align="left"><p>HardwareInformation.MemorySize</p></td>
-<td align="left"><p>Ulong 值，以 mb 为单位，包含在适配器上的视频内存量。</p></td>
+<td align="left"><p>HardwareInformation. MemorySize</p></td>
+<td align="left"><p>ULONG，其中包含适配器上的视频内存量（以 MB 为单位）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>适配器 ID</p></td>
 <td align="left"><p>HardwareInformation.AdapterString</p></td>
-<td align="left"><p>包含适配器的名称的以 null 结尾的字符串。</p></td>
+<td align="left"><p>以 Null 结尾的字符串，其中包含适配器的名称。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>BIOS</p></td>
 <td align="left"><p>HardwareInformation.BiosString</p></td>
-<td align="left"><p>包含有关 BIOS 的信息的以 null 结尾的字符串。</p></td>
+<td align="left"><p>以 Null 结尾的字符串，其中包含有关 BIOS 的信息。</p></td>
 </tr>
 </tbody>
 </table>

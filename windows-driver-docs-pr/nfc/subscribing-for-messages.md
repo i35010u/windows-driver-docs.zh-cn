@@ -5,38 +5,38 @@ ms.assetid: CF0D5CE0-A0E0-47D4-88E6-FBE186F78626
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3bfd0226ca87a2b36620193bcec8cbe671bf29b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17ee88d22eda73fab0228dabe904428726714edc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379382"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827353"
 ---
 # <a name="subscribing-for-messages"></a>订阅消息
 
 
-客户端可以订阅按类型对消息。 时收到消息，NFP 提供程序将仅向具有精确类型的订阅的客户端发出消息。 接收客户端将无需了解何时或何处已发布消息，除非此类信息放在消息由发布者。 没有任何用于在模型内的还确定其他哪些客户端接收消息。
+客户端可以按类型订阅消息。 接收到消息时，NFP 提供程序将仅向具有此确切类型的订阅的客户端发出消息。 接收方客户端将不知道消息的发布位置或时间，除非发布服务器将此类信息置于消息中。 模型中没有任何方法来确定还会向其他客户端发送消息。
 
-订阅具有与已发布的消息相同的生命周期模型。
+订阅与已发布消息的生存期模型相同。
 
-当客户端取消订阅的消息时它应不再颁发与取消订阅的订阅类型匹配的消息。
+当客户端取消订阅消息时，将不再发出与取消订阅订阅类型匹配的消息。
 
-## <a name="subscribed-message-arrival"></a>已订阅的消息到达时
+## <a name="subscribed-message-arrival"></a>已订阅消息到达
 
 
-当 NFP 提供程序收到一条消息时，它会将它传送到已订阅的任何客户端。 仅当订阅类型匹配的已发布的消息时，消息将传送到客户端。
+当 NFP 提供程序收到消息时，它会将它传送到任何已订阅的客户端。 仅当订阅类型与发布的消息匹配时，才将消息传递给客户端。
 
-没有任何排序或在模型中定义的优先级。 它是可以接受的提供程序发出并行情况下，订阅的消息，但这不是必需。
+模型中没有定义顺序或优先级。 提供程序可以并行发出订阅的消息，但这不是必需的。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

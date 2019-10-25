@@ -6,16 +6,16 @@ keywords:
 - ACPI 设备 WDK，设备接口
 - 供应商定义的设备接口 WDK ACPI
 - 设备接口 WDK ACPI
-- 功能的驱动程序 WDK ACPI，供应商定义的设备接口
-- WDM 函数驱动程序 WDK ACPI，供应商定义的设备接口
+- 函数驱动程序 WDK ACPI，供应商定义的设备接口
+- WDM 函数驱动程序 WDK ACPI、供应商定义的设备接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24d4b33ce8796b54295f69c5c1e85e7ae66faf65
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5439b53fba5dce1cd0af961c2c1a9e81fbc66750
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355816"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831472"
 ---
 # <a name="providing-a-vendor-defined-acpi-device-interface"></a>提供供应商定义的 ACPI 设备接口
 
@@ -23,11 +23,11 @@ ms.locfileid: "67355816"
 
 
 
-供应商可以提供一个可选*设备接口*的自定义 Ioctl 运行 ACPI 设备的功能的设备对象和支持 (*FDO*)。
+供应商可以提供可选的*设备接口*，并支持自定义的 IOCTLs，以操作 ACPI 设备的功能设备对象（*FDO*）。
 
-功能驱动程序通常会调用[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)中其[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程，以注册设备接口。 驱动程序调用[ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)插启动 FDO 后启用该接口。 如果通过插移除某个设备驱动程序应禁用接口。
+函数驱动程序通常会在其[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程中调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)来注册设备接口。 该驱动程序将调用[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate) ，以便在即插即用启动 FDO 后启用该接口。 如果即插即用删除了设备，则驱动程序应禁用接口。
 
-设备接口类 GUID 是供应商定义的。
+设备接口类 GUID 是供应商定义的 GUID。
 
  
 

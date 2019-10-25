@@ -7,12 +7,12 @@ keywords:
 - Dpc WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0461fc51f4cc7498a87c8ae85567ac61f2d3e383
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a71650b6943d36e77daaf19244f086eb0fd882f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369767"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828216"
 ---
 # <a name="introduction-to-dpcs"></a>DPC 简介
 
@@ -20,19 +20,19 @@ ms.locfileid: "67369767"
 
 
 
-通常具有 ISR 任何驱动程序还具有至少一个[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)或[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)的完成处理例程中断驱动 I/O 操作。 典型的最低级别驱动*DpcForIsr*或*CustomDpc*例程执行以下操作：
+具有 ISR 的任何驱动程序通常还至少具有一个[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或[*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程来完成对中断驱动的 i/o 操作的处理。 典型的最低级别驱动程序的*DpcForIsr*或*CustomDpc*例程会执行以下操作：
 
--   处理 ISR 开始处理的 I/O 操作完成。
+-   处理 ISR 开始处理的 i/o 操作。
 
--   通过下一步 IRP 取消排队，以便该驱动程序可以开始处理它。
+-   取消排队下一个 IRP，以便驱动程序可以开始处理。
 
--   如有可能完成当前的 IRP。
+-   完成当前 IRP （如果可能）。
 
-有时无法完成当前的 IRP，因为多个数据传输都是必需的或者检测到可恢复的错误。 在这些情况下， *DpcForIsr*或*CustomDpc*例程通常 reprograms 设备的另一个传输或最后一次操作的重试。
+有时无法完成当前 IRP，因为需要几个数据传输，或者检测到可恢复的错误。 在这些情况下， *DpcForIsr*或*CustomDpc*例程通常会将设备 reprograms 为另一次传输或重试上一操作。
 
-一个*DpcForIsr*或*CustomDpc* IRQL 调度在任意 DPC 上下文中调用例程\_级别。 运行在调度\_级别限制集的支持例程*DpcForIsr*或*CustomDpc*例程可以调用。 请参阅[管理硬件优先级](managing-hardware-priorities.md)有关详细信息。
+在*DpcForIsr*或*CustomDpc*例程的任意 DPC 上下文中都调用了 IRQL 调度\_级别。 在调度\_级别运行会限制*DpcForIsr*或*CustomDpc*例程可以调用的一组支持例程。 有关详细信息，请参阅[管理硬件优先级](managing-hardware-priorities.md)。
 
-DPC 对象和 dpc 进行标记还可以使用计时器。 有关详细信息，请参阅[计时器对象和 dpc 进行标记](timer-objects-and-dpcs.md)。
+DPC 对象和 Dpc 还可与计时器一起使用。 有关详细信息，请参阅[Timer 对象和 dpc](timer-objects-and-dpcs.md)。
 
  
 

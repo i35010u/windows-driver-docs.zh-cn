@@ -1,58 +1,58 @@
 ---
-title: 在中间的驱动程序中处理 PnP 和电源管理事件
+title: 处理中间驱动程序中的 PnP 和电源管理事件
 description: 初始化中间驱动程序以处理 PnP 和电源管理事件
 ms.assetid: 7c9f10f1-1094-4b43-990b-fc3b3fee5ed1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 688ca0538582b0acaf1a413850d02d90bf021010
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d60ef6b907985ddd73028cebd26973e33b51bb7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381272"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824443"
 ---
 # <a name="initializing-intermediate-drivers-to-handle-pnp-and-power-management-events"></a>初始化中间驱动程序以处理 PnP 和电源管理事件
 
 
-若要处理插即用 (PnP) 和电源管理事件，中间的 NDIS 驱动程序必须执行以下操作：
+若要处理即插即用（PnP）和电源管理事件，NDIS 中间驱动程序必须执行以下操作：
 
--   当 NDIS 调用中间驱动程序[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)函数， *BindParameters*参数指向[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构，其中包含基础的微型端口适配器的功能。 以下成员之一中报告的电源管理功能：
+-   当 NDIS 调用中间驱动程序的[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时， *BindParameters*参数指向[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构，该结构包含基础微型端口的功能适配器. 可在以下任一成员中报告电源管理功能：
 
     -   **PowerManagementCapabilities**
 
-        NDIS 6.0 和 NDIS 6.1 中间驱动程序，此成员包含的电源管理功能内 NDIS\_PNP\_功能结构。 有关此结构的详细信息，请参阅[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)。
+        对于 NDIS 6.0 和 NDIS 6.1 中间驱动程序，此成员包含 NDIS\_PNP\_功能结构中的电源管理功能。 有关此结构的详细信息，请参阅[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)。
 
-        **请注意**有关 NDIS 6.20 和更高版本中间驱动程序**布尔**成员设置为**NULL** 中报告的电源管理功能和**PowerManagementCapabilitiesEx**成员。
+        **注意** 对于 NDIS 6.20 和更高版本中间驱动程序，将**PowerManagementCapabilities**成员设置为**NULL** ，并在**PowerManagementCapabilitiesEx**成员中报告电源管理功能。
 
 
 
     -   **PowerManagementCapabilitiesEx**
 
-        有关 NDIS 6.20 和更高版本的中间驱动程序，此成员包含中的电源管理功能[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构。
+        对于 NDIS 6.20 和更高版本中间驱动程序，此成员包含[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构中的电源管理功能。
 
-        **请注意**为 NDIS 6.0 和 NDIS 6.1 中间驱动程序， **PowerManagementCapabilitiesEx**成员设置为**NULL** 中报告的电源管理功能和**布尔**成员。
-
-
-
-
-**请注意**基础的微型端口适配器不支持电源管理事件，如果**布尔**并**PowerManagementCapabilitiesEx**成员设置为**NULL**。
+        **注意** 对于 NDIS 6.0 和 NDIS 6.1 中间驱动程序， **PowerManagementCapabilitiesEx**成员设置为**NULL** ，并且在**PowerManagementCapabilities**成员中报告电源管理功能。
 
 
 
 
--   当调用 NDIS [MiniportInitializeEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)为 NDIS 中间驱动程序支持的每个虚拟微型端口驱动程序报告其电源管理功能通过调用[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)以下方面：
+**注意** 如果基础微型端口适配器不支持电源管理事件，则**PowerManagementCapabilities**和**PowerManagementCapabilitiesEx**成员将设置为**NULL**。
 
-    1.  根据 NDIS 中间驱动程序的版本，报告的电源管理功能中任何一种**布尔**（适用于 NDIS 6.0 和 NDIS 6.1 中间驱动程序） 的成员或**PowerManagementCapabilitiesEx** （适用于 NDIS 6.20 和更高版本的中间驱动程序） 的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)。 如果任一**布尔**或**PowerManagementCapabilitiesEx**的成员[ **NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)结构不是**NULL**，中间驱动程序必须执行以下操作：
 
-        -   保存的原始值**MinMagicPacketWakeUp**， **MinPatternWakeUp**，并**MinLinkChangeWakeUp**的成员**布尔**（NDIS 6.0 和 NDIS 6.1） 或**PowerManagementCapabilitiesEx**(NDIS 6.20 及更高版本) 成员。
 
-        -   通过设置来禁用电源管理功能**MinMagicPacketWakeUp**， **MinPatternWakeUp**，并**MinLinkChangeWakeUp**成员**NdisDeviceStateUnspecified**。
 
-        -   将修改后的地址传递[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构作为*MiniportAttributes*对的调用中的参数[ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)。
+-   当 NDIS 为 NDIS 中间驱动程序支持的每个虚拟小型端口调用[MiniportInitializeEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)时，驱动程序将通过以下方式调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)来报告其电源管理功能：
 
-    2.  中间的驱动程序必须设置 NDIS\_微型端口\_特性\_否\_暂停\_ON\_中的挂起标志**AttributeFlags**的成员[ **NDIS\_微型端口\_适配器\_注册\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。 该驱动程序必须通过作为此结构的地址*MiniportAttributes*调用中的参数[ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)。
+    1.  根据 NDIS 中间驱动程序的版本，可以在**PowerManagementCapabilities**成员（对于 ndis 6.0 和 ndis 6.1 中间驱动程序）或**PowerManagementCapabilitiesEx**中报告电源管理功能。Ndis 的成员（适用于 NDIS 6.20 和更高版本中间驱动程序） [ **\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)。 如果[**NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构不为**NULL** **，则中间**驱动程序必须执行以下操作：
 
-    中间的 NDIS 驱动程序的初始化要求的详细信息，请参阅[初始化虚拟微型端口](initializing-virtual-miniports.md)。
+        -   保存**PowerManagementCapabilities**的**MinMagicPacketWakeUp**、 **MinPatternWakeUp**和**MinLinkChangeWakeUp**成员的原始值（ndis 6.0 和 ndis 6.1）或**PowerManagementCapabilitiesEx**（ndis6.20 及更高版本）的成员。
+
+        -   通过将**MinMagicPacketWakeUp**、 **MinPatternWakeUp**和**MinLinkChangeWakeUp**成员设置为**NdisDeviceStateUnspecified**，禁用电源管理功能。
+
+        -   在对[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的调用中，将已修改的[**NDIS\_微型端口\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)的地址作为*MiniportAttributes*参数传递\_常规\_特性结构。
+
+    2.  中间驱动程序必须将 NDIS\_微型端口\_属性\_不\_暂停\_在 [**NDIS\_微型端口\_适配器的 AttributeFlags 成员\_注册\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。 在对[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的调用中，驱动程序必须将此结构的地址作为*MiniportAttributes*参数进行传递。
+
+    有关 NDIS 中间驱动程序的初始化要求的详细信息，请参阅[初始化 Virtual 微型端口](initializing-virtual-miniports.md)。
 
 
 

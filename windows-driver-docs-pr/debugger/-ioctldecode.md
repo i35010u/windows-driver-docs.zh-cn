@@ -1,6 +1,6 @@
 ---
 title: ioctldecode
-description: Ioctldecode 扩展显示为的给定 IOCTL 代码指定的设备类型、 所需的访问，函数代码和传输类型。
+description: Ioctldecode 扩展显示给定 IOCTL 代码指定的设备类型、所需访问权限、函数代码和传输类型。
 ms.assetid: 50B12034-E5C7-43F2-A31E-AAC824A05D46
 keywords:
 - ioctldecode Windows 调试
@@ -12,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a26bead65df45b350293a05273b3fbb4e33b28
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e065c3f4576fe301895a1a950c601c9219db904
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363165"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826723"
 ---
 # <a name="ioctldecode"></a>!ioctldecode
 
 
-**！ Ioctldecode**扩展显示*设备类型*，*所需访问*，*函数代码*和*传输类型*所指定的给定 IOCTL 代码。 IOCTL 控制代码的详细信息，请参阅[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
+**！ Ioctldecode** extension 显示给定 IOCTL 代码指定的*设备类型*、*所需访问权限*、*函数代码*和*传输类型*。 有关 IOCTL 控制代码的详细信息，请参阅[定义 I/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
 
 ```dbgcmd
 !ioctldecode IoctlCode 
 ```
 
-## <a name="span-idddkioresdesdbgspanspan-idddkioresdesdbgspanparameters"></a><span id="ddk__ioresdes_dbg"></span><span id="DDK__IORESDES_DBG"></span>参数
+## <a name="span-idddk__ioresdes_dbgspanspan-idddk__ioresdes_dbgspanparameters"></a><span id="ddk__ioresdes_dbg"></span><span id="DDK__IORESDES_DBG"></span>Parameters
 
 
-<span id="_______IoctlCode______"></span><span id="_______ioctlcode______"></span><span id="_______IOCTLCODE______"></span> *IoctlCode*   
-指定十六进制 IOCTL 代码。 [ **！ Irp** ](-irp.md)命令在其输出中显示的 IOCTL 代码。
+<span id="_______IoctlCode______"></span><span id="_______ioctlcode______"></span><span id="_______IOCTLCODE______"></span>*IoctlCode*   
+指定十六进制 IOCTL 代码。 [ **！ Irp**](-irp.md)命令在其输出中显示 IOCTL 代码。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -42,18 +42,18 @@ ms.locfileid: "67363165"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-若要查看 IOCTL 的信息，我们首先找到感兴趣的 IRP。 可以使用[ **！ irpfind** ](-irpfind.md)命令来查找感兴趣的 irp。
+若要查看有关 IOCTL 的信息，我们首先找到相关的 IRP。 可以使用[ **！ irpfind**](-irpfind.md)命令查找相关的 irp。
 
-使用[ **！ irp** ](-irp.md)命令以显示有关 irp 的信息。
+使用[ **！ irp**](-irp.md)命令显示有关 irp 的信息。
 
 ```dbgcmd
 0: kd> !irp ffffd581a6c6cd30
@@ -86,7 +86,7 @@ No Mdl: No System Buffer: Thread 00000000:  Irp stack trace.
                                                 Args: ffffd581a6c61a50 00000000 0x220003 00000000
 ```
 
-在这种情况下显示的第三个参数*0x220003*，是 IOCTL 代码。 使用 IOCTL 代码来显示信息 IOCTL，在这种情况下[ **IOCTL\_内部\_USB\_提交\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)。
+显示的第三个参数（在本例中为*0x220003*）是 IOCTL 代码。 使用 IOCTL 代码显示有关 IOCTL 的信息，在本例中为[**ioctl\_内部\_USB\_提交\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)。
 
 ```dbgcmd
 0: kd> !ioctldecode 0x220003
@@ -99,7 +99,7 @@ Access         : FILE_ANY_ACCESS
 Function       : 0x0
 ```
 
-如果您需要提供 IOCTL 代码不可用，您将看到此类型的输出。
+如果提供的 IOCTL 代码不可用，则会看到这种类型的输出。
 
 ```dbgcmd
 0: kd> !ioctldecode 0x1280ce
@@ -112,13 +112,13 @@ Access         : FILE_WRITE_ACCESS
 Function       : 0x33
 ```
 
-尽管无法识别 IOCTL，显示有关 IOCTL 字段的信息。
+尽管未标识 IOCTL，但会显示有关 IOCTL 字段的信息。
 
-请注意，可以被识别的公开定义 Ioctl 一个子集 **！ ioctldecode**命令。
+请注意，只有公共定义的 IOCTLs 的子集才能由 **！ ioctldecode**命令标识。
 
-Ioctl 有关的详细信息请参阅[简介 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-i-o-control-codes)。
+有关 IOCTLs 的详细信息，请参阅[I/o 控制代码简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-i-o-control-codes)。
 
-有关 Irp 和 Ioctl 的更多常规信息，请参阅*Windows 内部结构*Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
+有关 Irp 和 IOCTLs 的更多常规信息，请参阅*Windows 内部机制*，方法为 Russinovich，David 为所罗门群岛和 Alex Ionescu。
 
  
 

@@ -3,27 +3,27 @@ title: 版本发现支持
 description: 版本发现支持
 ms.assetid: 9e37eaad-02b2-43a9-bd1a-4c5b2b02d1b6
 keywords:
-- Direct3D 版本 10.1 WDK Windows 7 显示版本发现支持
+- Direct3D 版本 10.1 WDK Windows 7 显示，版本发现支持
 - 版本发现支持 WDK Windows 7 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2340f21f5067cad774bf56a1e378227bb85a1e3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e361febcc217d14d63aa2b8cc70a6d0d50f48ca0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374352"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825297"
 ---
 # <a name="version-discovery-support"></a>版本发现支持
 
 
-本部分仅适用于 Windows 7 和更高版本的操作系统。
+本部分仅适用于 Windows 7 及更高版本的操作系统。
 
-在 Windows Vista 和更高版本和 Windows Server 2008 和更高版本运行的用户模式显示驱动程序时不能适配器创建 (即，失败的驱动程序调用[ **OpenAdapter10** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数） 的驱动程序不显式支持 DDI 版本。
+在 Windows Vista 及更高版本和 Windows Server 2008 及更高版本上运行的用户模式显示驱动程序必须无法为驱动程序未显式的 DDI 版本创建适配器（即，无法调用驱动程序的[**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数）支持.
 
-Windows 7 提供的 Direct3D 应用程序发现 DDI 版本和驱动程序显式支持的硬件功能的方法。 这提高了版本验证。 Windows 7 引入了新的特定于适配器的函数来改善版本控制并提供机会来优化 API 和驱动程序初始化。 必须实现和导出[ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) Direct3D 版本 10.1 驱动程序以便 Direct3D 运行时可以调用驱动程序的新的特定于适配器的函数中的函数。 如果改为实现[ **OpenAdapter10** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)在 Direct3D 版本 10.1 驱动程序，驱动程序可以并仅指示它是否支持 DDI 版本通过或未通过调用由**OpenAdapter10**。
+Windows 7 为 Direct3D 应用程序提供了一种方法，用于发现该驱动程序明确支持的 DDI 版本和硬件功能。 这可以改进版本验证。 Windows 7 引入了新的适配器特定的功能来改进版本，并提供了优化 API 和驱动程序初始化的机会。 你必须在 Direct3D 版本10.1 驱动程序中实现并导出[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)功能，使 direct3d 运行时可以调用驱动程序的新的适配器特定函数。 如果你改为在 Direct3D 版本10.1 驱动程序中实现[**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) ，则驱动程序只能通过将调用传递到**OpenAdapter10**或对其进行调用来指示它是否支持 DDI 版本。
 
-[**OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)返回的表中的驱动程序的特定于适配器的函数**pAdapterFuncs\_2**隶属[ **D3D10DDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)结构。 **pAdapterFuncs\_2**指向[ **D3D10\_2DDI\_ADAPTERFUNCS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)结构。 Direct3D 运行时将调用驱动程序的特定于适配器[ **GetSupportedVersions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions) DDI 版本和驱动程序支持的硬件功能的查询函数。 **GetSupportedVersions** 64 位值的数组中返回的 DDI 版本和硬件功能。 下面的代码示例演示**GetSupportedVersions**实现：
+[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)返回[**D3D10DDIARG\_OPENADAPTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)结构的**pAdapterFuncs\_2**成员中驱动程序的适配器特定函数的表。 **pAdapterFuncs\_2**指向[**D3D10\_2DDI\_ADAPTERFUNCS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)结构。 Direct3D 运行时调用驱动程序的特定于适配器的[**GetSupportedVersions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)函数来查询驱动程序支持的 DDI 版本和硬件功能。 **GetSupportedVersions**在64位值的数组中返回 DDI 版本和硬件功能。 下面的代码示例演示了**GetSupportedVersions**实现：
 
 ```cpp
 // Array of 64-bit values that are defined in D3d10umddi.h
@@ -64,13 +64,13 @@ HRESULT APIENTRY GetSupportedVersions(
 }
 ```
 
-Direct3D 版本 10.1 驱动程序不需要验证的值传递给**接口**并**版本**的成员[ **D3D10DDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)调用中其[ **OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数即使这些值包含用于对 DDI 版本信息初始化的驱动程序。 该驱动程序可以返回 DDI 版本和硬件功能，通过调用其[ **GetSupportedVersions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)函数。
+不需要使用 Direct3D 版本10.1 驱动程序来验证传递到[ **\_D3D10DDIARG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)的**接口**和**version**成员的值，并调用其[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数这些值包含用于初始化驱动程序的 DDI 版本信息。 驱动程序可以通过调用其[**GetSupportedVersions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)函数返回 DDI 版本和硬件功能。
 
-Direct3D 运行时可以传递到值**接口**并**版本**的成员[ **D3D10DDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)驱动程序的调用中[ **CreateDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)不同于在运行时传递给的值的函数[ **OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter); 在运行时将值传递到**接口**并**版本**D3D10DDIARG 成员\_基于 DDI 的 CREATEDEVICE版本和硬件功能信息的驱动程序的[ **GetSupportedVersions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)返回到运行时。 该驱动程序不需要验证传递给的值**接口**并**版本**D3D10DDIARG 成员\_CREATEDEVICE 因为驱动程序已指示的支持这些值通过其**GetSupportedVersions**函数。
+在对驱动程序的[**CREATEDEVICE （D3D10）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)函数的调用**中，Direct3D**运行时可以将值传递给[**D3D10DDIARG\_CREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice) **，这些**值不同于运行时传递到[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter);运行时将值传递给 D3D10DDIARG\_CREATEDEVICE 的**接口**和**版本**成员，这些值基于该驱动程序的[**GetSupportedVersions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10_2ddi_getsupportedversions)返回的 DDI 版本和硬件功能信息到运行时。 驱动程序无需验证传递到\_D3D10DDIARG 的**接口**和**Version**成员的值，因为驱动程序已通过其 GetSupportedVersions 指示了这些值的支持函数。
 
-如果要移植到 Direct3D 版本 10.1 驱动程序从 Direct3D 版本 10.0，则应将驱动程序只监视**接口**并**版本**成员传递给[**CreateDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)而不是[ **OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)。 您应分析两者[ **CalcPrivateDeviceSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatedevicesize)并**CreateDevice(D3D10)** 函数中以确保不不存在任何假设您已移植的驱动程序的实现有关中的值**接口**并**版本**的成员*CreateDevice(D3D10)* 匹配中的值**接口**并**版本**的成员**OpenAdapter10\_2**。
+如果要将驱动程序从 Direct3D 版本10.0 移植到 Direct3D 版本10.1，则应将驱动程序转换为仅监视传递给[**CreateDevice （D3D10）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)的**接口**和**版本**成员，而不是[**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)。 你应分析端口驱动程序**中的** [**CalcPrivateDeviceSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatedevicesize)和**CreateDevice （D3D10）** 函数实现，以确保不会假设 *CreateDevice （D3D10）* ，用于匹配**OpenAdapter10\_2**的**Interface**和**Version**成员中的值。
 
-**请注意**  [**OpenAdapter10\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)具有相同的函数签名[ **OpenAdapter10** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) （即，PFND3D10DDI\_中定义的 OPENADAPTER *D3d10umddi.h*标头)。 您可以在同一个用户模式显示驱动程序 DLL 中实现这两个函数。
+**请注意**，  [**OpenAdapter10\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)的函数签名与[**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter) （即*D3d10umddi*标头中定义的 PFND3D10DDI\_OPENADAPTER 相同。 可以在同一个用户模式显示驱动程序 DLL 中实现这两个函数。
 
  
 

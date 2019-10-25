@@ -4,12 +4,12 @@ description: 着色器代码格式
 ms.assetid: 62377d19-8e45-4d0c-b974-0c0417d1a948
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e7fe190eee8b7a56147fac027e58709ff6043003
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a5dc4eb7da4c092f541874c0f70e574b125a7073
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365503"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829462"
 ---
 # <a name="shader-code-format"></a>着色器代码格式
 
@@ -17,19 +17,19 @@ ms.locfileid: "67365503"
 ## <span id="ddk_shader_code_format_gg"></span><span id="DDK_SHADER_CODE_FORMAT_GG"></span>
 
 
-若要创建像素或顶点着色器的命令组成的着色器代码组。 这些代码指示如何创建着色器上的驱动程序。 每个着色器代码中的令牌的格式确定其唯一性。 一个[着色器代码令牌](shader-code-tokens.md)为具有特定格式 dword 值。
+用于创建像素或顶点着色器的命令由一组着色器代码组成。 这些代码指示驱动程序如何创建着色器。 每个着色器代码内的标记格式确定其唯一性。 [着色器代码令牌](shader-code-tokens.md)是具有特定格式的 DWORD。
 
-DirectX3D 运行时的代码传递到驱动程序之前会验证着色器代码。 当驱动程序在到达着色器代码时，该驱动程序可以解释代码，因为代码的格式有效。 驱动程序读取着色器代码的令牌，该代码的解释。
+在将代码传递到驱动程序之前，DirectX3D 运行时将验证着色器代码。 当着色器代码到达驱动程序时，驱动程序可以解释代码，因为代码的格式有效。 驱动程序读取着色器代码的标记以解释代码。
 
-每个单独的着色器代码将使用常规的令牌布局格式。 第一个标记必须是[版本标记](version-token.md)。 版本标记提供了代码的版本号，并且还确定代码是否为像素或顶点着色器。 着色器内容遵循版本标记，且由各种[指令令牌](instruction-token.md)，与可能是混合[注释标记](comment-token.md)和空白区域。 根据指定的指令令牌的精确操作[标签](label-token.md)， [destination 参数](destination-parameter-token.md)，并[源参数标记](source-parameter-token.md)也可以是一部分的着色器内容，并按照指令令牌。 例如，如果指定的指令令牌[ADD 指令](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)，该驱动程序确定一个目标和两个源参数标记遵循指令令牌。 [结束令牌](end-token.md)完成的着色器代码。
+每个单独的着色器代码均使用常规令牌布局进行格式设置。 第一个标记必须是[版本标记](version-token.md)。 版本标记提供代码的版本号，还确定代码是用于像素着色器还是用于顶点着色器。 着色器内容遵循版本标记，由各种[指令标记](instruction-token.md)组成，可能与[注释标记](comment-token.md)和空格混合。 根据指令令牌指定的精确操作，[标签](label-token.md)、[目标参数](destination-parameter-token.md)和[源参数令牌](source-parameter-token.md)也可以是着色器内容的一部分，并遵循指令标记。 例如，如果指令令牌指定[ADD 指令](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)，则驱动程序将确定一个目标和两个源参数标记跟在指令标记之后。 [结束标记](end-token.md)完成着色器代码。
 
-安装说明进行操作 (例如，D3DSIO\_DCL 和 D3DSIO\_DEF) 包含格式独一无二的标记。
+安装说明（例如，D3DSIO\_DCL 和 D3DSIO\_.DEF）包含唯一格式的令牌。
 
-每个着色器指令包含特定的令牌格式。 [着色器操作代码](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)部分介绍了每个着色器指令的令牌格式。
+每个着色器指令都包含特定的令牌格式。 [着色器操作代码](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)部分描述每个着色器指令的令牌格式。
 
-着色器说明与主指令开头和结尾 D3DSIO\_RET 或 D3DSIO\_结束指令。 子例程按照 D3DSIO\_RET 指令。
+着色器说明从主指令开始，以 D3DSIO\_RET 或 D3DSIO\_结束指令结束。 子例程按照 D3DSIO\_RET 指令进行操作。
 
-有关可以在指令的令牌中指定的操作的详细信息的最新的 DirectX SDK 文档中，请参阅像素着色器引用和顶点着色器引用。
+有关可在指令标记中指定的操作的详细信息，请参阅最新的 DirectX SDK 文档中的 "像素着色器参考" 和 "顶点着色器参考"。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要求
 

@@ -3,24 +3,24 @@ title: 排队和取消排队 IRP
 description: 排队和取消排队 IRP
 ms.assetid: 736107bf-4790-4562-8785-c37fbbed03d3
 keywords:
-- Irp WDK 内核队列
-- 队列的 Irp
-- 取消排队的 Irp
-- 处理 WDK 内核的多个 I/O 请求
+- Irp WDK 内核，队列
+- 队列 Irp
+- 出列的 Irp
+- 多个 i/o 请求处理 WDK 内核
 - 内部 IRP 队列 WDK 内核
 - 同步 WDK Irp
-- 启动 I/O 操作
-- I/O WDK 内核，启动的操作
+- 启动 i/o 操作
+- I/o WDK 内核，操作开始
 - StartIo 例程
 - 取消安全 IRP 队列 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ff9062fc46d403ecd8bbcc4db244431b459e52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 067b8a95987ec8415117aeca88461dd7143cc7d1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378755"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827582"
 ---
 # <a name="queuing-and-dequeuing-irps"></a>排队和取消排队 IRP
 
@@ -28,51 +28,51 @@ ms.locfileid: "67378755"
 
 
 
-由于 I/O 管理器支持多任务处理和多线程的系统中的异步 I/O，I/O 请求到设备可以有高于其驱动程序处理完后，尤其是在多处理器计算机速度更快。 因此，绑定到任何特定设备的 Irp 必须排队驱动程序中已忙于处理另一个 IRP 其设备时。
+因为 i/o 管理器支持多任务和多线程系统内的异步 i/o，所以，对设备的 i/o 请求的速度可能比驱动程序可处理完成的速度快，尤其是在多处理器计算机上。 因此，当绑定到任何特定设备的 Irp 正在忙于处理另一 IRP 时，该驱动程序必须在该驱动程序中排入队列。
 
-因此，最低级别驱动程序需要以下项之一：
+因此，最低级别的驱动程序需要以下项之一：
 
--   一个[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程，该驱动程序的启动 I/O 操作的 Irp 调用 I/O 管理器已排队到系统提供 IRP 队列 (请参阅[ **IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)).
+-   [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程，i/o 管理器调用此例程来启动对 irp 的 i/o 操作。该驱动程序已排入系统提供的 irp 队列（请参阅[**IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)）。
 
--   一个内部 IRP 队列和驱动程序用于管理比它更快地进入的 Irp 的取消排队机制可以满足它们。 驱动程序可以使用设备队列、 互锁的队列或取消安全队列。 有关详细信息，请参阅[Driver-Managed IRP 队列](driver-managed-irp-queues.md)。
+-   内部 IRP 排队和出列机制，驱动程序使用该机制来管理比能够满足其速度更快的 Irp。 驱动程序可以使用设备队列、联锁队列或取消安全队列。 有关详细信息，请参阅[驱动程序管理的 IRP 队列](driver-managed-irp-queues.md)。
 
-仅可满足并完成其调度例程中的每个可能 IRP 的最低级别的设备驱动程序需要否*StartIo*例程和 Irp 的任何驱动程序管理队列。
+只有可满足并在其调度例程中完成每个可能的 IRP 的最低级别设备驱动程序无需*StartIo*例程，并且不需要用于 irp 的驱动程序托管队列。
 
-更高级别的驱动程序几乎不用*StartIo*例程。 大多数中间驱动程序有都*StartIo*例程，也不内部队列; 中间驱动程序通常可以将 Irp 使用有效的参数传递，从其调度例程并执行任何后续处理所需在任何 IRP其[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
+较高级别的驱动程序几乎没有*StartIo*例程。 大多数中间驱动程序既没有*StartIo*例程，也没有内部队列;中间驱动程序通常可以通过其调度例程传递包含有效参数的 Irp，并执行其[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程中的任何 IRP 所需的任何后处理操作。
 
-下面介绍，一般情况下，一些用于确定是否实现的设计注意事项*StartIo*例程使用或不为 Irp 的内部、 驱动程序管理队列。
+下面通常介绍一些设计注意事项，这些注意事项用于确定是否实现带有或不带内部驱动程序管理的 Irp 的*StartIo*例程。
 
 ### <a name="startio-routines-in-drivers"></a>驱动程序中的 StartIo 例程
 
-对于计算机能够处理一次只有一个设备 I/O 操作的外围设备，设备驱动程序可以实现*StartIo*例程。 对于这些驱动程序，I/O 管理器提供了[ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)并[ **IoStartNextPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)例程来排队和取消排队到 Irp 和从系统提供 IRP 队列。
+对于能够一次只处理一个设备 i/o 操作的计算机外设设备，设备驱动程序可以实现*StartIo*例程。 对于这些驱动程序，i/o 管理器提供了[**IoStartPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)和[**IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)例程，用于在系统提供的 Irp 队列中对 irp 进行排队和取消排队。
 
-有关详细信息*StartIo*例程，请参阅[编写 StartIo 例程](writing-a-startio-routine.md)。
+有关*StartIo*例程的详细信息，请参阅[编写 StartIo 例程](writing-a-startio-routine.md)。
 
-### <a name="internal-queues-for-irps-in-drivers"></a>有关驱动程序中的 Irp 的内部队列
+### <a name="internal-queues-for-irps-in-drivers"></a>驱动程序中的 Irp 的内部队列
 
-如果设备可以支持多个并发 I/O 操作，其最低级别的设备驱动程序必须设置内部请求队列，并管理其自己的 Irp 的队列。 例如，系统串行驱动程序维护单独的队列，用于读取、 写入、 清除，和等待其设备上的操作，因为它支持全双工串行设备。
+如果设备可以支持多个并发 i/o 操作，则其最低级别的设备驱动程序必须设置内部请求队列并管理其自己的 Irp 队列。 例如，系统序列驱动程序会在其设备上维护单独的队列，以便进行读、写、清除和等待操作，因为该驱动程序支持全双工串行设备。
 
-将请求发送到基础设备驱动程序的一些更高级别的驱动程序还可能维护 Irp 的内部的队列。 例如，文件系统驱动程序几乎总是具有 Irp 内部队列。
+将请求发送到一定数量的基础设备驱动程序的较高级别的驱动程序也可能维护 Irp 的内部队列。 例如，文件系统驱动程序几乎始终具有用于 Irp 的内部队列。
 
-有关详细信息，请参阅[Driver-Managed IRP 队列](driver-managed-irp-queues.md)。
+有关详细信息，请参阅[驱动程序管理的 IRP 队列](driver-managed-irp-queues.md)。
 
 ### <a name="internal-queue-synchronization"></a>内部队列同步
 
-使用设备专用线程和使用 executive 工作线程数 （包括大多数文件系统驱动程序） 通常他们自己队列为设置 Irp 的最高级别的驱动程序的驱动程序。 队列被共享由驱动程序线程或驱动程序所提供的工作线程回调和处理 Irp 其他驱动程序例程。
+使用设备专用线程的驱动程序和使用管理工作线程（包括大多数文件系统驱动程序）的最高级别的驱动程序通常会为 Irp 设置自己的队列。 队列由驱动程序线程或驱动程序提供的工作线程回调以及处理 Irp 的其他驱动程序例程共享。
 
-对队列的访问同步以及如何从队列删除的已取消的 Irp，必须确保实现其自己的队列结构的驱动程序。 若要使此任务更简单的驱动程序编写人员，取消安全 IRP 队列提供实现 IRP 队列时可以使用一个标准框架。 请参阅[取消安全 IRP 队列](cancel-safe-irp-queues.md)有关详细信息。 这是用于实现 IRP 队列的首选的方法。
+实现其自己的队列结构的驱动程序必须确保对队列的访问是同步的，并且取消的 Irp 将从队列中删除。 若要使此任务更简单地用于驱动程序编写器，请取消安全 IRP 队列提供可在实现 IRP 队列时使用的标准框架。 有关详细信息，请参阅[取消安全 IRP 队列](cancel-safe-irp-queues.md)。 这是实现 IRP 队列的首选方法。
 
-驱动程序还可以实现所有 IRP 队列同步并显式取消逻辑。 例如，驱动程序可以使用互锁的队列。 驱动程序的调度例程中插入 Irp 互锁的队列和驱动程序创建线程或驱动程序的工作线程回调将其删除通过调用**ExInterlocked*Xxx*列表**支持例程。
+驱动程序还可以完全实现 IRP 队列同步和取消逻辑。 例如，驱动程序可以使用联锁队列。 驱动程序的调度例程将 Irp 插入到联锁队列，驱动程序创建的线程或驱动程序的工作线程回调会通过调用**ExInterlocked*Xxx*列表**支持例程来删除它们。
 
-例如，系统软盘控制器驱动程序使用互锁的队列。 其设备专用的线程处理通过在其他设备驱动程序的相同处理的 Irp *StartIo*例程以及一些可通过其他设备驱动程序的相同处理的 Irp [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程。
+例如，系统软盘控制器驱动程序使用联锁队列。 其专用设备线程处理的 Irp 处理方式与其他设备驱动程序的*StartIo*例程处理相同，并处理其他设备驱动程序的[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程所执行的一些相同的 irp 处理。
 
-### <a name="internal-queues-with-startio-routines-in-drivers"></a>内部队列中的驱动程序的 StartIo 例程
+### <a name="internal-queues-with-startio-routines-in-drivers"></a>包含驱动程序中的 StartIo 例程的内部队列
 
-管理其自己的内部队列的驱动程序还可以*StartIo*例程，但不是需要。 大多数最低级别的设备驱动程序有两种： *StartIo*例程或管理其自己的 Irp，但不是能同时队列。
+管理自己的内部队列的驱动程序还可以有*StartIo*例程，但不需要。 最底层的设备驱动程序具有*StartIo*例程或管理其各自的 irp 队列，但不能同时使用两者。
 
-一种例外是 SCSI 端口驱动程序，它具有*StartIo*例程，并管理的 Irp 的内部队列。 I/O 管理器到端口驱动程序的队列 Irp *StartIo*例程与表示 SCSI HBA 驱动程序创建的设备对象关联的设备队列中。 SCSI 端口驱动程序还将设置为和管理设备队列 Irp 到每个目标设备 （对应于 SCSI 逻辑单元） 计算机中任何 HBA 驱动 SCSI 总线上。
+这种情况的一个例外是 SCSI 端口驱动程序，它具有*StartIo*例程并管理 irp 的内部队列。 I/o 管理器将 Irp 排队到端口驱动程序的*StartIo*例程上，该设备队列与代表 SCSI HBA 的驱动程序创建设备对象相关联。 SCSI 端口驱动程序还为计算机上任何 HBA 驱动的 SCSI 总线上的每个目标设备（对应于一个 SCSI 逻辑单元）设置和管理设备的设备队列。
 
-SCSI 端口驱动程序使用其补充设备队列来保存 Irp 发送从特定于 LU 的队列中的 SCSI 类驱动程序时特别繁忙的 SCSI 总线上的任何设备。 实际上，此驱动程序的补充、 特定于 LU 的设备队列允许 SCSI 端口驱动程序，同时保持该 HBA SCSI 总线上的每个设备尽可能序列化用于异类 SCSI 设备都通过 HBA 的操作。
+当 SCSI 总线上的任何设备特别忙碌时，SCSI 端口驱动程序使用其补充设备队列来保存从 LU 特定队列的 SCSI 类驱动程序中发送的 Irp。 实际上，此驱动程序的补充，LU 特定的设备队列允许 SCSI 端口驱动程序通过 HBA 序列化异类 SCSI 设备的操作，同时使该 HBA 的 SCSI 总线上的每个设备尽可能忙碌。
 
  
 

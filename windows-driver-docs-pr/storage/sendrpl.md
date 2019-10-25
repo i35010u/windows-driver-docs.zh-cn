@@ -1,6 +1,6 @@
 ---
 title: SendRPL 函数
-description: SendRPL WMI 方法将通过指示端口读取的端口列表 (RPL) 命令发送到指定的目标端口。
+description: SendRPL WMI 方法通过所指示的端口将读取端口列表（RPL）命令发送到指定的目标端口。
 ms.assetid: 3cf3dfe2-6ff9-431f-b6bf-66ef8dd77df3
 keywords:
 - SendRPL 函数存储设备
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 58dfbf3c944f2e73a48f534fb3980d26c1d5cbbc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58460bbed809a64ea313cde127218e10f197bff8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362661"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832011"
 ---
 # <a name="sendrpl-function"></a>SendRPL 函数
 
 
-**SendRPL** WMI 方法将通过指示端口读取的端口列表 (RPL) 命令发送到指定的目标端口。
+**SendRPL** WMI 方法通过所指示的端口将读取端口列表（RPL）命令发送到指定的目标端口。
 
 <a name="syntax"></a>语法
 ------
@@ -43,32 +43,32 @@ void SendRPL(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构的**HBAStatus**成员中返回此信息。
 
 *PortWWN*   
-通过该发送端口读取的列表 (RPL) 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
+用于发送读取端口列表（RPL）命令的本地端口的全球名称。 此信息将传送到结构中[**SendRPL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)的**PortWWN**成员中的微型端口驱动程序。
 
 *AgentWWN*   
-若要查询的 FC 类型的端口列表的端口的全球名称\_端口。 有关定义 FC\_端口，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息传递到中的微型端口驱动程序**AgentWWN**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
+端口的全球名称，将查询该端口以获取 FC\_端口的端口列表。 有关 FC\_端口的定义，请参阅 T11 委员会的*光纤通道 HBA API*规范。 此信息将传送到结构中[**SendRPL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)的**AgentWWN**成员中的微型端口驱动程序。
 
-*agent\_domain*   
-若要查询的 FC 类型的端口列表的域控制器的域号\_端口。 有关定义 FC\_端口，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息传递到中的微型端口驱动程序**代理\_域**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
+*代理\_域*   
+要查询其类型 FC\_端口的端口列表的域控制器的域名。 有关 FC\_端口的定义，请参阅 T11 委员会的*光纤通道 HBA API*规范。 此信息将传送到[**SendRPL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构中的**代理\_域**成员中的微型端口驱动程序。
 
 *portIndex*   
-在光纤通道类型的端口列表中的第一个端口的端口索引\_要返回的端口。 此信息传递到中的微型端口驱动程序**portIndex**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
+要返回 FC\_端口的端口列表中第一个端口的端口索引。 此信息将传送到结构中[**SendRPL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)的**portIndex**成员中的微型端口驱动程序。
 
 *TotalRspBufferSize*   
-以字节为单位的读取的端口列表 (RPL) 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
+读取端口列表（RPL）命令的结果大小（以字节为单位）。 微型端口驱动程序在[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构的**TotalRspBufferSize**成员中返回此信息。
 
 *ActualRspBufferSize*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
+实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构的**ActualRspBufferSize**成员中返回此信息。
 
 *RspBuffer*   
-读取的结果的端口列表 (RPL) 命令。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
+读取端口列表（RPL）命令的结果。 微型端口驱动程序在[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构的**RspBuffer**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -78,7 +78,7 @@ void SendRPL(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于[MSFC\_HBAADAPTERMETHODS WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,27 +91,27 @@ void SendRPL(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Hbaapi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [HBA\_状态](hba-status.md)
 
-[**SendRPL\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)
+[**SendRPL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_in)
 
-[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)
+[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrpl_out)
 
  
 

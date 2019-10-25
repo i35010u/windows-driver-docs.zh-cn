@@ -3,18 +3,18 @@ title: 按钮功能数组
 description: 按钮功能数组
 ms.assetid: 139324e5-4d46-4d00-9f5a-fd0313fc109a
 keywords:
-- WDK HID 按钮功能数组
-- WDK HID 的数组
+- button 功能阵列 WDK HID
+- 阵列 WDK HID
 - 功能 WDK HID 集合
-- WDK HID 按钮用途
+- 按钮用法 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02bce9ff79c1cf92e1a5e5c00bc483ace6f512ea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 851ec3f35cf3d147fc872c15989b5003fcce8d4e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375763"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824849"
 ---
 # <a name="button-capability-arrays"></a>按钮功能数组
 
@@ -22,59 +22,59 @@ ms.locfileid: "67375763"
 
 
 
-一个*按钮功能数组*包含有关支持的按钮使用情况的信息[顶级集合](top-level-collections.md)HID 报表为特定类型。 有关集合的功能的信息包含在其[ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)结构。
+*按钮功能数组*包含有关特定类型的 HID 报表的[顶级集合](top-level-collections.md)支持的按钮用法的信息。 有关集合功能的信息包含在它的[**HIDP\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_caps)结构中。
 
-用户模式应用程序或内核模式驱动程序将使用以下值之一[HIDClass 支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)获取按钮功能的信息：
+用户模式应用程序或内核模式驱动程序使用以下[HIDClass 支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)之一获取按钮功能信息：
 
--   [**HidP\_GetButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getbuttoncaps)返回描述指定的报表类型中包含的所有按钮用途的按钮功能数组。
+-   [**HidP\_GetButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getbuttoncaps)返回一个按钮功能数组，用于描述指定报表类型中包含的所有按钮用法。
 
--   [**HidP\_GetSpecificButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)筛选器按钮功能信息，它将返回调用方指定的使用情况页，使用 ID 和[集合链接](link-collections.md)。
+-   [**HidP\_GetSpecificButtonCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)将筛选由调用方指定的 "使用情况" 页、"使用 ID" 和 "[链接集合](link-collections.md)" 返回的按钮功能信息。
 
-按钮功能包含一个数组[ **HIDP\_按钮\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_button_caps)结构，其中每个包含以下信息有关[的HID用途](hid-usages.md)或[使用范围](hid-usages.md#usage-range):
+按钮功能数组包含[**HIDP\_按钮\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/ns-hidpi-_hidp_button_caps)结构，其中每个都包含有关[HID 使用情况](hid-usages.md)或[使用范围](hid-usages.md#usage-range)的下列信息：
 
--   使用情况或使用范围的使用情况页面
+-   使用情况或使用情况范围的使用情况页
 
 -   包含按钮数据的报表的报表 ID
 
 -   使用 ID 或使用范围
 
--   一个标志，指示是否存在此用法的[别名使用情况](hid-usages.md#aliased-usages)
+-   一个标志，用于指示使用情况是否为[别名](hid-usages.md#aliased-usages)使用
 
--   包含的使用情况或使用范围的链接集合
+-   包含用量或使用情况范围的链接集合
 
--   字符串描述符和使用情况或使用区域相关联的指示符 （请参阅指示符索引项和字符串索引项）
+-   与用法或使用情况范围关联的字符串描述符和指示符（请参阅指示符索引项和字符串索引项）
 
--   [数据索引](data-indices.md)HID 分析器分配给使用情况或使用范围
+-   HID 分析器分配给使用情况或使用范围的[数据索引](data-indices.md)
 
-一般情况下，描述按钮功能数组的所有用法都具备以下条件：
+一般情况下，下列条件适用于按钮功能数组描述的所有用法：
 
--   每个功能结构表示单一的使用情况或与变量的主要项或数组主要项相关联的使用范围。
+-   每个功能结构都表示一个与变量主项或数组主项相关联的使用情况或使用情况范围。
 
--   使用别名用法可以在变量的主要项。 与数组项相关联的使用情况不能有别名。 使用范围不能有别名。
+-   别名使用情况可与变量主项目一起使用。 与数组项关联的使用不能化名为别名。 使用范围不能有别名。
 
--   HID 分析器使用只有使用实例的最小所需的数量将用量分配给每个按钮。 分析器将分配的报告描述符中指定的顺序的用法。 不是必需的报表描述符中使用实例将被丢弃。 按钮功能数组不包含任何有关放弃用法的信息。
+-   HID 分析器仅使用所需的最低数量的用法来向每个按钮分配使用情况。 分析器按在报表描述符中指定的顺序来分配使用情况。 不需要的报表描述符中的用法将被丢弃。 按钮功能数组不包含有关被丢弃的用法的任何信息。
 
--   功能数组的用法指定为变量的项目数小于项中的按钮数，如果包含只有一个功能结构，它描述了一个按钮用法 （最后一个指定的用法中主要的变量的报告描述符项）。 但是，请参阅[用法值数组](value-capability-arrays.md#usage-value-array)有关用法的信息有一个报表的值计数大于 1。
+-   如果为变量项指定的使用数小于项中的按钮数，则功能数组只包含一个功能结构，该结构描述了一个按钮用法（在报表描述符中为变量 main 指定的最后一个使用情况）。item）。 但是，有关报表计数大于1的使用值的信息，请参阅[用量值数组](value-capability-arrays.md#usage-value-array)。
 
--   HID 分析器将分配给每个功能数组中所述的使用情况的唯一数据索引。
+-   HID 分析器为功能数组中所述的每个使用分配一个唯一的数据索引。
 
-以下主题讨论如何组织和按钮功能阵列中设置的功能结构：
+以下主题讨论如何在 button 功能数组中组织和设置功能结构：
 
-[变量的主要项中的按钮用途](#button-usages-in-a-variable-main-item)
+[变量主项目中的按钮用法](#button-usages-in-a-variable-main-item)
 
-[数组主要项中的按钮用途](#button-usages-in-an-array-main-item)
+[数组主项目中的按钮用法](#button-usages-in-an-array-main-item)
 
-### <a href="" id="button-usages-in-a-variable-main-item"></a> 变量的主要项中的按钮用途
+### <a href="" id="button-usages-in-a-variable-main-item"></a>变量主项目中的按钮用法
 
-每个[使用情况](hid-usages.md)或[用法范围](hid-usages.md#usage-range)指定按钮功能数组中其自身功能结构描述符描述在报表中。
+在报表描述符中指定的每个[使用情况](hid-usages.md)或[使用范围](hid-usages.md#usage-range)由其在按钮功能数组中的功能结构描述。
 
-**IsAlias**功能结构的成员将用来指定一组*n*别名用法，如下所示：
+功能结构的 " **IsAlias** " 成员用于指定一组*n*化名的用法，如下所示：
 
--   **IsAlias**设置为**TRUE**在第一个*n*-1 功能添加到功能数组的结构。 **IsAlias**设置为**FALSE**中*n*th 功能结构。 首选的用法是在序列中的最后一个别名使用情况。
+-   在添加到功能数组的前*n*个功能结构中， **IsAlias**设置为**TRUE** 。 在第*n*个功能结构中， **IsAlias**设置为**FALSE** 。 首选用法是序列中最后一个别名使用情况。
 
-应用程序或驱动程序可以确定哪个按钮用途是通过扫描此类序列的别名。
+应用程序或驱动程序可以通过扫描此类序列来确定哪些按钮用法具有别名。
 
-下表总结了三个别名用法示例。
+下表总结了三个化名使用的示例。
 
 <table>
 <colgroup>
@@ -84,25 +84,25 @@ ms.locfileid: "67375763"
 </colgroup>
 <thead>
 <tr class="header">
-<th>使用别名使用情况报告描述符中的顺序</th>
-<th>使用情况功能数组中的顺序</th>
+<th>报表描述符中的别名使用顺序</th>
+<th>功能数组中的使用顺序</th>
 <th>IsAlias 成员值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>使用情况 1</p></td>
-<td><p>使用情况 3</p></td>
+<td><p>使用量1</p></td>
+<td><p>使用情况3</p></td>
 <td><p><strong>TRUE</strong></p></td>
 </tr>
 <tr class="even">
-<td><p>使用情况 2</p></td>
-<td><p>使用情况 2</p></td>
+<td><p>使用情况2</p></td>
+<td><p>使用情况2</p></td>
 <td><p><strong>TRUE</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p>使用情况 3</p></td>
-<td><p>使用情况 1</p></td>
+<td><p>使用情况3</p></td>
+<td><p>使用量1</p></td>
 <td><p><strong>FALSE</strong></p></td>
 </tr>
 </tbody>
@@ -110,13 +110,13 @@ ms.locfileid: "67375763"
 
  
 
-有关如何使用实例和数据的索引的交叉引用的信息，请参阅[数据索引](data-indices.md)。
+有关如何交叉引用使用情况和数据索引的信息，请参阅[数据索引](data-indices.md)。
 
-### <a href="" id="button-usages-in-an-array-main-item"></a> 数组主要项中的按钮用途
+### <a href="" id="button-usages-in-an-array-main-item"></a>数组主项目中的按钮用法
 
-每个[使用情况](hid-usages.md)或[用法范围](hid-usages.md#usage-range)对于在报表中所指定的按钮数组主要项描述符描述按钮功能数组中其自身功能结构。 功能结构添加到功能数组中的顺序就是顺序的在其中指定主要项用法相反。
+在报表描述符中指定的按钮数组主要项的每个[使用情况](hid-usages.md)或[使用范围](hid-usages.md#usage-range)均由其在按钮功能数组中的功能结构描述。 将功能结构添加到功能数组中的顺序与为主项目指定用法的顺序相反。
 
-HID 分析器将分配[数据索引](data-indices.md)到每个数组项中的用法指定报表描述符中的顺序与相关联的使用情况。 例如下, 表显示了使用情况，是报表的描述符，和使用情况中指定一组和数据索引，指定功能数组中的对应关系。 (在此表中， *n*是分析器将分配给数组项与相关联的第一个应用的第一个数据索引。)
+HID 分析器将[数据索引](data-indices.md)分配给与数组项关联的每个使用情况，并按报表描述符中指定用法的顺序排列。 例如，下表显示了在 "功能数组" 中指定的一组使用情况（在报表描述符中指定）和 "用法" 和 "数据" 索引之间的对应关系。 （在此表中， *n*是分析器分配给与数组项关联的第一个用法的第一个数据索引。）
 
 <table>
 <colgroup>
@@ -126,30 +126,30 @@ HID 分析器将分配[数据索引](data-indices.md)到每个数组项中的用
 </colgroup>
 <thead>
 <tr class="header">
-<th>使用情况报告描述符中的顺序</th>
-<th>使用情况功能数组中的顺序</th>
-<th>DataIndex 或从到 DatatIndexMax DataIndexMin</th>
+<th>报表描述符中的使用顺序</th>
+<th>功能数组中的使用顺序</th>
+<th>DataIndex 或从 DataIndexMin 到 DatatIndexMax</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>使用情况 1</p></td>
-<td><p>使用范围 2</p></td>
-<td><p>从<em>n</em>到 + 7 <em>n</em>+ 8</p></td>
+<td><p>使用量1</p></td>
+<td><p>使用范围2</p></td>
+<td><p>从<em>n</em>+ 7 到<em>n</em>+ 8</p></td>
 </tr>
 <tr class="even">
-<td><p>使用范围 1 （具有 4 个用法）</p></td>
-<td><p>使用情况 2</p></td>
-<td><p><em>n</em>+5</p></td>
+<td><p>使用范围1（具有4个使用情况）</p></td>
+<td><p>使用情况2</p></td>
+<td><p><em>n</em>+ 5</p></td>
 </tr>
 <tr class="odd">
-<td><p>使用情况 2</p></td>
-<td><p>使用范围 1</p></td>
+<td><p>使用情况2</p></td>
+<td><p>使用范围1</p></td>
 <td><p>从<em>n</em>+ 1 到<em>n</em>+ 4</p></td>
 </tr>
 <tr class="even">
-<td><p>（使用 2 个用法） 的使用情况范围 2</p></td>
-<td><p>使用情况 1</p></td>
+<td><p>使用范围2（具有2个使用情况）</p></td>
+<td><p>使用量1</p></td>
 <td><p><em>n</em></p></td>
 </tr>
 </tbody>

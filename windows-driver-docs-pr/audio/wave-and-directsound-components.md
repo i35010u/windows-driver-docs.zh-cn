@@ -3,27 +3,27 @@ title: Wave 和 DirectSound 组件
 description: Wave 和 DirectSound 组件
 ms.assetid: df00fcaf-49b0-4af1-a12f-bd3fcb9e025d
 keywords:
-- 批组件 WDK 音频
-- 批流 WDK 音频
+- 波形组件 WDK 音频
+- 波形流 WDK 音频
 - DirectSound WDK 音频，组件
 - 用户模式组件 WDK 音频
 - 内核模式组件 WDK 音频
-- 批呈现 WDK 音频
-- 批捕获 WDK 音频
+- 波形渲染 WDK 音频
+- 波形捕获 WDK 音频
 - 呈现组件 WDK 音频
 - 捕获组件 WDK 音频
-- 批呈现应用程序 WDK 音频
-- 批捕获应用程序 WDK 音频
-- 批扩展的应用程序 WDK 音频
-- 批中的应用程序 WDK 音频
+- 波形渲染应用程序 WDK 音频
+- 波形捕获应用程序 WDK 音频
+- wave out 应用程序 WDK 音频
+- 波形应用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfb3775a0f32ce6b11da3e16ac504573ea82be2f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1fd6227962d585d8cbaaead65cfea93d42dd526e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364815"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832325"
 ---
 # <a name="wave-and-directsound-components"></a>Wave 和 DirectSound 组件
 
@@ -31,71 +31,71 @@ ms.locfileid: "67364815"
 ## <span id="wave_and_directsound_components"></span><span id="WAVE_AND_DIRECTSOUND_COMPONENTS"></span>
 
 
-应用程序的程序依赖于用户模式和内核模式下捕获 （输入） 和呈现 （输出） 批流的组件的组合。 批流是由描述其数据格式的数字音频流[ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)或[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构。
+应用程序依赖于用户模式和内核模式组件的组合来捕获（输入）和呈现（输出）波形流。 波形流是一种数字音频流，其数据格式由[**WAVEFORMATEX**](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)或[**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)结构描述。
 
-应用程序可以使用以下任一批呈现和捕获的软件接口：
+应用程序可以使用以下任一软件接口进行波形渲染和捕获：
 
--   Microsoft Windows 多媒体 waveOut*Xxx*和 waveIn*Xxx*函数
+-   Microsoft Windows 多媒体 waveOut*xxx*和 waveIn*Xxx*函数
 
 -   DirectSound 和 DirectSoundCapture Api
 
-行为的 waveOut*Xxx*和 waveIn*Xxx*函数基于旧批驱动程序和设备的功能。 从 Windows 98 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)对这些函数的调用转换为与 WDM 音频驱动程序的命令。 但是，通过模拟行为的旧版软件和硬件、 waveOut*Xxx*三维声音效果和，现可通过 DirectSound API 的硬件加速，否则会影响函数。 有关 DirectSound 和 Windows 多媒体批函数的详细信息，请参阅 Microsoft Windows SDK 文档。
+WaveOut*xxx*和 waveIn*xxx*函数的行为基于旧式 wave 驱动程序和设备的功能。 从 Windows 98 开始， [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)将对这些函数的调用转换为 WDM 音频驱动程序的命令。 但是，通过模拟旧软件和硬件的行为，waveOut*Xxx*函数会牺牲现在通过 DirectSound API 提供的3-d 声音效果和硬件加速。 有关 DirectSound 和 Windows 多媒体波形函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-DirectSound 和 Windows 多媒体批函数都的客户端[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)，哪些生成处理批和 DirectSound 流音频筛选器关系图。 图形构建是透明的使用这些软件接口的应用程序。
+DirectSound 和 Windows 多媒体波形函数是[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)的客户端，它可生成用于处理 Wave 和 DirectSound 流的音频筛选器图形。 图形构建对于使用这些软件接口的应用程序而言是透明的。
 
-### <a name="span-idwavecomponentsspanspan-idwavecomponentsspanspan-idwavecomponentsspanwave-components"></a><span id="Wave_Components"></span><span id="wave_components"></span><span id="WAVE_COMPONENTS"></span>批组件
+### <a name="span-idwave_componentsspanspan-idwave_componentsspanspan-idwave_componentsspanwave-components"></a><span id="Wave_Components"></span><span id="wave_components"></span><span id="WAVE_COMPONENTS"></span>波形组件
 
-下图显示了用户模式和内核模式组件批应用程序用来呈现或捕获包含批 PCM 数据的数字音频流。
+下图显示了一个用户模式和内核模式组件，wave 应用程序使用这些组件来呈现或捕获由波形 PCM 数据组成的数字音频流。
 
-![说明批呈现和捕获组件的关系图](images/wavecomp.png)
+![阐释波形渲染和捕获组件的示意图](images/wavecomp.png)
 
-呈现组件显示在上图中，左侧和右侧显示捕获组件。 表示批微型端口驱动程序的框会变暗，以指示这些是供应商提供的组件。 在图中的其他组件是系统提供。
+呈现组件显示在上图的左侧，而捕获组件显示在右侧。 表示波形微型端口驱动程序的框变暗，表示这些是供应商提供的组件。 图形中的其他组件是系统提供的。
 
-在左上角的图、 批呈现 （或"批扩展"） 的应用程序接口到 WDM 音频驱动程序通过 waveOut*Xxx*函数，在用户模式下实现[WinMM 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)，Winmm.dll。 应用程序从一个文件并调用读取块波形音频示例[ **waveOutWrite** ](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))函数来呈现它们。
+在该图的左上角，波形渲染（或 "向外"）应用程序通过 waveOut*Xxx*函数接口传递给 WDM 音频驱动程序，这些函数是在用户模式[Winmm.dll 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)winmm.dll 中实现的。 应用程序从文件中读取波形音频样本块，并调用[**waveOutWrite**](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))函数进行呈现。
 
-WDMAud，其中包含用户模式和内核模式组件 （Wdmaud.drv 和 Wdmaud.sys），缓冲批数据从[ **waveOutWrite** ](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))调用，并输出到波形流[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)，其显示下方 WDMAud 图中。
+WDMAud 包括用户模式和内核模式组件（Wdmaud. winspool.drv 和 Wdmaud），会从[**waveOutWrite**](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))调用中缓冲波形数据，并将波形流输出到[KMixer 系统驱动程序，该驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)将显示在图中的 WDMAud 下面.
 
-KMixer 是接收的批 PCM 流从一个或多个源和混合使用它们一起以形成单个输出流，在 wave PCM 格式中也是一个系统组件。
+KMixer 是一种系统组件，用于接收来自一个或多个源的声波 PCM 流，并将它们组合在一起以形成单个输出流（也采用波形 PCM 格式）。
 
-KMixer 输出批流到 WaveCyclic 或 WavePci 设备时，其端口和微型端口驱动程序将出现在上图中左侧 KMixer 的下方。 微型端口驱动程序将自身绑定到端口驱动程序，以形成批筛选器表示基础音频呈现设备。 典型的渲染设备输出驱动器扬声器或外部的音频单元的一组模拟信号。 渲染设备也可能会输出通过 S/PDIF 连接器的数字音频。 有关 WaveCyclic 和 WavePci 的详细信息，请参阅[批筛选器](wave-filters.md)。
+KMixer 会将波形流输出到 WaveCyclic 或 WavePci 设备，其端口和微型端口驱动程序显示在上图左侧 KMixer 的下方。 微型端口驱动程序将自身绑定到端口驱动程序，以形成表示基础音频呈现设备的波形筛选器。 典型的渲染设备输出模拟信号，该信号用于驱动一组扬声器或外部音频装置。 呈现设备还可以通过 S/PDIF 连接器输出数字音频。 有关 WaveCyclic 和 WavePci 的详细信息，请参阅[波形筛选器](wave-filters.md)。
 
-或者，KMixer 可以到 USB 音频设备，通过控制传递的输出流[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)（未在图中显示），而不是 WaveCyclic 或 WavePci 设备。
+或者，KMixer 可以将其输出流传递到 USB 音频设备，该设备由[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)（未显示在图中）而不是 WaveCyclic 或 WavePci 设备控制。
 
-适配器驱动程序通过调用创建 WaveCyclic 或 WavePci 端口驱动程序的实例[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport) GUID 值为**CLSID\_PortWaveCyclic**或**CLSID\_PortWavePci**分别。
+适配器驱动程序通过分别使用**CLSID\_PortWaveCyclic**或**clsid\_PortWavePci**的 GUID 值调用[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)创建 WaveCyclic 或 WavePci 端口驱动程序的实例。
 
-上图右侧显示了支持捕获到文件的波形数据的应用程序所需的组件。 批捕获 （或"批中"） 应用程序与 WDM 音频驱动程序通过 waveIn*Xxx* WinMM 系统组件中实现的函数。
+上图的右侧显示了支持向文件捕获波形数据的应用程序所需的组件。 波形捕获（或 "外接"）应用程序通过 waveIn*Xxx*函数与 WDM 音频驱动程序通信，这些函数在 winmm.dll 系统组件中实现。
 
-在该图的右下角，批捕获设备受批微型端口和端口驱动程序。 端口和微型端口驱动程序，它可以是类型 WaveCyclic 或 WavePci，一起绑定到窗体表示捕获设备的批筛选器。 此设备通常捕获从麦克风或其他音频源的模拟信号并将其转换为批 PCM 流。 设备还可能会输入通过 S/PDIF 连接器的数字音频流。
+在该图的右下角，波形捕获设备由波形微型端口和端口驱动程序控制。 端口和微型端口驱动程序（可以是 WaveCyclic 或 WavePci 类型）将绑定在一起以形成表示捕获设备的波形筛选器。 此设备通常从麦克风或其他音频源捕获模拟信号，并将其转换为波形 PCM 流。 设备还可以通过 S/PDIF 连接器输入数字音频流。
 
-波形端口驱动程序直接输出到 KMixer 或 WDMAud 其批流。 如果它必须是采样率转换之前 WDMAud 接收流必须经过 KMixer。 执行同时呈现和捕获音频流的系统可能需要 KMixer，两个的实例，如图所示。 请注意 SysAudio 会自动创建这些实例，因为需要它们。
+波形端口驱动程序将其波形流输出到 KMixer 或直接 WDMAud。 如果流在 WDMAud 接收它之前需要进行采样速率转换，则必须通过 KMixer。 执行音频流的同时呈现和捕获的系统可能需要 KMixer 的两个实例，如图中所示。 请注意，SysAudio 会根据需要自动创建这些实例。
 
-或者，而不是 WaveCyclic USB 音频设备或 WavePci 设备可以是捕获的批流的源。 在这种情况下，USBAudio 驱动程序 （不在图中所示） 将流传递到 KMixer。
+或者，捕获的波形流的源可以是 USB 音频设备，而不是 WaveCyclic 或 WavePci 设备。 在这种情况下，USBAudio 驱动程序（如图所示）将流传递到 KMixer。
 
-无论是否通过 USB 设备或 WaveCyclic 或 WavePci 设备捕获批流，KMixer 执行采样率转换流，如果需要而不会与其他流没有混合。 KMixer 输出到 Wdmaud.sys，内核模式下生成的流一半 WDMAud 系统驱动程序。 用户模式 Wdmaud.drv，一半时，输出批流式传输到应用程序通过 waveIn*Xxx*函数，这在 Winmm.dll 中实现。 最后，在图顶部，批捕获应用程序将批数据写入文件。
+无论波形流是由 USB 设备还是由 WaveCyclic 或 WavePci 设备捕获，KMixer 在流上执行采样率转换（如果需要），但不与其他流混合使用。 KMixer 将生成的流输出到 Wdmaud，这是 WDMAud 系统驱动程序的内核模式半部分。 用户模式半 Wdmaud，winspool.drv 通过 waveIn*Xxx*函数（在 winmm.dll 中实现）将波形流输出到应用程序。 最后，在图的顶部，波形捕获应用程序会将波形数据写入文件。
 
-在批捕获应用程序调用的时间[ **waveInOpen** ](https://docs.microsoft.com/previous-versions/dd743847(v=vs.85))函数打开捕获流，它会传入一个指针，到其回调例程。 批捕获事件发生时，操作系统将使用包含波样本的捕获设备从下一个块的缓冲区调用回调例程。 回调响应，该应用程序的下一批数据块写入文件。
+当波形捕获应用程序调用[**waveInOpen**](https://docs.microsoft.com/previous-versions/dd743847(v=vs.85))函数来打开捕获流时，它将传入指向其回调例程的指针。 发生波形捕获事件时，操作系统将调用带有缓冲区的回调例程，该缓冲区包含捕获设备中的下一个波形样本块。 在响应回调时，应用程序会将下一个波形数据块写入文件。
 
-### <a name="span-iddirectsoundcomponentsspanspan-iddirectsoundcomponentsspanspan-iddirectsoundcomponentsspandirectsound-components"></a><span id="DirectSound_Components"></span><span id="directsound_components"></span><span id="DIRECTSOUND_COMPONENTS"></span>DirectSound 组件
+### <a name="span-iddirectsound_componentsspanspan-iddirectsound_componentsspanspan-iddirectsound_componentsspandirectsound-components"></a><span id="DirectSound_Components"></span><span id="directsound_components"></span><span id="DIRECTSOUND_COMPONENTS"></span>DirectSound 组件
 
-下图显示了 DirectSound 应用程序使用呈现或捕获批数据的用户模式和内核模式组件。
+下图显示了 DirectSound 应用程序用来呈现或捕获波数据的用户模式和内核模式组件。
 
-![说明 directsound 呈现和捕获组件的关系图](images/dscomp.png)
+![说明 directsound 渲染和捕获组件的示意图](images/dscomp.png)
 
-在上图中的左半部分显示了呈现的组件和捕获组件显示在右侧。 批微型端口驱动程序显示为变暗的框，以指示它们是供应商提供的组件。 在图中的其他组件是系统提供。
+呈现组件显示在上图的左半部分，而捕获组件显示在右侧。 波形微型端口驱动程序显示为暗盒，指示它们是供应商提供的组件。 图形中的其他组件是系统提供的。
 
-在左上角的图、 DirectSound 应用程序加载批文件中的数据与声音缓冲用户模式[DirectSound 系统组件](user-mode-wdm-audio-components.md#directsound_system_component)(Dsound.dll) 管理。 此组件将批流发送到 WaveCyclic 或 WavePci 设备，其端口和微型端口驱动程序显示在图中，左下角。 如果设备上的可用硬件 mixer pin，流将直接向波形端口驱动程序，从而绕过 KMixer 传递。 否则，该流首先通过 KMixer，包含与任何其他同时播放流传递。 KMixer 输出混合流式传输到端口驱动程序。
+在该图的左上角，DirectSound 应用程序将文件中的波形数据加载到用户模式[DirectSound 系统组件](user-mode-wdm-audio-components.md#directsound_system_component)（Dsound）管理的声音缓冲区。 此组件向 WaveCyclic 或 WavePci 设备发送一个波形流，其端口和微型端口驱动程序显示在图的左下方。 如果设备上有硬件合成器 pin，则会绕过 KMixer，将流直接传递到波形端口驱动程序。 否则，流首先传递 KMixer，这会将它与任何其他同时播放的流混合使用。 KMixer 将混合流输出到端口驱动程序。
 
-作为前，微型端口驱动程序将绑定本身到端口驱动程序，以形成批筛选器表示基础音频呈现设备。 此设备可能例如播放通过扬声器，一组流。
+与之前一样，微型端口驱动程序将自身绑定到端口驱动程序以形成表示基础音频呈现设备的波形筛选器。 例如，此设备可以通过一组扬声器播放流。
 
-或者，可以通过 USB 音频设备，而不是 WaveCyclic 或 WavePci 设备呈现批流。 在这种情况下，该流不能绕过 KMixer;（图中未显示） 的 USBAudio 类系统驱动程序始终将流传递到 KMixer。
+或者，可以通过 USB 音频设备而不是 WaveCyclic 或 WavePci 设备呈现波形流。 在这种情况下，流不能跳过 KMixer;USBAudio 类系统驱动程序（图中未显示）始终将流传递到 KMixer。
 
-上图右侧显示了支持 DirectSoundCapture 应用程序的组件。 是在应用程序记录批数据接收从 WaveCyclic 或 WavePci 捕获设备。 此设备将转换模拟信号从麦克风，例如，为批流。 设备的波形端口和微型端口驱动程序将显示在图右下角。 如图所示，端口驱动程序接收作为输入流从微型端口驱动程序，并将其输出到的用户模式下 DirectSound 组件 Dsound.dll，直接或通过 KMixer 间接。 这取决于硬件捕获 pin 是否可从捕获设备。
+上图的右侧显示了支持 DirectSoundCapture 应用程序的组件。 应用程序记录从 WaveCyclic 或 WavePci 捕获设备接收到的波形数据。 此设备将模拟信号从麦克风（例如）转换为波形流。 设备的波形端口和微型端口驱动程序显示在图的右下角。 如图所示，端口驱动程序接收来自微型端口驱动程序的流并将其直接输出到用户模式 DirectSound 组件、Dsound 或通过 KMixer 直接输出。 这取决于是否可从捕获设备获取硬件捕获 pin。
 
-或者，捕获的批流的源可以是 USB 音频设备。 在这种情况下，该流不能绕过 KMixer;（图中未显示） 的 USBAudio 驱动程序始终将流传递到 KMixer。
+或者，捕获的波形流的源可以是 USB 音频设备。 在这种情况下，流不能跳过 KMixer;USBAudio 驱动程序（图中未显示）始终将流传递到 KMixer。
 
-如果 KMixer 插入到捕获流的路径，它在流上执行采样率转换，如有需要而不是与其他流没有混合。
+如果 KMixer 插入到捕获流的路径中，则它会根据需要在流上执行采样速率转换，但不会与其他流混合。
 
-在上图中的右上角，应用程序从 DirectSoundCapture 缓冲区中读取的波形数据，并将其写入文件。
+在上图的右上角，应用程序从 DirectSoundCapture 缓冲区读取波形数据并将其写入文件。
 
  
 

@@ -4,12 +4,12 @@ description: 源参数标记
 ms.assetid: 280b9fb2-9b5c-4830-9ba5-cfb6201960e0
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b78dac75e98d511e213adacffb88b1beb046987
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e635dff01fe1e6ef554ee152ba14c314c251d382
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385566"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829447"
 ---
 # <a name="source-parameter-token"></a>源参数标记
 
@@ -17,21 +17,21 @@ ms.locfileid: "67385566"
 ## <span id="ddk_source_parameter_token_gg"></span><span id="DDK_SOURCE_PARAMETER_TOKEN_GG"></span>
 
 
-源参数令牌描述源注册的属性，它是组成以下位：
+源参数标记描述源寄存器的属性，并且由以下位组成：
 
-### <a name="span-idbitsspanspan-idbitsspanbits"></a><span id="bits"></span><span id="BITS"></span>Bits
+### <a name="span-idbitsspanspan-idbitsspanbits"></a><span id="bits"></span><span id="BITS"></span>带宽
 
-<span id="_10_00_"></span> **\[10:00\]** 位 0 到 10 指示寄存器号 （注册文件中的偏移量）。
+<span id="_10_00_"></span> **\[10:00\]** 位0到10表示寄存器号（注册文件中的偏移量）。
 
-<span id="_12_11_"></span> **\[12:11\]**  bits 11 和 12 是第四个和第五个 bits \[3，4\]用于指示[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)。
+<span id="_12_11_"></span> **\[12:11\]** 第四个和第五个位为第四个和第五个 \[3，4\]，用于指示[寄存器类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)。
 
-<span id="_13_"></span> **\[13\]** 像素着色器 (PS) 版本早于 3\_0，13 位是保留，设为 0x0。
+<span id="_13_"></span> **\[13\]** 对于低于 3\_0 的像素着色器（PS）版本，将保留第13位并将其设置为0x0。
 
-像素着色器 (PS) 版本 3 的\_0 和更高版本和所有版本的顶点着色器 (VS)，13 位都指示是否使用了相对的寻址模式。 如果设置为 1，[相对寻址](shader-relative-addressing.md)适用。
+对于像素着色器（PS）版本 3\_0 和更高版本以及顶点着色器（VS）的所有版本，第13位表示是否使用相对寻址模式。 如果设置为1，则应用[相对寻址](shader-relative-addressing.md)。
 
-<span id="_15_14_"></span> **\[15:14\]** 保留所有的 PS 和 VS 版本。 此值设置为 0x0。
+<span id="_15_14_"></span> **\[15:14\]** 为所有版本的 PS 和 VS 保留 此值设置为0x0。
 
-<span id="_23_16_"></span> **\[23:16\]**  bits 16 到 23 表示通道*swizzle*。 在四个执行所有算术运算 （X、 Y、 Z、 W） 并行通道。 Swizzle 指定哪些源组件参与操作的通道。 有关 swizzle 详细信息，请参阅最新的 DirectX SDK 文档。 此字段的位指定 swizzle 下列通道：
+<span id="_23_16_"></span> **\[23:16\]** 位16到23表示通道*swizzle*。 所有算术运算都按四（X，Y，Z，W）并行通道执行。 Swizzle 指定哪个源组件参与操作通道。 有关 swizzle 的详细信息，请参阅最新的 DirectX SDK 文档。 此字段的位为以下通道指定 swizzle：
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67385566"
 <thead>
 <tr class="header">
 <th align="left">位</th>
-<th align="left">通道</th>
+<th align="left">频道</th>
 </tr>
 </thead>
 <tbody>
@@ -59,14 +59,14 @@ ms.locfileid: "67385566"
 </tr>
 <tr class="even">
 <td align="left"><p>23:22</p></td>
-<td align="left"><p>通道 W swizzle</p></td>
+<td align="left"><p>频道 W swizzle</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-上一位的任何一组中的以下值指定要在操作通道中使用的源组件：
+任何前一组位中的以下值指定要在操作通道中使用的源组件：
 
 <table>
 <colgroup>
@@ -75,8 +75,8 @@ ms.locfileid: "67385566"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
-<th align="left">组件</th>
+<th align="left">Value</th>
+<th align="left">Component</th>
 </tr>
 </thead>
 <tbody>
@@ -94,16 +94,16 @@ ms.locfileid: "67385566"
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>使用组件 W。</p></td>
+<td align="left"><p>使用的组件 W。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-例如，如果 19:18 位设置为 0x2，然后组件 Z 用作通道 Y 操作源。
+例如，如果将19:18 位设置为0x2，则使用组件 Z 作为通道 Y 操作的源。
 
-<span id="_27_24_"></span> **\[27:24\]** 位 24 到 27 指示源修饰符。 此 4 位的值指示以下源修饰符类型：
+<span id="_27_24_"></span> **\[27:24\]** Bits 24 到27表示源修饰符。 此4位值指示以下源修饰符类型：
 
 <table>
 <colgroup>
@@ -112,7 +112,7 @@ ms.locfileid: "67385566"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 <th align="left">源修饰符类型</th>
 </tr>
 </thead>
@@ -123,55 +123,55 @@ ms.locfileid: "67385566"
 </tr>
 <tr class="even">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>求反</p></td>
+<td align="left"><p>抵消</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>偏差</p></td>
+<td align="left"><p>加</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>偏置和求反</p></td>
+<td align="left"><p>偏量和反运算</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>登录 (bx2)</p></td>
+<td align="left"><p>Sign （bx2）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x5</p></td>
-<td align="left"><p>登录 (bx2) 和负号</p></td>
+<td align="left"><p>Sign （bx2）和否定</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6</p></td>
-<td align="left"><p>补数</p></td>
+<td align="left"><p>补充</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x7</p></td>
-<td align="left"><p>x2 (PS 1_4)</p></td>
+<td align="left"><p>x2 （PS 1_4）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>x2 和求反 (PS 1_4)</p></td>
+<td align="left"><p>x2 和否定（PS 1_4）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x9</p></td>
-<td align="left"><p>dz （除通过由 Z 分量的 PS 1_4）</p></td>
+<td align="left"><p>dz （除以 Z 分量-PS 1_4）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xa</p></td>
-<td align="left"><p>数据仓库 (通过除以 W 组件 âˆ PS 1_4)</p></td>
+<td align="left"><p>dw （通过 W 分量除以ˆ ' PS 1_4）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xb</p></td>
-<td align="left"><p>abs(x) 计算绝对值</p></td>
+<td align="left"><p>abs （x）计算绝对值</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xc</p></td>
-<td align="left"><p>-abs(x) 计算绝对值的数值和求反</p></td>
+<td align="left"><p>-abs （x）计算绝对值和反运算</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xd</p></td>
-<td align="left"><p>不。 仅应用于断言而注册，这是布尔值。 因此，它是逻辑非。</p></td>
+<td align="left"><p>不仅. 仅适用于断言而寄存器，后者为 BOOL。 因此，逻辑非。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xe-0xf</p></td>
@@ -182,13 +182,13 @@ ms.locfileid: "67385566"
 
  
 
-<span id="_30_28_"></span> **\[30:28\]** 到 30 位 28 个为前三个位\[0,1,2\]用于指示[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)。
+<span id="_30_28_"></span> **\[30:28\]** 位28到30是用于指示[寄存器类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)\[0，1，2\] 的第三位。
 
-<span id="_31_"></span> **\[31\]** 位 31 为 0x1。
+<span id="_31_"></span> **\[31\]** 位31为0x1。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-28、 29、 30、 11 和 12 位窗体为 5 位值，该值指示注册类型。 有关注册类型的信息，请参阅[着色器注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)。
+位28、29、30、11和12构成一个指示寄存器类型的5位值。 有关寄存器类型的信息，请参阅[着色器寄存器类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要求
 

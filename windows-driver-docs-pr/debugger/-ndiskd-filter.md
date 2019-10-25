@@ -1,9 +1,9 @@
 ---
-title: ndiskd.filter
-description: Ndiskd.filter 扩展显示有关 NDIS 轻型筛选器 （lwf） 转变的信息。 如果不带任何参数运行此扩展，ndiskd 将显示所有 LWFs 的列表。
+title: ndiskd 筛选器
+description: Ndiskd 扩展显示有关 NDIS 轻型筛选器（LWF）的信息。 如果运行不带任何参数的扩展，ndiskd 将显示所有 LWFs 的列表。
 ms.assetid: 4cf0f8bc-a15a-49db-b7db-13d60fd0c767
 keywords:
-- ndiskd.filter Windows 调试
+- ndiskd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: da235420c0ed44bbaad6f510fd181c2ceb365986
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 946a669c7eedef831a5c8f0e33d390d634c4abc1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363170"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837595"
 ---
 # <a name="ndiskdfilter"></a>!ndiskd.filter
 
 
-**！ Ndiskd.filter**扩展显示有关 NDIS 轻型筛选器 （lwf） 转变的信息。 如果不带任何参数运行此扩展 ！ ndiskd 将显示所有 LWFs 的列表。
+**！ Ndiskd**扩展显示有关 NDIS 轻型筛选器（LWF）的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有 LWFs 的列表。
 
 ```console
 !ndiskd.filter [-handle <x>] [-findname <any>] [-handlers] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 NDIS 轻型筛选器的句柄。
 
-<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-findname*   
-通过名称前缀来筛选 LWFs。
+<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-system.windows.frameworkelement.findname*   
+按名称前缀筛选 LWFs。
 
-<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-handlers*   
-显示此 LWF 筛选器处理程序。
+<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-处理程序*   
+显示此 LWF 的筛选器处理程序。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-输入 **！ ndiskd.filter**命令不带任何参数，以获取所有筛选器的列表。 在此示例中，查找 ffff8083e14e8460 句柄。 请注意，此句柄是本身的筛选器和嵌套在其关联的筛选器下*驱动程序*，QoS 数据包计划程序。
+输入不带参数的 **！ ndiskd**命令以获取所有筛选器的列表。 在此示例中，查找 ffff8083e14e8460 句柄。 请注意，此句柄用于筛选器本身，并嵌套在其关联的筛选器*驱动程序*（QoS 数据包计划程序）之下。
 
 ```console
 3: kd> !ndiskd.filter
@@ -61,7 +61,7 @@ ffff8083e19a6d70 - WFP 802.3 MAC Layer LightWeight Filter
   Filter ffff8083e0d89c70, Miniport ffff8083e0f501a0 - Microsoft Kernel Debug Network Adapter
 ```
 
-通过使用此筛选器句柄，我们现在可以看到更多详细的信息，例如其状态、 更高版本的筛选器句柄和较低的筛选器句柄。
+通过使用此筛选器句柄，我们现在可以看到有关它的更详细信息，如 it 状态、更高的筛选器句柄和更低的筛选器句柄。
 
 ```console
 3: kd> !ndiskd.filter ffff8083e14e8460
@@ -89,18 +89,18 @@ FILTER
     Driver handlers
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
  
 

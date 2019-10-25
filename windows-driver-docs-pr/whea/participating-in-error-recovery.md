@@ -7,22 +7,22 @@ keywords:
 - WHEA WDK，错误恢复
 - 硬件错误 WDK WHEA，错误恢复
 - 错误 WDK WHEA，错误恢复
-- 特定于平台的硬件错误驱动程序插件 WDK WHEA，错误恢复
-- PSHED 插件 WDK WHEA 错误恢复
+- 平台特定硬件错误驱动程序插件 WDK WHEA，错误恢复
+- PSHED 插件 WDK WHEA，错误恢复
 - 错误恢复 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: def79e808f5256e4e2d2a10dd91dd5b44ef94c25
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9037cf42b8190ff4436fc1627a088b481a24933f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386454"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826184"
 ---
 # <a name="participating-in-error-recovery"></a>参与错误恢复
 
 
-若要参与错误恢复，PSHED 插件必须实现[ *AttemptRecovery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_attempt_error_recovery)回调函数。
+若要参与错误恢复，PSHED 插件必须实现[*AttemptRecovery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_attempt_error_recovery)回调函数。
 
 下面的代码示例演示如何实现此回调函数。
 
@@ -69,7 +69,7 @@ NTSTATUS
 }
 ```
 
-必须指定插件参与错误恢复 PSHED **PshedFAErrorRecovery**标志时它[注册](registering-a-pshed-plug-in.md)与操作系统本身。
+参与错误恢复的 PSHED 插件在向操作系统[注册](registering-a-pshed-plug-in.md)自身时必须指定**PshedFAErrorRecovery**标志。
 
  
 

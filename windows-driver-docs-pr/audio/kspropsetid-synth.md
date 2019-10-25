@@ -1,34 +1,34 @@
 ---
-title: KSPROPSETID\_合成器
-description: KSPROPSETID\_合成器
+title: KSPROPSETID\_合成
+description: KSPROPSETID\_合成
 ms.assetid: ff5efd85-0b4d-4625-b029-fecf325bcacb
 keywords:
 - KSPROPSETID_Synth
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 205d9ee065972cb55732d91f0b5c5a1f59a2818b
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: e18d48653f747c8b77ac4ee23146532031b94b87
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391579"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830460"
 ---
-# <a name="kspropsetidsynth"></a>KSPROPSETID\_合成器
+# <a name="kspropsetid_synth"></a>KSPROPSETID\_合成
 
 
 ## <span id="ddk_kspropsetid_synth_ks"></span><span id="DDK_KSPROPSETID_SYNTH_KS"></span>
 
 
-`KSPROPSETID_Synth`属性集包含的属性的全局合成器节点的配置 ([**KSNODETYPE\_合成器**](ksnodetype-synthesizer.md))。
+`KSPROPSETID_Synth` 属性集包含合成节点（[**KSNODETYPE\_合成**](ksnodetype-synthesizer.md)器）的配置的全局属性。
 
-在此集中的属性项由 KSPROPERTY\_合成器的枚举值，如标头中定义文件 Dmusprop.h。
+此集中的属性项由 KSPROPERTY\_合成枚举值指定，如标头文件 Dmusprop 中所定义。
 
 ## <span id="ddk_ksproperty_synth_caps_ks"></span><span id="DDK_KSPROPERTY_SYNTH_CAPS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成器\_系统使用 CAPS 属性来确定合成器的功能。
+系统使用 KSPROPERTY\_合成器\_CAP 属性来确定合成器的功能。
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ KSPROPERTY\_合成器\_系统使用 CAPS 属性来确定合成器的功能。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -49,43 +49,43 @@ KSPROPERTY\_合成器\_系统使用 CAPS 属性来确定合成器的功能。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthcaps" data-raw-source="[&lt;strong&gt;SYNTHCAPS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthcaps)"><strong>SYNTHCAPS</strong></a></p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>无</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthcaps" data-raw-source="[&lt;strong&gt;SYNTHCAPS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthcaps)"><strong>SYNTHCAPS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 是类型 SYNTHCAPS 的结构，它指定合成器的功能。 这些功能包括：
+属性值（操作数据）是 SYNTHCAPS 类型的结构，它指定合成器的功能。 这些功能包括：
 
--   示例可用的内存量
+-   可用内存量
 
--   最大通道组数
+-   通道组的最大数量
 
--   语音的最大数目
+-   最大声音数量
 
 -   最大音频通道数
 
 -   呈现效果
 
-有关详细信息，请参阅[ **SYNTHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthcaps)。
+有关详细信息，请参阅[**SYNTHCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthcaps)。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_合成\_CAPS 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY\_合成\_CAP 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-合成器功能的详细信息，请参阅**IDirectMusicPort::GetCaps**方法和 DMU\_PORTCAPS 结构中 Microsoft Windows SDK 文档。
+有关合成器功能的详细信息，请参阅 Microsoft Windows SDK 文档中的**IDirectMusicPort：： GetCaps**方法和 DMU\_PORTCAPS 结构。
 
 ## <span id="ddk_ksproperty_synth_channelgroups_ks"></span><span id="DDK_KSPROPERTY_SYNTH_CHANNELGROUPS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成器\_系统使用 CHANNELGROUPS 属性来设置或获取 pin 实例上的可用通道组数。 通道组编号，从零，每个 pin 实例上。
+系统使用 KSPROPERTY\_合成\_CHANNELGROUPS 属性来设置或获取 pin 实例上活动通道组的数目。 通道组从零开始，在每个 pin 实例上编号。
 
 <table>
 <colgroup>
@@ -97,7 +97,7 @@ KSPROPERTY\_合成器\_系统使用 CHANNELGROUPS 属性来设置或获取 pin �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -106,10 +106,10 @@ KSPROPERTY\_合成器\_系统使用 CHANNELGROUPS 属性来设置或获取 pin �
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -117,11 +117,11 @@ KSPROPERTY\_合成器\_系统使用 CHANNELGROUPS 属性来设置或获取 pin �
 
  
 
-属性值 （操作数据） 是类型为 ULONG，指定多少通道进行分组的 pin 支持。 如果 pin 支持*n*通道组的插针通道组的编号介于 0 到*n*-1。
+属性值（操作数据）的类型为 ULONG，指定 pin 支持多少通道组。 如果 pin 支持*n*个通道组，则 pin 上的通道组将从0到*n*-1 进行编号。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_合成\_CAPS 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表显示了一些可能的失败代码。
+KSPROPERTY\_合成\_CAP 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表列出了一些可能的失败代码。
 
 <table>
 <colgroup>
@@ -137,25 +137,25 @@ KSPROPERTY\_合成\_CAPS 属性请求将返回状态\_成功以指示已成功�
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>缓冲区太小，无法完成该操作。</p></td>
+<td align="left"><p>缓冲区太小，无法完成操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>该操作未成功完成。</p></td>
+<td align="left"><p>操作未成功完成。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关通道组的详细信息，请参阅的说明**IDirectMusicPort::GetNumChannelGroups**并**IDirectMusicPort::SetNumChannelGroups** Microsoft Windows SDK 中的方法文档。
+有关通道组的详细信息，请参阅 Microsoft Windows SDK 文档中的**IDirectMusicPort：： GetNumChannelGroups**和**IDirectMusicPort：： SetNumChannelGroups**方法的说明。
 
 ## <span id="ddk_ksproperty_synth_latencyclock_ks"></span><span id="DDK_KSPROPERTY_SYNTH_LATENCYCLOCK_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成器\_LATENCYCLOCK 属性用来查询流的当前延迟时钟时间，即始终大于 master 时钟时间的微型端口驱动程序。
+KSPROPERTY\_合成\_LATENCYCLOCK 属性用于查询微端口驱动程序的当前延迟时间（始终大于主时钟时间）。
 
 <table>
 <colgroup>
@@ -167,7 +167,7 @@ KSPROPERTY\_合成器\_LATENCYCLOCK 属性用来查询流的当前延迟时钟�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -176,10 +176,10 @@ KSPROPERTY\_合成器\_LATENCYCLOCK 属性用来查询流的当前延迟时钟�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>无</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONGLONG</p></td>
 </tr>
 </tbody>
@@ -187,11 +187,11 @@ KSPROPERTY\_合成器\_LATENCYCLOCK 属性用来查询流的当前延迟时钟�
 
  
 
-（操作数据） 的属性值属于类型 ULONGLONG，表示合成器的当前延迟时间。 此时间是指定相对于主时钟，以 100 毫微秒为单位表示。
+属性值（操作数据）的类型为 ULONGLONG，表示合成器的当前滞后时间。 此时间是相对于主时钟指定的，并以100毫微秒为单位表示。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_合成\_LATENCYCLOCK 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表显示了一些可能的失败代码。
+KSPROPERTY\_合成\_LATENCYCLOCK 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表列出了一些可能的失败代码。
 
 <table>
 <colgroup>
@@ -207,37 +207,37 @@ KSPROPERTY\_合成\_LATENCYCLOCK 属性请求将返回状态\_成功以指示已
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>缓冲区太小，无法完成该操作。</p></td>
+<td align="left"><p>缓冲区太小，无法完成操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>该操作未成功完成。</p></td>
+<td align="left"><p>操作未成功完成。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>STATUS_INVALID_DEVICE_REQUEST</p></td>
-<td align="left"><p>该操作对于此设备无效。</p></td>
+<td align="left"><p>此设备的操作无效。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-延迟时钟通常用于将音频输出流到多个设备同步。
+延迟时钟通常用于在多个设备之间同步音频输出流。
 
-KSPROPERTY\_合成器\_LATENCYCLOCK 属性 get 请求应返回延迟时钟时间等于当前的主时钟时间，加上所需的最低保证音频筛选器通过流传递的延迟。 计划要早于当前延迟时钟时间风险数据晚播放播放的音频数据的应用程序。
+KSPROPERTY\_合成\_LATENCYCLOCK 请求应返回等于当前的主时钟时间的延迟时间，以及流通过的音频筛选器的最小保证延迟。 一种应用程序，用于计划要播放的音频数据早于当前滞后时间的数据风险。
 
-有关延迟时钟的详细信息，请参阅：
+有关延迟时钟的详细信息，请参阅以下内容：
 
--   讨论 KSPROPERTY\_合成\_LATENCYCLOCK 属性中的[延迟时钟](https://docs.microsoft.com/windows-hardware/drivers/audio/latency-clocks)。
+-   讨论了 KSPROPERTY\_合成\_LATENCYCLOCK 属性，[延迟时钟](https://docs.microsoft.com/windows-hardware/drivers/audio/latency-clocks)。
 
--   说明**IDirectMusicPort::GetLatencyClock**并**IReferenceClock::GetTime** Microsoft Windows SDK 文档中的方法。
+-   Microsoft Windows SDK 文档中的**IDirectMusicPort：： GetLatencyClock**和**IReferenceClock：： GetTime**方法的说明。
 
 ## <span id="ddk_ksproperty_synth_portparameters_ks"></span><span id="DDK_KSPROPERTY_SYNTH_PORTPARAMETERS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成\_PORTPARAMETERS 属性用于获取配置参数的 DirectMusic*端口*，这是发送或接收音乐数据的设备的 DirectMusic 术语。 （在 KS 术语中，DirectMusic 端口不对应 Dmu 端口驱动程序。 它对应于 DirectMusic 筛选器上呈现或捕获的 pin。）
+KSPROPERTY\_合成\_PORTPARAMETERS 属性用于获取 DirectMusic*端口*的配置参数，它是用于发送或接收音乐数据的设备的 DirectMusic 术语。 （在 KS 术语中，DirectMusic 端口并不对应于 Dmu 端口驱动程序。 它对应于 DirectMusic 筛选器上的呈现或捕获 pin。）
 
 <table>
 <colgroup>
@@ -249,7 +249,7 @@ KSPROPERTY\_合成\_PORTPARAMETERS 属性用于获取配置参数的 DirectMusic
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -258,24 +258,24 @@ KSPROPERTY\_合成\_PORTPARAMETERS 属性用于获取配置参数的 DirectMusic
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams)"><strong>SYNTH_PORTPARAMS</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_portparams)"><strong>SYNTH_PORTPARAMS</strong></a></p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>无</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams)"> <strong>SYNTH_PORTPARAMS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams" data-raw-source="[&lt;strong&gt;SYNTH_PORTPARAMS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_portparams)"><strong>SYNTH_PORTPARAMS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性描述符 （实例数据） 包含后紧跟着合成器的 KSNODEPROPERTY 结构\_PORTPARAMS 结构。 在发送前属性请求，客户端指定其请求的参数值写入到合成器通过\_PORTPARAMS 结构。
+属性说明符（实例数据）包含一个 KSNODEPROPERTY 结构，该结构后跟合成\_PORTPARAMS 结构。 在发送属性请求之前，客户端通过将其写入合成\_PORTPARAMS 结构中来指定其请求的参数值。
 
-属性值 （操作数据） 也属于类型合成器\_PORTPARAMS。 微型端口驱动程序将加载此结构与它实际上使用可配置的端口的参数值。
+属性值（操作数据）也是合成\_PORTPARAMS 类型。 微型端口驱动程序使用它实际用于配置端口的参数值加载此结构。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-如果在配置严格按照指定由调用方 DirectMusic 端口成功微型端口驱动程序，它将返回状态\_成功代码。 否则，它返回相应的错误代码。 下表列出一些可能的错误状态代码。
+如果微型端口驱动程序成功按调用方指定的方式配置 DirectMusic 端口，则它将返回成功代码\_状态。 否则，它将返回相应的错误代码。 下表指出了一些可能的错误状态代码。
 
 <table>
 <colgroup>
@@ -291,33 +291,33 @@ KSPROPERTY\_合成\_PORTPARAMETERS 属性用于获取配置参数的 DirectMusic
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_NOT_ALL_ASSIGNED</p></td>
-<td align="left"><p>操作成功，但微型端口驱动程序必须修改一个或多个调用方标记为在属性值中有效的参数值。</p></td>
+<td align="left"><p>操作成功，但微型端口驱动程序必须修改调用方在属性值中标记为有效的一个或多个参数值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>该操作未成功完成。</p></td>
+<td align="left"><p>操作未成功完成。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-这是最复杂的要处理的 DirectMusic 属性项。 此属性支持仅 get 请求，但 get 请求还设置端口参数。 端口通过合成器\_PORTPARAMS 结构作为属性请求的属性描述符。 属性值缓冲区附带属性请求，但由于这是 get 请求，缓冲区仅用于从微型端口驱动程序中检索信息。
+这是要处理的 DirectMusic 属性项中最复杂的内容。 尽管此属性仅支持 get 请求，但 get 请求还会设置端口参数。 端口将合成\_PORTPARAMS 结构传递为属性请求的属性描述符。 属性-值缓冲区附带了属性请求，但由于这是 get 请求，因此仅用于从微型端口驱动程序中检索信息。
 
-微型端口驱动程序应首先复制合成器\_PORTPARAMS 结构从属性描述符的属性值的缓冲区。 接下来，它应检查以查看它是否能够支持所有参数值调用方请求 （标记为有效）。 如果微型端口驱动程序不能支持一个或多个请求的参数值，它应覆盖 (中合成器\_PORTPARAMS 结构中的属性值缓冲区) 请求的值为这些特定参数的值，它可以支持。
+微型端口驱动程序应首先将合成\_PORTPARAMS 结构从属性描述符复制到属性值缓冲区。 接下来，应检查它是否能够支持调用方请求的所有参数值（标记为有效）。 如果微型端口驱动程序无法支持一个或多个请求的参数值，则它应覆盖（在属性-值缓冲区中的合成\_PORTPARAMS 结构）中，这些特定参数的请求值的值可以为支持.
 
-如果微型端口驱动程序进行任何更改到调用方的合成器\_PORTPARAMS，调用方应得到与调用方最初发送给微型端口驱动程序的属性描述符中的参数完全匹配的属性值。
+如果微型端口驱动程序未更改调用方的合成器\_PORTPARAMS，则调用方应返回与调用方最初向下发送到微型端口驱动程序的属性描述符中的参数完全匹配的属性值。
 
-按照约定，该驱动程序还会填写不具有相应的位设置的参数的值**dwValidParams**合成器的成员\_PORTPARAMS。 这允许调用方以查看哪些默认值用于这些参数的微型端口驱动程序。 微型端口驱动程序输出使用它来生成批接口设备的实际参数值。
+按照约定，驱动程序还会在合成\_PORTPARAMS 的**dwValidParams**成员中填充未设置相应位的参数的值。 这允许调用方查看微型端口驱动程序用于这些参数的默认值。 微型端口驱动程序输出用于构建波形接口设备的实际参数值。
 
-微型端口驱动程序的 KSPROPERTY\_合成器\_PORTPARAMETERS 处理程序应做好正确处理采样率更改的请求。
+小型端口驱动程序的 KSPROPERTY\_合成\_PORTPARAMETERS 处理程序应准备好处理对采样率更改的请求。
 
 ## <span id="ddk_ksproperty_synth_runningstats_ks"></span><span id="DDK_KSPROPERTY_SYNTH_RUNNINGSTATS_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成器\_RUNNINGSTATS 属性用于查询合成器的性能统计信息的微型端口驱动程序。
+KSPROPERTY\_合成\_RUNNINGSTATS 属性用于查询用于合成器性能统计信息的微型端口驱动程序。
 
 <table>
 <colgroup>
@@ -329,7 +329,7 @@ KSPROPERTY\_合成器\_RUNNINGSTATS 属性用于查询合成器的性能统计�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -338,32 +338,32 @@ KSPROPERTY\_合成器\_RUNNINGSTATS 属性用于查询合成器的性能统计�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_stats" data-raw-source="[&lt;strong&gt;SYNTH_STATS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_stats)"><strong>SYNTH_STATS</strong></a></p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>无</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_stats" data-raw-source="[&lt;strong&gt;SYNTH_STATS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synth_stats)"><strong>SYNTH_STATS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 是一种结构类型合成器的\_统计信息。 微型端口驱动程序的属性处理程序将以下统计信息写入到此结构：
+属性值（操作数据）是合成\_统计信息类型的结构。 微型端口驱动程序的属性处理程序将以下统计信息写入到此结构中：
 
--   播放的声音的平均数目
+-   语音播放的平均数量
 
--   CPU 使用率
+-   CPU 使用情况
 
--   丢失的说明的数量
+-   丢失的注释数
 
 -   可用内存量
 
 -   峰值音量级别
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_合成\_RUNNINGSTATS 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表显示了一些可能的错误代码。
+KSPROPERTY\_合成\_RUNNINGSTATS 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表列出了一些可能的错误代码。
 
 <table>
 <colgroup>
@@ -379,31 +379,31 @@ KSPROPERTY\_合成\_RUNNINGSTATS 属性请求将返回状态\_成功以指示已
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>缓冲区太小，无法完成该操作。</p></td>
+<td align="left"><p>缓冲区太小，无法完成操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>该操作未成功完成。</p></td>
+<td align="left"><p>操作未成功完成。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>STATUS_INVALID_DEVICE_REQUEST</p></td>
-<td align="left"><p>该操作对于此设备无效。</p></td>
+<td align="left"><p>此设备的操作无效。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-合成器的性能统计信息会不断更新时，设备仍保持 KSSTATE\_运行状态。 每次设备将进入此状态时，它将重置统计信息，如峰值卷和数的累积值零的处理方法的丢失的说明。
+当设备仍处于 KSSTATE\_运行状态时，合成器的性能统计信息会不断更新。 每次设备进入此状态时，它都会重置统计信息，这是零个累计值，如高峰量和丢失的便笺数。
 
-有关其他信息，请参阅的说明**IDirectMusicPort::GetRunningStats**方法和 DMU\_SYNTHSTATS 结构中 Microsoft Windows SDK 文档。
+有关其他信息，请参阅 Microsoft Windows SDK 文档中的**IDirectMusicPort：： GetRunningStats**方法和 DMU\_SYNTHSTATS 结构的描述。
 
 ## <span id="ddk_ksproperty_synth_voicepriority_ks"></span><span id="DDK_KSPROPERTY_SYNTH_VOICEPRIORITY_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成器\_VOICEPRIORITY 属性指定从其语音缓存语音微型端口驱动程序需要使用以便将服务器数量时，应具有 MIDI 合成器中的特定语音何种优先级。
+KSPROPERTY\_合成\_VOICEPRIORITY 属性指定当微型端口驱动程序需要从语音缓存中凹凸声音时，MIDI 合成器中特定的语音应具有的优先级。
 
 <table>
 <colgroup>
@@ -415,7 +415,7 @@ KSPROPERTY\_合成器\_VOICEPRIORITY 属性指定从其语音缓存语音微型�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -424,10 +424,10 @@ KSPROPERTY\_合成器\_VOICEPRIORITY 属性指定从其语音缓存语音微型�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthvoicepriority_instance" data-raw-source="[&lt;strong&gt;SYNTHVOICEPRIORITY_INSTANCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthvoicepriority_instance)"><strong>SYNTHVOICEPRIORITY_INSTANCE</strong></a></p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthvoicepriority_instance" data-raw-source="[&lt;strong&gt;SYNTHVOICEPRIORITY_INSTANCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusprop/ns-dmusprop-_synthvoicepriority_instance)"> <strong>SYNTHVOICEPRIORITY_INSTANCE</strong></a></p></td>
 <td align="left"><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -435,13 +435,13 @@ KSPROPERTY\_合成器\_VOICEPRIORITY 属性指定从其语音缓存语音微型�
 
  
 
-属性描述符 （实例数据） 包含后紧跟着 SYNTHVOICEPRIORITY KSNODEPROPERTY 结构\_实例结构，它指定语音的通道组 （16 个 MIDI 通道的集） 和通道数字 （在组中）。
+属性说明符（实例数据）包含一个 KSNODEPROPERTY 结构，该结构后面紧跟一个 SYNTHVOICEPRIORITY\_实例结构，该结构指定语音的通道组（16个 MIDI 通道的集合）和频道号（在组）。
 
-属性值 （操作数据） 是一个 dword 值，指定的优先级。 客户端使用 KSPROPERTY\_合成\_VOICEPRIORITY 集属性请求将发送到微型端口驱动程序，和它的语音的新优先级使用 KSPROPERTY\_合成器\_VOICEPRIORITY 属性 get 请求到从微型端口驱动程序检索语音的当前优先级。
+属性值（操作数据）是指定优先级的 DWORD 值。 客户端使用 KSPROPERTY\_合成\_VOICEPRIORITY 请求将语音的新优先级发送到微型端口驱动程序，并使用 KSPROPERTY\_合成\_VOICEPRIORITY get-property 请求来检索语音小型端口驱动程序的当前优先级。
 
 **语音优先级**
 
-标头文件 Dmusprop.h 中定义的以下通道组优先级：
+标头文件 Dmusprop 中定义了以下通道组优先级：
 
 ```cpp
   DAUD_CRITICAL_VOICE_PRIORITY
@@ -451,19 +451,19 @@ KSPROPERTY\_合成器\_VOICEPRIORITY 属性指定从其语音缓存语音微型�
   DAUD_PERSIST_VOICE_PRIORITY
 ```
 
-前面的列表进行排序最高优先级列表的顶部和底部最低。 这些优先级是到达通道组中每个通道的语音优先级的通道优先级偏移量或运算。 生成的优先级在 get 和 set 属性请求中传递。
+前面的列表在列表顶部有最高优先级，最小的顺序排列在底部。 这些优先级与通道优先级偏移量运算，达到通道组中每个通道的语音优先级。 生成的优先级在 get 和 set 属性请求中传递。
 
-前面的通道组优先级值为大到通道优先级偏移量进行比较。 结果是该更改通道组优先级引发或降低整个通道组相对于其他通道组的优先级，而无需更改通道组中的通道的相对优先级。
+与通道优先级偏移量相比，前面的通道组优先级值较大。 结果是，更改通道组优先级会引发或降低整个通道组相对于其他通道组的优先级，而不会改变通道组内通道的相对优先级。
 
-### <a name="span-iddefaultprioritiesspanspan-iddefaultprioritiesspan-default-priorities"></a><span id="default_priorities"></span><span id="DEFAULT_PRIORITIES"></span> 默认优先级
+### <a name="span-iddefault_prioritiesspanspan-iddefault_prioritiesspan-default-priorities"></a><span id="default_priorities"></span><span id="DEFAULT_PRIORITIES"></span>默认优先级
 
-创建合成器微型端口驱动程序时，它将默认优先级分配给每个其语音。 默认值定义，如下所示：
+创建合成器微型端口驱动程序时，它会为其每个声音指定默认优先级。 默认值定义如下：
 
--   默认情况下，优先级相等跨通道组。 例如，这意味着该通道 5 通道组 1 上的有与通道组 2 上的通道 5 相同的优先级。
+-   默认情况下，各通道组的优先级相等。 例如，这意味着通道组1上的通道5与通道组2上的通道5具有相同的优先级。
 
--   DLS 级别 1 规范根据频道 10 （MIDI 打击乐器频道） 具有最高优先级，跟 1 到 9 和 11 到 16。
+-   根据 DLS 第1级规范，通道10（MIDI 打击乐器通道）的优先级最高，后跟1到9，11到16。
 
-标头文件 Dmusprop.h 定义以下优先级偏移量：
+标头文件 Dmusprop 定义了以下优先级偏移量：
 
 ```cpp
   DAUD_CHAN10_VOICE_PRIORITY_OFFSET
@@ -484,16 +484,16 @@ KSPROPERTY\_合成器\_VOICEPRIORITY 属性指定从其语音缓存语音微型�
   DAUD_CHAN16_VOICE_PRIORITY_OFFSET
 ```
 
-在列表顶部的最高优先级顺序是前面列出的各偏移量。 标头文件 Dmusprop.h 还可以通过按位 or 操作每个偏移量 DAUD 与每个通道组中定义的信道的默认优先级\_标准\_语音\_优先级。 例如，以下定义向每个通道组中的通道 1 的默认优先级：
+前面的偏移列表在列表顶部按最高优先级排序。 标头文件 Dmusprop 还定义每个通道组中通道的默认优先级，按位 Or，其中每个偏移具有 DAUD\_STANDARD\_VOICE\_优先级。 例如，下面的定义为每个通道组中的通道1提供默认优先级：
 
 ```cpp
   #define DAUD_CHAN1_DEF_VOICE_PRIORITY \
     (DAUD_STANDARD_VOICE_PRIORITY | DAUD_CHAN1_VOICE_PRIORITY_OFFSET)
 ```
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_合成\_VOICEPRIORITY 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表显示了一些可能的错误代码。
+KSPROPERTY\_合成\_VOICEPRIORITY 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表列出了一些可能的错误代码。
 
 <table>
 <colgroup>
@@ -509,25 +509,25 @@ KSPROPERTY\_合成\_VOICEPRIORITY 属性请求将返回状态\_成功以指示�
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>缓冲区太小，无法完成该操作。</p></td>
+<td align="left"><p>缓冲区太小，无法完成操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>该操作未成功完成。</p></td>
+<td align="left"><p>操作未成功完成。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关语音优先级的详细信息，请参阅的说明**IDirectMusicPort::GetChannelPriority**并**IDirectMusicPort::SetChannelPriority** Microsoft Windows SDK 中的方法文档。
+有关语音优先级的详细信息，请参阅 Microsoft Windows SDK 文档中的**IDirectMusicPort：： GetChannelPriority**和**IDirectMusicPort：： SetChannelPriority**方法的说明。
 
 ## <span id="ddk_ksproperty_synth_volume_ks"></span><span id="DDK_KSPROPERTY_SYNTH_VOLUME_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成器\_卷属性获取或设置合成器设备的卷级别。
+KSPROPERTY\_合成\_VOLUME 属性获取或设置合成器设备的音量级别。
 
 <table>
 <colgroup>
@@ -539,7 +539,7 @@ KSPROPERTY\_合成器\_卷属性获取或设置合成器设备的卷级别。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -548,22 +548,22 @@ KSPROPERTY\_合成器\_卷属性获取或设置合成器设备的卷级别。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>Pin</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>大头针</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p>长</p></td>
+<td align="left"><p>漫长</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-（操作数据） 的属性值属于类型 long 类型的值，指定合成器设备的卷级别。 1/100ths 的分贝为单位指定卷设置。 微型端口驱动程序应更改其卷，或者报告其卷，具体取决于该请求是要获取或设置该属性。
+属性值（操作数据）的类型为 LONG，并指定合成器设备的音量级别。 卷设置以分贝的 1/100ths 单位来指定。 小型端口驱动程序应更改其卷或报告其卷，具体取决于请求是获取还是设置属性。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_合成\_卷属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表显示了一些可能的错误代码。
+KSPROPERTY\_合成\_VOLUME 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表列出了一些可能的错误代码。
 
 <table>
 <colgroup>
@@ -579,11 +579,11 @@ KSPROPERTY\_合成\_卷属性请求将返回状态\_成功以指示已成功完�
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>缓冲区太小，无法完成该操作。</p></td>
+<td align="left"><p>缓冲区太小，无法完成操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>该操作未成功完成。</p></td>
+<td align="left"><p>操作未成功完成。</p></td>
 </tr>
 </tbody>
 </table>
@@ -593,9 +593,9 @@ KSPROPERTY\_合成\_卷属性请求将返回状态\_成功以指示已成功完�
 ## <span id="ddk_ksproperty_synth_volumeboost_ks"></span><span id="DDK_KSPROPERTY_SYNTH_VOLUMEBOOST_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
-KSPROPERTY\_合成器\_VOLUMEBOOST 属性指定的量的提升合成器设备的卷。
+KSPROPERTY\_合成\_VOLUMEBOOST 属性指定合成器设备卷的提升量。
 
 <table>
 <colgroup>
@@ -607,7 +607,7 @@ KSPROPERTY\_合成器\_VOLUMEBOOST 属性指定的量的提升合成器设备的
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -616,22 +616,22 @@ KSPROPERTY\_合成器\_VOLUMEBOOST 属性指定的量的提升合成器设备的
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>长</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>漫长</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 是 LONG 类型，指定时间量，以组合阶段后提升音频信号。 这是要在所有语音清晰表述后添加到合成器的最终输出量，混合使用已完成。 在 1/100ths 分贝的指定卷提升量。 此值可以为正数或负数。
+属性值（操作数据）的类型为 LONG，指定在组合阶段后要增加的音频信号量。 这是所有语音 articulation 和混合完成后要添加到合成器最终输出的量。 卷提升量是以分贝的 1/100ths 指定的。 此值可以是正数也可以是负数。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_合成\_VOLUMEBOOST 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表显示了一些可能的错误代码。
+KSPROPERTY\_合成\_VOLUMEBOOST 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。 下表列出了一些可能的错误代码。
 
 <table>
 <colgroup>
@@ -647,20 +647,20 @@ KSPROPERTY\_合成\_VOLUMEBOOST 属性请求将返回状态\_成功以指示已�
 <tbody>
 <tr class="odd">
 <td align="left"><p>STATUS_BUFFER_TOO_SMALL</p></td>
-<td align="left"><p>缓冲区太小，无法完成该操作。</p></td>
+<td align="left"><p>缓冲区太小，无法完成操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>STATUS_UNSUCCESSFUL</p></td>
-<td align="left"><p>该操作未成功完成。</p></td>
+<td align="left"><p>操作未成功完成。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-没有其他 boost 应添加到输出。 合成器应遵循严格的 DLS 一级约定为清晰表述。
+不应将其他提升添加到输出中。 合成器应遵循严格的 DLS 第1级 articulation 约定。
 
-此属性用于在系统中，均衡与其他音频输出合成器的卷，因此一致的方式应提升量解释在所有设备上。
+此属性用于将合成器的音量与系统中的其他音频输出均衡，因此，应以一致的方式在所有设备上解释增加的数量。
 
  
 

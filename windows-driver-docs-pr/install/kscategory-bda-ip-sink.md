@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c01736dbe080ec7abc90fd6d5a45835d6db426bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab5ac8acc4332f3dc371f4c627a65430744719a0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353388"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828782"
 ---
-# <a name="kscategorybdaipsink"></a>KSCATEGORY_BDA_IP_SINK
+# <a name="kscategory_bda_ip_sink"></a>KSCATEGORY_BDA_IP_SINK
 
 
-KSCATEGORY_BDA_IP_SINK[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 中的接收器筛选器的功能类别[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(BDA)。
+对于[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)（BDA）中的接收器筛选器，为 "[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)（KS）" 功能类别定义 KSCATEGORY_BDA_IP_SINK[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_BDA_IP_SINK[设备接口类](https://docs.microsoft.com/windows-hardw
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_BDA_IP_SINK[设备接口类](https://docs.microsoft.com/windows-hardw
 <a name="remarks"></a>备注
 -------
 
-BDA 设备的驱动程序注册 KSCATEGORY_BDA_IP_SINK 以指示设备支持 BDA IP 接收器筛选器的实例。
+用于 BDA 设备的驱动程序注册 KSCATEGORY_BDA_IP_SINK 的实例，以指示设备支持 BDA IP 接收器筛选器。
 
-有关详细信息，请参阅[BDA 筛选器类别 Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
+有关详细信息，请参阅[BDA 筛选器类别 guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,12 +68,12 @@ BDA 设备的驱动程序注册 KSCATEGORY_BDA_IP_SINK 以指示设备支持 BDA
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Server 2003、 Windows XP、 DirectX 9.0 a 安装，Windows 2000 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Windows Server 2003、Windows XP、带有 DirectX 9.0 的 windows 2000 和更高版本的 windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Bdamedia.h （包括 Bdamedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>

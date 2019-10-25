@@ -1,9 +1,9 @@
 ---
 title: ndiskd.ndisevent
-description: ！ Ndiskd.ndisevent 扩展显示 NDIS 调试事件日志。
+description: ！ Ndiskd ndisevent 扩展显示 NDIS 调试事件日志。
 ms.assetid: E042CA22-6521-4DD4-9396-39EC587706D6
 keywords:
-- ndiskd.ndisevent Windows 调试
+- ndiskd ndisevent Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6aa21c8574d636afae2cfc782ab2c6cbeda70db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f01a362867e7f58874aaf0a731e18c860d457958
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362491"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826573"
 ---
 # <a name="ndiskdndisevent"></a>!ndiskd.ndisevent
 
 
-**请注意**  第三方网络驱动程序开发人员不应手动使用此扩展命令。 你可以运行它以查看其显示的信息，但不能重复使用它提供了您的驱动程序的详细信息。
+**请注意**  第三方网络驱动程序开发人员不需要手动使用此扩展命令。 您可以运行它来查看它所显示的信息，但不能重复使用它在您的驱动程序中提供的详细信息。
 
  
 
-**！ Ndiskd.ndisevent**扩展显示 NDIS 调试事件日志。
+**！ Ndiskd ndisevent**扩展显示 NDIS 调试事件日志。
 
 ```console
 !ndiskd.ndisevent [-handle <x>] [-tagtype <str>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
@@ -41,16 +41,16 @@ ms.locfileid: "67362491"
 <span id="_______-tagtype______"></span><span id="_______-TAGTYPE______"></span> *-tagtype*   
 标记的枚举类型。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-若要查看网络适配器的事件日志的输出 ！ ndiskd 中提供了链接到它的状态部分[ **！ ndiskd.netadapter** ](-ndiskd-netadapter.md)输出。 这是比手动方法来查找事件日志的句柄从微型端口块和使用的运行更容易 **！ ndiskd.ndisevent**扩展。
+若要查看网络适配器的事件日志输出，！ ndiskd 在[ **！ ndiskd**](-ndiskd-netadapter.md)输出的 State 节中提供了一个指向它的链接。 这比从微型端口块查找事件日志句柄并使用它来运行 **！ ndiskd. ndisevent**扩展的手动方法更容易。
 
-首先，输入 **！ ndiskd.netadapter**命令不带任何参数，以查看在系统上的网络适配器和微型端口驱动程序的列表。 在以下示例中，查找该句柄 Marvell AVASTAR 无线 AC 网络控制器 ffffc804b9e6f1a0 的。
+首先，输入不带参数的 **！ ndiskd**命令，以查看系统上的网络适配器和微型端口驱动程序列表。 在以下示例中，查找 Marvell AVASTAR 无线-AC 网络控制器 ffffc804b9e6f1a0 的句柄。
 
 ```console
 1: kd> !ndiskd.netadapter
@@ -71,7 +71,7 @@ Ndiskd.dll
     ffffc804aef695e0   ffffc804aed331a0    TAP-Windows Adapter V9
 ```
 
-现在，单击该 NetAdapter 的链接，或输入 **！ ndiskd.netadapter-处理**命令以查看其详细信息。 查找到的状态部分中的设备即插即用字段右侧的"显示状态历史记录"链接。
+现在，单击该 Get-netadapter 的链接，或输入 **！ ndiskd**命令查看其详细信息。 在 "状态" 部分中，查找 "设备 PnP" 字段右侧的 "显示状态历史记录" 链接。
 
 ```console
 1: kd> !ndiskd.netadapter ffffc804b9e6f1a0
@@ -142,7 +142,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-现在可以单击"显示状态历史记录"链接或使用网络适配器的句柄输入 **！ ndiskd.netadapter-处理的日志**命令，将显示此微型端口的微型端口驱动程序即插即用事件日志。
+现在，你可以单击 "显示状态历史记录" 链接或使用网络适配器的句柄来输入 **！ ndiskd**命令，该命令将显示此小型小型端口驱动程序的 PnP 事件日志。
 
 ```console
 1: kd> !ndiskd.netadapter ffffc804b9e6f1a0 -log
@@ -159,20 +159,20 @@ MINIPORT PM & PNP EVENTS
     Set a breakpoint on the next event
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
-[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)
 
  
 

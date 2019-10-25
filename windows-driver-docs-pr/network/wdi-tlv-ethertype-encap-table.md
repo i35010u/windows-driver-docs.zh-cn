@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_ETHERTYPE_ENCAP_TABLE
-description: WDI_TLV_ETHERTYPE_ENCAP_TABLE 是包含关联 Ethertype 封装 TLV。
+description: WDI_TLV_ETHERTYPE_ENCAP_TABLE 是一个 TLV，其中包含关联的 Ethertype 封装。
 ms.assetid: BAAC7E5B-F13F-4AC8-A3F9-76197F92C7E3
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_ETHERTYPE_ENCAP_TABLE 网络驱动程序
+- WDI_TLV_ETHERTYPE_ENCAP_TABLE 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 10a5c91693127604ab26407550b6ffdc03110564
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a41a61477b4aea91e1270444d3fcdfe078aa55cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358552"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834090"
 ---
-# <a name="wditlvethertypeencaptable"></a>WDI\_TLV\_ETHERTYPE\_ENCAP\_TABLE
+# <a name="wdi_tlv_ethertype_encap_table"></a>WDI\_TLV\_ETHERTYPE\_ENCAP\_表
 
 
-WDI\_TLV\_ETHERTYPE\_封闭\_表是包含关联 Ethertype 封装 TLV。
+WDI\_TLV\_ETHERTYPE\_ENCAP\_表是一个 TLV，其中包含关联的 Ethertype 封装。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +26,14 @@ WDI\_TLV\_ETHERTYPE\_封闭\_表是包含关联 Ethertype 封装 TLV。
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+所有包含的元素的大小的总和（以字节为单位）。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                                                       | 描述                                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_ETHERTYPE\_封装\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)\[\] | 一个数组[ **WDI\_ETHERTYPE\_封装\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)指定关联 Ethertype 封装的元素。 |
+| [**WDI\_ETHERTYPE\_封装\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)\[\] | [**WDI\_ETHERTYPE\_的数组封装\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)元素，这些元素指定关联的 ETHERTYPE 封装。 |
 
  
 
@@ -48,14 +48,14 @@ WDI\_TLV\_ETHERTYPE\_封闭\_表是包含关联 Ethertype 封装 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

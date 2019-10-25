@@ -3,19 +3,19 @@ title: 要进行反交错和帧速率转换的视频内容
 description: 要进行反交错和帧速率转换的视频内容
 ms.assetid: 627b394e-c2e1-4327-adaa-0c3436ba3d1a
 keywords:
-- 去隔行 WDK DirectX VA，接收到的视频内容
+- 取消隔行扫描 WDK DirectX VA，接收视频内容
 - 帧速率转换 WDK DirectX VA
-- 接收到 WDK DirectX VA 的视频内容
-- 去隔行 WDK DirectX VA 的视频内容
-- 视频内容的帧速率转换 WDK DirectX VA
+- 已收到视频内容 WDK DirectX VA
+- 取消隔行扫描 WDK DirectX VA 视频内容
+- 帧速率转换的视频内容 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b78289f0d4a0b821b9436aa9005703df3939699
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 76069f968c537ee2868c5625853d2740fe095676
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365079"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825295"
 ---
 # <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>要进行反交错和帧速率转换的视频内容
 
@@ -23,7 +23,7 @@ ms.locfileid: "67365079"
 ## <span id="ddk_video_content_for_deinterlace_and_frame_rate_conversion_gg"></span><span id="DDK_VIDEO_CONTENT_FOR_DEINTERLACE_AND_FRAME_RATE_CONVERSION_GG"></span>
 
 
-驱动程序收到视频内容的说明，以便它可以确定如何它应取消隔行扫描或帧速率转换此类内容。 驱动程序收到此视频的内容作为一个指向[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)以下函数调用中的结构：
+驱动程序接收视频内容的描述，以便它可以确定它应如何进行隔行扫描或帧速率转换此类内容。 驱动程序将此视频内容接收到以下函数调用中的[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)结构的指针：
 
 -   [**DeinterlaceQueryAvailableModes**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes)
 
@@ -31,11 +31,11 @@ ms.locfileid: "67365079"
 
 -   [**DeinterlaceOpenStream**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceopenstream)
 
-下面的示例指示驱动程序上接收到的视频内容执行取消隔行和帧速率转换的方式。
+以下示例说明了驱动程序如何对收到的视频内容执行取消隔行扫描和帧速率转换。
 
-### <a name="span-iddeinterlacing720x480icontentexamplespanspan-iddeinterlacing720x480icontentexamplespanspan-iddeinterlacing720x480icontentexamplespandeinterlacing-720-x-480i-content-example"></a><span id="Deinterlacing_720_x_480i_Content_Example"></span><span id="deinterlacing_720_x_480i_content_example"></span><span id="DEINTERLACING_720_X_480I_CONTENT_EXAMPLE"></span>取消隔行扫描 720 x 480i 内容示例
+### <a name="span-iddeinterlacing_720_x_480i_content_examplespanspan-iddeinterlacing_720_x_480i_content_examplespanspan-iddeinterlacing_720_x_480i_content_examplespandeinterlacing-720-x-480i-content-example"></a><span id="Deinterlacing_720_x_480i_Content_Example"></span><span id="deinterlacing_720_x_480i_content_example"></span><span id="DEINTERLACING_720_X_480I_CONTENT_EXAMPLE"></span>取消隔行扫描 720 x 480i 内容示例
 
-DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 480i 内容、 数据源作为每个样本 29.97 Hz 的频率的两个字段的驱动程序。
+DXVA\_VideoDesc 结构按如下方式进行填充，以将驱动程序定向到逐行执行 720 x 480i 内容（以 29.97 Hz 为单位每个样本的两个字段）。
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -59,26 +59,26 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p><strong>DXVA_SampleFieldInterleavedOddFirst</strong>中的枚举器<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong></a></p></td>
+<td align="left"><p>DXVA_SampleFormat 中的<strong>DXVA_SampleFieldInterleavedOddFirst</strong>枚举器<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)"></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>
-<td align="left"><p>在中定义 D3DFMT_YUY2 <em>d3d8types.h</em>并<em>d3d9types.h</em>标头文件</p></td>
+<td align="left"><p><em>D3d8types</em>和<em>d3d9types</em>头文件中定义的 D3DFMT_YUY2</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>InputSampleFreq.Numerator</strong></p></td>
-<td align="left"><p>30000 （29.97 Hz 监视器频率）</p></td>
+<td align="left"><p><strong>InputSampleFreq</strong></p></td>
+<td align="left"><p>30000（29.97-Hz 监视频率）</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>InputSampleFreq.Denominator</strong></p></td>
+<td align="left"><p><strong>InputSampleFreq</strong></p></td>
 <td align="left"><p>1001</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>OutputFrameFreq.Numerator</strong></p></td>
-<td align="left"><p>60000 （59.94 Hz 监视器频率）</p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
+<td align="left"><p>60000（59.94-Hz 监视频率）</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>OutputFrameFreq.Denominator</strong></p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
 <td align="left"><p>1001</p></td>
 </tr>
 </tbody>
@@ -86,9 +86,9 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 
  
 
-### <a name="span-iddeinterlacingandframe-rateconversionof720x480icontentexamplespanspan-iddeinterlacingandframe-rateconversionof720x480icontentexamplespanspan-iddeinterlacingandframe-rateconversionof720x480icontentexamplespandeinterlacing-and-frame-rate-conversion-of-720-x-480i-content-example"></a><span id="Deinterlacing_and_Frame-Rate_Conversion_of_720_x_480i_Content_Example"></span><span id="deinterlacing_and_frame-rate_conversion_of_720_x_480i_content_example"></span><span id="DEINTERLACING_AND_FRAME-RATE_CONVERSION_OF_720_X_480I_CONTENT_EXAMPLE"></span>取消隔行和 720 x 480i 内容示例的帧速率转换
+### <a name="span-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespanspan-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespanspan-iddeinterlacing_and_frame-rate_conversion_of_720_x_480i_content_examplespandeinterlacing-and-frame-rate-conversion-of-720-x-480i-content-example"></a><span id="Deinterlacing_and_Frame-Rate_Conversion_of_720_x_480i_Content_Example"></span><span id="deinterlacing_and_frame-rate_conversion_of_720_x_480i_content_example"></span><span id="DEINTERLACING_AND_FRAME-RATE_CONVERSION_OF_720_X_480I_CONTENT_EXAMPLE"></span>720 x 480i 内容示例的取消隔行扫描和帧速率转换
 
-**OutputFrameFreq** DXVA 成员\_VideoDesc 结构，如下所示填充，若要指示驱动程序来取消隔行扫描和帧速率转换 720 x 480i 内容。
+将按如下所示填充 DXVA\_VideoDesc 结构的**OutputFrameFreq**成员，以将驱动程序定向到隔行扫描和帧速率转换 720 x 480i 内容。
 
 <table>
 <colgroup>
@@ -98,16 +98,16 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>OutputFrameFreq.Numerator</strong></p></td>
-<td align="left"><p>85 （85 Hz 监视器频率）</p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
+<td align="left"><p>85（85-Hz 监视频率）</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>OutputFrameFreq.Denominator</strong></p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
 <td align="left"><p>1</p></td>
 </tr>
 </tbody>
@@ -115,9 +115,9 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 
  
 
-### <a name="span-iddeinterlacingasinglefieldtoaprogressiveframeexamplespanspan-iddeinterlacingasinglefieldtoaprogressiveframeexamplespanspan-iddeinterlacingasinglefieldtoaprogressiveframeexamplespandeinterlacing-a-single-field-to-a-progressive-frame-example"></a><span id="Deinterlacing_a_Single_Field_to_a_Progressive_Frame_Example"></span><span id="deinterlacing_a_single_field_to_a_progressive_frame_example"></span><span id="DEINTERLACING_A_SINGLE_FIELD_TO_A_PROGRESSIVE_FRAME_EXAMPLE"></span>去隔行单个字段以渐进式帧示例
+### <a name="span-iddeinterlacing_a_single_field_to_a_progressive_frame_examplespanspan-iddeinterlacing_a_single_field_to_a_progressive_frame_examplespanspan-iddeinterlacing_a_single_field_to_a_progressive_frame_examplespandeinterlacing-a-single-field-to-a-progressive-frame-example"></a><span id="Deinterlacing_a_Single_Field_to_a_Progressive_Frame_Example"></span><span id="deinterlacing_a_single_field_to_a_progressive_frame_example"></span><span id="DEINTERLACING_A_SINGLE_FIELD_TO_A_PROGRESSIVE_FRAME_EXAMPLE"></span>将单个字段取消隔行扫描为渐进式帧示例
 
-**OutputFrameFreq** DXVA 成员\_VideoDesc 结构，如下所示填充，若要指示驱动程序来取消隔行扫描到更高版本的 MPEG 编码渐进式帧的单个字段。
+DXVA\_VideoDesc 结构的 " **OutputFrameFreq** " 成员按如下方式进行填充，以指示驱动程序将单个字段逐行扫描到渐进式帧，以便以后使用 MPEG 编码。
 
 <table>
 <colgroup>
@@ -127,16 +127,16 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>OutputFrameFreq.Numerator</strong></p></td>
-<td align="left"><p>30000 （29.97 Hz 监视器频率）</p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
+<td align="left"><p>30000（29.97-Hz 监视频率）</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>OutputFrameFreq.Denominator</strong></p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
 <td align="left"><p>1001</p></td>
 </tr>
 </tbody>
@@ -144,9 +144,9 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 
  
 
-### <a name="span-idframe-rateconversionof480pcontentexamplespanspan-idframe-rateconversionof480pcontentexamplespanspan-idframe-rateconversionof480pcontentexamplespanframe-rate-conversion-of-480p-content-example"></a><span id="Frame-Rate_Conversion_of__480p_Content_Example"></span><span id="frame-rate_conversion_of__480p_content_example"></span><span id="FRAME-RATE_CONVERSION_OF__480P_CONTENT_EXAMPLE"></span>480p 内容示例的帧速率转换
+### <a name="span-idframe-rate_conversion_of__480p_content_examplespanspan-idframe-rate_conversion_of__480p_content_examplespanspan-idframe-rate_conversion_of__480p_content_examplespanframe-rate-conversion-of-480p-content-example"></a><span id="Frame-Rate_Conversion_of__480p_Content_Example"></span><span id="frame-rate_conversion_of__480p_content_example"></span><span id="FRAME-RATE_CONVERSION_OF__480P_CONTENT_EXAMPLE"></span>480p 内容示例的帧速率转换
 
-DXVA\_VideoDesc 结构填充如下所示，若要指示驱动程序可执行帧速率转换 480p 的内容并与匹配监视器显示频率。
+DXVA\_VideoDesc 结构的填充方式如下，指示驱动程序对480p 内容执行帧速率转换，并与监视器显示频率匹配。
 
 <table>
 <colgroup>
@@ -156,7 +156,7 @@ DXVA\_VideoDesc 结构填充如下所示，若要指示驱动程序可执行帧�
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -170,26 +170,26 @@ DXVA\_VideoDesc 结构填充如下所示，若要指示驱动程序可执行帧�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p><strong>DXVA_SampleProgressiveFrame</strong>中的枚举器<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong> </a>枚举</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)"><strong>DXVA_SampleFormat</strong></a>枚举中的<strong>DXVA_SampleProgressiveFrame</strong>枚举器</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>
-<td align="left"><p>D3DFMT_YUY2 d3d8types.h 和 d3d9types.h 标头文件中定义</p></td>
+<td align="left"><p>D3d8types 和 d3d9types 头文件中定义的 D3DFMT_YUY2</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>InputSampleFreq.Numerator</strong></p></td>
-<td align="left"><p>60 （60 Hz 监视器频率）</p></td>
+<td align="left"><p><strong>InputSampleFreq</strong></p></td>
+<td align="left"><p>60（60 Hz 监视频率）</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>InputSampleFreq.Denominator</strong></p></td>
+<td align="left"><p><strong>InputSampleFreq</strong></p></td>
 <td align="left"><p>1</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>OutputFrameFreq.Numerator</strong></p></td>
-<td align="left"><p>85 （85 Hz 监视器频率）</p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
+<td align="left"><p>85（85 Hz 监视频率）</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>OutputFrameFreq.Denominator</strong></p></td>
+<td align="left"><p><strong>OutputFrameFreq</strong></p></td>
 <td align="left"><p>1</p></td>
 </tr>
 </tbody>

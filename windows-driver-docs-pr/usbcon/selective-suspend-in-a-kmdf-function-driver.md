@@ -1,107 +1,107 @@
 ---
-Description: 本主题介绍如何 KMDF 函数驱动程序支持 USB 选择性挂起。
+Description: 本主题介绍 KMDF function 驱动程序如何支持 USB 选择性挂起。
 title: USB KMDF 功能驱动程序中的选择性挂起
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bf0c54bb18bf38cd52966274b68e335b729c0199
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1e85f54bdcc8b14a70e23e156da9e6b9617f347
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358342"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824166"
 ---
 # <a name="selective-suspend-in-usb-kmdf-function-drivers"></a>USB KMDF 功能驱动程序中的选择性挂起
 
 
 **重要的 API**
 
--   [**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)
--   [**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)
--   [**WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)
+-   [**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)
+-   [**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)
+-   [**WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)
 
-本主题介绍如何 KMDF 函数驱动程序支持 USB 选择性挂起。
+本主题介绍 KMDF function 驱动程序如何支持 USB 选择性挂起。
 
-如果 USB 驱动程序不需要功能或不是在用户模式下可用的资源，则应提供 KMDF 功能驱动程序。 通过设置 KMDF 初始化结构中的相关值，然后提供相应的回调函数 KMDF 驱动程序实现选择性挂起。 KMDF 处理与低级驱动程序挂起和恢复该设备进行通信详细的信息。
+如果 USB 驱动程序需要不在用户模式下使用的功能或资源，则应提供 KMDF function 驱动程序。 KMDF 驱动程序通过在 KMDF 初始化结构中设置相关值并提供相应的回调函数来实现选择性挂起。 KMDF 处理与较低驱动程序通信的详细信息，以挂起和恢复设备。
 
-## <a name="guidelines-for-selective-suspend-in-kmdf-drivers"></a>指导原则的选择性挂起 KMDF 驱动程序中
+## <a name="guidelines-for-selective-suspend-in-kmdf-drivers"></a>KMDF 驱动程序中的选择性挂起指南
 
 
 支持选择性挂起的 KMDF 驱动程序必须遵循以下准则：
 
--   KMDF 功能驱动程序必须为其设备堆栈 PPO。 默认情况下，KMDF 函数驱动程序都是 PPO。
--   支持选择性挂起 KMDF 功能驱动程序可以使用电源管理的队列或队列不电源管理的。 默认情况下，PPOs 的队列对象是电源管理。
+-   KMDF 函数驱动程序必须是其设备堆栈的 PPO。 默认情况下，KMDF 函数驱动程序为 PPO。
+-   支持选择性挂起的 KMDF 函数驱动程序可以使用处于电源托管状态的队列或不是电源管理的队列。 默认情况下，PPOs 的队列对象为 "电源管理"。
 
 **电源策略所有权和 KMDF USB 驱动程序**
 
-默认情况下，USB 设备的 KMDF 函数驱动程序是设备堆栈 PPO。 KMDF 管理选择性挂起和继续代表此驱动程序。
+默认情况下，USB 设备的 KMDF 函数驱动程序是设备堆栈的 PPO。 KMDF 代表此驱动程序管理选择性挂起和恢复。
 
-**KMDF 驱动程序中的 I/O 队列配置**
+**KMDF 驱动程序中的 i/o 队列配置**
 
-支持选择性挂起 KMDF 功能驱动程序可以使用电源管理的队列或队列不电源管理的。 通常情况下，驱动程序配置不是电源管理以接收传入设备 I/O 控制请求和配置用于接收读取、 写入和其他依赖于电源的请求的一个或多个电源管理队列的队列。 当请求到达时在电源管理的队列时，KMDF 可确保设备是 D0 之前它将提供对该驱动程序的请求。
+支持选择性挂起的 KMDF 函数驱动程序可以使用处于电源托管状态的队列或不是电源管理的队列。 通常，驱动程序会将不是电源管理的队列配置为接收传入设备 i/o 控制请求，并将一个或多个电源管理的队列配置为接收读取、写入和其他与电源相关的请求。 当请求到达电源管理队列时，KMDF 确保设备在向驱动程序发出请求之前处于 D0 状态。
 
-如果你正在编写中设备堆栈 PPO 上进行分层 KMDF 筛选器驱动程序，您必须使用电源管理队列。 原因是与 UMDF 驱动程序相同。 框架没有显示从电源管理队列的请求时挂起设备，因此使用此类队列可能安装设备堆栈。
+如果要编写的 KMDF 筛选器驱动程序在设备堆栈中的 PPO 上方，则不得使用电源管理的队列。 原因与 UMDF 驱动程序相同。 在设备挂起时，框架不会提供来自电源管理队列的请求，因此，使用此类队列可能会使设备堆栈停止。
 
-## <a name="selective-suspend-mechanism-for-kmdf-function-drivers"></a>选择性挂起 KMDF 函数驱动程序的机制
-
-
-KMDF 句柄的大部分工作所需支持 USB 选择性挂起。 它跟踪的 I/O 活动、 管理空闲计时器，并将设备发送会导致父驱动程序 （Usbhub.sys 或 Usbccgp.sys） 暂停和恢复设备的 I/O 控制请求。
-
-如果 KMDF 函数驱动程序支持选择性挂起，KMDF 跟踪每个设备对象拥有的所有电源管理的队列上的 I/O 活动。 每当 I/O 计数达到零时，框架将开始一个空闲计时器。 默认超时值为 5 秒。
-
-如果 I/O 请求到达时所属的设备对象的空闲超时期限过期之前的电源管理的队列，框架将取消的空闲计时器，并不会挂起设备。
-
-空闲计时器过期时，KMDF 发出请求所需将 USB 设备放在挂起状态。 如果功能驱动程序使用 USB 终结点上的连续读取器，则读取器的重复的轮询不能算作 KMDF 空闲计时器活动。 但是，在[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数的 USB 驱动程序，必须手动停止持续读取器和任何其他队列不是电源管理，确保通过填充的 I/O 目标设备不处于工作状态时，驱动程序不发送 I/O 请求。 若要停止的目标，驱动程序调用[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) ，并指定**WdfIoTargetWaitForSentIoToComplete**作为目标操作。 在响应中，该框架目标的 I/O 队列中的所有 I/O 请求已都完成和任何相关的回调已运行的 I/O 完成后，仅停止 I/O 目标。
-
-默认情况下，KMDF 转换 D0 带到空闲的设置中指定驱动程序的设备电源状态的设备。 为转换的一部分，KMDF 调用驱动程序的 power 回调函数，相同的方式就像任何其他电源关闭序列。
-
-已挂起设备后，框架将自动恢复设备时出现任何以下事件：
-
--   I/O 请求到达的任何驱动程序的电源管理队列。
--   通过使用设备管理器用户禁用 USB 选择性挂起。
--   驱动程序调用[ **WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)，如中所述[阻止设备挂起](#preventsusp)。
-
-若要恢复设备，KMDF 发送设备堆栈的下层的增益道具请求，并就像任何其他强化序列相同方式调用驱动程序的回调函数。
-
-有关电源关闭和启动序列中涉及的回叫的详细信息，请参阅[插和 WDF 驱动程序中的电源管理](http://download.microsoft.com/download/5/d/6/5d6eaf2b-7ddf-476b-93dc-7cf0072878e6/WDF-pnpPower.docx)白皮书。
-
-## <a name="supporting-usb-selective-suspend-in-a-kmdf-function-driver"></a>KMDF 功能驱动程序中支持 USB 选择性挂起
+## <a name="selective-suspend-mechanism-for-kmdf-function-drivers"></a>KMDF 函数驱动程序的选择性挂起机制
 
 
-若要实现 USB 选择性挂起 KMDF 功能驱动程序中：
+KMDF 处理支持 USB 选择性挂起所需的大部分工作。 它跟踪 i/o 活动，管理空闲计时器，并发送导致父驱动程序（Usbhub 或 Usbccgp）的设备 i/o 控制请求，以挂起和恢复设备。
 
--   初始化与空闲状态，其中包括空闲超时的电源策略设置。
--   根据需要包含逻辑以暂时防止挂起或恢复操作时，驱动程序确定设备不应由于开放句柄或与设备的 I/O 队列不相关的其他原因而挂起。
--   在 USB 驱动程序 INF 中指示的人机接口设备 (HID)，它支持选择性挂起。
+如果 KMDF 函数驱动程序支持选择性挂起，则 KMDF 跟踪每个设备对象拥有的所有电源管理队列上的 i/o 活动。 每当 i/o 计数达到零时，框架就会启动空闲计时器。 默认超时值为5秒。
 
-**初始化 KMDF 功能驱动程序中的电源策略设置**
+如果在空闲超时期限到期之前，i/o 请求到达属于设备对象的电源管理队列，则该框架将取消空闲计时器并且不会挂起设备。
 
-若要配置支持的 USB 选择性挂起，KMDF 驱动程序将使用[ **WDF\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构。 驱动程序首先必须初始化该结构，然后，可以设置字段提供有关驱动程序和其设备的功能的详细信息。 通常情况下，该驱动程序填充此结构中其*EvtDriverDeviceAdd*或*EvtDevicePrepareHardware*函数。
+空闲计时器过期时，KMDF 发出请求，要求将 USB 设备置于挂起状态。 如果函数驱动程序在 USB 终结点上使用连续读取器，则读取器的重复轮询不会计入 KMDF 空闲计时器的活动。 但是，在[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数中，USB 驱动程序必须手动停止连续读取器以及由不是电源管理的队列馈送的任何其他 i/o 目标，以确保该驱动程序不会在设备不发送 i/o 请求处于工作状态。 若要停止目标，驱动程序将调用[**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) ，并将**WdfIoTargetWaitForSentIoToComplete**指定为目标操作。 作为响应，框架仅在目标的 i/o 队列中的所有 i/o 请求已完成并且任何关联的 i/o 完成回调都已运行之后，才停止 i/o 目标。
 
-**若要初始化 WDF\_设备\_电源\_策略\_空闲\_设置结构**
+默认情况下，KMDF 会将设备从 D0 上转换到设备电源状态，驱动程序在 "空闲" 设置中指定。 在转换过程中，KMDF 会调用驱动程序的电源回叫功能，其方式与对任何其他关机序列相同。
 
-该驱动程序创建的设备对象后，驱动程序将使用[ **WDF\_设备\_POWER\_策略\_空闲\_设置\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)函数初始化结构。 此函数采用两个参数：
+设备挂起后，当发生以下任何事件时，框架会自动恢复设备：
 
--   一个指向[ **WDF\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构初始化。
--   一个枚举值，指示支持的选择性挂起。 该驱动程序应指定**IdleUsbSelectiveSuspend**。
+-   为驱动程序的任何电源管理队列提供 i/o 请求。
+-   用户使用设备管理器禁用 USB 选择性挂起。
+-   驱动程序调用[**WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)，如[阻止设备挂起](#preventsusp)中所述。
 
-如果指定了该驱动程序**IdleUsbSelectiveSuspend**，该函数初始化结构的成员，如下所示：
+若要恢复设备，KMDF 会将开机请求发送到设备堆栈中，然后调用该驱动程序的回调函数，其方式与对任何其他开机序列相同。
 
--   **IdleTimeout**设置为**IdleTimeoutDefaultValue** （当前 5000 毫秒或 5 秒）。
+有关电源关闭和通电顺序中涉及的回调的详细信息，请参阅 " [WDF 驱动程序" 白皮书中的 "即插即用和电源管理](http://download.microsoft.com/download/5/d/6/5d6eaf2b-7ddf-476b-93dc-7cf0072878e6/WDF-pnpPower.docx)"。
+
+## <a name="supporting-usb-selective-suspend-in-a-kmdf-function-driver"></a>支持在 KMDF 函数驱动程序中使用 USB 选择性挂起
+
+
+在 KMDF 函数驱动程序中实现 USB 选择性挂起：
+
+-   初始化与空闲相关的电源策略设置，包括空闲超时。
+-   如果驱动程序确定由于打开的句柄或其他与设备的 i/o 队列无关的原因而不应挂起设备，则可以选择包含逻辑来暂时阻止挂起或恢复操作。
+-   在人体学接口设备（HID）的 USB 驱动程序中，指示 INF 中支持选择性挂起。
+
+**初始化 KMDF 函数驱动程序中的电源策略设置**
+
+若要为 USB 选择性挂起配置支持，KMDF 驱动程序使用[**WDF\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构。 驱动程序必须首先初始化结构，然后可以设置字段以提供有关驱动程序及其设备功能的详细信息。 通常，驱动程序会在其*EvtDriverDeviceAdd*或*EvtDevicePrepareHardware*函数中填充此结构。
+
+**若要初始化 WDF\_设备\_POWER\_策略\_空闲\_设置结构**
+
+驱动程序创建设备对象之后，驱动程序将使用[**WDF\_设备\_POWER\_策略\_空闲\_设置\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)函数以初始化该结构。 此函数采用两个参数：
+
+-   指向[**WDF\_设备的指针\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构进行初始化。
+-   一个枚举值，该值指示对选择性挂起的支持。 驱动程序应指定**IdleUsbSelectiveSuspend**。
+
+如果驱动程序指定了**IdleUsbSelectiveSuspend**，则该函数将按如下所示初始化结构的成员：
+
+-   **IdleTimeout**设置为**IdleTimeoutDefaultValue** （目前为5000毫秒或5秒）。
 -   **UserControlOfIdleSettings**设置为**IdleAllowUserControl** 。
--   **已启用**设置为**WdfUseDefaul**t，指示的选择性挂起已启用，但如果用户可以禁用它**UserControlOfIdleSettings**成员允许它。
--   **DxState**设置为**PowerDeviceMaximum**，它使用设备的报告的电源功能以确定要转换的空闲状态的设备的状态。
+-   "**已启用**" 设置为 " **WdfUseDefaul**t"，表示已启用选择性挂起，但如果**UserControlOfIdleSettings**成员允许，则用户可以禁用它。
+-   **DxState**设置为**PowerDeviceMaximum**，它使用设备的已报告电源功能确定要将空闲设备过渡到的状态。
 
-**若要配置 USB 选择性挂起**
+**配置 USB 选择性挂起**
 
-该驱动程序初始化后[ **WDF\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构，该驱动程序可以设置结构，然后调用中的其他字段**WdfDeviceAssignS0IdleSettings**将这些设置传递到框架。 以下字段适用于函数的 USB 驱动程序：
+驱动程序初始化[**WDF\_设备后\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构中，驱动程序可以设置结构中的其他字段，然后调用**WdfDeviceAssignS0IdleSettings**以将这些字段传递设置到框架。 以下字段适用于 USB 函数驱动程序：
 
--   IdleTimeout — 以毫秒为单位，而不会收到的 I/O 请求，该框架将设备视为空闲之前必须等待的间隔。 该驱动程序可以指定 ULONG 值，也可以接受默认值。
--   UserControlOfIdleSettings — 用户是否可以修改设备的空闲设置。 可能的值为 IdleDoNotAllowUserControl 和 IdleAllowUserControl。
--   DxState，框架将设备挂起的设备电源状态。 可能的值为 PowerDeviceD1、 PowerDeviceD2 和 PowerDeviceD3。
+-   IdleTimeout —在框架认为设备处于空闲状态之前必须经过的时间间隔（以毫秒为单位），而无需接收 i/o 请求。 驱动程序可以指定 ULONG 值，也可以接受默认值。
+-   UserControlOfIdleSettings-用户是否可以修改设备的空闲设置。 可能的值为 IdleDoNotAllowUserControl 和 IdleAllowUserControl。
+-   DxState-框架挂起设备的设备电源状态。 可能的值包括 PowerDeviceD1、PowerDeviceD2 和 PowerDeviceD3。
 
-    USB 驱动程序不应更改此值的初始设置。 [ **WDF\_设备\_POWER\_策略\_空闲\_设置\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)函数将此值设置为PowerDeviceMaximum，这样可以确保框架选择正确的设备功能的值。
+    USB 驱动程序不应更改此值的初始设置。 [**WDF\_设备\_电源\_策略\_空闲\_设置\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)函数将此值设置为 PowerDeviceMaximum，这可确保框架根据设备功能选择正确的值。
 
-以下代码片段摘自 Osrusbfx2 示例驱动程序 Device.c 文件：
+下面的代码段来自 Osrusbfx2 示例驱动程序的设备 .c 文件：
 
 ```cpp
 WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS idleSettings;
@@ -122,49 +122,49 @@ if ( !NT_SUCCESS(status)) {
 }
 ```
 
-在示例中，该驱动程序调用[ **WDF\_设备\_POWER\_策略\_空闲\_设置\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)，指定**IdleUsbSelectiveSuspend**。 驱动程序集**IdleTimeout**为 10000 毫秒 （10 秒），并接受的 framework 默认值**DxState**并**UserControlOfIdleSettings**。 因此，框架将转换到 D3 状态设备时它处于空闲状态，并创建允许具有管理员权限的用户启用或禁用设备空闲支持的设备管理器属性页。 然后，该驱动程序调用[ **WdfDeviceAssignS0IdleSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)启用空闲支持并向框架注册这些设置。
+在此示例中，驱动程序将[ **\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)指定为 ""，并指定**IdleUsbSelectiveSuspend**。 驱动程序将**IdleTimeout**设置为10000毫秒（10秒），并接受**DxState**和**UserControlOfIdleSettings**的框架默认值。 因此，在设备处于空闲状态时，框架会将设备转换为 D3 状态，并创建一个设备管理器属性页，该属性页允许具有管理员权限的用户启用或禁用设备空闲支持。 然后，该驱动程序调用[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)来启用空闲支持，并将这些设置注册到框架中。
 
-驱动程序可以调用[ **WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)任何时候，只要之后创建的设备对象。 尽管大多数驱动程序调用此方法从最初*EvtDriverDeviceAdd*回调，这可能不始终是无法或甚至不适合。 如果驱动程序支持多个设备或设备版本，该驱动程序可能不会知道所有设备功能，直到它查询硬件。 此类驱动程序可以延迟调用**WdfDeviceAssignS0IdleSettings**直到*EvtDevicePrepareHardware*回调。
+驱动程序可以在创建设备对象之后随时调用[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)。 尽管大多数驱动程序最初都是从*EvtDriverDeviceAdd*回调调用此方法，但这可能并不总是可能，甚至是理想情况。 如果驱动程序支持多个设备或设备版本，则在查询硬件之前，驱动程序可能不会知道所有设备功能。 此类驱动程序可以推迟调用**WdfDeviceAssignS0IdleSettings** ，直到*EvtDevicePrepareHardware*回调。
 
-在其首字母后随时调用[ **WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)，驱动程序可以更改空闲超时值和在其中空闲设备的设备状态。 若要更改一个或多个设置，该驱动程序只需初始化另一个[ **WDF\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)如前面所述的结构和调用**WdfDeviceAssignS0IdleSettings**试。
+在首次调用[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)之后，驱动程序可以随时更改空闲超时值和设备空闲的设备状态。 若要更改一个或多个设置，驱动程序只需按前面所述，将其他[**WDF\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构中进行初始化，并再次调用**WdfDeviceAssignS0IdleSettings** 。
 
-### <a href="" id="preventsusp"></a>阻止 USB 设备挂起
+### <a href="" id="preventsusp"></a>阻止 USB 设备暂停
 
-有时，USB 设备应不关闭电源即使没有 I/O 请求的超时期限内，通常当句柄是打开到设备或设备正在充电。 USB 驱动程序可以防止在 framework 挂起空闲设备在这种情况下通过调用[ **WdfDeviceStopIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)并调用[ **WdfDeviceResumeIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)时可以被再次挂起的设备。
+有时，即使在超时期内没有 i/o 请求，USB 设备也不应关闭，通常是在设备上打开了句柄或设备正在充电。 USB 驱动程序可以通过调用[**WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)并调用[**WdfDeviceResumeIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)以使其可被挂起，使框架无法在这种情况下挂起空闲设备。
 
-[**WdfDeviceStopIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)停止空闲计时器。 如果**IdleTimeout**期尚未过期和尚未挂起设备，该框架取消空闲计时器，并不会挂起设备。 如果设备已被暂停，框架会将设备返回到工作状态。 **WdfDeviceStopIdle**不会阻止该框架系统更改为 Sx 睡眠状态时挂起设备。 其唯一的影响是为了防止设备挂起，当系统处于 S0 工作状态。 [**WdfDeviceResumeIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)重新启动空闲计时器。 这两种方法管理引用计数在设备上，因此，如果驱动程序调用**WdfDeviceStopIdle**几次，该框架不会挂起设备驱动程序已调用之前**WdfDeviceResumeIdle**同样次数。 驱动程序不能调用**WdfDeviceResumeIdle**而无需第一个调用**WdfDeviceStopIdle**。
+[**WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)停止空闲计时器。 如果**IdleTimeout**期限尚未过期并且设备尚未挂起，则该框架将取消空闲计时器，并且不会挂起设备。 如果设备已挂起，则框架会将设备返回到工作状态。 当系统更改为 Sx 睡眠状态时， **WdfDeviceStopIdle**不会阻止框架挂起设备。 它的唯一作用是在系统处于 S0 工作状态时阻止设备暂停。 [**WdfDeviceResumeIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)重新启动空闲计时器。 这两种方法管理设备上的引用计数，因此，如果驱动程序多次调用**WdfDeviceStopIdle** ，框架将不会挂起设备，直到驱动程序调用**WdfDeviceResumeIdle**的次数相同。 如果没有首先调用**WdfDeviceStopIdle**，驱动程序不得调用**WdfDeviceResumeIdle**。
 
-### <a name="including-a-registry-key-hid-drivers-only"></a>包括一个注册表项 （仅限 HID 驱动程序）
+### <a name="including-a-registry-key-hid-drivers-only"></a>包含注册表项（仅适用于 HID 驱动程序）
 
-KMDF 上层筛选器驱动程序 USB HID 设备必须指示 INF 中，它们支持选择性挂起，以便 Microsoft 提供 HIDClass.sys 端口驱动程序可以启用选择性暂停的 HID 堆栈。 INF 应包括将 SelectiveSuspendEnabled 密钥添加一个 AddReg 指令并将其值设置为 1，如下所示的字符串：
+适用于 USB HID 设备的 KMDF 高层筛选器驱动程序必须在 INF 中指出，它们支持选择性挂起，以便 Microsoft 提供的 HIDClass 端口驱动程序可以为 HID 堆栈启用选择性挂起。 INF 应包含添加 SelectiveSuspendEnabled 键并将其值设置为1的 AddReg 指令，如以下字符串所示：
 
 ```cpp
 HKR,,"SelectiveSuspendEnabled",0x00000001,0x1
 ```
 
-有关示例，请参阅位于 %winddk%WDK 中的 Hidusbfx2.inx\\BuildNumber\\Src\\Hid\\ Hidusbfx2\\sys。
+有关示例，请参阅 Hidusbfx2 中的 inx% WinDDK%\\BuildNumber\\Src\\Hid\\ Hidusbfx2\\sys。
 
-## <a name="remote-wake-support-for-kmdf-drivers"></a>用于 KMDF 驱动程序的远程唤醒支持
+## <a name="remote-wake-support-for-kmdf-drivers"></a>KMDF 驱动程序的远程唤醒支持
 
 
-使用选择性挂起，如 KMDF 集成了对唤醒，支持，以便在设备处于空闲状态和系统不处于工作状态 (S0) 或处于休眠状态 (S1-S4) 时，USB 设备可以触发唤醒信号。 在 KMDF 术语中，这两个功能称为"从 S0 唤醒"和"从 Sx，唤醒"分别。
+对于选择性挂起，KMDF 合并了对唤醒的支持，因此 USB 设备在设备处于空闲状态且系统处于工作状态（S0）或处于睡眠状态（S1 – S4）时，可以触发唤醒信号。 在 KMDF 中，这两项功能分别称为 "从 S0 唤醒" 和 "从 Sx 唤醒"。
 
-USB 设备的唤醒只是指示设备本身可以启动从省电状态转换到工作状态。 因此，在 USB 术语中，从 S0 唤醒从 Sx 唤醒是相同的并称为"远程唤醒"。
+对于 USB 设备，唤醒只表示设备本身可以启动从较低电源状态到工作状态的转换。 因此，在 USB 术语中，从 S0 唤醒，从 Sx 唤醒是相同的，并且称为 "远程唤醒"。
 
-KMDF USB 函数驱动程序不需要任何代码，以支持从 S0 唤醒，因为 KMDF 提供了此功能，如一部分的选择性挂起机制。 但是，若要支持远程唤醒 Sx 系统时，功能驱动程序必须：
+KMDF USB 函数驱动程序不需要任何代码即可支持从 S0 唤醒，因为 KMDF 将此功能作为选择性挂起机制的一部分提供。 但是，若要支持在系统处于 Sx 时进行远程唤醒，函数驱动程序必须：
 
--   检查设备是否支持通过调用远程唤醒[ **WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)。
--   通过初始化唤醒设置，然后调用启用远程唤醒[ **WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)。
+-   通过调用[**WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)检查设备是否支持远程唤醒。
+-   通过初始化唤醒设置并调用[**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)来启用远程唤醒。
 
-KMDF 驱动程序通常它们为 USB 选择性挂起中配置支持的同时配置唤醒支持*EvtDriverDeviceAdd*或*EvtDevicePrepareHardware*函数。
+KMDF 驱动程序通常会配置唤醒支持，同时在*EvtDriverDeviceAdd*或*EvtDevicePrepareHardware*函数中配置对 USB 选择性挂起的支持。
 
 ### <a name="checking-device-capabilities"></a>检查设备功能
 
-KMDF USB 功能驱动程序初始化之前为其电源策略设置空闲和唤醒，应该验证设备支持在远程唤醒。 若要获取有关设备的硬件功能的信息，该驱动程序初始化[ **WDF\_USB\_设备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_device_information)结构和调用[ **WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)，通常在其*EvtDriverDeviceAdd*或者*EvtDevicePrepareHardware*回调。
+在 KMDF USB 函数驱动程序为空闲和唤醒初始化其电源策略设置之前，应验证设备是否支持远程唤醒。 若要获取有关设备硬件功能的信息，驱动程序需要初始化[**WDF\_USB\_设备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_information)结构并调用[**WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)，通常在其*EvtDriverDeviceAdd 中*或*EvtDevicePrepareHardware*回调。
 
-在调用[ **WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)，该驱动程序将一个句柄传递给设备对象和一个指向初始化[ **WDF\_USB\_设备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_device_information)结构。 在从该函数成功返回时，结构的特征字段包含标志，指示设备是否自供电，可以运行在高速度、 和支持远程唤醒。
+在对[**WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)的调用中，驱动程序将句柄传递给设备对象，并将指向已初始化的[**WDF\_USB\_设备的指针\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_information)结构。 成功从函数返回后，结构的特征字段将包含标志，用于指示设备是否是自驱动的，可以高速操作，并且支持远程唤醒。
 
-下面的示例摘自 Osrusbfx2 KMDF 示例演示如何调用此方法来确定设备是否支持远程唤醒。 运行以下代码行后，waitWakeEnable 变量将包含 TRUE，如果设备支持远程唤醒和 FALSE，如果不是：
+Osrusbfx2 KMDF 示例中的以下示例演示了如何调用此方法来确定设备是否支持远程唤醒。 运行这些代码行后，如果设备支持远程唤醒，waitWakeEnable 变量将包含 TRUE，否则将返回 FALSE：
 
 ```cpp
     WDF_USB_DEVICE_INFORMATION          deviceInfo;
@@ -182,14 +182,14 @@ waitWakeEnable = deviceInfo.Traits & WDF_USB_DEVICE_TRAIT_REMOTE_WAKE_CAPABLE;
 
 ### <a name="enabling-remote-wakeup"></a>启用远程唤醒
 
-在 USB 术语中，USB 设备可用于远程唤醒时其设备\_远程\_唤醒功能设置。 根据 USB 规范中，主机软件必须在"仅只是之前"将设备置于睡眠状态的设备上设置远程唤醒功能。 KMDF 功能驱动程序仅需初始化唤醒设置。 KMDF 和 Microsoft 提供的 USB 总线驱动程序发出 I/O 请求并处理启用远程唤醒所需的硬件操作。
+在 USB 术语中，当设备\_远程\_唤醒功能时，将为 USB 设备启用远程唤醒。 根据 USB 规范，主机软件必须在设备上 "只是之前" 设置远程唤醒功能，使设备进入睡眠状态。 KMDF 函数驱动程序只需初始化唤醒设置。 KMDF 和 Microsoft 提供的 USB 总线驱动程序发出 i/o 请求并处理启用远程唤醒所需的硬件操作。
 
-**若要初始化唤醒设置**
+**初始化唤醒设置**
 
-1.  调用[ **WDF\_设备\_POWER\_策略\_唤醒\_设置\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_wake_settings_init)初始化[**WDF\_设备\_POWER\_策略\_唤醒\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_wake_settings)结构。 此函数将该结构的**已启用**成员添加到**WdfUseDefault**，设置**DxState**成员添加到**PowerDeviceMaximum**，和设置**UserControlOfWakeSettings**成员添加到**WakeAllowUserControl**。
-2.  调用[ **WdfDeviceAssignSxWakeSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)与初始化结构。 结果是，启用了设备，以从 D3 状态中唤醒，用户可以启用或禁用从设备管理器中的设备属性页的唤醒信号。
+1.  [ **\_设备\_电源\_策略调用 WDF\_唤醒\_设置\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdf_device_power_policy_wake_settings_init)初始化[**WDF\_设备\_POWER\_\_\_唤醒设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_wake_settings)结构。 此函数将结构的**已启用**成员设置**为 WdfUseDefault**，将**DxState**成员设置为**PowerDeviceMaximum**，并将**UserControlOfWakeSettings**成员设置为**WakeAllowUserControl**。
+2.  用初始化的结构调用[**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings) 。 因此，将启用设备以从 D3 状态唤醒，用户可以从设备管理器的设备属性页启用或禁用唤醒信号。
 
-下面的代码段从示例演示如何初始化的 Osrusbfx2 唤醒设置为其默认值：
+Osrusbfx2 示例中的以下代码片段演示了如何将唤醒设置初始化为其默认值：
 
 ```cpp
 WDF_DEVICE_POWER_POLICY_WAKE_SETTINGS wakeSettings;
@@ -201,12 +201,12 @@ if (!NT_SUCCESS(status)) {
 }
 ```
 
-对于支持选择性挂起的 USB 设备，基础总线驱动程序准备用于唤醒的设备硬件。 因此，函数的 USB 驱动程序很少需要*EvtDeviceArmWakeFromS0*回调。 空闲超时过期时，框架会将选择性挂起请求发送到 USB 总线驱动程序。
+对于支持选择性挂起的 USB 设备，基础总线驱动程序会准备要唤醒的设备硬件。 因此，USB 函数驱动程序很少需要*EvtDeviceArmWakeFromS0*回调。 当空闲超时过期时，框架会将选择性挂起请求发送到 USB 总线驱动程序。
 
-出于相同原因，USB 函数驱动程序很少需要*EvtDeviceWakeFromS0Triggered*或*EvtDeviceWakeFromSxTriggered*回调。 相反，该框架和基础总线驱动程序处理返回到工作状态的设备的所有要求。
+出于同一原因，USB 函数驱动程序很少需要*EvtDeviceWakeFromS0Triggered*或*EvtDeviceWakeFromSxTriggered*回调。 相反，框架和基础总线驱动程序会处理将设备返回到工作状态的所有要求。
 
 ## <a name="related-topics"></a>相关主题
-[USB 驱动程序 (WDF) 中的选择性挂起](selective-suspend-in-usb-drivers-wdf.md)  
+[USB 驱动程序中选择性挂起（WDF）](selective-suspend-in-usb-drivers-wdf.md)  
 
 
 

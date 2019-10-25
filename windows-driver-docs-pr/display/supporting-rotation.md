@@ -4,23 +4,23 @@ description: 支持旋转
 ms.assetid: b85f3130-e69d-4a5f-b58e-d2138ea994dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc66b22ab017d9d4fc32bca879310a0082526b10
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1fc6b3f413f9498d7419075f24bed49b39bcfd59
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361239"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825601"
 ---
 # <a name="supporting-rotation"></a>支持旋转
 
 
-下面的主题介绍如何显示微型端口驱动程序和用户模式显示驱动程序支持旋转：
+以下主题介绍了显示微型端口驱动程序和用户模式显示驱动程序如何支持旋转：
 
-[在显示微型端口驱动程序中支持旋转](supporting-rotation-in-a-display-miniport-driver.md)
+[支持显示微型端口驱动程序中的旋转](supporting-rotation-in-a-display-miniport-driver.md)
 
-[独立于 VidPN 路径的旋转接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[VidPN 路径无关旋转接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[在用户模式显示驱动程序中支持旋转](supporting-rotation-in-a-user-mode-display-driver.md)
+[支持用户模式显示驱动程序中的旋转](supporting-rotation-in-a-user-mode-display-driver.md)
 
  
 

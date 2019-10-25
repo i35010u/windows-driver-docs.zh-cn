@@ -1,9 +1,9 @@
 ---
 title: ndiskd.nblpool
-description: Ndiskd.nblpool 扩展显示有关 NET_BUFFER_LIST (NBL) 池的信息。 如果不带任何参数运行此扩展，ndiskd 将显示在系统中的所有已分配的 NBL 池的列表。
+description: Ndiskd. nblpool 扩展显示有关 NET_BUFFER_LIST （NBL）池的信息。 如果运行不带任何参数的此扩展，则 ndiskd 会在系统中显示所有已分配的 NBL 池的列表。
 ms.assetid: 78F8E45C-D13D-4628-A387-529291B4C50C
 keywords:
-- ndiskd.nblpool Windows 调试
+- ndiskd nblpool Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,61 +12,61 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 590ed69084b85644c02dc0981b206a114dd75a68
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bf10e51debb1dd63c185d759f61dc79277cbb22a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364277"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837585"
 ---
 # <a name="ndiskdnblpool"></a>!ndiskd.nblpool
 
 
-**！ Ndiskd.nblpool**扩展显示有关的信息[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure) (NBL) 池。 如果不带任何参数运行此扩展 ！ ndiskd 将显示在系统中的所有已分配的 NBL 池的列表。
+**！ Ndiskd nblpool**扩展显示有关[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)（NBL）池的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中已分配的所有 NBL 池的列表。
 
 ```console
 !ndiskd.nblpool [-handle <x>] [-basic] [-allocations] [-find <str>] [-findnb <str>] 
     [-findctx <str>] [-findctxtype <str>] [-findva <x>] [-findpa <x>]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 NBL 池的句柄。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
 显示有关 NBL 池的基本信息。
 
-<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span> *-allocations*   
-显示所有分配的功能的 Nbl。
+<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span> *-分配*   
+显示所有已分配的 Nbl。
 
-<span id="_______-find______"></span><span id="_______-FIND______"></span> *-find*   
-筛选分配功能的 Nbl 使用调试器表达式的列表。
+<span id="_______-find______"></span><span id="_______-FIND______"></span> *-查找*   
+使用调试器表达式筛选分配的 Nbl 的列表。
 
 <span id="_______-findnb______"></span><span id="_______-FINDNB______"></span> *-findnb*   
-由链接的已分配功能的 Nbl 列表的筛选器[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)s (NBs)。
+按链接的[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)（NBs）筛选已分配的 nbl 的列表。
 
 <span id="_______-findctx______"></span><span id="_______-FINDCTX______"></span> *-findctx*   
-筛选功能的上下文区域的已分配 Nbl 列表。
+按上下文区域筛选分配的 Nbl 的列表。
 
 <span id="_______-findctxtype______"></span><span id="_______-FINDCTXTYPE______"></span> *-findctxtype*   
-重写的上下文区域的数据类型。
+重写上下文区域的数据类型。
 
 <span id="_______-findva______"></span><span id="_______-FINDVA______"></span> *-findva*   
-查找功能的 Nbl 包含跨越给定虚拟地址 NB。
+查找 Nbl，其中包含跨越给定虚拟地址的 NB。
 
 <span id="_______-findpa______"></span><span id="_______-FINDPA______"></span> *-findpa*   
-查找功能的 Nbl 包含跨越的给定物理地址 NB。
+查找 Nbl，其中包含跨越给定物理地址的 NB。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-输入 **！ ndiskd.nblpool**命令不带任何参数，以查看所有已分配的 NBL 池的列表。 在此示例中，查找分配的内核调试程序的网络接口卡 (kdnic) 具有 KDNr 标记的 NBL 池。 其句柄是 ffffdf80147e4a40。
+输入不带参数的 **！ ndiskd**命令，以查看所有已分配的 NBL 池的列表。 在此示例中，使用 KDNr 标记查找由内核调试器网络接口卡（kdnic）分配的 NBL 池。 它的句柄为 ffffdf80147e4a40。
 
 ```console
 2: kd> !ndiskd.nblpool
@@ -93,7 +93,7 @@ Ndiskd.dll
     ffffdf80131d5a40   NDnd                ndis!DriverEntry+5e9
 ```
 
-单击 NBL 池的句柄或输入 **！ ndiskd.nblpool-处理**命令来检查其详细信息。
+单击 NBL 池的句柄，或输入 **！ ndiskd**命令来检查其详细信息。
 
 ```console
 2: kd> !ndiskd.nblpool ffffdf80147e4a40
@@ -114,7 +114,7 @@ NBL POOL
     All allocated NBLs
 ```
 
-若要浏览功能的 Nbl 包含在此 NBL 池中，请单击底部的"所有已分配功能的 Nbl"链接。 或者，您还可以输入 **！ ndiskd.nblpool-处理的分配**命令。 下面的示例中所示，此 NBL 池包含 1024 个以上功能的 Nbl 因此 ！ ndiskd 提前退出。 可以使用-force 选项，若要解决此限制并查看所有 NBL 池中此功能的 Nbl。
+若要浏览包含在此 NBL 池中的 Nbl，请单击底部的 "所有已分配的 Nbl" 链接。 另外，还可以输入 **！ ndiskd-分配**命令。 如以下示例中所示，此 NBL 池包含1024个以上的 Nbl，因此！ ndiskd 会提前退出。 可以使用-force 选项来解决此限制，并查看此 NBL 池中的所有 Nbl。
 
 ```console
 2: kd> !ndiskd.nblpool ffffdf80147e4a40 -allocations
@@ -158,22 +158,22 @@ ALL ALLOCATED NBLs
     to bypass this limit.]
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
-[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
+[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
  
 

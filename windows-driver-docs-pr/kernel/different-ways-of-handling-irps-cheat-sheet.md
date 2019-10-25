@@ -1,37 +1,37 @@
 ---
 title: 不同的 IRP 处理方法 - 速查表
 author: kaushika-msft
-description: 不同的方法来处理 Irp
+description: 处理 Irp 的不同方法
 keywords:
 - Irp WDK 内核，处理 Irp
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bccfd7b4ba8f0a8514520220105b6b6f50031eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f037021882b9c45f4101789549d8f22de7802fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384992"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828323"
 ---
 # <a name="different-ways-of-handling-irps---cheat-sheet"></a>不同的 IRP 处理方法 - 速查表 
 
-Windows 驱动程序模型 (WDM) 驱动程序通常将输入/输出请求数据包 (Irp) 发送到其他驱动程序。 驱动程序创建其自己 IRP，并将其发送到较低的驱动程序，或该驱动程序将收到来自另一个驱动程序，它上面附加 Irp 转发。 
+Windows 驱动模型（WDM）驱动程序通常会将输入/输出请求数据包（Irp）发送到其他驱动程序。 驱动程序创建自己的 IRP，并将其发送到较低的驱动程序，或驱动程序将从上面附加的其他驱动程序接收的 Irp 转发到该驱动程序。 
 
-本文介绍了不同的方式的驱动程序可以将 Irp 发送到较低的驱动程序，并包括带批注的示例代码。
+本文讨论了驱动程序可以将 Irp 发送到较低的驱动程序的不同方式，并包括带批注的示例代码。
 
-* 方案 1-5 是有关如何从调度例程将 IRP 转发到较低的驱动程序。
-* 方案 6 到 12 讨论创建 IRP 和将其发送到另一个驱动程序的不同方法。
+* 方案1-5 介绍了如何从调度例程将 IRP 转发到较低版本的驱动程序。
+* 方案6-12 讨论创建 IRP 并将其发送到另一个驱动程序的不同方式。
 
-检查各种方案之前，请注意，STATUS_MORE_PROCESSING_REQUIRED 或 STATUS_SUCCESS 可以返回的 IRP 完成例程。
+在检查各种方案之前，请注意，IRP 完成例程可以返回 STATUS_MORE_PROCESSING_REQUIRED 或 STATUS_SUCCESS。
 
-它将检查状态时，I/O 管理器将使用以下规则：
+在检查状态时，i/o 管理器使用以下规则：
 
-* 如果状态为 STATUS_MORE_PROCESSING_REQUIRED，停止完成 IRP，退出的堆栈位置保持不变并返回。
-* 如果状态为 STATUS_MORE_PROCESSING_REQUIRED 之外的任何内容，则继续完成 IRP 向上。
+* 如果状态为 STATUS_MORE_PROCESSING_REQUIRED，则停止完成 IRP，使堆栈位置保持不变，并返回。
+* 如果状态不是 "STATUS_MORE_PROCESSING_REQUIRED"，请继续向上完成 IRP。
 
-由于 I/O 管理器无需知道使用的非 STATUS_MORE_PROCESSING_REQUIRED 值，使用 STATUS_SUCCESS （因为在大多数处理器体系结构上高效地加载的值为 0）。
+因为 i/o 管理器不必知道使用了哪个非 STATUS_MORE_PROCESSING_REQUIRED 值，所以请使用 STATUS_SUCCESS （因为值0会在大多数处理器体系结构上有效加载）。
 
-在阅读下面的代码，请注意，STATUS_CONTINUE_COMPLETION 化名为 STATUS_SUCCESS WDK 中。
+阅读以下代码时，请注意，STATUS_CONTINUE_COMPLETION 在 WDK 中化名为 STATUS_SUCCESS。
 
 ```cpp
 // This value should be returned from completion routines to continue
@@ -50,10 +50,10 @@ typedef enum _IO_COMPLETION_ROUTINE_RESULT {
 } IO_COMPLETION_ROUTINE_RESULT, *PIO_COMPLETION_ROUTINE_RESULT;
 ```
 
-## <a name="forwarding-an-irp-to-another-driver"></a>转发到另一个驱动程序 IRP
+## <a name="forwarding-an-irp-to-another-driver"></a>将 IRP 转发到另一个驱动程序
 
-### <a name="scenario-1-forward-and-forget"></a>方案 1：转发并忘记
-如果驱动程序只是想要向下转发 IRP 并不执行任何其他操作，请使用下面的代码。 该驱动程序无需在这种情况下设置完成例程。 如果该驱动程序是一个最高级别驱动程序，IRP 可以完成同步或异步，具体取决于较低的驱动程序返回的状态。 
+### <a name="scenario-1-forward-and-forget"></a>方案1：转发和遗忘
+如果驱动程序只是想要向下转发 IRP 并且不执行其他操作，请使用以下代码。 在这种情况下，驱动程序不必设置完成例程。 如果该驱动程序是顶级驱动程序，则可以同步或异步完成 IRP，这取决于由低级驱动程序返回的状态。 
 
 ```cpp
 NTSTATUS
@@ -71,9 +71,9 @@ DispatchRoutine_1(
 } 
 ```
 
-### <a name="scenario-2-forward-and-wait"></a>方案 2：正向和等待
+### <a name="scenario-2-forward-and-wait"></a>方案2：前进并等待
 
-如果驱动程序想要将转发到较低的驱动程序 IRP 并等待其返回，以便它可以处理 IRP，请使用下面的代码。 这么做通常是处理 PNP Irp 时。 例如，接收[执行了 IRP_MN_START_DEVICE](irp-mn-start-device.md) IRP，您必须转发到总线驱动程序 IRP 并等待它完成，才可以开始你的设备。 您可以调用[ **IoForwardIrpSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioforwardirpsynchronously)要轻松地执行此操作。
+如果驱动程序要将 IRP 转发到较低的驱动程序并等待其返回以使其能够处理 IRP，请使用以下代码。 这通常在处理 PNP Irp 时完成。 例如，当你收到[IRP_MN_START_DEVICE](irp-mn-start-device.md) IRP 时，必须将 irp 转发到总线驱动程序并等待其完成，然后才能启动设备。 可以调用[**IoForwardIrpSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioforwardirpsynchronously)轻松完成此操作。
 
 ```cpp
 NTSTATUS
@@ -148,9 +148,9 @@ CompletionRoutine_2(
 } 
 ```
 
-### <a name="scenario-3-forward-with-a-completion-routine"></a>方案 3：转发与完成例程
+### <a name="scenario-3-forward-with-a-completion-routine"></a>方案3：使用完成例程前进
 
-在这种情况下，该驱动程序设置完成例程，将 IRP 转发，然后返回较低的驱动程序原样的状态。 设置完成例程的目的是在其返回途中 IRP 的内容进行修改。 
+在这种情况下，驱动程序将设置一个完成例程，将 IRP 向下转发，然后按原样返回较低驱动程序的状态。 设置完成例程的目的是在后台修改 IRP 的内容。 
 
 ```cpp
 NTSTATUS
@@ -180,13 +180,13 @@ DispathRoutine_3(
 }
 ```
 
-如果从调度例程返回较低的驱动程序的状态：
+如果从调度例程返回低级驱动程序的状态：
 
-* 不得更改中完成例程 IRP 的状态。 这是为了确保 IRP 的 IoStatus 块 (Irp-> IoStatus.Status) 中设置的状态值将与低级驱动程序的返回状态相同。
-* 必须将 IRP 的挂起状态的传播由 Irp PendingReturned->。
-* 不得更改 IRP 项的工作。
+* 不能在完成例程中更改 IRP 的状态。 这是为了确保 IRP 的 IoStatus 块中设置的状态值（Irp > IoStatus）与较低驱动程序的返回状态值相同。
+* 必须按照 Irp > PendingReturned 中所示传播 IRP 的挂起状态。
+* 不得更改 IRP 的 synchronicity。
 
-因此，仅有 2 个有效的版本，在此方案中 （31 和 32） 完成例程的：
+因此，在这种情况下只有2个有效版本的完成例程（31和32）：
 
 ```cpp
 NTSTATUS
@@ -241,9 +241,9 @@ CompletionRoutine_32 (
 } 
 ```
 
-### <a name="scenario-4-queue-for-later-or-forward-and-reuse"></a>方案 4:队列供稍后使用，或转发和重复使用
+### <a name="scenario-4-queue-for-later-or-forward-and-reuse"></a>方案4：排队供以后使用或转发和重复使用
 
-在驱动程序要排队 IRP 和更高版本对其进行处理，或转发到较低的驱动程序 IRP 和重用超过特定的次数之前完成 IRP 的情况下使用以下代码片段。 调度例程将挂起的 IRP 标记，并返回 STATUS_PENDING，因为将 IRP 更高版本在不同的线程中完成。 在这里，完成例程可以更改 IRP 的状态，如有必要 （与前面的方案）。 
+如果驱动程序要将 IRP 排队并稍后处理 IRP，或将 IRP 转发到较低的驱动程序，并在完成 IRP 之前将其重复用于特定次数，请使用以下代码片段。 调度例程会将 IRP 标记为挂起并返回 STATUS_PENDING，因为 IRP 稍后将在另一个线程中完成。 如果需要，完成例程可以更改 IRP 的状态（与前面的方案不同）。 
 
 ```cpp
 NTSTATUS
@@ -284,7 +284,7 @@ DispathRoutine_4(
 }
 ```
 
-完成例程可以返回 STATUS_CONTINUE_COMPLETION 或 STATUS_MORE_PROCESSING_REQUIRED。 仅当你想要重复使用另一个线程从 IRP 和更高版本完成时，才返回 STATUS_MORE_PROCESSING_REQUIRED。
+完成例程可以返回 STATUS_CONTINUE_COMPLETION 或 STATUS_MORE_PROCESSING_REQUIRED。 仅当你想要从另一个线程重用 IRP 并在以后完成时，才返回 STATUS_MORE_PROCESSING_REQUIRED。
 
 ```cpp
 NTSTATUS
@@ -317,11 +317,11 @@ CompletionRoutine_42 (
 }
 ```
 
-### <a name="scenario-5-complete-the-irp-in-the-dispatch-routine"></a>方案 5:完成中的调度例程 IRP
+### <a name="scenario-5-complete-the-irp-in-the-dispatch-routine"></a>方案5：在调度例程中完成 IRP
 
-此方案显示了如何完成中的调度例程 IRP。 
+此方案说明如何在调度例程中完成 IRP。 
 
-**重要**调度例程的返回状态时完成中的调度例程 IRP，应与匹配的 IRP IoStatus 块中设置的值的状态 (Irp-> IoStatus.Status)。
+**重要提示**在调度例程中完成 IRP 后，调度例程的返回状态应与 IRP 的 IoStatus 块中设置的值（Irp > IoStatus）的状态相匹配。
 
 ```cpp
 NTSTATUS
@@ -340,24 +340,24 @@ DispatchRoutine_5(
 }
 ```
 
-## <a name="creating-irps-and-sending-them-to-another-driver"></a>创建 Irp，并将它们发送到另一个驱动程序
+## <a name="creating-irps-and-sending-them-to-another-driver"></a>创建 Irp 并将其发送到另一个驱动程序
 
 ### <a name="introduction"></a>简介
 
-检查这些方案之前，必须了解创建驱动程序的同步输入/输出请求数据包 (IRP) 和异步请求之间的差异。 
+在检查方案之前，必须了解驱动程序创建的同步输入/输出请求数据包（IRP）和异步请求之间的差异。 
 
-|    同步 （线程） 的 IRP                                                                                                                        |    异步 （非线程） 的 IRP                                                                                                                       |
+|    同步（线程） IRP                                                                                                                        |    异步（非线程） IRP                                                                                                                       |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    创建使用 IoBuildSynchronousFsdRequest 或 IoBuildDeviceIoControlRequest。                                                                  |    创建使用 IoBuildAsynchronousFsdRequest 或 IoAllocateIrp。 这适用于驱动程序的通信。                                 |
-|    线程必须等待 IRP 才能完成。                                                                                                         |    线程不必等待 IRP 才能完成。                                                                                                 |
-|    与创建它的线程相关联，因此，名称线程 Irp。 因此，如果在线程退出，I/O 管理器将取消 IRP。     |    未与创建它的线程关联。                                                                                                       |
-|    不能在任意线程上下文中创建。                                                                                                 |    由于该线程不会等待 IRP 才能完成，可以在任意线程上下文中创建。                                             |
-|    I/O 管理器执行 post 完成来释放与 IRP 相关联的缓冲区。                                                     |    I/O 管理器不能执行清理操作。 该驱动程序必须提供完成例程，并释放与 IRP 相关联的缓冲区。          |
-|    必须在 IRQL 级别等于 passive_level 调用发送。                                                                                                |    可以在 IRQL 发送 DISPATCH_LEVEL 如果目标驱动程序的调度例程可以处理请求时 DISPATCH_LEVEL 小于或等于。     |
+|    使用 IoBuildSynchronousFsdRequest 或 IoBuildDeviceIoControlRequest 创建。                                                                  |    使用 IoBuildAsynchronousFsdRequest 或 IoAllocateIrp 创建。 这适用于驱动程序到驱动程序的通信。                                 |
+|    线程必须等待 IRP 完成。                                                                                                         |    线程不必等待 IRP 完成。                                                                                                 |
+|    与创建它的线程关联，因此是线程 Irp 的名称。 因此，如果线程退出，i/o 管理器将取消 IRP。     |    不与创建它的线程关联。                                                                                                       |
+|    不能在任意线程上下文中创建。                                                                                                 |    可在任意线程上下文中创建，因为该线程不会等待 IRP 完成。                                             |
+|    I/o 管理器执行 post 完成，以释放与 IRP 关联的缓冲区。                                                     |    I/o 管理器无法执行清除操作。 驱动程序必须提供完成例程，并释放与 IRP 关联的缓冲区。          |
+|    必须以 IRQL 级别（等于 PASSIVE_LEVEL）发送。                                                                                                |    如果目标驱动程序的调度例程可以处理 DISPATCH_LEVEL 上的请求，则可以在 IRQL 小于或等于 DISPATCH_LEVEL 时发送。     |
 
-### <a name="scenario-6-send-a-synchronous-device-control-request-irpmjinternaldevicecontrolirpmjdevicecontrol-by-using-iobuilddeviceiocontrolrequest"></a>方案 6:使用 IoBuildDeviceIoControlRequest 发送同步的设备控制请求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL)
+### <a name="scenario-6-send-a-synchronous-device-control-request-irp_mj_internal_device_controlirp_mj_device_control-by-using-iobuilddeviceiocontrolrequest"></a>方案6：使用 IoBuildDeviceIoControlRequest 发送同步设备控制请求（IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL）
 
-下面的代码演示如何调用[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)请求以进行同步的 IOCTL 请求。  有关详细信息，请参阅[IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)并[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)。
+下面的代码演示如何调用[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)请求以发出同步 IOCTL 请求。  有关详细信息，请参阅[IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)和[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)。
 
 ```cpp
 NTSTATUS
@@ -446,8 +446,8 @@ Return Value:
 }
 ```
 
-### <a name="scenario-7-send-a-synchronous-device-control-ioctl-request-and-cancel-it-if-not-completed-in-a-certain-time-period"></a>方案 7:发送同步设备控制 (IOCTL) 请求并取消它，如果在某段时间内未完成 
-此方案中是类似于前面的方案中，不同之处在于而不是无限期等待完成请求，它会等待某些用户指定的时间，并安全地取消 IOCTL 请求，如果等待超时。 
+### <a name="scenario-7-send-a-synchronous-device-control-ioctl-request-and-cancel-it-if-not-completed-in-a-certain-time-period"></a>方案7：发送同步设备控制（IOCTL）请求并在某个时间段内未完成时取消该请求 
+此方案类似于前面的方案，只不过它会等待一些用户指定的时间，并在等待超时的情况下安全取消 IOCTL 请求。 
 
 ```cpp
 typedef enum {
@@ -627,8 +627,8 @@ MakeSynchronousIoctlWithTimeOutCompletion(
 }
 ```
 
-### <a name="scenario-8-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statuscontinuecompletion"></a>方案 8:使用 IoBuildSynchronousFsdRequest 发送同步的非 IOCTL 请求-完成例程返回 STATUS_CONTINUE_COMPLETION
-下面的代码演示如何通过调用来同步的非 IOCTL 请求[ **IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)。 方案 6 类似如下所示的方法。
+### <a name="scenario-8-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-status_continue_completion"></a>方案8：使用 IoBuildSynchronousFsdRequest 发送同步非 IOCTL 请求-完成例程返回 STATUS_CONTINUE_COMPLETION
+下面的代码演示如何通过调用[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)来执行同步非 IOCTL 请求。 此处所示的方法类似于方案6。
 
 ```cpp
 NTSTATUS
@@ -726,8 +726,8 @@ MakeSynchronousNonIoctlRequestCompletion(
 }
 ```
 
-### <a name="scenario-9-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statusmoreprocessingrequired"></a>方案 9:使用 IoBuildSynchronousFsdRequest 发送同步的非 IOCTL 请求-完成例程返回 STATUS_MORE_PROCESSING_REQUIRED 
-此方案以及方案 8 之间的唯一区别是完成例程返回 STATUS_MORE_PROCESSING_REQUIRED。 
+### <a name="scenario-9-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-status_more_processing_required"></a>方案9：使用 IoBuildSynchronousFsdRequest 发送同步非 IOCTL 请求-完成例程返回 STATUS_MORE_PROCESSING_REQUIRED 
+此方案与方案8之间唯一的区别是完成例程返回 STATUS_MORE_PROCESSING_REQUIRED。 
 
 ```cpp
 NTSTATUS MakeSynchronousNonIoctlRequest2(
@@ -832,10 +832,10 @@ NTSTATUS MakeSynchronousNonIoctlRequestCompletion2(
 }
 ```
 
-### <a name="scenario-10-send-an-asynchronous-request-by-using-iobuildasynchronousfsdrequest"></a>方案 10:使用 IoBuildAsynchronousFsdRequest 发送的异步请求 
-此方案显示了如何通过调用发出异步请求[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)。 
+### <a name="scenario-10-send-an-asynchronous-request-by-using-iobuildasynchronousfsdrequest"></a>方案10：使用 IoBuildAsynchronousFsdRequest 发送异步请求 
+此方案说明如何通过调用[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)进行异步请求。 
 
-在异步请求中，发出请求的线程不必等待 IRP 才能完成。 可以在任意线程上下文中创建 IRP，因为 IRP 不是与线程关联。 必须提供完成例程，并完成例程释放缓冲区和 IRP，如果你不想要重复使用 IRP。 这是因为 I/O 管理器不能执行后完成清理的驱动程序创建异步 Irp (使用创建**IoBuildAsynchronousFsdRequest**并**IoAllocateIrp**)。 
+在异步请求中，发出请求的线程不必等待 IRP 完成。 可以在任意线程上下文中创建 IRP，因为 IRP 不与线程关联。 如果不打算重用 IRP，则必须提供完成例程并在完成例程中释放缓冲区和 IRP。 这是因为，i/o 管理器无法执行驱动程序创建的异步 Irp （用**IoBuildAsynchronousFsdRequest**和**IoAllocateIrp**创建）的完成后清理。 
 
 ```cpp
 NTSTATUS
@@ -963,9 +963,9 @@ MakeAsynchronousRequestCompletion(
 }
 ```
 
-### <a name="scenario-11-send-an-asynchronous-request-by-using-ioallocateirp"></a>方案 11:使用 IoAllocateIrp 发送的异步请求
+### <a name="scenario-11-send-an-asynchronous-request-by-using-ioallocateirp"></a>方案11：使用 IoAllocateIrp 发送异步请求
 
-此方案中是类似于前面的方案中不同之处在于而不是调用[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)，这种情况下使用[ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)函数来创建 IRP。
+此方案类似于前述[**方案，只不过**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)此方案使用[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)函数来创建 IRP。
 
 ```cpp
 NTSTATUS
@@ -1097,12 +1097,12 @@ MakeAsynchronousRequestCompletion2(
 }
 ```
 
-### <a name="scenario-12-send-an-asynchronous-request-and-cancel-it-in-a-different-thread"></a>方案 12:发送异步请求并在不同线程中取消 
-此方案说明了如何发送一个请求一次到较低的驱动程序而无需等待请求完成，并且您可以随时从另一个线程取消请求。 
+### <a name="scenario-12-send-an-asynchronous-request-and-cancel-it-in-a-different-thread"></a>方案12：发送异步请求并在另一个线程中取消它 
+此方案说明了如何一次将一个请求发送到较低的驱动程序，而无需等待请求完成，还可以随时从另一个线程取消请求。 
 
-您可以记住 IRP 和其他变量来执行此操作在设备扩展或设备，如下所示的全局上下文结构中。 与设备扩展在 IRPLOCK 变量跟踪 IRP 的状态。 IrpEvent 用于确保 IRP 是完全完成 （或释放） 进行的下一个请求之前。 
+在设备扩展或全局到设备的上下文结构中，可以记住 IRP 和其他变量，如下所示。 使用设备扩展中的 IRPLOCK 变量跟踪 IRP 的状态。 IrpEvent 用于在发出下一个请求之前确保 IRP 完全完成（或释放）。 
 
-在处理时，此事件也很有用[IRP_MN_REMOVE_DEVICE](irp-mn-remove-device.md)并[IRP_MN_STOP_DEVICE 即插即用](irp-mn-stop-device.md)需要确保在完成这些请求之前没有任何挂起的 Irp 的请求。 在初始化为同步事件 AddDevice 或某些其他初始化例程时，此事件的效果最佳。
+当你处理[IRP_MN_REMOVE_DEVICE](irp-mn-remove-device.md)和[IRP_MN_STOP_DEVICE PNP](irp-mn-stop-device.md)请求时，如果必须确保在完成这些请求之前没有任何挂起的 irp，此事件也很有用。 当你在 AddDevice 中或在其他某个初始化例程中将其作为同步事件进行初始化时，此事件的效果最佳。
 
 ```cpp
 typedef struct _DEVICE_EXTENSION{
@@ -1306,5 +1306,5 @@ CancelPendingIrp(
 }
 ```
 
-## <a name="references"></a>参考 
-* Walter Oney。 Windows 驱动程序模型，第二个版本，第 5 章编程。
+## <a name="references"></a>引用 
+* Walter Oney。 编程 Windows 驱动模型，第5版，第5章。

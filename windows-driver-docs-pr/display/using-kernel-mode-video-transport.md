@@ -3,19 +3,19 @@ title: 使用内核模式视频传输
 description: 使用内核模式视频传输
 ms.assetid: 0be84371-f7d5-42bb-b164-80fcf1b58d95
 keywords:
-- 绘制内核模式视频传输 WDK DirectDraw 接口有关内核模式视频传输
-- 有关内核模式视频传输 DirectDraw 内核模式视频传输 WDK Windows 2000 显示
-- 有关内核模式视频传输的内核模式视频传输 WDK DirectDraw
-- 视频传输内核模式 WDK DirectDraw，有关内核模式视频传输
+- 绘制内核模式视频传输 WDK DirectDraw，关于内核模式视频传输
+- DirectDraw 内核模式视频传输 WDK Windows 2000 显示，关于内核模式视频传输
+- 内核模式视频传输 WDK DirectDraw，关于内核模式视频传输
+- 视频传输内核模式 WDK DirectDraw，关于内核模式视频传输
 - 视频捕获 WDK 视频传输内核模式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 098a93d572c31fd2de16be8e3a31d6c815a1a985
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d0ea774ffb91d4b021fc112c2cfa46a265a527fb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372020"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825395"
 ---
 # <a name="using-kernel-mode-video-transport"></a>使用内核模式视频传输
 
@@ -23,13 +23,13 @@ ms.locfileid: "67372020"
 ## <span id="ddk_using_kernel_mode_video_transport_gg"></span><span id="DDK_USING_KERNEL_MODE_VIDEO_TRANSPORT_GG"></span>
 
 
-内核模式视频传输功能可通过[视频捕获驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)与链接*dxapi.lib*，这可以让它以便稍后调用*dxapi.sys*。 仅当加载 DirectDraw，此功能才可用。
+与*dxapi*链接的[视频捕获驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)可访问内核模式视频传输功能，该驱动程序允许稍后调用*dxapi*。 仅当加载 DirectDraw 时，此功能才可用。
 
-视频捕获 （适用于硬件解码器） 的驱动程序使用[ **DxApi** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxapi/nf-dxapi-dxapi)提供内核模式 DirectDraw 访问 DxApi 接口回调函数的函数。 **DxApi**函数是接受函数标识符、 输入的缓冲区和大小，并输出缓冲区和大小的单个入口点。 此函数的大小和格式的输入和输出缓冲区的行为取决于指定的函数标识符。 **DxApi**中定义函数和其函数标识符*ddkmapi.h*。
+视频捕获驱动程序（用于硬件解码器）使用内核模式 DirectDraw 附带的[**DxApi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxapi/nf-dxapi-dxapi)函数来访问 DxApi 接口回调函数。 **DxApi**函数是接受函数标识符、输入缓冲区和大小以及输出缓冲区和大小的单个入口点。 此函数的行为以及输入和输出缓冲区的大小和格式取决于指定的函数标识符。 **DxApi**函数及其函数标识符在*ddkmapi*中定义。
 
-DirectShow 或其他客户端访问提供的微型端口驱动程序通过 DirectDraw DxApi 接口回调函数。 DxApi 接口回调函数中定义*dxmini.h*。
+DirectShow 或其他客户端通过 DirectDraw 访问由视频微型端口驱动程序提供的 DxApi 接口回调函数。 DxApi 接口回调函数在*dxmini*中定义。
 
-若要使用的内核模式视频传输接口，视频捕获驱动程序必须首先收到用户模式下的每个 DirectDraw 对象、 图面上和它需要使用 VPE 对象的句柄。 有关捕获和 MPEG 模型中，这些句柄传递使用其现有的 Api。 如果驱动程序需要使用此功能，但不是流类驱动程序，用户模式组件可以检索使用的句柄[IDirectDrawKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)并[IDirectDrawSurfaceKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) COM 接口并将其传递到驱动程序。 中标识的 COM 接口和类的方法*ddkernel.h*。
+若要使用内核模式视频传输接口，视频捕获驱动程序必须首先接收到需要使用的每个 DirectDraw 对象、surface 和 VPE 对象的用户模式句柄。 对于 "捕获" 和 "MPEG" 模型，使用现有的 Api 传递这些句柄。 如果驱动程序需要此功能，但它不是流类驱动程序，则用户模式组件可以使用[IDirectDrawKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)和[IDirectDrawSurfaceKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) COM 接口检索句柄，并将它们向下传递给驱动程序。 COM 接口及其方法在*ddkernel*中标识。
 
  
 

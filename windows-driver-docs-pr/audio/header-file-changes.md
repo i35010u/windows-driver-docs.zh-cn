@@ -3,46 +3,46 @@ title: 标头文件更改
 description: 标头文件更改
 ms.assetid: 9212aa8d-bb11-4ade-a70c-274a7ffe83ef
 keywords:
-- 数据格式 WDK 音频
-- WDK 音频数据的格式
-- WDK 的音频数据格式
-- 格式 WDK 音频、 多通道
-- 多渠道格式 WDK 音频
+- 数据格式化 WDK 音频
+- 格式化 WDK 音频、数据
+- 音频数据格式 WDK
+- 格式化 WDK 音频，多通道
+- 多通道格式 WDK 音频
 - 家庭影院系统 WDK 音频
-- 扬声器 WDK 音频、 主页 threater 系统
-- 音频驱动程序 WDK、 家庭影院系统
-- WDM 音频驱动程序 WDK、 家庭影院系统
+- 扬声器 WDK 音频，threater 系统
+- 音频驱动程序 WDK，家庭影院系统
+- WDM 音频驱动程序 WDK，家庭影院系统
 - 7.1 家庭影院扬声器 WDK 音频
-- 7.1 范围内配置扬声器 WDK 音频
-- 范围内的配置扬声器 WDK 音频
-- 5.1 环绕音响扬声器 WDK 音频
-- 环绕音响扬声器 WDK 音频
+- 7.1 宽配置扬声器 WDK 音频
+- 宽配置扬声器 WDK 音频
+- 5.1 环绕声扬声器 WDK 音频
+- 环绕声扬声器 WDK 音频
 - 标头文件 WDK 音频
 - Ksmedia.h
-- Dsound.h
-- 通道掩码 WDK 音频
+- Dsound
+- 通道屏蔽 WDK 音频
 - 定位 WDK 音频
 - WDM 音频数据格式 WDK
-- 数据格式以 WDK 音频，标头文件
+- 数据格式化 WDK 音频，头文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 918a25db793aff9ba6225a3e5c742a5c79a56a08
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cac6b949cb493e0b71e48c39f64a731aed130bb3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359987"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831195"
 ---
 # <a name="header-file-changes"></a>标头文件更改
 
 
-Windows Driver Kit (WDK) 包含定义支持的 Windows 多媒体控制面板的演讲者配置的两个标头文件：
+Windows 驱动程序工具包（WDK）包含两个标头文件，用于定义 Windows 多媒体控制面板支持的扬声器配置：
 
--   Ksmedia.h 定义的通道掩码[ **KSAUDIO\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)结构，它由[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)属性请求。
+-   Ksmedia 定义[**KSPROPERTY\_音频\_通道\_config**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)属性请求使用的[**KSAUDIO\_通道\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)结构的通道掩码。
 
--   Dsound.h 定义一组可提交到扬声器配置标识符**IDirectSound::SetSpeakerConfig**方法。 有关此方法的详细信息，请参阅 Windows SDK 文档。
+-   Dsound 定义可提交到**IDirectSound：： SetSpeakerConfig**方法的发言人配置标识符的列表。 有关此方法的详细信息，请参阅 Windows SDK 文档。
 
-在 Windows Server 2003，Windows XP with SP1、 Windows 2000 和 Windows Me / 98，Ksmedia.h 定义 5.1，7.1 通道流的下表中所示的通道掩码。
+在 Windows Server 2003、带有 SP1 的 Windows XP、Windows 2000 和 Windows Me/98 中，Ksmedia 定义了下表中显示的用于5.1 和7.1 通道流的通道掩码。
 
 <table>
 <colgroup>
@@ -61,26 +61,26 @@ Windows Driver Kit (WDK) 包含定义支持的 Windows 多媒体控制面板的�
 <tr class="odd">
 <td align="left"><p>KSAUDIO_SPEAKER_5POINT1</p></td>
 <td align="left"><p>0x3F</p></td>
-<td align="left"><p>佛罗里达州、 FR、 FC、 LFE、 BL、 B R</p></td>
+<td align="left"><p>FL，FR，FC，LFE，BL，BR</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSAUDIO_SPEAKER_7POINT1</p></td>
 <td align="left"><p>0xFF</p></td>
-<td align="left"><p>佛罗里达州、 FR、 光纤通道、 LFE、 BL、 BR、 FLC、 FRC</p></td>
+<td align="left"><p>FL、FR、FC、LFE、BL、BR、FLC、FRC</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-上表中的两个通道掩码表示 5.1 扬声器配置和 7.1 扬声器配置。 若要标识相同的两个扬声器配置，Dsound.h 定义以下扬声器配置 Id:
+上表中的两个通道掩码代表5.1 发言人配置和7.1 发言人配置。 为了识别相同的两个扬声器配置，Dsound 定义了以下扬声器配置 Id：
 
 ```cpp
   #define DSSPEAKER_5POINT1      0x00000006
   #define DSSPEAKER_7POINT1      0x00000007
 ```
 
-在 Windows XP SP2 和更高版本的 Windows 中，Ksmedia.h 定义通道掩码 5.1，7.1 通道流的表所示。
+在 Windows XP SP2 及更高版本的 Windows 中，Ksmedia 定义了下表中显示的5.1 和7.1 通道的通道掩码。
 
 <table>
 <colgroup>
@@ -99,29 +99,29 @@ Windows Driver Kit (WDK) 包含定义支持的 Windows 多媒体控制面板的�
 <tr class="odd">
 <td align="left"><p>KSAUDIO_SPEAKER_5POINT1</p></td>
 <td align="left"><p>0x3F</p></td>
-<td align="left"><p>佛罗里达州、 FR、 FC、 LFE、 BL、 B R</p></td>
+<td align="left"><p>FL，FR，FC，LFE，BL，BR</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSAUDIO_SPEAKER_7POINT1_SURROUND</p></td>
 <td align="left"><p>0x63F</p></td>
-<td align="left"><p>佛罗里达州、 FR、 光纤通道、 LFE、 BL、 BR、 SL、 SR</p></td>
+<td align="left"><p>FL，FR，FC，LFE，BL，BR，SL，SR</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-通过比较两个前面的表，并显示以下几点：
+通过比较上述两个表，可以看出以下几点：
 
--   第一个表中的通道掩码 0x3F 含义未更改在第二个表中，即使尽管在 Windows SP2 和更高版本的 Windows，KSAUDIO\_演讲者\_5POINT1 解释使用 SL 和 SR 发言人，而不是基准和 b.
+-   第一个表中的通道掩码0x3F 的含义未在第二个表中更改，即使在 Windows SP2 和更高版本的 Windows 中，KSAUDIO\_音箱\_5POINT1 被解释为使用 SL 和 SR 扬声器，而不是 BL 和 BR。
 
--   支持新的通道掩码值 0x63F。 此通道掩码表示 7.1 家庭影院扬声器配置。
+-   支持值为0x63F 的新通道掩码。 此通道掩码代表7.1 家庭影院扬声器配置。
 
--   **请注意**  在 Windows Vista 和更高版本的 Windows，KSAUDIO\_演讲者\_7POINT1 扬声器配置不再受支持。 因此，它不是控制面板中的可用选项。
+-   **注意**   在 windows Vista 和更高版本的 windows 中，不再支持 KSAUDIO\_扬声器\_7POINT1 扬声器配置。 因此，它不是控制面板中的可用选项。
 
      
 
-若要表示一组相同的扬声器配置，Dsound.h 定义以下扬声器配置 Id:
+为了表示相同的一组扬声器配置，Dsound 定义了以下扬声器配置 Id：
 
 ```cpp
   #define DSSPEAKER_5POINT1             0x00000006
@@ -130,9 +130,9 @@ Windows Driver Kit (WDK) 包含定义支持的 Windows 多媒体控制面板的�
   #define DSSPEAKER_7POINT1_WIDE        DSSPEAKER_7POINT1
 ```
 
-DSSPEAKER\_7POINT1\_外侧代码表示在控制面板中的新 7.1 家庭影院扬声器配置。 DSSPEAKER\_7POINT1 和 DSSPEAKER\_7POINT1\_宽都是在同一 7.1 范围内配置扬声器配置名称。
+DSSPEAKER\_7POINT1\_环绕在 "控制面板 7.1" 中。 DSSPEAKER\_7POINT1 和 DSSPEAKER\_7POINT1\_宽均为同一7.1 范围配置发言人配置的名称。
 
-DirectSound 的扬声器配置的详细信息，请参阅[DirectSound 扬声器配置设置](directsound-speaker-configuration-settings.md)。
+有关 DirectSound 的扬声器配置的详细信息，请参阅[DirectSound 发言人-配置设置](directsound-speaker-configuration-settings.md)。
 
  
 

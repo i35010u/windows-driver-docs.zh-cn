@@ -1,9 +1,9 @@
 ---
 title: ndiskd.ifstacktable
-description: Ndiskd.ifstacktable 扩展将显示网络接口堆栈表 (ifStackTable)。
+description: Ndiskd. ifstacktable 扩展显示网络接口堆栈表（ifStackTable）。
 ms.assetid: 8166C088-9366-49C4-9C3A-0089807352A9
 keywords:
-- ndiskd.ifstacktable Windows 调试
+- ndiskd ifstacktable Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: efbf4ed153769185f81e58286ce55c0c8f71127b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 45b17f6bfeebce573a847d9c917571b7ee1edf4f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364286"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826657"
 ---
 # <a name="ndiskdifstacktable"></a>!ndiskd.ifstacktable
 
 
-**！ Ndiskd.ifstacktable**扩展将显示网络接口堆栈表 (ifStackTable)。
+**！ Ndiskd ifstacktable**扩展显示网络接口堆栈表（ifstacktable）。
 
-有关接口堆栈表的详细信息，请参阅[维护网络界面栈](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)。
+有关接口堆栈的详细信息，请参阅[维护网络接口堆栈](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)。
 
 ```console
 !ndiskd.ifstacktable 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-此扩展没有任何参数。
+此扩展没有参数。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-运行 **！ ndiskd.ifstacktable**命令来查看 ifStackTable。
+运行 **！ ndiskd. ifstacktable**命令以查看 ifstacktable。
 
 ```console
 3: kd> !ndiskd.ifstacktable
@@ -56,9 +56,9 @@ INTERFACE STACK TABLE
     ffffdf801494c010   16                  17                 ffffdf801494ba20
 ```
 
-NDIS 维护 NDIS 微型端口适配器，NDIS 5.x 筛选器中间驱动程序，在堆栈表和 NDIS 筛选器模块，而[NDIS MUX 中间驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)驱动程序所需指定的内部接口关系虚拟微型端口接口和协议之间降低接口。 因此，ifStackTable 可能适用于与更复杂 MUX 驱动程序安装在系统中看到的界面堆栈关系。
+NDIS 为 NDIS 微型端口适配器、NDIS 1.x 筛选器中间驱动程序和 NDIS 筛选器模块维护堆栈表，而[NDIS MUX 中间驱动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)程序驱动程序则需要指定虚拟微型端口接口和协议下限接口。 因此，在安装了更复杂 MUX 驱动程序的系统中，ifStackTable 可能非常有用。
 
-由于未安装在此示例中的系统上的 NDIS 中间 MUX 驱动程序，ifStackTable 仅显示了 NDIS 已提供的堆栈关系。 在以下示例中，单击句柄上的第三行 (句柄 ffffdf801494c010，较低 IfIndex 16) 较低的接口显示接口的 QoS 数据包计划程序。
+由于此示例系统上没有安装 NDIS MUX 中间驱动程序，ifStackTable 仅显示 NDIS 提供的堆栈关系。 在下面的示例中，单击第三行的下一个接口的句柄（handle ffffdf801494c010，Lower IfIndex 16）将显示 QoS 数据包计划程序的接口。
 
 ```console
 3: kd> !ndiskd.interface ffffdf801494c010
@@ -109,7 +109,7 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-继续同一个示例中，单击该句柄，第三行 (句柄 ffffdf801494ba20，更高版本 IfIndex 17) 的更高版本接口显示接口的 WFP 802.3 MAC 层轻型筛选器。
+继续同一个示例，单击第三行的更高界面的句柄（handle ffffdf801494ba20，更高的 IfIndex 17）会显示 WFP 802.3 MAC 层轻型筛选器的接口。
 
 ```console
 3: kd> !ndiskd.interface ffffdf801494ba20
@@ -160,20 +160,20 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-这将显示 WFP 802.3 MAC 层轻型筛选器位于网络界面栈中的 QoS 数据包 Scheudler 筛选器的上面。 你可以通过运行确认这一点[ **！ ndiskd.netreport** ](-ndiskd-netreport.md)扩展，其中显示了网络堆栈以可视方式。
+这表明 WFP 802.3 MAC 层轻型筛选器位于网络接口堆栈中的 QoS 数据包 Scheudler 筛选器之上。 可以通过运行[ **！ ndiskd. netreport**](-ndiskd-netreport.md)扩展来确认这一点，该扩展会以可视方式显示网络堆栈。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
 [维护网络接口堆栈](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)
 

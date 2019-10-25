@@ -1,6 +1,6 @@
 ---
 title: ExtExtension
-description: ExtExtension 类是基类C++类表示 EngExtCpp 扩展库。
+description: ExtExtension 类是表示 EngExtCpp 扩展库的C++类的基类。
 ms.assetid: 9c6c4633-df49-4f49-8116-d680bb20c3f5
 keywords:
 - ExtExtension Windows 调试
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d24605444c5472ee2638e23928ce46a5bc9d34da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f25d147f26847895d94e02d009b69acc36e255a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366829"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826424"
 ---
 # <a name="extextension"></a>ExtExtension
 
 
-**ExtExtension**类是类的基类C++表示 EngExtCpp 扩展库的类。
+**ExtExtension**类是表示 EngExtCpp 扩展库的C++类的基类。
 
-**ExtExtension**类包括以下方法，可由子类：
+**ExtExtension**类包括以下方法，子类可使用这些方法：
 
 [**初始化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))
 
-[**取消初始化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff558961(v=vs.85))
+[**撤消**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff558961(v=vs.85))
 
 [**OnSessionActive**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff552312(v=vs.85))
 
@@ -98,13 +98,13 @@ ms.locfileid: "67366829"
 
 **GetRawArgCopy**
 
-**Out**
+**弄**
 
-**则发出警告**
+**不再**
 
 **Err**
 
-**Verb**
+**谓词**
 
 **Dml**
 
@@ -186,7 +186,7 @@ ms.locfileid: "67366829"
 
 **ThrowLastError**
 
-**ExtExtension**类还包含可由子类的以下字段：
+**ExtExtension**类还包含子类可以使用的以下字段：
 
 ```cpp
 class ExtExtension
@@ -246,115 +246,115 @@ public:
 };
 ```
 
-## <a name="span-idmembersspanspan-idmembersspanspan-idmembersspanmembers"></a><span id="Members"></span><span id="members"></span><span id="MEMBERS"></span>成员
+## <a name="span-idmembersspanspan-idmembersspanspan-idmembersspanmembers"></a><span id="Members"></span><span id="members"></span><span id="MEMBERS"></span>组员
 
 
-<span id="m_ExtMajorVersion"></span><span id="m_extmajorversion"></span><span id="M_EXTMAJORVERSION"></span>**m\_ExtMajorVersion**  
-扩展库的主版本号。 此属性应设置[**初始化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法。 如果未设置，则默认为**1**。
+<span id="m_ExtMajorVersion"></span><span id="m_extmajorversion"></span><span id="M_EXTMAJORVERSION"></span> **\_ExtMajorVersion**  
+扩展库的主版本号。 这应由[**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法设置。 如果未设置，则默认为**1**。
 
-<span id="m_ExtMinorVersion"></span><span id="m_extminorversion"></span><span id="M_EXTMINORVERSION"></span>**m\_ExtMinorVersion**  
-扩展库的次版本号。 此属性应设置[**初始化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法。 如果未设置，则默认为**0** （零）。
+<span id="m_ExtMinorVersion"></span><span id="m_extminorversion"></span><span id="M_EXTMINORVERSION"></span> **\_ExtMinorVersion**  
+扩展库的次版本号。 这应由[**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法设置。 如果未设置，则默认为**0** （零）。
 
-<span id="m_ExtInitFlags"></span><span id="m_extinitflags"></span><span id="M_EXTINITFLAGS"></span>**m\_ExtInitFlags**  
-DbgEng 扩展初始化标志[*调用 DebugExtensionInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_initialize)。
+<span id="m_ExtInitFlags"></span><span id="m_extinitflags"></span><span id="M_EXTINITFLAGS"></span> **\_ExtInitFlags**  
+[*DebugExtensionInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nc-dbgeng-pdebug_extension_initialize)的 DbgEng 扩展初始化标志。
 
-<span id="m_KnownStructs"></span><span id="m_knownstructs"></span><span id="M_KNOWNSTRUCTS"></span>**m\_KnownStructs**  
-一个数组[ **ExtKnownStruct** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/engextcpp/ns-engextcpp-extknownstruct)扩展插件库是支持的输出格式设置的结构。 设置此成员[**初始化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法，此方法返回后不应更改。
+<span id="m_KnownStructs"></span><span id="m_knownstructs"></span><span id="M_KNOWNSTRUCTS"></span> **\_KnownStructs**  
+一个[**ExtKnownStruct**](https://docs.microsoft.com/windows-hardware/drivers/ddi/engextcpp/ns-engextcpp-extknownstruct)结构的数组，扩展库可以对输出进行格式设置。 此成员应由[**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法设置，并且在此方法返回后不应更改。
 
-如果**m\_KnownStructs**不是**NULL**，则**TypeName**的最后一个成员**ExtKnownStruct**数组中的结构必须是**NULL**。
+如果**m\_KnownStructs**不为**null**，则数组中最后一个**ExtKnownStruct**结构的**TypeName**成员必须为**null**。
 
-设置格式的输出，目标的结构名称与该结构的类型的名称匹配时**TypeName**之一的成员**ExtKnownStruct**结构此数组中指定的回调函数在中**方法**成员调用来执行格式设置。
+格式化目标的输出的结构时，如果该结构的类型的名称与此数组中某个**ExtKnownStruct**结构的**TypeName**成员相匹配，则将**方法**成员中指定的回调函数调用到执行格式设置。
 
-<span id="m_ProvidedValues"></span><span id="m_providedvalues"></span><span id="M_PROVIDEDVALUES"></span>**m\_ProvidedValues**  
-一个数组**ExtProvidedValue**结构列出伪寄存器，扩展库可以提供的值。 设置此成员[**初始化**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法，此方法返回后不应更改。
+<span id="m_ProvidedValues"></span><span id="m_providedvalues"></span><span id="M_PROVIDEDVALUES"></span> **\_ProvidedValues**  
+一个**ExtProvidedValue**结构的数组，其中列出了扩展库可以为其提供值的伪寄存器。 此成员应由[**Initialize**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff550945(v=vs.85))方法设置，并且在此方法返回后不应更改。
 
-如果**m\_ProvidedValues**不是**NULL**，则**ValueName**的最后一个成员**ExtProvidedValue**结构数组必须是**NULL**。
+如果**m\_ProvidedValues**不为**null**，则数组中最后一个**ExtProvidedValue**结构的**ValueName**成员必须为**null**。
 
-评估伪寄存器中，如果伪名称注册的匹配项时**ValueName**之一的成员**ExtProvidedValue** 中指定的回调函数中此数组结构**方法**成员调用来计算伪寄存器。
+评估伪寄存器时，如果伪寄存器的名称与此数组中某个**ExtProvidedValue**结构的**ValueName**成员匹配，则调用**方法**成员中指定的回调函数来计算伪 register。
 
 <span id="m_Advanced"></span><span id="m_advanced"></span><span id="M_ADVANCED"></span>**m\_高级**  
-[ **IDebugAdvanced** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。
+扩展库可使用的客户端对象的[**IDebugAdvanced**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。
 
-<span id="m_Client"></span><span id="m_client"></span><span id="M_CLIENT"></span>**m\_客户端**  
-[ **IDebugClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。
+<span id="m_Client"></span><span id="m_client"></span><span id="M_CLIENT"></span> **\_客户端的 m**  
+扩展库可使用的客户端对象的[**IDebugClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。
 
-<span id="m_Control"></span><span id="m_control"></span><span id="M_CONTROL"></span>**m\_Control**  
-[ **IDebugControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。
+<span id="m_Control"></span><span id="m_control"></span><span id="M_CONTROL"></span>**m\_控件**  
+扩展库可使用的客户端对象的[**IDebugControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。
 
 <span id="m_Data"></span><span id="m_data"></span><span id="M_DATA"></span>**m\_数据**  
-[ **IDebugDataSpaces** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。
+扩展库可使用的客户端对象的[**IDebugDataSpaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。
 
-<span id="m_Registers"></span><span id="m_registers"></span><span id="M_REGISTERS"></span>**m\_注册**  
-[ **IDebugRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugregisters)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。
+<span id="m_Registers"></span><span id="m_registers"></span><span id="M_REGISTERS"></span>**m\_寄存器**  
+扩展库可使用的客户端对象的[**IDebugRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。
 
 <span id="m_Symbols"></span><span id="m_symbols"></span><span id="M_SYMBOLS"></span>**m\_符号**  
-[ **IDebugSymbols** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsymbols)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。
+扩展库可使用的客户端对象的[**IDebugSymbols**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。
 
 <span id="m_System"></span><span id="m_system"></span><span id="M_SYSTEM"></span>**m\_系统**  
-[ **IDebugSystemObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。
+扩展库可使用的客户端对象的[**IDebugSystemObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。
 
-<span id="m_Advanced2"></span><span id="m_advanced2"></span><span id="M_ADVANCED2"></span>**m\_Advanced2**  
-[ **IDebugAdvanced2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Advanced2"></span><span id="m_advanced2"></span><span id="M_ADVANCED2"></span> **\_Advanced2**  
+扩展库可使用的客户端对象的[**IDebugAdvanced2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Advanced3"></span><span id="m_advanced3"></span><span id="M_ADVANCED3"></span>**m\_Advanced3**  
-[ **IDebugAdvanced3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Advanced3"></span><span id="m_advanced3"></span><span id="M_ADVANCED3"></span> **\_Advanced3**  
+扩展库可使用的客户端对象的[**IDebugAdvanced3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Client2"></span><span id="m_client2"></span><span id="M_CLIENT2"></span>**m\_Client2**  
-[ **IDebugClient2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Client2"></span><span id="m_client2"></span><span id="M_CLIENT2"></span> **\_Client2**  
+扩展库可使用的客户端对象的[**IDebugClient2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Client3"></span><span id="m_client3"></span><span id="M_CLIENT3"></span>**m\_Client3**  
-[ **IDebugClient3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Client3"></span><span id="m_client3"></span><span id="M_CLIENT3"></span> **\_Client3**  
+扩展库可使用的客户端对象的[**IDebugClient3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Client4"></span><span id="m_client4"></span><span id="M_CLIENT4"></span>**m\_Client4**  
-[ **IDebugClient4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Client4"></span><span id="m_client4"></span><span id="M_CLIENT4"></span> **\_Client4**  
+扩展库可使用的客户端对象的[**IDebugClient4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Client5"></span><span id="m_client5"></span><span id="M_CLIENT5"></span>**m\_Client5**  
-[ **IDebugClient5** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugclient)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Client5"></span><span id="m_client5"></span><span id="M_CLIENT5"></span> **\_Client5**  
+扩展库可使用的客户端对象的[**IDebugClient5**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Control2"></span><span id="m_control2"></span><span id="M_CONTROL2"></span>**m\_Control2**  
-[ **IDebugControl2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Control2"></span><span id="m_control2"></span><span id="M_CONTROL2"></span> **\_Control2**  
+扩展库可使用的客户端对象的[**IDebugControl2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Control3"></span><span id="m_control3"></span><span id="M_CONTROL3"></span>**m\_Control3**  
-[ **IDebugControl3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Control3"></span><span id="m_control3"></span><span id="M_CONTROL3"></span> **\_Control3**  
+扩展库可使用的客户端对象的[**IDebugControl3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Control4"></span><span id="m_control4"></span><span id="M_CONTROL4"></span>**m\_Control4**  
-[ **IDebugControl4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugcontrol)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Control4"></span><span id="m_control4"></span><span id="M_CONTROL4"></span> **\_Control4**  
+扩展库可使用的客户端对象的[**IDebugControl4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
 <span id="m_Data2"></span><span id="m_data2"></span><span id="M_DATA2"></span>**m\_Data2**  
-[ **IDebugDataSpaces2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+扩展库可使用的客户端对象的[**IDebugDataSpaces2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Data3"></span><span id="m_data3"></span><span id="M_DATA3"></span>**m\_Data3**  
-[ **IDebugDataSpaces3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Data3"></span><span id="m_data3"></span><span id="M_DATA3"></span> **\_Data3**  
+扩展库可使用的客户端对象的[**IDebugDataSpaces3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Data4"></span><span id="m_data4"></span><span id="M_DATA4"></span>**m\_Data4**  
-[IDebugDataSpaces4](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugdataspaces)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Data4"></span><span id="m_data4"></span><span id="M_DATA4"></span> **\_Data4**  
+扩展库可使用的客户端对象的[IDebugDataSpaces4](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Registers2"></span><span id="m_registers2"></span><span id="M_REGISTERS2"></span>**m\_Registers2**  
-[ **IDebugRegisters2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugregisters)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Registers2"></span><span id="m_registers2"></span><span id="M_REGISTERS2"></span> **\_Registers2**  
+扩展库可使用的客户端对象的[**IDebugRegisters2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Symbols2"></span><span id="m_symbols2"></span><span id="M_SYMBOLS2"></span>**m\_Symbols2**  
-[ **IDebugSymbols2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsymbols)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Symbols2"></span><span id="m_symbols2"></span><span id="M_SYMBOLS2"></span> **\_Symbols2**  
+扩展库可使用的客户端对象的[**IDebugSymbols2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_Symbols3"></span><span id="m_symbols3"></span><span id="M_SYMBOLS3"></span>**m\_Symbols3**  
-[ **IDebugSymbols3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsymbols)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_Symbols3"></span><span id="m_symbols3"></span><span id="M_SYMBOLS3"></span> **\_Symbols3**  
+扩展库可使用的客户端对象的[**IDebugSymbols3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_System2"></span><span id="m_system2"></span><span id="M_SYSTEM2"></span>**m\_System2**  
-[ **IDebugSystemObjects2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_System2"></span><span id="m_system2"></span><span id="M_SYSTEM2"></span> **\_System2**  
+扩展库可使用的客户端对象的[**IDebugSystemObjects2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_System3"></span><span id="m_system3"></span><span id="M_SYSTEM3"></span>**m\_System3**  
-[ **IDebugSystemObjects3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_System3"></span><span id="m_system3"></span><span id="M_SYSTEM3"></span> **\_System3**  
+扩展库可使用的客户端对象的[**IDebugSystemObjects3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_System4"></span><span id="m_system4"></span><span id="M_SYSTEM4"></span>**m\_System4**  
-[ **IDebugSystemObjects4** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsystemobjects)可以使用的扩展插件库在客户端对象的接口指针。 是从外部调用扩展方法的调用期间有效-例如，扩展执行命令时，调用[ *ExtKnownStructMethod* ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**。 此接口不可能的调试器引擎的所有版本中可用。
+<span id="m_System4"></span><span id="m_system4"></span><span id="M_SYSTEM4"></span> **\_System4**  
+扩展库可使用的客户端对象的[**IDebugSystemObjects4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)接口指针。 它在调用外部调用的扩展方法（例如，扩展命令的执行、对[*ExtKnownStructMethod*](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff543989(v=vs.85))和**ExtProvideValueMethod**的调用）期间有效。 此接口在所有版本的调试器引擎中可能不可用。
 
-<span id="m_PtrSize"></span><span id="m_ptrsize"></span><span id="M_PTRSIZE"></span>**m\_PtrSize**  
-当前目标上的指针的大小。 如果目标使用 32 位指针**m\_PtrSize**为 4。 如果目标使用 64 位指针**m\_PtrSize**为 8。
+<span id="m_PtrSize"></span><span id="m_ptrsize"></span><span id="M_PTRSIZE"></span> **\_PtrSize**  
+当前目标上的指针的大小。 如果目标使用32位指针，则**m\_PtrSize**为4。 如果目标使用64位指针，则**m\_PtrSize**为8。
 
-<span id="m_AppendBuffer"></span><span id="m_appendbuffer"></span><span id="M_APPENDBUFFER"></span>**m\_AppendBuffer**  
-字符缓冲区，用于扩展库中的字符串返回到引擎。 此缓冲区的大小是**m\_AppendBufferChars**。 方法**AppendBufferString**， **AppendStringVa**，并**AppendString**可用于将字符串写入到此缓冲区。
+<span id="m_AppendBuffer"></span><span id="m_appendbuffer"></span><span id="M_APPENDBUFFER"></span> **\_AppendBuffer**  
+用于将字符串从扩展库返回到引擎的字符缓冲区。 此缓冲区的大小为**m\_AppendBufferChars**。 可使用**AppendBufferString**、 **AppendStringVa**和**AppendString**方法将字符串写入此缓冲区。
 
-<span id="m_AppendBufferChars"></span><span id="m_appendbufferchars"></span><span id="M_APPENDBUFFERCHARS"></span>**m\_AppendBufferChars**  
-大小，以字符为单位的缓冲区**m\_AppendBuffer**。
+<span id="m_AppendBufferChars"></span><span id="m_appendbufferchars"></span><span id="M_APPENDBUFFERCHARS"></span> **\_AppendBufferChars**  
+缓冲区**m\_AppendBuffer**的大小（以字符为字符）。
 
 
 

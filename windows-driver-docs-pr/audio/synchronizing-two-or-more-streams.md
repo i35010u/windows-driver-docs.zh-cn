@@ -3,31 +3,31 @@ title: 同步两个或多个流
 description: 同步两个或多个流
 ms.assetid: c25f4ca2-8a9f-43bc-a1bf-b71826b446ff
 keywords:
-- HD Audio，同步流
-- 高清晰度音频 (HD Audio)，同步流
+- HD 音频，同步流
+- 高清晰音频（HD 音频），同步流
 - 同步流 WDK 音频
-- 同步 WDK 音频进行流式处理
+- 流同步 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e11d64b1a78cf796e43116aae18b52d356d03ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a3acb484f2d6bebc5e88848068c3c37b18bb6dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354217"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832340"
 ---
 # <a name="synchronizing-two-or-more-streams"></a>同步两个或多个流
 
 
-[ **SetDmaEngineState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)例程的一个或多个 DMA 引擎将状态设置为以下值之一： 运行、 暂停、 停止或重置。 如果对此例程的调用指定一个以上的 DMA 引擎，然后所有 DMA 引擎进行状态转换以同步方式。
+[**SetDmaEngineState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)例程将一个或多个 DMA 引擎的状态设置为以下其中一项：正在运行、已暂停、已停止或重置。 如果调用此例程指定了多个 DMA 引擎，则所有 DMA 引擎都将同步进行状态转换。
 
-对于某些音频的应用程序需要同步组流的能力。 例如，音频驱动程序可能使用编解码器组合来创建逻辑环绕声音频设备，它将联接两个音频编解码器： 一个编解码器驱动器前扬声器和第二个音频编解码器驱动器后演讲者。 具体取决于编解码器的功能，音频驱动程序可能需要将原始的环绕声音频流拆分为两个流，一个用于每个编解码器。 通过使用[ **SetDmaEngineState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)例程来启动和停止更多信息流，两个流可以保持同步。
+某些音频应用程序需要同步一组流。 例如，音频驱动程序可以使用编解码器组合来创建用于连接两个音频编解码器的逻辑环绕声设备：一个编解码器驱动前扬声器，另一个音频编解码器用于驱动背面的扬声器。 根据编解码器的功能，可能需要音频驱动程序将原始环绕声音频流拆分为两个流，每个流对应一个编解码器。 通过使用[**SetDmaEngineState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)例程来以统一方式启动和停止流，两个流可以保持同步。
 
-允许按甚至几个示例超出同步在两个流可能会导致不需要的音频项目。
+即使少数示例允许两个流不同步，可能会导致意外的音频项目。
 
-[ **SetDmaEngineState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)例程是 HD 音频 DDI 的这两个版本中可用。
+这两个版本的 HD audio DDI 都提供[**SetDmaEngineState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)例程。
 
-UAA HD Audio 类驱动程序不执行编解码器组合。
+UAA 高质音频类驱动程序不执行编解码器组合。
 
  
 

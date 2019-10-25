@@ -1,6 +1,6 @@
 ---
 title: SendRNIDV2 函数
-description: SendRNIDV2 WMI 方法将版本 2 RNID 命令发送到指定的端口。
+description: SendRNIDV2 WMI 方法向指定的端口发送版本 2 RNID 命令。
 ms.assetid: ac9304b3-498b-4349-befd-529a4978bb52
 keywords:
 - SendRNIDV2 函数存储设备
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f1e8d47913b215bba7052bf45d7b7411095934f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03c2970e4ac9ed95c2566d8a1852facae0d9502c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362660"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832020"
 ---
 # <a name="sendrnidv2-function"></a>SendRNIDV2 函数
 
 
-**SendRNIDV2** WMI 方法将第 2 版 RNID 命令发送到指定的端口。
+**SendRNIDV2** WMI 方法向指定的端口发送版本 2 RNID 命令。
 
 <a name="syntax"></a>语法
 ------
@@ -43,32 +43,32 @@ void SendRNIDV2(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRNIDV2\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构的**HBAStatus**成员中返回此信息。
 
 *PortWWN*   
-通过其发送的版本 2 RNID 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)结构。
+用于发送版本 2 RNID 命令的本地端口的全球名称。 此信息将传送到结构中[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)的**PortWWN**成员中的微型端口驱动程序。
 
 *DestWWN*   
-目标端口全球通用名称。 此信息传递到中的微型端口驱动程序**DestWWN**的成员[ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)结构。
+目标端口的全球名称。 此信息将传送到结构中[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)的**DestWWN**成员中的微型端口驱动程序。
 
 *DestFCID*   
-目标端口地址标识符。 此信息传递到中的微型端口驱动程序**DestFCID**的成员[ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)结构。
+目标端口的地址标识符。 此信息将传送到结构中[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)的**DestFCID**成员中的微型端口驱动程序。
 
 *NodeIdDataFormat*   
-节点标识数据格式。 可以为此成员的值的说明，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息传递到中的微型端口驱动程序**NodeIdDataFormat**的成员[ **SendRNIDV2\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)结构。
+节点标识数据格式。 有关此成员可以具有的值的说明，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息将传送到结构中[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)的**NodeIdDataFormat**成员中的微型端口驱动程序。
 
 *TotalRspBufferSize*   
-以字节为单位的版本 2 RNID 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRNIDV2\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构。
+版本 2 RNID 命令结果的大小（以字节为单位）。 微型端口驱动程序在[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构的**TotalRspBufferSize**成员中返回此信息。
 
 *ActualRspBufferSize*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRNIDV2\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构。
+实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构的**ActualRspBufferSize**成员中返回此信息。
 
 *RspBuffer*   
-版本 2 RNID 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRNIDV2\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构。
+版本 2 RNID 命令的结果。 微型端口驱动程序在[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)结构的**RspBuffer**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -78,7 +78,7 @@ void SendRNIDV2(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于[MSFC\_HBAADAPTERMETHODS WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,27 +91,27 @@ void SendRNIDV2(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Hbaapi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [HBA\_状态](hba-status.md)
 
-[**SendRNIDV2\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)
+[**SendRNIDV2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_in)
 
-[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)
+[**SendRNIDV2\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sendrnidv2_out)
 
  
 

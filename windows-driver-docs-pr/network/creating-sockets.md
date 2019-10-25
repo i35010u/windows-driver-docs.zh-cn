@@ -3,33 +3,33 @@ title: 创建套接字
 description: 创建套接字
 ms.assetid: 84cd0503-15bd-401f-836c-1fdc8425d073
 keywords:
-- 网络、 Winsock 内核 WDK 创建套接字
-- WSK WDK 网络、 创建套接字
+- Winsock 内核 WDK 网络，套接字创建
+- WSK WDK 网络，套接字创建
 - 侦听套接字 WDK Winsock 内核
 - WskSocket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d204cc87cd897a1158aeb2b458f79319e53221b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 792259a655d0b9c8904244dc5634176891db0d83
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374886"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835020"
 ---
 # <a name="creating-sockets"></a>创建套接字
 
 
-Winsock Kernel (WSK) 应用程序已成功附加到 WSK 子系统之后，它可以创建可用于网络 I/O 操作的套接字。 WSK 应用程序通过调用创建套接字[ **WskSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)函数。 **WskSocket**函数所指向的**WskSocket**的成员[ **WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)WSK 子系统在附件过程返回的结构。
+Winsock 内核（WSK）应用程序成功附加到 WSK 子系统后，可以创建可用于网络 i/o 操作的套接字。 WSK 应用程序通过调用[**WskSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)函数来创建套接字。 **WskSocket**函数由[**WSK\_提供\_程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)的**WskSocket**成员指向，WSK 子系统在附件期间返回的调度结构。
 
-WSK 应用程序必须指定 WSK 套接字的类别创建时它会创建一个新的套接字。 有关 WSK 套接字类别的详细信息，请参阅[Winsock 内核套接字类别](winsock-kernel-socket-categories.md)。
+WSK 应用程序必须指定在创建新套接字时创建的 WSK 套接字的类别。 有关 WSK 套接字类别的详细信息，请参阅[Winsock 内核套接字类别](winsock-kernel-socket-categories.md)。
 
-WSK 应用程序还必须指定地址族、 套接字类型和协议，每当创建新的套接字时。 有关支持的 WSK 的地址系列的详细信息，请参阅[WSK 地址系列](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。
+WSK 应用程序还必须指定地址族、套接字类型和协议，无论何时创建新的套接字。 有关 WSK 支持的地址系列的详细信息，请参阅[WSK 地址系列](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。
 
-在创建新的套接字，WSK 应用程序必须提供的套接字上下文值和指向客户端调度表结构的指针，如果应用程序将会启用套接字上的任何事件回调函数。 有关启用套接字上的事件回调函数的详细信息，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
+创建新的套接字时，如果应用程序将在套接字上启用任何事件回调函数，则 WSK 应用程序必须提供套接字上下文值和指向客户端调度表结构的指针。 有关在套接字上启用事件回调函数的详细信息，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
 
-如果成功，创建套接字**IoStatus.Information** IRP 的字段包含指向套接字对象结构的指针 ( [ **WSK\_套接字**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket))新的套接字。 有关 Irp 用于 WSK 函数的详细信息，请参阅[Winsock 内核函数使用 Irp](using-irps-with-winsock-kernel-functions.md)。
+如果套接字创建成功，则 IRP 的**IoStatus**字段包含一个指向新套接字的套接字对象结构（ [**WSK\_套接字**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket)）的指针。 有关将 Irp 用于 WSK 函数的详细信息，请参阅将[irp 与 Winsock 内核函数结合使用](using-irps-with-winsock-kernel-functions.md)。
 
-下面的代码示例演示如何 WSK 应用程序可以创建侦听套接字。
+下面的代码示例演示 WSK 应用程序如何创建侦听套接字。
 
 ```C++
 // Context structure for each socket
@@ -153,7 +153,7 @@ NTSTATUS
 }
 ```
 
-对于面向连接的套接字，WSK 应用程序可以调用[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建、 绑定和连接中的单个函数调用的套接字。
+对于面向连接的套接字，WSK 应用程序可以调用[**WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)函数在单个函数调用中创建、绑定和连接套接字。
 
  
 

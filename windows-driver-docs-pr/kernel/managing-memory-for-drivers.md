@@ -9,12 +9,12 @@ keywords:
 - 太空 WDK，请参阅内存 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8caf435ef9954b1759d76591a536440c1ac1d92
-ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
+ms.openlocfilehash: f8ba2e0c5e31b9cc0dd739792343ff2caa810238
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72512071"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827875"
 ---
 # <a name="memory-management-for-windows-drivers"></a>Windows 驱动程序的内存管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "72512071"
 
 *内存管理器*是在 Windows 中执行内存管理操作的内核组件。 有关详细信息，请参阅[Windows 内核模式内存管理器](windows-kernel-mode-memory-manager.md)。
 
-内存管理器实现了多个内核模式支持例程，驱动程序调用来分配和管理内存。 有关详细信息，请参阅[内存分配和缓冲区管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#memory-allocation-and-buffer-management)。
+内存管理器实现了多个内核模式支持例程，驱动程序调用来分配和管理内存。 有关详细信息，请参阅[内存分配和缓冲区管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel/#memory-allocation-and-buffer-management)。
 
 内核模式驱动程序的内存管理功能不同于用户模式应用程序的内存管理功能。 有关应用程序的内存管理的详细信息，请参阅[内存管理](https://docs.microsoft.com/windows/desktop/Memory/memory-management)。
 

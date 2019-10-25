@@ -1,9 +1,9 @@
 ---
 title: ndiskd.ndisref
-description: Ndiskd.ndisref 扩展显示的跟踪的引用计数的调试日志。
+description: Ndiskd. ndisref 扩展显示跟踪的引用计数的调试日志。
 ms.assetid: 6860A567-1017-4184-B8DF-157467360FB9
 keywords:
-- ndiskd.ndisref Windows 调试
+- ndiskd ndisref Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f762f41ff0989fe552413e563222c43b4216168
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbf2e1d8b275949a4b7e5d675077c42a1ddc7caa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363127"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826563"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
 
 
-**！ Ndiskd.ndisref**扩展显示的跟踪的引用计数的调试日志。
+**！ Ndiskd ndisref**扩展显示跟踪的引用计数的调试日志。
 
 ```console
 !ndiskd.ndisref [-handle <x>] [-tagtype <str>] [-stacks] [-tag <str>] [-refdebug] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
@@ -37,23 +37,23 @@ ms.locfileid: "67363127"
 <span id="_______-tagtype______"></span><span id="_______-TAGTYPE______"></span> *-tagtype*   
 标记的枚举类型。
 
-<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-stacks*   
-（如果可用），包括堆栈跟踪。
+<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-堆栈*   
+包括堆栈跟踪（如果可用）。
 
-<span id="_______-tag______"></span><span id="_______-TAG______"></span> *-tag*   
-限制到单个标记显示。
+<span id="_______-tag______"></span><span id="_______-TAG______"></span> *-标记*   
+限制显示单个标记。
 
 <span id="_______-refdebug______"></span><span id="_______-REFDEBUG______"></span> *-refdebug*   
-如果可用，则显示详细调试日志。
+显示详细的调试日志（如果可用）。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-下面的示例将传递到 NDIS 微型端口驱动程序的句柄 **！ ndiskd.ndisref**扩展名，即可显示该驱动程序的引用计数块。 首先，运行[ **！ ndiskd.minidriver** ](-ndiskd-minidriver.md)不带任何参数，以在系统上查看所有微型端口驱动程序的列表。 在下面的示例输出中，查找 kdnic 驱动程序，ffffdf801418d650 的句柄。
+下面的示例将 NDIS 微型端口驱动程序的句柄传递给 **！ ndiskd ndisref**扩展，以显示该驱动程序的引用计数块。 首先，不使用参数运行[ **！ ndiskd**](-ndiskd-minidriver.md) ，以查看系统上所有微型端口驱动程序的列表。 在下面的示例输出中，查找 kdnic 驱动程序 ffffdf801418d650 的句柄。
 
 ```console
 3: kd> !ndiskd.minidriver
@@ -61,7 +61,7 @@ Ndiskd.dll
     ffffdf801418d650 - kdnic
 ```
 
-使用微型端口驱动程序的句柄，输入 **！ ndiskd.ndisref-处理**命令来查看此微型端口驱动程序的引用计数块。 下面的示例有为简便起见 excised 的引用计数块的中间。
+使用微型端口驱动程序的句柄输入 **！ ndiskd**命令，查看此微型端口驱动程序的引用计数块。 下面的示例将引用计数块 excised 的中间部分作为简洁。
 
 ```console
 3: kd> !ndiskd.ndisref ffffdf801418d650
@@ -97,20 +97,20 @@ REFCOUNT BLOCK
     Include inactive tags
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
-[ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
+[ **！ ndiskd. 微型驱动程序**](-ndiskd-minidriver.md)
 
  
 

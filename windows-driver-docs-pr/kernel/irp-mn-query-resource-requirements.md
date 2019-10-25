@@ -1,34 +1,34 @@
 ---
 title: IRP_MN_QUERY_RESOURCE_REQUIREMENTS
-description: PnP 管理器使用此 IRP 获取设备的资源要求列表。总线驱动程序必须处理此请求适用于需要的硬件资源及其子设备。
+description: PnP 管理器使用此 IRP 获取设备的资源需求列表。总线驱动程序必须为需要硬件资源的子设备处理此请求。
 ms.date: 08/12/2017
 ms.assetid: 5a77f8d6-2b6b-4eff-8d48-e7942976ec52
 keywords:
 - IRP_MN_QUERY_RESOURCE_REQUIREMENTS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: f31fe049760b89fa31b9eead5d2d345016835a8b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e42098dd6e7869e0e562bbcca7b756f8e86ed9e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370841"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827988"
 ---
-# <a name="irpmnqueryresourcerequirements"></a>IRP\_MN\_查询\_资源\_要求
+# <a name="irp_mn_query_resource_requirements"></a>IRP\_MN\_查询\_资源\_要求
 
 
-PnP 管理器使用此 IRP 获取设备的资源要求列表。
+PnP 管理器使用此 IRP 获取设备的资源需求列表。
 
-总线驱动程序必须处理此请求适用于需要的硬件资源及其子设备。 总线筛选器驱动程序可以处理此请求。 函数和筛选器驱动程序不处理此 IRP。
+总线驱动程序必须为需要硬件资源的子设备处理此请求。 总线筛选器驱动程序可以处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md) When Sent
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
 ---------
 
-PnP 管理器将发送此 IRP，枚举设备时之前资源分配到一台设备，, 以及时驱动程序报告其设备的资源要求已更改。
+在将资源分配给设备之前以及当驱动程序报告其设备的资源要求已更改时，PnP 管理器会发送此 IRP。
 
-PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中。
+PnP 管理器在任意线程上下文中以 IRQL 被动\_级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
@@ -38,31 +38,31 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 ## <a name="output-parameters"></a>输出参数
 
 
-返回在 I/O 状态块中。
+在 i/o 状态块中返回。
 
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-处理此 IRP 的驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态。
+处理此 IRP 的驱动程序将**irp&gt;IOSTATUS**状态设置为状态\_成功或相应的错误状态。
 
-如果成功，驱动程序设置**Irp-&gt;IoStatus.Information**指向的指针到[ **IO\_资源\_要求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)包含所需的信息。 发生错误时，驱动程序设置**Irp-&gt;IoStatus.Information**为零。
+成功时，驱动程序将**Irp&gt;IoStatus**设置为指向[**IO\_资源\_要求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)的指针，该列表包含所请求的信息。 出现错误时，驱动程序将**Irp&gt;IoStatus**设置为零。
 
 <a name="operation"></a>操作
 ---------
 
-如果总线驱动程序返回到此 IRP 的响应中的资源要求列表，它会分配**IO\_资源\_要求\_列表**从分页的内存。 当不再需要时，即插即用管理器释放缓冲区。
+如果总线驱动程序返回一个资源要求列表以响应此 IRP，则会从分页内存中 **\_列表分配 IO\_资源\_需求**。 当不再需要该缓冲区时，PnP 管理器将释放它。
 
-如果设备不需要任何硬件资源，将设备的总线驱动程序会完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) 而无需修改**Irp-&gt;IoStatus.Status**或**Irp-&gt;IoStatus.Information**。
+如果设备不需要硬件资源，设备的总线驱动程序将完成 IRP （[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)），而不会修改**irp&gt;IoStatus**或**irp-&gt;IoStatus**。
 
-如果总线筛选器驱动程序处理此 IRP，它会修改总线驱动程序创建的资源要求列表。 总线筛选器驱动程序修改 IRP 的方式重新启动设备堆栈上的列表。 总线筛选器驱动程序必须保留的资源要求列表中的资源的顺序和不得更改不会处理的资源标记。 如果总线筛选器驱动程序发生更改的资源要求列表的大小，该驱动程序必须从分页内存分配新的结构并释放以前的结构。 如果总线筛选器驱动程序向列表添加新的资源要求和资源分配给设备，该驱动程序必须筛选出的新资源[ **IRP\_MN\_启动\_设备**](irp-mn-start-device.md) IRP，因此它不传递到总线驱动程序。
+如果总线筛选器驱动程序处理此 IRP，则它会修改总线驱动程序创建的资源需求列表。 总线筛选器驱动程序会修改 IRP 上的列表备份设备堆栈。 总线筛选器驱动程序必须保留资源需求列表中资源的顺序，并且不得更改其不处理的资源标记。 如果总线筛选器驱动程序更改了资源需求列表的大小，则驱动程序必须从分页内存中分配一个新的结构，并释放以前的结构。 如果总线筛选器驱动程序向列表中添加了新的资源要求，并向设备分配了资源，则驱动程序必须筛选 IRP\_MN 中的新资源[ **\_启动\_设备**](irp-mn-start-device.md)IRP，使其不会传递给总线驱动程序。
 
-函数和非总线筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus**。
+函数和非总线筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，并且不会对**Irp&gt;IoStatus**进行任何更改。
 
-请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，了解用于处理[即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
-**发送此 IRP**
+**正在发送此 IRP**
 
-保留供系统使用。 驱动程序必须发送此 IRP。
+保留供系统使用。 驱动程序不得发送此 IRP。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,16 +74,16 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IO\_资源\_要求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)
+[**IO\_资源\_需求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)
 
  
 

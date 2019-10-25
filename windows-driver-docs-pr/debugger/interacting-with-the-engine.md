@@ -3,54 +3,54 @@ title: 与引擎交互
 description: 与引擎交互
 ms.assetid: 80f5320f-ed34-4839-a16e-b3ff5d8edbfe
 keywords:
-- 调试器引擎 API，请使用
+- 调试器引擎 API，使用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3bd91da45431dca72433f3b9b12c8f5f338d90e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c9e78d21cf3656f2b63c468a7c2b96a6f65c4934
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361320"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826390"
 ---
 # <a name="interacting-with-the-engine"></a>与引擎交互
 
 
-### <a name="span-idcommandsandexpressionsspanspan-idcommandsandexpressionsspancommands-and-expressions"></a><span id="commands_and_expressions"></span><span id="COMMANDS_AND_EXPRESSIONS"></span>命令和表达式
+### <a name="span-idcommands_and_expressionsspanspan-idcommands_and_expressionsspancommands-and-expressions"></a><span id="commands_and_expressions"></span><span id="COMMANDS_AND_EXPRESSIONS"></span>命令和表达式
 
-调试器引擎 API 提供了执行命令和计算表达式，如键入到 WinDbg 的方法[调试器命令窗口](the-debugger-command-window.md)。 若要执行的调试器命令，使用[ **Execute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-execute)。 或者，若要执行的所有命令在文件中，使用[ **ExecuteCommandFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-executecommandfile)。
+调试器引擎 API 提供执行命令和计算表达式的方法，就像在 WinDbg 的[调试器命令窗口](the-debugger-command-window.md)中键入的那样。 若要执行调试器命令，请使用[**execute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-execute)。 或者，若要执行文件中的所有命令，请使用[**ExecuteCommandFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-executecommandfile)。
 
-该方法[ **Evaluate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-evaluate)将计算表达式使用C++或 MASM 语法。 调试器引擎中要计算表达式-例如所使用的语法**Evaluate**方法--由给定[ **GetExpressionSyntax** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getexpressionsyntax) ，可以使用更改[**SetExpressionSyntaxByName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-setexpressionsyntaxbyname)并[ **SetExpressionSyntax**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-setexpressionsyntax)。 将返回不同的语法识别的调试器数[ **GetNumberExpressionSyntaxes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getnumberexpressionsyntaxes)，并返回其名称[ **GetExpressionSyntaxNames**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getexpressionsyntaxnames)。
+方法[**评估**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-evaluate)将使用C++或 MASM 语法来计算表达式。 调试器引擎用来计算表达式的语法（例如，在**计算**方法中）由[**GetExpressionSyntax**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getexpressionsyntax)提供，可以使用[**SetExpressionSyntaxByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setexpressionsyntaxbyname)和[**SetExpressionSyntax**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setexpressionsyntax)进行更改。 [**GetNumberExpressionSyntaxes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getnumberexpressionsyntaxes)将返回由调试器识别的不同语法的数目，并由[**GetExpressionSyntaxNames**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getexpressionsyntaxnames)返回它们的名称。
 
-返回的值的类型**Evaluate**由符号和已计算的字符串中使用的常量。 值包含在[**调试\_值**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_value)结构，并且可以强制转换为使用不同类型[ **CoerceValue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-coercevalue)并[ **CoerceValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-coercevalues)。
+**计算**返回的值的类型由所计算的字符串中使用的符号和常量决定。 该值包含在[**调试\_值**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_value)结构中，可以使用[**CoerceValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-coercevalue)和[**CoerceValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-coercevalues)强制转换为不同的类型。
 
 ### <a name="span-idaliasesspanspan-idaliasesspanaliases"></a><span id="aliases"></span><span id="ALIASES"></span>别名
 
-*别名*都是自动替换时调试器命令和表达式中使用其他字符字符串的字符字符串。 有关别名的概述，请参阅[Using 别名](using-aliases.md)。 调试器引擎具有别名的多个类。
+*别名*是在调试器命令和表达式中使用时，将自动替换为其他字符串的字符串。 有关别名的概述，请参阅[使用别名](using-aliases.md)。 调试器引擎具有几类别名。
 
-*修复名称的别名*按数字编制索引，它们的名称**美元 u0**，**美元 u1**，...，**美元 u9**。 可以使用设置的值的这些别名[ **SetTextMacro** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-settextmacro)方法，可以使用检索[ **GetTextMacro** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-gettextmacro)方法。
+*固定名称的别名*按编号编制索引，名称 **$u 0**， **$u 1**，...， **$u 9**。 可以使用[**SetTextMacro**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-settextmacro)方法设置这些别名的值，并且可以使用[**GetTextMacro**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-gettextmacro)方法进行检索。
 
-*自动别名*并*名用户为别名*可以具有任何名称。 由调试器引擎定义自动别名，用户通过调试器命令或调试器引擎 API 定义名为用户的别名。 若要定义或删除用户命名的别名，请使用[ **SetTextReplacement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-settextreplacement)方法。 [ **GetTextReplacement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-gettextreplacement)方法返回的名称和值的自动别名或用户命名的别名。 可以使用删除所有用户命名的别名[ **RemoveTextReplacements** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-removetextreplacements)方法。 [ **GetNumberTextReplacements** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getnumbertextreplacements)方法将返回的用户名称和自动别名数; 这可以用于**GetTextReplacement**来循环访问所有这些别名。 [ **OutputTextReplacements** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-outputtextreplacements)方法将打印的所有用户命名别名，包括其名称和值的列表。
+*自动别名*和*用户命名别名*可以具有任何名称。 自动别名由调试器引擎定义，用户命名的别名由用户通过调试器命令或调试器引擎 API 定义。 若要定义或删除用户命名的别名，请使用[**SetTextReplacement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-settextreplacement)方法。 [**GetTextReplacement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-gettextreplacement)方法返回自动别名或用户命名别名的名称和值。 可以使用[**RemoveTextReplacements**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removetextreplacements)方法删除所有用户命名的别名。 [**GetNumberTextReplacements**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getnumbertextreplacements)方法将返回用户名和自动别名;这可与**GetTextReplacement**一起使用，以循环访问所有这些别名。 [**OutputTextReplacements**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-outputtextreplacements)方法将打印所有用户命名别名的列表，包括它们的名称和值。
 
-**请注意**  名用户为别名如果用户命名别名未指定相同的名称自动别名，将隐藏自动别名，以便按名称检索值的别名值，将使用名为用户的别名。
+**请注意**   如果为用户命名的别名指定了与自动别名相同的名称，则用户命名的别名将隐藏自动别名，以便在按名称检索别名的值时，将使用用户命名的别名。
 
  
 
-### <a name="span-idengineoptionsspanspan-idengineoptionsspanengine-options"></a><span id="engine_options"></span><span id="ENGINE_OPTIONS"></span>引擎选项
+### <a name="span-idengine_optionsspanspan-idengine_optionsspanengine-options"></a><span id="engine_options"></span><span id="ENGINE_OPTIONS"></span>引擎选项
 
-引擎具有多种选项可控制其行为。 中列出了这些选项[**调试\_ENGOPT\_XXX**](https://docs.microsoft.com/previous-versions/ff541475(v=vs.85))。 返回的[ **GetEngineOptions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getengineoptions) ，可使用设置[ **SetEngineOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-setengineoptions)。 可以使用设置的各个选项[ **AddEngineOptions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-addengineoptions)和取消设置使用[ **RemoveEngineOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-removeengineoptions)。
+引擎提供了很多控制其行为的选项。 [**调试\_ENGOPT\_XXX**](https://docs.microsoft.com/previous-versions/ff541475(v=vs.85))中列出了这些选项。 它们由[**GetEngineOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getengineoptions)返回，可使用[**SetEngineOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setengineoptions)进行设置。 可以使用[**AddEngineOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-addengineoptions)设置单独的选项，并使用[**RemoveEngineOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removeengineoptions)进行设置。
 
 ### <a name="span-idinterruptsspanspan-idinterruptsspaninterrupts"></a><span id="interrupts"></span><span id="INTERRUPTS"></span>中断
 
-中断是一种方法来强制中断到调试器或指示引擎停止处理当前命令，例如，通过在 WinDbg 中按 Ctrl + Break。
+中断是一种强制进入调试器或通知引擎停止处理当前命令的方法，例如，通过在 WinDbg 中按 Ctrl + Break。
 
-若要请求中断到调试器，或中断调试器的当前任务，请使用[ **SetInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-setinterrupt)。 若要检查是否已中断，请使用[ **GetInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getinterrupt)。
+若要请求中断调试器或中断调试器的当前任务，请使用[**SetInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setinterrupt)。 若要检查是否有中断，请使用[**GetInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getinterrupt)。
 
-**请注意**  调试器扩展从较长的任务时，建议扩展，接下来请**GetInterrupt**定期并停止处理如果请求了中断。
+**请注意**   从调试器扩展进行长时间的任务时，建议在请求中断后定期检查**GetInterrupt**并停止处理。
 
  
 
-请求时中断到调试器，引擎可能会超时，如果需要对目标执行被侵入的情形而言太长。 如果目标是无响应状态，或者被侵入的情形请求被阻止或延迟资源争用，则可以发生此问题。 返回引擎要等待的时间长度[ **GetInterruptTimeout** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getinterrupttimeout) ，可使用设置[ **SetInterruptTimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-setinterrupttimeout)。
+当请求中断调试器时，如果目标需要很长时间才能执行中断，则引擎可能会超时。 如果目标处于无响应状态，或者在资源争用中阻止或延迟中断请求，则可能会发生这种情况。 引擎将等待的时间长度由[**GetInterruptTimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getinterrupttimeout)返回，可使用[**SetInterruptTimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-setinterrupttimeout)进行设置。
 
  
 

@@ -1,46 +1,46 @@
 ---
 title: IRP_MJ_SYSTEM_CONTROL
-description: 所有驱动程序必须提供处理 IRP_MJ_SYSTEM_CONTROL 请求，由内核模式组件的 Windows Management Instrumentation (WMI) 发送一个 DispatchSystemControl 例程。
+description: 所有驱动程序都必须提供一个 DispatchSystemControl 例程来处理 IRP_MJ_SYSTEM_CONTROL 请求，这些请求由 Windows Management Instrumentation （WMI）的内核模式组件发送。
 ms.date: 08/12/2017
 ms.assetid: 1b4dfc87-3f74-4e33-9dbb-72d4f72480fc
 keywords:
-- IRP_MJ_SYSTEM_CONTROL Kernel-Mode Driver Architecture
+- IRP_MJ_SYSTEM_CONTROL 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a74a7029b8130f31a1abadf4dd3aaf7a7d2d99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 711a11b7494461bb5c290321e0622b3ea88443e4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382255"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828102"
 ---
-# <a name="irpmjsystemcontrol"></a>IRP\_MJ\_SYSTEM\_CONTROL
+# <a name="irp_mj_system_control"></a>IRP\_MJ\_SYSTEM\_CONTROL
 
 
-所有驱动程序必须提供[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)处理例程**IRP\_MJ\_系统\_控制**请求它发送的内核模式组件[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI)。
+所有驱动程序都必须提供[*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程来处理**IRP\_MJ\_系统\_控制**请求，这些请求由[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) （WMI）的内核模式组件发送。
 
 <a name="when-sent"></a>发送时间
 ---------
 
-WMI 内核模式组件可以发送**IRP\_MJ\_系统\_控制**请求驱动程序的成功注册后的 WMI 数据供应商作为任何时间。 通常 WMI Irp 会在用户模式下的数据使用者已请求 WMI 数据。
+每当驱动程序成功注册为 WMI 数据的供应商时，WMI 内核模式组件都可以将**IRP\_MJ\_SYSTEM\_控制**请求随时发送到该请求。 通常在用户模式数据使用者请求 WMI 数据时发送 WMI Irp。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-取决于处的值**MinorFunction**中当前的 I/O 堆栈 IRP 的位置。 每个**IRP\_MJ\_系统\_控制**请求指定了次要函数代码用于标识请求的 WMI 操作。
+依赖于 IRP 当前 i/o 堆栈位置中**MinorFunction**处的值。 每个**IRP\_MJ\_SYSTEM\_控制**请求指定用于标识所请求的 WMI 操作的次要函数代码。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-取决于处的值**MinorFunction**中当前的 I/O 堆栈 IRP 的位置。
+依赖于 IRP 当前 i/o 堆栈位置中**MinorFunction**处的值。
 
 <a name="operation"></a>操作
 ---------
 
-所有驱动程序必须支持**IRP\_MJ\_系统\_控制**请求通过提供[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程.
+所有驱动程序都必须通过提供[*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程来支持**IRP\_MJ\_系统\_控制**请求。
 
-支持的驱动程序[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI) 必须处理**IRP\_MJ\_系统\_控制**请求通过处理次要函数与此主要函数代码相关联的代码。 有关 WMI 次要函数代码的信息，请参阅[WMI 次要 Irp](wmi-minor-irps.md)。
+支持[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) （WMI）的驱动程序必须通过处理与此主要函数代码关联的次要函数代码来处理**IRP\_MJ\_系统\_控制**请求。 有关 WMI 次要函数代码的信息，请参阅[Wmi 次要 irp](wmi-minor-irps.md)。
 
-不支持通过 WMI 的驱动程序[注册为 WMI 数据提供程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/registering-as-a-wmi-data-provider)必须传递**IRP\_MJ\_系统\_控制**到下一个较低的驱动程序的请求。
+通过[注册为 wmi 数据提供程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/registering-as-a-wmi-data-provider)而不支持 WMI 的驱动程序必须将**IRP\_MJ\_系统\_控制**请求传递到下一个较低的驱动程序。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,16 +52,16 @@ WMI 内核模式组件可以发送**IRP\_MJ\_系统\_控制**请求驱动程序�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
  
 

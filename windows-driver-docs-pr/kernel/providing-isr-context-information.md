@@ -10,12 +10,12 @@ keywords:
 - 指针 WDK 中断
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee25ae21753e0976f1bb1a46c678796ae2d3a79b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f89f5e97ef52054594f0025e2bf488668b6645e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378786"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827579"
 ---
 # <a name="providing-isr-context-information"></a>提供 ISR 上下文信息
 
@@ -23,13 +23,13 @@ ms.locfileid: "67378786"
 
 
 
-ISR 进入时，接收到调用时，该驱动程序设置任何上下文区域的指针[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册该例程。
+进入时，ISR 接收指向驱动程序在调用[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)时设置的任何上下文区域的指针，以注册例程。
 
-大多数驱动程序设置到该设备对象表示的物理设备的生成中断，或该设备对象的设备扩展的上下文指针。 驱动程序可以将驱动程序的 ISR 的状态信息存储在设备扩展中，并[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程，后者的通常执行几乎所有的 I/O 处理，以满足每个请求，导致要中断的设备。
+大多数驱动程序将上下文指针设置为表示生成中断的物理设备的设备对象，或设置为该设备对象的设备扩展。 在设备扩展中，驱动程序可以存储驱动程序的 ISR 和[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程的状态信息，后者通常执行几乎所有的 i/o 处理以满足导致设备中断的每个请求。
 
-通常情况下，驱动程序使用设备扩展将指针存储到每个设备的中断对象 (从调用返回**IoConnectInterruptEx**)。 驱动程序通常还允许以确定是否中断由 ISR 支持的设备颁发 ISR 的设备扩展中存储信息。
+通常，驱动程序使用设备扩展来存储指向每个设备中断对象（从对**IoConnectInterruptEx**的调用返回）的指针。 驱动程序通常还会将信息存储在设备扩展中，以允许 ISR 确定由 ISR 支持的设备是否发出了中断。
 
-（或者，中断指针可以存储在驱动程序分配的非分页缓冲池的对象。）
+（或者，中断对象指针可以存储在驱动程序分配的非分页池中。）
 
  
 

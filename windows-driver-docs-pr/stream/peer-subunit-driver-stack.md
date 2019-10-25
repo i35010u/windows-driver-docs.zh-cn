@@ -3,51 +3,51 @@ title: 对等子单元驱动程序堆栈
 description: 对等子单元驱动程序堆栈
 ms.assetid: 6ef4b6ae-3802-4ba9-acfa-4b3edba11ba3
 keywords:
-- 对等子单元驱动程序堆栈 WDK AV/C
+- 对等子单位驱动程序堆栈 WDK AV/C
 - 驱动程序堆栈 WDK AV/C
 - 堆栈 WDK AV/C
-- 子单元支持 WDK AV/C
+- 子次级支持 WDK AV/C
 - AV/C WDK，驱动程序堆栈
-- 单元的命令 WDK AV/C
+- 单元命令 WDK AV/C
 - 内置扩展机制 WDK AV/C
 - 命令扩展机制 WDK AV/C
-- 命令目标将 WDK AV/C
-- Avc.sys 功能驱动程序 WDK，驱动程序堆栈
+- 命令面向 WDK AV/C
+- Avc 函数驱动程序 WDK，驱动程序堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76de7fb53b1746c02a294ab539c03fb175df0b5f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 19bea615f87d4e6fcd5145c3d898540f395bee51
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370376"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823780"
 ---
 # <a name="peer-subunit-driver-stack"></a>对等子单元驱动程序堆栈
 
 
-对等方驱动程序堆栈包含加载来表示，处于活动状态的 IEEE 1394 总线上并可以通过计算机控制的 AV/C 子单元连接的驱动程序。 必须启动通过 AV/C 对等方驱动程序堆栈的外部设备控制。 Windows 将加载的实例*Avc.sys*每个外部 AV/C 设备上的 IEEE 1394 总线只要设备连接到系统 （或在系统启动时存在）。 每个实例*Avc.sys* ，它是加载来支持对等子单元驱动程序注册的新实例的 guid\_AVC\_类设备接口。 有关 GUID 的详细信息\_AVC\_类设备接口，请参阅[使用 Avc.sys](using-avc-sys.md)并[ **IOCTL\_AVC\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class).
+对等驱动程序堆栈包含加载的驱动程序，用于表示在 IEEE 1394 总线上处于活动状态并且可从计算机控制的 AV/C 子单元连接。 必须通过 AV/C 对等驱动程序堆栈启动外部设备控制。 每当设备连接到系统（或在系统启动期间提供）时，Windows 都会为 IEEE 1394 总线上的每个外部 AV/C 设备加载*Avc*的实例。 为支持对等方子驱动程序而加载的每个*Avc*实例都向\_类设备接口注册了 GUID\_的新实例。 有关 GUID\_AVC\_类设备接口的详细信息，请参阅[使用 AVC](using-avc-sys.md)和[**IOCTL\_AVC\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)。
 
-对等子单元驱动程序访问和控制其子单元连接通过 IOCTL\_AVC\_导出的类接口*Avc.sys*。 *Avc.sys*处理 AV/C 命令和响应协议，包括具有 IEC 61883 函数控制协议 (FCP) 的所有交互。 但是，请注意，对等子单元驱动程序不是无法与通信并直接访问某些*是 61883.sys*功能在必要时。 子单元驱动程序可能需要直接与其*是 61883.sys*子单元驱动程序时表示使用 Microsoft 不支持的流格式 AV/C 子单元。 子单元驱动程序可以使用**IOCTL\_61883\_类**接口来直接与通信*是 61883.sys*在必要时。 Microsoft 提供较低的筛选器驱动程序， *Avcstrm.sys*，这可以帮助进行流式处理 DV 和 MPEG2 格式。 有关详细信息*Avcstrm.sys*，请参阅[AV/C 流式处理概述](av-c-streaming-overview.md)。
+对等子单位驱动程序通过*AVC*导出的 IOCTL\_AVC\_类接口访问和控制其子单元连接。 *Avc*处理 AV/C 命令和响应协议，包括与 IEC 61883 函数控制协议（FCP）的所有交互。 但请注意，如果需要，不会阻止对等方子驱动程序与通信并直接访问某些*61883*功能。 如果子单位驱动程序代表的 AV/C 子单位使用 Microsoft 不支持的流格式，则它可能需要与*61883*直接通信。 必要时，次级驱动程序可以使用**IOCTL\_61883\_类**接口直接与*61883*进行通信。 Microsoft 提供了较低的筛选器驱动程序*Avcstrm*，它可以帮助流式传输 DV 和 MPEG2 格式。 有关*Avcstrm*的详细信息，请参阅[AV/C 流式处理概述](av-c-streaming-overview.md)。
 
-对等子单元驱动程序可以注册的通知并接收来自外部 AV/C 设备 AV/C 命令。 若要注册，对等子单元驱动程序将发出[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control) 的I/O请求数据包(IRP)**IoControlCode** IOCTL 成员\_AVC\_类 I/O 控制代码和子函数设置为 AVC\_函数\_获取\_请求。 此功能使子单元驱动程序，以便接收来自其子单元 AV/C 请求的对等支持，并且对于规范，例如连接和兼容性管理 (CCM) 协议和数字传输内容保护 (DTCP)... 有关 CCM 的详细信息，请参阅[IEEE 1394 贸易协会](https://go.microsoft.com/fwlink/p/?LinkId=518448)网站。 有关 DTCP 详细信息，请参阅[数字传输许可管理员](https://go.microsoft.com/fwlink/p/?linkid=8731)网站。
+对等子源驱动程序可以注册，接收来自外部 AV/C 设备的 AV/C 命令的通知。 若要注册，对等方的驱动程序会发出[**IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)i/o 请求数据包（IRP），其中包含 IOCTL 的**IOCONTROLCODE**成员\_AVC\_类 i/o 控制代码和subfunction 设置为 AVC\_函数\_获取\_请求。 此功能允许对等子源驱动程序从其子单位接收 AV/C 请求，并支持规范的支持，如连接和兼容性管理（CCM）协议和数字传输内容保护（DTCP）。 有关 CCM 的详细信息，请参阅[IEEE 1394 贸易关联](https://go.microsoft.com/fwlink/p/?LinkId=518448)网站。 有关 DTCP 的详细信息，请参阅[数字传输授权管理员](https://go.microsoft.com/fwlink/p/?linkid=8731)网站。
 
-请注意此功能旨在支持虚拟 AV/C 子单元驱动程序 （其中子单元驱动程序位于虚拟 AV/C 设备堆栈中） 向计算机发送 AV/C 命令而不允许在外部的设备发送到的 AV/C 命令上的 AV/C 子单元连接计算机系统。
+请注意，此功能旨在支持虚拟 AV/C 子单元驱动程序，以便将 AV/C 命令发送到计算机（其中，子位置驱动程序位于虚拟 AV/C 设备堆栈中），而不允许在外部设备上使用 AV/C 子单元连接将 AV/c 命令发送到计算机系统。
 
-### <a href="" id="peer-stack-as-av-c-command-target"></a>**对等方堆栈上为 AV/C 命令目标**
+### <a href="" id="peer-stack-as-av-c-command-target"></a>**对等堆栈作为 AV/C 命令目标**
 
-对等子单元驱动程序堆栈可以包含其他 WDM 筛选器驱动程序提供特定于供应商或特定于设备的目标 AV/C 功能。 通过此对等子单元驱动程序堆栈的扩展机制，第三方供应商可以独立地实现许多增值功能，如 5c 复制保护，以及由 Microsoft 提供的 AV/C 实现的扩展。
+对等子单位驱动程序堆栈可以包含其他 WDM 筛选器驱动程序，它们提供特定于供应商或设备特定的目标 AV/C 功能。 通过此对等互连驱动程序堆栈扩展机制，第三方供应商可以独立实现增值功能（如5C 复制保护）以及 Microsoft 提供的 AV/C 实现的扩展。
 
-子单元驱动程序可以执行此功能，但对于具有多个子单元连接的设备，WDM 筛选器驱动程序是首选的方法。 如果上部驱动程序 （子单元或筛选器驱动程序） 注册以接收传入请求通过，计算机仅公开为 AV/C 目标[ **AVC\_函数\_获取\_请求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request). 有关 AV/C 单元命令的详细信息，请参阅[ **AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)。
+子单位驱动程序可执行此功能，但对于具有多个子单元连接的设备，WDM 筛选器驱动程序是首选方法。 如果上层驱动程序（子单位或筛选器驱动程序）注册通过[**AVC\_函数接收传入请求\_获取\_请求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)，则计算机只公开为 AV/C 目标。 有关 AV/C 单元命令的详细信息，请参阅[**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)。
 
-驱动程序加载基于设备标识符 (Id);因此，单元功能可以有选择地加载特定于设备的或特定于供应商的基础上。 虚拟子单元驱动程序堆栈支持这种机制以一般方式 （不在特定于设备的一种方法）。
+驱动程序加载基于设备标识符（Id）;因此，可以在特定于设备或供应商的基础上有选择地加载单元功能。 虚拟子单位驱动程序堆栈一般支持此机制（而不是以特定于设备的方式）。
 
-请注意，如果对等子单元驱动程序堆栈实现特定于设备的单位扩展、 未经处理的单元的任何命令，以及所有传入的子单元命令，就可以转给[虚拟子单元驱动程序堆栈](virtual-subunit-driver-stack.md)。
+请注意，如果对等子单元驱动程序堆栈实现设备特定的单元扩展，则任何未处理的单元命令以及所有传入的子单位命令都将路由到虚拟子单位[驱动程序堆栈](virtual-subunit-driver-stack.md)。
 
 ### <a name="unit-command-extension-mechanism"></a>**单元命令扩展机制**
 
-在对等子单元驱动程序堆栈的上下文中，目标功能仅限于 AV/C 单元命令的支持。 如果子单元驱动程序 （适用于虚拟子单元或对等子单元） 注册以接收 AV/C 请求，则*Avc.sys*支持仅子单元\_信息 (0x31) 和单元\_直接的信息 (0x30) 操作码。 有关操作码的详细信息，请参阅*AV/C 数字接口命令设置常规规范、 Rev 3.0*。 若要支持其他单元命令，例如 CCM 协议或 DTCP，针对*Avc.sys*提供插件的扩展机制。 任意数量的子单元或 WDM 筛选器驱动程序可以注册它们支持通过的单元操作码**AlternateOpcodes**的成员[ **AVC\_命令\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)结构，它通过已提交[ **AVC\_函数\_获取\_请求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)函数。 **AlternateOpcodes**是一个计数的字节数组; 元素 0 是备用操作代码中的剩余字节数。 **AlternateOpcodes**时发送响应，因此不需要的备用操作码处于隐藏状态处理单元请求时，将忽略。
+在对等子单元驱动程序堆栈的上下文中，目标功能限制为支持 AV/C 单元命令。 如果子单位驱动程序（对于虚拟子单位或对等方子单位）注册接收 AV/C 请求，则*Avc*仅支持子\_INFO （0x31）和 UNIT\_info （0x30）操作码。 有关操作码的详细信息，请参阅*AV/C 数字接口命令集常规规范 Rev 3.0*。 若要支持其他单元命令，例如 CCM 协议或 DTCP 的命令， *Avc*提供了插件扩展机制。 任意数量的子单位或 WDM 筛选器驱动程序都可以通过 AVC\_函数提交的[**AVC\_命令\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)结构中的**AlternateOpcodes**成员来注册其支持的单位操作码[ **\_获取\_请求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)函数。 **AlternateOpcodes**是计数字节数组;元素0是剩余字节中的替代操作码的数目。 发送响应时将忽略**AlternateOpcodes** ，因此在处理单元请求时不需要隐藏备用操作码。
 
-若要使用的内置扩展机制，指定单元地址为中的 0xff **SubunitAddress**成员的 AVC\_命令\_IRB 结构。 **SubunitAddress**处于单独的成员的单元命令 （单元解决提供的子单元驱动程序仍存在）。 虚拟子单元驱动程序都可以使用密钥的中断**SubunitAddress**成员。
+若要使用内置扩展机制，请在 AVC\_命令的**SubunitAddress**成员中将单位地址指定为 0XFF\_IRB 结构。 **SubunitAddress**成员在中为单元命令保留不变（子单位驱动程序提供的单位地址仍存在）。 虚拟子单位驱动程序始终可以关闭**SubunitAddress**成员。
 
  
 

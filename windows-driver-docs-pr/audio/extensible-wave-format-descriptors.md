@@ -3,26 +3,26 @@ title: 可扩展的波形格式描述符
 description: 可扩展的波形格式描述符
 ms.assetid: b80e651b-fb97-4502-8526-e844425805dc
 keywords:
-- wave 格式描述符 WDK 音频
-- PCM 格式 WDK 音频
-- wave 格式标记 WDK 音频
-- 批流 WDK 音频
-- WDK 的音频数据格式
-- 数据格式以 WDK 音频，波形格式说明符
-- 格式 WDK 音频，波形格式说明符
+- 波形格式描述符 WDK 音频
+- PCM 音频格式
+- 波形格式标记 WDK 音频
+- 波形流 WDK 音频
+- 音频数据格式 WDK
+- 数据格式化 WDK 音频，波形格式说明符
+- 格式化 WDK 音频、波形格式说明符
 - KSDATAFORMAT 结构
-- KMixer 系统驱动程序 WDK 音频，波形格式说明符
+- KMixer 系统驱动程序 WDK 音频，波形格式描述符
 - WAVEFORMATEXTENSIBLE
 - WAVEFORMATEX 结构
 - WDM 音频数据格式 WDK
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28966461133ce95dc909234154b9898ef5c647ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 52a40b01fcecca20c423dd07bd0644ba315fed6c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360044"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831242"
 ---
 # <a name="extensible-wave-format-descriptors"></a>可扩展的波形格式描述符
 
@@ -34,27 +34,27 @@ ms.locfileid: "67360044"
 
 ![说明波形格式说明符的关系图](images/wavefmt.png)
 
-如下图所示的其他格式信息下面[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构而异的数据格式。
+如图所示，根据数据格式， [**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构后面的附加格式信息量会有所不同。
 
-音频系统中通过多种方式使用这种类型的格式说明符：
+音频系统通过多种方式使用这种类型的格式描述符：
 
--   正如在上图中所示作为调用参数传递给微型端口驱动程序的格式说明符**NewStream**方法 (有关示例，请参阅[ **IMiniportWaveCyclic::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)).
+-   如上图中所示的格式描述符将作为调用参数传递给微型端口驱动程序的**newstream.ischecked**方法（例如，请参阅[**IMiniportWaveCyclic：： newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-newstream)）。
 
--   *ResultantFormat*的参数[ **IMiniport::DataRangeIntersection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-datarangeintersection)指向缓冲区到该方法将写入一个格式说明符的方法类似于在上图中所示。
+-   [**IMiniport：:D atarangeintersection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-datarangeintersection)方法的*ResultantFormat*参数指向一个缓冲区，此方法会将格式说明符写入其中，如上图中所示。
 
--   [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)属性 get 请求检索类似如上图所示的格式说明符。
+-   [**KSPROPERTY\_引脚\_DATAINTERSECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)请求检索格式描述符，如上图中所示。
 
--   [ **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)集属性请求会接受类似如上图所示的格式说明符。
+-   [**KSPROPERTY\_引脚\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)请求接受格式说明符，如上图中所示。
 
--   使用类似的格式[ **KsCreatePin** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)函数的*Connect*调用参数。 此参数指向[ **KSPIN\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_connect)还包含一个格式说明符的缓冲区开始处的结构。 格式说明符，紧随 KSPIN\_连接结构，以在上图中所示的 KSDATAFORMAT 结构开始。
+-   [**KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatepin)函数的*Connect*调用参数使用类似的格式。 此参数指向包含格式说明符的缓冲区开头的[**KSPIN\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_connect)结构。 紧跟在 KSPIN\_连接结构后面的格式说明符以 KSDATAFORMAT 结构开始，如上图中所示。
 
-遵循 KSDATAFORMAT 结构的格式信息应[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构或[ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)结构。 WAVEFORMATEXTENSIBLE 是可以描述更广泛的格式比 WAVEFORMATEX WAVEFORMATEX 的扩展的版本。 WAVEFORMATEX 是 pre WDM WAVEFORMAT 结构的扩展的版本。 WAVEFORMAT 已过时，不受任何版本的 Microsoft Windows 中的 WDM 音频子系统。
+KSDATAFORMAT 结构后面的格式信息应为[**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)结构或[**WAVEFORMATEX**](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)结构。 WAVEFORMATEXTENSIBLE 是 WAVEFORMATEX 的扩展版本，可描述比 WAVEFORMATEX 更广泛的格式范围。 WAVEFORMATEX 是预 WDM WAVEFORMAT 结构的扩展版本。 WAVEFORMAT 已过时，并且任何 Microsoft Windows 版本中的 WDM 音频子系统都不支持。
 
-同样，PCMWAVEFORMAT 结构是的 WAVEFORMAT 已过时，但 WDM 音频子系统为其提供有限的支持的扩展的版本。
+同样，PCMWAVEFORMAT 结构是已过时的 WAVEFORMAT 的扩展版本，但 WDM 音频子系统提供有限的支持。
 
-有关 WAVEFORMAT 和 PCMWAVEFORMAT 信息，请参阅 Microsoft Windows SDK 文档。
+有关 WAVEFORMAT 和 PCMWAVEFORMAT 的信息，请参阅 Microsoft Windows SDK 文档。
 
-四个的波形格式结构-WAVEFORMAT、 PCMWAVEFORMAT、 WAVEFORMATEX 和 WAVEFORMATEXTENSIBLE-所有以相同的五个成员，从开始开头**wFormatTag**。 上图显示了这些其他以突出显示的是相同的结构部分上叠加的四个结构。 通过添加扩展 WAVEFORMAT PCMWAVEFORMAT 和 WAVEFORMATEX **wBitsPerSample**成员，但 WAVEFORMATEX 还将添加**cbSize**成员。 WAVEFORMATEXTENSIBLE 通过添加三个成员，从扩展 WAVEFORMATEX**示例**.wValidBitsPerSample。 (**示例**是其成员的联合**wValidSamplesPerBlock**，而不是**wValidBitsPerSample**一些压缩格式。)**WFormatTag**成员，紧随结构末尾的 KSDATAFORMAT 缓冲区中，指定何种格式信息遵循 KSDATAFORMAT。 [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)支持仅使用下表中所示的三个格式标记之一的 PCM 格式。
+四个波形格式结构--WAVEFORMAT、PCMWAVEFORMAT、WAVEFORMATEX 和 WAVEFORMATEXTENSIBLE--都以从**wFormatTag**开始的相同的五个成员开头。 上图显示了这四个结构彼此重叠，以突出显示完全相同的结构部分。 PCMWAVEFORMAT 和 WAVEFORMATEX 通过添加**wBitsPerSample**成员扩展 WAVEFORMAT，但 WAVEFORMATEX 还添加**cbSize**成员。 WAVEFORMATEXTENSIBLE 通过添加三个成员，从 wValidBitsPerSample 开始扩展**WAVEFORMATEX。** （**示例**是使用其他成员**wValidSamplesPerBlock**，而不是**wValidBitsPerSample**来表示某些压缩格式的联合。）紧跟在缓冲区中 KSDATAFORMAT 结构末尾的**wFormatTag**成员指定 KSDATAFORMAT 后的格式信息类型。 [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)仅支持使用下表中所示的三种格式标记之一的 PCM 格式。
 
 <table>
 <colgroup>
@@ -70,52 +70,52 @@ ms.locfileid: "67360044"
 <tbody>
 <tr class="odd">
 <td align="left"><p>WAVE_FORMAT_PCM</p></td>
-<td align="left"><p>指定 WAVEFORMATEX 或 PCMWAVEFORMAT 整数 PCM 数据格式。</p></td>
+<td align="left"><p>WAVEFORMATEX 或 PCMWAVEFORMAT 指定的整数 PCM 数据格式。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WAVE_FORMAT_IEEE_FLOAT</p></td>
-<td align="left"><p>指定 WAVEFORMATEX 浮点 PCM 数据格式。</p></td>
+<td align="left"><p>WAVEFORMATEX 指定的浮点 PCM 数据格式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>WAVE_FORMAT_EXTENSIBLE</p></td>
-<td align="left"><p>指定 WAVEFORMATEXTENSIBLE 扩展的数据格式。</p></td>
+<td align="left"><p>WAVEFORMATEXTENSIBLE 指定的扩展数据格式。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-事实上，KMixer 支持可通过这些标记值描述的 PCM 格式的一个子集 （和它支持任何非 PCM 格式）。 USB 音频设备 (请参阅[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)) 仅限于此子集，因为所有 PCM 格式的 USB 音频流都将通过 KMixer。 (某些 PCM USB 音频流可以绕过 KMixer; 有关详细信息，请参阅[USB 音频支持非 PCM 格式](usb-audio-support-for-non-pcm-formats.md)。)但是，在 Windows XP 及更早版本，DirectSound 应用程序可以通过直接连接到 WaveCyclic 和 WavePci 支持 KMixer 不支持格式的设备上的硬件 pin 来克服 KMixer 的限制。 有关详细信息，请参阅[DirectSound WDM 音频中的硬件加速](directsound-hardware-acceleration-in-wdm-audio.md)。
+事实上，KMixer 仅支持可通过这些标记值描述的 PCM 格式的子集（并且它不支持非 PCM 格式）。 USB 音频设备（请参阅[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)）限制为此子集，因为所有 PCM 格式的 u 音频流都通过 KMixer。 （某些非 PCM USB 音频流可以绕过 KMixer; 有关详细信息，请参阅[非 PCM 格式的 USB 音频支持](usb-audio-support-for-non-pcm-formats.md)。）但是，在 Windows XP 及更早版本中，DirectSound 应用程序可以直接连接到 WaveCyclic 和 WavePci 设备上的硬件 pin，而和设备上不支持 KMixer。 有关详细信息，请参阅[DirectSound 硬件加速 IN WDM 音频](directsound-hardware-acceleration-in-wdm-audio.md)。
 
-请注意波形的意义不明确\_格式\_PCM 标记值在上表中-它可以指定 WAVEFORMATEX 或 PCMWAVEFORMAT 结构。 但是，这些两个结构都几乎完全相同。 唯一的区别是，包含 WAVEFORMATEX **cbSize**成员和 PCMWAVEFORMAT 却没有。 根据 WAVEFORMATEX 规范**cbSize**如果，则忽略**wFormatTag** = 批\_格式\_PCM (因为**cbSize**是隐式 0)。**cbSize**用于所有其他格式。 因此，在 PCM 格式的情况下 PCMWAVEFORMAT 和 WAVEFORMATEX 包含相同的信息，可以以相同方式处理。
+请注意，在上表中\_PCM 标记值时，波形\_格式的歧义，它可以指定 WAVEFORMATEX 或 PCMWAVEFORMAT 结构。 但是，这两个结构几乎完全相同。 唯一的区别是，WAVEFORMATEX 包含**cbSize**成员，而 PCMWAVEFORMAT 不包含。 根据 WAVEFORMATEX 规范，如果**wFormatTag** = WAVE\_格式\_PCM （因为**cbSize**隐式为零），则将忽略**cbSize** ;**cbSize**用于所有其他格式。 因此，在使用 PCM 格式的情况下，PCMWAVEFORMAT 和 WAVEFORMATEX 包含相同的信息，并且可以视为相同的信息。
 
-WAVEFORMATEX 可以指定 WAVEFORMATEXTENSIBLE 可以指定的格式的一个子集。 与 WAVEFORMATEX，不同 WAVEFORMATEXTENSIBLE 可以执行以下操作：
+WAVEFORMATEX 只能指定 WAVEFORMATEXTENSIBLE 可以指定的格式的子集。 与 WAVEFORMATEX 不同，WAVEFORMATEXTENSIBLE 可以执行以下操作：
 
-1.  指定的每个样本大小从单独的示例容器的位数。 例如，可以在 3 字节容器内左对齐存储 20 位示例。 WAVEFORMATEX，无法从示例容器大小区分每个样本的数据比特数，不能明确描述这种格式。
+1.  将每个样本的位数分别指定为样本容器的大小。 例如，可以在三个字节的容器内将一个20位的示例存储为左对齐。 WAVEFORMATEX 无法区分样本容器大小的每个样本的数据位数，无法明确地描述此类格式。
 
-2.  将特定扬声器位置分配给多通道流中的音频声道。 WAVEFORMATEX 缺少此功能，可以充分支持仅 mono 和 （两个通道） 立体声流。
+2.  将特定扬声器位置分配给多通道流中的音频通道。 WAVEFORMATEX 缺少此功能，只能支持单声道和（双通道）立体声流。
 
-此外可以通过 WAVEFORMATEXTENSIBLE 描述由 WAVEFORMATEX 描述任何格式。 有关将 WAVEFORMATEX 结构转换为 WAVEFORMATEXTENSIBLE 的信息，请参阅[转换之间格式标记和子格式 Guid](converting-between-format-tags-and-subformat-guids.md)。
+WAVEFORMATEX 描述的任何格式也可以通过 WAVEFORMATEXTENSIBLE 说明。 有关将 WAVEFORMATEX 结构转换为 WAVEFORMATEXTENSIBLE 的信息，请参阅[在格式标记和 Subformat Guid 之间转换](converting-between-format-tags-and-subformat-guids.md)。
 
-WAVEFORMATEX 足以用于描述格式，并为 8 或 16 位样本大小，但 WAVEFORMATEXTENSIBLE 进行充分描述示例精度大于 16 位格式所需。 下面是两个示例：
+WAVEFORMATEX 足以描述大小为8或16位的示例格式，但必须使用 WAVEFORMATEXTENSIBLE 来充分描述样本精度大于16位的格式。 下面是两个示例：
 
--   示例精度为 24 位流可以使用 32 位容器大小进行高效处理，但可以转换为使用 24 位容器来提高存储效率，而不丢失数据。
+-   采样精度为24位的流可以使用32位容器大小来有效处理，但可转换为使用24位容器来提高存储效率，而不会丢失数据。
 
--   在处理时使用 24 位示例数据的流，提供仅 20 位精度的呈现设备可用于抖动提高其输出信号的保真度。 抖色，但是，需要额外的处理时间，并且如果原始流是精确到只有 20 位，则不需要额外的处理。
+-   处理包含24位样本数据的流时，仅提供20位精度的渲染设备可以使用仿色来改善其输出信号的保真度。 但是，仿色需要额外的处理时间，如果原始流精确到仅20位，则不需要进行额外的处理。
 
-在这两个示例中，保留时的正确处理和存储效率之间权衡的信号质量有可能仅当已知示例精度和容器大小。
+在这两个示例中，仅当样本精度和容器大小都已知时，才可以在处理和存储效率之间进行适当权衡时保留信号质量。
 
-如果可以通过 WAVEFORMATEX 或 WAVEFORMATEXTENSIBLE 结构明确描述简单的格式，音频驱动程序已选择任一结构来描述格式的选项。 但是，音频驱动程序通常使用了 WAVEFORMATEX 的 8 位或 16 位示例指定 mono 和 （两个通道） 立体声 PCM 格式，并且某些较旧的应用程序可能希望所有的音频驱动程序以使用 WAVEFORMATEX 来指定这些格式。
+如果 WAVEFORMATEX 或 WAVEFORMATEXTENSIBLE 结构可以明确描述简单格式，则音频驱动程序可以选择使用任一结构来描述格式。 但是，音频驱动程序通常使用 WAVEFORMATEX 来指定带有8位或16位样本的 mono 和（双通道）立体声 PCM 格式，一些较旧的应用程序可能会预计所有音频驱动程序都使用 WAVEFORMATEX 来指定这些格式。
 
-如果驱动程序支持可以明确地指定为 WAVEFORMATEX 或 WAVEFORMATEXTENSIBLE 结构的音频格式，驱动程序应识别而不考虑这两个结构的客户端应用程序或组件使用指定的格式结构。 例如，如果音频设备支持的 44.1 kHz 16 位、 立体声 PCM 格式，微型端口驱动程序的 KSPROPERTY\_PIN\_PROPOSEDATAFORMAT 属性处理程序和其实现**NewStream**方法应接受该格式而不考虑是否为 WAVEFORMATEX 或 WAVEFORMATEXTENSIBLE 结构指定的格式。
+如果驱动程序支持可明确指定为 WAVEFORMATEX 或 WAVEFORMATEXTENSIBLE 结构的音频格式，则驱动程序应识别该格式，而不管客户端应用程序或组件使用哪些结构来指定结构。 例如，如果音频设备支持 44.1 kHz 16 位立体声 PCM 格式，微型端口驱动程序的 KSPROPERTY\_PIN\_PROPOSEDATAFORMAT 属性处理程序，并且它的**newstream.ischecked**方法的实现应接受该格式不管格式是指定为 WAVEFORMATEX 还是 WAVEFORMATEXTENSIBLE 结构。
 
-若要简化格式数据的处理，驱动程序通常使用 WAVEFORMATEXTENSIBLE 结构在内部表示格式。 这种方法可能需要输入的 WAVEFORMATEX 结构转换为内部 WAVEFORMATEXTENSIBLE 表示形式或向输出 WAVEFORMATEX 结构内部 WAVEFORMATEXTENSIBLE 表示形式的转换。
+为了简化格式数据的处理，驱动程序通常使用 WAVEFORMATEXTENSIBLE 结构来表示格式。 此方法可能需要将输入 WAVEFORMATEX 结构转换为内部 WAVEFORMATEXTENSIBLE 表示形式，或将内部 WAVEFORMATEXTENSIBLE 表示形式转换为输出 WAVEFORMATEX 结构。
 
-从转换时的格式说明符 WAVEFORMATEX WAVEFORMATEXTENSIBLE，如果**wFormatTag** WAVEFORMATEX 结构中的成员是任一批\_格式\_PCM 或批\_格式\_IEEE\_浮动，设置**dwChannelMask**对任一演讲者 WAVEFORMATEXTENSIBLE 结构中的成员\_FRONT\_（适用于使用 mono 的流） 的中心或演讲者\_前端\_左侧 |说话人\_FRONT\_右 （对于立体声的流）。 说话人\_FRONT\_*XXX*标头文件 Ksmedia.h 中定义常量。
+将格式描述符从 WAVEFORMATEX 转换为 WAVEFORMATEXTENSIBLE 时，如果 WAVEFORMATEX 结构的**wFormatTag**成员为波形\_格式\_PCM 或波形\_格式\_IEEE\_FLOAT，请将将 WAVEFORMATEXTENSIBLE 结构的成员 dwChannelMask 到 "扬声器\_前\_中心" （对于 mono 流）或 "扬声器"\_前面\_左侧 |扬声器\_正面\_右（适用于立体声流）。 在头文件 Ksmedia 中定义了扬声器\_前\_*XXX*常数。
 
-在除 Windows 98"黄金"所有 Windows 版本中，KMixer 支持具有多个通道，具有每个样本最多 32 位 WAVEFORMATEXTENSIBLE PCM 范围格式。
+在除 Windows 98 "黄金" 之外的所有 Windows 版本中，KMixer 支持一系列 WAVEFORMATEXTENSIBLE PCM 格式，这些格式具有多个通道，每个样本最多32位。
 
-WAVEFORMATEX PCM 子集设置格式，KMixer 支持方面有何不同 Windows 版本中下, 表中所示。
+KMixer 支持的 WAVEFORMATEX PCM 格式的子集在 Windows 版本之间有所不同，如下表所示。
 
 <table>
 <colgroup>
@@ -127,51 +127,51 @@ WAVEFORMATEX PCM 子集设置格式，KMixer 支持方面有何不同 Windows �
 <tr class="header">
 <th align="left">Windows 版本</th>
 <th align="left">打包的样本大小</th>
-<th align="left">通道数</th>
+<th align="left">通道数量</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Windows 98 "Gold"</p></td>
-<td align="left"><p>8、 16、 24 和 32 位</p></td>
+<td align="left"><p>Windows 98 "黄金"</p></td>
+<td align="left"><p>8、16、24和32位</p></td>
 <td align="left"><p>多渠道</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Windows 98 SE</p></td>
-<td align="left"><p>8 核和 16 位</p></td>
-<td align="left"><p>Mono 和立体声设备仅</p></td>
+<td align="left"><p>仅8和16位</p></td>
+<td align="left"><p>仅单色和立体声</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Windows 98 SE + 修补程序</p></td>
-<td align="left"><p>8、 16、 24 和 32 位</p></td>
-<td align="left"><p>Mono 和立体声设备仅</p></td>
+<td align="left"><p>8、16、24和32位</p></td>
+<td align="left"><p>仅单色和立体声</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Windows 2000</p></td>
-<td align="left"><p>8 核和 16 位</p></td>
-<td align="left"><p>Mono 和立体声设备仅</p></td>
+<td align="left"><p>仅8和16位</p></td>
+<td align="left"><p>仅单色和立体声</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Windows Me</p></td>
-<td align="left"><p>8、 16、 24 和 32 位</p></td>
-<td align="left"><p>Mono 和立体声设备仅</p></td>
+<td align="left"><p>8、16、24和32位</p></td>
+<td align="left"><p>仅单色和立体声</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Windows XP 及更高版本</p></td>
-<td align="left"><p>8 核和 16 位</p></td>
-<td align="left"><p>Mono 和立体声设备仅</p></td>
+<td align="left"><p>仅8和16位</p></td>
+<td align="left"><p>仅单色和立体声</p></td>
 </tr>
 </tbody>
 </table>
 
  
-WAVEFORMATEXTENSIBLE，在**dwBitsPerSample**容器大小，并**wValidBitsPerSample**是每个样本的有效的数据比特数。 容器是始终在内存中，字节对齐，容器大小必须指定为八位的倍数。
+在 WAVEFORMATEXTENSIBLE 中， **dwBitsPerSample**是容器大小，而**wValidBitsPerSample**是每个样本的有效数据位数。 容器总是在内存中对齐，并且必须将容器大小指定为八位的倍数。
 
-定义 WAVEFORMATEXTENSIBLE 结构之前，供应商必须向 Microsoft 注册的每个新一波格式，以便官方、 16 位格式标记无法分配到格式。 (格式标记包含在**wFormatTag** WAVEFORMATEX 结构中的成员。)公共标题文件 Mmreg.h 中显示的已注册的格式标记列表 (例如，WAVE\_格式\_MPEG)。
+在定义 WAVEFORMATEXTENSIBLE 结构之前，供应商必须向 Microsoft 注册每个新的 wave 格式，以便可以将官方，16位格式标记分配给格式。 （格式标记包含在 WAVEFORMATEX 结构的**wFormatTag**成员中。）已注册的格式标记的列表显示在公共头文件 Mmreg 中（例如，波形\_格式\_MPEG）。
 
-随着 WAVEFORMATEXTENSIBLE，注册格式已不再必要。 供应商独立可以将 Guid 分配给其新的格式，根据需要。 (中包含 GUID 的格式**子格式**WAVEFORMATEXTENSIBLE 的成员。)但是，Microsoft 列出了一些更受欢迎的格式中公共标题文件 Ksmedia.h 的 Guid (例如，KSDATAFORMAT\_子类型\_MPEG)。 定义一种新格式的 GUID 之前, 供应商应检查列表 KSDATAFORMAT\_子类型\_*XXX*中 Ksmedia.h 来确定适当的 GUID 是否已定义为特定的常量格式。
+对于 WAVEFORMATEXTENSIBLE，不再需要注册格式。 供应商可以根据需要将 Guid 单独分配给其新格式。 （格式 GUID 包含在 WAVEFORMATEXTENSIBLE 的**SubFormat**成员中。）但是，Microsoft 在公共头文件 Ksmedia 中列出了一些更常用的格式 Guid （例如，KSDATAFORMAT\_子类型\_MPEG）。 在定义新格式 GUID 之前，供应商应检查 Ksmedia 中的 KSDATAFORMAT\_子 *\_类型*的列表，以确定是否已为特定格式定义了相应的 GUID。
 
-当使用 WAVEFORMATEXTENSIBLE，设置**wFormatTag**到批\_格式\_可扩展并**子格式**到相应格式的 GUID。 对于整数 PCM 格式设置**子格式**到 KSDATAFORMAT\_子类型\_PCM。 对于 PCM 格式进行编码以浮点数形式的示例值，设置**子格式**到 KSDATAFORMAT\_子类型\_IEEE\_FLOAT。 对于这些格式之一，设置**cbSize**到**sizeof**(WAVEFORMATEXTENSIBLE) **-sizeof**(WAVEFORMATEX)。 有关使用 WAVEFORMATEXTENSIBLE 描述非 PCM 数据格式的信息，请参阅[支持非 PCM 波形格式](supporting-non-pcm-wave-formats.md)。
+使用 WAVEFORMATEXTENSIBLE 时，请将**wFormatTag**设置为波形\_格式\_可扩展，并**SubFormat**设置为合适的格式 GUID。 对于 "整数 PCM 格式"，请将**SubFormat**设置为 KSDATAFORMAT\_子类型\_PCM。 对于将示例值编码为浮点数的 PCM 格式，请将**SubFormat**设置为 KSDATAFORMAT\_子类型\_IEEE\_FLOAT。 对于这两种格式，请将**cbSize**设置为**sizeof**（WAVEFORMATEXTENSIBLE） **-sizeof**（WAVEFORMATEX）。 有关使用 WAVEFORMATEXTENSIBLE 描述非 PCM 数据格式的信息，请参阅[支持非 Pcm 波浪格式](supporting-non-pcm-wave-formats.md)。
 
  
 

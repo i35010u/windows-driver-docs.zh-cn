@@ -3,16 +3,16 @@ title: 移植问题清单
 description: 移植问题清单
 ms.assetid: 6ab26321-85b8-4a5b-8ca5-af6cbf56ccd6
 keywords:
-- 64 位 WDK 内核，移植到驱动程序
-- 移植到 64 位 Windows 的驱动程序
+- 64位 WDK 内核，将驱动程序移植到
+- 将驱动程序移植到64位 Windows
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2012484153f2ce044241be63489bfd749006d060
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e523c95115c6994216d83bf8d9dbffe89e649487
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369701"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827661"
 ---
 # <a name="porting-issues-checklist"></a>移植问题清单
 
@@ -20,13 +20,13 @@ ms.locfileid: "67369701"
 
 
 
-### <a name="general"></a>常规
+### <a name="general"></a>“常规”
 
--   使用新的 64 位安全 Windows 数据类型。
+-   使用新的64位安全 Windows 数据类型。
 
-    Basetsd.h 中定义新的 64 位安全数据类型，本文档前面所述。 此标头文件包括在 Ntdef.h，包含在 Ntddk.h、 wdm.h 中和 Ntifs.h。
+    本文档前面所述的新64位安全数据类型是在 Basetsd 中定义的。 此标头文件包含在 Ntdef 中，该文件包含在 Ntddk、Wdm 和 Ntifs 中。
 
--   谨慎使用平台编译器宏。
+-   仔细使用平台编译器宏。
 
     以下假设不再有效：
 
@@ -38,7 +38,7 @@ ms.locfileid: "67369701"
     #endif
     ```
 
-    但是，64 位编译器定义\_WIN32 向后兼容性。
+    但是，64位编译器定义 \_WIN32 以便向后兼容。
 
     此外，以下假设不再有效：
 
@@ -50,25 +50,25 @@ ms.locfileid: "67369701"
     #endif
     ```
 
-    在这种情况下，可以表示 else 子句\_WIN32 或\_WIN64。
+    在这种情况下，else 子句可以表示 WIN64 \_WIN32 或 \_。
 
--   使用具有正确的格式说明符**printf**并**wsprintf**。
+-   结合使用正确的格式说明符和**printf**和**wsprintf**。
 
-    使用 **%p**打印十六进制中的指针。 这是打印指针的最佳选择。
+    使用 **% p**来打印十六进制形式的指针。 这是打印指针的最佳选择。
 
-    **请注意**  视觉对象的未来版本C++将支持 **%I**打印多态数据。 它会将值视为在 64 位 Windows 和 32 位 Windows 中的 32 位的 64 位。 VisualC++还将支持 **%i64**打印都是 64 位的值。
+    **请注意**   未来版本的视觉C++对象将支持 **% I**来打印多态数据。 它在64位 windows 中将值视为64位，在32位 Windows 中将其视为32位。 视觉C++对象还支持 **% I64**打印64位的值。
 
      
 
 <!-- -->
 
--   知道您的地址空间。
+-   了解地址空间。
 
-    不要盲目地假定，例如，如果地址是内核地址，必须设置其高顺序位。 若要获取的最小的系统地址，请使用**MM\_最低\_系统\_地址**宏。
+    不要盲目假设，例如，如果地址是内核地址，则必须设置其高序位。 若要获取最低系统地址，请使用**MM\_最低\_系统\_地址**宏。
 
-### <a name="pointer-arithmetic"></a>指针算术
+### <a name="pointer-arithmetic"></a>指针算法
 
--   执行未签名和签名操作时要小心。
+-   执行未签名和签名的操作时请小心。
 
     请考虑下列各项：
 
@@ -81,11 +81,11 @@ ms.locfileid: "67369701"
     pVar2 = pVar1 + y * (x - 1);
     ```
 
-    因为将会出现问题*x*是未签名，因此未签名的整个表达式。 此工作正常，除非*y*为负。 在这种情况下， *y*转换为无符号值，计算该表达式，使用 32 位精度，比例进行调整，并添加到*pVar1*。 在 64 位 Windows 上此 32 位无符号的负数将成为大型 64 位正数，这将使错误结果。 若要解决此问题，请声明*x*为有符号值或显式类型转换到**长**在表达式中。
+    出现此问题的原因是*x*是无符号的，这会使整个表达式无符号。 如果*y*为负数，则此操作正常。 在这种情况下， *y*转换为无符号的值，使用32位精度计算表达式，并将其添加到*pVar1*。 在64位 Windows 上，此32位无符号负数将成为较大的64位正数，这会产生错误的结果。 若要解决此问题，请将*x*声明为有符号值，或在表达式中将其显式转换为**LONG** 。
 
--   使用十六进制常量和无符号的值时要小心。
+-   使用十六进制常量和无符号值时请小心。
 
-    以下断言不在 64 位系统上，则返回 true:
+    64位系统上的以下断言不成立：
 
     ```cpp
     ~((UINT64)(PAGE_SIZE-1)) == (UINT64)~(PAGE_SIZE-1)
@@ -107,13 +107,13 @@ ms.locfileid: "67369701"
     (UINT64)(~(PAGE_SIZE - 1)) = 0x00000000fffff000
     ```
 
-    因此：
+    就
 
     ```cpp
     ~((UINT64)(PAGE_SIZE-1)) != (UINT64)(~(PAGE_SIZE-1))
     ```
 
--   谨慎而不是操作数。
+-   请注意 NOT 操作。
 
     请考虑下列各项：
 
@@ -122,13 +122,13 @@ ms.locfileid: "67369701"
     a = a & ~(b - 1); 
     ```
 
-    问题在于该 ~(b−1) 生成 0x0000 0000 *xxxx xxxx*和不 0xFFFF FFFF *xxxx xxxx*。 编译器将不会检测此。 若要解决此问题，请按如下所示更改代码：
+    问题在于 ~ （b −1）产生 0x0000 0000 *xxxx xxxx* ，而非 0xffff FFFF *xxxx*xxxx。 编译器不会检测到此情况。 若要解决此问题，请按如下所示更改代码：
 
     ```cpp
     a = a & ~((UINT_PTR)b - 1);
     ```
 
--   计算缓冲区大小时要小心。
+-   计算缓冲区大小时请小心。
 
     请考虑下列各项：
 
@@ -137,21 +137,21 @@ ms.locfileid: "67369701"
     /* len could be greater than 2**32 */
     ```
 
-    强制转换为指针**PCHAR**指针算法。
+    指向指针算法的**PCHAR**的强制转换指针。
 
-    **请注意**  如果*len*声明**INT**或者**ULONG**，这将生成编译器警告。 缓冲区大小，即使计算正确，可能会仍然超过容量**ULONG**。
+    **请注意**   如果*Len*声明为**INT**或**ULONG**，则会生成编译器警告。 即使在正确计算时，缓冲区大小仍可能超出**ULONG**的容量。
 
      
 
--   避免使用计算出的或硬编码的指针的偏移量。
+-   避免使用计算的或硬编码的指针偏移量。
 
-    使用结构，使用[**字段\_偏移量**](https://docs.microsoft.com/windows/desktop/api/ntdef/nf-ntdef-field_offset)宏只要有可能确定结构成员的偏移量。
+    使用结构时，请尽可能使用[**字段\_OFFSET**](https://docs.microsoft.com/windows/desktop/api/ntdef/nf-ntdef-field_offset)宏来确定结构成员的偏移量。
 
--   避免使用硬编码的指针或句柄值。
+-   避免使用硬编码指针或句柄值。
 
-    不要传递硬编码的指针或句柄 （手柄） 0xFFFFFFFF 如到例程如**ZwCreateSection**。 请改用常量，如无效\_处理\_值，该值可以定义为具有适当的值为每个平台。
+    不要将硬编码的指针或句柄（如处理）0xFFFFFFFF 传递到**ZwCreateSection**等例程。 相反，请使用常量（例如，无效\_句柄\_值）来定义每个平台的相应值。
 
--   请注意，在 64 位 Windows 中 0xFFFFFFFF 不相同，则为-1。
+-   请注意，在64位 Windows 中，0xFFFFFFFF 与-1 不相同。
 
     例如：
 
@@ -162,31 +162,31 @@ ms.locfileid: "67369701"
     // if (p[index-1] == '0') causes access violation on 64-bit Windows!
     ```
 
-    在 32 位计算机：
+    在32位计算机上：
 
     ```cpp
     p[index-1] == p[0xffffffff] == p[-1] 
     ```
 
-    在 64 位计算机：
+    在64位计算机上：
 
     ```cpp
     p[index-1] == p[0x00000000ffffffff] != p[-1]
     ```
 
-    为避免此问题，只需更改的类型*索引*从**DWORD**到**DWORD\_PTR**。
+    可以通过将*索引*类型从**Dword**更改为**dword\_PTR**来避免此问题。
 
-### <a name="polymorphism"></a>多态性
+### <a name="polymorphism"></a>态
 
-- 要注意多态的接口。
+- 请注意多态接口。
 
-  不创建接受的类型参数的函数**DWORD** （或其他固定精度类型） 的多态数据。 如果数据可以是指针或整数值，参数类型应为**UINT\_PTR**或**PVOID**，而非**DWORD**。
+  不要为多态数据创建接受**DWORD** （或其他固定精度类型）类型参数的函数。 如果数据可以是指针或整数值，则参数类型应为**UINT\_PTR**或**PVOID**，而不是**DWORD**。
 
-  例如，不创建接受的类型的异常参数数组的函数**DWORD**值。 数组应为一个数组**DWORD\_PTR**值。 因此，数组元素可以包含地址或 32 位整数值。 一般规则是，如果原始类型是**DWORD** ，它需指针宽度，将其转换为**DWORD\_PTR**值。 这是原因都有相应的本机 Win32 类型的指针精度类型。 如果使用的代码**DWORD**， **ULONG**，或其他 32 位类型中的多态方式 （即，真正想要保存一个地址的参数或结构的成员），使用**UINT\_PTR**来替代当前的类型。
+  例如，不创建接受类型化为**DWORD**值的异常参数数组的函数。 数组应为**DWORD\_PTR**值的数组。 因此，数组元素可以保存地址或32位整数值。 一般规则是，如果原始类型为**DWORD**并且它需要是指针宽度，请将其转换为**dword\_PTR**值。 这就是本机 Win32 类型有相应的指针精度类型的原因。 如果你的代码使用**DWORD**、 **ULONG**或其他32位类型的多态方式（即，你确实希望参数或结构成员保存地址），请使用**UINT\_PTR**来代替当前类型。
 
-- 调用具有输出参数的指针的函数时要小心。
+- 调用具有指针 OUT 参数的函数时请小心。
 
-  不这样做：
+  请勿执行此操作：
 
   ```cpp
   void GetBufferAddress(OUT PULONG *ptr);
@@ -203,47 +203,47 @@ ms.locfileid: "67369701"
   }
   ```
 
-  类型上强制转换*bufAddress*到 (**PULONG** \*) 可防止发生编译器错误。 但是， *GetBufferAddress*将一个 64 位值写入内存位置 *& bufAddress*。 因为*bufAddress*是仅为 32 位值，紧跟 32 位*bufAddress*将被覆盖。 这是一个非常细微，硬查找 bug。
+  Typecasting *bufAddress* To （**PULONG** \*）可防止出现编译器错误。 但是， *GetBufferAddress*会将64位值写入 *& bufAddress*的内存位置。 因为*bufAddress*只是一个32位值，所以将覆盖紧随*bufAddress*后面的32位。 这是一个非常微妙、难于发现的 bug。
 
-- 不强制转换为指针**INT**，**长**， **ULONG**，或者**DWORD**。
+- 不要将指针转换为**INT**、 **LONG**、 **ULONG**或**DWORD**。
 
-  如果必须转换为一个指针来测试某些内部测试版，设置或清除位为单位或否则为操作其内容，使用**UINT**\_**PTR**或**INT** \_**PTR**类型。 这些类型是为 32 位和 64 位 Windows 扩展到指针的大小的整型类型 (例如， **ULONG**的 32 位 Windows 和 **\_int64**的 64 位 Windows)。 例如，假设要移植的以下代码：
+  如果必须强制转换指针来测试某些位、设置或清除位或以其他方式操作其内容，请使用**UINT**\_**ptr**或**INT**\_**ptr**类型。 这些类型是一种整型类型，可缩放为32位和64位 Windows 的指针大小（例如， **ULONG**适用于32位 windows，为64位 windows **\_int64** ）。 例如，假设要移植以下代码：
 
   ```cpp
   ImageBase = (PVOID)((ULONG)ImageBase | 1);
   ```
 
-  移植过程的一部分，则会更改代码，如下所示：
+  作为移植过程的一部分，你需要更改代码，如下所示：
 
   ```cpp
   ImageBase = (PVOID)((ULONG_PTR)ImageBase | 1);
   ```
 
-  使用**UINT**\_**PTR**并**INT**\_**PTR**在适当的位置 （并且您不确定它们是否必需的没有任何危害只是在用例中使用它们）。 不强制转换的类型指针**ULONG**，**长**， **INT**， **UINT**，或**DWORD**。
+  在适当的位置使用**UINT**\_**ptr**和**INT**\_**ptr** （如果不确定是否需要它们，则在使用时，不会造成任何损害。 不要将指针转换为**ULONG**、 **LONG**、 **INT**、 **UINT**或**DWORD**类型。
 
-  **请注意** **处理**定义为**void \\** <em>因此类型上强制转换、 **处理</em>* 值**ULONG**值以测试、 设置或清除低两位是编程错误。
+  **注意** **句柄**定义为**void \\** ，因此 typecasting，要测试、设置或清除低两位的**ULONG**值<em>的 **HANDLE</em>* 值是编程错误。
 
      
 
-- 使用**PtrToLong**并**PtrToUlong**要截断的指针。
+- 使用**PtrToLong**和**PtrToUlong**截断指针。
 
-  如果必须截断为 32 位值的指针，使用**PtrToLong**或**PtrToUlong**函数 (在中定义*Basetsd.h*)。 此函数禁用调用的持续时间的指针截断警告。
+  如果必须截断指向32位值的指针，请使用**PtrToLong**或**PtrToUlong**函数（在*Basetsd*中定义）。 此函数在调用期间禁用指针截断警告。
 
-  谨慎使用这些函数。 截断指针变量时使用这些函数之一后，永远不会转换得到**长**或**ULONG**回指针。 这些函数将截断高 32 位的一个地址，这通常需要访问最初引用的指针的内存。 使用这些功能而无需仔细考虑将导致代码不太可靠。
+  仔细使用这些功能。 使用这些函数之一截断指针变量后，不要将生成的**LONG**或**ULONG**强制转换回指针。 这些函数截断地址的上限32位，通常需要使用此地址来访问指针最初引用的内存。 在不仔细考虑的情况下使用这些函数将导致代码脆弱。
 
-### <a name="data-structures-and-structure-alignment"></a>数据结构和结构对齐方式
+### <a name="data-structures-and-structure-alignment"></a>数据结构和结构对齐
 
--   请仔细检查所有使用的数据结构的指针。
+-   仔细检查数据结构指针的所有使用情况。
 
-    以下是常见的问题区域：
+    以下是常见的问题：
 
-    -   存储在磁盘上或 32 位进程与交换的数据结构。
-    -   显式和隐式具有指针的联合。
+    -   存储在磁盘上或与32位进程交换的数据结构。
+    -   带有指针的显式和隐式联合。
     -   安全描述符。
 
 <!-- -->
 
--   使用[**字段\_偏移量**](https://docs.microsoft.com/windows/desktop/api/ntdef/nf-ntdef-field_offset)宏。
+-   使用[**字段\_OFFSET**](https://docs.microsoft.com/windows/desktop/api/ntdef/nf-ntdef-field_offset)宏 "。
 
     例如：
 
@@ -255,35 +255,35 @@ ms.locfileid: "67369701"
      
     ```
 
-    以下分配是在 64 位 Windows 中不正确，因为编译器将填充与附加的 4 个字节进行的 8 字节对齐要求的结构：
+    64位 Windows 中的以下分配是不正确的，因为编译器将使用额外的4个字节填充结构以生成8字节对齐要求：
 
     ```cpp
     malloc(sizeof(DWORD)+100*sizeof(PVOID)); 
      
     ```
 
-    下面介绍了如何正确执行：
+    下面介绍如何正确执行此操作：
 
     ```cpp
     malloc(FIELD_OFFSET(struct xx, Pointers) +100*sizeof(PVOID));
     ```
 
--   使用**类型\_对齐**宏。
+-   使用 "**类型\_对齐**宏"。
 
-    **类型\_对齐**宏将返回在当前平台上给定的数据类型的对齐需求。 例如：
+    **类型\_对齐方式**宏返回当前平台上给定数据类型的对齐要求。 例如：
 
     ```cpp
     TYPE_ALIGNMENT(KFLOATING_SAVE) == 4 on x86, 8 on Itanium
     TYPE_ALIGNMENT(UCHAR) == 1 everywhere
     ```
 
-    例如，代码如下：
+    例如，如下所示的代码：
 
     ```cpp
     ProbeForRead(UserBuffer, UserBufferLength, sizeof(ULONG));
     ```
 
-    变得更易于移植到更改时：
+    更改为时变得更易于移植：
 
     ```cpp
     ProbeForRead(UserBuffer, UserBufferLength, TYPE_ALIGNMENT(ULONG));
@@ -291,11 +291,11 @@ ms.locfileid: "67369701"
 
 -   监视公共内核结构中的数据类型更改。
 
-    例如，**信息**字段中 IO\_状态\_块结构现在是类型的**ULONG\_PTR**。
+    例如，IO\_状态\_块结构的**信息**字段现在的类型为**ULONG\_PTR**。
 
--   使用结构封装指令时务必小心。
+-   使用结构打包指令时要格外小心。
 
-    在 64 位 Windows 上的数据结构未对齐，如果例程操纵结构，如[ **RtlCopyMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcopymemory)并**memcpy**，不会发生错误。 相反，它们将引发异常。 例如：
+    在64位 Windows 上，如果数据结构未对齐，则操作结构的例程（如[**RtlCopyMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcopymemory)和**memcpy**）将不会出错。 相反，它们将引发异常。 例如：
 
     ```cpp
     #pragma pack (1)  /* also set by /Zp switch */
@@ -311,7 +311,7 @@ ms.locfileid: "67369701"
     }
     ```
 
-    可以使用**未对齐**宏以解决此问题：
+    可以使用未**对齐**的宏来解决此问题：
 
     ```cpp
     void SetPointer(void *p) {
@@ -320,17 +320,17 @@ ms.locfileid: "67369701"
     }
     ```
 
-    遗憾的，使用**未对齐**宏是非常昂贵的基于 Itanium 处理器上。 更好的解决方案是将 64 位值和指针放在该结构的开头。
+    遗憾的是，使用未**对齐**的宏在基于 Itanium 的处理器上非常昂贵。 更好的解决方案是将64位值和指针放在结构的开头。
 
-    **请注意**  如果可能，避免在同一个标头文件中使用不同的封装级别。
+    **请注意**  如有可能，请避免在同一标头文件中使用不同的包装级别。
 
      
 
 ### <a name="additional-information"></a>其他信息
 
--   [在 64 位驱动程序支持 32 位 I/O](supporting-32-bit-i-o-in-your-64-bit-driver.md)
+-   [支持64位驱动程序中的32位 i/o](supporting-32-bit-i-o-in-your-64-bit-driver.md)
 
--   [获取已准备的 64 位 Windows](https://docs.microsoft.com/windows/desktop/WinProg64/getting-ready-for-64-bit-windows) （移植指南的用户模式应用程序）
+-   [准备好64位 Windows](https://docs.microsoft.com/windows/desktop/WinProg64/getting-ready-for-64-bit-windows) （用户模式应用程序移植指南）
 
  
 

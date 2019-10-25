@@ -3,43 +3,43 @@ title: 注册目标设备更改通知
 description: 注册目标设备更改通知
 ms.assetid: 5f7a9c44-c9a4-4ff8-a97d-ad2462b86af0
 keywords:
-- 通知 WDK 即插即用，目标设备更改
-- 目标设备更改通知 WDK 即插即用
+- 通知 WDK PnP，目标设备更改
+- 目标设备更改通知 WDK PnP
 - EventCategoryTargetDeviceChange 通知
-- 注册目标设备更改通知
+- 正在注册目标设备更改通知
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f50583b3b101d28c2fa8b71e185efa0c30245b8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c7490335a9b315ad9d3c28b286c7a1c0d2c1b73
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373456"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827463"
 ---
 # <a name="registering-for-target-device-change-notification"></a>注册目标设备更改通知
 
-驱动程序通过调用注册的即插即用的目标设备更改事件通知[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。
+驱动程序通过调用[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)来注册 PnP 目标设备更改事件的通知。
 
-以下信息适用于目标设备更改通知才能调用该例程：
+以下信息适用于针对目标设备更改通知调用此例程：
 
--   指定*EventCategory*的**EventCategoryTargetDeviceChange**。
+-   指定**EventCategoryTargetDeviceChange**的*EventCategory* 。
 
--   *EventCategoryData*必须指向请求通知时该设备的文件对象。
+-   *EventCategoryData*必须指向请求通知的设备的文件对象。
 
-    如果驱动程序的回调例程需要访问的文件对象，该驱动程序应该采取出对之前调用该文件对象的引用**IoRegisterPlugPlayNotification**。
+    如果驱动程序的回调例程需要访问文件对象，则在调用**IoRegisterPlugPlayNotification**之前，驱动程序应在文件对象上执行引用。
 
-    如果驱动程序的回调例程不需要对文件对象的访问，所以该驱动程序不需要来引用对象。
+    如果驱动程序的回调例程不需要访问文件对象，则驱动程序无需引用对象。
 
-    关闭文件对象之后，驱动程序将继续接收通知的设备，直到该驱动程序将删除其注册通知。 此设计允许驱动程序以接收通知的 GUID\_目标\_设备\_删除\_取消事件，例如。
+    文件对象关闭之后，驱动程序将继续接收设备的通知，直到驱动程序删除其通知注册。 此设计允许驱动程序接收 GUID\_目标\_设备的通知，\_删除\_取消的事件，例如。
 
--   指定驱动程序定义*上下文*PnP 管理器将传递给回调例程。
+-   指定 PnP 管理器将传递到回调例程的驱动程序定义的*上下文*。
 
-    驱动程序可能会使用*上下文*参数，以维护文件对象的当前状态有关的信息 （例如，它已关闭/删除）。
+    驱动程序可以使用*上下文*参数来维护有关文件对象的当前状态的信息（例如，已关闭/删除）。
 
-    驱动程序还可以使用*上下文*来存储它用于最初打开设备的路径。 驱动程序可以使用此路径以已取消删除操作后，重新打开该设备。 (请参阅[处理 GUID\_目标\_设备\_删除\_取消事件](handling-a-guid-target-device-remove-cancelled-event.md)有关详细信息。)
+    驱动程序还可以使用*上下文*来存储它最初打开设备所用的路径。 驱动程序可以在取消删除操作后使用此路径重新打开设备。 （有关详细信息，请参阅[处理 GUID\_目标\_设备\_删除\_取消事件](handling-a-guid-target-device-remove-cancelled-event.md)。）
 
-驱动程序通过调用来消除通知注册[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。 如果驱动程序执行扩展上的文件对象的引用的注册用于通知和引用是仍未完成时，该驱动程序必须释放该引用后删除的注册。
+驱动程序通过使用**IoRegisterPlugPlayNotification**返回的*NotificationEntry*调用[**IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)来删除通知注册。 如果驱动程序在注册通知时已对文件对象进行了引用，但该引用仍未完成，则驱动程序必须在删除注册后释放该引用。
 
  
 

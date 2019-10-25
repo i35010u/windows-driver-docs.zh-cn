@@ -1,18 +1,18 @@
 ---
-title: 使用 IoIs32bitProcess 扩展的示例
-description: 使用 IoIs32bitProcess 扩展的示例
+title: 使用 IoIs32bitProcess 的扩展示例
+description: 使用 IoIs32bitProcess 的扩展示例
 ms.assetid: bb73d16c-9f9f-41ff-ac0b-8af31c6f55f4
 keywords:
-- 32 位 I/O 支持 WDK 64 位 IoIs32bitProcess
+- 32位 i/o 支持 WDK 64 位，IoIs32bitProcess
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9efdfbc5e25566cad35329c83f0dab809e3d54a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 12a11edda5de2fe28e1216986f2ee333b1585e9f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386619"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836719"
 ---
 # <a name="extended-example-using-iois32bitprocess"></a>扩展示例：使用 IoIs32bitProcess
 
@@ -20,7 +20,7 @@ ms.locfileid: "67386619"
 
 
 
-下面的示例演示如何通过添加对的调用来修改用于 64 位的 32 位驱动程序[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)。 请注意，此示例显示只需要修改的驱动程序代码的部分。
+下面的示例演示如何通过添加对[**IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iois32bitprocess)的调用来修改64位的32位驱动程序。 请注意，此示例仅显示需要修改的驱动程序代码的部分。
 
 ### <a name="original-driver-code"></a>原始驱动程序代码
 
@@ -60,7 +60,7 @@ TestdrvFsControl (
 }
 ```
 
-### <a name="driver-code-with-thunking-support"></a>通过形式转换支持的驱动程序代码
+### <a name="driver-code-with-thunking-support"></a>具有 Thunk 支持的驱动程序代码
 
 ```cpp
 typedef struct _TESTDRV_EVENT_BUFFER {

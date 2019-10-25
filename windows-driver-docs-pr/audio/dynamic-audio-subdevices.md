@@ -3,57 +3,57 @@ title: 动态音频子设备
 description: 动态音频子设备
 ms.assetid: d8ebd6d9-37ed-4890-aae1-5ecf58f2e22a
 keywords:
-- WDM 音频驱动程序 WDK，动态子设备
-- 音频驱动程序 WDK，动态子设备
-- 动态子音频设备 WDK 音频
-- 子设备 WDK 音频
+- WDM 音频驱动程序 WDK，动态 subdevices
+- 音频驱动程序 WDK，动态 subdevices
+- 动态音频 subdevices WDK 音频
+- subdevices WDK 音频
 - 音频编解码器 WDK
-- jack 存在检测 WDK 音频
-- 删除子设备
-- 删除子设备
-- 正在注销子设备
-- 动态子设备 WDK 音频
+- 插座状态检测 WDK 音频
+- 删除 subdevices
+- 删除 subdevices
+- 正在取消注册 subdevices
+- 动态 subdevices WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b761fe581a382bd4ec2842b0f0fa5f0599f43c68
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 73b038ccfd4f2bb4ef9fc6331d5905771305d8b1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360080"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831257"
 ---
 # <a name="dynamic-audio-subdevices"></a>动态音频子设备
 
 
-某些音频适配器可以在运行时动态更改其内部的拓扑。 通过在 PortCls 系统驱动程序 (Portcls.sys) 中使用的系统提供的功能，适配器驱动程序可以提供可动态配置的音频硬件的软件的支持。
+某些音频适配器可在运行时动态更改其内部拓扑。 通过使用 PortCls 系统驱动程序（Portcls）中系统提供的功能，适配器驱动程序可以为动态配置的音频硬件提供软件支持。
 
-例如， [Intel 高定义音频规范](https://go.microsoft.com/fwlink/p/?linkid=42508)使用的术语音频编解码器来指代集成音频适配器连接到通过 HD 音频链接界面的高清晰度音频 (HD Audio) 控制器。 典型的音频编解码器支持 jack 在场检测： 硬件即插即用是插入或删除时从一个插孔，生成中断通知在硬件配置中更改的驱动程序。 例如，驱动程序插入到耳机插孔的即插即用的响应创建[KS 筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-filters)来表示耳机音频子。 该驱动程序将硬件资源分配给筛选器 （例如，耳机可能要求的音量控件和数字模拟转换器或 DAC） 并将该筛选器注册为音频设备。 当用户断开耳机时，驱动程序通过释放资源，正在删除筛选器，并从注册表中删除该响应。
+例如， [Intel 高质音频规范](https://go.microsoft.com/fwlink/p/?linkid=42508)使用术语 "音频编解码器" 引用通过高清音频链接接口连接到高清晰音频（HD 音频）控制器的集成音频适配器。 典型的音频编解码器支持插孔状态检测：当插入插座或从插孔中删除插件时，硬件将生成一个中断以通知驱动程序硬件配置中的更改。 例如，驱动程序通过创建用于表示耳机音频 subdevice 的[KS 筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-filters)来响应插入耳机插孔的插入。 驱动程序将硬件资源分配给筛选器（例如，耳机可能需要使用音量控制和数字到模拟转换器或 DAC），并将筛选器注册为音频设备。 当用户断开耳机时，驱动程序将通过释放资源、删除筛选器并从注册表中删除来做出响应。
 
-此行为可确保当音频应用程序检查以查看哪些音频设备注册时，找到目前处于插入状态的设备。 如果设备被拔出，它不在注册表中。
+此行为可确保当音频应用程序检查哪些音频设备已注册时，它仅查找当前插入的设备。 如果设备已拔出，则它不会显示在注册表中。
 
-在 Windows Vista、 Windows Server 2003 Service Pack 1 (SP1) 和 Windows XP Service Pack 2 (SP2)，支持 PortCls [IUnregisterSubdevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iunregistersubdevice)并[IUnregisterPhysicalConnection](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iunregisterphysicalconnection)接口。 音频适配器驱动程序使用这两个接口删除不再使用的音频子设备。 早期版本的 Windows，包括 Windows Server 2003 和 Windows XP 不支持这些接口。 在这些早期版本的 Windows 中，子设备可以是创建但未删除--一旦创建子，它存在适配器驱动程序对象的生存期内。
+在 Windows Vista 中，Windows Server 2003 Service Pack 1 （SP1）和 Windows XP Service Pack 2 （SP2），PortCls 支持[IUnregisterSubdevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iunregistersubdevice)和[IUnregisterPhysicalConnection](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iunregisterphysicalconnection)接口。 音频适配器驱动程序使用这两个接口删除不再使用的音频 subdevices。 Windows 的早期版本（包括 Windows Server 2003 和 Windows XP）不支持这些接口。 在这些早期版本的 Windows 中，可以创建但不删除 subdevices--一旦创建了 subdevice，就会在适配器驱动程序对象的生存期内使用它。
 
-**IUnregisterSubdevice**接口包含一个方法，该适配器驱动程序可以使用"注销"驱动程序已注册通过以前调用子[ **PcRegisterSubdevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)例程：
+**IUnregisterSubdevice**接口包含单一方法，适配器驱动程序可以使用该方法 "取消注册" subdevice，驱动程序通过之前对[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)例程的调用注册了该驱动程序：
 
-[**IUnregisterSubdevice::UnregisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iunregistersubdevice-unregistersubdevice)
+[**IUnregisterSubdevice::UnregisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iunregistersubdevice-unregistersubdevice)
 
-**IUnregisterPhysicalConnection**接口包含三个适配器驱动程序可用于取消注册子设备之间的物理连接的方法：
+**IUnregisterPhysicalConnection**接口包含三种方法，适配器驱动程序可以使用这些方法注销 subdevices 之间的物理连接：
 
-[**IUnregisterPhysicalConnection::UnregisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iunregisterphysicalconnection-unregisterphysicalconnection)
+[**IUnregisterPhysicalConnection::UnregisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iunregisterphysicalconnection-unregisterphysicalconnection)
 
-[**IUnregisterPhysicalConnection::UnregisterPhysicalConnectionFromExternal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iunregisterphysicalconnection-unregisterphysicalconnectionfromexternal)
+[**IUnregisterPhysicalConnection::UnregisterPhysicalConnectionFromExternal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iunregisterphysicalconnection-unregisterphysicalconnectionfromexternal)
 
-[**IUnregisterPhysicalConnection::UnregisterPhysicalConnectionToExternal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iunregisterphysicalconnection-unregisterphysicalconnectiontoexternal)
+[**IUnregisterPhysicalConnection::UnregisterPhysicalConnectionToExternal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iunregisterphysicalconnection-unregisterphysicalconnectiontoexternal)
 
-这些方法可删除通过以前调用注册的驱动程序的连接[ **PcRegisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnection)， [ **PcRegisterPhysicalConnectionFromExternal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnectionfromexternal)，并[ **PcRegisterPhysicalConnectionToExternal** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnectiontoexternal)例程。 将从 PcRegisterPhysicalConnection 信息存储在 PortCls*Xxx*调用，以便端口驱动程序随后可以使用的信息来响应[ **KSPROPERTY\_PIN\_PHYSICALCONNECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection)属性请求。 在删除子从适配器的拓扑时，该驱动程序必须取消注册子的物理连接到拓扑的该部分。 若要取消注册子的物理连接可能导致内存泄漏。 PortCls 支持 PcRegister*Xxx*例程在 Windows 2000 及更高版本和 Windows Me / 98。
+这些方法删除了驱动程序通过先前对[**PcRegisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnection)、 [**PcRegisterPhysicalConnectionFromExternal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnectionfromexternal)和[**PcRegisterPhysicalConnectionToExternal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregisterphysicalconnectiontoexternal)例程的调用注册的连接。 PortCls 存储 PcRegisterPhysicalConnection*Xxx*调用中的信息，以便端口驱动程序随后可以使用该信息对[**KSPROPERTY\_PIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection)属性请求进行响应。 从适配器的拓扑中删除 subdevice 时，驱动程序必须将 subdevice 的物理连接取消注册到拓扑的该部分。 未能注销 subdevice 的物理连接可能会导致内存泄漏。 PortCls 支持 Windows 2000 和更高版本以及 Windows Me/98 中的 PcRegister*Xxx*例程。
 
-在本部分中的以下主题介绍如何实现具有动态拓扑的适配器的驱动程序支持：
+本节中的以下主题介绍如何为具有动态拓扑的适配器实现驱动程序支持：
 
 [管理动态拓扑](managing-dynamic-topologies.md)
 
-[针对动态子设备驱动程序支持](driver-support-for-dynamic-subdevices.md)
+[动态 Subdevices 的驱动程序支持](driver-support-for-dynamic-subdevices.md)
 
-[Jack 动态子音频设备的说明](jack-descriptions-for-dynamic-audio-subdevices.md)
+[动态音频 Subdevices 的插孔说明](jack-descriptions-for-dynamic-audio-subdevices.md)
 
  
 

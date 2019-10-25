@@ -11,12 +11,12 @@ keywords:
 - 工作状态 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76fc89283d06eae980b2e7238b80c99246b078c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3779d3bc717cbcb91c7befe5c75fe20c0c2c868f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378828"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827629"
 ---
 # <a name="preventing-system-power-state-changes"></a>阻止系统电源状态更改
 
@@ -24,15 +24,15 @@ ms.locfileid: "67378828"
 
 
 
-虽然驱动程序不能直接设置系统电源策略，但电源管理器提供了三个例程，通过该驱动程序可以阻止从工作状态的系统转换：[**PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)， [ **PoRegisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregistersystemstate)，以及[ **PoUnregisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pounregistersystemstate)。
+尽管驱动程序不能直接设置系统电源策略，但电源管理器提供了三个例程，驱动程序可通过这些例程防止系统转换出工作状态： [**PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)、 [**PoRegisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregistersystemstate)和[**PoUnregisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pounregistersystemstate)。
 
-通过调用**PoRegisterSystemState**或**PoSetSystemState**，驱动程序可以通知电源管理器，用户是否存在或该驱动程序需要使用的系统或显示。
+通过调用**PoRegisterSystemState**或**PoSetSystemState**，驱动程序可以通知电源管理器用户存在，或者驱动程序需要使用系统或显示。
 
-**PoRegisterSystemState**使驱动程序以注册连续的忙碌状态。 它将返回的句柄，通过该驱动程序可以在以后更改其设置。 只要状态注册生效时，电源管理器不会尝试将系统进入睡眠状态。 该驱动程序通过调用取消状态注册**PoUnregisterSystemState**。
+**PoRegisterSystemState**允许驱动程序注册连续繁忙状态。 它将返回一个句柄，驱动程序可在以后更改其设置。 只要状态注册生效，电源管理器不会尝试将系统置于睡眠状态。 驱动程序通过调用**PoUnregisterSystemState**取消状态注册。
 
-与**PoSetSystemState**、 驱动程序会通知相同的条件 （存在用户，所需的系统，显示所需） 的电源管理器，但此设置不连续。 它具有重启与指定的条件相关联的任何空闲计数列表的效果。
+使用**PoSetSystemState**时，驱动程序会向电源管理器通知相同的条件（用户存在、需要系统、显示），但此设置不是连续的。 它具有重新启动任何与指定条件关联的空闲计数的影响。
 
-使用这些例程，驱动程序可以阻止许多，但并非所有转换从工作状态。 电源管理器始终关闭系统即将断电时或者当用户显式请求关闭。
+使用这些例程，驱动程序可以 forestall 多个（但不是全部）从工作状态进行的转换。 当掉电断电或用户显式请求关闭时，电源管理器始终关闭系统。
 
  
 

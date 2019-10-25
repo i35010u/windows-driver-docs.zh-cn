@@ -3,88 +3,88 @@ title: 支持命令列表
 description: 支持命令列表
 ms.assetid: 7bede247-680d-4fd3-a10b-6ef63f0a88ec
 keywords:
-- Direct3D 11 版 WDK Windows 7 显示，命令将列出
-- Direct3D 11 版 WDK Windows Server 2008 R2 显示，命令将列出
-- 命令将列出支持 WDK Windows 7 显示
-- 命令将列出支持 WDK Windows 7 显示，Direct3D 版本 11
+- Direct3D 版本 11 WDK Windows 7 显示，命令列表
+- Direct3D 版本 11 WDK Windows Server 2008 R2 显示，命令列表
+- 命令列表支持 WDK Windows 7 显示
+- 命令列表支持 WDK Windows 7 显示，Direct3D 版本11
 - 命令列表支持 WDK Windows 2008 R2 显示
-- 命令列表支持 WDK Windows 2008 R2 显示，Direct3D 版本 11
+- 命令列表支持 WDK Windows 2008 R2 显示，Direct3D 版本11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e801e3729c926995f2a251cd32f3f27a47a05cc5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d8b6bd7aa77754b836f5f9f3bf5e1215736ad6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385948"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825673"
 ---
 # <a name="supporting-command-lists"></a>支持命令列表
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows。
+本部分仅适用于 Windows 7 和更高版本以及 Windows Server 2008 R2 及更高版本的 Windows。
 
-Direct3D 运行时使用以下 Direct3D 11 DDI 的命令列表：
+Direct3D 运行时使用以下适用于命令列表的 Direct3D 11 DDI：
 
--   [ **CalcPrivateCommandListSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)函数将确定用户模式显示驱动程序的专用区域的命令列表的内存的大小。
+-   [**CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)函数确定命令列表的用户模式显示驱动程序的专用内存区域大小。
 
--   [ **CreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)函数会创建命令列表。
+-   [**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)函数创建命令列表。
 
--   [ **RecycleCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)函数回收命令列表。
+-   [**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)函数将回收命令列表。
 
--   [ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数创建命令列表，并使以前未使用的 DDI 句柄再次完全有效。
+-   [**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数创建命令列表，并使以前未使用的 DDI 句柄再次失效。
 
--   [ **DestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数会销毁命令列表。
+-   [**DestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数销毁命令列表。
 
--   [ **RecycleDestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数会通知驱动程序的命令列表的轻量析构是必需。
+-   [**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数通知驱动程序需要对命令列表进行轻型销毁。
 
--   [ **CommandListExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)函数运行的命令列表。
+-   [**CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)函数运行命令列表。
 
-驱动程序的语义[ **CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)， [ **CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)， [ **CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)，并[ **DestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数主要是自我解释，根据其他类似 DDI 函数和 API相应 DDI 的文档。
+驱动程序的[**CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)、 [**CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)、 [**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)和[**DestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数的语义大多都可以根据其他类似的 DDI 函数和 API 进行自我解释对应 DDI 的文档。
 
-在 Direct3D 后运行时已成功调用的驱动程序[ **CreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)或[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数延迟中指定的上下文**hDeferredContext**的成员[ **D3D11DDIARG\_CREATECOMMANDLIST** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createcommandlist)结构*pCreateCommandList*参数所指向，Direct3D 运行时上下文中执行以下析构序列延迟：
+Direct3D 运行时在 D3D11DDIARG 的**hDeferredContext**成员中指定的延迟上下文中成功调用了驱动程序的[**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)或[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createcommandlist) *PCreateCommandList*参数指向的 CREATECOMMANDLIST 结构，Direct3D 运行时对延迟的上下文执行以下析构序列：
 
-1.  Direct3D 运行时"关闭"所有打开的延迟的对象句柄。 请注意，这些句柄可能仍会显示绑定到推迟的上下文。
+1.  Direct3D 运行时 "关闭" 所有打开的延迟对象句柄。 请注意，这些句柄可能仍会绑定到延迟的上下文。
 
-2.  在运行时销毁推迟的上下文。
+2.  运行时销毁延迟的上下文。
 
-在调用[ **CreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)或[ **RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)，驱动程序对任何调用[状态刷新 DDI 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)继续将泄露推迟的上下文的当前状态。 但是，在"正在关闭"和析构的推迟的上下文，对状态刷新 DDI 的任何调用反映绑定执行任何操作 (即，在调用后立即*CreateCommandList*或*RecycleCreateCommandList*，所有内容都是隐式绑定)。
+在对[**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)或[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)的调用期间，驱动程序对[状态刷新 DDI 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)所做的任何调用都将继续愿意延迟上下文的当前状态。 但是，在延迟上下文的 "正在关闭" 和 "销毁" 过程中，对状态刷新 DDI 的任何调用都将反映未绑定任何内容（即，在调用*CreateCommandList*或*RecycleCreateCommandList*后立即隐式取消绑定）。
 
-推迟的上下文可以还放弃显式由应用程序或由于错误条件而通过 API 或驱动程序。 对于这种情况下，Direct3D 运行时执行以下顺序：
+延迟的上下文也可由应用程序显式放弃，或因 API 或驱动程序的错误条件而放弃。 对于这种情况，Direct3D 运行时将执行以下序列：
 
-1.  Direct3D 运行时调用的驱动程序[ **AbandonCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)函数。
+1.  Direct3D 运行时调用驱动程序的[**AbandonCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)函数。
 
-2.  在运行时取消绑定一个一个地推迟的上下文中的句柄。
+2.  运行时逐个解除对延迟上下文的句柄。
 
-3.  在运行时"关闭"所有打开的延迟的对象句柄。
+3.  运行时 "关闭" 所有打开的延迟对象句柄。
 
-4.  在运行时任一 recyles 或销毁推迟的上下文。
+4.  运行时 recyles 或销毁延迟的上下文。
 
-上述顺序是类似于即时上下文析构序列。 对驱动程序的调用[ **AbandonCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)函数提供了驱动程序将状态应用到任何驱动程序首选的机会。
+上述序列类似于直接上下文的析构序列。 对驱动程序的[**AbandonCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_abandoncommandlist)函数的调用为驱动程序提供了一种机会，使其能够将状态应用到驱动程序首选的任何内容。
 
-在驱动程序在调用[ **CommandListExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)函数，该驱动程序必须转换推迟的上下文，以使其等效于状态创建设备时的状态。 此操作也称为是清除状态操作。 在驱动程序在调用**CommandListExecute**函数，但是，该驱动程序对任何调用[状态刷新 DDI 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)仍反映什么绑定期间的状态最后一个 DDI 调用驱动程序函数。 在驱动程序函数的后续 DDI 调用，任何驱动程序对状态刷新 DDI 回调函数的调用会显示当前状态为完全为空，这反映了隐式从状态转换**CommandListExecute**. 这一事实从典型语义和状态刷新 DDI 回调函数的行为略有不同。 如果该驱动程序已在一个驱动程序的调用期间调用状态刷新 DDI 回调函数*SetShader*函数，该状态刷新 DDI 回调函数将显示为已绑定被绑定的新着色器。 此分歧状态刷新 DDI 回调行为提供了驱动程序，以反映过程的旧状态可以更加灵活**CommandListExecute**。
+在对驱动程序的[**CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)函数的调用过程中，驱动程序必须转换延迟上下文的状态，使其与创建设备时的状态等效。 此操作也称为 "清除状态" 操作。 但是，在调用驱动程序的**CommandListExecute**函数时，驱动程序对[状态刷新 DDI 回叫函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)所做的任何调用仍将反映在对驱动程序函数的上一次 DDI 调用期间绑定的内容的状态。 在下一次 DDI 调用驱动程序函数的过程中，驱动程序对状态刷新 DDI 回调函数所做的任何调用都将当前状态显示为完全为空，这反映了从**CommandListExecute**隐式的状态转换。 此事实与状态刷新 DDI 回叫函数的典型语义和行为稍有不同。 如果在对某个驱动程序的*SetShader*函数的调用过程中，驱动程序已调用状态刷新 ddi 回叫函数，则状态刷新 DDI 回叫函数将显示为已绑定的新着色器。 状态刷新 DDI 回叫行为的这种分歧为驱动程序提供了更大的灵活性，以便在**CommandListExecute**期间反映旧状态。
 
-Direct3D 11 版 API 可确保，没有查询已被同时操作 (即，具有[ **QueryBegin** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_querybegin)或[ **QueryEnd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_queryend)对其进行调用) 的命令列表和已仅"开始"的尝试执行命令列表的上下文。 API 还可确保具有相同的资源当前映射的上下文执行没有记录的映射的动态资源的命令列表。 应用程序调用之前**FinishCommandList**函数，Direct3D 运行时调用的驱动程序**QueryEnd**并[ **ResourceUnmap** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourceunmap)在任何查询或动态资源仍保留开始查询或映射的资源上 DDI 函数打开，因为**FinishCommandList**隐式终止查询范围，并取消映射映射的任何资源。
+Direct3D 版本 11 API 确保命令列表不会两次操作（即，在其上调用[**QueryBegin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_querybegin)或[**QueryEnd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_queryend) ），并且仅由尝试执行命令列表的上下文 "开始"。 该 API 还可以确保不会在当前映射了相同资源的上下文中执行记录动态资源映射的命令列表。 在应用程序调用**FinishCommandList**函数之前，Direct3D 运行时对仍包含已开始查询或已映射资源打开的任何查询或动态资源调用驱动程序的**QueryEnd**和[**ResourceUnmap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourceunmap) DDI 函数因为**FinishCommandList**将隐式终止查询范围并 messagebox 取消任何映射的资源。
 
-### <a name="span-idoptimizationforsmallcommandlistsspanspan-idoptimizationforsmallcommandlistsspan-optimization-for-small-command-lists"></a><span id="optimization_for_small_command_lists"></span><span id="OPTIMIZATION_FOR_SMALL_COMMAND_LISTS"></span> 优化的小命令列表
+### <a name="span-idoptimization_for_small_command_listsspanspan-idoptimization_for_small_command_listsspan-optimization-for-small-command-lists"></a><span id="optimization_for_small_command_lists"></span><span id="OPTIMIZATION_FOR_SMALL_COMMAND_LISTS"></span>优化小命令列表
 
-小内存量命令列表的优化的内存回收可以减少命令列表 DDI 函数调用间的争用以及以减少所需的命令列表的调用处理的开销很重要。 Inherant 每个命令列表中的处理开销很重要。 这种优化适用于其中的处理开销所需的命令列表支配的 CPU 时间和内存空间所需的命令列表的命令列表。 例如，小内存量命令列表是单个图形命令，如 CopyResource。 CopyResource 两个指针所需的内存量。 但是，CopyResource 仍需要处理作为较大内存量命令列表的命令列表调用相同的量。 高频率生成小内存量命令列表时, 的处理开销调用所需的运行时，驱动程序的[ **CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)， [ **DestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)， [ **CreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)，并[ **DestroyDevice(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroydevice)函数 （对于延迟上下文） 变得日益重要。 此处提到的内存是保存驱动程序的数据结构，其中包括 DDI 句柄的内存的系统内存。
+对于小内存量的命令列表，内存回收优化对于减少命令列表 DDI 函数调用中的争用和减少命令列表所需的调用处理的开销可能很重要。 每个命令列表中 inherant 的处理开销都非常重要。 此优化适用于命令列表，其中，命令列表所需的处理开销支配命令列表所需的 CPU 时间和内存空间。 例如，一个小内存量的命令列表，如 CopyResource。 CopyResource 所需的内存量为两个指针。 但是，CopyResource 仍要求使用与大内存量命令列表相同的命令列表调用处理量。 如果以高频率生成小内存量命令列表，运行时调用驱动程序的[**CreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcommandlist)、 [**DestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)、 [**CreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)和[**DestroyDevice （D3D10）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroydevice)函数（适用于延迟上下文）变得越来越重要。 此处引用的内存是包含驱动程序数据结构的系统内存，其中包括 DDI 句柄的内存。
 
-在驱动程序[ **RecycleCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)函数必须通知该驱动程序时驱动程序句柄进入扩展的使用 （但不是会删除），以及何时以前未使用的驱动程序句柄是重复使用。 此通知将应用到命令列表和延迟的上下文句柄。 该驱动程序必须回收的唯一内存是 DDI 处理指向的内存。 尽管的目的**RecycleCommandList**是效率驱动程序有很灵活地选择哪些内存回收回收句柄，与关联的内存。 该驱动程序不能更改的即时上下文命令列表到处理点的内存区域的大小。 此大小是返回的值[ **CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)。 该驱动程序也不能更改的所属上下文命令列表本地处理点的内存区域的大小。此大小是返回的值[ **CalcDeferredContextHandleSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)。
+驱动程序的[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)函数必须在驱动程序处理程序不使用时（但尚未删除）通知驱动程序，并且在以前未使用的驱动程序句柄重新使用时。 此通知适用于命令列表和延迟上下文句柄。 驱动程序必须回收的唯一内存是 DDI 句柄指向的内存。 尽管**RecycleCommandList**的目标是回收与句柄关联的内存，但为了提高效率，驱动程序可以灵活地选择和选择要回收的内存。 驱动程序无法更改直接上下文命令列表处理点的内存区域的大小。 此大小是[**CalcPrivateCommandListSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatecommandlistsize)的返回值。 驱动程序还无法更改上下文命令列出本地句柄的内存区域的大小。此大小是[**CalcDeferredContextHandleSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)的返回值。
 
-在驱动程序[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)并[ **RecycleCreateDeferredContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatedeferredcontext) DDI 函数必须返回内存不足错误代码为 E\_OUTOFMEMORY HRESULT 值。 这些函数不提供通过调用此类错误代码[ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)函数。 此驱动程序要求可防止在运行时无需使用设备级同步要监视的即时上下文错误从这些创建类型驱动程序函数。 观看这些错误会发生灾难性争用小内存量命令列表的源。
+驱动程序的[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)和[**RecycleCreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatedeferredcontext) DDI 函数必须以 E\_OUTOFMEMORY HRESULT 值的形式返回内存不足错误代码。 这些函数不会通过调用[**pfnSetErrorCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)函数提供此类错误代码。 此驱动程序要求会使运行时不必使用设备范围的同步来监视这些 create 类型驱动程序函数的即时上下文错误。 监视这些错误会成为小内存量命令列表的灾难性争用源。
 
-在驱动程序的之间的区别[ **RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)， [ **RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)，和[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数也很重要。 其功能包括：
+驱动程序的[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)、 [**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)和[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数之间的区别很重要。 其功能包括：
 
-<span id="RecycleDestroyCommandList"></span><span id="recycledestroycommandlist"></span><span id="RECYCLEDESTROYCOMMANDLIST"></span>[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)  
-运行时调用的驱动程序[ **RecycleDestroyCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数，以通知轻型析构是必需的驱动程序。 也就是说，驱动程序不应尚未取消分配内存 DDI 命令列表句柄。 在驱动程序*RecycleDestroyCommandList*函数是自由线程就像在驱动程序一样**DestroyCommandList**函数。
+<span id="RecycleDestroyCommandList"></span><span id="recycledestroycommandlist"></span><span id="RECYCLEDESTROYCOMMANDLIST"></span>[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)  
+运行时调用驱动程序的[**RecycleDestroyCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroycommandlist)函数，以通知驱动程序需要轻型销毁。 也就是说，驱动程序不应为 DDI 命令列表句柄释放内存。 驱动程序的*RecycleDestroyCommandList*函数是自由线程，就像驱动程序的**DestroyCommandList**函数一样。
 
-<span id="RecycleCommandList"></span><span id="recyclecommandlist"></span><span id="RECYCLECOMMANDLIST"></span>[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)  
-在驱动程序[ **RecycleCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)函数告知驱动程序运行时集成回延迟的上下文缓存的命令列表句柄。 该函数然后提供有机会将与命令列表返回到延迟的上下文缓存相关联的内存进行驱动程序。 运行时调用的驱动程序**RecycleCommandList**从延迟的上下文线程的函数。 **RecycleCommandList** DDI 函数降低了驱动程序来执行其自己的同步。
+<span id="RecycleCommandList"></span><span id="recyclecommandlist"></span><span id="RECYCLECOMMANDLIST"></span>[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)  
+驱动程序的[**RecycleCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecommandlist)函数通知驱动程序运行时将命令列表句柄集成回延迟的上下文缓存。 然后，该函数为驱动程序提供了一种机会，以便将与命令列表关联的内存集成回延迟上下文缓存。 运行时通过延迟上下文线程调用驱动程序的**RecycleCommandList**函数。 **RecycleCommandList** DDI 函数降低了驱动程序执行其自身同步的需要。
 
-<span id="RecycleCreateCommandList"></span><span id="recyclecreatecommandlist"></span><span id="RECYCLECREATECOMMANDLIST"></span>[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)  
-运行时调用的驱动程序[ **RecycleCreateCommandList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数可再次完全有效以前未使用的 DDI 句柄。
+<span id="RecycleCreateCommandList"></span><span id="recyclecreatecommandlist"></span><span id="RECYCLECREATECOMMANDLIST"></span>[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)  
+运行时调用驱动程序的[**RecycleCreateCommandList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_recyclecreatecommandlist)函数，使以前未使用的 DDI 句柄再次生效。
 
-这些循环使用 DDI 函数提供优化机会，帮助回收小内存量命令列表的资源。 下面的伪代码显示了运行时通过从 API 到 DDI 的函数调用的流的实现：
+这些回收 DDI 函数提供优化机会，有助于回收小内存量命令列表的资源。 下面的伪代码演示了如何通过从 API 到 DDI 的函数调用流实现运行时：
 
 ```cpp
 ::FinishCommandList()
@@ -119,9 +119,9 @@ CommandList::Destroy()
 }
 ```
 
-以下状态图显示了即时上下文 DDI 命令列表句柄的有效性。 绿色状态表示可用于的句柄[ **CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)。
+以下状态图显示了即时上下文 DDI 命令列表句柄的有效性。 绿色状态表示可与[**CommandListExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_commandlistexecute)一起使用的句柄。
 
-![说明命令列表句柄有效性状态关系图](images/d3d11ddi2.png)
+![说明命令列表句柄有效性状态的关系图](images/d3d11ddi2.png)
 
  
 

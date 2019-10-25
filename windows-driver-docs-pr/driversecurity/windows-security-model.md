@@ -1,260 +1,260 @@
 ---
 title: 适用于驱动程序开发人员的 Windows 安全模型
-description: Windows 安全模型是主要基于每个对象的权限，只有少量的系统范围的权限。
+description: Windows 安全模型主要基于每个对象的权限，具有少量的系统范围权限。
 ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bf94f3917fe21917a4136cd5f4f7ffd40c18f820
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce533aa2a2557b582d341a4737504bc6dfde85c1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371995"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829128"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>驱动程序开发人员的 Windows 安全模型
 
-Windows 安全模型基于安全对象。 每个组件的操作系统必须确保它所负责的对象的安全性。 驱动程序，因此，必须保护其设备和设备对象的安全性。
+Windows 安全模型基于安全对象。 操作系统的每个组件必须确保其负责的对象的安全性。 因此，驱动程序必须保护其设备和设备对象的安全性。
 
-本主题概述了如何将 Windows 安全模型适用于内核模式驱动程序。 
+本主题概述了如何将 Windows 安全模型应用于内核模式驱动程序。 
 
 
 ## <a name="windows-security-model"></a>Windows 安全模型
 
-Windows 安全模型是主要基于每个对象的权限，只有少量的系统范围的权限。 可以保护的对象包括，— 但不限于，— 进程、 线程、 事件和其他同步对象，以及文件、 目录和设备。
+Windows 安全模型主要基于每个对象的权限，具有少量的系统范围权限。 可以保护的对象包括（但不限于）进程、线程、事件和其他同步对象以及文件、目录和设备。
 
-对于每个类型的对象，泛型读取、 写入和执行权限映射到详细的特定于对象的权限。 例如，对于文件和目录，可能的权限包括读取或写入文件或目录、 读取或写入扩展的文件属性的权限、 遍历一个目录的权限和写入对象的安全描述符的权限的权限。 
+对于每种类型的对象，一般的 "读取"、"写入" 和 "执行" 权限映射到特定于对象的特定权限。 例如，对于文件和目录，可能的权限包括读取或写入文件或目录的权限、读取或写入扩展文件属性的权限、遍历目录的权限以及写入对象的安全描述符的权限。 
 
-安全模型涉及到以下概念：
+安全模式涉及以下概念：
 
--   安全标识符 (Sid)
+-   安全标识符（Sid）
 -   访问令牌
 -   安全描述符
--   访问控制列表 (Acl)
+-   访问控制列表（Acl）
 -   权限
 
-### <a name="span-idsecurityidentifierssidsspanspan-idsecurityidentifierssidsspanspan-idsecurityidentifierssidsspansecurity-identifiers-sids"></a><span id="Security_Identifiers__SIDs_"></span><span id="security_identifiers__sids_"></span><span id="SECURITY_IDENTIFIERS__SIDS_"></span>安全标识符 (Sid)
+### <a name="span-idsecurity_identifiers__sids_spanspan-idsecurity_identifiers__sids_spanspan-idsecurity_identifiers__sids_spansecurity-identifiers-sids"></a><span id="Security_Identifiers__SIDs_"></span><span id="security_identifiers__sids_"></span><span id="SECURITY_IDENTIFIERS__SIDS_"></span>安全标识符（Sid）
 
 
-安全标识符 (SID，也称为*主体*) 标识用户、 组或登录会话。 每个用户具有一个唯一的 SID，操作系统在登录时进行检索。
+安全标识符（SID，也称为*主体*）标识了用户、组或登录会话。 每个用户都有一个唯一的 SID，由操作系统在登录时检索。
 
-Sid 由如 operating system 或域服务器的颁发机构颁发。 一些 Sid 众所周知，并具有名称和标识符。 例如，SID S-1-1-0 标识每个人 （或世界）。
+Sid 由操作系统或域服务器等机构颁发。 某些 Sid 是众所周知的，并且具有名称和标识符。 例如，SID S-1-1-0 标识所有人（或世界）。
 
 
 ### <a name="access-tokens"></a>访问令牌
 
-每个进程具有访问令牌。 访问令牌描述过程的完整的安全的上下文。 它包含在用户的 SID 的用户所属的组 SID 和登录会话的 SID，以及授予用户的系统级权限的列表。
+每个进程都有一个访问令牌。 访问令牌描述进程的完整安全上下文。 它包含用户的 SID、用户所属的组的 SID 和登录会话的 SID，以及向用户授予的系统范围的特权的列表（& a）。
 
-默认情况下，系统使用的主访问令牌的进程时进程的线程与安全对象进行交互。 但是，线程可以模拟客户端帐户。 当一个线程模拟时，它具有除其自身的主令牌的模拟令牌。 模拟令牌都描述在线程正在模拟的用户帐户的安全上下文。 模拟是远程过程调用 (RPC) 处理中尤为常见。
+默认情况下，只要进程的线程与安全对象进行交互，系统就会对进程使用主访问令牌。 但是，线程可以模拟客户端帐户。 当线程模拟时，它除了具有其自己的主令牌外，还具有一个模拟令牌。 模拟标记描述线程正在模拟的用户帐户的安全上下文。 模拟在远程过程调用（RPC）处理中尤其常见。
 
-介绍了线程或进程的受限制的安全上下文的访问令牌调用受限制的令牌。 中的 Sid*受限的令牌*可以设置只为拒绝访问，不允许访问，对安全对象。 此外，该标记可以描述一组有限的系统范围的权限。 用户的 SID 和标识将保持不变，但用户的访问权限是有限的而进程正在使用受限的令牌。 [CreateRestrictedToken](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)函数创建受限的令牌。
+描述线程或进程受限安全上下文的访问令牌称为受限令牌。 *受限令牌*中的 sid 只能设置为拒绝访问，而不允许访问安全对象。 此外，令牌可以描述有限的系统范围权限集。 用户的 SID 和标识保持不变，但用户的访问权限会受到限制，而此过程使用的是受限令牌。 [CreateRestrictedToken](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)函数创建受限制的令牌。
 
 
 ### <a name="security-descriptors"></a>安全描述符
 
-每个命名的 Windows 对象具有的安全描述符;某些未命名的对象也可以这样做。 安全描述符描述的所有者和组 Sid 以及其 Acl 对象。
+每个命名的 Windows 对象都有一个安全描述符;某些未命名对象也会这样做。 安全描述符介绍对象及其 Acl 的所有者和组 Sid。
 
-通常由创建该对象的函数创建对象的安全描述符。 当驱动程序调用[IoCreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)或[IoCreateDeviceSecure](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)例程来创建设备对象，系统安全描述符应用到创建的设备对象并设置该对象的 Acl。 适用于大多数设备，设备信息 (INF) 文件中指定 Acl。
+对象的安全描述符通常由创建对象的函数创建。 当驱动程序调用[IoCreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)或[IoCreateDeviceSecure](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)例程来创建设备对象时，系统会将安全描述符应用到创建的设备对象，并为该对象设置 acl。 对于大多数设备，Acl 是在设备信息（INF）文件中指定的。
 
-有关详细信息[安全描述符](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-descriptors)内核驱动程序文档中。
+有关详细信息，请参阅内核驱动程序文档中的[安全描述符](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-descriptors)。
 
 ### <a name="access-control-lists"></a>访问控制列表
 
-访问控制列表 (Acl) 让你精细控制对对象的访问。 ACL 是每个对象的安全描述符的一部分。
+访问控制列表（Acl）启用对对象访问的精细控制。 ACL 是每个对象的安全描述符的组成部分。
 
-每个 ACL 包含零个或多个访问控制项 (ACE)。 每个 ACE，又包含一个单一的 SID 标识用户、 组或计算机和拒绝或允许针对该 SID 的权限的列表。
+每个 ACL 都包含零个或多个访问控制项（ACE）。 相反，每个 ACE 都包含单个用于标识用户、组或计算机的 SID，以及该 SID 的已拒绝或允许的权限的列表。
 
 ### <a name="acls-for-device-objects"></a>设备对象的 Acl
 
-可以使用三种方式设置的设备对象的 ACL:
+可以通过以下三种方式之一设置设备对象的 ACL：
 
--   在其设备类型的默认安全描述符中设置。
--   以编程方式创建**RtlCreateSecurityDescriptor**函数，并通过设置**RtlSetDaclSecurityDescriptor**函数。
--   指定在安全描述符定义语言 (SDDL) 设备的 INF 文件中或在调用**IoCreateDeviceSecure**例程。
+-   为其设备类型设置默认安全描述符。
+-   由**RtlCreateSecurityDescriptor**函数以编程方式创建并由**RtlSetDaclSecurityDescriptor**函数设置。
+-   在设备的 INF 文件或对**IoCreateDeviceSecure**例程的调用中指定为安全描述符定义语言（SDDL）。
 
-所有驱动程序应使用 INF 文件中 SDDL 来为它们的设备对象指定 Acl。
+所有驱动程序都应使用 INF 文件中的 SDDL 为其设备对象指定 Acl。
 
-SDDL 是一种可扩展说明语言，使组件可以创建 Acl 以字符串格式。 SDDL 可供用户模式和内核模式代码。 下图显示了设备对象的 SDDL 字符串的格式。
+SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Acl。 SDDL 由用户模式和内核模式代码使用。 下图显示了设备对象的 SDDL 字符串的格式。
 
 ![设备对象的 sddl 字符串](images/wsm-sddlstrings.gif)
 
-访问值指定允许的访问类型。 SID 值指定确定 （有关示例，用户或组） 的访问值应用到一个安全标识符。
+访问值指定允许的访问类型。 SID 值指定一个安全标识符，该标识符确定访问值适用于的用户（例如，用户或组）。
 
-例如，以下 SDDL 字符串允许的系统 (SY) 访问权限的所有内容，并允许每个人都其他 (WD) 仅读取访问权限：
+例如，以下 SDDL 字符串允许系统（SY）访问所有内容，并允许每个人（WD）仅读取访问权限：
 
 ``` syntax
 “D:P(A;;GA;;;SY)(A;;GR;;;WD)”
 ```
 
-标头文件 wdmsec.h 还包括一组预定义适用于设备对象的 SDDL 字符串。 例如，标头文件定义 SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_世界\_RWX\_RES\_RWX，如下所示：
+标头文件 wdmsec 还包括一组适用于设备对象的预定义 SDDL 字符串。 例如，标头文件定义 SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_WORLD\_RWX\_RES\_RWX，如下所示：
 
 ``` syntax
 "D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GRGWGX;;;WD)(A;;GRGWGX;;;RC)"
 ```
 
-此字符串的第一个段允许的内核和对设备的操作系统 (SY) 完全控制。 第二段允许任何人都内置 Administrators 组 (BA); 若要访问整个设备，但不是能更改 ACL 中。 第三个段，每个人都 (WD) 来读取或写入到设备，并在第四个段授予不受信任的代码 (RC) 到相同的权限。 驱动程序可以使用预定义的字符串按原样或模型的特定于设备的对象的字符串。
+此字符串的第一段允许内核和操作系统（SY）对设备进行完全控制。 第二段允许内置管理员组（BA）中的任何人访问整个设备，但不允许更改 ACL。 第三段允许每个人（WD）读取或写入设备，第四段允许向不受信任的代码（RC）授予相同的权限。 驱动程序可以将预定义的字符串按原样使用，也可以作为特定于设备对象的字符串的模型使用。
 
-堆栈中的所有设备对象应都具有相同的 Acl。 更改堆栈更改整个设备堆栈上的 Acl 中的一个设备对象上的 Acl。
+堆栈中的所有设备对象应具有相同的 Acl。 更改堆栈中一个设备对象上的 Acl 将更改整个设备堆栈上的 Acl。
 
-但是，将新的 device 对象添加到堆栈不会更改任何 Acl，这些新的设备对象 （如果它具有 Acl），或者这些堆栈中任何现有设备对象。 该驱动程序时驱动程序创建一个新的设备对象并将其附加到堆栈的顶部，应通过将复制到新的设备对象复制堆栈的 Acl **DeviceObject.Characteristics**字段从下一个较低的驱动程序。
+但是，将新的设备对象添加到堆栈不会更改任何 Acl，无论是新设备对象（如果有 Acl）的任何 Acl，还是堆栈中的任何现有设备对象。 当驱动程序创建新的设备对象并将其附加到堆栈顶部时，驱动程序应该通过从下一个较低的驱动程序复制**DeviceObject**字段，将堆栈的 acl 复制到新设备对象。
 
-**IoCreateDeviceSecure**例程支持使用预定义如 WD 和 SY Sid 的 SDDL 字符串的子集。 用户模式 Api 和 INF 文件支持完整的 SDDL 语法。
+**IoCreateDeviceSecure**例程支持使用预定义 SID 的 SDDL 字符串子集，如 WD 和 SY。 用户模式 Api 和 INF 文件支持完整的 SDDL 语法。
 
-### <a name="security-checks-using-acls"></a>安全检查使用 Acl
+### <a name="security-checks-using-acls"></a>使用 Acl 的安全检查
 
-当在过程请求对象的访问权限时，安全检查两个比较对象与调用方的访问令牌中的 Sid 的 Acl。
+当某个进程请求对某个对象的访问权限时，安全检查会对照调用方的访问令牌中的 Sid 来比较对象的 Acl。
 
-系统比较严格自上而下的顺序的 Ace，并将在第一个相关匹配项处停止。 因此，在创建 ACL 时，应始终将的拒绝 Ace 上述相应授予 Ace。 以下示例演示如何进行比较。
+系统会按严格的自顶向下顺序比较 Ace 并在第一个相关匹配上停止。 因此，在创建 ACL 时，应始终将拒绝 Ace 置于相应的 grant Ace 之上。 下面的示例演示了如何进行比较。
 
-**示例 1:比较到一个访问令牌的 ACL**
+**示例1：将 ACL 与访问令牌进行比较**
 
-示例 1 显示了如何在系统比较到调用方的进程的访问令牌的 ACL。 假定调用方想要打开具有下表中所示的 ACL 的文件。
+示例1显示系统如何将 ACL 与调用方进程的访问令牌进行比较。 假设调用方想要打开具有下表所示 ACL 的文件。
 
 **示例文件 ACL**
 
 | 权限 | SID        | 访问                |
 |------------|------------|-----------------------|
-| 允许      | 记帐 | 写入、 删除         |
-| 允许      | 销售      | 追加                |
-| 拒绝       | 法律      | 追加、 写入、 删除 |
-| 允许      | Everyone   | Read                  |
+| 允许      | 记帐 | 写入、删除         |
+| 允许      | 销售      | 附加                |
+| 拒绝       | 法律      | 追加、写入、删除 |
+| 允许      | Everyone   | 已阅读                  |
 
  
 
-此 ACL 具有四个 Ace，这尤其适用于记帐、 销售、 法律和 Everyone 组。
+此 ACL 具有四个 Ace，特别适用于会计、销售、法律和 Everyone 组。
 
-接下来，假定用于发出请求的进程的访问令牌包含 Sid 的一位用户和三个组，按以下顺序：
+接下来，假定请求进程的访问令牌包含一个用户和三个组的 Sid，顺序如下：
 
-用户 Jim (S-1-5-21...)
+用户 Jim （S-1-5-21 ...）
 
-组记帐 (S-1-5-22...)
+组记帐（S-1-5-22 ...）
 
-组法律 (S-1-5-23...)
+Group Legal （S-1-5-23 ...）
 
-组 Everyone (S-1-1-0)
+每个人分组（S-1-1-0）
 
-当文件 ACL 与访问令牌进行比较，系统首先查找用户文件的 ACL 中 Jim 的 ACE。 没有显示，因此接下来寻找 Accounting 组的 ACE。 上表中所示，文件的 ACL，因此 Jim 中的第一个条目显示 Accounting 组的 ACE ' s 过程授予的权限写入或删除该文件，即停止比较。 如果法律组 ACE 改为在 ACL 中前面为 Accounting 组的 ACE，原本被拒绝进程编写、 添加和删除对文件的访问。
+将文件 ACL 与访问令牌进行比较时，系统首先会在文件的 ACL 中查找用户 Jim 的 ACE。 显示 "无"，因此下一步它查找会计组的 ACE。 如上表所示，会计组的 ACE 显示为文件 ACL 中的第一项，因此 Jim 的进程被授予写入或删除该文件的权限，比较停止。 如果该合法组的 ACE 在 ACL 中的会计组前面带有 ACE，则该进程将被拒绝写入、追加和删除对该文件的访问权限。
 
-**示例 2:比较到受限令牌的 ACL**
+**示例2：将 ACL 与受限制的令牌进行比较**
 
-系统将为受限令牌 ACL 与比较不受限制的令牌中的那些相同的方式进行比较。 但是，拒绝 SID 在受限令牌可匹配仅 Deny ACE ACL 中。
+系统将 ACL 与受限制的令牌进行比较，其方式与在不受限制的令牌中比较它们的方式相同。 但是，受限制的令牌中的拒绝 SID 只能与 ACL 中的拒绝 ACE 匹配。
 
-示例 2 显示了如何在系统比较使用受限令牌的文件的 ACL。 假定该文件具有相同 ACL 上表中所示。 但是，在此示例中，该过程具有受限制的令牌，其中包含以下 Sid:
+示例2显示系统如何将文件的 ACL 与受限制的令牌进行比较。 假定该文件具有与上表中显示的相同的 ACL。 但在此示例中，该进程具有包含以下 Sid 的受限令牌：
 
-用户 Jim (S-1-5-21...)拒绝
+用户 Jim （S-1-5-21 ...）注销
 
-组记帐 (S-1-5-22...)拒绝
+组记帐（S-1-5-22 ...）注销
 
-组法律 (S-1-5-23...)拒绝
+Group Legal （S-1-5-23 ...）注销
 
-组 Everyone (S-1-1-0)
+每个人分组（S-1-1-0）
 
-文件的 ACL 不会列出 Jim 的 SID，因此系统将继续到 Accounting 组 SID。 尽管文件的 ACL 具有 Accounting 组的 ACE，但此 ACE 是允许访问;因此，它不匹配的 SID 在进程的受限令牌中，此操作会拒绝访问。 因此，系统将继续到法律组 SID。 该文件的 ACL 包含法律组拒绝访问的 ACE，因此，进程无法写入，追加或删除文件。
+该文件的 ACL 不会列出 Jim 的 SID，因此系统将继续到会计组 SID。 尽管该文件的 ACL 包含用于会计组的 ACE，但此 ACE 允许访问;因此，它与拒绝访问的进程的受限令牌中的 SID 不匹配。 因此，系统会继续到法律组 SID。 文件的 ACL 包含拒绝访问的法律组 ACE，因此该进程无法写入、追加或删除该文件。
 
 ### <a name="privileges"></a>权限
 
 
-特权是用户执行与系统相关的本地计算机上，加载驱动程序、 更改的时间，或关闭系统等操作的权限。
+权限是用户在本地计算机上执行与系统相关的操作的权利，例如加载驱动程序、更改时间或关闭系统。
 
-特权是不同的访问权限，因为它们适用于与系统相关的任务和资源，而不是对象，并且它们由系统管理员，而不是由操作系统分配给用户或组。
+权限不同于访问权限，因为它们适用于与系统相关的任务和资源，而不是与对象相关，因为它们被系统管理员分配给用户或组，而不是由操作系统分配给用户或组。
 
-每个进程的访问令牌包含一系列过程授予的权限。 权限使用之前，必须专门启用。 有关权限的详细信息，请参阅[特权](https://docs.microsoft.com/windows-hardware/drivers/kernel/privileges)内核驱动程序文档中。
+每个进程的访问令牌都包含授予该进程的特权列表。 必须在使用之前专门启用特权。 有关权限的详细信息，请参阅内核驱动程序文档中的[权限](https://docs.microsoft.com/windows-hardware/drivers/kernel/privileges)。
 
  
 
 ## <a name="span-idcreating-a-filespanspan-idcreating-a-filespanspan-idcreating-a-filespanwindows-security-model-scenario-creating-a-file"></a><span id="Creating-A-File"></span><span id="CREATING-A-FILE"></span><span id="creating-a-file"></span>Windows 安全模型方案：创建文件
 
-系统使用每当进程创建文件或对象的句柄时的 Windows 安全模型中所述的安全构造。
+只要进程创建文件或对象的句柄，系统就会使用 Windows 安全模型中所述的安全构造。
 
-下图显示了在用户模式进程尝试创建一个文件时被触发的与安全相关的操作。
+下图显示了在用户模式进程尝试创建文件时触发的与安全相关的操作。
 
 ![创建如下所述的文件示例](images/wsm-creatingafile.gif)
 
-上图显示了系统时在用户模式应用程序调用的响应**CreateFile**函数。 以下说明，请参阅图中的带圆圈数字：
+上图显示了在用户模式应用程序调用**CreateFile**函数时系统如何做出响应。 以下说明引用了图中的带圆圈数字：
 
-1.  在用户模式应用程序调用**CreateFile**函数，传递有效的 Microsoft Win32 文件名称。
-2.  用户模式下 Kernel32.dll 将请求传递给 Ntdll.dll，后者将 Win32 名称转换为 Microsoft Windows NT 文件名称。
-3.  Ntdll.dll 调用**NtCreateFile**具有 Windows 文件名称的函数。 内 Ntoskrnl.exe，I/O 管理器处理**NtCreateFile**。
-4.  I/O 管理器会请求重新打包到对象管理器调用。
-5.  对象管理器解决符号链接，并确保用户具有遍历权限将在其中创建该文件的路径。 有关详细信息，请参阅[安全检查对象管理器中](#omchecks)。
-6.  对象管理器调用拥有与请求关联的基础对象类型的系统组件。 对于文件创建请求，该组件是 I/O 管理器，它拥有的设备对象。
-7.  I/O 管理器检查针对用户的过程，以确保用户具有对设备的所需的访问权限的访问令牌的设备对象的安全描述符。 有关详细信息，请参阅[安全检查在 I/O 管理器中](#iomanchecks)。
-8.  如果用户进程所需的权限，I/O 管理器创建一个句柄，并将发送 IRP\_MJ\_到设备或文件系统驱动程序的创建请求。
-9.  该驱动程序根据需要执行额外的安全检查。 例如，如果请求设备的命名空间中指定的对象，该驱动程序必须确保调用方具有所需的访问权限。 有关详细信息，请参阅[驱动程序中的安全检查](#driver)。
+1.  用户模式应用程序会调用**CreateFile**函数，并传递一个有效的 Microsoft Win32 文件名。
+2.  用户模式 Kernel32.dll 将请求传递给 Ntdll.dll，后者将 Win32 名称转换为 Microsoft Windows NT 文件名。
+3.  Ntdll.dll 通过 Windows 文件名调用**NtCreateFile**函数。 在 Ntoskrnl.exe 中，i/o 管理器处理**NtCreateFile**。
+4.  I/o 管理器将请求重新打包到对象管理器调用。
+5.  对象管理器解析符号链接，并确保用户对要在其中创建文件的路径具有遍历权限。 有关详细信息，请参阅[对象管理器中的安全检查](#omchecks)。
+6.  对象管理器调用拥有与请求关联的基础对象类型的系统组件。 对于文件创建请求，此组件是拥有设备对象的 i/o 管理器。
+7.  I/o 管理器根据用户进程的访问令牌检查设备对象的安全描述符，以确保用户具有所需的设备访问权限。 有关详细信息，请参阅[I/o 管理器中的安全检查](#iomanchecks)。
+8.  如果用户进程具有所需的访问权限，则 i/o 管理器会创建一个句柄，并向设备或文件系统的驱动程序发送 IRP\_MJ\_创建请求。
+9.  驱动程序根据需要执行其他安全检查。 例如，如果请求在设备的命名空间中指定一个对象，则驱动程序必须确保调用方具有所需的访问权限。 有关详细信息，请参阅[驱动程序中的安全检查](#driver)。
 
-### <a name="span-idomchecksspanspan-idomchecksspansecurity-checks-in-the-object-manager"></a><span id="omchecks"></span><span id="OMCHECKS"></span>安全检查对象管理器中
+### <a name="span-idomchecksspanspan-idomchecksspansecurity-checks-in-the-object-manager"></a><span id="omchecks"></span><span id="OMCHECKS"></span>对象管理器中的安全检查
 
-检查访问权限的责任属于可执行此类检查的最高级别的组件。 如果对象管理器可以验证调用方的访问权限，它会这样。 如果没有，对象管理器将请求传递到该组件负责基础对象类型。 该组件，接下来验证访问权限，如果它知道如何操作;如果不能它将请求传递给下一个仍组件，如驱动程序。
+检查访问权限的责任属于可执行此类检查的最高级别的组件。 如果对象管理器可以验证调用方的访问权限，则它会执行此操作。 如果不是，则对象管理器将请求传递给负责基础对象类型的组件。 然后，该组件会验证访问权限（如果可以）;如果不能，它会将请求传递到一个仍较低的组件，如驱动程序。
 
-对象管理器检查 Acl 对于简单的对象类型，如事件和互斥锁。 对于具有一个命名空间的对象，类型所有者执行安全检查。 例如，I/O 管理器被视为设备对象和文件对象的类型所有者。 如果对象管理器找到设备对象或文件对象的名称解析名称时，它将传送名称到 I/O 管理器，如上面给出的文件创建方案中所示。 如果可以 I/O 管理器然后检查访问权限。 如果名称指定的设备命名空间、 I/O 管理器的对象又移交到设备 （或文件系统） 的名称的驱动程序，并该驱动程序负责验证请求的访问。
+对象管理器检查 Acl 中的简单对象类型，如事件和互斥锁。 对于具有命名空间的对象，类型所有者将执行安全检查。 例如，i/o 管理器被视为设备对象和文件对象的类型所有者。 如果对象管理器在分析名称时找到设备对象或文件对象的名称，则它会将名称作为前面介绍的文件创建方案的名称。 然后，i/o 管理器会检查访问权限（如果可能）。 如果名称指定了设备命名空间中的对象，则 i/o 管理器反过来会将名称强行关闭到设备（或文件系统）驱动程序，并且该驱动程序负责验证请求的访问权限。
 
-### <a name="span-idiomanchecksspanspan-idiomanchecksspansecurity-checks-in-the-io-manager"></a><span id="iomanchecks"></span><span id="IOMANCHECKS"></span>安全检查在 I/O 管理器
+### <a name="span-idiomanchecksspanspan-idiomanchecksspansecurity-checks-in-the-io-manager"></a><span id="iomanchecks"></span><span id="IOMANCHECKS"></span>I/o 管理器中的安全检查
 
-当 I/O 管理器创建一个句柄时，它将检查对象的权限，对进程访问令牌并将存储为句柄以及用户授予的权限。 当更高版本的 I/O 请求到达时，I/O 管理器将检查与句柄关联的权限，以确保进程的执行所请求的 I/O 操作的权限。 例如，如果进程更高版本请求写入操作，I/O 管理器将检查与句柄关联的权限，以确保调用方具有对对象的写访问权限。 
+当 i/o 管理器创建句柄时，它会对照进程访问令牌检查该对象的权限，然后将授予该用户的权限连同句柄一起存储。 以后 i/o 请求到达时，i/o 管理器将检查与句柄关联的权限，以确保该进程有权执行请求的 i/o 操作。 例如，如果稍后处理请求写入操作，i/o 管理器将检查与句柄关联的权限，以确保调用方具有对对象的写访问权限。 
 
-如果重复的句柄，可以从副本中删除权限，但不是会添加到它。
+如果复制了句柄，则可以从副本中删除权限，但不能将其添加到其中。
 
-当 I/O 管理器创建一个对象时，它将泛型 Win32 访问模式转换为特定于对象的权限。 例如，以下权限适用于文件和目录：
+当 i/o 管理器创建对象时，它会将一般的 Win32 访问模式转换为特定于对象的权限。 例如，以下权限适用于文件和目录：
 
 
 | Win32 访问模式 | 特定于对象的权限 |
 |-------------------|------------------------|
-|   泛型\_读取   |        ReadData        |
-|  泛型\_编写   |       WriteData        |
-| 泛型\_EXECUTE  |     ReadAttributes     |
-|   泛型\_所有    |          全部           |
+|   通用\_读取   |        ReadData        |
+|  泛型\_写入   |       WriteData        |
+| 泛型\_执行  |     ReadAttributes     |
+|   通用\_全部    |          全部           |
  
-若要创建一个文件，进程必须具有目标路径中的父目录遍历权限。 例如，若要创建\\设备\\CDROM0\\目录\\File.txt，进程必须有权遍历\\设备\\设备\\CDROM0，并且\\设备\\CDROM0\\目录。 I/O 管理器检查仅这些目录遍历权限。
+若要创建文件，进程必须对目标路径中的父目录具有遍历权限。 例如，若要创建 \\Device\\CDROM0\\Directory\\.txt，进程必须有权遍历 \\设备、\\设备\\CDROM0 和 \\设备\\CDROM0\\Directory。 I/o 管理器仅检查这些目录的遍历权限。
 
-分析的文件的名称时，I/O 管理器检查遍历权限。 如果文件名的符号链接，I/O 管理器将其解析为完整路径，然后检查从根开始遍历权限。 例如，假定符号链接\\DosDevices\\D 将映射到 Windows NT 设备名\\设备\\CDROM0。 进程必须具有遍历权限\\设备目录。
+在分析文件名时，i/o 管理器会检查遍历权限。 如果文件名为符号链接，则 i/o 管理器会将其解析为完整路径，然后检查遍历权限（从根开始）。 例如，假设符号链接 \\DosDevices\\D 映射到 Windows NT 设备名称 \\设备\\CDROM0。 该进程必须具有对 \\设备目录的遍历权限。
 
-有关详细信息，请参阅[对象处理](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-handles)并[对象安全](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-security)。
+有关详细信息，请参阅[对象句柄](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-handles)和[对象安全](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-security)。
 
-### <a name="span-iddriverspanspan-iddriverspansecurity-checks-in-the-driver"></a><span id="driver"></span><span id="DRIVER"></span>该驱动程序中的安全检查
+### <a name="span-iddriverspanspan-iddriverspansecurity-checks-in-the-driver"></a><span id="driver"></span><span id="DRIVER"></span>驱动程序中的安全检查
 
-操作系统内核有效时，将视为具有自己的命名空间的文件系统的每个驱动程序。 因此，当调用方尝试在设备命名空间中创建一个对象，I/O 管理器检查的进程的路径中具有目录遍历权限。 
+操作系统内核会将每个驱动程序视为具有自己的命名空间的文件系统。 因此，当调用方尝试在设备命名空间中创建对象时，i/o 管理器会检查进程是否有权使用路径中的目录。 
 
-WDM 驱动程序与 I/O 管理器不执行对的命名空间的安全检查，除非已指定 FILE_DEVICE_SECURE_OPEN 创建设备对象。  如果未设置 FILE_DEVICE_SECURE_OPEN，驱动程序负责确保其命名空间的安全性。 有关详细信息，请参阅[控制设备 Namespace 访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)并[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
+对于 WDM 驱动程序，除非已创建指定 FILE_DEVICE_SECURE_OPEN 的设备对象，否则 i/o 管理器不会对该命名空间执行安全检查。  如果未设置 FILE_DEVICE_SECURE_OPEN，则驱动程序将负责确保其命名空间的安全。 有关详细信息，请参阅[控制设备命名空间访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)和[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
 
-有关 WDF 驱动程序，FILE_DEVICE_SECURE_OPEN 标志始终设置，以便将检查设备的安全描述符的才允许应用程序访问设备的命名空间内的任何名称。 有关详细信息，请参阅[控制 KMDF 驱动程序中的设备访问](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)。
+对于 WDF 驱动程序，将始终设置 FILE_DEVICE_SECURE_OPEN 标志，以便在允许应用程序访问设备的命名空间中的任何名称之前，将检查设备的安全描述符。 有关详细信息，请参阅[在 KMDF 驱动程序中控制设备访问](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)。
 
 
 
 ## <a name="windows-security-boundaries"></a>Windows 安全边界
 
-驱动程序进行通信和对用户模式下的不同权限级别的调用方可以被视为跨越信任边界。 信任边界是从较低的特权进程跨越到更高特权的进程的任何代码执行路径。
+相互通信的驱动程序和不同权限级别的用户模式调用方可以视为跨信任边界。 信任边界是从较低特权进程到较高特权进程的任何代码执行路径。
 
-更高版本不一致会在权限级别，更有趣的边界想要执行对目标的驱动程序或进程的特权提升攻击等攻击的攻击者。
+权限级别越高，差异的可能性就越多，要执行攻击的攻击者（如针对目标驱动程序或进程的权限提升攻击）的可能性就越多。
 
-创建威胁模型的一部分是过程的检查安全边界并查找未预料到的路径。 有关详细信息，请参阅[驱动程序的威胁建模](threat-modeling-for-drivers.md)。 
+创建威胁模型的过程的一部分是检查安全边界并查找意外路径。 有关详细信息，请参阅[驱动程序的威胁建模](threat-modeling-for-drivers.md)。 
 
-跨信任边界的任何数据不受信任和必须进行验证。 
+跨信任边界的任何数据都不受信任，必须进行验证。 
 
-下图显示了三个内核驱动程序和两个应用，应用程序容器和一个用管理员权限运行的应用程序中的一个。 红线指示示例信任边界。
+此图显示了三个内核驱动程序和两个应用，一个应用容器，一个应用以管理员权限运行。 红线指示示例信任边界。
 
-![显示三个内核驱动程序和两个应用，一个应用程序容器中的驱动程序攻击面](images/driver-security-attack-surface.png)
+![显示三个内核驱动程序和两个应用程序（一个在应用程序容器中）的驱动程序攻击面](images/driver-security-attack-surface.png)
 
-应用容器可以提供其他约束，并在管理员级别未运行，路径 (1) 是提升攻击的更高风险路径，因为应用程序容器 （非常低权限进程） 和内核驱动程序之间是信任边界。 
+由于应用容器可以提供其他约束，并且没有在管理级别运行，因此，路径（1）是提升攻击的风险路径，因为信任边界在应用容器（极低权限进程）和内核驱动程序之间。 
 
-路径 (2) 是较低的风险路径，如应用程序管理员权限运行，而在内核驱动程序中直接调用。 管理员已在系统上的拥有很高特权，因此管理员提供的对内核的攻击面，而不给攻击者，一个有趣的目标，但仍值得一提的信任边界。
+路径（2）是一个较低的风险路径，因为该应用程序以管理员权限运行，并直接调用内核驱动程序。 管理员已经是系统上的一个相当高的特权，因此，从管理员到内核的攻击面对于攻击者来说不是一个有趣的目标，而是值得注意的信任边界。
 
-路径 (3) 是跨多个创建威胁模型时，可能会丢失的信任边界的代码执行路径的示例。
-在此示例中，则驱动程序 1 和 3，驱动程序之间的信任边界因为驱动程序 1 将输入的用户模式应用并将其传递直接向驱动程序 3。
+路径（3）是代码执行路径的一个示例，它跨越多个信任边界，在未创建威胁模型时可能会丢失这些边界。
+在此示例中，驱动程序1和驱动程序3之间存在信任边界，因为驱动程序1从用户模式应用中获取输入并将其直接传递到驱动程序3。
 
-所有输入传入从用户模式驱动程序是不受信任，应验证。 输入来自其他驱动程序也可能是不受信任，具体取决于以前的驱动程序是否只是简单的传递 （例如数据已接收到从应用程序 1 的驱动程序 1，驱动程序 1 未执行此操作对数据的任何验证，只需传递其前滚到驱动程序 3）。 请务必确定所有的攻击面和信任边界，并验证处理，通过创建完整的威胁模型的所有数据。
+从用户模式进入驱动程序的所有输入都不受信任，应进行验证。 来自其他驱动程序的输入也可能是不受信任的，具体取决于先前的驱动程序是否只是简单传递（例如，数据是由应用程序1中的驱动程序1接收的，驱动程序1不对数据进行任何验证，只是将数据传递给驱动程序3）。 请确保通过创建完整的威胁模型来识别所有攻击面和信任边界，并验证与它们交叉的所有数据。
 
 
 ## <a name="windows-security-model-recommendations"></a>Windows 安全模型建议 
 
--   在调用设置强默认 Acl **IoCreateDeviceSecure**例程。
--   每个设备的 INF 文件中指定 Acl。 如有必要，这些 Acl 可以放宽紧密的默认 Acl。
--   将文件设置\_设备\_SECURE\_打开特性要应用于设备命名空间的设备对象的安全设置。
--   未定义允许文件的 Ioctl\_ANY\_访问，除非此类访问不能被恶意利用。
--   使用**IoValidateDeviceIoControlAccess**例程，以增强安全性上允许的文件的现有 IOCTL\_ANY\_访问。
--   创建威胁模型来检查安全边界，并查找未预料到的路径。 有关详细信息，请参阅[驱动程序的威胁建模](threat-modeling-for-drivers.md)。 
--   请参阅[驱动程序安全核对清单](driver-security-checklist.md)为其他驱动程序的安全建议。
+-   在对**IoCreateDeviceSecure**例程的调用中设置强默认 acl。
+-   为每个设备指定 INF 文件中的 Acl。 如果需要，这些 Acl 可以放宽严格的默认 Acl。
+-   将文件\_设备\_SECURE\_开放特征，以将设备对象安全设置应用到设备命名空间。
+-   不要定义允许文件\_任何\_访问的 IOCTLs，除非恶意利用此类访问权限。
+-   使用**IoValidateDeviceIoControlAccess**例程提高允许文件\_任何\_访问的现有 IOCTLS 的安全性。
+-   创建威胁模型以检查安全边界并查找意外路径。 有关详细信息，请参阅[驱动程序的威胁建模](threat-modeling-for-drivers.md)。 
+-   有关其他驱动程序安全建议，请参阅[驱动程序安全核对清单](driver-security-checklist.md)。
 
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
 [保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)
 

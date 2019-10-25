@@ -1,6 +1,6 @@
 ---
 title: 调试\_符号\_XXX
-description: 调试\_符号\_XXX 常量使用符号标志位集。 符号标志 （部分） 介绍符号组中的符号。
+description: DEBUG\_符号\_XXX 常量用于符号标志位集。 符号标志说明符号组中的符号（在部分中）。
 ms.assetid: de1988f8-6a4d-43a3-856a-0543ecaaf06f
 ms.date: 12/07/2017
 topic_type:
@@ -17,25 +17,25 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb7f8916d775432b10917ce9b0028c29e49adef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6718007776f21cb51a89eb8f30785ec240efe051
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837783"
 ---
-# <a name="debugsymbolxxx"></a>调试\_符号\_XXX
+# <a name="debug_symbol_xxx"></a>调试\_符号\_XXX
 
 
-调试\_符号\_*XXX*常量使用符号标志位集。 符号标志 （部分） 介绍符号组中的符号。
+DEBUG\_符号\_*XXX*常量用于符号标志位集。 符号标志说明符号组中的符号（在部分中）。
 
-标志符号的最低有效位-位在调试中找到\_符号\_扩展\_级别\_掩码--一个数字，表示符号组中的符号的展开深度的窗体。 子符号的深度始终是一个多个属于其父符号的深度。 例如，若要在变量中查找包含其标志符号的深度*标志*，使用以下语句：
+符号标志的最小有效位（在 DEBUG\_符号\_扩展\_级别\_掩码）中找到的位数表示符号组内符号的展开深度。 子符号的深度始终比其父符号的深度多一个。 例如，若要查找其标志包含在变量*标志*中的符号深度，请使用以下语句：
 
 ```dbgcmd
 depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 ```
 
-符号标志的位集的其他部分可以包含以下位标志。
+符号标志的其余位集可以包含以下位标志。
 
 <table>
 <colgroup>
@@ -57,27 +57,27 @@ depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 <tr class="even">
 <td align="left"><span id="DEBUG_SYMBOL_READ_ONLY"></span><span id="debug_symbol_read_only"></span>
 <strong>DEBUG_SYMBOL_READ_ONLY</strong></td>
-<td align="left"><p>该符号表示只读变量。</p></td>
+<td align="left"><p>符号表示只读变量。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><span id="DEBUG_SYMBOL_IS_ARRAY"></span><span id="debug_symbol_is_array"></span>
 <strong>DEBUG_SYMBOL_IS_ARRAY</strong></td>
-<td align="left"><p>该符号表示一个数组变量。</p></td>
+<td align="left"><p>符号表示数组变量。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><span id="DEBUG_SYMBOL_IS_FLOAT"></span><span id="debug_symbol_is_float"></span>
 <strong>DEBUG_SYMBOL_IS_FLOAT</strong></td>
-<td align="left"><p>该符号表示浮点变量。</p></td>
+<td align="left"><p>符号表示浮点变量。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><span id="DEBUG_SYMBOL_IS_ARGUMENT"></span><span id="debug_symbol_is_argument"></span>
 <strong>DEBUG_SYMBOL_IS_ARGUMENT</strong></td>
-<td align="left"><p>该符号表示传递给函数的参数。</p></td>
+<td align="left"><p>符号表示传递给函数的参数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><span id="DEBUG_SYMBOL_IS_LOCAL"></span><span id="debug_symbol_is_local"></span>
 <strong>DEBUG_SYMBOL_IS_LOCAL</strong></td>
-<td align="left"><p>符号表示范围中的本地变量。</p></td>
+<td align="left"><p>符号表示范围中的局部变量。</p></td>
 </tr>
 </tbody>
 </table>
@@ -92,16 +92,16 @@ depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">DbgEng.h （包括 DbgEng.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">DbgEng （包括 DbgEng）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**调试\_符号\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_symbol_parameters)
+[**调试\_符号\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_symbol_parameters)
 
  
 

@@ -4,22 +4,22 @@ description: MSFC\_HBAPortAttributesResults WMI 类
 ms.assetid: f268a653-e3ee-47d0-9af8-925dc0545a2b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b8bbffa9a20953faec31d77bed0cef2f25bf2cb7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 621ec235f8368acd6d9dc5d7bbebbdbd66a36041
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376751"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826127"
 ---
-# <a name="msfchbaportattributesresults-wmi-class"></a>MSFC\_HBAPortAttributesResults WMI 类
+# <a name="msfc_hbaportattributesresults-wmi-class"></a>MSFC\_HBAPortAttributesResults WMI 类
 
 
 ## <span id="ddk_msfc_hbaportattributesresults_wmi_class_kr"></span><span id="DDK_MSFC_HBAPORTATTRIBUTESRESULTS_WMI_CLASS_KR"></span>
 
 
-WMI 客户端使用 MSFC\_HBAPortAttributesResults WMI 类，查询 HBA 上的端口的属性的 HBA 微型端口驱动程序。
+WMI 客户端使用 MSFC\_HBAPortAttributesResults WMI 类来查询 HBA 上端口的属性的 HBA 微型端口驱动程序。
 
-MSFC\_HBAPortAttributesResults 类定义中，如下所示*Hbaapi.mof*:
+*Hbaapi*中的 MSFC\_HBAPortAttributesResults 类定义如下：
 
 ```cpp
 class MSFC_HBAPortAttributesResults {
@@ -62,9 +62,9 @@ class MSFC_HBAPortAttributesResults {
 };
 ```
 
-此类在编译时定义生成以下数据结构：
+编译此类定义时，将生成以下数据结构：
 
-[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
+[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
 
 没有与此 WMI 类相关联的方法。
 

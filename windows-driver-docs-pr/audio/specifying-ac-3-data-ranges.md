@@ -4,22 +4,22 @@ description: 指定 AC-3 数据范围
 ms.assetid: 87d59554-43fa-4d61-9829-c38691d0a525
 keywords:
 - S/PDIF 传递 WDK 音频
-- AC-3-over-S/PDIF 格式 WDK 音频
+- AC-3-S/PDIF 格式 WDK 音频
 - 音频非 PCM 格式 WDK
-- 非 PCM 音频格式 WDK、 S/PDIF
+- 非 PCM 音频格式 WDK，S/PDIF
 - WMA Pro WDK 音频
-- Ac-3 WDK 音频
-- 索尼/菲利普数字接口
-- 数据范围 WDK 音频 ac-3
-- 非 PCM 音频格式 WDK、 ac-3
+- AC 3 WDK 音频
+- 索尼/Philips 数字接口
+- 数据范围 WDK 音频、AC-3
+- 非 PCM 音频格式 WDK、AC 3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c011f5ac71cd472652f5dc6dd8e2295e22c4da0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e7fd788269cc3c571a72e1190875aa7e836c177
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354291"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830115"
 ---
 # <a name="specifying-ac-3-data-ranges"></a>指定 AC-3 数据范围
 
@@ -27,22 +27,22 @@ ms.locfileid: "67354291"
 ## <span id="specifying_ac_3_data_ranges"></span><span id="SPECIFYING_AC_3_DATA_RANGES"></span>
 
 
-标头文件 Mmreg.h 定义 0x0092 AC-3-over-S/PDIF 波形格式标记的值：
+标头文件 Mmreg 将值0x0092 定义为 AC-3/PDIF 的波形格式标记：
 
 ```cpp
     #define WAVE_FORMAT_DOLBY_AC3_SPDIF  0x0092
 ```
 
-波形格式标记 0x0240 和 0x0241 是 0x0092 的同义词，并且许多 DVD 应用程序将三个标记视为相同。 但是，若要消除冗余，驱动程序和应用程序应支持仅标记 0x0092 （和不支持标记 0x0240 和 0x0241）。
+波形格式标记0x0240 和0x0241 与0x0092 同义，许多 DVD 应用程序将三个标记视为相同。 但是，为了消除冗余，驱动程序和应用程序应仅支持标记0x0092 （而不支持标记0x0240 和0x0241）。
 
-可以通过使用定义方面波形格式标记指定相应的子类型格式的 GUID\_WAVEFORMATEX\_标头中的 GUID 宏文件 Ksmedia.h，如下所示：
+可以通过使用标头文件 Ksmedia 中的 "定义\_WAVEFORMATEX"\_GUID 宏，按波形格式标记指定对应的格式子类型 GUID，如下所示：
 
 ```cpp
   #define KSDATAFORMAT_SUBTYPE_AC3_SPDIF    \
                       DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_DOLBY_AC3_SPDIF)
 ```
 
-以下代码示例演示如何指定 WaveCyclic 或 WavePci 微型端口驱动程序[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)表支持 AC-3-over-S/PDIF 格式 pin 条目：
+下面的代码示例演示了 WaveCyclic 或 WavePci 微型端口驱动程序如何为支持 AC-3/PDIF 格式的 pin 指定[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)表条目：
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesAC3Stream[] =
@@ -89,11 +89,11 @@ static KSDATARANGE_AUDIO PinDataRangesAC3Stream[] =
 };
 ```
 
-上表中的第二个数据区域项，才可启用 DirectSound 以处理非 PCM AC-3-over-S/PDIF 格式在 Windows 2000 SP2 和在 Microsoft Windows 98 SE + 修补程序。
+上表中的第二个数据范围条目对于启用 DirectSound 以处理 Windows 2000 SP2 和 Microsoft Windows 98 SE + 修补程序中的非 PCM AC-3/PDIF 格式是必需的。
 
-为每个与 KSDATAFORMAT 微型端口驱动程序指定的数据范围\_说明符\_WAVEFORMATEX，端口驱动程序会自动添加使用 KSDATAFORMAT 指定第二个数据范围\_说明符\_DSOUND 但在其他方面与第一个。 (您可以通过使用对此进行验证[KsStudio 实用工具](ksstudio-utility.md)若要查看的数据范围列表。)在 Windows 2000 和 Windows 98，端口驱动程序创建 KSDATAFORMAT\_说明符\_DSOUND 版本的数据范围仅 KSDATAFORMAT\_子类型\_PCM 格式因为 DirectSound 之前的版本DirectSound 8 支持仅 PCM。 这一限制是在 Windows XP 中已删除和更高版本以及在 Windows me 一起提供。 但是，它不会删除在 Windows 2000 SP2 或 Windows 98 SE 修补程序包中，若要支持非 PCM 上 DirectSound 这些 Windows 版本上，驱动程序应显式列出的每个非 PCM 数据格式，那么，另一个使用 KSDATAFORMAT两个数据区域\_说明符\_WAVEFORMATEX，另一个具有 KSDATAFORMAT\_说明符\_DSOUND。
+对于微型端口驱动程序使用 KSDATAFORMAT\_说明符指定的每个数据范围\_WAVEFORMATEX，端口驱动程序会自动添加另一个使用 KSDATAFORMAT\_说明符指定的数据范围\_DSOUND，但否则与第一个相同。 （您可以使用[KsStudio 实用工具](ksstudio-utility.md)来查看数据范围的列表。）在 Windows 2000 和 Windows 98 中，端口驱动程序只为 KSDATAFORMAT\_子类型创建 KSDATAFORMAT\_说明符\_DSOUND 版本\_PCM 格式，因为 DirectSound 8 之前的 DirectSound 版本仅支持 PCM。 此限制在 Windows XP 和更高版本以及 Windows Me 中被删除。 但是，它不会在 Windows 2000 SP2 或 Windows 98 SE 的热修复包中删除，并且在这些 Windows 版本的 DirectSound 上支持非 PCM，驱动程序应为每个非 PCM 数据格式显式列出两个数据范围-一个使用 KSDATAFORMAT\_说明符\_WAVEFORMATEX，另一个具有 KSDATAFORMAT\_说明符\_DSOUND。
 
-中所述[S/PDIF 传递非 PCM 流的传输](s-pdif-pass-through-transmission-of-non-pcm-streams.md)，两个 AC-3-over-S/PDIF 数据范围这两个使用以下 PCM 参数： 两个通道和 16 位 / 通道。
+正如通过[非 PCM 流的 S/PDIF 直通传输](s-pdif-pass-through-transmission-of-non-pcm-streams.md)中所述，两个 AC-3 个/PDIF 数据范围均使用以下 PCM 参数：两个通道，每个通道16位。
 
  
 

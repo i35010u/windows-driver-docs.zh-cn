@@ -3,16 +3,16 @@ title: 查询电视连接器和复制保护硬件
 description: 查询电视连接器和复制保护硬件
 ms.assetid: 7812a3ba-42f1-4872-bfe8-08933802f0c1
 keywords:
-- 电视连接器 WDK 微型端口
-- 复制保护 WDK 视频的微型端口，查询
+- 电视连接器 WDK 视频微型端口
+- 复制保护 WDK 视频微型端口，查询
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f81405aa63368913528ac8ec5d0e74d957de64
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b475722e3bb701783d400cb1631334714fb4d8e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385046"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829654"
 ---
 # <a name="querying-tv-connector-and-copy-protection-hardware"></a>查询电视连接器和复制保护硬件
 
@@ -20,51 +20,51 @@ ms.locfileid: "67385046"
 ## <span id="ddk_querying_tv_connector_and_copy_protection_hardware_gg"></span><span id="DDK_QUERYING_TV_CONNECTOR_AND_COPY_PROTECTION_HARDWARE_GG"></span>
 
 
-有一个电视连接器的适配器的微型端口驱动程序必须处理[ **IOCTL\_视频\_处理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)请求在其[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)函数。 IOCTL 请求时 IOCTL\_视频\_处理\_VIDEOPARAMETERS， **InputBuffer**隶属[**视频\_请求\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)结构，指向[ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)结构。 **DwCommand**该 VIDEOPARAMETERS 结构的成员指定微型端口驱动程序是否必须提供有关电视连接器的信息 (副总裁\_命令\_获取) 或将指定的设置应用到电视连接器 (副总裁\_命令\_设置)。
+具有电视连接器的适配器的视频微型端口驱动程序必须处理[**IOCTL\_视频\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)在其[*HWVIDSTARTIO*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io)函数中处理\_VIDEOPARAMETERS 请求。 当 IOCTL 请求是 IOCTL\_视频\_句柄\_VIDEOPARAMETERS 时，视频的**InputBuffer**成员[ **\_请求\_数据包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)结构指向[**VIDEOPARAMETERS**](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)结构。 该 VIDEOPARAMETERS 结构的**dwCommand**成员指定微型端口驱动程序是否必须提供有关电视连接器的信息（\_GET 的 VP\_命令）或将指定的设置应用于电视连接器（副总裁\_命令\_设置）。
 
-当**dwCommand** VIDEOPARAMETERS 结构中的成员是副总裁\_命令\_GET、 微型端口驱动程序必须执行以下操作：
+当 VIDEOPARAMETERS 结构的**dwCommand**成员是\_获取的 VP\_命令时，微型端口驱动程序必须执行以下操作：
 
--   验证是否**Guid** VIDEOPARAMETERS 结构中的成员。
+-   验证 VIDEOPARAMETERS 结构的**Guid**成员。
 
--   电视连接器支持，每个功能中设置相应标志**dwFlags** VIDEOPARAMETERS 结构中的成员。
+-   对于电视连接器支持的每项功能，请在 VIDEOPARAMETERS 结构的**dwFlags**成员中设置相应的标志。
 
--   对于每个标记设置**dwFlags**成员，以指示功能以及与该标记关联的当前设置的相应 VIDEOPARAMETERS 结构成员分配值。 请参阅[ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)对应于给定的标记的结构成员的列表的参考页。
+-   对于**dwFlags**成员中设置的每个标志，将值分配给 VIDEOPARAMETERS 结构的相应成员，以指示与该标志关联的功能和当前设置。 有关对应于给定标志的结构成员的列表，请参阅[**VIDEOPARAMETERS**](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)参考页。
 
-**DwMode** VIDEOPARAMETERS 结构中的成员指定电视是否输出进行了优化的视频播放或显示 Windows 桌面。 值为视频\_模式下\_电视\_播放指定电视输出针对视频播放优化 （即，禁用闪烁筛选器和电视机之间启用）。 值为视频\_模式下\_赢取\_图形指定电视输出适用于 Windows 的图形 （也就是说，启用了最大闪烁筛选器和电视机之间已禁用）。
+VIDEOPARAMETERS 结构的**dwMode**成员指定电视输出是否经过优化，可用于视频播放或显示 Windows 桌面。 视频\_模式的值\_电视\_播放指定为视频播放优化电视输出（即禁用闪烁筛选器并启用 overscan）。 "视频\_模式"\_WIN\_图形的值指定为 Windows 图形优化电视输出（即启用最大闪烁筛选器并禁用 overscan）。
 
-在响应副总裁\_命令\_GET、 微型端口驱动程序必须设置副总裁\_标志\_电视\_中的模式标志**dwFlags** ，必须设置副总裁\_模式\_赢得\_图形中的位**dwAvailableModes**。 设置副总裁\_模式下\_电视\_播放位**dwAvailableModes**是可选的。 此外，微型端口驱动程序必须设置副总裁\_标志\_最大\_不成比例中的标志**dwFlags**必须将值分配给相应 VIDEOPARAMETERS 结构的成员。
+为了响应\_获取的 VP\_命令，微型端口驱动程序必须在**dwFlags**中设置副总裁\_标志\_电视\_模式标志，并且必须在**DWAVAILABLEMODES**中将 vp\_模式设置\_WIN\_图形位。 将\_模式\_电视\_播放位**设置为可选**。 此外，微型端口驱动程序必须在**dwFlags**中设置 VP\_标志\_最大\_无比例标志，并且必须为 VIDEOPARAMETERS 结构的相应成员赋值。
 
-响应副总裁\_命令\_获取，如果电视输出当前已禁用，微型端口驱动程序应设置**dwMode**为 0，设置**dwTVStandard**到副总裁\_标准\_赢得\_VGA，并设置**dwAvailableTVStandard**到副总裁\_标准\_赢取\_VGA。
+为了响应 VP\_命令\_获取，如果电视输出当前已禁用，微型端口驱动程序应将**dwMode**设置为0，将**DWTVSTANDARD**设置为 VP\_STANDARD\_WIN\_VGA，并设置**dwAvailableTVStandard**到 VP\_STANDARD\_WIN\_VGA。
 
-示例 1：适配器支持的电视输出，当前已禁用。 微型端口驱动程序必须执行以下操作以响应副总裁\_命令\_获取：
+示例1：适配器支持当前禁用的电视输出。 小型端口驱动程序必须执行以下操作，以响应\_获取的 VP\_命令：
 
--   在中**dwFlags**，设置副总裁\_标志\_电视\_模式下，副总裁\_标志\_电视\_标准，以及所有其他标记，表示支持的电视功能连接器。
+-   在**dwFlags**中，将副总裁\_标志设置\_电视\_模式，将\_标志副总裁\_电视\_STANDARD，并将所有其他标志表示电视连接器支持的功能。
 
--   设置**dwMode**为 0。
+-   将**dwMode**设置为0。
 
--   在中**dwAvailableModes**，设置副总裁\_模式\_赢取\_图形。 如果硬件支持副总裁\_模式下\_电视\_播放，集还位。
+-   在**dwAvailableModes**中，将 VP\_模式设置\_WIN\_图形。 如果硬件支持副总裁\_模式\_电视\_播放，则同时设置该位。
 
--   设置**dwTVStandard**到副总裁\_电视\_标准\_赢取\_VGA。
+-   将**dwTVStandard**设置为副总裁\_TV\_STANDARD\_WIN\_VGA。
 
--   在中**dwAvailableTVStandard**，将表示支持的电视连接器的电视标准的所有位都设置。
+-   在**dwAvailableTVStandard**中，设置代表电视连接器支持的电视标准的所有位。
 
--   中的所有标志都设置为**dwFlags** (以外副总裁\_标志\_电视\_模式和副总裁\_标志\_电视\_标准，已经讨论过)，将分配到 VIDEOPARAMETERS 结构的对应成员的值。
+-   对于在**dwFlags**中设置的所有标志（除了\_标志的 VP 标志\_电视\_模式和副总裁\_\_标志），请将值分配给 VIDEOPARAMETERS 的相应成员。构造.
 
-示例 2：若要启用电视输出，调用方 （而不是微型端口驱动程序） 应执行以下操作：
+示例2：若要启用电视输出，调用方（而非微型端口驱动程序）应执行以下操作：
 
--   在中**dwFlags**，设置副总裁\_标志\_电视\_模式和副总裁\_标志\_电视\_标准。 清除所有其他标志。
+-   在**dwFlags**中，将副总裁\_标志\_电视\_模式和副总裁\_标志\_\_STANDARD。 清除所有其他标志。
 
--   设置**dwMode**到任一副总裁\_模式\_赢取\_图形或副总裁\_模式\_电视\_播放。 未设置两个位。
+-   将**dwMode**设置为 VP\_模式\_WIN\_图形或副总裁\_模式\_TV\_播放。 不要设置这两个位。
 
--   设置**dwTvStandard**所需的标准 (例如副总裁\_电视\_标准\_NTSC\_M)。 中未设置任何其他位**dwTvStandard**。
+-   将**dwTvStandard**设置为所需标准（例如副总裁\_TV\_STANDARD\_NTSC\_M）。 不要在**dwTvStandard**中设置任何其他位。
 
-示例 3：若要禁用电视输出，调用方 （而不是微型端口驱动程序） 应执行以下操作：
+示例3：若要禁用电视输出，调用方（而非微型端口驱动程序）应执行以下操作：
 
--   在中**dwFlags**，设置副总裁\_标志\_电视\_模式和副总裁\_标志\_电视\_标准。 清除所有其他标志。
+-   在**dwFlags**中，将副总裁\_标志\_电视\_模式和副总裁\_标志\_\_STANDARD。 清除所有其他标志。
 
--   设置**dwMode**为 0。
+-   将**dwMode**设置为0。
 
--   在中**dwTvStandard**，设置副总裁\_电视\_标准\_赢取\_VGA。 清除所有其他位**dwTvStandard**。
+-   在**dwTvStandard**中，将副总裁\_TV\_STANDARD\_WIN\_VGA。 清除**dwTvStandard**中的所有其他位。
 
  
 

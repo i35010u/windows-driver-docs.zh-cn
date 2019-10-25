@@ -3,15 +3,15 @@ title: 宏块控制命令结构的第二部分
 description: 宏块控制命令结构的第二部分
 ms.assetid: 94ef61d1-cd7d-4e73-8be8-01f7d23bb91d
 keywords:
-- 宏块 WDK DirectX VA，通用命令结构
+- macroblocks WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23ac65f56b465b1a3fbacbc76738209780c6bf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b1bbf2baba7c230556dbd7927ff40460af4f439e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365590"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829509"
 ---
 # <a name="second-part-of-macroblock-control-command-structure"></a>宏块控制命令结构的第二部分
 
@@ -19,27 +19,27 @@ ms.locfileid: "67365590"
 ## <span id="ddk_second_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_SECOND_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
 
 
-泛型宏块控制命令结构的第二部分包含三个变体，具体取决于解码过程图片的配置：
+一般宏块控件命令结构的第二部分包含三种变体，具体取决于图片解码过程的配置：
 
-1.  如果*HostResidDiff* (位 11 英寸**wMBtype**成员) 是等于 1，宏块控制命令的下一个元素是**全球合作伙伴大会\_Overflow**。 **全球合作伙伴大会\_溢出**成员，如果使用，指定哪些块宏块使用溢出残留的差异数据。 **全球合作伙伴大会\_Overflow**后跟一个 dword 值，等于零。
+1.  如果*HostResidDiff* （ **wMBtype**成员中的第11位）等于1，则宏块 control 命令的下一个元素为**wPC\_溢出**。 **WPC\_溢出**成员（如果已使用）指定宏块的哪些块使用溢出残留差异数据。 **wPC\_溢出**后跟 DWORD 等于零。
 
-2.  如果*HostResidDiff* (位 11 英寸**wMBtype**成员) 等于零， **bChromaFormat**隶属[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)是等于 1，宏块控制命令的下一个元素是**bNumCoef，** 为六个元素的字节数组。 **BNumCoef**成员指示的残留的差异数据缓冲区的每个宏块的块中的系数。
+2.  如果*HostResidDiff* （ **wMBtype**成员中的第11位）等于零，并且[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的**bChromaFormat**成员等于1，则宏块 control 命令的下一个元素为**bNumCoef，** a由六个元素组成的字节数组。 **BNumCoef**成员指示宏块每个块的剩余差数据缓冲区中的系数数。
 
-3.  如果*HostResidDiff* (位 11 英寸**wMBtype**元素) 等于零， **bChromaFormat** DXVA 成员\_PictureParameters 不等于 1，宏块控制命令的下一个元素是**wTotalNumCoef**。 这一切后跟一个 dword 值，等于零。
+3.  如果*HostResidDiff* （ **wMBtype**元素中的第11位）等于零，并且 DXVA\_PictureParameters 的**bChromaFormat**成员不等于1，则宏块 control 命令的下一个元素为**wTotalNumCoef**。 后跟一个 DWORD 等于零的值。
 
-### <a name="span-idwpcoverflowspanspan-idwpcoverflowspanspan-idwpcoverflowspanwpcoverflow"></a><span id="wPC_Overflow"></span><span id="wpc_overflow"></span><span id="WPC_OVERFLOW"></span>wPC\_Overflow
+### <a name="span-idwpc_overflowspanspan-idwpc_overflowspanspan-idwpc_overflowspanwpc_overflow"></a><span id="wPC_Overflow"></span><span id="wpc_overflow"></span><span id="WPC_OVERFLOW"></span>wPC\_溢出
 
-**全球合作伙伴大会\_溢出**结构成员指定的宏块使用溢出残留的差异数据的块。
+**WPC\_溢出**结构成员指定宏块的哪些块使用溢出残留差异数据。
 
-使用基于主机的残留差异解码时 (当*HostResidDiff*等于 1) 与**bPicOverflowBlocks**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)等于 1 和*IntraMacroblock*等于零 （8-8 溢出方法）**全球合作伙伴大会\_溢出**包含模式代码中与相同的方式指定溢出块**wPatternCode**。 编码的溢出块的数据 (这些块具有位减去 11*我*等于 1) 在剩余编码相同的索引顺序中的缓冲区中找到 (增加*我*)。
+使用基于主机的残留差异解码时（当*HostResidDiff*等于1时）， **bPicOverflowBlocks**成员[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)等于1， *IntraMacroblock*等于零（8-8 溢出方法）， **wPC\_溢出**包含用与**wPatternCode**相同的方式指定的溢出块的模式代码。 编码溢出块（其位11减*i*等于1的块）的数据在残留编码缓冲区中的索引顺序相同（增加*i*）。
 
 ### <a name="span-idbnumcoefspanspan-idbnumcoefspanspan-idbnumcoefspanbnumcoef"></a><span id="bNumCoef"></span><span id="bnumcoef"></span><span id="BNUMCOEF"></span>bNumCoef
 
-**BNumCoef**结构成员是六个元素的数组。 *我*个元素**bNumCoef**数组包含的每个块的残留的差异数据缓冲区中的系数数*我*的宏块，其中*我*是中 mpeg-2 视频图 6-10，6-11，6 到 12 （Y，然后按 Cb 后, 跟 Cr 光栅扫描顺序） 指定宏块中的块的索引。 **bNumCoef**使用时，才*HostResidDiff*为零并且**bChromaFormat**隶属[ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)为 1 (4:2:0)。 如果在 4 中使用： 2:2 或 4:4:4 格式，它会增加的典型宏块控制命令过去关键的内存对齐边界，因此，只有在转换系数结构 EOB 用于确定在每个块中的系数的数字大小非-4:2:0 情况。 目的**bNumCoef**是指示为每个块中数据表示为个数的系数存在的残留的差异数据缓冲区的数量。 当**bConfig4GroupedCoefs**的成员[ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)为 1， **bNumCoef**可能包含系数的实际数目的块发送或值舍入到最多为 4 的倍数。 按相同顺序的残留差异缓冲区中找到这些系数的数据。
+**BNumCoef**结构成员是包含六个元素的数组。 **BNumCoef**数组的第*i*个元素包含*宏块的每个块的*剩余方差数据缓冲区中的系数数量，其中*i*是中指定的宏块中的块的索引。视频图6-10、6-11 和6-12 （x 的光栅扫描顺序，后跟 Cb，再后跟 Cr）。 仅当*HostResidDiff*为零时， [**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的**bChromaFormat**成员为1（4:2:0）时，才使用**bNumCoef** 。 如果使用的是4:2:2 或4:4:4 格式，则它将增加典型的宏块控制命令的大小，超过了严重内存对齐边界，因此，只有转换系数结构中的 EOB 用于确定每个块中的系数数量非4:2:0 事例。 **BNumCoef**的目的是指出残留差数据缓冲区中的每个块的数据数量，表示为存在的系数数。 当[**DXVA\_ConfigPictureDecode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)的**bConfig4GroupedCoefs**成员为1时， **bNumCoef**可能包含为块发送的实际系数数，或舍入为4的倍数的值。 这些系数的数据是以相同顺序在残留差异缓冲区中找到的。
 
 ### <a name="span-idwtotalnumcoefspanspan-idwtotalnumcoefspanspan-idwtotalnumcoefspanwtotalnumcoef"></a><span id="wTotalNumCoef"></span><span id="wtotalnumcoef"></span><span id="WTOTALNUMCOEF"></span>wTotalNumCoef
 
-**WTotalNumCoef**结构成员指示整个宏块的残留的差异数据缓冲区中的系数的总数。 使用此成员时，才*HostResidDiff*为零并**bChromaFormat**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)不等于 1 (4:2:0)。
+**WTotalNumCoef**结构成员指示整个宏块的残留差数据缓冲区中的系数总数。 仅当*HostResidDiff*为零时，且 DXVA 的**bChromaFormat**成员[ **\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)不等于1（4:2:0）时，才使用此成员。
 
  
 

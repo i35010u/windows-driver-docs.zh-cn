@@ -3,17 +3,17 @@ title: 同步视频解码操作
 description: 同步视频解码操作
 ms.assetid: 4c88bf8f-0f10-4281-b856-a0e056d69d0e
 keywords:
-- 视频解码 WDK DirectX va，因此同步
-- 解码视频 WDK DirectX va，因此同步
+- 视频解码 WDK DirectX VA，同步
+- 解码视频 WDK DirectX VA，同步
 - 同步 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ed23ab0b98491230657003d2c37443fe1ef74cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b10c168597a872aff9adea873cf955b5ac92363f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372041"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825515"
 ---
 # <a name="synchronizing-video-decode-operations"></a>同步视频解码操作
 
@@ -21,13 +21,13 @@ ms.locfileid: "67372041"
 ## <span id="ddk_synchronizing_video_decode_operations_gg"></span><span id="DDK_SYNCHRONIZING_VIDEO_DECODE_OPERATIONS_GG"></span>
 
 
-DirectX VA 2.0 的同步机制已改进从 1.0 版和更类似于 Microsoft Direct3D 操作所用的同步机制。
+DirectX VA 2.0 的同步机制经过了1.0 版本的改进，更类似于 Microsoft Direct3D 操作所使用的同步机制。
 
-在 DirectX VA 1.0 中，主要由解码器执行同步。 解码器可以使用压缩的缓冲区之前，它将调用[ *DdMoCompQueryStatus* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)函数来确定缓冲区是否可供使用 （也就是说，硬件不访问缓冲区）。 如果缓冲区不可用，解码器必须进入睡眠状态、 轮询，或执行其他操作。
+在 DirectX VA 1.0 中，同步主要由解码器执行。 在解码器可以使用压缩的缓冲区之前，它会调用[*DdMoCompQueryStatus*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)函数来确定缓冲区是否可供使用（即，硬件未访问缓冲区）。 如果缓冲区不可用，则解码器必须睡眠、轮询或执行其他操作。
 
-DirectX VA 2.0 使用顶点缓冲区和索引缓冲区已使用 Direct3D 的同步模型。 在 DirectX VA 2.0 中，锁定压缩的缓冲区解码器执行同步。 如果用户模式显示驱动程序将尝试锁定压缩的缓冲区和缓冲区正在使用中，该驱动程序可以失败锁定或重命名缓冲区。 用户模式显示驱动程序请求的视频内存管理器时重命名缓冲区驱动程序设置**放弃**的成员[ **D3DDDICB\_LOCKFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)对的调用中的结构[ **pfnLockCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)函数。 如果用户模式显示驱动程序重命名缓冲区，则该驱动程序返回一个指向备用缓冲区，以便该解码器可继续使用而不被阻止。
+DirectX VA 2.0 使用 Direct3D 已在顶点缓冲区和索引缓冲区上使用的同步模型。 在 DirectX VA 2.0 中，通过解码器锁定压缩缓冲区来执行同步。 如果用户模式显示驱动程序尝试锁定压缩缓冲区，并且缓冲区正在使用中，则驱动程序可能会导致锁定或重命名缓冲区失败。 用户模式显示驱动程序请求当驱动程序在对[**pfnLockCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)函数的调用中设置[**D3DDDICB\_LOCKFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)结构的**丢弃**成员时，视频内存管理器会重命名缓冲区。 如果用户模式显示驱动程序重命名了缓冲区，则驱动程序将返回一个指向备用缓冲区的指针，使解码器可以继续而不会被阻止。
 
-通常情况下，对于 DirectX VA 2.0 中，同步都是问题仅当硬件会占用更多的缓冲区副本不直接压缩的缓冲区。
+通常，对于 DirectX VA 2.0，仅当硬件可以直接使用压缩缓冲区而无需额外的缓冲副本时，同步才会出现问题。
 
  
 

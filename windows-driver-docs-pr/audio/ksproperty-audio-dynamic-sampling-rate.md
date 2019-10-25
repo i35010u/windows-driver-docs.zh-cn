@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AUDIO\_DYNAMIC\_SAMPLING\_RATE
-description: KSPROPERTY\_音频\_动态\_采样\_速率属性用于启用和禁用动态跟踪的节点的采样率。
+title: KSPROPERTY\_音频\_动态\_采样\_速率
+description: KSPROPERTY\_音频\_动态\_采样\_速率属性用于启用和禁用节点采样率的动态跟踪。
 ms.assetid: ff99c670-ef93-4730-8be4-1ed7c01c5381
 keywords:
-- KSPROPERTY_AUDIO_DYNAMIC_SAMPLING_RATE Audio Devices
+- KSPROPERTY_AUDIO_DYNAMIC_SAMPLING_RATE 音频设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b2d397cf438d31988b4fe0424ab313f891bf2fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d66697fc24017149bf2d6553047a6160d0adc82
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358936"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833043"
 ---
-# <a name="kspropertyaudiodynamicsamplingrate"></a>KSPROPERTY\_AUDIO\_DYNAMIC\_SAMPLING\_RATE
+# <a name="ksproperty_audio_dynamic_sampling_rate"></a>KSPROPERTY\_音频\_动态\_采样\_速率
 
 
-KSPROPERTY\_音频\_动态\_采样\_速率属性用于启用和禁用动态跟踪的节点的采样率。
+KSPROPERTY\_音频\_动态\_采样\_速率属性用于启用和禁用节点采样率的动态跟踪。
 
 ## <span id="ddk_ksproperty_audio_dynamic_sampling_rate_ks"></span><span id="DDK_KSPROPERTY_AUDIO_DYNAMIC_SAMPLING_RATE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_动态\_采样\_速率属性用于启用和禁用动态跟�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,33 +50,33 @@ KSPROPERTY\_音频\_动态\_采样\_速率属性用于启用和禁用动态跟�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>“是”</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>BOOL</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>型</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-（操作数据） 的属性值的类型 BOOL，并指定动态跟踪是启用还是禁用节点上。 值是 **，则返回 TRUE**时启用了动态跟踪的采样率。 可以通过设置通过速率在此模式下，输入的流采样率能显式变化[ **KSPROPERTY\_音频\_采样\_速率**](ksproperty-audio-sampling-rate.md)或隐式通过对输入流设置通过时间戳的速率。
+属性值（操作数据）的类型为 BOOL，并指定是否在节点上启用或禁用动态跟踪。 如果启用了动态跟踪采样速率，则值为**TRUE** 。 在此模式下，可通过设置[**KSPROPERTY\_音频\_\_采样**](ksproperty-audio-sampling-rate.md)速率，通过设置输入流上的时间戳的速率来明确地改变输入流的采样速率。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_动态\_采样\_速率属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY\_音频\_动态\_采样\_速率属性请求返回状态\_SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-此属性用于控制动态跟踪中的以下节点类型：
+此属性用于控制以下节点类型中的动态跟踪：
 
--   ADC 节点 ([**KSNODETYPE\_ADC**](ksnodetype-adc.md))
+-   ADC 节点（[**KSNODETYPE\_ADC**](ksnodetype-adc.md)）
 
--   DAC 节点 ([**KSNODETYPE\_DAC**](ksnodetype-dac.md))
+-   DAC 节点（[**KSNODETYPE\_DAC**](ksnodetype-dac.md)）
 
--   SRC 节点 ([**KSNODETYPE\_SRC**](ksnodetype-src.md))
+-   SRC 节点（[**KSNODETYPE\_src**](ksnodetype-src.md)）
 
 <a name="requirements"></a>要求
 ------------
@@ -88,18 +88,18 @@ KSPROPERTY\_音频\_动态\_采样\_速率属性请求将返回状态\_成功以
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSPROPERTY\_AUDIO\_SAMPLING\_RATE**](ksproperty-audio-sampling-rate.md)
+[**KSPROPERTY\_音频\_采样\_速率**](ksproperty-audio-sampling-rate.md)
 
 [**KSNODETYPE\_ADC**](ksnodetype-adc.md)
 

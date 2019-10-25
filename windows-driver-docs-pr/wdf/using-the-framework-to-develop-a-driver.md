@@ -1,6 +1,6 @@
 ---
 title: 使用 WDF 开发驱动程序
-description: 本主题提供将用于开发的内核模式驱动程序框架 (KMDF) 驱动程序的 framework 对象的高级概述。
+description: 本主题提供了用于开发内核模式驱动程序框架（KMDF）驱动程序的框架对象的高级概述。
 ms.assetid: 421b7eb8-11d3-4a37-8ae8-e2d3d216c9c7
 keywords:
 - 内核模式驱动程序 WDK KMDF，开发步骤
@@ -9,69 +9,69 @@ keywords:
 - 基于框架的驱动程序 WDK KMDF，开发步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49901c8d3e27e388caee596d2fae5a3b42dcad0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b509745bced00ed952b294b862bd13c843ccde01
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372202"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831968"
 ---
 # <a name="using-wdf-to-develop-a-driver"></a>使用 WDF 开发驱动程序
 
 
-本主题提供将用于开发的内核模式驱动程序框架 (KMDF) 驱动程序的 framework 对象的高级概述。 除特别指明，您将使用相同的对象来开发启动 UMDF 版本 2 中的用户模式驱动程序框架 (UMDF) 驱动程序。
+本主题提供了用于开发内核模式驱动程序框架（KMDF）驱动程序的框架对象的高级概述。 除非指明，否则在 UMDF 版本2中，你将使用相同的对象来开发用户模式驱动程序框架（UMDF）驱动程序。
 
-Windows 驱动程序框架 (WDF) 驱动程序组成[ **DriverEntry 例程**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)和一系列事件回叫函数，通过定义[Windows 驱动程序框架对象](wdf-objects.md)基于框架的驱动程序使用。 回调函数调用 framework 导出的对象方法。 Windows Driver Kit (WDK) 包含演示如何实现驱动程序的事件回调函数的示例 WDF 驱动程序。 您可以下载这些示例来自[Windows 开发人员中心-硬件](https://go.microsoft.com/fwlink/p/?linkid=256387)。 提供哪些示例的信息，请参阅[示例 KMDF 驱动程序](sample-kmdf-drivers.md)并[样本 UMDF 驱动程序](sample-umdf-drivers.md)。
+Windows 驱动程序框架（WDF）驱动程序由基于框架的驱动程序所使用的[Windows 驱动程序框架对象](wdf-objects.md)定义的[**DriverEntry 例程**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)和一组事件回调函数组成。 回调函数调用框架导出的对象方法。 Windows 驱动程序工具包（WDK）包含示例 WDF 驱动程序，用于演示如何实现驱动程序的事件回调函数。 你可以从[Windows 开发人员中心-硬件](https://go.microsoft.com/fwlink/p/?linkid=256387)下载这些示例。 有关可用示例的详细信息，请参阅[KMDF 驱动程序](sample-kmdf-drivers.md)和[示例 UMDF 驱动程序](sample-umdf-drivers.md)示例。
 
-创建 WDF 驱动程序时，通常将执行以下操作：
+创建 WDF 驱动程序时，通常会执行以下操作：
 
--   使用*framework 驱动程序对象*来表示您的驱动程序。
+-   使用*框架驱动程序对象*来表示您的驱动程序。
 
-    在驱动程序[ **DriverEntry 例程**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)必须调用[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)创建表示一个框架驱动程序对象驱动程序。 **WdfDriverCreate**方法还会注册的驱动程序[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数，框架将调用每个时间 Plug and Play （即插即用）管理器报告的驱动程序支持的设备存在。
+    驱动程序的[**DriverEntry 例程**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)必须调用[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)以创建表示该驱动程序的框架驱动程序对象。 **WdfDriverCreate**方法还会注册驱动程序的[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数，该函数每次即插即用（PnP）管理器报告驱动程序所支持的设备是否存在时，框架会调用此函数。
 
--   使用*framework 设备对象*若要在您的驱动程序支持即插即用和电源管理。
+-   使用*框架设备对象*支持驱动程序中的 PnP 和电源管理。
 
-    所有驱动程序必须调用[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)创建每个设备驱动程序支持的框架设备对象。 设备可以是一个插入到计算机的硬件，也可以是纯软件设备。 Framework 设备对象支持即插即用和电源管理操作和驱动程序可以注册事件回叫函数，当设备进入或离开其工作状态时通知该驱动程序。
+    所有驱动程序都必须调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) ，以便为驱动程序支持的每个设备创建框架设备对象。 设备可以是插入到计算机中的一片硬件，也可以是仅限软件的设备。 框架设备对象支持 PnP 和电源管理操作，驱动程序可以注册事件回调函数，以便在设备进入或离开其工作状态时通知驱动程序。
 
-    有关框架设备对象的详细信息，请参阅[支持即插即用和您的驱动程序中的电源管理](supporting-pnp-and-power-management-in-your-driver.md)。
+    有关框架设备对象的详细信息，请参阅[在您的驱动程序中支持 PnP 和电源管理](supporting-pnp-and-power-management-in-your-driver.md)。
 
--   使用*framework 队列对象*并*framework 请求对象*以支持您的驱动程序中的 I/O 操作。
+-   使用*框架队列对象*和*框架请求对象*来支持驱动程序中的 i/o 操作。
 
-    所有驱动程序的已接收的读取、 写入或设备的 I/O 控制请求从应用程序或其他驱动程序必须调用[ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)创建表示 I/O 队列的队列对象的框架。 通常情况下，驱动程序注册一个或多个[请求处理程序](request-handlers.md)为每个 I/O 队列。 I/O 管理器将 I/O 请求发送到该驱动程序，框架创建请求一个框架请求对象、 将请求对象放入 I/O 队列中，并调用其中一个驱动程序的请求处理程序来通知该驱动程序请求可用。 驱动程序获取的 I/O 请求并可以重新排队、 完成、 取消，或将请求转发。
+    从应用程序或其他驱动程序接收读取、写入或设备 i/o 控制请求的所有驱动程序都必须调用[**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate) ，以创建表示 i/o 队列的框架队列对象。 通常，驱动程序会为每个 i/o 队列注册一个或多个[请求处理程序](request-handlers.md)。 当 i/o 管理器向驱动程序发送 i/o 请求时，框架将为请求创建一个框架请求对象，将该请求对象放置在 i/o 队列中，并调用驱动程序的一个请求处理程序来通知驱动程序请求可用。 该驱动程序将获取 i/o 请求，并可以重新排队、完成、取消或转发该请求。
 
-    有关使用框架的队列对象和请求对象的详细信息，请参阅[Framework 队列对象](framework-queue-objects.md)并[Framework 请求对象](framework-request-objects.md)。
+    有关使用框架的队列对象和请求对象的详细信息，请参阅[框架队列对象](framework-queue-objects.md)和[框架请求对象](framework-request-objects.md)。
 
--   使用*framework 中断对象*处理设备中断。
+-   使用*框架中断对象*来处理设备中断。
 
-    处理设备中断的驱动程序必须调用[ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)创建每个中断 framework 中断对象以及如何注册回调函数。 这些回调函数启用和禁用中断并充当中断服务例程 (ISR) 并延迟过程调用 (DPC) 的中断。
+    处理设备中断的驱动程序必须调用[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) ，以便为每个中断创建框架中断对象并注册回调函数。 这些回调函数启用和禁用中断，并充当中断服务例程（ISR）和延迟过程调用（DPC）的中断。
 
     有关框架中断对象的详细信息，请参阅[处理硬件中断](handling-hardware-interrupts.md)。
 
--   KMDF 驱动程序可以使用的框架*DMA 促成因素对象*并*DMA 事务对象*处理设备的直接内存访问 (DMA) 操作。
+-   KMDF 驱动程序可以使用框架的*DMA 启用码*对象和*DMA 事务对象*来处理设备的直接内存访问（DMA）操作。
 
-    如果 KMDF 驱动程序的设备支持 DMA 操作，该驱动程序应调用[ **WdfDmaEnablerCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate)创建 DMA 启用程序对象和[ **WdfDmaTransactionCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioncreate)创建一个或多个 DMA 事务对象。 DMA 事务对象定义[ *EvtProgramDma* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)程序设备硬件执行 DMA 操作的回调函数。
+    如果 KMDF 驱动程序的设备支持 DMA 操作，驱动程序应调用[**WdfDmaEnablerCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate)来创建 dma 启用程序对象，并使用[**WdfDmaTransactionCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioncreate)创建一个或多个 dma 事务对象。 DMA transaction 对象定义用于计划设备硬件执行 DMA 操作的[*EvtProgramDma*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数。
 
-    有关支持 DMA 的操作的详细信息，请参阅[基于 Framework 的驱动程序中处理 DMA 操作](handling-dma-operations-in-kmdf-drivers.md)。
+    有关支持 DMA 操作的详细信息，请参阅[在基于框架的驱动程序中处理 Dma 操作](handling-dma-operations-in-kmdf-drivers.md)。
 
--   使用框架*I/O 目标对象*将 I/O 请求发送到其他驱动程序。
+-   使用框架的*i/o 目标对象*将 i/o 请求发送到其他驱动程序。
 
-    若要将输入/输出请求传递给其他驱动程序 （通常的下一个较低驱动程序在驱动程序堆栈中），您的驱动程序将请求发送到 I/O 目标对象。
+    若要将 i/o 请求传递到其他驱动程序（通常是驱动程序堆栈中的下一个较低驱动程序），驱动程序会将请求发送到 i/o 目标对象。
 
-    有关 I/O 目标对象的详细信息，请参阅[使用 I/O 目标](using-i-o-targets.md)。
+    有关 i/o 目标对象的详细信息，请参阅[使用 I/o 目标](using-i-o-targets.md)。
 
--   KMDF 驱动程序可以使用的框架*WMI 提供程序对象*并*WMI 实例对象*必须支持 Windows Management Instrumentation (WMI) 的功能。
+-   KMDF 驱动程序可以使用框架的*WMI 提供程序对象*和*WMI 实例对象*来支持 Windows Management Instrumentation （WMI）功能。
 
-    大多数 KMDF 驱动程序应支持 WMI 和应调用[ **WdfWmiInstanceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdfwmiinstancecreate)注册回叫函数，发送或接收 WMI 数据。
+    大多数 KMDF 驱动程序应支持 WMI，并应调用[**WdfWmiInstanceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstancecreate)来注册发送或接收 WMI 数据的回调函数。
 
-    有关 WMI 的详细信息，请参阅[中基于框架的驱动程序支持 WMI](supporting-wmi-in-kmdf-drivers.md)。
+    有关 WMI 的详细信息，请参阅[在基于框架的驱动程序中支持 WMI](supporting-wmi-in-kmdf-drivers.md)。
 
 -   使用框架的同步功能。
 
-    所有驱动程序必须能够识别多处理器同步问题，并应使用[同步技术](synchronization-techniques-for-wdf-drivers.md)framework 提供的。
+    所有驱动程序都必须了解多处理器同步问题，并应使用框架提供的[同步技术](synchronization-techniques-for-wdf-drivers.md)。
 
--   使用其他对象和该框架提供的功能。
+-   使用框架提供的其他对象和功能。
 
-    该框架提供您的驱动程序可以使用的其他对象。 有关这些对象的详细信息，请参阅[WDF 支持对象](wdf-support-objects.md)。
+    该框架提供了驱动程序可以使用的其他对象。 有关这些对象的详细信息，请参阅[WDF 支持对象](wdf-support-objects.md)。
 
  
 

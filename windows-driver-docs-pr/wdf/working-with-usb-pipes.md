@@ -4,184 +4,184 @@ description: 使用 USB 管道
 ms.assetid: d5422ff2-de1e-4a77-8b3c-0b2917b1d9ca
 keywords:
 - framework 对象 WDK KMDF，USB 管道对象
-- USB 通过管道传递 WDK KMDF
+- USB 管道 WDK KMDF
 - 管道对象 WDK KMDF
-- USB I/O 面向 WDK KMDF，USB 管道
-- 持续读取器 WDK USB
+- USB i/o 目标 WDK KMDF，USB 管道
+- 连续读取器 WDK USB
 - 重置管道 WDK KMDF
 - 发送 URBs WDK KMDF
-- USB 请求阻止 WDK KMDF
+- USB 请求块 WDK KMDF
 - URBs WDK KMDF
-- 正在停止管道 WDK KMDF
+- 停止管道 WDK KMDF
 - 写入管道 WDK KMDF
-- 从管道 WDK KMDF 读取
-- 输入通过管道传递 WDK KMDF
-- 输出通过管道传递 WDK KMDF
+- 从管道中读取 WDK KMDF
+- 输入管道 WDK KMDF
+- 输出管道 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d04db4aed0658def761326c5c7ad47b7a378537a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c4a2889cac9d777ea28f2daceec91b5970c9a8bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384436"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72823485"
 ---
 # <a name="working-with-usb-pipes"></a>使用 USB 管道
 
 
-框架为框架 USB 管道对象表示 USB 接口中的每个管道。 当驱动程序[会在配置 USB 设备](working-with-usb-devices.md#selecting-a-device-configuration)，框架在每个所选接口中创建每个管道的 framework USB 管道对象。 管道对象方法启用驱动程序即可执行以下操作：
+框架将 USB 接口中的每个管道表示为框架 USB 管道对象。 当驱动程序[配置 USB 设备](working-with-usb-devices.md#selecting-a-device-configuration)时，框架会为每个选定接口中的每个管道创建一个框架 USB 管道对象。 通过管道对象方法，驱动程序可以执行以下操作：
 
--   [获取管道的信息。](#obtaining-pipe-information)
+-   [获取管道信息。](#obtaining-pipe-information)
 
 -   [从管道读取。](#reading-from-a-pipe)
 
--   [向管道写入。](#writing-to-a-pipe)
+-   [写入管道。](#writing-to-a-pipe)
 
 -   [停止或重置管道。](#stopping-and-resetting-a-pipe)
 
 -   [将 URB 发送到管道。](#sending-a-urb-to-a-pipe)
 
-### <a href="" id="obtaining-pipe-information"></a> 获取管道的信息
+### <a href="" id="obtaining-pipe-information"></a>获取管道信息
 
-在调用[ **WdfUsbInterfaceGetConfiguredPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)若要获取 framework USB 管道对象的句柄，您的驱动程序可以调用 USB 管道对象定义的以下方法用于获取有关 USB 管道的信息：
+在调用[**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)以获取框架 USB 管道对象的句柄之后，驱动程序可以调用 usb 管道对象定义的以下方法来获取有关 usb 管道的信息：
 
-<a href="" id="---------wdfusbtargetpipegetiotarget--------"></a>[**WdfUsbTargetPipeGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetiotarget)  
-返回的句柄与 USB 管道相关联的 I/O 目标对象。 该驱动程序可以将传递到此句柄[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)。
+<a href="" id="---------wdfusbtargetpipegetiotarget--------"></a>[**WdfUsbTargetPipeGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetiotarget)  
+返回与 USB 管道关联的 i/o 目标对象的句柄。 驱动程序可以将此句柄传递给[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)。
 
-<a href="" id="---------wdfusbtargetpipegetinformation--------"></a>[**WdfUsbTargetPipeGetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)  
-检索有关 USB 管道和其终结点的信息。
+<a href="" id="---------wdfusbtargetpipegetinformation--------"></a>[**WdfUsbTargetPipeGetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)  
+检索有关 USB 管道及其终结点的信息。
 
-<a href="" id="---------wdfusbtargetpipegettype--------"></a>[**WdfUsbTargetPipeGetType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegettype)  
-返回一个 USB 管道的类型。
+<a href="" id="---------wdfusbtargetpipegettype--------"></a>[**WdfUsbTargetPipeGetType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegettype)  
+返回 USB 管道的类型。
 
-<a href="" id="---------wdfusbtargetpipeisinendpoint--------"></a>[**WdfUsbTargetPipeIsInEndpoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeisinendpoint)  
-确定 USB 管道是否已连接到的输入终结点。
+<a href="" id="---------wdfusbtargetpipeisinendpoint--------"></a>[**WdfUsbTargetPipeIsInEndpoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeisinendpoint)  
+确定 USB 管道是否连接到输入终结点。
 
-<a href="" id="---------wdfusbtargetpipeisoutendpoint--------"></a>[**WdfUsbTargetPipeIsOutEndpoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeisoutendpoint)  
-确定 USB 管道是否已连接到的输出终结点。
+<a href="" id="---------wdfusbtargetpipeisoutendpoint--------"></a>[**WdfUsbTargetPipeIsOutEndpoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeisoutendpoint)  
+确定 USB 管道是否连接到输出终结点。
 
-<a href="" id="---------wdf-usb-pipe-direction-in--------"></a>[**WDF\_USB\_管道\_方向\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_pipe_direction_in)  
+<a href="" id="---------wdf-usb-pipe-direction-in--------"></a>[**WDF\_USB\_管道\_方向\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_pipe_direction_in)  
 确定 USB 终结点是否为输入终结点。
 
-<a href="" id="---------wdf-usb-pipe-direction-out--------"></a>[**WDF\_USB\_管道\_方向\_出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_pipe_direction_out)  
+<a href="" id="---------wdf-usb-pipe-direction-out--------"></a>[**WDF\_USB\_管道\_方向\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_pipe_direction_out)  
 确定 USB 终结点是否为输出终结点。
 
 有关相关信息，请参阅[如何枚举 USB 管道](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。
 
-### <a href="" id="reading-from-a-pipe"></a> 从管道读取
+### <a href="" id="reading-from-a-pipe"></a>从管道读取
 
-若要从 USB 输入管道中读取数据，您的驱动程序可以使用任何 （或全部） 以下三个方法：
+若要从 USB 输入管道中读取数据，驱动程序可以使用以下三种方法中的任意一种（或全部）：
 
--   以同步方式读取数据
+-   同步读取数据
 
-    若要从 USB 输入管道以同步方式读取数据，您的驱动程序可以调用[ **WdfUsbTargetPipeReadSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipereadsynchronously)方法。 此方法生成和发送的读取的请求，并返回 I/O 操作完成后。
+    若要从 USB 输入管道同步读取数据，驱动程序可以调用[**WdfUsbTargetPipeReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipereadsynchronously)方法。 此方法生成并发送读取请求，并在 i/o 操作完成后返回。
 
--   以异步方式读取数据
+-   异步读取数据
 
-    若要从 USB 输入管道以异步方式读取数据，您的驱动程序可以调用[ **WdfUsbTargetPipeFormatRequestForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)方法生成的读取的请求。 然后，驱动程序可以调用[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)发送请求以异步方式 （或以同步方式）。
+    若要从 USB 输入管道异步读取数据，驱动程序可以调用[**WdfUsbTargetPipeFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)方法来生成读取请求。 然后，该驱动程序可以调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)异步发送请求（或同步发送请求）。
 
--   以异步方式持续地读取数据
+-   异步和连续读取数据
 
-    一个*连续读取器*是框架提供的机制，用于确保读取的请求都可供 USB 管道。 此机制可确保始终将准备好接收数据，提供异步的、 未经请求的输入的流的设备驱动程序。 例如，网络接口卡 (NIC) 的驱动程序可能使用连续读取器接收输入的数据。
+    *连续的读取器*是一个框架提供的机制，用于确保读取请求始终可用于 USB 管道。 此机制可保证驱动程序始终准备好从提供异步、未经请求的输入流的设备接收数据。 例如，网络接口卡（NIC）的驱动程序可能使用连续读取器来接收输入数据。
 
-    若要配置用于输入管道，该驱动程序的连续阅读器[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数必须调用[ **WdfUsbTargetPipeConfigContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)方法。 此方法进行排队读取请求到设备的 I/O 目标的集。
+    若要为输入管道配置连续读取器，驱动程序的[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数必须调用[**WdfUsbTargetPipeConfigContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)方法。 此方法将一组读取请求排队给设备的 i/o 目标。
 
-    此外，驱动程序[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)回调函数必须调用[ **WdfIoTargetStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)启动持续读取器和驱动程序的[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数必须调用[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)停止持续读取器。
+    此外，驱动程序的[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)回调函数必须调用[**WdfIoTargetStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)来启动连续读取器，驱动程序的[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数必须调用[**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)以停止连续读取器.
 
-    数据是从设备中，每次 I/O 目标将完成的读取的请求和框架将调用两个回调函数之一：[*EvtUsbTargetPipeReadComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nc-wdfusb-evt_wdf_usb_reader_completion_routine)，如果 I/O 目标成功读取数据，或[ *EvtUsbTargetPipeReadersFailed*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nc-wdfusb-evt_wdf_usb_readers_failed)，如果 I/O 目标报告错误。
+    每次在设备上提供数据时，i/o 目标将完成读取请求，框架将调用以下两个回调函数之一： [*EvtUsbTargetPipeReadComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nc-wdfusb-evt_wdf_usb_reader_completion_routine)，如果 i/o 目标成功读取数据，则[*为;* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nc-wdfusb-evt_wdf_usb_readers_failed)如果 i/o 目标报告错误，则为 EvtUsbTargetPipeReadersFailed。
 
-    如果未提供可选[ *EvtUsbTargetPipeReadersFailed* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nc-wdfusb-evt_wdf_usb_readers_failed)回调，该框架读取尝试失败的响应发送另一个读取的请求。 因此如果总线在其中它将不会接受读取的状态，框架将不断发送新请求，若要从此失败读取。
+    如果未提供可选的[*EvtUsbTargetPipeReadersFailed*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nc-wdfusb-evt_wdf_usb_readers_failed)回调，则框架将通过发送另一个读取请求来响应失败的读取尝试。 因此，如果该总线处于不接受读取的状态，则该框架会持续发送新请求，以从失败的读取进行恢复。
 
-    驱动程序已调用后[ **WdfUsbTargetPipeConfigContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)，则驱动程序不能使用[ **WdfUsbTargetPipeReadSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipereadsynchronously)或[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)若要将输入/输出请求发送到管道，除非驱动程序的[ *EvtUsbTargetPipeReadersFailed* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nc-wdfusb-evt_wdf_usb_readers_failed)回调函数调用，并返回**FALSE**。
+    驱动程序调用[**WdfUsbTargetPipeConfigContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)之后，驱动程序将无法使用[**WdfUsbTargetPipeReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipereadsynchronously)或[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)将 i/o 请求发送到管道，除非该驱动程序的[*调用 EvtUsbTargetPipeReadersFailed*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nc-wdfusb-evt_wdf_usb_readers_failed)回调函数并返回**FALSE**。
 
-默认情况下，框架将报告错误，如果您的驱动程序指定读取的缓冲区不是管道的最大数据包大小的倍数。 您的驱动程序可以调用[ **WdfUsbTargetPipeSetNoMaximumPacketSizeCheck** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipesetnomaximumpacketsizecheck)若要禁用此测试读取的缓冲区大小。
+默认情况下，如果驱动程序指定的读取缓冲区不是管道的最大数据包大小的倍数，则框架将报告错误。 你的驱动程序可以调用[**WdfUsbTargetPipeSetNoMaximumPacketSizeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipesetnomaximumpacketsizecheck)来禁用此读取缓冲区大小测试。
 
-有关相关信息，请参阅：
+相关信息，请参阅：
 
--   [如何发送 USB 大容量传输请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
--   [如何将数据传输到 USB 等时终结点](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
--   [如何使用来从 USB 管道读取数据的连续读取器](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+-   [如何发送 USB 批量传输请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+-   [如何将数据传输到 USB 同步终结点](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+-   [如何使用连续读取器读取 USB 管道中的数据](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
-### <a href="" id="writing-to-a-pipe"></a> 向管道写入
+### <a href="" id="writing-to-a-pipe"></a>写入管道
 
-将数据写入 USB 输出管道，您的驱动程序可以使用其中一个 （或两者） 的以下技术：
+若要将数据写入 USB 输出管道，驱动程序可以使用以下一种方法（或同时使用这两种方法）：
 
--   以同步方式将数据写入
+-   同步写入数据
 
-    若要向 USB 输出管道以同步方式写入数据，您的驱动程序可以调用[ **WdfUsbTargetPipeWriteSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipewritesynchronously)方法。 此方法生成，并将写入请求，并返回 I/O 操作完成后。
+    若要将数据同步写入 USB 输出管道，驱动程序可以调用[**WdfUsbTargetPipeWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipewritesynchronously)方法。 此方法生成并发送写入请求，并在 i/o 操作完成后返回。
 
--   以异步方式写入数据
+-   异步写入数据
 
-    若要向 USB 输入管道以异步方式写入数据，您的驱动程序可以调用[ **WdfUsbTargetPipeFormatRequestForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforwrite)方法以生成写入请求。 然后，驱动程序可以调用[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)来以异步方式发送请求。
+    若要以异步方式将数据写入 USB 输入管道，驱动程序可以调用[**WdfUsbTargetPipeFormatRequestForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforwrite)方法来生成写入请求。 然后，驱动程序可以调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)来异步发送请求。
 
-有关相关信息，请参阅[如何发送 USB 大容量传输请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+有关相关信息，请参阅[如何发送 USB 批量传输请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
-### <a href="" id="stopping-and-resetting-a-pipe"></a> 停止和重置管道
+### <a href="" id="stopping-and-resetting-a-pipe"></a>停止和重置管道
 
-您的驱动程序可以调用以下方法来停止或重置 USB 管道：
+驱动程序可以调用以下方法来停止或重置 USB 管道：
 
-<a href="" id="---------wdfusbtargetpipeabortsynchronously--------"></a>[**WdfUsbTargetPipeAbortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously)  
-以同步方式发送请求以停止 USB 管道。
+<a href="" id="---------wdfusbtargetpipeabortsynchronously--------"></a>[**WdfUsbTargetPipeAbortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously)  
+同步发送请求以停止 USB 管道。
 
-<a href="" id="---------wdfusbtargetpipeformatrequestforabort--------"></a>[**WdfUsbTargetPipeFormatRequestForAbort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforabort)  
-设置格式的请求以停止 USB 管道。 该驱动程序可以调用[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)以同步或异步发送请求。
+<a href="" id="---------wdfusbtargetpipeformatrequestforabort--------"></a>[**WdfUsbTargetPipeFormatRequestForAbort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforabort)  
+格式化停止 USB 管道的请求。 驱动程序可以调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)来同步或异步发送请求。
 
-<a href="" id="---------wdfusbtargetpiperesetsynchronously--------"></a>[**WdfUsbTargetPipeResetSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously)  
-以同步方式发送请求以重置 USB 管道。
+<a href="" id="---------wdfusbtargetpiperesetsynchronously--------"></a>[**WdfUsbTargetPipeResetSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously)  
+同步发送请求以重置 USB 管道。
 
-<a href="" id="---------wdfusbtargetpipeformatrequestforreset--------"></a>[**WdfUsbTargetPipeFormatRequestForReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset)  
-设置格式的请求重置 USB 管道。 该驱动程序必须调用[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)以同步或异步发送请求。
+<a href="" id="---------wdfusbtargetpipeformatrequestforreset--------"></a>[**WdfUsbTargetPipeFormatRequestForReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset)  
+格式化用于重置 USB 管道的请求。 驱动程序必须调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)以同步或异步发送请求。
 
-如果您的驱动程序的 USB 目标[完成](completing-i-o-requests.md)I/O 请求并显示错误状态值，您的驱动程序应执行以下操作：
+如果驱动程序的 USB 目标[完成](completing-i-o-requests.md)的 i/o 请求带有错误状态值，则驱动程序应执行以下操作：
 
-1.  停止管道，并取消任何额外的 I/O 请求的驱动程序发送到的 USB 目标值，如果目标未完成请求。
+1.  如果目标尚未完成请求，请停止管道，并取消驱动程序已发送到 USB 目标的任何其他 i/o 请求。
 
-    调用[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)与[ **WdfIoTargetCancelSentIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ne-wdfiotarget-_wdf_io_target_sent_io_action)标志设置。
+    调用[**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) ，并设置[**WdfIoTargetCancelSentIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_sent_io_action)标志。
 
-2.  以同步方式将中止请求发送到管道。
+2.  将中止请求同步发送到管道。
 
-    调用[ **WdfUsbTargetPipeAbortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously)，或调用[ **WdfUsbTargetPipeFormatRequestForAbort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforabort)跟[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)与[ **WDF\_请求\_发送\_选项\_同步**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_send_options)标志设置。
+    调用[**WdfUsbTargetPipeAbortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously)，或调用[**WdfUsbTargetPipeFormatRequestForAbort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforabort) ，并将[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)与[**WDF\_请求\_发送\_选项\_同步**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options)标志集.
 
 3.  以同步方式将重置请求发送到管道。
 
-    调用[ **WdfUsbTargetPipeResetSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously)，或调用[ **WdfUsbTargetPipeFormatRequestForReset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset)跟[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)与[ **WDF\_请求\_发送\_选项\_同步**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_send_options)标志设置。
+    调用[**WdfUsbTargetPipeResetSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously)，或调用[**WdfUsbTargetPipeFormatRequestForReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset) ，并将[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)与[**WDF\_请求\_发送\_选项\_同步**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options)标志集.
 
 4.  重新启动管道。
 
-    调用[ **WdfIoTargetStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)。
+    调用[**WdfIoTargetStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)。
 
-5.  重新发送的 I/O 请求的失败，并后接失败的请求的所有 I/O 请求。
+5.  重新发送失败的 i/o 请求，以及按照失败请求的所有 i/o 请求。
 
-后大量的多个故障，则驱动程序应尝试通过执行以下操作重置的 USB 端口：
+出现大量多个故障之后，驱动程序应通过执行以下操作尝试重置 USB 端口：
 
-1.  停止所有活动的管道，并取消该驱动程序已发送到每个管道的 USB 目标时，如果目标尚未完成其任何其他 I/O 请求。
+1.  如果目标尚未完成，请停止所有活动管道，并取消驱动程序发送到每个管道的 USB 目标的任何其他 i/o 请求。
 
-    对于每个活动的管道，调用[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)与[ **WdfIoTargetCancelSentIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ne-wdfiotarget-_wdf_io_target_sent_io_action)标志设置。
+    对于每个活动管道，请调用[**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)并设置[**WdfIoTargetCancelSentIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_sent_io_action)标志。
 
-2.  以同步方式发送请求以重置的 USB 端口。
+2.  同步发送请求以重置 USB 端口。
 
-    调用[ **WdfUsbTargetDeviceResetPortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceresetportsynchronously)。
+    调用[**WdfUsbTargetDeviceResetPortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceresetportsynchronously)。
 
 3.  重新启动管道。
 
-    调用[ **WdfIoTargetStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)驱动程序停止每个管道。
+    为驱动程序停止的每个管道调用[**WdfIoTargetStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstart) 。
 
-4.  重新发送最后一个 I/O 请求失败，并后接失败的请求的所有 I/O 请求。
+4.  重新发送失败的最后一个 i/o 请求，以及失败请求之后的所有 i/o 请求。
 
-有关相关信息，请参阅[如何从 USB 管道错误中恢复](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。
+有关相关信息，请参阅[如何从 USB 管道中恢复错误](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。
 
-### <a href="" id="sending-a-urb-to-a-pipe"></a> 发送到管道 URB
+### <a href="" id="sending-a-urb-to-a-pipe"></a>向管道发送 URB
 
-如果 KMDF 驱动程序通过发送包含 URBs 的 I/O 请求使用 USB 管道进行通信，该驱动程序可以调用以下方法：
+如果 KMDF 驱动程序通过发送 i/o 请求（包含 URBs）与 USB 管道通信，则驱动程序可以调用以下方法：
 
-<a href="" id="---------wdfusbtargetpipesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetPipeSendUrbSynchronously (仅适用于 KMDF)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipesendurbsynchronously)  
-以同步方式将发送包含 URB 的 I/O 请求。
+<a href="" id="---------wdfusbtargetpipesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetPipeSendUrbSynchronously （仅限 KMDF）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipesendurbsynchronously)  
+同步发送包含 URB 的 i/o 请求。
 
-<a href="" id="---------wdfusbtargetpipeformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetPipeFormatRequestForUrb (仅适用于 KMDF)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforurb)  
-设置包含 URB 的 I/O 请求的格式。 该驱动程序可以调用[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)以同步或异步发送请求。
+<a href="" id="---------wdfusbtargetpipeformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetPipeFormatRequestForUrb （仅限 KMDF）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforurb)  
+设置包含 URB 的 i/o 请求的格式。 驱动程序可以调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)来同步或异步发送请求。
 
-<a href="" id="---------wdfusbtargetpipewdmgetpipehandle--kmdf-only-"></a>[**WdfUsbTargetPipeWdmGetPipeHandle (仅适用于 KMDF)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)  
-返回设备的 USBD 管道句柄。 某些 URBs 要求此句柄。
+<a href="" id="---------wdfusbtargetpipewdmgetpipehandle--kmdf-only-"></a>[**WdfUsbTargetPipeWdmGetPipeHandle （仅限 KMDF）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)  
+返回设备的 USBD 管道句柄。 一些 URBs 需要此句柄。
 
  
 

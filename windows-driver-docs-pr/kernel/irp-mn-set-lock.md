@@ -1,37 +1,37 @@
 ---
 title: IRP_MN_SET_LOCK
-description: 总线驱动程序必须处理此 IRP 为支持设备锁定其子设备 (子 PDOs)。 函数和筛选器驱动程序不处理此请求。
+description: 总线驱动程序必须为支持设备锁定的子设备（子 PDOs）处理此 IRP。 函数和筛选器驱动程序不处理此请求。
 ms.date: 08/12/2017
 ms.assetid: d4e09527-f817-4eb5-b0f5-7584de8888b1
 keywords:
-- IRP_MN_SET_LOCK Kernel-Mode Driver Architecture
+- IRP_MN_SET_LOCK 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: c100b8c427067239d3b390fea035681cf8de6fb7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa948abd55a8531324ad30a2194100cf9e546a56
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371851"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827966"
 ---
-# <a name="irpmnsetlock"></a>IRP\_MN\_SET\_LOCK
+# <a name="irp_mn_set_lock"></a>IRP\_MN\_设置\_锁
 
 
-总线驱动程序必须处理此 IRP 为支持设备锁定其子设备 (子 PDOs)。 函数和筛选器驱动程序不处理此请求。
+总线驱动程序必须为支持设备锁定的子设备（子 PDOs）处理此 IRP。 函数和筛选器驱动程序不处理此请求。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md) When Sent
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
 ---------
 
-PnP 管理器将发送到直接驱动程序的此 IRP，若要锁定设备，以防止设备弹出，或以解锁设备。
+PnP 管理器将此 IRP 发送到直接驱动程序以锁定设备，并阻止设备弹出，或对设备解锁。
 
-PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中。
+PnP 管理器在任意线程上下文中以 IRQL 被动\_级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.SetLock.Lock**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构是布尔值，该值指定是否要锁定 (TRUE) 或 (FALSE) 解锁设备。
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**SetLock**成员是一个布尔值，该值指定是锁定设备还是对设备解锁（FALSE）。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -41,24 +41,24 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-总线驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态。
+总线驱动程序将**Irp&gt;的 IoStatus**设置为 STATUS\_SUCCESS 或适当的错误状态。
 
-如果成功，驱动程序设置**Irp-&gt;IoStatus.Information**为零。
+成功时，驱动程序将**Irp&gt;IoStatus**设置为零。
 
-如果总线驱动程序不处理此 IRP，则将保留**Irp-&gt;IoStatus.Status**完成 IRP 和时。
+如果总线驱动程序未处理此 IRP，它会将**irp&gt;IoStatus 的状态**保留原样，并完成 irp。
 
-函数和筛选器驱动程序不处理此 IRP。 此类驱动程序调用[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) ，并将传递到下一步的驱动程序 IRP。 未设置函数和筛选器驱动程序[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程，请不要修改**Irp-&gt;IoStatus**，并且必须完成 IRP。
+函数和筛选器驱动程序不处理此 IRP。 此类驱动程序调用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) ，并将 IRP 向下传递到下一个驱动程序。 函数和筛选器驱动程序不会设置[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，不会修改**irp&gt;IoStatus**，也不能完成 irp。
 
 <a name="operation"></a>操作
 ---------
 
-如果为此 IRP，驱动程序返回成功，则确保该设备已锁定或解锁完成 IRP 之前。
+如果驱动程序为此 IRP 返回成功，则会确保设备在完成 IRP 之前已锁定或解锁。
 
-请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，了解用于处理[即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
-**发送此 IRP**
+**正在发送此 IRP**
 
-保留供系统使用。 驱动程序必须发送此 IRP。
+保留供系统使用。 驱动程序不得发送此 IRP。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,8 +70,8 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>

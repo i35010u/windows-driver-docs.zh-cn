@@ -4,12 +4,12 @@ description: 驻留概述
 ms.assetid: E610C2B8-354C-4DF5-8B25-6472A9313B15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a0d9f717edf193d8acec81ae3f6111c070d4a4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cecf4e6edd8aa39cc68904b2598ca62bd6977a15
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385658"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829576"
 ---
 # <a name="residency-overview"></a>驻留概述
 
@@ -17,36 +17,36 @@ ms.locfileid: "67385658"
 ## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概述
 
 
-立即分配和修补程序位置列表信息以及每个命令缓冲区生成，将生成用户模式驱动程序。 此信息使用视频内存管理器有两个用途：
+目前，用户模式驱动程序生成分配和修补程序位置列表信息以及它生成的每个命令缓冲区。 视频内存管理器使用此信息两个用途：
 
--   分配列表和修补程序位置列表用于修补与实际段地址的命令缓冲区，然后将它们提交到图形处理单元 (GPU) 引擎。 Windows 显示器驱动程序模型 (WDDM) v2 中的 GPU 虚拟地址支持不再需要此修补。
--   分配的控件驻留到的视频内存管理器使用的分配列表和修补程序位置列表。 视频内存管理器可确保，任何引用的命令缓冲区的分配之前做出的常驻命令缓冲区发送到的特定引擎执行。
+-   "分配列表" 和 "修补程序位置" 列表用于在向图形处理单元（GPU）引擎提交带有实际段地址的命令缓冲区之前提供修补程序。 Windows 显示驱动程序模型（WDDM） v2 中的 GPU 虚拟地址支持不再需要此修补程序。
+-   "分配列表" 和 "修补程序位置" 列表由视频内存管理器用来控制分配的驻留。 视频内存管理器可确保在命令缓冲区发送到特定引擎的执行之前，命令缓冲区引用的任何分配都处于驻留。
 
-随着新驻留模型的推出，驻留将被移至的显式列表而不是每个命令缓冲区列表在设备上。 视频内存管理器将确保确保之前计划执行的任何上下文属于该设备都是驻留在特定设备驻留要求列表上的所有分配。
+引入新的常驻模型后，仍会将驻留在设备上的显式列表中，而不是按命令缓冲区列表移动。 视频内存管理器将确保特定设备派驻要求列表上的所有分配在计划执行的任何上下文之前处于驻留。
 
-若要管理驻留，用户模式驱动程序将有权访问两个新设备驱动程序接口 (DDIs) [ *MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)并[*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)，同时也需要实现一个新[ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)回调。 *MakeResident*将添加一个或多个分配到的设备驻留要求列表。 *逐出*将从该列表中删除一个更多分配。 *TrimResidency*视频内存管理器将调用回调，当它需要用户模式驱动程序，以减少其驻留要求。
+要管理常驻，用户模式驱动程序将可以访问两个新的设备驱动程序接口（DDIs）、 [*MakeResident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)和[*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)，还需要实现新的[*TrimResidency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)回调。 *MakeResident*会将一个或多个分配添加到设备派驻需求列表。 *逐出*将从该列表中删除一个或多个分配。 当视频内存管理器需要用户模式驱动程序来降低其驻留要求时，将调用*TrimResidency*回调。
 
-[*MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)并[*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)也已更新保留的内部引用计数，这意味着多次调用*MakeResident*将需要相同数目的*逐出*调用实际上中收回分配。
+[*MakeResident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)和[*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)还已更新为保留内部引用计数，这意味着对*MakeResident*的多个调用将需要相同数量的*逐出*调用来实际逐出分配。
 
-在新驻留模式下，每个命令缓冲区分配和修补程序位置列表是缓慢逐步淘汰。虽然这些列表将存在在某些情况下，它们将不再具有对驻留的任何控制。
+在新的常驻模型下，按命令缓冲分配和修补程序位置列表的速度缓慢。尽管这些列表在某些情况下会存在，但他们将不再拥有对派驻的任何控制。
 
-**重要**  驻留 WDDM v2 中的以独占方式受设备驻留要求列表。 这适用于所有引擎的 GPU 和每个 api。
+请**注意**，WDDM v2 中的  常驻是由设备派驻要求列表专门控制的。 对于 GPU 和每个 API 的所有引擎都是如此。
 
  
 
-## <a name="span-idphasingoutallocationandpatchlocationlistspanspan-idphasingoutallocationandpatchlocationlistspanspan-idphasingoutallocationandpatchlocationlistspanphasing-out-allocation-and-patch-location-list"></a><span id="Phasing_out_allocation_and_patch_location_list"></span><span id="phasing_out_allocation_and_patch_location_list"></span><span id="PHASING_OUT_ALLOCATION_AND_PATCH_LOCATION_LIST"></span>逐步淘汰分配和修补程序位置列表
+## <a name="span-idphasing_out_allocation_and_patch_location_listspanspan-idphasing_out_allocation_and_patch_location_listspanspan-idphasing_out_allocation_and_patch_location_listspanphasing-out-allocation-and-patch-location-list"></a><span id="Phasing_out_allocation_and_patch_location_list"></span><span id="phasing_out_allocation_and_patch_location_list"></span><span id="PHASING_OUT_ALLOCATION_AND_PATCH_LOCATION_LIST"></span>逐步取消 out 分配和修补程序位置列表
 
 
-分配和修补程序的位置列表的角色将获得大大减少了与新驻留模型的简介，并将消失完全随着硬件辅助计划。
+由于引入了新的常驻模型，因此，"分配" 和 "修补程序位置" 列表的角色会显著降低，并将在引入硬件辅助计划的同时完全消失。
 
-在数据包根据计划模式下，分配列表将继续存在，如下所示：
+在基于数据包的计划模型下，分配列表将继续存在，如下所示：
 
--   对于不支持 GPU 虚拟寻址的引擎，分配列表和修补程序位置列表中将继续存在，但是，它们将用于完全修补目的，将不再有任何控制驻留。 分配列表和修补程序位置列表中将提供给用户模式驱动程序和内核模式驱动程序中各种常用 DDIs，但不是常驻的分配的任何引用会导致拒绝的提交并将设备的 GPU 计划程序错误 （丢失）。 此操作模式被视为旧版，我们期望所有 GPU 引擎来获取对 GPU 支持虚拟寻址将来硬件版本。 预计，这种模式的操作将删除在将来的 WDDM 的版本。
--   为引擎支持 GPU 虚拟寻址，一个新的上下文创建标记 (**DXGK\_CONTEXTINFO\_否\_修补\_REQUIRED**) 添加，以指示特定上下文不需要任何修补。 当指定此标志时，将分配给任何修补程序位置列表和将分配给仅非常小的分配列表 （16 个条目）。 将使用分配列表来跟踪写入引用到主表面和不会用于其他目的。 GPU 计划程序需要知道当特定命令缓冲区，以便它可以正确同步方面可能会发生到主面翻转该缓冲区执行正在写入到主图面。
+-   对于不支持 GPU 虚拟寻址的引擎，"分配列表" 和 "修补程序位置" 列表将继续存在，但是，它们将仅用于修补目的，不再对常驻有任何控制。 "分配列表" 和 "修补位置" 列表将在各种常见的 DDIs 中同时提供给用户模式驱动程序和内核模式驱动程序，但对非常驻分配的任何引用都将导致 GPU 计划程序拒绝提交并使设备进入出现错误（丢失）。 此操作模式被视为旧模式，我们希望所有 GPU 引擎在未来的硬件版本中获得对 GPU 虚拟寻址的支持。 预期此操作模式将在 WDDM 的未来版本中删除。
+-   对于支持 GPU 虚拟寻址的引擎，添加了一个新的上下文创建标志（**DXGK\_CONTEXTINFO\_不需要\_修补\_** ），以指示特定上下文不需要任何修补。 如果指定此标志，则将不会分配修补程序位置列表，并且将只分配非常小的分配列表（16个条目）。 分配列表将用于跟踪对主要表面的写入引用，而不是任何其他目的。 GPU 计划程序需要知道何时向主表面写入特定的命令缓冲区，以便能够正确地同步该缓冲区的执行情况，使其与主表面可能发生反向同步。
 
-同样，在内核模式驱动程序中使用分配列表*存在*路径现在将信息传递给驱动程序有关的源和目标*存在*操作。 在此上下文中分配列表将继续存在，将围绕参数传递，但是，分配列表将不用于驻留。 需要修补程序的 Gpu 上*存在*分配列表将包含像今天一样的修补程序前信息和*存在*数据包之前，将重新修补安排如果的任何资源中移动它们排队到计划程序的时间和执行计划的时间之间的内存在 GPU 上。
+同样 *，当前在内核模式驱动程序*的路径中使用了分配列表来向驱动程序传递有关*当前*操作的源和目标的信息。 在这种情况下，分配列表将继续存在以传递参数，但分配列表不会用于驻留。 在需要修补*当前*分配列表的 gpu 上，将包含以前的修补程序信息，如目前所做的那样 *，在计划*前，如果任何资源在内存排队等待计划程序，并在 GPU 上计划执行时间。
 
-下表总结了当 WDDM v2 驱动程序应该会收到不同的用户模式驱动程序和内核模式驱动程序 DDIs 中的分配和修补程序位置列表。
+下表总结了 WDDM v2 驱动程序应在各种用户模式驱动程序和内核模式驱动程序 DDIs 中接收分配和修补程序位置列表的时间。
 
 <table>
 <colgroup>
@@ -63,21 +63,21 @@ ms.locfileid: "67385658"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">没有 GPU 虚拟地址支持 （需要修补，默认值）</td>
-<td align="left"><p>是的完全大小，但单纯使用修补目的。</p>
-对不是常驻的分配的任何引用将导致提交设备置于错误 （丢失） 和计划程序被拒绝的提交。</td>
-<td align="left">是，完整的大小。</td>
+<td align="left">无 GPU 虚拟地址支持（需要修补、默认）</td>
+<td align="left"><p>是，完整大小，但仅用于修补目的。</p>
+对不是常驻分配的任何引用都将导致提交设备出错（丢失）以及计划程序拒绝提交。</td>
+<td align="left">是，完整大小。</td>
 </tr>
 <tr class="even">
-<td align="left">GPU 虚拟地址支持 (<strong>DXGK_CONTEXTINFO_NO_PATCHING_REQUIRED</strong>标志设置)</td>
-<td align="left"><p>是的 16 个条目。</p>
-引用主面上，如果任何由命令缓冲区写入。 由 GPU 计划程序同步与显示控制器上发生的 lip。 主图面上设备驻留要求列表必须已经包含或引用将被拒绝。</td>
-<td align="left">否</td>
+<td align="left">GPU 虚拟地址支持（已设置<strong>DXGK_CONTEXTINFO_NO_PATCHING_REQUIRED</strong>标志）</td>
+<td align="left"><p>是，16个条目。</p>
+引用通过命令缓冲区写入的主要曲面（如果有）。 供 GPU 计划程序用于在显示控制器上发生 lip 的同步。 主要表面必须已在设备派驻要求列表上，否则将拒绝该引用。</td>
+<td align="left">无</td>
 </tr>
 <tr class="odd">
 <td align="left">GPU 虚拟地址支持 + 硬件计划</td>
-<td align="left">否</td>
-<td align="left">否</td>
+<td align="left">无</td>
+<td align="left">无</td>
 </tr>
 </tbody>
 </table>
