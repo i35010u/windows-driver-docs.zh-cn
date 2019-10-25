@@ -6,12 +6,12 @@ ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 4c155a273d7a602bb164d7b5ba44de39efbc7074
-ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
+ms.openlocfilehash: 1f40bc64dfb40c28426bc7b7d0da04f1d219784f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72021052"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827241"
 ---
 # <a name="acpi-design-guide"></a>ACPI 设计指南
 
@@ -27,4 +27,4 @@ ms.locfileid: "72021052"
 
 ## <a name="related-sections"></a>相关章节
 
-- [ACPI DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_acpi)
+- [ACPI DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_acpi)

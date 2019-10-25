@@ -10,12 +10,12 @@ ms.date: 11/15/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 55354358cd234df8ef9cf2b66ef1d432a018ac7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a24e49a529644b3f3f51e5339a6788caa48b7bf8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379967"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845578"
 ---
 # <a name="streaming-media-device-driver-design-guide"></a>流媒体设备驱动程序设计指南
 
@@ -63,4 +63,4 @@ ms.locfileid: "63379967"
 
 ## <a name="related-sections"></a>相关章节
 
-- [流媒体 DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream)
+- [流媒体 DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream)

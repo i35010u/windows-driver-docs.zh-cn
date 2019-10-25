@@ -6,12 +6,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 0b3335f1bf688083233b4e90e59e3ec2325341f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac2432f5f442fd45d63a10d691f14edce2742cf1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345207"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832095"
 ---
 # <a name="sensor-device-driver-design-guide"></a>传感器设备驱动程序设计指南
 
@@ -35,7 +35,7 @@ ms.locfileid: "63345207"
 
 ## <a name="related-sections"></a>相关章节
 
--   [传感器 DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_sensors/)
+-   [传感器 DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_sensors/)
 -   [传感器博客](https://techcommunity.microsoft.com/t5/Microsoft-Sensors-Blog/bg-p/MicrosoftSensorsBlog)
 
  

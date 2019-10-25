@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 31fef22eec9de042d353910d4250deef892f58fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5cb46404fc7381d07ebc02943e0f453ffe2b1c1b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380567"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842800"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
 
@@ -41,12 +41,12 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 
 ## <a name="new-in-wdf-for-windows-10-version-1809"></a>适用于 Windows 10 版本 1809 的 WDF 中的新功能
 
-* 添加了新 API [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring)
+* 添加了新 API [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring)
 
 ## <a name="new-in-wdf-for-windows-10-version-1803"></a>适用于 Windows 10 版本 1803 的 WDF 中的新功能
 
 * [针对多个 Windows 版本生成 WDF 驱动程序](building-a-wdf-driver-for-multiple-versions-of-windows.md)。
-* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring)
+* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring)
 
 ## <a name="new-in-wdf-for-windows-10-version-1709"></a>适用于 Windows 10 版本 1709 的 WDF 中的新功能
 

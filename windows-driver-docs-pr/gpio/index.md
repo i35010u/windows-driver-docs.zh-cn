@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 981885720f0fece50163158d6b94fbf6f431f293
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: 313f848dbf429e0c3b117eedf9340436700fc555
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473474"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824941"
 ---
 # <a name="general-purpose-io-gpio-driver-design-guide"></a>通用 I/O (GPIO) 驱动程序设计指南
 
@@ -52,7 +52,7 @@ ms.locfileid: "68473474"
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-ddi" data-raw-source="[GpioClx DDI](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-ddi)">GpioClx DDI</a></p></td>
-<td><p>常规用途 I/O (GPIO) 控制器驱动程序通过 GpioClx 设备驱动程序接口 (DDI) 与 GPIO 框架扩展 (GpioClx) 通信。 此 DDI 在 Gpioclx.h 头文件中定义，并在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[General-Purpose I/O (GPIO) Driver Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">常规用途 I/O (GPIO) 驱动程序参考</a>中进行了说明。 作为此 DDI 的一部分，GpioClx 实现多个<a href="https://docs.microsoft.com/previous-versions/hh439460(v=vs.85)" data-raw-source="[driver support methods](https://docs.microsoft.com/previous-versions/hh439460(v=vs.85))">驱动程序支持方法</a>，这些方法由 GPIO 控制器驱动程序调用。 此驱动程序实现了一组<a href="https://docs.microsoft.com/previous-versions/hh439464(v=vs.85)" data-raw-source="[event callback functions](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85))">事件回调函数</a>，这些函数由 GpioClx 调用。 GpioClx 使用这些回调来管理已配置为中断输入的 GPIO 引脚提供的中断请求，并将数据传输到已配置为数据输入和输出的 GPIO 引脚，或者从其传输出来。</p></td>
+<td><p>常规用途 I/O (GPIO) 控制器驱动程序通过 GpioClx 设备驱动程序接口 (DDI) 与 GPIO 框架扩展 (GpioClx) 通信。 此 DDI 在 Gpioclx.h 头文件中定义，并在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/index" data-raw-source="[General-Purpose I/O (GPIO) Driver Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)">常规用途 I/O (GPIO) 驱动程序参考</a>中进行了说明。 作为此 DDI 的一部分，GpioClx 实现多个<a href="https://docs.microsoft.com/previous-versions/hh439460(v=vs.85)" data-raw-source="[driver support methods](https://docs.microsoft.com/previous-versions/hh439460(v=vs.85))">驱动程序支持方法</a>，这些方法由 GPIO 控制器驱动程序调用。 此驱动程序实现了一组<a href="https://docs.microsoft.com/previous-versions/hh439464(v=vs.85)" data-raw-source="[event callback functions](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85))">事件回调函数</a>，这些函数由 GpioClx 调用。 GpioClx 使用这些回调来管理已配置为中断输入的 GPIO 引脚提供的中断请求，并将数据传输到已配置为数据输入和输出的 GPIO 引脚，或者从其传输出来。</p></td>
 </tr>
 </tbody>
 </table>

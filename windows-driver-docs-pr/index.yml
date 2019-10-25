@@ -10,12 +10,12 @@ metadata:
   ms.prod: windows-hardware
   ms.technology: windows-devices
   services: wdk
-  ms.openlocfilehash: 54e79f09cbf83072b877e39aa965fea46a5bae2c
-  ms.sourcegitcommit: e55573a618549c703683ace2983757df2adcfbeb
+  ms.openlocfilehash: b48b3a492da4b7d4ab18421945e8729fa8aece6b
+  ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/25/2019
-  ms.locfileid: "71256641"
+  ms.lasthandoff: 10/24/2019
+  ms.locfileid: "72840655"
 landingContent:
 - title: 关于该工具包
   linkLists:
@@ -28,7 +28,7 @@ landingContent:
   - linkListType: reference
     links:
     - text: Windows 驱动程序 API 参考
-      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/content/
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/
 - title: 获取工具
   linkLists:
   - linkListType: download

@@ -6,12 +6,12 @@ ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e372617f261619b80fb73511818d716070007771
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa13c134d7a8140f56c201d9fef565273c71a673
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371071"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825067"
 ---
 # <a name="gnss-driver-design-guide"></a>GNSS 驱动程序设计指南
 
@@ -28,7 +28,7 @@ ms.locfileid: "63371071"
 ## <a name="related-sections"></a>相关章节
 
 
--   [GNSS DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/index)
+-   [GNSS DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/index)
 
 
  

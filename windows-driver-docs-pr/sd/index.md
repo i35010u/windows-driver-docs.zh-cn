@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: a2c6a675f39ba0f376c7d1da5bf2a468d04c4f1b
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: 52b8d72daa37b4e369da27c63f61552dea54569c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473535"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824741"
 ---
 # <a name="sd-bus-driver-design-guide"></a>SD 总线驱动程序设计指南
 
@@ -43,7 +43,7 @@ ms.locfileid: "68473535"
 
 - SD I/O 命令，这些命令指定另一设备堆栈的函数编号。
 
-SD 设备驱动程序可以管理主控制器的常用寄存器集和设备的状态，只需使用类型为 SDRF\_GET\_PROPERTY 和 SDRF\_SET\_PROPERTY 的函数请求调用 [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/nf-ntddsd-sdbussubmitrequest) 即可。 如需这些函数请求类型的说明，请参阅 [**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/ne-ntddsd-sd_request_function)。
+SD 设备驱动程序可以管理主控制器的常用寄存器集和设备的状态，只需使用类型为 SDRF\_GET\_PROPERTY 和 SDRF\_SET\_PROPERTY 的函数请求调用 [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbussubmitrequest) 即可。 如需这些函数请求类型的说明，请参阅 [**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/ne-ntddsd-sd_request_function)。
 
 ## <a name="sd-bus-sample"></a>SD 总线示例
 

@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 91f347830cc454fb5849a15893136f796d6f7091
-ms.sourcegitcommit: a289bc7df691d7f870fa894e7c42b2f7299c8559
+ms.openlocfilehash: 86c6e1328778f5e0c190e6bce5f999544541382f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787228"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843561"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
@@ -53,40 +53,40 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <strong>适用于开发 USB 驱动程序的 WDF 扩展</strong>
 <ul>
 <li>USB 连接器管理器类扩展 (UcmCx) 参考 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/)">Ucmmanager.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/)">Ucmmanager.h</a>
     </li>
     </ul>
 </li>
 <li>USB 主控制器 (UCX) 参考 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/)">Ucxclass.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/)">Ucxclass.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/)">Ucxcontroller.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/)">Ucxcontroller.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/Ucxroothub/)">Ucxroothub.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/Ucxroothub/)">Ucxroothub.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/)">Ucxusbdevice.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/)">Ucxusbdevice.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/)">Ucxendpoint.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/)">Ucxendpoint.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/)">Ucxsstreams.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/)">Ucxsstreams.h</a>
     </li>
     </ul>
 </li>
 <li>USB 函数类扩展 (UFX) 参考 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/)">Ufxbase.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/)">Ufxbase.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/)">Ufxclient.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/)">Ufxclient.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
     </li>
     </ul>
 </li>
@@ -119,7 +119,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <td><strong>编写 USB 客户端驱动程序（KMDF、UMDF）</strong>
 <p>USB 驱动程序开发简介。 介绍在为设备提供 USB 驱动程序时如何选择最适合的模型。 此部分还包括一些教程，介绍如何使用 Microsoft Visual Studio 随附的 USB 模板编写第一个用户模式的 USB 驱动程序和内核模式的 USB 驱动程序。</p>
 <p><a href="getting-started-with-usb-client-driver-development.md" data-raw-source="[Getting started with USB client driver development](getting-started-with-usb-client-driver-development.md)">USB 客户端驱动程序开发入门</a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/" data-raw-source="[USB device driver programming reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/)">USB device driver programming reference</a>（USB 设备驱动程序编程参考）</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/" data-raw-source="[USB device driver programming reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/)">USB device driver programming reference</a>（USB 设备驱动程序编程参考）</p>
 <strong>编写 USB 主控制器驱动程序</strong>
 <p>如果开发不符合规格的 xHCI 主控制器，或者开发自定义的非 xHCI 硬件（例如虚拟主控制器），则可编写可以与 UCX 通信的主控制器驱动程序。 例如，可以考虑支持 USB 设备的无线坞。 电脑通过无线坞与 USB 设备通信，使用基于 TCP 的 USB 作为传输方式。</p>
 <p><a href="developing-windows-drivers-for-usb-host-controllers.md" data-raw-source="[Developing Windows drivers for USB host controllers](developing-windows-drivers-for-usb-host-controllers.md)">为 USB 主控制器开发 Windows 驱动程序</a></p>
@@ -127,22 +127,22 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <ul>
 <li>USB 主控制器 (UCX) 参考 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxclass/)">Ucxclass.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/" data-raw-source="[Ucxclass.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxclass/)">Ucxclass.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxcontroller/)">Ucxcontroller.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/" data-raw-source="[Ucxcontroller.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxcontroller/)">Ucxcontroller.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/Ucxroothub/)">Ucxroothub.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxroothub/" data-raw-source="[Ucxroothub.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/Ucxroothub/)">Ucxroothub.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxusbdevice/)">Ucxusbdevice.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/" data-raw-source="[Ucxusbdevice.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxusbdevice/)">Ucxusbdevice.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxendpoint/)">Ucxendpoint.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/" data-raw-source="[Ucxendpoint.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxendpoint/)">Ucxendpoint.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ucxsstreams/)">Ucxsstreams.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/" data-raw-source="[Ucxsstreams.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ucxsstreams/)">Ucxsstreams.h</a>
     </li>
     </ul>
 </li>
@@ -153,13 +153,13 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p><a href="developing-windows-drivers-for-usb-function-controllers.md" data-raw-source="[Developing Windows drivers for USB function controllers](developing-windows-drivers-for-usb-function-controllers.md)">为 USB 功能控制器开发 Windows 驱动程序</a></p>
 <p>USB 函数类扩展 (UFX) 参考 <ul>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxbase/)">Ufxbase.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/" data-raw-source="[Ufxbase.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxbase/)">Ufxbase.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxclient/)">Ufxclient.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/" data-raw-source="[Ufxclient.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxclient/)">Ufxclient.h</a>
     </li>
     <li>
-    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
+    <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/" data-raw-source="[Ufxproprietarycharger.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ufxproprietarycharger/)">Ufxproprietarycharger.h</a>
     </li>
     </ul>
 </p>
@@ -167,7 +167,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p>Windows 10 引入了对新 USB 连接器：USB 类型 C 的支持。 可以为连接器编写驱动程序，以便与 Microsoft 提供的类扩展模块UcmCx 通信，以便处理与类型 C 连接器相关的场景，例如，哪些端口支持类型 C、哪些端口支持功率输出。</p>
 <p><a href="developing-windows-drivers-for-usb-type-c-connectors.md" data-raw-source="[Developing Windows drivers for USB Type-C connectors](developing-windows-drivers-for-usb-type-c-connectors.md)">为 USB 类型 C 连接器开发 Windows 驱动程序</a></p>
 <p>USB 连接器管理器类扩展 (UcmCx) 参考 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/)">Ucmmanager.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/" data-raw-source="[Ucmmanager.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/)">Ucmmanager.h</a>
     </li>
     </ul>
 </p>
@@ -176,7 +176,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p>有关此功能的详细信息，请参阅：</p>
 <p><a href="usb-dual-role-driver-stack-architecture.md" data-raw-source="[USB Dual Role Driver Stack Architecture](usb-dual-role-driver-stack-architecture.md)">USB 双角色驱动程序堆栈体系结构</a></p>
 <p>USB 双角色控制器驱动程序编程参考 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ursdevice/" data-raw-source="[Ursdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ursdevice/)">Ursdevice.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ursdevice/" data-raw-source="[Ursdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ursdevice/)">Ursdevice.h</a>
     </li>
     </ul>
 </p>
@@ -184,13 +184,13 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p>Windows 10 引入了对模拟设备的支持。 现在可以开发模拟通用串行总线 (USB) 主控制器驱动程序和连接的虚拟 USB 设备。 这两个组件组合成单个 KMDF 驱动程序，该驱动程序可以与 Microsoft 提供的 USB 设备模拟类扩展 (UdeCx) 通信。</p>
 <p><a href="developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md" data-raw-source="[Developing Windows drivers for emulated USB devices (UDE)](developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md)">开发模拟 USB 设备 (UDE) 的 Windows 驱动程序</a></p>
 <p>模拟 USB 主控制器驱动程序编程参考 <ul>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/" data-raw-source="[Udecxusbdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbdevice/)">Udecxusbdevice.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/" data-raw-source="[Udecxusbdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/)">Udecxusbdevice.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/" data-raw-source="[Udecxusbendpoint.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxusbendpoint/)">Udecxusbendpoint.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/" data-raw-source="[Udecxusbendpoint.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/)">Udecxusbendpoint.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/" data-raw-source="[Udecxwdfdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/)">Udecxwdfdevice.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/" data-raw-source="[Udecxwdfdevice.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/)">Udecxwdfdevice.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/" data-raw-source="[Udecxurb.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxurb/)">Udecxurb.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/" data-raw-source="[Udecxurb.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxurb/)">Udecxurb.h</a>
     </li>
     </ul>
 </p>
@@ -204,7 +204,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p>WinUSB 函数 <ul>
     <li><a href="https://docs.microsoft.com/windows/desktop/api/winusb/" data-raw-source="[Winusb.h](https://docs.microsoft.com/windows/desktop/api/winusb/)">Winusb.h</a>
     </li>
-    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/" data-raw-source="[Usbioctl.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/)">Usbioctl.h</a>
+    <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/" data-raw-source="[Usbioctl.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/)">Usbioctl.h</a>
     </li>
     </ul>
 </p>
