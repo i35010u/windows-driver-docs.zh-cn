@@ -1,9 +1,9 @@
 ---
 title: FSCTL_OFFLOAD_WRITE 控制代码
-description: FSCTL\_卸载\_编写控件代码中支持卸载写入基元的存储系统启动的数据块的卸载写入。
+description: FSCTL\_卸载\_写入控制代码为支持卸载写入基元的存储系统中的数据块启动卸载写入。
 ms.assetid: A40C6D4C-D31D-423E-B7B0-51151EEDD30F
 keywords:
-- FSCTL_OFFLOAD_WRITE 控制代码可安装文件系统驱动程序
+- FSCTL_OFFLOAD_WRITE 控制代码可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -14,50 +14,50 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f53c1cdc57d5402d1955865efede22d4039a548
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d95cc553f0fad68da7224c047b5e296fcb91c86
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380119"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841278"
 ---
-# <a name="fsctloffloadwrite-control-code"></a>FSCTL\_卸载\_编写控件的代码
+# <a name="fsctl_offload_write-control-code"></a>FSCTL\_卸载\_写入控制代码
 
 
-**FSCTL\_卸载\_编写**控件代码中支持卸载写入基元的存储系统启动的数据块的卸载写入。
+**FSCTL\_卸载\_写入**控制代码为支持卸载写入基元的存储系统中的数据块启动卸载写入。
 
-若要执行此操作，微筛选器驱动程序调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)与以下参数和文件系统中，重定向程序和旧的文件系统筛选驱动程序调用[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+要执行此操作，微筛选器驱动程序将调用[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)与以下参数、文件系统、重定向程序和旧文件系统筛选器驱动程序调用[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) ，并提供以下参数。
 
 **Parameters**
 
-<a href="" id="instance--in-"></a>*实例\[中\]*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 调用方不透明实例指针。 此参数是必需的不能为 NULL。
+<a href="" id="instance--in-"></a>*实例 \[\]*  
+仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 NULL。
 
-<a href="" id="fileobject--in-"></a>*FileObject \[in\]*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 文件指针对象指定要写入的文件。 此参数是必需的不能为 NULL。
+<a href="" id="fileobject--in-"></a>*FileObject \[\]*  
+仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件指针对象，指定要写入的文件。 此参数是必需的，不能为 NULL。
 
-<a href="" id="filehandle--in-"></a>*FileHandle \[in\]*  
-[**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 要写入的文件的文件句柄。 此参数是必需的不能为 NULL。
+<a href="" id="filehandle--in-"></a> *\]中的 FileHandle \[*  
+仅[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。 要写入的文件的文件句柄。 此参数是必需的，不能为 NULL。
 
-<a href="" id="fscontrolcode--in-"></a>*FsControlCode \[in\]*  
-操作的控制代码。 使用**FSCTL\_卸载\_编写**对于此操作。
+<a href="" id="fscontrolcode--in-"></a> *\]中的 FsControlCode \[*  
+操作的控制代码。 对于此操作，请使用**FSCTL\_卸载\_写入**。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-一个指向[ **FSCTL\_卸载\_编写\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input)结构，其中包含的大小和要读取的数据块的偏移量。
+指向[**FSCTL\_卸载的指针\_写入\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input)结构，其中包含要读取的数据块的大小和偏移量。
 
-<a href="" id="inputbufferlength--in-"></a>*InputBufferLength \[in\]*  
-大小 （字节） 通过指向的缓冲区*InputBuffer*。 此值是**sizeof**(FSCTL\_卸载\_编写\_输入)。
+<a href="" id="inputbufferlength--in-"></a> *\]中的 InputBufferLength \[*  
+*InputBuffer*指向的缓冲区的大小（以字节为单位）。 此值为**sizeof**（FSCTL\_卸载\_写入\_输入）。
 
-<a href="" id="outputbuffer--out-"></a>*OutputBuffer\[出\]*  
-一个指向[ **FSCTL\_卸载\_编写\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input)结构，其中包含的大小和要读取的数据块的偏移量。
+<a href="" id="outputbuffer--out-"></a>*OutputBuffer \[out\]*  
+指向[**FSCTL\_卸载的指针\_写入\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input)结构，其中包含要读取的数据块的大小和偏移量。
 
-<a href="" id="outputbufferlength--out-"></a>*OutputBufferLength\[出\]*  
-大小 （字节） 通过指向的缓冲区*OutputBuffer*参数。 此值必须至少**sizeof**(FSCTL\_卸载\_读取\_输出)。
+<a href="" id="outputbufferlength--out-"></a>*OutputBufferLength \[out\]*  
+*OutputBuffer*参数指向的缓冲区的大小（以字节为单位）。 此值必须至少为**sizeof**（FSCTL\_卸载\_读取\_输出）。
 
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功如果操作成功。 否则，相应的函数可能返回以下 NTSTATUS 值之一。
+如果操作成功，则[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回状态\_成功。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
 
 <table>
 <colgroup>
@@ -78,44 +78,44 @@ ms.locfileid: "67380119"
 <tr class="even">
 <td align="left"><p> <strong>STATUS_INVALID_PARAMETER</strong></p></td>
 <td align="left"><p>文件大小小于 PAGE_SIZE。</p>
-<p>-或-</p>
-<p><em>InputBufferLength</em> &lt; <strong>sizeof</strong>(FSCTL_OFFLOAD_WRITE_INPUT)。</p>
-<p>-或-</p>
-<p>一个或多个的这些成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input)"> <strong>FSCTL_OFFLOAD_WRITE_INPUT</strong> </a>不正确：</p>
+<p>\- 或者 -</p>
+<p><em>InputBufferLength</em> &lt; <strong>sizeof</strong>（FSCTL_OFFLOAD_WRITE_INPUT）。</p>
+<p>\- 或者 -</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input)"><strong>FSCTL_OFFLOAD_WRITE_INPUT</strong></a>的一个或多个成员不正确：</p>
 <strong>FileOffset</strong>不是卷的逻辑扇区大小的倍数。
 <strong>CopyLength</strong>不是卷的逻辑扇区大小的倍数。
 <strong>TransferOffset</strong>不是卷的逻辑扇区大小的倍数。
-<strong>大小</strong>的大小<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input)"> <strong>FSCTL_OFFLOAD_WRITE_INPUT</strong> </a>结构。
-<strong>FileOffset</strong> &gt;文件的有效的数据长度 (VDL)。
+<strong>大小</strong>不是<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input)"><strong>FSCTL_OFFLOAD_WRITE_INPUT</strong></a>结构的大小。
+<strong>FileOffset</strong> &gt; 文件的有效数据长度（VDL）。
 <strong>FileOffset</strong> + <strong>CopyLength</strong> &gt; <strong>MAXULONGLONG</strong>。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_NOT_SUPPORTED</strong></p></td>
-<td align="left"><p>卸载读取此卷上不支持操作。</p></td>
+<td align="left"><p>此卷上不支持卸载读取操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_OFFLOAD_WRITE_FILE_NOT_SUPPORTED</strong></p></td>
-<td align="left"><p>不支持请求的文件类型。 卸载操作不支持对这些文件类型：</p>
+<td align="left"><p>请求的文件类型不受支持。 以下文件类型不支持卸载操作：</p>
 <ul>
-<li>事务处理的文件 (TxF)</li>
+<li>事务处理文件（TxF）</li>
 <li>非用户文件</li>
 <li>压缩文件</li>
 <li>稀疏文件</li>
-<li>加密的文件</li>
+<li>加密文件</li>
 <li>NTFS 元数据文件</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_TOO_LATE</strong></p></td>
-<td align="left"><p>写入操作试图为卷后已被卸载。</p></td>
+<td align="left"><p>在卸载卷后尝试写入操作。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_FILE_DELETED</strong></p></td>
-<td align="left"><p>此文件的数据流是无效的。</p></td>
+<td align="left"><p>此文件的数据流无效。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_FILE_CLOSED</strong></p></td>
-<td align="left"><p>关闭文件句柄。</p></td>
+<td align="left"><p>文件句柄已关闭。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_INVALID_HANDLE</strong></p></td>
@@ -123,29 +123,29 @@ ms.locfileid: "67380119"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_FILE_LOCK_CONFLICT</strong></p></td>
-<td align="left"><p>由于当前文件锁定状态，不能授予读取或写入访问。</p></td>
+<td align="left"><p>由于当前文件锁定状态，无法授予读取或写入访问权限。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_END_OF_FILE</strong></p></td>
-<td align="left"><p><strong>FileOffset</strong>的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input)"> <strong>FSCTL_OFFLOAD_WRITE_INPUT</strong> </a>开始后端的文件 (EOF)。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input)"><strong>FSCTL_OFFLOAD_WRITE_INPUT</strong></a>的<strong>FileOffset</strong>成员在文件尾（EOF）后开始。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_DISMOUNTED_VOLUME</strong></p></td>
-<td align="left"><p>卸载写不能已卸除卷上。</p></td>
+<td align="left"><p>卸载写入无法在卸除的卷上发生。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_MEDIA_WRITE_PROTECTED</strong></p></td>
-<td align="left"><p>该卷为只读。</p></td>
+<td align="left"><p>卷为只读。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_INSUFFICIENT_RESOUCES</strong></p></td>
-<td align="left"><p>没有足够的资源，可完成该请求。</p></td>
+<td align="left"><p>资源不足，无法完成请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_BUFFER_TOO_SMALL</strong></p></td>
-<td align="left"><p><em>InputBufferLength</em>太小<em>InputBuffer</em>包含<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input)"> <strong>FSCTL_OFFLOAD_WRITE_INPUT</strong> </a>结构。</p>
-<p>-或-</p>
-<p><em>OutputBufferLength</em>太小<em>OutputBuffer</em>接收<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_output" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_OUTPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_output)"> <strong>FSCTL_OFFLOAD_WRITE_OUTPUT</strong> </a>结构。</p></td>
+<td align="left"><p><em>InputBufferLength</em>太小， <em>InputBuffer</em>无法包含<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input)"><strong>FSCTL_OFFLOAD_WRITE_INPUT</strong></a>结构。</p>
+<p>\- 或者 -</p>
+<p><em>OutputBufferLength</em>太小， <em>OutputBuffer</em>无法接收<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_output" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_WRITE_OUTPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_output)"><strong>FSCTL_OFFLOAD_WRITE_OUTPUT</strong></a>结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -155,7 +155,7 @@ ms.locfileid: "67380119"
 <a name="remarks"></a>备注
 -------
 
-普通文件仅可读取的卸载。 请参阅的说明**状态\_卸载\_编写\_文件\_不\_支持**有关不支持的文件类型的列表。
+卸载读取仅适用于普通文件。 有关\_不支持的文件类型的列表，请参阅**状态\_卸载\_写入\_文件\_不支持**的说明。
 
 <a name="requirements"></a>要求
 ------------
@@ -167,26 +167,26 @@ ms.locfileid: "67380119"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>从 Windows 8 开始可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h （包括 Ntifs.h 或 Fltkernel.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntifs （包括 Ntifs 或 Fltkernel）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 
-[**FSCTL\_OFFLOAD\_WRITE\_INPUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_input)
+[**FSCTL\_卸载\_写入\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_input)
 
-[**FSCTL\_卸载\_编写\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_write_output)
+[**FSCTL\_卸载\_写入\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_write_output)
 
  
 

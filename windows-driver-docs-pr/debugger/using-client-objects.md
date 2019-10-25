@@ -6,42 +6,42 @@ keywords:
 - 调试器引擎，COM 接口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdcbdbb1730228be46a8bc1595630ae4ab4c4d32
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a671b96d256c265f66745fb205fba64133c16884
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366337"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834242"
 ---
 # <a name="using-client-objects"></a>使用客户端对象
 
 
-中与调试器引擎进行交互的客户端对象的角色的概述，请参阅[客户端对象](client-objects.md)。
+有关与调试器引擎交互的客户端对象角色的概述，请参阅[客户端对象](client-objects.md)。
 
-一般情况下，可能只能从在其中创建客户端的线程调用客户端的方法。 通常情况下，从错误的线程调用的方法将立即失败。 此规则值得注意的例外是方法[ **CreateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createclient); 此方法可以从任何线程调用，并调用它的线程中返回可用的新客户端。 其他异常都记录在参考部分中。
+通常，只能从创建客户端的线程调用客户端的方法。 通常，从错误的线程调用的方法会立即失败。 此规则的明显例外是方法[**CreateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createclient);此方法可从任何线程调用，并返回一个新的客户端，该客户端可用于调用它的线程。 其他异常记录在参考部分。
 
-方法返回一个描述客户端对象的字符串[ **GetIdentity** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-getidentity) ，也可以编写到引擎的输出流使用[ **OutputIdentity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-outputidentity).
+描述客户端对象的字符串由方法[**GetIdentity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getidentity)返回，或者可以使用[**OutputIdentity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-outputidentity)写入引擎的输出流。
 
-### <a name="span-idcominterfacesspanspan-idcominterfacesspancom-interfaces"></a><span id="com_interfaces"></span><span id="COM_INTERFACES"></span>COM 接口
+### <a name="span-idcom_interfacesspanspan-idcom_interfacesspancom-interfaces"></a><span id="com_interfaces"></span><span id="COM_INTERFACES"></span>COM 接口
 
-调试器引擎 API 包含多个 COM 接口; 等它们实现**IUnknown**接口。
+调试器引擎 API 包含几个 COM，如接口;它们实现**IUnknown**接口。
 
-一节中描述的接口[调试引擎接口](https://docs.microsoft.com/windows-hardware/drivers/debugger/client-com-interfaces)由客户端实现 （但不一定是最新版本）。 可以使用 COM 方法**iunknown:: Queryinterface**以获取每个这些接口从任何其他人。
+[调试引擎接口](https://docs.microsoft.com/windows-hardware/drivers/debugger/client-com-interfaces)部分中描述的接口是由客户端实现的（尽管不一定是最新版本）。 您可以使用 COM 方法**IUnknown：： QueryInterface**从任何其他接口获取其中的每个接口。
 
-客户端实现**IUnknown** COM 接口和将其用于维护引用计数，并选择的接口。 但是，客户端不是已注册的 COM 对象。 该方法**iunknown:: Addref**用于递增对象，并且该方法的引用计数**iunknown:: Release**用于递减引用计数。 当**iunknown:: Queryinterface**调用时，该引用计数会递增，因此，如果不再需要客户端接口指针**iunknown:: Release**应调用要递减引用计数。
+客户端实现**IUnknown** COM 接口，并使用它来维护引用计数和接口选择。 但是，客户端不是已注册的 COM 对象。 方法**iunknown：： AddRef**用于递增对象的引用计数，而方法**Iunknown：： Release**用于递减引用计数。 当调用**iunknown：： QueryInterface**时，引用计数会递增，因此，当不再需要客户端接口指针时，应调用**release**来递减引用计数。
 
-当使用创建客户端对象的引用计数将初始化为一个[ **DebugCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugcreate)或[ **DebugConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect)。
+当使用[**DebugCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugcreate)或[**DebugConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugconnect)创建客户端对象时，引用计数将被初始化为一个。
 
-请参阅平台 SDK 时，引用计数应为递增和递减有关详细信息。
+有关何时应增加和减少引用计数的详细信息，请参阅平台 SDK。
 
-**Iunknown:: Queryinterface**， **DebugCreate**，和**DebugConnect**每项需要的接口 ID 作为其参数之一。 可以获取 ID，使用此接口 **\_ \_uuidof**运算符。 例如：
+**IUnknown：： QueryInterface**、 **DebugCreate**和**DebugConnect** ，每个都采用接口 ID 作为其参数之一。 可以使用 **\_\_uuidof**运算符获取此接口 ID。 例如：
 
 ```cpp
 IDebugClient * debugClient;
 HRESULT Hr = DebugCreate( __uuidof(IDebugClient), (void **)&debugClient );
 ```
 
-**重要**  IDebug\*接口如[ **IDebugEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)接口，尽管类似，COM 不是正确的 COM Api。 从托管代码中调用这些接口是一个不受支持的方案。 如果使用托管代码调用的接口，例如垃圾回收和线程所有权的问题会导致系统不稳定。
+**重要**  IDebug\* 接口（如 COM like）不是正确的 com api，如[**IDebugEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
 
  
 

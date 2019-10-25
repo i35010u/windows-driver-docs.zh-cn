@@ -1,9 +1,9 @@
 ---
 title: ndiskd.wdiminidriver
-description: Ndiskd.wdiminidriver 扩展显示有关一个或多个 CMiniportDriver 结构的信息。
+description: Ndiskd. wdiminidriver 扩展显示有关一个或多个 CMiniportDriver 结构的信息。
 ms.assetid: C7022CD7-6F3A-485B-8686-A686A5305DA5
 keywords:
-- ndiskd.wdiminidriver Windows 调试
+- ndiskd wdiminidriver Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,46 +12,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f4af011cb79092c1483f34cda8c0ad4c100ce10
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 050836ff1ff43cf0bebcd10a40d2a734dafca369
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363093"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837648"
 ---
 # <a name="ndiskdwdiminidriver"></a>!ndiskd.wdiminidriver
 
 
-**！ Ndiskd.wdiminidriver**扩展显示有关一个或多个 CMiniportDriver 结构的信息。 如果不带任何参数运行此扩展 ！ ndiskd 将显示所有 CMiniportDriver 结构的列表。
+**！ Ndiskd wdiminidriver**扩展显示有关一个或多个 CMiniportDriver 结构的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有 CMiniportDriver 结构的列表。
 
 有关 WDI 微型端口驱动程序的详细信息，请参阅[WDI 微型端口驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)。
 
-WDI 微型端口驱动程序引用的详细信息，请参阅[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
+有关 WDI 微型端口驱动程序参考的详细信息，请参阅[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
 
 ```console
 !ndiskd.wdiminidriver [-handle <x>] [-pm] [-rcvfilter] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 CMiniportDriver 对象的句柄。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-basic*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
 显示有关微型端口驱动程序的基本信息。
 
-<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-handlers*   
-显示此驱动程序微型端口处理程序。
+<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-处理程序*   
+显示此驱动程序的小型端口处理程序。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-运行 **！ ndiskd.wdiminidriver**扩展不带任何参数，以查看所有 CMiniportDriver 对象的列表。 在以下示例中，只有一个 CMiniportDriver 对象时。 其 WdiMiniDriver 的句柄是 ffffc804b8ce7c40。
+运行不带参数的 **！ ndiskd wdiminidriver**扩展，以查看所有 CMiniportDriver 对象的列表。 在下面的示例中，只有一个 CMiniportDriver 对象。 它的 WdiMiniDriver 的句柄为 ffffc804b8ce7c40。
 
 ```console
 1: kd> !ndiskd.wdiminidriver
@@ -59,7 +59,7 @@ Ndiskd.dll
     ffffc804b8ce7c40 - WDI MiniDriver
 ```
 
-单击 WdiMiniDriver 的句柄或输入 **！ ndiskd.wdiminidriver-处理**命令来查看此 WDI 微型端口驱动程序的详细信息。
+单击 WdiMiniDriver 的句柄或输入 **！ ndiskd**命令，查看此 WDI 微型端口驱动程序的详细信息。
 
 ```console
 1: kd> !ndiskd.wdiminidriver ffffc804b8ce7c40
@@ -79,7 +79,7 @@ WDI MINIPORT DRIVER
     Handlers
 ```
 
-现在可以单击 WDI 微型端口驱动程序的详细信息，底部的"处理程序"链接，也可以使用该句柄以输入 **！ ndiskd.wdiminidriver-处理的处理程序**命令，以查看所有此 WDI 微型端口驱动程序的处理程序的列表。
+现在，你可以单击 WDI 微型端口驱动程序详细信息底部的 "处理程序" 链接，或者可以使用该句柄输入 **！ ndiskd**命令来查看所有此 WDI 微型端口驱动程序的处理程序的列表。
 
 ```console
 1: kd> !ndiskd.wdiminidriver ffffc804b8ce7c40 -handlers
@@ -125,22 +125,22 @@ HANDLERS
     CloseAdapterCompleteHandler            fffff80965fface0   wdiwifi!WDICloseAdapterCompleteHandler
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
 [WDI 微型端口驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
-[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

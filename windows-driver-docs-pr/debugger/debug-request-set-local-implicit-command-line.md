@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 430960b284f37f3d9a63623485adf1d212a8cbd4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3529e081b8f42125626cf2b48165496cf9cdd497
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361431"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837786"
 ---
-# <a name="debugrequestsetlocalimplicitcommandline"></a>调试\_请求\_设置\_本地\_隐式\_命令\_行
+# <a name="debug_request_set_local_implicit_command_line"></a>调试\_请求\_设置\_本地\_隐式\_命令\_行
 
 
-调试\_请求\_设置\_本地\_隐式\_命令\_行[**请求**](request.md)操作设置[调试器引擎](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine)的隐式命令行。
+调试\_请求\_集\_本地\_隐式\_命令\_行[**请求**](request.md)操作设置[调试器引擎](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine)的隐式命令行。
 
 **Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-新的隐式命令行。 类型*InBuffer*指向 Unicode 字符串 (PWSTR) 的指针。 指针将被复制但不能复制它指向的字符串。
+新的隐式命令行。 *InBuffer*的类型为指向 Unicode 字符串（PWSTR）的指针。 将复制指针，但不会复制它指向的字符串。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 不使用。
@@ -35,22 +35,22 @@ ms.locfileid: "67361431"
 <a name="remarks"></a>备注
 -------
 
-创建一个过程时，隐式的命令行可用作命令行。 进程创建选项 ([**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)) 包含使用而不是提供的隐式的命令行选项命令行创建一个进程时。
+创建进程时，可以使用隐式命令行作为命令行。 创建进程时，进程创建选项（[**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_create_process_options)）包含一个选项，用于使用隐式命令行而不是提供的命令行。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**请求**](request.md)
+[**需要**](request.md)
 
-[**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)
+[**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_create_process_options)
 
-[**DEBUG\_REQUEST\_GET\_ADDITIONAL\_CREATE\_OPTIONS**](debug-request-get-additional-create-options.md)
+[**调试\_请求\_获取\_其他\_创建\_选项**](debug-request-get-additional-create-options.md)
 
-[**DEBUG\_REQUEST\_SET\_ADDITIONAL\_CREATE\_OPTIONS**](debug-request-set-additional-create-options.md)
+[**调试\_请求\_集\_其他\_创建\_选项**](debug-request-set-additional-create-options.md)
 
-[**CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)
+[**CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess2)
 
-[**CreateProcessAndAttach2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2)
+[**CreateProcessAndAttach2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2)
 
  
 

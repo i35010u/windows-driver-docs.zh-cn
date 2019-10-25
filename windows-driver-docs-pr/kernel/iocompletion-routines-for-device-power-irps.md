@@ -10,12 +10,12 @@ keywords:
 - 工作状态返回 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 244c56d1fdd835fbb78e7c6dad3785c0f2a28aac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b001f69ae04ec826deb611d93d62b00221999a39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381689"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828165"
 ---
 # <a name="iocompletion-routines-for-device-power-irps"></a>设备电源 IRP 的 IoCompletion 例程
 
@@ -23,29 +23,29 @@ ms.locfileid: "67381689"
 
 
 
-总线驱动程序完成 IRP 后，I/O 管理器会调用[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程注册的更高级别的驱动程序为它们通过 IRP 向下堆栈。
+在总线驱动程序完成 IRP 后，当 i/o 管理器将 IRP 向下传递到堆栈中时，它会调用由较高级别的驱动程序注册的[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程。
 
-只要设备进入 D0 状态时，每个的驱动程序应设置*IoCompletion*例程执行大部分所需将其返回给工作状态的任务。 驱动程序应设置*IoCompletion*例程的任何转换到 D0 状态，是否在设备从返回睡眠状态或在系统启动时输入 D0。 下图显示了任务这种*IoCompletion*例程应执行。
+每当设备进入 D0 状态时，其每个驱动程序都应该设置一个*IoCompletion*例程，用于执行将其返回到工作状态所需的大部分任务。 对于任何到 D0 状态的转换，驱动程序都应该设置*IoCompletion*例程，无论设备是从睡眠状态返回，还是在系统启动时输入 D0 都是如此。 下图显示了*IoCompletion*例程应执行的任务。
 
-![说明设备强化 iocompletion 例程的关系图](images/d0-comp.png)
+![说明设备开机 iocompletion 例程的示意图](images/d0-comp.png)
 
 这些任务包括：
 
--   还原设备电源状态或正在该设备，重新初始化为必需的并准备处理任何 I/O 排队的驱动程序中，当设备不处于工作状态
+-   根据需要还原设备电源状态或重新初始化设备，并准备在设备未处于工作状态时处理驱动程序排队的任何 i/o
 
--   调用[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)通知设备处于 D0 电源状态的电源管理器。
+-   调用[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)以通知电源管理器设备处于 D0 电源状态。
 
--   调用[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)以接收 IRP 下, 一步的强大功能，如果该驱动程序未最初发送当前 power IRP。 （Windows Server 2003、 Windows XP 和 Windows 2000 仅）。
+-   如果驱动程序最初未发送当前的 power IRP，则调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)以接收下一个 power irp。 （仅限 windows Server 2003、Windows XP 和 Windows 2000）。
 
--   释放分配的设备上下文的内存。
+-   释放分配给设备上下文的内存。
 
--   调用[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)若要释放的锁的驱动程序中获取其[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程时收到了IRP。
+-   调用[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock) ，以释放驱动程序收到 IRP 时在其[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中获取的锁。
 
--   返回状态\_成功。
+-   成功返回状态\_。
 
-总线驱动程序未接通电源的设备直到它或更高版本的驱动程序必须与设备通信。
+总线驱动程序不会开启设备，直到设备或更高版本的驱动程序必须与设备通信。
 
-驱动程序时其设备进入睡眠状态时，应设置*IoCompletion*调用的例程[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp) （Windows Server 2003、 Windows XP 和 Windows仅 2000)，并释放删除锁。 请记住，在设备处于休眠状态时，驱动程序无法访问其设备。
+当其设备进入睡眠状态时，驱动程序应设置*IoCompletion*例程，该例程调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) （仅限 Windows SERVER 2003、windows XP 和 windows 2000）并释放删除锁定。 请记住，在设备处于睡眠状态时，驱动程序无法访问其设备。
 
  
 

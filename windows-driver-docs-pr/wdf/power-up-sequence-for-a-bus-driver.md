@@ -4,21 +4,21 @@ description: 总线驱动程序的启动顺序
 ms.assetid: 689746F4-E1A5-40BA-9FC4-29B0702D6E3E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab08649508a423ec91e9043241be26512a451d67
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c9b16f77a7341119f7a971f9225067aa33e08046
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376330"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842241"
 ---
 # <a name="power-up-sequence-for-a-bus-driver"></a>总线驱动程序的启动顺序
 
 
-下图显示了使设备为完全可操作的状态，从该图底部的设备插入状态时框架调用 KMDF 总线驱动程序的事件回调函数的顺序：
+下图显示了当设备到完全操作状态时，框架调用 KMDF 总线驱动程序的事件回调函数的顺序，从图底部的设备插入状态开始：
 
-![总线驱动程序的启动顺序](images/pdo-powerup.png)
+![总线驱动程序的通电顺序](images/pdo-powerup.png)
 
-框架不会以物理方式删除 PDO 之前以物理方式从系统中删除相应的设备。 例如，如果用户禁用的设备在设备管理器，但不会以物理方式删除它，该框架将保留其设备对象。 因此，仅在插枚举时发生图底部的三个步骤 — 即，在初始启动或在用户插入新设备。 如果设备已之前处于禁用状态，但不是以物理方式删除，framework 将先通过调用[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调。
+在物理上将相应的设备从系统中删除之前，框架不会实际删除 PDO。 例如，如果用户在设备管理器中禁用了该设备，但未将其物理删除，则该框架将保留其设备对象。 因此，该图底部的三个步骤仅在即插即用枚举过程中发生，即在初始启动期间或用户插入新设备时。 如果以前禁用了该设备但未将其物理删除，则该框架首先调用[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调。
 
  
 

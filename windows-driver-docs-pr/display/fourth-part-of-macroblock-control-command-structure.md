@@ -3,15 +3,15 @@ title: 宏块控制命令结构的第四部分
 description: 宏块控制命令结构的第四部分
 ms.assetid: 26540693-09a2-4664-b0ac-4cc69e909e99
 keywords:
-- 宏块 WDK DirectX VA，通用命令结构
+- macroblocks WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f587018c44ff39377b49b021bbb0b084dca44c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b08ae2dc476647052485a26591775df3a680a4b3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372974"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838942"
 ---
 # <a name="fourth-part-of-macroblock-control-command-structure"></a>宏块控制命令结构的第四部分
 
@@ -19,9 +19,9 @@ ms.locfileid: "67372974"
 ## <span id="ddk_fourth_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_FOURTH_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
 
 
-如果**bPicIntra**并**bMV\_RPS**成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)均为零，宏块控制命令结构结尾的数据中所述[第三个部分组成的宏块控制命令的结构](third-part-of-macroblock-control-command-structure.md)。 宏块控制命令结构结尾填充零值的数据，如有必要下, 一步的宏块控制命令为 16 字节边界对齐结构的第三个部分。
+如果[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters) **\_RPS**成员的**bPicIntra**和 bMV 为零，则宏块控件命令结构以[宏块控件命令结构的第三部分](third-part-of-macroblock-control-command-structure.md)所述的数据结尾。 宏块控件命令结构以使用零值数据填充的结构的第三部分结束（如有必要），以便将下一个宏块控件命令与16字节边界对齐。
 
-如果**bPicIntra** DXVA 成员\_PictureParameters 为零并且**bMV\_RPS** DXVA 成员\_PictureParameters 为 1，第四部分宏块控制命令结构是一个名为字节数组*bRefPicSelect*。 该数组中的元素数是中的元素数相同**MVector**数组上表中所示。 数组的每个元素指定的索引中找到相应的动作矢量与关联的未压缩的图面**MVector**数组。 然后，宏块控制命令结构结束，则用零值数据填充，如有必要下, 一步宏块控制命令结构为 16 字节边界对齐。
+如果 DXVA\_PictureParameters 的**bPicIntra**成员为零，DXVA\_PictureParameters 的**bMV\_RPS**成员为1，则宏块控件命令结构的第四部分是名*为的字节数组。bRefPicSelect*。 该数组中的元素数与上表中显示的**MVector**数组中的元素数相同。 数组的每个元素指定与在**MVector**数组中找到的相应运动向量关联的未压缩图面的索引。 然后，宏块控件命令结构结束并使用零值数据进行填充（如有必要），以便将下一个宏块控件命令结构与16字节边界对齐。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: MRxSetFileInfoAtCleanup routine
-description: MRxSetFileInfoAtCleanup 例程调用 RDBSS 请求网络微型重定向，在清理的文件系统对象上设置文件的信息。
+title: MRxSetFileInfoAtCleanup 例程
+description: RDBSS 调用 MRxSetFileInfoAtCleanup 例程来请求网络小型重定向程序在清理时在文件系统对象上设置文件信息。
 ms.assetid: 099244ee-cc66-4500-9fee-a10238aaa66c
 keywords:
 - MRxSetFileInfoAtCleanup 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 812fb9b8a5d074a15aea1052aa19b0c15295934a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 13c2fe54d41d7e46d010c3f3ef6be336284f39ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385314"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841077"
 ---
-# <a name="mrxsetfileinfoatcleanup-routine"></a>MRxSetFileInfoAtCleanup routine
+# <a name="mrxsetfileinfoatcleanup-routine"></a>MRxSetFileInfoAtCleanup 例程
 
 
-*MRxSetFileInfoAtCleanup*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向，在清理的文件系统对象上设置文件的信息。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxSetFileInfoAtCleanup*例程来请求网络小型重定向程序在清理时在文件系统对象上设置文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,43 +39,43 @@ NTSTATUS MRxSetFileInfoAtCleanup(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetFileInfoAtCleanup*将返回状态\_成功或适当的 NTSTATUS 值成功。
+*MRxSetFileInfoAtCleanup*返回成功的状态\_成功或使用适当的 NTSTATUS 值。
 
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出调用*MRxSetFileInfoAtCleanup*期间文件对象的最后一个句柄已关闭时清除。 这是不同于关闭操作，删除对文件对象的最后一个引用时调用。
+当关闭文件对象的最后一个句柄时，RDBSS 会发出对*MRxSetFileInfoAtCleanup*的调用。 这与 close 操作不同，后者是在删除对文件对象的最后一个引用时调用的。
 
-*MRxSetFileInfoAtCleanup* RDBSS 如果上一个文件或文件的大小的时间戳已更改调用。 对调用*MRxSetFileInfoAtCleanup*通过 RDBSS 进行单独为每个这些更改。 如果文件大小和时间戳已更改，则 RDBSS 调用两*MRxSetFileInfoAtCleanup*。
+如果文件上的时间戳或文件大小已更改，则 RDBSS 调用*MRxSetFileInfoAtCleanup* 。 对每个此类更改分别进行对*MRxSetFileInfoAtCleanup*的调用。 如果文件大小和时间戳都发生了更改，则 RDBSS 对*MRxSetFileInfoAtCleanup*进行两次调用。
 
-然后再调用*MRxSetFileInfoAtCleanup*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数如果有一个文件上的时间戳更改：
+在调用*MRxSetFileInfoAtCleanup*之前，如果文件上的时间戳已更改，RDBSS 将修改 RX 中的以下成员，\_上下文结构指向*RxContext*参数：
 
-**Info.FileInformationClass**成员设置为一个文件\_信息\_FileBasicInformation 类值。
+**FileInformationClass**成员设置为文件\_信息\_类值为 FileBasicInformation。
 
-**Info.Buffer**成员设置为一个文件\_BASIC\_在堆栈上分配的信息结构。
+**Info. Buffer**成员设置为一个文件\_在堆栈上分配的基本\_信息结构。
 
-**Info.Length**成员设置为 sizeof 文件\_BASIC\_信息结构。
+**信息. Length**成员设置为 sizeof 文件\_基本\_信息结构。
 
-然后再调用*MRxSetFileInfoAtCleanup*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*如果文件的大小已更改的参数：
+在调用*MRxSetFileInfoAtCleanup*之前，RDBSS 会修改\_RX 中的以下成员，如果文件大小已更改，则由*RxContext*参数指向的上下文结构：
 
-**Info.FileInformationClass**成员设置为一个文件\_信息\_FileEndOfFileInformation 类值。
+**FileInformationClass**成员设置为文件\_信息\_类值为 FileEndOfFileInformation。
 
-**Info.Buffer**成员设置为一个文件\_最终\_OF\_文件\_在堆栈上分配的信息结构。
+**Info. Buffer**成员设置为在堆栈上分配的\_\_文件\_结束\_的文件。
 
-**Info.Length**成员设置为<strong>sizeof (</strong>文件\_最终\_OF\_文件\_信息<strong>)</strong>。
+将**Length**成员设置为<strong>sizeof （</strong>file\_END\_\_文件\_信息<strong>）</strong>。
 
-RDBSS 忽略的返回值*MRxSetFileInfoAtCleanup*。
+RDBSS 忽略*MRxSetFileInfoAtCleanup*的返回值。
 
-网络微型重定向可以选择执行此例程中的任何内容，并返回状态\_成功。 对文件大小或时间戳的任何更改将在清理操作期间处理。
+网络小型重定向程序可选择在此例程中执行任何操作，并返回状态\_成功。 文件大小或时间戳的任何更改将在清理操作期间进行处理。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,19 +88,19 @@ RDBSS 忽略的返回值*MRxSetFileInfoAtCleanup*。
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

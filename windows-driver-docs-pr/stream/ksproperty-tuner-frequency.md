@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_调谐器\_频率
-description: KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取当前的频率或调谐器的通道。 必须实现此属性。
+description: KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取调谐器的当前频率或通道。 必须实现此属性。
 ms.assetid: ba6caf67-63c1-4a31-b93f-3b06b61244bf
 keywords:
-- KSPROPERTY_TUNER_FREQUENCY 流式处理媒体设备
+- KSPROPERTY_TUNER_FREQUENCY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ca71ae173bf289ccde3388e6d1449a1550f87dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af918b665e2e2455679ddcb0f5eb501214719b87
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383976"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837917"
 ---
-# <a name="kspropertytunerfrequency"></a>KSPROPERTY\_调谐器\_频率
+# <a name="ksproperty_tuner_frequency"></a>KSPROPERTY\_调谐器\_频率
 
 
-KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取当前的频率或调谐器的通道。 必须实现此属性。
+KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取调谐器的当前频率或通道。 必须实现此属性。
 
 ## <span id="ddk_ksproperty_tuner_frequency_ks"></span><span id="DDK_KSPROPERTY_TUNER_FREQUENCY_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取当前的频率或调谐�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取当前的频率或调谐�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_FREQUENCY_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s)"><strong>KSPROPERTY_TUNER_FREQUENCY_S</strong></a></p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_FREQUENCY_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s)"><strong>KSPROPERTY_TUNER_FREQUENCY_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,12 +61,12 @@ KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取当前的频率或调谐�
 
  
 
-属性值 （操作数据） 为 ULONG，指定当前调谐器的频率。 赫兹 (Hz) 中指定此值。
+属性值（操作数据）是一个 ULONG，指定调谐器的当前频率。 此值以赫兹（Hz）为单位指定。
 
 <a name="remarks"></a>备注
 -------
 
-**频率**KSPROPERTY 成员\_调谐器\_频率\_S 结构指定的当前调谐器频率。
+KSPROPERTY 的 "**频率**" 成员\_调谐器\_Frequency\_S 结构指定当前的调谐器频率。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,18 +78,18 @@ KSPROPERTY\_调谐器\_FREQUENCY 属性设置或获取当前的频率或调谐�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_调谐器\_频率\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s)
+[**KSPROPERTY\_调谐器\_频率\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_frequency_s)
 
  
 

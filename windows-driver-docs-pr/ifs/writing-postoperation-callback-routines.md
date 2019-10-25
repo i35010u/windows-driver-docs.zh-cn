@@ -3,16 +3,16 @@ title: 编写后操作回调例程
 description: 编写后操作回调例程
 ms.assetid: 4940e38d-107b-45c4-aa71-6e8543330f39
 keywords:
-- postoperation 回调例程 WDK 文件系统微筛选器、 编写
+- postoperation 回调例程 WDK 文件系统微筛选器，写入
 - 编写回调例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 049682a1d2bf944705cf01ed8513e31a0c3d7fc8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 22a41557c7994e7cf5ac38da43fb858c7c7a08f1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385646"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840921"
 ---
 # <a name="writing-postoperation-callback-routines"></a>编写后操作回调例程
 
@@ -20,21 +20,21 @@ ms.locfileid: "67385646"
 ## <span id="ddk_writing_postoperation_callback_routines_if"></span><span id="DDK_WRITING_POSTOPERATION_CALLBACK_ROUTINES_IF"></span>
 
 
-文件系统微筛选器驱动程序使用一个或多个*postoperation 回调例程*到筛选器 I/O 的操作。
+文件系统微筛选器驱动程序使用一个或多个*postoperation 回调例程*来筛选 i/o 操作。
 
-Postoperation 回调例程可以执行以下操作之一：
+Postoperation 回调例程可以执行下列操作之一：
 
--   完成 postoperation 例程中直接完成工作。 所有完成的工作都可以在 IRQL &lt;= 调度\_级别。
--   完成安全 IRQL 在完成工作。 返回 FLT\_状态\_详细\_处理\_必需和队列工作线程，以允许在安全的 IRQL 在处理。 处理完成后，工作线程调用[ **FltCompletePendedPostOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpostoperation)继续 postoperation 处理。
+-   直接在 postoperation 例程中完成完成工作。 所有完成工作都可以在 IRQL 上完成，&lt;= 调度\_级别。
+-   完成在安全 IRQL 上完成工作。 返回 FLT\_状态\_详细\_处理\_必需，并将工作线程排队以允许在安全的 IRQL 处进行处理。 处理完成后，工作线程将调用[**FltCompletePendedPostOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpostoperation)以继续 postoperation 处理。
 -   取消成功创建操作。
 
-[**Postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)类似于*完成例程*在旧的文件系统筛选器驱动程序中使用。
+[**Postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)与旧式文件系统筛选器驱动程序中使用的*完成例程*类似。
 
-微筛选器驱动程序与它注册相同的方式注册特定类型的 I/O 操作的 postoperation 回调例程[ **preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)— 也就是说，通过存储回调中的例程的入口点**OperationRegistration**的成员[ **FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)微筛选器驱动程序将传递的结构为参数[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)中其**DriverEntry**例程。
+微筛选器驱动程序以注册[**preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)的相同方式为特定类型的 i/o 操作注册一个 postoperation 回调例程，即通过将回调例程的入口点存储在 OperationRegistration 中。 [**FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构的成员，微筛选器驱动程序将其作为参数传递给**DriverEntry**例程中的[**FltRegisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter) 。
 
-微筛选器驱动程序收到只有这些类型的 I/O 操作，它们具有为其注册 preoperation 或 postoperation 回调例程。 微筛选器驱动程序可以注册为给定类型的 I/O 操作的 preoperation 回调例程，而不注册 postoperation 回调，反之亦然。
+微筛选器驱动程序只接收到其已为其注册 preoperation 或 postoperation 回调例程的 i/o 操作类型。 微筛选器驱动程序可以为给定类型的 i/o 操作注册一个 preoperation 回调例程，而无需注册 postoperation 回调，反之亦然。
 
-每个 postoperation 回调例程定义，如下所示：
+每个 postoperation 回调例程定义如下：
 
 ```cpp
 typedef FLT_POSTOP_CALLBACK_STATUS 
@@ -46,31 +46,31 @@ typedef FLT_POSTOP_CALLBACK_STATUS
     ); 
 ```
 
-完成例程，如在 IRQL 调用 postoperation 回调例程&lt;= 调度\_级别，请在任意线程上下文中。
+与完成例程一样，postoperation 回调例程在任意线程上下文中以 IRQL &lt;= 调度\_级别调用。
 
-因为它可以调用在 IRQL = 调度\_级别，postoperation 回调例程不能调用必须在较低的 IRQL，如调用的内核模式例程[ **FltLockUserBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltlockuserbuffer)或[ **RtlCompareUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcompareunicodestring)。 出于相同原因，必须从非分页缓冲池分配 postoperation 回调例程中使用任何数据结构。
+由于它可以在 IRQL = 调度\_级别调用，因此 postoperation 回调例程无法调用必须在较低的 IRQL （例如[**FltLockUserBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer)或[**RtlCompareUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcompareunicodestring)）上调用的内核模式例程。 由于同样的原因，在 postoperation 回调例程中使用的所有数据结构必须从非分页池进行分配。
 
-在以下情况下是上述规则的几个例外情况：
+以下情况是上述规则的几个例外：
 
--   如果微筛选器驱动程序的 preoperation 回调例程将返回 FLT\_PREOP\_IRP 基于 I/O 操作，相应的 postoperation 回调例程的同步调用在 IRQL &lt;= APC\_级别，在 preoperation 回调例程在同一线程上下文。
+-   如果微筛选器驱动程序的 preoperation 回调例程返回 FLT\_PREOP\_为基于 IRP 的 i/o 操作同步，则会在同一线程中以 IRQL &lt;= APC\_级别调用相应的 postoperation 回调例程上下文作为 preoperation 回调例程。
 
--   快速的 I/O 操作的 postoperation 回调例程调用在 IRQL = 被动\_级别，请在 preoperation 回调例程在同一线程上下文中。
+-   快速 i/o 操作的 postoperation 回调例程在 preoperation 回调例程所在的线程上下文中以 IRQL = 被动\_级别调用。
 
--   在 IRQL 调用后创建的回调例程 = 被动\_级别，请在发起 IRP 的线程的上下文\_MJ\_创建操作。
+-   在发起 IRP\_MJ\_创建操作的线程的上下文中，在 IRQL = 被动\_级别调用创建后回调例程。
 
-当筛选器管理器调用指定的 I/O 操作时微筛选器驱动程序的 postoperation 回调例程时，微筛选器驱动程序将暂时控制 I/O 操作。 微筛选器驱动程序将保留此控件，直到它执行以下项之一：
+当筛选器管理器为给定 i/o 操作调用微筛选器驱动程序的 postoperation 回调例程时，微筛选器驱动程序会暂时控制 i/o 操作。 微筛选器驱动程序会保留此控件，直到它执行以下操作之一：
 
--   返回 FLT\_POSTOP\_已完成\_处理从 postoperation 回调例程。
+-   从 postoperation 回调例程返回 FLT\_POSTOP\_完成\_处理。
 
--   调用[ **FltCompletePendedPostOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpostoperation)从已处理被挂起 postoperation 回调例程中的基于 IRP 的 I/O 操作的工作例程。
+-   从已处理基于 IRP 的 i/o 操作的工作例程调用[**FltCompletePendedPostOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpostoperation) ，该操作已在 postoperation 回调例程中挂起。
 
 本部分包括：
 
-[执行完成某个 I/O 操作的处理](performing-completion-processing-for-an-i-o-operation.md)
+[执行 i/o 操作的完成处理](performing-completion-processing-for-an-i-o-operation.md)
 
-[挂起的 I/O 操作中 Postoperation 回调例程](pending-an-i-o-operation-in-a-postoperation-callback-routine.md)
+[挂起 Postoperation 回调例程中的 i/o 操作](pending-an-i-o-operation-in-a-postoperation-callback-routine.md)
 
-[失败的 I/O 操作中 Postoperation 回调例程](failing-an-i-o-operation-in-a-postoperation-callback-routine.md)
+[Postoperation 回调例程中的 i/o 操作失败](failing-an-i-o-operation-in-a-postoperation-callback-routine.md)
 
  
 

@@ -1,10 +1,10 @@
 ---
 title: 在 WDM 驱动程序中使用浮点数
-description: 使用浮点运算时，Windows 内核模式 WDM 驱动程序必须遵循特定的准则。 X86 和 x64 的系统之间存在差异。 默认情况下，Windows 将关闭这两个系统的算术异常。
+description: 使用浮点运算时，适用于 Windows 的内核模式 WDM 驱动程序必须遵循特定的准则。 它们在 x86 和 x64 系统之间存在差异。 默认情况下，Windows 会关闭这两个系统的算术异常。
 ms.assetid: 73414084-4054-466a-b64c-5c81b224be92
 keywords:
-- 浮动点 WDK 内核
-- 浮点单元 WDK 内核
+- 浮点 WDK 内核
+- 浮点单元
 - FPU WDK 内核
 - KeSaveFloatingPointState
 - KeRestoreFloatingPointState
@@ -12,12 +12,12 @@ keywords:
 - MMX WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5acd8de89dbf9386de1466bc0bcc1ed9c1368347
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4177a3d8552e84f228e48119fe29405b8d98032f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381643"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835994"
 ---
 # <a name="using-floating-point-in-a-wdm-driver"></a>在 WDM 驱动程序中使用浮点数
 
@@ -26,26 +26,26 @@ ms.locfileid: "67381643"
 
 -   2016 年 7 月
 
-使用浮点运算时，Windows 内核模式 WDM 驱动程序必须遵循特定的准则。 X86 和 x64 的系统之间存在差异。 默认情况下，Windows 将关闭这两个系统的算术异常。
+使用浮点运算时，适用于 Windows 的内核模式 WDM 驱动程序必须遵循特定的准则。 它们在 x86 和 x64 系统之间存在差异。 默认情况下，Windows 会关闭这两个系统的算术异常。
 
 ## <a name="x86-systems"></a>x86 系统
 
 
-针对 x86 系统必须包装的浮动点计算调用之间使用的内核模式 WDM 驱动程序[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)并[ **KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)。 浮点运算必须放置在非内联子例程，以确保不会检查的返回值之前执行浮点计算**KeSaveExtendedProcessorState**由于编译器重新排序。
+X86 系统的内核模式 WDM 驱动程序必须在对[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)和[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)的调用之间换行使用浮点计算。 必须将浮点运算置于非内联子例程，以确保在检查**KeSaveExtendedProcessorState**的返回值之前不会执行浮点计算，因为编译器重新排序。
 
-编译器进行的 MMX/x87 浮点单元 (FPU) 也称为注册用于此类计算，在用户模式应用程序可以同时使用。 无法保存这些寄存器，然后才能使用它们，或失败来还原它们完成后，可能在应用程序中导致计算错误。
+编译器利用 MMX/x87 （也称为浮点单元（FPU））来注册此类计算，用户模式应用程序可以同时使用这些计算。 如果在使用这些寄存器之前未将其保存，或者无法在完成时将其还原，则可能会导致应用程序中出现计算错误。
 
-驱动程序针对 x86 系统可以调用[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate) ，并执行浮点计算在 IRQL &lt;= 调度\_级别。 浮点运算不支持在 x86 上的中断服务例程 (Isr) 系统。
+X86 系统的驱动程序可以调用[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate) ，并以 IRQL &lt;= 调度\_级别执行浮点计算。 X86 系统上的中断服务例程（Isr）不支持浮点运算。
 
 ## <a name="x64-systems"></a>x64 系统
 
 
-64 位编译器不使用 MMX/x87 寄存器浮点运算。 相反，它使用 SSE 寄存器。 x64 内核模式代码不允许访问 MMX/x87 寄存器。 编译器还负责正确保存和还原 SSE 状态，因此，调用[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)并[ **KeRestoreExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate)是不必要和浮动点可在 Isr 操作。 AVX 等其他扩展的处理器功能的使用、 需要保存和还原扩展的状态。 有关详细信息请参阅[使用扩展 Windows 驱动程序中的处理器功能](floating-point-support-for-64-bit-drivers.md)。
+64位编译器不将 MMX/x87 寄存器用于浮点运算。 相反，它使用 SSE 寄存器。 不允许 x64 内核模式代码访问 MMX/x87 寄存器。 编译器还会负责正确保存和还原 SSE 状态，因此，对[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)和[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)的调用是不必要的，并且可以在 isr 中使用浮点运算。 使用其他扩展处理器功能（如 AVX）需要保存和还原扩展状态。 有关详细信息，请参阅[在 Windows 驱动程序中使用扩展处理器功能](floating-point-support-for-64-bit-drivers.md)。
 
 ## <a name="example"></a>示例
 
 
-下面的示例演示如何 WDM 驱动程序应换行的 FPU 访问权限：
+下面的示例演示了 WDM 驱动程序应如何包装其 FPU 访问：
 
 ```cpp
 __declspec(noinline)
@@ -91,11 +91,11 @@ exit:
 }
 ```
 
-在示例中，则浮点变量的赋值发生调用之间[ **KeSaveExtendedProcessorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)并[ **KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestoreextendedprocessorstate). 由于任何分配给浮点变量使用 FPU，驱动程序必须确保**KeSaveExtendedProcessorState**已返回而不返回错误之前初始化此类变量。
+在此示例中，对[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)和[**KeRestoreExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestoreextendedprocessorstate)的调用之间发生浮点变量的赋值。 由于对浮点变量的任何赋值都使用了 FPU，因此，驱动程序必须确保**KeSaveExtendedProcessorState**在初始化此类变量之前已返回且没有错误。
 
-前面的调用是不必要在 x64 系统和无害时 XSTATE\_掩码\_指定旧标志。 因此，没有必要更改的代码在编译 x64 的驱动程序时系统。
+在 x64 系统上无需进行上述调用，当指定了 XSTATE\_掩码\_旧版标志时，就不会出现这种情况。 因此，编译 x64 系统的驱动程序时，无需更改代码。
 
-在基于 x86 的系统，FPU 重置为其默认状态通过 FNINIT，从返回时调用[ **KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesaveextendedprocessorstate)。
+在基于 x86 的系统上，从[**KeSaveExtendedProcessorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesaveextendedprocessorstate)返回后，FPU 会通过对 FNINIT 的调用重置为其默认状态。
 
  
 

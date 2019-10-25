@@ -3,20 +3,20 @@ title: CoNDIS TAPI 关闭
 description: CoNDIS TAPI 关闭
 ms.assetid: 97baf489-9a9b-48c8-b0f8-79beea33bc38
 keywords:
-- WAN 的 CoNDIS 驱动程序 WDK 联网，TAPI 服务
-- 台电话服务 WDK WAN，关闭
-- CoNDIS TAPI WDK 网络、 关闭
-- 连接网络、 关闭操作的 CoNDIS TAPI WDK
+- CoNDIS WAN 驱动程序 WDK 网络，TAPI 服务
+- telephonic services WDK WAN，shutdown
+- CoNDIS TAPI WDK 网络，关闭
+- CoNDIS TAPI WDK 网络，关闭操作
 - 关闭 WDK 网络
-- 关闭的 CoNDIS TAPI 操作调用 WDK 的 CoNDIS WAN
+- 关闭 CoNDIS TAPI 操作会调用 WDK CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 527003ff083868dbbe8346cf66d7c3d6d9f61498
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 68b25741a6ff3e0fd3117ae5056cc53815e52075
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385095"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835052"
 ---
 # <a name="condis-tapi-shutdown"></a>CoNDIS TAPI 关闭
 
@@ -24,31 +24,31 @@ ms.locfileid: "67385095"
 
 
 
-TAPI 会话开始后的 CoNDIS WAN 的微型端口驱动程序枚举其 TAPI 功能到应用程序。 某个会话中可以打开一个或多个行，并可以建立一个或多个调用。 行是打开期间，多个调用可以是建立，然后关闭或删除。 会话期间，一个或多个行可以通过转换从转打开关闭多次。 在本部分中描述的微型端口驱动程序如何处理这样的变革。
+在 CoNDIS WAN 微型端口驱动程序对应用程序的 TAPI 功能进行枚举后，就会开始 TAPI 会话。 在会话中，可以打开一条或多条线路，并且可以建立一个或多个调用。 在行处于打开状态时，可以建立并关闭或删除多个调用。 在会话过程中，一个或多个行可以通过打开的转换多次关闭。 此部分介绍了微型端口驱动程序如何处理此类转换。
 
-### <a name="closing-a-call"></a>关闭调用
+### <a name="closing-a-call"></a>结束调用
 
-本地节点或远程节点，可以关闭进程内调用。 在调用可以关闭本地节点上或者因为最后一个句柄为应用程序调用已关闭句柄，或可能是因为微型端口驱动程序[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)或[*MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)已调用。 如果远程节点将挂起的进程内调用，微型端口驱动程序必须通知上层中断调用。
+进程内调用可以通过本地节点或远程节点关闭。 此调用可以在本地节点上关闭，这可能是因为最后一个应用程序的调用已经关闭了句柄，也可能是因为已调用微型端口驱动程序的[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)或[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset) 。 如果远程节点挂断进程内调用，微型端口驱动程序必须通知上层，使其能够断开呼叫。
 
-如果在调用关闭本地节点上的应用程序，它必须断开呼叫。 调用已断开连接由于应用程序调用 TAPI **lineDrop**函数。 此 TAPI 函数调用将导致 NDPROXY 驱动程序调用[ **NdisClCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)函数，并以传递的句柄，表示调用 VC。 NDIS 反过来调用的 CoNDIS WAN 微型端口驱动程序[ **ProtocolCmCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_close_call)函数。 微型端口驱动程序应返回 NDIS\_状态\_NDPROXY 因此微型端口驱动程序可以完成的 PENDING **NdisClCloseCall**以异步方式。
+如果本地节点上的应用程序关闭调用，则必须断开呼叫。 由于应用程序调用了 TAPI **lineDrop**函数，因此调用已断开连接。 此 TAPI 函数调用会导致 NDPROXY 驱动程序调用[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)函数并传递表示调用的 VC 的句柄。 NDIS 反过来调用 CoNDIS WAN 微型端口驱动程序的[**ProtocolCmCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_close_call)函数。 微型端口驱动程序应将 NDIS\_状态返回\_挂起到 NDPROXY，以便微型端口驱动程序可以异步完成**NdisClCloseCall** 。
 
-微型端口驱动程序*ProtocolCmCloseCall*必须与网络控制设备终止本地节点和远程节点之间的连接进行通信。 然后，微型端口驱动程序必须调用[ **NdisMCmDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeactivatevc)函数启动的调用使用 VC 停用。
+微型端口驱动程序的*ProtocolCmCloseCall*必须与网络控制设备通信，以终止本地节点和远程节点之间的连接。 然后，微型端口驱动程序必须调用[**NdisMCmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeactivatevc)函数以启动用于调用的 VC 的停用。
 
-微型端口驱动程序终止连接后其*ProtocolCmCloseCall*可以调用[ **NdisMCmCloseCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmclosecallcomplete)函数来完成调用闭包。
+微型端口驱动程序终止连接后，其*ProtocolCmCloseCall*可以调用[**NdisMCmCloseCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmclosecallcomplete)函数来完成调用闭包。
 
-如果远程节点将挂起的进程内调用，微型端口驱动程序会调用[ **NdisCmDispatchIncomingCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingclosecall)函数来通知 NDISWAN 和 NDPROXY 关闭传入呼叫。
+如果远程节点挂断进程内调用，微型端口驱动程序将调用[**NdisCmDispatchIncomingCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingclosecall)函数，通知 NDISWAN 和 NDPROXY 解除传入呼叫。
 
-### <a name="closing-a-line"></a>关闭的行
+### <a name="closing-a-line"></a>右行
 
-行已关闭时打开的句柄到行的上次应用已关闭句柄。 由于调用 TAPI 的应用程序关闭一行**lineClose**函数。 此 TAPI 函数调用将导致 NDPROXY 驱动程序启动的该行上的所有调用的闭包，在上一部分中所述。 微型端口驱动程序应删除这些调用，并清除其状态。
+当最后一个应用程序的打开句柄已关闭该句柄时，将关闭该行。 由于调用了 TAPI **lineClose**函数的应用程序的结果，行被关闭。 此 TAPI 函数调用导致 NDPROXY 驱动程序启动对该行的所有调用的关闭，如前一部分中所述。 微型端口驱动程序应丢弃这些调用并清除其状态。
 
 ### <a name="closing-a-session"></a>关闭会话
 
-可以通过上层或 CoNDIS WAN 的微型端口驱动程序来启动会话终止。 最后一个客户端进程已从更高级别的电话服务模块分离后，系统将通知 NDPROXY 驱动程序，它必须终止它与每个已注册适配器的会话。 若要执行此操作，NDPROXY 驱动程序调用[ **NdisClCloseAddressFamily** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclcloseaddressfamily)函数，并将该句柄传递给 TAPI 地址族。 NDIS 反过来调用微型端口驱动程序[ **ProtocolCmCloseAf** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_close_af)函数。 微型端口驱动程序应终止它具有在指定适配器上的正在进行中的任何相关的活动并释放任何相关资源。 在调用**NdisClCloseAddressFamily**，客户端应考虑到 TAPI 地址系列无效句柄。
+会话终止可以由上层或 CoNDIS WAN 微型端口驱动程序启动。 在上一个客户端进程与较高级别的电话模块分离后，将通知 NDPROXY 驱动程序必须终止与每个已注册适配器的会话。 为此，NDPROXY 驱动程序将调用[**NdisClCloseAddressFamily**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily)函数并将句柄传递到 TAPI 地址系列。 NDIS 又调用微型端口驱动程序的[**ProtocolCmCloseAf**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_close_af)函数。 微型端口驱动程序应终止在指定适配器上正在进行的任何相关活动，并释放任何相关的资源。 调用**NdisClCloseAddressFamily**之后，客户端应考虑 TAPI 地址系列的句柄无效。
 
-如果正在卸载微型端口驱动程序中，则会发生驱动程序启动的会话终止其*MiniportHaltEx*函数。 通常情况下，微型端口驱动程序将完成所有未完成的 NDPROXY 请求并通知 NDISWAN 所有调用将都关闭。 如果已再次以后重新加载微型端口驱动程序，它会转完成前面所述相同的初始化过程。
+如果在*MiniportHaltEx*函数中卸载微型端口驱动程序，则可能会发生驱动程序启动的会话终止。 通常，微型端口驱动程序会完成所有未完成的 NDPROXY 请求，并通知 NDISWAN 所有调用都正在关闭。 如果以后再次加载微型端口驱动程序，则会经历前面所述的相同初始化过程。
 
-如果发生了一些需要完成重新初始化所有客户端和驱动程序的动态重新配置的 CoNDIS WAN 微型端口驱动程序可能也会启动会话终止。 例如，如果适配器的线路设备 （例如，支持的线路设备数） 建模已更改动态。
+如果 CoNDIS WAN 微型端口驱动程序耗费一些需要完全重新初始化所有客户端和驱动程序的动态重新配置，还可能会启动会话终止。 例如，如果适配器的线路设备建模（例如，支持的线路设备数）动态变化。
 
  
 

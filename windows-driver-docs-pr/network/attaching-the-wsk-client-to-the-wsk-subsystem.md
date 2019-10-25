@@ -3,38 +3,38 @@ title: 将 WSK 客户端附加到 WSK 子系统
 description: 将 WSK 客户端附加到 WSK 子系统
 ms.assetid: 752d204f-3022-48b0-9237-707b753a7ad3
 keywords:
-- 网络模块注册机构 WDK Winsock 内核
+- 网络模块注册器 WDK Winsock 内核
 - NMR WDK Winsock 内核
-- 正在卸载 WSK 客户端
+- 卸载 WSK 客户端
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b71e4690dfde5d598b0c7589a653024b358c0bf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4872bc1ad829e78eadb2837050f4d1355c17b0ff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354642"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835271"
 ---
 # <a name="attaching-the-wsk-client-to-the-wsk-subsystem"></a>将 WSK 客户端附加到 WSK 子系统
 
 
-应用程序已注册后 Winsock Kernel (WSK)[网络模块注册机构 (NMR)](network-module-registrar2.md) WSK NPI 的客户端，作为 NMR 立即调用应用程序的[ *ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_attach_provider_fn)如果 WSK 子系统加载和注册其自身的 NMR 回调函数。 如果未向 NMR 注册 WSK 子系统，NMR 不会调用应用程序的*ClientAttachProvider*直到 WSK 子系统向 NMR 注册回调函数。
+Winsock 内核（WSK）应用程序已注册到[网络模块注册器（NMR）](network-module-registrar2.md)作为 WSK NPI 的客户端后，如果加载了 NMR 子系统，则 ClientAttachProvider 会立即调用应用程序的[*WSK*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数，自行注册了 NMR。 如果未向 NMR 注册 WSK 子系统，则 NMR 将在 WSK 子系统注册到 NMR 之前，不会调用应用程序的*ClientAttachProvider*回调函数。
 
-WSK 应用程序应做出以下一系列调用完成的附件过程。
+WSK 应用程序应执行以下一系列调用来完成附件过程。
 
-1.  当 NMR 调用 WSK 应用程序的*ClientAttachProvider*回调函数，它将传递一个指向[ **NPI\_注册\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_registration_instance) WSK 子系统与关联的结构。 WSK 应用程序的*ClientAttachProvider*回调函数可以使用通过 NMR 传递给它的数据来确定它可以附加到 WSK 子系统。 通常情况下，WSK 应用程序只需中包含的版本信息[ **WSK\_提供程序\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_characteristics) 所指向的结构**NpiSpecificCharacteristics** WSK 子系统 NPI 成员\_注册\_实例结构。
+1.  当 NMR 调用 WSK 应用程序的*ClientAttachProvider*回调函数时，它会将指向[**NPI\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_registration_instance)的指针传递\_与 WSK 子系统关联的实例结构。 WSK 应用程序的*ClientAttachProvider*回调函数可以通过 NMR 使用传递给它的数据来确定它是否可以附加到 WSK 子系统。 通常，WSK 应用程序仅需要[**WSK\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_characteristics)中包含的版本信息\_特征结构，该结构由 WSK 子系统的 NPI 的**NpiSpecificCharacteristics**成员指向\_\_实例结构的注册。
 
-2.  如果 WSK 应用程序确定它可以将附加到 WSK 子系统，WSK 应用程序的*ClientAttachProvider*回调函数分配并初始化到 WSK 子系统附件的绑定上下文结构. 然后，应用程序调用[ **NmrClientAttachProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrclientattachprovider)函数将继续在附加过程。
+2.  如果 WSK 应用程序确定它可以附加到 WSK 子系统，则 WSK 应用程序的*ClientAttachProvider*回调函数将该附件的绑定上下文结构分配给 WSK 子系统并对其进行初始化。 然后，应用程序会调用[**NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider)函数来继续执行附件操作。
 
-    如果**NmrClientAttachProvider**将返回状态\_成功后，WSK 应用程序已成功附加到 WSK 子系统。 在此情况下，WSK 应用程序的*ClientAttachProvider*回调函数必须保存 NMR 传入的绑定句柄*NmrBindingHandle* NMR 调用参数时参数应用程序的*ClientAttachProvider*回调函数。 WSK 应用程序的*ClientAttachProvider*回调函数还必须将指针保存到客户端对象 ( [ **WSK\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) 和提供程序调度表 ( [ **WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)) 的应用程序传递给的变量中返回**NmrClientAttachProvider**函数，在*ProviderBindingContext*并*ProviderDispatch*参数。 WSK 应用程序通常将此数据保存到 WSK 子系统附件其绑定上下文中。 WSK 子系统，WSK 应用程序的应用程序已成功附加后 WSK *ClientAttachProvider*回调函数必须返回状态\_成功。
+    如果**NmrClientAttachProvider**返回 STATUS\_SUCCESS，则 WSK 应用程序已成功连接到 WSK 子系统。 在这种情况下，当 NMR 称为应用程序的*ClientAttachProvider*时，WSK 应用程序的*ClientAttachProvider*回调函数必须保存 NMR 传入*NmrBindingHandle*参数的绑定句柄。回调函数。 WSK 应用程序的*ClientAttachProvider*回调函数还必须将指向客户端对象（ [**WSK\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)）和提供程序调度表（ [**WSK\_提供\_程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)）的指针保存在应用程序在*ProviderBindingContext*和*ProviderDispatch*参数中传递到**NmrClientAttachProvider**函数的变量。 WSK 应用程序通常会在其绑定上下文中将此数据保存到 WSK 子系统的附件。 WSK 应用程序成功附加到 WSK 子系统后，WSK 应用程序的*ClientAttachProvider*回调函数必须返回状态\_SUCCESS。
 
-3.  如果**NmrClientAttachProvider**将返回状态\_NOINTERFACE，WSK 应用程序可以使另一个尝试通过调用附加到 WSK 子系统**NmrClientAttachProvider**同样，函数并传递*ClientDispatch*到不同的指针[ **WSK\_客户端\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_dispatch)结构指定的应用程序支持 WSK NPI 的替代版本。
+3.  如果**NmrClientAttachProvider**返回状态\_NOINTERFACE，则 WSK 应用程序可以通过再次调用**NmrClientAttachProvider**函数来再次尝试附加到 WSK 子系统，同时传递*ClientDispatch*指向不同[**WSK\_客户端\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_dispatch)结构的指针，该结构指定应用程序支持的 WSK NPI 的备用版本。
 
-4.  如果调用**NmrClientAttachProvider**函数不返回状态\_成功和 WSK 应用程序不会进行任何进一步的尝试将附加到 WSK 子系统，WSK 应用程序的*ClientAttachProvider*回调函数应清理并释放它分配了名为之前的任何资源**NmrClientAttachProvider**。 在此情况下，WSK 应用程序的*ClientAttachProvider*回调函数必须返回到的最后一个调用返回的状态代码**NmrClientAttachProvider**函数。
+4.  如果对**NmrClientAttachProvider**函数的调用未返回 STATUS\_SUCCESS，WSK 应用程序将不会再进一步尝试附加到 WSK 子系统，WSK 应用程序的*ClientAttachProvider*回调函数应清除并释放它在调用**NmrClientAttachProvider**之前分配的所有资源。 在这种情况下，WSK 应用程序的*ClientAttachProvider*回调函数必须返回对**NmrClientAttachProvider**函数的最后一次调用返回的状态代码。
 
-5.  如果 WSK 应用程序确定它不能将附加到提供程序模块，该应用程序的*ClientAttachProvider*回调函数必须返回状态\_NOINTERFACE。
+5.  如果 WSK 应用程序确定它无法附加到提供程序模块，则该应用程序的*ClientAttachProvider*回调函数必须返回状态\_NOINTERFACE。
 
-下面的代码示例演示如何 WSK 应用程序可以将自身附加到 WSK 子系统。
+下面的代码示例演示 WSK 应用程序如何将自身附加到 WSK 子系统。
 
 ```C++
 // Context structure type for the WSK application's

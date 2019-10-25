@@ -4,12 +4,12 @@ title: 编写 USB 类型 C 端口控制器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 54cb8e485e762f8a2d81e4cec5f43de800d64ba9
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
+ms.openlocfilehash: 32138f6b0e03a22eed8817642d0df313dc840b5f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164793"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841691"
 ---
 # <a name="write-a-usb-type-c-port-controller-driver"></a>编写 USB 类型 C 端口控制器驱动程序
 
@@ -31,9 +31,9 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关电源�
 -   [USB 3.1 和 USB 类型-C 规范](https://go.microsoft.com/fwlink/p/?LinkId=699515)
 -   [USB 电源交付](https://go.microsoft.com/fwlink/p/?LinkID=623310)
 
-适用于：
+适用范围：
 
-- Windows 10
+- Windows 10
 
 **WDF 版本**
 
@@ -45,7 +45,7 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关电源�
 
 **重要的 API**
 
-[USB 类型 C 端口控制器接口驱动程序类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+[USB 类型 C 端口控制器接口驱动程序类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 **UcmTcpciCx 客户端驱动程序模板**
 
@@ -73,7 +73,7 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关电源�
     - [简单外围总线（SPB）驱动程序设计指南]
     - [SPB 驱动程序编程参考] 
 
--   熟悉 Windows Driver Foundation （WDF）。 建议阅读：[使用 Windows Driver Foundation 开发驱动程序]( https://go.microsoft.com/fwlink/p/?LinkId=691676)，由 "Orwick" 和 "专家 Smith" 编写。
+-   熟悉 Windows Driver Foundation （WDF）。 建议读物：[开发带有 Windows Driver Foundation 的驱动程序]( https://go.microsoft.com/fwlink/p/?LinkId=691676)（由 "Orwick" 和 "专家 Smith" 编写）。
 
 ## <a name="behavior-of-the-ucmtcpci-class-extension"></a>UcmTcpci 类扩展的行为
 
@@ -107,17 +107,17 @@ UcmTcpciCx 的客户端驱动程序应为：
 -   可选。 输入/退出备用模式后，执行一些额外的处理。 类扩展通过 IOCTL 请求通知驱动程序有关这些状态的信息。 
 
 
-## <a name="1-register-the-client-driver-with-ucmtcpcicx"></a>1.将客户端驱动程序注册到 UcmTcpciCx
+## <a name="1-register-the-client-driver-with-ucmtcpcicx"></a>1. 将客户端驱动程序注册到 UcmTcpciCx
 
-示例参考：请`EvtPrepareHardware`参阅`Device.cpp`中的。
+示例参考：请参阅 `Device.cpp`中的 `EvtPrepareHardware`。
 
 1.  在 EVT_WDF_DRIVER_DEVICE_ADD 实现中，调用 UcmTcpciDeviceInitInitialize 来初始化 WDFDEVICE_INIT 的不透明结构。 调用将客户端驱动程序与框架相关联。
 
 2.  创建框架设备对象（WDFDEVICE）后，调用 UcmTcpciDeviceInitialize，将客户端驱动程序注册到 UcmTcpciCx。
 
-## <a name="2-initialize-the-i2c-communications-channel-to-the-port-controller-hardware"></a>2.将 I2C 通信通道初始化为端口控制器硬件。
+## <a name="2-initialize-the-i2c-communications-channel-to-the-port-controller-hardware"></a>2. 将 I2C 通信通道初始化为端口控制器硬件。
 
-示例参考：请`EvtCreateDevice`参阅`Device.cpp`中的。
+示例参考：请参阅 `Device.cpp`中的 `EvtCreateDevice`。
 
 在 EVT_WDF_DEVICE_PREPARE_HARDWARE 实现中，读取硬件资源以打开信道。 这是检索 PD 功能并获取有关警报的通知所必需的。 
 
@@ -128,9 +128,9 @@ UcmTcpciCx 的客户端驱动程序应为：
 警报作为中断接收。 因此，驱动程序将创建一个框架中断对象，并注册将处理警报的 ISR。  ISR 执行硬件读写操作，这些操作会一直阻止到完成硬件访问。 由于等待在 DIRQL 不可接受，驱动程序将在 PASSIVE_LEVEL 执行 ISR。 
 
 
-## <a name="3-initialize-the-port-controllers-type-c-and-pd-capabilities"></a>3.初始化端口控制器的类型 C 和 PD 功能
+## <a name="3-initialize-the-port-controllers-type-c-and-pd-capabilities"></a>3. 初始化端口控制器的类型 C 和 PD 功能
     
-示例参考：请`EvtDeviceD0Entry`参阅`Device.cpp`中的。
+示例参考：请参阅 `Device.cpp`中的 `EvtDeviceD0Entry`。
 
 
  在 EVT_WDF_DEVICE_D0_EXIT 实现中， 
@@ -143,9 +143,9 @@ UcmTcpciCx 的客户端驱动程序应为：
 
  4. 调用 UcmTcpciPortControllerCreate 创建端口控制器对象并检索 UCMTCPCIPORTCONTROLLER 句柄。
 
-## <a name="4-set-up-a-framework-queue-object-for-receiving-requests-from-ucmtcpcicx"></a>4.设置框架队列对象以接收来自 UcmTcpciCx 的请求
+## <a name="4-set-up-a-framework-queue-object-for-receiving-requests-from-ucmtcpcicx"></a>4. 设置一个框架队列对象用于接收来自 UcmTcpciCx 的请求
 
-示例参考：请`EvtDeviceD0Entry`参阅`Device.cpp`中`HardwareRequestQueueInitialize`的和`Queue.cpp`。
+示例参考：参阅 `Queue.cpp`中 `Device.cpp` 和 `HardwareRequestQueueInitialize` 中的 `EvtDeviceD0Entry`。
 
  1. 在 EVT_WDF_DEVICE_D0_EXIT 实现中，通过调用 WdfIoQueueCreate 创建框架队列对象。 在该调用中，你将需要注册回调实现以处理 UcmTpciCx 发送的 IOCTL 请求。 客户端驱动程序可以使用电源管理的队列。 
 
@@ -174,9 +174,9 @@ UcmTcpciCx 的客户端驱动程序应为：
 4. 调用 UcmTcpciPortControllerStart 以指示 UcmTcpciCx 启动端口控制器。 UcmTcpciCx 假定控制 USB 类型 C 和电源。 端口控制器启动后，UcmTcpciCx 可能开始将请求放入硬件请求队列。 
 
  
-## <a name="5-handlle-alerts-from-the-port-controller-hardware"></a>5.Handlle 来自端口控制器硬件的警报
+## <a name="5-handlle-alerts-from-the-port-controller-hardware"></a>5. 端口控制器硬件中的 Handlle 警报
 
-示例参考：请`ProcessAndSendAlerts`参阅`Alert.cpp`中的。
+示例参考：请参阅 `Alert.cpp`中的 `ProcessAndSendAlerts`。
 
 客户端驱动程序必须处理从端口控制器硬件接收的警报（或事件），并将它们发送到 UcmTcpciCx，其中包含与事件相关的数据。 
 
@@ -196,9 +196,9 @@ UcmTcpciCx 的客户端驱动程序应为：
 
 5. 客户端清除警报（在客户端检索警报信息之后的任何时间可能会发生这种情况） 
 
-## <a name="6-process-requests-received-from-ucmtcpcicx"></a>6.处理从 UcmTcpciCx 收到的请求
+## <a name="6-process-requests-received-from-ucmtcpcicx"></a>6. 处理从 UcmTcpciCx 收到的请求
 
-示例参考：请参阅`PortControllerInterface.cpp`。
+示例参考：请参阅 `PortControllerInterface.cpp`。
 
 在状态机执行过程中，UcmTcpciCx 需要向端口控制器发送请求。 例如，它需要设置 TRANSMIT_BUFFER。 此请求将移交给客户端驱动程序。 驱动程序使用 UcmTcpciCx 提供的详细信息设置传输缓冲区。 其中的大多数请求都转换为客户端驱动程序读取或写入的硬件。 命令必须是异步的，因为 DPM 无法阻止等待硬件传输完成。
 
@@ -210,5 +210,5 @@ UcmTcpciCx 将命令作为 i/o 控制代码发送，说明客户端驱动程序�
 
 客户端驱动程序可能需要将 i/o 请求发送到另一个驱动程序，以执行硬件操作。 例如，在示例中，驱动程序将 SPB 请求发送到 I<sup>2</sup>C 连接端口控制器。 在这种情况下，驱动程序无法转发从 UcmTcpciCx 收到的框架请求对象，因为请求对象可能在 WDM IRP 中没有正确数目的堆栈位置。 客户端驱动程序必须创建另一个框架请求对象并将其转发给另一个驱动程序。 客户端驱动程序可以在初始化期间预分配它需要的请求对象，而无需在每次从 UcmTcpciCx 获取请求时创建一个对象。 这是可能的，因为 UcmTcpciCx 保证在任何给定时间都只有一个请求未完成。 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [USB 类型 C 端口控制器接口驱动程序类扩展参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))

@@ -3,18 +3,18 @@ title: 函数或筛选器驱动程序中的 AddDevice 例程
 description: 函数或筛选器驱动程序中的 AddDevice 例程
 ms.assetid: 0a095c17-2295-46df-9908-f306f7fe9f67
 keywords:
-- 函数的驱动程序 WDK 内核
+- 函数驱动程序 WDK 内核
 - 筛选器驱动程序 WDK 内核
-- AddDevice 例程 WDK 内核功能的驱动程序
-- AddDevice 例程 WDK 内核，筛选器驱动程序
+- AddDevice 例程，函数驱动程序
+- AddDevice 例程，筛选器驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09aa121b406429bfba1e4b117eaf2253041a0e4f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c93c731e858af297dd601a5102d75b40aa98004e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369992"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837278"
 ---
 # <a name="adddevice-routines-in-function-or-filter-drivers"></a>函数或筛选器驱动程序中的 AddDevice 例程
 
@@ -22,51 +22,51 @@ ms.locfileid: "67369992"
 
 
 
-[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)函数或筛选器驱动程序中的例程应执行以下步骤：
+函数或筛选器驱动程序中的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程应执行以下步骤：
 
-1.  调用[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)创建功能或筛选正添加的设备的设备对象 （FDO 或筛选器执行操作）。
+1.  调用[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)为所添加的设备创建功能或筛选器设备对象（FDO 或筛选器）。
 
-    未指定*DeviceName*设备对象，因为这样做因此跳过的即插即用管理器的安全性。 如果用户模式组件需要到该设备的符号链接，注册的设备接口 （请参阅下面的下一步）。 如果内核模式组件需要旧设备名称，该驱动程序必须将命名的设备对象，但不是建议命名。
+    不要为设备对象指定*DeviceName* ，因为这样做会绕过 PnP 管理器的安全性。 如果用户模式组件需要到设备的符号链接，请注册设备接口（请参阅下面的下一步）。 如果内核模式组件需要旧式设备名称，则驱动程序必须命名设备对象，但不建议使用命名方式。
 
-    包含文件\_设备\_SECURE\_中打开*DeviceCharacteristics*参数。 这一特性指示要执行安全检查针对的设备对象的所有打开的请求，包括相对打开空格和尾随文件名称将打开的 I/O 管理器。
+    包括文件\_设备\_SECURE\_在*DeviceCharacteristics*参数中打开。 此特性指示 i/o 管理器针对所有打开的请求对设备对象执行安全检查，包括相对打开和尾随文件名打开。
 
-2.  \[可选\]创建到设备的一个或多个符号链接。
+2.  \[可选\] 为设备创建一个或多个符号链接。
 
-    调用[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)注册设备的功能并创建符号链接，该应用程序或系统组件可用于打开设备。 该驱动程序应启用的界面，通过调用[ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)时，它处理[ **IRP\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 有关详细信息，请参阅[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)。
+    调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)来注册设备功能，并创建应用程序或系统组件可用于打开设备的符号链接。 驱动程序应在处理[**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求时，通过调用[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)来启用接口。 有关详细信息，请参阅[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)。
 
-3.  将设备的 PDO 指向存储在设备扩展。
+3.  将指针存储到设备扩展中的设备 PDO。
 
-    PnP 管理器提供一个指向作为 PDO *PhysicalDeviceObject*参数*AddDevice*。 驱动程序例程的调用中使用 PDO 指针如[ **IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)。
+    PnP 管理器提供一个指向 PDO 的指针，作为*AddDevice*的*PhysicalDeviceObject*参数。 驱动程序在对例程（如[**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)）的调用中使用 PDO 指针。
 
-4.  定义标志中设备的扩展名来跟踪某些即插即用状态的设备，例如设备已暂停，删除，并且意外删除。
+4.  定义设备扩展中的标志以跟踪设备的特定 PnP 状态，如设备暂停、删除和意外删除。
 
-    例如，定义一个标志，用于指示设备处于暂停状态时，应保存传入 Irp。 如果驱动程序还没有一种机制的队列 Irp，请创建用于保存 Irp，一个队列。 请参阅[队列和取消排队 Irp](queuing-and-dequeuing-irps.md)有关详细信息。
+    例如，定义一个标志，指示在设备处于暂停状态时应持有传入的 Irp。 如果驱动程序还没有用于对 Irp 进行排队的机制，请创建用于保存 Irp 的队列。 有关详细信息，请参阅[排队和出列 irp](queuing-and-dequeuing-irps.md) 。
 
-    此外将分配**IO\_删除\_锁**结构中，设备扩展并调用[ **IoInitializeRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeremovelock)用于初始化此结构。 有关详细信息，请参阅[使用删除锁定](using-remove-locks.md)。
+    还需要分配**IO\_删除**设备扩展中的\_锁定结构并调用[**IoInitializeRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializeremovelock)来初始化此结构。 有关详细信息，请参阅[使用删除锁](using-remove-locks.md)。
 
-5.  设置了\_缓冲\_IO 或者不要\_直接\_IO 标志位中的设备对象来指定 I/O 管理器是用于发送到设备堆栈的 I/O 请求缓冲的类型。 更高级别的驱动程序或此成员具有相同的值在堆栈中的下一步低驱动程序除外可能是最高级别的驱动程序。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
+5.  将 DO\_缓冲\_IO，或在 device 对象中执行\_直接\_IO 标志位，以指定 i/o 管理器用于发送到设备堆栈的 i/o 请求的缓冲类型。 较高级别驱动程序或此成员的值与堆栈中的下一个较低驱动程序的值相同，但最高级别的驱动程序除外。 有关详细信息，请参阅[初始化设备对象](initializing-a-device-object.md)。
 
-6.  设置了\_电源\_浪涌或者不要\_POWER\_PAGABLE 标志电源管理，如有必要的。 可分页的驱动程序必须设置 DO\_电源\_PAGABLE 标志。 创建的是 PDO 设备时，总线驱动程序通常会设置设备对象标志。 但是，更高级别的驱动程序可能偶尔需要更改这些标志中的值及其*AddDevice*例程时不创建 FDO 或筛选执行操作。 请参阅[电源管理设置设备对象标志](setting-device-object-flags-for-power-management.md)有关详细信息。
+6.  如有必要，请将 "\_电源\_浪涌，或按电源管理\_POWER\_PAGABLE 标志。 可分页的驱动程序必须设置 DO\_POWER\_PAGABLE 标志。 设备对象标志通常由总线驱动程序在创建设备的 PDO 时设置。 但是，当高级驱动程序创建 FDO 或筛选器时，可能偶尔需要在其*AddDevice*例程中更改这些标志的值。 有关详细信息，请参阅[设置电源管理的设备对象标志](setting-device-object-flags-for-power-management.md)。
 
-7.  创建和/或初始化该驱动程序使用来管理此设备，如事件、 自旋锁或其他对象的任何其他软件资源。 (在响应中更高版本，配置硬件资源，例如 I/O 端口[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。)
+7.  创建和/或初始化驱动程序用来管理此设备的任何其他软件资源，如事件、旋转锁或其他对象。 （稍后将配置硬件资源（如 i/o 端口），以响应[**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。）
 
-    因为*AddDevice*例程的 IRQL 在系统线程上下文中运行 = 被动\_级别，与分配任何内存[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)供使用以独占方式在初始化期间为页面缓冲池，只要该驱动程序不会控制保存系统页面文件的设备。 必须随此类内存分配[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)之前*AddDevice*返回控件。
+    由于*AddDevice*例程在系统线程上下文中以 IRQL = 被动\_级别运行，因此在初始化期间使用[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)分配的任何内存都可以从分页池进行，只要该驱动程序不控制包含系统页面文件的设备。 在*AddDevice*返回 control 之前，必须使用[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)释放此类内存分配。
 
-8.  将设备对象附加到设备堆栈 ([**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack))。
+8.  将设备对象附加到设备堆栈（[**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)）。
 
-    指定一个指向中设备的 PDO*目标设备*参数。
+    在*目标设备*参数中指定指向设备 PDO 的指针。
 
-    存储所返回的指针**IoAttachDeviceToDeviceStack**。 This 指针，指向设备下一步较低的驱动程序的设备对象，它是一个必需的参数到[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)并[ **PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)将 Irp 传递设备堆栈的下层时。
+    存储**IoAttachDeviceToDeviceStack**返回的指针。 此指针指向设备的下一个较低驱动程序的设备对象，在将 Irp 向下传递到设备堆栈时，它是[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)和[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)的必需参数。
 
-9.  清除 DO\_设备\_正在初始化标志 FDO 或筛选器中的执行使用类似于以下语句：
+9.  清除 FDO 中的 "执行\_设备\_初始化" 标志或筛选器是否使用如下所示的语句：
 
     ```cpp
     FunctionalDeviceObject->Flags &= ~DO_DEVICE_INITIALIZING;
     ```
 
-10. 准备好处理 PnP Irp 的设备 (如[ **IRP\_MN\_查询\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)和**IRP\_MN\_启动\_设备**)。
+10. 准备为设备处理 PnP Irp （如[**IRP\_MN\_QUERY\_资源\_要求**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)和**IRP\_MN\_START\_设备**）。
 
-驱动程序必须启动控制设备，直到收到**IRP\_MN\_启动\_设备**包含的硬件资源分配给设备的即插即用的管理器的列表。
+驱动程序在收到**IRP\_MN\_\_启动 IRP**后，不能开始控制设备，该设备包含 PnP 管理器分配给设备的硬件资源列表。
 
  
 

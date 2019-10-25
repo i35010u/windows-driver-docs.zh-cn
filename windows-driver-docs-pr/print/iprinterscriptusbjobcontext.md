@@ -7,7 +7,7 @@ MSHAttr:
 ms.assetid: 236F6B00-39D8-4084-BAE0-C349AD550040
 keywords:
 - IPrinterScriptUsbJobContext 接口打印设备
-- 描述 IPrinterScriptUsbJobContext 接口打印设备
+- IPrinterScriptUsbJobContext 接口打印设备，描述
 topic_type:
 - apiref
 api_name:
@@ -16,12 +16,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f662d41a3ccfad4852054ec9b36d28fae2aed89b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0477bdc5096f06394f4131147bfca3fa47c25866
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349212"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837858"
 ---
 # <a name="iprinterscriptusbjobcontext-interface"></a>IPrinterScriptUsbJobContext 接口
 
@@ -30,13 +30,13 @@ IPrinterScriptUsbJobContext 接口作为参数传递给**startPrintJob** JavaScr
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbJobContext**接口继承自[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext**还具有这些类型的成员：
+**IPrinterScriptUsbJobContext**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext**还具有下列类型的成员：
 
 -   [方法](#methods)
 
 ### <a name="methods"></a>方法
 
-**IPrinterScriptUsbJobContext**接口提供以下方法。
+**IPrinterScriptUsbJobContext**接口具有这些方法。
 
 <table>
 <colgroup>
@@ -52,23 +52,23 @@ IPrinterScriptUsbJobContext 接口作为参数传递给**startPrintJob** JavaScr
 <tbody>
 <tr class="odd">
 <td><a href="iprinterscriptusbjobcontext-jobpropertybag.md" data-raw-source="[&lt;strong&gt;JobPropertyBag&lt;/strong&gt;](iprinterscriptusbjobcontext-jobpropertybag.md)"><strong>JobPropertyBag</strong></a></td>
-<td><p>返回与当前打印作业相关联的属性包。</p></td>
+<td><p>返回与当前打印作业关联的属性包。</p></td>
 </tr>
 <tr class="even">
 <td><a href="iprinterscriptusbjobcontext-printedpagecount.md" data-raw-source="[&lt;strong&gt;PrintedPageCount&lt;/strong&gt;](iprinterscriptusbjobcontext-printedpagecount.md)"><strong>PrintedPageCount</strong></a></td>
-<td><p>返回由当前的作业中的打印设备打印的页数。</p></td>
+<td><p>返回当前作业中打印设备打印的页数。</p></td>
 </tr>
 <tr class="odd">
 <td><a href="iprinterscriptusbjobcontext-printedpagecount-in.md" data-raw-source="[&lt;strong&gt;PrintedPageCount&lt;/strong&gt;](iprinterscriptusbjobcontext-printedpagecount-in.md)"><strong>PrintedPageCount</strong></a></td>
-<td><p>设置由当前的作业中的打印设备打印的页数。</p></td>
+<td><p>设置在当前作业中打印设备打印的页数。</p></td>
 </tr>
 <tr class="even">
 <td><a href="iprinterscriptusbjobcontext-returncodes.md" data-raw-source="[&lt;strong&gt;ReturnCodes&lt;/strong&gt;](iprinterscriptusbjobcontext-returncodes.md)"><strong>ReturnCodes</strong></a></td>
-<td><p>返回一个对象，可以提供 IHV 已定义的 JavaScript 函数的返回代码值。</p></td>
+<td><p>返回一个对象，该对象可提供 IHV 为其 JavaScript 函数定义的返回代码值。</p></td>
 </tr>
 <tr class="odd">
 <td><a href="iprinterscriptusbjobcontext-temporarystreams.md" data-raw-source="[&lt;strong&gt;TemporaryStreams&lt;/strong&gt;](iprinterscriptusbjobcontext-temporarystreams.md)"><strong>TemporaryStreams</strong></a></td>
-<td><p>返回的数组<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream" data-raw-source="[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablesequentialstream)">IPrinterScriptableSequentialStream</a>持久性数据流可用于当前作业由 IHV JavaScript 函数的接口。</p></td>
+<td><p>返回可由 IHV JavaScript 函数为当前作业使用的永久性数据流的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream" data-raw-source="[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)">IPrinterScriptableSequentialStream</a>接口的数组。</p></td>
 </tr>
 </tbody>
 </table>
@@ -84,7 +84,7 @@ IPrinterScriptUsbJobContext 接口作为参数传递给**startPrintJob** JavaScr
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 8.1</p></td>
+<td><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

@@ -10,16 +10,16 @@ keywords:
 - SRB WMI 支持 WDK 存储
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf7f23c1a2c824962418eb0b28bbd74a9dbd197
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 5ec04a24d0e48a0acc2f7323cd7de543aafe625d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252407"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838006"
 ---
 # <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>处理存储器微型端口驱动程序中的 WMI SRB
 
-报告主机总线适配器（HBA）或允许 WMI 客户端与 HBA 的存储微型端口驱动程序交互的 WMI 接口通常要求微型端口驱动程序充当 WMI 提供程序。 存储微型端口驱动程序注册为 WMI 提供程序后，必须准备好处理一种称为 Windows Management Instrumentation （WMI） SCSI 请求块（[SCSI_WMI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_wmi_request_block)）的特殊 SCSI 请求块（SRB）。
+报告主机总线适配器（HBA）或允许 WMI 客户端与 HBA 的存储微型端口驱动程序交互的 WMI 接口通常要求微型端口驱动程序充当 WMI 提供程序。 存储微型端口驱动程序注册为 WMI 提供程序后，必须准备好处理一种称为 Windows Management Instrumentation （WMI） SCSI 请求块（[SCSI_WMI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_wmi_request_block)）的特殊 SCSI 请求块（SRB）。
 
 若要准备好存储微型端口驱动程序来处理 WMI SRBs，请完成以下步骤：
 

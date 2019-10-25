@@ -4,23 +4,23 @@ description: 创建资源时传递 DXGI 信息
 ms.assetid: d99fc77a-7192-4e45-852a-7a2ae87cc9a2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6597ddccb98d6abce6025bf6a51634938aac662
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af50947aa02fb92a8b73742c43c36baaed8415b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377377"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829862"
 ---
 # <a name="passing-dxgi-information-at-resource-creation-time"></a>创建资源时传递 DXGI 信息
 
 
-Direct3D 版本 10 运行时可以调用用户模式显示驱动程序时，传递 DXGI 特有的信息[ **CreateResource(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)函数来创建资源。 在运行时可以传递一个指向[ **DXGI\_DDI\_主\_DESC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_primary_desc)结构**pPrimaryDesc**的成员[ **D3D10DDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)结构，以指定资源可作为主 （也就是说，资源可以扫描出到显示）。 运行时设置**pPrimaryDesc**为非 NULL 值，仅当运行时还会设置 D3D10\_DDI\_绑定\_存在比以**BindFlags**的成员D3D10DDIARG\_CREATERESOURCE。
+当 Direct3D 版本10运行时在调用用户模式显示驱动程序的[**CreateResource （D3D10）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)函数创建资源时，可以传递特定于 DXGI 的信息。 运行时可以在[**D3D10DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createresource)结构的**pPrimaryDesc**成员中传递一个指向[**DXGI\_\_\_DDI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_primary_desc)的指针，以指定该资源可用作主资源（也就是说，可以将资源扫描到显示中。 仅当运行时还会将 D3D10\_\_DDI 设置为非 NULL 值时，运行时**才会将**D3D10DDIARG\_CREATERESOURCE 的**BindFlags**成员中\_存在位。
 
-在运行时可以指定 DXGI\_DDI\_主\_中的可选标志**标志**DXGI 成员\_DDI\_主\_DESC 通知用户模式驱动程序可以选择退出从翻页样式演示文稿中使用资源的显示驱动程序。 通知运行时，它应使用该资源中翻页样式演示文稿，驱动程序设置 DXGI\_DDI\_主\_驱动程序\_标志\_否\_中SCANOUT标志**DriverFlags**成员的 DXGI\_DDI\_主\_DESC。
+运行时可以在 DXGI 的**Flags**成员中指定 DXGI\_DDI\_主要\_可选标志\_DDI\_主\_DESC）通知用户模式显示驱动程序，驱动程序可以选择通过使用翻转样式的演示。 为了通知运行时，它不应使用反转样式演示文稿中的资源，驱动程序将 DXGI\_DDI\_主\_驱动程序\_标志，在 DXGI 的**DriverFlags**成员中不\_\_SCANOUT 标志。_ DDI\_主\_DESC。
 
-如果该驱动程序返回 DXGI\_DDI\_主\_驱动程序\_标志\_否\_SCANOUT 中的[ **CreateResource(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)调用来创建资源，运行时将始终执行位块传输 (bitblt) 的样式 （而不是翻页样式演示文稿） 的演示文稿时的资源是演示文稿源。 此功能很有用，如果图形硬件无法扫描出给定的资源类型的特定子集。 例如，图形硬件可能会或可能不能扫描资源多级采样后台缓冲区类型。 此外，能够扫描出多级采样后台缓冲区可能进一步依赖于表面的格式。 如果不能扫描出特定的多级采样格式的图形硬件，用户模式显示驱动程序将设置 DXGI\_DDI\_主\_驱动程序\_标志\_否\_中的 SCANOUT 标志**DriverFlags** DXGI 成员\_DDI\_主\_DESC 为此格式的资源。
+如果驱动程序在[**CreateResource （D3D10）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)调用中\_DDI 返回 DXGI\_PRIMARY\_驱动程序\_\_标志，以创建资源，则运行时将始终执行位块传输（bitblt）样式表示形式（而不是翻转样式的表示形式）。 如果图形硬件无法扫描给定资源类型的特定子集，则此功能很有用。 例如，图形硬件可能会也可能不能扫描多级采样后台缓冲区类型的资源。 此外，能否进一步扫描多级采样后台缓冲区可能会进一步依赖于图面的格式。 如果图形硬件无法扫描特定的多级采样格式，则用户模式显示驱动程序会在**DriverFlags**中将 DXGI\_DDI\_PRIMARY\_驱动程序\_标志\_没有\_的 SCANOUT 标志。此格式的资源的 DXGI\_DDI\_主\_DESC 的成员。
 
-如果在运行时不会设置 DXGI\_DDI\_主\_中的可选标志**标志**DXGI 成员\_DDI\_主\_DESC 来通知该驱动程序有关选择退出翻页样式演示文稿中使用资源的可能性，该驱动程序仍会返回 DXGI\_DDI\_ERR\_不受支持的错误代码，连同 DXGI\_DDI\_主\_驱动程序\_标志\_否\_调用 SCANOUT 标志[ **CreateResource(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)。 在驱动程序*CreateResource(D3D10)* 传递 DXGI\_DDI\_ERR\_不受支持的调用中[ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)如果该驱动程序不能扫描出此类主要，函数。 返回 DXGI\_DDI\_ERR\_不受支持的以及 DXGI\_DDI\_主\_驱动程序\_标志\_否\_SCANOUT 导致到 DXGIinterpose 代理图面之间的后台缓冲区和主表面的演示文稿路径中。 代理面始终与大小、 multisample 和旋转方面的主 （扫描扩展） 面相匹配。 此过程的第一步是确定哪些 multisample dxgi 或旋转的设置会导致驱动程序以拒绝扫描出使用这些设置的表面。 DXGI 进行缩放后尝试创建主没有旋转，而无需多重采样，或没有同时做出该决定。 DXGI 确定对扫描扩展功能的驱动程序的支持后，DXGI 创建主服务器和代理应用层，该驱动程序应该能够这些两个图面间切换。 DXGI 仍将接着将通过调用驱动程序的满足自动旋转或多级采样后台缓冲区的应用程序的请求[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数以从备份执行 bitblts 缓冲到代理面。 这些 bitblts 请求驱动程序来执行多重采样解析或旋转。 有关详细信息*BltDXGI*，请参阅**BltDXGI**参考页。
+如果运行时未在 DXGI 的**Flags**成员中设置 DXGI\_DDI\_主要\_可选标志\_DDI\_主要\_DESC，以通知驱动程序在翻转样式表示形式，驱动程序仍可以返回 DXGI\_DDI\_ERR\_不支持的错误代码以及 DXGI\_DDI\_PRIMARY\_to [**CreateResource （D3D10）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createresource)。 驱动程序的*CreateResource （D3D10）* 传递 DXGI\_DDI\_ERR\_如果驱动程序无法扫描此类主副本，则调用[**PFNSETERRORCB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)函数时不支持该函数。 返回 DXGI\_DDI\_ERR\_不受支持连同 DXGI\_DDI\_主\_驱动程序\_标志\_\_不会导致 DXGI interpose 表示路径中的代理表面在后台缓冲区和主表面之间。 在大小、多级采样和旋转方面，代理图面始终与主（扫描出）图面匹配。 此过程的第一步是为 DXGI 确定哪些采样或旋转设置导致驱动程序拒绝使用这些设置来扫描图面。 DXGI 通过以下方式来确定这一点：向后缩放，尝试创建不带旋转的主副本，无需进行多级采样，或不使用两者。 在 DXGI 确定驱动程序对扫描功能的支持后，DXGI 会创建主表面和代理面，驱动程序应能够在这两个曲面之间切换。 DXGI 仍会通过调用驱动程序的[**BltDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数来执行从后台缓冲区到代理表面的 bitblts，进而满足应用程序自动轮替或多级采样后台缓冲区的请求。 这些 bitblts 请求驱动程序执行多级（解析或旋转）。 有关*BltDXGI*的详细信息，请参阅**BltDXGI**参考页。
 
  
 

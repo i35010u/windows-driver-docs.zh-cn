@@ -1,176 +1,176 @@
 ---
-title: What's new for Windows 10 显示器驱动程序 (WDDM 2.x)
-description: 描述了显示器驱动程序的 Windows 10 中新功能
+title: Windows 10 显示器驱动程序的新增功能（WDDM 2. x）
+description: 描述用于显示驱动程序的 Windows 10 中的新增功能
 ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18, 19H1
-ms.openlocfilehash: f90dfdd233b62da43af50797b1ee82b9c9e68ed8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 324764a486e5988fb41d4a68c8ab9b5bff0adf9c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829162"
 ---
-# <a name="whats-new-for-windows-10-display-drivers-wddm-20-and-later"></a>What's new for Windows 10 显示器驱动程序 (WDDM 2.0 及更高版本)
+# <a name="whats-new-for-windows-10-display-drivers-wddm-20-and-later"></a>Windows 10 显示器驱动程序的新增功能（WDDM 2.0 及更高版本）
 
-## <a name="wddm-26"></a>WDDM 2.6
+## <a name="wddm-26"></a>WDDM 2。6
 
-### <a name="super-wet-ink"></a>Super 湿的墨迹
+### <a name="super-wet-ink"></a>超级湿墨
 
-*超湿的墨迹*是一项功能，围绕*front 缓冲区呈现*。 IHV 驱动程序可以支持的格式或硬件不支持的模式下的"可显示"纹理的创建。 通过将分配给应用程序请求的纹理，以及具有格式/布局可显示"影子"纹理，然后将复制在存在时两者之间，它们可以执行此操作。 此"影子"不一定是纹理以正常方式我们认为它，但可能只是压缩数据。 此外，它可能不需要存在，但可能是一种优化方式相反。
+*超湿墨迹*是一项围绕*前缓冲区呈现*的功能。 IHV 驱动程序可以支持创建硬件不支持的格式或模式的 "可显示" 纹理。 他们可以通过分配应用程序所请求的纹理来实现此目的，以及可以显示的格式/布局的 "阴影" 纹理，然后在两个当前时间之间进行复制。 这种 "阴影" 可能并不一定是我们想像的纹理，但可能只是压缩数据。 此外，它可能不是必需的，但可能是优化。
 
-在运行时将会发生变化，若要了解这些方面的可显示的图面：
+运行时将发展，以了解可显示的表面的这些方面：
 
-* 阴影必须存在针对特定 VidPnSource/平面上的显示。
+* 在特定 VidPnSource/平面上显示时，是否必须存在阴影。
 
-* 是否为阴影存在更优。
+* 是否有更好的阴影效果。
 
-* 当应用程序图面中的内容传输到卷影图面。
+* 何时将内容从应用程序表面传输到阴影图面。
 
-    * 在运行时将是显式的有关此操作，而不是它已超出存在隐式的。
+    * 对于此操作，运行时将是显式的，而与它在当前中是隐式的。
 
-* 如何请求设置一种模式或动态翻转之间的原始和阴影的图面。
+* 如何请求设置模式或在原始表面和阴影曲面之间动态翻转。
 
-Scanout 很快 VBlank，扫描垂直方向从上到下图中，可能会开始和完成下一步 VBlank 之前短暂。 这并不总是的情况下，具体取决于像素时钟的时间和纹理; 中的数据的布局尤其是如果没有可用的实际压缩。 
+Scanout 可能会在 VBlank 之后不久开始，从图像的上到下垂直扫描，并在下一个 VBlank 之前完成。 这种情况并非总是出现，具体取决于像素时钟的时间和纹理中数据的布局;尤其是在实际有可用压缩时。 
 
-添加了新 DDIs 分隔并了解转换发生之前 scanout，以便为 （如果可能） 启用前端缓冲区呈现。 请参阅 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) 和 [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
+添加了新的 DDIs，以分离和理解 scanout 之前发生的转换，以便（如果可能）启用前缓冲区呈现。 请参阅 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) 和 [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
 
-### <a name="variable-rate-shading"></a>明暗度变量速率
+### <a name="variable-rate-shading"></a>可变速率底纹
 
-明暗度变量速率或粗略像素明暗度是一种机制来启用的呈现性能/电源以不同速率呈现的映像间分配。
+可变速率底纹或粗像素底纹是一种机制，用于在呈现的图像之间以不同的速率分配渲染性能/功率。
 
-在先前的模型，以便使用 MSAA （多重采样抗锯齿） 以减少几何别名：
+在以前的模型中，为了使用 MSAA （多样本抗锯齿）来减少几何别名：
 
-* 可减少几何锯齿量需要知道预先分配目标时。
-* 分配目标后，不能更改可减少几何锯齿量。
+* 在分配目标时需要提前知道几何别名的减少量。
+* 分配目标后，不能更改用于减少几何别名的量。
 
-WDDM 2.6 中的新模型 MSAA 扩展到相反*粗略像素*方向，通过添加了新的概念*粗略的明暗度*。 这是其中明暗度可以执行的频率比一个像素更粗。 可以作为单个单元着色的像素为单位的组和结果然后广播到组中的所有示例。
+在 WDDM 2.6 中，新模型通过添加*粗底纹*的新概念将 MSAA 扩展到反向的*粗像素*方向。 在这种情况下，可以在比像素更粗糙的频率执行阴影。 一组像素可以作为单个单元着色，然后将结果广播到组中的所有样本。
 
-粗略的明暗度 API 允许应用程序指定的归属于一个着色的像素数。 粗像素大小可各不相同后该呈现器目标分配。 因此，不同的屏幕或不同的绘图传递部分可以有不同的课程明暗度速率。
+粗阴影 API 允许应用指定属于阴影组的像素数。 在分配呈现器目标后，粗像素大小可能会改变。 这种情况下，屏幕的不同部分或不同的绘图会有不同的课程着色率。
 
-可具有两个用户可查询顶端的多层实现。 层 1 和 2，粗略的明暗度是适用于单采样和 MSAA 资源。 MSAA 资源的明暗度可以执行每个粗糙的像素或每个样本像往常一样。 但是，在层 1 和 2，MSAA 资源的粗采样不能使用为每像素和每个样本之间的频率的底纹。
+多层实现提供了两个用户可查询的上限。 对于第1层和第2层，单采样资源和 MSAA 资源均可使用粗糙着色。 对于 MSAA 资源，可以像平常一样，按粗像素或按样本执行着色。 但是，在第1层和第2层上，对于 MSAA 资源，不能使用粗采样以每像素和每样本的频率进行阴影。
 
-第 1 层：
+第1层：
 
-* 只能基于每个-绘图-; 指定明暗度速率比这更精细的执行任何操作
+* 只能在每个绘图上指定底纹速度;比此更精细
 
-* 明暗度速率统一适用于独立于其位于该呈现器目标的绘制内容  
+* 底纹速率统一应用于与渲染目标中的位置无关的绘图  
 
-第 2 层：
+第2层：
 
-* 可以在每个-绘图的模式中，如第 1 层中所示指定明暗度的速率。 它还可以通过组合的每个绘图的基础，以及指定：
+* 可以按每个绘图指定底纹速度，如第1层中所示。 它还可以通过每个绘制基础和的组合指定：
 
-    * 每个人深受启发的顶点，从语义和
+    * 造成中的语义和
     * Screenspace 图像
 
-* 从三个来源的明暗度费率组合使用一系列的合并器
-* 屏幕空间图像平铺大小是 16 x 16 或更小。 保证的明暗度速率请求的应用程序是完全 （对于临时和其他重新构造筛选器的精度） 交付 
+* 三个源的底纹费率使用一组合并器组合在一起。
+* 屏幕空间图像磁贴大小为16x16 或更小。 保证应用程序所请求的底纹速度是精确传递的（适用于临时和其他重建筛选器） 
 
-* 支持 SV_ShadingRate PS 输入。 如果使用一个视区，并且 SV_ViewportIndex 不会写入到的每个启发顶点速率，以每个基元速率，此处也称为才有效。
+* 支持 SV_ShadingRate PS 输入。 每个造成的顶点速率（也称为每个基元速率）仅在使用一个视区时有效，而 SV_ViewportIndex 不写入。
 
-* 每个启发顶点速率，也称为每个基元费率，可用于多个视区，如果 SupportsPerVertexShadingRateWithMultipleViewports cap 标记，则返回 true。 此外，在这种情况下，它可用时 SV_ViewportIndex 写入。
+* 如果 SupportsPerVertexShadingRateWithMultipleViewports 帽标记为 true，则每个造成的顶点速率也称为每个基元速率，可用于多个视区。 此外，在这种情况下，可以在将 SV_ViewportIndex 写入时使用。
 
-请参阅 [PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) 和 [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
+请参阅 [PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) 和 [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
 
 ### <a name="collect-diagnostic-info"></a>收集诊断信息
 
-*收集诊断信息*，操作系统就可以从包含这两个呈现和显示功能的图形适配器驱动程序中收集专用数据。 这一新功能是在 WDDM 2.6 中的要求。 
+*收集诊断信息*允许操作系统从图形适配器的驱动程序（包括呈现和显示功能）收集专用数据。 此新功能在 WDDM 2.6 中是必需的。 
 
-新 DDI 应允许 OS 在收集信息随时加载驱动程序。 操作系统将当前使用 DxgkDdiCollectDebugInfo 函数为 TDR （超时检测和恢复） 由查询驱动程序的专用数据微型端口实现的相关案例。 新 DDI 将用于收集数据的原因多种多样。 诊断需要提供所请求的信息类型时，操作系统将调用此 DDI。 该驱动程序应该收集重要调查该问题并将其提交到 OS 的所有私有信息。 将最终弃用，替换为 DxgkDdiCollectDiagnosticInfo DxgkDdiCollectDebugInfo。
+新的 DDI 应允许操作系统在每次加载驱动程序时收集信息。 当前，操作系统使用微型端口实现的 DxgkDdiCollectDebugInfo 函数来查询驱动程序专用数据，以获取 TDR （超时检测和恢复）相关事例。 由于各种原因，将使用新的 DDI 来收集数据。 需要诊断时，操作系统将调用此 DDI，提供所请求的信息类型。 驱动程序应收集检查问题并将其提交到操作系统的重要信息。 最终将弃用 DxgkDdiCollectDebugInfo，并将其替换为 DxgkDdiCollectDiagnosticInfo。
 
-请参阅 [DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
+请参阅 [DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
 
 ### <a name="background-processing"></a>后台处理
 
-后台处理允许用户模式驱动程序来表达所需的行为，并在运行时线程处理来控制/监视器它。 用户模式驱动程序将运转后台线程，为线程分配尽量低的优先级，并依赖于 NT 计划程序来确保这些线程不会干扰关键路径线程（一般会成功）。
+后台处理允许用户模式驱动程序表达所需的线程行为，并允许运行时控制/监视它。 用户模式驱动程序将运转后台线程，为线程分配尽量低的优先级，并依赖于 NT 计划程序来确保这些线程不会干扰关键路径线程（一般会成功）。
 
-Api 允许应用将调整后台处理量是适用于其工作负荷，以及何时执行该工作。
+Api 允许应用调整适合其工作负荷的后台处理量，以及何时执行该操作。
 
-请参阅 [PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
+请参阅 [PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
 
 ### <a name="driver-hot-update"></a>驱动程序热更新
 
-操作系统组件需要更新时，驱动程序热更新可减少服务器停机时间最大程度地。
+驱动程序热更新在需要更新 OS 组件时，尽可能减少服务器停机时间。
 
-驱动程序热修补程序用于将安全修补程序应用到内核模式驱动程序。 在这种情况下，驱动程序要求以保存适配器内存、 停止适配器时、 驱动程序已卸载、 加载新的驱动程序和重新启动该适配器。
+驱动程序热修补程序用于向内核模式驱动程序应用安全修补程序。 在这种情况下，系统会要求驱动程序保存适配器内存，停止适配器，卸载驱动程序，加载新的驱动程序，然后重新启动适配器。
 
-请参阅[DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate)并[DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
+请参阅[DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate)和[DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
 
-## <a name="wddm-25"></a>WDDM 2.5
+## <a name="wddm-25"></a>WDDM 2。5
 
 ### <a name="content-changes"></a>内容更改
 
-| 主题 | Date | 描述 |
+| 主题 | 日期 | 描述 |
 | --- | --- | --- |
-| [EDID HMDs 和专用的显示扩展插件 (VSDB)](specialized-monitors-edid-extension.md) | 12/03/2018 | 显示设备制造商的规范 |
-| [DirectX 图形内核子系统 (Dxgkrnl.sys)](directx-graphics-kernel-subsystem.md) | 12/04/2018 | 通过 Microsoft DirectX 图形内核子系统 (Dxgkrnl.sys) 实现的 Windows 操作系统的内核模式接口。 |
-| [WDDM 2.1 功能](wddm-2-1-features.md) | 01/10/2019|介绍了 WDDM 2.1 的新增和更新功能 |
+| [用于 HMDs 和专用显示器的 EDID 扩展（VSDB）](specialized-monitors-edid-extension.md) | 12/03/2018 | 显示制造商的规范 |
+| [DirectX 图形内核子系统（Dxgkrnl）](directx-graphics-kernel-subsystem.md) | 12/04/2018 | Windows 操作系统通过 Microsoft DirectX 图形内核子系统（Dxgkrnl）实现的内核模式接口。 |
+| [WDDM 2.1 功能](wddm-2-1-features.md) | 01/10/2019|介绍 WDDM 2.1 的新增功能和更新功能 |
 
 ### <a name="raytracing"></a>Raytracing
 
-为了支持硬件加速 raytracing Direct3D API、 并行创建新 Direct3D DDI。 示例 DDI 包括： 
+为了支持硬件加速的 raytracing，已在 Direct3D API 的并行情况下创建了新的 Direct3D DDI。 示例 DDI 包括： 
 
-* [PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054) 
-* [PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)
-* [PFND3D12DDI_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_emit_raytracing_acceleration_structure_postbuild_info_0054)
-* [PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_get_raytracing_acceleration_structure_prebuild_info_0054)
+* [PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054) 
+* [PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)
+* [PFND3D12DDI_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_emit_raytracing_acceleration_structure_postbuild_info_0054)
+* [PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_get_raytracing_acceleration_structure_prebuild_info_0054)
 
 有关 raytracing 的详细信息，请参阅：
 
 * [宣布推出 Microsoft DirectX Raytracing](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)
-* [DirectX Raytracing 和 Windows 10 2018 年 10 月更新](https://devblogs.microsoft.com/directx/directx-raytracing-and-the-windows-10-october-2018-update/)
+* [DirectX Raytracing 和 Windows 10 十月2018更新](https://devblogs.microsoft.com/directx/directx-raytracing-and-the-windows-10-october-2018-update/)
 * [DirectX 论坛](https://forums.directxtech.com/index.php?topic=5985.0)
 
 ### <a name="display-synchronization"></a>显示同步
 
-显示同步功能时显示公开到操作系统，因此之前启用显示器驱动程序将检查操作系统。 对于 TypeIntegratedDisplay 子设备，这报告通过调用[DxgkDdiQueryAdapterInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)与*类型* [DXGKQAITYPE_INTEGRATED_DISPLAY_DESCRIPTOR2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)在适配器初始化。 对于 TypeVideoOutput 子设备，开始 WDDM 2.5 支持功能报告的热插拔通过处理一部分[DxgkDdiUpdateMonitorLinkInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo)以便功能可能会更改基于目标或连接的监视器。
+当驱动程序向操作系统公开显示时，操作系统将检查显示同步的功能，因此在启用显示之前。 对于 TypeIntegratedDisplay 子设备[，在适配器初始化过程中](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)通过对[DxgkDdiQueryAdapterInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)的调用来报告*这种情况*。 对于从 WDDM 2.5 开始受支持的 TypeVideoOutput 子设备，可通过[DxgkDdiUpdateMonitorLinkInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo)将功能作为热插拔处理的一部分进行报告，以便基于目标或连接的功能更改这些功能监控器.
 
-OS 指定中的显示同步[DxgkDdiSetTimingsFromVidPn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_settimingsfromvidpn)调用中的输入字段中每个路径[DXGK_SET_TIMING_PATH_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_set_timing_path_info#input)结构。
+OS 在[DxgkDdiSetTimingsFromVidPn](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_settimingsfromvidpn)调用中指定每个路径[DXGK_SET_TIMING_PATH_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_set_timing_path_info#input)结构中输入字段的显示同步。
 
-## <a name="wddm-21"></a>WDDM 2.1
+## <a name="wddm-21"></a>WDDM 2。1
 
-WDDM 2.1 支持新方案，并提供几个方面的性能、 可靠性、 升级复原能力、 诊断改进和未来的系统的 Windows 图形子系统的改进功能的重大改进。
-WDDM 2.0 驱动程序模型是对 D3D12 的先决条件。 WDDM 2.0 和 DirectX12 是仅适用于 Windows 10 及更高版本。
+WDDM 2.1 启用了新方案，并对 Windows 图形子系统的性能、可靠性、升级复原能力、诊断改进和未来系统改进方面有重大改进。
+WDDM 2.0 驱动程序模型是 D3D12 的必备组件。 WDDM 2.0 和 DirectX12 仅适用于 Windows 10 及更高版本。
 
-下面是列表的 WDDM 2.1 的新增功能和更新。
+下面是适用于 WDDM 2.1 的功能添加和更新的列表。
 
-* 通过减少系统开销时间改进的图形性能所用的内存管理效率更高的稀缺图形内存的使用情况。 图形性能改进是：
+* 通过减少内存管理所用的开销并更有效地使用稀有图形内存，提高了图形性能。 图形性能改进包括：
 
-    * 提供和回收资源-提供和回收改进，可减少内存占用量在后台模式下运行的应用程序。
-    * 启用支持 2MB 页表条目编码-在 WDDM 2.1，大型页表项 (PTE) vram 能够中的编码。 此更改可以提高支持它的系统上的性能。
-    * WDDM 2.1 还支持对 64 KB 内存页的虚拟内存分配使用 64KB 粒度的支持。 此更改尤其受益 Apu 和 Soc，通过减少开销来访问虚拟内存页面。
+    * 提供和回收资源-提供和回收改进，以减少后台模式下运行的应用程序的内存占用。
+    * 支持2MB 页表条目编码-在 WDDM 2.1 中，已启用 VRAM 中的大型页表项（PTE）编码。 此更改提高了对支持它的系统的性能。
+    * 支持64KB 内存页-WDDM 2.1 也支持使用64KB 粒度的虚拟内存分配。 此更改尤其会通过减少访问虚拟内存页面的开销来 Apu 和 Soc。
 
-* 基于硬件的受保护的内容改进*提供批处理*([PlayReady 3.0](https://docs.microsoft.com/playready/))
+* 基于*硬件的受*保护内容改进（[PlayReady 3.0](https://docs.microsoft.com/playready/)）
 
-* 若要提高驱动程序升级复原能力的图形驱动程序的驱动程序存储区安装。
+* 图形驱动程序的驱动程序存储区安装，用于改进驱动程序升级复原能力。
 
-* DXIL，新的着色器编译器语言
+* DXIL，一种新的着色器编译器语言
 
-* D3D12 性能和优化的改进
+* D3D12 性能和优化改进
 
-* 改进了开发人员的诊断选项
+* 针对开发人员改进的诊断选项
 
 有关详细信息，请参阅[WDDM 2.1 功能](wddm-2-1-features.md)。
 
-## <a name="wddm-20"></a>WDDM 2.0
+## <a name="wddm-20"></a>WDDM 2。0
 
 WDDM 2.0 包括内存管理更新。
 
 ### <a name="gpu-virtual-memory"></a>GPU 虚拟内存
 
--   所有的物理内存已抽象化为虚拟图形处理单元 (GPU) 内存管理器可以管理的段。
--   每个进程都获取自己 GPU 的虚拟地址空间。
--   已删除对 swizzling 范围的支持。
+-   所有物理内存都抽象到可由图形处理单元（GPU）内存管理器管理的虚拟段。
+-   每个进程都将获取其自己的 GPU 虚拟地址空间。
+-   删除了对 swizzling 范围的支持。
 
 有关更多详细信息，请参阅[WDDM 2.0 中的 GPU 虚拟内存](gpu-virtual-memory-in-wddm-2-0.md)。
 
 ### <a name="driver-residency"></a>驱动程序驻留
 
--   视频内存管理器可确保在提交给驱动程序的命令缓冲区之前分配是驻留在内存中。 为了帮助实现此功能，新用户模式驱动程序设备驱动程序接口 (DDIs) 已添加 ([*MakeResident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)， [ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)， [*逐出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb))。
--   分配和修补程序的位置列表是被淘汰了，因为它不需要在新的模型。
--   用户模式驱动程序现在负责处理分配跟踪，并且添加了几个新 DDIs 以启用此功能。
--   驱动程序非常给定内存预算，预期内存压力下调整。 这样，通用 Windows 的驱动程序跨应用程序平台。
--   用于进程的同步和上下文监视添加了新 DDIs。
+-   在向驱动程序提交命令缓冲区之前，视频内存管理器可确保分配驻留在内存中。 为了便于此功能，已添加了新的用户模式驱动程序设备驱动程序接口（DDIs）（[*MakeResident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)、 [*TrimResidency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)、[*弃用*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)）。
+-   "分配" 和 "修补程序位置" 列表将分阶段出现，因为这在新模型中不是必需的。
+-   用户模式驱动程序现在负责处理分配跟踪，还添加了几个新的 DDIs 来实现此操作。
+-   驱动程序具有内存预算，并应在内存压力下适应。 这允许通用 Windows 驱动程序跨应用程序平台工作。
+-   添加了新的 DDIs，用于处理同步和上下文监视。
 
 有关更多详细信息，请参阅[WDDM 2.0 中的驱动程序驻留](driver-residency-in-wddm-2-0.md)。

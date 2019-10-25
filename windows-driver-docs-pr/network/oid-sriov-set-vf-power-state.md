@@ -1,38 +1,38 @@
 ---
 title: OID_SRIOV_SET_VF_POWER_STATE
-description: 基础驱动程序发出的对象标识符 (OID) 组请求的 OID_SRIOV_SET_VF_POWER_STATE 若要更改电源状态的指定 PCI Express (PCIe) 虚拟函数 (VF) 网络适配器上。
+description: 过量驱动程序发出 OID_SRIOV_SET_VF_POWER_STATE 的对象标识符（OID）设置请求，以更改网络适配器上指定 PCI Express （PCIe）虚拟功能（VF）的电源状态。
 ms.assetid: 9723518E-2312-48F9-820A-19F5567A33DB
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_SET_VF_POWER_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 79d759e0886009552f4090d8ee731d7bf4040208
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 06e2c85565a0f5ae3feba00cec75982bab1a8102
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366582"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843978"
 ---
-# <a name="oidsriovsetvfpowerstate"></a>OID\_SRIOV\_SET\_VF\_POWER\_STATE
+# <a name="oid_sriov_set_vf_power_state"></a>OID\_SRIOV\_设置\_VF\_POWER\_状态
 
 
-基础驱动程序将发出对象标识符 (OID) 组请求的 OID\_SRIOV\_设置\_VF\_POWER\_状态上更改电源状态的指定 PCI Express (PCIe) 虚拟函数 (VF)网络适配器。 由于更改的电源状态是一项特权的操作，基础驱动程序微型端口驱动程序的 PCIe 物理函数 (PF) 网络适配器上发出此 OID 集请求。 PF 微型端口驱动程序然后 VF 上设置指定的电源状态。
+过量驱动程序发出 OID\_的对象标识符（OID）设置请求\_设置\_VF\_POWER\_状态，以更改网络适配器上指定 PCI Express （PCIe）虚拟功能（VF）的电源状态。 由于更改电源状态是特权操作，因此过量驱动程序将此 OID 集请求颁发给网络适配器上 PCIe 物理功能（PF）的微型端口驱动程序。 然后，PF 微型端口驱动程序将设置 VF 上指定的电源状态。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_SRIOV\_设置\_VF\_POWER\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构。
+[**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_SRIOV\_设置\_VF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)\_\_\_参数结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
-当此 OID 集请求发出 PF 微型端口驱动程序，则它必须遵循以下准则：
+当向此 OID 集请求颁发了 PF 微型端口驱动程序时，必须遵循以下准则：
 
--   PF 微型端口驱动程序必须验证指定 VF **VFId**的成员[ **NDIS\_SRIOV\_设置\_VF\_POWER\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构，具有先前已分配的资源。 PF 微型端口驱动程序 OID 方法请求的过程将资源分配的 VF [OID\_NIC\_交换机\_分配\_VF](oid-nic-switch-allocate-vf.md)。 如果指定的 VF 不处于已分配状态，该驱动程序必须故障 OID 请求。
+-   PF 微型端口驱动程序必须验证由 NDIS\_SRIOV 的**VFId**成员指定的 VF [ **\_设置\_VF\_POWER\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)结构，具有以前的资源分配. 在 oid 的 OID 方法请求中，PF 微型端口驱动程序为一个 VF 分配资源[\_NIC\_交换机\_分配\_VF](oid-nic-switch-allocate-vf.md)。 如果指定的 VF 未处于已分配状态，则驱动程序必须使 OID 请求失败。
 
--   电源状态操作只会影响指定的 VF。 该操作必须不影响其他 VFs 或同一个网络适配器上的 PF。
+-   电源状态操作只能影响指定的 VF。 此操作不能影响同一网络适配器上的其他 VFs 或 PF。
 
-有关详细信息，请参阅[设置电源状态的虚拟函数](https://docs.microsoft.com/windows-hardware/drivers/network/setting-the-power-state-of-a-virtual-function)。
+有关详细信息，请参阅[设置虚拟功能的电源状态](https://docs.microsoft.com/windows-hardware/drivers/network/setting-the-power-state-of-a-virtual-function)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-PF 微型端口驱动程序返回以下状态代码之一 OID 设置请求的 OID\_SRIOV\_设置\_VF\_POWER\_状态。
+PF 多端口驱动程序返回 OID\_SRIOV 的 OID 集的以下状态代码之一\_设置\_VF\_POWER\_状态。
 
 <table>
 <colgroup>
@@ -52,19 +52,19 @@ PF 微型端口驱动程序返回以下状态代码之一 OID 设置请求的 OI
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>PF 微型端口驱动程序不支持的单个根 I/O 虚拟化 (SR-IOV) 接口，或未启用要使用的界面。</p></td>
+<td><p>PF 微型端口驱动程序不支持单根 i/o 虚拟化（SR-IOV）接口，或者没有启用使用接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>一个或多个的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)"> <strong>NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS</strong> </a>结构具有无效值。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)"><strong>NDIS_SRIOV_SET_VF_POWER_STATE_PARAMETERS</strong></a>结构中的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 PF 微型端口驱动程序必须设置<strong>数据。SET_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区太短。 PF 微型端口驱动程序必须设置<strong>数据。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>请求由于其他原因而失败。</p></td>
+<td><p>由于其他原因，请求失败。</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,25 +81,25 @@ PF 微型端口驱动程序返回以下状态代码之一 OID 设置请求的 OI
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持在 NDIS 6.30 和更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_SET\_VF\_POWER\_STATE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)
+[**NDIS\_SRIOV\_设置\_VF\_POWER\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_set_vf_power_state_parameters)
 
-[OID\_NIC\_SWITCH\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
+[OID\_NIC\_交换机\_分配\_VF](oid-nic-switch-allocate-vf.md)
 
  
 

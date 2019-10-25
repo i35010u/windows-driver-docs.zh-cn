@@ -12,66 +12,66 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd3d4271feb6129dd828ed496ece9245d1709e8b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a098b7f6a72aee0bd55bf2ceb84ee937c82e0c9b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384830"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841197"
 ---
-# <a name="irpmjflushbuffers"></a>IRP\_MJ\_刷新\_缓冲区
+# <a name="irp_mj_flush_buffers"></a>IRP\_MJ\_刷新\_缓冲区
 
 
 ## <a name="when-sent"></a>发送时间
 
 
-IRP\_MJ\_刷新\_缓冲区发送请求 I/O 管理器和其他操作系统组件，以及其他内核模式驱动程序，如果缓冲的数据需要刷新到磁盘。 它可以发送，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**FlushFileBuffers**。 (文件系统驱动程序和文件系统筛选器驱动程序，调用[ **CcFlushCache** ](https://msdn.microsoft.com/library/windows/hardware/ff539082)通常适用于发送 IRP。)
+当缓冲数据需要刷新到磁盘时，由 i/o 管理器和其他操作系统组件以及其他的内核模式驱动程序发送 IRP\_MJ\_刷新\_缓冲区请求。 例如，在用户模式应用程序调用 Microsoft Win32 函数（如**FlushFileBuffers**）时，可以将其发送。 （对于文件系统驱动程序和文件系统筛选器驱动程序，调用[**CcFlushCache**](https://msdn.microsoft.com/library/windows/hardware/ff539082)通常比发送 IRP 更好。）
 
-所有文件系统和筛选器驱动程序的维护数据的内部缓冲区必须都处理此 IRP，以便可以在系统关闭保留对文件数据或元数据的更改。
+维护数据的内部缓冲区的所有文件系统和筛选器驱动程序都必须处理此 IRP，以便可以在系统关闭范围内保留对文件数据或元数据的更改。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
 
-文件系统驱动程序应刷新到磁盘的任何重要数据或元数据与文件对象相关联并完成 IRP。 有关如何处理此 IRP，研究 FASTFAT 示例的详细信息。
+文件系统驱动程序应将与文件对象关联的任何重要数据或元数据刷新到磁盘，并完成 IRP。 有关如何处理此 IRP 的详细信息，请学习 FASTFAT 示例。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
 
-筛选器驱动程序应刷新到磁盘的任何重要数据或元数据与文件对象相关联，并在堆栈上传递此 IRP 到下一步低驱动程序。
+筛选器驱动程序应刷新与文件对象关联的任何重要数据或元数据，并将此 IRP 向下传递到堆栈上的下一个较低版本的驱动程序。
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置中处理刷新缓冲区请求中设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。 （IRP 显示为*irp*。）驱动程序可以使用 IRP 的下列成员中设置的信息，并使用 IRP 堆栈位置来处理刷新缓冲区请求：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
-指向目标设备对象指针。
+指向目标设备对象的指针。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。
+指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
-与之关联的文件对象的指针*DeviceObject*。
+指向与*DeviceObject*关联的文件对象的指针。
 
-*IrpSp-&gt;的文件对象*参数包含一个指向**RelatedFileObject**字段中，这也是一个文件\_对象结构。 **RelatedFileObject**字段的文件\_对象结构不是有效的 IRP 处理期间\_MJ\_刷新\_缓冲区，不应使用。
+*&gt;IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件\_对象结构。 文件\_对象结构的**RelatedFileObject**字段在处理 IRP\_MJ\_刷新\_缓冲区期间无效，不应使用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 指定 IRP\_MJ\_刷新\_缓冲区。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**CcFlushCache**](https://msdn.microsoft.com/library/windows/hardware/ff539082)
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_刷新\_缓冲区 （WDK 内核参考）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)
+[**IRP\_MJ\_刷新\_缓冲区（WDK 内核引用）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)
 
  
 

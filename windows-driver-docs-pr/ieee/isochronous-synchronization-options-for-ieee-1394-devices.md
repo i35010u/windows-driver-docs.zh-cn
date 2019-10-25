@@ -3,19 +3,19 @@ title: IEEE 1394 设备的常时等量同步选项
 description: IEEE 1394 设备的常时等量同步选项
 ms.assetid: 27137890-09e7-45d5-b268-7e93c943b489
 keywords:
-- 同步 I/O WDK IEEE 1394 总线同步
+- 同步 i/o WDK IEEE 1394 总线，同步
 - 同步 WDK IEEE 1394 总线
 - 筛选 WDK IEEE 1394 总线
 - 周期时间同步 WDK IEEE 1394 总线
-- 缓冲区 WDK IEEE 1394 总线
+- 缓冲 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd0fdb299b648f30b17d6805e8369238be5e69d3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d16aaa9f3ddf6be51eb48357b133a9ccc8733a84
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385764"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841535"
 ---
 # <a name="isochronous-synchronization-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量同步选项
 
@@ -23,25 +23,25 @@ ms.locfileid: "67385764"
 
 
 
-IEEE 1394 驱动程序堆栈支持某些类型的同步和筛选期间[**请求\_ISOCH\_侦听**](https://msdn.microsoft.com/library/windows/hardware/ff537655)并[ **请求\_ISOCH\_交谈**](https://msdn.microsoft.com/library/windows/hardware/ff537660)操作。
+在请求期间，IEEE 1394 驱动程序堆栈支持特定类型的同步和筛选[ **\_ISOCH\_侦听**](https://msdn.microsoft.com/library/windows/hardware/ff537655)和[**请求\_ISOCH\_交谈**](https://msdn.microsoft.com/library/windows/hardware/ff537660)操作。
 
-驱动程序可以启动筛选通过设置描述符\_同步\_ON\_SY 或描述符\_同步\_ON\_中的标记标志**fulFlags**成员缓冲区[ **ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)结构。 总线驱动程序开始发送到该缓冲区的数据，删除从没有 Sy 数据流或 isoch 描述符中所指示的 Sy 或标记值匹配的标记值的所有数据包。 此筛选过程将继续按照，缓冲区即使描述符的一项也没有\_同步\_ON\_SY 和描述符\_同步\_ON\_isoch 中设置标记标志这些缓冲区的描述符。
+驱动程序可以通过设置缓冲区的[**ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_isoch_descriptor)结构的**fulFlags**成员中\_标记标志上的描述符\_同步\_\_\_来启动筛选。 从发送到该缓冲区的数据开始，总线驱动程序将从数据流中删除所有未包含 Sy 或标记值（与 isoch 描述符中指示的 Sy 或标记值相匹配）的数据包。 此筛选继续执行后面的缓冲区，即使在\_SY 上的一个描述符\_同步\_并在这些缓冲区的 isoch 说明符中设置\_标记标志上的描述符\_同步\_也是如此。
 
-如果除了设置描述符\_同步\_ON\_SY 或描述符\_同步\_ON\_标记标志，客户端驱动程序还设置描述符\_使用\_SY\_标记\_IN\_首个标志，总线驱动程序将使用提供的 isoch 描述符同步数据流中的客户端驱动程序的 Sy 或标记值。 在这种情况下，总线驱动程序将放弃所有数据包之前它接收到一个其 Sy 或标记值与 isoch 描述符中所指示的值匹配。 在查找匹配项，总线驱动程序停止放弃数据包，并恢复转发*所有*到客户端驱动程序的数据包。
+如果在\_SY 或描述符上设置描述符\_同步\_\_同步\_上的\_标记标志，则客户端驱动程序还会将描述符\_使用\_SY\_标记\_在\_第一个标志中，总线驱动程序将使用 isoch 描述符中的客户端驱动程序提供的 Sy 或标记值来同步数据流。 在这种情况下，总线驱动程序会丢弃所有数据包，直到接收到其 Sy 或标记值与 isoch 描述符中指定的值匹配的数据包。 找到匹配项后，总线驱动程序将停止丢弃数据包，并继续将*所有*数据包转发到客户端驱动程序。
 
-如果主机控制器支持，客户端驱动程序可以使用周期时间同步的同步数据的流。 在此上下文中的"周期时间"定义由[**周期\_时间**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_cycle_time)结构。 它包括第二个计数**CL\_SecondCount**，，包装每隔 128 秒周期计数**CL\_CycleCount**，，该值指示具有的同步周期数在当前的第二个和时钟计时周期计数，已用**CL\_CycleOffset**，指示在当前周期内所经历的 IEEE 1394 总线时钟周期数。
+如果主机控制器支持，则客户端驱动程序可以使用周期时间来同步同步同步数据流。 此上下文中的 "周期时间" 由[**循环\_时间**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_cycle_time)结构定义。 它包含第二个计数， **CL\_SecondCount**，每128秒包装一次，一个周期计数， **CL\_CycleCount**，指示当前秒内已用时的同步周期数和一个时钟滴答计数。**CL\_CycleOffset**，它指示在当前周期内已过去的 IEEE 1394 总线时钟计时周期数。
 
-客户端既可以初始化特定缓冲区中的同步操作，或者它可以在一定的周期时间同步整个数据流。
+客户端可以在特定缓冲区中启动同步操作，也可以在某个周期时间同步整个数据流。
 
-若要启动特定的缓冲区中同步操作，客户端驱动程序必须设置描述符\_同步\_ON\_中的时间标志**fulFlags**的 isoch 描述符的成员缓冲区。 它必须初始化**CycleTime**成员描述符与用于同步的数据流的周期时间。 总线驱动程序将检查 isoch 描述符后，它会启动同步操作使用指定的周期时间。 总线驱动程序将丢弃所有数据包不具有所指示的周期时间，并恢复其在找到具有正确的周期时间数据包传送数据包。
+若要在特定缓冲区中启动同步操作，客户端驱动程序必须在该缓冲区的 isoch 描述符的**fulFlags**成员中设置描述符\_同步\_\_。 它还必须使用将用于同步数据流的周期时间初始化描述符的**CycleTime**成员。 在总线驱动程序检查 isoch 描述符后，它将使用指定的周期时间启动同步操作。 总线驱动程序会丢弃所有没有指示的周期时间的数据包，并在找到具有正确周期时间的数据包后恢复传送数据包。
 
-若要在特定的周期时间同步整个数据流，客户端驱动程序必须配置一个通道，以便在通道发起的所有请求会自动都同步数据流使用指示的周期时间。 这提供了一种替代方法触发基于特定 isoch 描述符的周期时间设置的同步。 若要以这种方式配置信道，客户端驱动程序必须执行两个步骤：
+若要在某个周期时间同步整个数据流，客户端驱动程序必须配置一个通道，以便在通道上启动的所有请求都将使用指定的周期时间自动同步数据流。 这提供了一种替代方法，用于根据特定 isoch 描述符的周期时间设置来触发同步。 若要以这种方式配置通道，客户端驱动程序必须执行两个步骤：
 
-1.  当客户端为通道与分配资源句柄[**请求\_ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)请求，它必须设置资源\_同步\_ON\_中的时间标志**fulFlags** IRB 的成员。
+1.  当客户端为带有[**请求\_ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)请求的通道分配资源句柄时，它\_\_必须在 " **fulFlags** " 成员的IRB.
 
-2.  当客户端请求的通道上侦听或讨论操作时，它指定将用于同步在数据流的周期时间**StartTime** IRB 的成员。 详细信息大约侦听和通信的请求，请参阅[**请求\_ISOCH\_侦听**](https://msdn.microsoft.com/library/windows/hardware/ff537655)并[**请求\_ISOCH\_对话**](https://msdn.microsoft.com/library/windows/hardware/ff537660)。
+2.  当客户端请求通道上的侦听或对话操作时，它会指定将用于同步 IRB 的**StartTime**成员中的数据流的周期时间。 有关侦听和交谈请求的详细信息，请参阅[**request\_ISOCH\_侦听**](https://msdn.microsoft.com/library/windows/hardware/ff537655)和[**请求\_ISOCH\_交谈**](https://msdn.microsoft.com/library/windows/hardware/ff537660)。
 
-若要确定主机控制器支持周期时间同步，是否客户端驱动程序应发送[**请求\_获取\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)总线驱动程序，对请求使用**nLevel** IRB 成员设置为 2。 总线驱动程序将返回[**获取\_本地\_主机\_INFO2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_get_local_host_info2)以响应此请求的结构。 如果总线驱动程序设置的主机\_INFO\_支持\_启动\_ON\_中的周期标志**HostCapabilities**的 GET 成员\_本地\_主机\_INFO2，这指示主机控制器支持的同步操作使用周期时间同步。
+若要确定主机控制器是否支持循环时间同步，客户端驱动程序应发送请求，\_获取到总线驱动程序[ **\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)请求，并将 IRB 的**nLevel**成员设置为2。 总线驱动程序将返回[ **\_本地\_主机\_INFO2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_get_local_host_info2)结构，以响应此请求。 如果总线驱动程序将主机\_信息\_在 GET\_本地\_主机\_INFO2 的**HostCapabilities**成员中的\_循环标志\_支持 START\_，这表示宿主控制器支持使用循环时间同步同步操作。
 
  
 

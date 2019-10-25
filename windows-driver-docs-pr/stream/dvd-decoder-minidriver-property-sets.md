@@ -4,12 +4,12 @@ description: DVD 解码器微型驱动程序属性集
 ms.assetid: c24685bd-ea20-4cc2-b419-feb1fa2ea03e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0296cc1724e547ef9039ae925860a7663ae159c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 882c4fd988344d669d82f3338a19f81c10a801a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358427"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843220"
 ---
 # <a name="dvd-decoder-minidriver-property-sets"></a>DVD 解码器微型驱动程序属性集
 
@@ -17,54 +17,54 @@ ms.locfileid: "67358427"
 ## <span id="ddk_dvd_decoder_minidriver_property_sets_ks"></span><span id="DDK_DVD_DECODER_MINIDRIVER_PROPERTY_SETS_KS"></span>
 
 
-本部分介绍可用于在 Microsoft Windows 98 中使用 WDM 内核流式处理服务的 DVD 解码器微型的 DVD 解码器特定的属性集 / Me、 Windows 2000 和 Windows XP 及更高版本。
+本部分介绍 DVD 解码器特定的属性集，这些属性集可用于在 Microsoft Windows 98/Me、Windows 2000 和 Windows XP 及更高版本中使用 WDM 内核流式处理服务的 DVD 解码器微型驱动程序。
 
-每个属性的参考页包含具有如下所示的列标题的表。
+每个属性的引用页面都包含一个表，其中包含如下所示的列标题。
 
 
-| Get | 设置 | 目标 | 属性描述符类型 | 属性值类型 |
+| “获取” | 设置 | 目标 | 属性描述符类型 | 属性值类型 |
 |-----|-----|--------|--------------------------|---------------------|
 |     |     |        |                          |                     |
 
 这些标题具有以下含义：
 
--   **Get**
+-   **获取**
 
-    目标 KS 对象是否支持 KSPROPERTY\_类型\_属性的 GET 请求？
+    目标 KS 对象是否支持 KSPROPERTY\_类型\_获取属性请求？
 
--   **Set**
+-   **字符集**
 
-    目标 KS 对象是否支持 KSPROPERTY\_类型\_集属性请求？
+    目标 KS 对象是否支持 KSPROPERTY\_类型\_设置属性请求？
 
--   **Target**
+-   **靶**
 
-    这是请求发送到哪个属性 KS 对象。 DVD 解码器属性的目标是筛选器或 pin。 （属性请求指定的目标对象由其内核句柄。）
+    这是向其发送属性请求的 KS 对象。 DVD 解码器属性的目标是 "筛选器" 或 "pin"。 （属性请求按其内核句柄指定目标对象。）
 
 -   **属性描述符类型**
 
-    属性描述符指定的属性和要在该属性上执行的操作。 描述符始终开头[ **KSPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)结构。
+    属性说明符指定属性和要对该属性执行的操作。 描述符始终以[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)结构开始。
 
 -   **属性值类型**
 
-    属性的值，而此值的类型取决于属性。 例如，可以是一个只有两种状态-打开或关闭-中的属性通常具有一个布尔值。 可以假定为 0xFFFFFFFF 0 的整数值的属性可能具有 ULONG 值。 更复杂的属性可能是数组或结构的值。
+    属性具有值，并且此值的类型取决于属性。 例如，只能处于两种状态之一的属性（打开或关闭）通常具有布尔值。 可以假设从0到0xFFFFFFFF 的整数值的属性可能有 ULONG 值。 更复杂的属性可能具有作为数组或结构的值。
 
-属性描述符和更高版本的属性值是实例规范和操作数据缓冲区中所述的属性特定于版本[KS 属性、 事件和方法](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)。
+上面的属性说明符和属性值是在[KS 属性、事件和方法](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)中讨论的实例规范和操作数据缓冲区的属性特定版本。
 
-属性请求使用下列标志之一来指定要在属性上执行的操作：
+属性请求使用下列标志之一来指定要对属性执行的操作：
 
 -   KSPROPERTY\_类型\_BASICSUPPORT
 
--   KSPROPERTY\_TYPE\_GET
+-   KSPROPERTY\_类型\_GET
 
--   KSPROPERTY\_TYPE\_SET
+-   KSPROPERTY\_类型\_集
 
-所有筛选器和 pin 对象支持属性对其的 basic 支持操作。 是否支持*获取*并*设置*操作取决于属性。 该属性表示的筛选器或 pin 对象的固有功能是可能需要仅一个 get 操作。 该属性表示可配置的设置可能需要仅设置操作中，尽管可能适用于读取的当前设置的 get 操作。 有关使用 DVD 解码器属性中使用 get、 集和 basic 支持操作的详细信息，请参阅[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。
+所有筛选器和 pin 对象均支持对其属性的基本支持操作。 它们是否支持*get*和*Set*操作取决于属性。 表示筛选器或固定对象的固有功能的属性可能只需要 get 操作。 尽管获取操作也可能对读取当前设置很有用，但表示可配置的设置的属性可能只需要设置操作。 有关使用 "获取"、"设置" 和 "使用 DVD 解码器的基本支持操作" 属性的详细信息，请参阅[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。
 
-查询或更改流方面的属性。 多个属性集用于 DVD 解码器。 所有的 DVD 解码器输入的流支持除了设置为本主题中所述的属性集的 DVD 版权保护属性
+属性查询或更改流方面。 几个属性集用于 DVD 解码器。 除了本主题中所述的属性集外，所有 DVD 解码器输入流还支持 DVD 版权保护属性集
 
-每个属性描述包含一个数据表，说明是否需要 DVD 解码器微型驱动程序来支持读取或写入属性。 DVD 解码器微型驱动程序应返回状态\_不\_要获取或设置为不受微型驱动程序的属性的请求的响应中受支持。
+每个属性说明都包含一个表，用于指示是否需要使用 DVD 解码器微型驱动程序来支持读取或写入属性。 对于微型驱动程序不支持的属性的 get 或 set 请求，DVD 解码器微型驱动程序应返回\_不\_支持的状态。
 
-下面的属性设置为 DVD 解码器微型驱动程序定义：
+为 DVD 解码器微型驱动程序定义了以下属性集：
 
 [KSPROPSETID\_AudioDecoderOut](kspropsetid-audiodecoderout.md)
 
@@ -76,7 +76,7 @@ ms.locfileid: "67358427"
 
 [KSPROPSETID\_VPConfig 和 KSPROPSETID\_VPVBIConfig](kspropsetid-vpconfig-and-kspropsetid-vpvbiconfig.md)
 
-[KSPROPSETID\_Wave](kspropsetid-wave.md)
+[KSPROPSETID\_波浪](kspropsetid-wave.md)
 
  
 

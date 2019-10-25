@@ -3,21 +3,21 @@ title: 电源管理的全系统概述
 description: 电源管理的全系统概述
 ms.assetid: 16313152-3fe2-49d7-8cf1-b369e39e4130
 keywords:
-- 电源管理 WDK 内核，有关电源管理
-- 电源管理 WDK 内核，整个系统概述
+- 电源管理 WDK 内核，关于电源管理
+- 电源管理 WDK 内核，系统范围的概述
 - 软件 WDK 电源管理
-- 控件面板 WDK 电源管理
-- 整个系统电源策略 WDK 内核
+- 控制面板 WDK 电源管理
+- 系统范围电源策略 WDK 内核
 - 电源策略 WDK 内核
-- 节省电源 WDK 内核
+- 保存电源 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ca1020fcfb8ac3702f01706798cdd132aa85fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 92ebb9b5a24efff17b11fbcf68f194d56ec514a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355459"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836128"
 ---
 # <a name="system-wide-overview-of-power-management"></a>电源管理的全系统概述
 
@@ -25,21 +25,21 @@ ms.locfileid: "67355459"
 
 
 
-电源管理需要从系统和设备的硬件和系统软件和驱动程序的支持。 在上一部分中所述在行业规范中，介绍了所需的硬件支持。 本主题介绍软件支持 — 具体而言，驱动程序必须做什么来符合操作系统要求以及管理根据他们的设备的电源。
+电源管理需要系统和设备硬件以及系统软件和驱动程序的支持。 如前一部分中所述，行业规范中涵盖了所需的硬件支持。 本主题涵盖软件支持：具体而言，软件支持必须执行哪些操作才能符合操作系统要求并针对其设备管理电源。
 
-下图显示了电源管理的系统级概述。
+下图显示了系统范围内电源管理的概述。
 
-![说明电源管理的系统级概述关系图](images/power-comp.png)
+![阐释系统范围内电源管理概述的示意图](images/power-comp.png)
 
-应用程序和用户可能会影响通过控制面板和通过调用电源管理例程的电源管理决策。 用户可以使用控制面板设置系统和设备电源选项，包括自定义电源设置。 控制面板通知的电源管理器和活动的电源策略及其关联的电源设置发生更改的驱动程序。 从 Windows Vista 开始，电源管理器会通知驱动程序通过调用[**电源设置回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterpowersettingcallback)驱动程序注册以接收通知。 在 Windows Server 2003、 Windows XP 和 Windows 2000 中，通过 WMI 执行此通知。
+应用程序和用户可以通过 "控制面板" 和 "调用电源管理" 例程来影响电源管理决策。 用户可以使用 "控制面板" 设置系统和设备电源选项，包括自定义电源设置。 控制面板通知电源管理器和驱动程序活动电源策略和相关电源设置的更改。 从 Windows Vista 开始，电源管理器通过调用驱动程序注册接收通知的[**电源设置回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterpowersettingcallback)来通知驱动程序。 在 Windows Server 2003、Windows XP 和 Windows 2000 中，此通知通过 WMI 进行。
 
-电源管理器管理系统级*电源策略*，规则来控制系统的电源使用情况。 (有关详细信息，请参阅[系统电源策略](system-power-policy.md)。)使用控制面板和 Api 中的信息，电源管理器可以确定当应用程序使用的，或者可能需要使用各种设备，以便它可以相应地调整系统的电源策略。
+电源管理器管理系统范围内的*电源策略*，这是控制系统电源使用情况的规则。 （有关详细信息，请参阅[系统电源策略](system-power-policy.md)。）使用控制面板和 Api 中的信息，电源管理器可以确定应用程序使用的时间，或可能需要使用各种设备的时间，以便它能够相应地调整系统的电源策略。
 
-电源管理器还提供了一个接口驱动程序，请包含[电源管理支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)，[电源管理次要 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/power-management-minor-irps)，和所需驱动程序入口点。
+Power manager 还为驱动程序提供了一个接口，其中包含[电源管理支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)、[电源管理辅助 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/power-management-minor-irps)和所需的驱动程序入口点。
 
-当电源管理器请求的系统电源状态更改时，驱动程序通过将其设备放在适当的设备电源状态响应。 此外，驱动程序可以为其设备执行空闲检测和未使用的设备置于睡眠状态。 特定于总线的机制报告设备电源功能、 设置和报告设备状态和更改设备电源。 完全如何以及何时更改设备电源取决于设备的类型和设备硬件的功能。
+当电源管理器请求对系统电源状态的更改时，驱动程序会通过将其设备置于适当的设备电源状态来做出响应。 此外，驱动程序可以为其设备执行空闲检测并将未使用的设备置于睡眠状态。 特定于总线的机制报告设备电源功能、设置和报告设备状态以及更改设备电源。 设备电源发生变化的确切方式和时间取决于设备的类型和设备硬件的功能。
 
-ACPI 硬件意识到最大电源节省量，尽管硬件不需要符合 ACPI 才能有效的驱动程序中的电源管理的。
+尽管 ACPI 硬件可以实现最大的节能，但硬件不需要满足 ACPI 要求，驱动程序中的电源管理才能生效。
 
  
 

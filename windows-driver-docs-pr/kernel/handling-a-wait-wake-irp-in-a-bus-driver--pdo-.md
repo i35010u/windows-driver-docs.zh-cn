@@ -3,17 +3,17 @@ title: 处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
 description: 处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
 ms.assetid: 9583b935-26e1-49c6-827d-932762af114d
 keywords:
-- 接收等待/唤醒 Irp
+- 正在接收等待/唤醒 Irp
 - 等待/唤醒 Irp WDK 电源管理，接收
 - 总线驱动程序 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78189ea8fb8879618e6f36f8d36e22a04d8639c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6bb0e76278833de1559b728c7b51c3ae65b1a773
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836610"
 ---
 # <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
 
@@ -21,39 +21,39 @@ ms.locfileid: "67384243"
 
 
 
-像其他电源 Irp，必须到总线驱动程序 (PDO)，这是最终负责完成 IRP 一直关闭设备堆栈传递每个等待/唤醒 IRP。 一旦收到 IRP，总线驱动程序可以立即失败或挂起其保存以便稍后完成。 总线驱动程序必须采取的步骤如下：
+与其他电源 Irp 一样，每个等待/唤醒 IRP 都必须按设备堆栈向下传递到总线驱动程序（PDO），最终负责完成 IRP。 在收到 IRP 后，总线驱动程序可以立即将其故障转移，或将其挂起以等待以后完成。 以下是总线驱动程序必须执行的步骤：
 
-1.  检查处的值**Irp-&gt;Parameters.WaitWake.PowerState**。 如果设备支持唤醒，但不能从指定[ **SystemWake** ](systemwake.md)状态或不是从当前设备电源状态，该驱动程序应失败 IRP，如下所示：
+1.  检查**Irp&gt;WaitWake. PowerState**的值。 如果设备支持唤醒，但不支持从指定的[**SystemWake**](systemwake.md)状态进行唤醒，或者不是从当前设备电源状态进行的，则该驱动程序应使 IRP 失败，如下所示：
 
-    -   将状态设置\_无效\_设备\_状态中**Irp-&gt;IoStatus.Status**。
+    -   设置状态\_无效\_设备\_Irp 中**的状态-&gt;IoStatus**。
 
-    -   完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest))，指定的 IO 优先级提升\_否\_增量。
+    -   完成 IRP （[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)），指定 IO\_NO\_递增的优先级提升。
 
-    -   返回的状态设置**Irp-&gt;IoStatus.Status**从[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
+    -   返回[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中的**Irp&gt;IoStatus**的状态集。
 
-2.  检查是否等待/唤醒 IRP 已经处于挂起状态对 PDO。 如果是这样，设置**Irp-&gt;IoStatus.Status**于状态\_设备\_繁忙、 递增的等待/唤醒 Irp，驱动程序的内部计数并完成 IRP 上, 一步中所述。
+2.  检查是否已为 PDO 等待等待/唤醒 IRP。 如果是这样，请将**Irp&gt;IoStatus**设置为状态\_设备\_繁忙，增加驱动程序的等待/唤醒 irp 的内部计数，并按上一步所述完成 Irp。
 
-    只有一个等待/唤醒 IRP 可以处于挂起状态对 PDO。
+    PDO 只能挂起一个等待/唤醒 IRP。
 
-3.  如果设备支持唤醒从指定的系统电源状态和无等待/唤醒 IRP 已挂起，请调用[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)以指示 I/O 管理器将完成 IRP 或取消更高版本。 未设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程。
+3.  如果设备支持从指定的系统电源状态唤醒，并且没有等待/唤醒 IRP 处于挂起状态，则调用[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)向 i/o 管理器指示 IRP 将在以后完成或取消。 不要设置[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程。
 
-4.  设置设备硬件，从而使唤醒。
+4.  将设备硬件设置为启用唤醒。
 
-    依据总线驱动程序，其硬件，唤醒是依赖于设备的特定机制。 对于 PCI 设备，Pci.sys 负责设置 PME 启用位，因为此驱动程序拥有 PME 注册。 对于其他设备，请参阅特定于设备的类的文档。
+    总线驱动程序使其硬件可用于唤醒的特定机制与设备相关。 对于 PCI 设备，Pci-x 负责设置 PME-启用位，因为此驱动程序拥有 PME 寄存器。 对于其他设备，请参阅特定于设备的文档。
 
-5.  如果 PDO 是子节点的 FDO[请求等待/唤醒 IRP](sending-a-wait-wake-irp.md) FDO，为确保设置[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程的当前 IRP (它包含挂起 IRP)。 不要尝试传递或重复使用当前的 IRP。
+5.  如果 PDO 是 FDO 的子，请为 FDO[请求等待/唤醒 IRP](sending-a-wait-wake-irp.md) ，并确保为当前 IRP （它挂起的 irp）设置 "[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)" 例程。 不要尝试传递或重新使用当前 IRP。
 
-6.  返回状态\_从 PENDING *DispatchPower*例程。
+6.  *DispatchPower*例程返回状态\_挂起。
 
-7.  当唤醒信号到达时，调用**IoCompleteRequest**以完成挂起等待/唤醒 IRP，设置**Irp IoStatus.Status**到状态\_成功，并指定 IO 优先级提升\_否\_增量。
+7.  唤醒信号到达后，调用**IoCompleteRequest**以完成挂起的等待/唤醒 IRP，将**IRP-IOSTATUS**设置为状态\_成功，并指定 IO 的优先级提升\_无\_增量。
 
-### <a name="for-devices-that-do-not-support-wake-up"></a>不支持唤醒的设备
+### <a name="for-devices-that-do-not-support-wake-up"></a>对于不支持唤醒的设备
 
-如果设备不支持唤醒，总线驱动程序 (PDO) 时应使用，如下所示：
+如果设备不支持唤醒，则总线驱动程序（PDO）应按照以下步骤进行：
 
-1.  通过调用完成等待/唤醒 IRP **IoCompleteRequest**，指定 IO\_否\_增量。
+1.  通过调用**IoCompleteRequest**完成等待/唤醒 IRP，指定 IO\_没有\_增量。
 
-2.  返回从*DispatchPower*例程，并在将值传递**Irp-&gt;IoStatus.Status**作为其返回值。
+2.  从*DispatchPower*例程返回，并将**Irp&gt;IoStatus**的值作为其返回值传递。
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: ndiskd.wdiadapter
-description: Ndiskd.wdiadapter 扩展显示 WDIWiFi CAdapter 结构有关的信息。 如果不带任何参数运行此扩展，ndiskd 将显示所有 WDIWiFi CAdapter 结构的列表。
+description: Ndiskd. wdiadapter 扩展显示有关 WDIWiFi CAdapter 结构的信息。 如果运行不带任何参数的扩展，ndiskd 将显示所有 WDIWiFi CAdapter 结构的列表。
 ms.assetid: 1AC069E8-CF87-459B-9C56-DDC1A6F765A8
 keywords:
-- ndiskd.wdiadapter Windows 调试
+- ndiskd wdiadapter Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 725e0e92174b84ea40619ac40609358a5d63b22f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a79188b8a0b08cdbde7862714b8c67d289705a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362454"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837650"
 ---
 # <a name="ndiskdwdiadapter"></a>!ndiskd.wdiadapter
 
 
-**！ Ndiskd.wdiadapter**扩展显示有关 WDIWiFi 信息 ！CAdapter 结构。 如果不带任何参数运行此扩展 ！ ndiskd 将显示一组所有 WDIWiFi ！CAdapter 结构。
+**！ Ndiskd wdiadapter**扩展显示有关 WDIWiFi 的信息！CAdapter 结构。 如果运行不带参数的扩展，！ ndiskd 将显示所有 WDIWiFi 的列表！CAdapter 结构。
 
 有关 WDI 微型端口驱动程序的详细信息，请参阅[WDI 微型端口驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)。
 
-WDI 微型端口驱动程序引用的详细信息，请参阅[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
+有关 WDI 微型端口驱动程序参考的详细信息，请参阅[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
 
 ```console
 !ndiskd.wdiadapter [-handle <x>] [-pm] [-rcvfilter] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
@@ -42,16 +42,16 @@ CAdapter 对象的句柄。
 显示电源管理状态和功能。
 
 <span id="_______-rcvfilter______"></span><span id="_______-RCVFILTER______"></span> *-rcvfilter*   
-显示接收的筛选功能。
+显示接收筛选功能。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-运行 **！ ndiskd.wdiadapter**扩展不带任何参数，以查看所有 CAdapter 对象，以及为每个其 WDI 适配器的详细信息的列表。 在以下示例中，没有只有一个 CAdapter 结构。 其关联的 WDI 适配器的句柄是 ffffc804af396000。
+运行不带参数的 **！ ndiskd wdiadapter**扩展，以查看所有 CAdapter 对象的列表以及其每个 WDI 适配器的详细信息。 在下面的示例中，只有一个 CAdapter 结构。 其关联的 WDI 适配器的句柄为 ffffc804af396000。
 
 ```console
 1: kd> !ndiskd.wdiadapter
@@ -108,7 +108,7 @@ MORE INFORMATION
     Power management                       Receive filtering
 ```
 
-现在，您可以在"电源管理"和"接收筛选"CAdapter 结构的说明，底部的链接上单击，也可以输入 **！ ndiskd.wdiadapter-处理**命令与 *-pm*或 *-rcvfilter*选项。 下面的示例显示了为输出 *-rcvfilter*选项。
+现在，你可以单击 CAdapter 结构说明底部的 "电源管理" 和 "接收筛选" 链接，或者可以输入包含 *-pm*或 *-rcvfilter*选项的 **！ ndiskd**命令。 下面的示例显示了 *-rcvfilter*选项的输出。
 
 ```console
 1: kd> !ndiskd.wdiadapter ffffc804af396000 -rcvfilter
@@ -134,22 +134,22 @@ RECEIVE FILTER
     Max lookahead split size               0
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
 [WDI 微型端口驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
-[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

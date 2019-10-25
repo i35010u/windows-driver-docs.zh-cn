@@ -3,21 +3,21 @@ title: 处理设备断电 IRP
 description: 处理设备断电 IRP
 ms.assetid: 2f4591d6-5bd0-45db-b02d-cf9dd59c3888
 keywords:
-- 设置 power Irp WDK 内核
-- 设备设置 power Irp WDK 的内核
+- 设置-power Irp WDK 内核
+- 设备设置电源 Irp WDK 内核
 - power Irp WDK 内核，设备更改
-- 电源关闭 Irp WDK 内核
+- 关闭 Irp WDK 内核
 - 上下文信息 WDK 电源管理
 - 关闭电源管理 WDK 内核
 - 关闭 power WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd5d33ad3429aa21260f2c3bfad0e06f63bafcb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad22502b48cb6b1f509cee8b32008794f9c60c1d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386888"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836587"
 ---
 # <a name="handling-device-power-down-irps"></a>处理设备断电 IRP
 
@@ -25,53 +25,53 @@ ms.locfileid: "67386888"
 
 
 
-设备电源关闭 IRP 指定次要函数代码[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)和设备电源状态 (**PowerDeviceD0**， **PowerDeviceD1**， **PowerDeviceD2**，或**PowerDeviceD3**) 即供电小于或等于当前的设备电源状态。 驱动程序必须处理电源关闭 IRP IRP 传输时下设备堆栈。 更高级别的驱动程序必须处理 IRP 之前较低级驱动程序。 具有要执行的特定于设备的任务的驱动程序应立即将 IRP 传递给下一个较低驱动程序。
+设备电源关闭 IRP 指定次要函数代码[**irp\_MN\_设置\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)和设备电源状态（**PowerDeviceD0**、 **PowerDeviceD1**、 **PowerDeviceD2**或**PowerDeviceD3**）。小于或等于当前设备电源状态。 当 IRP 向下移动设备堆栈时，驱动程序必须处理电源 IRP。 高层驱动程序必须在较低级别的驱动程序之前处理 IRP。 没有要执行的设备特定任务的驱动程序应立即将 IRP 传递到下一个较低版本的驱动程序。
 
-下图显示所涉及步骤中处理此类 IRP。
+下图显示了处理此类 IRP 所涉及的步骤。
 
-![说明处理设备电源关闭请求的关系图](images/devd3.png)
+![说明如何处理设备关机请求的关系图](images/devd3.png)
 
-如果指定了 IRP **PowerDeviceD3**，功能驱动程序通常应执行以下任务：
+如果 IRP 指定**PowerDeviceD3**，则函数驱动程序通常应执行以下任务：
 
--   调用[ **IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)，并传递当前 IRP，以确保该驱动程序不会接收即插即用[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求，而同时处理 IRP 的能力。
+-   调用[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)，传递当前 IRP，以确保驱动程序未收到 PnP [**IRP\_MN\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)在处理 power IRP 时删除\_设备请求。
 
-    如果**IoAcquireRemoveLock**返回失败状态，该驱动程序不应继续处理 IRP。 相反，从 Windows Vista 开始，驱动程序应调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)完成 IRP，然后返回失败状态。 在 Windows Server 2003、 Windows XP 和 Windows 2000 中，该驱动程序应调用**IoCompleteRequest**若要完成 IRP，然后调用[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)启动接下来 power IRP，，然后返回失败状态。
+    如果**IoAcquireRemoveLock**返回失败状态，驱动程序不应继续处理 IRP。 从 Windows Vista 开始，驱动程序应调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成 IRP，然后返回失败状态。 在 Windows Server 2003、Windows XP 和 Windows 2000 中，驱动程序应调用**IoCompleteRequest**来完成 IRP，然后调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)来启动下一个 power IRP，然后返回失败状态。
 
--   执行之前，必须完成删除设备电源，如关闭设备、 完成或刷新所有挂起的 I/O，禁用中断，任何特定于设备的任务[队列后续传入 Irp](queuing-i-o-requests-while-a-device-is-sleeping.md)，并保存设备从其还原或重新初始化设备上下文。
+-   执行在删除设备电源之前必须完成的任何特定于设备的任务，例如关闭设备、完成或刷新任何挂起的 i/o、禁用中断、将[后续传入的 irp 排队](queuing-i-o-requests-while-a-device-is-sleeping.md)以及将设备上下文保存到还原或重新初始化设备。
 
-    该驱动程序并不会导致长时间的延迟 （例如，用户可能会发现不合理的此类设备延迟） 时处理 IRP。
+    在处理 IRP 时，驱动程序不应导致长时间的延迟（例如，用户可能会在此类型的设备上发现不合理的延迟）。
 
-    该驱动程序应排队 I/O 的任何传入请求，直到设备返回到工作状态。
+    驱动程序应将任何传入的 i/o 请求排队，直到设备返回到工作状态。
 
--   可能是检查处的值**Parameters.Power.ShutdownType**。 如果系统处于活动状态，集 power IRP **ShutdownType**提供有关系统 IRP 的信息。 此值的详细信息，请参阅[系统电源操作](system-power-actions.md)。
+-   可能检查**ShutdownType**中的值。 如果系统设置-power IRP 处于活动状态，则**ShutdownType**会提供有关系统 IRP 的信息。 有关此值的详细信息，请参阅[系统电源操作](system-power-actions.md)。
 
-    休眠路径上的设备的驱动程序必须检查此值。 如果**ShutdownType**是**PowerActionHibernate**，驱动程序应保存将设备还原所需的任何上下文，但不是应关闭设备电源。
+    休眠路径上设备的驱动程序必须检查此值。 如果**ShutdownType**是**PowerActionHibernate**，则驱动程序应保存恢复设备所需的任何上下文，但不应关闭设备电源。
 
--   更改设备的物理电源状态，如果驱动程序能够执行此操作，则相应更改。
+-   如果驱动程序能够执行此操作，请更改设备的物理电源状态，如果更改适当，则更改。
 
--   调用[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)通知电源管理器的新设备电源状态。
+-   调用[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)以通知电源管理器新设备电源状态。
 
--   调用[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)设置下一步低驱动程序的堆栈位置。
+-   调用[**IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)设置下一个较低驱动程序的堆栈位置。
 
--   设置*IoCompletion*调用的例程[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp) ，该值指示该驱动程序已准备好处理 IRP 的下一个幂。 在 Windows 7 和 Windows Vista 不需要此步骤。
+-   设置调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)的*IoCompletion*例程，该例程指示驱动程序已准备好处理下一个电源 IRP。 在 Windows 7 和 Windows Vista 中，此步骤不是必需的。
 
--   调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) （在 Windows 7 和 Windows Vista） 或调用[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) （在 Windows Server 2003、 Windows XP 和 Windows2000) 以将 IRP 传递给下一个较低驱动程序。 必须将 IRP 传递到总线驱动程序，可以完成 IRP。
+-   调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) （在 windows 7 和 windows Vista 中）或调用[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) （在 Windows SERVER 2003、windows XP 和 windows 2000 中）以将 IRP 传递到下一个较低版本的驱动程序。 IRP 必须一直向下传递到完成 IRP 的总线驱动程序。
 
--   调用[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)释放以前获取的锁。
+-   调用[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)以释放以前获取的锁。
 
--   返回状态\_PENDING。
+-   返回状态\_挂起。
 
-驱动程序必须保存设备上下文的任何信息，并转发 IRP 之前设置新的电源状态。 上下文信息应包含，最小值，请求新的电源状态。 它还应包括驱动程序将需要电源后的任何其他信息。 IRP 已经完成并关闭该设备后，该驱动程序将无法再访问设备和设备上下文不可用。
+驱动程序必须保存任何设备上下文信息并在转发 IRP 之前设置新的电源状态。 上下文信息至少应包含请求的新电源状态。 它还应包含驱动程序在开机时需要的任何其他信息。 完成 IRP 并关闭设备后，驱动程序将无法再访问设备，并且设备上下文不可用。
 
-每个驱动程序必须将 IRP 传递给下一个较低驱动程序。 总线驱动程序将关闭 （如果有此） 的设备，当 IRP 到达总线驱动程序时，调用[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)通知电源管理器，并完成 IRP。
+每个驱动程序都必须将 IRP 传递到下一个较低版本的驱动程序。 当 IRP 达到总线驱动程序时，总线驱动程序会关闭设备（如果有此设备），调用[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)来通知电源管理器并完成 IRP。
 
-但是，如果总线驱动程序服务 （休眠设备），它应检查是否的值**ShutdownType**在 IRP 是 PowerSystemHibernate。 如果因此，总线驱动程序应调用**PoSetPowerState**报告 PowerDeviceD3 但不是应关闭设备电源。 保存休眠文件，以及系统的其余部分后，设备将会关闭。
+但是，如果总线驱动程序为休眠设备服务，则它应检查 IRP 中**ShutdownType**的值是否为 PowerSystemHibernate。 如果是这样，则总线驱动程序应调用**PoSetPowerState**来报告 PowerDeviceD3，但不应关闭设备电源。 在保存休眠文件以及系统的其余部分后，设备将关闭电源。
 
-别忘了向下其子设备功能，总线驱动程序可以选择关闭其总线还电源。 此类行为与设备相关。
+在所有子设备关闭后，总线驱动程序也可以选择关闭总线的总线。 此类行为取决于设备。
 
-如果 IRP 指定任何其他状态 （D0、 D1 或 D2），所需的驱动程序操作是依赖于设备的。 通常情况下，支持这些状态的设备可以快速返回到工作状态 I/O 请求到达时。 此类设备的驱动程序必须完成所有挂起的 I/O 请求、 对任何新请求进行排队和转发到下一步低驱动程序 IRP 之前保存所有必要的上下文。 当 IRP 到达总线驱动程序时，它在请求的状态设置硬件。 处于睡眠状态时，驱动程序无法访问设备。
+如果 IRP 指定任何其他状态（D0、D1 或 D2），则必需的驱动程序操作与设备相关。 通常，当 i/o 请求到达时，支持这些状态的设备可快速返回到工作状态。 此类设备的驱动程序必须完成任何挂起的 i/o 请求，将任何新请求排队，并在将 IRP 转发到下一个较低版本的驱动程序之前保存所有必要的上下文。 当 IRP 达到总线驱动程序时，它会将硬件设置为请求状态。 驱动程序无法在设备处于睡眠状态时对其进行访问。
 
-在某些情况下，函数或筛选器驱动程序可能会收到设备电源设备已处于 D0 状态时指定 PowerDeviceD0 IRP。 该驱动程序应处理此 IRP，像任何其他组 power IRP： 的挂起 I/O 请求完成，传入的 I/O 请求排队，设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程，并传递到下一步越低 IRP驱动程序。 驱动程序不得，但是，更改设备的硬件设置。 当总线驱动程序接收 IRP 时，它应只需完成 IRP。 IRP 完成后，函数和筛选器驱动程序可以处理任何排队的请求。 排队 I/O IRP 完成之前消除了发生较低的驱动程序尝试更改设备寄存器，而更高版本的驱动程序试图 I/O 的可能性。
+在某些情况下，如果设备已处于 D0 状态，则函数或筛选器驱动程序可能会接收到指定 PowerDeviceD0 的设备电源 IRP。 驱动程序应处理此 IRP，因为它将是任何其他设置-电源 IRP：完成挂起的 i/o 请求，排队传入 i/o 请求，设置[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，然后将 IRP 向下传递到下一个较低的驱动程序。 但是，驱动程序不能更改设备的硬件设置。 当总线驱动程序收到 IRP 后，只需完成 IRP 即可。 IRP 完成后，函数和筛选器驱动程序可以处理任何排队的请求。 直到 IRP 完成之后，才会将 i/o 排队，从而消除了驱动程序在更高程度上尝试 i/o 时尝试更改设备寄存器的任何可能性。
 
  
 

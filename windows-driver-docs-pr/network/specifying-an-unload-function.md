@@ -6,28 +6,28 @@ keywords:
 - Windows 筛选平台标注驱动程序 WDK，初始化
 - 标注驱动程序 WDK Windows 筛选平台，初始化
 - 初始化标注驱动程序 WDK Windows 筛选平台
-- WDM 基于标注驱动程序 WDK Windows 筛选平台
-- WDF 基于标注驱动程序 WDK Windows 筛选平台
+- 基于 WDM 的标注驱动程序 WDK Windows 筛选平台
+- 基于 WDF 的标注驱动程序 WDK Windows 筛选平台
 - 卸载函数 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95526a041a191e881ce82b40685550e687e3b111
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab42a478ead3b77a2fc49b295322877f51b97670
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374712"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841873"
 ---
 # <a name="specifying-an-unload-function"></a>指定卸载函数
 
 
-标注驱动程序必须提供卸载函数。 从系统中卸载标注驱动程序时，操作系统将调用此函数。 标注驱动程序的卸载函数必须保证标注驱动程序的标注的筛选器引擎从注销之前标注驱动程序是从系统内存中卸载。 如果它不提供卸载函数不能从系统中卸载标注驱动程序。
+标注驱动程序必须提供 unload 函数。 当从系统中卸载标注驱动程序时，操作系统将调用此函数。 标注驱动程序的 unload 函数必须保证在从系统内存中卸载标注驱动程序之前，标注驱动程序的标注已从筛选器引擎中取消注册。 如果标注驱动程序未提供 unload 函数，则无法从系统中卸载该驱动程序。
 
-标注驱动程序是如何指定卸载函数取决于是否标注驱动程序基于 Windows 驱动程序模型 (WDM) 或 Windows 驱动程序框架 (WDF)。
+标注驱动程序如何指定卸载函数取决于标注驱动程序是基于 Windows 驱动模型（WDM）还是 Windows 驱动程序框架（WDF）。
 
-### <a name="wdm-based-callout-drivers"></a>WDM 基于标注驱动程序
+### <a name="wdm-based-callout-drivers"></a>基于 WDM 的标注驱动程序
 
-如果标注驱动程序基于 WDM，它指定[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数，在其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 例如：
+如果标注驱动程序基于 WDM，则它会在其[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中指定[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数。 例如：
 
 ```C++
 VOID
@@ -50,9 +50,9 @@ NTSTATUS
 }
 ```
 
-### <a name="wdf-based-callout-drivers"></a>WDF 基于标注驱动程序
+### <a name="wdf-based-callout-drivers"></a>基于 WDF 的标注驱动程序
 
-如果为基础 WDF 标注驱动程序，它指定[ *EvtDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)函数，在其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 例如：
+如果标注驱动程序基于 WDF，则它会在其[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中指定[*EvtDriverUnload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)函数。 例如：
 
 ```C++
 VOID
@@ -97,7 +97,7 @@ NTSTATUS
 }
 ```
 
-有关如何实现标注驱动程序的卸载函数的信息，请参阅[卸载标注驱动程序](unloading-a-callout-driver.md)。
+有关如何实现注解驱动程序的 unload 功能的信息，请参阅[卸载标注驱动程序](unloading-a-callout-driver.md)。
 
  
 

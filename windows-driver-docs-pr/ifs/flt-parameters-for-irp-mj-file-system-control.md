@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_FILE_SYSTEM_CONTROL 联合
-description: 联合组件时使用 FLT MajorFunction 字段\_IO\_参数\_操作的块结构是 IRP\_MJ\_文件\_系统\_控件。
+title: FLT_PARAMETERS for IRP_MJ_FILE_SYSTEM_CONTROL union
+description: 在 FLT 的 MajorFunction 字段\_IO\_参数\_操作的块结构时使用的联合组件是 IRP\_MJ\_\_SYSTEM\_控件。
 ms.assetid: d90b9f23-9fae-46e8-b68c-1ba11b3fa17a
 keywords:
-- FLT_PARAMETERS IRP_MJ_FILE_SYSTEM_CONTROL 联合可安装文件系统驱动程序
-- FLT_PARAMETERS 联合可安装文件系统驱动程序
-- PFLT_PARAMETERS 联合指针可安装文件系统驱动程序
+- FLT_PARAMETERS for IRP_MJ_FILE_SYSTEM_CONTROL union 可安装的文件系统驱动程序
+- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc5a94d870d3ae5e12891bcc8689c0166035bbb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 45c677b8b3f6899f54b3258b808681f6ac69a64f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380349"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841395"
 ---
-# <a name="fltparameters-for-irpmjfilesystemcontrol-union"></a>FLT\_IRP 的参数\_MJ\_文件\_系统\_控件联合
+# <a name="flt_parameters-for-irp_mj_file_system_control-union"></a>用于 IRP\_MJ\_文件\_系统\_控制联合的 FLT\_参数
 
 
-联合组件时使用**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构操作已[ **IRP\_MJ\_文件\_系统\_控制**](irp-mj-file-system-control.md)。
+在 FLT 的**MajorFunction**字段[ **\_IO\_参数\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作的块结构时使用的联合组件是[**IRP\_MJ\_\_SYSTEM\_控件**](irp-mj-file-system-control.md)。
 
 <a name="syntax"></a>语法
 ------
@@ -75,67 +75,67 @@ typedef union _FLT_PARAMETERS {
 -------
 
 **FileSystemControl**  
-结构，它包含以下成员。
+包含以下成员的结构。
 
 **VerifyVolume**  
-联合组件用于 IRP\_MN\_验证\_批量操作。
+用于 IRP\_MN 的联合组件\_验证\_批量操作。
 
 **Vpb**  
-要验证的卷的卷参数块 (VPB) 的指针。
+指向要验证的卷的卷参数块（VPB）的指针。
 
 **DeviceObject**  
-指向要验证的卷的设备对象指针。
+一个指针，指向要验证的卷的设备对象。
 
-**Common**  
-联合的组件的所有缓冲的方法用于 IRP\_MN\_内核\_调用和 IRP\_MN\_用户\_FS\_请求操作。
+**常见问题解答**  
+用于 IRP 的所有缓冲方法的联合组件\_MN\_内核\_调用并使用 IRP\_MN\_用户\_FS\_请求操作。
 
 **OutputBufferLength**  
-缓冲区的长度，以字节为单位，该**Neither.OutputBuffer**或**Direct.OutputBuffer**成员指向。
+**OutputBuffer**或**OutputBuffer**成员指向的缓冲区的长度（以字节为单位）。
 
 **InputBufferLength**  
-缓冲区的长度，以字节为单位，该**Neither.InputBuffer**， **Buffered.SystemBuffer**，或**Direct.InputSystemBuffer**成员指向。
+**InputBuffer**、 **SystemBuffer**或**InputSystemBuffer**成员指向的缓冲区的长度（以字节为单位）。
 
 **FsControlCode**  
-要传递到文件系统、 文件系统筛选器或微筛选器驱动程序为目标设备的 FSCTL 函数代码。
+要传递给目标设备的文件系统、文件系统筛选器或微筛选器驱动程序的 FSCTL 函数代码。
 
-IOCTL 和 FSCTL 请求有关的详细信息，请参阅[使用的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)中*内核模式体系结构指南*和"设备输入和输出控制代码"Microsoft Windows SDK 中文档。 （此资源可能不会在某些语言和国家/地区中可用。）
+有关 IOCTL 和 FSCTL 请求的详细信息，请参阅在 Microsoft Windows SDK 文档中使用*内核模式体系结构指南*中的[i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)和 "设备输入和输出控制代码"。 （此资源可能在某些语言和国家/地区不可用。）
 
-**既不**  
-联合组件用于 IRP\_MN\_内核\_调用和 IRP\_MN\_用户\_FS\_请求操作的缓冲方法方法时\_NEITHER. 缓冲方法的详细信息，请参阅[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)中*内核模式体系结构指南*。 （此资源可能不会在某些语言和国家/地区中可用。）
+**但**  
+用于 IRP\_MN\_内核\_调用并使用 IRP\_MN\_用户\_FS 的联合组件\_在缓存方法为方法\_时请求操作。 有关缓冲方法的详细信息，请参阅在*内核模式体系结构指南*中[定义 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。 （此资源可能在某些语言和国家/地区不可用。）
 
 **InputBuffer**  
-输入缓冲区的操作的原始请求者提供的用户模式虚拟地址。 I/O 管理器和筛选器管理器不会验证这些地址。 若要确保用户空间地址都有效，微筛选器必须使用例程，例如[ **ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)， [ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)，和[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)，封闭中的所有缓冲区引用**试用 / 除外**块。 有关详细信息，请参阅[使用既不缓冲 Nor 直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)并[引用用户空间地址中的错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-referencing-user-space-addresses)中*内核模式体系结构指南*。 （此资源可能不会在某些语言和国家/地区中可用。）
+输入缓冲区的用户模式虚拟地址，该地址提供了操作的原始请求者。 I/o 管理器和筛选器管理器不会验证这些地址。 若要确保用户空间地址有效，微筛选器必须使用[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)、 [**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)和[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)等例程，并将所有缓冲区引用包含在**try/except**块中。 有关详细信息，请参阅*内核模式体系结构指南*中的在[引用用户空间地址](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-referencing-user-space-addresses)中[使用缓冲和直接 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)和错误。 （此资源可能在某些语言和国家/地区不可用。）
 
 **OutputBuffer**  
-输出缓冲区的操作的原始请求者提供的用户模式虚拟地址。 I/O 管理器和筛选器管理器不会验证这些地址。 若要确保用户空间地址都有效，微筛选器必须使用例程，例如[ **ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)， [ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)，和[ **MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)，封闭中的所有缓冲区引用**试用 / 除外**块。 有关详细信息，请参阅[使用既不缓冲 Nor 直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)并[引用用户空间地址中的错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-referencing-user-space-addresses)中*内核模式体系结构指南*。 （此资源可能不会在某些语言和国家/地区中可用。）
+所提供操作的原始请求者的输出缓冲区的用户模式虚拟地址。 I/o 管理器和筛选器管理器不会验证这些地址。 若要确保用户空间地址有效，微筛选器必须使用[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)、 [**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)和[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)等例程，并将所有缓冲区引用包含在**try/except**块中。 有关详细信息，请参阅*内核模式体系结构指南*中的在[引用用户空间地址](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-referencing-user-space-addresses)中[使用缓冲和直接 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)和错误。 （此资源可能在某些语言和国家/地区不可用。）
 
 **OutputMdlAddress**  
-描述缓冲区的内存描述符列表 (MDL) 的地址， **Neither.OutputBuffer**成员指向。 此成员是可选的可以是**NULL**。
+描述**两个 OutputBuffer**成员指向的缓冲区的内存描述符列表（MDL）的地址。 此成员是可选的，并且可以为**NULL**。
 
-**缓冲**  
-联合组件用于 IRP\_MN\_内核\_调用和 IRP\_MN\_用户\_FS\_请求操作的缓冲方法方法时\_缓冲处理。 缓冲方法的详细信息，请参阅[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)中*内核模式体系结构指南*。 （此资源可能不会在某些语言和国家/地区中可用。）
+**缓冲区**  
+用于 IRP\_MN 的联合组件\_内核\_调用，并在缓冲方法\_缓存方法时 IRP\_MN\_请求操作。 有关缓冲方法的详细信息，请参阅在*内核模式体系结构指南*中[定义 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。 （此资源可能在某些语言和国家/地区不可用。）
 
 **SystemBuffer**  
-该操作所系统分配的缓冲区的地址。 在方法中\_缓冲 I/O，该缓冲区用于同时输入和输出。 有关详细信息，请参阅[方法的访问数据缓冲区](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)中*内核模式体系结构指南*。 （此资源可能不会在某些语言和国家/地区中可用。）
+操作的系统分配的缓冲区的地址。 在\_缓冲 i/o 的方法中，此缓冲区用于输入和输出。 有关详细信息，请参阅*内核模式体系结构指南*中的[访问数据缓冲区的方法](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)。 （此资源可能在某些语言和国家/地区不可用。）
 
-**Direct**  
-联合组件用于 IRP\_MN\_内核\_调用和 IRP\_MN\_用户\_FS\_请求操作的缓冲方法方法时\_中\_直接或方法\_出\_直接。 缓冲方法的详细信息，请参阅[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)中*内核模式体系结构指南*。
+**直**  
+用于 IRP\_MN 的联合组件\_内核\_调用和 IRP\_MN\_用户\_FS\_直接或方法\_中的方法\_时\_请求操作OUT\_DIRECT。 有关缓冲方法的详细信息，请参阅在*内核模式体系结构指南*中[定义 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
 
 **InputSystemBuffer**  
-该操作的输入缓冲区的地址。 此缓冲区已被锁定操作系统，以便安全地从内核模式下访问。 有关详细信息，请参阅[方法的访问数据缓冲区](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)中*内核模式体系结构指南*。 （此资源可能不会在某些语言和国家/地区中可用。）
+操作的输入缓冲区的地址。 此缓冲区已被操作系统锁定，以便可以安全地从内核模式进行访问。 有关详细信息，请参阅*内核模式体系结构指南*中的[访问数据缓冲区的方法](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)。 （此资源可能在某些语言和国家/地区不可用。）
 
 **OutputBuffer**  
-输出缓冲区的操作的原始请求者提供的用户模式虚拟地址。 在直接 I/O，方法与\_既不 I/O 操作系统锁定此缓冲区，这样就可以安全地从内核模式下访问，只要微筛选器是在原始请求方的 I/O 操作在同一进程上下文中。 (否则它必须调用[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)到从 MDL 获取系统地址**OutputMdlAddress**成员指向。)有关详细信息，请参阅[使用直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o)并[直接 I/O 中的错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-direct-i-o)中*内核模式体系结构指南*。 （此资源可能不会在某些语言和国家/地区中可用。）
+所提供操作的原始请求者的输出缓冲区的用户模式虚拟地址。 在直接 i/o 中，与方法\_i/o 不同时，操作系统会锁定此缓冲区，以便可以安全地从内核模式进行访问，只要微筛选器与 i/o 操作的原始请求者处于相同的进程上下文中即可。 （否则它必须调用[**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) ，以从**OutputMdlAddress**成员指向的 MDL 获取系统地址。）有关详细信息，请参阅*内核模式体系结构指南*中的[直接 I/o 中](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-direct-i-o)的[使用直接 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o)和错误。 （此资源可能在某些语言和国家/地区不可用。）
 
 **OutputMdlAddress**  
-描述缓冲区 MDL 地址的**Direct.OutputBuffer**成员指向。 此成员是必需的不能**NULL**。
+描述**OutputBuffer**成员指向的缓冲区的 MDL 地址。 此成员是必需的，不能为**NULL**。
 
 <a name="remarks"></a>备注
 -------
 
-[ **FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构[ **IRP\_MJ\_文件\_系统\_控件** ](irp-mj-file-system-control.md)操作包含回调数据所表示的文件系统控制信息操作的参数 ([**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 包含在[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
+[**IRP\_MJ\_文件\_系统\_控制**](irp-mj-file-system-control.md)操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含回调数据表示的文件系统控制信息操作的参数（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构。 它包含在[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
 
-IRP\_MJ\_文件\_系统\_控件是一个基于 IRP 的操作。
+IRP\_MJ\_文件\_系统\_控件是基于 IRP 的操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -147,44 +147,44 @@ IRP\_MJ\_文件\_系统\_控件是一个基于 IRP 的操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Fltkernel （包括 Fltkernel）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT\_\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT\_\_FS\_筛选器\_操作**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT\_\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)
+[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)
 
-[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)
+[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)
 
-[**IoVerifyVolume**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ioverifyvolume)
+[**IoVerifyVolume**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ioverifyvolume)
 
 [**IRP\_MJ\_文件\_系统\_控件**](irp-mj-file-system-control.md)
 
 [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)
 
-[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)
+[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)
 
-[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)
+[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)
 
-[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)
+[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

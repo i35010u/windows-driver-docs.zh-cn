@@ -12,29 +12,29 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e91b59085f7dc4ef196e98983a9625ebcba91f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca7a088ebcade4b4211e39b8dd349bbf36c5cfc4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384822"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841171"
 ---
-# <a name="irpmjpnp"></a>IRP\_MJ\_PNP
+# <a name="irp_mj_pnp"></a>IRP\_MJ\_PNP
 
 
 ## <a name="when-sent"></a>发送时间
 
 
-插 Manager 发送 IRP\_MJ\_每当插活动发生在系统上的即插即用请求。 其他操作系统组件，以及其他内核模式驱动程序，还可以发送某些 IRP\_MJ\_即插即用的请求，具体取决于次要函数代码。
+每当系统上发生即插即用活动时，即插即用管理器都将 IRP\_MJ\_PNP 请求发送。 其他操作系统组件以及其他内核模式驱动程序还可以将某些 IRP\_MJ 发送\_PNP 请求，具体取决于次要函数代码。
 
-驱动程序的即插即用和播放 IRP 处理要求的详细信息，请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
+有关即插即用的对驱动程序的 IRP 处理要求的详细信息，请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
 
-有关参考信息 IRP\_MJ\_PNP 次要函数代码，请参阅[即插即用和播放次要 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)。
+有关 IRP\_MJ\_PNP 次要函数代码的参考信息，请参阅[即插即用次要 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
 
-文件系统应检查次要函数代码，以确定请求的操作。 文件系统必须处理以下次要函数代码：
+文件系统应检查次要函数代码以确定请求的操作。 文件系统必须处理以下次要函数代码：
 
 <table>
 <colgroup>
@@ -50,23 +50,23 @@ ms.locfileid: "67384822"
 <tbody>
 <tr class="odd">
 <td align="left"><p>IRP_MN_CANCEL_REMOVE_DEVICE</p></td>
-<td align="left"><p>指示以前的查询删除设备请求已取消。 此请求发送警报的文件系统，以防它需要执行任何取消操作相关的清理。</p></td>
+<td align="left"><p>指示之前的查询删除设备请求已取消。 如果需要执行任何与取消相关的清理操作，则发送此请求以提醒文件系统。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_QUERY_REMOVE_DEVICE</p></td>
-<td align="left"><p>指示要删除设备。 如果在设备上装载文件系统后，即插即用管理器将此请求发送到文件系统和任何文件系统筛选器。 如果有打开的句柄到设备，文件系统通常会失败的查询删除请求。 如果不是，文件系统通常锁定以防止将来的卷创建成功的请求。 如果已装载的文件系统不支持查询和删除请求，即插即用管理器进行故障设备的查询删除请求。</p></td>
+<td align="left"><p>指示将删除设备。 如果文件系统已装载到设备上，则 PnP 管理器会将此请求发送到文件系统和任何文件系统筛选器。 如果设备有打开的句柄，则文件系统通常无法通过查询-删除请求。 如果不是，则文件系统通常会锁定卷，以防以后创建请求成功。 如果已装载的文件系统不支持查询删除请求，则 PnP 管理器将无法对设备执行查询删除请求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_REMOVE_DEVICE</p></td>
-<td align="left"><p>指示要删除设备。 如果在设备上装载文件系统后，即插即用管理器将发送此 IRP 到文件系统和任何文件系统筛选器。 文件系统应立即将此 IRP 传递给设备，设置文件系统然后卸除卷完成例程的存储驱动程序。</p></td>
+<td align="left"><p>指示将删除设备。 如果文件系统已装载到设备上，则 PnP 管理器会将此 IRP 发送到文件系统和任何文件系统筛选器。 文件系统应立即将此 IRP 传递到设备的存储驱动程序，设置一个完成例程，然后文件系统将在其中卸载卷。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_START_DEVICE</p></td>
-<td align="left"><p>指示正在启动设备。 文件系统应将此 IRP 传递给设备的存储驱动程序。</p></td>
+<td align="left"><p>指示设备正在启动。 文件系统应将此 IRP 传递到设备的存储驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_SURPRISE_REMOVAL</p></td>
-<td align="left"><p>指示设备已删除。 如果在设备上已装载文件系统，即插即用管理器将发送此 IRP 到文件系统和任何文件系统筛选器。 文件系统应立即将此 IRP 传递给设备，设置文件系统然后卸除卷完成例程的存储驱动程序。</p></td>
+<td align="left"><p>指示已删除设备。 如果文件系统已装载到设备上，则 PnP 管理器会将此 IRP 发送到文件系统和任何文件系统筛选器。 文件系统应立即将此 IRP 传递到设备的存储驱动程序，设置一个完成例程，然后文件系统将在其中卸载卷。</p></td>
 </tr>
 </tbody>
 </table>
@@ -76,39 +76,39 @@ ms.locfileid: "67384822"
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
 
-文件系统筛选器驱动程序应处理 PnP Irp，按照以下原则：
+文件系统筛选器驱动程序应根据以下指导原则处理 PnP Irp：
 
--   当卷要适当地删除用户时，即插即用管理器将发送 IRP\_MN\_查询\_删除\_设备的请求。 在接收到此 IRP，筛选器必须关闭卷上所有打开的句柄并传递到下一步低驱动程序 IRP 堆栈上。 这一点非常重要。 如果该驱动程序无法关闭所有打开的句柄，这样可以防止中卸除，这反过来会阻止物理设备正在弹出的卷。
+-   当用户要正常删除卷时，PnP 管理器会发送 IRP\_MN\_查询\_删除\_设备请求。 接收到此 IRP 后，筛选器必须关闭卷上的所有打开的句柄，然后将 IRP 向下传递到堆栈上的下一个较低版本的驱动程序。 这一点非常重要。 如果驱动程序无法关闭所有打开的句柄，这会阻止卸载卷，进而阻止物理设备被弹出。
 
-    &gt; \[!请注意\]&gt;在接收 IRP\_MN\_查询\_删除\_设备请求，FAT 文件系统就会立即卸载它可以安全地删除的所有卷。 因此附加到 FAT 卷的任何筛选器应调用的筛选器完成例程之前，将释放其筛选设备对象。 NTFS 文件系统不会执行此操作。 因此筛选器附加到 NTFS 卷可能会将调用筛选器完成例程时，其设备对象仍将附加到该卷。
+    &gt; \[！请注意\] &gt; 接收 IRP\_MN\_查询\_删除\_设备请求，FAT 文件系统会立即卸载可以安全删除的所有卷。 因此，附加到 FAT 卷的任何筛选器都应该在调用筛选器的完成例程之前释放其筛选器设备对象。 NTFS 文件系统不会执行此操作。 因此，附加到 NTFS 卷的筛选器会预计在调用筛选器的完成例程时，其设备对象仍将附加到该卷。
 
      
 
--   IRP 后未收到的 Irp\_MN\_查询\_删除\_设备请求，但之前 IRP\_MN\_取消\_删除\_设备或 IRP\_MN\_删除\_或设备请求收到，可以安全地传递堆栈 （以存储设备堆栈的失败） 或取消按钮删除之前保留在队列中收到删除设备的请求。
+-   Irp\_MN\_QUERY 后收到的 Irp\_删除\_设备请求，但在 IRP\_MN 之前\_取消\_删除\_设备或 IRP\_MN\_删除 @no__接收到 t_10_ 设备请求，可以安全地向下传递堆栈（以由存储设备堆栈失败），也可以保留在队列中，直到接收到取消删除或删除设备请求。
 
--   如果筛选器接收 IRP\_MN\_取消\_删除\_设备请求后它已关闭所有打开的句柄，以响应 IRP 卷\_MN\_查询\_删除\_设备请求，它可以重新打开句柄。 但是，筛选器可以仅执行此操作在其完成例程中，通过它下面堆栈中的驱动程序已成功完成 IRP 后。
+-   如果筛选器收到 IRP\_MN\_"取消"\_\_删除该卷的所有打开句柄，以响应 IRP\_MN\_查询\_删除\_设备请求，它可以重新打开句柄。 但是，在完成 IRP 后，筛选器可以在其完成例程中完成此操作。
 
--   当筛选器收到 IRP\_MN\_删除\_设备请求，它通常不需要执行任何处理 IRP，除非它具有已持有 Irp 队列中接收 IRP 以来\_MN\_查询\_删除\_设备的请求。 如果它在队列中持有 Irp，筛选器必须取消排队所有卷的 Irp 和&lt;我&gt;失败&lt;/i&gt;它们之前将向下一步低驱动程序 IRP 传递到堆栈上。
+-   当某个筛选器接收到 IRP\_MN\_删除\_设备请求时，它通常不需要对 IRP 执行任何处理，除非在接收 IRP\_MN\_查询后，该请求在队列中持有了 Irp\_删除\_设备请求。 如果它在队列中持有 Irp，筛选器必须取消对该卷的所有 Irp 的排队，&lt;并在将 IRP 向下传递到堆栈上的下一个较低版本的驱动程序之前&gt;失败&lt;/i&gt; 它们。
 
--   在接收 IRP\_MN\_惊讶\_删除请求，该筛选器应执行以下操作：
+-   收到 IRP\_MN\_意外\_删除请求，筛选器应执行以下操作：
 
-    -   关闭所有打开的句柄到卷，因为文件系统无法清理堆栈，直到没有任何未完成的引用。
+    -   关闭卷的所有打开的句柄，因为文件系统无法清理堆栈，直到没有未完成的引用。
 
-    -   如果筛选器在队列中持有 Irp，它可以对其进行故障，或将其传递堆栈 （用于存储设备堆栈的失败）。
+    -   如果筛选器在队列中持有 Irp，则它可能会失败或将其沿堆栈向下传递（由存储设备堆栈失败）。
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置中处理插请求中设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。 （IRP 显示为*irp*。）驱动程序可以使用 IRP 的下列成员中设置的信息，并使用 IRP 堆栈位置来处理即插即用请求：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
-指向目标设备对象指针。
+指向目标设备对象的指针。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。
+指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
-此指针应**NULL** PnP Irp 的。
+对于 PnP Irp，此指针应为**NULL** 。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 指定 IRP\_MJ\_PNP。
@@ -116,34 +116,34 @@ ms.locfileid: "67384822"
 <a href="" id="irpsp--minorfunction"></a>*IrpSp-&gt;MinorFunction*  
 下列情况之一：
 
--   IRP\_MN\_CANCEL\_REMOVE\_DEVICE
+-   IRP\_MN\_取消\_删除\_设备
 -   IRP\_MN\_查询\_删除\_设备
--   IRP\_MN\_REMOVE\_DEVICE
--   IRP\_MN\_START\_DEVICE
--   IRP\_MN\_SURPRISE\_REMOVAL
+-   IRP\_MN\_删除\_设备
+-   IRP\_MN\_启动\_设备
+-   IRP\_MN\_意外\_删除
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_PNP （WDK 内核参考）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)
+[**IRP\_MJ\_PNP （WDK 内核引用）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)
 
-[**IRP\_MN\_CANCEL\_REMOVE\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)
+[**IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)
 
 [**IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)
 
-[**IRP\_MN\_REMOVE\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)
+[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)
 
-[**IRP\_MN\_START\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)
+[**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)
 
-[**IRP\_MN\_SURPRISE\_REMOVAL**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)
+[**IRP\_MN\_意外\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)
 
  
 

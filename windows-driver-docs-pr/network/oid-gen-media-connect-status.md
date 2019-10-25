@@ -1,21 +1,21 @@
 ---
 title: OID_GEN_MEDIA_CONNECT_STATUS
-description: 为查询，OID_GEN_MEDIA_CONNECT_STATUS OID 请求在网络上的 NIC 的连接状态。
+description: 作为查询，OID_GEN_MEDIA_CONNECT_STATUS OID 请求网络上 NIC 的连接状态。
 ms.assetid: 3ed26e62-a285-4b78-91c6-7c3cc0963570
 ms.date: 08/08/2017
-keywords: -OID_GEN_MEDIA_CONNECT_STATUS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_CONNECT_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 991e796be503fc0acff52df400c9819dcfbcd805
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 417fed779300e0c485d2487f9ca220d130d06e9c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369037"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834158"
 ---
-# <a name="oidgenmediaconnectstatus"></a>OID\_GEN\_媒体\_CONNECT\_状态
+# <a name="oid_gen_media_connect_status"></a>OID\_代\_介质\_连接\_状态
 
 
-为查询，OID\_GEN\_媒体\_CONNECT\_状态 OID 请求在网络上的 NIC 的连接状态。
+作为查询，OID\_代\_媒体\_连接\_状态 OID 请求网络上 NIC 的连接状态。
 
 **版本信息**
 
@@ -26,26 +26,26 @@ ms.locfileid: "67369037"
 未请求。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。
+必需.
 
 <a href="" id="windows-xp"></a>Windows XP  
 支持。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。
+必需.
 
 <a name="remarks"></a>备注
 -------
 
-NDIS NDIS 6.0 和更高版本的微型端口驱动程序处理此 OID。
+NDIS 处理 NDIS 6.0 和更高版本的小型小型驱动程序的此 OID。
 
-OID\_GEN\_媒体\_CONNECT\_状态 OID 请求在网络上的 NIC 的连接状态作为系统定义的以下值之一：
+OID\_GEN\_媒体\_连接\_状态 OID 请求网络上 NIC 的连接状态，这是以下系统定义的值之一：
 
 **NdisMediaStateConnected**
 
 **NdisMediaStateDisconnected**
 
-当微型端口驱动程序检测到的网络连接已丢失时，它还必须调用[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)或[ **NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)函数使用 NDIS\_状态\_媒体\_（适用于 NDIS 5.1) 断开连接或 NDIS\_状态\_链接\_具有状态**MediaConnectStateDisconnected** MediaConnectState 属性中 (ndis 6.x)。 当恢复连接时，然后必须调用**NdisM (Co) IndicateStatus**使用 NDIS\_状态\_媒体\_（适用于 NDIS 5.1) 连接或 NDIS\_状态\_链接\_具有状态**MediaConnectStateConnected** MediaConnectState 属性中 (ndis 6.x)。
+当微型端口驱动程序检测到网络连接已丢失时，它还必须使用 NDIS\_状态调用[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)或[**NDISMCOINDICATESTATUSEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)函数\_MEDIA\_DISCONNECT （对于 NDIS 5.1）或 ndis**在 MediaConnectState 属性中\_** 状态\_链接\_状态（对于 NDIS 1.x）。 在恢复连接时，它必须先调用**NdisM （Co） IndicateStatus** ，并将 NDIS\_状态\_MEDIA\_CONNECT （对于 NDIS 5.1）或 NDIS\_状态\_链接\_状态与**MediaConnectStateConnected**在 MediaConnectState 属性中（对于 NDIS 1.x）。
 
 <a name="requirements"></a>要求
 ------------
@@ -57,18 +57,18 @@ OID\_GEN\_媒体\_CONNECT\_状态 OID 请求在网络上的 NIC 的连接状态�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)
+[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)
 
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

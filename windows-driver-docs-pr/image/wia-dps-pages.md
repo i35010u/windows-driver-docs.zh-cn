@@ -1,9 +1,9 @@
 ---
-title: WIA\_DPS\_PAGES
-description: WIA\_DPS\_页属性包含要获取自动文档送纸器中的页的数目。
+title: WIA\_DPS\_页
+description: WIA\_DPS\_PAGES 属性包含要从自动文档送纸器中获取的当前页数。
 ms.assetid: 51ab2eab-c7b4-4d54-bfc7-d53a8f66c7a9
 keywords:
-- WIA_DPS_PAGES 成像设备
+- WIA_DPS_PAGES 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +14,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca82950a5afba115b24f8e802186950a237367b1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c456ebb34f89c3f12f4dd4a981e6ebfda733a4f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383772"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840715"
 ---
-# <a name="wiadpspages"></a>WIA\_DPS\_PAGES
+# <a name="wia_dps_pages"></a>WIA\_DPS\_页
 
 
-WIA\_DPS\_页属性包含要获取自动文档送纸器中的页的数目。
+WIA\_DPS\_PAGES 属性包含要从自动文档送纸器中获取的当前页数。
 
 ## <span id="ddk_wia_dps_pages_si"></span><span id="DDK_WIA_DPS_PAGES_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT\_I4
 
-有效值：WIA\_PROP\_范围 (从 0 到扫描仪可以扫描; 设置为零的最大页数\[0\]连续扫描。)
+有效值： WIA\_的\_范围（从零到扫描程序可扫描的最大页数）; 设置为零，\[0\] 持续扫描。）
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_DPS\_页属性来确定文档送纸器页容量。 应用程序还将此属性设置为它要扫描的页数。 WIA 微型驱动程序创建和维护 WIA\_DPS\_页。
+应用程序将读取 WIA\_DPS\_PAGES 属性以确定文档送纸器的页容量。 应用程序还会将此属性设置为要扫描的页数。 WIA 微型驱动程序创建并维护 WIA\_DPS\_页面。
 
-下表描述了常量，它是有效使用 WIA\_DPS\_页属性。
+下表描述了对 WIA\_DPS\_PAGES 属性的有效常量。
 
 <table>
 <colgroup>
@@ -49,24 +49,24 @@ WIA\_DPS\_页属性包含要获取自动文档送纸器中的页的数目。
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>Value</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>ALL_PAGES</p></td>
-<td><p>与将 WIA_PROP_RANGE 设置为零 (0) 相同。 所有页面。 没有更多文档送入 ADF 之前一直扫描。</p></td>
+<td><p>与将 WIA_PROP_RANGE 设置为零（0）相同。 所有页。 连续扫描，直到不能将更多文档送入 ADF。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  如果启用了双工模式 (即[ **WIA\_DPS\_文档\_处理\_选择**](wia-dps-document-handling-select.md)属性设置为送纸器 |双工），WIA\_DPS\_页是否仍等于要扫描的页数。
-一张纸将自动包含两个页面如果启用双工，则即使该页的后端为空。
+**请注意**   如果启用了双工模式（即， [**WIA\_DPS\_文档\_处理\_选择**](wia-dps-document-handling-select.md)属性设置为 "进纸器 |双工），WIA\_DPS\_页面仍等于要扫描的页数。
+如果启用了双工，则即使页面的背面为空白，一张纸也会自动包含两页。
 
-如果设置 WIA\_DPS\_页为 1，扫描程序将处理页面的方面之一。 如果扫描程序不能扫描的页中双工模式仅一侧，则应更改 WIA\_DPS\_页值**Inc**的成员[ **WIA\_属性\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)为 2 的结构。 此值向发出信号，该应用程序，它必须请求中的两个序列图的页面。 如果 WIA\_DPS\_页为零，则扫描程序将扫描*所有*当前加载到文档送纸器的页。
+如果将 WIA\_DPS\_页面设置为1，则扫描程序将处理页面的一方。 如果扫描程序在处于双工模式时无法只扫描页面的一侧，则应将[**wia\_属性\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)结构的**inc.** 的 "\_wia\_页" 值更改为 "2"。 此值向应用程序发出信号，指示该应用程序必须请求两个中的两个页面。 如果 WIA\_DPS\_页为零，则扫描程序将扫描当前加载到文档送纸器中的*所有*页面。
 
  
 
@@ -80,24 +80,24 @@ WIA\_DPS\_页属性包含要获取自动文档送纸器中的页的数目。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 及更高版本，使用相同的 WIA_IPS_PAGES 属性。</p></td>
+<td><p>版本</p></td>
+<td><p>适用于 Microsoft Windows XP。 对于 Windows Vista 和更高版本，请使用完全相同的 WIA_IPS_PAGES 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef （包括 Wiadef）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**WIA\_DPS\_文档\_处理\_选择**](wia-dps-document-handling-select.md)
+[**WIA\_DPS\_文档\_处理\_SELECT**](wia-dps-document-handling-select.md)
 
-[**WIA\_IPS\_PAGES**](wia-ips-pages.md)
+[**WIA\_IP\_页**](wia-ips-pages.md)
 
-[**WIA\_属性\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
+[**WIA\_属性\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)
 
  
 

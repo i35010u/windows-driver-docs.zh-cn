@@ -4,12 +4,12 @@ description: 添加图像格式支持
 ms.assetid: 1ffa7c0d-23ec-402a-a0b5-fb5596a851bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cb2a158955cf46959f3efbfb81694938309c41
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58e9caa0c81040165bf8d948c1023cacac0a993a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840913"
 ---
 # <a name="adding-image-format-support"></a>添加图像格式支持
 
@@ -17,21 +17,21 @@ ms.locfileid: "67375939"
 
 
 
-WIA 微型驱动程序报告给 WIA 服务中的图像格式[ **IWiaMiniDrv::drvGetWiaFormatInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)方法。
+WIA 微型驱动程序在[**IWiaMiniDrv：:D rvgetwiaformatinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)方法中报告 wia 服务的图像格式。
 
-### <a href="" id="implementing-iwiaminidrv-drvgetwiaformatinfo"></a>实现 IWiaMiniDrv::drvGetWiaFormatInfo
+### <a href="" id="implementing-iwiaminidrv-drvgetwiaformatinfo"></a>实现 IWiaMiniDrv：:d rvGetWiaFormatInfo
 
-WIA 服务调用**IWiaMiniDrv::drvGetWiaFormatInfo**方法来获取的 WIA 设备支持 TYMED 和格式对。
+WIA 服务调用**IWiaMiniDrv：:D rvgetwiaformatinfo**方法，以获取 WIA 设备支持的 TYMED 和格式对。
 
-WIA 驱动程序应分配内存 （以将存储在此 WIA 驱动程序，并释放此 WIA 驱动程序） 包含一个数组 WIA\_格式\_信息结构 （Microsoft Windows SDK 文档中所述）。 指向 WIA 驱动程序分配内存的指针应传递给*ppwfi*。 这不是直接，但使用指向指针的指针。 在以下示例中， *ppwfi* m 的地址设置\_WIAFormatInfo\[0\]，这反过来计算结果为地址结构的第一个成员。
+WIA 驱动程序应分配内存（存储在此 WIA 驱动程序中并通过此 WIA 驱动程序释放），以包含一组 WIA\_格式\_信息结构（如 Microsoft Windows SDK 文档中所述）。 指向 WIA 驱动程序分配的内存的指针应传递给*ppwfi*。 这不是直接执行的，而是使用指向指针的指针。 在下面的示例中， *ppwfi*的地址设置为 m\_WIAFormatInfo\[0\]，后者反过来计算为结构的第一个成员的地址。
 
-请务必注意 WIA 服务不会释放此内存。 它负责 WIA 驱动程序来管理此分配的内存。
+需要注意的是，WIA 服务无法释放此内存。 WIA 驱动程序负责管理此已分配的内存。
 
-WIA 驱动程序应写入到的内存位置中分配的结构数*pcelt*参数所指向。
+WIA 驱动程序应写入*pcelt*参数指向的内存位置中分配的结构数。
 
-WIA 设备应设置**guidFormatID** WIA 的成员\_格式\_信息结构与图像格式的 GUID。 设备应设置**lTymed**图像格式的 GUID 与关联到 TYMED 值此结构的成员：
+WIA 设备应将 WIA\_格式\_INFO 结构的**guidFormatID**成员设置为图像格式 GUID。 设备应将此结构的**lTymed**成员设置为与图像格式 GUID 关联的 TYMED 值：
 
-有效值 TYMED （也称为"媒体类型"） 为：
+有效的 TYMED 值（也称为 "媒体类型"）包括：
 
 TYMED\_文件
 
@@ -41,7 +41,7 @@ TYMED\_回调
 
 TYMED\_多页\_回调
 
-下面的示例演示的实现[ **IWiaMiniDrv::drvGetWiaFormatInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo):
+下面的示例演示了 IWiaMiniDrv 的实现[ **：:D rvgetwiaformatinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetwiaformatinfo)：
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvGetWiaFormatInfo(

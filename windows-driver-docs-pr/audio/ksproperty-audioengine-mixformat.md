@@ -1,6 +1,6 @@
 ---
 title: KSPROPERTY\_AUDIOENGINE\_MIXFORMAT
-description: KSPROPERTY\_AUDIOENGINE\_MIXFORMAT 属性请求检索 mixer 硬件音频引擎中的设置。
+description: KSPROPERTY\_AUDIOENGINE\_MIXFORMAT 属性请求检索硬件音频引擎中混音器的设置。
 ms.assetid: 12353E72-1092-44B4-861A-90C198237670
 keywords:
 - KSPROPERTY_AUDIOENGINE_MIXFORMAT 音频设备
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32d099ee8d02ad1efe9f5833f62c5b50b8d44499
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ecbb3c9f68a494f6054bc0c9569ee4150cd460d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358853"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72830895"
 ---
-# <a name="kspropertyaudioenginemixformat"></a>KSPROPERTY\_AUDIOENGINE\_MIXFORMAT
+# <a name="ksproperty_audioengine_mixformat"></a>KSPROPERTY\_AUDIOENGINE\_MIXFORMAT
 
 
-**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**属性请求检索 mixer 硬件音频引擎中的设置。
+**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**属性请求检索硬件音频引擎中混音器的设置。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "67358853"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -47,25 +47,25 @@ ms.locfileid: "67358853"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>通过筛选器节点</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>无</p></td>
+<td align="left"><p>节点 via 筛选器</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex" data-raw-source="[&lt;strong&gt;KSDATAFORMAT_WAVEFORMATEX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)"><strong>KSDATAFORMAT_WAVEFORMATEX</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex" data-raw-source="[&lt;strong&gt;KSDATAFORMAT_WAVEFORMATEX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)"><strong>KSDATAFORMAT_WAVEFORMATEX</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**属性请求将返回**状态\_成功**以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**属性请求返回**状态\_SUCCESS** ，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-卸载 pin 工厂也必须支持组合格式设置音频引擎节点上的任意位置的时间。
+在任何时间点，在音频引擎节点上设置的组合格式也必须受卸载 pin 工厂支持。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,20 +77,20 @@ ms.locfileid: "67358853"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>Windows 8</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
+[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
 
 [**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
 

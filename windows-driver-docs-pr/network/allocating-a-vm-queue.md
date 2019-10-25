@@ -4,12 +4,12 @@ description: 分配 VM 队列
 ms.assetid: 2645a6e5-3824-469c-84d5-8e49fa01f494
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 120f2d898edbc9a16050e5434a0249008f33e30b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b1a1d0fec4665ac6c690687f62530f37d3cc9764
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384417"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835390"
 ---
 # <a name="allocating-a-vm-queue"></a>分配 VM 队列
 
@@ -17,55 +17,55 @@ ms.locfileid: "67384417"
 
 
 
-若要分配具有一组初始配置参数的队列，基础驱动程序将发出[OID\_接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)方法 OID 请求。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构最初包含一个指向[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构。 通过 OID 方法请求成功返回后**InformationBuffer**的成员**NDIS\_OID\_请求**结构包含一个指向**NDIS\_接收\_队列\_参数**结构，它具有一个新的队列标识符和 MSI X 表条目。
+如果要使用一组初始配置参数分配队列，则过量驱动程序会发出[OID\_接收\_FILTER\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)方法 OID 请求。 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员最初包含指向[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis\_OID\_请求**结构的**InformationBuffer**成员包含指向**ndis\_接收\_队列的指针\_参数**具有新队列标识符和 MSI-X 表项的结构。
 
-[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)中使用结构[OID\_接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)OID 并[OID\_接收\_筛选器\_队列\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters)OID。 有关 VM 队列参数的详细信息，请参阅[Obtaining 和更新虚拟机队列参数](obtaining-and-updating-vm-queue-parameters.md)。
+[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构用于[OID\_接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)OID 和 OID\_\_\_[队列\_的参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters)OID。 有关 VM 队列参数的详细信息，请参阅[获取和更新 Vm 队列参数](obtaining-and-updating-vm-queue-parameters.md)。
 
-基础驱动程序初始化[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构具有以下队列配置参数：
+上层驱动程序初始化[**NDIS\_接收\_queue\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构，并具有以下队列配置参数：
 
--   队列类型 (**NdisReceiveQueueTypeVMQueue**从[ **NDIS\_接收\_队列\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_receive_queue_type)枚举。)
+-   队列类型（**NdisReceiveQueueTypeVMQueue**从[**NDIS\_接收\_队列\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_receive_queue_type)枚举。）
 
--   处理器关联的队列。
+-   队列的处理器关联。
 
 -   队列名称和虚拟机名称。
 
--   预测先行拆分的参数。
+-   预测先行-拆分参数。
 
-    **请注意**  从 NDIS 6.30 开始，将数据包数据拆分为单独的预测先行缓冲区不再受支持。
+    **请注意**  从 NDIS 6.30 开始，不再支持将数据包数据拆分为单独的预测先行缓冲区。
 
      
 
-**请注意**  过量的驱动程序可以设置 NDIS\_接收\_队列\_参数\_每\_队列\_接收\_指示和NDIS\_接收\_队列\_参数\_预测先行\_拆分\_中的必需标志**标志**成员[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构。 其他标志不能提供队列分配。
+**请注意**  过量驱动程序可以设置 NDIS\_接收\_队列\_参数\_每个\_队列\_接收\_指示，NDIS\_接收\_队列\_参数\_预测先行\_在[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的**FLAGS**成员中拆分\_必需标志。 其他标志不用于队列分配。
 
  
 
-当 NDIS 收到 OID 请求分配接收队列时，它会验证队列参数。 NDIS 分配所需的资源和队列标识符后，它将提交对基础微型端口驱动程序的 OID 请求。 队列标识符是唯一的关联的网络适配器。
+当 NDIS 接收到分配接收队列的 OID 请求时，它将验证队列参数。 在 NDIS 分配所需的资源和队列标识符后，它会将 OID 请求提交到基础微型端口驱动程序。 队列标识符对于关联的网络适配器是唯一的。
 
-如果微型端口驱动程序能够成功地分配必要的软件和硬件资源接收队列，它完成时成功状态的 OID 请求。
+如果微型端口驱动程序可以成功分配接收队列所需的软件和硬件资源，则它将以成功状态完成 OID 请求。
 
-NDIS NDIS OID 请求发送到微型端口驱动程序之前，将分配中的队列标识符**QueueId**的成员[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构，并将方法请求传递给微型端口驱动程序。 微型端口驱动程序提供了中的 MSI X 表条目**MSIXTableEntry**成员。
+在 NDIS 将 OID 请求发送到微型端口驱动程序之前，NDIS [ **\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构，并将方法请求传递给微型端口驱动程序，在 Ndis 的**QueueId**成员中分配队列标识符。 微型端口驱动程序在**MSIXTableEntry**成员中提供了 MSI-X 表条目。
 
-微型端口驱动程序必须保留已分配的接收队列的队列标识符。 NDIS 以便后续调用微型端口驱动程序使用接收队列队列的标识符以接收队列上设置接收筛选器、 更改接收队列参数，或免费接收队列。
+微型端口驱动程序必须保留已分配接收队列的队列标识符。 对于对微型端口驱动程序的后续调用，NDIS 使用接收队列的队列标识符来设置接收队列的接收筛选器、更改接收队列参数或释放接收队列。
 
-**请注意**  默认队列 （队列标识符零） 始终分配和无法被释放。
-
- 
-
-基础驱动程序必须使用 NDIS 提供了在 OID 的后续请求，例如，若要修改队列参数或释放队列的队列标识符。 上所有的 OOB 数据中还包含该队列的标识符[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)与队列相关联的结构。 驱动程序使用[ **NET\_缓冲区\_列表\_接收\_队列\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)宏来检索 NET中的队列标识符\_缓冲区\_列表结构。
-
-**请注意**  协议驱动程序可以在任何时候设置 VMQ 筛选器，它已成功分配一个队列之后之前删除队列。
+**请注意**  默认队列（队列标识符为零）始终被分配，并且无法释放。
 
  
 
-协议驱动程序问题[OID\_接收\_筛选器\_队列\_分配\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)方法 OID 请求完成队列分配。 微型端口驱动程序可以将共享的内存和其他资源分配，分配完成后。 有关如何将共享的内存资源分配的详细信息，请参阅[共享的内存资源分配](shared-memory-resource-allocation.md)。
+过量驱动程序必须使用 NDIS 在后续 OID 请求中提供的队列标识符，例如，修改队列参数或释放队列。 队列标识符也包含在所有[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中的 OOB 数据中\_与该队列关联的列表结构。 驱动程序使用[**net\_BUFFER\_列表\_接收\_队列\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)宏，以检索 NET\_缓冲区\_列表结构中的队列标识符。
 
-后微型端口驱动程序将收到一个 OID\_接收\_筛选器\_队列\_分配 OID 请求并处理它成功，队列处于*已分配*状态。 队列状态的详细信息，请参阅[队列状态和操作](queue-states-and-operations.md)。
+**请注意**  协议驱动程序在成功分配了队列之后以及在删除队列之前，可以随时设置 VMQ 筛选器。
 
-基础驱动程序分配后一个或多个接收队列 （和 （可选） 设置的初始的筛选器），必须颁发[OID\_接收\_筛选器\_队列\_分配\_完整](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)设置 OID 请求用于通知微型端口驱动程序分配已完成当前批的接收队列。
+ 
 
-如果没有该队列上设置筛选器，微型端口驱动程序必须保留在接收队列中的任何数据包。 如果队列永远不会有任何筛选器设置或已清除所有筛选器，该队列应为空，并且应丢弃任何数据包。 也就是说，它们不指示驱动程序堆栈中向上或保持在队列中。
+协议驱动程序发出[OID\_接收\_筛选器\_队列\_分配\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)方法 OID 请求来完成队列分配。 小型端口驱动程序可以在分配完成时分配共享内存和其他资源。 有关分配共享内存资源的详细信息，请参阅[共享内存资源分配](shared-memory-resource-allocation.md)。
 
-驱动程序使用过量[OID\_接收\_筛选器\_免费\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)OID 来释放它们所分配的队列。 释放队列的详细信息，请参阅[释放 VM 队列](freeing-a-vm-queue.md)。
+在微型端口驱动程序接收 OID 后\_接收\_筛选器\_队列\_分配 OID 请求并成功处理该请求，队列处于已*分配*状态。 有关队列状态的详细信息，请参阅[队列状态和操作](queue-states-and-operations.md)。
+
+当过量驱动程序分配一个或多个接收队列（并根据需要设置初始筛选器）后，它必须颁发[OID\_接收\_筛选器\_队列\_分配\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)设置 OID 请求，通知小型端口驱动程序，为当前批次接收队列分配完成。
+
+如果没有对该队列设置任何筛选器，则微型端口驱动程序不得保留接收队列中的任何数据包。 如果队列从未设置任何筛选器或清除了所有筛选器，则队列应为空，并且应丢弃所有数据包。 也就是说，它们不会显示在驱动程序堆栈上，也不会保留在队列中。
+
+过量驱动程序使用[OID\_接收\_筛选器\_可用的\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)OID，以释放它们分配的队列。 有关释放队列的详细信息，请参阅[释放 VM 队列](freeing-a-vm-queue.md)。
 
  
 

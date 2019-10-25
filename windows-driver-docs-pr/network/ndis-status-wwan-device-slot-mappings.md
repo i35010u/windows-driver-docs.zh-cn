@@ -1,26 +1,26 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO 通知来告知 MB 服务关于完成的上一个 OID_WWAN_DEVICE_SLOT_MAPPING_INFO 查询或设置请求。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO 通知来通知 MB 服务完成了以前的 OID_WWAN_DEVICE_SLOT_MAPPING_INFO 查询或设置请求。
 ms.assetid: 7825C20E-FB56-420D-B516-1ADA0C7C382E
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO 网络驱动程序
+- NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc108d11370ee5886afc8388abad464c1865fdd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 56a7f02898b1773d20cce535f5232044142befc6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366601"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843030"
 ---
-# <a name="ndisstatuswwandeviceslotmappinginfo"></a>NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息
+# <a name="ndis_status_wwan_device_slot_mapping_info"></a>NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息
 
 
-微型端口驱动程序使用**NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**通知来通知有关 MB 服务在前一次完成[OID\_WWAN\_设备\_槽\_映射\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)查询或设置请求。
+微型端口驱动程序使用**NDIS\_状态\_WWAN\_设备\_槽\_映射\_信息**通知，通知 MB 服务有关上一个[OID\_WWAN\_设备的完成\_\_映射\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)查询或设置请求的槽。
 
-微型端口驱动程序不能使用此通知将发送未经请求的事件。
+微型端口驱动程序无法使用此通知发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)结构。
+此通知使用[**NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -32,22 +32,22 @@ ms.locfileid: "67366601"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>Windows 10，版本 1703</p></td>
+<td><p>版本</p></td>
+<td><p>Windows 10 版本1703</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h</td>
+<td><p>标头</p></td>
+<td>Ndis。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)
+[OID\_WWAN\_设备\_槽\_映射\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)
 
-[**NDIS\_WWAN\_DEVICE\_SLOT\_MAPPING\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)
+[**NDIS\_WWAN\_设备\_槽\_映射\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)
 
  
 

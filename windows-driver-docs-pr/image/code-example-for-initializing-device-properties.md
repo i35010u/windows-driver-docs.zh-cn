@@ -4,27 +4,27 @@ description: 演示如何初始化设备属性的代码示例
 ms.assetid: ec25fa77-13d8-4cb0-913c-b24010355702
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf747c7dab47316ba440be32f3b26c1ee232e73
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0b69445392be4fcd71f456ab155373dd720460a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358640"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840873"
 ---
 # <a name="code-example-for-initializing-device-properties"></a>演示如何初始化设备属性的代码示例
 
 
-期间[ **IWiaMiniDrv::drvInitItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)根项，微型驱动程序的调用必须初始化该设备描述的以下 WIA 属性：
+在 IWiaMiniDrv：为根项[ **:D rvinititemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)调用期间，微型驱动程序必须初始化以下描述设备的 WIA 属性：
 
-[**WIA\_DPS\_SERVICE\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-service-id)
+[**WIA\_DPS\_服务\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-service-id)
 
-[**WIA\_DPS\_DEVICE\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-device-id)
+[**WIA\_DPS\_设备\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-device-id)
 
-[**WIA\_DPS\_GLOBAL\_标识**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-global-identity)
+[**WIA\_DP\_全局\_标识**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-global-identity)
 
-[**WIA\_DPA\_FIRMWARE\_VERSION**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-firmware-version)
+[**WIA\_DPA\_固件\_版本**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-firmware-version)
 
-下面的代码示例演示如何初始化 WIA\_DPS\_服务\_通过使用 ID **OpenProperyStore**并**ReadDeviceProperty**方法来读取主键\_PNPX\_ServiceId。 可以使用相同的常规方法来初始化每个设备的属性。
+下面的代码示例演示了如何使用**OpenProperyStore**和**READDEVICEPROPERTY**方法\_DPS\_SERVICE\_ID 初始化 WIA，以读取 PKEY\_PNPX\_ServiceId。 可以使用相同的常规方法来初始化每个设备属性。
 
 ```cpp
 HRESULT hr = S_OK;

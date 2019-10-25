@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_CREATE_PORT_PARAMETERS
-description: WDI_TLV_CREATE_PORT_PARAMETERS 是包含参数的 OID_WDI_TASK_CREATE_PORT TLV。
+description: WDI_TLV_CREATE_PORT_PARAMETERS 是一个 TLV，其中包含 OID_WDI_TASK_CREATE_PORT 的参数。
 ms.assetid: CE0ACE11-5E7A-43E1-BE0B-8BA8F7FF8432
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_CREATE_PORT_PARAMETERS 网络驱动程序
+- WDI_TLV_CREATE_PORT_PARAMETERS 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b0e86e421ccda2be78889421f41f5aedaff1a0e5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ffab1a249624d2dfe89b6d2c07601bdf61a6ffa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374703"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843384"
 ---
-# <a name="wditlvcreateportparameters"></a>WDI\_TLV\_创建\_端口\_参数
+# <a name="wdi_tlv_create_port_parameters"></a>WDI\_TLV\_创建\_端口\_参数
 
 
-WDI\_TLV\_创建\_端口\_参数是包含参数的 TLV [OID\_WDI\_任务\_创建\_端口](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port).
+WDI\_TLV\_创建\_端口\_参数是一个 TLV，其中包含 OID 的参数[\_WDI\_\_\_创建端口](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,15 +26,15 @@ WDI\_TLV\_创建\_端口\_参数是包含参数的 TLV [OID\_WDI\_任务\_创建
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+所有包含的元素的大小的总和（以字节为单位）。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入   | 描述                                                                                                                                                                             |
 |--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT16 | 操作模式的按位 OR 值可能正在创建的端口上配置主机。 在中定义的操作模式[ **WDI\_操作\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_operation_mode)。 |
-| UINT32 | NDIS\_端口\_将与创建的端口相关联的数量。 除非适配器想要处理非 WDI Oid，它不需要执行任何操作此字段。                 |
+| UINT16 | 主机可以在正在创建的端口上配置的操作模式的按位 "或" 值。 操作模式在[**WDI\_operation\_模式下**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_operation_mode)定义。 |
+| UINT32 | NDIS\_端口将与创建的端口关联\_号。 除非适配器要处理非 WDI 的 Oid，否则不需要对此字段执行任何操作。                 |
 
  
 
@@ -49,14 +49,14 @@ WDI\_TLV\_创建\_端口\_参数是包含参数的 TLV [OID\_WDI\_任务\_创建
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

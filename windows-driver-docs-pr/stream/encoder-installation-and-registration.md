@@ -3,11 +3,11 @@ title: 编码器安装和注册
 description: 编码器安装和注册
 ms.assetid: 6ce0c504-977a-4db5-b5ee-128b69ce8eba
 keywords:
-- 内核流式传输类别 WDK 编码器
+- 内核流式处理类别 WDK 编码器
 - 编码器设备 WDK AVStream
 - AVStream WDK，编码器设备
-- 未压缩数据流 WDK AVStream
-- 编码的流 WDK AVStream
+- 未压缩的数据流 WDK AVStream
+- 编码流 WDK AVStream
 - 音频编码器设备 WDK AVStream
 - 视频编码器设备 WDK AVStream
 - INF 文件 WDK 编码器
@@ -16,29 +16,29 @@ keywords:
 - 内核流式处理代理 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d283b45c3df0f5490e55cf84220d7a62cb19cbc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab5542fd5b9fd72244ebdc491049391e33f1fdc6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384122"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834430"
 ---
 # <a name="encoder-installation-and-registration"></a>编码器安装和注册
 
 
-与编码器筛选器驱动程序的 INF 文件必须包含定义以下条目：
+带有编码器筛选器的驱动程序的 INF 文件必须包含用于定义以下内容的条目：
 
 -   其他内核流式处理捕获组件
 
--   KsProxy 应公开的 COM 接口
+-   应公开哪个 COM 接口 KsProxy
 
--   元数据值，用于描述编码器筛选器的功能
+-   描述编码器筛选器功能的元数据值
 
--   流式处理类别筛选器的内核
+-   筛选器的内核流式处理类别
 
-### <a name="additional-kernel-streaming-capture-components"></a>**流式处理其他内核捕获组件**
+### <a name="additional-kernel-streaming-capture-components"></a>**其他内核流式处理捕获组件**
 
-使用为编码器设备必须引用安装驱动程序的 INF 文件*ks.inf*并*kscaptur.inf*中其\[DefaultInstall\]部分作为捕获驱动程序，因为这些文件将添加必要的编码器组件的支持。 例如：
+用于安装编码器设备驱动程序的 INF 文件必须在其 \[DefaultInstall\] 部分中引用*ks*和*kscaptur* ，因为这些文件添加了必要的编码器组件支持。 例如：
 
 ```INF
 [DefaultInstall]
@@ -46,9 +46,9 @@ include=ks.inf,kscaptur.inf
 needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 ```
 
-### <a name="which-com-interface-ksproxy-should-expose"></a>**应公开的 COM 接口 KsProxy**
+### <a name="which-com-interface-ksproxy-should-expose"></a>**应公开哪个 COM 接口 KsProxy**
 
-在中**AddReg**部分中的驱动程序的 INF 文件中，指定以下三个 Guid，以指示 COM 接口的插件 KsProxy (*encapi.dll*) 应公开给客户端。 COM 接口取决于你在编码器筛选器中实现的属性支持：
+在驱动程序的 INF 文件的 " **AddReg** " 部分中，指定以下三个 guid 之一，以指示 KsProxy 插件（*encapi*）应向客户端公开的 COM 接口。 COM 接口由编码器筛选器中实现的属性支持确定：
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 </colgroup>
 <thead>
 <tr class="header">
-<th>接口的 GUID</th>
+<th>接口 GUID</th>
 <th>名称</th>
 <th>描述</th>
 </tr>
@@ -67,17 +67,17 @@ needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 <tr class="odd">
 <td><p>{B43C4EEC-8C32-4791-9102-508ADA5EE8E7}</p></td>
 <td><p><strong>CLSID_IVideoEncoderProxy</strong></p></td>
-<td><p>指定要导致 KsProxy 公开此 GUID <strong>IVideoEncoder</strong> （适用于使用由 Microsoft 提供的编码器支持的较旧一代的向后兼容） 的 COM 接口。 客户端必须派生此接口的位置<strong>IEncoderAPI</strong> COM 接口。</p></td>
+<td><p>指定此 GUID 将导致 KsProxy 公开<strong>IVideoEncoder</strong> COM 接口（以便向后兼容由 Microsoft 提供的早期版本的编码器支持）。 客户端必须从<strong>IEncoderAPI</strong> COM 接口派生此接口。</p></td>
 </tr>
 <tr class="even">
 <td><p>{7FF0997A-1999-4286-A73C-622B8814E7EB}</p></td>
 <td><p><strong>CLSID_ICodecAPIProxy</strong></p></td>
-<td><p>指定要导致 KsProxy 公开此 GUID <strong>ICodecAPI</strong> COM 接口 （用于非视频编码设备，例如仅限音频的编码器）。</p></td>
+<td><p>指定此 GUID 将导致 KsProxy 公开<strong>ICodecAPI</strong> COM 接口（对于非视频编码设备，例如仅音频编码器）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>{B05DABD9-56E5-4FDC-AFA4-8A47E91F1C9C}</p></td>
 <td><p><strong>CLSID_IVideoEncoderCodecAPIProxy</strong></p></td>
-<td><p>指定此 GUID 来导致 KsProxy 公开这两<strong>IVideoEncoder</strong>并<strong>ICodecAPI</strong> COM 接口 （适用于向后和向前兼容性）。</p></td>
+<td><p>指定此 GUID 可导致 KsProxy 同时公开<strong>IVideoEncoder</strong>和<strong>ICodecAPI</strong> COM 接口（对于向后和向前兼容性）。</p></td>
 </tr>
 </tbody>
 </table>
@@ -91,13 +91,13 @@ needs=[Your driver's DDInstall section],KS.Registration,KSCAPTUR.Registration.NT
 HKR,Interfaces\{B43C4EEC-8C32-4791-9102-508ADA5EE8E7},,,
 ```
 
-这将导致 KsProxy 仅公开**IVideoEncoder** (**CLSID\_IVideoEncoderProxy**) COM 接口。
+这将导致 KsProxy 只公开**IVideoEncoder** （**CLSID\_IVideoEncoderProxy**） COM 接口。
 
-这些 COM 接口都记录在 Windows Sdk for Windows XP SP1 和更高版本的 DirectX 9 的 DirectShow 部分中。
+这些 COM 接口记录在适用于 Windows XP SP1 和更高版本的 DirectX 9 和 Windows Sdk 的 DirectShow 部分中。
 
-### <a href="" id="metadata-values-that-advertise-the-encoder-filter-s-capabilities"></a>**播发编码器筛选器的功能的元数据值**
+### <a href="" id="metadata-values-that-advertise-the-encoder-filter-s-capabilities"></a>**宣传编码器筛选器功能的元数据值**
 
-可以指定元数据中的值*设备参数\\功能*注册表编码器的 INF 文件中的区域。 应用程序可以使用这些元数据值以确定哪些功能来实现或向用户公开。
+可以在编码器 INF 文件中注册表的 "*设备参数\\功能*" 区域中指定元数据值。 应用程序可以使用这些元数据值来确定要实现或向用户公开的功能。
 
 例如：
 
@@ -107,15 +107,15 @@ HKR,Capabilities,,,
 HKR,Capabilities,"{12345678-1234-1234-1234-12345678abcd}",,guid1
 ```
 
-这将创建元数据项"{12345678-1234-1234-1234-12345678abcd} = guid1"中*设备参数\\功能*编码器的注册表设置的区域。 空的行才可创建注册表项，如果尚不存在。
+这会在编码器注册表设置的 "*设备参数\\功能*" 区域中创建元数据项 "{12345678-1234-1234-1234-12345678abcd} = guid1"。 如果注册表项尚不存在，则必须创建空行。
 
-编码器过滤器可能由应用程序在使用其 INF 文件中指定此类静态元数据。 例如，Windows XP Media Center Edition 检查指示它们是 Windows XP Media Center Edition 兼容的编码器。
+编码器筛选器可以在其 INF 文件中指定此类静态元数据以供应用程序使用。 例如，Windows XP Media Center Edition 检查编码器，它们指示它们是 Windows XP Media Center 版本兼容的。
 
-### <a href="" id="the-filter-s-kernel-streaming-category"></a>**流式处理类别筛选器的内核**
+### <a href="" id="the-filter-s-kernel-streaming-category"></a>**筛选器的内核流式处理类别**
 
-流式处理筛选器的内核必须指定流式处理到其所属的类别的内核。 Microsoft 为常见的类别，其中包括编码器筛选器和多路复用器 (mux) 筛选器定义 Guid。
+内核流式处理筛选器必须指定它们所属的内核流式处理类别。 Microsoft 为常见类别定义了 Guid，包括编码器筛选器和多路复用器（mux）筛选器。
 
-筛选器通过指定一个或多个中的以下 Guid 指示它们各自的类别**AddInterface**其微型驱动程序的 INF 文件的筛选器的一部分的指令：
+筛选器通过在其微型驱动程序的 INF 文件的筛选器部分的**AddInterface**指令中指定以下一个或多个 guid 来指示其各自的类别：
 
 <table>
 <colgroup>
@@ -134,19 +134,19 @@ HKR,Capabilities,"{12345678-1234-1234-1234-12345678abcd}",,guid1
 <tr class="odd">
 <td><p>{19689BF6-C384-48FD-AD51-90E58C79F70B}</p></td>
 <td><p>KSCATEGORY_ENCODER</p></td>
-<td><p>指定此编码器筛选器的 GUID。</p></td>
+<td><p>为编码器筛选器指定此 GUID。</p></td>
 </tr>
 <tr class="even">
 <td><p>{7A5DE1D3-01A1-452C-B481-4FA2B96271E8}</p></td>
 <td><p>KSCATEGORY_MULTIPLEXER</p></td>
-<td><p>指定此 GUID mux 筛选器。</p></td>
+<td><p>为 mux 筛选器指定此 GUID。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-若要注册一个编码器筛选器，指定 KSCATEGORY\_您的驱动程序中的编码器 GUID *DDInstall*。**接口**INF 文件部分。 例如：
+若要注册编码器筛选器，请在驱动程序的*DDInstall*中指定 KSCATEGORY\_编码器 GUID。**接口**INF 文件部分。 例如：
 
 ```INF
 [Your Driver's DDInstall.Interface section]
@@ -166,7 +166,7 @@ KSProxy.CLSID="17CCA71B-ECD7-11D0-B908-00A0C9223196"
 MyEncoderDeviceFriendlyName="My Encoder Device"
 ```
 
-**注意：** 为指定的 GUID *KSNAME\_筛选器*必须匹配**ReferenceGuid**中指定的成员[ **KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)结构，描述您的筛选器。
+**注意：** 为*KSNAME\_筛选器*指定的 GUID 必须与在描述筛选器的[**KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构中指定的**ReferenceGuid**成员匹配。
 
  
 

@@ -1,74 +1,74 @@
 ---
 title: IRP_MN_QUERY_DEVICE_TEXT
-description: PnP 管理器使用此 IRP 获取设备的说明或位置信息。总线驱动程序必须处理其子设备的此请求，如果在总线支持此信息。 函数和筛选器驱动程序不处理此 IRP。
+description: PnP 管理器使用此 IRP 获取设备的说明或位置信息。如果总线支持此信息，则总线驱动程序必须为其子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 07661709-8929-4567-a05f-96d995862ee6
 keywords:
 - IRP_MN_QUERY_DEVICE_TEXT 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: caa767e57545efedb56131f7e65af17baaddf10f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df0baf445a3cd5d64d8641196481ebb8003244d1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383286"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838571"
 ---
-# <a name="irpmnquerydevicetext"></a>IRP\_MN\_查询\_设备\_文本
+# <a name="irp_mn_query_device_text"></a>IRP\_MN\_查询\_设备\_文本
 
 
 PnP 管理器使用此 IRP 获取设备的说明或位置信息。
 
-总线驱动程序必须处理其子设备的此请求，如果在总线支持此信息。 函数和筛选器驱动程序不处理此 IRP。
+如果总线支持此信息，则总线驱动程序必须为其子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md) When Sent
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
 ---------
 
-PnP 管理器将发送两个 Irp 枚举设备时： 一个查询用于查询设备描述，另一个用于查询的位置信息。
+在枚举设备时，PnP 管理器将发送两个 Irp：一个用于查询设备说明，另一个用于查询位置信息。
 
-PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中。
+PnP 管理器在任意线程上下文中以 IRQL 被动\_级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.QueryDeviceText.DeviceTextType**的成员[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构是**设备\_文本\_类型**值，该值指定所请求的字符串。 可能的值**设备\_文本\_类型**包括**DeviceTextDescription**并**DeviceTextLocationInformation**。
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**QueryDeviceText. DeviceTextType**成员是一个**设备\_文本\_类型**值，用于指定请求的字符串。 **设备\_文本\_类型**的可能值包括**DeviceTextDescription**和**DeviceTextLocationInformation**。
 
-**Parameters.QueryDeviceText.LocaleId**是指定请求的文本的区域设置 LCID。
+**QueryDeviceText**是指定所请求文本区域设置的 LCID。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-返回在 I/O 状态块中。
+在 i/o 状态块中返回。
 
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态。
+驱动程序将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS 或相应的错误状态。
 
-如果成功，总线驱动程序设置**Irp-&gt;IoStatus.Information**到驱动程序分配的包含具有所需的信息的 WCHAR 缓冲区的内存块的指针。 发生错误时，总线驱动程序设置**Irp-&gt;IoStatus.Information**为零。
+成功时，总线驱动程序会将**Irp&gt;IoStatus**设置为指向驱动程序分配的内存块的指针，该内存块包含带有请求信息的 WCHAR 缓冲区。 出现错误时，总线驱动程序会将**Irp&gt;IoStatus**设置为零。
 
 <a name="operation"></a>操作
 ---------
 
-强烈建议，若要返回其子设备的设备描述的总线驱动程序。 此字符串显示在**发现新硬件**弹出窗口，如果设备不存在任何 INF 匹配。
+强烈建议总线驱动程序返回其子设备的设备说明。 如果未找到设备的 INF 匹配项，则会在 "**发现新硬件**" 弹出窗口中显示此字符串。
 
-另外还建议设置总线驱动程序返回**LocationInformation**对于自己的孩子的设备，但此信息是可选的。 此字符串的格式取决于在总线。 设备管理器设备的常规属性选项卡中显示此字符串。 供应商应选择传达给用户的有用信息的字符串和技术支持人员。 例如，对于 PCI，该字符串包含总线、 设备和函数。 PC 卡，该字符串包含槽。
+还鼓励总线驱动程序为其子设备返回**LocationInformation** ，但此信息是可选的。 此字符串的格式取决于总线。 设备管理器会在设备的 "常规属性" 选项卡中显示此字符串。 供应商应选择向用户和支持人员传达有用信息的字符串。 例如，对于 PCI，字符串包含总线、设备和函数。 对于 PC 卡，字符串包含槽。
 
-如果总线驱动程序对此 IRP 响应中返回的信息，它会从分页的内存分配的以 NULL 结尾的 Unicode 字符串。 PnP 管理器不再需要时释放该字符串。
+如果总线驱动程序返回信息以响应此 IRP，则会从分页内存中分配以 NULL 结尾的 Unicode 字符串。 当不再需要该字符串时，PnP 管理器将释放该字符串。
 
-如果设备不提供说明或位置的信息，将设备的父总线驱动程序会完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) 而无需修改**Irp-&gt;IoStatus.Status**或**Irp-&gt;IoStatus.Information**。
+如果设备未提供说明或位置信息，则设备的父总线驱动程序将完成 IRP （[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)），而不会修改**irp&gt;IoStatus**或**irp-&gt;IoStatus**。
 
-函数和筛选器驱动程序不处理此 IRP;它们将其传递给下一个较低驱动程序和无变化**Irp-&gt;IoStatus**。
+函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，并且不会对**Irp&gt;IoStatus**进行任何更改。
 
-对于不同的区域设置支持不同的文本字符串的总线驱动程序应该能够处理请求的设备不显式支持的语言。 在这种情况下，总线驱动程序应返回最接近的匹配的区域设置或应回退和返回某些相应支持的区域设置字符串。
+支持不同区域设置的不同文本字符串的总线驱动程序应能够处理设备未显式支持的语言的请求。 在这种情况下，总线驱动程序应返回与区域设置最接近的匹配项，或者应回退并返回某些合适的受支持的区域设置字符串。
 
-请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，了解用于处理[即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
-**发送此 IRP**
+**正在发送此 IRP**
 
-保留供系统使用。 驱动程序必须发送此 IRP。
+保留供系统使用。 驱动程序不得发送此 IRP。
 
 <a name="requirements"></a>要求
 ------------
@@ -80,8 +80,8 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在任意线程上下文中
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>

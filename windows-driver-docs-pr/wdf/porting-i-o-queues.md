@@ -4,24 +4,24 @@ description: 移植 I/O 队列
 ms.assetid: 90319342-5FAB-451B-BCA1-B273B81418DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c050bb2e22959ccc263884802d1b45c6d1a0129
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 01923c4f80e55c3adbeb07ac40c0dd0cf7e5c8cf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379635"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842254"
 ---
 # <a name="porting-io-queues"></a>移植 I/O 队列
 
 
-WDF 驱动程序创建队列并注册中的 I/O 事件回调[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调。 默认情况下，每个 I/O 队列对象是一个设备对象的子级。 WDF 驱动程序可以配置为每个队列的以下任务：
+WDF 驱动程序在[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调中创建队列并注册 i/o 事件回调。 默认情况下，每个 i/o 队列对象都是设备对象的子对象。 WDF 驱动程序可以为每个队列配置以下任务：
 
--   I/O 请求类型将定向到队列。
--   是否请求调度并行 （只要到达时），按顺序 （一次一个），或手动 （根据驱动程序请求）。
--   是否同时或按顺序称为 I/O 事件回调例程。
--   是否在 framework 或驱动程序管理系统和设备电源转换通过队列。
+-   哪些 i/o 请求类型将定向到队列。
+-   请求是按顺序（一次一个地）、按顺序（一次）或手动方式（在驱动程序请求时）按顺序调度请求。
+-   I/o 事件回调例程是并行调用还是按顺序调用。
+-   框架或驱动程序是否通过系统和设备电源转换管理队列。
 
-有关创建队列的详细信息，请参阅[创建 I/O 队列](creating-i-o-queues.md)
+有关创建队列的详细信息，请参阅[创建 I/o 队列](creating-i-o-queues.md)
 
  
 

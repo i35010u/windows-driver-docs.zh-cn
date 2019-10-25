@@ -1,6 +1,6 @@
 ---
-title: DBG\_DUMP\_XXX
-description: DBG\_DUMP\_XXX
+title: DBG\_转储\_XXX
+description: DBG\_转储\_XXX
 ms.assetid: d34ecf95-3aea-4850-a2de-76f239e8b8a0
 ms.date: 12/07/2017
 keywords:
@@ -14,22 +14,22 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bbcf11ad55aa35858ef903d7aea2c77693acb86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cec17542dc42a26d5514b54e6b08ff560f93d5a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361447"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837803"
 ---
-# <a name="dbgdumpxxx"></a>DBG\_DUMP\_XXX
+# <a name="dbg_dump_xxx"></a>DBG\_转储\_XXX
 
 
 ## <span id="ddk_dbg_dump_xxx_dbx"></span><span id="DDK_DBG_DUMP_XXX_DBX"></span>
 
 
-DBG\_转储\_*XXX*位标志由**选项**符号成员\_转储\_PARAM 结构，以控制行为[**IG\_转储\_符号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)[**Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作。
+符号\_\_DUMP 的**Options**成员使用 DBG\_转储\_*XXX*位标志来控制[**IG\_转储\_符号\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_sym_dump_param)[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)的行为运作.
 
-以下标志可以出现。
+可以存在以下标志。
 
 <table>
 <colgroup>
@@ -38,18 +38,18 @@ DBG\_转储\_*XXX*位标志由**选项**符号成员\_转储\_PARAM 结构，以
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
-<th align="left">效果</th>
+<th align="left">旗帜</th>
+<th align="left">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_NO_INDENT</p></td>
-<td align="left"><p>成员不缩进输出中。</p></td>
+<td align="left"><p>成员不会在输出中缩进。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_NO_OFFSET</p></td>
-<td align="left"><p>偏移量不打印。</p></td>
+<td align="left"><p>不打印偏移量。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_VERBOSE</p></td>
@@ -61,54 +61,54 @@ DBG\_转储\_*XXX*位标志由**选项**符号成员\_转储\_PARAM 结构，以
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_LIST</p></td>
-<td align="left"><p>符号是将项记入链接的列表和 IG_DUMP_SYMBOL_INFO <strong>Ioctl</strong>操作将循环访问此列表。 通过指定指向列表中的下一项成员的说明<strong>linkList</strong> SYM_DUMP_PARAM 结构中的成员。</p></td>
+<td align="left"><p>符号是链接列表中的条目，IG_DUMP_SYMBOL_INFO <strong>Ioctl</strong>操作将循环访问此列表。 指向列表中下一项的成员的说明由 SYM_DUMP_PARAM 结构的<strong>linkList</strong>成员指定。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_NO_PRINT</p></td>
-<td align="left"><p>（仅调用回调函数和执行数据副本），会输出任何内容。</p></td>
+<td align="left"><p>不打印任何内容（仅调用回调函数并执行数据副本）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_GET_SIZE_ONLY</p></td>
-<td align="left"><p><strong>Ioctl</strong>操作将返回仅的符号的大小; 它将不打印成员信息或调用回调函数。</p></td>
+<td align="left"><p><strong>Ioctl</strong>操作仅返回符号的大小;它不会打印成员信息或调用回调函数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_COMPACT_OUT</p></td>
-<td align="left"><p>换行符不打印后每个成员。</p></td>
+<td align="left"><p>不会在每个成员后打印换行符。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_ARRAY</p></td>
-<td align="left"><p>符号是一个数组。 该成员指定数组中元素的数目<strong>listLink-&gt;大小</strong>SYM_DUMP_PARAM 结构。</p></td>
+<td align="left"><p>符号为数组。 数组中元素的数目由 SYM_DUMP_PARAM 结构的成员<strong>listLink&gt;大小</strong>指定。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_ADDRESS_OF_FIELD</p></td>
-<td align="left"><p>值<strong>addr</strong>是实际的成员的地址<strong>listLink-&gt;fName</strong> SYM_DUMP_PARAM 结构和不符号开头。</p></td>
+<td align="left"><p><strong>Addr</strong>的值实际上是 SYM_DUMP_PARAM 结构的成员<strong>&gt;listLink fName</strong>的地址，而不是符号的开头。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_ADDRESS_AT_END</p></td>
-<td align="left"><p>值<strong>addr</strong>是实际在符号末尾的和不符号开头的地址。</p></td>
+<td align="left"><p><strong>Addr</strong>的值实际上是符号末尾的地址，而不是符号的开头。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_COPY_TYPE_DATA</p></td>
-<td align="left"><p>符号的值复制到该成员<strong>pBuffer</strong>。 这只能使用对于基元类型--例如，ULONG 或 PVOID-它无法使用的结构。</p></td>
+<td align="left"><p>符号的值将复制到成员<strong>pBuffer</strong>中。 它只能用于基元类型，例如 ULONG 或 PVOID--不能用于结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_READ_PHYSICAL</p></td>
-<td align="left"><p>将从目标计算机的物理内存中直接读取符号的值。</p></td>
+<td align="left"><p>将直接从目标的物理内存中读取符号的值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DBG_DUMP_FUNCTION_FORMAT</p></td>
-<td align="left"><p>格式设置时有一种函数类型的符号，函数将使用格式，例如， <code>function(arg1, arg2, ...)</code></p></td>
+<td align="left"><p>在设置具有函数类型的符号的格式时，将使用函数格式，例如 <code>function(arg1, arg2, ...)</code></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_BLOCK_RECURSE</p></td>
-<td align="left"><p>通过嵌套结构; recurse但不是遵循指针。</p></td>
+<td align="left"><p>通过嵌套结构递归;但不要关注指针。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-此外，宏 DBG 的结果\_转储\_重复\_级别 (*级别*) 可以添加到要指定如何深入了解结构要进行递归的位集。 *级别*可以是介于 0 到 15 之间的数字。
+此外，还可以向位集添加宏 DBG\_转储\_重复\_级别（*级别*）的结果，以指定要递归的结构的深度。 *级别*可以是0到15之间的数字。
 
 <a name="requirements"></a>要求
 ------------
@@ -120,18 +120,18 @@ DBG\_转储\_*XXX*位标志由**选项**符号成员\_转储\_PARAM 结构，以
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Wdbgexts.h （包括 Wdbgexts.h、 Wdbgexts.h 或 Dbgeng.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Wdbgexts （包括 Wdbgexts、Wdbgexts 或 Dbgeng）。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**IG\_转储\_符号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)
+[**IG\_转储\_符号\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_sym_dump_param)
 
-[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)
+[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)
 
  
 

@@ -4,12 +4,12 @@ description: 词汇表页-H
 ms.assetid: 4415522d-6ea3-42f6-9acc-0e3ceaa36dc7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b6cbd422ef35bf4b0ff43c13c3814a2a37853c6
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: aafabe8125265a4f6dbf72527b0fedf9e08f9148
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834386"
 ---
 # <a name="i"></a>I
 
@@ -44,7 +44,7 @@ Windows 已作为用户模式进程或 Windows 内核的一部分加载的可执
 有关详细信息，请参阅[使用断点](using-breakpoints.md)。
 
 <span id="input_callback_objects"></span><span id="INPUT_CALLBACK_OBJECTS"></span>**输入回调对象**  
-已向客户端注册的[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebuginputcallbacks)接口的实例。 每当调试器引擎需要输入时，它都会要求输入回调提供它。
+已向客户端注册的[IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks)接口的实例。 每当调试器引擎需要输入时，它都会要求输入回调提供它。
 
 另请参阅输出回调。
 

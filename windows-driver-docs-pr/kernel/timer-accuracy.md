@@ -1,30 +1,30 @@
 ---
 title: 计时器准确性
-description: 系统计时器例程通常情况下允许调用方为计时器指定绝对或相对过期时间。
+description: 系统计时器例程通常允许调用方为计时器指定绝对过期时间或相对过期时间。
 ms.assetid: CA29DC02-1AEA-4A13-B2D6-8C8052E21EDB
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 10ee2a2218d97986f86a70cc0551b5bdabf061dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c8c3e7de374778b3e896fbfec0ea31ad7b21914
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382959"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836116"
 ---
 # <a name="timer-accuracy"></a>计时器准确性
 
 
-系统计时器例程通常情况下允许调用方为计时器指定绝对或相对过期时间。 有关示例，请参阅[ **KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)， [ **KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)，或[ **KeDelayExecutionThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kedelayexecutionthread)。 系统时钟的粒度受限制使用的操作系统可以衡量的到期时间的准确性。
+系统计时器例程通常允许调用方为计时器指定绝对过期时间或相对过期时间。 例如，请参阅[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)、 [**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)或[**KeDelayExecutionThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kedelayexecutionthread)。 操作系统可用于测量过期时间的准确性受系统时钟粒度的限制。
 
-系统时间更新上的系统时钟，每个时钟周期，并且只精确到最新刻度线。 如果调用方指定一个绝对过期时间，计时器的过期过程中检测到的第一个在指定时间后发生的系统时钟周期的处理。 因此，计时器将过期晚于指定的绝对过期时间最多一个系统时钟时间。 如果改为指定的计时器间隔或相对过期时间，则过期可能会发生一段最早于或晚于指定的时间，具体取决于确切的开始和结束时间在此间隔位于系统时钟计时周期之间的位置句点。 无论是否指定绝对或相对时间时，计时器过期可能不会检测到甚至更高版本如果中断系统时钟的处理延迟的中断处理对于其他设备。
+系统时间在系统时钟的每个时钟周期进行更新，并且仅精确到最新计时周期。 如果调用方指定绝对过期时间，则在处理在指定时间之后发生的第一个系统时钟计时周期时，将检测到计时器的过期时间。 因此，计时器的过期时间可能会晚于指定的绝对到期时间。 如果改为指定计时器间隔或相对过期时间，则过期时间可能早于或晚于指定时间的一段时间，具体取决于此时间间隔的开始时间和结束时间在系统时钟计时周期之间的确切位置。 不管是指定了绝对时间还是相对时间，都不会检测到计时器过期时间，直到更晚，因为对其他设备的中断处理延迟了对系统时钟的中断处理。
 
-当调用方指定相对过期时间时，计时器例程会将当前系统时钟时间添加到指定的相对过期时间来计算绝对到期时间用于计时器。 系统时间只精确到系统时钟的最新刻度线，因为计算的过期时间可能长达系统时钟时间早于过期时间所需的调用方。 如果指定的相对过期时间接近或超过系统时钟的时间更小，可能会立即过期计时器，且没有任何延迟。
+如果调用方指定了相对过期时间，则计时器例程会将当前系统时钟时间添加到指定的相对过期时间，以计算要用于计时器的绝对到期时间。 因为系统时间只是精确到系统时钟的最晚计时周期，所以，计算出的过期时间可能会早于调用方预期的过期时间。 如果指定的相对过期时间接近于或小于系统时钟周期，则计时器可能会立即过期，且不会延迟。
 
-一种以更准确地支持更短的到期时间的可行方法是减少系统时钟计时周期数之间的时间，但这样做很可能会增加功率消耗。 此外，减少系统时钟时间可能无法可靠地实现更细的系统时钟粒度除非中断处理在平台中的其他设备可以保证不延迟的系统时钟中断处理。
+更准确地支持较短过期时间的一种可能方式是缩短系统时钟计时周期之间的时间，但这样做可能会增加功率消耗。 此外，降低系统时钟周期可能无法可靠地获得更精细的系统时钟粒度，除非可以保证平台中其他设备的中断处理不会延迟系统时钟中断的处理。
 
-从 Windows 8 开始[ **KeDelayExecutionThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kedelayexecutionthread)使用更精确的技术来计算绝对到期时间从调用方指定相对过期时间。 首先，若要获取当前系统时间的更精确地估计，例程使用系统性能计数器来测量时间过去的最后一个系统时钟计时周期。 接下来，该例程将系统时间此更精确地估计值添加到相对过期时间来计算绝对到期时间。 通过这种方法来计算绝对到期时间会精确到在微秒内。 因此，指定的相对过期时间到期之前，不会过期计时器。 计时器可能仍会过期最系统时钟时间晚于指定的时间，并可能甚至更高版本中，如果过期的系统时钟中断处理延迟的中断处理对于其他设备。
+从 Windows 8 开始， [**KeDelayExecutionThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kedelayexecutionthread)使用更精确的技术来计算调用方指定的相对过期时间中的绝对过期时间。 首先，为了获得当前系统时间的更精确估计值，例程使用系统性能计数器来测量自上一次系统时钟周期以来所经过的时间。 接下来，例程会将系统时间的更精确估计添加到相对过期时间，以计算绝对过期时间。 此方法计算的绝对过期时间精确到了一个微秒内。 因此，在指定的相对过期时间过去之前，计时器不会过期。 计时器仍可以在超过指定时间之后的系统时钟周期内过期，如果对系统时钟中断的处理延迟为其他设备的中断处理延迟，则可能会在以后过期。
 
-如果系统时间更改计时器过期前，相对计时器不会受到影响，但系统调整每个绝对计时器。 相对计时器始终过期后经过指定的时间单位数，而不考虑绝对系统时间。 绝对计时器到期特定系统时，因此绝对计时器的等待持续时间中的系统时间更改的更改。
+如果在计时器过期之前系统时间发生更改，则相对计时器不会受影响，但系统会调整每个绝对计时器。 相对计时器始终在经过指定的时间单位后过期，而不管系统的绝对时间是多少。 绝对计时器会在特定系统时间过期，因此，系统时间更改会更改绝对计时器的等待持续时间。
 
  
 

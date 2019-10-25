@@ -3,23 +3,23 @@ title: 处理磁带设备控制请求
 description: 处理磁带设备控制请求
 ms.assetid: de6edfc6-9b4b-4866-8fdb-1047b43163de
 keywords:
-- 磁带驱动程序 WDK 存储映射状态的值
-- 存储磁带驱动程序 WDK，映射状态的值
+- 磁带驱动程序 WDK 存储，映射状态值
+- 存储磁带驱动程序 WDK，映射状态值
 - TAPE_STATUS_SEND_SRB_AND_CALLBACK
 - TAPE_STATUS_CHECK_TEST_UNIT_READY
 - TAPE_STATUS_CALLBACK
 - TAPE_STATUS_REQUIRES_CLEANING
 - TAPE_STATUS
 - 映射 TAPE_STATUS 值
-- 状态值 WDK 磁带
+- status 值 WDK 磁带
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a24ef7f36076e3816e4d1826fb6232f8cfff6af5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d03df0ec42bb4bfe408db899b83dbb262d0da5b3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369579"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842724"
 ---
 # <a name="processing-tape-device-control-requests"></a>处理磁带设备控制请求
 
@@ -27,7 +27,7 @@ ms.locfileid: "67369579"
 ## <span id="ddk_processing_tape_device_control_requests_kg"></span><span id="DDK_PROCESSING_TAPE_DEVICE_CONTROL_REQUESTS_KG"></span>
 
 
-所有磁带 miniclass 驱动程序必须使用所列的值的状态都报告[**磁带\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ne-minitape-_tape_status)枚举器。 但是，磁带类驱动程序完成的 I/O 控制请求，它将报告使用等效的 NT 状态值的状态。 下表提供了磁带之间的映射\_状态值和其等效的 NT 状态值：
+所有磁带 miniclass 驱动程序必须使用[**磁带\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/ne-minitape-_tape_status)枚举器中列出的值报告状态。 但是，当磁带类驱动程序完成 i/o 控制请求时，它将使用等效的 NT 状态值报告状态。 下表提供了磁带\_状态值和其等效的 NT 状态值之间的映射：
 
 <table>
 <colgroup>
@@ -154,27 +154,27 @@ ms.locfileid: "67369579"
 
  
 
-无论在类驱动程序必须调用 miniclass 例程不止一次以完成请求，miniclass 驱动程序将使用返回的状态以指示请求是否已完成或是否应再次调用该例程。 磁带类驱动程序维护的次数，它为给定的请求并将计算传递给为例程称为 miniclass 例程的从零开始计数*CallNumber*参数。
+每当类驱动程序必须多次调用 miniclass 例程才能完成请求时，miniclass 驱动程序将使用返回状态来指示请求是否已完成，或是否应再次调用例程。 磁带类驱动程序维护给定请求的 miniclass 例程的从零开始的计数，并将该计数作为*CallNumber*参数传递到例程。
 
-Miniclass 例程将返回以指示类驱动程序应再次调用该例程的以下状态值之一：
+Miniclass 例程返回以下状态值之一，指示类驱动程序应再次调用例程：
 
--   磁带\_状态\_发送\_SRB\_AND\_回调
+-   \_发送\_SRB\_和\_回调的磁带\_状态
 
-    此返回值指示磁带类驱动程序将 SRB 发送到设备。 填写 SRB 经过磁带类驱动程序后，磁带 miniclass 例程通常返回此状态。 如果操作成功，此类驱动程序递增*CallNumber*并再次调用 miniclass 例程。 如果 SRB 失败，类驱动程序会调用 miniclass 例程，具体取决于值再次*RetryFlags*。
+    此返回值指示磁带类驱动程序将 SRB 发送到设备。 磁带 miniclass 例程在填充由磁带类驱动程序传递的 SRB 后，通常会返回此状态。 如果操作成功，类驱动程序将递增*CallNumber*并再次调用 miniclass 例程。 如果 SRB 失败，类驱动程序将再次调用 miniclass 例程，具体取决于*RetryFlags*的值。
 
 -   磁带\_状态\_检查\_测试\_单元\_准备就绪
 
-    此返回值指示磁带类驱动程序创建测试单元准备命令 SRB，SRB 发送到设备。
+    此返回值指示磁带类驱动程序为 "测试单元准备" 命令创建 SRB，并将 SRB 发送到设备。
 
--   磁带\_状态\_回调
+-   \_回调的磁带\_状态
 
-    此返回值指示磁带类驱动程序来递增*CallNumber*不向设备发送 SRB。 这简化了支持多个设备的 case 语句。 例如，假设大部分特定 miniclass 驱动程序支持的磁带设备，需要三个 Srb 处理特定请求。 一台设备，但是，需要仅第一个和第三个 Srb。 对于唯一的设备磁带 miniclass 驱动程序可以返回磁带\_状态\_回调以跳过第二个 SRB，从而允许驱动程序使用相同的代码来处理它支持的所有设备的请求。
+    此返回值指示磁带类驱动程序递增*CallNumber* ，而无需将 SRB 发送到设备。 这会简化支持多个设备的 case 语句。 例如，假定特定 miniclass 驱动程序支持的大多数磁带设备需要三个 SRBs 来处理某个请求。 不过，一个设备只需要第一个和第三个 SRBs。 对于唯一设备，磁带 miniclass 驱动程序可以\_回调返回磁带\_状态，以跳过第二个 SRB，使驱动程序可以使用相同的代码来处理该请求所支持的所有设备。
 
--   磁带\_状态\_REQUIRES\_清理
+-   磁带\_状态\_需要\_清洗
 
-    如果磁带设备支持清洗通知中检测数据，而不是错误，磁带 miniclass 驱动程序的 TapeMiniGetStatus 例程将返回此状态可指示驱动器需要清洗磁带类驱动程序。
+    如果磁带设备支持在感知数据中清除通知而不是错误，则磁带 miniclass 驱动程序的 TapeMiniGetStatus 例程将返回此状态，以指示磁带机需要清洗的磁带类驱动程序。
 
-当 miniclass 例程完成请求的处理-成功或有错误后重试次数用完-返回到磁带类驱动程序且其中装有磁带\_状态\_*XXX* ，该值指示成功或失败的请求。
+当 miniclass 例程完成处理请求时，无论是成功完成还是在重试后发生错误，都将返回磁带类驱动程序，其中包含磁带\_状态\_*XXX* ，指示成功或失败的需要.
 
  
 

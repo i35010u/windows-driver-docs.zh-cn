@@ -3,12 +3,12 @@ title: 设备 MFT 设计指南
 description: 本主题概述了在用户模式下运行的设备范围扩展的设计，该扩展可用于执行所有流通用的后期处理。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 00931f0f4fdf9033e1d5d9c710d177fcb84fd18c
-ms.sourcegitcommit: c1d02055c131d99f5c26943b527ca84f067afbab
+ms.openlocfilehash: 66d1b9bd208f31be1b7bcb17e5f0b4dcadef9f77
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71135776"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842643"
 ---
 # <a name="device-mft-design-guide"></a>设备 MFT 设计指南
 
@@ -192,7 +192,7 @@ Devproxy 查询驱动程序的元数据缓冲区大小并为元数据分配内�
 
 此元数据流公开了 DTM 以上。 当设备 MFT 开始流式传输时，可以将流置于流式处理状态。 例如，当选择输出流进行流式处理时，设备 MFT 可以通过使用**METransformInputStreamStateChanged**事件来请求 DTM 启动一个或多个视频流和元数据流。 
 
-注意:输入插针数量不一定要与此模型中的输出插针数量相匹配。 可以有单独的 pin 专用于元数据或3A。
+注意：对于此模型中的输出插针数量，不需要输入 pin 的数目。 可以有单独的 pin 专用于元数据或3A。
 
 ## <a name="device-transform-manager-dtm-event-handling"></a>设备转换管理器（DTM）事件处理
 
@@ -220,7 +220,7 @@ Devproxy 查询驱动程序的元数据缓冲区大小并为元数据分配内�
 
 - [IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)
 
-- [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
+- [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol)
 
     - 这允许所有 ksproperties、事件和方法通过设备 MFT。 这使设备 MFT 能够处理这些函数在设备 MFT 内的调用，或者只是将它们转发给驱动程序。 如果它处理 KsEvent 方法，则设备 MFT 必须执行以下操作：
 

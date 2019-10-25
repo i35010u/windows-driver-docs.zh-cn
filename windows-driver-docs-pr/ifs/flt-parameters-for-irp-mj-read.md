@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_READ 联合
-description: 使用以下联合组件时 FLT MajorFunction 字段\_IO\_参数\_操作的块结构是 IRP\_MJ\_读取。
+title: FLT_PARAMETERS for IRP_MJ_READ union
+description: 当 FLT\_IO\_参数\_块结构的操作为 IRP\_MJ\_读取时，将使用以下联合组件。
 ms.assetid: 48674db7-c0cc-45a0-bce9-eaf1a4cec362
 keywords:
-- FLT_PARAMETERS IRP_MJ_READ 联合可安装文件系统驱动程序
-- FLT_PARAMETERS 联合可安装文件系统驱动程序
-- PFLT_PARAMETERS 联合指针可安装文件系统驱动程序
+- FLT_PARAMETERS for IRP_MJ_READ union 可安装的文件系统驱动程序
+- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6667987b44f958f4d1c95a499ac67b204685839b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d9d98ee9dd106f9edd4cc276cf0d35b3427ad497
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365071"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841355"
 ---
-# <a name="fltparameters-for-irpmjread-union"></a>FLT\_IRP 的参数\_MJ\_读取联合
+# <a name="flt_parameters-for-irp_mj_read-union"></a>IRP\_MJ\_FLT\_参数
 
 
-使用以下联合组件时**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构操作[ **IRP\_MJ\_读取**](irp-mj-read.md)。
+当[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)**结构的操作**为[**IRP\_MJ\_读取**](irp-mj-read.md)时，将使用以下联合组件。
 
 <a name="syntax"></a>语法
 ------
@@ -49,29 +49,29 @@ typedef union _FLT_PARAMETERS {
 -------
 
 **读取**  
-结构，它包含以下成员。
+包含以下成员的结构。
 
 **长度**  
-长度 （字节），要读取的数据。
+要读取的数据的长度（以字节为单位）。
 
 **Key**  
-目标文件的字节范围锁与关联的密钥值。
+与目标文件的字节范围锁关联的键值。
 
 **ByteOffset**  
-要读取的数据文件中的起始字节偏移量。
+要读取的数据在文件中的起始字节偏移量。
 
 **ReadBuffer**  
-指向该缓冲区用于接收从文件读取的数据。
+指向缓冲区的指针，该缓冲区接收从该文件中读取的数据。
 
 **MdlAddress**  
-描述缓冲区的内存描述符列表 (MDL) 的地址， **ReadBuffer**成员指向。 此成员是可选的可以是**NULL**。
+描述**ReadBuffer**成员指向的缓冲区的内存描述符列表（MDL）的地址。 此成员是可选的，并且可以为**NULL**。
 
 <a name="remarks"></a>备注
 -------
 
-[ **FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构 IRP\_MJ\_读取操作包含回调数据 (所表示的读操作的参数[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 包含在 FLT\_IO\_参数\_块结构。
+IRP\_MJ\_读取操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构表示的读取操作的参数。 它包含在 FLT\_IO\_参数\_块结构。
 
-IRP\_MJ\_读取可以是基于 IRP 的操作或快速 I/O 操作。
+IRP\_MJ\_读取可以是基于 IRP 的操作，也可以是快速 i/o 操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,32 +83,32 @@ IRP\_MJ\_读取可以是基于 IRP 的操作或快速 I/O 操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Fltkernel （包括 Fltkernel）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT\_\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT\_\_FS\_筛选器\_操作**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT\_\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FltReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreadfile)
+[**FltReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreadfile)
 
-[**IRP\_MJ\_READ**](irp-mj-read.md)
+[**IRP\_MJ\_读取**](irp-mj-read.md)
 
-[**ZwReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)
+[**ZwReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile)
 
  
 

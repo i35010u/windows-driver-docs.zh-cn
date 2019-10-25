@@ -3,18 +3,18 @@ title: PnP 设备的状态转换
 description: PnP 设备的状态转换
 ms.assetid: 31969515-899b-407e-ab73-f6f7f36adb85
 keywords:
+- PnP WDK 内核，状态转换
 - 即插即用 WDK 内核，状态转换
-- 插 WDK 内核，状态转换
-- 状态转换 WDK 即插即用
-- 设备状态 WDK 即插即用
+- 状态转换 WDK PnP
+- 设备状态 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b44472d466c52daf24e4d28b4a7448f58104d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5e8c09d6fc664ea51fd2dacb1bd00b2cba36e425
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382994"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838405"
 ---
 # <a name="state-transitions-for-pnp-devices"></a>PnP 设备的状态转换
 
@@ -22,27 +22,27 @@ ms.locfileid: "67382994"
 ## <a href="" id="ddk-state-transitions-for-pnp-devices-kg"></a>
 
 
-即插即用及的系统上，通过即插即用的各种状态的设备转换的配置，启动，可能已停止，以重新平衡资源，可能删除。 本部分概述的即插即用设备状态。 概述是用于在驱动程序所需的即插即用支持众多的路线图。 本文档其他部分描述了每个状态转换详细信息中。
+在 PnP 系统上，设备会在配置、启动时通过各种 PnP 状态进行转换，并可能已停止重新平衡资源，并可能被删除。 本部分提供 PnP 设备状态的概述。 概述介绍了驱动程序所需的大部分 PnP 支持。 此文档的其他部分详细介绍了每种状态转换。
 
-下图显示即插即用设备和如何在设备从一个状态转换到另一个状态。
+下图显示了设备的 PnP 状态以及设备如何从一种状态转换到另一种状态。
 
-![说明从插角度来看的设备状态的关系图](images/pnp-states.png)
+![从即插即用角度说明设备状态的示意图](images/pnp-states.png)
 
-开始左上角上图中，即插即用设备是在系统中实际存在，因为用户只需插入设备或设备在启动时出现。 设备还不知道对系统软件。
+从上图的左上角开始，PnP 设备在物理上出现在系统中，因为刚插入设备的用户或设备在启动时都存在。 设备对于系统软件尚不可知。
 
-若要开始在设备的软件配置，即插即用管理器和父总线驱动程序枚举设备。 PnP 管理器中，可能是用户模式组件的帮助下，标识设备，包括功能驱动程序和任何可选的筛选器驱动程序的驱动程序。 PnP 管理器调用[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程的每个驱动程序，如果尚未加载该驱动程序。 有关报告并枚举即插即用设备的详细信息，请参阅[添加到运行系统的即插即用设备](adding-a-pnp-device-to-a-running-system.md)。
+若要开始设备的软件配置，PnP 管理器和父总线驱动程序将枚举设备。 PnP 管理器可能会提供用户模式组件的帮助，其中标识了设备的驱动程序，包括功能驱动程序和任何可选的筛选器驱动程序。 如果尚未加载驱动程序，PnP 管理器将调用每个驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程。 有关报告和枚举 PnP 设备的详细信息，请参阅[将 Pnp 设备添加到正在运行的系统](adding-a-pnp-device-to-a-running-system.md)。
 
-初始化一个驱动程序，它必须准备好初始化其设备。 PnP 管理器中调用的驱动程序[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例行为每个设备驱动程序控制。
+初始化驱动程序后，必须准备好对其设备进行初始化。 PnP 管理器会为驱动程序控制的每个设备调用驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程。
 
-当驱动程序收到[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求从 PnP 管理器中，该驱动程序使设备开始，并已准备好处理 I/O 请求设备。 有关处理信息**IRP\_MN\_启动\_设备**请求，请参阅[启动设备](starting-a-device.md)。
+当驱动程序收到[**IRP\_MN\_开始**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)从 PnP 管理器\_设备请求时，驱动程序将启动设备，并准备好处理设备的 i/o 请求。 有关处理**IRP\_MN 的信息\_启动\_设备**请求，请参阅[启动设备](starting-a-device.md)。
 
-如果 PnP 管理器必须重新配置的活动设备的硬件资源，则会发送[ **IRP\_MN\_查询\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)和[**IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)对设备的驱动程序的请求。 PnP 管理器重新配置硬件资源后，将驱动程序以重启设备，通过发送定向[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 有关处理信息停止 Irp，请参阅[停止设备](stopping-a-device.md)。 (启动配置设备的驱动程序可以接收**IRP\_MN\_查询\_停止\_设备**并**IRP\_MN\_停止\_设备**请求之前启动设备后，尽管此步骤中未显示在上图中。)
+如果 PnP 管理器必须重新配置活动设备的硬件资源，则它会将[**IRP\_MN\_QUERY\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)，并使用[**IRP\_MN\_停止\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)设备的驱动程序请求。 重新配置硬件资源后，PnP 管理器会通过发送[**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求来指示驱动程序重启设备。 有关处理停止 Irp 的信息，请参阅[停止设备](stopping-a-device.md)。 （启动配置的设备的驱动程序可以接收**IRP\_MN\_QUERY\_停止\_设备**和**IRP\_** 在设备启动之前停止\_设备请求，但上图中并未显示此步骤。）
 
-在 Windows 98 上 / 我，即插即用管理器还会发送**IRP\_MN\_查询\_停止\_设备**并**IRP\_MN\_停止\_设备**请求时设备将被禁用。 这些系统上的驱动程序还会收到**IRP\_MN\_停止\_设备**后失败的启动请求。
+在 Windows 98/Me 上，PnP 管理器还会将**IRP\_MN\_QUERY\_停止\_设备**和**IRP\_MN**\_在设备处于禁用状态时停止\_设备请求。 这些系统上的驱动程序还会接收**IRP\_MN\_** 在启动失败后停止\_设备请求。
 
-当即插即用设备正在以物理方式从系统删除或已删除时，PnP 管理器将发送各种删除 Irp 到设备的驱动程序引导他们以删除设备的软件表示形式 （设备对象等）。 有关处理信息删除 Irp，请参阅[删除设备](removing-a-device.md)。
+当 PnP 设备从系统中实际删除或已被删除时，PnP 管理器会将各种删除 Irp 发送到设备的驱动程序，定向它们以删除设备的软件表示形式（设备对象，等等）。 有关处理删除 Irp 的信息，请参阅[删除设备](removing-a-device.md)。
 
-在某一时刻已删除的所有驱动程序的设备后，即插即用管理器调用的驱动程序[ *Unload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程并卸载该驱动程序。
+在删除驱动程序的所有设备后的某个时间点，PnP 管理器会调用驱动程序的[*Unload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)例程并卸载驱动程序。
 
  
 

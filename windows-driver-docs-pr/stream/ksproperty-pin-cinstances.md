@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_PIN\_CINSTANCES
-description: 当前的 pin 已实例化此 pin 工厂，数，以及此 pin 工厂可以实例化，每个筛选器的 pin 的最大数目。
+description: 此插针工厂实例化的当前插针数量，以及此 pin 工厂可根据筛选器实例化的最大 pin 数。
 ms.assetid: 0a6c0afa-1bdf-4b80-a8d7-55f13d9da74b
 keywords:
-- KSPROPERTY_PIN_CINSTANCES 流式处理媒体设备
+- KSPROPERTY_PIN_CINSTANCES 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eda6574e46083ef8b08cc5636baffb08f3412d06
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c94923f1b641b5cf9d038c05a580e20622bf6b85
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353214"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842749"
 ---
-# <a name="kspropertypincinstances"></a>KSPROPERTY\_PIN\_CINSTANCES
+# <a name="ksproperty_pin_cinstances"></a>KSPROPERTY\_PIN\_CINSTANCES
 
 
-当前的 pin 已实例化此 pin 工厂，数，以及此 pin 工厂可以实例化，每个筛选器的 pin 的最大数目。
+此插针工厂实例化的当前插针数量，以及此 pin 工厂可根据筛选器实例化的最大 pin 数。
 
 ## <span id="ddk_ksproperty_pin_cinstances_ks"></span><span id="DDK_KSPROPERTY_PIN_CINSTANCES_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67353214"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "67353214"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>否</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p>“是”</p></td>
+<td><p>无</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>KSPIN_CINSTANCES</p></td>
 </tr>
 </tbody>
@@ -64,7 +64,7 @@ ms.locfileid: "67353214"
 <a name="remarks"></a>备注
 -------
 
-此属性返回的结构类型 KSPIN\_CINSTANCES:
+此属性返回类型为 KSPIN\_CINSTANCES 的结构：
 
 ```cpp
 typedef struct {
@@ -73,17 +73,17 @@ typedef struct {
 } KSPIN_CINSTANCES;
 ```
 
-下面是描述每个成员的 KSPIN\_CINSTANCES 结构。
+下面是 KSPIN\_CINSTANCES 结构的每个成员的说明。
 
 <span id="PossibleCount"></span><span id="possiblecount"></span><span id="POSSIBLECOUNT"></span>**PossibleCount**  
-指定的 pin 的 pin 工厂可以实例化的最大数目上的筛选器或 KSINTANCE\_不确定是否存在无最大值。
+指定 pin 工厂在筛选器上可以实例化的最大 pin 数，或者，如果没有最大值，则 KSINTANCE\_不确定。
 
 <span id="CurrentCount"></span><span id="currentcount"></span><span id="CURRENTCOUNT"></span>**CurrentCount**  
-指定的筛选器上的 pin 的 pin 工厂已实例化的当前数目。
+指定 pin 工厂在筛选器上实例化的当前针脚数。
 
-此属性指定给定的 pin 工厂的每个筛选器最大值。 使用[ **KSPROPERTY\_PIN\_GLOBALCINSTANCES** ](ksproperty-pin-globalcinstances.md)属性来指定给定的 pin 工厂的整体最大值。
+此属性为给定的 pin 工厂指定每个筛选器的最大值。 使用[**KSPROPERTY\_引脚\_GLOBALCINSTANCES**](ksproperty-pin-globalcinstances.md)属性来指定给定 PIN 工厂的总最大值。
 
-Stream 微型驱动程序不需要直接; 处理此属性stream 类驱动程序处理使用流请求块的详细信息的查询此属性。
+Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用流请求块处理此属性以查询详细信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,8 +95,8 @@ Stream 微型驱动程序不需要直接; 处理此属性stream 类驱动程序�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ks.h （包括 Ks.h）</td>
+<td><p>标头</p></td>
+<td>Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>

@@ -4,15 +4,15 @@ description: 同步并行端口的使用
 ms.assetid: ea3a1998-9e31-4047-9193-6b402db222c9
 keywords:
 - 并行端口 WDK，同步
-- 同步 WDK 的并行端口
+- 同步 WDK 并行端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9539d2ca46d150fcfcf4366f6f1859785ba34b43
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ea0266896b0ce1b9acc6249173d2e99b528a33d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353582"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842317"
 ---
 # <a name="synchronizing-the-use-of-a-parallel-port"></a>同步并行端口的使用
 
@@ -20,33 +20,33 @@ ms.locfileid: "67353582"
 
 
 
-客户端必须通过将分配给前使用它和它们完成后释放该端口的并行端口同步其使用并行端口使用它。
+客户端必须先通过分配并行端口来对并行端口进行同步，然后再使用它并在使用端口完成后释放端口。
 
-客户端可以选择或取消选择 （这会自动分配和释放并行端口） 的 IEEE 1284.3 设备或者，请参阅 −[选择和取消选择 IEEE 1284 设备附加到并行端口](selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md)。
+或者，客户端可以选择和取消选择 IEEE 1284.3 设备（自动分配并释放并行端口）−请参阅[选择并取消选择附加到并行端口的 ieee 1284 设备](selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md)。
 
-客户端使用以下设备控制请求分配和释放并行端口：
+客户端使用以下设备控制请求来分配和释放并行端口：
 
-[**IOCTL\_INTERNAL\_PARALLEL\_PORT\_ALLOCATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)
+[**IOCTL\_内部\_并行\_端口\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)
 
-[**IOCTL\_INTERNAL\_PARALLEL\_PORT\_FREE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_parallel_port_free)
+[**IOCTL\_内部\_并行\_端口\_免费**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_free)
 
-内核模式下客户端还可以使用系统提供[并行端口回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)通过使用获得[ **IOCTL\_内部\_获取\_并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_get_parallel_port_info)请求。 此请求将返回[**并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ns-parallel-_parallel_port_information)结构，它包括以下指向系统提供的回调：
+内核模式客户端还可以使用系统提供的[并行端口回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，该例程是使用[**IOCTL\_内部\_获取\_并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_port_info)请求。 此请求返回一个[**并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ns-parallel-_parallel_port_information)结构，其中包括指向系统提供的回调的以下指针：
 
--   **TryAllocatePort**成员是指向[ *PPARALLEL\_尝试\_分配\_例程*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544550(v=vs.85))回调，即尝试分配并行端口的非阻止性例程。
+-   **TryAllocatePort**成员是指向[*PPARALLEL\_尝试\_分配\_例程*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544550(v=vs.85))回调的指针，该例程尝试分配并行端口。
 
--   **QueryNumWaiters**成员是指向[ *PPARALLEL\_查询\_等待者\_例程*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/nc-parallel-pparallel_query_waiters_routine)回调，它返回分配端口号和设备选择并行端口的工作队列排队的请求。
+-   **QueryNumWaiters**成员是指向[*PPARALLEL\_查询的指针\_等待进程\_例程*](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_query_waiters_routine)回调，该回调返回在并行端口的工作队列中排队的端口分配和设备选择请求数。
 
--   **FreePort**成员是指向[ *PPARALLEL\_免费\_例程*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/nc-parallel-pparallel_free_routine)回调，从而使并行端口。
+-   **FreePort**成员是指向[*PPARALLEL\_免费\_例程*](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_free_routine)回调的指针，它可释放并行端口。
 
-[ **IOCTL\_内部\_并行\_端口\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)请求要求最少处理由客户端，因为系统提供如果已分配的并行端口，功能驱动程序的并行端口队列客户端的请求。 功能驱动程序完成状态的状态的分配请求\_成功后会将该端口分配给客户端。 由于不能接受超时延迟或某些其他特定于设备的条件，客户端可以在任何时候取消挂起的分配请求。
+[**IOCTL\_内部\_并行\_端口\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)请求需要客户端的最低处理，因为系统提供的并行端口的函数驱动程序在并行端口已分配。 函数驱动程序在将端口分配给客户端之后，完成状态为 "状态"\_"分配" 请求。 由于无法接受的超时延迟或一些其他特定于设备的情况，客户端可以随时取消挂起的分配请求。
 
-**请注意**   [ **PPARALLEL\_尝试\_分配\_例程**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544550(v=vs.85))回调会立即返回 (为非阻止性)。 如果客户端仅使用**PPARALLEL\_尝试\_分配\_例程**回调以尝试分配并行端口的其他客户端在争用，并行端口功能驱动程序可能永远不会将该端口分配给客户端。 若要确保成功，客户端必须使用并行端口分配请求。 （并行端口函数驱动程序队列和随后的进程，端口分配和设备在其中接收请求的顺序选择请求）。
+**请注意**   [**PPARALLEL\_尝试\_分配\_例程**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544550(v=vs.85))回调立即返回。 如果客户端仅使用**PPARALLEL\_尝试\_分配\_例程**回调来尝试分配其他客户端正在争用的并行端口，则并行端口函数驱动程序可能永远不会将该端口分配给客户端。 若要确保成功，客户端必须使用并行端口分配请求。 （并行端口功能驱动程序会按照收到请求的顺序，对端口分配和设备选择请求进行排队。）
 
  
 
-并行端口功能驱动程序会将并行端口分配到客户端后，客户端具有独占访问权限的端口。 客户端必须调用[ **PPARALLEL\_免费\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/nc-parallel-pparallel_free_routine)回调以释放该端口。 客户端释放该端口后，并行端口功能驱动程序中删除下一个请求 （端口分配或设备选择请求），如果任何端口的工作进行排队并在完成请求。
+并行端口功能驱动程序向客户端分配并行端口之后，客户端将具有对端口的独占访问权限。 客户端必须调用[**PPARALLEL\_免费\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_free_routine)回调以释放端口。 客户端释放端口后，并行端口函数驱动程序将从端口的工作队列中删除下一个请求（端口分配或设备选择请求）（如果有），并完成请求。
 
-客户端应使用[ **PPARALLEL\_查询\_等待者\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/nc-parallel-pparallel_query_waiters_routine)回调，以确定是否存在等待并行端口的其他客户端。 需要分配一个端口，对于长的时间的时间应定期调用的客户端**PPARALLEL\_查询\_等待者\_例程**回调，以确定其他客户端处于等待状态为获取该端口，并且如果在等待客户端，请尽快释放该端口。
+客户端应使用[**PPARALLEL\_查询\_等待进程\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_query_waiters_routine)回调来确定是否有其他客户端正在等待并行端口。 需要为长时间分配一个端口的客户端应定期调用**PPARALLEL\_查询\_等待进程\_例程**回调来确定其他客户端是否正在等待获取端口，如果客户端等待，尽快释放端口。
 
  
 

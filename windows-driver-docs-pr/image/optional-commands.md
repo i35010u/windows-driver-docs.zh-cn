@@ -4,12 +4,12 @@ description: 可选命令
 ms.assetid: b9c411b1-0061-468a-b900-47c6062aa3b0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c52fda73f83383479e127ed3d1968d273a650f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba13ffbc6b980e142b4ce27b896d3370744f41ee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376581"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840779"
 ---
 # <a name="optional-commands"></a>可选命令
 
@@ -17,44 +17,44 @@ ms.locfileid: "67376581"
 ## <span id="ddk_optional_commands_si"></span><span id="DDK_OPTIONAL_COMMANDS_SI"></span>
 
 
-以下命令可以由 microdriver，但它不需要执行此操作。
+Microdriver 可以实现以下命令，但这不是必需的。
 
 <span id="CMD_GETSUPPORTEDFILEFORMATS"></span><span id="cmd_getsupportedfileformats"></span>CMD\_GETSUPPORTEDFILEFORMATS  
-由 WIA 平板驱动程序，以获得其他文件格式的调用。 传递的两个成员[ **VAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-val)结构应填写： **lVal**应设置为其他文件格式; 数**pGuid**应指向图像格式的 Guid 的数组。 为此数组分配的内存归 microdriver 和仅应释放它。
+由 WIA 平板驱动程序调用以获取其他文件格式的数目。 应填写传递的[**VAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/ns-wiamicro-val)结构的两个成员： **lVal**应设置为其他文件格式的数量;**pGuid**应指向图像格式 guid 的数组。 为此数组分配的内存由 microdriver 所有，只应由它释放。
 
-中列出的映像格式*wiadef.h*或可被定义为自定义格式。 请注意，因为的 BMP （文件） 和 MEMORYBMP （内存） 的格式为所需的格式，WIA 平板驱动程序会自动添加它们。 Microdriver 应将它们添加到其扩展列表。
+图像格式在*wiadef*中列出，或可以定义为自定义格式。 请注意，由于 BMP （文件）和 MEMORYBMP （内存）格式是必需的格式，因此 WIA 平板驱动程序会自动添加它们。 Microdriver 不应将其添加到其扩展列表。
 
-此命令是可选的除非设备可支持额外的文件格式。
+此命令是可选的，除非设备可以支持其他文件格式。
 
 <span id="CMD_GETSUPPORTEDMEMORYFORMATS"></span><span id="cmd_getsupportedmemoryformats"></span>CMD\_GETSUPPORTEDMEMORYFORMATS  
-由 WIA 平板驱动程序，以获得更多的内存格式的调用。 传递的两个成员[ **VAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-val)结构应填写： **lVal**应设置为更多的内存格式; 数据格式的数**pGuid**应指向图像格式的 Guid 的数组。 为此数组分配的内存归 microdriver 和仅应释放它。
+由 WIA 平板驱动程序调用以获取额外内存格式的数目。 应填写传递的[**VAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/ns-wiamicro-val)结构的两个成员： **lVal**应设置为额外的内存格式数;**pGuid**应指向图像格式 guid 的数组。 为此数组分配的内存由 microdriver 所有，只应由它释放。
 
-中列出的映像格式*wiadef.h*或可被定义为自定义格式。 请注意，因为的 BMP （文件） 和 MEMORYBMP （内存） 的格式为所需的格式，WIA 平板驱动程序会自动添加它们。 Microdriver 应将它们添加到其扩展列表。
+图像格式在*wiadef*中列出，或可以定义为自定义格式。 请注意，由于 BMP （文件）和 MEMORYBMP （内存）格式是必需的格式，因此 WIA 平板驱动程序会自动添加它们。 Microdriver 不应将其添加到其扩展列表。
 
-此命令是可选的除非设备可支持额外的内存格式。
+此命令是可选的，除非设备可以支持额外的内存格式。
 
 <span id="CMD_SETFORMAT"></span><span id="cmd_setformat"></span>CMD\_SETFORMAT  
-在类驱动程序将发送此命令将当前格式设置应用程序的要求。 **PGuid**的成员[ **VAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-val)结构包含的图像格式的 GUID。 Microdriver 应将此映像格式 ID 保存在其专用的上下文中，以便跟踪的当前设置的图像格式。
+类驱动程序发送此命令，以设置应用程序请求的当前格式。 [**VAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/ns-wiamicro-val)结构的**pGuid**成员包含图像格式 GUID。 为了跟踪当前的图像格式设置，microdriver 应将此图像格式 ID 保存在其专用上下文中。
 
-Microdrivers 都需要支持此命令仅当报告扩展的格式。 由于类驱动程序具有无法验证扩展格式中的数据，它负责 microdriver 生成正确的数据。 在扩展格式中的数据传输时, 应传输所有数据，包括映像标头。 例如，如果您的驱动程序报告它支持的 JPEG 格式，则所有 JPEG 必须进行传输，而不仅仅是图像位。
+仅当 Microdrivers 报告扩展格式时，才需要支持此命令。 由于类驱动程序无法验证扩展格式的数据，因此 microdriver 负责生成正确的数据。 传输扩展格式的数据时，应传输所有数据，包括图像标头。 例如，如果您的驱动程序报告它支持 JPEG 格式，则必须传输所有 JPEG，而不只是图像位。
 
-在类驱动程序拥有通过指向的内存**pGuid** VAL 结构，因此 microdriver 必须释放它的成员。
+类驱动程序拥有由 VAL 结构的**pGuid**成员指向的内存，因此 microdriver 不能释放它。
 
-请注意，此命令不影响 microdriver 响应对的调用的方法及其[**扫描**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/nf-wiamicro-scan)函数。 像往常一样，microdriver 必须检查的值*lPhase*， *pScanInfo*，并*lLength*指向此函数和放置数据的缓冲区中的参数*pBuffer*并*pReceived*作为适当的参数。
+请注意，此命令不会影响 microdriver 响应其[**Scan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-scan)函数调用的方式。 与往常一样，microdriver 必须检查此函数的*lPhase*、 *pScanInfo*和*lLength*参数的值，并根据需要将数据放置在*pBuffer*和*pReceived*参数所指向的缓冲区中。
 
-支持 WiaImgFmt 中只有文件的驱动程序\_BMP 和 WiaImgFmt\_MEMORYBMP 格式 （microdrivers 的默认格式） 可以接收 CMD\_SETFORMAT 命令。 这些驱动程序可以忽略此命令中，因为类驱动程序将处理所有数据传输使用的默认格式。
+仅支持 WiaImgFmt\_BMP 和 WiaImgFmt\_MEMORYBMP 格式（microdrivers 的默认格式）中的文件的驱动程序可以接收 CMD\_SETFORMAT 命令。 这些驱动程序可以忽略此命令，因为该类驱动程序使用默认格式处理所有数据传输。
 
 <span id="CMD_SETSCANMODE"></span><span id="cmd_setscanmode"></span>CMD\_SETSCANMODE  
-由 WIA 平板驱动程序设置扫描模式-preview 或最终-microdriver 的设备的调用。 **LVal**的成员[ **VAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-val)结构将包含这两个定义中的以下值之一*wiamicro.h*:
+由 WIA 平板驱动程序调用，用于设置扫描模式-预览或 microdriver 设备的最终状态。 [**VAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/ns-wiamicro-val)结构的**lVal**成员将包含以下值之一，这两个值都是在*wiamicro*中定义的：
 
-扫描模式\_PREVIEWSCAN − 预览扫描模式
+SCANMODE\_PREVIEWSCAN − Preview 扫描模式
 
-扫描模式\_FINALSCAN − 最终扫描模式
+SCANMODE\_FINALSCAN −最终扫描模式
 
 <span id="CMD_SETSTIDEVICEHKEY"></span><span id="cmd_setstidevicehkey"></span>CMD\_SETSTIDEVICEHKEY  
-由 WIA 平板驱动程序，以允许 microdriver 读取注册表项中的已安装的注册表部分调用。 此命令提供了 STI 设备的已安装的注册表 HKEY 到 microdriver，以便它可以访问其设备的专用注册表值。 **PHandle**的成员[ **VAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-val)结构将包含指向 STI 的期间指定给 WIA 平板驱动程序的 HKEY [ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)方法。 这是已安装的设备部分的顶级 HKEY。 **DeviceData**可以直接使用此 HKEY 打开密钥。 请参阅[WIA 设备 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/image/inf-files-for-wia-devices)有关详细信息。
+由 WIA 平板驱动程序调用，以允许 microdriver 读取已安装注册表部分中的注册表项。 此命令向 microdriver 提供 STI 设备的已安装注册表 HKEY，以便它可以访问其设备的专用注册表值。 [**VAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/ns-wiamicro-val)结构的**pHandle**成员将包含一个指针，指向在 STI 的[**IStiUSD：： INITIALIZE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)方法期间提供给 WIA 平板驱动程序的 HKEY。 这是已安装设备部分的顶级 HKEY。 可以使用此 HKEY 直接打开**DeviceData**键。 有关详细信息，请参阅[WIA 设备的 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/image/inf-files-for-wia-devices)。
 
-注意：此键是打开和关闭*仅*WIA 平板驱动程序。 它也是有效仅在此命令和 CMD\_初始化 (请参阅[所需命令](required-commands.md))。 这些命令返回后，该密钥不再有效。 HKEY 值*不得*缓存。
+注意：此密钥*仅*由 WIA 平板驱动程序打开并关闭。 它在此命令和 CMD\_INITIALIZE 中也有效（请参阅[所需的命令](required-commands.md)）。 这些命令返回后，该密钥将不再有效。 *不*能缓存 HKEY 值。
 
  
 

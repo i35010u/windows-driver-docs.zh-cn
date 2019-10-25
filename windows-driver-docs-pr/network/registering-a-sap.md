@@ -3,17 +3,17 @@ title: 注册 SAP
 description: 注册 SAP
 ms.assetid: 2b318bf0-4f0e-4db7-850b-510a9f2c7cf0
 keywords:
-- 服务访问点 WDK 的 CoNDIS
-- SAPs WDK CoNDIS
-- 注册 SAPs
+- 服务访问点 WDK CoNDIS
+- Sap WDK CoNDIS
+- 正在注册 Sap
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fff4b626a085a6361a4b26817732fcce738627d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed8fa8f50b6c1dbff3bbbef6fc5adb131d39d591
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385420"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842101"
 ---
 # <a name="registering-a-sap"></a>注册 SAP
 
@@ -21,25 +21,25 @@ ms.locfileid: "67385420"
 
 
 
-如果客户端接受传入的调用，其[ **ProtocolClOpenAfCompleteEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_open_af_complete_ex)函数通常注册一个或多个 SAPs 呼叫管理器通过调用[ **NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclregistersap)。
+如果客户端接受传入调用，则其[**ProtocolClOpenAfCompleteEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_open_af_complete_ex)函数通常通过调用[**NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)向调用管理器注册一个或多个 sap。
 
-下图显示的某调用的客户端管理器注册 SAP。
+下图显示了注册 SAP 的呼叫管理器的客户端。
 
-![说明注册 sap 呼叫管理器的客户端的关系图](images/cm-02.png)
+![说明注册 sap 的呼叫管理器客户端的示意图](images/cm-02.png)
 
-下图显示了注册 SAP MCM 驱动程序的客户端。
+下图显示了注册 SAP 的 MCM 驱动程序的客户端。
 
-![sap 注册 mcm 驱动程序](images/fig1-02.png)
+![向 mcm 驱动程序注册 sap](images/fig1-02.png)
 
-通过调用**NdisClRegisterSap**，客户端请求的传入呼叫上特定的 SAP 的通知。 NDIS 将转发到呼叫管理器或 MCM 驱动程序的客户端提供的 SAP 信息[ **ProtocolCmRegisterSap** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_reg_sap)函数以进行验证。 如果给定的 SAP 已在使用或呼叫管理器或 MCM 驱动程序呼叫管理器或 MCM 驱动程序无法识别的客户端提供 SAP 规范，如果将此请求失败。
+调用**NdisClRegisterSap**时，客户端请求对特定 SAP 的传入呼叫发出通知。 NDIS 将客户端提供的 SAP 信息转发到用于验证的调用管理器或 MCM 驱动程序的[**ProtocolCmRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_reg_sap)函数。 如果给定的 SAP 已在使用中，或者如果调用管理器或 MCM 驱动程序无法识别客户端提供的 SAP 规范，则调用管理器或 MCM 驱动程序将无法执行此请求。
 
-在中*ProtocolCmRegisterSap*，呼叫管理器或 MCM 驱动程序可能与网络控制设备或注册面向连接的客户端在网络上的 SAP 的其他特定于媒体的代理进行通信。 *ProtocolCmRegisterSap*还会将存储 NDIS 提供*NdisSapHandle*表示 SAP。
+在*ProtocolCmRegisterSap*中，呼叫管理器或 MCM 驱动程序可能与网络控制设备或其他特定于媒体的代理进行通信，以便在面向连接的客户端的网络上注册 SAP。 *ProtocolCmRegisterSap*还存储一个表示 SAP 的 NDIS 提供的*NdisSapHandle* 。
 
-*ProtocolCmRegisterSap*可以同步或异步完成。 若要以异步方式完成*ProtocolCmRegisterSap*呼叫管理器的函数调用[ **NdisCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmregistersapcomplete)。 *ProtocolCmRegisterSap* MCM 驱动程序的函数调用[ **NdisMCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmregistersapcomplete)。 在调用**Ndis (M) CmRegisterSapComplete**会导致调用客户端的 NDIS [ *ProtocolClRegisterSapComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_register_sap_complete)函数。
+*ProtocolCmRegisterSap*可以同步或异步完成。 若要异步完成，调用管理器的*ProtocolCmRegisterSap*函数将调用[**NdisCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmregistersapcomplete)。 MCM 驱动程序的*ProtocolCmRegisterSap*函数将调用[**NdisMCmRegisterSapComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregistersapcomplete)。 调用**ndis （M） CmRegisterSapComplete**会使 ndis 调用客户端的[*ProtocolClRegisterSapComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_register_sap_complete)函数。
 
-如果客户端的调用**NdisClRegisterSap**是成功，NDIS 返回到客户端表示 SAP NdisSapHandle。
+如果客户端对**NdisClRegisterSap**的调用成功，NDIS 会将 NdisSapHandle 返回给客户端，表示 SAP。
 
-呼叫管理器注册 SAP 代表的面向连接的客户端后，它将通知定向到该 SAP 通过调用传入调用产品/服务的客户端[ **NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall)。 MCM 驱动程序调用[ **NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingcall)(请参阅[该值指示传入调用](indicating-an-incoming-call.md))。 客户端可以接收上 SAP 的传入呼叫，甚至同时 SAP 注册仍为挂起;也就是说之前, 其*ProtocolClRegisterSapComplete*调用函数。
+在呼叫管理器代表面向连接的客户端注册 SAP 后，它会通过调用[**NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingcall)通知传入呼叫提议的客户端定向到该 sap。 MCM 驱动程序调用[**NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdispatchincomingcall)（请参阅[指示传入呼叫](indicating-an-incoming-call.md)）。 即使 SAP 注册仍处于挂起状态，客户端也可以在 SAP 上收到传入呼叫;也就是说，在调用其*ProtocolClRegisterSapComplete*函数之前。
 
  
 

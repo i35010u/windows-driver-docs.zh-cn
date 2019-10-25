@@ -3,20 +3,20 @@ title: 数据交集
 description: 数据交集
 ms.assetid: a1588ce0-a091-4bfd-98a9-4d78e2fc847f
 keywords:
-- 数据交集处理程序 WDK 音频，有关数据交集
+- 数据交集处理程序 WDK 音频，关于数据交集
 - 数据交集 WDK 音频
-- 交集 WDK 音频
+- 与 WDK 音频交叉
 - 数据范围交集 WDK 音频
-- 接收器 pin WDK 音频
-- 源 pin WDK 音频
+- 接收器引脚 WDK 音频
+- 源引脚 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4857f3cbb07d73ce8764517dd7cb7b961206c510
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5477abf43f8dd27c14ce1e531b1ec30d7c38194
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359096"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833578"
 ---
 # <a name="data-intersection"></a>数据交集
 
@@ -24,51 +24,51 @@ ms.locfileid: "67359096"
 ## <span id="data_intersection"></span><span id="DATA_INTERSECTION"></span>
 
 
-音频筛选器关系图中的音频流可以从流源 pin 的一个筛选器到另一个筛选器的接收器插针只有两个 pin 的流支持一种通用格式。 同样，客户端可以将音频流发送到接收器 pin 对筛选器或音频流接收来自源 pin 对筛选器，仅当客户端和 pin 支持常见的流格式。 音频筛选器使用一种称为数据交集 （的缩写的数据范围交集） 技术来识别常见到两个 pin 或客户端和 pin 码的流格式。
+在音频筛选器图中，只有当两个 pin 支持公共格式的流时，音频流才能从一个筛选器的源插针流向另一个筛选器的接收器 pin。 同样，客户端可以将音频流发送到筛选器上的接收器插针，或仅当客户端和 pin 支持公共流格式时才从筛选器的源插针接收音频流。 音频筛选器使用一种称为数据交集的技术（数据范围交集的简称）来识别两个插针或客户端和 pin 共用的流格式。
 
-例如，在 Windows Server 2003、 Windows XP、 Windows 2000 和 Windows Me / 98， [SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)使用数据交集方法来通过连接筛选器的 pin 对支持的构造音频筛选器关系图兼容的音频数据格式。
+例如，在 Windows Server 2003、Windows XP、Windows 2000 和 Windows Me/98 中， [SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)通过连接支持兼容音频数据的筛选器引脚对，使用数据交叉技术来构造音频筛选器图形formats.
 
-一个[pin 工厂](pin-factories.md)指定一组的每个 pin 支持的数据范围，其中每个数据区域是类型的结构数组作为格式[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio). 数据范围指定常规格式的类型，可以是[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)或[ **KSDATAFORMAT\_DSOUND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_dsound). 此外，数据范围指定一个范围的值为每个以下参数：
+[Pin 工厂](pin-factories.md)将每个 pin 支持的一组格式指定为数据范围的数组，其中每个数据区域是类型为[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)的结构。 数据范围指定常规格式类型，可以是[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)或[**KSDATAFORMAT\_DSOUND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound)。 此外，数据范围还为以下每个参数指定了一系列值：
 
--   每个样本位
+-   每个样本的位数
 
 -   采样频率
 
--   通道数
+-   通道数量
 
-KSDATARANGE\_音频结构指定位每个示例和示例频率范围中的最小值和最大值，但仅的最大通道数范围。 通道的最小数目是隐式之一。
+KSDATARANGE\_音频结构同时为每样本位和采样频率范围指定最小值和最大值，但最大值为通道数范围。 最小通道数是隐式的。
 
-查找两个数据区域-从每个 pin-相互交叉的包含协商两个 pin 的常用数据格式的作业。 对数据范围相交如果：
+为两个插针协商通用数据格式的工作包括查找两个数据范围-一个来自每个 pin--彼此相交。 如果是以下情况，则一对数据范围会交集：
 
--   它们支持相同的常规波形格式 (KSDATAFORMAT\_WAVEFORMATEX 或 KSDATAFORMAT\_DSOUND)。
+-   它们支持相同的常规波形格式（KSDATAFORMAT\_WAVEFORMATEX 或 KSDATAFORMAT\_DSOUND）。
 
--   其位每个样本范围重叠。
+-   它们每个样本的位数重叠。
 
--   及其采样频率范围重叠。
+-   它们的采样频率范围重叠。
 
-如前文所述，KSDATAFORMAT\_音频结构意味着在该通道受 pin 的最小数目始终是一个硬件型号。 根据此模型中，任何两个 pin 的通道数范围应始终重叠，因为这两个 pin 支持至少一个通道。 很明显，具有多个通道的最少的硬件适配器不符合此模型中，但适配器驱动程序可以包括一个专有数据交集处理程序来处理此类型的问题 (请参阅中的示例[专有Data-Intersection 处理程序](proprietary-data-intersection-handlers.md))。
+如前所述，KSDATAFORMAT\_音频结构表示一个硬件型号，其中 pin 支持的最小通道数始终为1。 根据此模型，任意两个 pin 的通道数范围应始终重叠，因为这两个 pin 至少支持一个通道。 显然，最小数量为1个通道的硬件适配器不符合此模型，但适配器驱动程序可以包含专用的数据交集处理程序来处理此类问题（请参阅专有的示例[数据交集处理程序](proprietary-data-intersection-handlers.md)）。
 
-在查找一对重叠的数据区域的两个 pin，处理程序的常用数据格式从选择的交集的区域，如下所示：
+为两个插针查找一对相交的数据范围时，处理程序将从交集区域中选择一个通用数据格式，如下所示：
 
--   从在其中的两位每个样本范围重叠的区域选择的每个样本位数。
+-   每个样本的位数是从两个每个样本单元重叠的区域中选择的。
 
--   在这两个示例频率范围重叠的区域中选择采样频率。
+-   从两个采样频率范围重叠的区域中选择了采样频率。
 
--   在这两个频道号范围重叠的区域中选择的通道数。
+-   从两个通道范围重叠的区域中选择通道数。
 
-例如，协商音频端口驱动程序的接收器 pin 和另一个筛选器的源插针的通用格式时 (通常情况下， [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver))，SysAudio 首先获取源插针的数据范围数组。 然后将发送 SysAudio [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)对接收器 pin 的请求，并包含与此请求的源插针的数据范围数组。 内核流式处理层截获的请求，并以迭代方式为在源插针的数据范围数组中，直到该处理程序中查找成功开头的第一个元素，每个连续元素一次地调用端口驱动程序的数据交叉处理程序数据交集。
+例如，当为音频端口驱动程序的接收器 pin 和其他筛选器（通常为[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)）的源 pin 协商通用格式时，SysAudio 将首先获取源 pin 的数据范围数组。 然后，SysAudio 向接收器 pin 发送[**KSPROPERTY\_PIN\_DATAINTERSECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)请求，并将源 PIN 的数据范围数组包含在此请求中。 内核流式处理层会截获请求，并以迭代方式为源插针的数据范围数组中的每个连续元素调用端口驱动程序的数据交集处理程序，从第一个元素开始直到处理程序成功查找数据交集。
 
-SysAudio 对端口驱动程序的数据交叉处理程序每次调用，该处理程序首先从微型端口驱动程序获取接收器插针的数据范围数组。 它然后循环访问数组，从第一个元素，直到它成功地找到接收器 pin 数据范围和当前的源 pin 数据区域之间的交集。 该处理程序将选择位于交集，并输出到调用方此格式的通用格式。
+对于 SysAudio 为端口驱动程序的数据交集处理程序发出的每个调用，处理程序首先从微型端口驱动程序获取接收器 pin 的数据范围数组。 然后，它将从第一个元素开始循环访问数组，直到它成功找到接收器数据范围和当前源-pin 数据范围之间的交集。 处理程序选择位于交集内的通用格式，并将此格式输出到调用方。
 
-在迭代中每个步骤，端口驱动程序调用微型端口驱动程序的专有数据交集处理程序包含两个数据区域-一个用于每个两个 pin。 如果在执行任一步骤专有的处理程序拒绝处理两个数据区域之间的交集数据检查，端口驱动程序的数据交叉处理程序执行检查。
+在迭代的每个步骤中，端口驱动程序都调用微型端口驱动程序的专用数据交集处理程序和两个数据范围-每个数据区域对应两个数据区域。 如果在任何步骤中，专用处理程序拒绝处理两个数据区域之间的数据交集检查，则端口驱动程序的数据交集处理程序将改为执行检查。
 
 总而言之，搜索源 pin 数据范围和接收器 pin 数据范围之间的交集是一个迭代过程：
 
--   在外部循环中，内核流式处理层循环访问源插针的数据范围数组，从第一个数组元素中的连续元素。
+-   在外部循环中，内核流式处理层从第一个数组元素开始，遍历源插针的数据范围数组中的连续元素。
 
--   在内部循环中，端口驱动程序循环访问接收器插针的数据范围数组，从第一个数组元素中的连续元素。
+-   在内部循环中，端口驱动程序从第一个数组元素开始，遍历接收器插针的数据范围数组中的后续元素。
 
-查找第一个数据交集后停止搜索。 此过程往往比较适合每个插针的数据范围数组的开头的元素。 在指定的 pin 的数据范围数组时，适配器驱动程序应订购数组元素上来将该数组的开头的首选格式的数据范围。
+查找第一个数据交集时停止搜索。 此过程倾向于使元素接近于每个插针的数据范围数组的开头。 当指定 pin 的数据范围数组时，适配器驱动程序应通过将首选格式的数据范围置于数组的开头来对数组元素进行排序。
 
  
 

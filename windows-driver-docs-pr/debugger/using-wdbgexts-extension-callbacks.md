@@ -3,15 +3,15 @@ title: 使用 WdbgExts 扩展回调
 description: 使用 WdbgExts 扩展回调
 ms.assetid: b9a2f30a-b09c-43eb-b105-a6b0ffdb1342
 keywords:
-- WdbgExts 扩展，使用的回调
+- WdbgExts 扩展，回调，使用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1894029c682903a32440ec1ca8621fafd59f41b1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 265ba5aa236fa1571337295c1d3accc7ef783806
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366329"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838800"
 ---
 # <a name="using-wdbgexts-extension-callbacks"></a>使用 WdbgExts 扩展回调
 
@@ -19,15 +19,15 @@ ms.locfileid: "67366329"
 ## <span id="ddk_using_wdbgexts_extension_callbacks_dbwx"></span><span id="DDK_USING_WDBGEXTS_EXTENSION_CALLBACKS_DBWX"></span>
 
 
-在编写 WdbgExts 扩展 DLL 时，可以导出某些函数：
+编写 WdbgExts 扩展 DLL 时，可以导出某些函数：
 
--   必须将导出一个名为函数[ *WinDbgExtensionDllInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_extension_dll_init)。 当调试器加载扩展 DLL 时，首先调用*WinDbgExtensionDllInit*并将其传递三个参数。
+-   必须导出名为[*WinDbgExtensionDllInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_extension_dll_init)的函数。 调试器加载扩展 DLL 时，它首先调用*WinDbgExtensionDllInit*并将其传递给它三个参数。
 
-    -   一个指向**WINDBG\_扩展\_APIS64**结构，其中包含指向由调试器实现和 Wdbgexts.h 中声明的函数的指针。 必须将整个结构复制到在您的 DLL 中创建的全局变量。
-    -   主版本号。 在您的 DLL 中创建的全局变量，必须将复制的主版本号。
-    -   次版本号。 在您的 DLL 中创建的全局变量，必须将复制的次版本号。
+    -   一个指向**WINDBG\_扩展\_APIS64**结构的指针，该结构包含指向由调试器实现并在 Wdbgexts 中声明的函数的指针。 必须将整个结构复制到在 DLL 中创建的全局变量。
+    -   主要版本号。 必须将主版本号复制到在 DLL 中创建的全局变量。
+    -   次版本号。 必须将次版本号复制到在 DLL 中创建的全局变量。
 
-    例如，可以创建名为 ExtensionApis、 SavedMajorVersion 和 SavedMinorVersion 如下面的示例中所示的全局变量。
+    例如，可以创建名为 ExtensionApis、SavedMajorVersion 和 SavedMinorVersion 的全局变量，如以下示例中所示。
 
     ```cpp
     WINDBG_EXTENSION_APIS64 ExtensionApis;
@@ -44,9 +44,9 @@ ms.locfileid: "67366329"
     }
     ```
 
--   必须将导出一个名为函数[ *ExtensionApiVersion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_extension_api_version)。 调试器将调用此函数，并要求返回一个指向**EXT\_API\_版本**结构，其中包含扩展 DLL 的版本号。 执行类似的命令时，调试器将使用此版本号[ **.chain** ](-chain--list-debugger-extensions-.md)并[**版本**](version--show-debugger-version-.md)显示扩展版本数。
+-   必须导出名为[*ExtensionApiVersion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_extension_api_version)的函数。 调试器调用此函数，并期望返回指向包含扩展 DLL 版本号的**EXT\_API\_版本**结构的指针。 当执行的命令（如[**链**](-chain--list-debugger-extensions-.md)和[**版本**](version--show-debugger-version-.md)）显示扩展版本号时，调试器将使用此版本号。
 
--   （可选） 可以将导出一个名为函数[ *CheckVersion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_check_version)。 每次使用扩展插件命令时，调试器将调用此例程。 可以使用此版本不匹配警告您的 DLL 是略有不同版本的调试器，但不同足够可阻止运行时打印。
+-   可以选择导出名为[*CheckVersion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/nc-wdbgexts-pwindbg_check_version)的函数。 每次使用扩展命令时，调试器都会调用此例程。 如果 DLL 的版本与调试器的版本略有不同，则可以使用此方法输出版本不匹配警告，但不会有足够的时间来防止运行。
 
  
 

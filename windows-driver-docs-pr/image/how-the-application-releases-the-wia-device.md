@@ -4,12 +4,12 @@ description: 应用程序如何释放 WIA 设备
 ms.assetid: 694daed4-d794-4835-a052-27cc498baa10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db25ccba4e5dd046cfee4ea4d30feae76ba448ba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 56cf85562128ad23f02b6efbd77f78a8562de52a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363051"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840833"
 ---
 # <a name="how-the-application-releases-the-wia-device"></a>应用程序如何释放 WIA 设备
 
@@ -17,18 +17,18 @@ ms.locfileid: "67363051"
 
 
 
-当应用程序没有进一步的 WIA 设备的需要时，它将调用**IWiaItem::Release**方法 （Microsoft Windows SDK 文档中所述）。 发布到任何 WIA 项的最后一个引用时，WIA 服务调用[ **IWiaMiniDrv::drvUnInitializeWia** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia)方法。 WIA 微型驱动程序应使用此方法主要用于管理所有连接的应用程序与关联的资源。 当应用程序关闭时，不再需要其项树与关联的资源。 WIA 微型驱动程序应跟踪的所有连接的应用程序通过中的引用计数器递增[ **IWiaMiniDrv::drvInitializeWia** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)和引用中计数器递减**IWiaMiniDrv::drvUnInitializeWia**。 在这种情况下释放资源可能会导致其他已连接的应用程序出现问题。 当引用计数器达到那里的零时没有更多的应用程序连接到 WIA 微型驱动程序。 微型驱动程序应清理在应用程序连接过程中获取所有已分配资源。
+当应用程序不再需要 WIA 设备时，它将调用**IWiaItem：： Release**方法（如 Microsoft Windows SDK 文档中所述）。 发布对任何 WIA 项的最后一个引用时，WIA 服务将调用[**IWiaMiniDrv：:D rvuninitializewia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia)方法。 WIA 微型驱动程序应主要使用此方法来管理与所有连接的应用程序关联的资源。 当应用程序关闭时，不再需要与其项树关联的资源。 WIA 微型驱动程序应通过在 IWiaMiniDrv 中递增引用计数器来跟踪所有连接的应用程序[ **：:D rvinitializewia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia) ，并在**IWiaMiniDrv：:d rvuninitializewia**中递减该引用计数器。 此时释放资源可能会导致其他连接的应用程序出现问题。 如果引用计数器变为零，则没有其他应用程序连接到 WIA 微型驱动程序。 微型驱动程序应清除它在应用程序连接期间获取的任何分配资源。
 
-**请注意**  * * * **IWiaMiniDrv::drvUnInitializeWia**方法不会卸载该驱动程序。 该驱动程序可能会再次调用，以处理事件，或当应用程序要与之进行通信。 调用此方法并不意味着所有客户端已断开连接。 应该有一次调用每个客户端断开连接。
-每次调用**IWiaMiniDrv::drvUnInitializeWia**方法应与相应地调用配对**IWiaMiniDrv::drvInitializeWia**方法。
+**请注意**  * * * * **IWiaMiniDrv：:d rvuninitializewia**方法不会卸载驱动程序。 可以再次调用该驱动程序来处理事件，或在应用程序与之通信时进行处理。 对此方法的调用并不意味着所有客户端都已断开连接。 每个客户端断开连接应调用一次。
+对**IWiaMiniDrv：:D rvuninitializewia**方法的每个调用都应与对**IWiaMiniDrv：:d rvinitializewia**方法的相应调用配对。
 
-WIA 驱动程序应*不*释放此方法调用中的任何驱动程序资源，它可以安全地确定，除非*没有*当前连接的应用程序。
+WIA 驱动程序*不*应释放此方法调用中的任何驱动程序资源，除非它能够安全地确定当前*没有任何*应用程序在连接。
 
-若要确定当前的应用程序连接计数，WIA 驱动程序应增加一个类成员变量作为引用计数器来跟踪对方法调用**IWiaMiniDrv::drvInitializeWia** （递增计数器）并**IWiaMiniDrv::drvUnInitializeWia** （减少计数器）。
+为了确定当前应用程序连接计数，WIA 驱动程序应将类成员变量作为引用计数器递增，以跟踪对**IWiaMiniDrv：:D rvinitializewia** （递增计数器）和**IWiaMiniDrv：：drvUnInitializeWia** （递减计数器）。
 
  
 
-下面的示例演示的实现**IWiaMiniDrv::drvUnInitializeWia**方法。
+下面的示例演示**IWiaMiniDrv：:D rvuninitializewia**方法的实现。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvUnInitializeWia(BYTE *pWiasContext)

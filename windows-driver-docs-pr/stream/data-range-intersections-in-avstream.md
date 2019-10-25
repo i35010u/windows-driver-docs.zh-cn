@@ -5,19 +5,19 @@ ms.assetid: 44281574-8258-47a3-857d-fd44bb949f17
 keywords:
 - 数据交集 WDK AVStream
 - 交集 WDK AVStream
-- 数据格式以 WDK AVStream
+- 数据格式 WDK AVStream
 - 数据范围 WDK AVStream
 - 范围 WDK AVStream
-- 格式 WDK AVStream
-- 将数据区域固定 WDK
+- 格式化 WDK AVStream
+- 固定数据范围 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0245fe51b6c7c64442e985c24bc7f0628c54d5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3eb4dc3ba6a88eb27b335d4647eddf384dc6ae6d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376395"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837719"
 ---
 # <a name="data-range-intersections-in-avstream"></a>AVStream 中的数据范围交集
 
@@ -25,27 +25,27 @@ ms.locfileid: "67376395"
 
 
 
-数据格式是一组描述连接的某些方面的参数。 例如，音频数据格式可能会指定特定格式的音频 X 每秒的示例和每个样本的 Y 位。
+数据格式是一组描述连接的某些方面的参数。 例如，音频数据格式可能会指定特定格式的音频，每秒 X 个样本和每个样本的 Y 位。
 
-数据区域，指定有效参数的顺序。 例如，音频数据范围可以指定特定格式的音频在每个样本的第二个和 C D 位每一个 B 示例。
+数据范围指定有效参数序列。 例如，音频数据范围可以指定特定格式的音频，每秒 A-B 个样本，每个样本有3-D 位。
 
-微型驱动程序提供了一系列支持的特定 pin 中的数据范围**DataRanges**的相应成员[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)结构。
+微型驱动程序为相应[**KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)结构的**DataRanges**成员中的特定 pin 提供其支持的数据范围列表。
 
-在 AVStream，微型驱动程序可以通过提供指向提供微型驱动程序的回调例程中提供自己的数据范围的交集处理程序**IntersectHandler**的成员[ **KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)。 若要使 AVStream 相交范围，请将此成员设置为**NULL**。 请参阅[ *AVStrMiniIntersectHandlerEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksintersecthandlerex)若要了解如何定义的回调例程。
+在 AVStream 中，微型驱动程序可以提供其自己的数据范围交集处理程序，方法是在[**KSPIN\_说明符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)的**IntersectHandler**成员中提供微型驱动程序提供的回调例程的指针\_例如。 若要让 AVStream 与范围相交，请将此成员设置为**NULL**。 请参阅[*AVStrMiniIntersectHandlerEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksintersecthandlerex) ，了解如何定义回调例程。
 
-如果微型驱动程序提供 intersect 处理程序，当交集需要进行时，微型驱动程序收到与匹配的两个数据区域中主要类型、 子格式和说明符。 此外，与匹配的数据范围所需的属性。
+如果微型驱动程序提供了交集处理程序，则当需要进行交集时，微型驱动程序会收到两个在主要类型、subformat 和说明符中匹配的数据区域。 此外，数据范围的必需属性也匹配。
 
-如果范围相交和中提供足够的缓冲区空间**数据**的参数*AVStrMiniIntersectHandlerEx*回调例程交集例程选择中的格式交集，并返回到调用方缓冲区中指向**数据**。
+如果在*AVStrMiniIntersectHandlerEx*回调例程的**Data**参数中提供了交集和足够的缓冲区空间，则交集例程将选择交集中的格式，并将其返回到缓冲区中的调用方由**数据**指向。
 
-如果两个数据区域不相交，该处理程序将返回状态\_否\_匹配项。
+如果两个数据范围不相交，处理程序将返回状态\_不\_匹配。
 
-如果已指定微型驱动程序[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)调度，则 AVStream 调用此调度通知微型驱动程序 AVStream 在针上设置特定的格式。 提供一个指向你*AVStrMiniPinSetDataFormat*中的回调例程**SetDataFormat**的成员[ **KSPIN\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)结构。 (客户端的微型驱动程序[流式传输类](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)接收[ **SRB\_设置\_数据\_格式**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-data-format)而不是*AVStrMiniPinSetDataFormat*。)
+如果微型驱动程序指定了[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat)调度，则 AVStream 将调用此调度来通知微型驱动程序 AVStream 正在设置特定的 pin 格式。 提供一个指针，指向[**KSPIN\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)结构的**SetDataFormat**成员中的*AVStrMiniPinSetDataFormat*回调例程。 （微型驱动程序是[stream 类](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)的客户端接收[**SRB\_\_格式**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-data-format)（而不是*AVStrMiniPinSetDataFormat*）设置\_数据。）
 
-微型驱动程序可以通过返回状态来拒绝建议的格式\_否\_与来自*AVStrMiniPinSetDataFormat*。
+微型驱动程序可以通过从*AVStrMiniPinSetDataFormat*返回状态\_"\_不匹配" 来拒绝建议的格式。
 
-首次调用除了[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)创建 pin 之前，你的微型驱动程序可能会收到第二个*AVStrMiniPinSetDataFormat*调用之前，pin 将转换为运行状态。 如果 AVStream 或流类客户端是视频捕获微型驱动程序和接收此类通知*此调度包含实际的图面上参数*。 如果可能，微型驱动程序不应失败这第二种格式更改。 不要假定第二个调度调用将会发生。
+除了在创建 pin 之前对[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat)的初始调用以外，微型驱动程序还可以在 pin 转换为运行状态之前接收到第二个*AVStrMiniPinSetDataFormat*调用。 如果 AVStream 或 stream 类客户端是视频捕获微型驱动程序，而你收到此类通知，则*此调度包含实际的 surface 参数*。 如果可能，微型驱动程序不应失败这一第二种格式更改。 不要假设发生第二次调度调用。
 
-微型驱动程序应捕获数据中任何格式已包含在上次成功*AVStrMiniPinSetDataFormat*调度。
+微型驱动程序应捕获上次成功的*AVStrMiniPinSetDataFormat*调度中包含的任何格式的数据。
 
  
 

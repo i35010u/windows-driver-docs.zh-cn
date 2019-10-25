@@ -3,12 +3,12 @@ title: 在音频资源重新平衡和意外删除操作期间管理内存缓冲�
 description: 对于需要重新分配内存资源的某些 PCI 方案，将使用 PnP 重新平衡。 需要正确管理内存缓冲区以避免出现问题。
 ms.date: 04/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 758b7c3aa23ff841b2fc17c531bfe1dbe87e18d3
-ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
+ms.openlocfilehash: 6f20a301ebb183ad92a66641bf7b6f88ed51dad2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329459"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832658"
 ---
 # <a name="managing-memory-buffers-during-audio-resource-rebalance-and-surprise-removal-operations"></a>在音频资源重新平衡和意外删除操作期间管理内存缓冲区
 
@@ -26,20 +26,20 @@ ms.locfileid: "71329459"
 
 请注意，本主题中所述的对缓冲区管理方法的操作系统支持将在2019更新后的下一主要功能版本中提供。
 
-如果无法正确地分配和释放支持的内存缓冲区，则可能导致内存损坏、软挂起和故障，如[Bug 检查0x9F：DRIVER_POWER_STATE_FAILURE](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)。
+如果无法正确地分配和释放支持的内存缓冲区，则可能导致内存损坏、软挂起和故障，如[Bug 检查0x9F： DRIVER_POWER_STATE_FAILURE](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)。
 
 
 **关闭流句柄行为**
 
 当 portcls 收到关闭流句柄时，portcls 将调用以下函数以将流状态设置为 "停止"，并释放缓冲区：
 
-*设置流状态*（如果流尚未处于 "停止" 状态，则为。）
+*设置流状态*（如果流尚未处于停止状态）。
 
 [IMiniportWaveRTStream：： SetState](https://msdn.microsoft.com/en-us/library/windows/hardware/ff536756(v=vs.85).aspx)
 
 *版本缓冲区*  
 
-[IMiniportWaveRTStream：： FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
+[IMiniportWaveRTStream：： FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
 
 请注意，当驱动程序在 SR/STOP 操作期间已由驱动程序停止时，portcls 微型端口驱动程序应成功地将状态转换从较高的值转换为较小的值（RUN = = 3，PAUSE = = 2，获取 = = 1，STOP = = 0）。关闭句柄请求）。
 
@@ -50,11 +50,11 @@ ms.locfileid: "71329459"
 
 [IMiniportWaveRTStream：： SetState](https://msdn.microsoft.com/en-us/library/windows/hardware/ff536756(v=vs.85).aspx) -> SETDMAENGINESTATE （HD 音频总线 DDI）。 采取操作来启动/暂停 DMA。
 
-[IMiniportWaveRTStream：： FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)-> FreeDmaBuffer （HD 音频总线 DDI）。
+[IMiniportWaveRTStream：： FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)-> FreeDmaBuffer （HD 音频总线 DDI）。
 
 IMiniportWaveRTStream [Notification] 的析构函数-> FreeDmaEngine （HD 音频总线 DDI）。 
 
-如果设备意外删除，微型端口必须释放其所有的 h/w 资源，而不会等待打开的流句柄关闭。 这意味着，在将 PnP 请求转发到带有[PcDisptachIrp](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcdispatchirp) DDI 的 PortCls 之前，微型端口必须停止、重置和释放所有已分配的 DMA 引擎。 另一方面，在关闭流句柄并 PortCls 用 FreeAudioBuffer/FreeBufferWithNotification 回调通知微型端口之前，微型端口不得释放音频波形 RT 缓冲区。
+如果设备意外删除，微型端口必须释放其所有的 h/w 资源，而不会等待打开的流句柄关闭。 这意味着，在将 PnP 请求转发到带有[PcDisptachIrp](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcdispatchirp) DDI 的 PortCls 之前，微型端口必须停止、重置和释放所有已分配的 DMA 引擎。 另一方面，在关闭流句柄并 PortCls 用 FreeAudioBuffer/FreeBufferWithNotification 回调通知微型端口之前，微型端口不得释放音频波形 RT 缓冲区。
 
 当设备因选择支持重新平衡而停止时，无需等待打开的流句柄关闭，微型端口就必须释放所有的硬件资源。 这意味着，小型端口必须停止、重置和释放由 portcls 调用的 PnP 回调中的所有已分配 DMA 引擎。 另一方面，在关闭流句柄并 PortCls 用 FreeAudioBuffer/FreeBufferWithNotification 回调通知微型端口之前，微型端口不得释放音频波形 RT 缓冲区。
 
@@ -114,16 +114,16 @@ DMAEngineAllocated=false
 
 有关详细信息，请参阅：
 
-[PSET_DMA_ENGINE_STATE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)
+[PSET_DMA_ENGINE_STATE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
 
-[HDAUDIO_STREAM_STATE 枚举](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/hdaudio/ne-hdaudio-_hdaudio_stream_state)
+[HDAUDIO_STREAM_STATE 枚举](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/hdaudio/ne-hdaudio-_hdaudio_stream_state)
 
-[PFREE_DMA_ENGINE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pfree_dma_engine)
+[PFREE_DMA_ENGINE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pfree_dma_engine)
 
-[PSET_DMA_ENGINE_STATE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pset_dma_engine_state)
+[PSET_DMA_ENGINE_STATE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
 
-[IMiniportWaveRTStreamNotification 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertstreamnotification) 
+[IMiniportWaveRTStreamNotification 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstreamnotification) 
 
-[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification 方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
+[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification 方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
 
-[PcDisptachIrp](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcdispatchirp)
+[PcDisptachIrp](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcdispatchirp)

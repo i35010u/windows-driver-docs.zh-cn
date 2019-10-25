@@ -4,27 +4,27 @@ description: SIO_WSK_SET_REMOTE_ADDRESS
 ms.assetid: 1db11c7a-c9ce-428e-b4da-4a49904a9e4c
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 SIO_WSK_SET_REMOTE_ADDRESS 网络驱动程序
+- SIO_WSK_SET_REMOTE_ADDRESS 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b8fac4433823c57ee465dbbff013e6d739c54bdf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 52cffcd9e14f77b709620625e3d52070ec7195a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379127"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841897"
 ---
-# <a name="siowsksetremoteaddress"></a>SIO\_WSK\_设置\_远程\_地址
+# <a name="sio_wsk_set_remote_address"></a>SIO\_WSK\_设置\_远程\_地址
 
 
-SIO\_WSK\_设置\_远程\_地址套接字 I/O 控制操作允许 WSK 的应用程序来指定数据报套接字的固定远程传输地址。 此套接字的 I/O 控制操作仅适用于数据报套接字。
+SIO\_WSK\_集\_远程\_地址套接字 i/o 控制操作允许 WSK 应用程序为数据报套接字指定固定远程传输地址。 此套接字 i/o 控制操作仅适用于数据报套接字。
 
-如果 WSK 应用程序设置数据报套接字的固定远程传输地址，通过套接字发送的所有数据报发送到固定远程传输地址，并接受仅从固定远程传输地址接收的数据报。
+如果 WSK 应用程序为数据报套接字设置固定远程传输地址，则通过套接字发送的所有数据报都将发送到固定远程传输地址，并只接受从固定远程传输地址接收的数据报。
 
-它通过套接字将数据报发送由指定替代远程传输地址中的时，WSK 应用程序可以重写固定远程传输地址*RemoteAddress*参数调用时[ **WskSendTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)函数。 在这种情况下，数据报发送到备用远程传输地址而不是固定的远程传输地址。 但是，将不接受任何返回的替代远程传输地址发送的响应。
+WSK 应用程序可以在调用[**WskSendTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)函数时，通过在*RemoteAddress*参数中指定备用远程传输地址来覆盖固定远程传输地址。 在这种情况下，将数据报发送到备用远程传输地址，而不是固定远程传输地址。 但是，将不会接受从备用远程传输地址发回的任何响应。
 
-如果 WSK 应用程序使用此套接字的 I/O 控制操作指定固定的远程传输地址，它必须实现后的数据报套接字已绑定到本地传输地址。
+如果 WSK 应用程序使用此套接字 i/o 控制操作来指定固定远程传输地址，则必须在数据报套接字绑定到本地传输地址后执行此操作。
 
-若要设置的固定远程传输地址的数据报套接字，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
+若要为数据报套接字设置固定远程传输地址，WSK 应用程序需要使用以下参数调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数。
 
 <table>
 <colgroup>
@@ -34,7 +34,7 @@ SIO\_WSK\_设置\_远程\_地址套接字 I/O 控制操作允许 WSK 的应用�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -47,16 +47,16 @@ SIO\_WSK\_设置\_远程\_地址套接字 I/O 控制操作允许 WSK 的应用�
 <td><p>SIO_WSK_SET_REMOTE_ADDRESS</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
+<td><p><em>调配</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>指向的 SOCKADDR 结构大小<em>InputBuffer</em>参数。</p></td>
+<td><p><em>InputBuffer</em>参数指向的 SOCKADDR 结构的大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>指向一个结构，指定数据报套接字的固定远程传输地址的指针。 指针必须是指向特定对应于 WSK 应用程序指定在创建时的数据报套接字地址族的 SOCKADDR 结构类型的指针。</p></td>
+<td><p>指向结构的指针，该结构指定数据报套接字的固定远程传输地址。 指针必须是指向特定 SOCKADDR 结构类型的指针，该类型对应于在创建数据报套接字时指定 WSK 应用程序的地址族。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -74,7 +74,7 @@ SIO\_WSK\_设置\_远程\_地址套接字 I/O 控制操作允许 WSK 的应用�
 </table>
 
 
-若要清除的数据报套接字的固定远程传输地址，WSK 应用程序调用**WskControlSocket**使用以下参数的函数。
+若要清除数据报套接字的固定远程传输地址，WSK 应用程序需要使用以下参数调用**WskControlSocket**函数。
 
 <table>
 <colgroup>
@@ -84,7 +84,7 @@ SIO\_WSK\_设置\_远程\_地址套接字 I/O 控制操作允许 WSK 的应用�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -97,7 +97,7 @@ SIO\_WSK\_设置\_远程\_地址套接字 I/O 控制操作允许 WSK 的应用�
 <td><p>SIO_WSK_SET_REMOTE_ADDRESS</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
+<td><p><em>调配</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -124,7 +124,7 @@ SIO\_WSK\_设置\_远程\_地址套接字 I/O 控制操作允许 WSK 的应用�
 </table>
 
 
-WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数来设置或清除数据报套接字的固定远程传输地址。
+调用**WskControlSocket**函数为数据报套接字设置或清除固定远程传输地址时，WSK 应用程序必须指定一个指向 IRP 的指针。
 
 <a name="requirements"></a>要求
 ------------
@@ -136,12 +136,12 @@ WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wsk.h （包括 Wsk.h）</td>
+<td><p>标头</p></td>
+<td>Wsk （包括 Wsk）</td>
 </tr>
 </tbody>
 </table>

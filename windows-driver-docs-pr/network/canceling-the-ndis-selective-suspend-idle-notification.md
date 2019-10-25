@@ -4,81 +4,81 @@ description: 取消 NDIS 选择性挂起空闲通知
 ms.assetid: 14C19F15-9D0E-4F37-942C-7F7AFE1EBA0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5525f533dd5b4c3bf28de59be910ccaddb6a34c7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a5ab12bdaecce1007cdb205b8eecebe3e0486407
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382797"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835248"
 ---
 # <a name="canceling-the-ndis-selective-suspend-idle-notification"></a>取消 NDIS 选择性挂起空闲通知
 
 
-如果空闲超时时间变为非活动状态的网络适配器，NDIS 启动选择性挂起操作。 通过此操作，网络适配器转换为低功耗状态。 NDIS 开始此操作通过向微型端口驱动程序发出的空闲通知。 有关此操作的详细信息，请参阅[处理 NDIS 选择性挂起空闲通知](handling-the-ndis-selective-suspend-idle-notification.md)。
+如果网络适配器处于空闲超时期限内处于非活动状态，NDIS 将启动选择性挂起操作。 完成此操作后，网络适配器会转换为低功耗状态。 NDIS 通过向微型端口驱动程序发出空闲通知来开始此操作。 有关此操作的详细信息，请参阅[处理 NDIS 选择性挂起空闲通知](handling-the-ndis-selective-suspend-idle-notification.md)。
 
-NDIS 调用[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)处理程序函数，以通知似乎处于空闲状态的基础网络适配器的驱动程序。 发出的空闲通知后，NDIS 取消挂起空闲通知，如果一个或多个以下条件成立：
+NDIS 调用[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数来通知驱动程序，基础网络适配器似乎处于空闲状态。 发出空闲通知后，如果满足以下一个或多个条件，NDIS 将取消挂起的空闲通知：
 
--   基础协议或筛选器驱动程序会发出发送数据包请求或对象标识符 (OID) 请求到微型端口驱动程序。
+-   过量协议或筛选器驱动程序发出发送数据包请求或对象标识符（OID）对微型端口驱动程序的请求。
 
-    有关如何 NDIS 取消这种情况下的空闲通知的详细信息，请参阅[取消由于过量驱动程序活动的空闲通知](#canceling-the-idle-notification-because-of-overlying-driver-activity)。
+    有关 NDIS 如何为此方案取消空闲通知的详细信息，请参阅[由于过量驱动程序活动而取消空闲通知](#canceling-the-idle-notification-because-of-overlying-driver-activity)。
 
--   基础适配器发出信号唤醒事件，如接收数据包，或在其媒体连接状态中检测更改。
+-   基础适配器发出唤醒事件，例如接收数据包或检测其媒体连接状态的更改。
 
-    有关如何 NDIS 取消这种情况下的空闲通知的详细信息，请参阅[发生唤醒事件取消空闲通知](#canceling-the-idle-notification-because-of-wake-up-events)。
+    有关 NDIS 如何为此方案取消空闲通知的详细信息，请参阅[取消空闲通知，因为出现了唤醒事件](#canceling-the-idle-notification-because-of-wake-up-events)。
 
-NDIS 取消通过调用发出的空闲通知[ *MiniportCancelIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_idle_notification)基础微型端口驱动程序的处理程序函数。 当调用此函数时，微型端口驱动程序必须完成恢复全功率状态到适配器的空闲通知。 此过程的指导原则，请参阅[完成 NDIS 选择性挂起空闲通知](completing-the-ndis-selective-suspend-idle-notification.md)。
+NDIS 通过调用基础微型端口驱动程序的[*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)处理程序函数来取消空闲通知。 调用此函数时，微型端口驱动程序必须完成空闲通知，才能将适配器恢复到完全电源状态。 有关此过程的指导原则，请参阅[完成 NDIS 选择性挂起空闲通知](completing-the-ndis-selective-suspend-idle-notification.md)。
 
-有关如何实现详细信息[ *MiniportCancelIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_idle_notification)处理程序函数，请参阅[实现*MiniportCancelIdleNotification*处理程序函数](implementing-a-miniportcancelidlenotification-handler-function.md)。
+有关如何实现[*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)处理程序函数的详细信息，请参阅[实现*MiniportCancelIdleNotification*处理程序函数](implementing-a-miniportcancelidlenotification-handler-function.md)。
 
-## <a name="canceling-the-idle-notification-because-of-overlying-driver-activity"></a>取消由于过量驱动程序活动的空闲通知
-
-
-NDIS 监视器发送请求并 OID 请求，颁发给其网络适配器已挂起并处于低功耗状态的微型端口驱动程序。 在此情况下，NDIS 取消未完成的空闲通知，以便网络适配器可以恢复到全功率状态。
-
-NDIS 和微型端口驱动程序发出的空闲通知被取消时执行以下步骤：
-
-1.  NDIS 调用[ *MiniportCancelIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_idle_notification)要取消未完成的空闲通知处理程序函数。 当调用此处理程序函数时，微型端口驱动程序必须取消它可能会对空闲通知之前发出任何特定于总线的 I/O 请求数据包 (Irp)。
-
-    例如，当[ *MiniportCancelIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_idle_notification)调用时，微型端口用于 USB 网络适配器将执行以下步骤：
-
-    1.  微型端口驱动程序取消挂起的 USB 空闲请求 ([**IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) IRP。 微型端口驱动程序之前颁发此 IRP 到基础 USB 总线驱动程序时 NDIS 称为驱动程序的[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)函数。 微型端口驱动程序通过调用取消此 IRP [ **IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)。
-
-    2.  当总线驱动程序取消 USB 空闲请求 IRP 时，它为 IRP 调用微型端口驱动程序的完成例程。 此调用通知完成 IRP 和网络适配器可以转换为全功率状态的驱动程序。 从环境中完成例程，该驱动程序调用[ **NdisMIdleNotificationComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismidlenotificationcomplete)通知 NDIS 网络适配器可以转换为全功率状态。
-
-    **请注意**具体取决于正在取消特定于总线的空闲状态请求的依赖关系，微型端口驱动程序调用[ **NdisMIdleNotificationComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismidlenotificationcomplete)以同步方式中的上下文调用到[ *MiniportCancelIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_idle_notification)或后，将异步*MiniportCancelIdleNotification*返回。
-
-    有关如何实现 USB 空闲请求 IRP 完成例程的详细信息，请参阅[实现 USB 空闲请求 IRP 完成例程](implementing-a-usb-idle-request-irp-completion-routine.md)。
-
-2.  微型端口驱动程序取消空闲通知任何特定于总线的 Irp 后，它会调用[ **NdisMIdleNotificationComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismidlenotificationcomplete)。 此调用通知 NDIS 空闲通知已完成。 NDIS 然后完成选择性挂起操作通过转换为全功率状态的网络适配器。
-
-    当[ **NdisMIdleNotificationComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismidlenotificationcomplete)是调用，NDIS 执行以下步骤：
-
-    1.  NDIS 问题[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)到基础总线驱动程序。 此 IRP 请求要设置的网络适配器的电源状态为 PowerDeviceD0 的总线驱动程序。
-
-    2.  NDIS 颁发的 OID 集请求[OID\_PNP\_设置\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)微型端口驱动程序。 在此 OID 请求中，NDIS 指定网络适配器现在转换到 NdisDeviceStateD0 全功率状态。
-
-        当它处理此 OID 集请求时，该驱动程序为全功率工作准备适配器。 这包括还原接收和发送到相同的状态转换到低功耗状态前它们所在的引擎。 该驱动程序然后完成 OID 请求使用 NDIS\_状态\_成功。
-
-下图显示了当 NDIS 取消对 USB 网络适配器的微型端口驱动程序发出的空闲通知时所涉及的步骤。
-
-![显示空闲通知恢复过程的关系图](images/ndis-ss-idle-notification-resume.png)
-
-## <a name="canceling-the-idle-notification-because-of-wake-up-events"></a>发生唤醒事件取消的空闲通知
+## <a name="canceling-the-idle-notification-because-of-overlying-driver-activity"></a>由于过量驱动程序活动而取消空闲通知
 
 
-NDIS 网络适配器转换为低功耗状态之前，发出的 OID 集请求[OID\_PM\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)到网络适配器。 此 OID 请求指定的适配器可以发出信号，以恢复全功率状态唤醒事件的类型。 NDIS 选择性挂起，有关适配器已配置为发出信号的任何以下唤醒事件：
+NDIS 监视颁发给微型端口驱动程序的发送请求和 OID 请求，其网络适配器已挂起并且处于低功耗状态。 发生这种情况时，NDIS 会取消未完成的空闲通知，以便网络适配器可以恢复到全电源状态。
 
--   与以前通过 OID 配置筛选器匹配的数据包的接收设置的请求[OID\_PM\_添加\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)或[OID\_GEN\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)。
+当取消空闲通知时，NDIS 和微型端口驱动程序会执行以下步骤：
 
--   在适配器上的媒体连接状态中的更改。
+1.  NDIS 调用[*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)处理程序函数以取消未完成的空闲通知。 调用此处理程序函数时，微型端口驱动程序必须取消任何特定于总线的 i/o 请求包（Irp），该包先前可能已针对空闲通知发出。
 
-NDIS 和微型端口驱动程序时 NDIS 取消的空闲通知由于唤醒信号生成的网络适配器的遵循以下步骤：
+    例如，当调用[*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)时，USB 网络适配器的微型端口会执行以下步骤：
 
-1.  总线驱动程序完成[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)转换到低功耗状态适配器之前的 NDIS 颁发。 通过完成 IRP，总线驱动程序通知 NDIS 网络适配器已生成唤醒信号。
+    1.  微型端口驱动程序将取消挂起的 USB 空闲请求（[**IOCTL\_内部\_usb\_提交\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)） IRP。 当 NDIS 调用驱动程序的[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)函数时，小型端口驱动程序先前将此 IRP 颁发给基础 USB 总线驱动程序。 微型端口驱动程序通过调用[**IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)来取消此 IRP。
 
-2.  NDIS 调用[ *MiniportCancelIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_cancel_idle_notification)处理程序函数以启动取消空闲通知的操作。 在此操作中涉及的步骤都相同中所述[取消由于过量驱动程序活动的空闲通知](#canceling-the-idle-notification-because-of-overlying-driver-activity)。
+    2.  当总线驱动程序取消 USB 空闲请求 IRP 后，它将调用 IRP 的微型端口驱动程序的完成例程。 此调用会通知驱动程序 IRP 已完成，并且网络适配器可以转换为完全电源状态。 从完成例程的上下文中，驱动程序调用[**NdisMIdleNotificationComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete)来通知 NDIS，网络适配器可以转换为完全电源状态。
 
-例如下, 图显示了当 NDIS 取消的空闲通知由于通过 USB 网络适配器来发出信号的唤醒事件时所涉及的步骤。
+    **注意** 根据取消特定于总线的空闲请求的依赖项，微型端口驱动程序会在调用[*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)的上下文中以同步方式调用[**NdisMIdleNotificationComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete) ，或在*MiniportCancelIdleNotification*返回。
+
+    有关如何实现 USB 空闲请求 IRP 完成例程的详细信息，请参阅[实现 Usb 空闲请求 Irp 完成例程](implementing-a-usb-idle-request-irp-completion-routine.md)。
+
+2.  在微型端口驱动程序为空闲通知取消任何特定于总线的 Irp 后，它将调用[**NdisMIdleNotificationComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete)。 此调用会通知 NDIS 空闲通知已完成。 然后，NDIS 通过将网络适配器转换为完全电源状态来完成选择性挂起操作。
+
+    调用[**NdisMIdleNotificationComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismidlenotificationcomplete)时，NDIS 执行以下步骤：
+
+    1.  NDIS 问题[**IRP\_MN\_将\_电源设置**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)为底层总线驱动程序。 此 IRP 请求总线驱动程序将网络适配器的电源状态设置为 PowerDeviceD0。
+
+    2.  NDIS [\_\_PNP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)发出 oid 集 oid，\_微型端口驱动程序。 在此 OID 请求中，NDIS 指定网络适配器现在正在转换为 NdisDeviceStateD0 的完全电源状态。
+
+        当它处理此 OID 集请求时，驱动程序会准备适配器以实现完全电源操作。 这包括将接收和发送引擎还原到在转换到低功耗状态之前所处的状态。 然后，该驱动程序完成 OID 请求，并将 NDIS\_状态\_SUCCESS。
+
+下图显示了 NDIS 取消颁发给 USB 网络适配器的微型端口驱动程序的空闲通知时所涉及的步骤。
+
+![显示空闲通知恢复过程的示意图](images/ndis-ss-idle-notification-resume.png)
+
+## <a name="canceling-the-idle-notification-because-of-wake-up-events"></a>由于唤醒事件而取消空闲通知
+
+
+在将网络适配器转换为低功耗状态之前，NDIS 会向网络适配器发出 oid [\_PM\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)的 oid 设置请求。 此 OID 请求指定唤醒事件的类型，适配器可以通过该类型发出信号以恢复到完全电源状态。 对于 NDIS 选择性挂起，适配器配置为发出以下任何唤醒事件的信号：
+
+-   接收数据包的数据包，该筛选器与先前通过 OID\_PM 的 oid 集请求配置的筛选器[\_添加\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)或[OID\_\_\_\_当前筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter).
+
+-   适配器上媒体连接状态的更改。
+
+Ndis 和微型端口驱动程序在 NDIS 由于网络适配器生成的唤醒信号而取消空闲通知时，请按照以下步骤操作：
+
+1.  总线驱动程序完成[**IRP\_MN\_等待**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)NDIS 发出的\_唤醒，然后将适配器转换为低功耗状态。 通过完成 IRP，总线驱动程序会通知 NDIS 网络适配器已生成唤醒信号。
+
+2.  NDIS 调用[*MiniportCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_cancel_idle_notification)处理程序函数来启动取消空闲通知的操作。 此操作所涉及的步骤与[由于过量驱动程序活动而取消空闲通知](#canceling-the-idle-notification-because-of-overlying-driver-activity)中所述的步骤相同。
+
+例如，下图显示由于 USB 网络适配器发出的唤醒事件，NDIS 取消空闲通知时所涉及的步骤。
 
 ![显示空闲通知唤醒过程的关系图](images/ndis-ss-idle-notification-resume-wake.png)
 

@@ -7,12 +7,12 @@ keywords:
 - 高 bitdepth 流数据格式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 884c507ae1db69aec27aaba30e5535bb4b5b60e2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 42edce9421649c3103b32d1c7625b49deec9ecd0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364323"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832550"
 ---
 # <a name="pcm-high-bitdepth-stream-data-format"></a>PCM 高位深度流数据格式
 
@@ -20,7 +20,7 @@ ms.locfileid: "67364323"
 ## <span id="pcm_high_bitdepth_stream_data_format"></span><span id="PCM_HIGH_BITDEPTH_STREAM_DATA_FORMAT"></span>
 
 
-此示例使用的扩展的版本[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)结构来描述 PCM 高 bitdepth 流的数据格式。 这是类似于 PCM 多渠道示例的值除外`Format.wBitsPerSample`和`Format.wValidBitsPerSample`下面显示的。
+此示例使用[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)结构的扩展版本来描述 PCM bitdepth 流的数据格式。 这类似于 PCM 多通道示例，除了下面显示的 `Format.wBitsPerSample` 和 `Format.wValidBitsPerSample` 的值。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT) + sizeof(WAVEFORMATEXTENSIBLE);

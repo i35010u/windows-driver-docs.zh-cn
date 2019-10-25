@@ -1,46 +1,46 @@
 ---
 title: 选择加入即时空闲超时
-description: 本主题讨论了 Windows 8 驱动程序可用来选择加入的即时电源关闭状态，如果不再需要 power ImmediateIdle 注册表值。
+description: 本主题讨论在不再需要电源时 Windows 8 驱动程序可用于选择立即断电状态的 ImmediateIdle 注册表值。
 ms.assetid: 43721EC9-4901-4C68-9CCC-E0A71BF2200E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c94997e99e55dec5afe0ce957ae4fc6220c7c36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 020b439b78502ac87841d8062810cf9aed9dad26
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359956"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833280"
 ---
-# <a name="span-idaudioimmediateidletimeoutopt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>即时空闲超时参加
+# <a name="span-idaudioimmediate_idle_timeout_opt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>立即空闲超时选择加入
 
 
-本主题讨论*ImmediateIdle* Windows 8 驱动程序可用来选择加入的即时电源关闭状态，如果不再需要 power 的注册表值。
+本主题讨论在不再需要电源时 Windows 8 驱动程序可用于选择立即断电状态的*ImmediateIdle*注册表值。
 
-除了默认电源设置中所述[PortCls 注册表电源设置](portcls-registry-power-settings.md)，Windows 8 引入了也位于关联的驱动程序的 PowerSettings 注册表项的新注册表值。 例如，如果有一个驱动程序时，其键是&lt;UVXYZ&gt;，则可能在 Windows 注册表中的以下路径中找到该驱动程序的电源设置信息：
+除了[PortCls 注册表电源设置](portcls-registry-power-settings.md)中所述的默认电源设置外，Windows 8 还引入了一个新的注册表值，它也位于关联驱动程序的 PowerSettings 注册表项中。 例如，如果你的驱动程序的密钥是 &lt;UVXYZ&gt;，则会在 Windows 注册表的以下路径中找到该驱动程序的电源设置信息：
 
-HKLM\\System\\CurrentControlSet\\Control\\Class\\{4D36E96C-E325-11CE-BFC1-08002BE10318}\\&lt;UVXYZ&gt;\\PowerSettings.
+HKLM\\System\\CurrentControlSet\\控件\\类\\{4D36E96C-E325-11CE-BFC1-08002BE10318}\\&lt;UVXYZ&gt;\\PowerSettings。
 
-除了默认的电源设置中显示的值和[PortCls 注册表电源设置](portcls-registry-power-settings.md)，还应包括下面一行*ImmediateIdle*:
+除了[PortCls 注册表电源设置](portcls-registry-power-settings.md)中显示的默认电源设置值外，还会在*ImmediateIdle*中包括以下行：
 
 ``` syntax
 "ImmediateIdle"=hex:00,00,00,00  
 ```
 
-*ImmediateIdle*的数据类型为 REG\_DWORD 和其默认值为等于 FALSE 的"0"。 在上述语法片段中，"0"表示该设备将立即关闭电源时不再需要 power 的十六进制值。
+*ImmediateIdle*的数据类型为 REG\_DWORD，其默认值为 "0"，这等于 FALSE。 在前面的语法片段中，十六进制值 "0" 表示设备在不再需要电源时不会立即关闭。
 
-为您的驱动程序，若要选择加入到即时电源关闭状态，当不再需要 power 时，必须使用以下语法：
+要使你的驱动程序选择立即关机状态，当不再需要电源时，你必须使用以下语法：
 
 ``` syntax
 "ImmediateIdle"=hex:01,00,00,00  
 ```
 
-在前面的语法片段中，"1"的十六进制值相当于为 TRUE，并且它意味着，设备将立即关闭电源时不再需要 power。
+在前面的语法片段中，十六进制值 "1" 相当于 TRUE，这意味着当不再需要电源时，设备将立即断电。
 
-运行时的电源管理框架时调用的回调**DevicePowerRequired**方法，指明该设备不再需要 power，PortCls 则 D 状态由指示请求设备电源IRP*IdlePowerState*注册表值。 如果未不提供任何状态，则使用 D3 的默认值。
+当运行时电源管理框架调用**DevicePowerRequired**方法的回调时，如果设备不再需要电源，则 PortCls 会为*IdlePowerState*指示的 D 状态请求设备电源 IRP注册表值。 如果未提供任何状态，则使用默认值 D3。
 
-如果选择在中即时空闲电源管理的驱动程序，它必须确保系统电源引擎插件 (PEP) 包含不必要地阻止所需的逻辑和持续向上和向下提供适配器支持的 Irp 接收即时连续的。 一些驻留规则应该应用为了保持设备的 I/O 请求批处理为提供支持。
+如果驱动程序选取为立即空闲电源管理，则必须确保系统的电源引擎插件（PEP）包含防止不必要的逻辑，并为立即收到的 Irp 连续和向下供电。 应应用某些驻留规则，以使设备保持开机状态以进行批次 i/o 请求。
 
-此外，允许以编程方式启用或禁用空闲电源管理的驱动程序的 Windows 7 中引入的新接口继续时不中选择即时空闲电源管理驱动程序已被拒绝。 这是通过[ **IPortClsPower::SetIdlePowerManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclspower-setidlepowermanagement)方法，并且将覆盖在注册表中，除了在其中设置*ImmediateIdle*是设置为 1 (TRUE)。
+此外，在 Windows 7 中引入的新接口允许驱动程序以编程方式启用或禁用空闲电源管理，当驱动程序未选择立即空闲电源管理时，将继续执行。 这是通过[**IPortClsPower：： SetIdlePowerManagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclspower-setidlepowermanagement)方法完成的，它将覆盖注册表中的设置，但*ImmediateIdle*设置为1（TRUE）的情况除外。
 
  
 

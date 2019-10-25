@@ -13,22 +13,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 50b3471b83fe57ae6d99c4a3fcf649807e80754f
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: 8c9fe93aa10b095035653271c6954fc0b2238f6d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359584"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837642"
 ---
-# <a name="bug-check-0x1-apc_index_mismatch"></a>Bug 检查0x1： APC \_INDEX \_MISMATCH
+# <a name="bug-check-0x1-apc_index_mismatch"></a>Bug 检查0x1： APC\_索引\_不匹配
 
-APC \_INDEX \_MISMATCH bug 检查的值为0x00000001。 这表示异步过程调用（APC）状态索引中存在不匹配的情况。
+APC\_索引\_不匹配 bug 检查的值为0x00000001。 这表示异步过程调用（APC）状态索引中存在不匹配的情况。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
 
 
-## <a name="apc_index_mismatch-parameters"></a>APC \_INDEX \_MISMATCH 参数
+## <a name="apc_index_mismatch-parameters"></a>APC\_索引\_参数不匹配
 
 <table>
 <colgroup>
@@ -98,7 +98,7 @@ APC \_INDEX \_MISMATCH bug 检查的值为0x00000001。 这表示异步过程调
 <a name="remarks"></a>备注
 -------
 
-此 bug 检查是内核中的内部错误的结果。 退出系统调用时出现此错误。 此错误检查的可能原因是文件系统或驱动程序的系统调用序列不匹配，无法进入或离开受保护的或关键区域。 例如，每次调用[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)时，都必须具有对[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)的匹配调用。 
+此 bug 检查是内核中的内部错误的结果。 退出系统调用时出现此错误。 此错误检查的可能原因是文件系统或驱动程序的系统调用序列不匹配，无法进入或离开受保护的或关键区域。 例如，每次调用[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)时，都必须具有对[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)的匹配调用。 
 
 如果要开发驱动程序，可以使用 Windows 驱动程序工具包中提供的静态[驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)器（一种静态分析工具）来检测你的代码中的问题，然后再交付驱动程序。 使用[CriticalRegions](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-criticalregions)规则运行静态驱动程序验证程序，以验证你的源代码是否按正确的顺序使用了这些系统调用。
 

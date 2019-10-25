@@ -3,33 +3,33 @@ title: 分配链路带宽
 description: 分配链路带宽
 ms.assetid: 7a5d5364-d869-4f6a-a7c3-9326ec347150
 keywords:
-- HD Audio、 带宽
-- 高清晰度音频 (HD Audio)、 带宽
+- HD 音频，带宽
+- 高清晰音频（HD 音频），带宽
 - 总线带宽 WDK 音频
 - 带宽 WDK 音频
-- 分配的带宽
+- 分配带宽
 - 链接带宽 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c0f868594d126e6e977fed6544efd6152b2792
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3b597c8a7682493a1455d6dcc8cb209a8e765a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355766"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831581"
 ---
 # <a name="allocating-link-bandwidth"></a>分配链路带宽
 
 
-HD 音频链接具有有限的总线带宽可用于呈现和捕获使用的流。 若要确保 glitchless 音频，HD Audio 总线驱动程序管理总线带宽为共享资源。 当功能驱动程序分配的 DMA 引擎时，它必须还 DMA 引擎的呈现器为分配一部分可用总线带宽或捕获要使用流。
+HD 音频链接有有限数量的总线带宽可供呈现和捕获流使用。 为了确保 glitchless 音频，HD 音频总线驱动程序将总线带宽管理为共享资源。 当函数驱动程序分配 DMA 引擎时，它还必须为 DMA 引擎的呈现或捕获流分配一部分可用的总线带宽才能使用。
 
-HD 音频链接 (SDI) 行中的串行数据和串行输出数据量 (SDO) 行上提供了固定的总线带宽量。 HD Audio 总线驱动程序监视 SDI 和 SDO 行上单独的带宽消耗。 如果请求无法分配输入或输出总线带宽超过可用带宽，总线驱动程序会使请求失败。
+可在高清音频链接的串行数据（SDI）行和串行输出（SDO）行上使用固定的总线带宽量。 HD 音频总线驱动程序分别监视 SDI 和 SDO 行的带宽消耗。 如果分配输入或输出总线带宽的请求超出可用带宽，则总线驱动程序将无法请求。
 
-当功能驱动程序调用总线驱动程序[ **AllocateCaptureDmaEngine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_capture_dma_engine)并[ **AllocateRenderDmaEngine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_render_dma_engine)例程，它指定流格式。 流格式指定流的采样率、 示例大小以及通道数。 中的信息，分配*Xxx*DmaEngine 例程确定流的总线带宽要求。 如果有足够的带宽可用，例程分配要使用的 DMA 引擎所需的带宽。 否则为对分配的调用*Xxx*DmaEngine 失败。
+当函数驱动程序调用 bus 驱动程序的[**AllocateCaptureDmaEngine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_capture_dma_engine)和[**AllocateRenderDmaEngine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_render_dma_engine)例程时，它将指定流格式。 流格式指定流的采样率、样本大小和通道数。 通过此信息，分配*Xxx*DmaEngine 例程确定流的总线带宽要求。 如果有足够的带宽可用，例程将为 DMA 引擎分配所需的带宽，以便使用。 否则，对分配*Xxx*DmaEngine 的调用将失败。
 
-功能驱动程序可以调用[ **ChangeBandwidthAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pchange_bandwidth_allocation)请求中现有的 DMA 引擎分配的带宽分配的更改。
+函数驱动程序可以调用[**ChangeBandwidthAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pchange_bandwidth_allocation)来请求更改现有 DMA 引擎分配的带宽分配。
 
-分配*Xxx*DmaEngine 和[ **ChangeBandwidthAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pchange_bandwidth_allocation)例程是 HD 音频 DDI 的这两个版本中可用。
+可在两个版本的 HD 音频 DDI 中使用 "分配*Xxx*DmaEngine" 和 " [**ChangeBandwidthAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pchange_bandwidth_allocation) " 例程。
 
  
 

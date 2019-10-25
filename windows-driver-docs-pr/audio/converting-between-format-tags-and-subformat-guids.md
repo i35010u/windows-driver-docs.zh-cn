@@ -3,20 +3,20 @@ title: 在格式标记与子格式 GUID 之间进行转换
 description: 在格式标记与子格式 GUID 之间进行转换
 ms.assetid: 299ad5d3-df62-41cf-a18f-daa83cc60ef3
 keywords:
-- 非 PCM 音频格式 WDK，子格式 GUID 转换
+- 非 PCM 音频格式 WDK，subformat GUID 转换
 - subformat Guid WDK 音频
-- 格式标记以及子 Guid 格式转换为
-- 数据交集处理程序 WDK 音频，非 PCM 波形格式
+- 转换格式标记和 subformat Guid
+- 数据交集处理程序 WDK 音频，非 PCM 波浪格式
 - Guid WDK 音频
-- wave 格式标记 WDK 音频
+- 波形格式标记 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 490bcf5702cf0dfadd51af6e15b47770e5883458
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b75f60c7fa13485279c47fbe2f9d53dcc6d1c14d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355584"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833588"
 ---
 # <a name="converting-between-format-tags-and-subformat-guids"></a>在格式标记与子格式 GUID 之间进行转换
 
@@ -24,11 +24,11 @@ ms.locfileid: "67355584"
 ## <span id="converting_between_format_tags_and_subformat_guids"></span><span id="CONVERTING_BETWEEN_FORMAT_TAGS_AND_SUBFORMAT_GUIDS"></span>
 
 
-用于处理非 PCM WAVE 的准则\_格式\_可扩展的格式为类似于由波形格式标记指定的非 PCM 格式。 具体而言，会出现一批\_格式\_可扩展格式应具有独立于 PCM 格式的工厂的 pin 工厂，它需要自己的数据范围的交集处理程序。
+处理非 PCM 波浪\_格式\_可扩展格式的准则类似于波形格式标记指定的非 PCM 格式的规则。 具体而言，一种 WAVE\_格式\_可扩展格式应具有与 PCM 格式的工厂不同的 pin 工厂，并且它需要自己的数据范围交集处理程序。
 
-波形音频格式\_格式\_可扩展格式由中的 GUID 指定**子格式**的成员[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构。 每个已注册的波形格式标记具有相应的子格式定义由生成的 GUID\_WAVEFORMATEX\_中 Ksmedia.h GUID 宏。 例如，与批相对应的 GUID\_格式\_DOLBY\_AC3\_SPDIF 标记指定义\_WAVEFORMATEX\_GUID (WAVE\_格式\_DOLBY\_AC3\_SPDIF)。
+波形\_格式\_可扩展格式的音频格式由[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构的**SubFormat**成员中的 GUID 指定。 每个已注册的波形格式标记都有相应的 subformat GUID，它是在 Ksmedia 中定义\_WAVEFORMATEX\_GUID 宏生成的。 例如，对应于波形\_格式\_杜比\_E-AC3\_SPDIF 标记的 GUID 定义为定义\_WAVEFORMATEX\_GUID （波形\_格式\_杜\_E-AC3\_SPDIF）。
 
-从 Ksmedia.h 此代码片段演示如何定义新的 GUID 为 autoinitialized 静态变量：
+此 Ksmedia 中的代码片段演示了如何将新的 GUID 定义为 autoinitialized 静态变量：
 
 ```cpp
 #define STATIC_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX \
@@ -37,7 +37,7 @@ DEFINE_GUIDSTRUCT("00000000-0000-0010-8000-00aa00389b71", KSDATAFORMAT_SUBTYPE_W
 #define KSDATAFORMAT_SUBTYPE_WAVEFORMATEX DEFINE_GUIDNAMED(KSDATAFORMAT_SUBTYPE_WAVEFORMATEX)
 ```
 
-从 Ksmedia.h 这些宏将转换之间波形格式标记和其关联的 Guid:
+Ksmedia 中的这些宏在 wave 格式标记与其关联 Guid 之间转换：
 
 ```cpp
 #if !defined( DEFINE_WAVEFORMATEX_GUID )
@@ -58,7 +58,7 @@ DEFINE_GUIDSTRUCT("00000000-0000-0010-8000-00aa00389b71", KSDATAFORMAT_SUBTYPE_W
 #define EXTRACT_WAVEFORMATEX_ID(Guid)(USHORT)((Guid)->Data1)
 ```
 
-下面的代码示例综合了这些方法来创建子格式基于波形格式标记批的 GUID\_格式\_AC3\_SPDIF，其值 0x0092:
+下面的示例代码结合了这些技术来创建基于波形格式标记的 subformat GUID\_格式\_E-AC3\_SPDIF，其值为0x0092：
 
 ```cpp
 #define STATIC_KSDATAFORMAT_SUBTYPE_DOLBY_AC3_SPDIF \

@@ -3,15 +3,15 @@ title: 配置电源管理
 description: 配置电源管理
 ms.assetid: 0EAE26D0-C191-422F-8A73-28A71C272D4D
 keywords:
-- 配置电源管理，配置电源管理的 NetCx NetAdapterCx
+- NetAdapterCx 配置电源管理，NetCx 配置电源管理
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b26b818dae7c449f354c11fa8bc6228933fa097
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17468822a966aafe4e6cdf5dd79f149e9dfe87c9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386368"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835531"
 ---
 # <a name="configuring-power-management"></a>配置电源管理
 
@@ -19,19 +19,19 @@ ms.locfileid: "67386368"
 
 本主题介绍如何在 NetAdapterCx 客户端驱动程序中配置电源管理功能。
 
-由于客户端驱动程序是 WDF 驱动程序，很多实现是与任何其他 WDF 驱动程序，相同另外还有几个选项特定于 NetAdapterCx 您可以在中添加。
+因为客户端驱动程序是一个 WDF 驱动程序，所以很多实现与任何其他 WDF 驱动程序相同，然后有一些特定于 NetAdapterCx 的选项，您可以在其中添加这些选项。
 
 有关常见 WDF 行为的详细信息，请参阅以下页面：
 
-*  客户端注册可选 WDF 事件的回调以接收通知的电源转换，如中所述[支持即插即用和功能的驱动程序中的电源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)。
-*  WDF 客户端中注册 PnP 和电源的回调函数的信息，请参阅[功能驱动程序中创建设备对象](../wdf/creating-device-objects-in-a-function-driver.md)。
-*  你的设备可以从系统范围内低功耗状态系统的唤醒的详细信息，请参阅[支持系统唤醒](../wdf/supporting-system-wake-up.md)。
+*  客户端注册可选的 WDF 事件回调以接收电源转换的通知，如在[功能驱动程序中支持 PnP 和电源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)中所述。
+*  有关在 WDF 客户端中注册 PnP 和 power 回调函数的信息，请参阅[在函数驱动程序中创建设备对象](../wdf/creating-device-objects-in-a-function-driver.md)。
+*  有关设备如何从系统范围低功耗状态唤醒系统的详细信息，请参阅[支持系统唤醒](../wdf/supporting-system-wake-up.md)。
 
 ## <a name="setting-power-capabilities-of-the-network-adapter"></a>设置网络适配器的电源功能
 
-配置标准 WDF 电源管理功能之后, 的下一步是调用[ **NetAdapterSetPowerCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetpowercapabilities)若要设置的网络适配器的电源功能。
+配置标准 WDF 电源管理功能后，下一步是调用[**NetAdapterSetPowerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetpowercapabilities)来设置网络适配器的电源功能。
 
-下面的示例演示如何初始化和配置 NETPOWERSETTINGS 对象，它在客户端通常会从网络适配器，但在通过调用[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart):
+下面的示例演示如何初始化和配置 NETPOWERSETTINGS 对象，客户端通常在启动网络适配器时执行此操作，但在调用[**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前：
 
 ```C++
 NET_ADAPTER_POWER_CAPABILITIES     powerCaps;
@@ -50,13 +50,13 @@ powerCaps.EvtAdapterPreviewProtocolOffload = EvtAdapterPreviewProtocolOffload;
 NetAdapterSetPowerCapabilities(NetAdapter, &powerCaps);
 ```
 
-将客户端可以注册[ *EVT_NET_ADAPTER_PREVIEW_PROTOCOL_OFFLOAD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_preview_protocol_offload)并[ *EVT_NET_ADAPTER_PREVIEW_WAKE_PATTERN* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_preview_wake_pattern)回调函数以接受或拒绝传入的协议将卸载并唤醒模式。 如果你想要注册这些可选回调之一，则必须启动网络适配器，然后才能调用时执行这样[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart)。
+客户端可以注册[*EVT_NET_ADAPTER_PREVIEW_PROTOCOL_OFFLOAD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_preview_protocol_offload)和[*EVT_NET_ADAPTER_PREVIEW_WAKE_PATTERN*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_preview_wake_pattern)回调函数，以接受或拒绝传入的协议卸载和唤醒模式。 如果要注册其中任何一个可选的回调，在调用[**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前，必须在启动网络适配器时执行此操作。
 
-## <a name="programming-protocol-offload-and-wake-patterns"></a>编程协议卸载并唤醒模式
+## <a name="programming-protocol-offload-and-wake-patterns"></a>编程协议卸载和唤醒模式
 
-在其[ *EvtDeviceArmWakeFromS0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)并[ *EvtDeviceArmWakeFromSx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)回调函数，该驱动程序将循环访问已启用唤醒模式和协议将卸载和程序到硬件。
+在其[*EvtDeviceArmWakeFromS0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)和[*EvtDeviceArmWakeFromSx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)回调函数中，驱动程序将循环访问已启用的唤醒模式和协议卸载，并将其程序写入硬件。
 
-首先要检索的句柄的 NETPOWERSETTINGS 对象通过调用与适配器关联的[ **NetAdapterGetPowerSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptergetpowersettings)从[ *EvtDeviceArmWakeFromS0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)或相关的回调函数。  下面的示例演示如何循环访问唤醒模式：
+首先，通过从[*EvtDeviceArmWakeFromS0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)或相关的回调函数中调用[**NetAdapterGetPowerSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptergetpowersettings)来检索与适配器关联的 NETPOWERSETTINGS 对象的句柄。  下面的示例演示如何循环访问唤醒模式：
 
 ```C++
 NTSTATUS
@@ -93,4 +93,4 @@ EvtDeviceArmWakeFromS0(
 }
 ```
 
-客户端使用相同的机制进行循环访问，协议将卸载，使用[ **NetPowerSettingsGetProtocolOffloadCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpowersettings/nf-netpowersettings-netpowersettingsgetprotocoloffloadcount)， [ **NetPowerSettingsGetProtocolOffload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpowersettings/nf-netpowersettings-netpowersettingsgetprotocoloffload)并[ **NetPowerSettingsIsProtocolOffloadEnabled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpowersettings/nf-netpowersettings-netpowersettingsisprotocoloffloadenabled)。
+客户端使用相同的机制，使用[**NetPowerSettingsGetProtocolOffloadCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpowersettings/nf-netpowersettings-netpowersettingsgetprotocoloffloadcount)、 [**NetPowerSettingsGetProtocolOffload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpowersettings/nf-netpowersettings-netpowersettingsgetprotocoloffload)和[**NetPowerSettingsIsProtocolOffloadEnabled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpowersettings/nf-netpowersettings-netpowersettingsisprotocoloffloadenabled)循环访问协议卸载。

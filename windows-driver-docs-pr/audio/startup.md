@@ -1,28 +1,28 @@
 ---
 title: HFP 设备启动
-description: HFP 设备启动本主题将讨论蓝牙免提配置文件 (HFP) 设备到达音频系统中时，会发生什么情况。
+description: HFP 设备启动主题讨论了当蓝牙免提配置文件（HFP）设备到达音频系统时会发生的情况。
 ms.assetid: C478BCBA-2A17-4604-AE2B-99B3445C741B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fc4269e30aba98c77ff9acb6b04a6263b23d2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d322f9a5164e5003f59f090ec98f3c4af7446ad9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354275"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832355"
 ---
 # <a name="hfp-device-startup"></a>HFP 设备启动
 
 
-HFP 设备启动本主题将讨论蓝牙免提配置文件 (HFP) 设备到达音频系统中时，会发生什么情况。
+HFP 设备启动主题讨论了当蓝牙免提配置文件（HFP）设备到达音频系统时会发生的情况。
 
-对于每个配对的 HFP 设备的直接音频系统，Windows HFP 驱动程序注册设备接口的 guid\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 类。 音频驱动程序使用设备接口通知以了解最新信息的所有实例的 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口。 音频驱动程序调用 IoRegisterPlugPlayNotification 从其 AVStrMiniDevicePostStart 驱动程序例程中 （或等效的 Portcls 例程） 来注册一个回调以发现的当前安装的 HFP 设备，并接收通知的新 HFP 设备。
+对于到达音频系统的每个配对的 HFP 设备，Windows HFP 驱动程序在 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 类中注册一个设备接口。 音频驱动程序使用设备接口通知，随时了解 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口的所有实例。 音频驱动程序从其 AVStrMiniDevicePostStart 驱动程序例程（或从等效的 Portcls 例程）中调用 IoRegisterPlugPlayNotification 来注册一个回调，以发现当前安装的 HFP 设备，并通知新的 HFP 设备。
 
-当音频驱动程序调用 IoRegisterPlugPlayNotification 时，使用以下参数进行调用。
+当音频驱动程序调用 IoRegisterPlugPlayNotification 时，使用以下参数发出调用。
 
 -   EventCategory 设置为 EventCategoryDeviceInterfaceChange。
 
--   EventCategoryFlags 通常设置为 PNPNOTIFY\_设备\_界面\_INCLUDE\_现有\_为了接收即时通知现有接口的接口。 但是一些备用的音频驱动程序设计可能会发现通过其他方式的现有接口。
+-   EventCategoryFlags 通常设置为 PNPNOTIFY\_设备\_接口\_包括\_现有\_接口，以便立即接收现有接口的通知。 但有些备用音频驱动程序设计可能会通过其他方式找到现有接口。
 
 -   EventCategoryData 设置为 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS。
 
@@ -30,59 +30,59 @@ HFP 设备启动本主题将讨论蓝牙免提配置文件 (HFP) 设备到达音
 
 -   CallbackRoutine 设置为将接收通知的音频驱动程序中的例程。
 
-以下部分概述的任务的音频驱动程序可以执行的每个已注册实例配对 HFP 设备。
+以下部分概述了音频驱动程序可以为成对 HFP 设备的每个已注册实例执行的任务。
 
-## <a name="span-idhandlinginterfaceinstancesspanspan-idhandlinginterfaceinstancesspanspan-idhandlinginterfaceinstancesspanhandling-interface-instances"></a><span id="Handling_interface_instances"></span><span id="handling_interface_instances"></span><span id="HANDLING_INTERFACE_INSTANCES"></span>处理接口实例
-
-
-在 GUID 中注册每个接口实例的\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 类音频驱动程序必须使用以下协议进行通信：
-
-当 Windows 调用音频驱动程序调用 IoRegisterPlugPlayNotification 时已注册的音频驱动程序的回调例程时，Windows 将传递 HFP 接口的符号链接使用的设备\_接口\_更改\_通知。*SymbolicLinkName*。
-
-当音频驱动程序调用 IoGetDeviceObjectPointer 时，驱动程序将使用符号链接以获取 HFP 文件对象和 HFP 设备 DeviceObject。
-
-当音频驱动程序将 Ioctl 发送到 HFP 驱动程序时，驱动程序使用 HFP 文件对象和 DeviceObject HFP 设备。
-
-## <a name="span-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanspan-idretrievingstaticinformationspanretrieving-static-information"></a><span id="Retrieving_static_information"></span><span id="retrieving_static_information"></span><span id="RETRIEVING_STATIC_INFORMATION"></span>检索静态信息
+## <a name="span-idhandling_interface_instancesspanspan-idhandling_interface_instancesspanspan-idhandling_interface_instancesspanhandling-interface-instances"></a><span id="Handling_interface_instances"></span><span id="handling_interface_instances"></span><span id="HANDLING_INTERFACE_INSTANCES"></span>处理接口实例
 
 
-音频驱动程序可以从 HFP 驱动程序检索静态信息。 例如，HFP 驱动程序可以提供 ksnodetype、 容器 id 和配对 HFP 设备的友好名称。 音频驱动程序可以使用此信息来创建和初始化 KS 筛选器或筛选器表示配对的 HFP 设备。 音频驱动程序将使用[ **IOCTL\_BTHHFP\_设备\_获取\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)来获取此信息。
+对于在 GUID\_DEVINTERFACE 中注册的每个接口实例\_蓝牙\_HFP\_SCO\_HCIBYPASS 类，音频驱动程序必须使用以下协议进行通信：
 
-音频驱动程序还可以检索配对 HFP 设备的蓝牙地址。 每个配对的 HFP 设备有一个唯一的蓝牙地址，，这可用作唯一标识符字符串。 有关详细信息，请参阅[HF 设备蓝牙获取地址](obtaining-bluetooth-address-of-hf-device.md)。
+当 Windows 调用在音频驱动程序调用 IoRegisterPlugPlayNotification 时注册的音频驱动程序的回调例程时，Windows 将使用设备\_接口\_更改，为 HFP 接口传递符号链接\_提醒.*SymbolicLinkName*。
 
-## <a name="span-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspancreating-initializing-audio-specific-filter-factory-context"></a><span id="Creating__initializing_audio-specific_filter_factory_context"></span><span id="creating__initializing_audio-specific_filter_factory_context"></span><span id="CREATING__INITIALIZING_AUDIO-SPECIFIC_FILTER_FACTORY_CONTEXT"></span>创建、 初始化特定于音频的筛选器工厂上下文
+当音频驱动程序调用 Plxntb 时，驱动程序将使用符号链接获取 HFP 设备的 HFP FileObject 和 DeviceObject。
 
+当音频驱动程序将 IOCTLs 发送到 HFP 驱动程序时，驱动程序将使用 HFP FileObject，并为 HFP 设备使用 DeviceObject。
 
-若要创建和初始化特定于音频的筛选器工厂上下文，音频驱动程序必须将 HFP DeviceObject 和 HFP 文件对象存储在筛选器工厂上下文，然后 IsConnected 字段初始化为 false。
-
-## <a name="span-idcreatingtheksfilterfactoryspanspan-idcreatingtheksfilterfactoryspanspan-idcreatingtheksfilterfactoryspancreating-the-ks-filter-factory"></a><span id="Creating_the_KS_filter_factory"></span><span id="creating_the_ks_filter_factory"></span><span id="CREATING_THE_KS_FILTER_FACTORY"></span>创建 KS 筛选器工厂
-
-
-中每个设备实例 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口类，音频驱动程序创建并启用一个或多个筛选器工厂。
-
-如果音频驱动程序，AVStream 驱动程序音频驱动程序调用 KsCreateFilterFactory 添加新的筛选器工厂和 KsFilterFactorySetDeviceClassesState 启用工厂。 如果音频驱动程序是一个 PortCls 驱动程序，然后它间接创建并通过调用 PcRegisterSubdevice 使 KS 筛选器工厂。 对于许多 PortCls 音频驱动程序设计有两个子设备为给定的配对 HFP 设备注册。
-
-每个筛选器工厂 （或者，对于 PortCls 音频驱动程序，每个对筛选器工厂） 表示单个配对 HFP 设备的音频功能。 音频驱动程序创建单独的筛选器工厂的 GUID 的唯一实例所表示的每个配对 HFP 设备\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口。 对于每个配对的 HFP 设备，音频驱动程序必须使用唯一字符串*RefString* KsCreateFilterFactory，参数或*名称*PcRegisterSubdevice 参数。 驱动程序开发人员可能会发现可以使用配对的 HFP 设备的蓝牙地址字符串作为唯一字符串。 请参阅[HF 设备蓝牙获取地址](obtaining-bluetooth-address-of-hf-device.md)有关如何检索的唯一字符串的信息。
-
-请注意，没有任何特定设备数上限可能配对 HFP，因此音频驱动程序应避免在硬编码特定的限制。 相反，音频驱动程序必须正确处理动态到达和删除多个 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口。
-
-在实践中，但是，PortCls 驱动程序必须指定子设备的最大数目时，它调用 PcAddAdapterDevice。 PcAddAdapterDevice 预分配额外内存用于每个潜在子设备。 音频驱动程序开发人员应选择一个足够高以适应多个配对的设备，但一次选择一种资源浪费在不会产生一个数字的数字。 例如，支持只有 2 个 HFP 设备可能是不够的并且支持 2000年肯定导致过度扩张的资源。 但是，支持 16 很可能是合理。
-
-如果在运行时的音频驱动程序通知的另一个 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口，但已注册了其最大数量的子设备，则音频驱动程序可以调用某些算法，用于选择配对的 HFP 设备取消注册它可以为新的 HFP 设备腾出空间，请其子设备。 例如，音频驱动程序无法跟踪的 HFP 设备与最早的连接。 而更简单但可能小于用户友好的音频驱动程序可能只需忽略其他 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口后达到其最大值。
-
-## <a name="span-idsendingthegetconnectionstatusioctlspanspan-idsendingthegetconnectionstatusioctlspanspan-idsendingthegetconnectionstatusioctlspansending-the-get-connection-status-ioctl"></a><span id="Sending_the_get_connection_status_IOCTL"></span><span id="sending_the_get_connection_status_ioctl"></span><span id="SENDING_THE_GET_CONNECTION_STATUS_IOCTL"></span>发送 get 连接状态 IOCTL
+## <a name="span-idretrieving_static_informationspanspan-idretrieving_static_informationspanspan-idretrieving_static_informationspanretrieving-static-information"></a><span id="Retrieving_static_information"></span><span id="retrieving_static_information"></span><span id="RETRIEVING_STATIC_INFORMATION"></span>检索静态信息
 
 
-音频驱动程序将发送 get 连接状态 IOCTL，以获取有关在连接中发生的任何更改的信息。
+音频驱动程序可以从 HFP 驱动程序检索静态信息。 例如，HFP 驱动程序可以提供 ksnodetype、容器 id 和配对 HFP 设备的友好名称。 音频驱动程序可以使用此信息来创建和初始化一个 KS 筛选器，或代表配对的 HFP 设备的筛选器。 音频驱动程序使用[**IOCTL\_BTHHFP\_设备\_获取\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)获取此信息。
 
-## <a name="span-idsendingthegetvolumestatusioctlspanspan-idsendingthegetvolumestatusioctlspanspan-idsendingthegetvolumestatusioctlspansending-the-get-volume-status-ioctl"></a><span id="Sending_the_get_volume_status_IOCTL"></span><span id="sending_the_get_volume_status_ioctl"></span><span id="SENDING_THE_GET_VOLUME_STATUS_IOCTL"></span>发送 get 卷状态 IOCTL
+音频驱动程序还可以检索配对 HFP 设备的蓝牙地址。 每个配对的 HFP 设备都具有唯一的蓝牙地址，这可用作唯一标识符字符串。 有关详细信息，请参阅[获取 HF 设备的蓝牙地址](obtaining-bluetooth-address-of-hf-device.md)。
+
+## <a name="span-idcreating__initializing_audio-specific_filter_factory_contextspanspan-idcreating__initializing_audio-specific_filter_factory_contextspanspan-idcreating__initializing_audio-specific_filter_factory_contextspancreating-initializing-audio-specific-filter-factory-context"></a><span id="Creating__initializing_audio-specific_filter_factory_context"></span><span id="creating__initializing_audio-specific_filter_factory_context"></span><span id="CREATING__INITIALIZING_AUDIO-SPECIFIC_FILTER_FACTORY_CONTEXT"></span>创建、初始化特定于音频的筛选器工厂上下文
 
 
-音频驱动程序将发送 get 卷状态 IOCTL，若要获取中音量级别中的耳机该卷的状态已发生的任何更改的信息。
+若要创建并初始化特定于音频的筛选器工厂上下文，音频驱动程序必须在筛选器工厂上下文中存储 HFP DeviceObject 和 HFP FileObject，然后将 Connectionmultiplexer.isconnected 字段初始化为 false。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)  
-[理论上的操作](theory-of-operation.md)  
+## <a name="span-idcreating_the_ks_filter_factoryspanspan-idcreating_the_ks_filter_factoryspanspan-idcreating_the_ks_filter_factoryspancreating-the-ks-filter-factory"></a><span id="Creating_the_KS_filter_factory"></span><span id="creating_the_ks_filter_factory"></span><span id="CREATING_THE_KS_FILTER_FACTORY"></span>创建 KS 筛选器工厂
+
+
+对于 GUID 中的每个设备实例\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口类，则音频驱动程序将创建并启用一个或多个筛选器工厂。
+
+如果音频驱动程序是 AVStream 驱动程序，则音频驱动程序会调用 KsCreateFilterFactory 来添加新的筛选器工厂和 KsFilterFactorySetDeviceClassesState，以启用工厂。 如果音频驱动程序是 PortCls 驱动程序，则它会通过调用 PcRegisterSubdevice 间接创建并启用 KS 筛选器工厂。 对于许多 PortCls 音频驱动程序设计，有两个子设备注册到了一台给定的配对 HFP 设备。
+
+每个筛选器工厂（对于 PortCls 音频驱动程序，每一对筛选器工厂）表示单个成对 HFP 设备的音频功能。 音频驱动程序为每个配对的 HFP 设备创建单独的筛选器工厂，\_蓝牙\_\_HFP 的唯一\_实例表示的每个配对的设备\_HCIBYPASS 接口。 对于每个配对的 HFP 设备，音频驱动程序必须对 KsCreateFilterFactory 的*RefString*参数或 PcRegisterSubdevice 的*Name*参数使用唯一字符串。 驱动程序开发人员可能会发现，将配对的 HFP 设备的蓝牙地址字符串用作唯一字符串会很有用。 有关如何检索唯一字符串的信息，请参阅[获取 HF 设备的蓝牙地址](obtaining-bluetooth-address-of-hf-device.md)。
+
+请注意，没有特定数量的可能配对 HFP 设备，因此音频驱动程序应避免对特定限制进行硬编码。 相反，音频驱动程序必须正确处理多个 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口的动态到达和删除。
+
+但是，在实际情况下，PortCls 驱动程序在调用 PcAddAdapterDevice 时必须指定最大数量的子设备。 PcAddAdapterDevice 为每个可能的子设备预分配额外的内存。 音频驱动程序开发人员应选择一个足以容纳多个配对设备的数字，但同时选择不会导致资源浪费的数字。 例如，仅支持2个 HFP 设备可能不满足需要，而支持2000则肯定会导致 overextended 的资源。 但是，支持16可能是合理的。
+
+如果在运行时向音频驱动程序通知其他 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口，但已注册其最大子设备数，则音频驱动程序可以调用算法来选择配对的 HFP 设备，该设备的子设备可以注销，为新的 HFP 设备腾出空间。 例如，音频驱动程序可以跟踪具有最旧连接的 HFP 设备。 虽然更简单，但用户友好的音频驱动程序更简单，但用户友好的音频驱动程序在达到其最大值后，只需忽略其他 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口
+
+## <a name="span-idsending_the_get_connection_status_ioctlspanspan-idsending_the_get_connection_status_ioctlspanspan-idsending_the_get_connection_status_ioctlspansending-the-get-connection-status-ioctl"></a><span id="Sending_the_get_connection_status_IOCTL"></span><span id="sending_the_get_connection_status_ioctl"></span><span id="SENDING_THE_GET_CONNECTION_STATUS_IOCTL"></span>发送 get 连接状态 IOCTL
+
+
+音频驱动程序发送 get 连接状态 IOCTL，以获取有关连接中发生的任何更改的信息。
+
+## <a name="span-idsending_the_get_volume_status_ioctlspanspan-idsending_the_get_volume_status_ioctlspanspan-idsending_the_get_volume_status_ioctlspansending-the-get-volume-status-ioctl"></a><span id="Sending_the_get_volume_status_IOCTL"></span><span id="sending_the_get_volume_status_ioctl"></span><span id="SENDING_THE_GET_VOLUME_STATUS_IOCTL"></span>发送获取卷状态 IOCTL
+
+
+音频驱动程序发送 "获取卷状态" IOCTL，以获取有关在头戴式耳机的卷状态中发生的任何卷级更改的信息。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[**IOCTL\_BTHHFP\_设备\_获取\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)  
+[操作理论](theory-of-operation.md)  
 [获取 HF 设备的蓝牙地址](obtaining-bluetooth-address-of-hf-device.md)  
 
 

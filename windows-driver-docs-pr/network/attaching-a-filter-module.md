@@ -3,18 +3,18 @@ title: 附加筛选器模块
 description: 附加筛选器模块
 ms.assetid: 4441383e-cc22-4fe1-9c46-28d405736daa
 keywords:
-- 筛选器模块 WDK 连接网络、 附加
-- 将附加筛选器模块
-- 筛选器驱动程序 WDK 网络，将附加筛选器模块
+- 筛选器模块 WDK 网络，附加
+- 附加筛选器模块
+- 筛选器驱动程序 WDK 网络，附加筛选器模块
 - NDIS 筛选器驱动程序 WDK，附加筛选器模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d79679b3c08cc1b425d9c0a09aa3d83f4b0449
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f85bf31442549b5211cd1d270bf265743b22542
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384416"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835284"
 ---
 # <a name="attaching-a-filter-module"></a>附加筛选器模块
 
@@ -22,31 +22,31 @@ ms.locfileid: "67384416"
 
 
 
-若要启动筛选器模块插入驱动程序堆栈的过程，NDIS 调用筛选器驱动程序[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)函数。 在中执行的起始*FilterAttach*函数，筛选器模块进入*附加*状态。 有关将筛选器模块附加到驱动程序堆栈的详细信息，请参阅[启动驱动程序堆栈](starting-a-driver-stack.md)。
+为了启动将筛选器模块插入驱动程序堆栈的过程，NDIS 调用筛选器驱动程序的[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数。 在*FilterAttach*函数中的执行开始时，筛选器模块将进入*附加*状态。 有关将筛选器模块附加到驱动程序堆栈的详细信息，请参阅[启动驱动程序堆栈](starting-a-driver-stack.md)。
 
-筛选器驱动程序使用 NDIS 将在传递的句柄*NdisFilterHandle*的参数[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)所有将来**NdisXxx**请参阅此筛选器模块的函数调用。 此类函数包括状态指示，将请求发送、 接收的指示和 OID 请求。
+筛选器驱动程序使用该句柄，该句柄通过引用此筛选器模块的所有未来**NdisXxx**函数调用中的[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)的*NdisFilterHandle*参数进行传递。 此类函数包括状态指示、发送请求、接收指示和 OID 请求。
 
-在筛选器模块时*附加*状态时，该驱动程序：
+当筛选器模块处于*附加*状态时，驱动程序将：
 
--   创建筛选器模块的上下文区域并分配缓冲池和其他筛选器特定于模块资源。 有关缓冲池的详细信息，请参阅[筛选器驱动程序缓冲区管理](filter-driver-buffer-management.md)。
+-   创建筛选器模块的上下文区域，并分配缓冲池和其他特定于筛选器模块的资源。 有关缓冲池的详细信息，请参阅[筛选器驱动程序缓冲区管理](filter-driver-buffer-management.md)。
 
--   调用[ **NdisFSetAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsetattributes)函数通过使用*NdisFilterHandle* NDIS 传递到值[ *FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach). *FilterModuleContext*的参数**NdisFSetAttributes**指定此筛选器模块的筛选器驱动程序的上下文区域。 NDIS 将此上下文区域传递给筛选器驱动程序*FilterXxx*函数。
+-   使用 NDIS 传递到[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)的*NdisFilterHandle*值调用[**NdisFSetAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsetattributes)函数。 **NdisFSetAttributes**的*FilterModuleContext*参数为此筛选器模块指定筛选器驱动程序的上下文区域。 NDIS 将此上下文区域传递到筛选器驱动程序的*FilterXxx*函数。
 
--   （可选） 从注册表中读取此筛选器模块的配置参数。 有关详细信息，请参阅[访问筛选器驱动程序的配置信息](accessing-configuration-information-for-a-filter-driver.md)。
+-   （可选）从注册表中读取此筛选器模块的配置参数。 有关详细信息，请参阅[访问筛选器驱动程序的配置信息](accessing-configuration-information-for-a-filter-driver.md)。
 
--   如果已成功完成上述操作，筛选器模块位于*已暂停*状态。
+-   如果前面的操作已成功完成，筛选器模块将处于*暂停*状态。
 
--   如果上述操作失败，筛选器驱动程序必须释放它分配中的资源[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)函数，并返回到筛选器模块*Detached*状态。
+-   如果上述操作失败，筛选器驱动程序必须释放它在[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数中分配的任何资源，并将筛选器模块返回到已*分离*状态。
 
--   返回 NDIS\_状态\_成功或相应的故障代码。 如果该驱动程序返回了失败代码，NDIS 终止驱动程序堆栈。
+-   返回 NDIS\_状态\_成功或相应的失败代码。 如果驱动程序返回失败代码，NDIS 将终止驱动程序堆栈。
 
-**请注意**  注册表可能包含一个标志，指定筛选器模块，是可选的。 如果未附加的可选筛选器模块，NDIS 不会终止驱动程序堆栈的其余部分。
+**请注意**  注册表可以包含一个标志，该标志指定筛选器模块是可选的。 如果可选筛选器模块不附加，NDIS 不会终止驱动程序堆栈的其余部分。
 
  
 
-筛选器驱动程序不能进行发送请求、 指示接收到的数据、 发出 OID 请求或进行中的状态指示*附加*状态。 发送和接收操作中支持*运行*并*暂停*状态。 中支持 OID 请求以及状态表明*已暂停*，*正在重新启动*，*运行*，以及*暂停*状态。
+筛选器驱动程序无法发出发送请求，指示接收的数据，发出 OID 请求，或从*附加*状态指示状态指示。 在*正在运行和正在* *暂停*的状态中支持发送和接收操作。 *暂停*、*重新启动*、*正在运行*和*暂停*状态支持 OID 请求和状态指示。
 
-NDIS 调用[ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)函数可分离 NDIS 附加了一个筛选器模块[ *FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)。 有关详细信息，请参阅[分离筛选器模块](detaching-a-filter-module.md)。
+NDIS 调用[*FilterDetach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_detach)函数来分离 NDIS 附加了[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)的筛选器模块。 有关详细信息，请参阅[分离筛选器模块](detaching-a-filter-module.md)。
 
  
 

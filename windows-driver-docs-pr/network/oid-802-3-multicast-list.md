@@ -1,51 +1,51 @@
 ---
 title: OID_802_3_MULTICAST_LIST
-description: 为 set 请求，NDIS 和基础协议驱动程序使用 OID_802_3_MULTICAST_LIST OID 请求替换微型端口适配器上的当前多路广播的地址列表。
+description: 作为一个集请求，NDIS 和过量协议驱动程序使用 OID_802_3_MULTICAST_LIST OID 请求来替换微型端口适配器上的当前多播地址列表。
 ms.assetid: 601f38e1-26ae-4d72-9d72-91bd58f81bba
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_802_3_MULTICAST_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cc96f2f9a32a4c440ca80502809389dda12f029c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 39e6ff3725355fdc798e6b2d01a127dd0416470a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834551"
 ---
-# <a name="oid8023multicastlist"></a>OID\_802\_3\_多播\_列表
+# <a name="oid_802_3_multicast_list"></a>OID\_802\_3\_多播\_列表
 
 
-为 set 请求，NDIS 和基础协议驱动程序使用 OID\_802\_3\_多播\_列表 OID 请求以更换微型端口适配器上的当前多路广播的地址列表。 如果在列表中存在一个地址，则已启用该地址来接收多路广播的数据包。
+作为设置请求，NDIS 和过量协议驱动程序使用 OID\_802\_3\_多播\_列表 OID 请求来替换微型端口适配器上的当前多播地址列表。 如果地址在列表中存在，则将启用该地址以接收多播数据包。
 
-作为查询请求，NDIS 和协议驱动程序使用 OID\_802\_3\_多播\_列表 OID 请求以获取当前多路广播的地址列表。
-
-
+作为查询请求，NDIS 和协议驱动程序使用 OID\_802\_3\_多播\_列表 OID 请求以获取当前的多播地址列表。
 
 
-NDIS 处理 OID\_802\_3\_多播\_列表查询的微型端口驱动程序，以便微型端口驱动程序永远不会接收这些请求查询请求。
 
-支持多播的地址列表的微型端口驱动程序必须支持 OID\_802\_3\_多播\_列表设置的请求。
 
-对于组的请求， **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含多播的地址列表地址的数组。
+NDIS 处理 OID\_802\_3\_多播\_列出微型端口驱动程序的查询请求，因此小型端口驱动程序永远不会收到这些查询请求。
 
--   每个地址是 6 个字节的数组。
--   **InformationBufferLength**成员的包含的长度，以字节为单位， **InformationBuffer**数组。
--   如果在列表中有重复的地址**InformationBuffer**成员，NDIS 发送 OID 之前移除重复项\_802\_3\_多播\_列表设置为请求微型端口驱动程序。
--   如果**InformationBufferLength**成员为零，则微型端口驱动程序必须清除多路广播的地址列表。
--   如果**InformationBufferLength**成员是大于零，微型端口驱动程序必须将任何现有的多播的地址列表中的列表替换为**InformationBuffer**成员。
+支持多播地址列表的微型端口驱动程序必须支持 OID\_802\_3\_多播\_列表集请求。
 
-由绑定到的微型端口适配器的所有协议驱动程序共享的微型端口适配器多路广播的地址列表。 NDIS 控件访问此列表。 如果多个协议驱动程序尝试同时修改列表，NDIS 会将其请求合并到单个 OID\_802\_3\_多播\_列表设置请求中，将其发送到微型端口驱动程序。
+对于集请求， [**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含多播地址列表作为地址数组。
 
-初始化的微型端口适配器时，它重置 NIC 因此多播的地址列表是零。 NDIS 还将初始化数据包筛选器，以便它不允许协议驱动程序，以接收多路广播的数据包。
+-   每个地址都是一个6字节的数组。
+-   **InformationBufferLength**成员包含**InformationBuffer**数组的长度（以字节为单位）。
+-   如果**InformationBuffer**成员的列表中存在重复的地址，NDIS 会在向微型端口驱动程序发送 OID\_802\_3\_多播\_列表集请求之前删除重复项。
+-   如果**InformationBufferLength**成员为零，微型端口驱动程序必须清除多播地址列表。
+-   如果**InformationBufferLength**成员大于零，则微型端口驱动程序必须将任何现有的多播地址列表替换为**InformationBuffer**成员的列表。
 
-若要接收多路广播的数据包，协议驱动程序必须更高版本执行以下操作：
+小型端口适配器的多播地址列表由绑定到微型端口适配器的所有协议驱动程序共享。 NDIS 控制对此列表的访问。 如果多个协议驱动程序尝试同时修改列表，NDIS 会将其请求合并为一个 OID\_802\_3\_多播\_列表集请求，并将其发送到微型端口驱动程序。
 
--   设置数据包筛选器，包括**NDIS\_数据包\_类型\_多播**标志。 在任何时候，它可以通过取消此标志来禁止多路广播的数据包接收。 在其中协议驱动程序，接收多路广播数据包的顺序并不重要。 有关详细信息，请参阅[OID\_代\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)OID 请求。
--   设置数据包筛选器，包括**NDIS\_数据包\_类型\_所有\_多播**标记，可让所有的多路广播的数据包，并进行自身筛选。
+初始化微型端口适配器后，它会重置 NIC，因此多播地址列表为零。 NDIS 还会初始化数据包筛选器，因此不允许协议驱动程序接收多播数据包。
 
-微型端口驱动程序可以在数量的多播的地址列表可以包含的多播地址上设置限制。 返回 NDIS **NDIS\_状态\_多播\_完整**如果协议驱动程序超出此限制，或者指定了无效的多路广播的地址。
+若要接收多播数据包，协议驱动程序稍后必须执行以下操作之一：
 
-对于查询请求，NDIS 返回的所有协议绑定的所有多播的地址列表的并集的多路广播的地址列表。
+-   将数据包筛选器设置为包括**NDIS\_数据包\_类型\_多播**标志。 无论何时，都可以通过取消此标志来禁用多播数据包接收。 协议驱动程序为多播数据包启用接收的顺序并不重要。 有关详细信息，请参阅[OID\_GEN\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)OID 请求。
+-   将数据包筛选器设置为包括**NDIS\_数据包\_类型\_所有\_多播**标志，这将启用所有多播数据包，并执行筛选。
+
+小型端口驱动程序可以对多播地址列表可以包含的多路广播地址设置限制。 如果协议驱动程序超过此限制或指定了无效的多播地址，NDIS 将 **\_多播\_FULL 返回 ndis\_状态**。
+
+对于查询请求，NDIS 返回多播地址列表，它是所有协议绑定的所有多播地址列表的联合。
 
 <a name="requirements"></a>要求
 ------------
@@ -57,22 +57,22 @@ NDIS 处理 OID\_802\_3\_多播\_列表查询的微型端口驱动程序，以�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_802\_3\_ADD\_MULTICAST\_ADDRESS](oid-802-3-add-multicast-address.md)
+[OID\_802\_3\_添加\_多播\_地址](oid-802-3-add-multicast-address.md)
 
-[OID\_802\_3\_DELETE\_MULTICAST\_ADDRESS](oid-802-3-delete-multicast-address.md)
+[OID\_802\_3\_删除\_多播\_地址](oid-802-3-delete-multicast-address.md)
 
-[OID\_802\_3\_MAXIMUM\_LIST\_SIZE](oid-802-3-maximum-list-size.md)
+[OID\_802\_3\_最大\_列表\_大小](oid-802-3-maximum-list-size.md)
 
-[OID\_GEN\_CURRENT\_PACKET\_FILTER](oid-gen-current-packet-filter.md)
+[OID\_代\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)
 
  
 

@@ -4,21 +4,21 @@ description: 指定 WMA Pro 数据范围
 ms.assetid: c7e9bc68-cec2-4a34-9ef0-ce3c9a4cc987
 keywords:
 - S/PDIF 传递 WDK 音频
-- WMA Pro-反复-S/PDIF 格式 WDK 音频
+- WMA Pro-S/PDIF 格式 WDK 音频
 - 音频非 PCM 格式 WDK
-- 非 PCM 音频格式 WDK、 S/PDIF
+- 非 PCM 音频格式 WDK，S/PDIF
 - WMA Pro WDK 音频
-- 索尼/菲利普数字接口
-- 数据范围 WDK 音频、 WMA Pro
-- 非 PCM 的音频格式 WDK、 WMA Pro
+- 索尼/Philips 数字接口
+- 数据范围 WDK 音频、WMA Pro
+- 非 PCM 音频格式 WDK、WMA Pro
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4db2f788e8af531c4d940b118a7cf320aa070c8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31cd9656009bee911ab154bd03ee96f12bbdb1ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354284"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832410"
 ---
 # <a name="specifying-wma-pro-data-ranges"></a>指定 WMA Pro 数据范围
 
@@ -26,20 +26,20 @@ ms.locfileid: "67354284"
 ## <span id="specifying_wma_pro_data_ranges"></span><span id="SPECIFYING_WMA_PRO_DATA_RANGES"></span>
 
 
-标头文件 Mmreg.h 定义值 0x0164 为 WMA Pro-反复-S/PDIF 波形格式标记：
+标头文件 Mmreg 将值0x0164 定义为 WMA-over S/PDIF 的波形格式标记：
 
 ```cpp
   #define WAVE_FORMAT_WMASPDIF  0x0164
 ```
 
-可以通过使用定义方面波形格式标记指定相应的子类型格式的 GUID\_WAVEFORMATEX\_标头中的 GUID 宏文件 Ksmedia.h，如下所示：
+可以通过使用标头文件 Ksmedia 中的 "定义\_WAVEFORMATEX"\_GUID 宏，按波形格式标记指定对应的格式子类型 GUID，如下所示：
 
 ```cpp
   #define KSDATAFORMAT_SUBTYPE_WMA_SPDIF    \
                       DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_WMASPDIF)
 ```
 
-以下代码示例演示如何指定 WaveCyclic 或 WavePci 微型端口驱动程序[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)表支持 WMA Pro-反复-S/PDIF pin 条目和AC-3-over-S/PDIF 格式：
+下面的代码示例演示了 WaveCyclic 或 WavePci 微型端口驱动程序如何为支持 WMA Pro/PDIF 和 AC-/PDIF 格式的 pin 指定[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)表条目：
 
 ```cpp
 static KSDATARANGE_AUDIO PinDataRangesSpdifOut[] =
@@ -100,13 +100,13 @@ static KSDATARANGE_AUDIO PinDataRangesSpdifOut[] =
 };
 ```
 
-在此代码示例中，第一个和第二个数据范围指定在 48khz 和 44.1 kHz 采样速率的 WMA Pro-反复-S/PDIF 数据格式。 有了这两个选项，音频应用程序可以播放 WMA Pro 音频流记录在这两个假设外部解码器还可以处理的采样率这些两个采样速率。
+在此代码示例中，第一个和第二个数据区域以 48 kHz 和 44.1 kHz 的采样速率指定 WMA Pro-S/PDIF 数据格式。 使用这两个选项，音频应用程序可以播放在这两个采样速率中记录的 WMA Pro 音频流，假设外部解码器还可以处理采样速率。
 
-WMA Pro 同步帧大小是在 48khz 和 44.1 kHz 相同并使用同一个 PCM 参数值-两个通道，这两个数据区域和 16 位 / 通道。 有关使用 PCM 参数来指定 WMA Pro-反复-S/PDIF 和 AC-3-over-S/PDIF 格式的数据范围的信息，请参阅[S/PDIF 传递非 PCM 流的传输](s-pdif-pass-through-transmission-of-non-pcm-streams.md)。
+WMA Pro 同步帧大小在 48 kHz 和 44.1 kHz 均相同，并且这两个数据区域都使用相同的 PCM 参数值-两个通道和16位/通道。 若要了解如何使用 PCM 参数来指定 WMA Pro over S/PDIF 和 AC-3/PDIF 格式的数据范围，请参阅[非 PCM 流的 S/Pdif 传递传输](s-pdif-pass-through-transmission-of-non-pcm-streams.md)。
 
-第三个数据区域指定 AC-3-over-S/PDIF 数据格式。 有关详细信息，请参阅[指定 ac-3 数据范围](specifying-ac-3-data-ranges.md)。
+第三个数据区域指定 AC-3-S/PDIF 数据格式。 有关详细信息，请参阅[指定 AC 3 数据范围](specifying-ac-3-data-ranges.md)。
 
-前面的示例中不会启用 DirectSound 处理 PCM WMA Pro-反复-S/PDIF 和 AC-3-over-S/PDIF 格式可在 Microsoft Windows 2000 SP2 和 Windows 98 SE + 修补程序。 若要启用此功能，示例代码将需要修改，以便每三个数据区域使用说明符 KSDATAFORMAT\_说明符\_WAVEFORMATEX，第二个数据范围必须包含相同除外它使用说明符 KSDATAFORMAT\_说明符\_DSOUND 相反。 有关示例，请参阅[指定 ac-3 数据范围](specifying-ac-3-data-ranges.md)。
+前面的示例不允许 DirectSound 在 Microsoft Windows 2000 SP2 和 Windows 98 SE + 修补程序上处理非 PCM WMA Pro over S/PDIF 和 AC-3/PDIF 格式。 若要启用此功能，需要修改示例代码，以便对于使用说明符 KSDATAFORMAT\_说明符\_WAVEFORMATEX 的三个数据范围中的每个数据区域，必须包含相同的另一个数据范围，只不过它使用说明符 KSDATAFORMAT\_DSOUND\_说明符。 有关示例，请参阅[指定 AC 3 数据范围](specifying-ac-3-data-ranges.md)。
 
  
 

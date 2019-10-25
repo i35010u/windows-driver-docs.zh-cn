@@ -7,23 +7,23 @@ keywords:
 - 终止扫描 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ecc41adbc8e9b58d2494221089fa2a00ffab08
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 76fb8256d748ae13a389e8256916229d68c10441
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384108"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834422"
 ---
 # <a name="event-mechanism-and-flow"></a>事件机制和流
 
 
-**本部分仅适用于与 Microsoft Windows Vista 一起启动的操作系统。**
+**本部分仅适用于从 Microsoft Windows Vista 开始的操作系统。**
 
-扫描操作完成后，驱动程序会通知事件的应用程序处理这种情况**EventData**的成员[ **KSEVENT\_调谐器\_启动\_扫描\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)结构指定。 但是，若要确定此扫描操作，该驱动程序的实际锁状态[ **KSPROPERTY\_调谐器\_扫描\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-scan-status)必须调用属性。
+当扫描操作完成时，驱动程序将通过一个事件句柄通知应用程序 ，该事件句柄[ **\_\_调谐器的 KSEVENT 成员\_scan 指定的\_扫描**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)。 但是，若要确定扫描操作的实际锁定状态，必须调用驱动程序的[**KSPROPERTY\_调谐器\_scan\_status**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-scan-status)属性。
 
-应用程序可以取消所有内核流式处理事件请求，如[ **KSEVENT\_调谐器\_启动\_扫描**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan)事件完成之前的事件请求。 当应用程序需要取消的当前扫描操作，调谐器筛选器 (*KsTvTune.ax*) 设置**StartFrequency**并**EndFrequency**成员KSEVENT\_调谐器\_启动\_扫描\_S 将注意力集中在对驱动程序的 KSEVENT\_调谐器\_启动\_扫描。 该驱动程序可能会执行整个清理。 但是，由于*KsTvTune.ax*可能会请求另一整个扫描操作，该驱动程序可能无法执行整个清理。 若要取消扫描操作的调用是同步操作。
+与所有内核流式处理事件请求一样，应用程序可以取消[**KSEVENT\_调谐器\_** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan)在事件完成之前启动\_扫描事件请求。 当应用程序需要取消当前扫描操作时，调谐器筛选器（*KsTvTune.ax*）会将 KSEVENT 的**StartFrequency**和**EndFrequency**成员设置\_调谐器\_启动\_扫描\_S 到零在调用驱动程序的 KSEVENT\_调谐器\_启动\_扫描。 驱动程序可能会执行整个清理。 但是，由于*KsTvTune.ax*可能会请求另一次扫描操作，因此驱动程序可能不会执行整个清理操作。 取消扫描操作的调用是同步操作。
 
-当应用程序所需的扫描，终止*KsTvTune.ax*调用 KSEVENT\_调谐器\_启动\_扫描了**StartFrequency**和**EndFrequency**设置为零，以取消注册该事件。 然后，该驱动程序必须执行与其工作线程和其他内部数据结构的整个清理。
+当应用程序需要终止扫描时， *KsTvTune.ax*会调用 KSEVENT\_调谐器\_启动\_SCAN with **StartFrequency** ， **EndFrequency**设置为零，以注销事件。 然后，该驱动程序必须执行其工作线程和其他内部数据结构的整个清理。
 
  
 

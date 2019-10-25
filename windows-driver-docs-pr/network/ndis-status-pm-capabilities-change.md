@@ -1,29 +1,29 @@
 ---
 title: NDIS_STATUS_PM_CAPABILITIES_CHANGE
-description: NDIS_STATUS_PM_CAPABILITIES_CHANGE 状态指示在对基础驱动程序的网络适配器的电源管理功能的更改。
+description: NDIS_STATUS_PM_CAPABILITIES_CHANGE 状态表示网络适配器对过量驱动程序的电源管理功能发生了更改。
 ms.assetid: 28a2ed15-606a-4a40-b975-b766815a02cc
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 NDIS_STATUS_PM_CAPABILITIES_CHANGE 网络驱动程序
+- NDIS_STATUS_PM_CAPABILITIES_CHANGE 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 32757fb530afbef0e591a7d43a5a6d64294ca83c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e830b53efa9fe27e536c0706de78b5a4ebe35430
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368535"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843542"
 ---
-# <a name="ndisstatuspmcapabilitieschange"></a>NDIS\_状态\_PM\_功能\_更改
+# <a name="ndis_status_pm_capabilities_change"></a>NDIS\_状态\_PM\_功能\_更改
 
 
-NDIS\_状态\_PM\_功能\_更改状态指示为过量驱动程序的电源管理功能的网络适配器的更改。
+NDIS\_状态\_PM\_功能\_更改状态指示网络适配器的电源管理功能更改到过量驱动程序。
 
 <a name="remarks"></a>备注
 -------
 
-NDIS 生成 NDIS\_状态\_PM\_功能\_更改状态指示时对先前报告的电源管理功能的更新是必需的。
+如果需要更新以前报告的电源管理功能，NDIS\_状态\_PM\_功能\_更改状态。
 
-**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含一个指向[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的更新的电源管理功能。
+[**Ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含一个指向[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的指针，该指针具有更新的电源管理功能。
 
 <a name="requirements"></a>要求
 ------------
@@ -35,22 +35,22 @@ NDIS 生成 NDIS\_状态\_PM\_功能\_更改状态指示时对先前报告的电
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 6.20 及更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.20 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ndis .h （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
+[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
  
 

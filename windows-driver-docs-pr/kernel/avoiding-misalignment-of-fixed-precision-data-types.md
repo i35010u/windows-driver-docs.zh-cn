@@ -6,19 +6,19 @@ keywords:
 - 文件系统控制代码 WDK 64 位
 - FSCTL WDK 64 位
 - 控制代码 WDK 64 位
-- I/O 控制代码 WDK 内核，在 64 位驱动程序中的 32 位 I/O
-- Ioctl WDK 内核，在 64 位驱动程序中的 32 位 I/O
-- 指针精确度 WDK 64 位
+- I/o 控制代码 WDK 内核，64位驱动程序中的32位 i/o
+- IOCTLs WDK 内核，64位驱动程序中的32位 i/o
+- 指针精度 WDK 64 位
 - 固定精度数据类型 WDK 64 位
-- 未对齐的固定精度数据类型
+- 固定精度数据类型未对齐
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ede0f9383951c48f9979084767c203f7f6cd8e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b9fcd0eb33b92456e51f4e048b0f5e47666659a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369940"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837178"
 ---
 # <a name="avoiding-misalignment-of-fixed-precision-data-types"></a>避免固定精度数据类型不对齐
 
@@ -26,23 +26,23 @@ ms.locfileid: "67369940"
 
 
 
-遗憾的是，很可能具有相同的大小，但不同的对齐要求，为 32 位和 64 位编程的数据类型。 因此不是所有 IOCTL/FSCTL 缓冲区未对齐问题可以都避免通过更改指针精确度的数据类型为固定精度的类型。 这意味着，内核模式驱动程序 Ioctl 和 FSCTLs 传递包含某些固定精度的数据类型 （或者指向它们） 缓冲区还可能需要将 thunked。
+遗憾的是，对于32位和64位编程，数据类型可能具有相同大小但不同的对齐要求。 因此，将指针精度数据类型更改为固定精度类型不能避免所有的 IOCTL/FSCTL 缓冲区不一致问题。 这意味着，传递包含某些固定精度数据类型（或指向这些类型的指针）的缓冲区的内核模式驱动程序 IOCTLs 和 FSCTLs 也可能需要 thunked。
 
 ### <a name="which-data-types-are-affected"></a>受影响的数据类型
 
-此问题会影响固定精度的数据类型本身是结构。 这是因为用于确定结构的对齐要求的规则是特定于平台的。
+此问题会影响自身结构的固定精度数据类型。 这是因为确定结构的对齐要求的规则是特定于平台的。
 
-例如，  **\_ \_int64**大型\_整数和 KFLOATING\_保存必须在 x86 上的 4 字节边界上对齐的平台。 但是，在基于 Itanium 的计算机，它们必须对齐 8 字节边界上。
+例如， **\_\_int64**、大型\_整数和 KFLOATING\_保存必须在 x86 平台上的4字节边界上对齐。 但在基于 Itanium 的计算机上，它们必须在8字节边界上对齐。
 
-若要确定在特定平台上给定的数据类型的对齐要求，请使用**类型\_对齐**宏在该平台上的。
+若要确定特定平台上给定数据类型的对齐要求，请使用该平台上的 "**类型\_对齐**宏"。
 
 ### <a name="how-to-fix-the-problem"></a>如何解决此问题
 
-在以下示例中，IOCTL 是一种方法\_既不 IOCTL，因此**Irp-&gt;UserBuffer**指针传递到内核模式驱动程序的用户模式应用程序直接从。 Ioctl 和 FSCTLs 中使用的缓冲区上不执行任何验证。 因此调用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)或[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)是必需的才能安全地取消引用缓冲区指针。
+在下面的示例中，IOCTL 是\_两个 IOCTL 的方法，因此，将从用户模式应用程序直接向内核模式驱动程序传递**Irp&gt;的 UserBuffer**指针。 对于 IOCTLs 和 FSCTLs 中使用的缓冲区不执行任何验证。 因此，必须先调用[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)或[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite) ，然后才能安全地取消引用缓冲区指针。
 
-假设 32 位应用程序已通过有效的值**Irp-&gt;UserBuffer**，大\_指向整数结构**p-&gt;DeviceTime**将在 4 字节边界上对齐。 **ProbeForRead**检查传入的值针对这种调整其*对齐*参数，在这种情况下即**类型\_对齐**(大\_整数)。 在 x86 平台，则此宏表达式返回 4 （字节）。 但是，在基于 Itanium 的计算机，它返回 8，导致**ProbeForRead**引发状态\_数据类型\_不对齐异常。
+假设32位应用程序已为**Irp&gt;UserBuffer**传递了有效值，则**p&gt;DEVICETIME**指向的大型\_整数结构将按4个字节的边界对齐。 **ProbeForRead**对照传递参数中传递的值（在本例中为**类型\_对齐方式**（大\_整数）检查此*对齐方式。* 在 x86 平台上，此宏表达式返回4（字节）。 但在基于 Itanium 的计算机上，它将返回8，导致**ProbeForRead**\_DATATYPE 引发状态\_不一致的异常。
 
-**请注意**  删除**ProbeForRead**调用仍然无法解决问题，但仅会使它很难诊断。
+**请注意**   删除**ProbeForRead**调用并不能解决问题，但仅会使诊断变得更困难。
 
  
 
@@ -71,11 +71,11 @@ case IOCTL_SETTIME:
  } except( EXCEPTION_EXECUTE_HANDLER ) {
 ```
 
-以下部分介绍如何解决上述问题。 请注意为了简便起见，已进行了编辑所有代码片段。
+以下部分介绍如何解决上述问题。 请注意，为了简洁起见，已经编辑了所有代码片段。
 
-### <a name="solution-1-copy-the-buffer"></a>解决方案 1：将缓冲区复制
+### <a name="solution-1-copy-the-buffer"></a>解决方案1：复制缓冲区
 
-为了避免出现不一致问题的最安全方法是缓冲区的访问其内容，如以下示例所示之前创建副本。
+若要避免出现不一致问题，最安全的方法是在访问其内容之前创建缓冲区的副本，如以下示例中所示。
 
 ```cpp
 case IOCTL_SETTIME: {
@@ -92,7 +92,7 @@ case IOCTL_SETTIME: {
 }
 ```
 
-此解决方案可以优化为更好的性能通过先检查是否正确对齐缓冲区内容。 如果是这样，可以原样使用缓冲区。 否则，该驱动程序创建缓冲区的副本。
+通过首先检查缓冲区内容是否正确对齐，可以优化此解决方案以获得更好的性能。 如果是这样，则可以按原样使用缓冲区。 否则，驱动程序会生成缓冲区的副本。
 
 ```cpp
 case IOCTL_SETTIME: {
@@ -114,9 +114,9 @@ case IOCTL_SETTIME: {
 }
 ```
 
-### <a name="solution-2-use-the-unaligned-macro"></a>解决方案 2:使用未对齐的宏
+### <a name="solution-2-use-the-unaligned-macro"></a>解决方案2：使用未对齐的宏
 
-**未对齐**宏告知 C 编译器生成的代码都可以访问**DeviceTime**字段而无需使对齐错误。 请注意，在基于 Itanium 的平台上使用此宏有可能使您的驱动程序，明显更大和较慢。
+未**对齐**的宏告诉 C 编译器生成可访问**DeviceTime**字段的代码，而不会发生对齐错误。 请注意，在基于 Itanium 的平台上使用此宏可能会提高驱动程序的大小和速度。
 
 ```cpp
 typedef struct _IOCTL_PARAMETERS2 {
@@ -127,7 +127,7 @@ typedef IOCTL_PARAMETERS2 UNALIGNED *PIOCTL_PARAMETERS2;
 
 ### <a name="pointers-are-also-affected"></a>指针也会受到影响
 
-前面所述的不一致问题也可能发生在缓冲 I/O 请求。 在以下示例中，IOCTL 缓冲区包含嵌入式的指针到大型\_整数结构。
+前面所述的不一致问题也可能出现在缓冲 i/o 请求中。 在下面的示例中，IOCTL 缓冲区包含指向大型\_整数结构的嵌入指针。
 
 ```cpp
 typedef struct _IOCTL_PARAMETERS3 {
@@ -139,11 +139,11 @@ typedef struct _IOCTL_PARAMETERS3 {
             COUNT_FUNCTION, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-等方法\_既不 IOCTL 和 FSCTL 缓冲区指针前面所述，直接从用户模式应用程序到内核模式驱动程序还传递指针嵌入在缓冲 I/O 请求。 这些指针上不执行任何验证。 因此调用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)或[ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)中括起来，**试用 / 除外**块中，是嵌入式的指针可以为安全地取消引用之前，需要。
+与方法一样\_前面所述的 IOCTL 和 FSCTL 缓冲区指针，嵌入在缓冲 i/o 请求中的指针也会直接从用户模式应用程序传递到内核模式驱动程序。 对这些指针不执行任何验证。 因此，在可以安全取消引用嵌入指针之前，必须先调用[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)或[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)（括在**try/except**块中）。
 
-如前面的示例，假设 32 位应用程序已为传递有效的值中所示**pDeviceCount**，大型\_指向整数结构**pDeviceCount**将 4-上对齐字节边界。 **ProbeForRead**并**ProbeForWrite**检查此对齐方式的值*对齐*参数，在这种情况下即类型\_对齐方式 (大\_整数）。 在 x86 平台，则此宏表达式返回 4 （字节）。 但是，在基于 Itanium 的计算机，它返回 8，导致**ProbeForRead**或**ProbeForWrite**引发状态\_数据类型\_不对齐异常。
+如前面的示例所示，假设32位应用程序已为**pDeviceCount**传递了有效值，则**PDEVICECOUNT**指向的大型\_整数结构将在4字节边界上对齐。 **ProbeForRead**和**ProbeForWrite**对照*对齐*参数的值（在本例中为类型\_对齐方式（大\_整数）来检查此对齐方式。 在 x86 平台上，此宏表达式返回4（字节）。 但在基于 Itanium 的计算机上，它将返回8，导致**ProbeForRead**或**ProbeForWrite**引发状态\_DATATYPE\_不一致的异常。
 
-可解决此问题会将正确对齐的大型副本\_整数结构，如下所示的解决方案 1，或通过使用未对齐的宏，如下所示：
+可以通过以下方式解决此问题：使大\_整数结构的正确对齐副本（如解决方案1中所示），或使用未对齐的宏（如下所示）：
 
 ```cpp
 typedef struct _IOCTL_PARAMETERS3 {

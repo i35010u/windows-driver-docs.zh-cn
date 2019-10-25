@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_QUERY_QUOTA
-description: IRP\_MJ\_查询\_配额
+description: IRP\_MJ\_QUERY\_配额
 ms.assetid: eb48b5ef-7eac-49d4-ab23-2d3efe783fa3
 keywords:
 - IRP_MJ_QUERY_QUOTA 可安装的文件系统驱动程序
@@ -12,87 +12,87 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4fa61c85c1598c3102bab064dbe7b5bb3e47b43
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 59a72d3cc14faa756523c5872ba00bb89460bf08
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384816"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841165"
 ---
-# <a name="irpmjqueryquota"></a>IRP\_MJ\_查询\_配额
+# <a name="irp_mj_query_quota"></a>IRP\_MJ\_QUERY\_配额
 
 ## <a name="when-sent"></a>发送时间
 
-IRP\_MJ\_查询\_配额请求发送的 I/O 管理器。 可以将发送此请求，例如，在用户模式应用程序具有如调用 Microsoft Win32 方法时**IDiskQuotaControl::GetQuotaState**。
+IRP\_MJ\_查询\_配额请求由 i/o 管理器发送。 例如，在用户模式应用程序调用了 Microsoft Win32 方法（如**IDiskQuotaControl：： GetQuotaState**）时，可以发送此请求。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
-如果文件系统支持磁盘配额，应提取文件系统驱动程序并将其解码以确定它是否表示打开的文件或目录的用户的文件对象。 如果是这样，该驱动程序应处理该查询，并完成 IRP。 否则，驱动程序应完成根据 IRP，而不会处理该查询。
+如果文件系统支持磁盘配额，则文件系统驱动程序应提取并解码文件对象，以确定它是否表示用户打开了文件或目录。 如果是这样，则驱动程序应处理查询并完成 IRP。 否则，驱动程序应视需要完成 IRP，而不处理查询。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
-筛选器驱动程序应在堆栈上传递此 IRP 到下一步低驱动程序，除非它需要显式重写配额行为。
+筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序，除非它需要显式覆盖配额行为。
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理查询配额信息请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。 （IRP 显示为*irp*。）驱动程序可以使用在处理查询配额信息请求中的以下 IRP 成员和 IRP 堆栈位置设置的信息：
 
 ### <a name="deviceobject"></a>*DeviceObject*  
 
-指向目标设备对象指针。
+指向目标设备对象的指针。
 
-### <a name="deviceobject-flags"></a>*DeviceObject->Flags*  
+### <a name="deviceobject-flags"></a>*DeviceObject-> 标志*  
 
-DO\_缓冲\_IO 和 DO\_直接\_，如下所示使用 IO 标志来指定所依据的数据传递给驱动程序的方法：
+DO\_会按如下所示使用\_IO，\_直接\_IO 标志来指定将数据传递到驱动程序的方法：
 
-|标志设置|I/O 方法|
+|标志设置|I/o 方法|
 |----|----|
-|~DO_BUFFERED_IO|~DO_DIRECT_IO|
-|METHOD_NEITHER|~DO_BUFFERED_IO|
+|~ DO_BUFFERED_IO|~ DO_DIRECT_IO|
+|METHOD_NEITHER|~ DO_BUFFERED_IO|
 |DO_DIRECT_IO|METHOD_DIRECT|
-|DO_BUFFERED_IO|~DO_DIRECT_IO|
+|DO_BUFFERED_IO|~ DO_DIRECT_IO|
 |METHOD_BUFFERED|DO_BUFFERED_IO|
 |DO_DIRECT_IO|METHOD_BUFFERED|
 
-### <a name="irp-associatedirpsystembuffer"></a>*Irp->AssociatedIrp.SystemBuffer*
+### <a name="irp-associatedirpsystembuffer"></a>*Irp-> AssociatedIrp. SystemBuffer*
 
-指向要用作中间系统缓冲区，如果系统提供缓冲区的指针是否\_缓冲\_中设置了 IO 标志*DeviceObject-> 标志*。 否则，此成员设置为**NULL**。
+指向系统提供的要用作中间系统缓冲区的缓冲区的指针（如果\_缓冲\_IO 标志是在*DeviceObject-> 标记*中设置的。 否则，此成员设置为**NULL**。
 
-### <a name="irp-iostatus"></a>*Irp->IoStatus*
+### <a name="irp-iostatus"></a>*Irp-> IoStatus*
 
-指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。
+指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。
 
-### <a name="irp-userbuffer"></a>*Irp->UserBuffer*  
+### <a name="irp-userbuffer"></a>*Irp-> UserBuffer*  
 
-指向调用方提供的文件指针\_配额\_接收该卷的配额信息的结构信息的输出缓冲区。
+指向调用方提供的文件\_配额\_信息结构化输出缓冲区的指针，该缓冲区接收卷的配额信息。
 
-### <a name="irpsp-fileobject"></a>*IrpSp->FileObject*
+### <a name="irpsp-fileobject"></a>*IrpSp-> FileObject*
 
-与之关联的文件对象的指针*DeviceObject*。
+指向与*DeviceObject*关联的文件对象的指针。
 
-*IrpSp-> 的文件对象*参数包含一个指向**RelatedFileObject**字段中，这也是一个文件\_对象结构。 **RelatedFileObject**字段的文件\_对象结构不是有效的 IRP 处理期间\_MJ\_查询\_配额并不应使用。
+*> IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件\_对象结构。 文件\_对象结构的**RelatedFileObject**字段在处理 IRP\_MJ\_查询\_配额时无效，不应使用。
 
-### <a name="irpsp-flags"></a>*IrpSp->Flags*
+### <a name="irpsp-flags"></a>*IrpSp-> 标志*
 
-此成员可以是一个或多项操作：
+此成员可以是以下一项或多项：
 
-|Flag|含义|
+|旗帜|含义|
 |----|----|
-|SL_INDEX_SPECIFIED|开始在其索引由给定的配额列表中的条目扫描*IrpSp-> Parameters.QueryQuota.StartSid*|
-|SL_RESTART_SCAN|开始在列表中的第一个条目扫描。 如果未设置此标志，继续从上一个 IRP_MJ_QUERY_QUOTA 请求扫描。|
-|SL_RETURN_SINGLE_ENTRY|返回只找到的第一个条目。|
+|SL_INDEX_SPECIFIED|从配额列表中的条目开始扫描，该配额列表中的索引由 *> IrpSp 指定。 QueryQuota. StartSid*|
+|SL_RESTART_SCAN|从列表中的第一个条目开始扫描。 如果未设置此标志，则从上一个 IRP_MJ_QUERY_QUOTA 请求恢复扫描。|
+|SL_RETURN_SINGLE_ENTRY|仅返回找到的第一个条目。|
 
-### <a name="irpsp-majorfunction"></a>*IrpSp->MajorFunction*
+### <a name="irpsp-majorfunction"></a>*IrpSp-> MajorFunction*
 
-指定 IRP\_MJ\_查询\_配额。
+指定 IRP\_MJ\_QUERY\_配额。
 
-### <a name="irpsp-parametersqueryquotalength"></a>*IrpSp->Parameters.QueryQuota.Length*
+### <a name="irpsp-parametersqueryquotalength"></a>*IrpSp-> 参数. QueryQuota. 长度*
 
-指向缓冲区的长度，以字节为单位， *Irp-> UserBuffer*。
+Irp 所指向的缓冲区的长度（以字节为单位） *> UserBuffer*。
 
-### <a name="irpsp-parametersqueryquotasidlist"></a>*IrpSp->Parameters.QueryQuota.SidList*
+### <a name="irpsp-parametersqueryquotasidlist"></a>*IrpSp-> 参数. QueryQuota. SidList*
 
-可选指向其配额信息是要返回的 Sid 的列表。 在列表中的每个条目是[**文件\_获取\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_get_quota_information)结构。 此结构定义，如下所示：
+指向要返回其配额信息的 Sid 列表的可选指针。 列表中的每个条目都是一个[ **\_获取\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_get_quota_information)结构的文件。 此结构的定义如下：
 
 ```cpp
 typedef struct _FILE_GET_QUOTA_INFORMATION {
@@ -104,32 +104,32 @@ typedef struct _FILE_GET_QUOTA_INFORMATION {
 
 |成员|含义|
 |-----|----|
-|NextEntryOffset|下一步 FILE_GET_QUOTA_INFORMATION 条目，如果多个条目都位于一个缓冲区的字节偏移量。 如果没有其他项遵循这一属性，此成员为零。|
-|SidLength|长度 （字节） 的**Sid**成员。|
-|sid|安全标识符 (SID)|
+|NextEntryOffset|下一个 FILE_GET_QUOTA_INFORMATION 条目的字节偏移量（如果缓冲区中存在多个条目）。 如果此成员不在此成员后面，则为零。|
+|SidLength|**Sid**成员的长度（以字节为单位）。|
+|Sid|安全标识符（SID）|
 
-### <a name="irpsp-parametersqueryquotasidlistlength"></a>*IrpSp->Parameters.QueryQuota.SidListLength*
+### <a name="irpsp-parametersqueryquotasidlistlength"></a>*IrpSp-> 参数. QueryQuota. SidListLength*
 
-指定的 Sid，如果一个列表的长度，以字节为单位。
+Sid 列表的长度（以字节为单位）（如果已指定）。
 
-#### <a name="irpsp-parametersqueryquotastartsid"></a>*IrpSp->Parameters.QueryQuota.StartSid*
+#### <a name="irpsp-parametersqueryquotastartsid"></a>*IrpSp-> 参数. QueryQuota. StartSid*
 
-指示返回的信息是第一个以外的条目启动一个 SID 到的可选指针。 如果指定 SID 列表，则忽略此参数。
+指向某个 SID 的可选指针，它指示返回的信息是从第一个项之外的项开始。 如果指定 SID 列表，则忽略此参数。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[**文件\_获取\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_get_quota_information)
+[**文件\_获取\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_get_quota_information)
 
-[**文件\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_quota_information)
+[**文件\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_quota_information)
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckquotabuffervalidity)
+[**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocheckquotabuffervalidity)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_SET\_QUOTA**](irp-mj-set-quota.md)
+[**IRP\_MJ\_集\_配额**](irp-mj-set-quota.md)

@@ -6,17 +6,17 @@ ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
 - IRP_MJ_SHUTDOWN 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d5f6036e30fc3dbef2423e2a4e1b254a25e4ddbb
-ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
+ms.openlocfilehash: 865ea1d3d8190311018c5f576241362cd626f9f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390723"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838595"
 ---
-# <a name="irp_mj_shutdown"></a>IRP \_MJ \_SHUTDOWN
+# <a name="irp_mj_shutdown"></a>IRP\_MJ\_关闭
 
 
-具有数据内部缓存的大容量存储设备的驱动程序必须在[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程中处理此请求。 如果基础驱动程序维护数据的内部缓冲区，则还必须处理此请求，同时分层的大容量存储设备和中间驱动程序的驱动程序也必须处理此请求。
+具有数据内部缓存的大容量存储设备的驱动程序必须在[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中处理此请求。 如果基础驱动程序维护数据的内部缓冲区，则还必须处理此请求，同时分层的大容量存储设备和中间驱动程序的驱动程序也必须处理此请求。
 
 <a name="when-sent"></a>发送时间
 ---------
@@ -42,7 +42,7 @@ PnP 管理器以 IRQL < = APC_LEVEL 在任意线程上下文中发送此 IRP。
 
 驱动程序必须完成对设备中当前缓存的任何数据的传输，或在完成关闭请求之前保存在驱动程序的内部缓冲区中。
 
-对于设备对象，驱动程序不会接收**IRP \_MJ \_SHUTDOWN**请求，除非它使用[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)或[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)注册来执行此操作。
+对于设备对象，驱动程序不会接收**IRP\_MJ\_关闭**请求，除非它使用[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)或[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)注册来执行此操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -63,11 +63,11 @@ PnP 管理器以 IRQL < = APC_LEVEL 在任意线程上下文中发送此 IRP。
 ## <a name="see-also"></a>另请参阅
 
 
-[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
+[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
+[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
 
-[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregistershutdownnotification)
+[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)
 
  
 

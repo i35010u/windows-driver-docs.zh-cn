@@ -3,20 +3,20 @@ title: I/O 堆栈位置
 description: I/O 堆栈位置
 ms.assetid: 62c8ee00-c7cb-4aa1-90ab-b8bedbd818ee
 keywords:
-- Irp WDK 内核，I/O 堆栈位置
-- I/O 堆栈位置 WDK 内核
+- Irp WDK 内核，i/o 堆栈位置
+- I/o 堆栈位置 WDK 内核
 - 堆栈位置 WDK 内核
-- 分层驱动程序 I/O 堆栈位置 WDK 内核
-- Irp WDK 内核内容
+- 分层驱动程序 i/o 堆栈位置 WDK 内核
+- Irp WDK 内核，内容
 - IO_STACK_LOCATION 结构
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8bc5ef74d849c7e1af7f5bb0321c6a9f0040b0f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 35a645f822d9259f425ebce38b4bf4486cbf93c1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371863"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838650"
 ---
 # <a name="io-stack-locations"></a>I/O 堆栈位置
 
@@ -24,63 +24,63 @@ ms.locfileid: "67371863"
 
 
 
-I/O 管理器提供的分层驱动程序链中每个驱动程序 I/O 堆栈位置设置了每个 IRP。 每个 I/O 堆栈位置组成[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构。
+I/o 管理器为分层驱动程序链中的每个驱动程序提供它所设置的每个 IRP 的 i/o 堆栈位置。 每个 i/o 堆栈位置都包含[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构。
 
-I/O 管理器创建的每个 IRP 的 I/O 堆栈位置的数组与数组元素对应的分层驱动程序链中每个驱动程序。 每个驱动程序拥有的堆栈位置中的数据包和调用之一[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)以获取有关 I/O 操作的特定于驱动程序的信息。
+I/o 管理器将为每个 IRP 创建一个 i/o 堆栈位置数组，其中的数组元素对应于一系列分层驱动程序中的每个驱动程序。 每个驱动程序都拥有数据包中的一个堆栈位置，并调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)来获取有关 i/o 操作的特定于驱动程序的信息。
 
-此类链中的每个驱动程序负责调用[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)，然后设置下一步低驱动程序的 I/O 堆栈位置。 此外可以使用任何更高级别的驱动程序的 I/O 堆栈位置来存储有关操作的上下文，以便在驱动程序[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程可以执行其清理操作。
+此类链中的每个驱动程序都负责调用[**IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)，并设置下一个较低的驱动程序的 i/o 堆栈位置。 任何更高级别的驱动程序的 i/o 堆栈位置也可用于存储有关操作的上下文，以便驱动程序的[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程可以执行其清理操作。
 
-[分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图在原始 IRP 中显示两个 I/O 堆栈位置，因为它显示了两个驱动程序、 文件系统驱动程序和大容量存储设备驱动程序。 在驱动程序分配 Irp[分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图没有所需的堆栈位置 FSD 创建它们。 将 Irp 为较低级别的驱动程序分配任何更高级别的驱动程序还可以确定多少个 I/O 堆栈位置应具有新 Irp，根据**StackSize**下一步低驱动程序的设备对象的值。
+[分层驱动程序中的处理 irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)显示了原始 IRP 中的两个 i/o 堆栈位置，因为它显示了两个驱动程序：文件系统驱动程序和大容量存储设备驱动程序。 [分层驱动程序的处理 irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)中的驱动程序分配的 irp 没有创建它们的 FSD 的堆栈位置。 为较低级别的驱动程序分配 Irp 的任何更高级别的驱动程序也根据下一个较低驱动程序的设备对象的**StackSize**值确定新的 irp 应具有的 i/o 堆栈位置数量。
 
-下图显示了更详细地的 IRP 的内容。
+下图更详细地显示了 IRP 的内容。
 
-![说明在 irp i/o 堆栈位置的内容的关系图](images/2irpios.png)
+![说明 irp 中 i/o 堆栈位置内容的关系图](images/2irpios.png)
 
-如图所示，IRP 中每个特定于驱动程序的 I/O 堆栈位置包含以下常规信息：
+如图所示，IRP 中每个特定于驱动程序的 i/o 堆栈位置都包含以下常规信息：
 
-- 主要函数代码 (**IRP\_MJ\_* XXX * * *)，该驱动程序的基本操作，该值指示应执行
+- 主要函数代码（**IRP\_MJ\_* XXX * * *），指示驱动程序应执行的基本操作
 
-- 有关处理 FSDs、 更高级别的 SCSI 驱动程序和所有即插即用驱动程序的一些主要函数代码，次要函数代码 (**IRP\_MN\_* XXX * * *)，指示的基本操作的子情况驱动程序应执行
+- 对于由 FSDs、较高级别的 SCSI 驱动程序和所有 PnP 驱动程序处理的主要函数代码，一种次要函数代码（**IRP\_MN\_* XXX * * *），指示驱动程序应执行的基本操作的 subcase
 
-- 一组特定于操作的参数，例如长度和启动的驱动程序在其中或从中将数据传输的缓冲区的位置
+- 一组特定于操作的参数，如缓冲区的长度和起始位置，驱动程序从该缓冲区传输数据
 
-- 指向表示请求的操作的目标 （物理、 逻辑，或虚拟） 设备的驱动程序创建的设备对象的指针
+- 指向驱动程序创建的设备对象的指针，该对象表示请求的操作的目标（物理、逻辑或虚拟）设备
 
-- 指向表示打开的文件、 设备、 目录或卷的文件对象的指针
+- 指向文件对象的指针，该对象表示打开的文件、设备、目录或卷
 
-  文件系统驱动程序通过其在 Irp 的 I/O 堆栈位置访问的文件对象。 其他驱动程序通常忽略的文件对象。
+  文件系统驱动程序通过 Irp 中的 i/o 堆栈位置访问 file 对象。 其他驱动程序通常会忽略文件对象。
 
-组的特定驱动程序处理的 IRP 主要和次要函数代码可以是特定于设备类型。 但是，最低级别的驱动程序和中间驱动程序 （包括即插即用的函数和筛选器驱动程序） 通常处理的基本请求以下组：
+特定驱动程序处理的 IRP 主要和次要函数代码集可以是特定于设备类型的。 但是，最低级别驱动程序和中间驱动程序（包括 PnP 函数和筛选器驱动程序）通常处理以下基本请求集：
 
--   [**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create) — 打开，指示它已存在且可用的 I/O 操作的目标设备对象
+-   [**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create) -打开目标设备对象，指示该对象存在并且可用于 i/o 操作
 
--   [**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) — 从设备传输数据
+-   [**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) -从设备传输数据
 
--   [**IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) — 将数据传输到设备
+-   [**IRP\_MJ\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) -将数据传输到设备
 
--   [**IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) — 设置 （或重置） 设备，根据系统定义的特定于设备的类型的 I/O 控制代码 (IOCTL)
+-   [**IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) -根据系统定义的设备类型特定 i/o 控制代码（IOCTL）设置（或重置）设备
 
--   [**IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close) — 关闭目标设备对象
+-   [**IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close) -关闭目标设备对象
 
--   [**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp) — 插对设备执行操作。 **IRP\_MJ\_PNP**通过 I/O 管理器的即插即用管理器发送请求。
+-   [**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp) —在设备上执行即插即用操作。 **IRP\_MJ\_pnp**请求由 pnp 管理器通过 i/o 管理器发送。
 
--   [**IRP\_MJ\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) — 执行电源操作在设备上的。 **IRP\_MJ\_POWER**电源管理器通过 I/O 管理器发送请求。
+-   [**IRP\_MJ\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) -在设备上执行电源操作。 由电源管理器通过 i/o 管理器发送**IRP\_MJ\_power** request。
 
-有关驱动程序所需处理主要 IRP 函数代码的详细信息，请参阅[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)。
+有关需要驱动程序处理的主要 IRP 函数代码的详细信息，请参阅[IRP 主要功能代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)。
 
-一般情况下，I/O 管理器将发送 Irp 到大容量存储设备驱动程序的至少两个 I/O 堆栈位置与因为文件系统上层的其他大容量存储设备的驱动程序。 I/O 管理器将 Irp 发送与任何具有它的上面没有其他驱动程序的驱动程序的堆栈位置。
+通常，i/o 管理器将至少有两个 i/o 堆栈位置的 Irp 发送到大容量存储设备驱动程序，因为文件系统与大容量存储设备的其他驱动程序分层。 I/o 管理器将具有单个堆栈位置的 Irp 发送到任何没有层次之上的其他驱动程序的驱动程序。
 
-但是，I/O 管理器为在系统中将新的驱动程序添加到现有的驱动程序的任何链提供支持。 例如，中间*镜像驱动程序*备份指定的磁盘分区上的数据可能要插入的驱动程序，如文件系统驱动程序和中所示的最低级别驱动程序对之间[中处理 Irp分层驱动程序](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图。 当此新的驱动程序将自身附加到设备堆栈时，I/O 管理器来调整 I/O 堆栈中的位置发送到文件系统、 镜像和最低级别的驱动程序的所有 Irp 数。 每个 IRP 的中的文件系统[分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图分配也会包含此类的新镜像驱动程序的另一个 I/O 堆栈位置。
+但是，i/o 管理器支持将新驱动程序添加到系统中现有驱动程序的任何链。 例如，可能会在一对驱动程序（如文件系统驱动程序和[分层驱动程序的处理 irp 中](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)所示的最低级别驱动程序）之间插入一个可在给定磁盘分区上备份数据的中间*镜像驱动程序*。 当此新驱动程序将自身附加到设备堆栈时，i/o 管理器会在它发送到文件系统、镜像和最低级别驱动程序的所有 Irp 中调整 i/o 堆栈位置的数目。 每个 IRP，分配的[分层驱动程序中处理 irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)的文件系统也将包含此类新镜像驱动程序的另一个 i/o 堆栈位置。
 
-请注意，此支持将新的驱动程序添加到现有链意味着到 Irp 中的 I/O 堆栈位置的任何特定驱动程序的访问权限的某些限制：
+请注意，此支持将新驱动程序添加到现有的链中，这会对任何特定驱动程序对 Irp 中 i/o 堆栈位置的访问有一定的限制：
 
-- 分层驱动程序的链中的更高级别的驱动程序可以安全地仅访问其自己和任何 IRP 中的下一步低级驱动程序的 I/O 堆栈位置。 此类驱动程序必须设置 Irp 中的下一步低级驱动程序的 I/O 堆栈位置。 但是，在设计此类的更高级别的驱动程序时，无法预测新的驱动程序时 （或是否） 将添加到您的驱动程序正下方的现有链。
+- 分层驱动程序链中的较高级别的驱动程序只能安全访问其自己的和下一个较低级别的驱动程序在任何 IRP 中的 i/o 堆栈位置。 此类驱动程序必须为 Irp 中的下一级驱动程序设置 i/o 堆栈位置。 但是，在设计此类较高级别的驱动程序时，不能预测将新的驱动程序添加到驱动程序正下方的现有链的时间。
 
-  因此，应假定任何后来添加驱动程序将处理相同的 IRP 主要函数代码 (**IRP\_MJ\_* XXX * * *) 移位后的下一步低级驱动程序一样。
+  因此，您应假设任何后续添加的驱动程序都将处理相同的 IRP 主要功能代码（**irp\_MJ\_* XXX * * *），因为下一级驱动程序已被替换。
 
-- 分层驱动程序的链中的最低级别驱动程序可以安全地访问仅其自己 I/O 堆栈的位置中任何 IRP。 在设计时这样的驱动程序，您不能预测新的驱动程序时 （或是否） 将添加到现有的链上面您的设备驱动程序。
+- 分层驱动程序链中的最低级别驱动程序只能安全访问任何 IRP 中自己的 i/o 堆栈位置。 设计此类驱动程序时，不能预测是否会将新驱动程序添加到设备驱动程序上的现有链中。
 
-  在设计时的最低级别驱动程序，假定该驱动程序可以继续处理 Irp 使用传递在其自己 I/O 堆栈位置中，任何给定 IRP 的原始源的信息，但其上方的分层许多驱动程序。
+  在设计最低级别的驱动程序时，假定驱动程序可以使用在其自己的 i/o 堆栈位置传入的信息继续处理 Irp，无论给定 IRP 的源源和多个驱动程序在其之上分层。
 
  
 

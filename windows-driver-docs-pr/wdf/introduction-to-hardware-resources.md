@@ -5,56 +5,56 @@ ms.assetid: 34350031-daae-4213-b157-086a7a55e05b
 keywords:
 - 启动配置 WDK KMDF
 - 逻辑配置 WDK KMDF
-- 有关硬件资源的硬件资源 WDK KMDF
+- 硬件资源 WDK KMDF，关于硬件资源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c11942dbf70f635873a3f8e6d9d707e28c8c74e3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 566f7896f3947d6359fe3a2e9917da8d4a6597b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371133"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843040"
 ---
 # <a name="introduction-to-hardware-resources"></a>硬件资源简介
 
 
-用户插入的即插即用设备驱动程序后，[枚举设备](enumerating-the-devices-on-a-bus.md)通常会创建一个或多个[逻辑配置](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#ddk-logical-configurations-kg)，这是设备可以使用的硬件资源的组合。 这些配置包括：
+用户插入 PnP 设备后，[枚举设备](enumerating-the-devices-on-a-bus.md)的驱动程序通常会创建一个或多个[逻辑配置](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#ddk-logical-configurations-kg)，这些配置是设备可以使用的硬件资源的组合。 这些配置包括：
 
--   一个*启动配置*，它列出在设备需要在系统启动时的硬件资源。 （对于即插即用设备，此信息将提供由 BIOS。）
+-   一种*启动配置*，它列出了系统启动时设备所需的硬件资源。 （对于 PnP 设备，此信息由 BIOS 提供。）
 
--   设备可以在其中操作的其他配置。 该驱动程序组中的这些其他配置[资源要求列表](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources)。 PnP 管理器最终将从要向设备分配此列表中选择资源。
+-   设备可以操作的其他配置。 驱动程序会在[资源要求列表](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources)中对这些附加配置进行分组。 PnP 管理器最终将从该列表中选择要分配给设备的资源。
 
-驱动程序创建的逻辑配置后，它将其发送到框架，并且该框架将其发送到 PnP 管理器。
+驱动程序创建逻辑配置后，会将其发送到框架，框架会将它们发送到 PnP 管理器。
 
-接下来，即插即用管理器确定哪些设备要求，并将它们加载如果它们不是已加载的驱动程序。 PnP 管理器将设备的硬件要求列表发送到设备的驱动程序，供查看。 函数和筛选器驱动程序可以修改此列表并将其发送回 PnP 管理器。
+接下来，PnP 管理器会确定设备需要的驱动程序，并将其加载（如果尚未加载）。 PnP 管理器将设备的硬件要求列表发送到设备的驱动程序，以便查看。 函数和筛选器驱动程序可以修改此列表并将其发送回 PnP 管理器。
 
-PnP 管理器检查修改后的硬件要求列表，并确定哪些指定的资源是在系统上实际可用。 如果设备需要即插即用管理器有以前分配给另一台设备的资源，即插即用管理器可能会尝试向[重新分发资源](handling-requests-to-stop-a-device.md#redistributing-resources)在系统的设备之间。
+PnP 管理器检查修改的硬件要求列表，并确定哪些指定资源在系统上实际可用。 如果设备要求 PnP 管理器之前分配给另一设备的资源，则 PnP 管理器可能会尝试在系统的设备之间重新[分发资源](handling-requests-to-stop-a-device.md#redistributing-resources)。
 
-接下来，即插即用管理器创建[资源列表](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources)，这是一系列的即插即用的管理器想要分配到设备的资源。 PnP 管理器将此列表发送到设备的驱动程序，供查看。 此时的函数和筛选器驱动程序可以从列表中删除资源，但它们不能将资源添加到它。
+接下来，PnP 管理器创建[资源列表](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources)，此列表是 PnP 管理器打算分配给设备的资源列表。 PnP 管理器将此列表发送到设备的驱动程序以供查看。 此时，函数和筛选器驱动程序可以从列表中删除资源，但不能向其中添加资源。
 
-最后，即插即用管理器将资源分配给设备。 Framework 传递到设备的函数和筛选器驱动程序和设备的功能驱动程序的资源列表执行，因此设备和驱动程序可访问的资源是必要的任何初始化。
+最后，PnP 管理器会将资源分配给设备。 框架将资源列表传递到设备的函数和筛选器驱动程序，设备的函数驱动程序将执行必要的初始化，使设备和驱动程序能够访问资源。
 
-以下步骤介绍了如何在更多详细信息：
+以下步骤更详细地介绍了该过程：
 
 1.  [用户插入设备](a-user-plugs-in-a-device.md)。
 
-2.  总线驱动程序检测到设备和[枚举](enumerating-the-devices-on-a-bus.md)它。
+2.  总线驱动程序检测设备并对其进行[枚举](enumerating-the-devices-on-a-bus.md)。
 
-3.  框架将调用总线驱动程序[ *EvtDeviceResourcesQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_resources_query)回调函数，其中[创建资源列表](creating-a-resource-list-for-a-boot-configuration.md)描述设备的启动配置。
+3.  框架调用总线驱动程序的[*EvtDeviceResourcesQuery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nc-wdfpdo-evt_wdf_device_resources_query)回调函数，该函数会创建一个描述设备启动配置的[资源列表](creating-a-resource-list-for-a-boot-configuration.md)。
 
-4.  框架将调用总线驱动程序[ *EvtDeviceResourceRequirementsQuery* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_resource_requirements_query)回调函数，其中[创建的资源要求列表](creating-a-resource-requirements-list.md)设备。
+4.  框架调用总线驱动程序的[*EvtDeviceResourceRequirementsQuery*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nc-wdfpdo-evt_wdf_device_resource_requirements_query)回调函数，该函数为设备[创建资源需求列表](creating-a-resource-requirements-list.md)。
 
-5.  PnP 管理器确定设备需要并加载它们，如果它们不是已加载，若要创建一个驱动程序堆栈，该设备的驱动程序。
+5.  PnP 管理器会确定设备需要的驱动程序，并将其加载（如果尚未加载），以创建设备的驱动程序堆栈。
 
-6.  PnP 管理器将设备的资源要求列表发送到评审的驱动程序堆栈。 当列表传输驱动程序堆栈下时，框架将调用每个函数和筛选器驱动程序的[ *EvtDeviceFilterRemoveResourceRequirements* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)回调函数。 当列表传输到堆栈时，框架将调用每个函数和筛选器驱动程序的[ *EvtDeviceFilterAddResourceRequirements* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)回调函数。 这两个回调函数可以[修改的资源要求列表](modifying-a-resource-requirements-list.md)。
+6.  PnP 管理器将设备的资源要求列表发送到驱动程序堆栈以供查看。 当列表沿驱动程序堆栈向下传递时，框架将调用每个函数和筛选器驱动程序的[*EvtDeviceFilterRemoveResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)回调函数。 当列表在堆栈中向上移动时，框架将调用每个函数和筛选器驱动程序的[*EvtDeviceFilterAddResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)回调函数。 这两个回调函数都可以[修改资源需求列表](modifying-a-resource-requirements-list.md)。
 
-7.  PnP 管理器创建设备的资源列表，并将其发送到评审的驱动程序堆栈。 框架将调用每个函数和筛选器驱动程序的[ *EvtDeviceRemoveAddedResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources)回调函数，其中[中删除资源](modifying-a-resource-list.md)的驱动程序*EvtDeviceFilterAddResourceRequirements*添加，因此总线驱动程序不会尝试使用它们的回调函数。
+7.  PnP 管理器为设备创建资源列表，并将其发送到驱动程序堆栈进行查看。 框架调用每个函数和筛选器驱动程序的[*EvtDeviceRemoveAddedResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources)回调函数，该函数将删除驱动程序的*EvtDeviceFilterAddResourceRequirements*回调函数添加的[资源](modifying-a-resource-list.md)，从而使总线驱动程序将不会尝试使用它们。
 
-8.  框架的即插即用的管理器从接收最终的资源列表，并将其存储。
+8.  框架从 PnP 管理器接收最终资源列表并存储。
 
-9.  如果驱动程序调用[ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)创建中断对象，该框架在资源列表中查找中断资源，并将其分配中断对象。
+9.  如果驱动程序调用[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)来创建中断对象，框架将在资源列表中查找中断资源，并将其分配给中断对象。
 
-10. 在设备进入了未初始化的 D0 状态后，框架将调用每个驱动程序[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数，传递[原始和已翻译](raw-and-translated-resources.md)版本的设备的资源列表作为输入参数。 该驱动程序可以保存资源的列表，该框架将调用的驱动程序才有效[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数。
+10. 设备进入未初始化的 D0 状态后，框架将调用每个驱动程序的[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数，并将设备资源列表的[原始版本和已翻译](raw-and-translated-resources.md)版本作为输入参数传递。 驱动程序可以保存资源列表，该列表在框架调用驱动程序的[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数之前有效。
 
  
 

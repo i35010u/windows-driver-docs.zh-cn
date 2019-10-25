@@ -1,57 +1,57 @@
 ---
 title: 平板电脑的微型驱动程序要求
-description: 描述供应商提供 HID 微型驱动程序笔和按钮的设备的常规要求。
+description: 介绍供应商提供的用于笔设备和按钮设备的 HID 微型驱动程序的一般要求。
 ms.assetid: 89BE7E13-4D46-4265-9522-D5A51999F633
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d301b456f368a98579f8012770c596a63902323
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98b575d5bb4e298ac207b8a4a696ff21124c8f1d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371943"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841571"
 ---
-# <a name="minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows"></a>微型驱动程序要求 tablet Pc 更早版本的 Windows 上运行
+# <a name="minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows"></a>在早期版本的 Windows 上运行的 tablet Pc 的微型驱动程序要求
 
 
-本部分适用于 Windows 8 之前的操作系统，并描述供应商提供 HID 微型驱动程序笔和按钮在 tablet PC edition 系统安装的设备的常规要求。
+本部分适用于 Windows 8 之前的操作系统，并介绍了供应商提供的适用于 tablet PC edition 系统上的笔设备和按钮设备的 HID 微型驱动程序的一般要求。
 
-本部分重点介绍笔和按钮的设备。
+本部分重点介绍笔和按钮设备。
 
--   与 Tablet PC 集成笔设备的 LCD 显示器和用来捕获笔触笔的运动。
--   按钮设备是笔设备的补充，用于捕获按钮输入。 有关 Tablet PC 的详细信息，请参阅 Windows XP Tablet PC Edition 网站
+-   笔设备与 Tablet PC 的 LCD 显示器集成，用于捕获触笔的运动。
+-   对笔设备进行了补充的按钮设备，用于捕获按钮输入。 有关 Tablet PC 的详细信息，请参阅 Windows XP Tablet PC Edition 网站
 
-有关 Tablet PC 的详细信息，请参阅[Windows XP Tablet PC Edition](https://go.microsoft.com/fwlink/p/?linkid=275069)网站。
+有关 Tablet PC 的详细信息，请参阅[WINDOWS XP TABLET Pc Edition](https://go.microsoft.com/fwlink/p/?linkid=275069)网站。
 
-有关支持 Tablet PC 的系统提供的软件的详细信息，请参阅 Microsoft Windows SDK 中的 Tablet PC 文档。
+有关系统提供的支持 Tablet PC 的软件的详细信息，请参阅 Microsoft Windows SDK 中的 Tablet PC 文档。
 
-笔和按钮设备属于 HIDClass 设备安装程序类。 这些设备由系统提供运营[HID 客户端驱动程序](hid-client-drivers.md)，其链接到 HID 微型驱动程序。 如果没有系统提供 HID 微型驱动程序支持的设备的硬件接口，供应商提供 HID 微型驱动程序是必需的。 设备的操作是从用户模式下使用系统提供 Tablet PC API，这 Windows SDK 文档中所述。
+笔和按钮设备属于 HIDClass 设备安装程序类。 这些设备由系统提供的、连接到 HID 微型驱动程序的[Hid 客户端驱动程序](hid-client-drivers.md)运行。 如果缺少支持设备硬件接口的系统提供的 HID 微型驱动程序，则需要供应商提供的 HID 微型驱动程序。 使用系统提供的 Tablet PC API 从用户模式操作设备，如 Windows SDK 文档中所述。
 
 ### <a name="requirements-for-pc-pen-devices"></a>PC 笔设备的要求
 
 Tablet PC 笔设备必须：
 
--   提供其使用情况该页是数字化器并且对其使用笔的顶级集合 (请参阅[HID 用法](hid-usages.md))。
+-   提供 "使用情况" 页为数字化器，其使用情况为 "笔" 的顶级集合（请参阅[HID 用法](hid-usages.md)）。
 
--   如果 Tablet PC 不包括内置鼠标，Tablet PC 笔设备必须提供其使用情况页面是普通台式计算机和其用法是鼠标的顶级集合。 鼠标集合的目的是启用系统鼠标光标。 但是，鼠标集合必须不会生成输入的报表。 从笔集合的唯一输入应该用于光标的移动。 （如果不具有已安装的鼠标设备启动 Tablet PC 的操作系统，系统不会显示鼠标光标并不会处理作为鼠标设备的笔集合。）
+-   如果 Tablet pc 不包含内置的鼠标，则 Tablet PC 笔设备必须提供其使用情况页面为通用桌面并且其使用情况为鼠标的顶级集合。 鼠标集合的用途是启用系统鼠标光标。 但鼠标集合不能生成输入报告。 只应将来自笔集合的输入用于游标移动。 （如果 Tablet PC 的操作系统在没有安装的鼠标设备的情况下启动，则系统不会显示鼠标光标，也不会将笔集合作为鼠标设备处理。）
 
--   仅限报表原始数据。 该驱动程序必须不补偿线性、 笔倾斜、 显示旋转或缩放。 这些转换由 Tablet PC API 处理。 但是，该驱动程序必须确保笔坐标系统使用相同的源和方向，与使用 api。 例如，原点位于横向显示的 x 坐标增加从左到右，左上角和 y 坐标增加从上到下，必须确保该驱动程序。
+-   仅报告原始数据。 驱动程序不得为线性、笔倾斜度、显示器旋转或缩放进行补偿。 这些转换由 Tablet PC API 处理。 但是，驱动程序必须确保钢笔坐标系统与 API 使用的源和方向相同。 例如，驱动程序必须确保源位于横向显示的左上角，x 坐标从左到右增加，以及 y 坐标从上到下增加了。
 
--   如果设备是 USB 设备、 Tablet PC 笔设备必须支持[USB 选择性挂起功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+-   如果设备是 USB 设备，则 Tablet PC 笔设备必须支持[USB 选择性挂起功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
 ### <a href="" id="ddk-requirements-on-hid-minidrivers-for-tablet-pc-button-devices-kg"></a>PC 按钮设备的要求
 
-Tablet PC 按钮设备对 Tablet PC 上的笔输入进行了补充。 按钮设备支持一个或多个按钮。 必须安装在 Tablet PC 的按钮设备：
+Tablet PC 按钮设备补充了 Tablet PC 上的笔输入。 按钮设备支持一个或多个按钮。 安装在 Tablet PC 上的按钮设备必须：
 
--   提供一个专用的按钮的安全注意序列 (SAS) （如 Microsoft Windows SDK 文档中所述）。
+-   为安全注意序列（SAS）提供一个专用按钮（如 Microsoft Windows SDK 文档中所述）。
 
--   生成按下某个按钮时发生的事件，另一个事件时释放该按钮。
+-   按下按钮时生成事件，并在释放按钮时生成另一个事件。
 
--   报告每个按钮，无论包含几个按钮的同时按下或释放的非重复按钮事件。
+-   每个按钮的报表不同按钮事件，而不考虑同时按下或释放的按钮数。
 
--   提供其使用情况页面是普通台式计算机和其用法是键盘的顶级集合 (请参阅[HID 用法](hid-usages.md))。 键盘集合仅用于报告 SAS 按钮事件。 按下 SAS 按钮时，必须报告以下用法：左侧的控件左 alt 键，并删除。
+-   提供其 "使用情况" 页为通用桌面并且其使用情况为键盘的顶级集合（请参阅[HID 用法](hid-usages.md)）。 键盘集合仅用于报告 SAS 按钮事件。 按下 SAS 按钮后，必须报告以下用法： "左"、"左 Alt" 和 "删除"。
 
--   提供其使用情况页面是普通台式计算机和其用法是 Tablet PC System Controls 的顶级集合。 通过使用其使用情况页面为按钮和使用情况的值的范围从 1 到按钮的数目的按钮数组报告按钮事件。
+-   提供 "使用情况" 页为通用桌面并且其使用情况为 Tablet PC 系统控件的顶级集合。 按钮事件的报告方法是使用 "使用情况" 页为 "button" 的按钮数组，使用值范围从1到按钮数目。
 
  
 

@@ -10,16 +10,16 @@ keywords:
 - SCSI 微型端口驱动程序 WDK 存储，初始化
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 675994d06427a396439c3cbc4eff403ec711b00d
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: c8fe09b5869b4d70e7c80c4c65b60d96f30dfeec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252451"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842662"
 ---
 # <a name="scsi-miniport-initialization-under-plug-and-play"></a>在即插即用下进行的 SCSI 微型端口初始化
 
-对于 Windows 2000 和更高版本，旧的微型端口驱动程序的初始化方式与 Microsoft Windows NT 4.0 完全相同。 当旧式微型端口驱动程序调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)时，端口驱动程序会调用微型端口驱动程序来查找并初始化其 HBA。 这是针对它找到的每个 HBA （如果 HBA 位于可枚举的总线上）或重复执行，直到微型端口驱动程序报告它无法找到其他设备。 控制然后返回到微型端口驱动程序的[**DriverEntry**](driverentry-of-scsi-miniport-driver.md)例程，其中微型端口驱动程序可以对不同类型的 HBA 再次调用**ScsiPortInitialize** （例如，不同的接口或不同的供应商和产品 ID）。 所有初始化调用都在微型端口驱动程序的**DriverEntry**例程的上下文中进行，并按调用**ScsiPortInitialize**的顺序进行。 旧驱动程序的初始化在系统启动时和在其他时间进行。
+对于 Windows 2000 和更高版本，旧的微型端口驱动程序的初始化方式与 Microsoft Windows NT 4.0 完全相同。 当旧式微型端口驱动程序调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)时，端口驱动程序会调用微型端口驱动程序来查找并初始化其 HBA。 这是针对它找到的每个 HBA （如果 HBA 位于可枚举的总线上）或重复执行，直到微型端口驱动程序报告它无法找到其他设备。 控制然后返回到微型端口驱动程序的[**DriverEntry**](driverentry-of-scsi-miniport-driver.md)例程，其中微型端口驱动程序可以对不同类型的 HBA 再次调用**ScsiPortInitialize** （例如，不同的接口或不同的供应商和产品 ID）。 所有初始化调用都在微型端口驱动程序的**DriverEntry**例程的上下文中进行，并按调用**ScsiPortInitialize**的顺序进行。 旧驱动程序的初始化在系统启动时和在其他时间进行。
 
 在即插即用中，无法保留初始化顺序。 当启用的即插即用微型端口驱动程序调用**ScsiPortInitialize**时，端口驱动程序将存储初始化数据以供将来参考，然后返回 STATUS_SUCCESS。 此操作针对微型端口驱动程序的**PnPInterface**注册表项中列出的每个接口类型执行--该密钥中*未*列出的任何接口仍会立即初始化。
 

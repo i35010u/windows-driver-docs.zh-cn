@@ -3,42 +3,42 @@ title: 实现 HwVidSynchronizeExecutionCallback 例程
 description: 何时实现 HwVidSynchronizeExecutionCallback 例程
 ms.assetid: d33736ca-aff2-421b-a8cc-d09eba76ff7f
 keywords:
-- 微型端口驱动程序 WDK Windows 2000，中断
-- 中断 WDK 微型端口
+- 视频微型端口驱动程序 WDK Windows 2000，中断
+- 中断 WDK 视频微型端口
 - HwVidSynchronizeExecutionCallback
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 9199dc35ebe2e7f46f145848ba307f791dacb5b0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5c6608285b1c4ad8903efe95c5cc6756e8b3dc36
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386241"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829147"
 ---
 # <a name="implementing-a-hwvidsynchronizeexecutioncallback-routine"></a>实现 HwVidSynchronizeExecutionCallback 例程
 
-适用于不很少生成中断的适配器的微型端口驱动程序调用[ **VideoPortSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsynchronizeexecution)与[ *HwVidSynchronizeExecutionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pminiport_synchronize_routine)函数。
+不产生中断的适配器的微型端口驱动程序很少使用[*HwVidSynchronizeExecutionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pminiport_synchronize_routine)函数调用[**VideoPortSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportsynchronizeexecution) 。
 
-实际上，即使有的微型端口驱动程序[ *HwVidInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_interrupt)函数不一定具有*HwVidSynchronizeExecutionCallback*函数。 由于视频端口驱动程序不向微型端口驱动程序发送请求[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)函数完成的上一个请求的处理之前 (请参阅[处理视频（Windows 2000 模式） 的请求](processing-video-requests--windows-2000-model-.md)有关详细信息)，微型端口驱动程序很少会调用**VideoPortSynchronizeExecution**。
+事实上，即使是具有[*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_interrupt)函数的小型小型驱动程序也不一定具有*HwVidSynchronizeExecutionCallback*函数。 由于视频端口驱动程序不会向微型端口驱动程序的[*HwVidStartIO*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io)函数发送请求，直到处理完前面的请求（有关详细信息，请参阅[处理视频请求（Windows 2000 模型）](processing-video-requests--windows-2000-model-.md) ）、微型端口驱动程序很少调用**VideoPortSynchronizeExecution**。
 
-有的微型端口驱动程序的两种可能用法*HwVidSynchronizeExecutionCallback*函数：
+微型端口驱动程序的*HwVidSynchronizeExecutionCallback*函数有两种可能的用法：
 
--   若要访问适配器注册为驱动程序函数使用微型端口驱动程序的设备扩展不*HwVidInterrupt*函数。
+-   若要使用*HwVidInterrupt*函数之外的驱动程序函数访问适配器，请使用微型端口驱动程序的设备扩展。
 
-    时*HwVidSynchronizeExecutionCallback*函数提供控制，掩盖来自适配器的中断的关闭操作微型端口驱动程序*HwVidInterrupt*函数不能更改中的状态设备扩展时*HwVidSynchronizeExecutionCallback* SMP 计算机中运行函数。
+    向*HwVidSynchronizeExecutionCallback*函数提供 control 后，适配器的中断被屏蔽，因此微型端口驱动程序的*HwVidInterrupt*函数无法在设备扩展*中更改状态，HwVidSynchronizeExecutionCallback*函数在 SMP 计算机中运行。
 
--   若要编写命令对适配器寄存器或端口非常快速地适配器需要它。
+-   如果适配器需要，将命令快速写入适配器注册或端口。
 
-    当*HwVidSynchronizeExecutionCallback*函数提供控制，几乎所有系统中断都屏蔽关闭，因此*HwVidSynchronizeExecutionCallback*函数不能被占用设备 （或甚至，一个时钟） 中断。
+    如果为*HwVidSynchronizeExecutionCallback*函数提供控制，几乎所有系统中断都将被屏蔽，因此*HwVidSynchronizeExecutionCallback*函数无法被设备（甚至是时钟）中断抢占。
 
-    *HwVidSynchronizeExecutionCallback*函数*必须*尽可能快地返回控制。
+    *HwVidSynchronizeExecutionCallback*函数*必须*尽快返回 control。
 
-第一个类型为[ *HwVidSynchronizeExecutionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pminiport_synchronize_routine)函数、 微型端口驱动程序调用[ **VideoPortSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsynchronizeexecution)与*优先级*设置为**VpMediumPriority**。 第二个类型为*HwVidSynchronizeExecutionCallback*函数，微型端口驱动程序还可以使用此调用*优先级*设置为**VpMediumPriority**如果驱动程序不包含[ *HwVidInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_interrupt)函数。 否则，这样的微型端口驱动程序可以使用此调用*优先级*设置为**VpHighPriority**。
+对于第一种类型的[*HwVidSynchronizeExecutionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pminiport_synchronize_routine)函数，微型端口驱动程序将调用[**VideoPortSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportsynchronizeexecution) ，并将*优先级*设置为**VpMediumPriority**。 对于第二种类型*的 HwVidSynchronizeExecutionCallback*函数，如果驱动程序没有[*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_interrupt)函数，则微型端口驱动程序还会将*优先级*设置为**VpMediumPriority** 。 否则，此类微型端口驱动程序会将*优先级*设置为**VpHighPriority**进行此调用。
 
-一般情况下，微型端口驱动程序应*不*调用**VideoPortSynchronizeExecution**第二个类型为*HwVidSynchronizeExecutionCallback*作用，除非驱动程序设计器有没有其他备用方法： 即，除非该适配器是，它必须与编程系统中断应用掩码。 否则，微型端口驱动程序应调用**VideoPortSynchronizeExecution**与*优先级*设置为**VpLowPriority**。
+通常，微型端口驱动程序*不*应使用第二种类型的*HwVidSynchronizeExecutionCallback*函数调用**VideoPortSynchronizeExecution** ，除非驱动程序设计器没有其他替代项：即，除非适配器这样，就必须在屏蔽系统中断后对其进行编程。 否则，微型端口驱动程序应调用**VideoPortSynchronizeExecution** ，并将*优先级*设置为**VpLowPriority**。
 
-一个*HwVidSynchronizeExecutionCallback*函数一样， *HwVidInterrupt*函数中，不能为可分页并不能调用某些 **视频端口 * * * Xxx*函数而不会降低关闭系统。 有关的摘要 **视频端口 * * * Xxx*函数*HwVidSynchronizeExecutionCallback*函数可以安全地调用，请参阅[ *HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_interrupt).
+*HwVidSynchronizeExecutionCallback*函数（如*HwVidInterrupt*函数）无法分页，并且在不关闭系统的情况下无法调用某些 **VideoPort * * Xxx*函数。 有关*HwVidSynchronizeExecutionCallback*函数可安全调用的 **VideoPort * * Xxx*函数的摘要，请参阅[*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_interrupt)。
 
  
 

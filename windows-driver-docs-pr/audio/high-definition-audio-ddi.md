@@ -10,12 +10,12 @@ keywords:
 - Intel 高质音频规范
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 578a3b3c419359223b7be49dfec6a20a349c8716
-ms.sourcegitcommit: 8295a2b59212972b0f7457a748cc904b5417ad67
+ms.openlocfilehash: ad7e057ccee87c58901696d32b17a04897083d06
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319921"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831166"
 ---
 # <a name="high-definition-audio-ddi"></a>高清音频 DDI
 
@@ -32,17 +32,17 @@ HD 音频总线驱动程序实现了 HD 音频设备驱动程序接口（DDI）�
 
 Windows Server 2003 和 Windows XP 上运行的 HD 音频总线驱动程序的版本支持 HD 音频 DDI 的三个变体：
 
--   [**HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)结构定义的 DDI。 此 DDI 与 Windows Vista 中的 HD 音频 DDI 完全相同。
+-   由[**HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface)结构定义的 DDI。 此 DDI 与 Windows Vista 中的 HD 音频 DDI 完全相同。
 
--   [**HDAUDIO\_总线\_接口V2\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)结构定义的 DDI。 此 DDI 在 Windows Vista 和更高版本的 Windows 中可用。
+-   由[**HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)定义的 DDI\_V2 结构。 此 DDI 在 Windows Vista 和更高版本的 Windows 中可用。
 
--   [**HDAUDIO\_总线\_接口BDL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)结构定义的 DDI。 此 DDI 在 Windows XP 和更高版本的 Windows 中可用。
+-   由[**HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)定义的 DDI\_BDL 结构。 此 DDI 在 Windows XP 和更高版本的 Windows 中可用。
 
 这三个 DDIs 之间的差别很小，并在[高清音频 DDI 版本之间的差异](differences-between-the-hd-audio-ddi-versions.md)中进行了介绍。
 
 在 Windows Vista 中，HD 音频总线驱动程序支持 HDAUDIO\_总线\_接口和 HDAUDIO\_总线\_接口\_V2 结构定义的 DDI。
 
-在 windows Vista、windows Server 2003 和 windows XP 中，UAA 类驱动程序使用 HDAUDIO\_总线\_接口结构定义的 DDI 来管理与 UAA 兼容的音频编解码器。 此外，硬件供应商可以选择编写使用其中一个或两个 DDIs 的自定义设备驱动程序来管理其音频和调制解调器编解码器。
+在 Windows Vista、Windows Server 2003 和 Windows XP 中，UAA 类驱动程序使用由 HDAUDIO\_总线\_接口结构定义的 DDI 来管理 UAA 兼容的音频编解码器。 此外，硬件供应商可以选择编写使用其中一个或两个 DDIs 的自定义设备驱动程序来管理其音频和调制解调器编解码器。
 
 硬件供应商应设计其音频编解码器，以符合 UAA 硬件要求文档（要发布）。 在缺少供应商提供的自定义音频驱动程序的情况下，用户可以依赖系统提供的 UAA HD 音频类驱动程序来管理与 UAA 兼容的音频编解码器。 但是，音频编解码器可能包含只能通过供应商的自定义驱动程序访问的专有功能。
 

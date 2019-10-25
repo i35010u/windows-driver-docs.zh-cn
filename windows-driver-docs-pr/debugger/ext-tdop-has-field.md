@@ -1,6 +1,6 @@
 ---
-title: EXT\_TDOP\_HAS\_FIELD
-description: EXT\_TDOP\_HAS\_字段的调试子操作\_请求\_EXT\_类型化\_数据\_ANSI 请求的操作将确定如果结构包含指定的成员。
+title: EXT\_TDOP\_有\_字段
+description: EXT\_TDOP\_具有调试\_请求的\_"字段子操作"\_类型\_数据\_ANSI 请求操作确定结构是否包含指定的成员。
 ms.assetid: c1486aff-63d3-4ceb-8dce-45a9c5835c99
 keywords:
 - EXT_TDOP_HAS_FIELD Windows 调试
@@ -12,51 +12,51 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a7e3106675bea09c22b34ad0d4e764469fc794f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 823a524bfb7f71986caec66646f6a97e13c56066
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366861"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838770"
 ---
-# <a name="exttdophasfield"></a>EXT\_TDOP\_HAS\_FIELD
+# <a name="ext_tdop_has_field"></a>EXT\_TDOP\_有\_字段
 
 
-EXT\_TDOP\_HAS\_字段的子操作[**调试\_请求\_EXT\_类型化\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md) [**请求**](request.md)操作确定一个结构是否包含指定的成员。
+EXT\_TDOP\_具有调试\_请求的\_"字段子操作"\_[**类型\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作确定结构是否包含指定的成员。
 
 **Parameters**
 
-<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**Operation**  
-设置为 EXT\_TDOP\_HAS\_此子操作的字段。
+<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
+设置为 EXT\_TDOP\_具有此子操作\_字段。
 
 <span id="InData"></span><span id="indata"></span><span id="INDATA"></span>**InData**  
-指定检查存在该成员的类型化的数据。 类型化的数据首先检查是否表示结构的实例，然后检查结构，以确定它是否包含指定的成员。
+指定检查是否存在该成员的类型化数据。 首先检查类型化数据是否表示结构的实例，然后检查结构以查看它是否包含指定的成员。
 
 <span id="InStrIndex"></span><span id="instrindex"></span><span id="INSTRINDEX"></span>**InStrIndex**  
-指定的成员的名称。 名称是以点号分隔的路径和包含子成员-例如， **mymember.mysubmember**。 将自动取消引用此以点号分隔的路径上的指针。 但是，点运算符 ( **。** ) 仍可使用此处而不是常用的 C 指针取消引用运算符 ( **-&gt;** )。
+指定成员的名称。 该名称是一个点分隔的路径，可以包含子成员-例如， **mymember. mysubmember**。 此点分隔路径上的指针将自动取消引用。 但是，仍应在此处使用点运算符（ **.** ），而不是常规的 C 指针取消引用运算符（ **-&gt;** ）。
 
-<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状态**  
-接收此子操作返回的状态代码。 这是与返回的值相同[**请求**](request.md)。
+<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状态值**  
+接收此子操作返回的状态代码。 这与[**请求**](request.md)返回的值相同。
 
-如果类型化的数据中的成员，**状态**接收 S\_确定。 如果类型化的数据不包含该成员**状态**接收电子\_NOINTERFACE。 可能还会返回其他错误值。
+如果类型化数据包含成员，则 "**状态**"\_"确定"。 如果类型化数据不包含成员，则**状态**将接收 E\_NOINTERFACE。 还可能返回其他错误值。
 
 <a name="remarks"></a>备注
 -------
 
-EXT\_TDOP\_HAS\_字段是中的值[ **EXT\_TDOP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)枚举。
+EXT\_TDOP\_具有\_字段是[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的值。
 
-此子操作的参数属于[ **EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)结构。 EXT 隶属\_类型化\_前面的参数部分中未列出的数据不使用此子操作，应设置为零。 前面的 Parameters 节中的成员的说明指定使用的成员。 请参阅**EXT\_类型化\_数据**的更多详细信息。
+此子操作的参数是[**类型\_数据结构的 EXT\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)的成员。 此子操作不使用 EXT\_类型化\_数据的成员，此子操作不使用该类型的数据，应将其设置为零。 前面参数部分中的成员的说明指定了成员的用途。 有关更多详细信息，请参阅**EXT\_类型化的\_数据**。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DEBUG\_REQUEST\_EXT\_TYPED\_DATA\_ANSI**](debug-request-ext-typed-data-ansi.md)
+[**调试\_请求\_EXT\_类型\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)
 
-[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)
+[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)
 
-[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)
+[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)
 
-[**请求**](request.md)
+[**需要**](request.md)
 
  
 

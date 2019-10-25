@@ -10,12 +10,12 @@ keywords:
 - 补充 IRP 队列 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e89d4f0a6127251690953f5a78dd8e655a37972
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b8aa7149e95107ad6308c3ee434774580416540
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383724"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838427"
 ---
 # <a name="setting-up-and-using-device-queues"></a>设置和使用设备队列
 
@@ -23,38 +23,38 @@ ms.locfileid: "67383724"
 
 
 
-驱动程序设置的设备队列对象通过调用[ **KeInitializeDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializedevicequeue)在驱动程序或设备的初始化。 启动其设备之后, 该驱动程序将 Irp 插入此队列通过调用[ **KeInsertDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertdevicequeue)或[ **KeInsertByKeyDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertbykeydevicequeue). 下图说明了这些调用。
+驱动程序通过在驱动程序或设备初始化时调用[**KeInitializeDeviceQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedevicequeue)来设置设备队列对象。 启动其设备后，驱动程序会通过调用[**KeInsertDeviceQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertdevicequeue)或[**KeInsertByKeyDeviceQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertbykeydevicequeue)将 irp 插入到该队列中。 下图说明了这些调用。
 
 ![设置和使用设备队列](images/3devqobj.png)
 
-如此图所示，该驱动程序必须提供设备队列对象，它必须是驻留的存储。 通常设置的设备队列对象的驱动程序提供必要的存储中[设备扩展](device-extensions.md)驱动程序创建的设备的对象，但存储可以是在控制器扩展如果驱动程序使用[控制器对象](using-controller-objects.md)或非分页缓冲池分配驱动程序中。
+如图所示，驱动程序必须为必须驻留的设备队列对象提供存储。 设置设备队列对象的驱动程序通常在驱动程序创建的设备对象的[设备扩展](device-extensions.md)中提供必要的存储，但如果驱动程序使用[控制器对象](using-controller-objects.md)或非分页池，则存储可以位于控制器扩展中由驱动程序分配。
 
-如果驱动程序提供了存储设备扩展中的设备队列对象，则会调用**KeInitializeDeviceQueue**之后创建的设备对象和之前启动设备。 换而言之，驱动程序可以初始化队列从其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程或它处理即插即用[ **IRP\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 在调用**KeInitializeDeviceQueue**，驱动程序将指针传递给它提供有关设备队列对象的存储。
+如果驱动程序为设备扩展中的设备队列对象提供存储，则它会在创建设备对象之后和启动设备之前调用**KeInitializeDeviceQueue** 。 换句话说，驱动程序可以从其[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程初始化队列，也可以在处理 PnP [**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求时对其进行初始化。 在对**KeInitializeDeviceQueue**的调用中，驱动程序向设备队列对象传递一个指向它所提供的存储的指针。
 
-启动其设备之后, 该驱动程序可以插入 IRP 到其设备的队列通过调用**KeInsertDeviceQueue**，其中放置于队列的尾部 IRP 或**KeInsertByKeyDeviceQueue**、 哪些置于根据驱动程序确定队列 IRP *SortKey*值，如在上图中所示。
+启动其设备后，驱动程序可以通过调用**KeInsertDeviceQueue**将 irp 插入其设备队列，后者将 irp 置于队列的尾部，或将 irp 置于队列**中，并**根据驱动程序确定的排序*关键字*值，如上图所示。
 
-每种支持例程返回一个布尔值，该值 IRP 已插入到队列。 其中每个调用还设置到繁忙的设备队列对象的状态队列当前是否为空 （不繁忙）。 但是，如果队列为空 （不忙），两者**KeInsert*Xxx*DeviceQueue**例程将 IRP 插入到队列。 相反，它的设备队列对象的状态设置为繁忙，并返回**FALSE**。 由于 IRP 不排入队列，该驱动程序必须将其传递到另一个驱动程序例程进行进一步处理。
+其中每个支持例程都将返回一个布尔值，指示 IRP 是否已插入队列。 如果队列当前为空（不忙），则每个调用还会将设备队列对象的状态设置为 "忙碌"。 但是，如果队列为空（不忙），则**KeInsert*Xxx*DeviceQueue**例程都不会将 IRP 插入到队列中。 相反，它会将设备队列对象的状态设置为 "繁忙" 并返回**FALSE**。 由于 IRP 尚未排队，因此驱动程序必须将其传递到另一个驱动程序例程以便进一步处理。
 
-**在设置补充设备队列，请按照本实现原则：**
+**设置补充设备队列时，请遵循以下实现准则：**
 
-在调用**KeInsert*Xxx*DeviceQueue**返回**FALSE**，调用方必须传递它尝试在对队列的进一步处理到另一个驱动程序例程 IRP。
-但是，在调用**KeInsert*Xxx*DeviceQueue**设备队列对象的状态更改为繁忙、，以便在下一步 IRP 插入队列中，除非该驱动程序调用**KeRemove*Xxx*DeviceQueue**第一个。
+当对**KeInsert*Xxx*DeviceQueue**的调用返回**FALSE**时，调用方必须传递试图排队的 IRP，以便进一步处理其他驱动程序例程。
+但是，对**KeInsert*Xxx*DeviceQueue**的调用会将设备队列对象的状态更改为 "忙碌"，因此将在队列中插入下一个 IRP，除非该驱动程序首先调用**KeRemove*Xxx*DeviceQueue** 。
 
-当设备队列对象的状态设置为繁忙时，驱动程序可以取消 IRP 排队进行进一步处理或将状态重置为不忙，通过调用以下支持例程之一：
+当设备队列对象的状态设置为 "忙碌" 时，驱动程序可以取消对 IRP 的排队以便进一步处理或通过调用以下支持例程之一将状态重置为不繁忙：
 
--   [**KeRemoveDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremovedevicequeue)若要删除队列的开头处 IRP
+-   [**KeRemoveDeviceQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovedevicequeue)删除队列头的 IRP
 
--   [**KeRemoveByKeyDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremovebykeydevicequeue)若要删除选择根据驱动程序确定 IRP *SortKey*值
+-   [**KeRemoveByKeyDeviceQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovebykeydevicequeue)删除根据驱动程序确定的排序*关键字*值选择的 IRP
 
--   [**KeRemoveEntryDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremoveentrydevicequeue)队列中删除特定 IRP 或确定队列是否为特定 IRP
+-   [**KeRemoveEntryDeviceQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremoveentrydevicequeue)删除队列中的特定 irp，或确定特定 irp 是否在队列中
 
-    **KeRemoveEntryDeviceQueue**返回一个布尔值，该值指示 IRP 设备队列中。
+    **KeRemoveEntryDeviceQueue**返回一个布尔值，指示 IRP 是否在设备队列中。
 
-调用这些例程，以从为空但繁忙的设备队列中删除项的任何更改为不忙的队列状态。
+调用这些例程中的任何一项可从一个空但繁忙的设备队列中删除项，将队列状态更改为不忙。
 
-每个设备队列对象受内置 executive 旋转锁 (不会显示[使用设备队列对象](#setting-up-and-using-device-queues)图)。 因此，驱动程序可以将 Irp 插入到队列和从正在运行在更短于或等于 IRQL 的任何驱动程序例程以包含多个处理器安全的方式删除它们 = 调度\_级别。 由于存在此 IRQL 限制，驱动程序不能调用任何**Ke*Xxx*DeviceQueue**例程从其 ISR 或[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程在 DIRQL 运行。
+每个设备队列对象均由内置的 "executive 旋转" 锁（[使用设备队列对象](#setting-up-and-using-device-queues)图）进行保护。 因此，驱动程序可以将 Irp 插入到队列中，并从在小于或等于 IRQL = 调度\_级别上运行的任何驱动程序例程以多处理器安全的方式将其删除。 由于此 IRQL 限制，驱动程序无法从其 ISR 或[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程（在 DIRQL 中运行）调用任何**Ke*Xxx*DeviceQueue**例程。
 
-请参阅[管理硬件优先级](managing-hardware-priorities.md)并[旋转锁](spin-locks.md)有关详细信息。 为特定的支持例程的 IRQL 要求，请参阅例程的参考页。
+有关详细信息，请参阅[管理硬件优先级](managing-hardware-priorities.md)和[旋转锁](spin-locks.md)。 有关特定支持例程的 IRQL 要求，请参阅例程的参考页。
 
  
 

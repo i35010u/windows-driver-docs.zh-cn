@@ -1,6 +1,6 @@
 ---
 title: NDIS 网络接口 OID
-description: 本部分介绍了所有的 NDIS 驱动程序的网络接口 Oid
+description: 本部分介绍所有 NDIS 驱动程序的网络接口 Oid
 keywords:
 - NDIS 网络接口 OID
 - WDK NDIS 网络接口 Oid
@@ -8,26 +8,26 @@ keywords:
 ms.assetid: A66B5AC6-9EAF-4234-8614-0EBF179B3DDE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d43d086e381f0eb4ecbaae1d4825a33ad316b1b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c64435cb711e73954592ae619b74cdb588b81439
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354982"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844362"
 ---
 # <a name="ndis-network-interface-oids"></a>NDIS 网络接口 OID
 
-NDIS 网络接口对象标识符 (Oid) 提供了有关支持的 MIB 的网络接口的信息 ([RFC 2863](overview-of-ndis-network-interfaces.md))。
+NDIS 网络接口对象标识符（Oid）提供了有关支持 MIB （[RFC 2863](overview-of-ndis-network-interfaces.md)）的网络接口的信息。
 
-NDIS 接口提供程序必须支持这些 Oid。 在本部分中，不是已注册的接口提供程序的驱动程序应支持 Oid。
+NDIS 接口提供程序必须支持这些 Oid。 未注册接口提供程序的驱动程序不应支持本节中的 Oid。
 
-NDIS 调用[ProviderQueryObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-if_query_object)函数来从接口提供程序发出查询请求的信息。 *ObjectId*此函数的参数包含的对象标识符。 接口提供程序注册*ProviderQueryObject*调用时[NdisIfRegisterProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterprovider)函数注册为接口提供程序。
+NDIS 调用[ProviderQueryObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-if_query_object)函数来发出查询请求，以获取接口提供程序的信息。 此函数的*ObjectId*参数包含对象标识符。 接口提供程序在调用[NdisIfRegisterProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)函数以注册为接口提供程序时注册了*ProviderQueryObject* 。
 
-在句柄*ProviderIfContext*的参数*ProviderQueryObject*函数标识的网络接口。 接口提供程序中调用时，此句柄已提供到 NDIS [NdisIfRegisterInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterinterface)函数来注册接口。 *POutputBuffer*的参数*ProviderQueryObject*函数包含 OID 请求的结果。
+*ProviderQueryObject*函数的*ProviderIfContext*参数处的句柄标识网络接口。 此句柄是在接口提供程序调用[NdisIfRegisterInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)函数以注册接口时提供给 NDIS 的。 *ProviderQueryObject*函数的*POUTPUTBUFFER*参数包含 OID 请求的结果。
 
-网络接口 Oid 的 NDIS 有关的详细信息，请参阅[NDIS 6.0 网络接口](ndis-network-interfaces2.md)。
+有关 NDIS 网络接口 Oid 的详细信息，请参阅[ndis 6.0 网络接口](ndis-network-interfaces2.md)。
 
-本部分介绍以下的 NDIS 网络接口 Oid:
+本部分介绍以下 NDIS 网络接口 Oid：
 
 - [OID_GEN_ALIAS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-alias) 
 - [OID_GEN_ADMIN_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-admin-status) 

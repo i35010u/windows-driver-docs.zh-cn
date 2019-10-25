@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_P2P_INSTANCE_NAME_HASH
-description: WDI_TLV_P2P_INSTANCE_NAME_HASH 是包含的哈希 TLV"实例名称，服务类型"。
+description: WDI_TLV_P2P_INSTANCE_NAME_HASH 是一个 TLV，其中包含 "Instance Name，Service Type" 的哈希值。
 ms.assetid: A29D0339-93A8-43EB-8C22-DD7A7DC2147C
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_P2P_INSTANCE_NAME_HASH 网络驱动程序
+- WDI_TLV_P2P_INSTANCE_NAME_HASH 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bbda0e3cfc06df2a723306747e2a0990ba7ad345
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d09bd603504b959b4d640a26dc4c29a40488493
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374677"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842359"
 ---
-# <a name="wditlvp2pinstancenamehash"></a>WDI\_TLV\_P2P\_INSTANCE\_NAME\_HASH
+# <a name="wdi_tlv_p2p_instance_name_hash"></a>WDI\_TLV\_P2P\_实例\_名称\_哈希
 
 
-WDI\_TLV\_P2P\_实例\_名称\_哈希是包含的哈希 TLV"实例名称，服务类型"。
+WDI\_TLV\_P2P\_实例\_名称\_哈希是包含 "Instance Name，Service Type" 哈希的 TLV。
 
-**请注意**  此 TLV 添加 Windows 10，版本 1607，WDI 版本 1.0.21 中。
+**请注意**  此 TLV 添加到了 Windows 10 1607 版 WDI 版本1.0.21 中。
 
  
 
@@ -30,14 +30,14 @@ WDI\_TLV\_P2P\_实例\_名称\_哈希是包含的哈希 TLV"实例名称，服�
 ## <a name="length"></a>长度
 
 
-大小 （以字节为单位） [ **WDI\_P2P\_服务\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构。
+WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                                    | 描述                                |
 |-------------------------------------------------------------------------|--------------------------------------------|
-| [**WDI\_P2P\_SERVICE\_NAME\_HASH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | "实例名称，服务类型"的哈希值。 |
+| [**WDI\_P2P\_服务\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | "Instance Name，Service Type" 的哈希。 |
 
  
 
@@ -52,14 +52,14 @@ WDI\_TLV\_P2P\_实例\_名称\_哈希是包含的哈希 TLV"实例名称，服�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

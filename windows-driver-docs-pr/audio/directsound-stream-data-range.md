@@ -6,12 +6,12 @@ keywords:
 - DirectSound WDK 音频，流数据范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: beaaa2379e9cf9455b9367c6c8f049dc38677259
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e00d726afbe86cce035adcbd9ed946a1c444d955
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360129"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833473"
 ---
 # <a name="directsound-stream-data-range"></a>DirectSound 流数据范围
 
@@ -19,7 +19,7 @@ ms.locfileid: "67360129"
 ## <span id="directsound_stream_data_range"></span><span id="DIRECTSOUND_STREAM_DATA_RANGE"></span>
 
 
-此示例使用[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构来描述 DirectSound 流的数据范围。
+此示例使用[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)结构来描述 DirectSound 流的数据范围。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);
@@ -36,7 +36,7 @@ ms.locfileid: "67360129"
   MaximumSampleFrequency = 48000;
 ```
 
-在此示例中的成员值是类似于[PCM 多渠道的流数据范围](pcm-multichannel-stream-data-range.md)示例中的，除**MaximumBitsPerSample**值。 此值设置为示例容器大小，并且应为八的倍数。 例如，如果设备支持 24 位容器中，为值的有效的音频数据的 20 位**MaximumBitsPerSample**应设置为 24。
+此示例中的成员值与[PCM 多通道流数据范围](pcm-multichannel-stream-data-range.md)示例的成员值相似，但**MaximumBitsPerSample**值除外。 此值设置为示例容器大小，应为8的倍数。 例如，如果设备支持24位容器中的20位有效音频数据，则应将**MaximumBitsPerSample**的值设置为24。
 
  
 

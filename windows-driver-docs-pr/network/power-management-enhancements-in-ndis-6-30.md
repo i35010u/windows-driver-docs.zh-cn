@@ -1,50 +1,50 @@
 ---
-title: 在 NDIS 6.30 电源管理增强功能
+title: NDIS 6.30 中的电源管理增强功能
 ms.assetid: A3B64252-DD6C-4715-8D4B-8D8176BC585B
-description: 引入了 NDIS 6.30 电源管理增强功能，以减少计算机的功率消耗
+description: 介绍 NDIS 6.30 电源管理增强功能，以减少计算机能耗
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b9863aa0f7ca456312b134cffdd0558092180e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f70c6577592bf2325bc5435f4226f10322e6a0e5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384714"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843501"
 ---
 # <a name="power-management-enhancements-in-ndis-630"></a>NDIS 6.30 中的电源管理增强
 
 
-NDIS 6.20 包括电源管理的新功能和改进，可减少计算机的功率消耗。 NDIS 6.30 扩展 NDIS 6.20 电源管理支持具有以下功能，如中所述[电源管理 (NDIS 6.30)](power-management--ndis-6-30-.md):
+NDIS 6.20 包括电源管理的新功能和改进，以降低计算机的功耗。 NDIS 6.30 将 NDIS 6.20 电源管理支持扩展为以下功能，如[电源管理（NDIS 6.30）](power-management--ndis-6-30-.md)中所述：
 
 ### <a name="ndis-packet-coalescing"></a>NDIS 数据包合并
 
-从 NDIS 6.30，网络适配器可以支持 NDIS 数据包合并。 此功能可以减少处理由于接收的随机广播或多播的数据包的主机系统上的开销和电源消耗。
+从 NDIS 6.30 开始，网络适配器可支持 NDIS 数据包合并。 由于收到随机广播或多播数据包，此功能可减少主机系统上的处理开销和能耗。
 
 有关详细信息，请参阅[NDIS 数据包合并](ndis-packet-coalescing.md)。
 
 ### <a name="ndis-selective-suspend"></a>NDIS 选择性挂起
 
-从开始 NDIS 6.30，NDIS 选择性挂起接口允许通过转换到低功耗状态适配器挂起空闲的网络适配器的 NDIS。 这使系统来减少开销上 CPU 和网络适配器的电源。
+从 NDIS 6.30 开始，NDIS 选择性挂起接口允许 NDIS 通过将适配器转换为低功耗状态来挂起空闲网络适配器。 这使系统可以减少 CPU 和网络适配器的电源开销。
 
-有关详细信息，请参阅[NDIS 选择性挂起](ndis-selective-suspend.md)。
+有关详细信息，请参阅 " [NDIS 选择性挂起](ndis-selective-suspend.md)"。
 
 ### <a name="ndis-wake-reason-status-indications"></a>NDIS 唤醒原因状态指示
 
-从开始 NDIS 6.30，微型端口驱动程序发出 NDIS 唤醒原因状态指示 ([**NDIS\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)) 到通知 NDIS 和系统唤醒事件的原因有关的基础驱动程序。 如果网络适配器生成唤醒事件时，微型端口驱动程序会立即发出此 NDIS 状态指示系统恢复到全功率状态时。
+从 NDIS 6.30 开始，微型端口驱动程序发出 NDIS 唤醒原因状态指示（[**ndis\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)），通知 NDIS 和过量驱动程序有关系统唤醒事件的原因。 如果网络适配器生成唤醒事件，则当系统恢复到完全电源状态时，微型端口驱动程序会立即发出此 NDIS 状态指示。
 
-**请注意**  支持 NDIS 唤醒原因状态指示是可选的移动宽带 (MB) 微型端口驱动程序。
+**注意**  支持 NDIS 唤醒原因状态指示对于移动宽带（MB）微型端口驱动程序是可选的。
 
  
 
 有关详细信息，请参阅[NDIS 唤醒原因状态指示](ndis-wake-reason-status-indications.md)。
 
-### <a name="ndis-no-pause-on-suspend"></a>NDIS 上的没有暂停挂起
+### <a name="ndis-no-pause-on-suspend"></a>挂起时不暂停 NDIS
 
-从开始 NDIS 6.30，微型端口驱动程序可以指定属性标志 (**NDIS\_微型端口\_特性\_否\_暂停\_ON\_挂起**) 中[ **NDIS\_微型端口\_适配器\_注册\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。 该驱动程序将指针传递到此结构中对其调用[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
+从 NDIS 6.30 开始，微型端口驱动程序可以在 NDIS\_微型端口\_适配器中指定属性标志（**ndis\_微型端口\_属性\_不\_暂停\_** \_[**注册\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。 驱动程序在其对[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的调用中传递指向此结构的指针。
 
-如果微型端口设置**NDIS\_微型端口\_特性\_否\_暂停\_ON\_挂起**属性标志 NDIS 不会调用微型端口驱动程序的[ *MiniportPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)函数的对象标识符 (OID) 的请求之前[OID\_PNP\_设置\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)颁发给该驱动程序。 当微型端口驱动程序处理 OID 请求时，它必须假设，它具有之前暂停转换到低功耗状态为准备微型端口适配器时。
+如果微型端口将**NDIS 设置\_微型端口\_属性\_不\_暂停\_暂挂**属性标志上的\_，NDIS 在对象标识符之前不会调用微型端口驱动程序的[*MiniportPause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)函数。OID） [\_PNP\_集请求，\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)被颁发给驱动程序。 当微型端口驱动程序处理 OID 请求时，它不能假定已在准备微型端口适配器时将其暂停，以便过渡到低功耗状态。
 
-有关详细信息，请参阅[ **NDIS\_微型端口\_适配器\_注册\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)。
+有关详细信息，请参阅[**NDIS\_微型端口\_适配器\_注册\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)。
 
  
 

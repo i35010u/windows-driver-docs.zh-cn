@@ -1,22 +1,22 @@
 ---
 title: KSPROPSETID\_InterleavedAudio
-description: KSPROPSETID\_InterleavedAudio 属性集实现想要提供有关交错的环回音频的额外信息并捕获音频的音频设备驱动程序。
+description: KSPROPSETID\_InterleavedAudio 属性集是由音频设备驱动程序实现的，这些驱动程序希望提供有关环回音频和捕获音频交叉的额外信息。
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 19699f56b023b94917203f51a7b3eb1279acef60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c2c5d8aed23f5233c94e2a5d5e58051425d15e4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332489"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832673"
 ---
-# <a name="kspropsetidinterleavedaudio"></a>KSPROPSETID\_InterleavedAudio
+# <a name="kspropsetid_interleavedaudio"></a>KSPROPSETID\_InterleavedAudio
 
-**KSPROPSETID\_InterleavedAudio**由想要包含有关交错的环回音频的额外信息并捕获音频流中的音频的音频设备驱动程序实现的属性集。
+**KSPROPSETID\_InterleavedAudio**属性集是由音频设备驱动程序实现的，这些驱动程序希望包含有关音频流中的环回音频交叉和捕获音频的额外信息。
 
-**KSPROPSETID\_InterleavedAudio**是版本中提供的 Windows 10 版本 19 H 1 及更高版本的 Windows。
+**KSPROPSETID\_InterleavedAudio**适用于 windows 10 版本19H1 和更高版本的 windows。
 
-*Ksmedia.h*标头文件定义**KSPROPSETID\_InterleavedAudio**属性设置，如下所示：
+*Ksmedia*头文件定义**KSPROPSETID\_InterleavedAudio**属性集，如下所示：
 
 ``` syntax
 #define STATIC_KSPROPSETID_InterleavedAudio\
@@ -29,4 +29,4 @@ DEFINE_GUIDSTRUCT("E9EBE550-D619-4C0A-976B-7062322B3006", KSPROPSETID_Interleave
 
 [**KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**](ksproperty-interleavedaudio-formatinformation.md)
 
-此属性的名称中定义[ **KSPROPERTY\_INTERLEAVEDAUDIO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_interleavedaudio)枚举。
+此属性名称是在[**KSPROPERTY\_INTERLEAVEDAUDIO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_interleavedaudio)枚举中定义的。

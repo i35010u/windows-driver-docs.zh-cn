@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 14bc9211d3ccfc8f0cf39a601a1183a906a351ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ebc4e0bb998a10b326b83e504b45ac11a6305bbe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382815"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835414"
 ---
 # <a name="transmit-and-receive-queues"></a>传输和接收队列
 
@@ -20,36 +20,36 @@ ms.locfileid: "67382815"
 
 ## <a name="overview"></a>概述
 
-*数据包队列*，或*数据路径队列*NetAdapterCx 以启用客户端驱动程序进行建模其硬件功能，例如硬件中引入的对象传输和更为明确地接收队列中的软件驱动程序. 本主题说明如何使用传输和接收队列中 NetAdapterCx。 
+*数据包队列*或*数据路径队列*是在 NetAdapterCx 中引入的对象，使客户端驱动程序能够在软件驱动程序中更明确地为硬件功能（例如硬件传输和接收队列）建模。 本主题说明如何使用 NetAdapterCx 中的传输和接收队列。 
 
-当客户端驱动程序调用[ **NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)，通常是从其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)事件回调函数，它提供了两个队列创建回调：[*EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)并[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)。 客户端创建传输，并分别接收这些回调中的队列。
+当客户端驱动程序调用[**NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)（通常来自其[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)事件回调函数）时，它会提供两个队列创建回调： [*EVT_NET_ADAPTER_CREATE_TXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)和[*EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)。 客户端分别在这些回调中创建传输队列和接收队列。
 
-Framework 转换到低功耗状态之前清空队列，并将其删除然后再删除该适配器。
+框架在转换为低功率状态之前清空队列，并在删除适配器之前将其删除。
 
 ## <a name="creating-packet-queues"></a>创建数据包队列
 
-创建传输队列或接收队列中，数据包队列时客户端必须提供以下三个回调函数的指针：
+创建数据包队列（传输队列或接收队列）时，客户端必须提供以下三个回调函数的指针：
 
-- [*EVT_PACKET_QUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)
-- [*EVT_PACKET_QUEUE_SET_NOTIFICATION_ENABLED*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)
-- [*EVT_PACKET_QUEUE_CANCEL*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)
+- [*EVT_PACKET_QUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)
+- [*EVT_PACKET_QUEUE_SET_NOTIFICATION_ENABLED*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)
+- [*EVT_PACKET_QUEUE_CANCEL*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)
 
-此外，客户端可以初始化队列配置结构后提供这些可选的回调函数：
+此外，客户端还可以在初始化队列配置结构后提供这些可选的回调函数：
 
-- [*EVT_PACKET_QUEUE_START*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_start)
-- [*EVT_PACKET_QUEUE_STOP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_stop)
+- [*EVT_PACKET_QUEUE_START*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_start)
+- [*EVT_PACKET_QUEUE_STOP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_stop)
 
 ### <a name="creating-a-transmit-queue"></a>创建传输队列
 
-NetAdapterCx 调用[ *EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)最末尾[强化序列](power-up-sequence-for-a-netadaptercx-client-driver.md)。 在此回调期间客户端驱动程序通常执行以下操作：
+NetAdapterCx 在[启动序列](power-up-sequence-for-a-netadaptercx-client-driver.md)的最末尾调用[*EVT_NET_ADAPTER_CREATE_TXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_txqueue) 。 在此回调过程中，客户端驱动程序通常会执行以下操作：
 
-- 可以选择注册开始和停止队列的回调。
-- 调用[ **NetTxQueueInitGetQueueId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueueinitgetqueueid)可检索要设置的传输队列的标识符。
-- 调用[ **NetTxQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuecreate)分配一个队列。 
-    - 如果[ **NetTxQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuecreate)发生故障， *EvtNetAdapterCreateTxQueue*回调函数应返回一个错误代码。
+- 选择性地为队列注册开始和停止回调。
+- 调用[**NetTxQueueInitGetQueueId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueueinitgetqueueid)可检索要设置的传输队列的标识符。
+- 调用[**NetTxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuecreate)分配队列。 
+    - 如果[**NetTxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuecreate)失败， *EvtNetAdapterCreateTxQueue*回调函数应返回错误代码。
 - 查询数据包扩展偏移量。
 
-下面的示例显示了这些步骤可能会在代码中如下所示。 此示例为清楚起见离职错误处理代码。
+下面的示例演示如何在代码中查找这些步骤。 为清楚起见，此示例中已省略错误处理代码。
 
 ```C++
 NTSTATUS
@@ -112,9 +112,9 @@ EvtAdapterCreateTxQueue(
 
 ### <a name="creating-a-receive-queue"></a>创建接收队列
 
-若要创建从接收队列[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)，使用相同的模式作为传输队列，调用[ **NetRxQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuecreate). 
+若要从[*EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)创建接收队列，请使用与传输队列相同的模式并调用[**NetRxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuecreate)。 
 
-下面的示例演示如何创建接收队列可能会在代码中查找。 此示例为清楚起见离职错误处理代码。
+下面的示例演示如何创建接收队列。 为清楚起见，此示例中已省略错误处理代码。
 
 ```c++
 NTSTATUS
@@ -169,37 +169,37 @@ EvtAdapterCreateRxQueue(
 
 ## <a name="polling-model"></a>轮询模型
 
-NetAdapter 数据路径是轮询模型，和上一个数据包队列的轮询操作是完全独立于其他队列。 下图中所示，通过调用高级回调的客户端驱动程序的队列实现轮询模型：
+Get-netadapter 数据路径是轮询模型，一个数据包队列的轮询操作完全独立于其他队列。 通过调用客户端驱动程序的队列提前回调来实现轮询模型，如下图所示：
 
 ![轮询流](images/polling.png)
 
-## <a name="advancing-packet-queues"></a>前移数据包队列
+## <a name="advancing-packet-queues"></a>前进数据包队列
 
-数据包队列上的轮询操作序列如下所示：
+包队列中轮询操作的顺序如下所示：
 
-1. 操作系统为传输或接收的客户端驱动程序的缓冲区。
-2. 客户端驱动程序的硬件的数据包。
-3. 客户端驱动程序对操作系统返回的已完成的数据包。
+1. 操作系统为传输或接收提供客户端驱动程序的缓冲区。
+2. 客户端驱动程序会将数据包用于硬件。
+3. 客户端驱动程序将已完成的数据包返回到操作系统。
 
-轮询操作发生在客户端驱动程序中[ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)回调函数。 通过调用基础数据结构提供支持客户端驱动程序中的每个数据包队列*net 环*，其中包含或链接到系统内存中的实际网络数据缓冲区。 期间*EvtPacketQueueAdvance*，客户端驱动程序进行发送和接收通过使用 net 环操作*net 环迭代器*，因为数据是硬件和操作系统之间的传输缓冲区所有权传输或接收。
+轮询操作出现在客户端驱动程序的[*EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)回调函数中。 客户端驱动程序中的每个数据包队列都由称为 "*净环*" 的基础数据结构（其中包含或链接到系统内存中的实际网络数据缓冲区）进行支持。 在*EvtPacketQueueAdvance*期间，客户端驱动程序通过使用*网络环迭代*器在网络环上执行发送和接收操作，在传输或接收数据时，在硬件和操作系统之间传输缓冲区所有权。
 
-有关 net 环和 net 环迭代器的详细信息，请参阅[Net 环和 net 环迭代器](net-rings-and-net-ring-iterators.md)。
+有关网络环和网络环迭代器的详细信息，请参阅[网络环和网络环迭代](net-rings-and-net-ring-iterators.md)器。
 
-有关实现的示例*EvtPacketQueueAdvance*传输队列中，请参阅[发送网络数据使用 net 环](sending-network-data-with-net-rings.md)。 有关实现的示例*EvtPacketQueueAdvance*接收队列中，请参阅[接收网络数据使用 net 环](receiving-network-data-with-net-rings.md)。
+有关为传输队列实现*EvtPacketQueueAdvance*的示例，请参阅[使用净环发送网络数据](sending-network-data-with-net-rings.md)。 有关为接收队列实现*EvtPacketQueueAdvance*的示例，请参阅[接收网络数据和净环](receiving-network-data-with-net-rings.md)。
 
 ## <a name="enabling-and-disabling-packet-queue-notification"></a>启用和禁用数据包队列通知
 
-当客户端驱动程序收到数据包队列的 net 环中新的数据包时，NetAdapterCx 调用客户端驱动程序[ *EvtPacketQueueSetNotificationEnabled* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)回调函数。 此回调到客户端驱动程序轮询指示 (的*EvtPacketQueueAdvance*或*EvtPacketQueueCancel*) 将停止，并且不会继续，直到客户端驱动程序调用[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)或[ **NetRxQueueNotifyMoreReceivedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)。 通常情况下，PCI 设备使用此回调以启用 Tx 或 Rx 中断。 一旦收到中断，可以再次禁用中断，客户端驱动程序调用**NetTxQueueNotifyMoreCompletedPacketsAvailable**或**NetRxQueueNotifyMoreReceivedPacketsAvailable**若要触发的框架，以开始再次轮询。
+当客户端驱动程序在数据包队列的网络环中收到新数据包时，NetAdapterCx 将调用客户端驱动程序的[*EvtPacketQueueSetNotificationEnabled*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_set_notification_enabled)回调函数。 此回调向客户端驱动程序指示，轮询（of *EvtPacketQueueAdvance*或*EvtPacketQueueCancel*）将停止，并将不会继续，直到客户端驱动程序调用[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)或[**NetRxQueueNotifyMoreReceivedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)。 通常，PCI 设备使用此回调来启用 Tx 或 Rx 中断。 一旦接收到中断，就可以再次禁用中断，并且客户端驱动程序将调用**NetTxQueueNotifyMoreCompletedPacketsAvailable**或**NetRxQueueNotifyMoreReceivedPacketsAvailable**来触发框架，以便开始轮询遍.
 
 ### <a name="enabling-and-disabling-notification-for-a-transmit-queue"></a>启用和禁用传输队列的通知
 
-对于 PCI NIC 启用传输队列通知通常意味着启用传输队列的硬件中断。 当硬件中断触发时，客户端调用[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)从其 DPC。
+对于 PCI NIC，启用传输队列通知通常意味着启用传输队列的硬件中断。 当硬件中断触发时，客户端从其 DPC 调用[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable) 。
 
-同样，对于 PCI NIC，禁用队列通知意味着禁用中断与队列关联。
+同样，对于 PCI NIC，禁用队列通知意味着禁用与队列关联的中断。
 
-对于具有异步 I/O 模型的设备，客户端通常使用的内部标志来跟踪已启用的状态。 异步操作完成后，完成处理程序将检查此标志和调用[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)如果将其设置。
+对于具有异步 i/o 模型的设备，客户端通常使用内部标志来跟踪已启用状态。 异步操作完成后，完成处理程序会检查此标志，并在设置后调用[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable) 。
 
-如果调用 NetAdapterCx *EvtPacketQueueSetNotificationEnabled*与*NotificationEnabled*设置为**FALSE**，客户端不能调用[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)直到 NetAdapterCx 接下来，调用此回调函数*NotificationEnabled*设置为**TRUE**.
+如果 NetAdapterCx 调用*EvtPacketQueueSetNotificationEnabled*并将*NotificationEnabled*设置为**FALSE**，则客户端不能调用[**NetTxQueueNotifyMoreCompletedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable)直到 NetAdapterCx 下一次调用此*NotificationEnabled*设置为**TRUE**的回调函数。
 
 例如：
 
@@ -229,9 +229,9 @@ MyEvtTxInterruptDpc(
 }
 ```
 
-### <a name="enabling-and-disabling-notification-for-a-receive-queue"></a>启用和禁用通知接收队列
+### <a name="enabling-and-disabling-notification-for-a-receive-queue"></a>为接收队列启用和禁用通知
 
-PCI nic，启用接收队列通知看起来非常类似于传输队列。 这通常意味着启用接收队列的硬件中断。 当硬件中断触发时，客户端调用[ **NetRxQueueNotifyMoreReceivedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)从其 DPC。
+对于 PCI NIC，启用接收队列通知看起来非常类似于 Tx 队列。 这通常意味着启用接收队列的硬件中断。 当硬件中断触发时，客户端从其 DPC 调用[**NetRxQueueNotifyMoreReceivedPacketsAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable) 。
 
 例如：
 
@@ -261,7 +261,7 @@ MyEvtRxInterruptDpc(
 }
 ```
 
-USB 设备或软件的任何其他队列接收完成机制，客户端驱动程序应在跟踪其自己的上下文中是否启用队列的通知。 完成例程 （一条消息变为可用 USB 持续读取器中时的示例中触发），调用[ **NetRxQueueNotifyMoreReceivedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)如果通知是已启用。 下面的示例演示如何执行此操作。
+对于 USB 设备或具有软件接收完成机制的任何其他队列，客户端驱动程序应在其自身的上下文中进行跟踪，无论队列的通知是否已启用。 如果启用了通知[ **，则请**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nf-netrxqueue-netrxqueuenotifymorereceivedpacketsavailable)在完成例程（例如，当消息在 USB 连续读取器中变为可用时触发）。 下面的示例演示如何执行此操作。
 
 ```C++
 VOID
@@ -294,10 +294,10 @@ UsbEvtReaderCompletionRoutine(
 }
 ```
 
-## <a name="canceling-packet-queues"></a>正在取消数据包队列
+## <a name="canceling-packet-queues"></a>取消数据包队列
 
-当操作系统停止数据路径时，开始通过调用客户端驱动程序[ *EvtPacketQueueCancel* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)回调函数。 此回叫是客户端驱动程序在其中执行所需框架删除数据包队列之前的任何处理。 取消的传输队列是可选的取决于硬件是否支持取消操作正在进行传输，但取消接收队列是必需。 
+当 OS 停止数据路径时，它将通过调用客户端驱动程序的[*EvtPacketQueueCancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)回调函数开始。 在此回调中，客户端驱动程序将在框架删除数据包队列之前执行所需的任何处理。 取消传输队列是可选的，具体取决于硬件是否支持正在进行的传输取消，但需要取消接收队列。 
 
-期间*EvtPacketQueueCancel*，驱动程序使用 net 环迭代器根据需要对操作系统返回的数据包。 代码示例的传输队列和接收队列取消，请参阅[取消网络数据使用 net 环](canceling-network-data-with-net-rings.md)。
+在*EvtPacketQueueCancel*期间，驱动程序使用网络环迭代器根据需要将数据包返回到操作系统。 有关传输队列和接收队列取消的代码示例，请参阅[取消网络数据](canceling-network-data-with-net-rings.md)和网络环。
 
-调用驱动程序的后*EvtPacketQueueCancel*回调，框架将继续，若要轮询的驱动程序[ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)回调之前的所有数据包和缓冲区已返回到操作系统。
+在调用驱动程序的*EvtPacketQueueCancel*回调后，框架将继续轮询驱动程序的[*EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)回调，直到所有数据包和缓冲区都返回到 OS。

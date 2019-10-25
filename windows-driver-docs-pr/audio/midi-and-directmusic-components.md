@@ -10,17 +10,17 @@ keywords:
 - MIDI 组件 WDK 音频
 - DirectMusic WDK 音频，组件
 - 播放 WDK 音频
-- 带有时间戳 MIDI WDK 音频
-- 请注意在事件 WDK 音频
-- 请注意关闭事件 WDK 音频
+- 带有时间戳的 MIDI WDK 音频
+- 便笺-事件 WDK 音频
+- 便笺-关闭事件 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 808313dd844ef120261f58f03988b993eaff336e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 22546ede83dc9a6eb09ddb44670741b5fa15cd2a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363255"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832625"
 ---
 # <a name="midi-and-directmusic-components"></a>MIDI 和 DirectMusic 组件
 
@@ -28,75 +28,75 @@ ms.locfileid: "67363255"
 ## <span id="midi_and_directmusic_components"></span><span id="MIDI_AND_DIRECTMUSIC_COMPONENTS"></span>
 
 
-应用程序的程序依赖于用户和内核模式组件，可捕获和播放 MIDI 和 DirectMusic 流的组合。
+应用程序依赖于用户和内核模式组件的组合来捕获和播放 MIDI 和 DirectMusic 流。
 
-应用程序可以使用以下对象之一的 MIDI 播放和捕获的软件接口：
+应用程序可以使用以下任一软件接口进行 MIDI 播放和捕获：
 
--   Microsoft Windows 多媒体 **midiOut * * * Xxx*和 **midiIn * * * Xxx*函数
+-   Microsoft Windows 彩信 **midiOut * * * xxx* And **midiIn * ** *
 
 -   DirectMusic API
 
-行为 **midiOut * * * Xxx*和 **midiIn * * * Xxx*函数基于旧 MIDI 驱动程序和设备的功能。 从 Windows 98 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)对这些函数的调用转换为与 WDM 音频驱动程序的命令。 但是，通过模拟行为的较旧版本软件和硬件，**midiOut * * * Xxx*和 **midiIn * * * Xxx*精度计时和增强的功能，现已可用，否则会影响函数通过 DirectMusic API。 有关 DirectMusic 和 Windows 多媒体 MIDI 函数的详细信息，请参阅 Microsoft Windows SDK 文档。
+**MidiOut * * * xxx*和 **MidiIn * * xxx*函数的行为基于旧版 MIDI 驱动程序和设备的功能。 从 Windows 98 开始， [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)将对这些函数的调用转换为 WDM 音频驱动程序的命令。 但是，通过模拟旧软件和硬件的行为，**midiOut * * * xxx*和 **MidiIn * * xxx*函数将牺牲通过 DirectMusic API 提供的准确性计时和增强的功能。 有关 DirectMusic 和 Windows 多媒体 MIDI 功能的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-DirectMusic 和 Windows 多媒体 MIDI 函数都的客户端[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)，哪些生成处理 MIDI 和 DirectMusic 流音频筛选器关系图。 图形构建是透明的使用这些软件接口的应用程序。
+DirectMusic 和 Windows 多媒体 MIDI 函数是[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)的客户端，它可生成用于处理 MIDI 和 DirectMusic 流的音频筛选器图形。 图形构建对于使用这些软件接口的应用程序而言是透明的。
 
-### <a name="span-idmidicomponentsspanspan-idmidicomponentsspanspan-idmidicomponentsspanmidi-components"></a><span id="MIDI_Components"></span><span id="midi_components"></span><span id="MIDI_COMPONENTS"></span>MIDI 组件
+### <a name="span-idmidi_componentsspanspan-idmidi_componentsspanspan-idmidi_componentsspanmidi-components"></a><span id="MIDI_Components"></span><span id="midi_components"></span><span id="MIDI_COMPONENTS"></span>MIDI 组件
 
-下图显示了用户模式和内核模式组件 MIDI 应用程序使用到*播放*MIDI 数据。 WDM 音频驱动程序通过将此应用程序接口 **midiOut * * * Xxx*中实现的函数[WinMM 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)，Winmm.dll。
+下图显示了 MIDI 应用程序用于*播放*midi 数据的用户模式和内核模式组件。 此应用程序通过 **midiOut * * Xxx*函数（在[Winmm.dll 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)winmm.dll 中实现）向 WDM 音频驱动程序进行接口。
 
-![显示了 midi 播放组件的关系图](images/midiplay.png)
+![显示 midi 播放组件的关系图](images/midiplay.png)
 
-在上图中的 MIDI 应用程序从一个 MIDI 文件中读取加盖时间戳 MIDI 事件并播放它们。 MIDI 和 Dmu 微型端口驱动程序显示为变暗的框，以指示它们可以是供应商提供的组件。 如果适用，供应商可能选择使用一个系统提供的微型端口驱动程序-FMSynth、 UART 或 DMusUART-而不是编写自定义的微型端口驱动程序。 所有图中的其他组件都是系统提供。
+上图中的 MIDI 应用程序从 MIDI 文件中读取带有时间戳的 MIDI 事件，并播放它们。 MIDI 和 Dmu 微型端口驱动程序显示为暗盒，指示它们可以是供应商提供的组件。 如果需要，供应商可能选择使用系统提供的一个或多个微端口驱动程序--FMSynth、UART 或 DMusUART--而不是编写自定义微型端口驱动程序。 该图中的所有其他组件都是系统提供的。
 
-典型的 MIDI 播放应用程序调用的主循环**timeSetEvent**计划下一步请注意打开或注意关闭事件。 此调用将作为其参数之一的函数指针传递到应用程序的回调例程。 当事件发生，并且操作系统将调用回调例程时，此例程会调用**midiOutShortMsg**打开或关闭一个或多个计划的说明。 **MidiOutShortMsg**函数将 MIDI 消息存储在页锁定数据缓冲区以无需页-在内存中的调用期间。 有关详细信息**timeSetEvent**并**midiOutShortMsg**调用，请参阅 Microsoft Windows SDK 文档。
+典型的 MIDI 播放应用程序的主要循环会调用**timeSetEvent**来计划下一个便笺或附注关闭事件。 此调用会将函数指针用作应用程序的回调例程，作为其参数之一。 当发生事件并且操作系统调用回调例程时，此例程将调用**midiOutShortMsg**来打开或关闭一个或多个计划的便笺。 **MidiOutShortMsg**函数将 MIDI 消息存储在页面锁定的数据缓冲区中，以便在调用期间不需要在此内存中分页。 有关**timeSetEvent**和**midiOutShortMsg**调用的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-WDMAud，其中包含这两个用户和内核模式组件 （Wdmaud.drv 和 Wdmaud.sys），记录原始 MIDI 从消息的时间**midiOutShortMsg**调用到达。 与 MIDI 消息生成 MIDI 流，它将发送到一个 WDMAud 下方显示在图中的内核模式组件进行 WDMAud 组合这些时间戳。
+WDMAud 包括用户和内核模式组件（Wdmaud. winspool.drv 和 Wdmaud），记录来自**midiOutShortMsg**调用的原始 MIDI 消息到达的时间。 WDMAud 将这些时间戳与 MIDI 消息组合在一起，以生成其发送到图中 WDMAud 下的某个内核模式组件的 MIDI 流。
 
-在生成 MIDI 应用程序的音频筛选器关系图，SysAudio 将选择三个可能的连接-SWMidi、 MIDI 端口或 Dmu 端口驱动程序，到在上图中显示的之一。 如果应用程序选择默认 MIDI 设备，SysAudio 首先查找合成器的设备的 MIDI 或 Dmu 微型端口驱动程序具有 MIDI pin。 如果在注册表中不找到任何此类设备，将改为使用 SysAudio [SWMidi 系统驱动程序](kernel-mode-wdm-audio-components.md#swmidi_system_driver)(Swmidi.sys)。 SWMidi 是在软件中，实现波表合成一个 KS 筛选器，这需要唯一的设备可以呈现波形音频流。
+为 MIDI 应用程序生成音频筛选器图时，SysAudio 只会选择上图中显示的三个可能的连接中的一种：--SWMidi、MIDI 端口或 Dmu 端口驱动程序。 如果应用程序选择默认的 MIDI 设备，SysAudio 将首先查找其 MIDI 或 Dmu 微型端口驱动程序具有 MIDI pin 的合成器设备。 如果在注册表中找不到此类设备，SysAudio 将改用[SWMidi 系统驱动程序](kernel-mode-wdm-audio-components.md#swmidi_system_driver)（SWMidi）。 SWMidi 是在软件中实现 wavetable 合成器的 KS 筛选器，它只需要可呈现 wave 音频流的设备。
 
-SWMidi 混合使用所有在一起以产生单个批 PCM 流，它将输出到其语音[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)。 KMixer，反过来，将 PCM 格式的批流传递到 WaveCyclic 或 WavePci 设备，其端口和微型端口驱动程序出现在该图在左下角。 或者，KMixer 可以到 USB 音频设备控制的传递的输出流[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)（不在图中所示）。
+SWMidi 将其所有声音组合在一起，生成一个波形 PCM 流，并将其输出到[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)。 然后，KMixer 会将一个 PCM 格式的波形流传递到 WaveCyclic 或 WavePci 设备，该设备的端口和微型端口驱动程序显示在图的左下角。 或者，KMixer 可以将其输出流传递到由[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)控制的 USB 音频设备（图中未显示）。
 
-上图中，在 MIDI 端口驱动程序从 WDMAud 所需的时间戳 MIDI 流，并将其转换为原始 MIDI 消息，这将通过合成器设备播放 MIDI 微型端口驱动程序。 MIDI 端口驱动程序包含 sequencer，后者在软件中实现的并且可以计划为一毫秒的计时器分辨率与原始的 MIDI 消息。
+在上图中，MIDI 端口驱动程序从 WDMAud 中取出带有时间戳的 MIDI 流，并将其转换为可通过合成器设备播放的原始 MIDI 消息。 MIDI 端口驱动程序包含一个 sequencer，该 sequencer 在软件中实现，并且能够计划使用一毫秒的计时器分辨率的原始 MIDI 消息。
 
-Dmu 端口驱动程序就能够实现比 MIDI 端口驱动程序的高得多的时间精度，如果合成器设备包含硬件 sequencer。 在这种情况下，Dmu 微型端口驱动程序应指定足够大，吸收导致的争用情况的 CPU 时间与 Isr （中断服务例程） 和其他高优先级操作抖动的硬件缓冲区。 Dmu 端口驱动程序将输出到微型端口驱动程序在 MIDI 流中的时间戳是以 100 毫微秒分辨率的 64 位值。
+如果合成器设备包含硬件 sequencer，则 Dmu 端口驱动程序能够实现比 MIDI 端口驱动程序更高的计时准确性。 在这种情况下，Dmu 微型端口驱动程序应指定一个足够大的硬件缓冲区，以充分利用通过 Isr （中断服务例程）和其他高优先级操作对 CPU 时间的争用导致的抖动。 MIDI 流中的时间戳，Dmu 端口驱动程序输出到微型端口驱动程序的时间戳为64位值，分辨率为100毫微秒。
 
-如果 DMusic 合成器没有硬件 sequencer，则它必须依赖于 Dmu 端口驱动程序软件 sequencer，这与在 MIDI 端口驱动程序，有一毫秒的计时器分辨率。
+如果 DMusic 合成没有硬件 sequencer，它必须依赖于 Dmu 端口驱动程序的软件 sequencer，如 MIDI 端口驱动程序的，计时器分辨率为1毫秒。
 
-适配器驱动程序通过调用创建 MIDI 或 Dmu 端口驱动程序[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport) GUID 值为**CLSID\_PortMidi**或**CLSID\_PortDMus**分别。 在 Windows XP 及更高版本，MIDI 和 Dmu 端口驱动程序将共享相同的软件实现。
+适配器驱动程序通过分别调用 Dmu 为**CLSID\_PortMidi**或**clsid\_PortDMus**的[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport) ，来创建 MIDI 或端口驱动程序。 在 Windows XP 和更高版本中，MIDI 和 Dmu 端口驱动程序共享相同的软件实现。
 
-在上图中的底部显示是 FMSynth、 UART 和 DMusUART，它包括在 Portcls.sys 的系统提供的微型端口驱动程序的名称。 适配器驱动程序创建一个微型端口驱动程序通过调用[ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)。 FMSynth 和 UART 提供[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)接口和 DMusUART 提供[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)接口。 请注意 UART （在 Windows 98 金色） 现已过时，仅支持现有的驱动程序。 新适配器驱动程序应改用 DMusUART （在 Windows 98 SE 和更高版本，并在 Windows 2000 及更高版本），它实现的 UART 的功能超集。 DMusUART 是支持 DLS 下载也硬件序列化不支持的 Dmu 微型端口驱动程序的示例。 FMSynth 和 DMusUART 微型端口驱动程序的源代码现已推出的示例音频驱动程序 Windows Driver Kit (WDK) 中。
+如上图所示，是系统提供的微型端口驱动程序的名称 FMSynth、UART 和 DMusUART，它们包含在 Portcls 中。 适配器驱动程序通过调用[**PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)创建其中一个小型端口驱动程序。 FMSynth 和 UART 提供[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)接口，DMusUART 提供[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus)接口。 请注意，UART 现在已过时（在 Windows 98 黄金之后），仅支持现有的驱动程序。 新的适配器驱动程序应改为使用 DMusUART （在 Windows 98 SE 和更高版本中，以及在 Windows 2000 及更高版本中），这将实现 UART 功能的超集。 DMusUART 是 Dmu 微型端口驱动程序的一个示例，该驱动程序不支持 DL 下载和硬件排序。 Windows 驱动程序工具包（WDK）中的示例音频驱动程序提供了 FMSynth 和 DMusUART 微型端口驱动程序的源代码。
 
-下图显示了用户模式和内核模式组件 MIDI 应用程序使用到*捕获*MIDI 数据。 WDM 音频驱动程序通过将此应用程序接口 **midiIn * * * Xxx*函数。
+下图显示了 MIDI 应用程序用来*捕获*MIDI 数据的用户模式和内核模式组件。 此应用程序通过 **midiIn * * Xxx*函数向 WDM 音频驱动程序接口。
 
-![说明 midi 捕获组件的关系图](images/midicapt.png)
+![说明 midi 捕获组件的示意图](images/midicapt.png)
 
-在上图中，MIDI 和 Dmu 微型端口驱动程序将显示为变暗的框以指示它们可以是供应商提供的组件。 如果适用，供应商可能会改为选择使用系统提供的微型端口驱动程序，UART 或 DMusUARTCapture 之一。 所有图中的其他组件都是系统提供。
+在上图中，MIDI 和 Dmu 微型端口驱动程序显示为暗盒，指示它们可以是供应商提供的组件。 如果需要，供应商可以改为选择使用系统提供的微型端口驱动程序（UART 或 DMusUARTCapture）之一。 该图中的所有其他组件都是系统提供的。
 
-MIDI 数据源通常是 MPU 401 设备。 通过调用**PcNewMiniport**，适配器驱动程序可以创建一个系统提供的微型端口驱动程序，UART 或 DMusUARTCapture，用来捕获 MIDI MPU 401 设备中的数据。 同样，UART 已过时，并且新的驱动程序应改用 DMusUARTCapture （在 Windows 98 SE 和更高版本，并在 Windows 2000 及更高版本）。
+MIDI 数据的源通常是 MPU-401 设备。 通过调用**PcNewMiniport**，适配器驱动程序可以创建一个系统提供的微型端口驱动程序（UART 或 DMusUARTCapture），以从 MPU-401 设备捕获 MIDI 数据。 同样，UART 过时，而新的驱动程序应使用 DMusUARTCapture （在 Windows 98 SE 和更高版本中，以及在 Windows 2000 及更高版本中）。
 
-每次发生 MIDI 注意打开或注意关闭事件时，包含 MIDI 或 DMusic 捕获微型端口驱动程序 （在上图中底部） 将其添加到流向 MIDI 或 Dmu 端口驱动程序的 MIDI 流之前将时间戳添加到 MIDI 消息。
+每次发生 MIDI 注释时或注意到关闭事件时，MIDI 或 DMusic 捕获微型端口驱动程序（上图的底部）会将时间戳添加到 MIDI 消息，然后再将其添加到流向 MIDI 或 Dmu 端口驱动程序的 MIDI 流中。
 
-MIDI 或 DMusic 捕获端口驱动程序输出带时间戳的 MIDI 流 Wdmaud.sys，内核模式到一半 WDMAud 系统驱动程序。 用户模式下一半，Wdmaud.drv 输出带时间戳 MIDI 流式传输到应用程序通过 **midiIn * * * Xxx*函数，这在 Winmm.dll 中实现。
+MIDI 或 DMusic 捕获端口驱动程序将带时间戳的 MIDI 流输出到 Wdmaud，这是 WDMAud 系统驱动程序的内核模式半部分。 用户模式半 Wdmaud，winspool.drv 在 Winmm.dll 中实现的 **midiIn * * Xxx*函数将带时间戳的 MIDI 流输出到应用程序。
 
-在图顶部的 MIDI 应用程序将加盖时间戳 MIDI 事件写入一个 MIDI 文件中。 在应用程序调用的时间**midiInOpen**若要打开的 MIDI 输入的流，它会传入函数指针到其回调例程。 请注意打开或注意关闭事件发生时，操作系统将调用回调例程与包含一个或多个具有时间戳的 MIDI 消息的数据块。 这些消息的时间戳是实质上是相同的与最初生成 MIDI 或 Dmu 微型端口驱动程序。
+该图顶部的 MIDI 应用程序将带有时间戳的 MIDI 事件写入 MIDI 文件。 当应用程序调用**midiInOpen**打开 MIDI 输入流时，它会将函数指针传递到其回调例程。 当发生便笺或附注事件时，操作系统将调用带有包含一个或多个带时间戳的 MIDI 消息的数据块的回调例程。 这些消息的时间戳实质上与 MIDI 或 Dmu 微型端口驱动程序最初生成的时间戳相同。
 
-### <a name="span-iddirectmusiccomponentsspanspan-iddirectmusiccomponentsspanspan-iddirectmusiccomponentsspandirectmusic-components"></a><span id="DirectMusic_Components"></span><span id="directmusic_components"></span><span id="DIRECTMUSIC_COMPONENTS"></span>DirectMusic 组件
+### <a name="span-iddirectmusic_componentsspanspan-iddirectmusic_componentsspanspan-iddirectmusic_componentsspandirectmusic-components"></a><span id="DirectMusic_Components"></span><span id="directmusic_components"></span><span id="DIRECTMUSIC_COMPONENTS"></span>DirectMusic 组件
 
-下图显示了通过到 DirectMusic 应用程序使用的用户和内核模式组件*播放*或*捕获*MIDI 数据。
+下图显示了 DirectMusic 应用程序用来*播放*或*捕获*MIDI 数据的用户和内核模式组件。
 
-![说明 directmusic 播放和捕获组件的关系图](images/dmusplay.png)
+![说明 directmusic 播放和捕获组件的示意图](images/dmusplay.png)
 
-在上图中的左半部分显示了播放的组件和捕获组件显示在右侧。 Dmu 微型端口驱动程序显示为变暗的框，以指示它们可以是供应商提供的组件。 如果适用，供应商可以改为使用系统提供的微型端口驱动程序，DMusUART 或 DMusUARTCapture 之一。 在图中的其他组件是系统提供。
+播放组件显示在上图的左半部分，而捕获组件显示在右侧。 Dmu 微型端口驱动程序显示为暗盒，指示它们可以是供应商提供的组件。 如果需要，供应商可以改为使用系统提供的微型端口驱动程序 DMusUART 或 DMusUARTCapture。 图形中的其他组件是系统提供的。
 
-DirectMusic 应用程序中的图左上角，将定向加盖时间戳 MIDI 流文件中的为用户模式[DirectMusic 系统组件](user-mode-wdm-audio-components.md#directmusic_system_component)(DMusic.dll)，这反过来将定向到 Dmu 端口驱动程序的流。 此驱动程序可以绑定到 DirectMusic 合成器或 MPU 401 设备的微型端口驱动程序，如果有可用。 或者，可将端口驱动程序绑定到[DMusic 系统驱动程序](kernel-mode-wdm-audio-components.md#dmusic_system_driver)(Dmusic.sys)，这是一个系统提供 Dmu 微型端口驱动程序，在软件中，实现 DLS 能够波表合成器，并仅需要设备，可以呈现波形音频流。
+在该图的左上角，DirectMusic 应用程序将带时间戳的 MIDI 流从文件定向到用户模式[DirectMusic 系统组件](user-mode-wdm-audio-components.md#directmusic_system_component)（DMusic），而该组件又将该流定向到 dmu 端口驱动程序。 此驱动程序可绑定到 DirectMusic 合成或 MPU-401 设备的微型端口驱动程序（如果有）。 或者，端口驱动程序可以绑定到[DMusic 系统驱动](kernel-mode-wdm-audio-components.md#dmusic_system_driver)程序（DMusic），该驱动程序是系统提供的 dmu 微型端口驱动程序，用于在软件中实现支持 DLS 的 wavetable 合成器，并且只需要可呈现 wave 音频的设备流.
 
-如 SWMidi，DMusic 驱动程序，Dmusic.sys，混合使用所有在一起以产生单个 PCM 格式的批流，它将输出到 KMixer 其语音。 KMixer，反过来，可以将传递批流到波形设备时，其端口和微型端口驱动程序出现在该图在左下角处，或受 USBAudio 系统驱动程序，它未显示在图中的 USB 音频设备。
+与 SWMidi 一样，DMusic 驱动程序 Dmusic 将其所有声音混合到一起，生成一个 PCM 格式的波形流，并将其输出到 KMixer。 相反，KMixer 可以将波形流传递到波形设备，该设备的端口和微型端口驱动程序显示在图的左下角，或由 USBAudio 系统驱动程序控制的 USB 音频设备（未显示在图中）。
 
-DirectMusic 捕获组件显示在上图中的右半部分。 图右下角中的 DMusic 捕获微型端口驱动程序控制它记录每个 MIDI 消息捕获硬件和时间戳。 Dmu 端口驱动程序将定向到用户模式下 DirectMusic 组件 DMusic.dll 加盖时间戳 MIDI 流。 应用程序通过 DirectMusic API 来访问此流，并将时间戳 MIDI 数据写入到文件。
+DirectMusic 捕获组件显示在上图的右半部分。 该图右下角的 DMusic 捕获微型端口驱动程序控制捕获硬件和它所记录的每个 MIDI 消息的时间戳。 Dmu 端口驱动程序将带时间戳的 MIDI 流定向到用户模式 DirectMusic 组件 DMusic。 应用程序通过 DirectMusic API 访问此流，并将带时间戳的 MIDI 数据写入文件。
 
-适配器驱动程序可以使用系统提供 DMusUARTCapture 微型端口驱动程序来控制 MPU 401 捕获设备。 适配器驱动程序通过调用创建此微型端口驱动程序**PcNewMiniport**使用的 GUID 值**CLSID\_DMusUARTCapture**。 生成的微型端口驱动程序对象支持**IMiniportDMus**接口。 DMusUARTCapture 微型端口驱动程序的源代码现已推出的示例音频驱动程序 Windows Driver Kit (WDK) 中。
+适配器驱动程序可以使用系统提供的 DMusUARTCapture 微型端口驱动程序来控制 MPU-401 捕获设备。 适配器驱动程序通过使用 GUID 值**CLSID\_DMusUARTCapture**调用**PcNewMiniport**来创建此微型端口驱动程序。 生成的微型端口驱动程序对象支持**IMiniportDMus**接口。 Windows 驱动程序工具包（WDK）中的示例音频驱动程序提供了 DMusUARTCapture 微型端口驱动程序的源代码。
 
-DirectMusic 应用程序还可以通过运行 **midiOut * * * Xxx*如 SWMidi (Swmidi.sys); 如果它为选择的设备。 为简单起见上, 图中省略了此路径。 DMusic 驱动程序 (Dmusic.sys) 需要才能正确运行; 的初始 DLS 下载使用 SWMidi 可避免这一要求。
+如果选择了，DirectMusic 应用程序还可以通过 **midiOut ** * * Xxx 设备（例如 Swmidi （SWMidi））运行。 为简单起见，上图中省略了此路径。 DMusic 驱动程序（Dmusic）需要初始 DLS 下载才能正常运行;使用 SWMidi 可避免这一要求。
 
  
 

@@ -3,18 +3,18 @@ title: 移除 NIC
 description: 移除 NIC
 ms.assetid: eaa4b784-4375-465d-9ef5-99b38b7fd15a
 keywords:
-- Nic WDK 连接网络、 删除
-- 网络接口卡 WDK 连接网络、 删除
+- Nic WDK 网络，删除
+- 网络接口卡 WDK 网络，删除
 - 即插即用 WDK NDIS 微型端口，删除 NIC
 - 删除 Nic WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b896870ebb2502f9e5a52e7b3b74766e1b6823f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 157c2499cbec6f322ffe09aed2faecd6480801b6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385836"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842069"
 ---
 # <a name="removing-a-nic"></a>移除 NIC
 
@@ -22,63 +22,63 @@ ms.locfileid: "67385836"
 
 
 
-以下步骤介绍如何 NDIS 参与删除的 NIC:
+以下步骤描述了 NDIS 如何参与删除 NIC：
 
-1.  即插即用 manager 问题[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)是否 NIC 可以删除而不会中断对查询的请求计算机。
+1.  PnP 管理器颁发[**IRP\_MN\_query\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求，查询是否可以在不中断计算机的情况下删除该 NIC。
 
-2.  当 NDIS 接收此 IRP 时，它将调用[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)附加到的 NIC 驱动程序堆栈中的最小筛选器驱动程序的函数。 NDIS 此调用中指定的事件代码**NetEventQueryRemoveDevice**。
+2.  当 NDIS 接收到此 IRP 时，它会调用连接到驱动程序堆栈中的 NIC 的最低筛选器驱动程序的[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数。 在此调用中，NDIS 指定了**NetEventQueryRemoveDevice**的事件代码。
 
-    **请注意**  NDIS 执行此步骤中，仅对播发条目的筛选器驱动程序，为点[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)函数。 筛选器驱动程序将公布此入口点时它将调用[ **NdisFRegisterFilterDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfregisterfilterdriver)函数。
-
-     
-
-3.  对调用的上下文中其[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)函数，筛选器驱动程序必须调用[ **NdisFNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfnetpnpevent)转发**NetEventQueryRemoveDevice**事件传送至驱动程序堆栈中的下一个筛选器驱动程序。 这将导致调用该筛选器驱动程序的 NDIS *FilterNetPnPEvent*函数的事件代码**NetEventQueryRemoveDevice**。
-
-    **请注意**  NDIS 仅对播发的入口点的驱动程序堆栈中的下一个筛选器驱动程序执行此步骤[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)函数。
+    **请注意**  NDIS 仅对播发[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数入口点的筛选器驱动程序执行此步骤。 筛选器驱动程序在调用[**NdisFRegisterFilterDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfregisterfilterdriver)函数时公布此入口点。
 
      
 
-4.  驱动程序堆栈中的每个筛选器驱动程序重复上一步，直到堆栈中最高的筛选器驱动程序已转发**NetEventQueryRemoveDevice**事件。
+3.  在对其[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数的调用上下文中，筛选器驱动程序必须调用[**NdisFNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfnetpnpevent) ，将**NetEventQueryRemoveDevice**事件向上转发到驱动程序堆栈中的下一个筛选器驱动程序。 这会导致 NDIS 使用**NetEventQueryRemoveDevice**的事件代码调用该筛选器驱动程序的*FilterNetPnPEvent*函数。
 
-    当发生这种情况，将调用 NDIS [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)函数绑定到 NIC 的所有协议驱动程序 NDIS 此调用中指定的事件代码**NetEventQueryRemoveDevice**。
-
-5.  如果协议驱动程序失败**NetEventQueryRemoveDevice**事件通过返回失败代码 NDIS\_状态\_发生故障*ProtocolNetPnPEvent*，NDIS 或 PnP 管理器可能会忽略错误并随之成功[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求。 协议驱动程序因此，必须准备好处理删除的 NIC，即使协议驱动程序失败**NetEventQueryRemoveDevice**事件。
-
-6.  即插即用 manager 问题[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求要删除的 NIC 或软件表示形式（设备对象等）[**IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)取消挂起的删除请求。 请注意，IRP\_MN\_删除\_设备的请求始终前面没有 IRP\_MN\_查询\_删除\_设备的请求。
-
-7.  如果 PnP 管理器将发出 IRP\_MN\_取消\_删除\_设备请求、 NDIS 调用[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)的最小的函数附加到的 NIC 驱动程序堆栈中的筛选器驱动程序。 NDIS 此调用中指定的事件代码**NetEventCancelRemoveDevice**。
-
-    **请注意**  NDIS 执行此步骤中，仅对播发条目的筛选器驱动程序，为点[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)函数。
+    **请注意**  NDIS 只为驱动程序堆栈中的下一个筛选器驱动程序执行此步骤，该驱动程序堆栈会公布[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数的入口点。
 
      
 
-8.  对调用的上下文中其[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)函数，筛选器驱动程序必须调用[ **NdisFNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfnetpnpevent)转发**NetEventCancelRemoveDevice**事件传送至驱动程序堆栈中的下一个筛选器驱动程序。 这将导致调用该筛选器驱动程序的 NDIS *FilterNetPnPEvent*函数的事件代码**NetEventCancelRemoveDevice**。
+4.  驱动程序堆栈中的每个筛选器驱动程序重复上一步，直到堆栈中的最高筛选器驱动程序转发了**NetEventQueryRemoveDevice**事件。
 
-    **请注意**  NDIS 仅对播发的入口点的驱动程序堆栈中的下一个筛选器驱动程序执行此步骤[ *FilterNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_net_pnp_event)函数。
+    发生这种情况时，NDIS 会调用绑定到 NIC 的所有协议驱动程序的[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数。 在此调用中，NDIS 指定了**NetEventQueryRemoveDevice**的事件代码。
+
+5.  如果协议驱动程序在**NetEventQueryRemoveDevice**事件失败的情况下返回失败代码 NDIS\_状态\_从*ProtocolNetPnPEvent*失败，ndis 或 PnP 管理器可能会忽略该错误，并随后成功[**IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求。 因此，协议驱动程序必须准备好处理 NIC 的删除操作，即使协议驱动程序无法**NetEventQueryRemoveDevice**事件。
+
+6.  PnP 管理器发出[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求以删除 NIC 或[**IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)的软件表示（设备对象等）请求取消挂起的删除。 请注意，IRP\_MN\_删除\_设备请求并非始终以 IRP\_MN\_查询为前缀，\_删除\_设备请求。
+
+7.  如果 PnP 管理器颁发 IRP\_MN\_CANCEL\_删除\_设备请求，NDIS 将调用连接到驱动程序堆栈中的 NIC 的最低筛选器驱动程序的[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数。 在此调用中，NDIS 指定了**NetEventCancelRemoveDevice**的事件代码。
+
+    **请注意**  NDIS 仅对播发[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数入口点的筛选器驱动程序执行此步骤。
 
      
 
-9.  驱动程序堆栈中的每个筛选器驱动程序重复上一步，直到堆栈中最高的筛选器驱动程序已转发**NetEventCancelRemoveDevice**事件。
+8.  在对其[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数的调用上下文中，筛选器驱动程序必须调用[**NdisFNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfnetpnpevent) ，将**NetEventCancelRemoveDevice**事件向上转发到驱动程序堆栈中的下一个筛选器驱动程序。 这会导致 NDIS 使用**NetEventCancelRemoveDevice**的事件代码调用该筛选器驱动程序的*FilterNetPnPEvent*函数。
 
-    当发生这种情况，将调用 NDIS [ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)函数绑定到 NIC 的所有协议驱动程序 NDIS 此调用中指定的事件代码**NetEventCancelRemoveDevice**。 此事件代码结束处删除序列。
+    **请注意**  NDIS 只为驱动程序堆栈中的下一个筛选器驱动程序执行此步骤，该驱动程序堆栈会公布[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数的入口点。
 
-10. 如果 PnP 管理器将发出 IRP\_MN\_删除\_设备请求，NDIS 会执行以下步骤：
+     
 
-    1.  它将暂停所有协议驱动程序绑定到 nic。
+9.  驱动程序堆栈中的每个筛选器驱动程序重复上一步，直到堆栈中的最高筛选器驱动程序转发了**NetEventCancelRemoveDevice**事件。
 
-    2.  附加到 NIC 的所有筛选器驱动程序，它将暂停
+    发生这种情况时，NDIS 会调用绑定到 NIC 的所有协议驱动程序的[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数。 在此调用中，NDIS 指定了**NetEventCancelRemoveDevice**的事件代码。 此事件代码将结束删除序列。
 
-    3.  微型端口驱动程序的 NIC，它将暂停
+10. 如果 PnP 管理器颁发 IRP\_MN\_删除\_设备请求，NDIS 会执行以下步骤：
 
-    4.  它将调用[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)函数绑定到 NIC 的所有协议驱动程序
+    1.  它暂停绑定到 NIC 的所有协议驱动程序。
 
-    5.  它将调用[ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)附加到 NIC 的所有筛选器模块的函数
+    2.  它将暂停附加到 NIC 的所有筛选器驱动程序。
 
-11. NDIS 微型端口驱动程序已成功初始化，如果调用微型端口驱动程序[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数。 NDIS 集*HaltAction*的参数*MiniportHaltEx*到**NdisHaltDeviceDisabled**。
+    3.  它暂停 NIC 的微型端口驱动程序。
 
-12. NDIS 发送 IRP\_MN\_删除\_设备请求到堆栈中较低的下一个设备对象。
+    4.  它调用绑定到 NIC 的所有协议驱动程序的[*ProtocolUnbindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)函数。
 
-13. 当 NDIS 收到已完成的 IRP\_MN\_删除\_从下一个较低的设备的设备请求对象在堆栈中 NDIS 销毁功能的设备对象 (FDO) 创建的 nic。
+    5.  它调用附加到 NIC 的所有筛选器模块的[*FilterDetach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_detach)函数。
+
+11. 如果已成功初始化微型端口驱动程序，NDIS 将调用微型端口驱动程序的[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数。 NDIS 将*MiniportHaltEx*的*HaltAction*参数设置为**NdisHaltDeviceDisabled**。
+
+12. NDIS 将 IRP\_MN 发送\_删除\_设备请求发送到堆栈中的下一个较低设备对象。
+
+13. 当 NDIS 接收到完成的 IRP\_MN\_从堆栈中的下一个较低设备对象中删除\_设备请求，NDIS 会销毁为 NIC 创建的功能设备对象（FDO）。
 
  
 

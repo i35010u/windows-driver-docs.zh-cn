@@ -1,9 +1,9 @@
 ---
-title: '\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock function'
-description: '\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 将同步到相同的工作队列的阻塞 I/O 请求。'
+title: '\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 函数'
+description: '\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 将阻塞 i/o 请求同步到相同的工作队列。'
 ms.assetid: 350294ca-9790-4996-bcb5-1423db762c6e
 keywords:
-- __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 函数可安装文件系统驱动程序
+- __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 函数可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea8d4efae6fe18b0134eb7c8d6879bf49db4ea6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbc10cb53121c8a017fdaaca50f49466abd2dc32
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381028"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841521"
 ---
-# <a name="rxsynchronizeblockingoperationsmaybedroppingfcblock-function"></a>\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock function
+# <a name="__rxsynchronizeblockingoperationsmaybedroppingfcblock-function"></a>\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 函数
 
 
-**\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**同步到相同的工作队列的阻塞 I/O 请求。
+**\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将阻塞 i/o 请求同步到相同的工作队列。
 
 <a name="syntax"></a>语法
 ------
@@ -37,22 +37,22 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_正在同步的操作上下文。
+*RxContext* \[in，out\]  
+一个指针，指向正在同步的操作的 RX\_上下文。
 
-*BlockingIoQ* \[in、 out\]  
-一个指向列表\_队列的条目。
+*BlockingIoQ* \[in，out\]  
+指向队列的列表\_项的指针。
 
-*DropFcbLock* \[in\]  
-一个布尔值，该值指示是否应释放 FCB 资源。 如果此参数为 **，则返回 TRUE**，则将释放 FCB 资源。
+\] 中的*DropFcbLock* \[  
+指示是否应释放 FCB 资源的布尔值。 如果此参数为**TRUE**，则将释放 FCB 资源。
 
 <a name="return-value"></a>返回值
 ------------
 
-**\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将返回状态\_成功或适当的 NTSTATUS 值如以下之一成功：
+**\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**返回\_成功成功的状态，或者返回相应的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -68,11 +68,11 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_CANCELLED</strong></td>
-<td align="left"><p>已取消 I/O 请求和关联的 RX_CONTEXT。</p></td>
+<td align="left"><p>已取消 i/o 请求和关联的 RX_CONTEXT。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_PENDING</strong></td>
-<td align="left"><p><em>RxContext</em>是针对异步操作并<em>RxContext</em>已添加到队列。</p></td>
+<td align="left"><p><em>RxContext</em>用于异步操作， <em>RxContext</em>已添加到队列中。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,21 +82,21 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 <a name="remarks"></a>备注
 -------
 
-**\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock** 例程会同步到相同的工作队列的阻塞 I/O 请求。 使用 RDBSS  **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**内部同步名为管道操作。 工作队列是引用文件对象关联的扩展插件 (FOBX) 使用的队列**pFcb** RX 成员\_指向上下文结构*RxContext*。
+**\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**例程将阻塞 i/o 请求同步到相同的工作队列。 RDBSS 在内部使用 **\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock\_** 来同步命名管道操作。 工作队列是文件对象扩展（FOBX）所引用的队列，与*RxContext*指向的 RX\_上下文结构的**pFcb**成员关联。
 
-可以使用网络微型重定向 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**来同步对单独的队列是由网络微型重定向维护操作。
+网络小型重定向程序可能使用 **\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**来同步网络小型重定向程序维护的单独队列上的操作。
 
-如果*RxContext*标记的异步操作 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将添加*RxContext*队列并返回状态为\_PENDING。 如果*RxContext*标记为同步操作 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将阻止和*RxContext*到进行调用时恢复[ **RxResumeBlockedOperations\_串行**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)。
+如果*RxContext*被标记为异步操作， **\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**将*RxContext*添加到队列，并返回状态\_"挂起"。 如果*RxContext*被标记为同步操作，则当调用 RxResumeBlockedOperations 时，将阻止 **\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**和*RxContext*恢复[ **\_顺序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)。
 
-如果已取消阻塞 I/O 请求，  **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**返回状态\_以指示出错时已取消。
+如果已取消阻塞 i/o 请求，则 **\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**返回状态\_"已取消" 以指示错误。
 
-**SyncEvent** RX 成员\_指向上下文结构*RxContext*必须具有已重置之前，先 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**。 FCB 资源必须锁定，然后再调 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**如果*DropFcbLock*参数设置为 **，则返回 TRUE**。
+**\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock\_** 调用之前 *，必须先*重置**SyncEvent**的 RX\_上下文结构的成员。 如果*DropFcbLock*参数设置为**TRUE**，则必须先锁定 FCB 资源，然后才能调用 **\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock** 。
 
-在 Windows XP 和 Windows 2000 上为调用定义以下两个宏 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock** :
+以下两个宏在 Windows XP 和 Windows 2000 上定义，以便调用 **\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock** ：
 
-**RxSynchronizeBlockingOperations** -使用调用*DropFcbLock*参数设置为**FALSE**。
+**RxSynchronizeBlockingOperations** -将*DropFcbLock*参数设置为**FALSE**时调用。
 
-**RxSynchronizeBlockingOperationsAndDropFcbLock** -使用调用*DropFcbLock*参数设置为**TRUE**。
+**RxSynchronizeBlockingOperationsAndDropFcbLock** -将*DropFcbLock*参数设置为**TRUE**时调用。
 
 <a name="requirements"></a>要求
 ------------
@@ -109,37 +109,37 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Windows XP 和 Windows 2000 上才 __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 例程。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 例程仅在 Windows XP 和 Windows 2000 上可用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Rxcontx.h （包括 Rxcontx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Rxcontx （包括 Rxcontx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**RxCompleteRequest\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxcompleterequest_real)
+[**RxCompleteRequest\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxcompleterequest_real)
 
-[**RxCreateRxContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxcreaterxcontext)
+[**RxCreateRxContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxcreaterxcontext)
 
-[**RxDereference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdereference)
+[**RxDereference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdereference)
 
-[**RxDereferenceAndDeleteRxContext\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real)
+[**RxDereferenceAndDeleteRxContext\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real)
 
-[**RxInitializeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxinitializecontext)
+[**RxInitializeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxinitializecontext)
 
-[**RxPrepareContextForReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxpreparecontextforreuse)
+[**RxPrepareContextForReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxpreparecontextforreuse)
 
-[**RxResumeBlockedOperations\_Serially**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)
+[**RxResumeBlockedOperations\_串行**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)
 
-**[\_\_RxSynchronizeBlockingOperations](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)**
+[ **\_\_RxSynchronizeBlockingOperations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)
 
  
 

@@ -7,16 +7,16 @@ keywords:
 - 属性设置 WDK BDA，映射连接拓扑
 - 拓扑 WDK BDA
 - 映射连接拓扑
-- 映射 WDK BDA 连接拓扑
+- 连接拓扑映射 WDK BDA
 - BDA_TEMPLATE_CONNECTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a929406b41c719dbf76f5b617f0906d39361691
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0b332abd5689cbc915a632ffd7de3be0cd277841
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386640"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838044"
 ---
 # <a name="mapping-connection-topology"></a>映射连接拓扑
 
@@ -24,17 +24,17 @@ ms.locfileid: "67386640"
 
 
 
-为了使 BDA 支持库提供属性和方法添加到应用程序中的 3 环代表 BDA 微型驱动程序，BDA 微型驱动程序必须提供其到 BDA 支持库的连接拓扑的映射。 BDA 微型驱动程序提供了一个数组中的此映射[ **BDA\_模板\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_template_connection)结构。 BDA 微型驱动程序将传递此 BDA\_模板\_连接数组中的数组[ **KSTOPOLOGY\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)结构时，它调用[ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)支持函数。 请参阅[启动 BDA 微型驱动程序](starting-a-bda-minidriver.md)有关详细信息。 此数组提供的表示形式可在筛选器或筛选器和相邻的筛选器之间的节点和 pin 类型之间的所有可能的连接。
+为了使 BDA 支持库代表 BDA 微型驱动程序向第3环中的应用程序提供属性和方法，BDA 微型驱动程序必须提供其连接拓扑到 BDA 支持库的映射。 BDA 微型驱动程序在一个[**BDA\_模板**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_template_connection)的数组中提供此映射\_连接结构。 当 BDA 微型驱动程序调用[**BdaCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacreatefilterfactory)支持函数时，它会在[**KSTOPOLOGY\_连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstopology_connection)结构的数组中传递此 BDA\_模板\_连接数组。 有关详细信息，请参阅[启动 BDA 微型驱动程序](starting-a-bda-minidriver.md)。 此数组提供了可在筛选器之间或筛选器与相邻筛选器之间进行的节点和 pin 类型之间的所有可能连接的表示形式。
 
-网络提供程序筛选器可以随后进行 KSPROPERTY\_BDA\_模板\_的连接属性请求[KSPROPSETID\_BdaTopology](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdatopology)对筛选器设置属性若要检索微型驱动程序的连接拓扑 BDA 微型驱动程序的实例。 BDA 微型驱动程序将调用[ **BdaPropertyTemplateConnections** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertytemplateconnections)支持函数，返回列表的筛选器的模板连接 (BDA\_模板\_连接结构) 数组中的 KSTOPOLOGY\_连接结构。 成员 BDA\_模板\_连接结构标识以下对节点和 pin 的连接类型：
+然后，网络提供程序筛选器可以为 BDA 微型驱动程序的筛选器实例上设置的[KSPROPSETID\_BdaTopology](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdatopology)属性请求\_BDA\_模板\_连接属性请求，以检索微型驱动程序的连接拓扑。 BDA 微型驱动程序将调用[**BdaPropertyTemplateConnections**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertytemplateconnections)支持函数，该函数返回 KSTOPOLOGY 数组中筛选器模板连接（BDA\_模板\_连接结构）的列表\_连接结构。 BDA\_模板\_连接结构的成员识别连接的下列一对节点和固定类型：
 
--   连接的开始处的节点和 pin 码类型
+-   连接开始处的节点和固定类型
 
--   连接结束的位置的节点和 pin 码类型
+-   连接结束的节点和固定类型
 
-节点类型设置为 − 1 的值指示连接开始或结束于上游或下游筛选 pin 分别。 否则，节点类型的值对应于内部节点类型的从零开始的数组中元素的索引。 此数组是一个数组[ **KSNODE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksnode_descriptor)结构。 Pin 类型的值对应于 pin BDA 微型驱动程序的模板筛选器描述符中可用的类型的从零开始的数组中元素的索引。 此数组是一个数组[ **KSPIN\_描述符\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)结构。
+将节点类型设置为值−1表示连接在上游或下游筛选器的 pin 上分别开始或结束。 否则，节点类型的值对应于内部节点类型的从零开始的数组中的元素的索引。 此数组是[**KSNODE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksnode_descriptor)结构的数组。 固定类型的值对应于从零开始的 pin 类型数组中的元素索引，这些类型可用于 BDA 微型驱动程序的模板筛选器描述符。 此数组是[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的数组。
 
-下面的代码段显示了示例中，节点类型和可用 BDA 微型驱动程序模板筛选器描述符中的固定类型的数组：
+以下代码片段显示了可在 "BDA 微型驱动程序" 的模板筛选器描述符中使用的节点类型和固定类型的示例数组：
 
 ```cpp
 //
@@ -126,7 +126,7 @@ TemplatePinDescriptors[] =
 };
 ```
 
-下面的代码段显示了模板连接和关节的数组的示例：
+以下代码片段显示了模板连接和连接的数组的示例：
 
 ```cpp
 //

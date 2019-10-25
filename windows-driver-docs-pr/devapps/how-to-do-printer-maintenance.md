@@ -1,33 +1,33 @@
 ---
-title: 如何执行 UWP 设备应用中的打印机维护
-description: 在 Windows 8.1 UWP 设备应用程序可以执行打印机维护，如对齐打印头和清洗喷嘴。
+title: 如何在 UWP 设备应用中进行打印机维护
+description: 在 Windows 8.1 中，UWP 设备应用可以执行打印机维护，如对齐打印头和清洁喷嘴。
 ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1288d4566c91c52f74a8e31cab779be386144df
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a79ebb2a368cdefde97493870bd8e8ed6328aa96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369356"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829905"
 ---
-# <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>如何执行 UWP 设备应用中的打印机维护
+# <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>如何在 UWP 设备应用中进行打印机维护
 
 
-在 Windows 8.1 UWP 设备应用程序可以执行打印机维护，如对齐打印头和清洗喷嘴。 本主题使用C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例，用于演示如何使用双向通信 (Bidi) 来执行此类设备的维护。 若要在一般情况下了解有关 UWP 的设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+在 Windows 8.1 中，UWP 设备应用可以执行打印机维护，如对齐打印头和清洁喷嘴。 本主题使用C# [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例的版本来演示如何使用双向通信（双向）来执行此类设备维护。 若要详细了解 UWP 设备应用的详细信息，请参阅了解[uwp 设备应用](meet-uwp-device-apps.md)。
 
-C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例演示如何使用打印机维护**DeviceMaintenance.xaml.cs**中的文件**DeviceAppForPrinters2**项目。 若要使用 Bidi，该示例使用的打印机扩展库中**PrinterExtensionLibrary**项目。 打印机扩展库提供了方便地访问 v4 打印驱动程序的打印机扩展插件接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
+C# [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例的版本演示了在**DeviceAppForPrinters2**项目中通过**DeviceMaintenance.xaml.cs**文件进行的打印机维护。 若要使用双向，示例将在**PrinterExtensionLibrary**项目中使用打印机扩展库。 打印机扩展库提供了一种便捷的方式来访问 v4 打印驱动程序的打印机扩展接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
 
-**请注意**  本主题中所示的代码示例基于C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例。 此示例也会出现在 JavaScript 和C++。 请注意，由于C++可以直接访问 COMC++示例的版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
+**请注意**  本主题中所示的代码示例基于C# [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例的版本。 此示例在 JavaScript 和C++中也可用。 请注意， C++由于可以直接访问 COM， C++因此该示例的版本不包括代码库项目。 下载示例以查看最新版本的代码。
 
  
 
-## <a name="span-idprintermaintenancespanspan-idprintermaintenancespanspan-idprintermaintenancespanprinter-maintenance"></a><span id="Printer_maintenance"></span><span id="printer_maintenance"></span><span id="PRINTER_MAINTENANCE"></span>打印机的维护
+## <a name="span-idprinter_maintenancespanspan-idprinter_maintenancespanspan-idprinter_maintenancespanprinter-maintenance"></a><span id="Printer_maintenance"></span><span id="printer_maintenance"></span><span id="PRINTER_MAINTENANCE"></span>打印机维护
 
 
-Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备维护 v4 打印机驱动程序中：[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)， [ **IPrinterExtensionAsyncOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation) ，以及[ **IPrinterQueue2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2). 这些接口使能够以异步方式将 Bidi 请求发送到端口监视器，以便他们可以转换为设备和特定于协议的命令，然后发送到打印机。 有关详细信息，请参阅[设备维护 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)。
+Windows 8.1 在 v4 打印机驱动程序中引入了新的打印机扩展接口，可用于实现设备维护： [**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterbidisetrequestcallback)、 [**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensionasyncoperation)和[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)。 通过这些接口，可以将双向请求异步发送到端口监视器，以便将其转换为设备和特定于协议的命令，然后将其发送到打印机。 有关详细信息，请参阅[设备维护（V4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)。
 
-**提示**   C#和 JavaScript 应用程序不能直接使用 COM Api。 如果您要编写C#或 JavaScript UWP 设备应用，使用打印机扩展库来访问这些接口 （如本主题中所示）。
+**Tip**  C#和 JavaScript 应用无法直接与 COM api 一起使用。 如果要编写C#或 JavaScript UWP 设备应用，请使用打印机扩展库来访问这些接口（如本主题中所述）。
 
  
 
@@ -36,22 +36,22 @@ Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备�
 
 开始之前：
 
-1.  请确保使用 v4 打印驱动程序安装您的打印机。 有关详细信息，请参阅[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
-2.  获取对开发计算机设置。 请参阅[入门](getting-started.md)有关下载工具和创建开发人员帐户信息。
-3.  将你的应用与应用商店相关联。 请参阅[创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)有关的信息。
-4.  创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
-5.  构建您的应用程序的主页上的 UI。 可以从开始，它们将显示的全屏启动所有 UWP 设备应用程序。 使用入门体验突出显示你的产品或匹配特定品牌的方式和你的设备的功能中的服务。 没有任何特殊限制可以使用 UI 控件的类型。 若要开始使用的设计的全屏体验，请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
-6.  如果您正在编写您编写的应用程序与C#或 JavaScript 中，添加**PrinterExtensionLibrary**到 UWP 设备应用程序解决方案的项目。 您可以找到此项目中的[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例。
-    **请注意**  由于C++可以直接访问 COMC++应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
+1.  请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
+2.  设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
+3.  将应用与应用商店相关联。 请参阅[创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)了解相关信息。
+4.  为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅[创建设备元数据](step-2--create-device-metadata.md)。
+5.  构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
+6.  如果你正在编写你的C#应用程序或 JavaScript，请将**PrinterExtensionLibrary**项目添加到 UWP 设备应用解决方案。 可以在[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例中找到此项目。
+    **请注意**  C++因为可以直接访问 com C++ ，所以应用不需要单独的库即可使用基于 COM 的打印机设备上下文。
 
      
 
-## <a name="span-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>步骤 1：准备 Bidi 请求
+## <a name="span-idstep_1__prepare_bidi_requestspanspan-idstep_1__prepare_bidi_requestspanspan-idstep_1__prepare_bidi_requestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>步骤1：准备双向请求
 
 
-设备维护接口需要 Bidi 请求是 XML 数据形式的字符串。 适当的时候应用程序中，您可以构建 Bidi 请求。 例如，无法将 Bidi 请求另存为字符串常量或动态创建它们根据用户输入。 [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例恰好构造中的默认请求`OnNavigatedTo`方法。 Bidi 的详细信息，请参阅[的双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)。
+设备维护接口要求双向请求为字符串形式的 XML 数据。 可以在应用中有意义的地方构造双向请求。 例如，可以将双向请求保存为字符串常量，或根据用户输入动态创建它们。 [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例发生在 `OnNavigatedTo` 方法中构造默认请求。 有关双向的详细信息，请参阅[双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)。
 
-此示例摘自`OnNavigatedTo`方法**DeviceMaintenance.xaml.cs**文件。
+此示例来自**DeviceMaintenance.xaml.cs**文件的 `OnNavigatedTo` 方法。
 
 ```CSharp
 string defaultBidiQuery =
@@ -62,12 +62,12 @@ string defaultBidiQuery =
     "</bidi:Set>";
 ```
 
-## <a name="span-idstep2findprinterspanspan-idstep2findprinterspanspan-idstep2findprinterspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>步骤 2：查找打印机
+## <a name="span-idstep_2__find_printerspanspan-idstep_2__find_printerspanspan-idstep_2__find_printerspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>步骤2：查找打印机
 
 
-您的应用程序可以将命令发送到打印机之前，它首先必须找到打印机。 若要执行此操作，[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例包含一个名为的方便类`PrinterEnumeration`(在**PrinterEnumeration.cs**文件)。 此类查找与您的应用程序通过设备元数据相关联的所有打印机并返回一系列`PrinterInfo`对象，包含为每个打印机的设备 Id 和名称。
+在您的应用程序可以将命令发送到打印机之前，必须先找到打印机。 要执行此操作，[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例包含一个名为 `PrinterEnumeration` 的便利类（在**PrinterEnumeration.cs**文件中）。 此类通过设备元数据查找与应用程序关联的所有打印机，并返回 `PrinterInfo` 对象的列表，其中包含每个打印机的名称和设备 Id。
 
-此示例摘自`EnumeratePrinters_Click`方法**DeviceMaintenance.xaml.cs**文件。 它显示如何使用示例`PrinterEnumeration`类，以获取一组相关联的打印机。
+此示例来自**DeviceMaintenance.xaml.cs**文件的 `EnumeratePrinters_Click` 方法。 其中显示了该示例如何使用 `PrinterEnumeration` 类获取关联打印机的列表。
 
 ```CSharp
 private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
@@ -102,16 +102,16 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**提示**  有关详细信息`PrinterEnumeration`并`PrinterInfo`类，请参见**PrinterEnumeration.cs**文件。
+**提示**  有关 `PrinterEnumeration` 和 `PrinterInfo` 类的详细信息，请参阅**PrinterEnumeration.cs**文件。
 
  
 
-## <a name="span-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>步骤 3：发送 Bidi 请求
+## <a name="span-idstep_3__send_bidi_requestspanspan-idstep_3__send_bidi_requestspanspan-idstep_3__send_bidi_requestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>步骤3：发送双向请求
 
 
-若要发送 Bidi 请求，则设备维护接口要求在 Bidi 字符串和一个回调。 在中`SendBidiRequest_Click`方法，该示例首先使用`PrinterInfo`对象来创建一个名为打印机扩展上下文对象`context`。 然后`PrinterBidiSetRequestCallback`创建对象，并添加事件处理程序以处理回调的`OnBidiResponseReceived`事件。 最后，打印机扩展上下文的`SendBidiSetRequestAsync`方法用于发送 Bidi 字符串和回调。
+若要发送双向请求，设备维护接口需要双向字符串和回调。 在 `SendBidiRequest_Click` 方法中，示例首先使用 `PrinterInfo` 对象创建名为 `context`的打印机扩展上下文对象。 然后，将创建一个 `PrinterBidiSetRequestCallback` 对象，并添加一个事件处理程序来处理回调的 `OnBidiResponseReceived` 事件。 最后，打印机扩展上下文的 `SendBidiSetRequestAsync` 方法用于发送双向字符串和回调。
 
-此示例摘自`SendBidiRequest_Click`方法**DeviceMaintenance.xaml.cs**文件。
+此示例来自**DeviceMaintenance.xaml.cs**文件的 `SendBidiRequest_Click` 方法。
 
 ```CSharp
 private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
@@ -145,12 +145,12 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="span-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>步骤 4：接收 Bidi 响应
+## <a name="span-idstep_4__receive_bidi_responsespanspan-idstep_4__receive_bidi_responsespanspan-idstep_4__receive_bidi_responsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>步骤4：接收双向响应
 
 
-完成 Bidi"set"操作时，类型的回调对象， `PrinterBidiSetRequestCallback`，调用。 此回调负责处理的错误处理从 HRESULT 响应，然后触发`OnBidiResponseReceived`事件，发送 Bidi 响应通过事件参数。
+当双向 "set" 操作完成时，将调用类型 `PrinterBidiSetRequestCallback`的回调对象。 此回调负责处理 HRESULT 响应中的错误，然后触发 `OnBidiResponseReceived` 事件，通过事件参数发送双向响应。
 
-此示例演示`PrinterBidiSetRequestCallback`类中的定义**DeviceMaintenance.xaml.cs**文件。
+此示例显示了**DeviceMaintenance.xaml.cs**文件中的 `PrinterBidiSetRequestCallback` 类定义。
 
 ```CSharp
 internal class PrinterBidiSetRequestCallback : IPrinterBidiSetRequestCallback
@@ -183,9 +183,9 @@ internal class PrinterBidiSetRequestCallback : IPrinterBidiSetRequestCallback
 }
 ```
 
-Bidi 响应然后发送到`OnBidiResponseReceived`方法，其中`Dispatcher`用于在 UI 线程上显示结果。
+然后将双向响应发送到 `OnBidiResponseReceived` 方法，其中 `Dispatcher` 用于在 UI 线程上显示结果。
 
-此示例摘自`OnBidiResponseReceived`方法**DeviceMaintenance.xaml.cs**文件。
+此示例来自**DeviceMaintenance.xaml.cs**文件的 `OnBidiResponseReceived` 方法。
 
 ```CSharp
 internal async void OnBidiResponseReceived(object sender, string bidiResponse)
@@ -200,44 +200,44 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 ## <a name="span-idtestingspanspan-idtestingspantesting"></a><span id="testing"></span><span id="TESTING"></span>测试
 
 
-你可以测试 UWP 设备应用之前，它必须链接到您的打印机使用的设备元数据。
+在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
--   需要打印机的位置，若要向其中添加设备应用信息的设备元数据包的副本。 如果没有设备元数据，您可以使用生成它**设备元数据创建向导**主题中所述[创建 UWP 设备应用的设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+-   你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用**设备元数据创作向导**生成它，如主题为[UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)中所述。
 
-    **请注意**  若要使用**设备元数据创建向导**，则必须安装 Microsoft Visual Studio Professional，Microsoft Visual Studio Ultimate，或[独立 SDK 的 Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)之前完成本主题中的步骤。 安装 Microsoft Visual Studio Express 的 Windows 安装不包括在向导的 sdk 版本。
+    **请注意**  要使用**设备元数据创作向导**，则必须在完成本主题中的步骤之前，安装 Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate 或[独立 SDK for Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)。 为 Windows 安装 Microsoft Visual Studio Express 会安装不包括向导的 SDK 版本。
 
      
 
-以下步骤生成您的应用程序并安装设备元数据。
+以下步骤生成应用并安装设备元数据。
 
 1.  启用测试签名。
-    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
-    2.  从**工具**菜单中，选择**启用测试签名**。
+    1.  双击**DeviceMetadataWizard** ，从 *% ProgramFiles （x86）%* \\Windows 工具包\\8.1\\Bin\\X86 启动**设备元数据创作向导**
+    2.  从 "**工具**" 菜单中，选择 "**启用测试签名**"。
 
 2.  重新启动计算机
-3.  通过打开解决方案 (.sln) 文件生成解决方案。 按 F7，或转至**生成-&gt;生成解决方案**从顶部菜单中加载示例之后。
+3.  通过打开解决方案（.sln）文件来生成解决方案。 加载示例后，按 F7 或从顶部菜单中转到 "**生成-&gt;生成解决方案**"。
 
-4.  断开连接并卸载打印机。 此步骤是必需的以便 Windows 将在下一次检测到设备读取更新的设备元数据。
-5.  编辑并保存设备元数据。 要链接到你的设备的设备应用，必须将设备应用与你的设备进行关联。
-    **请注意**  如果尚未创建设备元数据，请参阅[创建 UWP 设备应用的设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+4.  断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
+5.  编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备。
+    **请注意**  如果尚未创建设备元数据，请参阅为[UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
 
      
 
-    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %* \\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
-    2.  单击**编辑设备元数据**。 这样就可以编辑现有的设备元数据包。
-    3.  在中**打开**对话框框中，找到与 UWP 设备应用程序相关联的设备元数据包。 (它具有**devicemetadata ms**文件扩展名。)
-    4.  上**指定 UWP 设备应用信息**页上，输入中的 Microsoft Store 应用信息**UWP 设备应用**框。 单击**导入 UWP 应用程序清单文件**自动输入**包名称**，**发布服务器的名称**，以及**UWP 应用程序 ID**。
-    5.  如果您的应用程序注册的打印机通知，填写**通知处理程序**框。 在中**事件 ID**，输入打印事件处理程序的名称。 在中**事件资产**，输入该代码所在的位置的文件的名称。
+    1.  如果尚未打开**设备元数据创作向导**，请通过双击**DeviceMetadataWizard**，从 *% ProgramFiles （X86）%* \\Windows 工具包\\8.1\\bin\\x86 启动它。
+    2.  单击 "**编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
+    3.  在 "**打开**" 对话框中，找到与 UWP 设备应用关联的设备元数据包。 （它具有**devicemetadata 的**文件扩展名。）
+    4.  在 "**指定 uwp 设备应用信息**" 页上，在 " **UWP 设备应用**" 框中输入 Microsoft Store 应用信息。 单击 "**导入 UWP 应用程序清单文件**" 以自动输入**包名称**、**发布者名称**和**UWP 应用 ID**。
+    5.  如果你的应用正在注册打印机通知，请填写**通知处理程序**框。 在 "**事件 ID**" 中，输入打印事件处理程序的名称。 在 "**事件资产**" 中，输入代码所在的文件的名称。
 
-    6.  完成后，单击**下一步**直至到达**完成**页。
-    7.  上**查看设备元数据包**页面上，确保所有设置都正确，然后选择**复制到本地计算机上的元数据存储设备元数据包**复选框。 然后单击**保存**。
+    6.  完成后，单击 "**下一步**"，直到到达 "**完成**" 页。
+    7.  在 "**查看设备元数据包**" 页上，确保所有设置均正确，并选中 "将**设备元数据包复制到本地计算机上的元数据存储区**" 复选框。 然后单击 "**保存**"。
 
-6.  重新连接您的打印机，以便在设备连接时，该 Windows 读取更新的设备元数据。
+6.  重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[设备维护 （v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
+[设备维护（v4 打印机驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 
@@ -245,9 +245,9 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 
 [UWP 应用入门](getting-started.md)
 
-[创建 UWP 设备应用程序 （分步指南）](step-1--create-a-uwp-device-app.md)
+[创建 UWP 设备应用（分步指南）](step-1--create-a-uwp-device-app.md)
 
-[创建设备元数据对 UWP 设备应用 （分步指南）](step-2--create-device-metadata.md)
+[为 UWP 设备应用创建设备元数据（循序渐进指南）](step-2--create-device-metadata.md)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 强制卸载 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 486e4fdc67301b528378a1bc63a573d3e2a21101
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c575349d7cfca834401df1cc0abab7a8d0f97e62
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385308"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840933"
 ---
 # <a name="when-the-filterunloadcallback-routine-is-called"></a>调用 FilterUnloadCallback 例程时
 
@@ -21,21 +21,21 @@ ms.locfileid: "67385308"
 ## <span id="ddk_when_the_filterunloadcallback_routine_is_called_if"></span><span id="DDK_WHEN_THE_FILTERUNLOADCALLBACK_ROUTINE_IS_CALLED_IF"></span>
 
 
-筛选器管理器调用微筛选器驱动程序[ **FilterUnloadCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)例程卸载前倒带微筛选器驱动程序通过以下方式之一：
+在卸载微筛选器驱动程序之前，筛选器管理器会调用微筛选器驱动程序的[**FilterUnloadCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_filter_unload_callback)例程，方法如下：
 
--   *非强制卸载*。 用户模式应用程序已调用时发生这种类型的卸载[ **FilterUnload** ](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filterunload)或内核模式驱动程序调用[ **FltUnloadFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltunloadfilter). 它也会发生时您键入**fltmc unload**在命令提示符处。
+-   *非强制卸载*。 当用户模式应用程序调用[**FilterUnload**](https://docs.microsoft.com/windows/desktop/api/fltuser/nf-fltuser-filterunload)或内核模式驱动程序调用[**FltUnloadFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltunloadfilter)时，会发生这种类型的卸载。 在命令提示符下键入**fltmc unload**也会出现这种情况。
 
--   *强制卸载*。 通过键入发出服务停止请求时，会发生这种类型的卸载**sc stop**或**net stop**在命令提示符处。 (有关详细信息**sc stop**并**net stop**命令，单击**帮助和支持**开始菜单上。)它也会发生时在用户模式应用程序调用 Microsoft Win32 **control 服务**函数，向服务传递\_控件\_停止控制代码作为*dwControl*参数。 （有关 Win32 服务功能的详细信息，请参阅 Microsoft Windows SDK 文档）。
+-   *强制卸载*。 当你在命令提示符下键入**sc stop**或**net stop**发出服务停止请求时，将发生这种类型的卸载。 （有关**sc stop**和**net stop**命令的详细信息，请单击 "开始" 菜单上的 "**帮助和支持**"。）在用户模式应用程序调用 Microsoft Win32 **control 服务**函数时，也会发生这种情况，将服务\_控制传递\_停止控制代码作为*dwControl*参数。 （有关 Win32 服务功能的详细信息，请参阅 Microsoft Windows SDK 文档。）
 
-对于非强制卸载如果微筛选器驱动程序*FilterUnloadCallback*例程将返回一个错误或警告的 NTSTATUS 值，如状态\_FLT\_不要\_不\_拆离方法，筛选器管理器不会卸载微筛选器驱动程序。
+对于非强制卸载，如果微筛选器驱动程序的*FilterUnloadCallback*例程返回错误或警告 NTSTATUS 值（如 STATUS\_FLT\_执行\_不\_分离，则筛选器管理器不会卸载微筛选器驱动器.
 
-为要强制卸载，筛选器管理器卸载微筛选器驱动程序在微筛选器驱动程序的后*FilterUnloadCallback*调用例程时，即使*FilterUnloadCallback*例程返回错误或警告 NTSTATUS 值，如状态\_FLT\_不要\_不\_分离。
+对于必需的卸载，筛选器管理器会在调用微筛选器驱动程序的*FilterUnloadCallback*例程后卸载微筛选器驱动程序，即使*FilterUnloadCallback*例程返回错误或警告 NTSTATUS 值（如状态\_FLT\_是否\_不\_分离。
 
-若要禁用强制卸载微筛选器驱动程序，微筛选器驱动程序设置 FLTFL\_注册\_不要\_不\_支持\_服务\_中的停止标志**标志**的成员[ **FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)微筛选器驱动程序将作为参数传递的结构[ **FltRegisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltregisterfilter)在其**DriverEntry**例程。 当设置此标志时，筛选器管理器通常会处理非强制卸载请求。 但是，强制卸载请求将失败。 筛选器管理器不会调用微筛选器驱动程序*FilterUnloadCallback*例程失败的卸载请求。
+若要禁用微筛选器驱动程序的强制卸载，微筛选器驱动程序将设置 FLTFL\_注册\_在 FLT 的**Flags**成员中\_不\_支持\_SERVICE\_停止标志[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)微筛选器驱动程序作为参数传递给[**FltRegisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltregisterfilter)在其**DRIVERENTRY**例程中的注册结构。 设置此标志后，筛选器管理器通常会处理非强制卸载请求。 但是，必需的 unload 请求将会失败。 筛选器管理器不会为失败的卸载请求调用微筛选器驱动程序的*FilterUnloadCallback*例程。
 
-请注意，如果微筛选器驱动程序**DriverEntry**例程将返回警告或错误 NTSTATUS 值*FilterUnloadCallback*不调用例程; 筛选器管理器只需卸载微筛选器驱动程序。
+请注意，如果微筛选器驱动程序的**DriverEntry**例程返回一个警告或错误 NTSTATUS 值，则不会调用*FilterUnloadCallback*例程;筛选器管理器只需卸载微筛选器驱动程序。
 
-*FilterUnloadCallback*例程不在系统关闭时调用。 必须执行关闭处理微筛选器驱动程序应注册 IRP preoperation 回调例程\_MJ\_关闭操作。
+系统关闭时不会调用*FilterUnloadCallback*例程。 必须执行关闭处理的微筛选器驱动程序应为 IRP\_MJ\_关闭操作注册一个 preoperation 回调例程。
 
  
 

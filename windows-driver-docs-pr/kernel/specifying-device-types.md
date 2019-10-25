@@ -7,12 +7,12 @@ keywords:
 - 设备类型 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42e5b2d36c9b2f754c26d319d6e2c98077b27f48
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65bc2576b84791b73b17277bc09877e8d292c5e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383008"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838418"
 ---
 # <a name="specifying-device-types"></a>指定设备类型
 
@@ -20,11 +20,11 @@ ms.locfileid: "67383008"
 
 
 
-每个设备对象都*设备类型*，这存储在**DeviceType**的成员及其[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。 设备类型表示的基础硬件的驱动程序的类型。
+每个设备对象都有一个*设备类型*，它存储在其[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**DeviceType**成员中。 设备类型表示驱动程序的底层硬件类型。
 
-调用时，创建一个设备对象每个内核模式驱动程序必须指定相应的设备类型值[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)。 **IoCreateDevice**例程使用提供的设备类型来初始化**DeviceType**的成员**设备\_对象**结构。
+在调用[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)时，创建设备对象的每个内核模式驱动程序都必须指定适当的设备类型值。 **IoCreateDevice**例程使用提供的设备类型来初始化**设备\_对象**结构的**DeviceType**成员。
 
-系统定义以下设备类型值，按字母顺序列出：
+系统定义下列设备类型值，这些值按字母顺序列出：
 
 ```cpp
 #define FILE_DEVICE_8042_PORT           0x00000027
@@ -87,15 +87,15 @@ ms.locfileid: "67383008"
 #define FILE_DEVICE_WAVE_OUT            0x00000026
 ```
 
-这些常量中 Ntddk.h 和 wdm.h 中定义。 检查这些文件以查看是否已定义了其他设备类型。
+这些常量在 Ntddk 和 Wdm 中定义。 检查这些文件以查看是否已定义其他设备类型。
 
-该文件\_设备\_磁盘规范介绍磁盘分区和显示为磁盘的任何对象。
+文件\_设备\_磁盘规范包含磁盘分区以及显示为磁盘的任何对象。
 
-通常，中间驱动程序指定表示基础设备的设备类型。 例如，系统提供的容错磁盘驱动程序， *ftdisk*，创建的文件类型的设备对象\_设备\_磁盘; 它不定义镜像集、 带区集和卷的新设备类型它所管理的设置。
+中间驱动程序通常指定表示基础设备的设备类型。 例如，系统提供的容错磁盘驱动程序*ftdisk*将创建文件类型的设备对象\_设备\_磁盘;它不会为镜像集、带区集和它所管理的卷集定义新设备类型。
 
-文件\_设备\_*XXX* 0 到 32767 之间的范围内的值仅供 Microsoft。 所有驱动程序编写器必须属于的系统定义的设备类型的设备使用这些系统定义的常量。
+在0到32767范围内的文件\_设备\_*XXX*值是为 Microsoft 保留的。 对于属于系统定义的设备类型的设备，所有驱动程序编写器都必须使用这些系统定义的常量。
 
-如果硬件类型与任何定义的类型不匹配，或者文件的值指定\_设备\_未知或 32768 到 65535 的范围内的值。
+如果某种类型的硬件不匹配任何定义的类型，请指定 "FILE\_设备"\_"未知" 的值，或指定范围在32768到65535范围内的值。
 
  
 

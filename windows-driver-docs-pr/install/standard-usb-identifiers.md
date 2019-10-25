@@ -4,16 +4,16 @@ description: 标准 USB 标识符
 ms.assetid: 39acb62b-83f2-4d14-a678-c37817193f01
 keywords:
 - USB 标识符 WDK 设备安装
-- 单个接口 WDK USB 设备
-- 多个接口 WDK USB 设备
+- 单接口设备 WDK USB
+- 多接口设备 WDK USB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc4bdfcdfa0d373d8012ad0149db482c261c574b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9b96dee6e69ed2eef4deecde8c3de704acabf9aa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385885"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837350"
 ---
 # <a name="standard-usb-identifiers"></a>标准 USB 标识符
 
@@ -21,81 +21,81 @@ ms.locfileid: "67385885"
 
 
 
-<a href="" id="the-set-of-identifiers-generated-for-usb-devices-depends-on-whether-the-device-is-a-single-interface-device-or-a-multiple-interface-device-"></a>标识符为 USB 设备生成的集取决于设备是单个接口设备或多个接口设备。  
+<a href="" id="the-set-of-identifiers-generated-for-usb-devices-depends-on-whether-the-device-is-a-single-interface-device-or-a-multiple-interface-device-"></a>为 USB 设备生成的标识符集取决于设备是单接口设备还是多接口设备。  
 
-### <a name="single-interface-usb-devices"></a>单个接口 USB 设备
+### <a name="single-interface-usb-devices"></a>单接口 USB 设备
 
-当在插入新的 USB 设备时，系统提供的 USB 集线器驱动程序通过使用设备的设备描述符从提取的信息来组合下列设备 ID:
+插入新的 USB 设备时，系统提供的 USB 集线器驱动程序将使用从设备的设备描述符中提取的信息来撰写以下设备 ID：
 
-USB\\VID_v(4)&PID_d(4)&REV_r(4)
-
-其中：
-
--   *v(4)* 是 USB 委员会将分配给供应商的 4 位供应商代码。
-
--   *d(4)* 是供应商将分配给设备的 4 个数字的产品代码。
-
--   *r(4)* 是修订代码。
-
-中心驱动程序提取从供应商和产品代码*idVendor*并*idProduct*设备描述符字段分别。
-
-INF 模型部分还可以指定以下硬件 ID:
-
-USB\\VID_v(4)&PID_d(4)
-
-和以下兼容 Id:
-
-USB\\CLASS_c(2)&SUBCLASS_s(2)&PROT_p(2)
-
-USB\\CLASS_c(2)&SUBCLASS_s(2)
-
-USB\\CLASS_c(2)
+USB\\VID_v （4） & PID_d （4） & REV_r （4）
 
 其中：
 
--   *c(2)* 是取自设备描述符的设备类代码。
+-   *v （4）* 是 USB 委员会分配给供应商的4位数供应商代码。
 
--   *s(2)* 是设备子类代码。
+-   *d （4）* 是供应商分配给设备的4位数的产品代码。
 
--   *p(2)* 是协议代码。
+-   *r （4）* 是版本代码。
 
-设备类代码、 子类代码和协议代码由*bDeviceClass，bDeviceSubClass，* 并*bDeviceProtocol*设备描述符字段分别。 这些是两位数的数字。
+集线器驱动程序分别从设备描述符的*idVendor*和*idProduct*字段中提取供应商和产品代码。
 
-### <a name="multiple-interface-usb-devices"></a>多个接口 USB 设备
+INF 模型部分还可以指定以下硬件 ID：
 
-设备具有多个接口称为*复合*设备。 从 Windows 2000 中，新建[USB 复合设备](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)插入到一台计算机，USB 集线器驱动程序创建一个物理设备对象 (PDO)，并通知其的子设备集已更改的操作系统。 查询使用新的 PDO 相关联的硬件标识符的中心驱动程序后, 操作系统搜索相应的 INF 文件，查找匹配项的标识符。 如果它找到的匹配项以外*USB\\复合*，它会加载驱动程序 INF 文件中指定。 但是，如果不找到任何其他匹配项，则操作系统将使用兼容 ID *USB\\复合*，它将加载通用父表 USB 驱动程序。 泛型父驱动程序然后创建一个单独的 PDO，并生成一组单独的复合设备的每个接口的硬件标识符。
+USB\\VID_v （4） & PID_d （4）
 
-每个接口具有以下形式的设备 ID:
+和以下兼容 Id：
 
-USB\\ VID_v(4)&PID_d(4)&MI_z(2)
+USB\\CLASS_c （2） & SUBCLASS_s （2） & PROT_p （2）
+
+USB\\CLASS_c （2） & SUBCLASS_s （2）
+
+USB\\CLASS_c （2）
 
 其中：
 
--   *v(4)* 是 USB 委员会将分配给供应商的 4 位供应商代码。
+-   *c （2）* 是从设备描述符获取的设备类代码。
 
--   *d(4)* 是供应商将分配给设备的 4 个数字的产品代码。
+-   *s （2）* 是设备子类代码。
 
--   *z(2)* 是从提取接口编号*bInterfaceNumber*接口描述符字段。
+-   *p （2）* 是协议代码。
 
-INF 模型部分还可以指定以下兼容 Id:
+设备类代码、子类代码和协议代码分别由设备描述符的*bDeviceClass、bDeviceSubClass*和*bDeviceProtocol*字段决定。 它们是2位数字。
 
-USB\\CLASS_d(2)&SUBCLASS_s(2)&PROT_p(2)
+### <a name="multiple-interface-usb-devices"></a>多接口 USB 设备
 
-USB\\CLASS_d(2)&SUBCLASS_s(2)
+具有多个接口的设备称为*复合*设备。 从 Windows 2000 开始，当新的[USB 复合设备](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)插入计算机时，usb 集线器驱动程序将创建一个物理设备对象（PDO），并通知操作系统其一组子设备已更改。 查询用于与新 PDO 关联的硬件标识符的集线器驱动程序后，操作系统会搜索相应的 INF 文件以查找标识符的匹配项。 如果找到除*USB\\复合*以外的匹配项，它将加载 INF 文件中指示的驱动程序。 但是，如果未找到任何其他匹配项，则操作系统将使用兼容的 ID *usb\\复合*，并为其加载 Usb 通用父驱动程序。 然后，一般父驱动程序创建一个单独的 PDO，并为复合设备的每个接口生成一组单独的硬件标识符。
 
-USB\\CLASS_d(2)
+每个接口都具有以下形式的设备 ID：
+
+USB\\ VID_v （4） & PID_d （4） & MI_z （2）
+
+其中：
+
+-   *v （4）* 是 USB 委员会分配给供应商的4位数供应商代码。
+
+-   *d （4）* 是供应商分配给设备的4位数的产品代码。
+
+-   *z （2）* 是从接口描述符的*bInterfaceNumber*字段中提取的接口号。
+
+INF 模型部分还可以指定以下兼容 Id：
+
+USB\\CLASS_d （2） & SUBCLASS_s （2） & PROT_p （2）
+
+USB\\CLASS_d （2） & SUBCLASS_s （2）
+
+USB\\CLASS_d （2）
 
 USB\\复合
 
 其中：
 
--   *d(2)* 是取自设备描述符的设备类代码。
+-   *d （2）* 是从设备描述符获取的设备类代码。
 
--   *s(2)* 是子类代码。
+-   *s （2）* 是子类代码。
 
--   *p(2)* 是协议代码。
+-   *p （2）* 是协议代码。
 
-设备类代码、 子类代码和协议代码由*bInterfaceClass，bInterfaceSubClass，和 bInterfaceProtocol*接口描述符字段分别。 这些是两位数的数字。
+设备类代码、子类代码和协议代码分别由接口描述符中的*bInterfaceClass、bInterfaceSubClass 和 bInterfaceProtocol*字段决定。 它们是2位数字。
 
  
 

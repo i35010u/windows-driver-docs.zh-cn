@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_暴露\_相对
-description: KSPROPERTY\_CAMERACONTROL\_暴露\_相对属性指定的电子快门速度。
+title: KSPROPERTY\_CAMERACONTROL\_泄露\_相对
+description: KSPROPERTY\_CAMERACONTROL\_曝露\_相对属性指定电子快门速度。
 ms.assetid: a4003fcd-9dc8-4889-9ce0-e4f09273d152
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 533147dda5f4daa999cc54e15b7a075018346e75
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3039b8c504099530266d6877287fd9c99d5ef3bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355412"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843250"
 ---
-# <a name="kspropertycameracontrolexposurerelative"></a>KSPROPERTY\_CAMERACONTROL\_暴露\_相对
+# <a name="ksproperty_cameracontrol_exposure_relative"></a>KSPROPERTY\_CAMERACONTROL\_泄露\_相对
 
 
-KSPROPERTY\_CAMERACONTROL\_暴露\_相对属性指定的电子快门速度。
+KSPROPERTY\_CAMERACONTROL\_曝露\_相对属性指定电子快门速度。
 
 ## <span id="ddk_ksproperty_cameracontrol_exposure_relative_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_CAMERACONTROL\_暴露\_相对属性指定的电子快门速度。
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,18 +50,18 @@ KSPROPERTY\_CAMERACONTROL\_暴露\_相对属性指定的电子快门速度。
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>长</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p>漫长</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 为指定照相机的相对风险设置长时间。 步骤大小与硬件相关。 若要确定步骤大小，可以发出 get 请求上[ **KSPROPERTY\_CAMERACONTROL\_暴露**](ksproperty-cameracontrol-exposure.md)属性。
+属性值（操作数据）是指定相机相对曝光设置的 LONG。 步骤大小与硬件相关。 若要确定步长大小，可以在[**KSPROPERTY\_CAMERACONTROL\_曝露**](ksproperty-cameracontrol-exposure.md)属性上发出 get 请求。
 
 <table>
 <colgroup>
@@ -70,22 +70,22 @@ KSPROPERTY\_CAMERACONTROL\_暴露\_相对属性指定的电子快门速度。
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
-<th>Description</th>
+<th>Value</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>0</p></td>
-<td><p>设置为特定于实现的默认值的暴露时间。</p></td>
+<td><p>将 "公开时间" 设置为特定于实现的默认值。</p></td>
 </tr>
 <tr class="even">
 <td><p>正值</p></td>
-<td><p>通过一个步骤中增加的暴露时间。</p></td>
+<td><p>按一个步骤递增曝光时间。</p></td>
 </tr>
 <tr class="odd">
 <td><p>负值</p></td>
-<td><p>递减一个步骤的暴露时间。</p></td>
+<td><p>按一个步骤减少曝光时间。</p></td>
 </tr>
 </tbody>
 </table>
@@ -95,11 +95,11 @@ KSPROPERTY\_CAMERACONTROL\_暴露\_相对属性指定的电子快门速度。
 <a name="remarks"></a>备注
 -------
 
-在 set 请求时，应提供在上表中的值之一**值**KSPROPERTY 成员\_CAMERACONTROL\_节点\_S 结构。
+发出集请求时，应提供 KSPROPERTY\_CAMERACONTROL\_\_NODE 的**值**成员的上表中的值之一。
 
-时发出 get 请求，客户端接收的值之一在上表中的值成员的 KSPROPERTY\_CAMERACONTROL\_节点\_S 结构。 值指示用于相机的当前暴露时间设置。
+发出 get 请求时，客户端将接收 KSPROPERTY\_CAMERACONTROL\_NODE\_结构的值成员的上表中的值之一。 值指示照相机的当前曝光时间设置。
 
-如果自动公开模式控制是在 Auto 模式或 Aperture 优先级模式下，设置请求将失败。
+如果自动曝光模式控件处于自动模式或口径优先级模式，则设置请求将会失败。
 
 <a name="requirements"></a>要求
 ------------
@@ -111,20 +111,20 @@ KSPROPERTY\_CAMERACONTROL\_暴露\_相对属性指定的电子快门速度。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>适用于 Windows Vista 和更高版本的 Windows 操作系统。</p></td>
+<td><p>版本</p></td>
+<td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY\_CAMERACONTROL\_节点\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
+[**KSPROPERTY\_CAMERACONTROL\_NODE\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
 
  
 

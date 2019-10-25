@@ -3,15 +3,15 @@ title: 客户端发起的结束呼叫请求
 description: 客户端发起的结束呼叫请求
 ms.assetid: 1eb9c898-086a-463f-a4ae-d5a8727f7d73
 keywords:
-- 客户端启动关闭调用时请求 WDK 的 CoNDIS
+- 客户端启动的关闭呼叫请求 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f2d17fbca159d215a804d055cdec0177f2b135f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9ce9ba9b3240657ef29dd29012e5075e660a734
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385528"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835175"
 ---
 # <a name="client-initiated-request-to-close-a-call"></a>客户端发起的结束呼叫请求
 
@@ -19,35 +19,35 @@ ms.locfileid: "67385528"
 
 
 
-如果客户端即将关闭 multipoint 调用仍连接到多个参与方，必须首先调用[ **NdisClDropParty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscldropparty)尽可能多地从调用 （请参阅必要到放置所有，但最后一个参与方[从 Multipoint 调用删除参与方](dropping-a-party-from-a-multipoint-call.md))。
+如果客户端正在关闭多个参与方仍处于连接状态的 multipoint 调用，则必须首先调用[**NdisClDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscldropparty) ，以删除来自呼叫的所有其他参与方（请参阅[从 Multipoint 调用中删除参与方](dropping-a-party-from-a-multipoint-call.md)）。
 
-客户端启动与调用的右[ **NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)。 下图显示了客户端发起的呼叫管理器通过调用结束。
+客户端使用[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)启动调用的结束。 下图显示一个客户端，该客户端通过调用管理器启动调用的结束。
 
-![说明客户端发起的呼叫管理器通过调用结束的关系图](images/cm-20.png)
+![说明客户端通过调用管理器启动调用结束的关系图](images/cm-20.png)
 
-下图显示了客户端启动关闭通过 MCM 驱动程序的调用。
+下图显示一个客户端，该客户端通过 MCM 驱动程序启动调用的结束。
 
-![说明客户端启动关闭通过 mcm 驱动程序的调用关系图](images/fig1-20.png)
+![说明客户端通过 mcm 驱动程序启动调用结束的关系图](images/fig1-20.png)
 
-面向连接的客户端通常会调用**NdisClCloseCall**的任何一种方法在下列情况：
+面向连接的客户端通常会在以下任何一种情况下调用**NdisClCloseCall** ：
 
--   若要关闭的已建立传出或传入呼叫。
+-   关闭已建立的传出或传入呼叫。
 
--   从[ **ProtocolClIncomingCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_incoming_close_call)函数来关闭已建立的调用 (请参阅[传入的请求，以关闭调用](incoming-request-to-close-a-call.md))。
+-   通过[**ProtocolClIncomingCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_incoming_close_call)函数来细分已建立的调用（请参阅[传入请求以关闭呼叫](incoming-request-to-close-a-call.md)）。
 
--   从[ *ProtocolClIncomingCallQoSChange* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_incoming_call_qos_change)函数，如果远程方提出建议的 QoS 更改是不可接受的中断已建立的调用 (请参阅[更改传入请求调用参数](incoming-request-to-change-call-parameters.md))。
+-   在[*ProtocolClIncomingCallQoSChange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_incoming_call_qos_change)函数中，如果远程方提议的 QoS 更改不可接受，则将其拉出已建立的调用（请参阅[传入请求以更改调用参数](incoming-request-to-change-call-parameters.md)）。
 
--   从[ **ProtocolClModifyCallQoSComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_modify_call_qos_complete)函数来关闭已建立的调用，则远程方无法接受客户端提出了 QoS 更改 (请参阅[Client-Initiated 请求以更改调用参数](client-initiated-request-to-change-call-parameters.md))。
+-   在[**ProtocolClModifyCallQoSComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_modify_call_qos_complete)函数中，如果客户端提议的 QoS 更改对于远程方是不可接受的，则从该函数中断开已建立的调用（请参阅[客户端启动的更改调用参数的请求](client-initiated-request-to-change-call-parameters.md)）。
 
-客户端的调用**NdisClCloseCall** NDIS 调用管理器的调用或 MCM 驱动程序将导致[ **ProtocolCmCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_close_call)函数。 *ProtocolCmCloseCall*必须与网络控制设备终止本地节点和远程节点之间的连接进行通信。
+客户端对**NdisClCloseCall**的调用会使 NDIS 调用调用管理器或 MCM 驱动程序的[**ProtocolCmCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_close_call)函数。 *ProtocolCmCloseCall*必须与网络控制设备通信，以终止本地节点和远程节点之间的连接。
 
-如果*ProtocolCmCloseCall*传递显式*CallMgrPartyContext*，正在终止的调用是多点调用。 呼叫管理器或 MCM 驱动程序必须执行与网络硬件，根据其媒体类型，若要终止与 multipoint 调用调用的任何必要的网络通信。
+如果向*ProtocolCmCloseCall*传递了显式*CallMgrPartyContext*，则终止的调用是一个 multipoint 调用。 调用管理器或 MCM 驱动程序必须根据其媒体类型对其网络硬件执行任何必要的网络通信，以将调用作为 multipoint 调用终止。
 
-可以传递 NDIS *ProtocolCmCloseCall*指向包含对的调用中的客户端提供数据的缓冲区的指针**NdisClClose**。 此数据可以是指示在调用已关闭的原因的诊断数据或信号协议所需的任何其他数据。 *ProtocolCmCloseCall*之前必须发送任何此类数据通过网络完成调用终止。 如果不支持将数据发送并发与被终止的连接，呼叫管理器或 MCM 驱动程序应返回 NDIS\_状态\_无效\_数据。
+NDIS 可以向*ProtocolCmCloseCall*传递指向包含客户端在调用**NdisClClose**时提供的数据的缓冲区的指针。 此数据可以是诊断数据，用于指示调用被关闭的原因或信号协议所需的任何其他数据。 在完成呼叫终止之前， *ProtocolCmCloseCall*必须在网络中发送任何此类数据。 如果不支持使用连接终止的连接来发送数据，则调用管理器或 MCM 驱动程序应返回 NDIS\_状态\_无效的\_数据。
 
-*ProtocolCmCloseCall*可以使用完成同步或者，更可能，以异步方式[ **NdisCmCloseCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmclosecallcomplete)（对于呼叫管理器） 或[ **NdisMCmCloseCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmclosecallcomplete)（对于 MCM 驱动程序）。 调用**Ndis (M) CmCloseCallComplete**会导致调用客户端的 NDIS [ **ProtocolClCloseCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_close_call_complete)函数。
+*ProtocolCmCloseCall*可以使用[**NdisCmCloseCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmclosecallcomplete)（在调用管理器的情况下）或[**NdisMCmCloseCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmclosecallcomplete)（在 MCM 驱动程序的情况下）以同步方式同步完成。 调用**ndis （M） CmCloseCallComplete**导致 ndis 调用客户端的[**ProtocolClCloseCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_close_call_complete)函数。
 
-呼叫管理器或 MCM 驱动程序必须启动停用的用于通过分别调用调用 VC [ **NdisCmDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdeactivatevc)或[ **NdisMCmDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeactivatevc)(请参阅[停用 VC](deactivating-a-vc.md))。 VC （客户端、 呼叫管理器或 MCM 驱动程序） 的创建者可以根据需要故障删除 VC (请参阅[删除 VC](deleting-a-vc.md))。
+然后，调用管理器或 MCM 驱动程序必须通过分别调用[**NdisCmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdeactivatevc)或[**NdisMCmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeactivatevc)（请参阅[停用 vc](deactivating-a-vc.md)）启动用于调用的 VC 的停用。 然后，VC （客户端、调用管理器或 MCM 驱动程序）的创建者可以选择启动 VC 的删除（请参阅[删除 vc](deleting-a-vc.md)）。
 
  
 

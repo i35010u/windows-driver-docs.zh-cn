@@ -1,41 +1,41 @@
 ---
 title: 错误处理
-description: 本主题讨论错误处理 NFC 客户端的要求。
+description: 本主题讨论 NFC 客户端的错误处理要求。
 ms.assetid: 52376A1F-9ADD-4297-ADF9-A1EBF5714316
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 893154fc4afe84e60a0b9a98e2795dc433c1b85e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed9bc4bacba5a1a850f7a75b96207f479d0561e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370526"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843415"
 ---
 # <a name="error-handling"></a>错误处理
 
 
-本主题讨论错误处理 NFC 客户端的要求。
+本主题讨论 NFC 客户端的错误处理要求。
 
--   NFC 客户端驱动程序负责执行到控制器的写入请求时遇到错误时通知 NFC CX。 NFC CX 在收到错误状态时将执行重试，并恢复，或进入错误状态。
+-   NFC 客户端驱动程序负责在对控制器执行写入请求时遇到错误时，通知 NFC CX。 接收到错误状态时，NFC CX 会执行重试、恢复或进入错误状态。
 
--   完成序列调用时，NFC 客户端驱动程序可以报告错误。 根据当前状态，NFC CX 将进入恢复或输入错误状态。
+-   完成序列调用时，NFC 客户端驱动程序可能会报告错误。 NFC CX 会输入恢复或输入错误状态，具体取决于当前状态。
 
--   当 NFCC 遇到故障时，预期它将发送一个核心\_重置\_NTF 到主机。 一旦收到核心 NFC CX\_重置\_NTF 将执行相应的恢复。
+-   当 NFCC 遇到故障时，预期会将核心\_重置\_CONTOSO.NTF 发送到主机。 接收核心\_重置\_CONTOSO.NTF 时，NFC CX 会执行相应的恢复。
 
--   当客户端检测到无法恢复的错误时，它可以通知 NFC CX 操作通过 HostActionRestart 完整驱动程序重新启动，或请求它卸载使用 HostActionUnload 的驱动程序。
+-   当客户端检测到无法恢复的错误时，它可以通知 NFC CX 通过 HostActionRestart 执行完整的驱动程序重启，或请求它使用 HostActionUnload 卸载驱动程序。
 
--   如果 NFC 客户端需要触发用户模式故障 （例如，检测内存损坏），则应 NFC 客户端驱动程序使用 WDF 验证程序 Api 来触发 NFC 客户端驱动程序 （请参阅使用的保留范围中的 bug 检查代码故障有关详细信息 NfcCxBugCodes.h)。 由于默认情况下启用了进程共享，务必 NFC 客户端驱动程序仅当绝对必要，否则它可能会使下 WUDF 驱动程序主机进程中的其他驱动程序使用此机制。
+-   如果 NFC 客户端需要触发用户模式故障（例如，检测内存损坏），则 NFC 客户端驱动程序应使用 WDF 验证器 Api，以使用 NFC 客户端驱动程序保留范围内的 bug 检查代码触发崩溃（请参阅NfcCxBugCodes 了解详细信息）。 由于默认情况下启用了进程共享，因此，仅当绝对需要时 NFC 客户端驱动程序才使用此机制是非常重要的，否则，它可能会在 WUDF 驱动程序主机进程中关闭其他驱动程序。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC 类扩展 (CX) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC 类扩展（CX）参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

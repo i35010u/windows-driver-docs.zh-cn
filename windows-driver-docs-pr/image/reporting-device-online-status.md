@@ -4,12 +4,12 @@ description: 报告设备联机状态
 ms.assetid: 59ce747a-bb5e-4e8c-ab4a-d3f4432f17e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd8931aea575af9ac08dad011195e34d816798c9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 377bb769a4a036f36c5b92bc7d93d3ece8b9835b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374284"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840755"
 ---
 # <a name="reporting-device-online-status"></a>报告设备联机状态
 
@@ -17,39 +17,39 @@ ms.locfileid: "67374284"
 
 
 
-WIA 服务检查 WIA 设备的联机状态，通过调用[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法。 WIA 微型驱动程序应检查硬件的当前联机状态，并报告结果。
+WIA 服务通过调用[**IStiUSD：： GetStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getstatus)方法来检查 WIA 设备的联机状态。 WIA 微型驱动程序应检查硬件的当前联机状态并报告结果。
 
-WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
+WIA 服务调用**IStiUSD：： GetStatus**方法执行两个主要操作：
 
--   正在检查设备的联机状态。
+-   检查设备的联机状态。
 
--   轮询设备事件，例如已下压按钮的事件。
+-   轮询设备事件，例如推送按钮事件。
 
-确定操作请求可以通过检查**StatusMask**的成员[ **STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)结构。 **StatusMask**成员可以是以下请求。
+若要确定操作请求，可以通过检查[**STI\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status)的**STATUSMASK**成员\_状态结构来完成。 **StatusMask**成员可以是以下请求之一。
 
-<a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_ONLINE\_状态  
+<a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_联机\_状态  
 检查设备是否处于联机状态。
 
 <a href="" id="sti-devstatus-events-state"></a>STI\_DEVSTATUS\_事件\_状态  
 检查设备事件。
 
-### <a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_ONLINE\_状态
+### <a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_联机\_状态
 
-此操作请求应执行通过设置**dwOnlineState** STI 成员\_设备\_状态结构。
+此操作请求应通过将 STI\_设备的**dwOnlineState**成员设置\_状态结构来执行。
 
 ### <a href="" id="sti-devstatus-events-state"></a>STI\_DEVSTATUS\_事件\_状态
 
-此操作请求应执行通过设置**dwEventHandlingState** STI 成员\_设备\_状态结构。 应使用的值是 STI\_EVENTHANDLING\_PENDING。 （该设备具有挂起的事件并且正在等待其报告给 WIA 服务）
+此操作请求应通过将 STI\_设备的**dwEventHandlingState**成员设置\_状态结构来执行。 应使用的值是 STI\_EVENTHANDLING\_挂起的。 （设备的事件处于挂起状态，正在等待向 WIA 服务报告该事件。）
 
-当 STI\_EVENTHANDLING\_设置 PENDING、 WIA 服务发出信号事件发生 WIA 驱动程序中。 WIA 服务调用[ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)方法以获取有关事件的详细信息。
+设置 STI\_EVENTHANDLING\_"挂起" 时，WIA 服务将收到 WIA 驱动程序中发生的事件的信号。 WIA 服务调用[**IStiUSD：： GetNotificationData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getnotificationdata)方法来获取有关事件的详细信息。
 
-**IStiUSD::GetNotificationData**轮询的事件和中断事件的调用方法。 它是在此方法中，您应填写相应的事件信息以返回到 WIA 服务。
+对于轮询事件和中断事件，将调用**IStiUSD：： GetNotificationData**方法。 在此方法中，你应填写适当的事件信息以返回到 WIA 服务。
 
-**请注意**  始终清除 STI\_EVENTHANDLING\_挂起中标志**dwEventHandlingState**成员以确保它正确设置设备事件发生时。
+**请注意**   始终清除**dwEventHandlingState**成员中的 STI\_EVENTHANDLING\_挂起标志，以确保在发生设备事件时正确设置该标志。
 
  
 
-下面的示例演示的实现**IStiUSD::GetStatus**方法。
+下面的示例演示**IStiUSD：： GetStatus**方法的实现。
 
 ```cpp
 STDMETHODIMP CWIADevice::GetStatus(PSTI_DEVICE_STATUS pDevStatus)

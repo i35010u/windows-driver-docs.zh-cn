@@ -1,35 +1,35 @@
 ---
 title: 每个进程的 GPU 虚拟地址空间
-description: 每个进程都具有两个图形处理单元 (GPU) 虚拟地址空间、 应用程序 GPU 虚拟地址空间和特权的虚拟地址空间相关联。
+description: 每个进程都与两个图形处理单元（GPU）虚拟地址空间、应用程序 GPU 虚拟地址空间和特权虚拟地址空间相关联。
 ms.assetid: 6C7BF67B-217D-4E21-B425-5683C99B63A8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eb3d10aff2362be3c6196b90d0d168bdcaab043
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6c19f6b2219f0b24f0bcb74caf631e01d131a34
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385579"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829815"
 ---
-# <a name="span-iddisplayper-processgpuvirtualaddressspacesspanper-process-gpu-virtual-address-spaces"></a><span id="display.per-process_gpu_virtual_address_spaces"></span>每个进程的 GPU 虚拟地址空间
+# <a name="span-iddisplayper-process_gpu_virtual_address_spacesspanper-process-gpu-virtual-address-spaces"></a><span id="display.per-process_gpu_virtual_address_spaces"></span>每进程 GPU 虚拟地址空间
 
 
-每个进程都具有两个图形处理单元 (GPU) 虚拟地址空间、 应用程序 GPU 虚拟地址空间和特权的虚拟地址空间相关联。
+每个进程都与两个图形处理单元（GPU）虚拟地址空间、应用程序 GPU 虚拟地址空间和特权虚拟地址空间相关联。
 
-## <a name="span-idapplicationgpuvirtualaddressspacespanspan-idapplicationgpuvirtualaddressspacespanspan-idapplicationgpuvirtualaddressspacespanapplication-gpu-virtual-address-space"></a><span id="Application_GPU_virtual_address_space"></span><span id="application_gpu_virtual_address_space"></span><span id="APPLICATION_GPU_VIRTUAL_ADDRESS_SPACE"></span>应用程序 GPU 虚拟地址空间
-
-
-应用程序 GPU 虚拟地址空间是在中执行的命令缓冲区，生成的用户模式驱动程序的地址空间。 此地址空间由使用提供的视频内存管理器服务的用户模式驱动程序管理。 在虚拟模式下运行的 GPU 引擎时可以访问分配之前，用户模式驱动程序必须将 GPU 虚拟地址范围分配给分配。 对于常规的分配，这是使用新[ *MapGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_mapgpuvirtualaddresscb)视频内存管理器公开的服务。 *MapGpuVirtualAddress*允许到任一选取用户模式驱动程序特定的地址，其中它想要映射的分配或可自动选择可用的 GPU 虚拟地址的视频内存管理器使用它。 驱动程序通常应让视频内存管理器会自动选取的地址，但在某些情况下，驱动程序可能需要更多控制。 在链接的显示适配器配置中， *MapGpuVirtualAddress*还可用于指定映射是当前在 GPU 上或对等方 GPU 上的分配的实例。 *MapGpuVirtualAddress*到视频内存管理器请求进行排队并立即时处理该请求返回给用户模式驱动程序。 在设备分页队列中排队请求和用户模式驱动程序必须确保它针对分页围栏值返回设备同步。 [*FreeGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_freegpuvirtualaddresscb)可用于取消映射分配和回收其 GPU 虚拟地址。 分配被销毁，因此用户模式驱动程序不需要显式取消映射时自动释放所有关联的分配的虚拟地址。 视频内存管理器提供了两个磁贴对用户模式驱动程序的特定于资源的服务。 [*ReserveGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_reservegpuvirtualaddresscb)允许用户模式驱动程序，以保留磁贴资源的地址空间和[ *UpdateGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)允许用户模式驱动程序映射和取消映射到特定磁贴池页面磁贴资源所在区域。 *ReserveGpuVirtualAddress*执行针对设备分页队列，而*UpdateGpuVirtualAddress*运行进程的特权的地址空间内的特殊随附上下文中执行。
-
-## <a name="span-idprocessprivilegedvirtualaddressspacespanspan-idprocessprivilegedvirtualaddressspacespanspan-idprocessprivilegedvirtualaddressspacespanprocess-privileged-virtual-address-space"></a><span id="Process_privileged_virtual_address_space"></span><span id="process_privileged_virtual_address_space"></span><span id="PROCESS_PRIVILEGED_VIRTUAL_ADDRESS_SPACE"></span>进程的特权虚拟地址空间
+## <a name="span-idapplication_gpu_virtual_address_spacespanspan-idapplication_gpu_virtual_address_spacespanspan-idapplication_gpu_virtual_address_spacespanapplication-gpu-virtual-address-space"></a><span id="Application_GPU_virtual_address_space"></span><span id="application_gpu_virtual_address_space"></span><span id="APPLICATION_GPU_VIRTUAL_ADDRESS_SPACE"></span>应用程序 GPU 虚拟地址空间
 
 
-使用磁贴资源的进程将获取在第一个调用与之关联的第二个虚拟地址空间[ *ReserveGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_reservegpuvirtualaddresscb)。 此地址空间用于以同步方式更新过程的页表中的呈现。 我们将介绍在此地址空间[磁贴资源](tile-resources.md)主题。
+应用程序 GPU 虚拟地址空间是由用户模式驱动程序生成的命令缓冲区的地址空间，在中执行。 此地址空间由用户模式驱动程序使用视频内存管理器提供的服务进行管理。 在虚拟模式下操作的 GPU 引擎可以访问分配之前，用户模式驱动程序必须为分配分配 GPU 虚拟地址范围。 对于常规分配，此操作使用由视频内存管理器公开的新[*MapGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_mapgpuvirtualaddresscb)服务来完成。 *MapGpuVirtualAddress*允许用户模式驱动程序选择要在其中映射分配的特定地址，或允许视频内存管理器自动选取可用的 GPU 虚拟地址。 驱动程序通常会让视频内存管理器自动选取一个地址，但在某些情况下，驱动程序可能需要更多的控制。 在链接的显示适配器配置中，还可以使用*MapGpuVirtualAddress*来指定映射是在当前 GPU 上还是对等 GPU 上分配的实例。 *MapGpuVirtualAddress*将请求排队，并在处理请求时立即返回到用户模式驱动程序。 请求在设备分页队列上排队，用户模式驱动程序必须确保它与返回的设备分页防护值同步。 [*FreeGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_freegpuvirtualaddresscb)可用于取消分配，并回收其 GPU 虚拟地址。 分配被销毁时，与分配关联的所有虚拟地址都将自动释放，因此用户模式驱动程序无需显式取消映射。 视频内存管理器向用户模式驱动程序提供两个特定于磁贴资源的服务。 [*ReserveGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_reservegpuvirtualaddresscb)允许用户模式驱动程序为磁贴资源保留地址空间， [*UpdateGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)允许用户模式驱动程序将磁贴资源的区域映射到特定的磁贴池页面。 *ReserveGpuVirtualAddress*针对设备分页队列执行，而*UpdateGpuVirtualAddress*在进程的特权地址空间内运行的特殊伴生上下文中执行。
 
-## <a name="span-idvirtualaddressspaceonlinkeddisplayadaptersspanspan-idvirtualaddressspaceonlinkeddisplayadaptersspanspan-idvirtualaddressspaceonlinkeddisplayadaptersspanvirtual-address-space-on-linked-display-adapters"></a><span id="Virtual_address_space_on_linked_display_adapters"></span><span id="virtual_address_space_on_linked_display_adapters"></span><span id="VIRTUAL_ADDRESS_SPACE_ON_LINKED_DISPLAY_ADAPTERS"></span>链接的显示适配器上的虚拟地址空间
+## <a name="span-idprocess_privileged_virtual_address_spacespanspan-idprocess_privileged_virtual_address_spacespanspan-idprocess_privileged_virtual_address_spacespanprocess-privileged-virtual-address-space"></a><span id="Process_privileged_virtual_address_space"></span><span id="process_privileged_virtual_address_space"></span><span id="PROCESS_PRIVILEGED_VIRTUAL_ADDRESS_SPACE"></span>处理特权虚拟地址空间
 
 
-链接物理图形适配器时链接到显示适配器链，就仍有单个 GPU 虚拟地址空间，每个进程 （除分页过程中）。 但每个物理适配器上的虚拟地址空间映射由其自己的页表集。
+使用磁贴资源的进程会在首次调用[*ReserveGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_reservegpuvirtualaddresscb)时获取与它们关联的另一个虚拟地址空间。 此地址空间用于通过呈现以同步方式更新进程的页表。 我们在[磁贴资源](tile-resources.md)主题中介绍了这一地址空间。
+
+## <a name="span-idvirtual_address_space_on_linked_display_adaptersspanspan-idvirtual_address_space_on_linked_display_adaptersspanspan-idvirtual_address_space_on_linked_display_adaptersspanvirtual-address-space-on-linked-display-adapters"></a><span id="Virtual_address_space_on_linked_display_adapters"></span><span id="virtual_address_space_on_linked_display_adapters"></span><span id="VIRTUAL_ADDRESS_SPACE_ON_LINKED_DISPLAY_ADAPTERS"></span>链接的显示适配器上的虚拟地址空间
+
+
+当物理图形适配器链接到链接的显示适配器链时，每个进程仍有一个 GPU 虚拟地址空间（分页过程除外）。 但每个物理适配器上的虚拟地址空间是由其自己的一组页表映射的。
 
  
 

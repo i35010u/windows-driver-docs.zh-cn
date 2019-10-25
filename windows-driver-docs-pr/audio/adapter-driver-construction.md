@@ -3,7 +3,7 @@ title: 适配器驱动程序构造
 description: 适配器驱动程序构造
 ms.assetid: e4a151b9-57aa-402f-8a0d-70547eb67917
 keywords:
-- 音频的微型端口驱动程序 WDK，适配器驱动程序
+- 音频微型端口驱动程序 WDK，适配器驱动程序
 - 微型端口驱动程序 WDK 音频，适配器驱动程序
 - 适配器驱动程序 WDK 音频，微型端口驱动程序
 - 内核模式驱动程序服务 WDK 音频
@@ -14,12 +14,12 @@ keywords:
 - 适配器驱动程序 WDK 音频，构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43eb438e1a8ca2854e3b2dc6d316a9b2075de14d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a3f653f9b8887820f37a304eb0e614128fe53f7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355776"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831596"
 ---
 # <a name="adapter-driver-construction"></a>适配器驱动程序构造
 
@@ -27,31 +27,31 @@ ms.locfileid: "67355776"
 ## <span id="adapter_driver_construction"></span><span id="ADAPTER_DRIVER_CONSTRUCTION"></span>
 
 
-针对特定音频适配器卡驱动程序支持采用适配器驱动程序的形式。 适配器驱动程序由以下内容组成：
+特定音频适配器卡的驱动程序支持采用适配器驱动程序的形式。 适配器驱动程序由以下内容组成：
 
--   常规适配器代码的执行驱动程序启动和初始化，并实现所共有的适配器卡上的所有音频函数的任何操作。
+-   常规适配器代码，用于执行驱动程序启动和初始化，并实现对适配器卡上所有音频功能通用的任何操作。
 
--   管理适配器卡上的特定音频功能的微型端口驱动程序的一组。
+-   一组用于管理适配器卡上的特定音频功能的微型端口驱动程序。
 
-硬件供应商提供的常规适配器代码和系统不提供任何微型端口驱动程序的代码。
+硬件供应商为系统未提供的任何微型端口驱动程序提供常规适配器代码和代码。
 
-常规适配器代码的示例，请参阅的实现**CAdapterCommon** Sb16、 Msvad 和 Ac97 示例音频驱动程序中 Microsoft Windows Driver Kit (WDK) 中的接口。
+有关一般适配器代码的示例，请参阅 Microsoft Windows 驱动程序工具包（WDK）中的 Sb16、Msvad 和 Ac97 示例音频驱动程序中的**CAdapterCommon**接口的实现。
 
-通过使用分层的方法，供应商可以编写一个适配器驱动程序，在多个级别，具体取决于适配器的硬件功能之一上运行。 在确定的给定的硬件函数要求的支持级别，供应商应首先确定是否系统提供的微型端口驱动程序已存在的支持函数 (请参阅[ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)系统提供的微型端口驱动程序的函数的列表)。 如果不是，供应商必须实现专有的微型端口驱动程序，但可能仍将能够使用系统提供端口驱动程序之一 (请参阅[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)系统提供的端口的函数的列表驱动程序）。
+通过使用分层方法，供应商可以编写一个在多个级别上操作的适配器驱动程序，具体取决于适配器的硬件功能。 确定给定硬件函数所需的支持级别时，供应商应该首先确定是否已存在支持函数的系统提供的微型端口驱动程序（请参阅[**PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)函数的列表系统提供的微型端口驱动程序）。 如果不是，则供应商必须实现专用微型端口驱动程序，但仍可以使用系统提供的端口驱动程序之一（请参阅[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)函数的系统提供的端口驱动程序的列表）。
 
-若要实现对设备的 WDM 支持，请执行以下步骤：
+若要为设备实现 WDM 支持，请执行以下步骤：
 
-1.  如果系统提供的微型端口驱动程序已支持硬件函数，使用现有的微型端口驱动程序来管理该函数。
+1.  如果系统提供的微型端口驱动程序已支持硬件功能，请使用现有的微型端口驱动程序来管理该函数。
 
-2.  如果硬件函数与不兼容的系统提供的微型端口驱动程序，然后确定函数是否是与至少一个系统提供端口驱动程序兼容。 如果系统提供端口驱动程序支持的硬件功能，编写管理函数的微型端口驱动程序的一部分。 该微型端口驱动程序应符合所属端口驱动程序需要的微型端口接口的规范。
+2.  如果硬件功能与系统提供的微型端口驱动程序不兼容，则确定该函数是否与至少一个系统提供的端口驱动程序兼容。 如果系统提供的端口驱动程序支持硬件功能，请编写用于管理该函数的微型端口驱动程序部分。 该微型端口驱动程序应遵守所属端口驱动程序所需的微型端口接口的规范。
 
-3.  如果没有系统提供的端口驱动程序支持的硬件功能，编写微型驱动程序以支持该函数。 微型驱动程序应符合的流式处理的类驱动程序接口规范。
+3.  如果系统提供的端口驱动程序不支持该硬件功能，请编写微型驱动程序来支持该功能。 微型驱动程序应符合流式处理类驱动程序的接口规范。
 
-本部分讨论以下主题：
+本部分介绍以下主题：
 
-[启动顺序](startup-sequence.md)
+[启动序列](startup-sequence.md)
 
-[子创建](subdevice-creation.md)
+[Subdevice 创建](subdevice-creation.md)
 
  
 

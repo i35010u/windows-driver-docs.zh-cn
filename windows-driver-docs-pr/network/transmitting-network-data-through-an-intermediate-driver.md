@@ -3,19 +3,19 @@ title: 通过中间驱动程序传输网络数据
 description: 通过中间驱动程序传输网络数据
 ms.assetid: 90759322-810b-47fd-896c-465c96be4cdd
 keywords:
-- 中间驱动程序 WDK 网络传输数据
-- NDIS 中间层驱动程序 WDK，传输数据
-- 将网络数据传输
+- 中级驱动程序 WDK 网络，传输数据
+- NDIS 中间驱动程序 WDK，传输数据
+- 传输网络数据
 - 数据传输 WDK NDIS 中间
-- 将 WDK NDIS 中间数据传输
+- 传输数据 WDK NDIS 中间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62ac6cad007a0af7fc8f9d836207369250e3764b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3f5fe24a256ed82473cd2cb40f71f7e3fe88d25
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368451"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841775"
 ---
 # <a name="transmitting-network-data-through-an-intermediate-driver"></a>通过中间驱动程序传输网络数据
 
@@ -23,11 +23,11 @@ ms.locfileid: "67368451"
 
 
 
-如中所述[微型端口驱动程序作为注册 Intermediate Driver](registering-an-intermediate-driver-as-a-miniport-driver.md)，中间驱动程序必须提供[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)函数时它使用注册[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)。 *MiniportSendNetBufferLists*函数可以转发传入[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构通过调用[**NdisSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissendnetbufferlists)如果驱动程序有无连接的下边缘。 *MiniportSendNetBufferLists*可以发送的 NET 列表\_缓冲区\_收到与列表结构**NdisSendNetBufferLists**而不考虑基础微型端口的功能驱动程序。
+如将[中间驱动程序注册为微型端口驱动程序](registering-an-intermediate-driver-as-a-miniport-driver.md)中所述，中间驱动程序在向[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)注册时必须提供[*MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)函数。 如果驱动程序具有无连接的下边缘，则*MiniportSendNetBufferLists*函数可以通过调用[**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)来转发传入的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构。 *MiniportSendNetBufferLists*可以通过**NdisSendNetBufferLists**发送网络\_\_缓冲区的列表，而不考虑基础微型端口驱动程序的功能。
 
-*MiniportSendNetBufferLists*接收的 NET 列表\_缓冲区\_由基础调用方的顺序排列的列表结构**NdisSendNetBufferLists**。 在大多数情况下，中间驱动程序应维护此顺序传递数组传入 NET\_缓冲区\_列表结构到基础微型端口驱动程序。 传递到基础驱动程序之前，修改网络数据中的数据的中间驱动程序可以对列表重新排序。
+*MiniportSendNetBufferLists*接收按**NdisSendNetBufferLists**的过量调用方确定的顺序排列的网络\_缓冲区\_列表结构的列表。 在大多数情况下，中间驱动程序应保持此顺序，因为它将传入的 NET\_缓冲区\_列表结构的传入数组传递到基础微型端口驱动程序。 一个中间驱动程序，用于修改网络数据中的数据，然后将这些数据传递到基础驱动程序，以便对列表重新排序。
 
-NDIS 始终保留的顺序[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构指针传递到链接列表作为**NdisSendNetBufferLists**. 基础的微型端口驱动程序还假定在传递到该列表及其*MiniportSendNetBufferLists*函数意味着网络数据应传输相同的顺序。
+NDIS 始终将[**NET\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构指针的排序保存为作为链接列表传递到**NdisSendNetBufferLists**。 基础微型端口驱动程序还假设传递到其*MiniportSendNetBufferLists*函数的列表表示网络数据应按相同顺序进行传输。
 
  
 

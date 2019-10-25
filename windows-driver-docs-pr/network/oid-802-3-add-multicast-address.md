@@ -1,21 +1,21 @@
 ---
 title: OID_802_3_ADD_MULTICAST_ADDRESS
-description: 为 set 请求，NDIS 和基础协议驱动程序使用 OID_802_3_ADD_MULTICAST_ADDRESS OID 请求向 802.3 的多播的地址的微型端口适配器多路广播的地址列表。
+description: 作为设置请求，NDIS 和过量协议驱动程序使用 OID_802_3_ADD_MULTICAST_ADDRESS OID 请求将802.3 多播地址添加到微型端口适配器的多播地址列表。
 ms.assetid: e3e6defe-e65f-46bb-9cd6-cb65ffa7d7f0
 ms.date: 08/08/2017
-keywords: -OID_802_3_ADD_MULTICAST_ADDRESS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_802_3_ADD_MULTICAST_ADDRESS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cca837a116b11ee334cfa515dbfec0d5d25b376f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 00843282c99f4673ff3426a42adf6fab2d00afd4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362911"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834568"
 ---
-# <a name="oid8023addmulticastaddress"></a>OID\_802\_3\_添加\_多播\_地址
+# <a name="oid_802_3_add_multicast_address"></a>OID\_802\_3\_添加\_多播\_地址
 
 
-为 set 请求，NDIS 和基础协议驱动程序使用 OID\_802\_3\_添加\_多播\_将 802.3 的多播的地址添加到多播的地址列表的微型端口地址 OID 请求适配器。 多播的地址是 6 个字节的数组。 添加一个地址，该地址以接收多路广播的数据包。
+作为设置请求，NDIS 和过量协议驱动程序使用 OID\_802\_3\_添加\_多播\_ADDRESS OID 请求，以将802.3 多播地址添加到微型端口适配器的多播地址列表。 多播地址是6个字节的数组。 添加地址后，该地址可接收多播数据包。
 
 **版本信息**
 
@@ -28,17 +28,17 @@ ms.locfileid: "67362911"
 <a name="remarks"></a>备注
 -------
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含要添加到多路广播的 6 个字节地址地址列表。
+[ **\_OID 的 NDIS\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含6个字节的地址，该地址将添加到多播地址列表。
 
-OID\_802\_3\_添加\_多播\_地址 OID 请求可以添加只能有一个地址。 若要添加多个地址，基础驱动程序必须发出多个 OID\_802\_3\_添加\_多播\_地址 OID 请求。
+OID\_802\_3\_添加\_多播\_地址 OID 请求只能添加一个地址。 要添加多个地址，过量驱动程序必须发出多个 OID\_802\_3\_添加\_多播\_地址 OID 请求。
 
-NDIS 微型端口驱动程序不直接接收此 OID 请求。 相反，NDIS 将合并每个序列的 OID\_802\_3\_添加\_多播\_地址并[OID\_802\_3\_删除\_多播\_地址](oid-802-3-delete-multicast-address.md)OID 请求到单个[OID\_802\_3\_多播\_列表](oid-802-3-multicast-list.md)OID 请求，将其发送到微型端口驱动程序。
+NDIS 微型端口驱动程序不会直接接收此 OID 请求。 相反，NDIS 合并每个 OID 序列\_802\_3\_添加\_多播\_地址和[OID\_802\_3\_删除\_多播\_](oid-802-3-delete-multicast-address.md) [OID\_802\_3\_多播\_列表](oid-802-3-multicast-list.md)OID 请求，该请求将发送到微型端口驱动程序。
 
-若要接收多路广播的数据包，基础驱动程序必须使用[OID\_代\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)OID 设置数据包筛选器**NDIS\_数据包\_类型\_多播**标志。
+要接收多播数据包，生成的驱动程序必须使用[OID\_GEN\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)oid，将数据包筛选器**NDIS\_\_类型\_多播**标志。
 
-微型端口驱动程序可以在数量的多播的地址列表可以包含的多播地址上设置限制。 若要指定的最大的多播地址，微型端口驱动程序集**MaxMulticastListSize**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，它将传递给[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。 对于基于 NDIS 6.0 之前的 NDIS 版本的微型端口驱动程序，NDIS 所查询的通过发送的多播地址的最大数目[OID\_802\_3\_最大\_列表\_大小](oid-802-3-maximum-list-size.md) OID 请求。 返回 NDIS **NDIS\_状态\_多播\_完整**如果 OID\_802\_3\_添加\_多播\_地址请求超出此限制。
+小型端口驱动程序可以对多播地址列表可以包含的多路广播地址设置限制。 若要指定最大多播地址数，小型端口驱动程序会将 NDIS\_微型端口的**MaxMulticastListSize**成员设置[ **\_适配器\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)将其传递到[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数。 对于基于 NDIS 6.0 之前的 NDIS 版本的微型端口驱动程序，NDIS 通过发送[oid\_802\_3\_最大\_列表\_大小](oid-802-3-maximum-list-size.md)OID 请求来查询最大多播地址数。 如果 OID\_802\_3\_添加\_多播\_ADDRESS 请求超出此限制，NDIS 将 **\_多播\_FULL 返回 ndis\_状态**。
 
-若要删除以前添加的多路广播的地址，请使用 set 请求[OID\_802\_3\_删除\_多播\_地址](oid-802-3-delete-multicast-address.md)OID。 基础驱动程序可以多次添加给定的多播的地址。 如果 NDIS 成功为给定的多播地址的第一个添加请求，NDIS 将成功执行所有后续添加该地址的请求。 若要删除已超过一次添加一个多播的地址，基础驱动程序必须删除的地址的地址，添加相同次数。
+若要删除以前添加的多播地址，请使用[OID\_802\_3\_delete\_多播\_address](oid-802-3-delete-multicast-address.md) OID 来创建设置请求。 过量驱动程序可以多次添加给定的多播地址。 如果 NDIS 成功执行了给定多播地址的第一个 add 请求，NDIS 将成功对该地址的所有后续添加请求。 若要删除多次添加的多播地址，则过量驱动程序必须删除地址，使其添加地址的次数相同。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,28 +50,28 @@ NDIS 微型端口驱动程序不直接接收此 OID 请求。 相反，NDIS 将�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
+[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 
-[OID\_802\_3\_DELETE\_MULTICAST\_ADDRESS](oid-802-3-delete-multicast-address.md)
+[OID\_802\_3\_删除\_多播\_地址](oid-802-3-delete-multicast-address.md)
 
-[OID\_802\_3\_MAXIMUM\_LIST\_SIZE](oid-802-3-maximum-list-size.md)
+[OID\_802\_3\_最大\_列表\_大小](oid-802-3-maximum-list-size.md)
 
-[OID\_802\_3\_MULTICAST\_LIST](oid-802-3-multicast-list.md)
+[OID\_802\_3\_多播\_列表](oid-802-3-multicast-list.md)
 
-[OID\_GEN\_CURRENT\_PACKET\_FILTER](oid-gen-current-packet-filter.md)
+[OID\_代\_当前\_数据包\_筛选器](oid-gen-current-packet-filter.md)
 
  
 

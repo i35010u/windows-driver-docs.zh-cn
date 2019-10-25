@@ -5,15 +5,15 @@ ms.assetid: fbc71ae8-9b63-4667-b9d6-fdff9100d70b
 keywords:
 - LPT 枚举器 WDK 打印机
 - 并行端口 WDK，打印机连接
-- 并行的枚举器 WDk 打印机
+- 并行枚举器 WDk 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b7edaca2055278e4e95c6ccbcd367e1f02a0b9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5e749520ed0942c0f1538f2b9ffb8216db8b55dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380669"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840440"
 ---
 # <a name="printer-connected-to-an-lpt-port"></a>连接到 LPT 端口的打印机
 
@@ -21,37 +21,37 @@ ms.locfileid: "67380669"
 
 
 
-LPT 枚举器的示例[总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)。 LPT 枚举器能够获取标识信息从符合 LPT 端口硬件*IEEE 1284 扩展功能端口协议和 ISA 接口标准*。
+LPT 枚举器是[总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)的一个示例。 LPT 枚举器能够从 LPT 端口硬件获取符合*IEEE 1284 扩展功能端口协议和 ISA 接口标准*的标识信息。
 
-Windows 2000 或更高版本系统启动时，配置管理器将调用 LPT 枚举器枚举到 LPT 端口连接的 IEEE 1284 兼容设备。 对于每个找到的设备，配置管理器都会调用打印机类安装程序。 打印机类安装程序调用**SetupDi**-前缀[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))，其中获取信息从[打印机 INF 文件](printer-inf-files.md)。
+当 Windows 2000 或更高版本的系统启动时，配置管理器将调用 LPT 枚举器来枚举连接到 LPT 端口的与 IEEE 1284 兼容的设备。 对于找到的每个设备，配置管理器将调用打印机类安装程序。 打印机类安装程序调用**SetupDi**前缀的[设备安装功能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))，该功能将从[打印机 INF 文件](printer-inf-files.md)中获取信息。
 
-对于与并行连接的打印机，并行的枚举器创建*devnode*加上一个唯一*硬件 ID*从其接收来自打印机的 1284年字符串生成。
+对于并行连接的打印机，并行枚举器使用从打印机接收的1284字符串生成的唯一*硬件 ID*创建*devnode* 。
 
-示例 1284年字符串是：
+示例1284字符串是：
 
 ```cpp
 "MANUFACTURER:Hewlett-Packard;COMMAND SET:PJL,MLC,PCL,POSTSCRIPT;MODEL:HP Color LaserJet 550;CLASS:PRINTER;COMMENT:HP LaserJet;"
 ```
 
-从此 1284年字符串并行枚举器将生成以下硬件 ID:
+从此1284字符串，并行枚举器生成以下硬件 ID：
 
 ```cpp
 LPTENUM\Hewlett-PackardHP_Co3115
 ```
 
-硬件 ID 由枚举器前缀后, 跟制造商名称、 模型名称和循环冗余校验 (CRC) 代码组成。 从制造商和型号字符串生成的 CRC 代码，即硬件 ID 的最后四位数。 字符串中的空格替换为下划线。
+硬件 ID 由枚举器前缀组成，后跟制造商名称、型号名称和循环冗余检查（CRC）代码。 CRC 代码是硬件 ID 的最后四位数字，是从制造商和模型字符串生成的。 字符串中的空格将替换为下划线。
 
-若要从设备读取 1284 ID 字符串，将发送[ **IOCTL\_PAR\_查询\_设备\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddpar/ni-ntddpar-ioctl_par_query_device_id)。 请注意后台处理程序将重定向 LPT*x*符号链接 (其中*x*是 LPT 数字 1、 2 或 3） 到后台处理程序的命名管道，这意味着，如果正在后台处理程序，然后 parport 永远看不见 Ioctl 发送到型 LPTx。
+若要从设备读取 1284 ID 字符串，请发送[**IOCTL\_PAR\_QUERY\_设备\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddpar/ni-ntddpar-ioctl_par_query_device_id)。 请注意，后台处理程序将 LPT*x*符号链接（其中*x*是 lpt 号1、2或3）重定向到后台处理程序的命名管道，这意味着，如果后台处理程序正在运行，则 parport 永远看不到发送到 LPTx 的 IOCTLs。
 
-并行连接插打印机 devnode 置于下**HKLM\\系统\\CurrentControlSet\\枚举\\LPTENUM**并且具有单个硬件 ID 的窗体：
+并行连接即插即用打印机的 devnode 置于**HKLM\\SYSTEM\\CurrentControlSet\\枚举\\LPTENUM** ，并具有以下格式的单个硬件 ID：
 
 ```cpp
 LPTENUM\Company_NameModelNam1234
 ```
 
-按照下一步的代码示例图中显示驱动程序堆栈。
+驱动程序堆栈显示在下一个代码示例中。
 
-将正确"即插"窗体 LPTENUM 的硬件 ID 的 INF 代码\\*公司\_NameModelNam1234*在下面的示例所示。 请注意，"模型名称 XYZ"设备描述会显示两次在[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)。 在第一行中的硬件 ID 包括总线枚举器时在第二行的 ID 不在硬件。 两行保证级别 0 硬件 ID 匹配的在其安装打印机的总线类型无关。 请参阅[安装自定义插件和播放的打印机驱动程序](installing-a-custom-plug-and-play-printer-driver.md)有关详细信息。
+下面的示例显示了可正确地 "即插即用" 的硬件 ID 为 LPTENUM\\*Company\_NameModelNam1234*的 INF 代码。 请注意，"模型名称 XYZ" 设备说明在[**INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)出现了两次。 第一行中的硬件 ID 包含总线枚举器，而第二行中的硬件 ID 则不包含。 无论安装打印机的总线类型如何，这两行均可保证1级硬件 ID 匹配。 有关详细信息，请参阅[安装自定义即插即用打印机驱动程序](installing-a-custom-plug-and-play-printer-driver.md)。
 
 ```cpp
 [Manufacturer]
@@ -69,9 +69,9 @@ LPTENUM\Company_NameModelNam1234
 Company_Name="Company Name"
 ```
 
-![并行端口打印机插](images/pnppar01.png)
+![用于并行端口打印机的即插即用](images/pnppar01.png)
 
-共享的打印机及其*设备 ID* INF 文件应与其他模型，如下所示：
+对于与其他模型共享其*设备 ID*的打印机，INF 文件应如下所示：
 
 ```cpp
 [Manufacturer]
@@ -96,7 +96,7 @@ InteractiveInstall = LPTENUM\Company_NameModelNam1234, Company_NameModelNam1234
 Company_Name = "Company Name"
 ```
 
-如同上一示例中，每个模型中[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)由几乎完全相同的行的一对表示。 对于给定的模型，对中的一行包括总线枚举器;其他却没有。 两行保证级别 0 硬件 ID 匹配的在其安装打印机的总线类型无关。 请参阅[安装自定义插件和播放的打印机驱动程序](installing-a-custom-plug-and-play-printer-driver.md)有关详细信息。
+正如前面的示例中一样，" [**INF 制造商" 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)中的每个模型均由一对几乎相同的行来表示。 对于给定的模型，该配对中的一行包含总线枚举器;另一种情况不是。 无论安装打印机的总线类型如何，这两行均可保证1级硬件 ID 匹配。 有关详细信息，请参阅[安装自定义即插即用打印机驱动程序](installing-a-custom-plug-and-play-printer-driver.md)。
 
  
 

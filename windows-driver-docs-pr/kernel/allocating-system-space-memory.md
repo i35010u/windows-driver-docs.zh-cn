@@ -6,17 +6,17 @@ keywords:
 - 内存管理 WDK 内核，系统分配的空间
 - 系统分配的空间 WDK 内核
 - 分配系统空间内存
-- 分配 I/O 缓冲区内存
-- I/O 缓冲区内存分配 WDK 内核
+- 分配 i/o 缓冲区内存
+- I/o 缓冲内存分配 WDK 内核
 - 缓冲区内存分配 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 536766a2d2f2f85dc90f87f73c9622173eb933cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1f00fcdad9405abf62c25c522b25a6586be03d1f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369967"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837233"
 ---
 # <a name="allocating-system-space-memory"></a>分配系统空间内存
 
@@ -24,39 +24,39 @@ ms.locfileid: "67369967"
 
 
 
-驱动程序可以使用系统分配的空间中其[设备扩展](device-extensions.md)作为全局存储区域的特定于设备的信息。 驱动程序可以使用仅内核堆栈将传递给其内部的例程的少量数据。 某些驱动程序必须分配更多、 更大的系统空间内存量，通常用于 I/O 缓冲区。
+驱动程序可以在其[设备扩展](device-extensions.md)中使用系统分配的空间，作为特定于设备的信息的全局存储区。 驱动程序只能使用内核堆栈向其内部例程传递少量数据。 某些驱动程序必须分配更多的系统空间内存，通常用于 i/o 缓冲区。
 
-若要分配 I/O 的缓冲区空间，最佳的内存分配例程以使用所[ **MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)， [ **MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)， [ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer) （如果驱动程序的设备使用总线 master DMA 或系统 DMA 控制器的自动初始化模式），或[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)。
+若要分配 i/o 缓冲空间，要使用的最佳内存分配例程为[**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)、 [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**AllocateCommonBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer) （如果驱动程序的设备使用的是 bus 主机 dma 或系统 dma控制器的自动初始化模式）或[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)。
 
-非分页缓冲的池通常会是非常零散系统运行时，这样的驱动程序[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程应调用这些例程来设置任何长期的 I/O 缓冲区驱动程序需要。 每个例程，除[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)，分配 （由处理器的数据缓存行大小） 的特定于处理器的边界对齐以提供最佳的内存性能。
+在系统运行时，非分页池通常会成为碎片，因此驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程应调用这些例程来设置驱动程序所需的任何长期 i/o 缓冲区。 其中的每个例程（ [**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)除外）都分配与处理器特定边界（由处理器的数据缓存行大小确定）对齐的内存，以提供最佳性能。
 
-驱动程序应尽可能经济分配 I/O 缓冲区，因为非分页缓冲的池内存是有限的系统资源。 通常情况下，驱动程序应避免调用这些支持例程重复以请求分配的页少于\_调整大小，因为页少于每个分配\_大小还附带了对在内部使用的池标头管理分配。
+驱动程序应尽可能经济地分配 i/o 缓冲区，因为非分页池内存是有限的系统资源。 通常，驱动程序应避免重复调用这些支持例程来请求小于页\_大小的分配，因为每个小于页\_大小的分配还附带了一个池标头，该标头用于内部管理分区.
 
-### <a name="tips-for-allocating-driver-buffer-space-economically"></a>经济实惠的方式分配驱动程序缓冲区空间的提示
+### <a name="tips-for-allocating-driver-buffer-space-economically"></a>经济实惠地分配驱动程序缓冲区空间的提示
 
-若要经济实惠的方式分配 I/O 的缓冲区内存，应注意以下：
+若要经济实惠地分配 i/o 缓冲内存，请注意以下事项：
 
--   每次调用[ **MmAllocateNonCachedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)或[ **MmAllocateContiguousMemorySpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)始终返回完整的倍数系统的页面大小，非分页的系统空间内存，任何请求分配的大小。 因此，小于页面会向上舍入到的请求会浪费掉整页和页上的任何其余部分字节;将通过调用的函数和其他内核模式代码无法使用的驱动程序无法访问它们。
+-   每次调用[**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)或[**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)时，均始终返回系统页面大小的完整多个页面大小，即未分页的系统空间内存，无论请求的分配的大小如何。 因此，小于一个页面的请求将向上舍入到整页，页面上的所有剩余字节数将会浪费;调用函数的驱动程序无法访问它们，并且其他内核模式代码无法使用这些驱动程序。
 
--   每次调用[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)使用至少一个适配器对象映射寄存器，它映射至少 1 个字节，最多一页。 有关映射的详细信息将注册并使用常见的缓冲区，请参阅[适配器对象和 DMA](adapter-objects-and-dma.md)。
+-   对[**AllocateCommonBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer)的每次调用至少使用一个适配器对象映射寄存器，其中至少映射一个字节，最多可映射一页。 有关映射寄存器和使用常见缓冲区的详细信息，请参阅[适配器对象和 DMA](adapter-objects-and-dma.md)。
 
-### <a name="allocating-memory-with-exallocatepoolwithtag"></a>分配内存以及 ExAllocatePoolWithTag
+### <a name="allocating-memory-with-exallocatepoolwithtag"></a>用 ExAllocatePoolWithTag 分配内存
 
-驱动程序还可以调用[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)，指定下列系统定义任一[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)值为*PoolType*参数：
+驱动程序还可以调用[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)，并指定以下系统定义的[**池之一\_键入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type) *PoolType*参数的值：
 
--   *PoolType* = **非分页池**的任何对象或资源未存储在设备扩展插件或驱动程序可能在 IRQL 运行时访问的控制器扩展&gt;APC\_级别。
+-   对于未存储在设备扩展或控制器扩展中的任何对象或资源，如果该驱动程序在以 IRQL &gt; APC\_级别运行时，则*PoolType* = **非分页池**。
 
-    为此*PoolType*值， [ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)分配的内存，如果请求量指定*字节数*小于或等于页面\_大小。 否则，浪费在上一次分配页上的任何其余部分字节： 调用方都无法访问和其他内核模式代码不可用。
+    对于此*PoolType*值，当指定的*NumberOfBytes*小于或等于页\_大小时， [**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)将分配所请求的内存量。 否则，会浪费上次分配的页上的所有剩余字节数：调用方无法访问这些字节，其他内核模式代码无法使用这些字节。
 
-    例如，x86，5 千字节 (KB) 的分配请求返回两个 4 KB 页为单位。 最后一个 3KB 的第二页是对调用方或另一个调用方不可用。 若要避免浪费非分页缓冲的池，该驱动程序应有效地分配多个页面。 在这种情况下，例如，驱动程序可以进行两个分配，一个用于页\_大小，另一个用于 1 KB 分配总共 5 KB。
+    例如，在 x86 上，5 kb 的分配请求将返回两个 4 KB 的页面。 第二页的最后 3 KB 对于调用方或其他调用方不可用。 为了避免浪费非分页池，驱动程序应该有效地分配多个页面。 例如，在这种情况下，驱动程序可能会进行两次分配，一个用于页\_大小，另一个用于 1 KB，分配总共 5 KB。
 
-    **请注意**  从 Windows Vista 开始，系统会自动添加更多的内存以便不是必需的两个分配。
+    **请注意**  从 Windows Vista 开始，系统会自动添加额外的内存，因此不需要两个分配。
 
      
 
--   *PoolType* = **PagedPool**始终在 IRQL 访问的内存&lt;= APC\_级别并不在文件系统的写路径。
+-   *PoolType* = **PagedPool** ，适用于始终以 IRQL &lt;= APC\_级别访问且不在文件系统写入路径中的内存。
 
-**ExAllocatePoolWithTag**将返回**NULL**如果它不能分配请求的字节数的指针。 驱动程序应始终检查返回的指针。 如果其值为**NULL**，则**DriverEntry**例程 （或任何其他驱动程序例程，以返回 NTSTATUS 值） 应返回状态\_不足\_资源或句柄如有可能错误条件。
+如果**ExAllocatePoolWithTag**不能分配请求的字节数，则返回**NULL**指针。 驱动程序应始终检查返回的指针。 如果其值为**NULL**， **DriverEntry**例程（或返回 NTSTATUS 值的任何其他驱动程序例程）应返回状态\_\_资源不足，或者尽可能处理错误条件。
 
  
 

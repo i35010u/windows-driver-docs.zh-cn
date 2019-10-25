@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 119889c3e048c5a0087cb3aefa710f767eaef3d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 587bd00bdc6be1ea72dc8beff6446468825fec6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378138"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840643"
 ---
-# <a name="devpkeydevicereported"></a>DEVPKEY_Device_Reported
+# <a name="devpkey_device_reported"></a>DEVPKEY_Device_Reported
 
 
-DEVPKEY_Device_Reported 设备属性表示一个布尔值，指示设备实例是否为根枚举设备的设备的驱动程序报告给插即用 (PnP) 管理器通过调用[ **IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)。
+DEVPKEY_Device_Reported 设备属性表示一个布尔值，该值指示设备实例是否为根枚举设备，设备的驱动程序通过调用[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)将该设备报告给即插即用（PnP）管理器。
 
 <table>
 <colgroup>
@@ -42,11 +42,11 @@ DEVPKEY_Device_Reported 设备属性表示一个布尔值，指示设备实例�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
-<td align="left"><p>否</p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
+<td align="left"><p>无</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,11 +56,11 @@ DEVPKEY_Device_Reported 设备属性表示一个布尔值，指示设备实例�
 <a name="remarks"></a>备注
 -------
 
-即插即用 manager DEVPKEY_Device_Reported 将值设置为 DEVPROP_TRUE 如果设备是根枚举设备的设备的驱动程序报告给通过调用 IoReportDetectedDevice 的即插即用管理器。 否则，即插即用管理器将属性的值设置为 DEVPROP_FALSE。
+如果设备是一个根枚举设备，并且设备的驱动程序通过调用 IoReportDetectedDevice 向 PnP 管理器报告该设备，则 PnP 管理器将 DEVPKEY_Device_Reported 的值设置为 DEVPROP_TRUE。 否则，PnP 管理器会将属性的值设置为 DEVPROP_FALSE。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Reported 值。
+可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_Reported 的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
+Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,20 +72,20 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)
+[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)
 
 [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

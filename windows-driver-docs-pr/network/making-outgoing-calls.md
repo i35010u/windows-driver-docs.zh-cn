@@ -3,19 +3,19 @@ title: 拨打电话
 description: 拨打电话
 ms.assetid: 295b3f6d-d53b-4030-b7e9-35ab7524d9aa
 keywords:
-- CoNDIS WAN 的驱动程序 WDK 网络拨出电话
-- WDK WAN，拨出电话的电话服务
-- 拨出电话的 CoNDIS TAPI WDK 网络
-- WDK 的 CoNDIS WAN 的传出呼叫
-- 调用 WDK 的 CoNDIS WAN
+- CoNDIS WAN 驱动程序 WDK 网络，传出呼叫
+- telephonic services WDK WAN，传出呼叫
+- CoNDIS TAPI WDK 网络，传出呼叫
+- 传出呼叫 WDK CoNDIS WAN
+- 调用 WDK CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 806f488db9d9d948bcc18678715c25bcc28e3e47
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 84556e2595d728716f31c6b9cbc6c475d8804797
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356172"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844130"
 ---
 # <a name="making-outgoing-calls"></a>拨打电话
 
@@ -23,37 +23,37 @@ ms.locfileid: "67356172"
 
 
 
-如果应用程序尝试发起传出呼叫，它必须首先打开一个行。 由于调用 TAPI 的应用程序打开一个行**lineOpen**函数。 若要在以前打开的行上发出电话呼叫，应用程序调用 TAPI **lineMakeCall**函数，并将指针传递到特定的目标地址。 如果除默认调用安装程序将请求参数，该应用程序还将指针传递给 LINECALLPARAMS 结构。 如果应用程序使用默认调用安装程序参数**lineMakeCall**提供 LINECALLPARAMS 结构中的这些参数。 此结构的成员指定电话服务调用应如何设置。
+如果应用程序尝试发出传出调用，则必须先打开一行。 调用 TAPI **lineOpen**函数的应用程序会打开一条线。 若要在之前打开的行上放置电话服务呼叫，应用程序将调用 TAPI **lineMakeCall**函数，并传递指向特定目标地址的指针。 如果请求除默认调用设置参数外的任何参数，则应用程序还将传递指向 LINECALLPARAMS 结构的指针。 如果应用程序使用默认调用设置参数，则**lineMakeCall**将在 LINECALLPARAMS 结构中提供这些参数。 此结构的成员指定如何设置电话服务呼叫。
 
-这些 TAPI 函数调用会导致 NDPROXY 驱动程序首先通过 WAN 的 CoNDIS 微型端口驱动程序创建的虚拟连接 (VC)，然后封装 TAPI NDIS 中的参数结构才能发起传出呼叫。 微型端口驱动程序将使用这些 TAPI 参数来设置传出呼叫。 下面介绍连接、 设置和进行传出呼叫的方式：
+这些 TAPI 函数调用会导致 NDPROXY 驱动程序首先使用 CoNDIS WAN 微型端口驱动程序创建一个虚拟连接（VC），然后在 NDIS 结构中封装 TAPI 参数，以便发出传出调用。 微型端口驱动程序将使用这些 TAPI 参数设置传出呼叫。 下面介绍了如何连接、设置和发出传出呼叫：
 
--   NDPROXY 调用[ **NdisCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscocreatevc)若要启动的微型端口驱动程序与 VC 创建。 NDPROXY 后，将调用**NdisCoCreateVc**，NDIS 调用，以与同步操作*ProtocolCoCreateVc*呼叫管理器的功能集成到微型端口驱动程序。 NDIS 将传递给*ProtocolCoCreateVc*表示 VC 的句柄。 如果在调用**NdisCoCreateVc**是成功，NDIS 填充并返回 VC 句柄。 *ProtocolCoCreateVc*执行任何必要的分配的动态资源和微型端口调用管理器 (MCM) 驱动程序需要执行后续操作更高版本将激活 VC 的结构。 此类资源包括但不限于内存缓冲区、 数据结构、 事件和其他此类类似资源。
+-   NDPROXY 调用[**NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscocreatevc) ，以启动通过微型端口驱动程序创建 VC。 NDPROXY 调用**NdisCoCreateVc**后，NDIS 会将调用管理器的*ProtocolCoCreateVc*函数作为同步操作调用，并将其集成到微型端口驱动程序中。 NDIS 传递到*ProtocolCoCreateVc*表示 VC 的句柄。 如果对**NdisCoCreateVc**的调用成功，NDIS 将填充并返回 VC 句柄。 *ProtocolCoCreateVc*执行动态资源和结构的任何必要分配，小型端口调用管理器（MCM）驱动程序需要在以后激活的 VC 上执行后续操作。 此类资源包括但不限于内存缓冲区、数据结构、事件以及其他此类类似资源。
 
--   NDPROXY 指定在传出呼叫的 TAPI 参数[**共同\_AF\_TAPI\_使\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545373(v=vs.85))结构。 NDPROXY 填充此结构的成员使用以下信息在 TAPI 中传递**lineMakeCall**函数：
-    -   中的目标地址**DestAddress**成员
-    -   中的打开行标识符**ulLineID**成员
-    -   在结构 LINECALLPARAMS **LineCallParams**成员
--   NDPROXY 叠加产生的 CO\_AF\_TAPI\_使\_调用\_参数结构上**参数**隶属[**共同\_特定\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))结构和集**长度**成员产生的 CO\_特定\_产生的 CO 大小参数\_AF\_TAPI\_使\_调用\_参数。
+-   NDPROXY 指定 CO\_AF 中传出呼叫的 TAPI 参数[ **\_tapi\_使\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545373(v=vs.85))结构。 NDPROXY 用 TAPI **lineMakeCall**函数中传递的以下信息填充此结构的成员：
+    -   **DestAddress**成员中的目标地址
+    -   **UlLineID**成员中的开放行标识符
+    -   **LINECALLPARAMS**成员中的 LINECALLPARAMS 结构
+-   NDPROXY 覆盖了 CO\_AF\_TAPI\_使\_调用\_[**参数结构的**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85)) **parameters**成员的参数结构，并设置 co 的**Length**成员将特定\_参数\_到 CO\_AF\_TAPI 大小\_使\_调用\_参数。
 
--   NDPROXY 设置产生的 CO\_特定\_参数结构**MediaSpecific**的成员[**共同\_媒体\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545388(v=vs.85))结构。
+-   NDPROXY 将\_特定\_参数结构设置为[**co\_MEDIA\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545388(v=vs.85))结构的**MediaSpecific**成员。
 
--   NDPROXY 将指针设置为产生的 CO\_媒体\_参数结构**MediaParameters**的成员[**共同\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构。
+-   NDPROXY 将指向 co\_MEDIA\_参数结构的指针设置为[**co\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构的**MediaParameters**成员。
 
--   一旦 NDPROXY 封装 TAPI 参数，调用 NDPROXY [ **NdisClMakeCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmakecall)函数来发起传出呼叫。 在此函数调用中，NDPROXY 将指针传递到已填充共同\_调用\_参数结构。 反过来调用 NDIS [ **ProtocolCmMakeCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_make_call) CoNDIS WAN 微型端口驱动程序的呼叫管理器的功能。 微型端口驱动程序应检查仅产生的 CO\_AF\_TAPI\_使\_调用\_参数结构嵌入在 CO\_调用\_参数。 在这种情况下，没有其他调用参数是有意义。 如果微型端口驱动程序随后会激活传出调用 VC，微型端口驱动程序会调用[ **NdisMCmActivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmactivatevc)函数，并将指针传递到已填充共同\_调用\_参数。
+-   NDPROXY 封装 TAPI 参数后，NDPROXY 将调用[**NdisClMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall)函数以启动传出调用。 在此函数调用中，NDPROXY 将指针传递到实心 CO\_调用\_参数结构。 NDIS 反过来调用 CoNDIS WAN 微型端口驱动程序的调用管理器的[**ProtocolCmMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_make_call)函数。 微型端口驱动程序只应检查 CO\_AF\_TAPI\_使\_调用\_参数结构嵌入在共同\_调用\_参数中。 在这种情况下，任何其他调用参数都是有意义的。 如果微型端口驱动程序随后激活了用于传出调用的 VC，微型端口驱动程序将调用[**NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmactivatevc)函数，并将一个指针传递到实心 CO\_调用\_参数。
 
--   后微型端口驱动程序具有与协商要为 VC 建立电话服务调用参数并为这些设置 NIC 的网络调用的参数，微型端口驱动程序调用[ **NdisMCmMakeCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmmakecallcomplete)函数来指示它已准备好进行数据将传输上 VC。 在此调用中，微型端口驱动程序必须将该句柄传递到 VC 和做电话服务调用参数的修改。
+-   当微型端口驱动程序与网络协商以建立 VC 的电话呼叫参数并为这些调用参数设置 NIC 后，微型端口驱动程序将调用[**NdisMCmMakeCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmmakecallcomplete)函数，以指示它已准备就绪，可以进行在 VC 上传输数据。 在此调用中，微型端口驱动程序必须将句柄传递给 VC，并对电话呼叫参数所做的修改。
 
--   微型端口驱动程序必须修改**CallMgrParameters**成员产生的 CO\_调用\_参数结构，以指定的服务质量 (QoS 传输数据包，带宽等)。 若要设置此**CallMgrParameters**成员，微型端口驱动程序填充的成员[**共同\_调用\_MANAGER\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))结构和点到此结构**CallMgrParameters**。 例如，若要确定传输并以字节为单位的 VC 每秒接收的速度，微型端口驱动程序必须设置**PeakBandwidth**的成员**传输**和**接收**成员产生的 CO\_调用\_MANAGER\_参数。 **传输**并**接收**成员是流程规格结构。 有关流程规格结构的详细信息，请参阅 Microsoft Windows SDK。
+-   微型端口驱动程序必须修改 CO\_调用\_参数结构的**CallMgrParameters**成员，以指定传输数据包的服务质量（QoS），如带宽。 若要设置此**CallMgrParameters**成员，微型端口驱动程序将填充[**CO\_调用的成员\_MANAGER\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))结构，并将此结构指向**CallMgrParameters**。 例如，若要确定 VC 的传输和接收速度（以每秒字节数为单位），微型端口驱动程序必须设置联合\_调用\_管理器的**传输**和**接收**成员的**PeakBandwidth**成员\_PARAMETERS. **传输**和**接收**成员是 FLOWSPEC 结构。 有关 FLOWSPEC 结构的详细信息，请参阅 Microsoft Windows SDK。
 
--   如果微型端口驱动程序已修改电话服务调用的参数，则必须设置**标志**成员中产生的 CO\_调用\_调用的参数结构\_参数\_已更改。 为**NdisMCmMakeCallComplete**调用由微型端口驱动程序，NDIS 调用 NDPROXY *ProtocolClMakeCallComplete*函数来完成启动异步操作与**NdisClMakeCall**。
+-   如果微型端口驱动程序已修改电话服务调用参数，则它必须设置 CO\_调用中的**Flags**成员\_参数结构，并\_更改调用\_参数。 由于微型端口驱动程序发出的**NdisMCmMakeCallComplete**调用，NDIS 调用 NDPROXY 的*ProtocolClMakeCallComplete*函数来完成使用**NdisClMakeCall**启动的异步操作。
 
--   微型端口驱动程序已成功完成的传出调用后，NDPROXY 通知 TAPI 应用程序连接呼叫。 然后此 TAPI 应用程序调用 TAPI **lineGetID**函数来通知 NDPROXY 来查找相应的 CoNDIS 客户端。 在此**lineGetID**调用，TAPI 应用程序提供特定的 TAPI 设备类向其应用程序需要一个句柄的字符串。 NDPROXY 使用此字符串来找到以前注册的特定 TAPI 设备类的 SAP 的 CoNDIS 客户端。 如果 NDISWAN CoNDIS 客户端，则该字符串为 NDIS。 如果 NDPROXY 定位与 TAPI 应用程序，NDPROXY 调用传递的字符串匹配的字符串与 SAP [ **NdisMCmCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmcreatevc)设置具有 NDISWAN 可以调度的连接终结点已发出的传出调用的通知。 NDIS 反过来调用 NDISWAN 的*ProtocolCoCreateVc*函数并传递一个表示 VC 句柄。
+-   当微型端口驱动程序成功完成传出调用后，NDPROXY 会通知 TAPI 应用程序呼叫已连接。 然后，此 TAPI 应用程序调用 TAPI **lineGetID**函数，通知 NDPROXY 查找相应的 CoNDIS 客户端。 在此**lineGetID**调用中，tapi 应用程序为特定 TAPI 设备类提供一个字符串，应用程序需要一个句柄。 NDPROXY 使用此字符串来查找以前为特定 TAPI 设备类注册了 SAP 的 CoNDIS 客户端。 如果 CoNDIS 客户端为 NDISWAN，则字符串为 NDIS。 如果 NDPROXY 找到一个字符串与 TAPI 应用程序传递的字符串相匹配的 SAP，则 NDPROXY 会调用[**NdisMCmCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmcreatevc)来设置一个带 NDISWAN 的连接终结点，在该终结点上可调度发出的传出调用通知。 NDIS 反过来调用 NDISWAN 的*ProtocolCoCreateVc*函数并传递表示 VC 的句柄。
 
--   NDPROXY 设置与 NDISWAN 的连接终结点后，它会调用[ **NdisCmDispatchIncomingCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall)函数，以通知 NDISWAN 有关传出呼叫。 在此调用，NDPROXY 传递封装的共同\_AF\_TAPI\_使\_调用\_参数结构，其中包含的传出调用的参数。 NDIS 反过来调用 NDISWAN 的*ProtocolClIncomingCall*函数，在其中 NDISWAN 接受或拒绝请求的连接。 如果 NDISWAN 更改传递给它的调用参数，它必须设置**标志**成员中产生的 CO\_调用\_调用的参数结构\_参数\_已更改。
+-   NDPROXY 通过 NDISWAN 设置连接终结点后，它将调用[**NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingcall)函数以通知 NDISWAN 有关传出调用的信息。 在此调用中，NDPROXY 将封装的 CO\_AF\_TAPI\_使\_调用包含传出调用参数的\_参数结构。 NDIS 反过来调用 NDISWAN 的*ProtocolClIncomingCall*函数，其中 NDISWAN 接受或拒绝请求的连接。 如果 NDISWAN 更改了传递给它的调用参数，则它必须设置 CO\_调用中的**Flags**成员\_参数结构的调用\_参数\_更改。
 
--   决定是否接受连接后之后，可能更改调用参数，调用 NDISWAN [ **NdisClIncomingCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclincomingcallcomplete)函数。 NDIS 反过来调用微型端口驱动程序*ProtocolCmIncomingCallComplete*函数。 具体取决于是否 NDISWAN 接受传出调用和微型端口驱动程序是否接受或拒绝 NDISWAN 的调用参数的更改提议，微型端口驱动程序拨打[ **NdisCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchcallconnected)或[ **NdisCmDispatchIncomingCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingclosecall)函数。 **NdisCmDispatchCallConnected**通知 NDISWAN 数据传输可以开始在为传出调用创建 NDPROXY VC。 **NdisCmDispatchIncomingCloseCall**通知 NDISWAN 和 NDPROXY 关闭建议传出呼叫。
+-   在决定是否接受连接之后以及在可能更改调用参数之后，NDISWAN 会调用[**NdisClIncomingCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclincomingcallcomplete)函数。 NDIS 又调用微型端口驱动程序的*ProtocolCmIncomingCallComplete*函数。 根据 NDISWAN 是否接受传出呼叫以及微型端口驱动程序是接受还是拒绝 NDISWAN 对调用参数的建议更改，微型端口驱动程序会调用[**NdisCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchcallconnected)或[**NdisCmDispatchIncomingCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdispatchincomingclosecall)函数。 **NdisCmDispatchCallConnected**将通知 NDISWAN，可从 NDPROXY 为传出调用创建的 VC 开始数据传输。 **NdisCmDispatchIncomingCloseCall**通知 NDISWAN 和 NDPROXY，以关闭建议的传出呼叫。
 
--   NDISWAN 接受传出调用后，调用 NDPROXY [ **NdisCoGetTapiCallId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscogettapicallid)函数来检索一个字符串，标识为 VC NDISWAN 的上下文。 NDPROXY 将此字符串传递回 TAPI 应用程序。 TAPI 应用程序使用此 VC 上下文字符串来完成对其调用**lineGetID**。
+-   NDISWAN 接受传出调用后，NDPROXY 调用[**NdisCoGetTapiCallId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscogettapicallid)函数以检索用于标识 VC 的 NDISWAN 上下文的字符串。 NDPROXY 将此字符串传递回 TAPI 应用程序。 TAPI 应用程序使用此 VC 上下文字符串来完成对**lineGetID**的调用。
 
  
 

@@ -4,17 +4,17 @@ description: 分配器
 ms.assetid: 8f263288-2f79-4f1d-b740-d78d40f47b32
 keywords:
 - MIDI 传输 WDK 音频
-- 批接收器 WDK 音频，MIDI 传输
-- 合成器 WDK 音频，MIDI 传输
+- 波形接收器音频，MIDI 传输
+- 合成 WDK 音频，MIDI 传输
 - 分配器 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04494c700050578df176a55e52db5445a2854823
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9536af14fea3622e2852197ed6391ab53c9b8800
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355777"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831584"
 ---
 # <a name="allocator"></a>分配器
 
@@ -22,17 +22,17 @@ ms.locfileid: "67355777"
 ## <span id="allocator"></span><span id="ALLOCATOR"></span>
 
 
-与分配器的接口[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)并[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)。 这些接口可以重用[ **DMU\_内核\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event)结构，无需分配和释放内存。 [**IMXF::PutMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage)给分配器提供一种结构并[ **IAllocatorMXF::GetMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getmessage)检索全新清零的 DMU\_内核\_事件以供重复使用的分配器结构。 (分配器会创建与空 DMU\_内核\_事件结构在池中，以便永远不会启动都为空。)以下关系图图 Irp 中所示 (DMU 形式\_EVENTHEADER 结构) 到 unpacker 来自 dmusic.dll。
+与分配器的接口是[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imxf)和[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iallocatormxf)。 通过这些接口，可以重复使用[**dmu\_内核\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/ns-dmusicks-_dmus_kernel_event)结构，而无需分配和释放内存。 [**IMXF：:P utmessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-imxf-putmessage)为分配器提供一个结构，而[**IAllocatorMXF：： GetMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iallocatormxf-getmessage)从分配器检索一个全新的已清零的 DMU\_内核\_事件结构以供重用。 （分配器创建时，会在池中包含空的 DMU\_内核\_事件结构，使其不会启动空。）如下图中所示，Irp （格式为 DMU\_EVENTHEADER 结构）来自 dmusic unpacker。
 
-![说明通过端口和微型端口驱动程序的 irp 的流的关系图](images/dmalloc.png)
+![说明通过端口和微型端口驱动程序的 irp 流的示意图](images/dmalloc.png)
 
-Unpacker 调用**IAllocatorMXF::GetMessage**来检索一个空[ **DMU\_内核\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event)结构。 Unpacker 检索 DMU\_内核\_事件从 IRP 结构、 填充这些结构 （每个 MIDI 事件一个），并将其传递到排序器 （使用其 MXF 接口）。 Sequencer 对其基于其时间戳重新排序，并当到期，将其传递给微型端口驱动程序通过调用**IMXF::PutMessage**。 微型端口驱动程序中拉取 MIDI 数据超出 DMU\_内核\_事件结构，以便它可以将其译为批数据。 通过使用的 DMU\_内核\_事件结构回与另一个分配器**IMXF::PutMessage**调用。
+Unpacker 调用**IAllocatorMXF：： GetMessage**以检索空[**dmu\_内核\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/ns-dmusicks-_dmus_kernel_event)结构。 Unpacker 从 IRP 检索 DMU\_内核\_事件结构，填充这些结构（每个 MIDI 事件一个），并将它们向下传递到 sequencer （使用其 MXF 接口）。 Sequencer 将根据其时间戳重新排序它们，并在它们到期时通过调用**IMXF：:P utmessage**将它们传递给微型端口驱动程序。 微型端口驱动程序会将 MIDI 数据从 DMU\_内核\_事件结构中取出，使其能够将其呈现到波形数据中。 它将使用的 DMU\_内核\_事件结构传递回分配器，并使用另一个**IMXF：:P utmessage**调用。
 
-捕获发生相反的情况。 MIDI 数据可以进来从硬件到微型端口驱动程序和微型端口驱动程序调用**IAllocatorMXF::GetMessage**若要获取空 DMU\_内核\_事件结构。 DMU\_内核\_事件结构是使用时间戳和数据填充，传递到捕获接收器通过**IMXF::PutMessage**。 微型端口驱动程序可以传递每个结构的多条消息，如果它设置 DMU\_KEF\_事件\_在 DMU 中不完整标记\_内核\_事件结构。 Dmu 端口驱动程序中的捕获接收器将此原始数据的流分析和发出 DMU\_内核\_事件结构中包含时间戳 MIDI 消息 （每个结构一个）。
+反之发生了捕获。 MIDI 数据来自硬件到微型端口驱动程序，微型端口驱动程序调用**IAllocatorMXF：： GetMessage**以获取空的 DMU\_内核\_事件结构。 DMU\_内核\_事件结构填充了时间戳和数据，并通过**IMXF：:P utmessage**传递到捕获接收器。 如果在 DMU\_内核\_事件结构中设置 DMU\_KEF\_事件\_不完整标志，则微型端口驱动程序可以为每个结构传递多条消息。 Dmu 端口驱动程序中的捕获接收器分析此原始数据流，并发出 DMU\_\_内核，其中包含带时间戳的 MIDI 消息（每个结构一个）。
 
-还有可能自身发出到捕获接收器加盖时间戳的消息的微型端口驱动程序。 在这种情况下，该驱动程序不会设置 DMU\_KEF\_事件\_位 DMU 的不完整\_内核\_事件。 捕获接收器将标有时间戳结构传递给 packer，它打包成 Irp 的消息并将它们发送到 dmusic.dll 直接。 仅用于记录 MIDI DirectMusic 捕获。 对于批录制内容，请使用 DirectSound 捕获。
+小型小型驱动程序本身也可以向捕获接收器发出带有时间戳的消息。 在这种情况下，驱动程序不会将 DMU\_KEF\_事件\_DMU\_内核\_事件中的未完成位。 捕获接收器将带时间戳的结构直接传递到 packer，后者将消息打包到 Irp，并将其发送到 dmusic。 DirectMusic capture 仅用于记录 MIDI。 对于波形录音，请使用 DirectSound 捕获。
 
-Packer 时提取数据从 DMU\_内核\_事件结构，它将放弃使用的 DMU\_内核\_事件结构使用的分配器**IMXF::PutMessage**。 IRP 缓冲区已满时，它被传递给 dmusic.dll。 打包程序从 dmusic.dll 接收空 Irp，填充它们，并完成它们。 以便它始终都有一个用于填充，多个 Irp 保留低速向下传递。
+当 packer 从 DMU\_内核\_事件结构中提取数据时，它会将使用的 DMU\_内核\_事件结构丢弃到使用**IMXF：:P utmessage**的分配器中。 当 IRP 缓冲区已满时，它将向上传递到 dmusic。 Packer 从 dmusic 接收空 Irp，并填充它们并完成。 更多的 Irp 会使进入，以便它始终有一个填充。
 
  
 

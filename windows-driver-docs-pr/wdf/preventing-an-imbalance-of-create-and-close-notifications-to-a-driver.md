@@ -4,38 +4,38 @@ description: 防止创建和关闭通知对驱动程序造成的不平衡
 ms.assetid: e6678226-44d3-4b1d-a296-2017bc9c7c37
 keywords:
 - 创建文件通知 WDK UMDF
-- 清理文件通知 WDK UMDF
+- 清除-文件通知 WDK UMDF
 - 关闭文件通知 WDK UMDF
 - 通知 WDK UMDF
 - 通知 WDK UMDF，阻止创建和关闭不平衡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 221296bb34ab2efec099813b7e2edb970b50631e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: de3fa6aef4ade16a26f2640a1d8eb576da3ddfac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376331"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842237"
 ---
 # <a name="preventing-an-imbalance-of-create-and-close-notifications-to-a-driver"></a>防止创建和关闭通知对驱动程序造成的不平衡
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-上部的 UMDF 驱动程序可以使用[ **IWDFDeviceInitialize::AutoForwardCreateCleanupClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-autoforwardcreatecleanupclose)方法可控制框架自动转发创建文件，清理文件并关闭文件向设备堆栈中的下一个较低驱动程序的通知。 但是，由于上部的驱动程序设置，所以**AutoForwardCreateCleanupClose**自动转发仅在设备级别上而不是在每个文件级别，转发必须是相同的设备的所有文件。 框架将确保此转发清理文件和关闭文件通知的行为。 如果上部的驱动程序实现[ **IQueueCallbackCreate::OnCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)回调函数，它必须确保所有的创建文件请求并保持一致，其转发行为是相同清理文件和关闭文件通知转发行为。 如果不这样做可能会导致较低的驱动程序以接收不相等量对的调用其**IQueueCallbackCreate::OnCreateFile**方法并[ **IFileCallbackCleanup::OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)并[ **IFileCallbackClose::OnCloseFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)方法。
+高版本的 UMDF 驱动程序可以使用[**IWDFDeviceInitialize：： AutoForwardCreateCleanupClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-autoforwardcreatecleanupclose)方法控制框架何时自动将创建文件、清理文件和关闭文件通知转发到设备堆栈中的下一个较低的驱动程序. 但是，由于上部驱动程序将**AutoForwardCreateCleanupClose**设置为仅在设备级别上自动转发，而不是在每个文件级别上自动转发，因此对于设备的所有文件，转发必须相同。 框架可确保清除文件和关闭文件通知的这种转发行为。 如果上面的驱动程序实现了[**IQueueCallbackCreate：： OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)回调函数，则它必须确保其转发行为对于所有创建文件请求都是相同的，并且与清除文件的转发行为一致。关闭文件通知。 如果不这样做，可能会导致较低的驱动程序收到对其**IQueueCallbackCreate：： OnCreateFile**方法和[**IFileCallbackCleanup：： OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)和[**IFileCallbackClose：： OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)方法的不相等的调用。
 
-若要防止低级驱动程序收到的创建文件并关闭文件通知不相等的量，上部的驱动程序必须确保，在其[ **IQueueCallbackCreate::OnCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)回调函数的：
+若要防止驱动程序收到不等的创建文件和关闭文件通知的数量，则上层驱动程序必须确保在其[**IQueueCallbackCreate：： OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)回调函数中执行以下操作：
 
--   其转发行为是针对设备的所有文件相同的。
+-   对于设备的所有文件，其转发行为都是相同的。
 
--   其转发行为是一致的方式的标志参数设置[ **IWDFDeviceInitialize::AutoForwardCreateCleanupClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-autoforwardcreatecleanupclose)。 那是：
-    -   如果该驱动程序将标志设置为**WdfTrue**，驱动程序必须向设备堆栈下的所有创建文件请求都转发。
-    -   如果该驱动程序将标志设置为**WdfFalse**，驱动程序不能转发任何在堆栈的下层的创建文件请求。
-    -   如果该驱动程序将标志设置为**WdfUseDefault**和：
-        -   如果驱动程序功能驱动程序，它必须不转发堆栈的下层的任何文件创建请求。
-        -   如果该驱动程序筛选器驱动程序，它必须转发堆栈的下层的所有文件创建请求。
+-   其转发行为与它设置[**IWDFDeviceInitialize：： AutoForwardCreateCleanupClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-autoforwardcreatecleanupclose)的标志参数的方式一致。 那是：
+    -   如果驱动程序将标志设置为**WdfTrue**，则驱动程序必须将所有 create file 请求按设备堆栈向下转发。
+    -   如果驱动程序将标志设置为**WdfFalse**，则驱动程序不能将任何创建文件请求沿堆栈向下转发。
+    -   如果驱动程序将标志设置为**WdfUseDefault** ，并：
+        -   如果驱动程序是函数驱动程序，则它不能将任何创建文件请求沿堆栈向下移动。
+        -   如果驱动程序是筛选器驱动程序，则必须将所有创建文件请求沿堆栈向下转发。
 
-在其中创建文件请求不能转发该驱动程序的情况下，该驱动程序仍然会生成新的低级驱动程序请求，创建文件通过调用[ **IWDFDevice::CreateWdfFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)方法创建新的 WDF 文件。 该驱动程序然后可以完成基于新生成的创建文件请求的结果的原始创建文件请求 (即，从结果中**CreateWdfFile**)。
+当驱动程序无法转发创建文件请求时，驱动程序仍可以通过调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)方法来创建新的 WDF 文件，为较低的驱动程序生成新的创建文件请求。 然后，该驱动程序可以基于新生成的创建文件请求的结果（即从**CreateWdfFile**的结果）完成原始的创建文件请求。
 
  
 

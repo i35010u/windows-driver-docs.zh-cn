@@ -4,17 +4,17 @@ description: DSM\_QuerySupportedLBPolicies\_V2 WMI 类
 ms.assetid: d60cf06d-595b-425d-bf22-f0986267ba09
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d05015071060fd7dc3c872c44c723c0600504531
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7cb3467ecc565e42f1bb1d9703d88ffdb799e0fc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368224"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843222"
 ---
-# <a name="dsmquerysupportedlbpoliciesv2-wmi-class"></a>DSM\_QuerySupportedLBPolicies\_V2 WMI 类
+# <a name="dsm_querysupportedlbpolicies_v2-wmi-class"></a>DSM\_QuerySupportedLBPolicies\_V2 WMI 类
 
 
-MPIO 发布 DSM\_QuerySupportedLBPolicies\_V2 WMI 类但需要进行注册，GUID 和处理其实现的 DSM。 WMI 客户端使用 DSM\_QuerySupportedLBPolicies\_V2 WMI 类，查询 DSM 支持的所有负载平衡策略。
+MPIO 发布 DSM\_QuerySupportedLBPolicies\_V2 WMI 类，但要求 DSM 注册 GUID 并处理其实现。 WMI 客户端使用 DSM\_QuerySupportedLBPolicies\_V2 WMI 类来查询 DSM 支持的所有负载平衡策略。
 
 ```cpp
 class DSM_QuerySupportedLBPolicies_V2
@@ -44,7 +44,7 @@ class DSM_QuerySupportedLBPolicies_V2
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_QuerySupportedLBPolicies\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_querysupportedlbpolicies_v2)数据结构。 没有与此 WMI 类相关联的方法。
+当 WMI 工具套件编译此类定义时，它将生成[**DSM\_QuerySupportedLBPolicies\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsm_querysupportedlbpolicies_v2)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

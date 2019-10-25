@@ -3,7 +3,7 @@ title: 设备对象的 SDDL
 description: 设备对象的 SDDL
 ms.assetid: c0e4432a-4429-4ecd-a2e5-f93a9e3caf48
 keywords:
-- 设备对象 WDK 内核安全性
+- 设备对象 WDK 内核，安全性
 - 安全 WDK 设备对象
 - 安全描述符定义语言 WDK 设备对象
 - SDDL WDK 设备对象
@@ -11,12 +11,12 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cad1162aebc9e109558977359f6cfc5e2bc07d85
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1c4a77cf0fb17fbbc5a8171ea050b034ba757fe4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394099"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836392"
 ---
 # <a name="sddl-for-device-objects"></a>设备对象的 SDDL
 
@@ -24,20 +24,20 @@ ms.locfileid: "67394099"
 
 
 
-安全描述符定义语言 (SDDL) 用于表示安全描述符。 是一个 SDDL 字符串可以指定设备对象的安全[INF 文件中放置](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)或传递给[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。 [安全描述符定义语言](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)完全记录在 Microsoft Windows SDK 文档。
+安全描述符定义语言（SDDL）用于表示安全说明符。 设备对象的安全可以由[放置在 INF 文件中](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)或传递给[**IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)的 SDDL 字符串指定。 [安全描述符定义语言](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)完全记录在 Microsoft Windows SDK 文档中。
 
-虽然 INF 文件支持完整范围的 SDDL，但通过支持语言的一个子集**IoCreateDeviceSecure**例程。 在此处定义该子集。
+尽管 INF 文件支持全部 SDDL，但**IoCreateDeviceSecure**例程仅支持语言的子集。 此处定义了此子集。
 
-SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式的窗体"(A;*访问*;;*SID*)"。 *SID*值指定安全标识符，用于确定向其*访问*值将应用 （适用于示例中，用户或组）。 *访问*值指定允许的 sid 的访问权限。 *访问*并*SID*值如下所示。
+设备对象的 SDDL 字符串的格式为 "D:P"，后跟一个或多个形式为 "（A;;*Access*;;;*SID*） "。 *SID*值指定一个安全标识符，该标识符确定*访问*值适用于的用户（例如，用户或组）。 *访问*值指定 SID 允许的访问权限。 *访问*和*SID*的值如下所示。
 
-**请注意**  时使用的设备对象的 SDDL，针对 Wdmsec.lib 必须链接您的驱动程序。
+**请注意**，在对设备对象使用 SDDL 时  ，驱动程序必须针对 Wdmsec 进行链接。
 
  
 
 <a href="" id="access"></a>*Access*  
-指定[**访问权限\_掩码**](access-mask.md)值，该值确定允许的访问。 此值可以为十六进制值形式编写的"0x*十六进制*"，或为一系列的两个字母的符号代码表示的访问权限。
+指定用于确定允许的访问权限[ **\_掩码**](access-mask.md)值。 此值可以是以 "0x*hex*" 形式表示的十六进制值，也可以是表示访问权限的由两个字母构成的符号代码组成的序列。
 
-以下代码可用于指定通用访问权限。
+以下代码可用于指定一般访问权限。
 
 <table>
 <colgroup>
@@ -47,7 +47,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <thead>
 <tr class="header">
 <th>代码</th>
-<th>通用访问权限</th>
+<th>一般访问权限</th>
 </tr>
 </thead>
 <tbody>
@@ -72,7 +72,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 
  
 
-以下代码可用于指定特定访问权限。
+可以使用以下代码指定特定访问权限。
 
 <table>
 <colgroup>
@@ -87,7 +87,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>RC</p></td>
+<td><p>.RC</p></td>
 <td><p>READ_CONTROL</p></td>
 </tr>
 <tr class="even">
@@ -107,12 +107,12 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 
  
 
-请注意该泛型\_上述两个表，包括能够更改 ACL 中列出的所有授予所有权限。
+请注意，一般\_都授予上述两个表中列出的所有权限，包括更改 ACL 的能力。
 
 <a href="" id="sid"></a>*SID*  
-指定授予指定的访问权限的 SID。 表示 Sid 的帐户、 别名、 组、 用户或计算机。
+指定授予指定访问权限的 SID。 Sid 表示帐户、别名、组、用户或计算机。
 
-以下 Sid 代表*帐户*在计算机上。
+以下 Sid 表示计算机上的*帐户*。
 
 <table>
 <colgroup>
@@ -128,25 +128,25 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <tbody>
 <tr class="odd">
 <td><p>SY</p></td>
-<td><p>系统</p>
-<p>表示操作系统本身，包括其用户模式组件。</p></td>
+<td><p>“系统”</p>
+<p>表示操作系统本身，其中包括其用户模式组件。</p></td>
 </tr>
 <tr class="even">
-<td><p>LS</p></td>
+<td><p>'</p></td>
 <td><p>本地服务</p>
-<p>预定义的帐户为本地服务的 （这同时也属于已经过身份验证和 World）。 此 SID 是从 Windows XP 开始提供。</p></td>
+<p>本地服务的预定义帐户（也属于已经过身份验证和世界）。 从 Windows XP 开始可以使用此 SID。</p></td>
 </tr>
 <tr class="odd">
-<td><p>NS</p></td>
+<td><p>N</p></td>
 <td><p>Network Service (网络服务)</p>
-<p>用于网络服务的预定义的帐户 （这同时也属于已经过身份验证和 World）。 此 SID 是从 Windows XP 开始提供。</p></td>
+<p>用于网络服务的预定义帐户（也属于已经过身份验证和世界）。 从 Windows XP 开始可以使用此 SID。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-以下 Sid 代表*组*在计算机上。
+以下 Sid 代表计算机上的*组*。
 
 <table>
 <colgroup>
@@ -163,24 +163,24 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <tr class="odd">
 <td><p>BA</p></td>
 <td><p>Administrators</p>
-<p>在计算机上内置管理员组。</p></td>
+<p>计算机上的内置 Administrators 组。</p></td>
 </tr>
 <tr class="even">
 <td><p>BU</p></td>
 <td><p>内置用户组</p>
-<p>介绍了所有本地用户帐户和域上的用户组。</p></td>
+<p>涵盖所有本地用户帐户和域中的用户的组。</p></td>
 </tr>
 <tr class="odd">
 <td><p>BG</p></td>
 <td><p>内置来宾组</p>
-<p>介绍在使用本地或域来宾帐户登录的用户组。</p></td>
+<p>涵盖使用本地或域来宾帐户登录的用户的组。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-以下 Sid 描述向其验证用户的范围。
+以下 Sid 描述了用户已进行身份验证的范围。
 
 <table>
 <colgroup>
@@ -196,20 +196,20 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <tbody>
 <tr class="odd">
 <td><p>AU</p></td>
-<td><p>身份验证的用户</p>
-<p>由本地计算机或域识别的任何用户。 请注意，使用内置来宾帐户登录的用户未经过身份验证。 但是，使用单个帐户在计算机或域上的来宾组的成员进行身份验证。</p></td>
+<td><p>经过身份验证的用户</p>
+<p>本地计算机或域识别的任何用户。 请注意，使用内置来宾帐户登录的用户不会进行身份验证。 但是，在计算机或域中具有个人帐户的来宾组的成员将进行身份验证。</p></td>
 </tr>
 <tr class="even">
-<td><p>AN</p></td>
+<td><p>无</p></td>
 <td><p>匿名登录的用户</p>
-<p>任何用户，而无需标识，如匿名网络会话登录。 请注意，在使用内置来宾帐户登录的用户既没有经过身份验证，也没有匿名。 此 SID 是从 Windows XP 开始提供。</p></td>
+<p>任何未使用标识登录的用户，例如匿名网络会话。 请注意，使用内置来宾帐户登录的用户既不进行身份验证，也不是匿名的。 从 Windows XP 开始可以使用此 SID。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-以下 Sid 介绍用户如何登录到计算机。
+以下 Sid 说明用户如何登录到计算机。
 
 <table>
 <colgroup>
@@ -225,27 +225,27 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <tbody>
 <tr class="odd">
 <td><p>IU</p></td>
-<td><p>交互用户</p>
-<p>最初登录到计算机"以交互方式"，如本地登录和远程桌面登录的用户。</p></td>
+<td><p>交互式用户</p>
+<p>最初以交互方式登录到计算机的用户，例如本地登录和远程桌面登录。</p></td>
 </tr>
 <tr class="even">
 <td><p>NU</p></td>
 <td><p>网络登录用户</p>
-<p>远程访问计算机，而不会 （例如，文件共享或 RPC 调用） 的交互式桌面访问权限的用户。</p></td>
+<p>远程访问计算机，无需交互式桌面访问（例如，文件共享或 RPC 调用）的用户。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WD</p></td>
-<td><p>World</p>
-<p>在 Windows XP 之前此 SID 涵盖每个会话是否经过身份验证的用户、 匿名用户或内置来宾帐户。</p>
-<p>从 Windows XP 开始，此 SID 不涉及匿名登录会话;它介绍了只有经过身份验证的用户和内置来宾帐户。</p>
-<p>请注意不受信任或"受限"代码也不涵盖了世界 SID。 有关详细信息，请参阅下表中的说明的受限代码 (RC) 的 SID。</p></td>
+<td><p>世界</p>
+<p>在 Windows XP 之前，此 SID 涵盖每个会话，无论是经过身份验证的用户、匿名用户还是内置来宾帐户。</p>
+<p>从 Windows XP 开始，此 SID 不涵盖匿名登录会话;它仅包括经过身份验证的用户和内置来宾帐户。</p>
+<p>请注意，世界 SID 还不包含不受信任或 "受限" 的代码。 有关详细信息，请参阅下表中的限制代码（RC） SID 的说明。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-以下 Sid 值得注意。
+以下 Sid 值得特别指出。
 
 <table>
 <colgroup>
@@ -260,17 +260,17 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>RC</p></td>
-<td><p>受限制的代码</p>
-<p>此 SID 用于受信任的代码控制访问权限。 对 rc 的令牌进行 ACL 验证由两个检查，一个针对 Sid （例如包含 WD），该令牌的正常列表，一个根据第二个列表 （通常包含 RC 和原始令牌 Sid 的子集） 组成。 如果一个令牌将传递两个测试仅授予访问权限。 在这种情况下，RC 实际上结合使用其他的 Sid。</p>
-<p>指定 RC 任何 ACL 还必须指定 WD。 时与 ACL 中 WD 配对 RC，描述了每个人都包括不受信任的代码的超集。</p>
-<p>不受信任的代码可能是在资源管理器中使用运行方式选项启动的代码。 默认情况下，世界不涉及不受信任的代码。</p></td>
+<td><p>.RC</p></td>
+<td><p>限制代码</p>
+<p>此 SID 用于控制不受信任的代码的访问。 针对带有 RC 的令牌的 ACL 验证包括两个检查，一个针对令牌的正常 Sid 列表（包含 WD），另一个针对第二个列表（通常包含 RC 和原始令牌 Sid 的子集）。 仅当令牌同时通过这两个测试时，才授予访问权限。 因此，RC 实际上与其他 Sid 一起工作。</p>
+<p>指定 RC 的任何 ACL 还必须指定 WD。 当 RC 与 ACL 中的 WD 配对时，将描述包含不受信任代码的所有用户的超集。</p>
+<p>不受信任的代码可能是使用资源管理器中的 "运行方式" 选项启动的代码。 默认情况下，World 不涵盖不受信任的代码。</p></td>
 </tr>
 <tr class="even">
 <td><p>UD</p></td>
 <td><p>用户模式驱动程序</p>
-<p>此 SID 授予访问权限的用户模式驱动程序。 目前，此 SID 包含仅专为用户模式驱动程序框架 (UMDF) 的驱动程序。 此 SID 是从 Windows 8 开始提供。</p>
-<p>在早期版本的 Windows，不能识别"UD"缩写，必须指定完全限定的窗体的此 SID (S-1-5-84-0-0-0-0-0) 授予对 UMDF 驱动程序访问权限。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access)">控制的设备访问</a>用户模式驱动程序框架文档中。</p></td>
+<p>此 SID 授予对用户模式驱动程序的访问权限。 目前，此 SID 只包含为用户模式驱动程序框架（UMDF）编写的驱动程序。 从 Windows 8 开始可以使用此 SID。</p>
+<p>在早期版本的 Windows 中，如果不能识别 "UD" 缩写，则必须指定此 SID 的完全限定形式（S-1-5-84-0-0-0-0-0），以授予对 UMDF 驱动程序的访问权限。 有关详细信息，请参阅在用户模式驱动程序框架中<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access)">控制设备访问</a>文档。</p></td>
 </tr>
 </tbody>
 </table>
@@ -279,57 +279,57 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 
 ### <a name="sddl-examples-for-device-objects"></a>设备对象的 SDDL 示例
 
-本部分介绍在 Wdmsec.h 中找到的预定义的 SDDL 字符串。 此外可以使用这些作为模板来定义新的设备对象的 SDDL 字符串。
+本部分介绍在 Wdmsec 中找到的预定义 SDDL 字符串。 你还可以使用这些模板来定义设备对象的新 SDDL 字符串。
 
-SDDL\_DEVOBJ\_KERNEL\_ONLY
+SDDL\_DEVOBJ\_仅限内核\_
 
 **"D:P"**
 
-SDDL\_DEVOBJ\_内核\_只是"空"的 ACL。 用户模式代码 （包括作为系统运行的进程） 无法打开设备。
+SDDL\_DEVOBJ\_内核\_只是 "空" 的 ACL。 用户模式代码（包括作为系统运行的进程）无法打开该设备。
 
-创建一个 PDO 时，即插即用总线驱动程序无法使用此说明符。 INF 文件然后可以指定更松散的设备的安全设置。 通过指定此说明符，总线驱动程序将确保不会尝试打开设备 INF 已处理之前会成功。
+在创建 PDO 时，PnP 总线驱动程序可以使用此描述符。 INF 文件随后可以指定设备的更松散安全设置。 通过指定此描述符，总线驱动程序将确保在处理 INF 之前，不会尝试打开设备。
 
-同样，非 WDM 驱动程序可以使用此说明符以使其设备对象不可访问，直到相应用户模式 （例如安装程序） 的程序在注册表中设置的最后一个安全描述符。
+同样，非 WDM 驱动程序可以使用此描述符使其设备对象不可访问，直到适当的用户模式程序（如安装程序）设置注册表中的最终安全描述符。
 
-在所有这些情况下，默认值是严格的安全措施，根据需要放松。
+在所有这些情况下，默认值都是严格的安全性，必要时放松。
 
-SDDL\_DEVOBJ\_SYS\_ALL
+SDDL\_DEVOBJ\_SYS\_全部
 
-**"D:P(A;;GA;;;SY)"**
+**"D:P （A;;GA;;;SY） "**
 
-SDDL\_DEVOBJ\_SYS\_就是类似于 SDDL\_DEVOBJ\_内核\_仅，不同之处在于除了内核模式代码，用户模式下作为系统运行还允许代码打开设备的任何访问。
+SDDL\_DEVOBJ\_SYS\_全部与 SDDL\_DEVOBJ\_内核\_类似，除了内核模式代码外，还允许作为系统运行的用户模式代码打开设备进行任何访问。
 
-旧驱动程序可能会使用此 ACL 以启动带严谨的安全设置，并让打开设备在运行时对单个用户使用其服务**SetFileSecurity**用户模式下函数。 在这种情况下，该服务必须以系统帐户运行。
+旧的驱动程序可能使用此 ACL 以严格的安全设置开始，并使其服务在运行时使用**SetFileSecurity**用户模式功能将设备打开到各个用户。 在这种情况下，服务必须作为系统运行。
 
-SDDL\_DEVOBJ\_SYS\_ALL\_ADM\_ALL
+SDDL\_DEVOBJ\_SYS\_所有\_ADM\_
 
-**"D:P(A;;GA;;;SY)(A;;GA;;;BA)"**
+**"D:P （A;;GA;;;SY）（A;;GA;;;BA） "**
 
-SDDL\_DEVOBJ\_SYS\_所有\_ADM\_所有允许对设备内核、 系统和管理员的完全控制。 其他用户不可能访问该设备。
+SDDL\_DEVOBJ\_SYS\_所有\_ADM\_全部允许内核、系统和管理员完全控制设备。 其他用户无法访问设备。
 
-SDDL\_DEVOBJ\_SYS\_ALL\_ADM\_RWX\_WORLD\_R
+SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_WORLD\_
 
-**"D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GR;;;WD)"**
+**"D:P （A;;GA;;;SY）（A;;GRGWGX;;;BA）（A;;GR;;;WD） "**
 
-SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_世界\_R 允许设备对内核和系统的完全控制。 默认情况下，管理员可以访问整个设备，但不能更改的 ACL （管理员必须采取对设备的控制第一次。）
+SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_WORLD\_R 允许内核和系统完全控制设备。 默认情况下，管理员可以访问整个设备，但不能更改 ACL （管理员必须先控制设备。）
 
-每个人 (世界 SID) 是授予读取访问权限。 不受信任的代码无法访问设备 （不受信任的代码可能是代码资源管理器中使用运行方式选项启动。 默认情况下，世界不涉及受限制的代码。）
+为每个人（世界 SID）提供读取访问权限。 不受信任的代码不能访问该设备（不受信任的代码可能是使用资源管理器中的运行方式选项启动的代码。 默认情况下，World 不包含受限制的代码。）
 
-另请注意，普通用户不允许遍历访问。 在这种情况下，这可能不是适当的描述符具有命名空间的设备。
+另请注意，不会向普通用户授予遍历访问权限。 因此，对于具有命名空间的设备，这可能不是合适的描述符。
 
-SDDL\_DEVOBJ\_SYS\_ALL\_ADM\_RWX\_WORLD\_R\_RES\_R
+SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_WORLD\_R\_
 
-**"D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GR;;;WD)(A;;GR;;;RC)"**
+**"D:P （A;;GA;;;SY）（A;;GRGWGX;;;BA）（A;;GR;;;WD）（A;;GR;;;RC） "**
 
-SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_世界\_R\_RES\_R 允许设备对内核和系统的完全控制。 默认情况下，管理员可以访问整个设备，但不能更改的 ACL （管理员必须采取对设备的控制第一次。）
+SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_世界\_R\_RES\_R 允许内核和系统完全控制设备。 默认情况下，管理员可以访问整个设备，但不能更改 ACL （管理员必须先控制设备。）
 
-每个人 (世界 SID) 是授予读取访问权限。 此外，不受信任的代码还允许的访问代码。 不受信任的代码可能是在资源管理器中使用运行方式选项启动的代码。 默认情况下，世界不涉及受限制的代码。
+为每个人（世界 SID）提供读取访问权限。 此外，还允许不受信任的代码访问代码。 不受信任的代码可能是使用资源管理器中的 "运行方式" 选项启动的代码。 默认情况下，World 不包含受限制的代码。
 
-另请注意，普通用户不允许遍历访问。 在这种情况下，这可能不是适当的描述符具有命名空间的设备。
+另请注意，不会向普通用户授予遍历访问权限。 因此，对于具有命名空间的设备，这可能不是合适的描述符。
 
  
 
-请注意，上面的 SDDL 字符串不包括任何继承修饰符。 在这种情况下，它们了仅适用于设备对象，因此不应为文件或注册表项。 有关指定使用 SDDL 继承的详细信息，请参阅 Microsoft Windows SDK 文档。
+请注意，上述 SDDL 字符串不包含任何继承修饰符。 因此，它们仅适用于设备对象，不应用于文件或注册表项。 有关使用 SDDL 指定继承的详细信息，请参阅 Microsoft Windows SDK 文档。
 
  
 

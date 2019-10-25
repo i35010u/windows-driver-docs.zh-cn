@@ -3,19 +3,19 @@ title: 避免轮询设备
 description: 避免轮询设备
 ms.assetid: c50c9c6f-c8eb-4e52-854a-3ebc4fdc874c
 keywords:
-- I/O WDK 内核设备轮询
-- 轮询 WDK I/O 的设备
-- 轮询设备 WDK I/O
-- 循环计数器 WDK I/O
-- 计数器 WDK I/O
+- I/o WDK 内核，设备轮询
+- 设备轮询 WDK i/o
+- 轮询设备 WDK i/o
+- 循环计数器 WDK i/o
+- 计数器 WDK i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53b6197f07eab9c309dfa13290c686d5818039ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e91fb6e7bbdc2944fc7c1f3f222b3ba6d6778ccd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369957"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837202"
 ---
 # <a name="avoid-polling-devices"></a>避免轮询设备
 
@@ -23,19 +23,19 @@ ms.locfileid: "67369957"
 
 
 
-设备驱动程序应避免轮询其设备，除非绝对必要，并且应永远不会使用整个时间片的轮询。 轮询设备是代价高昂的操作，使计算密集型轮询驱动程序中的任何操作系统。 执行多轮询设备驱动程序干扰其他设备上的 I/O 操作，可以对用户进行系统缓慢甚至失去反应。
+除非绝对必要，否则设备驱动程序应避免对设备进行轮询，并且决不能使用整个时间片进行轮询。 轮询设备是一项成本高昂的操作，用于在轮询驱动程序内对任何操作系统进行计算。 执行大量轮询的设备驱动程序会影响其他设备上的 i/o 操作，并可能使系统变慢，使用户无法响应。
 
-最近开发的设备，让高级作为在其 Windows 旨在运行，很少需要使用驱动程序或者轮询其设备，以确保设备已准备好启动 I/O 操作或操作已完成的处理器。
+最近开发的设备与运行 Windows 的处理器相比，其技术高级，很少需要驱动程序来轮询其设备，以确保设备已准备好启动 i/o 操作或操作完成。
 
-不过，仍在使用某些设备旨在使用旧有窄数据总线、 缓慢时钟速率和单用户、 任务单调度操作系统执行同步 I/O 的处理器。 此类设备可能需要轮询或其他方法来等待要更新其注册的设备。
+尽管如此，某些仍在使用中的设备已设计用于处理旧的处理器，其中包含的数据总线较窄、时钟速率较慢，以及执行同步 i/o 的单用户单任务操作系统。 此类设备可能需要轮询或其他一些方法来等待设备更新其寄存器。
 
-尽管它看起来有点逻辑通过编码递增计数器的简单循环来解决慢速设备问题，从而"浪费"最小时间间隔而设备更新寄存器，这样的驱动程序不太能够在 Windows 平台之间移植。 循环计数器的最大值将为每个平台需要自定义。 此外，如果具有很好的优化编译器编译驱动程序时，编译器可能会删除驱动程序的计数器变量，它就会增加的循环。
+尽管通过编写递增计数器的简单循环来编写简单的循环来解决速度较慢的设备问题似乎是合乎逻辑的，因此，在设备更新注册时，此类驱动程序在 Windows 平台中不太可能是可移植的。 循环计数器的最大值需要为每个平台自定义。 此外，如果使用良好的优化编译器对驱动程序进行编译，则编译器可能会删除该驱动程序的计数器变量以及它递增的循环。
 
-**请注意**  如果而设备硬件更新状态，必须停止该驱动程序，请遵循此实现准则：驱动程序可以调用[ **KeStallExecutionProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)读取设备注册之前。 该驱动程序应尽量少停滞不前，并应，一般情况下，指定停滞间隔不超过 50 微秒的间隔。
+**注意**   如果驱动程序必须在设备硬件更新状态时停止，请遵循此实现准则：驱动程序可以在读取设备寄存器之前调用[**KeStallExecutionProcessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestallexecutionprocessor) 。 驱动程序应最大限度地减少间隔时间间隔，并且应在一般情况下指定一个不超过50微秒的间隔时间间隔。
 
-粒度**KeStallExecutionProcessor**间隔是一个低至微秒。
+**KeStallExecutionProcessor**间隔的粒度为一微秒。
 
-如果设备经常需要多个 50 微秒，来更新状态，请考虑设置[设备专用线程](device-dedicated-threads.md)驱动程序中。
+如果设备的更新状态需要超过50微秒，请考虑在驱动程序中设置[设备专用线程](device-dedicated-threads.md)。
 
  
 

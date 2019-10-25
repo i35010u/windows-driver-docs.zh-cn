@@ -1,6 +1,6 @@
 ---
-title: MRxQuerySdInfo routine
-description: TheMRxQuerySdInfo 例程由调用 RDBSS 来请求网络微型重定向查询安全描述符信息上的文件系统对象。
+title: MRxQuerySdInfo 例程
+description: TheMRxQuerySdInfo 例程由 RDBSS 调用，请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。
 ms.assetid: 5bab05f1-2a79-42c0-ba70-e1124f7b1528
 keywords:
 - MRxQuerySdInfo 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 089d3293af3429121f7dec3dabeecfacbefa11f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a207efdd43553fd209f4c991ccb9bde7be30d74
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361179"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841085"
 ---
-# <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo routine
+# <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo 例程
 
 
-*MRxQuerySdInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询对文件系统对象的安全描述符信息。
+*MRxQuerySdInfo*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，以请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQuerySdInfo(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQuerySdInfo*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxQuerySdInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,17 +64,17 @@ NTSTATUS MRxQuerySdInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
-<td align="left"><p>要接收的安全描述符信息的缓冲区太小。</p>
-<p>此返回值应被视为成功，并且作为有效得多的数据应该返回在<strong>Info.Buffer</strong> RX_CONTEXT 结构成员指向的<em>RxContext</em>参数。</p></td>
+<td align="left"><p>用于接收安全描述符信息的缓冲区太小。</p>
+<p>应将此返回值视为成功，并且应尽可能多的有效数据返回到由<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
-<td align="left"><p>缓冲区是太小，无法接收请求的数据。</p>
-<p>如果返回此值，则<strong>InformationToReturn</strong> RX_CONTEXT 结构成员指向的<em>RxContext</em>参数应设置为调用的预期缓冲区的最小大小会成功。</p></td>
+<td align="left"><p>缓冲区太小，无法接收请求的数据。</p>
+<p>如果返回此值，则<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员应设置为预期缓冲区的最小大小，以便调用成功。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -82,7 +82,7 @@ NTSTATUS MRxQuerySdInfo(
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成查询。</p></td>
+<td align="left"><p>资源不足，无法完成查询。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -94,19 +94,19 @@ NTSTATUS MRxQuerySdInfo(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>未实现请求，如远程页面文件的信息的功能。</p></td>
+<td align="left"><p>未实现请求的功能，如远程页面文件上的信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>在远程共享上不支持安全描述符信息。</p></td>
+<td align="left"><p>远程共享不支持安全描述符信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
-<td align="left"><p>找不到对象路径。 如果请求 NTFS 流对象的信息和远程文件系统不支持流，可以返回此错误。</p></td>
+<td align="left"><p>找不到对象路径。 如果已请求有关 NTFS stream 对象的信息，并且远程文件系统不支持流，则会返回此错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_REPARSE</strong></td>
-<td align="left"><p>重新分析需要处理符号链接。</p></td>
+<td align="left"><p>需要重新分析才能处理符号链接。</p></td>
 </tr>
 </tbody>
 </table>
@@ -116,17 +116,17 @@ NTSTATUS MRxQuerySdInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出调用*MRxQuerySdInfo*接收响应[ **IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)请求。
+RDBSS 发出对*MRxQuerySdInfo*的调用，以响应接收[**IRP\_\_MJ\_安全**](irp-mj-query-security.md)请求。
 
-然后再调用*MRxQuerySdInfo*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxQuerySdInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**QuerySecurity.SecurityInformation**成员设置为**IrpSp-&gt;Parameters.QuerySecurity.SecurityInformation**。
+**SecurityInformation**成员设置为**IrpSp&gt;QuerySecurity. SecurityInformation**。
 
-**Info.Buffer** I/O 请求数据包从成员设置为用户缓冲区。 如果需要通过 RDBSS 已锁定已此缓冲区。
+**信息. Buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**Info.LengthRemaining**成员设置为**IrpSp-&gt;Parameters.QuerySecurity.Length**。
+**LengthRemaining**成员设置为**IrpSp-&gt;QuerySecurity**。
 
-如果成功，应设置网络微型重定向**InformationToReturn** RX 成员\_上下文结构到安全信息的长度返回。 如果在调用*MRxQuerySdInfo*已成功，RDBSS 集**IoStatus.Information**到 IRP 的成员**InformationToReturn** RX 成员\_上下文。
+成功时，网络小型重定向程序应将 RX\_上下文结构的**InformationToReturn**成员设置为返回的安全信息的长度。 如果对*MRxQuerySdInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 RX\_上下文的**InformationToReturn**成员。
 
 <a name="requirements"></a>要求
 ------------
@@ -139,19 +139,19 @@ RDBSS 发出调用*MRxQuerySdInfo*接收响应[ **IRP\_MJ\_查询\_安全**](irp
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

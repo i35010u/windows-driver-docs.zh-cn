@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_MEDIASEEKING\_持续时间
-description: KSPROPERTY\_MEDIASEEKING\_持续时间属性检索对筛选器的媒体持续时间。
+description: KSPROPERTY\_MEDIASEEKING\_DURATION 属性检索筛选器上的媒体持续时间。
 ms.assetid: f84ff468-7cf6-4948-afee-a28ee365760d
 keywords:
-- KSPROPERTY_MEDIASEEKING_DURATION 流式处理媒体设备
+- KSPROPERTY_MEDIASEEKING_DURATION 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71d94274d320a34c1297a511f29e36410c4343af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 394b6012de4a26530ac32086439a6d8ac5f64c95
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366104"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842300"
 ---
-# <a name="kspropertymediaseekingduration"></a>KSPROPERTY\_MEDIASEEKING\_持续时间
+# <a name="ksproperty_mediaseeking_duration"></a>KSPROPERTY\_MEDIASEEKING\_持续时间
 
 
-KSPROPERTY\_MEDIASEEKING\_持续时间属性检索对筛选器的媒体持续时间。
+KSPROPERTY\_MEDIASEEKING\_DURATION 属性检索筛选器上的媒体持续时间。
 
 ## <span id="ddk_ksproperty_mediaseeking_duration_ks"></span><span id="DDK_KSPROPERTY_MEDIASEEKING_DURATION_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_MEDIASEEKING\_持续时间属性检索对筛选器的媒体持续时
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_MEDIASEEKING\_持续时间属性检索对筛选器的媒体持续时
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>否</p></td>
+<td><p>“是”</p></td>
+<td><p>无</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -64,7 +64,7 @@ KSPROPERTY\_MEDIASEEKING\_持续时间属性检索对筛选器的媒体持续时
 <a name="remarks"></a>备注
 -------
 
-此属性返回类型 LONGLONG 的值为媒体持续时间。
+此属性将媒体持续时间返回为 LONGLONG 类型的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,13 +76,13 @@ KSPROPERTY\_MEDIASEEKING\_持续时间属性检索对筛选器的媒体持续时
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ks.h （包括 Ks.h）</td>
+<td><p>标头</p></td>
+<td>Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)

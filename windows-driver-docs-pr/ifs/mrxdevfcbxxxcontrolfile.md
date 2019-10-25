@@ -1,6 +1,6 @@
 ---
-title: MRxDevFcbXXXControlFile routine
-description: MRxDevFcbXXXControlFile 例程调用 RDBSS 将传递给网络微型重定向的设备 FCB 控件请求 （IOCTL 或 FSCTL 请求）。
+title: MRxDevFcbXXXControlFile 例程
+description: MRxDevFcbXXXControlFile 例程由 RDBSS 调用，以将设备 FCB 控制请求（IOCTL 或 FSCTL 请求）传递到网络小型重定向程序。
 ms.assetid: d60449d0-17d0-4303-8d0d-cba091de2b07
 keywords:
 - MRxDevFcbXXXControlFile 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 471f315bfdfdf1d4e9db4b29da31e13377a9175e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d2085a7720f06477f14a9dc73edc8c65064fb1a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355536"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841113"
 ---
-# <a name="mrxdevfcbxxxcontrolfile-routine"></a>MRxDevFcbXXXControlFile routine
+# <a name="mrxdevfcbxxxcontrolfile-routine"></a>MRxDevFcbXXXControlFile 例程
 
 
-*MRxDevFcbXXXControlFile*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)将传递给网络微型重定向的设备 FCB 控件请求 （IOCTL 或 FSCTL 请求）。
+*MRxDevFcbXXXControlFile*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，以将设备 FCB 控制请求（IOCTL 或 FSCTL 请求）传递到网络小型重定向程序。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxDevFcbXXXControlFile(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxDevFcbXXXControlFile*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxDevFcbXXXControlFile*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,23 +64,23 @@ NTSTATUS MRxDevFcbXXXControlFile(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>已请求停止或启动网络微型重定向，但调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>发出了停止或启动网络微型重定向程序的请求，但调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_DEVICE_REQUEST</strong></td>
-<td align="left"><p>无效的设备请求发送到网络微型重定向。</p></td>
+<td align="left"><p>向网络小型重定向程序发送了无效的设备请求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_REDIRECTOR_HAS_OPEN_HANDLES</strong></td>
-<td align="left"><p>这是请求以停止网络最小化重定向程序，但重定向程序已打开的句柄会阻止这一次停止的。</p></td>
+<td align="left"><p>这是一种停止网络小型重定向程序的请求，但重定向程序具有打开的句柄，阻止此时停止。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_REDIRECTOR_NOT_STARTED</strong></td>
-<td align="left"><p>这是请求以停止网络最小化重定向程序，但未启动重定向程序。</p></td>
+<td align="left"><p>这是一个停止网络小型重定向程序的请求，但重定向程序未启动。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_REDIRECTOR_STARTED</strong></td>
-<td align="left"><p>这是请求启动网络最小化重定向程序，但已启动重定向程序。</p></td>
+<td align="left"><p>这是启动网络小型重定向程序的请求，但重定向程序已启动。</p></td>
 </tr>
 </tbody>
 </table>
@@ -90,23 +90,23 @@ NTSTATUS MRxDevFcbXXXControlFile(
 <a name="remarks"></a>备注
 -------
 
-*MRxDevFcbXXXControlFile*处理 IOCTL 和 FSCTL 发送到网络微型重定向的请求与设备 FCB 相关。
+*MRxDevFcbXXXControlFile*处理与发送到网络小型重定向程序的设备 FCB 相关的 IOCTL 和 FSCTL 请求。
 
-然后再调用*MRxDevFcbXXXControlFile*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxDevFcbXXXControlFile*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构中的以下成员：
 
-**MajorFunction**将设置为 IRP 主要函数
+**MajorFunction**设置为 IRP 的主要功能
 
-如果这是 IRP\_MJ\_文件\_系统\_控制请求，然后 RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+如果这是 IRP\_MJ\_文件\_系统\_控制请求，则 RDBSS 会在\_RX 中修改*RxContext*参数指向的以下成员：
 
-**LowIoContext.ParamsFor.FsCtl.MinorFunction**设置为 FSCTL 代码的小函数代码
+**LowIoContext ParamsFor. FsCtl. MinorFunction**设置为 FsCtl 代码的次要函数代码
 
-**LowIoContext.ParamsFor.FsCtl.FsControlCode**设 IRP FSCTL 代码
+**LowIoContext. ParamsFor. FsCtl. FsControlCode**设置为 IRP 的 FsCtl 代码
 
-如果这是 IRP\_MJ\_设备\_控件或 IRP\_MJ\_内部\_设备\_控制请求，然后 RDBSS 修改 RX中的以下成员\_指向上下文结构*RxContext*参数：
+如果这是 IRP\_MJ\_设备\_控制或 IRP\_MJ\_内部\_设备\_控制请求，则 RDBSS 会修改 RxContext 指向的 RX\_上下文结构中的以下成员。参数：
 
-**LowIoContext.ParamsFor.FsCtl.FsControlCode**设 IRP 的控制代码。
+**LowIoContext. ParamsFor. FsCtl. FsControlCode**设置为 IRP 的控制代码。
 
-如果*MRxDevFcbXXXControlFile*将返回状态\_成功，则例程是否成功。 任何其他返回值指示发生了错误。
+如果*MRxDevFcbXXXControlFile*返回 STATUS\_SUCCESS，则例程成功。 任何其他返回值都指示发生了错误。
 
 <a name="requirements"></a>要求
 ------------
@@ -119,19 +119,19 @@ NTSTATUS MRxDevFcbXXXControlFile(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)
+[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)
 
 [**MRxStop**](mrxstop.md)
 

@@ -6,21 +6,21 @@ keywords:
 - 指针类 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 969e92d6642e483a9e4f57f0fc262cf847e1f6c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17075ddeae45ba9c361bc55feef9d821777f8eee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358447"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829784"
 ---
 # <a name="pointer-class"></a>指针类
 
 
-Windows 显示器驱动程序模型 (WDDM) 不允许为一个指针类函数的调用可重入的方式。 它最，一个线程可以运行中的以下函数之一在给定时间：
+Windows 显示驱动程序模型（WDDM）不允许以可重入方式调用某个指针类函数。 这就是，在给定时间，一个线程最多可以在下列函数之一中运行：
 
--   [*DxgkDdiSetPointerPosition*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setpointerposition)
+-   [*DxgkDdiSetPointerPosition*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setpointerposition)
 
--   [*DxgkDdiSetPointerShape*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setpointershape)
+-   [*DxgkDdiSetPointerShape*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setpointershape)
 
  
 

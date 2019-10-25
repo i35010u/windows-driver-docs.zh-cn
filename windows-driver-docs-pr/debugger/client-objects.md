@@ -7,12 +7,12 @@ keywords:
 - 客户端对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2c0482dc75eafefc504966c53fb753aa349f27c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15b22ddb8039fe1c602be46b9e82e1dac10a644e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367017"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837823"
 ---
 # <a name="client-objects"></a>客户端对象
 
@@ -20,29 +20,29 @@ ms.locfileid: "67367017"
 ## <span id="client-objects"></span><span id="CLIENT_OBJECTS"></span>
 
 
-与几乎所有交互[调试器引擎](introduction.md#debugger-engine)是通过*客户端对象*，通常只是称为*客户端*。 每个客户端提供的顶级引擎接口的实现。 每个接口提供了一组不同的方法，可用于与引擎，以及通过目标引擎进行交互。 引擎的实例可以有许多客户端，每个都有其自己的状态。
+几乎所有与[调试器引擎](introduction.md#debugger-engine)的交互都是通过*客户端对象*进行的，通常只是指*客户*端。 每个客户端都提供顶层引擎接口的实现。 每个接口都提供一组不同的方法，这些方法可用于与引擎进行交互，以及通过引擎与目标进行交互。 一个引擎实例可以有许多客户端，每个客户端都有自己的状态。
 
-### <a name="span-idprimary-clientsspanspan-idprimaryclientsspanprimary-clients"></a><span id="primary-clients"></span><span id="PRIMARY_CLIENTS"></span>主要客户端
+### <a name="span-idprimary-clientsspanspan-idprimary_clientsspanprimary-clients"></a><span id="primary-clients"></span><span id="PRIMARY_CLIENTS"></span>主客户端
 
-一个*主要客户端*客户端，已联接当前调试会话。 最初，创建一个新的客户端对象时，它不是主要的客户端。 客户端将成为主要的客户端时使用它来获取目标 (例如，通过调用[ **CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)) 或连接到调试会话使用[ **ConnectSession**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-connectsession)。 调试程序命令[ **.clients** ](-clients--list-debugging-clients-.md)列出了只有主客户端。
+*主客户端*是已联接当前调试会话的客户端。 最初，当创建新的客户端对象时，该对象不是主客户端。 当客户端用于获取目标（例如，通过调用[**CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createprocess2)）或连接到使用[**ConnectSession**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-connectsession)的调试会话时，客户端将成为主客户端。 调试器命令[ **。客户端**](-clients--list-debugging-clients-.md)仅列出主客户端。
 
-### <a name="span-idcallback-objectsspanspan-idcallbackobjectsspancallback-objects"></a><span id="callback-objects"></span><span id="CALLBACK_OBJECTS"></span>回调对象
+### <a name="span-idcallback-objectsspanspan-idcallback_objectsspancallback-objects"></a><span id="callback-objects"></span><span id="CALLBACK_OBJECTS"></span>回调对象
 
-可使用每个客户端注册的回调对象。 有三种类型的回调对象：
+可以向每个客户端注册回调对象。 有三种类型的回调对象：
 
-1.  **输入的回调对象**(或*输入回调*): 该引擎调用输入的回调以请求输入。 例如，控制台窗口与调试器无法注册为引擎提供来自用户输入的输入的回调或调试器可能会注册为引擎提供从文件输入的输入的回调。
+1.  **输入回调对象**（或*输入回调*）：引擎调用输入回调来请求输入。 例如，具有控制台窗口的调试器可以注册输入回调以向引擎提供用户的输入，或者调试器可以注册输入回调以向引擎提供来自文件的输入。
 
-2.  **输出回调对象**(或*输出回调*): 该引擎调用以显示输出的输出回调。 例如，控制台窗口与调试器无法注册向用户显示调试器的输出的输出回调或调试器可能注册将输出发送到日志文件的输出回调。
+2.  **输出回调对象**（或*输出回调*）：引擎调用输出回调以显示输出。 例如，具有控制台窗口的调试器可以注册输出回调以向用户显示调试器的输出，或者，调试器可以注册输出回调以将输出发送到日志文件。
 
-3.  **事件的回调对象**(或*事件的回调*): 该引擎调用事件的回调，每当事件发生在目标中 （或没有引擎的状态的更改）。 例如，调试程序扩展插件库无法注册一个事件回调来监视特定事件或特定事件发生时执行自动的操作。
+3.  **事件回调对象**（或*事件回调*）：只要目标中发生事件（或引擎状态发生更改），引擎就会调用事件回调。 例如，在发生特定事件时，调试器扩展库可以注册事件回调来监视某些事件或执行自动操作。
 
-### <a name="span-idremote-debuggingspanspan-idremotedebuggingspanremote-debugging"></a><span id="remote-debugging"></span><span id="REMOTE_DEBUGGING"></span>远程调试
+### <a name="span-idremote-debuggingspanspan-idremote_debuggingspanremote-debugging"></a><span id="remote-debugging"></span><span id="REMOTE_DEBUGGING"></span>远程调试
 
-客户端对象方便主机引擎的远程实例通信。 [ **DebugConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect)函数会创建连接到远程引擎实例的客户端对象; 通过注册的远程引擎和回调对象执行此客户端上调用的方法本地使用客户端将会调用远程引擎执行回调调用时。
+客户端对象便于与主机引擎的远程实例进行通信。 [**DebugConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugconnect)函数创建连接到远程引擎实例的客户端对象;在此客户端上调用的方法由远程引擎执行，当远程引擎进行回调调用时，将调用使用客户端本地注册的回调对象。
 
-### <a name="span-idadditional-informationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional-informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关创建和使用客户端对象的详细信息，请参阅[使用回调对象](using-callback-objects.md)。 有关注册的回调对象的详细信息，请参阅使用回调对象。
+有关创建和使用客户端对象的详细信息，请参阅[使用回叫对象](using-callback-objects.md)。 有关注册回调对象的详细信息，请参阅使用回叫对象。
 
  
 

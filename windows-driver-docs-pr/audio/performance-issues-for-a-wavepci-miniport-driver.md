@@ -4,23 +4,23 @@ description: WavePci 微型端口驱动程序的性能问题
 ms.assetid: 785fd743-0c78-44cd-95bf-1f961aa414b5
 keywords:
 - WavePci 性能问题 WDK 音频
-- 维护机制 WDK 音频进行流式处理
+- 流式处理服务机制 WDK 音频
 - 硬件中断 WDK 音频
 - 中断服务例程 WDK 音频
 - Isr WDK 音频
 - 计时器 Dpc WDK 音频
-- 暂停/ACQUIRE 优化 WDK 音频
+- 暂停/获取优化 WDK 音频
 - IPreFetchOffset
 - 同步基元 WDK 音频
 - IPinCount
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b01f7fed0f8be3db6c5f3ddbd97fc1e97a1ab129
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0861936e5e1b079d8b665338ec9907d63a7982f5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362579"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832512"
 ---
 # <a name="performance-issues-for-a-wavepci-miniport-driver"></a>WavePci 微型端口驱动程序的性能问题
 
@@ -28,101 +28,101 @@ ms.locfileid: "67362579"
 ## <span id="performance_issues_for_a_wavepci_miniport_driver"></span><span id="PERFORMANCE_ISSUES_FOR_A_WAVEPCI_MINIPORT_DRIVER"></span>
 
 
-按照这些一般原则，就大大降低对系统的音频驱动程序的性能影响：
+对于音频驱动程序对系统性能的影响，可遵循以下常规原则大大降低：
 
--   最小化在正常操作期间运行的代码。
+-   最小化在正常操作过程中运行的代码。
 
--   运行代码仅在必要时。
+-   仅在必要时运行代码。
 
--   请考虑总系统资源消耗 （而不仅仅是 CPU 加载）。
+-   请考虑系统资源总使用量（不只是 CPU 加载）。
 
 -   优化代码的速度和大小。
 
-此外，WavePci 微型端口驱动程序必须满足几个特定于音频设备的性能问题。 下面的讨论主要处理音频呈现问题，尽管某些建议的技术适用于以及音频捕获。
+此外，WavePci 微型端口驱动程序必须解决特定于音频设备的几个性能问题。 以下讨论主要涉及音频呈现问题，不过，某些建议的技术也适用于音频捕获。
 
-### <a name="span-idstreamservicingmechanismsspanspan-idstreamservicingmechanismsspanspan-idstreamservicingmechanismsspanstream-servicing-mechanisms"></a><span id="Stream_Servicing_Mechanisms"></span><span id="stream_servicing_mechanisms"></span><span id="STREAM_SERVICING_MECHANISMS"></span>Stream 维护机制
+### <a name="span-idstream_servicing_mechanismsspanspan-idstream_servicing_mechanismsspanspan-idstream_servicing_mechanismsspanstream-servicing-mechanisms"></a><span id="Stream_Servicing_Mechanisms"></span><span id="stream_servicing_mechanisms"></span><span id="STREAM_SERVICING_MECHANISMS"></span>流服务机制
 
-在讨论之前的性能优化，一些背景知识有必要了解维护服务流的 WavePci 机制。
+在讨论性能优化之前，必须先了解一些背景知识，才能了解用于处理流的 WavePci 机制。
 
-当处理批呈现或捕获流时，音频设备都需要定期维护的微型端口驱动程序。 新的映射可用于流时，该驱动程序会将相应的映射添加到流的 DMA 队列。 该驱动程序还从队列中删除已处理的任何映射。 有关映射的信息，请参阅[WavePci 延迟](wavepci-latency.md)。
+处理波形渲染或捕获流时，音频设备需要通过微型端口驱动程序定期进行维护。 当新的映射可用于流时，驱动程序会将这些映射添加到流的 DMA 队列。 驱动程序还将从队列中删除已处理的任何映射。 有关映射的信息，请参阅[WavePci 滞后时间](wavepci-latency.md)。
 
-若要执行维护，微型端口驱动程序提供任一*延迟过程调用 (DPC)* 或中断服务例程 (ISR)，具体取决于是否将间隔设置由系统计时器或 DMA 驱动中断。 在后一种情况下，DMA 硬件通常会触发中断每次，如果完成传输一定量的数据流。
+若要执行服务，微型端口驱动程序提供了*延迟的过程调用（DPC）* 或中断服务例程（ISR），具体取决于间隔是由系统计时器还是由 DMA 驱动的中断设置的。 在后一种情况下，DMA 硬件通常会在每次完成传输一定量的流数据时触发中断。
 
-每次 DPC 或 ISR 执行，它将确定哪些流将需要维修。 DPC 或 ISR 服务流通过调用[ **IPortWavePci::Notify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)方法。 此方法将调用参数作为流的服务组，这是类型的对象[IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicegroup)。 **通知**方法调用的服务组[ **RequestService** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicesink-requestservice)方法 (请参阅**IServiceSink::RequestService**)。
+每次执行 DPC 或 ISR 时，它将确定哪些流需要维护。 DPC 或 ISR 通过调用[**IPortWavePci：： Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)方法来服务流。 此方法将流的服务组用作[IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)类型的对象作为调用参数。 **Notify**方法调用服务组的[**RequestService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)方法（请参阅**IServiceSink：： RequestService**）。
 
-服务组对象包含一组对象的类型的服务接收器[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)。 [IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicegroup)派生自 IServiceSink，并且这两个接口具有[ **RequestService** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicesink-requestservice)方法。 当[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)方法调用的服务组**RequestService**方法，通过调用做出响应的服务组**RequestService**接收器组中的每个服务的方法。
+服务组对象包含一组服务接收器，服务接收器是[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicesink)类型的对象。 [IServiceGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iservicegroup)派生自 IServiceSink，这两个接口都具有[**RequestService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)方法。 当[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)方法调用服务组的**RequestService**方法时，服务组会通过对该组中的每个服务接收器调用**RequestService**方法来做出响应。
 
-流的服务组包含至少一个服务接收器，端口驱动程序将添加到紧跟创建流的服务组。 端口驱动程序调用微型端口驱动程序[ **IMiniportWavePci::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)方法以获取服务组的指针。 服务接收器[ **RequestService** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicesink-requestservice)方法是端口驱动程序的特定于流的服务例程。 此例程将执行以下操作：
+流的服务组包含至少一个服务接收器，端口驱动程序会在创建该流后立即将其添加到服务组。 端口驱动程序调用微型端口驱动程序的[**IMiniportWavePci：： newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)方法来获取指向服务组的指针。 服务接收器的[**RequestService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)方法是端口驱动程序特定的流服务例程。 此例程执行以下操作：
 
--   调用微型端口驱动程序[ **IMiniportWavePciStream::Service** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-service)方法。
+-   调用微型端口驱动程序的[**IMiniportWavePciStream：：服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-service)方法。
 
--   自上次服务例程执行触发任何新挂起的位置或流上的时钟事件。
+-   触发自上一次执行服务例程后流上任何新近挂起的位置或时钟事件。
 
-如中所述[KS 事件](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-events)，可以注册客户端流达到某个特定位置或在一个时钟到达特定时间戳时收到通知。 [ **NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)方法具有不提供服务组，在其中用例端口驱动程序设置其自己的计时器划出到其服务例程的调用之间的时间间隔的选项。
+如[KS 事件](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-events)中所述，当流到达特定位置或当时钟到达特定时间戳时，客户端可以注册以获得通知。 [**Newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)方法具有未提供服务组的选项，在这种情况下，端口驱动程序将设置自己的计时器，以标记对其服务例程的调用之间的时间间隔。
 
-像[ **NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)方法、 微型端口驱动程序[ **IMiniportWavePci::Init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-init)方法还会输出指向服务组. 遵循**Init**调用时，端口驱动程序将其服务接收器添加到服务组。 此特定服务接收器作为一个整体包含筛选器的服务例程。 （上一段中介绍的筛选器上的 pin 与关联的流的服务接收器。）此服务例程调用微型端口驱动程序[ **IMiniportWavePci::Service** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-service)方法。 服务例程执行每次的 DPC 或 ISR 调用[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)与服务组的筛选器。 **Init**方法具有不提供用例端口驱动程序永远不会调用其筛选器服务例程的服务组的选项。
+与[**newstream.ischecked**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-newstream)方法一样，微型端口驱动程序的[**IMiniportWavePci：： Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-init)方法还输出指向服务组的指针。 在**Init**调用之后，端口驱动程序会将其服务接收器添加到服务组。 此特定服务接收器包含整个筛选器的服务例程。 （前面的段落介绍与筛选器上的 pin 关联的流的服务接收器。）此服务例程调用微型端口驱动程序的[**IMiniportWavePci：：服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepci-service)方法。 每当 DPC 或 ISR 调用向筛选器的服务组[**发出通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)时，就会执行服务例程。 **Init**方法可以选择不提供服务组，在这种情况下，端口驱动程序永远不会调用其筛选器服务例程。
 
-### <a name="span-idhardwareinterruptsspanspan-idhardwareinterruptsspanspan-idhardwareinterruptsspanhardware-interrupts"></a><span id="Hardware_Interrupts"></span><span id="hardware_interrupts"></span><span id="HARDWARE_INTERRUPTS"></span>硬件中断
+### <a name="span-idhardware_interruptsspanspan-idhardware_interruptsspanspan-idhardware_interruptsspanhardware-interrupts"></a><span id="Hardware_Interrupts"></span><span id="hardware_interrupts"></span><span id="HARDWARE_INTERRUPTS"></span>硬件中断
 
-某些微型端口驱动程序生成过多或没有足够的硬件中断。 DirectSound 采用硬件加速某些 WavePci 呈现设备中的硬件中断时发生仅可以提供的映射是几乎已耗尽，呈现引擎处于资源不足的风险。 在其他硬件加速 WavePci 设备的硬件中断上完成每个单个映射或其他相对较小的间隔发生。 在这种情况下，ISR 经常发现它几乎没有什么要做，但每个中断仍会消耗系统资源使用寄存器交换和缓存重新加载。 提高驱动程序性能的第一步是降低的最大程度地中断的数量，而不会有资源不足的风险。 消除不必要的中断之后, 可以通过设计 ISR 来更高效地执行实现额外的性能提升。
+某些微型端口驱动程序生成的硬件间隔太多或不足。 在具有 DirectSound 硬件加速的某些 WavePci 呈现设备中，仅当映射的提供几乎用尽并且呈现引擎面临不足的风险时，才会发生硬件中断。 在其他硬件加速的 WavePci 设备中，每次完成单个映射或其他较小的时间间隔时，都会发生硬件中断。 在这种情况下，ISR 经常会发现它有很少的操作，但每个中断仍会通过寄存器交换和缓存重装使用系统资源。 提高驱动程序性能的第一步是尽可能减少中断数量，而不会给出太多的风险。 消除不必要的中断后，可以通过设计 ISR 来更有效地执行，从而提高性能。
 
-在某些驱动程序，Isr 浪费时间通过调用的流[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)方法每次发生时的硬件中断-而不考虑是否真正运行流。 如果任何流不都处于运行状态，然后 DMA 为非活动状态，和尝试获取映射、 发布映射，所用的任何时间或浪费任何流中的新事件中查找。 高效的驱动程序，ISR 验证调用的流之前，正在运行的流**通知**方法。
+在某些驱动程序中，Isr 会在每次发生硬件中断时调用流的[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)方法，而不考虑流是否确实正在运行。 如果流不处于运行状态，则 DMA 处于非活动状态，尝试获取映射、释放映射或检查任何流中的新事件所需的任何时间都将浪费。 在有效的驱动程序中，ISR 验证在调用流的**通知**方法之前是否正在运行流。
 
-但是，使用这种类型的 ISR 的驱动程序需要确保所有挂起的上一个流的事件流退出运行状态时触发。 否则为事件可能会延迟或丢失。 仅在早于 Microsoft Windows XP 操作系统中运行暂停转换过程中出现此问题。 在 Windows XP 及更高版本，端口驱动程序会自动向发出信号，任何未完成的位置事件流更改状态时立即运行暂停。 在旧版本的操作系统，但是，微型端口驱动程序是负责触发任何未完成的事件，从而最终调用[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)立即暂停流之后。 有关详细信息，请参阅下面暂停/ACQUIRE 优化。
+但是，具有这种类型的 ISR 的驱动程序需要确保在流退出运行状态时触发流上的任何挂起事件。 否则，事件可能会延迟或丢失。 仅在 Microsoft Windows XP 之前的操作系统中运行到暂停的转换期间才会出现此问题。 在 Windows XP 和更高版本中，当流将状态从 "已暂停" 更改为 "暂停" 时，端口驱动程序会立即自动向任何未完成的位置 但是，在较早的操作系统中，微型端口驱动程序负责通过最终调用在流暂停后立即[**发出通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)来触发任何未完成的事件。 有关详细信息，请参阅下面的暂停/获取优化。
 
-典型的 WavePci 微型端口驱动程序管理中的单个播放流[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)。 KMixer 的当前实现将三个映射 Irp 的最少的数据进行缓冲播放流。 每个 IRP 包含约为 10 毫秒的音频足够缓冲区存储。 如果微型端口驱动程序触发的硬件中断 DMA 控制器完成 IRP 中的最后一个映射与每个时间，中断应定期出现相当 10 毫秒，这是频繁地占用保持 DMA 队列。 
+典型的 WavePci 微型端口驱动程序从[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)管理单个播放流。 KMixer 的当前实现最少使用三个映射 Irp 来缓冲播放流。 每个 IRP 都包含足够的缓冲区存储约10毫秒的音频。 如果微型端口驱动程序在每次 DMA 控制器完成后使用 IRP 中的最后一个映射来触发硬件中断，则中断应以相当于10毫秒的间隔发生，这是一项非常频繁的间隔，足以使 DMA 队列保持从而使。 
 
-### <a name="span-idtimerdpcsspanspan-idtimerdpcsspanspan-idtimerdpcsspantimer-dpcs"></a><span id="Timer_DPCs"></span><span id="timer_dpcs"></span><span id="TIMER_DPCS"></span>计时器 dpc 进行标记
+### <a name="span-idtimer_dpcsspanspan-idtimer_dpcsspanspan-idtimer_dpcsspantimer-dpcs"></a><span id="Timer_DPCs"></span><span id="timer_dpcs"></span><span id="TIMER_DPCS"></span>计时器 Dpc
 
-如果驱动程序管理任何硬件加速 DirectSound 流，则应使用计时器 DPC (请参阅[计时器对象和 dpc 进行标记](https://docs.microsoft.com/windows-hardware/drivers/kernel/timer-objects-and-dpcs)) 而不是 DMA 驱动硬件中断。 同样地，载入计时器 PCI 张数据卡 WavePci 设备可以使用而不是 DPC 的计时器驱动的硬件中断。
+如果驱动程序管理任何硬件加速的 DirectSound 流，则应使用 timer DPC （请参阅[计时器对象和 dpc](https://docs.microsoft.com/windows-hardware/drivers/kernel/timer-objects-and-dpcs)）而不是 DMA 驱动的硬件中断。 与此等效，PCI 卡上带有板载计时器的 WavePci 设备可以使用计时器驱动的硬件中断，而不是 DPC。
 
-DirectSound 缓冲区中，对于整个缓冲区可以附加到单个 IRP。 如果缓冲区很大，并且仅在它达到缓冲区的末尾时，微型端口驱动程序计划的硬件中断，后续中断可能因此大 DMA 队列解决。 此外，如果驱动程序管理大量的硬件加速 DirectSound 流，并且每个流生成其自己的中断时，所有中断的累积影响会降低系统性能。 在这些情况下，微型端口驱动程序应避免使用硬件中断计划维护的各个流。 相反，它应为服务中计划定期运行计时器生成单个 DPC 的所有流。
+对于 DirectSound 缓冲区，整个缓冲区可以附加到单个 IRP。 如果缓冲区很大，并且微型端口驱动程序仅在到达缓冲区末尾时才计划硬件中断，则连续发生的中断可能会与 DMA 队列出现的距离相差很远。 此外，如果驱动程序正在管理大量硬件加速的 DirectSound 流，并且每个流都生成其自己的中断，则所有中断的累积影响都会降低系统性能。 在这些情况下，微型端口驱动程序应避免使用硬件中断来计划各个流的维护。 相反，它应为单个 DPC 中计划在定期生成的时间间隔内运行的所有流进行服务。
 
-通过将计时器间隔设置为 10 毫秒，连续 DPC 执行之间的间隔为类似于前面所述的在单个 KMixer 播放流的情况下的硬件中断。 因此，DPC 可以处理 KMixer 播放流除硬件加速 DirectSound 流。
+通过将计时器间隔设置为10毫秒，两次播放 DPC 执行之间的时间间隔类似于在单个 KMixer 播放流的情况下硬件中断所述的间隔。 因此，DPC 还可以处理 KMixer 播放流以及硬件加速 DirectSound 流。
 
-当最后一个流退出运行状态时，微型端口驱动程序应禁用此计时器 DPC，若要避免浪费系统 CPU 周期。 立即禁用之后 DPC，该驱动程序应确保刷新任何时钟或位置上的事件挂起之前运行流。 在 Windows 98 / Me 和 Windows 2000 中，该驱动程序应调用[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)触发任何挂起的上在暂停的流的事件。 在 Windows XP 及更高版本，操作系统会触发任何挂起的事件流退出运行状态，而无需干预的微型端口驱动程序时自动。
+当最后一个流退出运行状态时，微型端口驱动程序应禁用计时器 DPC 以避免浪费系统 CPU 周期。 禁用 DPC 后，驱动程序应确保刷新之前正在运行的流上挂起的任何时钟或位置事件。 在 Windows 98/Me 和 Windows 2000 中，驱动程序应调用[**Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)来触发正在暂停的流上的任何挂起事件。 在 Windows XP 和更高版本中，当流退出运行状态时，操作系统将自动触发任何挂起事件，无需通过微型端口驱动程序介入。
 
-### <a name="span-idpauseacquireoptimizationsspanspan-idpauseacquireoptimizationsspanspan-idpauseacquireoptimizationsspanpauseacquire-optimizations"></a><span id="PAUSE_ACQUIRE_Optimizations"></span><span id="pause_acquire_optimizations"></span><span id="PAUSE_ACQUIRE_OPTIMIZATIONS"></span>暂停/ACQUIRE 优化
+### <a name="span-idpause_acquire_optimizationsspanspan-idpause_acquire_optimizationsspanspan-idpause_acquire_optimizationsspanpauseacquire-optimizations"></a><span id="PAUSE_ACQUIRE_Optimizations"></span><span id="pause_acquire_optimizations"></span><span id="PAUSE_ACQUIRE_OPTIMIZATIONS"></span>暂停/获取优化
 
-在 Windows 98 / Me 和 Windows 2000，WavePci 端口驱动程序流式传输服务例程 ( [ **RequestService** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicesink-requestservice)方法) 始终生成微型端口驱动程序调用[ **IMiniportWavePciStream::Service** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-service)方法而不考虑该流是否处于运行状态。 在这些操作系统**服务**方法应检查流是否正在运行的时间之前执行实际工作。 (但是，如果微型端口驱动程序的 DPC 或 ISR 具有已经过优化，可调用[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)仅为流的运行，将添加到此检查**服务**方法可能是冗余。）
+在 Windows 98/Me 和 Windows 2000 中，WavePci 端口驱动程序的流服务例程（ [**RequestService**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iservicesink-requestservice)方法）始终会生成对微型端口驱动程序的[**IMiniportWavePciStream：： service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-service)方法的调用，无论流是否处于运行状态。 在这些操作系统中，**服务**方法应检查流是否正在运行，然后花时间执行实际工作。 （但是，如果已将微型端口驱动程序的 DPC 或 ISR 优化为仅针对正在运行的流调用[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)，则将此检查添加到**服务**方法可能是冗余的。）
 
-此优化不需要在 Windows XP 和更高版本，因为[**通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepci-notify)方法调用[**服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-service)方法仅在正在运行的流。
+在 Windows XP 和更高版本中，此优化是不必要的，因为[**Notify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)方法仅对运行的流调用[**服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-service)方法。
 
-### <a name="span-idusingtheiprefetchoffsetinterfacespanspan-idusingtheiprefetchoffsetinterfacespanspan-idusingtheiprefetchoffsetinterfacespanusing-the-iprefetchoffset-interface"></a><span id="Using_the_IPreFetchOffset_Interface"></span><span id="using_the_iprefetchoffset_interface"></span><span id="USING_THE_IPREFETCHOFFSET_INTERFACE"></span>使用 IPreFetchOffset 接口
+### <a name="span-idusing_the_iprefetchoffset_interfacespanspan-idusing_the_iprefetchoffset_interfacespanspan-idusing_the_iprefetchoffset_interfacespanusing-the-iprefetchoffset-interface"></a><span id="Using_the_IPreFetchOffset_Interface"></span><span id="using_the_iprefetchoffset_interface"></span><span id="USING_THE_IPREFETCHOFFSET_INTERFACE"></span>使用 IPreFetchOffset 接口
 
-DirectSound 用户熟悉双 play 游标和写入光标的概念。 Play 光标指示正在从设备 （目前为 DAC 的示例驱动程序的最佳估计） 发出的数据的流中的位置。 写入位置是客户端写入其他数据的下一个安全位置的流中的位置。 对于 WavePci，默认的假设是映射的写入光标位于末尾的最后一个请求。 如果微型端口驱动程序已获得大量的未完成的映射，play 游标和写入光标之间的偏移量可能会非常大，足以某些 WHQL 音频位置测试失败。 在 Windows XP 及更高版本， [IPreFetchOffset](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iprefetchoffset)接口，解决这些问题。
+DirectSound 用户熟悉播放光标和写入光标的两个概念。 播放光标指示要从设备发出的数据流中的位置（驱动程序当前在 DAC 中的示例的最佳估计值）。 写入位置是客户端用于写入其他数据的下一个安全位置流中的位置。 对于 WavePci，默认假设是写入游标位于最后请求的映射的末尾。 如果微型端口驱动程序已获取大量未完成的映射，则播放光标与写入光标之间的偏移量可能会非常大，足以使某些 WHQL 音频位置测试失败。 在 Windows XP 和更高版本中， [IPreFetchOffset](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iprefetchoffset)接口解决了这些问题。
 
-微型端口驱动程序将使用[IPreFetchOffset](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iprefetchoffset)指定总线 master 硬件预提取特征，很大程度上由硬件先进先出的大小。 音频子系统使用此数据来设置 play 游标和写入光标之间的常量偏移量。 此常量偏移量，可以显著小于默认偏移量，充分利用这一事实数据可将写入一个映射即使映射交给硬件，前提是 play 游标是足够的距离位置在其中写入数据。 （此语句假定该驱动程序不会复制或以其他方式操作映射中的数据）。典型的偏移量可能会达到大约 64 示例，具体取决于引擎设计中。 在如此小的偏移量，与 WavePci 驱动程序时，可以是完全响应能力和功能仍在请求大量的映射。
+微型端口驱动程序使用[IPreFetchOffset](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iprefetchoffset)来指定总线主机硬件的预提取特征，这主要取决于硬件 FIFO 大小。 音频子系统使用此数据设置播放光标与写入光标之间的恒定偏移量。 此常量偏移量明显小于默认偏移量，可以利用这一事实：即使在将映射传递到硬件后，也可以将数据写入映射，只要播放光标离位置更远向其中写入数据。 （此语句假定驱动程序不复制或以其他方式处理映射中的数据。）根据引擎设计，典型的偏移量可能为64样本的顺序。 对于这小的偏移量，WavePci 驱动程序在请求大量映射时可以完全响应并正常运行。
 
-请注意 DirectSound 当前 10 毫秒填充写入光标的硬件加速的 pin。
+请注意，DirectSound 当前将硬件加速 pin 的写入游标填充10毫秒。
 
 有关详细信息，请参阅[预提取偏移量](prefetch-offsets.md)。
 
-### <a name="span-idprocessingdatainmappingsspanspan-idprocessingdatainmappingsspanspan-idprocessingdatainmappingsspanprocessing-data-in-mappings"></a><span id="Processing_Data_in_Mappings"></span><span id="processing_data_in_mappings"></span><span id="PROCESSING_DATA_IN_MAPPINGS"></span>在映射中处理数据
+### <a name="span-idprocessing_data_in_mappingsspanspan-idprocessing_data_in_mappingsspanspan-idprocessing_data_in_mappingsspanprocessing-data-in-mappings"></a><span id="Processing_Data_in_Mappings"></span><span id="processing_data_in_mappings"></span><span id="PROCESSING_DATA_IN_MAPPINGS"></span>在映射中处理数据
 
-避免接触映射中的数据，如有可能你的硬件驱动程序。 应将数据映射中包含的任何软件处理拆分为独立于硬件的驱动程序软件筛选器。 具有执行此类处理的硬件驱动程序可减少其效率，并创建延迟问题。
+如果可能，请避免硬件驱动程序接触到映射中的数据。 映射中包含的数据的任何软件处理都应拆分为独立于硬件驱动程序的软件筛选器。 硬件驱动程序执行此类处理会降低其效率并导致延迟问题。
 
-硬件驱动程序应尽可能透明有关其的真实硬件功能。 该驱动程序应永远不会声明实际上在软件中执行数据转换为提供硬件支持。
+硬件驱动程序应尽量使其真实的硬件功能变得透明。 驱动程序绝不应声明为在软件中实际执行的数据转换提供硬件支持。
 
-### <a name="span-idsynchronizationprimitivesspanspan-idsynchronizationprimitivesspanspan-idsynchronizationprimitivesspansynchronization-primitives"></a><span id="Synchronization_Primitives"></span><span id="synchronization_primitives"></span><span id="SYNCHRONIZATION_PRIMITIVES"></span>同步基元
+### <a name="span-idsynchronization_primitivesspanspan-idsynchronization_primitivesspanspan-idsynchronization_primitivesspansynchronization-primitives"></a><span id="Synchronization_Primitives"></span><span id="synchronization_primitives"></span><span id="SYNCHRONIZATION_PRIMITIVES"></span>同步基元
 
-驱动程序是不太可能具有现在和将来的死锁或性能问题，如果其代码设计为避免只要有可能受到阻止。 具体而言，应尽可能驱动程序的执行线程运行到完成，无需停止等待另一个线程或资源时的风险。 例如，驱动程序线程可以使用 Interlocked*Xxx*函数 (有关示例，请参阅[ **InterlockedIncrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedincrement)) 来协调对某些共享其访问没有被阻止的风险的资源。
+现在，如果驱动程序的代码被设计为尽可能避免被阻止，则该驱动程序不太可能会出现死锁或性能问题。 具体而言，驱动程序的执行线程应在等待其他线程或资源的同时，尝试运行到完成，而不会有停止的风险。 例如，驱动程序线程可以使用联锁*Xxx*函数（例如，请参阅[**InterlockedIncrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedincrement)）来协调对某些共享资源的访问，而不会受到阻止。
 
-尽管这些是功能强大的技术，您可能不能安全地从执行路径中移除所有自旋锁、 互斥体和其他阻塞的同步基元。 使用 Interlocked*Xxx*明智地，函数与无限期等待可能会导致数据资源不足的知识。
+尽管这些是功能强大的技术，但您可能无法安全地从执行路径中删除所有旋转锁、互斥体和其他阻止同步基元。 慎用互锁*Xxx*功能，了解无限期等待可能导致数据不足的情况。
 
-最重要的是，不要创建自定义同步基元。 内置的 Windows 基元 （互斥锁、 自旋锁等） 有可能在将来，支持新的计划程序功能所需修改和使用自定义构造的驱动程序完全可以保证不能够在未来处理。
+毕竟，不要创建自定义同步基元。 内置的 Windows 基元（互斥锁、旋转锁等）可能会根据需要进行修改，以支持将来的新计划程序功能，而使用自定义构造的驱动程序在将来确实不能正常工作。
 
-### <a name="span-idipincountinterfacespanspan-idipincountinterfacespanspan-idipincountinterfacespanipincount-interface"></a><span id="IPinCount_Interface"></span><span id="ipincount_interface"></span><span id="IPINCOUNT_INTERFACE"></span>IPinCount Interface
+### <a name="span-idipincount_interfacespanspan-idipincount_interfacespanspan-idipincount_interfacespanipincount-interface"></a><span id="IPinCount_Interface"></span><span id="ipincount_interface"></span><span id="IPINCOUNT_INTERFACE"></span>IPinCount 接口
 
-在 Windows XP 及更高版本， [IPinCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-ipincount)接口提供一种方法的更准确地说由分配 pin 的硬件资源的帐户的微型端口驱动程序。 通过调用微型端口驱动程序[ **IPinCount::PinCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-ipincount-pincount)方法中，端口驱动程序执行以下操作：
+在 Windows XP 和更高版本中， [IPinCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-ipincount)接口为微型端口驱动程序提供了一种方法，以便更准确地考虑分配 pin 所使用的硬件资源。 通过调用微型端口驱动程序的[**IPinCount：:P incount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-ipincount-pincount)方法，端口驱动程序会执行以下操作：
 
--   显示筛选器的最新的 pin 计数 （如将端口驱动程序维护） 到微型端口驱动程序。
+-   将筛选器的当前 pin 计数（由端口驱动程序维护）公开给微型端口驱动程序。
 
--   提供微型端口驱动程序修改 pin 的机会计数到动态反映当前的硬件资源可用性。
+-   为微型端口驱动程序提供修订 pin 计数以动态反映硬件资源当前可用性的机会。
 
-对于某些音频设备，具有不同的属性 （三维、 立体声/mono 等） 的批流可能还必须在它们占用了多少硬件资源方面不同"权重"。 当打开或关闭"轻型"流、 驱动程序递增或递减通过其中一个可用的 pin 的计数。 在打开的"重量级"流，但是，微型端口驱动程序可能需要由两个而不是由一个递减可用 pin 计数，以便更准确地指示可以使用剩余的资源创建的 pin 数。
+对于某些音频设备，具有不同属性（3-d、立体声/mono 等）的波形流可能还具有不同的 "权重"，因为它们占用了多少硬件资源。 打开或关闭 "轻型" 流时，驱动程序会递增或递减可用 pin 的计数。 但打开 "重型" 流时，微型端口驱动程序可能需要将可用的 pin 计数减少两个（而不是一个），以便更准确地指示可以使用剩余资源创建的 pin 数。
 
-重量级流关闭时，其过程正好相反。 可用 pin 计数可能会增加的多个以反映这一事实的两个或更轻量的流可以创建从新释放资源。
+关闭重型流时，将反向处理。 可用的 pin 计数可能会增加多个，以反映可以从新释放的资源创建两个或多个轻型流这一事实。
 
  
 

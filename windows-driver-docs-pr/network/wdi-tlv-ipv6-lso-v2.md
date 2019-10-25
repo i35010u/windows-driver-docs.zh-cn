@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_IPV6_LSO_V2 (0xD4)
-description: WDI_TLV_IPV6_LSO_V2 是包含大量发送卸载 V2 参数对 IPv6 TLV。
+description: WDI_TLV_IPV6_LSO_V2 是一个 TLV，其中包含 IPv6 的大型发送卸载 V2 参数。
 ms.assetid: 898257D1-405A-46A3-AE63-26DFA8C1FAAC
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_IPV6_LSO_V2 (0xD4) 网络驱动程序
+- WDI_TLV_IPV6_LSO_V2 （0xD4）从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e46e89d61fcbf9fc4f11855ed75a432d9c44ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec794d7cdd2909f8b662495f6dba6eb3bdbdcb99
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380751"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842464"
 ---
-# <a name="wditlvipv6lsov2-0xd4"></a>WDI\_TLV\_IPV6\_LSO\_V2 (0xD4)
+# <a name="wdi_tlv_ipv6_lso_v2-0xd4"></a>WDI\_TLV\_IPV6\_LSO\_V2 （0xD4）
 
 
-WDI\_TLV\_IPV6\_LSO\_V2 是包含大量发送卸载 V2 参数对 IPv6 TLV。
+WDI\_TLV\_IPV6\_LSO\_V2 是包含 IPv6 的大型发送卸载 V2 参数的 TLV。
 
-将报告功能值，如中所述[ **NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)。 使用 NDIS\_卸载\_不\_支持和 NDIS\_卸载\_时，该值指示通过功能支持[OID\_WDI\_GET\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)。
+功能值以[**NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)的形式报告。 使用 NDIS\_卸载\_不\_受支持，并且通过[OID\_WDI\_获取\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)时，支持 NDIS\_卸载\_。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -28,7 +28,7 @@ WDI\_TLV\_IPV6\_LSO\_V2 是包含大量发送卸载 V2 参数对 IPv6 TLV。
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+所有包含的元素的大小的总和（以字节为单位）。
 
 ## <a name="values"></a>值
 
@@ -54,19 +54,19 @@ WDI\_TLV\_IPV6\_LSO\_V2 是包含大量发送卸载 V2 参数对 IPv6 TLV。
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>卸载最大大小。 指定的最大的每个数据包的 TCP 用户数据的字节数。</td>
+<td>最大卸载大小。 由每个数据包的 TCP 用户数据的最大字节数指定。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>最小的段计数。 指定应将分段后出现的段的最小数目。</td>
+<td>最小段计数。 由分段后应出现的段数的最小数目指定。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>指定是否支持卸载 IP 扩展标头的数据包的校验和。</td>
+<td>指定是否支持卸载具有 IP 扩展标头的数据包的校验和。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>指定是否支持使用 TCP 选项的校验和卸载。</td>
+<td>指定是否支持卸载带有 TCP 选项的校验和。</td>
 </tr>
 </tbody>
 </table>
@@ -84,14 +84,14 @@ WDI\_TLV\_IPV6\_LSO\_V2 是包含大量发送卸载 V2 参数对 IPv6 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -6,12 +6,12 @@ keywords:
 - 上下文 WDK 文件系统微筛选器，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9955d279efa35c80d9f8c72d9ffd912ddb5c3970
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 041b4c827da92c5d3673b88ef0ff10917cb1d16d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366801"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841449"
 ---
 # <a name="creating-contexts"></a>创建上下文
 
@@ -19,9 +19,9 @@ ms.locfileid: "67366801"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-一旦微筛选器驱动程序已注册它使用的上下文类型，它可以通过调用创建上下文[ **FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)。 此例程选择适当的上下文定义用于根据条件中所述[上下文类型注册](registering-context-types.md)。
+微筛选器驱动程序注册它所使用的上下文类型后，可以通过调用[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)创建上下文。 此例程根据[注册上下文类型](registering-context-types.md)中所述的条件来选择要使用的适当上下文定义。
 
-在以下代码示例中，从 CTX 示例微筛选器驱动程序， **CtxInstanceSetup**例程调用[ **FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)若要创建的实例上下文:
+在以下代码示例中，从 CTX 示例微筛选器驱动程序开始， **CtxInstanceSetup**例程调用[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)来创建实例上下文：
 
 ```cpp
 status = FltAllocateContext(
@@ -32,7 +32,7 @@ status = FltAllocateContext(
            &instanceContext);            //ReturnedContext
 ```
 
-在 CTX 示例中，以下上下文定义为实例上下文注册：
+在 CTX 示例中，为实例上下文注册了以下上下文定义：
 
 ```cpp
 { FLT_INSTANCE_CONTEXT,              //ContextType
@@ -42,9 +42,9 @@ status = FltAllocateContext(
   CTX_INSTANCE_CONTEXT_TAG },        //PoolTag
 ```
 
-这是一个固定大小上下文定义，因为**大小**成员是一个常量。 (如果**大小**成员已 FLT\_变量\_调整\_上下文，它将是一个可变大小上下文定义。)请注意，FLTFL\_上下文\_注册\_否\_EXACT\_大小\_匹配项标志未设置**标志**成员。 在这种情况下，如果的值*大小*的参数[ **FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)的对应项匹配**大小**上下文的成员定义中， **FltAllocateContext**从相应的非分页后备链列表分配实例上下文。 如果值不匹配， **FltAllocateContext**失败，并返回值的状态\_FLT\_上下文\_分配\_不\_找到。
+这是一个固定大小的上下文定义，因为**大小**成员是常数。 （如果**Size**成员是 FLT\_变量\_大小\_上下文，则它将是可变大小的上下文定义。）请注意，FLTFL\_上下文\_注册\_未\_确切\_大小\_未在**Flags**成员中设置匹配标志。 在这种情况下，如果[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)的*size*参数值与上下文定义的**size**成员的值相匹配，则**FltAllocateContext**将从相应的非分页后备链表分配实例上下文。成员列表. 如果值不匹配，则**FltAllocateContext**将失败，返回值为 STATUS\_FLT\_CONTEXT\_分配\_未找到\_。
 
-[**FltAllocateContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatecontext)初始化到一个新的上下文的引用计数。 当不再需要上下文时，微筛选器驱动程序必须释放此引用。 因此，每次调用**FltAllocateContext**的后续调用必须匹配[ **FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)。
+[**FltAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecontext)将新上下文的引用计数初始化为一个。 如果不再需要该上下文，则微筛选器驱动程序必须释放此引用。 因此，每次调用**FltAllocateContext**时，必须通过对[**FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)的后续调用来匹配。
 
  
 

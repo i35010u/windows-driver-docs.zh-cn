@@ -4,16 +4,16 @@ description: 存储类驱动程序的 RetryRequest 例程
 ms.assetid: de1eea7d-88db-444c-a9f7-462ad4a5df27
 keywords:
 - RetryRequest
-- 正在重试请求 WDK 存储
+- 正在重试 WDK 存储
 - 错误 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd56a8ef9820c25c7ffd27add77964b84cdabe4e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5991d4d6e6dc7aff5da2a9d5ccbad1836ed1a0d4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379091"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841609"
 ---
 # <a name="storage-class-drivers-retryrequest-routine"></a>存储类驱动程序的 RetryRequest 例程
 
@@ -21,25 +21,25 @@ ms.locfileid: "67379091"
 ## <span id="ddk_storage_class_drivers_retryrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_RETRYREQUEST_ROUTINE_KG"></span>
 
 
-基础存储端口驱动程序负责涉及到总线，包括总线奇偶校验错误、 选择超时值和目标/控制器忙错误上的数据的传输设备错误发生的情况下重试请求。 如果重试尝试都失败，存储端口驱动程序完成请求因相应的错误和日志 I/O 错误。
+如果发生了涉及总线上数据传输的设备错误，则基础存储端口驱动程序负责重试请求，其中包括总线奇偶校验错误、选择超时和目标/控制器繁忙错误。 如果重试失败，则存储端口驱动程序将使用适当的错误完成请求并记录 i/o 错误。
 
-存储类驱动程序应永远不会尝试重试端口驱动程序已由于上面的错误的任何失败的请求。
+存储类驱动程序绝不应尝试重试端口驱动程序由于前面的任何错误而失败的请求。
 
-存储类驱动程序负责因特定于设备的错误，以外目标/控制器-忙，总线重置的目标/控制器错误而失败或请求超时值的重试请求。 一般情况下， *RetryRequest*例程可以重新提交此类 IRP 到下一步低驱动程序并直接 SRB 将放在端口驱动程序的特定于 LU 的队列的开头处。
+存储类驱动程序负责重试因设备特定的错误、目标/控制器繁忙、总线重置或请求超时而失败的请求。 通常情况下， *RetryRequest*例程可以将此类 IRP 重新提交到下一个较低的驱动程序，并将 SRB 置于端口驱动程序的 LU 特定队列的开头。
 
-具体而言， *RetryRequest*例程应执行以下操作：
+特别是， *RetryRequest*例程应该执行以下操作：
 
-1.  确保分部传输请求已正确设置的起始地址和长度的值。
+1.  确保部分传输请求具有为起始地址和长度设置的正确值。
 
-2.  零**SrbStatus**并**ScsiStatus** SRB 的成员。
+2.  零： SRB 的**SrbStatus**和**ScsiStatus**成员。
 
-3.  设置**SrbFlags**成员，根据需要为该设备。
+3.  根据设备的需要，设置**SrbFlags**成员。
 
-4.  设置中 IRP 如前面所述的端口驱动程序的 I/O 堆栈位置[存储类驱动程序调度例程](storage-class-driver-s-dispatch-routines.md)通过[存储类驱动程序 SplitTransferRequest 例程](storage-class-driver-s-splittransferrequest-routine.md)。
+4.  设置 IRP 中端口驱动程序的 i/o 堆栈位置，如存储类驱动程序的[调度例程](storage-class-driver-s-dispatch-routines.md)通过[存储类驱动程序的 SplitTransferRequest 例程](storage-class-driver-s-splittransferrequest-routine.md)所述。
 
-5.  调用[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)的 IRP，因为在驱动程序[ **IoCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程必须释放之前 IRP SRB返回。 *IoCompletion*不止一次重试请求或调用的驱动程序，可能还需要例程*InterpretRequestSense*或*ReleaseQueue*例程。
+5.  为 IRP 调用[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，因为在 irp 返回之前，驱动程序的[**IoCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程必须释放 SRB。 *IoCompletion*例程可能还需要多次重试请求，或调用驱动程序的*InterpretRequestSense*或*ReleaseQueue*例程。
 
-6.  将请求传递到下一步低驱动程序和[ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
+6.  通过[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将请求传递到下一个较低版本的驱动程序。
 
  
 

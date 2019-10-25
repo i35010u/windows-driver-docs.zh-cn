@@ -1,9 +1,9 @@
 ---
 title: usb3kd.ucx_device
-description: Usb3kd.ucx_device 扩展在 USB 3.0 树中显示有关 USB 设备的信息。 显示基于由 UcxVersion.sys 维护的数据结构。
+description: Usb3kd. ucx _device 扩展显示有关 usb 3.0 树中 USB 设备的信息。 显示基于 UcxVersion 维护的数据结构。
 ms.assetid: 7AC3DBBF-1D62-492E-B46E-C193579DE1E3
 keywords:
-- usb3kd.ucx_device Windows 调试
+- usb3kd. ucx _device Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +12,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bd84e17256b7242ddf247ddb0580419672e3cee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a672b6b6f460367dc2922653a5dcc0aeb1f42fab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368006"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837646"
 ---
-# <a name="usb3kducxdevice"></a>！ usb3kd.ucx\_设备
+# <a name="usb3kducx_device"></a>！ usb3kd. ucx\_设备
 
 
-[ **！ Usb3kd.ucx\_设备**](-usb3kd-device-info.md)扩展显示有关 USB 设备中的信息[USB 3.0 树](usb-3-extensions.md#usb-3-tree)。 显示基于 USB 主控制器扩展驱动程序所维护的数据结构 (Ucx*版本*.sys)。
+[ **！ Usb3kd. ucx\_设备**](-usb3kd-device-info.md)扩展在[usb 3.0 树](usb-3-extensions.md#usb-3-tree)中显示有关 usb 设备的信息。 此显示基于 USB 主机控制器扩展驱动程序 *（Ucx）* 所维护的数据结构。
 
 ```dbgcmd
 !usb3kd.ucx_device UcxUsbDevicePrivContext
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
 
 
-<span id="_______UcxUsbDevicePrivContext______"></span><span id="_______ucxusbdeviceprivcontext______"></span><span id="_______UCXUSBDEVICEPRIVCONTEXT______"></span> *UcxUsbDevicePrivContext*   
-地址\_UCXUSBDEVICE\_PRIVCONTEXT 结构，它表示该设备。
+<span id="_______UcxUsbDevicePrivContext______"></span><span id="_______ucxusbdeviceprivcontext______"></span><span id="_______UCXUSBDEVICEPRIVCONTEXT______"></span>*UcxUsbDevicePrivContext*   
+表示设备的 \_UCXUSBDEVICE\_PRIVCONTEXT 结构的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>备注
 -------
 
-USB 主控制器扩展驱动程序 (Ucx*版本*.sys) 提供的 USB 3.0 集线器驱动程序和 USB 3.0 主机之间的抽象层，控制器驱动程序。 扩展驱动程序具有其自己的主机控制器、 设备和终结点的表示形式。 输出[ **！ ucx\_设备**](-usb3kd-device-info.md)命令基于由扩展驱动程序维护的数据结构。 有关 USB 主控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出[ **！ ucx\_设备**](-usb3kd-device-info.md)命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
-**！ ucx\_设备**并[ **！ 设备\_信息**](-usb3kd-device-info.md)两者都显示有关设备的信息，但显示的信息不同。 输出 **！ ucx\_设备**是从 USB 主控制器扩展驱动程序的 point of view 和输出 **！ 设备\_信息**是从 USB 3.0 集线器的角度驱动程序。 例如， **！ ucx\_设备**输出包含有关终结点，并且 **！ 设备\_信息**输出包含有关配置和接口描述符。
+**！ ucx\_设备**和[ **！ device\_信息**](-usb3kd-device-info.md)都显示设备的相关信息，但显示的信息有所不同。 **！ Ucx\_设备**的输出来自 usb 主机控制器扩展驱动程序的位置，而 **！ device\_信息**的输出来自 usb 3.0 集线器驱动程序的视图。 例如， **！ ucx\_设备**输出包含有关终结点的信息，而 **！ device\_info**输出包含有关配置和接口描述符的信息。
 
 <a name="examples"></a>示例
 --------
 
-若要获取的地址 UCX USB 设备专用上下文，请查看的输出[ **！ ucx\_控制器\_列表**](-usb3kd-ucx-controller-list.md)命令。 在以下示例中，第二个设备的专用上下文的地址是 0xfffffa8005bd9680。
+若要获取 UCX USB 设备专用上下文的地址，请查看[ **！ UCX\_控制器\_list**](-usb3kd-ucx-controller-list.md)命令的输出。 在下面的示例中，第二个设备的专用上下文地址为0xfffffa8005bd9680。
 
 ```dbgcmd
 3: 3: kd> !ucx_controller_list
@@ -65,7 +65,7 @@ USB 主控制器扩展驱动程序 (Ucx*版本*.sys) 提供的 USB 3.0 集线器
         ...
 ```
 
-现在可以将传递到 UCX USB 专用上下文的地址 **！ ucx\_设备**命令。
+现在可以将 UCX USB private 上下文的地址传递到 **！ UCX\_设备**命令。
 
 ```dbgcmd
 3: kd> !ucx_device 0xfffffa8005bd9680
@@ -94,14 +94,14 @@ EventCallbacks:
     EvtUsbDeviceEndpointAdd: (0xfffff880044edfc8) USBXHCI!Endpoint_UcxEvtUsbDeviceEndpointAdd
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[ **!usb3kd.ucx\_controller\_list**](-usb3kd-ucx-controller-list.md)
+[ **！ usb3kd. ucx\_控制器\_列表**](-usb3kd-ucx-controller-list.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
 
  
 

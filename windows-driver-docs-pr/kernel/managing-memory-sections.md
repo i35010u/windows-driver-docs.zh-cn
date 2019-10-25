@@ -3,18 +3,18 @@ title: 管理内存节
 description: 管理内存节
 ms.assetid: 620ba31d-596f-493a-b97f-65a27d50cc9a
 keywords:
-- 内存部分 WDK 内核
-- 部分对象 WDK 内核
-- 视图 WDK 内存部分
-- 映射部分视图
+- 内存段 WDK 内核
+- 节对象 WDK 内核
+- 查看 WDK 内存部分
+- 映射节视图
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66078fa565a02b943ff4214cc356fef276504288
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d17c553028b85c5845dfa4e028a1203b991ba77b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386012"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838546"
 ---
 # <a name="managing-memory-sections"></a>管理内存节
 
@@ -22,15 +22,15 @@ ms.locfileid: "67386012"
 
 
 
-驱动程序可以通过调用创建的部分对象[ **ZwCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection)，其中返回的句柄的部分对象。 使用*FileHandle*参数来指定备份文件，或**NULL**如果该节不提供文件支持。 可以使用打开的部分对象的其他句柄[ **ZwOpenSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)。
+驱动程序可以通过调用[**ZwCreateSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)创建节对象，这将返回节对象的句柄。 使用*FileHandle*参数指定后备文件，如果该部分未进行文件支持，则为**NULL** 。 可以使用[**ZwOpenSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection)打开节对象的其他句柄。
 
-若要使属于在当前进程的地址空间中访问的部分对象的数据，必须映射部分中的视图。 驱动程序可以将映射节的视图到当前进程的地址空间使用[ **ZwMapViewOfSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)例程。 *SectionOffset*参数指定的部分视图的开始处的字节偏移量和*ViewSize*指定要映射的字节数。
+若要使属于节对象的数据可在当前进程的地址空间中访问，必须映射该部分的视图。 驱动程序可以使用[**ZwMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)例程将节的视图映射到当前进程的地址空间。 *SectionOffset*参数指定视图在部分中开始的字节偏移量， *ViewSize*指定要映射的字节数。
 
-*保护*参数指定在视图上允许的操作。 指定页\_只读视图中，页的 READONLY\_READWRITE 读/写视图和页面\_WRITECOPY 写入时复制视图。
+*保护*参数指定对视图所允许的操作。 为只读视图指定页\_READONLY，为读取/写入视图指定页\_READWRITE，并为写入时复制视图指定页面\_WRITECOPY。
 
-没有物理内存分配图，直到访问虚拟内存范围。 内存范围在首次访问会导致页错误;然后，系统会分配页来保存该内存位置。 如果该节被文件备份，系统将读取对应于相应页面，并将其复制到内存中的文件的内容。 （请注意未使用的部分对象和视图执行用于簿记目的使用一些分页和非分页池）。
+在访问虚拟内存范围之前，不会为视图分配物理内存。 第一次访问内存范围会导致页错误;然后，系统将分配一个页来保存该内存位置。 如果该部分是文件支持的，则系统将读取对应于该页面的文件内容并将其复制到内存。 （请注意，未使用的节对象和视图会出于簿记目的使用某些分页和非分页池。）
 
-驱动程序不能再使用视图后，它取消映射，它通过调用[ **ZwUnmapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwunmapviewofsection)。 驱动程序不再使用的部分对象后，它将关闭与部分句柄[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)。 请注意，映射视图并不将任何其他视图映射后，它是安全地立即调用**ZwClose**部分句柄; 视图 （和部分对象） 继续存在，直到该视图是未映射。 这是建议的做法，因为它减少了无法关闭句柄的驱动程序的风险。
+当驱动程序不再使用某一视图时，它通过调用[**ZwUnmapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwunmapviewofsection)来 messagebox 取消它。 当驱动程序不再使用 section 对象后，它将关闭使用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)的节句柄。 请注意，在映射视图后，不会映射其他任何视图，可以安全地在节句柄上立即调用**ZwClose** ;视图（和节对象）将继续存在，直到取消映射视图。 这是建议的做法，因为它降低了驱动程序未能关闭句柄的风险。
 
  
 

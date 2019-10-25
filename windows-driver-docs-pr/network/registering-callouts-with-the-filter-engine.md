@@ -9,17 +9,17 @@ keywords:
 - 注册标注 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f01e15ef409c71704bbbd9b5d37d07fae01828
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 34f70e1e059a685845fbcbd394cd55a808cd9927
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374761"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842081"
 ---
 # <a name="registering-callouts-with-the-filter-engine"></a>将标注注册到筛选器引擎
 
 
-标注驱动程序已创建了一个设备对象后，它可以向筛选器引擎中注册其标注。 标注驱动程序可以注册其标注筛选器引擎在任何时候，即使筛选器引擎当前未运行。 要使用筛选器引擎注册一个标注，标注驱动程序调用[ **FwpsCalloutRegister0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)函数。 例如：
+标注驱动程序创建设备对象后，它可以使用筛选器引擎注册其标注。 标注驱动程序可以随时使用筛选器引擎注册其标注，即使筛选器引擎当前未运行也是如此。 若要使用筛选器引擎注册标注，标注驱动程序将调用[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)函数。 例如：
 
 ```C++
 // Prototypes for the callout's callout functions
@@ -84,14 +84,14 @@ NTSTATUS
 }
 ```
 
-如果在调用[ **FwpsCalloutRegister0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)函数运行成功，最后一个参数指向的变量包含标注的运行时标识符。 此运行时标识符对应于指定的标注密钥的 GUID。
+如果对[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)函数的调用成功，则最后一个参数指向的变量将包含该标注的运行时标识符。 此运行时标识符对应于为标注键指定的 GUID。
 
-单个标注驱动程序可以实现多个标注。 如果标注驱动程序实现多个标注，则会调用[ **FwpsCalloutRegister0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)函数为每个标注，它支持使用筛选器引擎注册每个标注一次。
+单个标注驱动程序可以实现多个标注。 如果标注驱动程序实现了多个标注，则它会对每个标注调用[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)函数，以便为每个标注注册筛选器引擎。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

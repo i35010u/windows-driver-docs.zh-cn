@@ -3,16 +3,16 @@ title: CoNDIS 协议驱动程序 OID 请求
 description: CoNDIS 协议驱动程序 OID 请求
 ms.assetid: 1338d199-2cd8-430a-a0a5-95aaea04c384
 keywords:
-- 协议驱动程序 WDK 网络的 CoNDIS
-- NDIS 协议驱动程序 WDK CoNDIS
+- 协议驱动程序 WDK 网络，CoNDIS
+- NDIS 协议驱动程序 WDK，CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8037f19e8a537ea226c40cc36025d258762f8cac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47e0f9f59d3679634f80fc444b814dc3f36675b1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385113"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835086"
 ---
 # <a name="condis-protocol-driver-oid-requests"></a>CoNDIS 协议驱动程序 OID 请求
 
@@ -20,29 +20,29 @@ ms.locfileid: "67385113"
 
 
 
-CoNDIS 协议驱动程序，客户端或调用管理器中，可以查询或设置操作参数的微型端口驱动程序和其他协议驱动程序。 CoNDIS 协议驱动程序还可使用查询或调用管理器 (MCMs) 中微型端口设置的信息。 有关 OID 的请求和 MCMs 的详细信息，请参阅[CoNDIS MCM OID 请求](condis-mcm-oid-requests.md)。
+CoNDIS protocol 驱动程序（客户端或呼叫管理器）可以查询或设置微型端口驱动程序和其他协议驱动程序的操作参数。 CoNDIS 协议驱动程序还可以查询或设置微型端口调用管理器（MCMs）中的信息。 有关 OID 请求和 MCMs 的详细信息，请参阅[CONDIS MCM OID requests](condis-mcm-oid-requests.md)。
 
-来自对基础驱动程序的 OID 请求，协议驱动程序调用[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)函数，并在设置地址系列 (AF) 句柄， *NdisAfHandle*参数为**NULL**。 打出到另一个的 CoNDIS 协议驱动程序的 OID 请求，协议驱动程序调用**NdisCoOidRequest** ，并提供有效的 AF 句柄。
+若要向基础驱动程序发起 OID 请求，协议驱动程序将调用[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)函数，并将*NdisAfHandle*参数处的地址族（AF）句柄设置为**NULL**。 若要向另一个 CoNDIS 协议驱动程序发起 OID 请求，协议驱动程序将调用**NdisCoOidRequest**并提供有效的 AF 句柄。
 
-协议驱动程序调用后**NdisCoOidRequest**函数，NDIS 调用 OID request 函数的其他驱动程序 （基础驱动程序或另一个的 CoNDIS 协议驱动程序）。 有关微型端口驱动程序，调用 NDIS [ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数。 有关协议驱动程序，调用 NDIS [ **ProtocolCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request)函数。
+在协议驱动程序调用**NdisCoOidRequest**函数后，NDIS 将调用其他驱动程序（基础驱动程序或其他 CoNDIS 协议驱动程序）的 OID 请求函数。 对于微型端口驱动程序，NDIS 会调用[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数。 对于协议驱动程序，NDIS 会调用[**ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request)函数。
 
 下图说明了定向到微型端口驱动程序的 OID 请求。
 
-![说明的 oid 请求定向到微型端口驱动程序的关系图](images/protocolcorequest.png)
+![说明定向到微型端口驱动程序的 oid 请求的关系图](images/protocolcorequest.png)
 
 下图说明了定向到协议驱动程序的 OID 请求。
 
-![说明的 oid 请求定向到协议驱动程序的关系图](images/clientcorequest.png)
+![说明定向到协议驱动程序的 oid 请求的关系图](images/clientcorequest.png)
 
-若要以同步方式，完成[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)返回 NDIS\_状态\_成功或错误状态。 若要以异步方式完成**NdisCoOidRequest**返回 NDIS\_状态\_PENDING。
+若要同步完成， [**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)会返回 NDIS\_状态\_成功或错误状态。 若要异步完成， **NdisCoOidRequest**将\_状态返回 NDIS 状态\_"挂起"。
 
-如果**NdisCoOidRequest**返回 NDIS\_状态\_挂起、 NDIS 调用[ **ProtocolCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request_complete)函数之后，其他驱动程序将通过调用完成 OID 请求[ **NdisMCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcooidrequestcomplete)函数或[ **NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequestcomplete)函数。 NDIS 在这种情况下，将在请求的结果传递*OidRequest*的参数*ProtocolCoOidRequestComplete*。 NDIS 将传递在请求的最终状态*状态*的参数*ProtocolCoOidRequestComplete*。
+如果**NdisCoOidRequest**返回 NDIS\_状态\_"挂起"，则在其他驱动程序完成 OID 请求之后， [**Ndis 将调用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request_complete) [**NdisMCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcooidrequestcomplete)函数或[**NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)函数。 在这种情况下，NDIS 会将请求的结果传递到*ProtocolCoOidRequestComplete*的*OidRequest*参数。 NDIS 在*ProtocolCoOidRequestComplete*的*status*参数传递请求的最终状态。
 
-如果[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)返回 NDIS\_状态\_成功后，它将返回的结果中的查询请求[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构，在*OidRequest*参数所指向。 在这种情况下，未调用 NDIS *ProtocolCoOidRequestComplete*函数。
+如果[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)\_SUCCESS 返回 NDIS\_状态，它将在*OidRequest*参数点的[**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中返回查询请求的结果。 在这种情况下，NDIS 不会调用*ProtocolCoOidRequestComplete*函数。
 
-如果基础驱动程序应将与后续状态指示关联 OID 请求，应设置协议驱动程序**RequestId**并**RequestHandle** NDIS 中的成员\_OID\_请求结构。 如果基础驱动程序的状态指示，驱动程序设置**RequestId**中的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构中的值**RequestId**成员的 NDIS\_OID\_请求结构并**DestinationHandle**中 NDIS成员\_状态\_中的值指示结构**RequestHandle** NDIS 成员\_OID\_请求结构。
+如果基础驱动程序应将 OID 请求与后续状态指示相关联，则协议驱动程序应将 NDIS 中的**RequestId**和**RequestHandle**成员设置\_OID\_请求结构。 如果基础驱动程序产生状态指示，驱动程序会将 Ndis 中的**requestid**成员[ **\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构设置为 Ndis\_OID 的**REQUESTID**成员的值\_请求NDIS 中的结构和**DestinationHandle**成员\_状态\_指示结构从 NDIS\_OID 的**REQUESTHANDLE**成员\_请求结构的值。
 
-驱动程序可以调用[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)绑定正在*正在重新启动*，*运行*，*暂停*，或*已暂停*状态。
+当绑定处于 "正在*重新启动*"、"*正在运行*"、"*暂停*" 或 "已*暂停*" 状态时，驱动程序可以调用[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 。
 
  
 

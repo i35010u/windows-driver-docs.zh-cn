@@ -1,38 +1,38 @@
 ---
 title: 扩展的相机控件有效负载
-description: KSPROPERTYSETID_ExtendedCameraControl 属性集内的控件属性用于获取和设置属性数据使用常见的负载格式。
+description: KSPROPERTYSETID_ExtendedCameraControl 属性集内的控件属性使用通用负载格式来获取和设置属性数据。
 ms.assetid: 347413DB-229B-40D7-BD3E-931493EE1FBC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d54c27308b87bb684d89d3b51486361b6fbb2a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9b66fe8aa03d98317e20b6a24de91c8fa3760feb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384098"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834416"
 ---
 # <a name="extended-camera-control-payloads"></a>扩展的相机控件有效负载
 
 
-中的控件属性[KSPROPERTYSETID\_ExtendedCameraControl](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol)属性集使用的通用的有效负载格式，用于获取和设置属性数据。
+[KSPROPERTYSETID\_ExtendedCameraControl](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol)属性集内的控件属性使用通用负载格式来获取和设置属性数据。
 
-## <a name="extended-camera-property-header"></a>扩展的相机属性标头
+## <a name="extended-camera-property-header"></a>扩展照相机属性标头
 
 
-所有负载都开头[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构。 此结构包含在固定的关联的控制标志和功能。 具体取决于特定的控件，**功能**成员将包含一组由控件提供的功能。 **标志**成员将包含的实际功能当前设置或为控件设置。
+所有负载都以[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构开始。 此结构包含具有关联控件标志和功能的 PIN 目标。 根据特定的控件，**功能**成员将包含控件提供的一组功能。 **Flags**成员将包含当前设置的或要为控件设置的实际功能。
 
-**PinId**成员指定的目标是相机 PIN 或筛选器的 PIN。 如果该属性是一个筛选器级别控件，则**PinId**设置为 KSCAMERA\_EXTENDEDPROP\_FILTERSCOPE。
+**PinId**成员指定目标为相机 pin 或筛选器 pin。 如果该属性是筛选器级别控件，则将**PinId**设置为 KSCAMERA\_EXTENDEDPROP\_FILTERSCOPE。
 
-属性控制是同步还是异步。 如果控件是同步的然后 KSCAMERA\_EXTENDEDPROP\_CAPS\_中设置 ASYNCCONTROL 标志**功能**。 此外，如果该控件是可取消，则**功能**成员包括 KSCAMERA\_EXTENDEDPROP\_CAPS\_可取消的标志。
+属性控件为同步或异步。 如果控件是同步的，则 KSCAMERA\_EXTENDEDPROP\_CAPS\_ASYNCCONTROL 标志设置为 "**功能**"。 此外，如果该控件可取消，则**功能**成员包括 KSCAMERA\_EXTENDEDPROP\_CAP\_可取消标志。
 
-Size 成员中设置的有效负载大小。 值**大小**是整个负载的大小。 如果该属性使用仅标头，然后**大小** = **sizeof**(KSCAMERA\_EXTENDEDPROP\_标头)。 否则为**大小** = **sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof**（控制特定的数据）。
+负载大小是在大小成员中设置的。 **Size**的值是有效负载的整个大小。 如果属性仅使用标题，则**Size** = **sizeof**（KSCAMERA\_EXTENDEDPROP\_标头）。 否则，**大小** = **sizeof**（KSCAMERA\_EXTENDEDPROP\_标头） + **sizeof**（控制特定数据）。
 
 ## <a name="control-specific-data"></a>控制特定数据
 
 
-某些属性控件使用的其他结构保存的其他数据。 使用单个数据值时，将包含属性数据[ **KSCAMERA\_EXTENDEDPROP\_值**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)结构后[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)。 **KSCAMERA\_EXTENDEDPROP\_值**结构允许以单个值表示为多种数据类型之一的属性。
+某些属性控件使用其他结构来保存其他数据。 在使用单个数据值的情况下，属性数据将包含[**KSCAMERA\_EXTENDEDPROP\_值**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)结构，之后[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)。 **KSCAMERA\_EXTENDEDPROP\_值**结构允许属性将单个值表示为多种数据类型之一。
 
-若要获取或设置额外的数据，属性将具有其自己的特殊数据结构以下[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)。 下面的示例显示了驱动程序代码片段设置属性的特定数据的 KSPROPERTY\_类型\_的 GET 请求[ **KSPROPERTY\_CAMERACONTROL\_扩展\_FIELDOFVIEW** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-fieldofview)属性。
+为获取或设置附加数据，属性将在[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)后具有其自己的特殊数据结构。 下面的示例演示了一个驱动程序代码片段，为 KSPROPERTY\_类型设置特定于属性的数据，\_GET 请求[**KSPROPERTY\_CAMERACONTROL\_扩展\_FIELDOFVIEW**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-fieldofview)属性。
 
 ```cpp
 #define FL_WIDE_ANGLE 35

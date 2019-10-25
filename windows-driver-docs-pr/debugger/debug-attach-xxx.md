@@ -1,6 +1,6 @@
 ---
-title: DEBUG\_ATTACH\_XXX
-description: 调试\_附加\_*XXX*位标志在本主题中所述控制调试器引擎如何附加到用户模式进程。
+title: 调试\_附加\_XXX
+description: DEBUG\_附加了本主题中介绍的\_*XXX*位标志控制调试器引擎如何附加到用户模式进程。
 ms.date: 08/10/2018
 topic_type:
 - apiref
@@ -11,18 +11,18 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: a7823934b3ea377d9a5a45d44748713d3ffa4683
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de54d41b7b4fcd9f0616097ec3b088a192f4fcb3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376383"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837796"
 ---
-# <a name="debugattachxxx"></a>DEBUG\_ATTACH\_XXX
+# <a name="debug_attach_xxx"></a>调试\_附加\_XXX
 
-调试\_附加\_*XXX*位标志在本主题中所述控制调试器引擎如何附加到用户模式进程。 有关 DEBUG_ATTACH_XXX 选项时，使用附加到内核目标，请参阅[IDebugClient::AttachKernel 方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient-attachkernel)。
+DEBUG\_附加了本主题中介绍的\_*XXX*位标志控制调试器引擎如何附加到用户模式进程。 对于附加到内核目标时使用的 DEBUG_ATTACH_XXX 选项，请参阅[IDebugClient：： AttachKernel 方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient-attachkernel)。
 
-可能的值包括以下内容。
+可能的值包括以下各项。
 
 <table>
 <tr>
@@ -35,8 +35,8 @@ ms.locfileid: "63376383"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>将 noninvasively 附加到目标。  有关非侵入调试的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-)">非侵入调试 （用户模式）</a>。</p>
-<p>如果设置此标志，则不能设置 DEBUG_ATTACH_EXISTING、 DEBUG_ATTACH_INVASIVE_NO_INITIAL_BREAK 和 DEBUG_ATTACH_INVASIVE_RESUME_PROCESS 的标志。</p>
+<p>附加到目标 noninvasively。  有关 noninvasive 调试的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-)">Noninvasive 调试（用户模式）</a>。</p>
+<p>如果设置了此标志，则不得设置标志 DEBUG_ATTACH_EXISTING、DEBUG_ATTACH_INVASIVE_NO_INITIAL_BREAK 和 DEBUG_ATTACH_INVASIVE_RESUME_PROCESS。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -45,8 +45,8 @@ ms.locfileid: "63376383"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>重新附加到应用程序到调试程序具有已附加 （和可能是放弃）。  有关重新附加到目标的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-)">.attach （附加到进程）</a>。</p>
-<p>如果此标志设置，那么其他 DEBUG_ATTACH_<i>XXX</i>标志不能设置。</p>
+<p>重新附加到调试器已附加的应用程序（可能已被放弃）。  有关重新附加到目标的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-)">。附加（附加到进程）</a>。</p>
+<p>如果设置了此标志，则不得设置其他 DEBUG_ATTACH_<i>XXX</i>标志。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -55,8 +55,8 @@ ms.locfileid: "63376383"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>附加 noninvasively 时不挂起目标线程。</p>
-<p>如果设置此标志，然后将标志 DEBUG_ATTACH_NONINVASIVE 还必须进行设置。</p>
+<p>附加 noninvasively 时，请勿挂起目标的线程。</p>
+<p>如果设置了此标志，则还必须设置标志 DEBUG_ATTACH_NONINVASIVE。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -65,8 +65,8 @@ ms.locfileid: "63376383"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>附加到目标时不请求初始被侵入的情形。</p>
-<p>如果设置此标志，必须不设置 DEBUG_ATTACH_NONINVASIVE 和 DEBUG_ATTACH_EXISTING 的标志。</p>
+<p>附加到目标时，请勿请求初始中断。</p>
+<p>如果设置了此标志，则不得设置标志 DEBUG_ATTACH_NONINVASIVE 和 DEBUG_ATTACH_EXISTING。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -75,8 +75,8 @@ ms.locfileid: "63376383"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>附加 invasively 时恢复所有目标的线程。</p>
-<p>如果设置此标志，必须不设置 DEBUG_ATTACH_NONINVASIVE 和 DEBUG_ATTACH_EXISTING 的标志。</p>
+<p>附加 invasively 时恢复目标的所有线程。</p>
+<p>如果设置了此标志，则不得设置标志 DEBUG_ATTACH_NONINVASIVE 和 DEBUG_ATTACH_EXISTING。</p>
 </td>
 </tr>
 </table>
@@ -92,8 +92,8 @@ ms.locfileid: "63376383"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">DbgEng.h （包括 DbgEng.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">DbgEng （包括 DbgEng）</td>
 </tr>
 </tbody>
 </table>

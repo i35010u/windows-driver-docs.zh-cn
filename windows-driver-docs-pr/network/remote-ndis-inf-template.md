@@ -3,15 +3,15 @@ title: 远程 NDIS INF 模板
 description: 远程 NDIS INF 模板
 ms.assetid: bbbd3aef-230f-4286-bea2-bb583789865e
 keywords:
-- 远程 NDIS WDK 网络、 INF 模板
+- 远程 NDIS WDK 网络，INF 模板
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4f072409e2ed1b618ef81b7d12a36fc3e8b2fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 35d5ee9e7db90aa4e1b091acf0237f2f53cfe2f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361146"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842054"
 ---
 # <a name="remote-ndis-inf-template"></a>远程 NDIS INF 模板
 
@@ -19,14 +19,14 @@ ms.locfileid: "67361146"
 
 
 
-Microsoft 提供的 NDIS 微型端口驱动程序 Rndismp.sys，实现远程 NDIS 消息组并与泛型总线传输驱动程序，它又与其相应的总线驱动程序进行通信。 此 NDIS 微型端口驱动程序是实现并由 Microsoft 维护并作为所有受支持的 Windows 版本的一部分分发。 可以在 %systemroot%中找到它\\System32\\驱动程序目录。
+Microsoft 提供了 NDIS 微型端口驱动程序 Rndismp，该驱动程序实现了远程 NDIS 消息集并与通用总线传输驱动程序通信，后者又与相应的总线驱动程序通信。 此 NDIS 微型端口驱动程序由 Microsoft 实现和维护，并作为所有受支持的 Windows 版本的一部分进行分发。 可在% SystemRoot%\\System32\\驱动程序目录中找到该文件。
 
-若要使用 USB 设备的远程 NDIS 驱动程序，IHV 必须提供 INF 文件根据以下模板之一：
+若要将远程 NDIS 驱动程序与 USB 设备一起使用，IHV 必须根据以下模板之一提供一个 INF 文件：
 
--   [NDIS 5.1 RNDIS INF 模板 (Windows XP 及更高版本)](#rndis-inf-template-for-ndis-51-windows-xp-and-later)
--   [NDIS 6.0 (Windows 7 及更高版本) 的 RNDIS INF 模板](#rndis-inf-template-for-ndis-60-windows-7-and-later)
+-   [用于 NDIS 5.1 的 RNDIS INF 模板（Windows XP 及更高版本）](#rndis-inf-template-for-ndis-51-windows-xp-and-later)
+-   [用于 NDIS 6.0 的 RNDIS INF 模板（Windows 7 及更高版本）](#rndis-inf-template-for-ndis-60-windows-7-and-later)
 
-### <a name="rndis-inf-template-for-ndis-51-windows-xp-and-later"></a>NDIS 5.1 RNDIS INF 模板 (Windows XP 及更高版本)
+### <a name="rndis-inf-template-for-ndis-51-windows-xp-and-later"></a>用于 NDIS 5.1 的 RNDIS INF 模板（Windows XP 及更高版本）
 
 ```INF
 ; Remote NDIS template device setup file
@@ -101,7 +101,7 @@ RndisDevice           = "Remote NDIS based Device"
 Vista_Property        = "Optional Vista Property"
 ```
 
-### <a name="rndis-inf-template-for-ndis-60-windows-7-and-later"></a>NDIS 6.0 (Windows 7 及更高版本) 的 RNDIS INF 模板
+### <a name="rndis-inf-template-for-ndis-60-windows-7-and-later"></a>用于 NDIS 6.0 的 RNDIS INF 模板（Windows 7 及更高版本）
 
 ```INF
 ; Remote NDIS template device setup file
@@ -179,9 +179,9 @@ Rndis_Property         = "Optional RNDIS Property"
 ## <a name="related-topics"></a>相关主题
 
 
-[远程 NDIS (RNDIS) 的概述](overview-of-remote-ndis--rndis-.md)
+[远程 NDIS 概述（RNDIS）](overview-of-remote-ndis--rndis-.md)
 
-[包含在 Windows 中的 USB 类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[Windows 中包含的 USB 类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
  
 

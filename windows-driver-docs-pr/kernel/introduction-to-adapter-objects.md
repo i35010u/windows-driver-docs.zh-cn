@@ -3,17 +3,17 @@ title: 适配器对象简介
 description: 适配器对象简介
 ms.assetid: a1a0d516-dee0-484a-b971-c7a595fef155
 keywords:
-- AdapterControl 例程，有关 AdapterControl 例程
+- AdapterControl 例程，关于 AdapterControl 例程
 - DMA 传输 WDK 内核，适配器对象
-- 适配器对象 WDK 内核，有关适配器的对象
+- 适配器对象 WDK 内核，关于适配器对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a22a13ae844e12d5b2cf339c7a2aeba9200932ea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1dd589a676a4d1e2b0785d5b52a4426ed86ca863
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369774"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838636"
 ---
 # <a name="introduction-to-adapter-objects"></a>适配器对象简介
 
@@ -21,27 +21,27 @@ ms.locfileid: "67369774"
 
 
 
-使用直接 I/O 和 DMA 任何驱动程序必须创建的适配器对象。 该适配器对象表示 DMA 控制器通道或端口或总线母版设备。
+使用直接 i/o 和 DMA 的任何驱动程序都必须创建一个适配器对象。 适配器对象表示 DMA 控制器通道或端口，或者是主线主机设备。
 
-两种类型的最低级别的驱动程序必须使用适配器对象：
+两种最低级别的驱动程序必须使用适配器对象：
 
--   使用系统 DMA 控制器的设备的驱动程序。 此类设备称为*从属设备*说到"使用系统 (或*从属*) DMA。"
+-   使用系统 DMA 控制器的设备驱动程序。 此类设备称为*从属设备*，称为 "使用系统（或*从属*） DMA"。
 
--   用于将主机总线适配器的设备驱动程序。 此类设备与 I/O 总线中，使用系统进行仲裁，并因此使用总线 master DMA。
+-   作为总线-主适配器的设备的驱动程序。 此类设备会使用系统进行仲裁，以使用 i/o 总线，因此使用的是总线主控 DMA。
 
-驱动程序提供存储，通常在设备扩展中，对指向适配器对象的指针。
+驱动程序为指向适配器对象的指针提供存储，通常在设备扩展中。
 
-若要执行 DMA 传输，通常使用任一 DMA 方法的设备的驱动程序具有[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程和调用系统提供支持例程，操作适配器对象。 (不需要的驱动程序*AdapterControl*例程包括的[使用散播-聚集 DMA](using-scatter-gather-dma.md)它们的[使用常见缓冲区、 总线 master DMA](using-common-buffer-bus-master-dma.md)。)
+若要执行 DMA 传输，使用这两种 DMA 方法的设备的驱动程序通常具有[*AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程，并调用系统提供的支持例程来处理适配器对象。 （不需要*AdapterControl*例程的驱动程序包括那些[使用散播/聚集 dma](using-scatter-gather-dma.md)的驱动程序，以及[使用常见缓冲区、总线主 dma](using-common-buffer-bus-master-dma.md)的驱动程序。）
 
-设备启动操作，句柄 DMA 操作调用 I/O 管理器中，驱动程序的一部分，在打开创建的适配器对象的一组调用特定于平台的 HAL。 任何 Windows 平台上的适配器对象的集合通常包括一个适配器对象，用于：
+作为设备启动操作的一部分，处理 DMA 操作的驱动程序调用 i/o 管理器，该管理器反过来调用特定于平台的 HAL 来创建一组适配器对象。 在任何 Windows 平台上，适配器对象集通常包含用于的适配器对象：
 
--   每个系统 DMA 控制器通道或从属设备附加到的端口。
+-   从属设备连接到的每个系统 DMA 控制器通道或端口。
 
--   在计算机中每个主总线 DMA 设备。
+-   计算机中的每个主线主机 DMA 设备。
 
-（对于 SCSI 设备支持的总线 master DMA，SCSI 端口驱动程序设置了特定于 HBA 的 SCSI 微型端口驱动程序的适配器对象。 微型端口驱动程序[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))例程提供端口驱动程序使用特定于适配器的数据。)
+（对于支持总线主机 DMA 的 SCSI 设备，SCSI 端口驱动程序为特定于 HBA 的 SCSI 微型端口驱动程序设置适配器对象。 微型端口驱动程序的[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))例程为端口驱动程序提供特定于适配器的数据。）
 
-请参阅[使用系统 DMA](using-system-dma.md)并[使用总线 Master DMA](using-bus-master-dma.md)有关驱动程序何时以及如何使用适配器对象的详细信息并*AdapterControl*例程。
+有关何时以及如何使用适配器对象和*AdapterControl*例程的详细信息，请参阅[使用系统 DMA](using-system-dma.md)和[使用 Bus-主 dma](using-bus-master-dma.md) 。
 
  
 

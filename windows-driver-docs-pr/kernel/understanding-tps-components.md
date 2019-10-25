@@ -4,57 +4,57 @@ description: 了解 TPS 组件
 ms.assetid: 4bc962fa-8c05-4b0f-b634-9c0f435907b7
 keywords:
 - 事务处理系统 WDK KTM，组件
-- TP WDK KTM 组件
+- TPS WDK KTM，组件
 - 事务处理系统 WDK KTM，方案
-- TP WDK KTM 方案
-- 资源管理器 WDK KTM，在 TP
+- TPS WDK KTM，方案
+- TPS 的资源管理器 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed116920d1437ee962b9ca306b675bfeb204475
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b95cb452906859bedf6bee584e41a97e6de1a892
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382950"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836095"
 ---
 # <a name="understanding-tps-components"></a>了解 TPS 组件
 
 
-任何[*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TPS)，它使用内核事务管理器 (KTM) 和[公用日志文件系统](using-common-log-file-system.md)(CLFS) 应包含以下重要的组件：
+使用内核事务管理器（KTM）和[公用日志文件系统](using-common-log-file-system.md)（CLFS）的任何[*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system)（TPS）应包含以下重要组件：
 
--   一个[*事务管理器*](transaction-processing-terms.md#ktm-term-transaction-manager) (KTM)
+-   [*事务管理器*](transaction-processing-terms.md#ktm-term-transaction-manager)（KTM）
 
-    KTM 跟踪每个事务的状态，并在系统崩溃后恢复操作进行协调。
+    KTM 跟踪每个事务的状态，并在系统崩溃后协调恢复操作。
 
 -   一个或多个[*资源管理器*](transaction-processing-terms.md#ktm-term-resource-manager)
 
-    资源管理器，你提供管理与每个事务相关联的数据。
+    您提供的资源管理器可管理与每个事务关联的数据。
 
 -   一个或多个 CLFS [*日志流*](transaction-processing-terms.md#ktm-term-log-stream)
 
-    事务管理器和资源管理器使用 CLFS 日志流传输到可用于提交、 回滚或恢复事务的记录信息。
+    事务管理器和资源管理器使用 CLFS 日志流来记录可用于提交、回滚或恢复事务的信息。
 
 -   一个或多个[*事务客户端*](transaction-processing-terms.md#ktm-term-transactional-client)
 
-    通常情况下，在 TP 每个事务客户端可以创建一个事务、 对数据执行操作的上下文中的事务，并启动的事务提交或回滚操作。
+    通常，你的 TPS 的每个事务客户端都可以创建一个事务，对该事务的上下文中的数据执行操作，然后启动该事务的提交或回滚操作。
 
-本主题为你介绍[简单 TP](#simple-tps)一个资源管理器中，使用更复杂的 TP 包含[多个资源管理器](#multiple-resource-managers-in-a-tps)，和一些[其他 TP 方案](#other-tps-scenarios)。
+本主题向你介绍了一个[简单的 tps](#simple-tps) ，其中包含一个资源管理器、一个包含[多个资源](#multiple-resource-managers-in-a-tps)管理器的更复杂 TPS 以及一些[其他 tps 方案](#other-tps-scenarios)。
 
-[使用 KTM](using-ktm.md)部分提供有关如何使用 KTM 创建 TP 组件的详细的信息。
+[使用 ktm](using-ktm.md)部分提供有关如何使用 KTM 创建 TPS 组件的详细信息。
 
-### <a name="simple-tps"></a>Simple TPS
+### <a name="simple-tps"></a>简单 TPS
 
-KTM、 一个资源管理器和 CLFS 可能包含简单 TPS。 事务的客户端可以与资源管理器通过资源管理器提供的接口通信。
+简单 TPS 可能由 KTM、一个资源管理器和 CLFS 组成。 事务性客户端可以通过资源管理器提供的接口与资源管理器进行通信。
 
-例如，假设你想要创建的数据库管理系统。 希望您的系统的客户端通过执行读取和写入操作在对象上的打开的句柄的数据库对象，然后关闭对象句柄访问数据库。
+例如，假设要创建数据库管理系统。 您希望您的系统的客户端可以通过打开数据库对象的句柄，对对象执行读写操作，然后关闭对象句柄来访问数据库。
 
-现在假设您希望集的读取和写入操作的系统的其他用户查看仅对最终结果以原子方式发生。 可以通过设计使客户端能够绑定到事务的数据库操作组的 TP 实现该目标。
+现在，假设您想要以原子方式对读取和写入操作进行设置，以便系统的其他用户只能看到最终结果。 您可以通过设计一个 TPS，使客户端能够将一组数据库操作绑定到一个事务来实现该目标。
 
-您的系统应包括资源管理器，用于管理数据库中读取和写入请求从客户端的响应中的数据。 此资源管理器无法导出应用程序编程接口 (API)，使客户端以将事务与读取的一组相关联操作和写操作。
+系统应包括一个资源管理器，该管理器管理数据库中的数据，以响应来自客户端的读取和写入请求。 此资源管理器可以导出一个应用程序编程接口（API），该接口使客户端能够将事务与一组读写操作相关联。
 
-加载资源管理器时，它必须注册其自身与 KTM 通过调用[ **ZwCreateTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)并[ **ZwCreateResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager). 然后，资源管理器可以参与事务。
+加载资源管理器时，它必须通过调用[**ZwCreateTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)和[**ZwCreateResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)向 KTM 注册自身。 然后，资源管理器可以参与事务。
 
-您可能希望在资源管理器支持一组函数，使客户端来创建数据对象、 读取和写入与数据对象中，关联的数据并关闭数据对象。 下面的伪代码显示从客户端的示例代码序列。
+你可能希望资源管理器支持一组函数，这些函数使客户端能够创建数据对象、读取和写入与数据对象相关联的数据，并关闭数据对象。 以下伪代码显示了来自客户端的代码序列示例。
 
 ```cpp
 CreateDataObject (IN TransactionID, OUT DataHandle);
@@ -65,19 +65,19 @@ WriteData (IN DataHandle, IN Data);
 CloseDataObject (IN DataHandle);
 ```
 
-客户端可以调用所需的资源管理器的前*CreateDataObject*例程，客户端必须创建事务对象通过调用 KTM 的[ **ZwCreateTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)例程，并通过调用获取事务对象的标识符[ **ZwQueryInformationTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)。
+客户端在调用资源管理器的*CreateDataObject*例程之前，必须通过调用 KTM 的[**ZwCreateTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransaction)例程来创建事务对象，并通过调用[**ZwQueryInformationTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationtransaction)。
 
-当客户端调用所需的资源管理器的*CreateDataObject*例程，客户端传递的事务对象的标识符对资源管理器。 资源管理器可以调用[ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)若要获取的句柄的事务对象，然后可以调用[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)注册其参与事务。
+当客户端调用资源管理器的*CreateDataObject*例程时，客户端会将该事务对象的标识符传递给资源管理器。 资源管理器可以调用[**ZwOpenTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction)来获取事务对象的句柄，然后它可以调用[**ZwCreateEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)来注册其参与事务。
 
-此时，客户端可以开始对数据对象执行操作。 由于客户端提供事务标识符，它创建的数据对象时，资源管理器可以将所有读取和写入操作都分配给该事务。
+此时，客户端可以开始对数据对象执行操作。 因为客户端在创建数据对象时提供了事务标识符，所以资源管理器可以将所有读取和写入操作分配给该事务。
 
-资源管理器必须记录数据操作，而无需进行结果永久指定客户端的所有的结果。 通常情况下，资源管理器使用 CLFS 中事务日志流记录的操作结果。
+资源管理器必须记录客户端指定的所有数据操作结果，而不会使结果成为永久结果。 通常情况下，资源管理器使用 CLFS 将操作结果记录到事务日志流中。
 
-当客户端完成后调用资源管理器执行事务操作时，它将调用 KTM 的[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)例程。 此时，KTM[通知](transaction-notifications.md)，这可以使操作永久资源管理器。 资源管理器然后将操作结果从日志流到永久存储介质中的数据。 最后，资源管理器调用[ **ZwCommitComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)通知 KTM 提交操作已完成。
+当客户端已经完成调用资源管理器以执行事务操作时，它将调用 KTM 的[**ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)例程。 此时，KTM[通知](transaction-notifications.md)资源管理器它应使操作永久运行。 然后，资源管理器会将操作结果从日志流移动到数据的永久性存储介质。 最后，资源管理器调用[**ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete)来通知 KTM 提交操作已完成。
 
-如果资源管理器报告的客户端的调用的其中一个错误，会发生什么情况*ReadData*或*WriteData*？ 客户端可以调用[ **ZwRollbackTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)回滚该事务。 进行该调用后，KTM 通知资源管理器，它应将数据还原到其原始状态。 然后，客户端可以创建新的事务进行相同的操作，或者可以选择以继续。
+如果资源管理器报告某个客户端对*ReadData*或*WriteData*的调用之一出现错误，会发生什么情况？ 客户端可以调用[**ZwRollbackTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbacktransaction)来回滚事务。 此调用的结果是，KTM 通知资源管理器它应将数据还原到其原始状态。 然后，客户端可以为相同操作创建新事务，也可以选择不继续。
 
-下面的伪代码显示了一系列更详细的客户端的事务性操作的示例。
+以下伪代码显示了客户端事务操作的更详细序列的示例。
 
 ```cpp
     ZwCreateTransaction (&TransactionHandle, ...);
@@ -100,23 +100,23 @@ Leave:
     return;
 ```
 
-如果在系统崩溃后的事务创建，但在提交或回滚之前，会发生什么情况？ 应调用资源管理器加载，每次[ **ZwRecoverTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)并[ **ZwRecoverResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager). 调用**ZwRecoverTransactionManager**导致 KTM 打开其日志流并读取的事务历史记录。 调用**ZwRecoverResourceManager**导致 KTM 通知任何已登记事务都在崩溃前的正在进行中的资源管理器和哪些事务资源管理器因此必须恢复。
+如果在事务创建之后但在提交或回滚事务之前系统崩溃，会发生什么情况？ 每次加载资源管理器时，它都应调用[**ZwRecoverTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager)和[**ZwRecoverResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)。 调用**ZwRecoverTransactionManager**会导致 KTM 打开其日志流并读取事务历史记录。 调用**ZwRecoverResourceManager**会导致 KTM 向资源管理器通知在发生崩溃之前正在进行的任何已登记事务，并通知资源管理器必须恢复哪些事务。
 
-如果事务的客户端调用[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)对于在崩溃前的事务并开始处理事务的提交操作，必须能够还原资源管理器事务的状态设置为之前在发生崩溃的点。 如果客户端未准备好提交事务在崩溃前的，资源管理器可以丢弃数据，并回滚事务。
+如果事务客户端在发生崩溃之前为事务调用了[**ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction) ，并开始处理事务的提交操作，则资源管理器必须能够将事务的状态还原到紧靠致使. 如果客户端未准备好在崩溃之前提交事务，则资源管理器可以丢弃数据并回滚事务。
 
-有关如何编写事务性客户端的详细信息，请参阅[创建事务的客户端](creating-a-transactional-client.md)。
+有关如何编写事务客户端的详细信息，请参阅[创建事务客户端](creating-a-transactional-client.md)。
 
-有关如何编写资源管理器的详细信息，请参阅[资源管理器创建](creating-a-resource-manager.md)。
+有关如何编写资源管理器的详细信息，请参阅[创建资源管理器](creating-a-resource-manager.md)。
 
-### <a name="multiple-resource-managers-in-a-tps"></a>在 TP 中的多个资源管理器
+### <a name="multiple-resource-managers-in-a-tps"></a>TPS 中的多个资源管理器
 
-现在假设您 TP 使客户端能够修改在单个事务中的两个单独数据库中的信息，以便仅当这两个数据库的修改成功，事务获得成功。
+现在假设你的 TPS 使客户端能够在单个事务中修改两个不同数据库中的信息，以便仅当两个数据库的修改都成功时，事务才会成功。
 
-在这种情况下，在 TP 可以有两个资源管理器，一个用于每个数据库。 每个资源管理器可以导出一个 API，客户端可用来访问资源管理器的数据库。
+在这种情况下，TPS 可以有两个资源管理器，每个数据库一个。 每个资源管理器都可以导出一个 API，客户端可以使用该 API 来访问资源管理器的数据库。
 
-下面的伪代码展示了客户端如何创建包含两个资源管理器支持的两个数据库上的操作的单个事务。
+下面的伪代码演示了客户端如何创建单个事务，其中包含两个资源管理器支持的两个数据库上的操作。
 
-在此示例中，客户端从第一个数据库中读取数据并将其写入到第二个数据库。 然后，客户端从第二个数据库中读取数据并将其写入的第一个数据库。 (第一个资源管理器导出函数的开头**Rm1**，并第二个资源管理器将导出函数的开头**Rm2**。)
+在此示例中，客户端读取第一个数据库中的数据，并将其写入第二个数据库。 然后，客户端从第二个数据库中读取数据，并将其写入第一个数据库。 （第一个资源管理器导出函数以**Rm1**开头，第二个资源管理器导出以**Rm2**开头的函数。）
 
 ```cpp
     ZwCreateTransaction (&TransactionHandle, ...);
@@ -140,23 +140,23 @@ Leave:
     return;
 ```
 
-由于客户端将相同的事务标识符传递给这两个资源管理器，可以调用这两个资源管理器[ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)并[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)在事务中登记。 当客户端最终调用[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)，KTM[通知](transaction-notifications.md)管理器应该建立操作永久的并且每个每个资源管理器资源管理器调用[ **ZwCommitComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)是否已完成。
+由于客户端将相同的事务标识符传递给两个资源管理器，因此两个资源管理器都可以调用[**ZwOpenTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransaction)和[**ZwCreateEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateenlistment)以在事务中登记。 当客户端最终调用[**ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommittransaction)时，KTM 会[通知](transaction-notifications.md)每个资源管理器，管理器应将操作设置为永久操作，并且每个资源管理器会在完成时调用[**ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete) 。
 
-### <a name="other-tps-scenarios"></a>其他 TP 方案
+### <a name="other-tps-scenarios"></a>其他 TPS 方案
 
-KTM 支持其他 TP 方案。 例如，下面的方案描述 TP 可能包含的组件：
+KTM 支持其他 TPS 方案。 例如，以下方案描述了 TPS 可能包含的组件：
 
 -   管理多个数据库的一个资源管理器。
 
-    资源管理器 API 可以使客户端能够打开并一次访问多个数据库和客户端可以合并到单个事务中的多个数据库的访问。
+    资源管理器的 API 可以使客户端一次打开和访问多个数据库，并且客户端可以将对多个数据库的访问合并到一个事务中。
 
--   一个资源管理器 api 的客户端调用，并与第一个资源管理器调用的 Api 的附加资源管理器。
+-   一个资源管理器，其中包含客户端调用的 API，以及包含第一个资源管理器调用的 Api 的其他资源管理器。
 
-    客户端仅与第一个资源管理器进行通信。 当该资源管理器处理客户端的请求时，它可以访问其他资源管理器，根据需要来处理客户端的请求。 例如，资源管理器管理的客户端访问数据库，需要从不供客户端的第二个资源管理器的备份或数据验证操作。
+    客户端仅与第一个资源管理器通信。 当资源管理器处理来自客户端的请求时，它可以根据需要访问其他资源管理器来处理客户端的请求。 例如，资源管理器管理客户端可访问的数据库，该数据库需要从另一个资源管理器对客户端不可用的备份或数据验证操作。
 
--   现有的客户端和资源管理器不使用 KTM，与一组额外的资源管理器使用 KTM 的集成。
+-   不使用 KTM 的现有客户端和资源管理器与一组使用 KTM 的其他资源管理器集成。
 
-    在这种情况下，通常需要修改现有的资源管理器，以使其成为[上级事务管理器](creating-a-superior-transaction-manager.md)与 KTM 的通信。
+    在这种情况下，您通常必须修改现有的资源管理器，使其成为与 KTM 通信的[上级事务管理](creating-a-superior-transaction-manager.md)器。
 
  
 

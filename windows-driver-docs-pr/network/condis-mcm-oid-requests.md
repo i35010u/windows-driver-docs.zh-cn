@@ -3,16 +3,16 @@ title: CoNDIS MCM OID 请求
 description: CoNDIS MCM OID 请求
 ms.assetid: efddbcb0-98f1-4cd3-9707-f3ed17c20181
 keywords:
-- 微型端口调用管理器 WDK 网络、 OID 请求
-- MCMs WDK 网络、 OID 请求
+- 微型端口呼叫管理器 WDK 网络，OID 请求
+- MCMs WDK 网络，OID 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e32c73d1f2d7b375eedeb04f8f2b947889a122b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4fe8b5ebb15fd440f923f9511a7180ef4bc703c2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379265"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835154"
 ---
 # <a name="condis-mcm-oid-requests"></a>CoNDIS MCM OID 请求
 
@@ -20,39 +20,39 @@ ms.locfileid: "67379265"
 
 
 
-其他的 CoNDIS 调用管理器，如微型端口调用管理器 (MCMs) 可使用查询或设置操作参数的 CoNDIS 客户端驱动程序。 CoNDIS 客户端驱动程序可使用查询或设置调用管理器参数或 MCM 的微型端口驱动程序参数。
+与其他 CoNDIS 调用管理器一样，微型端口调用管理器（MCMs）可以查询或设置 CoNDIS 客户端驱动程序的操作参数。 CoNDIS 客户端驱动程序可以查询或设置 MCM 的调用管理器参数或微型端口驱动程序参数。
 
-来自对 CoNDIS 客户端驱动程序的 OID 请求，MCM，请调用[ **NdisMCmOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmoidrequest)函数。
+若要向 CoNDIS 客户端驱动程序发起 OID 请求，MCM 会调用[**NdisMCmOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequest)函数。
 
-下图说明了 MCM 发起的 OID 请求。
+下图说明了 MCM 产生的 OID 请求。
 
-![说明 mcm 发起的 oid 请求的关系图](images/mcmcorequest.png)
+![说明 mcm 所源自的 oid 请求的关系图](images/mcmcorequest.png)
 
-MCM 驱动程序调用后[ **NdisMCmOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmoidrequest)函数、 NDIS 调用[ **ProtocolCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request)的客户端函数驱动程序。
+MCM 驱动程序调用[**NdisMCmOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequest)函数后，NDIS 将调用客户端驱动程序的[**ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request)函数。
 
-若要以同步方式，完成**NdisMCmOidRequest**返回 NDIS\_状态\_成功或错误状态。 若要以异步方式完成**NdisMCmOidRequest**返回 NDIS\_状态\_PENDING。
+若要同步完成， **NdisMCmOidRequest**会返回 NDIS\_状态\_成功或错误状态。 若要异步完成， **NdisMCmOidRequest**将\_状态返回 NDIS 状态\_"挂起"。
 
-如果[ **NdisMCmOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmoidrequest)返回 NDIS\_状态\_挂起、 NDIS 调用[ **ProtocolCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request_complete)函数后的客户端驱动程序通过调用完成 OID 请求 MCM [ **NdisCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequestcomplete)函数。 NDIS 在这种情况下，将在请求的结果传递*OidRequest*的参数*ProtocolCoOidRequestComplete*。 NDIS 将传递在请求的最终状态*状态*的参数*ProtocolCoOidRequestComplete*。
+如果[**NdisMCmOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequest)返回 NDIS\_状态\_挂起，ndis[**会在客户**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request_complete)端驱动程序通过调用[**NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)才能. 在这种情况下，NDIS 会将请求的结果传递到*ProtocolCoOidRequestComplete*的*OidRequest*参数。 NDIS 在*ProtocolCoOidRequestComplete*的*status*参数传递请求的最终状态。
 
-如果**NdisMCmOidRequest**返回 NDIS\_状态\_成功后，它将返回的结果中的查询请求[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构，在*OidRequest*参数。 在这种情况下，未调用 NDIS *ProtocolCoOidRequestComplete* MCM 的函数。
+如果**NdisMCmOidRequest**\_SUCCESS 返回 NDIS\_状态，它将在*OidRequest*参数的[**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中返回查询请求的结果。 在这种情况下，NDIS 不调用 MCM 的*ProtocolCoOidRequestComplete*函数。
 
-CoNDIS 客户端驱动程序可使用查询或调用管理器操作参数或微型端口操作参数的 MCMs 设置。 打出 MCM 调用管理器参数的 OID 请求，在客户端调用[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)函数，并提供有效的地址系列 (AF) 句柄在*NdisAfHandle*参数。 打出 MCM 微型端口参数的 OID 请求，在客户端调用**NdisCoOidRequest**函数，并设置 AF 句柄**NULL**。
+CoNDIS 客户端驱动程序可以查询或设置 MCMs 的 "呼叫管理器" 操作参数或微型端口操作参数。 若要发起对 MCM 调用管理器参数的 OID 请求，客户端将调用[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)函数并在*NdisAfHandle*参数处提供有效的地址族（AF）句柄。 若要为 MCM 微型端口参数发起 OID 请求，客户端将调用**NdisCoOidRequest**函数并将 AF 句柄设置为**NULL**。
 
-在客户端调用后**NdisCoOidRequest**函数，NDIS 调用任一[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数或[ **ProtocolCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request) MCM 驱动程序的函数。
+在客户端调用**NdisCoOidRequest**函数后，NDIS 会调用[**MINIPORTCOOIDREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数或 MCM 驱动程序的[**ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request)函数。
 
 下图说明了 MCM 的微型端口参数的 OID 请求。
 
-![说明 mcm 的微型端口参数的 oid 请求的关系图](images/protocol2mcmcorequest.png)
+![阐释 mcm 的微型端口参数的 oid 请求的关系图](images/protocol2mcmcorequest.png)
 
 下图说明了 MCM 的调用管理器参数的 OID 请求。
 
-![说明 mcm 的调用管理器参数的 oid 请求的关系图](images/client2mcmcorequest.png)
+![演示对 mcm 的调用管理器参数的 oid 请求的关系图](images/client2mcmcorequest.png)
 
-若要以同步方式，完成[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)返回 NDIS\_状态\_成功或错误状态。 若要以异步方式完成[ **ProtocolCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request)或[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)返回 NDIS\_状态\_PENDING。
+若要同步完成， [**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)会返回 NDIS\_状态\_成功或错误状态。 若要异步完成， [**ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request)或[**MINIPORTCOOIDREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)将返回 NDIS\_状态\_"挂起"。
 
-如果*ProtocolCoOidRequest*或**MininportCoOidRequest**返回 NDIS\_状态\_挂起、 NDIS 调用[ **ProtocolCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request_complete) MCM 完成 OID 请求通过调用后的客户端函数[ **NdisMCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcooidrequestcomplete)或[ **NdisMCmOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmoidrequestcomplete)函数。 NDIS 在这种情况下，将在请求的结果传递*OidRequest*的参数*ProtocolCoOidRequestComplete*。 NDIS 将传递在请求的最终状态*状态*的参数*ProtocolCoOidRequestComplete*。
+如果*ProtocolCoOidRequest*或**MininportCoOidRequest**返回 NDIS\_状态\_挂起，ndis 将在 MCM 完成 OID 请求后调用客户端的[**ProtocolCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request_complete)函数，方法是调用[**NdisMCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcooidrequestcomplete)或[**NdisMCmOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)函数。 在这种情况下，NDIS 会将请求的结果传递到*ProtocolCoOidRequestComplete*的*OidRequest*参数。 NDIS 在*ProtocolCoOidRequestComplete*的*status*参数传递请求的最终状态。
 
-如果[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)返回 NDIS\_状态\_成功后，它将返回的结果中的查询请求[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构，在*OidRequest*参数。 在这种情况下，NDIS 不调用客户端*ProtocolCoOidRequestComplete*函数。
+如果[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)\_SUCCESS 返回 NDIS\_状态，它将在*OidRequest*参数的[**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中返回查询请求的结果。 在这种情况下，NDIS 不调用客户端的*ProtocolCoOidRequestComplete*函数。
 
  
 

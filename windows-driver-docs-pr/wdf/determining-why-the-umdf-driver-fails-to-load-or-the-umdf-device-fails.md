@@ -1,6 +1,6 @@
 ---
-title: 确定 UMDF 驱动程序加载失败的原因或设备无法启动
-description: 本主题介绍可以使用 UMDF 驱动程序将无法加载或关联的设备无法启动时的故障排除步骤。
+title: 确定无法加载 UMDF 驱动程序或设备启动失败的原因
+description: 本主题介绍在 UMDF 驱动程序无法加载或相关设备无法启动时可以使用的故障排除步骤。
 ms.assetid: 366c0ab4-8d06-4dac-a301-f433cf7978bd
 keywords:
 - 调试方案 WDK UMDF，UMDF 驱动程序加载失败
@@ -8,56 +8,56 @@ keywords:
 - UMDF WDK，调试方案，UMDF 驱动程序加载失败
 - UMDF WDK，调试方案，UMDF 设备无法启动
 - UMDF WDK，驱动程序未加载方案
-- UMDF WDK，设备无法启动方案
+- UMDF WDK，设备未启动方案
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4725643bcd62dbf2d509d58e7131592ebaa75016
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ef23e04d8451fc3b058b2cc6e2c228a75980a0b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377417"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833674"
 ---
 # <a name="determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails-to-start"></a>确定 UMDF 驱动程序无法加载或 UMDF 设备无法启动的原因
 
 
-本主题介绍可以使用 UMDF 驱动程序将无法加载或关联的设备无法启动时的故障排除步骤。
+本主题介绍在 UMDF 驱动程序无法加载或相关设备无法启动时可以使用的故障排除步骤。
 
-使用这两种 UMDF 版本 1 和 2 的驱动程序，可以使用以下技术。
+可以在 UMDF 版本1和2驱动程序中使用以下技术。
 
-1.  通过确保以下文件正确的检查安装程序：
+1.  通过确保以下文件正确来检查设置：
     -   驱动程序的 INF 文件。
 
         使用[ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)工具验证驱动程序的 INF 文件。
 
-    -   %windir%\\inf\\setupapi.dev.log (setupapi.log Windows XP 上)、 %windir%\\setupact.log、 和 %windir%\\temp\\wudf\_update.log 文件。
+    -   % windir%\\inf\\setupapi.log （Windows XP 上的 setupapi.log）、% windir%\\setupact.log 和% windir%\\temp\\wudf\_更新日志文件。
 
-2.  如果未找到任何安装问题，启用**HostProcessDbgBreakOnStart**通过使用注册表项[WDF 验证程序控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)(WdfVerifier.exe)。 通过启用**HostProcessDbgBreakOnStart**、 将调试程序不久后 WUDFHost.exe 开始到以设备 (WUDFHost.exe) 中断的驱动程序主机进程，但之前您的驱动程序 DLL 加载。
+2.  如果未找到任何安装问题，请通过使用[WDF 验证器控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)（您尚未 wdfverifier）来启用**HostProcessDbgBreakOnStart**注册表项。 通过启用**HostProcessDbgBreakOnStart**，你将在 WUDFHost 启动之后但在加载驱动程序 DLL 之前，将设备的驱动程序宿主进程（WUDFHost）立即进入调试器。
 
-    应启用**HostProcessDbgBreakOnStart**使用用户模式下调试程序和不内核模式调试程序。 不，内核模式调试程序，默认情况下，不会接收用户模式模块加载和卸载通知。 因此，您将不能设置延迟的断点。
+    应使用用户模式调试器而不是内核模式调试器来启用**HostProcessDbgBreakOnStart** 。 默认情况下，内核模式调试器不接收用户模式模块加载和卸载通知。 因此，您将无法设置延迟断点。
 
-3.  如果看不到启动的主机，请执行以下步骤来正确配置设备：
-    1.  请确保您通过在 INF 安装的所有驱动程序存在，并且复制到操作系统。
-    2.  如果该发送程序 (也称为 WUDFRd.sys) 不是设备上的服务，请确保该驱动程序，然后将该服务，有一个服务的条目 (例如，为 sc qc foo)，并设置为自动启动。
+3.  如果看不到主机启动，请执行以下步骤以正确配置设备：
+    1.  确保通过 INF 安装的所有驱动程序都存在并复制到操作系统。
+    2.  如果反射器（也称为 WUDFRd）不是设备上的服务，请确保驱动程序（随后将作为服务）具有服务项（例如，"sc qc foo"），并将设置为自动启动。
 
-4.  确保您的驱动程序的符号在符号路径 (即，.sympath)。
+4.  确保驱动程序的符号位于符号路径中（即 sympath）。
 
-5.  一次验证以下各项的一个。 在以下步骤中，假设您的驱动程序为：
-    1.  验证您的驱动程序**DllMain**例程调用 （例如，bu Foo ！DllMain)。
-    2.  如果 does 加载驱动程序 DLL，为执行后续步骤，还可以使用**HostProcessDbgBreakOnDriverLoad**注册表项。 无**HostProcessDbgBreakOnDriverLoad**集导致 WUDFHost.exe 若要在您的驱动程序加载 DLL 后进入调试器。 **HostProcessDbgBreakOnDriverLoad**可以也在内核模式调试程序因为此时正在加载的驱动程序和设备在启动过程中您可以设置断点在驱动程序代码中。
-    3.  此步骤适用于 UMDF 版本 1 驱动程序。 验证您的驱动程序**DllGetClassObject**调用例程。 验证您的驱动程序的类标识符 (ID) 正确。 确认**DllGetClassObject**成功运行，并返回驱动程序对象 (例如，bu Foo ！DllGetClassObject)。
+5.  一次验证一个项目。 在以下步骤中，假定你的驱动程序为 foo .dll：
+    1.  验证是否调用了驱动程序的**DllMain**例程（例如，bu Foo！DllMain）。
+    2.  如果驱动程序 DLL 已加载，则在后续步骤中，还可以使用**HostProcessDbgBreakOnDriverLoad**注册表项。 设置**HostProcessDbgBreakOnDriverLoad**后，WUDFHost 会在加载驱动程序 DLL 后中断到调试器。 **HostProcessDbgBreakOnDriverLoad**也可用于内核模式调试器，因为在驱动程序加载和设备启动过程中，你可以在驱动程序代码中设置断点。
+    3.  此步骤仅适用于 UMDF 版本1驱动程序。 验证是否调用了驱动程序的**DllGetClassObject**例程。 验证驱动程序的类标识符（ID）是否正确。 验证**DllGetClassObject**是否成功运行并返回驱动程序对象（例如，bu Foo！DllGetClassObject）。
 
-    4.  对于 UMDF 版本 1，请验证您的驱动程序[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)调用方法。 验证该方法将创建一个设备，并返回成功 （例如，bu Foo ！CMyDriver::OnDeviceAdd)。
+    4.  对于 UMDF 版本1，请验证是否调用了驱动程序的[**IDriverEntry：： OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法。 验证方法是否创建了设备并成功返回（例如，bu Foo！CMyDriver::OnDeviceAdd).
 
-        对于 UMDF 版本 2，请验证您的驱动程序[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)调用函数。 验证该函数将创建一个设备，并返回成功 （例如，bu Foo ！MyDriverDeviceAdd)。
+        对于 UMDF 版本2，请验证是否调用了驱动程序的[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)函数。 验证该函数是否创建了一个设备并成功返回（例如，bu Foo！MyDriverDeviceAdd).
 
-    5.  对于 UMDF 版本 1，请验证您的驱动程序[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)或[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)调用方法。 验证该方法返回成功 （例如，bu Foo ！CMyDevice::OnPrepareHardware 或 Foo ！CMyDevice::OnD0Entry)。
+    5.  对于 UMDF 版本1，请验证是否调用了驱动程序的[**IPnpCallbackHardware：： OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)或[**IPnpCallback：： OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)方法。 验证该方法是否成功返回（例如，bu Foo！CMyDevice：： OnPrepareHardware 或 Foo！CMyDevice::OnD0Entry).
 
-        对于 UMDF 版本 2，请验证您的驱动程序[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)或[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)调用函数。 验证该函数返回成功 （例如，bu Foo ！MyDevicePrepareHardware 或 Foo ！MyDeviceD0Entry)。
+        对于 UMDF 版本2，请验证是否调用了驱动程序的[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)或[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)函数。 验证函数是否成功返回（例如，bu Foo！MyDevicePrepareHardware 或 Foo！MyDeviceD0Entry).
 
-    6.  如果每个成功运行了上一操作，而且后面的运算不会运行，则应检查以下各项：
-        1.  验证每个驱动程序的上方和下方您在用户模式堆栈中的驱动程序也成功地执行这些操作。
-        2.  验证是否已成功完成下您的驱动程序的内核堆栈[ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)并[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) Irp。
+    6.  如果前面的每个操作都已成功运行，但随后执行的操作未运行，则应检查以下各项：
+        1.  验证用户模式堆栈中的驱动程序上方和下方的每个驱动程序是否也成功执行这些操作。
+        2.  验证驱动程序以下的内核堆栈是否已成功完成[**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)和[**IRP\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)irp。
 
  
 

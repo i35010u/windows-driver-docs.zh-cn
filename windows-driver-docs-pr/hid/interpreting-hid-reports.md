@@ -7,12 +7,12 @@ keywords:
 - 报告 WDK HID，解释
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 833f6a86bacfb0f2cc2b3655d65421cf3f065bd5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b634921d9221b0f8dfcfe92c11cd8b75a22eb40f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375893"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841581"
 ---
 # <a name="interpreting-hid-reports"></a>解释 HID 报告
 
@@ -20,23 +20,23 @@ ms.locfileid: "67375893"
 
 
 
-本部分介绍用户模式应用程序和内核模式驱动程序如何使用 HidP\_*Xxx* [HIDClass 支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)解释 HID 报表中的控制数据。
+本部分介绍用户模式的应用程序和内核模式驱动程序如何使用 HidP\_*Xxx* [HIDClass 支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)来解释 HID 报表中的控件数据。
 
-从报表中提取控件数据的信息，请参阅：
+有关从报表提取控件数据的信息，请参阅以下内容：
 
-[通过指定其使用情况数据的提取值](extracting-value-data-by-specifying-its-usage.md)
+[通过指定值数据的使用情况来提取该值](extracting-value-data-by-specifying-its-usage.md)
 
-[提取设置为 ON 的按钮用途](extracting-button-usages-that-are-set-to-on.md)
+[正在提取设置为 ON 的按钮用法](extracting-button-usages-that-are-set-to-on.md)
 
-[提取并设置控制数据的数据索引](extracting-and-setting-control-data-by-data-indices.md)
+[按数据索引提取和设置控件数据](extracting-and-setting-control-data-by-data-indices.md)
 
-有关如何设置控制数据在报表中的信息，请参阅：
+有关如何在报表中设置控件数据的信息，请参阅以下内容：
 
-[通过指定其使用情况设置值数据](setting-value-data-by-specifying-its-usage.md)
+[通过指定值数据的使用情况来设置该值](setting-value-data-by-specifying-its-usage.md)
 
-[通过指定其使用情况设置按钮状态](setting-button-state-by-specifying-its-usage.md)
+[通过指定其用法来设置按钮状态](setting-button-state-by-specifying-its-usage.md)
 
-[提取并设置控制数据的数据索引](extracting-and-setting-control-data-by-data-indices.md)
+[按数据索引提取和设置控件数据](extracting-and-setting-control-data-by-data-indices.md)
 
  
 

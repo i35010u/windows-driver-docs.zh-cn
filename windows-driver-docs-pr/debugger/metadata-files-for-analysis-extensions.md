@@ -1,55 +1,55 @@
 ---
 title: 分析扩展插件的元数据文件
-description: 当您编写的分析扩展插件时，还可以编写描述所需插件调用了的情况的元数据文件。
+description: 编写分析扩展插件时，还需要编写一个元数据文件，用于描述要调用插件的情况。
 ms.assetid: 13B9B7A5-1D68-49A3-825B-454AC070FCC1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1544f26c71207c0e25d294ee2d8b1d645cd999a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 36ccae904dae8756c6ca058ec463b0a279c571d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366473"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834343"
 ---
 # <a name="metadata-files-for-analysis-extension-plug-ins"></a>分析扩展插件的元数据文件
 
 
-当您编写的分析扩展插件时，还可以编写描述所需插件调用了的情况的元数据文件。 当[ **！ 分析**](-analyze.md)调试器命令运行时，它使用元数据文件来确定要加载的插件。
+编写分析扩展插件时，还需要编写一个元数据文件，用于描述要调用插件的情况。 当[ **！分析**](-analyze.md)调试器命令运行时，它会使用元数据文件来确定要加载的插件。
 
-创建具有与你的分析扩展插件和.alz 的扩展相同的名称的元数据文件。 例如，如果您的分析扩展插件名为 MyAnalyzer.dll，元数据文件必须命名为 MyAnalyzer.alz。 作为你的分析扩展插件的相同目录中的元数据文件的位置。
+创建一个与分析扩展插件同名的元数据文件，并创建 alz 扩展名。 例如，如果分析扩展插件的名称为 MyAnalyzer，则元数据文件必须命名为 MyAnalyzer. alz。 将元数据文件放在与 analysis extension 插件相同的目录中。
 
-分析扩展插件的元数据文件是 ASCII 文本文件，其中包含键 / 值对。 键和值由空格分隔。 密钥可以具有任何非空白字符。 密钥不区分大小写。
+Analysis extension 插件的元数据文件是包含键值对的 ASCII 文本文件。 键和值由空格分隔。 键可以有任何非空白字符。 项不区分大小写。
 
-之后的密钥和下面的空白区域，相应的值开始。 一个值可以具有以下形式之一。
+在键和以下空格之后，将开始相应的值。 值可以具有以下格式之一。
 
--   至行尾字符的任何组。 此窗体适用于不包含任何换行符的值。
+-   行末尾的任何字符集。 此窗体适用于不包含任何换行符的值。
 
-    **重要**  行元数据文件中的最后一个值具有此窗体的值，如果必须以换行字符结尾。
+    **重要**  如果元数据文件中的最后一个值具有此格式的值，则行必须以换行符结尾。
 
      
 
--   任何一组字符之间大括号 {}。 在窗体适用于包含换行字符的值。
+-   大括号 {} 之间的任何字符集。 此窗体适用于包含换行符的值。
 
-以开头的行\#是一个注释，将被忽略。 注释可以开始仅密钥需要的地方。
+以 \# 开头的行是注释，将被忽略。 注释只能开始需要键的位置。
 
-元数据文件中，可以使用以下项。
+可以在元数据文件中使用以下键。
 
-| 键            | 描述                                                                                                                                                                                                                                                                                       |
+| 密钥            | 描述                                                                                                                                                                                                                                                                                       |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| PluginId       | 字符串--标识该插件。                                                                                                                                                                                                                                                                  |
-| DebuggeeClass  | 字符串-可能的值为"内核"和"用户"。 指示，该插件所关注的分析仅内核模式失败或仅用户模式故障。                                                                                                                                     |
-| BugCheckCode   | 32 位错误检查代码的指示，该插件所关注的分析这[bug 检查代码](bug-check-code-reference2.md)。 单一元数据文件可以指定多个 bug 检查代码。                                                                                                  |
-| ExceptionCode  | 32 位异常代码的指示，该插件所关注的分析这[异常代码](https://go.microsoft.com/fwlink/p?LinkID=282670)。 单一元数据文件可以指定多个异常代码。                                                                                 |
-| ExecutableName | 字符串--指示在会话中只对感插件下便是要对其进行分析的进程正在运行的可执行文件。 单一元数据文件可以指定多个可执行文件的名称。                                                                                              |
-| ImageName      | 字符串--指示，该插件仅对仅在其中的默认分析会考虑此图像 （dll、 sys 或 exe） 有故障的会话中。 分析已确定哪个映像出现故障后，会调用该插件。 单一元数据文件可以指定多个映像名称。 |
-| MaxTagCount    | 整数的自定义的最大数目标记的插件的需求。 自定义标记是不是在 extsfns.h 中定义的标记。                                                                                                                                                                |
+| PluginId       | String-标识插件。                                                                                                                                                                                                                                                                  |
+| DebuggeeClass  | 字符串可能的值为 "内核" 和 "用户"。 指示插件仅对分析内核模式故障或仅用户模式故障进行分析感兴趣。                                                                                                                                     |
+| BugCheckCode   | 32位 bug 检查代码-指示插件对分析此[bug 检查代码](bug-check-code-reference2.md)感兴趣。 单个元数据文件可以指定多个 bug 检查代码。                                                                                                  |
+| ExceptionCode  | 32位异常代码-指示插件对分析此[异常代码](https://go.microsoft.com/fwlink/p?LinkID=282670)感兴趣。 单个元数据文件可以指定多个异常代码。                                                                                 |
+| ExecutableName | String-指示插件仅对这是要分析的进程的运行可执行文件的会话感兴趣。 单个元数据文件可以指定多个可执行名称。                                                                                              |
+| ImageName      | String-指示插件仅对默认分析将此映像（dll、sys 或 exe）视为错误的会话感兴趣。 此插件是在分析确定哪个映像出错后调用的。 单个元数据文件可以指定多个映像名称。 |
+| MaxTagCount    | Integer-插件所需的自定义标记的最大数目。 自定义标记是 extsfns 中定义的标记。                                                                                                                                                                |
 
  
 
-## <a name="span-idexamplemetadatafilesspanspan-idexamplemetadatafilesspanspan-idexamplemetadatafilesspanexample-metadata-files"></a><span id="Example_Metadata_Files"></span><span id="example_metadata_files"></span><span id="EXAMPLE_METADATA_FILES"></span>示例元数据文件
+## <a name="span-idexample_metadata_filesspanspan-idexample_metadata_filesspanspan-idexample_metadata_filesspanexample-metadata-files"></a><span id="Example_Metadata_Files"></span><span id="example_metadata_files"></span><span id="EXAMPLE_METADATA_FILES"></span>示例元数据文件
 
 
-以下元数据文件描述所关注的分析错误检查代码 0xE2 的插件。 （回想一下，最后一行必须结束换行字符。）
+下面的元数据文件描述了对分析 bug 检查代码0xE2 感兴趣的插件。 （请记住，最后一行必须以换行符结尾。）
 
 ```text
 PluginId      MyPlugin
@@ -57,7 +57,7 @@ DebuggeeClass Kernel
 BugCheckCode  0xE2
 ```
 
-以下元数据文件描述所关注的分析错误检查的 0x8、 0x9，和 0xA 如果 MyDriver.sys 被视为错误的模块的插件。
+下面的元数据文件描述了对分析 bug 检查0x8、0x9 和0xA 感兴趣的插件。如果 MyDriver 被视为出错的模块。
 
 ```text
 PluginId      MyPlugin
@@ -68,7 +68,7 @@ BugCheckCode  0xA
 ImageName     MyDriver.sys
 ```
 
-以下元数据文件描述插件兴趣分析异常代码 0xC0000005，如果 MyApp.exe 是所分析的进程正在运行的可执行文件。 此外，该插件可能会创建多达三个自定义标记。
+下面的元数据文件描述了对分析异常代码0xC0000005 感兴趣的插件（如果 MyApp 是正在分析的进程的运行可执行文件）。 此外，该插件最多可创建三个自定义标记。
 
 ```text
 PluginId        MyPlugin
@@ -77,7 +77,7 @@ ExceptionCode   0xC0000005
 ExecutableName  MyApp.exe
 ```
 
-调试工具的 Windows 中有一个示例可用来生成一个名为 dbgexts.dll 的调试器扩展模块。 此扩展模块实现多个调试器扩展命令，但它也可以用作分析扩展插件;也就是说，它将导出[  **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nc-extsfns-ext_analysis_plugin)函数。 下面是描述 dbgexts.dll 作为分析扩展插件的元数据文件。
+适用于 Windows 的调试工具提供了一个示例，可用于生成名为 dbgexts 的调试器扩展模块。 此扩展模块实现了几个调试器扩展命令，但它还可以充当分析扩展插件;也就是说，它会导出[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)函数。 下面是一种元数据文件，它将 dbgexts 描述为分析扩展插件。
 
 ```text
 PluginId         PluginSample
@@ -93,14 +93,14 @@ help text from plug-in analysis}
 #
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[分析扩展插件写入扩展 ！ 分析](writing-an-analysis-extension-to-extend--analyze.md)
+[正在写入分析扩展插件！分析](writing-an-analysis-extension-to-extend--analyze.md)
 
-[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nc-extsfns-ext_analysis_plugin)
+[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)
 
-[ **!analyze**](-analyze.md)
+[ **！分析**](-analyze.md)
 
  
 
